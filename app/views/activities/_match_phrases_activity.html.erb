@@ -1,0 +1,201 @@
+<%# Expects:
+  params[:phrases] - An array of pairs: [original_phrase, translated_phrase]
+  params[:l1] - Language code for original_phrase (for example "he", "en", "es", "ar-ps")
+  params[:l2] - Language code for translated_phrase (for example "he", "en", "es", "ar-ps")
+  
+  This activity shows two columns of phrases: On the left is the original phrase, on the right is the translated phrase.
+  The user needs to click on a phrase from the left column and then on its translation from the right column. After each successful match background color of the matched words changes.
+  The game continues until all the phrases are matched.
+  When a user clicks on a phrase from the left column, they hear an audio version of that phrase. Audio version is generated using web speech api.
+  
+  To make the game interesting the phrases need to be shuffled before we begin.
+ %>
+
+<% phrases = (params[:phrases] || []).shuffle %>
+<% orig_items = phrases.map.with_index { |phrase, index| { text: phrase[0], id: index } } %>
+<% trans_items = phrases.map.with_index { |phrase, index| { text: phrase[1], id: index } }.shuffle %>
+
+<div class="flex-col flex items-center justify-center min-h-screen bg-gray-900 px-4">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Match Madness</h2>
+      <p class="text-gray-400 text-sm sm:text-base">Match each phrase with its translation</p>
+      <div id="progress-bar" class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+        <div id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+    
+    <div id="match-madness" class="grid grid-cols-2 gap-2 sm:gap-4">
+      <div id="orig-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          Original Phrases
+        </div>
+        <% orig_items.each do |item| %>
+          <button type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="orig"><%= item[:text] %></button>
+        <% end %>
+      </div>
+      <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          Translations
+        </div>
+        <% trans_items.each do |item| %>
+          <button type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="trans"><%= item[:text] %></button>
+        <% end %>
+      </div>
+    </div>
+    
+    <div id="completion-message" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've matched all the phrases correctly.</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>
+  </div>  
+</div>
+
+<script>
+function init() {
+  const items = Array.from(document.querySelectorAll('.phrase-item'));
+  let selectedItem = null;
+  const lang1 = '<%= params[:l1] %>';
+  const lang2 = '<%= params[:l2] %>';
+  let matchedPairs = 0;
+  const totalPairs = <%= phrases.length %>;
+  const progressBar = document.getElementById('progress');
+  const completionMessage = document.getElementById('completion-message');
+
+  updateProgress();
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('matched')) return;
+      const side = item.dataset.side;
+      const id = item.dataset.id;
+
+      if (!selectedItem || selectedItem.dataset.side === side) {
+        // Deselect previous item from same side
+        if (selectedItem && selectedItem.dataset.side === side) {
+          selectedItem.classList.remove('selected', 'bg-gray-600', 'border-gray-500');
+        }
+        
+        // Select new item
+        selectedItem = item;
+        item.classList.add('selected');
+        
+        // Speak if it's an original phrase
+        if (side === 'orig') speakPhrase(item.innerText.trim(), lang1);
+      } else {
+        // Check for match
+        if (selectedItem.dataset.id === id) {
+          // Match success!
+          selectedItem.classList.remove('selected', 'text-white');
+          item.classList.remove('text-white');
+
+          selectedItem.classList.add('matched', 'bg-green-200', 'border-green-600', 'text-gray-800');
+          item.classList.add('matched', 'bg-green-200', 'border-green-600', 'text-gray-800');
+          
+          // Add success animation
+          [selectedItem, item].forEach(el => {
+            el.classList.add('animate-pulse');
+            setTimeout(() => el.classList.remove('animate-pulse'), 1000);
+          });
+          
+          selectedItem.disabled = true;
+          item.disabled = true;
+          
+          // Update progress
+          matchedPairs++;
+          updateProgress();
+          
+          // Check if game completed
+          if (matchedPairs === totalPairs) {
+            completionMessage.classList.remove('hidden');
+            completionMessage.classList.add('animate-fade-in');
+          }
+        } else {
+          // Mismatch - shake effect
+          selectedItem.classList.add('animate-shake');
+          item.classList.add('animate-shake');
+          
+          setTimeout(() => {
+            selectedItem.classList.remove('animate-shake');
+            item.classList.remove('animate-shake');
+          }, 500);
+          
+          selectedItem.classList.remove('selected');
+        }
+        selectedItem = null;
+      }
+    });
+  });
+
+  function updateProgress() {
+    const percentage = (matchedPairs / totalPairs) * 100;
+    progressBar.style.width = `${percentage}%`;
+  }
+
+  function speakPhrase(text, lang) {
+    if ('speechSynthesis' in window) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      utterance.lang = lang;
+      const voices = speechSynthesis.getVoices();
+      const voice = voices.find(v => v.lang === lang);
+      if (voice) utterance.voice = voice;
+      speechSynthesis.speak(utterance);
+    }
+  }
+}
+
+init();
+
+// Add viewport meta tag via script if not already present
+document.addEventListener('DOMContentLoaded', function() {
+  if (!document.querySelector('meta[name="viewport"]')) {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(meta);
+  }
+});
+</script>
+
+<style>
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+@keyframes gentle-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(79, 209, 197, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(79, 209, 197, 0); }
+}
+
+.selected {
+  animation: gentle-pulse 1.5s infinite;
+  border: 2px solid #4fd1c5 !important;
+  position: relative;
+}
+
+.selected::after {
+  content: '✓?';
+  position: absolute;
+  right: 10px;
+  color: #4fd1c5;
+}
+</style> 

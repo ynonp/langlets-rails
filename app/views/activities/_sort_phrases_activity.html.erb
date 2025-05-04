@@ -1,0 +1,391 @@
+<%# Expects:
+  params[:phrases] - An array of strings
+  
+  This activity shows a sortable column of phrases:
+  
+  1. The list starts shuffled. The correct order is determined by the original array at params[:phrases]
+  2. The user can click and drag to rearrange the phrases
+  3. When the user is done, they can click a button to check their answer
+  4. If they got it wrong, the phrases will be shuffled again and they can try again
+  5. If they got it right, they can move on to the next activity
+ %>
+
+<% phrases = (params[:phrases] || []) %>
+<% correct_order = phrases.map.with_index { |phrase, i| i } %>
+<% shuffled_phrases = phrases.map.with_index { |phrase, i| { text: phrase, id: i } }.shuffle %>
+
+<div class="flex-col flex items-center justify-center min-h-screen bg-gray-900 px-4">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Phrase Sorter</h2>
+      <p class="text-sm sm:text-base text-gray-400">Drag and drop the phrases to put them in the correct order</p>
+    </div>
+    
+    <!-- Audio Player -->
+    <div id="audio-player-container" class="mb-6 px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 rounded-lg">
+      <div class="flex items-center space-x-3">
+        <button id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+          ▶
+        </button>
+        <div class="flex-1 h-2 bg-gray-600 rounded-full">
+          <div id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
+        </div>
+      </div>
+      <!-- Hidden YouTube Player -->
+      <div id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
+    </div>
+    
+    <div id="sort-phrases" class="flex flex-col">
+      <div class="text-center px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg">
+        Phrases
+      </div>
+      <div id="phrases-container" class="flex flex-col space-y-3 mt-3">
+        <% shuffled_phrases.each do |item| %>
+          <div class="phrase-item px-4 py-3 sm:px-5 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[72px] flex items-center justify-center text-center cursor-move text-sm sm:text-base" data-id="<%= item[:id] %>">
+            <%= item[:text] %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    
+    <div class="mt-6 flex justify-center">
+      <button id="check-order" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-lg sm:text-base">Check Order</button>
+    </div>
+    
+    <div id="result-message" class="hidden mt-4 p-4 rounded-lg text-center">
+      <p id="result-text" class="text-lg font-medium"></p>
+    </div>
+    
+    <div id="completion-message" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've sorted all the phrases correctly.</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>
+  </div>  
+</div>
+
+<script>
+function init() {
+  const phrasesContainer = document.getElementById('phrases-container');
+  const phraseItems = Array.from(document.querySelectorAll('.phrase-item'));
+  const checkOrderButton = document.getElementById('check-order');
+  const resultMessage = document.getElementById('result-message');
+  const resultText = document.getElementById('result-text');
+  const completionMessage = document.getElementById('completion-message');
+  const correctOrder = <%= correct_order.to_json.html_safe %>;
+  
+  // Set up audio player
+  initAudioPlayer();
+  
+  // Set up drag-and-drop functionality
+  let draggedItem = null;
+  let touchStartY = 0;
+  let currentTouchItem = null;
+  
+  phraseItems.forEach(item => {
+    // Make item draggable
+    item.setAttribute('draggable', 'true');
+    
+    // Touch events for mobile
+    item.addEventListener('touchstart', function(e) {
+      touchStartY = e.touches[0].clientY;
+      currentTouchItem = this;
+      this.classList.add('opacity-50');
+      e.preventDefault(); // Prevent scrolling while dragging
+    }, { passive: false });
+    
+    item.addEventListener('touchmove', function(e) {
+      if (!currentTouchItem) return;
+      e.preventDefault();
+      
+      const touchY = e.touches[0].clientY;
+      const allItems = Array.from(phrasesContainer.querySelectorAll('.phrase-item'));
+      
+      // Detect which item we're hovering over
+      const elementsFromPoint = document.elementsFromPoint(
+        e.touches[0].clientX,
+        e.touches[0].clientY
+      );
+      
+      const touchedItem = elementsFromPoint.find(el => 
+        el.classList.contains('phrase-item') && el !== currentTouchItem
+      );
+      
+      if (touchedItem) {
+        touchedItem.classList.add('bg-gray-700');
+        
+        const currentIndex = allItems.indexOf(currentTouchItem);
+        const touchedIndex = allItems.indexOf(touchedItem);
+        
+        if (currentIndex < touchedIndex) {
+          phrasesContainer.insertBefore(currentTouchItem, touchedItem.nextSibling);
+        } else {
+          phrasesContainer.insertBefore(currentTouchItem, touchedItem);
+        }
+        
+        // Remove bg-gray-700 from all items except the one we're currently over
+        allItems.forEach(item => {
+          if (item !== touchedItem) {
+            item.classList.remove('bg-gray-700');
+          }
+        });
+      }
+    }, { passive: false });
+    
+    item.addEventListener('touchend', function(e) {
+      if (currentTouchItem) {
+        currentTouchItem.classList.remove('opacity-50');
+        
+        // Remove hover effect from all items
+        const allItems = Array.from(phrasesContainer.querySelectorAll('.phrase-item'));
+        allItems.forEach(item => item.classList.remove('bg-gray-700'));
+        
+        currentTouchItem = null;
+      }
+    });
+    
+    // Mouse events for desktop
+    item.addEventListener('dragstart', function() {
+      draggedItem = this;
+      setTimeout(() => this.classList.add('opacity-50'), 0);
+    });
+    
+    item.addEventListener('dragend', function() {
+      this.classList.remove('opacity-50');
+      draggedItem = null;
+    });
+    
+    item.addEventListener('dragover', function(e) {
+      e.preventDefault();
+    });
+    
+    item.addEventListener('dragenter', function(e) {
+      e.preventDefault();
+      this.classList.add('bg-gray-700');
+      
+      // Reorder items during hover to reflect new state
+      if (draggedItem !== this) {
+        const allItems = Array.from(phrasesContainer.querySelectorAll('.phrase-item'));
+        const draggedIndex = allItems.indexOf(draggedItem);
+        const hoverIndex = allItems.indexOf(this);
+        
+        if (draggedIndex < hoverIndex) {
+          phrasesContainer.insertBefore(draggedItem, this.nextSibling);
+        } else {
+          phrasesContainer.insertBefore(draggedItem, this);
+        }
+      }
+    });
+    
+    item.addEventListener('dragleave', function() {
+      this.classList.remove('bg-gray-700');
+    });
+    
+    item.addEventListener('drop', function(e) {
+      e.preventDefault();
+      this.classList.remove('bg-gray-700');
+      // No need to reorder here since we're already doing it during dragenter
+    });
+  });
+  
+  // Check order functionality
+  checkOrderButton.addEventListener('click', function() {
+    const currentOrder = Array.from(phrasesContainer.querySelectorAll('.phrase-item'))
+      .map(item => parseInt(item.dataset.id));
+    
+    const isCorrect = arraysEqual(currentOrder, correctOrder);
+    
+    resultMessage.classList.remove('hidden');
+    
+    if (isCorrect) {
+      resultMessage.className = 'hidden';
+      // resultText.textContent = 'Correct! Great job!';
+      
+      // Show completion message
+      completionMessage.classList.remove('hidden');
+      completionMessage.classList.add('animate-fade-in');
+      
+      // Disable the check button
+      checkOrderButton.disabled = true;
+      checkOrderButton.classList.add('hidden');
+    } else {
+      resultMessage.className = 'mt-4 p-4 bg-red-200 border border-red-500 text-red-800 rounded-lg text-center';
+      resultText.textContent = 'Not quite right. Try again!';
+      
+      // Shuffle the phrases again
+      setTimeout(() => {
+        shufflePhrases();
+        resultMessage.classList.add('hidden');
+      }, 2000);
+    }
+  });
+  
+  function shufflePhrases() {
+    // Remove all phrase items
+    while (phrasesContainer.firstChild) {
+      phrasesContainer.removeChild(phrasesContainer.firstChild);
+    }
+    
+    // Shuffle the items
+    const shuffled = [...phraseItems].sort(() => Math.random() - 0.5);
+    
+    // Re-append them
+    shuffled.forEach(item => {
+      phrasesContainer.appendChild(item);
+    });
+  }
+  
+  function arraysEqual(a, b) {
+    if (a.length !== b.length) return false;
+    for (let i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) return false;
+    }
+    return true;
+  }
+  
+  // YouTube Audio Player
+  function initAudioPlayer() {
+    // Load YouTube API if not already loaded
+    if (!window.YT) {
+      const tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      document.head.appendChild(tag);
+      window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
+    } else {
+      onYouTubeIframeAPIReady();
+    }
+  }
+  
+  let player;
+  let checkInterval = null;
+  let segmentStart = <%= params[:start_timestamp] ? "#{timestamp_to_seconds(params[:start_timestamp])}" : 0 %>;
+  let segmentEnd = <%= params[:end_timestamp] ? "#{timestamp_to_seconds(params[:end_timestamp])}" : 0 %>;
+  let isPlaying = false;
+  
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('hidden-player', {
+      height: '1',
+      width: '1',
+      videoId: "<%= params[:video_id] %>",
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        modestbranding: 1,
+        disablekb: 1,
+        rel: 0,
+        start: segmentStart
+      },
+      events: {
+        onStateChange: onPlayerStateChange
+      }
+    });
+  }
+  
+  function monitorPlayback() {
+    clearInterval(checkInterval);
+    checkInterval = setInterval(() => {
+      if (player && player.getCurrentTime) {
+        const currentTime = player.getCurrentTime();
+        const segmentLength = segmentEnd - segmentStart;
+        const elapsed = Math.max(0, currentTime - segmentStart);
+        const percentage = Math.min(100, (elapsed / segmentLength) * 100);
+        document.getElementById('audio-progress-bar').style.width = `${percentage}%`;
+        
+        if (currentTime >= segmentEnd) {
+          player.pauseVideo();
+          isPlaying = false;
+          document.getElementById('audio-play-button').textContent = '▶';
+          clearInterval(checkInterval);
+        }
+      }
+    }, 100);
+  }
+  
+  function toggleAudio() {
+    if (!player || !player.getPlayerState) return;
+    
+    const state = player.getPlayerState();
+    const playButton = document.getElementById('audio-play-button');
+    
+    if (state !== YT.PlayerState.PLAYING) {
+      player.seekTo(segmentStart);
+      player.playVideo();
+      playButton.textContent = '❚❚';
+      monitorPlayback();
+      isPlaying = true;
+    } else {
+      player.pauseVideo();
+      playButton.textContent = '▶';
+      isPlaying = false;
+      clearInterval(checkInterval);
+    }
+  }
+  
+  function onPlayerStateChange(event) {
+    const playButton = document.getElementById('audio-play-button');
+    if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+      playButton.textContent = '▶';
+      clearInterval(checkInterval);
+      isPlaying = false;
+    } else if (event.data === YT.PlayerState.PLAYING) {
+      playButton.textContent = '❚❚';
+      isPlaying = true;
+    }
+  }
+  
+  // Add event listener to play button
+  const audioPlayButton = document.getElementById('audio-play-button');
+  if (audioPlayButton) {
+    audioPlayButton.addEventListener('click', toggleAudio);
+  }
+}
+
+function timestampToSeconds(timestamp) {
+  if (!timestamp) return 0;
+  const parts = timestamp.split(':');
+  if (parts.length === 2) {
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  } else if (parts.length === 3) {
+    return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
+  }
+  return 0;
+}
+
+document.addEventListener('turbo:load', init);
+</script>
+
+<style>
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.phrase-item {
+  user-select: none;
+  touch-action: none; /* Improve touch interactions */
+  position: relative;
+  z-index: 1;
+}
+
+.phrase-item.opacity-50 {
+  z-index: 10; /* Ensure dragged item stays on top */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Add viewport meta tag via script if not already present */
+document.addEventListener('DOMContentLoaded', function() {
+  if (!document.querySelector('meta[name="viewport"]')) {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(meta);
+  }
+});
+</style>
+

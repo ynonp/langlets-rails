@@ -1,0 +1,53 @@
+<div class="bg-purple-800 h-screen flex flex-col">
+  <!-- Top navigation bar -->
+  <nav class="bg-purple-900 text-white p-4 flex justify-between items-center">
+      <div class="font-bold text-xl">Langlets!</div>
+      <div class="text-lg">Question 1/10</div>
+      <div class="font-bold text-xl">30</div>
+  </nav>
+  
+  <!-- Main question area -->
+  <div class="flex-grow flex flex-col items-center justify-center p-4 text-white">
+      <div class="text-4xl md:text-5xl font-bold text-center mb-4">
+          Which planet is known as the Red Planet?
+      </div>
+      <div class="text-xl md:text-2xl text-center text-gray-200">
+          Select the correct answer below!
+      </div>
+  </div>
+  
+  <!-- Answer options area (grid of four options) -->
+  <div class="grid grid-cols-2 gap-4 p-4 h-1/3">
+      <!-- Red triangle option -->
+      <div class="bg-red-500 rounded-lg flex items-center justify-center p-4 cursor-pointer hover:bg-red-600 transition-colors shadow-lg">
+          <div class="w-12 h-12 bg-red-700 rounded-lg flex items-center justify-center mr-4">
+              <div class="w-0 h-0 border-l-8 border-l-transparent border-r-8 border-r-transparent border-b-12 border-b-white"></div>
+          </div>
+          <span class="text-white text-2xl font-bold">Mars</span>
+      </div>
+      
+      <!-- Blue diamond option -->
+      <div class="bg-blue-500 rounded-lg flex items-center justify-center p-4 cursor-pointer hover:bg-blue-600 transition-colors shadow-lg">
+          <div class="w-12 h-12 bg-blue-700 rounded-lg flex items-center justify-center mr-4">
+              <div class="w-8 h-8 bg-white transform rotate-45"></div>
+          </div>
+          <span class="text-white text-2xl font-bold">Earth</span>
+      </div>
+      
+      <!-- Yellow circle option -->
+      <div class="bg-yellow-500 rounded-lg flex items-center justify-center p-4 cursor-pointer hover:bg-yellow-600 transition-colors shadow-lg">
+          <div class="w-12 h-12 bg-yellow-700 rounded-lg flex items-center justify-center mr-4">
+              <div class="w-8 h-8 bg-white rounded-full"></div>
+          </div>
+          <span class="text-white text-2xl font-bold">Venus</span>
+      </div>
+      
+      <!-- Green square option -->
+      <div class="bg-green-500 rounded-lg flex items-center justify-center p-4 cursor-pointer hover:bg-green-600 transition-colors shadow-lg">
+          <div class="w-12 h-12 bg-green-700 rounded-lg flex items-center justify-center mr-4">
+              <div class="w-8 h-8 bg-white"></div>
+          </div>
+          <span class="text-white text-2xl font-bold">Jupiter</span>
+      </div>
+  </div>
+</div>
