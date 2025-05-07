@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_30_102415) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_07_065611) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -75,13 +75,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_30_102415) do
 
   create_table "token_translations", force: :cascade do |t|
     t.bigint "phrase_id", null: false
-    t.integer "start_index"
-    t.integer "end_index"
+    t.integer "l1_start_index"
+    t.integer "l1_end_index"
     t.string "translation"
     t.string "questions", array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["phrase_id", "start_index", "end_index"], name: "idx_on_phrase_id_start_index_end_index_091ce3a7cc", unique: true
+    t.integer "l2_start_index"
+    t.integer "l2_end_index"
+    t.index ["phrase_id", "l1_start_index", "l1_end_index"], name: "idx_on_phrase_id_l1_start_index_l1_end_index_22c662cc13", unique: true
     t.index ["phrase_id"], name: "index_token_translations_on_phrase_id"
   end
 

@@ -71,15 +71,17 @@ END
       system_prompt = <<END
       You are an expert linguist speaking both #{l1_name} and #{l2_name}.
 
-      Given the input of parallel phrases below in the two languages, your mission is to match words from phrases in the first language to their counterparts in the second language.
+      Given the input of parallel phrases below in the two languages, 
+      your mission is to create a language alignment mapping between the phrases in the two languages.
       A mapping maps one or more words from one language to another, for example "mesa" maps to "table" but "soy" maps to "I am"
-      Indices should be based on word positions, starting from 0.
+      Indices should be based on character positions, starting from 0.
       l1_alternatives and l1_questions should relate to the phrase in `l1_text` between `l1_start_index` and `l1_end_index`.
 
       Here is the information we need about each mapping:
       1. l1_index - character index in l1 where the matched text begins
-      2. l1_text - text from the first phrase
-      3. l2_text - its matching translation from the second phrase
+      2. l2_index - character index in l2 where the matched text begins
+      3. l1_text - text from the first phrase
+      4. l2_text - its matching translation from the second phrase
       5. l1_questions - question or questions in language l1 that are answered by the specified word
 
       ## Explanation of `l1_questions`
@@ -125,13 +127,14 @@ END
             "type": "object",
             "properties": {
               "l1_index": { "type": "number" },
+              "l2_index": { "type": "number" },
               "l1_text": { "type": "string" },
               "l2_text": { "type": "string" },
               "l1_questions": { "type": "array", "items": {
                 "type": "string"
               }}
             },
-            "required": ["l1_index", "l1_text", "l2_text"],
+            "required": ["l1_index", "l2_index", "l1_text", "l2_text"],
             "additionalProperties": false
           }
         }
@@ -146,7 +149,7 @@ END
 END
 
       example1_assistant = <<END
-      [{"l1_text":"Hoy","l1_index":0,"l2_text":"Today","l1_questions":["Cuando te voy a enseñar algo nuevo?"]},{"l1_text":"te","l1_index":4,"l2_text":"you","l1_questions":[]},{"l1_text":"voy a","l1_index":7,"l2_text":"I'm going to","l1_questions":[]},{"l1_text":"enseñar","l_index":13,"l2_text":"to teach","l1_questions":["¿Qué vas a hacer hoy?"]},{"l1_text":"algo","l1_index":21,"l2_text":"something"},{"l1_text":"nuevo","l1_index":26,"l2_text":"new"}]
+      [{"l1_text":"Hoy","l1_index":0,"l2_index":0,"l2_text":"Today","l1_questions":["Cuando te voy a enseñar algo nuevo?"]},{"l1_text":"te","l1_index":4,"l2_index":26,"l2_text":"you","l1_questions":[]},{"l1_text":"voy a","l1_index":7,"l2_index":6,"l2_text":"I'm going to","l1_questions":[]},{"l1_text":"enseñar","l_index":13,"l2_index":16,"l2_text":"to teach","l1_questions":["¿Qué vas a hacer hoy?"]},{"l1_text":"algo","l1_index":21,"l2_index":29,"l2_text":"something"},{"l1_text":"nuevo","l1_index":26,"l2_index":39,"l2_text":"new"}]
 END
       
       prompt = <<END

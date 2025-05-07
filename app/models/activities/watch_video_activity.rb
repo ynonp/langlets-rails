@@ -11,8 +11,8 @@ module Activities
             "timestamp" => p.timestamp,
             "token_translations" => p.token_translations.map do |t|
               {
-                "start_index" => t.start_index,
-                "end_index" => t.end_index,
+                "start_index" => t.l1_start_index,
+                "end_index" => t.l1_end_index,
                 "translation" => t.translation,
                 "questions" => t.questions
               }

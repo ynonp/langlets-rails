@@ -1,0 +1,13 @@
+<%#
+  Input locals:
+    params = { video_id: "kJQP7kiw5Fk", start_timestamp: "00:40", end_timestamp: "01:00", phrases: [ { text: "Ya llevo un rato mirándote", translation: "I've been looking at you for a while now", tokens: [ { l1_start_index: 0, l1_end_index: 1, l2_start_index: 37, l2_end_index: 39 }, { l1_start_index: 3, l1_end_index: 7, l2_start_index: 0, l2_end_index: 8 }, { l1_start_index: 9, l1_end_index: 15, l2_start_index: 25, l2_end_index: 35 }, { l1_start_index: 17, l1_end_index: 25, l2_start_index: 10, l2_end_index: 23 } ] }, { text: "Tengo que bailar contigo hoy", translation: "I have to dance with you today", tokens: [ { l1_start_index: 0, l1_end_index: 8, l2_start_index: 0, l2_end_index: 8 }, { l1_start_index: 10, l1_end_index: 15, l2_start_index: 10, l2_end_index: 14 }, { l1_start_index: 17, l1_end_index: 23, l2_start_index: 16, l2_end_index: 23 }, { l1_start_index: 25, l1_end_index: 27, l2_start_index: 25, l2_end_index: 29 } ] }, { text: "Tu mirada ya estaba llamándome", translation: "Your gaze was already calling me", tokens: [ { l1_start_index: 0, l1_end_index: 8, l2_start_index: 0, l2_end_index: 8 }, { l1_start_index: 10, l1_end_index: 11, l2_start_index: 14, l2_end_index: 20 }, { l1_start_index: 13, l1_end_index: 18, l2_start_index: 10, l2_end_index: 12 }, { l1_start_index: 20, l1_end_index: 29, l2_start_index: 22, l2_end_index: 31 } ] }, { text: "Muéstrame el camino que yo voy", translation: "Show me the way that I go", tokens: [ { l1_start_index: 0, l1_end_index: 8, l2_start_index: 0, l2_end_index: 6 }, { l1_start_index: 10, l1_end_index: 11, l2_start_index: 8, l2_end_index: 10 }, { l1_start_index: 13, l1_end_index: 18, l2_start_index: 12, l2_end_index: 14 }, { l1_start_index: 20, l1_end_index: 22, l2_start_index: 16, l2_end_index: 19 }, { l1_start_index: 24, l1_end_index: 25, l2_start_index: 21, l2_end_index: 21 }, { l1_start_index: 27, l1_end_index: 29, l2_start_index: 23, l2_end_index: 24 } ] } ], l1: "es", l2: "en" }
+
+  Language alignment activity:
+  1. User is presented with 2 columns of texts, on the left the original text, on the right the translation
+  2. In each phrase, select one translation token for the activity
+  3. The selected token in the translation column is presented in red
+  4. User has to click on the matching token in the original text column
+  5. Every successful match the token in the original text column is highlighted in green
+  6. After all tokens are matched the user is presented with a "Good Work!" banner and a "Next" button
+%>
+

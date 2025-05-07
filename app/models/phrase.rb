@@ -26,16 +26,21 @@ class Phrase < ApplicationRecord
       token_questions = token["l1_questions"]
       end_index = start_index + token_text.length - 1
 
+      l2_start_index = token["l2_index"].to_i
+      l2_end_index = l2_start_index + token_translation.length - 1
+
       extracted = text_l1[start_index..end_index]
       next if extracted != token_text
 
       TokenTranslation.find_or_create_by(
         phrase: self,
-        start_index: start_index,
-        end_index: end_index
+        l1_start_index: start_index,
+        l1_end_index: end_index
       ) do |token|
         token.questions = token_questions
         token.translation = token_translation
+        token.l2_start_index = l2_start_index
+        token.l2_end_index = l2_end_index
       end
     end
   end

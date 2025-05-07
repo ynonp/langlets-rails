@@ -67,7 +67,7 @@
 </div>
 
 <script>
-function init() {
+  function init() {
   const phrasesContainer = document.getElementById('phrases-container');
   const phraseItems = Array.from(document.querySelectorAll('.phrase-item'));
   const checkOrderButton = document.getElementById('check-order');
@@ -379,7 +379,7 @@ document.addEventListener('turbo:load', init);
 }
 
 /* Add viewport meta tag via script if not already present */
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('turbo:load', function() {
   if (!document.querySelector('meta[name="viewport"]')) {
     const meta = document.createElement('meta');
     meta.name = 'viewport';

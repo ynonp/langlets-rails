@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :lessons, only: [:show]
-
+  get '/azure_token', to: 'azure_speech#token'
   get "activities/index"
   get "activities/show"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

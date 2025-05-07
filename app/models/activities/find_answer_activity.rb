@@ -11,8 +11,8 @@ module Activities
               {
                 id: t.id,
                 question: t.questions[0],
-                answer_start: t.start_index,
-                answer_end: t.end_index
+                answer_start: t.l1_start_index,
+                answer_end: t.l1_end_index
               }
             end
           }
