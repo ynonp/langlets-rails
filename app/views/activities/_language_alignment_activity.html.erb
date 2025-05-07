@@ -11,3 +11,179 @@
   6. After all tokens are matched the user is presented with a "Good Work!" banner and a "Next" button
 %>
 
+<% 
+  phrases = params[:phrases] || []
+  l1 = params[:l1]
+  l2 = params[:l2]
+  
+  # For each phrase, randomly select one token to highlight
+  phrases_with_selected_tokens = phrases.map do |phrase|
+    random_token_index = rand(phrase[:tokens].length)
+    selected_token = phrase[:tokens][random_token_index]
+    
+    {
+      original_text: phrase[:text],
+      translation: phrase[:translation],
+      selected_token: selected_token
+    }
+  end
+%>
+
+<div class="flex-col flex items-center justify-center min-h-screen bg-gray-900 px-4">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Language Alignment</h2>
+      <p class="text-gray-400 text-sm sm:text-base">Click on the word in the original text that matches the highlighted word</p>
+      <div id="progress-bar" class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+        <div id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <div id="language-alignment" class="grid grid-cols-2 gap-2 sm:gap-4">
+      <div id="orig-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          <%= l1.upcase %> Original
+        </div>
+        <% phrases_with_selected_tokens.each_with_index do |phrase, index| %>
+        <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] flex items-center text-xs sm:text-base" data-phrase-id="<%= index %>">
+          <% 
+              text = phrase[:original_text]
+              token = phrase[:selected_token]
+              l1_token_text = text[token[:l1_start_index]..token[:l1_end_index]]
+              
+              before_text = text[0...token[:l1_start_index]]
+              token_text = text[token[:l1_start_index]..token[:l1_end_index]]
+              after_text = text[(token[:l1_end_index] + 1)..-1] || ""
+            %>
+          <%= before_text.strip %><%= before_text.strip.empty? ? "" : "&nbsp;".html_safe %><span class="token cursor-pointer" data-phrase-id="<%= index %>" data-found="false"><%= token_text.strip %></span><%= "&nbsp;".html_safe %><%= after_text.strip %>
+        </div>
+        <% end %>
+      </div>
+      <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          <%= l2.upcase %> Translation
+        </div>
+        <% phrases_with_selected_tokens.each_with_index do |phrase, index| %>
+        <div class="flex items-center translation-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= index %>">
+          <div>
+            <% 
+              text = phrase[:translation]
+              token = phrase[:selected_token]
+              l2_token_text = text[token[:l2_start_index]..token[:l2_end_index]]
+              
+              before_text = text[0...token[:l2_start_index]]
+              token_text = text[token[:l2_start_index]..token[:l2_end_index]]
+              after_text = text[(token[:l2_end_index] + 1)..-1] || ""
+            %>
+
+            <%= before_text.strip %><%= before_text.strip.empty? ? "" : "&nbsp;".html_safe %><span class="text-red-400"><%= token_text.strip %></span><%= "&nbsp;".html_safe %><%= after_text.strip %>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div id="completion-message" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Good Work!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've matched all the words correctly.</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function init() {
+    const tokens = Array.from(document.querySelectorAll('.token'));
+    const totalTokens = tokens.length;
+    let foundTokens = 0;
+    const progressBar = document.getElementById('progress');
+    const completionMessage = document.getElementById('completion-message');
+
+    updateProgress();
+
+    tokens.forEach(token => {
+      token.addEventListener('click', () => {
+        if (token.getAttribute('data-found') === 'false') {
+          token.setAttribute('data-found', 'true');
+          token.classList.add('bg-green-400', 'text-gray-900', 'font-medium', 'px-1', 'rounded');
+
+          // Add success animation
+          token.classList.add('animate-pulse');
+          setTimeout(() => token.classList.remove('animate-pulse'), 1000);
+
+          // Update progress
+          foundTokens++;
+          updateProgress();
+
+          // Check if all tokens are found
+          if (foundTokens === totalTokens) {
+            completionMessage.classList.remove('hidden');
+            completionMessage.classList.add('animate-fade-in');
+          }
+        }
+      });
+    });
+
+    function updateProgress() {
+      const percentage = (foundTokens / totalTokens) * 100;
+      progressBar.style.width = `${percentage}%`;
+    }
+  }
+
+  // Initialize when DOM is loaded
+  document.addEventListener('DOMContentLoaded', init);
+
+  // Add viewport meta tag via script if not already present
+  document.addEventListener('DOMContentLoaded', function() {
+    if (!document.querySelector('meta[name="viewport"]')) {
+      const meta = document.createElement('meta');
+      meta.name = 'viewport';
+      meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+      document.head.appendChild(meta);
+    }
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+
+  @keyframes gentle-pulse {
+
+    0%,
+    100% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.05);
+    }
+  }
+
+  .animate-pulse {
+    animation: gentle-pulse 0.5s ease-in-out;
+  }
+
+  .token {
+    transition: all 0.3s ease;
+  }
+
+  .token:hover {
+    text-decoration: underline;
+  }
+</style>
