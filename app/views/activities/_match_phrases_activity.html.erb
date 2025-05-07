@@ -15,8 +15,8 @@
 <% orig_items = phrases.map.with_index { |phrase, index| { text: phrase[0], id: index } } %>
 <% trans_items = phrases.map.with_index { |phrase, index| { text: phrase[1], id: index } }.shuffle %>
 
-<div class="flex-col flex items-center justify-center min-h-screen bg-gray-900 px-4">
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+<div class="flex-col flex items-center min-h-screen bg-gray-800">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Match Madness</h2>
       <p class="text-gray-400 text-sm sm:text-base">Match each phrase with its translation</p>

@@ -1,0 +1,121 @@
+<% 
+  current_activity_order = params[:a].to_i
+  current_activity_order = @activity.order if current_activity_order == 0 
+%>
+
+<div class="activity-navigation">
+  <div class="activity-bubbles">
+    <% @lesson.activities.order(:order).each do |activity| %>
+      <% 
+        status = if activity.order < current_activity_order
+                  "completed"
+                elsif activity.order == current_activity_order
+                  "current"
+                else
+                  "upcoming"
+                end
+      %>
+      <div class="activity-bubble-container">
+        <% if activity.order > 1 %>
+          <div class="activity-connector <%= status unless status == 'upcoming' %>"></div>
+        <% end %>
+        <a href="<%= lesson_path(@lesson.slug, a: activity.order) %>" class="activity-bubble <%= status %>" aria-label="Activity <%= activity.order %>">
+          <% if status == "completed" %>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="checkmark">
+              <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
+            </svg>
+          <% else %>
+            <%= activity.order %>
+          <% end %>
+        </a>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<style>
+  .activity-navigation {
+    padding: 1rem 0.5rem;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+  }
+
+  .activity-bubbles {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: min-content;
+  }
+
+  .activity-bubble-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .activity-bubble {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    position: relative;
+    z-index: 1;
+    transition: all 0.2s ease;
+  }
+
+  .activity-bubble.completed {
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .activity-bubble.current {
+    background-color: #FFC107;
+    color: #333;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+  }
+
+  .activity-bubble.upcoming {
+    background-color: #ffffff;
+    border: 2px dashed #ccc;
+  }
+
+  .activity-connector {
+    height: 2px;
+    width: 2rem;
+    background-color: #ccc;
+  }
+
+  .activity-connector.completed {
+    background-color: #4CAF50;
+  }
+
+  .activity-connector.current {
+    background-color: #FFC107;
+  }
+
+  .checkmark {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .activity-bubble {
+      width: 2rem;
+      height: 2rem;
+      font-size: 0.9rem;
+    }
+    
+    .activity-connector {
+      width: 1.5rem;
+    }
+    
+    .checkmark {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+</style> 

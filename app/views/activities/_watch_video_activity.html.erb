@@ -1,244 +1,283 @@
-<div class="flex-col flex items-center justify-center min-h-screen bg-gray-900 px-4">  
-  <div id="player-container" class="relative w-full max-w-[640px] aspect-video bg-black">
-    <div id="player" class="w-full h-full pointer-events-none"></div>
+<div class="flex-col flex items-center min-h-screen bg-gray-800">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Video Activity</h2>
+      <p class="text-sm sm:text-base text-gray-400">Watch the video and pay attention to the phrases</p>
+    </div>
+    
+    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black mb-6">
+      <div id="player" class="w-full h-full pointer-events-none"></div>
 
-    <!-- Overlay Play Button -->
-    <div id="overlay" class="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
-      onclick="togglePlayback()">
-      <button id="play-button"
-        class="text-white text-3xl sm:text-5xl bg-black bg-opacity-60 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-opacity-80 transition">
-        ▶
-      </button>
+      <!-- Overlay Play Button -->
+      <div id="overlay" class="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
+        onclick="togglePlayback()">
+        <button id="play-button"
+          class="text-white text-3xl sm:text-5xl bg-blue-600 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+          ▶
+        </button>
+      </div>
+
+      <!-- Custom Progress Bar -->
+      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-10">
+        <div id="progress-bar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+      </div>
     </div>
 
-    <!-- Custom Progress Bar -->
-    <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-10">
-      <div id="progress-bar" class="h-full bg-red-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+    <!-- Phrases Container -->
+    <div id="phrases-container" class="w-full mx-auto bg-gray-700 p-4 rounded-lg mb-6">
+      <div class="text-center px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg">
+        Phrases
+      </div>
+      <div id="phrases-list" class="text-white text-sm sm:text-base mt-3">
+        <!-- Phrases will be inserted here by JavaScript -->
+      </div>
+      <!-- Translation Popup -->
+      <div id="translation-popup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+        <div id="translation-text"></div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <%= link_to "Next Activity", @next_activity_path, { class: "w-full sm:w-auto px-6 py-3 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-center text-lg sm:text-base"} %>
     </div>
   </div>
+</div>
 
-  <!-- Phrases Container -->
-  <div id="phrases-container" class="w-full max-w-[640px] mt-4 bg-gray-800 p-3 sm:p-4 rounded-lg">
-    <div id="phrases-list" class="text-white text-sm sm:text-base">
-      <!-- Phrases will be inserted here by JavaScript -->
-    </div>
-    <!-- Translation Popup -->
-    <div id="translation-popup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
-      <div id="translation-text"></div>
-    </div>
-  </div>
+<script>
+  document.addEventListener("turbo:load", function() {
+    renderPhrases();
+  });
+  let phrases = JSON.parse(`<%= params[:texts].to_json.html_safe %>`);    
+  let player;
+  let checkInterval = null;
+  let segmentStart = <%= timestamp_to_seconds(params[:start_timestamp]) %>;
+  let segmentEnd = <%= timestamp_to_seconds(params[:end_timestamp]) %>;
+  let isPlaying = false;
 
-  <%= link_to "Start Activity", @next_activity_path, { class: "text-white mt-8 px-6 py-3 sm:py-2 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-center w-full max-w-[640px] sm:w-auto"} %>
+  // Render all phrases when page loads
+  
+  
+  function renderPhrases() {
+    const phrasesList = document.getElementById('phrases-list');
+    // only renderPhrases on this page
+    if (!phrasesList) return;
 
-  <script>
-    document.addEventListener("turbo:load", function() {
-      renderPhrases();
-    });
-    let phrases = JSON.parse(`<%= params[:texts].to_json.html_safe %>`);    
-    let player;
-    let checkInterval = null;
-    let segmentStart = <%= timestamp_to_seconds(params[:start_timestamp]) %>;
-    let segmentEnd = <%= timestamp_to_seconds(params[:end_timestamp]) %>;
-    let isPlaying = false;
-
-    // Render all phrases when page loads
+    phrasesList.innerHTML = '';
     
-    
-    function renderPhrases() {
-      const phrasesList = document.getElementById('phrases-list');
-      // only renderPhrases on this page
-      if (!phrasesList) return;
-
-      phrasesList.innerHTML = '';
+    phrases.forEach((phrase, index) => {
+      const phraseElement = document.createElement('div');
+      phraseElement.id = `phrase-${index}`;
+      phraseElement.className = 'my-2 px-4 py-3 border border-gray-600 rounded-lg bg-gray-800 hover:bg-gray-700 transition-all duration-200';
+      phraseElement.dataset.timestamp = timestampToSeconds(phrase.timestamp);
       
-      phrases.forEach((phrase, index) => {
-        const phraseElement = document.createElement('div');
-        phraseElement.id = `phrase-${index}`;
-        phraseElement.className = 'my-2';
-        phraseElement.dataset.timestamp = timestampToSeconds(phrase.timestamp);
+      // Instead of setting textContent, create spans for tokens
+      if (phrase.token_translations && phrase.token_translations.length > 0) {
+        // Sort tokens by start_index to process in order
+        const sortedTokens = [...phrase.token_translations].sort((a, b) => a.start_index - b.start_index);
         
-        // Instead of setting textContent, create spans for tokens
-        if (phrase.token_translations && phrase.token_translations.length > 0) {
-          // Sort tokens by start_index to process in order
-          const sortedTokens = [...phrase.token_translations].sort((a, b) => a.start_index - b.start_index);
-          
-          let lastIndex = 0;
-          let html = '';
-          
-          sortedTokens.forEach(token => {
-            // Add plain text before this token
-            if (token.start_index > lastIndex) {
-              html += phrase.text_l1.substring(lastIndex, token.start_index);
-            }
-            
-            // Add the token as a span with translation data
-            const tokenText = phrase.text_l1.substring(token.start_index, token.end_index + 1);
-            html += `<span class="cursor-pointer hover:bg-gray-700 px-0.5 rounded" 
-                          data-translation="${token.translation}">
-                      ${tokenText}
-                    </span>`;
-            
-            lastIndex = token.end_index + 1;
-          });
-          
-          // Add any remaining text after the last token
-          if (lastIndex < phrase.text_l1.length) {
-            html += phrase.text_l1.substring(lastIndex);
+        let lastIndex = 0;
+        let html = '';
+        
+        sortedTokens.forEach(token => {
+          // Add plain text before this token
+          if (token.start_index > lastIndex) {
+            html += phrase.text_l1.substring(lastIndex, token.start_index);
           }
           
-          phraseElement.innerHTML = html;
-        } else {
-          // Fallback if no tokens
-          phraseElement.textContent = phrase.text_l1;
-        }
-        
-        phrasesList.appendChild(phraseElement);
-      });
-      
-      // Add event listeners to all token spans
-      setupTranslationPopups();
-    }
-    
-    function setupTranslationPopups() {
-      const popup = document.getElementById('translation-popup');
-      const popupText = document.getElementById('translation-text');
-      
-      document.querySelectorAll('[data-translation]').forEach(span => {
-        span.addEventListener('click', function(e) {
-          const translation = this.dataset.translation;
-          popupText.textContent = translation;
+          // Add the token as a span with translation data
+          const tokenText = phrase.text_l1.substring(token.start_index, token.end_index + 1);
+          html += `<span class="cursor-pointer hover:bg-gray-700 px-0.5 rounded" 
+                        data-translation="${token.translation}">
+                    ${tokenText}
+                  </span>`;
           
-          // Position popup near the clicked word
-          popup.style.left = `${e.pageX}px`;
-          popup.style.top = `${e.pageY + 20}px`;
-          popup.classList.remove('hidden');
-          
-          // Prevent event bubbling
-          e.stopPropagation();
+          lastIndex = token.end_index + 1;
         });
-      });
-      
-      // Close popup when clicking elsewhere
-      document.addEventListener('click', function() {
-        popup.classList.add('hidden');
-      });
-    }
-
-    function timestampToSeconds(timestamp) {
-      const parts = timestamp.split(':');
-      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
-    }
-
-    function updateCurrentPhrase() {
-      const currentTime = player.getCurrentTime();
-      
-      // Reset all phrases to default color
-      const allPhrases = document.querySelectorAll('#phrases-list div');
-      allPhrases.forEach(phrase => {
-        phrase.classList.remove('text-red-500');
-      });
-      
-      // Find and highlight the current phrase
-      phrases.forEach((phrase, index) => {
-        const phraseTime = timestampToSeconds(phrase.timestamp);
-        const nextPhraseTime = (index < phrases.length - 1) ? 
-          timestampToSeconds(phrases[index + 1].timestamp) : segmentEnd;
-          
-        if (currentTime >= phraseTime && currentTime < nextPhraseTime) {
-          document.getElementById(`phrase-${index}`).classList.add('text-red-500');
-        }
-      });
-    }
-
-    function onYouTubeIframeAPIReady() {
-      player = new YT.Player('player', {
-        height: '360',
-        width: '640',
-        videoId: "<%= params[:video_id] %>",
-        playerVars: {
-          autoplay: 0,
-          controls: 0,
-          modestbranding: 1,
-          disablekb: 1,
-          rel: 0,
-          start: segmentStart
-        },
-        events: {
-          onStateChange: onPlayerStateChange
-        }
-      });
-    }
-
-    function monitorPlayback() {
-      clearInterval(checkInterval);
-      checkInterval = setInterval(() => {
-        const currentTime = player.getCurrentTime();
-        const segmentLength = segmentEnd - segmentStart;
-        const elapsed = Math.max(0, currentTime - segmentStart);
-        const percentage = Math.min(100, (elapsed / segmentLength) * 100);
-        document.getElementById('progress-bar').style.width = `${percentage}%`;
         
-        // Update current phrase highlight
-        updateCurrentPhrase();
-
-        if (currentTime >= segmentEnd) {
-          player.pauseVideo();
-          showPlayButton();
+        // Add any remaining text after the last token
+        if (lastIndex < phrase.text_l1.length) {
+          html += phrase.text_l1.substring(lastIndex);
         }
-      }, 100);
-    }
-
-    function togglePlayback() {
-      if (!player) return;
-      const state = player.getPlayerState();
-
-      if (state !== YT.PlayerState.PLAYING) {
-        player.seekTo(segmentStart);
-        player.playVideo();
-        hidePlayButton();
-        monitorPlayback();
-        isPlaying = true;
+        
+        phraseElement.innerHTML = html;
       } else {
-        player.pauseVideo();
-        showPlayButton();
-        isPlaying = false;
+        // Fallback if no tokens
+        phraseElement.textContent = phrase.text_l1;
       }
-    }
+      
+      phrasesList.appendChild(phraseElement);
+    });
+    
+    // Add event listeners to all token spans
+    setupTranslationPopups();
+  }
+  
+  function setupTranslationPopups() {
+    const popup = document.getElementById('translation-popup');
+    const popupText = document.getElementById('translation-text');
+    
+    document.querySelectorAll('[data-translation]').forEach(span => {
+      span.addEventListener('click', function(e) {
+        const translation = this.dataset.translation;
+        popupText.textContent = translation;
+        
+        // Position popup near the clicked word
+        popup.style.left = `${e.pageX}px`;
+        popup.style.top = `${e.pageY + 20}px`;
+        popup.classList.remove('hidden');
+        
+        // Prevent event bubbling
+        e.stopPropagation();
+      });
+    });
+    
+    // Close popup when clicking elsewhere
+    document.addEventListener('click', function() {
+      popup.classList.add('hidden');
+    });
+  }
 
-    function onPlayerStateChange(event) {
-      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-        showPlayButton();
-        clearInterval(checkInterval);
-        isPlaying = false;
-      } else if (event.data === YT.PlayerState.PLAYING) {
-        hidePlayButton();
-        isPlaying = true;
-      }
-    }
+  function timestampToSeconds(timestamp) {
+    const parts = timestamp.split(':');
+    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+  }
 
-    function showPlayButton() {
-      document.getElementById('play-button').classList.remove('hidden');
-    }
-
-    function hidePlayButton() {
-      document.getElementById('play-button').classList.add('hidden');
-    }
-
-    // Load YouTube API
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-  </script>
-
-  <style>
-    /* Add viewport meta tag via script if not already present */
-    document.addEventListener('DOMContentLoaded', function() {
-      if (!document.querySelector('meta[name="viewport"]')) {
-        const meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-        document.head.appendChild(meta);
+  function updateCurrentPhrase() {
+    const currentTime = player.getCurrentTime();
+    
+    // Reset all phrases to default color
+    const allPhrases = document.querySelectorAll('#phrases-list div');
+    allPhrases.forEach(phrase => {
+      phrase.classList.remove('bg-gray-700');
+      phrase.classList.add('bg-gray-800');
+    });
+    
+    // Find and highlight the current phrase
+    phrases.forEach((phrase, index) => {
+      const phraseTime = timestampToSeconds(phrase.timestamp);
+      const nextPhraseTime = (index < phrases.length - 1) ? 
+        timestampToSeconds(phrases[index + 1].timestamp) : segmentEnd;
+        
+      if (currentTime >= phraseTime && currentTime < nextPhraseTime) {
+        const currentPhrase = document.getElementById(`phrase-${index}`);
+        currentPhrase.classList.remove('bg-gray-800');
+        currentPhrase.classList.add('bg-gray-700');
+        
+        // Scroll into view if needed
+        currentPhrase.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
-  </style>
-</div>
+  }
+
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '360',
+      width: '640',
+      videoId: "<%= params[:video_id] %>",
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        modestbranding: 1,
+        disablekb: 1,
+        rel: 0,
+        start: segmentStart
+      },
+      events: {
+        onStateChange: onPlayerStateChange
+      }
+    });
+  }
+
+  function monitorPlayback() {
+    clearInterval(checkInterval);
+    checkInterval = setInterval(() => {
+      const currentTime = player.getCurrentTime();
+      const segmentLength = segmentEnd - segmentStart;
+      const elapsed = Math.max(0, currentTime - segmentStart);
+      const percentage = Math.min(100, (elapsed / segmentLength) * 100);
+      document.getElementById('progress-bar').style.width = `${percentage}%`;
+      
+      // Update current phrase highlight
+      updateCurrentPhrase();
+
+      if (currentTime >= segmentEnd) {
+        player.pauseVideo();
+        showPlayButton();
+      }
+    }, 100);
+  }
+
+  function togglePlayback() {
+    if (!player) return;
+    const state = player.getPlayerState();
+
+    if (state !== YT.PlayerState.PLAYING) {
+      player.seekTo(segmentStart);
+      player.playVideo();
+      hidePlayButton();
+      monitorPlayback();
+      isPlaying = true;
+    } else {
+      player.pauseVideo();
+      showPlayButton();
+      isPlaying = false;
+    }
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+      showPlayButton();
+      clearInterval(checkInterval);
+      isPlaying = false;
+    } else if (event.data === YT.PlayerState.PLAYING) {
+      hidePlayButton();
+      isPlaying = true;
+    }
+  }
+
+  function showPlayButton() {
+    document.getElementById('play-button').classList.remove('hidden');
+  }
+
+  function hidePlayButton() {
+    document.getElementById('play-button').classList.add('hidden');
+  }
+
+  // Load YouTube API
+  const tag = document.createElement('script');
+  tag.src = "https://www.youtube.com/iframe_api";
+  document.head.appendChild(tag);
+</script>
+
+<style>
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Add viewport meta tag via script if not already present */
+document.addEventListener('DOMContentLoaded', function() {
+  if (!document.querySelector('meta[name="viewport"]')) {
+    const meta = document.createElement('meta');
+    meta.name = 'viewport';
+    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
+    document.head.appendChild(meta);
+  }
+});
+
+/* Ensure proper mobile layout */
+@media (max-width: 640px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #player-container {
+    margin-top: 0;
+  }
+}
+</style>
