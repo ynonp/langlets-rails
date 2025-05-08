@@ -16,7 +16,8 @@
 <% trans_items = phrases.map.with_index { |phrase, index| { text: phrase[1], id: index } }.shuffle %>
 
 <div
-  data-controller="match-activity"
+    data-controller="match-activity"
+    data-match-activity-l1-value="<%= params[:l1] %>"
   class="flex-col flex items-center min-h-screen bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-6 text-center">

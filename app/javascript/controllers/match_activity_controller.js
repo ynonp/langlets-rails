@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Connects to data-controller="match-activity-controller.js"
 export default class extends Controller {
   static targets = ['phraseItem', 'progressBar', 'completionMessage'];
-  static values = ['l1'];
+  static values = { l1: String };
 
   initialize() {
     this.selectPhrase = this.selectPhrase.bind(this);
@@ -34,6 +34,7 @@ export default class extends Controller {
       this.clearSelection();
       this.selectFirstItem(clickedItem);
     } else if (previouslySelectedItem.dataset.id === clickedItem.dataset.id) {
+      this.clearSelection();
       this.markMatch(previouslySelectedItem, clickedItem);
       this.updateProgress();
     } else {
@@ -51,7 +52,6 @@ export default class extends Controller {
   }
 
   markMatch(item1, item2) {
-    this.clearSelection();
     [item1, item2].forEach(i => {
       i.classList.remove('text-white');
       i.classList.add('bg-green-200', 'border-green-600', 'text-gray-800');
