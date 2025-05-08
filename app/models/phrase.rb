@@ -24,12 +24,12 @@ class Phrase < ApplicationRecord
       token_text = token["l1_text"]
       token_translation = token["l2_text"]
       token_questions = token["l1_questions"]
-      end_index = start_index + token_text.length - 1
+      end_index = start_index + token_text.length
 
       l2_start_index = token["l2_index"].to_i
-      l2_end_index = l2_start_index + token_translation.length - 1
+      l2_end_index = l2_start_index + token_translation.length
 
-      extracted = text_l1[start_index..end_index]
+      extracted = text_l1[start_index...end_index]
       next if extracted != token_text
 
       TokenTranslation.find_or_create_by(
