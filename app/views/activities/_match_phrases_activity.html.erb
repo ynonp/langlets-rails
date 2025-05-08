@@ -148,16 +148,6 @@ function init() {
 }
 
 init();
-
-// Add viewport meta tag via script if not already present
-document.addEventListener('DOMContentLoaded', function() {
-  if (!document.querySelector('meta[name="viewport"]')) {
-    const meta = document.createElement('meta');
-    meta.name = 'viewport';
-    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    document.head.appendChild(meta);
-  }
-});
 </script>
 
 <style>
@@ -192,10 +182,4 @@ document.addEventListener('DOMContentLoaded', function() {
   position: relative;
 }
 
-.selected::after {
-  content: '✓?';
-  position: absolute;
-  right: 10px;
-  color: #4fd1c5;
-}
 </style> 

@@ -29,7 +29,7 @@ module ActivitiesHelper
     end
 
     safe_join(texts.map do |val|
-      content_tag(:span, val["l1"], {**attributes_map, data: { translation: val["l2"] } })
+      content_tag(:span, val["l1"], {**(val["l2"].present? ? attributes_map : {}), data: { translation: val["l2"] } })
     end)
   end
 end
