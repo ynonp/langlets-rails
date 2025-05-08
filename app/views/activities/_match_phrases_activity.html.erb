@@ -15,13 +15,15 @@
 <% orig_items = phrases.map.with_index { |phrase, index| { text: phrase[0], id: index } } %>
 <% trans_items = phrases.map.with_index { |phrase, index| { text: phrase[1], id: index } }.shuffle %>
 
-<div class="flex-col flex items-center min-h-screen bg-gray-800">
+<div
+  data-controller="match-activity"
+  class="flex-col flex items-center min-h-screen bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Match Madness</h2>
-      <p class="text-gray-400 text-sm sm:text-base">Match each phrase with its translation</p>
-      <div id="progress-bar" class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
-        <div id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
+      <p class="text-gray-400 text-sm sm:text-base"><%= @activity.text_subheader %></p>
+      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+        <div data-match-activity-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>
     </div>
     
@@ -31,7 +33,7 @@
           Original Phrases
         </div>
         <% orig_items.each do |item| %>
-          <button type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="orig"><%= item[:text] %></button>
+          <button data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="orig"><%= item[:text] %></button>
         <% end %>
       </div>
       <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
@@ -39,12 +41,12 @@
           Translations
         </div>
         <% trans_items.each do |item| %>
-          <button type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="trans"><%= item[:text] %></button>
+          <button data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="trans"><%= item[:text] %></button>
         <% end %>
       </div>
     </div>
     
-    <div id="completion-message" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div data-match-activity-target="completionMessage" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
         <p class="text-center sm:text-left text-gray-300">You've matched all the phrases correctly.</p>
@@ -53,102 +55,6 @@
     </div>
   </div>  
 </div>
-
-<script>
-function init() {
-  const items = Array.from(document.querySelectorAll('.phrase-item'));
-  let selectedItem = null;
-  const lang1 = '<%= params[:l1] %>';
-  const lang2 = '<%= params[:l2] %>';
-  let matchedPairs = 0;
-  const totalPairs = <%= phrases.length %>;
-  const progressBar = document.getElementById('progress');
-  const completionMessage = document.getElementById('completion-message');
-
-  updateProgress();
-
-  items.forEach(item => {
-    item.addEventListener('click', () => {
-      if (item.classList.contains('matched')) return;
-      const side = item.dataset.side;
-      const id = item.dataset.id;
-
-      if (!selectedItem || selectedItem.dataset.side === side) {
-        // Deselect previous item from same side
-        if (selectedItem && selectedItem.dataset.side === side) {
-          selectedItem.classList.remove('selected', 'bg-gray-600', 'border-gray-500');
-        }
-        
-        // Select new item
-        selectedItem = item;
-        item.classList.add('selected');
-        
-        // Speak if it's an original phrase
-        if (side === 'orig') speakPhrase(item.innerText.trim(), lang1);
-      } else {
-        // Check for match
-        if (selectedItem.dataset.id === id) {
-          // Match success!
-          selectedItem.classList.remove('selected', 'text-white');
-          item.classList.remove('text-white');
-
-          selectedItem.classList.add('matched', 'bg-green-200', 'border-green-600', 'text-gray-800');
-          item.classList.add('matched', 'bg-green-200', 'border-green-600', 'text-gray-800');
-          
-          // Add success animation
-          [selectedItem, item].forEach(el => {
-            el.classList.add('animate-pulse');
-            setTimeout(() => el.classList.remove('animate-pulse'), 1000);
-          });
-          
-          selectedItem.disabled = true;
-          item.disabled = true;
-          
-          // Update progress
-          matchedPairs++;
-          updateProgress();
-          
-          // Check if game completed
-          if (matchedPairs === totalPairs) {
-            completionMessage.classList.remove('hidden');
-            completionMessage.classList.add('animate-fade-in');
-          }
-        } else {
-          // Mismatch - shake effect
-          selectedItem.classList.add('animate-shake');
-          item.classList.add('animate-shake');
-          
-          setTimeout(() => {
-            selectedItem.classList.remove('animate-shake');
-            item.classList.remove('animate-shake');
-          }, 500);
-          
-          selectedItem.classList.remove('selected');
-        }
-        selectedItem = null;
-      }
-    });
-  });
-
-  function updateProgress() {
-    const percentage = (matchedPairs / totalPairs) * 100;
-    progressBar.style.width = `${percentage}%`;
-  }
-
-  function speakPhrase(text, lang) {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang;
-      const voices = speechSynthesis.getVoices();
-      const voice = voices.find(v => v.lang === lang);
-      if (voice) utterance.voice = voice;
-      speechSynthesis.speak(utterance);
-    }
-  }
-}
-
-init();
-</script>
 
 <style>
 @keyframes shake {

@@ -11,13 +11,13 @@
     data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-video-player-current-text-line-class="text-red-400"
 >
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Video Activity</h2>
-      <p class="text-sm sm:text-base text-gray-400">Watch the video and pay attention to the phrases</p>
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
+      <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
     
-    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black mb-6">
+    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black ">
       <div data-video-player-target="player" class="w-full h-full pointer-events-none"></div>
 
       <!-- Overlay Play Button -->
@@ -39,21 +39,18 @@
     <div
         data-controller="popover-translation"
         id="phrases-container"
-        class="w-full mx-auto bg-gray-700 p-4 rounded-lg mb-6"
+        class="w-full mx-auto bg-gray-700 border border-1 border-gray-600"
         >
-      <div class="text-center px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg">
-        Phrases
-      </div>
       <div
-        id="phrases-list" class="text-white text-sm sm:text-base mt-3">
+        id="phrases-list" class="text-white text-sm sm:text-base">
         <!-- Phrases will be inserted here by JavaScript -->
         <% phrases.each do |phrase| %>
           <div
             data-video-player-target="subtitles"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
-            class="my-2 px-4 py-3 border border-gray-600 rounded-lg bg-gray-800 transition-all duration-200">
+            class="px-4 py-3 bg-gray-800 transition-all duration-200">
             <%= wrap_tokens_in_spans(phrase,
-                                     {class: "cursor-pointer hover:bg-gray-600 hover:px-1 rounded"}) %>
+                                     {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
           </div>
         <% end %>
       </div>
