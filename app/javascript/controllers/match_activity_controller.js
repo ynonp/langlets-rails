@@ -9,14 +9,6 @@ export default class extends Controller {
     this.selectPhrase = this.selectPhrase.bind(this);
   }
 
-  connect() {
-    this.element.addEventListener('click', this.selectPhrase);
-  }
-
-  disconnect() {
-    this.element.removeEventListener('click', this.selectPhrase);
-  }
-
   selectPhrase(ev) {
     const clickedItem = ev.target;
     if (clickedItem.dataset.id == null) return;

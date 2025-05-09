@@ -34,7 +34,7 @@
           Original Phrases
         </div>
         <% orig_items.each do |item| %>
-          <button data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="orig"><%= item[:text] %></button>
+          <button data-action="click->match-activity#selectPhrase" data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="orig"><%= item[:text] %></button>
         <% end %>
       </div>
       <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
@@ -42,7 +42,7 @@
           Translations
         </div>
         <% trans_items.each do |item| %>
-          <button data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="trans"><%= item[:text] %></button>
+          <button data-action="click->match-activity#selectPhrase" data-match-activity-target="phraseItem" type="button" class="phrase-item px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 min-h-[60px] sm:min-h-[72px] flex items-center justify-center text-center text-xs sm:text-base" data-id="<%= item[:id] %>" data-side="trans"><%= item[:text] %></button>
         <% end %>
       </div>
     </div>

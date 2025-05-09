@@ -1,0 +1,22 @@
+<div
+    data-controller="video-player"
+    data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+    data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
+    data-video-player-mini-player-value="true"
+    data-video-player-video-id-value="<%= params[:video_id] %>"
+    id="audio-player-container"
+    class="mb-6 px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 rounded-lg">
+    <div class="flex items-center space-x-3">
+      <button data-video-player-target="playButton" data-action="click->video-player#togglePlayback" id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+        ▶
+      </button>
+      <div class="flex-1 h-2 bg-gray-600 rounded-full">
+        <div
+            data-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
+      </div>
+    </div>
+    <!-- Hidden YouTube Player -->
+    <div data-video-player-target="player" id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
+</div>
+
+

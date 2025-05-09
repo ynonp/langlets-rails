@@ -7,6 +7,9 @@ import { application } from "./application"
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import FindWordsController from "./find_words_controller"
+application.register("find-words", FindWordsController)
+
 import MatchActivityController from "./match_activity_controller"
 application.register("match-activity", MatchActivityController)
 
@@ -15,6 +18,9 @@ application.register("multiselect", MultiselectController)
 
 import PopoverTranslationController from "./popover_translation_controller"
 application.register("popover-translation", PopoverTranslationController)
+
+import SortPhrasesActivityController from "./sort_phrases_activity_controller"
+application.register("sort-phrases-activity", SortPhrasesActivityController)
 
 import VideoPlayerController from "./video_player_controller"
 application.register("video-player", VideoPlayerController)

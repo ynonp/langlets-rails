@@ -14,12 +14,19 @@ export default class extends Controller {
   initialize() {
     this.player = YouTubePlayer(this.playerTarget, {
       videoId: this.videoIdValue,
-      playerVars: { controls: 0 },
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        start: this.segmentStartValue,
+        modestbranding: 1,
+      },
     });
     this.monitorPlaybackInterval = null;
   }
 
   connect() {
+    console.log(this.progressBarTarget);
+    console.log(this.subtitlesTargets);
     this.player.on('stateChange', (event) => {
       if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
         this.showPlayButton();
@@ -39,6 +46,7 @@ export default class extends Controller {
   }
 
   async togglePlayback() {
+    console.log('a');
     const {player, segmentStartValue} = this;
 
     const state = await player.getPlayerState();
@@ -57,7 +65,12 @@ export default class extends Controller {
   }
 
   showPlayButton() {
-    this.playButtonTarget.classList.remove('hidden');
+    if (this.miniPlayerValue) {
+      this.playButtonTarget.textContent = '▶';
+    } else {
+      this.playButtonTarget.classList.remove('hidden');
+    }
+
     const subtitlesLines = this.subtitlesTargets;
     for (let i=0; i < subtitlesLines.length; i++) {
       subtitlesLines[i].classList.remove(this.currentTextLineClass);
@@ -65,7 +78,11 @@ export default class extends Controller {
   }
 
   hidePlayButton() {
-    this.playButtonTarget.classList.add('hidden');
+    if (this.miniPlayerValue) {
+      this.playButtonTarget.textContent = '❚❚';
+    } else {
+      this.playButtonTarget.classList.add('hidden');
+    }
   }
 
   checkIfVideoEnded(currentTime) {
