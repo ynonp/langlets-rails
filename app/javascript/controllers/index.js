@@ -4,11 +4,14 @@
 
 import { application } from "./application"
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+import FindAnswersController from "./find_answers_controller"
+application.register("find-answers", FindAnswersController)
 
 import FindWordsController from "./find_words_controller"
 application.register("find-words", FindWordsController)
+
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
 
 import MatchActivityController from "./match_activity_controller"
 application.register("match-activity", MatchActivityController)
@@ -21,6 +24,9 @@ application.register("popover-translation", PopoverTranslationController)
 
 import SortPhrasesActivityController from "./sort_phrases_activity_controller"
 application.register("sort-phrases-activity", SortPhrasesActivityController)
+
+import SpeakActivityController from "./speak_activity_controller"
+application.register("speak-activity", SpeakActivityController)
 
 import VideoPlayerController from "./video_player_controller"
 application.register("video-player", VideoPlayerController)

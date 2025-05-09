@@ -2,186 +2,49 @@
   params: { "text": [ { "id": 447, "text": "Ya llevo un rato mirándote", "translation": "I've been looking at you for a while now" }, { "id": 448, "text": "Tengo que bailar contigo hoy", "translation": "I have to dance with you today" }, { "id": 449, "text": "Tu mirada ya estaba llamándome", "translation": "Your gaze was already calling me" }, { "id": 450, "text": "Muéstrame el camino que yo voy", "translation": "Show me the way that I go" } ], "questions": [ { "phrase_id": 447, "questions": [ { "id": 5, "question": "¿Desde cuándo te miro?", "answer_start": 0, "answer_end": 1 }, { "id": 7, "question": "¿Cuánto tiempo miro?", "answer_start": 9, "answer_end": 15 }, { "id": 8, "question": "¿Qué estoy haciendo?", "answer_start": 17, "answer_end": 25 } ] }, { "phrase_id": 448, "questions": [ { "id": 10, "question": "¿Qué tienes que hacer hoy?", "answer_start": 10, "answer_end": 15 }, { "id": 11, "question": "¿Con quién bailas?", "answer_start": 17, "answer_end": 23 }, { "id": 12, "question": "¿Cuándo bailas?", "answer_start": 25, "answer_end": 27 } ] }, { "phrase_id": 449, "questions": [ { "id": 14, "question": "¿Qué me llamaba?", "answer_start": 3, "answer_end": 8 }, { "id": 15, "question": "¿Cuándo me llamaba?", "answer_start": 10, "answer_end": 11 }, { "id": 17, "question": "¿Qué hacía tu mirada?", "answer_start": 20, "answer_end": 29 } ] }, { "phrase_id": 450, "questions": [ { "id": 18, "question": "¿Qué pide el hablante?", "answer_start": 0, "answer_end": 8 }, { "id": 19, "question": "¿Qué debe mostrar?", "answer_start": 10, "answer_end": 18 }, { "id": 21, "question": "¿Quién va?", "answer_start": 24, "answer_end": 25 } ] } ] }
 %>
 
-<div class="flex-col flex items-center min-h-screen bg-gray-800" data-controller="find-words">
+<div
+    class="flex-col flex items-center min-h-screen bg-gray-800"
+    data-controller="find-answers"
+    data-find-answers-questions-value="<%= params[:questions].to_json %>"
+    data-find-answers-current-question-value="0"
+>
   <div class="w-full max-w-[800px] bg-gray-800 p-6 rounded-lg text-white">
     <div class="mb-6">
       <%= render partial: 'activities/activity_progress_bar' %>
     </div>
-    <h2 id="current-question" class="text-xl mb-4 font-semibold text-center"></h2>
+    <h2
+        data-find-answers-target="question"
+        id="current-question"
+        class="text-xl mb-4 font-semibold text-center">
+    </h2>
     
     <div class="flex gap-4">
       <div id="phrases-container" class="mt-4 space-y-4 flex-1">
-        <!-- Phrases will be inserted here by JavaScript -->
+        <% params[:phrases].each do |p| %>
+          <div class="text-lg rounded">
+            <%= wrap_tokens_in_spans(p,
+                                     data: {
+                                       action: 'click->find-answers#checkAnswer',
+                                     }) %>
+          </div>
+        <% end %>
       </div>
       
       <div id="translations-container" class="mt-4 space-y-4 flex-1 text-gray-400">
-        <!-- Translations will be inserted here by JavaScript -->
+        <% params[:text].each do |t| %>
+          <div class="text-lg rounded">
+            <%= t[:translation] %>
+          </div>
+        <% end %>
       </div>
     </div>
     
-    <div id="success-message" class="hidden mt-6 text-center">
+    <div 
+      data-find-answers-target="completionMessage"
+      id="success-message" class="hidden mt-6 text-center">
       <h3 class="text-xl font-bold text-green-500 mb-4">Good Work!</h3>
       <%= link_to "Next", @next_activity_path, { class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-center inline-block" } %>
     </div>
   </div>
 </div>
 
-<script>
-  document.addEventListener("turbo:load", function() {
-    initFindAnswerActivity();
-  });
-  
-  function initFindAnswerActivity() {
-    const phrasesContainer = document.getElementById('phrases-container');
-    const translationsContainer = document.getElementById('translations-container');
-    if (!phrasesContainer || !translationsContainer) return; // Only run on this page
-    
-    const data = <%= raw params.to_json %>;
-    const phrases = data.text;
-    const questionGroups = data.questions;
-    
-    // Select one random question from each phrase
-    const selectedQuestions = [];
-    
-    questionGroups.forEach(group => {
-      // Pick a random question from this phrase group
-      if (group.questions.length > 0) {
-        const randomIndex = Math.floor(Math.random() * group.questions.length);
-        selectedQuestions.push({
-          phraseId: group.phrase_id,
-          question: group.questions[randomIndex]
-        });
-      }
-    });
-    
-    let currentQuestionIndex = 0;
-    let answeredQuestions = [];
-    
-    function renderAllPhrases() {
-      // Clear the phrases container
-      phrasesContainer.innerHTML = '';
-      translationsContainer.innerHTML = '';
-      
-      // Get the current question to display
-      const currentQuestion = selectedQuestions[currentQuestionIndex];
-      
-      if (!currentQuestion) return;
-      
-      // Display the current question
-      document.getElementById('current-question').textContent = currentQuestion.question.question;
-      
-      // Render all phrases
-      phrases.forEach((phrase) => {
-        // Create a container for the phrase
-        const phraseDiv = document.createElement('div');
-        phraseDiv.className = `text-lg rounded`;
-        phraseDiv.id = `phrase-${phrase.id}`;
-        
-        // Create a container for the translation
-        const translationDiv = document.createElement('div');
-        translationDiv.className = `text-lg rounded`;
-        translationDiv.id = `translation-${phrase.id}`;
-        translationDiv.textContent = phrase.translation;
-        
-        // Find if this phrase contains the current question or an answered question
-        const hasCurrentQuestion = (phrase.id === currentQuestion.phraseId);
-        
-        // Process the phrase text to wrap the answers in spans
-        let phraseHtml = '';
-        let lastIndex = 0;
-        
-        // Get all selected questions for this phrase (should be 0 or 1)
-        const questionsForThisPhrase = selectedQuestions.filter(q => q.phraseId === phrase.id);
-        
-        // Sort questions by answer_start to process in order
-        const sortedQuestions = [...questionsForThisPhrase].sort((a, b) => 
-          a.question.answer_start - b.question.answer_start);
-        
-        // Process the selected question for this phrase to create spans for answers
-        sortedQuestions.forEach((selectedQ) => {
-          const q = selectedQ.question;
-          
-          // Add text before this answer
-          phraseHtml += escapeHtml(phrase.text.substring(lastIndex, q.answer_start));
-          
-          // Add the answer as a span with appropriate data attributes
-          const answerText = phrase.text.substring(q.answer_start, q.answer_end + 1);
-          const isAnswered = answeredQuestions.includes(q.id);
-          const isCurrentQuestion = selectedQ === currentQuestion;
-          
-          phraseHtml += `<span 
-            class="cursor-pointer px-0.5 rounded ${isAnswered ? 'bg-green-500 text-white' : 'hover:bg-gray-600'}" 
-            data-question-id="${q.id}"
-            data-phrase-id="${phrase.id}"
-            data-is-answer="true">
-            ${escapeHtml(answerText)}
-          </span>`;
-          
-          lastIndex = q.answer_end + 1;
-        });
-        
-        // Add any remaining text after the last answer
-        if (lastIndex < phrase.text.length) {
-          phraseHtml += escapeHtml(phrase.text.substring(lastIndex));
-        }
-        
-        phraseDiv.innerHTML = phraseHtml;
-        phrasesContainer.appendChild(phraseDiv);
-        translationsContainer.appendChild(translationDiv);
-      });
-      
-      // Add click event listeners to answer spans
-      document.querySelectorAll('[data-is-answer="true"]').forEach(span => {
-        span.addEventListener('click', handleAnswerClick);
-      });
-      
-      // Scroll to the current phrase if needed
-      const currentPhraseElement = document.getElementById(`phrase-${currentQuestion.phraseId}`);
-      if (currentPhraseElement) {
-        currentPhraseElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      }
-    }
-    
-    function handleAnswerClick(event) {
-      const clickedQuestionId = parseInt(event.target.dataset.questionId);
-      const clickedPhraseId = parseInt(event.target.dataset.phraseId);
-      const currentQuestion = selectedQuestions[currentQuestionIndex];
-      
-      // Check if the clicked answer matches the current question
-      if (clickedQuestionId === currentQuestion.question.id && clickedPhraseId === currentQuestion.phraseId) {
-        // Mark the question as answered
-        answeredQuestions.push(clickedQuestionId);
-        
-        // Style the answer as correct
-        event.target.classList.remove('hover:bg-yellow-600', 'hover:bg-gray-600');
-        event.target.classList.add('bg-green-500', 'text-white');
-        
-        // Move to the next question
-        moveToNextQuestion();
-      }
-    }
-    
-    function moveToNextQuestion() {
-      // Check if there are more questions
-      if (currentQuestionIndex < selectedQuestions.length - 1) {
-        currentQuestionIndex++;
-        renderAllPhrases();
-      } 
-      // All questions answered, show success message
-      else {
-        document.getElementById('current-question').textContent = '';
-        document.getElementById('success-message').classList.remove('hidden');
-      }
-    }
-    
-    // Helper function to escape HTML
-    function escapeHtml(text) {
-      const div = document.createElement('div');
-      div.textContent = text;
-      return div.innerHTML;
-    }
-    
-    // Start the activity
-    renderAllPhrases();
-  }
-</script>

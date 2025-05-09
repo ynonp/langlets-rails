@@ -25,8 +25,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.progressBarTarget);
-    console.log(this.subtitlesTargets);
     this.player.on('stateChange', (event) => {
       if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
         this.showPlayButton();
@@ -46,7 +44,6 @@ export default class extends Controller {
   }
 
   async togglePlayback() {
-    console.log('a');
     const {player, segmentStartValue} = this;
 
     const state = await player.getPlayerState();

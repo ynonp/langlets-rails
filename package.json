@@ -15,6 +15,7 @@
     "@hotwired/turbo-rails": "8.0.13",
     "@shopify/draggable": "1.1.4",
     "@tailwindcss/cli": "^4.1.4",
+    "microsoft-cognitiveservices-speech-sdk": "1.43.1",
     "sortablejs": "1.15.6",
     "tailwindcss": "^4.1.4",
     "youtube-player": "5.6.0"
