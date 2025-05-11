@@ -3,7 +3,7 @@ import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
 
 // Connects to data-controller="speak-activity"
 export default class extends Controller {
-  static targets = ['revealL1Text', 'l1Text', 'micIcon', 'recordingIcon', 'pronunciationText', 'assessmentResult', 'completionMessage'];
+  static targets = ['revealL1Text', 'l1Text', 'micIcon', 'recordingIcon', 'pronunciationText', 'assessmentResult', 'completionMessage', 'accuracyScore', 'fluencyScore', 'completenessScore'];
   static values = {
     l1: String,
     fulltext: String,
@@ -106,9 +106,9 @@ export default class extends Controller {
     const scores = nbest.PronunciationAssessment || {};
 
     // Set scores
-    accuracyScore.textContent = Math.round(scores.AccuracyScore || 0);
-    fluencyScore.textContent = Math.round(scores.FluencyScore || 0);
-    completenessScore.textContent = Math.round(scores.CompletenessScore || 0);
+    this.accuracyScoreTarget.textContent = Math.round(scores.AccuracyScore || 0);
+    this.fluencyScoreTarget.textContent = Math.round(scores.FluencyScore || 0);
+    this.completenessScoreTarget.textContent = Math.round(scores.CompletenessScore || 0);
 
     // Format the text with error highlighting
     const words = nbest.Words || [];

@@ -22,8 +22,9 @@
 <% text_item = params[:phrases].first %>
 
 <div
-    data-speak-activity-fulltext-text-value="<%= params[:phrases].first.text_l1 %>"
-    data-speak-activity-l1-value="es-SP"
+    data-controller="speak-activity"
+    data-speak-activity-fulltext-value="<%= params[:phrases].first.text_l1 %>"
+    data-speak-activity-l1-value="<%= params[:azure_speech_name] %>"
   class="flex-col flex items-center min-h-screen bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
@@ -45,7 +46,7 @@
             data-action="click->speak-activity#revealL1Text"
             id="text-l1-hidden"
             class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
-          --- Reveal Text In <%= params[:l1] %> ---
+          --- Hint: Show Text In <%= params[:l1] %> ---
         </div>
         <div
             data-speak-activity-target="l1Text"
@@ -109,15 +110,15 @@
           id="pronunciation-text" class="text-white text-center py-2"></div>
         <div class="flex justify-between mt-4">
           <div class="text-center">
-            <div class="text-lg font-bold text-white" id="accuracy-score">0</div>
+            <div data-speak-activity-target="accuracyScore" class="text-lg font-bold text-white" id="accuracy-score">0</div>
             <div class="text-sm text-gray-400">Accuracy</div>
           </div>
           <div class="text-center">
-            <div class="text-lg font-bold text-white" id="fluency-score">0</div>
+            <div data-speak-activity-target="fluencyScore" class="text-lg font-bold text-white" id="fluency-score">0</div>
             <div class="text-sm text-gray-400">Fluency</div>
           </div>
           <div class="text-center">
-            <div class="text-lg font-bold text-white" id="completeness-score">0</div>
+            <div data-speak-activity-target="completenessScore" class="text-lg font-bold text-white" id="completeness-score">0</div>
             <div class="text-sm text-gray-400">Completeness</div>
           </div>
         </div>

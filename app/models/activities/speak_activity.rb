@@ -5,6 +5,7 @@ module Activities
       phrase = phrases.sample
       {
         **video_params,
+        azure_speech_name: phrase.l1.pronunciation_variant_name,
         l1: phrase.l1.english_name,
         l2: phrase.l2.english_name,
         phrases: phrases.where(id: phrase.id).includes(:token_translations),
