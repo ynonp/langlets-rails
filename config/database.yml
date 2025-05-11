@@ -28,6 +28,7 @@ test:
 production:
   primary:
     <<: *default
+    url: <%= ENV["LANGLETS_DATABASE_URL"] %>
     database: langlets
   cache:
     <<: *default
