@@ -28,7 +28,7 @@ test:
 production:
   primary:
     <<: *default
-    url: <%= ENV["LANGLETS_DATABASE_URL"] %>
+    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
     database: langlets
   cache:
     <<: *default
