@@ -12,6 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
+  url: "postgresql://neondb_owner:npg_HhAWsnG5LDl7@ep-late-band-abwp6hx9-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require"
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: langlets-dev
 
@@ -20,6 +21,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
+  adapter: sqlite3
   database: langlets-test
 
 
