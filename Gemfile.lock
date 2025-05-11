@@ -136,6 +136,7 @@ GEM
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
+    fiddle (1.1.8)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -476,6 +477,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  fiddle (~> 1.1)
   gemini-ai (~> 4.2)
   httparty (~> 0.23.1)
   jbuilder

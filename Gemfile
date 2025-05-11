@@ -76,3 +76,5 @@ gem "httparty", "~> 0.23.1"
 gem "pg", "~> 1.5"
 
 gem "ruby-openai", "~> 8.1"
+
+gem "fiddle", "~> 1.1"
