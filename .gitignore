@@ -39,3 +39,5 @@
 /node_modules
 /audio/
 /config/credentials/development.key
+
+/config/credentials/production.key

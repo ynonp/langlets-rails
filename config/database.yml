@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: postgresql
   encoding: unicode
-  url: "postgresql://neondb_owner:zzz@ep-late-band-abwp6hx9-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require"
+  url: "postgresql://neondb_owner1:zzz@ep-late-band-abwp6hx9-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require"
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: langlets-dev
 
@@ -30,7 +30,7 @@ test:
 production:
   primary:
     <<: *default
-    url: <%= Rails.application.credentials.dig(:db, :production, :url) || "postgresql://neondb_owner:xxx@ep-late-band-abwp6hx9-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require" %>
+    url: <%= Rails.application.credentials.dig(:db, :production, :url) || "postgresql://neondb_owner2:xxx@ep-late-band-abwp6hx9-pooler.eu-west-2.aws.neon.tech/neondb?sslmode=require" %>
     database: langlets
   cache:
     <<: *default
