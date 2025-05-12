@@ -83,7 +83,7 @@ export default class extends Controller {
   }
 
   checkIfVideoEnded(currentTime) {
-    if (currentTime >= this.segmentEndValue) {
+    if (currentTime >= this.segmentEndValue + 3) {
       this.player.pauseVideo();
       this.showPlayButton();
     }

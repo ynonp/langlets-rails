@@ -2,7 +2,7 @@ class Phrase < ApplicationRecord
   belongs_to :medium
   belongs_to :l1, class_name: :Language
   belongs_to :l2, class_name: :Language
-  has_many :token_translations
+  has_many :token_translations, dependent: :destroy
   has_timestamp [:timestamp]
 
   scope :between_durations, ->(from, to) {

@@ -17,8 +17,8 @@ class Activity < ApplicationRecord
   def video_params
     {
       video_id: lesson.medium.extract_youtube_video_id,
-      start_timestamp: lesson.start_timestamp,
-      end_timestamp: lesson.end_timestamp
+      start_timestamp: phrases.order(timestamp: :asc).first.timestamp,
+      end_timestamp: phrases.order(timestamp: :desc).first.timestamp,
     }
-  end  
+  end
 end

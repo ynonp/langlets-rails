@@ -47,3 +47,48 @@ l.save!
 a = Activities::WatchVideoActivity.create!(lesson: l, order: 1, phrases: medium.phrases)
 a.phrases << medium.phrases
 l.activities << a
+
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
+a.phrases << medium.phrases.first(6)
+l.activities << a
+
+# Phrase.find_by(text_l1: '¿Puedes hablar más despacio?').create_mappings
+# Phrase.find_by(text_l1: '¿Qué recomiendas?').create_mappings
+# Phrase.find_by(text_l1: '¿A qué hora...?').create_mappings
+# Phrase.find_by(text_l1: 'Necesito ayuda.').create_mappings
+# Phrase.find_by(text_l1: '¿Puedo usar el baño?').create_mappings
+# Phrase.find_by(text_l1: 'La cuenta, por favor.').create_mappings
+# Phrase.find_by(text_l1: 'No hay problema.').create_mappings
+
+p1 = Phrase.find_by(text_l1: '¿Qué recomiendas?')
+p2 = Phrase.find_by(text_l1: '¿Puedo usar el baño?')
+
+
+TokenTranslation.create!(
+  phrase: p1,
+  l1_start_index: 1,
+  l1_end_index: 4,
+  translation: "What",
+  questions: [],
+  l2_start_index: 0,
+  l2_end_index: 4
+)
+
+TokenTranslation.create!(
+  phrase: p2,
+  l1_start_index: 12,
+  l1_end_index: 18,
+  translation: "The bathroom",
+  questions: [],
+  l2_start_index: 10,
+  l2_end_index: 21
+)
+
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a.phrases << p1
+a.phrases << p2
+l.activities << a
+
+a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a.phrases << p2
+l.activities << a
