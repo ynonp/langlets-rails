@@ -48,7 +48,7 @@ a = Activities::WatchVideoActivity.create!(lesson: l, order: 1, phrases: medium.
 a.phrases << medium.phrases
 l.activities << a
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, text_header: 'Match each phrase to its translation', order: 2)
 a.phrases << medium.phrases.first(4)
 l.activities << a
 
