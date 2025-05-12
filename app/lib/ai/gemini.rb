@@ -60,7 +60,7 @@ END
           }
         ]
       }.to_json
-      response = HTTParty.post(url, headers: headers, body: body)
+      response = HTTParty.post(url, headers: headers, body: body, timeout: 600)
 
       pp response
       parse_llm_json_response(response.parsed_response)
@@ -225,7 +225,7 @@ END
           }
         ]
       }.to_json
-      response = HTTParty.post(url, headers: headers, body: body)
+      response = HTTParty.post(url, headers: headers, body: body, timeout: 600)
       parse_llm_json_response(response.parsed_response)
     end
 
