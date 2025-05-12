@@ -116,7 +116,7 @@ export default class extends Controller {
 
     // Determine which original words were pronounced, omitted, or mispronounced
     const wordStatusMap = {};
-    const originalWords = this.fulltextValue.split(/\s+/);
+    const originalWords = this.fulltextValue.split(/[\p{P}\p{Z}]+/u).filter(Boolean)
 
     originalWords.forEach((word, i) => {
       const matchingWord = words.find(w => w.Word.toLowerCase() === word.toLowerCase());
@@ -131,6 +131,7 @@ export default class extends Controller {
 
     // Look for insertions (words in the assessment that aren't in the original)
     words.forEach(assessedWord => {
+
       const wordLower = assessedWord.Word.toLowerCase();
       const isInOriginal = originalWords.some(w => w.toLowerCase() === wordLower);
 
@@ -146,6 +147,7 @@ export default class extends Controller {
           errorType: 'Insertion', 
           assessedWord 
         };
+        console.log(wordStatusMap);
       }
     });
 
