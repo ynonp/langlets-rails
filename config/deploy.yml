@@ -2,7 +2,7 @@
 service: langlets
 
 # Name of the container image.
-image: ynonp-kamal/langlets
+image: ynonp-kamal-2/langlets
 
 # Deploy to these servers.
 servers:

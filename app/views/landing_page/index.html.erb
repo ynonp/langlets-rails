@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langlets - Embeddable AI-Powered Language Activities</title>
+    <!-- Include Tailwind CSS via Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Optional: You can customize Tailwind here if needed
+        tailwind.config = {
+          theme: {
+            extend: {
+              // Replicate some potential theme colors from the original if needed
+              // These are guesses based on class names like 'primary-600', 'secondary-700' etc.
+              // A full theme replication would require inspecting the original site's computed styles.
+              colors: {
+                primary: {
+                  50: '#f0f9ff', // Example
+                  100: '#e0f2fe',
+                  200: '#bae6fd',
+                  300: '#7dd3fc',
+                  400: '#38bdf8',
+                  500: '#0ea5e9',
+                  600: '#0284c7', // primary-600
+                  700: '#0369a1',
+                },
+                secondary: {
+                    700: '#374151', // secondary-700 (Tailwind gray-700)
+                    800: '#1f2937', // secondary-800 (Tailwind gray-800)
+                    900: '#11182c', // secondary-900 (Tailwind gray-900)
+                },
+                accent: {
+                    100: '#fef3c7', // Example
+                    200: '#fde68a',
+                    300: '#fcd34d',
+                    400: '#fbbf24', // accent-400 (Tailwind amber-400)
+                    500: '#f59e0b',
+                    700: '#b45309',
+                },
+                accentYellow: {
+                    400: '#fbbf24', // accentYellow-400 (Tailwind amber-400)
+                    500: '#f59e0b',
+                }
+              },
+              fontFamily: {
+                // Add custom fonts here if you link them via @import or <link>
+                // sans: ['Inter', 'sans-serif'], // Example if Inter was used
+                // heading: ['Lexend', 'sans-serif'] // Example if Lexend was used
+              }
+            }
+          }
+        }
+      </script>
+    <style type="text/tailwindcss">
+        /* You can add custom CSS layers or base styles here if needed */
+        /* For example, import fonts if you host them or use Google Fonts */
+        /* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@700;800&display=swap'); */
+
+        /* Apply base font families if needed */
+        body {
+            /* font-family: 'Inter', sans-serif; */ /* Example */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            /* font-family: 'Lexend', sans-serif; */ /* Example */
+        }
+        /* Recreate simple placeholder style if needed */
+        .placeholder-box {
+            @apply flex items-center justify-center border rounded bg-gray-100 text-gray-500 text-xs text-center p-2;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-primary-600">Langlets</a>
+            <div class="hidden md:flex items-center space-x-2">
+                <a href="#ai-features" class="text-secondary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">AI Features</a>
+                <a href="#full-activities" class="text-secondary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Activities</a>
+                <!-- <a href="#pricing" class="text-secondary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Pricing</a> --> <!-- Pricing removed as it wasn't in the provided HTML -->
+                <a href="#testimonials" class="text-secondary-700 hover:text-primary-600 px-3 py-2 rounded-md text-sm font-medium">Reviews</a>
+            </div>
+            <!-- Mobile menu button removed - static site -->
+        </div>
+    </nav>
+
+    <section id="hero" class="bg-gradient-to-br from-primary-50 via-white to-gray-50 pt-20 pb-12 md:pt-28 md:pb-24">
+        <div class="container mx-auto px-4">
+            <div class="md:flex md:items-center md:justify-between md:gap-12 lg:gap-16">
+                <div class="md:w-1/2 text-left">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-secondary-900 mb-5 leading-tight">
+                        Embeddable Language Activities for Your <span class="text-primary-500 font-extrabold">Spanish</span> Course
+                        <!-- Removed dynamic language selector button -->
+                    </h1>
+                    <p class="text-lg md:text-xl text-secondary-700 max-w-xl mb-8">
+                        Create vibrant, AI-enhanced language learning activities from your existing content and add it to your online language course.
+                    </p>
+                    <span class="text-sm text-gray-500">Get early access to our AI-powered language activities.</span>
+                    <form class="mt-2" action="#" method="POST" onsubmit="alert('Static form: Submission not configured.'); return false;">
+                        <div class="space-y-4 sm:space-y-0 sm:flex sm:space-x-4 mb-4">
+                            <input placeholder="Enter your email" class="inline-block px-8 py-4 w-full rounded-lg border-2 border-gray-300 font-medium text-lg focus:border-primary-600 focus:outline-none transition duration-300 flex-grow" required="" type="email" name="email">
+                            <button type="submit" class="inline-block w-full sm:w-auto bg-accent-400 text-secondary-900 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-accent-500 transition duration-300 shadow-md transform hover:-translate-y-1">
+                                Request Beta Access 🚀
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="md:w-1/2 mt-10 md:mt-0">
+                    <div class="w-full shadow-xl rounded-lg overflow-hidden hidden md:block">
+                        <!-- Static representation of the hero visual -->
+                        <div class="aspect-video bg-gray-200 flex items-center justify-center text-gray-500 font-medium">
+                            <div class="w-full h-full flex flex-col items-center justify-center p-6 bg-gray-50 rounded-xl shadow-md">
+                                <div class="text-2xl md:text-3xl font-bold mb-6 text-secondary-900">
+                                    El <span class="inline-block min-w-[60px] border-b-2 border-primary-400 mx-1 align-middle"> </span> está en la casa.
+                                </div>
+                                <div class="grid grid-cols-2 gap-4 w-full max-w-md">
+                                    <button class="py-3 px-4 rounded-lg text-lg font-medium border transition-colors duration-200 cursor-pointer select-none bg-white border-gray-300 hover:bg-primary-50 text-gray-900" aria-label="gato" disabled>gato</button>
+                                    <button class="py-3 px-4 rounded-lg text-lg font-medium border transition-colors duration-200 cursor-pointer select-none bg-white border-gray-300 hover:bg-primary-50 text-gray-900" aria-label="perro" disabled>perro</button>
+                                    <button class="py-3 px-4 rounded-lg text-lg font-medium border transition-colors duration-200 cursor-pointer select-none bg-white border-gray-300 hover:bg-primary-50 text-gray-900" aria-label="libro" disabled>libro</button>
+                                    <button class="py-3 px-4 rounded-lg text-lg font-medium border transition-colors duration-200 cursor-pointer select-none bg-white border-gray-300 hover:bg-primary-50 text-gray-900" aria-label="niño" disabled>niño</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-16 lg:py-24 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary-800 mb-12">From Content to Interaction in 3 Steps.</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left relative z-10">
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 transition transform hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-100 text-primary-600 rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-3">1</div>
+                        <h3 class="text-xl font-semibold text-secondary-800">Input Your Source</h3>
+                    </div>
+                    <p class="text-secondary-700 text-sm">Paste a URL (YouTube, article, etc.) or upload text/audio. Any content works!</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-xl border-2 border-primary-400 transition transform hover:scale-105 scale-105 md:scale-110 relative z-20">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-600 text-white rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-3">2</div>
+                        <h3 class="text-xl font-semibold text-secondary-800">AI Creates Activities</h3>
+                    </div>
+                    <p class="text-secondary-700 text-sm">Our AI instantly analyzes, understands context, and <strong class="font-semibold text-primary-600">generates diverse, engaging activities</strong> – both standard and unique AI interactions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 transition transform hover:scale-105 hover:shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="bg-primary-100 text-primary-600 rounded-full h-10 w-10 flex items-center justify-center text-lg font-bold mr-3">3</div>
+                        <h3 class="text-xl font-semibold text-secondary-800">Embed & Engage</h3>
+                    </div>
+                    <p class="text-secondary-700 text-sm">Review, tweak if needed, and embed directly into your LMS using LTI or simple code.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-features" class="py-16 lg:py-24 bg-gradient-to-br from-secondary-900 via-secondary-800 to-black text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">The AI Edge: Truly <span class="text-primary-400">Dynamic Language Practice</span>.</h2>
+            <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-16">Go beyond standard drills. Leverage AI for personalized dialogue, pronunciation feedback, role-play simulations, and smart writing assistance – generated from *your* content.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div class="bg-secondary-800/70 backdrop-blur-lg p-6 rounded-xl border border-secondary-700 shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <div class="h-16 w-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-primary-500 to-fuchsia-600 text-white text-3xl shadow-lg">💬</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Dialogue Partner</h3>
+                    <p class="text-gray-300 text-sm mb-4">Practice natural conversation. AI responds based on the lesson topic context.</p>
+                </div>
+                <div class="bg-secondary-800/70 backdrop-blur-lg p-6 rounded-xl border border-secondary-700 shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <div class="h-16 w-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-accent-400 to-accentYellow-500 text-secondary-900 text-3xl shadow-lg">🎤</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Pronunciation Coach</h3>
+                    <p class="text-gray-300 text-sm mb-4">Get instant, targeted feedback on pronunciation & intonation for key terms.</p>
+                </div>
+                <div class="bg-secondary-800/70 backdrop-blur-lg p-6 rounded-xl border border-secondary-700 shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <div class="h-16 w-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-fuchsia-500 to-red-600 text-white text-3xl shadow-lg">🎭</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">AI Role-Play Simulator</h3>
+                    <p class="text-gray-300 text-sm mb-4">Simulate real-world scenarios derived from the lesson with an adaptive AI partner.</p>
+                </div>
+                <div class="bg-secondary-800/70 backdrop-blur-lg p-6 rounded-xl border border-secondary-700 shadow-lg transform hover:-translate-y-2 transition duration-300 ease-in-out">
+                    <div class="h-16 w-16 mx-auto mb-5 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-400 to-orange-500 text-secondary-900 text-3xl shadow-lg">✍️</div>
+                    <h3 class="text-xl font-semibold text-white mb-2">Smart Writing Feedback</h3>
+                    <p class="text-gray-300 text-sm mb-4">Receive AI suggestions on grammar, style, and vocabulary for written exercises.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="full-activities" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary-800 mb-16 text-center">Diverse Activities for Every Skill.</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 xl:gap-8">
+                <!-- Activity Placeholders with SVGs -->
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+                        <svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g transform="translate(0, 0)"><rect x="72" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect><rect x="84" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="96" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="108" y="30" width="8" height="60" fill="#A0AEC0" rx="2"></rect><rect x="120" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="132" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="144" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect></g><g transform="translate(0, 10)"><rect x="30" y="100" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="119" y="100" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="30" y="135" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="119" y="135" width="75" height="25" fill="#A0AEC0" rx="4"></rect></g></svg>
+                    </div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Listen & Click Word</p>
+                </div>
+                 <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><defs><marker id="arrowheadDrag" markerWidth="5" markerHeight="4" refX="4.5" refY="2" orient="auto"><polygon points="0 0, 5 2, 0 4" fill="#A0AEC0"></polygon></marker></defs><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><rect x="22" y="50" width="180" height="30" fill="#A0AEC0" rx="4"></rect><rect x="45" y="50" width="45" height="30" fill="#E2E8F0" stroke="#A0AEC0" stroke-width="1.5" stroke-dasharray="3 2" rx="3"></rect><rect x="134" y="50" width="45" height="30" fill="#E2E8F0" stroke="#A0AEC0" stroke-width="1.5" stroke-dasharray="3 2" rx="3"></rect><g transform="translate(0, 5)"><rect x="50" y="115" width="38" height="22" fill="#A0AEC0" rx="3"></rect><rect x="98" y="115" width="38" height="22" fill="#A0AEC0" rx="3"></rect><rect x="146" y="115" width="38" height="22" fill="#A0AEC0" rx="3"></rect></g><path d="M 117 115 Q 90 95 68 82" stroke="#A0AEC0" stroke-width="2" fill="none" marker-end="url(#arrowheadDrag)"></path></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Drag Words to Sentence</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g transform="translate(0, -5)"><rect x="72" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect><rect x="84" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="96" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="108" y="30" width="8" height="60" fill="#A0AEC0" rx="2"></rect><rect x="120" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="132" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="144" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect></g><g transform="translate(40, 90)"><path d="M20 7 L0 0 L5 7 L0 14 L20 7 Z" fill="#A0AEC0"></path><rect x="-45" y="0" width="35" height="14" fill="#A0AEC0" rx="3"></rect><line x1="18" y1="7" x2="-10" y2="7" stroke="#A0AEC0" stroke-width="1.5"></line></g><g transform="translate(125, 125)"><path d="M20 7 L0 0 L5 7 L0 14 L20 7 Z" fill="#A0AEC0"></path><rect x="-45" y="0" width="35" height="14" fill="#A0AEC0" rx="3"></rect><line x1="18" y1="7" x2="-10" y2="7" stroke="#A0AEC0" stroke-width="1.5"></line></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Click Running Word (Game)</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g id="column1"><rect x="30" y="40" width="70" height="25" fill="#A0AEC0" rx="4"></rect><rect x="30" y="80" width="70" height="25" fill="#A0AEC0" rx="4"></rect><rect x="30" y="120" width="70" height="25" fill="#A0AEC0" rx="4"></rect></g><g id="column2"><rect x="124" y="40" width="70" height="25" fill="#A0AEC0" rx="4"></rect><rect x="124" y="80" width="70" height="25" fill="#A0AEC0" rx="4"></rect><rect x="124" y="120" width="70" height="25" fill="#A0AEC0" rx="4"></rect></g><g id="connecting-lines" stroke="#A0AEC0" stroke-width="1.5" stroke-dasharray="4 3"><line x1="100" y1="52.5" x2="124" y2="92.5"></line><line x1="100" y1="92.5" x2="124" y2="132.5"></line><line x1="100" y1="132.5" x2="124" y2="52.5"></line></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Match Translation</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="224" height="180" rx="12" fill="#E9EFF3"></rect><line x1="30" y1="55" x2="194" y2="55" stroke="#B0BAC3" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 4"></line><rect x="35" y="95" width="45" height="22" rx="4" fill="#B0BAC3"></rect><rect x="90" y="95" width="45" height="22" rx="4" fill="#B0BAC3"></rect><rect x="145" y="95" width="45" height="22" rx="4" fill="#B0BAC3"></rect><rect x="62.5" y="127" width="45" height="22" rx="4" fill="#B0BAC3"></rect><rect x="117.5" y="127" width="45" height="22" rx="4" fill="#B0BAC3"></rect></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Translate Sentence (word bank)</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><rect x="62" y="35" width="100" height="25" fill="#A0AEC0" rx="4"></rect><g><rect x="30" y="85" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="119" y="85" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="30" y="120" width="75" height="25" fill="#A0AEC0" rx="4"></rect><rect x="119" y="120" width="75" height="25" fill="#A0AEC0" rx="4"></rect></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Select Correct Translation</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g id="image-placeholders"><g><rect x="30" y="40" width="75" height="35" fill="#A0AEC0" rx="4"></rect><circle cx="67.5" cy="52" r="3" fill="#E2E8F0"></circle><path d="M 58 65 L 63 58 L 68 62 L 72 58 L 77 65 Z" fill="#E2E8F0"></path></g><g><rect x="30" y="85" width="75" height="35" fill="#A0AEC0" rx="4"></rect><circle cx="67.5" cy="97" r="3" fill="#E2E8F0"></circle><path d="M 58 110 L 63 103 L 68 107 L 72 103 L 77 110 Z" fill="#E2E8F0"></path></g><g><rect x="30" y="130" width="75" height="35" fill="#A0AEC0" rx="4"></rect><circle cx="67.5" cy="142" r="3" fill="#E2E8F0"></circle><path d="M 58 155 L 63 148 L 68 152 L 72 148 L 77 155 Z" fill="#E2E8F0"></path></g></g><g id="word-placeholders"><rect x="119" y="40" width="75" height="35" fill="#A0AEC0" rx="4"></rect><rect x="119" y="85" width="75" height="35" fill="#A0AEC0" rx="4"></rect><rect x="119" y="130" width="75" height="35" fill="#A0AEC0" rx="4"></rect></g><g id="connecting-lines" stroke="#A0AEC0" stroke-width="2" stroke-dasharray="4 2"><line x1="105" y1="57.5" x2="119" y2="102.5"></line><line x1="105" y1="102.5" x2="119" y2="147.5"></line><line x1="105" y1="147.5" x2="119" y2="57.5"></line></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Match Image To Word</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g fill="#A0AEC0"><rect x="47" y="40" width="130" height="8"></rect><rect x="47" y="63" width="130" height="8"></rect><rect x="47" y="86" width="130" height="8"></rect><rect x="47" y="109" width="130" height="8"></rect><rect x="47" y="132" width="130" height="8"></rect></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Reading Comprehension</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g fill="#A0AEC0" transform="translate(40, 55)"><rect x="0" y="15" width="8" height="40"></rect><rect x="12" y="5" width="8" height="60"></rect><rect x="24" y="25" width="8" height="20"></rect><rect x="36" y="10" width="8" height="50"></rect><rect x="48" y="20" width="8" height="30"></rect></g><path d="M 106 90 L 126 90" stroke="#A0AEC0" stroke-width="3" stroke-linecap="round"></path><path d="M 121 85 L 126 90 L 121 95" fill="none" stroke="#A0AEC0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path><g transform="translate(136, 57)"><rect x="10" y="0" width="28" height="45" rx="14" ry="14" fill="#A0AEC0"></rect><rect x="20" y="45" width="8" height="15" fill="#A0AEC0"></rect><rect x="12" y="60" width="24" height="6" rx="3" ry="3" fill="#A0AEC0"></rect><path d="M 0 22.5 A 15 20 0 0 1 8 22.5" fill="none" stroke="#A0AEC0" stroke-width="2" stroke-linecap="round"></path><path d="M 40 22.5 A 15 20 0 0 0 48 22.5" fill="none" stroke="#A0AEC0" stroke-width="2" stroke-linecap="round"></path></g></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Listen & Repeat</p>
+                </div>
+                <div class="text-center group">
+                    <div class="activity-visual-placeholder mb-3 overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105"><svg width="224" height="180" viewBox="0 0 224 180" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif"><rect x="0" y="0" width="224" height="180" fill="#E2E8F0" rx="12" ry="12"></rect><g transform="translate(0, -5)"><rect x="72" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect><rect x="84" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="96" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="108" y="30" width="8" height="60" fill="#A0AEC0" rx="2"></rect><rect x="120" y="50" width="8" height="20" fill="#A0AEC0" rx="2"></rect><rect x="132" y="35" width="8" height="50" fill="#A0AEC0" rx="2"></rect><rect x="144" y="45" width="8" height="30" fill="#A0AEC0" rx="2"></rect></g><rect x="30" y="105" width="164" height="50" fill="#A0AEC0" rx="4"></rect></svg></div>
+                    <p class="text-sm font-medium text-secondary-700 group-hover:text-primary-600 transition-colors">Listen & Write</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="feature-pillars" class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-primary-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary-800 mb-16 text-center">Why Choose the Dynamic AI Approach?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-16">
+                <div class="text-center md:text-left">
+                    <div class="h-20 w-20 mx-auto md:mx-0 mb-5 flex items-center justify-center rounded-2xl bg-primary-200 text-primary-700 text-4xl shadow-md">⏱️</div>
+                    <h3 class="text-xl lg:text-2xl font-semibold text-secondary-800 mb-3">Drastically Reduce Prep Time.</h3>
+                    <p class="text-secondary-700">AI handles the time-consuming task generation. Focus your expertise on teaching, guiding, and connecting with students.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="h-20 w-20 mx-auto md:mx-0 mb-5 flex items-center justify-center rounded-2xl bg-accent-200 text-accent-700 text-4xl shadow-md">🚀</div>
+                    <h3 class="text-xl lg:text-2xl font-semibold text-secondary-800 mb-3">Boost Engagement & Retention.</h3>
+                    <p class="text-secondary-700">Interactive, varied activities, including unique AI practice partners, keep learners motivated and improve learning outcomes.</p>
+                </div>
+                <div class="text-center md:text-left">
+                    <div class="h-20 w-20 mx-auto md:mx-0 mb-5 flex items-center justify-center rounded-2xl bg-fuchsia-200 text-fuchsia-700 text-4xl shadow-md">💡</div>
+                    <h3 class="text-xl lg:text-2xl font-semibold text-secondary-800 mb-3">Activate Any Authentic Content.</h3>
+                    <p class="text-secondary-700">Turn real-world videos, articles, podcasts, or your own texts into powerful, interactive learning tools effortlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="lms-compatibility" class="py-12 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-semibold text-secondary-800 mb-4">Works With Your Workflow.</h3>
+            <p class="text-secondary-700 mb-10 max-w-xl mx-auto">Easily embed activities into your existing LMS via LTI Advantage or simple embed codes. Seamless integration.</p>
+            <div class="grid grid-cols-4 md:grid-cols-7 gap-6 justify-items-center items-center max-w-4xl mx-auto">
+                <!-- Replaced images with styled text placeholders -->
+                <div class="placeholder-box w-28 h-16">Moodle</div>
+                <div class="placeholder-box w-24 h-12">Canvas</div>
+                <div class="placeholder-box w-24 h-12">Blackboard</div>
+                <div class="placeholder-box w-24 h-12">Brightspace</div>
+                <div class="placeholder-box w-24 h-12">Google Classroom</div>
+                <div class="placeholder-box w-24 h-12 bg-white border border-gray-300">Schooler</div>
+                <div class="placeholder-box w-24 h-12 bg-gray-100 border border-gray-300">
+                    <span class="font-medium text-sm text-primary-600">LTI® Advantage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="py-16 lg:py-24 bg-primary-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-secondary-800 mb-16 text-center">Educators Love the AI Advantage.</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
+                <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-100 flex flex-col transition transform hover:scale-[1.02]">
+                    <div class="text-accentYellow-400 mb-2 text-xl">★★★★★</div>
+                    <blockquote class="text-secondary-700 italic mb-6 flex-grow">"Langlets is an indispensable AI partner. Activity creation time is <strong class="font-semibold text-primary-600">down by at least 70%</strong>, freeing teachers for high-impact interaction."</blockquote>
+                    <div class="flex items-center mt-auto">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-primary-200 border-2 border-primary-300 flex items-center justify-center text-primary-600 font-bold">AK</div>
+                        <div>
+                            <p class="font-semibold text-secondary-800">Anna K.</p>
+                            <p class="text-sm text-gray-500">Curriculum Director</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-2xl border-2 border-primary-300 flex flex-col transform scale-105 lg:scale-105 relative z-10">
+                    <div class="text-accentYellow-400 mb-2 text-xl">★★★★★</div>
+                    <blockquote class="text-secondary-700 italic mb-6 flex-grow">"The AI dialogue and pronunciation features are phenomenal. We've seen a <strong class="font-semibold text-primary-600">visible increase in student engagement and confidence</strong>. It's truly dynamic."</blockquote>
+                    <div class="flex items-center mt-auto">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-accent-200 border-2 border-accent-300 flex items-center justify-center text-accent-700 font-bold">DC</div>
+                        <div>
+                            <p class="font-semibold text-secondary-800">David C.</p>
+                            <p class="text-sm text-gray-500">Lead Language Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-xl border border-gray-100 flex flex-col transition transform hover:scale-[1.02]">
+                    <div class="text-accentYellow-400 mb-2 text-xl">★★★★★</div>
+                    <blockquote class="text-secondary-700 italic mb-6 flex-grow">"Integration via LTI was seamless. Langlets is the <strong class="font-semibold text-primary-600">best solution we've found for leveraging authentic materials</strong> and adding real interactivity."</blockquote>
+                    <div class="flex items-center mt-auto">
+                        <div class="w-12 h-12 rounded-full mr-4 bg-fuchsia-200 border-2 border-fuchsia-300 flex items-center justify-center text-fuchsia-700 font-bold">MG</div>
+                        <div>
+                            <p class="font-semibold text-secondary-800">Maria G.</p>
+                            <p class="text-sm text-gray-500">E-Learning Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="final-cta" class="py-20 lg:py-32 bg-gradient-to-r from-primary-700 via-fuchsia-600 to-secondary-900 text-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 leading-tight">Ready for Smarter, Dynamic Language Lessons?</h2>
+            <p class="text-lg md:text-xl text-primary-100 mb-10 max-w-3xl mx-auto">Join educators transforming their teaching with Langlets's AI. Save time, boost engagement, and unlock powerful new ways to practice language.</p>
+            <a href="#hero" class="inline-block bg-accent-400 text-secondary-900 px-10 py-4 rounded-lg font-bold text-xl hover:bg-accent-500 transition duration-300 shadow-2xl transform hover:scale-105">Start Your Free AI Trial Today</a>
+            <p class="mt-8 text-primary-200">Questions? <a href="mailto:info@langlets.com" class="font-semibold hover:text-white underline">We're always glad to help!</a></p>
+        </div>
+    </section>
+
+    <footer id="contact-footer" class="bg-secondary-900 text-gray-400 py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-10">
+                <div class="col-span-2 lg:col-span-1">
+                    <a href="#" class="text-xl font-bold text-white mb-3 block">Langlets</a>
+                    <p class="text-sm mb-4">Dynamic AI-powered language activities.</p>
+                    <!-- Social media icons could be added here -->
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Product</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#ai-features" class="hover:text-white transition-colors">AI Features</a></li>
+                        <li><a href="#full-activities" class="hover:text-white transition-colors">All Activities</a></li>
+                        <li><a href="#how-it-works" class="hover:text-white transition-colors">How It Works</a></li>
+                        <li><a href="mailto:info@langlets.com" class="hover:text-white transition-colors">Request Demo</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="mailto:info@langlets.com" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <!-- Add links like About, Blog, Careers if needed -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-200 tracking-wider uppercase mb-4">Legal</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li> <!-- Replaced relative link -->
+                        <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li> <!-- Replaced relative link -->
+                        <li><a href="#" class="hover:text-white transition-colors">Security</a></li> <!-- Replaced relative link -->
+                    </ul>
+                </div>
+                <!-- Add another column if needed, e.g., for resources -->
+            </div>
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center text-sm">
+                © 2024 Langlets AI, Inc. All Rights Reserved. Built with AI 🤖 and Passion ❤️.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
