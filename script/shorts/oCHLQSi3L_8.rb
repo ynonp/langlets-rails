@@ -49,7 +49,7 @@ a.phrases << medium.phrases
 l.activities << a
 
 a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-a.phrases << medium.phrases.first(6)
+a.phrases << medium.phrases.first(4)
 l.activities << a
 
 # Phrase.find_by(text_l1: '¿Puedes hablar más despacio?').create_mappings
@@ -77,7 +77,7 @@ TokenTranslation.create!(
 TokenTranslation.create!(
   phrase: p2,
   l1_start_index: 12,
-  l1_end_index: 18,
+  l1_end_index: 20,
   translation: "The bathroom",
   questions: [],
   l2_start_index: 10,
