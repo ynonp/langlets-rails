@@ -35,6 +35,14 @@ module ActivitiesHelper
           ]
         end
       end
+
+      # Add the remaining text after the last token if there is any
+      if texts.any? && texts.last["last_index"] < phrase.text_l1.length
+        texts << {
+          "l1" => phrase.text_l1[texts.last["last_index"]...phrase.text_l1.length],
+          "last_index" => phrase.text_l1.length
+        }
+      end
   
       safe_join(texts.map do |val|
         content_tag(:span,

@@ -16,6 +16,7 @@ export default class extends Controller {
     const token = ev.target;
     if (Number(token.dataset.tokenId) === this.questionsValue[this.currentQuestionValue].answer_token_id) {
       token.dataset.found = true;
+      token.classList.add('bg-green-400', 'text-gray-900', 'px-1', 'rounded')
       this.nextQuestion();
       this.updateProgress();
     }

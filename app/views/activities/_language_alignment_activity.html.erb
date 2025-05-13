@@ -45,7 +45,7 @@
           <%= l1.upcase %> Original
         </div>
         <% phrases_with_selected_tokens.each_with_index do |phrase, index| %>
-        <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] flex items-center text-xs sm:text-base" data-phrase-id="<%= index %>">
+        <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= index %>">
           <% 
               text = phrase[:original_text]
               token = phrase[:selected_token]
