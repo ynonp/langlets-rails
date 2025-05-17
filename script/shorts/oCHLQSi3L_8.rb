@@ -44,7 +44,7 @@ l.start_timestamp = medium.phrases.order(timestamp: :asc).first.timestamp
 l.end_timestamp = medium.phrases.order(timestamp: :desc).first.timestamp
 l.save!
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 1, phrases: medium.phrases)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases << medium.phrases
 l.activities << a
 
