@@ -1,99 +1,92 @@
 import { Controller } from "@hotwired/stimulus"
-import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
 
 // Connects to data-controller="speak-activity"
 export default class extends Controller {
-  static targets = ['revealL1Text', 'l1Text', 'micIcon', 'recordingIcon', 'pronunciationText', 'assessmentResult', 'completionMessage', 'accuracyScore', 'fluencyScore', 'completenessScore'];
+  static targets = ['pronunciationText', 'assessmentResult', 'completionMessage', 
+                    'accuracyScore', 'fluencyScore', 'completenessScore', 'progressBar',
+                    'originalPhrase', 'translationPhrase', 'phrasesContainer'];
   static values = {
-    l1: String,
-    fulltext: String,
+    phrases: Array,
+    l1: String
   };
 
   initialize() {
-    this.isRecording = false;
-    this.recognizer = null;
+    this.assessedPhrases = [];
+    this.currentPhraseIndex = 0;
+    // Set up progress tracking
+    this.totalPhrases = document.querySelectorAll('.original-phrase').length;
+    this.completedPhrases = 0;
+    this.setupEventListeners();
   }
 
-  revealL1Text() {
-    this.revealL1TextTarget.classList.add('hidden');
-    this.l1TextTarget.classList.remove('hidden');
+  setupEventListeners() {
+    // Listen for assessment complete events from speech recognition controllers
+    this.element.addEventListener('speech-recognition:assessmentComplete', this.handleAssessmentComplete.bind(this));
+    this.element.addEventListener('speech-recognition:assessmentError', this.handleAssessmentError.bind(this));
   }
-
-  toggleRecord() {
-    if (!this.isRecording) {
-      // Start recording
-      this.startPronunciationAssessment();
-      this.micIconTarget.classList.add('hidden');
-      this.recordingIconTarget.classList.remove('hidden');
-      this.isRecording = true;
-    } else {
-      // Stop recording
-      if (this.recognizer) {
-        this.recognizer.stopContinuousRecognitionAsync();
-      }
-      this.micIconTarget.classList.remove('hidden');
-      this.recordingIconTarget.classList.add('hidden');
-      this.isRecording = false;
+  
+  updateProgressBar() {
+    if (this.hasProgressBarTarget) {
+      const progressPercentage = (this.completedPhrases / this.totalPhrases) * 100;
+      this.progressBarTarget.style.width = `${progressPercentage}%`;
     }
   }
 
-  async startPronunciationAssessment() {
-    console.log(this.fulltextValue);
-    try {
-      // Step 1: Get token from your Rails backend
-      const res = await fetch('/azure_token');
-      const { token, region } = await res.json();
-
-      // Step 2: Set up Azure Speech SDK config
-      const speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(token, region);
-      speechConfig.speechRecognitionLanguage = this.l1Value;
-
-      // Step 3: Set up audio config (from mic)
-      const audioConfig = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
-
-      // Step 4: Define pronunciation assessment config
-      const pronAssessmentConfig = new SpeechSDK.PronunciationAssessmentConfig(
-        this.fulltextValue,
-        SpeechSDK.PronunciationAssessmentGradingSystem.HundredMark,
-        SpeechSDK.PronunciationAssessmentGranularity.Word,
-        true // Enable miscue detection
-      );
-
-      // Step 5: Create recognizer
-      const recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
-      this.recognizer = recognizer;
-
-      // Attach assessment config to recognizer
-      pronAssessmentConfig.applyTo(recognizer);
-
-      // Step 6: Start recognition
-      recognizer.recognizeOnceAsync(result => {
-        const jsonResult = JSON.parse(result.privJson); // Raw JSON with detailed scores
-        console.log('Pronunciation assessment:', jsonResult);
-
-        // Display results
-        this.showAssessmentResults(jsonResult);
-
-        // Cleanup
-        recognizer.close();
-        this.recognizer = null;
-
-        // Reset microphone button
-        this.micIconTarget.classList.remove('hidden');
-        this.recordingIconTarget.classList.add('hidden');
-        this.isRecording = false;
-      });
-    } catch (error) {
-      console.error('Error in pronunciation assessment:', error);
-
-      // Reset microphone button on error
-      this.micIconTarget.classList.remove('hidden');
-      this.recordingIconTarget.classList.add('hidden');
-      this.isRecording = false;
+  handleAssessmentComplete(event) {
+    const { result, phraseIndex, phraseText } = event.detail;
+    
+    // Store assessment result for this phrase
+    this.assessedPhrases[phraseIndex] = { result, phraseText };
+    this.completedPhrases++;
+    this.updateProgressBar();
+    
+    // Show the assessment results
+    this.showAssessmentResults(result, phraseText);
+    
+    // Show the next phrase if available
+    this.showNextPhrase(phraseIndex);
+    
+    // Check if all phrases have been completed
+    if (this.completedPhrases >= this.totalPhrases) {
+      this.showCompletionMessage();
     }
   }
   
-  showAssessmentResults(jsonResult) {
+  showNextPhrase(currentIndex) {
+    const nextIndex = currentIndex + 1;
+    
+    // Hide the microphone button for the current phrase
+    const currentOriginal = this.originalPhraseTargets.find(el => parseInt(el.dataset.phraseId) === currentIndex);
+    if (currentOriginal) {
+      const micButton = currentOriginal.querySelector('.microphone-button');
+      if (micButton) {
+        micButton.classList.add('hidden');
+      }
+    }
+    
+    // Show the next phrase if it exists
+    if (nextIndex < this.totalPhrases) {
+      // Show the next original phrase
+      const nextOriginal = this.originalPhraseTargets.find(el => parseInt(el.dataset.phraseId) === nextIndex);
+      if (nextOriginal) {
+        nextOriginal.classList.remove('hidden');
+      }
+      
+      // Show the next translation phrase
+      const nextTranslation = this.translationPhraseTargets.find(el => parseInt(el.dataset.phraseId) === nextIndex);
+      if (nextTranslation) {
+        nextTranslation.classList.remove('hidden');
+      }
+    }
+  }
+  
+  handleAssessmentError(event) {
+    const { error, phraseIndex } = event.detail;
+    console.error(`Error with phrase ${phraseIndex}: ${error}`);
+    // Handle error display if needed
+  }
+  
+  showAssessmentResults(jsonResult, phraseText) {
     // Get pronunciation details
     const nbest = jsonResult.NBest && jsonResult.NBest.length > 0 ? jsonResult.NBest[0] : null;
 
@@ -116,7 +109,7 @@ export default class extends Controller {
 
     // Determine which original words were pronounced, omitted, or mispronounced
     const wordStatusMap = {};
-    const originalWords = this.fulltextValue.split(/[\p{P}\p{Z}]+/u).filter(Boolean)
+    const originalWords = phraseText.split(/[\p{P}\p{Z}]+/u).filter(Boolean)
 
     originalWords.forEach((word, i) => {
       const matchingWord = words.find(w => w.Word.toLowerCase() === word.toLowerCase());
@@ -131,7 +124,6 @@ export default class extends Controller {
 
     // Look for insertions (words in the assessment that aren't in the original)
     words.forEach(assessedWord => {
-
       const wordLower = assessedWord.Word.toLowerCase();
       const isInOriginal = originalWords.some(w => w.toLowerCase() === wordLower);
 
@@ -147,7 +139,6 @@ export default class extends Controller {
           errorType: 'Insertion', 
           assessedWord 
         };
-        console.log(wordStatusMap);
       }
     });
 
@@ -184,12 +175,33 @@ export default class extends Controller {
 
     // Show the assessment result
     this.assessmentResultTarget.classList.remove('hidden');
-
-    // Show completion message if score is good enough
-    const overallScore = (scores.AccuracyScore + scores.FluencyScore + scores.CompletenessScore) / 3;
-    if (overallScore >= 60) {
+  }
+  
+  showCompletionMessage() {
+    // Calculate overall score based on all assessed phrases
+    let totalAccuracy = 0;
+    let totalFluency = 0;
+    let totalCompleteness = 0;
+    let count = 0;
+    
+    this.assessedPhrases.forEach(phrase => {
+      if (phrase && phrase.result.NBest && phrase.result.NBest.length > 0) {
+        const scores = phrase.result.NBest[0].PronunciationAssessment || {};
+        totalAccuracy += scores.AccuracyScore || 0;
+        totalFluency += scores.FluencyScore || 0;
+        totalCompleteness += scores.CompletenessScore || 0;
+        count++;
+      }
+    });
+    
+    const averageScore = count > 0 ? 
+      (totalAccuracy + totalFluency + totalCompleteness) / (3 * count) : 0;
+    
+    // Show completion message if score is good enough or all phrases attempted
+    if (averageScore >= 60 || this.completedPhrases >= this.totalPhrases) {
       this.completionMessageTarget.classList.remove('hidden');
       this.completionMessageTarget.classList.add('animate-fade-in');
     }
   }
 }
+

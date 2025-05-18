@@ -19,87 +19,121 @@
       - ErrorType: "Insertion" => The word is highlighted in red and marked with a strike through  
 %>
 
-<% text_item = params[:phrases].first %>
-
 <div
     data-controller="speak-activity"
-    data-speak-activity-fulltext-value="<%= params[:phrases].first.text_l1 %>"
     data-speak-activity-l1-value="<%= params[:azure_speech_name] %>"
   class="flex-col flex items-center min-h-screen bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Pronunciation Practice</h2>
-      <p class="text-sm sm:text-base text-gray-400">Click on the microphone and say the following phrase in <%= params[:l1] %></p>
+      <p class="text-sm sm:text-base text-gray-400">Click on the microphone and say the phrases in <%= params[:l1] %></p>
+      
+      <!-- Progress Bar -->
+      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3">
+        <div data-speak-activity-target="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+      </div>
     </div>
     
-    <!-- Text Display -->
-    <div class="flex flex-col space-y-4 mb-6">
-      <!-- Translated Text (L2) -->
-      <div class="px-4 py-3 bg-gray-700 rounded-lg text-white text-center text-sm sm:text-base">
-        <%= text_item["text_l2"] %>
-      </div>
-      
-      <!-- Original Text (L1) with Clickable Tokens -->
-      <div id="text-l1-container" class="px-4 py-3 bg-gray-700 rounded-lg text-white text-center text-sm sm:text-base">
-        <div
-            data-speak-activity-target="revealL1Text"
-            data-action="click->speak-activity#revealL1Text"
-            id="text-l1-hidden"
-            class="text-blue-400 hover:text-blue-300 transition-colors font-medium">
-          --- Hint: Show Text In <%= params[:l1] %> ---
-        </div>
-        <div
-            data-speak-activity-target="l1Text"
-            data-controller="popover-translation"
-            id="text-l1-content"
-            class="hidden">
-
-          <div
-              id="phrases-list" class="text-white text-sm sm:text-base">
-            <!-- Phrases will be inserted here by JavaScript -->
-            <% params[:phrases].each do |phrase| %>
-              <div
-                  data-video-player-target="subtitles"
-                  data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
-              >
-                  <%= wrap_tokens_in_spans(phrase,
-                                           {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
-              </div>
-            <% end %>
-          </div>
-          <!-- Translation Popup -->
-          <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
-            <div data-popover-translation-target="translationText"></div>
-          </div>
-        </div>
-      </div>
-
     <!-- Audio Player -->
     <%= render partial: 'activities/mini_video_player', locals: { params: } %>
 
-      <!-- Microphone Button -->
-      <div class="flex justify-center">
-        <button
-            data-action="click->speak-activity#toggleRecord"
-            id="microphone-button"
-            class="text-white bg-blue-600 p-3 rounded-full hover:bg-blue-700 transition">
-            <svg
-                data-speak-activity-target="micIcon"
-              id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-mic">
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-            <line x1="12" y1="19" x2="12" y2="23"></line>
-            <line x1="8" y1="23" x2="16" y2="23"></line>
-          </svg>
-          <svg
-              data-speak-activity-target="recordingIcon"
-            id="recording-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-square hidden">
-            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-          </svg>
-        </button>
+    <!-- Completion Message -->
+    <div 
+      data-speak-activity-target="completionMessage" 
+      id="completion-message" 
+      class="hidden my-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Good Work!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've completed this pronunciation exercise.</p>
       </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
     </div>
     
+    <!-- Two-Column Layout for Phrases -->
+    <div id="speak-activity-phrases" class="grid grid-cols-2 gap-2 sm:gap-4" data-speak-activity-target="phrasesContainer">
+      <!-- Original Text (L1) Column -->
+      <div id="orig-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          <%= params[:l1] %> Original
+        </div>
+        <% params[:phrases].each_with_index do |phrase, phrase_index| %>
+          <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base flex items-center justify-between <%= phrase_index > 0 ? 'hidden' : '' %>" 
+               data-phrase-id="<%= phrase_index %>"
+               data-speak-activity-target="originalPhrase">
+            <div data-controller="popover-translation">
+              <%= wrap_tokens_in_spans(phrase, {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
+              
+              <!-- Translation Popup -->
+              <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+                <div data-popover-translation-target="translationText"></div>
+              </div>
+            </div>
+            
+            <!-- Microphone Button with its own Speech Recognition Controller -->
+            <div 
+                data-controller="speech-recognition"
+                data-speech-recognition-phrase-text-value="<%= phrase.text_l1 %>"
+                data-speech-recognition-phrase-index-value="<%= phrase_index %>"
+                data-speech-recognition-l1-value="<%= params[:azure_speech_name] %>"
+            >
+              <button
+                  data-action="click->speech-recognition#toggleRecord"
+                  class="microphone-button text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition ml-2">
+                  <svg
+                      data-speech-recognition-target="micIcon"
+                      class="mic-icon" 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="18" 
+                      height="18" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      class="feather feather-mic">
+                      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                      <line x1="12" y1="19" x2="12" y2="23"></line>
+                      <line x1="8" y1="23" x2="16" y2="23"></line>
+                  </svg>
+                  <svg
+                      data-speech-recognition-target="recordingIcon"
+                      class="recording-icon hidden" 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="18" 
+                      height="18" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round" 
+                      class="feather feather-square">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                  </svg>
+              </button>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+      <!-- Translation (L2) Column -->
+      <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
+        <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
+          <%= params[:l2] %> Translation
+        </div>
+        <% params[:phrases].each_with_index do |phrase, phrase_index| %>
+          <div class="translation-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base flex items-center <%= phrase_index > 0 ? 'hidden' : '' %>"
+               data-phrase-id="<%= phrase_index %>"
+               data-speak-activity-target="translationPhrase">
+            <div>
+              <%= phrase.text_l2 %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
     
     <!-- Assessment Result -->
     <div data-speak-activity-target="assessmentResult" id="assessment-result" class="hidden mt-4">
@@ -124,360 +158,9 @@
         </div>
       </div>
     </div>
-    
-    <!-- Completion Message -->
-    <div data-speak-activity-target="completionMessage" id="completion-message" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-white">Good Work!</h3>
-        <p class="text-center sm:text-left text-gray-300">You've completed this pronunciation exercise.</p>
-      </div>
-      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
-    </div>
+  
   </div>
 </div>
-<script type="text/template">
-document.addEventListener('turbo:load', init);
-
-function init() {
-  // Set up audio player
-  initAudioPlayer();
-  
-  // Set up token translation popups
-  initTokenPopups();
-  
-  // Set up speech recognition
-  initSpeechRecognition();
-}
-
-// YouTube Audio Player
-function initAudioPlayer() {
-  // Load YouTube API if not already loaded
-  if (!window.YT) {
-    const tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
-    window.onYouTubeIframeAPIReady = onYouTubeIframeAPIReady;
-  } else {
-    onYouTubeIframeAPIReady();
-  }
-}
-
-let player;
-let checkInterval = null;
-let segmentStart = <%= params[:start_timestamp] ? "#{timestamp_to_seconds(params[:start_timestamp])}" : 0 %>;
-let segmentEnd = <%= params[:end_timestamp] ? "#{timestamp_to_seconds(params[:end_timestamp])}" : 0 %>;
-let currentTextTimestamp = <%= text_item["timestamp"] ? "#{timestamp_to_seconds(text_item["timestamp"])}" : "segmentStart" %>;
-let isPlaying = false;
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('hidden-player', {
-    height: '1',
-    width: '1',
-    videoId: "<%= params[:video_id] %>",
-    playerVars: {
-      autoplay: 0,
-      controls: 0,
-      modestbranding: 1,
-      disablekb: 1,
-      rel: 0,
-      start: currentTextTimestamp
-    },
-    events: {
-      onStateChange: onPlayerStateChange
-    }
-  });
-}
-
-function monitorPlayback() {
-  clearInterval(checkInterval);
-  checkInterval = setInterval(() => {
-    if (player && player.getCurrentTime) {
-      const currentTime = player.getCurrentTime();
-      const segmentLength = segmentEnd - segmentStart;
-      const elapsed = Math.max(0, currentTime - segmentStart);
-      const percentage = Math.min(100, (elapsed / segmentLength) * 100);
-      document.getElementById('audio-progress-bar').style.width = `${percentage}%`;
-      
-      if (currentTime >= segmentEnd) {
-        player.pauseVideo();
-        isPlaying = false;
-        document.getElementById('audio-play-button').textContent = '▶';
-        clearInterval(checkInterval);
-      }
-    }
-  }, 100);
-}
-
-function toggleAudio() {
-  if (!player || !player.getPlayerState) return;
-  
-  const state = player.getPlayerState();
-  const playButton = document.getElementById('audio-play-button');
-  
-  if (state !== YT.PlayerState.PLAYING) {
-    // Play from the current text timestamp
-    player.seekTo(currentTextTimestamp);
-    player.playVideo();
-    playButton.textContent = '❚❚';
-    monitorPlayback();
-    isPlaying = true;
-  } else {
-    player.pauseVideo();
-    playButton.textContent = '▶';
-    isPlaying = false;
-    clearInterval(checkInterval);
-  }
-}
-
-function onPlayerStateChange(event) {
-  const playButton = document.getElementById('audio-play-button');
-  if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-    playButton.textContent = '▶';
-    clearInterval(checkInterval);
-    isPlaying = false;
-  } else if (event.data === YT.PlayerState.PLAYING) {
-    playButton.textContent = '❚❚';
-    isPlaying = true;
-  }
-}
-
-// Add event listener to play button
-document.getElementById('audio-play-button').addEventListener('click', toggleAudio);
-
-// Token Popup Functionality (adapted from _watch_video_activity.html.erb)
-function initTokenPopups() {
-  const popup = document.getElementById('token-popup');
-  const translation = document.getElementById('token-translation');
-  const textL1Container = document.getElementById('text-l1-container');
-  const textL1Hidden = document.getElementById('text-l1-hidden');
-  const textL1Content = document.getElementById('text-l1-content');
-
-  // Add event listener to show original text
-  textL1Hidden.addEventListener('click', function() {
-    textL1Hidden.classList.add('hidden');
-    textL1Content.classList.remove('hidden');
-  });
-
-  document.querySelectorAll('.token-span').forEach(span => {
-    span.addEventListener('click', function(e) {
-      const translationText = this.dataset.translation;
-      translation.textContent = translationText;
-      // Position popup near the clicked word
-      const rect = this.getBoundingClientRect();
-      popup.style.left = `${rect.left + window.scrollX}px`;
-      popup.style.top = `${rect.bottom + window.scrollY + 5}px`;
-      popup.classList.remove('hidden');
-      e.stopPropagation();
-    });
-  });
-  // Close popup when clicking elsewhere
-  document.addEventListener('click', function() {
-    popup.classList.add('hidden');
-  });
-}
-
-// Speech Recognition and Azure Speech Services
-function initSpeechRecognition() {
-  const micButton = document.getElementById('microphone-button');
-  const micIcon = document.getElementById('mic-icon');
-  const recordingIcon = document.getElementById('recording-icon');
-  const assessmentResult = document.getElementById('assessment-result');
-  const pronunciationText = document.getElementById('pronunciation-text');
-  const accuracyScore = document.getElementById('accuracy-score');
-  const fluencyScore = document.getElementById('fluency-score');
-  const completenessScore = document.getElementById('completeness-score');
-  const completionMessage = document.getElementById('completion-message');
-  
-  // The text to be pronounced in L1
-  const referenceText = "<%= text_item["text_l1"] %>";
-  
-  // Original words from the reference text
-  const originalWords = referenceText.split(/\s+/);
-  
-  let isRecording = false;
-  let recognizer = null;
-  
-  micButton.addEventListener('click', () => {
-    if (!isRecording) {
-      // Start recording
-      startPronunciationAssessment();
-      micIcon.classList.add('hidden');
-      recordingIcon.classList.remove('hidden');
-      isRecording = true;
-    } else {
-      // Stop recording
-      if (recognizer) {
-        recognizer.stopContinuousRecognitionAsync();
-      }
-      micIcon.classList.remove('hidden');
-      recordingIcon.classList.add('hidden');
-      isRecording = false;
-    }
-  });
-  
-  const startPronunciationAssessment = async () => {
-    try {
-      // Step 1: Get token from your Rails backend
-      const res = await fetch('/azure_token');
-      const { token, region } = await res.json();
-      
-      // Step 2: Set up Azure Speech SDK config
-      const speechConfig = SpeechSDK.SpeechConfig.fromAuthorizationToken(token, region);
-      speechConfig.speechRecognitionLanguage = 'es-ES'; // Spanish (Spain)
-      
-      // Step 3: Set up audio config (from mic)
-      const audioConfig = SpeechSDK.AudioConfig.fromDefaultMicrophoneInput();
-      
-      // Step 4: Define pronunciation assessment config
-      const pronAssessmentConfig = new SpeechSDK.PronunciationAssessmentConfig(
-        referenceText,
-        SpeechSDK.PronunciationAssessmentGradingSystem.HundredMark,
-        SpeechSDK.PronunciationAssessmentGranularity.Word,
-        true // Enable miscue detection
-      );
-      
-      // Step 5: Create recognizer
-      recognizer = new SpeechSDK.SpeechRecognizer(speechConfig, audioConfig);
-      
-      // Attach assessment config to recognizer
-      pronAssessmentConfig.applyTo(recognizer);
-      
-      // Step 6: Start recognition
-      recognizer.recognizeOnceAsync(result => {
-        const jsonResult = JSON.parse(result.privJson); // Raw JSON with detailed scores
-        console.log('Pronunciation assessment:', jsonResult);
-        
-        // Display results
-        showAssessmentResults(jsonResult);
-        
-        // Cleanup
-        recognizer.close();
-        recognizer = null;
-        
-        // Reset microphone button
-        micIcon.classList.remove('hidden');
-        recordingIcon.classList.add('hidden');
-        isRecording = false;
-      });
-    } catch (error) {
-      console.error('Error in pronunciation assessment:', error);
-      
-      // Reset microphone button on error
-      micIcon.classList.remove('hidden');
-      recordingIcon.classList.add('hidden');
-      isRecording = false;
-    }
-  };
-  
-  function showAssessmentResults(jsonResult) {
-    // Get pronunciation details
-    const nbest = jsonResult.NBest && jsonResult.NBest.length > 0 ? jsonResult.NBest[0] : null;
-    
-    if (!nbest) {
-      pronunciationText.innerHTML = '<span class="text-red-400">Could not assess pronunciation. Please try again.</span>';
-      return;
-    }
-    
-    // Extract scores
-    const scores = nbest.PronunciationAssessment || {};
-    
-    // Set scores
-    accuracyScore.textContent = Math.round(scores.AccuracyScore || 0);
-    fluencyScore.textContent = Math.round(scores.FluencyScore || 0);
-    completenessScore.textContent = Math.round(scores.CompletenessScore || 0);
-    
-    // Format the text with error highlighting
-    const words = nbest.Words || [];
-    let formattedText = '';
-    
-    // Determine which original words were pronounced, omitted, or mispronounced
-    const wordStatusMap = {};
-    
-    originalWords.forEach((word, i) => {
-      const matchingWord = words.find(w => w.Word.toLowerCase() === word.toLowerCase());
-      
-      if (matchingWord) {
-        const errorType = matchingWord.PronunciationAssessment?.ErrorType || 'None';
-        wordStatusMap[i] = { word, errorType, assessedWord: matchingWord };
-      } else {
-        wordStatusMap[i] = { word, errorType: 'Omission', assessedWord: null };
-      }
-    });
-    
-    // Look for insertions (words in the assessment that aren't in the original)
-    words.forEach(assessedWord => {
-      const wordLower = assessedWord.Word.toLowerCase();
-      const isInOriginal = originalWords.some(w => w.toLowerCase() === wordLower);
-      
-      if (!isInOriginal && assessedWord.PronunciationAssessment) {
-        // This is an inserted word
-        // Find the closest position to insert it
-        const insertAfter = words.indexOf(assessedWord) > 0 ? 
-          words.indexOf(assessedWord) - 1 : 0;
-        
-        // Add to the map with special insertion marker
-        wordStatusMap[`insertion_${insertAfter}`] = { 
-          word: assessedWord.Word, 
-          errorType: 'Insertion', 
-          assessedWord 
-        };
-      }
-    });
-    
-    // Build formatted text
-    Object.keys(wordStatusMap)
-      .sort((a, b) => {
-        // Sort keys, with numeric keys first in numeric order, 
-        // then insertion keys based on their numeric component
-        if (!isNaN(a) && !isNaN(b)) return Number(a) - Number(b);
-        if (!isNaN(a)) return -1;
-        if (!isNaN(b)) return 1;
-        
-        // Extract numeric parts of insertion keys
-        const aNum = Number(a.replace('insertion_', ''));
-        const bNum = Number(b.replace('insertion_', ''));
-        return aNum - bNum;
-      })
-      .forEach(key => {
-        const { word, errorType } = wordStatusMap[key];
-        
-        if (errorType === 'None') {
-          formattedText += `<span class="mr-1">${word}</span>`;
-        } else if (errorType === 'Mispronunciation') {
-          formattedText += `<span class="mr-1 bg-yellow-300 text-black px-1 rounded">${word}</span>`;
-        } else if (errorType === 'Omission') {
-          formattedText += `<span class="mr-1 text-gray-500">[${word}]</span>`;
-        } else if (errorType === 'Insertion') {
-          formattedText += `<span class="mr-1 line-through bg-red-300 text-red-800 px-1 rounded">${word}</span>`;
-        }
-      });
-    
-    // Set the formatted text
-    pronunciationText.innerHTML = formattedText;
-    
-    // Show the assessment result
-    assessmentResult.classList.remove('hidden');
-    
-    // Show completion message if score is good enough
-    const overallScore = (scores.AccuracyScore + scores.FluencyScore + scores.CompletenessScore) / 3;
-    if (overallScore >= 60) {
-      completionMessage.classList.remove('hidden');
-      completionMessage.classList.add('animate-fade-in');
-    }
-  }
-}
-
-function timestampToSeconds(timestamp) {
-  if (!timestamp) return 0;
-  const parts = timestamp.split(':');
-  if (parts.length === 2) {
-    return parseInt(parts[0]) * 60 + parseInt(parts[1]);
-  } else if (parts.length === 3) {
-    return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
-  }
-  return 0;
-}
-</script>
 
 <style>
 @keyframes fade-in {
@@ -489,15 +172,15 @@ function timestampToSeconds(timestamp) {
   animation: fade-in 0.5s ease-out forwards;
 }
 
-#microphone-button {
+.microphone-button {
   transition: all 0.2s;
 }
 
-#microphone-button:hover {
+.microphone-button:hover {
   transform: scale(1.05);
 }
 
-#microphone-button:active {
+.microphone-button:active {
   transform: scale(0.95);
 }
 
@@ -513,18 +196,19 @@ function timestampToSeconds(timestamp) {
   100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
 }
 
-#microphone-button:has(#recording-icon:not(.hidden)) {
+.microphone-button:has(.recording-icon:not(.hidden)) {
   background-color: rgb(220, 38, 38);
   animation: pulse 2s infinite;
 }
 
-/* Add viewport meta tag via script if not already present */
-document.addEventListener('turbo:load', function() {
-  if (!document.querySelector('meta[name="viewport"]')) {
-    const meta = document.createElement('meta');
-    meta.name = 'viewport';
-    meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';
-    document.head.appendChild(meta);
-  }
-});
+/* Phrase transition animations */
+.original-phrase,
+.translation-phrase {
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.original-phrase:not(.hidden),
+.translation-phrase:not(.hidden) {
+  animation: fade-in 0.5s ease-out forwards;
+}
 </style>

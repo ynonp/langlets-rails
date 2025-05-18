@@ -2,6 +2,8 @@ class Activity < ApplicationRecord
   belongs_to :lesson
   has_many :activity_phrases, dependent: :destroy
   has_many :phrases, through: :activity_phrases
+  has_many :activity_token_translations, dependent: :destroy
+  has_many :token_translations, through: :activity_token_translations
 
   def partial_name
     self.class.name.underscore

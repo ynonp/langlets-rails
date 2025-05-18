@@ -16,15 +16,12 @@
   l1 = params[:l1]
   l2 = params[:l2]
   
-  # For each phrase, randomly select one token to highlight
-  phrases_with_selected_tokens = phrases.map do |phrase|
-    random_token_index = rand(phrase[:tokens].length)
-    selected_token = phrase[:tokens][random_token_index]
-    
+  # Instead of randomly selecting one token, we'll use all tokens for each phrase
+  phrases_with_all_tokens = phrases.map do |phrase|
     {
       original_text: phrase[:text],
       translation: phrase[:translation],
-      selected_token: selected_token
+      tokens: phrase[:tokens]
     }
   end
 %>
@@ -33,7 +30,7 @@
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Language Alignment</h2>
-      <p class="text-gray-400 text-sm sm:text-base">Click on the word in the original text that matches the highlighted word</p>
+      <p class="text-gray-400 text-sm sm:text-base">Click on the words in the original text that match the highlighted words</p>
       <%= render partial: 'activities/activity_progress_bar' %>
     </div>
 
@@ -42,41 +39,102 @@
     <div id="language-alignment" class="grid grid-cols-2 gap-2 sm:gap-4">
       <div id="orig-column" class="flex flex-col space-y-2 sm:space-y-3">
         <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
-          <%= l1.upcase %> Original
+          <%= l1 %> Original
         </div>
-        <% phrases_with_selected_tokens.each_with_index do |phrase, index| %>
-        <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= index %>">
+        <% phrases_with_all_tokens.each_with_index do |phrase, phrase_index| %>
+        <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= phrase_index %>">
           <% 
-              text = phrase[:original_text]
-              token = phrase[:selected_token]
-              l1_token_text = text[token[:l1_start_index]..token[:l1_end_index]]
+            text = phrase[:original_text]
+            segments = []
+            current_pos = 0
+            
+            # Sort tokens by start position to process them in order
+            sorted_tokens = phrase[:tokens].sort_by { |t| t[:l1_start_index] }
+            
+            sorted_tokens.each_with_index do |token, token_index|
+              # Text before the token
+              if token[:l1_start_index] > current_pos
+                segments << text[current_pos...token[:l1_start_index]]
+              end
               
-              before_text = text[0...token[:l1_start_index]]
+              # The token itself
               token_text = text[token[:l1_start_index]..token[:l1_end_index]]
-              after_text = text[(token[:l1_end_index] + 1)..-1] || ""
-            %>
-          <%= before_text.strip %><%= before_text.strip.empty? ? "" : "&nbsp;".html_safe %><button class="token cursor-pointer" data-action="click->find-words#findToken" data-find-words-target="token" data-phrase-id="<%= index %>" data-found="false"><%= token_text.strip %></button><%= "&nbsp;".html_safe %><%= after_text.strip %>
+              segments << {
+                text: token_text,
+                token_index: token_index,
+                phrase_index: phrase_index
+              }
+              
+              current_pos = token[:l1_end_index] + 1
+            end
+            
+            # Add any remaining text after the last token
+            if current_pos < text.length
+              segments << text[current_pos..-1]
+            end
+          %>
+          
+          <% segments.each do |segment| %>
+            <% if segment.is_a?(String) %>
+              <%= segment.strip %><%= segment.strip.empty? ? "" : "&nbsp;".html_safe %>
+            <% else %>
+              <button 
+                class="token cursor-pointer" 
+                data-action="click->find-words#findToken" 
+                data-find-words-target="token" 
+                data-phrase-id="<%= segment[:phrase_index] %>" 
+                data-token-id="<%= segment[:token_index] %>" 
+                data-found="false"
+              ><%= segment[:text].strip %></button><%= "&nbsp;".html_safe %>
+            <% end %>
+          <% end %>
         </div>
         <% end %>
       </div>
       <div id="trans-column" class="flex flex-col space-y-2 sm:space-y-3">
         <div class="text-center px-2 sm:px-4 py-2 bg-gray-700 text-white font-semibold rounded-t-lg text-xs sm:text-base">
-          <%= l2.upcase %> Translation
+          <%= l2 %> Translation
         </div>
-        <% phrases_with_selected_tokens.each_with_index do |phrase, index| %>
-        <div class="flex items-center translation-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= index %>">
+        <% phrases_with_all_tokens.each_with_index do |phrase, phrase_index| %>
+        <div class="flex items-center translation-phrase px-2 sm:px-4 py-2 sm:py-3 border border-gray-700 rounded-lg bg-gray-800 text-white min-h-[60px] sm:min-h-[72px] text-xs sm:text-base" data-phrase-id="<%= phrase_index %>">
           <div>
             <% 
               text = phrase[:translation]
-              token = phrase[:selected_token]
-              l2_token_text = text[token[:l2_start_index]..token[:l2_end_index]]
+              segments = []
+              current_pos = 0
               
-              before_text = text[0...token[:l2_start_index]]
-              token_text = text[token[:l2_start_index]..token[:l2_end_index]]
-              after_text = text[(token[:l2_end_index] + 1)..-1] || ""
+              # Sort tokens by start position to process them in order
+              sorted_tokens = phrase[:tokens].sort_by { |t| t[:l2_start_index] }
+              
+              sorted_tokens.each_with_index do |token, token_index|
+                # Text before the token
+                if token[:l2_start_index] > current_pos
+                  segments << text[current_pos...token[:l2_start_index]]
+                end
+                
+                # The token itself
+                token_text = text[token[:l2_start_index]..token[:l2_end_index]]
+                segments << {
+                  text: token_text,
+                  token_index: token_index
+                }
+                
+                current_pos = token[:l2_end_index] + 1
+              end
+              
+              # Add any remaining text after the last token
+              if current_pos < text.length
+                segments << text[current_pos..-1]
+              end
             %>
-
-            <%= before_text.strip %><%= before_text.strip.empty? ? "" : "&nbsp;".html_safe %><span class="text-red-400"><%= token_text.strip %></span><%= "&nbsp;".html_safe %><%= after_text.strip %>
+            
+            <% segments.each do |segment| %>
+              <% if segment.is_a?(String) %>
+                <%= segment.strip %><%= segment.strip.empty? ? "" : "&nbsp;".html_safe %>
+              <% else %>
+                <span class="text-red-400" data-token-id="<%= segment[:token_index] %>"><%= segment[:text].strip %></span><%= "&nbsp;".html_safe %>
+              <% end %>
+            <% end %>
           </div>
         </div>
         <% end %>

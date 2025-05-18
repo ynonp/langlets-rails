@@ -4,7 +4,12 @@
 %>
 
 <div class="activity-navigation">
-  <div class="activity-bubbles">
+
+  <div class="activity-bubbles">  
+    <%= link_to @course_path, class: "course-link text-white mr-4" do %>
+      Back To Course
+    <% end %>
+
     <% @lesson.activities.order(:order).each do |activity| %>
       <% 
         status = if activity.order < current_activity_order

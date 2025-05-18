@@ -19,7 +19,7 @@ class Phrase < ApplicationRecord
       l1.english_name,
       l2.english_name)
 
-    tokens.each do |token|
+    tokens.map do |token|
       start_index = token["l1_index"].to_i
       token_text = token["l1_text"]
       token_translation = token["l2_text"]
@@ -32,16 +32,20 @@ class Phrase < ApplicationRecord
       extracted = text_l1[start_index...end_index]
       next if extracted != token_text
 
+      code = <<END
       TokenTranslation.find_or_create_by(
-        phrase: self,
-        l1_start_index: start_index,
-        l1_end_index: end_index
+        phrase: phrase,
+        l1_start_index: #{start_index},
+        l1_end_index: #{end_index}
       ) do |token|
-        token.questions = token_questions
-        token.translation = token_translation
-        token.l2_start_index = l2_start_index
-        token.l2_end_index = l2_end_index
+        token.questions = #{(token_questions || []).to_s}
+        token.translation = "#{token_translation}"
+        token.l2_start_index = #{l2_start_index}
+        token.l2_end_index = #{l2_end_index}
       end
+END
+      puts code
+      code
     end
   end
 end

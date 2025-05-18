@@ -174,7 +174,6 @@ END
         }
       )
       chat_response = response.dig("choices", 0, "message", "content").gsub(/\A```(?:json)?\s*|\s*```\z/, '')
-      pp chat_response
       JSON.parse(chat_response)
     end
 

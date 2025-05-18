@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "landing_page#index"
   get "landing_page/index"
   resources :lessons, only: [:show]
+  resources :courses, only: [:show, :index]
   get '/azure_token', to: 'azure_speech#token'
   get "activities/index"
   get "activities/show"

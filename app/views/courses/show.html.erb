@@ -1,0 +1,130 @@
+<style>
+  /* Paul Ive's Font Choice - Clean, Modern, Legible */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  body {
+    background-color: #0F172A;
+    /* slate-900 */
+    color: #CBD5E1;
+    /* slate-300 */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    /* Smooth scrolling for a more polished feel */
+    scroll-behavior: smooth;
+    /* Antialiasing for crisp text */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .float-animate {
+    animation: float 2.5s ease-in-out infinite;
+    /* Slightly slower animation for a more gentle float */
+  }
+
+  /* Custom scrollbar for a more integrated dark theme look (optional, but a nice touch) */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #1E293B;
+    /* slate-800 */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #334155;
+    /* slate-700 */
+    border-radius: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+    /* slate-600 */
+  }
+</style>
+
+<!-- Top bar: Refined for clarity and presence -->
+<header class="py-6 border-b border-slate-700/60">
+  <!-- Added slight transparency to border for softness -->
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 text-center tracking-tight">
+    <%= @course.name %>
+  </h1>
+</header>
+
+<!-- Main content wrapper: Provides overall padding and max-width for better composition -->
+<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+  <main class="flex flex-col md:flex-row gap-8 lg:gap-12">
+    <div class="flex-1 flex flex-col items-center mt-6">
+      <% @lessons.each_with_index do |lesson, index| %>
+      <div class="relative flex flex-col items-center">
+        <%# "START" Label for the first item %>
+        <% if index == 0 %>
+        <div class="mb-2 float-animate text-indigo-400 text-sm font-bold tracking-wider">START HERE</div>
+        <% end %>
+
+        <%# Lesson Item Link %>
+        <%= link_to lesson, class: "relative block group rounded-full focus:outline-none focus:ring-4 focus:ring-indigo-500 focus:ring-opacity-50 focus:ring-offset-4 focus:ring-offset-slate-900" do %>
+        <div class="w-20 h-20 rounded-full flex items-center justify-center transition-all duration-300 ease-in-out
+                      <%= index == 0 ? 'bg-indigo-600 shadow-lg shadow-indigo-500/40' : 'bg-slate-700 group-hover:bg-slate-600 group-focus:bg-slate-600' %>
+                      transform group-hover:scale-105 group-focus:scale-105 relative">
+          <svg class="w-9 h-9 transition-colors duration-300
+                        <%= index == 0 ? 'text-white' : 'text-slate-400 group-hover:text-indigo-300 group-focus:text-indigo-300' %>" fill="<%= index == 0 ? 'currentColor' : 'none' %>" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+          </svg>
+        </div>
+        <div class="absolute top-[25px] left-[100px] w-[200px]">
+          <%= lesson.course_lesson_name %>
+        </div>
+        <% end %>
+      </div>
+
+      <%# Connector Line to the NEXT item, if not the last item %>
+      <% unless index == @lessons.size - 1 %>
+      <div class="w-1 h-12 bg-slate-700 my-1 rounded"></div>
+      <% end %>
+      <% end %>
+    </div>
+
+    <!-- Right sidebar: Now a distinct, crafted panel -->
+    <aside class="w-full md:w-[480px] md:sticky md:top-28 self-start p-6 bg-slate-800/70 rounded-xl shadow-2xl backdrop-blur-md border border-slate-700/50">
+      <!-- Added sticky positioning, distinct background with blur, rounded corners, softer border and more prominent shadow -->
+      <!-- md:top-28 assumes header is approx 76px (py-6) + main content py-8/md:py-12. (6*4 + 8*4 = 24+32 = 56px from top of main. Total top-28 = 112px) Adjust as needed -->
+
+      <!-- Subtle decorative element: Paul Ive's "Fairy Dust" -->
+      <div class="w-full flex justify-center mb-5 opacity-70">
+        <svg width="80" height="3" viewBox="0 0 80 3" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="paulIveDecoLine" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" style="stop-color:#334155; stop-opacity:0" /> <!-- slate-700 -->
+              <stop offset="50%" style="stop-color:#64748B; stop-opacity:1" /> <!-- slate-500 -->
+              <stop offset="100%" style="stop-color:#334155; stop-opacity:0" /> <!-- slate-700 -->
+            </linearGradient>
+          </defs>
+          <rect width="80" height="3" rx="1.5" fill="url(#paulIveDecoLine)" />
+        </svg>
+      </div>
+
+      <% youtube_url = @course.main_media_url %>
+      <% youtube_video_id = youtube_url.split("v=").last %>
+      <div class="aspect-video overflow-hidden rounded-lg shadow-xl shadow-black/30">
+        <!-- Added a container for the iframe to ensure consistent shadow and rounded corners -->
+        <iframe class="w-full h-full" src="https://www.youtube.com/embed/<%= youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+
+      <!-- Optional: Add a subtle course progress indicator or related info here later -->
+      <!-- <div class="mt-6 text-center text-xs text-slate-400 tracking-wide">VIDEO 1 OF <%= @lessons.size %></div> -->
+
+    </aside>
+  </main>
+</div>

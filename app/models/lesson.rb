@@ -2,6 +2,7 @@ class Lesson < ApplicationRecord
   belongs_to :medium
   has_many :activities, dependent: :destroy
   has_timestamp [ :start_timestamp, :end_timestamp ]
+  include FriendlyName
 
   def create_activities
     intro = Activities::WatchVideoActivity.create!(lesson: self, order: 1)
