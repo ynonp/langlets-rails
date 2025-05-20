@@ -43,7 +43,7 @@
         <div class="relative phrase-container <%= phrase_index == 0 ? '' : 'hidden' %>" data-phrase-id="<%= phrase_index %>" data-speak-activity-target="phraseContainer">
           <!-- Original Text (L1) with Microphone -->
           <div 
-            class="original-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 text-white text-center text-base sm:text-xl mb-3"
+            class="original-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 text-white text-center text-base sm:text-xl mb-3"
             data-phrase-id="<%= phrase_index %>"
             data-speak-activity-target="originalPhrase">
             <div class="flex items-center justify-between">
@@ -106,7 +106,7 @@
 
           <!-- Translation (L2) -->
           <div 
-            class="translation-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 text-white text-center text-base sm:text-lg"
+            class="translation-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 text-white text-center text-base sm:text-lg"
             data-phrase-id="<%= phrase_index %>"
             data-speak-activity-target="translationPhrase">
             <%= phrase.text_l2 %>

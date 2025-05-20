@@ -16,9 +16,9 @@
     data-controller="match-activity"
     data-match-activity-l1-value="<%= params[:l1] %>"
     data-match-activity-total-phrases-value="<%= total_phrases %>"
-    class="flex-col flex items-center min-h-screen bg-gray-800">
+    class="flex-col flex items-center bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
-    <div class="mb-6 text-center">
+    <div class="mb-1">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
       <p class="text-gray-400 text-sm sm:text-base mb-2">
         <span data-match-activity-target="progressText">Question 1 of <%= total_phrases %></span>
@@ -35,11 +35,9 @@
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Original phrase (Spanish) -->
-        <div class="mb-6 p-4 rounded-lg">
-          <h3 class="text-2xl sm:text-xl leading-10 text-white text-center ">
-            <%= original %>
-          </h3>
-        </div>
+        <h3 class="my-4 text-xl text-white bg-gray-900 w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 ">
+          <%= original %>
+        </h3>
         
         <!-- Options section for this phrase -->
         <div class="space-y-3" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
@@ -61,7 +59,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton w-full text-left px-4 py-4 border bg-gray-900 border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 text-base text-xl">
+              class="optionButton w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 text-base text-xl">
               <%= option %>
             </button>
           <% end %>
