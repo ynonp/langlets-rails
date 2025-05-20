@@ -56,11 +56,11 @@
             data-video-player-target="subtitles"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
             class="px-4 py-3 transition-all duration-200">
-            <div class="text-white">
+            <div class="text-white text-xl">
               <%= wrap_tokens_in_spans(phrase,
                                      {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
             </div>
-            <div class="text-teal-400 mt-1">
+            <div class="text-teal-400 mt-1 text-xl">
               <%= phrase.text_l2 %>
             </div>
           </div>
