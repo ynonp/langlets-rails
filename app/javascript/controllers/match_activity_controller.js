@@ -1,67 +1,122 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="match-activity-controller.js"
+// Connects to data-controller="match-activity"
 export default class extends Controller {
-  static targets = ['phraseItem', 'progressBar', 'completionMessage'];
-  static values = { l1: String };
+  static targets = [
+    'phraseContainer', 
+    'optionButton', 
+    'progressBar', 
+    'progressText',
+    'feedbackMessage',
+    'completionMessage'
+  ];
+  
+  static values = { 
+    l1: String,
+    totalPhrases: Number,
+    currentPhrase: { type: Number, default: 0 },
+    score: { type: Number, default: 0 }
+  };
 
-  initialize() {
-    this.selectPhrase = this.selectPhrase.bind(this);
+  connect() {
+    // Play audio for the first phrase when the activity loads
+    this.playCurrentPhraseAudio();
   }
 
-  selectPhrase(ev) {
-    const clickedItem = ev.target;
-    if (clickedItem.dataset.id == null) return;
-    if (clickedItem.dataset.matched) return;
-
-    const previouslySelectedItem = this.element.querySelector('.selected');
-
-    if (clickedItem.dataset.side === 'orig') {
-      this.say(clickedItem.innerText.trim(), this.l1Value);
+  playCurrentPhraseAudio() {
+    // Find the current phrase container
+    const currentContainer = this.phraseContainerTargets.find(
+      container => parseInt(container.dataset.index) === this.currentPhraseValue
+    );
+    
+    if (currentContainer) {
+      // Get the phrase text from the container
+      const phraseText = currentContainer.querySelector('h3').innerText.trim();
+      this.say(phraseText, this.l1Value);
     }
+  }
 
-    if (!previouslySelectedItem) {
-      this.selectFirstItem(clickedItem);
-    } else if (previouslySelectedItem.dataset.side === clickedItem.dataset.side) {
-      this.clearSelection();
-      this.selectFirstItem(clickedItem);
-    } else if (previouslySelectedItem.dataset.id === clickedItem.dataset.id) {
-      this.clearSelection();
-      this.markMatch(previouslySelectedItem, clickedItem);
-      this.updateProgress();
+  selectOption(event) {
+    const option = event.currentTarget;
+    const isCorrect = option.dataset.correct === 'true';
+    
+    // Mark the selected option
+    if (isCorrect) {
+      option.classList.add('correct-answer');
+      this.incrementScore();
+      this.showFeedback("Correct!", "bg-green-600");
     } else {
-      this.clearSelection();
-      this.markFailedMatch(previouslySelectedItem, clickedItem);
+      option.classList.add('incorrect-answer');
+      this.showFeedback("Incorrect", "bg-red-600");
+      
+      // Highlight the correct answer
+      const correctOption = this.optionButtonTargets.find(
+        button => button.dataset.correct === 'true'
+      );
+      if (correctOption) {
+        correctOption.classList.add('correct-answer');
+      }
+    }
+    
+    // Wait a moment before moving to the next phrase
+    setTimeout(() => {
+      this.moveToNextPhrase();
+    }, 1500);
+  }
+  
+  showFeedback(message, bgClass) {
+    const feedbackEl = this.feedbackMessageTarget;
+    feedbackEl.textContent = message;
+    feedbackEl.classList.remove('hidden', 'bg-green-600', 'bg-red-600');
+    feedbackEl.classList.add(bgClass, 'animate-fade-in');
+    
+    setTimeout(() => {
+      feedbackEl.classList.add('hidden');
+      feedbackEl.classList.remove('animate-fade-in');
+    }, 1500);
+  }
+  
+  incrementScore() {
+    this.scoreValue += 1;
+  }
+  
+  moveToNextPhrase() {
+    // Hide current phrase
+    const currentContainer = this.phraseContainerTargets.find(
+      container => parseInt(container.dataset.index) === this.currentPhraseValue
+    );
+    if (currentContainer) {
+      currentContainer.classList.add('hidden');
+    }
+    
+    // Update progress
+    this.updateProgress();
+    
+    // Move to next phrase
+    this.currentPhraseValue += 1;
+    
+    // If we still have phrases, show the next one
+    if (this.currentPhraseValue < this.totalPhrasesValue) {
+      const nextContainer = this.phraseContainerTargets.find(
+        container => parseInt(container.dataset.index) === this.currentPhraseValue
+      );
+      if (nextContainer) {
+        nextContainer.classList.remove('hidden');
+        // Update progress text
+        this.progressTextTarget.textContent = `Question ${this.currentPhraseValue + 1} of ${this.totalPhrasesValue}`;
+        // Play audio for the new phrase
+        this.playCurrentPhraseAudio();
+      }
+    } else {
+      // Show completion message
+      this.completionMessageTarget.classList.remove('hidden');
+      this.completionMessageTarget.classList.add('animate-fade-in');
     }
   }
-
-  selectFirstItem(item) {
-    item.classList.add('selected');
-  }
-
-  clearSelection() {
-    this.element.querySelectorAll('.selected').forEach(e => e.classList.remove('selected'));
-  }
-
-  markMatch(item1, item2) {
-    [item1, item2].forEach(i => {
-      i.classList.remove('text-white');
-      i.classList.add('bg-green-200', 'border-green-600', 'text-gray-800');
-      i.classList.add('animate-pulse');
-      i.dataset.matched = true;
-      i.disabled = true;
-      setTimeout(() => i.classList.remove('animate-pulse'), 1000);
-    });
-  }
-
-  markFailedMatch(item1, item2) {
-    [item1, item2].forEach(i => {
-      i.classList.add('animate-shake');
-    });
-    setTimeout(() => {
-      item1.classList.remove('animate-shake');
-      item2.classList.remove('animate-shake');
-    }, 500);
+  
+  updateProgress() {
+    const percentage = (this.currentPhraseValue + 1) / this.totalPhrasesValue * 100;
+    this.progressBarTarget.style.width = `${percentage}%`;
   }
 
   say(text, lang) {
@@ -72,18 +127,6 @@ export default class extends Controller {
       const voice = voices.find(v => v.lang === lang);
       if (voice) utterance.voice = voice;
       speechSynthesis.speak(utterance);
-    }
-  }
-
-  updateProgress() {
-    const matchedPairs = this.phraseItemTargets.filter(el => el.dataset.matched).length;
-    const totalPairs = this.phraseItemTargets.length;
-    const percentage = (matchedPairs / totalPairs) * 100;
-    this.progressBarTarget.style.width = `${percentage}%`;
-
-    if (matchedPairs === totalPairs) {
-      this.completionMessageTarget.classList.remove('hidden');
-      this.completionMessageTarget.classList.add('animate-fade-in');
     }
   }
 }
