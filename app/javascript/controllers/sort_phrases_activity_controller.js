@@ -14,7 +14,10 @@ export default class extends Controller {
   connect() {
     console.log(this.correctOrderValue);
     console.log(this.element);
-    this.sortable = Sortable.create(this.phrasesContainerTarget);
+    this.sortable = Sortable.create(this.phrasesContainerTarget, {
+      animation: 150,
+      ghostClass: 'sortable-ghost',
+    });
   }
 
   checkOrder() {

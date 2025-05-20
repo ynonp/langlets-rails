@@ -29,7 +29,11 @@
     </div>
     
     <% phrases.each_with_index do |(original, translation), index| %>
-      <div data-match-activity-target="phraseContainer" data-index="<%= index %>" class="<%= index == 0 ? '' : 'hidden' %>">
+      <div 
+        data-match-activity-target="phraseContainer"
+        data-index="<%= index %>"
+        class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
+
         <!-- Original phrase (Spanish) -->
         <div class="mb-6 p-4 rounded-lg">
           <h3 class="text-2xl sm:text-xl leading-10 text-white text-center ">
@@ -57,7 +61,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="w-full text-left px-4 py-4 border bg-gray-900 border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 text-base text-xl">
+              class="optionButton w-full text-left px-4 py-4 border bg-gray-900 border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 text-base text-xl">
               <%= option %>
             </button>
           <% end %>

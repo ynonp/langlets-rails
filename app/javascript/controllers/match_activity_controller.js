@@ -42,26 +42,27 @@ export default class extends Controller {
     
     // Mark the selected option
     if (isCorrect) {
+      // Disable all options for this phrase to prevent multiple selections
+      event.target.closest('.phraseContainer').querySelectorAll('.optionButton').forEach(button => {
+        button.disabled = true;
+      });
       option.classList.add('correct-answer');
       this.incrementScore();
       this.showFeedback("Correct!", "bg-green-600");
+        // Wait a moment before moving to the next phrase
+      setTimeout(() => {
+        this.moveToNextPhrase();
+      }, 1500);
     } else {
       option.classList.add('incorrect-answer');
       this.showFeedback("Incorrect", "bg-red-600");
-      
-      // Highlight the correct answer
-      const correctOption = this.optionButtonTargets.find(
-        button => button.dataset.correct === 'true'
-      );
-      if (correctOption) {
-        correctOption.classList.add('correct-answer');
-      }
+      setTimeout(() => {
+        option.classList.remove('incorrect-answer');
+        this.feedbackMessageTarget.classList.add('hidden');
+      }, 1500);
     }
     
-    // Wait a moment before moving to the next phrase
-    setTimeout(() => {
-      this.moveToNextPhrase();
-    }, 1500);
+
   }
   
   showFeedback(message, bgClass) {
