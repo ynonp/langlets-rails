@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['pronunciationText', 'assessmentResult', 'completionMessage', 
                     'accuracyScore', 'fluencyScore', 'completenessScore', 'progressBar',
-                    'originalPhrase', 'translationPhrase', 'phrasesContainer'];
+                    'originalPhrase', 'translationPhrase', 'phrasesContainer', 'phraseContainer'];
   static values = {
     phrases: Array,
     l1: String
@@ -55,27 +55,18 @@ export default class extends Controller {
   showNextPhrase(currentIndex) {
     const nextIndex = currentIndex + 1;
     
-    // Hide the microphone button for the current phrase
-    const currentOriginal = this.originalPhraseTargets.find(el => parseInt(el.dataset.phraseId) === currentIndex);
-    if (currentOriginal) {
-      const micButton = currentOriginal.querySelector('.microphone-button');
-      if (micButton) {
-        micButton.classList.add('hidden');
-      }
+    // Hide the entire current phrase container
+    const currentContainer = document.querySelector(`.phrase-container[data-phrase-id="${currentIndex}"]`);
+    if (currentContainer) {
+      currentContainer.classList.add('hidden');
     }
     
     // Show the next phrase if it exists
     if (nextIndex < this.totalPhrases) {
-      // Show the next original phrase
-      const nextOriginal = this.originalPhraseTargets.find(el => parseInt(el.dataset.phraseId) === nextIndex);
-      if (nextOriginal) {
-        nextOriginal.classList.remove('hidden');
-      }
-      
-      // Show the next translation phrase
-      const nextTranslation = this.translationPhraseTargets.find(el => parseInt(el.dataset.phraseId) === nextIndex);
-      if (nextTranslation) {
-        nextTranslation.classList.remove('hidden');
+      // Show the next phrase container
+      const nextContainer = document.querySelector(`.phrase-container[data-phrase-id="${nextIndex}"]`);
+      if (nextContainer) {
+        nextContainer.classList.remove('hidden');
       }
     }
   }
