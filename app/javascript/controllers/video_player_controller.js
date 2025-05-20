@@ -8,7 +8,7 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'subtitles'];
+  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList'];
   static classes = ['currentTextLine'];
 
   initialize() {
@@ -102,6 +102,26 @@ export default class extends Controller {
 
     if (index !== -1) {
       subtitlesLines[index].classList.add(this.currentTextLineClass);
+      
+      const container = this.containerTarget;
+      const lineHeight = subtitlesLines[index].offsetHeight;
+      
+      const containerTop = container.offsetTop;
+      const targetScrollTop = subtitlesLines[index].offsetTop - lineHeight - containerTop;
+  
+      container.scrollTo({
+        top: targetScrollTop,
+        behavior: 'smooth'
+      });
+      
+      const phrasesList = this.phrasesListTarget;
+      const containerHeight = container.clientHeight;
+      const remainingItems = subtitlesLines.length - index - 1;
+      
+      if (remainingItems < 5) {
+        const paddingNeeded = containerHeight - (remainingItems * lineHeight);
+        phrasesList.style.paddingBottom = `${Math.max(paddingNeeded, 0)}px`;
+      }
     }
 
     for (let i=0; i < subtitlesLines.length; i++) {

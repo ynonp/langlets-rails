@@ -3,21 +3,21 @@
 %>
 
 <div
-    class="flex-col flex items-center min-h-screen bg-gray-800"
+    class="flex-col flex items-center bg-gray-800 overflow-hidden"
     data-controller="video-player"
     data-video-player-video-id-value="<%= params[:video_id] %>"
     data-video-player-mini-player-value="false"
     data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-video-player-current-text-line-class="text-red-400"
+    data-video-player-current-text-line-class="bg-gray-700"
 >
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-120px)]">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
     
-    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black ">
+    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black">
       <div data-video-player-target="player" class="w-full h-full pointer-events-none"></div>
 
       <!-- Overlay Play Button -->
@@ -40,21 +40,29 @@
     </div>
 
 
-    <!-- Phrases Container -->
+    <!-- Phrases Container with scrolling -->
     <div
         data-controller="popover-translation"
         id="phrases-container"
-        class="w-full mx-auto bg-gray-700 border border-1 border-gray-600"
+        data-video-player-target="container"
+        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
         >
       <div
-        id="phrases-list" class="text-white text-sm sm:text-base">
+        id="phrases-list" 
+        data-video-player-target="phrasesList"
+        class="text-white text-sm sm:text-base">
         <% phrases.each do |phrase| %>
           <div
             data-video-player-target="subtitles"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
-            class="px-4 py-3 bg-gray-800 transition-all duration-200">
-            <%= wrap_tokens_in_spans(phrase,
+            class="px-4 py-3 transition-all duration-200">
+            <div class="text-white">
+              <%= wrap_tokens_in_spans(phrase,
                                      {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
+            </div>
+            <div class="text-teal-400 mt-1">
+              <%= phrase.text_l2 %>
+            </div>
           </div>
         <% end %>
       </div>
