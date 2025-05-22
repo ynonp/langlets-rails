@@ -123,7 +123,7 @@ l = [
 # end
 
 phrase = phrases[0]
-TokenTranslation.find_or_create_by(
+t1 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 4
@@ -135,7 +135,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[1]
-TokenTranslation.find_or_create_by(
+t2 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 6
@@ -145,7 +145,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 6
 end
-TokenTranslation.find_or_create_by(
+t3 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 7,
   l1_end_index: 9
@@ -157,7 +157,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[2]
-TokenTranslation.find_or_create_by(
+t4 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 2
@@ -167,7 +167,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 2
 end
-TokenTranslation.find_or_create_by(
+t5 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 4,
   l1_end_index: 6
@@ -177,7 +177,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 4
   token.l2_end_index = 6
 end
-TokenTranslation.find_or_create_by(
+t6 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 7,
   l1_end_index: 9
@@ -187,7 +187,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 7
   token.l2_end_index = 9
 end
-TokenTranslation.find_or_create_by(
+t7 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 11,
   l1_end_index: 13
@@ -197,7 +197,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 11
   token.l2_end_index = 13
 end
-TokenTranslation.find_or_create_by(
+t8 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 14,
   l1_end_index: 16
@@ -207,7 +207,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 14
   token.l2_end_index = 16
 end
-TokenTranslation.find_or_create_by(
+t9 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 18,
   l1_end_index: 20
@@ -219,7 +219,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[3]
-TokenTranslation.find_or_create_by(
+t10 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 3
@@ -229,7 +229,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 3
 end
-TokenTranslation.find_or_create_by(
+t11 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 4,
   l1_end_index: 8
@@ -241,7 +241,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[4]
-TokenTranslation.find_or_create_by(
+t12 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 8
@@ -251,7 +251,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 8
 end
-TokenTranslation.find_or_create_by(
+t13 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 10,
   l1_end_index: 18
@@ -261,7 +261,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 10
   token.l2_end_index = 18
 end
-TokenTranslation.find_or_create_by(
+t14 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 19,
   l1_end_index: 24
@@ -284,7 +284,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[6]
-TokenTranslation.find_or_create_by(
+t15 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 2
@@ -294,7 +294,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 3
 end
-TokenTranslation.find_or_create_by(
+t16 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 4,
   l1_end_index: 9
@@ -304,7 +304,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 5
   token.l2_end_index = 13
 end
-TokenTranslation.find_or_create_by(
+t17 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 10,
   l1_end_index: 13
@@ -314,7 +314,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 14
   token.l2_end_index = 18
 end
-TokenTranslation.find_or_create_by(
+t18 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 17,
   l1_end_index: 22
@@ -324,7 +324,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 19
   token.l2_end_index = 28
 end
-TokenTranslation.find_or_create_by(
+t19 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 23,
   l1_end_index: 30
@@ -336,7 +336,7 @@ TokenTranslation.find_or_create_by(
   token.l2_end_index = 55
 end
 
-TokenTranslation.find_or_create_by(
+t20 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 31,
   l1_end_index: 40
@@ -348,7 +348,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[7]
-TokenTranslation.find_or_create_by(
+t21 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 9
@@ -358,7 +358,7 @@ TokenTranslation.find_or_create_by(
   token.l2_end_index = 9
 end
 
-TokenTranslation.find_or_create_by(
+t22 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 10,
   l1_end_index: 16
@@ -369,7 +369,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 10
   token.l2_end_index = 15
 end
-TokenTranslation.find_or_create_by(
+t23 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 17,
   l1_end_index: 24
@@ -379,7 +379,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 16
   token.l2_end_index = 24
 end
-TokenTranslation.find_or_create_by(
+t24 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 25,
   l1_end_index: 28
@@ -390,7 +390,7 @@ TokenTranslation.find_or_create_by(
   token.l2_end_index = 30
 end
 
-TokenTranslation.find_or_create_by(
+t25 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 29,
   l1_end_index: 33
@@ -402,7 +402,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[8]
-TokenTranslation.find_or_create_by(
+t26 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 2
@@ -412,7 +412,7 @@ TokenTranslation.find_or_create_by(
   token.l2_end_index = 5
 end
 
-TokenTranslation.find_or_create_by(
+t27 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 3,
   l1_end_index: 6
@@ -422,7 +422,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 6
   token.l2_end_index = 10
 end
-TokenTranslation.find_or_create_by(
+t28 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 7,
   l1_end_index: 9
@@ -432,7 +432,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 11
   token.l2_end_index = 15
 end
-TokenTranslation.find_or_create_by(
+t29 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 10,
   l1_end_index: 16
@@ -442,7 +442,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 16
   token.l2_end_index = 20
 end
-TokenTranslation.find_or_create_by(
+t30 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 17,
   l1_end_index: 19
@@ -452,7 +452,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 25
   token.l2_end_index = 32
 end
-TokenTranslation.find_or_create_by(
+t31 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 20,
   l1_end_index: 26
@@ -462,7 +462,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 21
   token.l2_end_index = 24
 end
-TokenTranslation.find_or_create_by(
+t32 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 27,
   l1_end_index: 37
@@ -474,7 +474,7 @@ TokenTranslation.find_or_create_by(
 end
 
 phrase = phrases[9]
-TokenTranslation.find_or_create_by(
+t33 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 0,
   l1_end_index: 9
@@ -484,7 +484,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 0
   token.l2_end_index = 7
 end
-TokenTranslation.find_or_create_by(
+t34 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 10,
   l1_end_index: 12
@@ -494,7 +494,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 8
   token.l2_end_index = 11
 end
-TokenTranslation.find_or_create_by(
+t35 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 13,
   l1_end_index: 19
@@ -504,7 +504,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 12
   token.l2_end_index = 15
 end
-TokenTranslation.find_or_create_by(
+t36 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 20,
   l1_end_index: 30
@@ -3627,13 +3627,13 @@ intro_sort_phrases_activity.phrases = phrases[6..9]
 intro_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[0], order: 4)
 intro_language_alignment_activity.phrases = phrases[6..9]
 intro_language_alignment_activity.token_translations = [
-  phrases[6].token_translations.find_by(translation: "you know"),
-  phrases[6].token_translations.find_by(translation: "for a while"),
-  phrases[7].token_translations.find_by(translation: "dance"),
-  phrases[7].token_translations.find_by(translation: "today"),
-  phrases[8].token_translations.find_by(translation: "calling me"),
-  phrases[9].token_translations.find_by(translation: "Show me"),
-  phrases[9].token_translations.find_by(translation: "way"),
+  t16, # sabes
+  t19, # un rato
+  t22, # bailar
+  t24, # hoy
+  t32, # llamándome
+  t33, # Muéstrame
+  t35, # camino
 ]
 
 intro_speak_activity = Activities::SpeakActivity.create!(lesson: l[0], order: 5)
@@ -3642,9 +3642,9 @@ intro_speak_activity.phrases = phrases[6..9]
 intro_listen_activity = Activities::ListenActivity.create!(lesson: l[0], order: 6)
 intro_listen_activity.phrases = phrases[6..9]
 intro_listen_activity.token_translations = [
-  phrases[6].token_translations.find_by(translation: "for a while"),
-  phrases[7].token_translations.find_by(translation: "dance"),
-  phrases[8].token_translations.find_by(translation: "look"),
-  phrases[9].token_translations.find_by(translation: "way"),
+  t19, # un rato
+  t22, # bailar
+  t29, # mirada
+  t35, # camino
 ]
 
