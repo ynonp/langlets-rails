@@ -18,7 +18,7 @@
     class="flex-col flex items-center bg-gray-800 overflow-hidden"
     data-controller="listen-activity video-player"
     data-video-player-video-id-value="<%= params[:video_id] %>"
-    data-video-player-mini-player-value="false"
+    data-video-player-mini-player-value="true"
     data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-video-player-current-text-line-class="bg-gray-700"
@@ -29,24 +29,18 @@
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
-    
-    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black">
-      <div data-video-player-target="player" class="w-full h-full pointer-events-none"></div>
-
-      <!-- Overlay Play Button -->
-      <div id="overlay" class="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
-                        data-action="click->video-player#togglePlayback">
-        <button data-video-player-target="playButton"
-          class="text-white text-3xl sm:text-5xl bg-blue-600 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
-          ▶
-        </button>
-      </div>
-
-      <!-- Custom Progress Bar -->
-      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-10">
-        <div data-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+    <div class="flex items-center space-x-3">
+      <button data-video-player-target="playButton" data-action="click->video-player#togglePlayback" id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+        ▶
+      </button>
+      <div class="flex-1 h-2 bg-gray-600 rounded-full">
+        <div
+            data-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
       </div>
     </div>
+    <!-- Hidden YouTube Player -->
+    <div data-video-player-target="player" id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
+    
 
     <!-- Control Bar -->
     <div class="my-4 flex justify-between items-center">
