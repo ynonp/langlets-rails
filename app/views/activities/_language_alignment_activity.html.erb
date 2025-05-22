@@ -17,12 +17,12 @@
   l2 = params[:l2]
   total_phrases = phrases.length
   
-  phrases_with_all_tokens = phrases.map do |phrase|
+  phrases_with_all_tokens = phrases.filter_map do |phrase|
     {
       original_text: phrase[:text],
       translation: phrase[:translation],
       tokens: phrase[:tokens]
-    }
+    } if phrase[:tokens].present?
   end
 %>
 

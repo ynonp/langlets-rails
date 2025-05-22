@@ -86,6 +86,8 @@ TokenTranslation.create!(
 a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
 a.phrases << p1
 a.phrases << p2
+a.token_translations << p1.token_translations
+a.token_translations << p2.token_translations
 l.activities << a
 
 a = Activities::MatchPhrasesActivity.create!(lesson: l, text_header: 'Match each phrase to its translation', order: 4)
