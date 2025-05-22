@@ -1,0 +1,122 @@
+<%
+    phrases = params[:phrases]
+%>
+
+<style>
+  @keyframes pulse-attention {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+  
+  .word-option-button {
+    animation: pulse-attention 1.5s infinite ease-in-out;
+  }
+</style>
+
+<div
+    class="flex-col flex items-center bg-gray-800 overflow-hidden"
+    data-controller="listen-activity video-player"
+    data-video-player-video-id-value="<%= params[:video_id] %>"
+    data-video-player-mini-player-value="false"
+    data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+    data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
+    data-video-player-current-text-line-class="bg-gray-700"
+    data-action="listen-activity:pause-video->video-player#handlePauseVideo listen-activity:play-video->video-player#handlePlayVideo"
+>
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-160px)]">
+    <div class="mb-6 text-center">
+      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
+      <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
+    </div>
+    
+    <div id="player-container" class="relative w-full mx-auto aspect-video bg-black">
+      <div data-video-player-target="player" class="w-full h-full pointer-events-none"></div>
+
+      <!-- Overlay Play Button -->
+      <div id="overlay" class="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
+                        data-action="click->video-player#togglePlayback">
+        <button data-video-player-target="playButton"
+          class="text-white text-3xl sm:text-5xl bg-blue-600 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+          ▶
+        </button>
+      </div>
+
+      <!-- Custom Progress Bar -->
+      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-10">
+        <div data-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+      </div>
+    </div>
+
+    <!-- Control Bar -->
+    <div class="my-4 flex justify-between items-center">
+      <label class="flex items-center text-white">
+        <input type="checkbox" data-listen-activity-target="showTranslation" data-action="change->listen-activity#toggleTranslation" class="mr-2">
+        Show Translation
+      </label>
+    </div>
+
+    <!-- Phrases Container with scrolling -->
+    <div
+        id="phrases-container"
+        data-video-player-target="container"
+        data-listen-activity-target="phrasesContainer"
+        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
+        >
+      <div
+        id="phrases-list" 
+        data-video-player-target="phrasesList"
+        class="text-white text-sm sm:text-base pb-14 ">
+        <% phrases.each_with_index do |phrase, phrase_index| %>
+          <div
+            data-video-player-target="subtitles"
+            data-listen-activity-target="phrase"
+            data-timestamp="<%= timestamp_to_seconds(phrase['timestamp']) %>"
+            data-phrase-id="<%= phrase_index %>"
+            class="px-4 py-3 transition-all duration-200">
+            <div class="text-white text-xl">
+              <%= render_phrase_with_blanks(phrase) %>
+            </div>
+            <div class="text-teal-400 mt-1 text-xl hidden" data-listen-activity-target="translation">
+              <%= phrase['text_l2'] %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    
+    <!-- Word Selection Area -->
+    <div class="my-6 flex justify-center space-x-4" data-listen-activity-target="wordSelection">
+      <% 
+        first_phrase_with_tokens = phrases.find { |p| p['token_translations'].present? && p['token_translations'].any? }
+        if first_phrase_with_tokens
+          first_token = first_phrase_with_tokens['token_translations'].first
+          words = []
+          
+          if first_token
+            correct_word = first_token['original_text']
+            similar_word = first_token['similar_sound']
+            
+            if correct_word.present? && similar_word.present?
+              words = [{word: correct_word, correct: true}, {word: similar_word, correct: false}].shuffle
+            elsif correct_word.present?
+              words = [{word: correct_word, correct: true}, {word: "alternative", correct: false}].shuffle
+            end
+          end
+          
+          words.each do |word_data| 
+      %>
+            <button 
+              data-listen-activity-target="wordOption" 
+              data-word="<%= word_data[:word] %>" 
+              data-correct="<%= word_data[:correct] %>"
+              data-action="click->listen-activity#selectWord"
+              class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
+              <%= word_data[:word] %>
+            </button>
+      <%  end
+        end 
+      %>
+    </div>
+  </div>
+</div> 

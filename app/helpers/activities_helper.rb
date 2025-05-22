@@ -56,4 +56,32 @@ module ActivitiesHelper
       end)
     end
   end
+  
+  def render_phrase_with_blanks(phrase)
+    text = phrase['text_l1']
+    tokens = phrase['token_translations'] || []
+    
+    # Sort tokens by start_index in descending order to avoid position shifts
+    tokens_sorted = tokens.sort_by { |t| -t['start_index'] }
+    
+    tokens_sorted.each do |token|
+      start_index = token['start_index']
+      end_index = token['end_index']
+      original_text = token['original_text']
+      similar_sound = token['similar_sound']
+      
+      token_data = {
+        original_text: original_text,
+        similar_sound: similar_sound
+      }.to_json
+      
+      # Create a blank line with the same width as the original text
+      blank_html = "<span class='blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
+      
+      # Replace the token with a blank line
+      text = text[0...start_index] + blank_html + text[end_index..]
+    end
+    
+    text.html_safe
+  end
 end

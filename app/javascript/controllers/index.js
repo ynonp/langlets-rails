@@ -13,6 +13,9 @@ application.register("find-words", FindWordsController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import ListenActivityController from "./listen_activity_controller"
+application.register("listen-activity", ListenActivityController)
+
 import MatchActivityController from "./match_activity_controller"
 application.register("match-activity", MatchActivityController)
 

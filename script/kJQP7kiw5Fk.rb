@@ -299,6 +299,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 4,
   l1_end_index: 9
 ) do |token|
+  # sabes
   token.translation = "you know"
   token.l2_start_index = 5
   token.l2_end_index = 13
@@ -318,6 +319,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 17,
   l1_end_index: 22
 ) do |token|
+  token.similar_sound = ['luego', 'nuevo']
   token.translation = "I've been"
   token.l2_start_index = 19
   token.l2_end_index = 28
@@ -328,6 +330,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 30
 ) do |token|
   token.questions = ["¿Cuánto tiempo?"]
+  token.similar_sound = ['un gato']
   token.translation = "for a while"
   token.l2_start_index = 44
   token.l2_end_index = 55
@@ -361,6 +364,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 16
 ) do |token|
   token.questions = ["¿Qué tienes que hacer?"]
+  token.similar_sound = ['volar']
   token.translation = "dance"
   token.l2_start_index = 10
   token.l2_end_index = 15
@@ -433,6 +437,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 10,
   l1_end_index: 16
 ) do |token|
+  token.similar_sound = ['cansada']
   token.translation = "look"
   token.l2_start_index = 16
   token.l2_end_index = 20
@@ -494,6 +499,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 13,
   l1_end_index: 19
 ) do |token|
+  token.similar_sound = ['destino']
   token.translation = "way"
   token.l2_start_index = 12
   token.l2_end_index = 15
@@ -552,6 +558,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 16,
   l1_end_index: 23
 ) do |token|
+  token.similar_sound = ['hermano']
   token.translation = "the magnet"
   token.l2_start_index = 17
   token.l2_end_index = 27
@@ -611,6 +618,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 19,
   l1_end_index: 30
 ) do |token|
+  token.similar_sound = ['gritando']
   token.translation = "I'm making"
   token.l2_start_index = 23
   token.l2_end_index = 33
@@ -735,6 +743,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 18
 ) do |token|
   token.questions = []
+  token.similar_sound = ['sonidos']
   token.translation = "senses"
   token.l2_start_index = 7
   token.l2_end_index = 13
@@ -825,6 +834,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 9
 ) do |token|
   token.questions = []
+  token.similar_sound = ['movidito']
   token.translation = "Slowly"
   token.l2_start_index = 0
   token.l2_end_index = 6
@@ -865,6 +875,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 26,
   l1_end_index: 35
 ) do |token|
+  token.similar_sound = ['cariñito']
   token.translation = "slowly"
   token.l2_start_index = 28
   token.l2_end_index = 34
@@ -972,6 +983,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 33,
   l1_end_index: 40
 ) do |token|
+  token.similar_sound = ['domingo']
   token.translation = "with me"
   token.l2_start_index = 30
   token.l2_end_index = 37
@@ -1076,6 +1088,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 18
 ) do |token|
   token.questions = ["¿Qué vas a firmar?"]
+  token.similar_sound = ['pareces']
   token.translation = "walls"
   token.l2_start_index = 9
   token.l2_end_index = 14
@@ -1206,6 +1219,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 7,
   l1_end_index: 10
 ) do |token|
+  token.similar_sound = ['ayer']
   token.translation = "to see"
   token.l2_start_index = 7
   token.l2_end_index = 13
@@ -1342,6 +1356,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 11
 ) do |token|
   token.questions = []
+  token.similar_sound = ['jugares']
   token.translation = "places"
   token.l2_start_index = 14
   token.l2_end_index = 20
@@ -2290,6 +2305,7 @@ TokenTranslation.find_or_create_by(
   l1_end_index: 39
 ) do |token|
   token.questions = []
+  token.similar_sound = ['abrelatas']
   token.translation = "a puzzle"
   token.l2_start_index = 29
   token.l2_end_index = 37
@@ -2402,6 +2418,7 @@ TokenTranslation.find_or_create_by(
   l1_start_index: 7,
   l1_end_index: 15
 ) do |token|
+  token.similar_sound = ['aspirar']
   token.translation = "to breathe"
   token.l2_start_index = 7
   token.l2_end_index = 17
@@ -3621,3 +3638,13 @@ intro_language_alignment_activity.token_translations = [
 
 intro_speak_activity = Activities::SpeakActivity.create!(lesson: l[0], order: 5)
 intro_speak_activity.phrases = phrases[6..9]
+
+intro_listen_activity = Activities::ListenActivity.create!(lesson: l[0], order: 6)
+intro_listen_activity.phrases = phrases[6..9]
+intro_listen_activity.token_translations = [
+  phrases[6].token_translations.find_by(translation: "for a while"),
+  phrases[7].token_translations.find_by(translation: "dance"),
+  phrases[8].token_translations.find_by(translation: "look"),
+  phrases[9].token_translations.find_by(translation: "way"),
+]
+

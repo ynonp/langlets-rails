@@ -25,6 +25,10 @@ export default class extends Controller {
   }
 
   connect() {
+    // Setup event listeners for communication with listen activity controller
+    this.element.addEventListener('listen-activity:pause-video', this.handlePauseVideo.bind(this));
+    this.element.addEventListener('listen-activity:play-video', this.handlePlayVideo.bind(this));
+    
     this.player.on('stateChange', (event) => {
       if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
         this.showPlayButton();
@@ -41,6 +45,16 @@ export default class extends Controller {
         this.hidePlayButton();
       }
     });
+  }
+  
+  // Handler for the pause video event
+  handlePauseVideo() {
+    this.player.pauseVideo();
+  }
+  
+  // Handler for the play video event
+  handlePlayVideo() {
+    this.player.playVideo();
   }
 
   async togglePlayback() {
@@ -66,11 +80,6 @@ export default class extends Controller {
       this.playButtonTarget.textContent = '▶';
     } else {
       this.playButtonTarget.classList.remove('hidden');
-    }
-
-    const subtitlesLines = this.subtitlesTargets;
-    for (let i=0; i < subtitlesLines.length; i++) {
-      subtitlesLines[i].classList.remove(this.currentTextLineClass);
     }
   }
 
@@ -103,6 +112,12 @@ export default class extends Controller {
     if (index !== -1) {
       subtitlesLines[index].classList.add(this.currentTextLineClass);
       
+      // Check if active subtitle has blank-line elements
+      const blankLines = subtitlesLines[index].querySelectorAll('.blank-line');
+      if (blankLines.length > 0) {
+        this.player.pauseVideo();
+      }
+      
       const container = this.containerTarget;
       const lineHeight = subtitlesLines[index].offsetHeight;
       
@@ -112,22 +127,23 @@ export default class extends Controller {
       container.scrollTo({
         top: targetScrollTop,
         behavior: 'smooth'
-      });
-      
-      const phrasesList = this.phrasesListTarget;
-      const containerHeight = container.clientHeight;
-      const remainingItems = subtitlesLines.length - index - 1;
-      
-      if (remainingItems < 5) {
-        const paddingNeeded = containerHeight - (remainingItems * lineHeight);
-        phrasesList.style.paddingBottom = `${Math.max(paddingNeeded, 0)}px`;
-      }
+      });          
     }
 
     for (let i=0; i < subtitlesLines.length; i++) {
       if (i !== index) {
         subtitlesLines[i].classList.remove(this.currentTextLineClass);
       }
+    }
+  }
+  
+  disconnect() {
+    // Clean up event listeners
+    this.element.removeEventListener('listen-activity:pause-video', this.handlePauseVideo);
+    this.element.removeEventListener('listen-activity:play-video', this.handlePlayVideo);
+    
+    if (this.monitorPlaybackInterval) {
+      clearInterval(this.monitorPlaybackInterval);
     }
   }
 }
