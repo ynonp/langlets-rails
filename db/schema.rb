@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_18_092246) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_22_145853) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -44,17 +44,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_18_092246) do
     t.index ["token_translation_id"], name: "index_activity_token_translations_on_token_translation_id"
   end
 
-  create_table "course_lessons", force: :cascade do |t|
-    t.bigint "course_id", null: false
-    t.bigint "lesson_id", null: false
-    t.integer "order"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.index ["course_id"], name: "index_course_lessons_on_course_id"
-    t.index ["lesson_id"], name: "index_course_lessons_on_lesson_id"
-  end
-
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -80,6 +69,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_18_092246) do
     t.string "end_timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "course_id"
+    t.integer "order", default: 0
+    t.string "name"
+    t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
     t.index ["slug"], name: "index_lessons_on_slug", unique: true
   end
@@ -124,8 +117,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_18_092246) do
   add_foreign_key "activity_phrases", "phrases"
   add_foreign_key "activity_token_translations", "activities"
   add_foreign_key "activity_token_translations", "token_translations"
-  add_foreign_key "course_lessons", "courses"
-  add_foreign_key "course_lessons", "lessons"
   add_foreign_key "lessons", "media"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"

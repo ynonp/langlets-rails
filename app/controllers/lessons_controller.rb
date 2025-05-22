@@ -6,8 +6,7 @@ class LessonsController < ApplicationController
     current_order = params[:a].to_i
     next_order = current_order.positive? ? current_order + 1 : 2
     next_activity = @lesson.activities.find_by("activities.order >= ?", next_order)
-    @course = CourseLesson.where(lesson: @lesson).first&.course
-    @course_path = @course.present? ? course_path(@course.slug) : nil
+    @course_path = @lesson.course.present? ? course_path(@lesson.course.slug) : nil
     
     @next_activity_path = if next_activity.present?
       lesson_path(@lesson.slug, a: next_activity.order)

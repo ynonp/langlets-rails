@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
   belongs_to :medium
+  belongs_to :course, optional: true
   has_many :activities, dependent: :destroy
   has_timestamp [ :start_timestamp, :end_timestamp ]
   include FriendlyName

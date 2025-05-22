@@ -106,24 +106,15 @@ medium.phrases.reload
 
 
 l = [
-  Lesson.create!(medium: medium, slug: 'despacito1'),
-  Lesson.create!(medium: medium, slug: 'despacito2'),
-  Lesson.create!(medium: medium, slug: 'despacito3'),
-  Lesson.create!(medium: medium, slug: 'despacito4'),
-  Lesson.create!(medium: medium, slug: 'despacito5'),
-  Lesson.create!(medium: medium, slug: 'despacito6'),
-  Lesson.create!(medium: medium, slug: 'despacito7'),
-  Lesson.create!(medium: medium, slug: 'despacito8'),
+  Lesson.create!(medium: medium, slug: 'despacito1', course: c, order: 0, name: 'Intro')                     ,
+  Lesson.create!(medium: medium, slug: 'despacito2', course: c, order: 1, name: 'Si, sabes que')             ,
+  Lesson.create!(medium: medium, slug: 'despacito3', course: c, order: 2, name: 'tú eres el imán')           ,
+  Lesson.create!(medium: medium, slug: 'despacito4', course: c, order: 3, name: 'Chorus')                    ,
+  Lesson.create!(medium: medium, slug: 'despacito5', course: c, order: 4, name: 'Quiero ver bailar')         ,
+  Lesson.create!(medium: medium, slug: 'despacito6', course: c, order: 5, name: 'Yo sé que estás pensándolo'),
+  Lesson.create!(medium: medium, slug: 'despacito7', course: c, order: 6, name: 'Pasito a pasito')           ,
+  Lesson.create!(medium: medium, slug: 'despacito8', course: c, order: 7, name: 'Outro')                     ,
 ]
-
-CourseLesson.create!(course: c, lesson: l[0], order: 0, name: 'Intro')
-CourseLesson.create!(course: c, lesson: l[1], order: 1, name: 'Si, sabes que')
-CourseLesson.create!(course: c, lesson: l[2], order: 2, name: 'tú eres el imán')
-CourseLesson.create!(course: c, lesson: l[3], order: 3, name: 'Chorus')
-CourseLesson.create!(course: c, lesson: l[4], order: 4, name: 'Quiero ver bailar')
-CourseLesson.create!(course: c, lesson: l[5], order: 5, name: 'Yo sé que estás pensándolo')
-CourseLesson.create!(course: c, lesson: l[6], order: 6, name: 'Pasito a pasito')
-CourseLesson.create!(course: c, lesson: l[7], order: 7, name: 'Outro')
 
 # phrases.each_with_index do |p, i|
 #   puts "phrase = phrases[#{i}]"
