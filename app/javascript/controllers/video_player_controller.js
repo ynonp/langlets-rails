@@ -59,7 +59,7 @@ export default class extends Controller {
 
   async togglePlayback() {
     const {player, segmentStartValue} = this;
-    if (this.startActivityButtonTarget.classList.contains('hidden')) {
+    if (this.hasStartActivityButtonTarget && this.startActivityButtonTarget.classList.contains('hidden')) {
       this.playVideoButtonTarget.classList.add('hidden');
       this.startActivityButtonTarget.classList.remove('hidden');  
     }
