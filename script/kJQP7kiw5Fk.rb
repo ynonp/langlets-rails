@@ -4421,7 +4421,7 @@ end
 # Create lesson activities
 
 ## Lesson 1 - Intro
-intro_watch_video = Activities::WatchVideoActivity.create!(lesson: l[0], order: 1)
+intro_watch_video = Activities::WatchVideoActivity.create!(lesson: l[0], order: 0)
 intro_watch_video.phrases = phrases[0..9]
 
 intro_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[0], text_header: 'Match each phrase to its translation', order: 2)
@@ -4454,8 +4454,48 @@ intro_listen_activity.token_translations = [
   t35, # camino
 ]
 
+## Lesson 2 - el imán y el metal
+iman_watch_video = Activities::WatchVideoActivity.create!(lesson: l[1], order: 1)
+iman_watch_video.phrases = phrases[10..15]
+
+iman_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[1], text_header: 'Match each phrase to its translation', order: 2)
+iman_match_activity.phrases = phrases[10..13]
+
+iman_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[1], order: 3)
+iman_sort_phrases_activity.phrases = phrases[10..13]
+
+iman_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[1], order: 4)
+iman_language_alignment_activity.phrases = phrases[10..15]
+iman_language_alignment_activity.token_translations = [
+  t41, # el imán
+  t44, # el metal
+  t45, # Me voy acercando
+  t47, # voy armando
+  t48, # el plan
+  t50, # pensarlo
+  t51, # se acelera el pulso
+  t54, # me estás gustando
+  t59, # sentidos
+  t67, # apuro
+]
+
+iman_speak_activity = Activities::SpeakActivity.create!(lesson: l[1], order: 5)
+iman_speak_activity.phrases = phrases[10..15]
+
+iman_listen_activity = Activities::ListenActivity.create!(lesson: l[1], order: 6)
+iman_listen_activity.phrases = phrases[10..15]
+iman_listen_activity.token_translations = [
+  t41, # el imán
+  t44, # el metal
+  t47, # voy armando
+  t50, # pensarlo
+  t59, # sentidos
+  t67, # apuro
+]
+
+
 ## Lesson 3 - Chorus
-chorus_watch_video = Activities::WatchVideoActivity.create!(lesson: l[2], order: 1)
+chorus_watch_video = Activities::WatchVideoActivity.create!(lesson: l[2], order: 2)
 chorus_watch_video.phrases = phrases[16..23]
 
 chorus_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[2], text_header: 'Match each phrase to its translation', order: 2)
@@ -4502,41 +4542,3 @@ chorus_listen_activity.token_translations = [
   t100, # manuscrito
 ]
 
-## Lesson 2 - el imán y el metal
-iman_watch_video = Activities::WatchVideoActivity.create!(lesson: l[1], order: 1)
-iman_watch_video.phrases = phrases[10..15]
-
-iman_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[1], text_header: 'Match each phrase to its translation', order: 2)
-iman_match_activity.phrases = phrases[10..13]
-
-iman_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[1], order: 3)
-iman_sort_phrases_activity.phrases = phrases[10..13]
-
-iman_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[1], order: 4)
-iman_language_alignment_activity.phrases = phrases[10..15]
-iman_language_alignment_activity.token_translations = [
-  t41, # el imán
-  t44, # el metal
-  t45, # Me voy acercando
-  t47, # voy armando
-  t48, # el plan
-  t50, # pensarlo
-  t51, # se acelera el pulso
-  t54, # me estás gustando
-  t59, # sentidos
-  t67, # apuro
-]
-
-iman_speak_activity = Activities::SpeakActivity.create!(lesson: l[1], order: 5)
-iman_speak_activity.phrases = phrases[10..15]
-
-iman_listen_activity = Activities::ListenActivity.create!(lesson: l[1], order: 6)
-iman_listen_activity.phrases = phrases[10..15]
-iman_listen_activity.token_translations = [
-  t41, # el imán
-  t44, # el metal
-  t47, # voy armando
-  t50, # pensarlo
-  t59, # sentidos
-  t67, # apuro
-]
