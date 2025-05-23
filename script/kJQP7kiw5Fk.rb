@@ -11,7 +11,7 @@ phrases_data = [
   ["Hey yeah", "Hey yeah", "00:38"],
   ["Diridiri, dirididi Daddy", "Diridiri, dirididi Daddy", "00:39"],
   ["Go!", "Go!", "00:41"],
-  ["Sí, sabes que ya llevo un rato mirándote", "Yes, you know that I've been looking at you for a while", "00:42"],
+  ["Sí, sabes que ya llevo un rato mirándote", "Yes, you know that I've already been looking at you for a while", "00:42"],
   ["Tengo que bailar contigo hoy (DY)", "I have to dance with you today (DY)", "00:47"],
   ["Vi que tu mirada ya estaba llamándome", "I saw that your look was already calling me", "00:52"],
   ["Muéstrame el camino que yo voy", "Show me the way to go", "00:57"],
@@ -133,43 +133,44 @@ l = [
 
 # ["¡Ay!", "Oh!", "00:28"],
 phrase = phrases[0]
-t1 = phrase.add_token_translation("¡Ay!", 0, "Oh!", 0)
+phrase.add_token_translation("¡Ay!", 0, "Oh!", 0)
 
 # ["Fonsi, DY", "Fonsi, DY", "00:30"],
 phrase = phrases[1]
-t2 = phrase.add_token_translation("Fonsi,", 0, "Fonsi,", 0)
-t3 = phrase.add_token_translation("DY", 0, "DY", 0)
+phrase.add_token_translation("Fonsi,", 0, "Fonsi,", 0)
+phrase.add_token_translation("DY", 0, "DY", 0)
 
 #   ["Oh, oh no, oh no (oh)", "Oh, oh no, oh no (oh)", "00:33"],
 phrase = phrases[2]
-t4 = phrase.add_token_translation("Oh", 0, "Oh", 0) # first Oh -> Oh
-t5 = phrase.add_token_translation("oh no", 0, "oh no", 0) # first oh no -> oh no
-t6 = phrase.add_token_translation("oh no", 1, "oh no", 1) # second oh no -> oh n o
-t7 = phrase.add_token_translation("oh", 2, "oh", 2) # second oh -> oh
+phrase.add_token_translation("Oh", 0, "Oh", 0) # first Oh -> Oh
+phrase.add_token_translation("oh no", 0, "oh no", 0) # first oh no -> oh no
+phrase.add_token_translation("oh no", 1, "oh no", 1) # second oh no -> oh n o
+phrase.add_token_translation("oh", 2, "oh", 2) # second oh -> oh
 
 # ["Hey yeah", "Hey yeah", "00:38"],
 phrase = phrases[3]
-t10 = phrase.add_token_translation("Hey", 0, "Hey", 0)
-t11 = phrase.add_token_translation("yeah", 0, "yeah", 0)
+phrase.add_token_translation("Hey", 0, "Hey", 0)
+phrase.add_token_translation("yeah", 0, "yeah", 0)
 
 # ["Diridiri, dirididi Daddy", "Diridiri, dirididi Daddy", "00:39"],
 phrase = phrases[4]
-t12 = phrase.add_token_translation("Diridiri", 0, "Diridiri", 0)
-t13 = phrase.add_token_translation("dirididi", 0, "dirididi", 0)
-t14 = phrase.add_token_translation("Daddy", 0, "Daddy", 0)
+phrase.add_token_translation("Diridiri", 0, "Diridiri", 0)
+phrase.add_token_translation("dirididi", 0, "dirididi", 0)
+phrase.add_token_translation("Daddy", 0, "Daddy", 0)
 
 # ["Go!", "Go!", "00:40"],
 phrase = phrases[5]
-t14 = phrase.add_token_translation("Go!", 0, "Go!", 0)
+phrase.add_token_translation("Go!", 0, "Go!", 0)
 
 # ["Sí, sabes que ya llevo un rato mirándote", "Yes, you know that I've been looking at you for a while", "00:42"],
 phrase = phrases[6]
-t15 = phrase.add_token_translation("Sí", 0, "Yes", 0, questions: [])
-t16 = phrase.add_token_translation("sabes", 0, "you know", 0)
-t17 = phrase.add_token_translation("que", 0, "that", 0, questions: [])
-t18 = phrase.add_token_translation("ya", 0, "I've been", 0, similar_sound: ['luego', 'nuevo'])
-t19 = phrase.add_token_translation("llevo un rato", 0, "for a while", 0, questions: ["¿Cuánto tiempo?"], similar_sound: ['un gato'])
-t20 = phrase.add_token_translation("mirándote", 0, "looking at you", 0, questions: ["¿Qué haces?"])
+phrase.add_token_translation("Sí", 0, "Yes", 0, questions: [])
+phrase.add_token_translation("sabes", 0, "you know", 0)
+phrase.add_token_translation("que", 0, "that", 0, questions: [])
+phrase.add_token_translation("ya", 0, "already", 0, similar_sound: ['luego', 'nuevo'])
+phrase.add_token_translation("llevo", 0, "I've been", 0)
+phrase.add_token_translation("un rato", 0, "for a while", 0, questions: ["¿Cuánto tiempo?"], similar_sound: ['un gato'])
+phrase.add_token_translation("mirándote", 0, "looking at you", 0, questions: ["¿Qué haces?"])
 
 # ["Tengo que bailar contigo hoy (DY)", "I have to dance with you today (DY)", "00:47"],
 phrase = phrases[7]
@@ -181,3907 +182,558 @@ t25 = phrase.add_token_translation("(DY)", 0, "(DY)", 0)
 
 # ["Vi que tu mirada ya estaba llamándome", "I saw that your look was already calling me", "00:52"],
 phrase = phrases[8]
-t26 = phrase.add_token_translation("Vi", 0, "I saw", 0)
-t27 = phrase.add_token_translation("que", 0, "that", 0, questions: [])
-t28 = phrase.add_token_translation("tu", 0, "your", 0, questions: [])
-t29 = phrase.add_token_translation("mirada", 0, "look", 0, similar_sound: ['cansada'])
-t30 = phrase.add_token_translation("ya", 0, "already", 0, questions: [])
-t31 = phrase.add_token_translation("estaba", 0, "was", 0, questions: [])
-t32 = phrase.add_token_translation("llamándome", 0, "calling me", 0, questions: [])
+phrase.add_token_translation("Vi", 0, "I saw", 0)
+phrase.add_token_translation("que", 0, "that", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("mirada", 0, "look", 0, similar_sound: ['cansada'])
+phrase.add_token_translation("ya", 0, "already", 0, questions: [])
+phrase.add_token_translation("estaba", 0, "was", 0, questions: [])
+phrase.add_token_translation("llamándome", 0, "calling me", 0, questions: [])
 
 # ["Muéstrame el camino que yo voy", "Show me the way to go", "00:57"],
 phrase = phrases[9]
-t33 = phrase.add_token_translation("Muéstrame", 0, "Show me", 0, questions: ["¿Qué pide el hablante?"])
-t34 = phrase.add_token_translation("el", 0, "the", 0)
-t35 = phrase.add_token_translation("camino", 0, "way", 0, similar_sound: ['destino'])
-t36 = phrase.add_token_translation("que yo voy", 0, "I'm going", 0)
+phrase.add_token_translation("Muéstrame", 0, "Show me", 0, questions: ["¿Qué pide el hablante?"])
+phrase.add_token_translation("el", 0, "the", 0)
+phrase.add_token_translation("camino", 0, "way", 0, similar_sound: ['destino'])
+phrase.add_token_translation("que yo voy", 0, "I'm going", 0)
 
+# ["Oh, tú, tú eres el imán y yo soy el metal", "Oh, you, you are the magnet and I am the metal", "01:02"],
 phrase = phrases[10]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.questions = []
-  token.translation = "Oh"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 6
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 4
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 10
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 9
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 15
-) do |token|
-  token.translation = "are"
-  token.l2_start_index = 13
-  token.l2_end_index = 16
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 23
-) do |token|
-  token.similar_sound = ['hermano']
-  token.translation = "the magnet"
-  token.l2_start_index = 17
-  token.l2_end_index = 27
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 28
-) do |token|
-  token.translation = "I"
-  token.l2_start_index = 32
-  token.l2_end_index = 33
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "am"
-  token.l2_start_index = 34
-  token.l2_end_index = 36
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 41
-) do |token|
-  token.questions = ["¿Quién soy?"]
-  token.translation = "the metal"
-  token.l2_start_index = 37
-  token.l2_end_index = 46
-end
+phrase.add_token_translation("Oh", 0, "Oh", 0, questions: [])
+phrase.add_token_translation("tú", 0, "you", 0)
+phrase.add_token_translation("tú", 1, "you", 1, questions: [])
+phrase.add_token_translation("eres", 0, "are", 0)
+phrase.add_token_translation("el imán", 0, "the magnet", 0, similar_sound: ['hermano'])
+phrase.add_token_translation("yo", 0, "I", 0)
+phrase.add_token_translation("soy", 0, "am", 0, questions: [])
+phrase.add_token_translation("el metal", 0, "the metal", 0, questions: ["¿Quién soy?"])
 
+# ["Me voy acercando y voy armando el plan", "I'm getting closer and I'm making the plan", "01:06"],
 phrase = phrases[11]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 16
-) do |token|
-  token.translation = "I'm getting closer"
-  token.l2_start_index = 0
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "and"
-  token.l2_start_index = 19
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 30
-) do |token|
-  token.similar_sound = ['gritando']
-  token.translation = "I'm making"
-  token.l2_start_index = 23
-  token.l2_end_index = 33
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 38
-) do |token|
-  token.questions = ["¿Qué está armando?"]
-  token.translation = "the plan"
-  token.l2_start_index = 34
-  token.l2_end_index = 42
-end
+phrase.add_token_translation("Me voy acercando", 0, "I'm getting closer", 0)
+phrase.add_token_translation("y", 0, "and", 0, questions: [])
+phrase.add_token_translation("voy armando", 0, "I'm making", 0, similar_sound: ['voy gritando'])
+phrase.add_token_translation("el plan", 0, "the plan", 0, questions: ["¿Qué está armando?"])
 
+# ["Solo con pensarlo se acelera el pulso (oh yeah)", "Just thinking about it makes my pulse race (oh yeah)", "01:09"],
 phrase = phrases[12]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.questions = []
-  token.translation = "Just"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 17
-) do |token|
-  token.questions = ["¿Qué acelera el pulso?"]
-  token.translation = "thinking about it"
-  token.l2_start_index = 5
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 37
-) do |token|
-  token.translation = "makes my pulse race"
-  token.l2_start_index = 23
-  token.l2_end_index = 42
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 38,
-  l1_end_index: 47
-) do |token|
-  token.questions = []
-  token.translation = "(oh yeah)"
-  token.l2_start_index = 43
-  token.l2_end_index = 52
-end
+phrase.add_token_translation("Solo", 0, "Just", 0, questions: [])
+phrase.add_token_translation("con pensarlo", 0, "thinking about it", 0, questions: ["¿Qué acelera el pulso?"])
+phrase.add_token_translation("se acelera el pulso", 0, "makes my pulse race", 0)
+phrase.add_token_translation("(oh yeah)", 0, "(oh yeah)", 0, questions: [])
 
+# ["Ya, ya me estás gustando más de lo normal", "Now, I'm liking you more than normal", "01:14"],
 phrase = phrases[13]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.questions = []
-  token.translation = "Now"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 24
-) do |token|
-  token.translation = "I'm liking you"
-  token.l2_start_index = 5
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 28
-) do |token|
-  token.questions = []
-  token.translation = "more"
-  token.l2_start_index = 20
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 41
-) do |token|
-  token.questions = []
-  token.translation = "than normal"
-  token.l2_start_index = 25
-  token.l2_end_index = 36
-end
+phrase.add_token_translation("Ya", 0, "Now", 0, questions: [])
+phrase.add_token_translation("ya me estás gustando", 0, "I'm liking you", 0)
+phrase.add_token_translation("más", 0, "more", 0, questions: [])
+phrase.add_token_translation("de lo normal", 0, "than normal", 0, questions: [])
 
+# ["Todos mis sentidos van pidiendo más", "All my senses are asking for more", "01:17"],
 phrase = phrases[14]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "All"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "my"
-  token.l2_start_index = 4
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.similar_sound = ['sonidos']
-  token.translation = "senses"
-  token.l2_start_index = 7
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 31
-) do |token|
-  token.translation = "are asking"
-  token.l2_start_index = 14
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 32,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "more"
-  token.l2_start_index = 29
-  token.l2_end_index = 33
-end
+phrase.add_token_translation("Todos", 0, "All", 0, questions: [])
+phrase.add_token_translation("mis", 0, "my", 0, questions: [])
+phrase.add_token_translation("sentidos", 0, "senses", 0, questions: [], similar_sound: ['sonidos'])
+phrase.add_token_translation("van pidiendo", 0, "are asking", 0)
+phrase.add_token_translation("más", 0, "more", 0, questions: [])
 
+# ["Esto hay que tomarlo sin ningún apuro", "This must be taken without any rush", "01:20"],
 phrase = phrases[15]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "This"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 12
-) do |token|
-  token.questions = []
-  token.translation = "must be"
-  token.l2_start_index = 5
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 20
-) do |token|
-  token.translation = "taken"
-  token.l2_start_index = 13
-  token.l2_end_index = 18
-end
+phrase.add_token_translation("Esto", 0, "This", 0)
+phrase.add_token_translation("hay que", 0, "must be", 0, questions: [])
+phrase.add_token_translation("tomarlo", 0, "taken", 0, similar_sound: ['jurarlo'])
+phrase.add_token_translation("sin ningún", 0, "any", 0, questions: [])
+phrase.add_token_translation("apuro", 0, "rush", 0, questions: [])
 
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 31
-) do |token|
-  token.questions = []
-  token.translation = "any"
-  token.l2_start_index = 27
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 32,
-  l1_end_index: 37
-) do |token|
-  token.questions = []
-  token.translation = "rush"
-  token.l2_start_index = 31
-  token.l2_end_index = 35
-end
-
+# ["Despacito", "Slowly", "01:24"],
 phrase = phrases[16]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.similar_sound = ['movidito']
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [], similar_sound: ['movidito'])
 
+# ["Quiero respirar tu cuello despacito", "I want to breathe your neck slowly", "01:25"],
 phrase = phrases[17]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 15
-) do |token|
-  token.translation = "I want to breathe"
-  token.l2_start_index = 0
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 18
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué vas a respirar?"]
-  token.translation = "neck"
-  token.l2_start_index = 23
-  token.l2_end_index = 27
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.similar_sound = ['cariñito']
-  token.translation = "slowly"
-  token.l2_start_index = 28
-  token.l2_end_index = 34
-end
+phrase.add_token_translation("Quiero", 0, "I want to", 0)
+phrase.add_token_translation("respirar", 0, "breathe", 0)
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("cuello", 0, "neck", 0, questions: ["¿Qué vas a respirar?"])
+phrase.add_token_translation("despacito", 0, "slowly", 0, similar_sound: ['cariñito'])
 
+# ["Deja que te diga cosas al oído", "Let me tell you things in your ear", "01:28"],
 phrase = phrases[18]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "Let"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 12
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 16
-) do |token|
-  token.translation = "tell"
-  token.l2_start_index = 7
-  token.l2_end_index = 11
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.translation = "things"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 30
-) do |token|
-  token.translation = "in your ear"
-  token.l2_start_index = 23
-  token.l2_end_index = 34
-end
+phrase.add_token_translation("Deja", 0, "Let", 0)
+phrase.add_token_translation("te", 0, "you", 0)
+phrase.add_token_translation("diga", 0, "tell", 0)
+phrase.add_token_translation("cosas", 0, "things", 0)
+phrase.add_token_translation("al oído", 0, "in your ear", 0)
 
+# ["Para que te acuerdes si no estás conmigo", "So you remember if you're not with me", "01:31"],
 phrase = phrases[19]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "So"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 3
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 20
-) do |token|
-  token.translation = "remember"
-  token.l2_start_index = 7
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 23
-) do |token|
-  token.questions = []
-  token.translation = "if"
-  token.l2_start_index = 16
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 24,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "you're not"
-  token.l2_start_index = 19
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 40
-) do |token|
-  token.similar_sound = ['domingo']
-  token.translation = "with me"
-  token.l2_start_index = 30
-  token.l2_end_index = 37
-end
+phrase.add_token_translation("Para que", 0, "So", 0, questions: [])
+phrase.add_token_translation("te", 0, "you", 0, questions: [])
+phrase.add_token_translation("acuerdes", 0, "remember", 0, similar_sound: ['amares'])
+phrase.add_token_translation("si", 0, "if", 0, questions: [])
+phrase.add_token_translation("no estás", 0, "you're not", 0, questions: [])
+phrase.add_token_translation("conmigo", 0, "with me", 0, similar_sound: ['domingo'])
 
+# ["Despacito", "Slowly", "01:35"],
 phrase = phrases[20]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [])
 
+# ["Quiero desnudarte a besos despacito", "I want to undress you with kisses slowly", "01:36"],
 phrase = phrases[21]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "undress"
-  token.l2_start_index = 10
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 17
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 18
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "with"
-  token.l2_start_index = 22
-  token.l2_end_index = 26
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "kisses"
-  token.l2_start_index = 27
-  token.l2_end_index = 33
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "slowly"
-  token.l2_start_index = 34
-  token.l2_end_index = 40
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0)
+phrase.add_token_translation("desnudarte", 0, "undress", 0, questions: [])
+phrase.add_token_translation("te", 0, "you", 0, questions: [])
+phrase.add_token_translation("a", 0, "with", 0, questions: [])
+phrase.add_token_translation("besos", 0, "kisses", 0, questions: [])
+phrase.add_token_translation("despacito", 0, "slowly", 0, questions: [])
 
+# ["Firmar las paredes de tu laberinto", "Sign the walls of your labyrinth", "01:39"],
 phrase = phrases[22]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "Sign"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.questions = []
-  token.translation = "the"
-  token.l2_start_index = 5
-  token.l2_end_index = 8
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 18
-) do |token|
-  token.questions = ["¿Qué vas a firmar?"]
-  token.similar_sound = ['pareces']
-  token.translation = "walls"
-  token.l2_start_index = 9
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "of"
-  token.l2_start_index = 15
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 24
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 18
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 34
-) do |token|
-  token.translation = "labyrinth"
-  token.l2_start_index = 23
-  token.l2_end_index = 32
-end
+phrase.add_token_translation("Firmar", 0, "Sign", 0)
+phrase.add_token_translation("las", 0, "the", 0, questions: [])
+phrase.add_token_translation("paredes", 0, "walls", 0, questions: ["¿Qué vas a firmar?"], similar_sound: ['pareces'])
+phrase.add_token_translation("de", 0, "of", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0)
+phrase.add_token_translation("laberinto", 0, "labyrinth", 0)
 
+# ["Y hacer de tu cuerpo todo un manuscrito (sube, sube, sube)", "And make your body a whole manuscript (up, up, up)", "01:42"],
 phrase = phrases[23]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 2,
-  l1_end_index: 7
-) do |token|
-  token.translation = "make"
-  token.l2_start_index = 4
-  token.l2_end_index = 8
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 20
-) do |token|
-  token.translation = "your body"
-  token.l2_start_index = 9
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 39
-) do |token|
-  token.translation = "a whole manuscript"
-  token.l2_start_index = 19
-  token.l2_end_index = 37
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 40,
-  l1_end_index: 58
-) do |token|
-  token.questions = []
-  token.translation = "(up, up, up)"
-  token.l2_start_index = 38
-  token.l2_end_index = 50
-end
+phrase.add_token_translation("Y", 0, "And", 0, questions: [])
+phrase.add_token_translation("hacer", 0, "make", 0)
+phrase.add_token_translation("de tu cuerpo", 0, "your body", 0)
+phrase.add_token_translation("todo", 0, "a whole", 0)
+phrase.add_token_translation("un manuscrito", 0, "manuscript", 0)
+phrase.add_token_translation("(sube, sube, sube)", 0, "(up, up, up)", 0, questions: [])
 
+# ["(Sube, sube) Oh", "(Up, up) Oh", "01:45"],
 phrase = phrases[24]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 1,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "Up"
-  token.l2_start_index = 1
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "up"
-  token.l2_start_index = 5
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "Oh"
-  token.l2_start_index = 9
-  token.l2_end_index = 11
-end
+phrase.add_token_translation("Sube", 0, "Up", 0, questions: [])
+phrase.add_token_translation("sube", 0, "up", 0, questions: [])
+phrase.add_token_translation("Oh", 0, "Oh", 0, questions: [])
 
+# ["Quiero ver bailar tu pelo", "I want to see your hair dance", "01:47"],
 phrase = phrases[25]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.similar_sound = ['ayer']
-  token.translation = "to see"
-  token.l2_start_index = 7
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 17
-) do |token|
-  token.questions = []
-  token.translation = "dance"
-  token.l2_start_index = 24
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué quiere ver bailar?"]
-  token.translation = "your hair"
-  token.l2_start_index = 14
-  token.l2_end_index = 23
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("ver", 0, "to see", 0, similar_sound: ['ayer'])
+phrase.add_token_translation("bailar", 0, "dance", 0, questions: [])
+phrase.add_token_translation("tu pelo", 0, "your hair", 0, questions: ["¿Qué quiere ver bailar?"])
 
+# ["Quiero ser tu ritmo (uh oh, uh oh)", "I want to be your rhythm (uh oh, uh oh)", "01:48"],
 phrase = phrases[26]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.questions = []
-  token.translation = "to be"
-  token.l2_start_index = 7
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 13
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 13
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "rhythm"
-  token.l2_start_index = 18
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 34
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 25
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("ser", 0, "to be", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("ritmo", 0, "rhythm", 0, questions: [])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Que le enseñes a mi boca (uh oh, uh oh)", "That you teach my mouth (uh oh, uh oh)", "01:51"],
 phrase = phrases[27]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.questions = []
-  token.translation = "That"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 14
-) do |token|
-  token.questions = []
-  token.translation = "teach"
-  token.l2_start_index = 9
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 24
-) do |token|
-  token.questions = ["¿A quién enseñas?"]
-  token.translation = "my mouth"
-  token.l2_start_index = 15
-  token.l2_end_index = 23
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 39
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 24
-  token.l2_end_index = 38
-end
+phrase.add_token_translation("Que", 0, "That", 0, questions: [])
+phrase.add_token_translation("enseñes", 0, "teach", 0, questions: [])
+phrase.add_token_translation("a mi boca", 0, "my mouth", 0, questions: ["¿A quién enseñas?"])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Tus lugares favoritos (favoritos, favoritos baby)", "Your favorite places (favorite, favorite baby)", "01:53"],
 phrase = phrases[28]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.questions = []
-  token.translation = "Your"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "places"
-  token.l2_start_index = 14
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "favorite"
-  token.l2_start_index = 5
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "favorite"
-  token.l2_start_index = 22
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 48
-) do |token|
-  token.questions = []
-  token.translation = "favorite baby"
-  token.l2_start_index = 32
-  token.l2_end_index = 45
-end
+phrase.add_token_translation("Tus", 0, "Your", 0, questions: [])
+phrase.add_token_translation("lugares", 0, "places", 0, questions: [])
+phrase.add_token_translation("favoritos", 0, "favorite", 0, questions: [])
+phrase.add_token_translation("favoritos", 1, "favorite", 1, questions: [])
+phrase.add_token_translation("favoritos baby", 0, "favorite baby", 0, questions: [])
 
+# ["Déjame sobrepasar tus zonas de peligro (uh oh, uh oh)", "Let me overcome your danger zones (uh oh, uh oh)", "01:57"],
 phrase = phrases[29]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "Let me"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 17
-) do |token|
-  token.questions = []
-  token.translation = "overcome"
-  token.l2_start_index = 7
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 21
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 16
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 38
-) do |token|
-  token.translation = "danger zones"
-  token.l2_start_index = 21
-  token.l2_end_index = 33
-end
+phrase.add_token_translation("Déjame", 0, "Let me", 0, questions: [])
+phrase.add_token_translation("sobrepasar", 0, "overcome", 0, questions: [])
+phrase.add_token_translation("tus", 0, "your", 0)
+phrase.add_token_translation("zonas", 0, "zones", 0)
+phrase.add_token_translation("peligro", 0, "danger", 0)
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Hasta provocar tus gritos (uh oh, uh oh)", "Until I make you scream (uh oh, uh oh)", "02:00"],
 phrase = phrases[30]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "Until"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 14
-) do |token|
-  token.questions = []
-  token.translation = "make"
-  token.l2_start_index = 8
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 13
-  token.l2_end_index = 16
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "scream"
-  token.l2_start_index = 17
-  token.l2_end_index = 23
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 40
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 24
-  token.l2_end_index = 38
-end
+phrase.add_token_translation("Hasta", 0, "Until", 0, questions: [])
+phrase.add_token_translation("provocar", 0, "make", 0, questions: [])
+phrase.add_token_translation("tus", 0, "you", 0, questions: [])
+phrase.add_token_translation("gritos", 0, "scream", 0, questions: [])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Y que olvides tu apellido (dirididi Daddy)", "And you forget your last name (dirididi Daddy)", "02:03"],
 phrase = phrases[31]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 13
-) do |token|
-  token.questions = []
-  token.translation = "forget"
-  token.l2_start_index = 8
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué olvidas tú?"]
-  token.translation = "your last name"
-  token.l2_start_index = 15
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 42
-) do |token|
-  token.questions = []
-  token.translation = "(dirididi Daddy)"
-  token.l2_start_index = 30
-  token.l2_end_index = 46
-end
+phrase.add_token_translation("Y", 0, "And", 0, questions: [])
+phrase.add_token_translation("que olvides", 0, "forget", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0)
+phrase.add_token_translation("apellido", 0, "last name", 0, questions: ["¿Qué olvidas tú?"])
+phrase.add_token_translation("(dirididi Daddy)", 0, "(dirididi Daddy)", 0, questions: [])
 
+# --- Create additional variables for token translations that will be used in activities ---
+
+# ["Yo sé que estás pensándolo (eh)", "I know you're thinking about it (eh)", "02:08"],
 phrase = phrases[32]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.translation = "I"
-  token.l2_start_index = 0
-  token.l2_end_index = 1
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 3,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "know"
-  token.l2_start_index = 2
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 24,
-  l1_end_index: 26
-) do |token|
-  token.translation = "it"
-  token.l2_start_index = 29
-  token.l2_end_index = 31
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 31
-) do |token|
-  token.questions = []
-  token.translation = "(eh)"
-  token.l2_start_index = 32
-  token.l2_end_index = 36
-end
+phrase.add_token_translation("Yo", 0, "I", 0)
+phrase.add_token_translation("sé", 0, "know", 0, questions: [])
+phrase.add_token_translation("que estás", 0, "you're", 0)
+phrase.add_token_translation("pensándolo", 0, "thinking about it", 0)
+phrase.add_token_translation("(eh)", 0, "(eh)", 0, questions: [])
 
+# ["Llevo tiempo intentándolo (eh)", "I've been trying for a while (eh)", "02:10"],
 phrase = phrases[33]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 25
-) do |token|
-  token.translation = "I've been trying for a while"
-  token.l2_start_index = 0
-  token.l2_end_index = 28
-end
+phrase.add_token_translation("Llevo tiempo intentándolo", 0, "I've been trying for a while", 0)
+phrase.add_token_translation("(eh)", 0, "(eh)", 0, questions: [])
 
+# ["Mami, esto es dando y dándolo", "Mommy, this is giving and giving it", "02:11"],
 phrase = phrases[34]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "Mommy"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 10
-) do |token|
-  token.translation = "this"
-  token.l2_start_index = 7
-  token.l2_end_index = 11
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 13
-) do |token|
-  token.questions = []
-  token.translation = "is"
-  token.l2_start_index = 12
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "giving"
-  token.l2_start_index = 15
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "and"
-  token.l2_start_index = 22
-  token.l2_end_index = 25
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 29
-) do |token|
-  token.questions = []
-  token.translation = "giving it"
-  token.l2_start_index = 26
-  token.l2_end_index = 35
-end
+phrase.add_token_translation("Mami", 0, "Mommy", 0)
+phrase.add_token_translation("esto", 0, "this", 0)
+phrase.add_token_translation("es", 0, "is", 0, questions: [])
+phrase.add_token_translation("dando", 0, "giving", 0, questions: [])
+phrase.add_token_translation("y", 0, "and", 0, questions: [])
+phrase.add_token_translation("dándolo", 0, "giving it", 0, questions: [])
 
+# ["Sabes que tu corazón conmigo te hace bam bam", "You know your heart with me goes bam bam", "02:13"],
 phrase = phrases[35]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "You know"
-  token.l2_start_index = 0
-  token.l2_end_index = 8
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 12
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 9
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 20
-) do |token|
-  token.questions = ["¿Qué late?"]
-  token.translation = "heart"
-  token.l2_start_index = 14
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 28
-) do |token|
-  token.questions = []
-  token.translation = "with me"
-  token.l2_start_index = 20
-  token.l2_end_index = 27
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 37,
-  l1_end_index: 44
-) do |token|
-  token.translation = "bam bam"
-  token.l2_start_index = 33
-  token.l2_end_index = 40
-end
+phrase.add_token_translation("Sabes", 0, "You know", 0, questions: [])
+phrase.add_token_translation("que", 0, "that", 0)
+phrase.add_token_translation("tu", 0, "your", 0)
+phrase.add_token_translation("corazón", 0, "heart", 0, questions: ["¿Qué late?"])
+phrase.add_token_translation("conmigo", 0, "with me", 0, questions: [])
+phrase.add_token_translation("te hace", 0, "goes", 0)
+phrase.add_token_translation("bam bam", 0, "bam bam", 0)
 
+# ["Sabe que esa beba 'tá buscando de mi bam bam", "She knows that baby is looking for my bam bam", "02:15"],
 phrase = phrases[36]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "She knows"
-  token.l2_start_index = 0
-  token.l2_end_index = 9
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "that"
-  token.l2_start_index = 10
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 17
-) do |token|
-  token.translation = "baby"
-  token.l2_start_index = 15
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "is"
-  token.l2_start_index = 20
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 30
-) do |token|
-  token.translation = "looking"
-  token.l2_start_index = 23
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 33
-) do |token|
-  token.questions = []
-  token.translation = "for"
-  token.l2_start_index = 31
-  token.l2_end_index = 34
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 36
-) do |token|
-  token.translation = "my"
-  token.l2_start_index = 35
-  token.l2_end_index = 37
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 37,
-  l1_end_index: 44
-) do |token|
-  token.translation = "bam bam"
-  token.l2_start_index = 38
-  token.l2_end_index = 45
-end
+phrase.add_token_translation("Sabe", 0, "She knows", 0)
+phrase.add_token_translation("que", 0, "that", 0, questions: [])
+phrase.add_token_translation("esa beba", 0, "baby", 0)
+phrase.add_token_translation("'tá", 0, "is", 0, questions: [])
+phrase.add_token_translation("buscando", 0, "looking", 0)
+phrase.add_token_translation("de", 0, "for", 0, questions: [])
+phrase.add_token_translation("mi", 0, "my", 0)
+phrase.add_token_translation("bam bam", 0, "bam bam", 0)
 
+# ["Ven prueba de mi boca para ver cómo te sabe", "Come taste my mouth to see how it tastes to you", "02:18"],
 phrase = phrases[37]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "Come"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 10
-) do |token|
-  token.translation = "taste"
-  token.l2_start_index = 5
-  token.l2_end_index = 10
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 21
-) do |token|
-  token.translation = "my mouth"
-  token.l2_start_index = 11
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 30
-) do |token|
-  token.questions = []
-  token.translation = "to see"
-  token.l2_start_index = 20
-  token.l2_end_index = 26
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 35
-) do |token|
-  token.translation = "how"
-  token.l2_start_index = 27
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 36,
-  l1_end_index: 38
-) do |token|
-  token.translation = "to you"
-  token.l2_start_index = 41
-  token.l2_end_index = 47
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 39,
-  l1_end_index: 43
-) do |token|
-  token.questions = []
-  token.translation = "tastes"
-  token.l2_start_index = 34
-  token.l2_end_index = 40
-end
+phrase.add_token_translation("Ven", 0, "Come", 0)
+phrase.add_token_translation("prueba", 0, "taste", 0)
+phrase.add_token_translation("de mi boca", 0, "my mouth", 0)
+phrase.add_token_translation("para ver", 0, "to see", 0, questions: [])
+phrase.add_token_translation("cómo", 0, "how", 0)
+phrase.add_token_translation("te", 0, "to you", 0)
+phrase.add_token_translation("sabe", 0, "tastes", 0, questions: [])
 
+# ["Quiero, quiero, quiero ver cuánto amor a ti te cabe", "I want, I want, I want to see how much love fits in you", "02:21"],
 phrase = phrases[38]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 14
-) do |token|
-  token.questions = []
-  token.translation = "I want"
-  token.l2_start_index = 8
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 22
-) do |token|
-  token.questions = []
-  token.translation = "I want"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 26
-) do |token|
-  token.translation = "to see"
-  token.l2_start_index = 23
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 33
-) do |token|
-  token.questions = []
-  token.translation = "how much"
-  token.l2_start_index = 30
-  token.l2_end_index = 38
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 38
-) do |token|
-  token.questions = []
-  token.translation = "love"
-  token.l2_start_index = 39
-  token.l2_end_index = 43
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 39,
-  l1_end_index: 43
-) do |token|
-  token.translation = "in you"
-  token.l2_start_index = 49
-  token.l2_end_index = 55
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 44,
-  l1_end_index: 51
-) do |token|
-  token.translation = "fits in"
-  token.l2_start_index = 44
-  token.l2_end_index = 51
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0)
+phrase.add_token_translation("quiero", 0, "I want", 1, questions: [])
+phrase.add_token_translation("quiero", 1, "I want", 2, questions: [])
+phrase.add_token_translation("ver", 0, "to see", 0)
+phrase.add_token_translation("cuánto", 0, "how much", 0, questions: [])
+phrase.add_token_translation("amor", 0, "love", 0, questions: [])
+phrase.add_token_translation("a ti te", 0, "in you", 0)
+phrase.add_token_translation("cabe", 0, "fits", 0)
 
+# ["Yo no tengo prisa, yo me quiero dar el viaje", "I'm not in a hurry, I want to take the trip", "02:24"],
 phrase = phrases[39]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 17
-) do |token|
-  token.translation = "I'm not in a hurry"
-  token.l2_start_index = 0
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "I"
-  token.l2_start_index = 20
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 44
-) do |token|
-  token.translation = "want to take the trip"
-  token.l2_start_index = 22
-  token.l2_end_index = 43
-end
+phrase.add_token_translation("Yo no tengo prisa", 0, "I'm not in a hurry", 0)
+phrase.add_token_translation("yo", 0, "I", 1, questions: [])
+phrase.add_token_translation("me quiero dar el viaje", 0, "want to take the trip", 0)
 
+# ["Empezamo' lento, después salvaje", "We start slow, then wild", "02:26"],
 phrase = phrases[40]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.translation = "We start"
-  token.l2_start_index = 0
-  token.l2_end_index = 8
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 15
-) do |token|
-  token.translation = "slow"
-  token.l2_start_index = 9
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 24
-) do |token|
-  token.translation = "then"
-  token.l2_start_index = 15
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "wild"
-  token.l2_start_index = 20
-  token.l2_end_index = 24
-end
+phrase.add_token_translation("Empezamo'", 0, "We start", 0)
+phrase.add_token_translation("lento", 0, "slow", 0)
+phrase.add_token_translation("después", 0, "then", 0)
+phrase.add_token_translation("salvaje", 0, "wild", 0, questions: [])
 
+# ["Pasito a pasito, suave suavecito", "Step by step, soft softly", "02:29"],
 phrase = phrases[41]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "Step"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "by"
-  token.l2_start_index = 5
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "step"
-  token.l2_start_index = 8
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.questions = []
-  token.translation = "soft"
-  token.l2_start_index = 14
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "softly"
-  token.l2_start_index = 19
-  token.l2_end_index = 25
-end
+phrase.add_token_translation("Pasito", 0, "Step", 0, questions: ["¿Cómo vamos?"], similar_sound: ['despacito'])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("pasito", 0, "step", 0, questions: [])
+phrase.add_token_translation("suave", 0, "soft", 0, questions: [])
+phrase.add_token_translation("suavecito", 0, "softly", 0, questions: [])
 
+# ["Nos vamos pegando poquito a poquito", "We get closer little by little", "02:31"],
 phrase = phrases[42]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "We"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 17
-) do |token|
-  token.translation = "get closer"
-  token.l2_start_index = 3
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 35
-) do |token|
-  token.translation = "little by little"
-  token.l2_start_index = 14
-  token.l2_end_index = 30
-end
+phrase.add_token_translation("Nos", 0, "We", 0)
+phrase.add_token_translation("vamos pegando", 0, "get closer", 0, questions: ["¿Qué hacemos?"])
+phrase.add_token_translation("poquito", 0, "little", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("poquito", 1, "little", 1, questions: [])
 
+# ["Cuando tú me besas con esa destreza", "When you kiss me with that skill", "02:34"],
 phrase = phrases[43]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "When"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 9
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 5
-  token.l2_end_index = 8
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 12
-) do |token|
-  token.translation = "me"
-  token.l2_start_index = 14
-  token.l2_end_index = 16
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 18
-) do |token|
-  token.questions = ["¿Qué haces tú?"]
-  token.translation = "kiss"
-  token.l2_start_index = 9
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 22
-) do |token|
-  token.questions = []
-  token.translation = "with"
-  token.l2_start_index = 17
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 26
-) do |token|
-  token.questions = []
-  token.translation = "that"
-  token.l2_start_index = 22
-  token.l2_end_index = 26
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 35
-) do |token|
-  token.translation = "skill"
-  token.l2_start_index = 27
-  token.l2_end_index = 32
-end
+phrase.add_token_translation("Cuando", 0, "When", 0, questions: [])
+phrase.add_token_translation("tú", 0, "you", 0, questions: [])
+phrase.add_token_translation("me", 0, "me", 0, questions: [])
+phrase.add_token_translation("besas", 0, "kiss", 0, questions: ["¿Qué haces?"])
+phrase.add_token_translation("con", 0, "with", 0, questions: [])
+phrase.add_token_translation("esa", 0, "that", 0, questions: [])
+phrase.add_token_translation("destreza", 0, "skill", 0, questions: ["¿Con qué me besas?"], similar_sound: ['tristeza'])
 
+# ["Veo que eres malicia con delicadeza", "I see you are malice with delicacy", "02:37"],
 phrase = phrases[44]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "I see"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 12
-) do |token|
-  token.questions = []
-  token.translation = "you are"
-  token.l2_start_index = 6
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 20
-) do |token|
-  token.questions = []
-  token.translation = "malice"
-  token.l2_start_index = 14
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 24
-) do |token|
-  token.questions = []
-  token.translation = "with"
-  token.l2_start_index = 21
-  token.l2_end_index = 25
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "delicacy"
-  token.l2_start_index = 26
-  token.l2_end_index = 34
-end
+phrase.add_token_translation("Veo", 0, "I see", 0, questions: [])
+phrase.add_token_translation("que", 0, "that", 0, questions: [])
+phrase.add_token_translation("eres", 0, "you are", 0, questions: [])
+phrase.add_token_translation("malicia", 0, "malice", 0, questions: ["¿Qué eres?"], similar_sound: ['justicia'])
+phrase.add_token_translation("con", 0, "with", 0, questions: [])
+phrase.add_token_translation("delicadeza", 0, "delicacy", 0, questions: ["¿Con qué?"])
 
+# ["Pasito a pasito, suave suavecito", "Step by step, soft softly", "02:40"],
 phrase = phrases[45]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "Step"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "by"
-  token.l2_start_index = 5
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "step"
-  token.l2_start_index = 8
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.questions = []
-  token.translation = "soft"
-  token.l2_start_index = 14
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "softly"
-  token.l2_start_index = 19
-  token.l2_end_index = 25
-end
+phrase.add_token_translation("Pasito", 0, "Step", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("pasito", 0, "step", 0, questions: [])
+phrase.add_token_translation("suave", 0, "soft", 0, questions: [])
+phrase.add_token_translation("suavecito", 0, "softly", 0, questions: [])
 
+# ["Nos vamos pegando, poquito a poquito (oh oh)", "We get closer, little by little (oh oh)", "02:42"],
 phrase = phrases[46]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "We"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 17
-) do |token|
-  token.translation = "get closer"
-  token.l2_start_index = 3
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 36
-) do |token|
-  token.translation = "little by little"
-  token.l2_start_index = 15
-  token.l2_end_index = 31
-end
+phrase.add_token_translation("Nos", 0, "We", 0)
+phrase.add_token_translation("vamos pegando", 0, "get closer", 0, questions: [])
+phrase.add_token_translation("poquito", 0, "little", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("poquito", 1, "little", 1, questions: [])
+phrase.add_token_translation("(oh oh)", 0, "(oh oh)", 0, questions: [])
 
+# ["Y es que esa belleza es un rompecabezas (oh no)", "And it's that this beauty is a puzzle (oh no)", "02:45"],
 phrase = phrases[47]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 2,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "it's that"
-  token.l2_start_index = 4
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 20
-) do |token|
-  token.questions = []
-  token.translation = "this beauty"
-  token.l2_start_index = 14
-  token.l2_end_index = 25
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 23
-) do |token|
-  token.translation = "is"
-  token.l2_start_index = 26
-  token.l2_end_index = 28
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 24,
-  l1_end_index: 39
-) do |token|
-  token.questions = []
-  token.similar_sound = ['abrelatas']
-  token.translation = "a puzzle"
-  token.l2_start_index = 29
-  token.l2_end_index = 37
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 40,
-  l1_end_index: 47
-) do |token|
-  token.questions = []
-  token.translation = "(oh no)"
-  token.l2_start_index = 38
-  token.l2_end_index = 45
-end
+phrase.add_token_translation("Y es que", 0, "And it's that", 0)
+phrase.add_token_translation("esa", 0, "this", 0, questions: [])
+phrase.add_token_translation("belleza", 0, "beauty", 0, questions: ["¿Qué es un rompecabezas?"], similar_sound: ['tristeza'])
+phrase.add_token_translation("es", 0, "is", 0, questions: [])
+phrase.add_token_translation("un rompecabezas", 0, "a puzzle", 0, questions: ["¿Qué es la belleza?"])
+phrase.add_token_translation("(oh no)", 0, "(oh no)", 0, questions: [])
 
+# ["Pero pa' montarlo aquí tengo la pieza (slow, oh yeah)", "But to put it together, here I have the piece (slow, oh yeah)", "02:48"],
 phrase = phrases[48]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.questions = []
-  token.translation = "But"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 17
-) do |token|
-  token.translation = "to put it together"
-  token.l2_start_index = 4
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 22
-) do |token|
-  token.translation = "here"
-  token.l2_start_index = 24
-  token.l2_end_index = 28
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 28
-) do |token|
-  token.translation = "I have"
-  token.l2_start_index = 29
-  token.l2_end_index = 35
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 37
-) do |token|
-  token.questions = []
-  token.questions = ["¿Qué tengo aquí?"]
-  token.translation = "the piece"
-  token.l2_start_index = 36
-  token.l2_end_index = 45
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 38,
-  l1_end_index: 53
-) do |token|
-  token.questions = []
-  token.translation = "(slow, oh yeah)"
-  token.l2_start_index = 46
-  token.l2_end_index = 61
-end
+phrase.add_token_translation("Pero", 0, "But", 0, questions: [])
+phrase.add_token_translation("pa'", 0, "to", 0, questions: [])
+phrase.add_token_translation("montarlo", 0, "put it together", 0, questions: ["¿Qué vas a hacer?"])
+phrase.add_token_translation("aquí", 0, "here", 0, questions: [])
+phrase.add_token_translation("tengo", 0, "I have", 0, questions: [])
+phrase.add_token_translation("la pieza", 0, "the piece", 0, questions: ["¿Qué tienes?"])
+phrase.add_token_translation("(slow, oh yeah)", 0, "(slow, oh yeah)", 0, questions: [])
 
+# ["Despacito (yeh, yo)", "Slowly (yeh, yo)", "02:51"],
 phrase = phrases[49]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "(yeh, yo)"
-  token.l2_start_index = 7
-  token.l2_end_index = 16
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [])
+phrase.add_token_translation("(yeh, yo)", 0, "(yeh, yo)", 0, questions: [])
 
+# ["Quiero respirar tu cuello despacito (yo)", "I want to breathe your neck slowly (yo)", "02:53"],
 phrase = phrases[50]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 15
-) do |token|
-  token.similar_sound = ['aspirar']
-  token.translation = "to breathe"
-  token.l2_start_index = 7
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 18
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "neck"
-  token.l2_start_index = 23
-  token.l2_end_index = 27
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.questions = ["¿Cómo quiere respirar?"]
-  token.translation = "slowly"
-  token.l2_start_index = 28
-  token.l2_end_index = 34
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 36,
-  l1_end_index: 40
-) do |token|
-  token.questions = []
-  token.translation = "(yo)"
-  token.l2_start_index = 35
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("respirar", 0, "to breathe", 0, questions: ["¿Qué quieres hacer?"])
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("cuello", 0, "neck", 0, questions: [])
+phrase.add_token_translation("despacito", 0, "slowly", 0, questions: [])
+phrase.add_token_translation("(yo)", 0, "(yo)", 0, questions: [])
 
+# ["Deja que te diga cosas al oído (yo)", "Let me tell you things in your ear (yo)", "02:56"],
 phrase = phrases[51]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "Let"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 12
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 16
-) do |token|
-  token.translation = "tell"
-  token.l2_start_index = 7
-  token.l2_end_index = 11
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.translation = "things"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 30
-) do |token|
-  token.translation = "in your ear"
-  token.l2_start_index = 23
-  token.l2_end_index = 34
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 35
-) do |token|
-  token.translation = "(yo)"
-  token.l2_start_index = 35
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Deja", 0, "Let", 0, questions: [])
+phrase.add_token_translation("que", 0, "me", 0, questions: [])
+phrase.add_token_translation("te", 0, "you", 0, questions: [])
+phrase.add_token_translation("diga", 0, "tell", 0, questions: [])
+phrase.add_token_translation("cosas", 0, "things", 0, questions: [])
+phrase.add_token_translation("al oído", 0, "in your ear", 0, questions: ["¿Dónde te voy a decir cosas?"])
+phrase.add_token_translation("(yo)", 0, "(yo)", 0, questions: [])
 
+# ["Para que te acuerdes si no estás conmigo", "So you remember if you're not with me", "02:59"],
 phrase = phrases[52]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 8
-) do |token|
-  token.translation = "So"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 20
-) do |token|
-  token.translation = "you remember"
-  token.l2_start_index = 3
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 23
-) do |token|
-  token.questions = []
-  token.translation = "if"
-  token.l2_start_index = 16
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 24,
-  l1_end_index: 32
-) do |token|
-  token.translation = "you're not"
-  token.l2_start_index = 19
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 40
-) do |token|
-  token.questions = ["¿Con quién no estás?"]
-  token.translation = "with me"
-  token.l2_start_index = 30
-  token.l2_end_index = 37
-end
+phrase.add_token_translation("Para que", 0, "So", 0, questions: [])
+phrase.add_token_translation("te", 0, "you", 0, questions: [])
+phrase.add_token_translation("acuerdes", 0, "remember", 0, questions: ["¿Qué harás?"])
+phrase.add_token_translation("si", 0, "if", 0, questions: [])
+phrase.add_token_translation("no estás", 0, "you're not", 0, questions: [])
+phrase.add_token_translation("conmigo", 0, "with me", 0, questions: [])
 
+# ["Despacito", "Slowly", "03:03"],
 phrase = phrases[53]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [])
 
+# ["Quiero desnudarte a besos despacito (yeh)", "I want to undress you with kisses slowly (yeh)", "03:04"],
 phrase = phrases[54]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "I want to"
-  token.l2_start_index = 0
-  token.l2_end_index = 9
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 17
-) do |token|
-  token.questions = ["¿Qué quiero hacer?"]
-  token.translation = "to undress you"
-  token.l2_start_index = 7
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Cómo quiero desnudarte?"]
-  token.translation = "with kisses"
-  token.l2_start_index = 22
-  token.l2_end_index = 33
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "slowly"
-  token.l2_start_index = 34
-  token.l2_end_index = 40
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 36,
-  l1_end_index: 41
-) do |token|
-  token.questions = []
-  token.translation = "(yeh)"
-  token.l2_start_index = 41
-  token.l2_end_index = 46
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("desnudarte", 0, "to undress you", 0, questions: [])
+phrase.add_token_translation("a besos", 0, "with kisses", 0, questions: ["¿Cómo quieres desnudarme?"])
+phrase.add_token_translation("despacito", 0, "slowly", 0, questions: [])
+phrase.add_token_translation("(yeh)", 0, "(yeh)", 0, questions: [])
 
+# ["Firmar las paredes de tu laberinto", "Sign the walls of your labyrinth", "03:07"],
 phrase = phrases[55]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "Sign"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 18
-) do |token|
-  token.translation = "the walls"
-  token.l2_start_index = 5
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 34
-) do |token|
-  token.questions = ["Whose labyrinth?"]
-  token.translation = "of your labyrinth"
-  token.l2_start_index = 15
-  token.l2_end_index = 32
-end
+phrase.add_token_translation("Firmar", 0, "Sign", 0, questions: ["¿Qué quieres hacer?"])
+phrase.add_token_translation("las", 0, "the", 0, questions: [])
+phrase.add_token_translation("paredes", 0, "walls", 0, questions: ["¿Qué vas a firmar?"])
+phrase.add_token_translation("de", 0, "of", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("laberinto", 0, "labyrinth", 0, questions: ["¿De qué son las paredes?"])
 
+# ["Y hacer de tu cuerpo todo un manuscrito (sube, sube, sube)", "And make your body a whole manuscript (up, up, up)", "03:10"],
 phrase = phrases[56]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 2,
-  l1_end_index: 20
-) do |token|
-  token.questions = []
-  token.translation = "make your body"
-  token.l2_start_index = 4
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 39
-) do |token|
-  token.translation = "a whole manuscript"
-  token.l2_start_index = 19
-  token.l2_end_index = 37
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 41,
-  l1_end_index: 57
-) do |token|
-  token.questions = []
-  token.translation = "up, up, up"
-  token.l2_start_index = 39
-  token.l2_end_index = 49
-end
+phrase.add_token_translation("Y", 0, "And", 0, questions: [])
+phrase.add_token_translation("hacer", 0, "make", 0)
+phrase.add_token_translation("de tu cuerpo", 0, "your body", 0)
+phrase.add_token_translation("todo un manuscrito", 0, "a whole manuscript", 0, questions: ["¿Qué quieres hacer de mi cuerpo?"])
+phrase.add_token_translation("(sube, sube, sube)", 0, "(up, up, up)", 0, questions: [])
 
+# ["(Sube, sube) Oh", "(Up, up) Oh", "03:13"],
 phrase = phrases[57]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 1,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "Up"
-  token.l2_start_index = 1
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "up"
-  token.l2_start_index = 5
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "Oh"
-  token.l2_start_index = 9
-  token.l2_end_index = 11
-end
+phrase.add_token_translation("(Sube, sube)", 0, "(Up, up)", 0, questions: [])
+phrase.add_token_translation("Oh", 0, "Oh", 0, questions: [])
 
+# ["Quiero ver bailar tu pelo", "I want to see your hair dance", "03:14"],
 phrase = phrases[58]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.translation = "to see"
-  token.l2_start_index = 7
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 17
-) do |token|
-  token.translation = "dance"
-  token.l2_start_index = 24
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué baila?"]
-  token.translation = "your hair"
-  token.l2_start_index = 14
-  token.l2_end_index = 23
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("ver", 0, "to see", 0, questions: [], similar_sound: ['dar'])
+phrase.add_token_translation("bailar", 0, "dance", 0, questions: [], similar_sound: ['volar'])
+phrase.add_token_translation("tu pelo", 0, "your hair", 0, questions: ["¿Qué quieres ver bailar?"])
 
+# ["Quiero ser tu ritmo (uh oh, uh oh)", "I want to be your rhythm (uh oh, uh oh)", "03:16"],
 phrase = phrases[59]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.translation = "to be"
-  token.l2_start_index = 7
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 13
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 13
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "rhythm"
-  token.l2_start_index = 18
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 34
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 25
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Quiero", 0, "I want", 0, questions: [])
+phrase.add_token_translation("ser", 0, "to be", 0, questions: [])
+phrase.add_token_translation("tu", 0, "your", 0, questions: [])
+phrase.add_token_translation("ritmo", 0, "rhythm", 0, questions: ["¿Qué quieres ser?"], similar_sound: ['mismo'])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Que le enseñes a mi boca (uh oh, uh oh)", "That you teach my mouth (uh oh, uh oh)", "03:19"],
 phrase = phrases[60]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.questions = []
-  token.translation = "That"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 14
-) do |token|
-  token.translation = "teach"
-  token.l2_start_index = 9
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "my"
-  token.l2_start_index = 15
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 24
-) do |token|
-  token.questions = []
-  token.translation = "mouth"
-  token.l2_start_index = 18
-  token.l2_end_index = 23
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 39
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 24
-  token.l2_end_index = 38
-end
+phrase.add_token_translation("Que", 0, "That", 0, questions: [])
+phrase.add_token_translation("le", 0, "", 0, questions: [])
+phrase.add_token_translation("enseñes", 0, "teach", 0, questions: [])
+phrase.add_token_translation("a mi boca", 0, "my mouth", 0, questions: [])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Tus lugares favoritos (favoritos, favoritos baby)", "Your favorite places (favorite, favorite baby)", "03:21"],
 phrase = phrases[61]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "Your"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "places"
-  token.l2_start_index = 14
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 21
-) do |token|
-  token.translation = "favorite"
-  token.l2_start_index = 5
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "favorite"
-  token.l2_start_index = 22
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 43
-) do |token|
-  token.questions = []
-  token.translation = "favorite"
-  token.l2_start_index = 32
-  token.l2_end_index = 40
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 44,
-  l1_end_index: 48
-) do |token|
-  token.questions = []
-  token.translation = "baby"
-  token.l2_start_index = 41
-  token.l2_end_index = 45
-end
+phrase.add_token_translation("Tus", 0, "Your", 0, questions: [])
+phrase.add_token_translation("lugares", 0, "places", 0, questions: [], similar_sound: ['hogares'])
+phrase.add_token_translation("favoritos", 0, "favorite", 0, questions: [])
+phrase.add_token_translation("(favoritos, favoritos baby)", 0, "(favorite, favorite baby)", 0, questions: [])
 
+# ["Déjame sobrepasar tus zonas de peligro (uh oh, uh oh)", "Let me overcome your danger zones (uh oh, uh oh)", "03:25"],
 phrase = phrases[62]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "Let me"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 17
-) do |token|
-  token.translation = "overcome"
-  token.l2_start_index = 7
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 21
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 16
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 27
-) do |token|
-  token.translation = "zones"
-  token.l2_start_index = 28
-  token.l2_end_index = 33
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 38
-) do |token|
-  token.questions = ["¿Qué tipo de zonas?"]
-  token.translation = "danger"
-  token.l2_start_index = 21
-  token.l2_end_index = 27
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 39,
-  l1_end_index: 53
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 34
-  token.l2_end_index = 48
-end
+phrase.add_token_translation("Déjame", 0, "Let me", 0, questions: [])
+phrase.add_token_translation("sobrepasar", 0, "overcome", 0, questions: [])
+phrase.add_token_translation("tus", 0, "your", 0)
+phrase.add_token_translation("zonas", 0, "zones", 0, similar_sound: ['monas'])
+phrase.add_token_translation("peligro", 0, "danger", 0)
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Hasta provocar tus gritos (uh oh, uh oh)", "Until I make you scream (uh oh, uh oh)", "03:28"],
 phrase = phrases[63]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.translation = "Until"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 14
-) do |token|
-  token.translation = "make"
-  token.l2_start_index = 9
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 18
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 14
-  token.l2_end_index = 17
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "scream"
-  token.l2_start_index = 18
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 40
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 25
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Hasta", 0, "Until", 0, questions: [])
+phrase.add_token_translation("provocar", 0, "I make", 0, questions: [])
+phrase.add_token_translation("tus", 0, "you", 0, questions: [])
+phrase.add_token_translation("gritos", 0, "scream", 0, questions: [], similar_sound: ['chicos'])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Y que olvides tu apellido", "And you forget your last name", "03:31"],
 phrase = phrases[64]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 13
-) do |token|
-  token.translation = "forget"
-  token.l2_start_index = 8
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 16
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 15
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué olvidas tú?"]
-  token.translation = "last name"
-  token.l2_start_index = 20
-  token.l2_end_index = 29
-end
+phrase.add_token_translation("Y que", 0, "And", 0, questions: [])
+phrase.add_token_translation("olvides", 0, "forget", 0, questions: [])
+phrase.add_token_translation("tu apellido", 0, "your last name", 0, questions: ["¿Qué olvidas?"])
 
+# ["Despacito", "Slowly", "03:35"],
 phrase = phrases[65]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [])
 
+# ["Vamo' a hacerlo en una playa en Puerto Rico", "Let's do it on a beach in Puerto Rico", "03:36"],
 phrase = phrases[66]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 7
-) do |token|
-  token.questions = []
-  token.translation = "Let's"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 15
-) do |token|
-  token.translation = "do it"
-  token.l2_start_index = 6
-  token.l2_end_index = 11
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 28
-) do |token|
-  token.questions = ["¿Dónde lo haremos?"]
-  token.translation = "on a beach"
-  token.l2_start_index = 12
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 43
-) do |token|
-  token.questions = []
-  token.translation = "in Puerto Rico"
-  token.l2_start_index = 23
-  token.l2_end_index = 37
-end
+phrase.add_token_translation("Vamo'", 0, "Let's", 0, questions: [])
+phrase.add_token_translation("a", 0, "", 0, questions: [])
+phrase.add_token_translation("hacerlo", 0, "do it", 0, questions: ["¿Qué vamos a hacer?"])
+phrase.add_token_translation("en una playa", 0, "on a beach", 0, questions: ["¿Dónde lo vamos a hacer?"])
+phrase.add_token_translation("en", 1, "in", 0, questions: [])
+phrase.add_token_translation("Puerto Rico", 0, "Puerto Rico", 0, questions: ["¿En qué país?"])
 
+# ["Hasta que las olas griten \"Ay, bendito\"", "Until the waves scream \"Oh, my goodness!\"", "03:39"],
 phrase = phrases[67]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Until"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "the waves"
-  token.l2_start_index = 6
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.translation = "scream"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 38
-) do |token|
-  token.questions = []
-  token.translation = "Oh, my goodness!"
-  token.l2_start_index = 24
-  token.l2_end_index = 40
-end
+phrase.add_token_translation("Hasta que", 0, "Until", 0, questions: [])
+phrase.add_token_translation("las olas", 0, "the waves", 0, questions: ["¿Qué va a gritar?"], similar_sound: ['las horas'])
+phrase.add_token_translation("griten", 0, "scream", 0, questions: ["¿Qué hacen las olas?"])
+phrase.add_token_translation("\"Ay, bendito\"", 0, "\"Oh, my goodness!\"", 0, questions: ["¿Qué gritan las olas?"])
 
+# ["Para que mi sello se quede contigo (báilalo)", "So that my seal stays with you (dance it)", "03:42"],
 phrase = phrases[68]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "So that"
-  token.l2_start_index = 0
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "my"
-  token.l2_start_index = 8
-  token.l2_end_index = 10
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 17
-) do |token|
-  token.translation = "seal"
-  token.l2_start_index = 11
-  token.l2_end_index = 15
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 26
-) do |token|
-  token.translation = "stays"
-  token.l2_start_index = 16
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 34
-) do |token|
-  token.translation = "with you"
-  token.l2_start_index = 22
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 36,
-  l1_end_index: 43
-) do |token|
-  token.translation = "dance it"
-  token.l2_start_index = 32
-  token.l2_end_index = 40
-end
+phrase.add_token_translation("Para que", 0, "So that", 0, questions: [])
+phrase.add_token_translation("mi sello", 0, "my seal", 0, questions: ["¿Qué se queda contigo?"])
+phrase.add_token_translation("se quede", 0, "stays", 0, questions: [])
+phrase.add_token_translation("contigo", 0, "with you", 0, questions: [])
+phrase.add_token_translation("(báilalo)", 0, "(dance it)", 0, questions: [])
 
+# ["Pasito a pasito, suave suavecito (hey yeah, yeah)", "Step by step, soft softly (hey yeah, yeah)", "03:46"],
 phrase = phrases[69]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "Step"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "by"
-  token.l2_start_index = 5
-  token.l2_end_index = 7
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "step"
-  token.l2_start_index = 8
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.questions = []
-  token.translation = "soft"
-  token.l2_start_index = 14
-  token.l2_end_index = 18
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "softly"
-  token.l2_start_index = 19
-  token.l2_end_index = 25
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 49
-) do |token|
-  token.questions = []
-  token.translation = "(hey yeah, yeah)"
-  token.l2_start_index = 26
-  token.l2_end_index = 42
-end
+phrase.add_token_translation("Pasito", 0, "Step", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("pasito", 0, "step", 0, questions: [])
+phrase.add_token_translation("suave", 0, "soft", 0, questions: [])
+phrase.add_token_translation("suavecito", 0, "softly", 0, questions: [])
+phrase.add_token_translation("(hey yeah, yeah)", 0, "(hey yeah, yeah)", 0, questions: [])
 
+# ["Nos vamos pegando, poquito a poquito (oh no)", "We get closer, little by little (oh no)", "03:48"],
 phrase = phrases[70]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "We"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 17
-) do |token|
-  token.translation = "get closer"
-  token.l2_start_index = 3
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 36
-) do |token|
-  token.translation = "little by little"
-  token.l2_start_index = 15
-  token.l2_end_index = 31
-end
+phrase.add_token_translation("Nos", 0, "We", 0)
+phrase.add_token_translation("vamos pegando", 0, "get closer", 0, questions: [])
+phrase.add_token_translation("poquito", 0, "little", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("poquito", 1, "little", 1, questions: [])
+phrase.add_token_translation("(oh no)", 0, "(oh no)", 0, questions: [])
 
+# ["Que le enseñes a mi boca (uh oh, uh oh)", "That you teach my mouth (uh oh, uh oh)", "03:51"],
 phrase = phrases[71]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.questions = []
-  token.translation = "That"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 14
-) do |token|
-  token.translation = "teach"
-  token.l2_start_index = 9
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 24
-) do |token|
-  token.translation = "my mouth"
-  token.l2_start_index = 15
-  token.l2_end_index = 23
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 39
-) do |token|
-  token.questions = []
-  token.translation = "(uh oh, uh oh)"
-  token.l2_start_index = 24
-  token.l2_end_index = 38
-end
+phrase.add_token_translation("Que", 0, "That", 0, questions: [])
+phrase.add_token_translation("le", 0, "", 0, questions: [])
+phrase.add_token_translation("enseñes", 0, "teach", 0, questions: [])
+phrase.add_token_translation("a mi boca", 0, "my mouth", 0, questions: [])
+phrase.add_token_translation("(uh oh, uh oh)", 0, "(uh oh, uh oh)", 0, questions: [])
 
+# ["Tus lugares favoritos (favoritos, favoritos baby)", "Your favorite places (favorite, favorite baby)", "03:54"],
 phrase = phrases[72]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "Your"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "places"
-  token.l2_start_index = 14
-  token.l2_end_index = 20
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 21
-) do |token|
-  token.translation = "favorite"
-  token.l2_start_index = 5
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "favorite"
-  token.l2_start_index = 22
-  token.l2_end_index = 30
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 48
-) do |token|
-  token.questions = []
-  token.translation = "favorite baby"
-  token.l2_start_index = 32
-  token.l2_end_index = 45
-end
+phrase.add_token_translation("Tus", 0, "Your", 0, questions: [])
+phrase.add_token_translation("lugares", 0, "places", 0, questions: [])
+phrase.add_token_translation("favoritos", 0, "favorite", 0, questions: [])
+phrase.add_token_translation("(favoritos, favoritos baby)", 0, "(favorite, favorite baby)", 0, questions: [])
 
+# ["Pasito a pasito, suave suavecito", "Step by step, soft softly", "03:57"],
 phrase = phrases[73]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "Step by step"
-  token.l2_start_index = 0
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "soft softly"
-  token.l2_start_index = 14
-  token.l2_end_index = 25
-end
+phrase.add_token_translation("Pasito", 0, "Step", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("pasito", 0, "step", 0, questions: [])
+phrase.add_token_translation("suave", 0, "soft", 0, questions: [])
+phrase.add_token_translation("suavecito", 0, "softly", 0, questions: [])
 
+# ["Nos vamos pegando, poquito a poquito", "We get closer, little by little", "03:59"],
 phrase = phrases[74]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 3
-) do |token|
-  token.translation = "We"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 17
-) do |token|
-  token.translation = "get closer"
-  token.l2_start_index = 3
-  token.l2_end_index = 13
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 26
-) do |token|
-  token.questions = []
-  token.translation = "little"
-  token.l2_start_index = 15
-  token.l2_end_index = 21
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 28
-) do |token|
-  token.questions = []
-  token.translation = "by"
-  token.l2_start_index = 22
-  token.l2_end_index = 24
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 36
-) do |token|
-  token.questions = []
-  token.translation = "little"
-  token.l2_start_index = 25
-  token.l2_end_index = 31
-end
+phrase.add_token_translation("Nos", 0, "We", 0)
+phrase.add_token_translation("vamos pegando", 0, "get closer", 0, questions: [])
+phrase.add_token_translation("poquito", 0, "little", 0, questions: [])
+phrase.add_token_translation("a", 0, "by", 0, questions: [])
+phrase.add_token_translation("poquito", 1, "little", 1, questions: [])
 
+# ["Hasta provocar tus gritos (eh-oh) (Fonsi)", "Until I make you scream (eh-oh) (Fonsi)", "04:02"],
 phrase = phrases[75]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.translation = "Until"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 14
-) do |token|
-  token.translation = "make"
-  token.l2_start_index = 8
-  token.l2_end_index = 12
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 13
-  token.l2_end_index = 16
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "scream"
-  token.l2_start_index = 17
-  token.l2_end_index = 23
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 33
-) do |token|
-  token.questions = []
-  token.translation = "(eh-oh)"
-  token.l2_start_index = 24
-  token.l2_end_index = 31
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 34,
-  l1_end_index: 41
-) do |token|
-  token.questions = []
-  token.translation = "(Fonsi)"
-  token.l2_start_index = 32
-  token.l2_end_index = 39
-end
+phrase.add_token_translation("Hasta", 0, "Until", 0, questions: [])
+phrase.add_token_translation("provocar", 0, "I make", 0, questions: [])
+phrase.add_token_translation("tus", 0, "you", 0, questions: [])
+phrase.add_token_translation("gritos", 0, "scream", 0, questions: [])
+phrase.add_token_translation("(eh-oh)", 0, "(eh-oh)", 0, questions: [])
+phrase.add_token_translation("(Fonsi)", 0, "(Fonsi)", 0, questions: [])
 
+# ["Y que olvides tu apellido (DY)", "And you forget your last name (DY)", "04:05"],
 phrase = phrases[76]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 13
-) do |token|
-  token.translation = "forget"
-  token.l2_start_index = 8
-  token.l2_end_index = 14
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 16
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 15
-  token.l2_end_index = 19
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "last name"
-  token.l2_start_index = 20
-  token.l2_end_index = 29
-end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 30
-) do |token|
-  token.questions = []
-  token.translation = "(DY)"
-  token.l2_start_index = 30
-  token.l2_end_index = 34
-end
+phrase.add_token_translation("Y que", 0, "And", 0, questions: [])
+phrase.add_token_translation("olvides", 0, "forget", 0, questions: [])
+phrase.add_token_translation("tu apellido", 0, "your last name", 0, questions: [])
+phrase.add_token_translation("(DY)", 0, "(DY)", 0, questions: [])
 
+# ["Despacito", "Slowly", "04:07"],
 phrase = phrases[77]
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
+phrase.add_token_translation("Despacito", 0, "Slowly", 0, questions: [])
 
-# --- End token translation creation ---
 
-# Create additional variables for token translations that will be used in activities
-phrase = phrases[10]
-t37 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.questions = []
-  token.translation = "Oh"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-t38 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 6
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 4
-  token.l2_end_index = 7
-end
-t39 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 10
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 9
-  token.l2_end_index = 12
-end
-t40 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 15
-) do |token|
-  token.translation = "are"
-  token.l2_start_index = 13
-  token.l2_end_index = 16
-end
-t41 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 23
-) do |token|
-  token.similar_sound = ['hermano']
-  token.translation = "the magnet"
-  token.l2_start_index = 17
-  token.l2_end_index = 27
-end
-t42 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 28
-) do |token|
-  token.translation = "I"
-  token.l2_start_index = 32
-  token.l2_end_index = 33
-end
-t43 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "am"
-  token.l2_start_index = 34
-  token.l2_end_index = 36
-end
-t44 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 41
-) do |token|
-  token.questions = ["¿Quién soy?"]
-  token.translation = "the metal"
-  token.l2_start_index = 37
-  token.l2_end_index = 46
-end
-
-phrase = phrases[11]
-t45 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 16
-) do |token|
-  token.translation = "I'm getting closer"
-  token.l2_start_index = 0
-  token.l2_end_index = 18
-end
-t46 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "and"
-  token.l2_start_index = 19
-  token.l2_end_index = 22
-end
-t47 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 30
-) do |token|
-  token.similar_sound = ['gritando']
-  token.translation = "I'm making"
-  token.l2_start_index = 23
-  token.l2_end_index = 33
-end
-t48 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 31,
-  l1_end_index: 38
-) do |token|
-  token.questions = ["¿Qué está armando?"]
-  token.translation = "the plan"
-  token.l2_start_index = 34
-  token.l2_end_index = 42
-end
-
-phrase = phrases[12]
-t49 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.questions = []
-  token.translation = "Just"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-t50 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 17
-) do |token|
-  token.questions = ["¿Qué acelera el pulso?"]
-  token.translation = "thinking about it"
-  token.l2_start_index = 5
-  token.l2_end_index = 22
-end
-t51 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 37
-) do |token|
-  token.translation = "makes my pulse race"
-  token.l2_start_index = 23
-  token.l2_end_index = 42
-end
-t52 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 38,
-  l1_end_index: 47
-) do |token|
-  token.questions = []
-  token.translation = "(oh yeah)"
-  token.l2_start_index = 43
-  token.l2_end_index = 52
-end
-
-phrase = phrases[13]
-t53 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.questions = []
-  token.translation = "Now"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-t54 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 24
-) do |token|
-  token.translation = "I'm liking you"
-  token.l2_start_index = 5
-  token.l2_end_index = 19
-end
-t55 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 28
-) do |token|
-  token.questions = []
-  token.translation = "more"
-  token.l2_start_index = 20
-  token.l2_end_index = 24
-end
-t56 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 41
-) do |token|
-  token.questions = []
-  token.translation = "than normal"
-  token.l2_start_index = 25
-  token.l2_end_index = 36
-end
-
-phrase = phrases[14]
-t57 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 5
-) do |token|
-  token.questions = []
-  token.translation = "All"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-t58 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 6,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "my"
-  token.l2_start_index = 4
-  token.l2_end_index = 6
-end
-t59 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.similar_sound = ['sonidos']
-  token.translation = "senses"
-  token.l2_start_index = 7
-  token.l2_end_index = 13
-end
-t60 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 31
-) do |token|
-  token.translation = "are asking"
-  token.l2_start_index = 14
-  token.l2_end_index = 24
-end
-t61 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 32,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "more"
-  token.l2_start_index = 29
-  token.l2_end_index = 33
-end
-
-phrase = phrases[15]
-t62 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "This"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-t63 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 5,
-  l1_end_index: 12
-) do |token|
-  token.questions = []
-  token.translation = "must be"
-  token.l2_start_index = 5
-  token.l2_end_index = 12
-end
-t64 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 13,
-  l1_end_index: 20
-) do |token|
-  token.translation = "taken"
-  token.l2_start_index = 13
-  token.l2_end_index = 18
-end
-t66 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 31
-) do |token|
-  token.questions = []
-  token.translation = "any"
-  token.l2_start_index = 27
-  token.l2_end_index = 30
-end
-t67 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 32,
-  l1_end_index: 37
-) do |token|
-  token.questions = []
-  token.translation = "rush"
-  token.l2_start_index = 31
-  token.l2_end_index = 35
-end
-
-phrase = phrases[16]
-t68 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.similar_sound = ['movidito']
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-
-phrase = phrases[17]
-t69 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 15
-) do |token|
-  token.translation = "I want to breathe"
-  token.l2_start_index = 0
-  token.l2_end_index = 17
-end
-t70 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.translation = "your"
-  token.l2_start_index = 18
-  token.l2_end_index = 22
-end
-t71 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.questions = ["¿Qué vas a respirar?"]
-  token.translation = "neck"
-  token.l2_start_index = 23
-  token.l2_end_index = 27
-end
-t72 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.similar_sound = ['cariñito']
-  token.translation = "slowly"
-  token.l2_start_index = 28
-  token.l2_end_index = 34
-end
-
-phrase = phrases[18]
-t73 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.translation = "Let"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-t74 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.translation = "you"
-  token.l2_start_index = 12
-  token.l2_end_index = 15
-end
-t75 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 16
-) do |token|
-  token.translation = "tell"
-  token.l2_start_index = 7
-  token.l2_end_index = 11
-end
-t76 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 17,
-  l1_end_index: 22
-) do |token|
-  token.translation = "things"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-t77 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 23,
-  l1_end_index: 30
-) do |token|
-  token.translation = "in your ear"
-  token.l2_start_index = 23
-  token.l2_end_index = 34
-end
-
-phrase = phrases[19]
-t78 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "So"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-t79 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 3
-  token.l2_end_index = 6
-end
-t80 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 20
-) do |token|
-  token.translation = "remember"
-  token.l2_start_index = 7
-  token.l2_end_index = 15
-end
-t81 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 23
-) do |token|
-  token.questions = []
-  token.translation = "if"
-  token.l2_start_index = 16
-  token.l2_end_index = 18
-end
-t82 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 24,
-  l1_end_index: 32
-) do |token|
-  token.questions = []
-  token.translation = "you're not"
-  token.l2_start_index = 19
-  token.l2_end_index = 29
-end
-t83 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 33,
-  l1_end_index: 40
-) do |token|
-  token.similar_sound = ['domingo']
-  token.translation = "with me"
-  token.l2_start_index = 30
-  token.l2_end_index = 37
-end
-
-# Similar_sound attributes are now set directly in the creation blocks above
-
-# Additional token translations for chorus lesson
-phrase = phrases[20]
-t84 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Slowly"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-
-phrase = phrases[21]
-t85 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "I want"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-t86 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 15
-) do |token|
-  token.questions = []
-  token.translation = "undress"
-  token.l2_start_index = 10
-  token.l2_end_index = 17
-end
-t87 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 15,
-  l1_end_index: 17
-) do |token|
-  token.questions = []
-  token.translation = "you"
-  token.l2_start_index = 18
-  token.l2_end_index = 21
-end
-t88 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 19
-) do |token|
-  token.questions = []
-  token.translation = "with"
-  token.l2_start_index = 22
-  token.l2_end_index = 26
-end
-t89 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 20,
-  l1_end_index: 25
-) do |token|
-  token.questions = []
-  token.translation = "kisses"
-  token.l2_start_index = 27
-  token.l2_end_index = 33
-end
-t90 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 26,
-  l1_end_index: 35
-) do |token|
-  token.questions = []
-  token.translation = "slowly"
-  token.l2_start_index = 34
-  token.l2_end_index = 40
-end
-
-phrase = phrases[22]
-t91 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.translation = "Sign"
-  token.l2_start_index = 0
-  token.l2_end_index = 4
-end
-t92 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 10
-) do |token|
-  token.questions = []
-  token.translation = "the"
-  token.l2_start_index = 5
-  token.l2_end_index = 8
-end
-t93 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 18
-) do |token|
-  token.questions = ["¿Qué vas a firmar?"]
-  token.similar_sound = ['pareces']
-  token.translation = "walls"
-  token.l2_start_index = 9
-  token.l2_end_index = 14
-end
-t94 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 21
-) do |token|
-  token.questions = []
-  token.translation = "of"
-  token.l2_start_index = 15
-  token.l2_end_index = 17
-end
-t95 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 22,
-  l1_end_index: 24
-) do |token|
-  token.translation = "your"
-  token.l2_start_index = 18
-  token.l2_end_index = 22
-end
-t96 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 25,
-  l1_end_index: 34
-) do |token|
-  token.translation = "labyrinth"
-  token.l2_start_index = 23
-  token.l2_end_index = 32
-end
-
-phrase = phrases[23]
-t97 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 1
-) do |token|
-  token.questions = []
-  token.translation = "And"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
-t98 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 2,
-  l1_end_index: 7
-) do |token|
-  token.translation = "make"
-  token.l2_start_index = 4
-  token.l2_end_index = 8
-end
-t99 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 20
-) do |token|
-  token.translation = "your body"
-  token.l2_start_index = 9
-  token.l2_end_index = 18
-end
-t100 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 39
-) do |token|
-  token.translation = "a whole manuscript"
-  token.l2_start_index = 19
-  token.l2_end_index = 37
-end
-t101 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 40,
-  l1_end_index: 58
-) do |token|
-  token.questions = []
-  token.translation = "(up, up, up)"
-  token.l2_start_index = 38
-  token.l2_end_index = 50
-end
-
-# Token translations for lesson 8 (outro)
-phrase = phrases[66]
-t202 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 7
-) do |token|
-  token.questions = []
-  token.translation = "Let's"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-t203 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 8,
-  l1_end_index: 15
-) do |token|
-  token.translation = "do it"
-  token.l2_start_index = 6
-  token.l2_end_index = 11
-end
-t204 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 16,
-  l1_end_index: 28
-) do |token|
-  token.questions = ["¿Dónde lo haremos?"]
-  token.similar_sound = ['playa']
-  token.translation = "on a beach"
-  token.l2_start_index = 12
-  token.l2_end_index = 22
-end
-t205 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 29,
-  l1_end_index: 43
-) do |token|
-  token.questions = []
-  token.translation = "in Puerto Rico"
-  token.l2_start_index = 23
-  token.l2_end_index = 37
-end
-
-phrase = phrases[67]
-t206 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "Until"
-  token.l2_start_index = 0
-  token.l2_end_index = 5
-end
-t207 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 10,
-  l1_end_index: 18
-) do |token|
-  token.questions = []
-  token.similar_sound = ['olas']
-  token.translation = "the waves"
-  token.l2_start_index = 6
-  token.l2_end_index = 15
-end
-t208 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 19,
-  l1_end_index: 25
-) do |token|
-  token.translation = "scream"
-  token.l2_start_index = 16
-  token.l2_end_index = 22
-end
-t209 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 38
-) do |token|
-  token.questions = []
-  token.translation = "Oh, my goodness!"
-  token.l2_start_index = 24
-  token.l2_end_index = 40
-end
-
-phrase = phrases[68]
-t210 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 8
-) do |token|
-  token.questions = []
-  token.translation = "So that"
-  token.l2_start_index = 0
-  token.l2_end_index = 7
-end
-t211 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 9,
-  l1_end_index: 11
-) do |token|
-  token.questions = []
-  token.translation = "my"
-  token.l2_start_index = 8
-  token.l2_end_index = 10
-end
-t212 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 12,
-  l1_end_index: 17
-) do |token|
-  token.similar_sound = ['cello']
-  token.translation = "seal"
-  token.l2_start_index = 11
-  token.l2_end_index = 15
-end
-t213 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 26
-) do |token|
-  token.translation = "stays"
-  token.l2_start_index = 16
-  token.l2_end_index = 21
-end
-t214 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 27,
-  l1_end_index: 34
-) do |token|
-  token.translation = "with you"
-  token.l2_start_index = 22
-  token.l2_end_index = 30
-end
-t215 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 36,
-  l1_end_index: 43
-) do |token|
-  token.translation = "dance it"
-  token.l2_start_index = 32
-  token.l2_end_index = 40
-end
 
 # Create lesson activities
 
@@ -4310,12 +962,12 @@ outro_sort_phrases_activity.phrases = phrases[66..68]
 outro_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[6], order: 4)
 outro_language_alignment_activity.phrases = phrases[65..68]
 outro_language_alignment_activity.token_translations = [
-  t203, # hacerlo (key verb)
-  t204, # en una playa (distinctive location)
-  t207, # las olas (poetic/distinctive)
-  t209, # "Ay, bendito" (cultural expression)
-  t212, # sello (metaphorical)
-  t215, # báilalo (imperative/action)
+  t307, # hacerlo (key verb)
+  t308, # en una playa (distinctive location)
+  t312, # las olas (poetic/distinctive)
+  t314, # "Ay, bendito" (cultural expression)
+  t316, # mi sello (metaphorical)
+  t319, # báilalo (imperative/action)
 ]
 
 outro_speak_activity = Activities::SpeakActivity.create!(lesson: l[6], order: 5)
@@ -4324,7 +976,7 @@ outro_speak_activity.phrases = phrases[65..68]
 outro_listen_activity = Activities::ListenActivity.create!(lesson: l[6], order: 6)
 outro_listen_activity.phrases = phrases[65..68]
 outro_listen_activity.token_translations = [
-  t204, # en una playa (distinctive)
-  t212, # sello (challenging/metaphorical)
+  t308, # en una playa (distinctive)
+  t316, # mi sello (challenging/metaphorical)
 ]
 
