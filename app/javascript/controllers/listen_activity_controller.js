@@ -1,42 +1,42 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer']
+  static targets = ['phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer', 'completion']
   
   connect() {
     this.currentTokenIndex = 0;
     this.allTokens = this.getAllTokens();
-    this.setupPhraseObserver();
+    
+    // Listen for phrase activation events from video player
+    this.handlePhraseActivated = this.handlePhraseActivated.bind(this);
+    this.element.addEventListener('video-player:phrase-activated', this.handlePhraseActivated);
   }
   
-  setupPhraseObserver() {
-    // Instead of modifying the video player controller directly,
-    // we'll use a MutationObserver to watch for active phrases with blanks
-    this.phraseObserver = new MutationObserver((mutations) => {
-      mutations.forEach((mutation) => {
-        if (mutation.type === 'attributes' && 
-            mutation.attributeName === 'class' && 
-            mutation.target.classList.contains('bg-gray-700')) {
-          
-          // Check for unfilled blanks in the active phrase
-          const blankLines = mutation.target.querySelectorAll('.blank-line');
-          const unfilledBlanks = Array.from(blankLines).filter(blank => 
-            blank.textContent === '________' || blank.classList.contains('text-gray-400')
-          );
-          
-          if (unfilledBlanks.length > 0) {
-            // Dispatch event to pause the video
-            const event = new CustomEvent('listen-activity:pause-video');
-            this.element.dispatchEvent(event);
-          }
-        }
-      });
-    });
+  handlePhraseActivated(event) {
+    const currentPhraseElement = event.detail.phraseElement;
+    const currentPhraseId = parseInt(currentPhraseElement.dataset.phraseId);
     
-    // Observe all phrases for class changes
-    this.phraseTargets.forEach(phrase => {
-      this.phraseObserver.observe(phrase, { attributes: true });
-    });
+    // Find the previous phrase
+    const previousPhraseId = currentPhraseId - 1;
+    if (previousPhraseId >= 0) {
+      const previousPhraseElement = this.phraseTargets.find(p => 
+        parseInt(p.dataset.phraseId) === previousPhraseId
+      );
+      
+      if (previousPhraseElement) {
+        // Check for unfilled blanks in the previous phrase
+        const blankLines = previousPhraseElement.querySelectorAll('.blank-line');
+        const unfilledBlanks = Array.from(blankLines).filter(blank => 
+          blank.textContent === '________' || blank.classList.contains('text-gray-400')
+        );
+        
+        if (unfilledBlanks.length > 0) {
+          // Dispatch event to pause the video
+          const event = new CustomEvent('listen-activity:pause-video');
+          this.element.dispatchEvent(event);
+        }
+      }
+    }
   }
   
   getAllTokens() {
@@ -96,12 +96,9 @@ export default class extends Controller {
       if (this.currentTokenIndex < this.allTokens.length) {
         this.updateWordSelection();
       } else {
-        // All tokens filled, show completion button
-        this.wordSelectionTarget.innerHTML = `
-          <button class="w-full px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">
-            Continue
-          </button>
-        `;
+        // All tokens filled, show completion message
+        this.wordSelectionTarget.classList.add('hidden');
+        this.completionTarget.classList.remove('hidden');
       }
     }
   }
@@ -136,8 +133,7 @@ export default class extends Controller {
   }
   
   disconnect() {
-    if (this.phraseObserver) {
-      this.phraseObserver.disconnect();
-    }
+    // Remove event listeners
+    this.element.removeEventListener('video-player:phrase-activated', this.handlePhraseActivated);
   }
 } 

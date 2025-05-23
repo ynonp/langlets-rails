@@ -22,7 +22,8 @@
     data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-video-player-current-text-line-class="bg-gray-700"
-    data-action="listen-activity:pause-video->video-player#handlePauseVideo listen-activity:play-video->video-player#handlePlayVideo"
+    data-next-activity-path="<%= @next_activity_path %>"
+    data-action="listen-activity:pause-video->video-player#handlePauseVideo listen-activity:play-video->video-player#handlePlayVideo video-player:phrase-activated->listen-activity#handlePhraseActivated"
 >
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-160px)]">
     <div class="mb-6 text-center">
@@ -40,7 +41,15 @@
     </div>
     <!-- Hidden YouTube Player -->
     <div data-video-player-target="player" id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
-    
+
+    <!-- Completion Message (Initially Hidden) -->
+    <div class="my-4 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've completed all the listening exercises.</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>    
 
     <!-- Control Bar -->
     <div class="my-4 flex justify-between items-center">
@@ -112,5 +121,6 @@
         end 
       %>
     </div>
+
   </div>
 </div> 

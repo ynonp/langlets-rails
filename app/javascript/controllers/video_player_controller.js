@@ -112,11 +112,11 @@ export default class extends Controller {
     if (index !== -1) {
       subtitlesLines[index].classList.add(this.currentTextLineClass);
       
-      // Check if active subtitle has blank-line elements
-      const blankLines = subtitlesLines[index].querySelectorAll('.blank-line');
-      if (blankLines.length > 0) {
-        this.player.pauseVideo();
-      }
+      // Emit event when a phrase becomes active
+      const event = new CustomEvent('video-player:phrase-activated', {
+        detail: { phraseElement: subtitlesLines[index] }
+      });
+      this.element.dispatchEvent(event);
       
       const container = this.containerTarget;
       const lineHeight = subtitlesLines[index].offsetHeight;
