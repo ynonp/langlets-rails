@@ -22,13 +22,6 @@
                 end
       %>
       <div class="flex items-center">
-        <% if activity.order > 1 %>
-          <div class="h-0.5 w-8 <%= case status
-            when 'completed' then 'bg-green-500'
-            when 'current' then 'bg-yellow-400'
-            else 'bg-gray-300'
-          end %> <%= 'hidden' if status == 'upcoming' %>"></div>
-        <% end %>
         <a href="<%= lesson_path(@lesson.slug, a: activity.order) %>" 
            class="w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm <%= case status
              when 'completed' then 'bg-green-500 text-white'
