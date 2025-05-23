@@ -8,7 +8,8 @@ export default class extends Controller {
     'progressBar', 
     'progressText',
     'feedbackMessage',
-    'completionMessage'
+    'completionMessage',
+    'speakerButton'
   ];
   
   static values = { 
@@ -19,21 +20,12 @@ export default class extends Controller {
   };
 
   connect() {
-    // Play audio for the first phrase when the activity loads
-    this.playCurrentPhraseAudio();
+    // Audio will now be played only when user clicks the speaker icon
   }
 
-  playCurrentPhraseAudio() {
-    // Find the current phrase container
-    const currentContainer = this.phraseContainerTargets.find(
-      container => parseInt(container.dataset.index) === this.currentPhraseValue
-    );
-    
-    if (currentContainer) {
-      // Get the phrase text from the container
-      const phraseText = currentContainer.querySelector('h3').innerText.trim();
-      this.say(phraseText, this.l1Value);
-    }
+  playPhraseAudio(event) {
+    const phraseText = event.currentTarget.dataset.phrase;
+    this.say(phraseText, this.l1Value);
   }
 
   selectOption(event) {
@@ -105,8 +97,7 @@ export default class extends Controller {
         nextContainer.classList.remove('hidden');
         // Update progress text
         this.progressTextTarget.textContent = `Question ${this.currentPhraseValue + 1} of ${this.totalPhrasesValue}`;
-        // Play audio for the new phrase
-        this.playCurrentPhraseAudio();
+        // Audio will now be played only when user clicks the speaker icon
       }
     } else {
       // Show completion message

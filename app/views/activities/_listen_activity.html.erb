@@ -27,7 +27,7 @@
 >
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-160px)]">
     <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
     <div class="flex items-center space-x-3">
@@ -77,10 +77,10 @@
             data-timestamp="<%= timestamp_to_seconds(phrase['timestamp']) %>"
             data-phrase-id="<%= phrase_index %>"
             class="px-4 py-3 transition-all duration-200">
-            <div class="text-white text-xl">
+            <div class="text-white text-md md:text-xl">
               <%= render_phrase_with_blanks(phrase) %>
             </div>
-            <div class="text-teal-400 mt-1 text-xl hidden" data-listen-activity-target="translation">
+            <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
               <%= phrase['text_l2'] %>
             </div>
           </div>

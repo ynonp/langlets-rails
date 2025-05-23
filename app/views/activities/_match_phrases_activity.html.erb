@@ -35,9 +35,19 @@
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Original phrase (Spanish) -->
-        <h3 class="my-4 text-xl text-white bg-gray-900 w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 ">
-          <%= original %>
-        </h3>
+        <div class="my-4 text-md md:text-xl text-white bg-gray-700 w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
+          <span><%= original %></span>
+          <button 
+            data-action="click->match-activity#playPhraseAudio"
+            data-match-activity-target="speakerButton"
+            data-phrase="<%= original %>"
+            class="ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
+            title="Play audio">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
         
         <!-- Options section for this phrase -->
         <div class="space-y-3" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
@@ -59,7 +69,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 hover:bg-gray-700 text-white transition-all duration-200 text-base text-xl">
+              class="optionButton w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 hover:bg-gray-700 text-white transition-all duration-200 text-base text-md md:text-xl">
               <%= option %>
             </button>
           <% end %>

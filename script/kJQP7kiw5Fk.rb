@@ -4445,7 +4445,7 @@ intro_language_alignment_activity.token_translations = [
 intro_speak_activity = Activities::SpeakActivity.create!(lesson: l[0], order: 5)
 intro_speak_activity.phrases = phrases[6..9]
 
-intro_listen_activity = Activities::ListenActivity.create!(lesson: l[0], order: 6)
+intro_listen_activity = Activities::ListenActivity.create!(lesson: l[0], order: 6, text_header: 'Listen and click on the missing word')
 intro_listen_activity.phrases = phrases[6..9]
 intro_listen_activity.token_translations = [
   t19, # un rato

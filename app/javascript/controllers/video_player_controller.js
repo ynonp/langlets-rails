@@ -8,7 +8,7 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation'];
+  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton'];
   static classes = ['currentTextLine'];
 
   initialize() {
@@ -59,6 +59,10 @@ export default class extends Controller {
 
   async togglePlayback() {
     const {player, segmentStartValue} = this;
+    if (this.startActivityButtonTarget.classList.contains('hidden')) {
+      this.playVideoButtonTarget.classList.add('hidden');
+      this.startActivityButtonTarget.classList.remove('hidden');  
+    }
 
     const state = await player.getPlayerState();
     if (state === YT.PlayerState.PLAYING) {

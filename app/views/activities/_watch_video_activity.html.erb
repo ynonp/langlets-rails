@@ -41,7 +41,17 @@
         <input type="checkbox" data-video-player-target="showTranslation" data-action="change->video-player#toggleTranslation" class="mr-2">
         Show Translation
       </label>
-      <%= link_to "Start Activity", @next_activity_path, { class: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"} %>
+      <button
+        data-video-player-target="playVideoButton"
+        data-action="click->video-player#togglePlayback"
+        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
+      >
+        Play Video
+      </button>
+      <%= link_to "Start Activity", @next_activity_path,
+        { class: "hidden px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200",
+          data: { video_player_target: "startActivityButton" }
+        } %>
     </div>
 
     <div class="my-6 flex justify-center hidden">
@@ -65,11 +75,11 @@
             data-video-player-target="subtitles"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
             class="px-4 py-3 transition-all duration-200">
-            <div class="text-white text-xl">
+            <div class="text-white text-md md:text-xl">
               <%= wrap_tokens_in_spans(phrase,
                                      {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
             </div>
-            <div class="text-teal-400 mt-1 text-xl hidden" data-video-player-target="translation">
+            <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-video-player-target="translation">
               <%= phrase.text_l2 %>
             </div>
           </div>

@@ -2,12 +2,11 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
-  static targets = ['progressBar', 'token', 'completionMessage', 'translationPhrase', 'progressText'];
+  static targets = ['progressBar', 'token', 'completionMessage', 'translationPhrase'];
   
   connect() {
     this.currentPhraseIndex = 0;
     this.totalPhrases = this.translationPhraseTargets.length;
-    this.updateProgressText();
   }
   
   findToken(ev) {
@@ -41,7 +40,6 @@ export default class extends Controller {
       if (this.currentPhraseIndex < this.totalPhrases - 1) {
         setTimeout(() => {
           this.currentPhraseIndex++;
-          this.updateProgressText();
           
           // Hide current phrase, show next phrase
           this.translationPhraseTargets.forEach((phrase, index) => {
@@ -71,10 +69,6 @@ export default class extends Controller {
     const totalFoundTokens = this.tokenTargets.filter(t => t.dataset.found === "true").length;
     const percentage = (totalFoundTokens / totalTokens) * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
-  }
-  
-  updateProgressText() {
-    this.progressTextTarget.textContent = `Phrase ${this.currentPhraseIndex + 1} of ${this.totalPhrases}`;
   }
 }
 

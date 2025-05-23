@@ -28,12 +28,8 @@
 
 <div class="flex-col flex items-center bg-gray-800" data-controller="find-words">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
-    <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2">Language Alignment</h2>
+    <div class="mb-6 text-center">      
       <p class="text-gray-400 text-sm sm:text-base">Click on the words in the original text that match the highlighted words</p>
-      <p class="text-gray-400 text-sm sm:text-base mt-2">
-        <span data-find-words-target="progressText">Phrase 1 of <%= total_phrases %></span>
-      </p>
       <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
         <div data-find-words-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>
@@ -46,7 +42,7 @@
       <div class="relative">
         <% phrases_with_all_tokens.each_with_index do |phrase, phrase_index| %>
           <div 
-            class="translation-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 text-white text-center text-base sm:text-xl <%= phrase_index == 0 ? '' : 'hidden' %>" 
+            class="translation-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 text-white text-center text-base text-md md:text-xl <%= phrase_index == 0 ? '' : 'hidden' %>" 
             data-find-words-target="translationPhrase" 
             data-phrase-id="<%= phrase_index %>"
           >
@@ -107,7 +103,7 @@
         </div>
         
         <% phrases_with_all_tokens.each_with_index do |phrase, phrase_index| %>          
-          <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 hover:bg-gray-800 text-white sm:min-h-[72px] text-xl transition-all duration-200" data-phrase-id="<%= phrase_index %>">          
+          <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 hover:bg-gray-800 text-white sm:min-h-[72px] text-md md:text-xl transition-all duration-200" data-phrase-id="<%= phrase_index %>">          
             <% 
               text = phrase[:original_text]
               segments = []
