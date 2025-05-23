@@ -3,11 +3,12 @@
   current_activity_order = @activity.order if current_activity_order == 0 
 %>
 
-<div class="activity-navigation">
-
-  <div class="activity-bubbles">  
-    <%= link_to @course_path, class: "course-link text-white mr-4" do %>
-      Back To Course
+<div class="py-2 px-2 overflow-x-auto">
+  <div class="flex items-center min-w-min">  
+    <%= link_to @course_path, class: "text-white mr-4 p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200", title: "Back to Course" do %>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
+        <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clip-rule="evenodd" />
+      </svg>
     <% end %>
 
     <% @lesson.activities.order(:order).each do |activity| %>
@@ -20,13 +21,23 @@
                   "upcoming"
                 end
       %>
-      <div class="activity-bubble-container">
+      <div class="flex items-center">
         <% if activity.order > 1 %>
-          <div class="activity-connector <%= status unless status == 'upcoming' %>"></div>
+          <div class="h-0.5 w-8 <%= case status
+            when 'completed' then 'bg-green-500'
+            when 'current' then 'bg-yellow-400'
+            else 'bg-gray-300'
+          end %> <%= 'hidden' if status == 'upcoming' %>"></div>
         <% end %>
-        <a href="<%= lesson_path(@lesson.slug, a: activity.order) %>" class="activity-bubble <%= status %>" aria-label="Activity <%= activity.order %>">
+        <a href="<%= lesson_path(@lesson.slug, a: activity.order) %>" 
+           class="w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm <%= case status
+             when 'completed' then 'bg-green-500 text-white'
+             when 'current' then 'bg-yellow-400 text-gray-900 shadow-lg ring-2 ring-yellow-400 ring-opacity-30'
+             else 'bg-white border-2 border-dashed border-gray-300 text-gray-700'
+           end %>" 
+           aria-label="Activity <%= activity.order %>">
           <% if status == "completed" %>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="checkmark">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
               <path fill-rule="evenodd" d="M19.916 4.626a.75.75 0 01.208 1.04l-9 13.5a.75.75 0 01-1.154.114l-6-6a.75.75 0 011.06-1.06l5.353 5.353 8.493-12.739a.75.75 0 011.04-.208z" clip-rule="evenodd" />
             </svg>
           <% else %>
@@ -39,88 +50,25 @@
 </div>
 
 <style>
-  .activity-navigation {
-    padding: 1rem 0.5rem;
-    margin-bottom: 1rem;
-    overflow-x: auto;
-  }
-
-  .activity-bubbles {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: min-content;
-  }
-
-  .activity-bubble-container {
-    display: flex;
-    align-items: center;
-  }
-
-  .activity-bubble {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-    position: relative;
-    z-index: 1;
-    transition: all 0.2s ease;
-  }
-
-  .activity-bubble.completed {
-    background-color: #4CAF50;
-    color: white;
-  }
-
-  .activity-bubble.current {
-    background-color: #FFC107;
-    color: #333;
-    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
-  }
-
-  .activity-bubble.upcoming {
-    background-color: #ffffff;
-    border: 2px dashed #ccc;
-  }
-
-  .activity-connector {
-    height: 2px;
-    width: 2rem;
-    background-color: #ccc;
-  }
-
-  .activity-connector.completed {
-    background-color: #4CAF50;
-  }
-
-  .activity-connector.current {
-    background-color: #FFC107;
-  }
-
-  .checkmark {
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
   @media (max-width: 768px) {
-    .activity-bubble {
-      width: 2rem;
-      height: 2rem;
-      font-size: 0.9rem;
+    .w-8.h-8 {
+      width: 1.75rem !important;
+      height: 1.75rem !important;
+      font-size: 0.75rem !important;
     }
     
-    .activity-connector {
-      width: 1.5rem;
+    .w-8 {
+      width: 1.5rem !important;
     }
     
-    .checkmark {
-      width: 1rem;
-      height: 1rem;
+    .w-4.h-4 {
+      width: 0.875rem !important;
+      height: 0.875rem !important;
+    }
+
+    .w-5.h-5 {
+      width: 1rem !important;
+      height: 1rem !important;
     }
   }
 </style> 

@@ -8,7 +8,7 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList'];
+  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation'];
   static classes = ['currentTextLine'];
 
   initialize() {
@@ -65,7 +65,11 @@ export default class extends Controller {
       player.pauseVideo();
       this.showPlayButton();
     } else {
-      player.seekTo(segmentStartValue);
+      // Only seek to segment start if video hasn't started yet or is before the segment
+      const currentTime = await player.getCurrentTime();
+      if (currentTime < segmentStartValue) {
+        player.seekTo(segmentStartValue);
+      }
       player.playVideo();
       this.hidePlayButton();
     }
@@ -145,6 +149,17 @@ export default class extends Controller {
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval);
     }
+  }
+
+  toggleTranslation() {
+    const showTranslations = this.showTranslationTarget.checked;
+    this.translationTargets.forEach(translation => {
+      if (showTranslations) {
+        translation.classList.remove('hidden');
+      } else {
+        translation.classList.add('hidden');
+      }
+    });
   }
 }
 
