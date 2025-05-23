@@ -12,6 +12,22 @@ class Phrase < ApplicationRecord
   )
   }
 
+  def add_token_translation(text, text_index=0, translation, translation_index=0, **attributes)
+    l1_start_index = text_l1.nth_index(text, index)
+    l1_end_index = l1_start_index + text.length
+    l2_start_index = text_l2.nth_index(translation_index)
+    l2_end_index = l2_start_index + translation.length
+
+    TokenTranslation.create!(
+      phrase: self,
+      l1_start_index:,
+      l1_end_index:,
+      l2_start_index:,
+      l2_end_index:,
+      **attributes
+    )
+  end
+
   def create_mappings
     tokens = Ai::Gemini.extract_keywords_from_phrases(
       text_l1,

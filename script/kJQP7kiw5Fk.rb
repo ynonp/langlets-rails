@@ -121,102 +121,31 @@ l = [
 ]
 
 # Setup token translations
+# phrase.add_token_translation(text_l1, text_l1_occurence, text_l2, text_l2_occurence, attributes)
+# add a token translation from the text
+# in case the token translation text appears multiple times in the text,
+# you can specify the occurence of the text in the text_l1_occurence and text_l2_occurence parameters
+# if the text_l1_occurence is 0, it will add the token translation to the first occurence of the text
+# if the text_l2_occurence is 0, it will add the token translation to the first occurence of the text_l2
+# if the text_l1_occurence is 1, it will add the token translation to the second occurence of the text
+# if the text_l2_occurence is 1, it will add the token translation to the second occurence of the text_l2
+# if the text_l1_occurence is 2, it will add the token translation to the third occurence of the text
 
+# ["¡Ay!", "Oh!", "00:28"],
 phrase = phrases[0]
-t1 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 4
-) do |token|
-  token.questions = []
-  token.translation = "Oh!"
-  token.l2_start_index = 0
-  token.l2_end_index = 3
-end
+t1 = phrase.add_token_translation("¡Ay!", 0, "Oh!", 0)
 
+# ["Fonsi, DY", "Fonsi, DY", "00:30"],
 phrase = phrases[1]
-t2 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "Fonsi,"
-  token.l2_start_index = 0
-  token.l2_end_index = 6
-end
-t3 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "DY"
-  token.l2_start_index = 7
-  token.l2_end_index = 9
-end
+t2 = phrase.add_token_translation("Fonsi,", 0, "Fonsi,", 0)
+t3 = phrase.add_token_translation("DY", 0, "DY", 0)
 
+#   ["Oh, oh no, oh no (oh)", "Oh, oh no, oh no (oh)", "00:33"],
 phrase = phrases[2]
-t4 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 0,
-  l1_end_index: 2
-) do |token|
-  token.questions = []
-  token.translation = "Oh"
-  token.l2_start_index = 0
-  token.l2_end_index = 2
-end
-t5 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 4,
-  l1_end_index: 6
-) do |token|
-  token.questions = []
-  token.translation = "oh"
-  token.l2_start_index = 4
-  token.l2_end_index = 6
-end
-t6 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 7,
-  l1_end_index: 9
-) do |token|
-  token.questions = []
-  token.translation = "no"
-  token.l2_start_index = 7
-  token.l2_end_index = 9
-end
-t7 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 11,
-  l1_end_index: 13
-) do |token|
-  token.questions = []
-  token.translation = "oh"
-  token.l2_start_index = 11
-  token.l2_end_index = 13
-end
-t8 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 14,
-  l1_end_index: 16
-) do |token|
-  token.questions = []
-  token.translation = "no"
-  token.l2_start_index = 14
-  token.l2_end_index = 16
-end
-t9 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 18,
-  l1_end_index: 20
-) do |token|
-  token.questions = []
-  token.translation = "oh"
-  token.l2_start_index = 18
-  token.l2_end_index = 20
-end
+t4 = phrase.add_token_translation("Oh", 0, "Oh", 0) # first Oh -> Oh
+t5 = phrase.add_token_translation("oh no", 0, "oh no", 0) # first oh no -> oh no
+t6 = phrase.add_token_translation("oh no", 1, "oh no", 1) # second oh no -> oh n o
+t7 = phrase.add_token_translation("oh", 2, "oh", 2) # second oh -> oh
 
 phrase = phrases[3]
 t10 = TokenTranslation.find_or_create_by(
@@ -797,15 +726,7 @@ TokenTranslation.find_or_create_by(
   token.l2_start_index = 13
   token.l2_end_index = 18
 end
-TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 37
-) do |token|
-  token.translation = "without any rush"
-  token.l2_start_index = 19
-  token.l2_end_index = 35
-end
+
 TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 25,
@@ -3897,15 +3818,6 @@ t64 = TokenTranslation.find_or_create_by(
   token.l2_start_index = 13
   token.l2_end_index = 18
 end
-t65 = TokenTranslation.find_or_create_by(
-  phrase: phrase,
-  l1_start_index: 21,
-  l1_end_index: 37
-) do |token|
-  token.translation = "without any rush"
-  token.l2_start_index = 19
-  token.l2_end_index = 35
-end
 t66 = TokenTranslation.find_or_create_by(
   phrase: phrase,
   l1_start_index: 25,
@@ -4483,42 +4395,45 @@ iman_listen_activity.token_translations = [
   t59, # sentidos (key vocabulary)
 ]
 
-
 ## Lesson 3 - Chorus
-chorus_watch_video = Activities::WatchVideoActivity.create!(lesson: l[2], order: 2)
-chorus_watch_video.phrases = phrases[16..23]
+chorus_watch_video = Activities::WatchVideoActivity.create!(lesson: l[2], order: 1)
+chorus_watch_video.phrases = phrases[16..24]
 
 chorus_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[2], text_header: 'Match each phrase to its translation', order: 2)
-chorus_match_activity.phrases = phrases[17..20]
+chorus_match_activity.phrases = phrases[16..19]
 
 chorus_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[2], order: 3)
-chorus_sort_phrases_activity.phrases = phrases[17..20]
+chorus_sort_phrases_activity.phrases = phrases[16..19]
 
 chorus_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[2], order: 4)
-chorus_language_alignment_activity.phrases = phrases[16..23]
+chorus_language_alignment_activity.phrases = phrases[16..24]
 chorus_language_alignment_activity.token_translations = [
-  t68, # Despacito (song title/key word)
-  t71, # cuello (distinctive noun)
-  t72, # despacito (repetition reinforcement)
-  t77, # al oído (poetic expression)
-  t80, # recuerdes (important verb)
-  t86, # desnudarte (challenging/distinctive)
-  t93, # paredes (metaphorical/poetic)
-  t96, # laberinto (complex metaphor)
-  t99, # tu cuerpo (key noun phrase)
-  t100, # manuscrito (poetic/distinctive)
+  t68, # Despacito (key word)
+  t69, # quiero respirar (key phrase)
+  t71, # cuello (key noun)
+  t75, # diga (key verb)
+  t77, # al oído (key phrase)
+  t80, # acuerdes (key verb)
+  t83, # conmigo (key phrase)
+  t84, # Despacito (repeated)
+  t85, # quiero (repeated key verb)
+  t86, # desnudarte (intimate/key verb)
+  t93, # paredes (key noun with similar_sound)
+  t96, # laberinto (distinctive noun)
+  t98, # hacer (key verb)
+  t100, # manuscrito (distinctive/poetic noun)
 ]
 
 chorus_speak_activity = Activities::SpeakActivity.create!(lesson: l[2], order: 5)
-chorus_speak_activity.phrases = phrases[16..23]
+chorus_speak_activity.phrases = phrases[16..24]
 
 chorus_listen_activity = Activities::ListenActivity.create!(lesson: l[2], order: 6)
-chorus_listen_activity.phrases = phrases[16..23]
+chorus_listen_activity.phrases = phrases[16..24]
 chorus_listen_activity.token_translations = [
-  t68, # Despacito (key word)
-  t71, # cuello (distinctive)
-  t86, # desnudarte (challenging)
-  t96, # laberinto (complex/distinctive)
+  t72, # despacito (similar_sound: ['cariñito'])
+  t83, # conmigo (similar_sound: ['domingo'])
+  t93, # paredes (similar_sound: ['pareces'])
+  t96, # laberinto (distinctive and challenging)
 ]
 
 ## Lesson 4 - Quiero ver bailar
