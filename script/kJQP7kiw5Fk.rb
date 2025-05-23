@@ -4433,13 +4433,10 @@ intro_sort_phrases_activity.phrases = phrases[6..9]
 intro_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[0], order: 4)
 intro_language_alignment_activity.phrases = phrases[6..9]
 intro_language_alignment_activity.token_translations = [
-  t16, # sabes
-  t19, # un rato
-  t22, # bailar
-  t24, # hoy
-  t32, # llamándome
-  t33, # Muéstrame
-  t35, # camino
+  t19, # un rato (key time expression)
+  t22, # bailar (main verb)
+  t29, # mirada (key noun)
+  t35, # camino (key noun)
 ]
 
 intro_speak_activity = Activities::SpeakActivity.create!(lesson: l[0], order: 5)
@@ -4448,10 +4445,8 @@ intro_speak_activity.phrases = phrases[6..9]
 intro_listen_activity = Activities::ListenActivity.create!(lesson: l[0], order: 6, text_header: 'Listen and click on the missing word')
 intro_listen_activity.phrases = phrases[6..9]
 intro_listen_activity.token_translations = [
-  t19, # un rato
-  t22, # bailar
-  t29, # mirada
-  t35, # camino
+  t22, # bailar (most important verb)
+  t35, # camino (distinctive noun)
 ]
 
 ## Lesson 2 - el imán y el metal
@@ -4467,16 +4462,14 @@ iman_sort_phrases_activity.phrases = phrases[10..13]
 iman_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[1], order: 4)
 iman_language_alignment_activity.phrases = phrases[10..15]
 iman_language_alignment_activity.token_translations = [
-  t41, # el imán
-  t44, # el metal
-  t45, # Me voy acercando
-  t47, # voy armando
-  t48, # el plan
-  t50, # pensarlo
-  t51, # se acelera el pulso
-  t54, # me estás gustando
-  t59, # sentidos
-  t67, # apuro
+  t41, # el imán (key metaphor)
+  t44, # el metal (key metaphor)
+  t47, # voy armando (important verb)
+  t48, # el plan (key noun)
+  t50, # pensarlo (key verb)
+  t54, # me estás gustando (key expression)
+  t59, # sentidos (important noun)
+  t67, # apuro (key concept)
 ]
 
 iman_speak_activity = Activities::SpeakActivity.create!(lesson: l[1], order: 5)
@@ -4485,12 +4478,9 @@ iman_speak_activity.phrases = phrases[10..15]
 iman_listen_activity = Activities::ListenActivity.create!(lesson: l[1], order: 6)
 iman_listen_activity.phrases = phrases[10..15]
 iman_listen_activity.token_translations = [
-  t41, # el imán
-  t44, # el metal
-  t47, # voy armando
-  t50, # pensarlo
-  t59, # sentidos
-  t67, # apuro
+  t41, # el imán (distinctive and important)
+  t47, # voy armando (challenging pronunciation)
+  t59, # sentidos (key vocabulary)
 ]
 
 
@@ -4507,24 +4497,16 @@ chorus_sort_phrases_activity.phrases = phrases[17..20]
 chorus_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[2], order: 4)
 chorus_language_alignment_activity.phrases = phrases[16..23]
 chorus_language_alignment_activity.token_translations = [
-  t68, # Despacito
-  t69, # Quiero respirar
-  t71, # cuello
-  t72, # despacito
-  t75, # diga
-  t76, # cosas
-  t77, # al oído
-  t80, # recuerdes
-  t83, # conmigo
-  t85, # Quiero
-  t86, # desnudarte
-  t89, # besos
-  t91, # Firmar
-  t93, # paredes
-  t96, # laberinto
-  t98, # hacer
-  t99, # tu cuerpo
-  t100, # manuscrito
+  t68, # Despacito (song title/key word)
+  t71, # cuello (distinctive noun)
+  t72, # despacito (repetition reinforcement)
+  t77, # al oído (poetic expression)
+  t80, # recuerdes (important verb)
+  t86, # desnudarte (challenging/distinctive)
+  t93, # paredes (metaphorical/poetic)
+  t96, # laberinto (complex metaphor)
+  t99, # tu cuerpo (key noun phrase)
+  t100, # manuscrito (poetic/distinctive)
 ]
 
 chorus_speak_activity = Activities::SpeakActivity.create!(lesson: l[2], order: 5)
@@ -4533,12 +4515,148 @@ chorus_speak_activity.phrases = phrases[16..23]
 chorus_listen_activity = Activities::ListenActivity.create!(lesson: l[2], order: 6)
 chorus_listen_activity.phrases = phrases[16..23]
 chorus_listen_activity.token_translations = [
-  t68, # Despacito
-  t71, # cuello
-  t72, # despacito
-  t86, # desnudarte
-  t93, # paredes
-  t96, # laberinto
-  t100, # manuscrito
+  t68, # Despacito (key word)
+  t71, # cuello (distinctive)
+  t86, # desnudarte (challenging)
+  t96, # laberinto (complex/distinctive)
+]
+
+## Lesson 4 - Quiero ver bailar
+bailar_watch_video = Activities::WatchVideoActivity.create!(lesson: l[3], order: 1)
+bailar_watch_video.phrases = phrases[25..31]
+
+bailar_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[3], text_header: 'Match each phrase to its translation', order: 2)
+bailar_match_activity.phrases = phrases[25..28]
+
+bailar_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[3], order: 3)
+bailar_sort_phrases_activity.phrases = phrases[25..28]
+
+bailar_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[3], order: 4)
+bailar_language_alignment_activity.phrases = phrases[25..31]
+bailar_language_alignment_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[25], l1_start_index: 11, l1_end_index: 17), # bailar (key verb)
+  TokenTranslation.find_by(phrase: phrases[25], l1_start_index: 18, l1_end_index: 25), # tu pelo (distinctive image)
+  TokenTranslation.find_by(phrase: phrases[26], l1_start_index: 14, l1_end_index: 19), # ritmo (key concept)
+  TokenTranslation.find_by(phrase: phrases[27], l1_start_index: 15, l1_end_index: 24), # mi boca (intimate/distinctive)
+  TokenTranslation.find_by(phrase: phrases[28], l1_start_index: 12, l1_end_index: 21), # favoritos (key adjective)
+  TokenTranslation.find_by(phrase: phrases[29], l1_start_index: 7, l1_end_index: 17), # sobrepasar (challenging verb)
+  TokenTranslation.find_by(phrase: phrases[30], l1_start_index: 19, l1_end_index: 25), # gritos (vivid noun)
+  TokenTranslation.find_by(phrase: phrases[31], l1_start_index: 14, l1_end_index: 25), # tu apellido (distinctive phrase)
+]
+
+bailar_speak_activity = Activities::SpeakActivity.create!(lesson: l[3], order: 5)
+bailar_speak_activity.phrases = phrases[25..31]
+
+bailar_listen_activity = Activities::ListenActivity.create!(lesson: l[3], order: 6)
+bailar_listen_activity.phrases = phrases[25..31]
+bailar_listen_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[25], l1_start_index: 11, l1_end_index: 17), # bailar
+  TokenTranslation.find_by(phrase: phrases[26], l1_start_index: 14, l1_end_index: 19), # ritmo
+  TokenTranslation.find_by(phrase: phrases[29], l1_start_index: 7, l1_end_index: 17), # sobrepasar
+  TokenTranslation.find_by(phrase: phrases[31], l1_start_index: 14, l1_end_index: 25), # tu apellido
+]
+
+## Lesson 5 - Yo sé que estás pensándolo
+pensando_watch_video = Activities::WatchVideoActivity.create!(lesson: l[4], order: 1)
+pensando_watch_video.phrases = phrases[32..40]
+
+pensando_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[4], text_header: 'Match each phrase to its translation', order: 2)
+pensando_match_activity.phrases = phrases[32..36]
+
+pensando_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[4], order: 3)
+pensando_sort_phrases_activity.phrases = phrases[32..36]
+
+pensando_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[4], order: 4)
+pensando_language_alignment_activity.phrases = phrases[32..40]
+pensando_language_alignment_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[32], l1_start_index: 3, l1_end_index: 5), # sé (key verb)
+  TokenTranslation.find_by(phrase: phrases[33], l1_start_index: 0, l1_end_index: 25), # Llevo tiempo intentándolo (complete thought)
+  TokenTranslation.find_by(phrase: phrases[34], l1_start_index: 0, l1_end_index: 4), # Mami (colloquial)
+  TokenTranslation.find_by(phrase: phrases[34], l1_start_index: 14, l1_end_index: 19), # dando (key concept)
+  TokenTranslation.find_by(phrase: phrases[35], l1_start_index: 13, l1_end_index: 20), # corazón (key noun)
+  TokenTranslation.find_by(phrase: phrases[36], l1_start_index: 22, l1_end_index: 30), # buscando (key verb)
+  TokenTranslation.find_by(phrase: phrases[37], l1_start_index: 4, l1_end_index: 10), # prueba (imperative)
+  TokenTranslation.find_by(phrase: phrases[38], l1_start_index: 34, l1_end_index: 38), # amor (key concept)
+  TokenTranslation.find_by(phrase: phrases[39], l1_start_index: 0, l1_end_index: 17), # no tengo prisa (important phrase)
+  TokenTranslation.find_by(phrase: phrases[40], l1_start_index: 25, l1_end_index: 32), # salvaje (vivid adjective)
+]
+
+pensando_speak_activity = Activities::SpeakActivity.create!(lesson: l[4], order: 5)
+pensando_speak_activity.phrases = phrases[32..40]
+
+pensando_listen_activity = Activities::ListenActivity.create!(lesson: l[4], order: 6)
+pensando_listen_activity.phrases = phrases[32..40]
+pensando_listen_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[33], l1_start_index: 0, l1_end_index: 25), # Llevo tiempo intentándolo
+  TokenTranslation.find_by(phrase: phrases[35], l1_start_index: 13, l1_end_index: 20), # corazón
+  TokenTranslation.find_by(phrase: phrases[36], l1_start_index: 22, l1_end_index: 30), # buscando
+  TokenTranslation.find_by(phrase: phrases[38], l1_start_index: 34, l1_end_index: 38), # amor
+  TokenTranslation.find_by(phrase: phrases[40], l1_start_index: 25, l1_end_index: 32), # salvaje
+]
+
+## Lesson 6 - Pasito a pasito
+pasito_watch_video = Activities::WatchVideoActivity.create!(lesson: l[5], order: 1)
+pasito_watch_video.phrases = phrases[41..48]
+
+pasito_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[5], text_header: 'Match each phrase to its translation', order: 2)
+pasito_match_activity.phrases = phrases[41..44]
+
+pasito_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[5], order: 3)
+pasito_sort_phrases_activity.phrases = phrases[41..44]
+
+pasito_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[5], order: 4)
+pasito_language_alignment_activity.phrases = phrases[41..48]
+pasito_language_alignment_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[41], l1_start_index: 0, l1_end_index: 6), # Pasito (key rhythmic word)
+  TokenTranslation.find_by(phrase: phrases[41], l1_start_index: 23, l1_end_index: 32), # suavecito (diminutive)
+  TokenTranslation.find_by(phrase: phrases[42], l1_start_index: 4, l1_end_index: 17), # vamos pegando (key concept)
+  TokenTranslation.find_by(phrase: phrases[43], l1_start_index: 13, l1_end_index: 18), # besas (intimate verb)
+  TokenTranslation.find_by(phrase: phrases[43], l1_start_index: 27, l1_end_index: 35), # destreza (sophisticated noun)
+  TokenTranslation.find_by(phrase: phrases[44], l1_start_index: 13, l1_end_index: 20), # malicia (complex concept)
+  TokenTranslation.find_by(phrase: phrases[47], l1_start_index: 24, l1_end_index: 39), # un rompecabezas (metaphor)
+  TokenTranslation.find_by(phrase: phrases[48], l1_start_index: 29, l1_end_index: 37), # la pieza (metaphor completion)
+]
+
+pasito_speak_activity = Activities::SpeakActivity.create!(lesson: l[5], order: 5)
+pasito_speak_activity.phrases = phrases[41..48]
+
+pasito_listen_activity = Activities::ListenActivity.create!(lesson: l[5], order: 6)
+pasito_listen_activity.phrases = phrases[41..48]
+pasito_listen_activity.token_translations = [
+  TokenTranslation.find_by(phrase: phrases[41], l1_start_index: 0, l1_end_index: 6), # Pasito
+  TokenTranslation.find_by(phrase: phrases[43], l1_start_index: 27, l1_end_index: 35), # destreza
+  TokenTranslation.find_by(phrase: phrases[44], l1_start_index: 13, l1_end_index: 20), # malicia
+  TokenTranslation.find_by(phrase: phrases[47], l1_start_index: 24, l1_end_index: 39), # un rompecabezas
+]
+
+## Lesson 7 - Outro
+outro_watch_video = Activities::WatchVideoActivity.create!(lesson: l[6], order: 1)
+outro_watch_video.phrases = phrases[65..68]
+
+outro_match_activity = Activities::MatchPhrasesActivity.create!(lesson: l[6], text_header: 'Match each phrase to its translation', order: 2)
+outro_match_activity.phrases = phrases[66..68]
+
+outro_sort_phrases_activity = Activities::SortPhrasesActivity.create!(lesson: l[6], order: 3)
+outro_sort_phrases_activity.phrases = phrases[66..68]
+
+outro_language_alignment_activity = Activities::LanguageAlignmentActivity.create!(lesson: l[6], order: 4)
+outro_language_alignment_activity.phrases = phrases[65..68]
+outro_language_alignment_activity.token_translations = [
+  t203, # hacerlo (key verb)
+  t204, # en una playa (distinctive location)
+  t207, # las olas (poetic/distinctive)
+  t209, # "Ay, bendito" (cultural expression)
+  t212, # sello (metaphorical)
+  t215, # báilalo (imperative/action)
+]
+
+outro_speak_activity = Activities::SpeakActivity.create!(lesson: l[6], order: 5)
+outro_speak_activity.phrases = phrases[65..68]
+
+outro_listen_activity = Activities::ListenActivity.create!(lesson: l[6], order: 6)
+outro_listen_activity.phrases = phrases[65..68]
+outro_listen_activity.token_translations = [
+  t204, # en una playa (distinctive)
+  t212, # sello (challenging/metaphorical)
 ]
 
