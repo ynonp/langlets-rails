@@ -390,7 +390,7 @@ async function processListenActivity(
       if (selectedTokens.has(lesson.phrases[i].tokens[j].tokenId!)) {
         const token = lesson.phrases[i].tokens[j];
         if (token.similar_sound && Array.isArray(token.similar_sound) && token.similar_sound.length > 0) {
-          result.push({ phraseIndex: i, word: token.originalTextInSpanish });
+          result.push({ phraseIndex: lesson.phrases[i].id, word: token.originalTextInSpanish });
         }
       }
     }
@@ -425,7 +425,7 @@ async function processLanguageAlignmentActivity(
   for (let i = 0; i < lesson.phrases.length; i++) {
     for (let j = 0; j < lesson.phrases[i].tokens.length; j++) {
       if (selectedTokens.has(lesson.phrases[i].tokens[j].tokenId!)) {
-        result.push({ phraseIndex: i, word: lesson.phrases[i].tokens[j].originalTextInSpanish });
+        result.push({ phraseIndex: lesson.phrases[i].id, word: lesson.phrases[i].tokens[j].originalTextInSpanish });
       }
     }
   }
@@ -448,6 +448,7 @@ async function processTokenTranslations(
   for (let i = 0; i < phrases.length; i++) {
     const phrase = phrases[i];
     try {
+      console.log(`Generating token translations for phrase: ${i} - ${phrase}`);
       const tokenTranslations = await generateTokenTranslationsForPhrase(
         config, 
         phrase, 
@@ -456,6 +457,7 @@ async function processTokenTranslations(
       );
       createdTokenTranslations.push(tokenTranslations);
       generateTokenTranslationRubyCode(config.outputFile, i, tokenTranslations);
+      console.log(`done`);
     } catch (err) {
       console.error(err);
       console.error(`Failed to create token translations for phrase: ${i} - ${phrase}`);

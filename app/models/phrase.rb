@@ -14,6 +14,10 @@ class Phrase < ApplicationRecord
 
   def add_token_translation(text, text_index, translation, translation_index, **attributes)
     l1_start_index = text_l1.nth_index(text, text_index)
+    if l1_start_index.nil?
+      puts "Couldn't find text #{text} starting from index #{text_index} in phrase #{text_l1}"
+    end
+
     l1_end_index = l1_start_index + text.length
 
     l2_start_index = text_l2.nth_index(translation, translation_index) unless translation_index < 0
@@ -34,7 +38,7 @@ class Phrase < ApplicationRecord
     l1_end_index = l1_start_index + text.length
     result = self.token_translations.find_by(l1_start_index:, l1_end_index:)
     if result.nil?
-      pp l1_start_index, text, text_l1, text_index
+      pp l1_start_index, text, text_l1, text_index, l1_end_index, id
       pp self.token_translations.to_a
     end
     result
