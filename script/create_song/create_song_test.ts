@@ -98,10 +98,7 @@ function createTestConfiguration(): ScriptConfig {
 // Setup and cleanup functions
 function setupTestFiles(config: ScriptConfig) {
   // Create test phrases file
-  fs.writeFileSync(config.phrasesFileName, JSON.stringify(testPhrases), 'utf8');
-  
-  // Create mock flow.md file
-  fs.writeFileSync('flow.md', config.systemPrompt, 'utf8');
+  fs.writeFileSync(config.phrasesFileName, JSON.stringify(testPhrases), 'utf8');  
 }
 
 function cleanupTestFiles(config: ScriptConfig) {
@@ -112,9 +109,6 @@ function cleanupTestFiles(config: ScriptConfig) {
     }
     if (fs.existsSync(config.phrasesFileName)) {
       fs.unlinkSync(config.phrasesFileName);
-    }
-    if (fs.existsSync('flow.md')) {
-      fs.unlinkSync('flow.md');
     }
   } catch (error) {
     console.warn('Cleanup warning:', error);

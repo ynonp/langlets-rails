@@ -8,7 +8,7 @@
  * deno test --no-check --allow-all comprehensive_test.ts
  * 
  * This test will:
- * 1. Create real test files (phrases.json, flow.md)
+ * 1. Create real test files (phrases.json)
  * 2. Generate actual Ruby script files
  * 3. Verify the content of the generated Ruby scripts
  * 4. Clean up all test files
@@ -120,10 +120,7 @@ function createTestConfiguration(): ScriptConfig {
 function setupTestFiles(config: ScriptConfig) {
   // Create test phrases file
   fs.writeFileSync(config.phrasesFileName, JSON.stringify(testPhrases), 'utf8');
-  
-  // Create mock flow.md file
-  fs.writeFileSync('flow.md', config.systemPrompt, 'utf8');
-  
+    
   console.log(`📁 Created test files:`);
   console.log(`   - ${config.phrasesFileName}`);
   console.log(`   - flow.md`);

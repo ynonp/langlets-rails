@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --watch main.ts",
-    "test": "deno test --no-check --allow-all"
+    "test": "deno test --no-check --allow-all && rm sample_generated_*.rb"
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

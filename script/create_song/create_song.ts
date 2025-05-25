@@ -361,13 +361,23 @@ async function processListenActivity(
   const relevantPhrases = new Set(activity.phrases);
   const phrases = lesson.phrases.filter(p => relevantPhrases.has(p.id));
 
+  // Filter phrases to only include tokens with non-empty similar_sound arrays
+  const phrasesWithValidTokens = phrases.map(phrase => ({
+    ...phrase,
+    tokens: phrase.tokens.filter(token => 
+      token.similar_sound && 
+      Array.isArray(token.similar_sound) && 
+      token.similar_sound.length > 0
+    )
+  })).filter(phrase => phrase.tokens.length > 0); // Only include phrases that have at least one valid token
+
   const selectedTokensResponse = await generateObject({
     model: config.model.tokenTranslations,
     maxRetries: 5,
     output: 'array',
     schema: z.number().describe('tokenId of the selected tokens'),
     system: config.systemPrompt,
-    prompt: createListenActivityTokenSelectionPrompt(phrases)
+    prompt: createListenActivityTokenSelectionPrompt(phrasesWithValidTokens)
   });
 
   const selectedTokens = new Set(selectedTokensResponse.object);
