@@ -1,6 +1,8 @@
 {
   "version": "4",
   "specifiers": {
+    "jsr:@std/assert@*": "1.0.11",
+    "jsr:@std/internal@^1.0.5": "1.0.5",
     "npm:@ai-sdk/anthropic@*": "1.2.12_zod@3.25.1",
     "npm:@ai-sdk/deepseek@*": "0.2.14_zod@3.25.1",
     "npm:@ai-sdk/google@*": "1.2.18_zod@3.25.1",
@@ -8,6 +10,17 @@
     "npm:@ai-sdk/xai@*": "1.2.16_zod@3.25.1",
     "npm:ai@*": "4.3.13_zod@3.25.1",
     "npm:zod@*": "3.25.1"
+  },
+  "jsr": {
+    "@std/assert@1.0.11": {
+      "integrity": "2461ef3c368fe88bc60e186e7744a93112f16fd110022e113a0849e94d1c83c1",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/internal@1.0.5": {
+      "integrity": "54a546004f769c1ac9e025abd15a76b6671ddc9687e2313b67376125650dc7ba"
+    }
   },
   "npm": {
     "@ai-sdk/anthropic@1.2.12_zod@3.25.1": {
