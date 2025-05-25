@@ -130,7 +130,6 @@ function cleanupTestFiles(config: ScriptConfig) {
   const filesToClean = [
     config.outputFile,
     config.phrasesFileName,
-    'flow.md'
   ];
   
   filesToClean.forEach(file => {
