@@ -9,7 +9,7 @@ Overall Goal: To enable the creation of interactive, effective, and enjoyable la
 
 ## Introduction: The Power of Learning with Music
 
-MúsicaLingo leverages the universal appeal and mnemonic power of music to make language learning, specifically Spanish, more immersive, memorable, and fun. This document outlines the process of creating a course, detailing the data structures, workflow, and best practices.
+MúsicaLingo leverages the universal appeal and mnemonic power of music to make language learning more immersive, memorable, and fun. This document outlines the process of creating a course, detailing the data structures, workflow, and best practices.
 
 ## Core Concepts & Data Entities
 
@@ -21,7 +21,7 @@ Description: A segment of the song's lyrics, usually a single line or a short, c
 
 Key Attributes:
 
-1. l1: The Language for the original lyric (e.g., Spanish).
+1. l1: The Language for the original lyric (e.g., Spanish, French, Arabic).
 
 2. l2: The Language for the translation (e.g., English).
 

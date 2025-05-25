@@ -183,7 +183,8 @@ function createLanguageAlignmentTokenSelectionPrompt(phrases: LessonPhrase[]): s
 export function generateInitialRubyCode(config: ScriptConfig, phrases: PhraseData[]): void {
   const initialCode = `
 en = Language.find_by(iso_name: 'en')
-es = Language.find_by(iso_name: 'es')
+l1 = Language.find_by(iso_name: 'fr')
+
 medium = Medium.find_or_create_by!(url: 'https://www.youtube.com/watch?v=${config.youtubeVideoId}')
 phrases_data = ${JSON.stringify(phrases, null, 2)};
 
@@ -199,7 +200,7 @@ medium.phrases.destroy_all
 # Create phrases in DB
 phrases = phrases_data.map do |text_l1, text_l2, timestamp|
   Phrase.create!(
-    l1: es,
+    l1: l1,
     l2: en,
     text_l1: text_l1,
     text_l2: text_l2,
@@ -238,12 +239,25 @@ async function generateLessonActivityRubyCode(
 ): Promise<void> {
   const activityPromises = activities.map(async (activity, activityIndex) => {
     const tokenTranslations = await getTokenTranslationsForActivity(lesson, activity, config);
+    let tokenTranslationsCode = '';
+    if (activity.activityType === 'ListenActivity') {
+      tokenTranslationsCode = `
+      a.token_translations = [${tokenTranslations.map(t => 
+        `phrases[${t.phraseIndex}].find_token_translation("${t.word}")`
+      ).join(',\n')}]
+      `;
+    } else if (activity.activityType === 'LanguageAlignmentActivity') {
+      tokenTranslationsCode = `
+      a.token_translations = [${tokenTranslations.map(t => 
+        `phrases[${t.phraseIndex}].find_token_translation("${t.word}")`
+      ).join(',\n')}].filter {|t| t.l2_start_index.present? }
+      `;
+    }
+
     return `
 a = Activities::${activity.activityType}.create!(lesson: l, order: ${activityIndex})
 a.phrases = phrases.values_at(${activity.phrases.join(', ')})
-a.token_translations = [${tokenTranslations.map(t => 
-  `phrases[${t.phraseIndex}].find_token_translation("${t.word}")`
-).join(',\n')}]
+${tokenTranslationsCode}
 `;
   });
 
@@ -343,10 +357,8 @@ async function getTokenTranslationsForActivity(
   console.log(activity.activityType);
   
   if (activity.activityType === 'ListenActivity') {
-    console.log(`listen activity`);
     return await processListenActivity(lesson, activity, config);
   } else if (activity.activityType === 'LanguageAlignmentActivity') {
-    console.log(`language alignment activity`);
     return await processLanguageAlignmentActivity(lesson, activity, config);
   } else {
     return [];
@@ -418,8 +430,6 @@ async function processLanguageAlignmentActivity(
   });
 
   const selectedTokens = new Set(selectedTokensResponse.object);
-  console.log(Array.from(selectedTokens));
-  console.log(JSON.stringify(lesson, null, 2));
 
   const result: TokenTranslationForActivity[] = [];
   for (let i = 0; i < lesson.phrases.length; i++) {
@@ -430,7 +440,6 @@ async function processLanguageAlignmentActivity(
     }
   }
 
-  console.log(result);
   return result;
 }
 
