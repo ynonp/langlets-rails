@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_05_22_153428) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_26_112732) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -59,6 +59,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_05_22_153428) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "pronunciation_variant_name"
+    t.boolean "rtl", default: true
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
   end
 
