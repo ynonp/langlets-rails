@@ -23,9 +23,7 @@ export default class extends Controller {
   }
 
   showPopup(ev) {
-    console.log(ev)
     if (ev.target.dataset.translation) {
-      console.log(ev.target.dataset.translation)
       const {translation} = ev.target.dataset;
 
       this.translationTextTarget.textContent = translation;
