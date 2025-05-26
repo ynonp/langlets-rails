@@ -54,6 +54,34 @@
   }
 </style>
 
+<% content_for :head do %>
+  <% youtube_video_id = @course.main_media_url.split("v=").last %>
+  <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) %>
+  <% course_url = course_url(@course) %>
+  
+  <!-- Page title -->
+  <title><%= @course.name %> - Langlets</title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="<%= course_url %>">
+  <meta property="og:title" content="<%= @course.name %> - Langlets">
+  <meta property="og:description" content="Learn <%= @course.name %> with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities.">
+  <meta property="og:image" content="<%= thumbnail_url %>">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:site_name" content="Langlets">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="<%= course_url %>">
+  <meta property="twitter:title" content="<%= @course.name %> - Langlets">
+  <meta property="twitter:description" content="Learn <%= @course.name %> with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities.">
+  <meta property="twitter:image" content="<%= thumbnail_url %>">
+<% end %>
+
+
 <!-- Top bar: Refined for clarity and presence -->
 <header class="py-6 border-b border-slate-700/60">
   <!-- Added slight transparency to border for softness -->
@@ -119,8 +147,7 @@
         </svg>
       </div>
 
-      <% youtube_url = @course.main_media_url %>
-      <% youtube_video_id = youtube_url.split("v=").last %>
+      <% youtube_video_id = @course.main_media_url.split("v=").last %>
       <div class="aspect-video overflow-hidden rounded-lg shadow-xl shadow-black/30">
         <!-- Added a container for the iframe to ensure consistent shadow and rounded corners -->
         <iframe class="w-full h-full" src="https://www.youtube.com/embed/<%= youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -132,3 +159,18 @@
     </aside>
   </main>
 </div>
+
+    
+    <footer class="bg-gray-800 border-t border-gray-700 mt-auto">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+          <div class="text-gray-400 text-sm">
+            © <%= Date.current.year %> Langlets. All rights reserved.
+          </div>
+          <div class="flex space-x-6">
+            <%= link_to "Privacy Policy", "/home/privacy", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
+            <%= link_to "Terms of Service", "/home/terms", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
+          </div>
+        </div>
+      </div>
+    </footer>

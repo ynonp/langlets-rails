@@ -1,6 +1,12 @@
 class LessonsController < ApplicationController
   def show
-    @lesson = Lesson.find_by(slug: params[:id])
+    @lesson = Lesson.find_by(slug: params[:id]) || Lesson.find_by(id: params[:id])
+    
+    unless @lesson
+      redirect_to root_path, alert: "Lesson not found"
+      return
+    end
+    
     @activity = @lesson.activities.find_by(order: params[:a]) || @lesson.activities.first
 
     current_order = params[:a].to_i
