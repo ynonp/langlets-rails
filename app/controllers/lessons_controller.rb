@@ -16,7 +16,7 @@ class LessonsController < ApplicationController
     @next_activity_path = if next_activity.present?
       lesson_path(@lesson.slug, a: next_activity.order)
     elsif @next_lesson.present?
-      lesson_path(@next_lesson.slug, a: 1)
+      lesson_path(@next_lesson.slug)
     else
       @course_path
     end
