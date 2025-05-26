@@ -13,14 +13,17 @@ class Phrase < ApplicationRecord
   }
 
   def add_token_translation(text, text_index, translation, translation_index, **attributes)
-    l1_start_index = text_l1.downcase.nth_index(text.downcase, text_index)
+    text_re = Regexp.new("\\b#{Regexp.escape(text.downcase)}\\b")
+    l1_start_index = text_l1.downcase.nth_index(text_re, text_index)
     if l1_start_index.nil?
+      pp text_re
       puts "Couldn't find text #{text} starting from index #{text_index} in phrase #{text_l1}"
     end
 
     l1_end_index = l1_start_index + text.length
 
-    l2_start_index = text_l2.downcase.nth_index(translation.downcase, translation_index) unless translation_index < 0
+    translation_re = Regexp.new("\\b#{Regexp.escape(translation.downcase)}\\b")
+    l2_start_index = text_l2.downcase.nth_index(translation_re, translation_index) unless translation_index < 0
     l2_end_index = l2_start_index + translation.length unless l2_start_index.nil?
 
     TokenTranslation.create!(

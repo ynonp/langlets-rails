@@ -299,34 +299,56 @@ async function generateTokenTranslationsForPhrase(
   phraseIndex: number,
   fullLyrics: string
 ): Promise<TokenTranslation[]> {
-  const tokenTranslationsResponse = await generateObject({
-    model: config.model.tokenTranslations,
-    maxRetries: 5,
-    output: 'array',
-    schema: z.object({
-      originalTextInSpanish: z.string().describe('A word or expression from the original Spanish text'),
-      originalTextOccurence: z.number().describe('If the word appears multiple times in the original text, specify which occurence we are referring to. Default is 0 (for disambiguity)'),
-      translationTextInEnglish: z.string().describe('The translation word or expression.'),
-      translationTextOccurence: z.number().describe('If the word translation appears multiple times in the English text (l2) specify which occurence we are referring to (for disambiguity). Default is 0'),
-      similar_sound: z.array(z.string()).describe(`Word or phrase in Spanish that sounds similar but has different meaning. Difference must be in actual letters and not in accent marks. If unsure specify empty array here. Some good examples for similar sounds are:
-      un rato -> un gato
-      llevo -> llaves
-      quiero -> pero
-      azul -> arroz
-      hombre -> hombro
-      cabe -> sabe
-      mitad -> mirada
+  const schema = z.object({
+    originalTextInSpanish: z.string().describe('A word or expression from the original Spanish text'),
+    originalTextOccurence: z.number().describe('If the word appears multiple times in the original text, specify which occurence we are referring to. Default is 0 (for disambiguity)'),
+    translationTextInEnglish: z.string().describe('The translation word or expression.'),
+    translationTextOccurence: z.number().describe('If the word translation appears multiple times in the English text (l2) specify which occurence we are referring to (for disambiguity). Default is 0'),
+    similar_sound: z.array(z.string()).describe(`Word or phrase in Spanish that sounds similar but has different meaning. Difference must be in actual letters and not in accent marks. If unsure specify empty array here. Some good examples for similar sounds are:
+    un rato -> un gato
+    llevo -> llaves
+    quiero -> pero
+    azul -> arroz
+    hombre -> hombro
+    cabe -> sabe
+    mitad -> mirada
 
-      Bad examples that shouldn't be used include:
-      que -> qué  # Do not use, as this is the same spelling except for an accent mark
-      sé  -> se   # Do not use, as this is the same spelling except for an accent mark
-        `)
-    }),
-    system: config.systemPrompt,
-    prompt: createTokenTranslationPrompt(phrase[0], fullLyrics)
+    Bad examples that shouldn't be used include:
+    que -> qué  # Do not use, as this is the same spelling except for an accent mark
+    sé  -> se   # Do not use, as this is the same spelling except for an accent mark
+      `)
   });
 
-  return tokenTranslationsResponse.object;
+  try {
+    const tokenTranslationsResponse = await generateObject({
+      model: config.model.tokenTranslations,
+      maxRetries: 2,
+      output: 'array',
+      schema,
+      system: config.systemPrompt,
+      prompt: createTokenTranslationPrompt(phrase[0], fullLyrics)
+    });
+
+    return tokenTranslationsResponse.object;
+  } catch (error) {
+    console.log(`Primary model failed for phrase ${phraseIndex}, trying fallback model...`);
+    
+    try {
+      const tokenTranslationsResponse = await generateObject({
+        model: config.model.lessons,
+        maxRetries: 2,
+        output: 'array',
+        schema,
+        system: config.systemPrompt,
+        prompt: createTokenTranslationPrompt(phrase[0], fullLyrics)
+      });
+
+      return tokenTranslationsResponse.object;
+    } catch (fallbackError) {
+      console.error(`Both models failed for phrase ${phraseIndex}`);
+      throw fallbackError;
+    }
+  }
 }
 
 async function generateLessonActivities(
