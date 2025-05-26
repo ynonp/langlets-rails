@@ -20,12 +20,34 @@ export default class extends Controller {
   };
 
   connect() {
-    // Audio will now be played only when user clicks the speaker icon
+    // Audio will now be played using the video player when user clicks the speaker icon
   }
 
   playPhraseAudio(event) {
-    const phraseText = event.currentTarget.dataset.phrase;
-    this.say(phraseText, this.l1Value);
+    const button = event.currentTarget;
+    const phraseIndex = parseInt(button.dataset.phraseIndex);
+    
+    // Find the current phrase container
+    const currentPhraseContainer = this.phraseContainerTargets.find(
+      container => parseInt(container.dataset.index) === phraseIndex
+    );
+    
+    if (currentPhraseContainer) {
+      // Get the video player controller for this specific phrase
+      const videoPlayerController = this.application.getControllerForElementAndIdentifier(currentPhraseContainer, 'video-player');
+      
+      if (videoPlayerController && videoPlayerController.player) {
+        // Play the video segment for this phrase
+        videoPlayerController.player.seekTo(videoPlayerController.segmentStartValue);
+        videoPlayerController.player.playVideo();
+        
+        // Stop the video after the phrase duration
+        const duration = videoPlayerController.segmentEndValue - videoPlayerController.segmentStartValue;
+        setTimeout(() => {
+          videoPlayerController.player.pauseVideo();
+        }, duration * 1000);
+      }
+    }
   }
 
   selectOption(event) {
@@ -109,16 +131,5 @@ export default class extends Controller {
   updateProgress() {
     const percentage = (this.currentPhraseValue + 1) / this.totalPhrasesValue * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
-  }
-
-  say(text, lang) {
-    if ('speechSynthesis' in window) {
-      const utterance = new SpeechSynthesisUtterance(text);
-      utterance.lang = lang;
-      const voices = speechSynthesis.getVoices();
-      const voice = voices.find(v => v.lang === lang);
-      if (voice) utterance.voice = voice;
-      speechSynthesis.speak(utterance);
-    }
   }
 }

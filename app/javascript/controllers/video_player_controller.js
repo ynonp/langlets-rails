@@ -84,6 +84,10 @@ export default class extends Controller {
   }
 
   showPlayButton() {
+    if (!this.hasPlayButtonTarget) {
+      return;
+    }
+
     if (this.miniPlayerValue) {
       this.playButtonTarget.textContent = '▶';
     } else {
@@ -92,6 +96,10 @@ export default class extends Controller {
   }
 
   hidePlayButton() {
+    if (!this.hasPlayButtonTarget) {
+      return;
+    }
+
     if (this.miniPlayerValue) {
       this.playButtonTarget.textContent = '❚❚';
     } else {
@@ -107,6 +115,10 @@ export default class extends Controller {
   }
 
   updateProgressBar(currentTime) {
+    if (!this.hasProgressBarTarget) {
+      return;
+    }    
+
     const segmentLength = this.segmentEndValue - this.segmentStartValue;
     const elapsed = Math.max(0, currentTime - this.segmentStartValue);
     const percentage = Math.min(100, (elapsed / segmentLength) * 100);

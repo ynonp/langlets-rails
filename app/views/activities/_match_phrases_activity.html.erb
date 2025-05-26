@@ -1,12 +1,15 @@
 <%# Expects:
-  params[:phrases] - An array of pairs: [original_phrase, translated_phrase]
+  params[:phrases] - An array of phrases data: [original_text, translated_text, timestamp_start, timestamp_end]
   params[:l1] - Language code for original_phrase (for example "he", "en", "es", "ar-ps")
   params[:l2] - Language code for translated_phrase (for example "he", "en", "es", "ar-ps")
+  params[:video_id] - YouTube video ID
+  params[:start_timestamp] - Start timestamp for the video segment
+  params[:end_timestamp] - End timestamp for the video segment
   
   This activity shows one phrase in Spanish at a time at the top and 4 possible translations below.
   The user needs to select the correct translation. After selection, the next phrase appears.
   The game continues until all phrases are completed.
-  When a phrase appears, the user hears an audio version of that phrase. Audio version is generated using web speech api.
+  When a phrase appears, the user can click the speaker icon to hear the audio from the video.
  %>
 
 <% phrases = (params[:phrases] || []) %>
@@ -17,6 +20,7 @@
     data-match-activity-l1-value="<%= params[:l1] %>"
     data-match-activity-total-phrases-value="<%= total_phrases %>"
     class="flex-col flex items-center bg-gray-800">
+  
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-1">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
@@ -28,11 +32,19 @@
       </div>
     </div>
     
-    <% phrases.each_with_index do |(original, translation), index| %>
+    <% phrases.each_with_index do |(original, translation, timestamp_start, timestamp_end), index| %>
       <div 
+        data-controller="video-player"
+        data-video-player-video-id-value="<%= params[:video_id] %>"
+        data-video-player-mini-player-value="true"
+        data-video-player-segment-start-value="<%= timestamp_to_seconds(timestamp_start) %>"
+        data-video-player-segment-end-value="<%= timestamp_to_seconds(timestamp_end) %>"
         data-match-activity-target="phraseContainer"
         data-index="<%= index %>"
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
+
+        <!-- Hidden YouTube Player for this phrase -->
+        <div data-video-player-target="player" class="hidden w-0 h-0 overflow-hidden"></div>
 
         <!-- Original phrase (Spanish) -->
         <div class="my-4 text-md md:text-xl text-white bg-gray-700 w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
@@ -41,6 +53,7 @@
             data-action="click->match-activity#playPhraseAudio"
             data-match-activity-target="speakerButton"
             data-phrase="<%= original %>"
+            data-phrase-index="<%= index %>"
             class="ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
             title="Play audio">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
