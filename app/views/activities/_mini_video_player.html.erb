@@ -10,7 +10,9 @@
       <button data-video-player-target="playButton" data-action="click->video-player#togglePlayback" id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
         ▶
       </button>
-      <div class="flex-1 h-2 bg-gray-600 rounded-full">
+      <div class="flex-1 h-2 bg-gray-600 rounded-full cursor-pointer"
+           data-video-player-target="progressBarContainer"
+           data-action="click->video-player#seekToPosition">
         <div
             data-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
       </div>

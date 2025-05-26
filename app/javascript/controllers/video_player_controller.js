@@ -8,7 +8,7 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton'];
+  static targets = ['player', 'playButton', 'progressBar', 'progressBarContainer', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton'];
   static classes = ['currentTextLine'];
 
   initialize() {
@@ -100,7 +100,7 @@ export default class extends Controller {
   }
 
   checkIfVideoEnded(currentTime) {
-    if (currentTime >= this.segmentEndValue + 3) {
+    if (currentTime >= this.segmentEndValue) {
       this.player.pauseVideo();
       this.showPlayButton();
     }
@@ -164,6 +164,27 @@ export default class extends Controller {
         translation.classList.add('hidden');
       }
     });
+  }
+
+  seekToPosition(event) {
+    // Prevent the event from bubbling up to the YouTube player
+    event.preventDefault();
+    event.stopPropagation();
+    
+    const progressBarContainer = event.currentTarget;
+    const rect = progressBarContainer.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const containerWidth = rect.width;
+    
+    // Calculate the percentage of the click position
+    const clickPercentage = Math.max(0, Math.min(100, (clickX / containerWidth) * 100));
+    
+    // Calculate the target time within the segment
+    const segmentLength = this.segmentEndValue - this.segmentStartValue;
+    const targetTime = this.segmentStartValue + (clickPercentage / 100) * segmentLength;
+    
+    // Seek to the calculated time
+    this.player.seekTo(targetTime);
   }
 }
 

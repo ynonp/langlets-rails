@@ -20,7 +20,14 @@ class Activity < ApplicationRecord
     {
       video_id: lesson.medium.extract_youtube_video_id,
       start_timestamp: phrases.order(timestamp: :asc).first.timestamp,
-      end_timestamp: phrases.order(timestamp: :desc).first.timestamp,
+      end_timestamp: to_string_timestamp(phrases.order(timestamp: :desc).first.timestamp_seconds + 5)
     }
+  end
+
+  # convert a timestamp in seconds to a string timestamp format ("MM:SS")
+  def to_string_timestamp(timestamp)
+    minutes = timestamp / 60
+    seconds = timestamp % 60
+    "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
   end
 end

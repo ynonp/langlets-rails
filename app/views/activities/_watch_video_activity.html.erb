@@ -30,7 +30,10 @@
       </div>
 
       <!-- Custom Progress Bar -->
-      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-10">
+      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+           data-video-player-target="progressBarContainer"
+           data-action="click->video-player#seekToPosition"
+           style="pointer-events: auto;">
         <div data-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
       </div>
     </div>
