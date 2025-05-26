@@ -53,7 +53,11 @@ export default class extends Controller {
   }
   
   // Handler for the play video event
-  handlePlayVideo() {
+  async handlePlayVideo() {
+    const currentTime = await this.player.getCurrentTime();
+    if (!currentTime || currentTime < this.segmentStartValue) {
+      this.player.seekTo(this.segmentStartValue);
+    }
     this.player.playVideo();
   }
 

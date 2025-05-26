@@ -32,6 +32,7 @@ class Phrase < ApplicationRecord
       l1_end_index:,
       l2_start_index:,
       l2_end_index:,
+      translation:,
       **attributes
     )
   end

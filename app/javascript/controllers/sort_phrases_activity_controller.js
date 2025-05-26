@@ -12,8 +12,6 @@ export default class extends Controller {
   }
 
   connect() {
-    console.log(this.correctOrderValue);
-    console.log(this.element);
     this.sortable = Sortable.create(this.phrasesContainerTarget, {
       animation: 150,
       ghostClass: 'sortable-ghost',
@@ -24,8 +22,6 @@ export default class extends Controller {
     const currentOrder = Array.from(this.phraseItemTargets)
       .map(item => parseInt(item.dataset.id));
     
-    console.log(currentOrder);
-    console.log(this.correctOrderValue);
     const isCorrect = arraysEqual(currentOrder, this.correctOrderValue);
     
     if (isCorrect) {
