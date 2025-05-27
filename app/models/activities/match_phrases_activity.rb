@@ -9,8 +9,8 @@ module Activities
       {
         **video_params,
         phrases: phrases_data_for_activity,
-        l1: phrases.first.l1.iso_name,
-        l2: phrases.first.l2.iso_name
+        l1: phrases.first.l1,
+        l2: phrases.first.l2
       }
     end
   end

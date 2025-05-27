@@ -14,10 +14,12 @@
 
 <% phrases = (params[:phrases] || []) %>
 <% total_phrases = phrases.length %>
+<% l1_rtl = params[:l1].rtl %>
+<% l2_rtl = params[:l2].rtl %>
 
 <div
     data-controller="match-activity"
-    data-match-activity-l1-value="<%= params[:l1] %>"
+    data-match-activity-l1-value="<%= params[:l1].iso_name %>"
     data-match-activity-total-phrases-value="<%= total_phrases %>"
     class="flex-col flex items-center bg-gray-800">
   
@@ -55,7 +57,7 @@
             data-match-activity-target="speakerButton"
             data-phrase="<%= original %>"
             data-phrase-index="<%= index %>"
-            class="ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
+            class="<%= l1_rtl ? "text-right" : "text-left" %> ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
             title="Play audio">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
@@ -83,7 +85,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 hover:bg-gray-700 text-white transition-all duration-200 text-base text-md md:text-xl">
+              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 hover:bg-gray-700 text-white transition-all duration-200 text-base text-md md:text-xl">
               <%= option %>
             </button>
           <% end %>

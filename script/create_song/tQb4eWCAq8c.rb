@@ -329,14 +329,14 @@ phrase.add_token_translation("toi", 0, "you", 0, similar_sound: [])
 
 phrase = phrases[17]
 phrase.add_token_translation("Où", 0, "Where", 0, similar_sound: [])
-phrase.add_token_translation("es-tu?", 0, "are you?", 0, similar_sound: [])
+phrase.add_token_translation("es-tu", 0, "are you", 0, similar_sound: [])
 phrase.add_token_translation("Que", 0, "What", 0, similar_sound: [])
-phrase.add_token_translation("fais-tu?", 0, "are you doing?", 0, similar_sound: [])
+phrase.add_token_translation("fais-tu", 0, "are you doing", 0, similar_sound: [])
 phrase.add_token_translation("Est-ce que", 0, "Do I", 0, similar_sound: [])
 phrase.add_token_translation("j'existe", 0, "exist", 0, similar_sound: [])
 phrase.add_token_translation("encore", 0, "still", 0, similar_sound: [])
 phrase.add_token_translation("pour", 0, "for", 0, similar_sound: [])
-phrase.add_token_translation("toi?", 0, "you?", 0, similar_sound: [])
+phrase.add_token_translation("toi", 0, "you", 0, similar_sound: [])
 
 phrase = phrases[18]
 phrase.add_token_translation("Je", 0, "I", 0, similar_sound: ["jeu"])
@@ -444,22 +444,22 @@ phrase.add_token_translation("indien", 0, "Indian", 0, similar_sound: ["ancien"]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien0', course: c, order: 0, name: 'Opening Memory')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(0, 1, 2, 3, 4, 5)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(2, 3, 4, 5)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(2, 3, 4, 5)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(2, 3, 4, 5)
 a.token_translations = [phrases[0].find_token_translation("Tu sais"),
 phrases[0].find_token_translation("je"),
@@ -477,12 +477,12 @@ phrases[5].find_token_translation("le nôtre")].filter {|t| t.l2_start_index.pre
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(2, 3, 4, 5)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(0, 1, 2, 3, 4, 5)
 a.token_translations = [phrases[0].find_token_translation("heureux"),
 phrases[1].find_token_translation("marchions"),
@@ -493,22 +493,22 @@ phrases[5].find_token_translation("le nôtre")]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien1', course: c, order: 1, name: 'The Portrait')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(6, 7, 8, 9, 10)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(6, 7, 8, 9)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(6, 7, 8, 9)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(6, 7, 8, 9)
 a.token_translations = [phrases[6].find_token_translation("ta"),
 phrases[6].find_token_translation("robe"),
@@ -523,12 +523,12 @@ phrases[10].find_token_translation("une éternité")].filter {|t| t.l2_start_ind
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(6, 7, 8, 9)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(6, 7, 8, 9, 10)
 a.token_translations = [phrases[6].find_token_translation("robe"),
 phrases[6].find_token_translation("longue"),
@@ -539,22 +539,22 @@ phrases[10].find_token_translation("un siècle")]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien2', course: c, order: 2, name: 'Promises of Love (Chorus)')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = [phrases[11].find_token_translation("On"),
 phrases[11].find_token_translation("tu"),
@@ -569,12 +569,12 @@ phrases[14].find_token_translation("l'été")].filter {|t| t.l2_start_index.pres
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(11, 12, 13, 14)
 a.token_translations = [phrases[12].find_token_translation("mort"),
 phrases[13].find_token_translation("matin"),
@@ -582,22 +582,22 @@ phrases[14].find_token_translation("indien")]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien3', course: c, order: 3, name: 'Present Reflection')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = [phrases[15].find_token_translation("Aujourd'hui"),
 phrases[15].find_token_translation("je"),
@@ -605,37 +605,37 @@ phrases[15].find_token_translation("loin"),
 phrases[16].find_token_translation("Je pense à"),
 phrases[16].find_token_translation("toi"),
 phrases[17].find_token_translation("Où"),
-phrases[17].find_token_translation("es-tu?")].filter {|t| t.l2_start_index.present? }
+phrases[17].find_token_translation("es-tu")].filter {|t| t.l2_start_index.present? }
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(15, 16, 17)
 a.token_translations = [phrases[15].find_token_translation("suis")]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien4', course: c, order: 4, name: 'The Wave Metaphor')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(18, 19, 20, 21, 22, 23)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(19, 20, 21, 22)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(19, 20, 21, 22)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(19, 20, 21, 22)
 a.token_translations = [phrases[18].find_token_translation("vague"),
 phrases[18].find_token_translation("n'atteindra jamais"),
@@ -651,12 +651,12 @@ phrases[23].find_token_translation("il y a")].filter {|t| t.l2_start_index.prese
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(19, 20, 21, 22)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(18, 19, 20, 21, 22, 23)
 a.token_translations = [phrases[18].find_token_translation("vague"),
 phrases[19].find_token_translation("je"),
@@ -668,22 +668,22 @@ phrases[22].find_token_translation("passaient")]
 
 l = Lesson.create!(medium: medium, slug: 'lete-indien5', course: c, order: 5, name: 'Final Chorus')
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 a.phrases = phrases.values_at(24, 25, 26, 27, 28, 29, 30, 31)
 a.token_translations = []
 
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 1)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
 a.phrases = phrases.values_at(25, 26, 27, 28)
 a.token_translations = []
 
 
-a = Activities::SortPhrasesActivity.create!(lesson: l, order: 2)
+a = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
 a.phrases = phrases.values_at(25, 26, 27, 28)
 a.token_translations = []
 
 
-a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 3)
+a = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
 a.phrases = phrases.values_at(25, 26, 27, 28)
 a.token_translations = [phrases[25].find_token_translation("s'aimera"),
 phrases[25].find_token_translation("encore"),
@@ -698,12 +698,12 @@ phrases[31].find_token_translation("l'été")].filter {|t| t.l2_start_index.pres
 
 
 
-a = Activities::SpeakActivity.create!(lesson: l, order: 4)
+a = Activities::SpeakActivity.create!(lesson: l, order: 5)
 a.phrases = phrases.values_at(25, 26, 27, 28)
 a.token_translations = []
 
 
-a = Activities::ListenActivity.create!(lesson: l, order: 5)
+a = Activities::ListenActivity.create!(lesson: l, order: 6)
 a.phrases = phrases.values_at(24, 25, 26, 27, 28, 29, 30, 31)
 a.token_translations = [phrases[25].find_token_translation("s'aimera"),
 phrases[27].find_token_translation("couleurs"),
