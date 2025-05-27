@@ -20,7 +20,7 @@ class Activity < ApplicationRecord
     {
       video_id: lesson.medium.extract_youtube_video_id,
       start_timestamp: phrases.order(timestamp: :asc).first.timestamp,
-      end_timestamp: to_string_timestamp(phrases.order(timestamp: :desc).first.timestamp_seconds + 5)
+      end_timestamp: to_string_timestamp(phrases.last.timestamp_seconds + 5)
     }
   end
 
