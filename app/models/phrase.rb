@@ -5,6 +5,8 @@ class Phrase < ApplicationRecord
   has_many :token_translations, dependent: :destroy
   has_timestamp [:timestamp]
 
+  default_scope { order(timestamp: :asc) }
+
   scope :between_durations, ->(from, to) {
   where(
     "(split_part(timestamp, ':', 1)::int * 60 + split_part(timestamp, ':', 2)::int) BETWEEN ? AND ?",
