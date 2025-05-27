@@ -19,8 +19,8 @@ class Activity < ApplicationRecord
   def video_params
     {
       video_id: lesson.medium.extract_youtube_video_id,
-      start_timestamp: phrases.order(timestamp: :asc).first.timestamp,
-      end_timestamp: to_string_timestamp(phrases.last.timestamp_seconds + 5)
+      start_timestamp: phrases.ordered_by_timestamp.first.timestamp,
+      end_timestamp: to_string_timestamp(phrases.ordered_by_timestamp.last.timestamp_seconds + 5)
     }
   end
 

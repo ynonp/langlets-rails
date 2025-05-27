@@ -40,16 +40,16 @@ end
 
 medium.phrases.reload
 l = Lesson.create!(medium: medium, slug: 'speakspanishfaster')
-l.start_timestamp = medium.phrases.order(timestamp: :asc).first.timestamp
-l.end_timestamp = medium.phrases.order(timestamp: :desc).first.timestamp
+l.start_timestamp = medium.phrases.ordered_by_timestamp.first.timestamp
+l.end_timestamp = medium.phrases.ordered_by_timestamp.last.timestamp
 l.save!
 
 a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
-a.phrases << medium.phrases
+a.phrases << medium.phrases.ordered_by_timestamp
 l.activities << a
 
 a = Activities::MatchPhrasesActivity.create!(lesson: l, text_header: 'Match each phrase to its translation', order: 2)
-a.phrases << medium.phrases.first(4)
+a.phrases << medium.phrases.ordered_by_timestamp.first(4)
 l.activities << a
 
 # Phrase.find_by(text_l1: '¿Puedes hablar más despacio?').create_mappings
