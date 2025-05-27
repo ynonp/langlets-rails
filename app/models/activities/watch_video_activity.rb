@@ -4,8 +4,8 @@ module Activities
       lesson = self.lesson
       {
         **video_params,
-        phrases: phrases.includes(:token_translations),
-        texts: phrases.includes(:token_translations).map do |p|
+        phrases: phrases.ordered_by_timestamp.includes(:token_translations),
+        texts: phrases.ordered_by_timestamp.includes(:token_translations).map do |p|
           {
             "text_l1" => p.text_l1,
             "text_l2" => p.text_l2,

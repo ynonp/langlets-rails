@@ -3,10 +3,10 @@ module Activities
     def activity_params
       {
         **video_params,
-        azure_speech_name: phrases.first.l1.pronunciation_variant_name,
-        l1: phrases.first.l1.english_name,
-        l2: phrases.first.l2.english_name,
-        phrases: phrases.includes(:token_translations),
+        azure_speech_name: phrases.ordered_by_timestamp.first.l1.pronunciation_variant_name,
+        l1: phrases.ordered_by_timestamp.first.l1.english_name,
+        l2: phrases.ordered_by_timestamp.first.l2.english_name,
+        phrases: phrases.ordered_by_timestamp.includes(:token_translations),
       }
     end
   end
