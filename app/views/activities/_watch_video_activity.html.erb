@@ -41,8 +41,13 @@
     <!-- Control Bar -->
     <div class="my-4 flex justify-between items-center">
       <label class="flex items-center text-white">
-        <input type="checkbox" data-video-player-target="showTranslation" data-action="change->video-player#toggleTranslation" class="mr-2">
-        Show Translation
+        <input 
+          checked="true"
+          type="checkbox"
+          data-video-player-target="showTranslation"
+          data-action="change->video-player#toggleTranslation"
+          class="mr-2">
+        Toggle Translation
       </label>
       <button
         data-video-player-target="playVideoButton"
@@ -51,7 +56,7 @@
       >
         Play Video
       </button>
-      <%= link_to "Start Activity", @next_activity_path,
+      <%= link_to "Next Activity", @next_activity_path,
         { class: "hidden px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200",
           data: { video_player_target: "startActivityButton" }
         } %>
@@ -82,7 +87,7 @@
               <%= wrap_tokens_in_spans(phrase,
                                      {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
             </div>
-            <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-video-player-target="translation">
+            <div class="text-teal-400 mt-1 text-md md:text-xl" data-video-player-target="translation">
               <%= phrase.text_l2 %>
             </div>
           </div>

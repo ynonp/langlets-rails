@@ -33,20 +33,8 @@ export default class extends Controller {
     );
     
     if (currentPhraseContainer) {
-      // Get the video player controller for this specific phrase
-      const videoPlayerController = this.application.getControllerForElementAndIdentifier(currentPhraseContainer, 'video-player');
-      
-      if (videoPlayerController && videoPlayerController.player) {
-        // Play the video segment for this phrase
-        videoPlayerController.player.seekTo(videoPlayerController.segmentStartValue);
-        videoPlayerController.player.playVideo();
-        
-        // Stop the video after the phrase duration
-        const duration = videoPlayerController.segmentEndValue - videoPlayerController.segmentStartValue;
-        setTimeout(() => {
-          videoPlayerController.player.pauseVideo();
-        }, duration * 1000);
-      }
+      // Dispatch event to the video player controller to start playback
+      this.dispatch('play-video', { target: currentPhraseContainer });
     }
   }
 

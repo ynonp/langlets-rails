@@ -19,8 +19,8 @@
     data-sort-phrases-activity-correct-order-value="<%= correct_order %>"
     class="flex-col flex items-center bg-gray-800">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
-    <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl text-white mb-2">Sort the Phrases Below</h2>
+    <div class="mb-6">
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Drag The Phrases To The Correct Order" %></h2>
     </div>
     
     <%= render partial: 'activities/mini_video_player', locals: {params: params} %>

@@ -28,8 +28,8 @@
 
 <div class="flex-col flex items-center bg-gray-800" data-controller="find-words">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
-    <div class="mb-6 text-center">      
-      <p class="text-gray-400 text-sm sm:text-base">Click on the words in the original text that match the highlighted words</p>
+    <div class="mb-6">      
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Click on the words in the original text that match the highlighted words" %></h2>      
       <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
         <div data-find-words-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>

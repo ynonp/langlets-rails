@@ -345,7 +345,7 @@ async function generateLessonActivityRubyCode(
     }
 
     return `
-a = Activities::${activity.activityType}.create!(lesson: l, order: ${activityIndex})
+a = Activities::${activity.activityType}.create!(lesson: l, order: ${activityIndex + 1})
 a.phrases = phrases.values_at(${activity.phrases.join(', ')})
 ${tokenTranslationsCode}
 `;

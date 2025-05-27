@@ -23,7 +23,7 @@
   
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
     <div class="mb-1">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Click On The Translation" %></h2>
       <p class="text-gray-400 text-sm sm:text-base mb-2">
         <span data-match-activity-target="progressText">Question 1 of <%= total_phrases %></span>
       </p>
@@ -41,6 +41,7 @@
         data-video-player-segment-end-value="<%= timestamp_to_seconds(timestamp_end) %>"
         data-match-activity-target="phraseContainer"
         data-index="<%= index %>"
+        data-action="match-activity:play-video->video-player#handlePlayVideo"
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Hidden YouTube Player for this phrase -->
