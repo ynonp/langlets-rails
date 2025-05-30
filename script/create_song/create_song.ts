@@ -35,8 +35,8 @@ interface LanguageConfiguration {
  */
 const LanguageConfig: LanguageConfiguration = {
   clipLanguage: {
-    name: 'Arabic',
-    isoCode: 'ar-ps'
+    name: 'English',
+    isoCode: 'en'
   },
   translationLanguage: {
     name: 'Hebrew', 
