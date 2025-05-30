@@ -519,13 +519,15 @@ phrase = phrases[42]
 phrase.add_token_translation("كل", 0, "כל", 0, similar_sound: [])
 phrase.add_token_translation("الناس", 0, "האנשים", 0, similar_sound: [])
 phrase.add_token_translation("خير", 0, "טובים", 0, similar_sound: [])
-phrase.add_token_translation("وبركة", 0, "מבורכים", 0, similar_sound: [])
+phrase.add_token_translation("و", 0, "ו", 0, similar_sound: [])
+phrase.add_token_translation("بركة", 0, "מבורכים", 0, similar_sound: [])
 
 phrase = phrases[43]
 phrase.add_token_translation("كل", 0, "כל", 0, similar_sound: [])
 phrase.add_token_translation("الناس", 0, "האנשים", 0, similar_sound: [])
 phrase.add_token_translation("خير", 0, "טובים", 0, similar_sound: [])
-phrase.add_token_translation("وبركة", 0, "מבורכים", 0, similar_sound: [])
+phrase.add_token_translation("و", 0, "ו", 0, similar_sound: [])
+phrase.add_token_translation("بركة", 0, "מבורכים", 0, similar_sound: [])
 
 l = Lesson.create!(medium: medium, slug: 'kl-el-nas0', course: c, order: 0, name: 'Intro & Chorus')
 
@@ -552,7 +554,9 @@ phrases[0].find_token_translation("بركة"),
 phrases[1].find_token_translation("كل"),
 phrases[1].find_token_translation("بركة"),
 phrases[2].find_token_translation("كل"),
-phrases[2].find_token_translation("بركة")].filter {|t| t.l2_start_index.present? }
+phrases[2].find_token_translation("بركة"),
+phrases[3].find_token_translation("كل"),
+phrases[3].find_token_translation("بركة")].filter {|t| t.l2_start_index.present? }
       
 
 
