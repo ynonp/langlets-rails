@@ -40,6 +40,69 @@ module Ai
       )
     end
 
+    def create_course
+      progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)      
+      raise "Missing creation data" unless progress.ready?
+      data = progress.data
+
+      l1 = Language.find_by(english_name: clip_language)
+      l2 = Language.find_by(english_name: translation_language)
+      medium = Medium.find_or_create_by!(url: youtubeurl)
+      slug = song_name.parameterize
+      c = Course.find_or_create_by!(slug: ) do |c|
+        c.name = song_name
+        c.main_media_url = youtubeurl
+      end
+      c.lessons.destroy_all
+      Lesson.where("slug like \'#{slug}%\'").destroy_all
+      medium.phrases.destroy_all
+
+      data["lessons"].each_with_index do |lesson_data, lesson_index|
+        l = Lesson.create!(
+          medium: medium,
+          slug: "#{slug}#{lesson_index}",
+          course: c,
+          order: lesson_index,
+          name: lesson_data["title"])
+
+        a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
+        a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
+        a3 = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
+        a4 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
+        a5 = Activities::SpeakActivity.create!(lesson: l, order: 5)
+        a6 = Activities::ListenActivity.create!(lesson: l, order: 6)
+
+        phrases = lesson_data["phrases"].each_with_index do |phrase_data, phrase_index|
+          p = Phrase.create!(
+            text_l1: phrase_data["text_l1"],
+            text_l2: phrase_data["text_l2"],
+            timestamp: phrase_data["timestamp"],
+            medium:,
+            l1:,
+            l2:,
+          )
+
+          [ a1, a2, a3, a4, a5, a6 ].each { |a| a.phrases << p }
+
+          (phrase_data["translations"] || []).each do |token_translation_data|
+            t = TokenTranslation.create!(
+              phrase: p,
+              l1_start_index: token_translation_data["l1_start_index"],
+              l2_start_index: token_translation_data["l2_start_index"],
+              l1_end_index: token_translation_data["l1_end_index"] + 1,
+              l2_end_index: token_translation_data["l2_end_index"] + 1,
+              similar_sound: token_translation_data["similar_sound"],
+              translation: token_translation_data["translation"],
+            )
+            a6.token_translations << t if token_translation_data["listening_activity"] == 1
+            a4.token_translations << t if token_translation_data["language_alignment_activity"] == 1
+          end
+          p
+        end
+      end
+    end
+
+
     def save_progress(step, data)
       progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)
       progress.data = data
@@ -479,12 +542,6 @@ module Ai
         end
       end
     end
-    
-    def write_script
-      progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
-      data = progress.data
-
-    end
 
     def validate_lesson_phrases(lessons, original_phrases)
       lessons.each_with_index do |lesson, lesson_index|
@@ -587,5 +644,7 @@ module Ai
       start_index = find_character_index(text, tokens, token_index, expected_token)
       start_index + expected_token.length - 1
     end
+
+
   end
 end
