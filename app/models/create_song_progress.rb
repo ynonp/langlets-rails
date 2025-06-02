@@ -3,6 +3,7 @@ class CreateSongProgress < ApplicationRecord
     create_phrases: 0,
     create_token_translations: 1,
     create_lessons: 2,
-    create_lesson_activities: 3
+    create_listening_activities: 3,
+    create_language_alignment_activities: 4
   }
 end
