@@ -32,7 +32,7 @@ module Ai
       @flash.read_timeout = 600
       @openai = Langchain::LLM::OpenAI.new(
         api_key: Rails.application.credentials.openai_key,
-        default_options: { temperature: 0.4, chat_model: "o4-mini" }
+        default_options: { chat_model: "o4-mini" }
       )
       @claude = Langchain::LLM::Anthropic.new(
         api_key: Rails.application.credentials.anthropic_api_key,
