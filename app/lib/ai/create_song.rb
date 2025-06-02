@@ -481,6 +481,9 @@ module Ai
     end
     
     def write_script
+      progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
+      data = progress.data
+
     end
 
     def validate_lesson_phrases(lessons, original_phrases)
