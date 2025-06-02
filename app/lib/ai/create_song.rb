@@ -392,6 +392,93 @@ module Ai
         end
       end
     end
+
+    def create_language_alignment_activities
+      progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
+      data = progress.data
+      
+      # JSON schema for the LLM response - expects the same structure as input but with modified translations
+      json_schema = {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            "text_l1": { type: "string" },
+            "text_l2": { type: "string" },
+            "timestamp": { type: "string" },
+            "translations": {
+              type: "array",
+              items: {
+                type: "object",
+                properties: {
+                  "l1_start_index": { type: "integer" },
+                  "l1_end_index": { type: "integer" },
+                  "l2_start_index": { type: "integer" },
+                  "l2_end_index": { type: "integer" },
+                  "translation": { type: "string" },
+                  "language_alignment_activity": { type: "integer" },
+                },
+                required: ["l1_start_index", "l1_end_index", "l2_start_index", "l2_end_index", "translation"],
+                additionalProperties: true
+              }
+            }
+          },
+          required: ["text_l1", "text_l2", "timestamp", "translations"],
+          additionalProperties: true
+        }
+      }
+      
+      parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
+      prompt = Langchain::Prompt::PromptTemplate.new(
+        template: File.read("prompts/create_language_alignment_activities.md"),
+        input_variables: ["clip_language", "translation_language", "input_json", "format_instructions"]
+      )
+      
+      # Process each lesson that doesn't have language alignment activities yet
+      data["lessons"].each_with_index do |lesson, lesson_index|
+        # Check if this lesson already has language alignment activities
+        has_language_alignment_activities = lesson["phrases"].any? do |phrase|
+          phrase["translations"]&.any? { |translation| translation.key?("language_alignment_activity") }
+        end
+        
+        # Skip if this lesson already has language alignment activities
+        next if has_language_alignment_activities
+        
+        # Prepare the input JSON for the LLM
+        input_json = lesson["phrases"].to_json
+        
+        # Format the prompt using Langchain template syntax
+        prompt_text = prompt.format(
+          clip_language: clip_language,
+          translation_language: translation_language,
+          input_json: input_json,
+          format_instructions: parser.get_format_instructions
+        )
+        
+        # Call the LLM
+        llm_response = @flash.chat(messages: [
+          {role: "user", parts: [{text: File.read("prompts/system.md")}]},
+          {role: "user", parts: [{text: prompt_text}]}
+        ]).chat_completion
+        
+        # Parse the structured response
+        begin
+          structured_response = parser.parse(llm_response)
+          
+          # Update the lesson data with the modified phrases
+          data["lessons"][lesson_index]["phrases"] = structured_response
+          
+          # Save progress after each lesson
+          save_progress(:create_language_alignment_activities, data)
+          
+          puts "Processed lesson #{lesson_index}: #{lesson['title'] || 'Untitled'}"
+        rescue JSON::ParserError => e
+          puts "Error parsing LLM response for lesson #{lesson_index}: #{e.message}"
+          puts "LLM Response: #{llm_response}"
+          next
+        end
+      end
+    end
     
     def write_script
     end
