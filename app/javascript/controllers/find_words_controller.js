@@ -2,11 +2,16 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
-  static targets = ['progressBar', 'token', 'completionMessage', 'translationPhrase'];
+  static targets = ['progressBar', 'token', 'completionMessage', 'translationPhrase', 'originalPhrasesContainer'];
   
   connect() {
     this.currentPhraseIndex = 0;
     this.totalPhrases = this.translationPhraseTargets.length;
+    
+    // Scroll to the first phrase when the activity loads
+    setTimeout(() => {
+      this.scrollToOriginalPhrase(0);
+    }, 100);
   }
   
   findToken(ev) {
@@ -50,6 +55,9 @@ export default class extends Controller {
               phrase.classList.add('hidden');
             }
           });
+
+          // Scroll to the corresponding original phrase
+          this.scrollToOriginalPhrase(this.currentPhraseIndex);
         }, 1000); // Short delay before showing the next phrase
       } else {
         // All phrases completed
@@ -69,6 +77,39 @@ export default class extends Controller {
     const totalFoundTokens = this.tokenTargets.filter(t => t.dataset.found === "true").length;
     const percentage = (totalFoundTokens / totalTokens) * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
+  }
+
+  scrollToOriginalPhrase(phraseIndex) {
+    // Find the original phrase element with the matching phrase-id
+    const originalPhrase = this.element.querySelector(`.original-phrase[data-phrase-id="${phraseIndex}"]`);
+    
+    if (originalPhrase && this.hasOriginalPhrasesContainerTarget) {
+      // Remove highlighting from all original phrases
+      this.element.querySelectorAll('.original-phrase').forEach(phrase => {
+        phrase.classList.remove('ring-2', 'ring-blue-400', 'bg-gray-800');
+        phrase.classList.add('bg-gray-900');
+      });
+            
+      // Calculate the position to scroll to
+      const container = this.originalPhrasesContainerTarget;
+      const containerRect = container.getBoundingClientRect();
+      const phraseRect = originalPhrase.getBoundingClientRect();
+      const containerHeight = container.clientHeight;
+      const phraseHeight = originalPhrase.offsetHeight;
+      
+      // Calculate the current scroll position and the phrase position relative to the container
+      const currentScrollTop = container.scrollTop;
+      const phraseRelativeTop = phraseRect.top - containerRect.top + currentScrollTop;
+      
+      // Scroll so the phrase is centered in the container
+      const scrollPosition = phraseRelativeTop - (containerHeight / 2) + (phraseHeight / 2);
+      
+      // Smooth scroll to the position
+      container.scrollTo({
+        top: Math.max(0, scrollPosition),
+        behavior: 'smooth'
+      });
+    }
   }
 }
 
