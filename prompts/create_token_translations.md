@@ -33,6 +33,8 @@ If a token or phrase has no meaningful equivalent in the other language, **skip 
 
 2. Token indices must be continuous (i.e. [2, 3, 4])
 
+3. Token indices should not overlap - that is you can't have more than one "token translation" covering the same word.
+
 {format_instructions}
 
 
@@ -94,6 +96,62 @@ Output:
 (Note: "I", "ال" were skipped — no strong equivalence)
 
 ---
+
+### Example 3
+
+Clip Language: English
+Translation Language: Hebrew
+
+English Sentence:
+Emancipate yourselves from mental slavery
+
+Hebrew Sentence:
+שחררו עצמכם מעבדות מנטלית
+
+English Tokens:
+["Emancipate", "yourselves", "from", "mental", "slavery"]
+
+Hebrew Tokens:
+["שחררו", "עצמכם", "מעבדות", "מנטלית"]
+
+Output:
+[
+  {{"translation_indices": [0], "clip_indices": [0], "translation_tokens": ["שחררו"], "clip_tokens": ["Emancipate"]}},
+  {{"translation_indices": [1], "clip_indices": [1], "translation_tokens": ["עצמכם"], "clip_tokens": ["yourselves"]}},
+  {{"translation_indices": [3], "clip_indices": [3], "translation_tokens": ["מנטלית"], "clip_tokens": ["mental"]}},
+  {{"translation_indices": [2], "clip_indices": [4], "translation_tokens": ["מעבדות"], "clip_tokens": ["slavery"]}}
+]
+
+
+---
+### Example 4
+
+Clip Language: English
+Translation Language: Hebrew
+
+English Sentence:
+Sold I to the merchant ships
+
+Hebrew Sentence:
+מכרו אותי לספינות הסוחרים
+
+English Tokens:
+["Sold", "I", "to", "the", "merchant", "ships"]
+
+Hebrew Tokens:
+["מכרו", "אותי", "לספינות", "הסוחרים"]
+
+
+Output:
+[{{"translation_indices"=>[0], "clip_indices"=>[0], "translation_tokens"=>["מכרו"], "clip_tokens"=>["Sold"]}},
+ {{"translation_indices"=>[1], "clip_indices"=>[1], "translation_tokens"=>["אותי"], "clip_tokens"=>["I"]}},
+ {{"translation_indices"=>[2], "clip_indices"=>[5], "translation_tokens"=>["לספינות"], "clip_tokens"=>["ships"]}},
+ {{"translation_indices"=>[3], "clip_indices"=>[4], "translation_tokens"=>["הסוחרים"], "clip_tokens"=>["merchant"]}}]
+
+(Note: while "לספינות" literally means "to the ships", we focus on the noun without the prefix because indices have to be continous and not overlap with other translations)
+
+---
+
 
 Now align the following sentence pair:
 

@@ -40,6 +40,26 @@ module Ai
       )
     end
 
+    def run
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+      create_phrases if progress.nil? || progress.step.nil?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+      create_lessons if progress.create_phrases?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      create_token_translations if progress.create_lessons?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      create_listening_activities if progress.create_token_translations?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      create_language_alignment_activities if progress.create_listening_activities?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)            
+      create_course if progress.ready?
+    end
+
     def create_course
       progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)      
       raise "Missing creation data" unless progress.ready?
@@ -103,9 +123,9 @@ module Ai
     end
 
 
-    def save_progress(step, data)
+    def save_progress(step, data = nil)
       progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)
-      progress.data = data
+      progress.data = data unless data.nil?
       progress.step = step
       progress.save!
     end
@@ -241,24 +261,6 @@ module Ai
       lessons
     end
 
-    def create_lesson_models(medium)
-      # Load existing lesson data from saved progress
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      return unless progress&.data&.lessons
-
-      lesson_data_objects = progress.data.lessons
-      
-      lesson_data_objects.map do |lesson_data|
-        Lesson.create!(
-          medium: medium,
-          title: lesson_data.title,
-          description: lesson_data.description,
-          start_timestamp: lesson_data.start_timestamp,
-          end_timestamp: lesson_data.end_timestamp
-        )
-      end
-    end
-
     def create_token_translations
       progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
       data = progress.data
@@ -320,13 +322,13 @@ module Ai
             format_instructions: parser.get_format_instructions
           )
           
-          llm_response = @flash.chat(messages: [
-            {role: "user", parts: [{text: File.read("prompts/system.md")}]},
-            {role: "user", parts: [{text: prompt_text}]}
+          llm_response = @openai.chat(messages: [
+            {role: "user", content: File.read("prompts/system.md")},
+            {role: "user", content: prompt_text}
           ]).chat_completion
           
           structured_response = parser.parse(llm_response)
-          
+          pp structured_response
           # Convert token indices to character indices
           translations = structured_response.map do |alignment|
             
@@ -358,11 +360,12 @@ module Ai
           data["lessons"][lesson_index]["phrases"][phrase_index]["translations"] = translations
           
           # Save progress after each phrase
-          save_progress(:create_token_translations, data)
+          save_progress(progress.step, data)
           
           puts "Processed phrase #{phrase_index} in lesson #{lesson_index}: #{phrase['text_l1']}"
         end
       end
+      save_progress(:create_token_translations)
     end
 
     def create_listening_activities
@@ -445,7 +448,7 @@ module Ai
           data["lessons"][lesson_index]["phrases"] = structured_response
           
           # Save progress after each lesson
-          save_progress(:create_listening_activities, data)
+          save_progress(progress.step, data)
           
           puts "Processed lesson #{lesson_index}: #{lesson['title'] || 'Untitled'}"
         rescue JSON::ParserError => e
@@ -454,6 +457,7 @@ module Ai
           next
         end
       end
+      save_progress(:create_listening_activities)
     end
 
     def create_language_alignment_activities
@@ -532,7 +536,7 @@ module Ai
           data["lessons"][lesson_index]["phrases"] = structured_response
           
           # Save progress after each lesson
-          save_progress(:create_language_alignment_activities, data)
+          save_progress(progress.step, data)
           
           puts "Processed lesson #{lesson_index}: #{lesson['title'] || 'Untitled'}"
         rescue JSON::ParserError => e
@@ -541,6 +545,7 @@ module Ai
           next
         end
       end
+      save_progress(:ready)
     end
 
     def validate_lesson_phrases(lessons, original_phrases)
@@ -615,34 +620,53 @@ module Ai
       text.split(/\P{L}/u).reject(&:empty?)
     end
 
+    def map_tokens_with_positions(text)
+      # Map each token to its character position in the original text
+      positions = []
+      text.scan(/\p{L}+/u) do |word|
+        positions << {
+          token: word,
+          start_index: Regexp.last_match.begin(0),
+          end_index: Regexp.last_match.end(0) - 1
+        }
+      end
+      positions
+    end
+
     def find_character_index(text, tokens, token_index, expected_token)
-      # Count how many times this token appears before the target index
-      occurrence_count = 0
-      tokens[0...token_index].each do |token|
-        occurrence_count += 1 if token == expected_token
+      # Get the token positions for the text
+      token_positions = map_tokens_with_positions(text)
+      
+      # Validate that we have enough tokens
+      return 0 if token_index >= token_positions.length
+      
+      # Validate that the token at the given index matches the expected token
+      if token_positions[token_index][:token] != expected_token
+        puts "Warning: Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'"
+        # Fallback: try to find the token by searching
+        matching_position = token_positions.find { |pos| pos[:token] == expected_token }
+        return matching_position ? matching_position[:start_index] : 0
       end
       
-      # Find the nth occurrence of the token in the text
-      current_pos = 0
-      (occurrence_count + 1).times do
-        token_pos = text.index(expected_token, current_pos)
-        return 0 unless token_pos # Token not found, return 0 as fallback
-        
-        if occurrence_count == 0
-          return token_pos # This is the occurrence we want
-        else
-          current_pos = token_pos + expected_token.length
-          occurrence_count -= 1
-        end
-      end
-      
-      # Fallback if not found
-      text.index(expected_token) || 0
+      token_positions[token_index][:start_index]
     end
 
     def find_character_end_index(text, tokens, token_index, expected_token)
-      start_index = find_character_index(text, tokens, token_index, expected_token)
-      start_index + expected_token.length - 1
+      # Get the token positions for the text
+      token_positions = map_tokens_with_positions(text)
+      
+      # Validate that we have enough tokens
+      return 0 if token_index >= token_positions.length
+      
+      # Validate that the token at the given index matches the expected token
+      if token_positions[token_index][:token] != expected_token
+        puts "Warning: Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'"
+        # Fallback: try to find the token by searching
+        matching_position = token_positions.find { |pos| pos[:token] == expected_token }
+        return matching_position ? matching_position[:end_index] : 0
+      end
+      
+      token_positions[token_index][:end_index]
     end
 
 
