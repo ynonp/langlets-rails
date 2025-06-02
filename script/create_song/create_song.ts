@@ -6,6 +6,8 @@ import { xai } from "npm:@ai-sdk/xai"
 import { openai } from "npm:@ai-sdk/openai"
 import { z } from 'npm:zod';
 import fs from 'node:fs';
+import { parseArgs } from "jsr:@std/cli/parse-args";
+import { getPromptsForLanguages } from './prompts/index.ts';
 
 // ============================================================================
 // LANGUAGE CONFIGURATION
@@ -55,15 +57,15 @@ export interface PhraseData {
 }
 
 export interface TokenTranslation {
-  originalTextInClipLanguage: string;
-  originalTextOccurence: number;
-  translationTextInTranslationLanguage: string;
-  translationTextOccurence: number;
+  l1_start_index: number;
+  l1_end_index: number;
+  translation: string;
+  l2_start_index: number;
+  l2_end_index: number;
   similar_sound: string[];
-  tokenId?: number;
 }
 
-interface LessonPhrase {
+export interface LessonPhrase {
   id: number;
   text_clip_language: string;
   text_translation_language: string;
@@ -75,7 +77,7 @@ interface Lesson {
   phrases: number[];
 }
 
-interface LessonWithTokens extends Omit<Lesson, 'phrases'> {
+export interface LessonWithTokens extends Omit<Lesson, 'phrases'> {
   phrases: LessonPhrase[];
 }
 
@@ -97,7 +99,7 @@ interface ModelConfiguration {
   tokenTranslations: any;
 }
 
-interface ScriptConfig {
+export interface ScriptConfig {
   youtubeVideoId: string;
   phrasesFileName: string;
   courseName: string;
@@ -106,6 +108,7 @@ interface ScriptConfig {
   outputFile: string;
   systemPrompt: string;
   model: ModelConfiguration;
+  languageConfig: LanguageConfiguration;
 }
 
 // ============================================================================
@@ -114,13 +117,32 @@ interface ScriptConfig {
 
 /**
  * Parses command line arguments for the script
- * Expected arguments: youtubeVideoId, phrasesFileName, courseName, slug, songName
+ * Expected arguments: --video-id, --phrases-file, --course-name, --slug, --song-name
  */
-export function parseCommandLineArgs(): Omit<ScriptConfig, 'outputFile' | 'systemPrompt' | 'model'> {
-  const [youtubeVideoId, phrasesFileName, courseName, slug, songName] = Deno.args;
+export function parseCommandLineArgs(): Omit<ScriptConfig, 'outputFile' | 'systemPrompt' | 'model' | 'languageConfig'> {
+  const args = parseArgs(Deno.args, {
+    string: ['video-id', 'phrases-file', 'course-name', 'slug', 'song-name'],
+    alias: {
+      v: 'video-id',
+      p: 'phrases-file',
+      c: 'course-name',
+      s: 'slug',
+      n: 'song-name'
+    },
+    stopEarly: false,
+    collect: ['_']
+  });
+  
+  const youtubeVideoId = args['video-id'];
+  const phrasesFileName = args['phrases-file'];
+  const courseName = args['course-name'];
+  const slug = args['slug'];
+  const songName = args['song-name'];
   
   if (!youtubeVideoId || !phrasesFileName || !courseName || !slug || !songName) {
-    throw new Error('Missing required arguments: youtubeVideoId, phrasesFileName, courseName, slug, songName');
+    console.error('Usage: deno run create_song.ts --video-id <id> --phrases-file <file> --course-name <name> --slug <slug> --song-name <name>');
+    console.error('Aliases: -v, -p, -c, -s, -n');
+    throw new Error('Missing required arguments: video-id, phrases-file, course-name, slug, song-name');
   }
 
   return {
@@ -156,7 +178,8 @@ export function initializeConfiguration(): ScriptConfig {
     ...args,
     outputFile,
     systemPrompt,
-    model
+    model,
+    languageConfig: LanguageConfig
   };
 }
 
@@ -169,89 +192,6 @@ export function loadPhrasesData(fileName: string): PhraseData[] {
 }
 
 // ============================================================================
-// PROMPT GENERATION FUNCTIONS
-// ============================================================================
-
-/**
- * Creates a prompt for AI to generate lesson structure from song phrases
- */
-function createLessonGenerationPrompt(songName: string, phrases: PhraseData[]): string {
-  return `
-  You are a ${LanguageConfig.clipLanguage.name} teacher teaching ${LanguageConfig.translationLanguage.name} speaking students, and you're given access to a new course creation platform. Your task is to use the platform and create a language lesson on the song ${songName}.
-  Start by outlining the lessons for the song, so each lesson corresponds to a subsequent part of the song (for example "intro", "verse 1", "chorus", "outro").
-  Each lesson should include roughly between 4 and 8 phrases, in a division that makes sense educationally and semantically.
-  
-  Also as the lessons are part of a language course, if the same part of the song repeats itself for example if the chorus is sang twice you need to create just one lesson for it.
-
-  Return a list of lesson names
-
-  Below are the song lyrics arranged in phrases:
-  ${JSON.stringify(phrases)}
-  `;
-}
-
-/**
- * Creates a prompt for AI to generate token translations for a specific phrase
- */
-function createTokenTranslationPrompt(phraseText: string, fullLyrics: string): string {
-  return `
-  Create the list of token translations for the phrase:
-      ${phraseText}
-
-    This phrase is in ${LanguageConfig.clipLanguage.name} and should be translated to ${LanguageConfig.translationLanguage.name}.
-
-    For context the full lyrics of the song are:
-      ${fullLyrics}
-    `;
-}
-
-/**
- * Creates a prompt for AI to generate activities for a lesson
- */
-function createLessonActivityPrompt(lesson: LessonWithTokens, fullLyrics: string): string {
-  return `
-  Create a lesson activity template from the lesson data for ${LanguageConfig.clipLanguage.name} learners who speak ${LanguageConfig.translationLanguage.name}. 
-  The order of the output array is the order of activities. Use the default template:
-      ${JSON.stringify(lesson)}
-
-    For context the full lyrics of the song are:
-      ${fullLyrics}
-    `;
-}
-
-/**
- * Creates a prompt for AI to select tokens for listen activities
- */
-function createListenActivityTokenSelectionPrompt(phrases: LessonPhrase[]): string {
-  return `
-  Select the token translations for a ListenActivity from the following list of phrases.
-  This activity helps ${LanguageConfig.translationLanguage.name} speakers practice listening to ${LanguageConfig.clipLanguage.name}:
-      ${JSON.stringify(phrases)}
-
-  In the listening activity a user listens to the song and needs to identify words (token translations) from the song.
-  Your task is to select the words or expressions (called tokens) that the user needs to identify.
-  For each phrase, which is a line from the song, you need to select just 1-2 words. 
-  Remember you don't want to burden the user with too many words to identify.  
-    `;
-}
-
-/**
- * Creates a prompt for AI to select tokens for language alignment activities
- */
-function createLanguageAlignmentTokenSelectionPrompt(phrases: LessonPhrase[]): string {
-  return `
-  Select the token translations for a LanguageAlignment activity from the following list of phrases.
-  This activity helps ${LanguageConfig.translationLanguage.name} speakers align ${LanguageConfig.clipLanguage.name} words with their translations:
-      ${JSON.stringify(phrases)}
-
-  In the language alignment activity a user sees a phrase in their own language with some words "marked" and they need to find the corresponding words from the song.  
-  Your task is to select the words or expressions (called tokens) that the user needs to identify.
-  For each phrase, which is a line from the song, you need to select just 1-2 words. 
-  Remember you don't want to burden the user with too many words to identify.
-    `;
-}
-
-// ============================================================================
 // RUBY CODE GENERATION
 // ============================================================================
 
@@ -261,11 +201,11 @@ function createLanguageAlignmentTokenSelectionPrompt(phrases: LessonPhrase[]): s
 export function generateInitialRubyCode(config: ScriptConfig, phrases: PhraseData[]): void {
   const initialCode = `
 # Language Configuration
-# Clip Language: ${LanguageConfig.clipLanguage.name} (${LanguageConfig.clipLanguage.isoCode})
-# Translation Language: ${LanguageConfig.translationLanguage.name} (${LanguageConfig.translationLanguage.isoCode})
+# Clip Language: ${config.languageConfig.clipLanguage.name} (${config.languageConfig.clipLanguage.isoCode})
+# Translation Language: ${config.languageConfig.translationLanguage.name} (${config.languageConfig.translationLanguage.isoCode})
 
-clip_language = Language.find_by(iso_name: '${LanguageConfig.clipLanguage.isoCode}')
-translation_language = Language.find_by(iso_name: '${LanguageConfig.translationLanguage.isoCode}')
+clip_language = Language.find_by(iso_name: '${config.languageConfig.clipLanguage.isoCode}')
+translation_language = Language.find_by(iso_name: '${config.languageConfig.translationLanguage.isoCode}')
 
 medium = Medium.find_or_create_by!(url: 'https://www.youtube.com/watch?v=${config.youtubeVideoId}')
 phrases_data = ${JSON.stringify(phrases, null, 2)};
@@ -307,14 +247,13 @@ export function generateTokenTranslationRubyCode(
   outputFile: string, 
   phraseIndex: number, 
   tokenTranslations: TokenTranslation[]
-): void {
+): void {  
   const rubyCode = `
 phrase = phrases[${phraseIndex}]
 ${tokenTranslations.map(t => 
-  `phrase.add_token_translation("${t.originalTextInClipLanguage}", ${t.originalTextOccurence}, "${t.translationTextInTranslationLanguage}", ${t.translationTextOccurence}, similar_sound: ${JSON.stringify(t.similar_sound)})`
+  `TokenTranslation.create!(phrase: phrase, l1_start_index: ${t.l1_start_index}, l1_end_index: ${t.l1_end_index}, translation: "${t.translation}", l2_start_index: ${t.l2_start_index}, l2_end_index: ${t.l2_end_index}, similar_sound: ${JSON.stringify(t.similar_sound)})`
 ).join('\n')}
 `;
-
   fs.appendFileSync(outputFile, rubyCode, 'utf8');
 }
 
@@ -325,10 +264,11 @@ async function generateLessonActivityRubyCode(
   config: ScriptConfig,
   lesson: LessonWithTokens,
   lessonIndex: number,
-  activities: Activity[]
+  activities: Activity[],
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<void> {
   const activityPromises = activities.map(async (activity, activityIndex) => {
-    const tokenTranslations = await getTokenTranslationsForActivity(lesson, activity, config);
+    const tokenTranslations = await getTokenTranslationsForActivity(lesson, activity, config, prompts);
     let tokenTranslationsCode = '';
     if (activity.activityType === 'ListenActivity') {
       tokenTranslationsCode = `
@@ -369,7 +309,8 @@ ${activityCode.join('\n')}`;
  */
 async function generateLessons(
   config: ScriptConfig, 
-  phrases: PhraseData[]
+  phrases: PhraseData[],
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<Lesson[]> {
   const lessonsResult = await generateObject({
     model: config.model.lessons,
@@ -380,10 +321,128 @@ async function generateLessons(
       phrases: z.array(z.number()).describe("The indexes of the phrases for this lesson"),
     }),
     system: config.systemPrompt,
-    prompt: createLessonGenerationPrompt(config.songName, phrases)
+    prompt: prompts.getLessonGenerationPrompt(config, config.songName, phrases)
   });
 
   return lessonsResult.object;
+}
+
+function parseLLMTokenTranslationResponse(
+  config: ScriptConfig,
+  phraseText: string,
+  translationText: string,
+  response: {
+    clip_indices: Array<number>,
+    translation_indices: Array<number>,
+    clip_tokens: Array<string>,
+    translation_tokens: Array<string>,
+    clip_similar_sound: Array<string>,
+  }
+): Array<TokenTranslation> {
+  // Tokenize both texts using the same pattern as in the prompt
+  const clipTokens = phraseText.split(/\P{L}/u).filter(l => l.length > 0);
+  const translationTokens = translationText.split(/\P{L}/u).filter(l => l.length > 0);
+
+  // Validate LLM response - check that indices match the provided tokens
+  const clipTokensFromIndices = response.clip_indices.map(i => clipTokens[i]);
+  const translationTokensFromIndices = response.translation_indices.map(i => translationTokens[i]);
+  
+  if (JSON.stringify(clipTokensFromIndices) !== JSON.stringify(response.clip_tokens)) {
+    throw new Error('Clip tokens mismatch:', clipTokensFromIndices, 'vs', response.clip_tokens);
+  }
+  
+  if (JSON.stringify(translationTokensFromIndices) !== JSON.stringify(response.translation_tokens)) {
+    throw new Error('Translation tokens mismatch:', translationTokensFromIndices, 'vs', response.translation_tokens);
+  }
+
+  // Helper function to find character indices for a sequence of tokens
+  function findCharacterIndices(text: string, tokens: string[], tokenIndices: number[]): { start: number, end: number } {
+    if (tokens.length === 0 || tokenIndices.length === 0) {
+      return { start: -1, end: -1 };
+    }
+
+    // Count occurrences of each token up to its position to find the correct occurrence
+    const tokenOccurrences: number[] = [];
+    const allTokens = text.split(/\P{L}/u).filter(l => l.length > 0);
+    
+    for (let i = 0; i < tokenIndices.length; i++) {
+      const tokenIndex = tokenIndices[i];
+      const token = tokens[i];
+      
+      // Count how many times this token appears before this index
+      let occurrenceCount = 0;
+      for (let j = 0; j <= tokenIndex; j++) {
+        if (allTokens[j] === token) {
+          occurrenceCount++;
+        }
+      }
+      tokenOccurrences.push(occurrenceCount);
+    }
+
+    // Find character positions for the first and last tokens
+    const firstToken = tokens[0];
+    const lastToken = tokens[tokens.length - 1];
+    const firstOccurrence = tokenOccurrences[0];
+    const lastOccurrence = tokenOccurrences[tokenOccurrences.length - 1];
+
+    // Find start position of first token
+    let currentOccurrence = 0;
+    let startIndex = -1;
+    let searchIndex = 0;
+    
+    while (currentOccurrence < firstOccurrence && searchIndex < text.length) {
+      const match = text.slice(searchIndex).match(new RegExp(`\\b${firstToken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'));
+      if (match) {
+        currentOccurrence++;
+        if (currentOccurrence === firstOccurrence) {
+          startIndex = searchIndex + match.index!;
+          break;
+        }
+        searchIndex += match.index! + match[0].length;
+      } else {
+        break;
+      }
+    }
+
+    // Find end position of last token
+    currentOccurrence = 0;
+    let endIndex = -1;
+    searchIndex = 0;
+    
+    while (currentOccurrence < lastOccurrence && searchIndex < text.length) {
+      const match = text.slice(searchIndex).match(new RegExp(`\\b${lastToken.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i'));
+      if (match) {
+        currentOccurrence++;
+        if (currentOccurrence === lastOccurrence) {
+          endIndex = searchIndex + match.index! + match[0].length;
+          break;
+        }
+        searchIndex += match.index! + match[0].length;
+      } else {
+        break;
+      }
+    }
+
+    return { start: startIndex, end: endIndex };
+  }
+
+  // Calculate character indices for clip language (l1)
+  const l1Indices = findCharacterIndices(phraseText, response.clip_tokens, response.clip_indices);
+  
+  // Calculate character indices for translation language (l2)
+  const l2Indices = findCharacterIndices(translationText, response.translation_tokens, response.translation_indices);
+
+  // Create the TokenTranslation object
+  const result: TokenTranslation = {
+    l1_start_index: l1Indices.start,
+    l1_end_index: l1Indices.end,
+    translation: response.translation_tokens.join(' '),
+    l2_start_index: l2Indices.start,
+    l2_end_index: l2Indices.end,
+    similar_sound: response.clip_similar_sound || []
+  };
+
+  return [result];
 }
 
 /**
@@ -394,14 +453,15 @@ async function generateTokenTranslationsForPhrase(
   config: ScriptConfig,
   phrase: PhraseData,
   phraseIndex: number,
-  fullLyrics: string
+  fullLyrics: string,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<TokenTranslation[]> {
   const schema = z.object({
-    originalTextInClipLanguage: z.string().describe(`A word or expression from the original ${LanguageConfig.clipLanguage.name} text`),
-    originalTextOccurence: z.number().describe('If the word appears multiple times in the original text, specify which occurence we are referring to. Default is 0 (for disambiguity)'),
-    translationTextInTranslationLanguage: z.string().describe(`The translation word or expression in ${LanguageConfig.translationLanguage.name}.`),
-    translationTextOccurence: z.number().describe(`If the word translation appears multiple times in the ${LanguageConfig.translationLanguage.name} text specify which occurence we are referring to (for disambiguity). Default is 0`),
-    similar_sound: z.array(z.string()).describe(`Word or phrase in ${LanguageConfig.clipLanguage.name} that sounds similar but has different meaning. Difference must be in actual letters and not in accent marks. If unsure specify empty array here. Some good examples for similar sounds are:
+    clip_indices: z.array(z.number()),
+    translation_indices: z.array(z.number()),
+    clip_tokens: z.array(z.string()),
+    translation_tokens: z.array(z.string()),
+    clip_similar_sound: z.array(z.string()).describe(`Word or phrase in ${config.languageConfig.clipLanguage.name} that sounds similar but has different meaning. Difference must be in actual letters and not in accent marks. If unsure specify empty array here. Some good examples for similar sounds are:
     un rato -> un gato
     llevo -> llaves
     quiero -> pero
@@ -413,8 +473,7 @@ async function generateTokenTranslationsForPhrase(
     Bad examples that shouldn't be used include:
     que -> qué  # Do not use, as this is the same spelling except for an accent mark
     sé  -> se   # Do not use, as this is the same spelling except for an accent mark
-      `)
-  });
+  `)})
 
   try {
     const tokenTranslationsResponse = await generateObject({
@@ -423,7 +482,7 @@ async function generateTokenTranslationsForPhrase(
       output: 'array',
       schema,
       system: config.systemPrompt,
-      prompt: createTokenTranslationPrompt(phrase[0], fullLyrics)
+      prompt: prompts.getTokenTranslationPrompt(config, phrase[0], fullLyrics)
     });
 
     return tokenTranslationsResponse.object;
@@ -437,7 +496,7 @@ async function generateTokenTranslationsForPhrase(
         output: 'array',
         schema,
         system: config.systemPrompt,
-        prompt: createTokenTranslationPrompt(phrase[0], fullLyrics)
+        prompt: prompts.getTokenTranslationPrompt(config, phrase[0], fullLyrics)
       });
 
       return tokenTranslationsResponse.object;
@@ -454,7 +513,8 @@ async function generateTokenTranslationsForPhrase(
 async function generateLessonActivities(
   config: ScriptConfig,
   lesson: LessonWithTokens,
-  fullLyrics: string
+  fullLyrics: string,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<Activity[]> {
   const lessonActivitiesResponse = await generateObject({
     model: config.model.tokenTranslations,
@@ -465,7 +525,7 @@ async function generateLessonActivities(
       phrases: z.array(z.number()).describe('ids of the phrases for this activity'),
     }),
     system: config.systemPrompt,
-    prompt: createLessonActivityPrompt(lesson, fullLyrics)
+    prompt: prompts.getLessonActivityPrompt(config, lesson, fullLyrics)
   });
 
   return lessonActivitiesResponse.object;
@@ -477,14 +537,15 @@ async function generateLessonActivities(
 async function getTokenTranslationsForActivity(
   lesson: LessonWithTokens, 
   activity: Activity, 
-  config: ScriptConfig
+  config: ScriptConfig,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<TokenTranslationForActivity[]> {
   console.log(activity.activityType);
   
   if (activity.activityType === 'ListenActivity') {
-    return await processListenActivity(lesson, activity, config);
+    return await processListenActivity(lesson, activity, config, prompts);
   } else if (activity.activityType === 'LanguageAlignmentActivity') {
-    return await processLanguageAlignmentActivity(lesson, activity, config);
+    return await processLanguageAlignmentActivity(lesson, activity, config, prompts);
   } else {
     return [];
   }
@@ -496,7 +557,8 @@ async function getTokenTranslationsForActivity(
 async function processListenActivity(
   lesson: LessonWithTokens,
   activity: Activity,
-  config: ScriptConfig
+  config: ScriptConfig,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<TokenTranslationForActivity[]> {
   const relevantPhrases = new Set(activity.phrases);
   const phrases = lesson.phrases.filter(p => relevantPhrases.has(p.id));
@@ -517,7 +579,7 @@ async function processListenActivity(
     output: 'array',
     schema: z.number().describe('tokenId of the selected tokens'),
     system: config.systemPrompt,
-    prompt: createListenActivityTokenSelectionPrompt(phrasesWithValidTokens)
+    prompt: prompts.getListenActivityTokenSelectionPrompt(config, phrasesWithValidTokens)
   });
 
   const selectedTokens = new Set(selectedTokensResponse.object);
@@ -546,7 +608,8 @@ async function processListenActivity(
 async function processLanguageAlignmentActivity(
   lesson: LessonWithTokens,
   activity: Activity,
-  config: ScriptConfig
+  config: ScriptConfig,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<TokenTranslationForActivity[]> {
   const relevantPhrases = new Set(activity.phrases);
   const phrases = lesson.phrases.filter(p => relevantPhrases.has(p.id));
@@ -557,7 +620,7 @@ async function processLanguageAlignmentActivity(
     output: 'array',
     schema: z.number().describe('tokenId of the selected tokens'),
     system: config.systemPrompt,
-    prompt: createLanguageAlignmentTokenSelectionPrompt(phrases)
+    prompt: prompts.getLanguageAlignmentTokenSelectionPrompt(config, phrases)
   });
 
   const selectedTokens = new Set(selectedTokensResponse.object);
@@ -580,7 +643,8 @@ async function processLanguageAlignmentActivity(
 
 async function processTokenTranslations(
   config: ScriptConfig,
-  phrases: PhraseData[]
+  phrases: PhraseData[],
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<TokenTranslation[][]> {
   const fullOriginalLyrics = phrases.map(p => p[0]).join('\n');
   const createdTokenTranslations: TokenTranslation[][] = [];
@@ -593,7 +657,8 @@ async function processTokenTranslations(
         config, 
         phrase, 
         i, 
-        fullOriginalLyrics
+        fullOriginalLyrics,
+        prompts
       );
       createdTokenTranslations.push(tokenTranslations);
       generateTokenTranslationRubyCode(config.outputFile, i, tokenTranslations);
@@ -630,13 +695,14 @@ function createLessonsWithTokenTranslations(
 async function processLessonsAndActivities(
   config: ScriptConfig,
   lessonsWithTokenTranslations: LessonWithTokens[],
-  fullLyrics: string
+  fullLyrics: string,
+  prompts: ReturnType<typeof getPromptsForLanguages>
 ): Promise<void> {
   for (let i = 0; i < lessonsWithTokenTranslations.length; i++) {
     const lesson = lessonsWithTokenTranslations[i];
     try {
-      const lessonActivities = await generateLessonActivities(config, lesson, fullLyrics);
-      await generateLessonActivityRubyCode(config, lesson, i, lessonActivities);
+      const lessonActivities = await generateLessonActivities(config, lesson, fullLyrics, prompts);
+      await generateLessonActivityRubyCode(config, lesson, i, lessonActivities, prompts);
     } catch (err) {
       console.error(err);
       console.error(`Failed to create activities for lesson: ${i} - ${lesson.name}`);
@@ -662,6 +728,12 @@ async function main(): Promise<void> {
     const config = initializeConfiguration();
     console.log(`Generating script for: ${config.songName}`);
 
+    // Initialize prompt system
+    const prompts = getPromptsForLanguages(
+      config.languageConfig.clipLanguage.name,
+      config.languageConfig.translationLanguage.name
+    );
+
     // Load phrases data
     const phrases = loadPhrasesData(config.phrasesFileName);
     const fullOriginalLyrics = phrases.map(p => p[0]).join('\n');
@@ -671,11 +743,11 @@ async function main(): Promise<void> {
 
     // Generate lessons structure
     console.log('Generating lessons...');
-    const lessons = await generateLessons(config, phrases);
+    const lessons = await generateLessons(config, phrases, prompts);
 
     // Generate token translations for all phrases
     console.log('Generating token translations...');
-    const createdTokenTranslations = await processTokenTranslations(config, phrases);
+    const createdTokenTranslations = await processTokenTranslations(config, phrases, prompts);
 
     // Create lessons with token translations
     const lessonsWithTokenTranslations = createLessonsWithTokenTranslations(
@@ -686,7 +758,7 @@ async function main(): Promise<void> {
 
     // Generate lesson activities and Ruby code
     console.log('Generating lesson activities...');
-    await processLessonsAndActivities(config, lessonsWithTokenTranslations, fullOriginalLyrics);
+    await processLessonsAndActivities(config, lessonsWithTokenTranslations, fullOriginalLyrics, prompts);
 
     console.log(`Script generation completed: ${config.outputFile}`);
   } catch (error) {

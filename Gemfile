@@ -78,3 +78,7 @@ gem "pg", "~> 1.5"
 gem "ruby-openai", "~> 8.1"
 
 gem "fiddle", "~> 1.1"
+
+gem "langchainrb", "~> 0.19.5"
+
+gem "ruby-anthropic", "~> 0.4.2"

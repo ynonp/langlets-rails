@@ -84,6 +84,16 @@ function createMockModels() {
 // Create test configuration
 function createTestConfiguration(): ScriptConfig {
   return {
+        languageConfig: {
+      clipLanguage: {
+        name: 'Spanish',
+        isoCode: 'es',
+      },
+      translationLanguage: {
+        name: 'English',
+        isoCode: 'en',
+      }
+    },
     youtubeVideoId: mockArgs[0],
     phrasesFileName: mockArgs[1],
     courseName: mockArgs[2],

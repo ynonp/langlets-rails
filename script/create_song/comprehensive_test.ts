@@ -106,6 +106,16 @@ function createMockModels() {
 function createTestConfiguration(): ScriptConfig {
   const timestamp = Date.now();
   return {
+    languageConfig: {
+      clipLanguage: {
+        name: 'Spanish',
+        isoCode: 'es',
+      },
+      translationLanguage: {
+        name: 'English',
+        isoCode: 'en',
+      }
+    },
     youtubeVideoId: "test_video_123",
     phrasesFileName: `test_phrases_${timestamp}.json`,
     courseName: "Test Spanish Song Course",
