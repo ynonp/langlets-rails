@@ -199,14 +199,107 @@ module Ai
     def create_token_translations
       progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
       data = progress.data
-      full_lyrics = data["lessons"].flat_map {|l| l["phrases"].map { |p| p["text_l1"] } }.join("\n")
       
-      # find the first phrase without translations
-      # iterate from that phrase
-      #   use LLM to create token translations
-      #   conver LLM response to TokenTranslation (character) indexes
-      #   update `data` in CreateSongProgress
-      print full_lyrics
+      # JSON schema for the LLM response
+      json_schema = {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            "translation_indices": { 
+              type: "array", 
+              items: { type: "integer" },
+              description: "Continous token indices in the translation sentence"
+            },
+            "clip_indices": { 
+              type: "array", 
+              items: { type: "integer" },
+              description: "Continous token indices in the clip sentence"
+            },
+            "translation_tokens": { 
+              type: "array", 
+              items: { type: "string" },
+              description: "The actual tokens from the translation"
+            },
+            "clip_tokens": { 
+              type: "array", 
+              items: { type: "string" },
+              description: "The actual tokens from the clip"
+            }
+          },
+          required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"],
+          additionalProperties: false
+        }
+      }
+      
+      parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
+      prompt = Langchain::Prompt::PromptTemplate.new(
+        template: File.read("prompts/create_token_translations.md"),
+        input_variables: ["clip_language", "translation_language", "phrase_text", "translation_text", "clip_tokens", "translation_tokens", "format_instructions"]
+      )
+      
+      # Find the first phrase without translations and process from there
+      data["lessons"].each_with_index do |lesson, lesson_index|
+        lesson["phrases"].each_with_index do |phrase, phrase_index|
+          next if phrase.key?("translations")
+          
+          # Tokenize the phrases
+          clip_tokens = tokenize_text(phrase["text_l1"])
+          translation_tokens = tokenize_text(phrase["text_l2"])
+          
+          prompt_text = prompt.format(
+            clip_language: clip_language,
+            translation_language: translation_language,
+            phrase_text: phrase["text_l1"],
+            translation_text: phrase["text_l2"],
+            clip_tokens: clip_tokens.to_json,
+            translation_tokens: translation_tokens.to_json,
+            format_instructions: parser.get_format_instructions
+          )
+          
+          llm_response = @flash.chat(messages: [
+            {role: "user", parts: [{text: File.read("prompts/system.md")}]},
+            {role: "user", parts: [{text: prompt_text}]}
+          ]).chat_completion
+          
+          structured_response = parser.parse(llm_response)
+          
+          # Convert token indices to character indices
+          translations = structured_response.map do |alignment|
+            
+            # Handle cases where alignment spans multiple tokens
+            l1_start = find_character_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+            l1_end = if alignment["clip_indices"].length > 1
+              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].last, alignment["clip_tokens"].last)
+            else
+              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+            end
+            
+            l2_start = find_character_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+            l2_end = if alignment["translation_indices"].length > 1
+              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].last, alignment["translation_tokens"].last)
+            else
+              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+            end
+            pp alignment
+            {
+              "l1_start_index" => l1_start,
+              "l1_end_index" => l1_end,
+              "l2_start_index" => l2_start,
+              "l2_end_index" => l2_end,
+              "translation" => alignment["translation_tokens"].join(" ")
+            }
+          end
+          
+          # Update the phrase with translations
+          data["lessons"][lesson_index]["phrases"][phrase_index]["translations"] = translations
+          
+          # Save progress after each phrase
+          save_progress(:create_token_translations, data)
+          
+          puts "Processed phrase #{phrase_index} in lesson #{lesson_index}: #{phrase['text_l1']}"
+        end
+      end
     end
     
     def write_script
@@ -274,6 +367,44 @@ module Ai
         last_phrase_seconds = timestamp_to_seconds(last_phrase_timestamp)
         seconds_to_timestamp(last_phrase_seconds + 10)
       end
+    end
+
+    private
+
+    def tokenize_text(text)
+      # Simple tokenization - split by spaces and punctuation
+      # This can be enhanced with more sophisticated tokenization if needed
+      text.split(/\P{L}/u).reject(&:empty?)
+    end
+
+    def find_character_index(text, tokens, token_index, expected_token)
+      # Count how many times this token appears before the target index
+      occurrence_count = 0
+      tokens[0...token_index].each do |token|
+        occurrence_count += 1 if token == expected_token
+      end
+      
+      # Find the nth occurrence of the token in the text
+      current_pos = 0
+      (occurrence_count + 1).times do
+        token_pos = text.index(expected_token, current_pos)
+        return 0 unless token_pos # Token not found, return 0 as fallback
+        
+        if occurrence_count == 0
+          return token_pos # This is the occurrence we want
+        else
+          current_pos = token_pos + expected_token.length
+          occurrence_count -= 1
+        end
+      end
+      
+      # Fallback if not found
+      text.index(expected_token) || 0
+    end
+
+    def find_character_end_index(text, tokens, token_index, expected_token)
+      start_index = find_character_index(text, tokens, token_index, expected_token)
+      start_index + expected_token.length - 1
     end
   end
 end

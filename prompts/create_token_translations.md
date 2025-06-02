@@ -29,9 +29,13 @@ If a token or phrase has no meaningful equivalent in the other language, **skip 
 
 ### Output format:
 
+1. Do not include alignments for auxiliary verbs (e.g., "is", "are", "does") or determiners (e.g., "the") if they don’t have a clear equivalent.
+
+2. Token indices must be continuous (i.e. [2, 3, 4])
+
 {format_instructions}
 
-Do not include alignments for auxiliary verbs (e.g., "is", "are", "does") or determiners (e.g., "the") if they don’t have a clear equivalent.
+
 
 ---
 
@@ -39,48 +43,52 @@ Below are a few examples. Note the languages in the example may differ from the 
 
 ### Example 1
 
-Arabic (Clip) Sentence:  
+Clip Language: Arabic
+Translation Language: English
+
+Arabic Sentence:  
 القطة في البيت
 
-English (Translation) Sentence:  
+English Sentence:  
 The cat is in the house
 
-Arabic (Clip) Tokens:  
+Arabic Tokens:  
 ["ال", "قطة", "في", "ال", "بيت"]
 
-English (Translation) Tokens:  
+English Tokens:  
 ["The", "cat", "is", "in", "the", "house"]
 
 Output:
 [
-  {"translation_indices": [1], "clip_indices": [1], "translation_tokens": ["cat"], "clip_tokens": ["قطة"]},
-  {"translation_indices": [3], "clip_indices": [2], "translation_tokens": ["in"], "clip_tokens": ["في"]},
-  {"translation_indices": [5], "clip_indices": [4], "translation_tokens": ["house"], "clip_tokens": ["بيت"]}
+  {{"translation_indices": [1], "clip_indices": [1], "translation_tokens": ["cat"], "clip_tokens": ["قطة"]}},
+  {{"translation_indices": [3], "clip_indices": [2], "translation_tokens": ["in"], "clip_tokens": ["في"]}},
+  {{"translation_indices": [5], "clip_indices": [4], "translation_tokens": ["house"], "clip_tokens": ["بيت"]}}
 ]
-
-(Note: "The", "is" were skipped — they have no exact Arabic equivalents here)
 
 ---
 
 ### Example 2
 
-Arabic (Clip) Sentence:  
+Clip Language: Arabic
+Translation Language: English
+
+Arabic Sentence:  
 أبتعد عن الناس السلبيين
 
-English (Translation) Sentence:  
+English Sentence:  
 I stay away from negative people
 
-Arabic (Clip) Tokens:  
+Arabic Tokens:  
 ["أبتعد", "عن", "ال", "ناس", "ال", "سلبيين"]
 
-English (Translation) Tokens:  
+English Tokens:  
 ["I", "stay", "away", "from", "negative", "people"]
 
 Output:
 [
-  {"translation_indices": [1, 2, 3], "clip_indices": [0, 1], "translation_tokens": ["stay", "away", "from"], "clip_tokens": ["أبتعد", "عن"]},
-  {"translation_indices": [5], "clip_indices": [3], "translation_tokens": ["people"], "clip_tokens": ["ناس"]},
-  {"translation_indices": [4], "clip_indices": [5], "translation_tokens": ["negative"], "clip_tokens": ["سلبيين"]}
+  {{"translation_indices": [1, 2, 3], "clip_indices": [0, 1], "translation_tokens": ["stay", "away", "from"], "clip_tokens": ["أبتعد", "عن"]}},
+  {{"translation_indices": [5], "clip_indices": [3], "translation_tokens": ["people"], "clip_tokens": ["ناس"]}},
+  {{"translation_indices": [4], "clip_indices": [5], "translation_tokens": ["negative"], "clip_tokens": ["سلبيين"]}}
 ]
 
 (Note: "I", "ال" were skipped — no strong equivalence)
@@ -88,6 +96,9 @@ Output:
 ---
 
 Now align the following sentence pair:
+
+Clip Language: {clip_language}
+Translation Language: {translation_language}
 
 {clip_language} Sentence:  
 {phrase_text}
