@@ -22,17 +22,17 @@ module Ai
       @youtubeurl = youtubeurl
       @gemini = Langchain::LLM::GoogleGemini.new(
         api_key: Rails.application.credentials.google_api_key,
-        default_options: { chat_model: 'gemini-2.5-pro-preview-05-06' },
+        default_options: { temperature: 0.7, chat_model: 'gemini-2.5-pro-preview-05-06' },
       )
       @gemini.read_timeout = 600
       @flash = Langchain::LLM::GoogleGemini.new(
         api_key: Rails.application.credentials.google_api_key,
-        default_options: { chat_model: 'gemini-2.5-flash-preview-05-20' },
+        default_options: { temperature: 0.4, chat_model: 'gemini-2.5-flash-preview-05-20' },
       )
       @flash.read_timeout = 600
       @openai = Langchain::LLM::OpenAI.new(
         api_key: Rails.application.credentials.openai_key,
-        default_options: { chat_model: "o4-mini" }
+        default_options: { temperature: 0.4, chat_model: "o4-mini" }
       )
       @claude = Langchain::LLM::Anthropic.new(
         api_key: Rails.application.credentials.anthropic_api_key,
