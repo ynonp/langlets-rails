@@ -5,6 +5,7 @@ class CreateSongProgress < ApplicationRecord
     create_lessons: 2,
     create_listening_activities: 3,
     create_language_alignment_activities: 4,
-    ready: 5,
+    create_audio: 5,
+    ready: 6,
   }
 end
