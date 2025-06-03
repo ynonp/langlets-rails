@@ -12,11 +12,23 @@ export default class extends Controller {
   connect() {
     this.element.addEventListener('click', this.showPopup);
     document.addEventListener('click', this.hidePopup);
+    // Hide popup on scroll to prevent it from floating disconnected from its token
+    document.addEventListener('scroll', this.hidePopup, { passive: true });
+    // Also listen for scroll on the phrases container
+    const phrasesContainer = document.getElementById('phrases-container');
+    if (phrasesContainer) {
+      phrasesContainer.addEventListener('scroll', this.hidePopup, { passive: true });
+    }
   }
 
   disconnect() {
     this.element.removeEventListener('click', this.showPopup);
     document.removeEventListener('click', this.hidePopup);
+    document.removeEventListener('scroll', this.hidePopup);
+    const phrasesContainer = document.getElementById('phrases-container');
+    if (phrasesContainer) {
+      phrasesContainer.removeEventListener('scroll', this.hidePopup);
+    }
   }
 
   hidePopup() {
