@@ -45,12 +45,20 @@ module ActivitiesHelper
       end
   
       safe_join(texts.map do |val|
+        # Get audio URL for this token if available
+        audio_url = nil
+        if val["token_id"].present?
+          token_translation = TokenTranslation.find_by(id: val["token_id"])
+          audio_url = url_for(token_translation.l1_audio) if token_translation&.l1_audio&.attached?
+        end
+
         content_tag(:span,
                     val["l1"],
                     {**(val["l2"].present? ? attributes_map : {}),
                      data: { **(attributes_map[:data] || {}),
                              translation: val["l2"],
-                             token_id: val["token_id"]
+                             token_id: val["token_id"],
+                             audio_url: audio_url
                      }
                     })
       end)

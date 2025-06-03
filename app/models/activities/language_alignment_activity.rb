@@ -13,7 +13,8 @@ module Activities
                 l1_start_index: t.l1_start_index,
                 l1_end_index: t.l1_end_index,
                 l2_start_index: t.l2_start_index,
-                l2_end_index: t.l2_end_index,                
+                l2_end_index: t.l2_end_index,
+                audio_url: t.l1_audio.present? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil,
               } if activity_translations.include?(t.id)
             end
           }

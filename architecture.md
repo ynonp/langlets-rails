@@ -1,0 +1,382 @@
+# Langlets - Language Learning Platform Architecture
+
+## Project Overview
+
+**Langlets** is a Rails-based language learning platform that creates interactive activities from multimedia content (primarily YouTube videos) with synchronized bilingual text, word-level translations, and various learning exercises. The platform is branded as "MúsicaLingo" and focuses on song-based language learning.
+
+## Technology Stack
+
+- **Framework**: Ruby on Rails 8.0
+- **Database**: PostgreSQL with JSONB support
+- **File Storage**: Active Storage (local/cloud)
+- **Frontend**: Rails views with JavaScript
+- **Background Jobs**: Rails queue system
+- **Package Management**: Bun (JavaScript), Bundler (Ruby)
+
+## Core Architecture
+
+### Domain Models
+
+#### 1. **Language** (`languages`)
+- **Purpose**: Define source and target languages for translations
+- **Key Features**:
+  - ISO language codes (`iso_name`)
+  - English and native names
+  - RTL (Right-to-Left) language support
+  - Pronunciation variant handling
+- **Relationships**: Referenced by phrases as L1 (source) and L2 (target) languages
+
+#### 2. **Medium** (`media`)
+- **Purpose**: Store references to external media content (YouTube videos)
+- **Key Features**:
+  - Unique URL constraint
+  - YouTube video ID extraction
+- **Relationships**: 
+  - One-to-many with Lessons
+  - One-to-many with Phrases
+
+#### 3. **Course** (`courses`)
+- **Purpose**: Group lessons into structured learning paths
+- **Key Features**:
+  - Hierarchical organization with slugs
+  - Main media URL for course overview
+- **Relationships**: One-to-many with Lessons
+
+#### 4. **Lesson** (`lessons`)
+- **Purpose**: Define specific learning segments from media content
+- **Key Features**:
+  - Unique slugs for routing
+  - Timestamp ranges (`start_timestamp`, `end_timestamp`)
+  - Ordered sequence within courses
+  - Descriptive names
+- **Relationships**: 
+  - Belongs to Course and Medium
+  - One-to-many with Activities
+
+#### 5. **Phrase** (`phrases`)
+- **Purpose**: Store synchronized bilingual text segments with timestamps
+- **Key Features**:
+  - Bilingual text pairs (`text_l1`, `text_l2`)
+  - Media synchronization timestamps
+  - Language pair references (`l1_id`, `l2_id`)
+  - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+- **Relationships**: 
+  - Belongs to Medium and two Languages
+  - One-to-many with TokenTranslations
+  - Many-to-many with Activities (through ActivityPhrase)
+
+#### 6. **TokenTranslation** (`token_translations`)
+- **Purpose**: Provide word/token-level translations within phrases
+- **Key Features**:
+  - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
+  - Translation text
+  - Practice questions array
+  - Similar sound arrays for pronunciation practice
+  - Unique constraint on phrase + L1 indices
+  - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+- **Relationships**: 
+  - Belongs to Phrase
+  - Many-to-many with Activities (through ActivityTokenTranslation)
+
+### Activity System (Single Table Inheritance)
+
+#### 7. **Activity** (`activities`)
+- **Purpose**: Base class for interactive learning exercises
+- **Architecture**: Uses STI (Single Table Inheritance) with `type` column
+- **Key Features**:
+  - Ordered sequence within lessons
+  - Text headers and subheaders for UI
+  - Video parameter generation
+  - Dictionary creation functionality
+- **Relationships**: 
+  - Belongs to Lesson
+  - Many-to-many with Phrases and TokenTranslations
+
+#### Activity Types:
+- **WatchVideoActivity**: Video viewing with synchronized subtitles
+- **MatchPhrasesActivity**: Phrase-to-translation matching exercises
+- **SortPhrasesActivity**: Chronological phrase ordering
+- **LanguageAlignmentActivity**: Word-level alignment exercises
+- **SpeakActivity**: Pronunciation practice
+- **ListenActivity**: Audio comprehension with token identification
+- **FindAnswerActivity**: Question-answer exercises
+
+### Join Tables
+
+#### 8. **ActivityPhrase** (`activity_phrases`)
+- Links activities to their associated phrases
+- Enables many-to-many relationship between Activities and Phrases
+
+#### 9. **ActivityTokenTranslation** (`activity_token_translations`)
+- Links activities to specific token translations for word-level exercises
+- Enables many-to-many relationship between Activities and TokenTranslations
+
+### Workflow Management
+
+#### 10. **CreateSongProgress** (`create_song_progresses`)
+- **Purpose**: Track async content creation pipeline
+- **Key Features**:
+  - YouTube URL processing
+  - Multi-step workflow management
+  - JSONB data storage for flexible progress tracking
+  - Unique constraint on URL + language combination
+
+## Active Storage Integration
+
+The platform uses **Active Storage** for file management:
+
+- **active_storage_blobs**: Core file metadata (filename, content_type, size, checksum)
+- **active_storage_attachments**: Polymorphic join table linking files to any model
+- **active_storage_variant_records**: Image/file processing variants
+
+**Storage Configuration**:
+- Development: Local disk storage
+- Production: Cloud storage (S3/GCS/Azure) support configured
+
+### Audio File Integration
+
+The platform integrates audio files using Active Storage attachments on two core models:
+
+#### Phrase Audio
+- **Field**: `Phrase#l1_audio` (has_one_attached)
+- **Purpose**: Full phrase pronunciation in source language (L1)
+- **Format**: WAV files generated via Azure Text-to-Speech
+
+#### Token Audio  
+- **Field**: `TokenTranslation#l1_audio` (has_one_attached)
+- **Purpose**: Individual word/token pronunciation in source language (L1)
+- **Format**: WAV files generated via Azure Text-to-Speech
+
+## Azure Text-to-Speech Integration
+
+The platform uses **Azure Cognitive Services TTS** for generating pronunciation audio:
+
+### Service Configuration (`AzureTextToSpeechService`)
+- **Output Format**: `raw-16khz-16bit-mono-pcm` → converted to WAV
+- **Audio Specs**: 16kHz sample rate, 16-bit depth, mono channel
+- **Workflow**: Raw PCM → WAV conversion → Base64 encoding → Active Storage attachment
+
+### Language Support
+- **English**: `en-US-AriaNeural`
+- **Spanish**: `es-ES-ElviraNeural` 
+- **French**: `fr-FR-DeniseNeural`
+- **Arabic**: `ar-JO-TaimNeural` (includes Palestinian Arabic fallback)
+- **Hebrew**: `he-IL-AvriNeural`
+
+### Audio Generation Process
+1. **Text Input**: Phrase or token text in source language
+2. **SSML Generation**: Structured markup with language/voice selection
+3. **Azure TTS API**: Raw PCM audio generation
+4. **WAV Conversion**: PCM → WAV using WaveFile gem
+5. **Base64 Encoding**: For secure transmission
+6. **Active Storage Attachment**: Audio file attachment to model record
+
+### Audio Attachment Workflow
+```ruby
+# From Ai::CreateSong#attach_audio_to_record
+def attach_audio_to_record(record, base64_audio_data, filename)
+  decoded_audio = Base64.decode64(base64_audio_data)
+  audio_io = StringIO.new(decoded_audio)
+  
+  record.l1_audio.attach(
+    io: audio_io,
+    filename: filename,
+    content_type: 'audio/wav'
+  )
+end
+```
+
+This integration enables:
+- **Pronunciation Practice**: Accurate native speaker models
+- **Listening Comprehension**: High-quality audio for word identification
+- **Accessibility**: Audio support for visual learners
+- **Offline Capability**: Downloaded audio files for offline learning
+
+## Data Relationships
+
+```
+Course (1) ──→ (many) Lesson
+Lesson (many) ──→ (1) Medium
+Lesson (1) ──→ (many) Activity
+
+Language (1) ──→ (many) Phrase (as L1)
+Language (1) ──→ (many) Phrase (as L2)
+Medium (1) ──→ (many) Phrase
+
+Phrase (1) ──→ (many) TokenTranslation
+Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
+
+Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
+
+# Audio Attachments via Active Storage
+Phrase (1) ──→ (1) Audio File (l1_audio)
+TokenTranslation (1) ──→ (1) Audio File (l1_audio)
+
+# Active Storage Infrastructure
+Any Model ←──→ Active Storage Blobs (polymorphic attachments)
+```
+
+## Key Features & Capabilities
+
+### Content Processing Pipeline
+1. **YouTube URL Input**: Extract video metadata and audio
+2. **Phrase Extraction**: Generate timestamped bilingual phrases
+3. **Audio Generation**: Create TTS audio for phrases and tokens via Azure
+4. **Token Mapping**: Create word-level translation mappings with audio
+5. **Lesson Generation**: Structure content into pedagogical sequences
+6. **Activity Creation**: Generate diverse interactive exercises with audio support
+
+### Learning Activity Types
+- **Video Comprehension**: Synchronized subtitle viewing with original audio
+- **Phrase Matching**: Translation pair exercises with TTS pronunciation
+- **Chronological Sorting**: Temporal sequence understanding
+- **Word Alignment**: Granular translation mapping with audio feedback
+- **Pronunciation Practice**: Speaking exercises with TTS model audio
+- **Listening Comprehension**: Audio-based word identification using generated audio
+- **Q&A Exercises**: Comprehension testing with audio support
+
+### Multilingual Support
+- **RTL Languages**: Right-to-left text rendering
+- **Pronunciation Variants**: Regional accent support
+- **Sound Similarity**: Pronunciation confusion detection
+- **Character Indexing**: Precise word boundary detection
+
+### Progressive Learning Design
+- **Ordered Sequences**: Lessons and activities follow pedagogical progression
+- **Scaffolded Complexity**: From video watching to detailed word alignment
+- **Contextual Learning**: Words learned within meaningful phrases
+- **Multi-modal Practice**: Video, audio, text, and speaking integration
+
+## File Structure
+
+```
+app/models/
+├── activity.rb                 # Base activity class (STI)
+├── activities/                 # Activity type implementations
+│   ├── watch_video_activity.rb
+│   ├── match_phrases_activity.rb
+│   ├── sort_phrases_activity.rb
+│   ├── language_alignment_activity.rb
+│   ├── speak_activity.rb
+│   ├── listen_activity.rb
+│   └── find_answer_activity.rb
+├── course.rb
+├── lesson.rb
+├── medium.rb
+├── language.rb
+├── phrase.rb                   # has_one_attached :l1_audio
+├── token_translation.rb        # has_one_attached :l1_audio
+├── activity_phrase.rb          # Join table model
+├── activity_token_translation.rb # Join table model
+└── create_song_progress.rb     # Workflow tracking
+
+app/services/
+└── azure_text_to_speech_service.rb # TTS integration
+
+app/lib/ai/
+└── create_song.rb              # Audio attachment logic
+
+db/
+├── schema.rb                   # Database schema
+└── migrate/                    # Migration files
+
+storage/                        # Active Storage files
+├── development.sqlite3         # Local storage in development
+└── [blob_directories]/         # Organized blob storage
+
+script/
+├── create_song/               # Course generation scripts
+└── shorts/                    # Short-form content scripts
+
+prompts/                       # AI prompt templates
+└── system.md                  # Core system prompts
+```
+
+## Design Patterns
+
+### Single Table Inheritance (STI)
+Activities use STI to share common behavior while allowing specialized implementations for different exercise types.
+
+### Polymorphic Associations
+Active Storage attachments can be associated with any model through polymorphic relationships.
+
+### Join Table Models
+ActivityPhrase and ActivityTokenTranslation are full models (not just join tables) to allow for future extensibility.
+
+### Workflow State Management
+CreateSongProgress uses JSONB for flexible step tracking in the content creation pipeline.
+
+### Timestamp-based Synchronization
+All content is synchronized to media timestamps for precise audio-visual alignment.
+
+### Audio Processing Pipeline
+1. **Text Normalization**: Sanitize text for SSML compatibility
+2. **Voice Selection**: Language-specific neural voice assignment
+3. **PCM Generation**: Azure TTS API produces raw audio
+4. **WAV Conversion**: PCM-to-WAV using WaveFile gem with proper headers
+5. **Base64 Encoding**: Secure audio data transmission
+6. **Active Storage Integration**: Polymorphic file attachment
+
+## Technical Implementation Details
+
+### Audio File Specifications
+- **Source Format**: Raw PCM from Azure TTS (`raw-16khz-16bit-mono-pcm`)
+- **Output Format**: WAV with standard headers
+- **Sample Rate**: 16,000 Hz (broadcast quality)
+- **Bit Depth**: 16-bit signed integers
+- **Channels**: Mono (single channel)
+- **Encoding**: Little-endian PCM
+
+### Azure TTS Configuration
+```ruby
+# Service constants
+AZURE_PCM_OUTPUT_FORMAT = 'raw-16khz-16bit-mono-pcm'
+WAV_SAMPLE_RATE = 16000
+WAV_CHANNELS = 1  
+WAV_BITS_PER_SAMPLE = 16
+
+# Voice mapping by language
+{
+  "en" => "en-US-AriaNeural",
+  "es" => "es-ES-ElviraNeural", 
+  "fr" => "fr-FR-DeniseNeural",
+  "ar" => "ar-JO-TaimNeural",
+  "he" => "he-IL-AvriNeural"
+}
+```
+
+### SSML Template Structure
+```xml
+<speak version='1.0' xml:lang='[language_code]'>
+  <voice name='[voice_name]'>[sanitized_text]</voice>
+</speak>
+```
+
+## Scalability Considerations
+
+- **JSONB Usage**: Flexible data storage for varying workflow steps
+- **Indexing Strategy**: Key foreign keys and unique constraints are indexed
+- **Background Processing**: Async content creation pipeline
+- **Cloud Storage**: Scalable file storage via Active Storage
+- **Modular Activities**: New activity types can be added through STI
+- **Audio Caching**: Generated TTS audio files are cached via Active Storage
+- **API Rate Limiting**: Azure TTS requests managed through service layer
+- **Compression**: WAV files optimized for web delivery
+- **CDN Integration**: Audio files served through content delivery networks
+- **Batch Processing**: Multiple audio files can be generated simultaneously
+- **Error Handling**: Graceful degradation when TTS service is unavailable
+
+## Performance Optimizations
+
+### Audio Delivery
+- **Lazy Loading**: Audio files loaded on-demand
+- **Progressive Download**: Streaming support for large audio files
+- **Format Optimization**: 16kHz mono reduces file size while maintaining quality
+- **Browser Caching**: Appropriate cache headers for audio assets
+
+### Database Efficiency  
+- **Eager Loading**: Minimize N+1 queries for audio attachments
+- **Selective Loading**: Only load audio when needed for activities
+- **Index Coverage**: Foreign key indexes support efficient joins
+
+This architecture supports a sophisticated language learning platform that can process multimedia content, extract educational material, generate high-quality pronunciation audio, and create interactive learning experiences with precise multilingual and audio support.

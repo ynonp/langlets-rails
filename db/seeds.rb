@@ -12,5 +12,5 @@ Language.create!(iso_name: 'en', english_name: 'English', native_name: 'English'
 Language.create!(iso_name: 'he', english_name: 'Hebrew', native_name: 'עברית', pronunciation_variant_name: 'he-IL')
 Language.create!(iso_name: 'fr', english_name: 'French', native_name: 'Français', pronunciation_variant_name: 'fr-FR')
 Language.create!(iso_name: 'es', english_name: 'Spanish', native_name: 'Español', pronunciation_variant_name: 'es-ES')
-Language.create!(iso_name: 'ar-ps', english_name: 'Palestinian Arabic', native_name: 'العربية الفلسطينية', pronunciation_variant_name: 'ar-JO')
+Language.create!(iso_name: 'ar-JO', english_name: 'Arabic', native_name: 'العربية الفلسطينية', pronunciation_variant_name: 'ar-JO')
 

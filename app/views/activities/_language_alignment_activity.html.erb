@@ -123,7 +123,8 @@
                 segments << {
                   text: token_text,
                   token_index: token_index,
-                  phrase_index: phrase_index
+                  phrase_index: phrase_index,
+                  audio_url: token[:audio_url]
                 }
                 
                 current_pos = token[:l1_end_index] + 1
@@ -145,6 +146,7 @@
                   data-find-words-target="token" 
                   data-phrase-id="<%= segment[:phrase_index] %>" 
                   data-token-id="<%= segment[:token_index] %>" 
+                  data-audio-url="<%= segment[:audio_url] %>"
                   data-found="false"
                 ><%= segment[:text].strip %></button><%= "&nbsp;".html_safe %>
               <% end %>
