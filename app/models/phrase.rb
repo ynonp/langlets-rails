@@ -3,6 +3,7 @@ class Phrase < ApplicationRecord
   belongs_to :l1, class_name: :Language
   belongs_to :l2, class_name: :Language
   has_many :token_translations, dependent: :destroy
+  has_one_attached :l1_audio
   has_timestamp [:timestamp]
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }

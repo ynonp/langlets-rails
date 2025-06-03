@@ -82,3 +82,5 @@ gem "fiddle", "~> 1.1"
 gem "langchainrb", "~> 0.19.5"
 
 gem "ruby-anthropic", "~> 0.4.2"
+
+gem "wavefile", "~> 1.1"

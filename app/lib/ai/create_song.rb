@@ -60,6 +60,9 @@ module Ai
       create_audio if progress.create_language_alignment_activities?
 
       progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)            
+      save_progress(:ready) if progress.create_audio?
+
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)            
       create_course if progress.ready?
     end
 
@@ -105,6 +108,11 @@ module Ai
             l2:,
           )
 
+          # Attach phrase audio if available
+          if phrase_data["phrase_audio_data"].present?
+            attach_audio_to_record(p, phrase_data["phrase_audio_data"], "phrase_#{phrase_index}.wav")
+          end
+
           [ a1, a2, a3, a4, a5, a6 ].each { |a| a.phrases << p }
 
           (phrase_data["translations"] || []).each do |token_translation_data|
@@ -117,6 +125,12 @@ module Ai
               similar_sound: token_translation_data["similar_sound"],
               translation: token_translation_data["translation"],
             )
+
+            # Attach token translation audio if available
+            if token_translation_data["audio_data"].present?
+              attach_audio_to_record(t, token_translation_data["audio_data"], "token_#{phrase_index}_#{t.l1_start_index}.wav")
+            end
+
             a6.token_translations << t if token_translation_data["listening_activity"] == 1
             a4.token_translations << t if token_translation_data["language_alignment_activity"] == 1
           end
@@ -688,6 +702,32 @@ module Ai
     end
 
     private
+
+    # Helper method to attach base64 encoded audio data to a record using Active Storage
+    def attach_audio_to_record(record, base64_audio_data, filename)
+      return unless base64_audio_data.present?
+
+      begin
+        # Decode base64 audio data
+        decoded_audio = Base64.decode64(base64_audio_data)
+        
+        # Create StringIO object from decoded data
+        audio_io = StringIO.new(decoded_audio)
+        audio_io.set_encoding_by_bom
+        
+        # Attach to the record's l1_audio using Active Storage
+        record.l1_audio.attach(
+          io: audio_io,
+          filename: filename,
+          content_type: 'audio/wav'
+        )
+        
+        puts "Successfully attached audio to #{record.class.name} (#{filename})"
+      rescue => e
+        puts "Error attaching audio to #{record.class.name}: #{e.message}"
+        # Continue processing other records even if one fails
+      end
+    end
 
     def tokenize_text(text)
       # Simple tokenization - split by spaces and punctuation

@@ -1,5 +1,7 @@
 class TokenTranslation < ApplicationRecord
   belongs_to :phrase
+  has_one_attached :l1_audio
+
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")
   }
