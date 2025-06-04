@@ -719,7 +719,7 @@ module Ai
         record.l1_audio.attach(
           io: audio_io,
           filename: filename,
-          content_type: 'audio/wav'
+          content_type: 'audio/wav',
         )
         
         puts "Successfully attached audio to #{record.class.name} (#{filename})"

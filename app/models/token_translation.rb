@@ -1,6 +1,6 @@
 class TokenTranslation < ApplicationRecord
   belongs_to :phrase
-  has_one_attached :l1_audio
+  has_one_attached :l1_audio, service: :s3_public
 
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")
