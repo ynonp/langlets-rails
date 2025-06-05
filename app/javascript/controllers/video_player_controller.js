@@ -182,6 +182,12 @@ export default class extends Controller {
     });
   }
 
+  seekToTimestamp(ev) {
+    const targetTime = ev.currentTarget.dataset.timestamp
+    console.log('2');
+    this.player.seekTo(targetTime);
+  }
+
   seekToPosition(event) {
     // Prevent the event from bubbling up to the YouTube player
     event.preventDefault();

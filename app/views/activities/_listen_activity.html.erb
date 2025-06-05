@@ -1,5 +1,6 @@
 <%
     phrases = params[:phrases]
+    rtl = params[:rtl]
 %>
 
 <style>
@@ -65,6 +66,7 @@
         data-video-player-target="container"
         data-listen-activity-target="phrasesContainer"
         class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
+        dir="<%= rtl ? 'rtl' : 'ltr' %>"
         >
       <div
         id="phrases-list" 

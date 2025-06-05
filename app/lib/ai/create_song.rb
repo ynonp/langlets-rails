@@ -1,6 +1,6 @@
 module Ai
   class CreateSong
-    attr_accessor :youtubeurl, :clip_language, :translation_language, :data, :gemini, :openai, :claude, :song_name
+    attr_accessor :youtubeurl, :lyrics_url, :clip_language, :translation_language, :data, :gemini, :openai, :claude, :song_name
 
     CreateSongData = Data.define(
       :phrases,
@@ -15,7 +15,8 @@ module Ai
       :phrases
     )
 
-    def initialize(song_name, youtubeurl, clip_language, translation_language)
+    def initialize(song_name, youtubeurl, clip_language, translation_language, lyrics_url)
+      @lyrics_url = lyrics_url
       @song_name = song_name
       @clip_language = clip_language
       @translation_language = translation_language
@@ -161,14 +162,16 @@ module Ai
           additionalProperties: false
         },
       }
+      lyrics = LyricsScraperService.call(lyrics_url)
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
         template: File.read("prompts/extract_phrases_from_youtube_url.md"),
-        input_variables: ["clip_language", "translation_language", "song_name", "format_instructions"])
+        input_variables: ["clip_language", "translation_language", "song_name", "format_instructions", "song_lyrics"])
       prompt_text = prompt.format(
         clip_language: clip_language,
         translation_language: translation_language,
         song_name: song_name,
+        song_lyrics: lyrics,
         format_instructions: parser.get_format_instructions)
 
       llm_response = @gemini.chat(messages: [

@@ -62,7 +62,8 @@ export default class extends Controller {
         this.playAudio(audioUrl);
       }
       
-      ev.stopPropagation();
+      console.log('1');
+      ev.stopPropagation();      
     } else {
       console.log(ev.target);
     }

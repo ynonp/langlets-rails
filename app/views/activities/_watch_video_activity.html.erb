@@ -72,25 +72,41 @@
         data-controller="popover-translation"
         id="phrases-container"
         data-video-player-target="container"
-        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
+        data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
+        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"                
         >
       <div
         id="phrases-list" 
         data-video-player-target="phrasesList"
-        class="text-white text-sm sm:text-base">
+        class="text-white text-sm sm:text-base"
+      >
         <% phrases.each do |phrase| %>
-          <div
-            data-video-player-target="subtitles"
-            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
+        <div
+          data-video-player-target="subtitles"
+          data-action="click->video-player#seekToTimestamp"
+          data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
+          class="flex flex-col <%= phrase.l1.rtl ? 'items-end' : 'items-start' %>"
+        >
+<div
             class="px-4 py-3 transition-all duration-200">
-            <div class="text-white text-md md:text-xl">
+            <div
+              class="text-white text-md md:text-xl"
+              dir="<%= phrase.l1.rtl ? 'rtl' : 'ltr' %>"
+            >
               <%= wrap_tokens_in_spans(phrase,
-                                     {class: "cursor-pointer hover:bg-gray-600 rounded"}) %>
+                                     {class: "cursor-pointer hover:bg-gray-600 rounded",
+                                      data: {action: "click->popover-translation#showPopup" }}) %>
             </div>
-            <div class="text-teal-400 mt-1 text-md md:text-xl" data-video-player-target="translation">
+            <div
+              class="text-teal-400 mt-1 text-md md:text-xl" data-video-player-target="translation"
+              dir="<%= phrase.l2.rtl ? 'rtl' : 'ltr' %>"
+            >
+
               <%= phrase.text_l2 %>
             </div>
           </div>
+        </div>
+          
         <% end %>
       </div>
       <!-- Translation Popup -->

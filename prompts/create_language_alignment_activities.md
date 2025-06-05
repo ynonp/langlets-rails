@@ -12,6 +12,7 @@ Your task is to modify this JSON object according to the following rules:
 
 2.  **Select Words for the Activity:**
     * From the `translations` array of each line, you must select one or two words to be part of the listening activity.
+    * Do not select the entire line - so if the line is short (<= 3 words) select only one word.
     * For long or particularly important lines, you may select a maximum of three words. This should be the exception, not the rule.
     * Prioritize selecting meaningful words like nouns, verbs, or significant adjectives that are good for a vocabulary quiz.
 
