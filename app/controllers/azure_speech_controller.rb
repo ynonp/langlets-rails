@@ -1,7 +1,7 @@
 class AzureSpeechController < ApplicationController
   def token
-    subscription_key = Rails.application.credentials.azure[:speech_key]
-    region = Rails.application.credentials.azure[:speech_region]
+    subscription_key = Rails.application.credentials.azure.tts[:key]
+    region = Rails.application.credentials.azure.tts[:region]
 
     uri = URI("https://#{region}.api.cognitive.microsoft.com/sts/v1.0/issueToken")
 
