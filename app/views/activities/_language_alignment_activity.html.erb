@@ -13,6 +13,7 @@
 
 <% 
   phrases = params[:phrases] || []
+  rtl = params[:rtl]  
   l1 = params[:l1]
   l2 = params[:l2]
   total_phrases = phrases.length
@@ -103,7 +104,10 @@
         </div>
         
         <% phrases_with_all_tokens.each_with_index do |phrase, phrase_index| %>          
-          <div class="original-phrase px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 hover:bg-gray-800 text-white sm:min-h-[72px] text-md md:text-xl transition-all duration-200" data-phrase-id="<%= phrase_index %>">          
+          <div
+            dir="<%= rtl ? 'rtl' : 'ltr' %>"
+            class="original-phrase px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 hover:bg-gray-800 text-white sm:min-h-[72px] text-md md:text-xl transition-all duration-200" data-phrase-id="<%= phrase_index %>"
+          >          
             <% 
               text = phrase[:original_text]
               segments = []

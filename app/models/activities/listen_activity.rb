@@ -4,7 +4,7 @@ module Activities
       activity_translations = Set.new(token_translations.ids)
       {
         **video_params,
-        rtl: p.l1.rtl,
+        rtl: phrases.first.l1.rtl,
         phrases: phrases.ordered_by_timestamp.includes(:token_translations).map do |p|
           {
             "text_l1" => p.text_l1,
