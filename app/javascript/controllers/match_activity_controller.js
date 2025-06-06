@@ -23,28 +23,15 @@ export default class extends Controller {
     // Audio will now be played using the video player when user clicks the speaker icon
   }
 
-  playPhraseAudio(event) {
-    const button = event.currentTarget;
-    const phraseIndex = parseInt(button.dataset.phraseIndex);
-    
-    // Find the current phrase container
-    const currentPhraseContainer = this.phraseContainerTargets.find(
-      container => parseInt(container.dataset.index) === phraseIndex
-    );
-    
-    if (currentPhraseContainer) {
-      // Dispatch event to the video player controller to start playback
-      this.dispatch('play-video', { target: currentPhraseContainer });
-    }
-  }
-
   selectOption(event) {
     const option = event.currentTarget;
     const isCorrect = option.dataset.correct === 'true';
     
     // Mark the selected option
     if (isCorrect) {
+      console.log(this.element);
       // Disable all options for this phrase to prevent multiple selections
+      
       event.target.closest('.phraseContainer').querySelectorAll('.optionButton').forEach(button => {
         button.disabled = true;
       });
@@ -54,6 +41,7 @@ export default class extends Controller {
         // Wait a moment before moving to the next phrase
       setTimeout(() => {
         this.moveToNextPhrase();
+        this.element.dispatchEvent(new CustomEvent('stop-audio'));
       }, 1500);
     } else {
       option.classList.add('incorrect-answer');
@@ -62,9 +50,7 @@ export default class extends Controller {
         option.classList.remove('incorrect-answer');
         this.feedbackMessageTarget.classList.add('hidden');
       }, 1500);
-    }
-    
-
+    }    
   }
   
   showFeedback(message, bgClass) {

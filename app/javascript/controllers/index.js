@@ -36,3 +36,6 @@ application.register("video-player", VideoPlayerController)
 
 import SpeechRecognitionController from "./speech_recognition_controller"
 application.register("speech-recognition", SpeechRecognitionController)
+
+import MainVideoPlayerController from "./main_video_player_controller"
+application.register("main-video-player", MainVideoPlayerController)

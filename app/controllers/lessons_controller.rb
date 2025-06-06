@@ -8,6 +8,7 @@ class LessonsController < ApplicationController
     end
     
     @activity = @lesson.activities.find_by(order: params[:a]) || @lesson.activities.first
+    @videoid = @lesson.medium.extract_youtube_video_id
 
     current_order = params[:a].to_i
     next_order = current_order.positive? ? current_order + 1 : 2
