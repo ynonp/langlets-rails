@@ -1,5 +1,5 @@
 <div class="flex flex-col min-h-screen w-full bg-gray-900"
-    data-controller="main-video-player"
+    data-controller="main-video-player activity-navigation"
     data-action="play->main-video-player#playFrom"
     data-main-video-player-video-id-value="<%= @videoid %>"
 >
@@ -7,12 +7,21 @@
     id="main-player"
     data-turbo-permanent
     class="hidden"
-    data-main-video-player-target="player"
+    data-main-video-player-target="player"    
   >
   </div>
 
-  <%= render partial: 'activity_navigation' %>
-  <div class="items-stretch flex-1 bg-gray-800">  
-    <%= render partial: @activity.partial_name, locals: { params: @activity.activity_params } %>
-  </div>
+  <turbo-frame
+    id="activity"
+    data-action="turbo:frame-render->activity-navigation#activityChange"    
+  >
+    <%= render partial: 'activity_navigation' %>
+    <div
+      class="items-stretch flex-1 bg-gray-800"
+      data-activity-navigation-target="content"
+      data-activity-navigation-url="<%= @current_url %>"
+    >  
+      <%= render partial: @activity.partial_name, locals: { params: @activity.activity_params } %>
+    </div>
+  </turbo-frame>
 </div>

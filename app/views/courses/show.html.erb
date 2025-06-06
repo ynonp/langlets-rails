@@ -92,7 +92,7 @@
 
 <!-- Main content wrapper -->
 <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 pb-44 md:pb-44">
-  <main class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+  <main class="flex flex-col-reverse lg:flex-row gap-8 lg:gap-12">
     <!-- Main lesson list area -->
     <div class="flex-1">
       <!-- Header section with lesson list title -->
@@ -129,11 +129,11 @@
                 </h3>
               </div>
               
-              <%= link_to lesson, class: "ml-6 bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+              <%= link_to lesson, class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                   <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
                 </svg>
-                Start Lesson
+                <span class="hidden md:inline">Start Lesson</span>                
               <% end %>
             </div>
           </div>
