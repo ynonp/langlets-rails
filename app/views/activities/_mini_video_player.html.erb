@@ -1,24 +1,33 @@
-<div
-    data-controller="video-player"
-    data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
-    data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-video-player-mini-player-value="true"
-    data-video-player-video-id-value="<%= params[:video_id] %>"
-    id="audio-player-container"
+<div    
     class="mb-6 px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 rounded-lg">
     <div class="flex items-center space-x-3">
-      <button data-video-player-target="playButton" data-action="click->video-player#togglePlayback" id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
+      <button
+        data-main-video-player-target="playButton"
+        data-action="click->main-video-player#playSegment"
+        data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+        data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
+
+        class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition"
+      >
         ▶
       </button>
+      <button
+        data-main-video-player-target="pauseButton"
+        data-action="click->main-video-player#stopPlayback"
+        data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+        data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
+
+        class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition hidden"
+      >
+        ❚❚
+      </button>
       <div class="flex-1 h-2 bg-gray-600 rounded-full cursor-pointer"
-           data-video-player-target="progressBarContainer"
+           data-main-video-player-target="progressBarContainer"
            data-action="click->video-player#seekToPosition">
         <div
-            data-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
+            data-main-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
       </div>
-    </div>
-    <!-- Hidden YouTube Player -->
-    <div data-video-player-target="player" id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
+    </div>    
 </div>
 
 
