@@ -1,10 +1,16 @@
 class Phrase < ApplicationRecord
+  include AzureTextToSpeech
+  
   belongs_to :medium
   belongs_to :l1, class_name: :Language
   belongs_to :l2, class_name: :Language
   has_many :token_translations, dependent: :destroy
   has_one_attached :l1_audio, service: :s3_public
   has_timestamp [:timestamp]
+
+  # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
+  after_create :generate_l1_audio, if: :should_generate_audio?
+  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
 
@@ -85,6 +91,37 @@ class Phrase < ApplicationRecord
 END
       puts code
       code
+    end
+  end
+
+  private
+
+  # Check if we should generate audio on create
+  def should_generate_audio?
+    text_l1.present? && l1&.iso_name.present?
+  end
+
+  # Check if we should generate audio on update (only if text_l1 or l1 changed)
+  def should_generate_audio_on_update?
+    should_generate_audio? && (saved_change_to_text_l1? || saved_change_to_l1_id?)
+  end
+
+  # Generate and attach l1_audio using Azure Text-to-Speech in background job
+  def generate_l1_audio
+    return unless text_l1.present? && l1&.iso_name.present?
+
+    begin
+      Rails.logger.info "Queueing l1_audio generation for Phrase #{id}: '#{text_l1}' (#{l1.iso_name})"
+      
+      # Queue the audio generation job to run in background
+      GeneratePhraseAudioJob.perform_later(id)
+      
+      Rails.logger.info "Successfully queued l1_audio generation job for Phrase #{id}"
+      
+    rescue => e
+      Rails.logger.error "Error queueing l1_audio generation for Phrase #{id}: #{e.message}"
+      # Don't raise the error to avoid breaking the save operation
+      # Just log it and continue
     end
   end
 end

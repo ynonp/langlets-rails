@@ -48,22 +48,16 @@ module Ai
       progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       create_lessons if progress.create_phrases?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       create_token_translations if progress.create_lessons?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       create_listening_activities if progress.create_token_translations?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       create_language_alignment_activities if progress.create_listening_activities?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)      
-      create_audio if progress.create_language_alignment_activities?
-
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)            
-      save_progress(:ready) if progress.create_audio?
-
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)            
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       create_course if progress.ready?
     end
 
@@ -565,74 +559,9 @@ module Ai
           next
         end
       end
-      save_progress(:create_language_alignment_activities)
+      save_progress(:ready)
     end
 
-    def create_audio
-      progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
-      data = progress.data
-      
-      # Get language code mapping for the clip language
-      language_code = get_language_code(clip_language)
-      
-      # Process each lesson
-      data["lessons"].each_with_index do |lesson, lesson_index|
-        lesson["phrases"].each_with_index do |phrase, phrase_index|
-          # Generate audio for the full phrase text_l1 if not already done
-          if !phrase.key?("phrase_audio_data")
-            begin
-              phrase_audio_data = generate_tts_audio(phrase["text_l1"], language_code)
-              
-              # Save the audio data for the phrase
-              data["lessons"][lesson_index]["phrases"][phrase_index]["phrase_audio_data"] = phrase_audio_data
-              
-              # Save progress after each phrase to avoid losing work
-              save_progress(progress.step, data)
-              
-              puts "Generated audio for phrase '#{phrase["text_l1"]}' in lesson #{lesson_index}, phrase #{phrase_index}"
-            rescue => e
-              puts "Error generating audio for phrase '#{phrase["text_l1"]}': #{e.message}"
-              # Continue with next phrase instead of failing completely
-            end
-          end
-          
-          next unless phrase["translations"]
-          
-          phrase["translations"].each_with_index do |translation, translation_index|
-            # Skip if this translation already has audio
-            next if translation.key?("audio_data")
-            
-            # Extract the L1 text for this translation
-            l1_text = phrase["text_l1"]
-            l1_start = translation["l1_start_index"]
-            l1_end = translation["l1_end_index"]
-            token_text = l1_text[l1_start..l1_end]
-            
-            # Generate audio for this token
-            begin
-              audio_data = generate_tts_audio(token_text, language_code)
-              
-              # Save the audio data in the translation
-              data["lessons"][lesson_index]["phrases"][phrase_index]["translations"][translation_index]["audio_data"] = audio_data
-              
-              # Save progress after each token to avoid losing work
-              save_progress(progress.step, data)
-              
-              puts "Generated audio for token '#{token_text}' in lesson #{lesson_index}, phrase #{phrase_index}"
-            rescue => e
-              puts "Error generating audio for token '#{token_text}': #{e.message}"
-              # Continue with next token instead of failing completely
-            end
-          end
-        end
-      end
-      
-      save_progress(:create_audio)
-    end
-  
-    def generate_tts_audio(text, language_code)
-      AzureTextToSpeechService.synthesize(text:, lang: language_code)
-    end
 
     def get_language_code(language_name)
       # Find language by english_name and return iso_name
