@@ -15,7 +15,7 @@ module Ai
       :phrases
     )
 
-    def initialize(song_name, youtubeurl, clip_language, translation_language, lyrics_url)
+    def initialize(song_name, youtubeurl, clip_language, translation_language, lyrics_url=nil)
       @lyrics_url = lyrics_url
       @song_name = song_name
       @clip_language = clip_language
@@ -156,7 +156,7 @@ module Ai
           additionalProperties: false
         },
       }
-      lyrics = LyricsScraperService.call(lyrics_url)
+      lyrics = lyrics_url ? LyricsScraperService.call(lyrics_url) : "Reference Lyrics Not Available - Pay extra attention listening"
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
         template: File.read("prompts/extract_phrases_from_youtube_url.md"),

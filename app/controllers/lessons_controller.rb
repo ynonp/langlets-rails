@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
 
     current_order = params[:a].to_i
     
-    next_activity = @lesson.activities.find_by("activities.order > ?", @activity.order)
+    next_activity = @lesson.activities.where("activities.order > ?", @activity.order).order(order: :asc).first
     @course_path = @lesson.course.present? ? course_path(@lesson.course.slug) : nil
     @next_lesson = if @lesson.course.present?
       @lesson.course.lessons.find_by("lessons.order >= ?", @lesson.order + 1)
