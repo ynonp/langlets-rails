@@ -11,8 +11,10 @@
   >
   </div>
 
-<%= render partial: 'activity_navigation' %>
-<div class="items-stretch flex-1 bg-gray-800">
-  <%= render partial: @activity.partial_name, locals: { params: @activity.activity_params } %>
-</div>
+  <turbo-frame id="activity">
+    <%= render partial: 'activity_navigation' %>
+    <div class="items-stretch flex-1 bg-gray-800">  
+      <%= render partial: @activity.partial_name, locals: { params: @activity.activity_params } %>
+    </div>
+  </turbo-frame>
 </div>

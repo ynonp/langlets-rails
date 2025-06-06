@@ -10,9 +10,6 @@ export default class extends Controller {
 
   initialize() {
     this.monitorPlaybackInterval = null;      
-  }
-
-  connect() {
     this.player = YouTubePlayer(this.playerTarget, {
       videoId: this.videoIdValue,
       playerVars: {
@@ -20,7 +17,7 @@ export default class extends Controller {
         controls: 0,
         modestbranding: 1,
       },
-    });    
+    });   
   }
 
   async stopPlayback() {
@@ -30,10 +27,9 @@ export default class extends Controller {
       this.monitorPlaybackInterval = null;
     }
     this.player.pauseVideo();
-  }
+  }  
 
-  async playSegment(event) {
-    console.log(event.params);
+  async playSegment(event) {    
     const {segmentStart, segmentEnd} = event.params;
     await this.player.seekTo(segmentStart)
     this.player.playVideo()
