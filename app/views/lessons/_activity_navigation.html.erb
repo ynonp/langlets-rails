@@ -5,7 +5,7 @@
 
 <div class="py-2 px-2 overflow-x-auto">
   <div class="flex items-center min-w-min">  
-    <%= link_to @course_path, class: "text-white mr-4 p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200", title: "Back to Course" do %>
+    <%= link_to @course_path, class: "text-white mr-4 p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200", title: "Back to Course", data: {turbo: "false"} do %>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
         <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clip-rule="evenodd" />
       </svg>
