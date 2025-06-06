@@ -2,7 +2,7 @@ class GenerateTokenAudioJob < ApplicationJob
   queue_as :default
   
   # Retry with exponential backoff if TTS service is temporarily unavailable
-  retry_on StandardError, wait: :exponentially_longer, attempts: 3
+  retry_on StandardError, wait: 1.minute, attempts: 5
   
   # Discard job if token_translation is deleted
   discard_on ActiveRecord::RecordNotFound

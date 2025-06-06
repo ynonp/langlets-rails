@@ -157,6 +157,7 @@ module AzureTextToSpeech
         writer.write(wave_file_buffer_to_write)
       end
 
+      wav_buffer_io.rewind if wav_buffer_io.respond_to?(:rewind)
       wav_buffer_io
     end
   end

@@ -1,8 +1,8 @@
 class GeneratePhraseAudioJob < ApplicationJob
   queue_as :default
   
-  # Retry with exponential backoff if TTS service is temporarily unavailable
-  retry_on StandardError, wait: :exponentially_longer, attempts: 3
+  # Retry with exponential backoff if TTS service is temporarily unavailable  
+  retry_on StandardError, wait: 1.minute, attempts: 5
   
   # Discard job if phrase is deleted
   discard_on ActiveRecord::RecordNotFound
