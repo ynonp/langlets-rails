@@ -18,9 +18,8 @@ export default class extends Controller {
     });
   }
 
-  checkOrder() {
-    const currentOrder = Array.from(this.phraseItemTargets)
-      .map(item => parseInt(item.dataset.id));
+  checkOrder() {    
+    const currentOrder = this.phraseItemTargets.map(item => item.textContent.trim())    
     
     const isCorrect = arraysEqual(currentOrder, this.correctOrderValue);
     
