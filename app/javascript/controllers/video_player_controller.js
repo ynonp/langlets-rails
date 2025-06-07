@@ -55,7 +55,7 @@ export default class extends Controller {
   // Handler for the play video event
   async handlePlayVideo() {
     const currentTime = await this.player.getCurrentTime();
-    if (!currentTime || currentTime < this.segmentStartValue) {
+    if (!currentTime || currentTime < this.segmentStartValue || currentTime >= this.segmentEndValue) {
       this.player.seekTo(this.segmentStartValue);
     }
     this.player.playVideo();
@@ -75,7 +75,7 @@ export default class extends Controller {
     } else {
       // Only seek to segment start if video hasn't started yet or is before the segment
       const currentTime = await player.getCurrentTime();
-      if (currentTime < segmentStartValue) {
+      if (currentTime < segmentStartValue || currentTime >= this.segmentEndValue) {
         player.seekTo(segmentStartValue);
       }
       player.playVideo();

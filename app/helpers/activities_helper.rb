@@ -14,6 +14,7 @@ module ActivitiesHelper
           "l2" => val.translation,
           "last_index" => val.l1_end_index,
           "token_id" => val.id,
+          "audio_url" => val.l1_audio ? url_for(val.l1_audio) : nil,
         }
         if acc.empty?
           if val.l1_start_index.zero?
@@ -45,14 +46,8 @@ module ActivitiesHelper
       end
   
       safe_join(texts.map do |val|
-        # Get audio URL for this token if available
-        audio_url = nil
-        if val["token_id"].present?
-          token_translation = TokenTranslation.find_by(id: val["token_id"])
-          audio_url = url_for(token_translation.l1_audio) if token_translation&.l1_audio&.attached?
-        end
-
-        content_tag(:span,
+        audio_url = val["audio_url"]
+        span_content = content_tag(:span,
                     val["l1"],
                     {**(val["l2"].present? ? attributes_map : {}),
                      data: { **(attributes_map[:data] || {}),
@@ -61,6 +56,14 @@ module ActivitiesHelper
                              audio_url: audio_url
                      }
                     })
+        
+        if audio_url.present?
+          content_tag(:div, 
+                      span_content + content_tag(:audio, "", src: audio_url, preload: "auto"),
+                      val["l2"].present? ? attributes_map : {})
+        else
+          span_content
+        end
       end)
     end
   end

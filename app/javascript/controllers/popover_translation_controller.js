@@ -42,7 +42,7 @@ export default class extends Controller {
 
   showPopup(ev) {
     if (ev.target.dataset.translation) {
-      const {translation, audioUrl} = ev.target.dataset;
+      const {translation} = ev.target.dataset;
 
       this.translationTextTarget.textContent = translation;
       
@@ -56,13 +56,12 @@ export default class extends Controller {
       this.translationPopupTarget.style.left = `${left}px`;
       this.translationPopupTarget.style.top = `${top}px`;
       this.translationPopupTarget.classList.remove('hidden');
-      
-      // Play audio if available
-      if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
-        this.playAudio(audioUrl);
+
+      const audio = ev.currentTarget.parentElement.querySelector('audio');
+      if (audio) {
+        audio.play();
       }
-      
-      console.log('1');
+            
       ev.stopPropagation();      
     } else {
       console.log(ev.target);
