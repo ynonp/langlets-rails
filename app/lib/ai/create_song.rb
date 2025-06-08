@@ -88,10 +88,11 @@ module Ai
 
         a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
         a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-        a3 = Activities::SortPhrasesActivity.create!(lesson: l, order: 3)
-        a4 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 4)
-        a5 = Activities::SpeakActivity.create!(lesson: l, order: 5)
-        a6 = Activities::ListenActivity.create!(lesson: l, order: 6)
+        a3 = Activities::WordOrderActivity.create!(lesson: l, order: 3)
+        a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
+        a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
+        a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
+        a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
 
         phrases = lesson_data["phrases"].each_with_index do |phrase_data, phrase_index|
           p = Phrase.create!(
@@ -108,7 +109,11 @@ module Ai
             attach_audio_to_record(p, phrase_data["phrase_audio_data"], "phrase_#{phrase_index}.wav")
           end
 
-          [ a1, a2, a3, a4, a5, a6 ].each { |a| a.phrases << p }
+          [ a1, a4, a5, a6, a7 ].each { |a| a.phrases << p }
+
+          first_half_size = (a1.phrases.count / 2.0).round
+          a2.phrases = a1.phrases.sample(first_half_size)
+          a3.phrases = a1.phrases.where.not(id: a2.phrases)
 
           (phrase_data["translations"] || []).each do |token_translation_data|
             t = TokenTranslation.create!(
