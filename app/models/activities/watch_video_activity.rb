@@ -1,5 +1,7 @@
 module Activities
   class WatchVideoActivity < Activity
+    include ActivityWithTokens
+
     def activity_params
       lesson = self.lesson
       l1 = ordered_phrases.first.l1
@@ -13,8 +15,5 @@ module Activities
       }
     end
 
-    def ordered_phrases
-      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(token_translations: { l1_audio_attachment: :blob }).to_a
-    end
   end
 end

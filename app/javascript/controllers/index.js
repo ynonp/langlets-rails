@@ -34,6 +34,9 @@ application.register("speak-activity", SpeakActivityController)
 import VideoPlayerController from "./video_player_controller"
 application.register("video-player", VideoPlayerController)
 
+import WordOrderActivityController from "./word_order_activity_controller"
+application.register("word-order-activity", WordOrderActivityController)
+
 import SpeechRecognitionController from "./speech_recognition_controller"
 application.register("speech-recognition", SpeechRecognitionController)
 

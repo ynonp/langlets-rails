@@ -1,0 +1,211 @@
+<%# Expects:
+  params[:phrases] - An array of phrases data: [l2_text, l1_text, timestamp_start, timestamp_end]
+  params[:l1] - Language code for target phrase (for example "he", "en", "es", "ar-ps")
+  params[:l2] - Language code for displayed phrase (for example "he", "en", "es", "ar-ps")
+  params[:video_id] - YouTube video ID
+  params[:start_timestamp] - Start timestamp for the video segment
+  params[:end_timestamp] - End timestamp for the video segment
+  
+  This activity shows one phrase in L2 at a time, with blank lines below it.
+  The user needs to arrange words from L1 into the correct order to match the L2 phrase.
+  Words can be dragged from the word bank into the blank lines or clicked to move them.
+  The game continues until all phrases are completed.
+ %>
+
+<% phrases = (params[:phrases] || []) %>
+<% total_phrases = phrases.length %>
+<% l1_rtl = params[:l1].rtl %>
+<% l2_rtl = params[:l2].rtl %>
+
+<div
+    data-controller="word-order-activity"
+    data-action="stop-audio->main-video-player#stopPlayback"
+    data-word-order-activity-l1-value="<%= params[:l1].iso_name %>"
+    data-word-order-activity-total-phrases-value="<%= total_phrases %>"
+    class="flex-col flex items-center bg-gray-800">
+  
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
+    <div class="mb-1">
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Arrange The Words In The Correct Order" %></h2>
+      <p class="text-gray-400 text-sm sm:text-base mb-2">
+        <span data-word-order-activity-target="progressText">Question 1 of <%= total_phrases %></span>
+      </p>
+      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+        <div data-word-order-activity-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+    
+    <% phrases.each_with_index do |(l2_text, l1_text, timestamp_start, timestamp_end), index| %>
+      <div 
+        data-word-order-activity-target="phraseContainer"
+        data-index="<%= index %>"
+        data-correct-text="<%= l1_text %>"        
+        class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
+
+        <!-- L2 phrase (target language) -->
+        <div class="my-4 text-md md:text-xl text-white w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
+          <span class="<%= l2_rtl ? "text-right" : "text-left" %>"><%= l2_text %></span>
+          <button 
+            data-action="click->main-video-player#playSegment"
+            data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
+            data-main-video-player-segment-end-param="<%= timestamp_to_seconds(timestamp_end) %>"
+            data-word-order-activity-target="speakerButton"
+            data-phrase="<%= l2_text %>"
+            data-phrase-index="<%= index %>"
+            class="ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
+            title="Play audio">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+              <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+            </svg>
+          </button>
+        </div>
+        
+        <!-- Result line (blank lines for arranging words) -->
+        <div class="my-4">
+          <h3 class="text-white text-lg mb-3">Your answer:</h3>
+          <div 
+            data-word-order-activity-target="resultLine"
+            class="result-line p-4 border-2 border-dashed border-gray-600 rounded-lg bg-gray-900 flex flex-wrap gap-2 items-start <%= l1_rtl ? "text-right flex-row-reverse" : "text-left" %>"
+            data-phrase-index="<%= index %>">
+            <!-- Words will be dropped here -->
+          </div>
+        </div>
+        
+        <!-- Word bank -->
+        <div class="my-4">
+          <h3 class="text-white text-lg mb-3">Word bank:</h3>
+          <div 
+            data-word-order-activity-target="wordBank"
+            class="word-bank p-4 border border-gray-700 rounded-lg bg-gray-800 flex flex-wrap gap-2 <%= l1_rtl ? "text-right flex-row-reverse" : "text-left" %>"
+            data-phrase-index="<%= index %>">
+            <% 
+              # Split the L1 text into words and shuffle them
+              words = l1_text.split(/\s+/).map.with_index { |word, i| { text: word, id: "word-#{index}-#{i}" } }.shuffle
+            %>
+            <% words.each do |word| %>
+              <span 
+                data-word-order-activity-target="wordItem"
+                data-word-id="<%= word[:id] %>"
+                data-word-text="<%= word[:text] %>"
+                data-action="click->word-order-activity#handleWordClick"
+                draggable="true"
+                class="word-item px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer transition-colors duration-200 text-md select-none">
+                <%= word[:text] %>
+              </span>
+            <% end %>
+          </div>
+        </div>
+        
+        <!-- Continue button -->
+        <button
+          data-action="click->word-order-activity#checkAnswer"
+          data-word-order-activity-target="continueButton"
+          data-phrase-index="<%= index %>"
+          class="w-full px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-lg">
+          Continue
+        </button>
+      </div>
+    <% end %>
+    
+    <div data-word-order-activity-target="feedbackMessage" class="hidden mt-4 p-3 rounded-lg text-center text-lg font-medium"></div>
+    
+    <div data-word-order-activity-target="completionMessage" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-300">You've completed all the phrases.</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>
+  </div>  
+</div>
+
+<style>
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(5px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.word-item {
+  user-select: none;
+  touch-action: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.word-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.word-item.dragging {
+  opacity: 0.7;
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.result-line {
+  transition: border-color 0.3s ease;
+  /* Maintain consistent height for one line of words */
+  min-height: 72px; /* Enough for one line: word height (~40px) + padding (32px) */
+  max-height: 144px; /* Allow for two lines if needed */
+  overflow-y: auto;
+  /* Ensure consistent baseline when empty */
+}
+
+.result-line:empty::before {
+  content: "";
+  display: inline-block;
+  height: 40px; /* Match word item height */
+  width: 1px;
+  visibility: hidden;
+}
+
+.result-line.drag-over {
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.1);
+}
+
+.result-line .word-item {
+  background-color: #059669;
+}
+
+.result-line .word-item:hover {
+  background-color: #047857;
+}
+
+.correct-feedback {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  border-color: rgb(16, 185, 129) !important;
+  color: rgb(16, 185, 129) !important;
+}
+
+.incorrect-feedback {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgb(239, 68, 68) !important;
+  color: rgb(239, 68, 68) !important;
+}
+
+/* RTL support for word ordering */
+.result-line.flex-row-reverse .word-item {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+
+.word-bank.flex-row-reverse .word-item {
+  margin-left: 0;
+  margin-right: 0.5rem;
+}
+</style>
