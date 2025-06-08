@@ -8,13 +8,13 @@ module ActivitiesHelper
     if phrase.token_translations.empty?
       content_tag(:span, phrase.text_l1)
     else
-      texts = phrase.token_translations.order(l1_start_index: :asc).to_a.inject([]) do |acc, val|
+      texts = phrase.token_translations.joins(l1_audio_attachment: :blob).includes(l1_audio_attachment: :blob).order(l1_start_index: :asc).to_a.inject([]) do |acc, val|
         next_translated_token = {
           "l1" => phrase.text_l1[val.l1_start_index...val.l1_end_index],
           "l2" => val.translation,
           "last_index" => val.l1_end_index,
           "token_id" => val.id,
-          "audio_url" => val.l1_audio ? url_for(val.l1_audio) : nil,
+          "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil,
         }
         if acc.empty?
           if val.l1_start_index.zero?

@@ -11,7 +11,7 @@
       </svg>
     <% end %>
 
-    <% @lesson.activities.order(:order).each do |activity| %>
+    <% @activities.each do |activity| %>
       <% 
         status = if activity.order < current_activity_order
                   "completed"

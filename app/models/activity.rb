@@ -15,12 +15,15 @@ class Activity < ApplicationRecord
     end
   end
 
+  def ordered_phrases
+    @ordered_phrases ||= phrases.order(:timestamp).to_a
+  end
 
   def video_params
     {
       video_id: lesson.medium.extract_youtube_video_id,
-      start_timestamp: phrases.ordered_by_timestamp.first.timestamp,
-      end_timestamp: to_string_timestamp(phrases.ordered_by_timestamp.last.timestamp_seconds + 5)
+      start_timestamp: ordered_phrases.first&.timestamp,
+      end_timestamp: to_string_timestamp(ordered_phrases.last&.timestamp_seconds + 5)
     }
   end
 

@@ -22,6 +22,8 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
 
     <% if Rails.env.production? %>
+      <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "cc08f0c2f839468e8821ed7f43213c15"}'></script><!-- End Cloudflare Web Analytics -->
+
       <script type="text/javascript">
         (function(c,l,a,r,i,t,y){
           c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

@@ -7,7 +7,8 @@ class LessonsController < ApplicationController
       return
     end
     
-    @activity = @lesson.activities.find_by(order: params[:a]) || @lesson.activities.first
+    @activities = @lesson.activities.order(order: :asc).load
+    @activity = @activities.find_by(order: params[:a]) || @activities.first
     @current_url = lesson_path(a: @activity.order)
     @videoid = @lesson.medium.extract_youtube_video_id
 
