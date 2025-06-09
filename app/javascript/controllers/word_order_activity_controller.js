@@ -11,7 +11,8 @@ export default class extends Controller {
     "wordItem", 
     "continueButton", 
     "feedbackMessage", 
-    "completionMessage"
+    "completionMessage",
+    "tokenSlot"
   ]
   
   static values = {
@@ -23,6 +24,22 @@ export default class extends Controller {
     this.currentPhraseIndex = 0
     this.draggedElement = null
     this.touchOffset = { x: 0, y: 0 }
+    this.audioElement = null
+  }
+
+  // Audio playback for tokens
+  playTokenAudio(event) {
+    event.stopPropagation() // Prevent triggering word click
+    const audioUrl = event.currentTarget.dataset.audioUrl
+    if (audioUrl) {
+      if (this.audioElement) {
+        this.audioElement.pause()
+      }
+      this.audioElement = new Audio(audioUrl)
+      this.audioElement.play().catch(error => {
+        console.warn('Audio playback failed:', error)
+      })
+    }
   }
 
   handleDragStart(event) {
@@ -56,8 +73,68 @@ export default class extends Controller {
     const dropTarget = event.currentTarget
     const draggedElement = this.draggedElement
 
-    // Move the element to the drop target
-    dropTarget.appendChild(draggedElement)
+    // Check if dropping on word bank
+    if (dropTarget.dataset.wordOrderActivityTarget === 'wordBank') {
+      // Remove from slot if it was in one
+      if (draggedElement.classList.contains('in-slot')) {
+        const currentSlot = draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
+        if (currentSlot) {
+          currentSlot.classList.remove('filled')
+        }
+        draggedElement.classList.remove('in-slot')
+      }
+      dropTarget.appendChild(draggedElement)
+    }
+    // Note: Token slot drops are handled by handleSlotDrop
+  }
+  handleSlotDragOver(event) {
+    event.preventDefault()
+    event.dataTransfer.dropEffect = 'move'
+    event.currentTarget.classList.add('drag-over')
+  }
+
+  handleSlotDragLeave(event) {
+    event.currentTarget.classList.remove('drag-over')
+  }
+
+  handleSlotDrop(event) {
+    event.preventDefault()
+    event.currentTarget.classList.remove('drag-over')
+    
+    if (!this.draggedElement) return
+
+    const tokenSlot = event.currentTarget
+    const draggedElement = this.draggedElement
+
+    // Allow dropping in any available slot
+    if (!tokenSlot.classList.contains('filled')) {
+      // Clear the slot first
+      this.clearTokenSlot(tokenSlot)
+      
+      // Move the token to the slot
+      tokenSlot.appendChild(draggedElement)
+      tokenSlot.classList.add('filled')
+      
+      // Update word item styling for being in a slot
+      draggedElement.classList.add('in-slot')
+    } else {
+      // Slot is filled - return to word bank
+      const phraseIndex = this.getCurrentPhraseIndex()
+      const wordBank = this.getWordBankForPhrase(phraseIndex)
+      wordBank.appendChild(draggedElement)
+    }
+  }
+
+  clearTokenSlot(tokenSlot) {
+    // If slot already has a token, move it back to word bank
+    const existingToken = tokenSlot.querySelector('[data-word-order-activity-target="wordItem"]')
+    if (existingToken) {
+      const phraseIndex = this.getCurrentPhraseIndex()
+      const wordBank = this.getWordBankForPhrase(phraseIndex)
+      existingToken.classList.remove('in-slot')
+      wordBank.appendChild(existingToken)
+    }
+    tokenSlot.classList.remove('filled')
   }
 
   // Touch event handlers for mobile support
@@ -93,10 +170,11 @@ export default class extends Controller {
     // Remove drag-over class from all potential drop targets
     this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
     this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+    this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
     
     // Add drag-over class to valid drop target
     if (elementBelow) {
-      const dropTarget = elementBelow.closest('[data-word-order-activity-target="resultLine"], [data-word-order-activity-target="wordBank"]')
+      const dropTarget = elementBelow.closest('[data-word-order-activity-target="tokenSlot"], [data-word-order-activity-target="wordBank"]')
       if (dropTarget) {
         dropTarget.classList.add('drag-over')
       }
@@ -121,12 +199,29 @@ export default class extends Controller {
     // Remove drag-over class from all targets
     this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
     this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+    this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
     
     // Find drop target and move element
     if (elementBelow) {
-      const dropTarget = elementBelow.closest('[data-word-order-activity-target="resultLine"], [data-word-order-activity-target="wordBank"]')
-      if (dropTarget && dropTarget !== this.draggedElement.parentElement) {
-        dropTarget.appendChild(this.draggedElement)
+      const tokenSlot = elementBelow.closest('[data-word-order-activity-target="tokenSlot"]')
+      const wordBank = elementBelow.closest('[data-word-order-activity-target="wordBank"]')
+      
+      if (tokenSlot && !tokenSlot.classList.contains('filled')) {
+        // Valid token slot that is available
+        this.clearTokenSlot(tokenSlot)
+        tokenSlot.appendChild(this.draggedElement)
+        tokenSlot.classList.add('filled')
+        this.draggedElement.classList.add('in-slot')
+      } else if (wordBank) {
+        // Return to word bank
+        if (this.draggedElement.classList.contains('in-slot')) {
+          const currentSlot = this.draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
+          if (currentSlot) {
+            currentSlot.classList.remove('filled')
+          }
+          this.draggedElement.classList.remove('in-slot')
+        }
+        wordBank.appendChild(this.draggedElement)
       }
     }
     
@@ -134,21 +229,46 @@ export default class extends Controller {
   }
 
   handleWordClick(event) {
-    const wordItem = event.target
-    const currentContainer = wordItem.parentElement
-
-    // Determine the current phrase index
+    const wordItem = event.target.closest('[data-word-order-activity-target="wordItem"]')
+    if (!wordItem) return
+    
     const phraseIndex = this.getCurrentPhraseIndex()
-    const resultLine = this.getResultLineForPhrase(phraseIndex)
     const wordBank = this.getWordBankForPhrase(phraseIndex)
+    const tokenId = wordItem.dataset.tokenId
 
-    if (currentContainer === resultLine) {
-      // Move from result line back to word bank
+    if (wordItem.classList.contains('in-slot')) {
+      // Token is in a slot, move it back to word bank
+      wordItem.classList.remove('in-slot')
+      const tokenSlot = wordItem.closest('[data-word-order-activity-target="tokenSlot"]')
+      if (tokenSlot) {
+        tokenSlot.classList.remove('filled')
+      }
       wordBank.appendChild(wordItem)
-    } else if (currentContainer === wordBank) {
-      // Move from word bank to result line
-      resultLine.appendChild(wordItem)
+    } else {
+      // Token is in word bank, try to place it in the first available slot
+      this.playTokenAudio(event);
+      const tokenSlot = this.findFirstAvailableSlot(phraseIndex)
+      if (tokenSlot) {
+        this.clearTokenSlot(tokenSlot)
+        tokenSlot.appendChild(wordItem)
+        tokenSlot.classList.add('filled')
+        wordItem.classList.add('in-slot')
+      }
     }
+  }
+
+  findTokenSlot(phraseIndex, tokenId) {
+    return this.tokenSlotTargets.find(slot => 
+      slot.closest('[data-index]')?.dataset.index == phraseIndex && 
+      slot.dataset.tokenId === tokenId
+    )
+  }
+
+  findFirstAvailableSlot(phraseIndex) {
+    return this.tokenSlotTargets.find(slot => 
+      slot.closest('[data-index]')?.dataset.index == phraseIndex && 
+      !slot.classList.contains('filled')
+    )
   }
 
   getCurrentPhraseIndex() {
@@ -175,24 +295,48 @@ export default class extends Controller {
     const phraseContainer = this.phraseContainerTargets.find(container => 
       parseInt(container.dataset.index) === phraseIndex
     )
-    const correctText = phraseContainer.dataset.correctText
-    const resultLine = this.getResultLineForPhrase(phraseIndex)
     
-    // Get the current order of words in the result line
-    const wordsInResult = Array.from(resultLine.children).map(wordItem => 
-      wordItem.dataset.wordText
-    )
-    const userAnswer = wordsInResult.join(' ')
+    // Check if all token slots are filled correctly
+    const tokenSlots = this.getTokenSlotsForPhrase(phraseIndex)
+    const allSlotsFilled = tokenSlots.every(slot => slot.classList.contains('filled'))
+    
+    if (!allSlotsFilled) {
+      this.showIncorrectFeedback("Please fill in all the words!")
+      return
+    }
+    
+    // Validate each token is in the correct slot
+    const allCorrect = tokenSlots.every(slot => {
+      const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
+      return token && token.dataset.tokenId === slot.dataset.tokenId
+    })
 
-    if (userAnswer.trim() === correctText.trim()) {
+    if (allCorrect) {
+      // Mark slots as correct
+      tokenSlots.forEach(slot => slot.classList.add('correct'))
       this.showCorrectFeedback()
       setTimeout(() => {
         this.moveToNextPhrase()
       }, 1500)
     } else {
+      // Mark incorrect slots
+      tokenSlots.forEach(slot => {
+        const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
+        if (!token || token.dataset.tokenId !== slot.dataset.tokenId) {
+          slot.classList.add('incorrect')
+        }
+      })
       this.showIncorrectFeedback()
-      this.resetWordsToBank(phraseIndex)
+      setTimeout(() => {
+        this.resetTokensToBank(phraseIndex)
+      }, 2000)
     }
+  }
+
+  getTokenSlotsForPhrase(phraseIndex) {
+    return this.tokenSlotTargets.filter(slot => 
+      slot.closest('[data-index]')?.dataset.index == phraseIndex
+    )
   }
 
   showCorrectFeedback() {
@@ -206,9 +350,9 @@ export default class extends Controller {
     }, 1500)
   }
 
-  showIncorrectFeedback() {
+  showIncorrectFeedback(message = "Not quite right. Try again!") {
     const feedbackMessage = this.feedbackMessageTarget
-    feedbackMessage.textContent = "Not quite right. Try again!"
+    feedbackMessage.textContent = message
     feedbackMessage.className = "mt-4 p-3 rounded-lg text-center text-lg font-medium incorrect-feedback"
     feedbackMessage.classList.remove('hidden')
     feedbackMessage.classList.add('animate-shake')
@@ -219,13 +363,18 @@ export default class extends Controller {
     }, 2000)
   }
 
-  resetWordsToBank(phraseIndex) {
-    const resultLine = this.getResultLineForPhrase(phraseIndex)
+  resetTokensToBank(phraseIndex) {
+    const tokenSlots = this.getTokenSlotsForPhrase(phraseIndex)
     const wordBank = this.getWordBankForPhrase(phraseIndex)
     
-    // Move all words from result line back to word bank
-    Array.from(resultLine.children).forEach(wordItem => {
-      wordBank.appendChild(wordItem)
+    // Move all tokens from slots back to word bank and clear visual states
+    tokenSlots.forEach(slot => {
+      const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
+      if (token) {
+        token.classList.remove('in-slot')
+        wordBank.appendChild(token)
+      }
+      slot.classList.remove('filled', 'correct', 'incorrect')
     })
   }
 

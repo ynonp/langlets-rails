@@ -1,7 +1,7 @@
 <%# Expects:
-  params[:phrases] - An array of phrases data: [l2_text, l1_text, timestamp_start, timestamp_end]
-  params[:l1] - Language code for target phrase (for example "he", "en", "es", "ar-ps")
-  params[:l2] - Language code for displayed phrase (for example "he", "en", "es", "ar-ps")
+  params[:phrases] - An array of phrase data with word_segments
+  params[:l1] - Language object for target phrase
+  params[:l2] - Language object for displayed phrase
   params[:video_id] - YouTube video ID
   params[:start_timestamp] - Start timestamp for the video segment
   params[:end_timestamp] - End timestamp for the video segment
@@ -35,22 +35,22 @@
       </div>
     </div>
     
-    <% phrases.each_with_index do |(l2_text, l1_text, timestamp_start, timestamp_end), index| %>
+    <% phrases.each_with_index do |phrase_data, index| %>
       <div 
         data-word-order-activity-target="phraseContainer"
         data-index="<%= index %>"
-        data-correct-text="<%= l1_text %>"        
+        data-correct-text="<%= phrase_data[:l1_text] %>"        
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- L2 phrase (target language) -->
         <div class="my-4 text-md md:text-xl text-white w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
-          <span class="<%= l2_rtl ? "text-right" : "text-left" %>"><%= l2_text %></span>
+          <span class="<%= l2_rtl ? "text-right" : "text-left" %>"><%= phrase_data[:l2_text] %></span>
           <button 
             data-action="click->main-video-player#playSegment"
-            data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
-            data-main-video-player-segment-end-param="<%= timestamp_to_seconds(timestamp_end) %>"
+            data-main-video-player-segment-start-param="<%= timestamp_to_seconds(phrase_data[:timestamp_start]) %>"
+            data-main-video-player-segment-end-param="<%= timestamp_to_seconds(phrase_data[:timestamp_end]) %>"
             data-word-order-activity-target="speakerButton"
-            data-phrase="<%= l2_text %>"
+            data-phrase="<%= phrase_data[:l2_text] %>"
             data-phrase-index="<%= index %>"
             class="ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
             title="Play audio">
@@ -60,15 +60,34 @@
           </button>
         </div>
         
-        <!-- Result line (blank lines for arranging words) -->
+        <!-- Result line (slots for arranging words with static text) -->
         <div class="my-4">
           <h3 class="text-white text-lg mb-3">Your answer:</h3>
           <div 
             data-word-order-activity-target="resultLine"
-            data-action="dragover->word-order-activity#handleDragOver dragleave->word-order-activity#handleDragLeave drop->word-order-activity#handleDrop"
-            class="result-line p-4 border-2 border-dashed border-gray-600 rounded-lg bg-gray-900 flex flex-wrap gap-2 items-start <%= l1_rtl ? "text-right flex-row-reverse" : "text-left" %>"
+            class="result-line p-4 border-2 border-gray-600 rounded-lg bg-gray-900 flex flex-wrap gap-1 items-center <%= l1_rtl ? "text-right flex-row-reverse" : "text-left" %>"
             data-phrase-index="<%= index %>">
-            <!-- Words will be dropped here -->
+            
+            <% phrase_data[:word_segments].each_with_index do |segment, seg_index| %>
+              <% if segment[:type] == "static" %>
+                <!-- Static text segment (non-draggable) -->
+                <span class="static-text text-white text-lg px-1">
+                  <%= segment[:text] %>
+                </span>
+              <% else %>
+                <!-- Token slot (draggable destination) -->
+                <div 
+                  data-word-order-activity-target="tokenSlot"
+                  data-action="dragover->word-order-activity#handleSlotDragOver dragleave->word-order-activity#handleSlotDragLeave drop->word-order-activity#handleSlotDrop"
+                  data-token-id="<%= segment[:token_id] %>"
+                  data-expected-text="<%= segment[:text] %>"
+                  data-audio-url="<%= segment[:audio_url] %>"
+                  data-segment-index="<%= seg_index %>"
+                  class="token-slot min-w-[80px] min-h-[40px] border border-gray-500 border-dashed rounded bg-gray-800 flex items-center justify-center text-center">
+                  <!-- Token will be placed here -->
+                </div>
+              <% end %>
+            <% end %>
           </div>
         </div>
         
@@ -81,18 +100,20 @@
             class="word-bank p-4 border border-gray-700 rounded-lg bg-gray-800 flex flex-wrap gap-2 <%= l1_rtl ? "text-right flex-row-reverse" : "text-left" %>"
             data-phrase-index="<%= index %>">
             <% 
-              # Split the L1 text into words and shuffle them
-              words = l1_text.split(/\s+/).map.with_index { |word, i| { text: word, id: "word-#{index}-#{i}" } }.shuffle
+              # Generate word bank items from token segments (only draggable tokens)
+              token_segments = phrase_data[:word_segments].select { |segment| segment[:type] == "token" }
+              shuffled_tokens = token_segments.shuffle
             %>
-            <% words.each do |word| %>
+            <% shuffled_tokens.each_with_index do |segment, token_index| %>
               <span 
                 data-word-order-activity-target="wordItem"
-                data-word-id="<%= word[:id] %>"
-                data-word-text="<%= word[:text] %>"
+                data-token-id="<%= segment[:token_id] %>"
+                data-word-text="<%= segment[:text] %>"
+                data-audio-url="<%= segment[:audio_url] %>"
                 data-action="click->word-order-activity#handleWordClick dragstart->word-order-activity#handleDragStart dragend->word-order-activity#handleDragEnd touchstart->word-order-activity#handleTouchStart touchmove->word-order-activity#handleTouchMove touchend->word-order-activity#handleTouchEnd"
                 draggable="true"
                 class="word-item px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg cursor-pointer transition-colors duration-200 text-md select-none">
-                <%= word[:text] %>
+                <%= segment[:text] %>
               </span>
             <% end %>
           </div>
@@ -209,5 +230,67 @@
 .word-bank.flex-row-reverse .word-item {
   margin-left: 0;
   margin-right: 0.5rem;
+}
+
+/* Token slot styles */
+.token-slot {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.token-slot.drag-over {
+  border-color: #3b82f6;
+  background-color: rgba(59, 130, 246, 0.2);
+}
+
+.token-slot.filled {
+  border: 0;
+  background: transparent;
+  width: auto;
+  min-width: inherit;
+}
+
+.token-slot.correct {
+  border-color: #10b981;
+  background-color: rgba(16, 185, 129, 0.2);
+}
+
+.token-slot.incorrect {
+  border-color: #ef4444;
+  background-color: rgba(239, 68, 68, 0.2);
+}
+
+/* Static text styles */
+.static-text {
+  white-space: pre-wrap;
+  line-height: 40px; /* Match token slot height */
+}
+
+/* Audio button styles */
+.word-item button {
+  font-size: 12px;
+  line-height: 1;
+  padding: 2px;
+}
+
+/* Token in slot styling */
+.word-item.in-slot {
+  background-color: #059669;
+}
+
+.word-item.in-slot:hover {
+  background-color: #047857;
+}
+
+/* Responsive token slot sizing */
+@media (max-width: 640px) {
+  .token-slot {
+    min-width: 60px;
+    min-height: 36px;
+    font-size: 14px;
+  }
+  
+  .static-text {
+    font-size: 16px;
+  }
 }
 </style>
