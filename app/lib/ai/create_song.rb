@@ -131,8 +131,8 @@ module Ai
               attach_audio_to_record(t, token_translation_data["audio_data"], "token_#{phrase_index}_#{t.l1_start_index}.wav")
             end
 
-            a6.token_translations << t if token_translation_data["listening_activity"] == 1
-            a4.token_translations << t if token_translation_data["language_alignment_activity"] == 1
+            a7.token_translations << t if token_translation_data["listening_activity"] == 1
+            a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
           end
           p
         end
