@@ -21,29 +21,8 @@ export default class extends Controller {
 
   connect() {
     this.currentPhraseIndex = 0
-    this.setupDragAndDrop()
-  }
-
-  setupDragAndDrop() {
-    // Add drag event listeners to all word items
-    this.wordItemTargets.forEach(wordItem => {
-      wordItem.addEventListener('dragstart', this.handleDragStart.bind(this))
-      wordItem.addEventListener('dragend', this.handleDragEnd.bind(this))
-    })
-
-    // Add drop event listeners to result lines
-    this.resultLineTargets.forEach(resultLine => {
-      resultLine.addEventListener('dragover', this.handleDragOver.bind(this))
-      resultLine.addEventListener('drop', this.handleDrop.bind(this))
-      resultLine.addEventListener('dragleave', this.handleDragLeave.bind(this))
-    })
-
-    // Add drop event listeners to word banks (for returning words)
-    this.wordBankTargets.forEach(wordBank => {
-      wordBank.addEventListener('dragover', this.handleDragOver.bind(this))
-      wordBank.addEventListener('drop', this.handleDrop.bind(this))
-      wordBank.addEventListener('dragleave', this.handleDragLeave.bind(this))
-    })
+    this.draggedElement = null
+    this.touchOffset = { x: 0, y: 0 }
   }
 
   handleDragStart(event) {
@@ -79,6 +58,79 @@ export default class extends Controller {
 
     // Move the element to the drop target
     dropTarget.appendChild(draggedElement)
+  }
+
+  // Touch event handlers for mobile support
+  handleTouchStart(event) {
+    event.preventDefault()
+    this.draggedElement = event.target
+    event.target.classList.add('dragging')
+    
+    const touch = event.touches[0]
+    const rect = event.target.getBoundingClientRect()
+    this.touchOffset = {
+      x: touch.clientX - rect.left,
+      y: touch.clientY - rect.top
+    }
+  }
+
+  handleTouchMove(event) {
+    if (!this.draggedElement) return
+    event.preventDefault()
+    
+    const touch = event.touches[0]
+    
+    // Move the dragged element visually
+    this.draggedElement.style.position = 'fixed'
+    this.draggedElement.style.left = `${touch.clientX - this.touchOffset.x}px`
+    this.draggedElement.style.top = `${touch.clientY - this.touchOffset.y}px`
+    this.draggedElement.style.zIndex = '1000'
+    this.draggedElement.style.pointerEvents = 'none'
+    
+    // Find element under touch point
+    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
+    
+    // Remove drag-over class from all potential drop targets
+    this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
+    this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+    
+    // Add drag-over class to valid drop target
+    if (elementBelow) {
+      const dropTarget = elementBelow.closest('[data-word-order-activity-target="resultLine"], [data-word-order-activity-target="wordBank"]')
+      if (dropTarget) {
+        dropTarget.classList.add('drag-over')
+      }
+    }
+  }
+
+  handleTouchEnd(event) {
+    if (!this.draggedElement) return
+    event.preventDefault()
+    
+    const touch = event.changedTouches[0]
+    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
+    
+    // Reset element styles
+    this.draggedElement.style.position = ''
+    this.draggedElement.style.left = ''
+    this.draggedElement.style.top = ''
+    this.draggedElement.style.zIndex = ''
+    this.draggedElement.style.pointerEvents = ''
+    this.draggedElement.classList.remove('dragging')
+    
+    // Remove drag-over class from all targets
+    this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
+    this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+    
+    // Find drop target and move element
+    if (elementBelow) {
+      const dropTarget = elementBelow.closest('[data-word-order-activity-target="resultLine"], [data-word-order-activity-target="wordBank"]')
+      if (dropTarget && dropTarget !== this.draggedElement.parentElement) {
+        dropTarget.appendChild(this.draggedElement)
+      }
+    }
+    
+    this.draggedElement = null
   }
 
   handleWordClick(event) {
