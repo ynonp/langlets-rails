@@ -25,6 +25,9 @@ export default class extends Controller {
     this.draggedElement = null
     this.touchOffset = { x: 0, y: 0 }
     this.audioElement = null
+    this.touchStartTime = null
+    this.touchStartPosition = null
+    this.isDragging = false
   }
 
   // Audio playback for tokens
@@ -83,7 +86,14 @@ export default class extends Controller {
         }
         draggedElement.classList.remove('in-slot')
       }
-      dropTarget.appendChild(draggedElement)
+      
+      // Find the insertion point based on drop position
+      const insertionPoint = this.findInsertionPoint(dropTarget, event.clientX, event.clientY)
+      if (insertionPoint) {
+        dropTarget.insertBefore(draggedElement, insertionPoint)
+      } else {
+        dropTarget.appendChild(draggedElement)
+      }
     }
     // Note: Token slot drops are handled by handleSlotDrop
   }
@@ -139,9 +149,15 @@ export default class extends Controller {
 
   // Touch event handlers for mobile support
   handleTouchStart(event) {
-    event.preventDefault()
+    this.touchStartTime = Date.now()
+    this.touchStartPosition = {
+      x: event.touches[0].clientX,
+      y: event.touches[0].clientY
+    }
+    this.isDragging = false
+    
+    // Don't prevent default immediately - let it potentially become a click
     this.draggedElement = event.target
-    event.target.classList.add('dragging')
     
     const touch = event.touches[0]
     const rect = event.target.getBoundingClientRect()
@@ -153,79 +169,121 @@ export default class extends Controller {
 
   handleTouchMove(event) {
     if (!this.draggedElement) return
-    event.preventDefault()
     
     const touch = event.touches[0]
+    const currentPosition = {
+      x: touch.clientX,
+      y: touch.clientY
+    }
     
-    // Move the dragged element visually
-    this.draggedElement.style.position = 'fixed'
-    this.draggedElement.style.left = `${touch.clientX - this.touchOffset.x}px`
-    this.draggedElement.style.top = `${touch.clientY - this.touchOffset.y}px`
-    this.draggedElement.style.zIndex = '1000'
-    this.draggedElement.style.pointerEvents = 'none'
+    // Calculate distance moved
+    const deltaX = Math.abs(currentPosition.x - this.touchStartPosition.x)
+    const deltaY = Math.abs(currentPosition.y - this.touchStartPosition.y)
+    const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
     
-    // Find element under touch point
-    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
+    // If moved more than 10px, start dragging
+    if (distance > 10 && !this.isDragging) {
+      this.isDragging = true
+      this.draggedElement.classList.add('dragging')
+      event.preventDefault() // Now prevent default since we're dragging
+    }
     
-    // Remove drag-over class from all potential drop targets
-    this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
-    this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
-    this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
-    
-    // Add drag-over class to valid drop target
-    if (elementBelow) {
-      const dropTarget = elementBelow.closest('[data-word-order-activity-target="tokenSlot"], [data-word-order-activity-target="wordBank"]')
-      if (dropTarget) {
-        dropTarget.classList.add('drag-over')
+    if (this.isDragging) {
+      event.preventDefault()
+      
+      // Move the dragged element visually
+      this.draggedElement.style.position = 'fixed'
+      this.draggedElement.style.left = `${touch.clientX - this.touchOffset.x}px`
+      this.draggedElement.style.top = `${touch.clientY - this.touchOffset.y}px`
+      this.draggedElement.style.zIndex = '1000'
+      this.draggedElement.style.pointerEvents = 'none'
+      
+      // Find element under touch point
+      const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
+      
+      // Remove drag-over class from all potential drop targets
+      this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
+      this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+      this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
+      
+      // Add drag-over class to valid drop target
+      if (elementBelow) {
+        const dropTarget = elementBelow.closest('[data-word-order-activity-target="tokenSlot"], [data-word-order-activity-target="wordBank"]')
+        if (dropTarget) {
+          dropTarget.classList.add('drag-over')
+        }
       }
     }
   }
 
   handleTouchEnd(event) {
     if (!this.draggedElement) return
+    
+    const touchDuration = Date.now() - this.touchStartTime
+    
+    // If it was a quick tap (less than 200ms) and no dragging occurred, let click event fire
+    if (touchDuration < 200 && !this.isDragging) {
+      // Reset and let the click event handle it
+      this.draggedElement.classList.remove('dragging')
+      this.draggedElement = null
+      this.isDragging = false
+      return // Don't prevent default, allow click
+    }
+    
     event.preventDefault()
     
-    const touch = event.changedTouches[0]
-    const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
-    
-    // Reset element styles
-    this.draggedElement.style.position = ''
-    this.draggedElement.style.left = ''
-    this.draggedElement.style.top = ''
-    this.draggedElement.style.zIndex = ''
-    this.draggedElement.style.pointerEvents = ''
-    this.draggedElement.classList.remove('dragging')
-    
-    // Remove drag-over class from all targets
-    this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
-    this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
-    this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
-    
-    // Find drop target and move element
-    if (elementBelow) {
-      const tokenSlot = elementBelow.closest('[data-word-order-activity-target="tokenSlot"]')
-      const wordBank = elementBelow.closest('[data-word-order-activity-target="wordBank"]')
+    // Handle drag end
+    if (this.isDragging) {
+      const touch = event.changedTouches[0]
+      const elementBelow = document.elementFromPoint(touch.clientX, touch.clientY)
       
-      if (tokenSlot && !tokenSlot.classList.contains('filled')) {
-        // Valid token slot that is available
-        this.clearTokenSlot(tokenSlot)
-        tokenSlot.appendChild(this.draggedElement)
-        tokenSlot.classList.add('filled')
-        this.draggedElement.classList.add('in-slot')
-      } else if (wordBank) {
-        // Return to word bank
-        if (this.draggedElement.classList.contains('in-slot')) {
-          const currentSlot = this.draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
-          if (currentSlot) {
-            currentSlot.classList.remove('filled')
+      // Reset element styles
+      this.draggedElement.style.position = ''
+      this.draggedElement.style.left = ''
+      this.draggedElement.style.top = ''
+      this.draggedElement.style.zIndex = ''
+      this.draggedElement.style.pointerEvents = ''
+      
+      // Remove drag-over class from all targets
+      this.resultLineTargets.forEach(line => line.classList.remove('drag-over'))
+      this.wordBankTargets.forEach(bank => bank.classList.remove('drag-over'))
+      this.tokenSlotTargets.forEach(slot => slot.classList.remove('drag-over'))
+      
+      // Find drop target and move element
+      if (elementBelow) {
+        const tokenSlot = elementBelow.closest('[data-word-order-activity-target="tokenSlot"]')
+        const wordBank = elementBelow.closest('[data-word-order-activity-target="wordBank"]')
+        
+        if (tokenSlot && !tokenSlot.classList.contains('filled')) {
+          // Valid token slot that is available
+          this.clearTokenSlot(tokenSlot)
+          tokenSlot.appendChild(this.draggedElement)
+          tokenSlot.classList.add('filled')
+          this.draggedElement.classList.add('in-slot')
+        } else if (wordBank) {
+          // Return to word bank
+          if (this.draggedElement.classList.contains('in-slot')) {
+            const currentSlot = this.draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
+            if (currentSlot) {
+              currentSlot.classList.remove('filled')
+            }
+            this.draggedElement.classList.remove('in-slot')
           }
-          this.draggedElement.classList.remove('in-slot')
+          
+          // Find the insertion point based on touch position
+          const insertionPoint = this.findInsertionPoint(wordBank, touch.clientX, touch.clientY)
+          if (insertionPoint) {
+            wordBank.insertBefore(this.draggedElement, insertionPoint)
+          } else {
+            wordBank.appendChild(this.draggedElement)
+          }
         }
-        wordBank.appendChild(this.draggedElement)
       }
     }
     
+    this.draggedElement.classList.remove('dragging')
     this.draggedElement = null
+    this.isDragging = false
   }
 
   handleWordClick(event) {
@@ -268,6 +326,25 @@ export default class extends Controller {
       slot.closest('[data-index]')?.dataset.index == phraseIndex && 
       !slot.classList.contains('filled')
     )
+  }
+
+  findInsertionPoint(wordBank, clientX, clientY) {
+    const wordItems = Array.from(wordBank.querySelectorAll('[data-word-order-activity-target="wordItem"]'))
+    
+    for (let item of wordItems) {
+      if (item === this.draggedElement) continue
+      
+      const rect = item.getBoundingClientRect()
+      const itemCenterX = rect.left + rect.width / 2
+      const itemCenterY = rect.top + rect.height / 2
+      
+      // Check if drop position is before this item
+      if (clientX < itemCenterX || (clientX === itemCenterX && clientY < itemCenterY)) {
+        return item
+      }
+    }
+    
+    return null // Insert at end
   }
 
   getCurrentPhraseIndex() {
