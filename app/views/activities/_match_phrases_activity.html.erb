@@ -17,6 +17,7 @@
 <% total_phrases = phrases.length %>
 <% l1_rtl = params[:l1].rtl %>
 <% l2_rtl = params[:l2].rtl %>
+<% all_l2_texts = params[:all_l2_texts] %>
 
 <div
     data-controller="match-activity"
@@ -91,6 +92,15 @@
             distractors = all_translations - [translation]
             # Take 3 random distractors
             distractors = distractors.sample(3)
+            
+            # If we don't have enough distractors, fill from all_l2_texts
+            if distractors.length < 3 && all_l2_texts.present?
+              # Remove already selected distractors and the correct translation
+              excluded = distractors + [translation]
+              additional_distractors = (all_l2_texts - excluded).sample(3 - distractors.length)
+              distractors += additional_distractors
+            end
+            
             # Add the correct answer
             options = distractors + [translation]
             # Shuffle the options

@@ -4,6 +4,7 @@ module Activities
       {
         **video_params,
         phrases: processed_phrases,
+        all_l2_texts: lesson.medium.phrases.map {|p| p.text_l2 }.uniq,
         l1: phrases.first.l1,
         l2: phrases.first.l2
       }
