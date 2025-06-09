@@ -1,18 +1,9 @@
 module Activities
   class MatchPhrasesActivity < Activity
     def activity_params
-      phrases_data_for_activity = ordered_phrases.zip(ordered_phrases[1..]).map {|p, np| 
-        [
-          p.text_l1,
-          p.text_l2,
-          p.timestamp,
-          np&.timestamp || to_string_timestamp(p.timestamp_seconds + 5),
-        ]
-      }
-
       {
         **video_params,
-        phrases: phrases_data_for_activity,
+        phrases: processed_phrases,
         l1: phrases.first.l1,
         l2: phrases.first.l2
       }
@@ -20,6 +11,21 @@ module Activities
 
     def ordered_phrases
       @ordered_phrases ||= phrases.ordered_by_timestamp.includes(token_translations: { l1_audio_attachment: :blob }).to_a
+    end
+
+    private
+
+    def processed_phrases
+      @processed_phrases ||= begin
+        phrases_array = ordered_phrases
+        phrases_array.each_with_index do |phrase, index|
+          next_phrase = phrases_array[index + 1]
+          timestamp_end = next_phrase&.timestamp || to_string_timestamp(phrase.timestamp_seconds + 5)
+          
+          phrase.define_singleton_method(:calculated_end_timestamp) { timestamp_end }
+        end
+        phrases_array
+      end
     end
   end
 end

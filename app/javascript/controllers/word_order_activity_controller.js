@@ -234,7 +234,6 @@ export default class extends Controller {
     
     const phraseIndex = this.getCurrentPhraseIndex()
     const wordBank = this.getWordBankForPhrase(phraseIndex)
-    const tokenId = wordItem.dataset.tokenId
 
     if (wordItem.classList.contains('in-slot')) {
       // Token is in a slot, move it back to word bank

@@ -8,7 +8,10 @@ module ActivitiesHelper
     if phrase.token_translations.empty?
       content_tag(:span, phrase.text_l1)
     else
-      texts = phrase.token_translations.joins(l1_audio_attachment: :blob).includes(l1_audio_attachment: :blob).order(l1_start_index: :asc).to_a.inject([]) do |acc, val|
+      # Use the already loaded token_translations, sort them by l1_start_index
+      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      
+      texts = loaded_tokens.inject([]) do |acc, val|
         next_translated_token = {
           "l1" => phrase.text_l1[val.l1_start_index...val.l1_end_index],
           "l2" => val.translation,
