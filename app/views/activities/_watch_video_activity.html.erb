@@ -111,11 +111,4 @@
   </div>
 
   <!-- preload audio files -->
-<% phrases.each do |phrase| %>
-  <% phrase.token_translations.each do |t| %>
-    <% if t.l1_audio.attached? %>
-      <audio src="<%= url_for(t.l1_audio) %>" preload="auto" />
-    <% end %>
-  <% end %>
-<% end %>
 </div>
