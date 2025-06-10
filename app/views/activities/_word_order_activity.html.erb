@@ -71,9 +71,7 @@
             <% phrase_data[:word_segments].each_with_index do |segment, seg_index| %>
               <% if segment[:type] == "static" %>
                 <!-- Static text segment (non-draggable) -->
-                <span class="static-text text-white text-lg px-1">
-                  <%= segment[:text] %>
-                </span>
+                <span class="whitespace-pre-wrap leading-[40px] text-white text-lg px-1"><%= segment[:text] %></span>
               <% else %>
                 <!-- Token slot (draggable destination) -->
                 <div 
@@ -259,12 +257,6 @@
   background-color: rgba(239, 68, 68, 0.2);
 }
 
-/* Static text styles */
-.static-text {
-  white-space: pre-wrap;
-  line-height: 40px; /* Match token slot height */
-}
-
 /* Audio button styles */
 .word-item button {
   font-size: 12px;
@@ -289,8 +281,5 @@
     font-size: 14px;
   }
   
-  .static-text {
-    font-size: 16px;
-  }
 }
 </style>

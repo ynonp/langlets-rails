@@ -63,9 +63,12 @@ export default class extends Controller {
 
   async togglePlayback() {
     const {player, segmentStartValue} = this;
-    if (this.hasStartActivityButtonTarget && this.startActivityButtonTarget.classList.contains('hidden')) {
-      this.playVideoButtonTarget.classList.add('hidden');
+    if (this.hasStartActivityButtonTarget) {
       this.startActivityButtonTarget.classList.remove('hidden');  
+    }
+
+    if (this.hasPlayVideoButtonTarget) {
+      this.playVideoButtonTarget.classList.add('hidden');
     }
 
     const state = await player.getPlayerState();
@@ -184,11 +187,10 @@ export default class extends Controller {
 
   seekToTimestamp(ev) {
     const targetTime = ev.currentTarget.dataset.timestamp
-    console.log('2');
     this.player.seekTo(targetTime);
   }
 
-  seekToPosition(event) {
+  async seekToPosition(event) {
     // Prevent the event from bubbling up to the YouTube player
     event.preventDefault();
     event.stopPropagation();
@@ -206,7 +208,9 @@ export default class extends Controller {
     const targetTime = this.segmentStartValue + (clickPercentage / 100) * segmentLength;
     
     // Seek to the calculated time
-    this.player.seekTo(targetTime);
+    await this.player.seekTo(targetTime);
+    this.updateProgressBar();
+    this.updateSubtitles();
   }
 }
 

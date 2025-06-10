@@ -55,23 +55,11 @@
           class="mr-2">
         Toggle Translation
       </label>
-      <button
-        data-video-player-target="playVideoButton"
-        data-action="click->video-player#togglePlayback"
-        class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200"
-      >
-        Play Video
-      </button>
-      <%= link_to "Next Activity", @next_activity_path,
-        { class: "hidden px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200",
+      <%= link_to "Practice Vocabulary", @next_activity_path,
+        { class: "hidden px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200",
           data: { video_player_target: "startActivityButton" }
         } %>
     </div>
-
-    <div class="my-6 flex justify-center hidden">
-      <%= link_to "Start Practice", @next_activity_path, { class: "w-full sm:w-auto px-6 py-3 sm:py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 text-center text-lg sm:text-base"} %>
-    </div>
-
 
     <!-- Phrases Container with scrolling -->
     <div

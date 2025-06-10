@@ -6,8 +6,11 @@
 <div class="py-2 px-2 overflow-x-auto">
   <div class="flex items-center min-w-min">  
     <%= link_to @course_path, class: "text-white mr-4 p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200", title: "Back to Course", data: {:"turbo-frame" => "_top"} do %>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-        <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clip-rule="evenodd" />
+      <svg xmlns="http://www.w3.org/2000/svg" 
+        viewBox="0 0 384 512"
+        class="h-5 w-5 fill-white"
+      >
+        <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
       </svg>
     <% end %>
 
