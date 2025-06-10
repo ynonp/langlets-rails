@@ -75,6 +75,18 @@ export default class extends Controller {
     const word = wordButton.dataset.word;
     const isCorrect = wordButton.dataset.correct === 'true';
     
+    // Add visual feedback animation
+    if (isCorrect) {
+      wordButton.classList.add('correct-animation');
+    } else {
+      wordButton.classList.add('incorrect-animation');
+    }
+    
+    // Remove animation class after animation completes
+    setTimeout(() => {
+      wordButton.classList.remove('correct-animation', 'incorrect-animation');
+    }, 600);
+    
     if (isCorrect) {
       // Dispatch event to play the video instead of direct call
       const playEvent = new CustomEvent('listen-activity:play-video');
@@ -92,14 +104,17 @@ export default class extends Controller {
       // Move to next token
       this.currentTokenIndex++;
       
-      // Update word selection if we have more tokens
-      if (this.currentTokenIndex < this.allTokens.length) {
-        this.updateWordSelection();
-      } else {
-        // All tokens filled, show completion message
-        this.wordSelectionTarget.classList.add('hidden');
-        this.completionTarget.classList.remove('hidden');
-      }
+      // Delay updating word selection to allow animation to be visible
+      setTimeout(() => {
+        // Update word selection if we have more tokens
+        if (this.currentTokenIndex < this.allTokens.length) {
+          this.updateWordSelection();
+        } else {
+          // All tokens filled, show completion message
+          this.wordSelectionTarget.classList.add('hidden');
+          this.completionTarget.classList.remove('hidden');
+        }
+      }, 650); // Slightly longer than animation duration
     }
   }
   
@@ -136,4 +151,4 @@ export default class extends Controller {
     // Remove event listeners
     this.element.removeEventListener('video-player:phrase-activated', this.handlePhraseActivated);
   }
-} 
+}
