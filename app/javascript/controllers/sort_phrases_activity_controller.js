@@ -1,5 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
-import Sortable from 'sortablejs';
+
 
 
 // Connects to data-controller="sort-phrases-activity"
@@ -11,7 +11,8 @@ export default class extends Controller {
     this.checkOrder = this.checkOrder.bind(this);
   }
 
-  connect() {
+  async connect() {
+    const Sortable = (await import('https://esm.run/sortablejs@1.15.6')).default;
     this.sortable = Sortable.create(this.phrasesContainerTarget, {
       animation: 150,
       ghostClass: 'sortable-ghost',

@@ -1,5 +1,4 @@
 import { Controller } from "@hotwired/stimulus"
-import * as SpeechSDK from "microsoft-cognitiveservices-speech-sdk";
 
 // Connects to data-controller="speech-recognition"
 export default class extends Controller {
@@ -40,6 +39,8 @@ export default class extends Controller {
   async startPronunciationAssessment() {
     console.log('Assessing phrase:', this.phraseTextValue);
     try {
+      await import('https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js');
+      const SpeechSDK = window.SpeechSDK
       // Step 1: Get token from your Rails backend
       const res = await fetch('/azure_token');
       const { token, region } = await res.json();
