@@ -71,7 +71,6 @@ export default class extends Controller {
   startPlaybackMonitoring() {
     this.monitorPlaybackInterval = setInterval(async () => {
       const at = await this.player.getCurrentTime();
-      console.log(at);
       if (at >= this.segmentEnd) {
         this.player.pauseVideo();
       }

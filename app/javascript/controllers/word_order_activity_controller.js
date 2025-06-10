@@ -384,7 +384,7 @@ export default class extends Controller {
     // Validate each token is in the correct slot
     const allCorrect = tokenSlots.every(slot => {
       const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
-      return token && token.dataset.tokenId === slot.dataset.tokenId
+      return token && token.dataset.wordText === slot.dataset.expectedText
     })
 
     if (allCorrect) {
@@ -398,7 +398,7 @@ export default class extends Controller {
       // Mark incorrect slots
       tokenSlots.forEach(slot => {
         const token = slot.querySelector('[data-word-order-activity-target="wordItem"]')
-        if (!token || token.dataset.tokenId !== slot.dataset.tokenId) {
+        if (!token || token.dataset.wordText !== slot.dataset.expectedText) {
           slot.classList.add('incorrect')
         }
       })
