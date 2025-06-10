@@ -62,7 +62,7 @@ module ActivitiesHelper
         
         if audio_url.present?
           content_tag(:div, 
-                      span_content + content_tag(:audio, "", src: audio_url, preload: "auto"),
+                      span_content + content_tag(:audio, "", src: audio_url, preload: "none"),
                       val["l2"].present? ? attributes_map : {})
         else
           span_content
