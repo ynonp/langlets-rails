@@ -3,8 +3,11 @@ module Activities
     include ActivityWithTokens
 
     def activity_params
+      all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
       phrases_data_for_activity = ordered_phrases.map.with_index do |phrase, index|
-        next_phrase = ordered_phrases[index + 1]
+        # Find the next phrase in the medium that comes after this phrase
+        current_phrase_index = all_medium_phrases.find_index { |p| p.id == phrase.id }
+        next_phrase = current_phrase_index ? all_medium_phrases[current_phrase_index + 1] : nil
         
         {
           l2_text: phrase.text_l2,
