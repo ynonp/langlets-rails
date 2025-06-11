@@ -8,19 +8,12 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'progressBarContainer', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton'];
+  static targets = ['player', 'playButton', 'progressBar', 'progressBarContainer', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton', 'thumbnail'];
   static classes = ['currentTextLine'];
 
   initialize() {
-    this.player = YouTubePlayer(this.playerTarget, {
-      videoId: this.videoIdValue,
-      playerVars: {
-        autoplay: 0,
-        controls: 0,
-        start: this.segmentStartValue,
-        modestbranding: 1,
-      },
-    });
+    this.player = null;
+    this.playerInitialized = false;
     this.monitorPlaybackInterval = null;
   }
 
@@ -28,6 +21,25 @@ export default class extends Controller {
     // Setup event listeners for communication with listen activity controller
     this.element.addEventListener('listen-activity:pause-video', this.handlePauseVideo.bind(this));
     this.element.addEventListener('listen-activity:play-video', this.handlePlayVideo.bind(this));
+  }
+
+  initializePlayer() {
+    if (this.playerInitialized) return;
+    
+    // Hide the thumbnail when initializing the player
+    if (this.hasThumbnailTarget) {
+      this.thumbnailTarget.style.display = 'none';
+    }
+    
+    this.player = YouTubePlayer(this.playerTarget, {
+      videoId: this.videoIdValue,
+      playerVars: {
+        autoplay: 1,
+        controls: 0,
+        start: this.segmentStartValue,
+        modestbranding: 1,
+      },
+    });
     
     this.player.on('stateChange', (event) => {
       if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
@@ -45,15 +57,21 @@ export default class extends Controller {
         this.hidePlayButton();
       }
     });
+    
+    this.playerInitialized = true;
   }
   
   // Handler for the pause video event
   handlePauseVideo() {
-    this.player.pauseVideo();
+    if (this.player) {
+      this.player.pauseVideo();
+    }
   }
   
   // Handler for the play video event
   async handlePlayVideo() {
+    if (!this.player) return;
+    
     const currentTime = await this.player.getCurrentTime();
     if (!currentTime || currentTime < this.segmentStartValue || currentTime >= this.segmentEndValue) {
       this.player.seekTo(this.segmentStartValue);
@@ -62,7 +80,13 @@ export default class extends Controller {
   }
 
   async togglePlayback() {
-    const {player, segmentStartValue} = this;
+    const {segmentStartValue} = this;
+    
+    // Initialize player on first interaction
+    if (!this.playerInitialized) {
+      this.initializePlayer();
+    }
+    
     if (this.hasStartActivityButtonTarget) {
       this.startActivityButtonTarget.classList.remove('hidden');  
     }
@@ -71,23 +95,25 @@ export default class extends Controller {
       this.playVideoButtonTarget.classList.add('hidden');
     }
 
-    const state = await player.getPlayerState();
+    const state = await this.player.getPlayerState();
     if (state === YT.PlayerState.PLAYING) {
-      player.pauseVideo();
+      this.player.pauseVideo();
       this.showPlayButton();
     } else {
       // Only seek to segment start if video hasn't started yet or is before the segment
-      const currentTime = await player.getCurrentTime();
+      const currentTime = await this.player.getCurrentTime();
       if (currentTime < segmentStartValue || currentTime >= this.segmentEndValue) {
-        player.seekTo(segmentStartValue);
+        this.player.seekTo(segmentStartValue);
       }
-      player.playVideo();
+      this.player.playVideo();
       this.hidePlayButton();
     }
   }
 
   videoIdValueChanged() {
-    this.player.cueVideoById(this.videoIdValue);
+    if (this.player) {
+      this.player.cueVideoById(this.videoIdValue);
+    }
   }
 
   showPlayButton() {
@@ -186,11 +212,15 @@ export default class extends Controller {
   }
 
   seekToTimestamp(ev) {
-    const targetTime = ev.currentTarget.dataset.timestamp
-    this.player.seekTo(targetTime);
+    if (this.player) {
+      const targetTime = ev.currentTarget.dataset.timestamp
+      this.player.seekTo(targetTime);
+    }
   }
 
   async seekToPosition(event) {
+    if (!this.player) return;
+    
     // Prevent the event from bubbling up to the YouTube player
     event.preventDefault();
     event.stopPropagation();

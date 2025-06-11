@@ -24,13 +24,21 @@
     </div>
     
     <div id="player-container" class="w-full relative aspect-video bg-black">
-      <div data-video-player-target="player" class="w-full h-full pointer-events-none"></div>
+      <!-- YouTube Thumbnail Background -->
+      <div class="absolute inset-0 z-10">
+        <img src="https://img.youtube.com/vi/<%= params[:video_id] %>/maxresdefault.jpg" 
+             alt="Video thumbnail"
+             class="w-full h-full object-cover"
+             data-video-player-target="thumbnail">
+      </div>
+      
+      <div data-video-player-target="player" class="w-full h-full pointer-events-none relative z-20"></div>
 
       <!-- Overlay Play Button -->
-      <div id="overlay" class="absolute inset-0 z-20 flex items-center justify-center cursor-pointer bg-transparent"
+      <div id="overlay" class="absolute inset-0 z-30 flex items-center justify-center cursor-pointer bg-transparent"
                         data-action="click->video-player#togglePlayback">
         <button data-video-player-target="playButton"
-          class="text-white text-3xl sm:text-5xl bg-blue-600 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
+          class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
           ▶
         </button>
       </div>

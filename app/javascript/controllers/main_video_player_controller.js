@@ -10,15 +10,24 @@ export default class extends Controller {
 
   disconnect() {
     this.stopPlaybackMonitoring();
-    this.player.destroy();
+    if (this.player) {
+      this.player.destroy();
+    }
   }
 
   initialize() {
-    this.monitorPlaybackInterval = null;      
+    this.monitorPlaybackInterval = null;
+    this.player = null;
+    this.playerInitialized = false;
+  }
+
+  initializePlayer() {
+    if (this.playerInitialized) return;
+    
     this.player = YouTubePlayer(this.playerTarget, {
       videoId: this.videoIdValue,
       playerVars: {
-        autoplay: 0,
+        autoplay: 1,
         controls: 0,
         modestbranding: 1,
       },
@@ -33,6 +42,8 @@ export default class extends Controller {
         this.startPlaybackMonitoring();
       }
     });
+    
+    this.playerInitialized = true;
   }
 
   showPlayButton() {
@@ -54,10 +65,17 @@ export default class extends Controller {
   }
 
   async stopPlayback() {
-    this.player.pauseVideo();
+    if (this.player) {
+      this.player.pauseVideo();
+    }
   }  
 
   async playSegment(event) {    
+    // Initialize player on first playSegment call
+    if (!this.playerInitialized) {
+      this.initializePlayer();
+    }
+    
     const {segmentStart, segmentEnd} = event.params;
     this.segmentStart = segmentStart;
     this.segmentEnd = segmentEnd;
