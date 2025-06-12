@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
+import { animate, easeOut } from "motion";
 
 export default class extends Controller {
   static values = {
@@ -150,8 +151,12 @@ export default class extends Controller {
     if (currentTime >= this.segmentEndValue) {
       this.player.pauseVideo();
       this.showPlayButton();
-      if (this.hasCompletionMessageTarget) {
+      if (this.hasCompletionMessageTarget && this.completionMessageTarget.classList.contains('hidden')) {
         this.completionMessageTarget.classList.remove('hidden');
+        animate(this.completionMessageTarget, 
+          { opacity: [0, 1], scale: [0.8, 1] }, 
+          { duration: 0.3, easing: easeOut }
+        );
       }
       if (this.hasStartActivityButtonTarget) {
         this.startActivityButtonTarget.classList.add('hidden');
