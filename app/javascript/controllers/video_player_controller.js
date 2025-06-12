@@ -1,6 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
-import { animate, easeOut } from "motion";
+import { animate } from "motion/mini";
 
 export default class extends Controller {
   static values = {
@@ -155,7 +155,7 @@ export default class extends Controller {
         this.completionMessageTarget.classList.remove('hidden');
         animate(this.completionMessageTarget, 
           { opacity: [0, 1], scale: [0.8, 1] }, 
-          { duration: 0.3, easing: easeOut }
+          { duration: 0.3, easing: 'easeOut' }
         );
       }
       if (this.hasStartActivityButtonTarget) {
