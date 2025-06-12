@@ -52,6 +52,15 @@
       </div>
     </div>
 
+
+    <div data-video-player-target="completionMessage" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-300">Ready to start the practice?</p>
+      </div>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center">Next</a>
+    </div>    
+
     <!-- Control Bar -->
     <div class="my-4 flex justify-between items-center">
       <label class="flex items-center text-white">
@@ -63,7 +72,7 @@
           class="mr-2">
         Toggle Translation
       </label>
-      <%= link_to "Practice Vocabulary", @next_activity_path,
+      <%= link_to "Skip Video", @next_activity_path,
         { class: "hidden px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200",
           data: { video_player_target: "startActivityButton" }
         } %>

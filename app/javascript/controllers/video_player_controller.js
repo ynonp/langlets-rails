@@ -8,7 +8,7 @@ export default class extends Controller {
     miniPlayer: Boolean,
     videoId: String,
   }
-  static targets = ['player', 'playButton', 'progressBar', 'progressBarContainer', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton', 'thumbnail'];
+  static targets = ['player', 'playButton', 'progressBar', 'progressBarContainer', 'subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'playVideoButton', 'thumbnail', 'completionMessage'];
   static classes = ['currentTextLine'];
 
   initialize() {
@@ -88,7 +88,13 @@ export default class extends Controller {
     }
     
     if (this.hasStartActivityButtonTarget) {
-      this.startActivityButtonTarget.classList.remove('hidden');  
+      if (this.hasCompletionMessageTarget) {
+        if (this.completionMessageTarget.classList.contains('hidden')) {
+          this.startActivityButtonTarget.classList.remove('hidden');  
+        }
+      } else {
+        this.startActivityButtonTarget.classList.remove('hidden');  
+      }      
     }
 
     if (this.hasPlayVideoButtonTarget) {
@@ -144,6 +150,12 @@ export default class extends Controller {
     if (currentTime >= this.segmentEndValue) {
       this.player.pauseVideo();
       this.showPlayButton();
+      if (this.hasCompletionMessageTarget) {
+        this.completionMessageTarget.classList.remove('hidden');
+      }
+      if (this.hasStartActivityButtonTarget) {
+        this.startActivityButtonTarget.classList.add('hidden');
+      }
     }
   }
 
