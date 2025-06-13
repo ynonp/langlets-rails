@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="match-tokens-activity"
 export default class extends Controller {
-  static targets = ['progressBar', 'l1Column', 'l2Column', 'completionMessage'];
+  static targets = ['progressBar', 'l1Column', 'l2Column', 'completionMessage', 'grid'];
   static values = { 
     tokens: Array,
     totalTokens: Number
@@ -64,6 +64,13 @@ export default class extends Controller {
     const tokenId = parseInt(clickedToken.dataset.tokenId);
     const column = clickedToken.dataset.column;
     
+    // Don't allow selection of tokens that are currently animating or matched
+    if (clickedToken.classList.contains('flash-success') || 
+        clickedToken.classList.contains('flash-error') || 
+        clickedToken.classList.contains('matched')) {
+      return;
+    }
+    
     // If clicking the same token, deselect it
     if (this.selectedToken && this.selectedToken.element === clickedToken) {
       this.clearSelection();
@@ -122,6 +129,9 @@ export default class extends Controller {
     element1.classList.add('flash-success');
     element2.classList.add('flash-success');
     
+    // Clear selection immediately to allow new selections
+    this.clearSelection();
+    
     setTimeout(() => {
       // Mark as matched and hide
       element1.classList.add('matched');
@@ -129,7 +139,6 @@ export default class extends Controller {
       
       this.matchedTokens++;
       this.updateProgress();
-      this.clearSelection();
       
       // Add new tokens if available
       setTimeout(() => {
@@ -143,10 +152,12 @@ export default class extends Controller {
     element1.classList.add('flash-error');
     element2.classList.add('flash-error');
     
+    // Clear selection immediately to allow new selections
+    this.clearSelection();
+    
     setTimeout(() => {
       element1.classList.remove('flash-error');
       element2.classList.remove('flash-error');
-      this.clearSelection();
     }, 600);
   }
 
@@ -155,10 +166,13 @@ export default class extends Controller {
       // No more tokens, check if all are matched
       if (this.matchedTokens === this.totalTokensValue) {
         this.showCompletion();
+      } else {
+        this.compactGrid();
       }
       return;
     }
     
+    console.log('3');
     // Remove matched tokens from display
     const matchedElements = this.element.querySelectorAll('.token-word.matched');
     matchedElements.forEach(el => el.remove());
@@ -166,7 +180,8 @@ export default class extends Controller {
     // Add new tokens to fill empty spots (up to 5 total visible)
     const visibleTokens = this.element.querySelectorAll('.token-word:not(.matched)').length / 2; // Divide by 2 because each token appears in both columns
     const tokensNeeded = Math.min(5 - visibleTokens, this.currentTokens.length);
-    
+    console.log(tokensNeeded);
+
     if (tokensNeeded > 0) {
       const newTokens = this.currentTokens.splice(0, tokensNeeded);
       
@@ -183,29 +198,7 @@ export default class extends Controller {
         const l2Element = this.createTokenElement(token, 'l2');
         this.insertAtPosition(this.l2ColumnTarget, l2Element, l2Position);
       });
-    } else {
-      // No new tokens to add, but we need to compact remaining tokens to the top
-      this.compactRemainingTokens();
     }
-  }
-
-  compactRemainingTokens() {
-    // Get all remaining (non-matched) tokens from both columns while preserving their order
-    const l1RemainingTokens = Array.from(this.l1ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
-    const l2RemainingTokens = Array.from(this.l2ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
-    
-    // Clear both columns
-    this.l1ColumnTarget.innerHTML = '';
-    this.l2ColumnTarget.innerHTML = '';
-    
-    // Re-add remaining tokens in their original order, compacted to the top
-    l1RemainingTokens.forEach(token => {
-      this.l1ColumnTarget.appendChild(token);
-    });
-    
-    l2RemainingTokens.forEach(token => {
-      this.l2ColumnTarget.appendChild(token);
-    });
   }
 
   insertAtPosition(container, element, position) {
@@ -222,9 +215,29 @@ export default class extends Controller {
     this.progressBarTarget.style.width = `${percentage}%`;
   }
 
+  compactGrid() {
+    // Get all remaining unmatched tokens from both columns
+    const l1Tokens = Array.from(this.l1ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
+    const l2Tokens = Array.from(this.l2ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
+    
+    // Clear the columns
+    this.l1ColumnTarget.innerHTML = '';
+    this.l2ColumnTarget.innerHTML = '';
+    
+    // Re-add tokens in their original order, compacted to the top
+    l1Tokens.forEach(token => {
+      this.l1ColumnTarget.appendChild(token);
+    });
+    
+    l2Tokens.forEach(token => {
+      this.l2ColumnTarget.appendChild(token);
+    });
+  }
+
   showCompletion() {
     this.completionMessageTarget.classList.remove('hidden');
     this.completionMessageTarget.classList.add('animate-fade-in');
+    this.gridTarget.classList.add('hidden');
   }
 
   playTokenAudio(element) {
