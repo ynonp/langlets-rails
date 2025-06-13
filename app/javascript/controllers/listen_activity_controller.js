@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { animate } from "motion/mini"
 
 export default class extends Controller {
   static targets = ['phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer', 'completion']
@@ -113,6 +114,10 @@ export default class extends Controller {
           // All tokens filled, show completion message
           this.wordSelectionTarget.classList.add('hidden');
           this.completionTarget.classList.remove('hidden');
+          animate(this.completionTarget, 
+            { opacity: [0, 1], scale: [0.8, 1] }, 
+            { duration: 0.3, easing: 'easeOut' }
+          );
         }
       }, 650); // Slightly longer than animation duration
     }

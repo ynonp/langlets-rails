@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { animate } from "motion/mini"
 
 // Connects to data-controller="language-alignment-activity.js"
 export default class extends Controller {
@@ -72,7 +73,10 @@ export default class extends Controller {
         
         // Show completion message
         this.completionMessageTarget.classList.remove('hidden');
-        this.completionMessageTarget.classList.add('animate-fade-in');
+        animate(this.completionMessageTarget, 
+          { opacity: [0, 1], scale: [0.8, 1] }, 
+          { duration: 0.3, easing: 'easeOut' }
+        );
       }
     }
     
