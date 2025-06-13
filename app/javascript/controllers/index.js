@@ -19,6 +19,9 @@ application.register("listen-activity", ListenActivityController)
 import MatchActivityController from "./match_activity_controller"
 application.register("match-activity", MatchActivityController)
 
+import MatchTokensActivityController from "./match_tokens_activity_controller"
+application.register("match-tokens-activity", MatchTokensActivityController)
+
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
 

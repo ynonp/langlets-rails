@@ -1,0 +1,255 @@
+import { Controller } from "@hotwired/stimulus"
+
+// Connects to data-controller="match-tokens-activity"
+export default class extends Controller {
+  static targets = ['progressBar', 'l1Column', 'l2Column', 'completionMessage'];
+  static values = { 
+    tokens: Array,
+    totalTokens: Number
+  };
+
+  connect() {
+    this.currentTokens = [...this.tokensValue]; // All tokens
+    this.displayedTokens = []; // Currently displayed tokens (max 5)
+    this.matchedTokens = 0;
+    this.selectedToken = null;
+    this.currentAudio = null;
+    
+    this.initializeGrid();
+  }
+
+  initializeGrid() {
+    // Show first 5 tokens (or all if less than 5)
+    const tokensToShow = this.currentTokens.splice(0, 5);
+    this.displayedTokens = tokensToShow;
+    
+    // Shuffle each column separately
+    const shuffledL1 = [...tokensToShow].sort(() => Math.random() - 0.5);
+    const shuffledL2 = [...tokensToShow].sort(() => Math.random() - 0.5);
+    
+    // Clear columns
+    this.l1ColumnTarget.innerHTML = '';
+    this.l2ColumnTarget.innerHTML = '';
+    
+    // Populate L1 column
+    shuffledL1.forEach(token => {
+      this.l1ColumnTarget.appendChild(this.createTokenElement(token, 'l1'));
+    });
+    
+    // Populate L2 column
+    shuffledL2.forEach(token => {
+      this.l2ColumnTarget.appendChild(this.createTokenElement(token, 'l2'));
+    });
+  }
+
+  createTokenElement(token, column) {
+    const element = document.createElement('div');
+    element.className = 'token-word px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-center transition-all duration-200';
+    element.dataset.tokenId = token.id;
+    element.dataset.column = column;
+    element.dataset.action = 'click->match-tokens-activity#selectToken';
+    
+    if (column === 'l1') {
+      element.textContent = token.l1_word;
+      element.dataset.audioUrl = token.audio_url;
+    } else {
+      element.textContent = token.l2_translation;
+    }
+    
+    return element;
+  }
+
+  selectToken(event) {
+    const clickedToken = event.target;
+    const tokenId = parseInt(clickedToken.dataset.tokenId);
+    const column = clickedToken.dataset.column;
+    
+    // If clicking the same token, deselect it
+    if (this.selectedToken && this.selectedToken.element === clickedToken) {
+      this.clearSelection();
+      return;
+    }
+    
+    // If no token is selected, select this one
+    if (!this.selectedToken) {
+      this.selectNewToken(clickedToken, tokenId, column);
+      return;
+    }
+    
+    // If clicking a token from the same column, switch selection
+    if (this.selectedToken.column === column) {
+      this.clearSelection();
+      this.selectNewToken(clickedToken, tokenId, column);
+      return;
+    }
+    
+    // If clicking a token from the opposite column, attempt match
+    this.attemptMatch(clickedToken, tokenId);
+  }
+
+  selectNewToken(element, tokenId, column) {
+    this.selectedToken = { element, tokenId, column };
+    element.classList.add('selected');
+    
+    // Play audio if it's an L1 token
+    if (column === 'l1') {
+      this.playTokenAudio(element);
+    }
+  }
+
+  clearSelection() {
+    if (this.selectedToken) {
+      this.selectedToken.element.classList.remove('selected');
+      this.selectedToken = null;
+    }
+  }
+
+  attemptMatch(clickedElement, clickedTokenId) {
+    const selectedTokenId = this.selectedToken.tokenId;
+    
+    // Check if they match
+    if (selectedTokenId === clickedTokenId) {
+      // Successful match
+      this.handleSuccessfulMatch(this.selectedToken.element, clickedElement);
+    } else {
+      // Failed match
+      this.handleFailedMatch(this.selectedToken.element, clickedElement);
+    }
+  }
+
+  handleSuccessfulMatch(element1, element2) {
+    // Flash green
+    element1.classList.add('flash-success');
+    element2.classList.add('flash-success');
+    
+    setTimeout(() => {
+      // Mark as matched and hide
+      element1.classList.add('matched');
+      element2.classList.add('matched');
+      
+      this.matchedTokens++;
+      this.updateProgress();
+      this.clearSelection();
+      
+      // Add new tokens if available
+      setTimeout(() => {
+        this.addNewTokens();
+      }, 300);
+    }, 600);
+  }
+
+  handleFailedMatch(element1, element2) {
+    // Flash red
+    element1.classList.add('flash-error');
+    element2.classList.add('flash-error');
+    
+    setTimeout(() => {
+      element1.classList.remove('flash-error');
+      element2.classList.remove('flash-error');
+      this.clearSelection();
+    }, 600);
+  }
+
+  addNewTokens() {
+    if (this.currentTokens.length === 0) {
+      // No more tokens, check if all are matched
+      if (this.matchedTokens === this.totalTokensValue) {
+        this.showCompletion();
+      }
+      return;
+    }
+    
+    // Remove matched tokens from display
+    const matchedElements = this.element.querySelectorAll('.token-word.matched');
+    matchedElements.forEach(el => el.remove());
+    
+    // Add new tokens to fill empty spots (up to 5 total visible)
+    const visibleTokens = this.element.querySelectorAll('.token-word:not(.matched)').length / 2; // Divide by 2 because each token appears in both columns
+    const tokensNeeded = Math.min(5 - visibleTokens, this.currentTokens.length);
+    
+    if (tokensNeeded > 0) {
+      const newTokens = this.currentTokens.splice(0, tokensNeeded);
+      
+      newTokens.forEach(token => {
+        // Find random positions in each column
+        const l1Position = Math.floor(Math.random() * 5);
+        const l2Position = Math.floor(Math.random() * 5);
+        
+        // Insert L1 token
+        const l1Element = this.createTokenElement(token, 'l1');
+        this.insertAtPosition(this.l1ColumnTarget, l1Element, l1Position);
+        
+        // Insert L2 token
+        const l2Element = this.createTokenElement(token, 'l2');
+        this.insertAtPosition(this.l2ColumnTarget, l2Element, l2Position);
+      });
+    } else {
+      // No new tokens to add, but we need to compact remaining tokens to the top
+      this.compactRemainingTokens();
+    }
+  }
+
+  compactRemainingTokens() {
+    // Get all remaining (non-matched) tokens from both columns while preserving their order
+    const l1RemainingTokens = Array.from(this.l1ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
+    const l2RemainingTokens = Array.from(this.l2ColumnTarget.querySelectorAll('.token-word:not(.matched)'));
+    
+    // Clear both columns
+    this.l1ColumnTarget.innerHTML = '';
+    this.l2ColumnTarget.innerHTML = '';
+    
+    // Re-add remaining tokens in their original order, compacted to the top
+    l1RemainingTokens.forEach(token => {
+      this.l1ColumnTarget.appendChild(token);
+    });
+    
+    l2RemainingTokens.forEach(token => {
+      this.l2ColumnTarget.appendChild(token);
+    });
+  }
+
+  insertAtPosition(container, element, position) {
+    const children = Array.from(container.children);
+    if (position >= children.length) {
+      container.appendChild(element);
+    } else {
+      container.insertBefore(element, children[position]);
+    }
+  }
+
+  updateProgress() {
+    const percentage = (this.matchedTokens / this.totalTokensValue) * 100;
+    this.progressBarTarget.style.width = `${percentage}%`;
+  }
+
+  showCompletion() {
+    this.completionMessageTarget.classList.remove('hidden');
+    this.completionMessageTarget.classList.add('animate-fade-in');
+  }
+
+  playTokenAudio(element) {
+    const audioUrl = element.dataset.audioUrl;
+    
+    if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
+      // Stop any currently playing audio
+      if (this.currentAudio) {
+        this.currentAudio.pause();
+        this.currentAudio.currentTime = 0;
+      }
+      
+      // Create and play new audio
+      this.currentAudio = new Audio(audioUrl);
+      this.currentAudio.volume = 0.7;
+      
+      // Handle audio playback errors gracefully
+      this.currentAudio.onerror = () => {
+        console.warn('Failed to play audio for token:', element.textContent);
+      };
+      
+      // Play the audio
+      this.currentAudio.play().catch(error => {
+        console.warn('Audio playback failed:', error);
+      });
+    }
+  }
+}

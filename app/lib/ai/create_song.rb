@@ -89,12 +89,12 @@ module Ai
         a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
         a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
         a3 = Activities::WordOrderActivity.create!(lesson: l, order: 3)
-        a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
+        # a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
         a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
-        a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
-        a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
+        # a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
+        # a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
 
-        phrases = lesson_data["phrases"].each_with_index do |phrase_data, phrase_index|
+        phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
           p = Phrase.create!(
             text_l1: phrase_data["text_l1"],
             text_l2: phrase_data["text_l2"],
@@ -104,17 +104,7 @@ module Ai
             l2:,
           )
 
-          # Attach phrase audio if available
-          if phrase_data["phrase_audio_data"].present?
-            attach_audio_to_record(p, phrase_data["phrase_audio_data"], "phrase_#{phrase_index}.wav")
-          end
-
-          [ a1, a4, a5, a6, a7 ].each { |a| a.phrases << p }
-
-          first_half_size = (a1.phrases.count / 2.0).round
-          a2.phrases = a1.phrases.sample(first_half_size)
-          a3.phrases = a1.phrases.where.not(id: a2.phrases)
-
+          a5.phrases << p
           (phrase_data["translations"] || []).each do |token_translation_data|
             t = TokenTranslation.create!(
               phrase: p,
@@ -126,16 +116,15 @@ module Ai
               translation: token_translation_data["translation"],
             )
 
-            # Attach token translation audio if available
-            if token_translation_data["audio_data"].present?
-              attach_audio_to_record(t, token_translation_data["audio_data"], "token_#{phrase_index}_#{t.l1_start_index}.wav")
-            end
-
-            a7.token_translations << t if token_translation_data["listening_activity"] == 1
+            # a7.token_translations << t if token_translation_data["listening_activity"] == 1
             a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
           end
+
           p
         end
+        a1.phrases = phrases
+        a2.phrases = phrases.sample(4)
+        a3.phrases = phrases.sample(4)
       end
     end
 
