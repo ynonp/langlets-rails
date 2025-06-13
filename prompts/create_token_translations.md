@@ -35,6 +35,11 @@ If a token or phrase has no meaningful equivalent in the other language, **skip 
 
 3. Token indices should not overlap - that is you can't have more than one "token translation" covering the same word.
 
+4. When segmenting phrases into tokens, prefer shorter tokens unless a combination has special meaning (e.g., an idiom or fixed expression).
+For example:
+"Give me a second" → ["Give", "me", "a", "second"]
+"She refused to give up" → ["She", "refused", "to", "give up"] (since "give up" is an idiom with a distinct meaning) 
+
 {format_instructions}
 
 

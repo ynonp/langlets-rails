@@ -38,7 +38,6 @@ module Activities
     end
 
       {
-        **video_params,
         tokens: tokens_data,
         l1: filtered_token_translations.first&.phrase&.l1,
         l2: filtered_token_translations.first&.phrase&.l2

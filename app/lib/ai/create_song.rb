@@ -126,6 +126,7 @@ module Ai
         a1.phrases = phrases
         a2.phrases = phrases.sample(4)
         a3.phrases = phrases.sample(4)
+        a8.token_translations = a1.phrases.flat_map(&:token_translations).sample(15)
       end
     end
 
