@@ -104,11 +104,24 @@ module AzureTextToSpeech
       # Step 2: Build SSML request
       # Sanitize text input to prevent SSML injection if text comes from user input
       sanitized_text = CGI.escapeHTML(text)
-      ssml = <<~SSML
-        <speak version='1.0' xml:lang='#{language_code}'>
-          <voice name='#{voice_name}'>#{sanitized_text}</voice>
-        </speak>
-      SSML
+      
+      # Handle special cases for SSML generation
+      ssml = case
+             when text.strip.downcase == "y" && language_code == "es-ES"
+               <<~SSML
+               <speak version='1.0' xml:lang='#{language_code}'>
+                  <voice name='#{voice_name}'>
+                    <phoneme alphabet='ipa' ph='i'>y</phoneme>
+                  </voice>
+                </speak>
+               SSML
+             else
+               <<~SSML
+                 <speak version='1.0' xml:lang='#{language_code}'>
+                   <voice name='#{voice_name}'>#{sanitized_text}</voice>
+                 </speak>
+               SSML
+             end
 
       tts_uri = URI("https://#{region}.tts.speech.microsoft.com/cognitiveservices/v1")
       tts_request = Net::HTTP::Post.new(tts_uri)

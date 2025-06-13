@@ -88,11 +88,12 @@ module Ai
 
         a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
         a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-        a3 = Activities::WordOrderActivity.create!(lesson: l, order: 3)
+        a3 = Activities::WordOrderActivity.create!(lesson: l, order: 4)
         # a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
         a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
         # a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
         # a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
+        a8 = Activities::MatchTokensActivity.create!(lesson: l, order: 3)
 
         phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
           p = Phrase.create!(

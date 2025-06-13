@@ -15,8 +15,39 @@ export default class extends Controller {
     this.matchedTokens = 0;
     this.selectedToken = null;
     this.currentAudio = null;
+    this.preloadedAudio = new Map(); // Cache for preloaded audio
     
+    this.preloadAllAudio();
     this.initializeGrid();
+  }
+
+  preloadAllAudio() {
+    // Get all unique audio URLs from tokens
+    const audioUrls = [...new Set(
+      this.tokensValue
+        .map(token => token.audio_url)
+        .filter(url => url && url !== 'null' && url !== '')
+    )];
+    
+    // Preload each audio file
+    audioUrls.forEach(audioUrl => {
+      const audio = new Audio(audioUrl);
+      audio.volume = 0.7;
+      audio.preload = 'auto';
+      
+      // Handle preload completion
+      audio.addEventListener('canplaythrough', () => {
+        this.preloadedAudio.set(audioUrl, audio);
+      });
+      
+      // Handle preload errors gracefully
+      audio.addEventListener('error', () => {
+        console.warn('Failed to preload audio:', audioUrl);
+      });
+      
+      // Start preloading
+      audio.load();
+    });
   }
 
   initializeGrid() {
@@ -101,6 +132,7 @@ export default class extends Controller {
     
     // Play audio if it's an L1 token
     if (column === 'l1') {
+      console.log('play 1');
       this.playTokenAudio(element);
     }
   }
@@ -173,7 +205,6 @@ export default class extends Controller {
       return;
     }
     
-    console.log('3');
     // Remove matched tokens from display
     const matchedElements = this.element.querySelectorAll('.token-word.matched');
     matchedElements.forEach(el => el.remove());
@@ -246,6 +277,7 @@ export default class extends Controller {
 
   playTokenAudio(element) {
     const audioUrl = element.dataset.audioUrl;
+    console.log(`play 2 ${audioUrl}`);
     
     if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
       // Stop any currently playing audio
@@ -254,19 +286,32 @@ export default class extends Controller {
         this.currentAudio.currentTime = 0;
       }
       
-      // Create and play new audio
-      this.currentAudio = new Audio(audioUrl);
-      this.currentAudio.volume = 0.7;
-      
-      // Handle audio playback errors gracefully
-      this.currentAudio.onerror = () => {
-        console.warn('Failed to play audio for token:', element.textContent);
-      };
-      
-      // Play the audio
-      this.currentAudio.play().catch(error => {
-        console.warn('Audio playback failed:', error);
-      });
+      // Try to use preloaded audio first
+      const preloadedAudio = this.preloadedAudio.get(audioUrl);
+      if (preloadedAudio) {
+        // Reset audio to beginning and play
+        preloadedAudio.currentTime = 0;
+        this.currentAudio = preloadedAudio;
+        
+        // Play the preloaded audio
+        this.currentAudio.play().catch(error => {
+          console.warn('Preloaded audio playback failed:', error);
+        });
+      } else {
+        // Fallback to creating new Audio object if preloading failed
+        this.currentAudio = new Audio(audioUrl);
+        this.currentAudio.volume = 0.7;
+        
+        // Handle audio playback errors gracefully
+        this.currentAudio.onerror = () => {
+          console.warn('Failed to play audio for token:', element.textContent);
+        };
+        
+        // Play the audio
+        this.currentAudio.play().catch(error => {
+          console.warn('Audio playback failed:', error);
+        });
+      }
     }
   }
 }

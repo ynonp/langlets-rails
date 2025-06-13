@@ -20,7 +20,6 @@ export default class extends Controller {
     const token = ev.target;
     if (token.getAttribute('data-found') === 'false') {
       const phraseId = token.getAttribute('data-phrase-id');
-      const tokenId = token.getAttribute('data-token-id');
       
       // Only allow finding tokens in the current phrase
       if (parseInt(phraseId) === this.currentPhraseIndex) {
