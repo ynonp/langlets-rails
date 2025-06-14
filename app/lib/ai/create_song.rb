@@ -23,7 +23,7 @@ module Ai
       @youtubeurl = youtubeurl
       @gemini = Langchain::LLM::GoogleGemini.new(
         api_key: Rails.application.credentials.google_api_key,
-        default_options: { temperature: 0.7, chat_model: 'gemini-2.5-pro-preview-05-06' },
+        default_options: { temperature: 0.6, chat_model: 'gemini-2.5-pro-preview-06-05' },
       )
       @gemini.read_timeout = 600
       @flash = Langchain::LLM::GoogleGemini.new(
@@ -62,72 +62,7 @@ module Ai
     end
 
     def create_course
-      progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)      
-      raise "Missing creation data" unless progress.ready?
-      data = progress.data
 
-      l1 = Language.find_by(english_name: clip_language)
-      l2 = Language.find_by(english_name: translation_language)
-      medium = Medium.find_or_create_by!(url: youtubeurl)
-      slug = song_name.parameterize
-      c = Course.find_or_create_by!(slug: ) do |c|
-        c.name = song_name
-        c.main_media_url = youtubeurl
-      end
-      c.lessons.destroy_all
-      Lesson.where("slug like \'#{slug}%\'").destroy_all
-      medium.phrases.destroy_all
-
-      data["lessons"].each_with_index do |lesson_data, lesson_index|
-        l = Lesson.create!(
-          medium: medium,
-          slug: "#{slug}#{lesson_index}",
-          course: c,
-          order: lesson_index,
-          name: lesson_data["title"])
-
-        a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
-        a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-        a3 = Activities::WordOrderActivity.create!(lesson: l, order: 4)
-        # a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
-        a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
-        # a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
-        # a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
-        a8 = Activities::MatchTokensActivity.create!(lesson: l, order: 3)
-
-        phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
-          p = Phrase.create!(
-            text_l1: phrase_data["text_l1"],
-            text_l2: phrase_data["text_l2"],
-            timestamp: phrase_data["timestamp"],
-            medium:,
-            l1:,
-            l2:,
-          )
-
-          a5.phrases << p
-          (phrase_data["translations"] || []).each do |token_translation_data|
-            t = TokenTranslation.create!(
-              phrase: p,
-              l1_start_index: token_translation_data["l1_start_index"],
-              l2_start_index: token_translation_data["l2_start_index"],
-              l1_end_index: token_translation_data["l1_end_index"] + 1,
-              l2_end_index: token_translation_data["l2_end_index"] + 1,
-              similar_sound: token_translation_data["similar_sound"],
-              translation: token_translation_data["translation"],
-            )
-
-            # a7.token_translations << t if token_translation_data["listening_activity"] == 1
-            a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
-          end
-
-          p
-        end
-        a1.phrases = phrases
-        a2.phrases = phrases.sample(4)
-        a3.phrases = phrases.sample(4)
-        a8.token_translations = a1.phrases.flat_map(&:token_translations).sample(15)
-      end
     end
 
 

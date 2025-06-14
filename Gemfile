@@ -88,3 +88,5 @@ gem "wavefile", "~> 1.1"
 gem "aws-sdk-s3", "~> 1.189"
 
 gem "devise", "~> 4.9"
+
+gem "omniauth", "~> 2.1"
