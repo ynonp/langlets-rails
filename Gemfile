@@ -86,3 +86,5 @@ gem "ruby-anthropic", "~> 0.4.2"
 gem "wavefile", "~> 1.1"
 
 gem "aws-sdk-s3", "~> 1.189"
+
+gem "devise", "~> 4.9"

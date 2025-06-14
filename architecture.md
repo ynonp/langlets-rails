@@ -78,9 +78,22 @@
   - Belongs to Phrase
   - Many-to-many with Activities (through ActivityTokenTranslation)
 
+#### 7. **User** (`users`)
+- **Purpose**: User authentication and account management
+- **Key Features**:
+  - Email-based authentication (unique constraint)
+  - Encrypted password storage using Devise
+  - Password reset functionality with tokens and timestamps
+  - Remember me functionality for persistent sessions
+- **Authentication System**: Powered by Devise gem with standard modules:
+  - Database Authenticatable
+  - Recoverable (password reset)
+  - Rememberable (persistent login)
+- **Relationships**: Currently isolated (future expansion for user progress tracking)
+
 ### Activity System (Single Table Inheritance)
 
-#### 7. **Activity** (`activities`)
+#### 8. **Activity** (`activities`)
 - **Purpose**: Base class for interactive learning exercises
 - **Architecture**: Uses STI (Single Table Inheritance) with `type` column
 - **Key Features**:
@@ -103,17 +116,17 @@
 
 ### Join Tables
 
-#### 8. **ActivityPhrase** (`activity_phrases`)
+#### 9. **ActivityPhrase** (`activity_phrases`)
 - Links activities to their associated phrases
 - Enables many-to-many relationship between Activities and Phrases
 
-#### 9. **ActivityTokenTranslation** (`activity_token_translations`)
+#### 10. **ActivityTokenTranslation** (`activity_token_translations`)
 - Links activities to specific token translations for word-level exercises
 - Enables many-to-many relationship between Activities and TokenTranslations
 
 ### Workflow Management
 
-#### 10. **CreateSongProgress** (`create_song_progresses`)
+#### 11. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
   - YouTube URL processing
@@ -208,6 +221,9 @@ Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
 
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
 
+# User Authentication (Devise)
+User (isolated) # Currently no relationships - future expansion for progress tracking
+
 # Audio Attachments via Active Storage
 Phrase (1) ──→ (1) Audio File (l1_audio)
 TokenTranslation (1) ──→ (1) Audio File (l1_audio)
@@ -266,6 +282,7 @@ app/models/
 ├── language.rb
 ├── phrase.rb                   # has_one_attached :l1_audio
 ├── token_translation.rb        # has_one_attached :l1_audio
+├── user.rb                     # Devise authentication
 ├── activity_phrase.rb          # Join table model
 ├── activity_token_translation.rb # Join table model
 └── create_song_progress.rb     # Workflow tracking

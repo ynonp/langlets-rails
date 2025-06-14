@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   get "home/privacy"
   get "home/terms"
   root "landing_page#index"
