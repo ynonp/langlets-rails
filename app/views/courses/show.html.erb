@@ -28,10 +28,35 @@
 
 <!-- Top bar: Refined for clarity and presence -->
 <header class="py-6 border-b border-slate-700/60">
-  <!-- Added slight transparency to border for softness -->
-  <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 text-center tracking-tight">
-    <span class="text-slate-400">Free Language Course: </span><%= @course.name %>
-  </h1>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight flex-1">
+      <%= @course.name %>
+    </h1>
+    <% if user_signed_in? %>
+      <div class="relative group">
+        <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+        <label for="user-menu-toggle" class="flex items-center cursor-pointer">
+          <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
+        </label>
+        <div class="absolute right-0 mt-2 w-40 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+          <%= link_to "Logout",
+            destroy_user_session_path,
+            method: :delete,
+            data: { turbo_method: :delete },
+            class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+          %>
+        </div>
+      </div>
+    <% else %>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+        <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <div class="flex gap-2">
+          <%= link_to "Sign up", new_user_registration_path, class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Log in", new_user_session_path, class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </header>
 
 <!-- Main content wrapper -->
@@ -39,20 +64,6 @@
   <main class="flex flex-col lg:flex-row gap-8 lg:gap-12">
     <!-- Main lesson list area -->
     <div class="flex-1">
-      <!-- Header section with lesson list title -->
-      <div class="flex items-center justify-between mb-8">
-        <div class="flex items-center gap-4">
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253z"></path>
-              </svg>
-            </div>
-            <h2 class="text-3xl font-bold text-white">Lesson List</h2>
-          </div>
-        </div>
-      </div>
-
       <!-- Description text -->
       <p class="text-slate-400 text-lg mt-8 mb-2 leading-relaxed">
         Pick any lesson to begin learning. Each one breaks down a line of the song and teaches you something new.         
@@ -88,9 +99,19 @@
                 </div>
                 
                 <div>
-                  <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                    <%= lesson.name %>
-                  </h3>
+                  <% if lesson.completed? %>
+                    <%= link_to lesson do %>
+                      <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
+                        <%= lesson.name %>
+                      </h3>
+                    <% end %>
+                  <% else %>
+                    <%= link_to "#{lesson_path(lesson.slug)}?a=#{lesson.next_activity_order}" do %>
+                      <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
+                        <%= lesson.name %>
+                      </h3>
+                    <% end %>
+                  <% end %>
                 </div>
               </div>
               
