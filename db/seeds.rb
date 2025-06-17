@@ -14,3 +14,6 @@ Language.create!(iso_name: 'fr', english_name: 'French', native_name: 'Français
 Language.create!(iso_name: 'es', english_name: 'Spanish', native_name: 'Español', pronunciation_variant_name: 'es-ES')
 Language.create!(iso_name: 'ar-JO', english_name: 'Arabic', native_name: 'العربية الفلسطينية', pronunciation_variant_name: 'ar-JO')
 
+admin = User.new(email: 'ynon@hey.com', password: '10203040', password_confirmation: '10203040')
+admin.skip_confirmation!
+admin.save!

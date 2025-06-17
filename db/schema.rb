@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_14_130848) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_17_093649) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -72,6 +72,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_130848) do
     t.index ["token_translation_id"], name: "index_activity_token_translations_on_token_translation_id"
   end
 
+  create_table "activity_users", force: :cascade do |t|
+    t.bigint "activity_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id", "user_id"], name: "index_activity_users_on_activity_id_and_user_id", unique: true
+    t.index ["activity_id"], name: "index_activity_users_on_activity_id"
+    t.index ["user_id"], name: "index_activity_users_on_user_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "slug"
@@ -100,6 +110,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_130848) do
     t.string "pronunciation_variant_name"
     t.boolean "rtl", default: false
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
+  end
+
+  create_table "lesson_users", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id", "user_id"], name: "index_lesson_users_on_lesson_id_and_user_id", unique: true
+    t.index ["lesson_id"], name: "index_lesson_users_on_lesson_id"
+    t.index ["user_id"], name: "index_lesson_users_on_user_id"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -159,6 +179,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_130848) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
@@ -172,6 +196,10 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_14_130848) do
   add_foreign_key "activity_phrases", "phrases"
   add_foreign_key "activity_token_translations", "activities"
   add_foreign_key "activity_token_translations", "token_translations"
+  add_foreign_key "activity_users", "activities"
+  add_foreign_key "activity_users", "users"
+  add_foreign_key "lesson_users", "lessons"
+  add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "media"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"

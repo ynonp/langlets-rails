@@ -1,4 +1,3 @@
-
 <% content_for :head do %>
   <% youtube_video_id = @course.main_media_url.split("v=").last %>
   <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) %>
@@ -65,24 +64,53 @@
       <!-- Lessons list -->
       <div class="space-y-4">
         <% @lessons.each_with_index do |lesson, index| %>
-          <%= link_to lesson do %>
           <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>">
             <div class="flex items-center justify-between">
-              <div class="flex-1">
-                <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
-                  <%= lesson.name %>
-                </h3>
+              <div class="flex items-center gap-3 flex-1">
+                <!-- Progress Icon -->
+                <div class="flex-shrink-0">
+                  <% if lesson.completed? %>
+                    <!-- Completed lesson icon -->
+                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                    </svg>
+                  <% elsif lesson.in_progress? %>
+                    <!-- Partially completed lesson icon -->
+                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                    </svg>
+                  <% else %>
+                    <!-- Not started lesson icon -->
+                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10"></circle>
+                    </svg>
+                  <% end %>
+                </div>
+                
+                <div>
+                  <h3 class="text-xl font-semibold text-white mb-2 group-hover:text-blue-300 transition-colors">
+                    <%= lesson.name %>
+                  </h3>
+                </div>
               </div>
               
-              <%= link_to lesson, class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                </svg>
-                <span class="hidden md:inline">Start Lesson</span>                
+              <% if lesson.completed? %>
+                <%= link_to lesson, class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+                  <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="hidden md:inline">Review</span>
+                <% end %>
+              <% else %>
+                <%= link_to "#{lesson_path(lesson.slug)}?a=#{lesson.next_activity_order}", class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+                  <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span class="hidden md:inline">Start Lesson</span>
+                <% end %>
               <% end %>
             </div>
           </div>
-          <% end %>
         <% end %>
       </div>
     </div>

@@ -26,9 +26,10 @@
 <% end %>
 
 <div class="flex flex-col min-h-screen w-full bg-gray-900"
-    data-controller="main-video-player activity-navigation"
+    data-controller="main-video-player activity-navigation "
     data-action="play->main-video-player#playFrom"
     data-main-video-player-video-id-value="<%= @videoid %>"
+    
 >
   <div
     id="main-player"
@@ -44,6 +45,9 @@
   >
     <%= render partial: 'activity_navigation' %>
     <div
+      data-controller="progress-tracker"
+      data-action="activity:completed->progress-tracker#sendProgressUpdate"
+      data-progress-tracker-progress-data-value="<%= @progress_data.to_json %>"
       class="items-stretch flex-1 bg-gray-800"
       data-activity-navigation-target="content"
       data-activity-navigation-url="<%= @current_url %>"

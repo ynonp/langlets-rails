@@ -5,6 +5,18 @@ class Activity < ApplicationRecord
   has_many :activity_token_translations, dependent: :destroy
   has_many :token_translations, through: :activity_token_translations
 
+  has_many :activity_users, dependent: :destroy
+  has_many :users_completed, through: :activity_users, source: :user
+
+  def completed_by?(user)
+    return false unless user
+    activity_users.exists?(user: user)
+  end
+  
+  def is_last_in_lesson?
+    lesson.activities.order(:order).last == self
+  end
+
   def partial_name
     self.class.name.underscore
   end

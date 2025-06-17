@@ -481,9 +481,12 @@ export default class extends Controller {
     this.progressTextTarget.textContent = `Completed ${this.totalPhrasesValue} of ${this.totalPhrasesValue}`
     this.progressBarTarget.style.width = '100%'
     this.completionMessageTarget.classList.remove('hidden')
+    
     animate(this.completionMessageTarget, 
       { opacity: [0, 1], scale: [0.8, 1] }, 
       { duration: 0.3, easing: 'easeOut' }
     );
+
+    this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
   }
 }

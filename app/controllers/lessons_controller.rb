@@ -29,5 +29,11 @@ class LessonsController < ApplicationController
     else
       @course_path
     end
+
+    # Prepare progress data for completion messages
+    @progress_data = {
+      activity_id: @activity.id,
+      lesson_id: (@activity.is_last_in_lesson? ? @lesson.id : nil)
+    }.compact
   end
 end

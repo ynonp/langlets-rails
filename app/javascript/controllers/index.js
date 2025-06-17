@@ -48,3 +48,6 @@ application.register("main-video-player", MainVideoPlayerController)
 
 import ActivityNavigationController from './activity_navigation_controller';
 application.register('activity-navigation', ActivityNavigationController);
+
+import ProgressTrackerController from './progress_tracker_controller';
+application.register('progress-tracker', ProgressTrackerController)

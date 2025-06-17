@@ -157,6 +157,8 @@ export default class extends Controller {
           { opacity: [0, 1], scale: [0.8, 1] }, 
           { duration: 0.3, easing: 'easeOut' }
         );
+        this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
+
       }
       if (this.hasStartActivityButtonTarget) {
         this.startActivityButtonTarget.classList.add('hidden');
