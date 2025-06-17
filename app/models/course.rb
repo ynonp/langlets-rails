@@ -5,9 +5,9 @@ class Course < ApplicationRecord
     raise "Missing creation data" unless progress.ready?
     data = progress.data
 
-    l1 = Language.find_by(english_name: clip_language)
-    l2 = Language.find_by(english_name: translation_language)
-    medium = Medium.find_or_create_by!(url: youtubeurl)
+    l1 = Language.find_by(english_name: progress.clip_language)
+    l2 = Language.find_by(english_name: progress.translation_language)
+    medium = Medium.find_or_create_by!(url: progress.youtubeurl)
 
     self.lessons.destroy_all
     Lesson.where("slug like \'#{slug}%\'").destroy_all
@@ -60,6 +60,24 @@ class Course < ApplicationRecord
       a3.phrases = phrases.sample(4)
       a8.token_translations = a1.phrases.flat_map(&:token_translations).sample(15)
     end
+
+    medium.reload
+    finish_lesson_slug = "#{self.slug}#{self.lessons.count}"
+    finish_lesson = Lesson.create!(
+      medium: medium,
+      slug: finish_lesson_slug,
+      course: self,
+      order: self.lessons.count,
+      name: "Final Review"
+      )
+    a1 = Activities::WatchVideoActivity.create!(lesson: finish_lesson, order: 1)
+    a2 = Activities::MatchTokensActivity.create!(lesson: finish_lesson, order: 2)
+    a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3)
+
+    a1.phrases = medium.phrases.ordered_by_timestamp
+    a2.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
+    a3.phrases = medium.phrases.ordered_by_timestamp
+    a3.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
   end
 
   def create_song!(progress)
