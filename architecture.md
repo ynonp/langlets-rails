@@ -85,11 +85,24 @@
   - Encrypted password storage using Devise
   - Password reset functionality with tokens and timestamps
   - Remember me functionality for persistent sessions
-- **Authentication System**: Powered by Devise gem with standard modules:
-  - Database Authenticatable
-  - Recoverable (password reset)
-  - Rememberable (persistent login)
-- **Relationships**: Currently isolated (future expansion for user progress tracking)
+  - Email confirmation system (confirmable)
+- **Authentication System**: Powered by Devise gem with modules:
+  - **Database Authenticatable**: Standard email/password authentication
+  - **Recoverable**: Password reset via email tokens
+  - **Rememberable**: Persistent login sessions
+  - **Confirmable**: Email address verification for new accounts
+- **Security Features**:
+  - Reset password tokens with expiration timestamps
+  - Confirmation tokens for email verification
+  - Unconfirmed email handling for email changes
+- **User Interface**: Modern dark-themed login/registration forms with:
+  - Social authentication placeholders (Google, Facebook)
+  - Responsive design with Tailwind CSS
+  - Password visibility controls
+  - Terms and privacy policy acceptance
+- **Relationships**: 
+  - Many-to-many with Activities (through ActivityUser) for progress tracking
+  - Many-to-many with Lessons (through LessonUser) for completion tracking
 
 ### Activity System (Single Table Inheritance)
 
@@ -124,9 +137,25 @@
 - Links activities to specific token translations for word-level exercises
 - Enables many-to-many relationship between Activities and TokenTranslations
 
+### User Progress Tracking
+
+#### 11. **ActivityUser** (`activity_users`)
+- **Purpose**: Track user progress through individual activities
+- **Key Features**:
+  - Unique constraint on activity + user combination
+  - Timestamps for completion tracking
+- **Relationships**: Links Users to Activities for progress monitoring
+
+#### 12. **LessonUser** (`lesson_users`)
+- **Purpose**: Track user progress through lessons
+- **Key Features**:
+  - Unique constraint on lesson + user combination
+  - Timestamps for completion tracking
+- **Relationships**: Links Users to Lessons for course progression
+
 ### Workflow Management
 
-#### 11. **CreateSongProgress** (`create_song_progresses`)
+#### 13. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
   - YouTube URL processing
@@ -221,8 +250,9 @@ Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
 
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
 
-# User Authentication (Devise)
-User (isolated) # Currently no relationships - future expansion for progress tracking
+# User Management & Progress Tracking (Devise)
+User (many) ←──→ (many) Activity (through ActivityUser) # Activity completion tracking
+User (many) ←──→ (many) Lesson (through LessonUser) # Lesson progress tracking
 
 # Audio Attachments via Active Storage
 Phrase (1) ──→ (1) Audio File (l1_audio)
@@ -233,6 +263,55 @@ Any Model ←──→ Active Storage Blobs (polymorphic attachments)
 ```
 
 ## Key Features & Capabilities
+
+### User Authentication & Management
+- **Devise Integration**: Full-featured authentication system with email/password
+- **Account Security**: Password reset, email confirmation, and session management
+- **Modern UI/UX**: Dark-themed responsive login and registration forms
+- **Progress Tracking**: Individual user progress through lessons and activities
+- **Social Authentication Ready**: UI prepared for Google and Facebook integration
+- **Privacy Compliance**: Terms of service and privacy policy integration
+
+### User Authentication UI Design
+
+The platform implements a modern, accessible authentication system with the following design patterns:
+
+#### Login Form (`app/views/devise/sessions/new.html.erb`)
+- **Dark Theme**: Slate-900 background with contrasting white text
+- **Responsive Layout**: Full-screen centered design that adapts to mobile
+- **Form Elements**:
+  - Email/username input with autofocus and autocomplete
+  - Password field with integrated "FORGOT?" link
+  - Primary "LOG IN" button with hover states
+- **Visual Hierarchy**: Clear typography with proper spacing and contrast ratios
+- **Interactive Elements**: Smooth transitions and hover effects throughout
+
+#### UI Components & Patterns
+- **Navigation Elements**: 
+  - Close button (top-left) for modal-style interaction
+  - Sign-up link (top-right) for account creation
+- **Social Authentication Ready**: 
+  - Google and Facebook buttons with proper branding
+  - SVG icons with consistent styling
+  - Grid layout for multiple providers
+- **Form Validation**: 
+  - Built-in HTML5 validation with Devise backend
+  - Error handling and user feedback
+- **Legal Compliance**:
+  - Terms of Service and Privacy Policy links
+  - reCAPTCHA Enterprise integration placeholder
+
+#### Accessibility Features
+- **Keyboard Navigation**: Full tab-order support
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Color Contrast**: WCAG-compliant color schemes
+- **Focus Management**: Visible focus indicators and logical flow
+
+#### Technology Stack
+- **CSS Framework**: Tailwind CSS for utility-first styling
+- **Icons**: Heroicons and custom brand SVGs
+- **Typography**: System font stack with proper scaling
+- **Responsive Design**: Mobile-first approach with breakpoint optimization
 
 ### Content Processing Pipeline
 1. **YouTube URL Input**: Extract video metadata and audio
@@ -285,7 +364,16 @@ app/models/
 ├── user.rb                     # Devise authentication
 ├── activity_phrase.rb          # Join table model
 ├── activity_token_translation.rb # Join table model
+├── activity_user.rb            # User progress on activities
+├── lesson_user.rb              # User progress on lessons
 └── create_song_progress.rb     # Workflow tracking
+
+app/views/devise/               # Devise authentication views
+├── sessions/                   # Login/logout views
+│   └── new.html.erb           # Modern dark-themed login form
+├── registrations/             # User registration views
+├── passwords/                 # Password reset views
+└── confirmations/             # Email confirmation views
 
 app/services/
 └── azure_text_to_speech_service.rb # TTS integration
@@ -397,3 +485,66 @@ WAV_BITS_PER_SAMPLE = 16
 - **Index Coverage**: Foreign key indexes support efficient joins
 
 This architecture supports a sophisticated language learning platform that can process multimedia content, extract educational material, generate high-quality pronunciation audio, and create interactive learning experiences with precise multilingual and audio support.
+
+### User Progress Tracking System
+
+The platform implements comprehensive progress tracking through dedicated join tables:
+
+#### Activity Progress (`activity_users`)
+- **Completion Tracking**: Records when users complete individual activities
+- **Unique Constraints**: Prevents duplicate progress entries per user/activity
+- **Timestamp Logging**: Tracks completion time for analytics and achievements
+- **Activity Types Supported**: All STI activity types (Watch, Match, Sort, Align, Speak, Listen, Find Answer)
+
+#### Lesson Progress (`lesson_users`)
+- **Course Progression**: Tracks user advancement through structured lessons
+- **Sequential Learning**: Enforces lesson order and prerequisites
+- **Completion Certificates**: Foundation for achievement and certification systems
+- **Analytics Ready**: Data structure supports learning analytics and reporting
+
+#### Progress Data Applications
+- **Personalized Learning**: Adaptive content delivery based on completion history
+- **Performance Analytics**: User engagement and learning effectiveness metrics
+- **Achievement Systems**: Badges, streaks, and milestone recognition
+- **Content Recommendations**: Intelligent next-lesson suggestions
+- **Retention Metrics**: User engagement and course completion rates
+
+#### Future Extensibility
+- **Scoring Systems**: Ready for point-based assessments
+- **Time Tracking**: Duration-based learning analytics
+- **Difficulty Adaptation**: Performance-based content difficulty adjustment
+- **Social Features**: Leaderboards and peer comparison capabilities
+
+### Devise Security Configuration
+
+The authentication system is configured with enterprise-grade security features:
+
+#### Password Security
+- **BCrypt Encryption**: Industry-standard password hashing with configurable cost
+- **Password Complexity**: Minimum length and complexity requirements
+- **Reset Token Expiration**: Time-limited password reset tokens for security
+- **Brute Force Protection**: Account lockout after failed login attempts
+
+#### Session Management
+- **Remember Me**: Persistent login with secure token storage
+- **Session Timeout**: Configurable session expiration for inactive users
+- **Cross-Site Protection**: CSRF tokens and secure session cookies
+- **Device Tracking**: Foundation for multi-device session management
+
+#### Email Verification
+- **Confirmable Module**: Email address verification for new accounts
+- **Confirmation Tokens**: Secure, time-limited email confirmation
+- **Unconfirmed Email Handling**: Support for email address changes
+- **Resend Confirmation**: User-friendly confirmation resend functionality
+
+#### Production Security Considerations
+- **HTTPS Enforcement**: SSL/TLS required for all authentication endpoints
+- **Secure Headers**: Content Security Policy and security headers
+- **Rate Limiting**: API and form submission rate limiting
+- **Audit Logging**: User authentication and security event logging
+
+#### Database Security
+- **Unique Constraints**: Email uniqueness enforcement at database level
+- **Index Security**: Efficient lookups without exposing sensitive data
+- **Token Storage**: Secure storage of reset and confirmation tokens
+- **Data Encryption**: Encrypted password storage with salt
