@@ -51,8 +51,8 @@
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
         <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex gap-2">
-          <%= link_to "Sign up", new_user_registration_path, class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
-          <%= link_to "Log in", new_user_session_path, class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
         </div>
       </div>
     <% end %>

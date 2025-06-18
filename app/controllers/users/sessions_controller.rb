@@ -13,11 +13,20 @@ class Users::SessionsController < Devise::SessionsController
     super
   end
 
-
   # DELETE /resource/sign_out
   # def destroy
   #   super
   # end
+
+  protected
+
+  def after_sign_in_path_for(resource)
+    if params[:returnto].present?
+      params[:returnto]
+    else
+      super
+    end
+  end
 
   # protected
 
