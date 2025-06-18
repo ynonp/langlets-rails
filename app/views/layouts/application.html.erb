@@ -40,4 +40,6 @@
       <%= yield %>
     </main>
   </body>
+  <turbo-frame id="devise" src="<%= new_user_session_path %>">
+  </turbo-frame>
 </html>
