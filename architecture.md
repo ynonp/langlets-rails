@@ -299,7 +299,6 @@ The platform implements a modern, accessible authentication system with the foll
   - Error handling and user feedback
 - **Legal Compliance**:
   - Terms of Service and Privacy Policy links
-  - reCAPTCHA Enterprise integration placeholder
 
 #### Accessibility Features
 - **Keyboard Navigation**: Full tab-order support
