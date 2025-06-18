@@ -21,4 +21,13 @@ class ApplicationController < ActionController::Base
       root_path
     end
   end
+
+  # Redirect to returnto param after successful sign out
+  def after_sign_out_path_for(resource_or_scope)
+    if params[:returnto].present?
+      params[:returnto]
+    else
+      root_path
+    end
+  end
 end

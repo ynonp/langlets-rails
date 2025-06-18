@@ -28,6 +28,14 @@ class Users::SessionsController < Devise::SessionsController
     end
   end
 
+  def after_sign_out_path_for(resource_or_scope)
+    if params[:returnto].present?
+      params[:returnto]
+    else
+      root_path
+    end
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.

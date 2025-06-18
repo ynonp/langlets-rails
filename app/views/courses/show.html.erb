@@ -40,7 +40,7 @@
         </label>
         <div class="absolute right-0 mt-2 w-40 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
           <%= link_to "Logout",
-            destroy_user_session_path,
+            destroy_user_session_path(returnto: request.fullpath),
             method: :delete,
             data: { turbo_method: :delete },
             class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
