@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable,
-         omniauth_providers: [:google_oauth2]
+         omniauth_providers: [:google_oauth2, :github]
 
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson
@@ -12,13 +12,23 @@ class User < ApplicationRecord
   has_many :completed_activities, through: :activity_users, source: :activity
 
   def self.from_omniauth(auth)
-    where(email: auth.info.email).first_or_create do |user|
-      user.email = auth.info.email
-      user.password = Devise.friendly_token[0, 20]
-      # user.name = auth.info.name # if you have a name field
-      user.provider = auth.provider
-      user.uid = auth.uid
-      user.confirmed_at = Time.current
+    user = where(email: auth.info.email).first_or_initialize do |new_user|
+      new_user.email = auth.info.email
+      new_user.password = Devise.friendly_token[0, 20]
+      # new_user.name = auth.info.name # if you have a name field
+      new_user.provider = auth.provider
+      new_user.uid = auth.uid
+      new_user.confirmed_at = Time.current
     end
+    
+    # Update provider and uid for existing users logging in with different OAuth provider
+    if user.persisted? && (user.provider != auth.provider || user.uid != auth.uid)
+      user.update(provider: auth.provider, uid: auth.uid)
+    end
+    
+    # Save if new record
+    user.save if user.new_record?
+    
+    user
   end  
 end

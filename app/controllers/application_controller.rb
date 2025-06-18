@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if params[:returnto].present?
       params[:returnto]
+    elsif request.env['omniauth.origin']
+      request.env['omniauth.origin']
     else
       root_path
     end
