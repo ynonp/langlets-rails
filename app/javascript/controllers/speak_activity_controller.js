@@ -42,7 +42,7 @@ export default class extends Controller {
     this.updateProgressBar();
     
     // Show the assessment results
-    this.showAssessmentResults(result, phraseText);
+    // this.showAssessmentResults(result, phraseText);
     
     // Show the next phrase if available
     this.showNextPhrase(phraseIndex);
@@ -53,8 +53,26 @@ export default class extends Controller {
     }
   }
   
+  resetWordHighlighting(phraseIndex) {
+    // Reset highlighting for the completed phrase
+    const completedContainer = document.querySelector(`.phrase-container[data-phrase-id="${phraseIndex}"]`);
+    if (completedContainer) {
+      const tokenSpans = completedContainer.querySelectorAll('.original-phrase span[data-start-index]');
+      tokenSpans.forEach(span => {
+        span.style.backgroundColor = '';
+        span.style.color = '';
+        span.style.borderRadius = '';
+        span.style.padding = '';
+        span.style.transition = '';
+      });
+    }
+  }
+
   showNextPhrase(currentIndex) {
     const nextIndex = currentIndex + 1;
+    
+    // Reset highlighting for the current phrase before hiding it
+    this.resetWordHighlighting(currentIndex);
     
     // Hide the entire current phrase container
     const currentContainer = document.querySelector(`.phrase-container[data-phrase-id="${currentIndex}"]`);
@@ -79,94 +97,39 @@ export default class extends Controller {
   }
   
   showAssessmentResults(jsonResult, phraseText) {
-    // Get pronunciation details
+    // With real-time word highlighting, we can simplify the final results
+    // Just show a simple completion message instead of detailed error analysis
+    
     const nbest = jsonResult.NBest && jsonResult.NBest.length > 0 ? jsonResult.NBest[0] : null;
-
     if (!nbest) {
       this.pronunciationTextTarget.innerHTML = '<span class="text-red-400">Could not assess pronunciation. Please try again.</span>';
+      this.assessmentResultTarget.classList.remove('hidden');
       return;
     }
 
     // Extract scores
     const scores = nbest.PronunciationAssessment || {};
 
-    // Set scores
+    // Set scores  
     this.accuracyScoreTarget.textContent = Math.round(scores.AccuracyScore || 0);
     this.fluencyScoreTarget.textContent = Math.round(scores.FluencyScore || 0);
     this.completenessScoreTarget.textContent = Math.round(scores.CompletenessScore || 0);
 
-    // Format the text with error highlighting
-    const words = nbest.Words || [];
-    let formattedText = '';
-
-    // Determine which original words were pronounced, omitted, or mispronounced
-    const wordStatusMap = {};
-    const originalWords = phraseText.split(/[\p{P}\p{Z}]+/u).filter(Boolean)
-
-    originalWords.forEach((word, i) => {
-      const matchingWord = words.find(w => w.Word.toLowerCase() === word.toLowerCase());
-
-      if (matchingWord) {
-        const errorType = matchingWord.PronunciationAssessment?.ErrorType || 'None';
-        wordStatusMap[i] = { word, errorType, assessedWord: matchingWord };
-      } else {
-        wordStatusMap[i] = { word, errorType: 'Omission', assessedWord: null };
-      }
-    });
-
-    // Look for insertions (words in the assessment that aren't in the original)
-    words.forEach(assessedWord => {
-      const wordLower = assessedWord.Word.toLowerCase();
-      const isInOriginal = originalWords.some(w => w.toLowerCase() === wordLower);
-
-      if (!isInOriginal && assessedWord.PronunciationAssessment) {
-        // This is an inserted word
-        // Find the closest position to insert it
-        const insertAfter = words.indexOf(assessedWord) > 0 ? 
-          words.indexOf(assessedWord) - 1 : 0;
-
-        // Add to the map with special insertion marker
-        wordStatusMap[`insertion_${insertAfter}`] = { 
-          word: assessedWord.Word, 
-          errorType: 'Insertion', 
-          assessedWord 
-        };
-      }
-    });
-
-    // Build formatted text
-    Object.keys(wordStatusMap)
-      .sort((a, b) => {
-        // Sort keys, with numeric keys first in numeric order, 
-        // then insertion keys based on their numeric component
-        if (!isNaN(a) && !isNaN(b)) return Number(a) - Number(b);
-        if (!isNaN(a)) return -1;
-        if (!isNaN(b)) return 1;
-
-        // Extract numeric parts of insertion keys
-        const aNum = Number(a.replace('insertion_', ''));
-        const bNum = Number(b.replace('insertion_', ''));
-        return aNum - bNum;
-      })
-      .forEach(key => {
-        const { word, errorType } = wordStatusMap[key];
-
-        if (errorType === 'None') {
-          formattedText += `<span class="mr-1">${word}</span>`;
-        } else if (errorType === 'Mispronunciation') {
-          formattedText += `<span class="mr-1 bg-yellow-300 text-black px-1 rounded">${word}</span>`;
-        } else if (errorType === 'Omission') {
-          formattedText += `<span class="mr-1 text-gray-500">[${word}]</span>`;
-        } else if (errorType === 'Insertion') {
-          formattedText += `<span class="mr-1 line-through bg-red-300 text-red-800 px-1 rounded">${word}</span>`;
-        }
-      });
-
-    // Set the formatted text
-    this.pronunciationTextTarget.innerHTML = formattedText;
+    // Show a simple success message since words were highlighted in real-time
+    const averageScore = (scores.AccuracyScore + scores.FluencyScore + scores.CompletenessScore) / 3;
+    if (averageScore >= 60) {
+      this.pronunciationTextTarget.innerHTML = '<span class="text-green-400 text-center">✓ Great pronunciation!</span>';
+    } else {
+      this.pronunciationTextTarget.innerHTML = '<span class="text-yellow-400 text-center">Good effort! Keep practicing.</span>';
+    }
 
     // Show the assessment result
     this.assessmentResultTarget.classList.remove('hidden');
+    
+    // Hide assessment after a short delay to keep the flow smooth
+    setTimeout(() => {
+      this.assessmentResultTarget.classList.add('hidden');
+    }, 2000);
   }
   
   showCompletionMessage() {
