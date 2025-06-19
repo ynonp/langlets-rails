@@ -171,19 +171,19 @@
   <% end %>
 
   <!-- Filters and Sort Controls -->
-  <section class="mb-8 px-2">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
-      <div class="flex flex-wrap gap-2 mb-4 sm:mb-0">
-        <span class="text-slate-300 font-semibold mr-1">Browse All Courses:</span>
+  <section class="mb-4 sm:mb-8 px-2">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-4">
+      <div class="flex flex-wrap gap-2 mb-2 sm:mb-0">
+        <span class="text-slate-300 font-semibold mr-1 hidden sm:inline">Browse All Courses:</span>
       </div>
-      <div class="flex flex-col sm:flex-row gap-3">
+      <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
         <!-- Filter by Language -->
-        <%= form_with url: courses_path, method: :get, local: true, class: "flex flex-col sm:flex-row gap-3" do |form| %>
+        <%= form_with url: courses_path, method: :get, local: true, class: "flex flex-col sm:flex-row gap-3 w-full sm:w-auto" do |form| %>
           <%= form.select :language, 
                 options_for_select([['All Languages', 'all']] + @languages.map { |lang| [lang.english_name, lang.english_name] }, params[:language]),
                 {},
                 { 
-                  class: "px-4 py-2 border border-slate-600 rounded-lg bg-slate-800 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm",
+                  class: "px-3 py-1.5 sm:px-4 sm:py-2 border border-slate-600 rounded-lg bg-slate-800 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm text-sm sm:text-base sm:ml-0 w-40 sm:w-auto",
                   onchange: "this.form.submit();"
                 } %>
         <% end %>
