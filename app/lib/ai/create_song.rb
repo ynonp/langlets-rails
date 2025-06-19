@@ -15,6 +15,24 @@ module Ai
       :phrases
     )
 
+    def with_retry(max_attempts: 3, delay: 1)
+      attempts = 0
+      begin
+        attempts += 1
+        yield
+      rescue StandardError => e
+        if attempts < max_attempts
+          puts "Attempt #{attempts} failed: #{e.message}. Retrying in #{delay} seconds..."
+          sleep(delay)
+          delay *= 2  # Exponential backoff
+          retry
+        else
+          puts "All #{max_attempts} attempts failed. Giving up."
+          raise e
+        end
+      end
+    end
+
     def initialize(song_name, youtubeurl, clip_language, translation_language, lyrics_url=nil)
       @lyrics_url = lyrics_url
       @song_name = song_name
@@ -42,29 +60,23 @@ module Ai
     end
 
     def run
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_phrases if progress.nil? || progress.step.nil?
+      with_retry(max_attempts: 5, delay: 10) do
+        progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+        create_phrases if progress.nil? || progress.step.nil?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_lessons if progress.create_phrases?
+        progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+        create_lessons if progress.create_phrases?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_token_translations if progress.create_lessons?
+        progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+        create_token_translations if progress.create_lessons?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_listening_activities if progress.create_token_translations?
+        progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+        create_listening_activities if progress.create_token_translations?
 
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_language_alignment_activities if progress.create_listening_activities?
-
-      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
-      create_course if progress.ready?
+        progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+        create_language_alignment_activities if progress.create_listening_activities?
+      end
     end
-
-    def create_course
-
-    end
-
 
     def save_progress(step, data = nil)
       progress = CreateSongProgress.find_or_create_by(youtubeurl:, clip_language:, translation_language:)
