@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_18_130435) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_19_084104) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -88,6 +88,18 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_130435) do
     t.string "main_media_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "language_id"
+    t.index ["language_id"], name: "index_courses_on_language_id"
+  end
+
+  create_table "courses_learning_paths", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "learning_path_id", null: false
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_courses_learning_paths_on_course_id"
+    t.index ["learning_path_id"], name: "index_courses_learning_paths_on_learning_path_id"
   end
 
   create_table "create_song_progresses", force: :cascade do |t|
@@ -110,6 +122,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_130435) do
     t.string "pronunciation_variant_name"
     t.boolean "rtl", default: false
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
+  end
+
+  create_table "learning_paths", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "difficulty_level"
+    t.boolean "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "lesson_users", force: :cascade do |t|
@@ -200,6 +221,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_18_130435) do
   add_foreign_key "activity_token_translations", "token_translations"
   add_foreign_key "activity_users", "activities"
   add_foreign_key "activity_users", "users"
+  add_foreign_key "courses", "languages"
+  add_foreign_key "courses_learning_paths", "courses"
+  add_foreign_key "courses_learning_paths", "learning_paths"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "media"

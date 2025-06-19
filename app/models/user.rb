@@ -31,4 +31,8 @@ class User < ApplicationRecord
     
     user
   end  
+
+  def recommended_for_me
+    Course.none
+  end
 end
