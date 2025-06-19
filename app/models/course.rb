@@ -5,6 +5,17 @@ class Course < ApplicationRecord
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
 
+  # Scope to get courses with progress for a user
+  scope :with_progress_for_user, ->(user) {
+    joins(lessons: :lesson_users)
+      .where(lesson_users: { user_id: user.id })
+      .includes(:language)
+      .select('courses.*, MAX(lesson_users.created_at) as latest_progress')
+      .group('courses.id')
+      .order('latest_progress DESC')
+      .distinct
+  }
+
   def create_short!(progress)
     raise "Missing creation data" unless progress.ready?
     data = progress.data
@@ -185,5 +196,17 @@ class Course < ApplicationRecord
 
     a4.phrases = medium.phrases.ordered_by_timestamp
     a4.token_translations = all_listen_tokens
+  end
+
+  # Calculate user progress for this course
+  def progress_for_user(user)
+    return 0 unless user
+    
+    # Always use fresh data to avoid stale cache issues
+    total_lessons = lessons.count
+    return 0 if total_lessons == 0
+    
+    completed_lessons = lessons.joins(:lesson_users).where(lesson_users: { user: user }).count
+    ((completed_lessons.to_f / total_lessons) * 100).round
   end
 end

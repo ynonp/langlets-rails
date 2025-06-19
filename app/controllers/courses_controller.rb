@@ -6,6 +6,12 @@ class CoursesController < ApplicationController
       Course.none
     end
     
+    @continue_learning_courses = if user_signed_in?
+      Course.with_progress_for_user(current_user)
+    else
+      Course.none
+    end
+    
     @learning_paths = LearningPath.published.includes(:courses)
     @all_courses = Course.includes(:language)
     

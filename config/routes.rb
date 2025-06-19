@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   }
   get "home/privacy"
   get "home/terms"
-  root "landing_page#index"
+  root "courses#index"
   get "landing_page/index"
   resources :lessons, only: [:show]
   resources :courses, only: [:show, :index]

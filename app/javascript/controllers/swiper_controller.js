@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { Swiper } from "swiper"
+import { FreeMode } from "swiper/modules"
 
 export default class extends Controller {
   static targets = ["container"]
@@ -10,25 +11,53 @@ export default class extends Controller {
   }
 
   connect() {
-    this.initSwiper()
+    // Add a small delay to ensure DOM is ready
+    setTimeout(() => {
+      this.initSwiper()
+    }, 100)
   }
 
   disconnect() {
     if (this.swiper) {
-      this.swiper.destroy()
+      this.swiper.destroy(true, true)
+      this.swiper = null
     }
   }
 
   initSwiper() {
+    if (!this.containerTarget) return
+    
+    // Configure Swiper modules
+    Swiper.use([FreeMode])
+    
     const config = {
       slidesPerView: "auto",
       spaceBetween: this.spaceBetweenValue,
-      freeMode: this.freeModeValue,
+      freeMode: {
+        enabled: this.freeModeValue,
+        sticky: false,
+      },
       grabCursor: true,
+      touchRatio: 1,
+      touchAngle: 45,
+      longSwipesRatio: 0.5,
+      longSwipesMs: 300,
+      followFinger: true,
+      mousewheel: {
+        forceToAxis: true,
+      },
       breakpoints: {
+        320: {
+          slidesPerView: "auto",
+          spaceBetween: 16,
+          freeMode: {
+            enabled: true,
+            sticky: false,
+          }
+        },
         640: {
           slidesPerView: "auto",
-          spaceBetween: this.spaceBetweenValue
+          spaceBetween: 20
         },
         768: {
           slidesPerView: "auto", 
@@ -41,6 +70,10 @@ export default class extends Controller {
       }
     }
 
-    this.swiper = new Swiper(this.containerTarget, config)
+    try {
+      this.swiper = new Swiper(this.containerTarget, config)      
+    } catch (error) {
+      console.error("Swiper initialization error:", error)
+    }
   }
 }

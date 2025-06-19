@@ -51,3 +51,6 @@ application.register('activity-navigation', ActivityNavigationController);
 
 import ProgressTrackerController from './progress_tracker_controller';
 application.register('progress-tracker', ProgressTrackerController)
+
+import SwiperController from './swiper_controller.js';
+application.register('swiper', SwiperController);
