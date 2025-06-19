@@ -38,7 +38,7 @@ export default class extends Controller {
     
     // Store assessment result for this phrase
     this.assessedPhrases[phraseIndex] = { result, phraseText };
-    this.completedPhrases++;
+    this.completedPhrases = phraseIndex + 1;
     this.updateProgressBar();
     
     // Show the assessment results
@@ -48,7 +48,7 @@ export default class extends Controller {
     this.showNextPhrase(phraseIndex);
     
     // Check if all phrases have been completed
-    if (this.completedPhrases >= this.totalPhrases) {
+    if (phraseIndex == this.totalPhrases - 1) {
       this.showCompletionMessage();
     }
   }
@@ -133,6 +133,17 @@ export default class extends Controller {
   }
   
   showCompletionMessage() {
+    // Only show completion if we've actually completed all phrases
+    if (this.completedPhrases < this.totalPhrases) {
+      console.log('Not all phrases completed yet:', this.completedPhrases, 'of', this.totalPhrases);
+      return;
+    }
+
+    if (!this.completionMessageTarget.classList.contains('hidden')) {
+      // already visible
+      return; 
+    }
+    
     // Calculate overall score based on all assessed phrases
     let totalAccuracy = 0;
     let totalFluency = 0;
@@ -152,15 +163,15 @@ export default class extends Controller {
     const averageScore = count > 0 ? 
       (totalAccuracy + totalFluency + totalCompleteness) / (3 * count) : 0;
     
-    // Show completion message if score is good enough or all phrases attempted
-    if (averageScore >= 60 || this.completedPhrases >= this.totalPhrases) {
-      this.completionMessageTarget.classList.remove('hidden');
-      animate(this.completionMessageTarget, 
-        { opacity: [0, 1], scale: [0.8, 1] }, 
-        { duration: 0.3, easing: 'easeOut' }
-      );
-      this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
-    }
+    console.log('Showing completion message. Average score:', averageScore, 'Completed phrases:', this.completedPhrases);
+    
+    // Show completion message - all phrases have been attempted
+    this.completionMessageTarget.classList.remove('hidden');
+    animate(this.completionMessageTarget, 
+      { opacity: [0, 1], scale: [0.8, 1] }, 
+      { duration: 0.3, easing: 'easeOut' }
+    );
+    this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
   }
 }
 

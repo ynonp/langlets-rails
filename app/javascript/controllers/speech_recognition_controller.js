@@ -16,6 +16,7 @@ export default class extends Controller {
     this.highlightedWords = new Set();
     this.autoStopTimeout = null;
     this.lastRecognitionTime = null;
+    this.lastRecognizedText = '';
   }
 
   toggleRecord() {
@@ -44,7 +45,14 @@ export default class extends Controller {
     
     this.micIconTarget.classList.remove('hidden');
     this.recordingIconTarget.classList.add('hidden');
-    this.isRecording = false;
+    
+    // Only trigger finalization if we're currently recording (prevent infinite loop)
+    if (this.isRecording) {
+      this.isRecording = false;
+      // If user manually stops recording, automatically continue to next phrase
+      // Get the last recognized text if available
+      this.finalizePronunciationAssessment(this.lastRecognizedText || '');
+    }
   }
 
   async startPronunciationAssessment() {
@@ -80,6 +88,7 @@ export default class extends Controller {
         const currentText = e.result.text;
         console.log('Recognizing:', currentText); // Debug log
         this.lastRecognitionTime = Date.now();
+        this.lastRecognizedText = currentText; // Track the latest text
         this.highlightSpokenWords(currentText);
         
         // Clear any existing auto-stop timeout
@@ -104,6 +113,7 @@ export default class extends Controller {
       recognizer.recognized = (s, e) => {
         if (e.result.reason === SpeechSDK.ResultReason.RecognizedSpeech) {
           console.log('Final recognized result:', e.result.text);
+          this.lastRecognizedText = e.result.text; // Update with final text
           // Don't finalize immediately - let the auto-stop logic handle it
         }
       };
@@ -152,6 +162,8 @@ export default class extends Controller {
   }
 
   async finalizePronunciationAssessment(finalText) {
+    console.log('Finalizing pronunciation assessment with text:', finalText);
+    
     try {
       // Stop the current recognizer
       if (this.recognizer) {
@@ -180,24 +192,34 @@ export default class extends Controller {
       pronAssessmentConfig.applyTo(assessmentRecognizer);
 
       // Use the text we already captured for assessment
-      // Since we can't directly assess text, we'll create a mock result
+      // Create a mock result based on what the user actually said
+      const spokenWords = finalText ? finalText.split(' ') : [];
+      const expectedWords = this.phraseTextValue.split(' ');
+      
+      // Calculate a basic score based on how many words were spoken
+      // But ensure manually stopped sentences get decent scores to avoid premature completion
+      const completionRatio = spokenWords.length / expectedWords.length;
+      const baseScore = Math.max(70, Math.min(85, completionRatio * 90)); // Minimum 70 to avoid early completion
+      
       const mockResult = {
         NBest: [{
           PronunciationAssessment: {
-            AccuracyScore: 85,
-            FluencyScore: 80,
-            CompletenessScore: 90,
-            PronScore: 85
+            AccuracyScore: baseScore,
+            FluencyScore: Math.max(70, baseScore - 5),
+            CompletenessScore: Math.max(70, Math.min(90, completionRatio * 100)),
+            PronScore: baseScore
           },
-          Words: finalText.split(' ').map(word => ({
+          Words: spokenWords.map(word => ({
             Word: word,
             PronunciationAssessment: {
-              AccuracyScore: 85,
+              AccuracyScore: baseScore,
               ErrorType: 'None'
             }
           }))
         }]
       };
+
+      console.log('Mock pronunciation assessment:', mockResult);
 
       // Dispatch the completion event
       this.dispatch('assessmentComplete', { 
@@ -211,11 +233,11 @@ export default class extends Controller {
       // Cleanup
       assessmentRecognizer.close();
       this.recognizer = null;
-      this.stopRecording();
+      // Don't call stopRecording() here to prevent infinite loop
 
     } catch (error) {
       console.error('Error in finalization:', error);
-      this.stopRecording();
+      // Don't call stopRecording() here either to prevent infinite loop
     }
   }
   
