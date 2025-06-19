@@ -1,5 +1,9 @@
 class Course < ApplicationRecord
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
+  belongs_to :language, optional: true
+  
+  has_many :courses_learning_paths, dependent: :destroy
+  has_many :learning_paths, through: :courses_learning_paths
 
   def create_short!(progress)
     raise "Missing creation data" unless progress.ready?
@@ -106,10 +110,10 @@ class Course < ApplicationRecord
       a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
 
       a2 = if rand() > 0.5
-             Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-           else
-             Activities::WordOrderActivity.create!(lesson: l, order: 2)
-           end
+        Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
+      else
+        Activities::WordOrderActivity.create!(lesson: l, order: 2)
+      end
       a3 = Activities::MatchTokensActivity.create!(lesson: l, order: 3)
       a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
       a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)

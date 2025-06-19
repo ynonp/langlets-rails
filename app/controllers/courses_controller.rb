@@ -1,5 +1,21 @@
 class CoursesController < ApplicationController
   def index
+    @recommended_courses = if user_signed_in?
+      current_user.recommended_for_me.includes(:language)
+    else
+      Course.none
+    end
+    
+    @learning_paths = LearningPath.published.includes(:courses)
+    @all_courses = Course.includes(:language)
+    
+    # Filter by language if provided
+    if params[:language].present? && params[:language] != 'all'
+      language = Language.find_by(english_name: params[:language])
+      @all_courses = @all_courses.where(language: language) if language
+    end
+    
+    @languages = Language.joins(:courses).distinct.order(:english_name)
   end
 
   def show

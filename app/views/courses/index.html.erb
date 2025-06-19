@@ -1,2 +1,169 @@
-<h1>Courses#index</h1>
-<p>Find me in app/views/courses/index.html.erb</p>
+<!-- Top bar: Use existing authentication bar -->
+<header class="py-6 border-b border-slate-700/60">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight flex-1">
+      Langlets
+    </h1>
+    
+    <% if user_signed_in? %>
+      <div class="relative group">
+        <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+        <label for="user-menu-toggle" class="flex items-center cursor-pointer">
+          <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
+        </label>
+        <div class="absolute right-0 mt-2 w-40 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+          <%= link_to "Logout",
+            destroy_user_session_path(returnto: request.fullpath),
+            method: :delete,
+            data: { turbo_method: :delete },
+            class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+          %>
+        </div>
+      </div>
+    <% else %>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+        <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <div class="flex gap-2">
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>
+
+<main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+  <!-- Row 1: "Next For You" - only show if user signed in and has recommended courses -->
+  <% if user_signed_in? && @recommended_courses.any? %>
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
+      <div class="swiper" data-controller="swiper" data-swiper-target="container">
+        <div class="swiper-wrapper">
+          <% @recommended_courses.each do |course| %>
+            <div class="swiper-slide" style="width: auto;">
+              <div class="flex-none w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700">
+                <% if course.main_media_url.present? %>
+                  <% youtube_video_id = course.main_media_url.split("v=").last %>
+                  <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl">
+                <% end %>
+                <div class="p-4">
+                  <h3 class="text-lg font-semibold text-slate-100 mb-2 truncate"><%= course.name %></h3>
+                  <div class="flex items-center text-sm text-slate-400 mb-3">
+                    <% if course.language.present? %>
+                      <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                        <%= course.language.english_name %>
+                      </span>
+                      <span class="mr-2">·</span>
+                    <% end %>
+                    <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+                  </div>
+                  <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center" do %>
+                    Continue Learning
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <!-- Row 2: "Learning Paths" -->
+  <% if @learning_paths.any? %>
+    <section class="mb-10">
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Learning Paths</h2>
+      <div class="swiper" data-controller="swiper" data-swiper-target="container">
+        <div class="swiper-wrapper">
+          <% @learning_paths.each_with_index do |learning_path, index| %>
+            <div class="swiper-slide" style="width: auto;">
+              <% gradient_colors = [
+                ['from-blue-500', 'to-blue-700'],
+                ['from-rose-500', 'to-rose-700'],  
+                ['from-green-500', 'to-green-700'],
+                ['from-purple-500', 'to-purple-700'],
+                ['from-amber-500', 'to-amber-700']
+              ] %>
+              <% gradient = gradient_colors[index % gradient_colors.length] %>
+              <div class="flex-none w-64 h-48 bg-gradient-to-br <%= gradient[0] %> <%= gradient[1] %> rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden">
+                <h3 class="text-xl font-bold text-white mb-2 relative z-10"><%= learning_path.name %></h3>
+                <% if learning_path.description.present? %>
+                  <p class="text-sm text-white text-opacity-90 relative z-10"><%= truncate(learning_path.description, length: 80) %></p>
+                <% end %>
+                <span class="absolute bottom-4 right-4 text-white text-opacity-80 text-xs font-semibold z-10">
+                  <%= pluralize(learning_path.courses.count, 'course') %>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  <% end %>
+
+  <!-- Filters and Sort Controls -->
+  <section class="mb-8 px-2">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-4">
+      <div class="flex flex-wrap gap-2 mb-4 sm:mb-0">
+        <span class="text-slate-300 font-semibold mr-1">Browse All Courses:</span>
+      </div>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <!-- Filter by Language -->
+        <%= form_with url: courses_path, method: :get, local: true, class: "flex flex-col sm:flex-row gap-3" do |form| %>
+          <%= form.select :language, 
+                options_for_select([['All Languages', 'all']] + @languages.map { |lang| [lang.english_name, lang.english_name] }, params[:language]),
+                {},
+                { 
+                  class: "px-4 py-2 border border-slate-600 rounded-lg bg-slate-800 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm",
+                  onchange: "this.form.submit();"
+                } %>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Course Grid -->
+  <section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+      <% @all_courses.each do |course| %>
+        <div class="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700">
+          <% if course.main_media_url.present? %>
+            <% youtube_video_id = course.main_media_url.split("v=").last %>
+            <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl">
+          <% end %>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-slate-100 mb-2 truncate"><%= course.name %></h3>
+            <div class="flex items-center text-sm text-slate-400 mb-3">
+              <% if course.language.present? %>
+                <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                  <%= course.language.english_name %>
+                </span>
+                <span class="mr-2">·</span>
+              <% end %>
+              <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+            </div>
+            <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center" do %>
+              Start Course
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+</main>
+
+<footer class="bg-slate-800 border-t border-slate-700 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+      <div class="text-slate-400 text-sm">
+        © <%= Date.current.year %> Langlets. All rights reserved.
+      </div>
+      <div class="flex space-x-6">
+        <%= link_to "Privacy Policy", "/home/privacy", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
+        <%= link_to "Terms of Service", "/home/terms", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
+      </div>
+    </div>
+  </div>
+</footer>
