@@ -42,23 +42,33 @@
         <div class="swiper-wrapper">
           <% @recommended_courses.each do |course| %>
             <div class="swiper-slide" style="width: auto;">
-              <div class="flex-none w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700">
+              <div class="flex-none w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full">
                 <% if course.main_media_url.present? %>
                   <% youtube_video_id = course.main_media_url.split("v=").last %>
-                  <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl">
-                <% end %>
-                <div class="p-4">
-                  <h3 class="text-lg font-semibold text-slate-100 mb-2 truncate"><%= course.name %></h3>
-                  <div class="flex items-center text-sm text-slate-400 mb-3">
-                    <% if course.language.present? %>
-                      <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                        <%= course.language.english_name %>
-                      </span>
-                      <span class="mr-2">·</span>
-                    <% end %>
-                    <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+                  <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+                <% else %>
+                  <div class="w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center flex-shrink-0">
+                    <svg class="w-12 h-12 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+                    </svg>
                   </div>
-                  <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center" do %>
+                <% end %>
+                <div class="p-4 flex flex-col flex-grow">
+                  <div class="flex-grow">
+                    <h3 class="text-lg font-semibold text-slate-100 mb-2 min-h-[1.75rem] flex items-center">
+                      <%= course.name.present? ? course.name : "Untitled Course" %>
+                    </h3>
+                    <div class="flex items-center text-sm text-slate-400 mb-3">
+                      <% if course.language.present? %>
+                        <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                          <%= course.language.english_name %>
+                        </span>
+                        <span class="mr-2">·</span>
+                      <% end %>
+                      <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+                    </div>
+                  </div>
+                  <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center mt-auto" do %>
                     Continue Learning
                   <% end %>
                 </div>
@@ -127,23 +137,33 @@
   <section>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
       <% @all_courses.each do |course| %>
-        <div class="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700">
+        <div class="bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full">
           <% if course.main_media_url.present? %>
             <% youtube_video_id = course.main_media_url.split("v=").last %>
-            <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl">
-          <% end %>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold text-slate-100 mb-2 truncate"><%= course.name %></h3>
-            <div class="flex items-center text-sm text-slate-400 mb-3">
-              <% if course.language.present? %>
-                <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                  <%= course.language.english_name %>
-                </span>
-                <span class="mr-2">·</span>
-              <% end %>
-              <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+            <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+          <% else %>
+            <div class="w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-12 h-12 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+              </svg>
             </div>
-            <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center" do %>
+          <% end %>
+          <div class="p-4 flex flex-col flex-grow">
+            <div class="flex-grow">
+              <h3 class="text-lg font-semibold text-slate-100 mb-2 min-h-[1.75rem] flex items-center">
+                <%= course.name.present? ? course.name : "Untitled Course" %>
+              </h3>
+              <div class="flex items-center text-sm text-slate-400 mb-3">
+                <% if course.language.present? %>
+                  <span class="mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                    <%= course.language.english_name %>
+                  </span>
+                  <span class="mr-2">·</span>
+                <% end %>
+                <span><%= pluralize(course.lessons.count, 'lesson') %></span>
+              </div>
+            </div>
+            <%= link_to course, class: "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 block text-center mt-auto" do %>
               Start Course
             <% end %>
           </div>
