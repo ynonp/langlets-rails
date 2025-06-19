@@ -13,6 +13,7 @@ export default class extends Controller {
     this.isRecording = false;
     this.recognizer = null;
     this.expectedWords = [];
+    this.wordTracker = []; // Array of {word: string, found: boolean, originalIndex: number}
     this.highlightedWords = new Set();
     this.autoStopTimeout = null;
     this.lastRecognitionTime = null;
@@ -60,8 +61,10 @@ export default class extends Controller {
     
     // Prepare expected words for real-time highlighting
     this.expectedWords = this.phraseTextValue.toLowerCase().split(/\s+/).filter(word => word.length > 0);
+    this.prepareWordTracking();
     this.highlightedWords.clear();
-    
+    this.createWordSpans();
+
     try {
       await import('https://cdn.jsdelivr.net/npm/microsoft-cognitiveservices-speech-sdk@latest/distrib/browser/microsoft.cognitiveservices.speech.sdk.bundle.js');
       const SpeechSDK = window.SpeechSDK
@@ -90,22 +93,21 @@ export default class extends Controller {
         this.lastRecognitionTime = Date.now();
         this.lastRecognizedText = currentText; // Track the latest text
         this.highlightSpokenWords(currentText);
-        
         // Clear any existing auto-stop timeout
         if (this.autoStopTimeout) {
           clearTimeout(this.autoStopTimeout);
           this.autoStopTimeout = null;
         }
         
-        // Check if phrase is complete and auto-stop - but be more conservative
+        // Check if phrase is complete and auto-stop - with 2 second linger time
         if (this.isPhraseComplete(currentText)) {
-          console.log('Phrase appears complete, will stop in 3 seconds...'); // Debug log
+          console.log('Phrase appears complete, will linger for 2 seconds...'); // Debug log
           this.autoStopTimeout = setTimeout(() => {
             if (this.recognizer) {
-              console.log('Auto-stopping recognition');
+              console.log('Auto-stopping recognition after linger period');
               this.finalizePronunciationAssessment(currentText);
             }
-          }, 500); // Wait 3 seconds after completion to catch any final words
+          }, 1000);
         }
       };
 
@@ -114,7 +116,18 @@ export default class extends Controller {
         if (e.result.reason === SpeechSDK.ResultReason.RecognizedSpeech) {
           console.log('Final recognized result:', e.result.text);
           this.lastRecognizedText = e.result.text; // Update with final text
-          // Don't finalize immediately - let the auto-stop logic handle it
+          this.highlightSpokenWords(e.result.text);
+          
+          // Check if phrase is complete and finalize if so
+          if (this.isPhraseComplete(e.result.text)) {
+            console.log('Phrase complete in final recognition, finalizing...');
+            // Clear any existing auto-stop timeout since we're handling it now
+            if (this.autoStopTimeout) {
+              clearTimeout(this.autoStopTimeout);
+              this.autoStopTimeout = null;
+            }
+            this.finalizePronunciationAssessment(e.result.text);
+          }
         }
       };
 
@@ -241,63 +254,115 @@ export default class extends Controller {
     }
   }
   
+  prepareWordTracking() {
+    this.wordTracker = this.expectedWords.map((word, index) => ({
+      word: word.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase(), // Clean word for matching
+      originalWord: word, // Keep original for display
+      found: false,
+      originalIndex: index
+    }));
+    console.log('Word tracker initialized:', this.wordTracker);
+  }
+  
+  markSpokenWords(spokenText) {
+    if (!spokenText) return;
+    
+    const spokenWords = spokenText.toLowerCase().split(/\s+/)
+      .filter(word => word.length > 0)
+      .map(word => word.replace(/[^\p{L}\p{N}]/gu, ''));
+    
+    console.log('Processing spoken words:', spokenWords);
+    
+    spokenWords.forEach(spokenWord => {
+      // Find first unmatched word that matches this spoken word
+      const matchIndex = this.wordTracker.findIndex(tracker => 
+        !tracker.found && this.wordsMatch(spokenWord, tracker.word)
+      );
+      
+      if (matchIndex !== -1) {
+        this.wordTracker[matchIndex].found = true;
+        console.log(`Marked word ${matchIndex}: "${this.wordTracker[matchIndex].originalWord}"`);
+      }
+    });
+  }
+  
+  // Add this method to create word-level spans
+  createWordSpans() {
+    const phraseContainer = this.element.closest('.phrase-container');
+    if (!phraseContainer) return;
+
+    const originalPhrase = phraseContainer.querySelector('.original-phrase');
+    if (!originalPhrase) return;
+
+    // Get all token spans
+    const tokenSpans = originalPhrase.querySelectorAll('span[data-start-index], span');
+    
+    tokenSpans.forEach(tokenSpan => {
+      // Skip if already processed
+      if (tokenSpan.querySelector('.word-span')) return;
+      
+      const tokenText = tokenSpan.textContent;
+      const words = tokenText.split(/(\s+)/); // Split but keep whitespace
+      
+      // Clear the token span content
+      tokenSpan.innerHTML = '';
+      
+      // Create spans for each word while preserving whitespace
+      words.forEach(part => {
+        if (part.trim()) {
+          // It's a word - create a word span
+          const wordSpan = document.createElement('span');
+          wordSpan.className = 'word-span';
+          wordSpan.textContent = part;
+          tokenSpan.appendChild(wordSpan);
+        } else {
+          // It's whitespace - add as text node
+          tokenSpan.appendChild(document.createTextNode(part));
+        }
+      });
+    });
+  }
+
   highlightSpokenWords(spokenText) {
     if (!spokenText) return;
     
-    console.log('Highlighting words for:', spokenText); // Debug log
+    console.log('Highlighting words for:', spokenText);
     
-    const spokenWords = spokenText.toLowerCase().split(/\s+/).filter(word => word.length > 0);
+    // Update word tracking first
+    this.markSpokenWords(spokenText);
+    
+    
     const phraseContainer = this.element.closest('.phrase-container');
+    if (!phraseContainer) return;
     
-    if (!phraseContainer) {
-      console.log('No phrase container found, trying alternative selector');
-      return;
-    }
+    // Now get all individual word spans
+    const wordSpans = phraseContainer.querySelectorAll('.word-span');
     
-    // Try multiple selectors to find the token spans
-    let tokenSpans = phraseContainer.querySelectorAll('.original-phrase span[data-start-index]');
+    console.log('Word spans found:', wordSpans.length);
+    console.log('Word tracker length:', this.wordTracker.length);
     
-    if (tokenSpans.length === 0) {
-      // Try alternative selector - just all spans in the original phrase
-      tokenSpans = phraseContainer.querySelectorAll('.original-phrase span');
-    }
-    
-    if (tokenSpans.length === 0) {
-      // Try even more generic selector
-      tokenSpans = phraseContainer.querySelectorAll('span');
-    }
-    
-    if (tokenSpans.length === 0) {
-      return;
-    }
-    
-    // Log the text content of found spans for debugging
-    console.log('Available spans:', Array.from(tokenSpans).map(span => span.textContent));
-    
-    // For each spoken word, try to find matching tokens and highlight them
-    spokenWords.forEach(spokenWord => {
-      console.log('Processing spoken word:', spokenWord); // Debug log
-      tokenSpans.forEach(span => {
-        const tokenText = span.textContent.toLowerCase().trim();
-        
-        // Simple matching - can be improved with fuzzy matching
-        if (this.wordsMatch(spokenWord, tokenText) && !this.highlightedWords.has(span)) {
-          console.log('Highlighting match:', spokenWord, 'with', tokenText); // Debug log
-          span.style.backgroundColor = '#3B82F6'; // Blue background
-          span.style.color = 'white';
-          span.style.borderRadius = '4px';
-          span.style.padding = '2px 4px';
-          span.style.transition = 'all 0.3s ease';
-          this.highlightedWords.add(span);
+    // Now we can match by index since both are individual words
+    this.wordTracker.forEach((tracker, index) => {
+      if (tracker.found && index < wordSpans.length) {
+        const wordSpan = wordSpans[index];
+        if (!this.highlightedWords.has(wordSpan)) {
+          console.log('Highlighting word:', tracker.originalWord);
+          console.log(wordSpan);
+          wordSpan.style.backgroundColor = '#3B82F6';
+          wordSpan.style.color = 'white';
+          wordSpan.style.borderRadius = '4px';
+          wordSpan.style.padding = '2px 4px';
+          wordSpan.style.transition = 'all 0.3s ease';
+          this.highlightedWords.add(wordSpan);
         }
-      });
+      }
     });
   }
   
   wordsMatch(spokenWord, tokenText) {
     // Remove punctuation and normalize
-    const cleanSpoken = spokenWord.replace(/[^\w]/g, '').toLowerCase();
-    const cleanToken = tokenText.replace(/[^\w]/g, '').toLowerCase();
+    const cleanSpoken = spokenWord.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
+    const cleanToken = tokenText.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
     
     console.log('Comparing:', cleanSpoken, 'with', cleanToken); // Debug log
     
@@ -307,88 +372,23 @@ export default class extends Controller {
       return true;
     }
     
-    // Partial match for longer words (at least 3 characters)
-    if (cleanSpoken.length >= 3 && cleanToken.length >= 3) {
-      if (cleanToken.includes(cleanSpoken) || cleanSpoken.includes(cleanToken)) {
-        console.log('Partial match!'); // Debug log
-        return true;
-      }
-    }
-    
-    // Fuzzy match for similar words (simple edit distance)
-    if (cleanSpoken.length >= 3 && cleanToken.length >= 3) {
-      const similarity = this.calculateSimilarity(cleanSpoken, cleanToken);
-      if (similarity > 0.7) {
-        console.log('Fuzzy match!', similarity); // Debug log
-        return true;
-      }
-    }
-    
     return false;
   }
-  
-  calculateSimilarity(word1, word2) {
-    const maxLength = Math.max(word1.length, word2.length);
-    if (maxLength === 0) return 1;
-    
-    const distance = this.levenshteinDistance(word1, word2);
-    return (maxLength - distance) / maxLength;
-  }
-  
-  levenshteinDistance(str1, str2) {
-    const matrix = [];
-    
-    for (let i = 0; i <= str2.length; i++) {
-      matrix[i] = [i];
-    }
-    
-    for (let j = 0; j <= str1.length; j++) {
-      matrix[0][j] = j;
-    }
-    
-    for (let i = 1; i <= str2.length; i++) {
-      for (let j = 1; j <= str1.length; j++) {
-        if (str2.charAt(i - 1) === str1.charAt(j - 1)) {
-          matrix[i][j] = matrix[i - 1][j - 1];
-        } else {
-          matrix[i][j] = Math.min(
-            matrix[i - 1][j - 1] + 1,
-            matrix[i][j - 1] + 1,
-            matrix[i - 1][j] + 1
-          );
-        }
-      }
-    }
-    
-    return matrix[str2.length][str1.length];
-  }
+
   
   isPhraseComplete(spokenText) {
-    if (!spokenText || !this.expectedWords.length) return false;
+    console.log(`--- 4`, spokenText, this.wordTracker.length);
+    if (!spokenText || !this.wordTracker.length) return false;
     
-    const spokenWords = spokenText.toLowerCase().split(/\s+/).filter(word => word.length > 0);
+    // Update word tracking
+    this.markSpokenWords(spokenText);
     
-    console.log('Checking completion - Expected:', this.expectedWords, 'Spoken:', spokenWords); // Debug log
+    const foundCount = this.wordTracker.filter(tracker => tracker.found).length;
+    const completionRatio = foundCount / this.wordTracker.length;
     
-    // Don't consider complete unless we have a reasonable number of words
-    if (spokenWords.length < Math.max(2, Math.ceil(this.expectedWords.length * 0.5))) {
-      console.log('Not enough words spoken yet'); // Debug log
-      return false;
-    }
+    console.log(`Completion check - Found ${foundCount}/${this.wordTracker.length} words (${Math.round(completionRatio * 100)}%)`);
     
-    // Count how many expected words we've matched
-    let matchedCount = 0;
-    this.expectedWords.forEach(expectedWord => {
-      const hasMatch = spokenWords.some(spokenWord => 
-        this.wordsMatch(spokenWord, expectedWord)
-      );
-      if (hasMatch) matchedCount++;
-    });
-    
-    const completionRatio = matchedCount / this.expectedWords.length;
-    console.log('Completion ratio:', completionRatio, 'Matched:', matchedCount, 'of', this.expectedWords.length); // Debug log
-    
-    // Consider complete if we've matched at least 80% of expected words AND have spoken enough words
-    return completionRatio >= 0.8 && spokenWords.length >= Math.ceil(this.expectedWords.length * 0.7);
+    // Much simpler: just need 80% of words found in correct order
+    return completionRatio == 1;
   }
 }
