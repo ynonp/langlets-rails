@@ -41,7 +41,7 @@
     class="<%= activity_params[:video_player] ? 'px-4 order-2' : 'hidden' %>"
   >
       <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative" 
-       style="background-image: url('https://img.youtube.com/vi/Yy-SUZDn0cE/maxresdefault.jpg')" 
+       style="background-image: url('<%= "https://img.youtube.com/vi/#{@videoid}/maxresdefault.jpg" %>')" 
        role="img" 
        aria-label="Video thumbnail">
     
