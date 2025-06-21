@@ -21,14 +21,17 @@ export default class extends Controller {
   handleBeforeRender() {
     this.playerContainerTarget.classList.add('hidden');
     this.segmentStart = null;
-    this.segmentEnd = null;
+    this.segmentEnd = null;    
   }
 
   handleFrameRender() {
-    if (this.hasVideoSegmentTarget && this.videoSegmentTarget.dataset.showPlayer) {
+    if (this.hasVideoSegmentTarget && this.videoSegmentTarget.dataset.showPlayer) {      
       this.playerContainerTarget.classList.remove('hidden');
       this.playerContainerTarget.classList.add('order-2', 'px-4');
-      this.player.pauseVideo();
+      if (this.player) {
+        this.player.seekTo(this.videoSegmentTarget.dataset.segmentStart);
+        this.player.pauseVideo();
+      }
     }
   }
 
@@ -72,13 +75,26 @@ export default class extends Controller {
     })
   }
 
-  fullPlayerStartPlayback() {
-    console.log('fullPlayerStartPlayback');
+  fullPlayerStartPlayback() {    
     this.playButtonTarget.classList.add('hidden');
   }
 
   fullPlayerStopPlayback() {
     this.playButtonTarget.classList.remove('hidden');
+  }
+
+  async togglePlayPause(ev) {    
+    if (!this.player) {
+      this.playSegment(ev);
+      return;
+    }
+    const state = await this.player.getPlayerState();
+    if (state === 1) {
+      // playing
+      await this.stopPlayback();
+    } else {
+      await this.playSegment(ev);
+    }
   }
 
   showPlayButton() {
@@ -106,6 +122,7 @@ export default class extends Controller {
   }
 
   async playSegment(event) {
+    console.log(`play segment`, event);
     // Initialize player on first playSegment call
     if (!this.playerInitialized) {
       this.initializePlayer();
@@ -143,6 +160,11 @@ export default class extends Controller {
   }
 
   startPlaybackMonitoring() {
+    if (this.monitorPlaybackInterval) {
+      clearInterval(this.monitorPlaybackInterval);
+      this.monitorPlaybackInterval = null;
+    }
+
     this.monitorPlaybackInterval = setInterval(async () => {
       const at = await this.player.getCurrentTime();
       if (at >= this.segmentEnd) {

@@ -42,10 +42,13 @@
   >
       <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative" 
        style="background-image: url('https://img.youtube.com/vi/Yy-SUZDn0cE/maxresdefault.jpg')" 
-       data-action="click->main-video-player#playSegment" 
        role="img" 
        aria-label="Video thumbnail">
     
+        <div class="absolute inset-0 z-20" 
+              data-action="click->main-video-player#togglePlayPause"></div>
+        
+
         <div data-main-video-player-target="player" class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
               <!-- Custom Progress Bar -->
         <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
