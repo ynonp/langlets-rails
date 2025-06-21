@@ -25,22 +25,34 @@
   <meta property="twitter:image" content="<%= thumbnail_url %>">
 <% end %>
 
-<div class="flex flex-col min-h-screen w-full bg-gray-900"
-    data-controller="main-video-player activity-navigation "
-    data-action="play->main-video-player#playFrom"
+<div class="flex flex-col min-h-screen w-full bg-gray-800"
+    data-controller="main-video-player activity-navigation "    
     data-main-video-player-video-id-value="<%= @videoid %>"
     
 >
   <div
     id="main-player"
     data-turbo-permanent
-    class="hidden"
-    data-main-video-player-target="player"    
+    class="order-2 px-4"
   >
+      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative" 
+       style="background-image: url('https://img.youtube.com/vi/Yy-SUZDn0cE/maxresdefault.jpg')" 
+       data-action="click->main-video-player#playSegment" 
+       role="img" 
+       aria-label="Video thumbnail">
+    
+        <div data-main-video-player-target="player" class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
+        
+        <button data-main-video-player-target="playButton" 
+                class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10">
+          ▶
+        </button>             
+      </div>
   </div>
 
   <turbo-frame
     id="activity"
+    class="contents"
     data-action="turbo:frame-render->activity-navigation#activityChange"    
   >
     <%= render partial: 'activity_navigation' %>
@@ -48,7 +60,7 @@
       data-controller="progress-tracker"
       data-action="activity:completed->progress-tracker#sendProgressUpdate"
       data-progress-tracker-progress-data-value="<%= @progress_data.to_json %>"
-      class="items-stretch flex-1 bg-gray-800"
+      class="contents"
       data-activity-navigation-target="content"
       data-activity-navigation-url="<%= @current_url %>"
     >  

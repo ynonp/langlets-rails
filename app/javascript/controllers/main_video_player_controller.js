@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
 
 export default class extends Controller {
-  static targets = ['player', 'progressBar', 'playButton', 'pauseButton'];
+  static targets = ['player', 'progressBar', 'playButton', 'pauseButton', 'videoListener'];
 
   static values = {
     videoId: String,
@@ -34,16 +34,30 @@ export default class extends Controller {
     });   
 
     this.player.on('stateChange', (event) => {
-      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
-        this.showPlayButton();
-        this.stopPlaybackMonitoring();
+      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {        
+        this.dispatchVideoEvent('stop');      
       } else if (event.data === YT.PlayerState.PLAYING) {
-        this.hidePlayButton();
-        this.startPlaybackMonitoring();
+        this.dispatchVideoEvent('play');      
       }
     });
     
     this.playerInitialized = true;
+  }
+
+  dispatchVideoEvent(eventName) {
+    const e = new CustomEvent(`video:${eventName}`);
+    this.videoListenerTargets.forEach((el) => {
+      el.dispatchEvent(e);
+    })
+  }
+
+  fullPlayerStartPlayback() {
+    console.log('fullPlayerStartPlayback');
+    this.playButtonTarget.classList.add('hidden');
+  }
+
+  fullPlayerStopPlayback() {
+    this.playButtonTarget.classList.remove('hidden');
   }
 
   showPlayButton() {
@@ -68,7 +82,7 @@ export default class extends Controller {
     if (this.player) {
       this.player.pauseVideo();
     }
-  }  
+  }
 
   async playSegment(event) {    
     // Initialize player on first playSegment call

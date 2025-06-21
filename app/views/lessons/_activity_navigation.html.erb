@@ -3,7 +3,7 @@
   current_activity_order = @activity.order if current_activity_order == 0 
 %>
 
-<div class="py-2 px-2 overflow-x-auto">
+<div class="bg-gray-900 py-2 px-2 overflow-x-auto">
   <div class="flex items-center min-w-min">  
     <%= link_to @course_path, class: "text-white mr-4 p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200", title: "Back to Course", data: {:"turbo-frame" => "_top"} do %>
       <svg xmlns="http://www.w3.org/2000/svg" 

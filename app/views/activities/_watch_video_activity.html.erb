@@ -2,6 +2,9 @@
     phrases = params[:phrases]
     l1_rtl = params[:l1_rtl]
     l2_rtl = params[:l2_rtl]
+
+    timestamp_start = params[:start_timestamp]
+    timestamp_end = params[:end_timestamp]
 %>
 
 <%= content_for :head do %>
@@ -9,21 +12,22 @@
 <% end %>
 
 <div
-    class="flex-col flex items-center bg-gray-800 overflow-hidden"
-    data-controller="video-player"
+    class="contents"    
     data-video-player-video-id-value="<%= params[:video_id] %>"
     data-video-player-mini-player-value="false"
+    data-main-video-player-target="videoListener"
+    data-action="video:play->main-video-player#fullPlayerStartPlayback:capture"
     data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-video-player-current-text-line-class="bg-gray-700"
 >
-  <div class="w-full max-w-[640px] px-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-120px)]">
-    <div class="mb-2 text-center">
+  <div class="contents">
+    <div class="mb-2 text-center order-1">
       <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
     
-    <div id="player-container" class="w-full relative aspect-video bg-black">
+    <div id="player-container" class="hidden w-full relative aspect-video bg-black">
       <!-- YouTube Thumbnail Background -->
       <div class="absolute inset-0 z-10">
         <img src="https://img.youtube.com/vi/<%= params[:video_id] %>/maxresdefault.jpg" 
@@ -36,7 +40,10 @@
 
       <!-- Overlay Play Button -->
       <div id="overlay" class="absolute inset-0 z-30 flex items-center justify-center cursor-pointer bg-transparent"
-                        data-action="click->video-player#togglePlayback">
+                        data-action="click->main-video-player#playSegment"
+                        data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
+                        data-main-video-player-segment-end-param="<%= timestamp_to_seconds(timestamp_end) %>"
+                        >
         <button data-video-player-target="playButton"
           class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
           ▶
@@ -53,7 +60,10 @@
     </div>
 
 
-    <div data-video-player-target="completionMessage" data-progress-tracker-target="completion" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div 
+      data-video-player-target="completionMessage"
+      data-progress-tracker-target="completion"
+      class="hidden order-3 mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
         <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
         <p class="text-center sm:text-left text-gray-300">Ready to start the practice?</p>
@@ -62,7 +72,8 @@
     </div>    
 
     <!-- Control Bar -->
-    <div class="my-4 flex justify-between items-center">
+    <div
+      class="px-4 order-4 my-4 flex justify-between items-center">
       <label class="flex items-center text-white">
         <input 
           checked="true"
@@ -70,7 +81,7 @@
           data-video-player-target="showTranslation"
           data-action="change->video-player#toggleTranslation"
           class="mr-2">
-        Toggle Translation
+        Translation
       </label>
       <%= link_to "Skip Video", @next_activity_path,
         { class: "hidden px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200",
@@ -84,7 +95,7 @@
         id="phrases-container"
         data-video-player-target="container"
         data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
-        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"                
+        class="order-4 w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"                
         >
       <div
         id="phrases-list" 
