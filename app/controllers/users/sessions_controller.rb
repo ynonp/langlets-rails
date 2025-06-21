@@ -10,6 +10,7 @@ class Users::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    params[resource_name][:remember_me] = '1' if params[resource_name]
     super
   end
 
