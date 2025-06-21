@@ -25,7 +25,7 @@ export default class extends Controller {
   }
 
   handleFrameRender() {
-    if (this.hasVideoSegmentTarget) {
+    if (this.hasVideoSegmentTarget && this.videoSegmentTarget.dataset.showPlayer) {
       this.playerContainerTarget.classList.remove('hidden');
       this.playerContainerTarget.classList.add('order-2', 'px-4');
       this.player.pauseVideo();
@@ -143,7 +143,6 @@ export default class extends Controller {
   }
 
   startPlaybackMonitoring() {
-    console.log('1');
     this.monitorPlaybackInterval = setInterval(async () => {
       const at = await this.player.getCurrentTime();
       if (at >= this.segmentEnd) {

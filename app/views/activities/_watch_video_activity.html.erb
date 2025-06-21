@@ -22,6 +22,7 @@
       video:stop->watch-video-activity#handleVideoPause
       video:progress->watch-video-activity#progress
     "
+    data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-watch-video-activity-current-text-line-class="bg-gray-700"

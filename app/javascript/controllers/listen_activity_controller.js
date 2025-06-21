@@ -2,19 +2,25 @@ import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
 
 export default class extends Controller {
-  static targets = ['phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer', 'completion']
+  static targets = ['subtitles', 'phrase', 'translation', 'wordSelection', 'wordOption', 'showTranslation', 'phrasesContainer', 'completion']
   
   connect() {
     this.currentTokenIndex = 0;
     this.allTokens = this.getAllTokens();
-    
-    // Listen for phrase activation events from video player
-    this.handlePhraseActivated = this.handlePhraseActivated.bind(this);
-    this.element.addEventListener('video-player:phrase-activated', this.handlePhraseActivated);
+  }
+
+  progress({detail: {at}}) {
+    const currentTime = at;
+    const subtitlesLines = this.subtitlesTargets;
+    const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t < currentTime);
+
+    if (index !== -1) {
+      subtitlesLines[index].classList.add(this.currentTextLineClass);
+      this.handlePhraseActivated(subtitlesLines[index]);
+    }
   }
   
-  handlePhraseActivated(event) {
-    const currentPhraseElement = event.detail.phraseElement;
+  handlePhraseActivated(currentPhraseElement) {
     const currentPhraseId = parseInt(currentPhraseElement.dataset.phraseId);
     
     // Find the previous phrase
@@ -59,18 +65,7 @@ export default class extends Controller {
     
     return tokens;
   }
-  
-  toggleTranslation() {
-    const showTranslations = this.showTranslationTarget.checked;
-    this.translationTargets.forEach(translation => {
-      if (showTranslations) {
-        translation.classList.remove('hidden');
-      } else {
-        translation.classList.add('hidden');
-      }
-    });
-  }
-  
+
   selectWord(event) {
     const wordButton = event.currentTarget;
     const word = wordButton.dataset.word;
@@ -127,7 +122,6 @@ export default class extends Controller {
   updateWordSelection() {
     if (this.currentTokenIndex < this.allTokens.length) {
       const token = this.allTokens[this.currentTokenIndex];
-      const phraseElement = this.phraseTargets.find(p => p.dataset.phraseId === token.phraseId);
       
       // Get token data from data attribute
       const tokenData = token.tokenData;
@@ -151,10 +145,5 @@ export default class extends Controller {
         </button>
       `).join('');
     }
-  }
-  
-  disconnect() {
-    // Remove event listeners
-    this.element.removeEventListener('video-player:phrase-activated', this.handlePhraseActivated);
-  }
+  }  
 }

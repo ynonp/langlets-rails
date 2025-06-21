@@ -37,31 +37,23 @@
 
 <div
     class="flex-col flex items-center bg-gray-800 overflow-hidden"
-    data-controller="listen-activity video-player"
-    data-video-player-video-id-value="<%= params[:video_id] %>"
-    data-video-player-mini-player-value="true"
-    data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
-    data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-video-player-current-text-line-class="bg-gray-700"
+    data-controller="listen-activity"    
+    data-main-video-player-target="videoListener videoSegment"
+    data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+    data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-next-activity-path="<%= @next_activity_path %>"
-    data-action="listen-activity:pause-video->video-player#handlePauseVideo listen-activity:play-video->video-player#handlePlayVideo video-player:phrase-activated->listen-activity#handlePhraseActivated"
+    data-action="      
+      video:progress->listen-activity#progress
+      listen-activity:pause-video->main-video-player#stopPlayback
+      listen-activity:play-video->main-video-player#playSegment"
 >
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-160px)]">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
-    <div class="flex items-center space-x-3">
-      <button data-video-player-target="playButton" data-action="click->video-player#togglePlayback" id="audio-play-button" class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition">
-        ▶
-      </button>
-      <div class="flex-1 h-2 bg-gray-600 rounded-full">
-        <div
-            data-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
-      </div>
-    </div>
-    <!-- Hidden YouTube Player -->
-    <div data-video-player-target="player" id="hidden-player" class="hidden w-0 h-0 overflow-hidden"></div>
+
+    <%= render partial: 'activities/mini_video_player', locals: {params: params} %>
 
     <!-- Completion Message (Initially Hidden) -->
     <div class="my-4 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
@@ -77,30 +69,20 @@
       </a>
     </div>    
 
-    <!-- Control Bar -->
-    <div class="my-4 flex justify-between items-center">
-      <label class="flex items-center text-white">
-        <input type="checkbox" data-listen-activity-target="showTranslation" data-action="change->listen-activity#toggleTranslation" class="mr-2">
-        Show Translation
-      </label>
-    </div>
-
     <!-- Phrases Container with scrolling -->
     <div
         id="phrases-container"
-        data-video-player-target="container"
-        data-listen-activity-target="phrasesContainer"
+        data-listen-activity-target="phrasesContainer container"
         class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
         dir="<%= rtl ? 'rtl' : 'ltr' %>"
         >
       <div
         id="phrases-list" 
-        data-video-player-target="phrasesList"
+        data-listen-activity-target="phrasesList"
         class="text-white text-sm sm:text-base pb-14 ">
         <% phrases.each_with_index do |phrase, phrase_index| %>
           <div
-            data-video-player-target="subtitles"
-            data-listen-activity-target="phrase"
+            data-listen-activity-target="subtitles phrase"            
             data-timestamp="<%= timestamp_to_seconds(phrase['timestamp']) %>"
             data-phrase-id="<%= phrase_index %>"
             class="px-4 py-3 transition-all duration-200">
