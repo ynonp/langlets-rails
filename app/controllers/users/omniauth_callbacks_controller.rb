@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
+  include Devise::Controllers::Rememberable
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
