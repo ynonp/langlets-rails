@@ -1,8 +1,15 @@
 <div    
-    class="mb-6 px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 rounded-lg">
+    class="mb-6 px-3 py-2 sm:px-4 sm:py-3 bg-gray-700 rounded-lg"
+    data-controller="mini-player"
+    data-main-video-player-target="videoListener"
+    data-action="
+      video:play->mini-player#handleVideoStart      
+      video:stop->mini-player#handleVideoPause
+    "
+  >
     <div class="flex items-center space-x-3">
       <button
-        data-main-video-player-target="playButton"
+        data-mini-player-target="playButton"
         data-action="click->main-video-player#playSegment"
         data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
         data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
@@ -12,7 +19,7 @@
         ▶
       </button>
       <button
-        data-main-video-player-target="pauseButton"
+        data-mini-player-target="pauseButton"
         data-action="click->main-video-player#stopPlayback"
         data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
         data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
@@ -22,10 +29,11 @@
         ❚❚
       </button>
       <div class="flex-1 h-2 bg-gray-600 rounded-full cursor-pointer"
-           data-main-video-player-target="progressBarContainer"
-           data-action="click->video-player#seekToPosition">
-        <div
-            data-main-video-player-target="progressBar" id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
+           data-main-vieo-player-target="progressBarContainer"
+           data-action="click->main-video-player#seekToPosition">
+        <div 
+          data-main-video-player-target="progressBar"
+          id="audio-progress-bar" class="h-full bg-blue-500 rounded-full transition-all duration-100" style="width: 0%"></div>
       </div>
     </div>    
 </div>

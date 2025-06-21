@@ -12,14 +12,19 @@
 <% end %>
 
 <div
-    class="contents"    
-    data-video-player-video-id-value="<%= params[:video_id] %>"
-    data-video-player-mini-player-value="false"
-    data-main-video-player-target="videoListener"
-    data-action="video:play->main-video-player#fullPlayerStartPlayback:capture"
-    data-video-player-segment-start-value="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
-    data-video-player-segment-end-value="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-video-player-current-text-line-class="bg-gray-700"
+    class="contents"  
+    data-controller="watch-video-activity"  
+    data-main-video-player-target="videoListener videoSegment"
+    data-action="
+      video:play->main-video-player#fullPlayerStartPlayback
+      video:play->watch-video-activity#handleVideoStart
+      video:end->watch-video-activity#handleVideoEnd
+      video:stop->watch-video-activity#handleVideoPause
+      video:progress->watch-video-activity#progress
+    "
+    data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
+    data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
+    data-watch-video-activity-current-text-line-class="bg-gray-700"
 >
   <div class="contents">
     <div class="mb-2 text-center order-1">
@@ -27,41 +32,8 @@
       <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
     </div>
     
-    <div id="player-container" class="hidden w-full relative aspect-video bg-black">
-      <!-- YouTube Thumbnail Background -->
-      <div class="absolute inset-0 z-10">
-        <img src="https://img.youtube.com/vi/<%= params[:video_id] %>/maxresdefault.jpg" 
-             alt="Video thumbnail"
-             class="w-full h-full object-cover"
-             data-video-player-target="thumbnail">
-      </div>
-      
-      <div data-video-player-target="player" class="w-full h-full relative z-20"></div>
-
-      <!-- Overlay Play Button -->
-      <div id="overlay" class="absolute inset-0 z-30 flex items-center justify-center cursor-pointer bg-transparent"
-                        data-action="click->main-video-player#playSegment"
-                        data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
-                        data-main-video-player-segment-end-param="<%= timestamp_to_seconds(timestamp_end) %>"
-                        >
-        <button data-video-player-target="playButton"
-          class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition">
-          ▶
-        </button>
-      </div>
-
-      <!-- Custom Progress Bar -->
-      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
-           data-video-player-target="progressBarContainer"
-           data-action="click->video-player#seekToPosition"
-           style="pointer-events: auto;">
-        <div data-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
-      </div>
-    </div>
-
-
     <div 
-      data-video-player-target="completionMessage"
+      data-watch-video-activity-target="completionMessage"
       data-progress-tracker-target="completion"
       class="hidden order-3 mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
@@ -78,14 +50,14 @@
         <input 
           checked="true"
           type="checkbox"
-          data-video-player-target="showTranslation"
-          data-action="change->video-player#toggleTranslation"
+          data-watch-video-activity-target="showTranslation"
+          data-action="change->watch-video-activity#toggleTranslation"
           class="mr-2">
         Translation
       </label>
       <%= link_to "Skip Video", @next_activity_path,
         { class: "hidden px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200",
-          data: { video_player_target: "startActivityButton" }
+          data: { watch_video_activity_target: "startActivityButton" }
         } %>
     </div>
 
@@ -93,19 +65,19 @@
     <div
         data-controller="popover-translation"
         id="phrases-container"
-        data-video-player-target="container"
+        data-watch-video-activity-target="container"
         data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
         class="order-4 w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"                
         >
       <div
         id="phrases-list" 
-        data-video-player-target="phrasesList"
+        data-watch-video-activity-target="phrasesList"
         class="text-white text-sm sm:text-base"
       >
         <% phrases.each do |phrase| %>
         <div
-          data-video-player-target="subtitles"
-          data-action="click->video-player#seekToTimestamp"
+          data-watch-video-activity-target="subtitles"
+          data-action="click->main-video-player#seekToTimestamp"
           data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
           class="flex flex-col <%= l1_rtl ? 'items-end' : 'items-start' %>"
         >
@@ -120,7 +92,7 @@
                                       data: {action: "click->popover-translation#showPopup" }}) %>
             </div>
             <div
-              class="text-teal-400 mt-1 text-md md:text-xl" data-video-player-target="translation"
+              class="text-teal-400 mt-1 text-md md:text-xl" data-watch-video-activity-target="translation"
               dir="<%= l2_rtl ? 'rtl' : 'ltr' %>"
             >
 

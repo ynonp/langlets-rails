@@ -2,10 +2,13 @@ import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
 
 export default class extends Controller {
-  static targets = ['player', 'progressBar', 'playButton', 'pauseButton', 'videoListener'];
+  static targets = ['playerContainer', 'player', 'progressBar', 'playButton', 'pauseButton', 'videoListener', 'videoSegment'];
 
   static values = {
     videoId: String,
+  }
+
+  connect() {
   }
 
   disconnect() {
@@ -15,37 +18,55 @@ export default class extends Controller {
     }
   }
 
+  handleBeforeRender() {
+    this.playerContainerTarget.classList.add('hidden');
+    this.segmentStart = null;
+    this.segmentEnd = null;
+  }
+
+  handleFrameRender() {
+    if (this.hasVideoSegmentTarget) {
+      this.playerContainerTarget.classList.remove('hidden');
+      this.playerContainerTarget.classList.add('order-2', 'px-4');
+      this.player.pauseVideo();
+    }
+  }
+
   initialize() {
     this.monitorPlaybackInterval = null;
     this.player = null;
-    this.playerInitialized = false;
+    this.playerInitialized = false;    
+    this.stopPlayback = this.stopPlayback.bind(this);
   }
 
   initializePlayer() {
+    console.log(`initialize player`);
     if (this.playerInitialized) return;
-    
+
     this.player = YouTubePlayer(this.playerTarget, {
       videoId: this.videoIdValue,
       playerVars: {
-        autoplay: 1,
+        autoplay: 0,
         controls: 0,
         modestbranding: 1,
       },
-    });   
+    });
 
     this.player.on('stateChange', (event) => {
-      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {        
-        this.dispatchVideoEvent('stop');      
+      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+        this.stopPlaybackMonitoring();
+        this.dispatchVideoEvent('stop');
       } else if (event.data === YT.PlayerState.PLAYING) {
-        this.dispatchVideoEvent('play');      
+        this.startPlaybackMonitoring();
+        this.dispatchVideoEvent('play');
       }
     });
-    
+
     this.playerInitialized = true;
   }
 
-  dispatchVideoEvent(eventName) {
-    const e = new CustomEvent(`video:${eventName}`);
+  dispatchVideoEvent(eventName, detail = {}) {
+    const e = new CustomEvent(`video:${eventName}`, { detail });
     this.videoListenerTargets.forEach((el) => {
       el.dispatchEvent(e);
     })
@@ -84,28 +105,52 @@ export default class extends Controller {
     }
   }
 
-  async playSegment(event) {    
+  async playSegment(event) {
     // Initialize player on first playSegment call
     if (!this.playerInitialized) {
       this.initializePlayer();
     }
+
+    let segmentStart = null, segmentEnd = null, restartSegment = true;
     
-    const {segmentStart, segmentEnd} = event.params;
+    if ((event.params.segmentStart != null) && (event.params.segmentEnd != null)) {      
+      segmentStart = Number(event.params.segmentStart);
+      segmentEnd = Number(event.params.segmentEnd);
+    } else {
+      segmentStart = Number(this.videoSegmentTarget.dataset.segmentStart);
+      segmentEnd = Number(this.videoSegmentTarget.dataset.segmentEnd);
+    }
+
+    if (segmentEnd === this.segmentEnd && segmentStart === this.segmentStart && this.segmentStart != null) {
+      const at = await this.player.getCurrentTime();
+      if ((at < segmentEnd) && (at > segmentStart)) {
+        restartSegment = false;
+      }
+    }
+
     this.segmentStart = segmentStart;
     this.segmentEnd = segmentEnd;
-    await this.player.seekTo(segmentStart)
+
+    if (restartSegment) {
+      await this.player.seekTo(this.segmentStart)
+    }
+    
     this.player.playVideo()
+
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval)
     }
   }
 
   startPlaybackMonitoring() {
+    console.log('1');
     this.monitorPlaybackInterval = setInterval(async () => {
       const at = await this.player.getCurrentTime();
       if (at >= this.segmentEnd) {
+        this.dispatchVideoEvent('end');
         this.player.pauseVideo();
       }
+      this.dispatchVideoEvent('progress', { at })
       this.updateProgressBar(at, this.segmentStart, this.segmentEnd);
     }, 100);
   }
@@ -118,16 +163,47 @@ export default class extends Controller {
   }
 
   updateProgressBar(currentTime, segmentStart, segmentEnd) {
-    if (!this.hasProgressBarTarget) {
-      return;
-    }    
     // console.log(currentTime, segmentStart, segmentEnd);
-
+    
     const segmentLength = segmentEnd - segmentStart;
-    console.log(segmentLength);
     const elapsed = Math.max(0, currentTime - segmentStart);
     const percentage = Math.min(100, (elapsed / segmentLength) * 100);
-    console.log(percentage);
-    this.progressBarTarget.style.width = `${percentage}%`;
+
+    this.progressBarTargets.forEach((el) => {      
+      el.style.width = `${percentage}%`;
+    })
+  }
+
+
+  seekToTimestamp(ev) {
+    if (this.player) {
+      const targetTime = ev.currentTarget.dataset.timestamp
+      this.player.seekTo(targetTime);
+    }
+  }
+
+  async seekToPosition(event) {
+    if (!this.player) return;
+
+    // Prevent the event from bubbling up to the YouTube player
+    event.preventDefault();
+    event.stopPropagation();
+
+    const progressBarContainer = event.currentTarget;
+    const rect = progressBarContainer.getBoundingClientRect();
+    const clickX = event.clientX - rect.left;
+    const containerWidth = rect.width;
+
+    // Calculate the percentage of the click position
+    const clickPercentage = Math.max(0, Math.min(100, (clickX / containerWidth) * 100));
+
+    // Calculate the target time within the segment
+    const segmentLength = this.segmentEnd - this.segmentStart;
+    const targetTime = this.segmentStart + (clickPercentage / 100) * segmentLength;
+
+    // Seek to the calculated time
+    await this.player.seekTo(targetTime);
+    this.updateProgressBar();
+    this.dispatchVideoEvent('progress', { at: targetTime })
   }
 }

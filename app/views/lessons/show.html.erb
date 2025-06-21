@@ -25,7 +25,11 @@
   <meta property="twitter:image" content="<%= thumbnail_url %>">
 <% end %>
 
-<div class="flex flex-col min-h-screen w-full bg-gray-800"
+<% 
+  activity_params = @activity.activity_params 
+%>
+
+<div class="flex flex-col max-w-xl mx-auto min-h-screen w-full bg-gray-800"
     data-controller="main-video-player activity-navigation "    
     data-main-video-player-video-id-value="<%= @videoid %>"
     
@@ -33,7 +37,8 @@
   <div
     id="main-player"
     data-turbo-permanent
-    class="order-2 px-4"
+    data-main-video-player-target="playerContainer"
+    class="<%= activity_params[:video_player] ? 'px-4 order-2' : 'hidden' %>"
   >
       <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative" 
        style="background-image: url('https://img.youtube.com/vi/Yy-SUZDn0cE/maxresdefault.jpg')" 
@@ -42,7 +47,13 @@
        aria-label="Video thumbnail">
     
         <div data-main-video-player-target="player" class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
-        
+              <!-- Custom Progress Bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+            data-main-video-player-target="progressBarContainer"
+            data-action="click->main-video-player#seekToPosition"
+            style="pointer-events: auto;">
+          <div data-main-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+        </div>
         <button data-main-video-player-target="playButton" 
                 class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10">
           ▶
@@ -53,7 +64,11 @@
   <turbo-frame
     id="activity"
     class="contents"
-    data-action="turbo:frame-render->activity-navigation#activityChange"    
+    data-action="
+    turbo:before-frame-render->main-video-player#handleBeforeRender
+    turbo:frame-render->main-video-player#handleFrameRender
+    turbo:frame-render->activity-navigation#activityChange
+    "    
   >
     <%= render partial: 'activity_navigation' %>
     <div
@@ -64,7 +79,7 @@
       data-activity-navigation-target="content"
       data-activity-navigation-url="<%= @current_url %>"
     >  
-      <%= render partial: @activity.partial_name, locals: { params: @activity.activity_params } %>
+      <%= render partial: @activity.partial_name, locals: { params: activity_params } %>
     </div>
   </turbo-frame>
 </div>

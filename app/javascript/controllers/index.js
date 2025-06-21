@@ -34,9 +34,6 @@ application.register("sort-phrases-activity", SortPhrasesActivityController)
 import SpeakActivityController from "./speak_activity_controller"
 application.register("speak-activity", SpeakActivityController)
 
-import VideoPlayerController from "./video_player_controller"
-application.register("video-player", VideoPlayerController)
-
 import WordOrderActivityController from "./word_order_activity_controller"
 application.register("word-order-activity", WordOrderActivityController)
 
@@ -54,3 +51,9 @@ application.register('progress-tracker', ProgressTrackerController)
 
 import SwiperController from './swiper_controller.js';
 application.register('swiper', SwiperController);
+
+import WatchVideoActivityController from './watch_video_activity_controller.js';
+application.register('watch-video-activity', WatchVideoActivityController);
+
+import MiniPlayerController from './mini_player_controller.js';
+application.register('mini-player', MiniPlayerController);

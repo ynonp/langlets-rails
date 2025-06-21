@@ -10,8 +10,9 @@ module Activities
       {
         **video_params,
         phrases: ordered_phrases,
+        video_player: true,
         l1_rtl: l1.rtl,
-        l2_rtl: l2.rtl,
+        l2_rtl: l2.rtl
       }
     end
 
