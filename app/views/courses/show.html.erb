@@ -77,9 +77,15 @@
       </p>
 
       <!-- Lessons list -->
-      <div class="space-y-4">
+      <div class="space-y-4" data-controller="scroll-into-view">
+        <% first_incomplete_found = false %>
         <% @lessons.each_with_index do |lesson, index| %>
-          <div class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>">
+          <% is_first_incomplete = !first_incomplete_found && (lesson.in_progress? || lesson.not_started?) %>
+          <% first_incomplete_found = true if is_first_incomplete %>
+          <div
+            class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>"            
+            <%= is_first_incomplete ? ' data-scroll-into-view-target=element' : '' %>>
+            <p>in progress = <%= is_first_incomplete %></p>
             <div class="flex items-center justify-between">
               <div class="flex items-center gap-3 flex-1">
                 <!-- Progress Icon -->

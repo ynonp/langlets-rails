@@ -57,3 +57,6 @@ application.register('watch-video-activity', WatchVideoActivityController);
 
 import MiniPlayerController from './mini_player_controller.js';
 application.register('mini-player', MiniPlayerController);
+
+import ScrollIntoViewController from './scroll_into_view_controller.js';
+application.register('scroll-into-view', ScrollIntoViewController);

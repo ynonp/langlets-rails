@@ -52,6 +52,7 @@ export default class extends Controller {
         autoplay: 0,
         controls: 0,
         modestbranding: 1,
+        rel: 0,
       },
     });
 
