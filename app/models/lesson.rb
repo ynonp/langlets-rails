@@ -18,8 +18,7 @@ class Lesson < ApplicationRecord
     completed: 2
   }, prefix: true
 
-  # Add virtual attributes for progress data
-  attribute :next_activity_order, :integer, default: 0
+
 
   scope :with_progress_data, ->(user) {
     if user
@@ -29,25 +28,14 @@ class Lesson < ApplicationRecord
           WHEN lesson_users.id IS NOT NULL THEN 2
           WHEN COALESCE(user_progress.completed_count, 0) > 0 THEN 1
           ELSE 0
-         END as completion_status",
-        "CASE 
-          WHEN COALESCE(user_progress.completed_count, 0) = 0 THEN 0
-          ELSE COALESCE(
-            (SELECT MIN(activities.order) 
-             FROM activities 
-             WHERE activities.lesson_id = lessons.id 
-               AND activities.order > user_progress.max_completed_order), 
-            user_progress.max_completed_order + 1
-          )
-         END as next_activity_order"
+         END as completion_status"
       )
       .left_joins(:lesson_users)
       .joins(
         "LEFT JOIN (
           SELECT 
             activities.lesson_id,
-            COUNT(activity_users.id) as completed_count,
-            MAX(activities.order) as max_completed_order
+            COUNT(activity_users.id) as completed_count
           FROM activities
           LEFT JOIN activity_users ON activities.id = activity_users.activity_id 
             AND activity_users.user_id = #{user.id}
@@ -56,12 +44,11 @@ class Lesson < ApplicationRecord
         ) user_progress ON lessons.id = user_progress.lesson_id"
       )
       .where("lesson_users.user_id = ? OR lesson_users.user_id IS NULL", user.id)
-      .group("lessons.id, lesson_users.id, user_progress.completed_count, user_progress.max_completed_order")
+      .group("lessons.id, lesson_users.id, user_progress.completed_count")
     else
       select(
         "lessons.*",
-        "0 as completion_status",
-        "0 as next_activity_order"
+        "0 as completion_status"
       )
     end
   }
