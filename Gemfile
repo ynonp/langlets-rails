@@ -64,7 +64,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-gem "solargraph", "~> 0.54.1", :group => :development
+gem "solargraph", "~> 0.55.2", :group => :development
 
 gem "pycall", "~> 1.5"
 
