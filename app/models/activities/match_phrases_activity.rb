@@ -17,20 +17,9 @@ module Activities
     private
 
     def processed_phrases
-      @all_medium_phrases ||= lesson.medium.phrases.ordered_by_timestamp.to_a
-
       @processed_phrases ||= begin
-        phrases_array = ordered_phrases
-        phrases_array.each_with_index do |phrase, index|
-          next_phrase = phrases_array[index + 1]
-          current_phrase_index = @all_medium_phrases.find_index { |p| p.id == phrase.id }
-          next_phrase = current_phrase_index ? @all_medium_phrases[current_phrase_index + 1] : nil
-
-          timestamp_end = next_phrase&.timestamp || to_string_timestamp(phrase.timestamp_seconds + 5)
-          
-          phrase.define_singleton_method(:calculated_end_timestamp) { timestamp_end }
-        end
-        phrases_array
+        all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
+        Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
       end
     end
   end

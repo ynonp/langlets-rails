@@ -4,16 +4,14 @@ module Activities
 
     def activity_params
       all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
-      phrases_data_for_activity = ordered_phrases.map.with_index do |phrase, index|
-        # Find the next phrase in the medium that comes after this phrase
-        current_phrase_index = all_medium_phrases.find_index { |p| p.id == phrase.id }
-        next_phrase = current_phrase_index ? all_medium_phrases[current_phrase_index + 1] : nil
-        
+      processed_phrases = Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
+      
+      phrases_data_for_activity = processed_phrases.map do |phrase|
         {
           l2_text: phrase.text_l2,
           l1_text: phrase.text_l1,
           timestamp_start: phrase.timestamp,
-          timestamp_end: next_phrase&.timestamp || to_string_timestamp(phrase.timestamp_seconds + 5),
+          timestamp_end: phrase.calculated_end_timestamp,
           word_segments: build_word_segments_for_phrase(phrase)
         }
       end
