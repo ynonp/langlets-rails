@@ -9,7 +9,8 @@
   >
     <div class="flex items-center space-x-3">
       <button
-        data-mini-player-target="playButton"
+        data-mini-player-target="playButton"        
+        data-speak-activity-target="playButton"
         data-action="click->main-video-player#playSegment"
         data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
         data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
@@ -21,9 +22,6 @@
       <button
         data-mini-player-target="pauseButton"
         data-action="click->main-video-player#stopPlayback"
-        data-main-video-player-segment-start-param="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
-        data-main-video-player-segment-end-param="<%= timestamp_to_seconds(params[:end_timestamp]) %>"    
-
         class="text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition hidden"
       >
         ❚❚

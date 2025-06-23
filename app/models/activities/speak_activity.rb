@@ -10,7 +10,39 @@ module Activities
         l2: l2.english_name,
         l1_rtl: l1.rtl,
         l2_rtl: l2.rtl,
-        phrases: phrases.ordered_by_timestamp.includes(:token_translations),
+        phrases: processed_phrases,
+      }
+    end
+
+    def ordered_phrases
+      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(:token_translations).to_a
+    end
+
+    private
+
+    def processed_phrases
+      @all_medium_phrases ||= lesson.medium.phrases.ordered_by_timestamp.to_a
+
+      @processed_phrases ||= begin
+        phrases_array = ordered_phrases
+        phrases_array.each_with_index do |phrase, index|
+          current_phrase_index = @all_medium_phrases.find_index { |p| p.id == phrase.id }
+          next_phrase = current_phrase_index ? @all_medium_phrases[current_phrase_index + 1] : nil
+
+          timestamp_end = next_phrase&.timestamp || to_string_timestamp(phrase.timestamp_seconds + 5)
+          
+          phrase.define_singleton_method(:calculated_end_timestamp) { timestamp_end }
+        end
+        phrases_array
+      end
+    end
+
+    def video_params
+      first_phrase = processed_phrases.first
+      {
+        video_id: lesson.medium.extract_youtube_video_id,
+        start_timestamp: first_phrase&.timestamp,
+        end_timestamp: first_phrase&.calculated_end_timestamp
       }
     end
   end

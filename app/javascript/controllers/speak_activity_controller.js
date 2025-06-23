@@ -20,6 +20,11 @@ export default class extends Controller {
     this.setupEventListeners();
   }
 
+  connect() {
+    // Set initial miniplayer segment for the first phrase
+    this.updateMiniplayerSegment(0);
+  }
+
   setupEventListeners() {
     // Listen for assessment complete events from speech recognition controllers
     this.element.addEventListener('speech-recognition:assessmentComplete', this.handleAssessmentComplete.bind(this));
@@ -87,6 +92,9 @@ export default class extends Controller {
       if (nextContainer) {
         nextContainer.classList.remove('hidden');
       }
+      
+      // Update miniplayer segment parameters for the next phrase
+      this.updateMiniplayerSegment(nextIndex);
     }
   }
   
@@ -172,6 +180,43 @@ export default class extends Controller {
       { duration: 0.3, easing: 'easeOut' }
     );
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
+  }
+
+  updateMiniplayerSegment(phraseIndex) {
+    const playButton = document.querySelector('[data-action*="main-video-player#playSegment"]');
+    if (!playButton) return;
+    
+    // Get the phrase data from the phrases value
+    if (phraseIndex < this.phrasesValue.length) {
+      const phrase = this.phrasesValue[phraseIndex];
+      
+      // Convert timestamp to seconds
+      const startSeconds = this.timestampToSeconds(phrase.timestamp);
+      const endSeconds = phrase.calculated_end_timestamp ? 
+        this.timestampToSeconds(phrase.calculated_end_timestamp) : 
+        startSeconds + 5;
+      
+      // Update the play button's data attributes
+      playButton.setAttribute('data-main-video-player-segment-start-param', startSeconds);
+      playButton.setAttribute('data-main-video-player-segment-end-param', endSeconds);
+    }
+  }
+
+  timestampToSeconds(timestamp) {
+    if (typeof timestamp === 'number') return timestamp;
+    
+    // Handle MM:SS format
+    const parts = timestamp.split(':');
+    if (parts.length === 2) {
+      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+    }
+    
+    // Handle HH:MM:SS format  
+    if (parts.length === 3) {
+      return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
+    }
+    
+    return 0;
   }
 }
 
