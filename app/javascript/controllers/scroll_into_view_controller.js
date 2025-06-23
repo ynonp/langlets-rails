@@ -3,11 +3,14 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["element"]
 
-  connect() {
+  // Action method for turbo:load event
+  handleTurboLoad() {
     if (this.hasElementTarget) {
-      this.elementTarget.scrollIntoView({ 
-        behavior: "smooth", 
-        block: "center" 
+      requestAnimationFrame(() => {
+        this.elementTarget.scrollIntoView({ 
+          behavior: "smooth", 
+          block: "center" 
+        })
       })
     }
   }

@@ -77,7 +77,7 @@
       </p>
 
       <!-- Lessons list -->
-      <div class="space-y-4" data-controller="scroll-into-view">
+      <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
         <% first_incomplete_found = false %>
         <% @lessons.each_with_index do |lesson, index| %>
           <% is_first_incomplete = !first_incomplete_found && (lesson.in_progress? || lesson.not_started?) %>
