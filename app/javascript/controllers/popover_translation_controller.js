@@ -64,7 +64,6 @@ export default class extends Controller {
             
       ev.stopPropagation();      
     } else {
-      console.log(ev.target);
     }
   }
 

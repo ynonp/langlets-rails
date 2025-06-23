@@ -132,7 +132,6 @@ export default class extends Controller {
     
     // Play audio if it's an L1 token
     if (column === 'l1') {
-      console.log('play 1');
       this.playTokenAudio(element);
     }
   }
@@ -212,7 +211,6 @@ export default class extends Controller {
     // Add new tokens to fill empty spots (up to 5 total visible)
     const visibleTokens = this.element.querySelectorAll('.token-word:not(.matched)').length / 2; // Divide by 2 because each token appears in both columns
     const tokensNeeded = Math.min(5 - visibleTokens, this.currentTokens.length);
-    console.log(tokensNeeded);
 
     if (tokensNeeded > 0) {
       const newTokens = this.currentTokens.splice(0, tokensNeeded);
@@ -278,7 +276,6 @@ export default class extends Controller {
 
   playTokenAudio(element) {
     const audioUrl = element.dataset.audioUrl;
-    console.log(`play 2 ${audioUrl}`);
     
     if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
       // Stop any currently playing audio

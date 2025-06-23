@@ -12,7 +12,6 @@ export default class extends Controller {
   }
 
   disconnect() {
-    console.log(`disconnect`);
     this.stopPlaybackMonitoring();
     if (this.player) {
       this.player.destroy();
@@ -44,7 +43,6 @@ export default class extends Controller {
   }
 
   initializePlayer() {
-    console.log(`initialize player`);
     if (this.playerInitialized) return;
 
     this.player = YouTubePlayer(this.playerTarget, {
@@ -86,7 +84,6 @@ export default class extends Controller {
   }
 
   async togglePlayPause(ev) {    
-    console.log(`toggle play pause`);
     if (!this.player) {
       this.playSegment(ev);
       return;
@@ -134,7 +131,6 @@ export default class extends Controller {
   }
 
   async playSegment(event) {
-    console.log(`play segment`, event);
     // Initialize player on first playSegment call
     if (!this.playerInitialized) {
       this.initializePlayer();
@@ -172,7 +168,6 @@ export default class extends Controller {
   }
 
   startPlaybackMonitoring() {
-    console.log(`startPlaybackMonitoring playback monitoring`);
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval);
       this.monitorPlaybackInterval = null;
@@ -190,16 +185,13 @@ export default class extends Controller {
   }
 
   stopPlaybackMonitoring() {
-    console.log(`stop playback monitoring`);
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval);
       this.monitorPlaybackInterval = null;
     }
   }
 
-  updateProgressBar(currentTime, segmentStart, segmentEnd) {
-    console.log(currentTime, segmentStart, segmentEnd);
-    
+  updateProgressBar(currentTime, segmentStart, segmentEnd) {    
     const segmentLength = segmentEnd - segmentStart;
     const elapsed = Math.max(0, currentTime - segmentStart);
     const percentage = Math.min(100, (elapsed / segmentLength) * 100);

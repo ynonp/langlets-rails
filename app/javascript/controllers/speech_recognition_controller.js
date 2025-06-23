@@ -57,7 +57,6 @@ export default class extends Controller {
   }
 
   async startPronunciationAssessment() {
-    console.log('Assessing phrase:', this.phraseTextValue);
     
     // Prepare expected words for real-time highlighting
     this.expectedWords = this.phraseTextValue.toLowerCase().split(/\s+/).filter(word => word.length > 0);
@@ -89,7 +88,6 @@ export default class extends Controller {
       // Step 6: Add real-time recognition event
       recognizer.recognizing = (s, e) => {
         const currentText = e.result.text;
-        console.log('Recognizing:', currentText); // Debug log
         this.lastRecognitionTime = Date.now();
         this.lastRecognizedText = currentText; // Track the latest text
         this.highlightSpokenWords(currentText);
@@ -101,10 +99,8 @@ export default class extends Controller {
         
         // Check if phrase is complete and auto-stop - with 2 second linger time
         if (this.isPhraseComplete(currentText)) {
-          console.log('Phrase appears complete, will linger for 2 seconds...'); // Debug log
           this.autoStopTimeout = setTimeout(() => {
             if (this.recognizer) {
-              console.log('Auto-stopping recognition after linger period');
               this.finalizePronunciationAssessment(currentText);
             }
           }, 1000);
@@ -114,13 +110,11 @@ export default class extends Controller {
       // Handle final result from continuous recognition
       recognizer.recognized = (s, e) => {
         if (e.result.reason === SpeechSDK.ResultReason.RecognizedSpeech) {
-          console.log('Final recognized result:', e.result.text);
           this.lastRecognizedText = e.result.text; // Update with final text
           this.highlightSpokenWords(e.result.text);
           
           // Check if phrase is complete and finalize if so
           if (this.isPhraseComplete(e.result.text)) {
-            console.log('Phrase complete in final recognition, finalizing...');
             // Clear any existing auto-stop timeout since we're handling it now
             if (this.autoStopTimeout) {
               clearTimeout(this.autoStopTimeout);
@@ -134,7 +128,6 @@ export default class extends Controller {
       // Add a safety timeout to prevent infinite recording
       setTimeout(() => {
         if (this.recognizer && this.isRecording) {
-          console.log('Safety timeout - stopping recording after 30 seconds');
           this.finalizePronunciationAssessment(''); // Empty text will trigger basic completion
         }
       }, 30000); // 30 second maximum recording time
@@ -144,7 +137,6 @@ export default class extends Controller {
 
       // Handle session stopped
       recognizer.sessionStopped = (s, e) => {
-        console.log('Session stopped');
         recognizer.close();
         this.recognizer = null;
         this.stopRecording();
@@ -152,7 +144,6 @@ export default class extends Controller {
 
       // Handle session stopped
       recognizer.sessionStopped = (s, e) => {
-        console.log('Session stopped');
         recognizer.close();
         this.recognizer = null;
         this.stopRecording();
@@ -174,9 +165,7 @@ export default class extends Controller {
     }
   }
 
-  async finalizePronunciationAssessment(finalText) {
-    console.log('Finalizing pronunciation assessment with text:', finalText);
-    
+  async finalizePronunciationAssessment(finalText) {    
     try {
       // Stop the current recognizer
       if (this.recognizer) {
@@ -232,8 +221,6 @@ export default class extends Controller {
         }]
       };
 
-      console.log('Mock pronunciation assessment:', mockResult);
-
       // Dispatch the completion event
       this.dispatch('assessmentComplete', { 
         detail: { 
@@ -261,7 +248,6 @@ export default class extends Controller {
       found: false,
       originalIndex: index
     }));
-    console.log('Word tracker initialized:', this.wordTracker);
   }
   
   markSpokenWords(spokenText) {
@@ -270,9 +256,7 @@ export default class extends Controller {
     const spokenWords = spokenText.toLowerCase().split(/\s+/)
       .filter(word => word.length > 0)
       .map(word => word.replace(/[^\p{L}\p{N}]/gu, ''));
-    
-    console.log('Processing spoken words:', spokenWords);
-    
+        
     spokenWords.forEach(spokenWord => {
       // Find first unmatched word that matches this spoken word
       const matchIndex = this.wordTracker.findIndex(tracker => 
@@ -281,7 +265,6 @@ export default class extends Controller {
       
       if (matchIndex !== -1) {
         this.wordTracker[matchIndex].found = true;
-        console.log(`Marked word ${matchIndex}: "${this.wordTracker[matchIndex].originalWord}"`);
       }
     });
   }
@@ -326,8 +309,6 @@ export default class extends Controller {
   highlightSpokenWords(spokenText) {
     if (!spokenText) return;
     
-    console.log('Highlighting words for:', spokenText);
-    
     // Update word tracking first
     this.markSpokenWords(spokenText);
     
@@ -337,17 +318,12 @@ export default class extends Controller {
     
     // Now get all individual word spans
     const wordSpans = phraseContainer.querySelectorAll('.word-span');
-    
-    console.log('Word spans found:', wordSpans.length);
-    console.log('Word tracker length:', this.wordTracker.length);
-    
+        
     // Now we can match by index since both are individual words
     this.wordTracker.forEach((tracker, index) => {
       if (tracker.found && index < wordSpans.length) {
         const wordSpan = wordSpans[index];
         if (!this.highlightedWords.has(wordSpan)) {
-          console.log('Highlighting word:', tracker.originalWord);
-          console.log(wordSpan);
           wordSpan.style.backgroundColor = '#3B82F6';
           wordSpan.style.color = 'white';
           wordSpan.style.borderRadius = '4px';
@@ -363,12 +339,9 @@ export default class extends Controller {
     // Remove punctuation and normalize
     const cleanSpoken = spokenWord.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
     const cleanToken = tokenText.replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
-    
-    console.log('Comparing:', cleanSpoken, 'with', cleanToken); // Debug log
-    
+        
     // Exact match
     if (cleanSpoken === cleanToken) {
-      console.log('Exact match!'); // Debug log
       return true;
     }
     
@@ -377,7 +350,6 @@ export default class extends Controller {
 
   
   isPhraseComplete(spokenText) {
-    console.log(`--- 4`, spokenText, this.wordTracker.length);
     if (!spokenText || !this.wordTracker.length) return false;
     
     // Update word tracking
@@ -385,9 +357,7 @@ export default class extends Controller {
     
     const foundCount = this.wordTracker.filter(tracker => tracker.found).length;
     const completionRatio = foundCount / this.wordTracker.length;
-    
-    console.log(`Completion check - Found ${foundCount}/${this.wordTracker.length} words (${Math.round(completionRatio * 100)}%)`);
-    
+        
     // Much simpler: just need 80% of words found in correct order
     return completionRatio == 1;
   }

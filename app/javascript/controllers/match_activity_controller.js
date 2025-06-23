@@ -30,7 +30,6 @@ export default class extends Controller {
     
     // Mark the selected option
     if (isCorrect) {
-      console.log(this.element);
       // Disable all options for this phrase to prevent multiple selections
       
       event.target.closest('.phraseContainer').querySelectorAll('.optionButton').forEach(button => {

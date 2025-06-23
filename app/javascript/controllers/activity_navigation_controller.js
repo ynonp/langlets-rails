@@ -5,7 +5,6 @@ export default class extends Controller {
 
   activityChange(event) {    
     const path = this.contentTarget.dataset.activityNavigationUrl;
-    console.log(path);
     history.pushState(null, '', path);
   }
 }

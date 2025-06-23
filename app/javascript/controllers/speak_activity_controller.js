@@ -143,7 +143,6 @@ export default class extends Controller {
   showCompletionMessage() {
     // Only show completion if we've actually completed all phrases
     if (this.completedPhrases < this.totalPhrases) {
-      console.log('Not all phrases completed yet:', this.completedPhrases, 'of', this.totalPhrases);
       return;
     }
 
@@ -171,7 +170,6 @@ export default class extends Controller {
     const averageScore = count > 0 ? 
       (totalAccuracy + totalFluency + totalCompleteness) / (3 * count) : 0;
     
-    console.log('Showing completion message. Average score:', averageScore, 'Completed phrases:', this.completedPhrases);
     
     // Show completion message - all phrases have been attempted
     this.completionMessageTarget.classList.remove('hidden');

@@ -28,7 +28,6 @@ export default class extends Controller {
   }
 
   currentQuestionValueChanged() {
-    console.log(this.currentQuestionValue);
     if (this.currentQuestionValue < this.questionsValue.length) {
       this.questionTarget.textContent = this.questionsValue[this.currentQuestionValue].question;
       this.questionTarget.dataset.answer = this.questionsValue[this.currentQuestionValue].answer_token_id;

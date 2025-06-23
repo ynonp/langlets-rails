@@ -4,12 +4,9 @@ export default class extends Controller {
   static values = { progressData: Object }
   
   connect() {
-    console.log("Progress tracker connected with data:", this.progressDataValue)
   }  
   
-  sendProgressUpdate() {
-    console.log("Sending progress update:", this.progressDataValue)
-    
+  sendProgressUpdate() {    
     const payload = JSON.stringify(this.progressDataValue)
     
     navigator.sendBeacon('/progress', new Blob([payload], {
