@@ -12,6 +12,7 @@ export default class extends Controller {
   }
 
   disconnect() {
+    console.log(`disconnect`);
     this.stopPlaybackMonitoring();
     if (this.player) {
       this.player.destroy();
@@ -85,6 +86,7 @@ export default class extends Controller {
   }
 
   async togglePlayPause(ev) {    
+    console.log(`toggle play pause`);
     if (!this.player) {
       this.playSegment(ev);
       return;
@@ -119,6 +121,15 @@ export default class extends Controller {
   async stopPlayback() {
     if (this.player) {
       this.player.pauseVideo();
+    }
+  }
+
+  async resume() {
+    if ((this.segmentEnd != null) && (this.segmentStart != null)) {      
+      const at = await this.player.getCurrentTime();
+      if (at <= this.segmentEnd) {
+        this.player.playVideo();
+      }      
     }
   }
 
@@ -161,6 +172,7 @@ export default class extends Controller {
   }
 
   startPlaybackMonitoring() {
+    console.log(`startPlaybackMonitoring playback monitoring`);
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval);
       this.monitorPlaybackInterval = null;
@@ -178,6 +190,7 @@ export default class extends Controller {
   }
 
   stopPlaybackMonitoring() {
+    console.log(`stop playback monitoring`);
     if (this.monitorPlaybackInterval) {
       clearInterval(this.monitorPlaybackInterval);
       this.monitorPlaybackInterval = null;
@@ -185,7 +198,7 @@ export default class extends Controller {
   }
 
   updateProgressBar(currentTime, segmentStart, segmentEnd) {
-    // console.log(currentTime, segmentStart, segmentEnd);
+    console.log(currentTime, segmentStart, segmentEnd);
     
     const segmentLength = segmentEnd - segmentStart;
     const elapsed = Math.max(0, currentTime - segmentStart);

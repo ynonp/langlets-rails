@@ -15,7 +15,6 @@ export default class extends Controller {
     const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t < currentTime);
 
     if (index !== -1) {
-      subtitlesLines[index].classList.add(this.currentTextLineClass);
       this.handlePhraseActivated(subtitlesLines[index]);
     }
   }
@@ -67,6 +66,7 @@ export default class extends Controller {
   }
 
   selectWord(event) {
+    console.log(`select word`, event);
     const wordButton = event.currentTarget;
     const word = wordButton.dataset.word;
     const isCorrect = wordButton.dataset.correct === 'true';
@@ -84,6 +84,7 @@ export default class extends Controller {
     }, 600);
     
     if (isCorrect) {
+      console.log('resume playback');
       // Dispatch event to play the video instead of direct call
       const playEvent = new CustomEvent('listen-activity:play-video');
       this.element.dispatchEvent(playEvent);
