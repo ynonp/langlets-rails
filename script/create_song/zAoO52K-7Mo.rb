@@ -1,6 +1,8 @@
 
 en = Language.find_by(iso_name: 'en')
 l1 = Language.find_by(iso_name: 'fr')
+admin_user = User.find_by(email: 'ynon@hey.com')
+raise "Admin user not found" unless admin_user
 
 medium = Medium.find_or_create_by!(url: 'https://www.youtube.com/watch?v=zAoO52K-7Mo')
 phrases_data = [
@@ -319,6 +321,7 @@ phrases_data = [
 c = Course.find_or_create_by!(slug: 'berceuse')
 c.name = 'La berceuse'
 c.main_media_url = 'https://www.youtube.com/watch?v=zAoO52K-7Mo'
+c.user = admin_user if c.user.nil?
 c.lessons.destroy_all
 c.save!
 
@@ -798,9 +801,9 @@ phrase.add_token_translation("jouer", 0, "play", 0, similar_sound: [])
 phrase.add_token_translation("un peu de", 0, "a little", 0, similar_sound: [])
 phrase.add_token_translation("trompette", 0, "trumpet", 0, similar_sound: [])
 
-l = Lesson.create!(medium: medium, slug: 'berceuse0', course: c, order: 0, name: 'Opening - The Sleepless Hour')
+l = Lesson.create!(medium: medium, slug: 'berceuse0', course: c, order: 0, name: 'Opening - The Sleepless Hour', user: admin_user)
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 0)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 0, user: admin_user)
 a.phrases = phrases.values_at(0, 1, 2, 3)
 
 

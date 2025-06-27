@@ -4,6 +4,7 @@ class CoursesController < ApplicationController
     @languages = Language.joins(:courses).distinct.order(:english_name)
     
     # Get all courses with progress data in a single optimized query
+    # For now, show all courses regardless of owner (later we may want to filter by user)
     @all_courses = Course.includes(:language, :lessons)
     
     # Filter by language if provided

@@ -1,4 +1,5 @@
 class Course < ApplicationRecord
+  belongs_to :user
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
   belongs_to :language, optional: true
   
@@ -34,13 +35,14 @@ class Course < ApplicationRecord
         slug: "#{slug}#{lesson_index}",
         course: self,
         order: lesson_index,
-        name: lesson_data["title"])
+        name: lesson_data["title"],
+        user: self.user)
 
-      a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
-      a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
-      a3 = Activities::WordOrderActivity.create!(lesson: l, order: 4)
-      a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
-      a8 = Activities::MatchTokensActivity.create!(lesson: l, order: 3)
+      a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1, user: self.user)
+      a2 = Activities::MatchPhrasesActivity.create!(lesson: l, order: 2, user: self.user)
+      a3 = Activities::WordOrderActivity.create!(lesson: l, order: 4, user: self.user)
+      a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5, user: self.user)
+      a8 = Activities::MatchTokensActivity.create!(lesson: l, order: 3, user: self.user)
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
@@ -83,11 +85,12 @@ class Course < ApplicationRecord
       slug: finish_lesson_slug,
       course: self,
       order: self.lessons.count,
-      name: "Final Review"
+      name: "Final Review",
+      user: self.user
       )
-    a1 = Activities::WatchVideoActivity.create!(lesson: finish_lesson, order: 1)
-    a2 = Activities::MatchTokensActivity.create!(lesson: finish_lesson, order: 2)
-    a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3)
+    a1 = Activities::WatchVideoActivity.create!(lesson: finish_lesson, order: 1, user: self.user)
+    a2 = Activities::MatchTokensActivity.create!(lesson: finish_lesson, order: 2, user: self.user)
+    a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3, user: self.user)
 
     a1.phrases = medium.phrases.ordered_by_timestamp
     a2.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
@@ -116,20 +119,21 @@ class Course < ApplicationRecord
         slug: "#{slug}#{lesson_index}",
         course: self,
         order: lesson_index,
-        name: lesson_data["title"])
+        name: lesson_data["title"],
+        user: self.user)
 
-      a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
+      a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1, user: self.user)
 
       a2 = if rand() > 0.5
-        Activities::MatchPhrasesActivity.create!(lesson: l, order: 2)
+        Activities::MatchPhrasesActivity.create!(lesson: l, order: 2, user: self.user)
       else
-        Activities::WordOrderActivity.create!(lesson: l, order: 2)
+        Activities::WordOrderActivity.create!(lesson: l, order: 2, user: self.user)
       end
-      a3 = Activities::MatchTokensActivity.create!(lesson: l, order: 3)
-      a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4)
-      a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5)
-      a6 = Activities::SpeakActivity.create!(lesson: l, order: 6)
-      a7 = Activities::ListenActivity.create!(lesson: l, order: 7)
+      a3 = Activities::MatchTokensActivity.create!(lesson: l, order: 3, user: self.user)
+      a4 = Activities::SortPhrasesActivity.create!(lesson: l, order: 4, user: self.user)
+      a5 = Activities::LanguageAlignmentActivity.create!(lesson: l, order: 5, user: self.user)
+      a6 = Activities::SpeakActivity.create!(lesson: l, order: 6, user: self.user)
+      a7 = Activities::ListenActivity.create!(lesson: l, order: 7, user: self.user)
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
@@ -181,12 +185,13 @@ class Course < ApplicationRecord
       slug: finish_lesson_slug,
       course: self,
       order: self.lessons.count,
-      name: "Song Review"
+      name: "Song Review",
+      user: self.user
       )
-    a1 = Activities::WatchVideoActivity.create!(lesson: finish_lesson, order: 1)
-    a2 = Activities::MatchTokensActivity.create!(lesson: finish_lesson, order: 2)
-    a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3)
-    a4 = Activities::ListenActivity.create!(lesson: finish_lesson, order: 4)
+    a1 = Activities::WatchVideoActivity.create!(lesson: finish_lesson, order: 1, user: self.user)
+    a2 = Activities::MatchTokensActivity.create!(lesson: finish_lesson, order: 2, user: self.user)
+    a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3, user: self.user)
+    a4 = Activities::ListenActivity.create!(lesson: finish_lesson, order: 4, user: self.user)
 
     a1.phrases = medium.phrases.ordered_by_timestamp
     a2.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)

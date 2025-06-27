@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_27_191748) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -50,7 +50,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
     t.datetime "updated_at", null: false
     t.string "text_header"
     t.string "text_subheader"
+    t.bigint "user_id", null: false
     t.index ["lesson_id"], name: "index_activities_on_lesson_id"
+    t.index ["user_id"], name: "index_activities_on_user_id"
   end
 
   create_table "activity_phrases", force: :cascade do |t|
@@ -89,7 +91,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "language_id"
+    t.bigint "user_id", null: false
     t.index ["language_id"], name: "index_courses_on_language_id"
+    t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
   create_table "courses_learning_paths", force: :cascade do |t|
@@ -153,9 +157,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
     t.bigint "course_id"
     t.integer "order", default: 0
     t.string "name"
+    t.bigint "user_id", null: false
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
     t.index ["slug"], name: "index_lessons_on_slug", unique: true
+    t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
   create_table "media", force: :cascade do |t|
@@ -215,6 +221,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "lessons"
+  add_foreign_key "activities", "users"
   add_foreign_key "activity_phrases", "activities"
   add_foreign_key "activity_phrases", "phrases"
   add_foreign_key "activity_token_translations", "activities"
@@ -222,11 +229,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_19_101458) do
   add_foreign_key "activity_users", "activities"
   add_foreign_key "activity_users", "users"
   add_foreign_key "courses", "languages"
+  add_foreign_key "courses", "users"
   add_foreign_key "courses_learning_paths", "courses"
   add_foreign_key "courses_learning_paths", "learning_paths"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "media"
+  add_foreign_key "lessons", "users"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"

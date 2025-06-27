@@ -1,5 +1,8 @@
 en = Language.find_by(iso_name: 'en')
 es = Language.find_by(iso_name: 'es')
+admin_user = User.find_by(email: 'ynon@hey.com')
+raise "Admin user not found" unless admin_user
+
 medium = Medium.find_or_create_by!(url: 'https://www.youtube.com/shorts/FNCCyGbaWoM')
 
 phrases = [
@@ -38,16 +41,16 @@ phrases.each do |text_l1, text_l2, timestamp|
 end
 
 medium.phrases.reload
-l = Lesson.create!(medium: medium, slug: 'patryruiz')
+l = Lesson.create!(medium: medium, slug: 'patryruiz', user: admin_user)
 l.start_timestamp = medium.phrases.ordered_by_timestamp.first.timestamp
 l.end_timestamp = medium.phrases.ordered_by_timestamp.last.timestamp
 l.save!
 
-a = Activities::WatchVideoActivity.create!(lesson: l, order: 1)
+a = Activities::WatchVideoActivity.create!(lesson: l, order: 1, user: admin_user)
 a.phrases << medium.phrases.ordered_by_timestamp
 l.activities << a
 
-a = Activities::MatchPhrasesActivity.create!(lesson: l, text_header: 'Match each phrase to its translation', order: 2)
+a = Activities::MatchPhrasesActivity.create!(lesson: l, text_header: 'Match each phrase to its translation', order: 2, user: admin_user)
 a.phrases << medium.phrases.ordered_by_timestamp.first(4)
 l.activities << a
 

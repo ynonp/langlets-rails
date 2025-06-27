@@ -1,4 +1,5 @@
 class Activity < ApplicationRecord
+  belongs_to :user
   belongs_to :lesson
   has_many :activity_phrases, dependent: :destroy
   has_many :phrases, through: :activity_phrases

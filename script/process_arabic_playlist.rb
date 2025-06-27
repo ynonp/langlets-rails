@@ -37,10 +37,14 @@ playlist_data['entries'].each_with_index do |entry, index|
     
     # Create the course
     puts "   Creating course..."
+    admin_user = User.find_by(email: 'ynon@hey.com')
+    raise "Admin user not found" unless admin_user
+    
     c = Course.create!(
       name: video_title, 
       slug: video_id, 
-      main_media_url: video_url
+      main_media_url: video_url,
+      user: admin_user
     )
     
     # Find the progress and create the song

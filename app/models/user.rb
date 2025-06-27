@@ -5,6 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable,
          omniauth_providers: [:google_oauth2, :github]
 
+  # Ownership relationships
+  has_many :courses, dependent: :destroy
+  has_many :lessons, dependent: :destroy
+  has_many :activities, dependent: :destroy
+
+  # Progress tracking relationships
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson
   

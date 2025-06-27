@@ -1,4 +1,5 @@
 class Lesson < ApplicationRecord
+  belongs_to :user
   belongs_to :medium
   belongs_to :course, optional: true
   has_many :activities, dependent: :destroy
