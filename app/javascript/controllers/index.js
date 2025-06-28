@@ -60,3 +60,6 @@ application.register('mini-player', MiniPlayerController);
 
 import ScrollIntoViewController from './scroll_into_view_controller.js';
 application.register('scroll-into-view', ScrollIntoViewController);
+
+import AudioFeedbackController from './audio_feedback_controller.js';
+application.register('audio-feedback', AudioFeedbackController);

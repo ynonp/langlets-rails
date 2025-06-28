@@ -157,6 +157,9 @@ export default class extends Controller {
   }
 
   handleSuccessfulMatch(element1, element2) {
+    // Play correct sound
+    this.element.dispatchEvent(new CustomEvent('audio:correct', { bubbles: true }));
+    
     // Flash green
     element1.classList.add('flash-success');
     element2.classList.add('flash-success');
@@ -183,6 +186,9 @@ export default class extends Controller {
   }
 
   handleFailedMatch(element1, element2) {
+    // Play incorrect sound
+    this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
+    
     // Flash red
     element1.classList.add('flash-error');
     element2.classList.add('flash-error');
@@ -268,6 +274,9 @@ export default class extends Controller {
   }
 
   showCompletion() {
+    // Play completion sound
+    this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
+    
     this.completionMessageTarget.classList.remove('hidden');
     animate(this.completionMessageTarget, 
       { opacity: [0, 1], scale: [0.8, 1] }, 

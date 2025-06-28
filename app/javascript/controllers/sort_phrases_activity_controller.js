@@ -33,6 +33,9 @@ export default class extends Controller {
   }
 
   checkCorrect() {
+    // Play completion sound
+    this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
+    
     // Award XP for completing sort activity (2 XP per phrase)
     this.awardXp(this.correctOrderValue.length * 2);
     
@@ -50,6 +53,9 @@ export default class extends Controller {
   }
 
   checkIncorrect() {
+    // Play incorrect sound
+    this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
+    
     this.resultMessageTarget.classList.remove('hidden');
 
     // Shuffle the phrases again

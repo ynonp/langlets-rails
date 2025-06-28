@@ -30,8 +30,10 @@ export default class extends Controller {
     
     // Mark the selected option
     if (isCorrect) {
-      // Disable all options for this phrase to prevent multiple selections
+      // Play correct sound
+      this.element.dispatchEvent(new CustomEvent('audio:correct', { bubbles: true }));
       
+      // Disable all options for this phrase to prevent multiple selections
       event.target.closest('.phraseContainer').querySelectorAll('.optionButton').forEach(button => {
         button.disabled = true;
       });
@@ -44,6 +46,9 @@ export default class extends Controller {
         this.element.dispatchEvent(new CustomEvent('stop-audio'));
       }, 1500);
     } else {
+      // Play incorrect sound
+      this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
+      
       option.classList.add('incorrect-answer');
       this.showFeedback("Incorrect", "bg-red-600");
       setTimeout(() => {
@@ -98,6 +103,9 @@ export default class extends Controller {
         // Audio will now be played only when user clicks the speaker icon
       }
     } else {
+      // Play completion sound
+      this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
+      
       // Show completion message
       this.completionMessageTarget.classList.remove('hidden');
       animate(this.completionMessageTarget, 

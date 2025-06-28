@@ -22,6 +22,9 @@ export default class extends Controller {
 
   handleVideoEnd() {
     if (this.completionMessageTarget.classList.contains('hidden')) {
+      // Play completion sound
+      this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
+      
       // Award XP for watching video (10 XP for single-stage activity)
       this.awardXp(10);
       
