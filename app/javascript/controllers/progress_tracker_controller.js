@@ -7,7 +7,7 @@ export default class extends Controller {
     currentDailyXp: Number,
     xpAwarded: Number
   }
-  static targets = ["dailyXp"]
+  static targets = ["dailyXp", "animationContainer"]
   
   connect() {
     // Update local XP display for unauthenticated users
@@ -41,6 +41,9 @@ export default class extends Controller {
 
   // Award XP via fetch request with Turbo Stream response
   async awardXp(xpAmount) {
+    // Show animation immediately for responsive feedback
+    this.showXpAnimation(xpAmount)
+    
     try {
       const response = await fetch('/progress', {
         method: 'POST',
@@ -94,6 +97,7 @@ export default class extends Controller {
       const newXp = currentXp + xpAmount
       this.setLocalDailyXp(newXp)
       this.updateLocalXpDisplay()
+      this.showXpAnimation(xpAmount)
     }
   }
 
@@ -102,5 +106,37 @@ export default class extends Controller {
       const dailyXp = this.getLocalDailyXp()
       this.dailyXpTarget.textContent = `${dailyXp} XP`
     }
+  }
+
+  // Show XP gain animation
+  showXpAnimation(xpAmount) {
+    // Find the animation container (either via target or by finding it in the DOM)
+    let animationContainer
+    if (this.hasAnimationContainerTarget) {
+      animationContainer = this.animationContainerTarget
+    } else {
+      // Fallback: find the animation container in the current element
+      animationContainer = this.element.querySelector('.xp-animation-container')
+    }
+
+    if (!animationContainer) {
+      console.warn('No animation container found for XP animation')
+      return
+    }
+
+    // Create the animation element
+    const animationElement = document.createElement('div')
+    animationElement.className = 'xp-gain-animation'
+    animationElement.textContent = `+${xpAmount}`
+    
+    // Add to container
+    animationContainer.appendChild(animationElement)
+    
+    // Remove after animation completes
+    setTimeout(() => {
+      if (animationElement.parentNode) {
+        animationElement.parentNode.removeChild(animationElement)
+      }
+    }, 1000)
   }
 }

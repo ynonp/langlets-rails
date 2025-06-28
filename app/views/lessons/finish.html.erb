@@ -2,10 +2,7 @@
   <title>Lesson Complete - Langlets</title>
 <% end %>
 
-<div class="min-h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800"
-     data-controller="local-xp"
-     data-local-xp-authenticated-value="<%= current_user.present? %>"
-     data-local-xp-current-daily-xp-value="<%= current_user ? (@user_stats&.daily_xp || 0) : 0 %>">
+<div class="min-h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800">
   <!-- Header with X button -->
   <div class="bg-gray-900 py-3 px-4">
     <div class="flex items-center justify-between">
