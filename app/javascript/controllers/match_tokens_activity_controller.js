@@ -164,6 +164,9 @@ export default class extends Controller {
     // Clear selection immediately to allow new selections
     this.clearSelection();
     
+    // Award XP for correct match (2 XP per correct answer)
+    this.awardXp(2);
+    
     setTimeout(() => {
       // Mark as matched and hide
       element1.classList.add('matched');
@@ -309,6 +312,18 @@ export default class extends Controller {
         this.currentAudio.play().catch(error => {
           console.warn('Audio playback failed:', error);
         });
+      }
+    }
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
       }
     }
   }

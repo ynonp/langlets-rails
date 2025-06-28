@@ -67,6 +67,8 @@ export default class extends Controller {
   
   incrementScore() {
     this.scoreValue += 1;
+    // Award XP for correct answer (2 XP per correct answer)
+    this.awardXp(2);
   }
   
   moveToNextPhrase() {
@@ -109,5 +111,17 @@ export default class extends Controller {
   updateProgress() {
     const percentage = (this.currentPhraseValue + 1) / this.totalPhrasesValue * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
+    }
   }
 }

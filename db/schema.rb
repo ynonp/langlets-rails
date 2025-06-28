@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_191748) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_28_065112) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -200,6 +200,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_191748) do
     t.index ["phrase_id"], name: "index_token_translations_on_phrase_id"
   end
 
+  create_table "user_game_stats", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "total_xp", default: 0
+    t.integer "current_streak", default: 0
+    t.date "last_activity_date"
+    t.integer "daily_xp", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_game_stats_on_user_id", unique: true
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -240,4 +251,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_191748) do
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"
   add_foreign_key "token_translations", "phrases"
+  add_foreign_key "user_game_stats", "users"
 end

@@ -18,6 +18,29 @@ class Activity < ApplicationRecord
     lesson.activities.order(:order).last == self
   end
 
+  def xp_value
+    case self.class.name
+    when 'WatchVideoActivity'
+      10 # Single stage activity
+    when 'MatchPhrasesActivity', 'MatchTokensActivity'
+      # Multi-stage activities: 2 XP per correct answer
+      # Base on number of items to match
+      phrases.count * 2
+    when 'SortPhrasesActivity'
+      phrases.count * 2
+    when 'LanguageAlignmentActivity'
+      token_translations.count * 2
+    when 'SpeakActivity', 'ListenActivity'
+      phrases.count * 2
+    when 'FindAnswerActivity'
+      phrases.count * 2
+    when 'WordOrderActivity'
+      phrases.count * 2
+    else
+      10 # Default for new activity types
+    end
+  end
+
   def partial_name
     self.class.name.underscore
   end

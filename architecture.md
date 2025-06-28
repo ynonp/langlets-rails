@@ -40,17 +40,23 @@
 - **Key Features**:
   - Hierarchical organization with slugs
   - Main media URL for course overview
-- **Relationships**: One-to-many with Lessons
+  - Language association for target learning language
+  - **User ownership**: All courses belong to a specific user (creator)
+- **Relationships**: 
+  - One-to-many with Lessons
+  - Belongs to Language and User
+  - Many-to-many with LearningPaths (through CoursesLearningPath)
 
 #### 4. **Lesson** (`lessons`)
 - **Purpose**: Define specific learning segments from media content
 - **Key Features**:
   - Unique slugs for routing
   - Timestamp ranges (`start_timestamp`, `end_timestamp`)
-  - Ordered sequence within courses
+  - Ordered sequence within courses (integer order field)
   - Descriptive names
+  - **User ownership**: All lessons belong to a specific user (creator)
 - **Relationships**: 
-  - Belongs to Course and Medium
+  - Belongs to Course, Medium, and User
   - One-to-many with Activities
 
 #### 5. **Phrase** (`phrases`)
@@ -70,9 +76,9 @@
 - **Key Features**:
   - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
   - Translation text
-  - Practice questions array
-  - Similar sound arrays for pronunciation practice
-  - Unique constraint on phrase + L1 indices
+  - Practice questions array (PostgreSQL array type)
+  - Similar sound arrays for pronunciation practice (PostgreSQL array type)
+  - Unique constraint on phrase + L1 start/end indices
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
 - **Relationships**: 
   - Belongs to Phrase
@@ -86,15 +92,18 @@
   - Password reset functionality with tokens and timestamps
   - Remember me functionality for persistent sessions
   - Email confirmation system (confirmable)
+  - OAuth provider and UID fields for third-party authentication
 - **Authentication System**: Powered by Devise gem with modules:
   - **Database Authenticatable**: Standard email/password authentication
   - **Recoverable**: Password reset via email tokens
   - **Rememberable**: Persistent login sessions
   - **Confirmable**: Email address verification for new accounts
+  - **OAuth Integration**: Provider and UID fields for social authentication
 - **Security Features**:
-  - Reset password tokens with expiration timestamps
+  - Reset password tokens with expiration timestamps (unique constraint)
   - Confirmation tokens for email verification
   - Unconfirmed email handling for email changes
+  - Indexed email field for efficient lookups
 - **User Interface**: Modern dark-themed login/registration forms with:
   - Social authentication placeholders (Google, Facebook)
   - Responsive design with Tailwind CSS
@@ -103,6 +112,7 @@
 - **Relationships**: 
   - Many-to-many with Activities (through ActivityUser) for progress tracking
   - Many-to-many with Lessons (through LessonUser) for completion tracking
+  - **Owner relationships**: One-to-many with Courses, Lessons, and Activities (content ownership)
 
 ### Activity System (Single Table Inheritance)
 
@@ -110,13 +120,15 @@
 - **Purpose**: Base class for interactive learning exercises
 - **Architecture**: Uses STI (Single Table Inheritance) with `type` column
 - **Key Features**:
-  - Ordered sequence within lessons
-  - Text headers and subheaders for UI
+  - Ordered sequence within lessons (integer order field)
+  - Text headers and subheaders for UI (`text_header`, `text_subheader`)
   - Video parameter generation
   - Dictionary creation functionality
+  - **User ownership**: All activities belong to a specific user (creator)
 - **Relationships**: 
-  - Belongs to Lesson
-  - Many-to-many with Phrases and TokenTranslations
+  - Belongs to Lesson and User
+  - Many-to-many with Phrases (through ActivityPhrase)
+  - Many-to-many with TokenTranslations (through ActivityTokenTranslation)
 
 #### Activity Types:
 - **WatchVideoActivity**: Video viewing with synchronized subtitles
@@ -127,41 +139,63 @@
 - **ListenActivity**: Audio comprehension with token identification
 - **FindAnswerActivity**: Question-answer exercises
 
+#### 9. **LearningPath** (`learning_paths`)
+- **Purpose**: Define structured curriculum pathways
+- **Key Features**:
+  - Named learning sequences with descriptions
+  - Difficulty level classification (integer)
+  - Publication status (boolean)
+- **Relationships**: Many-to-many with Courses (through CoursesLearningPath)
+
+#### 10. **CoursesLearningPath** (`courses_learning_paths`)
+- **Purpose**: Join table linking courses to learning paths
+- **Key Features**:
+  - Ordered sequence within learning paths (integer order field)
+  - Timestamps for tracking
+- **Relationships**: Links Courses to LearningPaths
+
 ### Join Tables
 
-#### 9. **ActivityPhrase** (`activity_phrases`)
+#### 11. **ActivityPhrase** (`activity_phrases`)
 - Links activities to their associated phrases
 - Enables many-to-many relationship between Activities and Phrases
+- Includes timestamps for creation/update tracking
 
-#### 10. **ActivityTokenTranslation** (`activity_token_translations`)
+#### 12. **ActivityTokenTranslation** (`activity_token_translations`)
 - Links activities to specific token translations for word-level exercises
 - Enables many-to-many relationship between Activities and TokenTranslations
+- Includes compound index for efficient querying
+- Includes timestamps for creation/update tracking
 
 ### User Progress Tracking
 
-#### 11. **ActivityUser** (`activity_users`)
+#### 13. **ActivityUser** (`activity_users`)
 - **Purpose**: Track user progress through individual activities
 - **Key Features**:
   - Unique constraint on activity + user combination
   - Timestamps for completion tracking
+  - Indexed on both activity_id and user_id for efficient queries
 - **Relationships**: Links Users to Activities for progress monitoring
 
-#### 12. **LessonUser** (`lesson_users`)
+#### 14. **LessonUser** (`lesson_users`)
 - **Purpose**: Track user progress through lessons
 - **Key Features**:
   - Unique constraint on lesson + user combination
   - Timestamps for completion tracking
+  - Indexed on both lesson_id and user_id for efficient queries
 - **Relationships**: Links Users to Lessons for course progression
 
 ### Workflow Management
 
-#### 13. **CreateSongProgress** (`create_song_progresses`)
+#### 15. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
-  - YouTube URL processing
-  - Multi-step workflow management
+  - YouTube URL processing (`youtubeurl`)
+  - Multi-step workflow management (integer step field)
+  - Source and target language tracking (`clip_language`, `translation_language`)
   - JSONB data storage for flexible progress tracking
-  - Unique constraint on URL + language combination
+  - Unique constraint on URL + source language + target language combination
+  - Compound index for efficient querying
 
 ## Active Storage Integration
 
@@ -237,22 +271,31 @@ This integration enables:
 ## Data Relationships
 
 ```
+# Content Hierarchy
 Course (1) ──→ (many) Lesson
 Lesson (many) ──→ (1) Medium
 Lesson (1) ──→ (many) Activity
 
+# Language & Content
 Language (1) ──→ (many) Phrase (as L1)
 Language (1) ──→ (many) Phrase (as L2)
+Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
 
+# Token-level Translation
 Phrase (1) ──→ (many) TokenTranslation
 Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
-
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
 
-# User Management & Progress Tracking (Devise)
-User (many) ←──→ (many) Activity (through ActivityUser) # Activity completion tracking
-User (many) ←──→ (many) Lesson (through LessonUser) # Lesson progress tracking
+# Learning Path System
+LearningPath (many) ←──→ (many) Course (through CoursesLearningPath)
+
+# User Management & Ownership (Devise)
+User (1) ──→ (many) Course # Content ownership
+User (1) ──→ (many) Lesson # Content ownership
+User (1) ──→ (many) Activity # Content ownership
+User (many) ←──→ (many) Activity (through ActivityUser) # Progress tracking
+User (many) ←──→ (many) Lesson (through LessonUser) # Progress tracking
 
 # Audio Attachments via Active Storage
 Phrase (1) ──→ (1) Audio File (l1_audio)
@@ -260,6 +303,7 @@ TokenTranslation (1) ──→ (1) Audio File (l1_audio)
 
 # Active Storage Infrastructure
 Any Model ←──→ Active Storage Blobs (polymorphic attachments)
+Active Storage Blobs (1) ──→ (many) Active Storage Variant Records
 ```
 
 ## Key Features & Capabilities

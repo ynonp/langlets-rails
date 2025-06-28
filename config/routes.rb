@@ -8,13 +8,18 @@ Rails.application.routes.draw do
   get "home/terms"
   root "courses#index"
   get "landing_page/index"
-  resources :lessons, only: [:show]
+  resources :lessons, only: [:show] do
+    member do
+      get :finish
+    end
+  end
   resources :courses, only: [:show, :index]
   get '/azure_token', to: 'azure_speech#token'
   get "activities/index"
   get "activities/show"
   
   resources :progress, only: [:create]
+  post '/sync_local_xp', to: 'progress#sync_local_xp'
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

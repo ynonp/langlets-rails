@@ -72,10 +72,10 @@
     turbo:frame-render->activity-navigation#activityChange
     "    
   >
-    <%= render partial: 'activity_navigation' %>
+    <%= render partial: 'gamification_bar' %>
     <div
       data-controller="progress-tracker"
-      data-action="activity:completed->progress-tracker#sendProgressUpdate"
+      data-action="activity:completed->progress-tracker#sendProgressUpdate progress-tracker:xp-awarded->local-xp#addXp"
       data-progress-tracker-progress-data-value="<%= @progress_data.to_json %>"
       class="contents"
       data-activity-navigation-target="content"

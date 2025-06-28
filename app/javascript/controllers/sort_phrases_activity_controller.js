@@ -33,6 +33,9 @@ export default class extends Controller {
   }
 
   checkCorrect() {
+    // Award XP for completing sort activity (2 XP per phrase)
+    this.awardXp(this.correctOrderValue.length * 2);
+    
     this.completionMessageTarget.classList.remove('hidden');
     animate(this.completionMessageTarget, 
       { opacity: [0, 1], scale: [0.8, 1] }, 
@@ -53,6 +56,18 @@ export default class extends Controller {
     setTimeout(() => {
       this.resultMessageTarget.classList.add('hidden');
     }, 2000);
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
+    }
   }
 
 }

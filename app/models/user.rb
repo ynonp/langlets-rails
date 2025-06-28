@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :activity_users, dependent: :destroy
   has_many :completed_activities, through: :activity_users, source: :activity
 
+  # Gamification relationship
+  has_one :user_game_stat, dependent: :destroy
+
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|
       new_user.email = auth.info.email
@@ -40,5 +43,18 @@ class User < ApplicationRecord
 
   def recommended_for_me
     Course.none
+  end
+
+  def sync_local_xp(local_xp_data)
+    return unless local_xp_data.is_a?(Hash) && local_xp_data['dailyXp'].present?
+    
+    user_stats = UserGameStat.for_user(self)
+    daily_xp = local_xp_data['dailyXp'].to_i
+    
+    # Only sync if the local XP is from today
+    local_date = local_xp_data['date']
+    if local_date == Date.current.to_s || local_date == Date.current.strftime('%a %b %d %Y')
+      user_stats.add_xp(daily_xp)
+    end
   end
 end

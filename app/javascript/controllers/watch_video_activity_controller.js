@@ -22,6 +22,9 @@ export default class extends Controller {
 
   handleVideoEnd() {
     if (this.completionMessageTarget.classList.contains('hidden')) {
+      // Award XP for watching video (10 XP for single-stage activity)
+      this.awardXp(10);
+      
       this.completionMessageTarget.classList.remove('hidden');
       this.startActivityButtonTarget.classList.add('hidden');
       animate(this.completionMessageTarget, 
@@ -71,6 +74,18 @@ export default class extends Controller {
     for (let i=0; i < subtitlesLines.length; i++) {
       if (i !== index) {
         subtitlesLines[i].classList.remove(this.currentTextLineClass);
+      }
+    }
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
       }
     }
   }
