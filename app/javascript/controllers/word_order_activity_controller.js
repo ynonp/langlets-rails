@@ -417,6 +417,9 @@ export default class extends Controller {
   }
 
   showCorrectFeedback() {
+    // Award XP for correct answer (5 XP per correct phrase)
+    this.awardXp(5);
+    
     const feedbackMessage = this.feedbackMessageTarget
     feedbackMessage.textContent = "Correct! Well done!"
     feedbackMessage.className = "mt-4 p-3 rounded-lg text-center text-lg font-medium correct-feedback"
@@ -488,5 +491,17 @@ export default class extends Controller {
     );
 
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
+    }
   }
 }

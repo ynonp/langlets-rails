@@ -6,6 +6,8 @@ class Course < ApplicationRecord
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
 
+  validates :slug, presence: true
+
   # Scope to get courses with progress for a user
   scope :with_progress_for_user, ->(user) {
     joins(lessons: :lesson_users)
@@ -100,20 +102,26 @@ class Course < ApplicationRecord
 
   def create_song!(progress)
     raise "Missing creation data" unless progress.ready?
+    raise "Slug is required" if slug.nil?
     data = progress.data
 
+    Rails.logger.info("Finding languages")
     l1 = Language.find_by(english_name: progress.clip_language)
     l2 = Language.find_by(english_name: progress.translation_language)
+    Rails.logger.info("Finding medium")
     medium = Medium.find_or_create_by!(url: progress.youtubeurl)
 
     all_alignment_tokens = []
     all_listen_tokens = []
 
+    Rails.logger.info("Deleting previous lessons")
     self.lessons.destroy_all
     Lesson.where("slug like \'#{slug}%\'").destroy_all
     medium.phrases.destroy_all
 
+    Rails.logger.info("Creating new lessons")
     data["lessons"].each_with_index do |lesson_data, lesson_index|
+      Rails.logger.info("Creating lesson: #{lesson_data["title"]}")
       l = Lesson.create!(
         medium: medium,
         slug: "#{slug}#{lesson_index}",

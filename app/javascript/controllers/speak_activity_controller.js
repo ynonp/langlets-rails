@@ -170,6 +170,9 @@ export default class extends Controller {
     const averageScore = count > 0 ? 
       (totalAccuracy + totalFluency + totalCompleteness) / (3 * count) : 0;
     
+    // Award XP based on average score (1-10 XP based on performance)
+    const xpAmount = Math.max(1, Math.round(averageScore / 10));
+    this.awardXp(xpAmount);
     
     // Show completion message - all phrases have been attempted
     this.completionMessageTarget.classList.remove('hidden');
@@ -178,6 +181,18 @@ export default class extends Controller {
       { duration: 0.3, easing: 'easeOut' }
     );
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
+    }
   }
 
   updateMiniplayerSegment(phraseIndex) {

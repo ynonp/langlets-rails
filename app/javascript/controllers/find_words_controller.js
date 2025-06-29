@@ -31,6 +31,9 @@ export default class extends Controller {
         // Play audio for the found token
         this.playTokenAudio(token);
         
+        // Award XP for finding a word (1 XP per word found)
+        this.awardXp(1);
+        
         this.updateProgress();
       }
     }
@@ -143,6 +146,18 @@ export default class extends Controller {
       this.currentAudio.play().catch(error => {
         console.warn('Audio playback failed:', error);
       });
+    }
+  }
+
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
     }
   }
 }

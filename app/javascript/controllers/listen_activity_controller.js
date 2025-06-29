@@ -66,20 +66,19 @@ export default class extends Controller {
   }
 
   selectWord(event) {
-    const wordButton = event.currentTarget;
-    const word = wordButton.dataset.word;
-    const isCorrect = wordButton.dataset.correct === 'true';
+    const selectedWord = event.currentTarget.dataset.word;
+    const isCorrect = event.currentTarget.dataset.correct === 'true';
     
     // Add visual feedback animation
     if (isCorrect) {
-      wordButton.classList.add('correct-animation');
+      event.currentTarget.classList.add('correct-animation');
     } else {
-      wordButton.classList.add('incorrect-animation');
+      event.currentTarget.classList.add('incorrect-animation');
     }
     
     // Remove animation class after animation completes
     setTimeout(() => {
-      wordButton.classList.remove('correct-animation', 'incorrect-animation');
+      event.currentTarget.classList.remove('correct-animation', 'incorrect-animation');
     }, 600);
     
     if (isCorrect) {
@@ -90,11 +89,14 @@ export default class extends Controller {
 
     if (isCorrect && this.currentTokenIndex < this.allTokens.length) {
       const currentToken = this.allTokens[this.currentTokenIndex];
-      currentToken.blank.textContent = word;
+      currentToken.blank.textContent = selectedWord;
       currentToken.blank.classList.remove('text-gray-400');
       currentToken.blank.classList.remove('blank-line');
       currentToken.blank.classList.add('text-white');
       currentToken.filled = true;
+      
+      // Award XP for correct answer (2 XP per correct answer)
+      this.awardXp(2);
       
       // Move to next token
       this.currentTokenIndex++;
@@ -145,4 +147,16 @@ export default class extends Controller {
       `).join('');
     }
   }  
+  
+  // Award XP by calling the progress tracker controller
+  awardXp(amount) {
+    // Find the progress tracker controller on the gamification bar
+    const gamificationBar = document.getElementById('gamification-bar');
+    if (gamificationBar && gamificationBar.dataset.controller) {
+      const controller = this.application.getControllerForElementAndIdentifier(gamificationBar, 'progress-tracker');
+      if (controller) {
+        controller.awardXp(amount);
+      }
+    }
+  }
 }
