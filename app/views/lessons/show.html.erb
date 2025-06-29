@@ -72,7 +72,40 @@
     turbo:frame-render->activity-navigation#activityChange
     "    
   >
-    <%= render partial: 'gamification_bar' %>
+    <!-- Combined top bar with X button, gamification stats, and Skip button -->
+    <div class="bg-gray-900 py-3 px-4">
+      <div class="flex items-center justify-between">
+        <!-- Back to Course X Button -->
+        <%= link_to @course_path,
+          class: "text-white p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200",
+          title: "Back to Course",
+          data: {
+            :"turbo-frame" => "_top",
+            :turbo => false
+          } do %>
+          <svg xmlns="http://www.w3.org/2000/svg" 
+            viewBox="0 0 384 512"
+            class="h-5 w-5 fill-white"
+          >
+            <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
+          </svg>
+        <% end %>
+
+        <!-- Gamification content will be inserted here -->
+        <%= render partial: 'gamification_bar' %>
+
+        <!-- Skip Button -->
+        <%= link_to @next_activity_path,
+          class: "text-white bg-gray-600 hover:bg-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+          title: "Skip to next activity",
+          data: {
+            :"turbo-frame" => "_top",
+            :turbo => false
+          } do %>
+          Skip
+        <% end %>
+      </div>
+    </div>
     <div
       data-controller="progress-tracker audio-feedback"
       data-action="activity:completed->progress-tracker#sendProgressUpdate audio:correct->audio-feedback#handleCorrect audio:incorrect->audio-feedback#handleIncorrect audio:complete->audio-feedback#handleComplete"

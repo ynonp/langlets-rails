@@ -48,20 +48,23 @@ class LessonsController < ApplicationController
     # Calculate XP earned in this lesson
     @lesson_xp = @lesson.activities.sum(&:xp_value)
     
-    # Get user stats and handle streak (only for authenticated users)
+    # Get user stats from ActivityLog (only for authenticated users)
     if current_user
-      @user_stats = UserGameStat.for_user(current_user)
+      @daily_xp = ActivityLog.daily_xp_for_user(current_user)
+      @total_xp = ActivityLog.total_xp_for_user(current_user)
+      @current_streak = ActivityLog.current_streak_for_user(current_user)
       
       # Check if this is the first lesson completed today for streak calculation
       today = Date.current
-      @first_lesson_today = @user_stats.last_activity_date != today
-      
-      # Update streak if first lesson today
-      if @first_lesson_today
-        @user_stats.add_streak_if_first_lesson_today
-      end
+      last_lesson_today = ActivityLog.where(user: current_user)
+                                   .where.not(lesson_id: nil)
+                                   .where(created_at: today.beginning_of_day..today.end_of_day)
+                                   .exists?
+      @first_lesson_today = !last_lesson_today
     else
-      @user_stats = nil
+      @daily_xp = 0
+      @total_xp = 0
+      @current_streak = 0
       @first_lesson_today = false
     end
 

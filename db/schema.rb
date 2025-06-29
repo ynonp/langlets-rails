@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_28_065112) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_29_093105) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -53,6 +53,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_28_065112) do
     t.bigint "user_id", null: false
     t.index ["lesson_id"], name: "index_activities_on_lesson_id"
     t.index ["user_id"], name: "index_activities_on_user_id"
+  end
+
+  create_table "activity_logs", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "active_time"
+    t.integer "xp_gained"
+    t.bigint "lesson_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_activity_logs_on_lesson_id"
+    t.index ["user_id"], name: "index_activity_logs_on_user_id"
   end
 
   create_table "activity_phrases", force: :cascade do |t|
@@ -233,6 +244,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_28_065112) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "activities", "lessons"
   add_foreign_key "activities", "users"
+  add_foreign_key "activity_logs", "lessons"
+  add_foreign_key "activity_logs", "users"
   add_foreign_key "activity_phrases", "activities"
   add_foreign_key "activity_phrases", "phrases"
   add_foreign_key "activity_token_translations", "activities"

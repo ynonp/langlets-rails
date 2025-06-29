@@ -1,15 +1,12 @@
 <% 
-  # Use passed user_stats if available, otherwise fetch from current_user
-  if local_assigns[:user_stats]
-    user_stats = local_assigns[:user_stats]
-    daily_xp = user_stats&.daily_xp || 0
-    streak = user_stats&.current_streak || 0
+  # Use passed ActivityLog data if available, otherwise fetch from current_user
+  if local_assigns[:daily_xp] && local_assigns[:current_streak]
+    daily_xp = local_assigns[:daily_xp] || 0
+    streak = local_assigns[:current_streak] || 0
   elsif current_user
-    user_stats = current_user&.user_game_stat || UserGameStat.for_user(current_user)
-    daily_xp = user_stats&.daily_xp || 0
-    streak = user_stats&.current_streak || 0
+    daily_xp = ActivityLog.daily_xp_for_user(current_user)
+    streak = ActivityLog.current_streak_for_user(current_user)
   else
-    user_stats = nil
     daily_xp = 0
     streak = 0
   end
@@ -22,76 +19,58 @@
   end
 %>
 
-<div id="gamification-bar" class="bg-gray-900 py-3 px-4"
+<div id="gamification-bar"
      data-controller="progress-tracker"
      data-progress-tracker-authenticated-value="<%= current_user.present? %>"
      data-progress-tracker-current-daily-xp-value="<%= daily_xp %>"
      data-progress-tracker-xp-awarded-value="<%= xp_awarded %>">
-  <div class="flex items-center justify-between">
-    <!-- Back to Course X Button -->
-    <%= link_to @course_path,
-      class: "text-white p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200",
-      title: "Back to Course",
-      data: {
-        :"turbo-frame" => "_top",
-        :turbo => false
-      } do %>
-      <svg xmlns="http://www.w3.org/2000/svg" 
-        viewBox="0 0 384 512"
-        class="h-5 w-5 fill-white"
-      >
-        <path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/>
-      </svg>
-    <% end %>
-
-    <!-- Gamification Stats or Login Prompt -->
-    <% if current_user %>
-      <div class="flex items-center space-x-6">
-        <!-- Day Streak -->
-        <div class="flex items-center text-white">
-          <div class="flex items-center bg-orange-500 px-3 py-1 rounded-full text-sm font-semibold">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-              <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177A7.547 7.547 0 0 1 6.648 6.61a.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248Z" clip-rule="evenodd" />
-            </svg>
-            <%= streak %> day<%= 's' if streak != 1 %>
-          </div>
+  <!-- Gamification Stats or Login Prompt -->
+  <% if current_user %>
+    <div class="flex items-center space-x-6">
+      <!-- Day Streak -->
+      <div class="flex items-center text-white">
+        <div class="flex items-center bg-orange-500 px-3 py-1 rounded-full text-sm font-semibold">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+            <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177A7.547 7.547 0 0 1 6.648 6.61a.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248Z" clip-rule="evenodd" />
+          </svg>
+          <%= streak %> day<%= 's' if streak != 1 %>
         </div>
+      </div>
 
-        <!-- Today's XP -->
-        <div class="flex items-center text-white">
-          <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold xp-display-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-            </svg>
-            <div class="xp-animation-container" data-progress-tracker-target="animationContainer">
-              <span data-progress-tracker-target="dailyXp"><%= daily_xp %> XP</span>
-            </div>
+      <!-- Today's XP -->
+      <div class="flex items-center text-white">
+        <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold xp-display-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+          </svg>
+          <div class="xp-animation-container" data-progress-tracker-target="animationContainer">
+            <span data-progress-tracker-target="dailyXp"><%= daily_xp %> XP</span>
           </div>
         </div>
       </div>
-    <% else %>
-      <!-- XP Display and Login/Signup prompt for unauthenticated users -->
-      <div class="flex items-center space-x-4">
-        <!-- Today's XP for unauthenticated users -->
-        <div class="flex items-center text-white">
-          <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold xp-display-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-              <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-            </svg>
-            <div class="xp-animation-container" data-progress-tracker-target="animationContainer">
-              <span data-progress-tracker-target="dailyXp">0 XP</span>
-            </div>
+    </div>
+  <% else %>
+    <!-- XP Display and Login/Signup prompt for unauthenticated users -->
+    <div class="flex items-center space-x-4">
+      <!-- Today's XP for unauthenticated users -->
+      <div class="flex items-center text-white">
+        <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold xp-display-container">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+          </svg>
+          <div class="xp-animation-container" data-progress-tracker-target="animationContainer">
+            <span data-progress-tracker-target="dailyXp">0 XP</span>
           </div>
         </div>
-        
-        <%= link_to new_user_session_path,
-          class: "text-white bg-gray-600 hover:bg-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
-          data: { turbo: false } do %>
-          Login to save
-        <% end %>
       </div>
-    <% end %>
-  </div>
+      
+      <%= link_to new_user_session_path,
+        class: "text-white bg-gray-600 hover:bg-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+        data: { turbo: false } do %>
+        Login to save
+      <% end %>
+    </div>
+  <% end %>
 </div>
 
 <style>

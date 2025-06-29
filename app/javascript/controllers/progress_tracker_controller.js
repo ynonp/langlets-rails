@@ -10,6 +10,14 @@ export default class extends Controller {
   static targets = ["dailyXp", "animationContainer"]
   
   connect() {
+    // Initialize timer for activity tracking
+    this.startTime = null
+    this.activeTime = 0
+    this.startTimer()
+    
+    // Set up visibility change listener
+    this.setupVisibilityTracking()
+    
     // Update local XP display for unauthenticated users
     if (!this.authenticatedValue) {
       this.updateLocalXpDisplay()
@@ -19,6 +27,62 @@ export default class extends Controller {
     if (!this.authenticatedValue && this.xpAwardedValue > 0) {
       this.addLocalXp(this.xpAwardedValue)
     }
+  }
+  
+  disconnect() {
+    // Clean up timer and report final progress
+    this.stopTimer()
+    this.reportProgress()
+    
+    // Remove visibility change listener
+    if (this.visibilityChangeHandler) {
+      document.removeEventListener('visibilitychange', this.visibilityChangeHandler)
+    }
+  }
+  
+  startTimer() {
+    this.startTime = Date.now()
+    this.activeTime = 0
+  }
+  
+  stopTimer() {
+    if (this.startTime) {
+      this.activeTime += (Date.now() - this.startTime)
+      this.startTime = null
+    }
+  }
+  
+  resetTimer() {
+    this.startTime = Date.now()
+    this.activeTime = 0
+  }
+  
+  setupVisibilityTracking() {
+    this.visibilityChangeHandler = () => {
+      if (document.visibilityState === "hidden") {
+        this.stopTimer()
+        this.reportProgress()
+      } else if (document.visibilityState === "visible") {
+        this.startTimer()
+      }
+    }
+    
+    document.addEventListener('visibilitychange', this.visibilityChangeHandler)
+  }
+  
+  reportProgress() {
+    if (!this.authenticatedValue || this.activeTime === 0) return
+    
+    const analyticsData = JSON.stringify({
+      active_time: Math.round(this.activeTime / 1000), // Convert to seconds
+      xp_gained: 0 // No XP for time tracking alone
+    })
+    
+    navigator.sendBeacon("/log", new Blob([analyticsData], {
+      type: 'application/json'
+    }))
+    
+    this.resetTimer()
   }  
   
   sendProgressUpdate() {    
@@ -44,6 +108,10 @@ export default class extends Controller {
     // Show animation immediately for responsive feedback
     this.showXpAnimation(xpAmount)
     
+    // Calculate current active time
+    this.stopTimer()
+    const currentActiveTime = Math.round(this.activeTime / 1000)
+    
     try {
       const response = await fetch('/progress', {
         method: 'POST',
@@ -52,7 +120,10 @@ export default class extends Controller {
           'Content-Type': 'application/json',
           'X-CSRF-Token': document.querySelector('[name="csrf-token"]').content
         },
-        body: JSON.stringify({ xp: xpAmount })
+        body: JSON.stringify({ 
+          xp: xpAmount,
+          active_time: currentActiveTime
+        })
       })
 
       if (response.ok) {
@@ -66,6 +137,9 @@ export default class extends Controller {
         this.addLocalXp(xpAmount)
       }
     }
+    
+    // Reset timer after progress report
+    this.resetTimer()
   }
 
   // Local XP management for unauthenticated users

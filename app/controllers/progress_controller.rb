@@ -1,5 +1,5 @@
 class ProgressController < ApplicationController
-  skip_before_action :verify_authenticity_token, only: [:create, :sync_local_xp]
+  skip_before_action :verify_authenticity_token, only: [:create, :sync_local_xp, :log]
   
   def create
     xp_awarded = 0
@@ -9,9 +9,18 @@ class ProgressController < ApplicationController
       xp_awarded = params[:xp].to_i
       
       if current_user
-        user_stats = UserGameStat.for_user(current_user)
-        user_stats.add_xp(xp_awarded)
-        @user_stats = user_stats
+        # Create activity log entry for XP gain
+        active_time = params[:active_time]&.to_i || 0
+        ActivityLog.log_activity_completion(
+          user: current_user,
+          active_time: active_time,
+          xp_gained: xp_awarded
+        )
+        
+        # Calculate current stats for display
+        @daily_xp = ActivityLog.daily_xp_for_user(current_user)
+        @total_xp = ActivityLog.total_xp_for_user(current_user)
+        @current_streak = ActivityLog.current_streak_for_user(current_user)
       end
     end
     
@@ -31,7 +40,9 @@ class ProgressController < ApplicationController
         render turbo_stream: turbo_stream.replace("gamification-bar", 
           partial: "lessons/gamification_bar", 
           locals: { 
-            user_stats: @user_stats,
+            daily_xp: @daily_xp,
+            total_xp: @total_xp,
+            current_streak: @current_streak,
             xp_awarded: xp_awarded,
             current_user: current_user
           })
@@ -40,20 +51,62 @@ class ProgressController < ApplicationController
       format.html { head :ok }
     end
   end
+  
+  # New endpoint for logging activity with time tracking
+  def log
+    return head :ok unless current_user
+    
+    active_time = params[:active_time]&.to_i || 0
+    xp_gained = params[:xp_gained]&.to_i || 0
+    
+    if params[:lesson_id].present?
+      # Lesson completion log
+      lesson = Lesson.find(params[:lesson_id])
+      ActivityLog.log_lesson_completion(
+        user: current_user,
+        lesson: lesson,
+        active_time: active_time,
+        xp_gained: xp_gained
+      )
+    elsif xp_gained > 0
+      # Activity completion log
+      ActivityLog.log_activity_completion(
+        user: current_user,
+        active_time: active_time,
+        xp_gained: xp_gained
+      )
+    end
+    
+    head :ok
+  end
 
   def sync_local_xp
     return head :unauthorized unless current_user
 
     local_xp_data = JSON.parse(request.body.read)
-    current_user.sync_local_xp(local_xp_data)
-    @user_stats = UserGameStat.for_user(current_user)
+    
+    # Sync local XP data to ActivityLog
+    if local_xp_data['dailyXp'] && local_xp_data['dailyXp'] > 0
+      ActivityLog.log_activity_completion(
+        user: current_user,
+        active_time: 0, # No time tracking for synced XP
+        xp_gained: local_xp_data['dailyXp']
+      )
+    end
+    
+    # Calculate current stats for display
+    @daily_xp = ActivityLog.daily_xp_for_user(current_user)
+    @total_xp = ActivityLog.total_xp_for_user(current_user)
+    @current_streak = ActivityLog.current_streak_for_user(current_user)
     
     respond_to do |format|
       format.turbo_stream { 
         render turbo_stream: turbo_stream.replace("gamification-bar", 
           partial: "lessons/gamification_bar", 
           locals: { 
-            user_stats: @user_stats,
+            daily_xp: @daily_xp,
+            total_xp: @total_xp,
+            current_streak: @current_streak,
             current_user: current_user
           })
       }
@@ -80,5 +133,17 @@ class ProgressController < ApplicationController
       lesson: lesson,
       user: current_user
     )
+    
+    # Log lesson completion with XP and time
+    active_time = params[:active_time]&.to_i || 0
+    xp_gained = params[:lesson_xp]&.to_i || 0
+    
+    ActivityLog.log_lesson_completion(
+      user: current_user,
+      lesson: lesson,
+      active_time: active_time,
+      xp_gained: xp_gained
+    )
   end
+  
 end
