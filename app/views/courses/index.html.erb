@@ -11,10 +11,12 @@
         <div class="flex items-center space-x-6">
           <!-- Day Streak -->
           <% daily_xp = ActivityLog.daily_xp_for_user(current_user) %>
-          <% streak = ActivityLog.current_streak_for_user(current_user) %>
+          <% streak_info = ActivityLog.streak_info_for_user(current_user) %>
+          <% streak = streak_info[:count] %>
           
           <div class="flex items-center text-white">
-            <div class="flex items-center bg-orange-500 px-3 py-1 rounded-full text-sm font-semibold">
+            <% bg_class = streak_background_class(streak_info[:status]) %>
+            <div class="flex items-center <%= bg_class %> px-3 py-1 rounded-full text-sm font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
                 <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177A7.547 7.547 0 0 1 6.648 6.61a.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248Z" clip-rule="evenodd" />
               </svg>

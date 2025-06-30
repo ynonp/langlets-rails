@@ -5,7 +5,7 @@ class ActivityLog < ApplicationRecord
   validates :active_time, :xp_gained, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   # XP calculation methods
-  def self.daily_xp_for_user(user, date = Date.current)
+  def self.daily_xp_for_user(user, date = Time.zone.now.to_date)
     where(user: user, created_at: date.beginning_of_day..date.end_of_day)
       .sum(:xp_gained)
   end
@@ -16,6 +16,12 @@ class ActivityLog < ApplicationRecord
 
   # Streak calculation method
   def self.current_streak_for_user(user)
+    streak_data = streak_info_for_user(user)
+    streak_data[:count]
+  end
+
+  # Returns comprehensive streak information
+  def self.streak_info_for_user(user)
     # Get all lesson completion logs (where lesson_id is not nil) ordered by date
     lesson_logs = where(user: user)
                     .where.not(lesson_id: nil)
@@ -24,22 +30,44 @@ class ActivityLog < ApplicationRecord
                     .order('DATE(created_at) DESC')
                     .pluck('DATE(created_at)')
 
-    return 0 if lesson_logs.empty?
+    today = Time.zone.now.to_date
+    completed_today = lesson_logs.include?(today)
 
+    if lesson_logs.empty?
+      return {
+        count: 0,
+        completed_today: false,
+        status: :no_streak
+      }
+    end
+
+    # Calculate streak starting from most recent day
     current_streak = 0
-    current_date = Date.current
+    check_date = completed_today ? today : today - 1.day
 
-    # Check each consecutive day going backwards
     lesson_logs.each do |log_date|
-      if log_date == current_date || log_date == current_date - current_streak.days
+      if log_date == check_date
         current_streak += 1
-        current_date = log_date
+        check_date -= 1.day
       else
         break
       end
     end
 
-    current_streak
+    # Determine status
+    status = if completed_today
+               :completed_today    # Orange background - today's lesson done
+             elsif current_streak > 0
+               :at_risk           # Lighter background - streak at risk
+             else
+               :no_streak         # Orange background - no active streak
+             end
+
+    {
+      count: current_streak,
+      completed_today: completed_today,
+      status: status
+    }
   end
 
   # Create activity completion log

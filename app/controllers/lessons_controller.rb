@@ -55,7 +55,7 @@ class LessonsController < ApplicationController
       @current_streak = ActivityLog.current_streak_for_user(current_user)
       
       # Check if this is the first lesson completed today for streak calculation
-      today = Date.current
+      today = Time.zone.now.to_date
       last_lesson_today = ActivityLog.where(user: current_user)
                                    .where.not(lesson_id: nil)
                                    .where(created_at: today.beginning_of_day..today.end_of_day)

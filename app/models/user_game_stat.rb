@@ -8,7 +8,7 @@ class UserGameStat < ApplicationRecord
   end
 
   def add_xp(amount)
-    today = Date.current
+    today = Time.zone.now.to_date
     
     # Reset daily XP if it's a new day
     if last_activity_date != today
@@ -24,7 +24,7 @@ class UserGameStat < ApplicationRecord
   end
 
   def add_streak_if_first_lesson_today
-    today = Date.current
+    today = Time.zone.now.to_date
     
     # Only add to streak if this is the first lesson completed today
     if last_activity_date != today
@@ -35,7 +35,7 @@ class UserGameStat < ApplicationRecord
   end
 
   def reset_streak_if_missed_day
-    today = Date.current
+    today = Time.zone.now.to_date
     return if last_activity_date.nil?
     
     # If more than 1 day has passed since last activity, reset streak

@@ -52,7 +52,7 @@ class User < ApplicationRecord
     
     # Only sync if the local XP is from today
     local_date = local_xp_data['date']
-    if local_date == Date.current.to_s || local_date == Date.current.strftime('%a %b %d %Y')
+    if local_date == Time.zone.now.to_date.to_s || local_date == Time.zone.now.to_date.strftime('%a %b %d %Y')
       ActivityLog.log_activity_completion(
         user: self,
         active_time: 0, # No time tracking for synced XP
