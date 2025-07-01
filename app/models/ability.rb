@@ -4,7 +4,9 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if ['ynon@hey.com'].include?(user)
+    return unless user
+
+    if ['ynon@hey.com'].include?(user.email)
       editor(user)
     end
   end

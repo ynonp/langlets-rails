@@ -6,7 +6,19 @@ class Course < ApplicationRecord
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
 
-  validates :slug, presence: true
+  # Status enum
+  enum :status, {
+    processing: 0,
+    published: 1
+  }
+
+  validates :slug, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
+  validates :main_media_url, presence: true
+
+  # Scopes
+  scope :published_courses, -> { where(status: :published) }
+  scope :processing_courses, -> { where(status: :processing) }
 
   # Scope to get courses with progress for a user
   scope :with_progress_for_user, ->(user) {

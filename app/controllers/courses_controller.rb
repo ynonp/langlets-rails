@@ -1,11 +1,15 @@
 class CoursesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
   def index
     @learning_paths = LearningPath.published.includes(:courses)
     @languages = Language.joins(:courses).distinct.order(:english_name)
     
-    # Get all courses with progress data in a single optimized query
-    # For now, show all courses regardless of owner (later we may want to filter by user)
-    @all_courses = Course.includes(:language, :lessons).order(created_at: :desc)
+    # Get all published courses with progress data in a single optimized query
+    @all_courses = Course.published.includes(:language, :lessons).order(created_at: :desc)
+    
+    # Get user's processing courses if signed in
+    @processing_courses = user_signed_in? ? current_user.courses.processing.includes(:language).order(created_at: :desc) : []
     
     # Filter by language if provided
     if params[:language].present? && params[:language] != 'all'
@@ -65,7 +69,41 @@ class CoursesController < ApplicationController
                      .order(:order)
   end
 
+  def new
+    authorize! :create, Course
+    @course = Course.new
+    @languages = Language.all.order(:english_name)
+  end
+
+  def create
+    authorize! :create, Course
+    
+    @course = current_user.courses.build(course_params)
+    @course.status = :processing
+    
+    if @course.save
+      # Queue the background job to create course content
+      CreateCourseJob.perform_later(
+        @course.id,
+        @course.main_media_url,
+        params[:course][:clip_language],
+        params[:course][:translation_language],
+        params[:course][:lyrics_url],
+        params[:course][:lesson_template]
+      )
+      
+      redirect_to courses_path, notice: 'Your new course is being created! You\'ll receive an email when it\'s ready.'
+    else
+      @languages = Language.all.order(:english_name)
+      render :new, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def course_params
+    params.require(:course).permit(:name, :slug, :main_media_url, :language_id)
+  end
 
   def precompute_lesson_counts(courses)
     return {} if courses.empty?
