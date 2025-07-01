@@ -1,22 +1,30 @@
 class CreateCourseJob < ApplicationJob
   queue_as :default
 
-  def perform(course_id, youtube_url, clip_language, translation_language, lyrics_url, lesson_template)
+  def perform(create_song_progress_id, course_id)
+    progress = CreateSongProgress.find(create_song_progress_id)
     course = Course.find(course_id)
     
     begin
-      # Create the AI song generator
-      cs = Ai::CreateSong.new(course.name, youtube_url, clip_language, translation_language, lyrics_url)
+      # Extract lesson template from the progress data
+      lesson_template = progress.data&.dig('lesson_template') || 'create_song'
+      lyrics_url = progress.data&.dig('lyrics_url')
+      
+      # Create the AI song generator using values from the progress record
+      cs = Ai::CreateSong.new(
+        course.name, 
+        progress.youtubeurl, 
+        progress.clip_language, 
+        progress.translation_language, 
+        lyrics_url
+      )
       cs.run
       
-      # Find the progress record created by the AI service
-      progress = CreateSongProgress.find_by(
-        youtubeurl: youtube_url,
-        clip_language: clip_language,
-        translation_language: translation_language
-      )
+      # The AI service will update the same progress record we created,
+      # since it uses find_or_create_by with the same parameters
+      progress.reload
       
-      if progress&.ready?
+      if progress.ready?
         # Create the course content based on template
         case lesson_template
         when 'create_song'

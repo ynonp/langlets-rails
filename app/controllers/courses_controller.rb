@@ -81,19 +81,42 @@ class CoursesController < ApplicationController
     @course = current_user.courses.build(course_params)
     @course.status = :processing
     
-    if @course.save
-      # Queue the background job to create course content
-      CreateCourseJob.perform_later(
-        @course.id,
-        @course.main_media_url,
-        params[:course][:clip_language],
-        params[:course][:translation_language],
-        params[:course][:lyrics_url],
-        params[:course][:lesson_template]
-      )
+    # Create and validate the CreateSongProgress record upfront
+    @create_song_progress = CreateSongProgress.new(
+      youtubeurl: @course.main_media_url,
+      clip_language: params[:course][:clip_language],
+      translation_language: params[:course][:translation_language],      
+      data: {
+        lyrics_url: params[:course][:lyrics_url],
+        lesson_template: params[:course][:lesson_template]
+      }
+    )
+    
+    # Validate both course and progress record
+    course_valid = @course.valid?
+    progress_valid = @create_song_progress.valid?
+    
+    if course_valid && progress_valid
+      @course.save!
+      @create_song_progress.save!
+      
+      # Queue the background job with the validated records
+      CreateCourseJob.perform_later(@create_song_progress.id, @course.id)
       
       redirect_to courses_path, notice: 'Your new course is being created! You\'ll receive an email when it\'s ready.'
     else
+      # Merge validation errors from both models
+      @create_song_progress.errors.each do |error|
+        case error.attribute
+        when :youtubeurl
+          @course.errors.add(:main_media_url, error.message)
+        when :clip_language
+          @course.errors.add(:clip_language, error.message)
+        when :translation_language
+          @course.errors.add(:translation_language, error.message)
+        end
+      end
+      
       @languages = Language.all.order(:english_name)
       render :new, status: :unprocessable_entity
     end
