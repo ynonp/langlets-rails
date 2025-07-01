@@ -98,9 +98,16 @@
         <!-- Lesson Template -->
         <div>
           <%= label_tag :lesson_template, "Lesson Template", class: "block text-sm font-semibold text-slate-200 mb-2" %>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <label class="flex items-center p-4 bg-slate-700 border border-slate-600 rounded-lg cursor-pointer hover:bg-slate-600 transition-colors">
-              <%= radio_button_tag :lesson_template, "song", true, class: "mr-3 text-blue-500" %>
+              <%= radio_button_tag :lesson_template, "create_song", true, class: "mr-3 text-blue-500" %>
+              <div>
+                <div class="font-semibold text-slate-100">Create Song</div>
+                <div class="text-sm text-slate-400">AI-powered song creation and analysis</div>
+              </div>
+            </label>
+            <label class="flex items-center p-4 bg-slate-700 border border-slate-600 rounded-lg cursor-pointer hover:bg-slate-600 transition-colors">
+              <%= radio_button_tag :lesson_template, "song", false, class: "mr-3 text-blue-500" %>
               <div>
                 <div class="font-semibold text-slate-100">Song Template</div>
                 <div class="text-sm text-slate-400">Full song analysis with comprehensive activities</div>

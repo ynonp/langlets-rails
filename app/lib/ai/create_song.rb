@@ -57,6 +57,22 @@ module Ai
         api_key: Rails.application.credentials.anthropic_api_key,
         default_options: { chat_model: 'claude-sonnet-4-0' }
       )
+      
+      # Cache all prompts at initialization to avoid repeated file I/O
+      @prompt_cache = {}
+      prompt_files = %w[
+        system.md
+        extract_phrases_from_youtube_url.md
+        create_lessons_from_phrases.md
+        create_token_translations.md
+        create_token_translations_batch.md
+        create_listening_activities.md
+        create_language_alignment_activities.md
+      ]
+      
+      prompt_files.each do |file|
+        @prompt_cache[file] = File.read("prompts/#{file}")
+      end
     end
 
     def run
@@ -222,107 +238,36 @@ module Ai
       progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
       data = progress.data
       
-      # JSON schema for the LLM response
-      json_schema = {
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            "translation_indices": { 
-              type: "array", 
-              items: { type: "integer" },
-              description: "Continous token indices in the translation sentence"
-            },
-            "clip_indices": { 
-              type: "array", 
-              items: { type: "integer" },
-              description: "Continous token indices in the clip sentence"
-            },
-            "translation_tokens": { 
-              type: "array", 
-              items: { type: "string" },
-              description: "The actual tokens from the translation"
-            },
-            "clip_tokens": { 
-              type: "array", 
-              items: { type: "string" },
-              description: "The actual tokens from the clip"
-            }
-          },
-          required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"],
-          additionalProperties: false
-        }
-      }
+      # Collect all phrases that need translation processing
+      phrases_to_process = collect_phrases_for_processing(data)
       
-      parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
-      prompt = Langchain::Prompt::PromptTemplate.new(
-        template: File.read("prompts/create_token_translations.md"),
-        input_variables: ["clip_language", "translation_language", "phrase_text", "translation_text", "clip_tokens", "translation_tokens", "format_instructions"]
-      )
+      return if phrases_to_process.empty?
       
-      # Find the first phrase without translations and process from there
-      data["lessons"].each_with_index do |lesson, lesson_index|
-        lesson["phrases"].each_with_index do |phrase, phrase_index|
-          next if phrase.key?("translations")
+      puts "Processing #{phrases_to_process.length} phrases using smart batching with Claude..."
+      
+      # Process in batches of 3 for optimal quality/performance balance
+      phrases_to_process.each_slice(3).with_index do |phrase_batch, batch_index|
+        puts "Processing batch #{batch_index + 1}/#{(phrases_to_process.length / 3.0).ceil} (#{phrase_batch.length} phrases)"
+        
+        begin
+          process_phrase_batch_with_fallback(phrase_batch, data, progress)
+        rescue StandardError => e
+          puts "Error processing batch #{batch_index + 1}: #{e.message}"
+          puts "Falling back to individual processing for this batch..."
           
-          # Tokenize the phrases
-          clip_tokens = tokenize_text(phrase["text_l1"])
-          translation_tokens = tokenize_text(phrase["text_l2"])
-          
-          prompt_text = prompt.format(
-            clip_language: clip_language,
-            translation_language: translation_language,
-            phrase_text: phrase["text_l1"],
-            translation_text: phrase["text_l2"],
-            clip_tokens: clip_tokens.to_json,
-            translation_tokens: translation_tokens.to_json,
-            format_instructions: parser.get_format_instructions
-          )
-          
-          llm_response = @openai.chat(messages: [
-            {role: "user", content: File.read("prompts/system.md")},
-            {role: "user", content: prompt_text}
-          ]).chat_completion
-          
-          structured_response = parser.parse(llm_response)
-          pp structured_response
-          # Convert token indices to character indices
-          translations = structured_response.map do |alignment|
-            
-            # Handle cases where alignment spans multiple tokens
-            l1_start = find_character_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
-            l1_end = if alignment["clip_indices"].length > 1
-              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].last, alignment["clip_tokens"].last)
-            else
-              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
-            end
-            
-            l2_start = find_character_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
-            l2_end = if alignment["translation_indices"].length > 1
-              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].last, alignment["translation_tokens"].last)
-            else
-              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
-            end
-            pp alignment
-            {
-              "l1_start_index" => l1_start,
-              "l1_end_index" => l1_end,
-              "l2_start_index" => l2_start,
-              "l2_end_index" => l2_end,
-              "translation" => alignment["translation_tokens"].join(" ")
-            }
+          # Fallback to individual processing
+          phrase_batch.each do |phrase_data|
+            process_single_phrase_fallback(phrase_data, data, progress)
           end
-          
-          # Update the phrase with translations
-          data["lessons"][lesson_index]["phrases"][phrase_index]["translations"] = translations
-          
-          # Save progress after each phrase
+        end
+        
+        # Save progress every 2 batches to reduce DB writes
+        if batch_index % 2 == 0 || batch_index == (phrases_to_process.length / 3.0).ceil - 1
           save_progress(progress.step, data)
-          
-          puts "Processed phrase #{phrase_index} in lesson #{lesson_index}: #{phrase['text_l1']}"
         end
       end
-      save_progress(:create_token_translations)
+      
+      save_progress(:create_token_translations, data)
     end
 
     def create_listening_activities
@@ -660,5 +605,251 @@ module Ai
     end
 
 
+    def collect_phrases_for_processing(data)
+      phrases_to_process = []
+      
+      data["lessons"].each_with_index do |lesson, lesson_index|
+        lesson["phrases"].each_with_index do |phrase, phrase_index|
+          next if phrase.key?("translations")
+          
+          # Pre-calculate tokens for reuse
+          clip_tokens = tokenize_text(phrase["text_l1"])
+          translation_tokens = tokenize_text(phrase["text_l2"])
+          
+          phrases_to_process << {
+            lesson_index: lesson_index,
+            phrase_index: phrase_index,
+            phrase: phrase,
+            clip_tokens: clip_tokens,
+            translation_tokens: translation_tokens,
+            complexity: calculate_phrase_complexity(phrase, clip_tokens, translation_tokens)
+          }
+        end
+      end
+      
+      # Sort by complexity for better batching - similar complexity phrases work better together
+      phrases_to_process.sort_by { |p| p[:complexity] }
+    end
+
+    def calculate_phrase_complexity(phrase, clip_tokens, translation_tokens)
+      # Simple complexity metric based on token count and length disparity
+      token_count = clip_tokens.length + translation_tokens.length
+      length_ratio = [phrase["text_l1"].length, phrase["text_l2"].length].max.to_f / 
+                     [phrase["text_l1"].length, phrase["text_l2"].length].min
+      
+      # Factor in punctuation and potential complexity indicators
+      punctuation_count = phrase["text_l1"].scan(/[[:punct:]]/).length + phrase["text_l2"].scan(/[[:punct:]]/).length
+      
+      token_count * length_ratio + punctuation_count * 0.5
+    end
+
+    def process_phrase_batch_with_fallback(phrase_batch, data, progress)
+      # Enhanced JSON schema for batch processing with phrase identification
+      batch_json_schema = {
+        type: "object",
+        properties: {
+          "phrase_alignments": {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                "phrase_id": { 
+                  type: "string", 
+                  description: "Unique identifier for this phrase (format: 'L{lesson_index}P{phrase_index}')" 
+                },
+                "clip_text": { type: "string", description: "The original clip text for verification" },
+                "translation_text": { type: "string", description: "The original translation text for verification" },
+                "alignments": {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      "translation_indices": { type: "array", items: { type: "integer" }},
+                      "clip_indices": { type: "array", items: { type: "integer" }},
+                      "translation_tokens": { type: "array", items: { type: "string" }},
+                      "clip_tokens": { type: "array", items: { type: "string" }}
+                    },
+                    required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"]
+                  }
+                }
+              },
+              required: ["phrase_id", "clip_text", "translation_text", "alignments"]
+            }
+          }
+        },
+        required: ["phrase_alignments"]
+      }
+      
+      parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(batch_json_schema)
+      
+      # Create enhanced batch prompt
+      batch_prompt = build_batch_token_prompt(phrase_batch, parser)
+      
+      # Use Claude for better instruction following and structured output
+      llm_response = @claude.chat(messages: [
+        {role: "user", content: cached_prompt("system.md")},
+        {role: "user", content: batch_prompt}
+      ]).chat_completion
+      
+      structured_response = parser.parse(llm_response)
+      
+      # Validate and process results with strict checking
+      process_batch_results(structured_response, phrase_batch, data)
+    end
+
+    def build_batch_token_prompt(phrase_batch, parser)
+      # Build detailed prompt with clear phrase separation
+      phrases_info = phrase_batch.map do |phrase_data|
+        phrase_id = "L#{phrase_data[:lesson_index]}P#{phrase_data[:phrase_index]}"
+        {
+          phrase_id: phrase_id,
+          clip_text: phrase_data[:phrase]["text_l1"],
+          translation_text: phrase_data[:phrase]["text_l2"],
+          clip_tokens: phrase_data[:clip_tokens],
+          translation_tokens: phrase_data[:translation_tokens]
+        }
+      end
+      
+      batch_template = build_batch_template
+      
+      prompt = Langchain::Prompt::PromptTemplate.new(
+        template: batch_template,
+        input_variables: ["clip_language", "translation_language", "phrases_data", "format_instructions"]
+      )
+      
+      prompt.format(
+        clip_language: clip_language,
+        translation_language: translation_language,
+        phrases_data: phrases_info.to_json,
+        format_instructions: parser.get_format_instructions
+      )
+    end
+
+    def build_batch_template
+      cached_prompt("create_token_translations_batch.md")
+    end
+
+    def process_batch_results(structured_response, phrase_batch, data)
+      # Create lookup map for quick phrase finding
+      phrase_lookup = phrase_batch.index_by { |p| "L#{p[:lesson_index]}P#{p[:phrase_index]}" }
+      
+      processed_count = 0
+      
+      structured_response["phrase_alignments"].each do |phrase_result|
+        phrase_id = phrase_result["phrase_id"]
+        phrase_data = phrase_lookup[phrase_id]
+        
+        unless phrase_data
+          puts "Warning: Received result for unknown phrase_id: #{phrase_id}"
+          next
+        end
+        
+        # Validate text matches to ensure LLM processed correctly
+        unless phrase_result["clip_text"] == phrase_data[:phrase]["text_l1"] && 
+               phrase_result["translation_text"] == phrase_data[:phrase]["text_l2"]
+          puts "Warning: Text mismatch for phrase #{phrase_id}, falling back to individual processing"
+          process_single_phrase_fallback(phrase_data, data, nil)
+          next
+        end
+        
+        # Process alignments and convert to character indices
+        translations = phrase_result["alignments"].map do |alignment|
+          process_alignment_to_character_indices(phrase_data[:phrase], alignment, phrase_data[:clip_tokens], phrase_data[:translation_tokens])
+        end
+        
+        # Update data structure
+        data["lessons"][phrase_data[:lesson_index]]["phrases"][phrase_data[:phrase_index]]["translations"] = translations
+        processed_count += 1
+        
+        puts "✓ Processed phrase #{phrase_data[:phrase_index]} in lesson #{phrase_data[:lesson_index]}: #{phrase_data[:phrase]['text_l1']}"
+      end
+      
+      puts "Successfully processed #{processed_count}/#{phrase_batch.length} phrases in batch"
+    end
+
+    def process_single_phrase_fallback(phrase_data, data, progress)
+      puts "Processing individual phrase: #{phrase_data[:phrase]['text_l1']}"
+      
+      # Use original single-phrase processing logic with Claude
+      json_schema = {
+        type: "array",
+        items: {
+          type: "object",
+          properties: {
+            "translation_indices": { type: "array", items: { type: "integer" }},
+            "clip_indices": { type: "array", items: { type: "integer" }},
+            "translation_tokens": { type: "array", items: { type: "string" }},
+            "clip_tokens": { type: "array", items: { type: "string" }}
+          },
+          required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"]
+        }
+      }
+      
+      parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
+      prompt = Langchain::Prompt::PromptTemplate.new(
+        template: cached_prompt("create_token_translations.md"),
+        input_variables: ["clip_language", "translation_language", "phrase_text", "translation_text", "clip_tokens", "translation_tokens", "format_instructions"]
+      )
+      
+      prompt_text = prompt.format(
+        clip_language: clip_language,
+        translation_language: translation_language,
+        phrase_text: phrase_data[:phrase]["text_l1"],
+        translation_text: phrase_data[:phrase]["text_l2"],
+        clip_tokens: phrase_data[:clip_tokens].to_json,
+        translation_tokens: phrase_data[:translation_tokens].to_json,
+        format_instructions: parser.get_format_instructions
+      )
+      
+      # Use Claude for fallback as well for consistency
+      llm_response = @claude.chat(messages: [
+        {role: "user", content: cached_prompt("system.md")},
+        {role: "user", content: prompt_text}
+      ]).chat_completion
+      
+      structured_response = parser.parse(llm_response)
+      
+      # Convert token indices to character indices
+      translations = structured_response.map do |alignment|
+        process_alignment_to_character_indices(phrase_data[:phrase], alignment, phrase_data[:clip_tokens], phrase_data[:translation_tokens])
+      end
+      
+      # Update the phrase with translations
+      data["lessons"][phrase_data[:lesson_index]]["phrases"][phrase_data[:phrase_index]]["translations"] = translations
+      
+      puts "✓ Fallback processed phrase #{phrase_data[:phrase_index]} in lesson #{phrase_data[:lesson_index]}"
+    end
+
+    def process_alignment_to_character_indices(phrase, alignment, clip_tokens, translation_tokens)
+      # Handle cases where alignment spans multiple tokens
+      l1_start = find_character_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+      l1_end = if alignment["clip_indices"].length > 1
+        find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].last, alignment["clip_tokens"].last)
+      else
+        find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+      end
+      
+      l2_start = find_character_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+      l2_end = if alignment["translation_indices"].length > 1
+        find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].last, alignment["translation_tokens"].last)
+      else
+        find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+      end
+      
+      {
+        "l1_start_index" => l1_start,
+        "l1_end_index" => l1_end,
+        "l2_start_index" => l2_start,
+        "l2_end_index" => l2_end,
+        "translation" => alignment["translation_tokens"].join(" ")
+      }
+    end
+
+    # Cache prompt files to avoid repeated file I/O
+    def cached_prompt(filename)
+      @prompt_cache[filename]
+    end
+
+    private
   end
 end

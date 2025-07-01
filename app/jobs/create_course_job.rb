@@ -19,12 +19,14 @@ class CreateCourseJob < ApplicationJob
       if progress&.ready?
         # Create the course content based on template
         case lesson_template
+        when 'create_song'
+          course.create_song!(progress)
         when 'song'
           course.create_song!(progress)
         when 'short'
           course.create_short!(progress)
         else
-          raise "Unknown lesson template: #{lesson_template}"
+          course.create_song!(progress)
         end
         
         # Mark course as published

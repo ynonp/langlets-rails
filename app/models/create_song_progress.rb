@@ -1,4 +1,8 @@
 class CreateSongProgress < ApplicationRecord
+  validates :youtubeurl, presence: true
+  validates :clip_language, presence: true
+  validates :translation_language, presence: true
+
   enum :step, {
     create_phrases: 0,
     create_token_translations: 1,
