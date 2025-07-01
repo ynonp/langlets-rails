@@ -39,6 +39,10 @@ module Ai
       @clip_language = clip_language
       @translation_language = translation_language
       @youtubeurl = youtubeurl
+      init_ai_agents unless Rails.env.test?
+    end
+
+    def init_ai_agents
       @gemini = Langchain::LLM::GoogleGemini.new(
         api_key: Rails.application.credentials.google_api_key,
         default_options: { temperature: 0.6, chat_model: 'gemini-2.5-pro-preview-06-05' },
@@ -99,7 +103,7 @@ module Ai
           additionalProperties: false
         },
       }
-      lyrics = lyrics_url ? LyricsScraperService.call(lyrics_url) : "Reference Lyrics Not Available - Pay extra attention listening"
+      lyrics = !lyrics_url.blank? ? LyricsScraperService.call(lyrics_url) : "Reference Lyrics Not Available - Pay extra attention listening"
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
         template: File.read("prompts/extract_phrases_from_youtube_url.md"),
