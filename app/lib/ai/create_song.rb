@@ -55,7 +55,7 @@ module Ai
       @flash.read_timeout = 600
       @openai = Langchain::LLM::OpenAI.new(
         api_key: Rails.application.credentials.openai_key,
-        default_options: { chat_model: "o4-mini" }
+        default_options: { chat_model: "gpt-4o-mini" }
       )
       @claude = Langchain::LLM::Anthropic.new(
         api_key: Rails.application.credentials.anthropic_api_key,
@@ -106,7 +106,7 @@ module Ai
       progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       current_data = progress.data
 
-      lyrics = current_data[:lyrics].presence || "Reference Lyrics Not Available - Pay extra attention listening"
+      lyrics = current_data&.dig(:lyrics).presence || "Reference Lyrics Not Available - Pay extra attention listening"
 
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
@@ -128,10 +128,10 @@ module Ai
         ]}
       ]).chat_completion
       Rails.logger.info(llm_response)
-      structured_response = parser.parse(llm_response)      
+      structured_response = parser.parse(llm_response)
 
       phrases = structured_response.map {|phrase_data| Phrase.new(phrase_data) }
-      save_progress(:create_phrases, CreateSongData.new(lyrics:, phrases:, lessons: []))
+      save_progress(:create_phrases, CreateSongData.new(lyrics: current_data&.dig(:lyrics), phrases:, lessons: []))
     end
 
     def create_lessons
@@ -220,7 +220,7 @@ module Ai
 
       # Update progress with lessons
       current_data = progress.reload.data
-      updated_data = CreateSongData.new(lyrics: current_data[:lyrics], phrases: nil, lessons: lessons)
+      updated_data = CreateSongData.new(lyrics: current_data&.dig(:lyrics), phrases: nil, lessons: lessons)
       save_progress(:create_lessons, updated_data)
 
       lessons
@@ -287,9 +287,8 @@ module Ai
             format_instructions: parser.get_format_instructions
           )
           
-          llm_response = @openai.chat(messages: [
-            {role: "user", content: File.read("prompts/system.md")},
-            {role: "user", content: prompt_text}
+          llm_response = @flash.chat(messages: [
+            {role: "user", parts: [{text: prompt_text}]}
           ]).chat_completion
           
           structured_response = parser.parse(llm_response)
