@@ -8,7 +8,6 @@ class CreateCourseJob < ApplicationJob
     begin
       # Extract lesson template from the progress data
       lesson_template = progress.data&.dig('lesson_template') || 'create_song'
-      lyrics_url = progress.data&.dig('lyrics_url')
       
       # Create the AI song generator using values from the progress record
       cs = Ai::CreateSong.new(
@@ -16,7 +15,6 @@ class CreateCourseJob < ApplicationJob
         progress.youtubeurl, 
         progress.clip_language, 
         progress.translation_language, 
-        lyrics_url
       )
       cs.run
       
@@ -27,8 +25,6 @@ class CreateCourseJob < ApplicationJob
       if progress.ready?
         # Create the course content based on template
         case lesson_template
-        when 'create_song'
-          course.create_song!(progress)
         when 'song'
           course.create_song!(progress)
         when 'short'

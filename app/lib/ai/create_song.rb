@@ -1,10 +1,11 @@
 module Ai
   class CreateSong
-    attr_accessor :youtubeurl, :lyrics_url, :clip_language, :translation_language, :data, :gemini, :openai, :claude, :song_name
+    attr_accessor :youtubeurl, :clip_language, :translation_language, :data, :gemini, :openai, :claude, :song_name
 
     CreateSongData = Data.define(
       :phrases,
       :lessons,
+      :lyrics,
     )
 
     LessonData = Data.define(
@@ -33,8 +34,7 @@ module Ai
       end
     end
 
-    def initialize(song_name, youtubeurl, clip_language, translation_language, lyrics_url=nil)
-      @lyrics_url = lyrics_url
+    def initialize(song_name, youtubeurl, clip_language, translation_language)
       @song_name = song_name
       @clip_language = clip_language
       @translation_language = translation_language
@@ -103,7 +103,11 @@ module Ai
           additionalProperties: false
         },
       }
-      lyrics = !lyrics_url.blank? ? LyricsScraperService.call(lyrics_url) : "Reference Lyrics Not Available - Pay extra attention listening"
+      progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
+      current_data = progress.data
+
+      lyrics = current_data[:lyrics].presence || "Reference Lyrics Not Available - Pay extra attention listening"
+
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
         template: File.read("prompts/extract_phrases_from_youtube_url.md"),
@@ -115,6 +119,7 @@ module Ai
         song_lyrics: lyrics,
         format_instructions: parser.get_format_instructions)
 
+      Rails.logger.info("Create song create_phrases prompt: #{prompt_text}")
       llm_response = @gemini.chat(messages: [
         {role: "user", parts: [{text: File.read("prompts/system.md")}]},
         {role: "user", parts: [
@@ -122,12 +127,11 @@ module Ai
           {file_data: {file_uri: youtubeurl}},
         ]}
       ]).chat_completion
-      pp llm_response
-      structured_response = parser.parse(llm_response)
-      pp structured_response
+      Rails.logger.info(llm_response)
+      structured_response = parser.parse(llm_response)      
 
       phrases = structured_response.map {|phrase_data| Phrase.new(phrase_data) }
-      save_progress(:create_phrases, CreateSongData.new(phrases: phrases, lessons: []))
+      save_progress(:create_phrases, CreateSongData.new(lyrics:, phrases:, lessons: []))
     end
 
     def create_lessons
@@ -194,9 +198,9 @@ module Ai
         {role: "user", parts: [{text: prompt_text}]}
       ]).chat_completion
 
-      pp llm_response
+      Rails.logger.info(llm_response)
       structured_response = parser.parse(llm_response)
-      pp structured_response
+      Rails.logger.info(structured_response)
 
       # Validate that the LLM returned correct phrase information
       validate_lesson_phrases(structured_response, phrases)
@@ -215,8 +219,8 @@ module Ai
       end
 
       # Update progress with lessons
-      current_data = progress.data
-      updated_data = CreateSongData.new(phrases: nil, lessons: lessons)
+      current_data = progress.reload.data
+      updated_data = CreateSongData.new(lyrics: current_data[:lyrics], phrases: nil, lessons: lessons)
       save_progress(:create_lessons, updated_data)
 
       lessons
@@ -289,7 +293,7 @@ module Ai
           ]).chat_completion
           
           structured_response = parser.parse(llm_response)
-          pp structured_response
+          Rails.logger.info(structured_response)
           # Convert token indices to character indices
           translations = structured_response.map do |alignment|
             
@@ -307,7 +311,7 @@ module Ai
             else
               find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
             end
-            pp alignment
+            Rails.logger.info(alignment)
             {
               "l1_start_index" => l1_start,
               "l1_end_index" => l1_end,

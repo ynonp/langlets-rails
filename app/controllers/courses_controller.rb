@@ -84,11 +84,11 @@ class CoursesController < ApplicationController
     # Create and validate the CreateSongProgress record upfront
     @create_song_progress = CreateSongProgress.new(
       youtubeurl: @course.main_media_url,
-      clip_language: params[:course][:clip_language],
-      translation_language: params[:course][:translation_language],      
+      clip_language: params[:clip_language],
+      translation_language: params[:translation_language],
       data: {
-        lyrics_url: params[:course][:lyrics_url],
-        lesson_template: params[:course][:lesson_template]
+        lyrics: params[:lyrics],
+        lesson_template: params[:lesson_template]
       }
     )
     
