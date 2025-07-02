@@ -97,3 +97,5 @@ gem "omniauth-google-oauth2", "~> 1.2"
 gem "omniauth-github", "~> 2.0"
 
 gem "cancancan", "~> 3.6"
+
+gem "good_job", "~> 4.11"
