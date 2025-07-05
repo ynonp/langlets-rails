@@ -3,6 +3,15 @@ module ApplicationHelper
     "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
   end
 
+  def link_to_next_activity(text, path, opts)
+    route = Rails.application.routes.recognize_path(path)
+    if route[:action] == "finish"
+      link_to text, path, {**opts, data: {:"turbo-frame" => "_top"}}
+    else
+      link_to text, path, opts
+    end
+  end
+
   # Helper method to determine CSS background class based on streak status
   def streak_background_class(streak_status)
     case streak_status
