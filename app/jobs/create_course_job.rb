@@ -21,6 +21,7 @@ class CreateCourseJob < ApplicationJob
       # The AI service will update the same progress record we created,
       # since it uses find_or_create_by with the same parameters
       progress.reload
+      course.reload
       
       if progress.ready?
         # Create the course content based on template
