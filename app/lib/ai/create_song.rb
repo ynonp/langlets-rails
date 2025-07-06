@@ -106,7 +106,7 @@ module Ai
       progress = CreateSongProgress.find_by(youtubeurl:, clip_language:, translation_language:)
       current_data = progress.data
 
-      lyrics = current_data&.dig(:lyrics).presence || "Reference Lyrics Not Available - Pay extra attention listening"
+      lyrics = current_data&.dig("lyrics").presence || "Reference Lyrics Not Available - Pay extra attention listening"
 
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
@@ -131,7 +131,7 @@ module Ai
       structured_response = parser.parse(llm_response)
 
       phrases = structured_response.map {|phrase_data| Phrase.new(phrase_data) }
-      save_progress(:create_phrases, CreateSongData.new(lyrics: current_data&.dig(:lyrics), phrases:, lessons: []))
+      save_progress(:create_phrases, CreateSongData.new(lyrics: current_data&.dig("lyrics"), phrases:, lessons: []))
     end
 
     def create_lessons
@@ -220,7 +220,7 @@ module Ai
 
       # Update progress with lessons
       current_data = progress.reload.data
-      updated_data = CreateSongData.new(lyrics: current_data&.dig(:lyrics), phrases: nil, lessons: lessons)
+      updated_data = CreateSongData.new(lyrics: current_data&.dig("lyrics"), phrases: nil, lessons: lessons)
       save_progress(:create_lessons, updated_data)
 
       lessons
