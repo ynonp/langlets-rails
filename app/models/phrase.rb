@@ -9,8 +9,8 @@ class Phrase < ApplicationRecord
   has_timestamp [:timestamp]
 
   # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
-  # after_create :generate_l1_audio, if: :should_generate_audio?
-  # after_update :generate_l1_audio, if: :should_generate_audio_on_update?
+  after_create :generate_l1_audio, if: :should_generate_audio?
+  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
 
