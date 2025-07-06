@@ -55,7 +55,7 @@ module Ai
       @flash.read_timeout = 600
       @openai = Langchain::LLM::OpenAI.new(
         api_key: Rails.application.credentials.openai_key,
-        default_options: { chat_model: "gpt-4o-mini" }
+        default_options: { chat_model: "o4-mini" }
       )
       @claude = Langchain::LLM::Anthropic.new(
         api_key: Rails.application.credentials.anthropic_api_key,
@@ -381,12 +381,12 @@ module Ai
           end
           
           # Validate that start indices are smaller than end indices
-          if l1_start >= l1_end
+          if l1_start > l1_end
             Rails.logger.error("Invalid L1 indices for phrase_id #{phrase_id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
             next
           end
           
-          if l2_start >= l2_end
+          if l2_start > l2_end
             Rails.logger.error("Invalid L2 indices for phrase_id #{phrase_id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
             next
           end
@@ -729,18 +729,76 @@ module Ai
       # Get the token positions for the text
       token_positions = map_tokens_with_positions(text)
       
-      # Validate that we have enough tokens
-      return 0 if token_index >= token_positions.length
-      
-      # Validate that the token at the given index matches the expected token
-      if token_positions[token_index][:token] != expected_token
-        puts "Warning: Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'"
-        # Fallback: try to find the token by searching
-        matching_position = token_positions.find { |pos| pos[:token] == expected_token }
-        return matching_position ? matching_position[:start_index] : 0
+      # Check if expected_token is a multi-token phrase or contains special characters
+      if expected_token.include?(' ') || expected_token.match?(/\p{P}/) || expected_token.match?(/\d/)
+        Rails.logger.debug("Detected multi-token/complex expectation: #{expected_token}")
+        
+        # Strategy 1: Try to find the exact substring in the text
+        substring_start = text.index(expected_token)
+        if substring_start
+          Rails.logger.debug("Found as substring: #{substring_start}")
+          return substring_start
+        end
+        
+        # Strategy 2: Try to find it by tokenizing the expected phrase and finding consecutive tokens
+        expected_tokens = expected_token.split(/\s+/)
+        Rails.logger.debug("Split into tokens: #{expected_tokens}")
+        
+        # Look for the sequence starting from the given token_index
+        if token_index + expected_tokens.length <= token_positions.length
+          match = true
+          (0...expected_tokens.length).each do |i|
+            actual_token = token_positions[token_index + i][:token]
+            expected_subtoken = expected_tokens[i]
+            if actual_token != expected_subtoken
+              Rails.logger.debug("Mismatch at offset #{i}: expected '#{expected_subtoken}', got '#{actual_token}'")
+              match = false
+              break
+            end
+          end
+          
+          if match
+            start_pos = token_positions[token_index][:start_index]
+            Rails.logger.debug("Found token sequence: #{start_pos}")
+            return start_pos
+          end
+        end
+        
+        # Strategy 3: Search for the token sequence anywhere in the text
+        Rails.logger.debug("Searching for token sequence anywhere in text")
+        (0..token_positions.length - expected_tokens.length).each do |start_idx|
+          match = true
+          (0...expected_tokens.length).each do |i|
+            if token_positions[start_idx + i][:token] != expected_tokens[i]
+              match = false
+              break
+            end
+          end
+          
+          if match
+            start_pos = token_positions[start_idx][:start_index]
+            Rails.logger.debug("Found token sequence at different position: #{start_pos}")
+            return start_pos
+          end
+        end
+        
+        Rails.logger.warn("Multi-token phrase not found: #{expected_token}")
+        return 0
+      else
+        # Single token handling - existing logic
+        # Validate that we have enough tokens
+        return 0 if token_index >= token_positions.length
+        
+        # Validate that the token at the given index matches the expected token
+        if token_positions[token_index][:token] != expected_token
+          Rails.logger.warn("Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'")
+          # Fallback: try to find the token by searching
+          matching_position = token_positions.find { |pos| pos[:token] == expected_token }
+          return matching_position ? matching_position[:start_index] : 0
+        end
+        
+        token_positions[token_index][:start_index]
       end
-      
-      token_positions[token_index][:start_index]
     end
 
     def find_character_end_index(text, tokens, token_index, expected_token)
@@ -748,18 +806,77 @@ module Ai
       # Get the token positions for the text
       token_positions = map_tokens_with_positions(text)
       
-      # Validate that we have enough tokens
-      return 0 if token_index >= token_positions.length
-      
-      # Validate that the token at the given index matches the expected token
-      if token_positions[token_index][:token] != expected_token
-        puts "Warning: Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'"
-        # Fallback: try to find the token by searching
-        matching_position = token_positions.find { |pos| pos[:token] == expected_token }
-        return matching_position ? matching_position[:end_index] : 0
+      # Check if expected_token is a multi-token phrase or contains special characters
+      if expected_token.include?(' ') || expected_token.match?(/\p{P}/) || expected_token.match?(/\d/)
+        Rails.logger.debug("Detected multi-token/complex expectation: #{expected_token}")
+        
+        # Strategy 1: Try to find the exact substring in the text
+        substring_start = text.index(expected_token)
+        if substring_start
+          substring_end = substring_start + expected_token.length - 1
+          Rails.logger.debug("Found as substring: #{substring_end}")
+          return substring_end
+        end
+        
+        # Strategy 2: Try to find it by tokenizing the expected phrase and finding consecutive tokens
+        expected_tokens = expected_token.split(/\s+/)
+        Rails.logger.debug("Split into tokens: #{expected_tokens}")
+        
+        # Look for the sequence starting from the given token_index
+        if token_index + expected_tokens.length <= token_positions.length
+          match = true
+          (0...expected_tokens.length).each do |i|
+            actual_token = token_positions[token_index + i][:token]
+            expected_subtoken = expected_tokens[i]
+            if actual_token != expected_subtoken
+              Rails.logger.debug("Mismatch at offset #{i}: expected '#{expected_subtoken}', got '#{actual_token}'")
+              match = false
+              break
+            end
+          end
+          
+          if match
+            end_pos = token_positions[token_index + expected_tokens.length - 1][:end_index]
+            Rails.logger.debug("Found token sequence: #{end_pos}")
+            return end_pos
+          end
+        end
+        
+        # Strategy 3: Search for the token sequence anywhere in the text
+        Rails.logger.debug("Searching for token sequence anywhere in text")
+        (0..token_positions.length - expected_tokens.length).each do |start_idx|
+          match = true
+          (0...expected_tokens.length).each do |i|
+            if token_positions[start_idx + i][:token] != expected_tokens[i]
+              match = false
+              break
+            end
+          end
+          
+          if match
+            end_pos = token_positions[start_idx + expected_tokens.length - 1][:end_index]
+            Rails.logger.debug("Found token sequence at different position: #{end_pos}")
+            return end_pos
+          end
+        end
+        
+        Rails.logger.warn("Multi-token phrase not found: #{expected_token}")
+        return 0
+      else
+        # Single token handling - existing logic
+        # Validate that we have enough tokens
+        return 0 if token_index >= token_positions.length
+        
+        # Validate that the token at the given index matches the expected token
+        if token_positions[token_index][:token] != expected_token
+          Rails.logger.warn("Token mismatch at index #{token_index}. Expected '#{expected_token}', got '#{token_positions[token_index][:token]}'")
+          # Fallback: try to find the token by searching
+          matching_position = token_positions.find { |pos| pos[:token] == expected_token }
+          return matching_position ? matching_position[:end_index] : 0
+        end
+        
+        token_positions[token_index][:end_index]
       end
-      
-      token_positions[token_index][:end_index]
     end
 
 

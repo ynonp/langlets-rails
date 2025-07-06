@@ -99,6 +99,46 @@ We can't have gaps in an alignment so "from" cannot be aligned.
 
 ---
 
+## Example 3
+
+English: ["He's", "looking", "for", "a", "hotel", "for", "his", "wedding"]
+Hebrew: ["הוא", "מחפש", "מלון", "לחתונה", "שלו"]
+
+[
+  {{
+    "translation_indices": [0],
+    "clip_indices": [0],
+    "translation_tokens": ["הוא"],
+    "clip_tokens": ["He's"]
+  }},
+  {{
+    "translation_indices": [1],
+    "clip_indices": [1, 2],
+    "translation_tokens": ["מחפש"],
+    "clip_tokens": ["looking", "for"]
+  }},
+  {{
+    "translation_indices": [2],
+    "clip_indices": [3, 4],
+    "translation_tokens": ["מלון"],
+    "clip_tokens": ["hotel"]
+  }},
+  {{
+    "translation_indices": [3],
+    "clip_indices": [7],
+    "translation_tokens": ["לחתונה"],
+    "clip_tokens": ["wedding"]
+  }},
+  {{
+    "translation_indices": [4],
+    "clip_indices": [6],
+    "translation_tokens": ["שלו"],
+    "clip_tokens": ["his"]
+  }}
+]
+
+---
+
 Now align the following phrase pairs:
 
 Clip Language: {clip_language}

@@ -76,12 +76,12 @@ class Course < ApplicationRecord
           l2_start = token_translation_data["l2_start_index"]
           l2_end = token_translation_data["l2_end_index"] + 1
           
-          if l1_start >= l1_end
+          if l1_start > l1_end
             Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
             next
           end
           
-          if l2_start >= l2_end
+          if l2_start > l2_end
             Rails.logger.error("Invalid L2 indices for phrase #{p.id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
             next
           end
