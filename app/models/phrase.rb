@@ -9,8 +9,8 @@ class Phrase < ApplicationRecord
   has_timestamp [:timestamp]
 
   # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
-  after_create :generate_l1_audio, if: :should_generate_audio?
-  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
+  # after_create :generate_l1_audio, if: :should_generate_audio?
+  # after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
 
@@ -62,15 +62,31 @@ class Phrase < ApplicationRecord
     l2_start_index = text_l2.downcase.nth_index(translation_re, translation_index) unless translation_index < 0
     l2_end_index = l2_start_index + translation.length unless l2_start_index.nil?
 
-    TokenTranslation.create!(
-      phrase: self,
-      l1_start_index:,
-      l1_end_index:,
-      l2_start_index:,
-      l2_end_index:,
-      translation:,
-      **attributes
-    )
+    # Validate indices before attempting DB creation
+    if l1_start_index >= l1_end_index
+      Rails.logger.error("Invalid L1 indices for phrase #{self.id}: l1_start=#{l1_start_index} >= l1_end=#{l1_end_index}. Skipping this token translation.")
+      return nil
+    end
+    
+    if l2_start_index && l2_end_index && l2_start_index >= l2_end_index
+      Rails.logger.error("Invalid L2 indices for phrase #{self.id}: l2_start=#{l2_start_index} >= l2_end=#{l2_end_index}. Skipping this token translation.")
+      return nil
+    end
+
+    begin
+      TokenTranslation.create!(
+        phrase: self,
+        l1_start_index:,
+        l1_end_index:,
+        l2_start_index:,
+        l2_end_index:,
+        translation:,
+        **attributes
+      )
+    rescue ActiveRecord::RecordNotUnique => e
+      Rails.logger.error("Duplicate token translation for phrase #{self.id}: l1_start=#{l1_start_index}, l1_end=#{l1_end_index}. Skipping duplicate. Error: #{e.message}")
+      return nil
+    end
   end
 
   def find_token_translation(text, text_index=0)

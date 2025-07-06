@@ -230,106 +230,200 @@ module Ai
       progress = CreateSongProgress.find_by(clip_language:, youtubeurl:, translation_language:)
       data = progress.data
       
-      # JSON schema for the LLM response
+      # JSON schema for the LLM response - now expecting batch results
       json_schema = {
-        type: "array",
-        items: {
-          type: "object",
-          properties: {
-            "translation_indices": { 
-              type: "array", 
-              items: { type: "integer" },
-              description: "Continous token indices in the translation sentence"
-            },
-            "clip_indices": { 
-              type: "array", 
-              items: { type: "integer" },
-              description: "Continous token indices in the clip sentence"
-            },
-            "translation_tokens": { 
-              type: "array", 
-              items: { type: "string" },
-              description: "The actual tokens from the translation"
-            },
-            "clip_tokens": { 
-              type: "array", 
-              items: { type: "string" },
-              description: "The actual tokens from the clip"
+        type: "object",
+        properties: {
+          "phrases": {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                "phrase_id": { type: "string", description: "Unique identifier for the phrase" },
+                "clip_text": { type: "string", description: "Original clip text for verification" },
+                "translation_text": { type: "string", description: "Translation text for verification" },
+                "translations": {
+                  type: "array",
+                  items: {
+                    type: "object",
+                    properties: {
+                      "translation_indices": { 
+                        type: "array", 
+                        items: { type: "integer" },
+                        description: "Continuous token indices in the translation sentence"
+                      },
+                      "clip_indices": { 
+                        type: "array", 
+                        items: { type: "integer" },
+                        description: "Continuous token indices in the clip sentence"
+                      },
+                      "translation_tokens": { 
+                        type: "array", 
+                        items: { type: "string" },
+                        description: "The actual tokens from the translation"
+                      },
+                      "clip_tokens": { 
+                        type: "array", 
+                        items: { type: "string" },
+                        description: "The actual tokens from the clip"
+                      }
+                    },
+                    required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"],
+                    additionalProperties: false
+                  }
+                }
+              },
+              required: ["phrase_id", "clip_text", "translation_text", "translations"],
+              additionalProperties: false
             }
-          },
-          required: ["translation_indices", "clip_indices", "translation_tokens", "clip_tokens"],
-          additionalProperties: false
-        }
+          }
+        },
+        required: ["phrases"],
+        additionalProperties: false
       }
       
       parser = Langchain::OutputParsers::StructuredOutputParser.from_json_schema(json_schema)
       prompt = Langchain::Prompt::PromptTemplate.new(
-        template: File.read("prompts/create_token_translations.md"),
-        input_variables: ["clip_language", "translation_language", "phrase_text", "translation_text", "clip_tokens", "translation_tokens", "format_instructions"]
+        template: File.read("prompts/create_token_translations_batch.md"),
+        input_variables: ["clip_language", "translation_language", "phrases_json", "format_instructions"]
       )
       
-      # Find the first phrase without translations and process from there
+      # Collect all phrases that need translations
+      phrases_to_process = []
+      phrase_lookup = {}
+      
       data["lessons"].each_with_index do |lesson, lesson_index|
         lesson["phrases"].each_with_index do |phrase, phrase_index|
           next if phrase.key?("translations")
+          
+          phrase_id = "lesson_#{lesson_index}_phrase_#{phrase_index}"
           
           # Tokenize the phrases
           clip_tokens = tokenize_text(phrase["text_l1"])
           translation_tokens = tokenize_text(phrase["text_l2"])
           
-          prompt_text = prompt.format(
-            clip_language: clip_language,
-            translation_language: translation_language,
-            phrase_text: phrase["text_l1"],
+          phrase_data = {
+            phrase_id: phrase_id,
+            clip_text: phrase["text_l1"],
             translation_text: phrase["text_l2"],
-            clip_tokens: clip_tokens.to_json,
-            translation_tokens: translation_tokens.to_json,
-            format_instructions: parser.get_format_instructions
-          )
+            clip_tokens: clip_tokens,
+            translation_tokens: translation_tokens
+          }
           
-          llm_response = @flash.chat(messages: [
-            {role: "user", parts: [{text: prompt_text}]}
-          ]).chat_completion
-          
-          structured_response = parser.parse(llm_response)
-          Rails.logger.info(structured_response)
-          # Convert token indices to character indices
-          translations = structured_response.map do |alignment|
-            
-            # Handle cases where alignment spans multiple tokens
-            l1_start = find_character_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
-            l1_end = if alignment["clip_indices"].length > 1
-              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].last, alignment["clip_tokens"].last)
-            else
-              find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
-            end
-            
-            l2_start = find_character_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
-            l2_end = if alignment["translation_indices"].length > 1
-              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].last, alignment["translation_tokens"].last)
-            else
-              find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
-            end
-            Rails.logger.info(alignment)
-            {
-              "l1_start_index" => l1_start,
-              "l1_end_index" => l1_end,
-              "l2_start_index" => l2_start,
-              "l2_end_index" => l2_end,
-              "translation" => alignment["translation_tokens"].join(" ")
-            }
-          end
-          
-          # Update the phrase with translations
-          data["lessons"][lesson_index]["phrases"][phrase_index]["translations"] = translations
-          
-          # Save progress after each phrase
-          save_progress(progress.step, data)
-          
-          puts "Processed phrase #{phrase_index} in lesson #{lesson_index}: #{phrase['text_l1']}"
+          phrases_to_process << phrase_data
+          phrase_lookup[phrase_id] = { lesson_index: lesson_index, phrase_index: phrase_index }
         end
       end
-      save_progress(:create_token_translations)
+      
+      # Return early if no phrases need processing
+      return if phrases_to_process.empty?
+      
+      # Create structured JSON input for the LLM
+      phrases_json = {
+        phrases: phrases_to_process
+      }.to_json
+      
+      prompt_text = prompt.format(
+        clip_language: clip_language,
+        translation_language: translation_language,
+        phrases_json: phrases_json,
+        format_instructions: parser.get_format_instructions
+      )
+      
+      Rails.logger.info("Batch processing #{phrases_to_process.length} phrases for token translations")
+      
+      llm_response = @openai.chat(messages: [
+        {role: "user", content: prompt_text}
+      ]).chat_completion
+
+      structured_response = parser.parse(llm_response)
+      Rails.logger.info("Received batch response with #{structured_response['phrases'].length} phrases")
+      
+      # Process each phrase result
+      structured_response["phrases"].each do |phrase_result|
+        phrase_id = phrase_result["phrase_id"]
+        lookup = phrase_lookup[phrase_id]
+        
+        unless lookup
+          Rails.logger.warn("Received result for unknown phrase_id: #{phrase_id}")
+          next
+        end
+        
+        lesson_index = lookup[:lesson_index]
+        phrase_index = lookup[:phrase_index]
+        phrase = data["lessons"][lesson_index]["phrases"][phrase_index]
+        
+        # Verify the phrase texts match
+        unless phrase["text_l1"] == phrase_result["clip_text"] && phrase["text_l2"] == phrase_result["translation_text"]
+          Rails.logger.warn("Text mismatch for phrase_id #{phrase_id}")
+          next
+        end
+        
+        # Convert token indices to character indices
+        translations = phrase_result["translations"].filter_map do |alignment|
+          clip_tokens = tokenize_text(phrase["text_l1"])
+          translation_tokens = tokenize_text(phrase["text_l2"])
+          Rails.logger.debug("clip tokens: #{clip_tokens}; translation_tokens: #{translation_tokens}")
+          
+          # Handle cases where alignment spans multiple tokens
+          l1_start = find_character_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+          l1_end = if alignment["clip_indices"].length > 1
+            find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].last, alignment["clip_tokens"].last)
+          else
+            find_character_end_index(phrase["text_l1"], clip_tokens, alignment["clip_indices"].first, alignment["clip_tokens"].first)
+          end
+                    
+          l2_start = find_character_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+          l2_end = if alignment["translation_indices"].length > 1
+            find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].last, alignment["translation_tokens"].last)
+          else
+            find_character_end_index(phrase["text_l2"], translation_tokens, alignment["translation_indices"].first, alignment["translation_tokens"].first)
+          end
+          
+          # Validate that start indices are smaller than end indices
+          if l1_start >= l1_end
+            Rails.logger.error("Invalid L1 indices for phrase_id #{phrase_id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
+            next
+          end
+          
+          if l2_start >= l2_end
+            Rails.logger.error("Invalid L2 indices for phrase_id #{phrase_id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
+            next
+          end
+          
+          # Validate that indices are within text bounds
+          if l1_start < 0 || l1_end >= phrase["text_l1"].length
+            Rails.logger.error("L1 indices out of bounds for phrase_id #{phrase_id}: l1_start=#{l1_start}, l1_end=#{l1_end}, text_length=#{phrase["text_l1"].length}. Skipping this token translation.")
+            next
+          end
+          
+          if l2_start < 0 || l2_end >= phrase["text_l2"].length
+            Rails.logger.error("L2 indices out of bounds for phrase_id #{phrase_id}: l2_start=#{l2_start}, l2_end=#{l2_end}, text_length=#{phrase["text_l2"].length}. Skipping this token translation.")
+            next
+          end
+          
+          translation_data = {
+            "l1_start_index" => l1_start,
+            "l1_end_index" => l1_end,
+            "l2_start_index" => l2_start,
+            "l2_end_index" => l2_end,
+            "translation" => alignment["translation_tokens"].join(" ")
+          }
+          
+          # Log the valid translation data for debugging
+          Rails.logger.debug("Valid token translation for phrase_id #{phrase_id}: #{translation_data}")
+          
+          translation_data
+        end
+        
+        # Update the phrase with translations
+        data["lessons"][lesson_index]["phrases"][phrase_index]["translations"] = translations
+        
+        Rails.logger.info("Processed phrase #{phrase_index} in lesson #{lesson_index}: #{phrase['text_l1']}")
+      end
+      
+      # Save progress once after processing all phrases
+      save_progress(:create_token_translations, data)
     end
 
     def create_listening_activities
@@ -631,6 +725,7 @@ module Ai
     end
 
     def find_character_index(text, tokens, token_index, expected_token)
+      Rails.logger.debug("text: #{text}, tokens: #{tokens}, index: #{token_index}, expected_token: #{expected_token}")
       # Get the token positions for the text
       token_positions = map_tokens_with_positions(text)
       

@@ -70,18 +70,38 @@ class Course < ApplicationRecord
 
         a5.phrases << p
         (phrase_data["translations"] || []).each do |token_translation_data|
-          t = TokenTranslation.create!(
-            phrase: p,
-            l1_start_index: token_translation_data["l1_start_index"],
-            l2_start_index: token_translation_data["l2_start_index"],
-            l1_end_index: token_translation_data["l1_end_index"] + 1,
-            l2_end_index: token_translation_data["l2_end_index"] + 1,
-            similar_sound: token_translation_data["similar_sound"],
-            translation: token_translation_data["translation"],
-          )
+          # Validate indices before attempting DB creation
+          l1_start = token_translation_data["l1_start_index"]
+          l1_end = token_translation_data["l1_end_index"] + 1
+          l2_start = token_translation_data["l2_start_index"]
+          l2_end = token_translation_data["l2_end_index"] + 1
+          
+          if l1_start >= l1_end
+            Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
+            next
+          end
+          
+          if l2_start >= l2_end
+            Rails.logger.error("Invalid L2 indices for phrase #{p.id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
+            next
+          end
+          
+          begin
+            t = TokenTranslation.create!(
+              phrase: p,
+              l1_start_index: l1_start,
+              l2_start_index: l2_start,
+              l1_end_index: l1_end,
+              l2_end_index: l2_end,
+              similar_sound: token_translation_data["similar_sound"],
+              translation: token_translation_data["translation"],
+            )
 
-          # a7.token_translations << t if token_translation_data["listening_activity"] == 1
-          a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
+            # a7.token_translations << t if token_translation_data["listening_activity"] == 1
+            a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
+          rescue ActiveRecord::RecordNotUnique => e
+            Rails.logger.error("Duplicate token translation for phrase #{p.id}: l1_start=#{l1_start}, l1_end=#{l1_end}. Skipping duplicate. Error: #{e.message}")
+          end
         end
 
         p
@@ -166,24 +186,44 @@ class Course < ApplicationRecord
         )
 
         (phrase_data["translations"] || []).each do |token_translation_data|
-          t = TokenTranslation.create!(
-            phrase: p,
-            l1_start_index: token_translation_data["l1_start_index"],
-            l2_start_index: token_translation_data["l2_start_index"],
-            l1_end_index: token_translation_data["l1_end_index"] + 1,
-            l2_end_index: token_translation_data["l2_end_index"] + 1,
-            similar_sound: token_translation_data["similar_sound"],
-            translation: token_translation_data["translation"],
-          )
-
-          if token_translation_data["listening_activity"] == 1
-            a7.token_translations << t
-            all_listen_tokens << t
+          # Validate indices before attempting DB creation
+          l1_start = token_translation_data["l1_start_index"]
+          l1_end = token_translation_data["l1_end_index"] + 1
+          l2_start = token_translation_data["l2_start_index"]
+          l2_end = token_translation_data["l2_end_index"] + 1
+          
+          if l1_start >= l1_end
+            Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
+            next
           end
-           
-          if token_translation_data["language_alignment_activity"] == 1
-            a5.token_translations << t
-            all_alignment_tokens << t
+          
+          if l2_start >= l2_end
+            Rails.logger.error("Invalid L2 indices for phrase #{p.id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
+            next
+          end
+          
+          begin
+            t = TokenTranslation.create!(
+              phrase: p,
+              l1_start_index: l1_start,
+              l2_start_index: l2_start,
+              l1_end_index: l1_end,
+              l2_end_index: l2_end,
+              similar_sound: token_translation_data["similar_sound"],
+              translation: token_translation_data["translation"],
+            )
+
+            if token_translation_data["listening_activity"] == 1
+              a7.token_translations << t
+              all_listen_tokens << t
+            end
+             
+            if token_translation_data["language_alignment_activity"] == 1
+              a5.token_translations << t
+              all_alignment_tokens << t
+            end
+          rescue ActiveRecord::RecordNotUnique => e
+            Rails.logger.error("Duplicate token translation for phrase #{p.id}: l1_start=#{l1_start}, l1_end=#{l1_end}. Skipping duplicate. Error: #{e.message}")
           end
         end
 
