@@ -6,6 +6,7 @@ Your task is to align tokens between sentences in {clip_language} and their {tra
 1. Process each phrase pair COMPLETELY INDEPENDENTLY - do not let one influence another
 2. Each phrase_id must exactly match the provided ID
 3. Include clip_text and translation_text for verification  
+4. Alignments can't have gaps. The tokens in each alignment must be continous.
 
 ---
 
@@ -92,7 +93,9 @@ Output:
   {{"translation_indices": [2], "clip_indices": [4], "translation_tokens": ["מעבדות"], "clip_tokens": ["slavery"]}}
 ]
 
-This is an interesting example because the order of the words conflicts with continuity of the indices. When aligning ["from", "mental", "slavery"] with ["מעבדות", "מנטלית"] we skip the from and align "mental" => "מטלית" and "slavery" => "מעבדות". We can't have gaps in an alignment.
+This is an interesting example because the order of the words conflicts with continuity of the indices. 
+When aligning ["from", "mental", "slavery"] with ["מעבדות", "מנטלית"] we skip the word "from" and align "mental" => "מנטלית" and "slavery" => "מעבדות". 
+We can't have gaps in an alignment so "from" cannot be aligned.
 
 ---
 

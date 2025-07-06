@@ -744,6 +744,7 @@ module Ai
     end
 
     def find_character_end_index(text, tokens, token_index, expected_token)
+      Rails.logger.debug("find_character_end_index. text: #{text}, tokens: #{tokens}, index: #{token_index}, expected: #{expected_token}")
       # Get the token positions for the text
       token_positions = map_tokens_with_positions(text)
       

@@ -63,12 +63,12 @@ class Phrase < ApplicationRecord
     l2_end_index = l2_start_index + translation.length unless l2_start_index.nil?
 
     # Validate indices before attempting DB creation
-    if l1_start_index >= l1_end_index
+    if l1_start_index > l1_end_index
       Rails.logger.error("Invalid L1 indices for phrase #{self.id}: l1_start=#{l1_start_index} >= l1_end=#{l1_end_index}. Skipping this token translation.")
       return nil
     end
     
-    if l2_start_index && l2_end_index && l2_start_index >= l2_end_index
+    if l2_start_index && l2_end_index && l2_start_index > l2_end_index
       Rails.logger.error("Invalid L2 indices for phrase #{self.id}: l2_start=#{l2_start_index} >= l2_end=#{l2_end_index}. Skipping this token translation.")
       return nil
     end
