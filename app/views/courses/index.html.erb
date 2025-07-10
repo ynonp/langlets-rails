@@ -62,6 +62,11 @@
               <% end %>
               <div class="sm:hidden border-t border-slate-700 my-1"></div>
             <% end %>
+
+            <%= render 'shared/theme_toggle' %>
+
+            <div class="border-t border-slate-700 my-1"></div>
+
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,

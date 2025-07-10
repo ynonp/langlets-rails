@@ -63,3 +63,6 @@ application.register('scroll-into-view', ScrollIntoViewController);
 
 import AudioFeedbackController from './audio_feedback_controller.js';
 application.register('audio-feedback', AudioFeedbackController);
+
+import ThemeController from "./theme_controller.js"
+application.register("theme", ThemeController)

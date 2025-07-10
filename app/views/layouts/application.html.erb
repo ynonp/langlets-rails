@@ -33,9 +33,21 @@
         })(window, document, "clarity", "script", "r5h6kovuse");
       </script>
     <% end %>
+
+    <script type="text/javascript">
+      (function() {
+        const theme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (theme === 'dark' || (!theme && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
 
-  <body class="bg-gray-900">
+  <body>
     <main class="flex flex-col min-h-screen">
       <%= yield %>
     </main>
