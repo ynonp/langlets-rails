@@ -64,12 +64,22 @@
         </div>
 
         <!-- User Menu -->
-        <div class="relative group">
+        <div class="relative group" data-controller="theme">
           <input type="checkbox" id="user-menu-toggle" class="hidden peer">
           <label for="user-menu-toggle" class="flex items-center cursor-pointer">
             <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
           </label>
-          <div class="absolute right-0 mt-2 w-40 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+          <div class="absolute right-0 mt-2 w-48 bg-slate-800 dark:bg-slate-800 border border-slate-700 dark:border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+            
+            <!-- Theme Toggle -->
+            <button data-theme-target="toggle" data-action="click->theme#toggleTheme" class="flex items-center w-full px-4 py-3 text-slate-200 dark:text-slate-200 hover:bg-slate-700 dark:hover:bg-slate-700 transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <span class="theme-text">Light Mode</span>
+            </button>
+            <div class="border-t border-slate-700 dark:border-slate-700 my-1"></div>
+            
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,
@@ -78,7 +88,7 @@
                 controller: "auth",
                 action: "click->auth#signOut"
               },
-              class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+              class: "block px-4 py-3 text-slate-200 dark:text-slate-200 hover:bg-slate-700 dark:hover:bg-slate-700 rounded-lg transition-colors duration-150"
             %>
           </div>
         </div>

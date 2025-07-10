@@ -1,7 +1,7 @@
 <!-- Top bar: Use existing authentication bar -->
-<header class="py-6 border-b border-slate-700/60">
+<header class="py-6 border-b border-slate-700/60 dark:border-slate-700/60 border-slate-200 bg-white dark:bg-transparent">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight flex-1">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 dark:text-slate-100 tracking-tight flex-1">
       Langlets
     </h1>
     
@@ -14,7 +14,7 @@
           <% streak_info = ActivityLog.streak_info_for_user(current_user) %>
           <% streak = streak_info[:count] %>
           
-          <div class="flex items-center text-white">
+          <div class="flex items-center text-gray-900 dark:text-white">
             <% bg_class = streak_background_class(streak_info[:status]) %>
             <div class="flex items-center <%= bg_class %> px-3 py-1 rounded-full text-sm font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
@@ -25,7 +25,7 @@
           </div>
 
           <!-- Today's XP -->
-          <div class="flex items-center text-white">
+          <div class="flex items-center text-gray-900 dark:text-white">
             <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
@@ -46,64 +46,74 @@
         <% end %>
 
         <!-- User Menu -->
-        <div class="relative group">
+        <div class="relative group" data-controller="theme">
           <input type="checkbox" id="user-menu-toggle" class="hidden peer">
           <label for="user-menu-toggle" class="flex items-center cursor-pointer">
             <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
           </label>
-          <div class="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+          <div class="absolute right-0 mt-2 w-48 bg-slate-800 dark:bg-slate-800 border border-slate-700 dark:border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
             <!-- Create Course Button (for mobile) -->
             <% if can? :create, Course %>
-              <%= link_to new_course_path, class: "sm:hidden flex items-center px-4 py-3 text-green-400 hover:bg-slate-700 transition-colors duration-150" do %>
+              <%= link_to new_course_path, class: "sm:hidden flex items-center px-4 py-3 text-green-400 hover:bg-slate-700 dark:hover:bg-slate-700 transition-colors duration-150" do %>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
                   <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
                 </svg>
                 Create Course
               <% end %>
-              <div class="sm:hidden border-t border-slate-700 my-1"></div>
+              <div class="sm:hidden border-t border-slate-700 dark:border-slate-700 my-1"></div>
             <% end %>
+            
+            <!-- Theme Toggle -->
+            <button data-theme-target="toggle" data-action="click->theme#toggleTheme" class="flex items-center w-full px-4 py-3 text-slate-200 dark:text-slate-200 hover:bg-slate-700 dark:hover:bg-slate-700 transition-colors duration-150">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <span class="theme-text">Light Mode</span>
+            </button>
+            <div class="border-t border-slate-700 dark:border-slate-700 my-1"></div>
+            
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,
               data: { turbo_method: :delete },
-              class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+              class: "block px-4 py-3 text-slate-200 dark:text-slate-200 hover:bg-slate-700 dark:hover:bg-slate-700 rounded-lg transition-colors duration-150"
             %>
           </div>
         </div>
       </div>
     <% else %>
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-        <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <span class="text-slate-600 dark:text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex gap-2">
           <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
-          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
         </div>
       </div>
     <% end %>
   </div>
 </header>
 
-<main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden">
+<main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden bg-white dark:bg-transparent">
 
   <!-- Flash Messages -->
   <% if notice %>
-    <div class="mb-6 p-4 bg-green-900/50 border border-green-500 rounded-lg">
+    <div class="mb-6 p-4 bg-green-50 dark:bg-green-900/50 border border-green-200 dark:border-green-500 rounded-lg">
       <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-400 mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-green-600 dark:text-green-400 mr-3">
           <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
         </svg>
-        <p class="text-green-200"><%= notice %></p>
+        <p class="text-green-800 dark:text-green-200"><%= notice %></p>
       </div>
     </div>
   <% end %>
 
   <% if alert %>
-    <div class="mb-6 p-4 bg-red-900/50 border border-red-500 rounded-lg">
+    <div class="mb-6 p-4 bg-red-50 dark:bg-red-900/50 border border-red-200 dark:border-red-500 rounded-lg">
       <div class="flex items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-red-400 mr-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-red-600 dark:text-red-400 mr-3">
           <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM12.75 9a.75.75 0 0 0-1.5 0v2.25H9a.75.75 0 0 0 0 1.5h2.25V15a.75.75 0 0 0 1.5 0v-2.25H15a.75.75 0 0 0 0-1.5h-2.25V9Z" clip-rule="evenodd" />
         </svg>
-        <p class="text-red-200"><%= alert %></p>
+        <p class="text-red-800 dark:text-red-200"><%= alert %></p>
       </div>
     </div>
   <% end %>
@@ -111,12 +121,12 @@
   <!-- Row 1: "Next For You" - only show if user signed in and has recommended courses -->
   <% if user_signed_in? && @recommended_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 px-2">Next For You</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @recommended_courses.each do |course| %>
             <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full" %>
+              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer flex flex-col h-full" %>
             </div>
           <% end %>
         </div>
@@ -127,10 +137,10 @@
   <!-- Processing Courses Section - show courses user is creating -->
   <% if user_signed_in? && @processing_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Courses Being Created</h2>
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 px-2">Courses Being Created</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-2">
         <% @processing_courses.each do |course| %>
-          <div class="bg-slate-800 rounded-xl shadow-lg border border-slate-700 flex flex-col h-full opacity-70">
+          <div class="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg flex flex-col h-full opacity-70">
             <div class="aspect-video bg-gradient-to-br from-slate-600 to-slate-700 rounded-t-xl flex items-center justify-center">
               <div class="text-center">
                 <svg class="mx-auto h-12 w-12 text-slate-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -141,11 +151,11 @@
               </div>
             </div>
             <div class="p-4 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-slate-200 mb-1 line-clamp-2">
+              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-1 line-clamp-2">
                 <%= course.name %>
               </h3>
               <% if course.language %>
-                <p class="text-slate-400 text-sm mb-3">
+                <p class="text-slate-600 dark:text-slate-400 text-sm mb-3">
                   <%= course.language.english_name %>
                 </p>
               <% end %>
@@ -153,7 +163,7 @@
                 <div class="bg-orange-600 text-white text-center py-2 px-4 rounded-lg font-semibold text-sm">
                   Under Construction
                 </div>
-                <p class="text-slate-400 text-xs mt-2 text-center">
+                <p class="text-slate-600 dark:text-slate-400 text-xs mt-2 text-center">
                   You'll receive an email when ready
                 </p>
               </div>
@@ -167,7 +177,7 @@
   <!-- Row 2: "Learning Paths" -->
   <% if @learning_paths.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Learning Paths</h2>
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 px-2">Learning Paths</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @learning_paths.each_with_index do |learning_path, index| %>
@@ -199,12 +209,12 @@
   <!-- Continue Learning Section - show courses user has started -->
   <% if user_signed_in? && @continue_learning_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Continue Learning</h2>
+      <h2 class="text-3xl font-bold text-slate-800 dark:text-slate-100 mb-6 px-2">Continue Learning</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @continue_learning_courses.each do |course| %>
             <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full" %>
+              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer flex flex-col h-full" %>
             </div>
           <% end %>
         </div>
@@ -216,7 +226,7 @@
   <section class="mb-4 sm:mb-8 px-2">
     <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-4">
       <div class="flex flex-wrap gap-2 mb-2 sm:mb-0">
-        <span class="text-slate-300 font-semibold mr-1 hidden sm:inline">Browse All Courses:</span>
+        <span class="text-slate-600 dark:text-slate-300 font-semibold mr-1 hidden sm:inline">Browse All Courses:</span>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
         <!-- Filter by Language -->
@@ -225,7 +235,7 @@
                 options_for_select([['All Languages', 'all']] + @languages.map { |lang| [lang.english_name, lang.english_name] }, params[:language]),
                 {},
                 { 
-                  class: "px-3 py-1.5 sm:px-4 sm:py-2 border border-slate-600 rounded-lg bg-slate-800 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm text-sm sm:text-base sm:ml-0 w-40 sm:w-auto",
+                  class: "px-3 py-1.5 sm:px-4 sm:py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-white dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm text-sm sm:text-base sm:ml-0 w-40 sm:w-auto",
                   onchange: "this.form.submit();"
                 } %>
         <% end %>
@@ -242,15 +252,15 @@
 
 </main>
 
-<footer class="bg-slate-800 border-t border-slate-700 mt-auto">
+<footer class="bg-slate-100 dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 mt-auto">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-      <div class="text-slate-400 text-sm">
+      <div class="text-slate-600 dark:text-slate-400 text-sm">
         © <%= Date.current.year %> Langlets. All rights reserved.
       </div>
       <div class="flex space-x-6">
-        <%= link_to "Privacy Policy", "/home/privacy", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
-        <%= link_to "Terms of Service", "/home/terms", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
+        <%= link_to "Privacy Policy", "/home/privacy", class: "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white text-sm transition-colors duration-200" %>
+        <%= link_to "Terms of Service", "/home/terms", class: "text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-white text-sm transition-colors duration-200" %>
       </div>
     </div>
   </div>

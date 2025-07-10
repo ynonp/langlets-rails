@@ -5,10 +5,9 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
   body {
-    background-color: #0F172A;
-    /* slate-900 */
-    color: #CBD5E1;
-    /* slate-300 */
+    /* Default light mode colors */
+    background-color: #FFFFFF;
+    color: #1F2937;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     /* Smooth scrolling for a more polished feel */
     scroll-behavior: smooth;
@@ -16,6 +15,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark mode colors */
+  .dark body {
+    background-color: #0F172A;
+    color: #CBD5E1;
   }
 
   @keyframes float {
@@ -35,25 +41,35 @@
     /* Slightly slower animation for a more gentle float */
   }
 
-  /* Custom scrollbar for a more integrated dark theme look (optional, but a nice touch) */
+  /* Custom scrollbar for a more integrated theme look */
   ::-webkit-scrollbar {
     width: 10px;
   }
 
   ::-webkit-scrollbar-track {
-    background: #1E293B;
-    /* slate-800 */
+    background: #F1F5F9; /* Light mode: slate-100 */
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #334155;
-    /* slate-700 */
+    background: #CBD5E1; /* Light mode: slate-300 */
     border-radius: 5px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #475569;
-    /* slate-600 */
+    background: #94A3B8; /* Light mode: slate-400 */
+  }
+
+  /* Dark mode scrollbar */
+  .dark ::-webkit-scrollbar-track {
+    background: #1E293B; /* slate-800 */
+  }
+
+  .dark ::-webkit-scrollbar-thumb {
+    background: #334155; /* slate-700 */
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #475569; /* slate-600 */
   }
 
 
