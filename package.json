@@ -13,6 +13,7 @@
   "dependencies": {
     "@hotwired/stimulus": "3.2.2",
     "@hotwired/turbo-rails": "8.0.13",
+    "@parcel/watcher": "^2.5.1",
     "@shopify/draggable": "1.1.4",
     "@tailwindcss/cli": "^4.1.4",
     "microsoft-cognitiveservices-speech-sdk": "1.43.1",
