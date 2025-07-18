@@ -6,6 +6,10 @@ class Course < ApplicationRecord
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
 
+  # Likes functionality
+  has_many :course_likes, dependent: :destroy
+  has_many :liked_by_users, through: :course_likes, source: :user
+
   # Status enum
   enum :status, {
     processing: 0,
@@ -273,5 +277,23 @@ class Course < ApplicationRecord
     
     completed_lessons = lessons.joins(:lesson_users).where(lesson_users: { user: user }).count
     ((completed_lessons.to_f / total_lessons) * 100).round
+  end
+
+  # Likes functionality methods
+  def likes_count
+    if respond_to?(:cached_likes_count)
+      cached_likes_count
+    else
+      course_likes.count
+    end
+  end
+
+  def liked_by?(user)
+    return false unless user
+    if respond_to?(:cached_liked_by_user)
+      cached_liked_by_user
+    else
+      course_likes.exists?(user: user)
+    end
   end
 end

@@ -1,5 +1,5 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :toggle_like]
 
   def index
     @learning_paths = LearningPath.published.includes(:courses)
@@ -25,6 +25,9 @@ class CoursesController < ApplicationController
       # Get progress data for all courses in one efficient query
       progress_data = calculate_progress_for_courses(all_courses_array, current_user)
       
+      # Get likes data for all courses
+      likes_data = calculate_likes_for_courses(all_courses_array, current_user)
+      
       # Get the ordering for continue learning courses (courses with progress, ordered by latest activity)
       continue_learning_order = get_continue_learning_order(current_user)
       
@@ -33,6 +36,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:cached_liked_by_user) { likes_data[:user_likes].include?(course.id) }
         course
       end
       
@@ -41,6 +46,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:cached_liked_by_user) { likes_data[:user_likes].include?(course.id) }
         course
       end
       
@@ -51,10 +58,16 @@ class CoursesController < ApplicationController
     else
       @recommended_courses = []
       @continue_learning_courses = []
+      
+      # Get likes data for all courses even for non-signed in users
+      likes_counts = calculate_likes_counts_only(all_courses_array)
+      
       @all_courses = all_courses_array.map do |course|
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_liked_by_user) { false }
         course
       end
     end
@@ -122,6 +135,27 @@ class CoursesController < ApplicationController
     end
   end
 
+  def toggle_like
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    
+    course_like = current_user.course_likes.find_by(course: @course)
+    
+    if course_like
+      # Unlike the course
+      course_like.destroy
+      liked = false
+    else
+      # Like the course
+      current_user.course_likes.create!(course: @course)
+      liked = true
+    end
+    
+    render json: {
+      liked: liked,
+      likes_count: @course.likes_count
+    }
+  end
+
   private
 
   def course_params
@@ -181,6 +215,38 @@ class CoursesController < ApplicationController
     end
     
     progress_data
+  end
+
+  def calculate_likes_for_courses(courses, user)
+    return { counts: {}, user_likes: [] } unless courses.any?
+    
+    course_ids = courses.map(&:id)
+    
+    # Get likes counts for all courses
+    likes_counts = Course.joins(:course_likes)
+                        .where(id: course_ids)
+                        .group('courses.id')
+                        .count('course_likes.id')
+    
+    # Get courses liked by the current user
+    user_liked_course_ids = user.course_likes.where(course_id: course_ids).pluck(:course_id)
+    
+    {
+      counts: likes_counts,
+      user_likes: user_liked_course_ids
+    }
+  end
+
+  def calculate_likes_counts_only(courses)
+    return {} unless courses.any?
+    
+    course_ids = courses.map(&:id)
+    
+    # Get likes counts for all courses
+    Course.joins(:course_likes)
+          .where(id: course_ids)
+          .group('courses.id')
+          .count('course_likes.id')
   end
 
 end
