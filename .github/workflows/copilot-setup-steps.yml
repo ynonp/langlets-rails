@@ -1,0 +1,87 @@
+name: Setup Coding Agent Environment
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+  pull_request:
+    paths:
+      - .github/workflows/copilot-setup-steps.yml
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    services:
+      # Label used to access the service container
+      postgres:
+        # Docker Hub image
+        image: postgres:17
+        # Provide the password for postgres
+        env:
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: langlets_development
+        # Set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/postgres
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install Ruby and Bundles
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Set up Bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "$HOME/.bun/bin" >> $GITHUB_PATH
+
+      - name: Install JavaScript dependencies
+        run: bun install
+
+      - name: Create database configuration
+        run: |
+          mkdir -p config
+          cat > config/database.yml << 'EOF'
+          development:
+            adapter: postgresql
+            encoding: unicode
+            database: langlets_development
+            username: postgres
+            password: postgres
+            host: localhost
+            port: 5432
+            pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+          test:
+            adapter: postgresql
+            encoding: unicode
+            database: langlets_test
+            username: postgres
+            password: postgres
+            host: localhost
+            port: 5432
+            pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+          EOF
+
+      - name: Create test database
+        run: |
+          PGPASSWORD=postgres createdb -h localhost -U postgres langlets_test
+
+      - name: Setup development database
+        run: ./bin/rails db:setup
