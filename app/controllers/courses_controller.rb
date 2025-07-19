@@ -1,12 +1,13 @@
 class CoursesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create, :like, :unlike]
+  before_action :set_course, only: [:show, :like, :unlike]
 
   def index
     @learning_paths = LearningPath.published.includes(:courses)
     @languages = Language.joins(:courses).distinct.order(:english_name)
     
     # Get all published courses with progress data in a single optimized query
-    @all_courses = Course.published.includes(:language, :lessons).order(created_at: :desc)
+    @all_courses = Course.published.includes(:language, :lessons, :course_likes).order(created_at: :desc)
     
     # Get user's processing courses if signed in
     @processing_courses = user_signed_in? ? current_user.courses.processing.includes(:language).order(created_at: :desc) : []
@@ -20,6 +21,7 @@ class CoursesController < ApplicationController
     # Convert to array and precompute lesson counts to avoid N+1 queries
     all_courses_array = @all_courses.to_a
     lesson_counts = precompute_lesson_counts(all_courses_array)
+    likes_data = precompute_likes_data(all_courses_array, current_user)
     
     if user_signed_in?
       # Get progress data for all courses in one efficient query
@@ -33,6 +35,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:user_liked?) { likes_data[:user_likes].include?(course.id) }
         course
       end
       
@@ -41,6 +45,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:user_liked?) { likes_data[:user_likes].include?(course.id) }
         course
       end
       
@@ -55,6 +61,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_likes_count) { likes_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:user_liked?) { false }
         course
       end
     end
@@ -62,11 +70,44 @@ class CoursesController < ApplicationController
 
 
   def show
-    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     @lessons = @course.lessons
                      .includes(:activities, :lesson_users, activities: :activity_users)
                      .with_progress_data(current_user)
                      .order(:order)
+  end
+
+  def like
+    @course_like = current_user.course_likes.build(course: @course)
+    
+    if @course_like.save
+      render json: { 
+        liked: true, 
+        likes_count: @course.likes_count,
+        message: 'Course liked!' 
+      }
+    else
+      render json: { 
+        error: 'Unable to like course',
+        message: @course_like.errors.full_messages.join(', ')
+      }, status: :unprocessable_entity
+    end
+  end
+
+  def unlike
+    @course_like = current_user.course_likes.find_by(course: @course)
+    
+    if @course_like&.destroy
+      render json: { 
+        liked: false, 
+        likes_count: @course.likes_count,
+        message: 'Course unliked!' 
+      }
+    else
+      render json: { 
+        error: 'Unable to unlike course',
+        message: 'Like not found'
+      }, status: :unprocessable_entity
+    end
   end
 
   def new
@@ -124,6 +165,10 @@ class CoursesController < ApplicationController
 
   private
 
+  def set_course
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+  end
+
   def course_params
     params.require(:course).permit(:name, :slug, :main_media_url, :language_id)
   end
@@ -138,6 +183,27 @@ class CoursesController < ApplicationController
       lesson_counts[course.id] = course.lessons.size
     end
     lesson_counts
+  end
+
+  def precompute_likes_data(courses, user)
+    return { counts: {}, user_likes: [] } if courses.empty?
+    
+    course_ids = courses.map(&:id)
+    
+    # Get likes count for all courses
+    likes_counts = CourseLike.where(course_id: course_ids)
+                            .group(:course_id)
+                            .count
+    
+    # Get user's likes if user is signed in
+    user_likes = if user
+      CourseLike.where(course_id: course_ids, user: user)
+                .pluck(:course_id)
+    else
+      []
+    end
+    
+    { counts: likes_counts, user_likes: user_likes }
   end
 
   def get_continue_learning_order(user)

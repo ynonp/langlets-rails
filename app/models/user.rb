@@ -19,6 +19,10 @@ class User < ApplicationRecord
 
   # Activity logging relationship
   has_many :activity_logs, dependent: :destroy
+  
+  # Likes relationship
+  has_many :course_likes, dependent: :destroy
+  has_many :liked_courses, through: :course_likes, source: :course
 
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|

@@ -4,6 +4,18 @@
 
 import { application } from "./application"
 
+import ActivityNavigationController from "./activity_navigation_controller"
+application.register("activity-navigation", ActivityNavigationController)
+
+import AudioFeedbackController from "./audio_feedback_controller"
+application.register("audio-feedback", AudioFeedbackController)
+
+import AuthController from "./auth_controller"
+application.register("auth", AuthController)
+
+import CourseLikeController from "./course_like_controller"
+application.register("course-like", CourseLikeController)
+
 import FindAnswersController from "./find_answers_controller"
 application.register("find-answers", FindAnswersController)
 
@@ -16,11 +28,17 @@ application.register("hello", HelloController)
 import ListenActivityController from "./listen_activity_controller"
 application.register("listen-activity", ListenActivityController)
 
+import MainVideoPlayerController from "./main_video_player_controller"
+application.register("main-video-player", MainVideoPlayerController)
+
 import MatchActivityController from "./match_activity_controller"
 application.register("match-activity", MatchActivityController)
 
 import MatchTokensActivityController from "./match_tokens_activity_controller"
 application.register("match-tokens-activity", MatchTokensActivityController)
+
+import MiniPlayerController from "./mini_player_controller"
+application.register("mini-player", MiniPlayerController)
 
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
@@ -28,38 +46,26 @@ application.register("multiselect", MultiselectController)
 import PopoverTranslationController from "./popover_translation_controller"
 application.register("popover-translation", PopoverTranslationController)
 
+import ProgressTrackerController from "./progress_tracker_controller"
+application.register("progress-tracker", ProgressTrackerController)
+
+import ScrollIntoViewController from "./scroll_into_view_controller"
+application.register("scroll-into-view", ScrollIntoViewController)
+
 import SortPhrasesActivityController from "./sort_phrases_activity_controller"
 application.register("sort-phrases-activity", SortPhrasesActivityController)
 
 import SpeakActivityController from "./speak_activity_controller"
 application.register("speak-activity", SpeakActivityController)
 
-import WordOrderActivityController from "./word_order_activity_controller"
-application.register("word-order-activity", WordOrderActivityController)
-
 import SpeechRecognitionController from "./speech_recognition_controller"
 application.register("speech-recognition", SpeechRecognitionController)
 
-import MainVideoPlayerController from "./main_video_player_controller"
-application.register("main-video-player", MainVideoPlayerController)
+import SwiperController from "./swiper_controller"
+application.register("swiper", SwiperController)
 
-import ActivityNavigationController from './activity_navigation_controller';
-application.register('activity-navigation', ActivityNavigationController);
+import WatchVideoActivityController from "./watch_video_activity_controller"
+application.register("watch-video-activity", WatchVideoActivityController)
 
-import ProgressTrackerController from './progress_tracker_controller';
-application.register('progress-tracker', ProgressTrackerController)
-
-import SwiperController from './swiper_controller.js';
-application.register('swiper', SwiperController);
-
-import WatchVideoActivityController from './watch_video_activity_controller.js';
-application.register('watch-video-activity', WatchVideoActivityController);
-
-import MiniPlayerController from './mini_player_controller.js';
-application.register('mini-player', MiniPlayerController);
-
-import ScrollIntoViewController from './scroll_into_view_controller.js';
-application.register('scroll-into-view', ScrollIntoViewController);
-
-import AudioFeedbackController from './audio_feedback_controller.js';
-application.register('audio-feedback', AudioFeedbackController);
+import WordOrderActivityController from "./word_order_activity_controller"
+application.register("word-order-activity", WordOrderActivityController)

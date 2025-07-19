@@ -5,6 +5,10 @@ class Course < ApplicationRecord
   
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
+  
+  # Likes relationship
+  has_many :course_likes, dependent: :destroy
+  has_many :liked_by_users, through: :course_likes, source: :user
 
   # Status enum
   enum :status, {
@@ -30,6 +34,16 @@ class Course < ApplicationRecord
       .order('latest_progress DESC')
       .distinct
   }
+
+  # Like methods
+  def liked_by?(user)
+    return false unless user
+    course_likes.exists?(user: user)
+  end
+
+  def likes_count
+    course_likes.count
+  end
 
   def create_short!(progress)
     raise "Missing creation data" unless progress.ready?
