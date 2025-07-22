@@ -5,6 +5,10 @@ class Course < ApplicationRecord
   
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
+  
+  # Star/like relationships
+  has_many :course_stars, dependent: :destroy
+  has_many :starred_by_users, through: :course_stars, source: :user
 
   # Status enum
   enum :status, {
@@ -273,5 +277,28 @@ class Course < ApplicationRecord
     
     completed_lessons = lessons.joins(:lesson_users).where(lesson_users: { user: user }).count
     ((completed_lessons.to_f / total_lessons) * 100).round
+  end
+  
+  # Star/like functionality
+  def stars_count
+    course_stars.count
+  end
+  
+  def starred_by?(user)
+    return false unless user
+    course_stars.exists?(user: user)
+  end
+  
+  def toggle_star(user)
+    return false unless user
+    
+    existing_star = course_stars.find_by(user: user)
+    if existing_star
+      existing_star.destroy
+      false # Returns false when unstarred
+    else
+      course_stars.create!(user: user)
+      true # Returns true when starred
+    end
   end
 end

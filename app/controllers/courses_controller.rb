@@ -17,9 +17,10 @@ class CoursesController < ApplicationController
       @all_courses = @all_courses.where(language: language) if language
     end
     
-    # Convert to array and precompute lesson counts to avoid N+1 queries
+    # Convert to array and precompute lesson counts and star data to avoid N+1 queries
     all_courses_array = @all_courses.to_a
     lesson_counts = precompute_lesson_counts(all_courses_array)
+    star_data = precompute_star_data(all_courses_array, current_user)
     
     if user_signed_in?
       # Get progress data for all courses in one efficient query
@@ -28,11 +29,13 @@ class CoursesController < ApplicationController
       # Get the ordering for continue learning courses (courses with progress, ordered by latest activity)
       continue_learning_order = get_continue_learning_order(current_user)
       
-      # Assign progress data and lesson counts to course objects
+      # Assign progress data, lesson counts, and star data to course objects
       @all_courses = all_courses_array.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_stars_count) { star_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:starred_by_current_user?) { star_data[:starred][course.id] || false }
         course
       end
       
@@ -41,6 +44,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_stars_count) { star_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:starred_by_current_user?) { star_data[:starred][course.id] || false }
         course
       end
       
@@ -55,6 +60,8 @@ class CoursesController < ApplicationController
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
+        course.define_singleton_method(:cached_stars_count) { star_data[:counts][course.id] || 0 }
+        course.define_singleton_method(:starred_by_current_user?) { false }
         course
       end
     end
@@ -122,6 +129,28 @@ class CoursesController < ApplicationController
     end
   end
 
+  def star
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    
+    respond_to do |format|
+      if user_signed_in?
+        starred = @course.toggle_star(current_user)
+        format.json { 
+          render json: { 
+            starred: starred, 
+            stars_count: @course.stars_count 
+          } 
+        }
+      else
+        format.json { render json: { error: 'Authentication required' }, status: :unauthorized }
+      end
+    end
+  end
+
+  def unstar
+    star # Use the same logic as star action since toggle_star handles both
+  end
+
   private
 
   def course_params
@@ -181,6 +210,27 @@ class CoursesController < ApplicationController
     end
     
     progress_data
+  end
+
+  def precompute_star_data(courses, user)
+    return { counts: {}, starred: {} } if courses.empty?
+    
+    course_ids = courses.map(&:id)
+    
+    # Get star counts for all courses in one query
+    star_counts = CourseStar.where(course_id: course_ids).group(:course_id).count
+    
+    # Get starred courses for current user (if signed in) in one query
+    starred_courses = if user
+      CourseStar.where(course_id: course_ids, user: user).pluck(:course_id).to_set
+    else
+      Set.new
+    end
+    
+    {
+      counts: star_counts,
+      starred: course_ids.index_with { |course_id| starred_courses.include?(course_id) }
+    }
   end
 
 end

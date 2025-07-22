@@ -13,7 +13,12 @@ Rails.application.routes.draw do
       get :finish
     end
   end
-  resources :courses, only: [:show, :index, :new, :create]
+  resources :courses, only: [:show, :index, :new, :create] do
+    member do
+      post :star
+      delete :unstar
+    end
+  end
   get '/azure_token', to: 'azure_speech#token'
   get "activities/index"
   get "activities/show"
