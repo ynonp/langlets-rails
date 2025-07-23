@@ -14,7 +14,7 @@ module Activities
               {
                 "start_index" => t.l1_start_index,
                 "end_index" => t.l1_end_index,
-                "original_text" => t.original_text || p.text_l1[t.l1_start_index...t.l1_end_index],
+                "original_text" => t.original_text,
                 "similar_sound" => (t.similar_sound || []).sample
               } if activity_translations.include?(t.id)
             end

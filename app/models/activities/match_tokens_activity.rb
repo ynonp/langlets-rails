@@ -10,7 +10,7 @@ module Activities
     seen_l1_texts = Set.new
     seen_l2_texts = Set.new
     filtered_token_translations = activity_token_translations.select do |t|
-      l1_text = t.phrase.text_l1[t.l1_start_index..t.l1_end_index]
+      l1_text = t.original_text
       l2_text = t.translation
       
       # Skip if we've already seen this l1 or l2 text
@@ -25,7 +25,7 @@ module Activities
     
     # Map each token translation to [word in l1, translation in l2, audio]
     tokens_data = filtered_token_translations.map do |t|
-      l1_word = t.phrase.text_l1[t.l1_start_index..t.l1_end_index]
+      l1_word = t.original_text
       audio_url = t.l1_audio.attached? ? 
         Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
       

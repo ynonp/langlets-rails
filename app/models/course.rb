@@ -71,10 +71,10 @@ class Course < ApplicationRecord
         a5.phrases << p
         (phrase_data["translations"] || []).each do |token_translation_data|
           # Validate indices before attempting DB creation
-          l1_start = token_translation_data["l1_start_index"]
-          l1_end = token_translation_data["l1_end_index"] + 1
-          l2_start = token_translation_data["l2_start_index"]
-          l2_end = token_translation_data["l2_end_index"] + 1
+          l1_start = token_translation_data["l1_index"].first
+          l1_end = token_translation_data["l1_index"].last
+          l2_start = token_translation_data["l2_index"]&.first
+          l2_end = token_translation_data["l2_index"]&.last
           
           if l1_start > l1_end
             Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
@@ -187,17 +187,17 @@ class Course < ApplicationRecord
 
         (phrase_data["translations"] || []).each do |token_translation_data|
           # Validate indices before attempting DB creation
-          l1_start = token_translation_data["l1_start_index"]
-          l1_end = token_translation_data["l1_end_index"] + 1
-          l2_start = token_translation_data["l2_start_index"]
-          l2_end = token_translation_data["l2_end_index"] + 1
+          l1_start = token_translation_data["l1_index"].first
+          l1_end = token_translation_data["l1_index"].last
+          l2_start = token_translation_data["l2_index"]&.first
+          l2_end = token_translation_data["l2_index"]&.last
           
-          if l1_start >= l1_end
+          if l1_start > l1_end
             Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
             next
           end
-          
-          if l2_start >= l2_end
+                    
+          if l2_start > l2_end
             Rails.logger.error("Invalid L2 indices for phrase #{p.id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
             next
           end

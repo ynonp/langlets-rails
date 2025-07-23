@@ -8,5 +8,9 @@ class String
     end
     index
   end
+
+  def tokenize
+    self.scan(/\p{L}+(?:'\p{L}+)*/u)
+  end
 end
 

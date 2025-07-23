@@ -15,7 +15,7 @@ class TokenTranslation < ApplicationRecord
   }
 
   def original_text
-    phrase.text_l1[l1_start_index...l1_end_index]
+    phrase.text_l1.tokenize[l1_start_index..l1_end_index].join(" ")
   end
 
   private

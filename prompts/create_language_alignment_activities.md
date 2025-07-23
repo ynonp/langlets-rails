@@ -34,11 +34,11 @@ Your task is to modify this JSON object according to the following rules:
 * **Target word:** "Old"
 * **IF a `translation` object is:**
     ```json
-    {{"translation"=>"זקנים", "l1_end_index"=>2, "l2_end_index"=>12, "l1_start_index"=>0, "l2_start_index"=>8}}
+    {{"translation"=>"זקנים", "l1_end_index"=>0, "l2_end_index"=>1, "l1_start_index"=>0, "l2_start_index"=>1}}
     ```
 * **THEN, if you select it, modify it to be:**
     ```json
-    {{"translation"=>"זקנים", "l1_end_index"=>2, "l2_end_index"=>12, "l1_start_index"=>0, "l2_start_index"=>8, "language_alignment_activity": 1 }}
+    {{"translation"=>"זקנים", "l1_end_index"=>0, "l2_end_index"=>1, "l1_start_index"=>0, "l2_start_index"=>1, "language_alignment_activity": 1 }}
     ```
 ---
 

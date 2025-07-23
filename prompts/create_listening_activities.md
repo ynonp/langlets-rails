@@ -17,7 +17,7 @@ Your task is to modify this JSON object according to the following rules:
 
 3.  **Modify the Selected Word Objects:** For each `translation` object you select, you must add two new attributes:
     * `"listening_activity": 1`
-    * `"similar_sound": ["<word1>", "<word2>"]`: This should be an array of one or two words that are phonetically similar to the original `{{source_language}}` word but have a different meaning. The original word is the substring of `text_l1` defined by the `l1_start_index` and `l1_end_index` of that translation object. These similar-sounding words will be used as incorrect options in a multiple-choice question.
+    * `"similar_sound": ["<word1>", "<word2>"]`: This should be an array of one or two words that are phonetically similar to the original `{{source_language}}` word but have a different meaning. The original word is the substring of `text_l1` defined by the `l1_start_index` and `l1_end_index` word indices of that translation object. These similar-sounding words will be used as incorrect options in a multiple-choice question.
 
 4.  **Output Format:**
     * Your output must be **only** the modified JSON object.
@@ -34,11 +34,11 @@ Your task is to modify this JSON object according to the following rules:
 * **Target word:** "Old"
 * **IF a `translation` object is:**
     ```json
-    {{"translation"=>"זקנים", "l1_end_index"=>2, "l2_end_index"=>12, "l1_start_index"=>0, "l2_start_index"=>8}}
+    {{"translation"=>"זקנים", "l1_end_index"=>0, "l2_end_index"=>1, "l1_start_index"=>0, "l2_start_index"=>1}}
     ```
 * **THEN, if you select it, modify it to be:**
     ```json
-    {{"translation"=>"זקנים", "l1_end_index"=>2, "l2_end_index"=>12, "l1_start_index"=>0, "l2_start_index"=>8, "listening_activity": 1, "similar_sound": ["bold", "gold"]}}
+    {{"translation"=>"זקנים", "l1_end_index"=>0, "l2_end_index"=>1, "l1_start_index"=>0, "l2_start_index"=>1, "listening_activity": 1, "similar_sound": ["bold", "gold"]}}
     ```
 
 **Example 2:**
@@ -46,11 +46,11 @@ Your task is to modify this JSON object according to the following rules:
 * **Target word:** "Sold"
 * **IF a `translation` object is:**
     ```json
-    {{"translation"=>"מכרו", "l1_end_index"=>3, "l2_end_index"=>3, "l1_start_index"=>0, "l2_start_index"=>0}}
+    {{"translation"=>"מכרו", "l1_end_index"=>0, "l2_end_index"=>0, "l1_start_index"=>0, "l2_start_index"=>0}}
     ```
 * **THEN, if you select it, modify it to be:**
     ```json
-    {{"translation"=>"מכרו", "l1_end_index"=>3, "l2_end_index"=>3, "l1_start_index"=>0, "l2_start_index"=>0, "listening_activity": 1, "similar_sound": ["cold", "told"]}}
+    {{"translation"=>"מכרו", "l1_end_index"=>0, "l2_end_index"=>0, "l1_start_index"=>0, "l2_start_index"=>0, "listening_activity": 1, "similar_sound": ["cold", "told"]}}
     ```
 
 **Example 3:**
@@ -58,11 +58,11 @@ Your task is to modify this JSON object according to the following rules:
 * **Target word:** "took"
 * **IF a `translation` object is:**
     ```json
-    {{"translation"=>"שלקחו", "l1_end_index"=>22, "l2_end_index"=>14, "l1_start_index"=>14, "l2_start_index"=>10}}
+    {{"translation"=>"שלקחו", "l1_end_index"=>3, "l2_end_index"=>2, "l1_start_index"=>3, "l2_start_index"=>2}}
     ```
 * **THEN, if you select it, modify it to be:**
     ```json
-    {{"translation"=>"שלקחו", "l1_end_index"=>22, "l2_end_index"=>14, "l1_start_index"=>14, "l2_start_index"=>10, "listening_activity": 1, "similar_sound": ["book", "look"]}}
+    {{"translation"=>"שלקחו", "l1_end_index"=>3, "l2_end_index"=>2, "l1_start_index"=>3, "l2_start_index"=>2, "listening_activity": 1, "similar_sound": ["book", "look"]}}
     ```
 
 **Example 4:**
@@ -70,11 +70,11 @@ Your task is to modify this JSON object according to the following rules:
 * **Target word:** "hand"
 * **IF a `translation` object is:**
     ```json
-    {{"translation"=>"ביד", "l1_end_index"=>10, "l2_end_index"=>2, "l1_start_index"=>0, "l2_start_index"=>0}}
+    {{"translation"=>"ביד", "l1_end_index"=>2, "l2_end_index"=>0, "l1_start_index"=>2, "l2_start_index"=>0}}
     ```
 * **THEN, if you select it, modify it to be:**
     ```json
-    {{"translation"=>"ביד", "l1_end_index"=>10, "l2_end_index"=>2, "l1_start_index"=>0, "l2_start_index"=>0, "listening_activity": 1, "similar_sound": ["sand", "land"]}}
+    {{"translation"=>"ביד", "l1_end_index"=>2, "l2_end_index"=>0, "l1_start_index"=>2, "l2_start_index"=>0, "listening_activity": 1, "similar_sound": ["sand", "land"]}}
     ```
 ---
 
