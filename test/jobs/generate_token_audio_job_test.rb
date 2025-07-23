@@ -17,7 +17,6 @@ class GenerateTokenAudioJobTest < ActiveJob::TestCase
     
     # Create test medium
     @medium = Medium.create!(
-      name: 'Test Medium',
       url: 'https://example.com'
     )
     
