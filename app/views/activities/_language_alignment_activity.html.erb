@@ -45,41 +45,47 @@
             data-phrase-id="<%= phrase_index %>"
           >
             <% 
-              text = phrase[:translation]
+              # Build segments based on word boundaries for L2 text
+              l2_words = phrase[:translation].scan(/\p{L}+(?:'\p{L}+)*/u)
               segments = []
-              current_pos = 0
+              current_word_index = 0
               
               # Sort tokens by start position to process them in order
-              sorted_tokens = phrase[:tokens].sort_by { |t| t[:l2_start_index] }
+              sorted_tokens = phrase[:tokens].select { |t| t[:l2_start_index].present? && t[:l2_end_index].present? }
+                                           .sort_by { |t| t[:l2_start_index] }
               
               sorted_tokens.each_with_index do |token, token_index|
-                # Text before the token
-                if token[:l2_start_index] > current_pos
-                  segments << text[current_pos...token[:l2_start_index]]
+                # Add words before the token
+                while current_word_index < token[:l2_start_index]
+                  segments << l2_words[current_word_index]
+                  current_word_index += 1
                 end
                 
-                # The token itself
-                token_text = text[token[:l2_start_index]..token[:l2_end_index]]
-                segments << {
-                  text: token_text,
-                  token_index: token_index
-                }
-                
-                current_pos = token[:l2_end_index] + 1
+                # The token itself (get all words in this token)
+                if token[:l2_start_index] <= current_word_index && current_word_index <= token[:l2_end_index]
+                  token_words = l2_words[token[:l2_start_index]..token[:l2_end_index]]
+                  segments << {
+                    text: token_words.join(' '),
+                    token_index: token_index
+                  }
+                  current_word_index = token[:l2_end_index] + 1
+                end
               end
               
-              # Add any remaining text after the last token
-              if current_pos < text.length
-                segments << text[current_pos..-1]
+              # Add any remaining words after the last token
+              while current_word_index < l2_words.length
+                segments << l2_words[current_word_index]
+                current_word_index += 1
               end
             %>
             
             <% segments.each do |segment| %>
               <% if segment.is_a?(String) %>
-                <%= segment.strip %><%= segment.strip.empty? ? "" : "&nbsp;".html_safe %>
+                <span class="regular-word"><%= segment.strip %></span>
               <% else %>
-                <span class="text-red-400" data-token-id="<%= segment[:token_index] %>"><%= segment[:text].strip %></span><%= "&nbsp;".html_safe %>
+                <span class="text-red-400" data-token-id="<%= segment[:token_index] %>"><%= segment[:text].strip %></span>
               <% end %>
+              <span class="word-separator"> </span>
             <% end %>
           </div>
         <% end %>
@@ -106,40 +112,45 @@
             class="original-phrase px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-gray-900 hover:bg-gray-800 text-white sm:min-h-[72px] text-md md:text-xl transition-all duration-200" data-phrase-id="<%= phrase_index %>"
           >          
             <% 
-              text = phrase[:original_text]
+              # Build segments based on word boundaries instead of character positions
+              l1_words = phrase[:original_text].scan(/\p{L}+(?:'\p{L}+)*/u)
               segments = []
-              current_pos = 0
+              current_word_index = 0
               
               # Sort tokens by start position to process them in order
               sorted_tokens = phrase[:tokens].sort_by { |t| t[:l1_start_index] }
               
               sorted_tokens.each_with_index do |token, token_index|
-                # Text before the token
-                if token[:l1_start_index] > current_pos
-                  segments << text[current_pos...token[:l1_start_index]]
+                # Add words before the token
+                while current_word_index < token[:l1_start_index]
+                  segments << l1_words[current_word_index]
+                  current_word_index += 1
                 end
                 
-                # The token itself
-                token_text = text[token[:l1_start_index]..token[:l1_end_index]]
-                segments << {
-                  text: token_text,
-                  token_index: token_index,
-                  phrase_index: phrase_index,
-                  audio_url: token[:audio_url]
-                }
-                
-                current_pos = token[:l1_end_index] + 1
+                # The token itself (get all words in this token)
+                if token[:l1_start_index] <= current_word_index && current_word_index <= token[:l1_end_index]
+                  token_words = l1_words[token[:l1_start_index]..token[:l1_end_index]]
+                  segments << {
+                    text: token_words.join(' '),
+                    token_index: token_index,
+                    phrase_index: phrase_index,
+                    audio_url: token[:audio_url],
+                    word_indexes: (token[:l1_start_index]..token[:l1_end_index]).to_a
+                  }
+                  current_word_index = token[:l1_end_index] + 1
+                end
               end
               
-              # Add any remaining text after the last token
-              if current_pos < text.length
-                segments << text[current_pos..-1]
+              # Add any remaining words after the last token
+              while current_word_index < l1_words.length
+                segments << l1_words[current_word_index]
+                current_word_index += 1
               end
             %>
             
             <% segments.each do |segment| %>
               <% if segment.is_a?(String) %>
-                <%= segment.strip %><%= segment.strip.empty? ? "" : "&nbsp;".html_safe %>
+                <span class="regular-word"><%= segment.strip %></span>
               <% else %>
                 <button 
                   class="token cursor-pointer" 
@@ -148,9 +159,11 @@
                   data-phrase-id="<%= segment[:phrase_index] %>" 
                   data-token-id="<%= segment[:token_index] %>" 
                   data-audio-url="<%= segment[:audio_url] %>"
+                  data-word-indexes="<%= segment[:word_indexes].join(',') %>"
                   data-found="false"
-                ><%= segment[:text].strip %></button><%= "&nbsp;".html_safe %>
+                ><%= segment[:text].strip %></button>
               <% end %>
+              <span class="word-separator"> </span>
             <% end %>
           </div>
         <% end %>

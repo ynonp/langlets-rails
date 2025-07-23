@@ -89,11 +89,18 @@ class PhraseTest < ActiveSupport::TestCase
   end
 
   test "should not queue l1_audio generation job when l1 language is missing" do
+    # Test with a phrase that has l1 but missing iso_name instead
+    language_without_iso = Language.create!(
+      iso_name: nil,
+      english_name: 'Test Language',
+      native_name: 'Test'
+    )
+    
     assert_no_enqueued_jobs do
       phrase = Phrase.create!(
         text_l1: "Hello world",
         text_l2: "Hola mundo", 
-        l1: nil,
+        l1: language_without_iso,
         l2: @l2_language,
         medium: @medium,
         timestamp: "00:01:30"
@@ -120,8 +127,61 @@ class PhraseTest < ActiveSupport::TestCase
     end
   end
 
-  test "should handle job queueing errors gracefully" do
-    # Skip this test for now as it requires more complex mocking
-    skip "Job queueing error handling needs better mocking setup"
+  test "add_token_translation should use word indexes" do
+    phrase = Phrase.create!(
+      text_l1: "Hello beautiful world",  # Words: ["Hello", "beautiful", "world"]
+      text_l2: "Hola mundo hermoso",     # Words: ["Hola", "mundo", "hermoso"]
+      l1: @l1_language,
+      l2: @l2_language,
+      medium: @medium,
+      timestamp: "00:01:30"
+    )
+    
+    token = phrase.add_token_translation("beautiful", 0, "mundo", 0)
+    
+    assert_not_nil token
+    assert_equal 1, token.l1_start_index  # "beautiful" is word index 1
+    assert_equal 1, token.l1_end_index
+    assert_equal 1, token.l2_start_index  # "mundo" is word index 1  
+    assert_equal 1, token.l2_end_index
+  end
+
+  test "add_token_translation should handle multi-word phrases" do
+    phrase = Phrase.create!(
+      text_l1: "Hello beautiful world",
+      text_l2: "Hola mundo hermoso",
+      l1: @l1_language,
+      l2: @l2_language,
+      medium: @medium,
+      timestamp: "00:01:30"
+    )
+    
+    token = phrase.add_token_translation("beautiful world", 0, "mundo hermoso", 0)
+    
+    assert_not_nil token
+    assert_equal 1, token.l1_start_index  # "beautiful world" starts at word 1
+    assert_equal 2, token.l1_end_index    # ends at word 2
+    assert_equal 1, token.l2_start_index  # "mundo hermoso" starts at word 1
+    assert_equal 2, token.l2_end_index    # ends at word 2
+  end
+
+  test "find_token_translation should use word indexes" do
+    phrase = Phrase.create!(
+      text_l1: "Hello beautiful world",
+      text_l2: "Hola mundo hermoso",
+      l1: @l1_language,
+      l2: @l2_language,
+      medium: @medium,
+      timestamp: "00:01:30"
+    )
+    
+    # Create a token translation
+    original_token = phrase.add_token_translation("beautiful", 0, "mundo", 0)
+    
+    # Find it using the word-based method
+    found_token = phrase.find_token_translation("beautiful", 0)
+    
+    assert_not_nil found_token
+    assert_equal original_token.id, found_token.id
   end
 end

@@ -48,55 +48,67 @@ class Phrase < ApplicationRecord
     "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
   end
 
-  def add_token_translation(text, text_index, translation, translation_index, **attributes)
-    text_re = Regexp.new("\\b#{Regexp.escape(text.downcase)}\\b")
-    l1_start_index = text_l1.downcase.nth_index(text_re, text_index)
-    if l1_start_index.nil?
-      pp text_re
-      puts "Couldn't find text #{text} starting from index #{text_index} in phrase #{text_l1}"
-    end
-
-    l1_end_index = l1_start_index + text.length
-
-    translation_re = Regexp.new("\\b#{Regexp.escape(translation.downcase)}\\b")
-    l2_start_index = text_l2.downcase.nth_index(translation_re, translation_index) unless translation_index < 0
-    l2_end_index = l2_start_index + translation.length unless l2_start_index.nil?
-
-    # Validate indices before attempting DB creation
-    if l1_start_index > l1_end_index
-      Rails.logger.error("Invalid L1 indices for phrase #{self.id}: l1_start=#{l1_start_index} >= l1_end=#{l1_end_index}. Skipping this token translation.")
+  def add_token_translation(text, text_occurrence, translation, translation_occurrence, **attributes)
+    l1_words = tokenize(text_l1)
+    l2_words = tokenize(text_l2)
+    
+    # Find word indexes for L1 text
+    l1_word_indexes = find_word_indexes(l1_words, text, text_occurrence)
+    if l1_word_indexes.nil?
+      Rails.logger.error("Couldn't find text '#{text}' occurrence #{text_occurrence} in L1 phrase: #{text_l1}")
       return nil
     end
-    
-    if l2_start_index && l2_end_index && l2_start_index > l2_end_index
-      Rails.logger.error("Invalid L2 indices for phrase #{self.id}: l2_start=#{l2_start_index} >= l2_end=#{l2_end_index}. Skipping this token translation.")
+
+    # Find word indexes for L2 text (optional)
+    l2_word_indexes = nil
+    if translation_occurrence >= 0 && translation.present?
+      l2_word_indexes = find_word_indexes(l2_words, translation, translation_occurrence)
+      if l2_word_indexes.nil?
+        Rails.logger.warn("Couldn't find translation '#{translation}' occurrence #{translation_occurrence} in L2 phrase: #{text_l2}")
+      end
+    end
+
+    # Validate continuous indexes
+    unless continuous_indexes?(l1_word_indexes)
+      Rails.logger.error("Non-continuous L1 word indexes for '#{text}'. Skipping token translation.")
+      return nil
+    end
+
+    if l2_word_indexes && !continuous_indexes?(l2_word_indexes)
+      Rails.logger.error("Non-continuous L2 word indexes for '#{translation}'. Skipping token translation.")
       return nil
     end
 
     begin
       TokenTranslation.create!(
         phrase: self,
-        l1_start_index:,
-        l1_end_index:,
-        l2_start_index:,
-        l2_end_index:,
-        translation:,
+        l1_start_index: l1_word_indexes.first,
+        l1_end_index: l1_word_indexes.last,
+        l2_start_index: l2_word_indexes&.first,
+        l2_end_index: l2_word_indexes&.last,
+        translation: translation,
         **attributes
       )
     rescue ActiveRecord::RecordNotUnique => e
-      Rails.logger.error("Duplicate token translation for phrase #{self.id}: l1_start=#{l1_start_index}, l1_end=#{l1_end_index}. Skipping duplicate. Error: #{e.message}")
+      Rails.logger.error("Duplicate token translation for phrase #{self.id}. Skipping. Error: #{e.message}")
       return nil
     end
   end
 
   def find_token_translation(text, text_index=0)
-    l1_start_index = text_l1.downcase.nth_index(text.downcase, text_index)
-    l1_end_index = l1_start_index + text.length
-    result = self.token_translations.find_by(l1_start_index:, l1_end_index:)
+    l1_words = tokenize(text_l1)
+    target_word_indexes = find_word_indexes(l1_words, text, text_index)
+    return nil if target_word_indexes.nil?
+
+    result = self.token_translations.find_by(
+      l1_start_index: target_word_indexes.first,
+      l1_end_index: target_word_indexes.last
+    )
+    
     if result.nil?
-      pp l1_start_index, text, text_l1, text_index, l1_end_index, id
-      pp self.token_translations.to_a
+      Rails.logger.debug("No token translation found for '#{text}' at word indexes #{target_word_indexes}")
     end
+    
     result
   end
 
@@ -138,6 +150,33 @@ END
   end
 
   private
+
+  def tokenize(text)
+    text.scan(/\p{L}+(?:'\p{L}+)*/u)
+  end
+
+  def find_word_indexes(words, target_text, occurrence)
+    target_words = tokenize(target_text)
+    return nil if target_words.empty?
+
+    occurrences_found = 0
+    
+    (0..words.length - target_words.length).each do |start_idx|
+      if words[start_idx, target_words.length] == target_words
+        if occurrences_found == occurrence
+          return (start_idx..start_idx + target_words.length - 1).to_a
+        end
+        occurrences_found += 1
+      end
+    end
+
+    nil
+  end
+
+  def continuous_indexes?(indexes)
+    return false if indexes.nil? || indexes.empty?
+    indexes.each_cons(2).all? { |a, b| b == a + 1 }
+  end
 
   # Check if we should generate audio on create
   def should_generate_audio?
