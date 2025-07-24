@@ -62,24 +62,29 @@
 #### 5. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
 - **Key Features**:
-  - Bilingual text pairs (`text_l1`, `text_l2`)
+  - Bilingual text pairs (`text_l1`, `text_l2`) - **Legacy fields maintained for backward compatibility**
   - Media synchronization timestamps
   - Language pair references (`l1_id`, `l2_id`)
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+  - **Multi-Script Support**: New relationships to support multiple alphabets/transliterations
 - **Relationships**: 
   - Belongs to Medium and two Languages
-  - One-to-many with TokenTranslations
+  - One-to-many with TokenTranslations (using legacy text fields)
   - Many-to-many with Activities (through ActivityPhrase)
+  - **New Multi-Script Relationships**:
+    - One-to-many with PhraseTextAssignments
+    - Many-to-many with PhraseTexts (through PhraseTextAssignments)
 
 #### 6. **TokenTranslation** (`token_translations`)
 - **Purpose**: Provide word/token-level translations within phrases
 - **Key Features**:
-  - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
+  - **Word-based indices** for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
   - Translation text
   - Practice questions array (PostgreSQL array type)
   - Similar sound arrays for pronunciation practice (PostgreSQL array type)
   - Unique constraint on phrase + L1 start/end indices
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+  - **Compatibility**: Uses legacy `text_l1`/`text_l2` fields for word indexing
 - **Relationships**: 
   - Belongs to Phrase
   - Many-to-many with Activities (through ActivityTokenTranslation)
@@ -185,9 +190,44 @@
   - Indexed on both lesson_id and user_id for efficient queries
 - **Relationships**: Links Users to Lessons for course progression
 
+### Multi-Script Support System
+
+#### 16. **Script** (`scripts`)
+- **Purpose**: Reference table for writing systems and alphabets
+- **Key Features**:
+  - Unique script names (e.g., "latin", "hebrew", "arabic", "cyrillic")
+  - ISO 15924 script codes (e.g., "Latn", "Hebr", "Arab", "Cyrl")
+  - RTL (Right-to-Left) direction support
+  - Deletion protection when PhraseTexts exist
+- **Relationships**: 
+  - One-to-many with PhraseTexts
+  - Used to categorize text content by writing system
+
+#### 17. **PhraseText** (`phrase_texts`)
+- **Purpose**: Store actual text content linked to specific scripts
+- **Key Features**:
+  - Text content with Unicode support
+  - Script association for writing system identification
+  - Reusable across multiple phrases if needed
+- **Relationships**: 
+  - Belongs to Script
+  - One-to-many with PhraseTextAssignments
+  - Many-to-many with Phrases (through PhraseTextAssignments)
+
+#### 18. **PhraseTextAssignment** (`phrase_text_assignments`)
+- **Purpose**: Join table linking phrases to their text variants with language roles
+- **Key Features**:
+  - Language role enum (`:l1` or `:l2`)
+  - Primary flag to indicate default text for each language role
+  - Unique constraint: only one primary text per phrase per language role
+  - Supports unlimited non-primary variants
+- **Relationships**: 
+  - Belongs to Phrase and PhraseText
+  - Enables flexible multi-script text assignments
+
 ### Workflow Management
 
-#### 15. **CreateSongProgress** (`create_song_progresses`)
+#### 19. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
   - YouTube URL processing (`youtubeurl`)
@@ -282,7 +322,13 @@ Language (1) ──→ (many) Phrase (as L2)
 Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
 
-# Token-level Translation
+# Multi-Script System (New)
+Script (1) ──→ (many) PhraseText
+PhraseText (1) ──→ (many) PhraseTextAssignment
+Phrase (1) ──→ (many) PhraseTextAssignment
+Phrase (many) ←──→ (many) PhraseText (through PhraseTextAssignment)
+
+# Token-level Translation (Uses legacy text_l1/text_l2 fields)
 Phrase (1) ──→ (many) TokenTranslation
 Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
@@ -377,7 +423,37 @@ The platform implements a modern, accessible authentication system with the foll
 - **RTL Languages**: Right-to-left text rendering
 - **Pronunciation Variants**: Regional accent support
 - **Sound Similarity**: Pronunciation confusion detection
-- **Character Indexing**: Precise word boundary detection
+- **Multi-Script Support**: Multiple alphabets/transliterations per language
+- **Script Flexibility**: Unlimited text variants per phrase and language role
+
+### Multi-Script Architecture
+
+The platform supports multiple alphabets and transliterations for the same language content through a decoupled script-text architecture:
+
+#### Core Concepts
+- **Scripts**: Independent writing systems (Hebrew, Latin, Arabic, Cyrillic)
+- **PhraseTexts**: Content storage linked to specific scripts
+- **Assignments**: Flexible linking of phrases to text variants with language roles
+- **Primary Flag**: Designates default text for each language role
+
+#### Usage Examples
+```ruby
+# Hebrew phrase with multiple scripts
+phrase.text_l1_for_script()                    # Returns primary Hebrew text: "שלום עולם"
+phrase.text_l1_for_script(script: 'latin')     # Returns transliteration: "Shalom olam"
+phrase.text_l1_variants                        # Returns all L1 variants with script info
+
+# Backward compatibility maintained
+phrase.text_l1                                 # Still works: "שלום עולם"
+phrase.text_l2                                 # Still works: "Hello world"
+```
+
+#### Benefits
+- **Clean Separation**: Scripts independent from language roles
+- **Flexible Assignments**: Unlimited text variants per language
+- **Backward Compatible**: Existing API continues working
+- **TokenTranslation Ready**: Word-based indexing uses legacy fields
+- **Extensible**: Easy addition of new scripts and variants
 
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
@@ -402,14 +478,17 @@ app/models/
 ├── lesson.rb
 ├── medium.rb
 ├── language.rb
-├── phrase.rb                   # has_one_attached :l1_audio
-├── token_translation.rb        # has_one_attached :l1_audio
+├── phrase.rb                   # has_one_attached :l1_audio + multi-script support
+├── token_translation.rb        # has_one_attached :l1_audio + word-based indexing
 ├── user.rb                     # Devise authentication
 ├── activity_phrase.rb          # Join table model
 ├── activity_token_translation.rb # Join table model
 ├── activity_user.rb            # User progress on activities
 ├── lesson_user.rb              # User progress on lessons
-└── create_song_progress.rb     # Workflow tracking
+├── create_song_progress.rb     # Workflow tracking
+├── script.rb                   # Multi-script: Writing systems reference
+├── phrase_text.rb              # Multi-script: Text content storage
+└── phrase_text_assignment.rb   # Multi-script: Phrase-to-text assignments
 
 app/views/devise/               # Devise authentication views
 ├── sessions/                   # Login/logout views
