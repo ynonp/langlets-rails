@@ -24,7 +24,11 @@
   - English and native names
   - RTL (Right-to-Left) language support
   - Pronunciation variant handling
-- **Relationships**: Referenced by phrases as L1 (source) and L2 (target) languages
+  - **Default Script**: Reference to the primary writing system for the language
+- **Relationships**: 
+  - Referenced by phrases as L1 (source) and L2 (target) languages
+  - Belongs to Script (as default_script)
+  - One-to-many with Courses
 
 #### 2. **Medium** (`media`)
 - **Purpose**: Store references to external media content (YouTube videos)
@@ -62,7 +66,6 @@
 #### 5. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
 - **Key Features**:
-  - Bilingual text pairs (`text_l1`, `text_l2`)
   - Media synchronization timestamps
   - Language pair references (`l1_id`, `l2_id`)
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
@@ -70,16 +73,52 @@
   - Belongs to Medium and two Languages
   - One-to-many with TokenTranslations
   - Many-to-many with Activities (through ActivityPhrase)
+  - One-to-many with PhraseTextAssignments
+  - Many-to-many with PhraseTexts (through PhraseTextAssignments)
+
+#### **Script-Based Text Architecture**
+
+The platform uses a decoupled script-text architecture to support multiple alphabets and transliterations:
+
+#### 5a. **Script** (`scripts`)
+- **Purpose**: Reference table for writing systems
+- **Key Features**:
+  - Writing system names ("latin", "hebrew", "arabic", "cyrillic")
+  - ISO 15924 codes ("Latn", "Hebr", "Arab", "Cyrl")
+  - RTL (Right-to-Left) support flag
+- **Relationships**:
+  - One-to-many with PhraseTexts
+  - One-to-many with Languages (as default_script)
+
+#### 5b. **PhraseText** (`phrase_texts`)
+- **Purpose**: Store actual text content linked to scripts
+- **Key Features**:
+  - Text content
+  - Script reference for writing system
+- **Relationships**:
+  - Belongs to Script
+  - Many-to-many with Phrases (through PhraseTextAssignments)
+
+#### 5c. **PhraseTextAssignment** (`phrase_text_assignments`)
+- **Purpose**: Link phrases to their text variants with language roles
+- **Key Features**:
+  - Language role enum (L1 or L2)
+  - Primary flag (indicates default text for language)
+  - Unique constraint: only one primary text per phrase per language role
+- **Relationships**:
+  - Belongs to Phrase and PhraseText
+  - Enables many-to-many between Phrases and PhraseTexts
 
 #### 6. **TokenTranslation** (`token_translations`)
 - **Purpose**: Provide word/token-level translations within phrases
 - **Key Features**:
-  - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
+  - Word-based range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
   - Translation text
   - Practice questions array (PostgreSQL array type)
   - Similar sound arrays for pronunciation practice (PostgreSQL array type)
   - Unique constraint on phrase + L1 start/end indices
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+  - Character index conversion methods for backward compatibility
 - **Relationships**: 
   - Belongs to Phrase
   - Many-to-many with Activities (through ActivityTokenTranslation)
@@ -276,13 +315,19 @@ Course (1) ──→ (many) Lesson
 Lesson (many) ──→ (1) Medium
 Lesson (1) ──→ (many) Activity
 
-# Language & Content
+# Language & Script Architecture
+Script (1) ──→ (many) Language (as default_script)
+Script (1) ──→ (many) PhraseText
 Language (1) ──→ (many) Phrase (as L1)
 Language (1) ──→ (many) Phrase (as L2)
 Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
 
-# Token-level Translation
+# Text Content & Multilingual Support
+Phrase (many) ←──→ (many) PhraseText (through PhraseTextAssignment)
+PhraseTextAssignment: links Phrase to PhraseText with language_role (L1/L2) and primary flag
+
+# Token-level Translation (Word-Based Indexing)
 Phrase (1) ──→ (many) TokenTranslation
 Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
@@ -377,7 +422,45 @@ The platform implements a modern, accessible authentication system with the foll
 - **RTL Languages**: Right-to-left text rendering
 - **Pronunciation Variants**: Regional accent support
 - **Sound Similarity**: Pronunciation confusion detection
-- **Character Indexing**: Precise word boundary detection
+- **Word-Based Indexing**: Precise word boundary detection with token-level translations
+
+### Script-Based Multilingual Architecture
+
+The platform implements a sophisticated script-based architecture that separates writing systems from language content, enabling comprehensive multilingual and transliteration support:
+
+#### Core Design Principles
+- **Script Independence**: Writing systems (Scripts) are independent entities not coupled to specific languages
+- **Flexible Text Variants**: Each phrase can have unlimited text representations across different scripts
+- **Default Script Handling**: Languages have default scripts, eliminating ambiguity in text retrieval
+- **Primary Text Management**: Unique constraints ensure only one primary text per phrase per language role
+
+#### Transliteration Support Examples
+```ruby
+# Hebrew phrase with multiple script variants
+phrase = Phrase.create!(l1: hebrew_language, l2: english_language, ...)
+
+# Hebrew text in Hebrew script (primary)
+hebrew_text = PhraseText.create!(content: "שלום עולם", script: hebrew_script)
+PhraseTextAssignment.create!(phrase: phrase, phrase_text: hebrew_text, 
+                           language_role: :l1, primary: true)
+
+# Hebrew text in Latin script (transliteration)
+latin_text = PhraseText.create!(content: "Shalom olam", script: latin_script)
+PhraseTextAssignment.create!(phrase: phrase, phrase_text: latin_text, 
+                           language_role: :l1, primary: false)
+
+# Access variants
+phrase.text_l1                    # "שלום עולם" (default Hebrew script)
+phrase.text_l1(script: 'latin')   # "Shalom olam" (transliteration)
+phrase.text_l1_variants           # All script variants for L1
+```
+
+#### Benefits
+- **Comprehensive Language Support**: Supports languages with multiple writing systems
+- **Educational Flexibility**: Learners can switch between native scripts and transliterations
+- **Clean Data Separation**: Text content cleanly separated from phrase metadata
+- **Extensible Architecture**: Easy addition of new scripts and languages
+- **Backward Compatibility**: TokenTranslation word-based indexing preserved
 
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
@@ -401,9 +484,12 @@ app/models/
 ├── course.rb
 ├── lesson.rb
 ├── medium.rb
-├── language.rb
-├── phrase.rb                   # has_one_attached :l1_audio
-├── token_translation.rb        # has_one_attached :l1_audio
+├── language.rb                 # belongs_to :default_script
+├── script.rb                   # Writing systems reference table
+├── phrase.rb                   # Multilingual text via associations
+├── phrase_text.rb              # Text content linked to scripts  
+├── phrase_text_assignment.rb   # Links phrases to texts with roles
+├── token_translation.rb        # has_one_attached :l1_audio, word-based indexing
 ├── user.rb                     # Devise authentication
 ├── activity_phrase.rb          # Join table model
 ├── activity_token_translation.rb # Join table model
