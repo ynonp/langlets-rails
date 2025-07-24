@@ -50,7 +50,7 @@ class TokenTranslation < ApplicationRecord
     start_char = find_character_index_for_word(phrase.text_l1, target_word, l1_end_index, words)
     return nil if start_char.nil?
     
-    start_char + target_word.length - 1
+    start_char + target_word.length
   end
 
   # Convert word-based indices to character-based indices for L2 text
@@ -80,7 +80,7 @@ class TokenTranslation < ApplicationRecord
     start_char = find_character_index_for_word(phrase.text_l2, target_word, l2_end_index, words)
     return nil if start_char.nil?
     
-    start_char + target_word.length - 1
+    start_char + target_word.length
   end
 
   private

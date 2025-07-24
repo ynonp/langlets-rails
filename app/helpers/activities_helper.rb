@@ -9,32 +9,32 @@ module ActivitiesHelper
       content_tag(:span, phrase.text_l1)
     else
       # Use the already loaded token_translations, sort them by l1_start_index
-      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_character_index)
       
       texts = loaded_tokens.inject([]) do |acc, val|
         next_translated_token = {
-          "l1" => phrase.text_l1[val.l1_start_index...val.l1_end_index],
+          "l1" => phrase.text_l1[val.l1_start_character_index...val.l1_end_character_index],
           "l2" => val.translation,
-          "last_index" => val.l1_end_index,
+          "last_index" => val.l1_end_character_index,
           "token_id" => val.id,
           "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil,
         }
         if acc.empty?
-          if val.l1_start_index.zero?
+          if val.l1_start_character_index.zero?
             [*acc, next_translated_token]
           else
             [
               *acc,
-              {"l1" => phrase.text_l1[0...val.l1_start_index], "last_index" => val.l1_start_index},
+              {"l1" => phrase.text_l1[0...val.l1_start_character_index], "last_index" => val.l1_start_character_index},
               next_translated_token
             ]
           end
-        elsif acc[-1]["last_index"] == val.l1_start_index
+        elsif acc[-1]["last_index"] == val.l1_start_character_index
           [*acc, next_translated_token]
         else
           [
             *acc,
-            {"l1" => phrase.text_l1[acc[-1]["last_index"]...val.l1_start_index], "last_index" => val.l1_start_index},
+            {"l1" => phrase.text_l1[acc[-1]["last_index"]...val.l1_start_character_index], "last_index" => val.l1_start_character_index},
             next_translated_token
           ]
         end

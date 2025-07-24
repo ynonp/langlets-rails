@@ -59,8 +59,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "hermoso"
     )
     
-    # "beautiful" ends at character index 14 (6 + 9 - 1, where 9 is length of "beautiful")
-    assert_equal 14, token_translation.l1_end_character_index
+    assert_equal 15, token_translation.l1_end_character_index
   end
 
   test "l1_character_indices should work for multi-word tokens" do
@@ -80,10 +79,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "Hola hermoso"
     )
     
-    # "Hello" starts at character index 0
     assert_equal 0, token_translation.l1_start_character_index
-    # "beautiful" ends at character index 14
-    assert_equal 14, token_translation.l1_end_character_index
+    assert_equal 15, token_translation.l1_end_character_index
   end
 
   test "l2_character_indices should work correctly" do
@@ -105,10 +102,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "world"
     )
     
-    # "mundo" starts at character index 5 (after "Hola ")
     assert_equal 5, token_translation.l2_start_character_index
-    # "mundo" ends at character index 9 (5 + 5 - 1, where 5 is length of "mundo")
-    assert_equal 9, token_translation.l2_end_character_index
+    assert_equal 10, token_translation.l2_end_character_index
   end
 
   test "should handle word appearing multiple times - first occurrence" do
@@ -128,10 +123,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "El"
     )
     
-    # First "The" starts at character index 0
     assert_equal 0, token_translation.l1_start_character_index
-    # First "The" ends at character index 2 (0 + 3 - 1)
-    assert_equal 2, token_translation.l1_end_character_index
+    assert_equal 3, token_translation.l1_end_character_index
   end
 
   test "should handle word appearing multiple times - second occurrence" do
@@ -151,10 +144,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "el"
     )
     
-    # Second "the" starts at character index 12 (after "The cat and ")
     assert_equal 12, token_translation.l1_start_character_index
-    # Second "the" ends at character index 14 (12 + 3 - 1)
-    assert_equal 14, token_translation.l1_end_character_index
+    assert_equal 15, token_translation.l1_end_character_index
   end
 
   test "should handle contractions" do
@@ -174,10 +165,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "No"
     )
     
-    # "don't" starts at character index 2 (after "I ")
     assert_equal 2, token_translation.l1_start_character_index
-    # "don't" ends at character index 6 (2 + 5 - 1)
-    assert_equal 6, token_translation.l1_end_character_index
+    assert_equal 7, token_translation.l1_end_character_index
   end
 
   test "should handle word that appears as part of another word" do
@@ -199,8 +188,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     
     # "cat" (the standalone word) starts at character index 8 (after "I saw a ")
     assert_equal 8, token_translation.l1_start_character_index
-    # "cat" ends at character index 10 (8 + 3 - 1)
-    assert_equal 10, token_translation.l1_end_character_index
+    assert_equal 11, token_translation.l1_end_character_index
   end
 
   test "should return nil for out of bounds indices" do
@@ -306,8 +294,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     
     # "world" starts at character index 7 (after "Hello, ")
     assert_equal 7, token_translation.l1_start_character_index
-    # "world" ends at character index 11 (7 + 5 - 1)
-    assert_equal 11, token_translation.l1_end_character_index
+    assert_equal 12, token_translation.l1_end_character_index
   end
 
   test "should handle unicode characters" do
@@ -329,8 +316,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     
     # "résumé" starts at character index 5 (after "Café ")
     assert_equal 5, token_translation.l1_start_character_index
-    # "résumé" ends at character index 10 (5 + 6 - 1)
-    assert_equal 10, token_translation.l1_end_character_index
+    assert_equal 11, token_translation.l1_end_character_index
   end
 
   test "should handle l2 indices with repeated words" do
@@ -352,10 +338,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "Hello"
     )
     
-    # Second "hola" starts at character index 11 (after "Hola mundo ")
     assert_equal 11, token_translation.l2_start_character_index
-    # Second "hola" ends at character index 14 (11 + 4 - 1)
-    assert_equal 14, token_translation.l2_end_character_index
+    assert_equal 15, token_translation.l2_end_character_index
   end
 
   test "comprehensive edge case - mixed scenario" do
@@ -377,7 +361,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     )
     
     assert_equal 0, token1.l1_start_character_index
-    assert_equal 2, token1.l1_end_character_index
+    assert_equal 3, token1.l1_end_character_index
     
     # Test second "the" 
     token2 = TokenTranslation.create!(
@@ -389,7 +373,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     
     # Second "the" starts at character index 18 (after "The cat's toy was ")
     assert_equal 18, token2.l1_start_character_index
-    assert_equal 20, token2.l1_end_character_index
+    assert_equal 21, token2.l1_end_character_index
     
     # Test multi-word token
     token3 = TokenTranslation.create!(
@@ -399,10 +383,8 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "juguete del gato"
     )
     
-    # "cat's" starts at character index 4
     assert_equal 4, token3.l1_start_character_index
-    # "toy" ends at character index 12 (10 + 3 - 1)
-    assert_equal 12, token3.l1_end_character_index
+    assert_equal 13, token3.l1_end_character_index
   end
 
   test "integration test - character indices should match original_text extraction" do
@@ -427,7 +409,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
     end_char = token_translation.l1_end_character_index
     
     # Extract text using character indices
-    extracted_text = phrase.text_l1[start_char..end_char]
+    extracted_text = phrase.text_l1[start_char...end_char]
     
     # Should match the original_text method
     assert_equal token_translation.original_text, extracted_text
