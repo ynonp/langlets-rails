@@ -27,11 +27,11 @@ class CreateCourseJob < ApplicationJob
         # Create the course content based on template
         case lesson_template
         when 'song'
-          course.create_song!(progress)
+          course.create_song!(progress.data)
         when 'short'
-          course.create_short!(progress)
+          course.create_short!(progress.data)
         else
-          course.create_song!(progress)
+          course.create_song!(progress.data)
         end
         
         # Mark course as published

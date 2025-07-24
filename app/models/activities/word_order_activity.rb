@@ -41,7 +41,7 @@ module Activities
 
       tokens.each do |token|
         # Add static text before this token if there's a gap
-        if current_position < token.l1_start_index
+        if current_position < token.l1_start_character_index
           static_text = phrase.text_l1[current_position...token.l1_start_index]
           segments << create_static_segment(static_text, current_position) unless static_text.strip.empty?
         end
@@ -75,7 +75,7 @@ module Activities
         type: "token",
         text: text,
         token_id: token.id,
-        position: token.l1_start_index,
+        position: token.l1_start_character_index,
         audio_url: token.l1_audio.attached? ? 
           Rails.application.routes.url_helpers.rails_blob_path(token.l1_audio, only_path: true) : nil
       }

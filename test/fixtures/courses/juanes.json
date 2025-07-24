@@ -1,11 +1,17 @@
 {
+  "youtubeurl": "https://www.youtube.com/watch?v=kMIaYXxLnUA",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "song_name": "A Dios Le Pido",
+  "lyrics": "Que mis ojos se despierten con la luz de tu mirada, yo\nA Dios le pido\nQue mi madre no se muera y que mi padre me recuerde\nA Dios le pido\nQue te quedes a mi lado y que más nunca te me vayas, mi vida\nA Dios le pido\nQue mi alma no descanse cuando de amarte se trate, mi cielo\nA Dios le pido\nPor los días que me quedan y las noches que aún no llegan, yo\nA Dios le pido\nPor los hijos de mis hijos y los hijos de tus hijos\nA Dios le pido\nQue mi pueblo no derrame tanta sangre y se levante mi gente\nA Dios le pido\nQue mi alma no descanse cuando de amarte se trate, mi cielo\nA Dios le pido\nUn segundo más de vida para darte\nY mi corazón entero entregarte\nUn segundo más de vida para darte\nY a tu lado para siempre yo quedarme\nUn segundo más de vida, yo\nA Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, a Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, a Dios le pido\nA Dios le pido\nQue mis ojos se despierten con la luz de tu mirada, yo\nA Dios le pido\nQue mi madre no se muera y que mi padre me recuerde\nA Dios le pido\nQue te quedes a mi lado y que más nunca te me vayas, mi vida\nA Dios le pido\nQue mi alma no descanse cuando de amarte se trate, mi cielo\nA Dios le pido\nUn segundo más de vida para darte\nY mi corazón entero entregarte\nUn segundo más de vida para darte\nY a tu lado para siempre yo quedarme\nUn segundo más de vida, yo\nA Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, a Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, a Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, a Dios le pido\nQue si me muero sea de amor\nY si me enamoro sea de vos\nY que de tu voz sea este corazón\nTodos los días, yo...\nA Dios le pido",
+  "phrases": null,
   "lessons": [
     {
-      "title": "Personal Hopes and Prayers",
+      "title": "Initial Prayers for Family and Love",
       "phrases": [
         {
-          "text_l1": "Que mis ojos se despierten con la luz de tu mirada, yo",
-          "text_l2": "That my eyes may be awaken with the light of your gaze, I",
+          "text_l1": "Que mis ojos se despierten",
+          "text_l2": "That my eyes may awaken",
           "timestamp": "00:21",
           "translations": [
             {
@@ -48,27 +54,37 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "may be awaken",
+              "translation": "may awaken",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4,
-                5
+                4
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "se diviertan",
+                "se despiden"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "con la luz de tu mirada, yo",
+          "text_l2": "with the light of your gaze, I",
+          "timestamp": "00:24",
+          "translations": [
             {
               "translation": "with",
               "l1_index": [
-                5
+                0
               ],
               "l2_index": [
-                6
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -77,24 +93,27 @@
             {
               "translation": "the light",
               "l1_index": [
-                6,
-                7
+                1,
+                2
               ],
               "l2_index": [
-                7,
-                8
+                1,
+                2
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
+              "similar_sound": [
+                "la cruz",
+                "la tos"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             },
             {
               "translation": "of",
               "l1_index": [
-                8
+                3
               ],
               "l2_index": [
-                9
+                3
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -103,10 +122,10 @@
             {
               "translation": "your",
               "l1_index": [
-                9
+                4
               ],
               "l2_index": [
-                10
+                4
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -115,59 +134,46 @@
             {
               "translation": "gaze,",
               "l1_index": [
-                10
+                5
               ],
               "l2_index": [
-                11
+                5
               ],
               "similar_sound": [
-                "mi nada,",
-                "mi hada,"
+                "mi hada,",
+                "mi nada,"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "I",
               "l1_index": [
-                11
+                6
               ],
               "l2_index": [
-                12
+                6
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             }
           ],
-          "index": 0
+          "index": 1
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
+          "text_l2": "I ask God",
           "timestamp": "00:27",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -175,13 +181,28 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 1
+          "index": 2
         },
         {
-          "text_l1": "Que mi madre no se muera y que mi padre me recuerde",
-          "text_l2": "That my mother not die and that my father remember me",
+          "text_l1": "Que mi madre no se muera",
+          "text_l2": "That my mother does not die",
           "timestamp": "00:28",
           "translations": [
             {
@@ -217,14 +238,14 @@
                 2
               ],
               "similar_sound": [
-                "nadie",
-                "sangre"
+                "padre",
+                "nadie"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not die",
+              "translation": "does not die",
               "l1_index": [
                 3,
                 4,
@@ -232,110 +253,12 @@
               ],
               "l2_index": [
                 3,
-                4
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "and",
-              "l1_index": [
-                6
-              ],
-              "l2_index": [
+                4,
                 5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "that",
-              "l1_index": [
-                7
-              ],
-              "l2_index": [
-                6
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                8
-              ],
-              "l2_index": [
-                7
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "father",
-              "l1_index": [
-                9
-              ],
-              "l2_index": [
-                8
-              ],
               "similar_sound": [
-                "catre",
-                "sable"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "remember me",
-              "l1_index": [
-                10,
-                11
-              ],
-              "l2_index": [
-                9,
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            }
-          ],
-          "index": 2
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "00:32",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
-              "l1_index": [
-                3
-              ],
-              "l2_index": [
-                0
-              ],
-              "similar_sound": [
-                "nido",
-                "olvido"
+                "no se fuera",
+                "no se vuela"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -344,12 +267,12 @@
           "index": 3
         },
         {
-          "text_l1": "que te quedes a mi lado y que más nunca te me vayas, mi vida",
-          "text_l2": "that you stay by my side and that you never leave me, my life",
-          "timestamp": "00:33",
+          "text_l1": "y que mi padre me recuerde",
+          "text_l2": "and that my father remembers me",
+          "timestamp": "00:30",
           "translations": [
             {
-              "translation": "that",
+              "translation": "and",
               "l1_index": [
                 0
               ],
@@ -361,18 +284,158 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "you stay",
+              "translation": "that",
               "l1_index": [
-                1,
+                1
+              ],
+              "l2_index": [
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "my",
+              "l1_index": [
                 2
               ],
               "l2_index": [
-                1,
+                2
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "father",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                3
+              ],
+              "similar_sound": [
+                "madre",
+                "nadie"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "remembers",
+              "l1_index": [
+                5
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "me",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                5
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "00:32",
+          "translations": [
+            {
+              "translation": "I ask",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                0,
+                1
+              ],
+              "similar_sound": [
+                "nido",
+                "olvido"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "te cedes",
-                "te quedas"
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 5
+        }
+      ],
+      "description": "This lesson introduces the initial prayers in the song, focusing on the desire for loved ones' well-being and the continuation of love.",
+      "start_timestamp": null,
+      "end_timestamp": "00:33"
+    },
+    {
+      "title": "Prayers for Lasting Love",
+      "phrases": [
+        {
+          "text_l1": "Que te quedes a mi lado",
+          "text_l2": "That you stay by my side",
+          "timestamp": "00:33",
+          "translations": [
+            {
+              "translation": "That",
+              "l1_index": [
+                0
+              ],
+              "l2_index": [
+                0
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "you",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "stay",
+              "l1_index": [
+                2
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "quemes",
+                "quiebres"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -389,17 +452,28 @@
                 4,
                 5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
+              "similar_sound": [
+                "a mi palo",
+                "a mi helado"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "y que más nunca te me vayas, mi vida",
+          "text_l2": "and that you never leave me, my love",
+          "timestamp": "00:35",
+          "translations": [
             {
               "translation": "and",
               "l1_index": [
-                6
+                0
               ],
               "l2_index": [
-                6
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -408,10 +482,10 @@
             {
               "translation": "that",
               "l1_index": [
-                7
+                1
               ],
               "l2_index": [
-                7
+                1
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -420,85 +494,78 @@
             {
               "translation": "never",
               "l1_index": [
-                8,
-                9
+                2,
+                3
               ],
               "l2_index": [
-                9
+                3
+              ],
+              "similar_sound": [
+                "más busca",
+                "más trunca"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "you leave",
+              "l1_index": [
+                4,
+                6
+              ],
+              "l2_index": [
+                2,
+                4
+              ],
+              "similar_sound": [
+                "te callas,",
+                "te rayas,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "me,",
+              "l1_index": [
+                5
+              ],
+              "l2_index": [
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "you leave me,",
+              "translation": "my love",
               "l1_index": [
-                10,
-                11,
-                12
+                7,
+                8
               ],
               "l2_index": [
-                8,
-                10,
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                13
-              ],
-              "l2_index": [
-                12
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "life",
-              "l1_index": [
-                14
-              ],
-              "l2_index": [
-                13
+                6,
+                7
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
             }
           ],
-          "index": 4
+          "index": 1
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
+          "text_l2": "I ask God",
           "timestamp": "00:37",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -506,17 +573,32 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
+          "index": 2
         },
         {
-          "text_l1": "que mi alma no descanse cuando de amarte se trate, mi cielo",
-          "text_l2": "that my soul not rest when it comes to loving you, my heaven",
+          "text_l1": "Que mi alma no descanse",
+          "text_l2": "That my soul does not rest",
           "timestamp": "00:38",
           "translations": [
             {
-              "translation": "that",
+              "translation": "That",
               "l1_index": [
                 0
               ],
@@ -548,110 +630,115 @@
                 2
               ],
               "similar_sound": [
-                "palma",
+                "arma",
                 "calma"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not rest",
+              "translation": "does not rest",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4
+                4,
+                5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "no se canse",
+                "no se dance"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 3
+        },
+        {
+          "text_l1": "cuando de amarte se trate, mi cielo",
+          "text_l2": "when it is about loving you, my heaven",
+          "timestamp": "00:40",
+          "translations": [
             {
               "translation": "when",
               "l1_index": [
-                5
+                0
               ],
               "l2_index": [
-                5
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "it comes to loving you,",
+              "translation": "it is about",
               "l1_index": [
-                6,
-                7,
-                8,
-                9
-              ],
-              "l2_index": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                10
-              ],
-              "l2_index": [
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "heaven",
-              "l1_index": [
-                11
-              ],
-              "l2_index": [
-                12
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            }
-          ],
-          "index": 6
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "00:42",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
+                1,
+                3,
+                4
               ],
               "l2_index": [
                 1,
+                2,
+                3
+              ],
+              "similar_sound": [
+                "de se mate,",
+                "de se atreva,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "loving you,",
+              "l1_index": [
                 2
+              ],
+              "l2_index": [
+                4,
+                5
+              ],
+              "similar_sound": [
+                "armarte",
+                "quemarte"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "my heaven",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "00:42",
+          "translations": [
             {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -659,22 +746,37 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 7
+          "index": 5
         }
       ],
-      "description": "The song begins with deeply personal wishes for love, family, and a lasting connection.",
+      "description": "Continuing the first verse, this lesson focuses on the plea for a loved one to stay and for an unending passion.",
       "start_timestamp": null,
-      "end_timestamp": "00:43"
+      "end_timestamp": "00:44"
     },
     {
-      "title": "Wishes for Humanity and Future",
+      "title": "Prayers for Future Generations",
       "phrases": [
         {
-          "text_l1": "Por los días que me quedan y las noches que aún no llegan, yo",
-          "text_l2": "For the days that I have left and the nights that have not yet come, I",
-          "timestamp": "00:43",
+          "text_l1": "Por los días que me quedan",
+          "text_l2": "For the days that I have left",
+          "timestamp": "00:44",
           "translations": [
             {
               "translation": "For",
@@ -699,36 +801,57 @@
                 2
               ],
               "similar_sound": [
-                "los guías",
-                "los rías"
+                "los míos",
+                "los tías"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "that I have left",
+              "translation": "that",
               "l1_index": [
-                3,
-                4,
-                5
+                3
               ],
               "l2_index": [
-                3,
-                4,
-                5,
-                6
+                3
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "and",
+              "translation": "I have left",
               "l1_index": [
-                6
+                4,
+                5
               ],
               "l2_index": [
-                7
+                4,
+                5,
+                6
+              ],
+              "similar_sound": [
+                "me queman",
+                "me ruedan"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "y las noches que aún no llegan, yo",
+          "text_l2": "and the nights that have not yet arrived, I",
+          "timestamp": "00:46",
+          "translations": [
+            {
+              "translation": "and",
+              "l1_index": [
+                0
+              ],
+              "l2_index": [
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -737,80 +860,80 @@
             {
               "translation": "the nights",
               "l1_index": [
-                7,
-                8
+                1,
+                2
               ],
               "l2_index": [
-                8,
-                9
+                1,
+                2
               ],
               "similar_sound": [
-                "las broches",
-                "las voces"
+                "las voces",
+                "las broches"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
-              "translation": "that have not yet come,",
+              "translation": "that",
               "l1_index": [
-                9,
-                10,
-                11,
-                12
+                3
               ],
               "l2_index": [
-                10,
-                11,
-                12,
-                13,
-                14
+                3
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "I",
+              "translation": "have not yet arrived,",
               "l1_index": [
-                13
+                4,
+                5,
+                6
               ],
               "l2_index": [
-                15
+                4,
+                5,
+                6,
+                7
+              ],
+              "similar_sound": [
+                "aún no juegan,",
+                "aún no ruegan,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "I",
+              "l1_index": [
+                7
+              ],
+              "l2_index": [
+                8
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             }
           ],
-          "index": 0
+          "index": 1
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "00:48",
+          "text_l2": "I ask God",
+          "timestamp": "00:49",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -818,178 +941,84 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
-            }
-          ],
-          "index": 1
-        },
-        {
-          "text_l1": "por los hijos de mis hijos y los hijos de tus hijos",
-          "text_l2": "for the children of my children and the children of your children",
-          "timestamp": "00:50",
-          "translations": [
-            {
-              "translation": "for",
-              "l1_index": [
-                0
-              ],
-              "l2_index": [
-                0
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
             },
             {
-              "translation": "the children",
+              "translation": "God",
               "l1_index": [
-                1,
-                2
+                1
               ],
               "l2_index": [
-                1,
                 2
               ],
               "similar_sound": [
-                "los fijos",
-                "los ricos"
+                "dos",
+                "adiós"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "of",
-              "l1_index": [
-                3
-              ],
-              "l2_index": [
-                3
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                4
-              ],
-              "l2_index": [
-                4
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "children",
-              "l1_index": [
-                5
-              ],
-              "l2_index": [
-                5
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "and",
-              "l1_index": [
-                6
-              ],
-              "l2_index": [
-                6
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "the children",
-              "l1_index": [
-                7,
-                8
-              ],
-              "l2_index": [
-                7,
-                8
-              ],
-              "similar_sound": [
-                "los fijos",
-                "los ricos"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "of",
-              "l1_index": [
-                9
-              ],
-              "l2_index": [
-                9
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "your",
-              "l1_index": [
-                10
-              ],
-              "l2_index": [
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "children",
-              "l1_index": [
-                11
-              ],
-              "l2_index": [
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
               "language_alignment_activity": 1
             }
           ],
           "index": 2
         },
         {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "00:54",
+          "text_l1": "Por los hijos de mis hijos",
+          "text_l2": "For the children of my children",
+          "timestamp": "00:51",
           "translations": [
             {
-              "translation": "of God",
+              "translation": "For",
               "l1_index": [
-                0,
-                1
+                0
+              ],
+              "l2_index": [
+                0
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "the children",
+              "l1_index": [
+                1,
+                2
               ],
               "l2_index": [
                 1,
                 2
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "los fijos",
+                "los pijos"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "ask",
+              "translation": "of",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                3
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "my children",
+              "l1_index": [
+                4,
+                5
+              ],
+              "l2_index": [
+                4,
+                5
               ],
               "similar_sound": [
-                "nido",
-                "olvido"
+                "mis ojos",
+                "mis piojos"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -998,12 +1027,12 @@
           "index": 3
         },
         {
-          "text_l1": "que mi pueblo no derrame tanta sangre y se levante mi gente",
-          "text_l2": "that my people not shed so much blood and my people rise up",
-          "timestamp": "00:55",
+          "text_l1": "y los hijos de tus hijos",
+          "text_l2": "and the children of your children",
+          "timestamp": "00:52",
           "translations": [
             {
-              "translation": "that",
+              "translation": "and",
               "l1_index": [
                 0
               ],
@@ -1015,7 +1044,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "my people",
+              "translation": "the children",
               "l1_index": [
                 1,
                 2
@@ -1025,24 +1054,151 @@
                 2
               ],
               "similar_sound": [
-                "mi cuervo",
-                "mi suelo"
+                "los fijos",
+                "los pijos"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not shed",
+              "translation": "of",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                3
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "your children",
+              "l1_index": [
+                4,
+                5
+              ],
+              "l2_index": [
+                4,
+                5
+              ],
+              "similar_sound": [
+                "tus ojos",
+                "tus piojos"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "00:54",
+          "translations": [
+            {
+              "translation": "I ask",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                0,
+                1
+              ],
+              "similar_sound": [
+                "nido",
+                "olvido"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 5
+        }
+      ],
+      "description": "This lesson covers prayers for the future, including the remaining days and nights, and for the well-being of future generations.",
+      "start_timestamp": null,
+      "end_timestamp": "00:56"
+    },
+    {
+      "title": "Prayers for Society and Devotion",
+      "phrases": [
+        {
+          "text_l1": "Que mi pueblo no derrame tanta sangre",
+          "text_l2": "That my people do not spill so much blood",
+          "timestamp": "00:56",
+          "translations": [
+            {
+              "translation": "That",
+              "l1_index": [
+                0
+              ],
+              "l2_index": [
+                0
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "my",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "people",
+              "l1_index": [
+                2
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "diablo",
+                "duelo"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "do not spill",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4
+                4,
+                5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "no se rame",
+                "no se calme"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 0
             },
             {
@@ -1052,86 +1208,84 @@
                 6
               ],
               "l2_index": [
-                5,
                 6,
-                7
-              ],
-              "similar_sound": [
-                "tanta hambre",
-                "tanta lumbre"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "and",
-              "l1_index": [
-                7
-              ],
-              "l2_index": [
+                7,
                 8
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "y se levante mi gente",
+          "text_l2": "and that my people rise up",
+          "timestamp": "00:58",
+          "translations": [
             {
-              "translation": "rise up",
+              "translation": "and",
               "l1_index": [
-                8,
-                9
+                0
               ],
               "l2_index": [
-                11,
-                12
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 1
+              "language_alignment_activity": 0
             },
             {
               "translation": "my people",
               "l1_index": [
-                10,
-                11
+                3,
+                4
               ],
               "l2_index": [
-                9,
-                10
+                2,
+                3
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            }
-          ],
-          "index": 4
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "00:59",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
+              "similar_sound": [
+                "mi diente",
+                "mi mente"
               ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "ask",
+              "translation": "rise up",
+              "l1_index": [
+                1,
+                2
+              ],
+              "l2_index": [
+                4,
+                5
+              ],
+              "similar_sound": [
+                "se aguante",
+                "se cante"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 1
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "00:59",
+          "translations": [
+            {
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -1139,17 +1293,32 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
+          "index": 2
         },
         {
-          "text_l1": "que mi alma no descanse cuando de amarte se trate, mi cielo",
-          "text_l2": "that my soul not rest when it comes to loving you, my heaven",
-          "timestamp": "01:00",
+          "text_l1": "Que mi alma no descanse",
+          "text_l2": "That my soul does not rest",
+          "timestamp": "01:01",
           "translations": [
             {
-              "translation": "that",
+              "translation": "That",
               "l1_index": [
                 0
               ],
@@ -1181,110 +1350,115 @@
                 2
               ],
               "similar_sound": [
-                "palma",
+                "arma",
                 "calma"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not rest",
+              "translation": "does not rest",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4
+                4,
+                5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "no se canse",
+                "no se dance"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 3
+        },
+        {
+          "text_l1": "cuando de amarte se trate, mi cielo",
+          "text_l2": "when it is about loving you, my heaven",
+          "timestamp": "01:02",
+          "translations": [
             {
               "translation": "when",
               "l1_index": [
-                5
+                0
               ],
               "l2_index": [
-                5
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "it comes to loving you,",
+              "translation": "it is about",
               "l1_index": [
-                6,
-                7,
-                8,
-                9
-              ],
-              "l2_index": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                10
-              ],
-              "l2_index": [
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "heaven",
-              "l1_index": [
-                11
-              ],
-              "l2_index": [
-                12
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            }
-          ],
-          "index": 6
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "01:04",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
+                1,
+                3,
+                4
               ],
               "l2_index": [
                 1,
+                2,
+                3
+              ],
+              "similar_sound": [
+                "de se mate,",
+                "de se atreva,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "loving you,",
+              "l1_index": [
                 2
+              ],
+              "l2_index": [
+                4,
+                5
+              ],
+              "similar_sound": [
+                "armarte",
+                "quemarte"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "my heaven",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "01:04",
+          "translations": [
             {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -1292,40 +1466,58 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 7
-        }
-      ],
-      "description": "Expanding the scope of wishes to include future generations and the well-being of the community.",
-      "start_timestamp": null,
-      "end_timestamp": "01:05"
-    },
-    {
-      "title": "A Second More for Love",
-      "phrases": [
+          "index": 5
+        },
         {
           "text_l1": "Un segundo más de vida para darte",
           "text_l2": "One more second of life to give you",
-          "timestamp": "01:05",
+          "timestamp": "01:06",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life",
@@ -1337,12 +1529,9 @@
                 3,
                 4
               ],
-              "similar_sound": [
-                "de pida",
-                "de mira"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 1
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             },
             {
               "translation": "to give you",
@@ -1355,20 +1544,23 @@
                 6,
                 7
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "para quemarte",
+                "para arte"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 0
+          "index": 6
         },
         {
-          "text_l1": "y mi corazón entero entregarte",
-          "text_l2": "and my whole heart to give you",
+          "text_l1": "Y mi corazón entero entregarte",
+          "text_l2": "And my whole heart to give you",
           "timestamp": "01:08",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -1380,19 +1572,30 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "my whole heart",
+              "translation": "my whole",
               "l1_index": [
                 1,
                 3
               ],
               "l2_index": [
                 1,
-                2,
+                2
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "heart",
+              "l1_index": [
+                2
+              ],
+              "l2_index": [
                 3
               ],
               "similar_sound": [
-                "mi enero",
-                "mi sendero"
+                "razón",
+                "canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -1409,36 +1612,55 @@
               ],
               "similar_sound": [
                 "enterrarte",
-                "entre arte"
+                "encontrarte"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 1
-        },
+          "index": 7
+        }
+      ],
+      "description": "This lesson shifts to a broader prayer for peace and uprising for the community, then transitions into the theme of unwavering devotion.",
+      "start_timestamp": null,
+      "end_timestamp": "01:11"
+    },
+    {
+      "title": "The Ultimate Prayer of Love (Chorus Introduction)",
+      "phrases": [
         {
           "text_l1": "Un segundo más de vida para darte",
           "text_l2": "One more second of life to give you",
-          "timestamp": "01:10",
+          "timestamp": "01:11",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life",
@@ -1450,12 +1672,9 @@
                 3,
                 4
               ],
-              "similar_sound": [
-                "de pida",
-                "de mira"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 1
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             },
             {
               "translation": "to give you",
@@ -1468,20 +1687,23 @@
                 6,
                 7
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "para quemarte",
+                "para arte"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 2
+          "index": 0
         },
         {
-          "text_l1": "y a tu lado para siempre yo quedarme",
-          "text_l2": "and by your side forever I stay",
-          "timestamp": "01:12",
+          "text_l1": "Y a tu lado para siempre yo quedarme",
+          "text_l2": "And by your side forever I will stay",
+          "timestamp": "01:13",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -1505,8 +1727,8 @@
                 3
               ],
               "similar_sound": [
-                "a tu dado",
-                "a tu prado"
+                "a tu palo",
+                "a tu helado"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -1537,45 +1759,57 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "stay",
+              "translation": "will stay",
               "l1_index": [
                 7
               ],
               "l2_index": [
-                6
+                6,
+                7
               ],
               "similar_sound": [
                 "quemarme",
-                "que darme"
+                "quitarme"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 3
+          "index": 1
         },
         {
           "text_l1": "Un segundo más de vida, yo",
           "text_l2": "One more second of life, I",
-          "timestamp": "01:15",
+          "timestamp": "01:16",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life,",
@@ -1588,8 +1822,8 @@
                 4
               ],
               "similar_sound": [
-                "de pida,",
-                "de mira,"
+                "de risa,",
+                "de pisa,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -1607,34 +1841,21 @@
               "language_alignment_activity": 0
             }
           ],
-          "index": 4
+          "index": 2
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "01:18",
+          "text_l2": "I ask God",
+          "timestamp": "01:19",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -1642,22 +1863,29 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
-        }
-      ],
-      "description": "A heartfelt plea for more time to express love and commitment.",
-      "start_timestamp": null,
-      "end_timestamp": "01:20"
-    },
-    {
-      "title": "The Core Request",
-      "phrases": [
+          "index": 3
+        },
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
-          "timestamp": "01:20",
+          "text_l2": "That if I die, it is of love",
+          "timestamp": "01:21",
           "translations": [
             {
               "translation": "That",
@@ -1684,7 +1912,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -1695,38 +1923,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 0
+          "index": 4
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
           "timestamp": "01:23",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -1750,7 +1991,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -1763,13 +2004,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -1783,18 +2024,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
-          "index": 1
+          "index": 5
         },
         {
-          "text_l1": "y que de tu voz sea este corazón",
-          "text_l2": "and that of your voice be this heart",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
           "timestamp": "01:25",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -1837,7 +2078,7 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -1859,18 +2100,18 @@
                 7
               ],
               "similar_sound": [
-                "este calzón",
-                "este sazón"
+                "este razón",
+                "este canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 2
+          "index": 6
         },
         {
           "text_l1": "Todos los días, a Dios le pido",
-          "text_l2": "Every day, I ask of God",
+          "text_l2": "Every day, I ask God",
           "timestamp": "01:28",
           "translations": [
             {
@@ -1885,47 +2126,55 @@
                 1
               ],
               "similar_sound": [
-                "Todos los guías,",
+                "Todos los tías,",
                 "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "I ask of God",
+              "translation": "I ask",
               "l1_index": [
-                3,
-                4,
                 5,
                 6
               ],
               "l2_index": [
                 2,
-                3,
-                4,
-                5
+                3
               ],
               "similar_sound": [
-                "a Dios le nido",
-                "a Dios le olvido"
+                "le miro",
+                "le digo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             }
           ],
-          "index": 3
+          "index": 7
         }
       ],
-      "description": "The central theme of the song is revealed: a desire for love to be the cause of life and death.",
+      "description": "This lesson completes the pre-chorus, emphasizing the desire for more time with a loved one, and introduces the powerful main chorus.",
       "start_timestamp": null,
       "end_timestamp": "01:30"
     },
     {
-      "title": "Repeating the Plea",
+      "title": "Repeating the Core Message",
       "phrases": [
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
+          "text_l2": "That if I die, it is of love",
           "timestamp": "01:30",
           "translations": [
             {
@@ -1953,7 +2202,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -1964,38 +2213,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
           "index": 0
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
-          "timestamp": "01:32",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
+          "timestamp": "01:33",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -2019,7 +2281,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -2032,13 +2294,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -2052,18 +2314,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
           "index": 1
         },
         {
-          "text_l1": "y que de tu voz sea este corazón",
-          "text_l2": "and that of your voice be this heart",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
           "timestamp": "01:35",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -2106,7 +2368,7 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -2128,8 +2390,8 @@
                 7
               ],
               "similar_sound": [
-                "este calzón",
-                "este sazón"
+                "este razón",
+                "este canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -2139,7 +2401,7 @@
         },
         {
           "text_l1": "Todos los días, a Dios le pido",
-          "text_l2": "Every day, I ask of God",
+          "text_l2": "Every day, I ask God",
           "timestamp": "01:38",
           "translations": [
             {
@@ -2154,66 +2416,76 @@
                 1
               ],
               "similar_sound": [
-                "Todos los guías,",
+                "Todos los tías,",
                 "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "I ask of God",
+              "translation": "I ask",
               "l1_index": [
-                3,
-                4,
                 5,
                 6
               ],
               "l2_index": [
                 2,
-                3,
-                4,
-                5
+                3
               ],
               "similar_sound": [
-                "a Dios le nido",
-                "a Dios le olvido"
+                "le miro",
+                "le digo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             }
           ],
           "index": 3
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
+          "text_l2": "I ask God",
           "timestamp": "01:44",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
                 "olvido"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -2222,16 +2494,16 @@
           "index": 4
         }
       ],
-      "description": "Repetition of the chorus, emphasizing its importance, followed by a transition.",
+      "description": "This lesson reinforces the core message of the song's chorus, emphasizing the daily prayer for love and connection.",
       "start_timestamp": null,
       "end_timestamp": "02:00"
     },
     {
-      "title": "Revisiting Personal Wishes",
+      "title": "Renewed Prayers for Family",
       "phrases": [
         {
-          "text_l1": "Que mis ojos se despierten con la luz de tu mirada, yo",
-          "text_l2": "That my eyes may be awaken with the light of your gaze, I",
+          "text_l1": "Que mis ojos se despierten",
+          "text_l2": "That my eyes may awaken",
           "timestamp": "02:00",
           "translations": [
             {
@@ -2274,27 +2546,37 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "may be awaken",
+              "translation": "may awaken",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4,
-                5
+                4
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "se diviertan",
+                "se despiden"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "con la luz de tu mirada, yo",
+          "text_l2": "with the light of your gaze, I",
+          "timestamp": "02:03",
+          "translations": [
             {
               "translation": "with",
               "l1_index": [
-                5
+                0
               ],
               "l2_index": [
-                6
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -2303,24 +2585,27 @@
             {
               "translation": "the light",
               "l1_index": [
-                6,
-                7
+                1,
+                2
               ],
               "l2_index": [
-                7,
-                8
+                1,
+                2
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
+              "similar_sound": [
+                "la cruz",
+                "la tos"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             },
             {
               "translation": "of",
               "l1_index": [
-                8
+                3
               ],
               "l2_index": [
-                9
+                3
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -2329,10 +2614,10 @@
             {
               "translation": "your",
               "l1_index": [
-                9
+                4
               ],
               "l2_index": [
-                10
+                4
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -2341,59 +2626,46 @@
             {
               "translation": "gaze,",
               "l1_index": [
-                10
+                5
               ],
               "l2_index": [
-                11
+                5
               ],
               "similar_sound": [
-                "mi nada,",
-                "mi hada,"
+                "mi hada,",
+                "mi nada,"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "I",
               "l1_index": [
-                11
+                6
               ],
               "l2_index": [
-                12
+                6
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             }
           ],
-          "index": 0
+          "index": 1
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "02:05",
+          "text_l2": "I ask God",
+          "timestamp": "02:06",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -2401,17 +2673,32 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 1
+          "index": 2
         },
         {
-          "text_l1": "que mi madre no se muera y que mi padre me recuerde",
-          "text_l2": "that my mother not die and that my father remember me",
+          "text_l1": "Que mi madre no se muera",
+          "text_l2": "That my mother does not die",
           "timestamp": "02:07",
           "translations": [
             {
-              "translation": "that",
+              "translation": "That",
               "l1_index": [
                 0
               ],
@@ -2443,14 +2730,14 @@
                 2
               ],
               "similar_sound": [
-                "nadie",
-                "sangre"
+                "padre",
+                "nadie"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not die",
+              "translation": "does not die",
               "l1_index": [
                 3,
                 4,
@@ -2458,110 +2745,12 @@
               ],
               "l2_index": [
                 3,
-                4
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "and",
-              "l1_index": [
-                6
-              ],
-              "l2_index": [
+                4,
                 5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "that",
-              "l1_index": [
-                7
-              ],
-              "l2_index": [
-                6
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                8
-              ],
-              "l2_index": [
-                7
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "father",
-              "l1_index": [
-                9
-              ],
-              "l2_index": [
-                8
-              ],
               "similar_sound": [
-                "catre",
-                "sable"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "remember me",
-              "l1_index": [
-                10,
-                11
-              ],
-              "l2_index": [
-                9,
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            }
-          ],
-          "index": 2
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "02:11",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
-              "l1_index": [
-                3
-              ],
-              "l2_index": [
-                0
-              ],
-              "similar_sound": [
-                "nido",
-                "olvido"
+                "no se fuera",
+                "no se vuela"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -2570,12 +2759,12 @@
           "index": 3
         },
         {
-          "text_l1": "que te quedes a mi lado y que más nunca te me vayas, mi vida",
-          "text_l2": "that you stay by my side and that you never leave me, my life",
-          "timestamp": "02:12",
+          "text_l1": "y que mi padre me recuerde",
+          "text_l2": "and that my father remembers me",
+          "timestamp": "02:09",
           "translations": [
             {
-              "translation": "that",
+              "translation": "and",
               "l1_index": [
                 0
               ],
@@ -2587,18 +2776,158 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "you stay",
+              "translation": "that",
               "l1_index": [
-                1,
+                1
+              ],
+              "l2_index": [
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "my",
+              "l1_index": [
                 2
               ],
               "l2_index": [
-                1,
+                2
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "father",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                3
+              ],
+              "similar_sound": [
+                "madre",
+                "nadie"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "remembers",
+              "l1_index": [
+                5
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "me",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                5
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "02:11",
+          "translations": [
+            {
+              "translation": "I ask",
+              "l1_index": [
+                3
+              ],
+              "l2_index": [
+                0,
+                1
+              ],
+              "similar_sound": [
+                "nido",
+                "olvido"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "te cedes",
-                "te quedas"
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 5
+        }
+      ],
+      "description": "This lesson revisits the opening themes of the song, with renewed prayers for family and the light of a loved one's gaze.",
+      "start_timestamp": null,
+      "end_timestamp": "02:12"
+    },
+    {
+      "title": "Renewed Prayers for Love's Constancy",
+      "phrases": [
+        {
+          "text_l1": "Que te quedes a mi lado",
+          "text_l2": "That you stay by my side",
+          "timestamp": "02:12",
+          "translations": [
+            {
+              "translation": "That",
+              "l1_index": [
+                0
+              ],
+              "l2_index": [
+                0
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "you",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "stay",
+              "l1_index": [
+                2
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "quemes",
+                "quiebres"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -2615,17 +2944,28 @@
                 4,
                 5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
+              "similar_sound": [
+                "a mi palo",
+                "a mi helado"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 0
+        },
+        {
+          "text_l1": "y que más nunca te me vayas, mi vida",
+          "text_l2": "and that you never leave me, my love",
+          "timestamp": "02:14",
+          "translations": [
             {
               "translation": "and",
               "l1_index": [
-                6
+                0
               ],
               "l2_index": [
-                6
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -2634,10 +2974,10 @@
             {
               "translation": "that",
               "l1_index": [
-                7
+                1
               ],
               "l2_index": [
-                7
+                1
               ],
               "similar_sound": null,
               "listening_activity": 0,
@@ -2646,85 +2986,78 @@
             {
               "translation": "never",
               "l1_index": [
-                8,
-                9
+                2,
+                3
               ],
               "l2_index": [
-                9
+                3
+              ],
+              "similar_sound": [
+                "más busca",
+                "más trunca"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "you leave",
+              "l1_index": [
+                4,
+                6
+              ],
+              "l2_index": [
+                2,
+                4
+              ],
+              "similar_sound": [
+                "te callas,",
+                "te rayas,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "me,",
+              "l1_index": [
+                5
+              ],
+              "l2_index": [
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "you leave me,",
+              "translation": "my love",
               "l1_index": [
-                10,
-                11,
-                12
+                7,
+                8
               ],
               "l2_index": [
-                8,
-                10,
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                13
-              ],
-              "l2_index": [
-                12
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "life",
-              "l1_index": [
-                14
-              ],
-              "l2_index": [
-                13
+                6,
+                7
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
             }
           ],
-          "index": 4
+          "index": 1
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
+          "text_l2": "I ask God",
           "timestamp": "02:16",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -2732,17 +3065,32 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
+          "index": 2
         },
         {
-          "text_l1": "que mi alma no descanse cuando de amarte se trate, mi cielo",
-          "text_l2": "that my soul not rest when it comes to loving you, my heaven",
+          "text_l1": "Que mi alma no descanse",
+          "text_l2": "That my soul does not rest",
           "timestamp": "02:17",
           "translations": [
             {
-              "translation": "that",
+              "translation": "That",
               "l1_index": [
                 0
               ],
@@ -2774,110 +3122,115 @@
                 2
               ],
               "similar_sound": [
-                "palma",
+                "arma",
                 "calma"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "not rest",
+              "translation": "does not rest",
               "l1_index": [
                 3,
                 4
               ],
               "l2_index": [
                 3,
-                4
+                4,
+                5
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "no se canse",
+                "no se dance"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 3
+        },
+        {
+          "text_l1": "cuando de amarte se trate, mi cielo",
+          "text_l2": "when it is about loving you, my heaven",
+          "timestamp": "02:19",
+          "translations": [
             {
               "translation": "when",
               "l1_index": [
-                5
+                0
               ],
               "l2_index": [
-                5
+                0
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
             },
             {
-              "translation": "it comes to loving you,",
+              "translation": "it is about",
               "l1_index": [
-                6,
-                7,
-                8,
-                9
-              ],
-              "l2_index": [
-                6,
-                7,
-                8,
-                9,
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "my",
-              "l1_index": [
-                10
-              ],
-              "l2_index": [
-                11
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            },
-            {
-              "translation": "heaven",
-              "l1_index": [
-                11
-              ],
-              "l2_index": [
-                12
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            }
-          ],
-          "index": 6
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "02:21",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
+                1,
+                3,
+                4
               ],
               "l2_index": [
                 1,
+                2,
+                3
+              ],
+              "similar_sound": [
+                "de se mate,",
+                "de se atreva,"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "loving you,",
+              "l1_index": [
                 2
+              ],
+              "l2_index": [
+                4,
+                5
+              ],
+              "similar_sound": [
+                "armarte",
+                "quemarte"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "my heaven",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 4
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "02:21",
+          "translations": [
             {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -2885,17 +3238,32 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 7
+          "index": 5
         }
       ],
-      "description": "The song reiterates the initial personal wishes, reinforcing their significance.",
+      "description": "Continuing the repeated verse, this lesson focuses on the enduring desire for a loved one's presence and an eternal love.",
       "start_timestamp": null,
       "end_timestamp": "02:22"
     },
     {
-      "title": "Another Moment for Love",
+      "title": "Deeper Devotion",
       "phrases": [
         {
           "text_l1": "Un segundo más de vida para darte",
@@ -2903,22 +3271,33 @@
           "timestamp": "02:22",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life",
@@ -2930,12 +3309,9 @@
                 3,
                 4
               ],
-              "similar_sound": [
-                "de pida",
-                "de mira"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 1
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             },
             {
               "translation": "to give you",
@@ -2948,20 +3324,23 @@
                 6,
                 7
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "para quemarte",
+                "para arte"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
           "index": 0
         },
         {
-          "text_l1": "y mi corazón entero entregarte",
-          "text_l2": "and my whole heart to give you",
-          "timestamp": "02:24",
+          "text_l1": "Y mi corazón entero entregarte",
+          "text_l2": "And my whole heart to give you",
+          "timestamp": "02:25",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -2973,19 +3352,30 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "my whole heart",
+              "translation": "my whole",
               "l1_index": [
                 1,
                 3
               ],
               "l2_index": [
                 1,
-                2,
+                2
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "heart",
+              "l1_index": [
+                2
+              ],
+              "l2_index": [
                 3
               ],
               "similar_sound": [
-                "mi enero",
-                "mi sendero"
+                "razón",
+                "canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3002,7 +3392,7 @@
               ],
               "similar_sound": [
                 "enterrarte",
-                "entre arte"
+                "encontrarte"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3016,22 +3406,33 @@
           "timestamp": "02:27",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life",
@@ -3043,12 +3444,9 @@
                 3,
                 4
               ],
-              "similar_sound": [
-                "de pida",
-                "de mira"
-              ],
-              "listening_activity": 1,
-              "language_alignment_activity": 1
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             },
             {
               "translation": "to give you",
@@ -3061,20 +3459,23 @@
                 6,
                 7
               ],
-              "similar_sound": null,
-              "listening_activity": 0,
+              "similar_sound": [
+                "para quemarte",
+                "para arte"
+              ],
+              "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
           "index": 2
         },
         {
-          "text_l1": "y a tu lado para siempre yo quedarme",
-          "text_l2": "and by your side forever I stay",
+          "text_l1": "Y a tu lado para siempre yo quedarme",
+          "text_l2": "And by your side forever I will stay",
           "timestamp": "02:29",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3098,8 +3499,8 @@
                 3
               ],
               "similar_sound": [
-                "a tu dado",
-                "a tu prado"
+                "a tu palo",
+                "a tu helado"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3130,16 +3531,17 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "stay",
+              "translation": "will stay",
               "l1_index": [
                 7
               ],
               "l2_index": [
-                6
+                6,
+                7
               ],
               "similar_sound": [
                 "quemarme",
-                "que darme"
+                "quitarme"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3153,22 +3555,33 @@
           "timestamp": "02:32",
           "translations": [
             {
-              "translation": "One more second",
+              "translation": "One more",
               "l1_index": [
                 0,
                 2
               ],
               "l2_index": [
                 0,
-                1,
+                1
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
+            },
+            {
+              "translation": "second",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
                 2
               ],
               "similar_sound": [
-                "Un vals",
-                "Un gas"
+                "mundo",
+                "redondo"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
               "translation": "of life,",
@@ -3181,8 +3594,8 @@
                 4
               ],
               "similar_sound": [
-                "de pida,",
-                "de mira,"
+                "de risa,",
+                "de pisa,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3204,34 +3617,36 @@
         },
         {
           "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "02:35",
+          "text_l2": "I ask God",
+          "timestamp": "02:36",
           "translations": [
             {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
-                2
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
                 "olvido"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3240,16 +3655,16 @@
           "index": 5
         }
       ],
-      "description": "The pre-chorus returns, highlighting the enduring desire for more time dedicated to love.",
+      "description": "This lesson repeats the pre-chorus, emphasizing the deep desire for more life to dedicate to love and to remain by a loved one's side.",
       "start_timestamp": null,
       "end_timestamp": "02:37"
     },
     {
-      "title": "The Unwavering Chorus",
+      "title": "The Enduring Chorus",
       "phrases": [
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
+          "text_l2": "That if I die, it is of love",
           "timestamp": "02:37",
           "translations": [
             {
@@ -3277,7 +3692,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -3288,38 +3703,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
           "index": 0
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
           "timestamp": "02:39",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3343,7 +3771,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -3356,13 +3784,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -3376,18 +3804,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
           "index": 1
         },
         {
-          "text_l1": "y que de tu voz sea este corazón",
-          "text_l2": "and that of your voice be this heart",
-          "timestamp": "02:41",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
+          "timestamp": "02:42",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3430,7 +3858,7 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -3452,8 +3880,8 @@
                 7
               ],
               "similar_sound": [
-                "este calzón",
-                "este sazón"
+                "este razón",
+                "este canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3463,7 +3891,7 @@
         },
         {
           "text_l1": "Todos los días, a Dios le pido",
-          "text_l2": "Every day, I ask of God",
+          "text_l2": "Every day, I ask God",
           "timestamp": "02:44",
           "translations": [
             {
@@ -3478,40 +3906,56 @@
                 1
               ],
               "similar_sound": [
-                "Todos los guías,",
+                "Todos los tías,",
                 "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "I ask of God",
+              "translation": "I ask",
               "l1_index": [
-                3,
-                4,
                 5,
                 6
               ],
               "l2_index": [
                 2,
-                3,
-                4,
-                5
+                3
               ],
               "similar_sound": [
-                "a Dios le nido",
-                "a Dios le olvido"
+                "le miro",
+                "le digo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             }
           ],
           "index": 3
-        },
+        }
+      ],
+      "description": "This lesson presents another repetition of the powerful chorus, reinforcing the central theme of love as the ultimate desire.",
+      "start_timestamp": null,
+      "end_timestamp": "02:47"
+    },
+    {
+      "title": "Final Repetitions (Part 1)",
+      "phrases": [
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
-          "timestamp": "02:46",
+          "text_l2": "That if I die, it is of love",
+          "timestamp": "02:47",
           "translations": [
             {
               "translation": "That",
@@ -3538,7 +3982,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -3549,38 +3993,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 4
+          "index": 0
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
           "timestamp": "02:49",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3604,7 +4061,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -3617,13 +4074,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -3637,18 +4094,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
+          "index": 1
         },
         {
-          "text_l1": "y que de tu voz sea este corazón",
-          "text_l2": "and that of your voice be this heart",
-          "timestamp": "02:51",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
+          "timestamp": "02:52",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3691,7 +4148,7 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -3713,18 +4170,18 @@
                 7
               ],
               "similar_sound": [
-                "este calzón",
-                "este sazón"
+                "este razón",
+                "este canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             }
           ],
-          "index": 6
+          "index": 2
         },
         {
           "text_l1": "Todos los días, a Dios le pido",
-          "text_l2": "Every day, I ask of God",
+          "text_l2": "Every day, I ask God",
           "timestamp": "02:54",
           "translations": [
             {
@@ -3739,47 +4196,55 @@
                 1
               ],
               "similar_sound": [
-                "Todos los guías,",
+                "Todos los tías,",
                 "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "I ask of God",
+              "translation": "I ask",
               "l1_index": [
-                3,
-                4,
                 5,
                 6
               ],
               "l2_index": [
                 2,
-                3,
-                4,
-                5
+                3
               ],
               "similar_sound": [
-                "a Dios le nido",
-                "a Dios le olvido"
+                "le miro",
+                "le digo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             }
           ],
-          "index": 7
+          "index": 3
         }
       ],
-      "description": "The powerful chorus is repeated, cementing its message in the listener's mind.",
+      "description": "This lesson continues with the repeated chorus, emphasizing the daily nature of the prayer for love and connection.",
       "start_timestamp": null,
       "end_timestamp": "02:57"
     },
     {
-      "title": "Concluding Thoughts",
+      "title": "Final Repetitions (Part 2)",
       "phrases": [
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
+          "text_l2": "That if I die, it is of love",
           "timestamp": "02:57",
           "translations": [
             {
@@ -3807,7 +4272,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -3818,38 +4283,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
           "index": 0
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
           "timestamp": "02:59",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3873,7 +4351,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -3886,13 +4364,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -3906,18 +4384,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
           "index": 1
         },
         {
-          "text_l1": "y que de tu voz sea este corazón",
-          "text_l2": "and that of your voice be this heart",
-          "timestamp": "03:01",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
+          "timestamp": "03:02",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -3960,7 +4438,7 @@
               "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -3982,8 +4460,8 @@
                 7
               ],
               "similar_sound": [
-                "este calzón",
-                "este sazón"
+                "este razón",
+                "este canción"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
@@ -3993,7 +4471,7 @@
         },
         {
           "text_l1": "Todos los días, a Dios le pido",
-          "text_l2": "Every day, I ask of God",
+          "text_l2": "Every day, I ask God",
           "timestamp": "03:04",
           "translations": [
             {
@@ -4008,40 +4486,56 @@
                 1
               ],
               "similar_sound": [
-                "Todos los guías,",
+                "Todos los tías,",
                 "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "I ask of God",
+              "translation": "I ask",
               "l1_index": [
-                3,
-                4,
                 5,
                 6
               ],
               "l2_index": [
                 2,
-                3,
-                4,
-                5
+                3
               ],
               "similar_sound": [
-                "a Dios le nido",
-                "a Dios le olvido"
+                "le miro",
+                "le digo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                4
+              ],
+              "l2_index": [
+                4
+              ],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 0
             }
           ],
           "index": 3
-        },
+        }
+      ],
+      "description": "Another repetition of the chorus, reinforcing the song's central plea for a life and death intertwined with love.",
+      "start_timestamp": null,
+      "end_timestamp": "03:07"
+    },
+    {
+      "title": "The Song's Conclusion",
+      "phrases": [
         {
           "text_l1": "Que si me muero sea de amor",
-          "text_l2": "That if I die it be of love",
-          "timestamp": "03:06",
+          "text_l2": "That if I die, it is of love",
+          "timestamp": "03:07",
           "translations": [
             {
               "translation": "That",
@@ -4068,7 +4562,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I die",
+              "translation": "I die,",
               "l1_index": [
                 2,
                 3
@@ -4079,38 +4573,51 @@
               ],
               "similar_sound": [
                 "me quiero",
-                "me cuero"
+                "me fuerzo"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be of love",
+              "translation": "it is",
               "l1_index": [
-                4,
-                5,
-                6
+                4
               ],
               "l2_index": [
                 4,
-                5,
-                6,
-                7
+                5
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 0
+            },
+            {
+              "translation": "of love",
+              "l1_index": [
+                5,
+                6
+              ],
+              "l2_index": [
+                6,
+                7
+              ],
+              "similar_sound": [
+                "de humor",
+                "de dolor"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 4
+          "index": 0
         },
         {
-          "text_l1": "y si me enamoro sea de vos",
-          "text_l2": "and if I fall in love it be with you",
+          "text_l1": "Y si me enamoro sea de vos",
+          "text_l2": "And if I fall in love, it is with you",
           "timestamp": "03:09",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -4134,7 +4641,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "I fall in love",
+              "translation": "I fall in love,",
               "l1_index": [
                 2,
                 3
@@ -4147,13 +4654,13 @@
               ],
               "similar_sound": [
                 "me demoro",
-                "me adoro"
+                "me lloro"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "it be with you",
+              "translation": "it is with you",
               "l1_index": [
                 4,
                 5,
@@ -4167,18 +4674,18 @@
               ],
               "similar_sound": null,
               "listening_activity": 0,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             }
           ],
-          "index": 5
+          "index": 1
         },
         {
-          "text_l1": "y que de tu voz sea este corazón, todos los días, yo",
-          "text_l2": "and that of your voice be this heart, every day, I",
-          "timestamp": "03:11",
+          "text_l1": "Y que de tu voz sea este corazón",
+          "text_l2": "And that of your voice is this heart",
+          "timestamp": "03:12",
           "translations": [
             {
-              "translation": "and",
+              "translation": "And",
               "l1_index": [
                 0
               ],
@@ -4218,10 +4725,10 @@
                 "de tu arroz"
               ],
               "listening_activity": 1,
-              "language_alignment_activity": 0
+              "language_alignment_activity": 1
             },
             {
-              "translation": "be",
+              "translation": "is",
               "l1_index": [
                 5
               ],
@@ -4233,7 +4740,7 @@
               "language_alignment_activity": 0
             },
             {
-              "translation": "this heart,",
+              "translation": "this heart",
               "l1_index": [
                 6,
                 7
@@ -4243,68 +4750,66 @@
                 7
               ],
               "similar_sound": [
-                "este calzón,",
-                "este sazón,"
+                "este razón",
+                "este canción"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ],
+          "index": 2
+        },
+        {
+          "text_l1": "Todos los días, yo...",
+          "text_l2": "Every day, I...",
+          "timestamp": "03:14",
+          "translations": [
+            {
+              "translation": "Every day,",
+              "l1_index": [
+                0,
+                1,
+                2
+              ],
+              "l2_index": [
+                0,
+                1
+              ],
+              "similar_sound": [
+                "Todos los tías,",
+                "Todos los frías,"
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
             },
             {
-              "translation": "every day,",
+              "translation": "I...",
               "l1_index": [
-                8,
-                9,
-                10
+                3
               ],
               "l2_index": [
-                8,
-                9
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 1
-            },
-            {
-              "translation": "I",
-              "l1_index": [
-                11
-              ],
-              "l2_index": [
-                10
-              ],
-              "similar_sound": null,
-              "listening_activity": 0,
-              "language_alignment_activity": 0
-            }
-          ],
-          "index": 6
-        },
-        {
-          "text_l1": "A Dios le pido",
-          "text_l2": "ask of God",
-          "timestamp": "03:18",
-          "translations": [
-            {
-              "translation": "of God",
-              "l1_index": [
-                0,
-                1
-              ],
-              "l2_index": [
-                1,
                 2
               ],
               "similar_sound": null,
               "listening_activity": 0,
               "language_alignment_activity": 1
-            },
+            }
+          ],
+          "index": 3
+        },
+        {
+          "text_l1": "A Dios le pido",
+          "text_l2": "I ask God",
+          "timestamp": "03:18",
+          "translations": [
             {
-              "translation": "ask",
+              "translation": "I ask",
               "l1_index": [
                 3
               ],
               "l2_index": [
-                0
+                0,
+                1
               ],
               "similar_sound": [
                 "nido",
@@ -4312,15 +4817,29 @@
               ],
               "listening_activity": 1,
               "language_alignment_activity": 1
+            },
+            {
+              "translation": "God",
+              "l1_index": [
+                1
+              ],
+              "l2_index": [
+                2
+              ],
+              "similar_sound": [
+                "dos",
+                "adiós"
+              ],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
             }
           ],
-          "index": 7
+          "index": 4
         }
       ],
-      "description": "The song concludes with the final repetitions of the chorus and the concluding phrase, leaving a lasting impression.",
+      "description": "This final lesson concludes the song with the last repetitions of the chorus and the ultimate declaration of the daily prayer.",
       "start_timestamp": null,
       "end_timestamp": "03:28"
     }
-  ],
-  "phrases": null
+  ]
 }

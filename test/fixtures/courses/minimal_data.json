@@ -1,0 +1,35 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=test123",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "lessons": [
+    {
+      "title": "Test Lesson",
+      "phrases": [
+        {
+          "text_l1": "Hola mundo",
+          "text_l2": "Hello world",
+          "timestamp": "00:01",
+          "translations": [
+            {
+              "translation": "Hello",
+              "l1_index": [0],
+              "l2_index": [0],
+              "similar_sound": null,
+              "listening_activity": 0,
+              "language_alignment_activity": 1
+            },
+            {
+              "translation": "world",
+              "l1_index": [1],
+              "l2_index": [1],
+              "similar_sound": ["mundo"],
+              "listening_activity": 1,
+              "language_alignment_activity": 1
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

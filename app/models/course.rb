@@ -31,19 +31,21 @@ class Course < ApplicationRecord
       .distinct
   }
 
-  def create_short!(progress)
-    raise "Missing creation data" unless progress.ready?
-    data = progress.data
+  def create_short!(data_hash)
+    raise "Missing creation data" unless data_hash["lessons"]
+    raise "Missing YouTube URL" unless data_hash["youtubeurl"]
+    raise "Missing clip language" unless data_hash["clip_language"]
+    raise "Missing translation language" unless data_hash["translation_language"]
 
-    l1 = Language.find_by(english_name: progress.clip_language)
-    l2 = Language.find_by(english_name: progress.translation_language)
-    medium = Medium.find_or_create_by!(url: progress.youtubeurl)
+    l1 = Language.find_by(english_name: data_hash["clip_language"])
+    l2 = Language.find_by(english_name: data_hash["translation_language"])
+    medium = Medium.find_or_create_by!(url: data_hash["youtubeurl"])
 
     self.lessons.destroy_all
     Lesson.where("slug like \'#{slug}%\'").destroy_all
     medium.phrases.destroy_all
 
-    data["lessons"].each_with_index do |lesson_data, lesson_index|
+    data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       l = Lesson.create!(
         medium: medium,
         slug: "#{slug}#{lesson_index}",
@@ -132,16 +134,18 @@ class Course < ApplicationRecord
     a3.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
   end
 
-  def create_song!(progress)
-    raise "Missing creation data" unless progress.ready?
+  def create_song!(data_hash)
+    raise "Missing creation data" unless data_hash["lessons"]
+    raise "Missing YouTube URL" unless data_hash["youtubeurl"]
+    raise "Missing clip language" unless data_hash["clip_language"]
+    raise "Missing translation language" unless data_hash["translation_language"]
     raise "Slug is required" if slug.nil?
-    data = progress.data
 
     Rails.logger.info("Finding languages")
-    l1 = Language.find_by(english_name: progress.clip_language)
-    l2 = Language.find_by(english_name: progress.translation_language)
+    l1 = Language.find_by(english_name: data_hash["clip_language"])
+    l2 = Language.find_by(english_name: data_hash["translation_language"])
     Rails.logger.info("Finding medium")
-    medium = Medium.find_or_create_by!(url: progress.youtubeurl)
+    medium = Medium.find_or_create_by!(url: data_hash["youtubeurl"])
 
     all_alignment_tokens = []
     all_listen_tokens = []
@@ -152,7 +156,7 @@ class Course < ApplicationRecord
     medium.phrases.destroy_all
 
     Rails.logger.info("Creating new lessons")
-    data["lessons"].each_with_index do |lesson_data, lesson_index|
+    data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       Rails.logger.info("Creating lesson: #{lesson_data["title"]}")
       l = Lesson.create!(
         medium: medium,

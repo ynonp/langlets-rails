@@ -56,7 +56,7 @@ playlist_data['entries'].each_with_index do |entry, index|
     )
     
     if progress
-      c.create_song!(progress)
+      c.create_song!(progress.data)
       puts "   ✅ Successfully processed video #{video_id}"
     else
       puts "   ⚠️  Warning: No progress found for video #{video_id}"
