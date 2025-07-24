@@ -62,13 +62,32 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
           l2:,
         )
+
+        # Create phrase texts for L1 and L2
+        if phrase_data["text_l1"].present?
+          l1_phrase_text = PhraseText.create!(content: phrase_data["text_l1"], script: l1.default_script)
+          PhraseTextAssignment.create!(
+            phrase: p, 
+            phrase_text: l1_phrase_text, 
+            language_role: :l1, 
+            primary: true
+          )
+        end
+
+        if phrase_data["text_l2"].present?
+          l2_phrase_text = PhraseText.create!(content: phrase_data["text_l2"], script: l2.default_script)
+          PhraseTextAssignment.create!(
+            phrase: p, 
+            phrase_text: l2_phrase_text, 
+            language_role: :l2, 
+            primary: true
+          )
+        end
 
         a5.phrases << p
         (phrase_data["translations"] || []).each do |token_translation_data|
@@ -181,13 +200,32 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
           l2:,
         )
+
+        # Create phrase texts for L1 and L2
+        if phrase_data["text_l1"].present?
+          l1_phrase_text = PhraseText.create!(content: phrase_data["text_l1"], script: l1.default_script)
+          PhraseTextAssignment.create!(
+            phrase: p, 
+            phrase_text: l1_phrase_text, 
+            language_role: :l1, 
+            primary: true
+          )
+        end
+
+        if phrase_data["text_l2"].present?
+          l2_phrase_text = PhraseText.create!(content: phrase_data["text_l2"], script: l2.default_script)
+          PhraseTextAssignment.create!(
+            phrase: p, 
+            phrase_text: l2_phrase_text, 
+            language_role: :l2, 
+            primary: true
+          )
+        end
 
         (phrase_data["translations"] || []).each do |token_translation_data|
           # Validate indices before attempting DB creation

@@ -4,17 +4,26 @@ class TokenTranslationTest < ActiveSupport::TestCase
   include ActiveJob::TestHelper
 
   def setup
+    # Create scripts
+    @latin_script = Script.create!(
+      name: 'latin',
+      iso_code: 'Latn',
+      rtl: false
+    )
+    
     # Create test languages
     @l1_language = Language.create!(
       iso_name: 'en',
       english_name: 'English',
-      native_name: 'English'
+      native_name: 'English',
+      default_script: @latin_script
     )
     
     @l2_language = Language.create!(
       iso_name: 'es', 
       english_name: 'Spanish',
-      native_name: 'Español'
+      native_name: 'Español',
+      default_script: @latin_script
     )
     
     # Create test medium
@@ -23,7 +32,7 @@ class TokenTranslationTest < ActiveSupport::TestCase
     )
 
     # Create test phrase
-    @phrase = Phrase.create!(
+    @phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo", 
       l1: @l1_language,
@@ -158,7 +167,7 @@ class TokenTranslationTest < ActiveSupport::TestCase
   end
 
   test "should handle contractions correctly" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "I don't like it",
       text_l2: "No me gusta",
       l1: @l1_language,
@@ -178,7 +187,7 @@ class TokenTranslationTest < ActiveSupport::TestCase
   end
 
   test "should handle unicode characters correctly" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Café résumé naïve",
       text_l2: "Coffee resumen ingenuo",
       l1: @l1_language,

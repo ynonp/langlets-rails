@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_02_093912) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_24_104150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -229,6 +229,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_02_093912) do
     t.datetime "updated_at", null: false
     t.string "pronunciation_variant_name"
     t.boolean "rtl", default: false
+    t.bigint "default_script_id", null: false
+    t.index ["default_script_id"], name: "index_languages_on_default_script_id"
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
   end
 
@@ -275,18 +277,45 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_02_093912) do
     t.index ["url"], name: "index_media_on_url", unique: true
   end
 
+  create_table "phrase_text_assignments", force: :cascade do |t|
+    t.bigint "phrase_id", null: false
+    t.bigint "phrase_text_id", null: false
+    t.integer "language_role", null: false
+    t.boolean "primary", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phrase_id", "language_role", "primary"], name: "idx_phrase_text_assignments_unique_primary", unique: true, where: "(\"primary\" = true)"
+    t.index ["phrase_id"], name: "index_phrase_text_assignments_on_phrase_id"
+    t.index ["phrase_text_id"], name: "index_phrase_text_assignments_on_phrase_text_id"
+  end
+
+  create_table "phrase_texts", force: :cascade do |t|
+    t.text "content", null: false
+    t.bigint "script_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["script_id"], name: "index_phrase_texts_on_script_id"
+  end
+
   create_table "phrases", force: :cascade do |t|
     t.bigint "medium_id", null: false
     t.bigint "l1_id", null: false
     t.bigint "l2_id", null: false
-    t.string "text_l1"
-    t.string "text_l2"
     t.string "timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["l1_id"], name: "index_phrases_on_l1_id"
     t.index ["l2_id"], name: "index_phrases_on_l2_id"
     t.index ["medium_id"], name: "index_phrases_on_medium_id"
+  end
+
+  create_table "scripts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "iso_code"
+    t.boolean "rtl", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_scripts_on_name", unique: true
   end
 
   create_table "token_translations", force: :cascade do |t|
@@ -349,10 +378,14 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_02_093912) do
   add_foreign_key "courses", "users"
   add_foreign_key "courses_learning_paths", "courses"
   add_foreign_key "courses_learning_paths", "learning_paths"
+  add_foreign_key "languages", "scripts", column: "default_script_id"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
+  add_foreign_key "phrase_text_assignments", "phrase_texts"
+  add_foreign_key "phrase_text_assignments", "phrases"
+  add_foreign_key "phrase_texts", "scripts"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"

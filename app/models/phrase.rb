@@ -5,14 +5,37 @@ class Phrase < ApplicationRecord
   belongs_to :l1, class_name: :Language
   belongs_to :l2, class_name: :Language
   has_many :token_translations, dependent: :destroy
+  has_many :phrase_text_assignments, dependent: :destroy
+  has_many :phrase_texts, through: :phrase_text_assignments
   has_one_attached :l1_audio, service: :s3_public
   has_timestamp [:timestamp]
 
-  # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
+  # Callbacks to automatically generate l1_audio when primary text changes
   after_create :generate_l1_audio, if: :should_generate_audio?
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
+
+  # Convenience methods for accessing text
+  def text_l1(script: nil)
+    get_text_for_language_role('l1', script || l1.default_script.name)
+  end
+  
+  def text_l2(script: nil)
+    get_text_for_language_role('l2', script || l2.default_script.name)
+  end
+  
+  def text_l1_variants
+    phrase_text_assignments.where(language_role: :l1)
+                           .includes(:phrase_text, phrase_text: :script)
+                           .map { |pta| { script: pta.phrase_text.script.name, text: pta.phrase_text.content } }
+  end
+  
+  def text_l2_variants
+    phrase_text_assignments.where(language_role: :l2)
+                           .includes(:phrase_text, phrase_text: :script)
+                           .map { |pta| { script: pta.phrase_text.script.name, text: pta.phrase_text.content } }
+  end
 
   # Class method to add calculated_end_timestamp to each phrase based on the next phrase in the medium
   def self.with_calculated_end_timestamps(phrase_collection, all_medium_phrases = nil)
@@ -50,14 +73,34 @@ class Phrase < ApplicationRecord
 
   private
 
+  def get_text_for_language_role(role, script)
+    assignment = if script
+      phrase_text_assignments.joins(phrase_text: :script)
+                             .where(language_role: role, scripts: { name: script })
+                             .first
+    else
+      # This fallback shouldn't be needed now that we always pass a script
+      phrase_text_assignments.where(language_role: role, primary: true).first
+    end
+    
+    assignment&.phrase_text&.content
+  end
+
   # Check if we should generate audio on create
   def should_generate_audio?
     text_l1.present? && l1&.iso_name.present?
   end
 
-  # Check if we should generate audio on update (only if text_l1 or l1 changed)
+  # Check if we should generate audio on update (only if primary l1 text changed)
   def should_generate_audio_on_update?
-    should_generate_audio? && (saved_change_to_text_l1? || saved_change_to_l1_id?)
+    should_generate_audio? && primary_l1_text_changed?
+  end
+
+  # Check if the primary L1 text has changed
+  def primary_l1_text_changed?
+    # For now, we'll regenerate if any phrase text assignments changed
+    # A more sophisticated approach would track changes to the primary L1 text specifically
+    phrase_text_assignments.any?(&:changed?)
   end
 
   # Generate and attach l1_audio using Azure Text-to-Speech in background job

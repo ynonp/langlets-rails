@@ -2,17 +2,32 @@ require "test_helper"
 
 class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   def setup
+    # Create scripts
+    @latin_script = Script.create!(
+      name: 'latin',
+      iso_code: 'Latn',
+      rtl: false
+    )
+    
+    @hebrew_script = Script.create!(
+      name: 'hebrew', 
+      iso_code: 'Hebr',
+      rtl: true
+    )
+    
     # Create test languages
     @l1_language = Language.create!(
       iso_name: 'en',
       english_name: 'English',
-      native_name: 'English'
+      native_name: 'English',
+      default_script: @latin_script
     )
     
     @l2_language = Language.create!(
       iso_name: 'es', 
       english_name: 'Spanish',
-      native_name: 'Español'
+      native_name: 'Español',
+      default_script: @latin_script
     )
     
     # Create test medium
@@ -22,7 +37,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "l1_start_character_index should return correct character position for single word" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello beautiful world",  # Words: ["Hello", "beautiful", "world"]
       text_l2: "Hola mundo hermoso",
       l1: @l1_language,
@@ -43,7 +58,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "l1_end_character_index should return correct character position for single word" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello beautiful world",  # Words: ["Hello", "beautiful", "world"]
       text_l2: "Hola mundo hermoso",
       l1: @l1_language,
@@ -63,7 +78,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "l1_character_indices should work for multi-word tokens" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello beautiful world",
       text_l2: "Hola mundo hermoso",
       l1: @l1_language,
@@ -84,7 +99,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "l2_character_indices should work correctly" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo hermoso",  # Words: ["Hola", "mundo", "hermoso"]
       l1: @l1_language,
@@ -107,7 +122,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle word appearing multiple times - first occurrence" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "The cat and the dog",  # Words: ["The", "cat", "and", "the", "dog"]
       text_l2: "El gato y el perro",
       l1: @l1_language,
@@ -128,7 +143,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle word appearing multiple times - second occurrence" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "The cat and the dog",  # Words: ["The", "cat", "and", "the", "dog"]
       text_l2: "El gato y el perro",
       l1: @l1_language,
@@ -149,7 +164,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle contractions" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "I don't like it",  # Words: ["I", "don't", "like", "it"]
       text_l2: "No me gusta",
       l1: @l1_language,
@@ -170,7 +185,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle word that appears as part of another word" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "I saw a cat in the catalog",  # Words: ["I", "saw", "a", "cat", "in", "the", "catalog"]
       text_l2: "Vi un gato en el catálogo",
       l1: @l1_language,
@@ -192,7 +207,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should return nil for out of bounds indices" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo",
       l1: @l1_language,
@@ -213,7 +228,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should return nil for negative indices" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo",
       l1: @l1_language,
@@ -234,7 +249,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should return nil when phrase text is blank" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "",
       text_l2: "Hola mundo",
       l1: @l1_language,
@@ -255,7 +270,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should return nil when indices are nil" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo",
       l1: @l1_language,
@@ -276,7 +291,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle complex punctuation and special characters" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello, world! How are you?",  # Words: ["Hello", "world", "How", "are", "you"]
       text_l2: "¡Hola mundo! ¿Cómo estás?",
       l1: @l1_language,
@@ -298,7 +313,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle unicode characters" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Café résumé naïve",  # Words: ["Café", "résumé", "naïve"]
       text_l2: "Coffee resumen ingenuo",
       l1: @l1_language,
@@ -320,7 +335,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "should handle l2 indices with repeated words" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "Hello world",
       text_l2: "Hola mundo hola",  # Words: ["Hola", "mundo", "hola"] - "hola" appears twice
       l1: @l1_language,
@@ -343,7 +358,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "comprehensive edge case - mixed scenario" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "The cat's toy was the best",  # Words: ["The", "cat's", "toy", "was", "the", "best"]
       text_l2: "El juguete del gato era el mejor",
       l1: @l1_language,
@@ -388,7 +403,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
   end
 
   test "integration test - character indices should match original_text extraction" do
-    phrase = Phrase.create!(
+    phrase = create_phrase_with_text(
       text_l1: "The quick brown fox jumps",
       text_l2: "El zorro marrón rápido salta",
       l1: @l1_language,

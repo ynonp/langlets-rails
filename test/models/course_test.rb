@@ -2,6 +2,12 @@ require "test_helper"
 
 class CourseTest < ActiveSupport::TestCase
   def setup
+    # Create scripts
+    @latin_script = Script.find_or_create_by!(name: 'latin') do |s|
+      s.iso_code = 'Latn'
+      s.rtl = false
+    end
+    
     # Create test user
     @user = User.create!(
       email: "test@example.com",
@@ -14,11 +20,13 @@ class CourseTest < ActiveSupport::TestCase
     @spanish = Language.find_or_create_by!(iso_name: "es") do |l|
       l.english_name = "Spanish"
       l.native_name = "Español"
+      l.default_script = @latin_script
     end
     
     @english = Language.find_or_create_by!(iso_name: "en") do |l|
       l.english_name = "English"
       l.native_name = "English"
+      l.default_script = @latin_script
     end
     
     # Load test data from fixtures

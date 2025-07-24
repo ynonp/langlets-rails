@@ -17,7 +17,10 @@ class TokenTranslation < ApplicationRecord
   def original_text
     return "" if l1_start_index.nil? || l1_end_index.nil?
     
-    words = phrase.text_l1.tokenize
+    phrase_text = phrase.text_l1
+    return "" if phrase_text.blank?
+    
+    words = phrase_text.tokenize
     return "" if l1_start_index < 0 || l1_end_index >= words.length || l1_start_index > l1_end_index
     
     words[l1_start_index..l1_end_index].join(" ")
@@ -27,27 +30,33 @@ class TokenTranslation < ApplicationRecord
   # Returns the character position where the word at l1_start_index begins
   # Handles multiple occurrences of the same word correctly
   def l1_start_character_index
-    return nil if l1_start_index.nil? || phrase.text_l1.blank?
+    return nil if l1_start_index.nil?
     
-    words = phrase.text_l1.tokenize
+    phrase_text = phrase.text_l1
+    return nil if phrase_text.blank?
+    
+    words = phrase_text.tokenize
     return nil if l1_start_index >= words.length || l1_start_index < 0
     
     # Find the character position where the word starts
     target_word = words[l1_start_index]
-    find_character_index_for_word(phrase.text_l1, target_word, l1_start_index, words)
+    find_character_index_for_word(phrase_text, target_word, l1_start_index, words)
   end
 
   # Returns the character position where the word at l1_end_index ends (inclusive)
   # Handles multiple occurrences of the same word correctly
   def l1_end_character_index
-    return nil if l1_end_index.nil? || phrase.text_l1.blank?
+    return nil if l1_end_index.nil?
     
-    words = phrase.text_l1.tokenize
+    phrase_text = phrase.text_l1
+    return nil if phrase_text.blank?
+    
+    words = phrase_text.tokenize
     return nil if l1_end_index >= words.length || l1_end_index < 0
     
     # Find the character position where the word ends (inclusive)
     target_word = words[l1_end_index]
-    start_char = find_character_index_for_word(phrase.text_l1, target_word, l1_end_index, words)
+    start_char = find_character_index_for_word(phrase_text, target_word, l1_end_index, words)
     return nil if start_char.nil?
     
     start_char + target_word.length
@@ -57,27 +66,33 @@ class TokenTranslation < ApplicationRecord
   # Returns the character position where the word at l2_start_index begins
   # Handles multiple occurrences of the same word correctly
   def l2_start_character_index
-    return nil if l2_start_index.nil? || phrase.text_l2.blank?
+    return nil if l2_start_index.nil?
     
-    words = phrase.text_l2.tokenize
+    phrase_text = phrase.text_l2
+    return nil if phrase_text.blank?
+    
+    words = phrase_text.tokenize
     return nil if l2_start_index >= words.length || l2_start_index < 0
     
     # Find the character position where the word starts
     target_word = words[l2_start_index]
-    find_character_index_for_word(phrase.text_l2, target_word, l2_start_index, words)
+    find_character_index_for_word(phrase_text, target_word, l2_start_index, words)
   end
 
   # Returns the character position where the word at l2_end_index ends (inclusive)
   # Handles multiple occurrences of the same word correctly
   def l2_end_character_index
-    return nil if l2_end_index.nil? || phrase.text_l2.blank?
+    return nil if l2_end_index.nil?
     
-    words = phrase.text_l2.tokenize
+    phrase_text = phrase.text_l2
+    return nil if phrase_text.blank?
+    
+    words = phrase_text.tokenize
     return nil if l2_end_index >= words.length || l2_end_index < 0
     
     # Find the character position where the word ends (inclusive)
     target_word = words[l2_end_index]
-    start_char = find_character_index_for_word(phrase.text_l2, target_word, l2_end_index, words)
+    start_char = find_character_index_for_word(phrase_text, target_word, l2_end_index, words)
     return nil if start_char.nil?
     
     start_char + target_word.length
