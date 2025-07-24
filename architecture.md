@@ -17,6 +17,40 @@
 
 ### Domain Models
 
+#### **Multi-Script Text System**
+
+The platform supports multiple writing systems (scripts) for the same text content, enabling transliteration and script-aware rendering.
+
+#### **Script** (`scripts`)
+- **Purpose**: Define writing systems (e.g., Latin, Hebrew, Cyrillic, Arabic)
+- **Key Features**:
+  - Standardized script codes (ISO 15924)
+  - Human-readable names
+  - Unique constraint on script codes
+- **Relationships**: 
+  - One-to-many with Languages (as default script)
+  - One-to-many with ScriptVariants
+
+#### **MultiScriptText** (`multi_script_texts`)
+- **Purpose**: Logical text container that can have multiple script representations
+- **Key Features**:
+  - Language association
+  - Script-agnostic text management
+  - Fallback behavior for missing script variants
+- **Relationships**: 
+  - Belongs to Language
+  - One-to-many with ScriptVariants
+  - Referenced by Phrases for text content
+
+#### **ScriptVariant** (`script_variants`)
+- **Purpose**: Actual text content in a specific script
+- **Key Features**:
+  - Text content storage
+  - Script-specific representation
+  - Unique constraint per MultiScriptText/Script pair
+- **Relationships**: 
+  - Belongs to MultiScriptText and Script
+
 #### 1. **Language** (`languages`)
 - **Purpose**: Define source and target languages for translations
 - **Key Features**:
@@ -24,7 +58,11 @@
   - English and native names
   - RTL (Right-to-Left) language support
   - Pronunciation variant handling
-- **Relationships**: Referenced by phrases as L1 (source) and L2 (target) languages
+  - **Multi-script Support**: Default script assignment via `default_script_id`
+- **Relationships**: 
+  - Belongs to Script (default script)
+  - Referenced by phrases as L1 (source) and L2 (target) languages
+  - One-to-many with MultiScriptTexts
 
 #### 2. **Medium** (`media`)
 - **Purpose**: Store references to external media content (YouTube videos)
@@ -62,12 +100,15 @@
 #### 5. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
 - **Key Features**:
-  - Bilingual text pairs (`text_l1`, `text_l2`)
+  - Multi-script text support via `text_l1_id` and `text_l2_id` (FK to MultiScriptText)
+  - Backward compatibility with `text_l1` and `text_l2` methods
   - Media synchronization timestamps
   - Language pair references (`l1_id`, `l2_id`)
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+  - **Multi-script Support**: Can display text in different scripts (e.g., Hebrew in Latin transliteration)
 - **Relationships**: 
   - Belongs to Medium and two Languages
+  - Belongs to two MultiScriptTexts (for text content)
   - One-to-many with TokenTranslations
   - Many-to-many with Activities (through ActivityPhrase)
 
@@ -276,11 +317,20 @@ Course (1) ──→ (many) Lesson
 Lesson (many) ──→ (1) Medium
 Lesson (1) ──→ (many) Activity
 
+# Multi-Script Text System
+Script (1) ──→ (many) Language (as default_script)
+Script (1) ──→ (many) ScriptVariant
+Language (1) ──→ (many) MultiScriptText
+MultiScriptText (1) ──→ (many) ScriptVariant
+MultiScriptText (many) ──→ (1) Language
+
 # Language & Content
 Language (1) ──→ (many) Phrase (as L1)
 Language (1) ──→ (many) Phrase (as L2)
 Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
+Phrase (many) ──→ (1) MultiScriptText (as text_l1_multi)
+Phrase (many) ──→ (1) MultiScriptText (as text_l2_multi)
 
 # Token-level Translation
 Phrase (1) ──→ (many) TokenTranslation
@@ -375,9 +425,13 @@ The platform implements a modern, accessible authentication system with the foll
 
 ### Multilingual Support
 - **RTL Languages**: Right-to-left text rendering
+- **Multi-Script Text**: Same content in different writing systems (e.g., Hebrew in Latin script)
+- **Script-Aware Rendering**: Automatic script selection based on user preferences
 - **Pronunciation Variants**: Regional accent support
 - **Sound Similarity**: Pronunciation confusion detection
 - **Character Indexing**: Precise word boundary detection
+- **Transliteration Support**: Convert between scripts automatically
+- **Fallback Behavior**: Default to primary script when alternatives unavailable
 
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
@@ -401,15 +455,18 @@ app/models/
 ├── course.rb
 ├── lesson.rb
 ├── medium.rb
-├── language.rb
-├── phrase.rb                   # has_one_attached :l1_audio
-├── token_translation.rb        # has_one_attached :l1_audio
-├── user.rb                     # Devise authentication
-├── activity_phrase.rb          # Join table model
+├── language.rb                  # belongs_to :default_script
+├── phrase.rb                    # Multi-script text support + audio
+├── script.rb                    # Writing systems (Latin, Hebrew, etc.)
+├── multi_script_text.rb         # Language-specific text container
+├── script_variant.rb            # Text content in specific scripts
+├── token_translation.rb         # has_one_attached :l1_audio
+├── user.rb                      # Devise authentication
+├── activity_phrase.rb           # Join table model
 ├── activity_token_translation.rb # Join table model
-├── activity_user.rb            # User progress on activities
-├── lesson_user.rb              # User progress on lessons
-└── create_song_progress.rb     # Workflow tracking
+├── activity_user.rb             # User progress on activities
+├── lesson_user.rb               # User progress on lessons
+└── create_song_progress.rb      # Workflow tracking
 
 app/views/devise/               # Devise authentication views
 ├── sessions/                   # Login/logout views

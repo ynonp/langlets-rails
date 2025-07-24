@@ -16,12 +16,10 @@ module ActiveSupport
 
     # Set up required scripts for multi-script text functionality
     def setup_scripts
-      return if Script.exists?
-      
-      Script.create!(code: 'Latn', name: 'Latin')
-      Script.create!(code: 'Hebr', name: 'Hebrew')
-      Script.create!(code: 'Cyrl', name: 'Cyrillic')
-      Script.create!(code: 'Arab', name: 'Arabic')
+      Script.find_or_create_by(code: 'Latn') { |s| s.name = 'Latin' }
+      Script.find_or_create_by(code: 'Hebr') { |s| s.name = 'Hebrew' }
+      Script.find_or_create_by(code: 'Cyrl') { |s| s.name = 'Cyrillic' }
+      Script.find_or_create_by(code: 'Arab') { |s| s.name = 'Arabic' }
     end
 
     # Helper method to create a phrase with multi-script texts

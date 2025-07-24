@@ -2,8 +2,8 @@ require "test_helper"
 
 class PhraseTest < ActiveSupport::TestCase
   def setup
-    @latin_script = Script.create!(code: 'Latn', name: 'Latin')
-    @hebrew_script = Script.create!(code: 'Hebr', name: 'Hebrew')
+    @latin_script = Script.find_or_create_by(code: 'Latn') { |s| s.name = 'Latin' }
+    @hebrew_script = Script.find_or_create_by(code: 'Hebr') { |s| s.name = 'Hebrew' }
     
     @english = Language.create!(
       iso_name: 'en',

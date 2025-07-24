@@ -2,7 +2,7 @@ require "test_helper"
 
 class ScriptVariantTest < ActiveSupport::TestCase
   def setup
-    @script = Script.create!(code: 'Latn', name: 'Latin')
+    @script = Script.find_or_create_by(code: 'Latn') { |s| s.name = 'Latin' }
     @language = Language.create!(
       iso_name: 'en',
       english_name: 'English',
