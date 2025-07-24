@@ -10,6 +10,12 @@ class Phrase < ApplicationRecord
   has_one_attached :l1_audio, service: :s3_public
   has_timestamp [:timestamp]
 
+  # Store temporary text values during object creation
+  attr_accessor :temp_text_l1, :temp_text_l2
+
+  # Callback to create multi-script texts before validation
+  before_validation :create_multi_script_texts_from_temp_values
+
   # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
   after_create :generate_l1_audio, if: :should_generate_audio?
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
@@ -18,61 +24,31 @@ class Phrase < ApplicationRecord
 
   # Backward compatibility methods - get text content from multi-script texts
   def text_l1
-    if text_l1_multi.present?
-      text_l1_multi.default_content
-    else
-      read_attribute(:text_l1)
-    end
+    text_l1_multi&.default_content
   end
 
   def text_l2
-    if text_l2_multi.present?
-      text_l2_multi.default_content
-    else
-      read_attribute(:text_l2)
-    end
+    text_l2_multi&.default_content
   end
 
   # Helper methods for setting text content (creates multi-script texts if needed)
   def text_l1=(value)
-    if value.present? && l1.present?
-      # Create or update multi-script text
-      if text_l1_multi.present?
-        variant = text_l1_multi.variant_for_script(l1.default_script)
-        if variant
-          variant.update!(content: value)
-        else
-          text_l1_multi.script_variants.create!(script: l1.default_script, content: value)
-        end
-      else
-        multi_text = MultiScriptText.create!(language: l1)
-        multi_text.script_variants.create!(script: l1.default_script, content: value)
-        self.text_l1_multi = multi_text
-      end
+    if persisted? && l1.present?
+      # Update existing record
+      set_l1_text_directly(value)
     else
-      # Fallback to old behavior
-      write_attribute(:text_l1, value)
+      # Store for later processing during validation
+      @temp_text_l1 = value
     end
   end
 
   def text_l2=(value)
-    if value.present? && l2.present?
-      # Create or update multi-script text
-      if text_l2_multi.present?
-        variant = text_l2_multi.variant_for_script(l2.default_script)
-        if variant
-          variant.update!(content: value)
-        else
-          text_l2_multi.script_variants.create!(script: l2.default_script, content: value)
-        end
-      else
-        multi_text = MultiScriptText.create!(language: l2)
-        multi_text.script_variants.create!(script: l2.default_script, content: value)
-        self.text_l2_multi = multi_text
-      end
+    if persisted? && l2.present?
+      # Update existing record
+      set_l2_text_directly(value)
     else
-      # Fallback to old behavior
-      write_attribute(:text_l2, value)
+      # Store for later processing during validation
+      @temp_text_l2 = value
     end
   end
 
@@ -127,6 +103,57 @@ class Phrase < ApplicationRecord
 
   private
 
+  # Callback to create multi-script texts from temporary values
+  def create_multi_script_texts_from_temp_values
+    if @temp_text_l1.present? && l1.present? && text_l1_multi.blank?
+      set_l1_text_directly(@temp_text_l1)
+    end
+    
+    if @temp_text_l2.present? && l2.present? && text_l2_multi.blank?
+      set_l2_text_directly(@temp_text_l2)
+    end
+  end
+
+  def set_l1_text_directly(value)
+    return unless value.present? && l1.present?
+    
+    script = l1.default_script || Script.find_by(code: 'Latn')
+    return unless script
+    
+    if text_l1_multi.present?
+      variant = text_l1_multi.variant_for_script(script)
+      if variant
+        variant.update!(content: value)
+      else
+        text_l1_multi.script_variants.create!(script: script, content: value)
+      end
+    else
+      multi_text = MultiScriptText.create!(language: l1)
+      multi_text.script_variants.create!(script: script, content: value)
+      self.text_l1_multi = multi_text
+    end
+  end
+
+  def set_l2_text_directly(value)
+    return unless value.present? && l2.present?
+    
+    script = l2.default_script || Script.find_by(code: 'Latn')
+    return unless script
+    
+    if text_l2_multi.present?
+      variant = text_l2_multi.variant_for_script(script)
+      if variant
+        variant.update!(content: value)
+      else
+        text_l2_multi.script_variants.create!(script: script, content: value)
+      end
+    else
+      multi_text = MultiScriptText.create!(language: l2)
+      multi_text.script_variants.create!(script: script, content: value)
+      self.text_l2_multi = multi_text
+    end
+  end
+
   # Check if we should generate audio on create
   def should_generate_audio?
     text_l1.present? && l1&.iso_name.present?
@@ -134,7 +161,7 @@ class Phrase < ApplicationRecord
 
   # Check if we should generate audio on update (only if text_l1 or l1 changed)
   def should_generate_audio_on_update?
-    should_generate_audio? && (saved_change_to_text_l1? || saved_change_to_l1_id? || text_l1_multi_changed?)
+    should_generate_audio? && (saved_change_to_l1_id? || text_l1_multi_changed?)
   end
 
   # Helper to detect if multi-script text changed

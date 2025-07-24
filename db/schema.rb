@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_24_130214) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_24_130719) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -288,13 +288,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_24_130214) do
     t.bigint "medium_id", null: false
     t.bigint "l1_id", null: false
     t.bigint "l2_id", null: false
-    t.string "text_l1"
-    t.string "text_l2"
     t.string "timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "text_l1_id"
-    t.bigint "text_l2_id"
+    t.bigint "text_l1_id", null: false
+    t.bigint "text_l2_id", null: false
     t.index ["l1_id"], name: "index_phrases_on_l1_id"
     t.index ["l2_id"], name: "index_phrases_on_l2_id"
     t.index ["medium_id"], name: "index_phrases_on_medium_id"

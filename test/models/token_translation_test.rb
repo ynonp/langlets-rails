@@ -4,17 +4,22 @@ class TokenTranslationTest < ActiveSupport::TestCase
   include ActiveJob::TestHelper
 
   def setup
+    # Ensure scripts exist for tests
+    @latin_script = Script.find_or_create_by(code: 'Latn') { |s| s.name = 'Latin' }
+    
     # Create test languages
     @l1_language = Language.create!(
       iso_name: 'en',
       english_name: 'English',
-      native_name: 'English'
+      native_name: 'English',
+      default_script: @latin_script
     )
     
     @l2_language = Language.create!(
       iso_name: 'es', 
       english_name: 'Spanish',
-      native_name: 'Español'
+      native_name: 'Español',
+      default_script: @latin_script
     )
     
     # Create test medium
@@ -22,10 +27,16 @@ class TokenTranslationTest < ActiveSupport::TestCase
       url: 'https://example.com'
     )
 
-    # Create test phrase
+    # Create test phrase with multi-script texts
+    l1_text = MultiScriptText.create!(language: @l1_language)
+    l1_text.script_variants.create!(script: @latin_script, content: "Hello world")
+    
+    l2_text = MultiScriptText.create!(language: @l2_language)
+    l2_text.script_variants.create!(script: @latin_script, content: "Hola mundo")
+    
     @phrase = Phrase.create!(
-      text_l1: "Hello world",
-      text_l2: "Hola mundo", 
+      text_l1_multi: l1_text,
+      text_l2_multi: l2_text,
       l1: @l1_language,
       l2: @l2_language,
       medium: @medium,

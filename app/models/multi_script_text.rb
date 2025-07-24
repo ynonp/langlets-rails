@@ -9,7 +9,10 @@ class MultiScriptText < ApplicationRecord
 
   # Get content for the default script of the language
   def default_content
-    variant = variant_for_script(language.default_script)
+    default_script = language.default_script || Script.find_by(code: 'Latn')
+    return nil unless default_script
+    
+    variant = variant_for_script(default_script)
     variant&.content
   end
 

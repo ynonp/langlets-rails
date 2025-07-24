@@ -95,8 +95,8 @@ class PhraseTest < ActiveSupport::TestCase
     assert phrase.has_script_variants?
   end
 
-  test "fallback to old text columns when multi-script texts not present" do
-    # Temporarily bypass the text setters to test fallback
+  test "requires multi-script texts for text access" do
+    # Create phrase without setting text (should require multi-script texts now)
     phrase = Phrase.new(
       medium: @medium,
       l1: @english,
@@ -104,15 +104,20 @@ class PhraseTest < ActiveSupport::TestCase
       timestamp: '00:30'
     )
     
-    # Set using write_attribute to bypass our custom setters
-    phrase.write_attribute(:text_l1, 'hello')
-    phrase.write_attribute(:text_l2, 'שלום')
+    # Create multi-script texts explicitly
+    l1_text = MultiScriptText.create!(language: @english)
+    l1_text.script_variants.create!(script: @latin_script, content: 'hello')
+    
+    l2_text = MultiScriptText.create!(language: @hebrew)
+    l2_text.script_variants.create!(script: @hebrew_script, content: 'שלום')
+    
+    phrase.text_l1_multi = l1_text
+    phrase.text_l2_multi = l2_text
     phrase.save!
 
-    # Should fall back to old text columns
+    # Should access text via multi-script texts
     assert_equal 'hello', phrase.text_l1
     assert_equal 'שלום', phrase.text_l2
-    assert_not phrase.has_script_variants?
   end
 
   test "updating text creates or updates script variants" do
