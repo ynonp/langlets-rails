@@ -8,11 +8,36 @@ class Phrase < ApplicationRecord
   has_one_attached :l1_audio, service: :s3_public
   has_timestamp [:timestamp]
 
+  # New relationships for multi-script support
+  has_many :phrase_text_assignments, dependent: :destroy
+  has_many :phrase_texts, through: :phrase_text_assignments
+
   # Callbacks to automatically generate l1_audio when text_l1 or l1 language changes
   after_create :generate_l1_audio, if: :should_generate_audio?
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
+
+  # Convenience methods for accessing text with optional script specification
+  def text_l1_for_script(script: nil)
+    get_text_for_language_role('l1', script)
+  end
+  
+  def text_l2_for_script(script: nil)
+    get_text_for_language_role('l2', script)
+  end
+  
+  def text_l1_variants
+    phrase_text_assignments.where(language_role: :l1)
+                           .includes(:phrase_text, phrase_text: :script)
+                           .map { |pta| { script: pta.phrase_text.script.name, text: pta.phrase_text.content } }
+  end
+  
+  def text_l2_variants
+    phrase_text_assignments.where(language_role: :l2)
+                           .includes(:phrase_text, phrase_text: :script)
+                           .map { |pta| { script: pta.phrase_text.script.name, text: pta.phrase_text.content } }
+  end
 
   # Class method to add calculated_end_timestamp to each phrase based on the next phrase in the medium
   def self.with_calculated_end_timestamps(phrase_collection, all_medium_phrases = nil)
@@ -49,6 +74,18 @@ class Phrase < ApplicationRecord
   end
 
   private
+
+  def get_text_for_language_role(role, script)
+    assignment = if script
+      phrase_text_assignments.joins(phrase_text: :script)
+                             .where(language_role: role, scripts: { name: script })
+                             .first
+    else
+      phrase_text_assignments.where(language_role: role, primary: true).first
+    end
+    
+    assignment&.phrase_text&.content
+  end
 
   # Check if we should generate audio on create
   def should_generate_audio?
