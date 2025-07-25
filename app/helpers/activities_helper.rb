@@ -9,42 +9,44 @@ module ActivitiesHelper
       content_tag(:span, phrase.text_l1)
     else
       # Use the already loaded token_translations, sort them by l1_start_index
-      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_character_index)
+      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
       
       texts = loaded_tokens.inject([]) do |acc, val|
+        l1_start_character_index = val.l1_characters_range.begin
+        l1_end_character_index = val.l1_characters_range.end
         next_translated_token = {
-          "l1" => phrase.text_l1[val.l1_start_character_index...val.l1_end_character_index],
+          "l1" => phrase.text_l1.to_s[val.l1_characters_range],
           "l2" => val.translation,
-          "last_index" => val.l1_end_character_index,
+          "last_index" => l1_end_character_index,
           "token_id" => val.id,
           "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil,
         }
         if acc.empty?
-          if val.l1_start_character_index.zero?
+          if l1_start_character_index.zero?
             [*acc, next_translated_token]
           else
             [
               *acc,
-              {"l1" => phrase.text_l1[0...val.l1_start_character_index], "last_index" => val.l1_start_character_index},
+              {"l1" => phrase.text_l1.to_s[0...l1_start_character_index], "last_index" => l1_start_character_index},
               next_translated_token
             ]
           end
-        elsif acc[-1]["last_index"] == val.l1_start_character_index
+        elsif acc[-1]["last_index"] == l1_start_character_index
           [*acc, next_translated_token]
         else
           [
             *acc,
-            {"l1" => phrase.text_l1[acc[-1]["last_index"]...val.l1_start_character_index], "last_index" => val.l1_start_character_index},
+            {"l1" => phrase.text_l1.to_s[acc[-1]["last_index"]...l1_start_character_index], "last_index" => l1_start_character_index},
             next_translated_token
           ]
         end
       end
 
       # Add the remaining text after the last token if there is any
-      if texts.any? && texts.last["last_index"] < phrase.text_l1.length
+      if texts.any? && texts.last["last_index"] < phrase.text_l1.to_s.length
         texts << {
-          "l1" => phrase.text_l1[texts.last["last_index"]...phrase.text_l1.length],
-          "last_index" => phrase.text_l1.length
+          "l1" => phrase.text_l1.to_s[texts.last["last_index"]...phrase.text_l1.to_s.length],
+          "last_index" => phrase.text_l1.to_s.length
         }
       end
   
