@@ -11,15 +11,8 @@ class CourseTest < ActiveSupport::TestCase
     )
     
     # Create test languages
-    @spanish = Language.find_or_create_by!(iso_name: "es") do |l|
-      l.english_name = "Spanish"
-      l.native_name = "Español"
-    end
-    
-    @english = Language.find_or_create_by!(iso_name: "en") do |l|
-      l.english_name = "English"
-      l.native_name = "English"
-    end
+    @spanish = languages(:spanish)
+    @english = languages(:english)
     
     # Load test data from fixtures
     @juanes_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "juanes.json")))
@@ -57,8 +50,8 @@ class CourseTest < ActiveSupport::TestCase
     watch_activity = lesson.activities.find_by(type: "Activities::WatchVideoActivity")
     assert_equal 1, watch_activity.phrases.count
     phrase = watch_activity.phrases.first
-    assert_equal "Hola mundo", phrase.text_l1
-    assert_equal "Hello world", phrase.text_l2
+    assert_equal "Hola mundo", phrase.text_l1.to_s
+    assert_equal "Hello world", phrase.text_l2.to_s
     
     # Verify token translations were created
     assert_equal 2, phrase.token_translations.count
@@ -90,8 +83,8 @@ class CourseTest < ActiveSupport::TestCase
     watch_activity = lesson.activities.find_by(type: "Activities::WatchVideoActivity")
     assert_equal 1, watch_activity.phrases.count
     phrase = watch_activity.phrases.first
-    assert_equal "Hola mundo", phrase.text_l1
-    assert_equal "Hello world", phrase.text_l2
+    assert_equal "Hola mundo", phrase.text_l1.to_s
+    assert_equal "Hello world", phrase.text_l2.to_s
   end
 
   test "create_song! works with full juanes data" do

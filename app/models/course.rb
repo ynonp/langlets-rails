@@ -62,8 +62,18 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
+          text_l1_attributes: {
+            language: l1,
+            script_variants_attributes: [
+              { script: l1.default_script, content: phrase_data["text_l1"] }
+            ]
+          },
+          text_l2_attributes: {
+            language: l2,
+            script_variants_attributes: [
+              { script: l2.default_script, content: phrase_data["text_l2"] }
+            ]
+          },
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
@@ -181,8 +191,18 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
+          text_l1_attributes: {
+            language: l1,
+            script_variants_attributes: [
+              { script: l1.default_script, content: phrase_data["text_l1"] }
+            ]
+          },
+          text_l2_attributes: {
+            language: l2,
+            script_variants_attributes: [
+              { script: l2.default_script, content: phrase_data["text_l2"] }
+            ]
+          },
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
