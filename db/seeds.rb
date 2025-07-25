@@ -8,11 +8,56 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-Language.create!(iso_name: 'en', english_name: 'English', native_name: 'English', pronunciation_variant_name: 'en-US')
-Language.create!(iso_name: 'he', english_name: 'Hebrew', native_name: 'עברית', pronunciation_variant_name: 'he-IL')
-Language.create!(iso_name: 'fr', english_name: 'French', native_name: 'Français', pronunciation_variant_name: 'fr-FR')
-Language.create!(iso_name: 'es', english_name: 'Spanish', native_name: 'Español', pronunciation_variant_name: 'es-ES')
-Language.create!(iso_name: 'ar-JO', english_name: 'Arabic', native_name: 'العربية الفلسطينية', pronunciation_variant_name: 'ar-JO')
+# Create scripts first (only for languages we're seeding)
+latin_script = Script.find_or_create_by!(code: 'Latn') do |script|
+  script.name = 'Latin'
+end
+
+hebrew_script = Script.find_or_create_by!(code: 'Hebr') do |script|
+  script.name = 'Hebrew'
+end
+
+arabic_script = Script.find_or_create_by!(code: 'Arab') do |script|
+  script.name = 'Arabic'
+end
+
+# Create languages with their default scripts
+Language.find_or_create_by!(iso_name: 'en') do |lang|
+  lang.english_name = 'English'
+  lang.native_name = 'English'
+  lang.pronunciation_variant_name = 'en-US'
+  lang.default_script = latin_script
+end
+
+Language.find_or_create_by!(iso_name: 'he') do |lang|
+  lang.english_name = 'Hebrew'
+  lang.native_name = 'עברית'
+  lang.pronunciation_variant_name = 'he-IL'
+  lang.rtl = true
+  lang.default_script = hebrew_script
+end
+
+Language.find_or_create_by!(iso_name: 'fr') do |lang|
+  lang.english_name = 'French'
+  lang.native_name = 'Français'
+  lang.pronunciation_variant_name = 'fr-FR'
+  lang.default_script = latin_script
+end
+
+Language.find_or_create_by!(iso_name: 'es') do |lang|
+  lang.english_name = 'Spanish'
+  lang.native_name = 'Español'
+  lang.pronunciation_variant_name = 'es-ES'
+  lang.default_script = latin_script
+end
+
+Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
+  lang.english_name = 'Arabic'
+  lang.native_name = 'العربية الفلسطينية'
+  lang.pronunciation_variant_name = 'ar-JO'
+  lang.rtl = true
+  lang.default_script = arabic_script
+end
 
 admin = User.new(email: 'ynon@hey.com', password: '10203040', password_confirmation: '10203040')
 admin.skip_confirmation!

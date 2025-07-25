@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  multi_script_text: one
+  script: one
+  content: MyText
+
+two:
+  multi_script_text: two
+  script: two
+  content: MyText
