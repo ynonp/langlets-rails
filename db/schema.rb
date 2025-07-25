@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_24_203330) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_25_051746) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -280,6 +280,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_24_203330) do
   create_table "multi_script_texts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "language_id"
+    t.integer "audio_status", default: 0
+    t.index ["language_id"], name: "index_multi_script_texts_on_language_id"
   end
 
   create_table "phrases", force: :cascade do |t|

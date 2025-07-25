@@ -1,0 +1,39 @@
+english:
+  iso_name: 'en'
+  english_name: 'English'
+  native_name: 'English'
+  pronunciation_variant_name: 'en-US'
+  rtl: false
+  default_script: latin
+
+hebrew:
+  iso_name: 'he'
+  english_name: 'Hebrew'
+  native_name: 'עברית'
+  pronunciation_variant_name: 'he-IL'
+  rtl: true
+  default_script: hebrew
+
+french:
+  iso_name: 'fr'
+  english_name: 'French'
+  native_name: 'Français'
+  pronunciation_variant_name: 'fr-FR'
+  rtl: false
+  default_script: latin
+
+spanish:
+  iso_name: 'es'
+  english_name: 'Spanish'
+  native_name: 'Español'
+  pronunciation_variant_name: 'es-ES'
+  rtl: false
+  default_script: latin
+
+arabic:
+  iso_name: 'ar-JO'
+  english_name: 'Arabic'
+  native_name: 'العربية الفلسطينية'
+  pronunciation_variant_name: 'ar-JO'
+  rtl: true
+  default_script: arabic

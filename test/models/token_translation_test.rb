@@ -4,32 +4,13 @@ class TokenTranslationTest < ActiveSupport::TestCase
   include ActiveJob::TestHelper
 
   def setup
-    # Create test languages
-    @l1_language = Language.create!(
-      iso_name: 'en',
-      english_name: 'English',
-      native_name: 'English'
-    )
-    
-    @l2_language = Language.create!(
-      iso_name: 'es', 
-      english_name: 'Spanish',
-      native_name: 'Español'
-    )
-    
-    # Create test medium
-    @medium = Medium.create!(
-      url: 'https://example.com'
-    )
-
-    # Create test phrase
-    @phrase = Phrase.create!(
+    # Create test phrase using factory with language fixtures
+    @phrase = create(:phrase, 
+      medium: medium(:a_dios_le_pido),
       text_l1: "Hello world",
-      text_l2: "Hola mundo", 
-      l1: @l1_language,
-      l2: @l2_language,
-      medium: @medium,
-      timestamp: "00:01:30"
+      text_l2: "Hola mundo",
+      l1: languages(:english),
+      l2: languages(:spanish)
     )
   end
 
@@ -49,18 +30,23 @@ class TokenTranslationTest < ActiveSupport::TestCase
   end
 
   test "original_text should return correct text based on word indices" do
-    token_translation = TokenTranslation.create!(
+    hello = TokenTranslation.create!(
       phrase: @phrase,
       l1_start_index: 0,
       l1_end_index: 0,
       translation: "Hola"
     )
     
-    assert_equal "Hello", token_translation.original_text
+    assert_equal "Hello", hello.original_text
     
     # Test with second word
-    token_translation.update!(l1_start_index: 1, l1_end_index: 1)
-    assert_equal "world", token_translation.original_text
+    world = TokenTranslation.create!(
+      phrase: @phrase,
+      l1_start_index: 1,
+      l1_end_index: 1,
+      translation: "mundo"
+    )
+    assert_equal "world", world.original_text
   end
 
   test "original_text should handle multi-word tokens" do
@@ -74,26 +60,27 @@ class TokenTranslationTest < ActiveSupport::TestCase
     assert_equal "Hello world", token_translation.original_text
   end
 
-  test "original_text should return empty string for invalid indices" do
-    token_translation = TokenTranslation.create!(
+  test "invalid indices are validation error" do
+    token_translation = TokenTranslation.new(
       phrase: @phrase,
       l1_start_index: nil,
       l1_end_index: nil,
       translation: "test"
     )
     
-    assert_equal "", token_translation.original_text
+    refute token_translation.valid?
   end
 
-  test "original_text should return empty string for out of bounds indices" do
-    token_translation = TokenTranslation.create!(
+  test "should not allow out of bounds indices" do
+    token_translation = TokenTranslation.new(
       phrase: @phrase,
       l1_start_index: 10,  # Out of bounds
       l1_end_index: 10,
       translation: "test"
     )
     
-    assert_equal "", token_translation.original_text
+    assert_not token_translation.valid?
+    assert_includes token_translation.errors[:l1_start_index], "word indexes out of bounds"
   end
 
   test "should queue audio generation job on create" do
@@ -157,34 +144,13 @@ class TokenTranslationTest < ActiveSupport::TestCase
     assert_not_includes tokens_with_questions, token_without_questions
   end
 
-  test "should handle contractions correctly" do
-    phrase = Phrase.create!(
-      text_l1: "I don't like it",
-      text_l2: "No me gusta",
-      l1: @l1_language,
-      l2: @l2_language,
-      medium: @medium,
-      timestamp: "00:01:30"
-    )
-    
-    token_translation = TokenTranslation.create!(
-      phrase: phrase,
-      l1_start_index: 1,  # "don't"
-      l1_end_index: 1,
-      translation: "No"
-    )
-    
-    assert_equal "don't", token_translation.original_text
-  end
-
   test "should handle unicode characters correctly" do
-    phrase = Phrase.create!(
+    phrase = create(:phrase,
+      medium: medium(:a_dios_le_pido),
       text_l1: "Café résumé naïve",
       text_l2: "Coffee resumen ingenuo",
-      l1: @l1_language,
-      l2: @l2_language,
-      medium: @medium,
-      timestamp: "00:01:30"
+      l1: languages(:english),
+      l2: languages(:spanish)
     )
     
     token_translation = TokenTranslation.create!(

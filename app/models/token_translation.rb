@@ -10,103 +10,29 @@ class TokenTranslation < ApplicationRecord
   # Regenerate audio when indices change (affecting the original_text)
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
+  # Validation for word indexes
+  validate :validate_word_indexes
+
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")
   }
 
   def original_text
-    return "" if l1_start_index.nil? || l1_end_index.nil?
-    
-    words = phrase.text_l1.tokenize
-    return "" if l1_start_index < 0 || l1_end_index >= words.length || l1_start_index > l1_end_index
-    
-    words[l1_start_index..l1_end_index].join(" ")
+    l1_words = phrase.text_l1.words
+    @original_text ||= phrase.text_l1.to_s[l1_characters_range]
   end
 
-  # Convert word-based indices to character-based indices for L1 text
-  # Returns the character position where the word at l1_start_index begins
-  # Handles multiple occurrences of the same word correctly
-  def l1_start_character_index
-    return nil if l1_start_index.nil? || phrase.text_l1.blank?
-    
-    words = phrase.text_l1.tokenize
-    return nil if l1_start_index >= words.length || l1_start_index < 0
-    
-    # Find the character position where the word starts
-    target_word = words[l1_start_index]
-    find_character_index_for_word(phrase.text_l1, target_word, l1_start_index, words)
+  def l1_characters_range
+    phrase.text_l1.character_range(l1_start_index, l1_end_index)
   end
 
-  # Returns the character position where the word at l1_end_index ends (inclusive)
-  # Handles multiple occurrences of the same word correctly
-  def l1_end_character_index
-    return nil if l1_end_index.nil? || phrase.text_l1.blank?
-    
-    words = phrase.text_l1.tokenize
-    return nil if l1_end_index >= words.length || l1_end_index < 0
-    
-    # Find the character position where the word ends (inclusive)
-    target_word = words[l1_end_index]
-    start_char = find_character_index_for_word(phrase.text_l1, target_word, l1_end_index, words)
-    return nil if start_char.nil?
-    
-    start_char + target_word.length
-  end
-
-  # Convert word-based indices to character-based indices for L2 text
-  # Returns the character position where the word at l2_start_index begins
-  # Handles multiple occurrences of the same word correctly
-  def l2_start_character_index
-    return nil if l2_start_index.nil? || phrase.text_l2.blank?
-    
-    words = phrase.text_l2.tokenize
-    return nil if l2_start_index >= words.length || l2_start_index < 0
-    
-    # Find the character position where the word starts
-    target_word = words[l2_start_index]
-    find_character_index_for_word(phrase.text_l2, target_word, l2_start_index, words)
-  end
-
-  # Returns the character position where the word at l2_end_index ends (inclusive)
-  # Handles multiple occurrences of the same word correctly
-  def l2_end_character_index
-    return nil if l2_end_index.nil? || phrase.text_l2.blank?
-    
-    words = phrase.text_l2.tokenize
-    return nil if l2_end_index >= words.length || l2_end_index < 0
-    
-    # Find the character position where the word ends (inclusive)
-    target_word = words[l2_end_index]
-    start_char = find_character_index_for_word(phrase.text_l2, target_word, l2_end_index, words)
-    return nil if start_char.nil?
-    
-    start_char + target_word.length
+  def l2_character_range
+    phrase.text_l2.character_range(l2_start_index, l2_end_index)
   end
 
   private
 
-  # Helper method to find character index of a specific word occurrence
-  def find_character_index_for_word(text, target_word, word_index, words)
-    # Count how many times we've seen this word before the target index
-    occurrence = 0
-    (0...word_index).each do |i|
-      occurrence += 1 if words[i] == target_word
-    end
-    
-    # Find the nth occurrence of the word in the text
-    current_occurrence = 0
-    text.scan(/\p{L}+(?:'\p{L}+)*/u) do |word|
-      if word == target_word
-        return Regexp.last_match.begin(0) if current_occurrence == occurrence
-        current_occurrence += 1
-      end
-    end
-    
-    nil
-  end
-
   def should_generate_audio?
-    # Generate audio if we have text and a language
     original_text.present? && phrase&.l1&.iso_name.present?
   end
 
@@ -118,5 +44,38 @@ class TokenTranslation < ApplicationRecord
   def generate_l1_audio
     # Queue background job for audio generation
     GenerateTokenAudioJob.perform_later(id)
+  end
+
+  def validate_word_indexes
+    return unless phrase&.text_l1
+
+    # Get the words for the phrase
+    l1_words = phrase.text_l1.words
+    
+    # Validate L1 indexes
+    if l1_start_index.present? && l1_end_index.present?
+      if l1_start_index > l1_end_index
+        errors.add(:l1_start_index, "must be less than or equal to l1_end_index")
+      end
+
+      if l1_start_index < 0 || l1_end_index >= l1_words.length
+        errors.add(:l1_start_index, "word indexes out of bounds")
+      end
+    else
+      errors.add(:l1_start_index, "l1 start index is required")
+    end
+
+    # Validate L2 indexes (optional)
+    if l2_start_index.present? && l2_end_index.present? && phrase&.text_l2
+      l2_words = phrase.text_l2.words
+      
+      if l2_start_index > l2_end_index
+        errors.add(:l2_start_index, "must be less than or equal to l2_end_index")
+      end
+
+      if l2_start_index < 0 || l2_end_index >= l2_words.length
+        errors.add(:l2_start_index, "word indexes out of bounds")
+      end
+    end
   end
 end

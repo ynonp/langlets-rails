@@ -99,3 +99,5 @@ gem "omniauth-github", "~> 2.0"
 gem "cancancan", "~> 3.6"
 
 gem "good_job", "~> 4.11"
+
+gem "factory_bot", "~> 6.5"

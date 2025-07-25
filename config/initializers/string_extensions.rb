@@ -10,7 +10,15 @@ class String
   end
 
   def tokenize
-    self.scan(/\p{L}+(?:'\p{L}+)*/u)
+    regex = Regexp.new(/\p{L}+(?:'\p{L}+)*/u)
+
+    Enumerator.new do |y|
+      pos = 0
+      while m = regex.match(self, pos)
+        y << m
+        pos = m.end(0)
+      end
+    end
   end
 end
 

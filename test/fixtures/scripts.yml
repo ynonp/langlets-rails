@@ -1,9 +1,11 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+latin:
+  code: 'Latn'
+  name: 'Latin'
 
-one:
-  code: MyString
-  name: MyString
+hebrew:
+  code: 'Hebr'
+  name: 'Hebrew'
 
-two:
-  code: MyString
-  name: MyString
+arabic:
+  code: 'Arab'
+  name: 'Arabic'

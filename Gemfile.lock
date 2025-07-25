@@ -144,6 +144,8 @@ GEM
     ethon (0.16.0)
       ffi (>= 1.15.0)
     event_stream_parser (1.0.0)
+    factory_bot (6.5.4)
+      activesupport (>= 6.1.0)
     faraday (2.13.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
@@ -572,6 +574,7 @@ DEPENDENCIES
   cssbundling-rails
   debug
   devise (~> 4.9)
+  factory_bot (~> 6.5)
   fiddle (~> 1.1)
   gemini-ai (~> 4.2)
   good_job (~> 4.11)
