@@ -98,7 +98,7 @@
         <% if @lesson.course&.hebrew_script_available? %>
           <% if @current_script_code == 'hebr' %>
             <%= link_to lesson_path(@lesson.slug, a: params[:a]),
-              class: "text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+              class: "text-white text-sm font-medium",
               title: "Switch to default script",
               data: {
                 :"turbo-frame" => "_top",
@@ -108,7 +108,7 @@
             <% end %>
           <% else %>
             <%= link_to lesson_path(@lesson.slug, a: params[:a], script: 'hebr'),
-              class: "text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+              class: "text-white text-sm font-medium",
               title: "Switch to Hebrew script",
               data: {
                 :"turbo-frame" => "_top",
