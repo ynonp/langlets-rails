@@ -5,10 +5,10 @@ class TokenTranslation < ApplicationRecord
   has_one_attached :l1_audio, service: :s3_public
 
   # Generate audio when token is created
-  after_create :generate_l1_audio, if: :should_generate_audio?
+  # after_create :generate_l1_audio, if: :should_generate_audio?
   
   # Regenerate audio when indices change (affecting the original_text)
-  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
+  # after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   # Validation for word indexes
   validate :validate_word_indexes
@@ -22,12 +22,12 @@ class TokenTranslation < ApplicationRecord
     @original_text ||= phrase.text_l1.to_s[l1_characters_range]
   end
 
-  def l1_characters_range
-    phrase.text_l1.character_range(l1_start_index, l1_end_index)
+  def l1_characters_range(script = nil)
+    phrase.text_l1.character_range(l1_start_index, l1_end_index, script:)
   end
 
-  def l2_characters_range
-    phrase.text_l2.character_range(l2_start_index, l2_end_index)
+  def l2_characters_range(script = nil)
+    phrase.text_l2.character_range(l2_start_index, l2_end_index, script:)
   end
 
   private

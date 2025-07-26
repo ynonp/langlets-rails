@@ -8,7 +8,11 @@ class ActivitiesHelperTest < ActionView::TestCase
     @latin_script = scripts(:latin)
   end
 
-  def create_phrase(text_l1_content: "Hello world", text_l2_content: "Hola mundo")
+  def create_phrase(
+    text_l1_content: "Hello world",
+    text_l2_content: "Hola mundo",
+    text_l1_variants: [],
+    text_l2_variants: [])
     Phrase.create!(
       medium: @medium,
       timestamp: "01:30",
@@ -17,19 +21,21 @@ class ActivitiesHelperTest < ActionView::TestCase
       text_l1_attributes: {
         language: @english,
         script_variants_attributes: [
-          { script: @latin_script, content: text_l1_content }
+          { script: @latin_script, content: text_l1_content },
+          *text_l1_variants
         ]
       },
       text_l2_attributes: {
         language: @spanish,
         script_variants_attributes: [
-          { script: @latin_script, content: text_l2_content }
+          { script: @latin_script, content: text_l2_content },
+          *text_l2_variants
         ]
       }
     )
   end
 
-  def create_token_translation(phrase:, l1_start_index:, l1_end_index:, translation:)
+  def create_token_translation(phrase:, l1_start_index:, l1_end_index:, translation: nil)
     TokenTranslation.create!(
       phrase: phrase,
       l1_start_index: l1_start_index,
@@ -841,5 +847,53 @@ class ActivitiesHelperTest < ActionView::TestCase
     # The regex should account for the full HTML spans, not just ________
     expected_pattern = /I <span[^>]*>________<\/span> <span[^>]*>________<\/span> very <span[^>]*>________<\/span> today/
     assert_match(expected_pattern, result)
+  end
+
+  test "should handle Hebrew text with no token translations" do
+    phrase = create_phrase(text_l1_content: "שלום עולם")
+    result = wrap_tokens_in_spans(phrase)
+    assert_equal "<span>שלום עולם</span>", result
+  end
+
+  test "should handle Hebrew text with token translations" do
+    phrase = create_phrase(text_l1_content: "שלום עולם")
+    create_token_translation(phrase:, l1_start_index: 0, l1_end_index: 0, translation: 'hello')
+    result = wrap_tokens_in_spans(phrase)
+
+    spans = Nokogiri::HTML::DocumentFragment.parse(result).css('span')     
+    
+    # First span should have the token with translation data
+    assert_equal "שלום", spans[0].text
+    assert_equal " עולם", spans[1].text
+  end
+
+  test "hebrew que mis ojos 1" do
+    phrase = create_phrase(text_l1_content: 'קה מיס אוחוס סה דספיירטן')
+    create_token_translation(phrase:, l1_start_index: 0, l1_end_index: 0)
+    create_token_translation(phrase:, l1_start_index: 1, l1_end_index: 1)
+    create_token_translation(phrase:, l1_start_index: 2, l1_end_index: 2)
+    create_token_translation(phrase:, l1_start_index: 3, l1_end_index: 4)
+    result = wrap_tokens_in_spans(phrase)
+
+    spans = Nokogiri::HTML::DocumentFragment.parse(result).css('span')
+    
+    # First span should have the token with translation data
+    assert_equal "קה", spans.first.text
+  end
+
+  test "hebrew que mis ojos 2" do
+    phrase = create_phrase(text_l1_content: "que mis ojos se despiertan", text_l1_variants: [
+      {script: Script.find_by(code: 'hebr'), content: 'קה מיס אוחוס סה דספיירטן'}
+    ])
+    create_token_translation(phrase:, l1_start_index: 0, l1_end_index: 0)
+    create_token_translation(phrase:, l1_start_index: 1, l1_end_index: 1)
+    create_token_translation(phrase:, l1_start_index: 2, l1_end_index: 2)
+    create_token_translation(phrase:, l1_start_index: 3, l1_end_index: 4)
+    result = wrap_tokens_in_spans(phrase, script: Script.find_by(code: 'hebr'))
+
+    spans = Nokogiri::HTML::DocumentFragment.parse(result).css('span')
+    
+    # First span should have the token with translation data
+    assert_equal "קה", spans.first.text
   end
 end

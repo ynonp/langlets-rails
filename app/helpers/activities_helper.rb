@@ -4,18 +4,18 @@ module ActivitiesHelper
     (minutes * 60) + seconds
   end
 
-  def wrap_tokens_in_spans(phrase, attributes_map = {})
+  def wrap_tokens_in_spans(phrase, attributes_map = {}, script: nil)
     if phrase.token_translations.empty?
-      content_tag(:span, phrase.text_l1)
+      content_tag(:span, phrase.text_l1.to_s(script))
     else
       # Use the already loaded token_translations, sort them by l1_start_index
       loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
       
       texts = loaded_tokens.inject([]) do |acc, val|
-        l1_start_character_index = val.l1_characters_range.begin
-        l1_end_character_index = val.l1_characters_range.end
+        l1_start_character_index = val.l1_characters_range(script).begin
+        l1_end_character_index = val.l1_characters_range(script).end
         next_translated_token = {
-          "l1" => phrase.text_l1.to_s[val.l1_characters_range],
+          "l1" => phrase.text_l1.to_s(script)[val.l1_characters_range(script)],
           "l2" => val.translation,
           "last_index" => l1_end_character_index,
           "token_id" => val.id,
@@ -27,7 +27,7 @@ module ActivitiesHelper
           else
             [
               *acc,
-              {"l1" => phrase.text_l1.to_s[0...l1_start_character_index], "last_index" => l1_start_character_index},
+              {"l1" => phrase.text_l1.to_s(script)[0...l1_start_character_index], "last_index" => l1_start_character_index},
               next_translated_token
             ]
           end
@@ -36,17 +36,17 @@ module ActivitiesHelper
         else
           [
             *acc,
-            {"l1" => phrase.text_l1.to_s[acc[-1]["last_index"]...l1_start_character_index], "last_index" => l1_start_character_index},
+            {"l1" => phrase.text_l1.to_s(script)[acc[-1]["last_index"]...l1_start_character_index], "last_index" => l1_start_character_index},
             next_translated_token
           ]
         end
       end
 
       # Add the remaining text after the last token if there is any
-      if texts.any? && texts.last["last_index"] < phrase.text_l1.to_s.length
+      if texts.any? && texts.last["last_index"] < phrase.text_l1.to_s(script).length
         texts << {
-          "l1" => phrase.text_l1.to_s[texts.last["last_index"]...phrase.text_l1.to_s.length],
-          "last_index" => phrase.text_l1.to_s.length
+          "l1" => phrase.text_l1.to_s(script)[texts.last["last_index"]...phrase.text_l1.to_s(script).length],
+          "last_index" => phrase.text_l1.to_s(script).length
         }
       end
   

@@ -208,6 +208,10 @@ class Course < ApplicationRecord
           l1:,
           l2:,
         )
+        phrase_data.fetch("text_l1_variants", []).each do |script_variant|
+          script = Script.find_by(code: script_variant["script"])
+          p.text_l1.add_variant!(script:, content: script_variant["content"])
+        end
 
         (phrase_data["translations"] || []).each do |token_translation_data|
           # Validate indices before attempting DB creation
