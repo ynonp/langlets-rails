@@ -9,15 +9,15 @@
 #   end
 
 # Create scripts first (only for languages we're seeding)
-latin_script = Script.find_or_create_by!(code: 'Latn') do |script|
+latin_script = Script.find_or_create_by!(code: 'latn') do |script|
   script.name = 'Latin'
 end
 
-hebrew_script = Script.find_or_create_by!(code: 'Hebr') do |script|
+hebrew_script = Script.find_or_create_by!(code: 'hebr') do |script|
   script.name = 'Hebrew'
 end
 
-arabic_script = Script.find_or_create_by!(code: 'Arab') do |script|
+arabic_script = Script.find_or_create_by!(code: 'arab') do |script|
   script.name = 'Arabic'
 end
 

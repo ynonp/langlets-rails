@@ -1,11 +1,11 @@
 latin:
-  code: 'Latn'
+  code: 'latn'
   name: 'Latin'
 
 hebrew:
-  code: 'Hebr'
+  code: 'hebr'
   name: 'Hebrew'
 
 arabic:
-  code: 'Arab'
+  code: 'arab'
   name: 'Arabic'
