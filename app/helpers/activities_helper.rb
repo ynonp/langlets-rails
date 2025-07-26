@@ -134,4 +134,62 @@ module ActivitiesHelper
       result.html_safe
     end
   end
+
+  # Script-aware helper for getting token text
+  def token_original_text(token_translation, script = nil)
+    phrase = token_translation.phrase
+    character_range = token_translation.l1_characters_range(script)
+    phrase.text_l1.to_s(script)[character_range]
+  end
+
+  # Script-aware helper for getting phrase text in L1
+  def phrase_text_l1(phrase, script = nil)
+    phrase.text_l1.to_s(script)
+  end
+
+  # Script-aware helper for getting phrase text in L2
+  def phrase_text_l2(phrase, script = nil)
+    phrase.text_l2.to_s(script)
+  end
+
+  # Helper to prepare tokens data for match tokens activity with script support
+  def prepare_tokens_for_matching(token_translations, script = nil)
+    require 'set'
+    
+    # Filter out duplicates based on l1 text value or l2 text value
+    seen_l1_texts = Set.new
+    seen_l2_texts = Set.new
+    filtered_token_translations = token_translations.select do |t|
+      l1_text = token_original_text(t, script)
+      l2_text = t.translation
+      
+      # Skip if we've already seen this l1 or l2 text
+      if seen_l1_texts.include?(l1_text) || seen_l2_texts.include?(l2_text)
+        false
+      else
+        seen_l1_texts.add(l1_text)
+        seen_l2_texts.add(l2_text)
+        true
+      end
+    end
+    
+    # Map each token translation to [word in l1, translation in l2, audio]
+    filtered_token_translations.map do |t|
+      l1_word = token_original_text(t, script)
+      audio_url = t.l1_audio.attached? ? 
+        Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
+      
+      {
+        l1_word: l1_word,
+        l2_translation: t.translation,
+        audio_url: audio_url,
+        id: t.id
+      }
+    end
+  end
+
+  # Helper to prepare phrases list for sorting activity with script support
+  def prepare_phrases_for_sorting(phrases, script = nil)
+    phrases.ordered_by_timestamp.first(4).map { |p| phrase_text_l1(p, script) }
+  end
 end
