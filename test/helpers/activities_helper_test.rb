@@ -557,4 +557,289 @@ class ActivitiesHelperTest < ActionView::TestCase
     assert_match(/,/, non_token_spans[0].text, "Comma should be in non-token span")
     assert_match(/!/, non_token_spans[1].text, "Exclamation should be in non-token span")
   end
+
+  # Tests for render_phrase_with_blanks method
+  test "render_phrase_with_blanks should return text with no blanks when phrase has no token translations" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    
+    result = render_phrase_with_blanks(phrase)
+    
+    assert_equal "Hello world", result
+  end
+
+  test "render_phrase_with_blanks should replace single token with blank" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    # Should have a blank span for the token
+    blank_span = parsed.css('span.blank-line').first
+    assert_not_nil blank_span
+    assert_equal "________", blank_span.text
+    assert_equal "blank-line underline text-gray-400", blank_span['class']
+    
+    # Should contain token data
+    token_data = JSON.parse(blank_span['data-token'])
+    assert_equal "Hello", token_data['original_text']
+    
+    # Should preserve remaining text
+    assert_match(/ world/, result)
+  end
+
+  test "render_phrase_with_blanks should replace multiple tokens with blanks" do
+    phrase = create_phrase(text_l1_content: "Hello beautiful world")
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,
+      l1_end_index: 2,
+      translation: "mundo"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    # Should have two blank spans
+    blank_spans = parsed.css('span.blank-line')
+    assert_equal 2, blank_spans.length
+    
+    # Verify both spans have the right structure
+    blank_spans.each do |span|
+      assert_equal "________", span.text
+      assert_equal "blank-line underline text-gray-400", span['class']
+      assert_not_nil span['data-token']
+    end
+    
+    # Should preserve non-token text
+    assert_match(/ beautiful /, result)
+  end
+
+  test "render_phrase_with_blanks should handle token at beginning of phrase" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    # Should start with a blank span
+    blank_span = parsed.css('span.blank-line').first
+    assert_not_nil blank_span
+    
+    token_data = JSON.parse(blank_span['data-token'])
+    assert_equal "Hello", token_data['original_text']
+    
+    # Should preserve remaining text
+    assert_match(/ world/, result)
+  end
+
+  test "render_phrase_with_blanks should handle token at end of phrase" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,
+      l1_end_index: 1,
+      translation: "mundo"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    blank_span = parsed.css('span.blank-line').first
+    assert_not_nil blank_span
+    
+    token_data = JSON.parse(blank_span['data-token'])
+    assert_equal "world", token_data['original_text']
+    
+    # Should preserve preceding text
+    assert_match(/Hello /, result)
+  end
+
+  test "render_phrase_with_blanks should handle multi-word tokens" do
+    phrase = create_phrase(text_l1_content: "New York City is amazing")
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 2,  # "New York City"
+      translation: "Nueva York"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    blank_span = parsed.css('span.blank-line').first
+    assert_not_nil blank_span
+    
+    token_data = JSON.parse(blank_span['data-token'])
+    assert_equal "New York City", token_data['original_text']
+    
+    # Should preserve remaining text
+    assert_match(/ is amazing/, result)
+  end
+
+  test "render_phrase_with_blanks should include similar_sound data when available" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    
+    # Set similar_sound data (this would typically be done through a model method)
+    token.update!(similar_sound: ["Ola", "Holla"])
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    blank_span = parsed.css('span.blank-line').first
+    token_data = JSON.parse(blank_span['data-token'])
+    
+    assert_equal "Hello", token_data['original_text']
+    assert_equal ["Ola", "Holla"], token_data['similar_sound']
+  end
+
+  test "render_phrase_with_blanks should handle adjacent tokens correctly" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,
+      l1_end_index: 1,
+      translation: "mundo"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    # Should have two blank spans
+    blank_spans = parsed.css('span.blank-line')
+    assert_equal 2, blank_spans.length
+    
+    # Should preserve the space between them - check for the span structure
+    expected_pattern = /<span[^>]*>________<\/span> <span[^>]*>________<\/span>/
+    assert_match(expected_pattern, result)
+  end
+
+  test "render_phrase_with_blanks should properly escape quotes in token data" do
+    phrase = create_phrase(text_l1_content: "He said hello to me")
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,  # "hello"
+      l1_end_index: 2,
+      translation: "hola"
+    )
+    
+    # Set similar_sound with quotes to test escaping
+    token.update!(similar_sound: ["'hola'", "\"hello\""])
+    
+    result = render_phrase_with_blanks(phrase)
+    
+    # Should not break HTML due to quotes
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    blank_span = parsed.css('span.blank-line').first
+    assert_not_nil blank_span
+    
+    # Should properly escape quotes in data attribute
+    token_data_attr = blank_span['data-token']
+    assert_not_nil token_data_attr
+    
+    # Should contain escaped quotes
+    assert_includes result, "&#39;"
+    
+    # Should be parseable JSON
+    token_data = JSON.parse(token_data_attr)
+    assert_equal "hello", token_data['original_text']  # Token itself doesn't have quotes
+    assert_includes token_data['similar_sound'], "'hola'"
+    assert_includes token_data['similar_sound'], "\"hello\""
+  end
+
+  test "render_phrase_with_blanks should preserve complete original text structure" do
+    original_text = "The quick brown fox jumps"
+    phrase = create_phrase(text_l1_content: original_text)
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,  # "quick"
+      l1_end_index: 1,
+      translation: "rápido"
+    )
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 3,  # "fox"
+      l1_end_index: 3,
+      translation: "zorro"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    
+    # Remove the blank spans and their content to check remaining text
+    text_without_blanks = result.gsub(/<span[^>]*class[^>]*blank-line[^>]*>.*?<\/span>/, 'TOKEN')
+    
+    # Should maintain the structure with tokens replaced
+    assert_equal "The TOKEN brown TOKEN jumps", text_without_blanks
+  end
+
+  test "render_phrase_with_blanks integration test with complex phrase" do
+    phrase = create_phrase(text_l1_content: "I love New York City very much today")
+    
+    # Create multiple tokens including multi-word
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,  # "love"
+      l1_end_index: 1,
+      translation: "amo"
+    )
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,  # "New York City" 
+      l1_end_index: 4,
+      translation: "Nueva York"
+    )
+    create_token_translation(
+      phrase: phrase,
+      l1_start_index: 6,  # "much"
+      l1_end_index: 6,
+      translation: "mucho"
+    )
+    
+    result = render_phrase_with_blanks(phrase)
+    parsed = Nokogiri::HTML::DocumentFragment.parse(result)
+    
+    # Should have 3 blank spans
+    blank_spans = parsed.css('span.blank-line')
+    assert_equal 3, blank_spans.length
+    
+    # Verify token data for multi-word token
+    multi_word_span = blank_spans.find do |span|
+      token_data = JSON.parse(span['data-token'])
+      token_data['original_text'] == "New York City"
+    end
+    assert_not_nil multi_word_span
+    
+    # Should preserve structure - check that blanks are in right positions
+    # The regex should account for the full HTML spans, not just ________
+    expected_pattern = /I <span[^>]*>________<\/span> <span[^>]*>________<\/span> very <span[^>]*>________<\/span> today/
+    assert_match(expected_pattern, result)
+  end
 end

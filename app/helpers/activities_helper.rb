@@ -74,30 +74,64 @@ module ActivitiesHelper
   end
   
   def render_phrase_with_blanks(phrase)
-    text = phrase['text_l1']
-    tokens = phrase['token_translations'] || []
-    
-    # Sort tokens by start_index in descending order to avoid position shifts
-    tokens_sorted = tokens.sort_by { |t| -t['start_index'] }
-    
-    tokens_sorted.each do |token|
-      start_index = token['start_index']
-      end_index = token['end_index']
-      original_text = token['original_text']
-      similar_sound = token['similar_sound']
+    if phrase.token_translations.empty?
+      phrase.text_l1.to_s
+    else
+      # Use the same approach as wrap_tokens_in_spans - build segments then join
+      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
       
-      token_data = {
-        original_text: original_text,
-        similar_sound: similar_sound
-      }.to_json
+      texts = loaded_tokens.inject([]) do |acc, val|
+        l1_start_character_index = val.l1_characters_range.begin
+        l1_end_character_index = val.l1_characters_range.end
+        original_text = phrase.text_l1.to_s[val.l1_characters_range]
+        
+        token_data = {
+          original_text: original_text,
+          similar_sound: val.similar_sound
+        }.to_json
+        
+        # Create a blank span for this token
+        blank_html = "<span class='blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
+        
+        next_token_segment = {
+          "content" => blank_html,
+          "last_index" => l1_end_character_index,
+          "is_token" => true
+        }
+        
+        if acc.empty?
+          if l1_start_character_index.zero?
+            [*acc, next_token_segment]
+          else
+            [
+              *acc,
+              {"content" => phrase.text_l1.to_s[0...l1_start_character_index], "last_index" => l1_start_character_index, "is_token" => false},
+              next_token_segment
+            ]
+          end
+        elsif acc[-1]["last_index"] == l1_start_character_index
+          [*acc, next_token_segment]
+        else
+          [
+            *acc,
+            {"content" => phrase.text_l1.to_s[acc[-1]["last_index"]...l1_start_character_index], "last_index" => l1_start_character_index, "is_token" => false},
+            next_token_segment
+          ]
+        end
+      end
+
+      # Add the remaining text after the last token if there is any
+      if texts.any? && texts.last["last_index"] < phrase.text_l1.to_s.length
+        texts << {
+          "content" => phrase.text_l1.to_s[texts.last["last_index"]...phrase.text_l1.to_s.length],
+          "last_index" => phrase.text_l1.to_s.length,
+          "is_token" => false
+        }
+      end
       
-      # Create a blank line with the same width as the original text
-      blank_html = "<span class='blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
-      
-      # Replace the token with a blank line
-      text = text[0...start_index] + blank_html + text[end_index..]
+      # Join all the segments
+      result = texts.map { |segment| segment["content"] }.join
+      result.html_safe
     end
-    
-    text.html_safe
   end
 end

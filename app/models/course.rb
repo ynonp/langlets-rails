@@ -178,7 +178,7 @@ class Course < ApplicationRecord
 
       a1 = Activities::WatchVideoActivity.create!(lesson: l, order: 1, user: self.user)
 
-      a2 = if rand() > 0.5
+      a2 = if rand() > -1
         Activities::MatchPhrasesActivity.create!(lesson: l, order: 2, user: self.user)
       else
         Activities::WordOrderActivity.create!(lesson: l, order: 2, user: self.user)

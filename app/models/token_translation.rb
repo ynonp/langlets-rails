@@ -26,7 +26,7 @@ class TokenTranslation < ApplicationRecord
     phrase.text_l1.character_range(l1_start_index, l1_end_index)
   end
 
-  def l2_character_range
+  def l2_characters_range
     phrase.text_l2.character_range(l2_start_index, l2_end_index)
   end
 

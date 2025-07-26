@@ -28,16 +28,15 @@ module Activities
 
     def build_word_segments_for_phrase(phrase)
       # Get token translations for this phrase that are associated with this activity
-      tokens = phrase.token_translations                     
+      tokens = phrase.token_translations
                      .order(:l1_start_index)
                      .includes(l1_audio_attachment: :blob)
-
-      pp tokens.to_a
+      
       return fallback_word_segments(phrase.text_l1) if tokens.empty?
 
       segments = []
       current_position = 0
-      text_length = phrase.text_l1.length
+      text_length = phrase.text_l1.to_s.length
 
       tokens.each do |token|
         # Add static text before this token if there's a gap
