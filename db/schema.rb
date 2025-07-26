@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_25_051746) do
+ActiveRecord::Schema[8.0].define(version: 2025_07_26_123750) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -104,6 +104,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_25_051746) do
     t.bigint "language_id"
     t.bigint "user_id", null: false
     t.integer "status", default: 0, null: false
+    t.boolean "hebrew_script_available", default: false, null: false
     t.index ["language_id"], name: "index_courses_on_language_id"
     t.index ["name"], name: "index_courses_on_name", unique: true
     t.index ["slug"], name: "index_courses_on_slug", unique: true

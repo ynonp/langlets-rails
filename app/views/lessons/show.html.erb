@@ -94,6 +94,31 @@
         <!-- Gamification content will be inserted here -->
         <%= render partial: 'gamification_bar' %>
 
+        <!-- Script switching link (if Hebrew script is available) -->
+        <% if @lesson.course&.hebrew_script_available? %>
+          <% if @current_script_code == 'hebr' %>
+            <%= link_to lesson_path(@lesson.slug, a: params[:a]),
+              class: "text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+              title: "Switch to default script",
+              data: {
+                :"turbo-frame" => "_top",
+                :turbo => false
+              } do %>
+              Switch to default script
+            <% end %>
+          <% else %>
+            <%= link_to lesson_path(@lesson.slug, a: params[:a], script: 'hebr'),
+              class: "text-white bg-blue-600 hover:bg-blue-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+              title: "Switch to Hebrew script",
+              data: {
+                :"turbo-frame" => "_top",
+                :turbo => false
+              } do %>
+              Switch to Hebrew script
+            <% end %>
+          <% end %>
+        <% end %>
+
         <!-- Skip Button -->
         <%= link_to @next_activity_path,
           class: "text-white bg-gray-600 hover:bg-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
@@ -114,7 +139,7 @@
       data-activity-navigation-target="content"
       data-activity-navigation-url="<%= @current_url %>"
     >  
-      <%= render partial: @activity.partial_name, locals: { params: activity_params } %>
+      <%= render partial: @activity.partial_name, locals: { params: activity_params, current_script: @current_script } %>
     </div>
   </turbo-frame>
 </div>

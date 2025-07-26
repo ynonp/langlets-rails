@@ -59,19 +59,28 @@ l_ar = Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
   lang.default_script = arabic_script
 end
 
-admin = User.new(email: 'ynon@hey.com', password: '10203040', password_confirmation: '10203040')
-admin.skip_confirmation!
-admin.save!
+admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
+  user.password = '10203040'
+  user.password_confirmation = '10203040'
+  user.skip_confirmation!
+end
 
 a_dios_le_pido_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "juanes.json")))
 
-mediun = Medium.create!(url: a_dios_le_pido_data["youtubeurl"])
-course1 = Course.create!(
-  name: "A Dios Le Pido",
-  slug: "a-dios-le-pido",
-  main_media_url: a_dios_le_pido_data["youtubeurl"],
-  language: l_es,
-  user: admin,
-  status: :published,
-)
-course1.create_song!(a_dios_le_pido_data)
+mediun = Medium.find_or_create_by(url: a_dios_le_pido_data["youtubeurl"])
+course1 = Course.find_or_create_by(slug: "a-dios-le-pido") do |course|
+  course.name = "A Dios Le Pido"
+  course.main_media_url = a_dios_le_pido_data["youtubeurl"]
+  course.language = l_es
+  course.user = admin
+  course.status = :published
+  course.hebrew_script_available = true
+end
+
+# Only create the course content if it doesn't exist
+if course1.lessons.empty?
+  course1.create_song!(a_dios_le_pido_data)
+else
+  # Update the course to mark it as Hebrew script available
+  course1.update!(hebrew_script_available: true)
+end

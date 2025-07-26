@@ -7,6 +7,10 @@ class LessonsController < ApplicationController
       return
     end
     
+    # Handle script parameter
+    @current_script_code = params[:script]
+    @current_script = Script.find_by(code: @current_script_code) if @current_script_code
+    
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find_by(order: params[:a]) || @activities.first
     @current_url = lesson_path(a: @activity.order)
@@ -22,11 +26,14 @@ class LessonsController < ApplicationController
       nil
     end
     
+    # Preserve script parameter in navigation links
+    script_param = @current_script_code ? { script: @current_script_code } : {}
+    
     @next_activity_path = if next_activity.present?
-      lesson_path(@lesson.slug, a: next_activity.order)
+      lesson_path(@lesson.slug, { a: next_activity.order }.merge(script_param))
     else
       # After last activity, go to finish lesson page
-      finish_lesson_path(@lesson.slug)
+      finish_lesson_path(@lesson.slug, script_param)
     end
 
     # Prepare progress data for completion messages

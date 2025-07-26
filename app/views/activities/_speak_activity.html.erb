@@ -58,7 +58,7 @@
             dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
             <div class="flex items-center <%= l1_rtl ? 'flex-row-reverse' : 'justify-between' %>">
               <div data-controller="popover-translation" class="flex-grow text-center">
-                <%= wrap_tokens_in_spans(phrase, {class: "inline cursor-pointer hover:bg-gray-600 rounded"}) %>
+                <%= wrap_tokens_in_spans(phrase, {class: "inline cursor-pointer hover:bg-gray-600 rounded"}, script: current_script) %>
                 
                 <!-- Translation Popup -->
                 <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
