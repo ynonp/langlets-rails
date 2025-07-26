@@ -68,19 +68,25 @@ end
 a_dios_le_pido_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "juanes.json")))
 
 mediun = Medium.find_or_create_by(url: a_dios_le_pido_data["youtubeurl"])
-course1 = Course.find_or_create_by(slug: "a-dios-le-pido") do |course|
-  course.name = "A Dios Le Pido"
-  course.main_media_url = a_dios_le_pido_data["youtubeurl"]
-  course.language = l_es
-  course.user = admin
-  course.status = :published
-  course.hebrew_script_available = true
-end
+course1 = Course.create!(
+  slug: "a-dios-le-pido",
+  name: "A Dios Le Pido",
+  main_media_url: a_dios_le_pido_data["youtubeurl"],
+  language: l_es,
+  user: admin,
+  status: :published,
+  hebrew_script_available: true
+)
+course1.create_song!(a_dios_le_pido_data)
 
-# Only create the course content if it doesn't exist
-if course1.lessons.empty?
-  course1.create_song!(a_dios_le_pido_data)
-else
-  # Update the course to mark it as Hebrew script available
-  course1.update!(hebrew_script_available: true)
-end
+haifa_jenin_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "haifa-jenin.json")))
+course2 = Course.create!(
+  slug: 'haifa-jenin',
+  name: 'حيفا جنين',
+  main_media_url: haifa_jenin_data["youtubeurl"],
+  language: l_ar,
+  user: admin,
+  status: :published,
+  hebrew_script_available: true
+)
+course2.create_song!(haifa_jenin_data)
