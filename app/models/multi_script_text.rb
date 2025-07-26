@@ -42,6 +42,27 @@ class MultiScriptText < ApplicationRecord
     script_variants.create!(script: script, content: content)
   end
 
+  # Get content for the default script of the language
+  def default_content
+    default_content_without_fallback
+  end
+
+  # Get content for a specific script, with fallback to default
+  def content_for_script(script)
+    @content_cache ||= {}
+    @content_cache[script.id] ||= begin
+      variant = variant_for_script(script)
+      variant&.content || default_content_without_fallback
+    end
+  end
+
+  private
+
+  def default_content_without_fallback
+    variant = variant_for_script(language.default_script)
+    variant&.content
+  end
+
   private
 
   def clear_caches!
@@ -53,19 +74,5 @@ class MultiScriptText < ApplicationRecord
   def variant_for_script(script)
     @script_variants_cache ||= {}
     @script_variants_cache[script.id] ||= script_variants.find_by(script: script)
-  end
-
-  # Get content for the default script of the language
-  def default_content
-    content_for_script(language.default_script)
-  end
-
-  # Get content for a specific script, with fallback to default
-  def content_for_script(script)
-    @content_cache ||= {}
-    @content_cache[script.id] ||= begin
-      variant = variant_for_script(script)
-      variant&.content
-    end
   end
 end
