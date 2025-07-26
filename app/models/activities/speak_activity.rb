@@ -1,6 +1,6 @@
 module Activities
   class SpeakActivity < Activity
-    def activity_params
+    def activity_params(current_script: nil)
       l1 = phrases.ordered_by_timestamp.first.l1
       l2 = phrases.ordered_by_timestamp.first.l2
       {

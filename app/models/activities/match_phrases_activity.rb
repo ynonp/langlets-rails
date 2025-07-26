@@ -1,6 +1,6 @@
 module Activities
   class MatchPhrasesActivity < Activity
-    def activity_params
+    def activity_params(current_script: nil)
       {
         **video_params,
         phrases: processed_phrases,

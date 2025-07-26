@@ -18,6 +18,9 @@
       "devDependencies": {
         "esbuild": "0.25.3",
       },
+      "optionalDependencies": {
+        "@parcel/watcher": "^2.5.1",
+      },
     },
   },
   "packages": {

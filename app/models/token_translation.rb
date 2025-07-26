@@ -22,6 +22,10 @@ class TokenTranslation < ApplicationRecord
     @original_text ||= phrase.text_l1.to_s[l1_characters_range]
   end
 
+  def original_text_for_script(script)
+    phrase.text_l1.to_s(script)[l1_characters_range(script)]
+  end
+
   def l1_characters_range(script = nil)
     phrase.text_l1.character_range(l1_start_index, l1_end_index, script:)
   end

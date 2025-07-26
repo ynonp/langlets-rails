@@ -2,7 +2,7 @@ module Activities
   class WordOrderActivity < Activity
     include ActivityWithTokens
 
-    def activity_params
+    def activity_params(current_script: nil)
       all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
       processed_phrases = Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
       

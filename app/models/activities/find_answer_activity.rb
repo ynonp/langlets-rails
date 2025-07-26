@@ -1,6 +1,6 @@
 module Activities
   class FindAnswerActivity < Activity
-    def activity_params
+    def activity_params(current_script: nil)
       {
         phrases: phrases.ordered_by_timestamp.includes(:token_translations),
         text: phrases.ordered_by_timestamp.map { |p| {id: p.id, text: p.text_l1, translation: p.text_l2} },

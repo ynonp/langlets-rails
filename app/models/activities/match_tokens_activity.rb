@@ -2,7 +2,7 @@ require 'set'
 
 module Activities
   class MatchTokensActivity < Activity
-    def activity_params
+    def activity_params(current_script: nil)
       # Fetch activity's token translations with phrases and their languages preloaded to avoid N+1 queries
       activity_token_translations = token_translations.includes(phrase: [:l1, :l2], l1_audio_attachment: :blob).to_a
     
@@ -10,7 +10,8 @@ module Activities
     seen_l1_texts = Set.new
     seen_l2_texts = Set.new
     filtered_token_translations = activity_token_translations.select do |t|
-      l1_text = t.original_text
+      # Use script-aware text extraction
+      l1_text = current_script ? t.original_text_for_script(current_script) : t.original_text
       l2_text = t.translation
       
       # Skip if we've already seen this l1 or l2 text
@@ -25,7 +26,8 @@ module Activities
     
     # Map each token translation to [word in l1, translation in l2, audio]
     tokens_data = filtered_token_translations.map do |t|
-      l1_word = t.original_text
+      # Use script-aware text extraction for l1_word
+      l1_word = current_script ? t.original_text_for_script(current_script) : t.original_text
       audio_url = t.l1_audio.attached? ? 
         Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
       

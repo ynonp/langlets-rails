@@ -26,7 +26,7 @@
 <% end %>
 
 <% 
-  activity_params = @activity.activity_params 
+  activity_params = @activity.activity_params(current_script: @current_script) 
 %>
 
 <div class=" h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800"
