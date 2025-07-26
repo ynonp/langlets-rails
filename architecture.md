@@ -24,9 +24,51 @@
   - English and native names
   - RTL (Right-to-Left) language support
   - Pronunciation variant handling
-- **Relationships**: Referenced by phrases as L1 (source) and L2 (target) languages
+  - **Default Script Association**: Each language has a default writing system/script
+- **Relationships**: 
+  - Referenced by phrases as L1 (source) and L2 (target) languages
+  - Belongs to Script (as default_script)
+  - One-to-many with MultiScriptTexts
 
-#### 2. **Medium** (`media`)
+#### 2. **Script** (`scripts`)
+- **Purpose**: Define writing systems/scripts for languages (e.g., Latin, Arabic, Cyrillic)
+- **Key Features**:
+  - Unique script code identifier (`code`)
+  - Human-readable script name (`name`)
+  - Indexed code field for efficient lookups
+- **Relationships**: 
+  - One-to-many with Languages (as default_script)
+  - One-to-many with ScriptVariants
+
+#### 3. **MultiScriptText** (`multi_script_texts`)
+- **Purpose**: Store text content in multiple writing systems/scripts for the same language
+- **Key Features**:
+  - Language association for context
+  - Audio status tracking (not_required, audio_required, audio_ready)
+  - Nested attributes support for script variants
+  - Automatic content caching and invalidation
+  - **Helper Methods**:
+    - `create_with_default_content`: Creates text with default script content
+    - `to_s(script)`: Returns content for specific script or default
+    - `add_variant!`: Adds new script variant with cache clearing
+    - `character_range`: Calculates character ranges for word tokenization
+- **Relationships**: 
+  - Belongs to Language
+  - One-to-many with ScriptVariants
+  - Referenced by Phrases as text_l1 and text_l2
+
+#### 4. **ScriptVariant** (`script_variants`)
+- **Purpose**: Store specific script representations of multi-script text
+- **Key Features**:
+  - Text content in specific script (`content`)
+  - Unique constraint on multi_script_text + script combination
+  - Automatic parent cache invalidation on changes
+  - Content validation (non-null)
+- **Relationships**: 
+  - Belongs to MultiScriptText
+  - Belongs to Script
+
+#### 5. **Medium** (`media`)
 - **Purpose**: Store references to external media content (YouTube videos)
 - **Key Features**:
   - Unique URL constraint
@@ -35,7 +77,7 @@
   - One-to-many with Lessons
   - One-to-many with Phrases
 
-#### 3. **Course** (`courses`)
+#### 6. **Course** (`courses`)
 - **Purpose**: Group lessons into structured learning paths
 - **Key Features**:
   - Hierarchical organization with slugs
@@ -47,7 +89,7 @@
   - Belongs to Language and User
   - Many-to-many with LearningPaths (through CoursesLearningPath)
 
-#### 4. **Lesson** (`lessons`)
+#### 7. **Lesson** (`lessons`)
 - **Purpose**: Define specific learning segments from media content
 - **Key Features**:
   - Unique slugs for routing
@@ -59,19 +101,24 @@
   - Belongs to Course, Medium, and User
   - One-to-many with Activities
 
-#### 5. **Phrase** (`phrases`)
+#### 8. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
 - **Key Features**:
-  - Bilingual text pairs (`text_l1`, `text_l2`)
+  - **Multi-Script Text Support**: References to MultiScriptText objects (`text_l1_id`, `text_l2_id`)
   - Media synchronization timestamps
   - Language pair references (`l1_id`, `l2_id`)
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
+  - **Helper Methods**:
+    - `text_l1_content`/`text_l2_content`: Get default script content
+    - `text_l1_for_script`/`text_l2_for_script`: Get content for specific script
+    - `with_calculated_end_timestamps`: Calculate phrase durations
 - **Relationships**: 
   - Belongs to Medium and two Languages
+  - Belongs to two MultiScriptText objects (text_l1, text_l2)
   - One-to-many with TokenTranslations
   - Many-to-many with Activities (through ActivityPhrase)
 
-#### 6. **TokenTranslation** (`token_translations`)
+#### 9. **TokenTranslation** (`token_translations`)
 - **Purpose**: Provide word/token-level translations within phrases
 - **Key Features**:
   - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
@@ -84,7 +131,7 @@
   - Belongs to Phrase
   - Many-to-many with Activities (through ActivityTokenTranslation)
 
-#### 7. **User** (`users`)
+#### 10. **User** (`users`)
 - **Purpose**: User authentication and account management
 - **Key Features**:
   - Email-based authentication (unique constraint)
@@ -116,7 +163,7 @@
 
 ### Activity System (Single Table Inheritance)
 
-#### 8. **Activity** (`activities`)
+#### 11. **Activity** (`activities`)
 - **Purpose**: Base class for interactive learning exercises
 - **Architecture**: Uses STI (Single Table Inheritance) with `type` column
 - **Key Features**:
@@ -139,7 +186,7 @@
 - **ListenActivity**: Audio comprehension with token identification
 - **FindAnswerActivity**: Question-answer exercises
 
-#### 9. **LearningPath** (`learning_paths`)
+#### 12. **LearningPath** (`learning_paths`)
 - **Purpose**: Define structured curriculum pathways
 - **Key Features**:
   - Named learning sequences with descriptions
@@ -147,7 +194,7 @@
   - Publication status (boolean)
 - **Relationships**: Many-to-many with Courses (through CoursesLearningPath)
 
-#### 10. **CoursesLearningPath** (`courses_learning_paths`)
+#### 13. **CoursesLearningPath** (`courses_learning_paths`)
 - **Purpose**: Join table linking courses to learning paths
 - **Key Features**:
   - Ordered sequence within learning paths (integer order field)
@@ -156,12 +203,12 @@
 
 ### Join Tables
 
-#### 11. **ActivityPhrase** (`activity_phrases`)
+#### 14. **ActivityPhrase** (`activity_phrases`)
 - Links activities to their associated phrases
 - Enables many-to-many relationship between Activities and Phrases
 - Includes timestamps for creation/update tracking
 
-#### 12. **ActivityTokenTranslation** (`activity_token_translations`)
+#### 15. **ActivityTokenTranslation** (`activity_token_translations`)
 - Links activities to specific token translations for word-level exercises
 - Enables many-to-many relationship between Activities and TokenTranslations
 - Includes compound index for efficient querying
@@ -169,7 +216,7 @@
 
 ### User Progress Tracking
 
-#### 13. **ActivityUser** (`activity_users`)
+#### 16. **ActivityUser** (`activity_users`)
 - **Purpose**: Track user progress through individual activities
 - **Key Features**:
   - Unique constraint on activity + user combination
@@ -177,7 +224,7 @@
   - Indexed on both activity_id and user_id for efficient queries
 - **Relationships**: Links Users to Activities for progress monitoring
 
-#### 14. **LessonUser** (`lesson_users`)
+#### 17. **LessonUser** (`lesson_users`)
 - **Purpose**: Track user progress through lessons
 - **Key Features**:
   - Unique constraint on lesson + user combination
@@ -187,7 +234,7 @@
 
 ### Workflow Management
 
-#### 15. **CreateSongProgress** (`create_song_progresses`)
+#### 18. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
   - YouTube URL processing (`youtubeurl`)
@@ -276,11 +323,22 @@ Course (1) ──→ (many) Lesson
 Lesson (many) ──→ (1) Medium
 Lesson (1) ──→ (many) Activity
 
+# Multi-Script Text System
+Language (1) ──→ (many) MultiScriptText
+Language (many) ──→ (1) Script (as default_script)
+Script (1) ──→ (many) ScriptVariant
+Script (1) ──→ (many) Language (as default_script)
+MultiScriptText (1) ──→ (many) ScriptVariant
+ScriptVariant (many) ──→ (1) Script
+ScriptVariant (many) ──→ (1) MultiScriptText
+
 # Language & Content
 Language (1) ──→ (many) Phrase (as L1)
 Language (1) ──→ (many) Phrase (as L2)
 Language (1) ──→ (many) Course
 Medium (1) ──→ (many) Phrase
+Phrase (many) ──→ (1) MultiScriptText (as text_l1)
+Phrase (many) ──→ (1) MultiScriptText (as text_l2)
 
 # Token-level Translation
 Phrase (1) ──→ (many) TokenTranslation
@@ -358,11 +416,12 @@ The platform implements a modern, accessible authentication system with the foll
 
 ### Content Processing Pipeline
 1. **YouTube URL Input**: Extract video metadata and audio
-2. **Phrase Extraction**: Generate timestamped bilingual phrases
-3. **Audio Generation**: Create TTS audio for phrases and tokens via Azure
-4. **Token Mapping**: Create word-level translation mappings with audio
-5. **Lesson Generation**: Structure content into pedagogical sequences
-6. **Activity Creation**: Generate diverse interactive exercises with audio support
+2. **Phrase Extraction**: Generate timestamped bilingual phrases with multi-script support
+3. **Multi-Script Text Creation**: Store content in multiple writing systems (Latin, Arabic, etc.)
+4. **Audio Generation**: Create TTS audio for phrases and tokens via Azure
+5. **Token Mapping**: Create word-level translation mappings with audio
+6. **Lesson Generation**: Structure content into pedagogical sequences
+7. **Activity Creation**: Generate diverse interactive exercises with audio support
 
 ### Learning Activity Types
 - **Video Comprehension**: Synchronized subtitle viewing with original audio
@@ -374,10 +433,12 @@ The platform implements a modern, accessible authentication system with the foll
 - **Q&A Exercises**: Comprehension testing with audio support
 
 ### Multilingual Support
+- **Multi-Script Text System**: Support for multiple writing systems per language
+- **Script Variants**: Store text in different scripts (Latin, Arabic, Cyrillic, etc.)
 - **RTL Languages**: Right-to-left text rendering
 - **Pronunciation Variants**: Regional accent support
 - **Sound Similarity**: Pronunciation confusion detection
-- **Character Indexing**: Precise word boundary detection
+- **Character Indexing**: Precise word boundary detection across scripts
 
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
@@ -402,6 +463,9 @@ app/models/
 ├── lesson.rb
 ├── medium.rb
 ├── language.rb
+├── script.rb                   # Writing system definitions
+├── multi_script_text.rb        # Multi-script text container
+├── script_variant.rb           # Specific script content
 ├── phrase.rb                   # has_one_attached :l1_audio
 ├── token_translation.rb        # has_one_attached :l1_audio
 ├── user.rb                     # Devise authentication
