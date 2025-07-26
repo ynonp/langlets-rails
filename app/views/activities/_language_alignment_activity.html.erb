@@ -9,7 +9,8 @@
 %>
 
 <% 
-  phrases = params[:phrases] || []
+  phrases_with_tokens = params[:phrases_with_tokens] || []
+  phrases = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens, current_script)
   rtl = params[:rtl]  
   l1 = params[:l1]
   l2 = params[:l2]
@@ -17,7 +18,7 @@
   
   phrases_with_all_tokens = phrases.filter_map do |phrase|
     {
-      original_text: phrase[:text],
+      original_text: phrase[:original_text],
       translation: phrase[:translation],
       tokens: phrase[:tokens]
     } if phrase[:tokens].present?

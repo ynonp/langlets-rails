@@ -190,6 +190,50 @@ module ActivitiesHelper
 
   # Helper to prepare phrases list for sorting activity with script support
   def prepare_phrases_for_sorting(phrases, script = nil)
-    phrases.ordered_by_timestamp.first(4).map { |p| phrase_text_l1(p, script) }
+    # phrases is already an array from first(4), so just map it
+    phrases.map { |p| phrase_text_l1(p, script) }
+  end
+
+  # Helper to prepare phrases data for language alignment activity with script support
+  def prepare_phrases_with_tokens_for_alignment(phrases_with_tokens, script = nil)
+    phrases_with_tokens.filter_map do |phrase_data|
+      phrase = phrase_data[:phrase]
+      tokens = phrase_data[:tokens]
+      
+      next unless tokens.present?
+      
+      # Get script-aware text
+      l1_text = phrase_text_l1(phrase, script)
+      l2_text = phrase_text_l2(phrase, script) 
+      
+      # Calculate character ranges for the current script
+      tokens_with_ranges = tokens.map do |token_data|
+        # Use the token translation to get script-aware character ranges
+        token_translation = phrase.token_translations.find { |tt| 
+          tt.l1_start_index == token_data[:l1_start_index] && 
+          tt.l1_end_index == token_data[:l1_end_index] 
+        }
+        
+        if token_translation
+          l1_range = token_translation.l1_characters_range(script)
+          l2_range = token_translation.l2_characters_range(script)
+          
+          token_data.merge({
+            l1_start_index: l1_range.begin,
+            l1_end_index: l1_range.end - 1,
+            l2_start_index: l2_range.begin,
+            l2_end_index: l2_range.end - 1
+          })
+        else
+          token_data
+        end
+      end
+      
+      {
+        original_text: l1_text,
+        translation: l2_text,
+        tokens: tokens_with_ranges
+      }
+    end
   end
 end
