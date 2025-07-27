@@ -73,6 +73,12 @@ class MultiScriptText < ApplicationRecord
   # Find or create a script variant for a specific script
   def variant_for_script(script)
     @script_variants_cache ||= {}
-    @script_variants_cache[script.id] ||= script_variants.find_by(script: script)
+    @script_variants_cache[script.id] ||= begin
+      if script_variants.loaded?
+        script_variants.detect { |sv| sv.script_id == script.id }
+      else
+        script_variants.find_by(script: script)
+      end
+    end
   end
 end
