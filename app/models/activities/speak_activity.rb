@@ -15,7 +15,7 @@ module Activities
     end
 
     def ordered_phrases
-      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(:token_translations).to_a
+      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(:text_l1 => :script_variants, :text_l2 => :script_variants, :token_translations => []).to_a
     end
 
     private

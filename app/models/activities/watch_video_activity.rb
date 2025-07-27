@@ -16,5 +16,9 @@ module Activities
       }
     end
 
+  def ordered_phrases
+    @ordered_phrases ||= phrases.order(:timestamp).includes(:text_l1 => :script_variants, :text_l2 => :script_variants).to_a
+  end
+
   end
 end

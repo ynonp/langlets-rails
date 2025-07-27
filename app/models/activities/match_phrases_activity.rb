@@ -4,14 +4,18 @@ module Activities
       {
         **video_params,
         phrases: processed_phrases,
-        all_l2_texts: lesson.medium.phrases.map {|p| p.text_l2 }.uniq,
+        all_l2_texts: lesson.medium.phrases.includes(:text_l2 => :script_variants).map {|p| p.text_l2 }.uniq,
         l1: phrases.first.l1,
         l2: phrases.first.l2
       }
     end
 
     def ordered_phrases
-      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(token_translations: { l1_audio_attachment: :blob }).to_a
+      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(
+        :text_l1 => :script_variants,
+        :text_l2 => :script_variants,
+        token_translations: { l1_audio_attachment: :blob }
+      ).to_a
     end
 
     private

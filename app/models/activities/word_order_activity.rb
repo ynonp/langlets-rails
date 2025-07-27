@@ -24,7 +24,11 @@ module Activities
       }
     end
 
-    private
+  def ordered_phrases
+    @ordered_phrases ||= phrases.order(:timestamp).includes(:text_l1 => :script_variants, :text_l2 => :script_variants).to_a
+  end
+
+  private
 
     def build_word_segments_for_phrase(phrase)
       # Get token translations for this phrase that are associated with this activity
