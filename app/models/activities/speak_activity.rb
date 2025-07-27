@@ -1,28 +1,26 @@
 module Activities
   class SpeakActivity < Activity
     def activity_params
-      l1 = phrases.ordered_by_timestamp.first.l1
-      l2 = phrases.ordered_by_timestamp.first.l2
+      first_phrase = ordered_phrases.first
+      l1 = first_phrase&.l1
+      l2 = first_phrase&.l2
+      
       {
         **video_params,
-        azure_speech_name: phrases.ordered_by_timestamp.first.l1.pronunciation_variant_name,
-        l1: l1.english_name,
-        l2: l2.english_name,
-        l1_rtl: l1.rtl,
-        l2_rtl: l2.rtl,
+        azure_speech_name: l1&.pronunciation_variant_name,
+        l1: l1&.english_name,
+        l2: l2&.english_name,
+        l1_rtl: l1&.rtl,
+        l2_rtl: l2&.rtl,
         phrases: processed_phrases,
       }
-    end
-
-    def ordered_phrases
-      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(:token_translations).to_a
     end
 
     private
 
     def processed_phrases
       @processed_phrases ||= begin
-        all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
+        all_medium_phrases = lesson.medium.phrases.to_a  # Use preloaded medium phrases
         Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
       end
     end

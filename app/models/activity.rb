@@ -52,7 +52,22 @@ class Activity < ApplicationRecord
   end
 
   def ordered_phrases
-    @ordered_phrases ||= phrases.order(:timestamp).to_a
+    @ordered_phrases ||= phrases
+      .ordered_by_timestamp
+      .includes(
+        :l1, :l2,  # Include languages to prevent N+1 queries
+        { text_l1: { script_variants: :script } },
+        { text_l2: { script_variants: :script } },
+        { token_translations: [
+          { l1_audio_attachment: :blob },
+          { phrase: [
+            :l1, :l2,
+            { text_l1: { script_variants: :script } },
+            { text_l2: { script_variants: :script } }
+          ]}
+        ]}
+      )
+      .to_a
   end
 
   def video_params

@@ -3,8 +3,7 @@ module Activities
     include ActivityWithTokens
 
     def activity_params
-      all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
-      processed_phrases = Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
+      processed_phrases = optimized_processed_phrases
       
       phrases_data_for_activity = processed_phrases.map do |phrase|
         {
@@ -19,18 +18,32 @@ module Activities
       {
         **video_params,
         phrases: phrases_data_for_activity,
-        l1: ordered_phrases.first.l1,
-        l2: ordered_phrases.first.l2,
+        l1: cached_l1_language,
+        l2: cached_l2_language,
       }
     end
 
     private
 
+    def optimized_processed_phrases
+      @optimized_processed_phrases ||= begin
+        all_medium_phrases = lesson.medium.phrases.to_a  # Use preloaded medium phrases
+        Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
+      end
+    end
+
+    def cached_l1_language
+      @cached_l1_language ||= ordered_phrases.first&.l1
+    end
+
+    def cached_l2_language
+      @cached_l2_language ||= ordered_phrases.first&.l2
+    end
+
     def build_word_segments_for_phrase(phrase)
       # Get token translations for this phrase that are associated with this activity
       tokens = phrase.token_translations
                      .order(:l1_start_index)
-                     .includes(l1_audio_attachment: :blob)
       
       return fallback_word_segments(phrase.text_l1) if tokens.empty?
 

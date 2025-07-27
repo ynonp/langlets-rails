@@ -11,7 +11,41 @@ class LessonsController < ApplicationController
     @current_script_code = params[:script]
     @current_script = Script.find_by(code: @current_script_code) if @current_script_code
     
-    @activities = @lesson.activities.order(order: :asc).load
+    # Preload lesson with medium and all lesson phrases
+    @lesson = Lesson.includes(
+      medium: {
+        phrases: [
+          :l1, :l2,
+          { text_l1: { script_variants: :script } },
+          { text_l2: { script_variants: :script } }
+        ]
+      }
+    ).find(@lesson.id)
+    
+    # Optimized preloading for all activities and their dependencies
+    @activities = @lesson.activities.order(order: :asc).includes(
+      phrases: [
+        :l1, :l2,  # Languages
+        { text_l1: { script_variants: :script } },
+        { text_l2: { script_variants: :script } },
+        { token_translations: [
+          { l1_audio_attachment: :blob },
+          { phrase: [
+            :l1, :l2,
+            { text_l1: { script_variants: :script } },
+            { text_l2: { script_variants: :script } }
+          ]}
+        ]}
+      ],
+      token_translations: [
+        { l1_audio_attachment: :blob },
+        { phrase: [
+          :l1, :l2,
+          { text_l1: { script_variants: :script } },
+          { text_l2: { script_variants: :script } }
+        ]}
+      ]
+    ).load
     @activity = @activities.find_by(order: params[:a]) || @activities.first
     @current_url = lesson_path(a: @activity.order)
     @videoid = @lesson.medium.extract_youtube_video_id

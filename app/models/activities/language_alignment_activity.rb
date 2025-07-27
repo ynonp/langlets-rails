@@ -2,15 +2,11 @@ module Activities
   class LanguageAlignmentActivity < Activity
     def activity_params
       activity_translations = Set.new(token_translations.ids)
-      # Preload Active Storage attachments to prevent N+1 queries
-      preloaded_phrases = phrases.ordered_by_timestamp.includes(
-        token_translations: { l1_audio_attachment: :blob }
-      )
       
       {
         **video_params,
-        rtl: phrases.first.l1.rtl,
-        phrases_with_tokens: preloaded_phrases.map do |p|
+        rtl: cached_l1_language&.rtl,
+        phrases_with_tokens: ordered_phrases.map do |p|
           {
             phrase: p,  # Pass the phrase object instead of extracting text
             tokens: p.token_translations.filter_map do |t|
@@ -24,9 +20,19 @@ module Activities
             end
           }
         end,
-        l1: phrases.first.l1.english_name,
-        l2: phrases.first.l2.english_name,
+        l1: cached_l1_language&.english_name,
+        l2: cached_l2_language&.english_name,
       }
+    end
+
+    private
+
+    def cached_l1_language
+      @cached_l1_language ||= ordered_phrases.first&.l1
+    end
+
+    def cached_l2_language
+      @cached_l2_language ||= ordered_phrases.first&.l2
     end
   end
 end

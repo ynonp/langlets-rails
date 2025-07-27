@@ -2,9 +2,9 @@ module Activities
   class FindAnswerActivity < Activity
     def activity_params
       {
-        phrases: phrases.ordered_by_timestamp.includes(:token_translations),
-        text: phrases.ordered_by_timestamp.map { |p| {id: p.id, text: p.text_l1, translation: p.text_l2} },
-        questions: phrases.includes(:token_translations).ordered_by_timestamp.map do |p|
+        phrases: ordered_phrases,
+        text: ordered_phrases.map { |p| {id: p.id, text: p.text_l1, translation: p.text_l2} },
+        questions: ordered_phrases.map do |p|
           token = p.token_translations.with_questions.sample
           {
             phrase_id: p.id,
