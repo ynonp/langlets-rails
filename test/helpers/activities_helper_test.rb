@@ -35,11 +35,13 @@ class ActivitiesHelperTest < ActionView::TestCase
     )
   end
 
-  def create_token_translation(phrase:, l1_start_index:, l1_end_index:, translation: nil)
+  def create_token_translation(phrase:, l1_start_index:, l1_end_index:, translation: nil, l2_start_index: nil, l2_end_index: nil)
     TokenTranslation.create!(
       phrase: phrase,
       l1_start_index: l1_start_index,
       l1_end_index: l1_end_index,
+      l2_start_index: l2_start_index,
+      l2_end_index: l2_end_index,
       translation: translation
     )
   end
@@ -895,5 +897,421 @@ class ActivitiesHelperTest < ActionView::TestCase
     
     # First span should have the token with translation data
     assert_equal "קה", spans.first.text
+  end
+
+  # Tests for new script-aware helper methods
+
+  test "token_original_text should return token text in default script" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    
+    result = token_original_text(token)
+    assert_equal "Hello", result
+  end
+
+  test "token_original_text should return token text in specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase = create_phrase(
+      text_l1_content: "que mis ojos",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'קה מיס אוחוס'}
+      ]
+    )
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "what"
+    )
+    
+    # Default script should return Latin text
+    result_default = token_original_text(token)
+    assert_equal "que", result_default
+    
+    # Hebrew script should return Hebrew text
+    result_hebrew = token_original_text(token, @hebrew_script)
+    assert_equal "קה", result_hebrew
+  end
+
+  test "phrase_text_l1 should return L1 text in default script" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    
+    result = phrase_text_l1(phrase)
+    assert_equal "Hello world", result
+  end
+
+  test "phrase_text_l1 should return L1 text in specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase = create_phrase(
+      text_l1_content: "Hello world",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'שלום עולם'}
+      ]
+    )
+    
+    # Default script
+    result_default = phrase_text_l1(phrase)
+    assert_equal "Hello world", result_default
+    
+    # Hebrew script
+    result_hebrew = phrase_text_l1(phrase, @hebrew_script)
+    assert_equal "שלום עולם", result_hebrew
+  end
+
+  test "phrase_text_l2 should return L2 text in default script" do
+    phrase = create_phrase(text_l2_content: "Hola mundo")
+    
+    result = phrase_text_l2(phrase)
+    assert_equal "Hola mundo", result
+  end
+
+  test "phrase_text_l2 should return L2 text in specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase = create_phrase(
+      text_l2_content: "Hola mundo",
+      text_l2_variants: [
+        {script: @hebrew_script, content: 'הולה מונדו'}
+      ]
+    )
+    
+    # Default script
+    result_default = phrase_text_l2(phrase)
+    assert_equal "Hola mundo", result_default
+    
+    # Hebrew script
+    result_hebrew = phrase_text_l2(phrase, @hebrew_script)
+    assert_equal "הולה מונדו", result_hebrew
+  end
+
+  test "prepare_tokens_for_matching should process tokens without script" do
+    phrase = create_phrase(text_l1_content: "Hello beautiful world")
+    token1 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "Hola"
+    )
+    token2 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,
+      l1_end_index: 2,
+      translation: "mundo"
+    )
+    
+    tokens = [token1, token2]
+    result = prepare_tokens_for_matching(tokens)
+    
+    assert_equal 2, result.length
+    
+    first_token = result.first
+    assert_equal "Hello", first_token[:l1_word]
+    assert_equal "Hola", first_token[:l2_translation]
+    assert_equal token1.id, first_token[:id]
+    assert_nil first_token[:audio_url]
+    
+    second_token = result.last
+    assert_equal "world", second_token[:l1_word]
+    assert_equal "mundo", second_token[:l2_translation]
+    assert_equal token2.id, second_token[:id]
+  end
+
+  test "prepare_tokens_for_matching should process tokens with specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase = create_phrase(
+      text_l1_content: "que mis ojos",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'קה מיס אוחוס'}
+      ]
+    )
+    token1 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "what"
+    )
+    token2 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,
+      l1_end_index: 2,
+      translation: "eyes"
+    )
+    
+    tokens = [token1, token2]
+    
+    # Default script should return Latin text
+    result_default = prepare_tokens_for_matching(tokens)
+    assert_equal "que", result_default.first[:l1_word]
+    assert_equal "ojos", result_default.last[:l1_word]
+    
+    # Hebrew script should return Hebrew text
+    result_hebrew = prepare_tokens_for_matching(tokens, @hebrew_script)
+    assert_equal "קה", result_hebrew.first[:l1_word]
+    assert_equal "אוחוס", result_hebrew.last[:l1_word]
+  end
+
+  test "prepare_tokens_for_matching should filter duplicate L1 texts" do
+    phrase = create_phrase(text_l1_content: "hello hello world")
+    token1 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "hola"
+    )
+    token2 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,
+      l1_end_index: 1,
+      translation: "saludo"  # Different translation for same word
+    )
+    token3 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,
+      l1_end_index: 2,
+      translation: "mundo"
+    )
+    
+    tokens = [token1, token2, token3]
+    result = prepare_tokens_for_matching(tokens)
+    
+    # Should only have 2 tokens (first "hello" and "world")
+    assert_equal 2, result.length
+    assert_equal "hello", result.first[:l1_word]
+    assert_equal "hola", result.first[:l2_translation]
+    assert_equal "world", result.last[:l1_word]
+    assert_equal "mundo", result.last[:l2_translation]
+  end
+
+  test "prepare_tokens_for_matching should filter duplicate L2 texts" do
+    phrase = create_phrase(text_l1_content: "hello goodbye world")
+    token1 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      translation: "hola"
+    )
+    token2 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 1,
+      l1_end_index: 1,
+      translation: "hola"  # Same translation for different word
+    )
+    token3 = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 2,
+      l1_end_index: 2,
+      translation: "mundo"
+    )
+    
+    tokens = [token1, token2, token3]
+    result = prepare_tokens_for_matching(tokens)
+    
+    # Should only have 2 tokens (first "hello" and "world")
+    assert_equal 2, result.length
+    assert_equal "hello", result.first[:l1_word]
+    assert_equal "hola", result.first[:l2_translation]
+    assert_equal "world", result.last[:l1_word]
+    assert_equal "mundo", result.last[:l2_translation]
+  end
+
+  test "prepare_tokens_for_matching should handle empty token list" do
+    result = prepare_tokens_for_matching([])
+    assert_equal [], result
+  end
+
+  test "prepare_phrases_for_sorting should process phrases without script" do
+    phrase1 = create_phrase(text_l1_content: "Hello world")
+    phrase2 = create_phrase(text_l1_content: "Goodbye world")
+    
+    phrases = [phrase1, phrase2]
+    result = prepare_phrases_for_sorting(phrases)
+    
+    assert_equal 2, result.length
+    assert_equal "Hello world", result.first
+    assert_equal "Goodbye world", result.last
+  end
+
+  test "prepare_phrases_for_sorting should process phrases with specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase1 = create_phrase(
+      text_l1_content: "Hello world",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'שלום עולם'}
+      ]
+    )
+    phrase2 = create_phrase(
+      text_l1_content: "Goodbye world",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'להתראות עולם'}
+      ]
+    )
+    
+    phrases = [phrase1, phrase2]
+    
+    # Default script
+    result_default = prepare_phrases_for_sorting(phrases)
+    assert_equal ["Hello world", "Goodbye world"], result_default
+    
+    # Hebrew script
+    result_hebrew = prepare_phrases_for_sorting(phrases, @hebrew_script)
+    assert_equal ["שלום עולם", "להתראות עולם"], result_hebrew
+  end
+
+  test "prepare_phrases_for_sorting should handle empty phrase list" do
+    result = prepare_phrases_for_sorting([])
+    assert_equal [], result
+  end
+
+  test "prepare_phrases_with_tokens_for_alignment should process phrases without script" do
+    phrase = create_phrase(
+      text_l1_content: "Hello world",
+      text_l2_content: "Hola mundo"
+    )
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      l2_start_index: 0,
+      l2_end_index: 0,
+      translation: "Hola"
+    )
+    
+    phrases_with_tokens = [
+      {
+        phrase: phrase,
+        tokens: [
+          {
+            l1_start_index: 0,
+            l1_end_index: 0,
+            l2_start_index: 0,
+            l2_end_index: 0,
+            translation: "Hola"
+          }
+        ]
+      }
+    ]
+    
+    result = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
+    
+    assert_equal 1, result.length
+    phrase_data = result.first
+    assert_equal "Hello world", phrase_data[:original_text]
+    assert_equal "Hola mundo", phrase_data[:translation]
+    assert_equal 1, phrase_data[:tokens].length
+    
+    token_data = phrase_data[:tokens].first
+    assert_equal "Hola", token_data[:translation]
+    # Character ranges should be updated based on script
+    assert_not_nil token_data[:l1_start_index]
+    assert_not_nil token_data[:l1_end_index]
+  end
+
+  test "prepare_phrases_with_tokens_for_alignment should process phrases with specified script" do
+    @hebrew_script = scripts(:hebrew)
+    phrase = create_phrase(
+      text_l1_content: "Hello world",
+      text_l1_variants: [
+        {script: @hebrew_script, content: 'שלום עולם'}
+      ],
+      text_l2_content: "Hola mundo",
+      text_l2_variants: [
+        {script: @hebrew_script, content: 'הולה מונדו'}
+      ]
+    )
+    token = create_token_translation(
+      phrase: phrase,
+      l1_start_index: 0,
+      l1_end_index: 0,
+      l2_start_index: 0,
+      l2_end_index: 0,
+      translation: "Hola"
+    )
+    
+    phrases_with_tokens = [
+      {
+        phrase: phrase,
+        tokens: [
+          {
+            l1_start_index: 0,
+            l1_end_index: 0,
+            l2_start_index: 0,
+            l2_end_index: 0,
+            translation: "Hola"
+          }
+        ]
+      }
+    ]
+    
+    # Default script
+    result_default = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
+    assert_equal "Hello world", result_default.first[:original_text]
+    assert_equal "Hola mundo", result_default.first[:translation]
+    
+    # Hebrew script
+    result_hebrew = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens, @hebrew_script)
+    assert_equal "שלום עולם", result_hebrew.first[:original_text]
+    assert_equal "הולה מונדו", result_hebrew.first[:translation]
+  end
+
+  test "prepare_phrases_with_tokens_for_alignment should filter phrases without tokens" do
+    phrase1 = create_phrase(text_l1_content: "Hello world")
+    phrase2 = create_phrase(text_l1_content: "Goodbye world")
+    
+    phrases_with_tokens = [
+      {
+        phrase: phrase1,
+        tokens: []  # No tokens
+      },
+      {
+        phrase: phrase2,
+        tokens: nil  # Nil tokens
+      }
+    ]
+    
+    result = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
+    
+    # Should filter out phrases without tokens
+    assert_equal [], result
+  end
+
+  test "prepare_phrases_with_tokens_for_alignment should handle empty input" do
+    result = prepare_phrases_with_tokens_for_alignment([])
+    assert_equal [], result
+  end
+
+  test "prepare_phrases_with_tokens_for_alignment should handle missing token_translation" do
+    phrase = create_phrase(text_l1_content: "Hello world")
+    
+    phrases_with_tokens = [
+      {
+        phrase: phrase,
+        tokens: [
+          {
+            l1_start_index: 0,
+            l1_end_index: 0,
+            l2_start_index: 0,
+            l2_end_index: 0,
+            translation: "Hola"
+          }
+        ]
+      }
+    ]
+    
+    # No actual token_translation created, so it should fall back to original data
+    result = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
+    
+    assert_equal 1, result.length
+    phrase_data = result.first
+    token_data = phrase_data[:tokens].first
+    
+    # Should preserve original indices when token_translation is not found
+    assert_equal 0, token_data[:l1_start_index]
+    assert_equal 0, token_data[:l1_end_index]
+    assert_equal 0, token_data[:l2_start_index]
+    assert_equal 0, token_data[:l2_end_index]
   end
 end
