@@ -1,16 +1,18 @@
 <%# Expects:
-  params[:phrases] - An array of strings
+  params[:phrases_for_sorting] - An array of phrase objects
+  current_script - Script object for current script (passed as local)
   
   This activity shows a sortable column of phrases:
   
-  1. The list starts shuffled. The correct order is determined by the original array at params[:phrases]
+  1. The list starts shuffled. The correct order is determined by the original array at params[:phrases_for_sorting]
   2. The user can click and drag to rearrange the phrases
   3. When the user is done, they can click a button to check their answer
   4. If they got it wrong, the phrases will be shuffled again and they can try again
   5. If they got it right, they can move on to the next activity
  %>
 
-<% phrases = (params[:phrases] || []) %>
+<% phrase_objects = (params[:phrases_for_sorting] || []) %>
+<% phrases = prepare_phrases_for_sorting(phrase_objects, current_script) %>
 <% correct_order = phrases.map { |phrase, i| i } %>
 <% shuffled_phrases = phrases.map.with_index { |phrase, i| { text: phrase, id: i } }.shuffle %>
 

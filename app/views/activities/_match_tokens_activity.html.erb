@@ -1,10 +1,11 @@
 <%# Expects:
-  params[:tokens] - An array of token objects with l1_word, l2_translation, audio_url, id
+  params[:token_translations] - An array of token translation objects
   params[:l1] - Language object for original words
   params[:l2] - Language object for translation words
   params[:video_id] - YouTube video ID
   params[:start_timestamp] - Start timestamp for the video segment
   params[:end_timestamp] - End timestamp for the video segment
+  current_script - Script object for current script (passed as local)
   
   This activity shows a 2x5 grid where users match tokens to their translations:
   1. Left column shows words in L1, right column shows translations in L2
@@ -18,7 +19,8 @@
  %>
 
 <% 
-  tokens = params[:tokens] || []
+  # Prepare tokens data using helper with current script
+  tokens = prepare_tokens_for_matching(params[:token_translations], current_script)
   l1 = params[:l1]
   l2 = params[:l2]
   total_tokens = tokens.length
