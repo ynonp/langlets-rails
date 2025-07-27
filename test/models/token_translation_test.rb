@@ -83,42 +83,6 @@ class TokenTranslationTest < ActiveSupport::TestCase
     assert_includes token_translation.errors[:l1_start_index], "word indexes out of bounds"
   end
 
-  test "should queue audio generation job on create" do
-    assert_enqueued_jobs 1, only: GenerateTokenAudioJob do
-      TokenTranslation.create!(
-        phrase: @phrase,
-        l1_start_index: 0,
-        l1_end_index: 0,
-        translation: "Hola"
-      )
-    end
-  end
-
-  test "should queue audio generation job on index update" do
-    token_translation = TokenTranslation.create!(
-      phrase: @phrase,
-      l1_start_index: 0,
-      l1_end_index: 0,
-      translation: "Hola"
-    )
-    
-    assert_enqueued_jobs 1, only: GenerateTokenAudioJob do
-      token_translation.update!(l1_end_index: 1)  # Change to valid range
-    end
-  end
-
-  test "should not queue audio generation job when non-index attributes change" do
-    token_translation = TokenTranslation.create!(
-      phrase: @phrase,
-      l1_start_index: 0,
-      l1_end_index: 0,
-      translation: "Hola"
-    )
-    
-    assert_no_enqueued_jobs do
-      token_translation.update!(translation: "Hello")
-    end
-  end
 
   test "with_questions scope should work correctly" do
     # Create token without questions

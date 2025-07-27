@@ -88,7 +88,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "world"
     )
     
-    range = token_translation.l2_character_range
+    range = token_translation.l2_characters_range
     assert_equal 5, range.begin
     assert_equal 10, range.end
   end
@@ -280,7 +280,7 @@ class TokenTranslationCharacterIndexTest < ActiveSupport::TestCase
       translation: "Hello"
     )
     
-    range = token_translation.l2_character_range
+    range = token_translation.l2_characters_range
     assert_equal 11, range.begin
     assert_equal 15, range.end
   end

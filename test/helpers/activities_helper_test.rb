@@ -895,5 +895,6 @@ class ActivitiesHelperTest < ActionView::TestCase
     
     # First span should have the token with translation data
     assert_equal "קה", spans.first.text
+    assert_equal "מיס", spans[2].text
   end
 end
