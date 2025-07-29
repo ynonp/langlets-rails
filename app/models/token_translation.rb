@@ -5,10 +5,10 @@ class TokenTranslation < ApplicationRecord
   has_one_attached :l1_audio, service: :s3_public
 
   # Generate audio when token is created
-  # after_create :generate_l1_audio, if: :should_generate_audio?
+  after_create :generate_l1_audio, if: :should_generate_audio?
   
   # Regenerate audio when indices change (affecting the original_text)
-  # after_update :generate_l1_audio, if: :should_generate_audio_on_update?
+  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   # Validation for word indexes
   validate :validate_word_indexes
