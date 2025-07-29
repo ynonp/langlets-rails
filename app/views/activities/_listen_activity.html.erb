@@ -78,14 +78,14 @@
         <% phrases.each_with_index do |phrase, phrase_index| %>
           <div
             data-listen-activity-target="subtitles phrase"            
-            data-timestamp="<%= timestamp_to_seconds(phrase['timestamp']) %>"
+            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
             data-phrase-id="<%= phrase_index %>"
             class="px-4 py-3 transition-all duration-200">
             <div class="text-white text-md md:text-xl">
-              <%= render_phrase_with_blanks(phrase) %>
+              <%= render_phrase_with_blanks(phrase, script: current_script) %>
             </div>
             <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
-              <%= phrase['text_l2'] %>
+              <%= phrase.text_l2 %>
             </div>
           </div>
         <% end %>
@@ -95,14 +95,14 @@
     <!-- Word Selection Area -->
     <div class="my-6 flex justify-center space-x-4" data-listen-activity-target="wordSelection">
       <% 
-        first_phrase_with_tokens = phrases.find { |p| p['token_translations'].present? && p['token_translations'].any? }
+        first_phrase_with_tokens = phrases.find { |p| p.token_translations.present? && p.token_translations.any? }
         if first_phrase_with_tokens
-          first_token = first_phrase_with_tokens['token_translations'].first
+          first_token = first_phrase_with_tokens.token_translations.first
           words = []
           
           if first_token
-            correct_word = first_token['original_text']
-            similar_word = first_token['similar_sound']
+            correct_word = token_original_text(first_token, current_script)
+            similar_word = first_token.similar_sound.sample
             
             if correct_word.present? && similar_word.present?
               words = [{word: correct_word, correct: true}, {word: similar_word, correct: false}].shuffle

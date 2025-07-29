@@ -73,7 +73,7 @@ module ActivitiesHelper
     end
   end
   
-  def render_phrase_with_blanks(phrase)
+  def render_phrase_with_blanks(phrase, script: nil)
     if phrase.token_translations.empty?
       phrase.text_l1.to_s
     else
@@ -81,9 +81,9 @@ module ActivitiesHelper
       loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
       
       texts = loaded_tokens.inject([]) do |acc, val|
-        l1_start_character_index = val.l1_characters_range.begin
-        l1_end_character_index = val.l1_characters_range.end
-        original_text = phrase.text_l1.to_s[val.l1_characters_range]
+        l1_start_character_index = val.l1_characters_range(script).begin
+        l1_end_character_index = val.l1_characters_range(script).end
+        original_text = phrase.text_l1.to_s(script)[val.l1_characters_range(script)]
         
         token_data = {
           original_text: original_text,
@@ -91,11 +91,11 @@ module ActivitiesHelper
         }.to_json
         
         # Create a blank span for this token
-        blank_html = "<span class='blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
+        blank_html = "<span class='mx-2 inline-block blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
         
         next_token_segment = {
           "content" => blank_html,
-          "last_index" => l1_end_character_index,
+          "last_index" => l1_end_character_index + 1,
           "is_token" => true
         }
         
