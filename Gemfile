@@ -101,3 +101,11 @@ gem "cancancan", "~> 3.6"
 gem "good_job", "~> 4.11"
 
 gem "factory_bot", "~> 6.5"
+
+gem "ruby_llm", "~> 1.5"
+
+gem "ruby_llm-schema", "~> 0.1.0"
+
+gem "opentelemetry-exporter-otlp", "~> 0.30.0"
+
+gem "opentelemetry-instrumentation-net_http", "~> 0.23.0"
