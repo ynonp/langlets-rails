@@ -22,8 +22,8 @@ module CreateSong
 
     def add_token_translation
       Langsmith.trace("add_token_translations", attributes: {
-        "gen_ai.request.model" => "gemini-2.5-pro-preview-06-05",
-        "gen_ai.system" => "Gemini"
+        "gen_ai.request.model" => "gemini-2.5-pro",
+        "gen_ai.system" => "Google"
       }) do |tracer|
         phrases_for_llm = data["phrases"].map do |phrase|
           {
@@ -44,7 +44,7 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-pro-preview-06-05')
+        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
         user_content = JSON.pretty_generate(phrases_for_llm)
         chat.with_instructions(instructions).with_schema(AddTokenTranslationOutput).add_message role: :user, content: user_content
         response = chat.complete

@@ -21,7 +21,7 @@ module CreateSong
 
     def add_lessons
       Langsmith.trace("add_lessons", attributes: {
-        "gen_ai.request.model" => "gemini-2.5-flash-preview-05-20",
+        "gen_ai.request.model" => "gemini-2.5-flash",
         "gen_ai.system" => "Gemini"
       }) do |tracer|
         phrases_for_llm = data["phrases"].map do |phrase|
@@ -41,7 +41,7 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash-preview-05-20')
+        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         user_content = JSON.pretty_generate(phrases_for_llm)
         chat
           .with_temperature(0.4)

@@ -17,7 +17,7 @@ module CreateSong
 
     def extract_lyrics
       Langsmith.trace("extract_lyrics", attributes: {
-         "gen_ai.request.model" => "gemini-2.5-pro-preview-06-05",
+         "gen_ai.request.model" => "gemini-2.5-pro",
          "gen_ai.system" => "Gemini"
       }) do |tracer|
         template_path = Rails.root.join('prompts', 'extract_phrases_from_youtube_url.md.erb')
@@ -36,7 +36,7 @@ module CreateSong
         # Set the prompt content for tracing before making the API call
         tracer.set_prompt_content(instructions, user_content)
 
-        chat = RubyLLM.chat(model: 'gemini-2.5-pro-preview-06-05')
+        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
         chat.with_instructions(instructions).with_schema(ExtractLyricsOutput).add_message role: :user, content: user_content
         response = chat.complete
         tracer.trace(response)
