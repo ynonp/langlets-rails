@@ -84,10 +84,10 @@ class CoursesController < ApplicationController
     # Create and validate the CreateSongProgress record upfront
     @create_song_progress = CreateSongProgress.new(
       youtubeurl: @course.main_media_url,
+      lyrics: params[:lyrics],
       clip_language: params[:clip_language],
       translation_language: params[:translation_language],
       data: {
-        lyrics: params[:lyrics],
         lesson_template: params[:lesson_template]
       }
     )
@@ -125,7 +125,9 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :slug, :main_media_url, :language_id)
+    params
+    .require(:course)
+    .permit(:name, :slug, :main_media_url, :language_id, :hebrew_script_available)
   end
 
   def precompute_lesson_counts(courses)

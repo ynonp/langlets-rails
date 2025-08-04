@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_26_123750) do
+ActiveRecord::Schema[8.0].define(version: 2025_08_04_111943) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -129,6 +129,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_26_123750) do
     t.jsonb "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "lyrics"
     t.index ["youtubeurl", "clip_language", "translation_language"], name: "idx_on_youtubeurl_clip_language_translation_languag_d876aa04dc", unique: true
   end
 

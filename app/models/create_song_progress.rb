@@ -11,8 +11,15 @@ class CreateSongProgress < ApplicationRecord
 
   def create_data
     extract_lyrics
-    add_token_translations
+    add_token_translation
     add_lessons
     add_similar_sound
+  end
+
+  def ready?
+    CourseBuilder::Base.new.collect_json_data(self)
+    true
+  rescue
+    false
   end
 end

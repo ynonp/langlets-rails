@@ -10,13 +10,8 @@ class CreateCourseJob < ApplicationJob
       lesson_template = progress.data&.dig('lesson_template') || 'create_song'
       
       # Create the AI song generator using values from the progress record
-      cs = Ai::CreateSong.new(
-        course.name, 
-        progress.youtubeurl, 
-        progress.clip_language, 
-        progress.translation_language, 
-      )
-      cs.run
+      progress.create_data
+      progress.add_hebrew_script if course.hebrew_script_available
       
       # The AI service will update the same progress record we created,
       # since it uses find_or_create_by with the same parameters
@@ -25,14 +20,8 @@ class CreateCourseJob < ApplicationJob
       
       if progress.ready?
         # Create the course content based on template
-        case lesson_template
-        when 'song'
-          course.create_song!(progress.data)
-        when 'short'
-          course.create_short!(progress.data)
-        else
-          course.create_song!(progress.data)
-        end
+        builder = CourseBuilder::BuildSong.new(progress, course)
+        builder.call
         
         # Mark course as published
         course.update!(status: :published)

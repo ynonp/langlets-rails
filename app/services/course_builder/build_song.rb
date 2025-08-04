@@ -1,14 +1,15 @@
 module CourseBuilder
   class BuildSong < Base
-    def initialize(progress, **course_params)
+    attr_reader :course
+
+    def initialize(progress, course)
       @progress = progress
-      @course_params = course_params
+      @course = course
     end
 
     def call
       ActiveRecord::Base.transaction do
         data_hash = collect_json_data(@progress)
-        course = Course.create!(@course_params)
         user = course.user
 
         Rails.logger.info("Finding languages")
@@ -21,7 +22,6 @@ module CourseBuilder
 
         all_alignment_tokens = []
         all_listen_tokens = []
-
 
         Rails.logger.info("Creating new lessons")
         data_hash[:lessons].each_with_index do |lesson_data, lesson_index|
