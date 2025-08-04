@@ -31,8 +31,13 @@ module CreateSong
           }
         )
 
+        user_content = Llm::YoutubeUrlContent.new(youtubeurl)
+        
+        # Set the prompt content for tracing before making the API call
+        tracer.set_prompt_content(instructions, user_content)
+
         chat = RubyLLM.chat(model: 'gemini-2.5-pro-preview-06-05')
-        chat.with_instructions(instructions).with_schema(ExtractLyricsOutput).add_message role: :user, content: Llm::YoutubeUrlContent.new(youtubeurl)
+        chat.with_instructions(instructions).with_schema(ExtractLyricsOutput).add_message role: :user, content: user_content
         response = chat.complete
         tracer.trace(response)
 

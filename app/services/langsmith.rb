@@ -7,6 +7,16 @@ module Langsmith
       @span = span
     end
 
+    def set_prompt_content(instructions, user_content)
+      # Set system prompt
+      @span.set_attribute("gen_ai.prompt.0.role", "system")
+      @span.set_attribute("gen_ai.prompt.0.content", instructions)
+      
+      # Set user prompt
+      @span.set_attribute("gen_ai.prompt.1.role", "user")
+      @span.set_attribute("gen_ai.prompt.1.content", user_content.to_s)
+    end
+
     def trace(llm_response)
       # Customize based on RubyLLM / OpenAI / Gemini format
       if llm_response.respond_to?(:model)
@@ -16,8 +26,12 @@ module Langsmith
       if llm_response.respond_to?(:content)
         content = llm_response.content
 
-        if content.is_a?(Hash) && content["phrases"].is_a?(Array)
-          @span.set_attribute("gen_ai.response.phrase_count", content["phrases"].count)
+        # Set the completion content according to GenAI semantic conventions
+        @span.set_attribute("gen_ai.completion.0.role", "assistant")
+        
+        if content.is_a?(Hash)
+          # For structured responses, store as JSON string
+          @span.set_attribute("gen_ai.completion.0.content", content.to_json)
         elsif content.is_a?(String)
           @span.set_attribute("gen_ai.completion.0.content", content)
         end

@@ -4,9 +4,15 @@ class CreateSongProgress < ApplicationRecord
   validates :translation_language, presence: true
 
   include CreateSong::ExtractLyrics
+  include CreateSong::AddTokenTranslations
+  include CreateSong::AddLessons
+  include CreateSong::AddSimilarSound
+  include CreateSong::AddHebrewScript
 
-  enum :step, {
-    extract_lyrics: 0,
-  }
-
+  def create_data
+    extract_lyrics
+    add_token_translations
+    add_lessons
+    add_similar_sound
+  end
 end

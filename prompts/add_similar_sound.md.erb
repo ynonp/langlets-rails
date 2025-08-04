@@ -1,0 +1,63 @@
+## Role 
+You are an expert AI assistant specializing in creating engaging language learning materials.
+For the next activity we are going to let a user listen to a song and identify words from it.
+
+## Objective
+Your task is to create a different versions of some sentences to test the user's listening skill.
+Print out a version of the following text where for each sentence you replace one word with a different one that sounds similar but has a different meaning.
+Type the replaced words in bold (with asterisks).
+
+---
+
+## Examples
+
+Clip Language: English
+Input:
+    Old pirates yes they rob I
+    Sold I to the merchant ships
+    Minutes after they took I
+    From the bottomless pit.
+
+Output:
+    **Gold** pirates yes they rob I
+    **Hold** I to the merchant ships
+    Minutes after they **book** I
+    From the **motherless** pit.
+
+---
+
+Clip Language: Spanish
+Input: 
+    Pensé que era un buen momento
+    Por fin se hacía realidad
+    Tanto oír hablar de tu silencio
+    Dicen que te arrastra como el mar
+
+Output:
+    Pensé que era un buen **recuerdo**
+    Por fin se **vacía** realidad
+    Tanto oír **marchar** de tu silencio
+    Dicen que te **abraza** como el **bar**
+
+---
+
+Clip Language: English
+Input: 
+    We were good, we were gold
+    Kinda dream that can't be sold
+    We were right 'til we weren't
+    Built a home and watched it burn
+
+
+Output:
+    We were good, we were **bold**
+    Kinda dream that can't be **hold**
+    We were **fight**, 'till we weren't
+    Built a **bomb** and watched it burn
+
+---
+Clip Language: <%= clip_language %>
+Input:
+    <%= user_input %>
+
+Output:
