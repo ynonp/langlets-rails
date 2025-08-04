@@ -2,8 +2,8 @@ require 'opentelemetry/sdk'
 require 'opentelemetry/exporter/otlp'
 require 'base64'
 
-public_key = Rails.application.credentials.langfuse[:pk]
-secret_key = Rails.application.credentials.langfuse[:secret]
+public_key = Rails.application.credentials.dig(:langfuse, :pk)
+secret_key = Rails.application.credentials.dig(:langfuse, :secret)
 
 auth_token = Base64.strict_encode64("#{public_key}:#{secret_key}")
 
