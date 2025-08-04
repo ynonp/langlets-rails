@@ -4,7 +4,7 @@ class TokenTranslation < ApplicationRecord
   belongs_to :phrase
   has_one_attached :l1_audio, service: :s3_public
 
-  # Generate audio when token is created
+  # Generate audio when token is created - only in test/production
   after_create :generate_l1_audio, if: :should_generate_audio?
   
   # Regenerate audio when indices change (affecting the original_text)
@@ -43,7 +43,7 @@ class TokenTranslation < ApplicationRecord
 
   def generate_l1_audio
     # Queue background job for audio generation
-    GenerateTokenAudioJob.perform_later(id)
+    GenerateTokenAudioJob.perform_later(id) unless Rails.env.development?
   end
 
   def validate_word_indexes

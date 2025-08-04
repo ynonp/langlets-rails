@@ -90,10 +90,10 @@ module CourseBuilder
                   l2_start_index: l2_start,
                   l1_end_index: l1_end,
                   l2_end_index: l2_end,
-                  translation: token_translation_data["translation"],
+                  translation: token_translation_data[:translation],
                 )
 
-                if token_translation_data["language_alignment_activity"] == 1
+                if token_translation_data[:language_alignment_activity] == 1
                   a5.token_translations << t
                   all_alignment_tokens << t
                 end

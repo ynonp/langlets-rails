@@ -10,10 +10,10 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::AddHebrewScript
 
   def create_data
-    extract_lyrics
-    add_token_translation
-    add_lessons
-    add_similar_sound
+    extract_lyrics unless data["phrases"]
+    add_token_translation unless data["phrases_with_token_translations"]
+    add_lessons unless data["lessons"]
+    add_similar_sound unless data["similar_sounds"]
   end
 
   def ready?
