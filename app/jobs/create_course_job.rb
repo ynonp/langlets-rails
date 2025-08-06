@@ -6,6 +6,7 @@ class CreateCourseJob < ApplicationJob
     course = Course.find(course_id)
 
     course_created = course.process do |course|
+      Rails.logger.info "Starting CreateCourseJob #{create_song_progress_id} / #{course_id}"
       create_course_from_progress(progress, course)
     end
 

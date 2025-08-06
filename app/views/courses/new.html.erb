@@ -34,14 +34,15 @@
       <% end %>
 
       <!-- Form -->
-      <%= form_with model: @course, local: true, class: "space-y-6" do |form| %>
+      <%= form_with model: @course, local: true, class: "space-y-6", data: { controller: "youtube-form" } do |form| %>
         
         <!-- Course Name -->
         <div>
           <%= form.label :name, "Course Name", class: "block text-sm font-semibold text-slate-200 mb-2" %>
           <%= form.text_field :name, 
                 class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                placeholder: "e.g., 'French Songs with Édith Piaf'" %>
+                placeholder: "e.g., 'French Songs with Édith Piaf'",
+                data: { youtube_form_target: "nameField" } %>
         </div>
 
         <!-- Course Slug -->
@@ -49,7 +50,8 @@
           <%= form.label :slug, "Course Slug (URL identifier)", class: "block text-sm font-semibold text-slate-200 mb-2" %>
           <%= form.text_field :slug, 
                 class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                placeholder: "e.g., 'french-edith-piaf' (lowercase, no spaces)" %>
+                placeholder: "e.g., 'french-edith-piaf' (lowercase, no spaces)",
+                data: { youtube_form_target: "slugField" } %>
           <p class="text-xs text-slate-400 mt-1">This will be used in the URL. Use lowercase letters, numbers, and dashes only.</p>
         </div>
 
@@ -58,7 +60,11 @@
           <%= form.label :main_media_url, "YouTube URL", class: "block text-sm font-semibold text-slate-200 mb-2" %>
           <%= form.url_field :main_media_url, 
                 class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
-                placeholder: "https://www.youtube.com/watch?v=..." %>
+                placeholder: "https://www.youtube.com/watch?v=...",
+                data: { 
+                  youtube_form_target: "urlField",
+                  action: "input->youtube-form#urlChanged"
+                } %>
         </div>
 
         <!-- Language Selection -->

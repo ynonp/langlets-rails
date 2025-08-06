@@ -77,10 +77,8 @@ class CoursesController < ApplicationController
 
   def create
     authorize! :create, Course
-    
     @course = current_user.courses.build(course_params)
-    @course.status = :processing
-    
+
     # Create and validate the CreateSongProgress record upfront
     @create_song_progress = CreateSongProgress.new(
       youtubeurl: @course.main_media_url,
