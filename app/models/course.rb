@@ -8,8 +8,10 @@ class Course < ApplicationRecord
 
   # Status enum
   enum :status, {
-    processing: 0,
-    published: 1
+    pending: 0,
+    published: 1,
+    processing: 2,
+    error: 3
   }
 
   validates :slug, presence: true, uniqueness: true
@@ -289,6 +291,28 @@ class Course < ApplicationRecord
 
     a4.phrases = medium.phrases.ordered_by_timestamp
     a4.token_translations = all_listen_tokens
+  end
+
+  # Atomically claim and process the course
+  # Returns true if successfully claimed and processed, false if already claimed/processed
+  def process
+    # Atomically try to claim the work - only one job will succeed
+    updated = Course.where(
+      id: id, 
+      status: [:pending]  # Only claim if status is pending
+    ).update_all(
+      status: :processing,
+      updated_at: Time.zone.now
+    )
+    
+    if updated == 0
+      # Another job already claimed it or it's already completed
+      return false
+    end
+    
+    # We successfully claimed it, now do the work
+    yield(reload) if block_given?
+    true
   end
 
   # Calculate user progress for this course
