@@ -58,6 +58,7 @@ class Activity < ApplicationRecord
   def video_params
     {
       video_id: lesson.medium.extract_youtube_video_id,
+      video_hl: lesson&.medium&.language&.iso_name || "en",
       start_timestamp: ordered_phrases.first&.timestamp,
       end_timestamp: to_string_timestamp(ordered_phrases.last&.timestamp_seconds + 5)
     }

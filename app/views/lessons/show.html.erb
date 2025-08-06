@@ -48,7 +48,11 @@
               data-action="click->main-video-player#togglePlayPause"></div>
         
 
-        <div data-main-video-player-target="player" class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
+        <div
+            data-main-video-player-target="player"
+            data-main-video-player-hl-value="<%= activity_params[:l1].iso_name %>"
+            class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
+        </div>
               <!-- Custom Progress Bar -->
         <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
             data-main-video-player-target="progressBarContainer"

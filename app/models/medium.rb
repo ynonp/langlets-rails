@@ -3,6 +3,7 @@ require 'pycall/import'
 class Medium < ApplicationRecord
   include PyCall::Import
   has_many :phrases
+  belongs_to :language
 
   def create_phrases(from_language, to_language)
     case
