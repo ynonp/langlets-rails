@@ -6,6 +6,7 @@ export default class extends Controller {
 
   static values = {
     videoId: String,
+    hl: String,
   }
 
   connect() {
@@ -52,6 +53,7 @@ export default class extends Controller {
         controls: 0,
         modestbranding: 1,
         rel: 0,
+        hl: this.hlValue,
       },
     });
 
