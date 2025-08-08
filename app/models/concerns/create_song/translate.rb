@@ -29,7 +29,7 @@ module CreateSong
         response = chat.complete
         tracer.trace(response)
 
-        response.content.lines.map(&:chomp).each_with_index.map do |l2, index|
+        response.content.lines.map(&:chomp).reject(&:blank?).each_with_index.map do |l2, index|
           data["phrases"][index]["text_l2"] = l2
         end
 
