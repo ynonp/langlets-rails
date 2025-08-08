@@ -9,7 +9,8 @@ class Ability
     if [
       'ynon@hey.com',
       'ynonperek@gmail.com',
-      'irondome1@outlook.com'
+      'irondome1@outlook.com',
+      'danshi.edu@gmail.com',
     ].include?(user.email)
       editor(user)
     end
