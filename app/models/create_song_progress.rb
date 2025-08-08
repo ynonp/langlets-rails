@@ -8,9 +8,11 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::AddLessons
   include CreateSong::AddSimilarSound
   include CreateSong::AddHebrewScript
+  include CreateSong::Translate
 
   def create_data
     extract_lyrics unless data["phrases"]
+    translate unless data["phrases"][0]["text_l2"]
     add_token_translation unless data["phrases_with_token_translations"]
     add_lessons unless data["lessons"]
     add_similar_sound unless data["similar_sounds"]

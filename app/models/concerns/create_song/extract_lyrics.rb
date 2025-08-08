@@ -7,7 +7,6 @@ module CreateSong
         object do
           string :id, description: "unique id of the phrase"
           string :text_l1, description: "phrase original text"
-          string :text_l2, description: "translated phrase text"
           string :timestamp, description: "timestamp in the audio, format mm:ss"
         end
       end
@@ -27,7 +26,6 @@ module CreateSong
           inline: template,
           locals: {
             clip_language:,
-            translation_language:,
           }
         )
 
