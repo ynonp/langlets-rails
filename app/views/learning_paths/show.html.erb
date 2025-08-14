@@ -1,0 +1,173 @@
+<!-- Learning Path Header -->
+<header class="py-6 border-b border-slate-700/60">
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-4">
+      <%= link_to root_path, class: "text-slate-400 hover:text-slate-200 transition-colors" do %>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+          <path fill-rule="evenodd" d="M7.72 12.53a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 1 1 1.06 1.06L9.31 12l6.97 6.97a.75.75 0 1 1-1.06 1.06l-7.5-7.5Z" clip-rule="evenodd" />
+        </svg>
+      <% end %>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
+        <%= @learning_path.name %>
+      </h1>
+    </div>
+    
+    <% if user_signed_in? %>
+      <div class="flex items-center space-x-4">
+        <!-- XP Display -->
+        <div class="flex items-center space-x-6">
+          <!-- Day Streak -->
+          <% daily_xp = ActivityLog.daily_xp_for_user(current_user) %>
+          <% streak_info = ActivityLog.streak_info_for_user(current_user) %>
+          <% streak = streak_info[:count] %>
+          
+          <div class="flex items-center text-white">
+            <% bg_class = streak_background_class(streak_info[:status]) %>
+            <div class="flex items-center <%= bg_class %> px-3 py-1 rounded-full text-sm font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+                <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177A7.547 7.547 0 0 1 6.648 6.61a.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248Z" clip-rule="evenodd" />
+              </svg>
+              <%= streak %> day<%= 's' if streak != 1 %>
+            </div>
+          </div>
+
+          <!-- Today's XP -->
+          <div class="flex items-center text-white">
+            <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
+                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
+              </svg>
+              <%= daily_xp %> XP
+            </div>
+          </div>
+        </div>
+
+        <!-- User Menu -->
+        <div class="relative group">
+          <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+          <label for="user-menu-toggle" class="flex items-center cursor-pointer">
+            <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
+          </label>
+          <div class="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+            <%= link_to "Logout",
+              destroy_user_session_path(returnto: request.fullpath),
+              method: :delete,
+              data: { turbo_method: :delete },
+              class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+            %>
+          </div>
+        </div>
+      </div>
+    <% else %>
+      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+        <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <div class="flex gap-2">
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-400 hover:text-blue-600 font-semibold px-3 sm:px-5 py-2 rounded-lg transition-colors duration-200 text-sm sm:text-base" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</header>
+
+<main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8" 
+      data-controller="learning-path-courses" 
+      data-learning-path-courses-learning-path-id-value="<%= @learning_path.id %>"
+      data-learning-path-courses-current-page-value="<%= @page %>"
+      data-learning-path-courses-has-more-value="<%= @has_more %>">
+  
+  <!-- Learning Path Description -->
+  <% if @learning_path.description.present? %>
+    <section class="mb-8">
+      <p class="text-slate-300 text-lg"><%= @learning_path.description %></p>
+    </section>
+  <% end %>
+
+  <!-- Search and Filters Section -->
+  <section class="mb-8">
+    <!-- Search Bar -->
+    <div class="mb-6">
+      <div class="relative max-w-md mx-auto">
+        <input type="text" 
+               placeholder="Search courses..." 
+               class="w-full px-4 py-3 pl-12 bg-slate-800 border border-slate-600 rounded-lg text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+               data-learning-path-courses-target="searchInput"
+               data-action="input->learning-path-courses#search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 absolute left-4 top-4 text-slate-400">
+          <path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 1 0 0 13.5 6.75 6.75 0 0 0 0-13.5ZM2.25 10.5a8.25 8.25 0 1 1 14.59 5.28l4.69 4.69a.75.75 0 1 1-1.06 1.06l-4.69-4.69A8.25 8.25 0 0 1 2.25 10.5Z" clip-rule="evenodd" />
+        </svg>
+      </div>
+    </div>
+
+    <!-- Tag Filter Row -->
+    <div class="overflow-x-auto">
+      <div class="flex gap-3 pb-4 min-w-max">
+        <!-- All Tag -->
+        <button type="button" 
+                class="tag-filter px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap <%= params[:tag].blank? || params[:tag] == 'all' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>"
+                data-tag="all"
+                data-action="click->learning-path-courses#filterByTag">
+          All
+        </button>
+        
+        <!-- Dynamic Tags -->
+        <% @tags.each do |tag| %>
+          <button type="button" 
+                  class="tag-filter px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap <%= params[:tag] == tag.name ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>"
+                  data-tag="<%= tag.name %>"
+                  data-action="click->learning-path-courses#filterByTag">
+            <%= tag.name %>
+          </button>
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+  <!-- Loading Indicator -->
+  <div class="hidden text-center py-8" data-learning-path-courses-target="loadingIndicator">
+    <div class="inline-flex items-center px-4 py-2 bg-slate-800 rounded-lg">
+      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>
+      <span class="text-slate-300">Loading courses...</span>
+    </div>
+  </div>
+
+  <!-- Courses Grid -->
+  <section>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8" 
+         data-learning-path-courses-target="coursesGrid">
+      <%= render 'courses', courses: @courses %>
+    </div>
+    
+    <!-- Load More Button (fallback for when infinite scroll doesn't work) -->
+    <% if @has_more %>
+      <div class="text-center mt-8">
+        <button type="button" 
+                class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors"
+                data-learning-path-courses-target="loadMoreButton"
+                data-action="click->learning-path-courses#loadMore">
+          Load More Courses
+        </button>
+      </div>
+    <% end %>
+  </section>
+
+  <!-- Infinite Scroll Trigger -->
+  <div data-learning-path-courses-target="infiniteScrollTrigger" class="h-1"></div>
+</main>
+
+<footer class="bg-slate-800 border-t border-slate-700 mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+      <div class="text-slate-400 text-sm">
+        © <%= Date.current.year %> Langlets. All rights reserved.
+      </div>
+      <div class="flex space-x-6">
+        <%= link_to "Privacy Policy", "/home/privacy", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
+        <%= link_to "Terms of Service", "/home/terms", class: "text-slate-400 hover:text-white text-sm transition-colors duration-200" %>
+      </div>
+    </div>
+  </div>
+</footer>

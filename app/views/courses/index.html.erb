@@ -180,7 +180,7 @@
                 ['from-amber-500', 'to-amber-700']
               ] %>
               <% gradient = gradient_colors[index % gradient_colors.length] %>
-              <div class="w-64 h-48 bg-gradient-to-br <%= gradient[0] %> <%= gradient[1] %> rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden">
+              <%= link_to learning_path_path(learning_path), class: "block w-64 h-48 bg-gradient-to-br #{gradient[0]} #{gradient[1]} rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden" do %>
                 <h3 class="text-xl font-bold text-white mb-2 relative z-10"><%= learning_path.name %></h3>
                 <% if learning_path.description.present? %>
                   <p class="text-sm text-white text-opacity-90 relative z-10"><%= truncate(learning_path.description, length: 80) %></p>
@@ -188,7 +188,7 @@
                 <span class="absolute bottom-4 right-4 text-white text-opacity-80 text-xs font-semibold z-10">
                   <%= pluralize(learning_path.courses.count, 'course') %>
                 </span>
-              </div>
+              <% end %>
             </div>
           <% end %>
         </div>
