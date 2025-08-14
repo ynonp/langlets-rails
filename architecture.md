@@ -187,14 +187,32 @@
 - **FindAnswerActivity**: Question-answer exercises
 
 #### 12. **LearningPath** (`learning_paths`)
-- **Purpose**: Define structured curriculum pathways
+- **Purpose**: Define structured curriculum pathways with YouTube-like browsing experience
 - **Key Features**:
   - Named learning sequences with descriptions
   - Difficulty level classification (integer)
   - Publication status (boolean)
+  - **YouTube-style View**: Dedicated show page with search, tag filtering, and grid layout
+  - **Ajax Search**: Real-time course filtering by name
+  - **Tag-based Filtering**: Dynamic tag system for course categorization
 - **Relationships**: Many-to-many with Courses (through CoursesLearningPath)
 
-#### 13. **CoursesLearningPath** (`courses_learning_paths`)
+#### 13. **Tag** (`tags`)
+- **Purpose**: Categorization system for courses within learning paths
+- **Key Features**:
+  - Unique tag names (e.g., "Music", "French", "Beginner")
+  - Used for filtering courses in learning path views
+  - Supports YouTube-like tag filtering interface
+- **Relationships**: Many-to-many with Courses (through CourseTag)
+
+#### 14. **CourseTag** (`course_tags`)
+- **Purpose**: Join table linking courses to their categorization tags
+- **Key Features**:
+  - Unique constraint on course + tag combination
+  - Enables tag-based filtering and categorization
+- **Relationships**: Links Courses to Tags
+
+#### 15. **CoursesLearningPath** (`courses_learning_paths`)
 - **Purpose**: Join table linking courses to learning paths
 - **Key Features**:
   - Ordered sequence within learning paths (integer order field)
@@ -203,12 +221,12 @@
 
 ### Join Tables
 
-#### 14. **ActivityPhrase** (`activity_phrases`)
+#### 16. **ActivityPhrase** (`activity_phrases`)
 - Links activities to their associated phrases
 - Enables many-to-many relationship between Activities and Phrases
 - Includes timestamps for creation/update tracking
 
-#### 15. **ActivityTokenTranslation** (`activity_token_translations`)
+#### 17. **ActivityTokenTranslation** (`activity_token_translations`)
 - Links activities to specific token translations for word-level exercises
 - Enables many-to-many relationship between Activities and TokenTranslations
 - Includes compound index for efficient querying
@@ -216,7 +234,7 @@
 
 ### User Progress Tracking
 
-#### 16. **ActivityUser** (`activity_users`)
+#### 18. **ActivityUser** (`activity_users`)
 - **Purpose**: Track user progress through individual activities
 - **Key Features**:
   - Unique constraint on activity + user combination
@@ -224,7 +242,7 @@
   - Indexed on both activity_id and user_id for efficient queries
 - **Relationships**: Links Users to Activities for progress monitoring
 
-#### 17. **LessonUser** (`lesson_users`)
+#### 19. **LessonUser** (`lesson_users`)
 - **Purpose**: Track user progress through lessons
 - **Key Features**:
   - Unique constraint on lesson + user combination
@@ -234,7 +252,7 @@
 
 ### Workflow Management
 
-#### 18. **CreateSongProgress** (`create_song_progresses`)
+#### 20. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
   - YouTube URL processing (`youtubeurl`)
@@ -347,6 +365,7 @@ Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTrans
 
 # Learning Path System
 LearningPath (many) ←──→ (many) Course (through CoursesLearningPath)
+Course (many) ←──→ (many) Tag (through CourseTag)
 
 # User Management & Ownership (Devise)
 User (1) ──→ (many) Course # Content ownership
@@ -440,6 +459,45 @@ The platform implements a modern, accessible authentication system with the foll
 - **Sound Similarity**: Pronunciation confusion detection
 - **Character Indexing**: Precise word boundary detection across scripts
 
+### YouTube-Style Learning Path Interface
+
+The platform implements a modern, YouTube-inspired interface for browsing learning paths:
+
+#### Learning Path Show View (`app/views/learning_paths/show.html.erb`)
+- **Header Section**: 
+  - Back navigation to main courses page
+  - Learning path title and description
+  - User authentication controls (sign up/login or user menu with XP tracking)
+- **Search & Filter Section**:
+  - Real-time search bar with debounced input
+  - Horizontal scrolling tag filter row (All, Music, French, etc.)
+  - Mobile-responsive design with proper touch interactions
+- **Course Grid**: 
+  - Responsive grid layout using existing course card components
+  - Infinite scroll structure (ready for implementation)
+  - Ajax-powered updates without page refresh
+
+#### Interactive Features (`app/javascript/controllers/learning_path_courses_controller.js`)
+- **Real-time Search**: Debounced search with 300ms delay for optimal performance
+- **Tag Filtering**: Dynamic filtering by course tags with visual feedback
+- **Infinite Scroll**: Intersection Observer API for loading more courses
+- **Error Handling**: Graceful degradation with user-friendly error messages
+- **State Management**: Maintains current page, search term, and active filters
+
+#### Backend Support (`app/controllers/learning_paths_controller.rb`)
+- **Optimized Queries**: Single-query approach for courses with progress data
+- **Ajax Endpoints**: JSON responses for search and filtering
+- **Pagination**: Server-side pagination with configurable page size
+- **Tag Integration**: Dynamic tag loading based on learning path content
+
+#### Tag System for Course Categorization
+- **Flexible Tagging**: Courses can have multiple tags (Music, French, Beginner, etc.)
+- **Learning Path Scoping**: Tags are filtered by learning path context
+- **Sample Data**: Migration includes common tags for immediate functionality
+- **Unique Constraints**: Prevents duplicate tag assignments
+
+This implementation provides a modern, responsive interface that matches contemporary content platforms while maintaining the educational focus of the application.
+
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
 - **Scaffolded Complexity**: From video watching to detailed word alignment
@@ -469,11 +527,26 @@ app/models/
 ├── phrase.rb                   # has_one_attached :l1_audio
 ├── token_translation.rb        # has_one_attached :l1_audio
 ├── user.rb                     # Devise authentication
+├── learning_path.rb            # Learning path curriculum
+├── tag.rb                      # Course categorization tags
+├── course_tag.rb               # Course-tag associations
 ├── activity_phrase.rb          # Join table model
 ├── activity_token_translation.rb # Join table model
 ├── activity_user.rb            # User progress on activities
 ├── lesson_user.rb              # User progress on lessons
 └── create_song_progress.rb     # Workflow tracking
+
+app/views/learning_paths/       # YouTube-style learning path views
+├── show.html.erb              # Main learning path view with search/filter
+└── _courses.html.erb          # Course grid partial for Ajax updates
+
+app/controllers/
+├── learning_paths_controller.rb # Learning path browsing and search
+└── ...                        # Other controllers
+
+app/javascript/controllers/
+├── learning_path_courses_controller.js # Search, filtering, infinite scroll
+└── ...                        # Other Stimulus controllers
 
 app/views/devise/               # Devise authentication views
 ├── sessions/                   # Login/logout views
