@@ -18,6 +18,10 @@ module CreateSong
             user_input:,
           }
         )
+        
+        # Set the prompt content for tracing before making the API call
+        tracer.set_prompt_content(instructions, user_input)
+        
         chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         chat
           .with_temperature(0.4)

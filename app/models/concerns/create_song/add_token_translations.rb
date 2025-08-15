@@ -44,8 +44,12 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
         user_content = JSON.pretty_generate(phrases_for_llm)
+        
+        # Set the prompt content for tracing before making the API call
+        tracer.set_prompt_content(instructions, user_content)
+        
+        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
         chat.with_instructions(instructions).with_schema(AddTokenTranslationOutput).add_message role: :user, content: user_content
         response = chat.complete
         tracer.trace(response)

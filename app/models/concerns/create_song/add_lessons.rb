@@ -41,8 +41,12 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         user_content = JSON.pretty_generate(phrases_for_llm)
+        
+        # Set the prompt content for tracing before making the API call
+        tracer.set_prompt_content(instructions, user_content)
+        
+        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)
