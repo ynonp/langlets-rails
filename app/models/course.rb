@@ -5,6 +5,9 @@ class Course < ApplicationRecord
   
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
+  
+  has_many :course_tags, dependent: :destroy
+  has_many :tags, through: :course_tags
 
   # Status enum
   enum :status, {

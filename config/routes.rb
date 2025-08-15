@@ -14,6 +14,11 @@ Rails.application.routes.draw do
     end
   end
   resources :courses, only: [:show, :index, :new, :create]
+  resources :learning_paths, only: [:show] do
+    member do
+      get :search_courses, defaults: { format: :json }
+    end
+  end
   get '/azure_token', to: 'azure_speech#token'
   get "activities/index"
   get "activities/show"
