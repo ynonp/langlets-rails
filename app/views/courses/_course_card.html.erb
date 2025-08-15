@@ -36,9 +36,13 @@
   
   # Get user progress
   user_progress = course.respond_to?(:user_progress) ? course.user_progress : 0
+  
+  # Build course path with optional learning_path_id parameter
+  course_url_params = { id: course.slug }
+  course_url_params[:learning_path_id] = local_assigns[:learning_path_id] if local_assigns[:learning_path_id].present?
 %>
 
-<%= link_to course_path(id: course.slug), class: container_classes do %>
+<%= link_to course_path(course_url_params), class: container_classes do %>
   <!-- Course Image -->
   <% if course.main_media_url.present? %>
     <% youtube_video_id = course.main_media_url.split("v=").last %>

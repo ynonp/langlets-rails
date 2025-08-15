@@ -67,6 +67,11 @@ class CoursesController < ApplicationController
                      .includes(:activities, :lesson_users, activities: :activity_users)
                      .with_progress_data(current_user)
                      .order(:order)
+    
+    # Store learning path if coming from a learning path
+    if params[:learning_path_id].present?
+      @learning_path = LearningPath.find_by(id: params[:learning_path_id])
+    end
   end
 
   def new
