@@ -27,20 +27,27 @@ test:
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
+
 production:
   primary:
-    <<: *default
+    adapter: postgresql
     url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
-    database: langlets
+
   cache:
-    adapter: sqlite3
-    database: storage/production_cache.sqlite3
+    adapter: postgresql
+    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    schema_search_path: "cache"
     migrations_paths: db/cache_migrate
+
   queue:
-    adapter: sqlite3
-    database: storage/production_queue.sqlite3
+    adapter: postgresql
+    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    schema_search_path: "queue"
     migrations_paths: db/queue_migrate
+
   cable:
-    adapter: sqlite3
-    database: storage/production_cable.sqlite3
+    adapter: postgresql
+    url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    schema_search_path: "cable"
     migrations_paths: db/cable_migrate
+
