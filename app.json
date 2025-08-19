@@ -1,0 +1,19 @@
+{
+  "name": "Responder AI Bot",
+  "buildpacks": [
+    { "url": "heroku/nodejs" },
+    { "url": "heroku/ruby" }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1
+    },
+    "worker": {
+      "quantity": 1
+    }
+  },
+  "env": {
+    "RAILS_ENV": "production"
+  },
+  "addons": []
+}
