@@ -21,53 +21,47 @@ module CreateSong
     end
 
     def add_token_translation
-      Langsmith.trace("add_token_translations", attributes: {
-        "gen_ai.request.model" => "gemini-2.5-pro",
-        "gen_ai.system" => "Google"
-      }) do |tracer|
-        phrases_for_llm = data["phrases"].map do |phrase|
-          {
-            "phrase_id" => phrase["id"],
-            "clip_text" => phrase["text_l1"],
-            "translation_text" => phrase["text_l2"],
-            "clip_tokens" => phrase["text_l1"].tokenize.map(&:to_s),
-            "translation_tokens" => phrase["text_l2"].tokenize.map(&:to_s)
-          }
-        end
-        template_path = Rails.root.join('prompts', 'add_token_translations.md.erb')
-        template = File.read(template_path)
+      phrases_for_llm = data["phrases"].map do |phrase|
+        {
+          "phrase_id" => phrase["id"],
+          "clip_text" => phrase["text_l1"],
+          "translation_text" => phrase["text_l2"],
+          "clip_tokens" => phrase["text_l1"].tokenize.map(&:to_s),
+          "translation_tokens" => phrase["text_l2"].tokenize.map(&:to_s)
+        }
+      end
+      template_path = Rails.root.join('prompts', 'add_token_translations.md.erb')
+      template = File.read(template_path)
 
-        instructions = ApplicationController.renderer.render(
-          inline: template,
-          locals: {
-            clip_language:,
-            translation_language:,
-          }
-        )
-        retry_count = 0
-        max_retries = 5
-        
-        begin
-          chat = RubyLLM.chat(model: 'gemini-2.5-pro')
-          user_content = JSON.pretty_generate(phrases_for_llm)
-          chat.with_instructions(instructions).with_schema(AddTokenTranslationOutput).add_message role: :user, content: user_content
-          response = chat.complete
-          tracer.trace(response)
-          data["phrases_with_token_translations"] = response.content
-          save!
+      instructions = ApplicationController.renderer.render(
+        inline: template,
+        locals: {
+          clip_language:,
+          translation_language:,
+        }
+      )
+      retry_count = 0
+      max_retries = 5
 
-          response
-        rescue => e
-          retry_count += 1
-          if retry_count <= max_retries
-            wait_time = (2 ** retry_count) + rand(1..3)
-            Rails.logger.warn "AddTokenTranslations attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
-            sleep(wait_time)
-            retry
-          else
-            Rails.logger.error "AddTokenTranslations failed after #{max_retries} attempts: #{e.message}"
-            raise e
-          end
+      begin
+        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
+        user_content = JSON.pretty_generate(phrases_for_llm)
+        chat.with_instructions(instructions).with_schema(AddTokenTranslationOutput).add_message role: :user, content: user_content
+        response = chat.complete
+        data["phrases_with_token_translations"] = response.content
+        save!
+
+        response
+      rescue => e
+        retry_count += 1
+        if retry_count <= max_retries
+          wait_time = (2 ** retry_count) + rand(1..3)
+          Rails.logger.warn "AddTokenTranslations attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
+          sleep(wait_time)
+          retry
+        else
+          Rails.logger.error "AddTokenTranslations failed after #{max_retries} attempts: #{e.message}"
+          raise e
         end
       end
     end
