@@ -10,7 +10,7 @@
 
 <% 
   phrases_with_tokens = params[:phrases_with_tokens] || []
-  phrases = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens, current_script)
+  phrases = prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
   rtl = params[:rtl]  
   l1 = params[:l1]
   l2 = params[:l2]

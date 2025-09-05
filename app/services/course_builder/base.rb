@@ -19,7 +19,6 @@ module CourseBuilder
               id: p["id"],
               text_l1: p["text_l1"],
               text_l2: p["text_l2"],
-              text_l1_variants: [],
               timestamp: p["timestamp"],
               translations: (translations_map[phrase_data["id"]] || []).map do |t|
                 {
@@ -34,22 +33,10 @@ module CourseBuilder
         }
       end
 
-      add_hebrew_script(progress, result) if progress.data["hebrew_script"]
-
       result
     end
 
-    def add_hebrew_script(progress, result)
-      hebrew_script = progress.data["hebrew_script"].lines.map(&:chomp)
-      result[:lessons].each do |lesson|
-        (lesson[:phrases].zip(hebrew_script)).map do |p, h|
-          p[:text_l1_variants] = [
-            { script: "hebr", content: h }
-          ]
-        end
-      end
-      result
-    end
+
   end
 end
 

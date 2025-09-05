@@ -124,7 +124,7 @@ class CoursesController < ApplicationController
   def course_params
     params
     .require(:course)
-    .permit(:name, :slug, :main_media_url, :language_id, :hebrew_script_available)
+    .permit(:name, :slug, :main_media_url, :language_id)
   end
 
   def precompute_lesson_counts(courses)

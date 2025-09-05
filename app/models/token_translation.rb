@@ -18,17 +18,11 @@ class TokenTranslation < ApplicationRecord
   }
 
   def original_text
-    l1_words = phrase.text_l1.words
-    @original_text ||= phrase.text_l1.to_s[l1_characters_range]
+    words = phrase.text_l1.split
+    words[l1_start_index..l1_end_index].join(' ')
   end
 
-  def l1_characters_range(script = nil)
-    phrase.text_l1.character_range(l1_start_index, l1_end_index, script:)
-  end
 
-  def l2_characters_range(script = nil)
-    phrase.text_l2.character_range(l2_start_index, l2_end_index, script:)
-  end
 
   private
 
@@ -50,7 +44,7 @@ class TokenTranslation < ApplicationRecord
     return unless phrase&.text_l1
 
     # Get the words for the phrase
-    l1_words = phrase.text_l1.words
+    l1_words = phrase.text_l1.split
     
     # Validate L1 indexes
     if l1_start_index.present? && l1_end_index.present?
@@ -67,7 +61,7 @@ class TokenTranslation < ApplicationRecord
 
     # Validate L2 indexes (optional)
     if l2_start_index.present? && l2_end_index.present? && phrase&.text_l2
-      l2_words = phrase.text_l2.words
+      l2_words = phrase.text_l2.split
       
       if l2_start_index > l2_end_index
         errors.add(:l2_start_index, "must be less than or equal to l2_end_index")

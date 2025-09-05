@@ -82,7 +82,7 @@
             data-phrase-id="<%= phrase_index %>"
             class="px-4 py-3 transition-all duration-200">
             <div class="text-white text-md md:text-xl">
-              <%= render_phrase_with_blanks(phrase, script: current_script) %>
+              <%= render_phrase_with_blanks(phrase) %>
             </div>
             <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
               <%= phrase.text_l2 %>
@@ -101,7 +101,7 @@
           words = []
           
           if first_token
-            correct_word = token_original_text(first_token, current_script)
+            correct_word = token_original_text(first_token)
             similar_word = first_token.similar_sound.sample
             
             if correct_word.present? && similar_word.present?

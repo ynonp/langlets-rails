@@ -67,18 +67,8 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1_attributes: {
-            language: l1,
-            script_variants_attributes: [
-              { script: l1.default_script, content: phrase_data["text_l1"] }
-            ]
-          },
-          text_l2_attributes: {
-            language: l2,
-            script_variants_attributes: [
-              { script: l2.default_script, content: phrase_data["text_l2"] }
-            ]
-          },
+          text_l1: phrase_data["text_l1"],
+          text_l2: phrase_data["text_l2"],
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
@@ -196,27 +186,14 @@ class Course < ApplicationRecord
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
         p = Phrase.create!(
-          text_l1_attributes: {
-            language: l1,
-            script_variants_attributes: [
-              { script: l1.default_script, content: phrase_data["text_l1"] }
-            ]
-          },
-          text_l2_attributes: {
-            language: l2,
-            script_variants_attributes: [
-              { script: l2.default_script, content: phrase_data["text_l2"] }
-            ]
-          },
+          text_l1: phrase_data["text_l1"],
+          text_l2: phrase_data["text_l2"],
           timestamp: phrase_data["timestamp"],
           medium:,
           l1:,
           l2:,
         )
-        phrase_data.fetch("text_l1_variants", []).each do |script_variant|
-          script = Script.find_by(code: script_variant["script"])
-          p.text_l1.add_variant!(script:, content: script_variant["content"])
-        end
+
 
         (phrase_data["translations"] || []).each do |token_translation_data|
           # Validate indices before attempting DB creation

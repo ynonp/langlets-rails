@@ -19,8 +19,8 @@
  %>
 
 <% 
-  # Prepare tokens data using helper with current script
-  tokens = prepare_tokens_for_matching(params[:token_translations], current_script)
+  # Prepare tokens data using helper
+  tokens = prepare_tokens_for_matching(params[:token_translations])
   l1 = params[:l1]
   l2 = params[:l2]
   total_tokens = tokens.length

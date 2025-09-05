@@ -12,7 +12,7 @@
  %>
 
 <% phrase_objects = (params[:phrases_for_sorting] || []) %>
-<% phrases = prepare_phrases_for_sorting(phrase_objects, current_script) %>
+<% phrases = prepare_phrases_for_sorting(phrase_objects) %>
 <% correct_order = phrases.map { |phrase, i| i } %>
 <% shuffled_phrases = phrases.map.with_index { |phrase, i| { text: phrase, id: i } }.shuffle %>
 

@@ -27,7 +27,6 @@ class CreateCourseJob < ApplicationJob
 
   def create_course_from_progress(progress, course)
     progress.create_data
-    progress.add_hebrew_script if course.hebrew_script_available
     progress.reload
     course.reload
 

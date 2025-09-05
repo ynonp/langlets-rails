@@ -1,8 +1,7 @@
 class Phrase < ApplicationRecord
   include AzureTextToSpeech
   belongs_to :medium
-  belongs_to :text_l1, class_name: 'MultiScriptText', foreign_key: 'text_l1_id'
-  belongs_to :text_l2, class_name: 'MultiScriptText', foreign_key: 'text_l2_id'
+
   belongs_to :l1, class_name: 'Language'
   belongs_to :l2, class_name: 'Language'
   has_many :token_translations, dependent: :destroy
@@ -10,29 +9,12 @@ class Phrase < ApplicationRecord
   # Validations
   validates :text_l1, presence: { message: "must be present" }
   validates :text_l2, presence: { message: "must be present" }
-  
-  accepts_nested_attributes_for :text_l1
-  accepts_nested_attributes_for :text_l2
 
   has_timestamp [:timestamp]
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
 
-  def text_l1_content
-    text_l1&.default_content
-  end
 
-  def text_l2_content
-    text_l2&.default_content
-  end
-
-  def text_l1_for_script(script)
-    text_l1&.content_for_script(script)
-  end
-
-  def text_l2_for_script(script)
-    text_l2&.content_for_script(script)
-  end
 
   # Class method to add calculated_end_timestamp to each phrase based on the next phrase in the medium
   def self.with_calculated_end_timestamps(phrase_collection, all_medium_phrases = nil)

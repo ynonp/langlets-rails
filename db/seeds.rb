@@ -8,25 +8,11 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-# Create scripts first (only for languages we're seeding)
-latin_script = Script.find_or_create_by!(code: 'latn') do |script|
-  script.name = 'Latin'
-end
-
-hebrew_script = Script.find_or_create_by!(code: 'hebr') do |script|
-  script.name = 'Hebrew'
-end
-
-arabic_script = Script.find_or_create_by!(code: 'arab') do |script|
-  script.name = 'Arabic'
-end
-
-# Create languages with their default scripts
+# Create languages (no longer need scripts or default_script references)
 l_en = Language.find_or_create_by!(iso_name: 'en') do |lang|
   lang.english_name = 'English'
   lang.native_name = 'English'
   lang.pronunciation_variant_name = 'en-US'
-  lang.default_script = latin_script
 end
 
 l_he = Language.find_or_create_by!(iso_name: 'he') do |lang|
@@ -34,21 +20,18 @@ l_he = Language.find_or_create_by!(iso_name: 'he') do |lang|
   lang.native_name = 'עברית'
   lang.pronunciation_variant_name = 'he-IL'
   lang.rtl = true
-  lang.default_script = hebrew_script
 end
 
 l_fr = Language.find_or_create_by!(iso_name: 'fr') do |lang|
   lang.english_name = 'French'
   lang.native_name = 'Français'
   lang.pronunciation_variant_name = 'fr-FR'
-  lang.default_script = latin_script
 end
 
 l_es = Language.find_or_create_by!(iso_name: 'es') do |lang|
   lang.english_name = 'Spanish'
   lang.native_name = 'Español'
   lang.pronunciation_variant_name = 'es-ES'
-  lang.default_script = latin_script
 end
 
 l_ar = Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
@@ -56,7 +39,6 @@ l_ar = Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
   lang.native_name = 'العربية الفلسطينية'
   lang.pronunciation_variant_name = 'ar-JO'
   lang.rtl = true
-  lang.default_script = arabic_script
 end
 
 admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
@@ -74,8 +56,7 @@ course1 = Course.create!(
   main_media_url: a_dios_le_pido_data["youtubeurl"],
   language: l_es,
   user: admin,
-  status: :published,
-  hebrew_script_available: true
+  status: :published
 )
 course1.create_song!(a_dios_le_pido_data)
 
@@ -86,7 +67,6 @@ course2 = Course.create!(
   main_media_url: haifa_jenin_data["youtubeurl"],
   language: l_ar,
   user: admin,
-  status: :published,
-  hebrew_script_available: true
+  status: :published
 )
 course2.create_song!(haifa_jenin_data)
