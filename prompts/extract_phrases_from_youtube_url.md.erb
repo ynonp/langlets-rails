@@ -16,6 +16,18 @@ Create a data structure with the lyrics of the song, organized to phrases with t
    - Each phrase should demonstrate one primary grammatical concept
    - Break at natural pauses that would occur in speech
 
+## Output Format
+
+Return the lyrics in the following simple text format, with each phrase on a new line:
+[timestamp] [phrase]
+
+For example:
+00:15 que mis ojos se despierten
+00:18 con la luz de tu mirada
+00:22 yo a dios le pido
+
+Use mm:ss format for timestamps.
+
 <% if defined?(song_lyrics) && !song_lyrics.blank? %>
 ## Reference Material
 Song Lyrics for reference:

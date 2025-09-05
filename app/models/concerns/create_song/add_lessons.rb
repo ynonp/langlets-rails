@@ -43,17 +43,33 @@ module CreateSong
         )
         chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         user_content = JSON.pretty_generate(phrases_for_llm)
-        chat
-          .with_temperature(0.4)
-          .with_instructions(instructions)
-          .with_schema(AddLessonsOutput)
-          .add_message role: :user, content: user_content
-        response = chat.complete
-        tracer.trace(response)
-        data["lessons"] = response.content["lessons"]
-        save!
+        retry_count = 0
+        max_retries = 5
+        
+        begin
+          chat
+            .with_temperature(0.4)
+            .with_instructions(instructions)
+            .with_schema(AddLessonsOutput)
+            .add_message role: :user, content: user_content
+          response = chat.complete
+          tracer.trace(response)
+          data["lessons"] = response.content["lessons"]
+          save!
 
-        response
+          response
+        rescue => e
+          retry_count += 1
+          if retry_count <= max_retries
+            wait_time = (2 ** retry_count) + rand(1..3)
+            Rails.logger.warn "AddLessons attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
+            sleep(wait_time)
+            retry
+          else
+            Rails.logger.error "AddLessons failed after #{max_retries} attempts: #{e.message}"
+            raise e
+          end
+        end
       end
     end
   end

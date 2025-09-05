@@ -4,8 +4,8 @@ module CreateSong
 
     def translate
       Langsmith.trace("translate", attributes: {
-        "gen_ai.request.model" => "z-ai/glm-4.5",
-        "gen_ai.system" => "z.ai"
+        "gen_ai.request.model" => "gemini-2.5-flash",
+        "gen_ai.system" => "Gemini"
       }) do |tracer|
         template_path = Rails.root.join('prompts', 'add_l2.md.erb')
         template = File.read(template_path)
@@ -24,16 +24,32 @@ module CreateSong
         # Set the prompt content for tracing before making the API call
         tracer.set_prompt_content(instructions, user_content)
 
-        chat = RubyLLM.chat(model: 'z-ai/glm-4.5')
-        chat.with_instructions(instructions).add_message role: :user, content: user_content
-        response = chat.complete
-        tracer.trace(response)
+        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
+        retry_count = 0
+        max_retries = 5
+        
+        begin
+          chat.with_instructions(instructions).add_message role: :user, content: user_content
+          response = chat.complete
+          tracer.trace(response)
 
-        response.content.lines.map(&:chomp).reject(&:blank?).each_with_index.map do |l2, index|
-          data["phrases"][index]["text_l2"] = l2
+          response.content.lines.map(&:chomp).reject(&:blank?).each_with_index.map do |l2, index|
+            data["phrases"][index]["text_l2"] = l2
+          end
+
+          save!
+        rescue => e
+          retry_count += 1
+          if retry_count <= max_retries
+            wait_time = (2 ** retry_count) + rand(1..3)
+            Rails.logger.warn "Translate attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
+            sleep(wait_time)
+            retry
+          else
+            Rails.logger.error "Translate failed after #{max_retries} attempts: #{e.message}"
+            raise e
+          end
         end
-
-        save!
       end
     end
 

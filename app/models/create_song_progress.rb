@@ -7,7 +7,6 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::AddTokenTranslations
   include CreateSong::AddLessons
   include CreateSong::AddSimilarSound
-  include CreateSong::AddHebrewScript
   include CreateSong::Translate
 
   def create_data
