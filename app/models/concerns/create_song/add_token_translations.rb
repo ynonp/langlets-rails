@@ -44,12 +44,12 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-pro')
-        user_content = JSON.pretty_generate(phrases_for_llm)
         retry_count = 0
         max_retries = 5
         
         begin
+          chat = RubyLLM.chat(model: 'gemini-2.5-pro')
+          user_content = JSON.pretty_generate(phrases_for_llm)
           chat.with_instructions(instructions).with_schema(AddTokenTranslationOutput).add_message role: :user, content: user_content
           response = chat.complete
           tracer.trace(response)

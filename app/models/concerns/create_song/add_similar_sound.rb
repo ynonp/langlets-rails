@@ -18,11 +18,11 @@ module CreateSong
             user_input:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         retry_count = 0
         max_retries = 5
         
         begin
+          chat = RubyLLM.chat(model: 'gemini-2.5-flash')
           chat
             .with_temperature(0.4)
             .with_instructions(instructions)

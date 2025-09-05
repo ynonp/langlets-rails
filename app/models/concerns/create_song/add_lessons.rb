@@ -41,12 +41,12 @@ module CreateSong
             translation_language:,
           }
         )
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
-        user_content = JSON.pretty_generate(phrases_for_llm)
         retry_count = 0
         max_retries = 5
         
         begin
+          chat = RubyLLM.chat(model: 'gemini-2.5-flash')
+          user_content = JSON.pretty_generate(phrases_for_llm)
           chat
             .with_temperature(0.4)
             .with_instructions(instructions)

@@ -24,11 +24,11 @@ module CreateSong
         # Set the prompt content for tracing before making the API call
         tracer.set_prompt_content(instructions, user_content)
 
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
         retry_count = 0
         max_retries = 5
         
         begin
+          chat = RubyLLM.chat(model: 'gemini-2.5-flash')
           chat.with_instructions(instructions).add_message role: :user, content: user_content
           response = chat.complete
           tracer.trace(response)
