@@ -21,7 +21,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = RubyLLM.chat(model: 'gemini-2.5-flash')
+        chat = RubyLLM.traced_chat(span_name: "translate", model: 'gemini-2.5-flash')
         chat.with_instructions(instructions).add_message role: :user, content: user_content
         response = chat.complete
 

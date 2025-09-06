@@ -111,3 +111,5 @@ gem "opentelemetry-exporter-otlp", "~> 0.30.0"
 gem "opentelemetry-instrumentation-net_http", "~> 0.23.0"
 
 gem "tidewave", "~> 0.2.0", group: :development
+
+gem "opentelemetry-instrumentation-all", "~> 0.80.0"

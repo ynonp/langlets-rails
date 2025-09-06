@@ -1,3 +1,5 @@
+require Rails.root.join("lib/ruby_llm/traced_chat")
+
 RubyLLM.configure do |config|
   config.openai_api_key = Rails.application.credentials.dig(:openai_api_key)
   config.anthropic_api_key = Rails.application.credentials.dig(:anthropic_api_key)
@@ -6,3 +8,4 @@ RubyLLM.configure do |config|
   config.openrouter_api_key = Rails.application.credentials.dig(:openrouter_api_key)
   config.request_timeout = 600
 end
+
