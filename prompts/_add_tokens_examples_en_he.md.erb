@@ -1,0 +1,60 @@
+---
+
+## Example input 1:
+
+We were good, we were gold => היינו טובים, היינו זהב
+Kinda dream that can't be sold => סוג של חלום שאי אפשר למכור
+We were right 'til we weren't => היינו צודקים, עד שכבר לא
+Built a home and watched it burn => בנינו בית וראינו אותו נשרף
+
+## Expected output 1:
+
+[We were] good, we were gold => [היינו] טובים, היינו זהב
+We were [good], we were gold => היינו [טובים], היינו זהב
+We were good, [we were] gold => היינו טובים, [היינו] זהב
+We were good, we were [gold] => היינו טובים, היינו [זהב]
+
+[Kinda] dream that can't be sold => [סוג של] חלום שאי אפשר למכור
+Kinda [dream] that can't be sold => סוג של [חלום] שאי אפשר למכור
+Kinda dream [that] can't be sold => ש... # there is a ש in the example but we should only bracket full words
+Kinda dream that [can't] be sold => אי פאשר # there is no direct translation of "can't" in the translation text so I used a new word
+Kinda dream that can't [be] sold => להיות
+Kinda dream that can't be [sold] => להימכר
+
+[We were] right 'til we weren't => [היינו] צודקים, עד שכבר לא
+We were [right] 'til we weren't => היינו [צודקים], עד שכבר לא
+We were right ['til] we weren't => היינו צודקים, [עד שכבר] לא # 'til is actually just "until" which is "עד ש", but we only bracket full words so added שכבר
+We were right 'til [we weren't] => לא היינו # we weren't literally means לא היינו, even though here it is used for עד שכבר לא היינו
+
+[Built] a home and watched it burn => [בנינו] בית וראינו אותו נשרף
+Built [a home] and watched it burn => בנינו [בית] וראינו אותו נשרף
+Built a home [and] watched it burn => ו # use custom translation because ו in the Hebrew text is connected to the next word
+Built a home and [watched] it burn => בנינו בית [וראינו] אותו נשרף # even though watched is ראינו we should only select full words.
+Built a home and watched [it] burn => בנינו בית וראינו [אותו] נשרף
+Built a home and watched it [burn] => בנינו בית וראינו אותו [נשרף]
+
+## Example input 2:
+You float like a feather => את מרחפת כמו נוצה
+In a beautiful world => בעולם יפהפה
+I wish I was special => הלוואי שהייתי מיוחד
+You're so fucking special => את מיוחדת בטירוף
+
+## Expected output 2
+
+[You] float like a feather => [את] מרחפת כמו נוצה
+You [float] like a feather => את [מרחפת] כמו נוצה
+You float [like] a feather => את מרחפת [כמו] נוצה
+You float like [a feather] => את מרחפת כמו [נוצה]
+
+[In] a beautiful world => בתוך, ב
+In a [beautiful] world => בעולם [יפהפה]
+In a beautiful [world] => [בעולם] יפהפה # The Hebrew בעולם is actually "in a ... world", but we only select full consecutive words
+
+[I wish] I was special => [הלוואי] שהייתי מיוחד
+I wish [I was] special => הלוואי [שהייתי] מיוחד # "I was" is actually הייתי, but we only select full words
+I wish I was [special] => הלוואי שהייתי [מיוחד]
+
+[You're] so fucking special => [את] מיוחדת בטירוף
+You're [so] fucking special => כל כך
+You're so [fucking special] => מיוחדת בטירוף # I connected "fucking special" because it's an idiom
+

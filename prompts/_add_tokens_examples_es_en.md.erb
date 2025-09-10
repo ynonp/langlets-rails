@@ -1,0 +1,71 @@
+---
+
+## Example input 1:
+Pensé que era un buen momento => I thought it was a good time
+Por fin se hacía realidad => It was finally coming true
+Tanto oír hablar de tu silencio => After hearing so much about your silence
+Dicen que te arrastra como el mar => They say it pulls you in like the sea
+
+## Expected output 1:
+
+[Pensé] que era un buen momento => [I thought] it was a good time
+Pensé que [era] un buen momento => I thought [it was] a good time
+Pensé que era [un] buen momento => I thought it was [a] good time
+Pensé que era un [buen] momento => I thought it was a [good] time
+Pensé que era un buen [momento] => moment, time
+
+[Por fin] se hacía realidad => It was [finally] coming true
+Por fin [se hacía] realidad => was getting, was becoming # original English had "It was ... coming", but we must select only consecutive words so I used a custom translation
+Por fin se hacía [realidad] => reality # original English had "true", but reality is a better word translation in a word-for-word context
+
+[Tanto] oír hablar de tu silencio => After hearing [so much] about your silence
+Tanto [oír] hablar de tu silencio => After [hearing] so much about your silence
+Tanto oír [hablar] de tu silencio => to speak # custom translation, as "oír hablar" is a phrase
+Tanto oír hablar [de] tu silencio => After hearing so much [about] your silence
+Tanto oír hablar de [tu] silencio => After hearing so much about [your] silence
+Tanto oír hablar de tu [silencio] => After hearing so much about your [silence]
+
+[Dicen] que te arrastra como el mar => [They say] it pulls you in like the sea
+Dicen [que] te arrastra como el mar => that
+Dicen que [te arrastra] como el mar => They say [it pulls you in] like the sea
+Dicen que te arrastra [como] el mar => They say it pulls you in [like] the sea
+Dicen que te arrastra como [el mar] => They say it pulls you in like [the sea]
+
+## Example input 2:
+
+Cuatro abrazos y un café => Four hugs and a coffee
+Apenas me desperté => I just woke up
+Y al mirarte recordé => And when I looked at you, I remembered
+Que ya todo lo encontré => That I'd already found everything
+
+## Expected output 2
+
+[Cuatro] abrazos y un café => [Four] hugs and a coffee
+Cuatro [abrazos] y un café => Four [hugs] and a coffee
+Cuatro abrazos [y] un café => Four hugs [and] a coffee
+Cuatro abrazos y [un] café => Four hugs and [a] coffee
+Cuatro abrazos y un [café] => Four hugs and a [coffee]
+
+[Apenas] me desperté => I [just] woke up
+Apenas [me desperté] => I woke up # using custom translation because "just" was in the middle but we must select consecutive words
+
+[Y] al mirarte recordé => [And] when I looked at you, I remembered
+Y [al mirarte] recordé => upon looking at you # spanish compresses a lot of meaning into this phrase. The English version is too different so I used a custom translation
+Y al mirarte [recordé] => And when I looked at you, [I remembered]
+
+[Que] ya todo lo encontré => [That] I'd already found everything
+Que [ya] todo lo encontré => That I'd [already] found everything
+Que ya [todo] lo encontré => That I'd already found [everything]
+Que ya todo [lo encontré] => That I'd already [found] everything # encontré actually means "I found" but since we must select consecutive words I selected the more meaningful "found"
+
+## Example input 3:
+Hola otra vez, ¿qué le vamos a hacer? => Hello again, what can we do?
+
+## Expected output 3:
+[Hola] otra vez, ¿qué le vamos a hacer? => [Hello] again, what can we do?
+Hola [otra vez], ¿qué le vamos a hacer? => Hello [again], what can we do?
+Hola otra vez, ¿[qué] le vamos a hacer? => Hello again, [what] can we do?
+Hola otra vez, ¿qué le [vamos a] hacer? => we are going to
+Hola otra vez, ¿qué le vamos a [hacer?] => do
+Hola otra vez, ¿qué [le] vamos a hacer? => about it # The “le” here is a dative pronoun which functions as an ethical dative
+
