@@ -3,8 +3,6 @@ module CreateSong
     extend ActiveSupport::Concern
 
     def add_similar_sound
-      template_path = Rails.root.join('prompts', 'add_similar_sound.md.erb')
-      template = File.read(template_path)
       user_input = data["phrases"].map {|p| p["text_l1"] }.join("\n")
 
       instructions = ApplicationController.renderer.render(
