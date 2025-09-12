@@ -11,6 +11,6 @@ Your primary goal is to align a Spanish token or phrase with a consecutive token
 Text after # is ignored so you can add explnation or reasoning for each line.
 In the output insert a blank line between each phrase.
 
-<%= render partial: "add_tokens_examples_<%= clip_language_iso %>_<%= translation_language_iso %>"
+<%= render partial: "prompts/add_tokens_examples_#{clip_language.downcase}_#{translation_language.downcase}" %>
 
 ## Input:

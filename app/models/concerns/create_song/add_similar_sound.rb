@@ -8,7 +8,8 @@ module CreateSong
       user_input = data["phrases"].map {|p| p["text_l1"] }.join("\n")
 
       instructions = ApplicationController.renderer.render(
-        inline: template,
+        template: 'prompts/add_similar_sound',
+        formats: [:md],
         locals: {
           clip_language:,
           user_input:,

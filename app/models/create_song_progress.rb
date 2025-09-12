@@ -10,7 +10,7 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::Translate
 
   def create_data
-    span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translate}"
+    span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
     LangfuseTracer.in_span(span_name, attributes: { }) do |span|
       extract_lyrics unless data["phrases"]
       translate unless data["phrases"][0]["text_l2"]

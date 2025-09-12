@@ -3,11 +3,9 @@ module CreateSong
     extend ActiveSupport::Concern
 
     def translate
-      template_path = Rails.root.join('prompts', 'add_l2.md.erb')
-      template = File.read(template_path)
-
       instructions = ApplicationController.renderer.render(
-        inline: template,
+        template: 'prompts/add_l2',
+        formats: [:md],
         locals: {
           clip_language:,
           translation_language:,

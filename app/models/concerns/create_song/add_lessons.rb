@@ -27,11 +27,10 @@ module CreateSong
           "timestamp" => phrase["timestamp"],
         }
       end
-      template_path = Rails.root.join('prompts', 'add_lessons.md.erb')
-      template = File.read(template_path)
 
       instructions = ApplicationController.renderer.render(
-        inline: template,
+        template: 'prompts/add_lessons',
+        formats: [:md],
         locals: {
           clip_language:,
           translation_language:,

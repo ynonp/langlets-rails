@@ -2,12 +2,14 @@ module CreateSong
   module ExtractLyrics
     extend ActiveSupport::Concern
 
-    def extract_lyrics
-      template_path = Rails.root.join('prompts', 'extract_phrases_from_youtube_url.md.erb')
-      template = File.read(template_path)
+    def full_lyrics
+      data["phrases"].pluck("text_l1").join("\n")
+    end
 
+    def extract_lyrics
       instructions = ApplicationController.renderer.render(
-        inline: template,
+        template: 'prompts/extract_phrases_from_youtube_url',
+        formats: [:md],
         locals: {
           clip_language:,
         }
