@@ -3,78 +3,82 @@ require 'active_support/concern'
 module TokenTranslationBlockParser
   extend ActiveSupport::Concern
 
-  def parse(llm_response_block)
-    return [] if llm_response_block.blank?
+  # llm_response_block
+  # 
+  # [Pensé] que era un buen momento => [I thought] it was a good time
+  # Pensé que [era] un buen momento => I thought [it was] a good time
+  # Pensé que era [un] buen momento => I thought it was [a] good time
+  # Pensé que era un [buen] momento => I thought it was a [good] time
+  # Pensé que era un buen [momento] => moment, time
 
-    lines = llm_response_block.strip.split("\n").reject { |line| line.strip.empty? || line.strip.start_with?('#') }
-    words_l1 = text_l1.split(/\s+/).map(&:strip)
-    words_l2 = text_l2.split(/\s+/).map(&:strip)
+  def add_tokens_from(llm_response_block)
+    return self if llm_response_block.blank?
 
-    translations = []
-
-    lines.each do |line|
-      parts = line.split('=>', 2)
-      next if parts.length != 2
-
-      left, right = parts.map(&:strip)
-
-      l1_match = left.match(/\[(.*?)\]/)
-      next unless l1_match
-
-      token_l1 = l1_match[1].strip
-
-      l1_start, l1_end = find_word_indices(words_l1, token_l1)
-      next unless l1_start
-
-      right_clean = right.split('#', 2)[0].strip
-
-      l2_start = nil
-      l2_end = nil
-      translation = right_clean
-
-      l2_match = right_clean.match(/\[(.*?)\]/)
-      if l2_match
-        token_l2 = l2_match[1].strip
-        l2_start, l2_end = find_word_indices(words_l2, token_l2)
-        translation = token_l2 if l2_start
-      end
-
-      translations << {
-        phrase_id: id,
-        l1_start_index: l1_start,
-        l1_end_index: l1_end,
-        l2_start_index: l2_start,
-        l2_end_index: l2_end,
-        translation: translation,
-        questions: [],
-        similar_sound: []
-      }
+    llm_response_block.lines.map {|l| l.sub(/\s*#.*$/, '').strip }.each do |line_without_comment|
+      process_line(line_without_comment)
     end
-
-    translations
+    self
   end
 
   private
 
-  def find_word_indices(words, token)
-    token_words = token.split(/\s+/).map(&:strip)
-    num_words = token_words.length
+  def process_line(line)
+    return unless token_translations_line?(line)
 
-    return nil if num_words == 0
-
-    (0...(words.length - num_words + 1)).each do |start_idx|
-      candidate_words = words[start_idx, num_words]
-      candidate = candidate_words.join(' ')
-
-      if normalize_for_match(candidate) == normalize_for_match(token)
-        return [start_idx, start_idx + num_words - 1]
-      end
+    l1, l2 = line.split(/\s*=>\s*/)
+    if l2.include?('[')
+      # l2 contains brackets so it's a regular translation
+      create_mapping_token(l1, l2)
+    else
+      # no bracket in l2, use custom translation
+      create_custom_translation_token(l1, l2)
     end
-
-    nil
   end
 
-  def normalize_for_match(str)
-    str.gsub(/[^\w\s]/, '').strip
+  def create_custom_translation_token(l1, l2)
+    l1_start_word_index = find_start_word_index(l1)
+    l1_end_word_index = find_end_word_index(l1)
+
+    token_translations.build(
+      l1_start_index: l1_start_word_index,
+      l1_end_index: l1_end_word_index,
+      translation: l2,
+    )
+  end
+
+  def create_mapping_token(l1, l2)
+    l1_start_word_index = find_start_word_index(l1)
+    l1_end_word_index = find_end_word_index(l1)
+    l2_start_word_index = find_start_word_index(l2)
+    l2_end_word_index = find_end_word_index(l2)
+
+    token_translations.build(
+      l1_start_index: l1_start_word_index,
+      l1_end_index: l1_end_word_index,
+      l2_start_index: l2_start_word_index,
+      l2_end_index: l2_end_word_index,
+      translation: text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
+    )
+  end
+
+  def find_start_word_index(text)
+    start_character = text.index('[')
+    word_start_indexes = text.tokenize.map {|t| t.begin(0) - 1 }
+    word_start_indexes.find_index {|i| i == start_character }
+  end
+
+  def find_end_word_index(text)
+    end_character = text.index(']')
+    word_end_indexes = text.tokenize.map {|t| t.end(0) }
+    word_end_indexes.find_index {|i| i == end_character }
+  end
+
+  def token_translations_line?(line)
+    return false if line.blank?
+    left, right = line.split(/\s*=>\s*/)
+    return false if left.blank? || right.blank?
+    return false unless (left.include?('[') && left.include?(']'))
+    
+    true
   end
 end

@@ -66,7 +66,7 @@ class TokenTranslationParser
 
       next unless matches_phrase?(block, phrase)
 
-      translations = phrase.parse(block)
+      translations = phrase.add_tokens_from(block).token_translations
       all_translations.concat(translations)
     end
 

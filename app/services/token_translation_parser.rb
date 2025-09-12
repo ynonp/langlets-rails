@@ -12,30 +12,13 @@ class TokenTranslationParser
       block = @blocks[idx]
       next unless block
 
-      next unless matches_phrase?(block, phrase)
-
-      translations = phrase.parse(block)
-      all_translations.concat(translations)
+      translations = phrase.add_tokens_from(block)
     end
-
-    all_translations
   end
 
   private
 
   def split_into_blocks(response)
     response.to_s.split(/\n\s*\n/).map(&:strip).reject(&:empty?)
-  end
-
-  def matches_phrase?(block, phrase)
-    lines = block.split("\n")
-    phrase_text = phrase.text_l1.strip
-    lines.any? do |line|
-      parts = line.split('=>', 2)
-      next unless parts.length == 2
-      left_side = parts[0].strip
-      left_clean = left_side.gsub(/\[.*?\]/, '').strip
-      phrase_text.include?(left_clean)
-    end
   end
 end
