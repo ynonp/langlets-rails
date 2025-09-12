@@ -1,5 +1,6 @@
 class Phrase < ApplicationRecord
   include AzureTextToSpeech
+  include TokenTranslationBlockParser
   belongs_to :medium
 
   belongs_to :l1, class_name: 'Language'
@@ -13,8 +14,6 @@ class Phrase < ApplicationRecord
   has_timestamp [:timestamp]
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
-
-
 
   # Class method to add calculated_end_timestamp to each phrase based on the next phrase in the medium
   def self.with_calculated_end_timestamps(phrase_collection, all_medium_phrases = nil)
@@ -50,5 +49,5 @@ class Phrase < ApplicationRecord
     "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
   end
 
-  private
+  include TokenTranslationBlockParser
 end

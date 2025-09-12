@@ -2,6 +2,10 @@ module CreateSong
   module Translate
     extend ActiveSupport::Concern
 
+    def build_phrases
+      data["phrases"].map { |props| Phrase.new(props) }
+    end
+
     def translate
       instructions = ApplicationController.renderer.render(
         template: 'prompts/add_l2',
