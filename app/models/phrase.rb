@@ -6,6 +6,7 @@ class Phrase < ApplicationRecord
   belongs_to :l1, class_name: 'Language'
   belongs_to :l2, class_name: 'Language'
   has_many :token_translations, dependent: :destroy
+  has_many :similar_sounds, dependent: :destroy
 
   # Validations
   validates :text_l1, presence: { message: "must be present" }

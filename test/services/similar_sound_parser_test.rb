@@ -19,7 +19,26 @@ Output:
       Phrase.new(text_l1: "Minutes after they took I"),
       Phrase.new(text_l1: "From the bottomless pit")
     ]
-    SimilarSoundParser.new(phrases, llm_response)
+
+    p = SimilarSoundParser.new(phrases, llm_response)
+    p.call
+
+    assert_equal phrases[0].similar_sounds.size, 1
+    assert_equal phrases[0].similar_sounds.first.start_word_inex, 0
+    assert_equal phrases[0].similar_sounds.first.end_word_index, 0
+    assert_equal phrases[0].similar_sounds.first.replacement_text, "Gold"
+
+    assert_equal phrases[1].similar_sounds.size, 0
+
+    assert_equal phrases[2].similar_sounds.size, 1
+    assert_equal phrases[2].similar_sounds.first.start_word_inex, 3
+    assert_equal phrases[2].similar_sounds.first.end_word_index, 3
+    assert_equal phrases[2].similar_sounds.first.replacement_text, "book"
+
+    assert_equal phrases[3].similar_sounds.size, 1
+    assert_equal phrases[3].similar_sounds.first.start_word_inex, 2
+    assert_equal phrases[3].similar_sounds.first.end_word_index, 2
+    assert_equal phrases[3].similar_sounds.first.replacement_text, "motherless"
   end
 
   test "20 de enero" do
