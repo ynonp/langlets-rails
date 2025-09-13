@@ -29,6 +29,8 @@ class LessonsController < ApplicationController
       finish_lesson_path(@lesson.slug)
     end
 
+    @is_last_activity = next_activity.blank?
+
     # Prepare progress data for completion messages
     @progress_data = {
       activity_id: @activity.id,
