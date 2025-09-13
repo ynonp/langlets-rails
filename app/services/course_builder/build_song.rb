@@ -36,6 +36,10 @@ module CourseBuilder
         t.call
         phrases.each {|p| p.save }
 
+        t = SimilarSoundParser.new(phrases, progress.data["similar_sounds"])
+        t.call
+        phrases.each {|p| p.save }
+
         lessons = progress.data["lessons"].each_cons(2).map do |l, next_l|
           lesson = Lesson.create!(
             slug: l["title"].parameterize,
