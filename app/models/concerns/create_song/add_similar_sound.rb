@@ -17,7 +17,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = RubyLLM.traced_chat(span_name: "add_similar_sound", model: 'gemini-2.5-flash')
+        chat = TracedChat.new(span_name: "add_similar_sound", model: 'gemini-2.5-flash')
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)

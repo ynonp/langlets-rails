@@ -1,5 +1,3 @@
-require Rails.root.join("lib/ruby_llm/traced_chat")
-
 RubyLLM.configure do |config|
   config.openai_api_key = Rails.application.credentials.dig(:openai_api_key)
   config.anthropic_api_key = Rails.application.credentials.dig(:anthropic_api_key)
