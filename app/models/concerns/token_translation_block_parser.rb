@@ -26,7 +26,9 @@ module TokenTranslationBlockParser
     return unless token_translations_line?(line)
 
     l1, l2 = line.split(/\s*=>\s*/)
-    if l2.include?('[')
+    if l2.delete('[]') != text_l2
+      create_custom_translation_from_brackets(l1, l2)
+    elsif l2.include?('[')
       # l2 contains brackets so it's a regular translation
       create_mapping_token(l1, l2)
     else
@@ -52,14 +54,29 @@ module TokenTranslationBlockParser
     l2_start_word_index = find_start_word_index(l2)
     l2_end_word_index = find_end_word_index(l2)
 
-    token_translations.build(
+    token = token_translations.build(
       l1_start_index: l1_start_word_index,
       l1_end_index: l1_end_word_index,
       l2_start_index: l2_start_word_index,
       l2_end_index: l2_end_word_index,
-      translation: text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
+    )
+    raise token.errors.full_messages.join("\n") unless token.valid?
+    token.translation = text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
+  end
+
+  def create_custom_translation_from_brackets(l1, l2)
+    l1_start_word_index = find_start_word_index(l1)
+    l1_end_word_index = find_end_word_index(l1)
+    l2_start_word_index = find_start_word_index(l2)
+    l2_end_word_index = find_end_word_index(l2)
+
+    token = token_translations.build(
+      l1_start_index: l1_start_word_index,
+      l1_end_index: l1_end_word_index,
+      translation: l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
     )
   end
+
 
   def find_start_word_index(text)
     start_character = text.index('[')

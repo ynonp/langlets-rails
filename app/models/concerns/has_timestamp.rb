@@ -4,6 +4,12 @@ module HasTimestamp
   class_methods do
     def has_timestamp(fields)
       Array(fields).each do |field|
+        define_method("#{field}_seconds=") do |value|
+          minutes = value.to_i / 60
+          seconds = value.to_i % 60
+          self[field] = format("%02d:%02d", minutes, seconds)
+        end
+
         define_method("#{field}_seconds") do
           value = send(field)
           return nil unless value.present? && value.include?(":")

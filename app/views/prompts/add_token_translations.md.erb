@@ -11,6 +11,17 @@ Your primary goal is to align a Spanish token or phrase with a consecutive token
 Text after # is ignored so you can add explnation or reasoning for each line.
 In the output insert a blank line between each phrase.
 
+## Output Instructions
+
+1. Mappings: The primary method. The format is Original phrase with [...] => Original translation with [...].
+** Crucially **: You must return the full, unmodified original phrases on both sides of the =>. Only the aligned consecutive words should be wrapped in [...].
+Example: [Hola] mundo => [Hello] world
+
+2. Custom Translations: A last resort for when a direct mapping of consecutive words is impossible or awkward.
+The right side of the => should contain only the custom translation text, not the original full sentence.
+Example: Por fin [se hacía] realidad => was getting, was becoming
+
+## Examples
 <%= render partial: "prompts/add_tokens_examples_#{clip_language.downcase}_#{translation_language.downcase}" %>
 
 ## Input:
