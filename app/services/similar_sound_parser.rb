@@ -4,12 +4,17 @@ class SimilarSoundParser
   def initialize(phrases, llm_response)
     @phrases = phrases
     @llm_response = llm_response
-    @lines = llm_response.delete_prefix("Output:\n").lines.reject {|l| l.blank? }
+    @lines = llm_response
+      .delete_prefix("Output:\n")
+      .delete_prefix("```\n")
+      .lines
+      .map(&:strip)
+      .reject {|l| l.blank? }
   end
 
   def call
-    lines.each_with_index do |line, index|
-      phrases[index].add_similar_sound_from(line.strip)
+    lines.zip(phrases) do |line, phrase|
+      phrase&.add_similar_sound_from(line)
     end
   end
 end
