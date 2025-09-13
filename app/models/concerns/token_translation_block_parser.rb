@@ -20,20 +20,47 @@ module TokenTranslationBlockParser
     self
   end
 
+  def add_similar_sound_from(line)
+    s = StringScanner.new(line)
+    iterations = 0
+    line_without_brackets = line.delete('[]')
+
+    while s.scan_until(/\[/)
+      iterations += 1
+
+      start_bracket_ch_index = s.charpos
+      start_ch_index = s.charpos - 1 - 2 * (iterations - 1)
+      s.scan_until(/\]/)
+
+      end_bracket_ch_index = s.charpos
+      end_ch_index = s.charpos - 3 - 2 * (iterations - 1)
+
+      start_word_index = line_without_brackets.tokenize.map {|t| t.begin(0) }.find_index {|i| i == start_ch_index }
+      end_word_index = line_without_brackets.tokenize.map {|t| t.end(0) - 1}.find_index {|i| i == end_ch_index }
+      replacement_text = line_without_brackets[start_ch_index..end_ch_index]
+
+      similar_sounds.build(
+        start_word_index:,
+        end_word_index:,
+        replacement_text:,
+      )
+    end
+  end
+
   private
 
   def process_line(line)
     return unless token_translations_line?(line)
 
     l1, l2 = line.split(/\s*=>\s*/)
-    if l2.delete('[]') != text_l2
-      create_custom_translation_from_brackets(l1, l2)
-    elsif l2.include?('[')
-      # l2 contains brackets so it's a regular translation
-      create_mapping_token(l1, l2)
-    else
+    if !l2.include?('[')
       # no bracket in l2, use custom translation
       create_custom_translation_token(l1, l2)
+    elsif l2.delete('[]') != text_l2
+      create_custom_translation_from_brackets(l1, l2)
+    else
+      # l2 contains brackets so it's a regular translation
+      create_mapping_token(l1, l2)
     end
   end
 

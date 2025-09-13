@@ -50,5 +50,4 @@ class Phrase < ApplicationRecord
     "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
   end
 
-  include TokenTranslationBlockParser
 end

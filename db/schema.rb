@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_05_064412) do
+ActiveRecord::Schema[8.0].define(version: 2025_09_13_082912) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -302,6 +302,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_05_064412) do
     t.index ["medium_id"], name: "index_phrases_on_medium_id"
   end
 
+  create_table "similar_sounds", force: :cascade do |t|
+    t.integer "start_word_index", null: false
+    t.integer "end_word_index", null: false
+    t.string "replacement_text", null: false
+    t.bigint "phrase_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phrase_id"], name: "index_similar_sounds_on_phrase_id"
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -378,6 +388,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_05_064412) do
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"
+  add_foreign_key "similar_sounds", "phrases"
   add_foreign_key "token_translations", "phrases"
   add_foreign_key "user_game_stats", "users"
 end
