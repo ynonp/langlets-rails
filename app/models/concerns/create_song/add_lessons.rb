@@ -2,23 +2,6 @@ module CreateSong
   module AddLessons
     extend ActiveSupport::Concern
 
-    class AddLessonsOutput < RubyLLM::Schema
-      array :lessons do
-        object do
-          number :order, description: "Lesson Order"
-          string :title, description: "Lesson title"
-          string :description, description: "Lesson short description"
-          array :phrases, description: "Phrases for this lesson" do
-            object do
-              string :id
-              string :text, description: "phrase text"
-              string :timestamp, description: "phrase timestamp (format MM:SS)"
-            end
-          end
-        end
-      end
-    end
-
     def add_lessons
       phrases_for_llm = data["phrases"].map do |phrase|
         {
@@ -41,14 +24,13 @@ module CreateSong
 
       begin
         chat = TracedChat.new(span_name: "add_lessons", model: 'gemini-2.5-flash')
-        user_content = JSON.pretty_generate(phrases_for_llm)
+        user_content = data["phrases"].map {|p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)
-          .with_schema(AddLessonsOutput)
           .add_message role: :user, content: user_content
         response = chat.complete
-        data["lessons"] = response.content["lessons"]
+        data["lessons"] = response.content
         save!
 
         response

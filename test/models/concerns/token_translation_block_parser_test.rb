@@ -64,6 +64,17 @@ Pensé que era un buen [momento] => moment, time
     assert_equal 'who', fifth[:translation]
   end
 
+  test 'parse line from flowers' do
+    p = Phrase.new(text_l1: "'til we weren't", text_l2: "עד שכבר לא")
+    p.send(:process_line, "['til] we weren't => [עד שכבר] לא")
+    token = p.token_translations.first
+
+    assert_equal 0, token.l1_start_index
+    assert_equal 0, token.l1_end_index
+    assert_equal 0, token.l2_start_index
+    assert_equal 1, token.l2_end_index
+  end
+
   test 'parses spanish text with multi-word mappings' do
     translations = @phrase.add_tokens_from(@block).token_translations
     assert_equal 5, translations.length

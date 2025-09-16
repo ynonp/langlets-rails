@@ -10,7 +10,7 @@ class String
   end
 
   def tokenize
-    regex = Regexp.new(/\p{L}[\p{L}\p{M}]*(?:'[\p{L}\p{M}]+)*/u)
+    regex = Regexp.new(/['\p{L}][\p{L}\p{M}]*(?:'[\p{L}\p{M}]+)*/u)
 
     Enumerator.new do |y|
       pos = 0

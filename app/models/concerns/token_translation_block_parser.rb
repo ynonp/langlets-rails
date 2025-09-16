@@ -17,6 +17,7 @@ module TokenTranslationBlockParser
     llm_response_block.lines.map {|l| l.sub(/\s*#.*$/, '').strip }.each do |line_without_comment|
       process_line(line_without_comment)
     end
+    
     self
   end
 
@@ -52,7 +53,10 @@ module TokenTranslationBlockParser
   def process_line(line)
     return unless token_translations_line?(line)
 
-    l1, l2 = line.split(/\s*=>\s*/)
+    l1, l2 = line.split(/\s*=>\s*/).map(&:strip)
+
+    return unless l1.delete('[]').tokenize.to_a == text_l1.tokenize.to_a
+
     if !l2.include?('[')
       # no bracket in l2, use custom translation
       create_custom_translation_token(l1, l2)
@@ -87,7 +91,7 @@ module TokenTranslationBlockParser
       l2_start_index: l2_start_word_index,
       l2_end_index: l2_end_word_index,
     )
-    raise token.errors.full_messages.join("\n") unless token.valid?
+    raise "#{l1} => #{l2}\n#{token.errors.full_messages.join("\n")}" unless token.valid?
     token.translation = text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
   end
 
@@ -103,7 +107,6 @@ module TokenTranslationBlockParser
       translation: l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
     )
   end
-
 
   def find_start_word_index(text)
     start_character = text.index('[')

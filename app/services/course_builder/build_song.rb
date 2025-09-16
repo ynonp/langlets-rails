@@ -30,7 +30,7 @@ module CourseBuilder
             medium:,
           )
         end
-        phrases = Phrase.where(id: phrases.map(&:id))
+        phrases = Phrase.where(id: phrases.map(&:id)).order(timestamp: :asc)
 
         t = TokenTranslationParser.new(phrases, progress.data["phrases_with_token_translations"])
         t.call
@@ -40,21 +40,23 @@ module CourseBuilder
         t.call
         phrases.each {|p| p.save }
 
-        lessons = progress.data["lessons"].each_cons(2).map do |l, next_l|
+        lessons = progress.data["lessons"].split("\n\n").each_cons(2).each_with_index.map do |(l, next_l), lesson_index|
+          lesson_name = l.lines.first.strip.sub(/^#\s*/, '')
+          first_timestamp = l.lines.second[0..4]
+          last_timestamp = l.lines.last[0..4]
+          end_timestamp = next_l ? next_l.lines.second[0..4] : nil
           lesson = Lesson.create!(
-            slug: l["title"].parameterize,
+            slug: lesson_name.parameterize,
             medium:,
-            course: course,
-            order: l["order"],
-            name: l["title"],
-            user: user,
-            start_timestamp: l["phrases"].first["timestamp"],
-            end_timestamp: next_l ? next_l["phrases"].last["timestamp"] : nil
+            course:,
+            order: lesson_index + 1,
+            name: lesson_name,
+            user:,
+            start_timestamp: first_timestamp,
+            end_timestamp:
           )
-
-          all_lesson_phrases = phrases.where("timestamp >= ? and timestamp < ?", lesson.start_timestamp, lesson.end_timestamp)
+          all_lesson_phrases = phrases.where("timestamp >= ? and timestamp <= ?", first_timestamp, last_timestamp)
           all_token_translations = all_lesson_phrases.includes(:token_translations).flat_map(&:token_translations)
-
           a1 = Activities::WatchVideoActivity.create!(lesson:, order: 1, user:)
           a1.phrases = all_lesson_phrases
 
