@@ -56,7 +56,7 @@ class TokenTranslation < ApplicationRecord
         errors.add(:l1_start_index, "word indexes #{l1_start_index}-#{l1_end_index} out of bounds for phrase #{phrase.text_l1}")
       end
     else
-      errors.add(:l1_start_index, "l1 start index is required (phrase text #{phrase.text_l1}; translation #{translation})")
+      errors.add(:l1_start_index, "l1 indexes are required (phrase text #{phrase.text_l1}; translation #{translation})")
     end
 
     # Validate L2 indexes (optional)

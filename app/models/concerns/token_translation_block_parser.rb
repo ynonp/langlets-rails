@@ -55,12 +55,12 @@ module TokenTranslationBlockParser
 
     l1, l2 = line.split(/\s*=>\s*/).map(&:strip)
 
-    return unless l1.delete('[]').tokenize.to_a == text_l1.tokenize.to_a
+    return unless l1.delete('[]').downcase.tokenize.to_a == text_l1.downcase.tokenize.to_a
 
     if !l2.include?('[')
       # no bracket in l2, use custom translation
       create_custom_translation_token(l1, l2)
-    elsif l2.delete('[]') != text_l2
+    elsif l2.delete('[]').downcase != text_l2.downcase
       create_custom_translation_from_brackets(l1, l2)
     else
       # l2 contains brackets so it's a regular translation
@@ -117,7 +117,7 @@ module TokenTranslationBlockParser
   def find_end_word_index(text)
     end_character = text.index(']')
     word_end_indexes = text.tokenize.map {|t| t.end(0) }
-    word_end_indexes.find_index {|i| i == end_character }
+    word_end_indexes.rindex {|i| i <= end_character }
   end
 
   def token_translations_line?(line)

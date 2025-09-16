@@ -65,12 +65,11 @@ Pensé que era un buen [momento] => moment, time
   end
 
   test 'parse block in Arabic' do
-    line = "[كان ييجي] لعنده زباين من كل الأنحاء، => customers [would come] to him from all over,"
+    line = "كان ييجي لعنده زباين من [كل الأنحاء،] => customers would come to him from [all over,]"
     p = Phrase.new(text_l1: "كان ييجي لعنده زباين من كل الأنحاء،", text_l2: "Customers would come to him from all over,")
     p.send(:process_line, line)
 
-    pp p
-    pp p.token_translations
+    assert p.token_translations.all? {|t| t.valid? }
   end
 
   test 'parse line from flowers' do
