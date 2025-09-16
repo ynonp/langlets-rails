@@ -27,8 +27,12 @@ module CreateSong
         chat.with_instructions(instructions).add_message role: :user, content: user_content
         response = chat.complete
 
-        response.content.lines.map(&:chomp).reject(&:blank?).each_with_index.map do |l2, index|
-          data["phrases"][index]["text_l2"] = l2
+        translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
+        phrases = data["phrases"]
+        raise "Bad translation, line count doesnt match" if translation_lines.size != phrases.size
+
+        translation_lines.zip(phrases) do |text, phrase|
+          phrase["text_l2"] = text
         end
 
         save!
