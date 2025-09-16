@@ -91,9 +91,10 @@ module ActivitiesHelper
       
       # Replace token words with blanks (process in reverse to maintain indices)
       loaded_tokens.reverse.each do |val|
+        similar = similar_sounds_for_token(phrase, val)
         token_data = {
           original_text: words[val.l1_start_index..val.l1_end_index].join(' '),
-          similar_sound: val.similar_sound
+          similar_sound: similar
         }.to_json
         
         # Create a blank span for this token
@@ -205,5 +206,19 @@ module ActivitiesHelper
         tokens: tokens_with_ranges
       }
     end
+  end
+
+  private
+
+  def similar_sounds_for_token(phrase, token_translation)
+    return nil unless phrase.respond_to?(:similar_sounds)
+
+    matching = phrase.similar_sounds.select do |ss|
+      ss.start_word_index >= token_translation.l1_start_index && ss.end_word_index <= token_translation.l1_end_index
+    end
+
+    return nil if matching.blank?
+
+    matching.map(&:replacement_text)
   end
 end
