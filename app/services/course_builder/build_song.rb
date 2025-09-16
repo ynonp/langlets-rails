@@ -84,6 +84,9 @@ module CourseBuilder
 
           a6 = Activities::SpeakActivity.create!(lesson:, order: 6, user:)
           a6.phrases = all_lesson_phrases
+
+          a7 = Activities::ListenActivity.create!(lesson:, order: 7, user:)
+          a7.phrases = all_lesson_phrases
         end
       end
     end
