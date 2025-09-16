@@ -35,8 +35,6 @@ export default class extends Controller {
       return `<button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" data-option-audio="${audioUrl}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-gray-800 rounded h-20">${opt}</button>`
     }).join('')
 
-    const audioHtml = card.audio_url ? `<audio src="${card.audio_url}" controls class="w-full mt-4"></audio>` : ''
-
     const containsLatin = /[A-Za-z]/.test(card.phrase_html)
     const phraseDir = containsLatin ? 'ltr' : (this.l1RtlValue ? 'rtl' : 'ltr')
     const phraseAlignClass = phraseDir === 'rtl' ? 'text-right' : 'text-left'
@@ -50,7 +48,6 @@ export default class extends Controller {
     this.cardTarget.innerHTML = `
       <div class="mb-3 text-gray-300 text-lg md:text-xl">${card.translation}</div>
       <div dir="${phraseDir}" class="mb-6 text-white font-semibold text-2xl md:text-3xl ${phraseAlignClass}">${displayedPhrase}</div>
-      ${audioHtml}
       <div class="mt-6 grid grid-cols-2 gap-4">${optionsHtml}</div>
     `
   }
