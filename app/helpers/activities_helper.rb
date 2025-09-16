@@ -90,10 +90,13 @@ module ActivitiesHelper
       result_words = words.dup
       
       # Replace token words with blanks (process in reverse to maintain indices)
+      tokens_with_similar = loaded_tokens.select { |t| similar_sounds_for_token(phrase, t).present? }
+      token_to_blank = tokens_with_similar.sample
+
       loaded_tokens.reverse.each do |val|
         similar = similar_sounds_for_token(phrase, val)
-        # Only replace the token with a blank if there are similar sounds defined for it
         next if similar.blank?
+        next unless val == token_to_blank
 
         token_data = {
           original_text: words[val.l1_start_index..val.l1_end_index].join(' '),
