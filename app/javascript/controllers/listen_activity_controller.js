@@ -127,7 +127,7 @@ export default class extends Controller {
       // Get token data from data attribute
       const tokenData = token.tokenData;
       const correctWord = tokenData.original_text;
-      let similarWord = "alternative";
+      let similarWord = null;
       if (tokenData.similar_sound) {
         if (Array.isArray(tokenData.similar_sound)) {
           if (tokenData.similar_sound.length > 0) {
@@ -137,14 +137,17 @@ export default class extends Controller {
           similarWord = tokenData.similar_sound;
         }
       }
-      
-      // Randomly arrange correct and incorrect words
+
+      if (!similarWord) {
+        this.wordSelectionTarget.classList.add('hidden');
+        return;
+      }
+
       const words = [
         { word: correctWord, correct: true },
         { word: similarWord, correct: false }
       ].sort(() => Math.random() - 0.5);
-      
-      // Update word selection buttons
+
       this.wordSelectionTarget.innerHTML = words.map(word => `
         <button data-listen-activity-target="wordOption" 
                 data-word="${word.word}" 

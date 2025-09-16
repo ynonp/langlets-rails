@@ -94,25 +94,35 @@
     
     <!-- Word Selection Area -->
     <div class="my-6 flex justify-center space-x-4" data-listen-activity-target="wordSelection">
-      <% 
-        first_phrase_with_tokens = phrases.find { |p| p.token_translations.present? && p.token_translations.any? }
-        if first_phrase_with_tokens
-          first_token = first_phrase_with_tokens.token_translations.first
+      <%
+        token_with_similar = nil
+        phrases.each do |p|
+          next unless p.token_translations.present?
+          p.token_translations.each do |t|
+            if similar_sounds_for_token(p, t).present?
+              token_with_similar = { phrase: p, token: t }
+              break
+            end
+          end
+          break if token_with_similar
+        end
+
+        if token_with_similar
+          first_phrase_with_tokens = token_with_similar[:phrase]
+          first_token = token_with_similar[:token]
           words = []
-          
+
           if first_token
             correct_word = token_original_text(first_token)
             similar_candidates = similar_sounds_for_token(first_phrase_with_tokens, first_token) || []
             similar_word = similar_candidates.sample
-            
+
             if correct_word.present? && similar_word.present?
               words = [{word: correct_word, correct: true}, {word: similar_word, correct: false}].shuffle
-            elsif correct_word.present?
-              words = [{word: correct_word, correct: true}, {word: "alternative", correct: false}].shuffle
             end
           end
-          
-          words.each do |word_data| 
+
+          words.each do |word_data|
       %>
             <button 
               data-listen-activity-target="wordOption" 
@@ -123,7 +133,7 @@
               <%= word_data[:word] %>
             </button>
       <%  end
-        end 
+        end
       %>
     </div>
 
