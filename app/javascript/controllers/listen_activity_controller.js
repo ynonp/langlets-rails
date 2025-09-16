@@ -127,7 +127,16 @@ export default class extends Controller {
       // Get token data from data attribute
       const tokenData = token.tokenData;
       const correctWord = tokenData.original_text;
-      const similarWord = tokenData.similar_sound || "alternative";
+      let similarWord = "alternative";
+      if (tokenData.similar_sound) {
+        if (Array.isArray(tokenData.similar_sound)) {
+          if (tokenData.similar_sound.length > 0) {
+            similarWord = tokenData.similar_sound[Math.floor(Math.random() * tokenData.similar_sound.length)];
+          }
+        } else if (typeof tokenData.similar_sound === 'string') {
+          similarWord = tokenData.similar_sound;
+        }
+      }
       
       // Randomly arrange correct and incorrect words
       const words = [
