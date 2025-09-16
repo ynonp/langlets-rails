@@ -30,7 +30,7 @@ module CourseBuilder
             medium:,
           )
         end
-        phrases = Phrase.where(id: phrases.map(&:id)).order(timestamp: :asc)
+        phrases = medium.phrases.order(timestamp: :asc)
 
         t = TokenTranslationParser.new(phrases, progress.data["phrases_with_token_translations"])
         t.call
