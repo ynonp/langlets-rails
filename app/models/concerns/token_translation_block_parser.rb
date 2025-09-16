@@ -91,6 +91,7 @@ module TokenTranslationBlockParser
       l2_start_index: l2_start_word_index,
       l2_end_index: l2_end_word_index,
     )
+
     raise "#{l1} => #{l2}\n#{token.errors.full_messages.join("\n")}" unless token.valid?
     token.translation = text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
   end
@@ -111,7 +112,7 @@ module TokenTranslationBlockParser
   def find_start_word_index(text)
     start_character = text.index('[')
     word_start_indexes = text.tokenize.map {|t| t.begin(0) - 1 }
-    word_start_indexes.find_index {|i| i == start_character }
+    word_start_indexes.find_index {|i| i >= start_character }
   end
 
   def find_end_word_index(text)

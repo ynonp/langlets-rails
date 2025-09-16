@@ -72,6 +72,17 @@ Pensé que era un buen [momento] => moment, time
     assert p.token_translations.all? {|t| t.valid? }
   end
 
+  test 'spanish line with question mark' do
+    p = Phrase.new("text_l1"=>"¿Quién es?", "text_l2"=>"Who is it?")
+    block = <<~END
+    [¿Quién] es? => [Who] is it?
+    ¿Quién [es?] => Who [is it?]
+    END
+    p.add_tokens_from(block)
+    assert_equal 2, p.token_translations.size
+  end
+
+
   test 'parse line from flowers' do
     p = Phrase.new(text_l1: "'til we weren't", text_l2: "עד שכבר לא")
     p.send(:process_line, "['til] we weren't => [עד שכבר] לא")
