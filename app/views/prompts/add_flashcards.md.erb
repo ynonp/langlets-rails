@@ -1,0 +1,21 @@
+create vocabulary quizzes from the list of words terms
+for each term type a sentence with the term (or a conjugation of it). Put the term in bold.
+then in the next line type 3 alternative terms we show in the quiz separated by comma
+
+example input:
+gold
+mountain
+
+example output:
+The ring was made of pure **gold**
+silver, bold, wood, mud
+
+The **mountain** air was fresh and pure
+hill, road, morning
+
+** Guidelines
+1. do not use synonyms of the word as distractors (that's too confusing)
+2. some terms consist of multiple words. You'll need to replace the full term.
+3. Input language: <%= clip_language %>. Use only distractor words from the same language
+
+

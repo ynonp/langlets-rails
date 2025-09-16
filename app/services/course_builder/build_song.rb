@@ -64,12 +64,15 @@ module CourseBuilder
           a2.phrases = all_lesson_phrases
 
           unless all_token_translations.empty?
-            a3 = Activities::MatchTokensActivity.create!(lesson:, order: 3, user:)
+            a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
             a3.token_translations = all_token_translations.sample(5)
+
+            a4 = Activities::MatchTokensActivity.create!(lesson:, order: 4, user:)
+            a4.token_translations = all_token_translations.sample(5)
           end
 
-          a4 = Activities::SortPhrasesActivity.create!(lesson:, order: 4, user:)
-          a4.phrases = all_lesson_phrases.first(5)
+          a5 = Activities::SortPhrasesActivity.create!(lesson:, order: 5, user:)
+          a5.phrases = all_lesson_phrases.first(5)
 
           tt_with_l2 = TokenTranslation
             .joins(:phrase)
@@ -77,16 +80,16 @@ module CourseBuilder
             .where.not(l2_start_index: nil)
 
           unless tt_with_l2.empty?
-            a5 = Activities::LanguageAlignmentActivity.create!(lesson:, order: 5, user:)
-            a5.phrases = all_lesson_phrases
-            a5.token_translations = tt_with_l2.sample(5)
+            a6 = Activities::LanguageAlignmentActivity.create!(lesson:, order: 6, user:)
+            a6.phrases = all_lesson_phrases
+            a6.token_translations = tt_with_l2.sample(5)
           end
 
-          a6 = Activities::SpeakActivity.create!(lesson:, order: 6, user:)
-          a6.phrases = all_lesson_phrases
-
-          a7 = Activities::ListenActivity.create!(lesson:, order: 7, user:)
+          a7 = Activities::SpeakActivity.create!(lesson:, order: 7, user:)
           a7.phrases = all_lesson_phrases
+
+          a8 = Activities::ListenActivity.create!(lesson:, order: 8, user:)
+          a8.phrases = all_lesson_phrases
         end
       end
     end

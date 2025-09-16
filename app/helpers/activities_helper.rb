@@ -214,6 +214,51 @@ module ActivitiesHelper
     end
   end
 
+  # Prepare flashcards for FlashcardActivity
+  def prepare_flashcards_for_tokens(token_translations)
+    token_translations = token_translations.to_a
+    l1_texts = token_translations.map { |t| token_original_text(t) }.uniq
+
+    cards = token_translations.map do |t|
+      l1_word = token_original_text(t)
+      l2_translation = t.translation
+      audio_url = t.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
+
+      distractors_pool = l1_texts - [l1_word]
+      distractors = distractors_pool.sample(3)
+      while distractors.length < 3
+        candidate = (distractors_pool + l1_texts).sample
+        distractors << candidate unless candidate == l1_word
+        break if distractors.length >= 3
+      end
+      options = ([l1_word] + distractors).shuffle
+
+      # Map option text to audio URLs if available
+      audio_map = token_translations.each_with_object({}) do |tt, memo|
+        key = token_original_text(tt)
+        memo[key] = tt.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(tt.l1_audio, only_path: true) : nil
+      end
+
+      options_audio_urls = options.map { |opt| audio_map[opt] }
+
+      phrase_words = t.phrase.text_l1.split
+      phrase_words[t.l1_start_index..t.l1_end_index] = ['________']
+      phrase_with_blank = phrase_words.join(' ')
+
+      {
+        id: t.id,
+        phrase_html: phrase_with_blank,
+        translation: l2_translation,
+        correct: l1_word,
+        options: options,
+        options_audio_urls: options_audio_urls,
+        audio_url: audio_url
+      }
+    end
+
+    cards
+  end
+
   private
 
   def similar_sounds_for_token(phrase, token_translation)

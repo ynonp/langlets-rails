@@ -1,0 +1,31 @@
+<%# Expects params[:cards] - array of flashcard objects
+    Each card: { id, phrase_html, translation, correct, options, audio_url }
+%>
+
+<%# Expects params[:token_translations] and prepares cards on the client side %>
+<% token_translations = params[:token_translations] || [] %>
+<% cards = prepare_flashcards_for_tokens(token_translations) %>
+<% l1_rtl = params[:l1_rtl] %>
+
+<div data-controller="flashcard-activity" data-flashcard-activity-cards-value="<%= cards.to_json %>" data-flashcard-activity-l1-rtl-value="<%= l1_rtl %>" class="flex flex-col items-center bg-gray-800">
+  <div class="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg">
+    <h2 class="text-2xl md:text-3xl text-white mb-2 font-bold"><%= @activity.text_header || "Flashcards" %></h2>
+
+    <p data-flashcard-activity-target="progress" class="text-gray-300 mb-4">Question 1 of <%= cards.length %></p>
+
+    <div data-flashcard-activity-target="card" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>" class="bg-gray-700 p-8 rounded-lg text-white flex flex-col justify-between min-h-[50vh] <%= l1_rtl ? 'text-right' : 'text-left' %>">
+    </div>
+
+
+    <div data-flashcard-activity-target="completion" class="hidden mt-6 text-center" data-progress-tracker-target="completion">
+      <h3 class="text-xl font-bold text-green-500 mb-4">Good Work!</h3>
+      <%= link_to "Next", @next_activity_path, { class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-center inline-block" } %>
+    </div>
+  </div>
+</div>
+
+<style>
+.option-button { cursor: pointer; width: 100%; }
+.correct { background-color: rgba(34,197,94,0.2); }
+.incorrect { background-color: rgba(239,68,68,0.2); }
+</style>

@@ -37,6 +37,9 @@ application.register("match-activity", MatchActivityController)
 import MatchTokensActivityController from "./match_tokens_activity_controller"
 application.register("match-tokens-activity", MatchTokensActivityController)
 
+import FlashcardActivityController from "./flashcard_activity_controller"
+application.register("flashcard-activity", FlashcardActivityController)
+
 import MiniPlayerController from "./mini_player_controller"
 application.register("mini-player", MiniPlayerController)
 
