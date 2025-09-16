@@ -102,7 +102,8 @@
           
           if first_token
             correct_word = token_original_text(first_token)
-            similar_word = first_token.similar_sound.sample
+            similar_candidates = similar_sounds_for_token(first_phrase_with_tokens, first_token) || []
+            similar_word = similar_candidates.sample
             
             if correct_word.present? && similar_word.present?
               words = [{word: correct_word, correct: true}, {word: similar_word, correct: false}].shuffle
