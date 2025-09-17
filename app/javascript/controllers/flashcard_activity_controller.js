@@ -73,12 +73,10 @@ export default class extends Controller {
 
     if (selected.textContent.trim() === card.correct) {
       selected.classList.add('correct')
-      this.element.dispatchEvent(new CustomEvent('audio:correct', { bubbles: true }))
       this.awardXp(2)
       setTimeout(() => this.nextCard(), 800)
     } else {
       selected.classList.add('incorrect')
-      this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }))
       setTimeout(() => buttons.forEach(btn => btn.disabled = false), 800)
     }
   }
