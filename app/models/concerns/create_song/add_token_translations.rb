@@ -22,7 +22,7 @@ module CreateSong
           chat.with_instructions(instructions).add_message role: :user, content: block.join
 
           response = chat.complete
-          data["phrases_with_token_translations"] += response.content
+          data["phrases_with_token_translations"] += response.content.strip + "\n\n"
           save!
         end
 

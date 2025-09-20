@@ -1,8 +1,8 @@
 class TokenTranslationParser
   def initialize(phrases, llm_response)
     @phrases = phrases
-    @llm_response = llm_response
-    @blocks = split_into_blocks(llm_response)
+    @llm_response = llm_response.strip
+    @blocks = split_into_blocks(llm_response.strip)
   end
 
   def call
