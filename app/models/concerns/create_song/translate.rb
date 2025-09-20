@@ -24,7 +24,11 @@ module CreateSong
 
       begin
         chat = TracedChat.new(span_name: "translate", model: 'gemini-2.5-flash')
-        chat.with_instructions(instructions).add_message role: :user, content: user_content
+        chat
+          .with_instructions(instructions)
+          .with_temperature(0.2)
+          .with_temp
+          .add_message role: :user, content: user_content
         response = chat.complete
 
         translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
