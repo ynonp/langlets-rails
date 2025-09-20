@@ -15,10 +15,10 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_token_translations", model: 'gemini-2.5-flash')
         data["phrases_with_token_translations"] = ""
 
         full_lyrics.lines.each_slice(12) do |block|
+          chat = TracedChat.new(span_name: "add_token_translations", model: 'gemini-2.5-flash')
           chat.with_instructions(instructions).add_message role: :user, content: block.join
 
           response = chat.complete
