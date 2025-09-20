@@ -129,6 +129,7 @@ GEM
     debug (1.11.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
+    deepl-rb (3.2.0)
     devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -880,6 +881,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  deepl-rb (~> 3.2)
   devise (~> 4.9)
   factory_bot (~> 6.5)
   fiddle (~> 1.1)

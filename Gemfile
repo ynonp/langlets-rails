@@ -113,3 +113,5 @@ gem "opentelemetry-instrumentation-net_http", "~> 0.23.0"
 gem "tidewave", "~> 0.2.0", group: :development
 
 gem "opentelemetry-instrumentation-all", "~> 0.80.0"
+
+gem "deepl-rb", "~> 3.2"
