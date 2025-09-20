@@ -27,7 +27,6 @@ module CreateSong
         chat
           .with_instructions(instructions)
           .with_temperature(0.2)
-          .with_temp
           .add_message role: :user, content: user_content
         response = chat.complete
 

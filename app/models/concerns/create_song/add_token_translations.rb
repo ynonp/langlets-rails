@@ -19,7 +19,9 @@ module CreateSong
 
         lyrics_with_translations.lines.each_slice(12) do |block|
           chat = TracedChat.new(span_name: "add_token_translations", model: 'gpt-5-mini')
-          chat.with_instructions(instructions).add_message role: :user, content: block.join
+          chat
+            .with_instructions(instructions)
+            .add_message role: :user, content: block.join
 
           response = chat.complete
           data["phrases_with_token_translations"] += response.content.strip + "\n\n"
