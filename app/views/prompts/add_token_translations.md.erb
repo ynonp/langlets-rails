@@ -26,6 +26,11 @@ Example: Por fin [se hacía] realidad => was getting, was becoming
   3.2 Between blocks: Separate the blocks themselves with a double line break (a blank line).
   CRITICAL: Do NOT place a blank line (a double line break) between lines that belong to the same original input sentence.
 
+## Constraints
+1. Each <%= clip_language %> word must be mapped at most once. If in doubt use the smallest possible mapping.
+
+2. Mark only consecutive full words.
+
 ## Examples
 <%= render partial: "prompts/add_tokens_examples_#{clip_language.downcase}_#{translation_language.downcase}" %>
 

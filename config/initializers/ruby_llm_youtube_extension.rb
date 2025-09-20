@@ -1,6 +1,6 @@
 module RubyLLM
   module Providers
-    module Gemini
+    class Gemini
       module Media
         # Store original method (module method)
         class << self
