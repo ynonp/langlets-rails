@@ -22,7 +22,10 @@ module CreateSong
 
       begin
         chat = TracedChat.new(span_name: "extract_lyrics", model: 'gemini-2.5-pro')
-        chat.with_instructions(instructions).with_temperature(0.2).add_message role: :user, content: user_content
+        chat
+          .with_instructions(instructions)
+          .with_temperature(0.2)
+          .add_message role: :user, content: user_content
         response = chat.complete
 
         phrases = parse_lyrics_response(response.content)
