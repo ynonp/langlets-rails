@@ -17,7 +17,7 @@ module CreateSong
       begin
         data["phrases_with_token_translations"] = ""
 
-        full_lyrics.lines.each_slice(12) do |block|
+        lyrics_with_translations.lines.each_slice(12) do |block|
           chat = TracedChat.new(span_name: "add_token_translations", model: 'gemini-2.5-flash')
           chat.with_instructions(instructions).add_message role: :user, content: block.join
 
@@ -38,6 +38,14 @@ module CreateSong
           raise e
         end
       end
+    end
+
+    private
+
+    def lyrics_with_translations
+      lyrics = data["phrases"].pluck("text_l1")
+      translations = data["phrases"].pluck("text_l2")
+      lyrics.zip(translations).map {|l, t| "#{l} => #{t}" }.join("\n")
     end
   end
 end
