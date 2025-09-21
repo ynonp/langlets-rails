@@ -6,7 +6,7 @@ class CoursesController < ApplicationController
     @languages = Language.joins(:courses).distinct.order(:english_name)
     
     # Get all published courses with progress data in a single optimized query
-    @all_courses = Course.published.includes(:language, :lessons).order(created_at: :desc)
+    @all_courses = Course.published.includes(:language).order(created_at: :desc)
     
     # Get user's processing courses if signed in
     @processing_courses = user_signed_in? ? current_user.courses.processing.includes(:language).order(created_at: :desc) : []
@@ -18,8 +18,11 @@ class CoursesController < ApplicationController
     end
     
     # Convert to array and precompute lesson counts to avoid N+1 queries
+    @all_courses = @all_courses.left_joins(:lessons)
+                  .select('courses.*, COUNT(lessons.id) AS lessons_count')
+                  .group('courses.id')
+
     all_courses_array = @all_courses.to_a
-    lesson_counts = precompute_lesson_counts(all_courses_array)
     
     if user_signed_in?
       # Get progress data for all courses in one efficient query
@@ -32,7 +35,6 @@ class CoursesController < ApplicationController
       @all_courses = all_courses_array.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
-        course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end
       
@@ -125,18 +127,6 @@ class CoursesController < ApplicationController
     params
     .require(:course)
     .permit(:name, :slug, :main_media_url, :language_id)
-  end
-
-  def precompute_lesson_counts(courses)
-    return {} if courses.empty?
-    
-    # Since we already have lessons preloaded, we can count them in memory
-    # This avoids additional database queries
-    lesson_counts = {}
-    courses.each do |course|
-      lesson_counts[course.id] = course.lessons.size
-    end
-    lesson_counts
   end
 
   def get_continue_learning_order(user)

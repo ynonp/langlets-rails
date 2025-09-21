@@ -25,15 +25,6 @@
     language_badge_classes = "mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium"
   end
   
-  # Get lesson count (use cached count if available to avoid N+1 queries)
-  lesson_count = if course.respond_to?(:cached_lesson_count)
-    course.cached_lesson_count
-  elsif course.respond_to?(:total_lessons) && course.total_lessons.present?
-    course.total_lessons.to_i
-  else
-    course.lessons.count
-  end
-  
   # Get user progress
   user_progress = course.respond_to?(:user_progress) ? course.user_progress : 0
 %>
@@ -67,7 +58,7 @@
           </span>
           <span class="mr-2">·</span>
         <% end %>
-        <span><%= pluralize(lesson_count, 'lesson') %></span>
+        <span><%= pluralize(course.lessons_count, 'lesson') %></span>
       </div>
       
       <!-- Progress Bar (only if user has progress) -->
