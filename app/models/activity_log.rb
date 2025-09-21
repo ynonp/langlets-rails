@@ -22,6 +22,8 @@ class ActivityLog < ApplicationRecord
 
   # Returns comprehensive streak information
   def self.streak_info_for_user(user)
+    return ActivityLog.none if user.nil?
+
     # Get all lesson completion logs (where lesson_id is not nil) ordered by date
     lesson_logs = where(user: user)
                     .where.not(lesson_id: nil)

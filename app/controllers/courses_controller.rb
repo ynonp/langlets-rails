@@ -65,10 +65,14 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
-    @lessons = @course.lessons
-                     .includes(:activities, :lesson_users, activities: :activity_users)
-                     .with_progress_data(current_user)
-                     .order(:order)
+    if current_user
+      @lessons = @course.lessons
+        .includes(:activities, :lesson_users, activities: :activity_users)
+        .with_progress_data(current_user)
+        .order(:order)
+    else
+      @lessons = @course.lessons
+    end
   end
 
   def new
