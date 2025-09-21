@@ -5,15 +5,7 @@ class Ability
 
   def initialize(user)
     return unless user
-
-    if [
-      'ynon@hey.com',
-      'ynonperek@gmail.com',
-      'irondome1@outlook.com',
-      'danshi.edu@gmail.com',
-    ].include?(user.email)
-      editor(user)
-    end
+    editor(user)
   end
 
   def editor(user)
