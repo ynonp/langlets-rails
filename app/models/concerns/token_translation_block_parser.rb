@@ -17,6 +17,7 @@ module TokenTranslationBlockParser
     llm_response_block.lines.map {|l| l.sub(/\s*#.*$/, '').strip }.each do |line_without_comment|
       process_line(line_without_comment)
     end
+    remove_duplicate_translations
     
     self
   end
@@ -128,5 +129,21 @@ module TokenTranslationBlockParser
     return false unless (left.include?('[') && left.include?(']'))
     
     true
+  end
+
+  def remove_duplicate_translations
+    words = Hash.new {|h, k| h[k] = [] }
+
+    token_translations.each do |t|
+      t.l1_start_index.upto(t.l1_end_index).each do |word_index|
+        words[word_index] << t
+      end
+    end
+
+    words.transform_values! do |tokens|
+      [tokens.min_by(&:span_length)]
+    end
+
+    self.token_translations = words.values.flatten.uniq
   end
 end

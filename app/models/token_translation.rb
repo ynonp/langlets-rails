@@ -22,7 +22,9 @@ class TokenTranslation < ApplicationRecord
     words[l1_start_index..l1_end_index].join(' ')
   end
 
-
+  def span_length
+    l1_end_index - l1_start_index
+  end
 
   private
 

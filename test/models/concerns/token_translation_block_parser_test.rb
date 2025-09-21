@@ -82,6 +82,21 @@ Pensé que era un buen [momento] => moment, time
     assert_equal 2, p.token_translations.size
   end
 
+  test 'multiple translations' do
+    p = Phrase.new(text_l1: "לא נגמר לנו היום", text_l2: "لم ينتهِ يومنا بعد")
+    block = <<~END
+    [לא נגמר לנו היום] => [لم ينتهِ يومنا بعد]
+    [לא נגמר] לנו היום => [لم ينتهِ] يومنا بعد
+    לא נגמר [לנו היום] => لم ينتهِ [يومنا] بعد
+    END
+    p.add_tokens_from(block)
+    assert_equal 2, p.token_translations.size
+    assert_equal 0, p.token_translations.first.l1_start_index
+    assert_equal 1, p.token_translations.first.l1_end_index
+
+    assert_equal 2, p.token_translations.second.l1_start_index
+    assert_equal 3, p.token_translations.second.l1_end_index
+  end
 
   test 'parse line from flowers' do
     p = Phrase.new(text_l1: "'til we weren't", text_l2: "עד שכבר לא")
