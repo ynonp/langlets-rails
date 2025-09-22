@@ -80,6 +80,13 @@ Rails.application.configure do
   # Only use :id for inspections in production.
   config.active_record.attributes_for_inspect = [ :id ]
 
+  config.active_record.verbose_query_logs = true
+
+  config.log_level = :debug
+  ActiveRecord.verbose_query_logs = true
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
