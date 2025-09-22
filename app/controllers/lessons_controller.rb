@@ -1,26 +1,31 @@
 class LessonsController < ApplicationController
   def show
-    @lesson = Lesson.find_by(slug: params[:id]) || Lesson.find_by(id: params[:id])
+    @lesson = Lesson
+      .joins(medium: :language)
+      .joins(:course)
+      .select("
+              media.url as media_url,
+              languages.iso_name as media_language,
+              languages.rtl as rtl_language,
+              courses.slug as course_slug,
+              lessons.*")
+      .find_by("lessons.slug" => params[:id])
     
     unless @lesson
       redirect_to root_path, alert: "Lesson not found"
       return
     end
     
+    video_url = @lesson.media_url
     @activities = @lesson.activities.order(order: :asc).load
-    @activity = @activities.find_by(order: params[:a]) || @activities.first
+    @activity = @activities.find {|a| a.order == params[:a].to_i } || @activities.first
     @current_url = lesson_path(a: @activity.order)
-    @videoid = @lesson.medium.extract_youtube_video_id
+    @videoid = Medium.new(url: video_url).extract_youtube_video_id
 
     current_order = params[:a].to_i
     
     next_activity = @lesson.activities.where("activities.order > ?", @activity.order).order(order: :asc).first
-    @course_path = @lesson.course.present? ? course_path(@lesson.course.slug) : nil
-    @next_lesson = if @lesson.course.present?
-      @lesson.course.lessons.find_by("lessons.order >= ?", @lesson.order + 1)
-    else
-      nil
-    end
+    @course_path = @lesson.course_id.present? ? course_path(@lesson.course_slug) : nil
     
     @next_activity_path = if next_activity.present?
       lesson_path(@lesson.slug, a: next_activity.order)

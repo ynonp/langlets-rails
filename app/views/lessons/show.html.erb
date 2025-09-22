@@ -1,7 +1,7 @@
 <% content_for :head do %>
   <% youtube_video_id = @videoid %>
   <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) %>
-  <% title = "#{@lesson.course&.name || @lesson.name} - Langlets" %>
+  <% title = "#{@lesson.name} - Langlets" %>
   <% description = "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
   
   <!-- Page title -->
