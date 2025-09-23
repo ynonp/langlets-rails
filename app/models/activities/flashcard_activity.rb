@@ -6,7 +6,8 @@ module Activities
       {
         token_translations: activity_token_translations,
         l1: activity_token_translations.first&.phrase&.l1,
-        l2: activity_token_translations.first&.phrase&.l2
+        l2: activity_token_translations.first&.phrase&.l2,
+        unique_words: lesson.medium.phrases.flat_map {|p| p.text_l1.tokenize.map(&:to_s) }.uniq
       }
     end
   end

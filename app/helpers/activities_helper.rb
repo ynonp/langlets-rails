@@ -215,7 +215,7 @@ module ActivitiesHelper
   end
 
   # Prepare flashcards for FlashcardActivity
-  def prepare_flashcards_for_tokens(token_translations)
+  def prepare_flashcards_for_tokens(token_translations, unique_song_words)
     token_translations = token_translations.to_a
     l1_texts = token_translations.map { |t| token_original_text(t) }.uniq
 
@@ -224,9 +224,9 @@ module ActivitiesHelper
       l2_translation = t.translation
       audio_url = t.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
 
-      distractor_pool = (l1_texts + all_lesson_texts).uniq - [l1_word]
-      distractors = distractor_pool.sample(3)
-      options = ([l1_word] + distractors).uniq.shuffle
+      distractors_pool = l1_texts - [l1_word]
+      distractors = unique_song_words.reject {|w| w.downcase == l1_word.downcase }.sample(3)
+      options = ([l1_word] + distractors).shuffle
 
       # Map option text to audio URLs if available
       audio_map = token_translations.each_with_object({}) do |tt, memo|

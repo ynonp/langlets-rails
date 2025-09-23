@@ -4,7 +4,7 @@
 
 <%# Expects params[:token_translations] and prepares cards on the client side %>
 <% token_translations = params[:token_translations] || [] %>
-<% cards = prepare_flashcards_for_tokens(token_translations) %>
+<% cards = prepare_flashcards_for_tokens(token_translations, params[:unique_words]) %>
 <% l1_rtl = params[:l1_rtl] %>
 
 <div data-controller="flashcard-activity" data-flashcard-activity-cards-value="<%= cards.to_json %>" data-flashcard-activity-l1-rtl-value="<%= l1_rtl %>" class="flex flex-col items-center bg-gray-800">
