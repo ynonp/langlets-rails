@@ -115,3 +115,5 @@ gem "tidewave", "~> 0.2.0", group: :development
 gem "opentelemetry-instrumentation-all", "~> 0.80.0"
 
 gem "deepl-rb", "~> 3.2", require: 'deepl'
+
+gem "rack-timeout", "~> 0.7.0"
