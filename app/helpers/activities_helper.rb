@@ -224,14 +224,9 @@ module ActivitiesHelper
       l2_translation = t.translation
       audio_url = t.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
 
-      distractors_pool = l1_texts - [l1_word]
-      distractors = distractors_pool.sample(3)
-      while distractors.length < 3
-        candidate = (distractors_pool + l1_texts).sample
-        distractors << candidate unless candidate == l1_word
-        break if distractors.length >= 3
-      end
-      options = ([l1_word] + distractors).shuffle
+      distractor_pool = (l1_texts + all_lesson_texts).uniq - [l1_word]
+      distractors = distractor_pool.sample(3)
+      options = ([l1_word] + distractors).uniq.shuffle
 
       # Map option text to audio URLs if available
       audio_map = token_translations.each_with_object({}) do |tt, memo|
