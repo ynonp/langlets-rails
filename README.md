@@ -22,7 +22,6 @@
 ### Why Langlets?
 
 - 🎵 **Learn through music** - Songs are proven to enhance language retention
-- 🌍 **Multi-script support** - Works with Latin, Arabic, Cyrillic, and more
 - 🎯 **Word-level precision** - Click any word for instant translation
 - 🗣️ **Pronunciation practice** - AI-generated audio for every phrase and word
 - 📱 **Interactive exercises** - Multiple activity types keep learning engaging
@@ -57,7 +56,6 @@
 - **Language Pairs** - Learn any supported language from any other
 - **RTL Support** - Full right-to-left text rendering
 - **Pronunciation Variants** - Regional accent support
-- **Character-Level Indexing** - Precise word boundaries across scripts
 
 ### 📊 Progress Tracking
 - **Activity Completion** - Track progress through exercises
