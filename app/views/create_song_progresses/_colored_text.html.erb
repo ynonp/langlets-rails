@@ -1,0 +1,51 @@
+<%
+  # Generate colors for token translations
+  colors = [
+    'rgb(239, 68, 68)',   # red
+    'rgb(59, 130, 246)',  # blue
+    'rgb(34, 197, 94)',   # green
+    'rgb(234, 179, 8)',   # yellow
+    'rgb(168, 85, 247)',  # purple
+    'rgb(236, 72, 153)',  # pink
+    'rgb(20, 184, 166)',  # teal
+    'rgb(251, 146, 60)',  # orange
+  ]
+  
+  # Build array of character positions with their color indices
+  char_colors = Array.new(text.length, nil)
+  
+  translations.each_with_index do |trans, idx|
+    color_idx = idx % colors.length
+    index_key = is_l1 ? 'l1_index' : 'l2_index'
+    
+    if trans[index_key] && trans[index_key].is_a?(Array) && trans[index_key].length >= 2
+      start_idx = trans[index_key][0]
+      end_idx = trans[index_key][1]
+      
+      # Mark characters in this range with the color index
+      (start_idx..end_idx).each do |pos|
+        char_colors[pos] = color_idx if pos < text.length
+      end
+    end
+  end
+%>
+
+<div class="<%= is_l1 ? 'text-white' : 'text-gray-400 text-sm' %>"><%
+  current_color = nil
+  text.each_char.with_index do |char, idx|
+    char_color_idx = char_colors[idx]
+    if char_color_idx != current_color
+      unless current_color.nil?
+        %></span><%
+      end
+      if char_color_idx
+        %><span style="color: <%= colors[char_color_idx] %>; font-weight: 500;"><%
+      end
+      current_color = char_color_idx
+    end
+    %><%= char %><%
+  end
+  unless current_color.nil?
+    %></span><%
+  end
+%></div>

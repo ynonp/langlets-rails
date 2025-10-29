@@ -1,0 +1,33 @@
+<div class="min-h-screen bg-gray-900 text-white py-8 px-4" data-controller="create-song-progress" data-create-song-progress-id-value="<%= @progress.id %>">
+  <div class="max-w-6xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold mb-2">Creating Course from YouTube Video</h1>
+      <p class="text-gray-400">Track the progress of your course creation</p>
+    </div>
+
+    <!-- YouTube Video Player -->
+    <div class="mb-8">
+      <div class="aspect-video bg-black rounded-lg overflow-hidden">
+        <iframe 
+          width="100%" 
+          height="100%" 
+          src="https://www.youtube.com/embed/<%= extract_youtube_id(@progress.youtubeurl) %>" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Progress Steps -->
+    <div class="bg-gray-800 rounded-lg p-6 mb-8" id="progress-steps">
+      <%= render partial: 'progress_steps', locals: { progress: @progress } %>
+    </div>
+
+    <!-- Content Display Area -->
+    <div id="content-area" class="bg-gray-800 rounded-lg p-6">
+      <%= render partial: 'content_display', locals: { progress: @progress, course: @course } %>
+    </div>
+  </div>
+</div>

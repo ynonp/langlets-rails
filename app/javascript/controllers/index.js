@@ -13,11 +13,17 @@ application.register("audio-feedback", AudioFeedbackController)
 import AuthController from "./auth_controller"
 application.register("auth", AuthController)
 
+import CreateSongProgressController from "./create_song_progress_controller"
+application.register("create-song-progress", CreateSongProgressController)
+
 import FindAnswersController from "./find_answers_controller"
 application.register("find-answers", FindAnswersController)
 
 import FindWordsController from "./find_words_controller"
 application.register("find-words", FindWordsController)
+
+import FlashcardActivityController from "./flashcard_activity_controller"
+application.register("flashcard-activity", FlashcardActivityController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
@@ -36,9 +42,6 @@ application.register("match-activity", MatchActivityController)
 
 import MatchTokensActivityController from "./match_tokens_activity_controller"
 application.register("match-tokens-activity", MatchTokensActivityController)
-
-import FlashcardActivityController from "./flashcard_activity_controller"
-application.register("flashcard-activity", FlashcardActivityController)
 
 import MiniPlayerController from "./mini_player_controller"
 application.register("mini-player", MiniPlayerController)

@@ -253,7 +253,7 @@
 ### Workflow Management
 
 #### 20. **CreateSongProgress** (`create_song_progresses`)
-- **Purpose**: Track async content creation pipeline
+- **Purpose**: Track async content creation pipeline with real-time progress updates
 - **Key Features**:
   - YouTube URL processing (`youtubeurl`)
   - Multi-step workflow management (integer step field)
@@ -261,6 +261,26 @@
   - JSONB data storage for flexible progress tracking
   - Unique constraint on URL + source language + target language combination
   - Compound index for efficient querying
+  - **Real-time Updates**: Broadcasts progress to connected clients via Action Cable
+  - **Progress Tracking View**: Dedicated UI showing video, progress steps, and content
+- **Workflow Steps**:
+  1. Extract lyrics from YouTube video
+  2. Translate to target language
+  3. Create word-level token translations
+  4. Organize content into lessons
+  5. Add pronunciation help (similar sounds)
+  6. Finalize course creation
+- **UI Features**:
+  - Embedded YouTube video player
+  - Step-by-step progress visualization with checkmarks
+  - Real-time lyrics display with translations
+  - Color-coded token alignments for word-level translations
+  - Lesson organization display
+  - Completion message with link to created course
+- **Related Components**:
+  - CreateSongProgressChannel for Action Cable streaming
+  - CreateSongProgressesController for view rendering
+  - Stimulus controller for real-time UI updates
 
 ## Active Storage Integration
 
@@ -273,6 +293,30 @@ The platform uses **Active Storage** for file management:
 **Storage Configuration**:
 - Development: Local disk storage
 - Production: Cloud storage (S3/GCS/Azure) support configured
+
+## Action Cable Integration
+
+The platform uses **Action Cable** for real-time WebSocket communication:
+
+### CreateSongProgressChannel
+- **Purpose**: Stream real-time updates during course creation process
+- **Features**:
+  - Broadcasts progress step completions
+  - Updates lyrics and translations as they're processed
+  - Shows token alignments and lesson organization in real-time
+  - Notifies when course creation is complete
+- **Client Integration**: 
+  - Stimulus controller (`create_song_progress_controller.js`) manages WebSocket connection
+  - Automatically updates UI without page refresh
+  - Handles reconnection and error states
+
+**Broadcast Points**:
+1. After extracting lyrics from video
+2. After translating to target language
+3. After creating token translations
+4. After organizing into lessons
+5. After adding pronunciation help
+6. On course completion with link to view
 
 ### Audio File Integration
 
@@ -542,11 +586,26 @@ app/views/learning_paths/       # YouTube-style learning path views
 
 app/controllers/
 ├── learning_paths_controller.rb # Learning path browsing and search
+├── create_song_progresses_controller.rb # Progress tracking view
 └── ...                        # Other controllers
+
+app/channels/                   # Action Cable channels
+├── application_cable/
+│   ├── connection.rb          # Base connection class
+│   └── channel.rb             # Base channel class
+└── create_song_progress_channel.rb # Progress streaming channel
 
 app/javascript/controllers/
 ├── learning_path_courses_controller.js # Search, filtering, infinite scroll
+├── create_song_progress_controller.js  # Real-time progress updates via WebSocket
 └── ...                        # Other Stimulus controllers
+
+app/views/create_song_progresses/ # Progress tracking views
+├── show.html.erb              # Main progress tracking page
+├── _progress_steps.html.erb   # Step indicator partial
+├── _content_display.html.erb  # Content area partial
+├── _phrase_with_translation.html.erb # Phrase display partial
+└── _colored_text.html.erb     # Token alignment coloring
 
 app/views/devise/               # Devise authentication views
 ├── sessions/                   # Login/logout views

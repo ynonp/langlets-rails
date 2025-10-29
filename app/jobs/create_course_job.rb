@@ -28,12 +28,38 @@ class CreateCourseJob < ApplicationJob
   def create_course_from_progress(progress, course)
     progress.create_data
     progress.reload
+    
+    # Broadcast progress update
+    broadcast_progress_update(progress, course)
+    
     course.reload
 
     builder = CourseBuilder::BuildSong.new(progress, course)
     builder.call
 
     course.published!
+    
+    # Broadcast completion
+    broadcast_progress_update(progress, course, completed: true)
+    
     CourseMailer.creation_complete(course).deliver_now
+  end
+
+  def broadcast_progress_update(progress, course, completed: false)
+    CreateSongProgressChannel.broadcast_to(
+      progress,
+      {
+        progress_html: ApplicationController.render(
+          partial: 'create_song_progresses/progress_steps',
+          locals: { progress: progress }
+        ),
+        content_html: ApplicationController.render(
+          partial: 'create_song_progresses/content_display',
+          locals: { progress: progress, course: course }
+        ),
+        completed: completed,
+        course_url: completed ? Rails.application.routes.url_helpers.course_path(course) : nil
+      }
+    )
   end
 end

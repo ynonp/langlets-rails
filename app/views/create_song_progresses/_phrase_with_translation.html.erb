@@ -1,0 +1,23 @@
+<div class="p-3 bg-gray-700/50 rounded">
+  <% if phrase['timestamp'] %>
+    <span class="text-xs text-gray-500 mb-1 block">[<%= phrase['timestamp'] %>]</span>
+  <% end %>
+  
+  <% if has_token_translations && phrase['translations'].present? %>
+    <!-- Show with colored token translations -->
+    <div class="mb-2">
+      <%= render partial: 'colored_text', locals: { text: phrase['text_l1'], translations: phrase['translations'], is_l1: true } %>
+    </div>
+    <% if phrase['text_l2'] %>
+      <div class="opacity-75">
+        <%= render partial: 'colored_text', locals: { text: phrase['text_l2'], translations: phrase['translations'], is_l1: false } %>
+      </div>
+    <% end %>
+  <% else %>
+    <!-- Simple display without token translations -->
+    <p class="text-white mb-1"><%= phrase['text_l1'] %></p>
+    <% if phrase['text_l2'] %>
+      <p class="text-gray-400 opacity-75 text-sm"><%= phrase['text_l2'] %></p>
+    <% end %>
+  <% end %>
+</div>

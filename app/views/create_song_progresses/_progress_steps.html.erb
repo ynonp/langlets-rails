@@ -1,0 +1,34 @@
+<div>
+  <h2 class="text-xl font-semibold mb-4">Creation Progress</h2>
+  <div class="space-y-3">
+    <% steps = [
+      { key: 'extract_lyrics', label: 'Extract Lyrics from Video', check: progress.data&.dig('phrases').present? },
+      { key: 'translate', label: 'Translate to Target Language', check: progress.data&.dig('phrases')&.first&.dig('text_l2').present? },
+      { key: 'token_translations', label: 'Create Word-level Translations', check: progress.data&.dig('phrases_with_token_translations').present? },
+      { key: 'lessons', label: 'Organize into Lessons', check: progress.data&.dig('lessons').present? },
+      { key: 'similar_sounds', label: 'Add Pronunciation Help', check: progress.data&.dig('similar_sounds').present? },
+      { key: 'complete', label: 'Finalize Course', check: @course&.published? }
+    ] %>
+    
+    <% steps.each_with_index do |step, index| %>
+      <div class="flex items-center space-x-3 p-3 rounded <%= step[:check] ? 'bg-green-900/30' : 'bg-gray-700/50' %>">
+        <div class="flex-shrink-0">
+          <% if step[:check] %>
+            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+          <% else %>
+            <div class="w-6 h-6 rounded-full border-2 border-gray-500 flex items-center justify-center">
+              <span class="text-xs text-gray-400"><%= index + 1 %></span>
+            </div>
+          <% end %>
+        </div>
+        <div class="flex-1">
+          <p class="font-medium <%= step[:check] ? 'text-green-400' : 'text-gray-300' %>">
+            <%= step[:label] %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
