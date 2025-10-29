@@ -51,7 +51,7 @@ class CreateCourseJob < ApplicationJob
       {
         progress_html: ApplicationController.render(
           partial: 'create_song_progresses/progress_steps',
-          locals: { progress: progress }
+          locals: { progress: progress, course: course }
         ),
         content_html: ApplicationController.render(
           partial: 'create_song_progresses/content_display',

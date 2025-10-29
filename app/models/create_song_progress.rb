@@ -38,7 +38,7 @@ class CreateSongProgress < ApplicationRecord
       {
         progress_html: ApplicationController.render(
           partial: 'create_song_progresses/progress_steps',
-          locals: { progress: self }
+          locals: { progress: self, course: course }
         ),
         content_html: ApplicationController.render(
           partial: 'create_song_progresses/content_display',

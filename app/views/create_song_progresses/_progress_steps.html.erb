@@ -7,7 +7,7 @@
       { key: 'token_translations', label: 'Create Word-level Translations', check: progress.data&.dig('phrases_with_token_translations').present? },
       { key: 'lessons', label: 'Organize into Lessons', check: progress.data&.dig('lessons').present? },
       { key: 'similar_sounds', label: 'Add Pronunciation Help', check: progress.data&.dig('similar_sounds').present? },
-      { key: 'complete', label: 'Finalize Course', check: @course&.published? }
+      { key: 'complete', label: 'Finalize Course', check: course&.published? }
     ] %>
     
     <% steps.each_with_index do |step, index| %>
