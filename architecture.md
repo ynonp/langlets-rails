@@ -498,6 +498,38 @@ The platform implements a modern, YouTube-inspired interface for browsing learni
 
 This implementation provides a modern, responsive interface that matches contemporary content platforms while maintaining the educational focus of the application.
 
+### Standalone Player
+
+The platform includes a standalone player page that displays a course with its full song lyrics and vocabulary in a clean, focused interface.
+
+#### Standalone Player Show View (`app/views/play/show.html.erb`)
+- **Header Section**: 
+  - Langlets branding with link to home
+  - Back to Course navigation link
+- **Video Player**: Embedded YouTube player for the course's main media
+- **Tabbed Interface**:
+  - **Lyrics Tab** (default): Full song lyrics with synchronized translations, word-level token translations with click-to-translate functionality
+  - **Vocabulary Tab**: Complete word-definition table with CSV download functionality
+
+#### Controller (`app/controllers/play_controller.rb`)
+- **show action**: Displays the standalone player with course, phrases, and vocabulary data
+- **vocabulary_csv action**: Generates and downloads a CSV file with all vocabulary words and translations
+
+#### Stimulus Controller (`app/javascript/controllers/standalone_player_controller.js`)
+- **Tab Switching**: Manages active tab state and content visibility
+- **Targets**: lyricsTab, vocabularyTab, lyricsContent, vocabularyContent
+
+#### Routes
+- `GET /play/:slug` - Display standalone player for a course
+- `GET /play/:slug/vocabulary.csv` - Download vocabulary as CSV
+
+#### Features
+- **Full Song Lyrics**: Shows all phrases from the course's medium, ordered by timestamp
+- **Token Translations**: Clickable words that reveal translations (using existing popover-translation controller)
+- **Vocabulary Table**: Unique word-translation pairs extracted from all token translations
+- **CSV Export**: One-click download of vocabulary for offline study or import into other tools
+- **RTL Support**: Proper text direction handling for right-to-left languages
+
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
 - **Scaffolded Complexity**: From video watching to detailed word alignment
@@ -540,12 +572,17 @@ app/views/learning_paths/       # YouTube-style learning path views
 ├── show.html.erb              # Main learning path view with search/filter
 └── _courses.html.erb          # Course grid partial for Ajax updates
 
+app/views/play/                 # Standalone player views
+└── show.html.erb              # Full song player with lyrics and vocabulary tabs
+
 app/controllers/
 ├── learning_paths_controller.rb # Learning path browsing and search
+├── play_controller.rb          # Standalone player and vocabulary CSV
 └── ...                        # Other controllers
 
 app/javascript/controllers/
 ├── learning_path_courses_controller.js # Search, filtering, infinite scroll
+├── standalone_player_controller.js     # Tab switching for standalone player
 └── ...                        # Other Stimulus controllers
 
 app/views/devise/               # Devise authentication views

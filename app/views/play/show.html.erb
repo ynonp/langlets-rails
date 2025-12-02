@@ -1,0 +1,177 @@
+<% content_for :head do %>
+  <% youtube_video_id = @videoid %>
+  <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) %>
+  <% title = "#{@course.name} - Standalone Player - Langlets" %>
+  <% description = "Listen to #{@course.name} with synchronized lyrics and vocabulary. Learn languages through music with Langlets." %>
+  
+  <!-- Page title -->
+  <title><%= title %></title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:image" content="<%= thumbnail_url %>">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:site_name" content="Langlets">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="<%= title %>">
+  <meta property="twitter:description" content="<%= description %>">
+  <meta property="twitter:image" content="<%= thumbnail_url %>">
+<% end %>
+
+<div class="min-h-screen bg-gray-900 flex flex-col" data-controller="standalone-player">
+  <!-- Header -->
+  <header class="py-4 border-b border-slate-700/60">
+    <div class="max-w-4xl mx-auto px-4 flex items-center justify-between">
+      <%= link_to root_path, class: "text-2xl font-bold text-slate-100 tracking-tight hover:text-blue-300 transition-colors duration-200" do %>
+        Langlets
+      <% end %>
+      
+      <%= link_to course_path(@course.slug), class: "text-blue-400 hover:text-blue-300 transition-colors flex items-center gap-2" do %>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Course
+      <% end %>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-4xl w-full mx-auto px-4 py-6">
+    <!-- Course Title -->
+    <h1 class="text-2xl sm:text-3xl font-bold text-white mb-6"><%= @course.name %></h1>
+    
+    <!-- Video Player -->
+    <div class="aspect-video overflow-hidden rounded-xl shadow-2xl shadow-black/30 mb-6 bg-black">
+      <iframe 
+        class="w-full h-full" 
+        src="https://www.youtube.com/embed/<%= @videoid %>" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
+    
+    <!-- Tabs -->
+    <div class="bg-slate-800/50 rounded-xl border border-slate-700/50 overflow-hidden">
+      <!-- Tab Headers -->
+      <div class="flex border-b border-slate-700/50">
+        <button 
+          type="button"
+          data-standalone-player-target="lyricsTab"
+          data-action="click->standalone-player#showLyrics"
+          class="flex-1 px-6 py-4 text-center font-semibold transition-colors duration-200 bg-slate-700/50 text-white border-b-2 border-blue-500">
+          <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+          </svg>
+          Lyrics
+        </button>
+        <button 
+          type="button"
+          data-standalone-player-target="vocabularyTab"
+          data-action="click->standalone-player#showVocabulary"
+          class="flex-1 px-6 py-4 text-center font-semibold transition-colors duration-200 text-slate-400 hover:text-white">
+          <svg class="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+          Vocabulary
+        </button>
+      </div>
+      
+      <!-- Tab Content -->
+      <div class="p-6">
+        <!-- Lyrics Tab Content -->
+        <div data-standalone-player-target="lyricsContent">
+          <div 
+            data-controller="popover-translation"
+            data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
+            class="space-y-4">
+            <% @phrases.each do |phrase| %>
+              <div class="p-4 rounded-lg hover:bg-slate-700/30 transition-colors duration-200 <%= @l1_rtl ? 'text-right' : 'text-left' %>">
+                <div 
+                  class="text-white text-lg md:text-xl mb-2"
+                  dir="<%= @l1_rtl ? 'rtl' : 'ltr' %>">
+                  <%= wrap_tokens_in_spans(phrase,
+                                           {class: "cursor-pointer hover:bg-slate-600 rounded px-1",
+                                            data: {action: "click->popover-translation#showPopup" }}) %>
+                </div>
+                <div 
+                  class="text-teal-400 text-base md:text-lg"
+                  dir="<%= @l2_rtl ? 'rtl' : 'ltr' %>">
+                  <%= phrase.text_l2 %>
+                </div>
+                <div class="text-slate-500 text-sm mt-1">
+                  <%= phrase.timestamp %>
+                </div>
+              </div>
+            <% end %>
+            
+            <!-- Translation Popup -->
+            <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+              <div data-popover-translation-target="translationText"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Vocabulary Tab Content -->
+        <div data-standalone-player-target="vocabularyContent" class="hidden">
+          <!-- Download Button -->
+          <div class="mb-6 flex justify-end">
+            <%= link_to play_vocabulary_csv_path(@course.slug), 
+                        class: "inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200" do %>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+              </svg>
+              Download CSV
+            <% end %>
+          </div>
+          
+          <!-- Vocabulary Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-slate-700">
+                  <th class="px-4 py-3 text-left text-slate-300 font-semibold">Word</th>
+                  <th class="px-4 py-3 text-left text-slate-300 font-semibold">Translation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-700/50">
+                <% @vocabulary.each do |token| %>
+                  <tr class="hover:bg-slate-700/30 transition-colors duration-200">
+                    <td class="px-4 py-3 text-white font-medium"><%= token.original_text %></td>
+                    <td class="px-4 py-3 text-teal-400"><%= token.translation %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+          
+          <% if @vocabulary.empty? %>
+            <div class="text-center py-8 text-slate-400">
+              No vocabulary words available for this course.
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <!-- Footer -->
+  <footer class="bg-gray-800 border-t border-gray-700 mt-auto">
+    <div class="max-w-4xl mx-auto px-4 py-6">
+      <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+        <div class="text-gray-400 text-sm">
+          © <%= Date.current.year %> Langlets. All rights reserved.
+        </div>
+        <div class="flex space-x-6">
+          <%= link_to "Privacy Policy", "/home/privacy", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
+          <%= link_to "Terms of Service", "/home/terms", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
