@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :finish
     end
   end
+  get "play/:slug", to: "player#show", as: :play_course
   resources :courses, only: [:show, :index, :new, :create]
   resources :learning_paths, only: [:show] do
     member do

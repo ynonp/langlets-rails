@@ -13,6 +13,9 @@ application.register("audio-feedback", AudioFeedbackController)
 import AuthController from "./auth_controller"
 application.register("auth", AuthController)
 
+import CoursePlayerController from "./course_player_controller"
+application.register("course-player", CoursePlayerController)
+
 import FindAnswersController from "./find_answers_controller"
 application.register("find-answers", FindAnswersController)
 

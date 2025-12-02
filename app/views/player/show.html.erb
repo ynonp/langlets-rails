@@ -1,0 +1,212 @@
+<% font_size_class = (@l1_language&.iso_name == "ar-JO") ? "text-3xl" : "text-xl" %>
+
+<% content_for :head do %>
+  <% title = "#{@course.name} · Langlets" %>
+  <title><%= title %></title>
+  <meta property="og:title" content="<%= title %>">
+  <meta property="description" content="Watch <%= @course.name %> with full lyrics and vocabulary.">
+<% end %>
+
+<div
+  class="min-h-screen bg-gray-900 text-white"
+  data-controller="main-video-player course-player"
+  data-course-player-default-tab="lyrics"
+  data-main-video-player-video-id-value="<%= @video_id %>"
+  data-main-video-player-hl-value="<%= @video_hl %>"
+>
+  <div class="max-w-5xl mx-auto px-4 py-8 space-y-6">
+    <div>
+      <p class="text-sm uppercase tracking-wide text-teal-400 mb-1">Song Course</p>
+      <h1 class="text-3xl font-bold"><%= @course.name %></h1>
+      <p class="text-gray-400">
+        <%= @l1_language&.english_name %> lyrics with <%= @l2_language&.english_name %> translation
+      </p>
+    </div>
+
+    <div
+      id="course-player-video"
+      data-main-video-player-target="playerContainer"
+      class="w-full aspect-video bg-gray-800 rounded-2xl overflow-hidden relative"
+    >
+      <div class="w-full h-full bg-cover bg-center"
+        style="background-image: url('<%= "https://img.youtube.com/vi/#{@video_id}/hqdefault.jpg" %>')">
+        <div
+          class="absolute inset-0 z-20 cursor-pointer"
+          data-action="click->main-video-player#togglePlayPause"
+        ></div>
+        <div
+          data-main-video-player-target="player"
+          class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
+        </div>
+        <div
+          class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+          data-main-video-player-target="progressBarContainer"
+          data-action="click->main-video-player#seekToPosition"
+        >
+          <div data-main-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+        </div>
+        <button
+          data-main-video-player-target="playButton"
+          class="text-white text-4xl bg-blue-600 bg-opacity-90 px-6 py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          ▶
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-gray-800 rounded-2xl border border-gray-800">
+      <div class="flex border-b border-gray-700">
+        <button
+          class="flex-1 px-4 py-3 text-center font-semibold transition data-[active=true]:text-white data-[active=true]:bg-gray-800 text-gray-400"
+          data-course-player-target="tabButton"
+          data-action="click->course-player#switch"
+          data-tab="lyrics"
+          data-active="true"
+        >
+          Lyrics
+        </button>
+        <button
+          class="flex-1 px-4 py-3 text-center font-semibold transition text-gray-400 data-[active=true]:text-white data-[active=true]:bg-gray-800"
+          data-course-player-target="tabButton"
+          data-action="click->course-player#switch"
+          data-tab="vocabulary"
+        >
+          Vocabulary
+        </button>
+      </div>
+
+      <section
+        class="p-4"
+        data-course-player-target="tabPanel"
+        data-tab="lyrics"
+      >
+        <div
+          class="contents"
+          data-controller="watch-video-activity"
+          data-main-video-player-target="videoListener videoSegment"
+          data-action="
+            video:play->main-video-player#fullPlayerStartPlayback
+            video:stop->main-video-player#fullPlayerStopPlayback
+            video:play->watch-video-activity#handleVideoStart
+            video:end->watch-video-activity#handleVideoEnd
+            video:stop->watch-video-activity#handleVideoPause
+            video:progress->watch-video-activity#progress
+          "
+          data-show-player="true"
+          data-segment-start="<%= timestamp_to_seconds(@song_start_timestamp) %>"
+          data-segment-end="<%= timestamp_to_seconds(@song_end_timestamp) %>"
+          data-watch-video-activity-current-text-line-class="bg-gray-700"
+        >
+          <div
+            data-watch-video-activity-target="startActivityButton"
+            class="hidden"
+          ></div>
+
+          <div
+            data-watch-video-activity-target="completionMessage"
+            class="hidden"
+          ></div>
+
+          <div class="px-4 my-4 pb-4 border-b border-gray-700 flex justify-between items-center">
+            <label class="flex items-center text-white">
+              <input
+                checked="true"
+                type="checkbox"
+                data-watch-video-activity-target="showTranslation"
+                data-action="change->watch-video-activity#toggleTranslation"
+                class="mr-2"
+              >
+              Translation
+            </label>
+          </div>
+
+          <div
+            data-controller="popover-translation"
+            id="phrases-container"
+            data-watch-video-activity-target="container"
+            data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
+            class="max-h-[60vh] overflow-y-auto bg-gray-900 rounded-xl"
+          >
+            <div
+              id="phrases-list"
+              data-watch-video-activity-target="phrasesList"
+              class="text-white text-sm sm:text-base"
+            >
+              <% @phrases.each do |phrase| %>
+                <div
+                  data-watch-video-activity-target="subtitles"
+                  data-action="click->main-video-player#seekToTimestamp"
+                  data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
+                  class="flex flex-col <%= @l1_rtl ? 'items-end' : 'items-start' %>"
+                >
+                  <div class="px-4 py-3 transition-all duration-200">
+                    <div
+                      class="text-white text-xl md:text-xl"
+                      dir="<%= @l1_rtl ? 'rtl' : 'ltr' %>"
+                    >
+                      <%= wrap_tokens_in_spans(
+                            phrase,
+                            {
+                              class: "cursor-pointer hover:bg-gray-600 rounded inline #{font_size_class}",
+                              data: { action: "click->popover-translation#showPopup" }
+                            }
+                          ) %>
+                    </div>
+                    <div
+                      class="text-teal-400 mt-1 text-md md:text-xl"
+                      data-watch-video-activity-target="translation"
+                      dir="<%= @l2_rtl ? 'rtl' : 'ltr' %>"
+                    >
+                      <%= phrase.text_l2 %>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+            <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+              <div data-popover-translation-target="translationText"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="p-4 hidden"
+        data-course-player-target="tabPanel"
+        data-tab="vocabulary"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-semibold">Vocabulary</h2>
+          <%= link_to "Download CSV",
+                      play_course_path(@course.slug, format: :csv),
+                      class: "px-4 py-2 bg-blue-600 rounded-lg hover:bg-blue-500 transition" %>
+        </div>
+        <% if @vocabulary_entries.any? %>
+          <div class="overflow-x-auto">
+            <table class="min-w-full text-left text-sm">
+              <thead class="bg-gray-800 text-gray-300">
+                <tr>
+                  <th class="px-4 py-2 font-semibold">Word</th>
+                  <th class="px-4 py-2 font-semibold">Translation</th>
+                  <th class="px-4 py-2 font-semibold">Line</th>
+                  <th class="px-4 py-2 font-semibold">Timestamp</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-800">
+                <% @vocabulary_entries.each do |token| %>
+                  <tr class="hover:bg-gray-800/60">
+                    <td class="px-4 py-3 text-white"><%= token.original_text %></td>
+                    <td class="px-4 py-3 text-teal-300"><%= token.translation %></td>
+                    <td class="px-4 py-3 text-gray-300"><%= token.phrase.text_l1 %></td>
+                    <td class="px-4 py-3 text-gray-400"><%= token.phrase.timestamp %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% else %>
+          <p class="text-gray-400">Vocabulary is coming soon for this song.</p>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>
