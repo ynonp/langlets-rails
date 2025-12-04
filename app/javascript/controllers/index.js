@@ -19,6 +19,9 @@ application.register("find-answers", FindAnswersController)
 import FindWordsController from "./find_words_controller"
 application.register("find-words", FindWordsController)
 
+import FlashcardActivityController from "./flashcard_activity_controller"
+application.register("flashcard-activity", FlashcardActivityController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
@@ -36,9 +39,6 @@ application.register("match-activity", MatchActivityController)
 
 import MatchTokensActivityController from "./match_tokens_activity_controller"
 application.register("match-tokens-activity", MatchTokensActivityController)
-
-import FlashcardActivityController from "./flashcard_activity_controller"
-application.register("flashcard-activity", FlashcardActivityController)
 
 import MiniPlayerController from "./mini_player_controller"
 application.register("mini-player", MiniPlayerController)
@@ -63,6 +63,9 @@ application.register("speak-activity", SpeakActivityController)
 
 import SpeechRecognitionController from "./speech_recognition_controller"
 application.register("speech-recognition", SpeechRecognitionController)
+
+import StandalonePlayerController from "./standalone_player_controller"
+application.register("standalone-player", StandalonePlayerController)
 
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
