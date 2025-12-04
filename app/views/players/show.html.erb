@@ -1,0 +1,175 @@
+<% content_for :head do %>
+  <% thumbnail_url = youtube_thumbnail_url(@videoid) %>
+  <% title = "#{@course.name} - MúsicaLingo Player" %>
+  <% description = "Learn languages with #{@course.name}. Watch the full video with synchronized lyrics and vocabulary." %>
+  
+  <title><%= title %></title>
+  
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <meta property="og:image" content="<%= thumbnail_url %>">
+  <meta property="og:image:width" content="1280">
+  <meta property="og:image:height" content="720">
+  <meta property="og:site_name" content="MúsicaLingo">
+  
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="<%= title %>">
+  <meta property="twitter:description" content="<%= description %>">
+  <meta property="twitter:image" content="<%= thumbnail_url %>">
+<% end %>
+
+<div class="h-screen flex flex-col max-w-2xl mx-auto w-full bg-gray-800"
+     data-controller="main-video-player player-tabs"
+     data-main-video-player-video-id-value="<%= @videoid %>"
+     data-main-video-player-hl-value="<%= @l1_name %>">
+  
+  <!-- Header -->
+  <div class="p-4 bg-gray-900 border-b border-gray-700 flex items-center justify-between">
+    <%= link_to course_path(@course.slug), class: "text-gray-400 hover:text-white transition" do %>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+      </svg>
+    <% end %>
+    <h1 class="text-lg font-semibold text-white truncate flex-1 mx-4"><%= @course.name %></h1>
+  </div>
+  
+  <!-- Video Player -->
+  <div id="main-player" data-main-video-player-target="playerContainer" class="px-4 py-2 bg-gray-900">
+    <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative rounded-lg overflow-hidden"
+         style="background-image: url('<%= "https://img.youtube.com/vi/#{@videoid}/hqdefault.jpg" %>')"
+         role="img"
+         aria-label="Video thumbnail">
+      
+      <div class="absolute inset-0 z-20" data-action="click->main-video-player#togglePlayPause"></div>
+      
+      <div data-main-video-player-target="player"
+           class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
+      </div>
+      
+      <!-- Progress Bar -->
+      <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+           data-main-video-player-target="progressBarContainer"
+           data-action="click->main-video-player#seekToPosition"
+           style="pointer-events: auto;">
+        <div data-main-video-player-target="progressBar" 
+             class="h-full bg-blue-500 transition-all duration-100 ease-linear" 
+             style="width: 0%"></div>
+      </div>
+      
+      <button data-main-video-player-target="playButton"
+              class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10">
+        ▶
+      </button>
+    </div>
+  </div>
+  
+  <!-- Tab Navigation -->
+  <div class="flex border-b border-gray-700 bg-gray-900">
+    <button data-player-tabs-target="tabButton"
+            data-action="click->player-tabs#switchTab"
+            data-tab="lyrics"
+            class="flex-1 py-3 px-4 text-sm font-medium text-white border-b-2 border-blue-500 bg-gray-800">
+      Lyrics
+    </button>
+    <button data-player-tabs-target="tabButton"
+            data-action="click->player-tabs#switchTab"
+            data-tab="vocabulary"
+            class="flex-1 py-3 px-4 text-sm font-medium text-gray-400 hover:text-white border-b-2 border-transparent hover:border-gray-600 transition">
+      Vocabulary
+    </button>
+  </div>
+  
+  <!-- Tab Content -->
+  <div class="flex-1 overflow-hidden">
+    <!-- Lyrics Tab -->
+    <div data-player-tabs-target="tabContent" 
+         data-tab="lyrics"
+         class="h-full overflow-y-auto"
+         data-controller="popover-translation"
+         data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup">
+      
+      <div class="p-4 space-y-4">
+        <% @phrases.each do |phrase| %>
+          <div class="p-3 rounded-lg hover:bg-gray-700 transition cursor-pointer"
+               data-action="click->main-video-player#seekToTimestamp"
+               data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>">
+            
+            <div class="text-white <%= @l1_name == 'ar-JO' ? 'text-2xl' : 'text-lg' %>"
+                 dir="<%= @l1_rtl ? 'rtl' : 'ltr' %>">
+              <%= wrap_tokens_in_spans(phrase, {
+                    class: "cursor-pointer hover:bg-gray-600 rounded inline px-0.5",
+                    data: { action: "click->popover-translation#showPopup" }
+                  }) %>
+            </div>
+            
+            <div class="text-teal-400 mt-1 text-base"
+                 dir="<%= @l2_rtl ? 'rtl' : 'ltr' %>">
+              <%= phrase.text_l2 %>
+            </div>
+            
+            <div class="text-gray-500 text-xs mt-1">
+              <%= phrase.timestamp %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      
+      <!-- Translation Popup -->
+      <div data-popover-translation-target="translationPopup" 
+           class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+        <div data-popover-translation-target="translationText"></div>
+      </div>
+    </div>
+    
+    <!-- Vocabulary Tab -->
+    <div data-player-tabs-target="tabContent"
+         data-tab="vocabulary"
+         class="h-full overflow-y-auto hidden">
+      
+      <div class="p-4">
+        <!-- Download Button -->
+        <div class="mb-4 flex justify-end">
+          <%= link_to play_vocabulary_csv_path(@course.slug),
+                      class: "inline-flex items-center px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition" do %>
+            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Download CSV
+          <% end %>
+        </div>
+        
+        <!-- Vocabulary Table -->
+        <div class="bg-gray-900 rounded-lg overflow-hidden">
+          <table class="w-full">
+            <thead>
+              <tr class="bg-gray-700">
+                <th class="px-4 py-3 text-left text-sm font-semibold text-white">Word</th>
+                <th class="px-4 py-3 text-left text-sm font-semibold text-white">Definition</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700">
+              <% @vocabulary.each_with_index do |item, index| %>
+                <tr class="<%= index.even? ? 'bg-gray-800' : 'bg-gray-850' %> hover:bg-gray-700 transition">
+                  <td class="px-4 py-3 text-white font-medium"><%= item[:word] %></td>
+                  <td class="px-4 py-3 text-teal-400"><%= item[:definition] %></td>
+                </tr>
+              <% end %>
+              <% if @vocabulary.empty? %>
+                <tr>
+                  <td colspan="2" class="px-4 py-8 text-center text-gray-400">
+                    No vocabulary data available
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="mt-4 text-gray-400 text-sm text-center">
+          <%= @vocabulary.size %> word<%= @vocabulary.size == 1 ? '' : 's' %> in vocabulary
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

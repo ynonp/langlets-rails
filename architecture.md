@@ -498,6 +498,40 @@ The platform implements a modern, YouTube-inspired interface for browsing learni
 
 This implementation provides a modern, responsive interface that matches contemporary content platforms while maintaining the educational focus of the application.
 
+### Standalone Player
+
+The platform provides a standalone player page for viewing entire courses with synchronized lyrics and vocabulary:
+
+#### Standalone Player View (`app/views/players/show.html.erb`)
+- **URL Pattern**: `/play/:slug` where slug is the course slug
+- **Header Section**: Back navigation to course page, course title
+- **Video Player**: Full YouTube video player with custom controls
+- **Tabbed Interface**: Two tabs for different viewing modes
+
+#### Lyrics Tab (Default)
+- **Full Song Display**: Shows all phrases from the course's media content
+- **Synchronized Timestamps**: Each phrase displays its timestamp
+- **Bilingual Text**: Original language (L1) with translation (L2)
+- **Interactive Words**: Clickable words show translation popups
+- **Click-to-Seek**: Click any phrase to seek video to that timestamp
+
+#### Vocabulary Tab
+- **Word-Definition Table**: Displays all unique token translations from the song
+- **CSV Download**: Button to download vocabulary as CSV file
+- **Word Count**: Shows total number of vocabulary items
+- **Clean Layout**: Organized table with alternating row colors
+
+#### Backend Support (`app/controllers/players_controller.rb`)
+- **Course Loading**: Loads course by slug with associated phrases
+- **Vocabulary Collection**: Extracts unique word-translation pairs
+- **CSV Generation**: Generates downloadable vocabulary CSV file
+- **Error Handling**: Redirects to root for non-existent courses
+
+#### Stimulus Controller (`app/javascript/controllers/player_tabs_controller.js`)
+- **Tab Switching**: Handles switching between Lyrics and Vocabulary tabs
+- **State Management**: Updates button styles and content visibility
+- **Accessible Design**: Keyboard navigable tab interface
+
 ### Progressive Learning Design
 - **Ordered Sequences**: Lessons and activities follow pedagogical progression
 - **Scaffolded Complexity**: From video watching to detailed word alignment
@@ -540,12 +574,17 @@ app/views/learning_paths/       # YouTube-style learning path views
 ├── show.html.erb              # Main learning path view with search/filter
 └── _courses.html.erb          # Course grid partial for Ajax updates
 
+app/views/players/              # Standalone player views
+└── show.html.erb              # Full course player with lyrics and vocabulary tabs
+
 app/controllers/
 ├── learning_paths_controller.rb # Learning path browsing and search
+├── players_controller.rb       # Standalone course player
 └── ...                        # Other controllers
 
 app/javascript/controllers/
 ├── learning_path_courses_controller.js # Search, filtering, infinite scroll
+├── player_tabs_controller.js   # Tab switching for standalone player
 └── ...                        # Other Stimulus controllers
 
 app/views/devise/               # Devise authentication views
