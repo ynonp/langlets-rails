@@ -1,6 +1,4 @@
 class PlayController < ApplicationController
-  include ActivitiesHelper
-
   def show
     @course = Course.find_by(slug: params[:slug])
     
@@ -39,7 +37,7 @@ class PlayController < ApplicationController
     @vocabulary = @phrases.flat_map do |phrase|
       phrase.token_translations.map do |tt|
         {
-          word: token_original_text(tt),
+          word: tt.original_text,
           translation: tt.translation,
           phrase_context: phrase.text_l1
         }
@@ -68,7 +66,7 @@ class PlayController < ApplicationController
     vocabulary = phrases.flat_map do |phrase|
       phrase.token_translations.map do |tt|
         {
-          word: token_original_text(tt),
+          word: tt.original_text,
           translation: tt.translation
         }
       end

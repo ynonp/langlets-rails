@@ -1,6 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
 
+// YouTube Player State constants as fallback
+const PLAYER_STATE = {
+  PAUSED: 2,
+  ENDED: 0,
+  PLAYING: 1
+};
+
 export default class extends Controller {
   static targets = ['player', 'progressBar', 'progressBarContainer', 'playButton', 
                     'lyricsTab', 'vocabularyTab', 'lyricsContent', 'vocabularyContent'];
@@ -37,10 +44,14 @@ export default class extends Controller {
     });
 
     this.player.on('stateChange', async (event) => {
-      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+      const paused = typeof YT !== 'undefined' ? YT.PlayerState.PAUSED : PLAYER_STATE.PAUSED;
+      const ended = typeof YT !== 'undefined' ? YT.PlayerState.ENDED : PLAYER_STATE.ENDED;
+      const playing = typeof YT !== 'undefined' ? YT.PlayerState.PLAYING : PLAYER_STATE.PLAYING;
+
+      if (event.data === paused || event.data === ended) {
         this.stopPlaybackMonitoring();
         this.showPlayButton();
-      } else if (event.data === YT.PlayerState.PLAYING) {
+      } else if (event.data === playing) {
         this.videoDuration = await this.player.getDuration();
         this.startPlaybackMonitoring();
         this.hidePlayButton();
@@ -85,7 +96,7 @@ export default class extends Controller {
     this.monitorPlaybackInterval = setInterval(async () => {
       const currentTime = await this.player.getCurrentTime();
       this.updateProgressBar(currentTime);
-    }, 100);
+    }, 250);
   }
 
   stopPlaybackMonitoring() {
