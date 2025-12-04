@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     end
   end
   resources :courses, only: [:show, :index, :new, :create]
+  
+  # Standalone player for courses
+  get '/play/:slug', to: 'players#show', as: :play
+  get '/play/:slug/vocabulary.csv', to: 'players#vocabulary_csv', as: :play_vocabulary_csv
   resources :learning_paths, only: [:show] do
     member do
       get :search_courses, defaults: { format: :json }
