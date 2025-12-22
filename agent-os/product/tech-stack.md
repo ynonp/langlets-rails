@@ -173,17 +173,10 @@ Langlets is built on a modern Rails architecture with a focus on developer produ
   - Docker Compose for local development
 
 ### Hosting (Production Ready)
-- **AWS**
-  - EC2 for compute (via Kamal)
-  - S3 for file storage
-  - RDS for PostgreSQL (optional)
-  - CloudFront for CDN (planned)
+- **Heroku**
+  - automatic deployment using heroku's `app.json`
+  - S3 for audio file storage (using rails' active storage)
   
-- **DigitalOcean / Hetzner / Linode**
-  - VPS alternatives
-  - Cost-effective for mid-scale
-  - Kamal-compatible
-
 ---
 
 ## Database Architecture
@@ -498,45 +491,12 @@ MultiScriptText → Update audio_status to 'audio_ready'
 - **Reliability**: Enterprise-grade SLA
 - **Pricing**: Competitive per-character pricing
 
-### Why Kamal?
-- **Simplicity**: Single command deployment
-- **Cost-effective**: Deploy to any VPS, no platform fees
-- **Zero-downtime**: Rolling deployments
-- **Rails 8 native**: Official Rails deployment tool
-
 ---
 
 ## Environment Configuration
 
 ### Required Environment Variables
-
-```bash
-# Database
-DATABASE_URL=postgresql://user:password@localhost/langlets_production
-
-# Rails
-RAILS_MASTER_KEY=<your-master-key>
-SECRET_KEY_BASE=<your-secret-key>
-
-# Azure TTS
-AZURE_TTS_API_KEY=<azure-api-key>
-AZURE_TTS_REGION=<azure-region>
-
-# OpenAI (optional)
-OPENAI_API_KEY=<openai-api-key>
-
-# Google Gemini (optional)
-GEMINI_API_KEY=<gemini-api-key>
-
-# AWS S3 (production)
-AWS_ACCESS_KEY_ID=<aws-access-key>
-AWS_SECRET_ACCESS_KEY=<aws-secret-key>
-AWS_REGION=<aws-region>
-AWS_BUCKET=<s3-bucket-name>
-
-# YouTube API (optional)
-YOUTUBE_API_KEY=<youtube-api-key>
-```
+Secrets are encrypted using rails' credentials
 
 ### Development Setup
 ```bash
@@ -559,25 +519,6 @@ bun install
 # Start development server
 ./bin/dev
 ```
-
----
-
-## Future Technology Considerations
-
-### Under Evaluation
-- **Redis**: For caching, session store, real-time features
-- **Sidekiq**: Alternative to Good Job for high-volume jobs
-- **Elasticsearch**: Advanced search and recommendations
-- **React Native / Flutter**: Native mobile apps
-- **WebRTC**: Real-time voice practice
-- **PWA**: Progressive Web App for offline support
-
-### Integration Opportunities
-- **Stripe**: Payment processing for premium features
-- **SendGrid / Postmark**: Transactional emails
-- **Plausible / Fathom**: Privacy-friendly analytics
-- **Algolia**: Hosted search service
-- **Cloudflare**: CDN and DDoS protection
 
 ---
 

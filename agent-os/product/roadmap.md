@@ -60,14 +60,11 @@
 
 ### Priority 1: User Experience & Engagement
 
-#### Progress Tracking & Motivation
-- [ ] **Learning Streaks**: Daily practice tracking and streak visualization
-- [ ] **Progress Dashboard**: Personalized dashboard showing completed lessons, activities, time spent
+#### Easier course creation
+- [ ] **1 Click Course Creation Wizard**: Easy wizard to quickly create a course and start practicing
+- [ ] **Smarter templates**: Gradual, pedagogical and gamified learning experience
 - [ ] **Achievement Badges**: Milestone celebrations (lessons completed, words learned, streaks)
-- [ ] **Personal Statistics**: Words encountered, pronunciation practice time, favorite content
-- [ ] **XP/Points System**: Gamification with points for completing activities
-
-**Success Criteria**: 30% increase in 7-day retention, 20% increase in daily active users
+- [ ] **Personal Flashcards**: Mark words for practice and daily review them in spaced repetition
 
 #### Activity Improvements
 - [ ] **Hint System**: Progressive hints for struggling learners
