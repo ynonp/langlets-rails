@@ -23,7 +23,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", model: 'gemini-2.5-flash')
+        chat = TracedChat.new(span_name: "add_lessons", model: 'gemini-3-flash-preview', assume_model_exists: true, provider: :gemini)
         user_content = data["phrases"].map {|p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         chat
           .with_temperature(0.4)

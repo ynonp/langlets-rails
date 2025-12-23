@@ -17,7 +17,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_similar_sound", model: 'gemini-2.5-flash')
+        chat = TracedChat.new(span_name: "add_similar_sound", model: 'gemini-3-flash-preview', assume_model_exists: true, provider: :gemini)
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)

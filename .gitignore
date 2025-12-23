@@ -45,3 +45,5 @@
 .DS_Store
 vendor/**
 .aider*
+.claude
+.cursor
