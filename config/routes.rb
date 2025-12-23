@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     end
   end
   resources :courses, only: [:show, :index, :new, :create]
+  get 'courses/:course_slug/full-player', to: 'full_player#show', as: :course_full_player
   resources :learning_paths, only: [:show] do
     member do
       get :search_courses, defaults: { format: :json }

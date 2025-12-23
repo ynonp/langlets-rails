@@ -24,6 +24,7 @@ class Course < ApplicationRecord
   # Scopes
   scope :published_courses, -> { where(status: :published) }
   scope :processing_courses, -> { where(status: :processing) }
+  scope :with_full_player, -> { where(show_full_course_player: true) }
 
   # Scope to get courses with progress for a user
   scope :with_progress_for_user, ->(user) {
@@ -305,5 +306,11 @@ class Course < ApplicationRecord
     
     completed_lessons = lessons.joins(:lesson_users).where(lesson_users: { user: user }).count
     ((completed_lessons.to_f / total_lessons) * 100).round
+  end
+
+  # Get the medium for this course
+  # All lessons in a course share the same medium
+  def medium
+    lessons.first&.medium
   end
 end

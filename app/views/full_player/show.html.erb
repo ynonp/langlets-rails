@@ -1,0 +1,271 @@
+<% content_for :head do %>
+  <% youtube_video_id = @video_id %>
+  <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) if youtube_video_id.present? %>
+  <% title = "#{@course.name} - Full Video - Langlets" %>
+  <% description = "Watch the complete #{@course.name} video with synchronized bilingual transcripts." %>
+  
+  <!-- Page title -->
+  <title><%= title %></title>
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="<%= title %>">
+  <meta property="og:description" content="<%= description %>">
+  <% if thumbnail_url.present? %>
+    <meta property="og:image" content="<%= thumbnail_url %>">
+    <meta property="og:image:width" content="1280">
+    <meta property="og:image:height" content="720">
+  <% end %>
+  <meta property="og:site_name" content="Langlets">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="<%= title %>">
+  <meta property="twitter:description" content="<%= description %>">
+  <% if thumbnail_url.present? %>
+    <meta property="twitter:image" content="<%= thumbnail_url %>">
+  <% end %>
+<% end %>
+
+<%
+  # Get language directionality
+  l1_rtl = @phrases.first&.l1&.rtl || false
+  l2_rtl = @phrases.first&.l2&.rtl || false
+  font_size_class = (@phrases.first&.l1&.iso_name == 'ar-JO') ? 'text-3xl' : 'text-xl'
+%>
+
+<div class="h-screen flex flex-col lg:flex-row max-w-7xl mx-auto w-full bg-gray-800"
+    data-controller="main-video-player watch-video-activity"
+    data-main-video-player-video-id-value="<%= @video_id %>"
+    data-main-video-player-hl-value="<%= @phrases.first&.l1&.iso_name || 'en' %>"
+    data-main-video-player-target="videoListener videoSegment"
+    data-action="
+      video:play->main-video-player#fullPlayerStartPlayback
+      video:stop->main-video-player#fullPlayerStopPlayback
+      video:play->watch-video-activity#handleVideoStart
+      video:end->watch-video-activity#handleVideoEnd
+      video:stop->watch-video-activity#handleVideoPause
+      video:progress->watch-video-activity#progress
+    "
+    data-show-player="true"
+    data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
+    data-segment-end="<%= timestamp_to_seconds(@end_timestamp) %>"
+    data-watch-video-activity-current-text-line-class="bg-gray-700"
+>
+  <!-- Video Player Section -->
+  <div class="flex-shrink-0 lg:w-1/2 flex flex-col">
+    <div class="px-4 py-4 border-b border-gray-700">
+      <h1 class="text-xl sm:text-2xl font-bold text-white"><%= @course.name %></h1>
+      <p class="text-sm text-gray-400 mt-1">Full Video with Transcript</p>
+      <a href="<%= course_path(@course.slug) %>" class="text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block">← Back to Course</a>
+    </div>
+
+    <div
+      id="main-player"
+      data-main-video-player-target="playerContainer"
+      class="px-4 py-4"
+    >
+      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
+           style="background-image: url('https://img.youtube.com/vi/<%= @video_id %>/hqdefault.jpg')"
+           role="img"
+           aria-label="Video thumbnail">
+
+        <div class="absolute inset-0 z-20"
+              data-action="click->main-video-player#togglePlayPause"></div>
+
+        <div
+            data-main-video-player-target="player"
+            class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
+        </div>
+
+        <!-- Custom Progress Bar -->
+        <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+            data-main-video-player-target="progressBarContainer"
+            data-action="click->main-video-player#seekToPosition"
+            style="pointer-events: auto;">
+          <div data-main-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+        </div>
+
+        <button data-main-video-player-target="playButton"
+                class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10">
+          ▶
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Transcript Section -->
+  <div class="flex-1 flex flex-col min-h-0 lg:border-l lg:border-gray-700">
+    <!-- Control Bar -->
+    <div class="px-4 py-3 border-b border-gray-700 flex justify-between items-center flex-shrink-0">
+      <h2 class="text-lg font-semibold text-white">Transcript</h2>
+      <label class="flex items-center text-white text-sm">
+        <input
+          checked="true"
+          type="checkbox"
+          data-watch-video-activity-target="showTranslation"
+          data-action="change->watch-video-activity#toggleTranslation"
+          class="mr-2">
+        Show Translation
+      </label>
+    </div>
+
+    <!-- Scrollable Phrases Container -->
+    <div
+        data-controller="popover-translation"
+        id="phrases-container"
+        data-watch-video-activity-target="container"
+        data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
+        class="flex-1 w-full mx-auto bg-gray-800 min-h-0 overflow-y-auto"
+    >
+      <div
+        id="phrases-list"
+        data-watch-video-activity-target="phrasesList"
+        class="text-white text-sm sm:text-base"
+      >
+        <% @phrases.each do |phrase| %>
+          <div
+            data-watch-video-activity-target="subtitles"
+            data-action="click->main-video-player#seekToTimestamp"
+            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
+            class="flex flex-col <%= l1_rtl ? 'items-end' : 'items-start' %> cursor-pointer hover:bg-gray-700"
+          >
+            <div class="px-4 py-3 transition-all duration-200 w-full">
+              <div
+                class="text-white text-xl md:text-xl"
+                dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
+              >
+                <%= wrap_tokens_in_spans(phrase,
+                                         {class: "cursor-pointer hover:bg-gray-600 rounded inline #{font_size_class}",
+                                          data: {action: "click->popover-translation#showPopup" }}) %>
+              </div>
+              <div
+                class="text-teal-400 mt-1 text-md md:text-xl"
+                data-watch-video-activity-target="translation"
+                dir="<%= l2_rtl ? 'rtl' : 'ltr' %>"
+              >
+                <%= phrase.text_l2 %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Translation Popup -->
+      <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
+        <div data-popover-translation-target="translationText"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Vocabulary Table Section (below video and transcript) -->
+<div class="max-w-7xl mx-auto w-full bg-gray-800 border-t border-gray-700">
+  <div class="px-4 py-6">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold text-white">Vocabulary</h2>
+      <%= link_to "Download CSV", "#", 
+          id: "download-csv-btn",
+          class: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200",
+          data: { course_slug: @course.slug } %>
+    </div>
+
+    <div class="overflow-x-auto bg-gray-900 rounded-lg">
+      <table class="min-w-full divide-y divide-gray-700">
+        <thead class="bg-gray-800">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Word (<%= @phrases.first&.l1&.english_name || 'L1' %>)
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Translation (<%= @phrases.first&.l2&.english_name || 'L2' %>)
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Frequency
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-900 divide-y divide-gray-800" id="vocabulary-table-body">
+          <%
+            # Get all token_translations from phrases and calculate frequency
+            token_translations = @phrases.flat_map(&:token_translations)
+            vocabulary_map = {}
+
+            token_translations.each do |tt|
+              word = tt.original_text
+              translation = tt.translation
+              
+              key = "#{word}||#{translation}"
+              if vocabulary_map[key]
+                vocabulary_map[key][:count] += 1
+              else
+                vocabulary_map[key] = {
+                  word: word,
+                  translation: translation,
+                  count: 1
+                }
+              end
+            end
+
+            # Sort by frequency (descending)
+            vocabulary_sorted = vocabulary_map.values.sort_by { |v| -v[:count] }
+          %>
+
+          <% vocabulary_sorted.each do |vocab| %>
+            <tr class="hover:bg-gray-800">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
+                <%= vocab[:word] %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-teal-400">
+                <%= vocab[:translation] %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                <%= vocab[:count] %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // CSV Download functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.getElementById('download-csv-btn');
+    
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get vocabulary data from the table
+        const rows = document.querySelectorAll('#vocabulary-table-body tr');
+        let csvContent = "Word,Translation,Frequency\n";
+        
+        rows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const word = cells[0].textContent.trim().replace(/,/g, '');
+          const translation = cells[1].textContent.trim().replace(/,/g, '');
+          const frequency = cells[2].textContent.trim();
+          
+          csvContent += `"${word}","${translation}",${frequency}\n`;
+        });
+        
+        // Create blob and download
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', '<%= @course.slug %>_vocabulary.csv');
+        link.style.visibility = 'hidden';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
+  });
+</script>
