@@ -15,7 +15,11 @@ module TokenTranslationBlockParser
     return self if llm_response_block.blank?
 
     llm_response_block.lines.map {|l| l.sub(/\s*#.*$/, '').strip }.each do |line_without_comment|
-      process_line(line_without_comment)
+      begin
+        process_line(line_without_comment)
+      rescue => e
+        Rails.logger.warn "Skipping problematic token translation line: #{line_without_comment.inspect}. Error: #{e.message}"
+      end
     end
     remove_duplicate_translations
     
@@ -73,6 +77,8 @@ module TokenTranslationBlockParser
     l1_start_word_index = find_start_word_index(l1)
     l1_end_word_index = find_end_word_index(l1)
 
+    return if l1_start_word_index.nil? || l1_end_word_index.nil?
+
     token_translations.build(
       l1_start_index: l1_start_word_index,
       l1_end_index: l1_end_word_index,
@@ -86,6 +92,8 @@ module TokenTranslationBlockParser
     l2_start_word_index = find_start_word_index(l2)
     l2_end_word_index = find_end_word_index(l2)
 
+    return if l1_start_word_index.nil? || l1_end_word_index.nil? || l2_start_word_index.nil? || l2_end_word_index.nil?
+
     token = token_translations.build(
       l1_start_index: l1_start_word_index,
       l1_end_index: l1_end_word_index,
@@ -93,7 +101,11 @@ module TokenTranslationBlockParser
       l2_end_index: l2_end_word_index,
     )
 
-    raise "#{l1} => #{l2}\n#{token.errors.full_messages.join("\n")}" unless token.valid?
+    unless token.valid?
+      Rails.logger.warn "Skipping invalid token translation: #{l1} => #{l2}. Errors: #{token.errors.full_messages.join(', ')}"
+      return
+    end
+
     token.translation = text_l2.tokenize.map(&:to_s)[l2_start_word_index..l2_end_word_index].join(' ')
   end
 
@@ -102,6 +114,8 @@ module TokenTranslationBlockParser
     l1_end_word_index = find_end_word_index(l1)
     l2_start_word_index = find_start_word_index(l2)
     l2_end_word_index = find_end_word_index(l2)
+
+    return if l1_start_word_index.nil? || l1_end_word_index.nil? || l2_start_word_index.nil? || l2_end_word_index.nil?
 
     token = token_translations.build(
       l1_start_index: l1_start_word_index,

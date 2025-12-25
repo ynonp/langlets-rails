@@ -32,13 +32,21 @@ module CourseBuilder
         end
         phrases = medium.phrases.order(timestamp: :asc)
 
-        t = TokenTranslationParser.new(phrases, progress.data["phrases_with_token_translations"])
-        t.call
-        phrases.each {|p| p.save }
+        begin
+          t = TokenTranslationParser.new(phrases, progress.data["phrases_with_token_translations"])
+          t.call
+          phrases.each {|p| p.save }
+        rescue => e
+          Rails.logger.warn "Token translation parsing failed: #{e.message}. Continuing course creation without token translations."
+        end
 
-        t = SimilarSoundParser.new(phrases, progress.data["similar_sounds"])
-        t.call
-        phrases.each {|p| p.save }
+        begin
+          t = SimilarSoundParser.new(phrases, progress.data["similar_sounds"])
+          t.call
+          phrases.each {|p| p.save }
+        rescue => e
+          Rails.logger.warn "Similar sound parsing failed: #{e.message}. Continuing course creation without similar sounds."
+        end
 
         lessons = progress.data["lessons"].split("\n\n").each_cons(2).each_with_index.map do |(l, next_l), lesson_index|
           lesson_name = l.lines.first.strip.sub(/^#\s*/, '')
