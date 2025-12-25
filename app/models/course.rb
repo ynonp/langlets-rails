@@ -319,8 +319,6 @@ class Course < ApplicationRecord
     lessons.first&.medium
   end
 
-  private
-
   def unique_lesson_slug(base_slug)
     slug = base_slug
     counter = 1
@@ -330,6 +328,8 @@ class Course < ApplicationRecord
     end
     slug
   end
+
+  private
 
   def slug_uniqueness_with_user_check
     return if slug.blank?
