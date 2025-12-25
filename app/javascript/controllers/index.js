@@ -75,3 +75,6 @@ application.register("word-order-activity", WordOrderActivityController)
 
 import YoutubeFormController from "./youtube_form_controller"
 application.register("youtube-form", YoutubeFormController)
+
+import AudioToTranslationActivityController from './audio_to_translation_activity_controller';
+application.register("audio-to-translation-activity", AudioToTranslationActivityController);

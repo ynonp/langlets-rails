@@ -1,0 +1,158 @@
+<%# Expects:
+  params[:phrases] - An array of phrase objects with timestamp, calculated_end_timestamp, text_l1, text_l2
+  params[:l1] - Language object for original phrases
+  params[:l2] - Language object for translation phrases
+  params[:video_id] - YouTube video ID
+  params[:start_timestamp] - Start timestamp for the video segment
+  params[:end_timestamp] - End timestamp for the video segment
+  
+  This activity shows a 2-column grid where users match phrases to their translations:
+  1. Left column shows phrases in L1 with play buttons, right column shows translations in L2
+  2. Columns are shuffled separately so phrases and translations are not aligned
+  3. User clicks play button on a phrase, then selects its match in the other column
+  4. Successful matches flash green and disappear
+  5. Failed matches flash red and selection is cleared
+  6. Progress bar shows completion status
+  7. When all phrases are matched, shows completion message
+%>
+
+<% 
+  phrases = params[:phrases] || []
+  l1 = params[:l1]
+  l2 = params[:l2]
+  total_phrases = phrases.length
+  
+  # Shuffle in Ruby for server-side rendering
+  shuffled_l1 = phrases.shuffle
+  shuffled_l2 = phrases.shuffle
+%>
+
+<div
+    data-controller="audio-to-translation-activity"
+    data-audio-to-translation-activity-total-phrases-value="<%= total_phrases %>"
+    class="flex-col flex items-center bg-gray-800">
+  
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <div class="mb-6">
+      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Match Audio to Translation" %></h2>
+      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
+        <div data-audio-to-translation-activity-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      </div>
+    </div>
+
+    <div id="audio-to-translation" class="flex flex-col gap-4">
+
+      <!-- Completion message -->
+      <div data-audio-to-translation-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
+          <p class="text-center sm:text-left text-gray-300">You've matched all the phrases correctly.</p>
+        </div>
+        <%= link_to_next_activity("Next", @next_activity_path, class: "w-full sm:w-auto px-6 py-3 sm:py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200 text-center") %>
+      </div>
+
+      <!-- Grid container -->
+      <div class="grid grid-cols-2 gap-4 min-h-[400px]" data-audio-to-translation-activity-target="grid">
+        <!-- Left column (L1 phrases with play buttons) -->
+        <div class="flex flex-col gap-3">
+          <div class="text-center px-2 py-2 bg-gray-700 text-white font-semibold rounded text-sm">
+            <%= l1.english_name %> Phrases
+          </div>
+          <div data-audio-to-translation-activity-target="l1Column" class="flex flex-col gap-3 flex-1">
+            <% shuffled_l1.each do |phrase| %>
+              <button 
+                class="phrase-item px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 flex-1 flex items-center justify-center min-h-[60px]"
+                data-phrase-id="<%= phrase.id %>"
+                data-action="click->main-video-player#playSegment click->audio-to-translation-activity#selectPhrase"
+                data-main-video-player-segment-start-param="<%= timestamp_to_seconds(phrase.timestamp) %>"
+                data-main-video-player-segment-end-param="<%= timestamp_to_seconds(phrase.calculated_end_timestamp) %>"
+                data-column="l1">
+                <div class="flex justify-center items-center gap-3">
+                  <span
+                    class="text-white bg-blue-600 rounded-full hover:bg-blue-700 transition flex items-center justify-center w-10 h-10 text-sm font-semibold"
+                    style="padding-left: 2px;">
+                    ▶
+                  </span>                  
+                </div>
+              </button>
+            <% end %>
+          </div>
+        </div>
+
+        <!-- Right column (L2 translations) -->
+        <div class="flex flex-col gap-3">
+          <div class="text-center px-2 py-2 bg-gray-700 text-white font-semibold rounded text-sm">
+            <%= l2.english_name %> Translations
+          </div>
+          <div data-audio-to-translation-activity-target="l2Column" class="flex flex-col gap-3 flex-1" data-rtl="<%= l2.rtl %>">
+            <% shuffled_l2.each do |phrase| %>
+              <div 
+                class="phrase-item px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 flex-1 flex items-center min-h-[60px] <%= l2.rtl ? 'justify-end' : 'justify-start' %>"
+                data-phrase-id="<%= phrase.id %>"
+                data-column="l2"
+                data-action="click->audio-to-translation-activity#selectPhrase">
+                <span class="phrase-text"><%= phrase.text_l2 %></span>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+@keyframes flash-success {
+  0% { background-color: rgb(34, 197, 94); }
+  100% { background-color: transparent; }
+}
+
+@keyframes flash-error {
+  0% { background-color: rgb(239, 68, 68); }
+  100% { background-color: transparent; }
+}
+
+.flash-success {
+  animation: flash-success 0.6s ease-out;
+}
+
+.flash-error {
+  animation: flash-error 0.6s ease-out;
+}
+
+.phrase-item {
+  transition: all 0.2s ease;
+  cursor: pointer;
+  max-height: 5.5rem; /* Approximately 3 lines of text (88px) */
+  overflow: hidden;
+}
+
+.phrase-item .phrase-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  line-height: 1.5;
+  text-align: left;
+}
+
+[data-rtl="true"] .phrase-item .phrase-text {
+  text-align: right;
+}
+
+.phrase-item:hover {
+  transform: scale(1.02);
+}
+
+.phrase-item.selected {
+  border-color: rgb(59, 130, 246);
+  border-width: 3px;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.4), 0 0 10px rgba(59, 130, 246, 0.3);
+  background-color: rgb(30, 58, 138) !important;
+}
+
+</style>
+

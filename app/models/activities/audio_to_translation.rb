@@ -1,12 +1,13 @@
 module Activities
-  class MatchPhrasesActivity < Activity
+  class AudioToTranslation < Activity
     include ActivityWithTokens
 
     def activity_params
       {
         **video_params,
+        video_player: false,
+        preload_player: true,
         phrases: phrases_with_calculated_end_timestamps,
-        all_l2_phrases: lesson.medium.phrases.to_a,
         l1: phrases.first.l1,
         l2: phrases.first.l2
       }

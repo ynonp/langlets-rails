@@ -7,9 +7,15 @@ export default class extends Controller {
   static values = {
     videoId: String,
     hl: String,
+    preloadPlayer: Boolean,
   }
 
   connect() {
+    this.initialize();
+    // Preload player if requested by activity
+    if (this.hasPreloadPlayerValue && this.preloadPlayerValue) {
+      this.initializePlayer();
+    }
   }
 
   disconnect() {

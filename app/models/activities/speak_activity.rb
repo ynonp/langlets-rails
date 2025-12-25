@@ -1,5 +1,7 @@
 module Activities
   class SpeakActivity < Activity
+    include ActivityWithTokens
+
     def activity_params
       l1 = phrases.ordered_by_timestamp.first.l1
       l2 = phrases.ordered_by_timestamp.first.l2
@@ -10,25 +12,14 @@ module Activities
         l2: l2.english_name,
         l1_rtl: l1.rtl,
         l2_rtl: l2.rtl,
-        phrases: processed_phrases,
+        phrases: phrases_with_calculated_end_timestamps,
       }
-    end
-
-    def ordered_phrases
-      @ordered_phrases ||= phrases.ordered_by_timestamp.includes(:token_translations).to_a
     end
 
     private
 
-    def processed_phrases
-      @processed_phrases ||= begin
-        all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
-        Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
-      end
-    end
-
     def video_params
-      first_phrase = processed_phrases.first
+      first_phrase = phrases_with_calculated_end_timestamps.first
       {
         video_id: lesson.medium.extract_youtube_video_id,
         start_timestamp: first_phrase&.timestamp,

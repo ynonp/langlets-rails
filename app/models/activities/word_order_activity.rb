@@ -4,9 +4,8 @@ module Activities
 
     def activity_params
       all_medium_phrases = lesson.medium.phrases.ordered_by_timestamp.to_a
-      processed_phrases = Phrase.with_calculated_end_timestamps(ordered_phrases, all_medium_phrases)
       
-      phrases_data_for_activity = processed_phrases.map do |phrase|
+      phrases_data_for_activity = phrases_with_calculated_end_timestamps.map do |phrase|
         {
           l2_text: phrase.text_l2,
           l1_text: phrase.text_l1,
