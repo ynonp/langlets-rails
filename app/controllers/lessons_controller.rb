@@ -1,37 +1,31 @@
 class LessonsController < ApplicationController
   def show
-    @lesson = Lesson
+    @course = Course.find_by(slug: params[:course_id]) || Course.find(params[:course_id])
+    @lesson = @course.lessons
       .joins(medium: :language)
-      .joins(:course)
       .select("
               media.url as media_url,
               languages.iso_name as media_language,
               languages.rtl as rtl_language,
-              courses.slug as course_slug,
               lessons.*")
-      .find_by("lessons.slug" => params[:id])
-    
-    unless @lesson
-      redirect_to root_path, alert: "Lesson not found"
-      return
-    end
+      .find_by!(slug: params[:id])
     
     video_url = @lesson.media_url
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find {|a| a.order == params[:a].to_i } || @activities.first
-    @current_url = lesson_path(a: @activity.order)
+    @current_url = course_lesson_path(@course, @lesson, a: @activity.order)
     @videoid = Medium.new(url: video_url).extract_youtube_video_id
 
     current_order = params[:a].to_i
     
     next_activity = @lesson.activities.where("activities.order > ?", @activity.order).order(order: :asc).first
-    @course_path = @lesson.course_id.present? ? course_path(@lesson.course_slug) : nil
+    @course_path = course_path(@course.slug)
     
     @next_activity_path = if next_activity.present?
-      lesson_path(@lesson.slug, a: next_activity.order)
+      course_lesson_path(@course, @lesson, a: next_activity.order)
     else
       # After last activity, go to finish lesson page
-      finish_lesson_path(@lesson.slug)
+      finish_course_lesson_path(@course, @lesson)
     end
 
     @is_last_activity = next_activity.blank?
@@ -45,12 +39,8 @@ class LessonsController < ApplicationController
   end
 
   def finish
-    @lesson = Lesson.find_by(slug: params[:id]) || Lesson.find_by(id: params[:id])
-    
-    unless @lesson
-      redirect_to root_path, alert: "Lesson not found"
-      return
-    end
+    @course = Course.find_by(slug: params[:course_id]) || Course.find(params[:course_id])
+    @lesson = @course.lessons.find_by(slug: params[:id]) || @course.lessons.find(params[:id])
 
     # Calculate XP earned in this lesson
     @lesson_xp = @lesson.activities.sum(&:xp_value)
@@ -75,15 +65,11 @@ class LessonsController < ApplicationController
       @first_lesson_today = false
     end
 
-    @course_path = @lesson.course.present? ? course_path(@lesson.course.slug) : root_path
+    @course_path = course_path(@course.slug)
     
     # Find next lesson
-    @next_lesson = if @lesson.course.present?
-      @lesson.course.lessons.where("lessons.order > ?", @lesson.order).order(:order).first
-    else
-      nil
-    end
+    @next_lesson = @course.lessons.where("lessons.order > ?", @lesson.order).order(:order).first
     
-    @continue_path = @next_lesson.present? ? lesson_path(@next_lesson.slug) : @course_path
+    @continue_path = @next_lesson.present? ? course_lesson_path(@course, @next_lesson) : @course_path
   end
 end

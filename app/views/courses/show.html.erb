@@ -177,13 +177,13 @@
                 
                 <div>
                   <% if lesson.completed? %>
-                    <%= link_to lesson do %>
+                    <%= link_to course_lesson_path(@course, lesson) do %>
                       <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
                         <%= lesson.name %>
                       </h3>
                     <% end %>
                   <% else %>
-                    <%= link_to "#{lesson_path(lesson.slug)}" do %>
+                    <%= link_to course_lesson_path(@course, lesson) do %>
                       <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
                         <%= lesson.name %>
                       </h3>
@@ -193,14 +193,14 @@
               </div>
               
               <% if lesson.completed? %>
-                <%= link_to lesson, class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+                <%= link_to course_lesson_path(@course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
                   <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
                   </svg>
                   <span class="hidden md:inline">Review</span>
                 <% end %>
               <% else %>
-                <%= link_to "#{lesson_path(lesson.slug)}", class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+                <%= link_to course_lesson_path(@course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
                   <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
                   </svg>

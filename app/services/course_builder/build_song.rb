@@ -53,8 +53,11 @@ module CourseBuilder
           first_timestamp = l.lines.second[0..4]
           last_timestamp = l.lines.last[0..4]
           end_timestamp = next_l ? next_l.lines.second[0..4] : nil
+          
+          lesson_slug = course.unique_lesson_slug(lesson_name.parameterize)
+          
           lesson = Lesson.create!(
-            slug: lesson_name.parameterize,
+            slug: lesson_slug,
             medium:,
             course:,
             order: lesson_index + 1,

@@ -17,9 +17,10 @@ class Course < ApplicationRecord
     error: 3
   }
 
-  validates :slug, presence: true, uniqueness: true
+  validates :slug, presence: true
   validates :name, presence: true, uniqueness: true
   validates :main_media_url, presence: true
+  validate :slug_uniqueness_with_user_check
 
   # Scopes
   scope :published_courses, -> { where(status: :published) }
@@ -48,13 +49,14 @@ class Course < ApplicationRecord
     medium = Medium.find_or_create_by!(url: data_hash["youtubeurl"])
 
     self.lessons.destroy_all
-    Lesson.where("slug like \'#{slug}%\'").destroy_all
     medium.phrases.destroy_all
 
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
+      lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
+      
       l = Lesson.create!(
         medium: medium,
-        slug: "#{slug}#{lesson_index}",
+        slug: lesson_slug,
         course: self,
         order: lesson_index,
         name: lesson_data["title"],
@@ -121,7 +123,8 @@ class Course < ApplicationRecord
     end
 
     medium.reload
-    finish_lesson_slug = "#{self.slug}#{self.lessons.count}"
+    finish_lesson_slug = unique_lesson_slug("final-review")
+    
     finish_lesson = Lesson.create!(
       medium: medium,
       slug: finish_lesson_slug,
@@ -158,15 +161,16 @@ class Course < ApplicationRecord
 
     Rails.logger.info("Deleting previous lessons")
     self.lessons.destroy_all
-    Lesson.where("slug like \'#{slug}%\'").destroy_all
     medium.phrases.destroy_all
 
     Rails.logger.info("Creating new lessons")
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       Rails.logger.info("Creating lesson: #{lesson_data["title"]}")
+      lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
+      
       l = Lesson.create!(
         medium: medium,
-        slug: "#{slug}#{lesson_index}",
+        slug: lesson_slug,
         course: self,
         order: lesson_index,
         name: lesson_data["title"],
@@ -250,7 +254,8 @@ class Course < ApplicationRecord
     end
 
     medium.reload
-    finish_lesson_slug = "#{self.slug}#{self.lessons.count}"
+    finish_lesson_slug = unique_lesson_slug("song-review")
+    
     finish_lesson = Lesson.create!(
       medium: medium,
       slug: finish_lesson_slug,
@@ -312,5 +317,41 @@ class Course < ApplicationRecord
   # All lessons in a course share the same medium
   def medium
     lessons.first&.medium
+  end
+
+  private
+
+  def unique_lesson_slug(base_slug)
+    slug = base_slug
+    counter = 1
+    while self.lessons.exists?(slug: slug)
+      slug = "#{base_slug}-#{counter}"
+      counter += 1
+    end
+    slug
+  end
+
+  def slug_uniqueness_with_user_check
+    return if slug.blank?
+
+    existing_course = Course.find_by(slug: slug)
+    return unless existing_course
+
+    # If it's the same record (updating), allow it
+    return if existing_course.id == id
+
+    # If slug exists and belongs to a different user, reject
+    if existing_course.user_id != user_id
+      errors.add(:slug, "has already been taken")
+      return
+    end
+
+    # If slug exists and belongs to the same user but is NOT in error status, reject
+    unless existing_course.error?
+      errors.add(:slug, "has already been taken")
+    end
+
+    # If slug exists and belongs to the same user and IS in error status, allow
+    # (controller will handle reusing the course)
   end
 end

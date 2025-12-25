@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_22_192640) do
+ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -115,6 +115,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_22_192640) do
     t.bigint "user_id", null: false
     t.integer "status", default: 0, null: false
     t.boolean "show_full_course_player", default: true, null: false
+    t.bigint "create_song_progress_id"
+    t.index ["create_song_progress_id"], name: "index_courses_on_create_song_progress_id"
     t.index ["language_id"], name: "index_courses_on_language_id"
     t.index ["name"], name: "index_courses_on_name", unique: true
     t.index ["slug"], name: "index_courses_on_slug", unique: true
@@ -270,13 +272,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_22_192640) do
     t.string "end_timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "course_id"
+    t.bigint "course_id", null: false
     t.integer "order", default: 0
     t.string "name"
     t.bigint "user_id", null: false
+    t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
-    t.index ["slug"], name: "index_lessons_on_slug", unique: true
     t.index ["user_id"], name: "index_lessons_on_user_id"
   end
 
@@ -384,6 +386,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_22_192640) do
   add_foreign_key "courses_learning_paths", "learning_paths"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
+  add_foreign_key "lessons", "courses"
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
   add_foreign_key "phrases", "languages", column: "l1_id"

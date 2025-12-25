@@ -4,16 +4,18 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
+  resources :create_song_progress, only: [:show]
   get "home/privacy"
   get "home/terms"
   root "courses#index"
   get "landing_page/index"
-  resources :lessons, only: [:show] do
-    member do
-      get :finish
+  resources :courses, only: [:show, :index, :new, :create] do
+    resources :lessons, only: [:show] do
+      member do
+        get :finish
+      end
     end
   end
-  resources :courses, only: [:show, :index, :new, :create]
   get 'courses/:course_slug/full-player', to: 'full_player#show', as: :course_full_player
   resources :learning_paths, only: [:show] do
     member do
