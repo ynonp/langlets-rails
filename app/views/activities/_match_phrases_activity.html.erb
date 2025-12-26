@@ -13,7 +13,7 @@
   Individual words can be clicked to hear pronunciation and see translation popup.
  %>
 
-<% phrases = (params[:phrases] || []) %>
+<% phrases = params[:phrases] || [] %>
 <% total_phrases = phrases.length %>
 <% l1_rtl = params[:l1].rtl %>
 <% l2_rtl = params[:l2].rtl %>
