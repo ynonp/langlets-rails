@@ -78,3 +78,6 @@ application.register("youtube-form", YoutubeFormController)
 
 import AudioToTranslationActivityController from './audio_to_translation_activity_controller';
 application.register("audio-to-translation-activity", AudioToTranslationActivityController);
+
+import TokensChainActivityController from './tokens_chain_activity_controller';
+application.register("tokens-chain-activity", TokensChainActivityController);
