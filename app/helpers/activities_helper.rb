@@ -9,7 +9,11 @@ module ActivitiesHelper
       content_tag(:span, phrase.text_l1)
     else
       # Use the already loaded token_translations, sort them by l1_start_index
-      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      all_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      
+      # Filter out overlapping tokens - remove tokens that are completely contained within another token
+      # When tokens overlap, keep the one with the larger span (more words)
+      loaded_tokens = filter_overlapping_tokens(all_tokens)
       
       # Convert word indices to character indices
       words = phrase.text_l1.split
@@ -255,6 +259,45 @@ module ActivitiesHelper
   end
 
   private
+
+  # Filters out tokens that are completely contained within another token.
+  # When tokens overlap, keeps the token with the larger span (more words).
+  # Example: "hace dias" (words 0-1) and "dias" (words 1-1) -> keeps only "hace dias"
+  def filter_overlapping_tokens(tokens)
+    return tokens if tokens.empty? || tokens.length == 1
+    
+    # Sort by start index, then by span length (descending) to prefer longer tokens
+    # This ensures that when we process tokens, longer ones at the same start position come first
+    sorted = tokens.sort_by { |t| [t.l1_start_index, -(t.l1_end_index - t.l1_start_index)] }
+    
+    filtered = []
+    sorted.each do |token|
+      # Check if this token is completely contained within any already-accepted token
+      is_contained = filtered.any? do |accepted_token|
+        # Token is contained if:
+        # - accepted_token starts at or before token starts
+        # - accepted_token ends at or after token ends
+        # - and it's not the same token
+        accepted_token.l1_start_index <= token.l1_start_index &&
+          accepted_token.l1_end_index >= token.l1_end_index &&
+          accepted_token.id != token.id
+      end
+      
+      # Also check if any already-accepted token is contained within this token
+      # If so, remove the contained token and add this one (since it's longer)
+      filtered.reject! do |accepted_token|
+        token.l1_start_index <= accepted_token.l1_start_index &&
+          token.l1_end_index >= accepted_token.l1_end_index &&
+          accepted_token.id != token.id
+      end
+      
+      # Only add if not contained within another token
+      filtered << token unless is_contained
+    end
+    
+    # Re-sort by start index for rendering
+    filtered.sort_by(&:l1_start_index)
+  end
 
   def similar_sounds_for_token(phrase, token_translation)
     return nil unless phrase.respond_to?(:similar_sounds)
