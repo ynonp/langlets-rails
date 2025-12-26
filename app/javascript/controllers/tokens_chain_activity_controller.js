@@ -27,8 +27,16 @@ export default class extends Controller {
       this.currentAudio.currentTime = 0;
     }
     
-    // Find the audio element within the clicked square
-    const audioElement = event.currentTarget.querySelector('audio[data-token-audio]');
+    // Find the token ID for this square
+    const square = event.currentTarget;
+    const tokenId = square.getAttribute('data-l1-token-id') || square.getAttribute('data-token-id');
+    if (!tokenId) return;
+    
+    // Find the square that has this token's audio element
+    const squareWithAudio = this.gridTarget.querySelector(`[data-token-id="${tokenId}"]`);
+    if (!squareWithAudio) return;
+    
+    const audioElement = squareWithAudio.querySelector('audio[data-token-audio]');
     if (!audioElement) return;
     
     // Play the audio element
@@ -105,6 +113,8 @@ export default class extends Controller {
         // Update styling to show it's now displaying L1
         element.classList.remove('flash-success', 'bg-gray-900', 'hover:bg-gray-800');
         element.classList.add('showing-l1', 'bg-gray-700', 'cursor-pointer', 'current-l1');
+        // Store the token ID so we can find its audio element later
+        element.setAttribute('data-l1-token-id', currentToken.id);
         // Add click handler for L1 audio playback
         element.setAttribute('data-action', 'click->tokens-chain-activity#playL1Audio');
         // Remove token ID since it now shows L1
@@ -112,10 +122,13 @@ export default class extends Controller {
         // Update current L1 element reference
         this.currentL1Element = element;
         
-        // Play audio for the new L1 word
-        const audioElement = element.querySelector('audio[data-token-audio]');
-        if (audioElement) {
-          this.playAudioForElement(audioElement);
+        // Find and play the audio element for the next token
+        const squareWithNextTokenAudio = this.gridTarget.querySelector(`[data-token-id="${currentToken.id}"]`);
+        if (squareWithNextTokenAudio) {
+          const audioElement = squareWithNextTokenAudio.querySelector('audio[data-token-audio]');
+          if (audioElement) {
+            this.playAudioForElement(audioElement);
+          }
         }
       }, 600);
     }

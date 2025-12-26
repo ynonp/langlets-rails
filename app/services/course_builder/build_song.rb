@@ -94,7 +94,7 @@ module CourseBuilder
             create_lessons_4plus_activities(lesson, all_lesson_phrases, review_phrases_list, all_token_translations, review_token_translations_list, lesson_number, user)
           end
 
-          # Check if we need to insert a review lesson after this one (every 5-6 lessons)
+          # Check if we need to insert a review lesson after this one (every 4th lesson)
           if should_insert_review_lesson?(lesson_number)
             lesson_index += 1
             review_lesson = create_review_lesson(created_lessons, medium, user, lesson_index)
@@ -168,6 +168,27 @@ module CourseBuilder
         .to_a
     end
 
+    def distinct_phrases_by_text_l2(phrases)
+      return [] if phrases.nil? || (phrases.respond_to?(:empty?) && phrases.empty?)
+      
+      # If it's an ActiveRecord::Relation, check if empty
+      if phrases.is_a?(ActiveRecord::Relation)
+        return [] if phrases.none?
+        ids = phrases.pluck(:id)
+      else
+        # It's an array
+        return [] if phrases.empty?
+        ids = phrases.map(&:id)
+      end
+
+      return phrases if ids.empty?
+
+      Phrase.select("distinct on (text_l2) *")
+        .where(id: ids)
+        .order(:text_l2, :id)
+        .to_a
+    end
+
     def mix_content(current_items, review_items, current_percent)
       # Convert to arrays if they're ActiveRecord::Relation
       current_array = current_items.is_a?(ActiveRecord::Relation) ? current_items.to_a : current_items
@@ -212,20 +233,20 @@ module CourseBuilder
     end
 
     def is_review_lesson?(lesson_number)
-      # Review lessons at positions 6, 12, 18, etc. (every 5-6 lessons)
-      lesson_number > 0 && lesson_number % 6 == 0
+      # Review lessons at positions 4, 8, 12, etc. (every 4th lesson)
+      lesson_number > 0 && lesson_number % 4 == 0
     end
 
     def should_insert_review_lesson?(lesson_number)
       # Check if we should insert a review lesson after this lesson
-      # Review lessons should be inserted after lessons 5, 11, 17, etc. (every 5 regular lessons)
-      lesson_number > 0 && lesson_number % 6 == 5
+      # Review lessons should be inserted after lessons 3, 7, 11, etc. (every 4th lesson)
+      lesson_number > 0 && lesson_number % 4 == 3
     end
 
     def create_review_lesson(created_lessons, medium, user, lesson_index)
       return nil if created_lessons.empty?
 
-      review_number = (lesson_index / 6.0).ceil
+      review_number = (lesson_index / 4.0).ceil
       review_lesson_name = "Review Lesson #{review_number}"
       lesson_slug = course.unique_lesson_slug(review_lesson_name.parameterize)
       
@@ -253,8 +274,8 @@ module CourseBuilder
       a1 = Activities::WatchVideoActivity.create!(lesson:, order: 1, user:)
       a1.phrases = phrases
 
-      # 2. MatchPhrasesActivity (distinct by text_l1)
-      distinct_phrases = distinct_phrases_by_text_l1(phrases)
+      # 2. MatchPhrasesActivity (distinct by text_l2)
+      distinct_phrases = distinct_phrases_by_text_l2(phrases)
       a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 2, user:)
       a2.phrases = distinct_phrases
 
@@ -296,12 +317,14 @@ module CourseBuilder
 
       # 2. MatchPhrasesActivity or AudioToTranslation (alternate)
       if lesson_number.odd?
-        distinct_phrases = distinct_phrases_by_text_l1(phrases)
+        distinct_phrases = distinct_phrases_by_text_l2(phrases)
         a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 2, user:)
         a2.phrases = distinct_phrases
       else
+        phrases_for_audio = phrases.is_a?(ActiveRecord::Relation) ? phrases.limit(5).to_a : phrases.first(5)
+        distinct_phrases_audio = distinct_phrases_by_text_l2(phrases_for_audio)
         a2 = Activities::AudioToTranslation.create!(lesson:, order: 2, user:)
-        a2.phrases = phrases
+        a2.phrases = distinct_phrases_audio
       end
 
       # 3. FlashcardActivity (70% current + 30% review tokens) - select from different phrases
@@ -336,18 +359,19 @@ module CourseBuilder
       a1 = Activities::WatchVideoActivity.create!(lesson:, order: 1, user:)
       a1.phrases = phrases
 
-      # 2. MatchPhrasesActivity (60% current + 40% review, distinct by text_l1)
+      # 2. MatchPhrasesActivity (60% current + 40% review, distinct by text_l2)
       phrases_array = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
       review_phrases_array = review_phrases_list.is_a?(ActiveRecord::Relation) ? review_phrases_list.to_a : review_phrases_list
       mixed_phrases = mix_content(phrases_array, review_phrases_array, 60)
-      distinct_mixed_phrases = distinct_phrases_by_text_l1(mixed_phrases)
+      distinct_mixed_phrases = distinct_phrases_by_text_l2(mixed_phrases)
       a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 2, user:)
       a2.phrases = distinct_mixed_phrases
 
       # 3. AudioToTranslation (50% current + 50% review)
       mixed_phrases_audio = mix_content(phrases_array, review_phrases_array, 50)
+      distinct_mixed_phrases_audio = distinct_phrases_by_text_l2(mixed_phrases_audio)
       a3 = Activities::AudioToTranslation.create!(lesson:, order: 3, user:)
-      a3.phrases = mixed_phrases_audio
+      a3.phrases = distinct_mixed_phrases_audio.first(5)
 
       # 4. TokenChainActivity (60% current + 40% review)
       unless current_token_translations.empty? && review_token_translations.empty?
@@ -380,8 +404,10 @@ module CourseBuilder
       end
 
       # 2. AudioToTranslation (100% review, all completed lessons)
+      review_phrases_for_audio = review_phrases.order(timestamp: :asc).limit(5).to_a
+      distinct_review_phrases_audio = distinct_phrases_by_text_l2(review_phrases_for_audio)
       a2 = Activities::AudioToTranslation.create!(lesson:, order: 2, user:)
-      a2.phrases = review_phrases.order(timestamp: :asc)
+      a2.phrases = distinct_review_phrases_audio
 
       # 3. TokenChainActivity (100% review)
       unless review_token_translations.empty?
