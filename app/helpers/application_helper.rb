@@ -1,4 +1,17 @@
 module ApplicationHelper
+  # Hotwire Native detection helpers
+  def turbo_native_app?
+    request.user_agent.to_s.match?(/Turbo Native/i)
+  end
+
+  def turbo_native_ios?
+    request.user_agent.to_s.match?(/Turbo Native.*iOS/i)
+  end
+
+  def turbo_native_android?
+    request.user_agent.to_s.match?(/Turbo Native.*Android/i)
+  end
+
   def youtube_thumbnail_url(video_id, quality = 'hqdefault')
     "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
   end

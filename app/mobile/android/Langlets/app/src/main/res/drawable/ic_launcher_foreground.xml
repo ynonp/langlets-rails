@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Simple "L" letter for Langlets -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M40,30 L40,70 L70,70 L70,62 L48,62 L48,30 Z"/>
+</vector>

@@ -159,3 +159,14 @@
     overflow-x: hidden;
   }
 }
+
+/* Hotwire Native specific styles */
+.turbo-native {
+  /* Hide PWA install prompts and banners in native app */
+  .pwa-install-prompt,
+  .pwa-install-banner,
+  [data-pwa-install],
+  .install-app-button {
+    display: none !important;
+  }
+}
