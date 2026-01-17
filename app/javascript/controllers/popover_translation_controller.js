@@ -81,7 +81,7 @@ export default class extends Controller {
     }
     const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText);
     const encodedPrompt = encodeURIComponent(prompt);
-    const chatgptUrl = `https://chatgpt.com/?prompt=${encodedPrompt}`;
+    const chatgptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
     
     window.open(chatgptUrl, '_blank');
   }
