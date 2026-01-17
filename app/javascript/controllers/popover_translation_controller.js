@@ -1,12 +1,15 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['translationPopup', 'translationText'];
+  static targets = ['translationPopup', 'translationText', 'aiButton'];
+  static values = { l1Language: String };
 
   initialize() {
     this.hidePopup = this.hidePopup.bind(this);
     this.showPopup = this.showPopup.bind(this);
     this.currentAudio = null; // Track currently playing audio
+    this.currentOriginalText = null;
+    this.currentTranslation = null;
   }
 
   connect() {
@@ -43,6 +46,11 @@ export default class extends Controller {
   showPopup(ev) {
     if (ev.target.dataset.translation) {
       const {translation} = ev.target.dataset;
+      const originalText = ev.target.textContent.trim();
+
+      // Store current token data for ChatGPT prompt
+      this.currentOriginalText = originalText;
+      this.currentTranslation = translation;
 
       this.translationTextTarget.textContent = translation;
       
@@ -64,6 +72,28 @@ export default class extends Controller {
             
       ev.stopPropagation();      
     } else {
+    }
+  }
+
+  openChatGPT() {
+    if (!this.currentOriginalText || !this.currentTranslation || !this.l1LanguageValue) {
+      return;
+    }
+    const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText);
+    const encodedPrompt = encodeURIComponent(prompt);
+    const chatgptUrl = `https://chatgpt.com/?prompt=${encodedPrompt}`;
+    
+    window.open(chatgptUrl, '_blank');
+  }
+
+  getChatgptPrompt(language, text) {
+    if (text.split(/\s+/).length === 1) {
+      return `What does ${text} mean in ${language} ? Explain the root/infinitive or the word and provide example sentence`
+    } else {
+      return `I'm a student learning ${language}. Explain the text "${text}":
+      1. Break to words and explain each
+      2. Explain the root or infinitive of each word
+      3. Provide example sentences using this text`
     }
   }
 

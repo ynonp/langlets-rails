@@ -123,6 +123,7 @@
     <!-- Scrollable Phrases Container -->
     <div
         data-controller="popover-translation"
+        data-popover-translation-l1-language-value="<%= @phrases.first&.l1&.english_name || 'Language' %>"
         id="phrases-container"
         data-watch-video-activity-target="container"
         data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
@@ -162,9 +163,7 @@
       </div>
 
       <!-- Translation Popup -->
-      <div data-popover-translation-target="translationPopup" class="hidden absolute bg-white text-gray-900 p-2 rounded shadow-lg z-30">
-        <div data-popover-translation-target="translationText"></div>
-      </div>
+      <%= render partial: 'activities/translation_popup' %>
     </div>
   </div>
 </div>

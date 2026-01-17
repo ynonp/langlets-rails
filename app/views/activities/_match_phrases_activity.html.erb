@@ -52,6 +52,7 @@
         <!-- Original phrase (Spanish) -->
         <div 
           data-controller="popover-translation"
+          data-popover-translation-l1-language-value="<%= params[:l1].english_name || 'Language' %>"
           data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
           class="my-4 text-md md:text-xl text-white w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
           <span 
@@ -78,9 +79,7 @@
           </button>
           
           <!-- Translation Popup - moved outside and positioned absolutely -->
-          <div data-popover-translation-target="translationPopup" class="hidden fixed bg-white text-gray-900 p-2 rounded shadow-lg z-50 max-w-xs">
-            <div data-popover-translation-target="translationText"></div>
-          </div>
+          <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed bg-white text-gray-900 p-2 rounded shadow-lg z-50 max-w-xs" } %>
         </div>
         
         <!-- Options section for this phrase -->
