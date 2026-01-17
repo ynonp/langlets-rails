@@ -93,9 +93,10 @@ Explain word "${text}" (meaning ${translation}). Write its root/infinitive, etym
     } else {
       return `Act like my ${language} teacher.
 Explain the text "${text}" (meaning ${translation}):
-1. Break to words and explain each
-2. Explain the root or infinitive of each word
-3. Provide example sentences using this text`
+1. Break to words and explain each. Include its root/infinitive, etymology and example sentences.
+2. Explain how the word connect to create the full text meaning.
+3. If applicable add grammar explanation.
+`
     }
   }
 
