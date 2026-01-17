@@ -79,18 +79,18 @@ export default class extends Controller {
     if (!this.currentOriginalText || !this.currentTranslation || !this.l1LanguageValue) {
       return;
     }
-    const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText);
+    const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText, this.currentTranslation);
     const encodedPrompt = encodeURIComponent(prompt);
     const chatgptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
     
     window.open(chatgptUrl, '_blank');
   }
 
-  getChatgptPrompt(language, text) {
+  getChatgptPrompt(language, text, translation) {
     if (text.split(/\s+/).length === 1) {
-      return `What does ${text} mean in ${language} ? Explain the root/infinitive or the word and provide example sentence`
+      return `Explain the word "${text}" in ${language} (meaning ${translation}). Write its root/infinitive, etymology and provide example sentence`
     } else {
-      return `I'm a student learning ${language}. Explain the text "${text}":
+      return `I'm a student learning ${language}. Explain the text "${text}" (meaning ${translation}):
       1. Break to words and explain each
       2. Explain the root or infinitive of each word
       3. Provide example sentences using this text`
