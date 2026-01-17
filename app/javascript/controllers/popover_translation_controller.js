@@ -88,9 +88,11 @@ export default class extends Controller {
 
   getChatgptPrompt(language, text, translation) {
     if (text.split(/\s+/).length === 1) {
-      return `Explain the word "${text}" in ${language} (meaning ${translation}). Write its root/infinitive, etymology and provide example sentence`
+      return `Act like my ${language} teacher.
+      Explain the word "${text}" in ${language} (meaning ${translation}). Write its root/infinitive, etymology and provide example sentence`
     } else {
-      return `I'm a student learning ${language}. Explain the text "${text}" (meaning ${translation}):
+      return `Act like my ${language} teacher.
+      Explain the text "${text}" (meaning ${translation}):
       1. Break to words and explain each
       2. Explain the root or infinitive of each word
       3. Provide example sentences using this text`
