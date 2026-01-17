@@ -88,14 +88,53 @@ export default class extends Controller {
 
   getChatgptPrompt(language, text, translation) {
     if (text.split(/\s+/).length === 1) {
-      return `Act like my ${language} teacher.
-Explain word "${text}" (meaning ${translation}). Write its root/infinitive, etymology and provide example sentence`
+      return `Act as a professional ${language} teacher.
+
+Explain the following SINGLE WORD from ${language} for a learner.
+IMPORTANT:
+- Write the explanation in English.
+- The provided meaning reflects how the word is used in context and may be idiomatic, metaphorical, or derived from a larger expression.
+- Do NOT assume the literal dictionary meaning is the intended one.
+
+Word: "${text}"
+Intended meaning: "${translation}"
+
+Tasks:
+1. Identify the word’s base form (infinitive / singular / lemma) and part of speech.
+2. Explain the word’s literal meaning and its etymology (brief).
+3. Explain how this word can acquire the intended meaning:
+   - through idiomatic usage
+   - metaphorical extension
+   - ellipsis of a longer common expression
+   - or semantic shift
+4. If the word typically appears as part of a fixed phrase, reconstruct the most common full expression and explain it.
+5. Provide:
+   - one example sentence showing the literal meaning (if applicable)
+   - one example sentence showing the intended/contextual meaning
+6. Add relevant usage notes (register, frequency, formality, regional usage).      
+`
     } else {
-      return `Act like my ${language} teacher.
-Explain the text "${text}" (meaning ${translation}):
-1. Break to words and explain each. Include its root/infinitive, etymology and example sentences.
-2. Explain how the word connect to create the full text meaning.
-3. If applicable add grammar explanation.
+      return `Act as a professional ${language} teacher.
+
+Explain the following ${language} text for a learner.
+IMPORTANT:
+- Write the explanation in English.
+- The provided meaning may be contextual or idiomatic, not literal.
+- If the text is a fragment, infer the most likely full construction.
+
+Text: "${text}"
+Intended meaning: "${translation}"
+
+Tasks:
+1. Identify whether the meaning is literal or idiomatic.
+2. Break the text into words or morphemes and explain each:
+   - base form / infinitive
+   - etymology (brief)
+   - literal meaning
+   - example sentence
+3. Explain how the words combine to produce the intended meaning.
+4. If the meaning relies on an implied or common expression, explain the missing parts.
+5. Add relevant grammar or usage notes (register, frequency, formality, dialect, region).
 `
     }
   }
