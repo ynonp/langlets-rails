@@ -1,0 +1,25 @@
+---
+
+## Example input 1:
+
+זה שקר והאמנתי בו => It's a lie and I believed it
+זה היה השקר הכי גדול שחייתי בו => It was the biggest lie I lived
+שאשכח אותך, ומאז => That I'll forget you, and since then
+לא הצלחתי לשכוח => I couldn't forget
+
+## Expected output 1:
+
+[זה] שקר והאמנתי בו => [It's] a lie and I believed it # the word a is implied but can be dropped in a word-for-word translation
+זה [שקר] והאמנתי בו => It's a [lie] and I believed it
+זה שקר [והאמנתי בו] => It's a lie [and I believed it] # the single word והאמנתי בו is actually composed of the marked words in English
+
+[זה היה] השקר הכי גדול שחייתי בו => [It was] the biggest lie I lived
+זה היה השקר [הכי גדול] שחייתי בו => It was the [biggest] lie I lived
+זה היה השקר הכי גדול [שחייתי בו] => It was the biggest lie [I lived]
+
+[שאשכח] אותך, ומאז => [That I'll forget] you, and since then
+שאשכח [אותך], ומאז => That I'll forget [you], and since then
+שאשכח אותך, [ומאז] => That I'll forget you, [and since then]
+
+[לא הצלחתי] לשכוח => [I couldn't] forget
+לא הצלחתי [לשכוח] => I couldn't [forget]
