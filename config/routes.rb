@@ -30,6 +30,8 @@ Rails.application.routes.draw do
   post '/sync_local_xp', to: 'progress#sync_local_xp'
   post '/log', to: 'progress#log'
   
+  resources :create_song_progresses, only: [:show]
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

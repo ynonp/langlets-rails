@@ -23,4 +23,22 @@ module ApplicationHelper
       "bg-orange-500"      # Regular orange - no streak
     end
   end
+
+  def extract_youtube_id(url)
+    return '' if url.blank?
+    
+    # Handle various YouTube URL formats
+    patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\?\/]+)/,
+      /youtube\.com\/embed\/([^&\?\/]+)/,
+      /youtube\.com\/v\/([^&\?\/]+)/
+    ]
+    
+    patterns.each do |pattern|
+      match = url.match(pattern)
+      return match[1] if match
+    end
+    
+    ''
+  end
 end
