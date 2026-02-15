@@ -393,6 +393,26 @@ Active Storage Blobs (1) ──→ (many) Active Storage Variant Records
 - **Social Authentication Ready**: UI prepared for Google and Facebook integration
 - **Privacy Compliance**: Terms of service and privacy policy integration
 
+### Guest User Landing Page
+
+The homepage (`courses#index`) implements a dual-mode interface that adapts based on user authentication status:
+
+#### Guest User Experience
+- **Hero Section**: Prominent landing page section displayed only to non-authenticated users
+- **Headline**: "The best place to build, practice, and discover language activities"
+- **Subheadline**: Describes Langlets as a social language learning platform with AI-powered content creation
+- **Call-to-Action**: Large, prominent "Sign up for free" button in green
+- **Design**: Centered layout with large typography and clear visual hierarchy
+- **Course Browsing**: Guest users can still browse all available courses below the hero section
+
+#### Authenticated User Experience
+- **No Hero Section**: Logged-in users bypass the marketing content
+- **Direct Access**: Immediate access to personalized sections (Continue Learning, Next For You, etc.)
+- **Progress Display**: XP tracking and streak information in header
+- **Course Management**: Access to Create Course functionality for authorized users
+
+This approach ensures new visitors see compelling marketing content while providing seamless access for returning users.
+
 ### User Authentication UI Design
 
 The platform implements a modern, accessible authentication system with the following design patterns:
