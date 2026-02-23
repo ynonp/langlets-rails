@@ -30,6 +30,10 @@ Rails.application.routes.draw do
   post '/sync_local_xp', to: 'progress#sync_local_xp'
   post '/log', to: 'progress#log'
   
+  # Standalone player page
+  get '/play/:slug', to: 'play#show', as: :play
+  get '/play/:slug/vocabulary.csv', to: 'play#vocabulary_csv', as: :play_vocabulary_csv
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

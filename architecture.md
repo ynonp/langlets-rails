@@ -504,6 +504,34 @@ This implementation provides a modern, responsive interface that matches contemp
 - **Contextual Learning**: Words learned within meaningful phrases
 - **Multi-modal Practice**: Video, audio, text, and speaking integration
 
+### Standalone Player
+
+The platform provides a standalone player page for viewing complete songs with lyrics and vocabulary outside of the lesson structure.
+
+#### Route & Controller
+- **URL Pattern**: `/play/:slug` - Shows complete song with video, lyrics, and vocabulary
+- **Controller**: `PlayController` with `show` and `vocabulary_csv` actions
+- **CSV Export**: `/play/:slug/vocabulary.csv` - Downloads vocabulary as CSV file
+
+#### Standalone Player View (`app/views/play/show.html.erb`)
+- **Header**: Course name with back navigation to course page
+- **Video Player**: YouTube video with custom progress bar and play/pause controls
+- **Tab Navigation**: 
+  - **Lyrics Tab** (default): Full song lyrics with translations, clickable to seek video
+  - **Vocabulary Tab**: Word-translation table with CSV download button
+
+#### Features
+- **Video Integration**: YouTube player with timestamp-based seeking
+- **Bilingual Display**: Source language lyrics with translations
+- **Word Popups**: Click on words to see individual translations (uses existing popover-translation controller)
+- **Vocabulary Export**: CSV download containing all unique words and their translations
+- **RTL Support**: Proper text direction for Arabic, Hebrew, and other RTL languages
+
+#### Stimulus Controller (`app/javascript/controllers/standalone_player_controller.js`)
+- **Video Control**: Play/pause, progress bar, seek functionality
+- **Tab Switching**: Toggle between lyrics and vocabulary views
+- **Timestamp Seeking**: Click on lyrics to jump to that point in the video
+
 ## File Structure
 
 ```
@@ -536,15 +564,20 @@ app/models/
 ├── lesson_user.rb              # User progress on lessons
 └── create_song_progress.rb     # Workflow tracking
 
+app/views/play/                 # Standalone player views
+├── show.html.erb              # Main player with tabs (lyrics/vocabulary)
+
 app/views/learning_paths/       # YouTube-style learning path views
 ├── show.html.erb              # Main learning path view with search/filter
 └── _courses.html.erb          # Course grid partial for Ajax updates
 
 app/controllers/
+├── play_controller.rb         # Standalone player controller
 ├── learning_paths_controller.rb # Learning path browsing and search
 └── ...                        # Other controllers
 
 app/javascript/controllers/
+├── standalone_player_controller.js # Standalone player video and tabs
 ├── learning_path_courses_controller.js # Search, filtering, infinite scroll
 └── ...                        # Other Stimulus controllers
 
