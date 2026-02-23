@@ -29,6 +29,10 @@ Rails.application.routes.draw do
   resources :progress, only: [:create]
   post '/sync_local_xp', to: 'progress#sync_local_xp'
   post '/log', to: 'progress#log'
+
+  # Standalone player for courses
+  get '/play/:slug', to: 'play#show', as: :play
+  get '/play/:slug/vocabulary.csv', to: 'play#vocabulary_csv', as: :play_vocabulary_csv
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
