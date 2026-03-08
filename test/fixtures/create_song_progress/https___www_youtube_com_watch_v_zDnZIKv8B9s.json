@@ -1,0 +1,46 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=zDnZIKv8B9s",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "Motivated not frustrated",
+        "timestamp": "07:31",
+        "text_l2": "Motivated not frustrated"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "عزيمة بدل الإحباط",
+        "timestamp": "07:36",
+        "text_l2": "Determination instead of frustration"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Strength not weakness",
+        "timestamp": "07:40",
+        "text_l2": "Strength not weakness"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "نور بدل الظلمة",
+        "timestamp": "07:45",
+        "text_l2": "Light instead of darkness"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "نجاح بدل الفشل",
+        "timestamp": "07:50",
+        "text_l2": "Success instead of failure"
+      }
+    ],
+    "phrases_with_token_translations": "[Motivated] not frustrated => [Motivated] not frustrated\nMotivated not [frustrated] => Motivated not [frustrated]\n\n[عزيمة] بدل الإحباط => [Determination] instead of frustration\nعزيمة [بدل] الإحباط => Determination [instead of] frustration\nعزيمة بدل [الإحباط] => Determination instead of [frustration]\n\n[Strength] not weakness => [Strength] not weakness\nStrength not [weakness] => Strength not [weakness]\n\n[نور] بدل الظلمة => [Light] instead of darkness\nنور [بدل] الظلمة => Light [instead of] darkness\nنور بدل [الظلمة] => Light instead of [darkness]\n\n[نجاح] بدل الفشل => [Success] instead of failure\nنجاح [بدل] الفشل => Success [instead of] failure\nنجاح بدل [الفشل] => Success instead of [failure]\n\n",
+    "lessons": "# Choosing Positivity\n07:31 Motivated not frustrated\n07:36 عزيمة بدل الإحباط\n07:40 Strength not weakness\n07:45 نور بدل الظلمة\n07:50 نجاح بدل الفشل",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-03-07 18:55:33 UTC",
+  "updated_at": "2026-03-07 19:02:47 UTC",
+  "exported_at": "2026-03-07T19:02:47Z"
+}

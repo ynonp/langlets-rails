@@ -18,7 +18,7 @@ module CreateSong
         data["phrases_with_token_translations"] = ""
 
         lyrics_with_translations.lines.each_slice(12) do |block|
-          chat = TracedChat.new(span_name: "add_token_translations", model: 'gpt-5-mini')
+          chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_smart)
           chat
             .with_instructions(instructions)
             .add_message role: :user, content: block.join

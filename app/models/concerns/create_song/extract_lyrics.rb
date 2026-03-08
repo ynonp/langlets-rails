@@ -21,7 +21,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "extract_lyrics", model: 'gemini-3-flash-preview', assume_model_exists: true, provider: :gemini)
+        chat = TracedChat.new(span_name: "extract_lyrics", **self.model_params_youtube)
         chat
           .with_instructions(instructions)
           .with_temperature(0.2)

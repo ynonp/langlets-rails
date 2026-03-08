@@ -43,6 +43,12 @@
             </svg>
             Create Course
           <% end %>
+          <%= link_to new_import_course_path, class: "hidden sm:flex bg-purple-600 hover:bg-purple-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm items-center" do %>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
+              <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0L8.22 10.5a.75.75 0 0 0 1.06 1.06l2.22-2.22v6.69a.75.75 0 0 0 1.5 0V9.84l2.22 2.22a.75.75 0 1 0 1.06-1.06l-3.75-3.53Z" clip-rule="evenodd" transform="rotate(180 12 12)" />
+            </svg>
+            Import
+          <% end %>
         <% end %>
 
         <!-- User Menu -->
@@ -59,6 +65,12 @@
                   <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
                 </svg>
                 Create Course
+              <% end %>
+              <%= link_to new_import_course_path, class: "sm:hidden flex items-center px-4 py-3 text-purple-400 hover:bg-slate-700 transition-colors duration-150" do %>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
+                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm.53 5.47a.75.75 0 0 0-1.06 0L8.22 10.5a.75.75 0 0 0 1.06 1.06l2.22-2.22v6.69a.75.75 0 0 0 1.5 0V9.84l2.22 2.22a.75.75 0 1 0 1.06-1.06l-3.75-3.53Z" clip-rule="evenodd" transform="rotate(180 12 12)" />
+                </svg>
+                Import Courses
               <% end %>
               <div class="sm:hidden border-t border-slate-700 my-1"></div>
             <% end %>

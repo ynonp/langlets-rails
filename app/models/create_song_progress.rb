@@ -9,6 +9,16 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::AddSimilarSound
   include CreateSong::Translate
 
+  attribute :model_params_youtube, default: {model: 'gemini-3.1-flash-lite-preview', provider: :gemini, assume_model_exists: true }
+  attribute :model_params_quick, default: {model: 'gemini-3-flash-preview', provider: :gemini, assume_model_exists: true }
+  attribute :model_params_smart, default: {model: 'gemini-3.1-pro', provider: :gemini, assume_model_exists: true }
+
+  def use_local_ollama
+    # self.model_params_youtube = {model: 'gemini-3-flash-preview:cloud', provider: :openai, assume_model_exists: true}
+    self.model_params_quick = {model: 'gemini-3-flash-preview:cloud', provider: :openai, assume_model_exists: true}
+    self.model_params_smart = {model: 'glm-5:cloud', provider: :openai, assume_model_exists: true}
+  end
+
   def create_data
     span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
     LangfuseTracer.in_span(span_name, attributes: { }) do |span|

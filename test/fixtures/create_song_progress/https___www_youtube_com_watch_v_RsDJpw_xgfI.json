@@ -1,0 +1,100 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=RsDJpw_xgfI",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "رتبت البيت وظبطت",
+        "timestamp": "00:03",
+        "text_l2": "I tidied the house and got it ready"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "وتكتكت وهيني عم بستنى",
+        "timestamp": "00:05",
+        "text_l2": "And I've arranged everything and here I am waiting"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "طيب ما بدك تقولي لنا",
+        "timestamp": "00:07",
+        "text_l2": "Well, don't you want to tell us"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "مين هي الضيفة",
+        "timestamp": "00:09",
+        "text_l2": "Who the guest is"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وإيمتى بتوصل",
+        "timestamp": "00:10",
+        "text_l2": "And when she arrives"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "لا ممكن توصل بأي وقت",
+        "timestamp": "00:11",
+        "text_l2": "No, she might arrive at any time"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بس توصل بتتعرفوا عليها",
+        "timestamp": "00:13",
+        "text_l2": "Once she arrives, you will get to know her"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "المهم تكونوا جاهزين",
+        "timestamp": "00:15",
+        "text_l2": "The important thing is that you are ready"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "خلص تمام",
+        "timestamp": "00:17",
+        "text_l2": "Alright, fine"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "أكيد ما رح نضيع علينا الحفلة",
+        "timestamp": "00:18",
+        "text_l2": "Surely we won't miss out on the party"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "بدي الكل يكون موجود",
+        "timestamp": "00:20",
+        "text_l2": "I want everyone to be present"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "وتكون حفلة الاستقبال",
+        "timestamp": "00:22",
+        "text_l2": "And for the reception party to be"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "حديث السوشيال ميديا كلها",
+        "timestamp": "00:24",
+        "text_l2": "The talk of all social media"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "طيب أم إنصاف بنضل على تواصل",
+        "timestamp": "00:25",
+        "text_l2": "Okay, Um Insaf, we'll stay in touch"
+      }
+    ],
+    "phrases_with_token_translations": "[رتبت] البيت وظبطت => [I tidied] the house and got it ready\nرتبت [البيت] وظبطت => I tidied [the house] and got it ready\nرتبت البيت [وظبطت] => I tidied the house [and got it ready]\n\n[وتكتكت] وهيني عم بستنى => [And I've arranged everything] and here I am waiting\nوتكتكت [وهيني] عم بستنى => And I've arranged everything [and here I am] waiting\nوتكتكت وهيني [عم بستنى] => And I've arranged everything and here I am [waiting]\n\n[طيب] ما بدك تقولي لنا => [Well], don't you want to tell us\nطيب [ما بدك] تقولي لنا => Well, [don't you want] to tell us\nطيب ما بدك [تقولي] لنا => Well, don't you want [to tell] us\nطيب ما بدك تقولي [لنا] => Well, don't you want to tell [us]\n\n[مين] هي الضيفة => [Who] the guest is\nمين [هي] الضيفة => is\nمين هي [الضيفة] => Who [the guest] is\n\n[وإيمتى] بتوصل => [And when] she arrives\nوإيمتى [بتوصل] => And when [she arrives]\n\n[لا] ممكن توصل بأي وقت => [No], she might arrive at any time\nلا [ممكن] توصل بأي وقت => No, [she might] arrive at any time\nلا ممكن [توصل] بأي وقت => No, she might [arrive] at any time\nلا ممكن توصل [بأي وقت] => No, she might arrive [at any time]\n\n[بس] توصل بتتعرفوا عليها => [Once] she arrives, you will get to know her\nبس [توصل] بتتعرفوا عليها => Once [she arrives], you will get to know her\nبس توصل [بتتعرفوا] عليها => Once she arrives, [you will get to know] her\nبس توصل بتتعرفوا [عليها] => Once she arrives, you will get to know [her]\n\n[المهم] تكونوا جاهزين => [The important thing] is that you are ready\nالمهم [تكونوا] جاهزين => The important thing [is that you are] ready\nالمهم تكونوا [جاهزين] => The important thing is that you are [ready]\n\n[خلص] تمام => [Alright], fine\nخلص [تمام] => Alright, [fine]\n\n[أكيد] ما رح نضيع علينا الحفلة => [Surely] we won't miss out on the party\nأكيد [ما رح] نضيع علينا الحفلة => Surely [we won't] miss out on the party\nأكيد ما رح [نضيع علينا] الحفلة => Surely we won't [miss out on] the party\nأكيد ما رح نضيع علينا [الحفلة] => Surely we won't miss out on [the party]\n\n[بدي] الكل يكون موجود => [I want] everyone to be present\nبدي [الكل] يكون موجود => I want [everyone] to be present\nبدي الكل [يكون موجود] => I want everyone [to be present]\n\n[وتكون] حفلة الاستقبال => And to be\nوتكون [حفلة الاستقبال] => And for [the reception party] to be\n\n[حديث] السوشيال ميديا كلها => [The talk] of all social media\nحديث [السوشيال ميديا] كلها => The talk of all [social media]\nحديث السوشيال ميديا [كلها] => The talk of [all] social media\n\n[طيب] أم إنصاف بنضل على تواصل => [Okay], Um Insaf, we'll stay in touch\nطيب [أم إنصاف] بنضل على تواصل => Okay, [Um Insaf], we'll stay in touch\nطيب أم إنصاف [بنضل على تواصل] => Okay, Um Insaf, [we'll stay in touch]\n\n",
+    "lessons": "# Getting Ready for the Guest\n00:03 رتبت البيت وظبطت\n00:05 وتكتكت وهيني عم بستنى\n00:07 طيب ما بدك تقولي لنا\n00:09 مين هي الضيفة\n00:10 وإيمتى بتوصل\n\n# The Element of Surprise\n00:11 لا ممكن توصل بأي وقت\n00:13 بس توصل بتتعرفوا عليها\n00:15 المهم تكونوا جاهزين\n00:17 خلص تمام\n\n# Talk of the Town\n00:18 أكيد ما رح نضيع علينا الحفلة\n00:20 بدي الكل يكون موجود\n00:22 وتكون حفلة الاستقبال\n00:24 حديث السوشيال ميديا كلها\n00:25 طيب أم إنصاف بنضل على تواصل",
+    "similar_sounds": "رتبت [البيض] وظبطت\nو[تققت] وهيني عم بستنى\nطيب ما بدك [تقلي] لنا\nمين هي [الطيفة]\nوإيمتى [بتفصل]\nلا ممكن توصل بأي [وقع]\nبس توصل بتتعرفوا [عليه]\nالمهم [يكونوا] جاهزين\nخلص [أمام]\nأكيد ما رح [نبيع] علينا الحفلة\nبدي الكل يكون [محدود]\nوتكون حفلة [الاستقلال]\nحديث السوشيال ميديا [قلبها]\nطيب أم إنصاف بنضل على [توابل]"
+  },
+  "created_at": "2026-03-08 00:15:39 UTC",
+  "updated_at": "2026-03-08 00:18:25 UTC",
+  "exported_at": "2026-03-08T00:18:25Z"
+}

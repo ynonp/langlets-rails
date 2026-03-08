@@ -2,34 +2,35 @@ Rails.application.routes.draw do
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",
-    omniauth_callbacks: 'users/omniauth_callbacks'
+    omniauth_callbacks: "users/omniauth_callbacks"
   }
-  resources :create_song_progress, only: [:show]
+  resources :create_song_progress, only: [ :show ]
   get "home/privacy"
   get "home/terms"
   root "courses#index"
   get "landing_page/index"
-  resources :courses, only: [:show, :index, :new, :create] do
-    resources :lessons, only: [:show] do
+  resources :courses, only: [ :show, :index, :new, :create ] do
+    resources :lessons, only: [ :show ] do
       member do
         get :finish
       end
     end
   end
-  get 'courses/:course_slug/full-player', to: 'full_player#show', as: :course_full_player
-  resources :learning_paths, only: [:show] do
+  resources :import_courses, only: [ :new, :create ]
+  get "courses/:course_slug/full-player", to: "full_player#show", as: :course_full_player
+  resources :learning_paths, only: [ :show ] do
     member do
       get :search_courses, defaults: { format: :json }
     end
   end
-  get '/azure_token', to: 'azure_speech#token'
+  get "/azure_token", to: "azure_speech#token"
   get "activities/index"
   get "activities/show"
-  
-  resources :progress, only: [:create]
-  post '/sync_local_xp', to: 'progress#sync_local_xp'
-  post '/log', to: 'progress#log'
-  
+
+  resources :progress, only: [ :create ]
+  post "/sync_local_xp", to: "progress#sync_local_xp"
+  post "/log", to: "progress#log"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

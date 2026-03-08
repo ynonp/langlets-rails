@@ -1,0 +1,1270 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=6bEgnpRFuk0",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "جبت أعلى سكور",
+        "timestamp": "00:03",
+        "text_l2": "I got the highest score"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "بس هذا المشروع بده موظفين",
+        "timestamp": "00:07",
+        "text_l2": "But this project needs employees"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "أو بده وقت",
+        "timestamp": "00:09",
+        "text_l2": "Or it needs time"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "ما بيزبط هيك",
+        "timestamp": "00:10",
+        "text_l2": "It doesn't work like this"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "الخطّة إنه إحنا قبل ما نقدّم",
+        "timestamp": "00:13",
+        "text_l2": "The plan is that before we apply"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "على هيك عطاء",
+        "timestamp": "00:15",
+        "text_l2": "For such a tender"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "لازم نكون جاهزين",
+        "timestamp": "00:17",
+        "text_l2": "We must be ready"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "سند في إشي حبيبي؟",
+        "timestamp": "00:22",
+        "text_l2": "Sanad, is there something, honey?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "لا مش إشي مهم",
+        "timestamp": "00:24",
+        "text_l2": "No, it's not something important"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "شغّل المضخة أبو يزن",
+        "timestamp": "00:31",
+        "text_l2": "Turn on the pump, Abu Yazan"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "وينك أبو يزن؟",
+        "timestamp": "00:33",
+        "text_l2": "Where are you, Abu Yazan?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "شغّل المضخة",
+        "timestamp": "00:34",
+        "text_l2": "Turn on the pump"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "شغّلتها",
+        "timestamp": "00:39",
+        "text_l2": "I turned it on"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "شو اشتغلت؟",
+        "timestamp": "00:40",
+        "text_l2": "Did it work?"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "لا خيو ما اشتغلت",
+        "timestamp": "00:42",
+        "text_l2": "No brother, it didn't work"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "شكلها بدها تغيير الكابستور",
+        "timestamp": "00:44",
+        "text_l2": "It looks like it needs a capacitor change"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "والمكثف",
+        "timestamp": "00:45",
+        "text_l2": "And the condenser"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "خلص خلص بجيك يوم الجمعة",
+        "timestamp": "00:46",
+        "text_l2": "Fine, fine, I'll come to you on Friday"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "أبشر",
+        "timestamp": "00:48",
+        "text_l2": "You got it"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "لا لا لا يا عطا دخيلك",
+        "timestamp": "00:49",
+        "text_l2": "No no no, Ata, I beg you"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "بلاش تيجي المي ونتبهدل هالاسبوع",
+        "timestamp": "00:51",
+        "text_l2": "Lest the water comes and we get in a mess this week"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "المي لا عمي المي بتيجي يوم السبت",
+        "timestamp": "00:53",
+        "text_l2": "The water, no uncle, the water comes on Saturday"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "أنا هالايام كتير مشغول",
+        "timestamp": "00:56",
+        "text_l2": "I am very busy these days"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "الجمعة بكون مركز",
+        "timestamp": "00:58",
+        "text_l2": "On Friday I'll be focused"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "وبعملك إياها على رواق",
+        "timestamp": "01:00",
+        "text_l2": "And I'll do it for you calmly"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "صدقني رح أزرّقلك إياها تزريق",
+        "timestamp": "01:02",
+        "text_l2": "Trust me, I'll squeeze it in for you"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "هسا دورك إنت تزرّقلنا",
+        "timestamp": "01:05",
+        "text_l2": "Now it's your turn to squeeze us in"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "نفسي أرجع مرة على البيت",
+        "timestamp": "01:10",
+        "text_l2": "I wish I could return home once"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "ما يكون عندنا واجبات",
+        "timestamp": "01:12",
+        "text_l2": "Without us having homework"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "خمس واجبات؟",
+        "timestamp": "01:14",
+        "text_l2": "Five homework assignments?"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "بالأحلام حبيبتي",
+        "timestamp": "01:15",
+        "text_l2": "In your dreams, honey"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "يعني إنت حجزت ملعب القدم؟",
+        "timestamp": "01:17",
+        "text_l2": "So you booked the football pitch?"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "حجزت ودفعت",
+        "timestamp": "01:19",
+        "text_l2": "I booked and paid"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "مش معقول هدول الولاد",
+        "timestamp": "01:21",
+        "text_l2": "Unbelievable, these kids"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "ما بصير يلغوا آخر لحظة",
+        "timestamp": "01:23",
+        "text_l2": "They shouldn't cancel at the last minute"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "خلص مش مشكلة",
+        "timestamp": "01:24",
+        "text_l2": "Fine, no problem"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "بس مش رح نلعب أنا وإياك لحالنا",
+        "timestamp": "01:26",
+        "text_l2": "But we won't play just you and I alone"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "لا مشكلة",
+        "timestamp": "01:29",
+        "text_l2": "No problem"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "أقولك أنا عندي فكرة",
+        "timestamp": "01:31",
+        "text_l2": "I tell you, I have an idea"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "وهيك بدل ما يروح الحجز",
+        "timestamp": "01:36",
+        "text_l2": "And this way, instead of the booking going to waste"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "بابا أنا وإياك بنكون فريق",
+        "timestamp": "01:38",
+        "text_l2": "Dad, you and I will be a team"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "ويزن وأبوه بكونوا فريق",
+        "timestamp": "01:39",
+        "text_l2": "And Yazan and his dad will be a team"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "شو رأيك؟",
+        "timestamp": "01:41",
+        "text_l2": "What do you think?"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "زمان ما لعبنا مع بعض",
+        "timestamp": "01:42",
+        "text_l2": "It's been a long time since we played together"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "فكرة حلوة كتير",
+        "timestamp": "01:43",
+        "text_l2": "A very nice idea"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "أكيد حلوة",
+        "timestamp": "01:45",
+        "text_l2": "Of course it's nice"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "بس المشكلة إنه",
+        "timestamp": "01:46",
+        "text_l2": "But the problem is that"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "بكرة عندي تسليم كبير",
+        "timestamp": "01:48",
+        "text_l2": "Tomorrow I have a big delivery"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "وبده تركيز وشغل",
+        "timestamp": "01:49",
+        "text_l2": "And it needs focus and work"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "شو رأيك تاخد سالي معك بدالي؟",
+        "timestamp": "01:51",
+        "text_l2": "What if you take Sally with you instead of me?"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "ماشي خلص بلاش",
+        "timestamp": "01:54",
+        "text_l2": "Okay, fine, never mind"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "يلا دايمة",
+        "timestamp": "01:57",
+        "text_l2": "May it always be plenty"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "بليز بليز دير بالك يا عطا",
+        "timestamp": "02:00",
+        "text_l2": "Please, please be careful, Ata"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "هذا السايد لامب",
+        "timestamp": "02:02",
+        "text_l2": "This side lamp"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "من محل الانتيكس الغالي كتير",
+        "timestamp": "02:03",
+        "text_l2": "Is from the very expensive antiques shop"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "اللي بآخر الحارة",
+        "timestamp": "02:05",
+        "text_l2": "At the end of the neighborhood"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "يا عيب الشوم يا أم إنصاف",
+        "timestamp": "02:06",
+        "text_l2": "Shame on you, Um Insaf"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "يعني كله تغيير فيش",
+        "timestamp": "02:08",
+        "text_l2": "I mean, it's just changing a plug"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "ما بدها وصاية",
+        "timestamp": "02:09",
+        "text_l2": "It doesn't need supervision"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "يعني بس حبيت أخبرك",
+        "timestamp": "02:11",
+        "text_l2": "I just wanted to let you know"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "أهلاً أبو خالد",
+        "timestamp": "02:14",
+        "text_l2": "Hello Abu Khalid"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "شو صار باللحمة؟",
+        "timestamp": "02:15",
+        "text_l2": "What happened with the meat?"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "بدي إياها ضروري ليوم الجمعة",
+        "timestamp": "02:17",
+        "text_l2": "I need it urgently for Friday"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "عندي عزومة",
+        "timestamp": "02:18",
+        "text_l2": "I have a dinner party"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "وبدي إشي يبيّض الوجه",
+        "timestamp": "02:20",
+        "text_l2": "And I want something that makes me look good"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "تمام",
+        "timestamp": "02:22",
+        "text_l2": "Alright"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "ما بدي أرجع أوصيك",
+        "timestamp": "02:23",
+        "text_l2": "I don't want to have to remind you again"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "وإكراميتك جاهزة",
+        "timestamp": "02:25",
+        "text_l2": "And your tip is ready"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "أوف أوف أوف أوف",
+        "timestamp": "02:26",
+        "text_l2": "Oof oof oof oof"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "شو صار؟",
+        "timestamp": "02:28",
+        "text_l2": "What happened?"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "هذا السلك لأنه أنتيكة قديم",
+        "timestamp": "02:29",
+        "text_l2": "This wire, because it's an old antique"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "ما زبط معي",
+        "timestamp": "02:31",
+        "text_l2": "It didn't work out for me"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "خلص الجمعة بمر عليكي وبزبطه",
+        "timestamp": "02:33",
+        "text_l2": "Fine, on Friday I'll stop by and fix it"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "وعد",
+        "timestamp": "02:36",
+        "text_l2": "Promise"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "بس أنا الجمعة مش فاضية",
+        "timestamp": "02:37",
+        "text_l2": "But I'm not free on Friday"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "إنتي ما يهمك",
+        "timestamp": "02:39",
+        "text_l2": "Don't you worry"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "بجيبلك معي فيش أنتيك",
+        "timestamp": "02:40",
+        "text_l2": "I'll bring an antique plug with me"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "أوتنتيك ها",
+        "timestamp": "02:42",
+        "text_l2": "Authentic, huh"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "وببيّض الوجه",
+        "timestamp": "02:44",
+        "text_l2": "And it will make you look good"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "وبعمله بسرعة",
+        "timestamp": "02:45",
+        "text_l2": "And I'll do it quickly"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "وبضل طالع",
+        "timestamp": "02:47",
+        "text_l2": "And I'll be on my way"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "سلام",
+        "timestamp": "02:48",
+        "text_l2": "Bye"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "شكلها واقع على يوم الجمعة",
+        "timestamp": "02:51",
+        "text_l2": "Looks like everything is falling on Friday"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "فيها الشغلة مناسف",
+        "timestamp": "02:53",
+        "text_l2": "There are Mansafs involved in this matter"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "إذا بتحبوا المناسف",
+        "timestamp": "02:55",
+        "text_l2": "If you like Mansaf"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "اكتبوا بالتعليقات واعملولي سبسكرايب",
+        "timestamp": "02:57",
+        "text_l2": "Write in the comments and subscribe to me"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "مرحبا ماما وين البابا؟",
+        "timestamp": "03:02",
+        "text_l2": "Hi Mom, where is Dad?"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "البابا رجع تعبان من الشغل",
+        "timestamp": "03:04",
+        "text_l2": "Dad came back tired from work"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "وهلا دخل ينام",
+        "timestamp": "03:06",
+        "text_l2": "And he just went in to sleep"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "ماما شو عم تعملي؟",
+        "timestamp": "03:08",
+        "text_l2": "Mom, what are you doing?"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "بطل في وسع بالمطبخ",
+        "timestamp": "03:10",
+        "text_l2": "There's no more room in the kitchen"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "وفي كتير أشياء صارلي كتير ما استعملتها",
+        "timestamp": "03:12",
+        "text_l2": "And there are many things I haven't used for a long time"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "مش عارفة شو أعمل فيها",
+        "timestamp": "03:14",
+        "text_l2": "I don't know what to do with them"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "ماما ما تقلقي أنا بدبّرهم",
+        "timestamp": "03:16",
+        "text_l2": "Mom, don't worry, I'll handle them"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "إنتي بس حطي كل الأغراض",
+        "timestamp": "03:18",
+        "text_l2": "You just put all the items"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "اللي ما بتحتاجيهم على الطاولة",
+        "timestamp": "03:20",
+        "text_l2": "That you don't need on the table"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "سالي تعالي معي",
+        "timestamp": "03:22",
+        "text_l2": "Sally, come with me"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "آخر الدراسات بتقول",
+        "timestamp": "03:25",
+        "text_l2": "The latest studies say"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "إنه الواحد لازم يكون مينيماليست",
+        "timestamp": "03:27",
+        "text_l2": "That one should be a minimalist"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "بقلل التوتر وبيساعد على التركيز",
+        "timestamp": "03:29",
+        "text_l2": "It reduces stress and helps with focus"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "وبعطي راحة نفسية",
+        "timestamp": "03:31",
+        "text_l2": "And gives psychological comfort"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "مش فاهمة ولا كلمة حكيتها",
+        "timestamp": "03:33",
+        "text_l2": "I don't understand a single word you said"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "إنتي بس أعطيني كل إشي",
+        "timestamp": "03:35",
+        "text_l2": "You just give me everything"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "ما لبستيه صارلك سنة",
+        "timestamp": "03:36",
+        "text_l2": "You haven't worn for a year"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "سامر هذا الكرسي بتقعد عليه",
+        "timestamp": "03:39",
+        "text_l2": "Samer, this chair you sit on"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "مرة بالشهر",
+        "timestamp": "03:41",
+        "text_l2": "Once a month"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "قوم شوي",
+        "timestamp": "03:42",
+        "text_l2": "Get up for a bit"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "برافو حبيبي",
+        "timestamp": "03:48",
+        "text_l2": "Bravo, honey"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "سالي هاي البلوزة كتير كنت أحبها عليكي",
+        "timestamp": "03:56",
+        "text_l2": "Sally, I used to love this blouse on you"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "دورت الدنيا وما لقيت زيها",
+        "timestamp": "03:59",
+        "text_l2": "I searched the whole world and didn't find anything like it"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "وهلا هلا شريتها أونلاين من عند سند",
+        "timestamp": "04:01",
+        "text_l2": "And just now, I bought it online from Sanad"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "ممتاز حبيبتي",
+        "timestamp": "04:04",
+        "text_l2": "Excellent, honey"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "بس ما تنسي تغسليها",
+        "timestamp": "04:05",
+        "text_l2": "But don't forget to wash it"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "لأني صارلي سنة مش لابستها",
+        "timestamp": "04:07",
+        "text_l2": "Because I haven't worn it for a year"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "سند يلا بدنا نروح عالبيت",
+        "timestamp": "04:13",
+        "text_l2": "Sanad, come on, we want to go home"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "خلص يا جماعة بكرة بنكمل",
+        "timestamp": "04:16",
+        "text_l2": "That's it everyone, we'll continue tomorrow"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "شكراً لتفاعلكم شكراً",
+        "timestamp": "04:18",
+        "text_l2": "Thank you for your interaction, thank you"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "تفضل قدامي",
+        "timestamp": "04:21",
+        "text_l2": "Go ahead in front of me"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "بتعرف لو ما بعرف شو عم تعمل",
+        "timestamp": "04:22",
+        "text_l2": "You know, if I didn't know what you were doing"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "كان فعصتك فعص",
+        "timestamp": "04:24",
+        "text_l2": "I would have crushed you"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "شو سند مشيت الأمور؟",
+        "timestamp": "04:25",
+        "text_l2": "So Sanad, did things go well?"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "الوضع لوز",
+        "timestamp": "04:27",
+        "text_l2": "The situation is perfect"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "شو الخطّة هليلة؟",
+        "timestamp": "04:29",
+        "text_l2": "What's the plan tonight?"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "جهز حالك اليوم",
+        "timestamp": "04:30",
+        "text_l2": "Get yourself ready today"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "عندنا مشوار مهم",
+        "timestamp": "04:32",
+        "text_l2": "We have an important errand"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "ألو عطا كيفك حبيبي؟",
+        "timestamp": "04:34",
+        "text_l2": "Hello Ata, how are you, dear?"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "اسمع أم سند عندها ماكينة قهوة قديمة",
+        "timestamp": "04:36",
+        "text_l2": "Listen, Um Sanad has an old coffee machine"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "مش عم تشتغل",
+        "timestamp": "04:39",
+        "text_l2": "It's not working"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "ومش عارف شو مالها",
+        "timestamp": "04:40",
+        "text_l2": "And I don't know what's wrong with it"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "بتقدر تيجي تشوف شو قصتها اليوم؟",
+        "timestamp": "04:41",
+        "text_l2": "Can you come see what's up with it today?"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "حبيبي أبو سند من عيوني",
+        "timestamp": "04:43",
+        "text_l2": "My dear Abu Sanad, with pleasure"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "بس أنا مشغول مشغول مشغول مشغول",
+        "timestamp": "04:45",
+        "text_l2": "But I am busy, busy, busy, busy"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "خلص بمرلك يوم الجمعة",
+        "timestamp": "04:48",
+        "text_l2": "Fine, I'll stop by on Friday"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "يا زلمة شو قصتك مع يوم الجمعة؟",
+        "timestamp": "04:50",
+        "text_l2": "Man, what's your story with Friday?"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "أبو يزن بيقولي إنك جاي يوم الجمعة",
+        "timestamp": "04:52",
+        "text_l2": "Abu Yazan tells me you're coming on Friday"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "وأبو إنصاف بيقولي إنك رح تمر يوم الجمعة",
+        "timestamp": "04:54",
+        "text_l2": "And Abu Insaf tells me you'll stop by on Friday"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "طيب ماشي بس بستناك سلام",
+        "timestamp": "04:57",
+        "text_l2": "Alright fine, but I'll be waiting for you, bye"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "مرحبا عمو",
+        "timestamp": "05:02",
+        "text_l2": "Hello uncle"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "قصدي مرحبا معلم",
+        "timestamp": "05:03",
+        "text_l2": "I mean, hello boss"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "إحنا بدنا نقدم لشغل في شركتكم",
+        "timestamp": "05:05",
+        "text_l2": "We want to apply for a job in your company"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "كيف ممكن نقدم طلب؟",
+        "timestamp": "05:07",
+        "text_l2": "How can we submit an application?"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "أهلاً وسهلاً",
+        "timestamp": "05:10",
+        "text_l2": "Welcome"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "على شو بدكم تقدموا؟",
+        "timestamp": "05:11",
+        "text_l2": "What do you want to apply for?"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "على وظيفتك",
+        "timestamp": "05:13",
+        "text_l2": "For your job"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "على وظيفة مثل وظيفتك",
+        "timestamp": "05:14",
+        "text_l2": "For a job like yours"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "الطلبات مش عندي",
+        "timestamp": "05:17",
+        "text_l2": "The applications aren't with me"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "اطلعوا دغري وبعدين يمين",
+        "timestamp": "05:18",
+        "text_l2": "Go straight up and then right"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "بتلاقوا قسم الموارد البشرية",
+        "timestamp": "05:20",
+        "text_l2": "You'll find the Human Resources department"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "رحنا بس ما لقينا حدا",
+        "timestamp": "05:22",
+        "text_l2": "We went but didn't find anyone"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "طب ممكن نسأل عن الراتب؟",
+        "timestamp": "05:24",
+        "text_l2": "Well, can we ask about the salary?"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "راتب شو؟",
+        "timestamp": "05:27",
+        "text_l2": "Salary of what?"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "راتبك",
+        "timestamp": "05:28",
+        "text_l2": "Your salary"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "قصدي راتب مدير مثلك",
+        "timestamp": "05:29",
+        "text_l2": "I mean the salary of a manager like you"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "آه",
+        "timestamp": "05:32",
+        "text_l2": "Ah"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "تقدروا تيجوا بوقت تاني",
+        "timestamp": "05:33",
+        "text_l2": "You can come another time"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "أنا كتير مشغول هلا",
+        "timestamp": "05:35",
+        "text_l2": "I'm very busy now"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "ما عندي وقت للحكي",
+        "timestamp": "05:36",
+        "text_l2": "I don't have time for talking"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "إنت دائماً مشغول",
+        "timestamp": "05:38",
+        "text_l2": "You are always busy"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "قصدي المدير دائماً مشغول",
+        "timestamp": "05:40",
+        "text_l2": "I mean the manager is always busy"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "سلام",
+        "timestamp": "05:42",
+        "text_l2": "Bye"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "دقيقة دقيقة شوي",
+        "timestamp": "05:44",
+        "text_l2": "Wait, wait a second"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "هذا الصوت مألوف",
+        "timestamp": "05:46",
+        "text_l2": "This voice is familiar"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "هذا الجاكيت مش غريب عليّ",
+        "timestamp": "05:48",
+        "text_l2": "This jacket isn't strange to me"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "وهذا الجاكيت كمان",
+        "timestamp": "05:51",
+        "text_l2": "And this jacket too"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "ولكم شو بدكم براتبي ها؟",
+        "timestamp": "05:54",
+        "text_l2": "Hey you guys, what do you want with my salary, huh?"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "هي كل المصاري اللي جمعتها",
+        "timestamp": "06:00",
+        "text_l2": "Here is all the money I collected"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "أنا مش فاهم ولا إشي",
+        "timestamp": "06:03",
+        "text_l2": "I don't understand anything"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "ليش هاي المصاري؟",
+        "timestamp": "06:05",
+        "text_l2": "Why this money?"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "وليش بدك تعرف راتبي؟",
+        "timestamp": "06:06",
+        "text_l2": "Why do you want to know my salary?"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "بابا إنت دائماً معجوق كتير بالشغل",
+        "timestamp": "06:08",
+        "text_l2": "Dad, you're always so swamped with work"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "وبس ترجع بتكون تعبان",
+        "timestamp": "06:11",
+        "text_l2": "And when you return, you're tired"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "وإحنا بنقدّر تعبك",
+        "timestamp": "06:12",
+        "text_l2": "And we appreciate your hard work"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "وبنعرف إنه عليك كتير مسؤوليات",
+        "timestamp": "06:14",
+        "text_l2": "And we know you have many responsibilities"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "بس أنا اشتقت أحكي معك",
+        "timestamp": "06:16",
+        "text_l2": "But I missed talking to you"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "وألعب معك ونقضي وقت مع بعض",
+        "timestamp": "06:18",
+        "text_l2": "And playing with you and spending time together"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "فـ",
+        "timestamp": "06:21",
+        "text_l2": "So..."
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "سند باع كل إشي بالبيت ما بنحتاجه",
+        "timestamp": "06:22",
+        "text_l2": "Sanad sold everything in the house we don't need"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "وأشياء بنحتاجها كمان",
+        "timestamp": "06:25",
+        "text_l2": "And things we need too"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "بقول وين راح شاحني",
+        "timestamp": "06:27",
+        "text_l2": "I was saying, where did my charger go?"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "صارلي يومين بدور عليه",
+        "timestamp": "06:28",
+        "text_l2": "I've been looking for it for two days"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "بابا أنا إجيت على شغلك عشان أعرف قديش راتبك",
+        "timestamp": "06:30",
+        "text_l2": "Dad, I came to your work to know how much your salary is"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "وبعت الأغراض عشان أجمع راتبك ليومين",
+        "timestamp": "06:33",
+        "text_l2": "And I sold the things to collect your salary for two days"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "وادفعلك إياهم ونقدر نقضي وقت مع بعض",
+        "timestamp": "06:36",
+        "text_l2": "And pay them to you so we can spend time together"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "أنا بعتذر إني تأخرت عليك",
+        "timestamp": "06:46",
+        "text_l2": "I apologize for being late to you"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "وصار عندي مشكلة بفاتورة الكهرباء",
+        "timestamp": "06:48",
+        "text_l2": "And I had a problem with the electricity bill"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "وقطعوها عني",
+        "timestamp": "06:50",
+        "text_l2": "And they cut it off on me"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "ولا فرق معاهم إني زلمة كهربجي",
+        "timestamp": "06:51",
+        "text_l2": "And it didn't matter to them that I'm an electrician"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "على أساس مش ملحق شغل",
+        "timestamp": "06:54",
+        "text_l2": "Supposedly you can't keep up with work"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "ودائماً مشغول",
+        "timestamp": "06:56",
+        "text_l2": "And always busy"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "وما بتقدر تيجي غير بس يوم الجمعة ها؟",
+        "timestamp": "06:57",
+        "text_l2": "And you can't come except on Friday, huh?"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "بصراحة أنا",
+        "timestamp": "07:00",
+        "text_l2": "To be honest, I..."
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "أنا بحب آجي عندكم يوم الجمعة",
+        "timestamp": "07:05",
+        "text_l2": "I love coming to your place on Friday"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "لأنه أجواء العمارة بصراحة جداً عائلية وحلوة",
+        "timestamp": "07:07",
+        "text_l2": "Because the building's atmosphere is honestly very family-like and nice"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "وبحب أقضي معاكم وقت",
+        "timestamp": "07:11",
+        "text_l2": "And I love spending time with you"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "ومنسف أم إنصاف ما بيتعوض",
+        "timestamp": "07:14",
+        "text_l2": "And Um Insaf's Mansaf is irreplaceable"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "خاصة مع الجميد الكركي",
+        "timestamp": "07:16",
+        "text_l2": "Especially with the Karaki Jameed"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "آه هذا هو السبب",
+        "timestamp": "07:19",
+        "text_l2": "Ah, so that's the reason"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "مين فيكم بتطلعوا علي؟",
+        "timestamp": "07:22",
+        "text_l2": "Which one of you is looking at me?"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "هذا ما بيعني إنه يوم الجمعة ما إله تسعيرة خاصة ها",
+        "timestamp": "07:24",
+        "text_l2": "This doesn't mean that Friday doesn't have a special rate, huh"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "بمزح معاكم",
+        "timestamp": "07:28",
+        "text_l2": "I'm joking with you"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "بعرف إنه إحنا كأهل عندنا مشاغل",
+        "timestamp": "07:32",
+        "text_l2": "I know that we as parents have preoccupations"
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "ومشاكل كتيرة",
+        "timestamp": "07:35",
+        "text_l2": "And many problems"
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "بس مش لازم ننسى نقضي وقت مع عيلتنا ومع أولادنا",
+        "timestamp": "07:36",
+        "text_l2": "But we shouldn't forget to spend time with our family and our children"
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "وبصراحة هذا أهم من كل إشي",
+        "timestamp": "07:39",
+        "text_l2": "And honestly, this is more important than everything"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "وحلو نفكر في الناس اللي حوالينا",
+        "timestamp": "07:43",
+        "text_l2": "And it's nice to think about the people around us"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "اللي بيشتاقوا يقضوا وقت عائلي",
+        "timestamp": "07:45",
+        "text_l2": "Who miss spending family time"
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "ونكون إحنا عيلتهم",
+        "timestamp": "07:47",
+        "text_l2": "And for us to be their family"
+      },
+      {
+        "id": "phrase_209",
+        "text_l1": "اتفضلوا يا جماعة المنسف جاهز",
+        "timestamp": "07:50",
+        "text_l2": "Come in everyone, the Mansaf is ready"
+      },
+      {
+        "id": "phrase_210",
+        "text_l1": "أهلاً وسهلاً فيكم جميعاً",
+        "timestamp": "07:53",
+        "text_l2": "Welcome to you all"
+      }
+    ],
+    "phrases_with_token_translations": "[جبت] أعلى سكور => [I got] the highest score\nجبت [أعلى] سكور => I got [the highest] score\nجبت أعلى [سكور] => I got the highest [score]\n\n[بس] هذا المشروع بده موظفين => [But] this project needs employees\nبس [هذا] المشروع بده موظفين => But [this] project needs employees\nبس هذا [المشروع] بده موظفين => But this [project] needs employees\nبس هذا المشروع [بده] موظفين => But this project [needs] employees\nبس هذا المشروع بده [موظفين] => But this project needs [employees]\n\n[أو] بده وقت => [Or] it needs time\nأو [بده] وقت => Or [it needs] time\nأو بده [وقت] => Or it needs [time]\n\n[ما بيزبط] هيك => [It doesn't work] like this\nما بيزبط [هيك] => It doesn't work [like this]\n\n[الخطّة] إنه إحنا قبل ما نقدّم => [The plan] is that before we apply\nالخطّة [إنه] إحنا قبل ما نقدّم => The plan [is that] before we apply\nالخطّة إنه [إحنا] قبل ما نقدّم => The plan is that [we] before we apply\nالخطّة إنه إحنا [قبل ما] نقدّم => The plan is that we [before] we apply\nالخطّة إنه إحنا قبل ما [نقدّم] => The plan is that before [we apply]\n\n[على] هيك عطاء => [For] such a tender\nعلى [هيك] عطاء => For [such] a tender\nعلى هيك [عطاء] => For such a [tender]\n\n[لازم] نكون جاهزين => [We must] be ready\nلازم [نكون] جاهزين => We must [be] ready\nلازم نكون [جاهزين] => We must be [ready]\n\n[سند] في إشي حبيبي؟ => [Sanad], is there something, honey?\nسند [في] إشي حبيبي؟ => Sanad, [is there] something, honey?\nسند في [إشي] حبيبي؟ => Sanad, is there [something], honey?\nسند في إشي [حبيبي]؟ => Sanad, is there something, [honey]?\n\n[لا] مش إشي مهم => [No], it's not something important\nلا [مش] إشي مهم => No, [it's not] something important\nلا مش [إشي] مهم => No, it's not [something] important\nلا مش إشي [مهم] => No, it's not something [important]\n\n[شغّل] المضخة أبو يزن => [Turn on] the pump, Abu Yazan\nشغّل [المضخة] أبو يزن => Turn on [the pump], Abu Yazan\nشغّل المضخة [أبو يزن] => Turn on the pump, [Abu Yazan]\n\n[وينك] أبو يزن؟ => [Where are you], Abu Yazan?\nوينك [أبو يزن]؟ => Where are you, [Abu Yazan]?\n\n[شغّل] المضخة => [Turn on] the pump\nشغّل [المضخة] => Turn on [the pump]\n\n[شغّلتها] => [I turned it on]\n\n[شو] اشتغلت؟ => [Did] it work?\nشو [اشتغلت]؟ => Did [it work]?\n\n[لا] خيو ما اشتغلت => [No] brother, it didn't work\nلا [خيو] ما اشتغلت => No [brother], it didn't work\nلا خيو [ما اشتغلت] => No brother, [it didn't work]\n\n[شكلها] بدها تغيير الكابستور => [It looks like] it needs a capacitor change\nشكلها [بدها] تغيير الكابستور => It looks like [it needs] a capacitor change\nشكلها بدها [تغيير] الكابستور => It looks like it needs a [change] the capacitor # use custom because \"change\" translates to \"تغيير\" but needs repositioning\nشكلها بدها تغيير [الكابستور] => It looks like it needs a [capacitor] change\n\n[و]المكثف => [And] the condenser\nو[المكثف] => And [the condenser]\n\n[خلص] خلص بجيك يوم الجمعة => [Fine], fine, I'll come to you on Friday\nخلص [خلص] بجيك يوم الجمعة => Fine, [fine], I'll come to you on Friday\nخلص خلص [بجيك] يوم الجمعة => Fine, fine, [I'll come to you] on Friday\nخلص خلص بجيك [يوم الجمعة] => Fine, fine, I'll come to you [on Friday]\n\n[أبشر] => [You got it]\n\n[لا] لا لا يا عطا دخيلك => [No] no no, Ata, I beg you\nلا [لا] لا يا عطا دخيلك => No [no] no, Ata, I beg you\nلا لا [لا] يا عطا دخيلك => No no [no], Ata, I beg you\nلا لا لا [يا عطا] دخيلك => No no no, [Ata], I beg you\nلا لا لا يا عطا [دخيلك] => No no no, Ata, [I beg you]\n\n[بلاش] تيجي المي ونتبهدل هالاسبوع => [Lest] the water comes and we get in a mess this week\nبلاش [تيجي] المي ونتبهدل هالاسبوع => Lest [comes] the water and we get in a mess this week\nبلاش تيجي [المي] ونتبهدل هالاسبوع => Lest the [water] comes and we get in a mess this week\nبلاش تيجي المي [ونتبهدل] هالاسبوع => Lest the water comes [and we get in a mess] this week\nبلاش تيجي المي ونتبهدل [هالاسبوع] => Lest the water comes and we get in a mess [this week]\n\n[المي] لا عمي المي بتيجي يوم السبت => [The water], no uncle, the water comes on Saturday\nالمي [لا] عمي المي بتيجي يوم السبت => The water, [no] uncle, the water comes on Saturday\nالمي لا [عمي] المي بتيجي يوم السبت => The water, no [uncle], the water comes on Saturday\nالمي لا عمي [المي بتيجي] يوم السبت => The water, no uncle, [the water comes] on Saturday\nالمي لا عمي المي بتيجي [يوم السبت] => The water, no uncle, the water comes [on Saturday]\n\n[أنا] هالايام كتير مشغول => [I] am very busy these days\nأنا [هالايام] كتير مشغول => I am very busy [these days]\nأنا هالايام [كتير] مشغول => I am [very] busy these days\nأنا هالايام كتير [مشغول] => I am very [busy] these days\n\n[الجمعة] بكون مركز => [On Friday] I'll be focused\nالجمعة [بكون] مركز => On Friday [I'll be] focused\nالجمعة بكون [مركز] => On Friday I'll be [focused]\n\n[وبعملك] إياها على رواق => [And I'll do] it for you calmly\nوبعملك [إياها] على رواق => And I'll do [it] for you calmly\nوبعملك إياها [على رواق] => And I'll do it for you [calmly]\n\n[صدقني] رح أزرّقلك إياها تزريق => [Trust me], I'll squeeze it in for you\nصدقني [رح أزرّقلك إياها تزريق] => Trust me, [I'll squeeze it in for you]\n\n[هسا] دورك إنت تزرّقلنا => [Now] it's your turn to squeeze us in\nهسا [دورك إنت] تزرّقلنا => Now [it's your turn] to squeeze us in\nهسا دورك إنت [تزرّقلنا] => Now it's your turn [to squeeze us in]\n\n[نفسي] أرجع مرة على البيت => [I wish] I could return home once\nنفسي [أرجع] مرة على البيت => I wish I could [return] home once\nنفسي أرجع [مرة] على البيت => I wish I could return home [once]\nنفسي أرجع مرة [على البيت] => I wish I could return [home] once\n\n[ما] يكون عندنا واجبات => [Without] us having homework\nما يكون [عندنا] واجبات => Without [us having] homework\nما يكون عندنا [واجبات] => Without us having [homework]\n\n[خمس] واجبات؟ => [Five] homework assignments?\nخمس [واجبات]؟ => Five [homework assignments]?\n\n[بالأحلام] حبيبتي => [In your dreams], honey\nبالأحلام [حبيبتي] => In your dreams, [honey]\n\n[يعني] إنت حجزت ملعب القدم؟ => [So] you booked the football pitch?\nيعني [إنت] حجزت ملعب القدم؟ => So [you] booked the football pitch?\nيعني إنت [حجزت] ملعب القدم؟ => So you [booked] the football pitch?\nيعني إنت حجزت [ملعب القدم]؟ => So you booked [the football pitch]?\n\n[حجزت] ودفعت => [I booked] and paid\nحجزت [و] دفعت => I booked [and] paid\nحجزت و[دفعت] => I booked and [paid]\n\n[مش معقول] هدول الولاد => [Unbelievable], these kids\nمش معقول [هدول] الولاد => Unbelievable, [these] kids\nمش معقول هدول [الولاد] => Unbelievable, these [kids]\n\n[ما بصير] يلغوا آخر لحظة => [They shouldn't] cancel at the last minute\nما بصير [يلغوا] آخر لحظة => They shouldn't [cancel] at the last minute\nما بصير يلغوا [آخر لحظة] => They shouldn't cancel [at the last minute]\n\n[خلص] مش مشكلة => [Fine], no problem\nخلص [مش مشكلة] => Fine, [no problem]\n\n[بس] مش رح نلعب أنا وإياك لحالنا => [But] we won't play just you and I alone\nبس [مش رح نلعب] أنا وإياك لحالنا => But [we won't play] just you and I alone\nبس مش رح [نلعب] أنا وإياك لحالنا => But we won't [play] just you and I alone\nبس مش رح نلعب [أنا وإياك] لحالنا => But we won't play [just you and I] alone\nبس مش رح نلعب أنا وإياك [لحالنا] => But we won't play just you and I [alone]\n\n[لا] مشكلة => [No] problem\nلا [مشكلة] => No [problem]\n\n[أقولك] أنا عندي فكرة => [I tell you], I have an idea\nأقولك [أنا] عندي فكرة => I tell you, [I] have an idea\nأقولك أنا [عندي فكرة] => I tell you, I [have an idea]\nأقولك أنا عندي [فكرة] => I tell you, I have an [idea]\n\n[وهيك] بدل ما يروح الحجز => [And this way], instead of the booking going to waste\nوهيك [بدل ما] يروح الحجز => And this way, [instead of] the booking going to waste\nوهيك بدل ما [يروح الحجز] => And this way, instead of [the booking going to waste]\n\n[بابا] أنا وإياك بنكون فريق => [Dad], you and I will be a team\nبابا [أنا وإياك] بنكون فريق => Dad, [you and I] will be a team\nبابا أنا وإياك [بنكون] فريق => Dad, you and I [will be] a team\nبابا أنا وإياك بنكون [فريق] => Dad, you and I will be a [team]\n\n[ويزن] وأبوه بكونوا فريق => [And Yazan] and his dad will be a team\nويزن [وأبوه] بكونوا فريق => And Yazan [and his dad] will be a team\nويزن وأبوه [بكونوا] فريق => And Yazan and his dad [will be] a team\nويزن وأبوه بكونوا [فريق] => And Yazan and his dad will be a [team]\n\n[شو رأيك] => [What do you think?]\n\n[زمان] ما لعبنا مع بعض => [It's been a long time] since we played together\nزمان [ما لعبنا] مع بعض => It's been a long time [since we played] together\nزمان ما لعبنا [مع بعض] => It's been a long time since we played [together]\n\n[فكرة] حلوة كتير => A very nice [idea]\nفكرة [حلوة] كتير => A very [nice] idea\nفكرة حلوة [كتير] => A [very] nice idea\n\n[أكيد] حلوة => [Of course] it's nice\nأكيد [حلوة] => Of course it's [nice]\n\n[بس] المشكلة إنه => [But] the problem is that\nبس [المشكلة] إنه => But [the problem] is that\nبس المشكلة [إنه] => But the problem [is that]\n\n[بكرة] عندي تسليم كبير => [Tomorrow] I have a big delivery\nبكرة [عندي] تسليم كبير => Tomorrow [I have] a big delivery\nبكرة عندي [تسليم] كبير => Tomorrow I have a big [delivery]\nبكرة عندي تسليم [كبير] => Tomorrow I have a [big] delivery\n\n[وبده] تركيز وشغل => [And it needs] focus and work\nوبده [تركيز] وشغل => And it needs [focus] and work\nوبده تركيز [وشغل] => And it needs focus [and work]\n\n[شو رأيك] تاخد سالي معك بدالي؟ => [What if] you take Sally with you instead of me?\nشو رأيك [تاخد] سالي معك بدالي؟ => What if [you take] Sally with you instead of me?\nشو رأيك تاخد [سالي] معك بدالي؟ => What if you take [Sally] with you instead of me?\nشو رأيك تاخد سالي [معك] بدالي؟ => What if you take Sally [with you] instead of me?\nشو رأيك تاخد سالي معك [بدالي]؟ => What if you take Sally with you [instead of me]?\n\n[ماشي] خلص بلاش => [Okay], fine, never mind\nماشي [خلص] بلاش => Okay, [fine] never mind\nماشي خلص [بلاش] => Okay, fine, [never mind]\n\n[يلا دايمة] => [May it always be plenty]\n\n[بليز] بليز دير بالك يا عطا => [Please], please be careful, Ata\nبليز [بليز] دير بالك يا عطا => Please, [please] be careful, Ata\nبليز بليز [دير بالك] يا عطا => Please, please [be careful], Ata\nبليز بليز دير بالك [يا عطا] => Please, please be careful, [Ata]\n\n[هذا] السايد لامب => [This] side lamp\nهذا [السايد لامب] => This [side lamp]\n\n[من] محل الانتيكس الغالي كتير => Is [from] the very expensive antiques shop\nمن [محل] الانتيكس الغالي كتير => Is from the very expensive antiques [shop]\nمن محل [الانتيكس] الغالي كتير => Is from the very expensive [antiques] shop\nمن محل الانتيكس [الغالي كتير] => Is from the [very expensive] antiques shop\n\n[اللي بآخر الحارة] => [At the end of the neighborhood]\n\n[يا عيب الشوم] يا أم إنصاف => [Shame on you], Um Insaf\nيا عيب الشوم [يا أم إنصاف] => Shame on you, [Um Insaf]\n\n[يعني] كله تغيير فيش => [I mean], it's just changing a plug\nيعني [كله] تغيير فيش => I mean, [it's just] changing a plug\nيعني كله [تغيير] فيش => I mean, it's just [changing] a plug\nيعني كله تغيير [فيش] => I mean, it's just changing [a plug]\n\n[ما بدها] وصاية => [It doesn't need] supervision\nما بدها [وصاية] => It doesn't need [supervision]\n\n[يعني بس حبيت] أخبرك => [I just wanted] to let you know\nيعني بس حبيت [أخبرك] => I just wanted [to let you know]\n\n[أهلاً] أبو خالد => [Hello] Abu Khalid\nأهلاً [أبو خالد] => Hello [Abu Khalid]\n\n[شو] صار باللحمة؟ => [What] happened with the meat?\nشو [صار] باللحمة؟ => What [happened] with the meat?\nشو صار [باللحمة]؟ => What happened [with the meat]?\n\n[بدي] إياها ضروري ليوم الجمعة => [I need] it urgently for Friday\nبدي [إياها] ضروري ليوم الجمعة => I need [it] urgently for Friday\nبدي إياها [ضروري] ليوم الجمعة => I need it [urgently] for Friday\nبدي إياها ضروري [ليوم الجمعة] => I need it urgently [for Friday]\n\n[عندي] عزومة => [I have] a dinner party\nعندي [عزومة] => I have [a dinner party]\n\n[وبدي] إشي يبيّض الوجه => [And I want] something that makes me look good\nوبدي [إشي] يبيّض الوجه => And I want [something] that makes me look good\nوبدي إشي [يبيّض الوجه] => And I want something [that makes me look good]\n\n[تمام] => [Alright]\n\n[ما بدي] أرجع أوصيك => [I don't want] to have to remind you again\nما بدي [أرجع أوصيك] => I don't want [to have to remind you again]\n\n[وإكراميتك] جاهزة => [And your tip] is ready\nوإكراميتك [جاهزة] => And your tip [is ready]\n\n[أوف] أوف أوف أوف => [Oof] oof oof oof\nأوف [أوف] أوف أوف => Oof [oof] oof oof\nأوف أوف [أوف] أوف => Oof oof [oof] oof\nأوف أوف أوف [أوف] => Oof oof oof [oof]\n\n[شو] صار؟ => [What] happened?\nشو [صار]؟ => What [happened]?\n\n[هذا] السلك لأنه أنتيكة قديم => [This] wire, because it's an old antique\nهذا [السلك] لأنه أنتيكة قديم => This [wire], because it's an old antique\nهذا السلك [لأنه] أنتيكة قديم => This wire, [because it's] an old antique\nهذا السلك لأنه [أنتيكة قديم] => This wire, because it's [an old antique]\n\n[ما زبط] معي => [It didn't work out] for me\nما زبط [معي] => It didn't work out [for me]\n\n[خلص] الجمعة بمر عليكي وبزبطه => [Fine], on Friday I'll stop by and fix it\nخلص [الجمعة] بمر عليكي وبزبطه => Fine, [on Friday] I'll stop by and fix it\nخلص الجمعة [بمر عليكي] وبزبطه => Fine, on Friday [I'll stop by] and fix it\nخلص الجمعة بمر عليكي [وبزبطه] => Fine, on Friday I'll stop by [and fix it]\n\n[وعد] => [Promise]\n\n[بس] أنا الجمعة مش فاضية => [But] I'm not free on Friday\nبس [أنا] الجمعة مش فاضية => But [I'm] not free on Friday\nبس أنا [الجمعة] مش فاضية => But I'm not free [on Friday]\nبس أنا الجمعة [مش] فاضية => But I'm [not] free on Friday\nبس أنا الجمعة مش [فاضية] => But I'm not [free] on Friday\n\n[إنتي ما يهمك] => [Don't you worry]\n\n[بجيبلك] معي فيش أنتيك => [I'll bring] an antique plug with me\nبجيبلك [معي] فيش أنتيك => I'll bring an antique plug [with me]\nبجيبلك معي [فيش] أنتيك => I'll bring an antique [plug] with me\nبجيبلك معي فيش [أنتيك] => I'll bring [an antique] plug with me\n\n[أوتنتيك] ها => [Authentic], huh\nأوتنتيك [ها] => Authentic, [huh]\n\n[و] ببيّض الوجه => [And] it will make you look good\nو[ببيّض الوجه] => And [it will make you look good]\nوببيّض [الوجه] => the face, your face\n\n[و] بعمله بسرعة => [And] I'll do it quickly\nو[بعمله] بسرعة => And [I'll do it] quickly\nوبعمله [بسرعة] => And I'll do it [quickly]\n\n[و] بضل طالع => [And] I'll be on my way\nو[بضل طالع] => And [I'll be on my way]\n\n[سلام] => [Bye]\n\n[شكلها] واقع على يوم الجمعة => [Looks like] everything is falling on Friday\nشكلها [واقع] على يوم الجمعة => Looks like everything [is falling] on Friday\nشكلها واقع [على] يوم الجمعة => Looks like everything is falling [on] Friday\nشكلها واقع على [يوم الجمعة] => Looks like everything is falling on [Friday]\n\n[فيها] الشغلة مناسف => [There are] Mansafs involved in this matter\nفيها [الشغلة] مناسف => the matter, this thing\nفيها الشغلة [مناسف] => There are [Mansafs] involved in this matter\n\n[إذا] بتحبوا المناسف => [If] you like Mansaf\nإذا [بتحبوا] المناسف => If [you like] Mansaf\nإذا بتحبوا [المناسف] => If you like [Mansaf]\n\n[اكتبوا] بالتعليقات واعملولي سبسكرايب => [Write] in the comments and subscribe to me\nاكتبوا [بالتعليقات] واعملولي سبسكرايب => Write [in the comments] and subscribe to me\nاكتبوا بالتعليقات [واعملولي سبسكرايب] => Write in the comments [and subscribe to me]\n\n[مرحبا] ماما وين البابا؟ => [Hi] Mom, where is Dad?\nمرحبا [ماما] وين البابا؟ => Hi [Mom], where is Dad?\nمرحبا ماما [وين] البابا؟ => Hi Mom, [where is] Dad?\nمرحبا ماما وين [البابا]؟ => Hi Mom, where is [Dad]?\n\n[البابا] رجع تعبان من الشغل => [Dad] came back tired from work\nالبابا [رجع] تعبان من الشغل => Dad [came back] tired from work\nالبابا رجع [تعبان] من الشغل => Dad came back [tired] from work\nالبابا رجع تعبان [من الشغل] => Dad came back tired [from work]\n\n[وهلا] دخل ينام => [And he just] went in to sleep\nوهلا [دخل] ينام => And he just [went in] to sleep\nوهلا دخل [ينام] => And he just went in [to sleep]\n\n[ماما] شو عم تعملي؟ => [Mom], what are you doing?\nماما [شو] عم تعملي؟ => Mom, [what] are you doing?\nماما شو [عم تعملي]؟ => Mom, what [are you doing]?\n\n[بطل في] وسع بالمطبخ => [There's no more] room in the kitchen\nبطل في [وسع] بالمطبخ => There's no more [room] in the kitchen\nبطل في وسع [بالمطبخ] => There's no more room [in the kitchen]\n\n[وفي] كتير أشياء صارلي كتير ما استعملتها => [And there are] many things I haven't used for a long time\nوفي [كتير] أشياء صارلي كتير ما استعملتها => And there are [many] things I haven't used for a long time\nوفي كتير [أشياء] صارلي كتير ما استعملتها => And there are many [things] I haven't used for a long time\nوفي كتير أشياء [صارلي كتير ما استعملتها] => And there are many things [I haven't used for a long time]\n\n[مش عارفة] شو أعمل فيها => [I don't know] what to do with them\nمش عارفة [شو] أعمل فيها => I don't know [what] to do with them\nمش عارفة شو [أعمل فيها] => I don't know what [to do with them]\n\n[ماما] ما تقلقي أنا بدبّرهم => [Mom], don't worry, I'll handle them\nماما [ما تقلقي] أنا بدبّرهم => Mom, [don't worry], I'll handle them\nماما ما تقلقي [أنا بدبّرهم] => Mom, don't worry, [I'll handle them]\n\n[إنتي] بس حطي كل الأغراض => [You] just put all the items\nإنتي [بس] حطي كل الأغراض => You [just] put all the items\nإنتي بس [حطي] كل الأغراض => You just [put] all the items\nإنتي بس حطي [كل الأغراض] => You just put [all the items]\n\n[اللي] ما بتحتاجيهم على الطاولة => [That] you don't need on the table\nاللي [ما بتحتاجيهم] على الطاولة => That [you don't need] on the table\nاللي ما بتحتاجيهم [على الطاولة] => That you don't need [on the table]\n\n[سالي] تعالي معي => [Sally], come with me\nسالي [تعالي] معي => Sally, [come] with me\nسالي تعالي [معي] => Sally, come [with me]\n\n[آخر] الدراسات بتقول => [The latest] studies say\nآخر [الدراسات] بتقول => The latest [studies] say\nآخر الدراسات [بتقول] => The latest studies [say]\n\n[إنه] الواحد لازم يكون مينيماليست => [That] one should be a minimalist\nإنه [الواحد] لازم يكون مينيماليست => That [one] should be a minimalist\nإنه الواحد [لازم] يكون مينيماليست => That one [should] be a minimalist\nإنه الواحد لازم [يكون] مينيماليست => That one should [be] a minimalist\nإنه الواحد لازم يكون [مينيماليست] => That one should be [a minimalist]\n\n[بقلل] التوتر وبيساعد على التركيز => [It reduces] stress and helps with focus\nبقلل [التوتر] وبيساعد على التركيز => It reduces [stress] and helps with focus\nبقلل التوتر [وبيساعد] على التركيز => It reduces stress [and helps] with focus\nبقلل التوتر وبيساعد [على] التركيز => It reduces stress and helps [with] focus\nبقلل التوتر وبيساعد على [التركيز] => It reduces stress and helps with [focus]\n\n[وبعطي] راحة نفسية => [And gives] psychological comfort\nوبعطي [راحة نفسية] => And gives [psychological comfort]\n\n[مش فاهمة] ولا كلمة حكيتها => [I don't understand] a single word you said\nمش فاهمة [ولا كلمة] حكيتها => I don't understand [a single word] you said\nمش فاهمة ولا كلمة [حكيتها] => I don't understand a single word [you said]\n\n[إنتي] بس أعطيني كل إشي => [You] just give me everything\nإنتي [بس] أعطيني كل إشي => You [just] give me everything\nإنتي بس [أعطيني] كل إشي => You just [give me] everything\nإنتي بس أعطيني [كل إشي] => You just give me [everything]\n\n[ما] لبستيه صارلك سنة => You [haven't] worn for a year\nما [لبستيه] صارلك سنة => You haven't [worn] for a year\nما لبستيه [صارلك سنة] => You haven't worn [for a year]\n\n[سامر] هذا الكرسي بتقعد عليه => [Samer], this chair you sit on\nسامر [هذا] الكرسي بتقعد عليه => Samer, [this] chair you sit on\nسامر هذا [الكرسي] بتقعد عليه => Samer, this [chair] you sit on\nسامر هذا الكرسي [بتقعد] عليه => Samer, this chair [you sit] on\nسامر هذا الكرسي بتقعد [عليه] => Samer, this chair you sit [on]\n\n[مرة] بالشهر => [Once] a month\nمرة [بالشهر] => Once [a month]\n\n[قوم] شوي => [Get up] for a bit\nقوم [شوي] => Get up [for a bit]\n\n[برافو] حبيبي => [Bravo], honey\nبرافو [حبيبي] => Bravo, [honey]\n\n[سالي] هاي البلوزة كتير كنت أحبها عليكي => [Sally], I used to love this blouse on you\nسالي [هاي البلوزة] كتير كنت أحبها عليكي => Sally, [this blouse] I used to love on you\nسالي هاي [البلوزة] كتير كنت أحبها عليكي => Sally, I used to love this [blouse] on you\nسالي هاي البلوزة كتير [كنت أحبها] عليكي => Sally, this blouse [I used to love] on you\nسالي هاي البلوزة كتير كنت أحبها [عليكي] => Sally, I used to love this blouse [on you]\n\n[دورت] الدنيا وما لقيت زيها => [I searched] the whole world and didn't find anything like it\nدورت [الدنيا] وما لقيت زيها => I searched [the whole world] and didn't find anything like it\nدورت الدنيا [وما لقيت] زيها => I searched the whole world [and didn't find] anything like it\nدورت الدنيا وما لقيت [زيها] => I searched the whole world and didn't find anything [like it]\n\n[وهلا هلا] شريتها أونلاين من عند سند => [And just now], I bought it online from Sanad\nوهلا هلا [شريتها] أونلاين من عند سند => And just now, [I bought it] online from Sanad\nوهلا هلا شريتها [أونلاين] من عند سند => And just now, I bought it [online] from Sanad\nوهلا هلا شريتها أونلاين [من عند] سند => And just now, I bought it online [from] Sanad\nوهلا هلا شريتها أونلاين من عند [سند] => And just now, I bought it online from [Sanad]\n\n[ممتاز] حبيبتي => [Excellent], honey\nممتاز [حبيبتي] => Excellent, [honey]\n\n[بس] ما تنسي تغسليها => [But] don't forget to wash it\nبس [ما تنسي] تغسليها => But [don't forget] to wash it\nبس ما تنسي [تغسليها] => But don't forget [to wash it]\n\n[لأني] صارلي سنة مش لابستها => [Because] I haven't worn it for a year\nلأني [صارلي سنة] مش لابستها => Because I haven't worn it [for a year]\nلأني صارلي [سنة] مش لابستها => Because I haven't worn it for [a year]\nلأني صارلي سنة [مش لابستها] => Because [I haven't worn it] for a year\n\n[سند] يلا بدنا نروح عالبيت => [Sanad], come on, we want to go home\nسند [يلا] بدنا نروح عالبيت => Sanad, [come on], we want to go home\nسند يلا [بدنا] نروح عالبيت => Sanad, come on, [we want] to go home\nسند يلا بدنا [نروح] عالبيت => Sanad, come on, we want [to go] home\nسند يلا بدنا نروح [عالبيت] => Sanad, come on, we want to go [home]\n\n[خلص] يا جماعة بكرة بنكمل => [That's it] everyone, we'll continue tomorrow\nخلص [يا جماعة] بكرة بنكمل => That's it [everyone], we'll continue tomorrow\nخلص يا جماعة [بكرة] بنكمل => That's it everyone, we'll continue [tomorrow]\nخلص يا جماعة بكرة [بنكمل] => That's it everyone, tomorrow [we'll continue]\n\n[شكراً] لتفاعلكم شكراً => [Thank you] for your interaction, thank you\nشكراً [لتفاعلكم] شكراً => Thank you [for your interaction], thank you\nشكراً لتفاعلكم [شكراً] => Thank you for your interaction, [thank you]\n\n[تفضل] قدامي => [Go ahead] in front of me\nتفضل [قدامي] => Go ahead [in front of me]\n\n[بتعرف] لو ما بعرف شو عم تعمل => [You know], if I didn't know what you're doing\nبتعرف [لو] ما بعرف شو عم تعمل => You know, [if] I didn't know what you're doing\nبتعرف لو [ما بعرف] شو عم تعمل => You know, if [I didn't know] what you're doing\nبتعرف لو ما بعرف [شو] عم تعمل => You know, if I didn't know [what] you're doing\nبتعرف لو ما بعرف شو [عم تعمل] => You know, if I didn't know what [you're doing]\n\n[كان] فعصتك فعص => [I would have] crushed you\nكان [فعصتك] فعص => I would have [crushed you]\n\n[شو] سند مشيت الأمور؟ => [So] Sanad, did things go well?\nشو [سند] مشيت الأمور؟ => So [Sanad], did things go well?\nشو سند [مشيت الأمور]؟ => So Sanad, [did things go well]?\n\n[الوضع] لوز => [The situation] is perfect\nالوضع [لوز] => The situation [is perfect]\n\n[شو] الخطّة هليلة؟ => [What's] the plan tonight?\nشو [الخطّة] هليلة؟ => What's [the plan] tonight?\nشو الخطّة [هليلة]؟ => What's the plan [tonight]?\n\n[جهز حالك] اليوم => [Get yourself ready] today\nجهز حالك [اليوم] => Get yourself ready [today]\n\n[عندنا] مشوار مهم => [We have] an important errand\nعندنا [مشوار مهم] => We have [an important errand]\n\n[ألو] عطا كيفك حبيبي؟ => [Hello] Ata, how are you, dear?\nألو [عطا] كيفك حبيبي؟ => Hello [Ata], how are you, dear?\nألو عطا [كيفك] حبيبي؟ => Hello Ata, [how are you], dear?\nألو عطا كيفك [حبيبي]؟ => Hello Ata, how are you, [dear]?\n\n[اسمع] أم سند عندها ماكينة قهوة قديمة => [Listen], Um Sanad has an old coffee machine\nاسمع [أم سند] عندها ماكينة قهوة قديمة => Listen, [Um Sanad] has an old coffee machine\nاسمع أم سند [عندها] ماكينة قهوة قديمة => Listen, Um Sanad [has] an old coffee machine\nاسمع أم سند عندها [ماكينة قهوة قديمة] => Listen, Um Sanad has [an old coffee machine]\n\n[مش] عم تشتغل => It's [not] working\nمش [عم تشتغل] => It's not [working]\n\n[و] مش عارف شو مالها => [And] I don't know what's wrong with it\nو [مش عارف] شو مالها => And [I don't know] what's wrong with it\nو مش عارف [شو] مالها => And I don't know [what]'s wrong with it\nو مش عارف شو [مالها] => And I don't know what's [wrong with it]\n\n[بتقدر] تيجي تشوف شو قصتها اليوم؟ => [Can you] come see what's up with it today?\nبتقدر [تيجي] تشوف شو قصتها اليوم؟ => Can you [come] see what's up with it today?\nبتقدر تيجي [تشوف] شو قصتها اليوم؟ => Can you come [see] what's up with it today?\nبتقدر تيجي تشوف [شو قصتها] اليوم؟ => Can you come see [what's up with it] today?\nبتقدر تيجي تشوف شو قصتها [اليوم]؟ => Can you come see what's up with it [today]?\n\n[حبيبي] أبو سند من عيوني => [My dear] Abu Sanad, with pleasure\nحبيبي [أبو سند] من عيوني => My dear [Abu Sanad], with pleasure\nحبيبي أبو سند [من عيوني] => My dear Abu Sanad, [with pleasure]\n\n[بس] أنا مشغول مشغول مشغول مشغول => [But] I am busy, busy, busy, busy\nبس [أنا] مشغول مشغول مشغول مشغول => But [I] am busy, busy, busy, busy\nبس أنا [مشغول] مشغول مشغول مشغول => But I [am busy], busy, busy, busy\nبس أنا مشغول [مشغول] مشغول مشغول => But I am [busy], busy, busy, busy\nبس أنا مشغول مشغول [مشغول] مشغول => But I am busy, [busy], busy, busy\nبس أنا مشغول مشغول مشغول [مشغول] => But I am busy, busy, busy, [busy]\n\n[خلص] بمرلك يوم الجمعة => [Fine], I'll stop by on Friday\nخلص [بمرلك] يوم الجمعة => Fine, [I'll stop by] on Friday\nخلص بمرلك [يوم الجمعة] => Fine, I'll stop by [on Friday]\n\n[يا زلمة] شو قصتك مع يوم الجمعة؟ => [Man], what's your story with Friday?\nيا زلمة [شو] قصتك مع يوم الجمعة؟ => Man, [what's] your story with Friday?\nيا زلمة شو [قصتك] مع يوم الجمعة؟ => Man, what's [your story] with Friday?\nيا زلمة شو قصتك [مع] يوم الجمعة؟ => Man, what's your story [with] Friday?\nيا زلمة شو قصتك مع [يوم الجمعة]؟ => Man, what's your story with [Friday]?\n\n[أبو يزن] بيقولي إنك جاي يوم الجمعة => [Abu Yazan] tells me you're coming on Friday\nأبو يزن [بيقولي] إنك جاي يوم الجمعة => Abu Yazan [tells me] you're coming on Friday\nأبو يزن بيقولي [إنك] جاي يوم الجمعة => Abu Yazan tells me [you're] coming on Friday\nأبو يزن بيقولي إنك [جاي] يوم الجمعة => Abu Yazan tells me you're [coming] on Friday\nأبو يزن بيقولي إنك جاي [يوم الجمعة] => Abu Yazan tells me you're coming [on Friday]\n\n[وأبو إنصاف] بيقولي إنك رح تمر يوم الجمعة => [And Abu Insaf] tells me you'll stop by on Friday\nوأبو إنصاف [بيقولي] إنك رح تمر يوم الجمعة => And Abu Insaf [tells me] you'll stop by on Friday\nوأبو إنصاف بيقولي [إنك] رح تمر يوم الجمعة => And Abu Insaf tells me [you'll] stop by on Friday\nوأبو إنصاف بيقولي إنك [رح تمر] يوم الجمعة => And Abu Insaf tells me you'll [stop by] on Friday\nوأبو إنصاف بيقولي إنك رح تمر [يوم الجمعة] => And Abu Insaf tells me you'll stop by [on Friday]\n\n[طيب] ماشي بس بستناك سلام => [Alright] fine, but I'll be waiting for you, bye\nطيب [ماشي] بس بستناك سلام => Alright [fine], but I'll be waiting for you, bye\nطيب ماشي [بس] بستناك سلام => Alright fine, [but] I'll be waiting for you, bye\nطيب ماشي بس [بستناك] سلام => Alright fine, but [I'll be waiting for you], bye\nطيب ماشي بس بستناك [سلام] => Alright fine, but I'll be waiting for you, [bye]\n\n[مرحبا] عمو => [Hello] uncle\nمرحبا [عمو] => Hello [uncle]\n\n[قصدي] مرحبا معلم => [I mean], hello boss\nقصدي [مرحبا] معلم => I mean, [hello] boss\nقصدي مرحبا [معلم] => I mean, hello [boss]\n\n[إحنا] بدنا نقدم لشغل في شركتكم => [We] want to apply for a job in your company\nإحنا [بدنا] نقدم لشغل في شركتكم => We [want to] apply for a job in your company\nإحنا بدنا [نقدم] لشغل في شركتكم => We want to [apply] for a job in your company\nإحنا بدنا نقدم [لشغل] في شركتكم => We want to apply [for a job] in your company\nإحنا بدنا نقدم لشغل [في شركتكم] => We want to apply for a job [in your company]\n\n[كيف] ممكن نقدم طلب؟ => [How] can we submit an application?\nكيف [ممكن] نقدم طلب؟ => How [can we] submit an application?\nكيف ممكن [نقدم] طلب؟ => How can we [submit] an application?\nكيف ممكن نقدم [طلب]؟ => How can we submit [an application]?\n\n[أهلاً وسهلاً] => [Welcome]\n\n[على شو] بدكم تقدموا؟ => [What] do you want to apply for?\nعلى شو [بدكم] تقدموا؟ => What [do you want] to apply for?\nعلى شو بدكم [تقدموا]؟ => What do you want [to apply] for?\n\n[على] وظيفتك => [For] your job\nعلى [وظيفتك] => For [your job]\n\n[على] وظيفة مثل وظيفتك => [For] a job like yours\nعلى [وظيفة] مثل وظيفتك => For [a job] like yours\nعلى وظيفة [مثل] وظيفتك => For a job [like] yours\nعلى وظيفة مثل [وظيفتك] => For a job like [yours]\n\n[الطلبات] مش عندي => [The applications] aren't with me\nالطلبات [مش] عندي => The applications [aren't] with me\nالطلبات مش [عندي] => The applications aren't [with me]\n\n[اطلعوا دغري] وبعدين يمين => [Go straight up] and then right\nاطلعوا دغري [وبعدين] يمين => Go straight up [and then] right\nاطلعوا دغري وبعدين [يمين] => Go straight up and then [right]\n\n[بتلاقوا] قسم الموارد البشرية => [You'll find] the Human Resources department\nبتلاقوا قسم [الموارد البشرية] => You'll find the [Human Resources] department\nبتلاقوا [قسم الموارد البشرية] => You'll find [the Human Resources department]\n\n[رحنا] بس ما لقينا حدا => [We went] but didn't find anyone\nرحنا [بس] ما لقينا حدا => We went [but] didn't find anyone\nرحنا بس [ما لقينا] حدا => We went but [didn't find] anyone\nرحنا بس ما لقينا [حدا] => We went but didn't find [anyone]\n\n[طب] ممكن نسأل عن الراتب؟ => [Well], can we ask about the salary?\nطب [ممكن] نسأل عن الراتب؟ => Well, [can] we ask about the salary?\nطب ممكن [نسأل] عن الراتب؟ => Well, can [we ask] about the salary?\nطب ممكن نسأل [عن] الراتب؟ => Well, can we ask [about] the salary?\nطب ممكن نسأل عن [الراتب]؟ => Well, can we ask about [the salary]?\n\n[راتب] شو؟ => [Salary] of what?\nراتب [شو]؟ => Salary [of what]?\n\n[راتبك] => [Your salary]\n\n[قصدي] راتب مدير مثلك => [I mean] the salary of a manager like you\nقصدي [راتب] مدير مثلك => I mean [the salary] of a manager like you\nقصدي راتب [مدير] مثلك => I mean the salary of [a manager] like you\nقصدي راتب مدير [مثلك] => I mean the salary of a manager [like you]\n\n[آه] => [Ah]\n\n[تقدروا] تيجوا بوقت تاني => [You can] come another time\nتقدروا [تيجوا] بوقت تاني => You can [come] another time\nتقدروا تيجوا [بوقت تاني] => You can come [another time]\n\n[أنا] كتير مشغول هلا => [I'm] very busy now\nأنا [كتير] مشغول هلا => I'm [very] busy now\nأنا كتير [مشغول] هلا => I'm very [busy] now\nأنا كتير مشغول [هلا] => I'm very busy [now]\n\n[ما عندي] وقت للحكي => [I don't have] time for talking\nما عندي [وقت] للحكي => I don't have [time] for talking\nما عندي وقت [للحكي] => I don't have time [for talking]\n\n[إنت] دائماً مشغول => [You] are always busy\nإنت [دائماً] مشغول => You are [always] busy\nإنت دائماً [مشغول] => You are always [busy]\n\n[قصدي] المدير دائماً مشغول => [I mean] the manager is always busy\nقصدي [المدير] دائماً مشغول => I mean [the manager] is always busy\nقصدي المدير [دائماً] مشغول => I mean the manager is [always] busy\nقصدي المدير دائماً [مشغول] => I mean the manager is always [busy]\n\n[سلام] => [Bye]\n\n[دقيقة] دقيقة شوي => [Wait], wait a second\nدقيقة [دقيقة] شوي => Wait, [wait] a second\nدقيقة دقيقة [شوي] => Wait, wait [a second]\n\n[هذا] الصوت مألوف => [This] voice is familiar\nهذا [الصوت] مألوف => This [voice] is familiar\nهذا الصوت [مألوف] => This voice [is familiar]\n\n[هذا] الجاكيت مش غريب عليّ => [This] jacket isn't strange to me\nهذا [الجاكيت] مش غريب عليّ => This [jacket] isn't strange to me\nهذا الجاكيت [مش] غريب عليّ => This jacket [isn't] strange to me\nهذا الجاكيت مش [غريب] عليّ => This jacket isn't [strange] to me\nهذا الجاكيت مش غريب [عليّ] => This jacket isn't strange [to me]\n\n[وهذا] الجاكيت كمان => [And this] jacket too\nوهذا [الجاكيت] كمان => And this [jacket] too\nوهذا الجاكيت [كمان] => And this jacket [too]\n\n[ولكم] شو بدكم براتبي ها؟ => [Hey you guys], what do you want with my salary, huh?\nولكم [شو] بدكم براتبي ها؟ => Hey you guys, [what] do you want with my salary, huh?\nولكم شو [بدكم] براتبي ها؟ => Hey you guys, what [do you want] with my salary, huh?\nولكم شو بدكم [براتبي] ها؟ => Hey you guys, what do you want [with my salary], huh?\nولكم شو بدكم براتبي [ها]؟ => Hey you guys, what do you want with my salary, [huh]\n\n[هي] كل المصاري اللي جمعتها => [Here is] all the money I collected\nهي [كل] المصاري اللي جمعتها => Here is [all] the money I collected\nهي كل [المصاري] اللي جمعتها => Here is all [the money] I collected\nهي كل المصاري [اللي] جمعتها => that, which, who\nهي كل المصاري اللي [جمعتها] => Here is all the money [I collected]\n\n[أنا] مش فاهم ولا إشي => [I] don't understand anything\nأنا [مش] فاهم ولا إشي => I [don't] understand anything\nأنا مش [فاهم] ولا إشي => I don't [understand] anything\nأنا مش فاهم [ولا إشي] => I don't understand [anything]\n\n[ليش] هاي المصاري؟ => [Why] this money?\nليش [هاي] المصاري؟ => Why [this] money?\nليش هاي [المصاري]؟ => Why this [money]?\n\n[وليش] بدك تعرف راتبي؟ => [Why] do you want to know my salary?\nوليش [بدك] تعرف راتبي؟ => Why [do you want] to know my salary?\nوليش بدك [تعرف] راتبي؟ => Why do you want [to know] my salary?\nوليش بدك تعرف [راتبي]؟ => Why do you want to know [my salary]?\n\n[بابا] إنت دائماً معجوق كتير بالشغل => [Dad], you're always so swamped with work\nبابا [إنت] دائماً معجوق كتير بالشغل => Dad, [you're] always so swamped with work\nبابا إنت [دائماً] معجوق كتير بالشغل => Dad, you're [always] so swamped with work\nبابا إنت دائماً [معجوق كتير] بالشغل => Dad, you're always [so swamped] with work\nبابا إنت دائماً معجوق كتير [بالشغل] => Dad, you're always so swamped [with work]\n\n[وبس] ترجع بتكون تعبان => [And when] you return, you're tired\nوبس [ترجع] بتكون تعبان => And when [you return], you're tired\nوبس ترجع [بتكون] تعبان => And when you return, [you're] tired\nوبس ترجع بتكون [تعبان] => And when you return, you're [tired]\n\n[وإحنا] بنقدّر تعبك => [And we] appreciate your hard work\nوإحنا [بنقدّر] تعبك => And we [appreciate] your hard work\nوإحنا بنقدّر [تعبك] => And we appreciate [your hard work]\n\n[وبنعرف] إنه عليك كتير مسؤوليات => [And we know] you have many responsibilities\nوبنعرف [إنه عليك] كتير مسؤوليات => And we know [you have] many responsibilities\nوبنعرف إنه عليك [كتير] مسؤوليات => And we know you have [many] responsibilities\nوبنعرف إنه عليك كتير [مسؤوليات] => And we know you have many [responsibilities]\n\n[بس] أنا اشتقت أحكي معك => [But] I missed talking to you\nبس [أنا] اشتقت أحكي معك => But [I] missed talking to you\nبس أنا [اشتقت] أحكي معك => But I [missed] talking to you\nبس أنا اشتقت [أحكي] معك => But I missed [talking] to you\nبس أنا اشتقت أحكي [معك] => But I missed talking [to you]\n\n[وألعب] معك ونقضي وقت مع بعض => [And playing] with you and spending time together\nوألعب [معك] ونقضي وقت مع بعض => And playing [with you] and spending time together\nوألعب معك [ونقضي] وقت مع بعض => And playing with you [and spending] time together\nوألعب معك ونقضي [وقت] مع بعض => And playing with you and spending [time] together\nوألعب معك ونقضي وقت [مع بعض] => And playing with you and spending time [together]\n\n[فـ] => [So...]\n\n[سند] باع كل إشي بالبيت ما بنحتاجه => [Sanad] sold everything in the house we don't need\nسند [باع] كل إشي بالبيت ما بنحتاجه => Sanad [sold] everything in the house we don't need\nسند باع [كل إشي] بالبيت ما بنحتاجه => Sanad sold [everything] in the house we don't need\nسند باع كل إشي [بالبيت] ما بنحتاجه => Sanad sold everything [in the house] we don't need\nسند باع كل إشي بالبيت [ما بنحتاجه] => Sanad sold everything in the house [we don't need]\n\n[وأشياء] بنحتاجها كمان => [And things] we need too\nوأشياء [بنحتاجها] كمان => And things [we need] too\nوأشياء بنحتاجها [كمان] => And things we need [too]\n\n[بقول] وين راح شاحني => [I was saying], where did my charger go?\nبقول [وين] راح شاحني => I was saying, [where] did my charger go?\nبقول وين [راح] شاحني => I was saying, where did my charger [go]?\nبقول وين راح [شاحني] => I was saying, where did [my charger] go?\n\n[صارلي] يومين بدور عليه => [I've been] looking for it for two days\nصارلي [يومين] بدور عليه => I've been looking for it [for two days]\nصارلي يومين [بدور] عليه => I've been [looking] for it for two days\nصارلي يومين بدور [عليه] => I've been looking [for it] for two days\n\n[بابا] أنا إجيت على شغلك عشان أعرف قديش راتبك => [Dad], I came to your work to know how much your salary is\nبابا [أنا] إجيت على شغلك عشان أعرف قديش راتبك => Dad, [I] came to your work to know how much your salary is\nبابا أنا [إجيت] على شغلك عشان أعرف قديش راتبك => Dad, I [came] to your work to know how much your salary is\nبابا أنا إجيت [على شغلك] عشان أعرف قديش راتبك => Dad, I came [to your work] to know how much your salary is\nبابا أنا إجيت على شغلك [عشان أعرف] قديش راتبك => Dad, I came to your work [to know] how much your salary is\nبابا أنا إجيت على شغلك عشان أعرف [قديش] راتبك => Dad, I came to your work to know [how much] your salary is\nبابا أنا إجيت على شغلك عشان أعرف قديش [راتبك] => Dad, I came to your work to know how much [your salary] is\n\n[وبعت] الأغراض عشان أجمع راتبك ليومين => [And I sold] the things to collect your salary for two days\nوبعت [الأغراض] عشان أجمع راتبك ليومين => And I sold [the things] to collect your salary for two days\nوبعت الأغراض [عشان أجمع] راتبك ليومين => And I sold the things [to collect] your salary for two days\nوبعت الأغراض عشان أجمع [راتبك] ليومين => And I sold the things to collect [your salary] for two days\nوبعت الأغراض عشان أجمع راتبك [ليومين] => And I sold the things to collect your salary [for two days]\n\n[وادفعلك إياهم] ونقدر نقضي وقت مع بعض => [And pay them to you] so we can spend time together\nوادفعلك إياهم [ونقدر نقضي وقت مع بعض] => And pay them to you [so we can spend time together]\n\n[أنا] بعتذر إني تأخرت عليك => [I] apologize for being late to you\nأنا [بعتذر] إني تأخرت عليك => I [apologize] for being late to you\nأنا بعتذر [إني تأخرت] عليك => I apologize [for being late] to you\nأنا بعتذر إني تأخرت [عليك] => I apologize for being late [to you]\n\n[وصار عندي] مشكلة بفاتورة الكهرباء => [And I had] a problem with the electricity bill\nوصار عندي [مشكلة] بفاتورة الكهرباء => And I had [a problem] with the electricity bill\nوصار عندي مشكلة [بفاتورة الكهرباء] => And I had a problem [with the electricity bill]\n\n[وقطعوها] عني => [And they cut it off] on me\nوقطعوها [عني] => And they cut it off [on me]\n\n[ولا فرق معاهم] إني زلمة كهربجي => [And it didn't matter to them] that I'm an electrician\nولا فرق معاهم [إني زلمة كهربجي] => And it didn't matter to them [that I'm an electrician]\n\n[على أساس] مش ملحق شغل => [Supposedly] you can't keep up with work\nعلى أساس [مش ملحق شغل] => Supposedly [you can't keep up with work]\n\n[ودائماً] مشغول => [And always] busy\nودائماً [مشغول] => And always [busy]\n\n[وما بتقدر] تيجي غير بس يوم الجمعة ها؟ => [And you can't] come except on Friday, huh?\nوما بتقدر [تيجي] غير بس يوم الجمعة ها؟ => And you can't [come] except on Friday, huh?\nوما بتقدر تيجي [غير بس يوم الجمعة] ها؟ => And you can't come [except on Friday], huh?\nوما بتقدر تيجي غير بس يوم الجمعة [ها]؟ => And you can't come except on Friday, [huh]?\n\n[بصراحة] أنا => [To be honest], I...\nبصراحة [أنا] => To be honest, [I]...\n\n[أنا] بحب آجي عندكم يوم الجمعة => [I] love coming to your place on Friday\nأنا [بحب] آجي عندكم يوم الجمعة => I [love] coming to your place on Friday\nأنا بحب [آجي] عندكم يوم الجمعة => I love [coming] to your place on Friday\nأنا بحب آجي [عندكم] يوم الجمعة => I love coming [to your place] on Friday\nأنا بحب آجي عندكم [يوم الجمعة] => I love coming to your place [on Friday]\n\n[لأنه] أجواء العمارة بصراحة جداً عائلية وحلوة => [Because] the building's atmosphere is honestly very family-like and nice\nلأنه [أجواء العمارة] بصراحة جداً عائلية وحلوة => Because [the building's atmosphere] is honestly very family-like and nice\nلأنه أجواء العمارة [بصراحة] جداً عائلية وحلوة => Because the building's atmosphere is [honestly] very family-like and nice\nلأنه أجواء العمارة بصراحة [جداً] عائلية وحلوة => Because the building's atmosphere is honestly [very] family-like and nice\nلأنه أجواء العمارة بصراحة جداً [عائلية] وحلوة => Because the building's atmosphere is honestly very [family-like] and nice\nلأنه أجواء العمارة بصراحة جداً عائلية [وحلوة] => Because the building's atmosphere is honestly very family-like [and nice]\n\n[وبحب] أقضي معاكم وقت => [And I love] spending time with you\nوبحب [أقضي] معاكم وقت => And I love [spending] time with you\nوبحب أقضي [معاكم وقت] => And I love spending [time with you]\n\n[ومنسف أم إنصاف] ما بيتعوض => [And Um Insaf's Mansaf] is irreplaceable\nومنسف أم إنصاف [ما بيتعوض] => And Um Insaf's Mansaf [is irreplaceable]\n\n[خاصة] مع الجميد الكركي => [Especially] with the Karaki Jameed\nخاصة [مع] الجميد الكركي => Especially [with] the Karaki Jameed\nخاصة مع [الجميد الكركي] => Especially with [the Karaki Jameed]\n\n[آه] هذا هو السبب => [Ah], so that's the reason\nآه [هذا هو] السبب => Ah, so [that's] the reason\nآه هذا هو [السبب] => Ah, so that's [the reason]\n\n[مين فيكم] بتطلعوا علي؟ => [Which one of you] is looking at me?\nمين فيكم [بتطلعوا علي]؟ => Which one of you [is looking at me]?\n\n[هذا] ما بيعني إنه يوم الجمعة ما إله تسعيرة خاصة ها => [This] doesn't mean that Friday doesn't have a special rate, huh\nهذا [ما بيعني] إنه يوم الجمعة ما إله تسعيرة خاصة ها => This [doesn't mean] that Friday doesn't have a special rate, huh\nهذا ما بيعني [إنه] يوم الجمعة ما إله تسعيرة خاصة ها => This doesn't mean [that] Friday doesn't have a special rate, huh\nهذا ما بيعني إنه [يوم الجمعة] ما إله تسعيرة خاصة ها => This doesn't mean that [Friday] doesn't have a special rate, huh\nهذا ما بيعني إنه يوم الجمعة [ما إله] تسعيرة خاصة ها => This doesn't mean that Friday [doesn't have] a special rate, huh\nهذا ما بيعني إنه يوم الجمعة ما إله [تسعيرة خاصة] ها => This doesn't mean that Friday doesn't have a [special rate], huh\nهذا ما بيعني إنه يوم الجمعة ما إله تسعيرة خاصة [ها] => This doesn't mean that Friday doesn't have a special rate, [huh]\n\n[بمزح] معاكم => [I'm joking] with you\nبمزح [معاكم] => I'm joking [with you]\n\n[بعرف] إنه إحنا كأهل عندنا مشاغل => [I know] that we as parents have preoccupations\nبعرف [إنه] إحنا كأهل عندنا مشاغل => I know [that] we as parents have preoccupations\nبعرف إنه [إحنا] كأهل عندنا مشاغل => I know that [we] as parents have preoccupations\nبعرف إنه إحنا [كأهل] عندنا مشاغل => I know that we [as parents] have preoccupations\nبعرف إنه إحنا كأهل [عندنا] مشاغل => I know that we as parents [have] preoccupations\nبعرف إنه إحنا كأهل عندنا [مشاغل] => I know that we as parents have [preoccupations]\n\n[ومشاكل كتيرة] => [And many problems]\nومشاكل [كتيرة] => many\n\n[بس] مش لازم ننسى نقضي وقت مع عيلتنا ومع أولادنا => [But] we shouldn't forget to spend time with our family and our children\nبس [مش لازم] ننسى نقضي وقت مع عيلتنا ومع أولادنا => But [shouldn't] forget to spend time with our family and our children\nبس مش لازم [ننسى] نقضي وقت مع عيلتنا ومع أولادنا => But shouldn't [forget] to spend time with our family and our children\nبس مش لازم ننسى [نقضي وقت] مع عيلتنا ومع أولادنا => But shouldn't forget [to spend time] with our family and our children\nبس مش لازم ننسى نقضي وقت [مع عيلتنا] ومع أولادنا => But shouldn't forget to spend time [with our family] and our children\nبس مش لازم ننسى نقضي وقت مع عيلتنا [ومع أولادنا] => But shouldn't forget to spend time with our family [and our children]\n\n[وبصراحة] هذا أهم من كل إشي => [And honestly], this is more important than everything\nوبصراحة [هذا] أهم من كل إشي => And honestly, [this] is more important than everything\nوبصراحة هذا [أهم] من كل إشي => And honestly, this [is more important] than everything\nوبصراحة هذا أهم [من] كل إشي => And honestly, this is more important [than] everything\nوبصراحة هذا أهم من [كل إشي] => And honestly, this is more important than [everything]\n\n[وحلو] نفكر في الناس اللي حوالينا => [And it's nice] to think about the people around us\nوحلو [نفكر] في الناس اللي حوالينا => And it's nice [to think] about the people around us\nوحلو نفكر [في] الناس اللي حوالينا => And it's nice to think [about] the people around us\nوحلو نفكر في [الناس] اللي حوالينا => And it's nice to think about [the people] around us\nوحلو نفكر في الناس [اللي] حوالينا => who # relative pronoun, not directly translated in this context\nوحلو نفكر في الناس اللي [حوالينا] => And it's nice to think about the people [around us]\n\n[اللي] بيشتاقوا يقضوا وقت عائلي => [Who] miss spending family time\nاللي [بيشتاقوا] يقضوا وقت عائلي => Who [miss] spending family time\nاللي بيشتاقوا [يقضوا] وقت عائلي => Who miss [spending] family time\nاللي بيشتاقوا يقضوا [وقت عائلي] => Who miss spending [family time]\nاللي بيشتاقوا يقضوا [وقت] عائلي => time # word appears after \"family\" in English\nاللي بيشتاقوا يقضوا وقت [عائلي] => family # word appears before \"time\" in English\n\n[ونكن إحنا] عيلتهم => [And for us to be] their family\nونكن إحنا [عيلتهم] => And for us to be [their family]\n[ونكن] إحنا عيلتهم => and be # custom - lacks \"for us\" without إحنا\n[إحنا] => us # emphatic pronoun\n\n[اتفضلوا] يا جماعة المنسف جاهز => [Come in] everyone, the Mansaf is ready\nاتفضلوا [يا جماعة] المنسف جاهز => Come in [everyone], the Mansaf is ready\nاتفضلوا يا جماعة [المنسف] جاهز => Come in everyone, [the Mansaf] is ready\nاتفضلوا يا جماعة المنسف [جاهز] => Come in everyone, the Mansaf [is ready]\n\n[أهلاً وسهلاً] فيكم جميعاً => [Welcome] to you all\nأهلاً وسهلاً [فيكم] جميعاً => Welcome [to you] all\nأهلاً وسهلاً فيكم [جميعاً] => Welcome to you [all]\nأهلاً وسهلاً [فيكم جميعاً] => Welcome [to you all]\n\n",
+    "lessons": "# The Big Project\n00:03 جبت أعلى سكور\n00:07 بس هذا المشروع بده موظفين\n00:09 أو بده وقت\n00:10 ما بيزبط هيك\n00:13 الخطّة إنه إحنا قبل ما نقدّم\n00:15 على هيك عطاء\n00:17 لازم نكون جاهزين\n\n# A Quick Interruption\n00:22 سند في إشي حبيبي؟\n00:24 لا مش إشي مهم\n00:31 شغّل المضخة أبو يزن\n00:33 وينك أبو يزن؟\n00:34 شغّل المضخة\n\n# Troubleshooting the Pump\n00:39 شغّلتها\n00:40 شو اشتغلت؟\n00:42 لا خيو ما اشتغلت\n00:44 شكلها بدها تغيير الكابستور\n00:45 والمكثف\n\n# The Friday Promise\n00:46 خلص خلص بجيك يوم الجمعة\n00:48 أبشر\n00:49 لا لا لا يا عطا دخيلك\n00:51 بلاش تيجي المي ونتبهدل هالاسبوع\n00:53 المي لا عمي المي بتيجي يوم السبت\n\n# Busy Schedule\n00:56 أنا هالايام كتير مشغول\n00:58 الجمعة بكون مركز\n01:00 وبعملك إياها على رواق\n01:02 صدقني رح أزرّقلك إياها تزريق\n01:05 هسا دورك إنت تزرّقلنا\n\n# Homework Realities\n01:10 نفسي أرجع مرة على البيت\n01:12 ما يكون عندنا واجبات\n01:14 خمس واجبات؟\n01:15 بالأحلام حبيبتي\n01:17 يعني إنت حجزت ملعب القدم؟\n01:19 حجزت ودفعت\n\n# Last Minute Changes\n01:21 مش معقول هدول الولاد\n01:23 ما بصير يلغوا آخر لحظة\n01:24 خلص مش مشكلة\n01:26 بس مش رح نلعب أنا وإياك لحالنا\n01:29 لا مشكلة\n\n# A New Game Plan\n01:31 أقولك أنا عندي فكرة\n01:36 وهيك بدل ما يروح الحجز\n01:38 بابا أنا وإياك بنكون فريق\n01:39 ويزن وأبوه بكونوا فريق\n01:41 شو رأيك؟\n01:42 زمان ما لعبنا مع بعض\n\n# Work Comes First\n01:43 فكرة حلوة كتير\n01:45 أكيد حلوة\n01:46 بس المشكلة إنه\n01:48 بكرة عندي تسليم كبير\n01:49 وبده تركيز وشغل\n01:51 شو رأيك تاخد سالي معك بدالي؟\n\n# The Antique Lamp\n01:54 ماشي خلص بلاش\n01:57 يلا دايمة\n02:00 بليز بليز دير بالك يا عطا\n02:02 هذا السايد لامب\n02:03 من محل الانتيكس الغالي كتير\n02:05 اللي بآخر الحارة\n\n# No Need for Advice\n02:06 يا عيب الشوم يا أم إنصاف\n02:08 يعني كله تغيير فيش\n02:09 ما بدها وصاية\n02:11 يعني بس حبيت أخبرك\n02:14 أهلاً أبو خالد\n\n# The Dinner Party Request\n02:15 شو صار باللحمة؟\n02:17 بدي إياها ضروري ليوم الجمعة\n02:18 عندي عزومة\n02:20 وبدي إشي يبيّض الوجه\n02:22 تمام\n02:23 ما بدي أرجع أوصيك\n\n# Technical Difficulties\n02:25 وإكراميتك جاهزة\n02:26 أوف أوف أوف أوف\n02:28 شو صار؟\n02:29 هذا السلك لأنه أنتيكة قديم\n02:31 ما زبط معي\n02:33 خلص الجمعة بمر عليكي وبزبطه\n\n# The Friday Solution\n02:36 وعد\n02:37 بس أنا الجمعة مش فاضية\n02:39 إنتي ما يهمك\n02:40 بجيبلك معي فيش أنتيك\n02:42 أوتنتيك ها\n02:44 وببيّض الوجه\n\n# Mansaf and Subscriptions\n02:45 وبعمله بسرعة\n02:47 وبضل طالع\n02:48 سلام\n02:51 شكلها واقع على يوم الجمعة\n02:53 فيها الشغلة مناسف\n02:55 إذا بتحبوا المناسف\n02:57 اكتبوا بالتعليقات واعملولي سبسكرايب\n\n# Kitchen Problems\n03:02 مرحبا ماما وين البابا؟\n03:04 البابا رجع تعبان من الشغل\n03:06 وهلا دخل ينام\n03:08 ماما شو عم تعملي؟\n03:10 بطل في وسع بالمطبخ\n03:12 وفي كتير أشياء صارلي كتير ما استعملتها\n\n# The Minimalist Approach\n03:14 مش عارفة شو أعمل فيها\n03:16 ماما ما تقلقي أنا بدبّرهم\n03:18 إنتي بس حطي كل الأغراض\n03:20 اللي ما بتحتاجيهم على الطاولة\n03:22 سالي تعالي معي\n03:25 آخر الدراسات بتقول\n\n# Reducing Stress\n03:27 إنه الواحد لازم يكون مينيماليست\n03:29 بقلل التوتر وبيساعد على التركيز\n03:31 وبعطي راحة نفسية\n03:33 مش فاهمة ولا كلمة حكيتها\n03:35 إنتي بس أعطيني كل إشي\n03:36 ما لبستيه صارلك سنة\n\n# Clearing Space\n03:39 سامر هذا الكرسي بتقعد عليه\n03:41 مرة بالشهر\n03:42 قوم شوي\n03:48 برافو حبيبي\n03:56 سالي هاي البلوزة كتير كنت أحبها عليكي\n\n# Online Shopping Surprise\n03:59 دورت الدنيا وما لقيت زيها\n04:01 وهلا هلا شريتها أونلاين من عند سند\n04:04 ممتاز حبيبتي\n04:05 بس ما تنسي تغسليها\n04:07 لأني صارلي سنة مش لابستها\n\n# Wrapping Up Business\n04:13 سند يلا بدنا نروح عالبيت\n04:16 خلص يا جماعة بكرة بنكمل\n04:18 شكراً لتفاعلكم شكراً\n04:21 تفضل قدامي\n04:22 بتعرف لو ما بعرف شو عم تعمل\n04:24 كان فعصتك فعص\n\n# The Coffee Machine\n04:25 شو سند مشيت الأمور؟\n04:27 الوضع لوز\n04:29 شو الخطّة هليلة؟\n04:30 جهز حالك اليوم\n04:32 عندنا مشوار مهم\n04:34 ألو عطا كيفك حبيبي؟\n\n# Everyone Wants Friday\n04:36 اسمع أم سند عندها ماكينة قهوة قديمة\n04:39 مش عم تشتغل\n04:40 ومش عارف شو مالها\n04:41 بتقدر تيجي تشوف شو قصتها اليوم؟\n04:43 حبيبي أبو سند من عيوني\n04:45 بس أنا مشغول مشغول مشغول مشغول\n\n# The Friday Mystery\n04:48 خلص بمرلك يوم الجمعة\n04:50 يا زلمة شو قصتك مع يوم الجمعة؟\n04:52 أبو يزن بيقولي إنك جاي يوم الجمعة\n04:54 وأبو إنصاف بيقولي إنك رح تمر يوم الجمعة\n04:57 طيب ماشي بس بستناك سلام\n\n# Applying for a Job\n05:02 مرحبا عمو\n05:03 قصدي مرحبا معلم\n05:05 إحنا بدنا نقدم لشغل في شركتكم\n05:07 كيف ممكن نقدم طلب؟\n05:10 أهلاً وسهلاً\n05:11 على شو بدكم تقدموا؟\n\n# The Salary Question\n05:13 على وظيفتك\n05:14 على وظيفة مثل وظيفتك\n05:17 الطلبات مش عندي\n05:18 اطلعوا دغري وبعدين يمين\n05:20 بتلاقوا قسم الموارد البشرية\n05:22 رحنا بس ما لقينا حدا\n\n# The Busy Manager\n05:24 طب ممكن نسأل عن الراتب؟\n05:27 راتب شو؟\n05:28 راتبك\n05:29 قصدي راتب مدير مثلك\n05:32 آه\n05:33 تقدروا تيجوا بوقت تاني\n\n# Undercover Kids\n05:35 أنا كتير مشغول هلا\n05:36 ما عندي وقت للحكي\n05:38 إنت دائماً مشغول\n05:40 قصدي المدير دائماً مشغول\n05:42 سلام\n05:44 دقيقة دقيقة شوي\n\n# The Recognition\n05:46 هذا الصوت مألوف\n05:48 هذا الجاكيت مش غريب عليّ\n05:51 وهذا الجاكيت كمان\n05:54 ولكم شو بدكم براتبي ها؟\n06:00 هي كل المصاري اللي جمعتها\n\n# Why the Money?\n06:03 أنا مش فاهم ولا إشي\n06:05 ليش هاي المصاري؟\n06:06 وليش بدك تعرف راتبي؟\n06:08 بابا إنت دائماً معجوق كتير بالشغل\n06:11 وبس ترجع بتكون تعبان\n06:12 وإحنا بنقدّر تعبك\n\n# Missing Connection\n06:14 وبنعرف إنه عليك كتير مسؤوليات\n06:16 بس أنا اشتقت أحكي معك\n06:18 وألعب معك ونقضي وقت مع بعض\n06:21 فـ\n06:22 سند باع كل إشي بالبيت ما بنحتاجه\n06:25 وأشياء بنحتاجها كمان\n\n# Buying Two Days\n06:27 بقول وين راح شاحني\n06:28 صارلي يومين بدور عليه\n06:30 بابا أنا إجيت على شغلك عشان أعرف قديش راتبك\n06:33 وبعت الأغراض عشان أجمع راتبك ليومين\n06:36 وادفعلك إياهم ونقدر نقضي وقت مع بعض\n\n# The Handyman's Bill\n06:46 أنا بعتذر إني تأخرت عليك\n06:48 وصار عندي مشكلة بفاتورة الكهرباء\n06:50 وقطعوها عني\n06:51 ولا فرق معاهم إني زلمة كهربجي\n06:54 على أساس مش ملحق شغل\n\n# The Friday Secret\n06:56 دائماً مشغول\n06:57 وما بتقدر تيجي غير بس يوم الجمعة ها؟\n07:00 بصراحة أنا\n07:05 أنا بحب آجي عندكم يوم الجمعة\n07:07 لأنه أجواء العمارة بصراحة جداً عائلية وحلوة\n07:11 وبحب أقضي معاكم وقت\n\n# Mansaf and Family\n07:14 ومنسف أم إنصاف ما بيتعوض\n07:16 خاصة مع الجميد الكركي\n07:19 آه هذا هو السبب\n07:22 مين فيكم بتطلعوا علي؟\n07:24 هذا ما بيعني إنه يوم الجمعة ما إله تسعيرة خاصة ها\n07:28 بمزح معاكم\n\n# The Final Lesson\n07:32 بعرف إنه إحنا كأهل عندنا مشاغل\n07:35 ومشاكل كتيرة\n07:36 بس مش لازم ننسى نقضي وقت مع عيلتنا ومع أولادنا\n07:39 وبصراحة هذا أهم من كل إشي\n\n# Community Spirit\n07:43 وحلو نفكر في الناس اللي حوالينا\n07:45 اللي بيشتاقوا يقضوا وقت عائلي\n07:47 ونكون إحنا عيلتهم\n07:50 اتفضلوا يا جماعة المنسف جاهز\n07:53 أهلاً وسهلاً فيكم جميعاً",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-03-07 23:29:21 UTC",
+  "updated_at": "2026-03-08 00:15:09 UTC",
+  "exported_at": "2026-03-08T00:15:10Z"
+}

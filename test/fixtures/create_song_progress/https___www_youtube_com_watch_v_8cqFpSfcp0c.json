@@ -1,0 +1,922 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=8cqFpSfcp0c",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "سالي أنا مش عارف شو أعمل",
+        "timestamp": "00:06",
+        "text_l2": "Sally, I don't know what to do"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "إحنا كيف هيك صار فينا",
+        "timestamp": "00:08",
+        "text_l2": "How did this happen to us?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "آه ماما أوك",
+        "timestamp": "00:15",
+        "text_l2": "Oh Mom, okay"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أوك فهمت",
+        "timestamp": "00:17",
+        "text_l2": "Okay, I understood"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "سند بتقول ماما",
+        "timestamp": "00:19",
+        "text_l2": "Sanad, Mom says"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "راح يجي دليفري معه بوكس",
+        "timestamp": "00:21",
+        "text_l2": "A delivery is coming with a box"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بنحطه بالمطبخ ولا حدا يقرب عليه",
+        "timestamp": "00:23",
+        "text_l2": "We'll put it in the kitchen and no one should go near it"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "أو يلمسه",
+        "timestamp": "00:26",
+        "text_l2": "Or touch it"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "سند هيه إجا افتحله",
+        "timestamp": "00:27",
+        "text_l2": "Sanad, here he is, open for him"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "شو هاد",
+        "timestamp": "00:41",
+        "text_l2": "What is this?"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "واو بس ما تنسى شو حكت الماما",
+        "timestamp": "00:43",
+        "text_l2": "Wow, but don't forget what Mom said"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "سالي سند",
+        "timestamp": "00:52",
+        "text_l2": "Sally, Sanad"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "واو صار واصل",
+        "timestamp": "00:57",
+        "text_l2": "Wow, it has arrived"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "هلا هلا وصل وما لمسنا",
+        "timestamp": "00:59",
+        "text_l2": "Welcome, welcome, it arrived and we didn't touch it"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "زي ما وصيتينا",
+        "timestamp": "01:02",
+        "text_l2": "Just as you instructed us"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "منيح منيح ماما لأنه هدية",
+        "timestamp": "01:03",
+        "text_l2": "Good, good, kids, because it's a gift"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "يا رب يعجبها",
+        "timestamp": "01:05",
+        "text_l2": "I hope she likes it"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "شو في شو مالك",
+        "timestamp": "01:09",
+        "text_l2": "What's up? What's wrong with you?"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "متحمسة أكيد راح يعجبها",
+        "timestamp": "01:12",
+        "text_l2": "I'm excited, she will definitely like it"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "أم سند بس بدي أسألك حبيبتي",
+        "timestamp": "01:26",
+        "text_l2": "Um Sanad, I just want to ask you, dear"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "إنتي انعزمتي إشي عند أم يزن",
+        "timestamp": "01:28",
+        "text_l2": "Were you invited to something at Um Yazan's"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "قبل كم يوم",
+        "timestamp": "01:30",
+        "text_l2": "A few days ago?"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "لا بصراحة صارلنا كم يوم ما حكينا",
+        "timestamp": "01:31",
+        "text_l2": "No, honestly, it's been a few days since we spoke"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أنا وأم يزن",
+        "timestamp": "01:34",
+        "text_l2": "Me and Um Yazan"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "ما عزمتك يي عيب شو",
+        "timestamp": "01:35",
+        "text_l2": "She didn't invite you? Oh, how shameful"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "عادي بتصير يعني",
+        "timestamp": "01:38",
+        "text_l2": "It's normal, it happens"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "يمكن إشي عائلي وبعدين هي حرة",
+        "timestamp": "01:40",
+        "text_l2": "Maybe it's a family thing, and besides, she's free"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "لا مش حرة ومش عادي",
+        "timestamp": "01:42",
+        "text_l2": "No, she's not free and it's not normal"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "لما تعزمني وتعزم كل الجارات",
+        "timestamp": "01:44",
+        "text_l2": "When she invites me and all the neighbors"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "وما تعزمك",
+        "timestamp": "01:46",
+        "text_l2": "And doesn't invite you"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "عن جد طب إنتي رحتي",
+        "timestamp": "01:47",
+        "text_l2": "Really? Well, did you go?"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "أكيد لا حبيبتي أنا ما بروح بدونك",
+        "timestamp": "01:50",
+        "text_l2": "Of course not, dear, I don't go without you"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "بعتذرلها كل مرة",
+        "timestamp": "01:53",
+        "text_l2": "I apologize to her every time"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "ليش ولادك نازلين هيك ركض شو في",
+        "timestamp": "01:56",
+        "text_l2": "Why are your kids running down like that? What's going on?"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "آه ماما عندي امتحان",
+        "timestamp": "02:08",
+        "text_l2": "Oh Mom, I have an exam"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "ونسيت كتبي بالمدرسة",
+        "timestamp": "02:10",
+        "text_l2": "And I forgot my books at school"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "وسند جاي يساعدني ما راح نتأخر",
+        "timestamp": "02:12",
+        "text_l2": "And Sanad is coming to help me, we won't be late"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "عمو عطا لو سمحت",
+        "timestamp": "02:19",
+        "text_l2": "Uncle Ata, please"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "الحق هاي السيارة بسرعة",
+        "timestamp": "02:21",
+        "text_l2": "Follow this car quickly"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "لا خيو شو مالكم",
+        "timestamp": "02:22",
+        "text_l2": "No, brother, what's wrong with you?"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "شو بتفكروها سايبة",
+        "timestamp": "02:24",
+        "text_l2": "Do you think it's a free-for-all?"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "أنا ما بتحرك من مكاني",
+        "timestamp": "02:26",
+        "text_l2": "I don't move from my spot"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "بدون موافقة الأهل",
+        "timestamp": "02:28",
+        "text_l2": "Without the parents' approval"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "والاتفاق على السعر",
+        "timestamp": "02:29",
+        "text_l2": "And agreeing on the price"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "شو بتفكروها سايبة",
+        "timestamp": "02:32",
+        "text_l2": "Do you think it's a free-for-all?"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "هاد أبوي يا زلمة اشترى سيارة جديدة",
+        "timestamp": "02:34",
+        "text_l2": "This is my father, man, he bought a new car"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "ومن الفرحة نسينا وطلع",
+        "timestamp": "02:37",
+        "text_l2": "And out of joy, we forgot and he left"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "وهو بحاسبك بس اطلع يا زلمة",
+        "timestamp": "02:39",
+        "text_l2": "And he'll pay you, just go, man"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "بس إنتي طلي وشوفي بعيونك",
+        "timestamp": "02:42",
+        "text_l2": "But you just look and see with your own eyes"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "طبعاً ثلاجتها بطلت توسع من كتر الجمعات",
+        "timestamp": "02:44",
+        "text_l2": "Of course, her fridge can't fit anything anymore from all the gatherings"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "معقول ما قالتلك أنا جايبة ثلاجة جديدة",
+        "timestamp": "02:48",
+        "text_l2": "Is it possible she didn't tell you I'm getting a new fridge?"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "لا ما قالتلي صدقي",
+        "timestamp": "02:50",
+        "text_l2": "No, she didn't tell me, believe me"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "أنا قالتلي بس بصراحة نبهت علي",
+        "timestamp": "02:52",
+        "text_l2": "She told me, but honestly, she warned me"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "ما أقول لحدا",
+        "timestamp": "02:55",
+        "text_l2": "Not to tell anyone"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "مش عارفة مين هالحد اللي خايفة",
+        "timestamp": "02:57",
+        "text_l2": "I don't know who this \"someone\" is that she's afraid"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "من عينه هالقد",
+        "timestamp": "03:00",
+        "text_l2": "Of their evil eye so much"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "ول معقول",
+        "timestamp": "03:01",
+        "text_l2": "Wow, is it possible?"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "صدق يا أبو سند بتشتري سيارات",
+        "timestamp": "03:06",
+        "text_l2": "Believe me, Abu Sanad, you buy cars"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "وعايش حياتك بس مش قادر تسد ديناتك",
+        "timestamp": "03:10",
+        "text_l2": "And living your life, but you can't pay off your debts"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "ماشي أنا وراك والزمن طويل",
+        "timestamp": "03:14",
+        "text_l2": "Fine, I'm after you, and time is long"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "بفرجيك",
+        "timestamp": "03:16",
+        "text_l2": "I'll show you"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "ماما لقينا المس وسالي عم تسألها",
+        "timestamp": "03:21",
+        "text_l2": "Mom, we found the teacher and Sally is asking her"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "كم سؤال عن الامتحان",
+        "timestamp": "03:24",
+        "text_l2": "A few questions about the exam"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "بحكيكي بعدين",
+        "timestamp": "03:25",
+        "text_l2": "I'll talk to you later"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "بدلي واضرب واطرح ولا وطولان كمان",
+        "timestamp": "03:34",
+        "text_l2": "Change, multiply, and subtract, and he's grown taller too"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "يا عمي المصاري بتعمل عجايب",
+        "timestamp": "03:38",
+        "text_l2": "Man, money works wonders"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "يا شباب يا إخوان وين رايحين",
+        "timestamp": "03:40",
+        "text_l2": "Hey guys, brothers, where are you going?"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "ما حسبتوني طيب أنا بفرجيكو",
+        "timestamp": "03:43",
+        "text_l2": "You didn't count me in? Fine, I'll show you"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "يا شباب وين تيكيتاتكم",
+        "timestamp": "03:52",
+        "text_l2": "Hey guys, where are your tickets?"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "إحنا جايين مع المدرسة بس سبقناهم",
+        "timestamp": "03:55",
+        "text_l2": "We're coming with the school, but we got ahead of them"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "آه رحلة مدرسية ل300 طالب",
+        "timestamp": "03:58",
+        "text_l2": "Oh, a school trip for 300 students"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "إيش شو بتحكي 300 طالب",
+        "timestamp": "04:02",
+        "text_l2": "What? What are you saying? 300 students?"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "أنا قلتلهم 100 مرة ما يحطوني",
+        "timestamp": "04:05",
+        "text_l2": "I told them 100 times not to put me"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "بالشفت اللي فيه طلاب",
+        "timestamp": "04:08",
+        "text_l2": "On the shift that has students"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "بجننوني أنا مستقيل مع السلامة",
+        "timestamp": "04:10",
+        "text_l2": "They drive me crazy, I'm resigning, goodbye"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "ألو مرحبا أم سند اشتقنالك كيفك",
+        "timestamp": "04:21",
+        "text_l2": "Hello, hi Um Sanad, we missed you, how are you?"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "أهلا أم يزن",
+        "timestamp": "04:25",
+        "text_l2": "Welcome, Um Yazan"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "اسمعي سوري إنه عم بغلبك",
+        "timestamp": "04:26",
+        "text_l2": "Listen, sorry for bothering you"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بس جاييني ضيوف وبدي استعير",
+        "timestamp": "04:29",
+        "text_l2": "But I have guests coming and I want to borrow"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "بكرج القهوة الكبيرة اللي عندك ممكن",
+        "timestamp": "04:31",
+        "text_l2": "The large coffee pot you have, is it possible?"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "سوري حبيبتي بس مش نظيف",
+        "timestamp": "04:34",
+        "text_l2": "Sorry dear, but it's not clean"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "بده جلي وتلميع وبعدين أنا كمان",
+        "timestamp": "04:36",
+        "text_l2": "It needs washing and polishing, and besides, I also"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "بخاف يجي عندي ضيوف ليش ما يجي يعني",
+        "timestamp": "04:38",
+        "text_l2": "Am afraid guests might come to me, why wouldn't they?"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "أقولك اسألي أم إنصاف ما إنتي على تواصل معها",
+        "timestamp": "04:41",
+        "text_l2": "I'll tell you what, ask Um Insaf, since you're in touch with her"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "سلام",
+        "timestamp": "04:44",
+        "text_l2": "Bye"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "يي شو مالها أم سند مش على عوايدها",
+        "timestamp": "04:46",
+        "text_l2": "Oh, what's wrong with Um Sanad? She's not her usual self"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "مرحبا بدنا ندخل مجموعة أنتيكات",
+        "timestamp": "05:03",
+        "text_l2": "Hello, we want to bring in a set of antiques"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "أتوقع إنها هي الشنطة شايفيتها من قبل",
+        "timestamp": "05:06",
+        "text_l2": "I expect this is the bag, I've seen it before"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "على كل حال تقدروا تدخلوا من هاد الباب",
+        "timestamp": "05:10",
+        "text_l2": "Anyway, you can enter through this door"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "على اليمين أكيد بتعرفوا غرفة التسليم",
+        "timestamp": "05:13",
+        "text_l2": "On the right, surely you know the delivery room"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "أكيد أكيد",
+        "timestamp": "05:16",
+        "text_l2": "Of course, of course"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "شفتوا شفتوا إحنا لازم ندخل على الهليكوبتر",
+        "timestamp": "05:24",
+        "text_l2": "Did you see? Did you see? We have to get into the helicopter"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "بابا وينكم يا ولاد الماما قلقانة عليكم",
+        "timestamp": "05:33",
+        "text_l2": "Dad, where are you kids? Mom is worried about you"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "إحنا مرينا نجيب سندويشات فلافل وجايين",
+        "timestamp": "05:37",
+        "text_l2": "We stopped to get falafel sandwiches and we're coming"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "ما راح نتأخر",
+        "timestamp": "05:40",
+        "text_l2": "We won't be late"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "لقيته لقيته يلا خلينا نطلع من هون بسرعة",
+        "timestamp": "05:42",
+        "text_l2": "I found it, I found it, let's get out of here quickly"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "سند شو عملت",
+        "timestamp": "05:46",
+        "text_l2": "Sanad, what did you do?"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "ما تخافي أنا راح أتصرف",
+        "timestamp": "05:49",
+        "text_l2": "Don't worry, I'll handle it"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "شايفة هيهم وصلوا",
+        "timestamp": "05:59",
+        "text_l2": "See, here they are, they've arrived"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "مرحبا أم سند حسيتك مش على بعضك",
+        "timestamp": "06:04",
+        "text_l2": "Hello Um Sanad, I felt you weren't yourself"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "قلت بجيب باقي الحلو وبنشرب قهوة مع بعض",
+        "timestamp": "06:07",
+        "text_l2": "I said I'll bring the rest of the sweets and we'll drink coffee together"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "أهلا أم يزن إن شاء الله كانت جمعة حلوة",
+        "timestamp": "06:10",
+        "text_l2": "Welcome Um Yazan, I hope it was a nice gathering"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "إنتي مالك إشي زعلانة مني",
+        "timestamp": "06:14",
+        "text_l2": "Is something wrong? Are you upset with me?"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "لا أبداً إنتي بتعرفي أنا ما بزعل",
+        "timestamp": "06:17",
+        "text_l2": "No, not at all, you know I don't get upset"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "بس استغربت إنك بتعملي جمعات كتير",
+        "timestamp": "06:20",
+        "text_l2": "But I was surprised that you're having many gatherings"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "وبتعزمي أم إنصاف وكل الجارات",
+        "timestamp": "06:22",
+        "text_l2": "And inviting Um Insaf and all the neighbors"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "وما بتعزميني وبتخبريهم أخبارك",
+        "timestamp": "06:25",
+        "text_l2": "And not inviting me, and telling them your news"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "وأنا لا غريبة صح",
+        "timestamp": "06:28",
+        "text_l2": "And not me, strange, right?"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "مين قالك هالحكي جمعات كتير أبداً",
+        "timestamp": "06:30",
+        "text_l2": "Who told you that? Many gatherings? Not at all"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "هي أول جمعة لزميلة كانت معي من زمان",
+        "timestamp": "06:34",
+        "text_l2": "This is the first gathering for a colleague who was with me a long time ago"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "وتقاعدت فقلنا بنجتمع وبنرجع أيام زمان",
+        "timestamp": "06:37",
+        "text_l2": "And she retired, so we said we'd meet and bring back the old days"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "وبعدين أنا ما عزمت أم إنصاف",
+        "timestamp": "06:40",
+        "text_l2": "And besides, I didn't invite Um Insaf"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "وصارلي فترة طويلة ما حكيت معها",
+        "timestamp": "06:42",
+        "text_l2": "And it's been a long time since I spoke with her"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "عن جد",
+        "timestamp": "06:45",
+        "text_l2": "Really?"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "أم سند منيح اللي لقيتك أنا هسا بدي فلوسي",
+        "timestamp": "06:47",
+        "text_l2": "Um Sanad, it's good I found you, I want my money now"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "رد رد وقولهم الحقيقة",
+        "timestamp": "07:06",
+        "text_l2": "Answer, answer and tell them the truth"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "بابا الحقنا إحنا بالهليكوبتر ومش عارفين ننزل",
+        "timestamp": "07:09",
+        "text_l2": "Dad, help us, we're in the helicopter and we don't know how to go down"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "شو كيف يعني إنتو وين",
+        "timestamp": "07:13",
+        "text_l2": "What? How? Where are you?"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "بالسما بابا بالسما",
+        "timestamp": "07:15",
+        "text_l2": "In the sky, Dad, in the sky"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "أعطيني أعطيني سند سالي ركزوا معي",
+        "timestamp": "07:17",
+        "text_l2": "Give it to me, give it to me. Sanad, Sally, focus with me"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "خيو منيح منيح هذه شغلي أول شي",
+        "timestamp": "07:20",
+        "text_l2": "Brother, good, good, this is my job. First of all"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "في عندك زر فوق لونه أخضر شايفه",
+        "timestamp": "07:23",
+        "text_l2": "There's a green button on top, do you see it?"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "يمين كبير مكتوب عليه أوتو بايلوت",
+        "timestamp": "07:25",
+        "text_l2": "Big one on the right, it says \"Autopilot\""
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "اكبس عليه خيو اكبس وبعدين بتكبس الزر اللي تحت",
+        "timestamp": "07:29",
+        "text_l2": "Press it, brother, press it, and then press the button below"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "مكتوب عليه أوتو لاندينج خذ مني ما راح",
+        "timestamp": "07:33",
+        "text_l2": "It says \"Auto Landing\". Take it from me, nothing will"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "تحصل إشي بتزبط بتزبط",
+        "timestamp": "07:36",
+        "text_l2": "Happen, it'll work, it'll work"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "لقيته لقيته هيه",
+        "timestamp": "07:38",
+        "text_l2": "I found it, I found it, here it is"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "هيه كبسناهم وهيها عم تنزل",
+        "timestamp": "07:40",
+        "text_l2": "Here, we pressed them and it's going down"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "شكراً شكراً يا عطا",
+        "timestamp": "07:44",
+        "text_l2": "Thank you, thank you, Ata"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "خذوني خذوني عندهم بسرعة",
+        "timestamp": "07:46",
+        "text_l2": "Take me, take me to them quickly"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "طب استنوا شوي طلعت معكم عشان أفهم شو عم بيصير",
+        "timestamp": "07:58",
+        "text_l2": "Well, wait a bit, I came with you to understand what's happening"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "خفنا عليكم كتير",
+        "timestamp": "08:02",
+        "text_l2": "We were very worried about you"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "سوري ماما إحنا خفنا تزعلي منا عشان العقد انسرق",
+        "timestamp": "08:04",
+        "text_l2": "Sorry Mom, we were afraid you'd be upset with us because the necklace was stolen"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "كذبة ورا كذبة لو وصلنا لهون إحنا كتير متأسفين",
+        "timestamp": "08:08",
+        "text_l2": "Lie after lie until we got here, we are very sorry"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "ما كان لازم نكذب عليكي من البداية أصلاً",
+        "timestamp": "08:12",
+        "text_l2": "We shouldn't have lied to you from the beginning at all"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "شايفين قديش مهم نحكي الحقيقة",
+        "timestamp": "08:16",
+        "text_l2": "Do you see how important it is to tell the truth?"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "إحنا بنعتذر كتير بابا",
+        "timestamp": "08:18",
+        "text_l2": "We apologize a lot, Dad"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "لو قلتولي من أول كان قلتلكم إنه العقد مش حقيقي",
+        "timestamp": "08:20",
+        "text_l2": "If you had told me from the start, I would have told you the necklace isn't real"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "ومش غالي وأنا جايبته هدية لصاحبتي",
+        "timestamp": "08:24",
+        "text_l2": "And it's not expensive, and I got it as a gift for my friend"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "لأنها بتحب هاي الحجارة الملونة",
+        "timestamp": "08:27",
+        "text_l2": "Because she loves these colored stones"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "وكتير قليل بتلاقي منه",
+        "timestamp": "08:29",
+        "text_l2": "And you rarely find any like it"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "شو",
+        "timestamp": "08:31",
+        "text_l2": "What?"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "لازم دايماً نحكي الحقيقة الكذب بيوقعنا بمشاكل أكبر",
+        "timestamp": "08:33",
+        "text_l2": "We must always tell the truth; lying gets us into bigger problems"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "وبصير صعب نطلع منه",
+        "timestamp": "08:38",
+        "text_l2": "And it becomes hard to get out of them"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "أنا عرفت مين صاحبتها اللي جابتلها العقد",
+        "timestamp": "08:40",
+        "text_l2": "I found out who her friend is that she got the necklace for"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "وكمان الكذب بيخلي الناس ما توثق فينا",
+        "timestamp": "08:43",
+        "text_l2": "And also, lying makes people not trust us"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "وبيخسرنا علاقتنا مع الناس اللي بنحبهم",
+        "timestamp": "08:46",
+        "text_l2": "And makes us lose our relationships with the people we love"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "صح يا أم إنصاف",
+        "timestamp": "08:49",
+        "text_l2": "Right, Um Insaf?"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "طيب يا جماعة الحمد لله على السلامة",
+        "timestamp": "08:51",
+        "text_l2": "Okay everyone, thank God for your safety"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "بس هيك الحساب كتير كبر وبصراحة لازم ننهي المسألة",
+        "timestamp": "08:54",
+        "text_l2": "But the bill has grown quite large, and honestly, we must end this matter"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "اليوم قبل بكرة",
+        "timestamp": "08:59",
+        "text_l2": "Today before tomorrow"
+      }
+    ],
+    "phrases_with_token_translations": "[سالي] أنا مش عارف شو أعمل => [Sally], I don't know what to do\nسالي [أنا] مش عارف شو أعمل => Sally, [I] don't know what to do\nسالي أنا [مش عارف] شو أعمل => Sally, I [don't know] what to do\nسالي أنا مش عارف [شو] أعمل => Sally, I don't know [what] to do\nسالي أنا مش عارف شو [أعمل] => Sally, I don't know what [to do]\n\n[كيف] هيك صار فينا => [How] did this happen to us?\nكيف هيك [صار] فينا => How did this [happen] to us?\nكيف هيك صار [فينا] => How did this happen [to us]?\n\n[آه] ماما أوك => [Oh] Mom, okay\nآه [ماما] أوك => Oh [Mom], okay\nآه ماما [أوك] => Oh Mom, [okay]\n\n[أوك] فهمت => [Okay], I understood\nأوك [فهمت] => Okay, [I understood]\n\n[سند] بتقول ماما => [Sanad], Mom says\nسند [بتقول ماما] => Sanad, [Mom says]\n\n[دليفري] راح يجي معه بوكس => [A delivery] is coming with a box\nدليفري [راح يجي] معه بوكس => A delivery [is coming] with a box\nدليفري راح يجي [معه] بوكس => A delivery is coming [with] a box\nدليفري راح يجي معه [بوكس] => A delivery is coming with [a box]\n\n[بنحطه] بالمطبخ ولا حدا يقرب عليه => [We'll put it] in the kitchen and no one should go near it\nبنحطه [بالمطبخ] ولا حدا يقرب عليه => We'll put it [in the kitchen] and no one should go near it\nبنحطه بالمطبخ [ولا حدا] يقرب عليه => We'll put it in the kitchen [and no one] should go near it\nبنحطه بالمطبخ ولا حدا [يقرب عليه] => We'll put it in the kitchen and no one [should go near it]\n\n[أو] يلمسه => [Or] touch it\nأو [يلمسه] => Or [touch it]\n\n[سند] هيه إجا افتحله => [Sanad], here he is, open for him\nسند [هيه إجا] افتحله => Sanad, [here he is], open for him\nسند هيه إجا [افتحله] => Sanad, here he is, [open for him]\n\n[شو] هاد => [What] is this?\nشو [هاد] => What is [this]?\n\n[واو] بس ما تنسى شو حكت الماما => [Wow], but don't forget what Mom said\nواو [بس] ما تنسى شو حكت الماما => Wow, [but] don't forget what Mom said\nواو بس [ما تنسى] شو حكت الماما => Wow, but [don't forget] what Mom said\nواو بس ما تنسى [شو] حكت الماما => Wow, but don't forget [what] Mom said\nواو بس ما تنسى شو [حكت الماما] => Wow, but don't forget what [Mom said]\n\n[سالي] سند => [Sally], Sanad\nسالي [سند] => Sally, [Sanad]\n\n[واو] صار واصل => [Wow], it has arrived\nواو [صار] واصل => Wow, [it has] arrived\nواو صار [واصل] => Wow, it has [arrived]\n\n[هلا] هلا وصل وما لمسنا => [Welcome], welcome, it arrived and we didn't touch it\nهلا [هلا] وصل وما لمسنا => Welcome, [welcome], it arrived and we didn't touch it\nهلا هلا [وصل] وما لمسنا => Welcome, welcome, [it arrived] and we didn't touch it\nهلا هلا وصل [وما لمسنا] => Welcome, welcome, it arrived [and we didn't touch] it\n\n[زي ما] وصيتينا => [Just as] you instructed us\nزي ما [وصيتينا] => Just as [you instructed us]\n\n[منيح] منيح ماما لأنه هدية => [Good], good, kids, because it's a gift\nمنيح [منيح] ماما لأنه هدية => Good, [good], kids, because it's a gift\nمنيح منيح [ماما] لأنه هدية => Good, good, [kids], because it's a gift\nمنيح منيح ماما [لأنه] هدية => Good, good, kids, [because] it's a gift\nمنيح منيح ماما لأنه [هدية] => Good, good, kids, because it's a [gift]\n\n[يا رب] يعجبها => [I hope] she likes it\nيا رب [يعجبها] => I hope [she likes it]\n\n[شو في] شو مالك => [What's up?] What's wrong with you?\nشو في [شو مالك] => What's up? [What's wrong with you?]\n\n[متحمسة] أكيد راح يعجبها => [I'm excited], she will definitely like it\nمتحمسة [أكيد] راح يعجبها => I'm excited, she will [definitely] like it\nمتحمسة أكيد [راح] يعجبها => I'm excited, she [will] definitely like it\nمتحمسة أكيد راح [يعجبها] => I'm excited, she will definitely [like it]\n\n[أم سند] بس بدي أسألك حبيبتي => [Um Sanad], I just want to ask you, dear\nأم سند [بس بدي] أسألك حبيبتي => Um Sanad, [I just want] to ask you, dear\nأم سند بس بدي [أسألك] حبيبتي => Um Sanad, I just want [to ask you], dear\nأم سند بس بدي أسألك [حبيبتي] => Um Sanad, I just want to ask you, [dear]\n\n[إنتي انعزمتي] إشي عند أم يزن => [Were you invited] to something at Um Yazan's\nإنتي انعزمتي [إشي] عند أم يزن => Were you invited [to something] at Um Yazan's\nإنتي انعزمتي إشي [عند] أم يزن => Were you invited to something [at] Um Yazan's\nإنتي انعزمتي إشي عند [أم يزن] => Were you invited to something at [Um Yazan's]\n\n[قبل كم يوم] => [A few days ago]?\n\n[لا] بصراحة صارلنا كم يوم ما حكينا => [No], honestly, it's been a few days since we spoke\nلا [بصراحة] صارلنا كم يوم ما حكينا => No, [honestly], it's been a few days since we spoke\nلا بصراحة [صارلنا] كم يوم ما حكينا => No, honestly, [it's been] a few days since we spoke\nلا بصراحة صارلنا [كم يوم] ما حكينا => No, honestly, it's been [a few days] since we spoke\nلا بصراحة صارلنا كم يوم [ما حكينا] => No, honestly, it's been a few days [since we spoke]\n\n[أنا] وأم يزن => [Me] and Um Yazan\nأنا [و] أم يزن => Me [and] Um Yazan\nأنا و[أم يزن] => Me and [Um Yazan]\n\n[ما] عزمتك يي عيب شو => She [didn't] invite you? Oh, how shameful\nما [عزمتك] يي عيب شو => She didn't [invite you]? Oh, how shameful\nما عزمتك [يي] عيب شو => She didn't invite you? [Oh], how shameful\nما عزمتك يي [عيب شو] => She didn't invite you? Oh, [how shameful]\n\n[عادي] بتصير يعني => [It's normal], it happens\nعادي [بتصير] يعني => It's normal, [it happens]\n\n[يمكن] إشي عائلي وبعدين هي حرة => [Maybe] it's a family thing, and besides, she's free\nيمكن [إشي عائلي] وبعدين هي حرة => Maybe [it's a family thing], and besides, she's free\nيمكن إشي عائلي [وبعدين] هي حرة => Maybe it's a family thing, [and besides], she's free\nيمكن إشي عائلي وبعدين [هي] حرة => Maybe it's a family thing, and besides, [she]'s free\nيمكن إشي عائلي وبعدين هي [حرة] => Maybe it's a family thing, and besides, she's [free]\n\n[لا] مش حرة ومش عادي => [No], she's not free and it's not normal\nلا [مش] حرة ومش عادي => No, she's [not] free and it's not normal\nلا مش [حرة] ومش عادي => No, she's not [free] and it's not normal\nلا مش حرة [ومش] عادي => No, she's not free [and it's not] normal\nلا مش حرة ومش [عادي] => No, she's not free and it's not [normal]\n\n[لما] تعزمني وتعزم كل الجارات => [When] she invites me and all the neighbors\nلما [تعزمني] وتعزم كل الجارات => When [she invites me] and all the neighbors\nتعزم => invites # custom for implied verb\nلما تعزمني وتعزم [كل] الجارات => When she invites me and [all] the neighbors\nلما تعزمني وتعزم كل [الجارات] => When she invites me and all [the neighbors]\n\n[وما] تعزمك => [And doesn't] invite you\nوما [تعزمك] => And doesn't [invite you]\n\n[عن جد] طب إنتي رحتي => [Really]? Well, did you go?\nعن جد [طب] إنتي رحتي => Really? [Well], did you go?\nعن جد طب إنتي [رحتي] => Really? Well, [did you go]?\n\n[أكيد] لا حبيبتي أنا ما بروح بدونك => [Of course] not, dear, I don't go without you\nأكيد [لا] حبيبتي أنا ما بروح بدونك => Of course [not], dear, I don't go without you\nأكيد لا [حبيبتي] أنا ما بروح بدونك => Of course not, [dear], I don't go without you\nأكيد لا حبيبتي [أنا] ما بروح بدونك => Of course not, dear, [I] don't go without you\nأكيد لا حبيبتي أنا [ما] بروح بدونك => Of course not, dear, I [don't] go without you\nأكيد لا حبيبتي أنا ما [بروح] بدونك => Of course not, dear, I don't [go] without you\nأكيد لا حبيبتي أنا ما بروح [بدونك] => Of course not, dear, I don't go [without you]\n\n[بعتذرلها] كل مرة => [I apologize to her] every time\nبعتذرلها [كل] مرة => I apologize to her [every] time\nبعتذرلها كل [مرة] => I apologize to her every [time]\nبعتذرلها [كل مرة] => I apologize to her [every time]\n\n[ليش] ولادك نازلين هيك ركض شو في => [Why] are your kids running down like that? What's going on?\nليش [ولادك] نازلين هيك ركض شو في => Why are [your kids] running down like that? What's going on?\nليش ولادك [نازلين هيك ركض] شو في => Why are your kids [running down like that]? What's going on?\nليش ولادك نازلين هيك ركض [شو في] => Why are your kids running down like that? [What's going on]?\n\n[آه] ماما عندي امتحان => [Oh] Mom, I have an exam\nآه [ماما] عندي امتحان => Oh [Mom], I have an exam\nآه ماما [عندي] امتحان => Oh Mom, [I have] an exam\nآه ماما عندي [امتحان] => Oh Mom, I have [an exam]\n\n[و] نسيت كتبي بالمدرسة => [And] I forgot my books at school\nو[نسيت] كتبي بالمدرسة => And [I forgot] my books at school\nونسيت [كتبي] بالمدرسة => And I forgot [my books] at school\nونسيت كتبي [بالمدرسة] => And I forgot my books [at school]\n\n[وسند] جاي يساعدني ما راح نتأخر => [And Sanad] is coming to help me, we won't be late\nوسند [جاي] يساعدني ما راح نتأخر => And Sanad [is coming] to help me, we won't be late\nوسند جاي [يساعدني] ما راح نتأخر => And Sanad is coming [to help me], we won't be late\nوسند جاي يساعدني [ما راح نتأخر] => And Sanad is coming to help me, [we won't be late]\n\n[عمو] عطا لو سمحت => [Uncle] Ata, please\nعمو [عطا] لو سمحت => Uncle [Ata], please\nعمو عطا [لو سمحت] => Uncle Ata, [please]\n\n[الحق] هاي السيارة بسرعة => [Follow] this car quickly\nالحق [هاي] السيارة بسرعة => Follow [this] car quickly\nالحق هاي [السيارة] بسرعة => Follow this [car] quickly\nالحق هاي السيارة [بسرعة] => Follow this car [quickly]\n\n[لا] خيو شو مالكم => [No], brother, what's wrong with you?\nلا [خيو] شو مالكم => No, [brother], what's wrong with you?\nلا خيو [شو] مالكم => No, brother, [what's] wrong with you?\nلا خيو شو [مالكم] => No, brother, what's [wrong with you]?\n\n[شو بتفكروها] سايبة => [Do you think it's] a free-for-all?\nشو بتفكروها [سايبة] => Do you think it's [a free-for-all]?\n\n[أنا] ما بتحرك من مكاني => [I] don't move from my spot\nأنا [ما بتحرك] من مكاني => I [don't move] from my spot\nأنا ما بتحرك [من] مكاني => I don't move [from] my spot\nأنا ما بتحرك من [مكاني] => I don't move from [my spot]\n\n[بدون] موافقة الأهل => [Without] the parents' approval\nبدون [موافقة الأهل] => Without [the parents' approval]\n\n[والاتفاق] على السعر => [And agreeing] on the price\nوالاتفاق [على] السعر => And agreeing [on] the price\nوالاتفاق على [السعر] => And agreeing on [the price]\n\n[شو بتفكروها] سايبة => [Do you think it's] a free-for-all?\nشو بتفكروها [سايبة] => Do you think it's [a free-for-all]?\n\n[هاد أبوي] يا زلمة اشترى سيارة جديدة => [This is my father], man, he bought a new car\nهاد أبوي [يا زلمة] اشترى سيارة جديدة => This is my father, [man], he bought a new car\nهاد أبوي يا زلمة [اشترى] سيارة جديدة => This is my father, man, [he bought] a new car\nهاد أبوي يا زلمة اشترى [سيارة جديدة] => This is my father, man, he bought [a new car]\n\n[ومن الفرحة] نسينا وطلع => [And out of joy], we forgot and he left\nومن الفرحة [نسينا] وطلع => And out of joy, [we forgot] and he left\nومن الفرحة نسينا [وطلع] => And out of joy, we forgot [and he left]\n\n[وهو بحاسبك] بس اطلع يا زلمة => [And he'll pay you], just go, man\nوهو بحاسبك [بس] اطلع يا زلمة => And he'll pay you, [just] go, man\nوهو بحاسبك بس [اطلع] يا زلمة => And he'll pay you, just [go], man\nوهو بحاسبك بس اطلع [يا زلمة] => And he'll pay you, just go, [man]\n\n[بس] إنتي طلي وشوفي بعيونك => [But] you just look and see with your own eyes\nبس [إنتي] طلي وشوفي بعيونك => But [you] just look and see with your own eyes\nبس إنتي [طلي] وشوفي بعيونك => But you just [look] and see with your own eyes\nبس إنتي طلي [وشوفي] بعيونك => But you just look and [see] with your own eyes\nبس إنتي طلي وشوفي [بعيونك] => But you just look and see [with your own eyes]\n\n[طبعاً] ثلاجتها بطلت توسع من كتر الجمعات => [Of course], her fridge can't fit anything anymore from all the gatherings\nطبعاً [ثلاجتها] بطلت توسع من كتر الجمعات => Of course, [her fridge] can't fit anything anymore from all the gatherings\nطبعاً ثلاجتها [بطلت توسع] من كتر الجمعات => Of course, her fridge [can't fit anything anymore] from all the gatherings\nطبعاً ثلاجتها بطلت توسع [من] كتر الجمعات => Of course, her fridge can't fit anything anymore [from] all the gatherings\nطبعاً ثلاجتها بطلت توسع من [كتر الجمعات] => Of course, her fridge can't fit anything anymore from [all the gatherings]\n\n[معقول] ما قالتلك أنا جايبة ثلاجة جديدة => [Is it possible] she didn't tell you I'm getting a new fridge?\nمعقول [ما قالتلك] أنا جايبة ثلاجة جديدة => Is it possible [she didn't tell you] I'm getting a new fridge?\nمعقول ما قالتلك [أنا] جايبة ثلاجة جديدة => Is it possible she didn't tell you [I'm] getting a new fridge?\nمعقول ما قالتلك أنا [جايبة] ثلاجة جديدة => Is it possible she didn't tell you I'm [getting] a new fridge?\nمعقول ما قالتلك أنا جايبة [ثلاجة جديدة] => Is it possible she didn't tell you I'm getting [a new fridge]?\n\n[لا] ما قالتلي صدقي => [No], she didn't tell me, believe me\nلا [ما قالتلي] صدقي => No, [she didn't tell me], believe me\nلا ما قالتلي [صدقي] => No, she didn't tell me, [believe me]\n\n[أنا قالتلي] بس بصراحة نبهت علي => [She told me], but honestly, she warned me\nأنا قالاتلي [بس] بصراحة نبهت علي => She told me, [but] honestly, she warned me\nأنا قالتلي بس [بصراحة] نبهت علي => She told me, but [honestly], she warned me\nأنا قالاتلي بس بصراحة [نبهت علي] => She told me, but honestly, [she warned me]\n\n[ما أقول] لحدا => [Not to tell] anyone\nما أقول [لحدا] => Not to tell [anyone]\n\n[مش عارفة] مين هالحد اللي خايفة => [I don't know] who this \"someone\" is that she's afraid\nمش عارفة [مين] هالحد اللي خايفة => I don't know [who] this \"someone\" is that she's afraid\nمش عارفة مين [هالحد] اللي خايفة => I don't know who [this \"someone\"] is that she's afraid\nمش عارفة مين هالحد [اللي خايفة] => I don't know who this \"someone\" [is that she's afraid]\n\n[من] عينه هالقد => [Of] their evil eye so much\nمن [عينه] هالقد => Of [their evil eye] so much\nمن عينه [هالقد] => Of their evil eye [so much]\n\n[ول] معقول => [Wow], is it possible?\nول [معقول] => Wow, [is it possible?]\n\n[صدق] يا أبو سند بتشتري سيارات => [Believe me], Abu Sanad, you buy cars\nصدق [يا أبو سند] بتشتري سيارات => Believe me, [Abu Sanad], you buy cars\nصدق يا أبو سند [بتشتري] سيارات => Believe me, Abu Sanad, [you buy] cars\nصدق يا أبو سند بتشتري [سيارات] => Believe me, Abu Sanad, you buy [cars]\n\n[وعايش] حياتك بس مش قادر تسد ديناتك => [And living] your life, but you can't pay off your debts\nوعايش [حياتك] بس مش قادر تسد ديناتك => And living [your life], but you can't pay off your debts\nوعايش حياتك [بس] مش قادر تسد ديناتك => And living your life, [but] you can't pay off your debts\nوعايش حياتك بس [مش قادر] تسد ديناتك => And living your life, but [you can't] pay off your debts\nوعايش حياتك بس مش قادر [تسد] ديناتك => And living your life, but you can't [pay off] your debts\nوعايش حياتك بس مش قادر تسد [ديناتك] => And living your life, but you can't pay off [your debts]\n\n[ماشي] أنا وراك والزمن طويل => [Fine], I'm after you, and time is long\nماشي [أنا] وراك والزمن طويل => Fine, [I'm] after you, and time is long\nماشي أنا [وراك] والزمن طويل => Fine, I'm [after you], and time is long\nماشي أنا وراك [والزمن] طويل => Fine, I'm after you, [and time] is long\nماشي أنا وراك والزمن [طويل] => Fine, I'm after you, and time is [long]\n\n[بفرجيك] => [I'll show you]\n\n[ماما] لقينا المس وسالي عم تسألها => [Mom], we found the teacher and Sally is asking her\nماما [لقينا] المس وسالي عم تسألها => Mom, [we found] the teacher and Sally is asking her\nماما لقينا [المس] وسالي عم تسألها => Mom, we found [the teacher] and Sally is asking her\nماما لقينا المس [وسالي] عم تسألها => Mom, we found the teacher [and Sally] is asking her\nماما لقينا المس وسالي [عم تسألها] => Mom, we found the teacher and Sally [is asking her]\n\n[كم سؤال] عن الامتحان => [A few questions] about the exam\nكم سؤال [عن الامتحان] => A few questions [about the exam]\n\n[بحكيكي] بعدين => [I'll talk to you] later\nبحكيكي [بعدين] => I'll talk to you [later]\n\n[بدلي] واضرب واطرح ولا وطولان كمان => [Change], multiply, and subtract, and he's grown taller too\nبدلي [واضرب] واطرح ولا وطولان كمان => Change, [and multiply], and subtract, and he's grown taller too\nبدلي واضرب [واطرح] ولا وطولان كمان => Change, multiply, [and subtract], and he's grown taller too\nبدلي واضرب واطرح [ولا] وطولان كمان => Change, multiply, and subtract, [and] he's grown taller too\nبدلي واضرب واطرح ولا [وطولان] كمان => Change, multiply, and subtract, and [he's grown taller] too\nبدلي واضرب واطرح ولا وطولان [كمان] => Change, multiply, and subtract, and he's grown taller [too]\n\n[يا عمي] المصاري بتعمل عجايب => [Man], money works wonders\nيا عمي [المصاري] بتعمل عجايب => Man, [money] works wonders\nيا عمي المصاري [بتعمل] عجايب => Man, money [works] wonders\nيا عمي المصاري بتعمل [عجايب] => Man, money works [wonders]\n\n[يا شباب] يا إخوان وين رايحين => [Hey guys], brothers, where are you going?\nيا شباب [يا إخوان] وين رايحين => Hey guys, [brothers], where are you going?\nيا شباب يا إخوان [وين رايحين] => Hey guys, brothers, [where are you going]\n\n[ما حسبتوني] طيب أنا بفرجيكو => [You didn't count me in]? Fine, I'll show you\nما حسبتوني [طيب] أنا بفرجيكو => You didn't count me in? [Fine], I'll show you\nما حسبتوني طيب [أنا بفرجيكو] => You didn't count me in? Fine, [I'll show you]\n\n[يا شباب] وين تيكيتاتكم => [Hey guys], where are your tickets?\nيا شباب [وين تيكيتاتكم] => Hey guys, [where are your tickets]\n\n[إحنا] جايين مع المدرسة بس سبقناهم => [We] are coming with the school, but we got ahead of them\nإحنا [جايين] مع المدرسة بس سبقناهم => We [are coming] with the school, but we got ahead of them\nإحنا جايين [مع] المدرسة بس سبقناهم => We are coming [with] the school, but we got ahead of them\nإحنا جايين مع [المدرسة] بس سبقناهم => We are coming with [the school], but we got ahead of them\nإحنا جايين مع المدرسة [بس] سبقناهم => We are coming with the school, [but] we got ahead of them\nإحنا جايين مع المدرسة بس [سبقناهم] => We are coming with the school, but [we got ahead of them]\n\n[آه] رحلة مدرسية ل300 طالب => [Oh], a school trip for 300 students\nآه [رحلة مدرسية] ل300 طالب => Oh, [a school trip] for 300 students\nآه رحلة مدرسية [ل300 طالب] => Oh, a school trip [for 300 students]\n\n[إيش] شو بتحكي 300 طالب => [What]? What are you saying? 300 students?\nإيش [شو بتحكي] 300 طالب => What? [What are you saying]? 300 students?\nإيش شو بتحكي [300 طالب] => What? What are you saying? [300 students]\n\n[أنا] قلتلهم 100 مرة ما يحطوني => [I] told them 100 times not to put me\nأنا [قلتلهم] 100 مرة ما يحطوني => I [told them] 100 times not to put me\nأنا قلتلهم [100 مرة] ما يحطوني => I told them [100 times] not to put me\nأنا قلتلهم 100 مرة [ما يحطوني] => I told them 100 times [not to put me]\n\n[بالشفت] اللي فيه طلاب => [On the shift] that has students\nبالشفت [اللي] فيه طلاب => On the shift [that] has students\nبالشفت اللي [فيه] طلاب => On the shift that [has] students\nبالشفت اللي فيه [طلاب] => On the shift that has [students]\n\n[بجننوني] أنا مستقيل مع السلامة => [They drive me crazy], I'm resigning, goodbye\nبجننوني [أنا مستقيل] مع السلامة => They drive me crazy, [I'm resigning], goodbye\nبجننوني أنا مستقيل [مع السلامة] => They drive me crazy, I'm resigning, [goodbye]\n\n[ألو] مرحبا أم سند اشتقنالك كيفك => [Hello], hi Um Sanad, we missed you, how are you?\nألو [مرحبا] أم سند اشتقنالك كيفك => Hello, [hi] Um Sanad, we missed you, how are you?\nألو مرحبا [أم سند] اشتقنالك كيفك => Hello, hi [Um Sanad], we missed you, how are you?\nألو مرحبا أم سند [اشتقنالك] كيفك => Hello, hi Um Sanad, [we missed you], how are you?\nألو مرحبا أم سند اشتقنالك [كيفك] => Hello, hi Um Sanad, we missed you, [how are you?]\n\n[أهلا] أم يزن => [Welcome], Um Yazan\nأهلا [أم يزن] => Welcome, [Um Yazan]\n\n[اسمعي] سوري إنه عم بغلبك => [Listen], sorry for bothering you\nاسمعي [سوري] إنه عم بغلبك => Listen, [sorry] for bothering you\nاسمعي سوري [إنه عم بغلبك] => Listen, sorry [for bothering you]\n\n[بس] جاييني ضيوف وبدي استعير => [But] I have guests coming and I want to borrow\nبس [جاييني ضيوف] وبدي استعير => But [I have guests coming] and I want to borrow\nبس جاييني ضيوف [وبدي] استعير => But I have guests coming [and I want] to borrow\nبس جاييني ضيوف وبدي [استعير] => But I have guests coming and I want [to borrow]\n\n[بكرج] القهوة الكبيرة اللي عندك ممكن => The large coffee [pot] you have, is it possible?\nبكرج [القهوة] الكبيرة اللي عندك ممكن => The large [coffee] pot you have, is it possible?\nبكرج القهوة [الكبيرة] اللي عندك ممكن => The [large] coffee pot you have, is it possible?\n[بكرج القهوة] الكبيرة اللي عندك ممكن => The large [coffee pot] you have, is it possible?\n[بكرج القهوة الكبيرة] اللي عندك ممكن => [The large coffee pot] you have, is it possible?\nبكرج القهوة الكبيرة [اللي عندك] ممكن => The large coffee pot [you have], is it possible?\nبكرج القهوة الكبيرة اللي عندك [ممكن] => The large coffee pot you have, [is it possible?]\n\n[سوري] حبيبتي بس مش نظيف => [Sorry] dear, but it's not clean\nسوري [حبيبتي] بس مش نظيف => Sorry [dear], but it's not clean\nسوري حبيبتي [بس] مش نظيف => Sorry dear, [but] it's not clean\nسوري حبيبتي بس [مش نظيف] => Sorry dear, but [it's not clean]\n\n[بده] جلي وتلميع وبعدين أنا كمان => [It needs] washing and polishing, and besides, I also\nبده [جلي] وتلميع وبعدين أنا كمان => It needs [washing] and polishing, and besides, I also\nبده جلي [وتلميع] وبعدين أنا كمان => It needs washing [and polishing], and besides, I also\nبده جلي وتلميع [وبعدين] أنا كمان => It needs washing and polishing, [and besides], I also\nبده جلي وتلميع وبعدين [أنا كمان] => It needs washing and polishing, and besides, [I also]\n\n[بخاف] يجي عندي ضيوف ليش ما يجي يعني => [Am afraid] guests might come to me, why wouldn't they?\nبخاف [يجي] عندي ضيوف ليش ما يجي يعني => Am afraid guests [might come] to me, why wouldn't they?\nبخاف يجي [عندي] ضيوف ليش ما يجي يعني => Am afraid guests might come [to me], why wouldn't they?\nبخاف يجي عندي [ضيوف] ليش ما يجي يعني => Am afraid [guests] might come to me, why wouldn't they?\nبخاف [يجي عندي ضيوف] ليش ما يجي يعني => Am afraid [guests might come to me], why wouldn't they?\nبخاف يجي عندي ضيوف [ليش ما يجي يعني] => Am afraid guests might come to me, [why wouldn't they?]\n\n[أقولك] اسألي أم إنصاف ما إنتي على تواصل معها => [I'll tell you what], ask Um Insaf, since you're in touch with her\nأقولك [اسألي] أم إنصاف ما إنتي على تواصل معها => I'll tell you what, [ask] Um Insaf, since you're in touch with her\nأقولك اسألي [أم إنصاف] ما إنتي على تواصل معها => I'll tell you what, ask [Um Insaf], since you're in touch with her\nأقولك اسألي أم إنصاف [ما] إنتي على تواصل معها => I'll tell you what, ask Um Insaf, [since] you're in touch with her\nأقولك اسألي أم إنصاف ما [إنتي] على تواصل معها => I'll tell you what, ask Um Insaf, since [you're] in touch with her\nأقولك اسألي أم إنصاف ما إنتي [على تواصل] معها => I'll tell you what, ask Um Insaf, since you're [in touch] with her\nأقولك اسألي أم إنصاف ما إنتي على تواصل [معها] => I'll tell you what, ask Um Insaf, since you're in touch [with her]\nأقولك اسألي أم إنصاف [ما إنتي على تواصل معها] => I'll tell you what, ask Um Insaf, [since you're in touch with her]\n\n[سلام] => [Bye]\n\n[يي] شو مالها أم سند مش على عوايدها => [Oh], what's wrong with Um Sanad? She's not her usual self\nيي [شو] مالها أم سند مش على عوايدها => Oh, [what's] wrong with Um Sanad? She's not her usual self\nيي شو [مالها] أم سند مش على عوايدها => Oh, what's [wrong with] Um Sanad? She's not her usual self\nيي شو مالها [أم سند] مش على عوايدها => Oh, what's wrong with [Um Sanad]? She's not her usual self\nيي شو مالها أم سند [مش على عوايدها] => Oh, what's wrong with Um Sanad? [She's not her usual self]\n\n[مرحبا] بدنا ندخل مجموعة أنتيكات => [Hello], we want to bring in a set of antiques\nمرحبا [بدنا] ندخل مجموعة أنتيكات => Hello, [we want] to bring in a set of antiques\nمرحبا بدنا [ندخل] مجموعة أنتيكات => Hello, we want [to bring in] a set of antiques\nمرحبا بدنا ندخل [مجموعة] أنتيكات => Hello, we want to bring in [a set] of antiques\nمرحبا بدنا ندخل مجموعة [أنتيكات] => Hello, we want to bring in a set of [antiques]\n\n[أتوقع] إنها هي الشنطة شايفيتها من قبل => [I expect] this is the bag, I've seen it before\nأتوقع [إنها هي] الشنطة شايفيتها من قبل => I expect [this is] the bag, I've seen it before\nأتوقع إنها هي [الشنطة] شايفيتها من قبل => I expect this is [the bag], I've seen it before\nأتوقع إنها هي الشنطة [شايفيتها] من قبل => I expect this is the bag, [I've seen it] before\nأتوقع إنها هي الشنطة شايفيتها [من قبل] => I expect this is the bag, I've seen it [before]\n\n[على كل حال] تقدروا تدخلوا من هاد الباب => [Anyway], you can enter through this door\nعلى كل حال [تقدروا] تدخلوا من هاد الباب => Anyway, [you can] enter through this door\nعلى كل حال تقدروا [تدخلوا] من هاد الباب => Anyway, you can [enter] through this door\nعلى كل حال تقدروا تدخلوا [من هاد الباب] => Anyway, you can enter [through this door]\n\n[على اليمين] أكيد بتعرفوا غرفة التسليم => [On the right], surely you know the delivery room\nعلى اليمين [أكيد] بتعرفوا غرفة التسليم => On the right, [surely] you know the delivery room\nعلى اليمين أكيد [بتعرفوا] غرفة التسليم => On the right, surely [you know] the delivery room\nعلى اليمين أكيد بتعرفوا [غرفة التسليم] => On the right, surely you know [the delivery room]\n\n[أكيد] أكيد => [Of course], of course\nأكيد [أكيد] => Of course, [of course]\n\n[شفتوا] شفتوا إحنا لازم ندخل على الهليكوبتر => [Did you see]? Did you see? We have to get into the helicopter\nشفتوا [شفتوا] إحنا لازم ندخل على الهليكوبتر => Did you see? [Did you see]? We have to get into the helicopter\nشفتوا شفتوا [إحنا] لازم ندخل على الهليكوبتر => Did you see? Did you see? [We] have to get into the helicopter\nشفتوا شفتوا إحنا [لازم ندخل] على الهليكوبتر => Did you see? Did you see? We [have to get into] the helicopter\nشفتوا شفتوا إحنا لازم ندخل [على الهليكوبتر] => Did you see? Did you see? We have to get into [the helicopter]\n\n[بابا] وينكم يا ولاد الماما قلقانة عليكم => [Dad], where are you kids? Mom is worried about you\nبابا [وينكم] يا ولاد الماما قلقانة عليكم => Dad, [where are you] kids? Mom is worried about you\nبابا وينكم [يا ولاد] الماما قلقانة عليكم => Dad, where are you [kids]? Mom is worried about you\nبابا وينكم يا ولاد [الماما] قلقانة عليكم => Dad, where are you kids? [Mom] is worried about you\nبابا وينكم يا ولاد الماما [قلقانة عليكم] => Dad, where are you kids? Mom [is worried about you]\n\n[إحنا] مرينا نجيب سندويشات فلافل وجايين => [We] stopped to get falafel sandwiches and we're coming\nإحنا [مرينا] نجيب سندويشات فلافل وجايين => We [stopped] to get falafel sandwiches and we're coming\nإحنا مرينا [نجيب] سندويشات فلافل وجايين => We stopped [to get] falafel sandwiches and we're coming\nإحنا مرينا نجيب [سندويشات فلافل] وجايين => We stopped to get [falafel sandwiches] and we're coming\nإحنا مرينا نجيب سندويشات فلافل [وجايين] => We stopped to get falafel sandwiches [and we're coming]\n\n[ما راح] نتأخر => [We won't] be late\nما راح [نتأخر] => We won't [be late]\n\n[لقيته] لقيته يلا خلينا نطلع من هون بسرعة => [I found it], I found it, let's get out of here quickly\nلقيته [لقيته] يلا خلينا نطلع من هون بسرعة => I found it, [I found it], let's get out of here quickly\nلقيته لقيته [يلا] خلينا نطلع من هون بسرعة => I found it, I found it, [let's] get out of here quickly\nلقيته لقيته يلا [خلينا نطلع] من هون بسرعة => I found it, I found it, let's [get out] from here quickly\nلقيته لقيته يلا خلينا نطلع [من هون] بسرعة => I found it, I found it, let's get out [from here] quickly\nلقيته لقيته يلا خلينا نطلع من هون [بسرعة] => I found it, I found it, let's get out from here [quickly]\n\n[سند] شو عملت => [Sanad], what did you do?\nسند [شو عملت] => Sanad, [what did you do?]\n\n[ما تخافي] أنا راح أتصرف => [Don't worry], I'll handle it\nما تخافي [أنا راح أتصرف] => Don't worry, [I'll handle it]\n\n[شايفة] هيهم وصلوا => [See], here they are, they've arrived\nشايفة [هيهم] => See, [here they are], they've arrived\nشايفة هيهم [وصلوا] => See, here they are, [they've arrived]\n\n[مرحبا] أم سند حسيتك مش على بعضك => [Hello] Um Sanad, I felt you weren't yourself\nمرحبا [أم سند] حسيتك مش على بعضك => Hello [Um Sanad], I felt you weren't yourself\nمرحبا أم سند [حسيتك] مش على بعضك => Hello Um Sanad, [I felt] you weren't yourself\nمرحبا أم سند حسيتك [مش على بعضك] => Hello Um Sanad, I felt [you weren't yourself]\n\n[قلت] بجيب باقي الحلو وبنشرب قهوة مع بعض => [I said] I'll bring the rest of the sweets and we'll drink coffee together\nقلت [بجيب باقي الحلو] وبنشرب قهوة مع بعض => I said [I'll bring the rest of the sweets] and we'll drink coffee together\nقلت بجيب باقي الحلو [وبنشرب قهوة مع بعض] => I said I'll bring the rest of the sweets [and we'll drink coffee together]\n\n[أهلا] أم يزن إن شاء الله كانت جمعة حلوة => [Welcome] Um Yazan, I hope it was a nice gathering\nأهلا [أم يزن] => Welcome [Um Yazan], I hope it was a nice gathering\nأهلا أم يزن [إن شاء الله] كانت جمعة حلوة => Welcome Um Yazan, [I hope] it was a nice gathering\nأهلا أم يزن إن شاء الله [كانت جمعة حلوة] => Welcome Um Yazan, I hope [it was a nice gathering]\n\n[إنتي مالك إشي] زعلانة مني => [Is something wrong?] Are you upset with me?\nإنتي مالك إشي [زعلانة مني] => Is something wrong? [Are you upset with me?]\n\n[لا أبداً] إنتي بتعرفي أنا ما بزعل => [No, not at all], you know I don't get upset\nلا أبداً [إنتي بتعرفي] أنا ما بزعل => No, not at all, [you know] I don't get upset\nلا أبداً إنتي بتعرفي [أنا ما بزعل] => No, not at all, you know [I don't get upset]\n\n[بس استغربت] إنك بتعملي جمعات كتير => [But I was surprised] that you're having many gatherings\nبس استغربت [إنك بتعملي جمعات كتير] => But I was surprised [that you're having many gatherings]\n\n[وبتعزمي أم إنصاف] وكل الجارات => [And inviting Um Insaf] and all the neighbors\nوبتعزمي أم إنصاف [وكل الجارات] => And inviting Um Insaf [and all the neighbors]\n\n[وما بتعزميني] وبتخبريهم أخبارك => [And not inviting me], and telling them your news\nوما بتعزميني [وبتخبريهم أخبارك] => And not inviting me, [and telling them your news]\n\n[وأنا لا] غريبة صح => [And not me], strange, right?\nوأنا لا [غريبة] صح => And not me, [strange], right?\nوأنا لا غريبة [صح] => And not me, strange, [right?]\n\n[مين] قالك هالحكي جمعات كتير أبداً => [Who] told you that? Many gatherings? Not at all\nمين [قالك] هالحكي جمعات كتير أبداً => Who [told you] that? Many gatherings? Not at all\nمين قالك [هالحكي] جمعات كتير أبداً => Who told you [that]? Many gatherings? Not at all\nمين قالك هالحكي [جمعات كتير] أبداً => Who told you that? [Many gatherings]? Not at all\nمين قالك هالحكي جمعات كتير [أبداً] => Who told you that? Many gatherings? [Not at all]\n\n[هي] أول جمعة لزميلة كانت معي من زمان => [This is] the first gathering for a colleague who was with me a long time ago\nهي [أول] جمعة لزميلة كانت معي من زمان => This is the [first] gathering for a colleague who was with me a long time ago\nهي أول [جمعة] لزميلة كانت معي من زمان => This is the first [gathering] for a colleague who was with me a long time ago\nهي أول جمعة [لزميلة] كانت معي من زمان => This is the first gathering [for a colleague] who was with me a long time ago\nهي أول جمعة لزميلة [كانت] معي من زمان => This is the first gathering for a colleague [who was] with me a long time ago\nهي أول جمعة لزميلة كانت [معي] من زمان => This is the first gathering for a colleague who was [with me] a long time ago\nهي أول جمعة لزميلة كانت معي [من زمان] => This is the first gathering for a colleague who was with me [a long time ago]\n\n[وتقاعدت] فقلنا بنجتمع وبنرجع أيام زمان => [And she retired], so we said we'd meet and bring back the old days\nوتقاعدت [فقلنا] بنجتمع وبنرجع أيام زمان => And she retired, [so we said] we'd meet and bring back the old days\nوتقاعدت فقلنا [بنجتمع] وبنرجع أيام زمان => And she retired, so we said [we'd meet] and bring back the old days\nوتقاعدت فقلنا بنجتمع [وبنرجع] أيام زمان => And she retired, so we said we'd meet [and bring back] the old days\nوتقاعدت فقلنا بنجتمع وبنرجع [أيام زمان] => And she retired, so we said we'd meet and bring back [the old days]\n\n[وبعدين] أنا ما عزمت أم إنصاف => [And besides], I didn't invite Um Insaf\nوبعدين [أنا] ما عزمت أم إنصاف => And besides, [I] didn't invite Um Insaf\nوبعدين أنا [ما عزمت] أم إنصاف => And besides, I [didn't invite] Um Insaf\nوبعدين أنا ما عزمت [أم إنصاف] => And besides, I didn't invite [Um Insaf]\n\n[وصارلي] فترة طويلة ما حكيت معها => [And it's been] a long time since I spoke with her\nوصارلي [فترة طويلة] ما حكيت معها => And it's been [a long time] since I spoke with her\nوصارلي فترة طويلة [ما حكيت] معها => And it's been a long time [since I spoke] with her\nوصارلي فترة طويلة ما حكيت [معها] => And it's been a long time since I spoke [with her]\n\n[عن جد] => [Really?]\n\n[أم سند] منيح اللي لقيتك أنا هسا بدي فلوسي => [Um Sanad], it's good I found you, I want my money now\nأم سند [منيح] اللي لقيتك أنا هسا بدي فلوسي => Um Sanad, [good] I found you, I want my money now\nأم سند منيح [اللي لقيتك] أنا هسا بدي فلوسي => Um Sanad, it's good [I found you], I want my money now\nأم سند منيح اللي لقيتك [أنا] هسا بدي فلوسي => Um Sanad, it's good I found you, [I] want my money now\nأم سند منيح اللي لقيتك أنا [هسا] بدي فلوسي => Um Sanad, it's good I found you, I want my money [now]\nأم سند منيح اللي لقيتك أنا هسا [بدي] فلوسي => Um Sanad, it's good I found you, I [want] my money now\nأم سند منيح اللي لقيتك أنا هسا بدي [فلوسي] => Um Sanad, it's good I found you, I want [my money] now\n\n[رد] رد وقولهم الحقيقة => [Answer], answer and tell them the truth\nرد [رد] وقولهم الحقيقة => Answer, [answer] and tell them the truth\nرد رد [وقولهم] الحقيقة => Answer, answer [and tell them] the truth\nرد رد وقولهم [الحقيقة] => Answer, answer and tell them [the truth]\n\n[بابا] الحقنا إحنا بالهليكوبتر ومش عارفين ننزل => [Dad], help us, we're in the helicopter and we don't know how to go down\nبابا [الحقنا] إحنا بالهليكوبتر ومش عارفين ننزل => Dad, [help us], we're in the helicopter and we don't know how to go down\nبابا الحقنا [إحنا] بالهليكوبتر ومش عارفين ننزل => Dad, help us, [we're] in the helicopter and we don't know how to go down\nبابا الحقنا إحنا [بالهليكوبتر] ومش عارفين ننزل => Dad, help us, we're [in the helicopter] and we don't know how to go down\nبابا الحقنا إحنا بالهليكوبتر [ومش عارفين] ننزل => Dad, help us, we're in the helicopter [and we don't know] how to go down\nبابا الحقنا إحنا بالهليكوبتر ومش عارفين [ننزل] => Dad, help us, we're in the helicopter and we don't know [how to go down]\n\n[شو] كيف يعني إنتو وين => [What]? How? Where are you?\nشو [كيف] يعني إنتو وين => What? [How]? Where are you?\nشو كيف يعني [إنتو وين] => What? How? [Where are you]?\n\n[بالسما] بابا بالسما => [In the sky], Dad, in the sky\nبالسما [بابا] بالسما => In the sky, [Dad], in the sky\nبالسما بابا [بالسما] => In the sky, Dad, [in the sky]\n\n[أعطيني] أعطيني سند سالي ركزوا معي => [Give it to me], give it to me. Sanad, Sally, focus with me\nأعطيني [أعطيني] سند سالي ركزوا معي => Give it to me, [give it to me]. Sanad, Sally, focus with me\nأعطيني أعطيني [سند] سالي ركزوا معي => Give it to me, give it to me. [Sanad], Sally, focus with me\nأعطيني أعطيني سند [سالي] ركزوا معي => Give it to me, give it to me. Sanad, [Sally], focus with me\nأعطيني أعطيني سند سالي [ركزوا معي] => Give it to me, give it to me. Sanad, Sally, [focus with me]\n\n[خيو] منيح منيح هذه شغلي أول شي => [Brother], good, good, this is my job. First of all\nخيو [منيح] منيح هذه شغلي أول شي => Brother, [good], good, this is my job. First of all\nخيو منيح [منيح] هذه شغلي أول شي => Brother, good, [good], this is my job. First of all\nخيو منيح منيح [هذه شغلي] أول شي => Brother, good, good, [this is my job]. First of all\nخيو منيح منيح هذه شغلي [أول شي] => Brother, good, good, this is my job. [First of all]\n\n[في عندك] زر فوق لونه أخضر شايفه => [There's] a green button on top, do you see it?\nفي عندك [زر] فوق لونه أخضر شايفه => There's a green [button] on top, do you see it?\nفي عندك زر [فوق] لونه أخضر شايفه => There's a green button [on top], do you see it?\nفي عندك زر فوق [لونه أخضر] شايفه => There's a [green] button on top, do you see it?\nفي عندك زر فوق لونه أخضر [شايفه] => There's a green button on top, [do you see it]?\n\n[يمين كبير] مكتوب عليه أوتو بايلوت => [Big one on the right], it says \"Autopilot\"\nيمين كبير [مكتوب عليه] أوتو بايلوت => Big one on the right, [it says] \"Autopilot\"\nيمين كبير مكتوب عليه [أوتو بايلوت] => Big one on the right, it says [\"Autopilot\"]\n\n[اكبس عليه] خيو اكبس وبعدين بتكبس الزر اللي تحت => [Press it], brother, press it, and then press the button below\nاكبس عليه [خيو] اكبس وبعدين بتكبس الزر اللي تحت => Press it, [brother], press it, and then press the button below\nاكبس عليه خيو [اكبس] وبعدين بتكبس الزر اللي تحت => Press it, brother, [press it], and then press the button below\nاكبس عليه خيو اكبس [وبعدين] بتكبس الزر اللي تحت => Press it, brother, press it, [and then] press the button below\nاكبس عليه خيو اكبس وبعدين [بتكبس الزر اللي تحت] => Press it, brother, press it, and then [press the button below]\n\n[مكتوب عليه] أوتو لاندينج خذ مني ما راح => [It says] \"Auto Landing\". Take it from me, nothing will\nمكتوب عليه [أوتو لاندينج] خذ مني ما راح => It says [\"Auto Landing\"]. Take it from me, nothing will\nمكتوب عليه أوتو لاندينج [خذ مني] ما راح => It says \"Auto Landing\". [Take it from me], nothing will\nمكتوب عليه أوتو لاندينج خذ مني [ما راح] => It says \"Auto Landing\". Take it from me, [nothing will]\n\n[تحصل إشي] بتزبط بتزبط => [Happen], it'll work, it'll work\nتحصل إشي [بتزبط] بتزبط => Happen, [it'll work], it'll work\nتحصل إشي بتزبط [بتزبط] => Happen, it'll work, [it'll work]\n\n[لقيته] لقيته هيه => [I found it], I found it, here it is\nلقيته [لقيته] هيه => I found it, [I found it], here it is\nلقيته لقيته [هيه] => I found it, I found it, [here it is]\n\n[هيه] كبسناهم وهيها عم تنزل => [Here], we pressed them and it's going down\nهيه [كبسناهم] وهيها عم تنزل => Here, [we pressed them] and it's going down\nهيه كبسناهم [وهيها] عم تنزل => Here, we pressed them [and it's] going down\nهيه كبسناهم وهيها [عم تنزل] => Here, we pressed them and it's [going down]\n\n[شكراً] شكراً يا عطا => [Thank you], thank you, Ata\nشكراً [شكراً] يا عطا => Thank you, [thank you], Ata\nشكراً شكراً [يا عطا] => Thank you, thank you, [Ata]\n\n[خذوني] خذوني عندهم بسرعة => [Take me], take me to them quickly\nخذوني [خذوني] عندهم بسرعة => Take me, [take me] to them quickly\nخذوني خذوني [عندهم] بسرعة => Take me, take me [to them] quickly\nخذوني خذوني عندهم [بسرعة] => Take me, take me to them [quickly]\n\n[طب] استنوا شوي طلعت معكم عشان أفهم شو عم بيصير => [Well], wait a bit, I came with you to understand what's happening\nطب [استنوا] شوي طلعت معكم عشان أفهم شو عم بيصير => Well, [wait] a bit, I came with you to understand what's happening\nطب استنوا [شوي] طلعت معكم عشان أفهم شو عم بيصير => Well, wait [a bit], I came with you to understand what's happening\nطب استنوا شوي [طلعت معكم] عشان أفهم شو عم بيصير => Well, wait a bit, [I came with you] to understand what's happening\nطب استنوا شوي طلعت معكم [عشان أفهم] شو عم بيصير => Well, wait a bit, I came with you [to understand] what's happening\nطب استنوا شوي طلعت معكم عشان أفهم [شو عم بيصير] => Well, wait a bit, I came with you to understand [what's happening]\n\n[خفنا عليكم كتير] => [We were very worried about you]\nخفنا [عليكم] كتير => We were very worried [about you]\nخفنا عليكم [كتير] => very\n\n[سوري] ماما إحنا خفنا تزعلي منا عشان العقد انسرق => [Sorry] Mom, we were afraid you'd be upset with us because the necklace was stolen\nسوري [ماما] إحنا خفنا تزعلي منا عشان العقد انسرق => Sorry [Mom], we were afraid you'd be upset with us because the necklace was stolen\nسوري ماما [إحنا] خفنا تزعلي منا عشان العقد انسرق => Sorry Mom, [we] were afraid you'd be upset with us because the necklace was stolen\nسوري ماما إحنا [خفنا] تزعلي منا عشان العقد انسرق => Sorry Mom, we [were afraid] you'd be upset with us because the necklace was stolen\nسوري ماما إحنا خفنا [تزعلي] منا عشان العقد انسرق => Sorry Mom, we were afraid [you'd be upset] with us because the necklace was stolen\nسوري ماما إحنا خفنا تزعلي [منا] عشان العقد انسرق => Sorry Mom, we were afraid you'd be upset [with us] because the necklace was stolen\nسوري ماما إحنا خفنا تزعلي منا [عشان] العقد انسرق => Sorry Mom, we were afraid you'd be upset with us [because] the necklace was stolen\nسوري ماما إحنا خفنا تزعلي منا عشان [العقد] انسرق => Sorry Mom, we were afraid you'd be upset with us because [the necklace] was stolen\nسوري ماما إحنا خفنا تزعلي منا عشان العقد [انسرق] => Sorry Mom, we were afraid you'd be upset with us because the necklace [was stolen]\n\n[كذبة] ورا كذبة لو وصلنا لهون إحنا كتير متأسفين => [Lie] after lie until we got here, we are very sorry\nكذبة [ورا] كذبة لو وصلنا لهون إحنا كتير متأسفين => Lie [after] lie until we got here, we are very sorry\nكذبة ورا [كذبة] لو وصلنا لهون إحنا كتير متأسفين => Lie after [lie] until we got here, we are very sorry\nكذبة ورا كذبة [لو وصلنا] لهون إحنا كتير متأسفين => Lie after lie [until we got] here, we are very sorry\nكذبة ورا كذبة لو وصلنا [لهون] إحنا كتير متأسفين => Lie after lie until we got [here], we are very sorry\nكذبة ورا كذبة لو وصلنا لهون [إحنا] كتير متأسفين => Lie after lie until we got here, [we] are very sorry\nكذبة ورا كذبة لو وصلنا لهون إحنا [كتير] متأسفين => Lie after lie until we got here, we are [very] sorry\nكذبة ورا كذبة لو وصلنا لهون إحنا كتير [متأسفين] => Lie after lie until we got here, we are very [sorry]\n\n[ما كان لازم] نكذب عليكي من البداية أصلاً => [We shouldn't have] lied to you from the beginning at all\nما كان لازم [نكذب] عليكي من البداية أصلاً => We shouldn't have [lied] to you from the beginning at all\nما كان لازم نكذب [عليكي] من البداية أصلاً => We shouldn't have lied [to you] from the beginning at all\nما كان لازم نكذب عليكي [من البداية] أصلاً => We shouldn't have lied to you [from the beginning] at all\nما كان لازم نكذب عليكي من البداية [أصلاً] => We shouldn't have lied to you from the beginning [at all]\n\n[شايفين] قديش مهم نحكي الحقيقة => [Do you see] how important it is to tell the truth?\nشايفين [قديش] مهم نحكي الحقيقة => Do you see [how] important it is to tell the truth?\nشايفين قديش [مهم] نحكي الحقيقة => Do you see how [important] it is to tell the truth?\nشايفين قديش مهم [نحكي] الحقيقة => Do you see how important it is [to tell] the truth?\nشايفين قديش مهم نحكي [الحقيقة] => Do you see how important it is to tell [the truth]?\n\n[إحنا] بنعتذر كتير بابا => [We] apologize a lot, Dad\nإحنا [بنعتذر] كتير بابا => We [apologize] a lot, Dad\nإحنا بنعتذر [كتير] بابا => We apologize [a lot], Dad\nإحنا بنعتذر كتير [بابا] => We apologize a lot, [Dad]\n\n[لو] قلتولي من أول كان قلتلكم إنه العقد مش حقيقي => [If] you had told me from the start, I would have told you the necklace isn't real\nلو [قلتولي] من أول كان قلتلكم إنه العقد مش حقيقي => If [you had told me] from the start, I would have told you the necklace isn't real\nلو قلتولي [من أول] كان قلتلكم إنه العقد مش حقيقي => If you had told me [from the start], I would have told you the necklace isn't real\nلو قلتولي من أول [كان قلتلكم] إنه العقد مش حقيقي => If you had told me from the start, [I would have told you] the necklace isn't real\nلو قلتولي من أول كان قلتلكم [إنه] العقد مش حقيقي => If you had told me from the start, I would have told you [that] the necklace isn't real\nلو قلتولي من أول كان قلتلكم إنه [العقد] مش حقيقي => If you had told me from the start, I would have told you that [the necklace] isn't real\nلو قلتولي من أول كان قلتلكم إنه العقد [مش] حقيقي => If you had told me from the start, I would have told you that the necklace [isn't] real\nلو قلتولي من أول كان قلتلكم إنه العقد مش [حقيقي] => If you had told me from the start, I would have told you that the necklace isn't [real]\n\n[ومش] غالي وأنا جايبته هدية لصاحبتي => [And it's not] expensive, and I got it as a gift for my friend\nومش [غالي] وأنا جايبته هدية لصاحبتي => And it's not [expensive], and I got it as a gift for my friend\nومش غالي [وأنا] جايبته هدية لصاحبتي => And it's not expensive, [and I] got it as a gift for my friend\nومش غالي وأنا [جايبته] هدية لصاحبتي => And it's not expensive, and I [got it] as a gift for my friend\nومش غالي وأنا جايبته [هدية] لصاحبتي => And it's not expensive, and I got it as a [gift] for my friend\nومش غالي وأنا جايبته هدية [لصاحبتي] => And it's not expensive, and I got it as a gift [for my friend]\n\n[لأنها] بتحب هاي الحجارة الملونة => [Because she] loves these colored stones\nلأنها [بتحب] هاي الحجارة الملونة => Because she [loves] these colored stones\nلأنها بتحب [هاي] الحجارة الملونة => Because she loves [these] colored stones\nلأنها بتحب هاي [الحجارة الملونة] => Because she loves these [colored stones]\n\n[و] كتير قليل بتلاقي منه => [And] you rarely find any like it\nو[كتير قليل] بتلاقي منه => And [rarely] you find any like it\nواكتير قليل [بتلاقي] منه => And you rarely [find] any like it\nواكتير قليل بتلاقي [منه] => And you rarely find any [like it]\n\n[شو] => [What?]\n\n[لازم] دايماً نحكي الحقيقة الكذب بيوقعنا بمشاكل أكبر => [We must] always tell the truth; lying gets us into bigger problems\nلازم [دايماً] نحكي الحقيقة الكذب بيوقعنا بمشاكل أكبر => We must [always] tell the truth; lying gets us into bigger problems\nلازم دايماً [نحكي] الحقيقة الكذب بيوقعنا بمشاكل أكبر => We must always [tell] the truth; lying gets us into bigger problems\nلازم دايماً نحكي [الحقيقة] الكذب بيوقعنا بمشاكل أكبر => We must always tell [the truth]; lying gets us into bigger problems\nلازم دايماً نحكي الحقيقة [الكذب] بيوقعنا بمشاكل أكبر => We must always tell the truth; [lying] gets us into bigger problems\nلازم دايماً نحكي الحقيقة الكذب [بيوقعنا] بمشاكل أكبر => We must always tell the truth; lying [gets us into] bigger problems\nلازم دايماً نحكي الحقيقة الكذب بيوقعنا [بمشاكل أكبر] => We must always tell the truth; lying gets us into [bigger problems]\n\n[و] بصير صعب نطلع منه => [And] it becomes hard to get out of them\nو[بصير] صعب نطلع منه => And [it becomes] hard to get out of them\nوبصير [صعب] نطلع منه => And it becomes [hard] to get out of them\nوبصير صعب [نطلع] منه => And it becomes hard [to get out] of them\nوبصير صعب نطلع [منه] => And it becomes hard to get out [of them]\n\n[أنا] عرفت مين صاحبتها اللي جابتلها العقد => [I] found out who her friend is that she got the necklace for\nأنا [عرفت] مين صاحبتها اللي جابتلها العقد => I [found out] who her friend is that she got the necklace for\nأنا عرفت [مين] صاحبتها اللي جابتلها العقد => I found out [who] her friend is that she got the necklace for\nأنا عرفت مين [صاحبتها] اللي جابتلها العقد => I found out who [her friend] is that she got the necklace for\nأنا عرفت مين صاحبتها [اللي] جابتلها العقد => I found out who her friend [is that] she got the necklace for\nأنا عرفت مين صاحبتها اللي [جابتلها] العقد => I found out who her friend is that [she got] the necklace for\nأنا عرفت مين صاحبتها اللي جابتلها [العقد] => I found out who her friend is that she got [the necklace] for\n\n[وكمان] الكذب بيخلي الناس ما توثق فينا => [And also] lying makes people not trust us\nوكمان [الكذب] بيخلي الناس ما توثق فينا => And also, [lying] makes people not trust us\nوكمان الكذب [بيخلي] الناس ما توثق فينا => And also, lying [makes] people not trust us\nوكمان الكذب بيخلي [الناس] ما توثق فينا => And also, lying makes [people] not trust us\nوكمان الكذب بيخلي الناس [ما توثق] فينا => And also, lying makes people [not trust] us\nوكمان الكذب بيخلي الناس ما توثق [فينا] => And also, lying makes people not trust [us]\n\n[و] بيخسرنا علاقتنا مع الناس اللي بنحبهم => [And] makes us lose our relationships with the people we love\nو [بيخسرنا] علاقتنا مع الناس اللي بنحبهم => And [makes us lose] our relationships with the people we love\nوبيخسرنا [علاقتنا] مع الناس اللي بنحبهم => And makes us lose [our relationships] with the people we love\nوبيخسرنا علاقتنا [مع] الناس اللي بنحبهم => And makes us lose our relationships [with] the people we love\nوبيخسرنا علاقتنا مع [الناس] اللي بنحبهم => And makes us lose our relationships with [the people] we love\nوبيخسرنا علاقتنا مع الناس [اللي بنحبهم] => And makes us lose our relationships with the people [we love]\n\n[صح] يا أم إنصاف => [Right] Um Insaf?\nصح يا [أم إنصاف] => Right [Um Insaf]?\n\n[طيب] يا جماعة الحمد لله على السلامة => [Okay] everyone, thank God for your safety\nطيب [يا جماعة] الحمد لله على السلامة => Okay [everyone], thank God for your safety\nطيب يا جماعة [الحمد لله] على السلامة => Okay everyone, [thank God] for your safety\nطيب يا جماعة الحمد لله [على السلامة] => Okay everyone, thank God [for your safety]\n\n[بس] هيك الحساب كتير كبر وبصراحة لازم ننهي المسألة => [But] the bill has grown quite large, and honestly, we must end this matter\nبس هيك [الحساب] كتير كبر وبصراحة لازم ننهي المسألة => But [the bill] has grown quite large, and honestly, we must end this matter\nبس هيك الحساب [كتير] كبر وبصراحة لازم ننهي المسألة => But the bill has grown [quite] large, and honestly, we must end this matter\nبس هيك الحساب كتير [كبر] وبصراحة لازم ننهي المسألة => But the bill has grown quite [large], and honestly, we must end this matter\nبس هيك الحساب كتير كبر [وبصراحة] لازم ننهي المسألة => But the bill has grown quite large, [and honestly] we must end this matter\nبس هيك الحساب كتير كبر وبصراحة [لازم ننهي] المسألة => But the bill has grown quite large, and honestly, [we must end] this matter\nبس هيك الحساب كتير كبر وبصراحة لازم ننهي [المسألة] => But the bill has grown quite large, and honestly, we must end [this matter]\n\n[اليوم] قبل بكرة => [Today] before tomorrow\nاليوم [قبل] بكرة => Today [before] tomorrow\nاليوم قبل [بكرة] => Today before [tomorrow]\n\n",
+    "lessons": "# The Mysterious Delivery\n00:06 سالي أنا مش عارف شو أعمل\n00:08 إحنا كيف هيك صار فينا\n00:15 آه ماما أوك\n00:17 أوك فهمت\n00:19 سند بتقول ماما\n00:21 راح يجي دليفري معه بوكس\n\n# Don't Touch the Box\n00:23 بنحطه بالمطبخ ولا حدا يقرب عليه\n00:26 أو يلمسه\n00:27 سند هيه إجا افتحله\n00:41 شو هاد\n00:43 واو بس ما تنسى شو حكت الماما\n\n# Following Instructions\n00:52 سالي سند\n00:57 واو صار واصل\n00:59 هلا هلا وصل وما لمسنا\n01:02 زي ما وصيتينا\n01:03 منيح منيح ماما لأنه هدية\n01:05 يا رب يعجبها\n\n# Neighborhood Gossip\n01:09 شو في شو مالك\n01:12 متحمسة أكيد راح يعجبها\n01:26 أم سند بس بدي أسألك حبيبتي\n01:28 إنتي انعزمتي إشي عند أم يزن\n01:30 قبل كم يوم\n\n# The Uninvited Guest\n01:31 لا بصراحة صارلنا كم يوم ما حكينا\n01:34 أنا وأم يزن\n01:35 ما عزمتك يي عيب شو\n01:38 عادي بتصير يعني\n01:40 يمكن إشي عائلي وبعدين هي حرة\n\n# Taking Sides\n01:42 لا مش حرة ومش عادي\n01:44 لما تعزمني وتعزم كل الجارات\n01:46 وما تعزمك\n01:47 عن جد طب إنتي رحتي\n01:50 أكيد لا حبيبتي أنا ما بروح بدونك\n01:53 بعتذرلها كل مرة\n\n# The School Excuse\n01:56 ليش ولادك نازلين هيك ركض شو في\n02:08 آه ماما عندي امتحان\n02:10 ونسيت كتبي بالمدرسة\n02:12 وسند جاي يساعدني ما راح نتأخر\n\n# Chasing the Car\n02:19 عمو عطا لو سمحت\n02:21 الحق هاي السيارة بسرعة\n02:22 لا خيو شو مالكم\n02:24 شو بتفكروها سايبة\n02:26 أنا ما بتحرك من مكاني\n02:28 بدون موافقة الأهل\n\n# The New Car Story\n02:29 والاتفاق على السعر\n02:32 شو بتفكروها سايبة\n02:34 هاد أبوي يا زلمة اشترى سيارة جديدة\n02:37 ومن الفرحة نسينا وطلع\n02:39 وهو بحاسبك بس اطلع يا زلمة\n\n# The New Fridge Rumor\n02:42 بس إنتي طلي وشوفي بعيونك\n02:44 طبعاً ثلاجتها بطلت توسع من كتر الجمعات\n02:48 معقول ما قالتلك أنا جايبة ثلاجة جديدة\n02:50 لا ما قالتلي صدقي\n02:52 أنا قالتلي بس بصراحة نبهت علي\n02:55 ما أقول لحدا\n\n# The Evil Eye\n02:57 مش عارفة مين هالحد اللي خايفة\n03:00 من عينه هالقد\n03:01 ول معقول\n03:06 صدق يا أبو سند بتشتري سيارات\n03:10 وعايش حياتك بس مش قادر تسد ديناتك\n\n# Debt and Disguises\n03:14 ماشي أنا وراك والزمن طويل\n03:16 بفرجيك\n03:21 ماما لقينا المس وسالي عم تسألها\n03:24 كم سؤال عن الامتحان\n03:25 بحكيكي بعدين\n\n# Money and Miracles\n03:34 بدلي واضرب واطرح ولا وطولان كمان\n03:38 يا عمي المصاري بتعمل عجايب\n03:40 يا شباب يا إخوان وين رايحين\n03:43 ما حسبتوني طيب أنا بفرجيكو\n\n# The School Trip Lie\n03:52 يا شباب وين تيكيتاتكم\n03:55 إحنا جايين مع المدرسة بس سبقناهم\n03:58 آه رحلة مدرسية ل300 طالب\n04:02 إيش شو بتحكي 300 طالب\n\n# The Stressed Guard\n04:05 أنا قلتلهم 100 مرة ما يحطوني\n04:08 بالشفت اللي فيه طلاب\n04:10 بجننوني أنا مستقيل مع السلامة\n\n# A Cold Phone Call\n04:21 ألو مرحبا أم سند اشتقنالك كيفك\n04:25 أهلا أم يزن\n04:26 اسمعي سوري إنه عم بغلبك\n04:29 بس جاييني ضيوف وبدي استعير\n04:31 بكرج القهوة الكبيرة اللي عندك ممكن\n\n# Neighborhood Tension\n04:34 سوري حبيبتي بس مش نظيف\n04:36 بده جلي وتلميع وبعدين أنا كمان\n04:38 بخاف يجي عندي ضيوف ليش ما يجي يعني\n04:41 أقولك اسألي أم إنصاف ما إنتي على تواصل معها\n04:44 سلام\n04:46 يي شو مالها أم سند مش على عوايدها\n\n# The Delivery Entrance\n05:03 مرحبا بدنا ندخل مجموعة أنتيكات\n05:06 أتوقع إنها هي الشنطة شايفيتها من قبل\n05:10 على كل حال تقدروا تدخلوا من هاد الباب\n05:13 على اليمين أكيد بتعرفوا غرفة التسليم\n05:16 أكيد أكيد\n\n# The Secret Mission\n05:24 شفتوا شفتوا إحنا لازم ندخل على الهليكوبتر\n05:33 بابا وينكم يا ولاد الماما قلقانة عليكم\n05:37 إحنا مرينا نجيب سندويشات فلافل وجايين\n05:40 ما راح نتأخر\n05:42 لقيته لقيته يلا خلينا نطلع من هون بسرعة\n\n# Taking Action\n05:46 سند شو عملت\n05:49 ما تخافي أنا راح أتصرف\n05:59 شايفة هيهم وصلوا\n\n# Confronting the Rumors\n06:04 مرحبا أم سند حسيتك مش على بعضك\n06:07 قلت بجيب باقي الحلو وبنشرب قهوة مع بعض\n06:10 أهلا أم يزن إن شاء الله كانت جمعة حلوة\n06:14 إنتي مالك إشي زعلانة مني\n06:17 لا أبداً إنتي بتعرفي أنا ما بزعل\n\n# Clearing the Air\n06:20 بس استغربت إنك بتعملي جمعات كتير\n06:22 وبتعزمي أم إنصاف وكل الجارات\n06:25 وما بتعزميني وبتخبريهم أخبارك\n06:28 وأنا لا غريبة صح\n06:30 مين قالك هالحكي جمعات كتير أبداً\n\n# The Truth About the Party\n06:34 هي أول جمعة لزميلة كانت معي من زمان\n06:37 وتقاعدت فقلنا بنجتمع وبنرجع أيام زمان\n06:40 وبعدين أنا ما عزمت أم إنصاف\n06:42 وصارلي فترة طويلة ما حكيت معها\n06:45 عن جد\n06:47 أم سند منيح اللي لقيتك أنا هسا بدي فلوسي\n\n# Stuck in the Sky\n07:06 رد رد وقولهم الحقيقة\n07:09 بابا الحقنا إحنا بالهليكوبتر ومش عارفين ننزل\n07:13 شو كيف يعني إنتو وين\n07:15 بالسما بابا بالسما\n07:17 أعطيني أعطيني سند سالي ركزوا معي\n\n# Emergency Instructions\n07:20 خيو منيح منيح هذه شغلي أول شي\n07:23 في عندك زر فوق لونه أخضر شايفه\n07:25 يمين كبير مكتوب عليه أوتو بايلوت\n07:29 اكبس عليه خيو اكبس وبعدين بتكبس الزر اللي تحت\n07:33 مكتوب عليه أوتو لاندينج خذ مني ما راح\n\n# The Safe Landing\n07:36 تحصل إشي بتزبط بتزبط\n07:38 لقيته لقيته هيه\n07:40 هيه كبسناهم وهيها عم تنزل\n07:44 شكراً شكراً يا عطا\n07:46 خذوني خذوني عندهم بسرعة\n\n# Confessing the Lies\n07:58 طب استنوا شوي طلعت معكم عشان أفهم شو عم بيصير\n08:02 خفنا عليكم كتير\n08:04 سوري ماما إحنا خفنا تزعلي منا عشان العقد انسرق\n08:08 كذبة ورا كذبة لو وصلنا لهون إحنا كتير متأسفين\n08:12 ما كان لازم نكذب عليكي من البداية أصلاً\n\n# The Fake Necklace\n08:16 شايفين قديش مهم نحكي الحقيقة\n08:18 إحنا بنعتذر كتير بابا\n08:20 لو قلتولي من أول كان قلتلكم إنه العقد مش حقيقي\n08:24 ومش غالي وأنا جايبته هدية لصاحبتي\n08:27 لأنها بتحب هاي الحجارة الملونة\n08:29 وكتير قليل بتلاقي منه\n\n# The Lesson of Truth\n08:31 شو\n08:33 لازم دايماً نحكي الحقيقة الكذب بيوقعنا بمشاكل أكبر\n08:38 وبصير صعب نطلع منه\n08:40 أنا عرفت مين صاحبتها اللي جابتلها العقد\n08:43 وكمان الكذب بيخلي الناس ما توثق فينا\n08:46 وبيخسرنا علاقتنا مع الناس اللي بنحبهم\n\n# Final Consequences\n08:49 صح يا أم إنصاف\n08:51 طيب يا جماعة الحمد لله على السلامة\n08:54 بس هيك الحساب كتير كبر وبصراحة لازم ننهي المسألة\n08:59 اليوم قبل بكرة",
+    "similar_sounds": "سالي أنا مش عارف شو أعمل\nإحنا كيف هيك [سار] فينا\nآه ماما أوك\nأوك [سمعت]\nسند بتقول ماما\nراح يجي دليفري معه [يوكس]\nبنحطه بالمطبخ ولا حدا [يكتب] عليه\nأو يلمسه\nسند هيه إجا افتحله\nشو هاد\nواو بس ما تنسى شو [سكت] الماما\nسالي سند\nواو صار [فاصل]\nهلا هلا وصل وما لمسنا\nزي ما [وسيتينا]\nمنيح منيح ماما لأنه [سدية]\nيا رب [يغضبها]\nشو في شو مالك\nمتحمسة أكيد راح يعجبها\nأم سند بس بدي [أعطيك] حبيبتي\nإنتي [انظلمتي] إشي عند أم يزن\nقبل كم [لوم]\nلا بصراحة صارلنا كم يوم ما [سكنا]\nأنا وأم يزن\nما عزمتك يي [غريب] شو\nعادي بتصير يعني\nيمكن إشي عائلي وبعدين هي [جرة]\nلا مش حرة ومش عادي\nلما تعزمني وتعزم كل [النارات]\nوما تعزمك\nعن جد طب إنتي [بختي]\nأكيد لا حبيبتي أنا ما [بنوح] بدونك\nبعتذرلها كل مرة\nليش ولادك نازلين هيك [رزق] شو في\nآه ماما عندي [امتلاء]\nونسيت [خطبي] بالمدرسة\nوسند جاي [يصعدني] ما راح نتأخر\n[علو] عطا لو سمحت\nالحق هاي السيارة بسرعة\nلا خيو شو مالكم\nشو بتفكروها [نايبة]\nأنا ما بتحرك من مكاني\nبدون موافقة [السهل]\nوالاتفاق على [الصبر]\nشو بتفكروها سايبة\nهاد أبوي يا زلمة اشترى سيارة [عديدة]\nومن الفرحة [يسينا] وطلع\nوهو [بجاسك] بس اطلع يا زلمة\nبس إنتي طلي وشوفي [بيونك]\nطبعاً ثلاجتها بطلت توسع من كتر [الصناعات]\nمعقول ما قالتلك أنا جايبة ثلاجة جديدة\nلا ما قالتلي [صدري]\nأنا قالتلي بس بصراحة [نهت] علي\nما أقول [لحد]\nمش عارفة مين هالحد اللي [لايقة]\nمن عينه هالقد\nول معقول\nصدق يا أبو سند بتشتري [صيارات]\nوعايش حياتك بس مش قادر تسد [بيناتك]\nماشي أنا وراك والزمن [قول]\nبفرجيك\nماما لقينا المس وسالي عم [تقولها]\nكم سؤال عن الامتحان\nبحكيكي بعدين\nبدلي [واغرب] واطرح ولا وطولان كمان\nيا عمي المصاري بتعمل [عجائب]\nيا شباب يا إخوان وين [صايحين]\nما حسبتوني طيب أنا بفرجيكو\nيا شباب وين [بيكيتاتكم]\nإحنا جايين مع المدرسة بس [سلقناهم]\nآه رحلة مدرسية ل300 طالب\nإيش شو بتحكي 300 طالب\nأنا قلتلهم 100 مرة ما [يخطوني]\nبالشفت اللي فيه طلاب\nبجننوني أنا [مستحيل] مع السلامة\nألو مرحبا أم سند [اشتعلت] كيفك\nأهلا أم يزن\nاسمعي سوري إنه عم [بغربك]\nبس جاييني ضيوف وبدي [استغفر]\nبكرج القهوة [الصغيرة] اللي عندك ممكن\nسوري حبيبتي بس مش [لطيف]\nبده جلي وتلميع وبعدين أنا كمان\nبخاف يجي عندي [صيوف] ليش ما يجي يعني\nأقولك اسألي أم إنصاف ما إنتي على [تواسل] معها\nسلام\nيي شو مالها أم سند مش على [بوايدها]\nمرحبا بدنا ندخل مجموعة أنتيكات\nأتوقع إنها هي الشنطة [شايفتها] من قبل\nعلى كل حال تقدروا تدخلوا من هاد [الناب]\nعلى اليمين أكيد بتعرفوا غرفة التسليم\nأكيد أكيد\nشفتوا شفتوا إحنا لازم ندخل على الهليكوبتر\nبابا وينكم يا ولاد الماما [حلقانة] عليكم\nإحنا مرينا نجيب سندويشات فلافل وجايين\nما راح نتأخر\nلقيته لقيته يلا خلينا [نطلع] من هون بسرعة\nسند شو عملت\nما تخافي أنا راح [أتسرف]\nشايفة هيهم وصلوا\nمرحبا أم سند حسيتك مش على بعضك\nقلت بجيب باقي الحلو وبنشرب قهوة مع بعض\nأهلا أم يزن إن شاء الله كانت جمعة حلوة\nإنتي مالك إشي [غضبانة] مني\nلا أبداً إنتي بتعرفي أنا ما [بزغل]\nبس استغربت إنك بتعملي جمعات كتير\nوبتعزمي أم إنصاف وكل [النارات]\nوما بتعزميني وبتخبريهم أخبارك\nوأنا لا [قريبة] صح\nمين قالك هالحكي جمعات كتير أبداً\nهي أول جمعة [لزملة] كانت معي من زمان\nوتقاعدت فقلنا بنجتمع وبنرجع [أقوال] زمان\nوبعدين أنا ما عزمت أم إنصاف\nوصارلي فترة طويلة ما [سكت] معها\nعن جد\nأم سند منيح اللي لقيتك أنا هسا بدي فلوسي\nرد رد وقولهم [الخليقة]\nبابا الحقنا إحنا بالهليكوبتر ومش عارفين ننزل\nشو كيف يعني إنتو [زين]\nبالسما بابا بالسما\nأعطيني أعطيني سند سالي [نكسوا] معي\nخيو منيح منيح هذه شغلي أول شي\nفي عندك زر فوق لونه [أخصر] شايفه\nيمين كبير مكتوب عليه أوتو بايلوت\nاكبس عليه خيو اكبس وبعدين بتكبس الزر اللي [سحت]\nمكتوب عليه أوتو لاندينج خذ مني ما راح\nتحصل إشي [بتسقط] بتزبط\nلقيته لقيته هيه\nهيه كبسناهم وهيها عم [تقبل]\nشكراً شكراً يا عطا\nخذوني خذوني عندهم بسرعة\nطب استنوا شوي طلعت معكم عشان [أعرف] شو عم بيصير\nخفنا عليكم كتير\nسوري ماما إحنا خفنا تزعلي منا عشان العقد انسرق\nكذبة ورا كذبة لو وصلنا لهون إحنا كتير [متألمين]\nما كان لازم [نحبب] عليكي من البداية أصلاً\nشايفين قديش مهم نحكي [الخليقة]\nإحنا [بنعتبر] كتير بابا\nلو قلتولي من أول كان قلتلكم إنه العقد مش [خيالي]\nومش غالي وأنا جايبته هدية لصاحبتي\nلأنها بتحب هاي الحجارة [المزونة]\nوكتير قليل بتلاقي منه\nشو\nلازم دايماً نحكي الحقيقة الكذب [بيوقعنا] بمشاكل أكبر\nوبصير صعب نطلع منه\nأنا عرفت مين صاحبتها اللي جابتلها [الوعد]\nوكمان الكذب بيخلي الناس ما [تثق] فينا\nوبيخسرنا علاقتنا مع الناس اللي بنحبهم\nصح يا أم إنصاف\nطيب يا جماعة الحمد لله على السلامة\nبس هيك الحساب كتير كبر وبصراحة لازم ننهي المسألة\nاليوم قبل بكرة"
+  },
+  "created_at": "2026-03-07 15:07:06 UTC",
+  "updated_at": "2026-03-07 16:25:16 UTC",
+  "exported_at": "2026-03-07T16:25:16Z"
+}

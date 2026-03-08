@@ -1,0 +1,1546 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=Dswtga1wQE4",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "أنا بعتذر كثير",
+        "timestamp": "00:04",
+        "text_l2": "I apologize a lot"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "على اللي عملته",
+        "timestamp": "00:05",
+        "text_l2": "for what I did"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "بس أنا كان نفسي",
+        "timestamp": "00:06",
+        "text_l2": "but I really wanted"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أحضر المباراة",
+        "timestamp": "00:07",
+        "text_l2": "to attend the match"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وأصلاً ما كنت مركز",
+        "timestamp": "00:08",
+        "text_l2": "and anyway I wasn't focused"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "بالامتحان",
+        "timestamp": "00:09",
+        "text_l2": "on the exam"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "زعلان إني هيك عملت فيك",
+        "timestamp": "00:10",
+        "text_l2": "I'm sad that I did this to you"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "أسامحه ولا لا؟",
+        "timestamp": "00:12",
+        "text_l2": "Should I forgive him or not?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "شو رأيكم؟",
+        "timestamp": "00:14",
+        "text_l2": "What do you think?"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "احضروا واكتبوا لي بالتعليقات",
+        "timestamp": "00:15",
+        "text_l2": "Watch and write to me in the comments"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "وهلا اجا وقت الإعلان المهم",
+        "timestamp": "00:23",
+        "text_l2": "And now it's time for the important announcement"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "رح يكون في مسابقة",
+        "timestamp": "00:25",
+        "text_l2": "There will be a competition"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "بمبحث الرياضيات",
+        "timestamp": "00:26",
+        "text_l2": "in the subject of Mathematics"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "واللي بيفوز فيه",
+        "timestamp": "00:28",
+        "text_l2": "and whoever wins it"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "بيمثل الأردن بالمسابقة",
+        "timestamp": "00:29",
+        "text_l2": "will represent Jordan in the competition"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "على مستوى الدول",
+        "timestamp": "00:31",
+        "text_l2": "at the international level"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "واللي رح تكون بالسعودية",
+        "timestamp": "00:33",
+        "text_l2": "which will be in Saudi Arabia"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "الأسبوع الجاي",
+        "timestamp": "00:34",
+        "text_l2": "next week"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "اللي حابب يشترك يخبرني",
+        "timestamp": "00:36",
+        "text_l2": "Whoever wants to participate, let me know"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "الرياضيات لعبتي",
+        "timestamp": "00:39",
+        "text_l2": "Math is my thing"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "بدك تشترك؟",
+        "timestamp": "00:40",
+        "text_l2": "Do you want to participate?"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "يزن",
+        "timestamp": "00:43",
+        "text_l2": "Yazan"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "طبعاً رح أشترك",
+        "timestamp": "00:44",
+        "text_l2": "Of course I will participate"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "طبعاً",
+        "timestamp": "00:45",
+        "text_l2": "Of course"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "ما بعرفك بتحب الرياضيات هالقد",
+        "timestamp": "00:46",
+        "text_l2": "I didn't know you liked math this much"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "أكيد لا",
+        "timestamp": "00:47",
+        "text_l2": "Of course not"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "بس أنت ناسي",
+        "timestamp": "00:48",
+        "text_l2": "but you're forgetting"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "إن الأسبوع الجاي",
+        "timestamp": "00:49",
+        "text_l2": "that next week"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "المباراة اللي بنستناها",
+        "timestamp": "00:50",
+        "text_l2": "is the match we've been waiting for"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "ورح تكون بالسعودية",
+        "timestamp": "00:52",
+        "text_l2": "and it will be in Saudi Arabia"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "صح",
+        "timestamp": "00:54",
+        "text_l2": "True"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "وأنا ورنا قدمنا كمان",
+        "timestamp": "00:58",
+        "text_l2": "And Rana and I applied too"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "في بنت من الصف الثاني",
+        "timestamp": "01:00",
+        "text_l2": "There's a girl from the other class"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "قدمت عشان عريف الحفل السنوي للمدرسة",
+        "timestamp": "01:02",
+        "text_l2": "who applied to be the MC for the school's annual ceremony"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "مين؟ منى؟",
+        "timestamp": "01:04",
+        "text_l2": "Who? Mona?"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "آه منى",
+        "timestamp": "01:06",
+        "text_l2": "Yes, Mona"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "دائماً هي بتكون عريف الحفل تبع المدرسة",
+        "timestamp": "01:07",
+        "text_l2": "She is always the MC for the school ceremony"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أي تعطي فرصة لغيرها",
+        "timestamp": "01:09",
+        "text_l2": "Let her give a chance to others"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "اتذكرتها",
+        "timestamp": "01:11",
+        "text_l2": "I remembered her"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "شاطرة هاي البنت",
+        "timestamp": "01:12",
+        "text_l2": "That girl is clever"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "كتاباتها ممتازة",
+        "timestamp": "01:13",
+        "text_l2": "Her writing is excellent"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "وإلقائها واضح وحلو كثير",
+        "timestamp": "01:14",
+        "text_l2": "and her delivery is very clear and beautiful"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "إن شاء الله هالمرة بيختاروكي أنتِ سلسولة",
+        "timestamp": "01:17",
+        "text_l2": "God willing, this time they will choose you, Salsoula"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "وبنيجي كلنا بنحضرك",
+        "timestamp": "01:19",
+        "text_l2": "and we will all come to watch you"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "سوري سالي",
+        "timestamp": "01:22",
+        "text_l2": "Sorry Sally"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "أنا ما رح أكون الأسبوع الجاي",
+        "timestamp": "01:23",
+        "text_l2": "I won't be here next week"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "شو هالتقة؟",
+        "timestamp": "01:25",
+        "text_l2": "What's with this confidence?"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "خلص قررت إنك أنت الفايز؟",
+        "timestamp": "01:26",
+        "text_l2": "Have you already decided that you're the winner?"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "طبعاً",
+        "timestamp": "01:29",
+        "text_l2": "Of course"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "مش مسابقة رياضيات؟",
+        "timestamp": "01:30",
+        "text_l2": "Isn't it a math competition?"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "وجد جدي الخوارزمي بحد ذاته",
+        "timestamp": "01:31",
+        "text_l2": "I am literally the grandson of Al-Khwarizmi himself"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "صدق هالمدرسة نشاطاتها كترانة",
+        "timestamp": "01:36",
+        "text_l2": "Honestly, this school's activities are increasing"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "موفقين حبايبي",
+        "timestamp": "01:39",
+        "text_l2": "Good luck, my dears"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "شو هذا يزن؟",
+        "timestamp": "01:44",
+        "text_l2": "What is this, Yazan?"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "لا لا لا مش شيء مهم",
+        "timestamp": "01:45",
+        "text_l2": "No, no, no, it's nothing important"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "ورق تدريب للمسابقة",
+        "timestamp": "01:47",
+        "text_l2": "Practice papers for the competition"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "أنا بصورلك إياهم",
+        "timestamp": "01:49",
+        "text_l2": "I'll photocopy them for you"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "خلص المحل سكر هلا",
+        "timestamp": "01:50",
+        "text_l2": "The shop is closed now"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "وما ضل عندهم نسخ",
+        "timestamp": "01:51",
+        "text_l2": "and they don't have any copies left"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "شكراً يزن غلبتك",
+        "timestamp": "01:53",
+        "text_l2": "Thank you Yazan, I've troubled you"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "يلا سلام بشوفك بكرة",
+        "timestamp": "01:55",
+        "text_l2": "Alright, bye, see you tomorrow"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "بكل فخر وسرور",
+        "timestamp": "02:00",
+        "text_l2": "With all pride and pleasure"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "أرحب بكم اليوم",
+        "timestamp": "02:02",
+        "text_l2": "I welcome you today"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "في هذا الحفل المميز",
+        "timestamp": "02:03",
+        "text_l2": "to this special ceremony"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "حيث تجتمع المواهب",
+        "timestamp": "02:05",
+        "text_l2": "where talents gather"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "يا الله مش ضابطة",
+        "timestamp": "02:07",
+        "text_l2": "Oh God, it's not working"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "ولا شيء عاجبني",
+        "timestamp": "02:10",
+        "text_l2": "I don't like anything"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "ألو رنا",
+        "timestamp": "02:12",
+        "text_l2": "Hello Rana"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "هاي سالي",
+        "timestamp": "02:14",
+        "text_l2": "Hi Sally"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "ما تقولي لي أنتِ كمان مش طالع معك شيء",
+        "timestamp": "02:15",
+        "text_l2": "Don't tell me you haven't come up with anything either"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "أنا حتى مع الـ AI",
+        "timestamp": "02:17",
+        "text_l2": "Even with AI"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "مش طالع معي شيء",
+        "timestamp": "02:18",
+        "text_l2": "I haven't come up with anything"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "اسمعي تعالي عندي",
+        "timestamp": "02:20",
+        "text_l2": "Listen, come over to my place"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "خلينا نشجع بعض",
+        "timestamp": "02:21",
+        "text_l2": "let's encourage each other"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "أوك هيني جاي",
+        "timestamp": "02:23",
+        "text_l2": "OK, I'm coming"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "هاي خامس مرة بتصلحها",
+        "timestamp": "02:24",
+        "text_l2": "This is the fifth time you've fixed it"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "وبترجع بتخرب",
+        "timestamp": "02:26",
+        "text_l2": "and it breaks again"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "الحق علي اللي بدي أوفر عليك",
+        "timestamp": "02:27",
+        "text_l2": "It's my fault for trying to save you money"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بدل ما تروح تشتري غسالة جديدة",
+        "timestamp": "02:29",
+        "text_l2": "instead of you going to buy a new washing machine"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "بمبلغ وقدره",
+        "timestamp": "02:31",
+        "text_l2": "for a huge amount"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "أنا بستفيد",
+        "timestamp": "02:32",
+        "text_l2": "I benefit"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "قصدي أنت بتستفيد",
+        "timestamp": "02:34",
+        "text_l2": "I mean, you benefit"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "وبوفر عليك كمان",
+        "timestamp": "02:36",
+        "text_l2": "and I save you money too"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "شو مالك يا زلمة؟",
+        "timestamp": "02:39",
+        "text_l2": "What's wrong with you, man?"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "أي زلمة صرت حاطط حقها",
+        "timestamp": "02:40",
+        "text_l2": "Man, I've already spent its price"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "مليون مرة",
+        "timestamp": "02:42",
+        "text_l2": "a million times over"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "من الآخر",
+        "timestamp": "02:44",
+        "text_l2": "Bottom line"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "شو بتصلح ولا انسى الموضوع؟",
+        "timestamp": "02:45",
+        "text_l2": "are you going to fix it or should I forget about it?"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "بكرة رح أجيبلك قطعة",
+        "timestamp": "02:48",
+        "text_l2": "Tomorrow I'll bring you a part"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "أما شو قطعة",
+        "timestamp": "02:50",
+        "text_l2": "and what a part"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "رح تحللك الموضوع من الآخر",
+        "timestamp": "02:51",
+        "text_l2": "it will solve the issue for you once and for all"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "وبأرخص الأسعار",
+        "timestamp": "02:53",
+        "text_l2": "and at the cheapest price"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "آه كالعادة",
+        "timestamp": "02:55",
+        "text_l2": "Yeah, as usual"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "هاي سند كيفك؟",
+        "timestamp": "02:59",
+        "text_l2": "Hi Sanad, how are you?"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "تمام",
+        "timestamp": "03:01",
+        "text_l2": "Fine"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "اسمع رح تصورلي الورق؟",
+        "timestamp": "03:02",
+        "text_l2": "Listen, are you going to photocopy the papers for me?"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "الورق؟",
+        "timestamp": "03:04",
+        "text_l2": "The papers?"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "لا لا اسمع ما طلع فيهم أي شيء مفيد",
+        "timestamp": "03:05",
+        "text_l2": "No, no, listen, there was nothing useful in them"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "هيني راميهم على جنب",
+        "timestamp": "03:07",
+        "text_l2": "I've thrown them aside"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "طب شو نعمل؟",
+        "timestamp": "03:10",
+        "text_l2": "So what should we do?"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "قرب الامتحان",
+        "timestamp": "03:11",
+        "text_l2": "The exam is close"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "أي امتحان شو يا زلمة؟",
+        "timestamp": "03:12",
+        "text_l2": "What exam, man?"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "هاي مسابقة وما بدها دراسة",
+        "timestamp": "03:14",
+        "text_l2": "This is a competition and it doesn't need studying"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "شو مالك شادد حالك؟",
+        "timestamp": "03:16",
+        "text_l2": "Why are you so stressed?"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "طب امشي نطلع محل نتسلى",
+        "timestamp": "03:18",
+        "text_l2": "Come on, let's go out somewhere to have fun"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "نطلع؟",
+        "timestamp": "03:20",
+        "text_l2": "Go out?"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "بابا سند بده إياني أطلع معاه",
+        "timestamp": "03:21",
+        "text_l2": "Dad, Sanad wants me to go out with him"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "آه إذا مع سند اطلع ليش لا",
+        "timestamp": "03:25",
+        "text_l2": "Ah, if it's with Sanad, go ahead, why not"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "لا لا لا اسمع سند لازم أروح",
+        "timestamp": "03:28",
+        "text_l2": "No, no, no, listen Sanad, I have to go"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "برجع بحكيك بعدين",
+        "timestamp": "03:30",
+        "text_l2": "I'll talk to you later"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "أنا عندي فكرة",
+        "timestamp": "03:32",
+        "text_l2": "I have an idea"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "ليه ما تكتبي شعر؟",
+        "timestamp": "03:33",
+        "text_l2": "Why don't you write poetry?"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "أنتِ كثير شاطرة بالشعر والإلقاء",
+        "timestamp": "03:35",
+        "text_l2": "You are very good at poetry and recitation"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "فكرة عبقرية",
+        "timestamp": "03:37",
+        "text_l2": "A brilliant idea"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "شكراً رنا",
+        "timestamp": "03:38",
+        "text_l2": "Thank you Rana"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "بس أنتِ شو رح تكتبي؟",
+        "timestamp": "03:39",
+        "text_l2": "But what will you write?"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "رح أرجع أحاول",
+        "timestamp": "03:41",
+        "text_l2": "I'll try again"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "رح يطلع معك شيء كثير حلو",
+        "timestamp": "03:42",
+        "text_l2": "You'll come up with something very beautiful"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "أنا متأكدة",
+        "timestamp": "03:44",
+        "text_l2": "I'm sure"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "اتذكروا إنه بكرة الامتحان للمسابقة",
+        "timestamp": "03:49",
+        "text_l2": "Remember that tomorrow is the exam for the competition"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "ورح يكون أونلاين",
+        "timestamp": "03:51",
+        "text_l2": "and it will be online"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "ورح تطلع النتائج راساً بعد الامتحان",
+        "timestamp": "03:53",
+        "text_l2": "and the results will come out right after the exam"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "استعدوا منيح",
+        "timestamp": "03:55",
+        "text_l2": "Prepare well"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "هاي فرصة كثير مهمة لمدرستنا",
+        "timestamp": "03:57",
+        "text_l2": "This is a very important opportunity for our school"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "ولكل واحد فيكم",
+        "timestamp": "03:59",
+        "text_l2": "and for each one of you"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "يعطيكم العافية",
+        "timestamp": "04:01",
+        "text_l2": "Good luck everyone"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "يزن شو رأيك نراجع اليوم عالسريع؟",
+        "timestamp": "04:04",
+        "text_l2": "Yazan, what do you think about doing a quick review today?"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "من كل عقلك يا زلمة؟",
+        "timestamp": "04:07",
+        "text_l2": "Are you serious, man?"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "انسى",
+        "timestamp": "04:08",
+        "text_l2": "Forget it"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "طب خلينا نلعب قدم",
+        "timestamp": "04:10",
+        "text_l2": "Let's play football then"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "زمان ما لعبنا",
+        "timestamp": "04:12",
+        "text_l2": "It's been a long time since we played"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "وصارلك أسبوع مختفي",
+        "timestamp": "04:13",
+        "text_l2": "and you've been missing for a week"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "اليوم المشكلة إنه بابا",
+        "timestamp": "04:15",
+        "text_l2": "The problem today is that my dad"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "عازم صحابه",
+        "timestamp": "04:17",
+        "text_l2": "has invited his friends"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "وبده إياني أكون موجود",
+        "timestamp": "04:18",
+        "text_l2": "and he wants me to be there"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "خلص بكرة عالأكيد",
+        "timestamp": "04:20",
+        "text_l2": "Definitely tomorrow"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "طب أنا سابقك عالمقصف",
+        "timestamp": "04:22",
+        "text_l2": "Well, I'll beat you to the canteen"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "بس مش حتسبقني عالمسابقة",
+        "timestamp": "04:24",
+        "text_l2": "But you won't beat me in the competition"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "وأنا اللي رح أطلع المباراة",
+        "timestamp": "04:26",
+        "text_l2": "And I'm the one who will go to the match"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "شوف لي هالقطعة ما أجملها",
+        "timestamp": "04:33",
+        "text_l2": "Look at this part, how beautiful it is"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "أي لو إلها لسان",
+        "timestamp": "04:35",
+        "text_l2": "If it had a tongue"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "كان قالت شوفوني يا ناس",
+        "timestamp": "04:37",
+        "text_l2": "it would say \"Look at me, people\""
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "المهم تزبط",
+        "timestamp": "04:39",
+        "text_l2": "The important thing is that it works"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "بتزبط",
+        "timestamp": "04:40",
+        "text_l2": "It will work"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "بتزبط ونص",
+        "timestamp": "04:41",
+        "text_l2": "It will definitely work"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "مش هلا تنصدم من سعرها",
+        "timestamp": "04:43",
+        "text_l2": "Don't be shocked by its price now"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "الغالي سعره فيه",
+        "timestamp": "04:45",
+        "text_l2": "Expensive things are worth their price"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "شو سند ما بدك تقوم تحضر حالك لامتحان بكرة؟",
+        "timestamp": "04:48",
+        "text_l2": "Sanad, aren't you going to get ready for tomorrow's exam?"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "ما حدا عم بدرس",
+        "timestamp": "04:56",
+        "text_l2": "No one is studying"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "هذه مسابقة بابا",
+        "timestamp": "04:57",
+        "text_l2": "This is a competition, Dad"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "بس بيجي غلط ماما تحضر حالك",
+        "timestamp": "04:59",
+        "text_l2": "But it's wrong, Mom, not to prepare yourself"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "حلو إنك تفوز وتسافر وتمثل بلدك",
+        "timestamp": "05:01",
+        "text_l2": "It's nice to win, travel, and represent your country"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "ما تخافي ماما رح أفوز",
+        "timestamp": "05:04",
+        "text_l2": "Don't worry Mom, I will win"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "عيب",
+        "timestamp": "05:06",
+        "text_l2": "Shame on you"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "ماجد جدو الخوارزمي",
+        "timestamp": "05:07",
+        "text_l2": "Grandson of Al-Khwarizmi"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "كيف عرفت؟",
+        "timestamp": "05:11",
+        "text_l2": "How did you know?"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "رح أنزل ألعب تحت يا زفت",
+        "timestamp": "05:12",
+        "text_l2": "I'm going down to play, you brat"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "يسلموا أبو يزن",
+        "timestamp": "05:15",
+        "text_l2": "Thanks, Abu Yazan"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "أصيل طول عمرك أصيل",
+        "timestamp": "05:16",
+        "text_l2": "You've always been a noble man"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "هيني شغلناه وخلينا نشوف",
+        "timestamp": "05:18",
+        "text_l2": "We've turned it on, let's see"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "أهلاً أهلاً أستاذ عمر",
+        "timestamp": "05:21",
+        "text_l2": "Welcome, welcome Mr. Omar"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "هي يزن بيستنى جوا",
+        "timestamp": "05:22",
+        "text_l2": "Yazan is waiting inside"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "وين أستاذ جواد؟",
+        "timestamp": "05:23",
+        "text_l2": "Where is Mr. Jawad?"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "هي وراي بس معاه خط",
+        "timestamp": "05:25",
+        "text_l2": "He's behind me but he's on a call"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "أستاذ بكرة الامتحان",
+        "timestamp": "05:27",
+        "text_l2": "Teacher, tomorrow is the exam"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "وإلكم أحلى حلوان",
+        "timestamp": "05:29",
+        "text_l2": "and you'll get the best treat"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "إذا فاز يزن وسافر عالسعودية",
+        "timestamp": "05:31",
+        "text_l2": "if Yazan wins and travels to Saudi Arabia"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "أكيد رح يفوز",
+        "timestamp": "05:33",
+        "text_l2": "He will definitely win"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "صارلنا أسبوع بنشتغل عليه",
+        "timestamp": "05:34",
+        "text_l2": "We've been working on it for a week"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "أسبوع؟",
+        "timestamp": "05:36",
+        "text_l2": "A week?"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "دخلك قديش بتاخدوا بالساعة؟",
+        "timestamp": "05:37",
+        "text_l2": "Tell me, how much do you take per hour?"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "بلكي غيرنا هالصنعة",
+        "timestamp": "05:40",
+        "text_l2": "Maybe we should change our profession"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "10 20 30 40 50 60 70 80 90 100",
+        "timestamp": "05:44",
+        "text_l2": "10 20 30 40 50 60 70 80 90 100"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "سند شو شايف ما عليك امتحان بكرة؟",
+        "timestamp": "05:49",
+        "text_l2": "Sanad, I see you don't have an exam tomorrow?"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "حتى أنت يا عمو؟",
+        "timestamp": "05:53",
+        "text_l2": "Even you, uncle?"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "أهلاً أستاذ جواد",
+        "timestamp": "05:54",
+        "text_l2": "Welcome Mr. Jawad"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "هي يزن بيستناك جوا",
+        "timestamp": "05:56",
+        "text_l2": "Yazan is waiting for you inside"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "أستاذ هذول مش أصحاب عمو أبو يزن؟",
+        "timestamp": "05:58",
+        "text_l2": "Teacher, aren't these your friend Abu Yazan's friends?"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "لا يا عمو صاحبك إله أسبوع",
+        "timestamp": "06:01",
+        "text_l2": "No, son, your friend has been"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "مقطع حاله دراسة",
+        "timestamp": "06:03",
+        "text_l2": "studying his heart out for a week"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "وأنت قاعد بتلعب",
+        "timestamp": "06:05",
+        "text_l2": "while you are just playing"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "روح ادرسلك كلمتين تنفع",
+        "timestamp": "06:07",
+        "text_l2": "Go study a few words that might benefit you"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "روح امشي",
+        "timestamp": "06:09",
+        "text_l2": "Go on, move"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "اعطى",
+        "timestamp": "06:11",
+        "text_l2": "He gave"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "هنا بالعلمي",
+        "timestamp": "06:18",
+        "text_l2": "Here in science"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "نرفع رايتنا",
+        "timestamp": "06:20",
+        "text_l2": "we raise our banner"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "وبالطموح",
+        "timestamp": "06:21",
+        "text_l2": "and with ambition"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "ننير حياتنا",
+        "timestamp": "06:22",
+        "text_l2": "we light our lives"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "فهذه المدرسة",
+        "timestamp": "06:24",
+        "text_l2": "For this school"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "لم تكن يوماً مجرد فصول وجدران",
+        "timestamp": "06:26",
+        "text_l2": "was never just classrooms and walls"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "بل كانت",
+        "timestamp": "06:28",
+        "text_l2": "but it was"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "دوماً بيتاً يجمعنا",
+        "timestamp": "06:30",
+        "text_l2": "always a home that brings us together"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "ومساحة",
+        "timestamp": "06:31",
+        "text_l2": "and a space"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "نطلق فيها أحلامنا",
+        "timestamp": "06:33",
+        "text_l2": "where we launch our dreams"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "فمرحباً في الحضور بحفلنا",
+        "timestamp": "06:34",
+        "text_l2": "So welcome to the audience at our ceremony"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "نخض سوياً",
+        "timestamp": "06:37",
+        "text_l2": "Let's weave together"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "قصص أفراحنا",
+        "timestamp": "06:39",
+        "text_l2": "our stories of joy"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "فدعونا نفتتح هذا الحفل بكل فرح",
+        "timestamp": "06:40",
+        "text_l2": "So let us open this ceremony with all joy"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "يعني إحنا قررنا نعمل شيء مختلف",
+        "timestamp": "06:44",
+        "text_l2": "I mean, we decided to do something different"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "نخلط الشعر مع النثر",
+        "timestamp": "06:46",
+        "text_l2": "to mix poetry with prose"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "وأنا ورنا رح نقدم الحفل مع بعض",
+        "timestamp": "06:48",
+        "text_l2": "and Rana and I will present the ceremony together"
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "بزبط مس؟",
+        "timestamp": "06:51",
+        "text_l2": "Is that okay, Miss?"
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "مس عجبك؟",
+        "timestamp": "06:52",
+        "text_l2": "Miss, do you like it?"
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "بصراحة",
+        "timestamp": "06:53",
+        "text_l2": "Honestly"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "بجنن",
+        "timestamp": "06:55",
+        "text_l2": "it's wonderful"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "فكرة كثير حلوة إنكم تعاونتوا مع بعض",
+        "timestamp": "06:56",
+        "text_l2": "It's a very nice idea that you collaborated together"
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "حلو",
+        "timestamp": "06:59",
+        "text_l2": "Nice"
+      },
+      {
+        "id": "phrase_209",
+        "text_l1": "شو سند مالك شيء؟",
+        "timestamp": "07:01",
+        "text_l2": "Sanad, is something wrong?"
+      },
+      {
+        "id": "phrase_210",
+        "text_l1": "خايف من الامتحان؟",
+        "timestamp": "07:03",
+        "text_l2": "Are you afraid of the exam?"
+      },
+      {
+        "id": "phrase_211",
+        "text_l1": "لا مش خايف يا أبو الدروس الخصوصية",
+        "timestamp": "07:04",
+        "text_l2": "No, I'm not afraid, Mr. Private Lessons"
+      },
+      {
+        "id": "phrase_212",
+        "text_l1": "بس ما نمت",
+        "timestamp": "07:07",
+        "text_l2": "But I didn't sleep"
+      },
+      {
+        "id": "phrase_213",
+        "text_l1": "طول الليل وأنا بدرس عشان أفوز",
+        "timestamp": "07:08",
+        "text_l2": "all night I was studying to win"
+      },
+      {
+        "id": "phrase_214",
+        "text_l1": "يلا لو سمحتوا",
+        "timestamp": "07:10",
+        "text_l2": "Please, everyone"
+      },
+      {
+        "id": "phrase_215",
+        "text_l1": "كل واحد يقعد مكانه",
+        "timestamp": "07:12",
+        "text_l2": "each one take your seat"
+      },
+      {
+        "id": "phrase_216",
+        "text_l1": "نتائج طلعت قدامي على طول",
+        "timestamp": "07:33",
+        "text_l2": "The results appeared before me immediately"
+      },
+      {
+        "id": "phrase_217",
+        "text_l1": "واللي حصل على أعلى علامة",
+        "timestamp": "07:35",
+        "text_l2": "And the one who got the highest mark"
+      },
+      {
+        "id": "phrase_218",
+        "text_l1": "رح يمثل المدرسة في المسابقة",
+        "timestamp": "07:37",
+        "text_l2": "will represent the school in the competition"
+      },
+      {
+        "id": "phrase_219",
+        "text_l1": "ورح يسافر بكرة على السعودية",
+        "timestamp": "07:39",
+        "text_l2": "and will travel tomorrow to Saudi Arabia"
+      },
+      {
+        "id": "phrase_220",
+        "text_l1": "والفائز هو",
+        "timestamp": "07:42",
+        "text_l2": "And the winner is"
+      },
+      {
+        "id": "phrase_221",
+        "text_l1": "عصام",
+        "timestamp": "07:44",
+        "text_l2": "Issam"
+      },
+      {
+        "id": "phrase_222",
+        "text_l1": "ألف مبروك لعصام",
+        "timestamp": "07:46",
+        "text_l2": "Congratulations to Issam"
+      },
+      {
+        "id": "phrase_223",
+        "text_l1": "شو؟ عصام؟",
+        "timestamp": "07:48",
+        "text_l2": "What? Issam?"
+      },
+      {
+        "id": "phrase_224",
+        "text_l1": "أصلاً ما بفهم شيء بالرياضة",
+        "timestamp": "07:50",
+        "text_l2": "He doesn't even understand anything about sports"
+      },
+      {
+        "id": "phrase_225",
+        "text_l1": "ولا بحب مباريات القدم",
+        "timestamp": "07:52",
+        "text_l2": "nor does he like football matches"
+      },
+      {
+        "id": "phrase_226",
+        "text_l1": "سند سند",
+        "timestamp": "07:59",
+        "text_l2": "Sanad, Sanad"
+      },
+      {
+        "id": "phrase_227",
+        "text_l1": "أنا بعتذر كثير على اللي عملته",
+        "timestamp": "08:01",
+        "text_l2": "I apologize a lot for what I did"
+      },
+      {
+        "id": "phrase_228",
+        "text_l1": "بس أنا كان نفسي أحضر المباراة",
+        "timestamp": "08:03",
+        "text_l2": "but I really wanted to attend the match"
+      },
+      {
+        "id": "phrase_229",
+        "text_l1": "وأصلاً ما كنت مركز بالامتحان",
+        "timestamp": "08:05",
+        "text_l2": "and anyway I wasn't focused on the exam"
+      },
+      {
+        "id": "phrase_230",
+        "text_l1": "زعلان إني هيك عملت فيك",
+        "timestamp": "08:07",
+        "text_l2": "I'm sad that I did this to you"
+      },
+      {
+        "id": "phrase_231",
+        "text_l1": "كان ممكن نتنافس بطريقة صح بدل ما تكذب علي",
+        "timestamp": "08:09",
+        "text_l2": "We could have competed the right way instead of you lying to me"
+      },
+      {
+        "id": "phrase_232",
+        "text_l1": "واحد منا عالقليلة يفوز",
+        "timestamp": "08:12",
+        "text_l2": "At least one of us would have won"
+      },
+      {
+        "id": "phrase_233",
+        "text_l1": "معك حق وأنا بعتذر مرة ثانية",
+        "timestamp": "08:14",
+        "text_l2": "You're right, and I apologize again"
+      },
+      {
+        "id": "phrase_234",
+        "text_l1": "ماشي",
+        "timestamp": "08:18",
+        "text_l2": "Alright"
+      },
+      {
+        "id": "phrase_235",
+        "text_l1": "أوعك تعيدها",
+        "timestamp": "08:19",
+        "text_l2": "Don't ever do it again"
+      },
+      {
+        "id": "phrase_236",
+        "text_l1": "أنت أحسن صاحب بالعالم",
+        "timestamp": "08:20",
+        "text_l2": "You are the best friend in the world"
+      },
+      {
+        "id": "phrase_237",
+        "text_l1": "اليوم على موعدنا نلعب كرة",
+        "timestamp": "08:22",
+        "text_l2": "Today is our date to play football"
+      },
+      {
+        "id": "phrase_238",
+        "text_l1": "وفي ختام هذا الحفل المميز",
+        "timestamp": "08:28",
+        "text_l2": "And at the conclusion of this special ceremony"
+      },
+      {
+        "id": "phrase_239",
+        "text_l1": "نود أن نشكر حضوركم الكريم",
+        "timestamp": "08:30",
+        "text_l2": "we would like to thank your kind presence"
+      },
+      {
+        "id": "phrase_240",
+        "text_l1": "ومشاركتكم التي زادت هذا اليوم بهجة وتألقاً",
+        "timestamp": "08:33",
+        "text_l2": "and your participation which added joy and brilliance to this day"
+      },
+      {
+        "id": "phrase_241",
+        "text_l1": "وتبقى هذه اللحظات الجميلة ذكرى لنا",
+        "timestamp": "08:38",
+        "text_l2": "And these beautiful moments remain a memory for us"
+      },
+      {
+        "id": "phrase_242",
+        "text_l1": "ونتمنى أن نلتقي دوماً على دربنا",
+        "timestamp": "08:41",
+        "text_l2": "and we hope to always meet on our path"
+      },
+      {
+        "id": "phrase_243",
+        "text_l1": "أحلى سالي",
+        "timestamp": "08:46",
+        "text_l2": "Great job Sally"
+      },
+      {
+        "id": "phrase_244",
+        "text_l1": "وأحلى رنا كمان",
+        "timestamp": "08:48",
+        "text_l2": "And great job Rana too"
+      },
+      {
+        "id": "phrase_245",
+        "text_l1": "أيوه روح",
+        "timestamp": "08:51",
+        "text_l2": "Go for it"
+      },
+      {
+        "id": "phrase_246",
+        "text_l1": "يلا يا تعمري وحش",
+        "timestamp": "08:53",
+        "text_l2": "Come on, Ta'mari, you beast"
+      },
+      {
+        "id": "phrase_247",
+        "text_l1": "أيوه أيوه اعطي باص النعمات",
+        "timestamp": "08:55",
+        "text_l2": "Yes, yes, give the pass to N'emat"
+      },
+      {
+        "id": "phrase_248",
+        "text_l1": "هيو جنبك فاضي",
+        "timestamp": "08:57",
+        "text_l2": "He's right next to you, open"
+      },
+      {
+        "id": "phrase_249",
+        "text_l1": "سند شوف شوف الكاميرا مركزة على عصام",
+        "timestamp": "08:58",
+        "text_l2": "Sanad, look, look, the camera is focused on Issam"
+      },
+      {
+        "id": "phrase_250",
+        "text_l1": "بقرا كتاب بنص المباراة",
+        "timestamp": "09:01",
+        "text_l2": "He's reading a book in the middle of the match"
+      },
+      {
+        "id": "phrase_251",
+        "text_l1": "مستحيل",
+        "timestamp": "09:03",
+        "text_l2": "Impossible"
+      },
+      {
+        "id": "phrase_252",
+        "text_l1": "المنافس الصح هي اللي بتساعدك تكون أحسن",
+        "timestamp": "09:06",
+        "text_l2": "The right competitor is the one who helps you be better"
+      },
+      {
+        "id": "phrase_253",
+        "text_l1": "هي اللي بتدفعك لقدام وبتبنيك",
+        "timestamp": "09:09",
+        "text_l2": "The one who pushes you forward and builds you up"
+      },
+      {
+        "id": "phrase_254",
+        "text_l1": "مش اللي بتخليك تكسب وتخدع وتوقع غيرك",
+        "timestamp": "09:11",
+        "text_l2": "not the one who makes you win by cheating and tripping others"
+      },
+      {
+        "id": "phrase_255",
+        "text_l1": "والنجاح الحقيقي هو اللي بتحققه بأخلاقك واجتهادك",
+        "timestamp": "09:15",
+        "text_l2": "And true success is what you achieve with your morals and diligence"
+      },
+      {
+        "id": "phrase_256",
+        "text_l1": "مش على حساب غيرك",
+        "timestamp": "09:19",
+        "text_l2": "not at the expense of others"
+      }
+    ],
+    "phrases_with_token_translations": "[أنا] بعتذر كثير => [I] apologize a lot\nأنا [بعتذر] كثير => I [apologize] a lot\nأنا بعتذر [كثير] => I apologize [a lot]\n\n[على] اللي عملته => [for] what I did\nعلى [اللي] عملته => for [what] I did\nعلى اللي [عملته] => for what [I did]\n\n[بس] أنا كان نفسي => [but] I really wanted\nبس [أنا] كان نفسي => but [I] really wanted\nبس أنا [كان نفسي] => but I [really wanted]\n\n[أحضر] المباراة => [to attend] the match\nأحضر [المباراة] => to attend [the match]\n\n[وأصلاً] ما كنت مركز => [and anyway] I wasn't focused\nوأصلاً [ما كنت] مركز => and anyway [I wasn't] focused\nوأصلاً ما كنت [مركز] => and anyway I wasn't [focused]\n\n[بالامتحان] => [on the exam]\n\n[زعلان] إني هيك عملت فيك => [I'm sad] that I did this to you\nزعلان [إني] هيك عملت فيك => I'm sad [that I] did this to you\nزعلان إني [هيك عملت] فيك => I'm sad that I [did this] to you\nزعلان إني هيك عملت [فيك] => I'm sad that I did this [to you]\n\n[أسامحه] ولا لا؟ => [Should I forgive him] or not?\nأسامحه [ولا لا]؟ => Should I forgive him [or not]?\n\n[شو] رأيكم؟ => [What] do you think?\nشو [رأيكم]؟ => What [do you think]?\n\n[احضروا] واكتبوا لي بالتعليقات => [Watch] and write to me in the comments\nاحضروا [واكتبوا] لي بالتعليقات => Watch [and write] to me in the comments\nاحضروا واكتبوا [لي] بالتعليقات => Watch and write [to me] in the comments\nاحضروا واكتبوا لي [بالتعليقات] => Watch and write to me [in the comments]\n\n[وهلا] اجا وقت الإعلان المهم => [And now] it's time for the important announcement\nوهلا [اجا وقت] الإعلان المهم => And now [it's time] for the important announcement\nوهلا اجا وقت [الإعلان المهم] => And now it's time for [the important announcement]\n\n[رح يكون في] مسابقة => [There will be] a competition\nرح يكون في [مسابقة] => There will be [a competition]\n\n[بمبحث] الرياضيات => [in the subject of] Mathematics\nبمبحث [الرياضيات] => in the subject of [Mathematics]\n\n[واللي] بيفوز فيه => [and whoever] wins it\nواللي [بيفوز] فيه => and whoever [wins] it\nواللي بيفوز [فيه] => and whoever wins [it]\n\n[بيمثل] الأردن بالمسابقة => [will represent] Jordan in the competition\nبيمثل [الأردن] بالمسابقة => will represent [Jordan] in the competition\nبيمثل الأردن [بالمسابقة] => will represent Jordan [in the competition]\n\n[على مستوى الدول] => [at the international level]\n\n[واللي] رح تكون بالسعودية => [which] will be in Saudi Arabia\nواللي [رح تكون] بالسعودية => which [will be] in Saudi Arabia\nواللي رح تكون [بالسعودية] => which will be [in Saudi Arabia]\n\n[الأسبوع الجاي] => [next week]\n\n[اللي] حابب يشترك يخبرني => [Whoever] wants to participate, let me know\nاللي [حابب يشترك] يخبرني => Whoever [wants to participate], let me know\nاللي حابب يشترك [يخبرني] => Whoever wants to participate, [let me know]\n\n[الرياضيات] لعبتي => [Math] is my thing\nالرياضيات [لعبتي] => Math [is my thing]\n\n[بدك] تشترك؟ => [Do you want] to participate?\nبدك [تشترك]؟ => Do you want [to participate]?\n\n[يزن] => [Yazan]\n\n[طبعاً] رح أشترك => [Of course] I will participate\nطبعاً [رح أشترك] => Of course [I will participate]\n\n[طبعاً] => [Of course]\n\n[ما بعرفك] بتحب الرياضيات هالقد => [I didn't know] you liked math this much\nما بعرفك [بتحب] الرياضيات هالقد => I didn't know [you liked] math this much\nما بعرفك بتحب [الرياضيات] هالقد => I didn't know you liked [math] this much\nما بعرفك بتحب الرياضيات [هالقد] => I didn't know you liked math [this much]\n\n[أكيد] لا => [Of course] not\nأكيد [لا] => Of course [not]\n\n[بس] أنت ناسي => [but] you're forgetting\nبس [أنت] ناسي => but [you're] forgetting\nبس أنت [ناسي] => but you're [forgetting]\n\n[إن] الأسبوع الجاي => [that] next week\nإن [الأسبوع الجاي] => that [next week]\n\n[المباراة] اللي بنستناها => is [the match] we've been waiting for\nالمباراة [اللي بنستناها] => is the match [we've been waiting for]\n\n[ورح] تكون بالسعودية => [and it will] be in Saudi Arabia\nورح [تكون] بالسعودية => and it will [be] in Saudi Arabia\nورح تكون [بالسعودية] => and it will be [in Saudi Arabia]\n\n[صح] => [True]\n\n[وأنا ورنا] قدمنا كمان => [And Rana and I] applied too\nوأنا ورنا [قدمنا] كمان => And Rana and I [applied] too\nوأنا ورنا قدمنا [كمان] => And Rana and I applied [too]\n\n[في] بنت من الصف الثاني => [There's] a girl from the other class\nفي [بنت] من الصف الثاني => There's [a girl] from the other class\nفي بنت [من] الصف الثاني => There's a girl [from] the other class\nفي بنت من [الصف الثاني] => There's a girl from [the other class]\n\n[قدمت] عشان عريف الحفل السنوي للمدرسة => [who applied] to be the MC for the school's annual ceremony\nقدمت [عشان] عريف الحفل السنوي للمدرسة => who applied [to be] the MC for the school's annual ceremony\nقدمت عشان [عريف] الحفل السنوي للمدرسة => who applied to be [the MC] for the school's annual ceremony\nقدمت عشان عريف [الحفل السنوي للمدرسة] => who applied to be the MC [for the school's annual ceremony]\n\n[مين]؟ منى؟ => [Who]? Mona?\nمين؟ [منى]؟ => Who? [Mona]?\n\n[آه] منى => [Yes], Mona\nآه [منى] => Yes, [Mona]\n\n[دائماً] هي بتكون عريف الحفل تبع المدرسة => She is [always] the MC for the school ceremony\nدائماً [هي] بتكون عريف الحفل تبع المدرسة => [She] is always the MC for the school ceremony\nدائماً هي [بتكون] عريف الحفل تبع المدرسة => is\nدائماً هي بتكون [عريف الحفل] تبع المدرسة => She is always [the MC] for the school ceremony\nدائماً هي بتكون عريف الحفل [تبع المدرسة] => She is always the MC [for the school ceremony]\n\n[أي تعطي] فرصة لغيرها => [Let her give] a chance to others\nأي تعطي [فرصة] لغيرها => Let her give [a chance] to others\nأي تعطي فرصة [لغيرها] => Let her give a chance [to others]\n\n[اتذكرتها] => [I remembered her]\n\n[شاطرة] هاي البنت => That girl is [clever]\nشاطرة [هاي البنت] => [That girl] is clever\nشاطرة [هاي] البنت => [That] girl is clever\nشاطرة هاي [البنت] => That [girl] is clever\n\n[كتاباتها] ممتازة => [Her writing] is excellent\nكتاباتها [ممتازة] => Her writing is [excellent]\n\n[وإلقائها] واضح وحلو كثير => [and her delivery] is very clear and beautiful\nوإلقائها [واضح] وحلو كثير => and her delivery is very [clear] and beautiful\nوإلقائها واضح [وحلو] كثير => and her delivery is very clear [and beautiful]\nوإلقائها واضح وحلو [كثير] => and her delivery is [very] clear and beautiful\n\n[إن شاء الله] هالمرة بيختاروكي أنتِ سلسولة => [God willing], this time they will choose you, Salsoula\nإن شاء الله [هالمرة] بيختاروكي أنتِ سلسولة => God willing, [this time] they will choose you, Salsoula\nإن شاء الله هالمرة [بيختاروكي] أنتِ سلسولة => God willing, this time [they will choose you], Salsoula\nإن شاء الله هالمرة بيختاروكي [أنتِ] سلسولة => God willing, this time they will choose [you], Salsoula\nإن شاء الله هالمرة بيختاروكي أنتِ [سلسولة] => God willing, this time they will choose you, [Salsoula]\n\n[وبنيجي كلنا] بنحضرك => [and we will all come] to watch you\nوبنيجي كلنا [بنحضرك] => and we will all come [to watch you]\n\n[سوري] سالي => [Sorry] Sally\nسوري [سالي] => Sorry [Sally]\n\n[أنا] ما رح أكون الأسبوع الجاي => [I] won't be here next week\nأنا [ما رح أكون] الأسبوع الجاي => I [won't be here] next week\nأنا ما رح أكون [الأسبوع الجاي] => I won't be here [next week]\nأنا ما رح أكون الأسبوع [الجاي] => I won't be here next [week]\n\n[شو] هالتقة => [What's] with this confidence\n[شو هالتقة] => [What's with this confidence]\n\n[خلص] قررت إنك أنت الفايز => Have you [already] decided that you're the winner?\nخلص [قررت] إنك أنت الفايز => Have you already [decided] that you're the winner?\nخلص قررت [إنك] أنت الفايز => Have you already decided [that] you're the winner?\nخلص قررت إنك [أنت] الفايز => Have you already decided that [you're] the winner?\nخلص قررت إنك أنت [الفايز] => Have you already decided that you're [the winner]?\n\n[طبعاً] => [Of course]\n\n[مش] مسابقة رياضيات؟ => [Isn't] it a math competition?\nمش [مسابقة] رياضيات؟ => Isn't it a math [competition]?\nمش مسابقة [رياضيات]؟ => Isn't it a [math] competition?\n\nوجد جدي [الخوارزمي] بحد ذاته => I am literally the grandson of [Al-Khwarizmi] himself\nوجد جدي الخوارزمي [بحد ذاته] => I am literally the grandson of Al-Khwarizmi [himself]\n\n[صدق] هالمدرسة نشاطاتها كترانة => [Honestly], this school's activities are increasing\nصدق [هالمدرسة نشاطاتها] كترانة => Honestly, [this school's activities] are increasing\nصدق هالمدرسة نشاطاتها [كترانة] => Honestly, this school's activities [are increasing]\n\n[موفقين] حبايبي => [Good luck], my dears\nموفقين [حبايبي] => Good luck, [my dears]\n\n[شو هذا] يزن؟ => [What is this], Yazan?\nشو هذا [يزن]؟ => What is this, [Yazan]?\n\n[لا] لا لا مش شيء مهم => [No], no, no, it's nothing important\nلا [لا] لا مش شيء مهم => No, [no], no, it's nothing important\nلا لا [لا] مش شيء مهم => No, no, [no], it's nothing important\nلا لا لا [مش شيء مهم] => No, no, no, [it's nothing important]\n\n[ورق تدريب] للمسابقة => [Practice papers] for the competition\nورق تدريب [للمسابقة] => Practice papers [for the competition]\n\n[أنا] بصورلك إياهم => [I'll] photocopy them for you\nأنا [بصورلك] إياهم => I'll [photocopy] them for you # بصورلك contains both \"photocopy\" and \"for you\" merged\nأنا بصورلك [إياهم] => I'll photocopy [them] for you\n\n[خلص] المحل سكر هلا => [That's it], the shop is closed now # خلص is an exclamation not directly in English translation\n[المحل] سكر هلا => [The shop] is closed now\nالمحل سكر [هلا] => The shop is closed [now]\n\n[و]ما ضل عندهم نسخ => [and] they don't have any copies left\n[ما ضل عندهم نسخ] => [they don't have any copies left] # Arabic word order differs significantly from English\n\n[شكراً] يزن غلبتك => [Thank you] Yazan, I've troubled you\nشكراً [يزن] غلبتك => Thank you [Yazan], I've troubled you\nشكراً يزن [غلبتك] => Thank you Yazan, [I've troubled you]\n\n[يلا] سلام بشوفك بكرة => [Alright], bye, see you tomorrow\nيلا [سلام] بشوفك بكرة => Alright, [bye], see you tomorrow\nيلا سلام [بشوفك] بكرة => Alright, bye, [see you] tomorrow\nيلا سلام بشوفك [بكرة] => Alright, bye, see you [tomorrow]\n\n[بكل] فخر وسرور => [With all] pride and pleasure\nبكل [فخر] وسرور => With all [pride] and pleasure\nبكل فخر [و]سرور => With all pride [and] pleasure\nبكل فخر و[سرور] => With all pride and [pleasure]\n\n[أرحب] بكم اليوم => [I welcome] you today\nأرحب [بكم] اليوم => I welcome [you] today\nأرحب بكم [اليوم] => I welcome you [today]\n\n[في] هذا الحفل المميز => [to] this special ceremony\nفي [هذا] الحفل المميز => to [this] special ceremony\nفي هذا [الحفل المميز] => to this [special ceremony]\n\n[حيث] تجتمع المواهب => [where] talents gather\nحيث [تجتمع] المواهب => where talents [gather]\nحيث تجتمع [المواهب] => where [talents] gather\n\n[يا الله] مش ضابطة => [Oh God], it's not working\nيا الله [مش] ضابطة => Oh God, it's [not] working\nيا الله مش [ضابطة] => Oh God, it's not [working]\n\n[ولا شيء عاجبني] => [I don't like anything]\n\n[ألو] رنا => [Hello] Rana\nألو [رنا] => Hello [Rana]\n\n[هاي] سالي => [Hi] Sally\nهاي [سالي] => Hi [Sally]\n\n[ما تقولي لي] أنتِ كمان مش طالع معك شيء => [Don't tell me] you haven't come up with anything either\nما تقولي لي [أنتِ] كمان مش طالع معك شيء => Don't tell me [you] haven't come up with anything either\nما تقولي لي أنتِ [كمان] مش طالع معك شيء => Don't tell me you haven't come up with anything [either]\nما تقولي لي أنتِ كمان [مش طالع معك] شيء => Don't tell me you [haven't come up with] anything either\nما تقولي لي أنتِ كمان مش طالع معك [شيء] => Don't tell me you haven't come up with [anything] either\n\n[أنا] => I\n[حتى] مع الـ AI => [Even] with AI\nحتى [مع] الـ AI => Even [with] AI\nحتى مع [الـ AI] => Even with [AI]\n\n[مش طالع معي] شيء => [I haven't come up with] anything\nمش طالع معي [شيء] => I haven't come up with [anything]\n\n[اسمعي] تعالي عندي => [Listen], come over to my place\nاسمعي [تعالي] عندي => Listen, [come] over to my place\nاسمعي تعالي [عندي] => Listen, come [to my place]\n\n[خلينا] نشجع بعض => [let's] encourage each other\nخلينا [نشجع] بعض => let's [encourage] each other\nخلينا نشجع [بعض] => let's encourage [each other]\n\n[أوك] هيني جاي => [OK], I'm coming\nأوك [هيني جاي] => OK, [I'm coming]\n\n[هاي] خامس مرة بتصلحها => [This] is the fifth time you've fixed it\nهاي [خامس] مرة بتصلحها => This is the [fifth] time you've fixed it\nهاي خامس [مرة] بتصلحها => This is the fifth [time] you've fixed it\nهاي خامس مرة [بتصلحها] => This is the fifth time [you've fixed it]\n\n[و]بترجع بتخرب => [and] it breaks again\nو[بترجع بتخرب] => and [it breaks again]\n\n[الحق علي] اللي بدي أوفر عليك => [It's my fault] for trying to save you money\nالحق علي [اللي] بدي أوفر عليك => It's my fault [for] trying to save you money\nالحق علي اللي [بدي أوفر عليك] => It's my fault for [trying to save you money]\n\n[بدل ما] تروح تشتري غسالة جديدة => [instead of] you going to buy a new washing machine\nبدل ما [تروح تشتري] غسالة جديدة => instead of [you going to buy] a new washing machine\nبدل ما تروح تشتري [غسالة جديدة] => instead of you going to buy [a new washing machine]\n\n[بمبلغ وقدره] => [for a huge amount]\n\n[أنا] بستفيد => [I] benefit\nأنا [بستفيد] => I [benefit]\n\n[قصدي] أنت بتستفيد => [I mean], you benefit\nقصدي [أنت] بتستفيد => I mean, [you] benefit\nقصدي أنت [بتستفيد] => I mean, you [benefit]\n\n[و]بوفر عليك كمان => [and] I save you money too\n[وبوفر عليك] كمان => [and I save you money] too\nوبوفر عليك [كمان] => and I save you money [too]\n\n[شو] مالك يا زلمة => [What's] wrong with you, man?\nشو [مالك] يا زلمة => What's [wrong with you], man?\nشو مالك [يا زلمة] => What's wrong with you, [man]?\n\n[أي زلمة] صرت حاطط حقها => [Man], I've already spent its price\nأي زلمة [صرت حاطط] حقها => Man, [I've already spent] its price\nأي زلمة صرت حاطط [حقها] => Man, I've already spent [its price]\n\n[مليون] مرة => [a million] times over\nمليون [مرة] => a million [times] over\n\n[من الآخر] => [Bottom line]\n\n[شو بتصلح] ولا انسى الموضوع؟ => [are you going to fix it] or should I forget about it?\nشو بتصلح [ولا] انسى الموضوع؟ => are you going to fix it [or] should I forget about it?\nشو بتصلح ولا [انسى الموضوع]؟ => are you going to fix it or [should I forget about it]?\n\n[بكرة] رح أجيبلك قطعة => [Tomorrow] I'll bring you a part\nبكرة [رح أجيبلك] قطعة => Tomorrow [I'll bring you] a part\nبكرة رح أجيبلك [قطعة] => Tomorrow I'll bring you [a part]\n\n[أما] شو قطعة => [and] what a part\nأما [شو] قطعة => and [what] a part\nأما شو [قطعة] => and what [a part]\n\n[رح تحللك الموضوع] من الآخر => [it will solve the issue for you] once and for all\nرح تحللك [الموضوع] من الآخر => it will solve [the issue] for you once and for all\nرح تحللك الموضوع [من الآخر] => it will solve the issue for you [once and for all]\n\n[و] بأرخص الأسعار => [and] at the cheapest price\nو [بأرخص الأسعار] => and [at the cheapest price]\n\n[آه] كالعادة => [Yeah], as usual\nآه [كالعادة] => Yeah, [as usual]\n\n[هاي] سند كيفك؟ => [Hi] Sanad, how are you?\nهاي [سند] كيفك؟ => Hi [Sanad], how are you?\nهاي سند [كيفك]؟ => Hi Sanad, [how are you]?\n\n[تمام] => [Fine]\n\n[اسمع] رح تصورلي الورق؟ => [Listen], are you going to photocopy the papers for me?\nاسمع [رح تصورلي الورق]؟ => Listen, [are you going to photocopy the papers for me]?\nاسمع رح تصورلي [الورق]؟ => Listen, are you going to photocopy [the papers] for me?\n\n[الورق]؟ => [The papers]?\n\n[لا] لا اسمع ما طلع فيهم أي شيء مفيد => [No], no, listen, there was nothing useful in them\nلا [لا] اسمع ما طلع فيهم أي شيء مفيد => No, [no], listen, there was nothing useful in them\nلا لا [اسمع] ما طلع فيهم أي شيء مفيد => No, no, [listen], there was nothing useful in them\nلا لا اسمع [ما طلع فيهم أي شيء مفيد] => No, no, listen, [there was nothing useful in them]\n\n[هيني] راميهم على جنب => [I've] thrown them aside\nهيني [راميهم] على جنب => I've [thrown them] aside\nهيني راميهم [على جنب] => I've thrown them [aside]\n\n[طب] شو نعمل؟ => [So] what should we do?\nطب [شو] نعمل؟ => So [what] should we do?\nطب شو [نعمل]؟ => So what [should we do]?\n\n[قرب] الامتحان => The exam [is close]\nقرب [الامتحان] => [The exam] is close\n\n[أي] امتحان شو يا زلمة؟ => [What] exam, man?\nأي [امتحان] شو يا زلمة؟ => What [exam], man?\nأي امتحان شو [يا زلمة]؟ => What exam, [man]?\n\n[هاي] مسابقة وما بدها دراسة => [This] is a competition and it doesn't need studying\nهاي [مسابقة] وما بدها دراسة => This is a [competition] and it doesn't need studying\nهاي مسابقة [وما بدها] دراسة => This is a competition [and it doesn't need] studying\nهاي مسابقة وما بدها [دراسة] => This is a competition and it doesn't need [studying]\n\n[شو] مالك شادد حالك؟ => [Why] are you so stressed?\nشو [مالك] شادد حالك؟ => Why [are you] so stressed?\nشو مالك [شادد حالك]؟ => Why are you [so stressed]?\n\n[طب امشي] نطلع محل نتسلى => [Come on], let's go out somewhere to have fun\nطب امشي [نطلع] محل نتسلى => Come on, [let's go out] somewhere to have fun\nطب امشي نطلع [محل] نتسلى => Come on, let's go out [somewhere] to have fun\nطب امشي نطلع محل [نتسلى] => Come on, let's go out somewhere [to have fun]\n\n[نطلع]؟ => [Go out]?\n\n[بابا] سند بده إياني أطلع معاه => [Dad], Sanad wants me to go out with him\nبابا [سند] بده إياني أطلع معاه => Dad, [Sanad] wants me to go out with him\nبابا سند [بده] إياني أطلع معاه => Dad, Sanad [wants] me to go out with him\nبابا سند بده [إياني] أطلع معاه => Dad, Sanad wants [me] to go out with him\nبابا سند بده إياني [أطلع] معاه => Dad, Sanad wants me [to go out] with him\nبابا سند بده إياني أطلع [معاه] => Dad, Sanad wants me to go out [with him]\n\n[آه] إذا مع سند اطلع ليش لا => [Ah], if it's with Sanad, go ahead, why not\nآه [إذا] مع سند اطلع ليش لا => Ah, [if] it's with Sanad, go ahead, why not\nآه إذا [مع] سند اطلع ليش لا => Ah, if [with] Sanad, go ahead, why not\nآه إذا مع [سند] اطلع ليش لا => Ah, if it's with [Sanad], go ahead, why not\nآه إذا مع سند [اطلع] ليش لا => Ah, if it's with Sanad, [go ahead], why not\nآه إذا مع سند اطلع [ليش لا] => Ah, if it's with Sanad, go ahead, [why not]\n\n[لا] لا لا اسمع سند لازم أروح => [No], no, no, listen Sanad, I have to go\nلا [لا] لا اسمع سند لازم أروح => No, [no], no, listen Sanad, I have to go\nلا لا [لا] اسمع سند لازم أروح => No, no, [no], listen Sanad, I have to go\nلا لا لا [اسمع] سند لازم أروح => No, no, no, [listen] Sanad, I have to go\nلا لا لا اسمع [سند] لازم أروح => No, no, no, listen [Sanad], I have to go\nلا لا لا اسمع سند [لازم أروح] => No, no, no, listen Sanad, [I have to go]\n\n[برجع] بحكيك بعدين => [I'll] talk to you later\nبرجع [بحكيك] بعدين => I'll [talk to you] later\nبرجع بحكيك [بعدين] => I'll talk to you [later]\n\n[أنا] عندي فكرة => [I] have an idea\nأنا [عندي] فكرة => I [have] an idea\nأنا عندي [فكرة] => I have [an idea]\n\n[ليه] ما تكتبي شعر؟ => [Why] don't you write poetry?\nليه [ما تكتبي] شعر؟ => Why [don't you write] poetry?\nليه ما تكتبي [شعر]؟ => Why don't you write [poetry]？\n\n[أنتِ] كثير شاطرة بالشعر والإلقاء => [You are] very good at poetry and recitation\nأنتِ [كثير] شاطرة بالشعر والإلقاء => You are [very] good at poetry and recitation\nأنتِ كثير [شاطرة] بالشعر والإلقاء => You are very [good] at poetry and recitation\nأنتِ كثير شاطرة [بالشعر] والإلقاء => You are very good [at poetry] and recitation\nأنتِ كثير شاطرة بالشعر [والإلقاء] => You are very good at poetry [and recitation]\n\n[فكرة عبقرية] => [A brilliant idea]\nفكرة [عبقرية] => A [brilliant] idea\n\n[شكراً] رنا => [Thank you] Rana\nشكراً [رنا] => Thank you [Rana]\n\n[بس] أنتِ شو رح تكتبي؟ => [But] what will you write?\nبس [أنتِ] شو رح تكتبي؟ => But what will [you] write?\nبس أنتِ [شو] رح تكتبي؟ => But [what] will you write?\nبس أنتِ شو [رح] تكتبي؟ => But what [will] you write?\nبس أنتِ شو رح [تكتبي]؟ => But what will you [write]?\n\n[رح] أرجع أحاول => [I'll] try again\nرح [أرجع أحاول] => I'll [try again]\n\n[رح] يطلع معك شيء كثير حلو => [You'll] come up with something very beautiful\nرح [يطلع معك] شيء كثير حلو => You'll [come up with] something very beautiful\nرح يطلع معك [شيء] كثير حلو => You'll come up with [something] very beautiful\nرح يطلع معك شيء [كثير] حلو => You'll come up with something [very] beautiful\nرح يطلع معك شيء كثير [حلو] => You'll come up with something very [beautiful]\n\n[أنا] متأكدة => [I'm] sure\nأنا [متأكدة] => I'm [sure]\n\n[اتذكروا] إنه بكرة الامتحان للمسابقة => [Remember] that tomorrow is the exam for the competition\nاتذكروا [إنه] بكرة الامتحان للمسابقة => Remember [that] tomorrow is the exam for the competition\nاتذكروا إنه [بكرة] الامتحان للمسابقة => Remember that [tomorrow] is the exam for the competition\nاتذكروا إنه بكرة [الامتحان] للمسابقة => Remember that tomorrow is [the exam] for the competition\nاتذكروا إنه بكرة الامتحان [للمسابقة] => Remember that tomorrow is the exam [for the competition]\n\n[ورح] يكون أونلاين => [and it will] be online\nورح [يكون] أونلاين => and it will [be] online\nورح يكون [أونلاين] => and it will be [online]\n\n[و]رح تطلع النتائج راساً بعد الامتحان => [and] the results will come out right after the exam\nورح تطلع [النتائج] راساً بعد الامتحان => and the [results] will come out right after the exam\nورح تطلع النتائج [راساً بعد] الامتحان => and the results will come out [right after] the exam\nورح تطلع النتائج راساً بعد [الامتحان] => and the results will come out right after the [exam]\n\n[استعدوا] منيح => [Prepare] well\nاستعدوا [منيح] => Prepare [well]\n\n[هاي] فرصة كثير مهمة لمدرستنا => [This] is a very important opportunity for our school\nهاي [فرصة] كثير مهمة لمدرستنا => This is a very important [opportunity] for our school\nهاي فرصة [كثير] مهمة لمدرستنا => This is a [very] important opportunity for our school\nهاي فرصة كثير [مهمة] لمدرستنا => This is a very [important] opportunity for our school\nهاي فرصة كثير مهمة [لمدرستنا] => This is a very important opportunity [for our school]\n\n[و]لكل واحد فيكم => [and] for each one of you\nو[لكل] واحد فيكم => and [for each] one of you\nولكل [واحد] فيكم => and for each [one] of you\nولكل واحد [فيكم] => and for each one [of you]\n\n[يعطيكم العافية] => [Good luck] everyone\n\n[يزن] شو رأيك نراجع اليوم عالسريع؟ => [Yazan], what do you think about doing a quick review today?\nيزن [شو رأيك] نراجع اليوم عالسريع؟ => Yazan, [what do you think] about doing a quick review today?\nيزن شو رأيك نراجع [اليوم] عالسريع؟ => Yazan, what do you think about doing a quick review [today]?\n[عالسريع] => quick, quickly # Arabic uses adverb where English uses adjective\n\n[من كل عقلك] يا زلمة؟ => [Are you serious], man?\nمن كل عقلك [يا زلمة]؟ => Are you serious, [man]?\n\n[انسى] => [Forget it]\n\n[خلينا] نلعب قدم => [Let's] play football then\nخلينا [نلعب] قدم => Let's [play] football then\nخلينا نلعب [قدم] => Let's play [football] then\n[طب] => then, okay # Conversational discourse marker\n\n[زمان] ما لعبنا => It's been a [long time] since we played\nزمان [ما لعبنا] => It's been a long time [since we played]\n\n[و]صارلك أسبوع مختفي => [and] you've been missing for a week\nو[صارلك] أسبوع مختفي => and [you've been] missing for a week\nوصارلك [أسبوع] مختفي => and you've been missing for a [week]\nوصارلك أسبوع [مختفي] => and you've been [missing] for a week\n\n[اليوم] المشكلة إنه بابا => The problem [today] is that my dad\nاليوم [المشكلة] إنه بابا => [The problem] today is that my dad\nاليوم المشكلة [إنه] بابا => The problem today [is that] my dad\nاليوم المشكلة إنه [بابا] => The problem today is that [my dad]\n\n[عازم] صحابه => [has invited] his friends\nعازم [صحابه] => has invited [his friends]\n\n[وبده] إياني أكون موجود => [and he wants] me to be there\nوبده [إياني] أكون موجود => and he wants [me] to be there\nوبده إياني [أكون] موجود => and he wants me [to be] there\nوبده إياني أكون [موجود] => and he wants me to be [there]\n\n[خلص] بكرة عالأكيد => It's settled # custom - خلص is emphatic/conversational\nخلص [بكرة] عالأكيد => Definitely [tomorrow]\nخلص بكرة [عالأكيد] => [Definitely] tomorrow\n\n[طب] أنا سابقك عالمقصف => [Well], I'll beat you to the canteen\nطب [أنا سابقك] عالمقصف => Well, [I'll beat you] to the canteen\nطب أنا سابقك [عالمقصف] => Well, I'll beat you [to the canteen]\n\n[بس] مش حتسبقني عالمسابقة => [But] you won't beat me in the competition\nبس [مش حتسبقني] عالمسابقة => But [you won't beat me] in the competition\nبس مش حتسبقني [عالمسابقة] => But you won't beat me [in the competition]\n\n[وأنا] اللي رح أطلع المباراة => [And I'm] the one who will go to the match\nوأنا [اللي] رح أطلع المباراة => And I'm [the one who] will go to the match\nوأنا اللي [رح أطلع] المباراة => And I'm the one who [will go to] the match\nوأنا اللي رح أطلع [المباراة] => And I'm the one who will go to [the match]\n\n[شوف لي] هالقطعة ما أجملها => [Look at] this part, how beautiful it is\nشوف لي [هالقطعة] ما أجملها => Look at [this part], how beautiful it is\nشوف لي هالقطعة [ما أجملها] => Look at this part, [how beautiful it is]\n\nأي [لو] إلها لسان => [If] it had a tongue # أي is conversational filler\nأي لو [إلها] لسان => If [it had] a tongue\nأي لو إلها [لسان] => If it had [a tongue]\n\n[كان قالت] شوفوني يا ناس => [it would say] \"Look at me, people\"\nكان قالت [شوفوني] يا ناس => it would say [\"Look at me], people\"\nكان قالت شوفوني [يا ناس] => it would say \"Look at me, [people]\"\n\n[المهم] تزبط => [The important thing is that] it works\nالمهم [تزبط] => The important thing is that [it works]\n\n[بتزبط] => [It will work]\n\n[بتزبط] ونص => It will work\nبتزبط [ونص] => It will [definitely] work\n\n[مش] هلا تنصدم من سعرها => [Don't] be shocked by its price now\nمش [هلا] تنصدم من سعرها => Don't be shocked by its price [now]\nمش هلا [تنصدم] من سعرها => Don't [be shocked] by its price now\nمش هلا تنصدم [من] سعرها => Don't be shocked [by] its price now\nمش هلا تنصدم من [سعرها] => Don't be shocked by [its price] now\n\n[الغالي] سعره فيه => [Expensive things] are worth their price\nالغالي [سعره فيه] => Expensive things [are worth their price]\n\n[شو سند] ما بدك تقوم تحضر حالك لامتحان بكرة؟ => [Sanad], aren't you going to get ready for tomorrow's exam?\nشو سند [ما بدك تقوم تحضر حالك] لامتحان بكرة؟ => Sanad, [aren't you going to get ready] for tomorrow's exam?\nشو سند ما بدك تقوم تحضر حالك [لامتحان بكرة]؟ => Sanad, aren't you going to get ready [for tomorrow's exam]?\n\n[ما حدا] عم بدرس => [No one] is studying\nما حدا [عم بدرس] => No one [is studying]\n\n[هذه] مسابقة بابا => [This] is a competition, Dad\nهذه [مسابقة] بابا => This is a [competition], Dad\nهذه مسابقة [بابا] => This is a competition, [Dad]\n\n[بس] بيجي غلط ماما تحضر حالك => [But] it's wrong, Mom, not to prepare yourself\nبس [بيجي غلط] ماما تحضر حالك => But [it's wrong], Mom, not to prepare yourself\nبس بيجي غلط [ماما] تحضر حالك => But it's wrong, [Mom], not to prepare yourself\nبس بيجي غلط ماما [تحضر حالك] => But it's wrong, Mom, [to prepare yourself]\n\n[حلو] إنك تفوز وتسافر وتمثل بلدك => [It's nice] to win, travel, and represent your country\nحلو إنك [تفوز] وتسافر وتمثل بلدك => It's nice to [win], travel, and represent your country\nحلو إنك تفوز [وتسافر] وتمثل بلدك => It's nice to win, [travel], and represent your country\nحلو إنك تفوز وتسافر [وتمثل] بلدك => It's nice to win, travel, and [represent] your country\nحلو إنك تفوز وتسافر وتمثل [بلدك] => It's nice to win, travel, and represent [your country]\n\n[ما] تخافي ماما رح أفوز => [Don't] worry Mom, I will win\nما [تخافي] ماما رح أفوز => Don't [worry] Mom, I will win\nما تخافي [ماما] رح أفوز => Don't worry [Mom], I will win\nما تخافي ماما [رح أفوز] => Don't worry Mom, [I will win]\n\n[عيب] => [Shame on you]\n\n[ماجد] => Majid\nماجد جدو [الخوارزمي] => Grandson of [Al-Khwarizmi]\n\n[كيف] عرفت؟ => [How] did you know?\nكيف [عرفت]؟ => How [did you know]?\n\n[رح أنزل] ألعب تحت يا زفت => [I'm going down] to play, you brat\nرح أنزل [ألعب] تحت يا زفت => I'm going down [to play], you brat\nرح أنزل ألعب [تحت] يا زفت => down\nرح أنزل ألعب تحت [يا زفت] => I'm going down to play, [you brat]\n\n[يسلموا] أبو يزن => [Thanks], Abu Yazan\nيسلموا [أبو يزن] => Thanks, [Abu Yazan]\n\n[أصيل] طول عمرك أصيل => noble\nأصيل [طول عمرك] أصيل => You've [always] been a noble man\nأصيل طول عمرك [أصيل] => You've always been a [noble man]\n\n[هيني] شغلناه وخلينا نشوف => here\nهيني [شغلناه] وخلينا نشوف => We've [turned it on], let's see\nهيني شغلناه [وخلينا نشوف] => We've turned it on, [let's see]\n\n[أهلاً] أهلاً أستاذ عمر => [Welcome], welcome Mr. Omar\nأهلاً [أهلاً] أستاذ عمر => Welcome, [welcome] Mr. Omar\nأهلاً أهلاً [أستاذ عمر] => Welcome, welcome [Mr. Omar]\n\n[هي] يزن بيستنى جوا => hey\nهي [يزن] بيستنى جوا => [Yazan] is waiting inside\nهي يزن [بيستنى] جوا => Yazan [is waiting] inside\nهي يزن بيستنى [جوا] => Yazan is waiting [inside]\n\n[وين] أستاذ جواد؟ => [Where] is Mr. Jawad?\nوين [أستاذ جواد]؟ => Where is [Mr. Jawad]?\n\n[هي] وراي بس معاه خط => hey\n[وراي] بس معاه خط => He's [behind me] but he's on a call\nوراي [بس] معاه خط => He's behind me [but] he's on a call\nوراي بس [معاه خط] => He's behind me but [he's on a call]\n\n[أستاذ] بكرة الامتحان => [Teacher], tomorrow is the exam\nأستاذ [بكرة] الامتحان => Teacher, [tomorrow] is the exam\nأستاذ بكرة [الامتحان] => Teacher, tomorrow is [the exam]\n\n[وإلكم] أحلى حلوان => [and you'll get] the best treat\nوإلكم [أحلى حلوان] => and you'll get [the best treat]\n\n[إذا] فاز يزن وسافر عالسعودية => [if] Yazan wins and travels to Saudi Arabia\nإذا [فاز] يزن وسافر عالسعودية => if Yazan [wins] and travels to Saudi Arabia\nإذا فاز [يزن] وسافر عالسعودية => if [Yazan] wins and travels to Saudi Arabia\nإذا فاز يزن [وسافر] عالسعودية => if Yazan wins [and travels] to Saudi Arabia\nإذا فاز يزن وسافر [عالسعودية] => if Yazan wins and travels [to Saudi Arabia]\n\n[أكيد] رح يفوز => He will [definitely] win\nأكيد [رح يفوز] => He will definitely [win]\n\n[صارلنا] أسبوع بنشتغل عليه => [We've been] working on it for a week\nصارلنا [أسبوع] بنشتغل عليه => We've been working on it [for a week]\nصارلنا أسبوع [بنشتغل] عليه => We've been [working] on it for a week\nصارلنا أسبوع بنشتغل [عليه] => We've been working [on it] for a week\n\n[أسبوع]؟ => [A week]?\n\n[دخلك] قديش بتاخدوا بالساعة؟ => [Tell me,] how much do you take per hour?\nدخلك [قديش] بتاخدوا بالساعة؟ => Tell me, [how much] do you take per hour?\nدخلك قديش [بتاخدوا] بالساعة؟ => Tell me, how much [do you take] per hour?\nدخلك قديش بتاخدوا [بالساعة]؟ => Tell me, how much do you take [per hour]?\n\n[بلكي] غيرنا هالصنعة => [Maybe] we should change our profession\nبلكي [غيرنا] هالصنعة => Maybe [we should change] our profession\nبلكي غيرنا [هالصنعة] => Maybe we should change [our profession]\n\n[10] 20 30 40 50 60 70 80 90 100 => [10] 20 30 40 50 60 70 80 90 100\n10 [20] 30 40 50 60 70 80 90 100 => 10 [20] 30 40 50 60 70 80 90 100\n10 20 [30] 40 50 60 70 80 90 100 => 10 20 [30] 40 50 60 70 80 90 100\n10 20 30 [40] 50 60 70 80 90 100 => 10 20 30 [40] 50 60 70 80 90 100\n10 20 30 40 [50] 60 70 80 90 100 => 10 20 30 40 [50] 60 70 80 90 100\n10 20 30 40 50 [60] 70 80 90 100 => 10 20 30 40 50 [60] 70 80 90 100\n10 20 30 40 50 60 [70] 80 90 100 => 10 20 30 40 50 60 [70] 80 90 100\n10 20 30 40 50 60 70 [80] 90 100 => 10 20 30 40 50 60 70 [80] 90 100\n10 20 30 40 50 60 70 80 [90] 100 => 10 20 30 40 50 60 70 80 [90] 100\n10 20 30 40 50 60 70 80 90 [100] => 10 20 30 40 50 60 70 80 90 [100]\n\n[سند] شو شايف ما عليك امتحان بكرة؟ => [Sanad,] I see you don't have an exam tomorrow?\nسند [شو شايف] ما عليك امتحان بكرة؟ => Sanad, [I see] you don't have an exam tomorrow?\nسند شو شايف [ما عليك] امتحان بكرة؟ => Sanad, I see [you don't have] an exam tomorrow?\nسند شو شايف ما عليك [امتحان] بكرة؟ => Sanad, I see you don't have an [exam] tomorrow?\nسند شو شايف ما عليك امتحان [بكرة]؟ => Sanad, I see you don't have an exam [tomorrow]?\n\n[حتى] أنت يا عمو؟ => [Even] you, uncle?\nحتى [أنت] يا عمو؟ => Even [you], uncle?\nحتى أنت [يا عمو]؟ => Even you, [uncle]?\n\n[أهلاً] أستاذ جواد => [Welcome] Mr. Jawad\nأهلاً [أستاذ] جواد => Welcome [Mr.] Jawad\nأهلاً أستاذ [جواد] => Welcome Mr. [Jawad]\n\n[هي] يزن بيستناك جوا => Hey # conversational opener with no direct translation\nهي [يزن] بيستناك جوا => [Yazan] is waiting for you inside\nهي يزن [بيستناك] جوا => Yazan [is waiting for you] inside\nهي يزن بيستناك [جوا] => Yazan is waiting for you [inside]\n\n[أستاذ] هذول مش أصحاب عمو أبو يزن؟ => [Teacher,] aren't these your friend Abu Yazan's friends?\nأستاذ [هذول مش] أصحاب عمو أبو يزن؟ => Teacher, [aren't these] your friend Abu Yazan's friends?\nأستاذ هذول مش [أصحاب] عمو أبو يزن؟ => Teacher, aren't these [friends] of your friend Abu Yazan?\nأستاذ هذول مش أصحاب [عمو أبو يزن]؟ => Teacher, aren't these friends of [uncle Abu Yazan]?\n\n[لا] يا عمو صاحبك إله أسبوع => [No], son, your friend has been\nلا [يا عمو] صاحبك إله أسبوع => No, [son], your friend has been\nلا يا عمو [صاحبك] إله أسبوع => No, son, [your friend] has been\n[إله أسبوع] => has been for a week\n\n[مقطع حاله دراسة] => [studying his heart out for a week]\nمقطع حاله [دراسة] => studying\n\n[وأنت] قاعد بتلعب => [while you] are just playing\nوأنت [قاعد] بتلعب => while you [are] just playing\nوأنت قاعد [بتلعب] => while you are [just playing]\n\n[روح] ادرسلك كلمتين تنفع => [Go] study a few words that might benefit you\nروح [ادرسلك] كلمتين تنفع => Go [study] a few words that might benefit you\nروح ادرسلك [كلمتين] تنفع => Go study [a few words] that might benefit you\nروح ادرسلك كلمتين [تنفع] => Go study a few words [that might benefit you]\n\n[روح] امشي => [Go on], move\nروح [امشي] => Go on, [move]\n\n[اعطى] => [He gave]\n\n[هنا] بالعلمي => [Here] in science\nهنا [بالعلمي] => Here [in science]\n\n[نرفع] رايتنا => [we raise] our banner\nنرفع [رايتنا] => we raise [our banner]\n\n[وبالطموح] => [and with ambition]\n\n[ننير] حياتنا => [we light] our lives\nننير [حياتنا] => we light [our lives]\n\n[فهذه] المدرسة => [For this] school\nفهذه [المدرسة] => For this [school]\n\n[لم تكن يوماً] مجرد فصول وجدران => [was never] just classrooms and walls\nلم تكن يوماً [مجرد] فصول وجدران => was never [just] classrooms and walls\nلم تكن يوماً مجرد [فصول وجدران] => was never just [classrooms and walls]\n\n[بل] كانت => [but] it was\nبل [كانت] => but [it was]\n\n[دوماً] بيتاً يجمعنا => [always] a home that brings us together\nدوماً [بيتاً] يجمعنا => always [a home] that brings us together\nدوماً بيتاً [يجمعنا] => always a home [that brings us together]\n\n[ومساحة] => [and a space]\n\n[نطلق فيها] أحلامنا => [where we launch] our dreams\nنطلق فيها [أحلامنا] => where we launch [our dreams]\n\n[فمرحباً] في الحضور بحفلنا => [So welcome] to the audience at our ceremony\nفمرحباً [في الحضور] بحفلنا => So welcome [to the audience] at our ceremony\nفمرحباً في الحضور [بحفلنا] => So welcome to the audience [at our ceremony]\n\n[نخض] سوياً => [Let's weave] together\nنخض [سوياً] => Let's weave [together]\n\n[قصص أفراحنا] => [our stories of joy] # Arabic idafa construction maps as a unit\n\n[فدعونا] نفتتح هذا الحفل بكل فرح => [So let us] open this ceremony with all joy\nفدعونا [نفتتح] هذا الحفل بكل فرح => So let us [open] this ceremony with all joy\nفدعونا نفتتح [هذا الحفل] بكل فرح => So let us open [this ceremony] with all joy\nفدعونا نفتتح هذا الحفل [بكل فرح] => So let us open this ceremony [with all joy]\n\n[يعني] إحنا قررنا نعمل شي مختلف => [I mean], we decided to do something different\nيعني [إحنا] قررنا نعمل شي مختلف => I mean, [we] decided to do something different\nيعني إحنا [قررنا] نعمل شي مختلف => I mean, we [decided] to do something different\nيعني إحنا قررنا نعمل [شي مختلف] => I mean, we decided to do [something different]\n\n[وأنا ورنا] رح نقدم الحفل مع بعض => [and Rana and I] will present the ceremony together\nوأنا ورنا [رح نقدم] الحفل مع بعض => and Rana and I [will present] the ceremony together\nوأنا ورنا رح نقدم [الحفل] مع بعض => and Rana and I will present [the ceremony] together\nوأنا ورنا رح نقدم الحفل [مع بعض] => and Rana and I will present the ceremony [together]\n\n[بزبط] مس؟ => [Is that okay], Miss? # idiomatic: بزبط literally means \"exactly\" but here means \"Is that okay\"\nبزبط [مس]؟ => Is that okay, [Miss]?\n\n[مس] عجبك؟ => [Miss], do you like it?\nمس [عجبك]؟ => Miss, [do you like it?]\n\n[بصراحة] => [Honestly]\n\n[بجنن] => [it's wonderful]\n\n[فكرة] => It's a very nice [idea] that you collaborated together\nفكرة [كثير] => It's a [very] nice idea that you collaborated together\nفكرة كثير [حلوة] => It's very [nice] idea that you collaborated together\nفكرة كثير حلوة [إنكم] => It's a very nice idea [that you] collaborated together\nفكرة كثير حلوة إنكم [تعاونتوا] => It's a very nice idea that you [collaborated] together\nفكرة كثير حلوة إنكم تعاونتوا [مع بعض] => It's a very nice idea that you collaborated [together]\n\n[حلو] => [Nice]\n\nشو [سند] => [Sanad], is something wrong?\nشو سند [مالك شيء] => Sanad, [is something wrong]?\n\n[خايف] => Are you [afraid] of the exam?\nخايف [من] => Are you afraid [of] the exam?\nخايف من [الامتحان] => Are you afraid of [the exam]?\n\n[لا] => [No], I'm not afraid, Mr. Private Lessons\nلا [مش] => No, I'm [not] afraid, Mr. Private Lessons\nلا مش [خايف] => No, I'm not [afraid], Mr. Private Lessons\nلا مش خايف [يا أبو الدروس الخصوصية] => No, I'm not afraid, [Mr. Private Lessons]\n\n[بس] => [But] I didn't sleep\nبس [ما] => But I [didn't] sleep\nبس ما [نمت] => But I didn't [sleep]\n\n[طول الليل] => [all night] I was studying to win\nطول الليل [وأنا] => all night [I] was studying to win\nطول الليل وأنا [بدرس] => all night I [was studying] to win\nطول الليل وأنا بدرس [عشان] => all night I was studying [to] win\nطول الليل وأنا بدرس عشان [أفوز] => all night I was studying to [win]\n\n[يلا لو سمحتوا] => [Please, everyone]\n\n[كل] => [each] one take your seat\nكل [واحد] => each [one] take your seat\nكل واحد [يقعد] => each one [take] your seat\nكل واحد يقعد [مكانه] => each one take [your seat]\n\n[نتائج] => [The results] appeared before me immediately\nنتائج [طلعت] => The results [appeared] before me immediately\nنتائج طلعت [قدامي] => The results appeared [before me] immediately\nنتائج طلعت قدامي [على طول] => The results appeared before me [immediately]\n\n[واللي] => [And the one who] got the highest mark\nواللي [حصل على] => And the one who [got] the highest mark\nواللي حصل على [أعلى] => And the one who got [the highest] mark\nواللي حصل على أعلى [علامة] => And the one who got the highest [mark]\n\n[رح يمثل] المدرسة في المسابقة => [will represent] the school in the competition\nرح يمثل [المدرسة] في المسابقة => will represent [the school] in the competition\nرح يمثل المدرسة [في] المسابقة => will represent the school [in] the competition\nرح يمثل المدرسة في [المسابقة] => will represent the school in [the competition]\n\n[ورح يسافر] بكرة على السعودية => [and will travel] tomorrow to Saudi Arabia\nورح يسافر [بكرة] على السعودية => and will travel [tomorrow] to Saudi Arabia\nورح يسافر بكرة [على السعودية] => and will travel tomorrow [to Saudi Arabia]\n\n[والفائز] هو => [And the winner] is\nوالفائز [هو] => And the winner [is]\n\n[عصام] => [Issam]\n\n[ألف مبروك] لعصام => [Congratulations] to Issam\nألف مبروك [لعصام] => Congratulations [to Issam]\n\n[شو]؟ عصام؟ => [What]? Issam?\nشو؟ [عصام]؟ => What? [Issam]?\n\n[أصلاً ما بفهم] شيء بالرياضة => [He doesn't even understand] anything about sports\nأصلاً ما بفهم [شيء] بالرياضة => He doesn't even understand [anything] about sports\nأصلاً ما بفهم شيء [بالرياضة] => He doesn't even understand anything [about sports]\n\n[ولا بحب] مباريات القدم => [nor does he like] football matches\nولا بحب [مباريات القدم] => nor does he like [football matches]\n\n[سند] سند => [Sanad], Sanad\nسند [سند] => Sanad, [Sanad]\n\n[أنا بعتذر] كثير على اللي عملته => [I apologize] a lot for what I did\nأنا بعتذر [كثير] على اللي عملته => I apologize [a lot] for what I did\nأنا بعتذر كثير [على] اللي عملته => I apologize a lot [for] what I did\nأنا بعتذر كثير على [اللي عملته] => I apologize a lot for [what I did]\n\n[بس] أنا كان نفسي أحضر المباراة => [but] I really wanted to attend the match\nبس [أنا] كان نفسي أحضر المباراة => but [I] really wanted to attend the match\nبس أنا [كان نفسي] أحضر المباراة => but I [really wanted] to attend the match\nبس أنا كان نفسي [أحضر] المباراة => but I really wanted [to attend] the match\nبس أنا كان نفسي أحضر [المباراة] => but I really wanted to attend [the match]\n\n[وأصلاً] ما كنت مركز بالامتحان => [and anyway] I wasn't focused on the exam\nوأصلاً [ما كنت] مركز بالامتحان => and anyway [I wasn't] focused on the exam\nوأصلاً ما كنت [مركز] بالامتحان => and anyway I wasn't [focused] on the exam\nوأصلاً ما كنت مركز [بالامتحان] => and anyway I wasn't focused [on the exam]\n\n[زعلان] إني هيك عملت فيك => [I'm sad] that I did this to you\nزعلان [إني] هيك عملت فيك => I'm sad [that I] did this to you\nزعلان إني [هيك] عملت فيك => I'm sad that I did [this] to you\nزعلان إني هيك [عملت] فيك => I'm sad that I [did] this to you\nزعلان إني هيك عملت [فيك] => I'm sad that I did this [to you]\n\n[كان ممكن] نتنافس بطريقة صح بدل ما تكذب علي => [We could have] competed the right way instead of you lying to me\nكان ممكن [نتنافس] بطريقة صح بدل ما تكذب علي => We could have [competed] the right way instead of you lying to me\nكان ممكن نتنافس [بطريقة صح] بدل ما تكذب علي => We could have competed [the right way] instead of you lying to me\nكان ممكن نتنافس بطريقة صح [بدل ما] تكذب علي => We could have competed the right way [instead of] you lying to me\nكان ممكن نتنافس بطريقة صح بدل ما [تكذب علي] => We could have competed the right way instead of [you lying to me]\n\n[واحد منا] عالقليلة يفوز => At least [one of us] would have won\nواحد منا [عالقليلة] يفوز => [At least] one of us would have won\nواحد منا عالقليلة [يفوز] => At least one of us [would have won]\n\n[معك حق] وأنا بعتذر مرة ثانية => [You're right], and I apologize again\nمعك حق [وأنا بعتذر] مرة ثانية => You're right, [and I apologize] again\nمعك حق وأنا بعتذر [مرة ثانية] => You're right, and I apologize [again]\n\n[ماشي] => [Alright]\n\n[أوعك] تعيدها => [Don't ever] do it again\nأوعك [تعيدها] => Don't ever [do it again]\n\n[أنت] أحسن صاحب بالعالم => [You are] the best friend in the world\nأنت [أحسن صاحب] بالعالم => You are [the best friend] in the world\nأنت أحسن صاحب [بالعالم] => You are the best friend [in the world]\n\n[اليوم] على موعدنا نلعب كرة => [Today is] our date to play football\nاليوم [على موعدنا] نلعب كرة => Today is [our date] to play football\nاليوم على موعدنا [نلعب كرة] => Today is our date [to play football]\n\n[وفي ختام] هذا الحفل المميز => [And at the conclusion of] this special ceremony\nوفي ختام [هذا الحفل المميز] => And at the conclusion of [this special ceremony]\n\n[نود] أن نشكر حضوركم الكريم => [we would like] to thank your kind presence\nنود [أن نشكر] حضوركم الكريم => we would like [to thank] your kind presence\nنود أن نشكر [حضوركم الكريم] => we would like to thank [your kind presence]\n\n[ومشاركتكم] التي زادت هذا اليوم بهجة وتألقاً => [and your participation] which added joy and brilliance to this day\nومشاركتكم [التي زادت هذا اليوم بهجة وتألقاً] => and your participation [which added joy and brilliance to this day]\n\n[وتبقى هذه اللحظات الجميلة] ذكرى لنا => [And these beautiful moments remain] a memory for us\nوتبقى هذه اللحظات الجميلة [ذكرى لنا] => And these beautiful moments remain [a memory for us]\n\n[ونتمنى] أن نلتقي دوماً على دربنا => [and we hope] to always meet on our path\nونتمنى [أن] نلتقي دوماً على دربنا => and we hope [to] always meet on our path\nونتمنى أن [نلتقي] دوماً على دربنا => and we hope to always [meet] on our path\nونتمنى أن نلتقي [دوماً] على دربنا => and we hope to [always] meet on our path\nونتمنى أن نلتقي دوماً [على] دربنا => and we hope to always meet [on] our path\nونتمنى أن نلتقي دوماً على [دربنا] => and we hope to always meet on [our path]\n\n[أحلى] سالي => [Great job] Sally\nأحلى [سالي] => Great job [Sally]\n\n[وأحلى] رنا كمان => [And great job] Rana too\nوأحلى [رنا] كمان => And great job [Rana] too\nوأحلى رنا [كمان] => And great job Rana [too]\n\n[أيوه روح] => [Go for it]\n\n[يلا] يا تعمريوحش => [Come on], Ta'mari, you beast\nيلا يا [تعمري] وحش => Come on, [Ta'mari], you beast\nيلا يا تعمري [وحش] => Come on, Ta'mari, [you beast]\n\n[أيوه] أيوه اعطي باص النعمات => [Yes], yes, give the pass to N'emat\nأيوه [أيوه] اعطي باص النعمات => Yes, [yes], give the pass to N'emat\nأيوه أيوه [اعطي] باص النعمات => Yes, yes, [give] the pass to N'emat\nأيوه أيوه اعطي [باص النعمات] => Yes, yes, give [the pass to N'emat]\n\n[هيو] جنبك فاضي => [He]'s right next to you, open\nهيو [جنبك] فاضي => He's [right next to you], open\nهيو جنبك [فاضي] => He's right next to you, [open]\n\n[سند] شوف شوف الكاميرا مركزة على عصام => [Sanad], look, look, the camera is focused on Issam\nسند [شوف] شوف الكاميرا مركزة على عصام => Sanad, [look], look, the camera is focused on Issam\nسند شوف [شوف] الكاميرا مركزة على عصام => Sanad, look, [look], the camera is focused on Issam\nسند شوف شوف [الكاميرا] مركزة على عصام => Sanad, look, look, [the camera] is focused on Issam\nسند شوف شوف الكاميرا [مركزة] على عصام => Sanad, look, look, the camera [is focused] on Issam\nسند شوف شوف الكاميرا مركزة [على] عصام => Sanad, look, look, the camera is focused [on] Issam\nسند شوف شوف الكاميرا مركزة على [عصام] => Sanad, look, look, the camera is focused on [Issam]\n\n[بقرا] كتاب بنص المباراة => [He's reading] a book in the middle of the match\nبقرا [كتاب] بنص المباراة => He's reading [a book] in the middle of the match\nبقرا كتاب [بنص] المباراة => He's reading a book [in the middle] of the match\nبقرا كتاب بنص [المباراة] => He's reading a book in the middle of [the match]\n\n[مستحيل] => [Impossible]\n\n[المنافس الصح] هي اللي بتساعدك تكون أحسن => [The right competitor] is the one who helps you be better\nالمنافس الصح [هي اللي] بتساعدك تكون أحسن => The right competitor [is the one who] helps you be better\nالمنافس الصح هي اللي [بتساعدك] تكون أحسن => The right competitor is the one who [helps you] be better\nالمنافس الصح هي اللي بتساعدك [تكون] أحسن => The right competitor is the one who helps you [be] better\nالمنافس الصح هي اللي بتساعدك تكون [أحسن] => The right competitor is the one who helps you be [better]\n\n[هي اللي] بتدفعك لقدام وبتبنيك => [The one who] pushes you forward and builds you up\nهي اللي [بتدفعك] لقدام وبتبنيك => The one who [pushes you] forward and builds you up\nهي اللي بتدفعك [لقدام] وبتبنيك => The one who pushes you [forward] and builds you up\nهي اللي بتدفعك لقدام [وبتبنيك] => The one who pushes you forward [and builds you up]\n\n[مش] اللي بتخليك تكسب وتخدع وتوقع غيرك => [not] the one who makes you win by cheating and tripping others\nمش [اللي] بتخليك تكسب وتخدع وتوقع غيرك => not [the one who] makes you win by cheating and tripping others\nمش اللي [بتخليك] تكسب وتخدع وتوقع غيرك => not the one who [makes you] win by cheating and tripping others\nمش اللي بتخليك [تكسب] وتخدع وتوقع غيرك => not the one who makes you [win] by cheating and tripping others\nمش اللي بتخليك تكسب [وتخدع] وتوقع غيرك => not the one who makes you win [by cheating] and tripping others\nمش اللي بتخليك تكسب وتخدع [وتوقع غيرك] => not the one who makes you win by cheating [and tripping others]\n\n[والنجاح الحقيقي] هو اللي بتحققه بأخلاقك واجتهادك => [And true success] is what you achieve with your morals and diligence\nوالنجاح الحقيقي [هو] اللي بتحققه بأخلاقك واجتهادك => And true success [is] what you achieve with your morals and diligence\nوالنجاح الحقيقي هو [اللي] بتحققه بأخلاقك واجتهادك => And true success is [what] you achieve with your morals and diligence\nوالنجاح الحقيقي هو اللي [بتحققه] بأخلاقك واجتهادك => And true success is what [you achieve] with your morals and diligence\nوالنجاح الحقيقي هو اللي بتحققه [بأخلاقك] واجتهادك => And true success is what you achieve [with your morals] and diligence\nوالنجاح الحقيقي هو اللي بتحققه بأخلاقك [واجتهادك] => And true success is what you achieve with your morals [and diligence]\n\n[مش] على حساب غيرك => [not] at the expense of others\nمش [على حساب غيرك] => not [at the expense of others]\n\n",
+    "lessons": "# The Apology\n00:04 أنا بعتذر كثير\n00:05 على اللي عملته\n00:06 بس أنا كان نفسي\n00:07 أحضر المباراة\n00:08 وأصلاً ما كنت مركز\n00:09 بالامتحان\n\n# Asking for Advice\n00:10 زعلان إني هيك عملت فيك\n00:12 أسامحه ولا لا؟\n00:14 شو رأيكم؟\n00:15 احضروا واكتبوا لي بالتعليقات\n\n# The Big Announcement\n00:23 وهلا اجا وقت الإعلان المهم\n00:25 رح يكون في مسابقة\n00:26 بمبحث الرياضيات\n00:28 واللي بيفوز فيه\n00:29 بيمثل الأردن بالمسابقة\n00:31 على مستوى الدول\n\n# Destination: Saudi Arabia\n00:33 واللي رح تكون بالسعودية\n00:34 الأسبوع الجاي\n00:36 اللي حابب يشترك يخبرني\n00:39 الرياضيات لعبتي\n00:40 بدك تشترك؟\n\n# Hidden Motives\n00:43 يزن\n00:44 طبعاً رح أشترك\n00:45 طبعاً\n00:46 ما بعرفك بتحب الرياضيات هالقد\n00:47 أكيد لا\n00:48 بس أنت ناسي\n\n# The Real Plan\n00:49 إن الأسبوع الجاي\n00:50 المباراة اللي بنستناها\n00:52 ورح تكون بالسعودية\n00:54 صح\n00:58 وأنا ورنا قدمنا كمان\n\n# The School Ceremony\n01:00 في بنت من الصف الثاني\n01:02 قدمت عشان عريف الحفل السنوي للمدرسة\n01:04 مين؟ منى؟\n01:06 آه منى\n01:07 دائماً هي بتكون عريف الحفل تبع المدرسة\n\n# Muna's Talent\n01:09 أي تعطي فرصة لغيرها\n01:11 اتذكرتها\n01:12 شاطرة هاي البنت\n01:13 كتاباتها ممتازة\n01:14 وإلقائها واضح وحلو كثير\n\n# Confidence and Support\n01:17 إن شاء الله هالمرة بيختاروكي أنتِ سلسولة\n01:19 وبنيجي كلنا بنحضرك\n01:22 سوري سالي\n01:23 أنا ما رح أكون الأسبوع الجاي\n01:25 شو هالتقة؟\n01:26 خلص قررت إنك أنت الفايز؟\n\n# The Math Genius\n01:29 طبعاً\n01:30 مش مسابقة رياضيات؟\n01:31 وجد جدي الخوارزمي بحد ذاته\n01:36 صدق هالمدرسة نشاطاتها كترانة\n01:39 موفقين حبايبي\n\n# Suspicious Behavior\n01:44 شو هذا يزن؟\n01:45 لا لا لا مش شيء مهم\n01:47 ورق تدريب للمسابقة\n01:49 أنا بصورلك إياهم\n\n# The Shop is Closed\n01:50 خلص المحل سكر هلا\n01:51 وما ضل عندهم نسخ\n01:53 شكراً يزن غلبتك\n01:55 يلا سلام بشوفك بكرة\n02:00 بكل فخر وسرور\n\n# Practicing the Speech\n02:02 أرحب بكم اليوم\n02:03 في هذا الحفل المميز\n02:05 حيث تجتمع المواهب\n02:07 يا الله مش ضابطة\n02:10 ولا شيء عاجبني\n\n# Collaboration\n02:12 ألو رنا\n02:14 هاي سالي\n02:15 ما تقولي لي أنتِ كمان مش طالع معك شيء\n02:17 أنا حتى مع الـ AI\n02:18 مش طالع معي شيء\n\n# Encouraging Each Other\n02:20 اسمعي تعالي عندي\n02:21 خلينا نشجع بعض\n02:23 أوك هيني جاي\n02:24 هاي خامس مرة بتصلحها\n02:26 وبترجع بتخرب\n\n# The Washing Machine Dilemma\n02:27 الحق علي اللي بدي أوفر عليك\n02:29 بدل ما تروح تشتري غسالة جديدة\n02:31 بمبلغ وقدره\n02:32 أنا بستفيد\n02:34 قصدي أنت بتستفيد\n02:36 وبوفر عليك كمان\n\n# Repair Costs\n02:39 شو مالك يا زلمة؟\n02:40 أي زلمة صرت حاطط حقها\n02:42 مليون مرة\n02:44 من الآخر\n02:45 شو بتصلح ولا انسى الموضوع؟\n\n# The Perfect Part\n02:48 بكرة رح أجيبلك قطعة\n02:50 أما شو قطعة\n02:51 رح تحللك الموضوع من الآخر\n02:53 وبأرخص الأسعار\n02:55 آه كالعادة\n\n# The Missing Papers\n02:59 هاي سند كيفك؟\n03:01 تمام\n03:02 اسمع رح تصورلي الورق؟\n03:04 الورق؟\n03:05 لا لا اسمع ما طلع فيهم أي شيء مفيد\n03:07 هيني راميهم على جنب\n\n# Exam Pressure\n03:10 طب شو نعمل؟\n03:11 قرب الامتحان\n03:12 أي امتحان شو يا زلمة؟\n03:14 هاي مسابقة وما بدها دراسة\n03:16 شو مالك شادد حالك؟\n\n# Distractions\n03:18 طب امشي نطلع محل نتسلى\n03:20 نطلع؟\n03:21 بابا سند بده إياني أطلع معاه\n03:25 آه إذا مع سند اطلع ليش لا\n03:28 لا لا لا اسمع سند لازم أروح\n03:30 برجع بحكيك بعدين\n\n# A Creative Idea\n03:32 أنا عندي فكرة\n03:33 ليه ما تكتبي شعر؟\n03:35 أنتِ كثير شاطرة بالشعر والإلقاء\n03:37 فكرة عبقرية\n03:38 شكراً رنا\n03:39 بس أنتِ شو رح تكتبي؟\n\n# Trying Again\n03:41 رح أرجع أحاول\n03:42 رح يطلع معك شيء كثير حلو\n03:44 أنا متأكدة\n03:49 اتذكروا إنه بكرة الامتحان للمسابقة\n03:51 ورح يكون أونلاين\n\n# Final Exam Instructions\n03:53 ورح تطلع النتائج راساً بعد الامتحان\n03:55 استعدوا منيح\n03:57 هاي فرصة كثير مهمة لمدرستنا\n03:59 ولكل واحد فيكم\n04:01 يعطيكم العافية\n\n# Review or Play?\n04:04 يزن شو رأيك نراجع اليوم عالسريع؟\n04:07 من كل عقلك يا زلمة؟\n04:08 انسى\n04:10 طب خلينا نلعب قدم\n04:12 زمان ما لعبنا\n04:13 وصارلك أسبوع مختفي\n\n# The Match Excuse\n04:15 اليوم المشكلة إنه بابا\n04:17 عازم صحابه\n04:18 وبده إياني أكون موجود\n04:20 خلص بكرة عالأكيد\n04:22 طب أنا سابقك عالمقصف\n\n# Competitive Spirit\n04:24 بس مش حتسبقني عالمسابقة\n04:26 وأنا اللي رح أطلع المباراة\n04:33 شوف لي هالقطعة ما أجملها\n04:35 أي لو إلها لسان\n04:37 كان قالت شوفوني يا ناس\n\n# Quality Comes at a Price\n04:39 المهم تزبط\n04:40 بتزبط\n04:41 بتزبط ونص\n04:43 مش هلا تنصدم من سعرها\n04:45 الغالي سعره فيه\n\n# Parental Support\n04:48 شو سند ما بدك تقوم تحضر حالك لامتحان بكرة؟\n04:56 ما حدا عم بدرس\n04:57 هذه مسابقة بابا\n04:59 بس بيجي غلط ماما تحضر حالك\n05:01 حلو إنك تفوز وتسافر وتمثل بلدك\n\n# Confidence in Winning\n05:04 ما تخافي ماما رح أفوز\n05:06 عيب\n05:07 ماجد جدو الخوارزمي\n05:11 كيف عرفت؟\n05:12 رح أنزل ألعب تحت يا زفت\n\n# The Secret Tutors\n05:15 يسلموا أبو يزن\n05:16 أصيل طول عمرك أصيل\n05:18 هيني شغلناه وخلينا نشوف\n05:21 أهلاً أهلاً أستاذ عمر\n05:22 هي يزن بيستنى جوا\n05:23 وين أستاذ جواد؟\n\n# The Deal\n05:25 هي وراي بس معاه خط\n05:27 أستاذ بكرة الامتحان\n05:29 وإلكم أحلى حلوان\n05:31 إذا فاز يزن وسافر عالسعودية\n05:33 أكيد رح يفوز\n\n# The Cost of Tutoring\n05:34 صارلنا أسبوع بنشتغل عليه\n05:36 أسبوع؟\n05:37 دخلك قديش بتاخدوا بالساعة؟\n05:40 بلكي غيرنا هالصنعة\n05:44 10 20 30 40 50 60 70 80 90 100\n\n# Caught in the Act\n05:49 سند شو شايف ما عليك امتحان بكرة؟\n05:53 حتى أنت يا عمو؟\n05:54 أهلاً أستاذ جواد\n05:56 هي يزن بيستناك جوا\n05:58 أستاذ هذول مش أصحاب عمو أبو يزن؟\n\n# Study Hard\n06:01 لا يا عمو صاحبك إله أسبوع\n06:03 مقطع حاله دراسة\n06:05 وأنت قاعد بتلعب\n06:07 روح ادرسلك كلمتين تنفع\n06:09 روح امشي\n06:11 اعطى\n\n# The Opening Speech\n06:18 هنا بالعلمي\n06:20 نرفع رايتنا\n06:21 وبالطموح\n06:22 ننير حياتنا\n06:24 فهذه المدرسة\n\n# Our School, Our Home\n06:26 لم تكن يوماً مجرد فصول وجدران\n06:28 بل كانت\n06:30 دوماً بيتاً يجمعنا\n06:31 ومساحة\n06:33 نطلق فيها أحلامنا\n06:34 فمرحباً في الحضور بحفلنا\n\n# A Different Approach\n06:37 نخض سوياً\n06:39 قصص أفراحنا\n06:40 فدعونا نفتتح هذا الحفل بكل فرح\n06:44 يعني إحنا قررنا نعمل شيء مختلف\n06:46 نخلط الشعر مع النثر\n\n# Successful Teamwork\n06:48 وأنا ورنا رح نقدم الحفل مع بعض\n06:51 بزبط مس؟\n06:52 مس عجبك؟\n06:53 بصراحة\n06:55 بجنن\n06:56 فكرة كثير حلوة إنكم تعاونتوا مع بعض\n\n# Exam Day Nerves\n07:01 شو سند مالك شيء؟\n07:03 خايف من الامتحان؟\n07:04 لا مش خايف يا أبو الدروس الخصوصية\n07:07 بس ما نمت\n07:08 طول الليل وأنا بدرس عشان أفوز\n\n# The Results\n07:10 يلا لو سمحتوا\n07:12 كل واحد يقعد مكانه\n07:33 نتائج طلعت قدامي على طول\n07:35 واللي حصل على أعلى علامة\n07:37 رح يمثل المدرسة في المسابقة\n\n# The Winner\n07:39 رح يسافر بكرة على السعودية\n07:42 والفائز هو\n07:44 عصام\n07:46 ألف مبروك لعصام\n07:48 شو؟ عصام؟\n07:50 أصلاً ما بفهم شيء بالرياضة\n\n# The Truth Comes Out\n07:52 ولا بحب مباريات القدم\n07:59 سند سند\n08:01 أنا بعتذر كثير على اللي عملته\n08:03 بس أنا كان نفسي أحضر المباراة\n08:05 وأصلاً ما كنت مركز بالامتحان\n\n# Fair Competition\n08:07 زعلان إني هيك عملت فيك\n08:09 كان ممكن نتنافس بطريقة صح بدل ما تكذب علي\n08:12 واحد منا عالقليلة يفوز\n08:14 معك حق وأنا بعتذر مرة ثانية\n08:18 ماشي\n\n# Reconciliation\n08:19 أوعك تعيدها\n08:20 أنت أحسن صاحب بالعالم\n08:22 اليوم على موعدنا نلعب كرة\n08:28 وفي ختام هذا الحفل المميز\n08:30 نود أن نشكر حضوركم الكريم\n\n# Closing Remarks\n08:33 ومشاركتكم التي زادت هذا اليوم بهجة وتألقاً\n08:38 وتبقى هذه اللحظات الجميلة ذكرى لنا\n08:41 ونتمنى أن نلتقي دوماً على دربنا\n08:46 أحلى سالي\n08:48 وأحلى رنا كمان\n\n# Cheering for the Team\n08:51 أيوه روح\n08:53 يلا يا تعمري وحش\n08:55 أيوه أيوه اعطي باص النعمات\n08:57 هيو جنبك فاضي\n08:58 سند شوف شوف الكاميرا مركزة على عصام\n\n# The Unlikely Spectator\n09:01 بقرا كتاب بنص المباراة\n09:03 مستحيل\n09:06 المنافس الصح هي اللي بتساعدك تكون أحسن\n09:09 هي اللي بتدفعك لقدام وبتبنيك\n09:11 مش اللي بتخليك تكسب وتخدع وتوقع غيرك\n\n# The Meaning of Success\n09:15 والنجاح الحقيقي هو اللي بتحققه بأخلاقك واجتهادك\n09:19 مش على حساب غيرك",
+    "similar_sounds": "أنا [بنتظر] كثير\nعلى اللي [علمته]\nبس أنا كان [نصي]\nأحضر [المرارة]\nوأصلاً ما كنت [مؤتزر]\nبـ[الامتهان]\nزعلان إني هيك [علت] فيك\n[أساكنه] ولا لا؟\nشو [رزقكم]؟\n[احذروا] واكتبوا لي بالتعليقات\nوهلا اجا وقت [الأعيان] المهم\nرح يكون في [مصادقة]\nبـ[مدبح] الرياضيات\nواللي [بيجوز] فيه\n[بيمتثل] الأردن بالمسابقة\nعلى [مسمى] الدول\nواللي رح تكون بـ[السعيدة]\nالأسبوع [الباقي]\nاللي حابب [يشتري] يخبرني\nالرياضيات [لقطتي]\nبدك [تشتري]؟\nيزن\nطبعاً رح [أشتري]\nطبعاً\nما بعرفك بتحب [الرهبات] هالقد\nأكيد لا\nبس أنت [قاسي]\nإن الأسبوع الجاي\n[المرارة] اللي بنستناها\nورح تكون بالسعودية\nصح\nوأنا ورنا قدمنا [أمان]\nفي بنت من [الصدف] الثاني\nقدمت عشان [عرف] الحفل السنوي للمدرسة\nمين؟ منى؟\nآه منى\nدائماً هي بتكون [ظريف] الحفل تبع المدرسة\nأي تعطي فرصة [لغيرتها]\n[احتقرتها]\n[شاكرة] هاي البنت\n[خطاباتها] ممتازة\nو[إقفالها] واضح وحلو كثير\nإن شاء الله هالمرة بيختاروكي أنتِ [سلسلة]\nوبنيجي كلنا [بنحذرك]\nسوري سالي\nأنا ما رح أكون الأسبوع الجاي\nشو [هالدقة]؟\nخلص [قهرت] إنك أنت الفايز؟\nطبعاً\nمش مسابقة [رهابات]؟\nوجد جدي الخوارزمي بحد ذاته\n[سدق] هالمدرسة نشاطاتها كترانة\n[مخفقين] حبايبي\nشو هذا يزن؟\nلا لا لا مش شيء [ألم]\nورق [ترحيب] للمسابقة\nأنا [بصيرلك] إياهم\nخلص [الرحل] سكر هلا\nوما ضل عندهم [نسق]\nشكراً يزن غلبتك\nيلا سلام بشوفك بكرة\nبكل فخر و[سور]\n[أرعب] بكم اليوم\nفي هذا الحفل [المميت]\nحيث تجتمع [المهارب]\nيا الله مش [طالبة]\nولا شيء [عاقبني]\nألو رنا\nهاي سالي\nما [تقتلي] لي أنتِ كمان مش طالع معك شيء\nأنا حتى مع الـ AI\nمش طالع معي [شين]\nاسمعي تعالي عندي\nخلينا [نرجع] بعض\nأوك هيني [راي]\nهاي خامس مرة بتصلحها\nوبترجع [بتكتب]\nالحق علي اللي بدي أوفر عليك\nبدل ما تروح [تشتكي] غسالة جديدة\nبـ[مألف] وقدره\nأنا [بستزيد]\nقصدي أنت [بتستزيد]\nوبوفر عليك كمان\nشو مالك يا [سلامة]؟\nأي زلمة صرت حاطط [قرها]\n[مليان] مرة\nمن [الأخ]\nشو بتصلح ولا [أمسى] الموضوع؟\nبكرة رح أجيبلك [قصعة]\nأما شو [قصعة]\nرح [تذللك] الموضوع من الآخر\nوبأرخص [الأسفار]\nآه [كالسعادة]\nهاي سند كيفك؟\nتمام\nاسمع رح تصورلي الورق؟\nالورق؟\nلا لا اسمع ما طلع فيهم أي شيء [مزيد]\nهيني راميهم على [جند]\nطب شو [نأمل]؟\n[غرب] الامتحان\nأي امتحان شو يا زلمة؟\nهاي مسابقة وما بدها [دعاسة]\nشو مالك [شارد] حالك؟\nطب امشي نطلع [محمل] نتسلى\nنطلع؟\nبابا سند بده إياني أطلع [مطاع]\nآه إذا مع [سن] اطلع ليش لا\nلا لا لا اسمع سند لازم أروح\n[برضيك] بحكيك بعدين\nأنا عندي [فقرة]\nليه ما [تقتلي] شعر؟\nأنتِ كثير شاطرة بـ[الشعر] والإلقاء\nفكرة [عبرية]\nشكراً رنا\nبس أنتِ شو [روح] تكتبي؟\nرح أرجع [أحول]\nرح يطلع معك شيء كثير [حلل]\nأنا [متأكلة]\nاتذكروا إنه بكرة الامتحان لـ[المصادقة]\nورح يكون [أوفلاين]\nورح تطلع النتائج راساً [بيد] الامتحان\nاستعدوا [مريح]\nهاي [فرقة] كثير مهمة لمدرستنا\nولكل [وحد] فيكم\n[يغذيكم] العافية\nيزن شو [رزقك] نراجع اليوم عالسريع؟\nمن كل [عملك] يا زلمة؟\n[أمسى]\nطب خلينا نلعب [قدم]\n[حمان] ما لعبنا\nوصارلك [سبوع] مختفي\nاليوم [المشنقة] إنه بابا\nعازم [صحابه]\nوبده إياني أكون موجود\nخلص بكرة عالأكيد\nطب أنا [صادفك] عالمقصف\nبس مش حتسبقني عالمسابقة\nوأنا اللي رح أطلع [المرارة]\nشوف لي هال[قصة] ما أجملها\nأي لو إلها [حسان]\nكان قالت شوفوني يا [تاس]\nالمهم [تربط]\n[بتربط]\n[بتربط] ونص\nمش هلا [تنعدم] من سعرها\nالغالي [سكره] فيه\nشو سند ما بدك تقوم تحضر حالك لامتحان بكرة؟\nما حدا عم بدرس\nهذه [مصادقة] بابا\nبس بيجي غلط ماما [تحضر] حالك\nحلو إنك [تجوز] وتسافر وتمثل بلدك\nما تخافي ماما رح [أجوز]\n[غيب]\n[ناجد] جدو الخوارزمي\nكيف [عفرت]؟\nرح أنزل ألعب تحت يا [سفت]\n[يسلم] أبو يزن\nأصيل [طويل] عمرك أصيل\nهيني شغلناه وخلينا [نكشف]\nأهلاً أهلاً [سيد] عمر\nهي يزن بيستنى [جوا]\n[فين] أستاذ جواد؟\nهي [ورق] بس معاه خط\nأستاذ بكرة [الامتهان]\nوإلكم أحلى [حنون]\nإذا [لاز] يزن وسافر عالسعودية\nأكيد رح [يجوز]\nصارلنا [سبوع] بنشتغل عليه\nأسبوع؟\nدخلك قديش [بتاكلوا] بالساعة؟\nبلكي غيرنا [هالشقعة]\n10 20 30 40 50 60 70 80 90 100\nسند شو [خايف] ما عليك امتحان بكرة؟\nحتى أنت يا [عمنا]؟\nأهلاً [سيد] جواد\nهي يزن بيستناك [جوا]\nأستاذ هذول مش أصحاب [عمنا] أبو يزن؟\nلا يا عمو صاحبك إله أسبوع\n[مقلع] حاله دراسة\nوأنت قاعد [بتكتب]\nروح ادرسلك كلمتين [ترفع]\nروح [امضي]\nاعطى\n[هناء] بالعلمي\nنرفع رايتنا\nوبـ[السموح]\n[نثير] حياتنا\nفهذه المدرسة\nلم تكن يوماً مجرد فصول [ووجدان]\nبل كانت\nدوماً بيتاً [يمنعنا]\nومساحة\nنطلق فيها [آلامنا]\n[فمرهباً] في الحضور بحفلنا\nنخض سوياً\nقصص أفراحنا\nفدعونا نفتتح هذا الحفل بكل فرح\nيعني إحنا قررنا نعمل شيء مختلف\nنخلط الشعر مع النثر\nوأنا ورنا رح نقدم الحفل مع [بضع]\nبزبط مس؟\nمس [عقبك]؟\nبصراحة\nبجنن\nفكرة كثير [حللة] إنكم تعاونتوا مع بعض\nحلو\nشو سند مالك شيء؟\nخايف من [الامتهان]؟\nلا مش خايف يا أبو الدروس الخصوصية\nبس [لا] نمت\nطول الليل وأنا بدرس عشان [أجوز]\nيلا [لا] سمحتوا\nكل واحد [يصعد] مكانه\n[نعاج] طلعت قدامي على طول\nواللي حصل على أعلى علامة\nرح يمثل المدرسة في [المصادقة]\nورح يسافر بكرة على [السعيدة]\nوالفائز هو\nعصام\nألف مبروك لعصام\nشو؟ عصام؟\nأصلاً ما بفهم شيء بـ[الريادة]\nولا بحب مباريات [القدم]\nسند سند\nأنا بعتذر كثير على اللي [علمته]\nبس أنا كان نفسي أحضر [المرارة]\nوأصلاً ما كنت مركز بـ[الامتهان]\nزعلان إني هيك [علت] فيك\nكان ممكن نتنافس بطريقة صح بدل ما [تكتب] علي\nواحد منا عالقليلة [يجوز]\nمعك حق وأنا [بنتظر] مرة ثانية\nماشي\nأوعك [تزيدها]\nأنت أحسن صاحب بـ[العالم]\nاليوم على موعدنا نلعب [قرية]\nوفي ختام هذا الحفل [المميت]\nنود أن [نذكر] حضوركم الكريم\nومشاركتكم التي [زارت] هذا اليوم بهجة وتألقاً\nوتبقى هذه اللحظات الجميلة ذكرى [لنا]\nونتمنى أن نلتقي دوماً على [ذرنا]\nأحلى سالي\nوأحلى رنا كمان\nأيوه روح\nيلا يا [تعمير] وحش\nأيوه أيوه اعطي باص [النغمات]\nهيو جنبك [عاضي]\nسند شوف شوف الكاميرا [مرموزة] على عصام\nبقرا كتاب بنص [المرارة]\nمستحيل\n[المنافش] الصح هي اللي بتساعدك تكون أحسن\nهي اللي بتدفعك لقدام و[بتجنيك]\nمش اللي بتخليك تكسب وتخدع وتوقع غيرك\nوالنجاح الحقيقي هو اللي بتحققه بأخلاقك واجتهادك\nمش على حساب غيرك"
+  },
+  "created_at": "2026-03-07 21:19:16 UTC",
+  "updated_at": "2026-03-07 22:24:03 UTC",
+  "exported_at": "2026-03-07T22:24:04Z"
+}

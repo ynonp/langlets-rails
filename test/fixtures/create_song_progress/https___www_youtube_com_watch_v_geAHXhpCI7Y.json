@@ -1,0 +1,1216 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=geAHXhpCI7Y",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "استنوا استنوا تشوفوا المفاجأة",
+        "timestamp": "00:00",
+        "text_l2": "Wait, wait until you see the surprise"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "اللي محضر لكم اياها هلا",
+        "timestamp": "00:02",
+        "text_l2": "that I have prepared for you now"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "كمان مفاجأة",
+        "timestamp": "00:04",
+        "text_l2": "Another surprise?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "مين مفكر حاله هذا الولد",
+        "timestamp": "00:13",
+        "text_l2": "Who does this boy think he is?"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وكل يوم بده يطبلنا بآلة جديدة",
+        "timestamp": "00:15",
+        "text_l2": "Every day he wants to drum for us with a new instrument"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "خلص زودها",
+        "timestamp": "00:17",
+        "text_l2": "Enough, he's overdoing it"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "جد شو هذا",
+        "timestamp": "00:19",
+        "text_l2": "Seriously, what is this?"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "كثير مزعج",
+        "timestamp": "00:20",
+        "text_l2": "Very annoying"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "خلص ما يلاقي على موبايله",
+        "timestamp": "00:22",
+        "text_l2": "Why doesn't he just find something on his phone"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "زي الناس الطبيعية",
+        "timestamp": "00:24",
+        "text_l2": "like normal people"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "ويفك عنا شوي",
+        "timestamp": "00:25",
+        "text_l2": "and leave us alone for a bit"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "واو أنت خرافي",
+        "timestamp": "00:28",
+        "text_l2": "Wow, you are legendary"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "طيب شو الآلات التانية اللي بتعزف عليها",
+        "timestamp": "00:30",
+        "text_l2": "Okay, what other instruments do you play?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "شو ما بدك",
+        "timestamp": "00:33",
+        "text_l2": "Whatever you want"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "بعرف أعزف على كل الآلات",
+        "timestamp": "00:34",
+        "text_l2": "I know how to play all instruments"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أنا موهوب بالفطرة",
+        "timestamp": "00:36",
+        "text_l2": "I am naturally gifted"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "اسمع بكره بجيب معي الشبابة",
+        "timestamp": "00:39",
+        "text_l2": "Listen, tomorrow I'll bring the flute with me"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "يا الله دق على عصبي",
+        "timestamp": "00:41",
+        "text_l2": "Oh God, he's getting on my nerves"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "لازم ألاقي حل للموسيقى اللي ما عم تخلص",
+        "timestamp": "00:44",
+        "text_l2": "I have to find a solution for this never-ending music"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "الموضوع عندي",
+        "timestamp": "00:47",
+        "text_l2": "I've got this"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "ما شاء الله ما شاء الله",
+        "timestamp": "00:57",
+        "text_l2": "Mashallah, mashallah"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "كيف تعلم العزف",
+        "timestamp": "01:02",
+        "text_l2": "How did he learn to play?"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "صدق يا أبو سند",
+        "timestamp": "01:04",
+        "text_l2": "Believe me, Abu Sanad"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "جبتله بيانو عالبيت",
+        "timestamp": "01:05",
+        "text_l2": "I brought him a piano to the house"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "وجبتله أستاذ",
+        "timestamp": "01:07",
+        "text_l2": "and I brought him a teacher"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "وصارله سنة بيتدرب",
+        "timestamp": "01:08",
+        "text_l2": "and he's been practicing for a year"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "الله يخليلك اياه",
+        "timestamp": "01:10",
+        "text_l2": "May God keep him for you"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "موهوب ما شاء الله",
+        "timestamp": "01:11",
+        "text_l2": "He's gifted, mashallah"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "تسلم يا أبو سند",
+        "timestamp": "01:13",
+        "text_l2": "Thank you, Abu Sanad"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "الله يخليلك ولادك",
+        "timestamp": "01:14",
+        "text_l2": "May God keep your children for you"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "شو بيعزفوا",
+        "timestamp": "01:16",
+        "text_l2": "What do they play?"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "في حدا منهم بيعزف بيانو",
+        "timestamp": "01:17",
+        "text_l2": "Does any of them play the piano?"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "ها لا",
+        "timestamp": "01:19",
+        "text_l2": "Uh, no"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "صراحة لسه ما بلشوا",
+        "timestamp": "01:21",
+        "text_l2": "To be honest, they haven't started yet"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "لازم يا أبو سند تعلم ولادك يعزفوا آلة موسيقية",
+        "timestamp": "01:23",
+        "text_l2": "You must, Abu Sanad, teach your children to play a musical instrument"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "الأبحاث بتقول إنه الموسيقى بتفتح الذهن",
+        "timestamp": "01:26",
+        "text_l2": "Research says that music opens the mind"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "وبتساعدهم دراسياً",
+        "timestamp": "01:29",
+        "text_l2": "and helps them academically"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "خاصة بالرياضيات",
+        "timestamp": "01:31",
+        "text_l2": "especially in mathematics"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "وهيك يا أبو سند",
+        "timestamp": "01:41",
+        "text_l2": "And like this, Abu Sanad"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "بنكون خلصنا شغل نظيف نظيف",
+        "timestamp": "01:43",
+        "text_l2": "we've finished a very clean job"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "ومن الآخر",
+        "timestamp": "01:46",
+        "text_l2": "and top-notch"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "هينا وصلنا لك البانيو",
+        "timestamp": "01:47",
+        "text_l2": "Here we've delivered the bathtub to you"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "قصدي البيانو نوتة نوتة",
+        "timestamp": "01:49",
+        "text_l2": "I mean the piano, note by note"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "وسلامة خيرك يا أبو سند",
+        "timestamp": "01:53",
+        "text_l2": "and you're welcome, Abu Sanad"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "الحساب بس 50 ليرة",
+        "timestamp": "01:55",
+        "text_l2": "The bill is just 50 liras"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "مشان عيونك بس",
+        "timestamp": "01:57",
+        "text_l2": "just for your sake"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "أوف 50",
+        "timestamp": "01:59",
+        "text_l2": "Oof, 50?"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "ليش",
+        "timestamp": "02:01",
+        "text_l2": "Why?"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "حبيبي ايش حبيبي",
+        "timestamp": "02:02",
+        "text_l2": "My dear, what \"my dear\"?"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "ما هو 10 ليرات توصيل",
+        "timestamp": "02:03",
+        "text_l2": "It's 10 liras for delivery"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "و40 ليرة للدكتور اللي بده ياخد بدل علاج طبيعي",
+        "timestamp": "02:05",
+        "text_l2": "and 40 liras for the doctor who wants payment for physical therapy"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "آخ يا ظهري",
+        "timestamp": "02:08",
+        "text_l2": "Oh, my back!"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "تفضل",
+        "timestamp": "02:10",
+        "text_l2": "Here you go"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "شو هادا",
+        "timestamp": "02:16",
+        "text_l2": "What is this?"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "جبت للأولاد بيانو",
+        "timestamp": "02:17",
+        "text_l2": "I brought a piano for the kids"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "بيانو",
+        "timestamp": "02:19",
+        "text_l2": "A piano?"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "آه جبته لقطة من محل مستعمل",
+        "timestamp": "02:20",
+        "text_l2": "Yes, I got it as a bargain from a used shop"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "شو ليش اشتريته",
+        "timestamp": "02:22",
+        "text_l2": "What? Why did you buy it?"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "هذا كثير غالي",
+        "timestamp": "02:24",
+        "text_l2": "This is very expensive"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "لا تخافي لقطة",
+        "timestamp": "02:26",
+        "text_l2": "Don't worry, it was a bargain"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "الأولاد لازم يتعلموا العزف",
+        "timestamp": "02:28",
+        "text_l2": "The kids must learn to play"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "أي في أحلى من الموسيقى",
+        "timestamp": "02:30",
+        "text_l2": "Is there anything more beautiful than music?"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "سالي سند تعالوا بابا",
+        "timestamp": "02:32",
+        "text_l2": "Sally, Sanad, come here kids"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "شوفوا شو جبتلكم",
+        "timestamp": "02:34",
+        "text_l2": "Look what I brought you"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "شو رأيكم",
+        "timestamp": "02:37",
+        "text_l2": "What do you think?"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "واو بيانو",
+        "timestamp": "02:39",
+        "text_l2": "Wow, a piano!"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "مبروك سالي",
+        "timestamp": "02:40",
+        "text_l2": "Congratulations, Sally"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "هذا إلك ولسالي",
+        "timestamp": "02:42",
+        "text_l2": "This is for you and Sally"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "بدي اياكم انتو الاثنين تتعلموا العزف",
+        "timestamp": "02:44",
+        "text_l2": "I want you both to learn to play"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "بابا طب أنا ما بحب البيانو",
+        "timestamp": "02:47",
+        "text_l2": "Dad, but I don't like the piano"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "البيانو أصلاً للشباب مش للبنات",
+        "timestamp": "02:49",
+        "text_l2": "The piano is actually for boys, not for girls"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "صحيح دينا البيانو للشباب",
+        "timestamp": "02:51",
+        "text_l2": "Is it true, Dina, that the piano is for boys?"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "ما بعرف",
+        "timestamp": "02:53",
+        "text_l2": "I don't know"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "بالعكس بابا البيانو مناسب أكثر للبنات",
+        "timestamp": "02:55",
+        "text_l2": "On the contrary, Dad, the piano is more suitable for girls"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "أي في حدا ما بيحب البيانو",
+        "timestamp": "03:01",
+        "text_l2": "Is there anyone who doesn't like the piano?"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "سند شوف مين عالبيت",
+        "timestamp": "03:04",
+        "text_l2": "Sanad, see who's at the door"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "مرحبا بديع",
+        "timestamp": "03:11",
+        "text_l2": "Hello, Badi'"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "ايش هو اللي بديع",
+        "timestamp": "03:13",
+        "text_l2": "What is \"Badi'\"?"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "أنا أنا بديع",
+        "timestamp": "03:14",
+        "text_l2": "I, I am Badi'"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "أستاذ البيانو البديع",
+        "timestamp": "03:15",
+        "text_l2": "The wonderful piano teacher"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "تفضل تفضل أستاذ بديع",
+        "timestamp": "03:19",
+        "text_l2": "Come in, come in, Mr. Badi'"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "زوجتي أم سند وهدول ولادي سند وسالي",
+        "timestamp": "03:23",
+        "text_l2": "My wife Um Sanad, and these are my children Sanad and Sally"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "أهلاً وسهلاً تشرفنا أستاذ",
+        "timestamp": "03:27",
+        "text_l2": "Welcome, we are honored, teacher"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "الأستاذ بديع راح يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع",
+        "timestamp": "03:29",
+        "text_l2": "Mr. Badi' will give you, Sally and Sanad, music lessons from now on"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "الميجر سكيل هو",
+        "timestamp": "03:38",
+        "text_l2": "The major scale is"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "دو ري مي فا صول لا سي دو",
+        "timestamp": "03:40",
+        "text_l2": "Do Re Mi Fa Sol La Si Do"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "خلونا نشوف الكوردات اللي ممكن نشتقها من هذا السكيل",
+        "timestamp": "03:46",
+        "text_l2": "Let's see the chords we can derive from this scale"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "أول كورد هو دو ميجر",
+        "timestamp": "03:49",
+        "text_l2": "The first chord is C Major"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "دو ومي و صول",
+        "timestamp": "03:51",
+        "text_l2": "Do, Mi, and Sol"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "اوكي سند",
+        "timestamp": "03:53",
+        "text_l2": "Okay, Sanad"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "سند عيد معي",
+        "timestamp": "03:55",
+        "text_l2": "Sanad, repeat after me"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "اوكي",
+        "timestamp": "03:56",
+        "text_l2": "Okay"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "صول لا سي دو ري مي دو",
+        "timestamp": "03:58",
+        "text_l2": "Sol La Si Do Re Mi Do"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "واضح إنكم تعبتوا",
+        "timestamp": "04:04",
+        "text_l2": "It's clear that you're tired"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "ناخد فاصل ونواصل",
+        "timestamp": "04:05",
+        "text_l2": "Let's take a break and then continue"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "اوكي اوكي احنا هون",
+        "timestamp": "04:10",
+        "text_l2": "Okay, okay, we're here"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "طمنوني كيف دروس البيانو لحد هلا",
+        "timestamp": "04:15",
+        "text_l2": "Tell me, how are the piano lessons so far?"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "بابا زهقنا ممل كثير الدروس وصعبة",
+        "timestamp": "04:18",
+        "text_l2": "Dad, we're bored, the lessons are very tedious and difficult"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "ما هو حضرتك ما بيعجبك إلا فيديو الجيمز والتلفون اللي ماخد كل وقتك",
+        "timestamp": "04:21",
+        "text_l2": "Well, you don't like anything except video games and the phone that takes all your time"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "آه بابا سالي انتي شو رأيك بالدروس حبيتي هم",
+        "timestamp": "04:26",
+        "text_l2": "And Dad, Sally, what do you think of the lessons? Did you like them?"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "كثير مملة",
+        "timestamp": "04:30",
+        "text_l2": "Very boring"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "يعني خليتوني أشتري البيانو عالفاضي",
+        "timestamp": "04:32",
+        "text_l2": "So you made me buy the piano for nothing?"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "يعني شو ناقصهم للأولاد",
+        "timestamp": "04:38",
+        "text_l2": "I mean, what are the kids lacking?"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "ليش أبو غسان يطلع ابنه موسيقي ويفتخر فيه",
+        "timestamp": "04:40",
+        "text_l2": "Why does Abu Ghassan's son turn out to be a musician he can be proud of?"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "عصام انت بدك اياهم يتعلموا عشان انت تفتخر فيهم",
+        "timestamp": "04:43",
+        "text_l2": "Issam, do you want them to learn so you can be proud of them"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "أو عشان يتعلموا شي جديد يحبوه ومفيد الهم",
+        "timestamp": "04:47",
+        "text_l2": "or so they learn something new they love and that's useful for them?"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "الاثنين قديش حلو إذا عملنا عزومة عنا بالبيت",
+        "timestamp": "04:50",
+        "text_l2": "Both. How nice it would be if we had a gathering at our house"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "وسند عزف قدام الناس",
+        "timestamp": "04:53",
+        "text_l2": "and Sanad played in front of people"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "ولا شو في أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية",
+        "timestamp": "04:57",
+        "text_l2": "Or what's more beautiful than going to attend a concert where Sally is the lead performer?"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "لازم أخليهم يتعلموا الموسيقى لازم",
+        "timestamp": "05:02",
+        "text_l2": "I must make them learn music, I must"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "برأيي نستشير الأستاذ بديع",
+        "timestamp": "05:06",
+        "text_l2": "In my opinion, we should consult Mr. Badi'"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "أنا وأنت ما عنا خبرة بالمرة بهالموضوع",
+        "timestamp": "05:08",
+        "text_l2": "You and I have no experience at all in this matter"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "أستاذ بديع أهلاً أهلاً تفضل تفضل",
+        "timestamp": "05:18",
+        "text_l2": "Mr. Badi', welcome, welcome, come in, come in"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "شكراً يزيد فضلك",
+        "timestamp": "05:22",
+        "text_l2": "Thank you, may your grace increase"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "على حد علمي ما في دروس اليوم",
+        "timestamp": "05:24",
+        "text_l2": "As far as I know, there are no lessons today"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "الدرس اليوم للولو",
+        "timestamp": "05:26",
+        "text_l2": "Today's lesson is for Lulu"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "عطا حكالي إنكم اشتريتوا بيانو وبالوقت المناسب",
+        "timestamp": "05:28",
+        "text_l2": "Atta told me you bought a piano, and just in time"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "لأنه خلصت الأفكار عندي لمحتوى جديد للفولورز تبعوني",
+        "timestamp": "05:32",
+        "text_l2": "because I ran out of ideas for new content for my followers"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "وأنتو أنقذتوني",
+        "timestamp": "05:36",
+        "text_l2": "and you saved me"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "تعال حبيبي أبو انصاف راح يكون المصور الخاص تبعي",
+        "timestamp": "05:38",
+        "text_l2": "Come, my dear, Abu Insaf will be my private photographer"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "اجيت والله جابك أنا وأم سند بدنا اياك باستشارة",
+        "timestamp": "05:42",
+        "text_l2": "You've come at the right time, Um Sanad and I need you for a consultation"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "أبو انصاف هاي البيانو بالقعدة شو رأيك تحمي شوي",
+        "timestamp": "05:46",
+        "text_l2": "Abu Insaf, here's the piano in the living room, why don't you warm up a bit?"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "اعزفي لك مقطوعة",
+        "timestamp": "05:49",
+        "text_l2": "Play a piece for yourself"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "اعتبرنا مش هون ما تقلق فينا",
+        "timestamp": "05:51",
+        "text_l2": "Pretend we're not here, don't worry about us"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "هاي حبايبي الحلوين أنا اليوم قررت أتعلم عزف البيانو",
+        "timestamp": "05:54",
+        "text_l2": "Hi my sweeties, today I decided to learn to play the piano"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "الحقيقة أنا كل عمري بحب الموسيقى والثقافة والفن",
+        "timestamp": "05:59",
+        "text_l2": "The truth is, all my life I've loved music, culture, and art"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "وراح أبلش أتعلم بيانو معكم متابعيني حبايبي الحلوين",
+        "timestamp": "06:04",
+        "text_l2": "and I'm going to start learning piano with you, my sweet followers"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "أبو انصاف كفي خلص دوشتينا",
+        "timestamp": "06:19",
+        "text_l2": "Abu Insaf, enough, you've given us a headache"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "يا عليكي يا أبو انصاف",
+        "timestamp": "06:23",
+        "text_l2": "Oh, for heaven's sake, Abu Insaf!"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "هذا شكله مؤلف المقطوعة ملخبط في شي غلط فيها لاحظت",
+        "timestamp": "06:26",
+        "text_l2": "It seems the composer of this piece got confused, there's something wrong with it, I noticed"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "بتعرفي شو الغلط الغلط إنه احنا خليناكي تقربي عالبيانو من الأساس",
+        "timestamp": "06:31",
+        "text_l2": "Do you know what the mistake is? The mistake is that we let you get near the piano in the first place"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "بكره بتشوف أبو انصاف كيف موهبة لولو راح تتطور وراح توصل للعالمية",
+        "timestamp": "06:36",
+        "text_l2": "Tomorrow you'll see, Abu Insaf, how Lulu's talent will develop and reach international fame"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "وكل المشاهير راح يجوا يشوفوني من كل العالم",
+        "timestamp": "06:41",
+        "text_l2": "and all the celebrities will come to see me from all over the world"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "ممكن نحاول معهم أكثر من مرة حتى لو ما كان بدهم في البداية",
+        "timestamp": "06:46",
+        "text_l2": "We can try with them more than once, even if they didn't want to at first"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "كمان المفروض تحضروهم للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية",
+        "timestamp": "06:51",
+        "text_l2": "Also, you're supposed to prepare them for it and make music a part of their daily lives"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "يعني في أمل يتعلموا",
+        "timestamp": "06:56",
+        "text_l2": "So there's hope they'll learn?"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "الأفضل تاخدهم معك على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة",
+        "timestamp": "06:58",
+        "text_l2": "It's best to take them with you to the music shop and let them try more than one instrument"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "واضح حالياً إنهم مش حابين البيانو",
+        "timestamp": "07:03",
+        "text_l2": "It's clear for now that they don't like the piano"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "طيب البيانو شو أعمل فيه المحل اللي اشتريته منه ما عنده ترجيع",
+        "timestamp": "07:05",
+        "text_l2": "Okay, what do I do with the piano? The shop I bought it from doesn't have a return policy"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "سالي سالي",
+        "timestamp": "07:14",
+        "text_l2": "Sally, Sally"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "سالي سي شارب لا بي ميجر سيفن",
+        "timestamp": "07:17",
+        "text_l2": "Sally, C-sharp, no, B-major seven"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "سالي شو مالك",
+        "timestamp": "07:20",
+        "text_l2": "Sally, what's wrong with you?"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "أبوي جاب لنا بيانو وأستاذ موسيقى",
+        "timestamp": "07:22",
+        "text_l2": "My dad brought us a piano and a music teacher"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "صرت عم بسمع النوتات بأحلامي",
+        "timestamp": "07:25",
+        "text_l2": "I've started hearing the notes in my dreams"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "بيانو طول عمرك بتحكي إنك بدك تتعلمي آلة موسيقية",
+        "timestamp": "07:27",
+        "text_l2": "A piano? All your life you've been saying you want to learn a musical instrument"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "توقعتك تكوني متحمسة",
+        "timestamp": "07:31",
+        "text_l2": "I expected you to be excited"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "صح بس هو فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم",
+        "timestamp": "07:33",
+        "text_l2": "True, but he surprised us with it and he's pressuring us a lot to learn"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "الموضوع مش حلو لما يكون بالغصب",
+        "timestamp": "07:39",
+        "text_l2": "It's not nice when it's by force"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "إذا بدك رأيي بما إنك بلشتي كملي",
+        "timestamp": "07:42",
+        "text_l2": "If you want my opinion, since you've started, continue"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "بعدين بنعمل فرقة موسيقية أنا على الجيتار وأنتي على البيانو",
+        "timestamp": "07:46",
+        "text_l2": "Then we'll form a band, me on the guitar and you on the piano"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "وبنسمي فرقتنا رنوش وسالي",
+        "timestamp": "07:51",
+        "text_l2": "and we'll call our band Ranoush and Sally"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "أو إذا بدك سالي ورنوش",
+        "timestamp": "07:53",
+        "text_l2": "or if you want, Sally and Ranoush"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "في العرض الموسيقي اليوم راح أعزف لكم مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن",
+        "timestamp": "07:59",
+        "text_l2": "In today's musical performance, I will play for you a 17th-century classical piece on the French horn"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "هاي الآلة تعلمتها الأسبوع الماضي ومن بعدها اختاروني أكون جزء من أوركسترا عمان للشباب",
+        "timestamp": "08:06",
+        "text_l2": "I learned this instrument last week, and after that, they chose me to be part of the Amman Youth Orchestra"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "وأخيراً ما أحلى الهدوء",
+        "timestamp": "08:17",
+        "text_l2": "Finally, how sweet the silence is"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "مين عمل هيك",
+        "timestamp": "08:26",
+        "text_l2": "Who did this?"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "عطا شو قلت",
+        "timestamp": "08:38",
+        "text_l2": "Atta, what did you say?"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "باخده بربع السعر اللي أنت عارضه فيه",
+        "timestamp": "08:40",
+        "text_l2": "I'll take it for a quarter of the price you're offering it for"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "بربع السعر يا زلمة كيف يعني",
+        "timestamp": "08:43",
+        "text_l2": "For a quarter of the price, man? How so?"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "هذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف",
+        "timestamp": "08:46",
+        "text_l2": "This sound is broken, listen to how the sound becomes whenever I put my hand here on the right, look"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "البيانو هيك عطا",
+        "timestamp": "08:51",
+        "text_l2": "The piano is like this, Atta"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "لا شو بتفكرني يا بيلة",
+        "timestamp": "08:53",
+        "text_l2": "No, what do you think I am, a fool?"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "أنا طول عمري وأنا بشتغل بالانتيكات",
+        "timestamp": "08:55",
+        "text_l2": "I've been working with antiques all my life"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "هدول الأزرار لازم يكونوا كلهم نفس الصوت شو بتتهبل علي",
+        "timestamp": "08:58",
+        "text_l2": "These keys must all have the same sound, are you playing me for a fool?"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "ها شو قلت هسا موافق بربع السعر",
+        "timestamp": "09:02",
+        "text_l2": "So, what did you say? Now do you agree to a quarter of the price?"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "لا بطلت أبيع",
+        "timestamp": "09:05",
+        "text_l2": "No, I've changed my mind about selling"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "أبو سند ما راح تلاقي زبون مثلي",
+        "timestamp": "09:07",
+        "text_l2": "Abu Sanad, you won't find a customer like me"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "يا عمي هذا خربان خربان",
+        "timestamp": "09:10",
+        "text_l2": "My friend, this is broken, broken"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "يا اخوان مش أنا معي حق البيانو خربان ولا لا اكتبولي بالتعليقات أشوف",
+        "timestamp": "09:14",
+        "text_l2": "Guys, am I not right that the piano is broken or not? Write to me in the comments so I can see"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "هذا إذا اشترينا له درمز صدقيني غير يطلعونا الجيران من العمارة",
+        "timestamp": "09:22",
+        "text_l2": "If we buy him drums, believe me, the neighbors will kick us out of the building"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "حبيبي سند شو رأيك تجرب آلة تانية غير الدرمز",
+        "timestamp": "09:31",
+        "text_l2": "My dear Sanad, what do you think about trying another instrument besides the drums?"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "لا ماما حبيته كثير",
+        "timestamp": "09:34",
+        "text_l2": "No, Mom, I liked it a lot"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "انتبهي كثير عليك الكونترا باص",
+        "timestamp": "09:38",
+        "text_l2": "Be careful, the double bass is too much for you"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "بس أنا حبيته",
+        "timestamp": "09:41",
+        "text_l2": "But I liked it"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "بابا ممكن توطي الصوت شوي مش قادرة أسمع الفيديو",
+        "timestamp": "09:47",
+        "text_l2": "Dad, can you turn down the volume a bit? I can't hear the video"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "الموسيقى أهم كثير من اللي بتعمله على موبايلك",
+        "timestamp": "09:51",
+        "text_l2": "Music is much more important than what you're doing on your phone"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "صفي ذهنك شوي روق",
+        "timestamp": "09:55",
+        "text_l2": "Clear your mind a bit, relax"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "أبوكم معه حق الموسيقى هواية رائعة",
+        "timestamp": "09:57",
+        "text_l2": "Your father is right, music is a wonderful hobby"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "بس بابا أنت فاجأتنا بموضوع البيانو",
+        "timestamp": "10:00",
+        "text_l2": "But Dad, you surprised us with the piano thing"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "آه بابا ولا مرة فتحت موضوع الموسيقى والعزف معنا أبداً",
+        "timestamp": "10:03",
+        "text_l2": "Yeah Dad, you never once brought up the subject of music and playing with us, ever"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "وفجأة ما شفنا إلا البيانو عنا بالبيت ومعاه الأستاذ بديع",
+        "timestamp": "10:07",
+        "text_l2": "and suddenly we just saw the piano in our house along with Mr. Badi'"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "استنوا استنوا تشوفوا المفاجأة اللي محضر لكم اياها هلا",
+        "timestamp": "10:11",
+        "text_l2": "Wait, wait until you see the surprise I have prepared for you now"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "كمان مفاجأة",
+        "timestamp": "10:16",
+        "text_l2": "Another surprise?"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "أبوكم حجز لنا تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي",
+        "timestamp": "10:18",
+        "text_l2": "Your father booked us tickets to attend a musical concert at the Cultural Institute"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "كونسيرت راب ولا هيب هوب",
+        "timestamp": "10:23",
+        "text_l2": "A rap or hip-hop concert?"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "شايفين حبايبي أنا كل حياتي موسيقى ومش أي موسيقى موسيقى كلاسيكية",
+        "timestamp": "10:35",
+        "text_l2": "You see, my dears, my whole life is music, and not just any music, classical music"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "أرقى أنواع الموسيقى زي زي لولو",
+        "timestamp": "10:43",
+        "text_l2": "The finest types of music, just like Lulu"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "صمت لو سمحتي",
+        "timestamp": "10:47",
+        "text_l2": "Silence, please"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "يمكن أنا غلطت حاسس بالذنب",
+        "timestamp": "11:03",
+        "text_l2": "Maybe I made a mistake, I feel guilty"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "كنت أناني وحابب أفتخر فيهم وفرضت عليهم شي ما بيحبوه",
+        "timestamp": "11:06",
+        "text_l2": "I was selfish and wanted to be proud of them, and I forced something on them they don't like"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "ما تلوم حالك كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد",
+        "timestamp": "11:10",
+        "text_l2": "Don't blame yourself too much, at least you tried and pressured them into something that could have been positive and useful"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "خلص راح أبيع البيانو لعطا",
+        "timestamp": "11:17",
+        "text_l2": "That's it, I'm going to sell the piano to Atta"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "الله يعيني على هالخسارة",
+        "timestamp": "11:20",
+        "text_l2": "May God help me with this loss"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "سوري بابا أنا صحيتك",
+        "timestamp": "11:35",
+        "text_l2": "Sorry Dad, I woke you up"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "لا بابا كملي كملي",
+        "timestamp": "11:37",
+        "text_l2": "No, honey, continue, continue"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "أنا بحلم دينا وقرصيني",
+        "timestamp": "11:41",
+        "text_l2": "Am I dreaming, Dina? Pinch me"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "مش راح أسمحلك تاخد البيانو كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل",
+        "timestamp": "11:57",
+        "text_l2": "I won't let you take the piano. How, Um Sanad, can you sell the piano? What am I supposed to do?"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "الاتفاق اتفاق يا أم سند آه",
+        "timestamp": "12:04",
+        "text_l2": "An agreement is an agreement, Um Sanad, yeah"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "أولي بالك يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي",
+        "timestamp": "12:06",
+        "text_l2": "Be patient, Um Insaf, we won't disagree, I'll sell it to you at a preferred price, what do you say?"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "ما في بيع ما راح نبيع شي",
+        "timestamp": "12:13",
+        "text_l2": "There's no sale, we aren't selling anything"
+      }
+    ],
+    "phrases_with_token_translations": "[استنوا] استنوا تشوفوا المفاجأة => [Wait], wait until you see the surprise\nاستنوا [استنوا] تشوفوا المفاجأة => Wait, [wait] until you see the surprise\nاستنوا استنوا [تشوفوا] المفاجأة => Wait, wait [until you see] the surprise\nاستنوا استنوا تشوفوا [المفاجأة] => Wait, wait until you see [the surprise]\n\n[اللي] محضر لكم اياها هلا => [that] I have prepared for you now\nاللي [محضر] لكم اياها هلا => that [I have prepared] for you now\nاللي محضر [لكم] اياها هلا => that I have prepared [for you] now\nاللي محضر لكم [اياها] هلا => it\nاللي محضر لكم اياها [هلا] => that I have prepared for you now [now]\n\n[كمان] مفاجأة => [Another] surprise?\nكمان [مفاجأة] => Another [surprise]?\n\n[مين] مفكر حاله هذا الولد => [Who] does this boy think he is?\nمين [مفكر حاله] هذا الولد => Who does this boy [think he is]\nمين مفكر حاله [هذا الولد] => Who does [this boy] think he is?\n\n[وكل يوم] بده يطبلنا بآلة جديدة => [Every day] he wants to drum for us with a new instrument\nوكل يوم [بده] يطبلنا بآلة جديدة => Every day [he wants] to drum for us with a new instrument\nوكل يوم بده [يطبلنا] بآلة جديدة => Every day he wants [to drum for us] with a new instrument\nوكل يوم بده يطبلنا [بآلة جديدة] => Every day he wants to drum for us [with a new instrument]\n\n[خلص] زودها => [Enough], he's overdoing it\nخلص [زودها] => Enough, [he's overdoing it]\n\n[جد] شو هذا => [Seriously], what is this?\nجد [شو هذا] => Seriously, [what is this]\n\n[كثير] مزعج => [Very] annoying\nكثير [مزعج] => Very [annoying]\n\n[خلص] ما يلاقي على موبايله => [Why] doesn't he just find something on his phone\nخلص [ما] يلاقي على موبايله => Why [doesn't] he just find something on his phone\nخلص ما [يلاقي] على موبايله => Why doesn't he just [find] something on his phone\nخلص ما يلاقي [على] موبايله => Why doesn't he just find something [on] his phone\nخلص ما يلاقي على [موبايله] => Why doesn't he just find something on [his phone]\n\n[زي] الناس الطبيعية => [like] normal people\nزي [الناس الطبيعية] => like [normal people]\nزي الناس [الطبيعية] => like [normal] people\n\n[ويفك] عنا شوي => [and leave] us alone for a bit\nويفك [عنا] شوي => and leave [us] alone for a bit\nويفك عنا [شوي] => and leave us alone [for a bit]\n\n[واو] أنت خرافي => [Wow], you are legendary\nواو [أنت] خرافي => Wow, [you] are legendary\nواو أنت [خرافي] => Wow, you are [legendary]\n\n[طيب] شو الآلات التانية اللي بتعزف عليها => [Okay], what other instruments do you play?\nطيب [شو] الآلات التانية اللي بتعزف عليها => Okay, [what] other instruments do you play?\nطيب شو [الآلات التانية] اللي بتعزف عليها => Okay, what [other instruments] do you play?\nطيب شو الآلات التانية اللي [بتعزف عليها] => Okay, what other instruments [do you play]?\n\n[شو ما] بدك => [Whatever] you want\nشو ما [بدك] => Whatever [you want]\n\n[بعرف] أعزف على كل الآلات => [I know] how to play all instruments\nبعرف [أعزف على] كل الآلات => I know [how to play] all instruments\nبعرف أعزف على [كل] الآلات => I know how to play [all] instruments\nبعرف أعزف على كل [الآلات] => I know how to play all [instruments]\n\n[أنا] موهوب بالفطرة => [I] am naturally gifted\nأنا [موهوب] بالفطرة => I am naturally [gifted]\nأنا موهوب [بالفطرة] => I am [naturally] gifted\n\n[اسمع] بكره بجيب معي الشبابة => [Listen], tomorrow I'll bring the flute with me\nاسمع [بكره] بجيب معي الشبابة => Listen, [tomorrow] I'll bring the flute with me\nاسمع بكره [بجيب] معي الشبابة => Listen, tomorrow [I'll bring] the flute with me\nاسمع بكره بجيب [معي] الشبابة => Listen, tomorrow I'll bring the flute [with me]\nاسمع بكره بجيب معي [الشبابة] => Listen, tomorrow I'll bring [the flute] with me\n\n[يا الله] دق على عصبي => [Oh God], he's getting on my nerves\nيا الله [دق على عصبي] => Oh God, [he's getting on my nerves]\n\n[لازم] ألاقي حل للموسيقى اللي ما عم تخلص => [I have to] find a solution for this never-ending music\nلازم [ألاقي] حل للموسيقى اللي ما عم تخلص => I have to [find] a solution for this never-ending music\nلازم ألاقي [حل] للموسيقى اللي ما عم تخلص => I have to find [a solution] for this never-ending music\nلازم ألاقي حل [للموسيقى اللي ما عم تخلص] => I have to find a solution [for this never-ending music]\n\n[الموضوع عندي] => [I've got this]\n\n[ما شاء الله] ما شاء الله => [Mashallah], mashallah\nما شاء الله [ما شاء الله] => Mashallah, [mashallah]\n\n[كيف] تعلم العزف => [How] did he learn to play?\nكيف [تعلم] العزف => How [did he learn] to play?\nكيف تعلم [العزف] => How did he learn [to play]?\n\n[صدق] يا أبو سند => [Believe me], Abu Sanad\nصدق [يا أبو سند] => Believe me, [Abu Sanad]\n\n[جبتله] بيانو عالبيت => [I brought him] a piano to the house\nجبتله [بيانو] عالبيت => I brought him [a piano] to the house\nجبتله بيانو [عالبيت] => I brought him a piano [to the house]\n\n[وجبتله] أستاذ => [and I brought him] a teacher\nوجبتله [أستاذ] => and I brought him [a teacher]\n\n[وصارله] سنة بيتدرب => [and he's been] practicing for a year\nوصارله [سنة] بيتدرب => and he's been practicing [for a year]\nوصارله سنة [بيتدرب] => and he's been [practicing] for a year\n\n[الله] يخليلك اياه => [May God] keep him for you\nالله [يخليلك اياه] => May God [keep him for you]\nالله يخليلك [اياه] => May God keep [him] for you\n\n[موهوب] ما شاء الله => [He's gifted], mashallah\nموهوب [ما شاء الله] => He's gifted, [mashallah]\n\n[تسلم] يا أبو سند => [Thank you], Abu Sanad\nتسلم [يا أبو سند] => Thank you, [Abu Sanad]\n\n[الله] يخليلك ولادك => [May God] keep your children for you\nالله [يخليلك ولادك] => May God [keep your children for you]\nالله يخليلك [ولادك] => May God keep [your children] for you\n\n[شو] بيعزفوا => [What] do they play?\nشو [بيعزفوا] => What [do they play]?\n\n[في] حدا منهم بيعزف بيانو => [Does] any of them play the piano\nفي [حدا منهم] بيعزف بيانو => Does [any of them] play the piano\nفي حدا منهم [بيعزف] بيانو => Does any of them [play] the piano\nفي حدا منهم بيعزف [بيانو] => Does any of them play [the piano]\n\n[ها] لا => [Uh], no\nها [لا] => Uh, [no]\n\n[صراحة] لسه ما بلشوا => [To be honest], they haven't started yet\nصراحة [لسه ما بلشوا] => To be honest, [they haven't started yet]\n\n[لازم] يا أبو سند تعلم ولادك يعزفوا آلة موسيقية => [You must], Abu Sanad, teach your children to play a musical instrument\nلازم [يا أبو سند] تعلم ولادك يعزفوا آلة موسيقية => You must, [Abu Sanad], teach your children to play a musical instrument\nلازم يا أبو سند [تعلم] ولادك يعزفوا آلة موسيقية => You must, Abu Sanad, [teach] your children to play a musical instrument\nلازم يا أبو سند تعلم [ولادك] يعزفوا آلة موسيقية => You must, Abu Sanad, teach [your children] to play a musical instrument\nلازم يا أبو سند تعلم ولادك [يعزفوا] آلة موسيقية => You must, Abu Sanad, teach your children [to play] a musical instrument\nلازم يا أبو سند تعلم ولادك يعزفوا [آلة موسيقية] => You must, Abu Sanad, teach your children to play [a musical instrument]\n\n[الأبحاث] بتقول إنه الموسيقى بتفتح الذهن => [Research] says that music opens the mind\nالأبحاث [بتقول] إنه الموسيقى بتفتح الذهن => Research [says] that music opens the mind\nالأبحاث بتقول [إنه] الموسيقى بتفتح الذهن => Research says [that] music opens the mind\nالأبحاث بتقول إنه [الموسيقى] بتفتح الذهن => Research says that [music] opens the mind\nالأبحاث بتقول إنه الموسيقى [بتفتح] الذهن => Research says that music [opens] the mind\nالأبحاث بتقول إنه الموسيقى بتفتح [الذهن] => Research says that music opens [the mind]\n\n[وبتساعدهم] دراسياً => [and helps them] academically\nوبتساعدهم [دراسياً] => and helps them [academically]\n\n[خاصة] بالرياضيات => [especially] in mathematics\nخاصة [بالرياضيات] => especially [in mathematics]\n\n[وهيك] يا أبو سند => [And like this], Abu Sanad\nوهيك [يا أبو سند] => And like this, [Abu Sanad]\n\n[بنكون خلصنا] شغل نظيف نظيف => [we've finished] a very clean job\nبنكون خلصنا [شغل] نظيف نظيف => we've finished a very clean [job]\nبنكون خلصنا شغل [نظيف نظيف] => we've finished a [very clean] job\n\n[ومن الآخر] => [and top-notch]\n\n[هينا] وصلنا لك البانيو => [Here] we've delivered the bathtub to you\nهينا [وصلنا] لك البانيو => Here [we've delivered] the bathtub to you\nهينا وصلنا [لك] البانيو => Here we've delivered [to you] the bathtub\nهينا وصلنا لك [البانيو] => Here we've delivered [the bathtub] to you\n\n[قصدي] البيانو نوتة نوتة => [I mean] the piano, note by note\nقصدي [البيانو] نوتة نوتة => I mean [the piano], note by note\nقصدي البيانو [نوتة نوتة] => I mean the piano, [note by note]\n\n[وسلامة خيرك] يا أبو سند => [and you're welcome], Abu Sanad\nوسلامة خيرك [يا أبو سند] => and you're welcome, [Abu Sanad]\n\n[الحساب] بس 50 ليرة => [The bill] is just 50 liras\nالحساب بس [50 ليرة] => The bill is just [50 liras]\n\n[مشان عيونك] بس => [just for your sake]\nمشان [عيونك] بس => just for [your sake]\n\n[أوف] 50 => [Oof], 50?\nأوف [50] => Oof, [50]?\n\n[ليش] => [Why]?\n\n[حبيبي] ايش حبيبي => [My dear], what \"my dear\"?\nحبيبي [ايش] حبيبي => My dear, [what] \"my dear\"?\nحبيبي ايش [حبيبي] => My dear, what [\"my dear\"]?\n\n[ما هو] 10 ليرات توصيل => [It's] 10 liras for delivery\nما هو [10] ليرات توصيل => It's [10] liras for delivery\nما هو 10 [ليرات] توصيل => It's 10 [liras] for delivery\nما هو 10 ليرات [توصيل] => It's 10 liras [for delivery]\n\n[و] 40 ليرة للدكتور اللي بده ياخد بدل علاج طبيعي => [and] 40 liras for the doctor who wants payment for physical therapy\nو [40] ليرة للدكتور اللي بده ياخد بدل علاج طبيعي => and [40] liras for the doctor who wants payment for physical therapy\nو40 [ليرة] للدكتور اللي بده ياخد بدل علاج طبيعي => and 40 [liras] for the doctor who wants payment for physical therapy\nو40 ليرة [للدكتور] اللي بده ياخد بدل علاج طبيعي => and 40 liras [for the doctor] who wants payment for physical therapy\nو40 ليرة للدكتور [اللي] بده ياخد بدل علاج طبيعي => and 40 liras for the doctor [who] wants payment for physical therapy\nو40 ليرة للدكتور اللي [بده] ياخد بدل علاج طبيعي => and 40 liras for the doctor who [wants] payment for physical therapy\nو40 ليرة للدكتور اللي بده ياخد [بدل] علاج طبيعي => and 40 liras for the doctor who wants [payment] for physical therapy\nو40 ليرة للدكتور اللي بده ياخد بدل [علاج طبيعي] => and 40 liras for the doctor who wants payment for [physical therapy]\n\n[آخ] يا ظهري => [Oh], my back!\nآخ يا [ظهري] => Oh, [my back]!\n\n[تفضل] => [Here you go]\n\n[شو] هادا => [What] is this?\nشو [هادا] => What is [this]?\n\n[جبت] للأولاد بيانو => [I brought] a piano for the kids\nجبت [للأولاد] بيانو => I brought a piano [for the kids]\nجبت للأولاد [بيانو] => I brought [a piano] for the kids\n\n[بيانو] => [A piano]?\n\n[آه] جبته لقطة من محل مستعمل => [Yes], I got it as a bargain from a used shop\nآه [جبته] لقطة من محل مستعمل => Yes, [I got it] as a bargain from a used shop\nآه جبته [لقطة] من محل مستعمل => Yes, I got it [as a bargain] from a used shop\nآه جبته لقطة [من] محل مستعمل => Yes, I got it as a bargain [from] a used shop\nآه جبته لقطة من [محل مستعمل] => Yes, I got it as a bargain from [a used shop]\n\n[شو] ليش اشتريته => [What]? Why did you buy it?\nشو [ليش] اشتريته => What? [Why] did you buy it?\nشو ليش [اشتريته] => What? Why [did you buy it]?\n\n[هذا] كثير غالي => [This] is very expensive\nهذا [كثير] غالي => This is [very] expensive\nهذا كثير [غالي] => This is very [expensive]\n\n[لا] تخافي لقطة => [Don't] worry, it was a bargain\nلا [تخافي] لقطة => Don't [worry], it was a bargain\nلا تخافي [لقطة] => Don't worry, [it was a bargain]\n\n[الأولاد] لازم يتعلموا العزف => [The kids] must learn to play\nالأولاد [لازم] يتعلموا العزف => The kids [must] learn to play\nالأولاد لازم [يتعلموا] العزف => The kids must [learn] to play\nالأولاد لازم يتعلموا [العزف] => The kids must learn [to play]\n\n[أي في] أحلى من الموسيقى => [Is there anything] more beautiful than music?\nأي في [أحلى] من الموسيقى => Is there anything [more beautiful] than music?\nأي في أحلى [من] الموسيقى => Is there anything more beautiful [than] music?\nأي في أحلى من [الموسيقى] => Is there anything more beautiful than [music]?\n\n[سالي] سند تعالوا بابا => [Sally], Sanad, come here kids\nسالي [سند] تعالوا بابا => Sally, [Sanad], come here kids\nسالي سند [تعالوا] بابا => Sally, Sanad, [come here] kids\nسالي سند تعالوا [بابا] => Sally, Sanad, come here [kids]\n\n[شوفوا] شو جبتلكم => [Look] what I brought you\nشوفوا [شو] جبتلكم => Look [what] I brought you\nشوفوا شو [جبتلكم] => Look what [I brought you]\n\n[شو] رأيكم => [What] do you think?\nشو [رأيكم] => What [do you think]?\n\n[واو] بيانو => [Wow], a piano!\nواو [بيانو] => Wow, [a piano]!\n\n[مبروك] سالي => [Congratulations], Sally\nمبروك [سالي] => Congratulations, [Sally]\n\n[هذا] إلك ولسالي => [This] is for you and Sally\nهذا [إلك] ولسالي => This [is for you] and Sally\nهذا إلك [ولسالي] => This is for you [and Sally]\n\n[بدي] اياكم انتو الاثنين تتعلموا العزف => [I want] you both to learn to play\nبدي [اياكم انتو الاثنين] تتعلموا العزف => I want [you both] to learn to play\nبدي اياكم انتو الاثنين [تتعلموا] العزف => I want you both [to learn] to play\nبدي اياكم انتو الاثنين تتعلموا [العزف] => I want you both to learn [to play]\n\n[بابا] طب أنا ما بحب البيانو => [Dad], but I don't like the piano\nبابا [طب] أنا ما بحب البيانو => Dad, [but] I don't like the piano\nبابا طب [أنا] ما بحب البيانو => Dad, but [I] don't like the piano\nبابا طب أنا [ما بحب] البيانو => Dad, but I [don't like] the piano\nبابا طب أنا ما بحب [البيانو] => Dad, but I don't like [the piano]\n\n[البيانو] أصلاً للشباب مش للبنات => [The piano] is actually for boys, not for girls\nالبيانو [أصلاً] للشباب مش للبنات => The piano [is actually] for boys, not for girls\nالبيانو أصلاً [للشباب] مش للبنات => The piano is actually [for boys], not for girls\nالبيانو أصلاً للشباب [مش] للبنات => The piano is actually for boys, [not] for girls\nالبيانو أصلاً للشباب مش [للبنات] => The piano is actually for boys, not [for girls]\n\n[صحيح] دينا البيانو للشباب => [Is it true], Dina, that the piano is for boys?\nصحيح [دينا] البيانو للشباب => Is it true, [Dina], that the piano is for boys?\nصحيح دينا [البيانو] للشباب => Is it true, Dina, that [the piano] is for boys?\nصحيح دينا البيانو [للشباب] => Is it true, Dina, that the piano [is for boys]?\n\n[ما] بعرف => I [don't] know\nما [بعرف] => I don't [know]\n\n[بالعكس] بابا البيانو مناسب أكثر للبنات => [On the contrary], Dad, the piano is more suitable for girls\nبالعكس [بابا] البيانو مناسب أكثر للبنات => On the contrary, [Dad], the piano is more suitable for girls\nبالعكس بابا [البيانو] مناسب أكثر للبنات => On the contrary, Dad, [the piano] is more suitable for girls\nبالعكس بابا البيانو [مناسب أكثر] للبنات => On the contrary, Dad, the piano [is more suitable] for girls\nبالعكس بابا البيانو مناسب أكثر [للبنات] => On the contrary, Dad, the piano is more suitable [for girls]\n\n[أي] في حدا ما بيحب البيانو => [Is] there anyone who doesn't like the piano?\nأي [في] حدا ما بيحب البيانو => Is [there] anyone who doesn't like the piano?\nأي في [حدا] ما بيحب البيانو => Is there [anyone] who doesn't like the piano?\nأي في حدا [ما] بيحب البيانو => Is there anyone who [doesn't] like the piano?\nأي في حدا ما [بيحب] البيانو => Is there anyone who doesn't [like] the piano?\nأي في حدا ما بيحب [البيانو] => Is there anyone who doesn't like [the piano]?\n\n[سند] شوف مين عالبيت => [Sanad], see who's at the door\nسند [شوف] مين عالبيت => Sanad, [see] who's at the door\nسند شوف [مين] عالبيت => Sanad, see [who]'s at the door\nسند شوف مين [عالبيت] => Sanad, see who's [at the door]\n\n[مرحبا] بديع => [Hello], Badi'\nمرحبا [بديع] => Hello, [Badi']\n\n[ايش] هو اللي بديع => [What] is \"Badi'\"?\nايش [هو] اللي بديع => What [is] \"Badi'\"?\nايش هو اللي [بديع] => What is [\"Badi'\"]\n\n[أنا] أنا بديع => [I], I am Badi'\nأنا [أنا] بديع => I, [I] am Badi'\nأنا أنا [بديع] => I, I am [Badi']\n\n[أستاذ] البيانو البديع => The wonderful piano [teacher]\nأستاذ [البيانو] البديع => The wonderful [piano] teacher\nأستاذ البيانو [البديع] => The [wonderful] piano teacher\n\n[تفضل] تفضل أستاذ بديع => [Come in], come in, Mr. Badi'\nتفضل [تفضل] أستاذ بديع => Come in, [come in], Mr. Badi'\nتفضل تفضل [أستاذ] بديع => Come in, come in, [Mr.] Badi'\nتفضل تفضل أستاذ [بديع] => Come in, come in, Mr. [Badi']\n\n[زوجتي] أم سند وهدول ولادي سند وسالي => [My wife] Um Sanad, and these are my children Sanad and Sally\nزوجتي [أم سند] وهدول ولادي سند وسالي => My wife [Um Sanad], and these are my children Sanad and Sally\nزوجتي أم سند [وهدول] ولادي سند وسالي => My wife Um Sanad, [and these] are my children Sanad and Sally\nزوجتي أم سند وهدول [ولادي] سند وسالي => My wife Um Sanad, and these are [my children] Sanad and Sally\nزوجتي أم سند وهدول ولادي [سند] وسالي => My wife Um Sanad, and these are my children [Sanad] and Sally\nزوجتي أم سند وهدول ولادي سند [وسالي] => My wife Um Sanad, and these are my children Sanad [and Sally]\n\n[أهلاً وسهلاً] تشرفنا أستاذ => [Welcome], we are honored, teacher\nأهلاً وسهلاً [تشرفنا] أستاذ => Welcome, [we are honored], teacher\nأهلاً وسهلاً تشرفنا [أستاذ] => Welcome, we are honored, [teacher]\n\n[الأستاذ] بديع راح يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع => [Mr.] Badi' will give you, Sally and Sanad, music lessons from now on\nالأستاذ [بديع] راح يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع => Mr. [Badi'] will give you, Sally and Sanad, music lessons from now on\nالأستاذ بديع [راح] يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع => Mr. Badi' [will] give you, Sally and Sanad, music lessons from now on\nالأستاذ بديع راح [يعطيكم] يا سالي وسند دروس الموسيقى من يوم وطالع => Mr. Badi' will [give you], Sally and Sanad, music lessons from now on\nالأستاذ بديع راح يعطيكم يا [سالي] وسند دروس الموسيقى من يوم وطالع => Mr. Badi' will give you, [Sally] and Sanad, music lessons from now on\nالأستاذ بديع راح يعطيكم يا سالي [وسند] دروس الموسيقى من يوم وطالع => Mr. Badi' will give you, Sally [and Sanad], music lessons from now on\nالأستاذ بديع راح يعطيكم يا سالي وسند [دروس الموسيقى] من يوم وطالع => Mr. Badi' will give you, Sally and Sanad, [music lessons] from now on\nالأستاذ بديع راح يعطيكم يا سالي وسند دروس الموسيقى [من يوم وطالع] => Mr. Badi' will give you, Sally and Sanad, music lessons [from now on]\n\n[الميجر] سكيل هو => [The major] scale is\nالميجر [سكيل] هو => The major [scale] is\nالميجر سكيل [هو] => The major scale [is]\n\n[دو] ري مي فا صول لا سي دو => [Do] Re Mi Fa Sol La Si Do\nدو [ري] مي فا صول لا سي دو => Do [Re] Mi Fa Sol La Si Do\nدو ري [مي] فا صول لا سي دو => Do Re [Mi] Fa Sol La Si Do\nدو ري مي [فا] صول لا سي دو => Do Re Mi [Fa] Sol La Si Do\nدو ري مي فا [صول] لا سي دو => Do Re Mi Fa [Sol] La Si Do\nدو ري مي فا صول [لا] سي دو => Do Re Mi Fa Sol [La] Si Do\nدو ري مي فا صول لا [سي] دو => Do Re Mi Fa Sol La [Si] Do\nدو ري مي فا صول لا سي [دو] => Do Re Mi Fa Sol La Si [Do]\n\n[خلونا] نشوف الكوردات اللي ممكن نشتقها من هذا السكيل => [Let's see] the chords we can derive from this scale\nخلونا نشوف [الكوردات] اللي ممكن نشتقها من هذا السكيل => Let's see [the chords] we can derive from this scale\nخلونا نشوف الكوردات [اللي] ممكن نشتقها من هذا السكيل => Let's see the chords [we] can derive from this scale\nخلونا نشوف الكوردات اللي [ممكن] نشتقها من هذا السكيل => Let's see the chords we [can] derive from this scale\nخلونا نشوف الكوردات اللي ممكن [نشتقها] من هذا السكيل => Let's see the chords we can [derive] from this scale\nخلونا نشوف الكوردات اللي ممكن نشتقها [من] هذا السكيل => Let's see the chords we can derive [from] this scale\nخلونا نشوف الكوردات اللي ممكن نشتقها من [هذا] السكيل => Let's see the chords we can derive from [this] scale\nخلونا نشوف الكوردات اللي ممكن نشتقها من هذا [السكيل] => Let's see the chords we can derive from this [scale]\n\n[أول] كورد هو دو ميجر => [The first] chord is C Major\nأول [كورد] هو دو ميجر => The first [chord] is C Major\nأول كورد [هو] دو ميجر => The first chord [is] C Major\nأول كورد هو [دو] ميجر => The first chord is [C] Major\nأول كورد هو دو [ميجر] => The first chord is C [Major]\n\n[دو] ومي و صول => [Do], Mi, and Sol\nدو [ومي] و صول => Do, [Mi] and Sol\nدو ومي [و] صول => Do, Mi [and] Sol\nدو ومي و [صول] => Do, Mi, and [Sol]\n\n[اوكي] سند => [Okay], Sanad\nاوكي [سند] => Okay, [Sanad]\n\n[سند] عيد معي => [Sanad], repeat after me\nسند [عيد] معي => Sanad, [repeat] after me\nسند عيد [معي] => Sanad, repeat [after me]\n\n[اوكي] => [Okay]\n\n[صول] لا سي دو ري مي دو => [Sol] La Si Do Re Mi Do\nصول [لا] سي دو ري مي دو => Sol [La] Si Do Re Mi Do\nصول لا [سي] دو ري مي دو => Sol La [Si] Do Re Mi Do\nصول لا سي [دو] ري مي دو => Sol La Si [Do] Re Mi Do\nصول لا سي دو [ري] مي دو => Sol La Si Do [Re] Mi Do\nصول لا سي دو ري [مي] دو => Sol La Si Do Re [Mi] Do\nصول لا سي دو ري مي [دو] => Sol La Si Do Re Mi [Do]\n\n[واضح] إنكم تعبتوا => [It's clear] that you're tired\nواضح [إنكم] تعبتوا => It's clear [that you're] tired\nواضح إنكم [تعبتوا] => It's clear that [you're tired]\n\n[ناخد] فاصل ونواصل => [Let's take] a break and then continue\nناخد [فاصل] ونواصل => Let's take [a break] and then continue\nناخد فاصل [ونواصل] => Let's take a break [and then continue]\n\n[اوكي] اوكي احنا هون => [Okay], okay, we're here\nاوكي [اوكي] احنا هون => Okay, [okay], we're here\nاوكي اوكي [احنا] هون => Okay, okay, [we're] here\nاوكي اوكي احنا [هون] => Okay, okay, we're [here]\n\n[طمنوني] => [Tell me]\n[كيف] => [how]\n[دروس] => [lessons]\n[البيانو] => [piano]\n[لحد هلا] => [so far]\n\n[بابا] => [Dad]\n[زهقنا] => [we're bored]\n[الدروس] => [the lessons]\n[ممل كثير] => [very tedious]\n[وصعبة] => [and difficult]\n\n[ما هو] => [Well]\n[حضرتك] => [you]\n[ما بيعجبك] => [you don't like]\n[إلا] => [except]\n[فيديو الجيمز] => [video games]\n[والتلفون] => [and the phone]\n[اللي ماخد كل وقتك] => [that takes all your time]\n\n[آه] => [And]\n[بابا] => [Dad]\n[سالي] => [Sally]\n[شو رأيك] => [what do you think]\n[بالدروس] => [of the lessons]\n[حبيتي] => [Did you like]\n[هم] => [them]\n\n[كثير] => [Very]\n[مملة] => [boring]\n\n[يعني] => [So]\n[خليتوني] => [you made me]\n[أشتري] => [buy]\n[البيانو] => [the piano]\n[عالفاضي] => [for nothing]\n\n[يعني] => [I mean]\n[شو] => [what]\n[للأولاد] => [the kids]\nناقصهم => are lacking\n\n[ليش] => [Why]\nأبو غسان => Abu Ghassan's\n[ابنه] => [son]\n[يطلع] => [turn out]\n[موسيقي] => [musician]\n[ويفتخر فيه] => [he can be proud of]\n\n[عصام] => [Issam]\n[انت بدك] => [do you want]\n[اياهم] => [them]\n[يتعلموا] => [to learn]\n[عشان] => [so]\n[تفتخر فيهم] => [be proud of them]\n\n[أو] => [or]\n[عشان] => [so]\n[يتعلموا] => [they learn]\n[شي جديد] => [something new]\n[يحبوه] => [they love]\n[ومفيد الهم] => [and that's useful for them]\n\n[الاثنين] => [Both]\n[قديش حلو] => [How nice]\n[إذا عملنا] => [if we had]\n[عزومة] => [a gathering]\n[عنا بالبيت] => [at our house]\n\n[وسند] => [and Sanad]\n[عزف] => [played]\n[قدام] => [in front of]\n[الناس] => [people]\n\n[ولا] شو في أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية => [Or] what's more beautiful than going to attend a concert where Sally is the lead performer?\nولا [شو] في أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية => Or [what]'s more beautiful than going to attend a concert where Sally is the lead performer?\nولا شو [في] أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية => Or what['s] more beautiful than going to attend a concert where Sally is the lead performer?\nولا شو في [أحلى] من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية => Or what's [more beautiful] than going to attend a concert where Sally is the lead performer?\nولا شو في أحلى [من] إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية => Or what's more beautiful [than] going to attend a concert where Sally is the lead performer?\nولا شو في أحلى من [إنه نروح نحضر] كونسيرت وتكون سالي العازفة الرئيسية => Or what's more beautiful than [going to attend] a concert where Sally is the lead performer?\nولا شو في أحلى من إنه نروح نحضر [كونسيرت] وتكون سالي العازفة الرئيسية => Or what's more beautiful than going to attend [a concert] where Sally is the lead performer?\nولا شو في أحلى من إنه نروح نحضر كونسيرت [وتكون سالي] العازفة الرئيسية => Or what's more beautiful than going to attend a concert [where Sally is] the lead performer?\nولا شو في أحلى من إنه نروح نحضر كونسيرت وتكون سالي [العازفة الرئيسية] => Or what's more beautiful than going to attend a concert where Sally is [the lead performer]?\n\n[لازم] أخليهم يتعلموا الموسيقى لازم => [I must] make them learn music, I must\nلازم [أخليهم] يتعلموا الموسيقى لازم => I must [make them] learn music, I must\nلازم أخليهم [يتعلموا] الموسيقى لازم => I must make them [learn] music, I must\nلازم أخليهم يتعلموا [الموسيقى] لازم => I must make them learn [music], I must\nلازم أخليهم يتعلموا الموسيقى [لازم] => I must make them learn music, [I must]\n\n[برأيي] نستشير الأستاذ بديع => [In my opinion], we should consult Mr. Badi'\nبرأيي [نستشير] الأستاذ بديع => In my opinion, [we should consult] Mr. Badi'\nبرأيي نستشير [الأستاذ بديع] => In my opinion, we should consult [Mr. Badi']\n\n[أنا وأنت] ما عنا خبرة بالمرة بهالموضوع => [You and I] have no experience at all in this matter\nأنا وأنت [ما عنا] خبرة بالمرة بهالموضوع => You and I [have no] experience at all in this matter\nأنا وأنت ما عنا [خبرة] بالمرة بهالموضوع => You and I have no [experience] at all in this matter\nأنا وأنت ما عنا خبرة [بالمرة] بهالموضوع => You and I have no experience [at all] in this matter\nأنا وأنت ما عنا خبرة بالمرة [بهالموضوع] => You and I have no experience at all [in this matter]\n\n[أستاذ بديع] أهلاً أهلاً تفضل تفضل => [Mr. Badi'], welcome, welcome, come in, come in\nأستاذ بديع [أهلاً أهلاً] تفضل تفضل => Mr. Badi', [welcome, welcome], come in, come in\nأستاذ بديع أهلاً أهلاً [تفضل تفضل] => Mr. Badi', welcome, welcome, [come in, come in]\n\n[شكراً] يزيد فضلك => [Thank you], may your grace increase\nشكراً [يزيد فضلك] => Thank you, [may your grace increase]\n\n[على حد علمي] ما في دروس اليوم => [As far as I know], there are no lessons today\nعلى حد علمي [ما في] دروس اليوم => As far as I know, [there are no] lessons today\nعلى حد علمي ما في [دروس] اليوم => As far as I know, there are no [lessons] today\nعلى حد علمي ما في دروس [اليوم] => As far as I know, there are no lessons [today]\n\n[الدرس اليوم] للولو => [Today's lesson] is for Lulu\nالدرس اليوم [للولو] => Today's lesson [is for Lulu]\n\n[عطا] حكالي إنكم اشتريتوا بيانو وبالوقت المناسب => [Atta] told me you bought a piano, and just in time\nعطا [حكالي] إنكم اشتريتوا بيانو وبالوقت المناسب => Atta [told me] you bought a piano, and just in time\nعطا حكالي [إنكم] اشتريتوا بيانو وبالوقت المناسب => Atta told me [you] bought a piano, and just in time\nعطا حكالي إنكم [اشتريتوا] بيانو وبالوقت المناسب => Atta told me you [bought] a piano, and just in time\nعطا حكالي إنكم اشتريتوا [بيانو] وبالوقت المناسب => Atta told me you bought [a piano], and just in time\nعطا حكالي إنكم اشتريتوا بيانو [وبالوقت المناسب] => Atta told me you bought a piano, [and just in time]\n\n[لأنه] خلصت الأفكار عندي لمحتوى جديد للفولورز تبعوني => [because] I ran out of ideas for new content for my followers\nلأنه [خلصت الأفكار عندي] لمحتوى جديد للفولورز تبعوني => because [I ran out of ideas] for new content for my followers\nلأنه خلصت الأفكار عندي [لمحتوى جديد] للفولورز تبعوني => because I ran out of ideas [for new content] for my followers\nلأنه خلصت الأفكار عندي لمحتوى جديد [للفولورز تبعوني] => because I ran out of ideas for new content [for my followers]\n\n[وأنتو] أنقذتوني => [and you] saved me\nوأنتو [أنقذتوني] => and you [saved me]\n\n[تعال] حبيبي أبو انصاف راح يكون المصور الخاص تبعي => [Come], my dear, Abu Insaf will be my private photographer\nتعال [حبيبي] أبو انصاف راح يكون المصور الخاص تبعي => Come, [my dear], Abu Insaf will be my private photographer\nتعال حبيبي [أبو انصاف] راح يكون المصور الخاص تبعي => Come, my dear, [Abu Insaf] will be my private photographer\nتعال حبيبي أبو انصاف [راح يكون] المصور الخاص تبعي => Come, my dear, Abu Insaf [will be] my private photographer\nتعال حبيبي أبو انصاف راح يكون [المصور الخاص تبعي] => Come, my dear, Abu Insaf will be [my private photographer]\n\n[اجيت والله جابك] أنا وأم سند بدنا اياك باستشارة => [You've come at the right time], Um Sanad and I need you for a consultation\nاجيت والله جابك [أنا وأم سند] بدنا اياك باستشارة => You've come at the right time, [Um Sanad and I] need you for a consultation\nاجيت والله جابك أنا وأم سند [بدنا] اياك باستشارة => You've come at the right time, Um Sanad and I [need] you for a consultation\nاجيت والله جابك أنا وأم سند بدنا [اياك] باستشارة => You've come at the right time, Um Sanad and I need [you] for a consultation\nاجيت والله جابك أنا وأم سند بدنا اياك [باستشارة] => You've come at the right time, Um Sanad and I need you [for a consultation]\n\n[أبو انصاف] هاي البيانو بالقعدة شو رأيك تحمي شوي => [Abu Insaf], here's the piano in the living room, why don't you warm up a bit?\nأبو انصاف [هاي] البيانو بالقعدة شو رأيك تحمي شوي => Abu Insaf, [here's] the piano in the living room, why don't you warm up a bit?\nأبو انصاف هاي [البيانو] بالقعدة شو رأيك تحمي شوي => Abu Insaf, here's [the piano] in the living room, why don't you warm up a bit?\nأبو انصاف هاي البيانو [بالقعدة] شو رأيك تحمي شوي => Abu Insaf, here's the piano [in the living room], why don't you warm up a bit?\nأبو انصاف هاي البيانو بالقعدة [شو رأيك] تحمي شوي => Abu Insaf, here's the piano in the living room, [why don't you] warm up a bit?\nأبو انصاف هاي البيانو بالقعدة شو رأيك [تحمي] شوي => Abu Insaf, here's the piano in the living room, why don't you [warm up] a bit?\nأبو انصاف هاي البيانو بالقعدة شو رأيك تحمي [شوي] => Abu Insaf, here's the piano in the living room, why don't you warm up [a bit]?\n\n[اعزفي] لك مقطوعة => [Play] a piece for yourself\nاعزفي [لك] مقطوعة => Play a piece [for yourself]\nاعزفي لك [مقطوعة] => Play [a piece] for yourself\n\n[اعتبرنا مش هون] ما تقلق فينا => [Pretend we're not here], don't worry about us\nاعتبرنا مش هون [ما تقلق فينا] => Pretend we're not here, [don't worry about us]\n\n[هاي] حبايبي الحلوين أنا اليوم قررت أتعلم عزف البيانو => [Hi] my sweeties, today I decided to learn to play the piano\nهاي [حبايبي الحلوين] أنا اليوم قررت أتعلم عزف البيانو => Hi [my sweeties], today I decided to learn to play the piano\nهاي حبايبي الحلوين [أنا اليوم قررت] أتعلم عزف البيانو => Hi my sweeties, [today I decided] to learn to play the piano\nهاي حبايبي الحلوين أنا اليوم قررت [أتعلم] عزف البيانو => Hi my sweeties, today I decided [to learn] to play the piano\nهاي حبايبي الحلوين أنا اليوم قررت أتعلم [عزف البيانو] => Hi my sweeties, today I decided to learn [to play the piano]\n\n[الحقيقة] أنا كل عمري بحب الموسيقى والثقافة والفن => [The truth is], all my life I've loved music, culture, and art\nالحقيقة [كل عمري] بحب الموسيقى والثقافة والفن => The truth is, [all my life] I've loved music, culture, and art\nالحقيقة أنا كل عمري [بحب] الموسيقى والثقافة والفن => The truth is, all my life [I've loved] music, culture, and art\nالحقيقة أنا كل عمري بحب [الموسيقى والثقافة والفن] => The truth is, all my life I've loved [music, culture, and art]\n\n[وراح أبلش] أتعلم بيانو معكم متابعيني حبايبي الحلوين => [and I'm going to start] learning piano with you, my sweet followers\nوراح أبلش [أتعلم بيانو] معكم متابعيني حبايبي الحلوين => and I'm going to start [learning piano] with you, my sweet followers\nوراح أبلش أتعلم بيانو [معكم] متابعيني حبايبي الحلوين => and I'm going to start learning piano [with you], my sweet followers\nوراح أبلش أتعلم بيانو معكم [متابعيني حبايبي الحلوين] => and I'm going to start learning piano with you, [my sweet followers]\n\n[أبو انصاف] كفي خلص دوشتينا => [Abu Insaf], enough, you've given us a headache\nأبو انصاف [كفي خلص] دوشتينا => Abu Insaf, [enough], you've given us a headache\nأبو انصاف كفي خلص [دوشتينا] => Abu Insaf, enough, [you've given us a headache]\n\n[يا عليكي] يا أبو انصاف => [Oh, for heaven's sake], Abu Insaf\nيا عليكي [يا أبو انصاف] => Oh, for heaven's sake, [Abu Insaf]\n\n[هذا شكله] مؤلف المقطوعة ملخبط في شي غلط فيها لاحظت => [It seems] the composer of this piece got confused, there's something wrong with it, I noticed\nهذا شكله [مؤلف المقطوعة] ملخبط في شي غلط فيها لاحظت => It seems [the composer of this piece] got confused, there's something wrong with it, I noticed\nهذا شكله مؤلف المقطوعة [ملخبط] في شي غلط فيها لاحظت => It seems the composer of this piece [got confused], there's something wrong with it, I noticed\nهذا شكله مؤلف المقطوعة ملخبط [في شي غلط فيها] لاحظت => It seems the composer of this piece got confused, [there's something wrong with it], I noticed\nهذا شكله مؤلف المقطوعة ملخبط في شي غلط فيها [لاحظت] => It seems the composer of this piece got confused, there's something wrong with it, [I noticed]\n\n[بتعرفي شو الغلط] الغلط إنه احنا خليناكي تقربي عالبيانو من الأساس => [Do you know what the mistake is]? The mistake is that we let you get near the piano in the first place\nبتعرفي شو الغلط [الغلط إنه] احنا خليناكي تقربي عالبيانو من الأساس => Do you know what the mistake is? [The mistake is that] we let you get near the piano in the first place\nبتعرفي شو الغلط الغلط إنه [احنا خليناكي] تقربي عالبيانو من الأساس => Do you know what the mistake is? The mistake is that [we let you] get near the piano in the first place\nبتعرفي شو الغلط الغلط إنه احنا خليناكي [تقربي عالبيانو] من الأساس => Do you know what the mistake is? The mistake is that we let you [get near the piano] in the first place\nبتعرفي شو الغلط الغلط إنه احنا خليناكي تقربي عالبيانو [من الأساس] => Do you know what the mistake is? The mistake is that we let you get near the piano [in the first place]\n\n[بكره] بتشوف أبو انصاف كيف موهبة لولو راح تتطور وراح توصل للعالمية => [Tomorrow] you'll see, Abu Insaf, how Lulu's talent will develop and reach international fame\nبكره [بتشوف] أبو انصاف كيف موهبة لولو راح تتطور وراح توصل للعالمية => Tomorrow [you'll see], Abu Insaf, how Lulu's talent will develop and reach international fame\nبكره بتشوف [أبو انصاف] كيف موهبة لولو راح تتطور وراح توصل للعالمية => Tomorrow you'll see, [Abu Insaf], how Lulu's talent will develop and reach international fame\nبكره بتشوف أبو انصاف [كيف] موهبة لولو راح تتطور وراح توصل للعالمية => Tomorrow you'll see, Abu Insaf, [how] Lulu's talent will develop and reach international fame\nبكره بتشوف أبو انصاف كيف [موهبة لولو] راح تتطور وراح توصل للعالمية => Tomorrow you'll see, Abu Insaf, how [Lulu's talent] will develop and reach international fame\nبكره بتشوف أبو انصاف كيف موهبة لولو [راح تتطور] وراح توصل للعالمية => Tomorrow you'll see, Abu Insaf, how Lulu's talent [will develop] and reach international fame\nبكره بتشوف أبو انصاف كيف موهبة لولو راح تتطور [وراح توصل] للعالمية => Tomorrow you'll see, Abu Insaf, how Lulu's talent will develop [and reach] international fame\nبكره بتشوف أبو انصاف كيف موهبة لولو راح تتطور وراح توصل [للعالمية] => Tomorrow you'll see, Abu Insaf, how Lulu's talent will develop and reach [international fame]\n\n[وكل] المشاهير راح يجوا يشوفوني من كل العالم => [and all] the celebrities will come to see me from all over the world\nوكل [المشاهير] راح يجوا يشوفوني من كل العالم => and all [the celebrities] will come to see me from all over the world\nوكل المشاهير [راح يجوا] يشوفوني من كل العالم => and all the celebrities [will come] to see me from all over the world\nوكل المشاهير راح يجوا [يشوفوني] من كل العالم => and all the celebrities will come [to see me] from all over the world\nوكل المشاهير راح يجوا يشوفوني [من كل العالم] => and all the celebrities will come to see me [from all over the world]\n\n[ممكن نحاول] معهم أكثر من مرة حتى لو ما كان بدهم في البداية => [We can try] with them more than once, even if they didn't want to at first\nممكن نحاول [معهم] أكثر من مرة حتى لو ما كان بدهم في البداية => We can try [with them] more than once, even if they didn't want to at first\nممكن نحاول معهم [أكثر من مرة] حتى لو ما كان بدهم في البداية => We can try with them [more than once], even if they didn't want to at first\nممكن نحاول معهم أكثر من مرة [حتى لو] ما كان بدهم في البداية => We can try with them more than once, [even if] they didn't want to at first\nممكن نحاول معهم أكثر من مرة حتى لو [ما كان بدهم] في البداية => We can try with them more than once, even if [they didn't want to] at first\nممكن نحاول معهم أكثر من مرة حتى لو ما كان بدهم [في البداية] => We can try with them more than once, even if they didn't want to [at first]\n\n[كمان] المفروض تحضروهم للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية => [Also], you're supposed to prepare them for it and make music a part of their daily lives\nكمان [المفروض] تحضروهم للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية => Also, [you're supposed to] prepare them for it and make music a part of their daily lives\nكمان المفروض [تحضروهم] للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية => Also, you're supposed to [prepare them] for it and make music a part of their daily lives\nكمان المفروض تحضروهم [للموضوع] وتخلوا الموسيقى جزء من حياتهم اليومية => Also, you're supposed to prepare them [for it] and make music a part of their daily lives\nكمان المفروض تحضروهم للموضوع [وتخلوا] الموسيقى جزء من حياتهم اليومية => Also, you're supposed to prepare them for it [and make] music a part of their daily lives\nكمان المفروض تحضروهم للموضوع وتخلوا [الموسيقى] جزء من حياتهم اليومية => Also, you're supposed to prepare them for it and make [music] a part of their daily lives\nكمان المفروض تحضروهم للموضوع وتخلوا الموسيقى [جزء من حياتهم اليومية] => Also, you're supposed to prepare them for it and make music [a part of their daily lives]\n\n[يعني] في أمل يتعلموا => [So] there's hope they'll learn?\nيعني [في] أمل يتعلموا => So [there's] hope they'll learn?\nيعني في [أمل] يتعلموا => So there's [hope] they'll learn?\nيعني في أمل [يتعلموا] => So there's hope [they'll learn]?\n\n[الأفضل] تاخدهم معك على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة => [It's best] to take them with you to the music shop and let them try more than one instrument\nالأفضل [تاخدهم] معك على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة => It's best [to take them] with you to the music shop and let them try more than one instrument\nالأفضل تاخدهم [معك] على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة => It's best to take them [with you] to the music shop and let them try more than one instrument\nالأفضل تاخدهم معك [على محل الموسيقى] وتتركهم هم يجربوا أكثر من آلة => It's best to take them with you [to the music shop] and let them try more than one instrument\nالأفضل تاخدهم معك على محل الموسيقى [وتتركهم] هم يجربوا أكثر من آلة => It's best to take them with you to the music shop [and let them] try more than one instrument\nالأفضل تاخدهم معك على محل الموسيقى وتتركهم [هم يجربوا] أكثر من آلة => It's best to take them with you to the music shop and let them [try] more than one instrument\nالأفضل تاخدهم معك على محل الموسيقى وتتركهم هم يجربوا [أكثر من آلة] => It's best to take them with you to the music shop and let them try [more than one instrument]\n\n[واضح] حالياً إنهم مش حابين البيانو => [It's clear] for now that they don't like the piano\nواضح [حالياً] إنهم مش حابين البيانو => It's clear [for now] that they don't like the piano\nواضح حالياً [إنهم] مش حابين البيانو => It's clear for now [that they] don't like the piano\nواضح حالياً إنهم [مش حابين] البيانو => It's clear for now that they [don't like] the piano\nواضح حالياً إنهم مش حابين [البيانو] => It's clear for now that they don't like [the piano]\n\n[طيب] البيانو شو أعمل فيه المحل اللي اشتريته منه ما عنده ترجيع => [Okay], what do I do with the piano? The shop I bought it from doesn't have a return policy\nطيب [البيانو] شو أعمل فيه المحل اللي اشتريته منه ما عنده ترجيع => Okay, what do I do with [the piano]? The shop I bought it from doesn't have a return policy\nطيب البيانو [شو أعمل فيه] المحل اللي اشتريته منه ما عنده ترجيع => Okay, [what do I do with] the piano? The shop I bought it from doesn't have a return policy\nطيب البيانو شو أعمل فيه [المحل] اللي اشتريته منه ما عنده ترجيع => Okay, what do I do with the piano? [The shop] I bought it from doesn't have a return policy\nطيب البيانو شو أعمل فيه المحل [اللي اشتريته منه] ما عنده ترجيع => Okay, what do I do with the piano? The shop [I bought it from] doesn't have a return policy\nطيب البيانو شو أعمل فيه المحل اللي اشتريته منه [ما عنده] ترجيع => Okay, what do I do with the piano? The shop I bought it from [doesn't have] a return policy\nطيب البيانو شو أعمل فيه المحل اللي اشتريته منه ما عنده [ترجيع] => Okay, what do I do with the piano? The shop I bought it from doesn't have [a return policy]\n\n[سالي] سالي => [Sally], Sally\nسالي [سالي] => Sally, [Sally]\n\n[سالي] سي شارب لا بي ميجر سيفن => [Sally], C-sharp, no, B-major seven\nسالي [سي شارب] لا بي ميجر سيفن => Sally, [C-sharp], no, B-major seven\nسالي سي شارب [لا] بي ميجر سيفن => Sally, C-sharp, [no], B-major seven\nسالي سي شارب لا [بي ميجر] سيفن => Sally, C-sharp, no, [B-major] seven\nسالي سي شارب لا بي ميجر [سيفن] => Sally, C-sharp, no, B-major [seven]\n\n[سالي] شو مالك => [Sally], what's wrong with you?\nسالي [شو مالك] => Sally, [what's wrong with you]\n\n[أبوي] جاب لنا بيانو وأستاذ موسيقى => [My dad] brought us a piano and a music teacher\nأبوي [جاب] لنا بيانو وأستاذ موسيقى => My dad [brought] us a piano and a music teacher\nأبوي جاب [لنا] بيانو وأستاذ موسيقى => My dad brought [us] a piano and a music teacher\nأبوي جاب لنا [بيانو] وأستاذ موسيقى => My dad brought us [a piano] and a music teacher\nأبوي جاب لنا بيانو [وأستاذ موسيقى] => My dad brought us a piano [and a music teacher]\n\n[صرت] عم بسمع النوتات بأحلامي => [I've started] hearing the notes in my dreams\nصرت [عم بسمع] النوتات بأحلامي => I've started [hearing] the notes in my dreams\nصرت عم بسمع [النوتات] بأحلامي => I've started hearing [the notes] in my dreams\nصرت عم بسمع النوتات [بأحلامي] => I've started hearing the notes [in my dreams]\n\n[بيانو] طول عمرك بتحكي إنك بدك تتعلمي آلة موسيقية => [A piano]? All your life you've been saying you want to learn a musical instrument\nبيانو [طول عمرك] بتحكي إنك بدك تتعلمي آلة موسيقية => A piano? [All your life] you've been saying you want to learn a musical instrument\nبيانو طول عمرك [بتحكي] إنك بدك تتعلمي آلة موسيقية => A piano? All your life [you've been saying] you want to learn a musical instrument\nبيانو طول عمرك بتحكي [إنك] بدك تتعلمي آلة موسيقية => A piano? All your life you've been saying [you] want to learn a musical instrument\nبيانو طول عمرك بتحكي إنك [بدك] تتعلمي آلة موسيقية => A piano? All your life you've been saying you [want] to learn a musical instrument\nبيانو طول عمرك بتحكي إنك بدك [تتعلمي] آلة موسيقية => A piano? All your life you've been saying you want [to learn] a musical instrument\nبيانو طول عمرك بتحكي إنك بدك تتعلمي [آلة موسيقية] => A piano? All your life you've been saying you want to learn [a musical instrument]\n\n[توقعتك] تكوني متحمسة => [I expected you] to be excited\nتوقعتك [تكوني] متحمسة => I expected you [to be] excited\nتوقعتك تكوني [متحمسة] => I expected you to be [excited]\n\n[صح] بس هو فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم => [True], but he surprised us with it and he's pressuring us a lot to learn\nصح [بس] هو فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم => True, [but] he surprised us with it and he's pressuring us a lot to learn\nصح بس [هو] فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم => True, but [he] surprised us with it and he's pressuring us a lot to learn\nصح بس هو [فاجأنا] بالموضوع وعم بضغط علينا كثير إنه نتعلم => True, but he [surprised us] with it and he's pressuring us a lot to learn\nصح بس هو فاجأنا [بالموضوع] وعم بضغط علينا كثير إنه نتعلم => True, but he surprised us [with it] and he's pressuring us a lot to learn\nصح بس هو فاجأنا بالموضوع [وعم بضغط] علينا كثير إنه نتعلم => True, but he surprised us with it [and he's pressuring] us a lot to learn\nصح بس هو فاجأنا بالموضوع وعم بضغط [علينا] كثير إنه نتعلم => True, but he surprised us with it and he's pressuring [us] a lot to learn\nصح بس هو فاجأنا بالموضوع وعم بضغط علينا [كثير] إنه نتعلم => True, but he surprised us with it and he's pressuring us [a lot] to learn\nصح بس هو فاجأنا بالموضوع وعم بضغط علينا كثير [إنه نتعلم] => True, but he surprised us with it and he's pressuring us a lot [to learn]\n\n[الموضوع مش حلو] لما يكون بالغصب => [It's not nice] when it's by force\nالموضوع مش حلو [لما يكون] بالغصب => It's not nice [when it's] by force\nالموضوع مش حلو لما يكون [بالغصب] => It's not nice when it's [by force]\n\n[إذا بدك] رأيي بما إنك بلشتي كملي => [If you want] my opinion, since you've started, continue\nإذا بدك [رأيي] بما إنك بلشتي كملي => If you want [my opinion], since you've started, continue\nإذا بدك رأيي [بما إنك بلشتي] كملي => If you want my opinion, [since you've started] continue\nإذا بدك رأيي بما إنك بلشتي [كملي] => If you want my opinion, since you've started, [continue]\n\n[بعدين] بنعمل فرقة موسيقية أنا على الجيتار وأنتي على البيانو => [Then] we'll form a band, me on the guitar and you on the piano\nبعدين [بنعمل] فرقة موسيقية أنا على الجيتار وأنتي على البيانو => Then [we'll form] a band, me on the guitar and you on the piano\nبعدين بنعمل [فرقة موسيقية] أنا على الجيتار وأنتي على البيانو => Then we'll form [a band], me on the guitar and you on the piano\nبعدين بنعمل فرقة موسيقية [أنا على الجيتار] وأنتي على البيانو => Then we'll form a band, [me on the guitar] and you on the piano\nبعدين بنعمل فرقة موسيقية أنا على الجيتار [وأنتي على البيانو] => Then we'll form a band, me on the guitar [and you on the piano]\n\n[وبنسمي] فرقتنا رنوش وسالي => [and we'll call] our band Ranoush and Sally\nوبنسمي [فرقتنا] رنوش وسالي => and we'll call [our band] Ranoush and Sally\nوبنسمي فرقتنا [رنوش وسالي] => and we'll call our band [Ranoush and Sally]\n\n[أو] إذا بدك سالي ورنوش => [or] if you want, Sally and Ranoush\nأو [إذا بدك] سالي ورنوش => or [if you want,] Sally and Ranoush\nأو إذا بدك [سالي ورنوش] => or if you want, [Sally and Ranoush]\n\n[في العرض الموسيقي اليوم] راح أعزف لكم مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن => [In today's musical performance,] I will play for you a 17th-century classical piece on the French horn\nفي العرض الموسيقي اليوم [راح أعزف] لكم مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن => In today's musical performance, [I will play] for you a 17th-century classical piece on the French horn\nفي العرض الموسيقي اليوم راح أعزف [لكم] مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن => In today's musical performance, I will play [for you] a 17th-century classical piece on the French horn\nفي العرض الموسيقي اليوم راح أعزف لكم [مقطوعة كلاسيكية من القرن السابع عشر] على الفرنش هورن => In today's musical performance, I will play for you [a 17th-century classical piece] on the French horn\nفي العرض الموسيقي اليوم راح أعزف لكم مقطوعة كلاسيكية من القرن السابع عشر [على الفرنش هورن] => In today's musical performance, I will play for you a 17th-century classical piece [on the French horn]\n\n[هاي الآلة] تعلمتها الأسبوع الماضي ومن بعدها اختاروني أكون جزء من أوركسترا عمان للشباب => I learned [this instrument] last week, and after that, they chose me to be part of the Amman Youth Orchestra\nهاي الآلة تعلمتها [الأسبوع الماضي] ومن بعدها اختاروني أكون جزء من أوركسترا عمان للشباب => I learned this instrument [last week], and after that, they chose me to be part of the Amman Youth Orchestra\nهاي الآلة تعلمتها الأسبوع الماضي [ومن بعدها] اختاروني أكون جزء من أوركسترا عمان للشباب => I learned this instrument last week, [and after that,] they chose me to be part of the Amman Youth Orchestra\nهاي الآلة تعلمتها الأسبوع الماضي ومن بعدها [اختاروني] أكون جزء من أوركسترا عمان للشباب => I learned this instrument last week, and after that, [they chose me] to be part of the Amman Youth Orchestra\nهاي الآلة تعلمتها الأسبوع الماضي ومن بعدها اختاروني [أكون جزء من] أوركسترا عمان للشباب => I learned this instrument last week, and after that, they chose me [to be part of] the Amman Youth Orchestra\nهاي الآلة تعلمتها الأسبوع الماضي ومن بعدها اختاروني أكون جزء من [أوركسترا عمان للشباب] => I learned this instrument last week, and after that, they chose me to be part of [the Amman Youth Orchestra]\n\n[وأخيراً] ما أحلى الهدوء => [Finally,] how sweet the silence is\nوأخيراً [ما أحلى] الهدوء => Finally, [how sweet] the silence is\nوأخيراً ما أحلى [الهدوء] => Finally, how sweet [the silence] is\n\n[مين] عمل هيك => [Who] did this?\nمين [عمل هيك] => Who [did this]?\n\n[عطا] شو قلت => [Atta], what did you say?\nعطا [شو] قلت => Atta, [what] did you say?\nعطا شو [قلت] => Atta, what [did you say]?\n\n[باخده] بربع السعر اللي أنت عارضه فيه => [I'll take it] for a quarter of the price you're offering it for\nباخده [بربع] السعر اللي أنت عارضه فيه => I'll take it [for a quarter] of the price you're offering it for\nباخده بربع [السعر] اللي أنت عارضه فيه => I'll take it for a quarter of [the price] you're offering it for\nباخده بربع السعر [اللي أنت عارضه فيه] => I'll take it for a quarter of the price [you're offering it for]\n\n[بربع] السعر يا زلمة كيف يعني => [For a quarter] of the price, man? How so?\nبربع [السعر] يا زلمة كيف يعني => For a quarter of [the price], man? How so?\nبربع السعر [يا زلمة] كيف يعني => For a quarter of the price, [man]? How so?\nبربع السعر يا زلمة [كيف يعني] => For a quarter of the price, man? [How so?]\n\n[هذا] الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف => [This] sound is broken, listen to how the sound becomes whenever I put my hand here on the right, look\nهذا [الصوت] خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف => This [sound] is broken, listen to how the sound becomes whenever I put my hand here on the right, look\nهذا الصوت [خربان] اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف => This sound [is broken], listen to how the sound becomes whenever I put my hand here on the right, look\nهذا الصوت خربان [اسمع] كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف => This sound is broken, [listen] to how the sound becomes whenever I put my hand here on the right, look\nهذا الصوت خربان اسمع [كيف] الصوت بصير كل ما أحط ايدي هون عاليمين شوف => This sound is broken, listen [to how] the sound becomes whenever I put my hand here on the right, look\nهذا الصوت خربان اسمع كيف [الصوت] بصير كل ما أحط ايدي هون عاليمين شوف => This sound is broken, listen to how [the sound] becomes whenever I put my hand here on the right, look\nهذا الصوت خربان اسمع كيف الصوت [بصير] كل ما أحط ايدي هون عاليمين شوف => This sound is broken, listen to how the sound [becomes] whenever I put my hand here on the right, look\nهذا الصوت خربان اسمع كيف الصوت بصير [كل ما] أحط ايدي هون عاليمين شوف => This sound is broken, listen to how the sound becomes [whenever] I put my hand here on the right, look\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما [أحط] ايدي هون عاليمين شوف => This sound is broken, listen to how the sound becomes whenever [I put] my hand here on the right, look\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط [ايدي] هون عاليمين شوف => This sound is broken, listen to how the sound becomes whenever I put [my hand] here on the right, look\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي [هون] عاليمين شوف => This sound is broken, listen to how the sound becomes whenever I put my hand [here] on the right, look\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون [عاليمين] شوف => This sound is broken, listen to how the sound becomes whenever I put my hand here [on the right], look\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين [شوف] => This sound is broken, listen to how the sound becomes whenever I put my hand here on the right, [look]\n\n[البيانو] هيك عطا => [The piano] is like this, Atta\nالبيانو [هيك] عطا => The piano [is like this], Atta\nالبيانو هيك [عطا] => The piano is like this, [Atta]\n\n[لا] شو بتفكرني يا بيلة => [No], what do you think I am, a fool?\nلا [شو] بتفكرني يا بيلة => No, [what] do you think I am, a fool?\nلا شو [بتفكرني] يا بيلة => No, what [do you think I am], a fool?\nلا شو بتفكرني [يا بيلة] => No, what do you think I am, [a fool]?\n\n[أنا] طول عمري وأنا بشتغل بالانتيكات => [I]'ve been working with antiques all my life\nأنا [طول عمري] وأنا بشتغل بالانتيكات => I've been working with antiques [all my life]\nأنا طول عمري [وأنا بشتغل] بالانتيكات => I've [been working] with antiques all my life\nأنا طول عمري وأنا بشتغل [بالانتيكات] => I've been working [with antiques] all my life\n\n[هدول] الأزرار لازم يكونوا كلهم نفس الصوت شو بتتهبل علي => [These] keys must all have the same sound, are you playing me for a fool?\nهدول [الأزرار] لازم يكونوا كلهم نفس الصوت شو بتتهبل علي => These [keys] must all have the same sound, are you playing me for a fool?\nهدول الأزرار [لازم] يكونوا كلهم نفس الصوت شو بتتهبل علي => These keys [must] all have the same sound, are you playing me for a fool?\nهدول الأزرار لازم [يكونوا] كلهم نفس الصوت شو بتتهبل علي => These keys must [all] have the same sound, are you playing me for a fool?\nهدول الأزرار لازم يكونوا [كلهم] نفس الصوت شو بتتهبل علي => These keys must all [have] the same sound, are you playing me for a fool?\nهدول الأزرار لازم يكونوا كلهم [نفس الصوت] شو بتتهبل علي => These keys must all have [the same sound], are you playing me for a fool?\nهدول الأزرار لازم يكونوا كلهم نفس الصوت [شو بتتهبل علي] => These keys must all have the same sound, [are you playing me for a fool?]\n\n[ها] شو قلت هسا موافق بربع السعر => [So,] what did you say? Now do you agree to a quarter of the price?\nها [شو] قلت هسا موافق بربع السعر => So, [what] did you say? Now do you agree to a quarter of the price?\nها شو [قلت] هسا موافق بربع السعر => So, what [did you say]? Now do you agree to a quarter of the price?\nها شو قلت [هسا] موافق بربع السعر => So, what did you say? [Now] do you agree to a quarter of the price?\nها شو قلت هسا [موافق] بربع السعر => So, what did you say? Now [do you agree] to a quarter of the price?\nها شو قلت هسا موافق [بربع السعر] => So, what did you say? Now do you agree [to a quarter of the price]?\n\n[لا] بطلت أبيع => [No,] I've changed my mind about selling\nلا [بطلت أبيع] => No, [I've changed my mind about selling]\n\n[أبو سند] ما راح تلاقي زبون مثلي => [Abu Sanad], you won't find a customer like me\nأبو سند [ما راح] تلاقي زبون مثلي => Abu Sanad, [won't] find a customer like me\nأبو سند ما راح [تلاقي] زبون مثلي => Abu Sanad, you won't [find] a customer like me\nأبو سند ما راح تلاقي [زبون] مثلي => Abu Sanad, you won't find [a customer] like me\nأبو سند ما راح تلاقي زبون [مثلي] => Abu Sanad, you won't find a customer [like me]\n\n[يا عمي] هذا خربان خربان => [My friend,] this is broken, broken\nيا عمي [هذا] خربان خربان => My friend, [this] is broken, broken\nيا عمي هذا [خربان خربان] => My friend, this [is broken, broken]\n\n[يا اخوان] مش أنا معي حق البيانو خربان ولا لا اكتبولي بالتعليقات أشوف => [Guys], am I not right that the piano is broken or not? Write to me in the comments so I can see\nيا اخوان [مش أنا معي حق] البيانو خربان ولا لا اكتبولي بالتعليقات أشوف => Guys, [am I not right] that the piano is broken or not? Write to me in the comments so I can see\nيا اخوان مش أنا معي حق [البيانو] خربان ولا لا اكتبولي بالتعليقات أشوف => Guys, am I not right that [the piano] is broken or not? Write to me in the comments so I can see\nيا اخوان مش أنا معي حق البيانو [خربان] ولا لا اكتبولي بالتعليقات أشوف => Guys, am I not right that the piano [is broken] or not? Write to me in the comments so I can see\nيا اخوان مش أنا معي حق البيانو خربان [ولا لا] اكتبولي بالتعليقات أشوف => Guys, am I not right that the piano is broken [or not]? Write to me in the comments so I can see\nيا اخوان مش أنا معي حق البيانو خربان ولا لا [اكتبولي] بالتعليقات أشوف => Guys, am I not right that the piano is broken or not? [Write to me] in the comments so I can see\nيا اخوان مش أنا معي حق البيانو خربان ولا لا اكتبولي [بالتعليقات] أشوف => Guys, am I not right that the piano is broken or not? Write to me [in the comments] so I can see\nيا اخوان مش أنا معي حق البيانو خربان ولا لا اكتبولي بالتعليقات [أشوف] => Guys, am I not right that the piano is broken or not? Write to me in the comments [so I can see]\n\n[هذا إذا] اشترينا له درمز صدقيني غير يطلعونا الجيران من العمارة => [If] we buy him drums, believe me, the neighbors will kick us out of the building\nهذا إذا [اشترينا] له درمز صدقيني غير يطلعونا الجيران من العمارة => If we [buy] him drums, believe me, the neighbors will kick us out of the building\nهذا إذا اشترينا [له] درمز صدقيني غير يطلعونا الجيران من العمارة => If we buy [him] drums, believe me, the neighbors will kick us out of the building\nهذا إذا اشترينا له [درمز] صدقيني غير يطلعونا الجيران من العمارة => If we buy him [drums], believe me, the neighbors will kick us out of the building\nهذا إذا اشترينا له درمز [صدقيني] غير يطلعونا الجيران من العمارة => If we buy him drums, [believe me] the neighbors will kick us out of the building\nهذا إذا اشترينا له درمز صدقيني غير [يطلعونا] الجيران من العمارة => If we buy him drums, believe me, the neighbors [will kick us out] of the building\nهذا إذا اشترينا له درمز صدقيني غير يطلعونا [الجيران] من العمارة => If we buy him drums, believe me, [the neighbors] will kick us out of the building\nهذا إذا اشترينا له درمز صدقيني غير يطلعونا الجيران [من العمارة] => If we buy him drums, believe me, the neighbors will kick us out [of the building]\n\n[حبيبي] سند شو رأيك تجرب آلة تانية غير الدرمز => [My dear] Sanad, what do you think about trying another instrument besides the drums?\nحبيبي [سند] شو رأيك تجرب آلة تانية غير الدرمز => My dear [Sanad], what do you think about trying another instrument besides the drums?\nحبيبي سند [شو رأيك] تجرب آلة تانية غير الدرمز => My dear Sanad, [what do you think] about trying another instrument besides the drums?\nحبيبي سند شو رأيك [تجرب] آلة تانية غير الدرمز => My dear Sanad, what do you think about [trying] another instrument besides the drums?\nحبيبي سند شو رأيك تجرب [آلة] تانية غير الدرمز => My dear Sanad, what do you think about trying another [instrument] besides the drums?\nحبيبي سند شو رأيك تجرب آلة [تانية] غير الدرمز => My dear Sanad, what do you think about trying [another] instrument besides the drums?\nحبيبي سند شو رأيك تجرب آلة تانية [غير] الدرمز => My dear Sanad, what do you think about trying another instrument [besides] the drums?\nحبيبي سند شو رأيك تجرب آلة تانية غير [الدرمز] => My dear Sanad, what do you think about trying another instrument besides [the drums]?\n\n[لا] ماما حبيته كثير => [No], Mom, I liked it a lot\nلا [ماما] حبيته كثير => No, [Mom], I liked it a lot\nلا ماما [حبيته] كثير => No, Mom, [I liked it] a lot\nلا ماما حبيته [كثير] => No, Mom, I liked it [a lot]\n\n[انتبهي] كثير عليك الكونترا باص => [Be careful], the double bass is too much for you\nانتبهي [كثير عليك] الكونترا باص => Be careful, the double bass [is too much for you]\nانتبهي كثير عليك [الكونترا باص] => Be careful, [the double bass] is too much for you\n\n[بس] أنا حبيته => [But] I liked it\nبس [أنا] حبيته => But [I] liked it\nبس أنا [حبيته] => But I [liked it]\n\n[بابا] ممكن توطي الصوت شوي مش قادرة أسمع الفيديو => [Dad], can you turn down the volume a bit? I can't hear the video\nبابا [ممكن] توطي الصوت شوي مش قادرة أسمع الفيديو => Dad, [can you] turn down the volume a bit? I can't hear the video\nبابا ممكن [توطي] الصوت شوي مش قادرة أسمع الفيديو => Dad, can you [turn down] the volume a bit? I can't hear the video\nبابا ممكن توطي [الصوت] شوي مش قادرة أسمع الفيديو => Dad, can you turn down [the volume] a bit? I can't hear the video\nبابا ممكن توطي الصوت [شوي] مش قادرة أسمع الفيديو => Dad, can you turn down the volume [a bit]? I can't hear the video\nبابا ممكن توطي الصوت شوي [مش قادرة] أسمع الفيديو => Dad, can you turn down the volume a bit? [I can't] hear the video\nبابا ممكن توطي الصوت شوي مش قادرة [أسمع] الفيديو => Dad, can you turn down the volume a bit? I can't [hear] the video\nبابا ممكن توطي الصوت شوي مش قادرة أسمع [الفيديو] => Dad, can you turn down the volume a bit? I can't hear [the video]\n\n[الموسيقى] أهم كثير من اللي بتعمله على موبايلك => [Music] is much more important than what you're doing on your phone\nالموسيقى [أهم كثير] من اللي بتعمله على موبايلك => Music [is much more important] than what you're doing on your phone\nالموسيقى أهم كثير [من] اللي بتعمله على موبايلك => Music is much more important [than] what you're doing on your phone\nالموسيقى أهم كثير من [اللي] بتعمله على موبايلك => Music is much more important than [what] you're doing on your phone\nالموسيقى أهم كثير من اللي [بتعمله] على موبايلك => Music is much more important than what [you're doing] on your phone\nالموسيقى أهم كثير من اللي بتعمله [على] موبايلك => Music is much more important than what you're doing [on] your phone\nالموسيقى أهم كثير من اللي بتعمله على [موبايلك] => Music is much more important than what you're doing on [your phone]\n\n[صفي] ذهنك شوي روق => [Clear] your mind a bit, relax\nصفي [ذهنك] شوي روق => Clear [your mind] a bit, relax\nصفي ذهنك [شوي] روق => Clear your mind [a bit], relax\nصفي ذهنك شوي [روق] => Clear your mind a bit, [relax]\n\n[أبوكم] معه حق الموسيقى هواية رائعة => [Your father] is right, music is a wonderful hobby\nأبوكم [معه حق] الموسيقى هواية رائعة => Your father [is right], music is a wonderful hobby\nأبوكم معه حق [الموسيقى] هواية رائعة => Your father is right, [music] is a wonderful hobby\nأبوكم معه حق الموسيقى [هواية رائعة] => Your father is right, music [is a wonderful hobby]\nأبوكم معه حق الموسيقى هواية [رائعة] => Your father is right, music is a [wonderful] hobby\n\n[بس] بابا أنت فاجأتنا بموضوع البيانو => [But] Dad, you surprised us with the piano thing\nبس [بابا] أنت فاجأتنا بموضوع البيانو => But [Dad], you surprised us with the piano thing\nبس بابا [أنت] فاجأتنا بموضوع البيانو => But Dad, [you] surprised us with the piano thing\nبس بابا أنت [فاجأتنا] بموضوع البيانو => But Dad, you [surprised us] with the piano thing\nبس بابا أنت فاجأتنا [بموضوع] البيانو => But Dad, you surprised us [with the] piano thing\nبس بابا أنت فاجأتنا بموضوع [البيانو] => But Dad, you surprised us with the [piano] thing\n\n[آه] بابا ولا مرة فتحت موضوع الموسيقى والعزف معنا أبداً => [Yeah] Dad, you never once brought up the subject of music and playing with us, ever\nآه [بابا] ولا مرة فتحت موضوع الموسيقى والعزف معنا أبداً => Yeah [Dad], you never once brought up the subject of music and playing with us, ever\nآه بابا [ولا مرة] فتحت موضوع الموسيقى والعزف معنا أبداً => Yeah Dad, [you never once] brought up the subject of music and playing with us, ever\nآه بابا ولا مرة [فتحت] موضوع الموسيقى والعزف معنا أبداً => Yeah Dad, you never once [brought up] the subject of music and playing with us, ever\nآه بابا ولا مرة فتحت [موضوع] الموسيقى والعزف معنا أبداً => Yeah Dad, you never once brought up [the subject] of music and playing with us, ever\nآه بابا ولا مرة فتحت موضوع [الموسيقى] والعزف معنا أبداً => Yeah Dad, you never once brought up the subject of [music] and playing with us, ever\nآه بابا ولا مرة فتحت موضوع الموسيقى [والعزف] معنا أبداً => Yeah Dad, you never once brought up the subject of music [and playing] with us, ever\nآه بابا ولا مرة فتحت موضوع الموسيقى والعزف [معنا] أبداً => Yeah Dad, you never once brought up the subject of music and playing [with us], ever\nآه بابا ولا مرة فتحت موضوع الموسيقى والعزف معنا [أبداً] => Yeah Dad, you never once brought up the subject of music and playing with us, [ever]\n\n[وفجأة] ما شفنا إلا البيانو عنا بالبيت ومعاه الأستاذ بديع => [and suddenly] we just saw the piano in our house along with Mr. Badi'\nوفجأة [ما شفنا إلا] البيانو عنا بالبيت ومعاه الأستاذ بديع => and suddenly [we just saw] the piano in our house along with Mr. Badi'\nوفجأة ما شفنا إلا [البيانو] عنا بالبيت ومعاه الأستاذ بديع => and suddenly we just saw [the piano] in our house along with Mr. Badi'\nوفجأة ما شفنا إلا البيانو [عنا بالبيت] ومعاه الأستاذ بديع => and suddenly we just saw the piano [in our house] along with Mr. Badi'\nوفجأة ما شفنا إلا البيانو عنا بالبيت [ومعاه] الأستاذ بديع => and suddenly we just saw the piano in our house [along with] Mr. Badi'\nوفجأة ما شفنا إلا البيانو عنا بالبيت ومعاه [الأستاذ بديع] => and suddenly we just saw the piano in our house along with [Mr. Badi']\n\n[استنوا استنوا] تشوفوا المفاجأة اللي محضر لكم اياها هلا => [Wait, wait] until you see the surprise I have prepared for you now\nاستنوا استنوا [تشوفوا] المفاجأة اللي محضر لكم اياها هلا => Wait, wait [until you see] the surprise I have prepared for you now\nاستنوا استنوا تشوفوا [المفاجأة] اللي محضر لكم اياها هلا => Wait, wait until you see [the surprise] I have prepared for you now\nاستنوا استنوا تشوفوا المفاجأة [اللي محضر لكم اياها] هلا => Wait, wait until you see the surprise [I have prepared for you] now\nاستنوا استنوا تشوفوا المفاجأة اللي محضر لكم اياها [هلا] => Wait, wait until you see the surprise I have prepared for you [now]\n\n[كمان] مفاجأة => [Another] surprise?\nكمان [مفاجأة] => Another [surprise]?\n\n[أبوكم] حجز لنا تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي => [Your father] booked us tickets to attend a musical concert at the Cultural Institute\nأبوكم [حجز] لنا تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي => Your father [booked] us tickets to attend a musical concert at the Cultural Institute\nأبوكم حجز [لنا] تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي => Your father booked [us] tickets to attend a musical concert at the Cultural Institute\nأبوكم حجز لنا [تذاكر] نحضر كونسيرت موسيقي في المعهد الثقافي => Your father booked us [tickets] to attend a musical concert at the Cultural Institute\nأبوكم حجز لنا تذاكر [نحضر] كونسيرت موسيقي في المعهد الثقافي => Your father booked us tickets [to attend] a musical concert at the Cultural Institute\nأبوكم حجز لنا تذاكر نحضر [كونسيرت موسيقي] في المعهد الثقافي => Your father booked us tickets to attend [a musical concert] at the Cultural Institute\nأبوكم حجز لنا تذاكر نحضر كونسيرت موسيقي [في المعهد الثقافي] => Your father booked us tickets to attend a musical concert [at the Cultural Institute]\n\n[كونسيرت] راب ولا هيب هوب => A rap or hip-hop [concert]?\nكونسيرت [راب] ولا هيب هوب => A [rap] or hip-hop concert?\nكونسيرت راب [ولا] هيب هوب => A rap [or] hip-hop concert?\nكونسيرت راب ولا [هيب هوب] => A rap or [hip-hop] concert?\n\n[شايفين] حبايبي أنا كل حياتي موسيقى ومش أي موسيقى موسيقى كلاسيكية => [You see], my dears, my whole life is music, and not just any music, classical music\nشايفين [حبايبي] أنا كل حياتي موسيقى ومش أي موسيقى موسيقى كلاسيكية => You see, [my dears], my whole life is music, and not just any music, classical music\nشايفين حبايبي [كل حياتي] موسيقى ومش أي موسيقى موسيقى كلاسيكية => You see, my dears, [my whole life] is music, and not just any music, classical music\nشايفين حبايبي كل حياتي [موسيقى] ومش أي موسيقى موسيقى كلاسيكية => You see, my dears, my whole life is [music], and not just any music, classical music\nشايفين حبايبي كل حياتي موسيقى [ومش أي موسيقى] موسيقى كلاسيكية => You see, my dears, my whole life is music, [and not just any music], classical music\nشايفين حبايبي كل حياتي موسيقى ومش أي موسيقى [موسيقى كلاسيكية] => You see, my dears, my whole life is music, and not just any music, [classical music]\n\n[أرقى] أنواع الموسيقى زي زي لولو => [The finest] types of music, just like Lulu\nأرقى [أنواع] الموسيقى زي زي لولو => The finest [types] of music, just like Lulu\nأرقى أنواع [الموسيقى] زي زي لولو => The finest types of [music], just like Lulu\nأرقى أنواع الموسيقى [زي زي] لولو => The finest types of music, [just like] Lulu\nأرقى أنواع الموسيقى زي زي [لولو] => The finest types of music, just like [Lulu]\n\n[صمت] لو سمحتي => [Silence], please\nصمت [لو سمحتي] => Silence, [please]\n\n[يمكن] أنا غلطت حاسس بالذنب => [Maybe] I made a mistake, I feel guilty\nيمكن [أنا غلطت] حاسس بالذنب => Maybe [I made a mistake], I feel guilty\nيمكن أنا غلطت [حاسس بالذنب] => Maybe I made a mistake, [I feel guilty]\n\n[كنت] أناني وحابب أفتخر فيهم وفرضت عليهم شي ما بيحبوه => [I was] selfish and wanted to be proud of them, and I forced something on them they don't like\nكنت [أناني] وحابب أفتخر فيهم وفرضت عليهم شي ما بيحبوه => I was [selfish] and wanted to be proud of them, and I forced something on them they don't like\nكنت أناني [وحابب] أفتخر فيهم وفرضت عليهم شي ما بيحبوه => I was selfish [and wanted] to be proud of them, and I forced something on them they don't like\nكنت أناني وحابب [أفتخر] فيهم وفرضت عليهم شي ما بيحبوه => I was selfish and wanted to [be proud] of them, and I forced something on them they don't like\nكنت أناني وحابب أفتخر [فيهم] وفرضت عليهم شي ما بيحبوه => I was selfish and wanted to be proud [of them], and I forced something on them they don't like\nكنت أناني وحابب أفتخر فيهم [وفرضت] عليهم شي ما بيحبوه => I was selfish and wanted to be proud of them, [and I forced] something on them they don't like\nكنت أناني وحابب أفتخر فيهم وفرضت [عليهم] شي ما بيحبوه => I was selfish and wanted to be proud of them, and I forced [on them] something they don't like\nكنت أناني وحابب أفتخر فيهم وفرضت عليهم [شي] ما بيحبوه => I was selfish and wanted to be proud of them, and I forced [something] on them they don't like\nكنت أناني وحابب أفتخر فيهم وفرضت عليهم شي [ما بيحبوه] => I was selfish and wanted to be proud of them, and I forced something on them [they don't like]\n\n[ما تلوم] حالك كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد => [Don't blame] yourself too much, at least you tried and pressured them into something that could have been positive and useful\nما تلوم [حالك] كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد => Don't blame [yourself] too much, at least you tried and pressured them into something that could have been positive and useful\nما تلوم حالك [كثير] على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد => Don't blame yourself [too much], at least you tried and pressured them into something that could have been positive and useful\nما تلوم حالك كثير [على الأقل] جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد => Don't blame yourself too much, [at least] you tried and pressured them into something that could have been positive and useful\nما تلوم حالك كثير على الأقل [جربت] وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد => Don't blame yourself too much, at least [you tried] and pressured them into something that could have been positive and useful\nما تلوم حالك كثير على الأقل جربت [وضغطت] عليهم بشي كان ممكن يكون إيجابي ومفيد => Don't blame yourself too much, at least you tried [and pressured] them into something that could have been positive and useful\nما تلوم حالك كثير على الأقل جربت وضغطت [عليهم] بشي كان ممكن يكون إيجابي ومفيد => Don't blame yourself too much, at least you tried and pressured [them] into something that could have been positive and useful\nما تلوم حالك كثير على الأقل جربت وضغطت عليهم [بشي] كان ممكن يكون إيجابي ومفيد => Don't blame yourself too much, at least you tried and pressured them [into something] that could have been positive and useful\nما تلوم حالك كثير على الأقل جربت وضغطت عليهم بشي [كان ممكن يكون] إيجابي ومفيد => Don't blame yourself too much, at least you tried and pressured them into something [that could have been] positive and useful\nما تلوم حالك كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون [إيجابي ومفيد] => Don't blame yourself too much, at least you tried and pressured them into something that could have been [positive and useful]\n\n[خلص] راح أبيع البيانو لعطا => [That's it], I'm going to sell the piano to Atta\nخلص [راح أبيع] البيانو لعطا => That's it, [I'm going to sell] the piano to Atta\nخلص راح أبيع [البيانو] لعطا => That's it, I'm going to sell [the piano] to Atta\nخلص راح أبيع البيانو [لعطا] => That's it, I'm going to sell the piano [to Atta]\n\n[الله يعيني] على هالخسارة => [May God help me] with this loss\nالله يعيني [على] هالخسارة => May God help me [with] this loss\nالله يعيني على [هالخسارة] => May God help me with [this loss]\n\n[سوري] بابا أنا صحيتك => [Sorry] Dad, I woke you up\nسوري [بابا] أنا صحيتك => Sorry [Dad], I woke you up\nسوري بابا [أنا] صحيتك => Sorry Dad, [I] woke you up\nسوري بابا أنا [صحيتك] => Sorry Dad, I [woke you up]\n\n[لا] بابا كملي كملي => [No], honey, continue, continue\nلا [بابا] كملي كملي => No [honey], continue, continue\nلا بابا [كملي] كملي => No, honey, [continue], continue\nلا بابا كملي [كملي] => No, honey, continue, [continue]\n\n[أنا] بحلم دينا وقرصيني => [Am I] dreaming, Dina? Pinch me\nأنا [بحلم] دينا وقرصيني => Am I [dreaming], Dina? Pinch me\nأنا بحلم [دينا] وقرصيني => Am I dreaming, [Dina]? Pinch me\nأنا بحلم دينا [وقرصيني] => Am I dreaming, Dina? [Pinch me]\n\n[مش راح أسمحلك] تاخد البيانو كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل => [I won't let you] take the piano. How, Um Sanad, can you sell the piano? What am I supposed to do?\nمش راح أسمحلك [تاخد] البيانو كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل => I won't let you [take] the piano. How, Um Sanad, can you sell the piano? What am I supposed to do?\nمش راح أسمحلك تاخد [البيانو] كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل => I won't let you take [the piano]. How, Um Sanad, can you sell the piano? What am I supposed to do?\nمش راح أسمحلك تاخد البيانو [كيف] يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل => I won't let you take the piano. [How], Um Sanad, can you sell the piano? What am I supposed to do?\nمش راح أسمحلك تاخد البيانو كيف [يا أم سند] بدكم تبيعوا البيانو وأنا شو بدي أعمل => I won't let you take the piano. How, [Um Sanad], can you sell the piano? What am I supposed to do?\nمش راح أسمحلك تاخد البيانو كيف يا أم سند [بدكم تبيعوا] البيانو وأنا شو بدي أعمل => I won't let you take the piano. How, Um Sanad, [can you sell] the piano? What am I supposed to do?\nمش راح أسمحلك تاخد البيانو كيف يا أم سند بدكم تبيعوا [البيانو] وأنا شو بدي أعمل => I won't let you take the piano. How, Um Sanad, can you sell [the piano]? What am I supposed to do?\nمش راح أسمحلك تاخد البيانو كيف يا أم سند بدكم تبيعوا البيانو [وأنا شو بدي أعمل] => I won't let you take the piano. How, Um Sanad, can you sell the piano? [What am I supposed to do?]\n\n[الاتفاق] اتفاق يا أم سند آه => [An agreement] is an agreement, Um Sanad, yeah\nالاتفاق [اتفاق] يا أم سند آه => An agreement [is an agreement], Um Sanad, yeah\nالاتفاق اتفاق [يا أم سند] آه => An agreement is an agreement, [Um Sanad], yeah\nالاتفاق اتفاق يا أم سند [آه] => An agreement is an agreement, Um Sanad, [yeah]\n\n[أولي بالك] يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي => [Be patient], Um Insaf, we won't disagree, I'll sell it to you at a preferred price, what do you say?\nأولي بالك [يا أم انصاف] ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي => Be patient, [Um Insaf], we won't disagree, I'll sell it to you at a preferred price, what do you say?\nأولي بالك يا أم انصاف [ما راح نختلف] أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي => Be patient, Um Insaf, [we won't disagree], I'll sell it to you at a preferred price, what do you say?\nأولي بالك يا أم انصاف ما راح نختلف [أنا واياكي] ببيعك اياه بسعر تفضيلي شو قلتي => you and I\nأولي بالك يا أم انصاف ما راح نختلف أنا واياكي [ببيعك اياه] بسعر تفضيلي شو قلتي => Be patient, Um Insaf, we won't disagree, [I'll sell it to you] at a preferred price, what do you say?\nأولي بالك يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه [بسعر تفضيلي] شو قلتي => Be patient, Um Insaf, we won't disagree, I'll sell it to you [at a preferred price], what do you say?\nأولي بالك يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي [شو قلتي] => Be patient, Um Insaf, we won't disagree, I'll sell it to you at a preferred price, [what do you say?]\n\n[ما في بيع] ما راح نبيع شي => [There's no sale], we aren't selling anything\nما في بيع [ما راح نبيع] شي => There's no sale, [we aren't selling] anything\nما في بيع ما راح نبيع [شي] => There's no sale, we aren't selling [anything]\n\n",
+    "lessons": "# The Surprise Announcement\n00:00 استنوا استنوا تشوفوا المفاجأة\n00:02 اللي محضر لكم اياها هلا\n00:04 كمان مفاجأة\n00:13 مين مفكر حاله هذا الولد\n00:15 وكل يوم بده يطبلنا بآلة جديدة\n00:17 خلص زودها\n\n# Noise Complaints\n00:19 جد شو هذا\n00:20 كثير مزعج\n00:22 خلص ما يلاقي على موبايله\n00:24 زي الناس الطبيعية\n00:25 ويفك عنا شوي\n\n# The Natural Talent\n00:28 واو أنت خرافي\n00:30 طيب شو الآلات التانية اللي بتعزف عليها\n00:33 شو ما بدك\n00:34 بعرف أعزف على كل الآلات\n00:36 أنا موهوب بالفطرة\n\n# Seeking a Solution\n00:39 اسمع بكره بجيب معي الشبابة\n00:41 يا الله دق على عصبي\n00:44 لازم ألاقي حل للموسيقى اللي ما عم تخلص\n00:47 الموضوع عندي\n\n# The Piano Prodigy\n00:57 ما شاء الله ما شاء الله\n01:02 كيف تعلم العزف\n01:04 صدق يا أبو سند\n01:05 جبتله بيانو عالبيت\n01:07 وجبتله أستاذ\n01:08 وصارله سنة بيتدرب\n\n# Benefits of Music\n01:10 الله يخليلك اياه\n01:11 موهوب ما شاء الله\n01:13 تسلم يا أبو سند\n01:14 الله يخليلك ولادك\n01:16 شو بيعزفوا\n01:17 في حدا منهم بيعزف بيانو\n\n# Music and the Mind\n01:19 ها لا\n01:21 صراحة لسه ما بلشوا\n01:23 لازم يا أبو سند تعلم ولادك يعزفوا آلة موسيقية\n01:26 الأبحاث بتقول إنه الموسيقى بتفتح الذهن\n01:29 وبتساعدهم دراسياً\n01:31 خاصة بالرياضيات\n\n# Moving the Piano\n01:41 وهيك يا أبو سند\n01:43 بنكون خلصنا شغل نظيف نظيف\n01:46 ومن الآخر\n01:47 هينا وصلنا لك البانيو\n01:49 قصدي البيانو نوتة نوتة\n\n# The Delivery Bill\n01:53 وسلامة خيرك يا أبو سند\n01:55 الحساب بس 50 ليرة\n01:57 مشان عيونك بس\n01:59 أوف 50\n02:01 ليش\n\n# Medical Expenses\n02:02 حبيبي ايش حبيبي\n02:03 ما هو 10 ليرات توصيل\n02:05 و40 ليرة للدكتور اللي بده ياخد بدل علاج طبيعي\n02:08 آخ يا ظهري\n02:10 تفضل\n\n# A Second-Hand Bargain\n02:16 شو هادا\n02:17 جبت للأولاد بيانو\n02:19 بيانو\n02:20 آه جبته لقطة من محل مستعمل\n02:22 شو ليش اشتريته\n\n# Why Buy a Piano?\n02:24 هذا كثير غالي\n02:26 لا تخافي لقطة\n02:28 الأولاد لازم يتعلموا العزف\n02:30 أي في أحلى من الموسيقى\n02:32 سالي سند تعالوا بابا\n02:34 شوفوا شو جبتلكم\n\n# Kids' First Reaction\n02:37 شو رأيكم\n02:39 واو بيانو\n02:40 مبروك سالي\n02:42 هذا إلك ولسالي\n02:44 بدي اياكم انتو الاثنين تتعلموا العزف\n\n# Gender and Instruments\n02:47 بابا طب أنا ما بحب البيانو\n02:49 البيانو أصلاً للشباب مش للبنات\n02:51 صحيح دينا البيانو للشباب\n02:53 ما بعرف\n02:55 بالعكس بابا البيانو مناسب أكثر للبنات\n03:01 أي في أحلى من البيانو\n\n# Meeting the Teacher\n03:04 سند شوف مين عالبيت\n03:11 مرحبا بديع\n03:13 ايش هو اللي بديع\n03:14 أنا أنا بديع\n03:15 أستاذ البيانو البديع\n\n# Introductions\n03:19 تفضل تفضل أستاذ بديع\n03:23 زوجتي أم سند وهدول ولادي سند وسالي\n03:27 أهلاً وسهلاً تشرفنا أستاذ\n03:29 الأستاذ بديع راح يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع\n\n# The Major Scale\n03:38 الميجر سكيل هو\n03:40 دو ري مي فا صول لا سي دو\n03:46 خلونا نشوف الكوردات اللي ممكن نشتقها من هذا السكيل\n03:49 أول كورد هو دو ميجر\n03:51 دو ومي و صول\n\n# Practice and Patience\n03:53 اوكي سند\n03:55 سند عيد معي\n03:56 اوكي\n03:58 صول لا سي دو ري مي دو\n04:04 واضح إنكم تعبتوا\n04:05 ناخد فاصل ونواصل\n\n# Boredom and Video Games\n04:10 اوكي اوكي احنا هون\n04:15 طمنوني كيف دروس البيانو لحد هلا\n04:18 بابا زهقنا ممل كثير الدروس وصعبة\n04:21 ما هو حضرتك ما بيعجبك إلا فيديو الجيمز والتلفون اللي ماخد كل وقتك\n\n# Parental Disappointment\n04:26 آه بابا سالي انتي شو رأيك بالدروس حبيتي هم\n04:30 كثير مملة\n04:32 يعني خليتوني أشتري البيانو عالفاضي\n04:38 يعني شو ناقصهم للأولاد\n\n# Pride vs. Passion\n04:40 ليش أبو غسان يطلع ابنه موسيقي ويفتخر فيه\n04:43 عصام انت بدك اياهم يتعلموا عشان انت تفتخر فيهم\n04:47 أو عشان يتعلموا شي جديد يحبوه ومفيد الهم\n04:50 الاثنين قديش حلو إذا عملنا عزومة عنا بالبيت\n04:53 وسند عزف قدام الناس\n\n# Dreaming of the Concert\n04:57 ولا شو في أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية\n05:02 لازم أخليهم يتعلموا الموسيقى لازم\n05:06 برأيي نستشير الأستاذ بديع\n05:08 أنا وأنت ما عنا خبرة بالمرة بهالموضوع\n\n# The Social Media Strategy\n05:18 أستاذ بديع أهلاً أهلاً تفضل تفضل\n05:22 شكراً يزيد فضلك\n05:24 على حد علمي ما في دروس اليوم\n05:26 الدرس اليوم للولو\n05:28 عطا حكالي إنكم اشتريتوا بيانو وبالوقت المناسب\n\n# Content for Followers\n05:32 لأنه خلصت الأفكار عندي لمحتوى جديد للفولورز تبعوني\n05:36 وأنتو أنقذتوني\n05:38 تعال حبيبي أبو انصاف راح يكون المصور الخاص تبعي\n05:42 اجيت والله جابك أنا وأم سند بدنا اياك باستشارة\n\n# The Influencer's Debut\n05:46 أبو انصاف هاي البيانو بالقعدة شو رأيك تحمي شوي\n05:49 اعزفي لك مقطوعة\n05:51 اعتبرنا مش هون ما تقلق فينا\n05:54 هاي حبايبي الحلوين أنا اليوم قررت أتعلم عزف البيانو\n\n# Love for the Arts\n05:59 الحقيقة أنا كل عمري بحب الموسيقى والثقافة والفن\n06:04 وراح أبلش أتعلم بيانو معكم متابعيني حبايبي الحلوين\n06:19 أبو انصاف كفي خلص دوشتينا\n06:23 يا عليكي يا أبو انصاف\n\n# Criticism and Ambition\n06:26 هذا شكله مؤلف المقطوعة ملخبط في شي غلط فيها لاحظت\n06:31 بتعرفي شو الغلط الغلط إنه احنا خليناكي تقربي عالبيانو من الأساس\n06:36 بكره بتشوف أبو انصاف كيف موهبة لولو راح تتطور وراح توصل للعالمية\n06:41 وكل المشاهير راح يجوا يشوفوني من كل العالم\n\n# Expert Advice\n06:46 ممكن نحاول معهم أكثر من مرة حتى لو ما كان بدهم في البداية\n06:51 كمان المفروض تحضروهم للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية\n06:56 يعني في أمل يتعلموا\n06:58 الأفضل تاخدهم معك على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة\n\n# Stuck with the Piano\n07:03 واضح حالياً إنهم مش حابين البيانو\n07:05 طيب البيانو شو أعمل فيه المحل اللي اشتريته منه ما عنده ترجيع\n07:14 سالي سالي\n07:17 سالي سي شارب لا بي ميجر سيفن\n\n# Musical Nightmares\n07:20 سالي شو مالك\n07:22 أبوي جاب لنا بيانو وأستاذ موسيقى\n07:25 صرت عم بسمع النوتات بأحلامي\n07:27 بيانو طول عمرك بتحكي إنك بدك تتعلمي آلة موسيقية\n07:31 توقعتك تكوني متحمسة\n\n# Pressure and Motivation\n07:33 صح بس هو فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم\n07:39 الموضوع مش حلو لما يكون بالغصب\n07:42 إذا بدك رأيي بما إنك بلشتي كملي\n07:46 بعدين بنعمل فرقة موسيقية أنا على الجيتار وأنتي على البيانو\n07:51 وبنسمي فرقتنا رنوش وسالي\n07:53 أو إذا بدك سالي ورنوش\n\n# The French Horn Performance\n07:59 في العرض الموسيقي اليوم راح أعزف لكم مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن\n08:06 هاي الآلة تعلمتها الأسبوع الماضي ومن بعدها اختاروني أكون جزء من أوركسترا عمان للشباب\n08:17 وأخيراً ما أحلى الهدوء\n08:26 مين عمل هيك\n\n# Haggling with Ata\n08:38 عطا شو قلت\n08:40 باخده بربع السعر اللي أنت عارضه فيه\n08:43 بربع السعر يا زلمة كيف يعني\n08:46 هذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون عاليمين شوف\n\n# The \"Broken\" Piano\n08:51 البيانو هيك عطا\n08:53 لا شو بتفكرني يا بيلة\n08:55 أنا طول عمري وأنا بشتغل بالانتيكات\n08:58 هدول الأزرار لازم يكونوا كلهم نفس الصوت شو بتتهبل علي\n\n# No Deal\n09:02 ها شو قلت هسا موافق بربع السعر\n09:05 لا بطلت أبيع\n09:07 أبو سند ما راح تلاقي زبون مثلي\n09:10 يا عمي هذا خربان خربان\n09:14 يا اخوان مش أنا معي حق البيانو خربان ولا لا اكتبولي بالتعليقات أشوف\n\n# Trying the Drums\n09:22 هذا إذا اشترينا له درمز صدقيني غير يطلعونا الجيران من العمارة\n09:31 حبيبي سند شو رأيك تجرب آلة تانية غير الدرمز\n09:34 لا ماما حبيته كثير\n09:38 انتبهي كثير عليك الكونترا باص\n09:41 بس أنا حبيته\n\n# Focus and Hobby\n09:47 بابا ممكن توطي الصوت شوي مش قادرة أسمع الفيديو\n09:51 الموسيقى أهم كثير من اللي بتعمله على موبايلك\n09:55 صفي ذهنك شوي روق\n09:57 أبوكم معه حق الموسيقى هواية رائعة\n\n# The Sudden Surprise\n10:00 بس بابا أنت فاجأتنا بموضوع البيانو\n10:03 آه بابا ولا مرة فتحت موضوع الموسيقى والعزف معنا أبداً\n10:07 وفجأة ما شفنا إلا البيانو عنا بالبيت ومعاه الأستاذ بديع\n10:11 استنوا استنوا تشوفوا المفاجأة اللي محضر لكم اياها هلا\n\n# The Concert Tickets\n10:16 كمان مفاجأة\n10:18 أبوكم حجز لنا تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي\n10:23 كونسيرت راب ولا هيب هوب\n10:35 شايفين حبايبي أنا كل حياتي موسيقى ومش أي موسيقى موسيقى كلاسيكية\n\n# High Culture\n10:43 أرقى أنواع الموسيقى زي زي لولو\n10:47 صمت لو سمحتي\n11:03 يمكن أنا غلطت حاسس بالذنب\n11:06 كنت أناني وحابب أفتخر فيهم وفرضت عليهم شي ما بيحبوه\n\n# Reflecting on Parenting\n11:10 ما تلوم حالك كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد\n11:17 خلص راح أبيع البيانو لعطا\n11:20 الله يعيني على هالخسارة\n11:35 سوري بابا أنا صحيتك\n11:37 لا بابا كملي كملي\n\n# A Change of Heart\n11:41 أنا بحلم دينا وقرصيني\n11:57 مش راح أسمحلك تاخد البيانو كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل\n12:04 الاتفاق اتفاق يا أم سند آه\n12:06 أولي بالك يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي\n12:13 ما في بيع ما راح نبيع شي",
+    "similar_sounds": "استنوا استنوا تشوفوا المفاجأة\nاللي [حاضر] لكم اياها هلا\nكمان مفاجأة\nمين مفكر حاله هذا الولد\nوكل يوم بده [يطعمنا] بآلة جديدة\nخلص زودها\nجد شو هذا\nكثير [مزيج]\nخلص ما يلاقي على موبايله\nزي الناس [طبيعية]\nويفك عنا شوي\nواو أنت [خيالي]\nطيب شو الآلات التانية اللي بتعزف عليها\nشو ما بدك\nبعرف أعزف على كل الآلات\nأنا [مطلوب] بالفطرة\nاسمع بكره بجيب معي [الشهادة]\nيا الله دق على [غربي]\nلازم ألاقي حل للموسيقى اللي ما عم [تخلص]\nالموضوع عندي\nما شاء الله ما شاء الله\nكيف [تعمل] العزف\nصدق يا أبو سند\nجبتله بيانو عالبيت\nوجبتله [استعاذ]\nوصارله سنة [يتدبر]\nالله يخليلك اياه\nموهوب ما شاء الله\nتسلم يا أبو سند\nالله يخليلك [بلادك]\nشو بيعزفوا\nفي حدا منهم بيعزف بيانو\nها لا\nصراحة لسه ما بلشوا\nلازم يا أبو سند تعلم ولادك يعزفوا آلة موسيقية\n[الأبحار] بتقول إنه الموسيقى بتفتح الذهن\nوبتساعدهم دراسياً\nخاصة بالرياضيات\nوهيك يا أبو سند\nبنكون خلصنا شغل [ظريف] نظيف\nومن الآخر\nهينا وصلنا لك [البيانو]\nقصدي البانيو نوتة نوتة\nوسلامة خيرك يا أبو سند\nالحساب بس 50 ليرة\nمشان عيونك بس\nأوف 50\nليش\nحبيبي ايش حبيبي\nما هو 10 ليرات [تصيل]\nو40 ليرة للدكتور اللي بده ياخد بدل علاج طبيعي\nآخ يا [سحري]\nتفضل\nشو هادا\nجبت للأولاد بيانو\nبيانو\nآه جبته لقطة من محل مستعمل\nشو ليش اشتريته\nهذا كثير [عالي]\nلا تخافي لقطة\nالأولاد لازم [يتكلموا] العزف\nأي في أحلى من الموسيقى\nسالي سند تعالوا بابا\nشوفوا شو جبتلكم\nشو رأيكم\nواو بيانو\n[مبروك] سالي\nهذا إلك ولسالي\nبدي اياكم انتو الاثنين تتعلموا العزف\nبابا طب أنا ما بحب البيانو\nالبيانو أصلاً للشباب مش للبنات\nصحيح دينا البيانو للشباب\nما بعرف\nبالعكس بابا البيانو مناسب أكثر للبنات\nأي في حدا ما بيحب البيانو\nسند شوف مين عالبيت\nمرحبا بديع\nايش هو اللي بديع\nأنا أنا بديع\nأستاذ البيانو البديع\nتفضل تفضل أستاذ بديع\n[زوجي] أم سند وهدول ولادي سند وسالي\nأهلاً وسهلاً تشرفنا أستاذ\nالأستاذ بديع راح يعطيكم يا سالي وسند دروس الموسيقى من يوم وطالع\nالميجر سكيل هو\nدو ري مي فا صول لا سي دو\nخلونا نشوف الكوردات اللي ممكن نشتقها من هذا السكيل\nأول كورد هو دو ميجر\nدو ومي و صول\nاوكي سند\nسند [عيد] معي\nاوكي\nصول لا سي دو ري مي دو\nواضح إنكم تعبتوا\nناخد فاصل ونواصل\nاوكي اوكي احنا هون\nطمنوني كيف دروس البيانو لحد هلا\nبابا زهقنا ممل كثير الدروس وصعبة\nما هو حضرتك ما بيعجبك إلا فيديو الجيمز والتلفون اللي ماخد كل وقتك\nآه بابا سالي انتي شو رأيك بالدروس حبيتي هم\nكثير مملة\nيعني خليتوني أشتري البيانو عالفاضي\nيعني شو ناقصهم للأولاد\nليش أبو غسان يطلع ابنه موسيقي ويفتخر فيه\nعصام انت بدك اياهم يتعلموا عشان انت تفتخر فيهم\nأو عشان يتعلموا شي جديد يحبوه ومفيد الهم\nالاثنين قديش حلو إذا عملنا عزومة عنا بالبيت\nوسند عزف قدام الناس\nولا شو في أحلى من إنه نروح نحضر كونسيرت وتكون سالي العازفة الرئيسية\nلازم أخليهم يتعلموا الموسيقى لازم\nبرأيي نستشير الأستاذ بديع\nأنا وأنت ما عنا خبرة بالمرة بهالموضوع\nأستاذ بديع أهلاً أهلاً تفضل تفضل\nشكراً يزيد فضلك\nعلى حد علمي ما في دروس اليوم\nالدرس اليوم للولو\nعطا حكالي إنكم اشتريتوا بيانو وبالوقت المناسب\nلأنه خلصت الأفكار عندي لمحتوى جديد للفولورز تبعوني\nوأنتو أنقذتوني\nتعال حبيبي أبو انصاف راح يكون المصور الخاص تبعي\nاجيت والله جابك أنا وأم سند بدنا اياك باستشارة\nأبو انصاف هاي البيانو بالقعدة شو رأيك تحمي شوي\nاعزفي لك مقطوعة\nاعتبرنا مش هون ما تقلق فينا\nهاي حبايبي الحلوين أنا اليوم قررت أتعلم عزف البيانو\nالحقيقة أنا كل عمري بحب الموسيقى والثقافة والفن\nوراح أبلش أتعلم بيانو معكم متابعيني حبايبي الحلوين\nأبو انصاف كفي خلص دوشتينا\nيا عليكي يا أبو انصاف\nهذا شكله مؤلف المقطوعة ملخبط في شي غلط فيها لاحظت\nبتعرفي شو الغلط الغلط إنه احنا خليناكي تقربي عالبيانو من الأساس\nبكره بتشوف أبو انصاف كيف موهبة لولو راح تتطور وراح توصل للعالمية\nوكل المشاهير راح يجوا يشوفوني من كل العالم\nممكن نحاول معهم أكثر من مرة حتى لو ما كان بدهم في البداية\nكمان المفروض تحضروهم للموضوع وتخلوا الموسيقى جزء من حياتهم اليومية\nيعني في أمل يتعلموا\nالأفضل تاخدهم معك على محل الموسيقى وتتركهم هم يجربوا أكثر من آلة\nواضح حالياً إنهم مش حابين البيانو\nطيب البيانو شو أعمل فيه المحل اللي اشتريته منه ما عنده ترجيع\nسالي سالي\nسالي سي شارب لا بي ميجر سيفن\nسالي شو مالك\nأبوي جاب لنا بيانو وأستاذ موسيقى\nصرت عم بسمع النوتات بأحلامي\nبيانو طول عمرك بتحكي إنك بدك تتعلمي آلة موسيقية\nتوقعتك تكوني متحمسة\nصح بس هو فاجأنا بالموضوع وعم بضغط علينا كثير إنه نتعلم\nالموضوع مش حلو لما يكون بالغصب\nإذا بدك رأيي بما إنك بلشتي كملي\nبعدين بنعمل فرقة موسيقية أنا على الجيتار وأنتي على البيانو\nوبنسمي فرقتنا رنوش وسالي\nأو إذا بدك سالي ورنوش\nفي العرض الموسيقي اليوم راح أعزف لكم مقطوعة كلاسيكية من القرن السابع عشر على الفرنش هورن\nهاي الآلة تعلمتها الأسبوع الماضي ومن بعدها اختاروني أكون جزء من أوركسترا عمان للشباب\nوأخيراً ما أحلى الهدوء\nمين عمل هيك\nعطا شو قلت\nباخده بربع السعر اللي أنت عارضه فيه\nبربع السعر يا زلمة كيف يعني\nهذا الصوت خربان اسمع كيف الصوت بصير كل ما أحط ايدي هون [عالشمال] شوف\nالبيانو هيك عطا\nلا شو بتفكرني يا بيلة\nأنا طول عمري وأنا بشتغل بالانتيكات\nهدول الأزرار لازم يكونوا كلهم نفس الصوت شو بتتهبل علي\nها شو قلت هسا موافق بربع السعر\nلا بطلت أبيع\nأبو سند ما راح تلاقي زبون مثلي\nيا عمي هذا خربان خربان\nيا اخوان مش أنا معي حق البيانو خربان ولا لا اكتبولي بالتعليقات أشوف\nهذا إذا اشترينا له درمز صدقيني غير يطلعونا الجيران من العمارة\nحبيبي سند شو رأيك تجرب آلة تانية غير الدرمز\nلا ماما حبيته كثير\nانتبهي كثير عليك الكونترا باص\nبس أنا حبيته\nبابا ممكن توطي الصوت شوي مش قادرة أسمع الفيديو\nالموسيقى أهم كثير من اللي بتعمله على موبايلك\nصفي ذهنك شوي روق\nأبوكم معه حق الموسيقى هواية رائعة\nبس بابا أنت فاجأتنا بموضوع البيانو\nآه بابا ولا مرة فتحت موضوع الموسيقى والعزف معنا أبداً\nوفجأة ما شفنا إلا البيانو عنا بالبيت ومعاه الأستاذ بديع\nاستنوا استنوا تشوفوا المفاجأة اللي محضر لكم اياها هلا\nكمان مفاجأة\nأبوكم حجز لنا تذاكر نحضر كونسيرت موسيقي في المعهد الثقافي\nكونسيرت راب ولا هيب هوب\nشايفين حبايبي أنا كل حياتي موسيقى ومش أي موسيقى موسيقى كلاسيكية\nأرقى أنواع الموسيقى زي زي لولو\n[سمت] لو سمحتي\nيمكن أنا غلطت حاسس بالذنب\nكنت أناني وحابب أفتخر فيهم وفرضت عليهم شي ما بيحبوه\nما تلوم حالك كثير على الأقل جربت وضغطت عليهم بشي كان ممكن يكون إيجابي ومفيد\nخلص راح أبيع البيانو لعطا\nالله يعيني على هالخسارة\nسوري بابا أنا صحيتك\nلا بابا كملي كملي\nأنا بحلم دينا وقرصيني\nمش راح أسمحلك تاخد البيانو كيف يا أم سند بدكم تبيعوا البيانو وأنا شو بدي أعمل\nالاتفاق اتفاق يا أم سند آه\nأولي بالك يا أم انصاف ما راح نختلف أنا واياكي ببيعك اياه بسعر تفضيلي شو قلتي\nما في بيع ما راح نبيع شي"
+  },
+  "created_at": "2026-03-07 19:04:21 UTC",
+  "updated_at": "2026-03-07 20:12:49 UTC",
+  "exported_at": "2026-03-07T20:12:50Z"
+}

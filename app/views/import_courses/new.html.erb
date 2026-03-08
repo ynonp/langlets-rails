@@ -1,0 +1,156 @@
+<% content_for :title, "Import Courses" %>
+
+<div class="min-h-screen bg-slate-900 text-slate-100">
+  <header class="py-6 border-b border-slate-700/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <%= link_to courses_path, class: "text-2xl font-bold text-slate-100 tracking-tight hover:text-blue-400 transition-colors" do %>
+        ← Langlets
+      <% end %>
+      <h1 class="text-xl font-semibold text-slate-200">Import Courses</h1>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-slate-800 rounded-xl shadow-lg border border-slate-700 p-8">
+      
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-slate-100 mb-2">Import Courses from JSON</h2>
+        <p class="text-slate-400">Upload one or more JSON files exported from the course creation process.</p>
+      </div>
+
+      <% if flash[:alert] %>
+        <div class="mb-6 p-4 bg-red-900/50 border border-red-500 rounded-lg">
+          <p class="text-red-300"><%= flash[:alert] %></p>
+        </div>
+      <% end %>
+
+      <%= form_with url: import_courses_path, local: true, multipart: true, class: "space-y-6" do |form| %>
+        
+        <div>
+          <%= form.label :files, "JSON Files", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+          <%= form.file_field :files, 
+                multiple: true,
+                accept: ".json,application/json",
+                class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:font-semibold file:cursor-pointer hover:file:bg-blue-700" %>
+          <p class="text-xs text-slate-400 mt-1">Select one or more JSON files. Each file should contain course data from a previous export.</p>
+        </div>
+
+        <div class="border-t border-slate-700 pt-6 mt-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-semibold text-slate-200">Learning Path (Optional)</h3>
+            <label class="flex items-center cursor-pointer">
+              <%= form.check_box :create_learning_path, 
+                    class: "w-5 h-5 rounded border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    id: "create_learning_path_checkbox"
+              %>
+              <span class="ml-2 text-sm text-slate-300">Create learning path</span>
+            </label>
+          </div>
+
+          <div id="learning-path-fields" class="hidden space-y-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <%= form.label :learning_path_name, "Name *", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+                <%= form.text_field :learning_path_name,
+                      class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                      placeholder: "e.g., Arabic for Beginners",
+                      id: "learning_path_name_field"
+                %>
+              </div>
+
+              <div>
+                <%= form.label :difficulty_level, "Difficulty Level", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+                <%= form.select :difficulty_level,
+                      options_for_select([["Beginner", 1], ["Intermediate", 2], ["Advanced", 3]]),
+                      { prompt: "Select difficulty" },
+                      { class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" }
+                %>
+              </div>
+            </div>
+
+            <div>
+              <%= form.label :learning_path_description, "Description", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+              <%= form.text_area :learning_path_description,
+                    class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                    rows: 3,
+                    placeholder: "Describe what learners will achieve in this learning path..."
+              %>
+            </div>
+
+            <p class="text-xs text-slate-400">All imported courses will be added to this learning path in the order they are processed.</p>
+          </div>
+        </div>
+
+        <div class="p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
+          <h3 class="text-blue-300 font-semibold mb-2">JSON File Format</h3>
+          <p class="text-slate-300 text-sm mb-3">Each JSON file must contain the following fields:</p>
+          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto">{
+  "youtubeurl": "https://youtube.com/watch?v=...",
+  "clip_language": "Hebrew",
+  "translation_language": "English",
+  "data": {
+    "lessons": [ ... ],
+    "phrases": [ ... ]
+  }
+}</pre>
+        </div>
+
+        <div class="p-4 bg-yellow-900/50 border border-yellow-500/50 rounded-lg">
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0">
+              <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Course Import Processing</h4>
+              <p class="text-yellow-200 text-sm mt-1">
+                Each course will be processed in the background. You'll receive an email notification when each course is ready.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-4 pt-6">
+          <%= link_to "Cancel", courses_path, class: "px-6 py-3 text-slate-400 hover:text-slate-200 font-semibold transition-colors" %>
+          <%= form.submit "Import Courses", 
+                class: "px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-800" %>
+        </div>
+
+      <% end %>
+    </div>
+  </main>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const checkbox = document.getElementById('create_learning_path_checkbox');
+    const fields = document.getElementById('learning-path-fields');
+    const nameField = document.getElementById('learning_path_name_field');
+    const form = checkbox?.closest('form');
+    
+    if (checkbox && fields) {
+      checkbox.addEventListener('change', function() {
+        if (this.checked) {
+          fields.classList.remove('hidden');
+          nameField.setAttribute('required', 'required');
+        } else {
+          fields.classList.add('hidden');
+          nameField.removeAttribute('required');
+        }
+      });
+    }
+    
+    // Form validation
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        if (checkbox && checkbox.checked) {
+          const name = nameField?.value?.trim();
+          if (!name) {
+            e.preventDefault();
+            alert('Please enter a name for the learning path, or uncheck "Create learning path".');
+            nameField?.focus();
+          }
+        }
+      });
+    }
+  });
+</script>
