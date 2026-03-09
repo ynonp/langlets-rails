@@ -22,27 +22,37 @@ test:
 
 # Store production database in the storage/ directory, which by default
 # is mounted as a persistent Docker volume in config/deploy.yml.
-
 production:
   primary:
     adapter: postgresql
     url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
+    reaping_frequency: 10
+    timeout: 5000
 
   cache:
     adapter: postgresql
     url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
     schema_search_path: "cache"
     migrations_paths: db/cache_migrate
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
+    reaping_frequency: 10
+    timeout: 5000
 
   queue:
     adapter: postgresql
     url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
     schema_search_path: "queue"
     migrations_paths: db/queue_migrate
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
+    reaping_frequency: 10
+    timeout: 5000
 
   cable:
     adapter: postgresql
     url: <%= Rails.application.credentials.dig(:db, :production, :url) %>
     schema_search_path: "cable"
     migrations_paths: db/cable_migrate
-
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS", 3).to_i + 2 %>
+    reaping_frequency: 10
+    timeout: 5000

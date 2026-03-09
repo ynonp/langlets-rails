@@ -121,36 +121,46 @@
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  function setupLearningPathToggle() {
     const checkbox = document.getElementById('create_learning_path_checkbox');
     const fields = document.getElementById('learning-path-fields');
     const nameField = document.getElementById('learning_path_name_field');
-    const form = checkbox?.closest('form');
     
-    if (checkbox && fields) {
-      checkbox.addEventListener('change', function() {
-        if (this.checked) {
-          fields.classList.remove('hidden');
-          nameField.setAttribute('required', 'required');
-        } else {
-          fields.classList.add('hidden');
-          nameField.removeAttribute('required');
-        }
-      });
-    }
+    if (!checkbox || !fields) return;
     
-    // Form validation
+    const toggleFields = () => {
+      if (checkbox.checked) {
+        fields.classList.remove('hidden');
+        nameField?.setAttribute('required', 'required');
+      } else {
+        fields.classList.add('hidden');
+        nameField?.removeAttribute('required');
+      }
+    };
+    
+    checkbox.removeEventListener('change', toggleFields);
+    checkbox.addEventListener('change', toggleFields);
+    
+    const form = checkbox.closest('form');
     if (form) {
-      form.addEventListener('submit', function(e) {
-        if (checkbox && checkbox.checked) {
-          const name = nameField?.value?.trim();
-          if (!name) {
-            e.preventDefault();
-            alert('Please enter a name for the learning path, or uncheck "Create learning path".');
-            nameField?.focus();
-          }
-        }
-      });
+      form.removeEventListener('submit', validateForm);
+      form.addEventListener('submit', validateForm);
     }
-  });
+    
+    function validateForm(e) {
+      if (checkbox.checked) {
+        const name = nameField?.value?.trim();
+        if (!name) {
+          e.preventDefault();
+          alert('Please enter a name for the learning path, or uncheck "Create learning path".');
+          nameField?.focus();
+        }
+      }
+    }
+    
+    toggleFields();
+  }
+  
+  document.addEventListener('turbo:load', setupLearningPathToggle);
+  document.addEventListener('DOMContentLoaded', setupLearningPathToggle);
 </script>
