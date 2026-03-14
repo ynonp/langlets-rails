@@ -1,8 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
-import { animate } from "motion/mini";
 
 export default class extends Controller {
-  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'completionMessage'];
+  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'startPracticeButton'];
   static classes = ['currentTextLine'];
 
   progress(ev) {
@@ -10,10 +9,10 @@ export default class extends Controller {
     this.updateSubtitles(at);
   }
 
-  handleVideoStart() {  
-    if (this.completionMessageTarget.classList.contains('hidden')) {
+  handleVideoStart() {
+    if (this.startPracticeButtonTarget.classList.contains('hidden')) {
       this.startActivityButtonTarget.classList.remove('hidden');
-    }    
+    }
   }
 
   handleVideoPause() {
@@ -21,19 +20,15 @@ export default class extends Controller {
   }
 
   handleVideoEnd() {
-    if (this.completionMessageTarget.classList.contains('hidden')) {
+    if (this.startPracticeButtonTarget.classList.contains('hidden')) {
       // Play completion sound
       this.element.dispatchEvent(new CustomEvent('audio:complete', { bubbles: true }));
-      
+
       // Award XP for watching video (10 XP for single-stage activity)
       this.awardXp(10);
-      
-      this.completionMessageTarget.classList.remove('hidden');
+
+      this.startPracticeButtonTarget.classList.remove('hidden');
       this.startActivityButtonTarget.classList.add('hidden');
-      animate(this.completionMessageTarget, 
-        { opacity: [0, 1], scale: [0.8, 1] }, 
-        { duration: 0.3, easing: 'easeOut' }
-      );
       this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }))
     }
   }
