@@ -17,9 +17,13 @@ class LessonsController < ApplicationController
     @videoid = Medium.new(url: video_url).extract_youtube_video_id
 
     current_order = params[:a].to_i
-    
+
     next_activity = @lesson.activities.where("activities.order > ?", @activity.order).order(order: :asc).first
     @course_path = course_path(@course.slug)
+
+    # Previous and next lesson navigation
+    @prev_lesson = @course.lessons.where("lessons.order < ?", @lesson.order).order(order: :desc).first
+    @next_lesson = @course.lessons.where("lessons.order > ?", @lesson.order).order(order: :asc).first
     
     @next_activity_path = if next_activity.present?
       course_lesson_path(@course, @lesson, a: next_activity.order)
