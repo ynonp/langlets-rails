@@ -25,14 +25,12 @@
     <div class="flex-1 flex justify-center">
       <div class="flex items-center min-w-min">
         <% if @prev_lesson.present? %>
-          <div class="flex items-center">
-            <%= link_to course_lesson_path(@course, @prev_lesson),
-                class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-gray-700 text-white hover:bg-gray-600",
-                title: "Previous Lesson",
-                data: { turbo_frame: 'activity' } do %>
-              «
-            <% end %>
-          </div>
+          <%= link_to course_lesson_path(@course, @prev_lesson),
+            class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative text-sm bg-gray-700 text-white hover:bg-gray-600",
+            title: "Previous Lesson",
+            data: { turbo_frame: 'activity' } do %>
+            «
+          <% end %>
         <% end %>
         <% @activities.each do |activity| %>
           <% 
@@ -61,14 +59,12 @@
           </div>
         <% end %>
         <% if @next_lesson.present? %>
-          <div class="flex items-center">
-            <%= link_to course_lesson_path(@course, @next_lesson),
-                class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-gray-700 text-white hover:bg-gray-600",
-                title: "Next Lesson",
-                data: { turbo_frame: 'activity' } do %>
-              »
-            <% end %>
-          </div>
+          <%= link_to course_lesson_path(@course, @next_lesson),
+            class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-gray-700 text-white hover:bg-gray-600",
+            title: "Next Lesson",
+            data: { turbo_frame: 'activity' } do %>
+            »
+          <% end %>
         <% end %>
       </div>
     </div>
