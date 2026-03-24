@@ -41,6 +41,10 @@ class User < ApplicationRecord
     user
   end  
 
+  def admin?
+    self.email == "ynon@hey.com"
+  end
+
   def recommended_for_me
     Course.none
   end

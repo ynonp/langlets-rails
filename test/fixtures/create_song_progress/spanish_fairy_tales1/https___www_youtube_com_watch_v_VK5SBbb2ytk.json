@@ -1,0 +1,1402 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=VK5SBbb2ytk",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "Había una vez en una tierra lejana",
+        "timestamp": "00:06",
+        "text_l2": "Once upon a time in a faraway land"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "un comerciante muy rico",
+        "timestamp": "00:08",
+        "text_l2": "a very wealthy merchant"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Este hombre tenía tres hijas jóvenes",
+        "timestamp": "00:11",
+        "text_l2": "This man had three young daughters"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "todas muy hermosas",
+        "timestamp": "00:13",
+        "text_l2": "all very beautiful"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Dos de sus hijas eran muy orgullosas",
+        "timestamp": "00:16",
+        "text_l2": "Two of his daughters were very proud"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "y consentidas",
+        "timestamp": "00:18",
+        "text_l2": "and spoiled"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Pero la hija más pequeña era muy amable",
+        "timestamp": "00:21",
+        "text_l2": "But the youngest daughter was very kind"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "y trabajadora",
+        "timestamp": "00:24",
+        "text_l2": "and hardworking"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Su belleza interior brillaba en su rostro",
+        "timestamp": "00:25",
+        "text_l2": "Her inner beauty shone on her face"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "Por eso todos la llamaban bella",
+        "timestamp": "00:28",
+        "text_l2": "That is why everyone called her Beauty"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Un día el comerciante supo que los barcos",
+        "timestamp": "00:32",
+        "text_l2": "One day the merchant learned that the ships"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "con todas sus riquezas",
+        "timestamp": "00:35",
+        "text_l2": "with all his riches"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "se habían hundido en una terrible tormenta",
+        "timestamp": "00:36",
+        "text_l2": "had sunk in a terrible storm"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Hijas mías tengo malas noticias",
+        "timestamp": "00:46",
+        "text_l2": "My daughters, I have bad news"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Ya no seremos tan ricos como antes",
+        "timestamp": "00:50",
+        "text_l2": "We will no longer be as rich as before"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "Dejaremos la ciudad",
+        "timestamp": "00:52",
+        "text_l2": "We will leave the city"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "y viviremos una vida sencilla",
+        "timestamp": "00:54",
+        "text_l2": "and live a simple life"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "en una casita junto al bosque",
+        "timestamp": "00:56",
+        "text_l2": "in a little house by the forest"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Bella sintió mucha pena por su padre",
+        "timestamp": "01:00",
+        "text_l2": "Beauty felt very sorry for her father"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "y lo consoló",
+        "timestamp": "01:02",
+        "text_l2": "and comforted him"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Pero las otras dos hermanas se quejaron",
+        "timestamp": "01:04",
+        "text_l2": "But the other two sisters complained"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "todo el día",
+        "timestamp": "01:06",
+        "text_l2": "all day long"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Una mañana el padre escuchó que uno de los barcos",
+        "timestamp": "01:08",
+        "text_l2": "One morning the father heard that one of the ships"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "hundidos había llegado al puerto",
+        "timestamp": "01:11",
+        "text_l2": "that had sunk had arrived at the port"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Dañado pero flotando",
+        "timestamp": "01:13",
+        "text_l2": "Damaged but floating"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "Escuché que quedan algunas cosas",
+        "timestamp": "01:15",
+        "text_l2": "I heard that some things remain"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "para salvar del barco",
+        "timestamp": "01:17",
+        "text_l2": "to be saved from the ship"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Voy al puerto",
+        "timestamp": "01:18",
+        "text_l2": "I am going to the port"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "¿Qué quieren que les traiga cuando regrese?",
+        "timestamp": "01:19",
+        "text_l2": "What do you want me to bring you when I return?"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Un anillo de diamantes",
+        "timestamp": "01:22",
+        "text_l2": "A diamond ring"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "una piedra de rubí",
+        "timestamp": "01:23",
+        "text_l2": "a ruby stone"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "una pulsera de oro",
+        "timestamp": "01:25",
+        "text_l2": "a gold bracelet"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "¡Guau!",
+        "timestamp": "01:27",
+        "text_l2": "Wow!"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Pero la más joven y bondadosa Bella",
+        "timestamp": "01:29",
+        "text_l2": "But the youngest and kindest, Beauty,"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "no le pidió nada a su padre",
+        "timestamp": "01:31",
+        "text_l2": "did not ask her father for anything"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "No tú también debes pedir algo",
+        "timestamp": "01:33",
+        "text_l2": "No, you must also ask for something"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Una rosa papá",
+        "timestamp": "01:36",
+        "text_l2": "A rose, Papa"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "solo tráeme una rosa",
+        "timestamp": "01:37",
+        "text_l2": "just bring me a rose"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "Así que su padre partió en el largo viaje",
+        "timestamp": "01:40",
+        "text_l2": "So her father set out on the long journey"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Cuando llegó al puerto vio que todo en el barco",
+        "timestamp": "01:45",
+        "text_l2": "When he arrived at the port he saw that everything on the ship"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "había sido robado",
+        "timestamp": "01:47",
+        "text_l2": "had been stolen"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "y no quedaba nada",
+        "timestamp": "01:48",
+        "text_l2": "and nothing remained"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "Se puso muy triste",
+        "timestamp": "01:50",
+        "text_l2": "He became very sad"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "De regreso a casa tuvo que pasar",
+        "timestamp": "01:53",
+        "text_l2": "On the way back home he had to pass"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "por un bosque oscuro y frío",
+        "timestamp": "01:55",
+        "text_l2": "through a dark and cold forest"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Los relámpagos brillaban en el cielo",
+        "timestamp": "01:58",
+        "text_l2": "Lightning flashed in the sky"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "y el viento aullaba tan fuerte",
+        "timestamp": "02:00",
+        "text_l2": "and the wind howled so loudly"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "que parecía poder tumbar los árboles",
+        "timestamp": "02:02",
+        "text_l2": "that it seemed it could knock down the trees"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "El pobre hombre buscó un refugio",
+        "timestamp": "02:05",
+        "text_l2": "The poor man looked for a shelter"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "para protegerse a él y a su caballo",
+        "timestamp": "02:06",
+        "text_l2": "to protect himself and his horse"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "Tenía tanto frío y estaba tan asustado",
+        "timestamp": "02:10",
+        "text_l2": "He was so cold and so scared"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "que habría dado lo que fuera",
+        "timestamp": "02:13",
+        "text_l2": "that he would have given anything"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "por descansar un momento",
+        "timestamp": "02:14",
+        "text_l2": "to rest for a moment"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "En ese momento vio un castillo magnífico",
+        "timestamp": "02:16",
+        "text_l2": "At that moment he saw a magnificent castle"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "con luces brillantes entre los árboles",
+        "timestamp": "02:18",
+        "text_l2": "with bright lights among the trees"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Asombrado el hombre entró",
+        "timestamp": "02:21",
+        "text_l2": "Amazed, the man entered"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "por las enormes puertas del castillo",
+        "timestamp": "02:23",
+        "text_l2": "through the enormous castle gates"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "¿Hay alguien aquí?",
+        "timestamp": "02:27",
+        "text_l2": "Is anyone here?"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "No había nadie",
+        "timestamp": "02:31",
+        "text_l2": "There was no one"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "pero el interior del castillo estaba extrañamente",
+        "timestamp": "02:33",
+        "text_l2": "but the interior of the castle was strangely"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "iluminado y cálido",
+        "timestamp": "02:35",
+        "text_l2": "lit and warm"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "La gran mesa del comedor estaba llena",
+        "timestamp": "02:38",
+        "text_l2": "The large dining table was full"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "de comida deliciosa y humeante",
+        "timestamp": "02:40",
+        "text_l2": "of delicious and steaming food"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "El pobre hombre llevaba días con hambre",
+        "timestamp": "02:44",
+        "text_l2": "The poor man had been hungry for days"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "así que no pudo resistirse al ver la comida",
+        "timestamp": "02:46",
+        "text_l2": "so he could not resist when he saw the food"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "Comió y llenó su estómago vacío",
+        "timestamp": "02:49",
+        "text_l2": "He ate and filled his empty stomach"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "Mientras caminaba por el castillo",
+        "timestamp": "02:52",
+        "text_l2": "While he walked through the castle"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "encontró un dormitorio vacío",
+        "timestamp": "02:54",
+        "text_l2": "he found an empty bedroom"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Parecía que había sido preparado especialmente",
+        "timestamp": "02:56",
+        "text_l2": "It seemed that it had been prepared especially"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "para él",
+        "timestamp": "02:58",
+        "text_l2": "for him"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "Esa noche se acostó y durmió muy bien",
+        "timestamp": "03:00",
+        "text_l2": "That night he lay down and slept very well"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "A la mañana siguiente al despertar",
+        "timestamp": "03:09",
+        "text_l2": "The next morning upon waking up"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "encontró ropa nueva y limpia esperándolo",
+        "timestamp": "03:11",
+        "text_l2": "he found new and clean clothes waiting for him"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "Pensó que el castillo debía pertenecer",
+        "timestamp": "03:15",
+        "text_l2": "He thought that the castle must belong"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "a un hada bondadosa",
+        "timestamp": "03:17",
+        "text_l2": "to a kind fairy"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "y deseó poder darle las gracias",
+        "timestamp": "03:18",
+        "text_l2": "and wished he could thank her"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "Cuando estaba por salir del castillo",
+        "timestamp": "03:22",
+        "text_l2": "When he was about to leave the castle"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "vio las hermosas rosas del jardín",
+        "timestamp": "03:24",
+        "text_l2": "he saw the beautiful roses in the garden"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "Tomó con cuidado la rosa más hermosa",
+        "timestamp": "03:27",
+        "text_l2": "He carefully took the most beautiful rose"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "Y en ese instante se escuchó un rugido fuerte",
+        "timestamp": "03:32",
+        "text_l2": "And in that instant a loud roar was heard"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "que hizo temblar la tierra",
+        "timestamp": "03:35",
+        "text_l2": "that made the earth tremble"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "De detrás de los árboles apareció una bestia",
+        "timestamp": "03:42",
+        "text_l2": "From behind the trees a beast appeared"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "Se veía aterradora pero también muy triste",
+        "timestamp": "03:45",
+        "text_l2": "He looked terrifying but also very sad"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "El hombre estaba tan asustado",
+        "timestamp": "03:49",
+        "text_l2": "The man was so scared"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "que no sabía qué hacer",
+        "timestamp": "03:50",
+        "text_l2": "that he did not know what to do"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "La bestia caminó hacia él",
+        "timestamp": "03:52",
+        "text_l2": "The beast walked toward him"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "Te di comida y me aseguré",
+        "timestamp": "03:54",
+        "text_l2": "I gave you food and I made sure"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "de que durmieras seguro",
+        "timestamp": "03:56",
+        "text_l2": "that you slept safely"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "Y tú cortaste mis rosas favoritas",
+        "timestamp": "03:57",
+        "text_l2": "And you cut my favorite roses"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "¿Cómo pudiste dañar una flor?",
+        "timestamp": "04:00",
+        "text_l2": "How could you damage a flower?"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "Así es como me das las gracias",
+        "timestamp": "04:02",
+        "text_l2": "This is how you thank me"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "Por favor perdóname",
+        "timestamp": "04:05",
+        "text_l2": "Please forgive me"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "yo solo tomé una sola rosa",
+        "timestamp": "04:06",
+        "text_l2": "I only took a single rose"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "Pero la bestia seguía muy enojada",
+        "timestamp": "04:11",
+        "text_l2": "But the beast was still very angry"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "Hay un precio por lo que hiciste",
+        "timestamp": "04:14",
+        "text_l2": "There is a price for what you did"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "De camino a casa debes traerme",
+        "timestamp": "04:16",
+        "text_l2": "On your way home you must bring me"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "a la primera persona que encuentres",
+        "timestamp": "04:18",
+        "text_l2": "the first person you meet"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "Si no tendré que encerrarte",
+        "timestamp": "04:21",
+        "text_l2": "If not I will have to lock you up"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "en el calabozo para siempre",
+        "timestamp": "04:23",
+        "text_l2": "in the dungeon forever"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "El hombre comenzó su viaje de regreso a casa",
+        "timestamp": "04:30",
+        "text_l2": "The man began his journey back home"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "con mucha tristeza",
+        "timestamp": "04:32",
+        "text_l2": "with much sadness"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "Cuando llegó a casa vio que solo Bella",
+        "timestamp": "04:35",
+        "text_l2": "When he arrived home he saw that only Beauty"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "lo esperaba en la puerta preocupada",
+        "timestamp": "04:37",
+        "text_l2": "was waiting for him at the door, worried"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "Y fue con ella con quien cruzó la mirada primero",
+        "timestamp": "04:39",
+        "text_l2": "And it was with her that he first locked eyes"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "Entonces le contó llorando",
+        "timestamp": "04:44",
+        "text_l2": "Then he told her, crying"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "todo lo que había pasado",
+        "timestamp": "04:46",
+        "text_l2": "everything that had happened"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "y la terrible petición de la bestia",
+        "timestamp": "04:48",
+        "text_l2": "and the beast's terrible request"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "Cuando las otras hermanas lo escucharon",
+        "timestamp": "04:50",
+        "text_l2": "When the other sisters heard it"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "se enojaron mucho con Bella",
+        "timestamp": "04:52",
+        "text_l2": "they got very angry with Beauty"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "Si no le hubieras pedido una rosa papá",
+        "timestamp": "04:56",
+        "text_l2": "If you hadn't asked Papa for a rose"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "nada de esto nos habría pasado",
+        "timestamp": "04:58",
+        "text_l2": "none of this would have happened to us"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "Pero ¿y si yo hubiera sido la primera",
+        "timestamp": "05:00",
+        "text_l2": "But what if I had been the first"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "en mirar a mi padre a los ojos?",
+        "timestamp": "05:02",
+        "text_l2": "to look my father in the eyes?"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "Sí y entonces ¿qué habría pasado?",
+        "timestamp": "05:04",
+        "text_l2": "Yes, and then what would have happened?"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "Se suponía que yo me entregaría a una bestia",
+        "timestamp": "05:09",
+        "text_l2": "I was supposed to give myself up to a beast"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "Papá lo siento mucho",
+        "timestamp": "05:12",
+        "text_l2": "Papa, I am so sorry"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "Haré todo lo que pueda",
+        "timestamp": "05:14",
+        "text_l2": "I will do everything I can"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "para que no te lleven prisionero",
+        "timestamp": "05:15",
+        "text_l2": "so that they don't take you prisoner"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "El hombre llevó a Bella con él",
+        "timestamp": "05:18",
+        "text_l2": "The man took Beauty with him"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "y fueron al castillo de la bestia",
+        "timestamp": "05:19",
+        "text_l2": "and they went to the beast's castle"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "tal como había prometido",
+        "timestamp": "05:21",
+        "text_l2": "just as he had promised"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "Entraron al comedor y se sentaron a la mesa",
+        "timestamp": "05:23",
+        "text_l2": "They entered the dining room and sat at the table"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "En ese momento se escuchó otra vez",
+        "timestamp": "05:27",
+        "text_l2": "At that moment there was heard again"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "el mismo rugido terrible",
+        "timestamp": "05:28",
+        "text_l2": "the same terrible roar"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "y la bestia entró en la sala",
+        "timestamp": "05:31",
+        "text_l2": "and the beast entered the room"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "Bella tembló de miedo",
+        "timestamp": "05:36",
+        "text_l2": "Beauty trembled with fear"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "Comieron en silencio durante un rato",
+        "timestamp": "05:39",
+        "text_l2": "They ate in silence for a while"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "Pronto tu padre dejará mi castillo",
+        "timestamp": "05:42",
+        "text_l2": "Soon your father will leave my castle"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "y tú te quedarás aquí",
+        "timestamp": "05:49",
+        "text_l2": "and you will stay here"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "por tu propia voluntad Bella",
+        "timestamp": "05:50",
+        "text_l2": "of your own free will, Beauty"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "Sí me quedaré en este castillo",
+        "timestamp": "05:54",
+        "text_l2": "Yes, I will stay in this castle"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "por mi propia voluntad",
+        "timestamp": "05:57",
+        "text_l2": "of my own free will"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "Entonces Bella abrazó a su padre por última vez",
+        "timestamp": "05:59",
+        "text_l2": "Then Beauty hugged her father for the last time"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "y lo envió de regreso a casa",
+        "timestamp": "06:02",
+        "text_l2": "and sent him back home"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "Después caminó por el castillo",
+        "timestamp": "06:09",
+        "text_l2": "Afterward she walked through the castle"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "y vio una puerta cubierta de rosas",
+        "timestamp": "06:11",
+        "text_l2": "and saw a door covered in roses"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "Curiosa entró",
+        "timestamp": "06:14",
+        "text_l2": "Curious, she entered"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "Había un piano a un lado",
+        "timestamp": "06:17",
+        "text_l2": "There was a piano on one side"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "un columpio al otro",
+        "timestamp": "06:18",
+        "text_l2": "a swing on the other"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "un enorme estantería y miles de libros",
+        "timestamp": "06:21",
+        "text_l2": "a huge bookshelf and thousands of books"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "La habitación era exactamente",
+        "timestamp": "06:24",
+        "text_l2": "The room was exactly"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "como la de sus sueños",
+        "timestamp": "06:26",
+        "text_l2": "like the one in her dreams"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "Sobre la mesa vio una nota pequeña",
+        "timestamp": "06:27",
+        "text_l2": "On the table she saw a small note"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "y la leyó",
+        "timestamp": "06:29",
+        "text_l2": "and read it"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "Sí mi querida reina",
+        "timestamp": "06:32",
+        "text_l2": "Yes, my dear queen"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "siempre quiero verte feliz",
+        "timestamp": "06:35",
+        "text_l2": "I always want to see you happy"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "tus deseos son mi orden",
+        "timestamp": "06:37",
+        "text_l2": "your wishes are my command"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "Bella pensó que quería ver a su padre",
+        "timestamp": "06:40",
+        "text_l2": "Beauty thought that she wanted to see her father"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "una vez más",
+        "timestamp": "06:42",
+        "text_l2": "once more"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "Luego bajó para cenar",
+        "timestamp": "06:45",
+        "text_l2": "Then she went down for dinner"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "Después de un rato la bestia también entró",
+        "timestamp": "06:48",
+        "text_l2": "After a while the beast also entered"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "en el salón",
+        "timestamp": "06:50",
+        "text_l2": "the hall"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "¿Puedo acompañarte en la cena",
+        "timestamp": "06:53",
+        "text_l2": "May I join you for dinner"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "de esta noche Bella?",
+        "timestamp": "06:55",
+        "text_l2": "tonight, Beauty?"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "Tú eres el dueño de este castillo",
+        "timestamp": "06:57",
+        "text_l2": "You are the owner of this castle"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "¿Por qué me preguntas?",
+        "timestamp": "06:59",
+        "text_l2": "Why do you ask me?"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "Come lo que quieras",
+        "timestamp": "07:01",
+        "text_l2": "Eat whatever you want"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "No tú eres el señor de este lugar",
+        "timestamp": "07:04",
+        "text_l2": "No, you are the lord of this place"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "Si quieres puedo irme",
+        "timestamp": "07:06",
+        "text_l2": "If you want I can leave"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "Mi presencia incluso podría molestarte",
+        "timestamp": "07:10",
+        "text_l2": "My presence might even bother you"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "Bella se sorprendió mucho por la respuesta",
+        "timestamp": "07:14",
+        "text_l2": "Beauty was very surprised by the response"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "de la bestia y no supo qué decir",
+        "timestamp": "07:16",
+        "text_l2": "of the beast and did not know what to say"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "Ojalá nos hubiéramos casado",
+        "timestamp": "07:21",
+        "text_l2": "I wish we had married"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "y vivido una vida feliz juntos",
+        "timestamp": "07:23",
+        "text_l2": "and lived a happy life together"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "Nunca me casaré contigo",
+        "timestamp": "07:28",
+        "text_l2": "I will never marry you"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "La bestia salió de la sala muy triste",
+        "timestamp": "07:31",
+        "text_l2": "The beast left the room very sad"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "Los días fueron pasando uno tras otro",
+        "timestamp": "07:34",
+        "text_l2": "The days went passing one after another"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "A pesar de todo la bestia preparaba cenas",
+        "timestamp": "07:38",
+        "text_l2": "Despite everything the beast prepared dinners"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "deliciosas para Bella cada noche",
+        "timestamp": "07:40",
+        "text_l2": "delicious for Beauty every night"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "y la trataba con mucha bondad",
+        "timestamp": "07:43",
+        "text_l2": "and treated her with much kindness"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "Con el paso de los días Bella se dio cuenta",
+        "timestamp": "07:47",
+        "text_l2": "With the passing of the days Beauty realized"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "de que se había acostumbrado a la bestia",
+        "timestamp": "07:49",
+        "text_l2": "that she had grown used to the beast"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "y disfrutaba hablar con él",
+        "timestamp": "07:51",
+        "text_l2": "and enjoyed talking with him"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "Ya no le tenía miedo",
+        "timestamp": "07:58",
+        "text_l2": "She was no longer afraid of him"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "De hecho ahora estaba segura",
+        "timestamp": "08:01",
+        "text_l2": "In fact now she was sure"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "de que tenía un buen corazón",
+        "timestamp": "08:03",
+        "text_l2": "that he had a good heart"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "Sabes extraño mucho a mi padre",
+        "timestamp": "08:11",
+        "text_l2": "You know, I miss my father very much"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "Quiero visitarlo por un tiempo",
+        "timestamp": "08:14",
+        "text_l2": "I want to visit him for a while"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "La bestia se puso muy triste al escuchar",
+        "timestamp": "08:16",
+        "text_l2": "The beast became very sad upon hearing"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "su petición",
+        "timestamp": "08:18",
+        "text_l2": "her request"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "Claro que puedes ir",
+        "timestamp": "08:19",
+        "text_l2": "Of course you can go"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "pero ¿prometes regresar conmigo?",
+        "timestamp": "08:21",
+        "text_l2": "but do you promise to return to me?"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "Sí regresaré en tres días",
+        "timestamp": "08:23",
+        "text_l2": "Yes, I will return in three days"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "Lo prometo",
+        "timestamp": "08:26",
+        "text_l2": "I promise"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "Entonces la bestia le dio un anillo mágico",
+        "timestamp": "08:28",
+        "text_l2": "Then the beast gave her a magic ring"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "Toma esto",
+        "timestamp": "08:34",
+        "text_l2": "Take this"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "Cuando te quites el anillo",
+        "timestamp": "08:35",
+        "text_l2": "When you take off the ring"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "aparecerás de nuevo en este castillo",
+        "timestamp": "08:37",
+        "text_l2": "you will appear again in this castle"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "Bella se puso el anillo y fue a visitar",
+        "timestamp": "08:39",
+        "text_l2": "Beauty put on the ring and went to visit"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "a su padre",
+        "timestamp": "08:41",
+        "text_l2": "her father"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "Su padre se puso muy feliz al verla",
+        "timestamp": "08:49",
+        "text_l2": "Her father became very happy to see her"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "Pero sus hermanas solo reaccionaron con celos",
+        "timestamp": "08:53",
+        "text_l2": "But her sisters only reacted with jealousy"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "hacia ella y su ropa hermosa",
+        "timestamp": "08:56",
+        "text_l2": "toward her and her beautiful clothes"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "Los tres días pasaron muy rápido",
+        "timestamp": "08:59",
+        "text_l2": "The three days passed very quickly"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "Como la estaba pasando también con su padre",
+        "timestamp": "09:02",
+        "text_l2": "Since she was having such a good time with her father"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "se quedó un cuarto día también",
+        "timestamp": "09:04",
+        "text_l2": "she stayed a fourth day as well"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "Pero esa noche tuvo una pesadilla terrible",
+        "timestamp": "09:08",
+        "text_l2": "But that night she had a terrible nightmare"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "En su sueño la bestia yacía en el jardín",
+        "timestamp": "09:12",
+        "text_l2": "In her dream the beast lay in the garden"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "de rosas triste y débil",
+        "timestamp": "09:14",
+        "text_l2": "of roses, sad and weak"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "Al despertarse se dio cuenta de cuánto",
+        "timestamp": "09:24",
+        "text_l2": "Upon waking up she realized how much"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "lo extrañaba y rápidamente se quitó el anillo",
+        "timestamp": "09:26",
+        "text_l2": "she missed him and quickly took off the ring"
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "De inmediato apareció de nuevo",
+        "timestamp": "09:30",
+        "text_l2": "Immediately she appeared again"
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "en su habitación del castillo",
+        "timestamp": "09:32",
+        "text_l2": "in her room at the castle"
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "Corrió al jardín con prisa",
+        "timestamp": "09:34",
+        "text_l2": "She ran to the garden in a hurry"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "Tal como en su sueño la bestia estaba",
+        "timestamp": "09:38",
+        "text_l2": "Just as in her dream the beast was"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "en el jardín débil y llena de tristeza",
+        "timestamp": "09:40",
+        "text_l2": "in the garden, weak and full of sadness"
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "Bella corrió hacia él",
+        "timestamp": "09:45",
+        "text_l2": "Beauty ran toward him"
+      },
+      {
+        "id": "phrase_209",
+        "text_l1": "lo abrazó y trató de despertarlo",
+        "timestamp": "09:46",
+        "text_l2": "hugged him and tried to wake him up"
+      },
+      {
+        "id": "phrase_210",
+        "text_l1": "mientras lloraba",
+        "timestamp": "09:48",
+        "text_l2": "while she cried"
+      },
+      {
+        "id": "phrase_211",
+        "text_l1": "La bestia abrió los ojos por un momento",
+        "timestamp": "09:51",
+        "text_l2": "The beast opened his eyes for a moment"
+      },
+      {
+        "id": "phrase_212",
+        "text_l1": "Bella estás aquí",
+        "timestamp": "09:56",
+        "text_l2": "Beauty, you are here"
+      },
+      {
+        "id": "phrase_213",
+        "text_l1": "Por un momento pensé que nunca volverías",
+        "timestamp": "10:00",
+        "text_l2": "For a moment I thought you would never return"
+      },
+      {
+        "id": "phrase_214",
+        "text_l1": "Me di cuenta de que cuando estabas lejos",
+        "timestamp": "10:06",
+        "text_l2": "I realized that when you were away"
+      },
+      {
+        "id": "phrase_215",
+        "text_l1": "te extrañé porque te amo",
+        "timestamp": "10:08",
+        "text_l2": "I missed you because I love you"
+      },
+      {
+        "id": "phrase_216",
+        "text_l1": "Quiero vivir una vida feliz contigo",
+        "timestamp": "10:11",
+        "text_l2": "I want to live a happy life with you"
+      },
+      {
+        "id": "phrase_217",
+        "text_l1": "En ese momento todo el lugar se llenó",
+        "timestamp": "10:15",
+        "text_l2": "At that moment the whole place was filled"
+      },
+      {
+        "id": "phrase_218",
+        "text_l1": "de luces brillantes y mágicas",
+        "timestamp": "10:17",
+        "text_l2": "with bright and magical lights"
+      },
+      {
+        "id": "phrase_219",
+        "text_l1": "Mientras Bella miraba sorprendida",
+        "timestamp": "10:19",
+        "text_l2": "While Beauty watched in surprise"
+      },
+      {
+        "id": "phrase_220",
+        "text_l1": "el rostro de la bestia se transformó",
+        "timestamp": "10:21",
+        "text_l2": "the beast's face was transformed"
+      },
+      {
+        "id": "phrase_221",
+        "text_l1": "de pronto en el de un príncipe apuesto",
+        "timestamp": "10:23",
+        "text_l2": "suddenly into that of a handsome prince"
+      },
+      {
+        "id": "phrase_222",
+        "text_l1": "El príncipe tomó las manos de Bella",
+        "timestamp": "10:26",
+        "text_l2": "The prince took Beauty's hands"
+      },
+      {
+        "id": "phrase_223",
+        "text_l1": "y le contó que había estado bajo un hechizo",
+        "timestamp": "10:28",
+        "text_l2": "and told her that he had been under a spell"
+      },
+      {
+        "id": "phrase_224",
+        "text_l1": "terrible",
+        "timestamp": "10:30",
+        "text_l2": "terrible"
+      },
+      {
+        "id": "phrase_225",
+        "text_l1": "Le explicó que si Bella no hubiera dicho",
+        "timestamp": "10:32",
+        "text_l2": "He explained that if Beauty had not said"
+      },
+      {
+        "id": "phrase_226",
+        "text_l1": "que lo quería él habría permanecido",
+        "timestamp": "10:34",
+        "text_l2": "that she loved him he would have remained"
+      },
+      {
+        "id": "phrase_227",
+        "text_l1": "como una bestia para siempre",
+        "timestamp": "10:37",
+        "text_l2": "as a beast forever"
+      },
+      {
+        "id": "phrase_228",
+        "text_l1": "Y así el príncipe y Bella vivieran felices",
+        "timestamp": "10:39",
+        "text_l2": "And so the prince and Beauty lived happily"
+      },
+      {
+        "id": "phrase_229",
+        "text_l1": "para siempre en el castillo brillante",
+        "timestamp": "10:43",
+        "text_l2": "forever in the shining castle"
+      },
+      {
+        "id": "phrase_230",
+        "text_l1": "sabiendo que la verdadera belleza",
+        "timestamp": "10:46",
+        "text_l2": "knowing that true beauty"
+      },
+      {
+        "id": "phrase_231",
+        "text_l1": "no está en la apariencia",
+        "timestamp": "10:48",
+        "text_l2": "is not in appearance"
+      },
+      {
+        "id": "phrase_232",
+        "text_l1": "sino en un corazón bondadoso",
+        "timestamp": "10:49",
+        "text_l2": "but in a kind heart"
+      }
+    ],
+    "phrases_with_token_translations": "[Había una vez] en una tierra lejana => [Once upon a time] in a faraway land\nHabía una vez [en] una tierra lejana => Once upon a time [in] a faraway land\nHabía una vez en [una] tierra lejana => Once upon a time in [a] faraway land\nHabía una vez en una [tierra lejana] => Once upon a time in a [faraway land]\n\n[Un] comerciante muy rico => [A] very wealthy merchant\nun [comerciante] muy rico => a very wealthy [merchant]\nun comerciante [muy] rico => a [very] wealthy merchant\nun comerciante muy [rico] => a very [wealthy] merchant\n\n[Este] hombre tenía tres hijas jóvenes => [This] man had three young daughters\nEste [hombre] tenía tres hijas jóvenes => This [man] had three young daughters\nEste hombre [tenía] tres hijas jóvenes => This man [had] three young daughters\nEste hombre tenía [tres] hijas jóvenes => This man had [three] young daughters\nEste hombre tenía tres [hijas jóvenes] => This man had three [young daughters]\n\n[todas] muy hermosas => [all] very beautiful\ntodas [muy] hermosas => all [very] beautiful\ntodas muy [hermosas] => all very [beautiful]\n\n[Dos] de sus hijas eran muy orgullosas => [Two] of his daughters were very proud\nDos [de] sus hijas eran muy orgullosas => Two [of] his daughters were very proud\nDos de [sus] hijas eran muy orgullosas => Two of [his] daughters were very proud\nDos de sus [hijas] eran muy orgullosas => Two of his [daughters] were very proud\nDos de sus hijas [eran] muy orgullosas => Two of his daughters [were] very proud\nDos de sus hijas eran [muy] orgullosas => Two of his daughters were [very] proud\nDos de sus hijas eran muy [orgullosas] => Two of his daughters were very [proud]\n\n[y] consentidas => [and] spoiled\ny [consentidas] => and [spoiled]\n\n[Pero] la hija más pequeña era muy amable => [But] the youngest daughter was very kind\nPero [la] hija más pequeña era muy amable => But [the] youngest daughter was very kind\nPero la [hija] más pequeña era muy amable => But the youngest [daughter] was very kind\nPero la hija [más pequeña] era muy amable => But the [youngest] daughter was very kind\nPero la hija más pequeña [era] muy amable => But the youngest daughter [was] very kind\nPero la hija más pequeña era [muy] amable => But the youngest daughter was [very] kind\nPero la hija más pequeña era muy [amable] => But the youngest daughter was very [kind]\n\n[y] trabajadora => [and] hardworking\ny [trabajadora] => and [hardworking]\n\n[Su] belleza interior brillaba en su rostro => [Her] inner beauty shone on her face\nSu [belleza interior] brillaba en su rostro => Her [inner beauty] shone on her face\nSu belleza interior [brillaba] en su rostro => Her inner beauty [shone] on her face\nSu belleza interior brillaba [en] su rostro => Her inner beauty shone [on] her face\nSu belleza interior brillaba en [su] rostro => Her inner beauty shone on [her] face\nSu belleza interior brillaba en su [rostro] => Her inner beauty shone on her [face]\n\n[Por eso] todos la llamaban bella => [That is why] everyone called her Beauty\nPor eso [todos] la llamaban bella => That is why [everyone] called her Beauty\nPor eso todos [la] llamaban bella => That is why everyone called [her] Beauty\nPor eso todos la [llamaban] bella => That is why everyone [called] her Beauty\nPor eso todos la llamaban [bella] => That is why everyone called her [Beauty]\n\n[Un día] el comerciante supo que los barcos => [One day] the merchant learned that the ships\nUn día [el] comerciante supo que los barcos => One day [the] merchant learned that the ships\nUn día el [comerciante] supo que los barcos => One day the [merchant] learned that the ships\nUn día el comerciante [supo] que los barcos => One day the merchant [learned] that the ships\nUn día el comerciante supo [que] los barcos => One day the merchant learned [that] the ships\nUn día el comerciante supo que [los] barcos => One day the merchant learned that [the] ships\nUn día el comerciante supo que los [barcos] => One day the merchant learned that the [ships]\n\n[con] todas sus riquezas => [with] all his riches\ncon [todas] sus riquezas => with [all] his riches\ncon todas [sus] riquezas => with all [his] riches\ncon todas sus [riquezas] => with all his [riches]\n\n[se habían hundido] en una terrible tormenta => [had sunk] in a terrible storm\nse [habían] hundido en una terrible tormenta => [had] sunk in a terrible storm\nse habían [hundido] en una terrible tormenta => had [sunk] in a terrible storm\nse habían hundido [en] una terrible tormenta => had sunk [in] a terrible storm\nse habían hundido en [una] terrible tormenta => had sunk in [a] terrible storm\nse habían hundido en una [terrible] tormenta => had sunk in a [terrible] storm\nse habían hundido en una terrible [tormenta] => had sunk in a terrible [storm]\n\n[Hijas mías] tengo malas noticias => [My daughters], I have bad news\nHijas mías [tengo] malas noticias => My daughters, [I have] bad news\nHijas mías tengo [malas] noticias => My daughters, I have [bad] news\nHijas mías tengo malas [noticias] => My daughters, I have bad [news]\n\n[Ya no] seremos tan ricos como antes => We will [no longer] be as rich as before\nYa no [seremos] tan ricos como antes => we will be\nYa no seremos [tan] ricos como antes => We will no longer be [as] rich as before\nYa no seremos tan [ricos] como antes => We will no longer be as [rich] as before\nYa no seremos tan ricos [como] antes => We will no longer be as rich [as] before\nYa no seremos tan ricos como [antes] => We will no longer be as rich as [before]\n\n[Dejaremos] la ciudad => [We will leave] the city\nDejaremos [la] ciudad => We will leave [the] city\nDejaremos la [ciudad] => We will leave the [city]\n\n[y] viviremos una vida sencilla => [and] live a simple life\ny [viviremos] una vida sencilla => will live\ny viviremos [una] vida sencilla => and live [a] simple life\ny viviremos una [vida] sencilla => life\ny viviremos una vida [sencilla] => and live a [simple] life\n\n[en] una casita junto al bosque => [in] a little house by the forest\nen [una] casita junto al bosque => in [a] little house by the forest\nen una [casita] junto al bosque => in a [little house] by the forest\nen una casita [junto] al bosque => in a little house [by] the forest\nen una casita junto [al] bosque => in a little house by [the] forest\nen una casita junto al [bosque] => in a little house by the [forest]\n\n[Bella] sintió mucha pena por su padre => [Beauty] felt very sorry for her father\nBella [sintió] mucha pena por su padre => Beauty [felt] very sorry for her father\nBella sintió [mucha] pena por su padre => Beauty felt [very] sorry for her father\nBella sintió mucha [pena] por su padre => Beauty felt very [sorry] for her father\nBella sintió mucha pena [por] su padre => Beauty felt very sorry [for] her father\nBella sintió mucha pena por [su] padre => Beauty felt very sorry for [her] father\nBella sintió mucha pena por su [padre] => Beauty felt very sorry for her [father]\n\n[y] lo consoló => [and] comforted him\ny [lo] consoló => him\ny lo [consoló] => comforted\n\n[Pero] las otras dos hermanas se quejaron => [But] the other two sisters complained\nPero [las] otras dos hermanas se quejaron => But [the] other two sisters complained\nPero las [otras] dos hermanas se quejaron => But the [other] two sisters complained\nPero las otras [dos] hermanas se quejaron => But the other [two] sisters complained\nPero las otras dos [hermanas] se quejaron => But the other two [sisters] complained\nPero las otras dos hermanas [se quejaron] => But the other two sisters [complained]\n\n[todo] el día => [all] day long\ntodo [el] día => the\ntodo el [día] => day\n\n[Una] mañana el padre escuchó que uno de los barcos => [One] morning the father heard that one of the ships\nUna [mañana] el padre escuchó que uno de los barcos => One [morning] the father heard that one of the ships\nUna mañana [el] padre escuchó que uno de los barcos => One morning [the] father heard that one of the ships\nUna mañana el [padre] escuchó que uno de los barcos => One morning the [father] heard that one of the ships\nUna mañana el padre [escuchó] que uno de los barcos => One morning the father [heard] that one of the ships\nUna mañana el padre escuchó [que] uno de los barcos => One morning the father heard [that] one of the ships\nUna mañana el padre escuchó que [uno] de los barcos => One morning the father heard that [one] of the ships\nUna mañana el padre escuchó que uno [de] los barcos => One morning the father heard that one [of] the ships\nUna mañana el padre escuchó que uno de [los] barcos => One morning the father heard that one of [the] ships\nUna mañana el padre escuchó que uno de los [barcos] => One morning the father heard that one of the [ships]\n\n[hundidos] había llegado al puerto => [that had sunk] had arrived at the port\nhundidos [había] llegado al puerto => that had sunk [had] arrived at the port\nhundidos había [llegado] al puerto => that had sunk had [arrived] at the port\nhundidos había llegado [al] puerto => that had sunk had arrived [at the] port\nhundidos había llegado al [puerto] => that had sunk had arrived at the [port]\n\n[Dañado] pero flotando => [Damaged] but floating\nDañado [pero] flotando => Damaged [but] floating\nDañado pero [flotando] => Damaged but [floating]\n\n[Escuché] que quedan algunas cosas => [I heard] that some things remain\nEscuché [que] quedan algunas cosas => I heard [that] some things remain\nEscuché que [quedan] algunas cosas => remain\nEscuché que quedan [algunas] cosas => I heard that [some] things remain\nEscuché que quedan algunas [cosas] => I heard that some [things] remain\n\n[para] salvar del barco => [to] be saved from the ship\npara [salvar] del barco => be saved\npara salvar [del] barco => to be saved [from the] ship\npara salvar del [barco] => to be saved from the [ship]\n\n[Voy] al puerto => [I am going] to the port\nVoy [al] puerto => I am going [to the] port\nVoy al [puerto] => I am going to the [port]\n\n[¿Qué] quieren que les traiga cuando regrese? => [What] do you want me to bring you when I return?\n¿Qué [quieren] que les traiga cuando regrese? => want\n¿Qué quieren [que] les traiga cuando regrese? => that\n¿Qué quieren que [les] traiga cuando regrese? => What do you want me to bring [you] when I return?\n¿Qué quieren que les [traiga] cuando regrese? => What do you want me to [bring] you when I return?\n¿Qué quieren que les traiga [cuando] regrese? => What do you want me to bring you [when] I return?\n¿Qué quieren que les traiga cuando [regrese]? => I return\n\n[Un] anillo de diamantes => [A] diamond ring\nUn [anillo] de diamantes => A diamond [ring]\nUn anillo [de diamantes] => A [diamond] ring\n\n[una] piedra de rubí => [a] ruby stone\nuna [piedra] de rubí => a ruby [stone]\nuna piedra [de rubí] => a [ruby] stone\n\n[una] pulsera de oro => [a] gold bracelet\nuna [pulsera] de oro => a gold [bracelet]\nuna pulsera [de oro] => a [gold] bracelet\n\n[¡Guau!] => [Wow!]\n\n[Pero] la más joven y bondadosa Bella => [But] the youngest and kindest, Beauty,\nPero [la] más joven y bondadosa Bella => But [the] youngest and kindest, Beauty,\nPero la [más joven] y bondadosa Bella => But the [youngest] and kindest, Beauty,\nPero la más joven [y] bondadosa Bella => But the youngest [and] kindest, Beauty,\nPero la más joven y [bondadosa] Bella => But the youngest and [kindest], Beauty,\nPero la más joven y bondadosa [Bella] => But the youngest and kindest, [Beauty],\n\n[no] le pidió nada a su padre => [did not] ask her father for anything\nno [le] pidió nada a su padre => did not ask [her] father for anything\nno le [pidió] nada a su padre => did not [ask] her father for anything\nno le pidió [nada] a su padre => for anything\nno le pidió nada [a su padre] => father\n\n[No] tú también debes pedir algo => [No,] you must also ask for something\nNo [tú] también debes pedir algo => No, [you] must also ask for something\nNo tú [también] debes pedir algo => No, you must [also] ask for something\nNo tú también [debes] pedir algo => No, you [must] also ask for something\nNo tú también debes [pedir] algo => No, you must also [ask] for something\nNo tú también debes pedir [algo] => No, you must also ask for [something]\n\n[Una] rosa papá => [A] rose, Papa\nUna [rosa] papá => A [rose], Papa\nUna rosa [papá] => A rose, [Papa]\n\n[solo] tráeme una rosa => [just] bring me a rose\nsolo [tráeme] una rosa => just [bring me] a rose\nsolo tráeme [una] rosa => just bring me [a] rose\nsolo tráeme una [rosa] => just bring me a [rose]\n\n[Así que] su padre partió en el largo viaje => [So] her father set out on the long journey\nAsí que [su] padre partió en el largo viaje => So [her] father set out on the long journey\nAsí que su [padre] partió en el largo viaje => So her [father] set out on the long journey\nAsí que su padre [partió] en el largo viaje => So her father [set out] on the long journey\nAsí que su padre partió [en] el largo viaje => So her father set out [on] the long journey\nAsí que su padre partió en [el] largo viaje => So her father set out on [the] long journey\nAsí que su padre partió en el [largo] viaje => So her father set out on the [long] journey\nAsí que su padre partió en el largo [viaje] => So her father set out on the long [journey]\n\n[Cuando] llegó al puerto vio que todo en el barco => [When] he arrived at the port he saw that everything on the ship\nCuando [llegó] al puerto vio que todo en el barco => When he [arrived] at the port he saw that everything on the ship\nCuando llegó [al] puerto vio que todo en el barco => When he arrived [at the] port he saw that everything on the ship\nCuando llegó al [puerto] vio que todo en el barco => When he arrived at the [port] he saw that everything on the ship\nCuando llegó al puerto [vio] que todo en el barco => When he arrived at the port [he saw] that everything on the ship\nCuando llegó al puerto vio [que] todo en el barco => When he arrived at the port he saw [that] everything on the ship\nCuando llegó al puerto vio que [todo] en el barco => When he arrived at the port he saw that [everything] on the ship\nCuando llegó al puerto vio que todo [en] el barco => When he arrived at the port he saw that everything [on] the ship\nCuando llegó al puerto vio que todo en [el] barco => When he arrived at the port he saw that everything on [the] ship\nCuando llegó al puerto vio que todo en el [barco] => When he arrived at the port he saw that everything on the [ship]\n\n[había sido] robado => [had been] stolen\nhabía sido [robado] => had been [stolen]\n\n[y] no quedaba nada => [and] nothing remained\ny no quedaba [nada] => and [nothing] remained\ny [no quedaba] nada => didn't remain\n\n[Se puso] muy triste => [He became] very sad\nSe puso [muy] triste => He became [very] sad\nSe puso muy [triste] => He became very [sad]\n\n[De regreso a casa] tuvo que pasar => [On the way back home] he had to pass\n[De regreso] a casa tuvo que pasar => [on the way back] home he had to pass\nDe regreso [a casa] tuvo que pasar => On the way back [home] he had to pass\nDe regreso a casa [tuvo que] pasar => On the way back home he [had to] pass\nDe regreso a casa tuvo que [pasar] => On the way back home he had to [pass]\n\n[por] un bosque oscuro y frío => [through] a dark and cold forest\npor [un] bosque oscuro y frío => through [a] dark and cold forest\npor un [bosque oscuro y frío] => through a [dark and cold forest]\npor un [bosque] oscuro y frío => forest\npor un bosque [oscuro] y frío => dark\npor un bosque oscuro [y] frío => and\npor un bosque oscuro y [frío] => cold\n\n[Los relámpagos] brillaban en el cielo => [Lightning] flashed in the sky\nLos relámpagos [brillaban] en el cielo => Lightning [flashed] in the sky\nLos relámpagos brillaban [en el] cielo => Lightning flashed [in the] sky\nLos relámpagos brillaban en el [cielo] => Lightning flashed in the [sky]\n\n[y] el viento aullaba tan fuerte => [and] the wind howled so loudly\ny [el] viento aullaba tan fuerte => and [the] wind howled so loudly\ny el [viento] aullaba tan fuerte => and the [wind] howled so loudly\ny el viento [aullaba] tan fuerte => and the wind [howled] so loudly\ny el viento aullaba [tan] fuerte => and the wind howled [so] loudly\ny el viento aullaba tan [fuerte] => and the wind howled so [loudly]\n\n[que] parecía poder tumbar los árboles => [that] it seemed it could knock down the trees\n[que parecía] poder tumbar los árboles => [that it seemed] it could knock down the trees\nque parecía [poder] tumbar los árboles => could\nque parecía poder [tumbar] los árboles => knock down\nque parecía poder tumbar [los árboles] => that it seemed it could knock down [the trees]\n\n[El] pobre hombre buscó un refugio => [The] poor man looked for a shelter\nEl [pobre] hombre buscó un refugio => The [poor] man looked for a shelter\nEl pobre [hombre] buscó un refugio => The poor [man] looked for a shelter\nEl pobre hombre [buscó] un refugio => The poor man [looked for] a shelter\nEl pobre hombre buscó [un] refugio => The poor man looked for [a] shelter\nEl pobre hombre buscó un [refugio] => The poor man looked for a [shelter]\n\n[para] protegerse a él y a su caballo => [to] protect himself and his horse\npara [protegerse] a él y a su caballo => to [protect] himself and his horse\npara protegerse [a él] y a su caballo => to protect [himself] and his horse\npara protegerse a él [y] a su caballo => to protect himself [and] his horse\npara protegerse a él y [a] su caballo => personal 'a' # grammatical marker with no direct translation\npara protegerse a él y a [su] caballo => to protect himself and [his] horse\npara protegerse a él y a su [caballo] => to protect himself and his [horse]\n\n[Tenía] tanto frío y estaba tan asustado => [He was] so cold and so scared\nTenía [tanto] frío y estaba tan asustado => He was [so] cold and so scared\nTenía tanto [frío] y estaba tan asustado => He was so [cold] and so scared\nTenía tanto frío [y] estaba tan asustado => He was so cold [and] so scared\nTenía tanto frío y [estaba] tan asustado => was # custom: second verb absorbed into single \"was\" in English\nTenía tanto frío y estaba [tan] asustado => He was so cold and [so] scared\nTenía tanto frío y estaba tan [asustado] => He was so cold and so [scared]\n\n[que] habría dado lo que fuera => [that] he would have given anything\nque [habría] dado lo que fuera => would have # custom\nque habría [dado] lo que fuera => that he would have [given] anything\nque habría dado [lo que fuera] => anything # custom: idiomatic phrase meaning \"anything\"\n\n[por descansar] un momento => [to rest] for a moment\npor descansar [un momento] => to rest [for a moment]\n[por] descansar un momento => to # custom: por + infinitive indicates purpose\npor [descansar] un momento => rest # custom: infinitive form\npor descansar [un] momento => to rest for [a] moment\npor descansar un [momento] => to rest for a [moment]\n\n[En] ese momento vio un castillo magnífico => [At] that moment he saw a magnificent castle\nEn [ese] momento vio un castillo magnífico => At [that] moment he saw a magnificent castle\nEn ese [momento] vio un castillo magnífico => At that [moment] he saw a magnificent castle\nEn ese momento [vio] un castillo magnífico => At that moment he [saw] a magnificent castle\nEn ese momento vio [un] castillo magnífico => At that moment he saw [a] magnificent castle\nEn ese momento vio un [castillo] magnífico => At that moment he saw a magnificent [castle]\nEn ese momento vio un castillo [magnífico] => At that moment he saw a [magnificent] castle\n\n[con] luces brillantes entre los árboles => [with] bright lights among the trees\ncon [luces brillantes] entre los árboles => with [bright lights] among the trees\ncon luces brillantes [entre] los árboles => with bright lights [among] the trees\ncon luces brillantes entre [los árboles] => with bright lights among [the trees]\ncon [luces] brillantes entre los árboles => with bright [lights] among the trees\ncon luces [brillantes] entre los árboles => with [bright] lights among the trees\ncon luces brillantes entre [los] árboles => with bright lights among [the] trees\ncon luces brillantes entre los [árboles] => with bright lights among the [trees]\n\n[Asombrado] el hombre entró => [Amazed], the man entered\nAsombrado [el] hombre entró => Amazed, [the] man entered\nAsombrado el [hombre] entró => Amazed, the [man] entered\nAsombrado el hombre [entró] => Amazed, the man [entered]\n\n[por] las enormes puertas del castillo => [through] the enormous castle gates\npor [las] enormes puertas del castillo => through [the] enormous castle gates\npor las [enormes] puertas del castillo => through the [enormous] castle gates\npor las enormes [puertas] del castillo => gates # custom\npor las enormes puertas [del] castillo => of the # custom: contraction of \"de + el\"\npor las enormes puertas del [castillo] => castle # custom: \"castle gates\" reverses noun order\n\n[¿Hay] alguien aquí? => [Is] anyone here?\n¿Hay [alguien] aquí? => Is [anyone] here?\n¿Hay alguien [aquí?] => Is anyone [here?]\n\n[No] había nadie => not # custom: negation marker\nNo [había] nadie => there was # custom\nNo había [nadie] => [no one]\n\n[pero] el interior del castillo estaba extrañamente => [but] the interior of the castle was strangely\npero [el] interior del castillo estaba extrañamente => but [the] interior of the castle was strangely\npero el [interior] del castillo estaba extrañamente => but the [interior] of the castle was strangely\npero el interior [del] castillo estaba extrañamente => but the interior [of the] castle was strangely\npero el interior del [castillo] estaba extrañamente => but the interior of the [castle] was strangely\npero el interior del castillo [estaba] extrañamente => but the interior of the castle [was] strangely\npero el interior del castillo estaba [extrañamente] => but the interior of the castle was [strangely]\n\n[iluminado] y cálido => [lit] and warm\niluminado [y] cálido => lit [and] warm\niluminado y [cálido] => lit and [warm]\n\n[La] gran mesa del comedor estaba llena => [The] large dining table was full\nLa [gran] mesa del comedor estaba llena => The [large] dining table was full\nLa gran [mesa] del comedor estaba llena => The large dining [table] was full\nLa gran mesa [del comedor] estaba llena => The large [dining] table was full\nLa gran mesa del comedor [estaba] llena => The large dining table [was] full\nLa gran mesa del comedor estaba [llena] => The large dining table was [full]\n\n[de] comida deliciosa y humeante => [of] delicious and steaming food\nde [comida] deliciosa y humeante => of delicious and steaming [food]\nde comida [deliciosa] y humeante => of [delicious] and steaming food\nde comida deliciosa [y] humeante => of delicious [and] steaming food\nde comida deliciosa y [humeante] => of delicious and [steaming] food\n\n[El] pobre hombre llevaba días con hambre => [The] poor man had been hungry for days\nEl [pobre] hombre llevaba días con hambre => The [poor] man had been hungry for days\nEl pobre [hombre] llevaba días con hambre => The poor [man] had been hungry for days\nEl pobre hombre [llevaba] días con hambre => had been # custom: verb indicating ongoing state\nEl pobre hombre llevaba [días] con hambre => The poor man had been hungry for [days]\nEl pobre hombre llevaba días [con hambre] => The poor man had been [hungry] for days\n\n[así que] no pudo resistirse al ver la comida => [so] he could not resist when he saw the food\nasí que [no pudo] resistirse al ver la comida => so he [could not] resist when he saw the food\nasí que no pudo [resistirse] al ver la comida => so he could not [resist] when he saw the food\nasí que no pudo resistirse [al ver] la comida => so he could not resist [when he saw] the food\nasí que no pudo resistirse al ver [la comida] => so he could not resist when he saw [the food]\n\n[Comió] y llenó su estómago vacío => [He ate] and filled his empty stomach\nComió [y] llenó su estómago vacío => He ate [and] filled his empty stomach\nComió y [llenó] su estómago vacío => He ate and [filled] his empty stomach\nComió y llenó [su] estómago vacío => He ate and filled [his] empty stomach\nComió y llenó su [estómago] vacío => He ate and filled his empty [stomach]\nComió y llenó su estómago [vacío] => He ate and filled his [empty] stomach\n\n[Mientras] caminaba por el castillo => [While] he walked through the castle\nMientras [caminaba] por el castillo => While [he walked] through the castle\nMientras caminaba [por] el castillo => While he walked [through] the castle\nMientras caminaba por [el] castillo => While he walked through [the] castle\nMientras caminaba por el [castillo] => While he walked through the [castle]\n\n[encontró] un dormitorio vacío => he [found] an empty bedroom\nencontró [un] dormitorio vacío => he found [an] empty bedroom\nencontró un [dormitorio] vacío => he found an empty [bedroom]\nencontró un dormitorio [vacío] => he found an [empty] bedroom\n\n[Parecía] que había sido preparado especialmente => [It seemed] that it had been prepared especially\nParecía [que] había sido preparado especialmente => It seemed [that] it had been prepared especially\nParecía que [había sido] preparado especialmente => It seemed that it [had been] prepared especially\nParecía que había sido [preparado] especialmente => It seemed that it had been [prepared] especially\nParecía que había sido preparado [especialmente] => It seemed that it had been prepared [especially]\n\n[para] él => [for] him\npara [él] => for [him]\n\n[Esa] noche se acostó y durmió muy bien => [That] night he lay down and slept very well\nEsa [noche] se acostó y durmió muy bien => That [night] he lay down and slept very well\nEsa noche [se acostó] y durmió muy bien => That night [he lay down] and slept very well\nEsa noche se acostó [y] durmió muy bien => That night he lay down [and] slept very well\nEsa noche se acostó y [durmió] muy bien => That night he lay down and [slept] very well\nEsa noche se acostó y durmió [muy bien] => That night he lay down and slept [very well]\n\n[A la mañana siguiente] al despertar => [The next morning] upon waking up\nA la mañana [siguiente] al despertar => The [next] morning upon waking up\nA la [mañana] siguiente al despertar => The next [morning] upon waking up\nA la mañana siguiente [al] despertar => The next morning [upon] waking up\nA la mañana siguiente al [despertar] => The next morning upon [waking up]\n\n[encontró] ropa nueva y limpia esperándolo => he [found] new and clean clothes waiting for him\nencontró [ropa] nueva y limpia esperándolo => he found new and clean [clothes] waiting for him\nencontró ropa [nueva] y limpia esperándolo => he found [new] and clean clothes waiting for him\nencontró ropa nueva [y] limpia esperándolo => he found new [and] clean clothes waiting for him\nencontró ropa nueva y [limpia] esperándolo => he found new and [clean] clothes waiting for him\nencontró ropa nueva y limpia [esperándolo] => he found new and clean clothes [waiting for him]\n\n[Pensó] que el castillo debía pertenecer => [He thought] that the castle must belong\nPensó [que] el castillo debía pertenecer => He thought [that] the castle must belong\nPensó que [el castillo] debía pertenecer => He thought that [the castle] must belong\nPensó que el castillo [debía] pertenecer => He thought that the castle [must] belong\nPensó que el castillo debía [pertenecer] => He thought that the castle must [belong]\n\n[a] un hada bondadosa => [to] a kind fairy\na [un] hada bondadosa => to [a] kind fairy\na un [hada] bondadosa => to a kind [fairy]\na un hada [bondadosa] => to a [kind] fairy\n\n[y] deseó poder darle las gracias => [and] wished he could thank her\ny [deseó] poder darle las gracias => and [wished] he could thank her\ny deseó [poder] darle las gracias => and wished he [could] thank her\ny deseó poder [darle las gracias] => and wished he could [thank her]\n\n[Cuando] estaba por salir del castillo => [When] he was about to leave the castle\nCuando [estaba] por salir del castillo => When he [was] about to leave the castle\nCuando estaba [por] salir del castillo => When he was [about] to leave the castle\nCuando estaba por [salir] del castillo => When he was about to [leave] the castle\nCuando estaba por salir [del castillo] => When he was about to leave [the castle]\n\n[vio] las hermosas rosas del jardín => [he saw] the beautiful roses in the garden\nvio [las hermosas rosas] del jardín => he saw [the beautiful roses] in the garden\nvio las hermosas rosas [del jardín] => he saw the beautiful roses [in the garden]\n\n[Tomó] con cuidado la rosa más hermosa => he took\nTomó [con cuidado] la rosa más hermosa => He [carefully] took the most beautiful rose\nTomó con cuidado [la rosa más hermosa] => He carefully took [the most beautiful rose]\n\n[Y] en ese instante se escuchó un rugido fuerte => [And] in that instant a loud roar was heard\nY [en ese instante] se escuchó un rugido fuerte => And [in that instant] a loud roar was heard\nY en ese instante [se escuchó] un rugido fuerte => And in that instant a loud roar [was heard]\nY en ese instante se escuchó [un rugido fuerte] => And in that instant [a loud roar] was heard\n\n[que] hizo temblar la tierra => [that] made the earth tremble\nque [hizo] temblar la tierra => that [made] the earth tremble\nque hizo [temblar] la tierra => that made the earth [tremble]\nque hizo temblar [la tierra] => that made [the earth] tremble\n\n[De detrás de los árboles] apareció una bestia => [From behind the trees] a beast appeared\nDe detrás de los árboles [apareció una bestia] => From behind the trees [a beast appeared]\n\n[Se veía] aterradora pero también muy triste => [He looked] terrifying but also very sad\nSe veía [aterradora] pero también muy triste => He looked [terrifying] but also very sad\nSe veía aterradora [pero también] muy triste => He looked terrifying [but also] very sad\nSe veía aterradora pero también [muy triste] => He looked terrifying but also [very sad]\n\n[El hombre] estaba tan asustado => [The man] was so scared\nEl hombre [estaba] tan asustado => The man [was] so scared\nEl hombre estaba [tan] asustado => The man was [so] scared\nEl hombre estaba tan [asustado] => The man was so [scared]\n\n[que] no sabía qué hacer => [that] he did not know what to do\nque [no] sabía qué hacer => that he did [not] know what to do\nque no [sabía] qué hacer => that he did not [know] what to do\nque [no sabía] qué hacer => that he [did not know] what to do\nque no sabía [qué hacer] => that he did not know [what to do]\n\n[La] bestia caminó hacia él => [The] beast walked toward him\nLa [bestia] caminó hacia él => The [beast] walked toward him\nLa bestia [caminó] hacia él => The beast [walked] toward him\nLa bestia caminó [hacia] él => The beast walked [toward] him\nLa bestia caminó hacia [él] => The beast walked toward [him]\n\n[Te] di comida y me aseguré => I gave [you] food and I made sure\nTe [di] comida y me aseguré => I [gave] you food and I made sure\nTe di [comida] y me aseguré => I gave you [food] and I made sure\nTe di comida [y] me aseguré => I gave you food [and] I made sure\nTe di comida y [me aseguré] => I gave you food and [I made sure]\n\n[de que] durmieras seguro => [that] you slept safely\nde que [durmieras] seguro => that [you slept] safely\nde que durmieras [seguro] => that you slept [safely]\n\n[Y] tú cortaste mis rosas favoritas => [And] you cut my favorite roses\nY [tú] cortaste mis rosas favoritas => And [you] cut my favorite roses\nY tú [cortaste] mis rosas favoritas => And you [cut] my favorite roses\nY tú cortaste [mis] rosas favoritas => And you cut [my] favorite roses\nY tú cortaste mis [rosas] favoritas => And you cut my favorite [roses]\nY tú cortaste mis rosas [favoritas] => And you cut my [favorite] roses\n\n[¿Cómo] pudiste dañar una flor? => [How] could you damage a flower?\n¿Cómo [pudiste] dañar una flor? => How [could you] damage a flower?\n¿Cómo pudiste [dañar] una flor? => How could you [damage] a flower?\n¿Cómo pudiste dañar [una] flor? => How could you damage [a] flower?\n¿Cómo pudiste dañar una [flor]? => How could you damage a [flower]?\n\n[Así] es como me das las gracias => [This] is how you thank me\nAsí [es] como me das las gracias => This [is] how you thank me\nAsí es [como] me das las gracias => This is [how] you thank me\nAsí es como [me] das las gracias => This is how you thank [me]\nAsí es como me [das las gracias] => This is how [you thank] me\n\n[Por favor] perdóname => [Please] forgive me\nPor favor [perdóname] => Please [forgive me]\n\n[yo] solo tomé una sola rosa => [I] only took a single rose\nyo [solo] tomé una sola rosa => I [only] took a single rose\nyo solo [tomé] una sola rosa => I only [took] a single rose\nyo solo tomé [una] sola rosa => I only took [a] single rose\nyo solo tomé una [sola] rosa => I only took a [single] rose\nyo solo tomé una sola [rosa] => I only took a single [rose]\n\n[Pero] la bestia seguía muy enojada => [But] the beast was still very angry\nPero [la] bestia seguía muy enojada => But [the] beast was still very angry\nPero la [bestia] seguía muy enojada => But the [beast] was still very angry\nPero la bestia [seguía] muy enojada => But the beast [was still] very angry\nPero la bestia seguía [muy] enojada => But the beast was still [very] angry\nPero la bestia seguía muy [enojada] => But the beast was still very [angry]\n\n[Hay] un precio por lo que hiciste => [There is] a price for what you did\nHay [un] precio por lo que hiciste => There is [a] price for what you did\nHay un [precio] por lo que hiciste => There is a [price] for what you did\nHay un precio [por] lo que hiciste => There is a price [for] what you did\nHay un precio por [lo que] hiciste => There is a price for [what] you did\nHay un precio por lo que [hiciste] => There is a price for what [you did]\n\n[De camino] a casa debes traerme => [On your way] home you must bring me\nDe camino [a casa] debes traerme => On your way [home] you must bring me\nDe camino a casa [debes] traerme => On your way home you [must] bring me\nDe camino a casa debes [traerme] => On your way home you must [bring me]\n\n[a la primera persona] que encuentres => [the first person] you meet\na la [primera persona] que encuentres => the [first person] you meet\na la primera [persona] que encuentres => the first [person] you meet\na la primera persona [que encuentres] => [you meet]\n\n[Si no] tendré que encerrarte => [If not] I will have to lock you up\nSi no [tendré] que encerrarte => If not [I will have] to lock you up\nSi no tendré [que] encerrarte => If not I will have [to] lock you up\nSi no tendré que [encerrarte] => [lock you up]\n\n[en el calabozo] para siempre => [in the dungeon] forever\nen [el calabozo] para siempre => in [the dungeon] forever\nen el [calabozo] para siempre => in the [dungeon] forever\nen el calabozo [para siempre] => [forever]\n\n[El] hombre comenzó su viaje de regreso a casa => [The] man began his journey back home\nEl [hombre] comenzó su viaje de regreso a casa => The [man] began his journey back home\nEl hombre [comenzó] su viaje de regreso a casa => The man [began] his journey back home\nEl hombre comenzó [su] viaje de regreso a casa => The man began [his] journey back home\nEl hombre comenzó su [viaje] de regreso a casa => The man began his [journey] back home\nEl hombre comenzó su viaje [de regreso] a casa => The man began his journey [back] home\nEl hombre comenzó su viaje de regreso [a casa] => The man began his journey back [home]\n\n[con] mucha tristeza => [with] much sadness\ncon [mucha] tristeza => with [much] sadness\ncon mucha [tristeza] => with much [sadness]\n\n[Cuando] llegó a casa vio que solo Bella => [When] he arrived home he saw that only Beauty\nCuando [llegó] a casa vio que solo Bella => When [he arrived] home he saw that only Beauty\nCuando llegó [a casa] vio que solo Bella => When he arrived [home] he saw that only Beauty\nCuando llegó a casa [vio] que solo Bella => When he arrived home [he saw] that only Beauty\nCuando llegó a casa vio [que] solo Bella => When he arrived home he saw [that] only Beauty\nCuando llegó a casa vio que [solo] Bella => When he arrived home he saw that [only] Beauty\nCuando llegó a casa vio que solo [Bella] => When he arrived home he saw that only [Beauty]\n\n[lo esperaba] en la puerta preocupada => [was waiting for him] at the door, worried\n[lo] esperaba en la puerta preocupada => was waiting [for him] at the door, worried\nlo [esperaba] en la puerta preocupada => [was waiting] for him at the door, worried\nlo esperaba [en la puerta] preocupada => was waiting for him [at the door], worried\nlo esperaba en la puerta [preocupada] => was waiting for him at the door, [worried]\n\n[Y] fue con ella con quien cruzó la mirada primero => [And] it was with her that he first locked eyes\nY [fue] con ella con quien cruzó la mirada primero => And [it was] with her that he first locked eyes\nY fue [con ella] con quien cruzó la mirada primero => And it was [with her] that he first locked eyes\nY fue con ella [con quien] cruzó la mirada primero => And it was with her [that] he first locked eyes\nY fue con ella con quien [cruzó la mirada] primero => And it was with her that he first [locked eyes]\nY fue con ella con quien cruzó la mirada [primero] => And it was with her that he [first] locked eyes\n\n[Entonces] le contó llorando => [Then] he told her, crying\nEntonces [le] contó llorando => Then he told [her], crying\nEntonces le [contó] llorando => Then [he told] her, crying\nEntonces le contó [llorando] => Then he told her, [crying]\n\n[todo] lo que había pasado => [everything] that had happened\ntodo [lo que] había pasado => everything [that] had happened\ntodo lo que [había] pasado => everything that [had] happened\ntodo lo que había [pasado] => everything that had [happened]\n[todo lo que] había pasado => [everything that] had happened\ntodo lo que [había pasado] => everything that [had happened]\n\n[y] la terrible petición de la bestia => [and] the beast's terrible request\ny [la] terrible petición de la bestia => and [the] beast's terrible request\ny la [terrible] petición de la bestia => and the beast's [terrible] request\ny la terrible [petición] de la bestia => and the beast's terrible [request]\ny la terrible petición [de la bestia] => and [the beast's] terrible request\ny la terrible petición de la [bestia] => and the [beast's] terrible request\n\n[Cuando] las otras hermanas lo escucharon => [When] the other sisters heard it\nCuando [las] otras hermanas lo escucharon => When [the] other sisters heard it\nCuando las [otras] hermanas lo escucharon => When the [other] sisters heard it\nCuando las otras [hermanas] lo escucharon => When the other [sisters] heard it\nCuando las otras hermanas [lo] escucharon => When the other sisters heard [it]\nCuando las otras hermanas lo [escucharon] => When the other sisters [heard] it\nCuando las otras hermanas [lo escucharon] => When the other sisters [heard it]\n\n[se enojaron] mucho con Bella => they got angry # custom\nse enojaron [mucho] con Bella => they got [very] angry with Beauty\nse enojaron mucho [con] Bella => they got very angry [with] Beauty\nse enojaron mucho con [Bella] => they got very angry with [Beauty]\n\n[Si] no le hubieras pedido una rosa papá => [If] you hadn't asked Papa for a rose\nSi [no le hubieras pedido] una rosa papá => you hadn't asked Papa # custom\nSi no le hubieras pedido [una rosa] papá => If you hadn't asked Papa [for a rose]\nSi no le hubieras pedido una [rosa] papá => If you hadn't asked Papa for a [rose]\nSi no le hubieras pedido una rosa [papá] => Papa # custom\n\n[nada] de esto nos habría pasado => [none] of this would have happened to us\nnada [de] esto nos habría pasado => none [of] this would have happened to us\nnada de [esto] nos habría pasado => none of [this] would have happened to us\nnada de esto [nos] habría pasado => none of this would have happened [to us]\nnada de esto nos [habría pasado] => none of this [would have happened] to us\n\n[Pero] ¿y si yo hubiera sido la primera => [But] what if I had been the first\nPero [¿y si] yo hubiera sido la primera => But [what if] I had been the first\nPero ¿y si [yo] hubiera sido la primera => But what if [I] had been the first\nPero ¿y si yo [hubiera sido] la primera => But what if I [had been] the first\nPero ¿y si yo hubiera sido [la primera] => But what if I had been [the first]\n\n[en mirar] a mi padre a los ojos? => [to look] my father in the eyes?\nen mirar [a mi padre] a los ojos? => to look [my father] in the eyes?\nen mirar a [mi] padre a los ojos? => to look [my] father in the eyes?\nen mirar a mi [padre] a los ojos? => to look my [father] in the eyes?\nen mirar a mi padre [a los ojos]? => to look my father [in the eyes]?\nen mirar a mi padre a [los] ojos? => to look my father in [the] eyes?\nen mirar a mi padre a los [ojos]? => to look my father in the [eyes]?\n\n[Sí] y entonces ¿qué habría pasado? => [Yes,] and then what would have happened?\nSí [y] entonces ¿qué habría pasado? => Yes, [and] then what would have happened?\nSí y [entonces] ¿qué habría pasado? => Yes, and [then] what would have happened?\nSí y entonces [¿qué] habría pasado? => Yes, and then [what] would have happened?\nSí y entonces ¿qué [habría pasado]? => Yes, and then what [would have happened]?\n\n[Se suponía que yo] me entregaría a una bestia => [I was supposed] to give myself up to a beast\nSe suponía que yo [me entregaría] a una bestia => I was supposed to [give myself up] to a beast\nSe suponía que yo me entregaría [a] una bestia => I was supposed to give myself up [to] a beast\nSe suponía que yo me entregaría a [una bestia] => I was supposed to give myself up to [a beast]\n\n[Papá] lo siento mucho => [Papa,] I am so sorry\nPapá [lo siento mucho] => Papa, [I am so sorry]\nPapá lo siento [mucho] => Papa, I am [so] sorry\n\n[Haré] todo lo que pueda => [I will do] everything I can\nHaré [todo] lo que pueda => I will do [everything] I can\nHaré todo [lo que pueda] => I will do everything [I can]\n\n[para que] no te lleven prisionero => [so that] they don't take you prisoner\npara que [no] te lleven prisionero => so that they [don't] take you prisoner\npara que no [te] lleven prisionero => so that they don't take [you] prisoner\npara que no te [lleven] prisionero => so that they don't [take] you prisoner\npara que no te lleven [prisionero] => so that they don't take you [prisoner]\n\n[El hombre] llevó a Bella con él => [The man] took Beauty with him\nEl [hombre] llevó a Bella con él => The [man] took Beauty with him\nEl hombre [llevó] a Bella con él => The man [took] Beauty with him\nEl hombre llevó [a Bella] con él => The man took [Beauty] with him\nEl hombre llevó a Bella [con él] => The man took Beauty [with him]\n\n[y] fueron al castillo de la bestia => [and] they went to the beast's castle\ny [fueron] al castillo de la bestia => and [they went] to the beast's castle\ny fueron [al castillo de la bestia] => and they went [to the beast's castle]\ny fueron al castillo [de la bestia] => and they went to the [beast's] castle\n\n[tal] como había prometido => [just] as he had promised\ntal [como] había prometido => just [as] he had promised\ntal como [había] prometido => just as [he had] promised\ntal como había [prometido] => just as he had [promised]\n\n[Entraron] al comedor y se sentaron a la mesa => [They entered] the dining room and sat at the table\nEntraron [al comedor] y se sentaron a la mesa => They entered [the dining room] and sat at the table\nEntraron al comedor [y] se sentaron a la mesa => They entered the dining room [and] sat at the table\nEntraron al comedor y [se sentaron] a la mesa => They entered the dining room and [sat] at the table\nEntraron al comedor y se sentaron [a la mesa] => They entered the dining room and sat [at the table]\n\n[En] ese momento se escuchó otra vez => [At] that moment there was heard again\nEn [ese momento] se escuchó otra vez => At [that moment] there was heard again\nEn ese momento [se escuchó] otra vez => At that moment [there was heard] again\nEn ese momento se escuchó [otra vez] => At that moment there was heard [again]\n\n[el] mismo rugido terrible => [the] same terrible roar\nel [mismo] rugido terrible => the [same] terrible roar\nel mismo [rugido] terrible => the same terrible [roar]\nel mismo rugido [terrible] => the same [terrible] roar\n\n[y] la bestia entró en la sala => [and] the beast entered the room\ny [la] bestia entró en la sala => and [the] beast entered the room\ny la [bestia] entró en la sala => and the [beast] entered the room\ny la bestia [entró] en la sala => and the beast [entered] the room\ny la bestia entró [en la sala] => and the beast entered [the room]\n\n[Bella] tembló de miedo => [Beauty] trembled with fear\nBella [tembló] de miedo => Beauty [trembled] with fear\nBella tembló [de miedo] => Beauty trembled [with fear]\n\n[Comieron] en silencio durante un rato => [They ate] in silence for a while\nComieron [en silencio] durante un rato => They ate [in silence] for a while\nComieron en silencio [durante un rato] => They ate in silence [for a while]\n\n[Pronto] tu padre dejará mi castillo => [Soon] your father will leave my castle\nPronto [tu padre] dejará mi castillo => Soon [your father] will leave my castle\nPronto tu padre [dejará] mi castillo => Soon your father [will leave] my castle\nPronto tu padre dejará [mi castillo] => Soon your father will leave [my castle]\n\n[y] tú te quedarás aquí => [and] you will stay here\ny [tú] te quedarás aquí => and [you] will stay here\ny tú [te quedarás] aquí => and you [will stay] here\ny tú te quedarás [aquí] => and you will stay [here]\n\n[por] tu propia voluntad Bella => [of] your own free will, Beauty\npor [tu] propia voluntad Bella => of [your] own free will, Beauty\npor tu [propia] voluntad Bella => of your [own] free will, Beauty\npor tu propia [voluntad] Bella => of your own free [will], Beauty\npor tu propia voluntad [Bella] => of your own free will, [Beauty]\n\n[Sí] me quedaré en este castillo => [Yes], I will stay in this castle\nSí [me quedaré] en este castillo => Yes, [I will stay] in this castle\nSí me quedaré [en este castillo] => Yes, I will stay [in this castle]\n\n[por] mi propia voluntad => [of] my own free will\npor [mi] propia voluntad => of [my] own free will\npor mi [propia] voluntad => of my [own] free will\npor mi propia [voluntad] => of my own free [will]\n\n[Entonces] Bella abrazó a su padre por última vez => [Then] Beauty hugged her father for the last time\nEntonces [Bella] abrazó a su padre por última vez => Then [Beauty] hugged her father for the last time\nEntonces Bella [abrazó] a su padre por última vez => Then Beauty [hugged] her father for the last time\nEntonces Bella abrazó [a su padre] por última vez => Then Beauty hugged [her father] for the last time\nEntonces Bella abrazó a su padre [por última vez] => Then Beauty hugged her father [for the last time]\n\n[y] lo envió de regreso a casa => [and] sent him back home\ny [lo] envió de regreso a casa => him\ny lo [envió] de regreso a casa => and [sent] him back home\ny lo envió [de regreso] a casa => and sent him [back] home\ny lo envió de regreso [a casa] => and sent him back [home]\n\n[Después] caminó por el castillo => [Afterward] she walked through the castle\nDespués [caminó] por el castillo => Afterward she [walked] through the castle\nDespués caminó [por] el castillo => Afterward she walked [through] the castle\nDespués caminó por [el] castillo => Afterward she walked through [the] castle\nDespués caminó por el [castillo] => Afterward she walked through the [castle]\n\n[y] vio una puerta cubierta de rosas => [and] saw a door covered in roses\ny [vio] una puerta cubierta de rosas => and [saw] a door covered in roses\ny vio [una] puerta cubierta de rosas => and saw [a] door covered in roses\ny vio una [puerta] cubierta de rosas => and saw a [door] covered in roses\ny vio una puerta [cubierta] de rosas => and saw a door [covered] in roses\ny vio una puerta cubierta [de rosas] => and saw a door covered [in roses]\n\n[Curiosa] entró => [Curious], she entered\nCuriosa [entró] => Curious, she [entered]\n\n[Había] un piano a un lado => [There was] a piano on one side\nHabía [un] piano a un lado => There was [a] piano on one side\nHabía un [piano] a un lado => There was a [piano] on one side\nHabía un piano [a] un lado => There was a piano [on] one side\nHabía un piano a [un] lado => There was a piano on [one] side\nHabía un piano a un [lado] => There was a piano on one [side]\n\n[un] columpio al otro => [a] swing on the other\nun [columpio] al otro => a [swing] on the other\nun columpio [al otro] => a swing [on the other]\n\n[un] enorme estantería y miles de libros => [a] huge bookshelf and thousands of books\nun [enorme] estantería y miles de libros => a [huge] bookshelf and thousands of books\nun enorme [estantería] y miles de libros => a huge [bookshelf] and thousands of books\nun enorme estantería [y] miles de libros => a huge bookshelf [and] thousands of books\nun enorme estantería y [miles] de libros => a huge bookshelf and [thousands] of books\nun enorme estantería y miles [de] libros => a huge bookshelf and thousands [of] books\nun enorme estantería y miles de [libros] => a huge bookshelf and thousands of [books]\n\n[La] habitación era exactamente => [The] room was exactly\nLa [habitación] era exactamente => The [room] was exactly\nLa habitación [era] exactamente => The room [was] exactly\nLa habitación era [exactamente] => The room was [exactly]\n\n[como] la de sus sueños => [like] the one in her dreams\ncomo [la] de sus sueños => the one\ncomo la [de] sus sueños => like the one [in] her dreams\ncomo la de [sus] sueños => like the one in [her] dreams\ncomo la de sus [sueños] => like the one in her [dreams]\n\n[Sobre] la mesa vio una nota pequeña => [On] the table she saw a small note\nSobre [la] mesas vio una nota pequeña => On [the] table she saw a small note\nSobre la [mesa] vio una nota pequeña => On the [table] she saw a small note\nSobre la mesas [vio] una nota pequeña => On the table she [saw] a small note\nSobre la mesas vio [una] nota pequeña => On the table she saw [a] small note\nSobre la mesas vio una [nota] pequeña => On the table she saw a small [note]\nSobre la mesas vio una nota [pequeña] => On the table she saw a [small] note\n\n[y] la leyó => [and] read it\ny [la] leyó => it\ny la [leyó] => and [read] it\n\n[Sí] mi querida reina => [Yes], my dear queen\nSí [mi] querida reina => Yes, [my] dear queen\nSí mi [querida] reina => Yes, my [dear] queen\nSí mi querida [reina] => Yes, my dear [queen]\n\n[siempre] quiero verte feliz => I [always] want to see you happy\nsiempre [quiero] verte feliz => I always [want] to see you happy\nsiempre quiero [verte] feliz => I always want [to see you] happy\nsiempre quiero verte [feliz] => I always want to see you [happy]\n\n[tus] deseos son mi orden => [your] wishes are my command\ntus [deseos] son mi orden => your [wishes] are my command\ntus deseos [son] mi orden => your wishes [are] my command\ntus deseos son [mi] orden => your wishes are [my] command\ntus deseos son mi [orden] => your wishes are my [command]\n\n[Bella] pensó que quería ver a su padre => [Beauty] thought that she wanted to see her father\nBella [pensó] que quería ver a su padre => Beauty [thought] that she wanted to see her father\nBella pensó [que] quería ver a su padre => Beauty thought [that] she wanted to see her father\nBella pensó que [quería] ver a su padre => Beauty thought that [she wanted] to see her father\nBella pensó que quería [ver] a su padre => Beauty thought that she wanted [to see] her father\nBella pensó que quería ver [a] su padre => personal 'a' # marks direct object\nBella pensó que quería ver a [su] padre => Beauty thought that she wanted to see [her] father\nBella pensó que quería ver a su [padre] => Beauty thought that she wanted to see her [father]\n\n[una vez] más => [once] more\nuna vez [más] => once [more]\n\n[Luego] bajó para cenar => [Then] she went down for dinner\nLuego [bajó] para cenar => Then [she went down] for dinner\nLuego bajó [para] cenar => Then she went down [for] dinner\nLuego bajó para [cenar] => Then she went down for [dinner]\n\n[Después de] un rato la bestia también entró => [After] a while the beast also entered\nDespués de [un] rato la bestia también entró => After [a] while the beast also entered\nDespués de un [rato] la bestia también entró => After a [while] the beast also entered\nDespués de un rato [la] bestia también entró => After a while [the] beast also entered\nDespués de un rato la [bestia] también entró => After a while the [beast] also entered\nDespués de un rato la bestia [también] entró => After a while the beast [also] entered\nDespués de un rato la bestia también [entró] => After a while the beast also [entered]\n\n[en] el salón => in # preposition not translated in this context\n[el] salón => [the] hall\nel [salón] => the [hall]\n\n[Puedo] acompañarte en la cena => [May I] join you for dinner\nPuedo [acompañarte] en la cena => May I [join you] for dinner\nPuedo acompañarte [en] la cena => May I join you [for] dinner\nPuedo acompañarte en [la] cena => the # definite article absorbed in translation\nPuedo acompañarte en la [cena] => May I join you for [dinner]\n\n[de esta noche] Bella? => [tonight], Beauty?\nde esta noche [Bella]? => tonight, [Beauty]?\n\n[Tú] eres el dueño de este castillo => [You] are the owner of this castle\nTú [eres] el dueño de este castillo => You [are] the owner of this castle\nTú eres [el] dueño de este castillo => You are [the] owner of this castle\nTú eres el [dueño] de este castillo => You are the [owner] of this castle\nTú eres el dueño [de] este castillo => You are the owner [of] this castle\nTú eres el dueño de [este] castillo => You are the owner of [this] castle\nTú eres el dueño de este [castillo] => You are the owner of this [castle]\n\n¿[Por qué] me preguntas? => [Why] do you ask me?\n¿Por qué [me preguntas]? => Why do you [ask me]?\n\n[Come] lo que quieras => [Eat] whatever you want\nCome [lo que quieras] => Eat [whatever you want]\n\n[No] tú eres el señor de este lugar => [No], you are the lord of this place\nNo [tú] eres el señor de este lugar => No, [you] are the lord of this place\nNo tú [eres] el señor de este lugar => No, you [are] the lord of this place\nNo tú eres [el] señor de este lugar => No, you are [the] lord of this place\nNo tú eres el [señor] de este lugar => No, you are the [lord] of this place\nNo tú eres el señor de [este] lugar => No, you are the lord of [this] place\nNo tú eres el señor de este [lugar] => No, you are the lord of this [place]\n\n[Si] quieres puedo irme => [If] you want I can leave\nSi [quieres] puedo irme => If you [want] I can leave\nSi quieres [puedo] irme => If you want [I can] leave\nSi quieres puedo [irme] => If you want I can [leave]\n\n[Mi] presencia incluso podría molestarte => [My] presence might even bother you\nMi [presencia] incluso podría molestarte => My [presence] might even bother you\nMi presencia [incluso] podría molestarte => My presence might [even] bother you\nMi presencia incluso [podría] molestarte => might, could # custom\nMi presencia incluso podría [molestarte] => bother you # custom\n\n[Bella] se sorprendió mucho por la respuesta => [Beauty] was very surprised by the response\nBella [se sorprendió] mucho por la respuesta => was surprised # custom\nBella se sorprendió [mucho] por la respuesta => Beauty was [very] surprised by the response\nBella se sorprendió mucho [por] la respuesta => Beauty was very surprised [by] the response\nBella se sorprendió mucho por [la respuesta] => Beauty was very surprised by [the response]\n\n[de] la bestia y no supo qué decir => [of] the beast and did not know what to say\nde [la bestia] y no supo qué decir => of [the beast] and did not know what to say\nde la bestia [y] no supo qué decir => of the beast [and] did not know what to say\nde la bestia y [no supo] qué decir => of the beast and [did not know] what to say\nde la bestia y no supo [qué] decir => of the beast and did not know [what] to say\nde la bestia y no supo qué [decir] => of the beast and did not know what to [say]\n\n[Ojalá] nos hubiéramos casado => [I wish] we had married\nOjalá [nos] hubiéramos casado => I wish [we] had married\nOjalá nos [hubiéramos] casado => I wish we [had] married\nOjalá nos hubiéramos [casado] => I wish we had [married]\n\n[y] vivido una vida feliz juntos => [and] lived a happy life together\ny [vivido] una vida feliz juntos => and [lived] a happy life together\ny vivido [una] vida feliz juntos => and lived [a] happy life together\ny vivido una [vida] feliz juntos => and lived a happy [life] together\ny vivido una vida [feliz] juntos => and lived a [happy] life together\ny vivido una vida feliz [juntos] => and lived a happy life [together]\n\n[Nunca] me casaré contigo => I will [never] marry you\nNunca [me casaré] contigo => will marry, I will marry # custom\nNunca me casaré [contigo] => I will never marry [you]\n\n[La bestia] salió de la sala muy triste => [The beast] left the room very sad\nLa bestia [salió] de la sala muy triste => The beast [left] the room very sad\nLa bestia salió [de] la sala muy triste => from, of # custom\nLa bestia salió de [la sala] muy triste => The beast left [the room] very sad\nLa bestia salió de la sala [muy] triste => The beast left the room [very] sad\nLa bestia salió de la sala muy [triste] => The beast left the room very [sad]\n\n[Los días] fueron pasando uno tras otro => [The days] went passing one after another\nLos días [fueron] pasando uno tras otro => The days [went] passing one after another\nLos días fueron [pasando] uno tras otro => The days went [passing] one after another\nLos días fueron pasando [uno] tras otro => The days went passing [one] after another\nLos días fueron pasando uno [tras] otro => The days went passing one [after] another\nLos días fueron pasando uno tras [otro] => The days went passing one after [another]\n\n[A pesar de todo] la bestia preparaba cenas => [Despite everything] the beast prepared dinners\n[A pesar de] todo la bestia preparaba cenas => [Despite] everything the beast prepared dinners\nA pesar de [todo] la bestia preparaba cenas => Despite [everything] the beast prepared dinners\nA pesar de todo [la bestia] preparaba cenas => Despite everything [the beast] prepared dinners\nA pesar de todo la bestia [preparaba] cenas => Despite everything the beast [prepared] dinners\nA pesar de todo la bestia preparaba [cenas] => Despite everything the beast prepared [dinners]\n\n[deliciosas] para Bella cada noche => [delicious] for Beauty every night\ndeliciosas [para] Bella cada noche => delicious [for] Beauty every night\ndeliciosas para [Bella] cada noche => delicious for [Beauty] every night\ndeliciosas para Bella [cada] noche => delicious for Beauty [every] night\ndeliciosas para Bella cada [noche] => delicious for Beauty every [night]\n\n[y] la trataba con mucha bondad => [and] treated her with much kindness\ny [la] trataba con mucha bondad => and treated [her] with much kindness\ny la [trataba] con mucha bondad => and [treated] her with much kindness\ny la trataba [con] mucha bondad => and treated her [with] much kindness\ny la trataba con [mucha] bondad => and treated her with [much] kindness\ny la trataba con mucha [bondad] => and treated her with much [kindness]\n\n[Con] el paso de los días Bella se dio cuenta => [With] the passing of the days Beauty realized\nCon [el] paso de los días Bella se dio cuenta => With [the] passing of the days Beauty realized\nCon el [paso] de los días Bella se dio cuenta => With the [passing] of the days Beauty realized\nCon el paso [de] los días Bella se dio cuenta => With the passing [of] the days Beauty realized\nCon el paso de [los] días Bella se dio cuenta => With the passing of [the] days Beauty realized\nCon el paso de los [días] Bella se dio cuenta => With the passing of the [days] Beauty realized\nCon el paso de los días [Bella] se dio cuenta => With the passing of the days [Beauty] realized\nCon el paso de los días Bella [se dio cuenta] => With the passing of the days Beauty [realized]\n\n[de que] se había acostumbrado a la bestia => [that] she had grown used to the beast\nde que [se] había acostumbrado a la bestia => herself # reflexive marker in \"acostumbrarse\"\nde que se [había] acostumbrado a la bestia => that she [had] grown used to the beast\nde que se había [acostumbrado] a la bestia => that she had [grown used] to the beast\nde que se había acostumbrado [a] la bestia => that she had grown used [to] the beast\nde que se había acostumbrado a [la] bestia => that she had grown used to [the] beast\nde que se había acostumbrado a la [bestia] => that she had grown used to the [beast]\n\n[y] disfrutaba hablar con él => [and] enjoyed talking with him\ny [disfrutaba] hablar con él => and [enjoyed] talking with him\ny disfrutaba [hablar] con él => and enjoyed [talking] with him\ny disfrutaba hablar [con] él => and enjoyed talking [with] him\ny disfrutaba hablar con [él] => and enjoyed talking with [him]\n\n[Ya no] le tenía miedo => She was [no longer] afraid of him\nYa no [le] tenía miedo => of him # indirect object pronoun indicating the object of fear\nYa no le [tenía miedo] => She was no longer [afraid] of him\n\n[De hecho] ahora estaba segura => [In fact] now she was sure\nDe hecho [ahora] estaba segura => In fact [now] she was sure\nDe hecho ahora [estaba] segura => In fact now she [was] sure\nDe hecho ahora estaba [segura] => In fact now she was [sure]\n\n[de que] tenía un buen corazón => [that] he had a good heart\nde que [tenía] un buen corazón => that he [had] a good heart\nde que tenía [un] buen corazón => that he had [a] good heart\nde que tenía un [buen] corazón => that he had a [good] heart\nde que tenía un buen [corazón] => that he had a good [heart]\n\n[Sabes] extraño mucho a mi padre => [You know], I miss my father very much\nSabes [extraño] mucho a mi padre => You know, [I miss] my father very much\nSabes extraño [mucho] a mi padre => You know, I miss my father [very much]\nSabes extraño mucho [a] mi padre => to # preposition before direct object\nSabes extraño mucho a [mi] padre => You know, I miss [my] father very much\nSabes extraño mucho a mi [padre] => You know, I miss my [father] very much\n\n[Quiero] visitarlo por un tiempo => [I want] to visit him for a while\nQuiero [visitarto] por un tiempo => I want [to visit him] for a while\nQuiero visitarlo [por] un tiempo => I want to visit him [for] a while\nQuiero visitarlo por [un] tiempo => I want to visit him for [a] while\nQuiero visitarlo por un [tiempo] => I want to visit him for a [while]\n\n[La] bestia se puso muy triste al escuchar => [The] beast became very sad upon hearing\nLa [bestia] se puso muy triste al escuchar => The [beast] became very sad upon hearing\nLa bestia [se puso] muy triste al escuchar => The beast [became] very sad upon hearing\nLa bestia se puso [muy] triste al escuchar => The beast became [very] sad upon hearing\nLa bestia se puso muy [triste] al escuchar => The beast became very [sad] upon hearing\nLa bestia se puso muy triste [al] escuchar => The beast became very sad [upon] hearing\nLa bestia se puso muy triste al [escuchar] => The beast became very sad upon [hearing]\n\n[su] petición => [her] request\nsu [petición] => her [request]\n\n[Claro] que puedes ir => [Of course] you can go\nClaro [que] puedes ir => that\nClaro que [puedes] ir => Of course you [can] go\nClaro que puedes [ir] => [go]\n\n[pero] ¿prometes regresar conmigo? => [but] do you promise to return to me?\npero ¿[prometes] regresar conmigo? => but do you [promise] to return to me?\npero ¿prometes [regresar] conmigo? => but do you promise to [return] to me?\npero ¿prometes regresar [conmigo]? => with me\n\n[Sí] regresaré en tres días => [Yes], I will return in three days\nSí [regresaré] en tres días => Yes, [I will return] in three days\nSí regresaré [en] tres días => Yes, I will return [in] three days\nSí regresaré en [tres] días => Yes, I will return in [three] days\nSí regresaré en tres [días] => Yes, I will return in three [days]\n\n[Lo] prometo => it\nLo [prometo] => I [promise]\n\n[Entonces] la bestia le dio un anillo mágico => [Then] the beast gave her a magic ring\nEntonces [la] bestia le dio un anillo mágico => Then [the] beast gave her a magic ring\nEntonces la [bestia] le dio un anillo mágico => Then the [beast] gave her a magic ring\nEntonces la bestia [le] dio un anillo mágico => her\nEntonces la bestia le [dio] un anillo mágico => Then the beast [gave] her a magic ring\nEntonces la bestia le dio [un] anillo mágico => Then the beast gave her [a] magic ring\nEntonces la bestia le dio un [anillo] mágico => Then the beast gave her a magic [ring]\nEntonces la bestia le dio un anillo [mágico] => Then the beast gave her a [magic] ring\n\n[Toma] esto => [Take] this\nToma [esto] => Take [this]\n\n[Cuando] te quites el anillo => [When] you take off the ring\nCuando [te quites] el anillo => When you [take off] the ring\nCuando te quites [el] anillo => When you take off [the] ring\nCuando te quites el [anillo] => When you take off the [ring]\n\n[aparecerás] de nuevo en este castillo => [you will appear] again in this castle\naparecerás [de nuevo] en este castillo => you will appear [again] in this castle\naparecerás de nuevo [en] este castillo => you will appear again [in] this castle\naparecerás de nuevo en [este] castillo => you will appear again in [this] castle\naparecerás de nuevo en este [castillo] => you will appear again in this [castle]\n\n[Bella] se puso el anillo y fue a visitar => [Beauty] put on the ring and went to visit\nBella [se puso] el anillo y fue a visitar => Beauty [put on] the ring and went to visit\nBella se puso [el] anillo y fue a visitar => Beauty put on [the] ring and went to visit\nBella se puso el [anillo] y fue a visitar => Beauty put on the [ring] and went to visit\nBella se puso el anillo [y] fue a visitar => Beauty put on the ring [and] went to visit\nBella se puso el anillo y [fue a] visitar => Beauty put on the ring and [went to] visit\nBella se puso el anillo y fue a [visitar] => Beauty put on the ring and went to [visit]\n\n[a su padre] => [her father]\n\n[Su] padre se puso muy feliz al verla => [Her] father became very happy to see her\nSu [padre] se puso muy feliz al verla => Her [father] became very happy to see her\nSu padre [se puso] muy feliz al verla => Her father [became] very happy to see her\nSu padre se puso [muy] feliz al verla => Her father became [very] happy to see her\nSu padre se puso muy [feliz] al verla => Her father became very [happy] to see her\nSu padre se puso muy feliz [al verla] => Her father became very happy [to see her]\n\n[Pero] sus hermanas solo reaccionaron con celos => [But] her sisters only reacted with jealousy\nPero [sus] hermanas solo reaccionaron con celos => But [her] sisters only reacted with jealousy\nPero sus [hermanas] solo reaccionaron con celos => But her [sisters] only reacted with jealousy\nPero sus hermanas [solo] reaccionaron con celos => But her sisters [only] reacted with jealousy\nPero sus hermanas solo [reaccionaron] con celos => But her sisters only [reacted] with jealousy\nPero sus hermanas solo reaccionaron [con] celos => But her sisters only reacted [with] jealousy\nPero sus hermanas solo reaccionaron con [celos] => But her sisters only reacted with [jealousy]\n\n[hacia] ella y su ropa hermosa => [toward] her and her beautiful clothes\nhacia [ella] y su ropa hermosa => toward [her] and her beautiful clothes\nhacia ella [y] su ropa hermosa => toward her and [and] her beautiful clothes\nhacia ella y [su] ropa hermosa => toward her and [her] beautiful clothes\nhacia ella y su [ropa hermosa] => toward her and her [beautiful clothes]\nhacia ella y su ropa [hermosa] => beautiful\n\n[Los] tres días pasaron muy rápido => [The] three days passed very quickly\nLos [tres] días pasaron muy rápido => The [three] days passed very quickly\nLos tres [días] pasaron muy rápido => The three [days] passed very quickly\nLos tres días [pasaron] muy rápido => The three days [passed] very quickly\nLos tres días pasaron [muy] rápido => The three days passed [very] quickly\nLos tres días pasaron muy [rápido] => The three days passed very [quickly]\n\n[Como] la estaba pasando también con su padre => [Since] she was having such a good time with her father\nComo [la estaba pasando] también con su padre => she was having a good time\nComo la estaba pasando [también] con su padre => as well\nComo la estaba pasando también [con su padre] => Since she was having such a good time [with her father]\nComo la estaba pasando también con [su] padre => Since she was having such a good time with [her] father\nComo la estaba pasando también con su [padre] => Since she was having such a good time with her [father]\n\n[se quedó] un cuarto día también => [she stayed] a fourth day as well\nse quedó [un] cuarto día también => she stayed [a] fourth day as well\nse quedó un [cuarto] día también => she stayed a [fourth] day as well\nse quedó un cuarto [día] también => she stayed a fourth [day] as well\nse quedó un cuarto día [también] => as well\n\n[Pero] esa noche tuvo una pesadilla terrible => [But] that night she had a terrible nightmare\nPero [esa] noche tuvo una pesadilla terrible => But [that] night she had a terrible nightmare\nPero esa [noche] tuvo una pesadilla terrible => But that [night] she had a terrible nightmare\nPero esa noche [tuvo] una pesadilla terrible => But that night [she had] a terrible nightmare\nPero esa noche tuvo [una] pesadilla terrible => But that night she had [a] terrible nightmare\nPero esa noche tuvo una [pesadilla terrible] => But that night she had a [terrible nightmare]\n\n[En] su sueño la bestia yacía en el jardín => [In] her dream the beast lay in the garden\nEn [su] sueño la bestia yacía en el jardín => In [her] dream the beast lay in the garden\nEn su [sueño] la bestia yacía en el jardín => In her [dream] the beast lay in the garden\nEn su sueño [la bestia] yacía en el jardín => In her dream [the beast] lay in the garden\nEn su sueño la bestia [yacía] en el jardín => In her dream the beast [lay] in the garden\nEn su sueño la bestia yacía [en] el jardín => In her dream the beast lay [in] the garden\nEn su sueño la bestia yacía en [el jardín] => In her dream the beast lay in [the garden]\n\n[de] rosas triste y débil => [of] roses, sad and weak\nde [rosas] triste y débil => of [roses], sad and weak\nde rosas [triste] y débil => of roses, [sad] and weak\nde rosas triste [y] débil => of roses, sad [and] weak\nde rosas triste y [débil] => of roses, sad and [weak]\n\n[Al despertarse] se dio cuenta de cuánto => [Upon waking up] she realized how much\nAl despertarse [se dio cuenta] de cuánto => Upon waking up [she realized] how much\nAl despertarse se dio cuenta [de cuánto] => Upon waking up she realized [how much]\n\n[lo extrañaba] y rápidamente se quitó el anillo => [she missed him] and quickly took off the ring\n[lo] extrañaba y rápidamente se quitó el anillo => she missed [him] and quickly took off the ring\nlo [extrañaba] y rápidamente se quitó el anillo => she [missed] him and quickly took off the ring\nlo extrañaba [y] rápidamente se quitó el anillo => she missed him [and] quickly took off the ring\nlo extrañaba y [rápidamente] se quitó el anillo => she missed him and [quickly] took off the ring\nlo extrañaba y rápidamente [se quitó] el anillo => she missed him and quickly [took off] the ring\nlo extrañaba y rápidamente se quitó [el anillo] => she missed him and quickly took off [the ring]\n\n[De inmediato] apareció de nuevo => [Immediately] she appeared again\nDe inmediato [apareció] de nuevo => Immediately [she appeared] again\nDe inmediato apareció [de nuevo] => Immediately she appeared [again]\n\n[en] su habitación del castillo => [in] her room at the castle\nen [su] habitación del castillo => in [her] room at the castle\nen su [habitación] del castillo => in her [room] at the castle\nen su habitación [del castillo] => in her room [at the castle]\nen su habitación del [castillo] => in her room at the [castle]\n\n[Corrió] al jardín con prisa => [She ran] to the garden in a hurry\nCorrió [al jardín] con prisa => She ran [to the garden] in a hurry\nCorrió [al] jardín con prisa => She ran [to the] garden in a hurry\nCorrió al [jardín] con prisa => She ran to the [garden] in a hurry\nCorrió al jardín [con prisa] => She ran to the garden [in a hurry]\nCorrió al jardín con [prisa] => hurry, haste\n\n[Tal como] en su sueño la bestia estaba => [Just as] in her dream the beast was\nTal como [en] su sueño la bestia estaba => Just as [in] her dream the beast was\nTal como en [su] sueño la bestia estaba => Just as in [her] dream the beast was\nTal como en su [sueño] la bestia estaba => Just as in her [dream] the beast was\nTal como en su sueño [la bestia] estaba => Just as in her dream [the beast] was\nTal como en su sueño la bestia [estaba] => Just as in her dream the beast [was]\n\n[en] el jardín débil y llena de tristeza => [in] the garden, weak and full of sadness\nen [el] jardín débil y llena de tristeza => in [the] garden, weak and full of sadness\nen el [jardín] débil y llena de tristeza => in the [garden], weak and full of sadness\nen el jardín [débil] y llena de tristeza => in the garden, [weak] and full of sadness\nen el jardín débil [y] llena de tristeza => in the garden, weak [and] full of sadness\nen el jardín débil y [llena] de tristeza => in the garden, weak and [full] of sadness\nen el jardín débil y llena [de] tristeza => in the garden, weak and full [of] sadness\nen el jardín débil y llena de [tristeza] => in the garden, weak and full of [sadness]\n\n[Bella] corrió hacia él => [Beauty] ran toward him\nBella [corrió] hacia él => Beauty [ran] toward him\nBella corrió [hacia] él => Beauty ran [toward] him\nBella corrió hacia [él] => Beauty ran toward [him]\n\n[lo abrazó] y trató de despertarlo => [hugged him] and tried to wake him up\nlo abrazó [y] trató de despertarlo => hugged him [and] tried to wake him up\nlo abrazó y [trató de] despertarlo => hugged him and [tried to] wake him up\nlo abrazó y trató de [despertarlo] => hugged him and tried to [wake him up]\n\n[mientras] lloraba => [while] she cried\nmientras [lloraba] => while [she cried]\n\n[La bestia] abrió los ojos por un momento => [The beast] opened his eyes for a moment\nLa bestia [abrió] los ojos por un momento => The beast [opened] his eyes for a moment\nLa bestia abrió [los ojos] por un momento => The beast opened [his eyes] for a moment\nLa bestia abrió los ojos [por un momento] => The beast opened his eyes [for a moment]\n\n[Bella] estás aquí => [Beauty], you are here\nBella [estás] aquí => Beauty, [you are] here\nBella estás [aquí] => Beauty, you are [here]\n\n[Por un momento] pensé que nunca volverías => [For a moment] I thought you would never return\nPor un momento [pensé] que nunca volverías => For a moment [I thought] you would never return\nPor un momento pensé [que] nunca volverías => that # Spanish uses \"que\" where English often omits \"that\" after \"thought\"\nPor un momento pensé que [nunca] volverías => For a moment I thought you would [never] return\nPor un momento pensé que nunca [volverías] => For a moment I thought you would never [return]\n\n[Me di cuenta] de que cuando estabas lejos => [I realized] that when you were away\nMe di cuenta [de que] cuando estabas lejos => I realized [that] when you were away\nMe di cuenta de que [cuando] estabas lejos => I realized that [when] you were away\nMe di cuenta de que cuando [estabas] lejos => I realized that when [you were] away\nMe di cuenta de que cuando estabas [lejos] => I realized that when you were [away]\n\n[te extrañé] porque te amo => [I missed you] because I love you\nte extrañé [porque] te amo => I missed you [because] I love you\nte extrañé porque [te amo] => I missed you because [I love you]\n\n[Quiero] vivir una vida feliz contigo => [I want] to live a happy life with you\nQuiero [vivir] una vida feliz contigo => I want [to live] a happy life with you\nQuiero vivir [una] vida feliz contigo => I want to live [a] happy life with you\nQuiero vivir [una vida feliz] contigo => I want to live [a happy life] with you\nQuiero vivir una vida feliz [contigo] => I want to live a happy life [with you]\n\n[En] ese momento todo el lugar se llenó => [At] that moment the whole place was filled\nEn [ese] momento todo el lugar se llenó => At [that] moment the whole place was filled\nEn ese [momento] todo el lugar se llenó => At that [moment] the whole place was filled\nEn ese momento [todo el lugar] se llenó => At that moment [the whole place] was filled\nEn ese momento todo el lugar [se llenó] => At that moment the whole place [was filled]\n\n[de] luces brillantes y mágicas => [with] bright and magical lights\nde [luces] brillantes y mágicas => with bright and magical [lights]\nde luces [brillantes] y mágicas => with [bright] and magical lights\nde luces brillantes [y] mágicas => with bright [and] magical lights\nde luces brillantes y [mágicas] => with bright and [magical] lights\n\n[Mientras] Bella miraba sorprendida => [While] Beauty watched in surprise\nMientras [Bella] miraba sorprendida => While [Beauty] watched in surprise\nMientras Bella [miraba] sorprendida => While Beauty [watched] in surprise\nMientras Bella miraba [sorprendida] => surprised, in surprise\n\n[el] rostro de la bestia se transformó => [the] beast's face was transformed\nel [rostro] de la bestia se transformó => the beast's [face] was transformed\nel rostro [de la bestia] se transformó => the [beast's] face was transformed\nel rostro de la bestia [se transformó] => was transformed\n\n[de pronto] en el de un príncipe apuesto => [suddenly] into that of a handsome prince\nde pronto [en] el de un príncipe apuesto => suddenly [into] that of a handsome prince\nde pronto en [el] de un príncipe apuesto => suddenly into [that] of a handsome prince\nde pronto en el [de un] príncipe apuesto => suddenly into that [of a] handsome prince\nde pronto en el de [un] príncipe apuesto => suddenly into that of [a] handsome prince\nde pronto en el de un [príncipe] apuesto => suddenly into that of a handsome [prince]\nde pronto en el de un príncipe [apuesto] => suddenly into that of a [handsome] prince\n\n[El príncipe] tomó las manos de Bella => [The prince] took Beauty's hands\nEl príncipe [tomó] las manos de Bella => The prince [took] Beauty's hands\nEl príncipe tomó [las manos de Bella] => The prince took [Beauty's hands]\n\n[y] le contó que había estado bajo un hechizo => [and] told her that he had been under a spell\ny [le contó] que había estado bajo un hechizo => and [told her] that he had been under a spell\ny le contó [que] había estado bajo un hechizo => and told her [that] he had been under a spell\ny le contó que [había] estado bajo un hechizo => and told her that he [had] been under a spell\ny le contó que había [estado] bajo un hechizo => and told her that he had [been] under a spell\ny le contó que había estado [bajo] un hechizo => and told her that he had been [under] a spell\ny le contó que había estado bajo [un] hechizo => and told her that he had been under [a] spell\ny le contó que había estado bajo un [hechizo] => and told her that he had been under a [spell]\n\n[terrible] => [terrible]\n\n[Le explicó] que si Bella no hubiera dicho => [He explained] that if Beauty had not said\nLe [explicó] que si Bella no hubiera dicho => explained\nLe explicó [que] si Bella no hubiera dicho => He explained [that] if Beauty had not said\nLe explicó que [si] Bella no hubiera dicho => He explained that [if] Beauty had not said\nLe explicó que si [Bella] no hubiera dicho => He explained that if [Beauty] had not said\nLe explicó que si Bella [no hubiera dicho] => He explained that if Beauty [had not said]\n\n[que] lo quería él habría permanecido => [that] she loved him he would have remained\nque [lo quería] él habría permanecido => that [she loved him] he would have remained\nque lo quería [él] habría permanecido => that she loved him [he] would have remained\nque lo quería él [habría permanecido] => that she loved him he [would have remained]\n\n[como] una bestia para siempre => [as] a beast forever\ncomo [una] bestia para siempre => as [a] beast forever\ncomo una [bestia] para siempre => as a [beast] forever\ncomo una bestia [para siempre] => as a beast [forever]\n\n[Y] así el príncipe y Bella vivieran felices => [And] so the prince and Beauty lived happily\nY [así] el príncipe y Bella vivieran felices => And [so] the prince and Beauty lived happily\nY así [el] príncipe y Bella vivieran felices => And so [the] prince and Beauty lived happily\nY así el [príncipe] y Bella vivieran felices => And so the [prince] and Beauty lived happily\nY así el príncipe [y] Bella vivieran felices => And so the prince [and] Beauty lived happily\nY así el príncipe y [Bella] vivieran felices => And so the prince and [Beauty] lived happily\nY así el príncipe y Bella [vivieran] felices => And so the prince and Beauty [lived] happily\nY así el príncipe y Bella vivieran [felices] => And so the prince and Beauty lived [happily]\n\n[para siempre] en el castillo brillante => [forever] in the shining castle\npara siempre [en] el castillo brillante => forever [in] the shining castle\npara siempre en [el] castillo brillante => forever in [the] shining castle\npara siempre en el [castillo] brillante => forever in the shining [castle]\npara siempre en el castillo [brillante] => forever in the [shining] castle\n\n[sabiendo] que la verdadera belleza => [knowing] that true beauty\nsabiendo [que] la verdadera belleza => knowing [that] true beauty\nsabiendo que [la] verdadera belleza => the # Spanish definite article, not translated in English\nsabiendo que la [verdadera] belleza => knowing that [true] beauty\nsabiendo que la verdadera [belleza] => knowing that true [beauty]\n\n[no] está en la apariencia => is [not] in appearance\nno [está] en la apariencia => [is] not in appearance\nno está [en] la apariencia => is not [in] appearance\nno está en [la] apariencia => the # Spanish definite article, not translated in English\nno está en la [apariencia] => is not in [appearance]\n\n[sino] en un corazón bondadoso => [but] in a kind heart\nsino [en] un corazón bondadoso => but [in] a kind heart\nsino en [un] corazón bondadoso => but in [a] kind heart\nsino en un [corazón] bondadoso => but in a kind [heart]\nsino en un corazón [bondadoso] => but in a [kind] heart\n\n",
+    "lessons": "# Once Upon a Time\n00:06 Había una vez en una tierra lejana\n00:08 un comerciante muy rico\n00:11 Este hombre tenía tres hijas jóvenes\n00:13 todas muy hermosas\n\n# The Three Daughters\n00:16 Dos de sus hijas eran muy orgullosas\n00:18 y consentidas\n00:21 Pero la hija más pequeña era muy amable\n00:24 y trabajadora\n\n# Why She Was Called Bella\n00:25 Su belleza interior brillaba en su rostro\n00:28 Por eso todos la llamaban bella\n00:32 Un día el comerciante supo que los barcos\n00:35 con todas sus riquezas\n\n# Bad News\n00:36 se habían hundido en una terrible tormenta\n00:46 Hijas mías tengo malas noticias\n00:50 Ya no seremos tan ricos como antes\n00:52 Dejaremos la ciudad\n\n# A Simple Life\n00:54 y viviremos una vida sencilla\n00:56 en una casita junto al bosque\n01:00 Bella sintió mucha pena por su padre\n01:02 y lo consoló\n\n# Hope at the Port\n01:04 Pero las otras dos hermanas se quejaron\n01:06 todo el día\n01:08 Una mañana el padre escuchó que uno de los barcos\n01:11 hundidos había llegado al puerto\n01:13 Dañado pero flotando\n01:15 Escuché que quedan algunas cosas\n\n# Material Desires\n01:17 para salvar del barco\n01:18 Voy al puerto\n01:19 ¿Qué quieren que les traiga cuando regrese?\n01:22 Un anillo de diamantes\n01:23 una piedra de rubí\n01:25 una pulsera de oro\n\n# Bella's Request\n01:27 ¡Guau!\n01:29 Pero la más joven y bondadosa Bella\n01:31 no le pidió nada a su padre\n01:33 No tú también debes pedir algo\n01:36 Una rosa papá\n01:37 solo tráeme una rosa\n\n# The Empty Ship\n01:40 Así que su padre partió en el largo viaje\n01:45 Cuando llegó al puerto vio que todo en el barco\n01:47 había sido robado\n01:48 y no quedaba nada\n01:50 Se puso muy triste\n01:53 De regreso a casa tuvo que pasar\n\n# The Dark Forest\n01:55 por un bosque oscuro y frío\n01:58 Los relámpagos brillaban en el cielo\n02:00 y el viento aullaba tan fuerte\n02:02 que parecía poder tumbar los árboles\n02:05 El pobre hombre buscó un refugio\n02:06 para protegerse a él y a su caballo\n\n# Finding the Castle\n02:10 Tenía tanto frío y estaba tan asustado\n02:13 que habría dado lo que fuera\n02:14 por descansar un momento\n02:16 En ese momento vio un castillo magnífico\n02:18 con luces brillantes entre los árboles\n02:21 Asombrado el hombre entró\n02:23 por las enormes puertas del castillo\n02:27 ¿Hay alguien aquí?\n\n# A Warm Welcome\n02:31 No había nadie\n02:33 pero el interior del castillo estaba extrañamente\n02:35 iluminado y cálido\n02:38 La gran mesa del comedor estaba llena\n02:40 de comida deliciosa y humeante\n02:44 El pobre hombre llevaba días con hambre\n02:46 así que no pudo resistirse al ver la comida\n02:49 Comió y llenó su estómago vacío\n\n# A Night's Rest\n02:52 Mientras caminaba por el castillo\n02:54 encontró un dormitorio vacío\n02:56 Parecía que había sido preparado especialmente\n02:58 para él\n03:00 Esa noche se acostó y durmió muy bien\n03:09 A la mañana siguiente al despertar\n03:11 encontró ropa nueva y limpia esperándolo\n03:15 Pensó que el castillo debía pertenecer\n\n# The Forbidden Rose\n03:17 a un hada bondadosa\n03:18 y deseó poder darle las gracias\n03:22 Cuando estaba por salir del castillo\n03:24 vio las hermosas rosas del jardín\n03:27 Tomó con cuidado la rosa más hermosa\n03:32 Y en ese instante se escuchó un rugido fuerte\n03:35 que hizo temblar la tierra\n03:42 De detrás de los árboles apareció una bestia\n\n# The Beast's Anger\n03:45 Se veía aterradora pero también muy triste\n03:49 El hombre estaba tan asustado\n03:50 que no sabía qué hacer\n03:52 La bestia caminó hacia él\n03:54 Te di comida y me aseguré\n03:56 de que durmieras seguro\n03:57 Y tú cortaste mis rosas favoritas\n04:00 ¿Cómo pudiste dañar una flor?\n\n# The Terrible Price\n04:02 Así es como me das las gracias\n04:05 Por favor perdóname\n04:06 yo solo tomé una sola rosa\n04:11 Pero la bestia seguía muy enojada\n04:14 Hay un precio por lo que hiciste\n04:16 De camino a casa debes traerme\n04:18 a la primera persona que encuentres\n04:21 Si no tendré que encerrarte\n04:23 en el calabozo para siempre\n04:30 El hombre comenzó su viaje de regreso a casa\n\n# The Return Home\n04:32 con mucha tristeza\n04:35 Cuando llegó a casa vio que solo Bella\n04:37 lo esperaba en la puerta preocupada\n04:39 Y fue con ella con quien cruzó la mirada primero\n04:44 Entonces le contó llorando\n04:46 todo lo que había pasado\n04:48 y la terrible petición de la bestia\n04:50 Cuando las otras hermanas lo escucharon\n04:52 se enojaron mucho con Bella\n04:56 Si no le hubieras pedido una rosa papá\n\n# Bella's Sacrifice\n04:58 nada de esto nos habría pasado\n05:00 Pero ¿y si yo hubiera sido la primera\n05:02 en mirar a mi padre a los ojos?\n05:04 Sí y entonces ¿qué habría pasado?\n05:09 Se suponía que yo me entregaría a una bestia\n05:12 Papá lo siento mucho\n05:14 Haré todo lo que pueda\n05:15 para que no te lleven prisionero\n05:18 El hombre llevó a Bella con él\n05:19 y fueron al castillo de la bestia\n\n# Facing the Beast\n05:21 tal como había prometido\n05:23 Entraron al comedor y se sentaron a la mesa\n05:27 En ese momento se escuchó otra vez\n05:28 el mismo rugido terrible\n05:31 y la bestia entró en la sala\n05:36 Bella tembló de miedo\n05:39 Comieron en silencio durante un rato\n05:42 Pronto tu padre dejará mi castillo\n05:49 y tú te quedarás aquí\n05:50 por tu propia voluntad Bella\n\n# A New Home\n05:54 Sí me quedaré en este castillo\n05:57 por mi propia voluntad\n05:59 Entonces Bella abrazó a su padre por última vez\n06:02 y lo envió de regreso a casa\n06:09 Después caminó por el castillo\n06:11 y vio una puerta cubierta de rosas\n06:14 Curiosa entró\n06:17 Había un piano a un lado\n06:18 un columpio al otro\n06:21 un enorme estantería y miles de libros\n\n# The Queen of the Castle\n06:24 La habitación era exactamente\n06:26 como la de sus sueños\n06:27 Sobre la mesa vio una nota pequeña\n06:29 y la leyó\n06:32 Sí mi querida reina\n06:35 siempre quiero verte feliz\n06:37 tus deseos son mi orden\n06:40 Bella pensó que quería ver a su padre\n06:42 una vez más\n06:45 Luego bajó para cenar\n06:48 Después de un rato la bestia también entró\n06:50 en el salón\n\n# A Surprising Conversation\n06:53 ¿Puedo acompañarte en la cena\n06:55 de esta noche Bella?\n06:57 Tú eres el dueño de este castillo\n06:59 ¿Por qué me preguntas?\n07:01 Come lo que quieras\n07:04 No tú eres el señor de este lugar\n07:06 Si quieres puedo irme\n07:10 Mi presencia incluso podría molestarte\n07:14 Bella se sorprendió mucho por la respuesta\n07:16 de la bestia y no supo qué decir\n07:21 Ojalá nos hubiéramos casado\n07:23 y vivido una vida feliz juntos\n\n# A Change of Heart\n07:28 Nunca me casaré contigo\n07:31 La bestia salió de la sala muy triste\n07:34 Los días fueron pasando uno tras otro\n07:38 A pesar de todo la bestia preparaba cenas\n07:40 deliciosas para Bella cada noche\n07:43 y la trataba con mucha bondad\n07:47 Con el paso de los días Bella se dio cuenta\n07:49 de que se había acostumbrado a la bestia\n07:51 y disfrutaba hablar con él\n07:58 Ya no le tenía miedo\n08:01 De hecho ahora estaba segura\n08:03 de que tenía un buen corazón\n\n# The Magic Ring\n08:11 Sabes extraño mucho a mi padre\n08:14 Quiero visitarlo por un tiempo\n08:16 La bestia se puso muy triste al escuchar\n08:18 su petición\n08:19 Claro que puedes ir\n08:21 pero ¿prometes regresar conmigo?\n08:23 Sí regresaré en tres días\n08:26 Lo prometo\n08:28 Entonces la bestia le dio un anillo mágico\n08:34 Toma esto\n08:35 Cuando te quites el anillo\n08:37 aparecerás de nuevo en este castillo\n\n# Jealousy and Nightmares\n08:39 Bella se puso el anillo y fue a visitar\n08:41 a su padre\n08:49 Su padre se puso muy feliz al verla\n08:53 Pero sus hermanas solo reaccionaron con celos\n08:56 hacia ella y su ropa hermosa\n08:59 Los tres días pasaron muy rápido\n09:02 Como la estaba pasando también con su padre\n09:04 se quedó un cuarto día también\n09:08 Pero esa noche tuvo una pesadilla terrible\n09:12 En su sueño la bestia yacía en el jardín\n09:14 de rosas triste y débil\n09:24 Al despertarse se dio cuenta de cuánto\n\n# Returning to the Garden\n09:26 lo extrañaba y rápidamente se quitó el anillo\n09:30 De inmediato apareció de nuevo\n09:32 en su habitación del castillo\n09:34 Corrió al jardín con prisa\n09:38 Tal como en su sueño la bestia estaba\n09:40 en el jardín débil y llena de tristeza\n09:45 Bella corrió hacia él\n09:46 lo abrazó y trató de despertarlo\n09:48 mientras lloraba\n09:51 La bestia abrió los ojos por un momento\n09:56 Bella estás aquí\n10:00 Por un momento pensé que nunca volverías\n\n# The Transformation\n10:06 Me di cuenta de que cuando estabas lejos\n10:08 te extrañé porque te amo\n10:11 Quiero vivir una vida feliz contigo\n10:15 En ese momento todo el lugar se llenó\n10:17 de luces brillantes y mágicas\n10:19 Mientras Bella miraba sorprendida\n10:21 el rostro de la bestia se transformó\n10:23 de pronto en el de un príncipe apuesto\n10:26 El príncipe tomó las manos de Bella\n10:28 y le contó que había estado bajo un hechizo\n10:30 terrible\n10:32 Le explicó que si Bella no hubiera dicho\n10:34 que lo quería él habría permanecido\n10:37 como una bestia para siempre\n10:39 Y así el príncipe y Bella vivieran felices\n10:43 para siempre en el castillo brillante\n10:46 sabiendo que la verdadera belleza\n10:48 no está en la apariencia\n10:49 sino en un corazón bondadoso",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-03-21 16:21:24 UTC",
+  "updated_at": "2026-03-21 17:41:31 UTC",
+  "exported_at": "2026-03-21T17:41:31Z"
+}

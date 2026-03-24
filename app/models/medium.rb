@@ -5,6 +5,10 @@ class Medium < ApplicationRecord
   has_many :phrases
   belongs_to :language
 
+  def self.youtube_thumbnail_url(video_id, quality = 'hqdefault')
+    "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
+  end
+
   def create_phrases(from_language, to_language)
     case
     when youtube?
@@ -12,6 +16,11 @@ class Medium < ApplicationRecord
     else
        raise ArgumentError, "Unsupported URL format: #{url}"
     end
+  end
+
+  def thumbnail_url
+    video_id = extract_youtube_video_id
+    Medium.youtube_thumbnail_url(video_id)
   end
 
   def create_phrases_from_youtube_video(from_language, to_language)

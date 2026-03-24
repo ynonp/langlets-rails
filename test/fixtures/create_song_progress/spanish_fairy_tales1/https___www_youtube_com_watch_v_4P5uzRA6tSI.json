@@ -1,0 +1,250 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=4P5uzRA6tSI",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "00:06",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "como puedas",
+        "timestamp": "00:08",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "00:09",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "porque soy el hombre de jengibre",
+        "timestamp": "00:11",
+        "text_l2": "because I'm the gingerbread man"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "05:38",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "como puedas",
+        "timestamp": "05:40",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "05:41",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "soy el hombre de jengibre",
+        "timestamp": "05:43",
+        "text_l2": "I'm the gingerbread man"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "estoy escapando de una anciana",
+        "timestamp": "06:19",
+        "text_l2": "I'm escaping from an old woman"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "de ti también puedo escapar",
+        "timestamp": "06:21",
+        "text_l2": "I can escape from you too"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "06:23",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "como puedas",
+        "timestamp": "06:25",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "06:26",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "porque soy el hombre de jengibre",
+        "timestamp": "06:28",
+        "text_l2": "because I'm the gingerbread man"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "estoy escapando de una anciana",
+        "timestamp": "06:48",
+        "text_l2": "I'm escaping from an old woman"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "y de una vaca",
+        "timestamp": "06:50",
+        "text_l2": "and from a cow"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "de ti también puedo escapar",
+        "timestamp": "06:51",
+        "text_l2": "I can escape from you too"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "06:53",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "como puedas",
+        "timestamp": "06:55",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "06:56",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "porque soy el hombre de jengibre",
+        "timestamp": "06:58",
+        "text_l2": "because I'm the gingerbread man"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "estoy escapando de una anciana",
+        "timestamp": "07:19",
+        "text_l2": "I'm escaping from an old woman"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "una vaca y un cerdo",
+        "timestamp": "07:21",
+        "text_l2": "a cow and a pig"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "de ti también puedo escapar",
+        "timestamp": "07:23",
+        "text_l2": "I can escape from you too"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "07:25",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "como puedas",
+        "timestamp": "07:27",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "07:28",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "porque soy el hombre de jengibre",
+        "timestamp": "07:30",
+        "text_l2": "because I'm the gingerbread man"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "soy la galleta más lista",
+        "timestamp": "07:45",
+        "text_l2": "I'm the smartest cookie"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "y más rápida del mundo",
+        "timestamp": "07:47",
+        "text_l2": "and the fastest in the world"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "nadie puede atraparme",
+        "timestamp": "07:48",
+        "text_l2": "nobody can catch me"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "escapé de una anciana",
+        "timestamp": "11:03",
+        "text_l2": "I escaped from an old woman"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "una vaca, un cerdo",
+        "timestamp": "11:04",
+        "text_l2": "a cow, a pig"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "una gallina y un zorro",
+        "timestamp": "11:05",
+        "text_l2": "a hen and a fox"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "y también puedo escapar de ti",
+        "timestamp": "11:07",
+        "text_l2": "and I can escape from you too"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "corre, corre tan rápido",
+        "timestamp": "11:09",
+        "text_l2": "run, run as fast"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "como puedas",
+        "timestamp": "11:11",
+        "text_l2": "as you can"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "no puedes atraparme",
+        "timestamp": "11:12",
+        "text_l2": "you can't catch me"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "porque yo soy el hombre de jengibre",
+        "timestamp": "11:14",
+        "text_l2": "because I am the gingerbread man"
+      }
+    ],
+    "phrases_with_token_translations": "[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as you [can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[porque] soy el hombre de jengibre => [because] I'm the gingerbread man\nporque [soy] el hombre de jengibre => because [I'm] the gingerbread man\nporque soy [el] hombre de jengibre => because I'm [the] gingerbread man\nporque soy el [hombre de jengibre] => because I'm the [gingerbread man]\n\n[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as you [can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[soy] el hombre de jengibre => [I'm] the gingerbread man\nsoy [el] hombre de jengibre => I'm [the] gingerbread man\nsoy el [hombre de jengibre] => I'm the [gingerbread man]\n\n[estoy] escapando de una anciana => [I'm] escaping from an old woman\nestoy [escapando] de una anciana => I'm [escaping] from an old woman\nestoy escapando [de] una anciana => I'm escaping [from] an old woman\nestoy escapando de [una] anciana => I'm escaping from [an] old woman\nestoy escapando de una [anciana] => I'm escaping from an [old woman]\n\n[de ti] también puedo escapar => I can escape [from you] too\nde ti [también] puedo escapar => I can escape from you [too]\nde ti también [puedo] escapar => I [can] escape from you too\nde ti también puedo [escapar] => I can [escape] from you too\n\n[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as you [can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[porque] soy el hombre de jengibre => [because] I'm the gingerbread man\nporque [soy] el hombre de jengibre => because [I'm] the gingerbread man\nporque soy [el] hombre de jengibre => because I'm [the] gingerbread man\nporque soy el [hombre de jengibre] => because I'm the [gingerbread man]\n\n[estoy] escapando de una anciana => [I'm] escaping from an old woman\nestoy [escapando] de una anciana => I'm [escaping] from an old woman\nestoy escapando [de] una anciana => I'm escaping [from] an old woman\nestoy escapando de [una] anciana => I'm escaping from [an] old woman\nestoy escapando de una [anciana] => I'm escaping from an [old woman]\n\n[y] de una vaca => [and] from a cow\ny [de] una vaca => and [from] a cow\ny de [una] vaca => and from [a] cow\ny de una [vaca] => and from a [cow]\n\n[de ti] también puedo escapar => I can escape [from you] too\nde ti [también] puedo escapar => I can escape from you [too]\nde ti también [puedo] escapar => [I can] escape from you too\nde ti también puedo [escapar] => I can [escape] from you too\n\n[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as [you can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[porque] soy el hombre de jengibre => [because] I'm the gingerbread man\nporque [soy] el hombre de jengibre => because [I'm] the gingerbread man\nporque soy [el] hombre de jengibre => because I'm [the] gingerbread man\nporque soy el [hombre de jengibre] => because I'm the [gingerbread man]\n\n[estoy] escapando de una anciana => [I'm] escaping from an old woman\nestoy [escapando] de una anciana => I'm [escaping] from an old woman\nestoy escapando [de] una anciana => I'm escaping [from] an old woman\nestoy escapando de [una] anciana => I'm escaping from [an] old woman\nestoy escapando de una [anciana] => I'm escaping from an [old woman]\n\n[una] vaca y un cerdo => [a] cow and a pig\nuna [vaca] y un cerdo => a [cow] and a pig\nuna vaca [y] un cerdo => a cow [and] a pig\nuna vaca y [un] cerdo => a cow and [a] pig\nuna vaca y un [cerdo] => a cow and a [pig]\n\n[de ti] también puedo escapar => I can escape [from you] too\nde ti [también] puedo escapar => I can escape from you [too]\nde ti también [puedo] escapar => [I can] escape from you too\nde ti también puedo [escapar] => I can [escape] from you too\n\n[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as [you can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[porque] soy el hombre de jengibre => [because] I'm the gingerbread man\nporque [soy] el hombre de jengibre => because [I'm] the gingerbread man\nporque soy [el] hombre de jengibre => because I'm [the] gingerbread man\nporque soy el [hombre de jengibre] => because I'm the [gingerbread man]\n\n[soy] la galleta más lista => [I'm] the smartest cookie\nsoy [la] galleta más lista => I'm [the] smartest cookie\nsoy la [galleta] más lista => I'm the smartest [cookie]\nsoy la galleta [más lista] => I'm the [smartest] cookie\n\n[y] más rápida del mundo => [and] the fastest in the world\ny [más rápida] del mundo => and [the fastest] in the world\ny más rápida [del mundo] => and the fastest [in the world]\n\n[nadie] puede atraparme => [nobody] can catch me\nnadie [puede] atraparme => nobody [can] catch me\nnadie puede [atraparme] => nobody can [catch me]\n\n[escapé] de una anciana => [I escaped] from an old woman\nescapé [de] una anciana => I escaped [from] an old woman\nescapé de [una] anciana => I escaped from [an] old woman\nescapé de una [anciana] => I escaped from an [old woman]\n\n[una] vaca, un cerdo => [a] cow, a pig\nuna [vaca], un cerdo => a [cow], a pig\nuna vaca, [un] cerdo => a cow, [a] pig\nuna vaca, un [cerdo] => a cow, a [pig]\n\n[una] gallina y un zorro => [a] hen and a fox\nuna [gallina] y un zorro => a [hen] and a fox\nuna gallina [y] un zorro => a hen [and] a fox\nuna gallina y [un] zorro => a hen and [a] fox\nuna gallina y un [zorro] => a hen and a [fox]\n\n[y] también puedo escapar de ti => [and] I can escape from you too\ny [también] puedo escapar de ti => and I can escape from you [too]\ny también [puedo] escapar de ti => and [I can] escape from you too\ny también puedo [escapar] de ti => and I can [escape] from you too\ny también puedo escapar [de ti] => and I can escape [from you] too\n\n[corre], corre tan rápido => [run], run as fast\ncorre, [corre] tan rápido => run, [run] as fast\ncorre, corre [tan] rápido => run, run [as] fast\ncorre, corre tan [rápido] => run, run as [fast]\n\n[como] puedas => [as] you can\ncomo [puedas] => as [you can]\n\n[no puedes] atraparme => [you can't] catch me\nno puedes [atraparme] => you can't [catch me]\n\n[porque] yo soy el hombre de jengibre => [because] I am the gingerbread man\nporque [yo] soy el hombre de jengibre => because [I] am the gingerbread man\nporque yo [soy] el hombre de jengibre => because I [am] the gingerbread man\nporque yo soy [el] hombre de jengibre => because I am [the] gingerbread man\nporque yo soy el [hombre de jengibre] => because I am the [gingerbread man]\n\n",
+    "lessons": "# The Famous Catchphrase\n00:06 corre, corre tan rápido\n00:08 como puedas\n00:09 no puedes atraparme\n00:11 porque soy el hombre de jengibre\n\n# Run as Fast as You Can\n05:38 corre, corre tan rápido\n05:40 como puedas\n05:41 no puedes atraparme\n05:43 soy el hombre de jengibre\n\n# Escaping the Old Woman\n06:19 estoy escapando de una anciana\n06:21 de ti también puedo escapar\n06:23 corre, corre tan rápido\n06:25 como puedas\n\n# Adding the Cow\n06:26 no puedes atraparme\n06:28 porque soy el hombre de jengibre\n06:48 estoy escapando de una anciana\n06:50 y de una vaca\n\n# Can't Catch Me\n06:51 de ti también puedo escapar\n06:53 corre, corre tan rápido\n06:55 como puedas\n06:56 no puedes atraparme\n\n# Adding the Pig\n06:58 porque soy el hombre de jengibre\n07:19 estoy escapando de una anciana\n07:21 una vaca y un cerdo\n07:23 de ti también puedo escapar\n07:25 corre, corre tan rápido\n07:27 como puedas\n\n# The Smartest Cookie\n07:28 no puedes atraparme\n07:30 porque soy el hombre de jengibre\n07:45 soy la galleta más lista\n07:47 y más rápida del mundo\n07:48 nadie puede atraparme\n11:03 escapé de una anciana\n\n# The Final Escape\n11:04 una vaca, un cerdo\n11:05 una gallina y un zorro\n11:07 y también puedo escapar de ti\n11:09 corre, corre tan rápido\n11:11 como puedas\n11:12 no puedes atraparme\n11:14 porque yo soy el hombre de jengibre",
+    "similar_sounds": "[coro], corre tan rápido\n[tomo] puedas\nno puedes [atraparte]\nporque soy el [hombro] de jengibre\ncorre, corre [san] rápido\n[con] puedas\n[nos] puedes atraparme\nsoy el [hambre] de jengibre\nestoy escapando de una [anciano]\nde ti también puedo [esperar]\n[come], corre tan rápido\ncomo [piedras]\nno puedes [adaptarme]\nporque [voy] el hombre de jengibre\nestoy escapando de una [duna]\ny de una [baca]\nde [mi] también puedo escapar\ncorre, corre tan [raro]\ncomo [quedas]\n[lo] puedes atraparme\nporque soy el [nombre] de jengibre\nestoy [esperando] de una anciana\nuna vaca [ya] un cerdo\n[me] ti también puedo escapar\ncorre, corre tan [tímido]\n[tomo] puedas\n[yo] puedes atraparme\nporque soy [al] hombre de jengibre\nsoy la galleta más [vista]\ny más rápida [de] mundo\nnadie [puedo] atraparme\n[esperé] de una anciana\n[duna] vaca, un cerdo\nuna gallina y un [toro]\ny también puedo escapar de [mi]\n[come], corre tan rápido\n[tomo] puedas\n[yo] puedes atraparme\nporque yo soy el [hombro] de jengibre"
+  },
+  "created_at": "2026-03-21 17:42:07 UTC",
+  "updated_at": "2026-03-21 17:49:48 UTC",
+  "exported_at": "2026-03-21T17:49:49Z"
+}

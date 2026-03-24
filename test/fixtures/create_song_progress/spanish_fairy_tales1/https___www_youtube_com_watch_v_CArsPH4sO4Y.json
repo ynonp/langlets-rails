@@ -1,0 +1,1258 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=CArsPH4sO4Y",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "Érase una vez",
+        "timestamp": "00:00",
+        "text_l2": "Once upon a time"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "al borde del bosque",
+        "timestamp": "00:02",
+        "text_l2": "at the edge of the forest"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "vivía una chica",
+        "timestamp": "00:04",
+        "text_l2": "lived a girl"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "de cabello dorado",
+        "timestamp": "00:05",
+        "text_l2": "with golden hair"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "esta niña de pelo dorado",
+        "timestamp": "00:07",
+        "text_l2": "this golden-haired girl"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "se llamaba Risitos de Oro",
+        "timestamp": "00:09",
+        "text_l2": "was named Goldilocks"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "ella tenía rizos tan bellos",
+        "timestamp": "00:11",
+        "text_l2": "she had such beautiful curls"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "que todos los que la veían",
+        "timestamp": "00:13",
+        "text_l2": "that everyone who saw her"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "estaban hipnotizados",
+        "timestamp": "00:15",
+        "text_l2": "was mesmerized"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "pero a pesar de su dulzura",
+        "timestamp": "00:17",
+        "text_l2": "but despite her sweetness"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "a veces podía ser traviesa",
+        "timestamp": "00:19",
+        "text_l2": "sometimes she could be mischievous"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "siempre que salía a jugar",
+        "timestamp": "00:22",
+        "text_l2": "whenever she went out to play"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "su madre le advertía",
+        "timestamp": "00:25",
+        "text_l2": "her mother would warn her"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "que se comportara",
+        "timestamp": "00:27",
+        "text_l2": "to behave herself"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "por favor quédate en el patio",
+        "timestamp": "00:29",
+        "text_l2": "please stay in the yard"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "no vayas al bosque",
+        "timestamp": "00:31",
+        "text_l2": "don't go into the forest"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "muy dentro del bosque",
+        "timestamp": "00:33",
+        "text_l2": "deep inside the forest"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "vivía una familia de osos",
+        "timestamp": "00:35",
+        "text_l2": "lived a family of bears"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "papá oso de hombros anchos",
+        "timestamp": "00:38",
+        "text_l2": "Papa Bear with broad shoulders"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "una mamá oso de tamaño mediano",
+        "timestamp": "00:40",
+        "text_l2": "a medium-sized Mama Bear"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "y un bebé oso",
+        "timestamp": "00:43",
+        "text_l2": "and a Baby Bear"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "mamá oso se levantaba temprano",
+        "timestamp": "00:46",
+        "text_l2": "Mama Bear would get up early"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "para preparar tazones de avena",
+        "timestamp": "00:49",
+        "text_l2": "to prepare bowls of oatmeal"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "una mañana el bebé oso",
+        "timestamp": "00:53",
+        "text_l2": "one morning Baby Bear"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "se despertó más temprano",
+        "timestamp": "00:55",
+        "text_l2": "woke up earlier"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "y quería comer su avena",
+        "timestamp": "00:57",
+        "text_l2": "and wanted to eat his oatmeal"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "pero estaba demasiado caliente",
+        "timestamp": "00:59",
+        "text_l2": "but it was too hot"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "mamá podemos salir a caminar",
+        "timestamp": "01:03",
+        "text_l2": "Mama, can we go for a walk"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "hasta que nuestros tazones se enfríen",
+        "timestamp": "01:06",
+        "text_l2": "until our bowls cool down"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "mamá, papá y bebé oso",
+        "timestamp": "01:08",
+        "text_l2": "Mama, Papa, and Baby Bear"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "dejaron sus platos sobre la mesa",
+        "timestamp": "01:10",
+        "text_l2": "left their bowls on the table"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "y salieron a caminar",
+        "timestamp": "01:13",
+        "text_l2": "and went for a walk"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "en esa misma mañana",
+        "timestamp": "01:16",
+        "text_l2": "on that same morning"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Risitos de Oro estaba jugando",
+        "timestamp": "01:18",
+        "text_l2": "Goldilocks was playing"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "mientras esperaba el desayuno",
+        "timestamp": "01:20",
+        "text_l2": "while waiting for breakfast"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "pero estaba tan aburrida",
+        "timestamp": "01:22",
+        "text_l2": "but she was so bored"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "de siempre jugar en su patio",
+        "timestamp": "01:24",
+        "text_l2": "of always playing in her yard"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "y tenía mucha curiosidad",
+        "timestamp": "01:26",
+        "text_l2": "and she was very curious"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "de conocer las profundidades del bosque",
+        "timestamp": "01:28",
+        "text_l2": "to know the depths of the forest"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "qué pasaría si salgo a caminar",
+        "timestamp": "01:31",
+        "text_l2": "what would happen if I go for a walk"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "miró a su alrededor",
+        "timestamp": "01:34",
+        "text_l2": "she looked around her"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "y al ver que no había nadie",
+        "timestamp": "01:36",
+        "text_l2": "and seeing that no one was there"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "comenzó a correr hacia el bosque",
+        "timestamp": "01:38",
+        "text_l2": "she started running toward the forest"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "cuando se cansó se detuvo",
+        "timestamp": "01:41",
+        "text_l2": "when she got tired she stopped"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "y miró a su alrededor",
+        "timestamp": "01:43",
+        "text_l2": "and looked around her"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "qué hermoso bosque",
+        "timestamp": "01:45",
+        "text_l2": "what a beautiful forest"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "las flores, árboles",
+        "timestamp": "01:47",
+        "text_l2": "the flowers, trees"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "por qué no vine aquí antes",
+        "timestamp": "01:49",
+        "text_l2": "why didn't I come here before"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "comenzó a caminar hacia lo profundo",
+        "timestamp": "01:52",
+        "text_l2": "she started walking into the depths"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "mientras tanto al caminar",
+        "timestamp": "01:55",
+        "text_l2": "meanwhile as they walked"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "el bebé oso vio una colmena",
+        "timestamp": "01:58",
+        "text_l2": "Baby Bear saw a beehive"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "en la rama de un árbol",
+        "timestamp": "02:01",
+        "text_l2": "on the branch of a tree"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "qué colmena tan grande",
+        "timestamp": "02:03",
+        "text_l2": "what a big beehive"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "estoy seguro de que está llena",
+        "timestamp": "02:05",
+        "text_l2": "I'm sure it's full"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "papá podemos comer un poco",
+        "timestamp": "02:07",
+        "text_l2": "Papa, can we eat a little"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "no mi niño",
+        "timestamp": "02:11",
+        "text_l2": "no, my child"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "eso le pertenece a las abejas",
+        "timestamp": "02:13",
+        "text_l2": "that belongs to the bees"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "es su casa",
+        "timestamp": "02:15",
+        "text_l2": "it's their home"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "no debemos ir a la casa",
+        "timestamp": "02:17",
+        "text_l2": "we shouldn't go to the house"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "de nadie y comer su comida",
+        "timestamp": "02:19",
+        "text_l2": "of anyone and eat their food"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "no está bien",
+        "timestamp": "02:21",
+        "text_l2": "it's not right"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "tienen razón",
+        "timestamp": "02:22",
+        "text_l2": "you're right"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "creo que tendré que esperar",
+        "timestamp": "02:24",
+        "text_l2": "I think I'll have to wait"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "hasta que nos vayamos a desayunar",
+        "timestamp": "02:26",
+        "text_l2": "until we go to have breakfast"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "mientras tanto Risitos de Oro",
+        "timestamp": "02:27",
+        "text_l2": "meanwhile Goldilocks"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "caminó sola por tanto tiempo",
+        "timestamp": "02:29",
+        "text_l2": "walked alone for so long"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "que finalmente se perdió",
+        "timestamp": "02:32",
+        "text_l2": "that finally she got lost"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "intentó regresar pero no pudo",
+        "timestamp": "02:34",
+        "text_l2": "she tried to go back but couldn't"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "distinguir el camino correcto",
+        "timestamp": "02:36",
+        "text_l2": "distinguish the right path"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "ella estaba muy cansada y hambrienta",
+        "timestamp": "02:39",
+        "text_l2": "she was very tired and hungry"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "casi lloraba por su cansancio",
+        "timestamp": "02:41",
+        "text_l2": "she almost cried from her exhaustion"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "caminó un poco más",
+        "timestamp": "02:44",
+        "text_l2": "she walked a little more"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "finalmente llegó al final del camino",
+        "timestamp": "02:46",
+        "text_l2": "finally she reached the end of the path"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "y se encontró con la casa",
+        "timestamp": "02:50",
+        "text_l2": "and came across the house"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "entre los árboles",
+        "timestamp": "02:53",
+        "text_l2": "among the trees"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "en silencio se acercó a la casa",
+        "timestamp": "02:56",
+        "text_l2": "quietly she approached the house"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "caminó alrededor",
+        "timestamp": "02:59",
+        "text_l2": "she walked around it"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "pero no podía ver a nadie",
+        "timestamp": "03:01",
+        "text_l2": "but she couldn't see anyone"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "tocó la puerta",
+        "timestamp": "03:03",
+        "text_l2": "she knocked on the door"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "pero nadie respondió",
+        "timestamp": "03:05",
+        "text_l2": "but no one answered"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "luego miró a través de la ventana",
+        "timestamp": "03:08",
+        "text_l2": "then she looked through the window"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "ella vio tres platos humeantes",
+        "timestamp": "03:11",
+        "text_l2": "she saw three steaming bowls"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "calientes sobre la mesa",
+        "timestamp": "03:14",
+        "text_l2": "hot on the table"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "volvió a la puerta",
+        "timestamp": "03:17",
+        "text_l2": "she went back to the door"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "y esta vez golpeó con fuerza",
+        "timestamp": "03:19",
+        "text_l2": "and this time she knocked loudly"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "la puerta se abrió",
+        "timestamp": "03:22",
+        "text_l2": "the door opened"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "Risitos de Oro se llenó de alegría",
+        "timestamp": "03:24",
+        "text_l2": "Goldilocks was filled with joy"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "miró adentro y gritó",
+        "timestamp": "03:26",
+        "text_l2": "she looked inside and shouted"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "hay alguien en casa",
+        "timestamp": "03:28",
+        "text_l2": "is anyone home"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "cuando no hubo respuesta",
+        "timestamp": "03:30",
+        "text_l2": "when there was no answer"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "ella entró",
+        "timestamp": "03:32",
+        "text_l2": "she went in"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "ella se acercó a la mesa",
+        "timestamp": "03:33",
+        "text_l2": "she approached the table"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "sobre la mesa habían tres tazones",
+        "timestamp": "03:35",
+        "text_l2": "on the table there were three bowls"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "uno grande, uno mediano",
+        "timestamp": "03:38",
+        "text_l2": "one large, one medium"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "y uno pequeño",
+        "timestamp": "03:41",
+        "text_l2": "and one small"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "ella estaba tan hambrienta",
+        "timestamp": "03:43",
+        "text_l2": "she was so hungry"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "que quería comerse el grande primero",
+        "timestamp": "03:45",
+        "text_l2": "that she wanted to eat the large one first"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "pero en el momento en que probó",
+        "timestamp": "03:48",
+        "text_l2": "but the moment she tasted it"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "se quemó",
+        "timestamp": "03:50",
+        "text_l2": "she burned herself"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "porque la avena aún estaba caliente",
+        "timestamp": "03:52",
+        "text_l2": "because the oatmeal was still hot"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "ella inmediatamente se acercó al mediano",
+        "timestamp": "03:55",
+        "text_l2": "she immediately approached the medium one"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "pero tampoco quiso comer",
+        "timestamp": "03:57",
+        "text_l2": "but she didn't want to eat it either"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "porque estaba demasiado frío",
+        "timestamp": "03:59",
+        "text_l2": "because it was too cold"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "está demasiado frío",
+        "timestamp": "04:03",
+        "text_l2": "it's too cold"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "finalmente sumergió su cuchara",
+        "timestamp": "04:06",
+        "text_l2": "finally she dipped her spoon"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "en la más pequeña",
+        "timestamp": "04:08",
+        "text_l2": "into the smallest one"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "esta avena no está ni fría",
+        "timestamp": "04:10",
+        "text_l2": "this oatmeal is neither cold"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "ni muy caliente",
+        "timestamp": "04:13",
+        "text_l2": "nor very hot"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "está exactamente como la quiero",
+        "timestamp": "04:15",
+        "text_l2": "it's exactly how I want it"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "así que ella se comió todo",
+        "timestamp": "04:18",
+        "text_l2": "so she ate all of"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "el tazón más pequeño",
+        "timestamp": "04:21",
+        "text_l2": "the smallest bowl"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "cuando terminó su desayuno",
+        "timestamp": "04:23",
+        "text_l2": "when she finished her breakfast"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "se sintió satisfecha",
+        "timestamp": "04:25",
+        "text_l2": "she felt satisfied"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "fue a sentarse en una silla",
+        "timestamp": "04:27",
+        "text_l2": "she went to sit in a chair"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "para descansar un rato",
+        "timestamp": "04:29",
+        "text_l2": "to rest for a while"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "una de las tres sillas era grande",
+        "timestamp": "04:31",
+        "text_l2": "one of the three chairs was large"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "la otra mediana",
+        "timestamp": "04:33",
+        "text_l2": "the other medium"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "y la última pequeña",
+        "timestamp": "04:35",
+        "text_l2": "and the last one small"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "primero trató de sentarse en la grande",
+        "timestamp": "04:37",
+        "text_l2": "first she tried to sit in the large one"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "pero ni siquiera pudo subir",
+        "timestamp": "04:40",
+        "text_l2": "but she couldn't even climb up"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "probó la mediana",
+        "timestamp": "04:42",
+        "text_l2": "she tried the medium one"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "pero estaba muy dura",
+        "timestamp": "04:44",
+        "text_l2": "but it was very hard"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "era muy incómoda",
+        "timestamp": "04:47",
+        "text_l2": "it was very uncomfortable"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "finalmente ella se sentó en la pequeña",
+        "timestamp": "04:49",
+        "text_l2": "finally she sat in the small one"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "esta era muy cómoda",
+        "timestamp": "04:52",
+        "text_l2": "this one was very comfortable"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "y exactamente de su tamaño",
+        "timestamp": "04:54",
+        "text_l2": "and exactly her size"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "pero de repente",
+        "timestamp": "04:58",
+        "text_l2": "but suddenly"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "la silla se rompió en pedazos",
+        "timestamp": "05:00",
+        "text_l2": "the chair broke into pieces"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "con un fuerte estruendo",
+        "timestamp": "05:02",
+        "text_l2": "with a loud crash"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "Risitos de Oro se encontró en el suelo",
+        "timestamp": "05:04",
+        "text_l2": "Goldilocks found herself on the floor"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "y no supo qué hacer",
+        "timestamp": "05:06",
+        "text_l2": "and didn't know what to do"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "caminó hacia la habitación de al lado",
+        "timestamp": "05:08",
+        "text_l2": "she walked to the next room"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "y vio que había tres camas",
+        "timestamp": "05:10",
+        "text_l2": "and saw that there were three beds"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "una grande, una mediana",
+        "timestamp": "05:13",
+        "text_l2": "one large, one medium"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "y una pequeña",
+        "timestamp": "05:16",
+        "text_l2": "and one small"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "primero probó la cama grande",
+        "timestamp": "05:18",
+        "text_l2": "first she tried the large bed"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "era demasiado grande para ella",
+        "timestamp": "05:20",
+        "text_l2": "it was too big for her"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "y también demasiado dura",
+        "timestamp": "05:22",
+        "text_l2": "and also too hard"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "la segunda le quedaba un poco grande",
+        "timestamp": "05:25",
+        "text_l2": "the second one was a bit big for her"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "pero era demasiado suave",
+        "timestamp": "05:27",
+        "text_l2": "but it was too soft"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "así que ella se acostó",
+        "timestamp": "05:31",
+        "text_l2": "so she lay down"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "en la tercera y más pequeña cama",
+        "timestamp": "05:33",
+        "text_l2": "in the third and smallest bed"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "esta era exactamente de su tamaño",
+        "timestamp": "05:35",
+        "text_l2": "this one was exactly her size"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "y era muy cómoda",
+        "timestamp": "05:37",
+        "text_l2": "and it was very comfortable"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "tan cómoda que Risitos de Oro",
+        "timestamp": "05:40",
+        "text_l2": "so comfortable that Goldilocks"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "se durmió de inmediato",
+        "timestamp": "05:43",
+        "text_l2": "fell asleep immediately"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "mientras Risitos de Oro estaba durmiendo",
+        "timestamp": "05:45",
+        "text_l2": "while Goldilocks was sleeping"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "la familia oso regresó a casa",
+        "timestamp": "05:47",
+        "text_l2": "the bear family returned home"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "papá oso traía un poco de leña",
+        "timestamp": "05:50",
+        "text_l2": "Papa Bear was bringing some firewood"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "que recogió para la chimenea",
+        "timestamp": "05:52",
+        "text_l2": "that he gathered for the fireplace"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "mamá oso tenía moras frescas",
+        "timestamp": "05:54",
+        "text_l2": "Mama Bear had fresh blackberries"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "y el bebé oso no podía esperar",
+        "timestamp": "05:57",
+        "text_l2": "and Baby Bear couldn't wait"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "para comer su avena",
+        "timestamp": "06:00",
+        "text_l2": "to eat his oatmeal"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "cuando llegaron a casa",
+        "timestamp": "06:02",
+        "text_l2": "when they arrived home"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "se sentaron rápidamente en la mesa",
+        "timestamp": "06:04",
+        "text_l2": "they sat down quickly at the table"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "alguien probó mi avena",
+        "timestamp": "06:07",
+        "text_l2": "someone tasted my oatmeal"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "alguien también probó mi avena",
+        "timestamp": "06:11",
+        "text_l2": "someone also tasted my oatmeal"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "alguien también probó mi avena",
+        "timestamp": "06:13",
+        "text_l2": "someone also tasted my oatmeal"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "y no solo la probó",
+        "timestamp": "06:17",
+        "text_l2": "and not only tasted it"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "sino que se la comió toda",
+        "timestamp": "06:20",
+        "text_l2": "but ate it all up"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "se levantaron y comenzaron a mirar alrededor",
+        "timestamp": "06:25",
+        "text_l2": "they got up and started to look around"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "el papá oso notó su silla",
+        "timestamp": "06:28",
+        "text_l2": "Papa Bear noticed his chair"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "frente a la chimenea",
+        "timestamp": "06:31",
+        "text_l2": "in front of the fireplace"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "alguien se sentó en mi silla",
+        "timestamp": "06:33",
+        "text_l2": "someone sat in my chair"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "mira, está en un distinto lugar",
+        "timestamp": "06:35",
+        "text_l2": "look, it's in a different place"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "alguien también se sentó en mi silla",
+        "timestamp": "06:38",
+        "text_l2": "someone also sat in my chair"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "alguien también se sentó en mi silla",
+        "timestamp": "06:41",
+        "text_l2": "someone also sat in my chair"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "pero también la rompió",
+        "timestamp": "06:43",
+        "text_l2": "but also broke it"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "la familia oso con curiosidad",
+        "timestamp": "06:47",
+        "text_l2": "the bear family with curiosity"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "entró en el dormitorio",
+        "timestamp": "06:50",
+        "text_l2": "entered the bedroom"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "alguien se acostó en mi cama",
+        "timestamp": "06:52",
+        "text_l2": "someone lay in my bed"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "mira, está destendida",
+        "timestamp": "06:54",
+        "text_l2": "look, it's unmade"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "alguien también se acostó sobre la mía",
+        "timestamp": "06:57",
+        "text_l2": "someone also lay on mine"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "alguien también se acostó en mi cama",
+        "timestamp": "07:00",
+        "text_l2": "someone also lay in my bed"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "y aún está durmiendo en ella",
+        "timestamp": "07:03",
+        "text_l2": "and is still sleeping in it"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "papá oso fue al lado de la cama",
+        "timestamp": "07:10",
+        "text_l2": "Papa Bear went to the side of the bed"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "y vio que alguien realmente",
+        "timestamp": "07:12",
+        "text_l2": "and saw that someone really"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "estaba durmiendo en su cama",
+        "timestamp": "07:14",
+        "text_l2": "was sleeping in his bed"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "lentamente levantó la sábana",
+        "timestamp": "07:16",
+        "text_l2": "slowly he lifted the sheet"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "y se sorprendió al ver a una niña",
+        "timestamp": "07:19",
+        "text_l2": "and was surprised to see a girl"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "qué está haciendo una niña en nuestra casa",
+        "timestamp": "07:23",
+        "text_l2": "what is a girl doing in our house"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "dile a la pequeña niña",
+        "timestamp": "07:27",
+        "text_l2": "tell the little girl"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "que se levante de mi cama ahora",
+        "timestamp": "07:29",
+        "text_l2": "to get out of my bed now"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "al despertarse con el llanto del bebé oso",
+        "timestamp": "07:34",
+        "text_l2": "waking up to Baby Bear's crying"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "Risitos de Oro vio a tres osos",
+        "timestamp": "07:37",
+        "text_l2": "Goldilocks saw three bears"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "frente a ella y salió corriendo",
+        "timestamp": "07:39",
+        "text_l2": "in front of her and ran out"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "de la sala aterrorizada",
+        "timestamp": "07:41",
+        "text_l2": "of the room terrified"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "salió de la casa",
+        "timestamp": "07:44",
+        "text_l2": "she left the house"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "y comenzó a correr sin mirar atrás",
+        "timestamp": "07:46",
+        "text_l2": "and started running without looking back"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "se quedó sin aliento",
+        "timestamp": "07:48",
+        "text_l2": "she ran out of breath"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "de tanto correr pero no se detuvo",
+        "timestamp": "07:50",
+        "text_l2": "from so much running but she didn't stop"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "y ella ni siquiera sabía qué camino tomar",
+        "timestamp": "07:52",
+        "text_l2": "and she didn't even know which way to go"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "justo en ese momento",
+        "timestamp": "07:54",
+        "text_l2": "just at that moment"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "vio a sus padres cruzando el bosque",
+        "timestamp": "07:56",
+        "text_l2": "she saw her parents crossing the forest"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "ya que al no regresar a casa",
+        "timestamp": "07:59",
+        "text_l2": "since when she didn't return home"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "salieron a buscarla",
+        "timestamp": "08:01",
+        "text_l2": "they went out to look for her"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "Risitos de Oro estaba muy feliz",
+        "timestamp": "08:04",
+        "text_l2": "Goldilocks was very happy"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "de ver a sus padres",
+        "timestamp": "08:06",
+        "text_l2": "to see her parents"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "ella corrió y abrazó a su madre",
+        "timestamp": "08:08",
+        "text_l2": "she ran and hugged her mother"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "a partir de ahora siempre te escucharé",
+        "timestamp": "08:11",
+        "text_l2": "from now on I will always listen to you"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "nunca me iré sin avisarte",
+        "timestamp": "08:14",
+        "text_l2": "I will never leave without telling you"
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "Risitos de Oro abrazó a sus padres fuertemente",
+        "timestamp": "08:16",
+        "text_l2": "Goldilocks hugged her parents tightly"
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "desde ese día, tal como lo prometió",
+        "timestamp": "08:20",
+        "text_l2": "since that day, just as she promised"
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "ella siempre escuchó a sus padres",
+        "timestamp": "08:23",
+        "text_l2": "she always listened to her parents"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "y no hacía nada sin antes recibir su permiso",
+        "timestamp": "08:25",
+        "text_l2": "and did nothing without first receiving their permission"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "ella fue una chica amable y educada",
+        "timestamp": "08:27",
+        "text_l2": "she was a kind and polite girl"
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "para siempre",
+        "timestamp": "08:31",
+        "text_l2": "forever"
+      }
+    ],
+    "phrases_with_token_translations": "[Érase una vez] => [Once upon a time]\n[Érase] una vez => there was\nÉrase [una] vez => Once upon [a] time\nÉrase una [vez] => Once upon a [time]\n\n[al] borde del bosque => [at the] edge of the forest\nal [borde] del bosque => at the [edge] of the forest\nal borde [del] bosque => at the edge [of the] forest\nal borde del [bosque] => at the edge of the [forest]\n\n[vivía] una chica => [lived] a girl\nvivía [una] chica => lived [a] girl\nvivía una [chica] => lived a [girl]\n\n[de] cabello dorado => [with] golden hair\nde [cabello] dorado => with golden [hair]\nde cabello [dorado] => with [golden] hair\n\n[esta] niña de pelo dorado => [this] golden-haired girl\nesta [niña] de pelo dorado => this golden-haired [girl]\nesta niña [de pelo dorado] => this [golden-haired] girl\nesta niña [de] pelo dorado => with\nesta niña de [pelo] dorado => hair\nesta niña de pelo [dorado] => golden\n\n[se llamaba] Risitos de Oro => [was named] Goldilocks\nse llamaba [Risitos de Oro] => was named [Goldilocks]\n\n[ella] tenía rizos tan bellos => [she] had such beautiful curls\nella [tenía] rizos tan bellos => she [had] such beautiful curls\nella tenía [rizos] tan bellos => she had such beautiful [curls]\nella tenía rizos [tan] bellos => she had [such] beautiful curls\nella tenía rizos tan [bellos] => she had such [beautiful] curls\n\n[que] todos los que la veían => [that] everyone who saw her\nque [todos] los que la veían => that [everyone] who saw her\nque todos [los que] la veían => that everyone [who] saw her\nque todos los que [la] veían => that everyone who saw [her]\nque todos los que la [veían] => that everyone who [saw] her\n\n[estaban hipnotizados] => [was mesmerized]\n[estaban] hipnotizados => were\nestaban [hipnotizados] => [mesmerized]\n\n[pero] a pesar de su dulzura => [but] despite her sweetness\npero [a pesar de] su dulzura => but [despite] her sweetness\npero a pesar de [su] dulzura => but despite [her] sweetness\npero a pesar de su [dulzura] => but despite her [sweetness]\n\n[a veces] podía ser traviesa => [sometimes] she could be mischievous\na veces [podía] ser traviesa => sometimes she [could] be mischievous\na veces podía [ser] traviesa => sometimes she could [be] mischievous\na veces podía ser [traviesa] => sometimes she could be [mischievous]\n\n[siempre que] salía a jugar => [whenever] she went out to play\nsiempre que [salía] a jugar => whenever she [went out] to play\nsiempre que salía [a] jugar => whenever she went out [to] play\nsiempre que salía a [jugar] => whenever she went out to [play]\n\n[su] madre le advertía => [her] mother would warn her\nsu [madre] le advertía => her [mother] would warn her\nsu madre [le] advertía => her mother would warn [her]\nsu madre le [advertía] => her mother [would warn] her\n\n[que] se comportara => [to] behave herself\nque [se comportara] => to [behave herself]\n\n[por favor] quédate en el patio => [please] stay in the yard\npor favor [quédate] en el patio => please [stay] in the yard\npor favor quédate [en el] patio => please stay [in the] yard\npor favor quédate en el [patio] => please stay in the [yard]\n\n[no] vayas al bosque => [don't] go into the forest\nno [vayas] al bosque => don't [go] into the forest\nno vayas [al] bosque => don't go [into the] forest\nno vayas al [bosque] => don't go into the [forest]\n\n[muy] dentro del bosque => [deep] inside the forest\nmuy [dentro] del bosque => deep [inside] the forest\nmuy dentro [del] bosque => deep inside [the] forest\nmuy dentro del [bosque] => deep inside the [forest]\n\n[vivía] una familia de osos => [lived] a family of bears\nvivía [una] familia de osos => lived [a] family of bears\nvivía una [familia] de osos => lived a [family] of bears\nvivía una familia [de] osos => lived a family [of] bears\nvivía una familia de [osos] => lived a family of [bears]\n\n[papá] oso de hombros anchos => [Papa] Bear with broad shoulders\npapá [oso] de hombros anchos => Papa [Bear] with broad shoulders\npapá oso [de] hombros anchos => Papa Bear [with] broad shoulders\npapá oso de [hombros anchos] => Papa Bear with [broad shoulders]\n\n[una] mamá oso de tamaño mediano => [a] medium-sized Mama Bear\nuna [mamá] oso de tamaño mediano => a medium-sized [Mama] Bear\nuna mamá [oso] de tamaño mediano => a medium-sized Mama [Bear]\nuna mamá oso [de tamaño mediano] => a [medium-sized] Mama Bear\n\n[y] un bebé oso => [and] a Baby Bear\ny [un] bebé oso => and [a] Baby Bear\ny un [bebé] oso => and a [Baby] Bear\ny un bebé [oso] => and a Baby [Bear]\n\n[mamá] oso se levantaba temprano => [Mama] Bear would get up early\nmamá [oso] se levantaba temprano => Mama [Bear] would get up early\nmamá oso [se levantaba] temprano => Mama Bear [would get up] early\nmamá oso se levantaba [temprano] => Mama Bear would get up [early]\n\n[para] preparar tazones de avena => [to] prepare bowls of oatmeal\npara [preparar] tazones de avena => to [prepare] bowls of oatmeal\npara preparar [tazones] de avena => to prepare [bowls] of oatmeal\npara preparar tazones [de] avena => to prepare bowls [of] oatmeal\npara preparar tazones de [avena] => to prepare bowls of [oatmeal]\n\n[una] mañana el bebé oso => [one] morning Baby Bear\nuna [mañana] el bebé oso => one [morning] Baby Bear\nuna mañana [el bebé oso] => one morning [Baby Bear]\n\n[se despertó] más temprano => [woke up] earlier\nse despertó [más temprano] => woke up [earlier]\n\n[y] quería comer su avena => [and] wanted to eat his oatmeal\ny [quería] comer su avena => and [wanted] to eat his oatmeal\ny quería [comer] su avena => and wanted [to eat] his oatmeal\ny quería comer [su] avena => and wanted to eat [his] oatmeal\ny quería comer su [avena] => and wanted to eat his [oatmeal]\n\n[pero] estaba demasiado caliente => [but] it was too hot\npero [estaba] demasiado caliente => but [it was] too hot\npero estaba [demasiado] caliente => but it was [too] hot\npero estaba demasiado [caliente] => but it was too [hot]\n\n[mamá] podemos salir a caminar => [Mama], can we go for a walk\nmamá [podemos] salir a caminar => Mama, [can we] go for a walk\nmamá podemos [salir a caminar] => Mama, can we [go for a walk]\n\n[hasta que] nuestros tazones se enfríen => [until] our bowls cool down\nhasta que [nuestros] tazones se enfríen => until [our] bowls cool down\nhasta que nuestros [tazones] se enfríen => until our [bowls] cool down\nhasta que nuestros tazones [se enfríen] => until our bowls [cool down]\n\n[mamá], papá y bebé oso => [Mama], Papa, and Baby Bear\nmamá, [papá] y bebé oso => Mama, [Papa], and Baby Bear\nmamá, papá [y] bebé oso => Mama, Papa, [and] Baby Bear\nmamá, papá y [bebé] oso => Mama, Papa, and [Baby] Bear\nmamá, papá y bebé [oso] => Mama, Papa, and Baby [Bear]\n\n[dejaron] sus platos sobre la mesa => [left] their bowls on the table\ndejaron [sus] platos sobre la mesa => left [their] bowls on the table\ndejaron sus [platos] sobre la mesa => left their [bowls] on the table\ndejaron sus platos [sobre] la mesa => left their bowls [on] the table\ndejaron sus platos sobre [la] mesa => left their bowls on [the] table\ndejaron sus platos sobre la [mesa] => left their bowls on the [table]\n\n[y] salieron a caminar => [and] went for a walk\ny [salieron a caminar] => and [went for a walk]\n\n[en] esa misma mañana => [on] that same morning\nen [esa] misma mañana => on [that] same morning\nen esa [misma] mañana => on that [same] morning\nen esa misma [mañana] => on that same [morning]\n\n[Risitos de Oro] estaba jugando => [Goldilocks] was playing\nRisitos de Oro [estaba] jugando => Goldilocks [was] playing\nRisitos de Oro estaba [jugando] => Goldilocks was [playing]\n\n[mientras] esperaba el desayuno => [while] waiting for breakfast\nmientras [esperaba] el desayuno => while [waiting for] breakfast\nmientras esperaba [el desayuno] => while waiting for [breakfast]\n\n[pero] estaba tan aburrida => [but] she was so bored\npero [estaba] tan aburrida => but [she was] so bored\npero estaba [tan] aburrida => but she was [so] bored\npero estaba tan [aburrida] => but she was so [bored]\n\n[de] siempre jugar en su patio => [of] always playing in her yard\nde [siempre] jugar en su patio => of [always] playing in her yard\nde siempre [jugar] en su patio => of always [playing] in her yard\nde siempre jugar [en] su patio => of always playing [in] her yard\nde siempre jugar en [su] patio => of always playing in [her] yard\nde siempre jugar en su [patio] => of always playing in her [yard]\n\n[y] tenía mucha curiosidad => [and] she was very curious\ny [tenía] mucha curiosidad => had\ny tenía [mucha curiosidad] => and she was [very curious]\ny tenía mucha [curiosidad] => curious\n\n[de] conocer las profundidades del bosque => [to] know the depths of the forest\nde [conocer] las profundidades del bosque => to [know] the depths of the forest\nde conocer [las] profundidades del bosque => to know [the] depths of the forest\nde conocer las [profundidades] del bosque => to know the [depths] of the forest\nde conocer las profundidades [del] bosque => to know the depths [of the] forest\nde conocer las profundidades del [bosque] => to know the depths of the [forest]\n\n[qué] pasaría si salgo a caminar => [what] would happen if I go for a walk\nqué [pasaría] si salgo a caminar => what [would happen] if I go for a walk\nqué pasaría [si] salgo a caminar => what would happen [if] I go for a walk\nqué pasaría si [salgo] a caminar => what would happen if [I go] for a walk\nqué pasaría si salgo [a caminar] => what would happen if I go [for a walk]\n\n[miró] a su alrededor => [she looked] around her\nmiró [a su alrededor] => she looked [around her]\nmiró a [su] alrededor => she looked around [her]\nmiró a su [alrededor] => around\n\n[y] al ver que no había nadie => [and] seeing that no one was there\ny [al ver] que no había nadie => and [seeing] that no one was there\ny al ver [que] no había nadie => and seeing [that] no one was there\ny al ver que [no había nadie] => and seeing that [no one was there]\n\n[comenzó] a correr hacia el bosque => [she started] running toward the forest\ncomenzó [a] correr hacia el bosque => to\ncomenzó a [correr] hacia el bosque => she started [running] toward the forest\ncomenzó a correr [hacia] el bosque => she started running [toward] the forest\ncomenzó a correr hacia [el] bosque => she started running toward [the] forest\ncomenzó a correr hacia el [bosque] => she started running toward the [forest]\n\n[cuando] se cansó se detuvo => [when] she got tired she stopped\ncuando [se] cansó se detuvo => she\ncuando se [cansó] se detuvo => when she [got tired] she stopped\ncuando se cansó [se] detuvo => she\ncuando se cansó se [detuvo] => stopped\ncuando se cansó [se detuvo] => when she got tired [she stopped]\n\n[y] miró a su alrededor => [and] looked around her\ny [miró] a su alrededor => and [looked] around her\ny miró [a su alrededor] => and looked [around her]\ny miró a [su] alrededor => and looked around [her]\ny miró a su [alrededor] => around\n\n[qué] hermoso bosque => [what a] beautiful forest\nqué [hermoso] bosque => what a [beautiful] forest\nqué hermoso [bosque] => what a beautiful [forest]\n\n[las] flores, árboles => [the] flowers, trees\nlas [flores], árboles => the [flowers], trees\nlas flores, [árboles] => the flowers, [trees]\n\n[por qué] no vine aquí antes => [why] didn't I come here before\npor qué [no] vine aquí antes => why [didn't] I come here before\npor qué no [vine] aquí antes => why didn't [I come] here before\npor qué no vine [aquí] antes => why didn't I come [here] before\npor qué no vine aquí [antes] => why didn't I come here [before]\npor qué [no vine] aquí antes => why [didn't I come] here before\n\n[comenzó a caminar] hacia lo profundo => [she started walking] into the depths\ncomenzó a caminar [hacia] lo profundo => she started walking [into] the depths\ncomenzó a caminar hacia [lo profundo] => she started walking into [the depths]\n\n[mientras tanto] al caminar => [meanwhile] as they walked\nmientras tanto [al caminar] => meanwhile [as they walked]\n\n[el bebé oso] vio una colmena => [Baby Bear] saw a beehive\nel bebé oso [vio] una colmena => Baby Bear [saw] a beehive\nel bebé oso vio [una colmena] => Baby Bear saw [a beehive]\n\n[en] la rama de un árbol => [on] the branch of a tree\nen [la rama] de un árbol => on [the branch] of a tree\nen la rama [de] un árbol => on the branch [of] a tree\nen la rama de [un árbol] => on the branch of [a tree]\n\n[qué] colmena tan grande => [what a] big beehive\nqué [colmena] tan grande => what a [beehive]\nqué colmena [tan grande] => what a [big] beehive\n\n[estoy seguro de que] está llena => [I'm sure] it's full\nestoy seguro de que [está llena] => I'm sure [it's full]\n\n[papá] podemos comer un poco => [Papa], can we eat a little\npapá [podemos] comer un poco => Papa, [can we] eat a little\npapá podemos [comer] un poco => Papa, can we [eat] a little\npapá podemos comer [un poco] => Papa, can we eat [a little]\n\n[no] mi niño => [no], my child\nno [mi niño] => no, [my child]\n\n[eso] le pertenece a las abejas => [that] belongs to the bees\neso [le pertenece] a las abejas => that [belongs] to the bees\neso le pertenece [a las abejas] => that belongs [to the bees]\n\n[es] su casa => [it's] their home\nes [su casa] => it's [their home]\n\n[no debemos] ir a la casa => [we shouldn't] go to the house\nno debemos [ir] a la casa => we shouldn't [go] to the house\nno debemos ir [a la casa] => we shouldn't go [to the house]\n\n[de nadie] y comer su comida => [of anyone] and eat their food\nde nadie [y] comer su comida => of anyone [and] eat their food\nde nadie y [comer] su comida => of anyone and [eat] their food\nde nadie y comer [su comida] => of anyone and eat [their food]\n\n[no] está bien => it's [not] right\nno [está] bien => is # custom - third person singular of estar\nno está [bien] => it's not [right]\n\n[tienen] razón => have # custom - third person plural \"have\"\ntienen [razón] => right # custom - figurative meaning in \"tener razón\"\n[tienen razón] => [you're right]\n\n[creo] que tendré que esperar => [I think] I'll have to wait\ncreo [que] tendré que esperar => that # custom - subordinating conjunction\ncreo que [tendré que] esperar => I think [I'll have to] wait\ncreo que tendré [que] esperar => I think I'll have [to] wait\ncreo que tendré que [esperar] => I think I'll have to [wait]\n\n[hasta que] nos vayamos a desayunar => [until] we go to have breakfast\nhasta que [nos] vayamos a desayunar => until [we] go to have breakfast\nhasta que nos [vayamos] a desayunar => until we [go] to have breakfast\nhasta que nos vayamos [a] desayunar => until we go [to] have breakfast\nhasta que nos vayamos a [desayunar] => until we go to [have breakfast]\n\n[mientras tanto] Risitos de Oro => [meanwhile] Goldilocks\nmientras tanto [Risitos de Oro] => meanwhile [Goldilocks]\n\n[caminó] sola por tanto tiempo => [walked] alone for so long\ncaminó [sola] por tanto tiempo => walked [alone] for so long\ncaminó sola [por] tanto tiempo => walked alone [for] so long\ncaminó sola por [tanto tiempo] => walked alone for [so long]\ncaminó sola por [tanto] tiempo => walked alone for [so] long\ncaminó sola por tanto [tiempo] => time # custom - literal meaning\n\n[que] finalmente se perdió => [that] finally she got lost\nque [finalmente] se perdió => that [finally] she got lost\nque finalmente [se] perdió => herself # custom - reflexive pronoun\nque finalmente se [perdió] => got lost # custom - third person singular preterite\nque finalmente [se perdió] => that finally [she got lost]\n\n[intentó] regresar pero no pudo => she [tried] to go back but couldn't\nintentó [regresar] pero no pudo => she tried [to go back] but couldn't\nintentó regresar [pero] no pudo => she tried to go back [but] couldn't\nintentó regresar pero [no] pudo => not # custom - negation\nintentó regresar pero no [pudo] => could # custom - third person singular preterite\nintentó regresar pero [no pudo] => she tried to go back but [couldn't]\n\n[distinguir] el camino correcto => [distinguish] the right path\ndistinguir [el] camino correcto => distinguish [the] right path\ndistinguir el [camino correcto] => distinguish the [right path]\ndistinguir el [camino] correcto => path # custom - noun meaning\ndistinguir el camino [correcto] => right # custom - adjective meaning\n\n[ella] estaba muy cansada y hambrienta => [she] was very tired and hungry\nella [estaba] muy cansada y hambrienta => she [was] very tired and hungry\nella estaba [muy] cansada y hambrienta => she was [very] tired and hungry\nella estaba muy [cansada] y hambrienta => she was very [tired] and hungry\nella estaba muy cansada [y] hambrienta => she was very tired [and] hungry\nella estaba muy cansada y [hambrienta] => she was very tired and [hungry]\n\n[casi] lloraba por su cansancio => she [almost] cried from her exhaustion\ncasi [lloraba] por su cansancio => she almost [cried] from her exhaustion\ncasi lloraba [por] su cansancio => she almost cried [from] her exhaustion\ncasi lloraba por [su] cansancio => she almost cried from [her] exhaustion\ncasi lloraba por su [cansancio] => she almost cried from her [exhaustion]\n\n[caminó] un poco más => she [walked] a little more\ncaminó [un poco] más => she walked [a little] more\ncaminó un poco [más] => she walked a little [more]\ncaminó [un] poco más => she walked [a] little more\ncaminó un [poco] más => she walked a [little] more\n\n[finalmente] llegó al final del camino => [finally] she reached the end of the path\nfinalmente [llegó] al final del camino => finally [she reached] the end of the path\nfinalmente llegó [al] final del camino => finally she reached [the] end of the path\nfinalmente llegó al [final] del camino => finally she reached the [end] of the path\nfinalmente llegó al final [del] camino => finally she reached the end [of the] path\nfinalmente llegó al final del [camino] => finally she reached the end of the [path]\n\n[y] se encontró con la casa => [and] came across the house\ny [se encontró con] la casa => and [came across] the house\ny se encontró con [la] casa => and came across [the] house\ny se encontró con la [casa] => and came across the [house]\n\n[entre] los árboles => [among] the trees\nentre [los] árboles => among [the] trees\nentre los [árboles] => among the [trees]\n\n[en silencio] se acercó a la casa => [quietly] she approached the house\nen silencio [se acercó] a la casa => quietly [she approached] the house\nen silencio se acercó [a la] casa => quietly she approached [the] house\nen silencio se acercó a la [casa] => quietly she approached the [house]\n\n[caminó] alrededor => [she walked] around it\ncaminó [alrededor] => around it\n\n[pero] no podía ver a nadie => [but] she couldn't see anyone\npero [no podía] ver a nadie => but she [couldn't] see anyone\npero no [podía] ver a nadie => could\npero no podía [ver] a nadie => but she couldn't [see] anyone\npero no podía ver [a nadie] => but she couldn't see [anyone]\n\n[tocó] la puerta => [she knocked] on the door\ntocó [la] puerta => she knocked on [the] door\ntocó la [puerta] => she knocked on the [door]\n\n[pero] nadie respondió => [but] no one answered\npero [nadie] respondió => but [no one] answered\npero nadie [respondió] => but no one [answered]\n\n[luego] miró a través de la ventana => [then] she looked through the window\nluego [miró] a través de la ventana => then [she looked] through the window\nluego miró [a través de] la ventana => then she looked [through] the window\nluego miró a través de [la] ventana => then she looked through [the] window\nluego miró a través de la [ventana] => then she looked through the [window]\n\n[ella] vio tres platos humeantes => [she] saw three steaming bowls\nella [vio] tres platos humeantes => she [saw] three steaming bowls\nella vio [tres] platos humeantes => she saw [three] steaming bowls\nella vio tres [platos] humeantes => she saw three steaming [bowls]\nella vio tres platos [humeantes] => she saw three [steaming] bowls\n\n[calientes] sobre la mesa => [hot] on the table\ncalientes [sobre] la mesa => hot [on] the table\ncalientes sobre [la] mesa => hot on [the] table\ncalientes sobre la [mesa] => hot on the [table]\n\n[volvió] a la puerta => [she went back] to the door\nvolvió [a] la puerta => she went back [to] the door\nvolvió a [la] puerta => she went back to [the] door\nvolvió a la [puerta] => she went back to the [door]\n\n[y] esta vez golpeó con fuerza => [and] this time she knocked loudly\ny [esta vez] golpeó con fuerza => and [this time] she knocked loudly\ny esta vez [golpeó] con fuerza => and this time she [knocked] loudly\ny esta vez golpeó [con fuerza] => and this time she knocked [loudly]\ny esta vez [golpeó con fuerza] => and this time she [knocked loudly]\n\n[la puerta] se abrió => [the door] opened\nla [puerta] se abrió => the [door] opened\nla puerta [se abrió] => the door [opened]\n\n[Risitos de Oro] se llenó de alegría => [Goldilocks] was filled with joy\nRisitos de Oro [se llenó] de alegría => Goldilocks [was filled] with joy\nRisitos de Oro se llenó [de alegría] => Goldilocks was filled [with joy]\nRisitos de Oro se llenó de [alegría] => Goldilocks was filled with [joy]\n\n[miró] adentro y gritó => [she looked] inside and shouted\nmiró [adentro] y gritó => she looked [inside] and shouted\nmiró adentro [y] gritó => she looked inside [and] shouted\nmiró adentro y [gritó] => she looked inside and [shouted]\n\n[hay] alguien en casa => [is] anyone home\nhay [alguien] en casa => is [anyone] home\nhay alguien [en casa] => is anyone [home]\n[hay alguien] en casa => [is anyone] home\n\n[cuando] no hubo respuesta => [when] there was no answer\ncuando [no] hubo respuesta => when there was [no] answer\ncuando no [hubo] respuesta => when [there was] no answer\ncuando no hubo [respuesta] => when there was no [answer]\ncuando [no hubo] respuesta => when [there was no] answer\n\n[ella] entró => [she] went in\nella [entró] => she [went in]\n[ella entró] => [she went in]\n\n[ella] se acercó a la mesa => [she] approached the table\nella [se acercó] a la mesa => she [approached] the table\nella se acercó [a la] mesa => she approached [the] table\nella se acercó a la [mesa] => she approached the [table]\n\n[sobre] la mesa habían tres tazones => [on] the table there were three bowls\nsobre [la] mesa habían tres tazones => on [the] table there were three bowls\nsobre la [mesa] habían tres tazones => on the [table] there were three bowls\n[sobre la mesa] habían tres tazones => [on the table] there were three bowls\nsobre la mesa [habían] tres tazones => on the table [there were] three bowls\nsobre la mesa habían [tres] tazones => on the table there were [three] bowls\nsobre la mesa habían tres [tazones] => on the table there were three [bowls]\n\n[uno] grande, uno mediano => [one] large, one medium\nuno [grande], uno mediano => one [large], one medium\nuno grande, [uno] mediano => one large, [one] medium\nuno grande, uno [mediano] => one large, one [medium]\n\n[y] uno pequeño => [and] one small\ny [uno] pequeño => and [one] small\ny uno [pequeño] => and one [small]\n\n[ella] estaba tan hambrienta => [she] was so hungry\nella [estaba] tan hambrienta => she [was] so hungry\nella estaba [tan] hambrienta => she was [so] hungry\nella estaba tan [hambrienta] => she was so [hungry]\n\n[que] quería comerse el grande primero => [that] she wanted to eat the large one first\nque [quería] comerse el grande primero => that [she wanted] to eat the large one first\nque quería [comerse] el grande primero => that she wanted [to eat] the large one first\nque quería comerse [el] grande primero => that she wanted to eat [the] large one first\nque quería comerse el [grande] primero => that she wanted to eat the [large] one first\nque quería comerse el grande [primero] => that she wanted to eat the large one [first]\n\n[pero] en el momento en que probó => [but] the moment she tasted it\npero [en el momento en que] probó => but [the moment] she tasted it\npero en el momento en que [probó] => but the moment [she tasted] it\n\n[se quemó] => [she burned herself]\n\n[porque] la avena aún estaba caliente => [because] the oatmeal was still hot\nporque [la] avena aún estaba caliente => because [the] oatmeal was still hot\nporque la [avena] aún estaba caliente => because the [oatmeal] was still hot\nporque la avena [aún] estaba caliente => because the oatmeal was [still] hot\nporque la avena aún [estaba] caliente => because the oatmeal [was] still hot\nporque la avena aún estaba [caliente] => because the oatmeal was still [hot]\n\n[ella] inmediatamente se acercó al mediano => [she] immediately approached the medium one\nella [inmediatamente] se acercó al mediano => she [immediately] approached the medium one\nella inmediatamente [se acercó] al mediano => she immediately [approached] the medium one\nella inmediatamente se acercó [al] mediano => she immediately approached [the] medium one\nella inmediatamente se acercó al [mediano] => she immediately approached the [medium] one\n\n[pero] tampoco quiso comer => [but] she didn't want to eat it either\npero [tampoco] quiso comer => not ... either, neither # custom\npero tampoco [quiso] comer => she wanted, wanted # custom (literal past tense)\npero tampoco quiso [comer] => but she didn't want [to eat] it either\n\n[porque] estaba demasiado frío => [because] it was too cold\nporque [estaba] demasiado frío => because [it was] too cold\nporque estaba [demasiado] frío => because it was [too] cold\nporque estaba demasiado [frío] => because it was too [cold]\n\n[está] demasiado frío => [it's] too cold\nestá [demasiado] frío => it's [too] cold\nestá demasiado [frío] => it's too [cold]\n\n[finalmente] sumergió su cuchara => [finally] she dipped her spoon\nfinalmente [sumergió] su cuchara => finally [she dipped] her spoon\nfinalmente sumergió [su] cuchara => finally she dipped [her] spoon\nfinalmente sumergió su [cuchara] => finally she dipped her [spoon]\n\n[en] la más pequeña => [into] the smallest one\nen [la] más pequeña => into [the] smallest one\nen la [más pequeña] => into the [smallest] one\nen la más [pequeña] => small, tiny # custom (literal adjective)\n\n[esta] avena no está ni fría => [this] oatmeal is neither cold\nesta [avena] no está ni fría => this [oatmeal] is neither cold\nesta avena [no está ni] fría => this oatmeal [is neither] cold\nesta avena no está ni [fría] => this oatmeal is neither [cold]\n\n[ni] muy caliente => [nor] very hot\nni [muy] caliente => nor [very] hot\nni muy [caliente] => nor very [hot]\n\n[está] exactlyamente como la quiero => [it's] exactly how I want it\nestá [exactlyamente] como la quiero => it's [exactly] how I want it\nestá exactlyamente [como] la quiero => it's exactly [how] I want it\nestá exactlyamente como [la quiero] => it's exactly how [I want it]\n\n[así que] ella se comió todo => [so] she ate all of\nasí que [ella] se comió todo => so [she] ate all of\nasí que ella [se comió] todo => so she [ate] all of\nasí que ella se comió [todo] => so she ate [all of]\n\n[el] tazón más pequeño => [the] smallest bowl\nel [tazón] más pequeño => the smallest [bowl]\nel tazón [más pequeño] => the [smallest] bowl\n\n[cuando] terminó su desayuno => [when] she finished her breakfast\ncuando [terminó] su desayuno => when she [finished] her breakfast\ncuando terminó [su] desayuno => when she finished [her] breakfast\ncuando terminó su [desayuno] => when she finished her [breakfast]\n\n[se sintió] satisfecha => [she felt] satisfied\nse sintió [satisfecha] => she felt [satisfied]\n\n[fue a] sentarse en una silla => she [went to] sit in a chair\nfue a [sentarse] en una silla => she went to [sit] in a chair\nfue a sentarse [en] una silla => she went to sit [in] a chair\nfue a sentarse en [una silla] => she went to sit in [a chair]\n\n[para] descansar un rato => [to] rest for a while\npara [descansar] un rato => to [rest] for a while\npara descansar [un rato] => to rest [for a while]\n\n[una] de las tres sillas era grande => [one] of the three chairs was large\nuna [de] las tres sillas era grande => one [of] the three chairs was large\nuna de [las] tres sillas era grande => one of [the] three chairs was large\nuna de las [tres] sillas era grande => one of the [three] chairs was large\nuna de las tres [sillas] era grande => one of the three [chairs] was large\nuna de las tres sillas [era] grande => one of the three chairs [was] large\nuna de las tres sillas era [grande] => one of the three chairs was [large]\n\n[la otra] mediana => [the other] medium\nla otra [mediana] => the other [medium]\n\n[y] la última pequeña => [and] the last one small\ny [la última] pequeña => and [the last one] small\ny la última [pequeña] => and the last one [small]\n\n[primero] trató de sentarse en la grande => [first] she tried to sit in the large one\nprimero [trató de] sentarse en la grande => first she [tried to] sit in the large one\nprimero trató de [sentarse] en la grande => first she tried to [sit] in the large one\nprimero trató de sentarse [en] la grande => first she tried to sit [in] the large one\nprimero trató de sentarse en [la grande] => first she tried to sit in [the large one]\n\n[pero] ni siquiera pudo subir => [but] she couldn't even climb up\npero [ni siquiera pudo] subir => but she [couldn't even] climb up\npero ni siquiera pudo [subir] => but she couldn't even [climb up]\n\n[probó] la mediana => [she tried] the medium one\nprobó [la] mediana => she tried [the] medium one\nprobó la [mediana] => she tried the [medium one]\n\n[pero] estaba muy dura => [but] it was very hard\npero [estaba] muy dura => but [it was] very hard\npero estaba [muy] dura => but it was [very] hard\npero estaba muy [dura] => but it was very [hard]\n\n[era] muy incómoda => [it was] very uncomfortable\nera [muy] incómoda => it was [very] uncomfortable\nera muy [incómoda] => it was very [uncomfortable]\n\n[finalmente] ella se sentó en la pequeña => [finally] she sat in the small one\nfinalmente [ella] se sentó en la pequeña => finally [she] sat in the small one\nfinalmente ella [se sentó] en la pequeña => finally she [sat] in the small one\nfinalmente ella se sentó [en] la pequeña => finally she sat [in] the small one\nfinalmente ella se sentó en [la pequeña] => finally she sat in [the small one]\n\n[esta] era muy cómoda => [this one] was very comfortable\nesta [era] muy cómoda => this one [was] very comfortable\nesta era [muy] cómoda => this one was [very] comfortable\nesta era muy [cómoda] => this one was very [comfortable]\n\n[y] exactamente de su tamaño => [and] exactly her size\ny [exactamente] de su tamaño => and [exactly] her size\ny exactamente [de su tamaño] => and exactly [her size]\n\n[pero] de repente => [but] suddenly\npero [de repente] => but [suddenly]\n\n[la silla] se rompió en pedazos => [the chair] broke into pieces\nla silla [se rompió] en pedazos => the chair [broke] into pieces\nla silla se rompió [en pedazos] => the chair broke [into pieces]\n\n[con] un fuerte estruendo => [with] a loud crash\ncon [un fuerte] estruendo => with [a loud] crash\ncon un fuerte [estruendo] => with a loud [crash]\n\n[Risitos de Oro] se encontró en el suelo => [Goldilocks] found herself on the floor\nRisitos de Oro [se encontró] en el suelo => Goldilocks [found herself] on the floor\nRisitos de Oro se encontró [en el suelo] => Goldilocks found herself [on the floor]\n\n[y] no supo qué hacer => [and] didn't know what to do\ny [no supo] qué hacer => and [didn't know] what to do\ny no supo [qué hacer] => and didn't know [what to do]\n\n[caminó] hacia la habitación de al lado => [she walked] to the next room\ncaminó [hacia] la habitación de al lado => she walked [to] the next room\ncaminó hacia [la habitación de al lado] => she walked to [the next room]\n\n[y] vio que había tres camas => [and] saw that there were three beds\ny [vio] que había tres camas => and [saw] that there were three beds\ny vio [que] había tres camas => and saw [that] there were three beds\ny vio que [había] tres camas => and saw that [there were] three beds\ny vio que había [tres] camas => and saw that there were [three] beds\ny vio que había tres [camas] => and saw that there were three [beds]\n\n[una] grande, una mediana => [one] large, one medium\nuna [grande], una mediana => one [large], one medium\nuna grande, [una] mediana => one large, [one] medium\nuna grande, una [mediana] => one large, one [medium]\n\n[y] una pequeña => [and] one small\ny [una] pequeña => and [one] small\ny una [pequeña] => and one [small]\n\n[primero] probó la cama grande => [first] she tried the large bed\nprimero [probó] la cama grande => first [she tried] the large bed\nprimero probó [la] cama grande => first she tried [the] large bed\nprimero probó la [cama] grande => first she tried the large [bed]\nprimero probó la cama [grande] => first she tried the [large] bed\n\n[era] demasiado grande para ella => [it was] too big for her\nera [demasiado] grande para ella => it was [too] big for her\nera demasiado [grande] para ella => it was too [big] for her\nera demasiado grande [para] ella => it was too big [for] her\nera demasiado grande para [ella] => it was too big for [her]\n\n[y] también demasiado dura => [and] also too hard\ny [también] demasiado dura => and [also] too hard\ny también [demasiado] dura => and also [too] hard\ny también demasiado [dura] => and also too [hard]\n\n[la] segunda le quedaba un poco grande => [the] second one was a bit big for her\nla [segunda] le quedaba un poco grande => the [second one] was a bit big for her\nla segunda [le] quedaba un poco grande => for her\nla segunda le [quedaba] un poco grande => the second one [was] a bit big for her\nla segunda le quedaba [un] poco grande => the second one was [a] bit big for her\nla segunda le quedaba un [poco] grande => the second one was a [bit] big for her\nla segunda le quedaba un poco [grande] => the second one was a bit [big] for her\n\n[pero] era demasiado suave => [but] it was too soft\npero [era] demasiado suave => but [it was] too soft\npero era [demasiado] suave => but it was [too] soft\npero era demasiado [suave] => but it was too [soft]\n\n[así que] ella se acostó => [so] she lay down\nasí que [ella] se acostó => so [she] lay down\nasí que ella [se acostó] => so she [lay down]\n\n[en] la tercera y más pequeña cama => [in] the third and smallest bed\nen [la] tercera y más pequeña cama => in [the] third and smallest bed\nen la [tercera] y más pequeña cama => in the [third] and smallest bed\nen la tercera [y] más pequeña cama => in the third [and] smallest bed\nen la tercera y [más pequeña] cama => in the third and [smallest] bed\nen la tercera y más pequeña [cama] => in the third and smallest [bed]\n\n[esta] era exactamente de su tamaño => [this one] was exactly her size\nesta [era] exactamente de su tamaño => this one [was] exactly her size\nesta era [exactamente] de su tamaño => this one was [exactly] her size\nesta era exactamente [de su tamaño] => this one was exactly [her size]\n\n[y] era muy cómoda => [and] it was very comfortable\ny [era] muy cómoda => and [it was] very comfortable\ny era [muy] cómoda => and it was [very] comfortable\ny era muy [cómoda] => and it was very [comfortable]\n\n[tan] cómoda que Risitos de Oro => [so] comfortable that Goldilocks\ntan [cómoda] que Risitos de Oro => so [comfortable] that Goldilocks\ntan cómoda [que] Risitos de Oro => so comfortable [that] Goldilocks\ntan cómoda que [Risitos de Oro] => so comfortable that [Goldilocks]\n\n[se durmió] de inmediato => [fell asleep] immediately\nse durmió [de inmediato] => fell asleep [immediately]\n\n[mientras] Risitos de Oro estaba durmiendo => [while] Goldilocks was sleeping\nmientras [Risitos de Oro] estaba durmiendo => while [Goldilocks] was sleeping\nmientras Risitos de Oro [estaba durmiendo] => while Goldilocks [was sleeping]\n\n[la] familia oso regresó a casa => [the] bear family returned home\nla [familia oso] regresó a casa => the [bear family] returned home\nla familia oso [regresó] a casa => the bear family [returned] home\nla familia oso regresó [a casa] => the bear family returned [home]\n\n[papá oso] traía un poco de leña => [Papa Bear] was bringing some firewood\npapá oso [traía] un poco de leña => Papa Bear [was bringing] some firewood\npapá oso traía [un poco de] leña => Papa Bear was bringing [some] firewood\npapá oso traía un poco de [leña] => Papa Bear was bringing some [firewood]\n\n[que] recogió para la chimenea => [that] he gathered for the fireplace\nque [recogió] para la chimenea => that [he gathered] for the fireplace\nque recogió [para] la chimenea => that he gathered [for] the fireplace\nque recogió para [la chimenea] => that he gathered for [the fireplace]\n\n[mamá oso] tenía moras frescas => [Mama Bear] had fresh blackberries\nmamá oso [tenía] moras frescas => Mama Bear [had] fresh blackberries\nmamá oso tenía [moras] frescas => Mama Bear had fresh [blackberries]\nmamá oso tenía moras [frescas] => Mama Bear had [fresh] blackberries\n\n[y] el bebé oso no podía esperar => [and] Baby Bear couldn't wait\ny [el bebé oso] no podía esperar => and [Baby Bear] couldn't wait\ny el bebé oso [no podía] esperar => and Baby Bear [couldn't] wait\ny el bebé oso no podía [esperar] => and Baby Bear couldn't [wait]\n\n[para] comer su avena => [to] eat his oatmeal\npara [comer] su avena => to [eat] his oatmeal\npara comer [su] avena => to eat [his] oatmeal\npara comer su [avena] => to eat his [oatmeal]\n\n[cuando] llegaron a casa => [when] they arrived home\ncuando [llegaron] a casa => when [they arrived] home\ncuando llegaron [a casa] => when they arrived [home]\n\n[se sentaron] rápidamente en la mesa => [they sat down] quickly at the table\nse sentaron [rápidamente] en la mesa => they sat down [quickly] at the table\nse sentaron rápidamente [en] la mesa => they sat down quickly [at] the table\nse sentaron rápidamente en [la] mesa => they sat down quickly at [the] table\nse sentaron rápidamente en la [mesa] => they sat down quickly at the [table]\n\n[alguien] probó mi avena => [someone] tasted my oatmeal\nalguien [probó] mi avena => someone [tasted] my oatmeal\nalguien probó [mi] avena => someone tasted [my] oatmeal\nalguien probó mi [avena] => someone tasted my [oatmeal]\n\n[alguien] también probó mi avena => [someone] also tasted my oatmeal\nalguien [también] probó mi avena => someone [also] tasted my oatmeal\nalguien también [probó] mi avena => someone also [tasted] my oatmeal\nalguien también probó [mi] avena => someone also tasted [my] oatmeal\nalguien también probó mi [avena] => someone also tasted my [oatmeal]\n\n[alguien] también probó mi avena => [someone] also tasted my oatmeal\nalguien [también] probó mi avena => someone [also] tasted my oatmeal\nalguien también [probó] mi avena => someone also [tasted] my oatmeal\nalguien también probó [mi] avena => someone also tasted [my] oatmeal\nalguien también probó mi [avena] => someone also tasted my [oatmeal]\n\n[y] no solo la probó => [and] not only tasted it\ny [no solo] la probó => and [not only] tasted it\ny no solo [la probó] => and not only [tasted it]\n\n[sino que] se la comió toda => [but] ate it all up\nsino que [se la comió] toda => but [ate it] all up\nsino que se la comió [toda] => but ate it [all up]\n\n[se levantaron] y comenzaron a mirar alrededor => [they got up] and started to look around\nse levantaron [y] comenzaron a mirar alrededor => they got up [and] started to look around\nse levantaron y [comenzaron a] mirar alrededor => they got up and [started to] look around\nse levantaron y comenzaron a [mirar] alrededor => they got up and started to [look] around\nse levantaron y comenzaron a mirar [alrededor] => they got up and started to look [around]\n\n[el papá oso] notó su silla => [Papa Bear] noticed his chair\nel papá oso [notó] su silla => Papa Bear [noticed] his chair\nel papá oso notó [su] silla => Papa Bear noticed [his] chair\nel papá oso notó su [silla] => Papa Bear noticed his [chair]\n\n[frente a] la chimenea => [in front of] the fireplace\nfrente a [la] chimenea => in front of [the] fireplace\nfrente a la [chimenea] => in front of the [fireplace]\n\n[alguien] se sentó en mi silla => [someone] sat in my chair\nalguien [se sentó] en mi silla => someone [sat] in my chair\nalguien se sentó [en] mi silla => someone sat [in] my chair\nalguien se sentó en [mi] silla => someone sat [in] my chair\nalguien se sentó en mi [silla] => someone sat in my [chair]\n\n[mira], está en un distinto lugar => [look], it's in a different place\nmira, [está] en un distinto lugar => look, [it's] in a different place\nmira, está [en] un distinto lugar => look, it's [in] a different place\nmira, está en [un] distinto lugar => look, it's in [a] different place\nmira, está en un [distinto] lugar => look, it's in a [different] place\nmira, está en un distinto [lugar] => look, it's in a different [place]\n\n[alguien] también se sentó en mi silla => [someone] also sat in my chair\nalguien [también] se sentó en mi silla => someone [also] sat in my chair\nalguien también [se sentó] en mi silla => someone also [sat] in my chair\nalguien también se sentó [en] mi silla => someone also sat [in] my chair\nalguien también se sentó en [mi] silla => someone also sat [in] my chair\nalguien también se sentó en mi [silla] => someone also sat in my [chair]\n\n[alguien] también se sentó en mi silla => [someone] also sat in my chair\nalguien [también] se sentó en mi silla => someone [also] sat in my chair\nalguien también [se sentó] en mi silla => someone also [sat] in my chair\nalguien también se sentó [en] mi silla => someone also sat [in] my chair\nalguien también se sentó en [mi] silla => someone also sat [in] my chair\nalguien también se sentó en mi [silla] => someone also sat in my [chair]\n\n[pero] también la rompió => [but] also broke it\npero [también] la rompió => but [also] broke it\npero también [la rompió] => but also [broke it]\n\n[la] familia oso con curiosidad => [the] bear family with curiosity\nla [familia] oso con curiosidad => the bear [family] with curiosity\nla familia [oso] con curiosidad => the [bear] family with curiosity\nla familia oso [con] curiosidad => the bear family [with] curiosity\nla familia oso con [curiosidad] => the bear family with [curiosity]\n\n[entró] en el dormitorio => [entered] the bedroom\nentró [en] el dormitorio => in # part of \"entrar en\" (to enter into)\nentró en [el] dormitorio => entered [the] bedroom\nentró en el [dormitorio] => entered the [bedroom]\n\n[alguien] se acostó en mi cama => [someone] lay in my bed\nalguien [se acostó] en mi cama => someone [lay] in my bed\nalguien se acostó [en] mi cama => someone lay [in] my bed\nalguien se acostó en [mi] cama => someone lay in [my] bed\nalguien se acostó en mi [cama] => someone lay in my [bed]\n\n[mira], está destendida => [look], it's unmade\nmira, [está] destendida => look, [it's] unmade\nmira, está [destendida] => look, it's [unmade]\n\n[alguien] también se acostó sobre la mía => [someone] also lay on mine\nalguien [también] se acostó sobre la mía => someone [also] lay on mine\nalguien también se [acostó] sobre la mía => someone also [lay] on mine\nalguien también se acostó [sobre] la mía => someone also lay [on] mine\nalguien también se acostó sobre [la mía] => someone also lay on [mine]\n\n[alguien] también se acostó en mi cama => [someone] also lay in my bed\nalguien [también] se acostó en mi cama => someone [also] lay in my bed\nalguien también se [acostó] en mi cama => someone also [lay] in my bed\nalguien también se acostó [en] mi cama => someone also lay [in] my bed\nalguien también se acostó en [mi] cama => someone also lay in [my] bed\nalguien también se acostó en mi [cama] => someone also lay in my [bed]\n\n[y] aún está durmiendo en ella => [and] is still sleeping in it\ny [aún] está durmiendo en ella => and is [still] sleeping in it\ny aún [está] durmiendo en ella => and [is] still sleeping in it\ny aún está [durmiendo] en ella => and is still [sleeping] in it\ny aún está durmiendo [en] ella => and is still sleeping [in] it\ny aún está durmiendo en [ella] => and is still sleeping in [it]\n\n[papá] oso fue al lado de la cama => [Papa] Bear went to the side of the bed\npapá [oso] fue al lado de la cama => Papa [Bear] went to the side of the bed\npapá oso [fue] al lado de la cama => Papa Bear [went] to the side of the bed\npapá oso fue [al] lado de la cama => Papa Bear went [to the] side of the bed\npapá oso fue al [lado] de la cama => Papa Bear went to the [side] of the bed\npapá oso fue al lado [de] la cama => Papa Bear went to the side [of] the bed\npapá oso fue al lado de [la] cama => Papa Bear went to the side of [the] bed\npapá oso fue al lado de la [cama] => Papa Bear went to the side of the [bed]\n\n[y] vio que alguien realmente => [and] saw that someone really\ny [vio] que alguien realmente => and [saw] that someone really\ny vio [que] alguien realmente => and saw [that] someone really\ny vio que [alguien] realmente => and saw that [someone] really\ny vio que alguien [realmente] => and saw that someone [really]\n\n[estaba] durmiendo en su cama => [was] sleeping in his bed\nestaba [durmiendo] en su cama => was [sleeping] in his bed\nestaba durmiendo [en] su cama => was sleeping [in] his bed\nestaba durmiendo en [su] cama => was sleeping in [his] bed\nestaba durmiendo en su [cama] => was sleeping in his [bed]\n\n[lentamente] levantó la sábana => [slowly] he lifted the sheet\nlentamente [levantó] la sábana => slowly [he lifted] the sheet\nlentamente levantó [la] sábana => slowly he lifted [the] sheet\nlentamente levantó la [sábana] => slowly he lifted the [sheet]\n\n[y] se sorprendió al ver a una niña => [and] was surprised to see a girl\ny [se sorprendió] al ver a una niña => and [was surprised] to see a girl\ny se [sorprendió] al ver a una niña => and was [surprised] to see a girl\ny se sorprendió [al ver] a una niña => and was surprised [to see] a girl\ny se sorprendió al [ver] a una niña => and was surprised to [see] a girl\ny se sorprendió al ver a [una] niña => and was surprised to see [a] girl\ny se sorprendió al ver a una [niña] => and was surprised to see a [girl]\n\n[qué] está haciendo una niña en nuestra casa => [what] is a girl doing in our house\nqué [está] haciendo una niña en nuestra casa => what [is] a girl doing in our house\nqué está [haciendo] una niña en nuestra casa => what is a girl [doing] in our house\nqué está haciendo [una] niña en nuestra casa => what is [a] girl doing in our house\nqué está haciendo una [niña] en nuestra casa => what is a [girl] doing in our house\nqué está haciendo una niña [en] nuestra casa => what is a girl doing [in] our house\nqué está haciendo una niña en [nuestra] casa => what is a girl doing in [our] house\nqué está haciendo una niña en nuestra [casa] => what is a girl doing in our [house]\n\n[dile] a la pequeña niña => [tell] the little girl\ndile [a la] pequeña niña => tell [the] little girl\ndile a la [pequeña] niña => tell the [little] girl\ndile a la pequeña [niña] => tell the little [girl]\n\n[que] se levante de mi cama ahora => [to] get out of my bed now\nque [se levante de] mi cama ahora => to [get out of] my bed now\nque [se] levante de mi cama ahora => herself # reflexive pronoun\nque se [levante] de mi cama ahora => get up\nque se levante [de] mi cama ahora => of\nque se levante de [mi] cama ahora => to get out of [my] bed now\nque se levante de mi [cama] ahora => to get out of my [bed] now\nque se levante de mi cama [ahora] => to get out of my bed [now]\n\n[al despertarse] con el llanto del bebé oso => [waking up] to Baby Bear's crying\nal despertarse [con] el llanto del bebé oso => waking up [to] Baby Bear's crying\nal despertarse con el [llanto] del bebé oso => waking up to Baby Bear's [crying]\nal despertarse con el llanto [del bebé oso] => waking up to [Baby Bear's] crying\n\n[Risitos de Oro] vio a tres osos => [Goldilocks] saw three bears\nRisitos de Oro [vio] a tres osos => Goldilocks [saw] three bears\nRisitos de Oro vio a [tres] osos => Goldilocks saw [three] bears\nRisitos de Oro vio a tres [osos] => Goldilocks saw three [bears]\n\n[frente a] ella y salió corriendo => [in front of] her and ran out\nfrente a [ella] y salió corriendo => in front of [her] and ran out\nfrente a ella [y] salió corriendo => in front of her [and] ran out\nfrente a ella y [salió corriendo] => in front of her and [ran out]\n\n[de] la sala aterrorizada => [of] the room terrified\nde [la] sala aterrorizada => of [the] room terrified\nde la [sala] aterrorizada => of the [room] terrified\nde la sala [aterrorizada] => of the room [terrified]\n\n[salió] de la casa => [she left] the house\nsalió [de la] casa => she left [the] house\nsalió de la [casa] => she left the [house]\n\n[y] comenzó a correr sin mirar atrás => [and] started running without looking back\ny [comenzó] a correr sin mirar atrás => and [started] running without looking back\ny comenzó [a correr] sin mirar atrás => and started [running] without looking back\ny comenzó a correr [sin mirar atrás] => and started running [without looking back]\ny comenzó a correr [sin] mirar atrás => and started running [without] looking back\ny comenzó a correr sin [mirar] atrás => and started running without [looking] back\ny comenzó a correr sin mirar [atrás] => and started running without looking [back]\n\n[se quedó sin aliento] => [she ran out of breath]\nse quedó [sin aliento] => out of breath\nse quedó sin [aliento] => breath\n\n[de] tanto correr pero no se detuvo => [from] so much running but she didn't stop\nde [tanto] correr pero no se detuvo => from [so much] running but she didn't stop\nde tanto [correr] pero no se detuvo => from so much [running] but she didn't stop\nde tanto correr [pero] no se detuvo => from so much running [but] she didn't stop\nde tanto correr pero [no se detuvo] => from so much running but [she didn't stop]\n\n[y] ella ni siquiera sabía qué camino tomar => [and] she didn't even know which way to go\ny [ella] ni siquiera sabía qué camino tomar => and [she] didn't even know which way to go\ny ella [ni siquiera] sabía qué camino tomar => and she [didn't even] know which way to go\ny ella ni siquiera [sabía] qué camino tomar => and she didn't even [know] which way to go\ny ella ni siquiera sabía [qué] camino tomar => and she didn't even know [which] way to go\ny ella ni siquiera sabía qué [camino] tomar => and she didn't even know which [way] to go\ny ella ni siquiera sabía qué camino [tomar] => and she didn't even know which way [to go]\n\n[justo] en ese momento => [just] at that moment\njusto [en] ese momento => just [at] that moment\njusto en [ese] momento => just at [that] moment\njusto en ese [momento] => just at that [moment]\n\n[vio] a sus padres cruzando el bosque => she [saw] her parents crossing the forest\nvio [a sus padres] cruzando el bosque => she saw [her parents] crossing the forest\nvio a sus padres [cruzando] el bosque => she saw her parents [crossing] the forest\nvio a sus padres cruzando [el] bosque => she saw her parents crossing [the] forest\nvio a sus padres cruzando el [bosque] => she saw her parents crossing the [forest]\n\n[ya que] al no regresar a casa => [since] when she didn't return home\nya que [al] no regresar a casa => since [when] she didn't return home\nya que al [no] regresar a casa => since when she [didn't] return home\nya que al no [regresar] a casa => since when she didn't [return] home\nya que al no regresar [a casa] => since when she didn't return [home]\n\n[salieron] a buscarla => [they went out] to look for her\nsalieron [a] buscarla => they went out [to] look for her\nsalieron a [buscarla] => they went out to [look for her]\n\n[Risitos de Oro] estaba muy feliz => [Goldilocks] was very happy\nRisitos de Oro [estaba] muy feliz => Goldilocks [was] very happy\nRisitos de Oro estaba [muy] feliz => Goldilocks was [very] happy\nRisitos de Oro estaba muy [feliz] => Goldilocks was very [happy]\n\n[de ver] a sus padres => [to see] her parents\nde ver [a sus padres] => to see [her parents]\nde ver a [sus] padres => to see [her] parents\nde ver a sus [padres] => to see her [parents]\n\n[ella] corrió y abrazó a su madre => [she] ran and hugged her mother\nella [corrió] y abrazó a su madre => she [ran] and hugged her mother\nella corrió [y] abrazó a su madre => she ran [and] hugged her mother\nella corrió y [abrazó] a su madre => she ran and [hugged] her mother\nella corrió y abrazó [a su madre] => she ran and hugged [her mother]\n\n[a partir de ahora] siempre te escucharé => [from now on] I will always listen to you\na partir de ahora [siempre] te escucharé => from now on I will [always] listen to you\na partir de ahora siempre [te] escucharé => from now on I will always listen [to you]\na partir de ahora siempre te [escucharé] => from now on I will always [listen] to you\n\n[nunca] me iré sin avisarte => I will [never] leave without telling you\nnunca [me iré] sin avisarte => I will leave\nnunca me iré [sin] avisarte => I will never leave [without] telling you\nnunca me iré sin [avisarte] => I will never leave without [telling you]\n\n[Risitos de Oro] abrazó a sus padres fuertemente => [Goldilocks] hugged her parents tightly\nRisitos de Oro [abrazó] a sus padres fuertemente => Goldilocks [hugged] her parents tightly\nRisitos de Oro abrazó [a sus padres] fuertemente => Goldilocks hugged [her parents] tightly\nRisitos de Oro abrazó a sus padres [fuertemente] => Goldilocks hugged her parents [tightly]\n\n[desde ese día], tal como lo prometió => [since that day], just as she promised\ndesde ese día, [tal como] lo prometió => since that day, [just as] she promised\ndesde ese día, tal como [lo] prometió => it\ndesde ese día, tal como lo [prometió] => since that day, just as she [promised]\n\n[ella] siempre escuchó a sus padres => [she] always listened to her parents\nella [siempre] escuchó a sus padres => she [always] listened to her parents\nella siempre [escuchó] a sus padres => she always [listened] to her parents\nella siempre escuchó [a sus padres] => she always listened to [her parents]\n\n[y] no hacía nada sin antes recibir su permiso => [and] did nothing without first receiving their permission\ny [no] hacía nada sin antes recibir su permiso => not\ny no [hacía] nada sin antes recibir su permiso => did\ny no hacía [nada] sin antes recibir su permiso => and did [nothing] without first receiving their permission\ny no hacía nada [sin] antes recibir su permiso => and did nothing [without] first receiving their permission\ny no hacía nada sin [antes] recibir su permiso => and did nothing without [first] receiving their permission\ny no hacía nada sin antes [recibir] su permiso => and did nothing without first [receiving] their permission\ny no hacía nada sin antes recibir [su] permiso => and did nothing without first receiving [their] permission\ny no hacía nada sin antes recibir su [permiso] => and did nothing without first receiving their [permission]\n\n[ella] fue una chica amable y educada => [she] was a kind and polite girl\nella [fue] una chica amable y educada => she [was] a kind and polite girl\nella fue [una] chica amable y educada => she was [a] kind and polite girl\nella fue una [chica] amable y educada => girl\nella fue una chica [amable] y educada => she was a [kind] and polite girl\nella fue una chica amable [y] educada => she was a kind [and] polite girl\nella fue una chica amable y [educada] => she was a kind and [polite] girl\nella fue una chica [amable y educada] => she was a [kind and polite] girl\n\n[para siempre] => [forever]\n[para] siempre => for\npara [siempre] => always\n\n",
+    "lessons": "# Érase una vez\n00:00 Érase una vez\n00:02 al borde del bosque\n00:04 vivía una chica\n00:05 de cabello dorado\n\n# Risitos de Oro\n00:07 esta niña de pelo dorado\n00:09 se llamaba Risitos de Oro\n00:11 ella tenía rizos tan bellos\n00:13 que todos los que la veían\n\n# Una niña traviesa\n00:15 estaban hipnotizados\n00:17 pero a pesar de su dulzura\n00:19 a veces podía ser traviesa\n00:22 siempre que salía a jugar\n\n# La advertencia\n00:25 su madre le advertía\n00:27 que se comportara\n00:29 por favor quédate en el patio\n00:31 no vayas al bosque\n\n# La familia de osos\n00:33 muy dentro del bosque\n00:35 vivía una familia de osos\n00:38 papá oso de hombros anchos\n00:40 una mamá oso de tamaño mediano\n\n#",
+    "similar_sounds": "Érase una [voz]\nal borde del [vaso]\n[veía] una chica\nde [bello] dorado\nesta [piña] de pelo dorado\nse [amaba] Risitos de Oro\nella tenía [risas] tan bellos\nque todos los que la [leían]\nestaban [hipotecados]\npero a pesar de su [altura]\na veces [pedía] ser traviesa\nsiempre que [caía] a jugar\nsu [padre] le advertía\nque se [importara]\npor favor [pásate] en el patio\nno [llames] al bosque\nmuy [centro] del bosque\nvivía una familia de [ojos]\npapá oso de [hombres] anchos\nuna mamá oso de [daño] mediano\ny un [vive] oso\nmamá oso se [llevaba] temprano\npara preparar tazones de [arena]\nuna mañana el [bebe] oso\nse [perdió] más temprano\ny quería [correr] su avena\npero estaba demasiado [valiente]\nmamá podemos salir a [cantar]\nhasta que nuestros [razones] se enfríen\nmamá, papá y [Pepe] oso\ndejaron sus [patos] sobre la mesa\ny [sintieron] a caminar\nen esa misma [gana]\nRisitos de Oro estaba [cantando]\nmientras esperaba el [desfile]\npero estaba tan [herida]\nde siempre [llegar] en su patio\ny [venía] mucha curiosidad\nde conocer las profundidades del [vaso]\nqué pasaría si salgo a [volar]\n[giró] a su alrededor\ny al ver que no [leía] nadie\ncomenzó a [comer] hacia el bosque\ncuando se cansó se [tuvo]\ny [pidió] a su alrededor\nqué [famoso] bosque\nlas flores, [hombres]\npor qué no vine [allí] antes\ncomenzó a caminar hacia lo [mundo]\nmientras tanto al [hablar]\nel bebé oso vio una [colina]\nen la rama de un [hombre]\nqué colmena tan [verde]\nestoy seguro de que está [pena]\npapá podemos comer un [loco]\nno mi [niña]\neso le pertenece a las [ovejas]\nes su [masa]\nno debemos ir a la [taza]\nde nadie y comer su [vida]\nno está [tren]\ntienen [pasión]\ncreo que tendré que [empezar]\nhasta que nos vayamos a [cenar]\nmientras tanto Risitos de [horno]\ncaminó sola por tanto [cuento]\nque finalmente se [murió]\nintentó regresar pero no [duro]\ndistinguir el camino [perfecto]\nella estaba muy cansada y [tormenta]\ncasi lloraba por su [espacio]\ncaminó un poco [mes]\nfinalmente llegó al [principio] del camino\ny se encontró con la [masa]\nentre los [hombres]\nen silencio se acercó a la [taza]\ncaminó [error]\npero no podía ver a [tarde]\ntocó la [piedra]\npero nadie [cayó]\nluego miró a través de la [mañana]\nella vio tres platos [hablantes]\ncalientes sobre la [pesa]\nvolvió a la [fiesta]\ny esta vez golpeó con [cerca]\nla puerta se [movió]\nRisitos de Oro se [quedó] de alegría\nmiró adentro y [cantó]\nhay alguien en [pasa]\ncuando no hubo [fiesta]\nella [cantó]\nella se acercó a la [pesa]\nsobre la mesa habían tres [razones]\nuno grande, uno [temprano]\ny uno [bueno]\nella estaba tan [tormenta]\nque quería comerse el grande [sincero]\npero en el momento en que [golpeó]\nse [sonó]\nporque la avena aún estaba [valiente]\nella inmediatamente se acercó al [temprano]\npero tampoco quiso [correr]\nporque estaba demasiado [mío]\nestá demasiado [mío]\nfinalmente sumergió su [cuchillo]\nen la más [llena]\nesta avena no está ni [mía]\nni muy [valiente]\nestá exactamente como la [tengo]\nasí que ella se comió [modo]\nel tazón más [bueno]\ncuando terminó su [destino]\nse sintió [conectada]\nfue a sentarse en una [villa]\npara descansar un [gato]\nuna de las tres sillas era [verde]\nla otra [temprana]\ny la última [bueno]\nprimero trató de sentarse en la [verde]\npero ni siquiera pudo [venir]\nprobó la [temprana]\npero estaba muy [pura]\nera muy [cómica]\nfinalmente ella se sentó en la [bueno]\nesta era muy [moda]\ny exactamente de su [daño]\npero de [gente]\nla silla se rompió en [brazos]\ncon un [muerte] estruendo\nRisitos de Oro se encontró en el [cielo]\ny no supo qué [leer]\ncaminó hacia la habitación de al [gato]\ny vio que había tres [damas]\nuna grande, una [temprana]\ny una [bueno]\nprimero probó la cama [verde]\nera demasiado grande para [aquel]\ny también demasiado [pura]\nla segunda le quedaba un poco [verde]\npero era demasiado [llave]\nasí que ella se [costó]\nen la tercera y más pequeña [rama]\nesta era exactamente de su [daño]\ny era muy [moda]\ntan cómoda que Risitos de [horno]\nse durmió de [mismo]\nmientras Risitos de Oro estaba [corriendo]\nla familia oso regresó a [masa]\npapá oso traía un poco de [dueña]\nque recogió para la [escena]\nmamá oso tenía moras [presas]\ny el bebé oso no podía [hablar]\npara comer su [arena]\ncuando llegaron a [masa]\nse sentaron rápidamente en la [pesa]\nalguien probó mi [arena]\nalguien también probó mi [arena]\nalguien también probó mi [arena]\ny no solo la [golpeó]\nsino que se la comió [moda]\nse levantaron y comenzaron a mirar [error]\nel papá oso notó su [villa]\nfrente a la [escena]\nalguien se sentó en mi [villa]\nmira, está en un distinto [mar]\nalguien también se sentó en mi [villa]\nalguien también se sentó en mi [villa]\npero también la [comió]\nla familia oso con [crueldad]\nentró en el [territorio]\nalguien se acostó en mi [rama]\nmira, está [tendida]\nalguien también se acostó sobre la [silla]\nalguien también se acostó en mi [rama]\ny aún está [corriendo] en ella\npapá oso fue al lado de la [rama]\ny vio que alguien [finalmente]\nestaba durmiendo en su [rama]\nlentamente levantó la [gana]\ny se sorprendió al ver a una [piña]\nqué está haciendo una niña en nuestra [masa]\ndile a la pequeña [piña]\nque se levante de mi [rama] ahora\nal despertarse con el llanto del bebé [hoyo]\nRisitos de Oro vio a tres [ojos]\nfrente a ella y salió [viviendo]\nde la sala [organizada]\nsalió de la [masa]\ny comenzó a correr sin mirar [allí]\nse quedó sin [cuento]\nde tanto correr pero no se [tuvo]\ny ella ni siquiera sabía qué [dominio] tomar\njusto en ese [mento]\nvio a sus padres cruzando el [vaso]\nya que al no regresar a [masa]\nsalieron a [ayudarla]\nRisitos de Oro estaba muy [veloz]\nde ver a sus [madres]\nella corrió y abrazó a su [padre]\na partir de ahora siempre te [buscaré]\nnunca me iré sin [visitarte]\nRisitos de Oro abrazó a sus padres [recientemente]\ndesde ese día, tal como lo [permitió]\nella siempre escuchó a sus [madres]\ny no hacía nada sin antes recibir su [premio]\nella fue una chica amable y [ocupada]\npara [hombre]"
+  },
+  "created_at": "2026-03-21 15:07:56 UTC",
+  "updated_at": "2026-03-21 16:20:39 UTC",
+  "exported_at": "2026-03-21T16:20:40Z"
+}
