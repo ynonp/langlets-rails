@@ -186,7 +186,7 @@
             <div class="swiper-slide">
               <% if learning_path.cover_image_url %>
                 <%= link_to learning_path_path(learning_path), class: "block w-64 h-48 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden", style: "background-image: url('#{learning_path.cover_image_url}'); background-size: cover; background-position: center;" do %>
-                  <div class="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
+                  <div class="absolute inset-0 bg-opacity-50 z-10"></div>
                   <h3 class="text-xl font-bold text-white mb-2 relative z-20"><%= learning_path.name %></h3>
                   <% if learning_path.description.present? %>
                     <p class="text-sm text-white text-opacity-90 relative z-20"><%= truncate(learning_path.description, length: 80) %></p>
