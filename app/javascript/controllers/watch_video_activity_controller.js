@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startActivityButton', 'startPracticeButton'];
+  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startPracticeButton'];
   static classes = ['currentTextLine'];
 
   progress(ev) {
@@ -10,13 +10,9 @@ export default class extends Controller {
   }
 
   handleVideoStart() {
-    if (this.startPracticeButtonTarget.classList.contains('hidden')) {
-      this.startActivityButtonTarget.classList.remove('hidden');
-    }
   }
 
   handleVideoPause() {
-    this.startActivityButtonTarget.classList.add('hidden');
   }
 
   handleVideoEnd() {
