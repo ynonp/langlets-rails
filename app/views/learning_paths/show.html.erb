@@ -98,29 +98,6 @@
         </svg>
       </div>
     </div>
-
-    <!-- Tag Filter Row -->
-    <div class="overflow-x-auto">
-      <div class="flex gap-3 pb-4 min-w-max">
-        <!-- All Tag -->
-        <button type="button" 
-                class="tag-filter px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap <%= params[:tag].blank? || params[:tag] == 'all' ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>"
-                data-tag="all"
-                data-action="click->learning-path-courses#filterByTag">
-          All
-        </button>
-        
-        <!-- Dynamic Tags -->
-        <% @tags.each do |tag| %>
-          <button type="button" 
-                  class="tag-filter px-4 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap <%= params[:tag] == tag.name ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>"
-                  data-tag="<%= tag.name %>"
-                  data-action="click->learning-path-courses#filterByTag">
-            <%= tag.name %>
-          </button>
-        <% end %>
-      </div>
-    </div>
   </section>
 
   <!-- Loading Indicator -->
