@@ -62,7 +62,12 @@
           <%= link_to course_lesson_path(@course, @next_lesson),
             class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-gray-700 text-white hover:bg-gray-600",
             title: "Next Lesson",
-            data: { turbo_frame: 'activity' } do %>
+            data: {
+              turbo_frame: 'activity',
+              controller: 'lesson-navigation',
+              action: 'click->lesson-navigation#markLessonCompleted',
+              'lesson-navigation-lesson-id-value': @lesson.id
+            } do %>
             »
           <% end %>
         <% end %>

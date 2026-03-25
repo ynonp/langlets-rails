@@ -10,6 +10,9 @@ application.register("activity-navigation", ActivityNavigationController)
 import AudioFeedbackController from "./audio_feedback_controller"
 application.register("audio-feedback", AudioFeedbackController)
 
+import AudioToTranslationActivityController from "./audio_to_translation_activity_controller"
+application.register("audio-to-translation-activity", AudioToTranslationActivityController)
+
 import AuthController from "./auth_controller"
 application.register("auth", AuthController)
 
@@ -19,11 +22,17 @@ application.register("find-answers", FindAnswersController)
 import FindWordsController from "./find_words_controller"
 application.register("find-words", FindWordsController)
 
+import FlashcardActivityController from "./flashcard_activity_controller"
+application.register("flashcard-activity", FlashcardActivityController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
 import LearningPathCoursesController from "./learning_path_courses_controller"
 application.register("learning-path-courses", LearningPathCoursesController)
+
+import LessonNavigationController from "./lesson_navigation_controller"
+application.register("lesson-navigation", LessonNavigationController)
 
 import ListenActivityController from "./listen_activity_controller"
 application.register("listen-activity", ListenActivityController)
@@ -36,9 +45,6 @@ application.register("match-activity", MatchActivityController)
 
 import MatchTokensActivityController from "./match_tokens_activity_controller"
 application.register("match-tokens-activity", MatchTokensActivityController)
-
-import FlashcardActivityController from "./flashcard_activity_controller"
-application.register("flashcard-activity", FlashcardActivityController)
 
 import MiniPlayerController from "./mini_player_controller"
 application.register("mini-player", MiniPlayerController)
@@ -67,6 +73,9 @@ application.register("speech-recognition", SpeechRecognitionController)
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
 
+import TokensChainActivityController from "./tokens_chain_activity_controller"
+application.register("tokens-chain-activity", TokensChainActivityController)
+
 import WatchVideoActivityController from "./watch_video_activity_controller"
 application.register("watch-video-activity", WatchVideoActivityController)
 
@@ -75,9 +84,3 @@ application.register("word-order-activity", WordOrderActivityController)
 
 import YoutubeFormController from "./youtube_form_controller"
 application.register("youtube-form", YoutubeFormController)
-
-import AudioToTranslationActivityController from './audio_to_translation_activity_controller';
-application.register("audio-to-translation-activity", AudioToTranslationActivityController);
-
-import TokensChainActivityController from './tokens_chain_activity_controller';
-application.register("tokens-chain-activity", TokensChainActivityController);

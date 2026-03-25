@@ -32,7 +32,16 @@ export default class extends Controller {
 
     const optionsHtml = card.options.map((opt, idx) => {
       const audioUrl = (card.options_audio_urls && card.options_audio_urls[idx]) ? card.options_audio_urls[idx] : ''
-      return `<button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" data-option-audio="${audioUrl}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-gray-800 rounded h-20">${opt}</button>`
+      const audioHtml = audioUrl
+        ? `<audio preload="auto" data-option-audio-index="${idx}" src="${audioUrl}"></audio>`
+        : ''
+
+      return `
+        <div class="option-item">
+          <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-gray-800 rounded h-20">${opt}</button>
+          ${audioHtml}
+        </div>
+      `
     }).join('')
 
     const containsLatin = /[A-Za-z]/.test(card.phrase_html)
@@ -53,23 +62,14 @@ export default class extends Controller {
   }
 
   selectOption(e) {
-    const idx = parseInt(e.target.dataset.optionIndex)
+    const selected = e.currentTarget
     const card = this.cardsValue[this.index]
 
     const buttons = Array.from(this.cardTarget.querySelectorAll('.option-button'))
     buttons.forEach(btn => btn.disabled = true)
 
-    const selected = buttons[idx]
-    const optionAudio = selected.dataset.optionAudio
-
-    if (optionAudio) {
-      try {
-        const audio = new Audio(optionAudio)
-        audio.play()
-      } catch (err) {
-        console.warn('Failed to play option audio', err)
-      }
-    }
+    const optionAudio = selected.parentElement?.querySelector('audio')
+    this.playOptionAudio(optionAudio)
 
     if (selected.textContent.trim() === card.correct) {
       selected.classList.add('correct')
@@ -84,6 +84,20 @@ export default class extends Controller {
   nextCard() {
     this.index += 1
     this.renderCard()
+  }
+
+  playOptionAudio(audioElement) {
+    if (!audioElement) return
+
+    try {
+      audioElement.currentTime = 0
+      const playPromise = audioElement.play()
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(err => console.warn('Failed to play option audio', err))
+      }
+    } catch (err) {
+      console.warn('Failed to play option audio', err)
+    }
   }
 
   showCompletion() {

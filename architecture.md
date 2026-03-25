@@ -247,6 +247,7 @@
 - **Key Features**:
   - Unique constraint on lesson + user combination
   - Timestamps for completion tracking
+  - Lesson navigation behavior: clicking the in-lesson "Next Lesson" control sends a background progress update that marks the current lesson as completed for authenticated users
   - Indexed on both lesson_id and user_id for efficient queries
 - **Relationships**: Links Users to Lessons for course progression
 
