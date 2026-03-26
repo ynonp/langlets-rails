@@ -82,5 +82,8 @@ application.register("watch-video-activity", WatchVideoActivityController)
 import WordOrderActivityController from "./word_order_activity_controller"
 application.register("word-order-activity", WordOrderActivityController)
 
+import WriteMissingWordActivityController from "./write_missing_word_activity_controller"
+application.register("write-missing-word-activity", WriteMissingWordActivityController)
+
 import YoutubeFormController from "./youtube_form_controller"
 application.register("youtube-form", YoutubeFormController)

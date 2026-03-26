@@ -20,6 +20,10 @@ class User < ApplicationRecord
   # Activity logging relationship
   has_many :activity_logs, dependent: :destroy
 
+  # Saved token translations for personal review
+  has_many :token_translation_users, dependent: :destroy
+  has_many :saved_token_translations, through: :token_translation_users, source: :token_translation
+
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|
       new_user.email = auth.info.email

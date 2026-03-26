@@ -1,0 +1,32 @@
+<% content_for :head do %>
+  <title><%= @lesson.name %> - Langlets</title>
+<% end %>
+
+<% activity_params = @activity.activity_params %>
+
+<div class="h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800"
+    data-controller="main-video-player activity-navigation"
+    data-main-video-player-video-id-value=""
+    data-main-video-player-hl-value=""
+    data-main-video-player-preload-player-value="false"
+>
+  <turbo-frame
+    id="activity"
+    class="contents"
+    data-action="
+    turbo:frame-render->activity-navigation#activityChange
+    "
+  >
+    <%= render partial: 'review_lessons/activity_navigation' %>
+    <div
+      data-controller="progress-tracker audio-feedback"
+      data-action="activity:completed->progress-tracker#sendProgressUpdate audio:correct->audio-feedback#handleCorrect audio:incorrect->audio-feedback#handleIncorrect audio:complete->audio-feedback#handleComplete"
+      data-progress-tracker-progress-data-value="<%= @progress_data.to_json %>"
+      class="contents"
+      data-activity-navigation-target="content"
+      data-activity-navigation-url="<%= @current_url %>"
+    >
+      <%= render partial: @activity.partial_name, locals: { params: activity_params } %>
+    </div>
+  </turbo-frame>
+</div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
+ActiveRecord::Schema[8.0].define(version: 2026_03_26_103349) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -253,6 +253,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
     t.boolean "published"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "subtitle"
+    t.string "hero_image_url"
+    t.string "cta_text"
+    t.string "cta_link"
+    t.string "primary_color"
+    t.string "layout_style", default: "default"
+    t.string "slug"
   end
 
   create_table "lesson_users", force: :cascade do |t|
@@ -267,16 +274,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
 
   create_table "lessons", force: :cascade do |t|
     t.string "slug"
-    t.bigint "medium_id", null: false
+    t.bigint "medium_id"
     t.string "start_timestamp"
     t.string "end_timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "course_id", null: false
+    t.bigint "course_id"
     t.integer "order", default: 0
     t.string "name"
     t.bigint "user_id", null: false
-    t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true
+    t.index ["course_id", "slug"], name: "index_lessons_on_course_id_and_slug", unique: true, where: "(course_id IS NOT NULL)"
     t.index ["course_id"], name: "index_lessons_on_course_id"
     t.index ["medium_id"], name: "index_lessons_on_medium_id"
     t.index ["user_id"], name: "index_lessons_on_user_id"
@@ -320,6 +327,16 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_tags_on_name", unique: true
+  end
+
+  create_table "token_translation_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "token_translation_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token_translation_id"], name: "index_token_translation_users_on_token_translation_id"
+    t.index ["user_id", "token_translation_id"], name: "idx_token_translation_users_unique", unique: true
+    t.index ["user_id"], name: "index_token_translation_users_on_user_id"
   end
 
   create_table "token_translations", force: :cascade do |t|
@@ -386,13 +403,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_12_25_175860) do
   add_foreign_key "courses_learning_paths", "learning_paths"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
-  add_foreign_key "lessons", "courses"
+  add_foreign_key "lessons", "courses", on_delete: :cascade
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"
   add_foreign_key "similar_sounds", "phrases"
+  add_foreign_key "token_translation_users", "token_translations"
+  add_foreign_key "token_translation_users", "users"
   add_foreign_key "token_translations", "phrases"
   add_foreign_key "user_game_stats", "users"
 end

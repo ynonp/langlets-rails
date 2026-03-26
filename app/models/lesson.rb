@@ -1,14 +1,12 @@
 class Lesson < ApplicationRecord
   belongs_to :user
-  belongs_to :medium
-  belongs_to :course
+  belongs_to :medium, optional: true
+  belongs_to :course, optional: true
   has_many :activities, dependent: :destroy
   has_timestamp [ :start_timestamp, :end_timestamp ]
   include FriendlyName
 
-  # Validate slug uniqueness scoped to course_id
   validates :slug, uniqueness: { scope: :course_id }
-  validates :course_id, presence: true
 
   has_many :lesson_users, dependent: :destroy
   has_many :users_completed, through: :lesson_users, source: :user

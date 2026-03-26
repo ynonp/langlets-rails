@@ -49,6 +49,14 @@
             <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
           </label>
           <div class="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
+            <% if current_user.saved_token_translations.exists? %>
+              <%= button_to "📚 Review Words", review_lessons_path,
+                method: :post,
+                class: "w-full text-left px-4 py-3 text-yellow-300 hover:bg-slate-700 rounded-lg transition-colors duration-150",
+                data: { turbo: false }
+              %>
+              <div class="border-t border-slate-700 my-1"></div>
+            <% end %>
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,

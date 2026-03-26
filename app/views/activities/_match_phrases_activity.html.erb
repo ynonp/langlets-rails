@@ -53,6 +53,7 @@
         <div 
           data-controller="popover-translation"
           data-popover-translation-l1-language-value="<%= params[:l1].english_name || 'Language' %>"
+          data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
           data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
           class="my-4 text-md md:text-xl text-white w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
           <span 

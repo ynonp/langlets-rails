@@ -57,7 +57,7 @@
             data-speak-activity-target="originalPhrase"
             dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
             <div class="flex items-center <%= l1_rtl ? 'flex-row-reverse' : 'justify-between' %>">
-              <div data-controller="popover-translation" data-popover-translation-l1-language-value="<%= params[:l1] || 'Language' %>" class="flex-grow text-center">
+              <div data-controller="popover-translation" data-popover-translation-l1-language-value="<%= params[:l1] || 'Language' %>" data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>" class="flex-grow text-center">
                 <%= wrap_tokens_in_spans(phrase, {class: "inline cursor-pointer hover:bg-gray-600 rounded"}) %>
                 
                 <!-- Translation Popup -->

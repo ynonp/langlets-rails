@@ -1,23 +1,22 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['translationPopup', 'translationText', 'aiButton'];
-  static values = { l1Language: String };
+  static targets = ['translationPopup', 'translationText', 'aiButton', 'saveButton', 'saveIcon', 'saveText'];
+  static values = { l1Language: String, savedIds: Array };
 
   initialize() {
     this.hidePopup = this.hidePopup.bind(this);
     this.showPopup = this.showPopup.bind(this);
-    this.currentAudio = null; // Track currently playing audio
+    this.currentAudio = null;
     this.currentOriginalText = null;
     this.currentTranslation = null;
+    this.currentTokenId = null;
   }
 
   connect() {
     this.element.addEventListener('click', this.showPopup);
     document.addEventListener('click', this.hidePopup);
-    // Hide popup on scroll to prevent it from floating disconnected from its token
     document.addEventListener('scroll', this.hidePopup, { passive: true });
-    // Also listen for scroll on the phrases container
     const phrasesContainer = document.getElementById('phrases-container');
     if (phrasesContainer) {
       phrasesContainer.addEventListener('scroll', this.hidePopup, { passive: true });
@@ -36,7 +35,6 @@ export default class extends Controller {
 
   hidePopup() {
     this.translationPopupTarget.classList.add('hidden');
-    // Stop any currently playing audio when hiding popup
     if (this.currentAudio) {
       this.currentAudio.pause();
       this.currentAudio.currentTime = 0;
@@ -47,31 +45,84 @@ export default class extends Controller {
     if (ev.target.dataset.translation) {
       const {translation} = ev.target.dataset;
       const originalText = ev.target.textContent.trim();
+      const tokenId = ev.target.dataset.tokenId ? parseInt(ev.target.dataset.tokenId) : null;
 
-      // Store current token data for ChatGPT prompt
       this.currentOriginalText = originalText;
       this.currentTranslation = translation;
+      this.currentTokenId = tokenId;
 
       this.translationTextTarget.textContent = translation;
-      
-      // Get the bounding rectangle of the clicked element (viewport coordinates)
+
       const rect = ev.target.getBoundingClientRect();
-      
-      // Position relative to viewport for fixed positioning
       const left = rect.left + (rect.width / 2);
       const top = rect.bottom + 5;
-      
+
       this.translationPopupTarget.style.left = `${left}px`;
       this.translationPopupTarget.style.top = `${top}px`;
       this.translationPopupTarget.classList.remove('hidden');
+
+      this._updateSaveButton();
 
       const audio = ev.currentTarget.parentElement.querySelector('audio');
       if (audio) {
         audio.play();
       }
-            
-      ev.stopPropagation();      
+
+      ev.stopPropagation();
+    }
+  }
+
+  _updateSaveButton() {
+    if (!this.hasSaveButtonTarget) return;
+
+    const isSaved = this.currentTokenId && this.savedIdsValue.includes(this.currentTokenId);
+    if (isSaved) {
+      this.saveIconTarget.textContent = '✓';
+      this.saveTextTarget.textContent = 'Saved';
+      this.saveButtonTarget.classList.add('bg-green-50', 'border-green-200');
+      this.saveButtonTarget.classList.remove('bg-gray-50', 'border-gray-200');
     } else {
+      this.saveIconTarget.textContent = '🔖';
+      this.saveTextTarget.textContent = 'Save';
+      this.saveButtonTarget.classList.add('bg-gray-50', 'border-gray-200');
+      this.saveButtonTarget.classList.remove('bg-green-50', 'border-green-200');
+    }
+
+    // Hide save button if no token id (not a saveable token or no session)
+    this.saveButtonTarget.style.display = this.currentTokenId ? '' : 'none';
+  }
+
+  async toggleSave(ev) {
+    ev.stopPropagation();
+    if (!this.currentTokenId) return;
+
+    const isSaved = this.savedIdsValue.includes(this.currentTokenId);
+
+    try {
+      if (isSaved) {
+        await fetch(`/token_translation_users/${this.currentTokenId}`, {
+          method: 'DELETE',
+          headers: {
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content,
+            'Accept': 'application/json'
+          }
+        });
+        this.savedIdsValue = this.savedIdsValue.filter(id => id !== this.currentTokenId);
+      } else {
+        await fetch('/token_translation_users', {
+          method: 'POST',
+          headers: {
+            'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]')?.content,
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({ token_translation_id: this.currentTokenId })
+        });
+        this.savedIdsValue = [...this.savedIdsValue, this.currentTokenId];
+      }
+      this._updateSaveButton();
+    } catch (err) {
+      console.warn('Failed to toggle save:', err);
     }
   }
 
@@ -82,7 +133,6 @@ export default class extends Controller {
     const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText, this.currentTranslation);
     const encodedPrompt = encodeURIComponent(prompt);
     const chatgptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
-    
     window.open(chatgptUrl, '_blank');
   }
 
@@ -100,8 +150,8 @@ Word: "${text}"
 Intended meaning: "${translation}"
 
 Tasks:
-1. Identify the word’s base form (infinitive / singular / lemma) and part of speech.
-2. Explain the word’s literal meaning and its etymology (brief).
+1. Identify the word's base form (infinitive / singular / lemma) and part of speech.
+2. Explain the word's literal meaning and its etymology (brief).
 3. Explain how this word can acquire the intended meaning:
    - through idiomatic usage
    - metaphorical extension
@@ -140,25 +190,17 @@ Tasks:
   }
 
   playAudio(audioUrl) {
-    // Stop any currently playing audio
     if (this.currentAudio) {
       this.currentAudio.pause();
       this.currentAudio.currentTime = 0;
     }
-
-    // Create new audio element and play
     this.currentAudio = new Audio(audioUrl);
-    this.currentAudio.volume = 0.7; // Set a reasonable volume
-    
-    // Handle audio errors gracefully
+    this.currentAudio.volume = 0.7;
     this.currentAudio.onerror = () => {
       console.warn('Failed to load audio:', audioUrl);
     };
-    
-    // Play the audio
     this.currentAudio.play().catch(error => {
       console.warn('Failed to play audio:', error);
     });
   }
 }
-

@@ -36,6 +36,8 @@ class Activity < ApplicationRecord
       phrases.count * 2
     when 'WordOrderActivity'
       phrases.count * 2
+    when 'Activities::WriteMissingWordActivity'
+      token_translations.count * 2
     else
       10 # Default for new activity types
     end

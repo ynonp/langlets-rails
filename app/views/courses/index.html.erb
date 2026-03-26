@@ -74,6 +74,14 @@
               <% end %>
               <div class="sm:hidden border-t border-slate-700 my-1"></div>
             <% end %>
+            <% if current_user.saved_token_translations.exists? %>
+              <%= button_to "📚 Review Words", review_lessons_path,
+                method: :post,
+                class: "w-full text-left px-4 py-3 text-yellow-300 hover:bg-slate-700 rounded-lg transition-colors duration-150",
+                data: { turbo: false }
+              %>
+              <div class="border-t border-slate-700 my-1"></div>
+            <% end %>
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,

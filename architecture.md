@@ -729,3 +729,82 @@ The authentication system is configured with enterprise-grade security features:
 - **Index Security**: Efficient lookups without exposing sensitive data
 - **Token Storage**: Secure storage of reset and confirmation tokens
 - **Data Encryption**: Encrypted password storage with salt
+
+---
+
+## Personal Words Practice Feature
+
+### Overview
+Users can save individual word/token translations they encounter during lessons and videos for personal review. A "Review Words" session builds and plays a custom review lesson from the user's saved words.
+
+### New Models
+
+#### TokenTranslationUser (`token_translation_users`)
+- **Purpose**: Join table linking users to their saved token translations
+- **Key Features**:
+  - Unique constraint per `(user_id, token_translation_id)` pair
+  - Cascade delete when user or token translation is removed
+- **Relationships**:
+  - Belongs to User
+  - Belongs to TokenTranslation
+
+#### Review Lessons (Lesson without course/medium)
+- Lessons now support `course_id: nil` and `medium_id: nil` — enabling standalone review lessons
+- Review lessons have random slug prefixed with `review-`
+- The unique index on `(course_id, slug)` is partial (`WHERE course_id IS NOT NULL`)
+
+### New Activity Type
+
+#### WriteMissingWordActivity (STI: `Activities::WriteMissingWordActivity`)
+- **Purpose**: User types the missing L1 word in a sentence shown with a blank
+- **UI**: Shows L2 translation hint, L1 sentence with `_____` blank, text input + Check button
+- **Validation**: Case-insensitive exact match; 2 XP for correct answers
+- **Stimulus Controller**: `write-missing-word-activity`
+- **Data**: `activity_params` builds card objects with `{id, phrase_with_blank, answer, translation, audio_url}`
+
+### New Services
+
+#### ReviewLessonBuilder (`app/services/review_lesson_builder.rb`)
+- Creates a review lesson (no course, no medium) for a user from their saved token translations
+- Activity composition:
+  - FlashcardActivity (if ≥3 saved tokens, up to 15)
+  - MatchTokensActivity (if ≥3 saved tokens, up to 15)
+  - TokensChainActivity (if ≥4 saved tokens, up to 15)
+  - WriteMissingWordActivity (always, up to 10)
+
+### New Controllers
+
+#### TokenTranslationUsersController
+- `POST /token_translation_users` — save a token translation (authenticated users only)
+- `DELETE /token_translation_users/:id` — unsave (uses token_translation_id as param)
+- JSON responses: `{saved: true/false, token_translation_id: N}`
+
+#### ReviewLessonsController
+- `POST /review_lessons` — build review lesson and redirect to show
+- `GET /review_lessons/:id` — play lesson (uses `review_lessons/show.html.erb`)
+- `GET /review_lessons/:id/finish` — completion page
+
+### Frontend Changes
+
+#### Popover Translation Controller (`popover-translation`)
+- Added `savedIds` (Array) value — JSON list of user's saved token_translation IDs
+- Added `toggleSave()` action — calls API to save/unsave; updates button UI
+- Reads `data-token-id` from clicked token span (already present via `wrap_tokens_in_spans` helper)
+- Save button shows 🔖 Save / ✓ Saved state
+
+#### _translation_popup.html.erb
+- Added Save button with `saveButton`, `saveIcon`, `saveText` targets
+- Shows saved/unsaved state visually
+
+#### Views with popover-translation controller
+The following views now pass `data-popover-translation-saved-ids-value` with the current user's saved token IDs:
+- `full_player/show.html.erb`
+- `activities/_watch_video_activity.html.erb`
+- `activities/_match_phrases_activity.html.erb`
+- `activities/_speak_activity.html.erb`
+
+#### User Profile Menus
+All 3 user profile menus show a "📚 Review Words" button when the user has saved token translations:
+- `courses/index.html.erb`
+- `courses/show.html.erb`
+- `learning_paths/show.html.erb`

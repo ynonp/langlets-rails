@@ -3,6 +3,7 @@ class TokenTranslation < ApplicationRecord
   
   belongs_to :phrase
   has_one_attached :l1_audio, service: :s3_public
+  has_many :token_translation_users, dependent: :destroy
 
   # Generate audio when token is created - only in test/production
   after_create :generate_l1_audio, if: :should_generate_audio?
