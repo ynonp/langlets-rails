@@ -11,6 +11,7 @@
     </svg>
     <span class="text-sm text-blue-700 font-medium">AI</span>
   </button>
+  <% if user_signed_in? %>
   <button
     data-popover-translation-target="saveButton"
     data-action="click->popover-translation#toggleSave"
@@ -19,4 +20,5 @@
     <span data-popover-translation-target="saveIcon" class="mr-1 text-lg">🔖</span>
     <span data-popover-translation-target="saveText" class="text-sm text-gray-700 font-medium">Save</span>
   </button>
+  <% end %>
 </div>
