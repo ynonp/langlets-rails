@@ -1,12 +1,14 @@
 import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
+import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
 // Connects to data-controller="match-tokens-activity"
 export default class extends Controller {
   static targets = ['progressBar', 'l1Column', 'l2Column', 'completionMessage', 'grid'];
   static values = { 
     tokens: Array,
-    totalTokens: Number
+    totalTokens: Number,
+    isReviewLesson: Boolean
   };
 
   connect() {
@@ -82,8 +84,16 @@ export default class extends Controller {
     element.dataset.action = 'click->match-tokens-activity#selectToken';
     
     if (column === 'l1') {
-      element.textContent = token.l1_word;
       element.dataset.audioUrl = token.audio_url;
+      if (this.isReviewLessonValue) {
+        element.classList.add('flex', 'flex-col', 'gap-1')
+        element.innerHTML = `
+          <span>${token.l1_word}</span>
+          ${stopPracticingHtml(token.id)}
+        `
+      } else {
+        element.textContent = token.l1_word;
+      }
     } else {
       element.textContent = token.l2_translation;
     }

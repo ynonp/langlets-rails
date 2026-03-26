@@ -2,7 +2,7 @@
   <title><%= @lesson.name %> - Langlets</title>
 <% end %>
 
-<% activity_params = @activity.activity_params %>
+<% activity_params = @activity.activity_params.merge(is_review_lesson: true) %>
 
 <div class="h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800"
     data-controller="main-video-player activity-navigation"

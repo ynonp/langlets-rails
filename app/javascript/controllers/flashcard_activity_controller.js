@@ -1,8 +1,9 @@
 import { Controller } from "@hotwired/stimulus"
+import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
 export default class extends Controller {
   static targets = ["card", "completion", "progress"]
-  static values = { cards: Array, l1Rtl: Boolean }
+  static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
     this.index = 0
@@ -58,6 +59,7 @@ export default class extends Controller {
       <div class="mb-3 text-gray-300 text-lg md:text-xl">${card.translation}</div>
       <div dir="${phraseDir}" class="mb-6 text-white font-semibold text-2xl md:text-3xl ${phraseAlignClass}">${displayedPhrase}</div>
       <div class="mt-6 grid grid-cols-2 gap-4">${optionsHtml}</div>
+      ${this.isReviewLessonValue ? stopPracticingHtml(card.id) : ''}
     `
   }
 

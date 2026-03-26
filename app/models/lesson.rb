@@ -6,7 +6,7 @@ class Lesson < ApplicationRecord
   has_timestamp [ :start_timestamp, :end_timestamp ]
   include FriendlyName
 
-  validates :slug, uniqueness: { scope: :course_id }
+  validates :slug, uniqueness: { scope: :course_id }, allow_blank: true
 
   has_many :lesson_users, dependent: :destroy
   has_many :users_completed, through: :lesson_users, source: :user
