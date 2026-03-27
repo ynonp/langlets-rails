@@ -44,6 +44,12 @@ module Activities
         }
       end
 
+      all_answers = cards.map { |c| c[:answer] }
+      cards = cards.map do |card|
+        distractors = (all_answers - [card[:answer]]).sample(3)
+        card.merge(options: ([card[:answer]] + distractors).shuffle)
+      end
+
       {
         cards: cards,
         l1: activity_token_translations.first&.phrase&.l1,

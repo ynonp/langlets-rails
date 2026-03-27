@@ -1,4 +1,4 @@
-<%# Expects params[:cards] - array of cards with phrase_with_blank, answer, translation, audio_url %>
+<%# Expects params[:cards] - array of cards with phrase_with_blank, answer, translation, audio_url, options %>
 <% cards = params[:cards] || [] %>
 <% l1_rtl = params[:l1]&.rtl %>
 
@@ -6,42 +6,54 @@
      data-write-missing-word-activity-cards-value="<%= cards.to_json %>"
      data-write-missing-word-activity-l1-rtl-value="<%= l1_rtl %>"
      data-write-missing-word-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
-     class="flex flex-col items-center bg-gray-800 min-h-screen">
-  <div class="w-full max-w-2xl p-6 bg-gray-800 rounded-lg shadow-lg">
-    <h2 class="text-2xl md:text-3xl text-white mb-2 font-bold"><%= @activity.text_header || "Write the Missing Word" %></h2>
+     class="flex flex-col items-center bg-gray-800">
+  <div class="w-full max-w-2xl p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    <h2 class="text-xl sm:text-2xl md:text-3xl text-white mb-2 font-bold"><%= @activity.text_header || "Write the Missing Word" %></h2>
 
     <p data-write-missing-word-activity-target="progress" class="text-gray-300 mb-4">Question 1 of <%= cards.length %></p>
 
     <div data-write-missing-word-activity-target="card"
          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-         class="bg-gray-700 p-8 rounded-lg text-white flex flex-col gap-4 min-h-[40vh]">
+         class="bg-gray-700 p-4 sm:p-8 rounded-lg text-white flex flex-col gap-4">
 
       <div data-write-missing-word-activity-target="translation"
-           class="text-yellow-300 text-lg font-medium"></div>
+           class="text-yellow-300 text-base sm:text-lg font-medium"></div>
 
       <div data-write-missing-word-activity-target="sentence"
-           class="text-white text-xl leading-relaxed"></div>
+           class="text-white text-lg sm:text-xl leading-relaxed"></div>
 
-      <div class="flex gap-3 items-center mt-4">
+      <div data-write-missing-word-activity-target="writeInterface"
+           class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
         <input
           type="text"
           data-write-missing-word-activity-target="answer"
           data-action="keydown.enter->write-missing-word-activity#checkAnswer"
-          class="flex-1 px-4 py-3 rounded-lg bg-gray-600 text-white text-lg border-2 border-gray-500 focus:border-blue-500 focus:outline-none"
+          class="flex-1 px-4 py-3 rounded-lg bg-gray-600 text-white text-base sm:text-lg border-2 border-gray-500 focus:border-blue-500 focus:outline-none"
           placeholder="Type the missing word..."
           autocomplete="off"
           autocorrect="off"
           autocapitalize="off"
           spellcheck="false"
         />
-        <button data-action="click->write-missing-word-activity#checkAnswer"
-                data-write-missing-word-activity-target="checkButton"
-                class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-bold transition-colors duration-200">
-          Check
-        </button>
+        <div class="flex gap-2">
+          <button data-action="click->write-missing-word-activity#checkAnswer"
+                  data-write-missing-word-activity-target="checkButton"
+                  class="flex-1 sm:flex-none px-5 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-bold transition-colors duration-200">
+            Check
+          </button>
+          <button data-action="click->write-missing-word-activity#showHint"
+                  data-write-missing-word-activity-target="hintButton"
+                  class="px-4 py-3 bg-gray-600 hover:bg-gray-500 rounded-lg text-white text-sm font-medium transition-colors duration-200">
+            Hint
+          </button>
+        </div>
       </div>
 
-      <div data-write-missing-word-activity-target="feedback" class="hidden text-lg font-semibold mt-2"></div>
+      <div data-write-missing-word-activity-target="hintOptions"
+           class="hidden grid grid-cols-2 gap-3 mt-2">
+      </div>
+
+      <div data-write-missing-word-activity-target="feedback" class="hidden text-base sm:text-lg font-semibold mt-2"></div>
       <div data-write-missing-word-activity-target="stopPracticingContainer"></div>
     </div>
 
@@ -49,7 +61,7 @@
          class="hidden mt-6 text-center"
          data-progress-tracker-target="completion">
       <h3 class="text-xl font-bold text-green-500 mb-4">Great Work!</h3>
-      <%= link_to "Next", @next_activity_path, { class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-center inline-block" } %>
+      <%= link_to_next_activity "Next", @next_activity_path, { class: "px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors duration-200 text-center inline-block" } %>
     </div>
   </div>
 </div>

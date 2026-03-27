@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
 export default class extends Controller {
-  static targets = ["card", "completion", "progress", "translation", "sentence", "answer", "feedback", "checkButton", "stopPracticingContainer"]
+  static targets = ["card", "completion", "progress", "translation", "sentence", "answer", "feedback", "checkButton", "stopPracticingContainer", "writeInterface", "hintOptions", "hintButton"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
@@ -31,6 +31,18 @@ export default class extends Controller {
     this.checkButtonTarget.disabled = false
     this.checkButtonTarget.classList.remove("opacity-50")
 
+    // Reset to write mode
+    this.writeInterfaceTarget.classList.remove("hidden")
+    this.hintOptionsTarget.classList.add("hidden")
+    this.hintOptionsTarget.innerHTML = ""
+
+    // Show hint button only when there are multiple choice options available
+    if (card.options && card.options.length >= 2) {
+      this.hintButtonTarget.classList.remove("hidden")
+    } else {
+      this.hintButtonTarget.classList.add("hidden")
+    }
+
     if (this.isReviewLessonValue && this.hasStopPracticingContainerTarget) {
       this.stopPracticingContainerTarget.innerHTML = stopPracticingHtml(card.id)
     }
@@ -41,8 +53,56 @@ export default class extends Controller {
       this.currentAudio = null
     }
 
-    // Focus the input
     setTimeout(() => this.answerTarget.focus(), 50)
+  }
+
+  showHint() {
+    const card = this.cardsValue[this.currentIndex]
+    if (!card || !card.options) return
+
+    this.writeInterfaceTarget.classList.add("hidden")
+
+    this.hintOptionsTarget.innerHTML = card.options.map(opt => `
+      <button
+        data-action="click->write-missing-word-activity#selectHintOption"
+        data-option="${opt}"
+        class="hint-option px-4 py-4 bg-gray-800 hover:bg-gray-700 border-2 border-gray-600 rounded-lg text-white text-base sm:text-lg font-medium transition-colors duration-200 text-center">
+        ${opt}
+      </button>
+    `).join("")
+
+    this.hintOptionsTarget.classList.remove("hidden")
+  }
+
+  selectHintOption(event) {
+    const card = this.cardsValue[this.currentIndex]
+    if (!card) return
+
+    const selected = event.currentTarget
+    const allOptions = this.hintOptionsTarget.querySelectorAll(".hint-option")
+    allOptions.forEach(btn => btn.disabled = true)
+
+    const isCorrect = selected.dataset.option === card.answer
+
+    this.feedbackTarget.classList.remove("hidden")
+
+    if (isCorrect) {
+      selected.classList.add("border-green-500", "bg-green-900")
+      this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-green-400"
+      this.totalXp += 1
+      this.dispatch("xp", { detail: { xp: 1 } })
+      if (this.currentAudio) this.currentAudio.play().catch(() => {})
+      setTimeout(() => this.nextCard(), 1000)
+    } else {
+      selected.classList.add("border-red-500", "bg-red-900")
+      // Re-enable the other options so the user can try again
+      allOptions.forEach(btn => {
+        if (btn !== selected) btn.disabled = false
+      })
+      this.feedbackTarget.textContent = `✗ Wrong — try again!`
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-400"
+    }
   }
 
   checkAnswer() {
@@ -60,7 +120,7 @@ export default class extends Controller {
 
     if (correct) {
       this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
-      this.feedbackTarget.className = "text-lg font-semibold mt-2 text-green-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-green-400"
       this.totalXp += 2
       this.dispatch("xp", { detail: { xp: 2 } })
       if (this.currentAudio) {
@@ -69,7 +129,7 @@ export default class extends Controller {
       setTimeout(() => this.nextCard(), 1200)
     } else {
       this.feedbackTarget.textContent = `✗ The answer is "${card.answer}". Try to remember it!`
-      this.feedbackTarget.className = "text-lg font-semibold mt-2 text-red-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-400"
       setTimeout(() => this.nextCard(), 2000)
     }
   }
@@ -89,3 +149,4 @@ export default class extends Controller {
     this.dispatch("completed", { detail: { xp: this.totalXp }, bubbles: true })
   }
 }
+
