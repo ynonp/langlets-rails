@@ -1,4 +1,6 @@
 class LessonsController < ApplicationController
+  include Xp
+
   def show
     @course = Course.find_by(slug: params[:course_id]) || Course.find(params[:course_id])
     @lesson = @course.lessons
@@ -51,17 +53,7 @@ class LessonsController < ApplicationController
     
     # Get user stats from ActivityLog (only for authenticated users)
     if current_user
-      @daily_xp = ActivityLog.daily_xp_for_user(current_user)
-      @total_xp = ActivityLog.total_xp_for_user(current_user)
-      @current_streak = ActivityLog.current_streak_for_user(current_user)
-      
-      # Check if this is the first lesson completed today for streak calculation
-      today = Time.zone.now.to_date
-      last_lesson_today = ActivityLog.where(user: current_user)
-                                   .where.not(lesson_id: nil)
-                                   .where(created_at: today.beginning_of_day..today.end_of_day)
-                                   .exists?
-      @first_lesson_today = !last_lesson_today
+      add_lesson_xp
     else
       @daily_xp = 0
       @total_xp = 0
