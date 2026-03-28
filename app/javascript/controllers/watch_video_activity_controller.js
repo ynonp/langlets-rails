@@ -57,7 +57,11 @@ export default class extends Controller {
       const lineHeight = subtitlesLines[index].offsetHeight;
       
       const containerTop = container.offsetTop;
-      const targetScrollTop = subtitlesLines[index].offsetTop - lineHeight - containerTop;
+      const containerHeight = container.clientHeight;
+      const currentLineTop = subtitlesLines[index].offsetTop - containerTop;
+      // Show previous line as context if there's room; otherwise show current line at the top
+      const contextOffset = Math.min(lineHeight, Math.max(0, containerHeight - lineHeight));
+      const targetScrollTop = currentLineTop - contextOffset;
   
       container.scrollTo({
         top: targetScrollTop,
