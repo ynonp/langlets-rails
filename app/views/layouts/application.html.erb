@@ -3,8 +3,10 @@
   <head>
     <title><%= content_for(:title) || "Langlets" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
+    <% unless turbo_native_app? %>
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="mobile-web-app-capable" content="yes">
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -35,7 +37,7 @@
     <% end %>
   </head>
 
-  <body class="bg-gray-900">
+  <body class="bg-gray-900 <%= 'turbo-native' if turbo_native_app? %>">
     <main class="flex flex-col min-h-screen">
       <%= yield %>
     </main>

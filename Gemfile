@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0.2"
 # The modern asset pipeline for Rails [https://github.com/rails/propshaft]
 gem "propshaft"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 2.1"
+# Use PostgreSQL as the database for Active Record
+# gem "sqlite3", ">= 2.1"  # Disabled - using PostgreSQL instead
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
@@ -68,7 +68,7 @@ gem "solargraph", "~> 0.54.1", :group => :development
 
 gem "pycall", "~> 1.5"
 
-gem "gemini-ai", "~> 4.2"
+# gem "gemini-ai", "~> 4.2"  # Disabled - requires libcurl on Windows
 
 gem "httparty", "~> 0.23.1"
 

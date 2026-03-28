@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Langlets</string>
+    <string name="offline_title">Connection Error</string>
+    <string name="offline_message">Unable to connect to the server.\nPlease check your connection and try again.</string>
+    <string name="retry_button">Retry</string>
+    <string name="retry_status_connecting">Connecting…</string>
+    <string name="retry_status_next">Retrying in %d seconds…</string>
+</resources>

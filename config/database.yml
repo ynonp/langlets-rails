@@ -9,6 +9,9 @@ development:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: langlets
+  username: postgres
+  password: postgres
+  host: localhost
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -18,6 +21,9 @@ test:
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: langlets-test
+  username: postgres
+  password: postgres
+  host: localhost
 
 
 # Store production database in the storage/ directory, which by default

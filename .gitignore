@@ -47,3 +47,10 @@ vendor/**
 .aider*
 .claude
 .cursor
+
+# Android
+app/mobile/android/**/build/
+app/mobile/android/**/.gradle/
+app/mobile/android/**/.idea/
+app/mobile/android/**/local.properties
+app/mobile/android/**/*.iml

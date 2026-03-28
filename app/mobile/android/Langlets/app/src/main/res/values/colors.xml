@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Match the dark theme from the web app -->
+    <color name="primary">#F97316</color>         <!-- Orange-500 -->
+    <color name="primary_dark">#EA580C</color>    <!-- Orange-600 -->
+    <color name="background">#0F172A</color>      <!-- Slate-900 -->
+    <color name="surface">#1E293B</color>         <!-- Slate-800 -->
+    <color name="text_primary">#CBD5E1</color>    <!-- Slate-300 -->
+    <color name="text_secondary">#94A3B8</color>  <!-- Slate-400 -->
+</resources>
