@@ -1,6 +1,29 @@
 import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
+function normalizeText(text) {
+  if (!text) return ""
+
+  let result = text
+
+  // Arabic-specific normalization
+  result = result
+    .replace(/[\u064B-\u065F\u0670]/g, "")  // Arabic diacritics
+    .replace(/[أإآ]/g, "ا")                  // alef variants
+    .replace(/ة/g, "ه")                      // taa marbuta
+    .replace(/ى/g, "ي")                      // alef maqsura
+    .replace(/ـ/g, "")                        // tatweel (stretching)
+
+  // NFD decompose to isolate combining characters (handles Latin, Greek, Hebrew, etc.)
+  result = result.normalize("NFD")
+    .replace(/[\u0300-\u036F\u1DC0-\u1DFF\u20D0-\u20FF]/g, "")
+
+  // Remove punctuation and symbols (Unicode-aware)
+  result = result.replace(/[\p{P}\p{S}]/gu, "")
+
+  return result.replace(/\s+/g, " ").trim().toLowerCase()
+}
+
 export default class extends Controller {
   static targets = ["card", "completion", "progress", "translation", "sentence", "answer", "feedback", "checkButton", "stopPracticingContainer", "writeInterface", "hintOptions", "hintButton"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
@@ -8,6 +31,7 @@ export default class extends Controller {
   connect() {
     this.currentIndex = 0
     this.totalXp = 0
+    this.awaitingContinue = false
     if (this.hasCardsValue && this.cardsValue.length > 0) {
       this.renderCard()
     } else {
@@ -30,6 +54,8 @@ export default class extends Controller {
     this.feedbackTarget.textContent = ""
     this.checkButtonTarget.disabled = false
     this.checkButtonTarget.classList.remove("opacity-50")
+    this.checkButtonTarget.textContent = "Check"
+    this.awaitingContinue = false
 
     // Reset to write mode
     this.writeInterfaceTarget.classList.remove("hidden")
@@ -82,7 +108,7 @@ export default class extends Controller {
     const allOptions = this.hintOptionsTarget.querySelectorAll(".hint-option")
     allOptions.forEach(btn => btn.disabled = true)
 
-    const isCorrect = selected.dataset.option === card.answer
+    const isCorrect = normalizeText(selected.dataset.option) === normalizeText(card.answer)
 
     this.feedbackTarget.classList.remove("hidden")
 
@@ -106,13 +132,19 @@ export default class extends Controller {
   }
 
   checkAnswer() {
+    if (this.awaitingContinue) {
+      this.awaitingContinue = false
+      this.nextCard()
+      return
+    }
+
     const card = this.cardsValue[this.currentIndex]
     if (!card) return
 
     const userAnswer = this.answerTarget.value.trim()
     if (!userAnswer) return
 
-    const correct = userAnswer.toLowerCase() === card.answer.toLowerCase()
+    const correct = normalizeText(userAnswer) === normalizeText(card.answer)
 
     this.checkButtonTarget.disabled = true
     this.checkButtonTarget.classList.add("opacity-50")
@@ -130,7 +162,10 @@ export default class extends Controller {
     } else {
       this.feedbackTarget.textContent = `✗ The answer is "${card.answer}". Try to remember it!`
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-400"
-      setTimeout(() => this.nextCard(), 2000)
+      this.awaitingContinue = true
+      this.checkButtonTarget.textContent = "Continue →"
+      this.checkButtonTarget.disabled = false
+      this.checkButtonTarget.classList.remove("opacity-50")
     }
   }
 
