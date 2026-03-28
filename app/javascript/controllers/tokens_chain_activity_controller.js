@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
 import { animate } from "motion/mini"
-import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
 // Connects to data-controller="tokens-chain-activity"
 export default class extends Controller {
@@ -20,10 +19,6 @@ export default class extends Controller {
     
     // Mark initial L1 as current
     this.startButtonTarget.classList.add('current-l1');
-
-    if (this.isReviewLessonValue && this.hasStopPracticingContainerTarget && this.tokensArray.length > 0) {
-      this.stopPracticingContainerTarget.innerHTML = stopPracticingHtml(this.tokensArray[0].id)
-    }
   }
 
   playL1Audio(event) {
@@ -135,10 +130,6 @@ export default class extends Controller {
           if (audioElement) {
             this.playAudioForElement(audioElement);
           }
-        }
-
-        if (this.isReviewLessonValue && this.hasStopPracticingContainerTarget) {
-          this.stopPracticingContainerTarget.innerHTML = stopPracticingHtml(currentToken.id)
         }
       }, 600);
     }
