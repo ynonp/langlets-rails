@@ -55,10 +55,14 @@ export default class extends Controller {
       
       const container = this.containerTarget;
       const lineHeight = subtitlesLines[index].offsetHeight;
-      
-      const containerTop = container.offsetTop;
       const containerHeight = container.clientHeight;
-      const currentLineTop = subtitlesLines[index].offsetTop - containerTop;
+
+      // getBoundingClientRect gives accurate viewport-relative positions,
+      // adding scrollTop converts to scroll-content-relative position
+      const containerRect = container.getBoundingClientRect();
+      const lineRect = subtitlesLines[index].getBoundingClientRect();
+      const currentLineTop = lineRect.top - containerRect.top + container.scrollTop;
+
       // Show previous line as context if there's room; otherwise show current line at the top
       const contextOffset = Math.min(lineHeight, Math.max(0, containerHeight - lineHeight));
       const targetScrollTop = currentLineTop - contextOffset;
