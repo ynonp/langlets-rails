@@ -1,27 +1,25 @@
-# 🎵 Langlets - Language Learning Through Music
+# 🎵 Langlets - Language Learning Through Real World Content
 
 <p align="center">
-  <strong>Transform YouTube videos into interactive language lessons</strong>
+  <strong>Practice languages with real world content</strong>
 </p>
 
 <p align="center">
   <a href="https://langlets.app/">🌐 Live Demo</a> •
   <a href="#features">✨ Features</a> •
   <a href="#getting-started">🚀 Getting Started</a> •
-  <a href="#contributing">🤝 Contributing</a>
+  <a href="#contributing">🤝 Contributing</a> •
 </p>
 
 ---
 
 ## 🎯 About Langlets
 
-**Langlets** (branded as **MúsicaLingo**) is an open-source language learning platform that revolutionizes how people learn languages through music and multimedia content. By converting YouTube videos into synchronized, interactive lessons with bilingual subtitles, word-level translations, and pronunciation practice, Langlets makes language learning engaging and effective.
-
-🔗 **[Try it live at langlets.app](https://langlets.app/)**
+**Langlets** is a library of language learning activities based on real world content. By converting multimedia into synchronized, interactive lessons with bilingual subtitles, word-level translations, and pronunciation practice, Langlets makes language learning engaging and effective.
 
 ### Why Langlets?
 
-- 🎵 **Learn through music** - Songs are proven to enhance language retention
+- 🎵 **Learn through real content** - Engaging, authentic materials enhance language retention
 - 🎯 **Word-level precision** - Click any word for instant translation
 - 🗣️ **Pronunciation practice** - AI-generated audio for every phrase and word
 - 📱 **Interactive exercises** - Multiple activity types keep learning engaging
@@ -32,7 +30,6 @@
 ## ✨ Features
 
 ### 🎬 Intelligent Content Processing
-- **YouTube Integration** - Paste any YouTube URL to create a lesson
 - **Automatic Subtitle Extraction** - Extract and synchronize bilingual text
 - **Multi-Script Text Support** - Display content in multiple writing systems (Latin, Arabic, Hebrew, etc.)
 - **Timestamped Phrases** - Every phrase synced perfectly with the video
@@ -82,7 +79,6 @@
 
 ### External Services
 - **Azure Cognitive Services** - Text-to-speech audio generation
-- **YouTube API** - Video content extraction
 - **AWS S3** - Production file storage
 
 ### AI & Machine Learning
@@ -145,12 +141,6 @@
    
    Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### Development Credentials
-
-For development, you can login with:
-- **Username**: ynon@hey.com
-- **Password**: 10203040
-
 ---
 
 ## 📚 Documentation
@@ -178,7 +168,7 @@ For development, you can login with:
 
 ### Content Pipeline
 ```
-YouTube URL → Extract Audio/Subtitles → Generate Translations → 
+Content Source → Extract Audio/Subtitles → Generate Translations → 
 Create Token Mappings → Generate TTS Audio → Build Activities → 
 Structure into Lessons → Ready for Learning!
 ```
@@ -237,7 +227,6 @@ We love contributions! Langlets is an open-source project, and we welcome contri
 - 🧪 **Testing** - Increase test coverage
 - ♿ **Accessibility** - Make the platform more accessible
 - 🚀 **Performance** - Optimize speed and efficiency
-- 🔌 **Integrations** - Connect with more services
 
 ### Development Guidelines
 
@@ -257,33 +246,9 @@ We love contributions! Langlets is an open-source project, and we welcome contri
 
 ---
 
-## 📋 Roadmap
-
-- [ ] Mobile app (iOS/Android)
-- [ ] Offline learning mode
-- [ ] Community-contributed lessons
-- [ ] Advanced progress analytics
-- [ ] Gamification features
-- [ ] Social learning features
-- [ ] More language pairs
-- [ ] AI-powered personalization
-- [ ] Video upload support
-- [ ] Speaking assessment with AI
-
----
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
-
----
-
-## 🙏 Acknowledgments
-
-- Thanks to all contributors who help make language learning accessible
-- Azure Cognitive Services for text-to-speech capabilities
-- The Rails community for an amazing framework
-- YouTube for providing multimedia content
 
 ---
 
@@ -291,14 +256,13 @@ This project is open source and available under the [MIT License](LICENSE).
 
 - **Website**: [langlets.app](https://langlets.app/)
 - **Issues**: [GitHub Issues](https://github.com/ynonp/langlets-rails/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/ynonp/langlets-rails/discussions)
 
 ---
 
 <p align="center">
   <strong>Made with ❤️ for language learners worldwide</strong>
   <br>
-  <em>Learn languages through music, contribute to open source, make an impact</em>
+  <em>Learn languages through real world content, contribute to open source, make an impact</em>
 </p>
 
 ---
