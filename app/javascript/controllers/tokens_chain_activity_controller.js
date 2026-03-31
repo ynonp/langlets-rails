@@ -6,13 +6,11 @@ export default class extends Controller {
   static targets = ['grid', 'startButton', 'completionMessage', 'progressBar', 'stopPracticingContainer'];
   static values = { 
     tokens: Array,
-    totalTokens: Number,
-    isReviewLesson: Boolean
+    totalTokens: Number
   };
 
   connect() {
     this.currentIndex = 0; // Start at first token (already displayed in top-left)
-    this.matchedTokenIds = new Set();
     this.tokensArray = this.tokensValue || [];
     this.currentL1Element = this.startButtonTarget; // Track which element shows current L1
     this.currentAudio = null; // Track currently playing audio
@@ -55,11 +53,8 @@ export default class extends Controller {
     
     const clickedElement = event.currentTarget;
     const tokenId = parseInt(clickedElement.dataset.tokenId);
+    const clickedText = clickedElement.textContent;
     
-    if (!tokenId || this.matchedTokenIds.has(tokenId)) {
-      return; // Invalid or already matched
-    }
-
     // Don't allow selection of squares that are currently animating or showing L1
     if (clickedElement.classList.contains('flash-success') || 
         clickedElement.classList.contains('flash-error') ||
@@ -70,7 +65,7 @@ export default class extends Controller {
     const currentToken = this.tokensArray[this.currentIndex];
     
     // Check if this is the correct match
-    if (tokenId === currentToken.id) {
+    if ((tokenId === currentToken.id) || (currentToken.l1_text === clickedText)) {
       this.handleCorrectMatch(clickedElement);
     } else {
       this.handleWrongMatch(clickedElement);
@@ -86,9 +81,6 @@ export default class extends Controller {
     
     // Award XP (2 XP per correct match)
     this.awardXp(2);
-    
-    // Mark as matched
-    this.matchedTokenIds.add(this.tokensArray[this.currentIndex].id);
     
     // Move to next token
     this.currentIndex++;
@@ -149,7 +141,8 @@ export default class extends Controller {
 
 
   updateProgress() {
-    const percentage = (this.matchedTokenIds.size / this.totalTokensValue) * 100;
+    const matchedCount = this.element.querySelectorAll('.showing-l1').length;
+    const percentage = (matchedCount / this.totalTokensValue) * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
   }
 
