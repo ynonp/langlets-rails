@@ -23,16 +23,17 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "translate", **self.model_params_quick)
+        chat = TracedChat.new(span_name: "translate", **self.model_params_translate)
         chat
           .with_instructions(instructions)
           .with_temperature(0.2)
           .add_message role: :user, content: user_content
+
         response = chat.complete
 
         translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
         phrases = data["phrases"]
-        raise "Bad translation, line count doesnt match" if translation_lines.size != phrases.size
+        raise "Bad translation, line count doesnt match #{translation_lines.size} != #{phrases.size}" if translation_lines.size != phrases.size
 
         translation_lines.zip(phrases) do |text, phrase|
           phrase["text_l2"] = text

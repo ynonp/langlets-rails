@@ -151,13 +151,13 @@ namespace :create_song_progress do
     urls.each_with_index do |url, index|
       puts "[#{index + 1}/#{urls.count}] Processing: #{url}"
 
-      progress = CreateSongProgress.new(
+      progress = CreateSongProgress.find_or_initialize_by(
         youtubeurl: url,
         clip_language: clip_language,
         translation_language: translation_language
       )
-      progress.data = {}
 
+      progress.data ||= {}
       progress.use_local_ollama
 
       begin
@@ -166,18 +166,7 @@ namespace :create_song_progress do
         video_id = url.gsub(/[^a-zA-Z0-9]/, "_")
         output_file = output_dir.join("#{video_id}.json")
 
-        export_data = {
-          youtubeurl: progress.youtubeurl,
-          clip_language: progress.clip_language,
-          translation_language: progress.translation_language,
-          step: progress.step,
-          data: progress.data,
-          created_at: progress.created_at,
-          updated_at: progress.updated_at,
-          exported_at: Time.current.iso8601
-        }
-
-        File.write(output_file, JSON.pretty_generate(export_data))
+        progress.export(output_file)
 
         puts "  Saved to: #{output_file}"
         puts "  Step: #{progress.step}"
