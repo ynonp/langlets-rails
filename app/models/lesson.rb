@@ -80,13 +80,13 @@ class Lesson < ApplicationRecord
 
   def create_activities
     intro = Activities::WatchVideoActivity.create!(lesson: self, order: 1)
-    intro.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.endTimestamp_seconds)
+    intro.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds)
 
     learn1 = Activities::MatchPhrasesActivity.create!(lesson: self, order: 2)
-    learn1.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.startTimestamp_seconds, self.endTimestamp_seconds).limit(5)    
+    learn1.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds).limit(5)    
 
     learn2 = Activities::SortPhrasesActivity.create!(lesson: self, order: 3)
-    learn2.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.startTimestamp_seconds, self.endTimestamp_seconds).limit(5)
+    learn2.phrases = medium.phrases.ordered_by_timestamp.between_durations(self.start_timestamp_seconds, self.end_timestamp_seconds).limit(5)
 
     self.activities = [
       intro,
