@@ -152,35 +152,30 @@
         <div class="swiper-wrapper">
           <% @learning_paths.each_with_index do |learning_path, index| %>
             <div class="swiper-slide">
-              <% if learning_path.cover_image_url %>
-                <%= link_to learning_path_path(learning_path), class: "block w-64 h-48 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden", style: "background-image: url('#{learning_path.cover_image_url}'); background-size: cover; background-position: center;" do %>
-                  <div class="absolute inset-0 bg-opacity-50 z-10"></div>
-                  <h3 class="text-xl font-bold text-white mb-2 relative z-20"><%= learning_path.name %></h3>
-                  <% if learning_path.description.present? %>
-                    <p class="text-sm text-white text-opacity-90 relative z-20"><%= truncate(learning_path.description, length: 80) %></p>
-                  <% end %>
-                  <span class="absolute bottom-4 right-4 text-white text-opacity-80 text-xs font-semibold z-20">
-                    <%= pluralize(learning_path.courses.count, 'clips') %>
-                  </span>
+              <%= link_to learning_path_path(learning_path), class: "block w-64 sm:w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full overflow-hidden" do %>
+                <!-- Path Image -->
+                <% if learning_path.cover_image_url %>
+                  <img src="<%= learning_path.cover_image_url %>" alt="<%= learning_path.name %>" class="w-full h-40 object-cover flex-shrink-0">
+                <% else %>
+                  <% gradient_colors = ['from-blue-500 to-blue-700', 'from-rose-500 to-rose-700', 'from-green-500 to-green-700', 'from-purple-500 to-purple-700', 'from-amber-500 to-amber-700'] %>
+                  <div class="w-full h-40 bg-gradient-to-br <%= gradient_colors[index % gradient_colors.length] %> flex-shrink-0"></div>
                 <% end %>
-              <% else %>
-                <% gradient_colors = [
-                  ['from-blue-500', 'to-blue-700'],
-                  ['from-rose-500', 'to-rose-700'],
-                  ['from-green-500', 'to-green-700'],
-                  ['from-purple-500', 'to-purple-700'],
-                  ['from-amber-500', 'to-amber-700']
-                ] %>
-                <% gradient = gradient_colors[index % gradient_colors.length] %>
-                <%= link_to learning_path_path(learning_path), class: "block w-64 h-48 bg-gradient-to-br #{gradient[0]} #{gradient[1]} rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer p-5 flex flex-col justify-between relative overflow-hidden" do %>
-                  <h3 class="text-xl font-bold text-white mb-2 relative z-10"><%= learning_path.name %></h3>
-                  <% if learning_path.description.present? %>
-                    <p class="text-sm text-white text-opacity-90 relative z-10"><%= truncate(learning_path.description, length: 80) %></p>
-                  <% end %>
-                  <span class="absolute bottom-4 right-4 text-white text-opacity-80 text-xs font-semibold z-10">
-                    <%= pluralize(learning_path.courses.count, 'course') %>
-                  </span>
-                <% end %>
+                
+                <!-- Path Content -->
+                <div class="p-4 flex flex-col flex-grow">
+                  <div class="flex-grow">
+                    <h3 class="text-lg font-semibold text-slate-100 mb-2"><%= learning_path.name %></h3>
+                    <% if learning_path.description.present? %>
+                      <p class="text-sm text-slate-400 mb-3 line-clamp-2"><%= truncate(learning_path.description, length: 80) %></p>
+                    <% end %>
+                    <div class="text-sm text-slate-400 mb-3">
+                      <%= pluralize(learning_path.courses.count, 'clip') %>
+                    </div>
+                  </div>
+                  <div class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 text-center">
+                    Start Path
+                  </div>
+                </div>
               <% end %>
             </div>
           <% end %>
