@@ -3,28 +3,8 @@ class CoursesController < ApplicationController
 
   def index
     @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at).to_a
-    @learning_paths.each do |lp|
-      first_course = lp.courses.first
-      if first_course&.main_media_url.present?
-        thumbnail_url = Medium.new(url: first_course.main_media_url).thumbnail_url
-        lp.define_singleton_method(:cover_image_url) { thumbnail_url }
-      else
-        lp.define_singleton_method(:cover_image_url) { nil }
-      end
-    end
-    @languages = Language.joins(:courses).distinct.order(:english_name)
 
-    # Get all published courses with progress data in a single optimized query
-    @all_courses = Course.published.includes(:language).order(created_at: :desc)
-
-    # Get user's processing courses if signed in
-    @processing_courses = user_signed_in? ? current_user.courses.processing.includes(:language).order(created_at: :desc) : []
-
-    # Filter by language if provided
-    if params[:language].present? && params[:language] != "all"
-      language = Language.find_by(english_name: params[:language])
-      @all_courses = @all_courses.where(language: language) if language
-    end
+    @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
 
     # Convert to array and precompute lesson counts to avoid N+1 queries
     @all_courses = @all_courses.left_joins(:lessons)

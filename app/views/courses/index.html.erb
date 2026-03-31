@@ -128,13 +128,13 @@
     </div>
   <% end %>
 
-  <!-- Row 1: "Next For You" - only show if user signed in and has recommended courses -->
-  <% if user_signed_in? && @recommended_courses.any? %>
+  <!-- Continue Learning Section - show courses user has started -->
+  <% if user_signed_in? && @continue_learning_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Continue Learning</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
-          <% @recommended_courses.each do |course| %>
+          <% @continue_learning_courses.each do |course| %>
             <div class="swiper-slide">
               <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full" %>
             </div>
@@ -144,50 +144,10 @@
     </section>
   <% end %>
 
-  <!-- Processing Courses Section - show courses user is creating -->
-  <% if user_signed_in? && @processing_courses.any? %>
-    <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Courses Being Created</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 px-2">
-        <% @processing_courses.each do |course| %>
-          <div class="bg-slate-800 rounded-xl shadow-lg border border-slate-700 flex flex-col h-full opacity-70">
-            <div class="aspect-video bg-gradient-to-br from-slate-600 to-slate-700 rounded-t-xl flex items-center justify-center">
-              <div class="text-center">
-                <svg class="mx-auto h-12 w-12 text-slate-400 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                <p class="text-slate-400 text-sm mt-2">Processing...</p>
-              </div>
-            </div>
-            <div class="p-4 flex-1 flex flex-col">
-              <h3 class="text-lg font-semibold text-slate-200 mb-1 line-clamp-2">
-                <%= course.name %>
-              </h3>
-              <% if course.language %>
-                <p class="text-slate-400 text-sm mb-3">
-                  <%= course.language.english_name %>
-                </p>
-              <% end %>
-              <div class="mt-auto">
-                <div class="bg-orange-600 text-white text-center py-2 px-4 rounded-lg font-semibold text-sm">
-                  Under Construction
-                </div>
-                <p class="text-slate-400 text-xs mt-2 text-center">
-                  You'll receive an email when ready
-                </p>
-              </div>
-            </div>
-          </div>
-        <% end %>
-      </div>
-    </section>
-  <% end %>
-
-  <!-- Row 2: "Learning Paths" -->
+  <!-- Courses (Learning Paths) -->
   <% if @learning_paths.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Learning Paths</h2>
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Courses</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @learning_paths.each_with_index do |learning_path, index| %>
@@ -200,7 +160,7 @@
                     <p class="text-sm text-white text-opacity-90 relative z-20"><%= truncate(learning_path.description, length: 80) %></p>
                   <% end %>
                   <span class="absolute bottom-4 right-4 text-white text-opacity-80 text-xs font-semibold z-20">
-                    <%= pluralize(learning_path.courses.count, 'course') %>
+                    <%= pluralize(learning_path.courses.count, 'clips') %>
                   </span>
                 <% end %>
               <% else %>
@@ -229,13 +189,25 @@
     </section>
   <% end %>
 
-  <!-- Continue Learning Section - show courses user has started -->
-  <% if user_signed_in? && @continue_learning_courses.any? %>
+  <!-- Standalone Clips -->
+  <% if @all_courses.any? %>
+    <section class="px-2">
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Standalone Clips</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+        <% @all_courses.each do |course| %>
+          <%= render 'course_card', course: course %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+
+  <!-- Row: "Next For You" - only show if user signed in and has recommended courses -->
+  <% if user_signed_in? && @recommended_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Continue Learning</h2>
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
-          <% @continue_learning_courses.each do |course| %>
+          <% @recommended_courses.each do |course| %>
             <div class="swiper-slide">
               <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full" %>
             </div>
@@ -244,34 +216,6 @@
       </div>
     </section>
   <% end %>
-
-  <!-- Filters and Sort Controls -->
-  <section class="mb-4 sm:mb-8 px-2">
-    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-2 sm:mb-4">
-      <div class="flex flex-wrap gap-2 mb-2 sm:mb-0">
-        <span class="text-slate-300 font-semibold mr-1 hidden sm:inline">Browse All Courses:</span>
-      </div>
-      <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-        <!-- Filter by Language -->
-        <%= form_with url: courses_path, method: :get, local: true, class: "flex flex-col sm:flex-row gap-3 w-full sm:w-auto" do |form| %>
-          <%= form.select :language, 
-                options_for_select([['All Languages', 'all']] + @languages.map { |lang| [lang.english_name, lang.english_name] }, params[:language]),
-                {},
-                { 
-                  class: "px-3 py-1.5 sm:px-4 sm:py-2 border border-slate-600 rounded-lg bg-slate-800 text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent shadow-sm text-sm sm:text-base sm:ml-0 w-40 sm:w-auto",
-                  onchange: "this.form.submit();"
-                } %>
-        <% end %>
-      </div>
-    </div>
-  </section>  <!-- Main Course Grid -->
-  <section class="px-2">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-      <% @all_courses.each do |course| %>
-        <%= render 'course_card', course: course %>
-      <% end %>
-    </div>
-  </section>
 
 </main>
 

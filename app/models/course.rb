@@ -2,10 +2,10 @@ class Course < ApplicationRecord
   belongs_to :user
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
   belongs_to :language, optional: true
-  
+
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
-  
+
   has_many :course_tags, dependent: :destroy
   has_many :tags, through: :course_tags
 
@@ -26,15 +26,23 @@ class Course < ApplicationRecord
   scope :published_courses, -> { where(status: :published) }
   scope :processing_courses, -> { where(status: :processing) }
   scope :with_full_player, -> { where(show_full_course_player: true) }
+  scope :not_in_learning_paths, -> {
+    where.not(
+      id: LearningPath
+      .published
+      .joins(:courses)
+      .select("courses.id")
+    )
+  }
 
   # Scope to get courses with progress for a user
   scope :with_progress_for_user, ->(user) {
     joins(lessons: :lesson_users)
       .where(lesson_users: { user_id: user.id })
       .includes(:language)
-      .select('courses.*, MAX(lesson_users.created_at) as latest_progress')
-      .group('courses.id')
-      .order('latest_progress DESC')
+      .select("courses.*, MAX(lesson_users.created_at) as latest_progress")
+      .group("courses.id")
+      .order("latest_progress DESC")
       .distinct
   }
 
@@ -53,7 +61,7 @@ class Course < ApplicationRecord
 
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
-      
+
       l = Lesson.create!(
         medium: medium,
         slug: lesson_slug,
@@ -124,7 +132,7 @@ class Course < ApplicationRecord
 
     medium.reload
     finish_lesson_slug = unique_lesson_slug("final-review")
-    
+
     finish_lesson = Lesson.create!(
       medium: medium,
       slug: finish_lesson_slug,
@@ -167,7 +175,7 @@ class Course < ApplicationRecord
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       Rails.logger.info("Creating lesson: #{lesson_data["title"]}")
       lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
-      
+
       l = Lesson.create!(
         medium: medium,
         slug: lesson_slug,
@@ -206,17 +214,17 @@ class Course < ApplicationRecord
           l1_end = token_translation_data["l1_index"].last
           l2_start = token_translation_data["l2_index"]&.first
           l2_end = token_translation_data["l2_index"]&.last
-          
+
           if l1_start > l1_end
             Rails.logger.error("Invalid L1 indices for phrase #{p.id}: l1_start=#{l1_start} >= l1_end=#{l1_end}. Skipping this token translation.")
             next
           end
-                    
+
           if l2_start > l2_end
             Rails.logger.error("Invalid L2 indices for phrase #{p.id}: l2_start=#{l2_start} >= l2_end=#{l2_end}. Skipping this token translation.")
             next
           end
-          
+
           begin
             t = TokenTranslation.create!(
               phrase: p,
@@ -232,7 +240,7 @@ class Course < ApplicationRecord
               a7.token_translations << t
               all_listen_tokens << t
             end
-             
+
             if token_translation_data["language_alignment_activity"] == 1
               a5.token_translations << t
               all_alignment_tokens << t
@@ -255,7 +263,7 @@ class Course < ApplicationRecord
 
     medium.reload
     finish_lesson_slug = unique_lesson_slug("song-review")
-    
+
     finish_lesson = Lesson.create!(
       medium: medium,
       slug: finish_lesson_slug,
@@ -284,18 +292,18 @@ class Course < ApplicationRecord
   def process
     # Atomically try to claim the work - only one job will succeed
     updated = Course.where(
-      id: id, 
-      status: [:pending]  # Only claim if status is pending
+      id: id,
+      status: [ :pending ]  # Only claim if status is pending
     ).update_all(
       status: :processing,
       updated_at: Time.zone.now
     )
-    
+
     if updated == 0
       # Another job already claimed it or it's already completed
       return false
     end
-    
+
     # We successfully claimed it, now do the work
     yield(reload) if block_given?
     true
@@ -304,11 +312,11 @@ class Course < ApplicationRecord
   # Calculate user progress for this course
   def progress_for_user(user)
     return 0 unless user
-    
+
     # Always use fresh data to avoid stale cache issues
     total_lessons = lessons.count
     return 0 if total_lessons == 0
-    
+
     completed_lessons = lessons.joins(:lesson_users).where(lesson_users: { user: user }).count
     ((completed_lessons.to_f / total_lessons) * 100).round
   end
