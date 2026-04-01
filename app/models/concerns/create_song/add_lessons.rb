@@ -7,30 +7,31 @@ module CreateSong
         {
           "phrase_id" => phrase["id"],
           "text_l1" => phrase["text_l1"],
-          "timestamp" => phrase["timestamp"],
+          "timestamp" => phrase["timestamp"]
         }
       end
 
       instructions = ApplicationController.renderer.render(
-        template: 'prompts/add_lessons',
-        formats: [:md],
+        template: "prompts/add_lessons",
+        formats: [ :md ],
         locals: {
           clip_language:,
-          translation_language:,
+          translation_language:
         }
       )
       retry_count = 0
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_quick)
-        user_content = data["phrases"].map {|p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
+        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_translate)
+        user_content = data["phrases"].map { |p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)
           .add_message role: :user, content: user_content
+
         response = chat.complete
-        data["lessons"] = response.content
+        data["lessons"] = match_lesson_data_to_prompt(user_content, response.content)
         save!
 
         response
@@ -47,7 +48,20 @@ module CreateSong
         end
       end
     end
+
+    private
+
+    def match_lesson_data_to_prompt(user_content, llm_response)
+      blocks = llm_response.lines.reject(&:blank?).slice_when {|el_before, el_after| el_after =~ /^#/ }.map {|block| [block.first, block.drop(1).count] }
+
+      clip_phrases = user_content.lines.reject(&:blank?).to_a
+      result = []
+      blocks.each do |title, count|
+        result << title
+        result += clip_phrases.shift(count)
+        result << "\n"
+      end
+      result.join("").strip
+    end
   end
 end
-
-

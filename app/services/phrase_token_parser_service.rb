@@ -2,16 +2,16 @@
 # This would typically be used in a controller or service
 
 # Example usage:
-# 
+#
 # input_text = <<~TEXT
 #   [We were] good, we were gold => [היינו] טובים, היינו זהב
 #   We were [good], we were gold => היינו [טובים], היינו זהב
 #   We were good, [we were] gold => היינו טובים, [היינו] זהב
 # TEXT
-# 
+#
 # parser = PhraseTokenParser.new(input_text)
 # parsed_phrases = parser.parse
-# 
+#
 # # Create Phrase and TokenTranslation records
 # parsed_phrases.each do |parsed_phrase|
 #   # Assuming you have l1 and l2 Language objects and a medium object
@@ -23,7 +23,7 @@
 #     medium: medium,
 #     timestamp: "00:00" # or whatever timestamp is appropriate
 #   )
-#   
+#
 #   # Create token translations
 #   parsed_phrase.token_translations.each do |parsed_token|
 #     TokenTranslation.create!(
@@ -42,12 +42,12 @@ class PhraseTokenParserService
     parser = PhraseTokenParser.new(input_text)
     parsed_phrases = parser.parse
     created_phrases = []
-    
+
     parsed_phrases.each_with_index do |parsed_phrase, index|
       # Calculate timestamp (increment by 1 second for each phrase for now)
       timestamp_seconds = parse_timestamp(base_timestamp) + index
       timestamp = Phrase.to_string_timestamp(timestamp_seconds)
-      
+
       phrase = Phrase.create!(
         text_l1: parsed_phrase.l1_text,
         text_l2: parsed_phrase.l2_text,
@@ -56,7 +56,7 @@ class PhraseTokenParserService
         medium: medium,
         timestamp: timestamp
       )
-      
+
       # Create token translations
       parsed_phrase.token_translations.each do |parsed_token|
         TokenTranslation.create!(
@@ -68,19 +68,19 @@ class PhraseTokenParserService
           translation: parsed_token.translation
         )
       end
-      
+
       created_phrases << phrase
     end
-    
+
     created_phrases
   end
-  
+
   private
-  
+
   def self.parse_timestamp(timestamp_str)
-    parts = timestamp_str.split(':')
-    minutes = parts[0].to_i
-    seconds = parts[1].to_i
+    parts = timestamp_str.split(":")
+    minutes = parts[0].to_f
+    seconds = parts[1].to_f
     minutes * 60 + seconds
   end
 end

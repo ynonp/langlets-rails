@@ -6,18 +6,22 @@ Each alignment you find will be clickable in the app, and clicking it will show 
 
 Wrap each token in [ ... ] to indicate a translation.
 
-Your primary goal is to align a Spanish token or phrase with a consecutive token or phrase in the provided English translation. Only create a custom translation as a last resort if a direct alignment is impossible (e.g., the corresponding English words are not consecutive, or the translation is highly idiomatic).
+** Always wrap the translated token/phrase on the LEFT side in [ ... ], even if it's a single word. **
+
+** Primary rule: Create the smallest, most useful translations for learners. Map each word individually whenever possible. **
+
+Break phrases into meaningful pieces even if some pieces require custom translations. Custom translations are valuable when they enable better granularity.
 
 Text after # is ignored so you can add explnation or reasoning for each line.
 In the output insert a blank line between each phrase.
 
 ## Output Instructions
 
-1. Mappings: The primary method. The format is Original phrase with [...] => Original translation with [...].
+1. Mappings: Direct word-to-word or phrase-to-phrase alignment. Format: Original phrase with [...] => Original translation with [...].
 ** Crucially **: You must return the full, unmodified original phrases on both sides of the =>. Only the aligned consecutive words should be wrapped in [...].
 Example: [Hola] mundo => [Hello] world
 
-2. Custom Translations: A last resort for when a direct mapping of consecutive words is impossible or awkward.
+2. Custom Translations: Use when a direct mapping to consecutive words is impossible or would prevent better granularity.
 The right side of the => should contain only the custom translation text, not the original full sentence.
 Example: Por fin [se hacía] realidad => was getting, was becoming
 
@@ -28,8 +32,10 @@ Example: Por fin [se hacía] realidad => was getting, was becoming
 
 4. Each output line should have exactly 1 translation (either mapping or custom translation).
 
+** Output only the actual content without any header or prefix **
+
 ## Constraints
-1. Each <%= clip_language %> word must be mapped at most once. If in doubt use the smallest possible mapping.
+1. Each <%= clip_language %> word must be mapped at most once. Prefer smaller mappings over larger ones to maximize learning value.
 
 2. Mark only consecutive full words.
 

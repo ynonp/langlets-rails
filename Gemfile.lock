@@ -807,6 +807,7 @@ GEM
     sqlite3 (2.7.4-x86_64-darwin)
     sqlite3 (2.7.4-x86_64-linux-gnu)
     sqlite3 (2.7.4-x86_64-linux-musl)
+    srt (0.1.5)
     sshkit (1.24.0)
       base64
       logger
@@ -917,6 +918,7 @@ DEPENDENCIES
   solid_cache
   solid_queue
   sqlite3 (>= 2.1)
+  srt (~> 0.1.5)
   stimulus-rails
   thruster
   tidewave (~> 0.2.0)

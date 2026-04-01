@@ -35,7 +35,7 @@ module CourseBuilder
         begin
           t = TokenTranslationParser.new(phrases, progress.data["phrases_with_token_translations"])
           t.call
-          phrases.each {|p| p.save }
+          phrases.each { |p| p.save }
         rescue => e
           Rails.logger.warn "Token translation parsing failed: #{e.message}. Continuing course creation without token translations."
         end
@@ -43,7 +43,7 @@ module CourseBuilder
         begin
           t = SimilarSoundParser.new(phrases, progress.data["similar_sounds"])
           t.call
-          phrases.each {|p| p.save }
+          phrases.each { |p| p.save }
         rescue => e
           Rails.logger.warn "Similar sound parsing failed: #{e.message}. Continuing course creation without similar sounds."
         end
@@ -53,16 +53,16 @@ module CourseBuilder
         created_lessons = []
 
         lesson_data.each_cons(2).each_with_index do |(l, next_l), idx|
-          lesson_name = l.lines.first.strip.sub(/^#\s*/, '')
-          first_timestamp = l.lines.second[0..4]
-          last_timestamp = l.lines.last[0..4]
-          end_timestamp = next_l ? next_l.lines.second[0..4] : nil
-          
+          lesson_name = l.lines.first.strip.sub(/^#\s*/, "")
+          first_timestamp = l.lines.second[0..7]
+          last_timestamp = l.lines.last[0..7]
+          end_timestamp = next_l ? next_l.lines.second[0..7] : nil
+
           lesson_index += 1
           lesson_number = lesson_index
 
           lesson_slug = course.unique_lesson_slug(lesson_name.parameterize)
-          
+
           lesson = Lesson.create!(
             slug: lesson_slug,
             medium:,
@@ -149,7 +149,7 @@ module CourseBuilder
 
     def distinct_phrases_by_text_l1(phrases)
       return [] if phrases.nil? || (phrases.respond_to?(:empty?) && phrases.empty?)
-      
+
       # If it's an ActiveRecord::Relation, check if empty
       if phrases.is_a?(ActiveRecord::Relation)
         return [] if phrases.none?
@@ -170,7 +170,7 @@ module CourseBuilder
 
     def distinct_phrases_by_text_l2(phrases)
       return [] if phrases.nil? || (phrases.respond_to?(:empty?) && phrases.empty?)
-      
+
       # If it's an ActiveRecord::Relation, check if empty
       if phrases.is_a?(ActiveRecord::Relation)
         return [] if phrases.none?
@@ -196,9 +196,9 @@ module CourseBuilder
 
       return [] if current_array.empty? && review_array.empty?
 
-      total_needed = [current_array.size + review_array.size, 10].min
-      current_count = [(total_needed * current_percent / 100.0).ceil, current_array.size].min
-      review_count = [total_needed - current_count, review_array.size].min
+      total_needed = [ current_array.size + review_array.size, 10 ].min
+      current_count = [ (total_needed * current_percent / 100.0).ceil, current_array.size ].min
+      review_count = [ total_needed - current_count, review_array.size ].min
 
       current_selected = current_array.sample(current_count)
       review_selected = review_array.sample(review_count)
@@ -211,11 +211,11 @@ module CourseBuilder
 
       # Group by phrase_id
       grouped = token_translations.group_by(&:phrase_id)
-      
+
       # Select one token from each phrase until we reach the limit
       selected = []
       phrase_ids = grouped.keys.shuffle
-      
+
       phrase_ids.each do |phrase_id|
         break if selected.size >= limit
         tokens_for_phrase = grouped[phrase_id]
@@ -249,7 +249,7 @@ module CourseBuilder
       review_number = (lesson_index / 4.0).ceil
       review_lesson_name = "Review Lesson #{review_number}"
       lesson_slug = course.unique_lesson_slug(review_lesson_name.parameterize)
-      
+
       # Get the first and last timestamps from all previous lessons
       previous_lessons = created_lessons
       return nil if previous_lessons.empty?
@@ -292,7 +292,7 @@ module CourseBuilder
       unless token_translations.empty?
         flashcard_token_ids = flashcard_tokens&.map(&:id) || []
         remaining_tokens = token_translations.reject { |tt| flashcard_token_ids.include?(tt.id) }
-        
+
         chain_tokens = if remaining_tokens.size >= 15
           distinct_token_translations_by_translation(remaining_tokens, 15)
         else

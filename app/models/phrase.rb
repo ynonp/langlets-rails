@@ -3,8 +3,8 @@ class Phrase < ApplicationRecord
   include TokenTranslationBlockParser
   belongs_to :medium
 
-  belongs_to :l1, class_name: 'Language'
-  belongs_to :l2, class_name: 'Language'
+  belongs_to :l1, class_name: "Language"
+  belongs_to :l2, class_name: "Language"
   has_many :token_translations, dependent: :destroy
   has_many :similar_sounds, dependent: :destroy
 
@@ -12,7 +12,7 @@ class Phrase < ApplicationRecord
   validates :text_l1, presence: { message: "must be present" }
   validates :text_l2, presence: { message: "must be present" }
 
-  has_timestamp [:timestamp]
+  has_timestamp [ :timestamp ]
 
   scope :ordered_by_timestamp, -> { order(timestamp: :asc) }
 
@@ -38,16 +38,16 @@ class Phrase < ApplicationRecord
 
   scope :between_durations, ->(from, to) {
   where(
-    "(split_part(timestamp, ':', 1)::int * 60 + split_part(timestamp, ':', 2)::int) BETWEEN ? AND ?",
+    "(split_part(timestamp, ':', 1)::float * 60 + split_part(timestamp, ':', 2)::float) BETWEEN ? AND ?",
     from, to
   )
   }
 
   # Class method to convert seconds to timestamp string format ("MM:SS")
   def self.to_string_timestamp(timestamp_seconds)
-    minutes = timestamp_seconds / 60
-    seconds = timestamp_seconds % 60
-    "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
+    total_seconds = timestamp_seconds.to_f
+    minutes = total_seconds.to_i / 60
+    seconds = total_seconds % 60
+    format("%02d:%05.2f", minutes, seconds)
   end
-
 end

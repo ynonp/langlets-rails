@@ -33,7 +33,11 @@ module CreateSong
 
         translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
         phrases = data["phrases"]
-        raise "Bad translation, line count doesnt match #{translation_lines.size} != #{phrases.size}" if translation_lines.size != phrases.size
+        if translation_lines.size != phrases.size
+          pp translation_lines
+          pp phrases
+          raise "Bad translation, line count doesnt match #{translation_lines.size} != #{phrases.size}"
+        end
 
         translation_lines.zip(phrases) do |text, phrase|
           phrase["text_l2"] = text

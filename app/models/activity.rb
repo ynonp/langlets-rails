@@ -13,30 +13,30 @@ class Activity < ApplicationRecord
     return false unless user
     activity_users.exists?(user: user)
   end
-  
+
   def is_last_in_lesson?
     lesson.activities.order(:order).last == self
   end
 
   def xp_value
     case self.class.name
-    when 'WatchVideoActivity'
+    when "WatchVideoActivity"
       10 # Single stage activity
-    when 'MatchPhrasesActivity', 'MatchTokensActivity'
+    when "MatchPhrasesActivity", "MatchTokensActivity"
       # Multi-stage activities: 2 XP per correct answer
       # Base on number of items to match
       phrases.count * 2
-    when 'SortPhrasesActivity'
+    when "SortPhrasesActivity"
       phrases.count * 2
-    when 'LanguageAlignmentActivity'
+    when "LanguageAlignmentActivity"
       token_translations.count * 2
-    when 'SpeakActivity', 'ListenActivity'
+    when "SpeakActivity", "ListenActivity"
       phrases.count * 2
-    when 'FindAnswerActivity'
+    when "FindAnswerActivity"
       phrases.count * 2
-    when 'WordOrderActivity'
+    when "WordOrderActivity"
       phrases.count * 2
-    when 'Activities::WriteMissingWordActivity'
+    when "Activities::WriteMissingWordActivity"
       token_translations.count * 2
     else
       10 # Default for new activity types
@@ -68,8 +68,9 @@ class Activity < ApplicationRecord
 
   # convert a timestamp in seconds to a string timestamp format ("MM:SS")
   def to_string_timestamp(timestamp)
-    minutes = timestamp / 60
-    seconds = timestamp % 60
-    "#{minutes.to_s.rjust(2, '0')}:#{seconds.to_s.rjust(2, '0')}"
+    total_seconds = timestamp.to_f
+    minutes = total_seconds.to_i / 60
+    seconds = total_seconds % 60
+    format("%02d:%05.2f", minutes, seconds)
   end
 end

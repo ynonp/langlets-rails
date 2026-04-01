@@ -4,11 +4,11 @@ module CreateSong
 
     def add_token_translation
       instructions = ApplicationController.renderer.render(
-        template: 'prompts/add_token_translations',
-        formats: [:md],
+        template: "prompts/add_token_translations",
+        formats: [ :md ],
         locals: {
           clip_language:,
-          translation_language:,
+          translation_language:
         }
       )
       retry_count = 0
@@ -24,7 +24,10 @@ module CreateSong
             .add_message role: :user, content: block.join
 
           response = chat.complete
-          data["phrases_with_token_translations"] += response.content.strip + "\n\n"
+
+          content = strip_model_header(response.content.strip, block.first)
+
+          data["phrases_with_token_translations"] += content.strip + "\n\n"
           save!
         end
 
@@ -47,8 +50,23 @@ module CreateSong
     def lyrics_with_translations
       lyrics = data["phrases"].pluck("text_l1")
       translations = data["phrases"].pluck("text_l2")
-      lyrics.zip(translations).map {|l, t| "#{l} => #{t}" }.join("\n")
+      lyrics.zip(translations).map { |l, t| "#{l} => #{t}" }.join("\n")
+    end
+
+    def strip_model_header(content, first_input_line)
+      first_input_without_brackets = first_input_line.strip.gsub(/\[|\]/, "")
+
+      content_lines = content.lines
+      first_valid_line_index = content_lines.find_index do |line|
+        stripped = line.strip.gsub(/\[|\]/, "")
+        stripped == first_input_without_brackets
+      end
+
+      if first_valid_line_index
+        content_lines[first_valid_line_index..].join
+      else
+        content
+      end
     end
   end
 end
-

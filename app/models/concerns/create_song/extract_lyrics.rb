@@ -18,7 +18,7 @@ module CreateSong
       user_content = Llm::YoutubeUrlContent.new(youtubeurl)
 
       retry_count = 0
-      max_retries = 5
+      max_retries = 0
 
       begin
         chat = TracedChat.new(span_name: "extract_lyrics", **self.model_params_youtube)
@@ -28,20 +28,7 @@ module CreateSong
           .add_message role: :user, content: user_content
         response = chat.complete
 
-        # Parse metadata from beginning of response
-        video_accessed, confidence = parse_response_metadata(response.content)
-
-        # Verify video was accessed
-        unless video_accessed
-          raise "Model could not access video - aborting extraction"
-        end
-
-        # Log warning for low confidence
-        if confidence && confidence < 70
-          Rails.logger.warn "ExtractLyrics low confidence score: #{confidence} - proceeding with caution"
-        end
-
-        phrases = parse_lyrics_response(response.content)
+        phrases = parse_lyrics_response(response.content.strip)
 
         self.data ||= {}
         self.data["phrases"] = phrases
@@ -82,27 +69,16 @@ module CreateSong
     end
 
     def parse_lyrics_response(response_text)
-      phrases = []
-
-      # Skip first 2 lines (metadata) and parse the rest
-      response_text.split("\n").drop(2).each_with_index do |line, index|
-        line = line.strip
-        next if line.empty?
-
-        # Match format: [timestamp] [phrase]
-        if line.match(/^(\d{2}:\d{2})\s+(.+)$/)
-          timestamp = $1
-          text = $2
-
-          phrases << {
-            "id" => "phrase_#{index + 1}",
-            "text_l1" => text,
-            "timestamp" => timestamp
-          }
-        end
+      file = SRT::File.parse(response_text)
+      
+      file.lines.map do |line|
+        {
+          "id" => "phrase_#{line.sequence}",
+          "text_l1" => line.text.join(" "),
+          "timestamp" => Phrase.to_string_timestamp(line.start_time)
+        }
       end
-
-      phrases
+      .reject {|phrase| phrase["text_l1"].blank? }
     end
   end
 end

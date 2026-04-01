@@ -218,15 +218,13 @@ export default class extends Controller {
   timestampToSeconds(timestamp) {
     if (typeof timestamp === 'number') return timestamp;
     
-    // Handle MM:SS format
     const parts = timestamp.split(':');
     if (parts.length === 2) {
-      return parseInt(parts[0]) * 60 + parseInt(parts[1]);
+      return parseFloat(parts[0]) * 60 + parseFloat(parts[1]);
     }
     
-    // Handle HH:MM:SS format  
     if (parts.length === 3) {
-      return parseInt(parts[0]) * 3600 + parseInt(parts[1]) * 60 + parseInt(parts[2]);
+      return parseFloat(parts[0]) * 3600 + parseFloat(parts[1]) * 60 + parseFloat(parts[2]);
     }
     
     return 0;
