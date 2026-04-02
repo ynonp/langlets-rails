@@ -23,9 +23,7 @@ module CreateSong
             .with_instructions(instructions)
             .add_message role: :user, content: block.join
 
-          response = chat.complete do |chunk|
-            pp chunk.to_h
-          end
+          response = chat.complete
 
           content = strip_model_header(response.content.strip, block.first)
 
@@ -56,11 +54,11 @@ module CreateSong
     end
 
     def strip_model_header(content, first_input_line)
-      first_input_without_brackets = first_input_line.strip.gsub(/\[|\]/, "")
+      first_input_without_brackets = first_input_line.strip.gsub(/\[|\]/, "").sub(/\s*#.*$/, "")
 
       content_lines = content.lines
       first_valid_line_index = content_lines.find_index do |line|
-        stripped = line.strip.gsub(/\[|\]/, "")
+        stripped = line.strip.gsub(/\[|\]/, "").sub(/\s*#.*$/, "")
         stripped == first_input_without_brackets
       end
 

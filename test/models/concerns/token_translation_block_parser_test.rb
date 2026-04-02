@@ -182,4 +182,92 @@ Pensé que era un buen [momento] => moment, time
     assert_equal [], @phrase.add_tokens_from("").token_translations
     assert_equal [], @phrase.add_tokens_from(nil).token_translations
   end
+
+  test "handles partial l1 sentence with missing prefix" do
+    phrase = Phrase.new(
+      text_l1: "Alors j'ai demandé à Maud si elle avait un copain.",
+      text_l2: "So I asked Maud if she had a boyfriend."
+    )
+    block = <<~END
+    [Alors] j'ai demandé à Maud si elle avait un copain. => [So] I asked Maud if she had a boyfriend.
+    [j']ai demandé à Maud si elle avait un copain. => [I] asked Maud if she had a boyfriend.
+    j'[ai demandé] à Maud si elle avait un copain. => I [asked] Maud if she had a boyfriend.
+    END
+    translations = phrase.add_tokens_from(block).token_translations
+
+    assert_equal 3, translations.length
+
+    first = translations[0]
+    assert_equal 0, first[:l1_start_index]
+    assert_equal 4, first[:l1_end_index]
+    assert_equal "So", first[:translation]
+
+    second = translations[1]
+    assert_equal 6, second[:l1_start_index]
+    assert_equal 7, second[:l1_end_index]
+    assert_equal "I", second[:translation]
+
+    third = translations[2]
+    assert_equal 8, third[:l1_start_index]
+    assert_equal 17, third[:l1_end_index]
+    assert_equal "asked", third[:translation]
+  end
+
+  test "handles partial l1 sentence with missing suffix" do
+    phrase = Phrase.new(
+      text_l1: "Alors j'ai demandé à Maud si elle avait un copain.",
+      text_l2: "So I asked Maud if she had a boyfriend."
+    )
+    block = "[Alors] j'ai demandé à Maud => [So] I asked Maud"
+    translations = phrase.add_tokens_from(block).token_translations
+
+    assert_equal 1, translations.length
+    assert_equal 0, translations[0][:l1_start_index]
+    assert_equal 4, translations[0][:l1_end_index]
+    assert_equal "So", translations[0][:translation]
+  end
+
+  test "handles partial l1 in middle position" do
+    phrase = Phrase.new(
+      text_l1: "Alors j'ai demandé à Maud si elle avait un copain.",
+      text_l2: "So I asked Maud if she had a boyfriend."
+    )
+    block = "j'ai demandé à [Maud] si elle avait un copain. => I asked [Maud] if she had a boyfriend."
+    translations = phrase.add_tokens_from(block).token_translations
+
+    assert_equal 1, translations.length
+    assert_equal 21, translations[0][:l1_start_index]
+    assert_equal 24, translations[0][:l1_end_index]
+    assert_equal "Maud", translations[0][:translation]
+  end
+
+  test "keeps non-overlapping tokens from multiple lines" do
+    phrase = Phrase.new(
+      text_l1: "J'ai fait comme si je l'avais pas vu,",
+      text_l2: "I pretended I hadn't seen it,"
+    )
+    block = <<~END
+    [J'ai fait comme si] je l'avais pas vu, => [I pretended] I hadn't seen it,
+    J'ai fait comme si [je] l'avais pas vu, => I pretended [I] hadn't seen it,
+    J'ai fait comme si je [l']avais pas vu, => I pretended I hadn't seen [it],
+    END
+    translations = phrase.add_tokens_from(block).token_translations
+
+    assert_equal 3, translations.length
+
+    first = translations.find { |t| t.l1_start_index == 0 }
+    assert_not_nil first
+    assert_equal 17, first.l1_end_index
+    assert_equal "I pretended", first.translation
+
+    second = translations.find { |t| t.l1_start_index == 19 }
+    assert_not_nil second
+    assert_equal 20, second.l1_end_index
+    assert_equal "I", second.translation
+
+    third = translations.find { |t| t.l1_start_index == 22 }
+    assert_not_nil third
+    assert_equal 23, third.l1_end_index
+    assert_equal "it,", third.translation
+  end
 end

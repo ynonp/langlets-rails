@@ -11,12 +11,12 @@ module CreateSong
       user_content = original_lyrics.join("\n")
 
       instructions = ApplicationController.renderer.render(
-        template: 'prompts/add_l2',
-        formats: [:md],
+        template: "prompts/add_l2",
+        formats: [ :md ],
         locals: {
           clip_language:,
           translation_language:,
-          expected_line_count: original_lyrics.count,
+          expected_line_count: original_lyrics.count
         }
       )
 
@@ -30,9 +30,7 @@ module CreateSong
           .with_temperature(0.2)
           .add_message role: :user, content: user_content
 
-        response = chat.complete do |chunk|
-          pp chunk.to_h
-        end
+        response = chat.complete
 
         translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
         phrases = data["phrases"]
@@ -43,7 +41,7 @@ module CreateSong
         end
 
         translation_lines.zip(phrases) do |text, phrase|
-          phrase["text_l2"] = text
+          phrase["text_l2"] = text.gsub("[", "(").gsub("]", ")")
         end
 
         save!
@@ -60,7 +58,5 @@ module CreateSong
         end
       end
     end
-
   end
 end
-

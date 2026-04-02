@@ -53,32 +53,35 @@ module TokenTranslationBlockParser
     l1_with_brackets, l2_with_brackets = line.split(/\s*=>\s*/).map(&:strip)
 
     l1_text = l1_with_brackets.delete("[]")
-    return unless l1_text.downcase.tokenize.to_a == text_l1.downcase.tokenize.to_a
+    l1_match = find_substring_match(l1_text, text_l1)
+    return unless l1_match
+
+    l1_offset = l1_match[:prefix_length]
 
     if !l2_with_brackets.include?("[")
-      create_custom_translation_token(l1_with_brackets, l2_with_brackets)
+      create_custom_translation_token(l1_with_brackets, l2_with_brackets, l1_offset: l1_offset)
     elsif l2_with_brackets.delete("[]").downcase != text_l2.downcase
-      create_custom_translation_from_brackets(l1_with_brackets, l2_with_brackets)
+      create_custom_translation_from_brackets(l1_with_brackets, l2_with_brackets, l1_offset: l1_offset)
     else
-      create_mapping_token(l1_with_brackets, l2_with_brackets)
+      create_mapping_token(l1_with_brackets, l2_with_brackets, l1_offset: l1_offset)
     end
   end
 
-  def create_custom_translation_token(l1_with_brackets, l2)
+  def create_custom_translation_token(l1_with_brackets, l2, l1_offset: 0)
     l1_text = l1_with_brackets.delete("[]")
     l1_start_char, l1_end_char = find_char_range_in_text(l1_with_brackets, l1_text)
 
     return if l1_start_char.nil? || l1_end_char.nil?
 
     token_translations.build(
-      l1_start_index: l1_start_char,
-      l1_end_index: l1_end_char,
+      l1_start_index: l1_start_char + l1_offset,
+      l1_end_index: l1_end_char + l1_offset,
       translation: l2,
       index_type: :character_index
     )
   end
 
-  def create_mapping_token(l1_with_brackets, l2_with_brackets)
+  def create_mapping_token(l1_with_brackets, l2_with_brackets, l1_offset: 0)
     l1_text = l1_with_brackets.delete("[]")
     l2_text = l2_with_brackets.delete("[]")
 
@@ -92,8 +95,8 @@ module TokenTranslationBlockParser
     l2_end_word = char_to_word_index(l2_end_char, l2_text, inclusive: true)
 
     token = token_translations.build(
-      l1_start_index: l1_start_char,
-      l1_end_index: l1_end_char,
+      l1_start_index: l1_start_char + l1_offset,
+      l1_end_index: l1_end_char + l1_offset,
       l2_start_index: l2_start_char,
       l2_end_index: l2_end_char,
       translation: l2_words[l2_start_word..l2_end_word].join(" "),
@@ -108,7 +111,7 @@ module TokenTranslationBlockParser
     token
   end
 
-  def create_custom_translation_from_brackets(l1_with_brackets, l2_with_brackets)
+  def create_custom_translation_from_brackets(l1_with_brackets, l2_with_brackets, l1_offset: 0)
     l1_text = l1_with_brackets.delete("[]")
     l1_start_char, l1_end_char = find_char_range_in_text(l1_with_brackets, l1_text)
 
@@ -124,8 +127,8 @@ module TokenTranslationBlockParser
     translation_text = l2_words[l2_start_word..l2_end_word].join(" ")
 
     token_translations.build(
-      l1_start_index: l1_start_char,
-      l1_end_index: l1_end_char,
+      l1_start_index: l1_start_char + l1_offset,
+      l1_end_index: l1_end_char + l1_offset,
       translation: translation_text,
       index_type: :character_index
     )
@@ -172,6 +175,18 @@ module TokenTranslationBlockParser
     return false unless left.include?("[") && left.include?("]")
 
     true
+  end
+
+  def find_substring_match(partial_text, full_text)
+    partial_lower = partial_text.downcase
+    full_lower = full_text.downcase
+
+    return { prefix_length: 0 } if partial_lower == full_lower
+
+    start_pos = full_lower.index(partial_lower)
+    return nil unless start_pos
+
+    { prefix_length: start_pos }
   end
 
   def remove_duplicate_translations

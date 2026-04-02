@@ -8,10 +8,10 @@ module CreateSong
 
     def extract_lyrics
       instructions = ApplicationController.renderer.render(
-        template: 'prompts/extract_phrases_from_youtube_url',
-        formats: [:md],
+        template: "prompts/extract_phrases_from_youtube_url",
+        formats: [ :md ],
         locals: {
-          clip_language:,
+          clip_language:
         }
       )
 
@@ -26,9 +26,8 @@ module CreateSong
           .with_instructions(instructions)
           .with_temperature(0.2)
           .add_message role: :user, content: user_content
-        response = chat.complete do |chunk|
-          pp chunk.to_h
-        end
+
+        response = chat.complete
 
         phrases = parse_lyrics_response(response.content.strip)
 
@@ -67,20 +66,20 @@ module CreateSong
         end
       end
 
-      [video_accessed, confidence]
+      [ video_accessed, confidence ]
     end
 
     def parse_lyrics_response(response_text)
       file = SRT::File.parse(response_text)
-      
+
       file.lines.map do |line|
         {
           "id" => "phrase_#{line.sequence}",
-          "text_l1" => line.text.join(" "),
+          "text_l1" => line.text.join(" ").gsub("[", "(").gsub("]", ")"),
           "timestamp" => Phrase.to_string_timestamp(line.start_time)
         }
       end
-      .reject {|phrase| phrase["text_l1"].blank? }
+      .reject { |phrase| phrase["text_l1"].blank? }
     end
   end
 end

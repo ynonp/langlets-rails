@@ -23,7 +23,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_quick)
+        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_smart)
         clip_lines = data["phrases"].map { |p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         user_content = data["phrases"].pluck("text_l1").join("\n")
 
@@ -32,9 +32,9 @@ module CreateSong
           .with_instructions(instructions)
           .add_message role: :user, content: user_content
 
-        response = chat.complete do |chunk|
-          pp chunk.to_h
-        end
+        response = chat.complete
+        raise "LLM returned nil" if response.content.nil?
+
         data["lessons"] = match_lesson_data_to_prompt(clip_lines, response.content)
         save!
 
