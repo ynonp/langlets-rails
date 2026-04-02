@@ -1,0 +1,460 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=l4Dz4EKZExI",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "lessons": "# Une Soirée qui tourne mal\n00:02.00 Bref, il était 23h,\n00:02.80 j'étais resté tard au bureau.\n00:04.00 La fille dont je suis amoureux\n00:05.00 m'a proposé un verre sur Facebook.\n00:06.10 Kheiron m'a dit qu'elle voulait voir\n00:07.00 le dernier Woody Allen.\n\n# La Proposition et l'Appel\n00:07.90 Elle a dit qu'elle voulait le voir\n00:08.40 sur Twitter.\n00:09.00 Je l'ai appelée.\n00:09.60 Ça te dirait d'aller voir\n00:10.50 le dernier Woody Allen ?\n00:11.60 Ah tu voulais y aller ? Cool.\n00:12.60 Par contre je te laisse,\n00:13.50 j'ai plus beaucoup de batterie.\n\n# Le Début du Cauchemar\n00:14.60 J'ai raccroché, j'y suis allé.\n00:15.50 Merci Kheiron.\n00:17.00 J'ai pris l'ascenseur.\n00:19.00 L'ascenseur s'est bloqué.\n00:20.10 Je me suis dit que j'avais la poisse.\n\n# Le Refus et la Panique\n00:21.30 J'ai dit non seize fois.\n00:22.10 Non non non non non non non non\n00:23.50 non non non non non non non non.\n00:24.60 J'ai appuyé sur le bouton,\n00:25.80 ça a pas marché.\n00:27.00 J'ai crié.\n\n# La Situation se Complique\n00:29.00 J'ai pris mon portable,\n00:30.00 il était déchargé.\n00:31.10 J'ai plus beaucoup de batterie.\n00:32.00 J'ai regardé s'il y avait une trappe\n00:33.20 au plafond comme dans les films.\n00:34.30 Il n'y en avait pas.\n\n# La Pire Crainte\n00:35.10 Je me suis dit qu'il ne pouvait pas\n00:36.80 m'arriver pire.\n00:38.00 La lumière s'est éteinte.\n00:39.10 Au bout de 10 minutes,\n00:40.20 elle s'est rallumée.\n\n# L'Attente Interminable (Part 1)\n00:41.30 J'étais en train de me détendre.\n00:43.00 Je pensais que quelqu'un allait arriver,\n00:44.20 personne n'est arrivé.\n00:45.30 Mais j'avais plus envie.\n\n# L'Attente Interminable (Part 2)\n00:46.30 Je me suis assis, allongé,\n00:47.80 assis, allongé, assis, allongé.\n00:49.00 J'ai fait des pompes.\n00:50.10 À un moment,\n00:51.50 je crois que je suis devenu fou.\n\n# Le Sauveur Tardif\n00:54.00 J'ai entendu une voix.\n00:54.60 Monsieur ?\n00:55.10 J'ai dit : Allô, je suis bloqué !\n00:56.10 Il m'entendait pas.\n00:57.00 J'ai dit : Allô, je suis bloqué !\n00:58.10 Il m'entendait pas.\n\n# L'Échange Tendu\n00:59.00 J'ai dit : Je suis bloqué, connard !\n01:00.10 Hé !\n01:01.00 Il m'entendait.\n01:01.40 Il a dit : J'arrive dans 3 heures.\n01:02.40 J'ai dit : Vous rigolez ?\n01:03.40 Il m'a dit : Non, connard.\n\n# La Négociation\n01:05.00 J'ai dit : J'en parlerai à votre patron.\n01:06.40 Il a dit : Je serai là dans 5 heures.\n01:08.00 J'en parlerai pas à votre patron.\n01:09.00 À dans 3 heures.\n01:10.00 Connard.\n\n# Le Dernier Supplice\n01:11.00 Soudain, j'ai eu envie de pisser.\n01:14.00 Ce furent les trois plus longues heures\n01:16.00 de toute ma vie.\n\n# La Délivrance et la Leçon\n01:19.00 Finalement, le réparateur m'a libéré.\n01:20.10 Il m'a fait comprendre\n01:21.80 qu'il voulait un pourboire.\n01:23.00 J'ai dit : Connard.\n01:24.00 Il a dit : Hé !\n01:26.00 Vous savez, il y a une caméra\n01:27.50 dans l'ascenseur.\n01:29.00 Je lui ai donné ce que j'avais.\n01:30.10 Bref, j'étais coincé dans l'ascenseur.",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Bref, il était 23h,",
+        "text_l2": "Anyway, it was 11 PM,",
+        "timestamp": "00:02.00"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "j'étais resté tard au bureau.",
+        "text_l2": "I'd stayed late at the office.",
+        "timestamp": "00:02.80"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "La fille dont je suis amoureux",
+        "text_l2": "The girl I'm in love with",
+        "timestamp": "00:04.00"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "m'a proposé un verre sur Facebook.",
+        "text_l2": "asked me out for a drink on Facebook.",
+        "timestamp": "00:05.00"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Kheiron m'a dit qu'elle voulait voir",
+        "text_l2": "Kheiron told me she wanted to see",
+        "timestamp": "00:06.10"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "le dernier Woody Allen.",
+        "text_l2": "the latest Woody Allen.",
+        "timestamp": "00:07.00"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Elle a dit qu'elle voulait le voir",
+        "text_l2": "She said she wanted to see it",
+        "timestamp": "00:07.90"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "sur Twitter.",
+        "text_l2": "on Twitter.",
+        "timestamp": "00:08.40"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Je l'ai appelée.",
+        "text_l2": "I called her.",
+        "timestamp": "00:09.00"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Ça te dirait d'aller voir",
+        "text_l2": "Would you like to go see",
+        "timestamp": "00:09.60"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "le dernier Woody Allen ?",
+        "text_l2": "the latest Woody Allen?",
+        "timestamp": "00:10.50"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Ah tu voulais y aller ? Cool.",
+        "text_l2": "Oh you wanted to go? Cool.",
+        "timestamp": "00:11.60"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Par contre je te laisse,",
+        "text_l2": "Anyway, I gotta go,",
+        "timestamp": "00:12.60"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "j'ai plus beaucoup de batterie.",
+        "text_l2": "my battery's almost dead.",
+        "timestamp": "00:13.50"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "J'ai raccroché, j'y suis allé.",
+        "text_l2": "I hung up, I went.",
+        "timestamp": "00:14.60"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Merci Kheiron.",
+        "text_l2": "Thanks Kheiron.",
+        "timestamp": "00:15.50"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "J'ai pris l'ascenseur.",
+        "text_l2": "I took the elevator.",
+        "timestamp": "00:17.00"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "L'ascenseur s'est bloqué.",
+        "text_l2": "The elevator got stuck.",
+        "timestamp": "00:19.00"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "Je me suis dit que j'avais la poisse.",
+        "text_l2": "I thought I was cursed.",
+        "timestamp": "00:20.10"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "J'ai dit non seize fois.",
+        "text_l2": "I said no sixteen times.",
+        "timestamp": "00:21.30"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Non non non non non non non non",
+        "text_l2": "No no no no no no no no",
+        "timestamp": "00:22.10"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "non non non non non non non non.",
+        "text_l2": "no no no no no no no no.",
+        "timestamp": "00:23.50"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "J'ai appuyé sur le bouton,",
+        "text_l2": "I pressed the button,",
+        "timestamp": "00:24.60"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "ça a pas marché.",
+        "text_l2": "it didn't work.",
+        "timestamp": "00:25.80"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "J'ai crié.",
+        "text_l2": "I screamed.",
+        "timestamp": "00:27.00"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "J'ai pris mon portable,",
+        "text_l2": "I took out my phone,",
+        "timestamp": "00:29.00"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "il était déchargé.",
+        "text_l2": "it was dead.",
+        "timestamp": "00:30.00"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "J'ai plus beaucoup de batterie.",
+        "text_l2": "My battery's almost dead.",
+        "timestamp": "00:31.10"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "J'ai regardé s'il y avait une trappe",
+        "text_l2": "I looked for a hatch",
+        "timestamp": "00:32.00"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "au plafond comme dans les films.",
+        "text_l2": "in the ceiling like in the movies.",
+        "timestamp": "00:33.20"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Il n'y en avait pas.",
+        "text_l2": "There wasn't one.",
+        "timestamp": "00:34.30"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Je me suis dit qu'il ne pouvait pas",
+        "text_l2": "I thought nothing worse",
+        "timestamp": "00:35.10"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "m'arriver pire.",
+        "text_l2": "could happen to me.",
+        "timestamp": "00:36.80"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "La lumière s'est éteinte.",
+        "text_l2": "The lights went out.",
+        "timestamp": "00:38.00"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Au bout de 10 minutes,",
+        "text_l2": "After 10 minutes,",
+        "timestamp": "00:39.10"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "elle s'est rallumée.",
+        "text_l2": "they came back on.",
+        "timestamp": "00:40.20"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "J'étais en train de me détendre.",
+        "text_l2": "I was starting to relax.",
+        "timestamp": "00:41.30"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Je pensais que quelqu'un allait arriver,",
+        "text_l2": "I thought someone would come,",
+        "timestamp": "00:43.00"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "personne n'est arrivé.",
+        "text_l2": "nobody came.",
+        "timestamp": "00:44.20"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "Mais j'avais plus envie.",
+        "text_l2": "But I didn't feel like it anymore.",
+        "timestamp": "00:45.30"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Je me suis assis, allongé,",
+        "text_l2": "I sat down, lay down,",
+        "timestamp": "00:46.30"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "assis, allongé, assis, allongé.",
+        "text_l2": "sat down, lay down, sat down, lay down.",
+        "timestamp": "00:47.80"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "J'ai fait des pompes.",
+        "text_l2": "I did push-ups.",
+        "timestamp": "00:49.00"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "À un moment,",
+        "text_l2": "At one point,",
+        "timestamp": "00:50.10"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "je crois que je suis devenu fou.",
+        "text_l2": "I think I went crazy.",
+        "timestamp": "00:51.50"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "J'ai entendu une voix.",
+        "text_l2": "I heard a voice.",
+        "timestamp": "00:54.00"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Monsieur ?",
+        "text_l2": "Sir?",
+        "timestamp": "00:54.60"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "J'ai dit : Allô, je suis bloqué !",
+        "text_l2": "I said: Hello, I'm stuck!",
+        "timestamp": "00:55.10"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "Il m'entendait pas.",
+        "text_l2": "He couldn't hear me.",
+        "timestamp": "00:56.10"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "J'ai dit : Allô, je suis bloqué !",
+        "text_l2": "I said: Hello, I'm stuck!",
+        "timestamp": "00:57.00"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "Il m'entendait pas.",
+        "text_l2": "He couldn't hear me.",
+        "timestamp": "00:58.10"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "J'ai dit : Je suis bloqué, connard !",
+        "text_l2": "I said: I'm stuck, asshole!",
+        "timestamp": "00:59.00"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "Hé !",
+        "text_l2": "Hey!",
+        "timestamp": "01:00.10"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "Il m'entendait.",
+        "text_l2": "He could hear me.",
+        "timestamp": "01:01.00"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "Il a dit : J'arrive dans 3 heures.",
+        "text_l2": "He said: I'll be there in 3 hours.",
+        "timestamp": "01:01.40"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "J'ai dit : Vous rigolez ?",
+        "text_l2": "I said: Are you kidding?",
+        "timestamp": "01:02.40"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Il m'a dit : Non, connard.",
+        "text_l2": "He told me: No, asshole.",
+        "timestamp": "01:03.40"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "J'ai dit : J'en parlerai à votre patron.",
+        "text_l2": "I said: I'll talk to your boss.",
+        "timestamp": "01:05.00"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Il a dit : Je serai là dans 5 heures.",
+        "text_l2": "He said: I'll be there in 5 hours.",
+        "timestamp": "01:06.40"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "J'en parlerai pas à votre patron.",
+        "text_l2": "I won't talk to your boss.",
+        "timestamp": "01:08.00"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "À dans 3 heures.",
+        "text_l2": "See you in 3 hours.",
+        "timestamp": "01:09.00"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Connard.",
+        "text_l2": "Asshole.",
+        "timestamp": "01:10.00"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "Soudain, j'ai eu envie de pisser.",
+        "text_l2": "Suddenly, I needed to pee.",
+        "timestamp": "01:11.00"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "Ce furent les trois plus longues heures",
+        "text_l2": "Those were the three longest hours",
+        "timestamp": "01:14.00"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "de toute ma vie.",
+        "text_l2": "of my entire life.",
+        "timestamp": "01:16.00"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "Finalement, le réparateur m'a libéré.",
+        "text_l2": "Finally, the repairman freed me.",
+        "timestamp": "01:19.00"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "Il m'a fait comprendre",
+        "text_l2": "He made it clear",
+        "timestamp": "01:20.10"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "qu'il voulait un pourboire.",
+        "text_l2": "he wanted a tip.",
+        "timestamp": "01:21.80"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "J'ai dit : Connard.",
+        "text_l2": "I said: Asshole.",
+        "timestamp": "01:23.00"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Il a dit : Hé !",
+        "text_l2": "He said: Hey!",
+        "timestamp": "01:24.00"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "Vous savez, il y a une caméra",
+        "text_l2": "You know, there's a camera",
+        "timestamp": "01:26.00"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "dans l'ascenseur.",
+        "text_l2": "in the elevator.",
+        "timestamp": "01:27.50"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "Je lui ai donné ce que j'avais.",
+        "text_l2": "I gave him what I had.",
+        "timestamp": "01:29.00"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "Bref, j'étais coincé dans l'ascenseur.",
+        "text_l2": "Anyway, I was stuck in the elevator.",
+        "timestamp": "01:30.10"
+      }
+    ],
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[Bref], il était 23h, => [Anyway], it was 11 PM,\nBref, [il] était 23h, => Anyway, [it] was 11 PM,\nBref, il [était] 23h, => Anyway, it [was] 11 PM,\nBref, il était [23h], => Anyway, it was [11 PM]\n\n[j']étais resté tard au bureau. => [I]'d stayed late at the office.\nj' [étais resté] tard au bureau. => I ['d stayed] late at the office.\nj'étais resté [tard] au bureau. => I'd stayed [late] at the office.\nj'étais resté tard [au] bureau. => I'd stayed late [at the] office.\nj'étais resté tard au [bureau]. => I'd stayed late at the [office].\n\n[La] fille dont je suis amoureux => [The] girl I'm in love with\nLa [fille] dont je suis amoureux => The [girl] I'm in love with\nLa fille [dont] je suis amoureux => The girl I'm in love [with] # 'dont' represents the prepositional relationship expressed by 'with'\nLa fille dont [je] suis amoureux => The girl [I]'m in love with\nLa fille dont je [suis] amoureux => The girl I['m] in love with\nLa fille dont je suis [amoureux] => The girl I'm [in love] with\n\n[m']a proposé un verre sur Facebook. => asked [me] out for a drink on Facebook.\nm'[a proposé] un verre sur Facebook. => [asked] me [out] for a drink on Facebook. # \"asked out\" is the best translation for the act of proposing a meeting/drink\nm'a proposé [un] verre sur Facebook. => asked me out for [a] drink on Facebook.\nm'a proposé un [verre] sur Facebook. => asked me out for a [drink] on Facebook. # \"un verre\" (a glass) idiomatically means \"a drink\"\nm'a proposé un verre [sur] Facebook. => asked me out for a drink [on] Facebook.\nm'a proposé un verre sur [Facebook]. => asked me out for a drink on [Facebook].\n\n[Kheiron] m'a dit qu'elle voulait voir => [Kheiron] told me she wanted to see\nKheiron [m']a dit qu'elle voulait voir => Kheiron told [me] she wanted to see\nKheiron m'[a dit] qu'elle voulait voir => Kheiron [told] me she wanted to see\nKheiron m'a dit qu'[elle] voulait voir => Kheiron told me [she] wanted to see\nKheiron m'a dit qu'elle [voulait] voir => Kheiron told me she [wanted] to see\nKheiron m'a dit qu'elle voulait [voir] => Kheiron told me she wanted [to see] # \"voir\" translates to the full infinitive \"to see\"\n\n[le] dernier Woody Allen. => [the] latest Woody Allen.\nle [dernier] Woody Allen. => the [latest] Woody Allen.\nle dernier [Woody Allen]. => the latest [Woody Allen]. # Proper noun span preserved together\n\n[Elle] a dit qu'elle voulait le voir => [She] said she wanted to see it\nElle [a dit] qu'elle voulait le voir => She [said] she wanted to see it\nElle a dit [qu'elle] voulait le voir => She said [she] wanted to see it # \"qu'\" (that) is omitted in the English translation\nElle a dit qu'elle [voulait] le voir => She said she [wanted] to see it\nElle a dit qu'elle voulait [le] voir => She said she wanted to see [it]\nElle a dit qu'elle voulait le [voir] => She said she wanted [to see] it\n\n[sur] Twitter. => [on] Twitter.\nsur [Twitter]. => on [Twitter].\n\n[Je] l'ai appelée. => [I] called her.\nJe [l']ai appelée. => I called [her].\nJe l'[ai appelée]. => I [called] her. # the auxiliary \"ai\" and participle \"appelée\" together form the past tense \"called\"\n\n[Ça te dirait] d'aller voir => [Would you like] to go see # \"Ça te dirait\" is an idiomatic construction meaning \"Would you like\"\nÇa te dirait [d'aller] voir => Would you like [to go] see\nÇa te dirait d'aller [voir] => Would you like to go [see]\n\n[le] dernier Woody Allen ? => [the] latest Woody Allen?\nle [dernier] Woody Allen ? => the [latest] Woody Allen?\nle dernier [Woody Allen] ? => the latest [Woody Allen]?\n\n[Ah] tu voulais y aller ? Cool. => [Oh] you wanted to go? Cool.\nAh [tu] voulais y aller ? Cool. => Oh [you] wanted to go? Cool.\nAh tu [voulais] y aller ? Cool. => Oh you [wanted] to go? Cool.\nAh tu voulais [y aller] ? Cool. => Oh you wanted [to go]? Cool. # 'y' implies the destination which is inherent in 'to go' here\nAh tu voulais y aller ? [Cool] => Oh you wanted to go? [Cool]\n\n[Par contre] je te laisse, => [Anyway], I gotta go,\nPar contre [je] te laisse, => Anyway, [I] gotta go,\nPar contre je [te laisse], => Anyway, I [gotta go] # Maps the idiom \"te laisse\" (leave you) to the equivalent \"gotta go\"\n\n[j'ai] plus beaucoup de batterie. => I have\nj'ai [plus beaucoup de] batterie. => almost dead # \"plus beaucoup de\" literally means \"not much... left\"\nj'ai plus beaucoup de [batterie]. => my [battery]'s almost dead\n\n[J'ai] raccroché, j'y suis allé. => [I] hung up, I went.\nJ'ai [raccroché], j'y suis allé. => I [hung up], I went.\nJ'ai raccroché, [j']y suis allé. => I hung up, [I] went.\nJ'ai raccroché, j'y [suis allé]. => I hung up, I [went] # suis is the auxiliary for the passé composé, combined they mean went\n\n[Merci] Kheiron. => [Thanks] Kheiron.\nMerci [Kheiron]. => Thanks [Kheiron.] # proper name alignment\n\n[J']ai pris l'ascenseur. => [I] took the elevator.\nJ'[ai pris] l'ascenseur. => I [took] the elevator.\nJ'ai pris [l']ascenseur. => I took [the] elevator.\nJ'ai pris l'[ascenseur]. => I took the [elevator].\n\n[L']ascenseur s'est bloqué. => [The] elevator got stuck.\nL'[ascenseur] s'est bloqué. => The [elevator] got stuck.\nL'ascenseur [s'est] bloqué. => The elevator [got] stuck.\nL'ascenseur s'est [bloqué]. => The elevator got [stuck].\n\n[Je] me suis dit que j'avais la poisse. => [I] thought I was cursed.\nJe [me suis dit] que j'avais la poisse. => I [thought] I was cursed.\nJe me suis dit [que] j'avais la poisse. => that\nJe me suis dit que [j']avais la poisse. => I thought [I] was cursed.\nJe me suis dit que j'[avais] la poisse. => I thought I [was] cursed.\nJe me suis dit que j'avais [la poisse]. => I thought I was [cursed.] # literally \"the bad luck\" or \"the jinx\"\n\nJ'[ai dit] non seize fois. => I [said] no sixteen times.\nJ'ai dit [non] seize fois. => I said [no] sixteen times.\nJ'ai dit non [seize] fois. => I said no [sixteen] times.\nJ'ai dit non seize [fois]. => I said no sixteen [times.] # punctuation excluded in brackets but note the word choice\n\n[Non] non non non non non non non => [No] no no no no no no no\nNon [non] non non non non non non => No [no] no no no no no no\nNon non [non] non non non non non => No no [no] no no no no no\nNon non non [non] non non non non => No no no [no] no no no no\nNon non non non [non] non non non => No no no no [no] no no no\nNon non non non non [non] non non => No no no no no [no] no no\nNon non non non non non [non] non => No no no no no no [no] no\nNon non non non non non non [non] => No no no no no no no [no]\n\n[non] non non non non non non non. => [no] no no no no no no no.\nnon [non] non non non non non non. => no [no] no no no no no no.\nnon non [non] non non non non non. => no no [no] no no no no no.\nnon non non [non] non non non non. => no no no [no] no no no no.\nnon non non non [non] non non non. => no no no no [no] no no no.\nnon non non non non [non] non non. => no no no no no [no] no no.\nnon non non non non non [non] non. => no no no no no no [no] no.\nnon non non non non non non [non]. => no no no no no no no [no].\n\n[J']ai appuyé sur le bouton, => [I] pressed the button,\nJ'[ai appuyé] sur le bouton, => I [pressed] the button,\nJ'ai appuyé [sur] le bouton, => on\nJ'ai appuyé sur [le] bouton, => I pressed [the] button,\nJ'ai appuyé sur le [bouton], => I pressed the [button],\n\n[ça] a pas marché. => [it] didn't work.\nça [a pas] marché. => it [didn't] work. # \"a\" (auxiliary) and \"pas\" (negation) map to the auxiliary/negation \"didn't\"\nça a pas [marché] => it didn't [work]\n\n[J']ai crié. => [I] screamed.\nJ'[ai crié]. => I [screamed]. # Passé composé translates to the simple past verb here\n\n[J']ai pris mon portable, => [I] took out my phone,\nJ'[ai pris] mon portable, => I [took out] my phone,\nJ'ai pris [mon] portable, => I took out [my] phone,\nJ'ai pris mon [portable], => I took out my [phone],\n\n[il] était déchargé. => [it] was dead.\nil [était] déchargé. => it [was] dead.\nil était [déchargé]. => it was [dead]. # déchargé literally means empty or uncharged, but is used for dead batteries\n\n[J'ai] plus beaucoup de batterie => I have\n[plus beaucoup de] => almost dead\nJ'ai plus beaucoup de [batterie] => My [battery]'s almost dead\n\n[J'ai] regardé s'il y avait une trappe => [I] looked for a hatch\nJ'ai [regardé] s'il y avait une trappe => I [looked] for a hatch\nJ'ai regardé [s'il y avait] une trappe => if there was # the literal \"if there was\" is rendered as \"for\" in the English translation \nJ'ai regardé s'il y avait [une] trappe => I looked for [a] hatch\nJ'ai regardé s'il y avait une [trappe] => I looked for a [hatch]\n\n[au] plafond comme dans les films. => [in the] ceiling like in the movies.\nau [plafond] comme dans les films. => in the [ceiling] like in the movies.\nau plafond [comme] dans les films. => in the ceiling [like] in the movies.\nau plafond comme [dans] les films. => in the ceiling like [in] the movies.\nau plafond comme dans [les] films. => in the ceiling like in [the] movies.\nau plafond comme dans les [films]. => in the ceiling like in the [movies].\n\n[Il] n'y en avait pas. => [There] wasn't one. # \"Il\" functions as a dummy subject like \"there\"\nIl n'[y] en avait pas. => [There] wasn't one. # \"y\" in \"il y avait\" corresponds to the existential \"there\"\nIl n'y [en] avait pas. => There wasn't [one]. # \"en\" acts as the pronoun for the missing thing (\"one\" or \"any\")\nIl n'y en [avait] pas. => There [was]n't one. # \"avait\" is the past tense of \"avoir\", used for \"was\" in this structure\nIl [n'] y en avait [pas] => There [wasn't] one. # \"ne...pas\" creates the negation, just like \"n't\" (not)\n\n[Je] me suis dit qu'il ne pouvait pas => [I] thought nothing worse\nJe [me suis dit] qu'il ne pouvait pas => I [thought] nothing worse\nJe me suis dit [qu']il ne pouvait pas => that\nJe me suis dit qu'[il] ne pouvait pas => it, he\nJe me suis dit qu'il [ne] pouvait [pas] => not\nJe me suis dit qu'il ne [pouvait] pas => could # or \"was able to\"\n\n[m']arriver pire. => could happen [to me].\nm'[arriver] pire. => could [happen] to me.\nm'arriver [pire]. => worse # \"pire\" translates to \"worse\", though it is not explicitly stated in the provided English translation.\n\n[La] lumière s'est éteinte. => [The] lights went out.\nLa [lumière] s'est éteinte. => The [lights] went out.\nLa lumière [s'est éteinte]. => The lights [went out]. # s'est éteinte literally means \"has extinguished itself\" but aligns with \"went out\"\n\n[Au bout de] 10 minutes, => [After] 10 minutes, # \"au bout de\" is an idiomatic expression for \"after\"\nAu bout de [10] minutes, => After [10] minutes,\nAu bout de 10 [minutes], => After 10 [minutes],\n\n[elle] s'est rallumée. => [they] came back on.\nelle [s'est rallumée]. => they [came back on.] # \"s'est rallumée\" includes the reflexive auxiliary and the verb meaning to light up again/turn back on.\n\n[J']étais en train de me détendre. => [I] was starting to relax.\nJ'[étais] en train de me détendre. => I [was] starting to relax.\nJ'étais [en train de] me détendre. => I was [starting to] relax. # \"en train de\" usually means \"in the middle of\", but here maps to the aspect chosen by the translator\nJ'étais en train de [me détendre] => I was starting to [relax] # aligning the reflexive verb to the English equivalent\n\n[Je] pensais que quelqu'un allait arriver, => [I] thought someone would come,\nJe [pensais] que quelqu'un allait arriver, => I [thought] someone would come,\nJe pensais que [quelqu'un] allait arriver, => I thought [someone] would come,\nJe pensais que quelqu'un [allait] arriver, => I thought someone [would] come,\nJe pensais que quelqu'un allait [arriver], => I thought someone would [come]\n\n[personne] n'est arrivé. => [nobody] came.\npersonne n'[est arrivé]. => nobody [came]. # The passé composé \"est arrivé\" corresponds to the simple past \"came\"\n\n[Mais] j'avais plus envie. => [But] I didn't feel like it anymore.\n[j']avais plus envie. => [I] didn't feel like it anymore.\nj'[avais] plus envie. => had, was\nj'avais [plus] envie. => But I didn't feel like it [anymore].\nj'avais plus [envie] => feel like it, desire # \"avoir envie\" translates to \"to feel like (doing something)\"\n\n[Je] me suis assis, allongé, => [I] sat down, lay down,\nJe [me suis assis], allongé, => I [sat down], lay down,\nJe me suis assis, [allongé], => I sat down, [lay down], # \"me suis\" (reflexive auxiliary) is shared by both verbs; \"allongé\" matches the second action \"lay down\"\n\n[assis], allongé, assis, allongé. => [sat down], lay down, sat down, lay down.\nassis, [allongé], assis, allongé. => sat down, [lay down], sat down, lay down.\nassis, allongé, [assis], allongé. => sat down, lay down, [sat down], lay down.\nassis, allongé, assis, [allongé]. => sat down, lay down, sat down, [lay down].\n\n[J'] ai fait des pompes => [I] did push-ups\nJ'[ai fait] des pompes => I [did] push-ups\nJ'ai fait des [pompes] => I did [push-ups]\n\n[À] un moment, => [At] one point,\nÀ [un] moment, => At [one] point,\nÀ un [moment], => At one [point],\n\n[je] crois que je suis devenu fou. => [I] think I went crazy.\nje [crois] que je suis devenu fou. => I [think] I went crazy.\nje crois que [je] suis devenu fou. => I think [I] went crazy.\nje crois que je [suis devenu] fou. => I think I [went] crazy.\nje crois que je suis devenu [fou]. => I think I went [crazy].\n\n[J']ai entendu une voix. => [I] heard a voice.\nJ'[ai entendu] une voix. => I [heard] a voice.\nJ'ai entendu [une] voix. => I heard [a] voice.\nJ'ai entendu une [voix]. => I heard a [voice].\n\n[Monsieur] ? => [Sir] ?\n\n[J']ai dit : Allô, je suis bloqué ! => [I] said: Hello, I'm stuck!\nJ'[ai dit] : Allô, je suis bloqué ! => I [said]: Hello, I'm stuck!\nJ'ai dit : [Allô], je suis bloqué ! => I said: [Hello], I'm stuck!\nJ'ai dit : Allô, [je] suis bloqué ! => I said: Hello, [I]'m stuck!\nJ'ai dit : Allô, je [suis] bloqué ! => I said: Hello, I['m] stuck!\nJ'ai dit : Allô, je suis [bloqué] ! => I said: Hello, I'm [stuck]!\n\n[Il] m'entendait pas. => [He] couldn't hear me.\nIl [m']entendait pas. => He couldn't hear [me].\nIl m'[entendait] pas. => could hear # in this context, the imperfect tense implies the ability to hear\nIl m'entendait [pas] => not, couldn't # \"pas\" provides the negative meaning found in \"couldn't\"\n\n[J']ai dit : Allô, je suis bloqué ! => [I] said: Hello, I'm stuck!\nJ'[ai dit] : Allô, je suis bloqué ! => I [said]: Hello, I'm stuck!\nJ'ai dit : [Allô], je suis bloqué ! => I said: [Hello], I'm stuck!\nJ'ai dit : Allô, [je suis] bloqué ! => I said: Hello, [I'm] stuck!\nJ'ai dit : Allô, je suis [bloqué] ! => I said: Hello, I'm [stuck]! # while \"ai dit\" is two words, it translates to the single word \"said\" in this context\n\n[Il] m'entendait pas. => [He] couldn't hear me.\nIl [m']entendait pas. => He couldn't hear [me].\nIl m'[entendait] pas. => He couldn't [hear] me.\nIl m'entendait [pas]. => He [couldn't] hear me. # \"pas\" maps to the negation \"couldn't\", which Includes both \"could\" and \"not\" in this context\n\n[J']ai dit : Je suis bloqué, connard ! => [I] said: I'm stuck, asshole!\nJ'[ai dit] : Je suis bloqué, connard ! => I [said]: I'm stuck, asshole! # ai dit is the past tense of dire, mapping to the simple past said\nJ'ai dit : [Je] suis bloqué, connard ! => I said: [I]'m stuck, asshole!\nJ'ai dit : Je [suis] bloqué, connard ! => I said: I['m] stuck, asshole!\nJ'ai dit : Je suis [bloqué], connard ! => I said: I'm [stuck], asshole!\nJ'ai dit : Je suis bloqué, [connard] ! => I said: I'm stuck, [asshole]!\n\n[Hé] ! => [Hey] !\n\n[Il] m'entendait. => [He] could hear me.\nIl [m']entendait. => He could hear [me]\nIl m'[entendait]. => He [could hear] me # \"entendait\" in imparfait is translated here as \"could hear\" to reflect the state/ability\n\n[Il] a dit : J'arrive dans 3 heures. => [He] said: I'll be there in 3 hours.\nIl [a dit] : J'arrive dans 3 heures. => He [said]: I'll be there in 3 hours.\nIl a dit : [J'arrive] dans 3 heures. => He said: [I'll be there] in 3 hours. # J'arrive literally means \"I arrive\" or \"I am coming\"\nIl a dit : J'arrive [dans] 3 heures. => He said: I'll be there [in] 3 hours.\nIl a dit : J'arrive dans [3] heures. => He said: I'll be there in [3] hours.\nIl a dit : J'arrive dans 3 [heures]. => He said: I'll be there in 3 [hours].\n\n[J']ai dit : Vous rigolez ? => [I] said: Are you kidding?\nJ'[ai dit] : Vous rigolez ? => I [said]: Are you kidding?\nJ'ai dit : [Vous] rigolez ? => I said: Are [you] kidding?\nJ'ai dit : Vous [rigolez] ? => I said: Are you [kidding]? # \"rigoler\" translates to joke or kid; \"are\" is left unmapped as part of the English auxiliary structure\n\n[Il] m'a dit : Non, connard. => [He] told me: No, asshole.\nIl [m']a dit : Non, connard. => He told [me]: No, asshole.\nIl m'[a dit] : Non, connard. => He [told] me: No, asshole.\nIl m'a dit : [Non], connard. => He told me: [No], asshole.\nIl m'a dit : Non, [connard]. => He told me: No, [asshole].\n\n[J'ai] dit : J'en parlerai à votre patron. => [I] said: I'll talk to your boss.\nJ'ai [dit] : J'en parlerai à votre patron. => I [said]: I'll talk to your boss.\nJ'ai dit : [J']en parlerai à votre patron. => I said: [I]'ll talk to your boss.\nJ'ai dit : J'[en] parlerai à votre patron. => about it, of it # \"en\" refers to \"it\" or \"about it\" in this context\nJ'ai dit : J'en [parlerai] à votre patron. => I said: I['ll talk] to your boss.\nJ'ai dit : J'en parlerai [à] votre patron. => I said: I'll talk [to] your boss.\nJ'ai dit : J'en parlerai à [votre] patron. => I said: I'll talk to [your] boss.\nJ'ai dit : J'en parlerai à votre [patron]. => I said: I'll talk to your [boss].\n\n[Il] a dit : Je serai là dans 5 heures. => [He] said: I'll be there in 5 hours.\nIl [a dit] : Je serai là dans 5 heures. => He [said]: I'll be there in 5 hours. # \"a dit\" is the passé composé of \"dire\"\nIl a dit : [Je] serai là dans 5 heures. => He said: [I]'ll be there in 5 hours.\nIl a dit : Je [serai] là dans 5 heures. => He said: I['ll be] there in 5 hours. # \"serai\" is the future tense of \"être\"\nIl a dit : Je serai [là] dans 5 heures. => He said: I'll be [there] in 5 hours.\nIl a dit : Je serai là [dans] 5 heures. => He said: I'll be there [in] 5 hours.\nIl a dit : Je serai là dans [5] heures. => He said: I'll be there in [5] hours.\nIl a dit : Je serai là dans 5 [heures]. => He said: I'll be there in 5 [hours].\n\n[J']en parlerai pas à votre patron. => [I] won't talk to your boss.\nJ'[en] parlerai pas à votre patron. => about it # the pronoun \"en\" stands for \"of it\" or \"about it\"\nJ'en [parlerai pas] à votre patron. => I [won't talk] to your boss. # \"parlerai\" is the future tense; \"pas\" is the negation\nJ'en parlerai pas [à] votre patron. => I won't talk [to] your boss.\nJ'en parlerai pas à [votre] patron. => I won't talk to [your] boss.\nJ'en parlerai pas à votre [patron]. => I won't talk to your [boss]\n\n[À] dans 3 heures. => [See you] in 3 hours.\nÀ [dans] 3 heures. => See you [in] 3 hours.\nÀ dans [3] heures. => See you in [3] hours.\nÀ dans 3 [heures]. => See you in 3 [hours. ] # Punctuation isn't aligned but included in the sentence structure\n\n[Connard]. => [Asshole].\n\n[Soudain], j'ai eu envie de pisser. => [Suddenly], I needed to pee.\nSoudain, [j']ai eu envie de pisser. => Suddenly, [I] needed to pee.\nSoudain, j'[ai eu envie] de pisser. => Suddenly, I [needed] to pee.\nSoudain, j'ai eu envie [de] pisser. => Suddenly, I needed [to] pee.\nSoudain, j'ai eu envie de [pisser]. => Suddenly, I needed to [pee].\nSoudain, j'ai eu [envie] de pisser. => urge, desire, want # \"envie\" is the noun for desire or urge\nSoudain, j'[ai eu] envie de pisser. => had # \"ai eu\" is the passé composé of \"avoir\" (to have)\n\n[Ce] furent les trois plus longues heures => [Those] were the three longest hours\nCe [furent] les trois plus longues heures => Those [were] the three longest hours\nCe furent [les] trois plus longues heures => Those were [the] three longest hours\nCe furent les [trois] plus longues heures => Those were the [three] longest hours\nCe furent les trois [plus longues] heures => Those were the three [longest] hours # 'plus longues' forms the superlative 'longest'\nCe furent les trois plus longues [heures] => Those were the three longest [hours]\n\n[de] toute ma vie. => [of] my entire life.\nde [toute] ma vie. => of my [entire] life.\nde toute [ma] vie. => of [my] entire life.\nde toute ma [vie]. => of my entire [life].\n\n[Finalement], le réparateur m'a libéré. => [Finally], the repairman freed me.\nFinalement, [le] réparateur m'a libéré. => Finally, [the] repairman freed me.\nFinalement, le [réparateur] m'a libéré. => Finally, the [repairman] freed me.\nFinalement, le réparateur [m']a libéré. => Finally, the repairman freed [me].\nFinalement, le réparateur m'[a libéré]. => Finally, the repairman [freed] me. # \"a libéré\" (passé composé) corresponds to \"freed\" (simple past)\n\n[Il] m'a fait comprendre => [He] made it clear\nIl [m']a fait comprendre => me, to me # \"m'\" (direct object meaning \"me\") is implied in the English phrase but not explicitly present.\nIl m'[a fait] comprendre => He [made] it clear\nIl m'a fait [comprendre] => He made it [clear] # while \"comprendre\" literally means \"understand\", in this idiomatic phrase it corresponds to \"clear\"\nIl m'a fait [comprendre] => understand # literal meaning for better clarity\n\nqu'[il] voulait un pourboire. => [he] wanted a tip.\nqu'il [voulait] un pourboire. => he [wanted] a tip.\nqu'il voulait [un] pourboire. => he wanted [a] tip.\nqu'il voulait un [pourboire]. => he wanted a [tip]\n\n[J']ai dit : Connard. => [I] said: Asshole.\nJ'[ai dit] : Connard. => I [said]: Asshole.\nJ'ai dit : [Connard]. => I said: [Asshole].\n\n[Il] a dit : Hé ! => [He] said: Hey!\nIl [a dit] : Hé ! => He [said]: Hey!\nIl a dit : [Hé] ! => He said: [Hey]!\n\n[Vous] savez, il y a une caméra => [You] know, there's a camera\nVous [savez], il y a une caméra => You [know], there's a camera\nVous savez, [il y a] une caméra => You know, [there's] a camera\nVous savez, il y a [une] caméra => You know, there's [a] camera\nVous savez, il y a une [caméra] => You know, there's a [camera]\n\n[dans] l'ascenseur. => [in] the elevator.\ndans [l']ascenseur. => in [the] elevator.\ndans l'[ascenseur]. => in the [elevator].\n\n[Je] lui ai donné ce que j'avais. => [I] gave him what I had.\nJe [lui] ai donné ce que j'avais. => I gave [him] what I had.\nJe lui [ai donné] ce que j'avais. => I [gave] him what I had.\nJe lui ai donné [ce que] j'avais. => I gave him [what] I had.\nJe lui ai donné ce que [j']avais. => I gave him what [I] had.\nJe lui ai donné ce que j'[avais]. => I gave him what I [had.] # Passé composé and imparfait alignment to simple past and past perfect simple equivalents.\n\n[Bref], j'étais coincé dans l'ascenseur. => [Anyway], I was stuck in the elevator.\nBref, [j']étais coincé dans l'ascenseur. => Anyway, [I] was stuck in the elevator.\nBref, j'[étais] coincé dans l'ascenseur. => Anyway, I [was] stuck in the elevator.\nBref, j'étais [coincé] dans l'ascenseur. => Anyway, I was [stuck] in the elevator.\nBref, j'étais coincé [dans] l'ascenseur. => Anyway, I was stuck [in] the elevator.\nBref, j'étais coincé dans [l']ascenseur. => Anyway, I was stuck in [the] elevator.\nBref, j'étais coincé dans l'[ascenseur]. => Anyway, I was stuck in the [elevator].\n\n"
+  },
+  "created_at": "2026-04-02 17:41:05 UTC",
+  "updated_at": "2026-04-02 19:19:54 UTC",
+  "exported_at": "2026-04-02T19:21:40Z"
+}

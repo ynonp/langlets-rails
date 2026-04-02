@@ -113,7 +113,7 @@
           words = []
 
           if first_token
-            correct_word = token_original_text(first_token)
+            correct_word = first_token.original_text
             similar_candidates = similar_sounds_for_token(first_phrase_with_tokens, first_token) || []
             similar_word = similar_candidates.sample
 

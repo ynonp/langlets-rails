@@ -52,7 +52,8 @@ module CourseBuilder
         lesson_index = 0
         created_lessons = []
 
-        lesson_data.each_cons(2).each_with_index do |(l, next_l), idx|
+        lesson_data.each_with_index do |l, idx|
+          next_l = lesson_data[idx + 1]
           lesson_name = l.lines.first.strip.sub(/^#\s*/, "")
           first_timestamp = l.lines.second[0..7]
           last_timestamp = l.lines.last[0..7]

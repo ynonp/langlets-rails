@@ -1,0 +1,376 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=if3EipAM2WQ",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "lessons": "# Rencontre inattendue\n00:03.30 Bref, j'avais accosté cette meuf\n00:04.30 dans la rue.\n00:05.00 Elle m'a dit : \"Demain, OK ?\"\n00:05.60 J'ai dit : \"Cool, 16h.\"\n00:06.40 Elle a dit : \"Non, je termine\n00:07.40 mon service à 18h.\"\n00:08.30 J'ai dit : \"T'es serveuse ?\"\n00:09.30 Elle m'a dit : \"Non.\"\n00:10.00 Bah, à demain.\n00:11.00 Salut.\n\n# La Révélation\n00:13.50 Le lendemain à 18h très précisément,\n00:15.30 elle m'envoie un texto me demandant\n00:17.00 mon adresse, mon code et mon étage.\n00:18.50 J'ai répondu : \"Pourquoi ? T'es flic ?\"\n00:19.60 Elle a répondu : \"Oui.\"\n00:20.40 Elle était marrante.\n00:21.40 Elle était flic.\n00:22.40 Elle était flic et bonne.\n\n# Les Inquiétudes\n00:24.00 En y réfléchissant bien,\n00:25.30 j'ai repensé à tous les trucs illégaux\n00:27.00 que j'avais chez moi.\n00:28.00 Mon compteur EDF que j'avais bloqué\n00:29.50 avec un fil de fer.\n00:30.50 Ma beuh qui traînait sur la table basse\n00:32.00 du salon.\n00:33.00 Et surtout les 584 téléchargements\n00:34.50 de séries et MP3 en cours sur mon PC.\n\n# La Confrontation\n00:36.00 Elle s'est mise à l'aise.\n00:37.00 Elle a vu ma beuh.\n00:38.00 J'ai dit : \"C'est pas à moi.\"\n00:39.00 Elle a dit : \"Dommage.\"\n00:40.00 J'ai dit : \"Pourquoi ?\"\n00:40.50 On aurait pu s'en rouler un.\n00:41.50 J'ai dit : \"C'est à moi.\"\n\n# La Nuit mouvementée (Part 1)\n00:44.00 On est allés dans ma chambre.\n00:45.50 Elle a continué à se mettre à l'aise.\n00:47.00 C'était cool.\n00:48.00 Elle m'a dessapé, on a commencé.\n00:49.00 J'ai pensé à JoeyStarr :\n00:49.50 \"Nique la police\".\n\n# La Nuit mouvementée (Part 2)\n00:50.00 Elle m'a plaqué contre le lit.\n00:51.00 Elle m'a dit : \"Maintenant,\n00:52.00 tu t'appelles Sophie.\"\n00:53.00 J'ai dit : \"Hein ?\"\n00:54.00 Elle m'a mis une gifle.\n00:55.00 J'ai dit : \"Sophie comment ?\"\n00:56.50 Je croyais qu'on avait fini\n00:57.50 quand elle a pris ses menottes\n00:58.50 et m'a attaché à mon lit.\n\n# Le Départ et la Réalisation\n00:59.50 J'ai trouvé ça cool.\n01:01.00 Elle s'est rhabillée.\n01:02.00 J'ai trouvé ça triste.\n01:03.00 Ensuite elle m'a dit :\n01:04.00 \"Je prends ta beuh.\"\n01:05.00 J'ai dit : \"Non, pourquoi ?\"\n01:06.00 Elle est partie.\n01:07.00 Alors j'ai dit : \"Hé oh !\"\n01:08.50 Et encore...\n01:09.50 Hé oh !\n01:11.00 Bref, j'ai couché avec une flic.",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Bref, j'avais accosté cette meuf",
+        "text_l2": "Anyway, I'd picked up this chick",
+        "timestamp": "00:03.30"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "dans la rue.",
+        "text_l2": "on the street.",
+        "timestamp": "00:04.30"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Elle m'a dit : \"Demain, OK ?\"",
+        "text_l2": "She said to me: \"Tomorrow, OK?\"",
+        "timestamp": "00:05.00"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "J'ai dit : \"Cool, 16h.\"",
+        "text_l2": "I said: \"Cool, 4 PM.\"",
+        "timestamp": "00:05.60"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Elle a dit : \"Non, je termine",
+        "text_l2": "She said: \"No, I finish",
+        "timestamp": "00:06.40"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "mon service à 18h.\"",
+        "text_l2": "my shift at 6 PM.\"",
+        "timestamp": "00:07.40"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "J'ai dit : \"T'es serveuse ?\"",
+        "text_l2": "I said: \"You're a waitress?\"",
+        "timestamp": "00:08.30"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Elle m'a dit : \"Non.\"",
+        "text_l2": "She said to me: \"No.\"",
+        "timestamp": "00:09.30"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Bah, à demain.",
+        "text_l2": "Well, see you tomorrow.",
+        "timestamp": "00:10.00"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Salut.",
+        "text_l2": "Bye.",
+        "timestamp": "00:11.00"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "Le lendemain à 18h très précisément,",
+        "text_l2": "The next day at 6 PM exactly,",
+        "timestamp": "00:13.50"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "elle m'envoie un texto me demandant",
+        "text_l2": "she sends me a text asking",
+        "timestamp": "00:15.30"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "mon adresse, mon code et mon étage.",
+        "text_l2": "my address, my code and my floor.",
+        "timestamp": "00:17.00"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "J'ai répondu : \"Pourquoi ? T'es flic ?\"",
+        "text_l2": "I replied: \"Why? Are you a cop?\"",
+        "timestamp": "00:18.50"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Elle a répondu : \"Oui.\"",
+        "text_l2": "She replied: \"Yes.\"",
+        "timestamp": "00:19.60"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Elle était marrante.",
+        "text_l2": "She was funny.",
+        "timestamp": "00:20.40"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "Elle était flic.",
+        "text_l2": "She was a cop.",
+        "timestamp": "00:21.40"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Elle était flic et bonne.",
+        "text_l2": "She was a cop and hot.",
+        "timestamp": "00:22.40"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "En y réfléchissant bien,",
+        "text_l2": "Thinking about it closely,",
+        "timestamp": "00:24.00"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "j'ai repensé à tous les trucs illégaux",
+        "text_l2": "I remembered all the illegal stuff",
+        "timestamp": "00:25.30"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "que j'avais chez moi.",
+        "text_l2": "that I had at my place.",
+        "timestamp": "00:27.00"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Mon compteur EDF que j'avais bloqué",
+        "text_l2": "My electric meter that I'd blocked",
+        "timestamp": "00:28.00"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "avec un fil de fer.",
+        "text_l2": "with a wire.",
+        "timestamp": "00:29.50"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Ma beuh qui traînait sur la table basse",
+        "text_l2": "My weed lying around on the coffee table",
+        "timestamp": "00:30.50"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "du salon.",
+        "text_l2": "in the living room.",
+        "timestamp": "00:32.00"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Et surtout les 584 téléchargements",
+        "text_l2": "And especially the 584 downloads",
+        "timestamp": "00:33.00"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "de séries et MP3 en cours sur mon PC.",
+        "text_l2": "of series and MP3s in progress on my PC.",
+        "timestamp": "00:34.50"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Elle s'est mise à l'aise.",
+        "text_l2": "She made herself comfortable.",
+        "timestamp": "00:36.00"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Elle a vu ma beuh.",
+        "text_l2": "She saw my weed.",
+        "timestamp": "00:37.00"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "J'ai dit : \"C'est pas à moi.\"",
+        "text_l2": "I said: \"It's not mine.\"",
+        "timestamp": "00:38.00"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Elle a dit : \"Dommage.\"",
+        "text_l2": "She said: \"Too bad.\"",
+        "timestamp": "00:39.00"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "J'ai dit : \"Pourquoi ?\"",
+        "text_l2": "I said: \"Why?\"",
+        "timestamp": "00:40.00"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "On aurait pu s'en rouler un.",
+        "text_l2": "We could've rolled one up.",
+        "timestamp": "00:40.50"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "J'ai dit : \"C'est à moi.\"",
+        "text_l2": "I said: \"It is mine.\"",
+        "timestamp": "00:41.50"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "On est allés dans ma chambre.",
+        "text_l2": "We went to my bedroom.",
+        "timestamp": "00:44.00"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Elle a continué à se mettre à l'aise.",
+        "text_l2": "She continued to make herself comfortable.",
+        "timestamp": "00:45.50"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "C'était cool.",
+        "text_l2": "It was cool.",
+        "timestamp": "00:47.00"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Elle m'a dessapé, on a commencé.",
+        "text_l2": "She undressed me, we started.",
+        "timestamp": "00:48.00"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "J'ai pensé à JoeyStarr :",
+        "text_l2": "I thought of JoeyStarr:",
+        "timestamp": "00:49.00"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "\"Nique la police\".",
+        "text_l2": "\"Fuck the police\".",
+        "timestamp": "00:49.50"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Elle m'a plaqué contre le lit.",
+        "text_l2": "She pinned me against the bed.",
+        "timestamp": "00:50.00"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Elle m'a dit : \"Maintenant,",
+        "text_l2": "She said to me: \"Now,",
+        "timestamp": "00:51.00"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "tu t'appelles Sophie.\"",
+        "text_l2": "your name is Sophie.\"",
+        "timestamp": "00:52.00"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "J'ai dit : \"Hein ?\"",
+        "text_l2": "I said: \"Huh?\"",
+        "timestamp": "00:53.00"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "Elle m'a mis une gifle.",
+        "text_l2": "She slapped me.",
+        "timestamp": "00:54.00"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "J'ai dit : \"Sophie comment ?\"",
+        "text_l2": "I said: \"Sophie what?\"",
+        "timestamp": "00:55.00"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Je croyais qu'on avait fini",
+        "text_l2": "I thought we were done",
+        "timestamp": "00:56.50"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "quand elle a pris ses menottes",
+        "text_l2": "when she took her handcuffs",
+        "timestamp": "00:57.50"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "et m'a attaché à mon lit.",
+        "text_l2": "and handcuffed me to my bed.",
+        "timestamp": "00:58.50"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "J'ai trouvé ça cool.",
+        "text_l2": "I thought that was cool.",
+        "timestamp": "00:59.50"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "Elle s'est rhabillée.",
+        "text_l2": "She got dressed again.",
+        "timestamp": "01:01.00"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "J'ai trouvé ça triste.",
+        "text_l2": "I thought that was sad.",
+        "timestamp": "01:02.00"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "Ensuite elle m'a dit :",
+        "text_l2": "Then she said to me:",
+        "timestamp": "01:03.00"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "\"Je prends ta beuh.\"",
+        "text_l2": "\"I'm taking your weed.\"",
+        "timestamp": "01:04.00"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "J'ai dit : \"Non, pourquoi ?\"",
+        "text_l2": "I said: \"No, why?\"",
+        "timestamp": "01:05.00"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "Elle est partie.",
+        "text_l2": "She left.",
+        "timestamp": "01:06.00"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Alors j'ai dit : \"Hé oh !\"",
+        "text_l2": "So I said: \"Hey oh!\"",
+        "timestamp": "01:07.00"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "Et encore...",
+        "text_l2": "And again...",
+        "timestamp": "01:08.50"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Hé oh !",
+        "text_l2": "Hey oh!",
+        "timestamp": "01:09.50"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "Bref, j'ai couché avec une flic.",
+        "text_l2": "Anyway, I slept with a cop.",
+        "timestamp": "01:11.00"
+      }
+    ],
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[Bref], j'avais accosté cette meuf => [Anyway], I'd picked up this chick\nBref, [j']avais accosté cette meuf => Anyway, [I]'d picked up this chick\nBref, j'[avais] accosté cette meuf => Anyway, I['d] picked up this chick # 'd is the auxiliary had\nBref, j'avais [accosté] cette meuf => Anyway, I'd [picked up] this chick # picked up is the phrasal verb translation for accosté\nBref, j'avais accosté [cette] meuf => Anyway, I'd picked up [this] chick\nBref, j'avais accosté cette [meuf] => Anyway, I'd picked up this [chick] # slang for woman/girl\n\n[dans] la rue. => [on] the street.\ndans [la] rue. => on [the] street.\ndans la [rue]. => on the [street].\n\n[Elle] m'a dit : \"Demain, OK ?\" => [She] said to me: \"Tomorrow, OK?\"\nElle [m']a dit : \"Demain, OK ?\" => She said [to me]: \"Tomorrow, OK?\"\nElle m'[a dit] : \"Demain, OK ?\" => She [said] to me: \"Tomorrow, OK?\"\nElle m'a dit : \"[Demain], OK ?\" => She said to me: \"[Tomorrow], OK?\"\nElle m'a dit : \"Demain, [OK] ?\" => She said to me: \"Tomorrow, [OK]?\"\n\n[J']ai dit : \"Cool, 16h.\" => [I] said: \"Cool, 4 PM.\"\nJ'[ai dit] : \"Cool, 16h.\" => I [said]: \"Cool, 4 PM.\"\nJ'ai dit : \"[Cool], 16h.\" => I said: \"[Cool], 4 PM.\"\nJ'ai dit : \"Cool, [16h].\" => I said: \"Cool, [4 PM].\" # localized time format correspondence\n\n[Elle] a dit : \"Non, je termine => [She] said: \"No, I finish\nElle [a dit] : \"Non, je termine => She [said]: \"No, I finish\nElle a dit : \"[Non], je termine => She said: \"[No], I finish\nElle a dit : \"Non, [je] termine => She said: \"No, [I] finish\nElle a dit : \"Non, je [termine] => She said: \"No, I [finish]\n\n[mon] service à 18h. => [my] shift at 6 PM.\nmon [service] à 18h. => my [shift] at 6 PM.\nmon service [à] 18h. => my shift [at] 6 PM.\nmon service à [18h]. => my shift at [6 PM].\n\n[J']ai dit : \"T'es serveuse ?\" => [I] said: \"You're a waitress?\"\nJ'[ai dit] : \"T'es serveuse ?\" => I [said]: \"You're a waitress?\"\nJ'ai dit : \"[T'es] serveuse ?\" => I said: \"[You're] a waitress?\"\nJ'ai dit : \"T'es [serveuse] ?\" => I said: \"You're [a waitress]?\" # French omits the article for professions, while English requires \"a\"\n\n[Elle] m'a dit : \"Non.\" => [She] said to me: \"No.\"\nElle [m']a dit : \"Non.\" => She said [to me]: \"No.\"\nElle m'[a dit] : \"Non.\" => She [said] to me: \"No.\"\nElle m'a dit : \"[Non].\" => She said to me: \"[No].\"\n\n[Bah], à demain. => [Well], see you tomorrow.\nBah, [à] demain. => [see you] tomorrow # \"à\" in this context translates to the salutation \"see you\"\nBah, à [demain]. => Well, see you [tomorrow].\n\n[Salut]. => [Bye].\n\n[Le] lendemain à 18h très précisément, => [The] next day at 6 PM exactly,\nLe [lendemain] à 18h très précisément, => The [next day] at 6 PM exactly,\nLe lendemain [à] 18h très précisément, => The next day [at] 6 PM exactly,\nLe lendemain à [18h] très précisément, => The next day at [6 PM] exactly,\nLe lendemain à 18h [très précisément], => The next day at 6 PM [exactly] # while \"très\" means \"very\", it's absorbed into \"exactly\" in this translation\n\n[elle] m'envoie un texto me demandant => [she] sends me a text asking\nelle [m'] envoie un texto me demandant => she sends [me] a text asking\nelle m' [envoie] un texto me demandant => she [sends] me a text asking\nelle m'envoie [un] texto me demandant => she sends me [a] text asking\nelle m'envoie un [texto] me demandant => she sends me a [text] asking\nelle m'envoie un texto [me] demandant => me, to me\nelle m'envoie un texto me [demandant] => she sends me a text [asking]\n\n[mon] adresse, mon code et mon étage. => [my] address, my code and my floor.\nmon [adresse], mon code et mon étage. => my [address], my code and my floor.\nmon adresse, [mon] code et mon étage. => my address, [my] code and my floor.\nmon adresse, mon [code] et mon étage. => my address, my [code] and my floor.\nmon adresse, mon code [et] mon étage. => my address, my code [and] my floor.\nmon adresse, mon code et [mon] étage. => my address, my code and [my] floor.\nmon adresse, mon code et mon [étage]. => my address, my code and my [floor].\n\n[J']ai répondu : \"Pourquoi ? T'es flic ?\" => [I] replied: \"Why? Are you a cop?\"\nJ'[ai répondu] : \"Pourquoi ? T'es flic ?\" => I [replied]: \"Why? Are you a cop?\"\nJ'ai répondu : \"[Pourquoi]\" ? T'es flic ? => I replied: \"[Why]\"? Are you a cop?\nJ'ai répondu : \"Pourquoi ? [T'es] flic ?\" => I replied: \"Why? [Are you] a cop?\"\nJ'ai répondu : \"Pourquoi ? T'es [flic]\" ? => I replied: \"Why? Are you [a cop]\"? # \"flic\" maps to \"a cop\" as French often omits the article in this slang construction while English requires it.\n\n[Elle] a répondu : \"Oui.\" => [She] replied: \"Yes.\"\nElle [a répondu] : \"Oui.\" => She [replied]: \"Yes.\"\nElle a répondu : \"[Oui].\" => She replied: \"[Yes].\"\n\n[Elle] était marrante. => [She] was funny.\nElle [était] marrante. => She [was] funny.\nElle était [marrante]. => She was [funny].\n\n[Elle] était flic. => [She] was a cop.\nElle [était] flic. => She [was] a cop.\nElle était [flic]. => She was a [cop] # \"a\" is an English grammatical requirement not present in the French structure \"être + profession\"\n\n[Elle] était flic et bonne. => [She] was a cop and hot.\nElle [était] flic et bonne. => She [was] a cop and hot.\nElle était [flic] et bonne. => She was a [cop] and hot.\nElle était flic [et] bonne. => She was a cop [and] hot.\nElle était flic et [bonne] => She was a cop and [hot]\n\n[En] y [réfléchissant] bien, => [Thinking] about it closely, # \"En\" + present participle aligns with the English \"-ing\" form\nEn [y] réfléchissant bien, => Thinking [about it] closely, # \"y\" represents the object of the thought (about it/on it)\nEn y réfléchissant [bien], => Thinking about it [closely], # \"bien\" here acts as an intensifier/adverb meaning thoroughly or closely\n\n[j']ai repensé à tous les trucs illégaux => [I] remembered all the illegal stuff\nj'[ai repensé à] tous les trucs illégaux => I [remembered] all the illegal stuff # \"repenser à\" is a verbal phrase mapping to the transitive \"remembered\"\nj'ai repensé à [tous] les trucs illégaux => I remembered [all] the illegal stuff\nj'ai repensé à tous [les] trucs illégaux => I remembered all [the] illegal stuff\nj'ai repensé à tous les [trucs] illégaux => I remembered all the illegal [stuff]\nj'ai repensé à tous les trucs [illégaux] => I remembered all the [illegal] stuff\n\n[que] j'avais chez moi. => [that] I had at my place.\nque [j']avais chez moi. => that [I] had at my place.\nque j'[avais] chez moi. => that I [had] at my place.\nque j'avais [chez moi]. => that I had [at my place]. # \"chez moi\" is an idiomatic phrase meaning \"at my place/house\"\n\n[Mon] compteur EDF que j'avais bloqué => [My] electric meter that I'd blocked\nMon [compteur] EDF que j'avais bloqué => My electric [meter] that I'd blocked\nMon compteur [EDF] que j'avais bloqué => My [electric] meter that I'd blocked\nMon compteur EDF [que] j'avais bloqué => My electric meter [that] I'd blocked\nMon compteur EDF que [j']avais bloqué => My electric meter that [I]'d blocked\nMon compteur EDF que j'[avais] bloqué => My electric meter that I['d] blocked\nMon compteur EDF que j'avais [bloqué] => My electric meter that I'd [blocked]\n\n[avec] un fil de fer. => [with] a wire.\navec [un] fil de fer. => with [a] wire.\navec un [fil de fer]. => with a [wire].\n\n[Ma] beuh qui traînait sur la table basse => [My] weed lying around on the coffee table\nMa [beuh] qui traînait sur la table basse => My [weed] lying around on the coffee table\nMa beuh [qui traînait] sur la table basse => My [lying around] on the coffee table\nMa beuh qui traînait [sur] la table basse => My weed lying around [on] the coffee table\nMa beuh qui traînait sur [la] table basse => My weed lying around on [the] coffee table\nMa beuh qui traînait sur la [table basse] => My weed lying around on the [coffee table] # \"table basse\" is the standard French term for a coffee table\n\n[du] salon. => [in the] living room.\ndu [salon]. => in the [living room]. # \"salon\" can be \"living room\" or \"lounge\" depending on context\n\n[Et] surtout les 584 téléchargements => [And] especially the 584 downloads\nEt [surtout] les 584 téléchargements => And [especially] the 584 downloads\nEt surtout [les] 584 téléchargements => And especially [the] 584 downloads\nEt surtout les [584] téléchargements => And especially the [584] downloads\nEt surtout les 584 [téléchargements] => And especially the 584 [downloads]\n\n[de] séries et MP3 en cours sur mon PC. => [of] series and MP3s in progress on my PC.\nde [séries] et MP3 en cours sur mon PC. => of [series] and MP3s in progress on my PC.\nde séries [et] MP3 en cours sur mon PC. => of series [and] MP3s in progress on my PC.\nde séries et [MP3] en cours sur mon PC. => of series and [MP3s] in progress on my PC.\nde séries et MP3 [en cours] sur mon PC. => of series and MP3s [in progress] on my PC.\nde séries et MP3 en cours [sur] mon PC. => of series and MP3s in progress [on] my PC.\nde séries et MP3 en cours sur [mon] PC. => of series and MP3s in progress on [my] PC.\nde séries et MP3 en cours sur mon [PC]. => of series and MP3s in progress on my [PC].\n\n[Elle] s'est mise à l'aise. => [She] made herself comfortable.\nElle [s'est mise] à l'aise. => She [made herself] comfortable. # s'est mise is the reflexive form of \"mettre\" (to put/set) in the past tense\nElle s'est mise [à l'aise]. => She made herself [comfortable] # literally \"at ease\"\n\n[Elle] a vu ma beuh. => [She] saw my weed.\nElle [a vu] ma beuh. => She [saw] my weed.\nElle a vu [ma] beuh. => She saw [my] weed.\nElle a vu ma [beuh]. => She saw my [weed].\n\nJ'[ai dit] : \"C'est pas à moi.\" => I [said]: \"It's not mine.\" # ai dit (passé composé) translates to the simple past 'said'\nJ'ai dit : \"[C'est] pas à moi.\" => I said: \"[It's] not mine.\"\nJ'ai dit : \"C'est [pas] à moi.\" => I said: \"It's [not] mine.\"\nJ'ai dit : \"C'est pas [à moi].\" => I said: \"It's not [mine].\"\n\n[Elle] a dit : \"Dommage.\" => [She] said: \"Too bad.\"\nElle [a dit] : \"Dommage.\" => She [said]: \"Too bad.\"\nElle a dit : \"[Dommage].\" => She said: \"[Too bad].\" # while dommage is one word, it translates to the phrase \"too bad\"\n\n[J']ai dit : \"Pourquoi ?\" => [I] said: \"Why?\"\nJ'[ai dit] : \"Pourquoi ?\" => I [said]: \"Why?\"\nJ'ai dit : \"[Pourquoi]\" ? => I said: \"[Why]?\" # Punctuation remains outside the brackets per rules\n\n[On] aurait pu s'en rouler un. => [We] could've rolled one up.\nOn [aurait pu] s'en rouler un. => We [could've] rolled one up.\nOn aurait pu s'en [rouler] un. => rolled up # \"rouler\" translates to the phrasal verb \"roll up\" in this context\nOn aurait pu s'en rouler [un]. => We could've rolled [one] up.\n\n[J']ai dit : \"C'est à moi.\" => [I] said: \"It is mine.\"\nJ'[ai dit] : \"C'est à moi.\" => I [said]: \"It is mine.\"\nJ'ai dit : \"[C']est à moi.\" => I said: \"[It] is mine.\"\nJ'ai dit : \"C'[est] à moi.\" => I said: \"It [is] mine.\"\nJ'ai dit : \"C'est [à moi].\" => I said: \"It is [mine].\" # à moi is a common way to express possession equivalent to \"mine\"\n\n[On] est allés dans ma chambre. => [We] went to my bedroom.\nOn [est allés] dans ma chambre. => We [went] to my bedroom.\nOn est allés [dans] ma chambre. => We went [to] my bedroom.\nOn est allés dans [ma] chambre. => We went to [my] bedroom.\nOn est allés dans ma [chambre]. => We went to my [bedroom] islands.\n\n[Elle] a continué à se mettre à l'aise. => [She] continued to make herself comfortable.\nElle [a continué] à se mettre à l'aise. => She [continued] to make herself comfortable.\nElle a continué [à] se mettre à l'aise. => She continued [to] make herself comfortable.\nElle a continué à [se] mettre à l'aise. => She continued to make [herself] comfortable.\nElle a continué à se [mettre] à l'aise. => She continued to [make] herself comfortable.\nElle a continué à se mettre [à l'aise]. => She continued to make herself [comfortable] # \"à l'aise\" literally means \"at ease\" but maps to \"comfortable\" here\n\n[C']était cool. => [It] was cool.\nC'[était] cool. => It [was] cool.\nC'était [cool]. => It was [cool].\n\n[Elle] m'a dessapé, on a commencé. => [She] undressed me, we started.\nElle [m']a dessapé, on a commencé. => She undressed [me], we started.\nElle m'[a dessapé], on a commencé. => She [undressed] me, we started.\nElle m'a dessapé, [on] a commencé. => She undressed me, [we] started.\nElle m'a dessapé, on [a commencé]. => She undressed me, we [started].\n\n[J']ai pensé à JoeyStarr : => [I] thought of JoeyStarr:\nJ'[ai pensé] à JoeyStarr : => I [thought] of JoeyStarr:\nJ'ai pensé [à] JoeyStarr : => I thought [of] JoeyStarr:\nJ'ai pensé à [JoeyStarr] : => I thought of [JoeyStarr]:\n\n[Nique] la police => [Fuck] the police\nNique [la] police => Fuck [the] police\nNique la [police] => Fuck the [police]\n\n[Elle] m'a plaqué contre le lit. => [She] pinned me against the bed.\nElle [m']a plaqué contre le lit. => She pinned [me] against the bed.\nElle m'[a plaqué] contre le lit. => She [pinned] me against the bed.\nElle m'a plaqué [contre] le lit. => She pinned me [against] the bed.\nElle m'a plaqué contre [le] lit. => She pinned me against [the] bed.\nElle m'a plaqué contre le [lit]. => She pinned me against the [bed]\n\n[Elle] m'a dit : \"Maintenant, => [She] said to me: \"Now,\nElle [m']a dit : \"Maintenant, => She said [to me]: \"Now,\nElle m'[a dit] : \"Maintenant, => She [said] to me: \"Now,\nElle m'a dit : \"[Maintenant], => She said to me: \"[Now],\n\n[tu t'appelles] Sophie.\" => [your name is] Sophie.\" # \"tu t'appelles\" literally means \"you call yourself\", but corresponds to \"your name is\" here\ntu t'appelles [Sophie].\" => your name is [Sophie].\"\n\n[J']ai dit : \"Hein ?\" => [I] said: \"Huh?\"\nJ'[ai dit] : \"Hein ?\" => I [said]: \"Huh?\" # Passé composé \"ai dit\" maps to the simple past \"said\"\nJ'ai dit : \"[Hein]\" ? => I said: \"[Huh]?\"\n\n[Elle] m'a mis une gifle. => [She] slapped me.\nElle [m']a mis une gifle. => She slapped [me].\nElle m'[a mis une gifle]. => She [slapped] me.\nElle m'a mis une [gifle]. => slap # literal meaning of the noun\nElle m'[a mis] une gifle. => gave, put # literal meaning of the verb phrase without the object\n\n[J']ai dit : \"Sophie comment ?\" => [I] said: \"Sophie what?\"\nJ'[ai dit] : \"Sophie comment ?\" => I [said]: \"Sophie what?\" # mapping the compound verb to the simple past\nJ'ai dit : \"[Sophie] comment ?\" => I said: \"[Sophie] what?\"\nJ'ai dit : \"Sophie [comment] ?\" => I said: \"Sophie [what]?\" # \"comment\" (how) functions similarly to \"what\" in this question context\n\n[Je] croyais qu'on avait fini => [I] thought we were done\nJe [croyais] qu'on avait fini => I [thought] we were done\nJe croyais [qu']on avait fini => that\nJe croyais qu'[on] avait fini => I thought [we] were done\nJe croyais qu'on [avait] fini => I thought we [were] done\nJe croyais qu'on avait [fini] => I thought we were [done]\n\n[quand] elle a pris ses menottes => [when] she took her handcuffs\nquand [elle] a pris ses menottes => when [she] took her handcuffs\nquand elle [a pris] ses menottes => when she [took] her handcuffs\nquand elle a pris [ses] menottes => when she took [her] handcuffs\nquand elle a pris ses [menottes] => when she took her [handcuffs]\n\n[et] m'a attaché à mon lit. => [and] handcuffed me to my bed.\net [m']a attaché à mon lit. => and handcuffed [me] to my bed.\net m'[a attaché] à mon lit. => and [handcuffed] me to my bed.\net m'a attaché [à] mon lit. => and handcuffed me\n\nJ'ai trouvé [ça] cool. => I thought [that] was cool.\nJ'ai trouvé ça [cool]. => I thought that was [cool]. # The English \"was\" is omitted as it is part of the clausal structure in English but not present in the French direct object construction\n\n[Elle] s'est rhabillée. => [She] got dressed again.\nElle [s'est rhabillée]. => She [got dressed again]. # the reflexive verb construction in the past tense maps to the full English equivalent \"got dressed again\"\n\nJ'ai trouvé [ça] triste. => I thought [that] was sad.\nJ'ai trouvé ça [triste]. => I thought that was [sad.]\n\n[Ensuite] elle m'a dit : => [Then] she said to me:\nEnsuite [elle] m'a dit : => Then [she] said to me:\nEnsuite elle [m']a dit : => Then she said [to me]:\nEnsuite elle m'[a dit] : => Then she [said] to me: # Passé composé \"a dit\" translates to the simple past \"said\"\n\n[Je] prends ta beuh. => [I]'m taking your weed.\nJe [prends] ta beuh. => I['m taking] your weed.\nJe prends [ta] beuh. => I'm taking [your] weed.\nJe prends ta [beuh]. => I'm taking your [weed].\n\n[J']ai dit : \"Non, pourquoi ?\" => [I] said: \"No, why?\"\nJ'[ai dit] : \"Non, pourquoi ?\" => I [said]: \"No, why?\"\nJ'ai dit : \"[Non], pourquoi ?\" => I said: \"[No], why?\"\nJ'ai dit : \"Non, [pourquoi] ?\" => I said: \"No, [why]?\"\n\n[Elle] est partie. => [She] left.\nElle [est partie]. => She [left].\n\n[Alors] j'ai dit : \"Hé oh !\" => [So] I said: \"Hey oh!\"\nAlors [j']ai dit : \"Hé oh !\" => So [I] said: \"Hey oh!\"\nAlors j'[ai dit] : \"Hé oh !\" => So I [said]: \"Hey oh!\"\nAlors j'ai dit : \"[Hé] oh !\" => So I said: \"[Hey] oh!\"\nAlors j'ai dit : \"Hé [oh] !\" => So I said: \"Hey [oh]!\"\n\n[Et] encore... => [And] again...\nEt [encore]... => And [again]...\n\n[Hé] oh ! => [Hey] oh!\nHé [oh] ! => Hey [oh]!\n\n[Bref], j'ai couché avec une flic. => [Anyway], I slept with a cop.\nBref, [j']ai couché avec une flic. => Anyway, [I] slept with a cop.\nBref, j'[ai couché] avec une flic. => Anyway, I [slept] with a cop.\nBref, j'ai couché [avec] une flic. => Anyway, I slept [with] a cop.\nBref, j'ai couché avec [une] flic. => Anyway, I slept with [a] cop.\nBref, j'ai couché avec une [flic]. => Anyway, I slept with a [cop]\n\n"
+  },
+  "created_at": "2026-04-02 18:18:30 UTC",
+  "updated_at": "2026-04-02 19:19:56 UTC",
+  "exported_at": "2026-04-02T19:21:40Z"
+}

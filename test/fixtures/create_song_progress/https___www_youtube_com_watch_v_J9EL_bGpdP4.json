@@ -1,0 +1,478 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=J9EL_bGpdP4",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "lessons": "# La Mauvaise Nouvelle\n00:00.00 Bref, j'avais rendez-vous au café avec Ben.\n00:01.80 J'étais content.\n00:02.50 J'avais une bonne nouvelle,\n00:03.50 j'allais lui dire :\n00:04.30 Je suis amoureux.\n00:05.10 Mais c'est lui qui a dit :\n00:06.20 Katy m'a largué.\n\n# Les Tentatives de Réconfort (Part 1)\n00:07.30 Je l'avais déjà vu sept fois\n00:08.80 à la même place\n00:09.80 pour les mêmes conneries.\n00:11.50 Et du coup, je m'en battais les couilles.\n00:13.00 C'est pas vrai.\n00:13.80 Si, mais pour mieux parler,\n00:14.80 j'ai pioché des phrases types.\n00:16.00 Une de perdue, dix de retrouvées.\n00:17.80 T'as raison.\n\n# Les Tentatives de Réconfort (Part 2)\n00:18.50 C'est un mal pour un bien.\n00:20.30 T'as raison.\n00:21.00 T'es jeune, t'as encore toute la vie.\n00:22.80 T'as raison.\n00:23.50 Pendant tout ce temps,\n00:24.50 il n'arrêtait pas de tapoter\n00:25.50 sur la table, ça m'énervait.\n\n# L'Ambiance du Café\n00:26.80 Je crois vraiment que le garçon\n00:28.00 faisait exprès de faire\n00:29.00 dix mille chocolats chauds\n00:30.00 à deux mètres de mon oreille.\n00:31.30 Je lui ai dit : Elle va revenir.\n00:32.50 Tu crois ? Pourquoi ?\n00:33.50 Parce que...\n00:34.30 Parce qu'elle est moisie\n00:35.30 et qu'elle trouvera personne d'autre.\n00:36.80 Elle tient à toi.\n00:37.50 T'as raison.\n\n# L'Exaspération\n00:38.20 Il tapotait encore.\n00:39.00 J'avais envie de sortir une machette\n00:40.50 et de lui couper la main.\n00:41.50 Il a dit : C'est terminé. Trois fois.\n00:43.00 C'est terminé. C'est terminé.\n00:44.50 C'est terminé.\n00:45.30 J'ai eu l'impression d'être\n00:46.50 dans un film français.\n\n# Le Couple Gênant\n00:47.50 Je pense à elle, tu sais.\n00:49.50 Pense à toi un peu.\n00:51.50 Mais je fume pas.\n00:53.00 Lui et Katy, c'était le couple gênant.\n00:54.50 Le genre de couple qui crée\n00:55.50 des silences dans les dîners.\n00:57.00 Katy, remets-en s'il te plaît.\n00:58.50 Non mais t'es sérieux ?\n01:00.00 Tu vas reprendre un verre là ?\n\n# Le Dîner Gênant\n01:01.50 Moi je vais prendre les profiteroles,\n01:03.50 s'il vous plaît.\n01:04.50 T'es sûre que tu veux prendre un dessert ?\n01:06.50 Je vais prendre une tarte aux pommes.\n01:08.50 Quetsche, tarte aux quetsches.\n01:10.00 Et ben moi, monsieur est trop fatigué\n01:12.00 pour me faire l'amour.\n\n# Le Retour de Katy\n01:13.50 Ben touillait son café depuis 20 minutes\n01:15.00 en faisant bien grincer la cuillère.\n01:16.50 Il n'avait même pas mis de sucre.\n01:18.00 Pourquoi ? Pourquoi elle m'a largué ?\n01:19.50 On était bien tous les deux, non ?\n01:21.00 Moi je pense qu'à elle.\n01:22.50 Je pense qu'à elle.\n01:23.50 Putain, j'ai essayé de projeter\n01:25.00 des trucs avec elle.\n01:26.50 Je suis amoureux, connard !\n01:28.00 Et toi alors, quoi de neuf ?\n\n# Le Rebondissement Final\n01:30.00 Eh ben figure-toi que je suis amoureux.\n01:32.00 Il a reçu un texto.\n01:33.50 C'est Katy. Elle me laisse une chance.\n01:35.00 Il est parti en courant.\n01:36.50 Il n'a pas payé, 14 euros.\n01:38.00 Bref, mon pote s'est fait larguer.\n01:39.50 Vous acceptez la carte bleue ?\n01:41.00 Ah ben non, c'est à partir de 15 euros.",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Bref, j'avais rendez-vous au café avec Ben.",
+        "text_l2": "Anyway, I was meeting Ben at the cafe.",
+        "timestamp": "00:00.00"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "J'étais content.",
+        "text_l2": "I was happy.",
+        "timestamp": "00:01.80"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "J'avais une bonne nouvelle,",
+        "text_l2": "I had some good news,",
+        "timestamp": "00:02.50"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "j'allais lui dire :",
+        "text_l2": "I was going to tell him:",
+        "timestamp": "00:03.50"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Je suis amoureux.",
+        "text_l2": "I'm in love.",
+        "timestamp": "00:04.30"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Mais c'est lui qui a dit :",
+        "text_l2": "But he's the one who said:",
+        "timestamp": "00:05.10"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Katy m'a largué.",
+        "text_l2": "Katy dumped me.",
+        "timestamp": "00:06.20"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Je l'avais déjà vu sept fois",
+        "text_l2": "I'd already seen him seven times",
+        "timestamp": "00:07.30"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "à la même place",
+        "text_l2": "in the same spot",
+        "timestamp": "00:08.80"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "pour les mêmes conneries.",
+        "text_l2": "for the same bullshit.",
+        "timestamp": "00:09.80"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "Et du coup, je m'en battais les couilles.",
+        "text_l2": "So basically, I didn't give a shit.",
+        "timestamp": "00:11.50"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "C'est pas vrai.",
+        "text_l2": "That's not true.",
+        "timestamp": "00:13.00"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Si, mais pour mieux parler,",
+        "text_l2": "Yes, but to put it nicer,",
+        "timestamp": "00:13.80"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "j'ai pioché des phrases types.",
+        "text_l2": "I picked some clichés.",
+        "timestamp": "00:14.80"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Une de perdue, dix de retrouvées.",
+        "text_l2": "There are plenty of fish in the sea.",
+        "timestamp": "00:16.00"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "T'as raison.",
+        "text_l2": "You're right.",
+        "timestamp": "00:17.80"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "C'est un mal pour un bien.",
+        "text_l2": "It's a blessing in disguise.",
+        "timestamp": "00:18.50"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "T'as raison.",
+        "text_l2": "You're right.",
+        "timestamp": "00:20.30"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "T'es jeune, t'as encore toute la vie.",
+        "text_l2": "You're young, you've got your whole life ahead.",
+        "timestamp": "00:21.00"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "T'as raison.",
+        "text_l2": "You're right.",
+        "timestamp": "00:22.80"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Pendant tout ce temps,",
+        "text_l2": "All this time,",
+        "timestamp": "00:23.50"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "il n'arrêtait pas de tapoter",
+        "text_l2": "he wouldn't stop tapping",
+        "timestamp": "00:24.50"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "sur la table, ça m'énervait.",
+        "text_l2": "on the table, it was annoying me.",
+        "timestamp": "00:25.50"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Je crois vraiment que le garçon",
+        "text_l2": "I really think the waiter",
+        "timestamp": "00:26.80"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "faisait exprès de faire",
+        "text_l2": "was purposely making",
+        "timestamp": "00:28.00"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "dix mille chocolats chauds",
+        "text_l2": "ten thousand hot chocolates",
+        "timestamp": "00:29.00"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "à deux mètres de mon oreille.",
+        "text_l2": "two meters from my ear.",
+        "timestamp": "00:30.00"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Je lui ai dit : Elle va revenir.",
+        "text_l2": "I told him: She'll come back.",
+        "timestamp": "00:31.30"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Tu crois ? Pourquoi ?",
+        "text_l2": "You think so? Why?",
+        "timestamp": "00:32.50"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "Parce que...",
+        "text_l2": "Because...",
+        "timestamp": "00:33.50"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Parce qu'elle est moisie",
+        "text_l2": "Because she's rotten",
+        "timestamp": "00:34.30"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "et qu'elle trouvera personne d'autre.",
+        "text_l2": "and she won't find anyone else.",
+        "timestamp": "00:35.30"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "Elle tient à toi.",
+        "text_l2": "She cares about you.",
+        "timestamp": "00:36.80"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "T'as raison.",
+        "text_l2": "You're right.",
+        "timestamp": "00:37.50"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Il tapotait encore.",
+        "text_l2": "He was still tapping.",
+        "timestamp": "00:38.20"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "J'avais envie de sortir une machette",
+        "text_l2": "I wanted to pull out a machete",
+        "timestamp": "00:39.00"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "et de lui couper la main.",
+        "text_l2": "and cut off his hand.",
+        "timestamp": "00:40.50"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Il a dit : C'est terminé. Trois fois.",
+        "text_l2": "He said: It's over. Three times.",
+        "timestamp": "00:41.50"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "C'est terminé. C'est terminé.",
+        "text_l2": "It's over. It's over.",
+        "timestamp": "00:43.00"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "C'est terminé.",
+        "text_l2": "It's over.",
+        "timestamp": "00:44.50"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "J'ai eu l'impression d'être",
+        "text_l2": "I felt like I was",
+        "timestamp": "00:45.30"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "dans un film français.",
+        "text_l2": "in a French film.",
+        "timestamp": "00:46.50"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "Je pense à elle, tu sais.",
+        "text_l2": "I think about her, you know.",
+        "timestamp": "00:47.50"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "Pense à toi un peu.",
+        "text_l2": "Think about yourself a bit.",
+        "timestamp": "00:49.50"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "Mais je fume pas.",
+        "text_l2": "But I don't smoke.",
+        "timestamp": "00:51.50"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "Lui et Katy, c'était le couple gênant.",
+        "text_l2": "Him and Katy, they were the awkward couple.",
+        "timestamp": "00:53.00"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Le genre de couple qui crée",
+        "text_l2": "The kind of couple that creates",
+        "timestamp": "00:54.50"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "des silences dans les dîners.",
+        "text_l2": "silences at dinners.",
+        "timestamp": "00:55.50"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "Katy, remets-en s'il te plaît.",
+        "text_l2": "Katy, have some more please.",
+        "timestamp": "00:57.00"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "Non mais t'es sérieux ?",
+        "text_l2": "No, are you serious?",
+        "timestamp": "00:58.50"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "Tu vas reprendre un verre là ?",
+        "text_l2": "You're having another drink now?",
+        "timestamp": "01:00.00"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "Moi je vais prendre les profiteroles,",
+        "text_l2": "I'm going to have the profiteroles,",
+        "timestamp": "01:01.50"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "s'il vous plaît.",
+        "text_l2": "please.",
+        "timestamp": "01:03.50"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "T'es sûre que tu veux prendre un dessert ?",
+        "text_l2": "Are you sure you want dessert?",
+        "timestamp": "01:04.50"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "Je vais prendre une tarte aux pommes.",
+        "text_l2": "I'll have the apple pie.",
+        "timestamp": "01:06.50"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "Quetsche, tarte aux quetsches.",
+        "text_l2": "Plum, plum tart.",
+        "timestamp": "01:08.50"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Et ben moi, monsieur est trop fatigué",
+        "text_l2": "Well me, sir is too tired",
+        "timestamp": "01:10.00"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "pour me faire l'amour.",
+        "text_l2": "to make love to me.",
+        "timestamp": "01:12.00"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Ben touillait son café depuis 20 minutes",
+        "text_l2": "Ben had been stirring his coffee for 20 minutes",
+        "timestamp": "01:13.50"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "en faisant bien grincer la cuillère.",
+        "text_l2": "making the spoon squeak loudly.",
+        "timestamp": "01:15.00"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "Il n'avait même pas mis de sucre.",
+        "text_l2": "He hadn't even put sugar in it.",
+        "timestamp": "01:16.50"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Pourquoi ? Pourquoi elle m'a largué ?",
+        "text_l2": "Why? Why did she dump me?",
+        "timestamp": "01:18.00"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "On était bien tous les deux, non ?",
+        "text_l2": "We were good together, weren't we?",
+        "timestamp": "01:19.50"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "Moi je pense qu'à elle.",
+        "text_l2": "I only think about her.",
+        "timestamp": "01:21.00"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Je pense qu'à elle.",
+        "text_l2": "I only think about her.",
+        "timestamp": "01:22.50"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "Putain, j'ai essayé de projeter",
+        "text_l2": "Damn, I tried to plan",
+        "timestamp": "01:23.50"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "des trucs avec elle.",
+        "text_l2": "things with her.",
+        "timestamp": "01:25.00"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "Je suis amoureux, connard !",
+        "text_l2": "I'm in love, asshole!",
+        "timestamp": "01:26.50"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "Et toi alors, quoi de neuf ?",
+        "text_l2": "And you, what's new?",
+        "timestamp": "01:28.00"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Eh ben figure-toi que je suis amoureux.",
+        "text_l2": "Well actually, I'm in love.",
+        "timestamp": "01:30.00"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "Il a reçu un texto.",
+        "text_l2": "He got a text.",
+        "timestamp": "01:32.00"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "C'est Katy. Elle me laisse une chance.",
+        "text_l2": "It's Katy. She's giving me a chance.",
+        "timestamp": "01:33.50"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "Il est parti en courant.",
+        "text_l2": "He ran off.",
+        "timestamp": "01:35.00"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "Il n'a pas payé, 14 euros.",
+        "text_l2": "He didn't pay, 14 euros.",
+        "timestamp": "01:36.50"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "Bref, mon pote s'est fait larguer.",
+        "text_l2": "Anyway, my buddy got dumped.",
+        "timestamp": "01:38.00"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "Vous acceptez la carte bleue ?",
+        "text_l2": "Do you accept credit cards?",
+        "timestamp": "01:39.50"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "Ah ben non, c'est à partir de 15 euros.",
+        "text_l2": "Oh well no, it's from 15 euros.",
+        "timestamp": "01:41.00"
+      }
+    ],
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[Bref], j'avais rendez-vous au café avec Ben. => [Anyway], I was meeting Ben at the cafe.\nBref, [j']avais rendez-vous au café avec Ben. => Anyway, [I] was meeting Ben at the cafe.\nBref, j'[avais rendez-vous] au café avec Ben. => Anyway, I [was meeting] Ben at the cafe. # \"avoir rendez-vous\" is a set phrase for having a meeting/appointment\nBref, j'avais rendez-vous [au] café avec Ben. => Anyway, I was meeting Ben [at the] cafe.\nBref, j'avais rendez-vous au [café] avec Ben. => Anyway, I was meeting Ben at the [cafe].\nBref, j'avais rendez-vous au café [avec] Ben. => with\nBref, j'avais rendez-vous au café avec [Ben]. => Anyway, I was meeting [Ben] at the cafe.\n\n[J']étais content. => [I] was happy.\nJ'[étais] content. => I [was] happy.\nJ'étais [content]. => I was [happy].\n\n[J']avais une bonne nouvelle, => [I] had some good news,\nJ'[avais] une bonne nouvelle, => I [had] some good news,\nJ'avais [une] bonne nouvelle, => I had [some] good news,\nJ'avais une [bonne] nouvelle, => I had some [good] news,\nJ'avais une bonne [nouvelle], => I had some good [news],\n\n[j']allais lui dire : => [I] was going to tell him:\nj'[allais] lui dire : => I [was going] to tell him:\nj'allais [lui] dire : => I was going to tell [him]:\nj'allais lui [dire] : => I was going [to tell] him:\n\n[Je suis] amoureux. => [I'm] in love. # \"I'm\" is a contraction representing \"I\" (Je) and \"am\" (suis); we keep them together as full words.\nJe suis [amoureux]. => I'm [in love]. # \"amoureux\" translates specifically to the phrase \"in love\".\n\n[Mais] c'est lui qui a dit : => [But] he's the one who said:\nMais [c'est] lui qui a dit : => But [he's] the one who said:\nMais c'est [lui] qui a dit : => But he's [the one] who said:\nMais c'est lui [qui] a dit : => But he's the one [who] said:\nMais c'est lui qui [a dit] : => But he's the one who [said] # compound tense mapped to simple past\n\n[Katy] m'a largué. => [Katy] dumped me.\nKaty [m']a largué. => Katy dumped [me].\nKaty m'[a largué] => Katy [dumped] me. # \"a largué\" is the past tense of \"larguer\" (to dump)\n\n[Je] l'avais déjà vu sept fois => [I]'d already seen him seven times\nJe [l']avais déjà vu sept fois => I'd already seen [him] seven times\nJe l'[avais] déjà vu sept fois => I['d] already seen him seven times\nJe l'avais [déjà] vu sept fois => I'd [already] seen him seven times\nJe l'avais déjà [vu] sept fois => I'd already [seen] him seven times\nJe l'avais déjà vu [sept] fois => I'd already seen him [seven] times\nJe l'avais déjà vu sept [fois] => I'd already seen him seven [times]\n\n[à] la même place => [in] the same spot\nà [la] même place => in [the] same spot\nà la [même] place => in the [same] spot\nà la même [place] => in the same [spot]\n\n[pour] les mêmes conneries. => [for] the same bullshit.\npour [les] mêmes conneries. => for [the] same bullshit.\npour les [mêmes] conneries. => for the [same] bullshit.\npour les mêmes [conneries]. => for the same [bullshit].\n\n[Et] du coup, je m'en battais les couilles. => [So] basically, I didn't give a shit.\nEt [du coup], je m'en battais les couilles. => So [basically], I didn't give a shit.\nEt du coup, [je] m'en battais les couilles. => So basically, [I] didn't give a shit.\nEt du coup, je [m'en battais] les couilles. => So basically, I [didn't give] a shit.\nEt du coup, je m'en battais [les couilles]. => So basically, I didn't give [a shit] # \"les couilles\" acts as the vulgar object equivalent to \"a shit\" in this idiom.\n\n[C'est] pas vrai. => [That's] not true.\nC'est [pas] vrai. => That's [not] true.\nC'est pas [vrai]. => That's not [true].\n\n[Si], mais pour mieux parler, => [Yes], but to put it nicer,\nSi, [mais] pour mieux parler, => Yes, [but] to put it nicer,\nSi, mais [pour] mieux parler, => Yes, but [to] put it nicer,\nSi, mais pour [mieux] parler, => Yes, but to put it [nicer],\nSi, mais pour mieux [parler], => Yes, but to [put it] nicer, # parler literally means speak, here it is used as \"put it\" (express)\n\n[j']ai pioché des phrases types. => [I] picked some clichés.\nj'[ai pioché] des phrases types. => I [picked] some clichés.\nj'ai pioché [des] phrases types. => I picked [some] clichés.\nj'ai pioché des [phrases types] => I picked some [clichés] # \"phrases types\" literally means model/standard phrases, here translated as clichés\n\n[Une] de perdue, dix de retrouvées. => one\nUne de [perdue], dix de retrouvées. => lost\nUne de perdue, [dix] de retrouvées. => ten\nUne de perdue, dix de [retrouvées]. => found again, replaced # The French proverb literally means \"one lost, ten found again,\" which corresponds to the English idiom about fish in the sea.\n\n[T'as] raison. => [You're] right. # Mapping the pronoun-verb contractions as a unit since clitics differ across languages\nT'as [raison]. => You're [right] # Although \"raison\" literally means \"reason,\" in this context it translates to \"right\" (being correct)\n\n[C'est] un mal pour un bien. => [It's] a blessing in disguise.\nC'est [un mal] pour un bien. => a misfortune, a bad thing\nC'est un mal [pour] un bien. => for\nC'est un mal pour [un bien]. => It's [a blessing] in disguise.\nC'est [un mal pour un bien]. => It's [a blessing in disguise]. # the whole idiomatic expression matches the English equivalent\n\n[T'as] raison. => [You're] right.\nT'as [raison]. => You're [right].\n\n[T'es] jeune, t'as encore toute la vie. => [You're] young, you've got your whole life ahead.\nT'es [jeune], t'as encore toute la vie. => You're [young], you've got your whole life ahead.\nT'es jeune, [t'as] encore toute la vie. => You're young, [you've got] your whole life ahead.\nT'es jeune, t'as [encore] toute la vie. => still, yet # \"ahead\" is a localized way to express that time is \"still\" remaining\nT'es jeune, t'as encore [toute] la vie. => You're young, you've got your [whole] life ahead.\nT'es jeune, t'as encore toute [la vie]. => You're young, you've got your whole [life] ahead.\n\n[T']as raison. => [You]'re right.\nT'[as] raison. => have # In the expression \"avoir raison\", French uses the verb \"avoir\" (to have) where English uses \"to be\"\nT'as [raison]. => You're [right].\n\nPendant [tout] ce temps, => [All] this time,\nPendant tout [ce] temps, => All [this] time,\nPendant tout ce [temps], => All this [time],\n[Pendant] tout ce temps, => during, for # 'Pendant' is omitted in the idiomatic English translation but indicates duration\n\n[il] n'arrêtait pas de tapoter => [he] wouldn't stop tapping\nil [n'arrêtait pas] de tapoter => he [wouldn't stop] tapping # includes the negation and the verb \nil n'arrêtait pas de [tapoter] => he wouldn't stop [tapping]\n\n[sur] la table, ça m'énervait. => [on] the table, it was annoying me.\nsur [la] table, ça m'énervait. => on [the] table, it was annoying me.\nsur la [table], ça m'énervait. => on the [table], it was annoying me.\nsur la table, [ça] m'énervait. => on the table, [it] was annoying me.\nsur la table, ça [m']énervait. => on the table, it was annoying [me].\nsur la table, ça m'[énervait]. => on the table, it [was annoying] me.\n\n[Je] crois vraiment que le garçon => [I] really think the waiter\nJe [crois] vraiment que le garçon => I really [think] the waiter\nJe crois [vraiment] que le garçon => I [really] think the waiter\nJe crois vraiment [que] le garçon => that\nJe crois vraiment que [le] garçon => I really think [the] waiter\nJe crois vraiment que le [garçon] => I really think the [waiter]\n\n[faisait] exprès de faire => [was] purposely making\nfaisait [exprès] de faire => was [purposely] making\nfaisait exprès de [faire] => was purposely [making] # \"faisait\" corresponds to the \"was\" (imperfect aspect), \"faire\" to \"making\"\n\n[dix] mille chocolats chauds => [ten] thousand hot chocolates\ndix [mille] chocolats chauds => ten [thousand] hot chocolates\ndix mille [chocolats] chauds => ten thousand hot [chocolates]\ndix mille chocolats [chauds] => ten thousand [hot] chocolates\n\nà [deux] mètres de mon oreille. => [two] meters from my ear.\nà deux [mètres] de mon oreille. => two [meters] from my ear.\nà deux mètres [de] mon oreille. => two meters [from] my ear.\nà deux mètres de [mon] oreille. => two meters from [my] ear.\nà deux mètres de mon [oreille]. => two meters from my [ear].\n\n[Je] lui ai dit : Elle va revenir. => [I] told him: She'll come back.\nJe [lui] ai dit : Elle va revenir. => I told [him]: She'll come back.\nJe [ai dit] : Elle va revenir. => I [told] him: She'll come back.\nJe lui ai dit : [Elle] va revenir. => I told him: [She]'ll come back.\nJe lui ai dit : Elle [va] revenir. => I told him: She['ll] come back.\nJe lui ai dit : Elle va [revenir] => I told him: She'll [come back] #Revenir literally translates to the phrase \"come back\" or \"return\"\n\n[Tu] crois ? Pourquoi ? => [You] think so? Why?\nTu [crois] ? Pourquoi ? => You [think so]? Why?\nTu crois ? [Pourquoi] ? => You think so? [Why]?\n\n[Parce que]... => [Because]...\n\n[Parce qu']elle est moisie => [Because] she's rotten # \"Parce que\" is the standard translation for \"because\"\nParce qu'[elle] est moisie => Because [she]'s rotten\nParce qu'elle [est] moisie => Because she['s] rotten\nParce qu'elle est [moisie] => Because she's [rotten]\n\n[et] qu'elle trouvera personne d'autre. => [and] she won't find anyone else.\net [qu'elle] trouvera personne d'autre. => and [she] won't find anyone else. # \"qu'\" (that) is often omitted in English\net qu'elle [trouvera] personne d'autre. => and she [won't find] anyone else. # \"trouvera\" is future tense; \"won't\" expresses the negation/future here\net qu'elle trouvera [personne] d'autre. => and she won't find [anyone] else.\net qu'elle trouvera personne [d'autre]. => and she won't find anyone [else].\n\n[Elle] tient à toi. => [She] cares about you.\nElle [tient à] toi. => She [cares about] you.\nElle tient à [toi]. => She cares about [you].\n\n[T'as] raison. => [You're] right.\nT'as [raison]. => You're [right]. # phrases with \"avoir raison\" translate to \"to be right\"\n\n[Il] tapotait encore. => [He] was still tapping.\nIl [tapotait] encore. => He [was] still [tapping]\nIl tapotait [encore]. => He was [still] tapping.\n\n[J']avais envie de sortir une machette => [I] wanted to pull out a machete\nJ'[avais envie] de sortir une machette => I [wanted] to pull out a machete\nJ'avais envie [de] sortir une machette => I wanted [to] pull out a machete\nJ'avais envie de [sortir] une machette => I wanted to [pull out] a machete\nJ'avais envie de sortir [une] machette => I wanted to pull out [a] machete\nJ'avais envie de sortir une [machette] => I wanted to pull out a [machete]\n\n[et] de lui couper la main. => [and] cut off his hand.\net de [lui] couper la main. => and cut off [his] hand. # in French body part descriptions, the indirect pronoun \"lui\" functions as the possessive \"his\"\net de lui [couper] la main. => and [cut off] his hand.\net de lui couper la [main]. => and cut off his [hand].\n\n[Il] a dit : C'est terminé. Trois fois. => [He] said: It's over. Three times.\nIl [a dit] : C'est terminé. Trois fois. => He [said]: It's over. Three times.\nIl a dit : [C'est] terminé. Trois fois. => He said: [It's] over. Three times.\nIl a dit : C'est [terminé]. Trois fois. => He said: It's [over]. Three times.\nIl a dit : C'est terminé. [Trois] fois. => He said: It's over. [Three] times.\nIl a dit : C'est terminé. Trois [fois]. => He said: It's over. Three [times].\n\n[C'est] terminé. C'est terminé. => [It's] over. It's over.\nC'est [terminé]. C'est terminé. => It's [over]. It's over.\nC'est terminé. [C'est] terminé. => It's over. [It's] over.\nC'est terminé. C'est [terminé]. => It's over. It's [over].\n\n[C'est] terminé. => [It's] over.\nC'est [terminé]. => It's [over].\n\n[J']ai eu l'impression d'être => [I] felt like I was\nJ'[ai eu] l'impression d'être => I [felt] like I was\nJ'ai eu [l'impression] d'être => I felt [like] I was\nJ'ai eu l'impression [d'être] => I felt like [I was] # the infinitive in French translates to the subject + verb clause here\n\n[dans] un film français. => [in] a French film.\ndans [un] film français. => in [a] French film.\ndans un [film] français. => in a French [film].\ndans un film [français]. => in a [French] film.\n\n[Je] pense à elle, tu sais. => [I] think about her, you know.\nJe [pense] à elle, tu sais. => I [think] about her, you know.\nJe pense [à] elle, tu sais. => I think [about] her, you know.\nJe pense à [elle], tu sais. => I think about [her], you know.\nJe pense à elle, [tu] sais. => I think about her, [you] know.\nJe pense à elle, tu [sais]. => I think about her, you [know]\n\n[Pense] à toi un peu. => [Think] about yourself a bit.\nPense [à] toi un peu. => Think [about] yourself a bit.\nPense à [toi] un peu. => Think about [yourself] a bit.\nPense à toi [un] peu. => Think about yourself [a] bit.\nPense à toi un [peu]. => Think about yourself a [bit].\n\n[Mais] je fume pas. => [But] I don't smoke.\nMais [je] fume pas. => But [I] don't smoke.\nMais je [fume] pas. => But I don't [smoke]\nMais je fume [pas] => But I [don't] smoke # in this context 'pas' carries the weight of the negation 'don't'\n\n[Lui] et Katy, c'était le couple gênant. => [Him] and Katy, they were the awkward couple.\nLui [et] Katy, c'était le couple gênant. => Him [and] Katy, they were the awkward couple.\nLui et [Katy], c'était le couple gênant. => Him and [Katy], they were the awkward couple.\nLui et Katy, [c'était] le couple gênant. => Him and Katy, [they were] the awkward couple.\nLui et Katy, c'était [le] couple gênant. => Him and Katy, they were [the] awkward couple.\nLui et Katy, c'était le [couple] gênant. => Him and Katy, they were the awkward [couple].\nLui et Katy, c'était le couple [gênant]. => Him and Katy, they were the [awkward] couple.\n\n[Le] genre de couple qui crée => [The] kind of couple that creates\nLe [genre] de couple qui crée => The [kind] of couple that creates\nLe genre [de] couple qui crée => The kind [of] couple that creates\nLe genre de [couple] qui crée => The kind of [couple] that creates\nLe genre de couple [qui] crée => The kind of couple [that] creates\nLe genre de couple qui [crée] => The kind of couple that [creates]\n\n[des silences] dans les dîners. => [silences] at dinners.\ndes silences [dans les] dîners. => silences [at] dinners.\ndes silences dans les [dîners]. => silences at [dinners].\n\n[Katy], remets-en s'il te plaît. => [Katy], have some more please.\nKaty, [remets]-en s'il te plaît. => have more, put back more # 're-' signifies 'more' or 'again'\nKaty, remets-[en] s'il te plaît. => Katy, have [some] more please.\nKaty, remets-en [s'il te plaît]. => Katy, have some more [please]. # standard expression for 'please'\n\n[Non] mais t'es sérieux ? => [No], are you serious?\nNon mais [t'es] sérieux ? => No, [are you] serious?\nNon mais t'es [sérieux] ? => No, are you [serious]? # \"mais\" is a filler word here and doesn't have a direct equivalent in the English sentence provided.\n\n[Tu] vas reprendre un verre là ? => [You]'re having another drink now?\nTu [vas] reprendre un verre là ? => You['re] having another drink now?\nTu vas [reprendre un] verre là ? => You're [having another] drink now? # \"reprendre\" literally \"take again\", \"reprendre un\" idiomatic for \"having another\"\nTu vas reprendre un [verre] là ? => You're having another [drink] now?\nTu vas reprendre un verre [là] ? => You're having another drink [now]? # \"là\" used here to emphasize \"now\" or \"at this moment\"\n\n[Moi je] vais prendre les profiteroles, => [I]'m going to have the profiteroles, # \"Moi je\" acts as a single emphatic subject unit corresponding to \"I\"\nMoi je [vais] prendre les profiteroles, => I['m going] to have the profiteroles, # \"vais\" (from aller) corresponds to the auxiliary \"am going\"\nMoi je vais [prendre] les profiteroles, => I'm going [to have] the profiteroles, # \"prendre\" is the infinitive form, mapped to the English infinitive \"to have\" in this context\nMoi je vais prendre [les] profiteroles, => I'm going to have [the] profiteroles,\nMoi je vais prendre les [profiteroles], => I'm going to have the [profiteroles]\n\n[s'il vous plaît]. => [please]. # \"s'il vous plaît\" is an idiomatic expression that corresponds to \"please\"\n\n[T'es] sûre que tu veux prendre un dessert ? => [Are you] sure you want dessert?\nT'es [sûre] que tu veux prendre un dessert ? => Are you [sure] you want dessert?\nT'es sûre [que] tu veux prendre un dessert ? => that\nT'es sûre que [tu] veux prendre un dessert ? => Are you sure [you] want dessert?\nT'es sûre que tu [veux] prendre un dessert ? => Are you sure you [want] dessert?\nT'es sûre que tu veux [prendre] un dessert ? => have, to have, to take\nT'es sûre que tu veux prendre [un dessert] ? => Are you sure you want [dessert]?\n\n[Je] vais prendre une tarte aux pommes. => [I]'ll have the apple pie.\nJe [vais] prendre une tarte aux pommes. => I['ll] have the apple pie.\nJe vais [prendre] une tarte aux pommes. => I'll [have] the apple pie.\nJe vais prendre [une] tarte aux pommes. => I'll have [the] apple pie.\nJe vais prendre une [tarte] aux pommes. => I'll have the apple [pie]\nJe vais prendre une tarte [aux pommes] => I'll have the [apple] pie # while \"aux\" literally means \"with the\", it functions as the descriptor equivalent to \"apple\" in this compound noun phrase\n\n[Quetsche], tarte aux quetsches. => [Plum], plum tart.\nQuetsche, [tarte] aux quetsches. => Plum, plum [tart].\nQuetsche, tarte [aux quetsches]. => Plum, [plum] tart. # \"aux\" is part of the phrase indicating the flavor/ingredient modifier in English\n\n[Et ben] moi, monsieur est trop fatigué => [Well] me, sir is too tired\nEt ben [moi], monsieur est trop fatigué => Well [me], sir is too tired\nEt ben moi, [monsieur] est trop fatigué => Well me, [sir] is too tired\nEt ben moi, monsieur [est] trop fatigué => Well me, sir [is] too tired\nEt ben moi, monsieur est [trop] fatigué => Well me, sir is [too] tired\nEt ben moi, monsieur est trop [fatigué] => Well me, sir is too [tired]\n\n[pour] me faire l'amour. => [to] make love to me.\npour [me] faire l'amour. => to make love [to me] # the French pronoun \"me\" functions as the indirect object \"to me\"\npour me [faire] l'amour. => to [make] love to me.\npour me faire [l'amour]. => to make [love] to me.\n\n[Ben] touillait son café depuis 20 minutes => [Ben] had been stirring his coffee for 20 minutes\nBen [touillait] son café depuis 20 minutes => Ben [had been stirring] his coffee for 20 minutes # \"touillait\" (imperfect) corresponds to the continuous past action\nBen touillait [son] café depuis 20 minutes => Ben had been stirring [his] coffee for 20 minutes\nBen touillait son [café] depuis 20 minutes => Ben had been stirring his [coffee] for 20 minutes\nBen touillait son café [depuis] 20 minutes => Ben had been stirring his coffee [for] 20 minutes\nBen touillait son café depuis [20] minutes => Ben had been stirring his coffee for [20] minutes\nBen touillait son café depuis 20 [minutes] => Ben had been stirring his coffee for 20 [minutes]\n\n[en faisant] bien grincer la cuillère. => [making] the spoon squeak loudly. # \"en faisant\" corresponds to the gerund \"making\"\nen faisant [bien] grincer la cuillère. => making the spoon squeak [loudly].\nen faisant bien [grincer] la cuillère. => making the spoon [squeak] loudly.\nen faisant bien grincer [la] cuillère. => making [the] spoon squeak loudly.\nen faisant bien grincer la [cuillère]. => making the [spoon] squeak loudly.\n\n[Il] n'avait même pas mis de sucre. => [He] hadn't even put sugar in it.\nIl [n'avait] même [pas] mis de sucre. => He [hadn't] even put sugar in it. # the auxiliary verb and negation together match the contraction\nIl n'avait [même] pas mis de sucre. => He hadn't [even] put sugar in it.\nIl n'avait même pas [mis] de sucre. => He hadn't even [put] sugar in it.\nIl n'avait même pas mis de [sucre]. => He hadn't even put [sugar] in it. # \"de\" is a partitive article with no direct equivalent here, and \"in it\" is contextual in English\n\n[Pourquoi] ? Pourquoi elle m'a largué ? => [Why]? Why did she dump me?\nPourquoi ? [Pourquoi] elle m'a largué ? => Why? [Why] did she dump me?\nPourquoi ? Pourquoi [elle] m'a largué ? => Why? Why did [she] dump me?\nPourquoi ? Pourquoi elle [m']a largué ? => Why? Why did she dump [me]?\nPourquoi ? Pourquoi elle m'[a largué] ? => Why? Why [did] she [dump] me? # \"a largué\" is the past tense, which translates to \"did dump\" in this question structure\n\n[On] était bien tous les deux, non ? => [We] were good together, weren't we?\nOn [était] bien tous les deux, non ? => We [were] good together, weren't we?\nOn était [bien] tous les deux, non ? => We were [good] together, weren't we?\nOn était bien [tous les deux], non ? => We were good [together], weren't we? # literally \"the two of us\" or \"both\"\nOn était bien tous les deux, [non] ? => We were good together, [weren't we] ?\n\n[Moi je] pense qu'à elle. => [I] only think about her.\nMoi je [pense] qu'à elle. => I only [think] about her.\nMoi je pense [qu']à elle. => I [only] think about her.\nMoi je pense qu'[à] elle. => I only think [about] her.\nMoi je pense qu'à [elle]. => I only think about [her].\n\n[Je] pense qu'à elle. => [I] only think about her.\nJe [pense] qu'à elle. => I only [think] about her.\nJe pense [qu']à elle. => I [only] think about her.\nJe pense qu'[à] elle. => I only think [about] her.\nJe pense qu'à [elle]. => I only think about [her]\n\n[Putain], j'ai essayé de projeter => [Damn], I tried to plan\nPutain, [j']ai essayé de projeter => Damn, [I] tried to plan\nPutain, j'[ai essayé] de projeter => Damn, I [tried] to plan\nPutain, j'ai essayé [de] projeter => Damn, I tried [to] plan\nPutain, j'ai essayé de [projeter] => Damn, I tried to [plan] # \"projeter\" here means to plan or envision the future\n\ndes [trucs] avec elle. => [things] with her.\ndes trucs [avec] elle. => things [with] her.\ndes trucs avec [elle]. => things with [her].\n\n[Je suis] amoureux, connard ! => [I'm] in love, asshole!\nJe suis [amoureux], connard ! => I'm [in love], asshole!\nJe suis amoureux, [connard] ! => I'm in love, [asshole]!\n\n[Et] toi alors, quoi de neuf ? => [And] you, what's new?\nEt [toi] alors, quoi de neuf ? => And [you], what's new?\nEt toi [alors], quoi de neuf ? => then, so\nEt toi alors, [quoi] de neuf ? => And you, [what's] new?\nEt toi alors, quoi [de neuf] ? => And you, what's [new] # \"de\" is required before the adjective in this French construction\n\n[Eh ben] figure-toi que je suis amoureux. => [Well] actually, I'm in love. # \"Eh ben\" is an interjection often translated as \"Well\"\nEh ben [figure-toi que] je suis amoureux. => Well [actually], I'm in love. # \"figure-toi que\" literally means \"imagine/guess what\", here translated contextually as \"actually\"\nEh ben figure-toi que [je] suis amoureux. => Well actually, [I]'m in love.\nEh ben figure-toi que je [suis] amoureux. => Well actually, I['m] in love.\nEh ben figure-toi que je suis [amoureux]. => Well actually, I'm [in love].\n\n[Il] a reçu un texto. => [He] got a text.\nIl [a reçu] un texto. => He [got] a text.\nIl a reçu [un] texto. => He got [a] text.\nIl a reçu un [texto]. => He got a [text].\n\n[C'est] Katy. Elle me laisse une chance. => [It's] Katy. She's giving me a chance.\nC'est [Katy]. Elle me laisse une chance. => It's [Katy]. She's giving me a chance.\nC'est Katy. [Elle] me laisse une chance. => It's Katy. [She]'s giving me a chance.\nC'est Katy. Elle [me] laisse une chance. => It's Katy. She's giving [me] a chance.\nC'est Katy. Elle me [laisse] une chance. => It's Katy. She's [giving] me a chance. # \"Laisse\" literally means \"leaves\" or \"lets\", but is used here for \"giving\"\nC'est Katy. Elle me laisse [une] chance. => It's Katy. She's giving me [a] chance.\nC'est Katy. Elle me laisse une [chance]. => It's Katy. She's giving me a [chance].\n\n[Il] est parti en courant. => [He] ran off.\nIl [est parti] en courant. => left, went away # though \"off\" conveys the departure, the literal meaning is \"left\"\nIl est parti [en courant]. => He [ran] off. # \"en courant\" (running) maps to the manner expressed by \"ran\"\n\n[Il] n'a pas payé, 14 euros. => [He] didn't pay, 14 euros.\nIl [n'a pas] payé, 14 euros. => He [didn't] pay, 14 euros. # maps the auxiliary verb and negation markers together\nIl n'a pas [payé], 14 euros. => He didn't [pay], 14 euros.\nIl n'a pas payé, [14] euros. => He didn't pay, [14] euros.\nIl n'a pas payé, 14 [euros]. => He didn't pay, 14 [euros].\n\n[Bref], mon pote s'est fait larguer. => [Anyway], my buddy got dumped.\nBref, [mon] pote s'est fait larguer. => Anyway, [my] buddy got dumped.\nBref, mon [pote] s'est fait larguer. => Anyway, my [buddy] got dumped.\nBref, mon pote [s'est fait] larguer. => Anyway, my buddy [got] dumped.\nBref, mon pote s'est fait [larguer]. => Anyway, my buddy got [dumped]. # larguer literally means to drop/jettison/release\n\n[Vous] acceptez la carte bleue ? => Do [you] accept credit cards?\nVous [acceptez] la carte bleue ? => Do you [accept] credit cards?\nVous acceptez [la carte bleue] ? => Do you accept [credit cards]? # \"la carte bleue\" (the blue card) is the standard French term for a credit/debit card\n\n[Ah] ben non, c'est à partir de 15 euros. => [Oh] well no, it's from 15 euros.\nAh [ben] non, c'est à partir de 15 euros. => Oh [well] no, it's from 15 euros.\nAh ben [non], c'est à partir de 15 euros. => Oh well [no], it's from 15 euros.\nAh ben non, [c'est] à partir de 15 euros. => Oh well no, [it's] from 15 euros.\nAh ben non, c'est [à partir de] 15 euros. => Oh well no, it's [from] 15 euros.\nAh ben non, c'est à partir de [15] euros. => Oh well no, it's from [15] euros.\nAh ben non, c'est à partir de 15 [euros]. => Oh well no, it's from 15 [euros].\n\n"
+  },
+  "created_at": "2026-04-02 18:33:35 UTC",
+  "updated_at": "2026-04-02 19:19:57 UTC",
+  "exported_at": "2026-04-02T19:21:40Z"
+}

@@ -14,17 +14,15 @@ module CreateSong
         }
       )
       retry_count = 0
-      max_retries = 5
+      max_retries = 0
 
       begin
-        chat = TracedChat.new(span_name: "add_similar_sound", **self.model_params_smart)
+        chat = TracedChat.new(span_name: "add_similar_sound", **self.model_params_translate)
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)
 
-        response = chat.complete do |chunk|
-          pp chunk.to_h
-        end
+        response = chat.complete
         data["similar_sounds"] = response.content
         save!
 

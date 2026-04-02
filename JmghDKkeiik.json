@@ -1,0 +1,418 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=JmghDKkeiik",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": 5,
+  "data": {
+    "lessons": "# Tout remettre à demain\n00:06 Bref\n00:07 Lui, c'est demain\n00:07 Tous les trucs que j'ai à faire\n00:08 je les remets à demain\n00:09 Depuis deux ans\n00:10 je dois résilier l'abonnement internet\n00:11 de mon ancien appartement\n00:12 je le remets à demain\n\n# Le Tupperware et les emails\n00:13 Pareil pour le Tupperware\n00:14 rempli de moisissure\n00:14 sur ma table de nuit\n00:15 Ça fait deux mois\n00:16 que je le remets à demain\n00:16 Je suis comme ça\n00:17 je remets tout à demain\n00:18 J'ai 284 emails non lus\n\n# La gestion des priorités\n00:19 un jour j'ai décidé de les trier\n00:20 j'ai répondu à quatre emails\n00:21 et j'en ai mis 280\n00:22 dans un dossier à répondre\n00:23 Ça fait trois mois\n00:24 que je pisse dans le noir\n00:25 parce que j'ai pas changé l'ampoule\n\n# Trop d'étapes\n00:26 Quand je veux me désabonner d'un truc\n00:27 s'il y a plus de deux étapes\n00:28 appuyer sur trois\n00:33 je reste abonné\n00:34 Je dois jeter les piles\n00:35 que j'ai pas jetées à la poubelle\n00:36 parce qu'on m'a dit de pas les jeter\n00:37 à la poubelle\n\n# La carte de cinéma\n00:38 Je dois résilier ma carte de cinéma\n00:39 parce que j'y vais plus depuis des mois\n00:40 et quand je veux au cinéma\n00:41 je retrouve plus ma carte\n00:42 Je range chez moi\n00:43 que quand quelqu'un doit venir\n00:44 En vérité\n00:44 je déplace le bordel\n\n# Sauvegardes et centimes\n00:45 Je dois faire quelque chose\n00:46 de mes centimes\n00:47 J'ai acheté un disque dur\n00:48 pour sauvegarder mes données au cas où\n00:49 j'ai jamais fait de sauvegarde dessus\n00:50 j'ai perdu mes données\n00:51 je me suis dit que j'étais trop con\n00:52 c'était il y a un an\n00:54 j'ai toujours pas fait de sauvegarde\n\n# Livres et allocations\n00:55 J'ai commencé 12 livres\n00:56 j'en ai fini aucun\n00:57 J'ai le droit aux allocations\n00:58 j'ai mis mon nom, mon prénom\n00:59 après il fallait mettre ses revenus\n01:00 de l'année dernière\n01:01 j'ai pas d'allocations\n\n# Qui est Alice ?\n01:02 J'ai acheté un cadre\n01:03 pour mettre une photo de mes parents dedans\n01:04 je l'ai jamais fait\n01:05 ça fait six mois que j'ai la photo\n01:06 d'une petite fille que je connais pas\n01:07 sur ma table de nuit\n01:08 je l'ai appelée Alice\n01:09 et lui, c'est Rookie\n\n# Demain et Jamais\n01:10 Bref, je remets tout à demain\n01:13 Moi, c'est demain\n01:15 Quand ce type me donne un truc\n01:16 moi, je le donne à jamais",
+    "phrases": [
+      {
+        "id": "phrase_2",
+        "text_l1": "Bref",
+        "text_l2": "In short",
+        "timestamp": "00:06"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Lui, c'est demain",
+        "text_l2": "Tomorrow’s his thing",
+        "timestamp": "00:07"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Tous les trucs que j'ai à faire",
+        "text_l2": "All the stuff I’ve got to do",
+        "timestamp": "00:07"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "je les remets à demain",
+        "text_l2": "I put off till tomorrow",
+        "timestamp": "00:08"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Depuis deux ans",
+        "text_l2": "For two years now",
+        "timestamp": "00:09"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "je dois résilier l'abonnement internet",
+        "text_l2": "I’ve had to cancel the internet",
+        "timestamp": "00:10"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "de mon ancien appartement",
+        "text_l2": "for my old apartment",
+        "timestamp": "00:11"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "je le remets à demain",
+        "text_l2": "I keep putting it off till tomorrow",
+        "timestamp": "00:12"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Pareil pour le Tupperware",
+        "text_l2": "Same with the Tupperware",
+        "timestamp": "00:13"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "rempli de moisissure",
+        "text_l2": "full of mold",
+        "timestamp": "00:14"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "sur ma table de nuit",
+        "text_l2": "on my nightstand",
+        "timestamp": "00:14"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Ça fait deux mois",
+        "text_l2": "It’s been two months",
+        "timestamp": "00:15"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "que je le remets à demain",
+        "text_l2": "I keep putting it off till tomorrow",
+        "timestamp": "00:16"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Je suis comme ça",
+        "text_l2": "That’s just how I am",
+        "timestamp": "00:16"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "je remets tout à demain",
+        "text_l2": "I put everything off till tomorrow",
+        "timestamp": "00:17"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "J'ai 284 emails non lus",
+        "text_l2": "I’ve got 284 unread emails",
+        "timestamp": "00:18"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "un jour j'ai décidé de les trier",
+        "text_l2": "One day I decided to sort them",
+        "timestamp": "00:19"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "j'ai répondu à quatre emails",
+        "text_l2": "I replied to four emails",
+        "timestamp": "00:20"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "et j'en ai mis 280",
+        "text_l2": "and filed 280",
+        "timestamp": "00:21"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "dans un dossier à répondre",
+        "text_l2": "in a \"to reply\" folder",
+        "timestamp": "00:22"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Ça fait trois mois",
+        "text_l2": "It’s been three months",
+        "timestamp": "00:23"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "que je pisse dans le noir",
+        "text_l2": "I’ve been pissing in the dark",
+        "timestamp": "00:24"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "parce que j'ai pas changé l'ampoule",
+        "text_l2": "because I haven’t changed the bulb",
+        "timestamp": "00:25"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Quand je veux me désabonner d'un truc",
+        "text_l2": "When I want to unsubscribe from something",
+        "timestamp": "00:26"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "s'il y a plus de deux étapes",
+        "text_l2": "if there are more than two steps",
+        "timestamp": "00:27"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "appuyer sur trois",
+        "text_l2": "or three clicks",
+        "timestamp": "00:28"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "je reste abonné",
+        "text_l2": "I stay subscribed",
+        "timestamp": "00:33"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Je dois jeter les piles",
+        "text_l2": "I need to throw out the batteries",
+        "timestamp": "00:34"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "que j'ai pas jetées à la poubelle",
+        "text_l2": "I didn’t toss in the trash",
+        "timestamp": "00:35"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "parce qu'on m'a dit de pas les jeter",
+        "text_l2": "because I was told not to toss them",
+        "timestamp": "00:36"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "à la poubelle",
+        "text_l2": "in the trash",
+        "timestamp": "00:37"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "Je dois résilier ma carte de cinéma",
+        "text_l2": "I need to cancel my movie pass",
+        "timestamp": "00:38"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "parce que j'y vais plus depuis des mois",
+        "text_l2": "since I haven’t been in months",
+        "timestamp": "00:39"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "et quand je veux au cinéma",
+        "text_l2": "and when I do want to go to the movies",
+        "timestamp": "00:40"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "je retrouve plus ma carte",
+        "text_l2": "I can’t find my card",
+        "timestamp": "00:41"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "Je range chez moi",
+        "text_l2": "I only clean my place",
+        "timestamp": "00:42"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "que quand quelqu'un doit venir",
+        "text_l2": "when someone’s coming over",
+        "timestamp": "00:43"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "En vérité",
+        "text_l2": "Truth is",
+        "timestamp": "00:44"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "je déplace le bordel",
+        "text_l2": "I just move the mess around",
+        "timestamp": "00:44"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Je dois faire quelque chose",
+        "text_l2": "I need to do something",
+        "timestamp": "00:45"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "de mes centimes",
+        "text_l2": "with my loose change",
+        "timestamp": "00:46"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "J'ai acheté un disque dur",
+        "text_l2": "I bought an external drive",
+        "timestamp": "00:47"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "pour sauvegarder mes données au cas où",
+        "text_l2": "to back up my data just in case",
+        "timestamp": "00:48"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "j'ai jamais fait de sauvegarde dessus",
+        "text_l2": "I never backed anything up on it",
+        "timestamp": "00:49"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "j'ai perdu mes données",
+        "text_l2": "I lost my data",
+        "timestamp": "00:50"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "je me suis dit que j'étais trop con",
+        "text_l2": "told myself I was an idiot",
+        "timestamp": "00:51"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "c'était il y a un an",
+        "text_l2": "That was a year ago",
+        "timestamp": "00:52"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "j'ai toujours pas fait de sauvegarde",
+        "text_l2": "I still haven’t backed anything up",
+        "timestamp": "00:54"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "J'ai commencé 12 livres",
+        "text_l2": "I started 12 books",
+        "timestamp": "00:55"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "j'en ai fini aucun",
+        "text_l2": "I haven’t finished a single one",
+        "timestamp": "00:56"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "J'ai le droit aux allocations",
+        "text_l2": "I’m entitled to benefits",
+        "timestamp": "00:57"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "j'ai mis mon nom, mon prénom",
+        "text_l2": "I put my last name, first name",
+        "timestamp": "00:58"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "après il fallait mettre ses revenus",
+        "text_l2": "then I had to enter my income",
+        "timestamp": "00:59"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "de l'année dernière",
+        "text_l2": "from last year",
+        "timestamp": "01:00"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "j'ai pas d'allocations",
+        "text_l2": "I never got the benefits",
+        "timestamp": "01:01"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "J'ai acheté un cadre",
+        "text_l2": "I bought a frame",
+        "timestamp": "01:02"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "pour mettre une photo de mes parents dedans",
+        "text_l2": "to put a photo of my parents in it",
+        "timestamp": "01:03"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "je l'ai jamais fait",
+        "text_l2": "I never did",
+        "timestamp": "01:04"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "ça fait six mois que j'ai la photo",
+        "text_l2": "It’s been six months I’ve had the photo",
+        "timestamp": "01:05"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "d'une petite fille que je connais pas",
+        "text_l2": "of a little girl I don’t know",
+        "timestamp": "01:06"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "sur ma table de nuit",
+        "text_l2": "on my nightstand",
+        "timestamp": "01:07"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "je l'ai appelée Alice",
+        "text_l2": "I named her Alice",
+        "timestamp": "01:08"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "et lui, c'est Rookie",
+        "text_l2": "and him, Rookie",
+        "timestamp": "01:09"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Bref, je remets tout à demain",
+        "text_l2": "In short, I put everything off till tomorrow",
+        "timestamp": "01:10"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "Moi, c'est demain",
+        "text_l2": "Tomorrow’s my thing",
+        "timestamp": "01:13"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "Quand ce type me donne un truc",
+        "text_l2": "When that guy gives me something",
+        "timestamp": "01:15"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "moi, je le donne à jamais",
+        "text_l2": "I give it to never",
+        "timestamp": "01:16"
+      }
+    ],
+    "similar_sounds": "Bref\nLui, [sait] demain\nTous les trucs que j&#39;ai à [fer]\nje les [ramasse] à demain\nDepuis deux ans\nje dois résilier [l'abonné] internet\nde mon ancien appartement\nje le [ramène] à demain\nPareil pour le Tupperware\nrempli de moisissure\n[Sûr] ma table de nuit\nÇa fait deux [moi]\nque je le [ramasse] à demain\nJe suis comme ça\nje [ramène] tout à demain\nJ&#39;ai 284 emails non lus\nun jour j&#39;ai décidé de les [crier]\nj&#39;ai répondu à quatre emails\net j&#39;en ai mis 280\ndans un dossier à répondre\nÇa fait trois mois\nque je [passe] dans le noir\nparce que j&#39;ai pas [rangé] l&#39;ampoule\nQuand je veux me désabonner d&#39;un truc\ns&#39;il y a plus de deux étapes\nappuyer [sûr] trois\nje reste abonné\nJe dois jeter les [fils]\nque j&#39;ai pas jetées à la poubelle\nparce qu&#39;on m&#39;a dit de pas les jeter\nà la poubelle\nJe dois résilier ma [part] de cinéma\nparce que j&#39;y vais plus depuis des mois\net quand je veux au cinéma\nje retrouve plus ma carte\nJe range chez [soi]\nque quand quelqu&#39;un doit venir\nEn vérité\nje [remplace] le bordel\nJe dois faire quelque chose\nde mes centimes\nJ&#39;ai acheté un disque [pur]\npour sauvegarder mes données au cas où\nj&#39;ai jamais fait de sauvegarde [dessous]\nj&#39;ai perdu mes données\nje me suis dit que j&#39;étais trop [bon]\nc&#39;était il y a [un âne]\nj&#39;ai toujours pas fait de sauvegarde\nJ&#39;ai commencé 12 [lèvres]\nj&#39;en ai fini aucun\nJ&#39;ai le [trois] aux allocations\nj&#39;ai mis mon nom, mon prénom\naprès il fallait mettre ses revenus\nde l&#39;année dernière\nj&#39;ai pas [des locations]\nJ&#39;ai acheté un cadre\npour [maître] une photo de mes parents dedans\nje l&#39;ai jamais fait\nça fait six mois que j&#39;ai la photo\nd&#39;une petite [fils] que je connais pas\nsur ma table de nuit\nje l&#39;ai appelée [Valise]\net lui, c&#39;est Rookie\nBref, je [ramène] tout à demain\nMoi, [sais] demain\nQuand ce type me donne un truc\nmoi, je le donne à jamais",
+    "phrases_with_token_translations": "[Bref] => [In short] # single word to phrase mapping, but we must mark it both sides\n\nLui, [c'est demain] => [Tomorrow's his] thing\nLui, [c'est] demain => [His] thing\n[Lui], c'est demain => [Tomorrow's] his thing\n\n[Tous] les trucs que j'ai à faire => [All] the stuff I've got to do\nTous [les] trucs que j'ai à faire => All [the] stuff I've got to do\nTous les [trucs] que j'ai à faire => All the [stuff] I've got to do\nTous les trucs [que j'ai à faire] => All the stuff [I've got to to do]\n\n[je] les remets à demain => [I] put off till tomorrow\nje [les] remets à demain => I put [them] off till tomorrow\nje les [remets] à demain => I [put] them off till tomorrow\nje les remets [à demain] => I put them off [till tomorrow]\n\n[Depuis] deux ans => [For] two years now\nDepuis [deux ans] => [two years now]\n\n[je] dois résilier l'abonnement internet => [I've] had to cancel the internet\nje [dois] résilier l'abonnement internet => I've [had] to cancel the internet\nje dois [résilier] l'abonnement internet => I've had to [cancel] the internet\nje dois résilier [l'abonnement internet] => I've had to cancel [the internet]\n\n[de] mon ancien appartement => [for] my old apartment\nde [mon] ancien appartement => for [my] old apartment\nde mon [ancien] appartement => for my [old] apartment\nde mon ancien [appartement] => for my old [apartment]\n\n[je] [le] remets à demain => [I] [it] put off till tomorrow\nje le [remets] à demain => I it [keep putting] off till tomorrow # Custom translation for \"remets\" as \"keep putting\" instead of \"put again\"\nje le remets [à demain] => I it keep putting off [till tomorrow]\n\n[Pareil] pour le Tupperware => [Same] with the Tupperware\nPareil [pour le] Tupperware => Same [with the] Tupperware\nPareil pour le [Tupperware] => Same with the [Tupperware]\n\n[rempli] de moisissure => [full] of mold\nrempli [de] moisissure => [of] mold\nrempli de [moisissure] => full of [mold]\n\n[sur] ma table de nuit => [on] my nightstand\nsur [ma] table de nuit => on [my] nightstand\nsur ma [table de nuit] => on my [nightstand]\n\n[Ça] fait deux mois => [It's] been two months\nÇa [fait] deux mois => It's [been] two months\nÇa fait [deux mois] => It's been [two months]\n\n[que] je le remets à demain => [I] keep putting it off till tomorrow\nque [je] le remets à demain => I [keep] putting it off till tomorrow\nque je [le] remets à demain => I keep [putting] it off till tomorrow\nque je le [remets] à demain => I keep putting [it] off till tomorrow\nque je le remets [à demain] => I keep putting it off [till tomorrow]\n\n[Je] suis comme ça => [That’s] just how I am\nJe [suis] comme ça => That’s just [how] I am\nJe suis [comme] ça => That’s just how [I] am\nJe suis comme [ça] => That’s just how I [am]\n\n[je] remets tout à demain => [I] put everything off till tomorrow\nje [remets] tout à demain => put\nje remets [tout] à demain => everything\nje remets tout [à demain] => off till tomorrow\n\n[J']ai 284 emails non lus => [I’ve] got 284 unread emails\nJ'[ai] 284 emails non lus => have\nJ'ai [284] emails non lus => 284\nJ'ai 284 [emails] non lus => unread [emails]\nJ'ai 284 emails [non] lus => unread\nJ'ai 284 emails non [lus] => emails\n\n[un] jour j'ai décidé de les trier => [One] day I decided to sort them\nun [jour] j'ai décidé de les trier => One [day] I decided to sort them\nun jour [j']ai décidé de les trier => I ['ve] decided to sort them\nun jour j'[ai] décidé de les trier => have\nun jour j'ai [décidé] de les trier => decided\nun jour j'ai décidé [de] les trier => to\nun jour j'ai décidé de [les] trier => [them]\nun jour j'ai décidé de les [trier] => [sort]\n\n[j']ai répondu à quatre emails => [I] replied to four emails\nj'[ai] répondu à quatre emails => [replied]\nj'ai [répondu] à quatre emails => to\nj'ai répondu [à] quatre emails => to [four emails]\nj'ai répondu à [quatre] emails => four\nj'ai répondu à quatre [emails] => emails\n\n[et] j'en ai mis 280 => and [filed] 280\net [j']en ai mis 280 => I\net j'[en] ai mis 280 => have # here \"en\" refers back to the emails from previous sentence\net j'en [ai] mis 280 => have\net j'en ai [mis] 280 => filed\net j'en ai mis [280] => 280\n\n[dans] un dossier à répondre => in\ndans [un] dossier à répondre => a\ndans un [dossier] à répondre => folder\ndans un dossier [à répondre] => \"to reply\"\n\n[Ça] fait trois mois => It’s [been] three months\nÇa [fait] trois mois => been\nÇa fait [trois] mois => three\nÇa fait trois [mois] => months\n\n[que] je pisse dans le noir => I’ve [been] pissing in the dark\nque [je] pisse dans le noir => I have been\nque je [pisse] dans le noir => pissing\nque je pisse [dans] le noir => in\nque je pisse dans [le] noir => the\nque je pisse dans le [noir] => dark\n\n[parce] que j'ai pas changé l'ampoule => because\nparce [que] j'ai pas changé l'ampoule => that\nparce que [j']ai pas changé l'ampoule => I\nparce que j'[ai] pas changé l'ampoule => haven’t # original has \"ai pas\" which is \"have not/haven't\"\nparce que j'ai [pas] changé l'ampoule => not\nparce que j'ai pas [changé] l'ampoule => changed\nparce que j'ai pas changé [l']ampoule => the\nparce que j'ai pas changé l'[ampoule] => bulb\n\n[Quand] je veux me désabonner d'un truc => When\nQuand [je] veux me désabonner d'un truc => I\nQuand je [veux] me désabonner d'un truc => want\nQuand je veux [me] désabonner d'un truc => to\nQuand je veux me [désabonner] d'un truc => unsubscribe\nQuand je veux me désabonner [d']un truc => from\nQuand je veux me désabonner d'[un] truc => a\nQuand je veux me désabonner d'un [truc] => something\n\n[s'il] y a plus de deux étapes => [if] there are more than two steps\ns'il [y a] plus de deux étapes => if [there are] more than two steps\ns'il y a [plus] de deux étapes => if there are [more] than two steps\ns'il y a plus [de deux] étapes => if there are more than [two] steps\ns'il y a plus de deux [étapes] => if there are more than two [steps]\n\n[appuyer] sur trois => [or] three clicks\nappuyer sur [trois] => or three [clicks]\n\n[je] reste abonné => [I] stay subscribed\nje [reste] abonné => stay [subscribed]\n\n[Je] dois jeter les piles => [I] need to throw out the batteries\nJe [dois] jeter les piles => I need [to] throw out the batteries\nJe dois [jeter] les piles => I need to throw out [the batteries] # jeter is \"to throw\" but the direct object \"batteries\" is what's being thrown\nJe dois jeter [les] piles => I need to throw out the [batteries] # les is the definite article \"the\" for the plural \"batteries\"\nJe dois jeter les [piles] => I need to throw out the [batteries] # piles is \"batteries\"\n\n[que] j'ai pas jetées à la poubelle => I [didn’t] toss in the trash\nque j'ai [pas] jetées à la poubelle => I didn’t [toss] in the trash\nque j'ai pas jetées [à la poubelle] => I didn’t toss in the trash # Note: here the French phrase \"à la poubelle\" appears later in the English as well, so skipping\nque j'ai pas jetées à la poubelle => in the trash\n\n[parce] qu'on m'a dit de pas les jeter => [because] I was told not to toss them\nparce qu'[on] m'a dit de pas les jeter => because [I] was told not to toss them\nparce qu'on [m'a] dit de pas les jeter => because I was [told] not to toss them\nparce qu'on m'a [dit] de pas les jeter => because I was told [not to] toss them\nparce qu'on m'a dit [de] pas les jeter => because I was told not to toss them # \"de\" is part of the negative form here\nparce qu'on m'a dit de [pas] les jeter => because I was told not [to] toss them\nparce qu'on m'a dit de pas [les] jeter => because I was told not to toss [them]\nparce qu'on m'a dit de pas les [jeter] => because I was told not to toss them\n\n[à] la poubelle => [in] the trash\nà la [poubelle] => the [trash]\n\n[Je] dois résilier ma carte de cinéma => [I] need to cancel my movie pass\nJe [dois] résilier ma carte de cinéma => I need [to] cancel my movie pass\nJe dois [résilier] ma carte de cinéma => I need to [cancel] my movie pass\nJe dois résilier [ma] carte de cinéma => I need to cancel [my] movie pass\nJe dois résilier ma [carte] de cinéma => I need to cancel my [pass]\nJe dois résilier ma carte [de cinéma] => I need to cancel my movie [pass] # \"de cinéma\" and \"movie\" are both in the middle\n\n[parce] que j'y vais plus depuis des mois => [since] I haven’t been in months\nparce que j'[y] vais plus depuis des mois => since I haven’t been [there] in months\nparce que j'y [vais] plus depuis des mois => since I haven’t [been] there in months\nparce que j'y vais [plus] depuis des mois => since I [haven’t] been there in months\nparce que j'y vais plus [depuis] des mois => since I haven’t been there [for] months\nparce que j'y vais plus depuis [des] mois => since I haven’t been there for [months]\n\n[et] quand je veux au cinéma => [and] when I do want to go to the movies\net [quand] je veux au cinéma => and [when] I do want to go to the movies\net quand [je] veux au cinéma => and when [I] do want to go to the movies\net quand je [veux] au cinéma => and when I [want] to go to the movies\net quand je veux [au cinéma] => and when I want to go to the [movies]\n\n[je] retrouve plus ma carte => [I] can’t find my card\nje [retrouve] plus ma carte => can’t [find] my card\nje retrouve [plus] ma carte => I [can’t] find my card\nje retrouve plus [ma] carte => I can’t find [my] card\nje retrouve plus ma [carte] => I can’t find my [card]\n\n[Je] range chez moi => [I] only clean my place\nJe [range] chez moi => only [clean] my place\nJe range [chez moi] => my [place]\n\n[que] quand quelqu'un doit venir => [when] someone’s coming over # \"que\" is part of a larger expression but appears as a standalone word in the text\nque [quand] quelqu'un doit venir => when [someone's] coming over # \"someone's\" is contracted but corresponds to \"quelqu'un\" here\nque quand [quelqu'un] doit venir => when someone’s [coming] over # \"doit venir\" is \"must come\" but the English uses \"coming over\". Better to map to \"coming\"\nque quand quelqu'un [doit venir] => when someone’s coming [over] # \"doit venir\" becomes \"coming over\"\n\n[En] vérité => Truth is\nEn [vérité] => [Truth] is\n\n[je] déplace le bordel => [I] just move the mess around\nje [déplace] le bordel => I just [move] the mess around\nje déplace [le] bordel => I just move [the] mess around\nje déplace le [bordel] => I just move the mess [around] # Though \"bordel\" usually means \"mess,\" in this context it's \"around\" that aligns the meaning\n\n[Je] dois faire quelque chose => [I] need to do something\nJe [dois] faire quelque chose => I [need] to do something\nJe dois [faire] quelque chose => I need to [do] something\nJe dois faire [quelque chose] => I need to do [something]\n\n[de] mes centimes => with my loose change\nde [mes] centimes => with [my] loose change\nde mes [centimes] => with my [loose change] # \"centimes\" are cents, but \"loose change\" is the equivalent expression\n\n[J']ai acheté un disque dur => [I] bought an external drive\nJ'[ai] acheté un disque dur => I [bought] an external drive\nJ'ai [acheté] un disque dur => I bought [an] external drive\nJ'ai acheté [un] disque dur => I bought an [external] drive\nJ'ai acheté un [disque dur] => I bought an external [drive]\n\n[pour] sauvegarder mes données au cas où => [to] back up my data just in case\npour [sauvegarder] mes données au cas où => to [back] up my data just in case\npour sauvegarder [mes] données au cas où => to back up [my] data just in case\npour sauvegarder mes [données] au cas où => to back up my [data] just in case\npour sauvegarder mes données [au cas où] => to back up my data just [in case]\n\n[j']ai jamais fait de sauvegarde dessus => [I] never backed anything up on it\nj'[ai] jamais fait de sauvegarde dessus => I [never] backed anything up on it\nj'ai [jamais] fait de sauvegarde dessus => I never [backed] anything up on it\nj'ai jamais [fait] de sauvegarde dessus => I never backed [anything] up on it\nj'ai jamais fait [de] sauvegarde dessus => I never backed anything [up] on it\nj'ai jamais fait de [sauvegarde] dessus => I never backed anything up [on] it\nj'ai jamais fait de sauvegarde [dessus] => I never backed anything up on [it]\n\n[j']ai perdu mes données => [I] lost my data\nj'[ai] perdu mes données => I [lost] my data\nj'ai [perdu] mes données => I lost [my] data\nj'ai perdu [mes] données => I lost my [data]\n\n[je] me suis dit que j'étais trop con => told myself I was an idiot\nje [me] suis dit que j'étais trop con => [I] was an idiot\nje me [suis] dit que j'étais trop con => told [myself] I was an idiot\nje me suis [dit] que j'étais trop con => told myself I [was] an idiot\nje me suis dit [que] j'étais trop con => told myself I was [an] idiot\nje me suis dit que [j'étais] trop con => told myself I was an [idiot]\nje me suis dit que j'étais [trop] con => told myself I was an idio[t]\n\n[c']était il y a un an => [That] was a year ago\nc'[était] il y a un an => That [was] a year ago\nc'était [il] y a un an => That was [a] year ago\nc'était il [y] a un an => That was a [year] ago\nc'était il y [a] un an => That was a year [ago]\nc'était il y a [un] an => That was a year a[go]\nc'était il y a un [an] => That was a year a[go]\n\n[j']ai toujours pas fait de sauvegarde => [I] still haven’t backed anything up\nj'[ai] toujours pas fait de sauvegarde => I [still] haven’t backed anything up\nj'ai [toujours] pas fait de sauvegarde => I still [haven’t] backed anything up\nj'ai toujours [pas] fait de sauvegarde => I still haven’t [backed] anything up\nj'ai toujours pas [fait] de sauvegarde => I still haven’t backed [anything] up\nj'ai toujours pas fait [de] sauvegarde => I still haven’t backed anything [up]\n\n[J'ai] commencé 12 livres => [I] started 12 books\nJ'ai [commencé] 12 livres => I [started] 12 books\nJ'ai commencé [12] livres => I started [12] books\nJ'ai commencé 12 [livres] => I started 12 [books]\n\n[j']en ai fini aucun => I [have] # Custom translation for \"en\"\nj'en [ai] fini aucun => I [haven't] finished a single one\nj'en ai [fini] aucun => I haven't [finished] a single one\nj'en ai fini [aucun] => I haven't finished [a single one]\n\n[J'ai] le droit aux allocations => [I'm] entitled to benefits\nJ'ai [le] droit aux allocations => [am] entitled to benefits # Custom translation separating \"le droit\" meaning \"the right\" but in this context \"entitled\"\nJ'ai le [droit] aux allocations => [entitled] to benefits # Custom translation\nJ'ai le droit [aux allocations] => entitled to [benefits] # Note: \"aux\" is a contraction of \"à les\" but we treat it as a unit with \"allocations\"\n# We don't mark \"à\" separately as it's part of the contraction\n\n[j'ai] mis mon nom, mon prénom => [I] put my last name, first name\nj'ai [mis] mon nom, mon prénom => I [put] my last name, first name\nj'ai mis [mon] nom, mon prénom => I put [my] last name, first name\nj'ai mis mon [nom], mon prénom => I put my [last name], first name\nj'ai mis mon nom, [mon] prénom => I put my last name, [first] name\nj'ai mis mon nom, mon [prénom] => I put my last name, first [name]\n\n[après] il fallait mettre ses revenus => [then] I had to enter my income\naprès il [fallait] mettre ses revenus => I [had] to enter my income\naprès il fallait [mettre] ses revenus => I had to [enter] my income\naprès il fallait mettre [ses] revenus => I had to enter [my] income\naprès il fallait mettre ses [revenus] => I had to enter my [income]\n\n[de l']année dernière => [from] last year # \"de l'\" is part of \"année\" and can't be meaningfully separated\nde l'[année] dernière => last [year]\nde l'année [dernière] => [last] year\n\n[j']ai pas d'allocations => I [never] got the benefits # Custom translation for \"j'ai pas\"\nj'ai [pas] d'allocations => I never [got] the benefits # Custom translation for \"pas\"\nj'ai pas [d'allocations] => I [the benefits] # Note: \"d'\" is a contraction that can't stand alone\n# We treat \"d'allocations\" as a unit for translation\n\n[J']ai acheté un cadre => [I] bought a frame\nJ'ai [acheté] un cadre => I [bought] a frame\nJ'ai acheté [un] cadre => I bought [a] frame\nJ'ai acheté un [cadre] => I bought a [frame]\n\n[pour] mettre une photo de mes parents dedans => [to] put a photo of my parents in it\npour [mettre] une photo de mes parents dedans => To [put] a photo of my parents in it\npour mettre [une] photo de mes parents dedans => to put [a] photo of my parents in it\npour mettre une [photo] de mes parents dedans => to put a [photo] of my parents in it\npour mettre une photo [de] mes parents dedans => to put a photo [of] my parents in it\npour mettre une photo de [mes] parents dedans => to put a photo of [my] parents in it\npour mettre une photo de mes [parents] dedans => to put a photo of my [parents] in it\npour mettre une photo de mes parents [dedans] => to put a photo of my parents in [it]\n\n[je] l'ai jamais fait => [I] never did\nje [l']ai jamais fait => I [it] have never done # Custom translation showing the direct object\nje l'[ai] jamais fait => I [have] never done it\nje l'ai [jamais] fait => I have [never] done it\nje l'ai jamais [fait] => I have never [done] it\n\n[ça] fait six mois que j'ai la photo => [It's] been six months I've had the photo\nça [fait] six mois que j'ai la photo => It's [been] six months I've had the photo\nça fait [six] mois que j'ai la photo => It's been [six] months I've had the photo\nça fait six [mois] que j'ai la photo => It's been six [months] I've had the photo\nça fait six mois [que] j'ai la photo => It's been six months [I've] had the photo\nça fait six mois que [j']ai la photo => It's been six months I'[ve] had the photo\nça fait six mois que j'[ai] la photo => It's been six months I've [had] the photo\nça fait six mois que j'ai [la] photo => It's been six months I've had [the] photo\nça fait six mois que j'ai la [photo] => It's been six months I've had the [photo] # Note: \"photo\" in both languages\n\n[d']une petite fille que je connais pas => [of] a little girl I don't know\nd'[une] petite fille que je connais pas => of [a] little girl I don't know\nd'une [petite] fille que je connais pas => of a [little] girl I don't know\nd'une petite [fille] que je connais pas => of a little [girl] I don't know\nd'une petite fille [que] je connais pas => of a little girl that [I] don't know\nd'une petite fille que [je] connais pas => of a little girl that I [don't] know\nd'une petite fille que je [connais] pas => of a little girl I [know] [don't] # Note: \"connais\" means \"know\" but we need to show the negation\nd'une petite fille que je connais [pas] => of a little girl I don't [know] # Custom translation for the negation\n\n[sur] ma table de nuit => [on] my nightstand\nsur [ma] table de nuit => [my] nightstand # \"ma\" is possessive adjective, maps to \"on my\"\nsur ma [table de nuit] => on my [nightstand] # \"table de nuit\" is a compound noun meaning \"nightstand\"\n\n[je] l'ai appelée Alice => [I] named her Alice\nje [l'ai] appelée Alice => I [named] her Alice\nje l'ai [appelée] Alice => I named her [Alice]\nje l'ai appelée [Alice] => I named her [Alice] # Both \"appelée Alice\" and \"Alice\" are mapped to show the name connection\n\n[et] lui, c'est Rookie => [and] him, Rookie\net [lui], c'est Rookie => and [him], Rookie \net lui, [c'est] Rookie => and him, Rookie # French has \"c'est\" which doesn't translate directly, but it's implied in the English\net lui, c'est [Rookie] => and him, [Rookie]\n\n[Bref], je remets tout à demain => [In short], I put everything off till tomorrow\nBref, [je] remets tout à demain => In short, [I] put everything off till tomorrow\nBref, je [remets] tout à demain => In short, I [put] everything off till tomorrow\nBref, je remets [tout] à demain => In short, I put [everything] off till tomorrow\nBref, je remets tout [à demain] => In short, I put everything off [till tomorrow]\n\n[Moi], c'est demain => [Tomorrow's] my thing\nMoi, [c'est] demain => Tomorrow’s [my] thing\nMoi, c'est [demain] => Tomorrow’s my [thing] # \"demain\" can't be split so it maps to the whole concept represented by \"thing\"\n\n[Quand] ce type me donne un truc => [When] that guy gives me something\nQuand [ce type] me donne un truc => When [that guy] gives me something\nQuand ce type [me] donne un truc => When that guy [gives] me something\nQuand ce type me [donne] un truc => When that guy gives [me] something\nQuand ce type me donne [un truc] => When that guy gives me [something]\n\n[moi], je le donne à jamais => [I] give it to never\nmoi, [je] le donne à jamais => I [give] it to never\nmoi, je [le] donne à jamais => I give [it] to never\nmoi, je le [donne] à jamais => I give it [to never] \nmoi, je le donne [à jamais] => I give it to never # Entire phrase \"à jamais\" is mapped as \"to never\"\n\n"
+  },
+  "created_at": "2026-03-31 19:27:39 UTC",
+  "updated_at": "2026-03-31 20:56:28 UTC",
+  "exported_at": "2026-03-31T20:56:42Z"
+}

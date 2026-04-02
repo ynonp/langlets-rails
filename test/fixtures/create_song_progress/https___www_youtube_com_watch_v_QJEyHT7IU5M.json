@@ -1,0 +1,268 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=QJEyHT7IU5M",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "lessons": "# Une Soirée Déterminante\n00:02.00 Bref, c'était une soirée.\n00:03.10 Un mec jouait de la guitare dans une chambre.\n00:04.50 - Waouh, tu joues trop bien.\n00:06.50 Je me suis dit qu'à moi aussi je voulais qu'on dise :\n00:08.00 - Waouh, tu joues trop bien.\n\n# Les Débuts de l'Apprentissage\n00:10.00 Alors j'ai emprunté une guitare à Ben.\n00:11.50 Il m'a dit qu'il manquait une corde mais qu'elle servait à rien.\n00:13.00 - Ah, il manque une corde, mais elle sert à rien.\n00:14.50 Je l'ai cru.\n00:15.50 J'ai commencé à apprendre en regardant des vidéos sur Internet,\n00:17.00 mais j'allais souvent sur des vidéos qui n'avaient aucun rapport.\n\n# La Persévérance et les Doutes\n00:20.00 Un jour, je m'y suis mis sérieusement.\n00:21.50 Au début, c'était pas top.\n00:22.50 Après, c'était pas top.\n00:24.00 Et au bout d'un moment, c'était pas top.\n00:26.00 En y réfléchissant, j'ai repensé à toutes les fois où Ben m'a dit\n00:27.50 qu'un truc servait à rien.\n\n# Les Conseils Douteux de Ben\n00:29.00 - Un visa pour les États-Unis ? Pff, ça sert à rien.\n00:32.00 - Tiens, pour mon vélo.\n00:33.00 - Bah, il manque un bout de frein, mais ça sert à rien.\n00:34.50 - Un bouton sur la paupière, donc on va pas voir un médecin\n00:36.00 pour ça, ça sert à rien.\n\n# La Réalisation et le Progrès\n00:38.50 Après être allé me faire enlever mon kyste à l'œil,\n00:40.00 je me suis dit que j'allais racheter une corde.\n00:42.00 C'était mieux, mais j'ai dû tout réapprendre.\n00:43.50 Un jour, je suis allé sur des forums.\n00:45.00 J'ai appris qu'on pouvait serrer des meufs avec seulement quatre accords.\n00:46.50 Le Do, le Sol, le La, et enfin le Mi.\n\n# La Pratique Intensive\n00:49.00 Je les ai travaillés sans relâche.\n00:51.50 J'ai essayé de chanter en même temps. C'était super dur.\n00:55.00 J'avais l'impression d'essayer de me branler avec des gants de boxe\n00:56.50 en récitant l'alphabet à l'envers.\n00:59.00 - X, Y, W... Ah putain, j'y arrive pas !\n01:02.50 Putain, j'y arrive pas !\n\n# La Réussite Finale\n01:04.00 Pendant un an, j'ai pas lâché l'affaire.\n01:18.00 Et puis...\n01:19.00 Mon cœur est si gris quand il pleut.\n01:26.00 - Waouh, tu joues trop bien.\n01:29.00 Bref, je joue de la guitare.\n01:32.50 Tout ça à cause d'un putain de kyste à l'œil.\n01:39.00 - C'est vachement bien.\n01:41.50 Mais en quoi ça me concerne ?",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Bref, c'était une soirée.",
+        "text_l2": "Anyway, it was a party.",
+        "timestamp": "00:02.00"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Un mec jouait de la guitare dans une chambre.",
+        "text_l2": "Some guy was playing guitar in a bedroom.",
+        "timestamp": "00:03.10"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "- Waouh, tu joues trop bien.",
+        "text_l2": "- Wow, you play so well.",
+        "timestamp": "00:04.50"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Je me suis dit qu'à moi aussi je voulais qu'on dise :",
+        "text_l2": "I told myself I wanted people to say to me too:",
+        "timestamp": "00:06.50"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "- Waouh, tu joues trop bien.",
+        "text_l2": "- Wow, you play so well.",
+        "timestamp": "00:08.00"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Alors j'ai emprunté une guitare à Ben.",
+        "text_l2": "So I borrowed a guitar from Ben.",
+        "timestamp": "00:10.00"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Il m'a dit qu'il manquait une corde mais qu'elle servait à rien.",
+        "text_l2": "He told me a string was missing but it was useless.",
+        "timestamp": "00:11.50"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "- Ah, il manque une corde, mais elle sert à rien.",
+        "text_l2": "- Oh, a string's missing, but it's useless.",
+        "timestamp": "00:13.00"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Je l'ai cru.",
+        "text_l2": "I believed him.",
+        "timestamp": "00:14.50"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "J'ai commencé à apprendre en regardant des vidéos sur Internet,",
+        "text_l2": "I started learning by watching videos online,",
+        "timestamp": "00:15.50"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "mais j'allais souvent sur des vidéos qui n'avaient aucun rapport.",
+        "text_l2": "but I often ended up on videos that had nothing to do with it.",
+        "timestamp": "00:17.00"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Un jour, je m'y suis mis sérieusement.",
+        "text_l2": "One day, I got serious about it.",
+        "timestamp": "00:20.00"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Au début, c'était pas top.",
+        "text_l2": "At first, it wasn't great.",
+        "timestamp": "00:21.50"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "Après, c'était pas top.",
+        "text_l2": "Then, it wasn't great.",
+        "timestamp": "00:22.50"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Et au bout d'un moment, c'était pas top.",
+        "text_l2": "And after a while, it still wasn't great.",
+        "timestamp": "00:24.00"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "En y réfléchissant, j'ai repensé à toutes les fois où Ben m'a dit",
+        "text_l2": "Thinking back, I remembered all the times Ben told me",
+        "timestamp": "00:26.00"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "qu'un truc servait à rien.",
+        "text_l2": "that something was useless.",
+        "timestamp": "00:27.50"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "- Un visa pour les États-Unis ? Pff, ça sert à rien.",
+        "text_l2": "- A visa for the US? Pff, useless.",
+        "timestamp": "00:29.00"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "- Tiens, pour mon vélo.",
+        "text_l2": "- Take my bike.",
+        "timestamp": "00:32.00"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "- Bah, il manque un bout de frein, mais ça sert à rien.",
+        "text_l2": "- Well, a piece of the brake is missing, but it's useless.",
+        "timestamp": "00:33.00"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "- Un bouton sur la paupière, donc on va pas voir un médecin",
+        "text_l2": "- A bump on the eyelid, so we won't see a doctor",
+        "timestamp": "00:34.50"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "pour ça, ça sert à rien.",
+        "text_l2": "for that, it's useless.",
+        "timestamp": "00:36.00"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "Après être allé me faire enlever mon kyste à l'œil,",
+        "text_l2": "After going to get my eye cyst removed,",
+        "timestamp": "00:38.50"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "je me suis dit que j'allais racheter une corde.",
+        "text_l2": "I told myself I'd buy a new string.",
+        "timestamp": "00:40.00"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "C'était mieux, mais j'ai dû tout réapprendre.",
+        "text_l2": "It was better, but I had to relearn everything.",
+        "timestamp": "00:42.00"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Un jour, je suis allé sur des forums.",
+        "text_l2": "One day, I went on some forums.",
+        "timestamp": "00:43.50"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "J'ai appris qu'on pouvait serrer des meufs avec seulement quatre accords.",
+        "text_l2": "I learned you could pick up chicks with just four chords.",
+        "timestamp": "00:45.00"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Le Do, le Sol, le La, et enfin le Mi.",
+        "text_l2": "C, G, A, and finally E.",
+        "timestamp": "00:46.50"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Je les ai travaillés sans relâche.",
+        "text_l2": "I worked on them relentlessly.",
+        "timestamp": "00:49.00"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "J'ai essayé de chanter en même temps. C'était super dur.",
+        "text_l2": "I tried singing at the same time. It was super hard.",
+        "timestamp": "00:51.50"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "J'avais l'impression d'essayer de me branler avec des gants de boxe",
+        "text_l2": "I felt like I was trying to jerk off with boxing gloves",
+        "timestamp": "00:55.00"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "en récitant l'alphabet à l'envers.",
+        "text_l2": "while reciting the alphabet backwards.",
+        "timestamp": "00:56.50"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "- X, Y, W... Ah putain, j'y arrive pas !",
+        "text_l2": "- X, Y, W... Ah fuck, I can't do it!",
+        "timestamp": "00:59.00"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "Putain, j'y arrive pas !",
+        "text_l2": "Fuck, I can't do it!",
+        "timestamp": "01:02.50"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Pendant un an, j'ai pas lâché l'affaire.",
+        "text_l2": "For a year, I didn't give up.",
+        "timestamp": "01:04.00"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Et puis...",
+        "text_l2": "And then...",
+        "timestamp": "01:18.00"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "Mon cœur est si gris quand il pleut.",
+        "text_l2": "My heart is so gray when it rains.",
+        "timestamp": "01:19.00"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "- Waouh, tu joues trop bien.",
+        "text_l2": "- Wow, you play so well.",
+        "timestamp": "01:26.00"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "Bref, je joue de la guitare.",
+        "text_l2": "Anyway, I play guitar.",
+        "timestamp": "01:29.00"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "Tout ça à cause d'un putain de kyste à l'œil.",
+        "text_l2": "All because of a fucking eye cyst.",
+        "timestamp": "01:32.50"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "- C'est vachement bien.",
+        "text_l2": "- That's really cool.",
+        "timestamp": "01:39.00"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Mais en quoi ça me concerne ?",
+        "text_l2": "But what's that got to do with me?",
+        "timestamp": "01:41.50"
+      }
+    ],
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[Bref], c'était une soirée. => [Anyway], it was a party.\nBref, [c'était] une soirée. => Anyway, [it was] a party. # aligning the elided subject and verb together for clarity\nBref, c'était [une] soirée. => Anyway, it was [a] party.\nBref, c'était une [soirée]. => Anyway, it was a [party].\n\n[Un] mec jouait de la guitare dans une chambre. => [Some] guy was playing guitar in a bedroom.\nUn [mec] jouait de la guitare dans une chambre. => Some [guy] was playing guitar in a bedroom.\nUn mec [jouait] de la guitare dans une chambre. => Some guy [was playing] guitar in a bedroom.\nUn mec jouait de la [guitare] dans une chambre. => Some guy was playing [guitar] in a bedroom. # \"de la\" is part of the grammar for playing an instrument and isn't translated here\nUn mec jouait de la guitare [dans] une chambre. => Some guy was playing guitar [in] a bedroom.\nUn mec jouait de la guitare dans [une] chambre. => Some guy was playing guitar in [a] bedroom.\nUn mec jouait de la guitare dans une [chambre]. => Some guy was playing guitar in a [bedroom].\n\n- [Waouh], tu joues trop bien. => - [Wow], you play so well.\n- Waouh, [tu] joues trop bien. => - Wow, [you] play so well.\n- Waouh, tu [joues] trop bien. => - Wow, you [play] so well.\n- Waouh, tu joues [trop] bien. => - Wow, you play [so] well. # trop often means \"too\", but here matches the intensifier \"so\"\n- Waouh, tu joues trop [bien]. => - Wow, you play so [well].\n\n[Je] me suis dit qu'à moi aussi je voulais qu'on dise : => [I] told myself I wanted people to say to me too:\nJe [me suis dit] qu'à moi aussi je voulais qu'on dise : => I [told myself] I wanted people to say to me too:\nJe me suis dit qu'[à moi] aussi je voulais qu'on dise : => I told myself I wanted people to say [to me] too:\nJe me suis dit qu'à moi [aussi] je voulais qu'on dise : => I told myself I wanted people to say to me [too]:\nJe me suis dit qu'à moi aussi [je] voulais qu'on dise : => I told myself [I] wanted people to say to me too:\nJe me suis dit qu'à moi aussi je [voulais] qu'on dise : => I told myself I [wanted] people to say to me too:\nJe me suis dit qu'à moi aussi je voulais [qu'on] dise : => I told myself I wanted [people] to say to me too: # 'qu'on' maps to 'people' as the conjunction 'that' is omitted in English\nJe me suis dit qu'à moi aussi je voulais qu'on [dise] : => I told myself I wanted people to [say] to me too:\n\n- [Waouh], tu joues trop bien. => - [Wow], you play so well.\n- Waouh, [tu] joues trop bien. => - Wow, [you] play so well.\n- Waouh, tu [joues] trop bien. => - Wow, you [play] so well.\n- Waouh, tu joues [trop] bien. => - Wow, you [so] well. # \"trop\" here acts as an intensifier, mapped to \"so\"\n- Waouh, tu joues trop [bien]. => - Wow, you so [well]\n\n[Alors] j'ai emprunté une guitare à Ben. => [So] I borrowed a guitar from Ben.\nAlors [j']ai emprunté une guitare à Ben. => So [I] borrowed a guitar from Ben.\nAlors j'[ai emprunté] une guitare à Ben. => So I [borrowed] a guitar from Ben.\nAlors j'ai emprunté [une] guitare à Ben. => So I borrowed [a] guitar from Ben.\nAlors j'ai emprunté une [guitare] à Ben. => So I borrowed a [guitar] from Ben.\nAlors j'ai emprunté une guitare [à] Ben. => So I borrowed a guitar [from] Ben.\nAlors j'ai emprunté une guitare à [Ben]. => So I borrowed a guitar from [Ben].\n\n[Il] m'a dit qu'il manquait une corde mais qu'elle servait à rien. => [He] told me a string was missing but it was useless.\nIl [m']a dit qu'il manquait une corde mais qu'elle servait à rien. => He told [me] a string was missing but it was useless.\nIl m'[a dit] qu'il manquait une corde mais qu'elle servait à rien. => He [told] me a string was missing but it was useless.\nIl m'a dit qu'il [manquait] une corde mais qu'elle servait à rien. => He told me a string [was missing] but it was useless.\nIl m'a dit qu'il manquait [une] corde mais qu'elle servait à rien. => He told me [a] string was missing but it was useless.\nIl m'a dit qu'il manquait une [corde] mais qu'elle servait à rien. => He told me a [string] was missing but it was useless.\nIl m'a dit qu'il manquait une corde [mais] qu'elle servait à rien. => He told me a string was missing [but] it was useless.\nIl m'a dit qu'il manquait une corde mais qu'[elle] servait à rien. => He told me a string was missing but [it] was useless.\nIl m'a dit qu'il manquait une corde mais qu'elle [servait] à rien. => was of use, was serving\nIl m'a dit qu'il manquait une corde mais qu'elle servait [à rien]. => [at nothing], for nothing\nIl m'a dit qu'il manquait une corde mais qu'elle [servait à rien] => [was useless] # Format A is possible as the phrase maps directly in context\n\n- [Ah], il manque une corde, mais elle sert à rien. => - [Oh], a string's missing, but it's useless.\n- Ah, [il manque] une corde, mais elle sert à rien. => is missing\n- Ah, il manque [une] corde, mais elle sert à rien. => - Oh, [a] string's missing, but it's useless.\n- Ah, il manque une [corde], mais elle sert à rien. => - Oh, a [string]'s missing, but it's useless.\n- Ah, il manque une corde, [mais] elle sert à rien. => - Oh, a string's missing, [but] it's useless.\n- Ah, il manque une corde, mais [elle] sert à rien. => - Oh, a string's missing, but [it]'s useless.\n- Ah, il manque une corde, mais elle [sert à rien]. => is useless # idiomatic expression for 'is useless' or 'is good for nothing'\n\n[Je] l'ai cru. => [I] believed him.\nJe [l']ai cru. => I believed [him].\nJe l'[ai cru]. => I [believed] him.\n\nJ'[ai commencé] à apprendre en regardant des vidéos sur Internet, => I [started] learning by watching videos online,\nJ'ai commencé [à apprendre] en regardant des vidéos sur Internet, => I started [learning] by watching videos online,\nJ'ai commencé à apprendre [en] regardant des vidéos sur Internet, => I started learning [by] watching videos online,\nJ'ai commencé à apprendre en [regardant] des vidéos sur Internet, => I started learning by [watching] videos online,\nJ'ai commencé à apprendre en regardant [des vidéos] sur Internet, => I started learning by watching [videos] online,\nJ'ai commencé à apprendre en regardant des vidéos [sur Internet], => I started learning by watching videos [online], # \"sur Internet\" is a standard phrase for \"online\"\n\n[mais] j'allais souvent sur des vidéos qui n'avaient aucun rapport. => [but] I often ended up on videos that had nothing to do with it.\n[j']allais souvent sur des vidéos qui n'avaient aucun rapport. => but [I] often ended up on videos that had nothing to do with it.\nj'[allais] souvent sur des vidéos qui n'avaient aucun rapport. => ended up\nj'allais [souvent] sur des vidéos qui n'avaient aucun rapport. => but I [often] ended up on videos that had nothing to do with it.\nj'allais souvent [sur] des vidéos qui n'avaient aucun rapport. => but I often ended up [on] videos that had nothing to do with it.\nj'allais souvent sur des [vidéos] qui n'avaient aucun rapport. => but I often ended up on [videos] that had nothing to do with it.\nj'allais souvent sur des vidéos [qui] n'avaient aucun rapport. => but I often ended up on videos [that] had nothing to do with it.\nj'allais souvent sur des vidéos qui n'[avaient] aucun rapport. => but I often ended up on videos that [had] nothing to do with it.\nj'allais souvent sur des vidéos qui n'avaient [aucun rapport] => nothing to do with it # idiomatic expression for 'no connection' or 'no relation'\n\n[Un] jour, je m'y suis mis sérieusement. => [One] day, I got serious about it.\nUn [jour], je m'y suis mis sérieusement. => One [day], I got serious about it.\nUn jour, [je] m'y suis mis sérieusement. => One day, [I] got serious about it.\nUn jour, je [m'y] suis mis sérieusement. => One day, I got serious [about it] # \"y\" represents the thing mentioned previously, often translated as \"it\" or \"about it\"\nUn jour, je m'y [suis mis] sérieusement. => One day, I [got] serious about it # reflexive \"se mettre\" here translates to \"got/started\"\nUn jour, je m'y suis mis [sérieusement]. => One day, I got [serious] about it.\n\n[Au début], c'était pas top. => [At first], it wasn't great. # While \"début\" literally means beginning/start, \"Au début\" is the standard idiomatic translation for \"At first\"\nAu début, [c']était pas top. => At first, [it] wasn't great.\nAu début, c'[était] pas top. => At first, it [was]n't great.\nAu début, c'était [pas] top. => At first, it was[n't] great.\nAu début, c'était pas [top]. => At first, it wasn't [great]. # \"top\" is a common French colloquialism for \"great\" or \"excellent\"\n\n[Après], c'était pas top. => [Then], it wasn't great.\n[c']était pas top. => [it] wasn't great.\nc'[était] pas top. => it [was]n't great.\nc'était [pas] top. => it was[n't] great.\nc'était pas [top]. => Then, it wasn't [great].\n\n[Et] au bout d'un moment, c'était pas top. => [And] after a while, it still wasn't great.\nEt [au bout d'un moment], c'était pas top. => And [after a while], it still wasn't great.\nEt au bout d'un moment, [c']était pas top. => And after a while, [it] still wasn't great.\nEt au bout d'un moment, c'[était] pas top. => And after a while, it still [was]n't great.\nEt au bout d'un moment, c'était [pas] top. => And after a while, it still was[n't] great.\nEt au bout d'un moment, c'était pas [top]. => And after a while, it still wasn't [great]. # \"top\" is a common French colloquialism for \"great\" or \"excellent\"\n\n[En y réfléchissant], j'ai repensé à toutes les fois où Ben m'a dit => [Thinking back], I remembered all the times Ben told me # \"En y réfléchissant\" translates idiomaticly as \"Thinking back\"\nEn y réfléchissant, [j'] ai repensé à toutes les fois où Ben m'a dit => Thinking back, [I] remembered all the times Ben told me\nEn y réfléchissant, j' [ai repensé à] toutes les fois où Ben m'a dit => Thinking back, I [remembered] all the times Ben told me # \"repenser à\" translates to \"remember\"\nEn y réfléchissant, j'ai repensé à [toutes] les fois où Ben m'a dit => Thinking back, I remembered [all] the times Ben told me\nEn y réfléchissant, j'ai repensé à toutes [les] fois où Ben m'a dit => Thinking back, I remembered all [the] times Ben told me\nEn y réfléchissant, j'ai repensé à toutes les [fois] où Ben m'a dit => Thinking back, I remembered all the [times] Ben told me\nEn y réfléchissant, j'ai repensé à toutes les fois où [Ben] m'a dit => Thinking back, I remembered all the times [Ben] told me\nEn y réfléchissant, j'ai repensé à toutes les fois où Ben [m'] a dit => Thinking back, I remembered all the times Ben told [me]\nEn y réfléchissant, j'ai repensé à toutes les fois où Ben m' [a dit] => Thinking back, I remembered all the times Ben [told] me # Passé composé \"a dit\" aligned with past tense \"told\"\n\n[qu']un truc servait à rien. => [that] something was useless.\nqu'[un truc] servait à rien. => that [something] was useless. # \"un truc\" (a thing) maps to \"something\"\nqu'un truc [servait] à rien. => that something [was] useless. # in this expression, \"servir\" functions as the linking verb\nqu'un truc servait [à rien]. => that something was [useless]. # \"à rien\" (to nothing) means useless in this context\n\n- [Un] visa pour les États-Unis ? Pff, ça sert à rien. => - [A] visa for the US? Pff, useless.\n- Un [visa] pour les États-Unis ? Pff, ça sert à rien. => - A [visa] for the US? Pff, useless.\n- Un visa [pour] les États-Unis ? Pff, ça sert à rien. => - A visa [for] the US? Pff, useless.\n- Un visa pour [les] États-Unis ? Pff, ça sert à rien. => - A visa for [the] US? Pff, useless.\n- Un visa pour les [États-Unis] ? Pff, ça sert à rien. => - A visa for the [US]? Pff, useless.\n- Un visa pour les États-Unis ? [Pff], ça sert à rien. => - A visa for the US? [Pff], useless.\n- Un visa pour les États-Unis ? Pff, [ça sert à rien] => - A visa for the US? Pff, [useless] # \"Ça sert à rien\" is a fixed expression matching the meaning of \"useless\" or \"it's no use\"\n\n- [Tiens], pour mon vélo. => - [Take] my bike. # Here 'Tiens' acts as an imperative like 'Take' or 'Here'\n- Tiens, [pour] mon vélo. => for\n- Tiens, pour [mon] vélo. => - Take [my] bike.\n- Tiens, pour mon [vélo]. => - Take my [bike].\n\n- [Bah], il manque un bout de frein, mais ça sert à rien. => - [Well], a piece of the brake is missing, but it's useless.\n- Bah, [il manque] un bout de frein, mais ça sert à rien. => - Well, a piece of the brake [is missing], but it's useless.\n- Bah, il manque [un bout] de frein, mais ça sert à rien. => - Well, [a piece] of the brake is missing, but it's useless.\n- Bah, il manque un bout [de] frein, mais ça sert à rien. => - Well, a piece [of the] brake is missing, but it's useless.\n- Bah, il manque un bout de [frein], mais ça sert à rien. => - Well, a piece of the [brake] is missing, but it's useless.\n- Bah, il manque un bout de frein, [mais] ça sert à rien. => - Well, a piece of the brake is missing, [but] it's useless.\n- Bah, il manque un bout de frein, mais [ça] sert à rien. => - Well, a piece of the brake is missing, but [it]'s useless.\n- Bah, il manque un bout de frein, mais ça [sert à rien]. => is useless, is of no use # 'sert' acts as 'is' here, while 'rien' conveys the 'less' or 'no use' aspect\n\n- [Un] bouton sur la paupière, donc on va pas voir un médecin => - [A] bump on the eyelid, so we won't see a doctor\n- Un [bouton] sur la paupière, donc on va pas voir un médecin => - A [bump] on the eyelid, so we won't see a doctor\n- Un bouton [sur] la paupière, donc on va pas voir un médecin => - A bump [on] the eyelid, so we won't see a doctor\n- Un bouton sur [la] paupière, donc on va pas voir un médecin => - A bump on [the] eyelid, so we won't see a doctor\n- Un bouton sur la [paupière], donc on va pas voir un médecin => - A bump on the [eyelid], so we won't see a doctor\n- Un bouton sur la paupière, [donc] on va pas voir un médecin => - A bump on the eyelid, [so] we won't see a doctor\n- Un bouton sur la paupière, donc [on] va pas voir un médecin => - A bump on the eyelid, so [we] won't see a doctor\n- Un bouton sur la paupière, donc on [va pas] voir un médecin => - A bump on the eyelid, so we [won't] see a doctor\n- Un bouton sur la paupière, donc on va pas [voir] un médecin => - A bump on the eyelid, so we won't [see] a doctor\n- Un bouton sur la paupière, donc on va pas voir [un] médecin => - A bump on the eyelid, so we won't see [a] doctor\n- Un bouton sur la paupière, donc on va pas voir un [médecin] => - A bump on the eyelid, so we won't see a [doctor]\n\n[pour] ça, ça sert à rien. => [for] that, it's useless.\npour [ça], ça sert à rien. => for [that], it's useless.\npour ça, [ça] sert à rien. => for that, [it's] useless. # \"ça\" matches the subject \"it\", but since \"is\" is contracted, we map to \"it's\"\npour ça, ça [sert à rien]. => for that, it's [useless]. # idiomatic mapping for the expression meaning \"is no use\" or \"useless\"\npour ça, ça [sert] à rien. => is of use, serves\npour ça, ça sert à [rien]. => nothing, anything\n\n[Après] être allé me faire enlever mon kyste à l'œil, => [After] going to get my eye cyst removed,\nAprès [être allé] me faire enlever mon kyste à l'œil, => After [going] to get my eye cyst removed,\nAprès être allé [me faire] enlever mon kyste à l'œil, => After going [to get] my eye cyst removed, # causative structure \"faire + verb\" corresponds here to \"to get ... removed\"\nAprès être allé me faire [enlever] mon kyste à l'œil, => After going to get my eye cyst [removed],\nAprès être allé me faire enlever [mon] kyste à l'œil, => After going to get [my] eye cyst removed,\nAprès être allé me faire enlever mon [kyste] à l'œil, => After going to get my eye [cyst] removed,\nAprès être allé me faire enlever mon kyste [à l'œil], => After going to get my [eye] cyst removed, # \"à l'œil\" (at the eye) translates to \"eye\" used as an adjective in English\n\n[je] me suis dit que j'allais racheter une corde. => [I] told myself I'd buy a new string.\nje [me] suis dit que j'allais racheter une corde. => I told [myself] I'd buy a new string.\nje me [suis dit] que j'allais racheter une corde. => I [told] myself I'd buy a new string. # \"suis dit\" is the past tense of \"se dire\"\nje me suis dit que [j'allais] racheter une corde. => I told myself [I'd] buy a new string. # \"j'allais\" (I was going to) corresponds to the future-in-the-past \"I'd\"\nje me suis dit que j'allais [racheter] une corde. => to buy a replacement, to buy again # \"racheter\" implies buying something to replace a previous one\nje me suis dit que j'allais [racheter] une corde. => I told myself I'd [buy] a new string.\nje me suis dit que j'allais racheter [une] corde. => I told myself I'd buy [a] new string.\nje me suis dit que j'allais racheter une [corde] => I told myself I'd buy a new [string]\n\n[C']était mieux, mais j'ai dû tout réapprendre. => [It] was better, but I had to relearn everything.\nC'[était] mieux, mais j'ai dû tout réapprendre. => It [was] better, but I had to relearn everything.\nC'était [mieux], mais j'ai dû tout réapprendre. => It was [better], but I had to relearn everything.\nC'était mieux, [mais] j'ai dû tout réapprendre. => It was better, [but] I had to relearn everything.\nC'était mieux, mais [j']ai dû tout réapprendre. => It was better, but [I] had to relearn everything.\nC'était mieux, mais j'[ai dû] tout réapprendre. => It was better, but I [had to] relearn everything. # ai dû (passé composé of devoir) translates to \"had to\"\nC'était mieux, mais j'ai dû [tout] réapprendre. => It was better, but I had to relearn [everything].\nC'était mieux, mais j'ai dû tout [réapprendre]. => It was better, but I had to [relearn] everything.\n\n[Un] jour, je suis allé sur des forums. => [One] day, I went on some forums.\nUn [jour], je suis allé sur des forums. => One [day], I went on some forums.\nUn jour, [je] suis allé sur des forums. => One day, [I] went on some forums.\nUn jour, je [suis allé] sur des forums. => One day, I [went] on some forums.\nUn jour, je suis allé [sur] des forums. => One day, I went [on] some forums.\nUn jour, je suis allé sur [des] forums. => One day, I went on [some] forums.\nUn jour, je suis allé sur des [forums]. => One day, I went on some [forums].\n\nJ'[ai appris] qu'on pouvait serrer des meufs avec seulement quatre accords. => I [learned] you could pick up chicks with just four chords.\nJ'ai appris qu'[on] pouvait serrer des meufs avec seulement quatre accords. => I learned [you] could pick up chicks with just four chords.\nJ'ai appris qu'on [pouvait] serrer des meufs avec seulement quatre accords. => I learned you [could] pick up chicks with just four chords.\nJ'ai appris qu'on pouvait [serrer] des meufs avec seulement quatre accords. => I learned you could [pick up] chicks with just four chords. # \"Serrer\" is colloquial here for \"pick up\" or \"get\"\nJ'ai appris qu'on pouvait serrer [des meufs] avec seulement quatre accords. => I learned you could pick up [chicks] with just four chords. # \"Meufs\" is verlan for \"femmes\"; combined with \"des\" to match the plural \"chicks\"\nJ'ai appris qu'on pouvait serrer des meufs [avec] seulement quatre accords. => I learned you could pick up chicks [with] just four chords.\nJ'ai appris qu'on pouvait serrer des meufs avec [seulement] quatre accords. => I learned you could pick up chicks with [just] four chords.\nJ'ai appris qu'on pouvait serrer des meufs avec seulement [quatre] accords. => I learned you could pick up chicks with just [four] chords.\nJ'ai appris qu'on pouvait serrer des meufs avec seulement quatre [accords]. => I learned you could pick up chicks with just four [chords].\n\n[Le Do], le Sol, le La, et enfin le Mi. => [C], G, A, and finally E.\nLe Do, [le Sol], le La, et enfin le Mi. => C, [G], A, and finally E.\nLe Do, le Sol, [le La], et enfin le Mi. => C, G, [A], and finally E.\nLe Do, le Sol, le La, [et] enfin le Mi. => C, G, A, [and] finally E.\nLe Do, le Sol, le La, et [enfin] le Mi. => C, G, A, and [finally] E.\nLe Do, le Sol, le La, et enfin [le Mi]. => C, G, A, and finally [E].\n\n[Je] les ai travaillés sans relâche. => [I] worked on them relentlessly.\nJe [les] ai travaillés sans relâche. => I worked on [them] relentlessly.\nJe les [ai travaillés] sans relâche. => I [worked on] them relentlessly.\nJe les ai travaillés [sans relâche] => I worked on them [relentlessly] # sans relâche literally means without release/rest, translating to relentlessly\n\n[J']ai essayé de chanter en même temps. C'était super dur. => [I] tried singing at the same time. It was super hard.\nJ'[ai essayé] de chanter en même temps. C'était super dur. => I [tried] singing at the same time. It was super hard. # Passé composé mapped to simple past\nJ'ai essayé de [chanter] en même temps. C'était super dur. => I tried [singing] at the same time. It was super hard.\nJ'ai essayé de chanter [en même temps]. C'était super dur. => I tried singing [at the same time]. It was super hard.\nJ'ai essayé de chanter en même temps. [C']était super dur. => I tried singing at the same time. [It] was super hard.\nJ'ai essayé de chanter en même temps. C'[était] super dur. => I tried singing at the same time. It [was] super hard.\nJ'ai essayé de chanter en même temps. C'était [super] dur. => I tried singing at the same time. It was [super] hard.\nJ'ai essayé de chanter en même temps. C'était super [dur]. => I tried singing at the same time. It was super [hard].\n\n[J'avais l'impression] d'essayer de me branler avec des gants de boxe => [I felt like] I was trying to jerk off with boxing gloves\nJ'avais l'impression d'[essayer] de me branler avec des gants de boxe => I felt like I was [trying] to jerk off with boxing gloves\nJ'avais l'impression d'essayer [de] me branler avec des gants de boxe => I felt like I was trying [to] jerk off with boxing gloves\nJ'avais l'impression d'essayer de [me branler] avec des gants de boxe => I felt like I was trying to [jerk off] with boxing gloves\nJ'avais l'impression d'essayer de me branler [avec] des gants de boxe => I felt like I was trying to jerk off [with] boxing gloves\nJ'avais l'impression d'essayer de me branler avec des [gants] de boxe => I felt like I was trying to jerk off with boxing [gloves]\nJ'avais l'impression d'essayer de me branler avec des gants [de boxe] => I felt like I was trying to jerk off with [boxing] gloves # \"de boxe\" acts as an adjective here, similar to the \"métèque\" example\n\n[en] récitant l'alphabet à l'envers. => [while] reciting the alphabet backwards.\nen [récitant] l'alphabet à l'envers. => while [reciting] the alphabet backwards.\nen récitant [l'alphabet] à l'envers. => while reciting [the alphabet] backwards.\nen récitant l'alphabet [à l'envers]. => while reciting the alphabet [backwards]. # idiomatic expression for \"backwards\" or \"inside out\"\n\n- [X], Y, W... Ah putain, j'y arrive pas ! => - [X], Y, W... Ah fuck, I can't do it!\n- X, [Y], W... Ah putain, j'y arrive pas ! => - X, [Y], W... Ah fuck, I can't do it!\n- X, Y, [W]... Ah putain, j'y arrive pas ! => - X, Y, [W]... Ah fuck, I can't do it!\n- X, Y, W... [Ah] putain, j'y arrive pas ! => - X, Y, W... [Ah] fuck, I can't do it!\n- X, Y, W... Ah [putain], j'y arrive pas ! => - X, Y, W... Ah [fuck], I can't do it!\n- X, Y, W... Ah putain, [j']y arrive pas ! => - X, Y, W... Ah fuck, [I] can't do it!\n- X, Y, W... Ah putain, j'[y] arrive pas ! => - X, Y, W... Ah fuck, I can't do [it]\n- X, Y, W... Ah putain, j'y [arrive] pas ! => - X, Y, W... Ah fuck, I can't [do] it # \"arriver\" in this context translates to \"do\" or \"manage\"\n- X, Y, W... Ah putain, j'y arrive [pas] ! => - X, Y, W... Ah fuck, I [can't] do it # \"pas\" (not) corresponds to the negative aspect of \"can't\" (cannot)\n\n[Putain], j'y arrive pas ! => [Fuck], I can't do it!\nPutain, [j']y arrive pas ! => Fuck, [I] can't do it!\nPutain, j'[y] arrive pas ! => Fuck, I can't do [it]!\nPutain, j'y [arrive] pas ! => manage, succeed, make it\nPutain, j'y arrive [pas] ! => Fuck, I [can't] do it! # \"pas\" expresses the negation found in \"can't\"\n\n[Pendant] un an, j'ai pas lâché l'affaire. => [For] a year, I didn't give up.\nPendant [un] an, j'ai pas lâché l'affaire. => For [a] year, I didn't give up.\nPendant un [an], j'ai pas lâché l'affaire. => For a [year], I didn't give up.\nPendant un an, [j']ai pas lâché l'affaire. => For a year, [I] didn't give up.\nPendant un an, j'[ai pas] lâché l'affaire. => For a year, I [didn't] give up.\nPendant un an, j'ai pas [lâché l'affaire] => For a year, I didn't [give up] # \"lâcher l'affaire\" is an idiom for \"giving up\" or \"letting it go\"\n\n[Et] puis... => [And] then...\nEt [puis]... => And [then]...\n\n[Mon] cœur est si gris quand il pleut. => [My] heart is so gray when it rains.\nMon [cœur] est si gris quand il pleut. => My [heart] is so gray when it rains.\nMon cœur [est] si gris quand il pleut. => My heart [is] so gray when it rains.\nMon cœur est [si] gris quand il pleut. => My heart is [so] gray when it rains.\nMon cœur est si [gris] quand il pleut. => My heart is so [gray] when it rains.\nMon cœur est si gris [quand] il pleut. => My heart is so [when] it rains.\nMon cœur est si gris quand [il] pleut. => My heart is so when [it] rains.\nMon cœur est si gris quand il [pleut]. => My heart is so when it [rains].\n\n- [Waouh], tu joues trop bien. => - [Wow], you play so well.\n- Waouh, [tu] joues trop bien. => - Wow, [you] play so well.\n- Waouh, tu [joues] trop bien. => - Wow, you [play] so well.\n- Waouh, tu joues [trop] bien. => - Wow, you play [so] well.\n- Waouh, tu joues trop [bien]. => - Wow, you play so [well].\n\n[Bref], je joue de la guitare. => [Anyway], I play guitar.\nBref, [je] joue de la guitare. => Anyway, [I] play guitar.\nBref, je [joue] de la guitare. => Anyway, I [play] guitar.\nBref, je joue de la [guitare]. => Anyway, I play [guitar] # \"de la\" is skipped as it's the grammatical partitive used for instruments, similar to how \"to\" was skipped in the Janis Joplin example.\n\n[Tout ça] à cause d'un putain de kyste à l'œil. => [All] because of a fucking eye cyst.\nTout ça [à cause d']un putain de kyste à l'œil. => All [because of] a fucking eye cyst.\nTout ça à cause d'[un] putain de kyste à l'œil. => All because of [a] fucking eye cyst.\nTout ça à cause d'un [putain de] kyste à l'œil. => All because of a [fucking] eye cyst.\nTout ça à cause d'un putain de [kyste] à l'œil. => All because of a fucking eye [cyst]\nTout ça à cause d'un putain de kyste à [l'œil]. => All because of a fucking [eye] cyst # \"à\" is a functional connector and is skipped\n\n- [C']est vachement bien. => - [That]'s really cool.\n- C'[est] vachement bien. => - That['s] really cool.\n- C'est [vachement] bien. => - That's [really] cool.\n- C'est vachement [bien]. => - That's really [cool] # bien literally means well/good, but maps to cool here\n\n[Mais] en quoi ça me concerne ? => [But] what's that got to do with me?\nMais [en quoi] ça me concerne ? => in what way, what\nMais en quoi [ça] me concerne ? => But what's [that] got to do with me?\nMais en quoi ça [me] concerne ? => But what's that got to do with [me]?\nMais en quoi ça [concerne] ? => But what's that [got to do with] me? # \"concerne\" functions as the \"has to do with\" relationship in this idiom\n\n"
+  },
+  "created_at": "2026-04-02 16:24:37 UTC",
+  "updated_at": "2026-04-02 19:19:48 UTC",
+  "exported_at": "2026-04-02T19:21:38Z"
+}
