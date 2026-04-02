@@ -102,7 +102,7 @@ gem "good_job", "~> 4.11"
 
 gem "factory_bot", "~> 6.5"
 
-gem "ruby_llm", "~> 1.8"
+gem "ruby_llm", "~> 1.14.0"
 
 gem "ruby_llm-schema", "~> 0.1.0"
 

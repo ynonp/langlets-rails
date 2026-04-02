@@ -22,7 +22,9 @@ module CreateSong
           .with_temperature(0.4)
           .with_instructions(instructions)
 
-        response = chat.complete
+        response = chat.complete do |chunk|
+          pp chunk.to_h
+        end
         data["similar_sounds"] = response.content
         save!
 

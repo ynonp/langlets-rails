@@ -1,77 +1,205 @@
 class TokenTranslation < ApplicationRecord
   include AzureTextToSpeech
-  
+
   belongs_to :phrase
   has_one_attached :l1_audio, service: :s3_public
   has_many :token_translation_users, dependent: :destroy
 
-  # Generate audio when token is created - only in test/production
-  after_create :generate_l1_audio, if: :should_generate_audio?
-  
-  # Regenerate audio when indices change (affecting the original_text)
-  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
+  attribute :index_type, :integer
+  enum :index_type, { word_index: 0, character_index: 1 }, default: :word_index
 
-  # Validation for word indexes
-  validate :validate_word_indexes
+  validate :validate_indexes
 
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")
   }
 
+  def l1_start_character_index
+    return read_attribute(:l1_start_index) if character_index?
+    word_to_char_l1(read_attribute(:l1_start_index))
+  end
+
+  def l1_end_character_index
+    return read_attribute(:l1_end_index) if character_index?
+    word_to_char_l1(read_attribute(:l1_end_index), inclusive: true)
+  end
+
+  def l2_start_character_index
+    return read_attribute(:l2_start_index) if character_index?
+    word_to_char_l2(read_attribute(:l2_start_index))
+  end
+
+  def l2_end_character_index
+    return read_attribute(:l2_end_index) if character_index?
+    word_to_char_l2(read_attribute(:l2_end_index), inclusive: true)
+  end
+
   def original_text
-    words = phrase.text_l1.split
-    words[l1_start_index..l1_end_index].join(' ')
+    return "" unless phrase&.text_l1.present?
+    phrase.text_l1[l1_start_character_index..l1_end_character_index]
   end
 
   def span_length
-    l1_end_index - l1_start_index
+    l1_end_character_index - l1_start_character_index
   end
+
+  def l1_start_index
+    l1_start_character_index
+  end
+
+  def l1_end_index
+    l1_end_character_index
+  end
+
+  def l2_start_index
+    l2_start_character_index
+  end
+
+  def l2_end_index
+    l2_end_character_index
+  end
+
+  def l1_start_index=(value)
+    write_attribute(:l1_start_index, value)
+  end
+
+  def l1_end_index=(value)
+    write_attribute(:l1_end_index, value)
+  end
+
+  def l2_start_index=(value)
+    write_attribute(:l2_start_index, value)
+  end
+
+  def l2_end_index=(value)
+    write_attribute(:l2_end_index, value)
+  end
+
+  after_create :generate_l1_audio, if: :should_generate_audio?
+  after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   private
 
   def should_generate_audio?
-    original_text.present? && phrase&.l1&.iso_name.present?
+    original_text.present? && phrase&.l1&.iso_name.present? && word_index?
   end
 
   def should_generate_audio_on_update?
-    # Generate audio if indices changed (which affects original_text) and we have the necessary data
     (saved_change_to_l1_start_index? || saved_change_to_l1_end_index?) && should_generate_audio?
   end
 
   def generate_l1_audio
-    # Queue background job for audio generation
     GenerateTokenAudioJob.perform_later(id) unless Rails.env.development?
   end
 
-  def validate_word_indexes
-    return unless phrase&.text_l1
+  def word_to_char_l1(word_index, inclusive: false)
+    return nil if word_index.nil?
+    return nil unless phrase&.text_l1.present?
 
-    # Get the words for the phrase
-    l1_words = phrase.text_l1.split
-    
-    # Validate L1 indexes
-    if l1_start_index.present? && l1_end_index.present?
-      if l1_start_index > l1_end_index
+    words = phrase.text_l1.split
+    return nil if word_index >= words.length || word_index < 0
+
+    if word_index == 0
+      char_pos = 0
+    else
+      char_pos = words[0...word_index].join(" ").length + 1
+    end
+
+    if inclusive
+      char_pos += words[word_index].length - 1
+    end
+
+    char_pos
+  end
+
+  def word_to_char_l2(word_index, inclusive: false)
+    return nil if word_index.nil?
+    return nil unless phrase&.text_l2.present?
+
+    words = phrase.text_l2.split
+    return nil if word_index >= words.length || word_index < 0
+
+    if word_index == 0
+      char_pos = 0
+    else
+      char_pos = words[0...word_index].join(" ").length + 1
+    end
+
+    if inclusive
+      char_pos += words[word_index].length - 1
+    end
+
+    char_pos
+  end
+
+  def validate_indexes
+    return unless phrase&.text_l1.present?
+
+    if character_index?
+      validate_character_indexes
+    else
+      validate_word_indexes
+    end
+  end
+
+  def validate_character_indexes
+    l1_start = read_attribute(:l1_start_index)
+    l1_end = read_attribute(:l1_end_index)
+
+    if l1_start.present? && l1_end.present?
+      if l1_start > l1_end
         errors.add(:l1_start_index, "must be less than or equal to l1_end_index")
       end
 
-      if l1_start_index < 0 || l1_end_index >= l1_words.length
-        errors.add(:l1_start_index, "word indexes #{l1_start_index}-#{l1_end_index} out of bounds for phrase #{phrase.text_l1}")
+      if l1_start < 0 || l1_end >= phrase.text_l1.length
+        errors.add(:l1_start_index, "character indexes #{l1_start}-#{l1_end} out of bounds for phrase '#{phrase.text_l1}'")
+      end
+    else
+      errors.add(:l1_start_index, "l1 indexes are required")
+    end
+
+    if read_attribute(:l2_start_index).present? && read_attribute(:l2_end_index).present? && phrase&.text_l2.present?
+      l2_start = read_attribute(:l2_start_index)
+      l2_end = read_attribute(:l2_end_index)
+
+      if l2_start > l2_end
+        errors.add(:l2_start_index, "must be less than or equal to l2_end_index")
+      end
+
+      if l2_start < 0 || l2_end >= phrase.text_l2.length
+        errors.add(:l2_start_index, "character indexes #{l2_start}-#{l2_end} out of bounds in phrase '#{phrase.text_l2}'")
+      end
+    end
+  end
+
+  def validate_word_indexes
+    l1_words = phrase.text_l1.split
+    l1_start = read_attribute(:l1_start_index)
+    l1_end = read_attribute(:l1_end_index)
+
+    if l1_start.present? && l1_end.present?
+      if l1_start > l1_end
+        errors.add(:l1_start_index, "must be less than or equal to l1_end_index")
+      end
+
+      if l1_start < 0 || l1_end >= l1_words.length
+        errors.add(:l1_start_index, "word indexes #{l1_start}-#{l1_end} out of bounds for phrase #{phrase.text_l1}")
       end
     else
       errors.add(:l1_start_index, "l1 indexes are required (phrase text #{phrase.text_l1}; translation #{translation})")
     end
 
-    # Validate L2 indexes (optional)
-    if l2_start_index.present? && l2_end_index.present? && phrase&.text_l2
+    if read_attribute(:l2_start_index).present? && read_attribute(:l2_end_index).present? && phrase&.text_l2.present?
       l2_words = phrase.text_l2.split
-      
-      if l2_start_index > l2_end_index
+      l2_start = read_attribute(:l2_start_index)
+      l2_end = read_attribute(:l2_end_index)
+
+      if l2_start > l2_end
         errors.add(:l2_start_index, "must be less than or equal to l2_end_index")
       end
 
-      if l2_start_index < 0 || l2_end_index >= l2_words.length
-        errors.add(:l2_start_index, "word indexes #{l2_start_index}-#{l2_end_index} out of bounds in phrase #{phrase.text_l2}")
+      if l2_start < 0 || l2_end >= l2_words.length
+        errors.add(:l2_start_index, "word indexes #{l2_start}-#{l2_end} out of bounds in phrase #{phrase.text_l2}")
       end
     end
   end

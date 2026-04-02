@@ -23,15 +23,19 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_translate)
-        user_content = data["phrases"].map { |p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
+        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_quick)
+        clip_lines = data["phrases"].map { |p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
+        user_content = data["phrases"].pluck("text_l1").join("\n")
+
         chat
           .with_temperature(0.4)
           .with_instructions(instructions)
           .add_message role: :user, content: user_content
 
-        response = chat.complete
-        data["lessons"] = match_lesson_data_to_prompt(user_content, response.content)
+        response = chat.complete do |chunk|
+          pp chunk.to_h
+        end
+        data["lessons"] = match_lesson_data_to_prompt(clip_lines, response.content)
         save!
 
         response

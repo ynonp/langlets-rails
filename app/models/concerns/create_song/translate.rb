@@ -7,20 +7,21 @@ module CreateSong
     end
 
     def translate
+      original_lyrics = data["phrases"].pluck("text_l1")
+      user_content = original_lyrics.join("\n")
+
       instructions = ApplicationController.renderer.render(
         template: 'prompts/add_l2',
         formats: [:md],
         locals: {
           clip_language:,
           translation_language:,
+          expected_line_count: original_lyrics.count,
         }
       )
-      original_lyrics = data["phrases"].pluck("text_l1")
-
-      user_content = original_lyrics.join("\n")
 
       retry_count = 0
-      max_retries = 5
+      max_retries = 0
 
       begin
         chat = TracedChat.new(span_name: "translate", **self.model_params_translate)
@@ -29,7 +30,9 @@ module CreateSong
           .with_temperature(0.2)
           .add_message role: :user, content: user_content
 
-        response = chat.complete
+        response = chat.complete do |chunk|
+          pp chunk.to_h
+        end
 
         translation_lines = response.content.lines.map(&:chomp).reject(&:blank?)
         phrases = data["phrases"]

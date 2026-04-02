@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_03_26_103349) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_01_192123) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -350,7 +350,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_03_26_103349) do
     t.integer "l2_start_index"
     t.integer "l2_end_index"
     t.string "similar_sound", array: true
-    t.index ["phrase_id", "l1_start_index", "l1_end_index"], name: "idx_on_phrase_id_l1_start_index_l1_end_index_22c662cc13", unique: true
+    t.integer "index_type", default: 0, null: false
+    t.index ["index_type"], name: "index_token_translations_on_index_type"
+    t.index ["phrase_id", "l1_start_index", "l1_end_index", "index_type"], name: "idx_token_translations_unique", unique: true
     t.index ["phrase_id"], name: "index_token_translations_on_phrase_id"
   end
 

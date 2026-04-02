@@ -8,54 +8,45 @@ module ActivitiesHelper
     if phrase.token_translations.empty?
       content_tag(:span, phrase.text_l1)
     else
-      # Use the already loaded token_translations, sort them by l1_start_index
       all_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
 
-      # Filter out overlapping tokens - remove tokens that are completely contained within another token
-      # When tokens overlap, keep the one with the larger span (more words)
       loaded_tokens = filter_overlapping_tokens(all_tokens)
 
-      # Convert word indices to character indices
-      words = phrase.text_l1.split
-
       texts = loaded_tokens.inject([]) do |acc, val|
-        # Calculate character positions from word positions
-        l1_start_character_index = words[0...val.l1_start_index].join(" ").length
-        l1_start_character_index += 1 if val.l1_start_index > 0 # Add space before word
-        l1_end_character_index = l1_start_character_index + words[val.l1_start_index..val.l1_end_index].join(" ").length
+        l1_start = val.l1_start_index
+        l1_end = val.l1_end_index
 
         next_translated_token = {
-          "l1" => phrase.text_l1[l1_start_character_index...l1_end_character_index],
+          "l1" => phrase.text_l1[l1_start..l1_end],
           "l2" => val.translation,
-          "last_index" => l1_end_character_index,
+          "last_index" => l1_end,
           "token_id" => val.id,
           "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil
         }
         if acc.empty?
-          if l1_start_character_index.zero?
+          if l1_start.zero?
             [ *acc, next_translated_token ]
           else
             [
               *acc,
-              { "l1" => phrase.text_l1[0...l1_start_character_index], "last_index" => l1_start_character_index },
+              { "l1" => phrase.text_l1[0...l1_start], "last_index" => l1_start },
               next_translated_token
             ]
           end
-        elsif acc[-1]["last_index"] == l1_start_character_index
+        elsif acc[-1]["last_index"] == l1_start - 1
           [ *acc, next_translated_token ]
         else
           [
             *acc,
-            { "l1" => phrase.text_l1[acc[-1]["last_index"]...l1_start_character_index], "last_index" => l1_start_character_index },
+            { "l1" => phrase.text_l1[acc[-1]["last_index"] + 1...l1_start], "last_index" => l1_start },
             next_translated_token
           ]
         end
       end
 
-      # Add the remaining text after the last token if there is any
-      if texts.any? && texts.last["last_index"] < phrase.text_l1.length
+      if texts.any? && texts.last["last_index"] < phrase.text_l1.length - 1
         texts << {
-          "l1" => phrase.text_l1[texts.last["last_index"]...phrase.text_l1.length],
+          "l1" => phrase.text_l1[texts.last["last_index"] + 1..phrase.text_l1.length],
           "last_index" => phrase.text_l1.length
         }
       end
@@ -87,65 +78,51 @@ module ActivitiesHelper
     if phrase.token_translations.empty?
       phrase.text_l1
     else
-      # Use word indices to create blanks
-      words = phrase.text_l1.split
       loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
-
-      result_words = words.dup
-
-      # Replace token words with blanks (process in reverse to maintain indices)
       tokens_with_similar = loaded_tokens.select { |t| similar_sounds_for_token(phrase, t).present? }
       token_to_blank = tokens_with_similar.sample
 
-      loaded_tokens.reverse.each do |val|
+      result = ""
+      current_pos = 0
+
+      loaded_tokens.each do |val|
         similar = similar_sounds_for_token(phrase, val)
         next if similar.blank?
         next unless val == token_to_blank
 
+        token_start = val.l1_start_index
+        token_end = val.l1_end_index
+
+        if current_pos < token_start
+          result += phrase.text_l1[current_pos...token_start]
+        end
+
         token_data = {
-          original_text: words[val.l1_start_index..val.l1_end_index].join(" "),
+          original_text: val.original_text,
           similar_sound: similar
         }.to_json
 
-        # Create a blank span for this token
-        blank_html = "<span class='mx-2 inline-block blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
-
-        # Replace the word range with the blank
-        result_words[val.l1_start_index..val.l1_end_index] = [ blank_html ]
+        result += "<span class='mx-2 inline-block blank-line underline text-gray-400' data-token='#{token_data.gsub("'", "&#39;")}'>________</span>"
+        current_pos = token_end + 1
       end
 
-      result_words.join(" ").html_safe
+      if current_pos < phrase.text_l1.length
+        result += phrase.text_l1[current_pos..phrase.text_l1.length]
+      end
+
+      result.html_safe
     end
   end
 
-  # Helper for getting token text
-  def token_original_text(token_translation)
-    words = token_translation.phrase.text_l1.split
-    words[token_translation.l1_start_index..token_translation.l1_end_index].join(" ")
-  end
-
-  # Helper for getting phrase text in L1
-  def phrase_text_l1(phrase)
-    phrase.text_l1
-  end
-
-  # Helper for getting phrase text in L2
-  def phrase_text_l2(phrase)
-    phrase.text_l2
-  end
-
-  # Helper to prepare tokens data for match tokens activity
   def prepare_tokens_for_matching(token_translations)
     require "set"
 
-    # Filter out duplicates based on l1 text value or l2 text value
     seen_l1_texts = Set.new
     seen_l2_texts = Set.new
     filtered_token_translations = token_translations.select do |t|
-      l1_text = token_original_text(t)
+      l1_text = t.original_text
       l2_text = t.translation
 
-      # Skip if we've already seen this l1 or l2 text
       if seen_l1_texts.include?(l1_text) || seen_l2_texts.include?(l2_text)
         false
       else
@@ -155,9 +132,8 @@ module ActivitiesHelper
       end
     end
 
-    # Map each token translation to [word in l1, translation in l2, audio]
     filtered_token_translations.map do |t|
-      l1_word = token_original_text(t)
+      l1_word = t.original_text
       audio_url = t.l1_audio.attached? ?
         Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
 
@@ -170,13 +146,18 @@ module ActivitiesHelper
     end
   end
 
-  # Helper to prepare phrases list for sorting activity
+  def phrase_text_l1(phrase)
+    phrase.text_l1
+  end
+
+  def phrase_text_l2(phrase)
+    phrase.text_l2
+  end
+
   def prepare_phrases_for_sorting(phrases)
-    # phrases is already an array from first(4), so just map it
     phrases.map { |p| phrase_text_l1(p) }
   end
 
-  # Helper to prepare phrases data for language alignment activity
   def prepare_phrases_with_tokens_for_alignment(phrases_with_tokens)
     phrases_with_tokens.filter_map do |phrase_data|
       phrase = phrase_data[:phrase]
@@ -184,29 +165,15 @@ module ActivitiesHelper
 
       next unless tokens.present?
 
-      # Get text directly
       l1_text = phrase_text_l1(phrase)
       l2_text = phrase_text_l2(phrase)
 
-      # Use token indices directly (they are already word indices)
       tokens_with_ranges = tokens.map do |token_data|
-        # Convert word indices to character indices for display
-        words = phrase.text_l1.split
-        l1_start_char = words[0...token_data[:l1_start_index]].join(" ").length
-        l1_start_char += 1 if token_data[:l1_start_index] > 0 # Add space before word
-        l1_end_char = l1_start_char + words[token_data[:l1_start_index]..token_data[:l1_end_index]].join(" ").length - 1
-
-        # Similar for L2
-        l2_words = phrase.text_l2.split
-        l2_start_char = l2_words[0...token_data[:l2_start_index]].join(" ").length
-        l2_start_char += 1 if token_data[:l2_start_index] > 0
-        l2_end_char = l2_start_char + l2_words[token_data[:l2_start_index]..token_data[:l2_end_index]].join(" ").length - 1
-
         token_data.merge({
-          l1_start_index: l1_start_char,
-          l1_end_index: l1_end_char,
-          l2_start_index: l2_start_char,
-          l2_end_index: l2_end_char
+          l1_start_index: token_data[:l1_start_index],
+          l1_end_index: token_data[:l1_end_index],
+          l2_start_index: token_data[:l2_start_index],
+          l2_end_index: token_data[:l2_end_index]
         })
       end
 
@@ -218,13 +185,12 @@ module ActivitiesHelper
     end
   end
 
-  # Prepare flashcards for FlashcardActivity
   def prepare_flashcards_for_tokens(token_translations, unique_song_words)
     token_translations = token_translations.to_a
-    l1_texts = token_translations.map { |t| token_original_text(t) }.uniq
+    l1_texts = token_translations.map { |t| t.original_text }.uniq
 
     cards = token_translations.map do |t|
-      l1_word = token_original_text(t)
+      l1_word = t.original_text
       l2_translation = t.translation
       audio_url = t.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
 
@@ -232,21 +198,27 @@ module ActivitiesHelper
       distractors = unique_song_words.reject { |w| w.downcase == l1_word.downcase }.sample(3)
       options = ([ l1_word ] + distractors).shuffle
 
-      # Map option text to audio URLs if available
       audio_map = token_translations.each_with_object({}) do |tt, memo|
-        key = token_original_text(tt)
+        key = tt.original_text
         memo[key] = tt.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(tt.l1_audio, only_path: true) : nil
       end
 
       options_audio_urls = options.map { |opt| audio_map[opt] }
 
-      phrase_words = t.phrase.text_l1.split
-      phrase_words[t.l1_start_index..t.l1_end_index] = [ "________" ]
-      phrase_with_blank = phrase_words.join(" ")
+      token_start = t.l1_start_index
+      token_end = t.l1_end_index
+      phrase_text = t.phrase.text_l1
+
+      blanked_text = phrase_text.dup
+      if token_start == 0
+        blanked_text = "________" + blanked_text[token_end + 1..]
+      else
+        blanked_text[token_start..token_end] = "________"
+      end
 
       {
         id: t.id,
-        phrase_html: phrase_with_blank,
+        phrase_html: blanked_text,
         translation: l2_translation,
         correct: l1_word,
         options: options,
@@ -260,54 +232,62 @@ module ActivitiesHelper
 
   private
 
-  # Filters out tokens that are completely contained within another token.
-  # When tokens overlap, keeps the token with the larger span (more words).
-  # Example: "hace dias" (words 0-1) and "dias" (words 1-1) -> keeps only "hace dias"
   def filter_overlapping_tokens(tokens)
     return tokens if tokens.empty? || tokens.length == 1
 
-    # Sort by start index, then by span length (descending) to prefer longer tokens
-    # This ensures that when we process tokens, longer ones at the same start position come first
     sorted = tokens.sort_by { |t| [ t.l1_start_index, -(t.l1_end_index - t.l1_start_index) ] }
 
     filtered = []
     sorted.each do |token|
-      # Check if this token is completely contained within any already-accepted token
       is_contained = filtered.any? do |accepted_token|
-        # Token is contained if:
-        # - accepted_token starts at or before token starts
-        # - accepted_token ends at or after token ends
-        # - and it's not the same token
         accepted_token.l1_start_index <= token.l1_start_index &&
           accepted_token.l1_end_index >= token.l1_end_index &&
           accepted_token.id != token.id
       end
 
-      # Also check if any already-accepted token is contained within this token
-      # If so, remove the contained token and add this one (since it's longer)
       filtered.reject! do |accepted_token|
         token.l1_start_index <= accepted_token.l1_start_index &&
           token.l1_end_index >= accepted_token.l1_end_index &&
           accepted_token.id != token.id
       end
 
-      # Only add if not contained within another token
       filtered << token unless is_contained
     end
 
-    # Re-sort by start index for rendering
     filtered.sort_by(&:l1_start_index)
   end
 
   def similar_sounds_for_token(phrase, token_translation)
     return nil unless phrase.respond_to?(:similar_sounds)
 
+    token_start_word = char_index_to_word_index(token_translation.l1_start_index, phrase.text_l1)
+    token_end_word = char_index_to_word_index(token_translation.l1_end_index, phrase.text_l1, inclusive: true)
+
     matching = phrase.similar_sounds.select do |ss|
-      ss.start_word_index >= token_translation.l1_start_index && ss.end_word_index <= token_translation.l1_end_index
+      ss.start_word_index >= token_start_word && ss.end_word_index <= token_end_word
     end
 
     return nil if matching.blank?
 
     matching.map(&:replacement_text)
+  end
+
+  def char_index_to_word_index(char_index, text, inclusive: false)
+    return nil if char_index.nil? || text.nil?
+    return 0 if char_index == 0
+
+    words = text.split
+    current_pos = 0
+
+    words.each_with_index do |word, idx|
+      word_start = idx == 0 ? 0 : words[0...idx].join(" ").length + 1
+      word_end = word_start + word.length - 1
+
+      if char_index >= word_start && char_index <= word_end
+        return idx
+      end
+    end
+
+    words.length - 1
   end
 end

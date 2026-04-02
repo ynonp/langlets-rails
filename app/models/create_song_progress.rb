@@ -18,7 +18,7 @@ class CreateSongProgress < ApplicationRecord
     # self.model_params_youtube = {model: 'gemini-3-flash-preview:cloud', provider: :openai, assume_model_exists: true}
     self.model_params_quick = {model: 'gemini-3-flash-preview:cloud', provider: :openai, assume_model_exists: true}
     self.model_params_smart = {model: 'cogito-2.1:671b-cloud', provider: :openai, assume_model_exists: true}
-    self.model_params_translate = {model: 'mistral-large-3:675b-cloud', provider: :openai, assume_model_exists: true}
+    self.model_params_translate = {model: 'qwen3.5:397b-cloud', provider: :openai, assume_model_exists: true}
   end
 
   def create_data

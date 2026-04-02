@@ -26,7 +26,9 @@ module CreateSong
           .with_instructions(instructions)
           .with_temperature(0.2)
           .add_message role: :user, content: user_content
-        response = chat.complete
+        response = chat.complete do |chunk|
+          pp chunk.to_h
+        end
 
         phrases = parse_lyrics_response(response.content.strip)
 

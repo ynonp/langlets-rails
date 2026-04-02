@@ -5,82 +5,76 @@ You will be given a list of timestamped phrases from a video or song.
 ## Goal
 Arrange the phrases into short, logical learning units (lessons) that students can practice.
 
-## Guidelines for Creating Lessons:
-1. **Logical Grouping**: Group phrases that belong together thematically, structurally, or narratively.
-2. **Sequential Order**: Lessons must strictly follow the chronological order of the provided text.
-3. **STRICT Length Limit**: Each lesson MUST contain between 4 and 8 phrases. **Do not exceed 8 phrases per lesson under any circumstances.** 
-4. **Handling Long Sections**: If a continuous scene, dialogue, or thought is longer than 8 phrases, you MUST split it into multiple lessons using "(Part 1)", "(Part 2)", etc. in the title.
-5. **Finding Breaks**: Look for minor pauses in the timestamps (even a 1 to 2-second gap is enough for fast-paced dialogue), a change of speaker, or the end of a joke to make cuts.
-6. **Naming**: Create a short, descriptive, and engaging title for each lesson in <%= translation_language %>
-
-## Output Format
-- Print the lesson title on its own line prefixed by a single `#`.
-- Print the timestamps and phrases exactly as they appear in the input.
-- Put a single empty line between lessons.
-- Do NOT output any introductory text, translations, or conversational filler. Output ONLY the formatted lessons.
+## Rules:
+1. Group phrases that belong together logically (by scene, dialogue, or pauses).
+2. Maintain strict chronological order.
+3. Length Limit: Aim for 4 to 8 phrases per lesson. 
+4. If a scene is too long, split it and append "(Part 1)", "(Part 2)" to the titles.
+5. Create a descriptive title for each lesson in <%= clip_language %>.
+6. Output format: The title must start with `#`. Put a blank line between lessons. Do not output any conversational filler or introductory text.
 
 ## Example Input 1
-00:08.00 We were good
-00:10.00 we were gold
-00:12.50 Kind of dream
-00:13.00 that can't be sold
-00:16.00 We were right
-00:18.00 'til we weren't
-00:20.00 Built a home
-00:21.25 and watched it burn
-00:25.00 I didn't wanna leave you
-00:26.00 I didn't wanna lie
-00:29.50 Started to cry
-00:30.00 but then remembered I
+We were good
+we were gold
+Kind of dream
+that can't be sold
+We were right
+'til we weren't
+Built a home
+and watched it burn
+I didn't wanna leave you
+I didn't wanna lie
+Started to cry
+but then remembered I
 
 ## Expected Output 1
 # The Golden Dream
-00:08.00 We were good
-00:10.00 we were gold
-00:12.50 Kind of dream
-00:13.00 that can't be sold
-00:16.00 We were right
-00:18.00 'til we weren't
-00:20.00 Built a home
-00:21.25 and watched it burn
+We were good
+we were gold
+Kind of dream
+that can't be sold
+We were right
+'til we weren't
+Built a home
+and watched it burn
 
 # The Turning Point
-00:25.00 I didn't wanna leave you
-00:26.00 I didn't wanna lie
-00:29.50 Started to cry
-00:30.00 but then remembered I
+I didn't wanna leave you
+I didn't wanna lie
+Started to cry
+but then remembered I
 
 ## Example Input 2
-00:02.00 - Salut, tu vas bien ?
-00:03.50 - Ça va, mais je suis fatigué.
-00:05.00 - Pourquoi ? T'as fait quoi hier ?
-00:06.50 J'ai commencé à lui raconter ma soirée.
-00:08.00 - J'ai regardé une série.
-00:09.00 - Juste un épisode ?
-00:10.00 - Non, toute la saison.
-00:11.50 Il m'a regardé en jugeant.
-00:13.00 - T'es vraiment pas possible.
-00:14.50 - Je sais, mais c'était trop bien.
-00:16.00 Et là, le bus est arrivé.
-00:17.50 - Bon, on y va ?
-00:18.50 - Allez, monte.
+- Salut, tu vas bien ?
+- Ça va, mais je suis fatigué.
+- Pourquoi ? T'as fait quoi hier ?
+J'ai commencé à lui raconter ma soirée.
+- J'ai regardé une série.
+- Juste un épisode ?
+- Non, toute la saison.
+Il m'a regardé en jugeant.
+- T'es vraiment pas possible.
+- Je sais, mais c'était trop bien.
+Et là, le bus est arrivé.
+- Bon, on y va ?
+- Allez, monte.
 
 ## Expected Output 2
 # La Soirée Série (Part 1)
-00:02.00 - Salut, tu vas bien ?
-00:03.50 - Ça va, mais je suis fatigué.
-00:05.00 - Pourquoi ? T'as fait quoi hier ?
-00:06.50 J'ai commencé à lui raconter ma soirée.
-00:08.00 - J'ai regardé une série.
-00:09.00 - Juste un épisode ?
-00:10.00 - Non, toute la saison.
+- Salut, tu vas bien ?
+- Ça va, mais je suis fatigué.
+- Pourquoi ? T'as fait quoi hier ?
+J'ai commencé à lui raconter ma soirée.
+- J'ai regardé une série.
+- Juste un épisode ?
+- Non, toute la saison.
 
 # La Soirée Série (Part 2)
-00:11.50 Il m'a regardé en jugeant.
-00:13.00 - T'es vraiment pas possible.
-00:14.50 - Je sais, mais c'était trop bien.
-00:16.00 Et là, le bus est arrivé.
-00:17.50 - Bon, on y va ?
-00:18.50 - Allez, monte.
+Il m'a regardé en jugeant.
+- T'es vraiment pas possible.
+- Je sais, mais c'était trop bien.
+Et là, le bus est arrivé.
+- Bon, on y va ?
+- Allez, monte.
 
 ## Target Input
