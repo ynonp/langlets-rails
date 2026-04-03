@@ -1,0 +1,1192 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=htnNWsxVlqs",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "بصير يحرك بإيده إنت، قومي إنت",
+        "timestamp": "00:00.00",
+        "text_l2": "He starts waving his hand at you, \"You, get up\""
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "كأنه حشرة قدامه",
+        "timestamp": "00:02.00",
+        "text_l2": "Like you're a bug in front of him"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "أو إنه إنت \"أمينة صندوق\" مش أكثر من هيك",
+        "timestamp": "00:04.00",
+        "text_l2": "Or that you're a \"cashier,\" nothing more than that"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "هسا بجيب العيد",
+        "timestamp": "00:07.00",
+        "text_l2": "Now I'll bring the Eid gift"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أم جاية تربي ابنها على طاولة الدفع",
+        "timestamp": "00:09.00",
+        "text_l2": "Or she's come to raise her son at the checkout counter"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "قدام تقريبا 50 واحد واقف بالدور",
+        "timestamp": "00:11.00",
+        "text_l2": "With almost 50 people standing in line"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "بحكيلي هاي البيتزا هدية من المدير",
+        "timestamp": "00:13.00",
+        "text_l2": "He tells me this pizza is a gift from the manager"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "المدير معجب فيك",
+        "timestamp": "00:16.00",
+        "text_l2": "The manager likes you"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "ما عرفتش شو بدي أتصرف",
+        "timestamp": "00:17.00",
+        "text_l2": "I didn't know how to react"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "وكثير ناس كانوا حوالي",
+        "timestamp": "00:19.00",
+        "text_l2": "And there were many people around me"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "اللي حرفيا هيك خدودي حمرن",
+        "timestamp": "00:20.00",
+        "text_l2": "My cheeks literally turned red like this"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "ملان طاقة، آه؟",
+        "timestamp": "00:25.00",
+        "text_l2": "Full of energy, huh?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "أنا لما بلشت بهذا الشغل",
+        "timestamp": "00:27.00",
+        "text_l2": "When I started this job"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "كان عمري 18 سنة",
+        "timestamp": "00:29.00",
+        "text_l2": "I was 18 years old"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "كنت مخلصة مدرسة جديد",
+        "timestamp": "00:31.00",
+        "text_l2": "I had just finished school"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "الأيام ركضت وما حسيتش",
+        "timestamp": "00:33.00",
+        "text_l2": "The days flew by and I didn't feel it"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "وأنا مبسوطة بشغلي وكملت",
+        "timestamp": "00:35.00",
+        "text_l2": "I was happy with my work and continued"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "عندي الاستوديو الخاص",
+        "timestamp": "00:37.00",
+        "text_l2": "I have my own studio"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "بشتغل فيه تصاميم خاصة بالماركة تاعي",
+        "timestamp": "00:39.00",
+        "text_l2": "I work on designs specific to my brand there"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "وبشتغل برضه في محل الأواعي",
+        "timestamp": "00:41.00",
+        "text_l2": "And I also work at a clothing store"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "إلي بشتغل أمين صندوق 5 سنين",
+        "timestamp": "00:43.00",
+        "text_l2": "Where I've worked as a cashier for 5 years"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "بشتغل بسوبر ماركت بتل أبيب",
+        "timestamp": "00:45.00",
+        "text_l2": "I work at a supermarket in Tel Aviv"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "أمينة صندوق",
+        "timestamp": "00:47.00",
+        "text_l2": "As a cashier"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بحس الشغل الأنسب",
+        "timestamp": "00:49.00",
+        "text_l2": "I feel it's the most suitable job"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "إنه دايما بدهم عمال",
+        "timestamp": "00:51.00",
+        "text_l2": "That they always need workers"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "أمناء صندوق",
+        "timestamp": "00:53.00",
+        "text_l2": "Cashiers"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "اللي يكونوا موجودين بسوق العمل",
+        "timestamp": "00:55.00",
+        "text_l2": "Who are available in the job market"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "اللي خلاني بالشغل هو أكثر",
+        "timestamp": "00:57.00",
+        "text_l2": "What kept me in the job is more"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "التعامل، بحب الناس",
+        "timestamp": "00:59.00",
+        "text_l2": "The interaction, I love people"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "بحب أحكي مع العالم",
+        "timestamp": "01:01.00",
+        "text_l2": "I love talking to people"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "بنصير أصحاب",
+        "timestamp": "01:03.00",
+        "text_l2": "We become friends"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "هذا الشغل بالنسبة إلي",
+        "timestamp": "01:05.00",
+        "text_l2": "This job for me"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "هو دخل ثابت جدا جدا",
+        "timestamp": "01:07.00",
+        "text_l2": "Is a very, very stable income"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "بساعدني من ناحية تعليمي",
+        "timestamp": "01:09.00",
+        "text_l2": "It helps me with my education"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "أكثر إشي بحب بشغلي",
+        "timestamp": "01:11.00",
+        "text_l2": "What I love most about my job"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "الزباين اللي بتيجي الصبح",
+        "timestamp": "01:13.00",
+        "text_l2": "The customers who come in the morning"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "بتفوت مع ابتسامة \"صباح الخير\"",
+        "timestamp": "01:15.00",
+        "text_l2": "Come in with a smile, \"Good morning\""
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "\"كيفك؟\"",
+        "timestamp": "01:17.00",
+        "text_l2": "\"How are you?\""
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أكثر إشي بحب بشغلي",
+        "timestamp": "01:19.00",
+        "text_l2": "What I love most about my job"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "إنه كل يوم بشوف ناس جديدة",
+        "timestamp": "01:21.00",
+        "text_l2": "Is that every day I see new people"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "طبعا أشكال ألوان",
+        "timestamp": "01:23.00",
+        "text_l2": "Of all shapes and colors, of course"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "في ناس مرحة، روحها حلوة",
+        "timestamp": "01:25.00",
+        "text_l2": "There are cheerful people, with nice spirits"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "بتمرق نهار الشغل بسهولة",
+        "timestamp": "01:27.00",
+        "text_l2": "The work day passes easily"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "فيه زباين كثير واو",
+        "timestamp": "01:29.00",
+        "text_l2": "There are many wow customers"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "قديش راقيين",
+        "timestamp": "01:31.00",
+        "text_l2": "How sophisticated they are"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "في ناس اللي بتعصبن",
+        "timestamp": "01:33.00",
+        "text_l2": "There are people who get angry"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "في ناس اللي وقحة",
+        "timestamp": "01:35.00",
+        "text_l2": "There are rude people"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "اللي مش دايما بحكوا بطريقة لبقة",
+        "timestamp": "01:37.00",
+        "text_l2": "Who don't always speak politely"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "اللي هم بيشوفونا إنه إحنا أقل",
+        "timestamp": "01:39.00",
+        "text_l2": "Who see us as lesser"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "إنه إحنا أمناء صندوق",
+        "timestamp": "01:41.00",
+        "text_l2": "That we are cashiers"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "يعني مين إنت؟",
+        "timestamp": "01:43.00",
+        "text_l2": "Like, who are you?"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "الشغل أصعب من إيش هو مبين",
+        "timestamp": "01:45.00",
+        "text_l2": "The job is harder than it appears"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "مش متعب جسديا",
+        "timestamp": "01:47.00",
+        "text_l2": "It's not physically tiring"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "ولكن متعب نفسيا",
+        "timestamp": "01:49.00",
+        "text_l2": "But it's mentally exhausting"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "التعامل مع الناس",
+        "timestamp": "01:51.00",
+        "text_l2": "Dealing with people"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "في ناس طبعا بتفاصل",
+        "timestamp": "01:53.00",
+        "text_l2": "There are people who haggle, of course"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "وعدا عن إنها بتفاصل",
+        "timestamp": "01:55.00",
+        "text_l2": "And besides haggling"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "بتخليك واقف على الصندوق",
+        "timestamp": "01:57.00",
+        "text_l2": "They keep you standing at the register"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "بتصير هيك تغامز",
+        "timestamp": "01:59.00",
+        "text_l2": "They start winking like this"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "يلا هسا بده يعطينا",
+        "timestamp": "02:01.00",
+        "text_l2": "Come on, now he wants to give me"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "\"تخفيض للموظفين\"",
+        "timestamp": "02:03.00",
+        "text_l2": "\"Employee discount\""
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "هسا بزبطها من عنده",
+        "timestamp": "02:05.00",
+        "text_l2": "Now he's fixing it from his side"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "واخصم عشرة من هون",
+        "timestamp": "02:07.00",
+        "text_l2": "And deduct ten from here"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "بردش عليهم الصراحة",
+        "timestamp": "02:09.00",
+        "text_l2": "I don't respond to them, honestly"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "بختار إنه ما أجاوبش",
+        "timestamp": "02:11.00",
+        "text_l2": "I choose not to answer"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "بفكروا إنه المحل محل أبوي",
+        "timestamp": "02:13.00",
+        "text_l2": "They think the store belongs to my father"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "الصراحة، من الآخر",
+        "timestamp": "02:15.00",
+        "text_l2": "Honestly, bottom line"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "في عندك هون غلط بالحساب",
+        "timestamp": "01:48.00",
+        "text_l2": "You have a mistake in the calculation here"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "هون حاسبتيلي ضريبة",
+        "timestamp": "01:50.00",
+        "text_l2": "Here you charged me tax"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "بقول له: \"بس الضريبة هي",
+        "timestamp": "01:51.00",
+        "text_l2": "I tell him: \"But the tax is"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "بكل إشي إحنا منشتريه",
+        "timestamp": "01:53.00",
+        "text_l2": "On everything we buy"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "بتكون موجودة\"",
+        "timestamp": "01:55.00",
+        "text_l2": "It's always included\""
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "في عندك زبون اللي بيجي",
+        "timestamp": "01:57.00",
+        "text_l2": "You have a customer who comes"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "وبده يروح معاه علاقة الملابس",
+        "timestamp": "01:59.00",
+        "text_l2": "And wants to take the clothes relationship with him"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "والعلاقة",
+        "timestamp": "02:01.00",
+        "text_l2": "And the relationship"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "فهو بحسبها إنه هاي حقها",
+        "timestamp": "02:03.00",
+        "text_l2": "So he thinks this is her right"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "موجود في اللي دفعه",
+        "timestamp": "02:05.00",
+        "text_l2": "Included in what he paid"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "إنت هون مدفعتيني ضريبة",
+        "timestamp": "02:07.00",
+        "text_l2": "You charged me tax here"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "في كثير ناس صعبة",
+        "timestamp": "02:09.00",
+        "text_l2": "There are many difficult people"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "مش لأنه هي بدها تكون صعبة",
+        "timestamp": "02:11.00",
+        "text_l2": "Not because she wants to be difficult"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "فيه ناس لأنه هي هيك طبعها",
+        "timestamp": "02:13.00",
+        "text_l2": "There are people because that's just their nature"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "يعني ممكن تسألك عن الغرض",
+        "timestamp": "02:15.00",
+        "text_l2": "Like, she might ask you about the item"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "10 مرات",
+        "timestamp": "02:17.00",
+        "text_l2": "10 times"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "مشمولة يعني بالحساب",
+        "timestamp": "02:19.00",
+        "text_l2": "Included, meaning in the bill"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "هذا الإشي أنا ما بقرره",
+        "timestamp": "02:21.00",
+        "text_l2": "This thing I don't decide"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "فبقول لك: \"أنا معيش",
+        "timestamp": "02:23.00",
+        "text_l2": "So I tell you: \"I'm not living"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "لا شيكل ولا أغورة",
+        "timestamp": "02:25.00",
+        "text_l2": "On a shekel or an agora"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "شو ممكن تساوي؟\"",
+        "timestamp": "02:27.00",
+        "text_l2": "What could it be worth?\""
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "لأ إنت مدفعتيني ضريبة",
+        "timestamp": "02:29.00",
+        "text_l2": "No, you charged me tax"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "شو رأيك تعطيني الكيس",
+        "timestamp": "02:31.00",
+        "text_l2": "How about you give me the bag"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "\"هدية إذا بشتري أخرى بلوزة زيادة؟\"",
+        "timestamp": "02:33.00",
+        "text_l2": "\"As a gift if I buy another blouse?\""
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "يا عمو مش مدفعتك ضريبة",
+        "timestamp": "02:35.00",
+        "text_l2": "Uncle, I didn't charge you tax"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "واحد بيجي سكران بقعد يخبص",
+        "timestamp": "02:37.00",
+        "text_l2": "One comes drunk and starts rambling"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "بحكي على مرته وهاي هيك عملت",
+        "timestamp": "02:39.00",
+        "text_l2": "Talking about his wife and this is what she did"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "وهاي هيك ساوت",
+        "timestamp": "02:41.00",
+        "text_l2": "And this is what she did"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "لحد ما التم كل المحل",
+        "timestamp": "02:43.00",
+        "text_l2": "Until the whole store gathered"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "ويقنعوه إنه هاي ضريبة",
+        "timestamp": "02:45.00",
+        "text_l2": "And convince him that this is tax"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "إشي اللي إحنا ما منقرره",
+        "timestamp": "02:47.00",
+        "text_l2": "Something we don't decide"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "بس في صوت البريت",
+        "timestamp": "02:49.00",
+        "text_l2": "But there's the sound of the receipt"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "وهو يمرق روح وييجي",
+        "timestamp": "02:51.00",
+        "text_l2": "And he goes and comes"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "وهم بتشاوروا على طوشة",
+        "timestamp": "02:53.00",
+        "text_l2": "And they argue about a commotion"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "اطلع عاكس هاي وهي معاه",
+        "timestamp": "02:55.00",
+        "text_l2": "Look, reverse this and she's with him"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "ليه ساعدها في نمرة",
+        "timestamp": "02:57.00",
+        "text_l2": "Why did I help her with a number"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "أو ليه صورت عليه البريت",
+        "timestamp": "02:59.00",
+        "text_l2": "Or why I printed the receipt for him"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "عشان تبعته لحدا",
+        "timestamp": "03:01.00",
+        "text_l2": "To send it to someone"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "فيه كمان بتيجي عندي زبونة مميزة",
+        "timestamp": "03:03.00",
+        "text_l2": "There's also a special customer who comes to me"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "اللي هي عندها طيف التوحد",
+        "timestamp": "03:05.00",
+        "text_l2": "Who is on the autism spectrum"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "اللي طوالي بس أشوفها واقفة بالدور",
+        "timestamp": "03:07.00",
+        "text_l2": "As soon as I see her standing in line"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "باجي بنادي عليها وبمشيها",
+        "timestamp": "03:09.00",
+        "text_l2": "I come, call her, and walk her through"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "زبون عم بمرق قنينة عصير",
+        "timestamp": "03:11.00",
+        "text_l2": "A customer passing a bottle of juice"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "وهي مفتوحة يعني هو شارب منها",
+        "timestamp": "03:13.00",
+        "text_l2": "And it's open, meaning he drank from it"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "ولا هو بيسأل",
+        "timestamp": "03:15.00",
+        "text_l2": "And he doesn't ask"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "\"مشربتيش منها مظبوط؟\"",
+        "timestamp": "03:17.00",
+        "text_l2": "\"Didn't you drink from it properly?\""
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "منيح إنه أنا أصلا شفاف",
+        "timestamp": "03:19.00",
+        "text_l2": "Good thing I'm basically transparent"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "ومش موجود في هاي الدقيقة",
+        "timestamp": "03:21.00",
+        "text_l2": "And not present in this minute"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "حرفيا",
+        "timestamp": "03:23.00",
+        "text_l2": "Literally"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "أنا بصفن وبضحك الصراحة",
+        "timestamp": "03:25.00",
+        "text_l2": "I zone out and laugh, honestly"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "بشرب بقشة بس",
+        "timestamp": "03:27.00",
+        "text_l2": "I only drink with a straw"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "وما كانش فيها قشة الصراحة",
+        "timestamp": "03:29.00",
+        "text_l2": "And there wasn't even a straw, honestly"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "أهم صفة تكون عند الشخص",
+        "timestamp": "03:31.00",
+        "text_l2": "The most important trait a person should have"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "إنه يكون صبور",
+        "timestamp": "03:33.00",
+        "text_l2": "Is to be patient"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "السرعة والابتسامة",
+        "timestamp": "03:35.00",
+        "text_l2": "Speed and a smile"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "أعصاب باردة",
+        "timestamp": "03:37.00",
+        "text_l2": "Cool nerves"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "وأنك تتقبل البني آدم اللي إقبالك",
+        "timestamp": "03:39.00",
+        "text_l2": "And that you accept the human being in front of you"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "أصعب موقف ممكن يمر",
+        "timestamp": "03:41.00",
+        "text_l2": "The hardest situation that can happen"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "على أمينة الصندوق، عنصرية",
+        "timestamp": "03:43.00",
+        "text_l2": "To a cashier, racism"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "مرة أجا زبون اللي أجا قال لي:",
+        "timestamp": "03:45.00",
+        "text_l2": "Once a customer came and said to me:"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "\"إنت عنصرية إرهابية\"",
+        "timestamp": "03:47.00",
+        "text_l2": "\"You are a racist terrorist\""
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "حسيت إني أنا هون بخطر",
+        "timestamp": "03:49.00",
+        "text_l2": "I felt that I was in danger here"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "مش تمام لإلي",
+        "timestamp": "03:51.00",
+        "text_l2": "It wasn't okay for me"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "أنا كنت عم بحكي بالعربي",
+        "timestamp": "03:53.00",
+        "text_l2": "I was speaking Arabic"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "والزبون طلب مني بشكل جدا صريح",
+        "timestamp": "03:55.00",
+        "text_l2": "And the customer asked me very explicitly"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "تحكيش بالعربي اللغة بتضايقني",
+        "timestamp": "03:57.00",
+        "text_l2": "Don't speak Arabic, the language bothers me"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "وتواصلت مع مديري بالشغل",
+        "timestamp": "03:59.00",
+        "text_l2": "And I contacted my manager at work"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "وتواصلنا مع الشرطة",
+        "timestamp": "04:01.00",
+        "text_l2": "And we contacted the police"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "واليوم هذا الزبون مبعد",
+        "timestamp": "04:03.00",
+        "text_l2": "And today this customer is banned"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "صراحة بعد 11 سنة",
+        "timestamp": "04:05.00",
+        "text_l2": "Honestly, after 11 years"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "بطل الإشي يأثر صار أكثر مريح",
+        "timestamp": "04:07.00",
+        "text_l2": "The thing stopped affecting me, I became more comfortable"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "يعني بالعكس ادفع عند غيري",
+        "timestamp": "04:09.00",
+        "text_l2": "Like, on the contrary, I pay at someone else's register"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "بضايقنيش",
+        "timestamp": "04:11.00",
+        "text_l2": "It doesn't bother me"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "بينفع ما تحكيش معي بهاي الطريقة",
+        "timestamp": "04:13.00",
+        "text_l2": "You can't speak to me this way"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "أنا اليوم بنطيك خدمة حلوة",
+        "timestamp": "04:15.00",
+        "text_l2": "Today I'm giving you a nice service"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "وبينفع حتى يعني في كثير زباين",
+        "timestamp": "04:17.00",
+        "text_l2": "And it can even, like, many customers"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "بطلعوا وهم مبسوطين",
+        "timestamp": "04:19.00",
+        "text_l2": "Leave feeling happy"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "موقف بكاني.. آه",
+        "timestamp": "04:21.00",
+        "text_l2": "A crying situation.. ah"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "بسمع كثير قصص اللي في ناس",
+        "timestamp": "04:23.00",
+        "text_l2": "I hear many stories about people"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "مثلا واحدة بتيجي تحكي لي على ولادها",
+        "timestamp": "04:25.00",
+        "text_l2": "For example, one comes to tell me about her kids"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "إنه هم بحكوش معها",
+        "timestamp": "04:27.00",
+        "text_l2": "That they talk back to her"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "أنا عم باجي بشتري لأنه فش إلي حدا",
+        "timestamp": "04:29.00",
+        "text_l2": "I'm coming to buy because I have no one"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "زبون بسمح لنفسه إنه يتمادى",
+        "timestamp": "04:31.00",
+        "text_l2": "A customer allows himself to go too far"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "مسبات منقدر نقول",
+        "timestamp": "04:33.00",
+        "text_l2": "Insults, we can't say"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "طبعا بيخلاش صراحة",
+        "timestamp": "04:35.00",
+        "text_l2": "Of course, he doesn't leave, honestly"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "اليوم لما بنيجي بنقيم الدبوس",
+        "timestamp": "04:37.00",
+        "text_l2": "Today when we come to evaluate the pin"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "ممكن يبقى في محله مزع",
+        "timestamp": "04:39.00",
+        "text_l2": "It might remain annoying in its place"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "بس هو مش راح يبقى مزع",
+        "timestamp": "04:41.00",
+        "text_l2": "But it won't remain annoying"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "مرة زبونة اشترت كمية مشتريات",
+        "timestamp": "04:43.00",
+        "text_l2": "Once a customer bought a quantity of items"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "بالآخر أجت بدها تدفع",
+        "timestamp": "04:45.00",
+        "text_l2": "In the end, she came to pay"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "ما زبطش إنها تدفع بالبطاقة",
+        "timestamp": "04:47.00",
+        "text_l2": "She couldn't pay with the card"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "فأجا زبون ثاني دفع عنها",
+        "timestamp": "04:49.00",
+        "text_l2": "So another customer came and paid for her"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "وحسيت إنه ولو قديش عنجد",
+        "timestamp": "04:51.00",
+        "text_l2": "And I felt that even though how much really"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "في ناس اللي عنجد بعدها بتعمل خير",
+        "timestamp": "04:53.00",
+        "text_l2": "There are people who really still do good"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "بالنسبة إله ها إنت مزعتها",
+        "timestamp": "04:55.00",
+        "text_l2": "As for him, hey, you annoyed her"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "فلازم إما تدفعله حقها",
+        "timestamp": "04:57.00",
+        "text_l2": "So you must either pay him her right"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "أو هسا تجيبله واحدة زيها",
+        "timestamp": "04:59.00",
+        "text_l2": "Or now bring him one like her"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "كيف وليش بعرفش",
+        "timestamp": "05:01.00",
+        "text_l2": "How and why, I don't know"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "وضع كثير ناس اللي هو",
+        "timestamp": "05:03.00",
+        "text_l2": "The situation of many people which is"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "بيمرق على الصندوق",
+        "timestamp": "05:05.00",
+        "text_l2": "Passing by the register"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "بيمرق غرضين ثلاثة",
+        "timestamp": "05:07.00",
+        "text_l2": "Passing two or three items"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "فالناس بتستغرب بتقول لي:",
+        "timestamp": "05:09.00",
+        "text_l2": "So people get surprised and say to me:"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "\"أنا شريت كيسين\"",
+        "timestamp": "05:11.00",
+        "text_l2": "\"I bought two bags\""
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "كيف كيسين طلعوا 600 شيكل؟",
+        "timestamp": "05:13.00",
+        "text_l2": "How did two bags come out to 600 shekels?"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "هيك بصفن فش إيش أحكي",
+        "timestamp": "05:15.00",
+        "text_l2": "Like this I zone out, nothing to say"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "الإشي تاخدهوش شخصي",
+        "timestamp": "05:17.00",
+        "text_l2": "Don't take the thing personally"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "كل غلط ممكن يتصلح",
+        "timestamp": "05:19.00",
+        "text_l2": "Every mistake can be fixed"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "فش حاجة للصراخ",
+        "timestamp": "05:21.00",
+        "text_l2": "No need for screaming"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "فش حاجة للعصبية",
+        "timestamp": "05:23.00",
+        "text_l2": "No need for anger"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "يعني هم يعملوا المشكلة",
+        "timestamp": "05:25.00",
+        "text_l2": "Like, they make the problem"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "وفي الأخير بتلقى حالك مصور",
+        "timestamp": "05:27.00",
+        "text_l2": "And in the end you find yourself filmed"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "فأنا صراحة صرت أصور",
+        "timestamp": "05:29.00",
+        "text_l2": "So honestly, I started filming"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "صورني بصورك",
+        "timestamp": "05:31.00",
+        "text_l2": "Film me, I'll film you"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "وكلمة \"أنا مستعجل\"",
+        "timestamp": "05:33.00",
+        "text_l2": "And the word \"I'm in a hurry\""
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "تستعملوهاش لأمينات الصندوق",
+        "timestamp": "05:35.00",
+        "text_l2": "Don't use it on cashiers"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "لأنه إحنا كلياتنا مستعجلين",
+        "timestamp": "05:37.00",
+        "text_l2": "Because all of us are in a hurry"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "مرة صار معي موقف",
+        "timestamp": "05:39.00",
+        "text_l2": "Once I had a situation"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "اللي كنت جديدة بالشغل",
+        "timestamp": "05:41.00",
+        "text_l2": "When I was new at the job"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "ما إليش جمعة",
+        "timestamp": "05:43.00",
+        "text_l2": "I hadn't had a day off"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "أجت زبونة اللي هي كانت دايخة",
+        "timestamp": "05:45.00",
+        "text_l2": "A customer came who was dizzy"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "مش قادرة، دقات قلبها سريعة",
+        "timestamp": "05:47.00",
+        "text_l2": "Couldn't stand, her heartbeats were fast"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "بدها توقع قدامي",
+        "timestamp": "05:49.00",
+        "text_l2": "She was about to faint in front of me"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "الصراحة تركت الزباين",
+        "timestamp": "05:51.00",
+        "text_l2": "Honestly, I left the customers"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "رحت جبتلها مي وضليت حدها",
+        "timestamp": "05:53.00",
+        "text_l2": "I went and got her water and stayed beside her"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "وساعدتها وطلبت لها إسعاف",
+        "timestamp": "05:55.00",
+        "text_l2": "And I helped her and called an ambulance for her"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "قالت لي \"لولاكي أنا ما كنت",
+        "timestamp": "05:57.00",
+        "text_l2": "She told me \"If it weren't for you I wouldn't have"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "نجيت من هذا الإشي\"",
+        "timestamp": "05:59.00",
+        "text_l2": "Survived this thing\""
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "كان موقف كثير مؤثر",
+        "timestamp": "06:01.00",
+        "text_l2": "It was a very moving situation"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "اليوم حلمي إني أوصل",
+        "timestamp": "06:03.00",
+        "text_l2": "Today my dream is to reach"
+      }
+    ],
+    "phrases_with_token_translations": "[بصير] يحرك بإيده إنت، قومي إنت => [He starts] waving his hand at you, \"You, get up\"\nبصير [يحرك] بإيده إنت، قومي إنت => He starts [waving] his hand at you, \"You, get up\"\nبصير يحرك [بإيده] إنت، قومي إنت => He starts waving [his hand] at you, \"You, get up\"\nبصير يحرك بإيده [إنت]، قومي إنت => He starts waving his hand at [you], \"You, get up\"\nبصير يحرك بإيده إنت، [قومي] إنت => He starts waving his hand at you, \"You, [get up]\"\nبصير يحرك بإيده إنت، قومي [إنت] => He starts waving his hand at you, \"[You], get up\"\n\n[كأنه] حشرة قدامه => [Like you're] a bug in front of him\nكأنه [حشرة] قدامه => Like you're [a bug] in front of him\nكأنه حشرة [قدامه] => Like you're a bug [in front of him]\n\n[أو] إنه إنت \"أمينة صندوق\" مش أكثر من هيك => [Or] that you're a \"cashier,\" nothing more than that\nأو [إنه] إنت \"أمينة صندوق\" مش أكثر من هيك => Or [that] you're a \"cashier,\" nothing more than that\nأو إنه [إنت] \"أمينة صندوق\" مش أكثر من هيك => Or that [you're] a \"cashier,\" nothing more than that\nأو إنه إنت \"[أمينة صندوق]\" مش أكثر من هيك => Or that you're a \"[cashier],\" nothing more than that\nأو إنه إنت \"أمينة صندوق\" [مش] أكثر من هيك => Or that you're a \"cashier,\" [nothing] more than that\nأو إنه إنت \"أمينة صندوق\" مش [أكثر] من هيك => Or that you're a \"cashier,\" nothing [more] than that\nأو إنه إنت \"أمينة صندوق\" مش أكثر [من] هيك => Or that you're a \"cashier,\" nothing more [than] that\nأو إنه إنت \"أمينة صندوق\" مش أكثر من [هيك] => Or that you're a \"cashier,\" nothing more than [that]\n\n[هسا] بجيب العيد => [Now] I'll bring the Eid gift\nهسا [بجيب] العيد => Now [I'll bring] the Eid gift\nهسا بجيب [العيد] => the holiday, the Eid # \"العيد\" literally means \"the holiday\" or \"the Eid\"; \"gift\" is added for context in the English translation moves.\n\n[أم] جاية تربي ابنها على طاولة الدفع => [Or] she's come to raise her son at the checkout counter\nأم [جاية] تربي ابنها على طاولة الدفع => [she's come] to raise her son at the checkout counter\nأم جاية [تربي] ابنها على طاولة الدفع => she's come [to raise] her son at the checkout counter\nأم جاية تربي [ابنها] على طاولة الدفع => she's come to raise [her son] at the checkout counter\nأم جاية تربي ابنها [على] طاولة الدفع => she's come to raise her son [at] the checkout counter\nأم جاية تربي ابنها على [طاولة الدفع] => she's come to raise her son at [the checkout counter] # 'طاولة الدفع' literally translates to 'payment table', which is the checkout counter in this context\n\n[قدام] تقريبا 50 واحد واقف بالدور => [With] almost 50 people standing in line\nقدام [تقريبا] 50 واحد واقف بالدور => With [almost] 50 people standing in line\nقدام تقريبا [50] واحد واقف بالدور => With almost [50] people standing in line\nقدام تقريبا 50 [واحد] واقف بالدور => With almost 50 [people] standing in line\nقدام تقريبا 50 واحد [واقف] بالدور => With almost 50 people [standing] in line\nقدام تقريبا 50 واحد واقف [بالدور] => With almost 50 people standing [in line] # بالدور literally translates to \"in (the) turn\" but means \"in line\" here\n\n[بحكيلي] هاي البيتزا هدية من المدير => [He tells me] this pizza is a gift from the manager\nبحكيلي [هاي] البيتزا هدية من المدير => He tells me [this] pizza is a gift from the manager\nبحكيلي هاي [البيتزا] هدية من المدير => He tells me this [pizza] is a gift from the manager\nبحكيلي هاي البيتزا [هدية] من المدير => He tells me this pizza is [a gift] from the manager\nبحكيلي هاي البيتزا هدية [من] المدير => He tells me this pizza is a gift [from] the manager\nبحكيلي هاي البيتزا هدية من [المدير] => He tells me this pizza is a gift from [the manager]\n\n[المدير] معجب فيك => [The manager] likes you\nالمدير [معجب] فيك => The manager [likes] you\nالمدير معجب [فيك] => The manager likes [you]\n\n[ما عرفتش] شو بدي أتصرف => [I didn't know] how to react\nما عرفتش [شو] بدي أتصرف => what\nما عرفتش شو [بدي] أتصرف => should, I want\nما عرفتش شو بدي [أتصرف] => I didn't know how [to react]\n\n[و]كثير ناس كانوا حوالي => [And] there were many people around me\nو[كثير] ناس كانوا حوالي => And there were [many] people around me\nوكثير [ناس] كانوا حوالي => And there were many [people] around me\nوكثير ناس [كانوا] حوالي => And [there were] many people around me\nوكثير ناس كانوا [حوالي] => And there were many people [around me]\n\nاللي [حرفيا] هيك خدودي حمرن => My cheeks [literally] turned red like this\nاللي حرفيا [هيك] خدودي حمرن => My cheeks literally turned red [like this]\nاللي حرفيا هيك [خدودي] حمرن => [My cheeks] literally turned red like this\nاللي حرفيا هيك خدودي [حمرن] => My cheeks literally [turned red] like this # حمرن is the verbal form meaning \"they turned red\" or \"reddened\"\n\n[ملان] طاقة، آه؟ => [Full] of energy, huh?\nملان [طاقة]، آه؟ => Full of [energy], huh?\nملان طاقة، [آه]؟ => Full of energy, [huh]?\n\n[أنا] لما بلشت بهذا الشغل => When [I] started this job\nأنا [لما] بلشت بهذا الشغل => [When] I started this job\nأنا لما [بلشت] بهذا الشغل => When I [started] this job\nأنا لما بلشت [بهذا] الشغل => When I started [this] job\nأنا لما بلشت بهذا [الشغل] => When I started this [job]\n\n[كان عمري] 18 سنة => [I was] 18 years old\nكان عمري [18] سنة => I was [18] years old\nكان عمري 18 [سنة] => I was 18 [years old]\n\n[كنت مخلصة] مدرسة جديد => [I had] just [finished] school\nكنت مخلصة [مدرسة] جديد => I had just finished [school]\nكنت مخلصة مدرسة [جديد] => just # used as an adverb here meaning \"recently\" or \"just\"\n\n[الأيام] ركضت وما حسيتش => [The days] flew by and I didn't feel it\nالأيام [ركضت] وما حسيتش => The days [flew by] and I didn't feel it\nالأيام ركضت [و]ما حسيتش => The days flew by [and] I didn't feel it\nالأيام ركضت و[ما حسيتش] => The days flew by and [I didn't feel it] # \"ما ... -ش\" is a negation structure; the verb includes the subject \"I\" and the implied object \"it\"\n\n[وأنا] مبسوطة بشغلي وكملت => [I was] happy with my work and continued # \"وأنا\" acts as the subject \"I\" plus the implied copula \"was\" in this context\nوأنا [مبسوطة] بشغلي وكملت => I was [happy] with my work and continued\nوأنا مبسوطة [بشغلي] وكملت => I was happy [with my work] and continued # \"بشغلي\" includes the preposition \"bi\" (with), the noun \"shughl\" (work), and the suffix \"i\" (my)\nوأنا مبسوطة بشغلي [وكملت] => I was happy with my work [and continued] # \"وكملت\" includes the conjunction \"wa\" (and) and the verb \"kamalt\" (continued)\n\n[عندي] الاستوديو الخاص => [I have] my own studio\nعندي [الاستوديو] الخاص => I have my own [studio]\nعندي الاستوديو [الخاص] => I have my [own] studio\n\n[بشتغل] فيه تصاميم خاصة بالماركة تاعي => [I work] on designs specific to my brand there\nبشتغل [فيه] تصاميم خاصة بالماركة تاعي => I work on designs specific to my brand [there]\nبشتغل فيه [تصاميم] خاصة بالماركة تاعي => I work on [designs] specific to my brand there\nبشتغل فيه تصاميم [خاصة] بالماركة تاعي => I work on designs [specific] to my brand there\nبشتغل فيه تصاميم خاصة [بالماركة] تاعي => brand # Literal: to/with the brand\nبشتغل فيه تصاميم خاصة بالماركة [تاعي] => I work on designs specific to [my] brand there\n\nوبشتغل [برضه] في محل الأواعي => And I [also] work at a clothing store\nوبشتغل برضه [في] محل الأواعي => And I also work [at] a clothing store\nوبشتغل برضه في [محل] الأواعي => And I also work at a [store]\nوبشتغل برضه في محل [الأواعي] => And I also work at a [clothing] store\n\n[إلي] بشتغل أمين صندوق 5 سنين => [Where] I've worked as a cashier for 5 years\nإلي [بشتغل] أمين صندوق 5 سنين => Where [I've worked] as a cashier for 5 years\nإلي بشتغل [أمين صندوق] 5 سنين => Where I've worked as a [cashier] for 5 years\nإلي بشتغل أمين صندوق [5] سنين => Where I've worked as a cashier for [5] years\nإلي بشتغل أمين صندوق 5 [سنين] => Where I've worked as a cashier for 5 [years]\n\n[بشتغل] بسوبر ماركت بتل أبيب => [I work] at a supermarket in Tel Aviv\n\n# بسوبر ماركت (at a supermarket) uses the prefix 'b-' meaning 'at/in'. \nبشتغل [بسوبر ماركت] بتل أبيب => I work [at a supermarket] in Tel Aviv\n\n# ماركت translates to market; since 'supermarket' is a single word in the English sentence, we use Format B for this component.\nبشتغل بسوبر [ماركت] بتل أبيب => market\n\n# بتل أبيب is the city name with the preposition 'b-' (in) attached to the first word.\nبشتغل بسوبر ماركت [بتل أبيب] => I work at a supermarket [in Tel Aviv]\n\n# بتل can be mapped to 'in Tel' within the English sentence.\nبشتغل بسوبر ماركت [بتل] أبيب => I work at a supermarket [in Tel] Aviv\n\n# أبيب maps directly to 'Aviv'.\nبشتغل بسوبر ماركت بتل [أبيب] => I work at a supermarket in Tel [Aviv]\n\n[أمينة صندوق] => As a [cashier]\n[أمينة] صندوق => female keeper, trustee\nأمينة [صندوق] => fund, till, box\n\n[بحس] الشغل الأنسب => [I feel] it's the most suitable job\nبحس [الشغل] الأنسب => I feel it's the most suitable [job]\nبحس الشغل [الأنسب] => I feel it's [the most suitable] job\n\n[إنه] دايما بدهم عمال => [That] they always need workers\nإنه [دايما] بدهم عمال => That they [always] need workers\nإنه دايما [بدهم] عمال => they want, they need # 'bedhom' consists of 'bed' (want/need) and '-hom' (they)\nإنه دايما بدهم [عمال] => That they always need [workers]\n\n[أمناء صندوق] => [Cashiers]\n[أمناء] صندوق => custodians, keepers\nأمناء [صندوق] => box, fund, cash # literal meaning is box or chest, contextually fund or cash tray\n\n[اللي] يكونوا موجودين بسوق العمل => [Who] are available in the job market\nاللي [يكونوا] موجودين بسوق العمل => Who [are] available in the job market\nاللي يكونوا [موجودين] بسوق العمل => Who are [available] in the job market\nاللي يكونوا موجودين [ب]سوق العمل => in\nاللي يكونوا موجودين ب[سوق] العمل => market\nاللي يكونوا موجودين بسوق [العمل] => job\nاللي يكونوا موجودين ب[سوق العمل] => Who are available in [the job market] # Mapping the compound noun as a single unit or phrase for clarity\n\n[اللي] خلاني بالشغل هو أكثر => [What] kept me in the job is more\nاللي [خلاني] بالشغل هو أكثر => What [kept me] in the job is more\nاللي خلاني [بالشغل] هو أكثر => What kept me [in the job] is more\nاللي خلاني بالشغل [هو] أكثر => What kept me in the job [is] more\nاللي خلاني بالشغل هو [أكثر] => What kept me in the job is [more]\n\n[التعامل]، بحب الناس => [The interaction], I love people\nالتعامل، [بحب] الناس => The interaction, [I love] people\nالتعامل، بحب [الناس] => The interaction, I love [people]\n\n[بحب] أحكي مع العالم => [I love] talking to people\nبحب [أحكي] مع العالم => I love [talking] to people\nبحب أحكي [مع] العالم => I love talking [to] people\nبحب أحكي مع [العالم] => I love talking to [people] # Literally \"the world\", idiomatically used for \"people\" in this dialect\n\n[بنصير] أصحاب => [We become] friends\nبنصير [أصحاب] => We become [friends]\n\n[هذا] الشغل بالنسبة إلي => [This] job for me\nهذا [الشغل] بالنسبة إلي => This [job] for me\nهذا الشغل [بالنسبة] إلي => This job [for] me\nهذا الشغل بالنسبة [إلي] => This job for [me]\n\n[هو] دخل ثابت جدا جدا => [Is] a very, very stable income\nهو [دخل] ثابت جدا جدا => Is a very, very stable [income]\nهو دخل [ثابت] جدا جدا => Is a very, very [stable] income\nهو دخل ثابت [جدا] جدا => Is a [very], very stable income\nهو دخل ثابت جدا [جدا] => Is a very, [very] stable income\n\n[بساعدني] من ناحية تعليمي => [It helps me] with my education\nبساعدني [من ناحية] تعليمي => It helps me [with] my education\nبساعدني من ناحية [تعليمي] => It helps me with [my education]\n\n[أكثر] إشي بحب بشغلي => What I love [most] about my job\nأكثر [إشي] بحب بشغلي => thing\nأكثر إشي [بحب] بشغلي => What [I love] most about my job\nأكثر إشي بحب [بـ]شغلي => about\nأكثر إشي بحب بـ[شغلي] => What I love most about [my job]\n\n[الزباين] اللي بتيجي الصبح => [The customers] who come in the morning\nالزباين [اللي] بتيجي الصبح => The customers [who] come in the morning\nالزباين اللي [بتيجي] الصبح => The customers who [come] in the morning\nالزباين اللي بتيجي [الصبح] => The customers who come [in the morning]\n\n[بتفوت] مع ابتسامة \"صباح الخير\" => [Come in] with a smile, \"Good morning\"\nبتفوت [مع] ابتسامة \"صباح الخير\" => Come in [with] a smile, \"Good morning\"\nبتفوت مع [ابتسامة] \"صباح الخير\" => Come in with [a smile], \"Good morning\"\nبتفوت مع ابتسامة \"[صباح الخير]\" => Come in with a smile, \"[Good morning]\"\n\n[كيفك]؟ => [How are you]?\n\n[أكثر] إشي بحب بشغلي => What I love [most] about my job\nأكثر [إشي] بحب بشغلي => thing\nأكثر إشي [بحب] بشغلي => What [I love] most about my job\nأكثر إشي بحب [بشغلي] => What I love most [about my job] # \"bi\" (about) + \"shughl\" (job) + \"i\" (my) mapped as a single unit or \"about my job\"\n\n[إنه] كل يوم بشوف ناس جديدة => [Is that] every day I see new people\nإنه [كل] يوم بشوف ناس جديدة => Is that [every] day I see new people\nإنه كل [يوم] بشوف ناس جديدة => Is that every [day] I see new people\nإنه كل يوم [بشوف] ناس جديدة => Is that every day [I see] new people\nإنه كل يوم بشوف [ناس] جديدة => Is that every day I see [people]\nإنه كل يوم بشوف ناس [جديدة] => Is that every day I see [new] people\n\n[طبعا] أشكال ألوان => Of all shapes and colors, [of course]\nطبعا [أشكال] ألوان => Of all [shapes] and colors, of course\nطبعا أشكال [ألوان] => Of all shapes and [colors], of course\n\n[في] ناس مرحة، روحها حلوة => [There are] cheerful people, with nice spirits\nفي [ناس] مرحة، روحها حلوة => There are cheerful [people], with nice spirits\nفي ناس [مرحة]، روحها حلوة => There are [cheerful] people, with nice spirits\nفي ناس مرحة، [روحها] حلوة => There are cheerful people, with nice [spirits]\nفي ناس مرحة، روحها [حلوة] => There are cheerful people, with [nice] spirits\n\n[بتمرق] نهار الشغل بسهولة => The work day [passes] easily\nبتمرق [نهار] الشغل بسهولة => The work [day] passes easily\nبتمرق نهار [الشغل] بسهولة => [The work] day passes easily\nبتمرق نهار الشغل [بسهولة] => The work day [easily]\n\n[فيه] زباين كثير واو => [There are] many wow customers\nفيه [زباين] كثير واو => There are many wow [customers]\nفيه زباين [كثير] واو => There are [many] wow customers\nفيه زباين كثير [واو] => There are many [wow] customers\n\n[قديش] راقيين => [How] sophisticated they are\nقديش [راقيين] => How [sophisticated they are] # The plural suffix in راقيين implies \"they are\" in this context\n\n[في] ناس اللي بتعصبن => [There are] people who get angry\nفي [ناس] اللي بتعصبن => There are [people] who get angry\nفي ناس [اللي] بتعصبن => There are people [who] get angry\nفي ناس اللي [بتعصبن] => There are people [get angry] # بتعصبن is a dialectal form for getting angry or nervous\n\n[في] ناس اللي وقحة => [There are] rude people\nفي [ناس] اللي وقحة => There are rude [people]\nفي ناس [اللي] وقحة => who, that\nفي ناس اللي [وقحة] => There are [rude] people\n\n[اللي] مش دايما بحكوا بطريقة لبقة => [Who] don't always speak politely\nاللي [مش] دايما بحكوا بطريقة لبقة => Who [don't] always speak politely\nاللي مش [دايما] بحكوا بطريقة لبقة => Who don't [always] speak politely\nاللي مش دايما [بحكوا] بطريقة لبقة => Who don't always [speak] politely\nاللي مش دايما بحكوا [بطريقة] لبقة => in a way, in a manner\nاللي مش دايما بحكوا بطريقة [لبقة] => polite, tactful\nاللي مش دايما بحكوا [بطريقة لبقة] => Who don't always [politely] # Using a single phrase mapping to align the adverb \"politely\" with the Arabic prepositional phrase.\n\n[اللي] هم بيشوفونا إنه إحنا أقل => [Who] see us as lesser\nاللي [هم] بيشوفونا إنه إحنا أقل => they\nاللي هم [بيشوفونا] إنه إحنا أقل => Who [see us] as lesser\nاللي هم بيشوفونا [إنه] إحنا أقل => that\nاللي هم بيشوفونا إنه [إحنا] أقل => we\nاللي هم بيشوفونا إنه إحنا [أقل] => Who see us as [lesser]\n\n[إنه] إحنا أمناء صندوق => [That] we are cashiers\nإنه [إحنا] أمناء صندوق => That [we are] cashiers\nإنه إحنا [أمناء صندوق] => That we are [cashiers]\n\n[يعني] مين إنت؟ => [Like], who are you?\nيعني [مين] إنت؟ => Like, [who] are you?\nيعني مين [إنت]؟ => Like, who [are you]?\n\n[الشغل] أصعب من إيش هو مبين => [The job] is harder than it appears\nالشغل [أصعب] من إيش هو مبين => The job is [harder] than it appears\nالشغل أصعب [من] إيش هو مبين => The job is harder [than] it appears\nالشغل أصعب من [إيش] هو مبين => what # إيش functions as a relative pronoun \"what\" in this phrase construction\nالشغل أصعب من إيش [هو] مبين => The job is harder than [it] appears\nالشغل أصعب من إيش هو [مبين] => The job is harder than it [appears]\n\n[مش] متعب جسديا => It's [not] physically tiring\nمش [متعب] جسديا => It's not physically [tiring]\nمش متعب [جسديا] => It's [physically] tiring\n\n[ولكن] متعب نفسيا => [But] it's mentally exhausting\nولكن [متعب] نفسيا => But it's mentally [exhausting]\nولكن متعب [نفسيا] => But it's [mentally] exhausting\n\n[التعامل] مع الناس => [Dealing] with people\nالتعامل [مع] الناس => Dealing [with] people\nالتعامل مع [الناس] => Dealing with [people]\n\n[في] ناس طبعا بتفاصل => [There are] people who haggle, of course\nفي [ناس] طبعا بتفاصل => There are [people] who haggle, of course\nفي ناس [طبعا] بتفاصل => There are people who haggle, [of course]\nفي ناس طبعا [بتفاصل] => There are people [who haggle], of course\n\n[و]عدا عن إنها بتفاصل => [And] besides haggling\nو[عدا عن] إنها بتفاصل => And [besides] haggling\nوعدا عن [إنها] بتفاصل => that she # grammar bridge for the clause\nوعدا عن إنها [بتفاصل] => And besides [haggling]\n\n[بتخليك] واقف على الصندوق => [They keep you] standing at the register\nبتخليك [واقف] على الصندوق => They keep you [standing] at the register\nبتخليك واقف [على] الصندوق => They keep you standing [at] the register\nبتخليك واقف على [الصندوق] => They keep you standing at [the register]\n\n[بتصير] هيك تغامز => [They start] winking like this\nبتصير [هيك] تغامز => They start winking [like this]\nبتصير هيك [تغامز] => They start [winking] like this\n\n[يلا] هسا بده يعطينا => [Come on], now he wants to give me\nيلا [هسا] بده يعطينا => Come on, [now] he wants to give me\nيلا هسا [بده] يعطينا => Come on, now [he wants] to give me\nيلا هسا بده [يعطينا] => give us # custom translation used because -na suffix means \"us\" while the sentence uses \"me\"\n\n[تخفيض] للموظفين => Employee [discount]\nتخفيض [للموظفين] => [Employee] discount\n\n[هسا] بزبطها من عنده => [Now] he's fixing it from his side\nهسا [بزبطها] من عنده => Now [he's fixing it] from his side\nهسا بزبطها [من] عنده => Now he's fixing it [from] his side\nهسا بزبطها من [عنده] => Now he's fixing it from [his side]\n\n[واخصم] عشرة من هون => [And deduct] ten from here\nواخصم [عشرة] من هون => And deduct [ten] from here\nواخصم عشرة [من] هون => And deduct ten [from] here\nواخصم عشرة من [هون] => And deduct ten from [here]\n\n[بردش] عليهم الصراحة => [I don't respond] to them, honestly\nبردش [عليهم] الصراحة => I don't respond [to them], honestly\nبردش عليهم [الصراحة] => I don't respond to them, [honestly]\n\n[بختار] إنه ما أجاوبش => [I choose] not to answer\nبختار [إنه] ما أجاوبش => that\nبختار إنه [ما أجاوبش] => [not to answer]\n\n[بفكروا] إنه المحل محل أبوي => [They think] the store belongs to my father\nبفكروا إنه [المحل] محل أبوي => They think [the store] belongs to my father\nبفكروا إنه المحل [محل] أبوي => belongs to, place of # In this context, \"mahal\" functions as a possessive link or indicates it \"belongs to\" the father.\nبفكروا إنه المحل محل [أبوي] => They think the store belongs to [my father]\n\n[الصراحة]، من الآخر => [Honestly], bottom line\nالصراحة، [من الآخر] => Honestly, [bottom line] # literally \"from the end\", used idiomatically for \"to sum it up\" or \"bottom line\"\n\n[في عندك] هون غلط بالحساب => [You have] a mistake in the calculation here\nفي عندك [هون] غلط بالحساب => You have a mistake in the calculation [here]\nفي عندك هون [غلط] بالحساب => You have [a mistake] in the calculation here\nفي عندك هون غلط [بالحساب] => You have a mistake [in the calculation] here\n\n[هون] حاسبتيلي ضريبة => [Here] you charged me tax\nهون [حاسبتيلي] ضريبة => Here [you charged me] tax\nهون حاسبتيلي [ضريبة] => Here you charged me [tax]\n\n[بقول] له: \"بس الضريبة هي => [I tell] him: \"But the tax is\nبقول [له]: \"بس الضريبة هي => I tell [him]: \"But the tax is\nبقول له: \"[بس] الضريبة هي => I tell him: \"[But] the tax is\nبقول له: \"بس [الضريبة] هي => I tell him: \"But [the tax] is\nبقول له: \"بس الضريبة [هي] => I tell him: \"But the tax [is]\n\nبكل إشي [إحنا] منشتريه => On everything [we] buy\nبكل إشي إحنا [منشتريه] => we buy it # minishtrih = we buy it (prefix m- is indicative, ni- is we, ishtri is buy, -h is it)\n\n[بتكون] موجودة => [It's always] included\nبتكون [موجودة] => It's always [included]\n\n[في عندك] زبون اللي بيجي => [You have] a customer who comes\nفي عندك [زبون] اللي بيجي => You have [a customer] who comes\nفي عندك زبون [اللي] بيجي => You have a customer [who] comes\nفي عندك زبون اللي [بيجي] => You have a customer who [comes]\n\n[و]بده يروح معاه علاقة الملابس => [And] wants to take the clothes relationship with him\nو[بده] يروح معاه علاقة الملابس => And [wants] to take the clothes relationship with him\nوبده [يروح] معاه علاقة الملابس => And wants [to take] the clothes relationship with him\nوبده يروح [معاه] علاقة الملابس => And wants to take the clothes relationship [with him]\nوبده يروح معاه [علاقة] الملابس => And wants to take the clothes [relationship] with him\nوبده يروح معاه علاقة [الملابس] => And wants to take the [clothes] relationship with him # \"Al-malabis\" translates to \"the clothes\"\n\n[و]العلاقة => [And] the relationship\nو[العلاقة] => And [the relationship]\n\n[فهو] بحسبها إنه هاي حقها => [So he] thinks this is her right\nفهو [بحسبها] إنه هاي حقها => So he [thinks] this is her right\nفهو بحسبها [إنه] هاي حقها => that # \"إنه\" acts as a complementizer or \"that\"\nفهو بحسبها إنه [هاي] حقها => So he thinks [this] is her right\nفهو بحسبها إنه هاي [حقها] => So he thinks this is [her right]\n\n[موجود] في اللي دفعه => [Included] in what he paid\nموجود [في] اللي دفعه => Included [in] what he paid\nموجود في [اللي] دفعه => Included in [what] he paid\nموجود في اللي [دفعه] => Included in what [he paid]\n\n[إنت] هون مدفعتيني ضريبة => [You] charged me tax here\nإنت [هون] مدفعتيني ضريبة => You charged me tax [here]\nإنت هون [مدفعتيني] ضريبة => You [charged me] tax here\nإنت هون مدفعتيني [ضريبة] => You charged me [tax] here\n\n[في] كثير ناس صعبة => [There are] many difficult people\nفي [كثير] ناس صعبة => There are [many] difficult people\nفي كثير [ناس] صعبة => There are many difficult [people]\nفي كثير ناس [صعبة] => There are many [difficult] people\n\n[مش] لأنه هي بدها تكون صعبة => [Not] because she wants to be difficult\nمش [لأنه] هي بدها تكون صعبة => Not [because] she wants to be difficult\nمش لأنه [هي] بدها تكون صعبة => Not because [she] wants to be difficult\nمش لأنه هي [بدها] تكون صعبة => wants # The English word 'she' is already mapped to 'هي', 'بدها' literally means 'she wants'\nمش لأنه هي بدها [تكون] صعبة => Not because she wants [to be] difficult\nمش لأنه هي بدها تكون [صعبة] => Not because she wants to be [difficult]\n\n[فيه] ناس لأنه هي هيك طبعها => [There are] people because that's just their nature\nفيه [ناس] لأنه هي هيك طبعها => There are [people] because that's just their nature\nفيه ناس [لأنه] هي هيك طبعها => There are people [because] that's just their nature\nفيه ناس لأنه [هي] هيك طبعها => There are people because [that's] just their nature\nفيه ناس لأنه هي [هيك] طبعها => There are people because that's [just] their nature\nفيه ناس لأنه هي هيك [طبعها] => There are people because that's just [their nature]\n\n[يعني] ممكن تسألك عن الغرض => [Like], she might ask you about the item\nيعني [ممكن] تسألك عن الغرض => Like, she [might] ask you about the item\nيعني ممكن [تسأل]ك عن الغرض => she asks # The prefix 't-' indicates 'she'\nيعني ممكن تسأل[ك] عن الغرض => Like, she might ask [you] about the item\nيعني ممكن تسألك [عن] الغرض => Like, she might ask you [about] the item\nيعني ممكن تسألك عن [الغرض] => Like, she might ask you about [the item]\n\n[10] مرات => [10] times\n10 [مرات] => 10 [times]\n\n[مشمولة] يعني بالحساب => [Included], meaning in the bill\nمشمولة [يعني] بالحساب => Included, [meaning] in the bill\nمشمولة يعني [بالحساب] => Included, meaning [in the bill]\n\n[هذا] الإشي أنا ما بقرره => [This] thing I don't decide\nهذا [الإشي] أنا ما بقرره => This [thing] I don't decide\nهذا الإشي [أنا] ما بقرره => This thing [I] don't decide\nهذا الإشي أنا [ما] بقرره => This thing I [don't] decide\nهذا الإشي أنا ما [بقرره] => I decide it # the suffix 'o' in 'بقرره' represents 'it', referring back to 'the thing'\n\n[ف]بقول لك: \"أنا معيش => [So] I tell you: \"I'm not living\"\nف[بقول] لك: \"أنا معيش => So [I tell] you: \"I'm not living\"\nفبقول [لك]: \"أنا معيش => So I tell [you]: \"I'm not living\"\nفبقول لك: \"[أنا] معيش => So I tell you: \"[I]'m not living\"\nفبقول لك: \"أنا [معيش] => am not living # \"معيش\" combines the negation and the verb/participle meaning \"not living\"\n\nلا [شيكل] ولا أغورة => On a [shekel] or an agora\nلا شيكل [ولا] أغورة => On a shekel [or] an agora\nلا شيكل ولا [أغورة] => On a shekel or an [agora]\n\n[شو] ممكن تساوي؟ => [What] could it be worth?\nشو [ممكن] تساوي؟ => What [could] it be worth?\nشو ممكن [تساوي]؟ => be worth, equal\n\n[لأ] إنت مدفعتيني ضريبة => [No], you charged me tax\nلأ [إنت] مدفعتيني ضريبة => No, [you] charged me tax\nلأ إنت [مدفعتيني] ضريبة => No, you [charged me] tax\nلأ إنت مدفعتيني [ضريبة] => No, you charged me [tax]\n\n[شو رأيك] تعطيني الكيس => [How about] you give me the bag\nشو رأيك [تعطيني] الكيس => How about [you give me] the bag # \"تعطيني\" includes the subject prefix \"you\" and the object suffix \"me\"\nشو رأيك تعطيني [الكيس] => How about you give me [the bag]\n\n[هدية] إذا بشتري أخرى بلوزة زيادة؟ => [As a gift] if I buy another blouse?\nهدية [إذا] بشتري أخرى بلوزة زيادة؟ => As a gift [if] I buy another blouse?\nهدية إذا [بشتري] أخرى بلوزة زيادة؟ => As a gift if [I buy] another blouse?\nهدية إذا بشتري [أخرى] بلوزة زيادة؟ => As a gift if I buy [another] blouse?\nهدية إذا بشتري أخرى [بلوزة] زيادة؟ => As a gift if I buy another [blouse]?\nهدية إذا بشتري أخرى بلوزة [زيادة]؟ => extra, additional # 'زيادة' literally means 'extra' or 'more', providing additional info not explicitly in the localized translation span.\n\n[يا عمو] مش مدفعتك ضريبة => [Uncle], I didn't charge you tax\nيا عمو [مش] مدفعتك ضريبة => Uncle, [I didn't] charge you tax\nيا عمو مش [مدفعتك] ضريبة => Uncle, I didn't [charge you] tax\nيا عمو مش مدفعتك [ضريبة] => Uncle, I didn't charge you [tax]\n\n[واحد] بيجي سكران بقعد يخبص => [One] comes drunk and starts rambling\nواحد [بيجي] سكران بقعد يخبص => One [comes] drunk and starts rambling\nواحد بيجي [سكران] بقعد يخبص => One comes [drunk] and starts rambling\nواحد بيجي سكران [بقعد] يخبص => One comes drunk and [starts] rambling\nواحد بيجي سكران بقعد [يخبص] => One comes drunk and starts [rambling]\n\n[بحكي] على مرته وهاي هيك عملت => [Talking] about his wife and this is what she did\nبحكي [على] مرته وهاي هيك عملت => Talking [about] his wife and this is what she did\nبحكي على [مرته] وهاي هيك عملت => Talking about [his wife] and this is what she did\nبحكي على مرته [و]هاي هيك عملت => Talking about his wife [and] this is what she did\nبحكي على مرته و[هاي] هيك عملت => Talking about his wife and [this] is what she did\nبحكي على مرته وهاي [هيك] عملت => like this, in this way # use custom translation as 'this is what' is not a direct literal match\nبحكي على مرته وهاي هيك [عملت] => Talking about his wife and this is what [she did]\n\n[و]هاي هيك ساوت => [And] this is what she did\nو[هاي] هيك ساوت => And [this] is what she did\nوهاي [هيك] ساوت => like this, this way\nوهاي هيك [ساوت] => And this is what [she did]\n\n[لحد ما] التم كل المحل => [Until] the whole store gathered\nلحد ما [التم] كل المحل => Until the whole store [gathered]\nلحد ما التم [كل] المحل => Until [the whole] store gathered\nلحد ما التم كل [المحل] => Until the whole [store] gathered\n\n[ويقنعوه] إنه هاي ضريبة => [And convince him] that this is tax\nويقنعوه [إنه] هاي ضريبة => And convince him [that] this is tax\nويقنعوه إنه [هاي] ضريبة => And convince him that [this is] tax\nويقنعوه إنه هاي [ضريبة] => And convince him that this is [tax]\n\n[إشي] اللي إحنا ما منقرره => [Something] we don't decide\nإشي [اللي] إحنا ما منقرره => that, which\nإشي اللي [إحنا] ما منقرره => Something [we] don't decide\nإشي اللي إحنا [ما] منقرره => Something we [don't] decide\nإشي اللي إحنا ما [منقرره] => Something we don't [decide] # the Arabic verb contains the prefix for \"we\" and a suffix for \"it\"\n\n[بس] في صوت البريت => [But] there's the sound of the receipt\nبس [في] صوت البريت => But [there's] the sound of the receipt\nبس في [صوت] البريت => But there's the [sound] of the receipt\nبس في صوت [البريت] => But there's the sound of the [receipt]\n\n[و]هو يمرق روح وييجي => [And] he goes and comes\nو[هو] يمرق روح وييجي => And [he] goes and comes\nوهو [يمرق] روح وييجي => passes # custom translation as \"goes\" more closely maps to \"روح\"\nوهو يمرق [روح] وييجي => And he [goes] and comes\nوهو يمرق روح [وييجي] => And he goes [and comes]\n\n[وهم] بتشاوروا على طوشة => [And they] argue about a commotion\nوهم [بتشاوروا] على طوشة => And they [argue] about a commotion\nوهم بتشاوروا [على] طوشة => And they argue [about] a commotion\nوهم بتشاوروا على [طوشة] => And they argue about [a commotion]\n\n[اطلع] عاكس هاي وهي معاه => [Look], reverse this and she's with him\nاطلع [عاكس] هاي وهي معاه => Look, [reverse] this and she's with him\nاطلع عاكس [هاي] وهي معاه => Look, reverse [this] and she's with him\nاطلع عاكس هاي [و]هي معاه => Look, reverse this [and] she's with him\nاطلع عاكس هاي و[هي] معاه => Look, reverse this and [she]'s with him\nاطلع عاكس هاي وهي [معاه] => Look, reverse this and she's [with him]\n\n[ليه] ساعدها في نمرة => [Why] did I help her with a number\nليه [ساعدها] في نمرة => helped her\nليه ساعدها [في] نمرة => Why did I help her [with] a number\nليه ساعدها في [نمرة] => Why did I help her with a [number]\n\n[أو] ليه صورت عليه البريت => [Or] why I printed the receipt for him\nأو [ليه] صورت عليه البريت => Or [why] I printed the receipt for him\nأو ليه [صورت] عليه البريت => Or why [I printed] the receipt for him\nأو ليه صورت [عليه] البريت => Or why I printed the receipt [for him]\nأو ليه صورت عليه [البريت] => Or why I printed [the receipt] for him\n\n[عشان] تبعته لحدا => [To] send it to someone\nعشان [تبعته] لحدا => To [send it] to someone\nعشان تبعته [لحدا] => To send it [to someone]\n\n[فيه] كمان بتيجي عندي زبونة مميزة => [There's] also a special customer who comes to me\nفيه [كمان] بتيجي عندي زبونة مميزة => There's [also] a special customer who comes to me\nفيه كمان [بتيجي] عندي زبونة مميزة => There's also a special customer [who comes] to me\nفيه كمان بتيجي [عندي] زبونة مميزة => There's also a special customer who comes [to me]\nفيه كمان بتيجي عندي [زبونة] مميزة => There's also a special [customer] who comes to me\nفيه كمان بتيجي عندي زبونة [مميزة] => There's also a [special] customer who comes to me\n\n[اللي هي] عندها طيف التوحد => [Who] is on the autism spectrum\nاللي هي [عندها] طيف التوحد => has, is on\nاللي هي عندها [طيف] التوحد => Who is on the autism [spectrum]\nاللي هي عندها طيف [التوحد] => Who is on the [autism] spectrum\n\nاللي [طوالي بس] أشوفها واقفة بالدور => [As soon as] I see her standing in line\nاللي طوالي بس [أشوفها] واقفة بالدور => [I see her]\nاللي طوالي بس أشوفها [واقفة] بالدور => As soon as I see her [standing] in line\nاللي طوالي بس أشوفها واقفة [بالدور] => As soon as I see her standing [in line]\n\n[باجي] بنادي عليها وبمشيها => [I come], call her, and walk her through\nباجي [بنادي] عليها وبمشيها => I come, [call] her, and walk her through\nباجي بنادي [عليها] وبمشيها => I come, call [her], and walk her through\nباجي بنادي عليها [و]بمشيها => I come, call her, [and] walk her through\nباجي بنادي عليها و[بمشيها] => I come, call her, and [walk her through] # بمشيها literally means \"I make her walk\" or \"I walk her\"\n\n[زبون] عم بمرق قنينة عصير => [A customer] passing a bottle of juice\nزبون [عم بمرق] قنينة عصير => A customer [passing] a bottle of juice\nزبون عم بمرق [قنينة] عصير => A customer passing [a bottle] of juice\nزبون عم بمرق قنينة [عصير] => A customer passing a bottle of [juice]\n\n[وهي] مفتوحة يعني هو شارب منها => [And it's] open, meaning he drank from it\nوهي [مفتوحة] يعني هو شارب منها => And it's [open], meaning he drank from it\nوهي مفتوحة [يعني] هو شارب منها => And it's open, [meaning] he drank from it\nوهي مفتوحة يعني [هو] شارب منها => And it's open, meaning [he] drank from it\nوهي مفتوحة يعني هو [شارب] منها => And it's open, meaning he [drank] from it\nوهي مفتوحة يعني هو شارب [منها] => And it's open, meaning he drank [from it]\n\nولا [هو] بيسأل => And [he] doesn't ask\nولا هو [بيسأل] => And he doesn't [ask]\n\n[مشربتيش] منها مظبوط؟ => [Didn't you drink] from it properly?\n# \"مشربتيش\" contains the negation (ma...sh), the verb (shirib), and the feminine subject (ti)\nمشربتيش [منها] مظبوط؟ => Didn't you drink [from it] properly?\nمشربتيش منها [مظبوط]؟ => Didn't you drink from it [properly]?\n\n[منيح] إنه أنا أصلا شفاف => [Good thing] I'm basically transparent\nمنيح [إنه] أنا أصلا شفاف => that\nمنيح إنه [أنا] أصلا شفاف => Good thing [I'm] basically transparent\nمنيح إنه أنا [أصلا] شفاف => Good thing I'm [basically] transparent\nمنيح إنه أنا أصلا [شفاف] => Good thing I'm basically [transparent]\n\n[و]مش موجود في هاي الدقيقة => [And] not present in this minute\nو[مش] موجود في هاي الدقيقة => And [not] present in this minute\nومش [موجود] في هاي الدقيقة => And not [present] in this minute\nومش موجود [في] هاي الدقيقة => And not present [in] this minute\nومش موجود في [هاي] الدقيقة => And not present in [this] minute\nومش موجود في هاي [الدقيقة] => And not present in this [minute]\n\n[حرفيا] => [Literally]\n\n[أنا] بصفن وبضحك الصراحة => [I] zone out and laugh, honestly\nأنا [بصفن] وبضحك الصراحة => I [zone out] and laugh, honestly\nأنا بصفن [و]بضحك الصراحة => I zone out [and] laugh, honestly\nأنا بصفن و[بضحك] الصراحة => I zone out and [laugh], honestly\nأنا بصفن وبضحك [الصراحة] => I zone out and laugh, [honestly]\n\nبشرب [بقشة] بس => I only drink [with a straw]\nبشرب بقشة [بس] => I [only] drink with a straw\n\n[وما] كانش فيها قشة الصراحة => [And] there wasn't even a straw, honestly\nوما [كانش] فيها قشة الصراحة => And there [wasn't] even a straw, honestly\nوما كانش [فيها] قشة الصراحة => there # custom translation as \"fiha\" literally means \"in it\" but functions as \"there\" in this context\nوما كانش فيها [قشة] الصراحة => And there wasn't even a [straw], honestly\nوما كانش فيها قشة [الصراحة] => And there wasn't even a straw, [honestly]\n\n[أهم] صفة تكون عند الشخص => [The most important] trait a person should have\nأهم [صفة] تكون عند الشخص => The most important [trait] a person should have\nأهم صفة تكون عند [الشخص] => The most important trait [a person] should have\nأهم صفة [تكون عند] الشخص => The most important trait a person [should have] # 'takun 'ind' literally means 'to be at/with', which is used to express possession or 'to have'\n\n[إنه] يكون صبور => [Is] to be patient\nإنه [يكون] صبور => Is [to be] patient\nإنه يكون [صبور] => Is to be [patient]\n\n[السرعة] والابتسامة => [Speed] and a smile\nالسرعة [و]الابتسامة => Speed [and] a smile\nالسرعة و[الابتسامة] => Speed and [a smile]\n\n[أعصاب] باردة => Cool [nerves]\nأعصاب [باردة] => [Cool] nerves\n\n[وأنك] تتقبل البني آدم اللي إقبالك => [And that you] accept the human being in front of you\nوأنك [تتقبل] البني آدم اللي إقبالك => And that you [accept] the human being in front of you\nوأنك تتقبل [البني آدم] اللي إقبالك => And that you accept [the human being] in front of you\nوأنك تتقبل البني آدم اللي [إقبالك] => And that you accept the human being [in front of you] # إقبالك conveys the meaning \"in front of you\" in this context\n\n[أصعب] موقف ممكن يمر => [The hardest] situation that can happen\nأصعب [موقف] ممكن يمر => The hardest [situation] that can happen\nأصعب موقف [ممكن] يمر => The hardest situation [that can] happen\nأصعب موقف ممكن [يمر] => The hardest situation that can [happen] # يمر literally translates to \"passes\" but functions as \"happen\" in this context\n\n[على] أمينة الصندوق، عنصرية => [To] a cashier, racism\nعلى [أمينة الصندوق]، عنصرية => To [a cashier], racism\nعلى أمينة الصندوق، [عنصرية] => To a cashier, [racism]\n\n[مرة] أجا زبون اللي أجا قال لي: => [Once] a customer came and said to me:\nمرة [أجا] زبون اللي أجا قال لي: => Once a customer [came] and said to me:\nمرة أجا [زبون] اللي أجا قال لي: => Once [a customer] came and said to me:\nمرة أجا زبون [اللي] أجا قال لي: => who, that # relative pronoun\nمرة أجا زبون اللي [أجا] قال لي: => came # repetition in the original Arabic phrasing\nمرة أجا زبون اللي أجا [قال] لي: => Once a customer came and [said] to me:\nمرة أجا زبون اللي أجا قال [لي]: => Once a customer came and said [to me]:\n\n[إنت] عنصرية إرهابية => [You are] a racist terrorist\nإنت [عنصرية] إرهابية => You are a [racist] terrorist\nإنت عنصرية [إرهابية] => You are a racist [terrorist]\n\n[حسيت] إني أنا هون بخطر => [I felt] that I was in danger here\nحسيت [إني] أنا هون بخطر => I felt [that] I was in danger here\nحسيت إني [أنا] هون بخطر => I felt that [I] was in danger here\nحسيت إني أنا [هون] بخطر => I felt that I was in danger [here]\nحسيت إني أنا هون [بخطر] => I felt that I was [in danger] here # \"بخطر\" translates to \"in danger\" as a unit (preposition + noun)\n\n[مش] تمام لإلي => It [wasn't] okay for me\nمش [تمام] لإلي => It wasn't [okay] for me\nمش تمام [لإلي] => It wasn't okay [for me] # 'la' means 'for' and 'ili' means 'me'\n\n[أنا] كنت عم بحكي بالعربي => [I] was speaking Arabic\nأنا [كنت] عم بحكي بالعربي => I [was] speaking Arabic\nأنا كنت [عم بحكي] بالعربي => I was [speaking] Arabic\nأنا كنت عم بحكي [بالعربي] => I was speaking [Arabic]\n\n[و]الزبون طلب مني بشكل جدا صريح => [And] the customer asked me very explicitly\nو[الزبون] طلب مني بشكل جدا صريح => And [the customer] asked me very explicitly\nوالزبون [طلب] مني بشكل جدا صريح => And the customer [asked] me very explicitly\nوالزبون طلب [مني] بشكل جدا صريح => And the customer asked [me] very explicitly\nوالزبون طلب مني [بشكل] جدا صريح => in a way, in a manner\nوالزبون طلب مني بشكل [جدا] صريح => And the customer asked me [very] explicitly\nوالزبون طلب مني بشكل جدا [صريح] => explicit, clear\nوالزبون طلب مني [بشكل جدا صريح] => And the customer asked me [very explicitly]\n\n[تحكيش] بالعربي اللغة بتضايقني => [Don't speak] Arabic, the language bothers me\nتحكيش [بالعربي] اللغة بتضايقني => Don't speak [Arabic], the language bothers me\nتحكيش بالعربي [اللغة] بتضايقني => Don't speak Arabic, [the language] bothers me\nتحكيش بالعربي اللغة [بتضايقني] => Don't speak Arabic, the language [bothers me]\n\n[وتواصلت] مع مديري بالشغل => [And I contacted] my manager at work\nوتواصلت [مع] مديري بالشغل => with\nوتواصلت مع [مديري] بالشغل => And I contacted [my manager] at work\nوتواصلت مع مديري [بالشغل] => And I contacted my manager [at work]\n\n[و]تواصلنا مع الشرطة => [And] we contacted the police\nو[تواصلنا] مع الشرطة => And [we contacted] the police\nوتواصلنا [مع] الشرطة => with\nوتواصلنا مع [الشرطة] => And we contacted [the police]\n\n[واليوم] هذا الزبون مبعد => [And today] this customer is banned\nواليوم [هذا] الزبون مبعد => And today [this] customer is banned\nواليوم هذا [الزبون] مبعد => And today this [customer] is banned\nواليوم هذا الزبون [مبعد] => And today this customer [is banned]\n\n[صراحة] بعد 11 سنة => [Honestly], after 11 years\nصراحة [بعد] 11 سنة => Honestly, [after] 11 years\nصراحة بعد [11] سنة => Honestly, after [11] years\nصراحة بعد 11 [سنة] => Honestly, after 11 [years]\n\n[بطل] الإشي يأثر صار أكثر مريح => The thing [stopped] affecting me, I became more comfortable\nبطل [الإشي] يأثر صار أكثر مريح => [The thing] stopped affecting me, I became more comfortable\nبطل الإشي [يأثر] صار أكثر مريح => affecting me\nبطل الإشي يأثر [صار] أكثر مريح => The thing stopped affecting me, [I became] more comfortable\nبطل الإشي يأثر صار [أكثر] مريح => The thing stopped affecting me, I became [more] comfortable\nبطل الإشي يأثر صار أكثر [مريح] => The thing stopped affecting me, I became more [comfortable]\n\n[يعني] بالعكس ادفع عند غيري => [Like], on the contrary, I pay at someone else's register\nيعني [بالعكس] ادفع عند غيري => Like, [on the contrary], I pay at someone else's register\nيعني بالعكس [ادفع] عند غيري => Like, on the contrary, [I pay] at someone else's register\nيعني بالعكس ادفع [عند] غيري => Like, on the contrary, I pay [at] someone else's register\nيعني بالعكس ادفع عند [غيري] => someone else, other than me # can also mean \"others\" in this context; \"register\" was added in English for clarity\n\n[بضايقنيش] => [It doesn't bother me]\n\n[بينفع ما] تحكيش معي بهاي الطريقة => [You can't] # \"بينفع\" literally means \"is it okay\" or \"works\", combined with \"ما\" to mean \"could you not\" or \"you can't\"\nبينفع ما [تحكيش] معي بهاي الطريقة => [speak] # The verb \"تحكي\" with the negation suffix \"ش\"\nبينفع ما تحكيش [معي] بهاي الطريقة => [to me] # Literally \"with me\", translated as \"to me\" for natural English\nبينفع ما تحكيش معي [بهاي] الطريقة => [this] # \"بـ\" (in/with) and \"هاي\" (this)\nبينفع ما تحكيش معي بهاي [الطريقة] => [way]\n\nأنا [اليوم] بنطيك خدمة حلوة => [Today] I'm giving you a nice service\nأنا اليوم [بنطيك] خدمة حلوة => Today I'm [giving you] a nice service\nأنا اليوم بنطيك [خدمة] حلوة => Today I'm giving you a nice [service]\nأنا اليوم بنطيك خدمة [حلوة] => Today I'm giving you a [nice] service\n\n[و]بينفع حتى يعني في كثير زباين => [And] it can even, like, many customers\nو[بينفع] حتى يعني في كثير زباين => And [it can] even, like, many customers\nوبينفع [حتى] يعني في كثير زباين => And it can [even], like, many customers\nوبينفع حتى [يعني] في كثير زباين => And it can even, [like], many customers\nوبينفع حتى يعني [في] كثير زباين => there is, there are # custom translation as \"fi\" is omitted in the English sentence\nوبينفع حتى يعني في [كثير] زباين => And it can even, like, [many] customers\nوبينفع حتى يعني في كثير [زباين] => And it can even, like, many [customers]\n\n[بطلعوا] وهم مبسوطين => [Leave] feeling happy\nبطلعوا [وهم] مبسوطين => while they are, feeling\nبطلعوا وهم [مبسوطين] => Leave feeling [happy]\n\n[موقف] بكاني.. آه => A crying [situation].. ah\nموقف [بكاني].. آه => made me cry\nموقف بكاني.. [آه] => A crying situation.. [ah]\n\n[بسمع] كثير قصص اللي في ناس => [I hear] many stories about people\nبسمع [كثير] قصص اللي في ناس => I hear [many] stories about people\nبسمع كثير [قصص] اللي في ناس => I hear many [stories] about people\nبسمع كثير قصص [اللي في] ناس => I hear many stories [about] people\nبسمع كثير قصص اللي في [ناس] => I hear many stories about [people]\n\n[مثلا] واحدة بتيجي تحكي لي على ولادها => [For example], one comes to tell me about her kids\nمثلا [واحدة] بتيجي تحكي لي على ولادها => For example, [one] comes to tell me about her kids\nمثلا واحدة [بتيجي] تحكي لي على ولادها => For example, one [comes] to tell me about her kids\nمثلا واحدة بتيجي [تحكي] لي على ولادها => For example, one comes [to tell] me about her kids\nمثلا واحدة بتيجي تحكي [لي] على ولادها => For example, one comes to tell [me] about her kids\nمثلا واحدة بتيجي تحكي لي [على] ولادها => For example, one comes to tell me [about] her kids\nمثلا واحدة بتيجي تحكي لي على [ولادها] => For example, one comes to tell me about [her kids] # ولادها contains the possessive suffix specifically meaning \"her\" kids\n\n[إنه] هم بحكوش معها => [That] they talk back to her\nإنه [هم] بحكوش معها => That [they] talk back to her\nإنه هم [بحكوش] معها => talk back # بحكوش usually means \"they don't talk\" in Levantine, so it's mapped to the phrase \"talk back\" used in the provided translation\nإنه هم بحكوش [معها] => That they talk back [to her]\n\n[أنا] عم باجي بشتري لأنه فش إلي حدا => [I]'m coming to buy because I have no one\nأنا [عم باجي] بشتري لأنه فش إلي حدا => I'[m coming] to buy because I have no one\nأنا عم باجي [بشتري] لأنه فش إلي حدا => I'm coming [to buy] because I have no one\nأنا عم باجي بشتري [لأنه] فش إلي حدا => I'm coming to buy [because] I have no one\nأنا عم باجي بشتري لأنه [فش إلي] حدا => I'm coming to buy because [I have no] one\nأنا عم باجي بشتري لأنه فش إلي [حدا] => I'm coming to buy because I have no [one]\n\n[زبون] بسمح لنفسه إنه يتمادى => [A customer] allows himself to go too far\nزبون [بسمح] لنفسه إنه يتمادى => A customer [allows] himself to go too far\nزبون بسمح [لنفسه] إنه يتمادى => A customer allows [himself] to go too far\nزبون بسمح لنفسه [إنه] يتمادى => that he\nزبون بسمح لنفسه إنه [يتمادى] => A customer allows himself to [go too far] # يتمادى means to persist or exceed limits, in this context it maps to \"go too far\"\n\n[مسبات] منقدر نقول => [Insults], we can't say\nمسبات [منقدر] نقول => we can\nمسبات منقدر [نقول] => Insults, we can't [say]\n\n[طبعا] بيخلاش صراحة => [Of course], he doesn't leave, honestly\nطبعا [بيخلاش] صراحة => Of course, [he doesn't leave], honestly\nطبعا بيخلاش [صراحة] => Of course, he doesn't leave, [honestly]\n\n[اليوم] لما بنيجي بنقيم الدبوس => [Today] when we come to evaluate the pin\nاليوم [لما] بنيجي بنقيم الدبوس => Today [when] we come to evaluate the pin\nاليوم لما [بنيجي] بنقيم الدبوس => Today when [we come] to evaluate the pin\nاليوم لما بنيجي [بنقيم] الدبوس => Today when we come to [evaluate] the pin # the \"bi-\" prefix indicates the present/habitual state\nاليوم لما بنيجي بنقيم [الدبوس] => Today when we come to evaluate [the pin]\n\n[ممكن] يبقى في محله مزع => [It might] remain annoying in its place\nممكن [يبقى] في محله مزع => It might [remain] annoying in its place\nممكن يبقى [في] محله مزع => It might remain annoying [in] its place\nممكن يبقى في [محله] مزع => It might remain annoying in [its place]\nممكن يبقى في محله [مزع] => It might remain [annoying] in its place\n\n[بس] هو مش راح يبقى مزع => [But] it won't remain annoying\nبس [هو] مش راح يبقى مزع => But [it] won't remain annoying\nبس هو [مش راح] يبقى مزع => But it [won't] remain annoying\nبس هو مش راح [يبقى] مزع => But it won't [remain] annoying\nبس هو مش راح يبقى [مزع] => But it won't remain [annoying]\n\n[مرة] زبونة اشترت كمية مشتريات => [Once] a customer bought a quantity of items\nمرة [زبونة] اشترت كمية مشتريات => Once [a customer] bought a quantity of items\nمرة زبونة [اشترت] كمية مشتريات => Once a customer [bought] a quantity of items\nمرة زبونة اشترت [كمية] مشتريات => Once a customer bought [a quantity] of items\nمرة زبونة اشترت كمية [مشتريات] => Once a customer bought a quantity [of items]\n\n[بالآخر] أجت بدها تدفع => [In the end], she came to pay\nبالآخر [أجت] بدها تدفع => In the end, [she came] to pay\nبالآخر أجت [بدها] تدفع => she wants, intended to\nبالآخر أجت بدها [تدفع] => In the end, she came to [pay]\n\n[ما زبطش إنها] تدفع بالبطاقة => [She couldn't] pay with the card\nما زبطش إنها [تدفع] بالبطاقة => She couldn't [pay] with the card\nما زبطش إنها تدفع [بالبطاقة] => She couldn't pay [with the card]\n[ما زبطش] إنها تدفع بالبطاقة => it didn't work, it wasn't possible\nما زبطش [إنها] تدفع بالبطاقة => that she\nما زبطش إنها تدفع بـ[ـالـبطاقة] => the card\nما زبطش إنها تدفع بـالـ[ـبطاقة] => card # \"bitaqa\" is the root word for card\n\nفأجا [زبون] ثاني دفع عنها => So another [customer] came and paid for her\nفأجا زبون [ثاني] دفع عنها => So [another] customer came and paid for her\nفأجا زبون ثاني [دفع] عنها => So another customer came and\n\n[وحسيت] إنه ولو قديش عنجد => [And I felt] that even though how much really\nوحسيت [إنه] ولو قديش عنجد => And I felt [that] even though how much really\nوحسيت إنه [ولو] قديش عنجد => And I felt that [even though] how much really\nوحسيت إنه ولو [قديش] عنجد => And I felt that even though [how much] really\nوحسيت إنه ولو قديش [عنجد] => And I felt that even though how much [really]\n\n[في] ناس اللي عنجد بعدها بتعمل خير => [There are] people who really still do good\nفي [ناس] اللي عنجد بعدها بتعمل خير => There are [people] who really still do good\nفي ناس [اللي] عنجد بعدها بتعمل خير => There are people [who] really still do good\nفي ناس اللي [عنجد] بعدها بتعمل خير => There are people who [really] still do good\nفي ناس اللي عنجد [بعدها] بتعمل خير => There are people who really [still] do good\nفي ناس اللي عنجد بعدها [بتعمل] خير => There are people who really still [do] good\nفي ناس اللي عنجد بعدها بتعمل [خير] => There are people who really still do [good]\n\n[بالنسبة] إله ها إنت مزعتها => [As for] him, hey, you annoyed her\nبالنسبة [إله] ها إنت مزعتها => As for [him], hey, you annoyed her\nبالنسبة إله [ها] إنت مزعتها => As for him, [hey], you annoyed her\nبالنسبة إله ها [إنت] مزعتها => As for him, hey, [you] annoyed her\nبالنسبة إله ها إنت [مزعتها] => As for him, hey, you [annoyed her] # literally \"you tore her\", used here colloquially for \"annoyed her\"\n\n[فلازم] إما تدفعله حقها => [So you must] either pay him her right\nفلازم [إما] تدفعله حقها => So you must [either] pay him her right\nفلازم إما [تدفعله] حقها => So you must either [pay him] her right\nفلازم إما تدفعله [حقها] => So you must either pay him [her right]\n\n[أو] هسا تجيبله واحدة زيها => [Or] now bring him one like her\nأو [هسا] تجيبله واحدة زيها => Or [now] bring him one like her\nأو هسا [تجيبله] واحدة زيها => Or now [bring him] one like her\nأو هسا تجيبله [واحدة] زيها => Or now bring him [one] like her\nأو هسا تجيبله واحدة [زيها] => Or now bring him one [like her]\n\n[كيف] وليش بعرفش => [How] and why, I don't know\nكيف [وليش] بعرفش => [and why]\nكيف وليش [بعرفش] => How and why, [I don't know]\n\n[وضع] كثير ناس اللي هو => [The situation] of many people which is\nوضع [كثير] ناس اللي هو => The situation of [many] people which is\nوضع كثير [ناس] اللي هو => The situation of many [people] which is\nوضع كثير ناس [اللي هو] => The situation of many people [which is]\n\n[بيمرق] على الصندوق => [Passing] by the register\nبيمرق [على] الصندوق => Passing [by] the register\nبيمرق على [الصندوق] => Passing by [the register]\n\n[بيمرق] غرضين ثلاثة => [Passing] two or three items\nبيمرق [غرضين] ثلاثة => two items # \"غرضين\" contains both the word for item \"غرض\" and the dual suffix \"ين\"\nبيمرق غرضين [ثلاثة] => Passing two or [three] items\n\n[فـ]الناس بتستغرب بتقول لي => [So] people get surprised and say to me\nفـ[الناس] بتستغرب بتقول لي => So [people] get surprised and say to me\nفالناس [بتستغرب] بتقول لي => So people [get surprised] and say to me\nفالناس بتستغرب [بتقول] لي => So people get surprised and [say] to me\nفالناس بتستغرب بتقول [لي] => So people get surprised and say [to me]\n\n[أنا] شريت كيسين => [I] bought two bags\nأنا [شريت] كيسين => I [bought] two bags\nأنا شريت [كيسين] => I bought [two bags] # translation as \"two bags\" due to the dual suffix '-ayn' in Arabic word كيسين\n\n[كيف] كيسين طلعوا 600 شيكل؟ => [How] did two bags come out to 600 shekels?\nكيف [كيسين] طلعوا 600 شيكل؟ => How did [two bags] come out to 600 shekels?\nكيف كيسين [طلعوا] 600 شيكل؟ => How did two bags [come out to] 600 shekels?\nكيف كيسين طلعوا [600] شيكل؟ => How did two bags come out to [600] shekels?\nكيف كيسين طلعوا 600 [شيكل]؟ => How did two bags come out to 600 [shekels]?\n\n[هيك] بصفن فش إيش أحكي => [Like this] I zone out, nothing to say\nهيك [بصفن] فش إيش أحكي => Like this [I zone out], nothing to say\nهيك بصفن [فش] إيش أحكي => Like this I zone out, [nothing] to say\nهيك بصفن فش [إيش] أحكي => what, anything # literal meaning of the word contextually used as a placeholder\nهيك بصفن فش إيش [أحكي] => Like this I zone out, nothing [to say]\n\n[الإشي] تاخدهوش شخصي => Don't take [the thing] personally\nالإشي [تاخدهوش] شخصي => [Don't take] the thing personally\nالإشي تاخدهوش [شخصي] => Don't take the thing [personally]\n\n[كل] غلط ممكن يتصلح => [Every] mistake can be fixed\nكل [غلط] ممكن يتصلح => Every [mistake] can be fixed\nكل غلط [ممكن] يتصلح => Every mistake [can] be fixed\nكل غلط ممكن [يتصلح] => Every mistake can [be fixed]\n\n[فش] حاجة للصراخ => [No] need for screaming\nفش [حاجة] للصراخ => No [need] for screaming\nفش حاجة [للصراخ] => No need [for screaming] # the preposition \"ل\" (for) is attached to the noun \"الصراخ\" (screaming)\n\n[فش] حاجة للعصبية => [No] need for anger\nفش [حاجة] للعصبية => No [need] for anger\nفش حاجة [للعصبية] => No need [for anger]\nفش حاجة [للعصبية] => anger # custom translation to show the meaning of the root word without the preposition \"li-\" (for)\n\n[يعني] هم يعملوا المشكلة => [Like], they make the problem\nيعني [هم] يعملوا المشكلة => Like, [they] make the problem\nيعني هم [يعملوا] المشكلة => Like, they [make] the problem\nيعني هم يعملوا [المشكلة] => Like, they make [the problem]\n\n[و]في الأخير بتلقى حالك مصور => [And] in the end you find yourself filmed\nو[في] الأخير بتلقى حالك مصور => And [in] the end you find yourself filmed\nوفي [الأخير] بتلقى حالك مصور => And in [the end] you find yourself filmed\nوفي الأخير [بتلقى] حالك مصور => And in the end [you find] yourself filmed\nوفي الأخير بتلقى [حالك] مصور => And in the end you find [yourself] filmed\nوفي الأخير بتلقى حالك [مصور] => And in the end you find yourself [filmed]\n\nفأنا [صراحة] صرت أصور => So [honestly], I started filming\nفأنا صراحة [صرت] أصور => So honestly, I [started] filming\nفأنا صراحة صرت [أصور] => So honestly, I started [filming]\n\n[صورني] بصورك => [Film me], I'll film you\nصورني [بصورك] => Film me, [I'll film you]\n\n[و]كلمة \"أنا مستعجل\" => [And] the word \"I'm in a hurry\"\nو[كلمة] \"أنا مستعجل\" => And the [word] \"I'm in a hurry\"\nوكلمة \"[أنا] مستعجل\" => And the word \"[I'm] in a hurry\"\nوكلمة \"أنا [مستعجل]\" => And the word \"I'm [in a hurry]\"\n\n[تستعملوهاش] لأمينات الصندوق => [Don't use it] on cashiers # 'sh' suffix for negation, 'tasta'milu' for use, 'ha' for it\nتستعملوهاش [لـ]أمينات الصندوق => on\nتستعملوهاش لـ[أمينات الصندوق] => [cashiers]\nتستعملوهاش لـ[أمينات] الصندوق => female employees, female cashiers\nتستعملوهاش لأمينات [الصندوق] => the safe, the cash register, the box\n\n[لأنه] إحنا كلياتنا مستعجلين => [Because] all of us are in a hurry\nلأنه [إحنا] كلياتنا مستعجلين => we\nلأنه إحنا [كلياتنا] مستعجلين => Because [all of us] are in a hurry\nلأنه إحنا كلياتنا [مستعجلين] => Because all of us are [in a hurry] # مستعجلين is a plural active participle meaning \"hurrying\" or \"in a hurry\"\n\n[مرة] صار معي موقف => [Once] I had a situation\nمرة [صار معي] موقف => [I had] a situation\nمرة صار معي [موقف] => Once I had a [situation]\n\n[اللي] كنت جديدة بالشغل => [When] I was new at the job\nاللي [كنت] جديدة بالشغل => When [I was] new at the job\nاللي كنت [جديدة] بالشغل => When I was [new] at the job\nاللي كنت جديدة [بالشغل] => When I was new [at the job]\n\n[ما إليش] جمعة => [I hadn't had] a day off\nما إليش [جمعة] => I hadn't had [a day off]\n# جمعة literally means \"Friday\" or \"week,\" but is contextually translated as \"a day off\" here.\n\n[أجت] زبونة اللي هي كانت دايخة => A customer [came] who was dizzy\nأجت [زبونة] اللي هي كانت دايخة => [A customer] came who was dizzy\nأجت زبونة [اللي] هي كانت دايخة => A customer came [who] was dizzy\nأجت زبونة اللي [هي] كانت دايخة => she\nأجت زبونة اللي هي [كانت] دايخة => A customer came who [was] dizzy\nأجت زبونة اللي هي كانت [دايخة] => A customer came who was [dizzy]\n\n[مش قادرة]، دقات قلبها سريعة => [Couldn't stand], her heartbeats were fast\nمش قادرة، [دقات] قلبها سريعة => beats # دقات refers to the beats/strikes of the heart\nمش قادرة، دقات [قلبها] سريعة => her heart # قلب means heart, and the suffix -ها means her\nمش قادرة، دقات قلبها [سريعة] => Couldn't stand, her heartbeats were [fast]\n\n[بدها] توقع قدامي => [She was about to] faint in front of me\nبدها [توقع] قدامي => She was about to [faint] in front of me\nبدها توقع [قدامي] => She was about to faint [in front of me]\n\n[الصراحة] تركت الزباين => [Honestly], I left the customers\nالصراحة [تركت] الزباين => [I left] the customers\nالصراحة تركت [الزباين] => Honestly, I left [the customers]\n\n[رحت] جبتلها مي وضليت حدها => [I went] and got her water and stayed beside her\nرحت [جبتلها] مي وضليت حدها => I went and [got her] water and stayed beside her\nرحت جبتلها [مي] وضليت حدها => I went and got her [water] and stayed beside her\nرحت جبتلها مي [وضليت] حدها => I went and got her water [and stayed] beside her\nرحت جبتلها مي وضليت [حدها] => I went and got her water and stayed [beside her]\n\n[وساعدتها] وطلبت لها إسعاف => [And I helped her] and called an ambulance for her\nوساعدتها [وطلبت] لها إسعاف => And I helped her [and called] an ambulance for her\nوساعدتها وطلبت [لها] إسعاف => And I helped her and called an ambulance [for her]\nوساعدتها وطلبت لها [إسعاف] => And I helped her and called [an ambulance] for her\n\n[قالت] لي \"لولاكي أنا ما كنت => [She told] me \"If it weren't for you I wouldn't have\nقالت [لي] \"لولاكي أنا ما كنت => She told [me] \"If it weren't for you I wouldn't have\nقالت لي \"[لولاكي] أنا ما كنت => She told me \"[If it weren't for you] I wouldn't have\nقالت لي \"لولاكي [أنا] ما كنت => She told me \"If it weren't for you [I] wouldn't have\nقالت لي \"لولاكي أنا [ما كنت] => She told me \"If it weren't for you I [wouldn't have] # 'ma kuntu' functions as 'wouldn't have' in this conditional context\n\n[نجيت] من هذا الإشي => [Survived] this thing\nنجيت [من] هذا الإشي => from\nنجيت من [هذا] الإشي => Survived [this] thing\nنجيت من هذا [الإشي] => Survived this [thing]\n\n[كان] موقف كثير مؤثر => [It was] a very moving situation\nكان [موقف] كثير مؤثر => It was a very moving [situation]\nكان موقف [كثير] مؤثر => It was a [very] moving situation\nكان موقف كثير [مؤثر] => It was a very [moving] situation\n\n[اليوم] حلمي إني أوصل => [Today] my dream is to reach\nاليوم [حلمي] إني أوصل => Today [my dream] is to reach\nاليوم حلمي [إني] أوصل => that I, is to\nاليوم حلمي إني [أوصل] => Today my dream is to [reach]\n\n",
+    "lessons": "# التعامل مع الزبائن الصعبة\n00:00.00 بصير يحرك بإيده إنت، قومي إنت\n00:02.00 كأنه حشرة قدامه\n00:04.00 أو إنه إنت \"أمينة صندوق\" مش أكثر من هيك\n00:07.00 هسا بجيب العيد\n00:09.00 أم جاية تربي ابنها على طاولة الدفع\n00:11.00 قدام تقريبا 50 واحد واقف بالدور\n00:13.00 بحكيلي هاي البيتزا هدية من المدير\n00:16.00 المدير معجب فيك\n00:17.00 ما عرفتش شو بدي أتصرف\n00:19.00 وكثير ناس كانوا حوالي\n00:20.00 اللي حرفيا هيك خدودي حمرن\n\n# بداية الرحلة المهنية\n00:25.00 ملان طاقة، آه؟\n00:27.00 أنا لما بلشت بهذا الشغل\n00:29.00 كان عمري 18 سنة\n00:31.00 كنت مخلصة مدرسة جديد\n00:33.00 الأيام ركضت وما حسيتش\n00:35.00 وأنا مبسوطة بشغلي وكملت\n00:37.00 عندي الاستوديو الخاص\n00:39.00 بشتغل فيه تصاميم خاصة بالماركة تاعي\n00:41.00 وبشتغل برضه في محل الأواعي\n00:43.00 إلي بشتغل أمين صندوق 5 سنين\n\n# العمل في السوبر ماركت\n00:45.00 بشتغل بسوبر ماركت بتل أبيب\n00:47.00 أمينة صندوق\n00:49.00 بحس الشغل الأنسب\n00:51.00 إنه دايما بدهم عمال\n00:53.00 أمناء صندوق\n00:55.00 اللي يكونوا موجودين بسوق العمل\n00:57.00 اللي خلاني بالشغل هو أكثر\n00:59.00 التعامل، بحب الناس\n01:01.00 بحب أحكي مع العالم\n01:03.00 بنصير أصحاب\n\n# إيجابيات العمل\n01:05.00 هذا الشغل بالنسبة إلي\n01:07.00 هو دخل ثابت جدا جدا\n01:09.00 بساعدني من ناحية تعليمي\n01:11.00 أكثر إشي بحب بشغلي\n01:13.00 الزباين اللي بتيجي الصبح\n01:15.00 بتفوت مع ابتسامة \"صباح الخير\"\n01:17.00 \"كيفك؟\"\n01:19.00 أكثر إشي بحب بشغلي\n01:21.00 إنه كل يوم بشوف ناس جديدة\n01:23.00 طبعا أشكال ألوان\n01:25.00 في ناس مرحة، روحها حلوة\n01:27.00 بتمرق نهار الشغل بسهولة\n\n# تحديات التعامل مع الزبائن (الجزء الأول)\n01:29.00 فيه زباين كثير واو\n01:31.00 قديش راقيين\n01:33.00 في ناس اللي بتعصبن\n01:35.00 في ناس اللي وقحة\n01:37.00 اللي مش دايما بحكوا بطريقة لبقة\n01:39.00 اللي هم بيشوفونا إنه إحنا أقل\n01:41.00 إنه إحنا أمناء صندوق\n01:43.00 يعني مين إنت؟\n01:45.00 الشغل أصعب من إيش هو مبين\n01:47.00 مش متعب جسديا\n01:49.00 ولكن متعب نفسيا\n01:51.00 التعامل مع الناس\n\n# تحديات التعامل مع الزبائن (الجزء الثاني)\n01:53.00 في ناس طبعا بتفاصل\n01:55.00 وعدا عن إنها بتفاصل\n01:57.00 بتخليك واقف على الصندوق\n01:59.00 بتصير هيك تغامز\n02:01.00 يلا هسا بده يعطينا\n02:03.00 \"تخفيض للموظفين\"\n02:05.00 هسا بزبطها من عنده\n02:07.00 واخصم عشرة من هون\n02:09.00 بردش عليهم الصراحة\n02:11.00 بختار إنه ما أجاوبش\n02:13.00 بفكروا إنه المحل محل أبوي\n\n# مشاكل الحسابات والضرائب\n02:15.00 الصراحة، من الآخر\n01:48.00 في عندك هون غلط بالحساب\n01:50.00 هون حاسبتيلي ضريبة\n01:51.00 بقول له: \"بس الضريبة هي\n01:53.00 بكل إشي إحنا منشتريه\n01:55.00 بتكون موجودة\"\n01:57.00 في عندك زبون اللي بيجي\n01:59.00 وبده يروح معاه علاقة الملابس\n02:01.00 والعلاقة\n02:03.00 فهو بحسبها إنه هاي حقها\n02:05.00 موجود في اللي دفعه\n\n# مواقف صعبة وحلولها\n02:07.00 إنت هون مدفعتيني ضريبة\n02:09.00 في كثير ناس صعبة\n02:11.00 مش لأنه هي بدها تكون صعبة\n02:13.00 فيه ناس لأنه هي هيك طبعها\n02:15.00 يعني ممكن تسألك عن الغرض\n02:17.00 10 مرات\n02:19.00 مشمولة يعني بالحساب\n02:21.00 هذا الإشي أنا ما بقرره\n02:23.00 فبقول لك: \"أنا معيش\n02:25.00 لا شيكل ولا أغورة\n02:27.00 شو ممكن تساوي؟\"\n\n# التعامل مع المواقف الصعبة\n02:29.00 لأ إنت مدفعتيني ضريبة\n02:31.00 شو رأيك تعطيني الكيس\n02:33.00 \"هدية إذا بشتري أخرى بلوزة زيادة؟\"\n02:35.00 يا عمو مش مدفعتك ضريبة\n02:37.00 واحد بيجي سكران بقعد يخبص\n02:39.00 بحكي على مرته وهاي هيك عملت\n02:41.00 وهاي هيك ساوت\n02:43.00 لحد ما التم كل المحل\n02:45.00 ويقنعوه إنه هاي ضريبة\n02:47.00 إشي اللي إحنا ما منقرره\n\n# نصائح للموظفين الجدد\n02:49.00 بس في صوت البريت\n02:51.00 وهو يمرق روح وييجي\n02:53.00 وهم بتشاوروا على طوشة\n02:55.00 اطلع عاكس هاي وهي معاه\n02:57.00 ليه ساعدها في نمرة\n02:59.00 أو ليه صورت عليه البريت\n03:01.00 عشان تبعته لحدا\n03:03.00 فيه كمان بتيجي عندي زبونة مميزة\n03:05.00 اللي هي عندها طيف التوحد\n\n# مواقف إنسانية مؤثرة\n03:07.00 اللي طوالي بس أشوفها واقفة بالدور\n03:09.00 باجي بنادي عليها وبمشيها\n03:11.00 زبون عم بمرق قنينة عصير\n03:13.00 وهي مفتوحة يعني هو شارب منها\n03:15.00 ولا هو بيسأل\n03:17.00 \"مشربتيش منها مظبوط؟\"\n03:19.00 منيح إنه أنا أصلا شفاف\n03:21.00 ومش موجود في هاي الدقيقة\n03:23.00 حرفيا\n03:25.00 أنا بصفن وبضحك الصراحة\n03:27.00 بشرب بقشة بس\n03:29.00 وما كانش فيها قشة الصراحة\n03:31.00 أهم صفة تكون عند الشخص",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-03 13:03:27 UTC",
+  "updated_at": "2026-04-03 13:40:25 UTC",
+  "exported_at": "2026-04-03T13:40:25Z"
+}

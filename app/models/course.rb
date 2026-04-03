@@ -60,7 +60,7 @@ class Course < ApplicationRecord
     medium.phrases.destroy_all
 
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
-      lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
+      lesson_slug = unique_lesson_slug(lesson_data["title"].slug_for_language)
 
       l = Lesson.create!(
         medium: medium,
@@ -167,7 +167,7 @@ class Course < ApplicationRecord
     Rails.logger.info("Creating new lessons")
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       Rails.logger.info("Creating lesson: #{lesson_data["title"]}")
-      lesson_slug = unique_lesson_slug(lesson_data["title"].parameterize)
+      lesson_slug = unique_lesson_slug(lesson_data["title"].slug_for_language)
 
       l = Lesson.create!(
         medium: medium,

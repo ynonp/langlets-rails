@@ -140,14 +140,6 @@ class ImportCourseJob < ApplicationJob
   end
 
   def generate_slug(title)
-    return "untitled" if title.blank?
-
-    title
-      .downcase
-      .gsub(/[^a-z0-9\s-]/, "")
-      .gsub(/\s+/, "-")
-      .gsub(/-+/, "-")
-      .strip
-      .first(50)
+    title.slug_for_language
   end
 end

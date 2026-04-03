@@ -62,7 +62,7 @@ module CourseBuilder
           lesson_index += 1
           lesson_number = lesson_index
 
-          lesson_slug = course.unique_lesson_slug(lesson_name.parameterize)
+          lesson_slug = course.unique_lesson_slug(lesson_name.slug_for_language)
 
           lesson = Lesson.create!(
             slug: lesson_slug,
@@ -249,7 +249,7 @@ module CourseBuilder
 
       review_number = (lesson_index / 4.0).ceil
       review_lesson_name = "Review Lesson #{review_number}"
-      lesson_slug = course.unique_lesson_slug(review_lesson_name.parameterize)
+      lesson_slug = course.unique_lesson_slug(review_lesson_name.slug_for_language)
 
       # Get the first and last timestamps from all previous lessons
       previous_lessons = created_lessons

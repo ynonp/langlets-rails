@@ -1,0 +1,1024 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=HLAl2aimUP0",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "07.10 أثر بشكل كبير علينا كعرب.",
+        "timestamp": "00:00.00",
+        "text_l2": "October 7th affected us greatly as Arabs."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "يوم اللي هو قلب خلينا نقول كل الموازين.",
+        "timestamp": "00:02.50",
+        "text_l2": "A day that, let's say, turned all the scales upside down."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "אני חושבת על שואה כמעט,",
+        "timestamp": "00:05.40",
+        "text_l2": "I almost think about the Holocaust,"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "אני יודעת שזו השוואה שלא כל כך אוהבים לעשות,",
+        "timestamp": "00:08.20",
+        "text_l2": "I know this is a comparison people don't like to make,"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "גם אני לא אוהבת לעשות אותה.",
+        "timestamp": "00:11.00",
+        "text_l2": "I don't like making it either."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "تاريخ 07.10 هو صراحة كثير بعنيلي أشياء.",
+        "timestamp": "00:14.00",
+        "text_l2": "Honestly, the date 07.10 brings up a lot of things for me."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "أشياء أثرت علينا من ناحية نفسية ومن ناحية إجتماعية.",
+        "timestamp": "00:17.00",
+        "text_l2": "Things that affected us psychologically and socially."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "בהתחלה עוד לא הבנתי איך כל האירועים מתחילים",
+        "timestamp": "00:20.50",
+        "text_l2": "At first, I didn't understand how all the events were starting"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "ומהר מאוד התחלתי להבין שזה אירוע מאוד גדול.",
+        "timestamp": "00:23.80",
+        "text_l2": "And very quickly I began to understand this was a very big event."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "كل الفيديوهات والصور اللي منشوفها من فترة 07.10",
+        "timestamp": "00:27.00",
+        "text_l2": "All the videos and images we've seen from the period of 07.10"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "هو كثير إشي بوجع للبني آدم أنه يستوعبه ويشوفه.",
+        "timestamp": "00:31.00",
+        "text_l2": "It's very painful for a human being to comprehend and see."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "ולא הבנתי כאילו איך מגיעים לתוך יישובים ישראלים",
+        "timestamp": "00:35.00",
+        "text_l2": "And I didn't understand, like, how they get into Israeli communities"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "ויורים באנשים וזה כאילו משהו שעד היום צרוב לי בראש.",
+        "timestamp": "00:37.50",
+        "text_l2": "And shoot people, and it's like something burned in my mind to this day."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "אלה סרטונים שלא חשבתי שאני אראה יותר במאה ה-21",
+        "timestamp": "00:42.50",
+        "text_l2": "These are videos I didn't think I'd see anymore in the 21st century"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "בארץ ובכלל, זה לא נראה מציאותי בכלל.",
+        "timestamp": "00:46.00",
+        "text_l2": "In the country and in general, it doesn't look real at all."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "أنا ذاكرة إني صحيت على أخبار كلشي سريع.",
+        "timestamp": "00:50.00",
+        "text_l2": "I remember waking up to news, everything was fast."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أنت مش عارف تفهم شعورك بالضبط. كان كله متناقض عندي.",
+        "timestamp": "00:52.50",
+        "text_l2": "You don't know how to understand your feeling exactly. It was all contradictory for me."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "התחלתי להיכנס לחרדות, אפילו נעלתי את הבית,",
+        "timestamp": "00:56.00",
+        "text_l2": "I started getting anxious, I even locked the house,"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "פחדתי שאולי פתאום גם יגיעו מחבלים ליישוב שלי.",
+        "timestamp": "01:00.00",
+        "text_l2": "I was afraid that suddenly terrorists might come to my community too."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "بهذا التاريخ كان نهاية لأرواح كثير أرواح.",
+        "timestamp": "01:04.00",
+        "text_l2": "On this date, it was the end for many, many lives."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "وكثير ناس أبرياء اللي كثير انظلموا بهاي الحرب.",
+        "timestamp": "01:08.00",
+        "text_l2": "And many innocent people who were very wronged in this war."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "אני כמו אני חושבת הרוב המוחלט של היהודים,",
+        "timestamp": "01:13.00",
+        "text_l2": "I, like I think the vast majority of Jews,"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "הרגשתי זעם אדיר בימים הראשונים אחרי ה-7 באוקטובר",
+        "timestamp": "01:16.50",
+        "text_l2": "I felt immense rage in the first days after October 7th"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "כלפי הערבים, אולי כלפי כל העולם בעצם.",
+        "timestamp": "01:20.00",
+        "text_l2": "Towards the Arabs, maybe towards the whole world actually."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "مش راح أنكر أنه كان في إشي اسمه عنصرية.",
+        "timestamp": "01:24.00",
+        "text_l2": "I won't deny there was something called racism."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "بس بعد 07.10 الإشي زاد أكثر بكثير.",
+        "timestamp": "01:27.00",
+        "text_l2": "But after 07.10, it increased much more."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "7 באוקטובר בעיני צעירים, ערבים ויהודים",
+        "timestamp": "01:30.00",
+        "text_l2": "October 7th in the eyes of young people, Arabs and Jews"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "بصراحة أكثر إشي بخوفني بهاي الأيام هو الاحتكاك بيني وبين اليهود.",
+        "timestamp": "01:34.00",
+        "text_l2": "Honestly, what scares me most these days is the friction between me and the Jews."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "אז הדבר הראשון שעולה לי לראש כשאני שומע ערבי,",
+        "timestamp": "01:40.00",
+        "text_l2": "So the first thing that comes to my mind when I hear Arab,"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "זה המלחמה עכשיו, ופחד.",
+        "timestamp": "01:43.50",
+        "text_l2": "It's the war now, and fear."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "המלחמה והמצב הפוליטי באופן כללי",
+        "timestamp": "01:46.00",
+        "text_l2": "The war and the political situation in general"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "גורמים לנו להיות סגורים יותר.",
+        "timestamp": "01:49.00",
+        "text_l2": "Cause us to be more closed off."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "כל מה שאנחנו שומעים נגיד בתקשורת, זה על פיגועים,",
+        "timestamp": "02:00.00",
+        "text_l2": "Everything we hear, say, in the media, is about attacks,"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "סכסוכים, וזה ישר יוצר קונוטציה שלילית.",
+        "timestamp": "02:03.00",
+        "text_l2": "Conflicts, and that immediately creates a negative connotation."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "كنت لما أسمع كلمة يهودي، عنده قوميته الخاصة فيه،",
+        "timestamp": "02:06.00",
+        "text_l2": "I used to when I heard the word Jew, he has his own nationality,"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "دينه، أفكاره، بتتعارض مع شو أنا بفكر.",
+        "timestamp": "02:09.00",
+        "text_l2": "His religion, his ideas, contradict what I think."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "من ناحية تاريخ أنا مثلاً عندي حقائق،",
+        "timestamp": "02:14.00",
+        "text_l2": "From a historical perspective, for example, I have facts,"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "عندي إثباتات مثلاً لتاريخي، اللي هو التاريخ الفلسطيني العربي.",
+        "timestamp": "02:17.00",
+        "text_l2": "I have proofs for my history, for example, which is the Palestinian Arab history."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "התושבים הערבים בישראל רובם מגדירים את עצמם כפלסטינים,",
+        "timestamp": "02:21.00",
+        "text_l2": "The Arab residents in Israel, most of them define themselves as Palestinians,"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "שזה משהו שכאילו קצת סתר את התפיסות שלי ואת החשיבה.",
+        "timestamp": "02:25.00",
+        "text_l2": "Which is something that kind of contradicted my perceptions and thinking."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "אני לא הבנתי הרבה מאוד מהאינטרס או מהמחשבה הערבית.",
+        "timestamp": "02:29.00",
+        "text_l2": "I didn't understand much of the interest or the Arab thinking."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "כשמישהו אומר לי אני פלסטיני-ישראלי,",
+        "timestamp": "02:33.00",
+        "text_l2": "When someone tells me I am a Palestinian-Israeli,"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "כשמישהו מדבר איתי על היסטוריה,",
+        "timestamp": "02:36.00",
+        "text_l2": "When someone talks to me about history,"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "הפרספקטיבות של היהודי או הערבי הן מאוד מאוד שונות.",
+        "timestamp": "02:39.00",
+        "text_l2": "The perspectives of the Jew or the Arab are very, very different."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "بيجي عندك كمان شاب اللي هو يهودي عنده نفس الإشي.",
+        "timestamp": "02:43.00",
+        "text_l2": "You also have a guy who is a Jew, he has the same thing."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "\"أنا هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي صار\".",
+        "timestamp": "02:47.00",
+        "text_l2": "\"This is my history, this is what I learned, this is my view on what happened\"."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "دائماً في حوار مين صح.",
+        "timestamp": "02:51.00",
+        "text_l2": "There's always a dialogue about who is right."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "ואז כשנלמדתי להקשיב להם הבנתי את הצד שלהם",
+        "timestamp": "02:54.00",
+        "text_l2": "And then when I learned to listen to them I understood their side"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "והבנתי את האמירה הזאת.",
+        "timestamp": "02:57.00",
+        "text_l2": "And I understood this statement."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "اليهودي الفرق بينه وبين الشاب العربي، الإمكانيات اللي بتطلعله،",
+        "timestamp": "02:59.00",
+        "text_l2": "The Jew, the difference between him and the Arab guy, the opportunities available to him,"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "طريقة العيش تبعته بسبب دولته.",
+        "timestamp": "03:02.00",
+        "text_l2": "And his way of living because of his state."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "وما كنتش جد حاطة في راسي أنه لازم أنخرط بهذا الجيل",
+        "timestamp": "03:05.00",
+        "text_l2": "And I wasn't really set in my mind that I must engage with this generation"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "مع هاي الفئة من المجتمع.",
+        "timestamp": "03:08.00",
+        "text_l2": "With this segment of society."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "זה כמובן טבעי להרגיש פחד בסביבה",
+        "timestamp": "03:11.00",
+        "text_l2": "It's of course natural to feel fear in an environment"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "שהרגילו אותנו לחשוב שהיא עוינת,",
+        "timestamp": "03:14.00",
+        "text_l2": "That they accustomed us to think is hostile,"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "אבל אני חושבת שזה לרוב מיותר.",
+        "timestamp": "03:17.00",
+        "text_l2": "But I think it's mostly unnecessary."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "أنا بالنسبة إلي بشتغل بمجال الكهرباء.",
+        "timestamp": "03:20.00",
+        "text_l2": "As for me, I work in the field of electricity."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "مرة كنا ببيت، أجا عندي ولد صغير",
+        "timestamp": "03:23.00",
+        "text_l2": "Once we were at a house, a little boy came to me"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "سمعني كأني بحكي بالتلفون بالعربي، قلي \"أنا بكره العرب\".",
+        "timestamp": "03:26.00",
+        "text_l2": "Heard me like I was talking on the phone in Arabic, told me \"I hate Arabs\"."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "אני מתחיל לשמוע מהרבה מאוד חברים שלי,",
+        "timestamp": "03:30.00",
+        "text_l2": "I start hearing from many of my friends,"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "כאילו אמירות מאוד גזעניות, שכל ערבי הוא מחבל,",
+        "timestamp": "03:33.00",
+        "text_l2": "Like very racist statements, that every Arab is a terrorist,"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "שנובעות מפחד ומחרדה.",
+        "timestamp": "03:36.00",
+        "text_l2": "That stem from fear and anxiety."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "ولد صغير بهذا العمر صعب أنك تتوقع منه يقول هيك إشي.",
+        "timestamp": "03:39.00",
+        "text_l2": "A little boy at this age, it's hard to expect him to say such a thing."
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "الإشي اللي مخوفني حالياً هو المستقبل اللي رايحين نيجي عليه.",
+        "timestamp": "03:43.00",
+        "text_l2": "The thing that scares me currently is the future we are heading towards."
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "لأنه وضعنا الحالي صعب، ما بالكم بالمستقبل شو راح يصير.",
+        "timestamp": "03:46.00",
+        "text_l2": "Because our current situation is hard, imagine what will happen in the future."
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "והגעתי לתוכנית \"בעיניים אחרות\" של גבעת חביבה,",
+        "timestamp": "03:49.00",
+        "text_l2": "And I arrived at the program \"In Other Eyes\" of Givat Haviva,"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "לפני שנה וחצי, שנתיים.",
+        "timestamp": "03:53.00",
+        "text_l2": "A year and a half, two years ago."
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "היא בעצם תוכנית שנתית, שהמטרה שלה היא לחבר",
+        "timestamp": "03:55.00",
+        "text_l2": "It's essentially an annual program, whose goal is to connect"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "בין ערבים ויהודים בתוך ישראל, דרך צילום.",
+        "timestamp": "03:58.00",
+        "text_l2": "Between Arabs and Jews within Israel, through photography."
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "بعد برنامج \"بعيون أخرى\" أنا سمعت ملان آراء",
+        "timestamp": "04:03.00",
+        "text_l2": "After the program \"In Other Eyes\" I heard a lot of opinions"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "اللي هي بتناقض الآراء اللي عندي.",
+        "timestamp": "04:06.00",
+        "text_l2": "That contradict the opinions I have."
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "فهمت أنهم هم ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص.",
+        "timestamp": "04:09.00",
+        "text_l2": "I understood that they are people like me like them. Every individual has their own thinking."
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "فش داعي أحكم عليهم كلهم بسبب كلمة يهودي.",
+        "timestamp": "04:12.00",
+        "text_l2": "There's no need to judge them all because of the word Jew."
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "יש ילד אחד שדיברנו על השבעה באוקטובר.",
+        "timestamp": "04:16.00",
+        "text_l2": "There is one child we talked about October 7th with."
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "הוא טען שלא נרצחו ילדים.",
+        "timestamp": "04:19.00",
+        "text_l2": "He claimed that no children were murdered."
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "ולא כל כך הצלחנו להגיע לאמצע,",
+        "timestamp": "04:22.00",
+        "text_l2": "And we didn't really manage to reach a middle ground,"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "זאת אומרת, זו דוגמה לזה שבכל חברה",
+        "timestamp": "04:25.00",
+        "text_l2": "That is to say, this is an example that in every society"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "יש גם אנשים קצת יותר קיצוניים.",
+        "timestamp": "04:27.00",
+        "text_l2": "There are also people a bit more extreme."
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "إني تعلمت كيف أتقبل الإشي حتى لو أنا مش موافق بالرأي.",
+        "timestamp": "04:30.00",
+        "text_l2": "That I learned how to accept the thing even if I don't agree with the opinion."
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بحترم رأيك، بحترم شو أنت بتقول،",
+        "timestamp": "04:33.00",
+        "text_l2": "I respect your opinion, I respect what you say,"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "بس أنا بوافقكش بالرأي.",
+        "timestamp": "04:36.00",
+        "text_l2": "But I don't agree with you in opinion."
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "יהודים לא לומדים להכיר ערבים",
+        "timestamp": "04:39.00",
+        "text_l2": "Jews don't learn to know Arabs"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "וערבים לא לומדים להכיר יהודים.",
+        "timestamp": "04:42.00",
+        "text_l2": "And Arabs don't learn to know Jews."
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "זה מייצר גזענות והגזענות הזאת בסופו של יום",
+        "timestamp": "04:44.00",
+        "text_l2": "This creates racism and this racism at the end of the day"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "הופכת לאלימות ולקיצוניות.",
+        "timestamp": "04:47.00",
+        "text_l2": "Turns into violence and extremism."
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "אני חושבת שלאט לאט במהלך התוכנית",
+        "timestamp": "04:50.00",
+        "text_l2": "I think that slowly during the program"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "התחלתי להבין את הנרטיב הפלסטיני, הערבי",
+        "timestamp": "04:53.00",
+        "text_l2": "I started to understand the Palestinian, Arab narrative"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "ובאמת זה קירב אותי בצורה בלתי רגילה",
+        "timestamp": "04:56.00",
+        "text_l2": "And truly this brought me closer in an unusual way"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "ובלתי צפויה.",
+        "timestamp": "04:59.00",
+        "text_l2": "And unexpected."
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "فكرة السلام... نبقى واقعيين،",
+        "timestamp": "05:01.00",
+        "text_l2": "The idea of peace... let's stay realistic,"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "بمجتمعنا حالياً بالمرة مش موجودة.",
+        "timestamp": "05:04.00",
+        "text_l2": "In our society currently it doesn't exist at all."
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "المجتمعين بعاد عن بعض. كل مجتمع عنده",
+        "timestamp": "05:06.00",
+        "text_l2": "The two societies are far from each other. Every society has"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "أفكار مختلفة عن المجتمع الآخر.",
+        "timestamp": "05:09.00",
+        "text_l2": "Different ideas from the other society."
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "שלום לדעתי זה ששני הצדדים מוכנים לחיות ביחד,",
+        "timestamp": "05:11.00",
+        "text_l2": "Peace in my opinion is that both sides are ready to live together,"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "בלי סכסוכים, בלי אלימות.",
+        "timestamp": "05:14.00",
+        "text_l2": "Without conflicts, without violence."
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "ואפילו לעשות שיתופי פעולה, כלכליים, חברתיים.",
+        "timestamp": "05:17.00",
+        "text_l2": "And even to do cooperations, economic, social."
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "מה זה שלום? קודם כל אנשים לא נהרגים כל יום.",
+        "timestamp": "05:20.00",
+        "text_l2": "What is peace? First of all people aren't killed every day."
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "אני חושבת ששלום טוב זה שלום חם,",
+        "timestamp": "05:24.00",
+        "text_l2": "I think good peace is a warm peace,"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "שבו יש תקשורת יחסית שוויונית",
+        "timestamp": "05:27.00",
+        "text_l2": "Where there is relatively equal communication"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "בין שני צדדים.",
+        "timestamp": "05:30.00",
+        "text_l2": "Between two sides."
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "فكرة السلام هي مبنية على فكرة الناس تتقبل آراء الناس الأخرى،",
+        "timestamp": "05:33.00",
+        "text_l2": "The idea of peace is based on the idea people accept other people's opinions,"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "بدون هذا الشعور تجاههم بالكره بسبب رأي.",
+        "timestamp": "05:36.00",
+        "text_l2": "Without this feeling of hatred towards them because of an opinion."
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "كلمة سلام هي محاولة تعايش. إشي صعب أنه يصير.",
+        "timestamp": "05:40.00",
+        "text_l2": "The word peace is an attempt at coexistence. Something hard to happen."
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "دائماً في طموح لهذا الإشي",
+        "timestamp": "05:43.00",
+        "text_l2": "There is always ambition for this thing"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "لأنه صراحة زهقنا من الوضع اللي إحنا فيه.",
+        "timestamp": "05:46.00",
+        "text_l2": "Because honestly we are fed up with the situation we are in."
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "אנחנו בסופו של דבר חיים באותה מדינה,",
+        "timestamp": "05:51.00",
+        "text_l2": "We ultimately live in the same country,"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "באותו מקום, והפתרון לטווח ארוך,",
+        "timestamp": "05:54.00",
+        "text_l2": "In the same place, and the long-term solution,"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "חייב להיות כאילו שנחיה ביחד, בשיתוף.",
+        "timestamp": "05:57.00",
+        "text_l2": "Must be like we live together, in partnership."
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "فكرة التعايش مبنية على أساس السلام هو بالأول",
+        "timestamp": "06:00.00",
+        "text_l2": "The idea of coexistence is based on the foundation of peace which is first"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "واللي هو برضه مش موجود.",
+        "timestamp": "06:03.00",
+        "text_l2": "And which is also not existing."
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "على فكرة المساواة اللي هي برضه مش موجودة.",
+        "timestamp": "06:05.00",
+        "text_l2": "About equality which is also not existing."
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "لما تصير هاي الحقوق موجودة عند الطرفين،",
+        "timestamp": "06:08.00",
+        "text_l2": "When these rights become present for both parties,"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "إحتمال وقتها تبدأ فكرة المساواة تصير أقرب للواقع.",
+        "timestamp": "06:11.00",
+        "text_l2": "Then probably the idea of equality starts to become closer to reality."
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "ובעצם כל אדם שמתחיל לדבר, מתחיל לתקשר",
+        "timestamp": "06:15.00",
+        "text_l2": "And essentially every person who starts to talk, starts to communicate"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "עם אדם מהצד השני,",
+        "timestamp": "06:18.00",
+        "text_l2": "With a person from the other side,"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "זה בעצם הישג אדיر עבורנו,",
+        "timestamp": "06:21.00",
+        "text_l2": "This is essentially a huge achievement for us,"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "ואני חושבת שזה מה שבונה את היכולת",
+        "timestamp": "06:24.00",
+        "text_l2": "And I think this is what builds the ability"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "אחר כך לחיות ביחד.",
+        "timestamp": "06:27.00",
+        "text_l2": "Afterwards to live together."
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "מה שמאוד מפחיד אותי היום,",
+        "timestamp": "06:30.00",
+        "text_l2": "What scares me very much today,"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "זה העלייה בקיצוניות ובדת, שנמצאת היום בשלטון.",
+        "timestamp": "06:33.00",
+        "text_l2": "Is the rise in extremism and religion, that is in power today."
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "إشي كبير من مخاوفي نظرة العرب، المجتمع العربي لإلي،",
+        "timestamp": "06:36.00",
+        "text_l2": "A big part of my fear is the view of the Arabs, the Arab society towards me,"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "ونظرة المجتمع اليهودي لإلي. في طرف بعجبوش.",
+        "timestamp": "06:40.00",
+        "text_l2": "And the view of the Jewish society towards me. One side wonders at me."
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "مرات بكون قريب من إشي ثاني، الطرف الثاني بعجبوش.",
+        "timestamp": "06:43.00",
+        "text_l2": "Sometimes I am close to something else, the second side wonders at me."
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "בחור ערבי שלא מכיר כל כך את החברה היהודית",
+        "timestamp": "06:47.00",
+        "text_l2": "An Arab guy who doesn't know the Jewish society so well"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "יכול בקלות להאמין שהוא צריך לפחד ממנה,",
+        "timestamp": "06:51.00",
+        "text_l2": "Can easily believe he needs to fear it,"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "או להפך לשנוא אותה בחזרה.",
+        "timestamp": "06:54.00",
+        "text_l2": "Or conversely to hate it back."
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "לפעמים הוא גם לא טועה, אבל הוא חייב",
+        "timestamp": "06:57.00",
+        "text_l2": "Sometimes he is not wrong either, but he must"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "לחפש את המקומות שיאפשרו לו הכרה",
+        "timestamp": "07:00.00",
+        "text_l2": "Search for the places that will allow him recognition"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "בשל הצד השני.",
+        "timestamp": "07:03.00",
+        "text_l2": "Of the other side."
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "أكثر إشي بخوفني حالياً فكرة أنه بقدرش",
+        "timestamp": "07:05.00",
+        "text_l2": "What scares me most currently is the idea that I can't"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "أعبر عن رأيي بحريتي الكاملة.",
+        "timestamp": "07:08.00",
+        "text_l2": "Express my opinion with my full freedom."
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "ما يبقاش مستقبل قابل أنه أعيش فيه كمواطن في هاي الدولة.",
+        "timestamp": "07:11.00",
+        "text_l2": "That there remains a future feasible that I live in as a citizen in this state."
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "הכי מפחיד אותי היום, שישראל תהפוך למקום סגור,",
+        "timestamp": "07:16.00",
+        "text_l2": "What scares me most today, is that Israel will become a closed place,"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "בפנים הארץ, זאת אומרת חוסר תקשורת",
+        "timestamp": "07:19.00",
+        "text_l2": "Inside the country, that means lack of communication"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "בין מגזרים ואוכלוסיות, וגם כלפי חוץ.",
+        "timestamp": "07:22.00",
+        "text_l2": "Between sectors and populations, and also towards outside."
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "אני רואה את זה בתור אסון.",
+        "timestamp": "07:27.00",
+        "text_l2": "I see this as a disaster."
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "לפחות אני לא צריך לחכות לשינוי,",
+        "timestamp": "07:30.00",
+        "text_l2": "At least I don't need to wait for change,"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "אני צריך להיות זה שמשנה את הדברים,",
+        "timestamp": "07:33.00",
+        "text_l2": "I need to be the one who changes things,"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "ומשפיע, כי אחרת מי יעשה את זה?",
+        "timestamp": "07:36.00",
+        "text_l2": "And influences, because otherwise who will do this?"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "أنا إنسانة بعشق هدول البلاد. أنا بعشق هاي الأرض.",
+        "timestamp": "07:38.00",
+        "text_l2": "I am a human who loves this country. I love this land."
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "متفقين؟",
+        "timestamp": "07:41.00",
+        "text_l2": "Agreed?"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "רובנו רוצים להיות כאן, ואוהבים את הארץ הזו,",
+        "timestamp": "07:43.00",
+        "text_l2": "Most of us want to be here, and love this land,"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "ואחרי שאתה מקשיב ומשלים",
+        "timestamp": "07:46.00",
+        "text_l2": "And after you listen and reconcile"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "עם הפרספקטיבה של הצד השני,",
+        "timestamp": "07:49.00",
+        "text_l2": "With the perspective of the other side,"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "אפשר להמשיך הלאה, ובעצם להכיר",
+        "timestamp": "07:51.00",
+        "text_l2": "It's possible to move on, and essentially to recognize"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "בחוויה של הצד השני להתחיל לפעול",
+        "timestamp": "07:54.00",
+        "text_l2": "In the experience of the other side to start acting"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "למען עתיד טוב יותר.",
+        "timestamp": "07:57.00",
+        "text_l2": "For a better future."
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "بحب طبيعة بلادنا، بحب المناخ فيها، بحب التعدد اللي فيها.",
+        "timestamp": "08:00.00",
+        "text_l2": "I love the nature of our country, I love the climate in it, I love the diversity in it."
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "באמת יש כאן את כל סוגי האוכל,",
+        "timestamp": "08:04.00",
+        "text_l2": "Truly there is here all types of food,"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "חגים ממגוון תרבויות, כל מיני מסורות,",
+        "timestamp": "08:07.00",
+        "text_l2": "Holidays from various cultures, all kinds of traditions,"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "שזה משהו שהוא מאוד ייחודי לישראל.",
+        "timestamp": "08:10.00",
+        "text_l2": "Which is something that is very unique to Israel."
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "فرسالتي من هذا المنطلق هو أنه بتقدروا",
+        "timestamp": "08:14.00",
+        "text_l2": "So my message from this standpoint is that you can"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "تسمعوا الطرف الآخر وتتقبلوا آراءه رغم اختلافها عنكم.",
+        "timestamp": "08:17.00",
+        "text_l2": "Listen to the other side and accept their opinions despite their difference from you."
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "הייתי אומרת לחברה הערבית לנסות",
+        "timestamp": "08:21.00",
+        "text_l2": "I would say to the Arab society to try"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "להישאר באזור המתון יותר,",
+        "timestamp": "08:24.00",
+        "text_l2": "To stay in the more moderate zone,"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "כמה שיותר של המפה הפוליטית.",
+        "timestamp": "08:27.00",
+        "text_l2": "As much as possible of the political map."
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "לפעמים זה קשה, אבל תשתדלו לשמור",
+        "timestamp": "08:30.00",
+        "text_l2": "Sometimes it's hard, but try to keep"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "על קשר עם יהודים ולהישאר",
+        "timestamp": "08:33.00",
+        "text_l2": "In contact with Jews and stay"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "במחשבה מתונה.",
+        "timestamp": "08:35.00",
+        "text_l2": "In moderate thinking."
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "אני באמת חושב שיש תקווה למרות כל השוני.",
+        "timestamp": "08:37.00",
+        "text_l2": "I truly think there is hope despite all the difference."
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "عادي لو الشخص اللي ع قبالك اختلف بالرأي معك.",
+        "timestamp": "08:40.00",
+        "text_l2": "It's okay if the person opposite you disagrees with you."
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "أنه مش كل شخص عربي بتشوفه",
+        "timestamp": "08:43.00",
+        "text_l2": "That not every Arab person you see"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "أو حدا بتقابله بالشارع مثلاً،",
+        "timestamp": "08:46.00",
+        "text_l2": "Or someone you meet in the street for example,"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "هو مخرب أو محبل أو شياخ مثلاً",
+        "timestamp": "08:49.00",
+        "text_l2": "Is a saboteur or terrorist or extremist for example"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "لإشي أنت ضده.",
+        "timestamp": "08:51.00",
+        "text_l2": "For something you are against."
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "إطلعوا من دائرة الراحة تبعتكم وتعرفوا",
+        "timestamp": "08:54.00",
+        "text_l2": "Get out of your comfort zone and get to know"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "على ناس من الطرف الآخر، لأنه أول على آخر",
+        "timestamp": "08:57.00",
+        "text_l2": "People from the other side, because first and last"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "كلنا رح נלتقי مع بعض.",
+        "timestamp": "09:00.00",
+        "text_l2": "We will all meet each other."
+      }
+    ],
+    "phrases_with_token_translations": "[07.10] أثر بشكل كبير علينا كعرب. => [October 7th] affected us greatly as Arabs.\n07.10 [أثر] بشكل كبير علينا كعرب. => October 7th [affected] us greatly as Arabs.\n07.10 أثر [بشكل كبير] علينا كعرب. => October 7th affected us [greatly] as Arabs.\n07.10 أثر بشكل كبير [علينا] كعرب. => October 7th affected [us] greatly as Arabs.\n07.10 أثر بشكل كبير علينا [كعرب]. => October 7th affected us greatly [as Arabs]\n\n[يوم] اللي هو قلب خلينا نقول كل الموازين. => [A day] that, let's say, turned all the scales upside down.\nيوم [اللي] هو قلب خلينا نقول كل الموازين. => A day [that], let's say, turned all the scales upside down.\nيوم اللي هو [قلب] خلينا نقول كل الموازين. => turned upside down # The Arabic verb implies flipping or turning something over completely\nيوم اللي هو قلب [خلينا نقول] كل الموازين. => A day that, [let's say], turned all the scales upside down.\nيوم اللي هو قلب خلينا نقول [كل] الموازين. => A day that, let's say, turned [all] the scales upside down.\nيوم اللي هو قلب خلينا نقول كل [الموازين]. => A day that, let's say, turned all [the scales] upside down.\n\n[אני] חושבת על שואה כמעט => [I] almost think about the Holocaust\nאני [חושבת] על שואה כמעט => I almost [think] about the Holocaust\nאני חושבת [על] שואה כמעט => I almost think [about] the Holocaust\nאני חושבת על [שואה] כמעט => I almost think about [the Holocaust]\nאני חושבת על שואה [כמעט] => I [almost] think about the Holocaust\n\n[אני] יודעת שזו השוואה שלא כל כך אוהבים לעשות, => [I] know this is a comparison people don't like to make,\nאני [יודעת] שזו השוואה שלא כל כך אוהבים לעשות, => I [know] this is a comparison people don't like to make,\nאני יודעת [שזו] השוואה שלא כל כך אוהבים לעשות, => I know [this is] a comparison people don't like to make, # שזו (she-zo) translates to \"that this is\", aligned here to \"this is\"\nאני יודעת שזו [השוואה] שלא כל כך אוהבים לעשות, => I know this is [a comparison] people don't like to make,\nאני יודעת שזו השוואה [שלא] כל כך אוהבים לעשות, => I know this is a comparison people [don't] like to make, # שלא combines the relative pronoun and the negation\nאני יודעת שזו השוואה שלא [כל כך] אוהבים לעשות, => so much # \"so much\" is not in the english translation but is the literal meaning of כל כך\nאני יודעת שזו השוואה שלא כל כך [אוהבים] לעשות, => I know this is a comparison [people] don't [like] to make, # אוהבים is a plural verb form that functions as an impersonal \"people like\"\nאני יודעת שזו השוואה שלא כל כך אוהבים [לעשות], => I know this is a comparison people don't like [to make],\n\n[גם] אני לא אוהבת לעשות אותה. => I don't like making it [either].\nגם [אני] לא אוהבת לעשות אותה. => [I] don't like making it either.\nגם אני [לא] אוהבת לעשות אותה. => I [don't] like making it either.\nגם אני לא [אוהבת] לעשות אותה. => I don't [like] making it either.\nגם אני לא אוהבת [לעשות] אותה. => I don't like [making] it either.\nגם אני לא אוהבת לעשות [אותה]. => I don't like making [it] either.\n\n[تاريخ] 07.10 هو صراحة كثير بعنيلي أشياء. => Honestly, the [date] 07.10 brings up a lot of things for me.\nتاريخ [07.10] هو صراحة كثير بعنيلي أشياء. => Honestly, the date [07.10] brings up a lot of things for me.\nتاريخ 07.10 هو [صراحة] كثير بعنيلي أشياء. => [Honestly], the date 07.10 brings up a lot of things for me.\nتاريخ 07.10 هو صراحة [كثير] بعنيلي أشياء. => Honestly, the date 07.10 brings up [a lot] of things for me.\nتاريخ 07.10 هو صراحة كثير [بعنيلي] أشياء. => means to me, brings up for me # use custom translation for this verb + preposition combination\nتاريخ 07.10 هو صراحة كثير بعنيلي [أشياء]. => Honestly, the date 07.10 brings up a lot of [things] for me.\n\n[أشياء] أثرت علينا من ناحية نفسية ومن ناحية إجتماعية. => [Things] that affected us psychologically and socially.\nأشياء [أثرت] علينا من ناحية نفسية ومن ناحية إجتماعية. => Things that [affected] us psychologically and socially.\nأشياء أثرت [علينا] من ناحية نفسية ومن ناحية إجتماعية. => Things that affected [us] psychologically and socially.\nأشياء أثرت علينا [من ناحية نفسية] ومن ناحية إجتماعية. => Things that affected us [psychologically] and socially.\nأشياء أثرت علينا من ناحية نفسية [و]من ناحية إجتماعية. => Things that affected us psychologically [and] socially.\nأشياء أثرت علينا من ناحية نفسية ومن [ناحية إجتماعية] => socially # \"from a social aspect\" functions as the adverb \"socially\"\nأشياء أثرت علينا [من ناحية] نفسية ومن ناحية إجتماعية. => in terms of, from a perspective # clarifying the component \"min nahiya\" which is used to construct adverbs in Arabic\n\n[בהתחלה] עוד לא הבנתי איך כל האירועים מתחילים => [At first], I didn't understand how all the events were starting\nבהתחלה [עוד] לא הבנתי איך כל האירועים מתחילים => yet, still\nבהתחלה עוד [לא הבנתי] איך כל האירועים מתחילים => At first, [I didn't understand] how all the events were starting\nבהתחלה עוד לא הבנתי [איך] כל האירועים מתחילים => At first, I didn't understand [how] all the events were starting\nבהתחלה עוד לא הבנתי איך [כל] האירועים מתחילים => At first, I didn't understand how [all] the events were starting\nבהתחלה עוד לא הבנתי איך כל [האירועים] מתחילים => At first, I didn't understand how all [the events] were starting\nבהתחלה עוד לא הבנתי איך כל האירועים [מתחילים] => At first, I didn't understand how all the events [were starting]\n\n[ו]מהר מאוד התחלתי להבין שזה אירוע מאוד גדול. => [And] very quickly I began to understand this was a very big event.\nו[מהר] מאוד התחלתי להבין שזה אירוע מאוד גדול. => And very [quickly] I began to understand this was a very big event.\nומהר [מאוד] התחלתי להבין שזה אירוע מאוד גדול. => And [very] quickly I began to understand this was a very big event.\nומהר מאוד [התחלתי] להבין שזה אירוע מאוד גדול. => And very quickly [I began] to understand this was a very big event.\nומהר מאוד התחלתי [להבין] שזה אירוע מאוד גדול. => And very quickly I began [to understand] this was a very big event.\nומהר מאוד התחלתי להבין [שזה] אירוע מאוד גדול. => And very quickly I began to understand [this was] a very big event.\nומהר מאוד התחלתי להבין שזה [אירוע] מאוד גדול. => And very quickly I began to understand this was a very big [event]\nומהר מאוד התחלתי להבין שזה אירוע [מאוד] גדול. => And very quickly I began to understand this was a [very] big event.\nומהר מאוד התחלתי להבין שזה אירוע מאוד [גדול]. => And very quickly I began to understand this was a very [big] event.\n\n[كل] الفيديوهات والصور اللي منشوفها من فترة 07.10 => [All] the videos and images we've seen from the period of 07.10\nكل [الفيديوهات] والصور اللي منشوفها من فترة 07.10 => All [the videos] and images we've seen from the period of 07.10\nكل الفيديوهات [والصور] اللي منشوفها من فترة 07.10 => All the videos [and images] we've seen from the period of 07.10\nكل الفيديوهات والصور [اللي] منشوفها من فترة 07.10 => that, which # Relative pronoun typically used in Levantine Arabic\nكل الفيديوهات والصور اللي [منشوفها] من فترة 07.10 => All the videos and images [we've seen] from the period of 07.10\nكل الفيديوهات والصور اللي منشوفها [من] فترة 07.10 => All the videos and images we've seen [from] the period of 07.10\nكل الفيديوهات والصور اللي منشوفها من [فترة] 07.10 => All the videos and images we've seen from [the period] of 07.10\nكل الفيديوهات والصور اللي منشوفها من فترة [07.10] => All the videos and images we've seen from the period of [07.10]\n\n[هو] كثير إشي بوجع للبني آدم أنه يستوعبه ويشوفه => [It's] very painful for a human being to comprehend and see\nهو [كثير] إشي بوجع للبني آدم أنه يستوعبه ويشوفه => It's [very] painful for a human being to comprehend and see\nهو كثير [إشي] بوجع للبني آدم أنه يستوعبه ويشوفه => something, a thing\nهو كثير إشي [بوجع] للبني آدم أنه يستوعبه ويشوفه => It's very [painful] for a human being to comprehend and see\nهو كثير إشي بوجع [للبني آدم] أنه يستوعبه ويشوفه => It's very painful [for a human being] to comprehend and see\nهو كثير إشي بوجع للبني آدم [أنه] يستوعبه ويشوفه => It's very painful for a human being [to] comprehend and see\nهو كثير إشي بوجع للبني آدم أنه [يستوعبه] ويشوفه => It's very painful for a human being to [comprehend] and see\nهو كثير إشي بوجع للبني آدم أنه يستوعبه [ويشوفه] => It's very painful for a human being to comprehend [and see] # \"and see it\" - the suffix \"ه\" refers to what is being seen\n\n[ו]לא הבנתי כאילו איך מגיעים לתוך יישובים ישראלים => [And] I didn't understand, like, how they get into Israeli communities\nו[לא הבנתי] כאילו איך מגיעים לתוך יישובים ישראלים => And [I didn't understand], like, how they get into Israeli communities\nולא הבנתי [כאילו] איך מגיעים לתוך יישובים ישראלים => And I didn't understand, [like], how they get into Israeli communities\nולא הבנתי כאילו [איך] מגיעים לתוך יישובים ישראלים => And I didn't understand, like, [how] they get into Israeli communities\nולא הבנתי כאילו איך [מגיעים] לתוך יישובים ישראלים => they get, they arrive # מגיעים is plural present, \"they\" is implicit in this context\nולא הבנתי כאילו איך מגיעים [לתוך] יישובים ישראלים => And I didn't understand, like, how they get [into] Israeli communities\nולא הבנתי כאילו איך מגיעים לתוך [יישובים] ישראלים => And I didn't understand, like, how they get into Israeli [communities]\nולא הבנתי כאילו איך מגיעים לתוך יישובים [ישראלים] => And I didn't understand, like, how they get into [Israeli] communities\n\n[ויורים] באנשים וזה כאילו משהו שעד היום צרוב לי בראש => [And shoot] people, and it's like something burned in my mind to this day\nויורים [באנשים] וזה כאילו משהו שעד היום צרוב לי בראש => And shoot [people], and it's like something burned in my mind to this day\nויורים באנשים [וזה] כאילו משהו שעד היום צרוב לי בראש => And shoot people, [and it's] like something burned in my mind to this day\nויורים באנשים וזה [כאילו] משהו שעד היום צרוב לי בראש => And shoot people, and it's [like] something burned in my mind to this day\nויורים באנשים וזה כאילו [משהו] שעד היום צרוב לי בראש => And shoot people, and it's like [something] burned in my mind to this day\nויורים באנשים וזה כאילו משהו [שעד היום] צרוב לי בראש => And shoot people, and it's like something burned in my mind [to this day]\nויורים בא\n\n[אלה] סרטונים שלא חשבתי שאני אראה יותר במאה ה-21 => [These are] videos I didn't think I'd see anymore in the 21st century\nאלה [סרטונים] שלא חשבתי שאני אראה יותר במאה ה-21 => These are [videos] I didn't think I'd see anymore in the 21st century\nאלה סרטונים [שלא חשבתי] שאני אראה יותר במאה ה-21 => These are videos [I didn't think] I'd see anymore in the 21st century\nאלה סרטונים שלא חשבתי [שאני אראה] יותר במאה ה-21 => These are videos I didn't think [I'd see] anymore in the 21st century\nאלה סרטונים שלא חשבתי שאני אראה [יותר] במאה ה-21 => These are videos I didn't think I'd see [anymore] in the 21st century\nאלה סרטונים שלא חשבתי שאני אראה יותר [במאה ה-21] => These are videos I didn't think I'd see anymore [in the 21st century] # במאה ה-21 includes the preposition 'in' as a prefix 'be-' and the definite article 'the' as 'ha-'\n\n[בארץ] ובכלל, זה לא נראה מציאותי בכלל. => [In the country] and in general, it doesn't look real at all.\nבארץ [ו]בכלל, זה לא נראה מציאותי בכלל. => In the country [and] in general, it doesn't look real at all.\nבארץ ו[בכלל], זה לא נראה מציאותי בכלל. => In the country and [in general], it doesn't look real at all.\nבארץ ובכלל, [זה] לא נראה מציאותי בכלל. => In the country and in general, [it] doesn't look real at all.\nבארץ ובכלל, זה [לא] נראה מציאותי בכלל. => In the country and in general, it [doesn't] look real at all.\nבארץ ובכלל, זה לא [נראה] מציאותי בכלל. => In the country and in general, it doesn't [look] real at all.\nבארץ ובכלל, זה לא נראה [מציאותי] בכלל. => In the country and in general, it doesn't look [real] at all.\nבארץ ובכלל, זה לא נראה מציאותי [בכלל]. => In the country and in general, it doesn't look real [at all]. # In Hebrew \"בכלל\" reinforces a negative to mean \"at all\"\n\n[أنا] ذاكرة إني صحيت على أخبار كلشي سريع. => [I] remember waking up to news, everything was fast.\nأنا [ذاكرة] إني صحيت على أخبار كلشي سريع. => I [remember] waking up to news, everything was fast.\nأنا ذاكرة [إني صحيت] على أخبار كلشي سريع. => I remember [waking up] to news, everything was fast.\nأنا ذاكرة إني صحيت [على] أخبار كلشي سريع. => I remember waking up [to] news, everything was fast.\nأنا ذاكرة إني صحيت على [أخبار] كلشي سريع. => I remember waking up to [news], everything was fast.\nأنا ذاكرة إني صحيت على أخبار [كلشي] سريع. => I remember waking up to news, [everything] was fast.\nأنا ذاكرة إني صحيت على أخبار كلشي [سريع]. => I remember waking up to news, everything was [fast] # the word \"was\" is implied in the Arabic structure \"everything fast\" (nominal sentence)\n\n[أنت] مش عارف تفهم شعورك بالضبط. => [You] don't know how to understand your feeling exactly.\nأنت [مش عارف] تفهم شعورك بالضبط. => You [don't know] how to understand your feeling exactly.\nأنت مش عارف [تفهم] شعورك بالضبط. => You don't know [how to understand] your feeling exactly.\nأنت مش عارف تفهم [شعورك] بالضبط. => You don't know how to understand [your feeling] exactly.\nأنت مش عارف تفهم شعورك [بالضبط]. => You don't know how to understand your feeling [exactly].\n\n[كان] كله متناقض عندي. => [It was] all contradictory for me.\nكان [كله] متناقض عندي. => It was [all] contradictory for me.\nكان كله [متناقض] عندي. => It was all [contradictory] for me.\nكان كله متناقض [عندي]. => It was all contradictory [for me].\n\n[התחלתי] להיכנס לחרדות, אפילו נעלתי את הבית, => [I started] getting anxious, I even locked the house,\nהתחלתי [להיכנס] לחרדות, אפילו נעלתי את הבית, => I started [getting] anxious, I even locked the house,\nהתחלתי להיכנס [לחרדות], אפילו נעלתי את הבית, => anxieties # חרדות is the plural noun for anxieties/fears\nהתחלתי להיכנס לחרדות, [אפילו] נעלתי את הבית, => I started getting anxious, I [even] locked the house,\nהתחלתי להיכנס לחרדות, אפילו [נעלתי] את הבית, => I locked # the verb form נעלתי includes the first-person subject\nהתחלתי להיכנס לחרדות, אפילו נעלתי [את הבית], => I started getting anxious, I even locked [the house],\n\n[פחדתי] שאולי פתאום גם יגיעו מחבלים ליישוב שלי => [I was afraid] that suddenly terrorists might come to my community too.\nפחדתי [שאולי] פתאום גם יגיעו מחבלים ליישוב שלי => that perhaps # \"ש-\" is \"that\", \"אולי\" is \"maybe/perhaps\"\nפחדתי שאולי [פתאום] גם יגיעו מחבלים ליישוב שלי => I was afraid that [suddenly] terrorists might come to my community too.\nפחדתי שאולי פתאום [גם] יגיעו מחבלים ליישוב שלי => I was afraid that suddenly terrorists might come to my community [too].\nפחדתי שאולי פתאום גם [יגיעו] מחבלים ליישוב שלי => come # the verb literally means \"will arrive\" or \"will come\"\nפחדתי שאולי פתאום גם יגיעו [מחבלים] ליישוב שלי => I was afraid that suddenly [terrorists] might come to my community too.\nפחדתי שאולי פתאום גם יגיעו מחבלים [ליישוב] שלי => community # the prefix \"ל-\" means \"to\"\nפחדתי שאולי פתאום גם יגיעו מחבלים ליישוב [שלי] => I was afraid that suddenly terrorists might come to [my] community too.\n\n[بهذا] التاريخ كان نهاية لأرواح كثير أرواح. => [On this] date, it was the end for many, many lives.\nبهذا [التاريخ] كان نهاية لأرواح كثير أرواح. => On this [date], it was the end for many, many lives.\nبهذا التاريخ [كان] نهاية لأرواح كثير أرواح. => On this date, [it was] the end for many, many lives.\nبهذا التاريخ كان [نهاية] لأرواح كثير أرواح. => On this date, it was [the end] for many, many lives.\nبهذا التاريخ كان نهاية [لأرواح] كثير أرواح. => for lives\nبهذا التاريخ كان نهاية لأرواح [كثير] أرواح. => On this date, it was the end for [many, many] lives.\nبهذا التاريخ كان نهاية لأرواح كثير [أرواح]. => lives # The second instance of 'lives' in this phrase structure refers to the same concept.\n\n[وكثير] ناس أبرياء اللي كثير انظلموا بهاي الحرب. => [And many] innocent people who were very wronged in this war.\nوكثير [ناس] أبرياء اللي كثير انظلموا بهاي الحرب. => And many innocent [people] who were very wronged in this war.\nوكثير ناس [أبرياء] اللي كثير انظلموا بهاي الحرب. => And many [innocent] people who were very wronged in this war.\nوكثير ناس أبرياء [اللي] كثير انظلموا بهاي الحرب. => And many innocent people [who] were very wronged in this war.\nوكثير ناس أبرياء اللي [كثير] انظلموا بهاي الحرب. => And many innocent people who were [very] wronged in this war.\nوكثير ناس أبرياء اللي كثير [انظلموا] بهاي الحرب. => were wronged # use custom translation to include the passive auxiliary \"were\" which is built into the Arabic plural passive verb\nوكثير ناس أبرياء اللي كثير انظلموا [بهاي] الحرب. => And many innocent people who were very wronged [in this] war.\nوكثير ناس أبرياء اللي كثير انظلموا بهاي [الحرب] => And many innocent people who were very wronged in this [war]\n\n[אני] כמו אני חושבת הרוב המוחלט של היהודים, => [I], like I think the vast majority of Jews,\nאני [כמו] אני חושבת הרוב המוחלט של היהודים, => I, [like] I think the vast majority of Jews,\nאני כמו [אני] חושבת הרוב המוחלט של היהודים, => I, like [I] think the vast majority of Jews,\nאני כמו אני [חושבת] הרוב המוחלט של היהודים, => I, like I [think] the vast majority of Jews,\nאני כמו אני חושבת [הרוב] המוחלט של היהודים => the majority\nאני כמו אני חושבת הרוב [המוחלט] של היהודים => absolute, vast\nאני כמו אני חושבת הרוב המוחלט [של] היהודים, => I, like I think the vast majority [of] Jews,\nאני כמו אני חושבת הרוב המוחלט של [היהודים] => the Jews # Includes the definite article 'ha' prefixed to the word Jews\n\n[הרגשתי] זעם אדיר בימים הראשונים אחרי ה-7 באוקטובר => [I felt] immense rage in the first days after October 7th\nהרגשתי [זעם] אדיר בימים הראשונים אחרי ה-7 באוקטובר => I felt immense [rage] in the first days after October 7th\nהרגשתי זעם [אדיר] בימים הראשונים אחרי ה-7 באוקטובר => I felt [immense] rage in the first days after October 7th\nהרגשתי זעם אדיר [בימים] הראשונים אחרי ה-7 באוקטובר => in the days\nהרגשתי זעם אדיר בימים [הראשונים] אחרי ה-7 באוקטובר => I felt immense rage in the [first] days after October 7th\nהרגשתי זעם אדיר בימים הראשונים [אחרי] ה-7 באוקטובר => I felt immense rage in the first days [after] October 7th\nהרגשתי זעם אדיר בימים הראשונים אחרי [ה-7] באוקטובר => the 7th\nהרגשתי זעם אדיר בימים הראשונים אחרי ה-7 [באוקטובר] => I felt immense rage in the first days after [October] 7th\n\n[כלפי] הערבים, אולי כלפי כל העולם בעצם. => [Towards] the Arabs, maybe towards the whole world actually.\nכלפי [הערבים], אולי כלפי כל העולם בעצם. => Towards [the Arabs], maybe towards the whole world actually.\nכלפי הערבים, [אולי] כלפי כל העולם בעצם. => Towards the Arabs, [maybe] towards the whole world actually.\nכלפי הערבים, אולי [כלפי] כל העולם בעצם. => Towards the Arabs, maybe [towards] the whole world actually.\nכלפי הערבים, אולי כלפי [כל] העולם בעצם. => Towards the Arabs, maybe towards [the whole] world actually.\nכלפי הערבים, אולי כלפי כל [העולם] בעצם. => Towards the Arabs, maybe towards the whole [world] actually.\nכלפי הערבים, אולי כלפי כל העולם [בעצם]. => Towards the Arabs, maybe towards the whole world [actually.]\n\n[مش راح] أنكر أنه كان في إشي اسمه عنصرية. => [I won't] deny there was something called racism.\nمش راح [أنكر] أنه كان في إشي اسمه عنصرية. => I won't [deny] there was something called racism.\nمش راح أنكر [أنه] كان في إشي اسمه عنصرية. => that\nمش راح أنكر أنه [كان في] إشي اسمه عنصرية. => I won't deny [there was] something called racism.\nمش راح أنكر أنه كان في [إشي] اسمه عنصرية. => I won't deny there was [something] called racism.\nمش راح أنكر أنه كان في إشي [اسمه] عنصرية. => I won't deny there was something [called] racism.\nمش راح أنكر أنه كان في إشي اسمه [عنصرية]. => I won't deny there was something called [racism].\n\n[بس] بعد 07.10 الإشي زاد أكثر بكثير. => [But] after 07.10, it increased much more.\nبس [بعد] 07.10 الإشي زاد أكثر بكثير. => But [after] 07.10, it increased much more.\nبس بعد [07.10] الإشي زاد أكثر بكثير. => But after [07.10], it increased much more.\nبس بعد 07.10 [الإشي] زاد أكثر بكثير. => But after 07.10, [it] increased much more.\nبس بعد 07.10 الإشي [زاد] أكثر بكثير. => But after 07.10, it [increased] much more.\nبس بعد 07.10 الإشي زاد [أكثر] بكثير. => But after 07.10, it increased much [more].\nبس بعد 07.10 الإشي زاد أكثر [بكثير]. => But after 07.10, it increased [much] more.\n\n[7] באוקטובר בעיני צעירים, ערבים ויהודים => October [7th] in the eyes of young people, Arabs and Jews\n7 [באוקטובר] בעיני צעירים, ערבים ויהודים => [October] 7th in the eyes of young people, Arabs and Jews\n7 באוקטובר [בעיני] צעירים, ערבים ויהודים => October 7th [in the eyes of] young people, Arabs and Jews\n7 באוקטובר בעיני [צעירים], ערבים ויהודים => October 7th in the eyes of [young people], Arabs and Jews\n7 באוקטובר בעיני צעירים, [ערבים] ויהודים => October 7th in the eyes of young people, [Arabs] and Jews\n7 באוקטובר בעיני צעירים, ערבים [ויהודים] => October 7th in the eyes of young people, Arabs [and Jews]\n\n[بصراحة] أكثر إشي بخوفني بهاي الأيام هو الاحتكاك بيني وبين اليهود. => [Honestly], what scares me most these days is the friction between me and the Jews.\nبصراحة [أكثر] إشي بخوفني بهاي الأيام هو الاحتكاك بيني وبين اليهود. => Honestly, what scares me [most] these days is the friction between me and the Jews.\nبصراحة أكثر [إشي] بخوفني بهاي الأيام هو الاحتكاك بيني وبين اليهود. => thing\nبصراحة أكثر إشي [بخوفني] بهاي الأيام هو الاحتكاك بيني وبين اليهود. => Honestly, what [scares me] most these days is the friction between me and the Jews.\nبصراحة أكثر إشي بخوفني [بهاي] الأيام هو الاحتكاك بيني وبين اليهود. => Honestly, what scares me most [these] days is the friction between me and the Jews.\nبصراحة أكثر إشي بخوفني بهاي [الأيام] هو الاحتكاك بيني وبين اليهود. => Honestly, what scares me most these [days] is the friction between me and the Jews.\nبصراحة أكثر إشي بخوفني بهاي الأيام [هو] الاحتكاك بيني وبين اليهود. => Honestly, what scares me most these days [is] the friction between me and the Jews.\nبصراحة أكثر إشي بخوفني بهاي الأيام هو [الاحتكاك] بيني وبين اليهود. => Honestly, what scares me most these days is [the friction] between me and the Jews.\nبصراحة أكثر إشي بخوفني بهاي الأيام هو الاحتكاك [بيني وبين] اليهود. => Honestly, what scares me most these days is the friction [between me and] the Jews.\nبصراحة أكثر إشي بخوفني بهاي الأيام هو الاحتكاك بيني وبين [اليهود] => Honestly, what scares me most these days is the friction between me and [the Jews]\n\n[אז] הדבר הראשון שעולה לי לראש כשאני שומע ערבי, => [So] the first thing that comes to my mind when I hear Arab,\nאז [הדבר] הראשון שעולה לי לראש כשאני שומע ערבי, => So the first [thing] that comes to my mind when I hear Arab,\nאז הדבר [הראשון] שעולה לי לראש כשאני שומע ערבי, => So [the first] thing that comes to my mind when I hear Arab,\nאז הדבר הראשון [שעולה] לי לראש כשאני שומע ערבי, => So the first thing [that comes] to my mind when I hear Arab,\nאז הדבר הראשון שעולה [לי לראש] כשאני שומע ערבי, => So the first thing that comes [to my mind] when I hear Arab,\nאז הדבר הראשון שעולה לי לראש [כשאני] שומע ערבי, => So the first thing that comes to my mind [when I] hear Arab,\nאז הדבר הראשון שעולה לי לראש כשאני [שומע] ערבי, => So the first thing that comes to my mind when I [hear] Arab,\nאז הדבר הראשון שעולה לי לראש כשאני שומע [ערבי] => So the first thing that comes to my mind when I hear [Arab]\n\n[זה] המלחמה עכשיו, ופחד. => [It's] the war now, and fear. # זה acts as both the subject (it) and the implicit copula (is)\nזה [ה]מלחמה עכשיו, ופחד. => It's [the] war now, and fear.\nזה ה[מלחמה] עכשיו, ופחד. => It's the [war] now, and fear.\nזה המלחמה [עכשיו], ופחד. => It's the war [now], and fear.\nזה המלחמה עכשיו, [ו]פחד. => It's the war now, [and] fear.\nזה המלחמה עכשיו, ו[פחד]. => It's the war now, and [fear].\n\n[המלחמה] והמצב הפוליטי באופן כללי => [The war] and the political situation in general\nהמלחמה [ו]המצב הפוליטי באופן כללי => The war [and] the political situation in general\nהמלחמה ו[המצב] הפוליטי באופן כללי => the situation\nהמלחמה והמצב [הפוליטי] באופן כללי => political\nהמלחמה והמצב הפוליטי [באופן כללי] => The war and the political situation [in general] # \"באופן כללי\" is an idiomatic phrase meaning \"in general\"\n\n[גורמים] לנו להיות סגורים יותר. => [Cause] us to be more closed off.\nגורמים [לנו] להיות סגורים יותר. => Cause [us] to be more closed off.\nגורמים לנו [להיות] סגורים יותר. => Cause us [to be] more closed off.\nגורמים לנו להיות [סגורים] יותר. => closed off\nגורמים לנו להיות סגורים [יותר]. => Cause us to be [more] closed off.\n\n[כל מה] שאנחנו שומעים נגיד בתקשורת, זה על פיגועים, => [Everything] we hear, say, in the media, is about attacks,\nכל מה [שאנחנו] שומעים נגיד בתקשורת, זה על פיגועים, => Everything [we] hear, say, in the media, is about attacks,\nכל מה שאנחנו [שומעים] נגיד בתקשורת, זה על פיגועים, => Everything we [hear], say, in the media, is about attacks,\nכל מה שאנחנו שומעים [נגיד] בתקשורת, זה על פיגועים, => Everything we hear, [say], in the media, is about attacks,\nכל מה שאנחנו שומעים נגיד [בתקשורת], זה על פיגועים, => Everything we hear, say, [in the media], is about attacks,\nכל מה שאנחנו שומעים נגיד בתקשורת, [זה] על פיגועים, => Everything we hear, say, in the media, [is] about attacks,\nכל מה שאנחנו שומעים נגיד בתקשורת, זה [על] פיגועים, => Everything we hear, say, in the media, is [about] attacks,\nכל מה שאנחנו שומעים נגיד בתקשורת, זה על [פיגועים], => Everything we hear, say, in the media, is about [attacks],\n\n[סכסוכים], וזה ישר יוצר קונוטציה שלילית. => [Conflicts], and that immediately creates a negative connotation.\nסכסוכים, [וזה] ישר יוצר קונוטציה שלילית. => Conflicts, [and that] immediately creates a negative connotation.\nסכסוכים, וזה [ישר] יוצר קונוטציה שלילית. => Conflicts, and that [immediately] creates a negative connotation. # \"ישר\" literally means \"straight\" but is used here as a slang for \"directly/immediately\"\nסכסוכים, וזה ישר [יוצר] קונוטציה שלילית. => Conflicts, and that immediately [creates] a negative connotation.\nסכסוכים, וזה ישר יוצר [קונוטציה] שלילית. => Conflicts, and that immediately creates a negative [connotation]\nסכסוכים, וזה ישר יוצר קונוטציה [שלילית]. => Conflicts, and that immediately creates a [negative] connotation.\n\n[كنت] لما أسمع كلمة يهودي، عنده قوميته الخاصة فيه، => [I used to] when I heard the word Jew, he has his own nationality,\nكنت [لما] أسمع كلمة يهودي، عنده قوميته الخاصة فيه، => I used to [when] I heard the word Jew, he has his own nationality,\nكنت لما [أسمع] كلمة يهودي، عنده قوميته الخاصة فيه، => I used to when [I heard] the word Jew, he has his own nationality,\nكنت لما أسمع [كلمة] يهودي، عنده قوميته الخاصة فيه، => I used to when I heard the [word] Jew, he has his own nationality,\nكنت لما أسمع كلمة [يهودي]، عنده قوميته الخاصة فيه، => I used to when I heard the word [Jew], he has his own nationality,\nكنت لما أسمع كلمة يهودي، [عنده] قوميته الخاصة فيه، => I used to when I heard the word Jew, [he has] his own nationality,\nكنت لما أسمع كلمة يهودي، عنده [قوميته] الخاصة فيه، => I used to when I heard the word Jew, he has [his] own [nationality]\nكنت لما أسمع كلمة يهودي، عنده قوميته [الخاصة] فيه، => I used to when I heard the word Jew, he has his [own] nationality,\nكنت لما أسمع كلمة يهودي، عنده قوميته الخاصة [فيه]، => in it, pertaining to him # \"فيه\" acts here as a pleonastic reinforcement of the possessive suffix in \"قوميته\"\n\n[دينه]، أفكاره، بتتعارض مع شو أنا بفكر. => [His religion], his ideas, contradict what I think.\nدينه، [أفكاره]، بتتعارض مع شو أنا بفكر. => His religion, [his ideas], contradict what I think.\nدينه، أفكاره، [بتتعارض] مع شو أنا بفكر. => His religion, his ideas, [contradict] what I think.\nدينه، أفكاره، بتتعارض [مع] شو أنا بفكر. => with\nدينه، أفكاره، بتتعارض مع [شو] أنا بفكر. => His religion, his ideas, contradict [what] I think.\nدينه، أفكاره، بتتعارض مع شو [أنا] بفكر. => His religion, his ideas, contradict what [I] think.\nدينه، أفكاره، بتتعارض مع شو أنا [بفكر]. => His religion, his ideas, contradict what I [think]\n\n[من] ناحية تاريخ أنا مثلاً عندي حقائق، => [From] a historical perspective, for example, I have facts,\nمن [ناحية] تاريخ أنا مثلاً عندي حقائق، => perspective\nمن ناحية [تاريخ] أنا مثلاً عندي حقائق، => [historical]\nمن ناحية تاريخ [أنا] مثلاً عندي حقائق، => [I]\nمن ناحية تاريخ أنا [مثلاً] عندي حقائق، => [for example]\nمن ناحية تاريخ أنا مثلاً [عندي] حقائق، => [have]\nمن ناحية تاريخ أنا مثلاً عندي [حقائق]، => [facts]\n\n[عندي] إثباتات مثلاً لتاريخي، اللي هو التاريخ الفلسطيني العربي. => [I have] proofs for my history, for example, which is the Palestinian Arab history.\nعندي [إثباتات] مثلاً لتاريخي، اللي هو التاريخ الفلسطيني العربي. => I have [proofs] for my history, for example, which is the Palestinian Arab history.\nعندي إثباتات [مثلاً] لتاريخي، اللي هو التاريخ الفلسطيني العربي. => I have proofs for my history, [for example], which is the Palestinian Arab history.\nعندي إثباتات مثلاً [لتاريخي]، اللي هو التاريخ الفلسطيني العربي. => I have proofs [for my history], for example, which is the Palestinian Arab history.\nعندي إثباتات مثلاً لتاريخي، [اللي هو] التاريخ الفلسطيني العربي. => I have proofs for my history, for example, [which is] the Palestinian Arab history.\nعندي إثباتات مثلاً لتاريخي، اللي هو [التاريخ] الفلسطيني العربي. => I have proofs for my history, for example, which is the Palestinian Arab [history]\nعندي إثباتات مثلاً لتاريخي، اللي هو التاريخ [الفلسطيني] العربي. => I have proofs for my history, for example, which is the [Palestinian] Arab history.\nعندي إثباتات مثلاً لتاريخي، اللي هو التاريخ الفلسطيني [العربي]. => I have proofs for my history, for example, which is the Palestinian [Arab] history.\n\nהתושבים [הערבים] בישראל רובם מגדירים את עצמם כפלסטינים, => The [Arab] residents in Israel, most of them define themselves as Palestinians,\nהתושבים הערבים [בישראל] רובם מגדירים את עצמם כפלסטינים, => The Arab residents [in Israel], most of them define themselves as Palestinians,\nהתושבים הערבים בישראל [רובם] מגדירים את עצמם כפלסטינים, => The Arab residents in Israel, [most of them] define themselves as Palestinians,\nהתושבים הערבים בישראל רובם [מגדירים] את עצמם כפלסטינים, => The Arab residents in Israel, most of them [define] themselves as Palestinians,\nהתושבים הערבים בישראל רובם מגדירים [את עצמם] כפלסטינים, => The Arab residents in Israel, most of them define [themselves] as Palestinians,\nהתושבים הערבים בישראל רובם מגדירים את עצמם [כפלסטינים], => The Arab residents in Israel, most of them define themselves [as Palestinians],\n\n[שזה] משהו שכאילו קצת סתר את התפיסות שלי ואת החשיבה. => [Which is] something that kind of contradicted my perceptions and thinking.\nשזה [משהו] שכאילו קצת סתר את התפיסות שלי ואת החשיבה. => Which is [something] that kind of contradicted my perceptions and thinking.\nשזה משהו [שכאילו קצת] סתר את התפיסות שלי ואת החשיבה. => Which is something [that kind of] contradicted my perceptions and thinking.\nשזה משהו שכאילו קצת [סתר] את התפיסות שלי ואת החשיבה. => Which is something that kind of [contradicted] my perceptions and thinking.\nשזה משהו שכאילו קצת סתר [את התפיסות] שלי ואת החשיבה. => Which is something that kind of contradicted my [perceptions] and thinking.\nשזה משהו שכאילו קצת סתר את התפיסות [שלי] ואת החשיבה. => Which is something that kind of contradicted [my] perceptions and thinking.\nשזה משהו שכאילו קצת סתר את התפיסות שלי [ואת] החשיבה. => Which is something that kind of contradicted my perceptions [and] thinking.\nשזה משהו שכאילו קצת סתר את התפיסות שלי ואת [החשיבה]. => Which is something that kind of contradicted my perceptions and [thinking].\n\n[אני] לא הבנתי הרבה מאוד מהאינטרס או מהמחשבה הערבית. => [I] didn't understand much of the interest or the Arab thinking.\nאני [לא הבנתי] הרבה מאוד מהאינטרס או מהמחשבה הערבית. => I [didn't understand] much of the interest or the Arab thinking.\nאני לא הבנתי [הרבה מאוד] מהאינטרס או מהמחשבה הערבית. => much # Literally \"very much\"\nאני לא הבנתי הרבה מאוד [מהאינטרס] או מהמחשבה הערבית. => I didn't understand much [of the interest] or the Arab thinking.\nאני לא הבנתי הרבה מאוד מהאינטרס [או] מהמחשבה הערבית. => I didn't understand much of the interest [or] the Arab thinking.\nאני לא הבנתי הרבה מאוד מהאינטרס או [מהמחשבה] הערבית. => the thinking # Custom translation to isolate from the adjective \"Arab\"\nאני לא הבנתי הרבה מאוד מהאינטרס או מהמחשבה [הערבית]. => I didn't understand much of the interest or the [Arab] thinking.\n\n[כשמישהו] אומר לי אני פלסטיני-ישראלי, => [When someone] tells me I am a Palestinian-Israeli,\nכשמישהו [אומר] לי אני פלסטיני-ישראלי, => When someone [tells] me I am a Palestinian-Israeli,\nכשמישהו אומר [לי] אני פלסטיני-ישראלי, => When someone tells [me] I am a Palestinian-Israeli,\n# \"אני\" usually means \"I\", but in Hebrew nominal sentences it functions as \"I am\"\nכשמישהו אומר לי [אני] פלסטיני-ישראלי, => When someone tells me [I am] a Palestinian-Israeli,\nכשמישהו אומר לי אני [פלסטיני-ישראלי], => When someone tells me I am a [Palestinian-Israeli]\n\n[כשמישהו] מדבר איתי על היסטוריה, => [When someone] talks to me about history,\nכשמישהו [מדבר] איתי על היסטוריה, => When someone [talks] to me about history,\nכשמישהו מדבר [איתי] על היסטוריה, => When someone talks [to me] about history,\nכשמישהו מדבר איתי [על] היסטוריה, => When someone talks to me [about] history,\nכשמישהו מדבר איתי על [היסטוריה], => When someone talks to me about [history],\n\n[הפרספקטיבות] של היהודי או הערבי הן מאוד מאוד שונות. => [The perspectives] of the Jew or the Arab are very, very different.\nהפרספקטיבות [של] היהודי או הערבי הן מאוד מאוד שונות. => The perspectives [of] the Jew or the Arab are very, very different.\nהפרספקטיבות של [היהודי] או הערבי הן מאוד מאוד שונות. => The perspectives of [the Jew] or the Arab are very, very different.\nהפרספקטיבות של היהודי [או] הערבי הן מאוד מאוד שונות. => The perspectives of the Jew [or] the Arab are very, very different.\nהפרספקטיבות של היהודי או [הערבי] הן מאוד מאוד שונות. => The perspectives of the Jew or [the Arab] are very, very different.\nהפרספקטיבות של היהודי או הערבי [הן] מאוד מאוד שונות. => The perspectives of the Jew or the Arab [are] very, very different.\nהפרספקטיבות של היהודי או הערבי הן [מאוד] מאוד שונות. => The perspectives of the Jew or the Arab are [very], very different.\nהפרספקטיבות של היהודי או הערבי הן מאוד [מאוד] שונות. => The perspectives of the Jew or the Arab are very, [very] different.\nהפרספקטיבות של היהודי או הערבי הן מאוד מאוד [שונות]. => The perspectives of the Jew or the Arab are very, very [different].\n\nبيجي [عندك] كمان شاب اللي هو يهودي عنده نفس الإشي. => [You] also [have] a guy who is a Jew, he has the same thing. # \"عندك\" (literally \"at you\") is used here to mean \"you have\"\nبيجي عندك [كمان] شاب اللي هو يهودي عنده نفس الإشي. => You [also] have a guy who is a Jew, he has the same thing.\nبيجي عندك كمان [شاب] اللي هو يهودي عنده نفس الإشي. => You also have [a guy] who is a Jew, he has the same thing.\nبيجي عندك كمان شاب [اللي] هو يهودي عنده نفس الإشي. => You also have a guy [who] is a Jew, he has the same thing.\nبيجي عندك كمان شاب اللي [هو] يهودي عنده نفس الإشي. => You also have a guy who [is] a Jew, he has the same thing.\nبيجي عندك كمان شاب اللي هو [يهودي] عنده نفس الإشي. => You also have a guy who is [a Jew], he has the same thing.\nبيجي عندك كمان شاب اللي هو يهودي [عنده] نفس الإشي. => You also have a guy who is a Jew, [he has] the same thing.\nبيجي عندك كمان شاب اللي هو يهودي عنده [نفس] الإشي. => You also have a guy who is a Jew, he has [the same] thing.\nبيجي عندك كمان شاب اللي هو يهودي عنده نفس [الإشي]. => You also have a guy who is a Jew, he has the same [thing]. # الإشي literally means \"the thing\" (al-ishi)\n\n[أنا] هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي صار => I # Arabic often uses a personal pronoun before a demonstrative for emphasis\n\n[هذا] تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي صار => [This] is my history, this is what I learned, this is my view on what happened\nأنا هذا [تاريخي]، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي صار => This is [my history], this is what I learned, this is my view on what happened\n\nأنا هذا تاريخي، [هذا] اللي تعلمت عليه، هاي نظرتي للإشي اللي صار => This is my history, [this] is what I learned, this is my view on what happened\nأنا هذا تاريخي، هذا [اللي] تعلمت عليه، هاي نظرتي للإشي اللي صار => This is my history, this is [what] I learned, this is my view on what happened\nأنا هذا تاريخي، هذا اللي [تعلمت] عليه، هاي نظرتي للإشي اللي صار => This is my history, this is what [I learned], this is my view on what happened\nهذا اللي تعلمت [عليه] => on it, based on it\n\nأنا هذا تاريخي، هذا اللي تعلمت عليه، [هاي] نظرتي للإشي اللي صار => This is my history, this is what I learned, [this] is my view on what happened\nأنا هذا تاريخي، هذا اللي تعلمت عليه، هاي [نظرتي] للإشي اللي صار => This is my history, this is what I learned, this is [my view] on what happened\n\nأنا هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي [للإشي] اللي صار => regarding the thing, about the thing\nأنا هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي [اللي] صار => This is my history, this is what I learned, this is my view on [what] happened\nأنا هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي [صار] => This is my history, this is what I learned, this is my view on what [happened]\n\n[دائماً] في حوار مين صح. => There's [always] a dialogue about who is right.\nدائماً [في] حوار مين صح. => [There's] always a dialogue about who is right.\nدائماً في [حوار] مين صح. => There's always a [dialogue] about who is right.\nدائماً في حوار [مين] صح. => There's always a dialogue about [who] is right.\nدائماً في حوار مين [صح]. => There's always a dialogue about who is [right]\n\n[ואז] כשנלמדתי להקשיב להם הבנתי את הצד שלהם => [And then] when I learned to listen to them I understood their side\nואז [כשנלמדתי] להקשיב להם הבנתי את הצד שלהם => And then [when I learned] to listen to them I understood their side\nואז כשנלמדתי [להקשיב] להם הבנתי את הצד שלהם => And then when I learned [to listen] to them I understood their side\nואז כשנלמדתי להקשיב [להם] הבנתי את הצד שלהם => And then when I learned to listen [to them] I understood their side\nואז כשנلמדתי להקשיב להם [הבנתי] את הצד שלהם => And then when I learned to listen to them [I understood] their side\nואז כשנלמדתי להקשיב להם הבנתי [את הצד] שלהם => And then when I learned to listen to them I understood their [side]\nואז כשנלמדתי להקשיב להם הבנתי את הצד [שלהם] => And then when I learned to listen to them I understood [their] side\n\n[והבנתי] את האמירה הזאת. => [And I understood] this statement.\nוהבנתי את [האמירה] הזאת. => And I understood this [statement].\nוהבנתי את האמירה [הזאת]. => And I understood [this] statement.\n\n[اليهودي] الفرق بينه وبين الشاب العربي، الإمكانيات اللي بتطلعله، => [The Jew], the difference between him and the Arab guy, the opportunities available to him,\nاليهودي [الفرق] بينه وبين الشاب العربي، الإمكانيات اللي بتطلعله، => The Jew, [the difference] between him and the Arab guy, the opportunities available to him,\nاليهودي الفرق [بينه] وبين الشاب العربي، الإمكانيات اللي بتطلعله، => The Jew, the difference [between him] and the Arab guy, the opportunities available to him,\nاليهودي الفرق بينه [وبين] الشاب العربي، الإمكانيات اللي بتطلعله، => The Jew, the difference between him [and] the Arab guy, the opportunities available to him,\nاليهودي الفرق بينه وبين [الشاب] العربي، الإمكانيات اللي بتطلعله، => guy, young man, youth\nاليهودي الفرق بينه وبين الشاب [العربي]، الإمكانيات اللي بتطلعله، => The Jew, the difference between him and the [Arab] guy, the opportunities available to him,\nاليهودي الفرق بينه وبين الشاب العربي، [الإمكانيات] اللي بتطلعله، => The Jew, the difference between him and the Arab guy, [the opportunities] available to him,\nاليهودي الفرق بينه وبين الشاب العربي، الإمكانيات [اللي بتطلعله]، => The Jew, the difference between him and the Arab guy, the opportunities [available to him] # the phrase refers to opportunities \"coming up for him,\" which is localized as \"available to him\"\n\n[طريقة] العيش تبعته بسبب دولته. => And his [way] of living because of his state.\nطريقة [العيش] تبعته بسبب دولته. => And his way of [living] because of his state.\nطريقة العيش [تبعته] بسبب دولته. => And [his] way of living because of his state.\nطريقة العيش تبعته [بسبب] دولته. => And his way of living [because of] his state.\nطريقة العيش تبعته بسبب [دولته]. => And his way of living because of [his state].\n\n[وما كنتش] جد حاطة في راسي أنه لازم أنخرط بهذا الجيل => [And I wasn't] really set in my mind that I must engage with this generation\nوما كنتش [جد] حاطة في راسي أنه لازم أنخرط بهذا الجيل => And I wasn't [really] set in my mind that I must engage with this generation\nوما كنتش جد [حاطة] في راسي أنه لازم أنخرط بهذا الجيل => And I wasn't really [set] in my mind that I must engage with this generation\nوما كنتش جد حاطة [في راسي] أنه لازم أنخرط بهذا الجيل => And I wasn't really set [in my mind] that I must engage with this generation\nوما كنتش جد حاطة في راسي [أنه] لازم أنخرط بهذا الجيل => And I wasn't really set in my mind [that] I must engage with this generation\nوما كنتش جد حاطة في راسي أنه [لازم] أنخرط بهذا الجيل => And I wasn't really set in my mind that [I must] engage with this generation\nوما كنتش جد حاطة في راسي أنه لازم [أنخرط] بهذا الجيل => And I wasn't really set in my mind that I must [engage] with this generation\nوما كنتش جد حاطة في راسي أنه لازم أنخرط [بهذا] الجيل => And I wasn't really set in my mind that I must engage [with this] generation\nوما كنتش جد حاطة في راسي أنه لازم أنخرط بهذا [الجيل] => And I wasn't really set in my mind that I must engage with this [generation]\n\n[مع] هاي الفئة من المجتمع. => [With] this segment of society.\nمع [هاي] الفئة من المجتمع. => With [this] segment of society.\nمع هاي [الفئة] من المجتمع. => With this [segment] of society.\nمع هاي الفئة [من] المجتمع. => With this segment [of] society.\nمع هاي الفئة من [المجتمع]. => With this segment of [society].\n\n[זה] כמובן טבעי להרגיש פחד בסביבה => [It's] of course natural to feel fear in an environment\nזה [כמובן] טבעי להרגיש פחד בסביבה => It's [of course] natural to feel fear in an environment\nזה כמובן [טבעי] להרגיש פחד בסביבה => It's of course [natural] to feel fear in an environment\nזה כמובן טבעי [להרגיש] פחד בסביבה => It's of course natural [to feel] fear in an environment\nזה כמובן טבעי להרגיש [פחד] בסביבה => It's of course natural to feel [fear] in an environment\nזה כמובן טבעי להרגיש פחד [בסביבה] => It's of course natural to feel fear [in an environment]\n\n[שהרגילו] אותנו לחשוב שהיא עוינת => [That they accustomed] us to think is hostile\nשהרגילו [אותנו] לחשוב שהיא עוינת => That they accustomed [us] to think is hostile\nשהרגילו אותנו [לחשוב] שהיא עוינת => That they accustomed us [to think] is hostile\nשהרגילו אותנו לחשוב [שהיא] עוינת => [is]\nשהרגילו אותנו לחשוב שהיא [עוינת] => That they accustomed us to think is [hostile]\n\n[אבל] אני חושבת שזה לרוב מיותר => [But] I think it's mostly unnecessary.\nאבל [אני] חושבת שזה לרוב מיותר => But [I] think it's mostly unnecessary.\nאבל אני [חושבת] שזה לרוב מיותר => But I [think] it's mostly unnecessary.\nאבל אני חושבת [שזה] לרוב מיותר => But I think [it's] mostly unnecessary.\nאבל אני חושבת שזה [לרוב] מיותר => But I think it's [mostly] unnecessary.\nאבל אני חושבת שזה לרוב [מיותר] => But I think it's mostly [unnecessary]\n\n[أنا] بالنسبة إلي بشتغل بمجال الكهرباء. => As for me, [I] work in the field of electricity.\nأنا [بالنسبة إلي] بشتغل بمجال الكهرباء. => [As for me], I work in the field of electricity.\nأنا بالنسبة إلي [بشتغل] بمجال الكهرباء. => As for me, I [work] in the field of electricity.\nأنا بالنسبة إلي بشتغل [بمجال] الكهرباء. => As for me, I work [in the field of] electricity.\nأنا بالنسبة إلي بشتغل بمجال [الكهرباء]. => As for me, I work in the field of [electricity]\n\n[مرة] كنا ببيت، أجا عندي ولد صغير => [Once] we were at a house, a little boy came to me\nمرة [كنا] ببيت، أجا عندي ولد صغير => Once [we were] at a house, a little boy came to me\nمرة كنا [ببيت]، أجا عندي ولد صغير => Once we were [at a house], a little boy came to me\nمرة كنا ببيت، [أجا] عندي ولد صغير => Once we were at a house, a little boy [came] to me\nمرة كنا ببيت، أجا [عندي] ولد صغير => Once we were at a house, a little boy came [to me]\nمرة كنا ببيت، أجا عندي [ولد] صغير => Once we were at a house, a little [boy] came to me\nمرة كنا ببيت، أجا عندي ولد [صغير] => Once we were at a house, a [little] boy came to me\n\n[سمعني] كأني بحكي بالتلفون بالعربي، قلي \"أنا بكره العرب\". => [Heard me] like I was talking on the phone in Arabic, told me \"I hate Arabs\".\nسمعني [كأني] بحكي بالتلفون بالعربي، قلي \"أنا بكره العرب\". => Heard me [like I was] talking on the phone in Arabic, told me \"I hate Arabs\".\nسمعني كأني [بحكي] بالتلفون بالعربي، قلي \"أنا بكره العرب\". => Heard me like I was [talking] on the phone in Arabic, told me \"I hate Arabs\".\nسمعني كأني بحكي [بالتلفون] بالعربي، قلي \"أنا بكره العرب\". => Heard me like I was talking [on the phone] in Arabic, told me \"I hate Arabs\".\nسمعني كأني بحكي بالتلفون [بالعربي]، قلي \"أنا بكره العرب\". => Heard me like I was talking on the phone [in Arabic], told me \"I hate Arabs\".\nسمعني كأني بحكي بالتلفون بالعربي، [قلي] \"أنا بكره العرب\". => Heard me like I was talking on the phone in Arabic, [told me] \"I hate Arabs\".\nسمعني كأني بحكي بالتلفون بالعربي، قلي \"[أنا] بكره العرب\". => Heard me like I was talking on the phone in Arabic, told me \"[I] hate Arabs\".\nسمعني كأني بحكي بالتلفون بالعربي، قلي \"أنا [بكره] العرب\". => Heard me like I was talking on the phone in Arabic, told me \"I [hate] Arabs\".\nسمعني كأني بحكي بالتلفون بالعربي، قلي \"أنا بكره [العرب]\". => Heard me like I was talking on the phone in Arabic, told me \"I hate [Arabs]\".\n\n[אני] מתחיל לשמוע מהרבה מאוד חברים שלי, => [I] start hearing from many of my friends,\nאני [מתחיל] לשמוע מהרבה מאוד חברים שלי, => I [start] hearing from many of my friends,\nאני מתחיל [לשמוע] מהרבה מאוד חברים שלי, => I start [hearing] from many of my friends,\nאני מתחיל לשמוע [מהרבה] מאוד חברים שלי, => I start hearing [from many] of my friends,\nאני מתחיל לשמוע מהרבה [מאוד] חברים שלי, => very # מאוד literally means very or very much\nאני מתחיל לשמוע מהרבה מאוד [חברים] שלי, => I start hearing from many of my [friends],\nאני מתחיל לשמוע מהרבה מאוד חברים [שלי], => I start hearing from many of [my] friends,\n\n[כאילו] אמירות מאוד גזעניות, שכל ערבי הוא מחבל, => [Like] very racist statements, that every Arab is a terrorist,\nכאילו [אמירות] מאוד גזעניות, שכל ערבי הוא מחבל, => Like very racist [statements], that every Arab is a terrorist,\nכאילו אמירות [מאוד] גזעניות, שכל ערבי הוא מחבל, => Like [very] racist statements, that every Arab is a terrorist,\nכאילו אמירות מאוד [גזעניות], שכל ערבי הוא מחבל, => Like very [racist] statements, that every Arab is a terrorist,\nכאילו אמירות מאוד גזעניות, [שכל] ערבי הוא מחבל, => Like very racist statements, [that every] Arab is a terrorist,\nכאילו אמירות מאוד גזעניות, שכל [ערבי] הוא מחבל, => Like very racist statements, that every [Arab] is a terrorist,\nכאילו אמירות מאוד גזעניות, שכל ערבי [הוא] מחבל, => Like very racist statements, that every Arab [is] a terrorist,\nכאילו אמירות מאוד גזעניות, שכל ערבי הוא [מחבל], => Like very racist statements, that every Arab is [a terrorist]\n\n[שנובעות] מפחד ומחרדה. => [That stem] from fear and anxiety.\nשנובעות [מפחד] ומחרדה. => That stem [from fear] and anxiety.\nשנובעות מפחד [ו]מחרדה. => That stem from fear [and] anxiety.\nשנובעות מפחד ו[מחרדה]. => from anxiety # \"מ-\" is a prefix meaning \"from\", which is not repeated in the English sentence translation\n\n[ولد] صغير بهذا العمر صعب أنك تتوقع منه يقول هيك إشي. => A little [boy] at this age, it's hard to expect him to say such a thing.\nولد [صغير] بهذا العمر صعب أنك تتوقع منه يقول هيك إشي. => A [little] boy at this age, it's hard to expect him to say such a thing.\nولد صغير [بهذا] العمر صعب أنك تتوقع منه يقول هيك إشي. => A little boy [at this] age, it's hard to expect him to say such a thing.\nولد صغير بهذا [العمر] صعب أنك تتوقع منه يقول هيك إشي. => A little boy at this [age], it's hard to expect him to say such a thing.\nولد صغير بهذا العمر [صعب] أنك تتوقع منه يقول هيك إشي. => A little boy at this age, [it's hard] to expect him to say such a thing.\nولد صغير بهذا العمر صعب [أنك] تتوقع منه يقول هيك إشي. => that you\nولد صغير بهذا العمر صعب أنك [تتوقع] منه يقول هيك إشي. => A little boy at this age, it's hard to [expect] him to say such a thing.\nولد صغير بهذا العمر صعب أنك تتوقع [منه] يقول هيك إشي. => A little boy at this age, it's hard to expect [him] to say such a thing.\nولد صغير بهذا العمر صعب أنك تتوقع منه [يقول] هيك إشي. => A little boy at this age, it's hard to expect him [to say] such a thing.\nولد صغير بهذا العمر صعب أنك تتوقع منه يقول [هيك] إشي. => A little boy at this age, it's hard to expect him to say [such a] thing.\nولد صغير بهذا العمر صعب أنك تتوقع منه يقول هيك [إشي]. => A little boy at this age, it's hard to expect him to say such a [thing].\n\n[الإشي] اللي مخوفني حالياً هو المستقبل اللي رايحين نيجي عليه. => [The thing] that scares me currently is the future we are heading towards.\nالإشي [اللي] مخوفني حالياً هو المستقبل اللي رايحين نيجي عليه. => The thing [that] scares me currently is the future we are heading towards.\nالإشي اللي [مخوفني] حالياً هو المستقبل اللي رايحين نيجي عليه. => The thing that [scares me] currently is the future we are heading towards.\nالإشي اللي مخوفني [حالياً] هو المستقبل اللي رايحين نيجي عليه. => The thing that scares me [currently] is the future we are heading towards.\nالإشي اللي مخوفني حالياً [هو] المستقبل اللي رايحين نيجي عليه. => The thing that scares me currently [is] the future we are heading towards.\nالإشي اللي مخوفني حالياً هو [المستقبل] اللي رايحين نيجي عليه. => The thing that scares me currently is [the future] we are heading towards.\nالإشي اللي مخوفني حالياً هو المستقبل اللي [رايحين نيجي] عليه. => The thing that scares me currently is the future [we are heading] towards.\nالإشي اللي مخوفني حالياً هو المستقبل اللي رايحين نيجي [عليه]. => The thing that scares me currently is the future we are heading [towards]. # عليه is a preposition \"on/to\" + pronoun \"it\", here mapped to the preposition \"towards\" used in the translation.\n\n[لأنه] وضعنا الحالي صعب، ما بالكم بالمستقبل شو راح يصير. => [Because] our current situation is hard, imagine what will happen in the future.\nلأنه [وضعنا] الحالي صعب، ما بالكم بالمستقبل شو راح يصير. => our situation\nلأنه وضعنا [الحالي] صعب، ما بالكم بالمستقبل شو راح يصير. => Because our [current] situation is hard, imagine what will happen in the future.\nلأنه وضعنا الحالي [صعب]، ما بالكم بالمستقبل شو راح يصير. => Because our current situation is [hard], imagine what will happen in the future.\nلأنه وضعنا الحالي صعب، [ما بالكم] بالمستقبل شو راح يصير. => Because our current situation is hard, [imagine] what will happen in the future.\nلأنه وضعنا الحالي صعب، ما بالكم [بالمستقبل] شو راح يصير. => Because our current situation is hard, imagine what will happen [in the future].\nلأنه وضعنا الحالي صعب، ما بالكم بالمستقبل [شو] راح يصير. => Because our current situation is hard, imagine [what] will happen in the future.\nلأنه وضعنا الحالي صعب، ما بالكم بالمستقبل شو [راح يصير]. => Because our current situation is hard, imagine what [will happen] in the future.\n\n[והגעתי] לתוכנית \"בעיניים אחרות\" של גבעת חביבה, => [And I arrived] at the program \"In Other Eyes\" of Givat Haviva,\nוהגעתי [לתוכנית] \"בעיניים אחרות\" של גבעת חביבה, => And I arrived [at the program] \"In Other Eyes\" of Givat Haviva,\nוהגעתי לתוכנית \"[בעיניים] אחרות\" של גבעת חביבה, => in eyes # contains the preposition 'be' (in) and 'einayim' (eyes)\nוהגעתי לתוכנית \"בעיניים [אחרות]\" של גבעת חביבה, => And I arrived at the program \"In [Other] Eyes\" of Givat Haviva,\nוהגעתי לתוכנית \"בעיניים אחרות\" [של] גבעת חביבה, => And I arrived at the program \"In Other Eyes\" [of] Givat Haviva,\nוהגעתי לתוכנית \"בעיניים אחרות\" של [גבעת] חביבה, => And I arrived at the program \"In Other Eyes\" of [Givat] Haviva,\nוהגעתי לתוכנית \"בעיניים אחרות\" של גבעת [חביבה], => And I arrived at the program \"In Other Eyes\" of Givat [Haviva],\n\n[לפני] שנה וחצי, שנתיים. => A year and a half, two years [ago]\nלפני [שנה] וחצי, שנתיים. => [A year] and a half, two years ago\nלפני שנה [וחצי], שנתיים. => A year [and a half], two years ago\nלפני שנה וחצי, [שנתיים]. => A year and a half, [two years] ago # שנתיים is the dual form of year (שנה), meaning \"two years\"\n\n[היא] בעצם תוכנית שנתית, שהמטרה שלה היא לחבר => [It's] essentially an annual program, whose goal is to connect\nהיא [בעצם] תוכנית שנתית, שהמטרה שלה היא לחבר => It's [essentially] an annual program, whose goal is to connect\nהיא בעצם [תוכנית] שנתית, שהמטרה שלה היא לחבר => It's essentially an annual [program], whose goal is to connect\nהיא בעצם תוכנית [שנתית], שהמטרה שלה היא לחבר => It's essentially an [annual] program, whose goal is to connect\nהיא בעצם תוכנית שנתית, [שהמטרה שלה] היא לחבר => It's essentially an annual program, [whose goal] is to connect\nהיא בעצם תוכנית שנתית, שהמטרה שלה [היא] לחבר => It's essentially an annual program, whose goal [is] to connect\nהיא בעצם תוכנית שנתית, שהמטרה שלה היא [לחבר] => It's essentially an annual program, whose goal is [to connect]\n\n[בין] ערבים ויהודים בתוך ישראל, דרך צילום. => [Between] Arabs and Jews within Israel, through photography.\nבין [ערבים] ויהודים בתוך ישראל, דרך צילום. => Between [Arabs] and Jews within Israel, through photography.\nבין ערבים [ויהודים] בתוך ישראל, דרך צילום. => Between Arabs [and Jews] within Israel, through photography.\nבין ערבים ויהודים [בתוך] ישראל, דרך צילום. => Between Arabs and Jews [within] Israel, through photography.\nבין ערבים ויהודים בתוך [ישראל], דרך צילום. => Between Arabs and Jews within [Israel], through photography.\nבין ערבים ויהודים בתוך ישראל, [דרך] צילום. => Between Arabs and Jews within Israel, [through] photography.\nבין ערבים ויהודים בתוך ישראל, דרך [צילום]. => Between Arabs and Jews within Israel, through [photography]\n\n[بعد] برنامج \"بعيون أخرى\" أنا سمعت ملان آراء => [After] the program \"In Other Eyes\" I heard a lot of opinions\nبعد [برنامج] \"بعيون أخرى\" أنا سمعت ملان آراء => After [the program] \"In Other Eyes\" I heard a lot of opinions\nبعد برنامج \"[بعيون] أخرى\" أنا سمعت ملان آراء => in eyes\nبعد برنامج \"بعيون [أخرى]\" أنا سمعت ملان آراء => After the program \"In [Other] Eyes\" I heard a lot of opinions\nبعد برنامج \"بعيون أخرى\" [أنا] سمعت ملان آراء => After the program \"In Other Eyes\" [I] heard a lot of opinions\nبعد برنامج \"بعيون أخرى\" أنا [سمعت] ملان آراء => After the program \"In Other Eyes\" I [heard] a lot of opinions\nبعد برنامج \"بعيون أخرى\" أنا سمعت [ملان] آراء => After the program \"In Other Eyes\" I heard [a lot of] opinions\nبعد برنامج \"بعيون أخرى\" أنا سمعت ملان [آراء] => After the program \"In Other Eyes\" I heard a lot of [opinions]\n\n[اللي هي] بتناقض الآراء اللي عندي. => [That] contradict the opinions I have.\nاللي هي [بتناقض] الآراء اللي عندي. => That [contradict] the opinions I have.\nاللي هي بتناقض [الآراء] اللي عندي. => That contradict [the opinions] I have.\nاللي هي بتناقض الآراء [اللي] عندي. => that # used custom translation because \"that\" is omitted in the English sentence but present in Arabic\nاللي هي بتناقض الآراء اللي [عندي] => That contradict the opinions [I have] # \"indi\" is commonly translated as \"I have\" in this context\n\n[فهمت] أنهم هم ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص. => [I understood] that they are people like me like them. Every individual has their own thinking.\nفهمت [أنهم] هم ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص. => I understood [that they] are people like me like them. Every individual has their own thinking.\nفهمت أنهم [هم] ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص. => are # acts as the copula in this context\nفهمت أنهم هم [ناس] زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص. => I understood that they are [people] like me like them. Every individual has their own thinking.\nفهمت أنهم هم ناس [زيي] زيهم. كل فرد فيهم هو عنده تفكيره الخاص. => I understood that they are [like me] like them. Every individual has their own thinking.\nفهمت أنهم هم ناس زيي [زيهم]. كل فرد فيهم هو عنده تفكيره الخاص. => I understood that they are like me [like them]. Every individual has their own thinking.\nفهمت أنهم هم ناس زيي زيهم. [كل] فرد فيهم هو عنده تفكيره الخاص. => I understood that they are people like me like them. [Every] individual has their own thinking.\nفهمت أنهم هم ناس زيي زيهم. كل [فرد] فيهم هو عنده تفكيره الخاص. => I understood that they are people like me like them. Every [individual] has their own thinking.\nفهمت أنهم هم ناس زيي زيهم. كل فرد [فيهم] هو عنده تفكيره الخاص. => of them / among them\nفهمت أنهم هم ناس زيي زيهم. كل فرد فيهم هو [عنده] تفكيره الخاص. => I understood that they are people like me like them. Every individual [has] their own thinking.\nفهمت أنهم هم ناس زيي زيهم. كل فرد فيهم هو عنده [تفكيره] الخاص. => their thinking\nفهمت أنهم هم ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره [الخاص]. => I understood that they are people like me like them. Every individual has their [own] thinking.\n\n[فش] داعي أحكم عليهم كلهم بسبب كلمة يهودي. => [There's no] need to judge them all because of the word Jew.\nفش [داعي] أحكم عليهم كلهم بسبب كلمة يهودي. => There's no [need] to judge them all because of the word Jew.\nفش داعي [أحكم] عليهم كلهم بسبب كلمة يهودي. => There's no need [to judge] them all because of the word Jew.\nفش داعي أحكم [عليهم] كلهم بسبب كلمة يهودي. => There's no need to judge [them] all because of the word Jew.\nفش داعي أحكم عليهم [كلهم] بسبب كلمة يهودي. => There's no need to judge them [all] because of the word Jew.\nفش داعي أحكم عليهم كلهم [بسبب] كلمة يهودي. => There's no need to judge them all [because of] the word Jew.\nفش داعي أحكم عليهم كلهم بسبب [كلمة] يهودي. => There's no need to judge them all because of the [word] Jew.\nفش داعي أحكم عليهم كلهم بسبب كلمة [يهودي] => There's no need to judge them all because of the word [Jew]\n\n[יש] ילד אחד שדיברנו על השבעה באוקטובר. => [There is] one child we talked about October 7th with.\nיש [ילד] אחד שדיברנו על השבעה באוקטובר. => There is one [child] we talked about October 7th with.\nיש ילד [אחד] שדיברנו על השבעה באוקטובר. => There is [one] child we talked about October 7th with.\nיש ילד אחד [שדיברנו] על השבעה באוקטובר. => There is one child [we talked] about October 7th with.\nיש ילד אחד שדיברנו [על] השבעה באוקטובר. => There is one child we talked [about] October 7th with.\nיש ילד אחד שדיברנו על [השבעה] באוקטובר. => There is one child we talked about October [7th] with.\nיש ילד אחד שדיברנו על השבעה [באוקטובר]. => There is one child we talked about [October] 7th with. # \"באוקטובר\" includes the prefix \"ב\" (in) but maps directly to the month here\n\n[הוא] טען שלא נרצחו ילדים => [He] claimed that no children were murdered\nהוא [טען] שלא נרצחו ילדים => He [claimed] that no children were murdered\nהוא טען [שלא] נרצחו ילדים => He claimed [that no] children were murdered\nהוא טען שלא [נרצחו] ילדים => He claimed that no children [were murdered]\nהוא טען שלא נרצחו [ילדים] => He claimed that no [children] were murdered\n\n[ו]לא כל כך הצלחנו להגיע לאמצע, => [And] we didn't really manage to reach a middle ground,\nו[לא] כל כך הצלחנו להגיע לאמצע, => And we [didn't] really manage to reach a middle ground,\nולא [כל כך] הצלחנו להגיע לאמצע, => And we didn't [really] manage to reach a middle ground,\nולא כל כך [הצלחנו] להגיע לאמצע, => we succeeded, we managed # The \"we\" is part of the verb conjugation suffix -nu\nולא כל כך הצלחנו [להגיע] לאמצע, => And we didn't really manage [to reach] a middle ground,\nולא כל כך הצלחנו להגיע [לאמצע], => And we didn't really manage to reach [a middle ground], # Hebrew \"L'\" (to) is prefixed to \"Emtza\" (middle)\n\n[זאת אומרת], זו דוגמה לזה שבכל חברה => [That is to say], this is an example that in every society\nזאת אומרת, [זו] דוגמה לזה שבכל חברה => That is to say, [this is] an example that in every society\nזאת אומרת, זו [דוגמה] לזה שבכל חברה => That is to say, this is [an example] that in every society\nזאת אומרת, זו דוגמה [לזה] שבכל חברה => to that, regarding that # literal meaning of לזה\nזאת אומרת, זו דוגמה לזה [שבכל] חברה => That is to say, this is an example [that in every] society\nזאת אומרת, זו דוגמה לזה שבכל [חברה] => That is to say, this is an example that in every [society]\n\n[יש] גם אנשים קצת יותר קיצוניים. => [There are] also people a bit more extreme.\nיש [גם] אנשים קצת יותר קיצוניים. => There are [also] people a bit more extreme.\nיש גם [אנשים] קצת יותר קיצוניים. => There are also [people] a bit more extreme.\nיש גם אנשים [קצת] יותר קיצוניים. => There are also [a bit] more extreme.\nיש גם אנשים קצת [יותר] קיצוניים. => There are also a bit [more] extreme.\nיש גם אנשים קצת יותר [קיצוניים]. => There are also a bit more [extreme].\n\n[إني] تعلمت كيف أتقبل الإشي حتى لو أنا مش موافق بالرأي. => [That I] learned how to accept the thing even if I don't agree with the opinion.\nإني [تعلمت] كيف أتقبل الإشي حتى لو أنا مش موافق بالرأي. => That I [learned] how to accept the thing even if I don't agree with the opinion.\nإني تعلمت [كيف] أتقبل الإشي حتى لو أنا مش موافق بالرأي. => That I learned [how] to accept the thing even if I don't agree with the opinion.\nإني تعلمت كيف [أتقبل] الإشي حتى لو أنا مش موافق بالرأي. => That I learned how [to accept] the thing even if I don't agree with the opinion.\nإني تعلمت كيف أتقبل [الإشي] حتى لو أنا مش موافق بالرأي. => That I learned how to accept [the thing] even if I don't agree with the opinion.\nإني تعلمت كيف أتقبل الإشي [حتى] لو أنا مش موافق بالرأي. => That I learned how to accept the thing [even] if I don't agree with the opinion.\nإني تعلمت كيف أتقبل الإشي حتى [لو] أنا مش موافق بالرأي. => That I learned how to accept the thing even [if] I don't agree with the opinion.\nإني تعلمت كيف أتقبل الإشي حتى لو [أنا] مش موافق بالرأي. => That I learned how to accept the thing even if [I] don't agree with the opinion.\nإني تعلمت كيف أتقبل الإشي حتى لو أنا [مش موافق] بالرأي. => That I learned how to accept the thing even if I [don't agree] with the opinion.\nإني تعلمت كيف أتقبل الإشي حتى لو أنا مش موافق [بالرأي]. => That I learned how to accept the thing even if I don't agree [with the opinion].\n\n[بحترم] رأيك، بحترم شو أنت بتقول، => [I respect] your opinion, I respect what you say,\nبحترم [رأيك]، بحترم شو أنت بتقول، => I respect [your opinion], I respect what you say,\nبحترم رأيك، [بحترم] شو أنت بتقول، => I respect your opinion, [I respect] what you say,\nبحترم رأيك، بحترم [شو] أنت بتقول، => I respect your opinion, I respect [what] you say,\nبحترم رأيك، بحترم شو [أنت] بتقول، => I respect your opinion, I respect what [you] say,\nبحترم رأيك، بحترم شو أنت [بتقول]، => I respect your opinion, I respect what you [say]\n\n[بس] أنا بوافقكش بالرأي. => [But] I don't agree with you in opinion.\nبس [أنا] بوافقكش بالرأي. => But [I] don't agree with you in opinion.\nبس أنا [بوافقكش] بالرأي. => don't agree with you # This complex Arabic word contains the verb, the object pronoun \"you\", and the negation \"don't\"\nبس أنا بوافقكش [بالرأي]. => But I don't agree with you [in opinion]\nبس أنا بوافقكش بـ[الرأي]. => opinion # Extracts the core noun \"opinion\" from the word with the preposition \"in\" (bi-)\n\n[יהודים] לא לומדים להכיר ערבים => [Jews] don't learn to know Arabs\nיהודים [לא] לומדים להכיר ערבים => Jews [don't] learn to know Arabs # 'lo' functions as the negation 'don't'\nיהודים לא [לומדים] להכיר ערבים => Jews don't [learn] to know Arabs\nיהודים לא לומדים [להכיר] ערבים => Jews don't learn [to know] Arabs # 'lehakir' is the infinitive 'to know' (familiarity)\nיהודים לא לומדים להכיר [ערבים] => Jews don't learn to know [Arabs]\n\n[וערבים] לא לומדים להכיר יהודים. => [And Arabs] don't learn to know Jews.\nוערבים [לא] לומדים להכיר יהודים. => And Arabs [don't] learn to know Jews.\nוערבים לא [לומדים] להכיר יהודים. => And Arabs don't [learn] to know Jews.\nוערבים לא לומדים [להכיר] יהודים. => And Arabs don't learn [to know] Jews.\nוערבים לא לומדים להכיר [יהודים]. => And Arabs don't learn to know [Jews]\n\n[זה] מייצר גזענות והגזענות הזאת בסופו של יום => [This] creates racism and this racism at the end of the day\nזה [מייצר] גזענות והגזענות הזאת בסופו של יום => This [creates] racism and this racism at the end of the day\nזה מייצר [גזענות] והגזענות הזאת בסופו של יום => This creates [racism] and this racism at the end of the day\nזה מייצר גזענות [ו]הגזענות הזאת בסופו של יום => and\nזה מייצר גזענות ו[הגזענות הזאת] בסופו של יום => This creates racism and [this racism] at the end of the day\nזה מייצר גזענות והגזענות הזאת [בסופו של יום] => This creates racism and this racism [at the end of the day]\n\n[הופכת] לאלימות ולקיצוניות. => [Turns] into violence and extremism.\nהופכת [לאלימות] ולקיצוניות. => Turns [into violence] and extremism.\nהופכת לאלימות [ולקיצוניות]. => Turns into violence [and extremism]. # aligns the prefixed Hebrew word (and-into-extremism) to the English phrase (and extremism)\n\n[אני] חושבת שלאט לאט במהלך התוכנית => [I] think that slowly during the program\nאני [חושבת] שלאט לאט במהלך התוכנית => I [think] that slowly during the program\nאני חושבת [שלאט לאט] במהלך התוכנית => I think [that slowly] during the program\nאני חושבת שלאט לאט [במהלך] התוכנית => I think that slowly [during] the program\nאני חושבת שלאט לאט במהלך [התוכנית] => I think that slowly during [the program]\n\n[התחלתי] להבין את הנרטיב הפלסטיני, הערבי => [I started] to understand the Palestinian, Arab narrative\nהתחלתי [להבין] את הנרטיב הפלסטיני, הערבי => I started [to understand] the Palestinian, Arab narrative\nהתחלתי להבין את [הנרטיב] הפלסטיני, הערבי => I started to understand the Palestinian, Arab [narrative]\nהתחלתי להבין את הנרטיב [הפלסטיני], הערבי => I started to understand [the Palestinian], Arab narrative\nהתחלתי להבין את הנרטיב הפלסטיני, [הערבי] => I started to understand the Palestinian, [Arab] narrative # את is a direct object marker and has no direct English equivalent, so it is skipped. Note: Although the input text is Hebrew, I have aligned it following the provided rules.\n\n[ובאמת] זה קירב אותי בצורה בלתי רגילה => [And truly] this brought me closer in an unusual way\nובאמת [זה] קירב אותי בצורה בלתי רגילה => And truly [this] brought me closer in an unusual way\nובאמת זה [קירב] אותי בצורה בלתי רגילה => brought closer # the verb קירב indicates movement towards something, hence \"brought closer\"\nובאמת זה קירב [אותי] בצורה בלתי רגילה => And truly this brought [me] closer in an unusual way\nובאמת זה קירב אותי [בצורה] בלתי רגילה => in a way # literally \"in a shape\" or \"in a form\", here meaning \"in a way\"\nובאמת זה קירב אותי בצורה [בלתי רגילה] => And truly this brought me closer in an [unusual] way\n\n[ו]בלתי צפויה. => [And] unexpected.\nו[בלתי] צפויה. => non-, un-\nובלתי [צפויה]. => expected\nו[בלתי צפויה]. => And [unexpected]. # although 'unexpected' is one word, 'בלתי צפויה' is the direct translation unit.\n\n[فكرة] السلام... نبقى واقعيين، => [The idea] of peace... let's stay realistic,\nفكرة [السلام]... نبقى واقعيين، => The idea of [peace]... let's stay realistic,\nفكرة السلام... [نبقى] واقعيين، => The idea of peace... [let's stay] realistic,\nفكرة السلام... نبقى [واقعيين]، => The idea of peace... let's stay [realistic],\n\n[بمجتمعنا] حالياً بالمرة مش موجودة. => [In our society] currently it doesn't exist at all.\nبمجتمعنا [حالياً] بالمرة مش موجودة. => In our society [currently] it doesn't exist at all.\nبمجتمعنا حالياً [بالمرة] مش موجودة. => In our society currently it doesn't exist [at all].\nبمجتمعنا حالياً بالمرة [مش موجودة] => it doesn't exist # combined negative and predicate to capture the English \"it doesn't exist\" unit\n\n[المجتمعين] بعاد عن بعض. كل مجتمع عنده => [The two societies] are far from each other. Every society has\nالمجتمعين [بعاد] عن بعض. كل مجتمع عنده => The two societies are [far] from each other. Every society has\nالمجتمعين بعاد [عن] بعض. كل مجتمع عنده => The two societies are far [from] each other. Every society has\nالمجتمعين بعاد عن [بعض]. كل مجتمع عنده => The two societies are far from [each other]. Every society has\nالمجتمعين بعاد عن بعض. [كل] مجتمع عنده => The two societies are far from each other. [Every] society has\nالمجتمعين بعاد عن بعض. كل [مجتمع] عنده => The two societies are far from each other. Every [society] has\nالمجتمعين بعاد عن بعض. كل مجتمع [عنده] => The two societies are far from each other. Every society [has]\n\n[أفكار] مختلفة عن المجتمع الآخر. => Different [ideas] from the other society.\nأفكار [مختلفة] عن المجتمع الآخر. => [Different] ideas from the other society.\nأفكار مختلفة [عن] المجتمع الآخر. => Different ideas [from] the other society.\nأفكار مختلفة عن [المجتمع] الآخر. => Different ideas from the other [society].\nأفكار مختلفة عن المجتمع [الآخر]. => Different ideas from [the other] society.\n\n[שלום] לדעתי זה ששני הצדדים מוכנים לחיות ביחד, => [Peace] in my opinion is that both sides are ready to live together,\nשלום [לדעתי] זה ששני הצדדים מוכנים לחיות ביחד, => Peace [in my opinion] is that both sides are ready to live together,\nשלום לדעתי [זה] ששני הצדדים מוכנים לחיות ביחד, => Peace in my opinion [is] that both sides are ready to live together,\nשלום לדעתי זה [ששני] הצדדים מוכנים לחיות ביחד, => Peace in my opinion is [that both] sides are ready to live together,\nשלום לדעתי זה ששני [הצדדים] מוכנים לחיות ביחד, => Peace in my opinion is that both [sides] are ready to live together,\nשלום לדעתי זה ששני הצדדים [מוכנים] לחיות ביחד, => Peace in my opinion is that both sides [are ready] to live together,\nשלום לדעתי זה ששני הצדדים מוכנים [לחיות] ביחד, => Peace in my opinion is that both sides are ready [to live] together,\nשלום לדעתי זה ששני הצדדים מוכנים לחיות [ביחד], => Peace in my opinion is that both sides are ready to live [together],\n\n[בלי] סכסוכים, בלי אלימות => [Without] conflicts, without violence\nבלי [סכסוכים], בלי אלימות => Without [conflicts], without violence\nבלי סכסוכים, [בלי] אלימות => Without conflicts, [without] violence\nבלי סכסוכים, בלי [אלימות] => Without conflicts, without [violence]\n\n[ואפילו] לעשות שיתופי פעולה, כלכליים, חברתיים. => [And even] to do cooperations, economic, social.\nואפילו [לעשות] שיתופי פעולה, כלכליים, חברתיים. => And even [to do] cooperations, economic, social.\nואפילו לעשות [שיתופי פעולה], כלכליים, חברתיים. => And even to do [cooperations], economic, social.\nואפילו לעשות שיתופי פעולה, [כלכליים], חברתיים. => And even to do cooperations, [economic], social.\nואפילו לעשות שיתופי פעולה, כלכליים, [חברתיים]. => And even to do cooperations, economic, [social].\n\n[מה] זה שלום? => [What] is peace?\nמה [זה] שלום? => What [is] peace?\nמה זה [שלום]? => What is [peace]?\n\n[קודם כל] אנשים לא נהרגים כל יום. => [First of all] people aren't killed every day.\nקודם כל [אנשים] לא נהרגים כל יום. => First of all [people] aren't killed every day.\nקודם כל אנשים [לא] נהרגים כל יום. => First of all people [aren't] killed every day.\nקודם כל אנשים לא [נהרגים] כל יום. => First of all people aren't [killed] every day.\nקודם כל אנשים לא נהרגים [כל] יום. => First of all people aren't killed [every] day.\nקודם כל אנשים לא נהרגים כל [יום]. => First of all people aren't killed every [day]\n\n[אני] חושבת ששלום טוב זה שלום חם, => [I] think good peace is a warm peace,\nאני [חושבת] ששלום טוב זה שלום חם, => I [think] good peace is a warm peace,\nאני חושבת [ש]שלום טוב זה שלום חם, => that # Prefix translates to \"that\" although omitted/implied in the English sentence\nאני חושבת ש[שלום] טוב זה שלום חם, => I think good [peace] is a warm peace,\nאני חושבת ששלום [טוב] זה שלום חם, => I think [good] peace is a warm peace,\nאני חושבת ששלום טוב [זה] שלום חם, => I think good peace [is] a warm peace,\nאני חושבת ששלום טוב זה [שלום] חם, => I think good peace is a warm [peace],\nאני חושבת ששלום טוב זה שלום [חם], => I think good peace is a [warm] peace,\n\n[שבו] יש תקשורת יחסית שוויונית => [Where] there is relatively equal communication\nשבו [יש] תקשורת יחסית שוויונית => Where [there is] relatively equal communication\nשבו יש [תקשורת] יחסית שוויונית => Where there is relatively equal [communication]\nשבו יש תקשורת [יחסית] שוויונית => Where there is [relatively] equal communication\nשבו יש תקשורת יחסית [שוויונית] => Where there is relatively [equal] communication\n\n[בין] שני צדדים. => [Between] two sides.\nבין [שני] צדדים. => Between [two] sides.\nבין שני [צדדים]. => Between two [sides].\n\n[فكرة] السلام هي مبنية على فكرة الناس تتقبل آراء الناس الأخرى، => [The idea] of peace is based on the idea people accept other people's opinions,\nفكرة [السلام] هي مبنية على فكرة الناس تتقبل آراء الناس الأخرى، => The idea of [peace] is based on the idea people accept other people's opinions,\nفكرة السلام [هي] مبنية على فكرة الناس تتقبل آراء الناس الأخرى، => The idea of peace [is] based on the idea people accept other people's opinions, # use as copula\nفكرة السلام هي [مبنية] على فكرة الناس تتقبل آراء الناس الأخرى، => The idea of peace is [based] on the idea people accept other people's opinions,\nفكرة السلام هي مبنية [على] فكرة الناس تتقبل آراء الناس الأخرى، => The idea of peace is based [on] the idea people accept other people's opinions,\nفكرة السلام هي مبنية على [فكرة] الناس تتقبل آراء الناس الأخرى، => The idea of peace is based on [the idea] people accept other people's opinions,\nفكرة السلام هي مبنية على فكرة [الناس] تتقبل آراء الناس الأخرى، => The idea of peace is based on the idea [people] accept other people's opinions,\nفكرة السلام هي مبنية على فكرة الناس [تتقبل] آراء الناس الأخرى، => The idea of peace is based on the idea people [accept] other people's opinions,\nفكرة السلام هي مبنية على فكرة الناس تتقبل [آراء] الناس الأخرى، => The idea of peace is based on the idea people accept other people's [opinions],\nفكرة السلام هي مبنية على فكرة الناس تتقبل آراء [الناس] الأخرى، => The idea of peace is based on the idea people accept other [people's] opinions,\nفكرة السلام هي مبنية على فكرة الناس تتقبل آراء الناس [الأخرى]، => The idea of peace is based on the idea people accept [other] people's opinions,\n\n[بدون] هذا الشعور تجاههم بالكره بسبب رأي => [Without] this feeling of hatred towards them because of an opinion\nبدون [هذا] الشعور تجاههم بالكره بسبب رأي => Without [this] feeling of hatred towards them because of an opinion\nبدون هذا [الشعور] تجاههم بالكره بسبب رأي => Without this [feeling] of hatred towards them because of an opinion\nبدون هذا الشعور [تجاههم] بالكره بسبب رأي => Without this feeling of hatred [towards them] because of an opinion\nبدون هذا الشعور تجاههم [بالكره] بسبب رأي => Without this feeling [of hatred] towards them because of an opinion\nبدون هذا الشعور تجاههم بالكره [بسبب] رأي => Without this feeling of hatred towards them [because of] an opinion\nبدون هذا الشعور تجاههم بالكره بسبب [رأي] => Without this feeling of hatred towards them because of [an opinion]\n\n[كلمة] سلام هي محاولة تعايش. => [The word] peace is an attempt at coexistence.\nكلمة [سلام] هي محاولة تعايش. => The word [peace] is an attempt at coexistence.\nكلمة سلام [هي] محاولة تعايش. => The word peace [is] an attempt at coexistence.\nكلمة سلام هي [محاولة] تعايش. => The word peace is [an attempt] at coexistence.\nكلمة سلام هي محاولة [تعايش]. => The word peace is an attempt at [coexistence].\n\n[إشي] صعب أنه يصير. => [Something] hard to happen.\nإشي [صعب] أنه يصير. => Something [hard] to happen.\nإشي صعب [أنه] يصير. => Something hard [to] happen.\nإشي صعب أنه [يصير]. => Something hard to [happen].\n\n[دائماً] في طموح لهذا الإشي => There is [always] ambition for this thing\nدائماً [في] طموح لهذا الإشي => [There is] always ambition for this thing\nدائماً في [طموح] لهذا الإشي => There is always [ambition] for this thing\nدائماً في طموح [لهذا] الإشي => There is always ambition [for this] thing\nدائماً في طموح لهذا [الإشي] => There is always ambition for this [thing]\n\n[لأنه] صراحة زهقنا من الوضع اللي إحنا فيه. => [Because] honestly we are fed up with the situation we are in.\nلأنه [صراحة] زهقنا من الوضع اللي إحنا فيه. => Because [honestly] we are fed up with the situation we are in.\nلأنه صراحة [زهقنا] من الوضع اللي إحنا فيه. => we are fed up # The suffix -na represents 'we'\nلأنه صراحة زهقنا [من] الوضع اللي إحنا فيه. => Because honestly we are fed up [with] the situation we are in.\nلأنه صراحة زهقنا من [الوضع] اللي إحنا فيه. => Because honestly we are fed up with [the situation] we are in.\nلأنه صراحة زهقنا من الوضع اللي [إحنا] فيه. => Because honestly we are fed up with the situation [we] are in.\nلأنه صراحة زهقنا من الوضع اللي إحنا [فيه]. => Because honestly we are fed up with the situation we are [in]. # 'fih' literally means 'in it' or 'in there', aligned to 'in' within the context of the sentence structure.\n\n[אנחנו] בסופו של דבר חיים באותה מדינה, => [We] ultimately live in the same country,\nאנחנו [בסופו של דבר] חיים באותה מדינה, => We [ultimately] live in the same country,\nאנחנו בסופו של דבר [חיים] באותה מדינה, => We ultimately [live] in the same country,\nאנחנו בסופו של דבר חיים [באותה] מדינה, => We ultimately live [in the same] country,\nאנחנו בסופו של דבר חיים באותה [מדינה], => We ultimately live in the same [country],\n\n[באותו] מקום, והפתרון לטווח ארוך, => [In the same] place, and the long-term solution,\nבאותו [מקום], והפתרון לטווח ארוך, => In the same [place], and the long-term solution,\nבאותו מקום, [והפתרון] לטווח ארוך, => and the solution\nבאותו מקום, והפתרון [לטווח ארוך], => In the same place, and the [long-term] solution,\n\n[חייב] להיות כאילו שנחיה ביחד, בשיתוף. => [Must] be like we live together, in partnership.\nחייב [להיות] כאילו שנחיה ביחד, בשיתוף. => Must [be] like we live together, in partnership.\nחייב להיות [כאילו] שנחיה ביחד, בשיתוף. => Must be [like] we live together, in partnership.\nחייב להיות כאילו [שנחיה] ביחד, בשיתוף. => Must be like [we live] together, in partnership.\nחייב להיות כאילו שנחיה [ביחד], בשיתוף. => Must be like we live [together], in partnership.\nחייב להיות כאילו שנחיה ביחד, [בשיתוף]. => Must be like we live together, [in partnership].\n\n[فكرة] التعايش مبنية على أساس السلام هو بالأول => [The idea] of coexistence is based on the foundation of peace which is first\nفكرة [التعايش] مبنية على أساس السلام هو بالأول => The idea of [coexistence] is based on the foundation of peace which is first\nفكرة التعايش [مبنية] على أساس السلام هو بالأول => The idea of coexistence is [based] on the foundation of peace which is first\nفكرة التعايش مبنية [على] أساس السلام هو بالأول => The idea of coexistence is based [on] the foundation of peace which is first\nفكرة التعايش مبنية على [أساس] السلام هو بالأول => The idea of coexistence is based on [the foundation] of peace which is first\nفكرة التعايش مبنية على أساس [السلام] هو بالأول => The idea of coexistence is based on the foundation of [peace] which is first\nفكرة التعايش مبنية على أساس السلام [هو] بالأول => The idea of coexistence is based on the foundation of peace [which is] first\nفكرة التعايش مبنية على أساس السلام هو [بالأول] => The idea of coexistence is based on the foundation of peace which is [first]\n\n[واللي] هو برضه مش موجود. => [And which] is also not existing.\nواللي [هو] برضه مش موجود. => And which [is] also not existing. # in this context 'هو' functions as the copula 'is'\nواللي هو [برضه] مش موجود. => And which is [also] not existing.\nواللي هو برضه [مش] موجود. => And which is also [not] existing.\nواللي هو برضه مش [موجود]. => And which is also not [existing].\n\n[على فكرة] المساواة اللي هي برضه مش موجودة. => [About] equality which is also not existing.\nعلى فكرة [المساواة] اللي هي برضه مش موجودة. => About [equality] which is also not existing.\nعلى فكرة المساواة [اللي] هي برضه مش موجودة. => About equality [which] is also not existing.\nعلى فكرة المساواة اللي [هي] برضه مش موجودة. => About equality which [is] also not existing. # although 'hiya' is a pronoun, it functions as 'is' here\nعلى فكرة المساواة اللي هي [برضه] مش موجودة. => About equality which is [also] not existing.\nعلى فكرة المساواة اللي هي برضه [مش] موجودة. => About equality which is also [not] existing.\nعلى فكرة المساواة اللي هي برضه مش [موجودة]. => About equality which is also not [existing].\n\n[لما] تصير هاي الحقوق موجودة عند الطرفين، => [When] these rights become present for both parties,\nلما [تصير] هاي الحقوق موجودة عند الطرفين، => When these rights [become] present for both parties,\nلما تصير [هاي] الحقوق موجودة عند الطرفين، => When [these] rights become present for both parties,\nلما تصير هاي [الحقوق] موجودة عند الطرفين، => When these [rights] become present for both parties,\nلما تصير هاي الحقوق [موجودة] عند الطرفين، => When these rights become [present] for both parties,\nلما تصير هاي الحقوق موجودة [عند] الطرفين، => When these rights become present [for] both parties,\nلما تصير هاي الحقوق موجودة عند [الطرفين]، => When these rights become present for [both parties] # The dual form ends with -ayn, encompassing the meaning of \"both\" or \"the two\"\n\n[إحتمال] وقتها تبدأ فكرة المساواة تصير أقرب للواقع. => Then [probably] the idea of equality starts to become closer to reality.\nإحتمال [وقتها] تبدأ فكرة المساواة تصير أقرب للواقع. => [Then] probably the idea of equality starts to become closer to reality.\nإحتمال وقتها [تبدأ] فكرة المساواة تصير أقرب للواقع. => Then probably the idea of equality [starts] to become closer to reality.\nإحتمال وقتها تبدأ [فكرة] المساواة تصير أقرب للواقع. => Then probably [the idea] of equality starts to become closer to reality.\nإحتمال وقتها تبدأ فكرة [المساواة] تصير أقرب للواقع. => Then probably the idea of [equality] starts to become closer to reality.\nإحتمال وقتها تبدأ فكرة المساواة [تصير] أقرب للواقع. => Then probably the idea of equality starts [to become] closer to reality.\nإحتمال وقتها تبدأ فكرة المساواة تصير [أقرب] للواقع. => Then probably the idea of equality starts to become [closer] to reality.\nإحتمال وقتها تبدأ فكرة المساواة تصير أقرب [للواقع]. => Then probably the idea of equality starts to become closer [to reality].\n\n[ובעצם] כל אדם שמתחיל לדבר, מתחיל לתקשר => [And essentially] every person who starts to talk, starts to communicate\nובעצם [כל] אדם שמתחיל לדבר, מתחיל לתקשר => And essentially [every] person who starts to talk, starts to communicate\nובעצם כל [אדם] שמתחיל לדבר, מתחיל לתקשר => And essentially every [person] who starts to talk, starts to communicate\nובעצם כל אדם [שמתחיל] לדבר, מתחיל לתקשר => And essentially every person [who starts] to talk, starts to communicate\nובעצם כל אדם שמתחיל [לדבר], מתחיל לתקשר => And essentially every person who starts [to talk], starts to communicate\nובעצם כל אדם שמתחיל לדבר, [מתחיל] לתקשר => And essentially every person who starts to talk, [starts] to communicate\nובעצם כל אדם שמתחיל לדבר, מתחיל [לתקשר] => And essentially every person who starts to talk, starts [to communicate]\n\n[עם] אדם מהצד השני => [With] a person from the other side\nעם [אדם] מהצד השני => With [a person] from the other side\nעם אדם [מהצד] השני => from the side # custom translation because \"the side\" is separated from \"from\" by \"other\" in the English sentence\nעם אדם מהצד [השני] => the other # \"השני\" literally means \"the second\" or \"the other\"\n\n[זה] בעצם הישג אדיר עבורנו, => [This] is essentially a huge achievement for us,\nזה [בעצם] הישג אדיר עבורנו, => This is [essentially] a huge achievement for us,\nזה בעצם [הישג] אדיר עבורנו, => This is essentially a huge [achievement] for us,\nזה בעצם הישג [אדיר] עבורנו, => This is essentially a [huge] achievement for us,\nזה בעצם הישג אדיר [עבורנו], => This is essentially a huge achievement [for us], # עבורנו acts as \"for us\" in a single Hebrew word unit\n\n[ואני] חושבת שזה מה שבונה את היכולת => [And I] think this is what builds the ability\nואני [חושבת] שזה מה שבונה את היכולת => And I [think] this is what builds the ability\nואני חושבת [שזה] מה שבונה את היכולת => And I think [this is] what builds the ability\nואני חושבת שזה [מה] שבונה את היכולת => And I think this is [what] builds the ability\nואני חושבת שזה מה [שבונה] את היכולת => And I think this is what [builds] the ability\nואני חושבת שזה מה שבונה את [היכולת] => And I think this is what builds [the ability] # included \"the\" in the alignment as \"ha-\" is the definite article prefix in Hebrew\n\n[אחר כך] לחיות ביחד => [Afterwards] to live together\nאחר כך [לחיות] ביחד => Afterwards [to live] together\nאחר כך לחיות [ביחד] => Afterwards to live [together]\n\n[מה ש]מאוד מפחיד אותי היום, => [What] scares me very much today,\nמה ש[מאוד] מפחיד אותי היום, => What scares me [very much] today,\nמה שמאוד [מפחיד] אותי היום, => What [scares] me very much today,\nמה שמאוד מפחיד [אותי] היום, => What scares [me] very much today,\nמה שמאוד מפחיד אותי [היום], => What scares me very much [today],\n\n[זה] העלייה בקיצוניות ובדת, שנמצאת היום בשלטון. => [Is] the rise in extremism and religion, that is in power today.\nזה [העלייה] בקיצוניות ובדת, שנמצאת היום בשלטון. => Is [the rise] in extremism and religion, that is in power today.\nזה העלייה [בקיצוניות] ובדת, שנמצאת היום בשלטון. => Is the rise [in extremism] and religion, that is in power today.\nזה העלייה בקיצוניות [ובדת], שנמצאת היום בשלטון. => Is the rise in extremism [and religion], that is in power today.\nזה העלייה בקיצוניות ובדת, [שנמצאת] היום בשלטון. => Is the rise in extremism and religion, [that is] in power today.\nזה העלייה בקיצוניות ובדת, שנמצאת [היום] בשלטון. => Is the rise in extremism and religion, that is in power [today].\nזה העלייה בקיצוניות ובדת, שנמצאת היום [בשלטון]. => Is the rise in extremism and religion, that is [in power] today. # Hebrew \"be-shilton\" translates literally to \"in power/rule\"\n\nإشي [كبير] من مخاوفي نظرة العرب، المجتمع العربي لإلي، => A [big] part of my fear is the view of the Arabs, the Arab society towards me,\nإشي كبير [من] مخاوفي نظرة العرب، المجتمع العربي لإلي، => A big part [of] my fear is the view of the Arabs, the Arab society towards me,\nإشي كبير من [مخاوفي] نظرة العرب، المجتمع العربي لإلي، => A big part of [my fear] is the view of the Arabs, the Arab society towards me, # مخاوفي is plural \"my fears\", but translated as singular here\nإشي كبير من مخاوفي [نظرة] العرب، المجتمع العربي لإلي، => A big part of my fear is [the view] of the Arabs, the Arab society towards me,\nإشي كبير من مخاوفي نظرة [العرب]، المجتمع العربي لإلي، => A big part of my fear is the view of [the Arabs], the Arab society towards me,\nإشي كبير من مخاوفي نظرة العرب، [المجتمع] العربي لإلي، => A big part of my fear is the view of the Arabs, the Arab [society] towards me,\nإشي كبير من مخاوفي نظرة العرب، المجتمع [العربي] لإلي، => A big part of my fear is the view of the Arabs, the [Arab] society towards me,\nإشي كبير من مخاوفي نظرة العرب، المجتمع العربي [لإلي]، => A big part of my fear is the view of the Arabs, the Arab society [towards me], # لإلي is a dialectal combination of \"li\" (to/for) and \"ili\" (me)\n\n[ونظرة] المجتمع اليهودي لإلي => [And the view] of the Jewish society towards me\nونظرة [المجتمع] اليهودي لإلي => And the view of the Jewish [society] towards me\nونظرة المجتمع [اليهودي] لإلي => And the view of the [Jewish] society towards me\nونظرة المجتمع اليهودي [لإلي] => And the view of the Jewish society [towards me]\n[في طرف] بعجبوش => [One side] wonders at me\nفي طرف [بعجبوش] => doesn't like it, it doesn't please him # \"بعجبوش\" is the negation of \"to please/like\", often used to mean \"he/it doesn't like it\" in Palestinian dialect.\n\n[مرات] بكون قريب من إشي ثاني، الطرف الثاني بعجبوش. => [Sometimes] I am close to something else, the second side wonders at me.\nمرات [بكون] قريب من إشي ثاني، الطرف الثاني بعجبوش. => Sometimes [I am] close to something else, the second side wonders at me.\nمرات بكون [قريب] من إشي ثاني، الطرف الثاني بعجبوش. => Sometimes I am [close] to something else, the second side wonders at me.\nمرات بكون قريب [من] إشي ثاني، الطرف الثاني بعجبوش. => Sometimes I am close [to] something else, the second side wonders at me.\nمرات بكون قريب من [إشي] ثاني، الطرف الثاني بعجبوش. => Sometimes I am close to [something] else, the second side wonders at me.\nمرات بكون قريب من إشي [ثاني]، الطرف الثاني بعجبوش. => Sometimes I am close to something [else], the second side wonders at me.\nمرات بكون قريب من إشي ثاني، [الطرف] الثاني بعجبوش. => Sometimes I am close to something else, [the] second [side] wonders at me.\nمرات بكون قريب من إشي ثاني، الطرف [الثاني] بعجبوش. => Sometimes I am close to something else, the [second] side wonders at me.\nمرات بكون قريب من إشي ثاني، الطرف الثاني [بعجبوش] => doesn't like it, wonders at me # Literally \"it doesn't please/amaze him\" (ma bi-ajbu-sh)\n\n[בחור] ערבי שלא מכיר כל כך את החברה היהודית => An Arab [guy] who doesn't know the Jewish society so well\nבחור [ערבי] שלא מכיר כל כך את החברה היהודית => An [Arab] guy who doesn't know the Jewish society so well\nבחור ערבי [שלא] מכיר כל כך את החברה היהודית => An Arab guy [who doesn't] know the Jewish society so well\nבחור ערבי שלא [מכיר] כל כך את החברה היהודית => An Arab guy who doesn't [know] the Jewish society so well\nבחור ערבי שלא מכיר [כל כך] את החברה היהודית => An Arab guy who doesn't know the Jewish society [so well] # \"كل כך\" is a fixed phrase meaning \"so\" or \"so much/well\"\nבחור ערבי שלא מכיר כל כך את [החברה] היהודית => An Arab guy who doesn't know the Jewish [society] so well\nבחור ערבי שלא מכיר כל כך את החברה [היהודית] => An Arab guy who doesn't know the [Jewish] society so well # The input provided is Hebrew; aligned as the source text regardless of label\n\n[יכול] בקלות להאמין שהוא צריך לפחד ממנה => [Can] easily believe he needs to fear it\nיכול [בקלות] להאמין שהוא צריך לפחד ממנה => Can [easily] believe he needs to fear it\nיכול בקלות [להאמין] שהוא צריך לפחד ממנה => Can easily [believe] he needs to fear it\nיכול בקלות להאמין [שהוא] צריך לפחד ממנה => Can easily believe [he] needs to fear it\nיכול בקלות להאמין שהוא [צריך] לפחד ממנה => Can easily believe he [needs] to fear it\nיכול בקלות להאמין שהוא צריך [לפחד] ממנה => Can easily believe he needs [to fear] it\nיכול בקלות להאמין שהוא צריך לפחד [ממנה] => Can easily believe he needs to fear [it]\n\n[או] להפך לשנוא אותה בחזרה. => [Or] conversely to hate it back.\nאו [להפך] לשנוא אותה בחזרה. => Or [conversely] to hate it back.\nאו להפך [לשנוא] אותה בחזרה. => Or conversely [to hate] it back.\nאו להפך לשנוא [אותה] בחזרה. => Or conversely to hate [it] back.\nאו להפך לשנוא אותה [בחזרה]. => Or conversely to hate it [back].\n\n[לפעמים] הוא גם לא טועה, אבל הוא חייב => [Sometimes] he is not wrong either, but he must\nלפעמים [הוא] גם לא טועה, אבל הוא חייב => Sometimes [he] is not wrong either, but he must\nלפעמים הוא [גם] לא טועה, אבל הוא חייב => Sometimes he is not wrong [either], but he must\nלפעמים הוא גם [לא] טועה, אבל הוא חייב => Sometimes he is [not] wrong either, but he must\nלפעמים הוא גם לא [טועה], אבל הוא חייב => Sometimes he is not [wrong] either, but he must\nלפעמים הוא גם לא טועה, [אבל] הוא חייב => Sometimes he is not wrong either, [but] he must\nלפעמים הוא גם לא טועה, אבל [הוא] חייב => Sometimes he is not wrong either, but [he] must\nלפעמים הוא גם לא טועה, אבל הוא [חייב] => Sometimes he is not wrong either, but he [must]\n\n[לחפש] את המקומות שיאפשרו לו הכרה => [Search for] the places that will allow him recognition\nלחפש [את המקומות] שיאפשרו לו הכרה => Search for [the places] that will allow him recognition\nלחפש את המקומות [שיאפשרו] לו הכרה => Search for the places [that will allow] him recognition\nלחפש את המקומות שיאפשרו [לו] הכרה => Search for the places that will allow [him] recognition\nלחפש את המקומות שיאפשרו לו [הכרה] => Search for the places that will allow him [recognition]\n\n[בשל] הצד השני. => [Of] the other side.\nבשל [הצד] השני. => the side\nבשל הצד [השני]. => the other, the second # \"ha-shani\" literally translates to \"the second\" or \"the other\" in Hebrew_\n\n[أكثر] إشي بخوفني حالياً فكرة أنه بقدرش => What scares me [most] currently is the idea that I can't\nأكثر [إشي] بخوفني حالياً فكرة أنه بقدرش => thing\nأكثر إشي [بخوفني] حالياً فكرة أنه بقدرش => What [scares me] most currently is the idea that I can't\nأكثر إشي بخوفني [حالياً] فكرة أنه بقدرش => What scares me most [currently] is the idea that I can't\nأكثر إشي بخوفني حالياً [فكرة] أنه بقدرش => What scares me most currently is [the idea] that I can't\nأكثر إشي بخوفني حالياً فكرة [أنه] بقدرش => What scares me most currently is the idea [that] I can't\nأكثر إشي بخوفني حالياً فكرة أنه [بقدرش] => What scares me most currently is the idea that [I can't] # بقدر translates to 'I can' and the 'ش' suffix is 'not'\n\n[أعبر عن] رأيي بحريتي الكاملة. => [Express] my opinion with my full freedom.\nأعبر عن [رأيي] بحريتي الكاملة. => Express [my opinion] with my full freedom.\nأعبر عن رأيي [بـ]حريتي الكاملة. => Express my opinion [with] my full freedom.\nأعبر عن رأيي بـ[حريتي] الكاملة. => my freedom\nأعبر عن رأيي بحريتي [الكاملة]. => Express my opinion with my [full] freedom.\n\n[ما يبقاش] مستقبل قابل أنه أعيش فيه كمواطن في هاي الدولة. => [That there remains] a future feasible that I live in as a citizen in this state. # mapping the verb and its particles to the corresponding phrase\nما يبقاش [مستقبل] قابل أنه أعيش فيه كمواطن في هاي الدولة. => That there remains a [future] feasible that I live in as a citizen in this state.\nما يبقاش مستقبل [قابل] أنه أعيش فيه كمواطن في هاي الدولة. => That there remains a future [feasible] that I live in as a citizen in this state.\nما يبقاش مستقبل قابل [أنه] أعيش فيه كمواطن في هاي الدولة. => That there remains a future feasible [that] I live in as a citizen in this state.\nما يبقاش مستقبل قابل أنه [أعيش] فيه كمواطن في هاي الدولة. => That there remains a future feasible that [I live] in as a citizen in this state.\nما يبقاش مستقبل قابل أنه أعيش [فيه] كمواطن في هاي الدولة. => That there remains a future feasible that I live [in] as a citizen in this state. # \"فيه\" includes \"in\" (fī) and a pronoun suffix \"hi\" (it) which is dropped in this English relative structure\nما يبقاش مستقبل قابل أنه أعيش فيه [كمواطن] في هاي الدولة. => That there remains a future feasible that I live in [as a citizen] in this state. # includes the prefix \"ka-\" (as)\nما يبقاش مستقبل قابل أنه أعيش فيه كمواطن [في] هاي الدولة. => That there remains a future feasible that I live in as a citizen [in] this state.\nما يبقاش مستقبل قابل أنه أعيش فيه كمواطن في [هاي] الدولة. => That there remains a future feasible that I live in as a citizen in [this] state.\nما يبقاش مستقبل قابل أنه أعيش فيه كمواطن في هاي [الدولة]. => That there remains a future feasible that I live in as a citizen in this [state].\n\n[הכי] מפחיד אותי היום, שישראל תהפוך למקום סגור, => What scares me [most] today, is that Israel will become a closed place,\nהכי [מפחיד] אותי היום, שישראל תהפוך למקום סגור, => What [scares] me most today, is that Israel will become a closed place,\nהכי מפחיד [אותי] היום, שישראל תהפוך למקום סגור, => What scares [me] most today, is that Israel will become a closed place,\nהכי מפחיד אותי [היום], שישראל תהפוך למקום סגור, => What scares me most [today], is that Israel will become a closed place,\nהכי מפחיד אותי היום, [שישראל] תהפוך למקום סגור, => What scares me most today, is [that Israel] will become a closed place,\nהכי מפחיד אותי היום, שישראל [תהפוך] למקום סגור, => What scares me most today, is that Israel [will become] a closed place,\nהכי מפחיד אותי היום, שישראל תהפוך [למקום] סגור, => a place # The Hebrew \"למקום\" corresponds to \"a place\" in this context, which is not a contiguous span in the English sentence\nהכי מפחיד אותי היום, שישראל תהפוך למקום [סגור], => What scares me most today, is that Israel will become a [closed] place,\n\n[בפנים] הארץ, זאת אומרת חוסר תקשורת => [Inside] the country, that means lack of communication\nבפנים [הארץ], זאת אומרת חוסר תקשורת => Inside [the country], that means lack of communication\nבפנים הארץ, [זאת] אומרת חוסר תקשורת => Inside the country, [that] means lack of communication\nבפנים הארץ, זאת [אומרת] חוסר תקשורת => Inside the country, that [means] lack of communication\nבפנים הארץ, זאת אומרת [חוסר] תקשורת => lack of\nבפנים הארץ, זאת אומרת חוסר [תקשורת] => Inside the country, that means lack of [communication]\n\n[בין] מגזרים ואוכלוסיות, וגם כלפי חוץ. => [Between] sectors and populations, and also towards outside.\nבין [מגזרים] ואוכלוסיות, וגם כלפי חוץ. => Between [sectors] and populations, and also towards outside.\nבין מגזרים [ואוכלוסיות], וגם כלפי חוץ. => Between sectors [and populations], and also towards outside.\nבין מגזרים ואוכלוסיות, [וגם] כלפי חוץ. => Between sectors and populations, [and also] towards outside.\nבין מגזרים ואוכלוסיות, וגם [כלפי] חוץ. => Between sectors and populations, and also [towards] outside.\nבין מגזרים ואוכלוסיות, וגם כלפי [חוץ]. => Between sectors and populations, and also towards [outside]\n\n[אני] רואה את זה בתור אסון. => [I] see this as a disaster.\nאני [רואה] את זה בתור אסון. => I [see] this as a disaster.\nאני רואה [את זה] בתור אסון. => I see [this] as a disaster.\nאני רואה את זה [בתור] אסון. => I see this [as] a disaster.\nאני רואה את זה בתור [אסון]. => I see this as [a disaster]. # Hebrew implies the indefinite article \"a\" within the noun\n\n[לפחות] אני לא צריך לחכות לשינוי, => [At least] I don't need to wait for change,\nלפחות [אני] לא צריך לחכות לשינוי, => At least [I] don't need to wait for change,\nלפחות אני [לא צריך] לחכות לשינוי, => At least I [don't need] to wait for change,\nלפחות אני לא צריך [לחכות] לשינוי, => At least I don't need [to wait] for change,\nלפחות אני לא צריך לחכות [לשינוי], => At least I don't need to wait [for change],\n\n[אני] צריך להיות זה שמשנה את הדברים => [I] need to be the one who changes things\nאני [צריך] להיות זה שמשנה את הדברים => I [need] to be the one who changes things\nאני צריך [להיות] זה שמשנה את הדברים => I need [to be] the one who changes things\nאני צריך להיות [זה] שמשנה את הדברים => I need to be [the one] who changes things\nאני צריך להיות זה [שמשנה] את הדברים => I need to be the one [who changes] things\nאני צריך להיות זה שמשנה [את הדברים] => I need to be the one who changes [things] # \"את\" is a Hebrew direct object marker and is best aligned with the noun it precedes\n\n[ומשפיע], כי אחרת מי יעשה את זה? => [And influences], because otherwise who will do this?\nומשפיע, [כי] אחרת מי יעשה את זה? => And influences, [because] otherwise who will do this?\nומשפיע, כי [אחרת] מי יעשה את זה? => And influences, because [otherwise] who will do this?\nומשפיע, כי אחרת [מי] יעשה את זה? => And influences, because otherwise [who] will do this?\nומשפיע, כי אחרת מי [יעשה] את זה? => And influences, because otherwise who [will do] this?\nומשפיע, כי אחרת מי יעשה [את זה]? => And influences, because otherwise who will do [this]?\n\n[أنا] إنسانة بعشق هدول البلاد. أنا بعشق هاي الأرض. => [I] am a human who loves this country. I love this land.\nأنا [إنسانة] بعشق هدول البلاد. أنا بعشق هاي الأرض. => am a human\nأنا إنسانة [بعشق] هدول البلاد. أنا بعشق هاي الأرض. => I am a human who [loves] this country. I love this land.\nأنا إنسانة بعشق [هدول] البلاد. أنا بعشق هاي الأرض. => I am a human who loves [this] country. I love this land.\nأنا إنسانة بعشق هدول [البلاد]. أنا بعشق هاي الأرض. => I am a human who loves this [country]. I love this land.\nأنا إنسانة بعشق هدول البلاد. [أنا] بعشق هاي الأرض. => I am a human who loves this country. [I] love this land.\nأنا إنسانة بعشق هدول البلاد. أنا [بعشق] هاي الأرض. => I am a human who loves this country. I [love] this land.\nأنا إنسانة بعشق هدول البلاد. أنا بعشق [هاي] الأرض. => I am a human who loves this country. I love [this] land.\nأنا إنسانة بعشق هدول البلاد. أنا بعشق هاي [الأرض]. => I am a human who loves this country. I love this [land].\n\n[متفقين]؟ => [Agreed]?\n\n[רובנו] רוצים להיות כאן, ואוהבים את הארץ הזו, => [Most of us] want to be here, and love this land,\nרובנו [רוצים] להיות כאן, ואוהבים את הארץ הזו, => Most of us [want] to be here, and love this land,\nרובנו רוצים [להיות] כאן, ואוהבים את הארץ הזו, => Most of us want [to be] here, and love this land,\nרובנו רוצים להיות [כאן], ואוהבים את הארץ הזו, => Most of us want to be [here], and love this land,\nרובנו רוצים להיות כאן, [ואוהבים] את הארץ הזו, => Most of us want to be here, [and love] this land,\nרובנו רוצים להיות כאן, ואוהבים את [הארץ] הזו, => Most of us want to be here, and love this [land],\nרובנו רוצים להיות כאן, ואוהבים את הארץ [הזו], => Most of us want to be here, and love [this] land, # \"this\" in Hebrew usually follows the noun and repeats the definite article (the-this)\n\n[ואחרי] שאתה מקשיב ומשלים => [And after] you listen and reconcile\nואחרי [שאתה] מקשיב ומשלים => that you # ש (she) is a conjunction meaning \"that\" and אתה (ata) means \"you\"\nואחרי שאתה [מקשיב] ומשלים => And after you [listen] and reconcile\nואחרי שאתה מקשיב [ומשלים] => And after you listen [and reconcile]\n\n[עם] הפרספקטיבה של הצד השני, => [With] the perspective of the other side,\nעם [הפרספקטיבה] של הצד השני, => With [the perspective] of the other side,\nעם הפרספקטיבה [של] הצד השני, => With the perspective [of] the other side,\nעם הפרספקטיבה של [הצד] השני, => side # Hebrew \"ha-tsad\" includes the definite article \"the\"\nעם הפרספקטיבה של הצד [השני], => other # literally \"the second\"\nעם הפרספקטיבה של [הצד השני], => With the perspective of [the other side],\n\n[אפשר] להמשיך הלאה, ובעצם להכיר => [It's possible] to move on, and essentially to recognize\nאפשר [להמשיך] הלאה, ובעצם להכיר => It's possible [to move] on, and essentially to recognize\nאפשר להמשיך [הלאה], ובעצם להכיר => It's possible to move [on], and essentially to recognize\nאפשר להמשיך הלאה, [ו]בעצם להכיר => It's possible to move on, [and] essentially to recognize\nאפשר להמשיך הלאה, ו[בעצם] להכיר => It's possible to move on, and [essentially] to recognize\nאפשר להמשיך הלאה, ובעצם [להכיר] => It's possible to move on, and essentially [to recognize]\n\n[בחוויה] של הצד השני להתחיל לפעול => [In the experience] of the other side to start acting\nבחוויה [של] הצד השני להתחיל לפעול => In the experience [of] the other side to start acting\nבחוויה של [הצד השני] להתחיל לפעול => In the experience of [the other side] to start acting\nבחוויה של הצד השני [להתחיל] לפעול => In the experience of the other side [to start] acting\nבחוויה של הצד השני להתחיל [לפעול] => In the experience of the other side to start [acting]\n\n[למען] עתיד טוב יותר. => [For] a better future.\nלמען [עתיד] טוב יותר. => For a better [future].\nלמען עתיד [טוב יותר]. => For a [better] future.\n\n[بحب] طبيعة بلادنا، بحب المناخ فيها، بحب التعدد اللي فيها. => [I love] the nature of our country, I love the climate in it, I love the diversity in it.\nبحب [طبيعة] بلادنا، بحب المناخ فيها، بحب التعدد اللي فيها. => I love [the nature] of our country, I love the climate in it, I love the diversity in it.\nبحب طبيعة [بلادنا]، بحب المناخ فيها، بحب التعدد اللي فيها. => I love the nature [of our country], I love the climate in it, I love the diversity in it.\nبحب طبيعة بلادنا، [بحب] المناخ فيها، بحب التعدد اللي فيها. => I love the nature of our country, [I love] the climate in it, I love the diversity in it.\nبحب طبيعة بلادنا، بحب [المناخ] فيها، بحب التعدد اللي فيها. => I love the nature of our country, I love [the climate] in it, I love the diversity in it.\nبحب طبيعة بلادنا، بحب المناخ [فيها]، بحب التعدد اللي فيها. => I love the nature of our country, I love the climate [in it], I love the diversity in it.\nبحب طبيعة بلادنا، بحب المناخ فيها، [بحب] التعدد اللي فيها. => I love the nature of our country, I love the climate in it, [I love] the diversity in it.\nبحب طبيعة بلادنا، بحب المناخ فيها، بحب [التعدد] اللي فيها. => I love the nature of our country, I love the climate in it, I love [the diversity] in it.\nبحب طبيعة بلادنا، بحب المناخ فيها، بحب التعدد اللي [فيها] => in it\nبحب طبيعة بلادنا، بحب المناخ فيها، بحب التعدد [اللي] فيها => that, which # \"اللي\" is a relative pronoun synonymous with \"that\" or \"which\", but it's omitted in the English translation sentence.\n\n[באמת] יש כאן את כל סוגי האוכל, => [Truly] there is here all types of food,\nבאמת [יש] כאן את כל סוגי האוכל, => Truly [there is] here all types of food,\nבאמת יש [כאן] את כל סוגי האוכל, => Truly there is [here] all types of food,\nבאמת יש כאן את [כל] סוגי האוכל, => Truly there is here [all] types of food,\nבאמת יש כאן את כל [סוגי] האוכל, => Truly there is here all [types of] food,\nבאמת יש כאן את כל סוגי [האוכל], => Truly there is here all types of [food]\n\n[חגים] ממגוון תרבויות, כל מיני מסורות, => [Holidays] from various cultures, all kinds of traditions,\nחגים [ממגוון] תרבויות, כל מיני מסורות, => Holidays [from various] cultures, all kinds of traditions,\nחגים ממגוון [תרבויות], כל מיני מסורות, => Holidays from various [cultures], all kinds of traditions,\nחגים ממגוון תרבויות, [כל מיני] מסורות, => Holidays from various cultures, [all kinds] of traditions,\nחגים ממגוון תרבויות, כל מיני [מסורות], => Holidays from various cultures, all kinds of [traditions]\n\n[שזה] משהו שהוא מאוד ייחודי לישראל. => [Which is] something that is very unique to Israel.\nשזה [משהו] שהוא מאוד ייחודי לישראל. => Which is [something] that is very unique to Israel.\nשזה משהו [שהוא] מאוד ייחודי לישראל. => Which is something [that is] very unique to Israel.\nשזה משהו שהוא [מאוד] ייחודי לישראל. => Which is something that is [very] unique to Israel.\nשזה משהו שהוא מאוד [ייחודי] לישראל. => Which is something that is very [unique] to Israel.\nשזה משהו שהוא מאוד ייחודי [לישראל]. => Which is something that is very unique [to Israel].\n\n[فرسالتي] من هذا المنطلق هو أنه بتقدروا => [So my message] from this standpoint is that you can\nفرسالتي [من] هذا المنطلق هو أنه بتقدروا => So my message [from] this standpoint is that you can\nفرسالتي من [هذا] المنطلق هو أنه بتقدروا => So my message from [this] standpoint is that you can\nفرسالتي من هذا [المنطلق] هو أنه بتقدروا => So my message from this [standpoint] is that you can\nفرسالتي من هذا المنطلق [هو أنه] بتقدروا => So my message from this standpoint [is that] you can\nفرسالتي من هذا المنطلق هو أنه [بتقدروا] => So my message from this standpoint is that [you can]\n\n[تسمعوا] الطرف الآخر وتتقبلوا آراءه رغم اختلافها عنكم. => [Listen to] the other side and accept their opinions despite their difference from you.\nتسمعوا [الطرف] الآخر وتتقبلوا آراءه رغم اختلافها عنكم. => Listen to the other [side] and accept their opinions despite their difference from you.\nتسمعوا الطرف [الآخر] وتتقبلوا آراءه رغم اختلافها عنكم. => Listen to the [other] side and accept their opinions despite their difference from you.\nتسمعوا الطرف الآخر [وتتقبلوا] آراءه رغم اختلافها عنكم. => Listen to the other side [and accept] their opinions despite their difference from you.\nتسمعوا الطرف الآخر وتتقبلوا [آراءه] رغم اختلافها عنكم. => Listen to the other side and accept [their opinions] despite their difference from you.\nتسمعوا الطرف الآخر وتتقبلوا آراءه [رغم] اختلافها عنكم. => Listen to the other side and accept their opinions [despite] their difference from you.\nتسمعوا الطرف الآخر وتتقبلوا آراءه رغم [اختلافها] عنكم. => Listen to the other side and accept their opinions despite [their difference] from you.\nتسمعوا الطرف الآخر وتتقبلوا آراءه رغم اختلافها [عنكم] => Listen to the other side and accept their opinions despite their difference [from you] # عن here is translated as \"from\" and \"كم\" as \"you\" regardless of the plural count.\n\n[הייתי אומרת] לחברה הערבית לנסות => [I would say] to the Arab society to try\nהייתי אומרת [לחברה] הערבית לנסות => to the society # לחברה includes the preposition \"to\" and the definite article \"the\"\nהייתי אומרת לחברה [הערבית] לנסות => I would say to the [Arab] society to try\nהייתי אומרת לחברה הערבית [לנסות] => I would say to the Arab society [to try]\n\n[להישאר] באזור המתון יותר, => [To stay] in the more moderate zone,\nלהישאר [באזור] המתון יותר, => in the zone\nלהישאר באזור [המתון] יותר, => To stay in the more [moderate] zone,\nלהישאר באזור המתון [יותר], => To stay in the [more] moderate zone,\n\n[כמה שיותר] של המפה הפוליטית => [As much as possible] of the political map\nכמה שיותר [של] המפה הפוליטית => As much as possible [of] the political map\nכמה שיותר של [המפה] הפוליטית => the map # Hebrew 'המפה' includes the definite article 'ha-', which is separated from 'map' by an adjective in English\nכמה שיותר של המפה [הפוליטית] => As much as possible of the [political] map\n\n[לפעמים] זה קשה, אבל תשתדלו לשמור => [Sometimes] it's hard, but try to keep\nלפעמים [זה] קשה, אבל תשתדלו לשמור => it # 'זה' translates to 'it', while 'is' is implied in this Hebrew sentence structure\nלפעמים זה [קשה], אבל תשתדלו לשמור => Sometimes it's [hard], but try to keep\nלפעמים זה קשה, [אבל] תשתדלו לשמור => Sometimes it's hard, [but] try to keep\nלפעמים זה קשה, אבל [תשתדלו] לשמור => Sometimes it's hard, but [try] to keep\nלפעמים זה קשה, אבל תשתדלו [לשמור] => Sometimes it's hard, but try [to keep]\n\n[על קשר] עם יהודים ולהישאר => [In contact] with Jews and stay\nעל קשר [עם] יהודים ולהישאר => In contact [with] Jews and stay\nעל קשר עם [יהודים] ולהישאר => In contact with [Jews] and stay\nעל קשר עם יהודים [ולהישאר] => In contact with Jews [and stay] # aligns the conjunction and the verb together as it's a single word in Hebrew\n\nבמחשבה [מתונה]. => In [moderate] thinking.\n\n[אני] באמת חושב שיש תקווה למרות כל השוני. => [I] truly think there is hope despite all the difference.\nאני [באמת] חושב שיש תקווה למרות כל השוני. => I [truly] think there is hope despite all the difference.\nאני באמת [חושב] שיש תקווה למרות כל השוני. => I truly [think] there is hope despite all the difference.\nאני באמת חושב [שיש] תקווה למרות כל השוני. => I truly think [there is] hope despite all the difference. # שיש includes the prefix 'that', which is implicit in the English sentence\nאני באמת חושב שיש [תקווה] למרות כל השוני. => I truly think there is [hope] despite all the difference.\nאני באמת חושב שיש תקווה [למרות] כל השוני. => I truly think there is hope [despite] all the difference.\nאני באמת חושב שיש תקווה למרות [כל] השוני. => I truly think there is hope despite [all] the difference.\nאני באמת חושב שיש תקווה למרות כל [השוני]. => I truly think there is hope despite all [the difference].\n\n[عادي] لو الشخص اللي ع قبالك اختلف بالرأي معك. => [It's okay] if the person opposite you disagrees with you.\nعادي [لو] الشخص اللي ع قبالك اختلف بالرأي معك. => It's okay [if] the person opposite you disagrees with you.\nعادي لو [الشخص] اللي ع قبالك اختلف بالرأي معك. => It's okay if [the person] opposite you disagrees with you.\nعادي لو الشخص [اللي] ع قبالك اختلف بالرأي معك. => who, that\nعادي لو الشخص اللي [ع قبالك] اختلف بالرأي معك. => It's okay if the person [opposite you] disagrees with you.\nعادي لو الشخص اللي ع قبالك [اختلف بالرأي] معك. => It's okay if the person opposite you [disagrees] with you.\nعادي لو الشخص اللي ع قبالك اختلف بالرأي [معك]. => It's okay if the person opposite you disagrees [with you].\n\n[أنه] مش كل شخص عربي بتشوفه => [That] not every Arab person you see\nأنه [مش] كل شخص عربي بتشوفه => That [not] every Arab person you see\nأنه مش [كل] شخص عربي بتشوفه => That not [every] Arab person you see\nأنه مش كل [شخص] عربي بتشوفه => That not every [person] you see\nأنه مش كل شخص [عربي] بتشوفه => That not every [Arab] person you see\nأنه مش كل شخص عربي [بتشوفه] => That not every Arab person [you see]\n\n[أو] حدا بتقابله بالشارع مثلاً، => [Or] someone you meet in the street for example,\nأو [حدا] بتقابله بالشارع مثلاً، => Or [someone] you meet in the street for example,\nأو حدا [بتقابله] بالشارع مثلاً، => Or someone [you meet] in the street for example,\nأو حدا بتقابله [بالشارع] مثلاً، => Or someone you meet [in the street] for example,\nأو حدا بتقابله بالشارع [مثلاً]، => Or someone you meet in the street [for example],\n\n[هو] مخرب أو محبل أو شياخ مثلاً => [Is] a saboteur or terrorist or extremist for example\nهو [مخرب] أو محبل أو شياخ مثلاً => Is [a saboteur] or terrorist or extremist for example\nهو مخرب [أو] محبل أو شياخ مثلاً => Is a saboteur [or] terrorist or extremist for example\nهو مخرب أو [محبل] أو شياخ مثلاً => Is a saboteur or [terrorist] or extremist for example\nهو مخرب أو محبل [أو] شياخ مثلاً => Is a saboteur or terrorist [or] extremist for example\nهو مخرب أو محبل أو [شياخ] مثلاً => Is a saboteur or terrorist or [extremist] for example\nهو مخرب أو محبل أو شياخ [مثلاً] => Is a saboteur or terrorist or extremist [for example]\n\n[لإشي] أنت ضده => [For something] you are against\nلإشي [أنت] ضده => For something [you] are against\nلإشي أنت [ضده] => For something you are [against]\n\n[إطلعوا] من دائرة الراحة تبعتكم وتعرفوا => [Get out] of your comfort zone and get to know\nإطلعوا [من] دائرة الراحة تبعتكم وتعرفوا => Get out [of] your comfort zone and get to know\nإطلعوا من دائرة الراحة [تبعتكم] وتعرفوا => Get out of [your] comfort zone and get to know\nإطلعوا من دائرة [الراحة] تبعتكم وتعرفوا => Get out of your [comfort] zone and get to know\nإطلعوا من [دائرة] الراحة تبعتكم وتعرفوا => Get out of your comfort [zone] and get to know\nإطلعوا من دائرة الراحة تبعتكم [و]تعرفوا => Get out of your comfort zone [and] get to know\nإطلعوا من دائرة الراحة تبعتكم و[تعرفوا] => Get out of your comfort zone and [get to know]\n\nعلى [ناس] من الطرف الآخر، لأنه أول على آخر => [People] from the other side, because first and last\nعلى ناس [من] الطرف الآخر، لأنه أول على آخر => People [from] the other side, because first and last\nعلى ناس من [الطرف] الآخر، لأنه أول على آخر => People from [the side], because first and last\nعلى ناس من الطرف [الآخر]، لأنه أول على آخر => People from the [other] side, because first and last\nعلى ناس من الطرف الآخر، [لأنه] أول على آخر => People from the other side, [because] first and last\nعلى ناس من الطرف الآخر، لأنه [أول] على آخر => People from the other side, because [first] and last\nعلى ناس من الطرف الآخر، لأنه أول [على] آخر => People from the other side, because first [and] last\nعلى ناس من الطرف الآخر، لأنه أول على [آخر] => People from the other side, because first and [last]\n\n[كلنا] رح נلتقي مع بعض. => [We] will [all] meet each other.\nكلنا [رح] נلتقي مع بعض. => We [will] all meet each other.\nكلنا رح [נلتقي] مع بعض. => We will all [meet] each other.\nكلنا رح נلتقي [مع بعض] => We will all meet [each other]\n\n",
+    "lessons": "# تأثير 7 أكتوبر على المجتمعين العربي واليهودي\n00:00.00 07.10 أثر بشكل كبير علينا كعرب.\n00:02.50 يوم اللي هو قلب خلينا نقول كل الموازين.\n00:05.40 אני חושבת על שואה כמעט,\n00:08.20 אני יודעת שזו השוואה שלא כל כך אוהבים לעשות,\n00:11.00 גם אני לא אוהבת לעשות אותה.\n00:14.00 تاريخ 07.10 هو صراحة كثير بعنيلي أشياء.\n00:17.00 أشياء أثرت علينا من ناحية نفسية ومن ناحية إجتماعية.\n00:20.50 בהתחלה עוד לא הבנתי איך כל האירועים מתחילים\n00:23.80 ומהר מאוד התחלתי להבין שזה אירוע מאוד גדול.\n00:27.00 كل الفيديوهات والصور اللي منشوفها من فترة 07.10\n\n# ردود الفعل الأولية والخوف\n00:31.00 هو كثير إشي بوجع للبني آدم أنه يستوعبه ويشوفه.\n00:35.00 ולא הבנתי כאילו איך מגיעים לתוך יישובים ישראלים\n00:37.50 ויורים באנשים וזה כאילו משהו שעד היום צרוב לי בראש.\n00:42.50 אלה סרטונים שלא חשבתי שאני אראה יותר במאה ה-21\n00:46.00 בארץ ובכלל, זה לא נראה מציאותי בכלל.\n00:50.00 أنا ذاكرة إني صحيت على أخبار كلشي سريع.\n00:52.50 أنت مش عارف تفهم شعورك بالضبط. كان كله متناقض عندي.\n00:56.00 התחלתי להיכנס לחרדות, אפילו נעלתי את הבית,\n01:00.00 פחדתי שאולי פתאום גם יגיעו מחבלים ליישוב שלי.\n\n# المشاعر السلبية والعنصرية\n01:04.00 بهذا التاريخ كان نهاية لأرواح كثير أرواح.\n01:08.00 وكثير ناس أبرياء اللي كثير انظلموا بهاي الحرب.\n01:13.00 אני כמו אני חושבת הרוב המוחלט של היהודים,\n01:16.50 הרגשתי זעם אדיר בימים הראשונים אחרי ה-7 באוקטובר\n01:20.00 כלפי הערבים, אולי כלפי כל העולם בעצם.\n01:24.00 مش راح أنكر أنه كان في إشي اسمه عنصرية.\n01:27.00 بس بعد 07.10 الإشي زاد أكثر بكثير.\n01:30.00 7 באוקטובר בעיני צעירים, ערבים ויהודים\n01:34.00 بصراحة أكثر إشي بخوفني بهاي الأيام هو الاحتكاك بيني وبين اليهود.\n\n# الفجوة بين المجتمعين\n01:40.00 אז הדבר הראשון שעולה לי לראש כשאני שומע ערבי,\n01:43.50 זה המלחמה עכשיו, ופחד.\n01:46.00 המלחמה והמצב הפוליטי באופן כללי\n01:49.00 גורמים לנו להיות סגורים יותר.\n02:00.00 כל מה שאנחנו שומעים נגיד בתקשורת, זה על פיגועים,\n02:03.00 סכסוכים, וזה ישר יוצר קונוטציה שלילית.\n02:06.00 كنت لما أسمع كلمة يهودي، عنده قوميته الخاصة فيه،\n02:09.00 دينه، أفكاره، بتتعارض مع شو أنا بفكر.\n\n# التحديات في الفهم المتبادل (الجزء 1)\n02:14.00 من ناحية تاريخ أنا مثلاً عندي حقائق،\n02:17.00 عندي إثباتات مثلاً لتاريخي، اللي هو التاريخ الفلسطيني العربي.\n02:21.00 התושבים הערבים בישראל רובם מגדירים את עצמם כפלסטינים,\n02:25.00 שזה משהו שכאילו קצת סתר את התפיסות שלי ואת החשיבה.\n02:29.00 אני לא הבנתי הרבה מאוד מהאינטרס או מהמחשבה הערבית.\n02:33.00 כשמישהו אומר לי אני פלסטיני-ישראלי,\n02:36.00 כשמישהו מדבר איתי על היסטוריה,\n02:39.00 הפרספקטיבות של היהודי או הערבי הן מאוד מאוד שונות.\n02:43.00 بيجي عندك كمان شاب اللي هو يهودي عنده نفس الإشي.\n\n# التحديات في الفهم المتبادل (الجزء 2)\n02:47.00 \"أنا هذا تاريخي، هذا اللي تعلمت عليه، هاي نظرتي للإشي اللي صار\".\n02:51.00 دائماً في حوار مين صح.\n02:54.00 ואז כשנלמדתי להקשיב להם הבנתי את הצד שלהם\n02:57.00 והבנתי את האמירה הזאת.\n02:59.00 اليهودي الفرق بينه وبين الشاب العربي، الإمكانيات اللي بتطلعله،\n03:02.00 طريقة العيش تبعته بسبب دولته.\n03:05.00 وما كنتش جد حاطة في راسي أنه لازم أنخرط بهذا الجيل\n03:08.00 مع هاي الفئة من المجتمع.\n03:11.00 זה כמובן טבעי להרגיש פחד בסביבה\n\n# تجارب شخصية مع العنصرية\n03:14.00 שהרגילו אותנו לחשוב שהיא עוינת,\n03:17.00 אבל אני חושבת שזה לרוב מיותר.\n03:20.00 أنا بالنسبة إلي بشتغل بمجال الكهرباء.\n03:23.00 مرة كنا ببيت، أجا عندي ولد صغير\n03:26.00 سمعني كأني بحكي بالتلفون بالعربي، قلي \"أنا بكره العرب\".\n03:30.00 אני מתחיל לשמוע מהרבה מאוד חברים שלי,\n03:33.00 כאילו אמירות מאוד גזעניות, שכל ערבי הוא מחבל,\n\n# برنامج \"بعيون أخرى\" وتأثيره\n03:36.00 שנובעות מפחד ומחרדה.\n03:39.00 ولد صغير بهذا العمر صعب أنك تتوقع منه يقول هيك إشي.\n03:43.00 الإشي اللي مخوفني حالياً هو المستقبل اللي رايحين نيجي عليه.\n03:46.00 لأنه وضعنا الحالي صعب، ما بالكم بالمستقبل شو راح يصير.\n03:49.00 והגעתי לתוכנית \"בעיניים אחרות\" של גבעת חביבה,\n03:53.00 לפני שנה וחצי, שנתיים.\n03:55.00 היא בעצם תוכנית שנתית, שהמטרה שלה היא לחבר\n03:58.00 בין ערבים ויהודים בתוך ישראל, דרך צילום.\n\n# تحديات الحوار والتفاهم\n04:03.00 بعد برنامج \"بعيون أخرى\" أنا سمعت ملان آراء\n04:06.00 اللي هي بتناقض الآراء اللي عندي.\n04:09.00 فهمت أنهم هم ناس زيي زيهم. كل فرد فيهم هو عنده تفكيره الخاص.\n04:12.00 فش داعي أحكم عليهم كلهم بسبب كلمة يهودي.\n04:16.00 יש ילד אחד שדיברנו על השבעה באוקטובר.\n04:19.00 הוא טען שלא נרצחו ילדים.\n04:22.00 ולא כל כך הצלחנו להגיע לאמצע,\n04:25.00 זאת אומרת, זו דוגמה לזה שבכל חברה\n\n# أهمية المعرفة المتبادلة\n04:27.00 יש גם אנשים קצת יותר קיצוניים.\n04:30.00 إني تعلمت كيف أتقبل الإشي حتى لو أنا مش موافق بالرأي.\n04:33.00 بحترم رأيك، بحترم شو أنت بتقول،\n04:36.00 بس أنا بوافقكش بالرأي.\n04:39.00 יהודים לא לומדים להכיר ערבים\n04:42.00 וערבים לא לומדים להכיר יהודים.\n04:44.00 זה מייצר גזענות והגזענות הזאת בסופו של יום\n04:47.00 הופכת לאלימות ולקיצוניות.\n\n# مفهوم السلام (الجزء 1)\n04:50.00 אני חושבת שלאט לאט במהלך התוכנית\n04:53.00 התחלתי להבין את הנרטיב הפלסטיני, הערבי\n04:56.00 ובאמת זה קירב אותי בצורה בלתי רגילה\n04:59.00 ובלתי צפויה.\n05:01.00 فكرة السلام... نبقى واقعيين،\n05:04.00 بمجتمعنا حالياً بالمرة مش موجودة.\n05:06.00 المجتمعين بعاد عن بعض. كل مجتمع عنده\n\n# مفهوم السلام (الجزء 2)\n05:09.00 أفكار مختلفة عن المجتمع الآخر.\n05:11.00 שלום לדעתי זה ששני הצדדים מוכנים לחיות ביחד,\n05:14.00 בלי סכסוכים, בלי אלימות.\n05:17.00 ואפילו לעשות שיתופי פעולה, כלכליים, חברתיים.\n05:20.00 מה זה שלום? קודם כל אנשים לא נהרגים כל יום.\n05:24.00 אני חושבת ששלום טוב זה שלום חם,\n05:27.00 שבו יש תקשורת יחסית שוויונית\n05:30.00 בין שני צדדים.\n05:33.00 فكرة السلام هي مبنية على فكرة الناس تتقبل آراء الناس الأخرى،\n\n# التعايش والمساواة\n05:36.00 بدون هذا الشعور تجاههم بالكره بسبب رأي.\n05:40.00 كلمة سلام هي محاولة تعايش. إشي صعب أنه يصير.\n05:43.00 دائماً في طموح لهذا الإشي\n05:46.00 لأنه صراحة زهقنا من الوضع اللي إحنا فيه.\n05:51.00 אנחנו בסופו של דבר חיים באותה מדינה,\n05:54.00 באותו מקום, והפתרון לטווח ארוך,\n05:57.00 חייב להיות כאילו שנחיה ביחד, בשיתוף.\n06:00.00 فكرة التعايش مبنية على أساس السلام هو بالأول\n\n# أهمية الحوار\n06:03.00 واللي هو برضه مش موجود.\n06:05.00 على فكرة المساواة اللي هي برضه مش موجودة.\n06:08.00 لما تصير هاي الحقوق موجودة عند الطرفين،\n06:11.00 إحتمال وقتها تبدأ فكرة المساواة تصير أقرب للواقع.\n06:15.00 ובעצם כל אדם שמתחיל לדבר, מתחיל לתקשר\n\n# المخاوف المستقبلية (الجزء 1)\n06:18.00 עם אדם מהצד השני,\n06:21.00 זה בעצם הישג אדיر עבורנו,\n06:24.00 ואני חושבת שזה מה שבונה את היכולת\n06:27.00 אחר כך לחיות ביחד.\n06:30.00 מה שמאוד מפחיד אותי היום,\n\n# المخاوف المستقبلية (الجزء 2)\n06:33.00 זה העלייה בקיצוניות ובדת, שנמצאת היום בשלטון.\n06:36.00 إشي كبير من مخاوفي نظرة العرب، المجتمع العربي لإلي،\n06:40.00 ونظرة المجتمع اليهودي لإلي. في طرف بعجبوش.\n06:43.00 مرات بكون قريب من إشي ثاني، الطرف الثاني بعجبوش.\n06:47.00 בחור ערבי שלא מכיר כל כך את החברה היהודית\n06:51.00 יכול בקלות להאמין שהוא צריך לפחד ממנה,\n06:54.00 או להפך לשנוא אותה בחזרה.\n06:57.00 לפעמים הוא גם לא טועה, אבל הוא חייב\n07:00.00 לחפש את המקומות שיאפשרו לו הכרה\n\n# الخوف من الانقسام\n07:03.00 בשל הצד השני.\n07:05.00 أكثر إشي بخوفني حالياً فكرة أنه بقدرش\n07:08.00 أعبر عن رأيي بحريتي الكاملة.\n07:11.00 ما يبقاش مستقبل قابل أنه أعيش فيه كمواطن في هاي الدولة.\n07:16.00 הכי מפחיד אותי היום, שישראל תהפוך למקום סגור,\n07:19.00 בפנים הארץ, זאת אומרת חוסר תקשורת\n07:22.00 בין מגזרים ואוכלוסיות, וגם כלפי חוץ.\n\n# حب الأرض والأمل\n07:27.00 אני רואה את זה בתור אסון.\n07:30.00 לפחות אני לא צריך לחכות לשינוי,\n07:33.00 אני צריך להיות זה שמשנה את הדברים,\n07:36.00 ומשפיע, כי אחרת מי יעשה את זה?\n07:38.00 أنا إنسانة بعشق هدول البلاد. أنا بعشق هاي الأرض.\n07:41.00 متفقين؟\n07:43.00 רובנו רוצים להיות כאן, ואוהבים את הארץ הזו,\n07:46.00 ואחרי שאתה מקשיב ומשלים\n\n# التنوع في إسرائيل\n07:49.00 עם הפרספקטיבה של הצד השני,\n07:51.00 אפשר להמשיך הלאה, ובעצם להכיר\n07:54.00 בחוויה של הצד השני להתחיל לפעול\n07:57.00 למען עתיד טוב יותר.\n\n# رسائل للجمهور\n08:00.00 بحب طبيعة بلادنا، بحب المناخ فيها، بحب التعدد اللي فيها.\n08:04.00 באמת יש כאן את כל סוגי האוכל,\n08:07.00 חגים ממגוון תרבויות, כל מיני מסורות,\n08:10.00 שזה משהו שהוא מאוד ייחודי לישראל.\n08:14.00 فرسالتي من هذا المنطلق هو أنه بتقدروا\n\n# نصيحة للتواصل\n08:17.00 تسمعوا الطرف الآخر وتتقبلوا آراءه رغم اختلافها عنكم.\n08:21.00 הייתי אומרת לחברה הערבית לנסות\n08:24.00 להישאר באזור המתון יותר,\n08:27.00 כמה שיותר של המפה הפוליטית.\n\n# تقبل الآخر\n08:30.00 לפעמים זה קשה, אבל תשתדלו לשמור\n08:33.00 על קשר עם יהודים ולהישאר\n08:35.00 במחשבה מתונה.\n08:37.00 אני באמת חושב שיש תקווה למרות כל השוני.\n08:40.00 عادي لو الشخص اللي ع قبالك اختلف بالرأي معك.\n\n# دعوة للخروج من منطقة الراحة\n08:43.00 أنه مش كل شخص عربي بتشوفه\n08:46.00 أو حدا بتقابله بالشارع مثلاً،\n08:49.00 هو مخرب أو محبل أو شياخ مثلاً",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-03 14:31:36 UTC",
+  "updated_at": "2026-04-03 15:29:26 UTC",
+  "exported_at": "2026-04-03T15:29:26Z"
+}

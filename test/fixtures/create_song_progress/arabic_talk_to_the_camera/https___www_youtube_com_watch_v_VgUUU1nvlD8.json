@@ -1,0 +1,1108 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=VgUUU1nvlD8",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "أكثر سؤال غريب بنسأله هو",
+        "timestamp": "00:00.00",
+        "text_l2": "The strangest question we get asked is"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "أنتم أربعة؟",
+        "timestamp": "00:01.80",
+        "text_l2": "Are you four?"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "كيف بنفس البطن؟",
+        "timestamp": "00:02.80",
+        "text_l2": "How (were you) in the same womb?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "إنه آه، أربعة توأم ببطن واحد",
+        "timestamp": "00:04.10",
+        "text_l2": "Yeah, quadruplets in one womb"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "إنتو بتحسوا مع بعض؟",
+        "timestamp": "00:06.10",
+        "text_l2": "Do you feel each other?"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بعديها: أنتم دكاترة؟!",
+        "timestamp": "00:07.50",
+        "text_l2": "Then: Are you doctors?!"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "إحنا من أربع توائم، أنا الكبير",
+        "timestamp": "00:12.80",
+        "text_l2": "We're quadruplets, I'm the eldest"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "أنا رقم اثنين",
+        "timestamp": "00:15.30",
+        "text_l2": "I'm number two"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "أنا نمرة ثلاث",
+        "timestamp": "00:16.50",
+        "text_l2": "I'm number three"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "إحنا أربع توائم وأنا الأخير",
+        "timestamp": "00:17.70",
+        "text_l2": "We're quadruplets and I'm the youngest"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "عندنا الترتيب عكسي، الصغار هن اللي...",
+        "timestamp": "00:19.80",
+        "text_l2": "Our order is reversed, the younger ones are the ones..."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "فارضين أكثر سيطرة",
+        "timestamp": "00:22.30",
+        "text_l2": "More dominant and controlling"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "كيف حكوا لنا أهلنا إنه",
+        "timestamp": "00:24.50",
+        "text_l2": "Our parents told us that"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "ما قالوا لهم بالأول أربعة",
+        "timestamp": "00:26.50",
+        "text_l2": "They weren't told it was four at first"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "هن راحوا بالأول على أول مستشفى",
+        "timestamp": "00:28.80",
+        "text_l2": "They went to the first hospital first"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "قالوا لهم عندكم توم، اثنين يعني",
+        "timestamp": "00:30.80",
+        "text_l2": "They told them you have twins, two I mean"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "بعديها راحوا بعرفش على أي مستشفى",
+        "timestamp": "00:33.50",
+        "text_l2": "Then they went to another hospital, I don't know which"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "قالوا لهم ثلاث",
+        "timestamp": "00:35.50",
+        "text_l2": "They told them three"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "بمستشفى الأخير قالوا أربعة",
+        "timestamp": "00:36.80",
+        "text_l2": "At the last hospital they said four"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "كانوا خايفين إنه يروحوا على كمان محل",
+        "timestamp": "00:38.80",
+        "text_l2": "They were afraid to go to another place"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "ليزيدوا يعني",
+        "timestamp": "00:41.00",
+        "text_l2": "In case it increased, I mean"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "آه كل فحص كان يزيدوا",
+        "timestamp": "00:42.50",
+        "text_l2": "Yeah, every checkup it increased"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "حكوا لنا الشيء كان صدمة",
+        "timestamp": "00:44.30",
+        "text_l2": "They told us it was a shock"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "ما كانوا مستوعبين الشيء",
+        "timestamp": "00:46.00",
+        "text_l2": "They couldn't grasp the thing"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "نحن كنا كل واحد بكيس",
+        "timestamp": "00:47.80",
+        "text_l2": "We were each in a sac"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "فعشان هيك يعني ولا واحد طلع بيشبه الثاني",
+        "timestamp": "00:49.50",
+        "text_l2": "So that's why none of us resembled the other"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "بنفس الصف لحد صف 12",
+        "timestamp": "00:51.50",
+        "text_l2": "In the same class until 12th grade"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "واشتغلنا بعدها مع بعض برضه سنتين",
+        "timestamp": "00:53.50",
+        "text_l2": "And we worked together for two years after that too"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "بالتعليم تفرقنا",
+        "timestamp": "00:55.50",
+        "text_l2": "In education we separated"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "اثنين تمريض واثنين طب",
+        "timestamp": "00:57.50",
+        "text_l2": "Two nursing and two medicine"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "كان كثير شيء حلو",
+        "timestamp": "00:59.80",
+        "text_l2": "It was very nice"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "وكان دائماً إنه في حدك سند",
+        "timestamp": "01:01.50",
+        "text_l2": "And there was always someone supporting you"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "إنه بتحس دائماً إنك أنت بأمان",
+        "timestamp": "01:03.50",
+        "text_l2": "You always feel safe"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "وين ما تمشي شمال يمين بتلاقيهم حدك",
+        "timestamp": "01:05.50",
+        "text_l2": "Wherever you go, left or right, you find them beside you"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "بنتساعد بكل شيء، بكل المجالات بنتساعد",
+        "timestamp": "01:07.50",
+        "text_l2": "We help in everything, in all fields we help"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بكل شيء يعني",
+        "timestamp": "01:09.50",
+        "text_l2": "In everything, I mean"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "ودائماً نفس العمر يعني مش إنه أخوك",
+        "timestamp": "01:11.50",
+        "text_l2": "And always the same age, I mean not like your brother"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "من أعمار ثانية بفهمكاش يعني",
+        "timestamp": "01:13.50",
+        "text_l2": "From another age who doesn't understand you, I mean"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أكثر شيء كانت إنه أختي وعد",
+        "timestamp": "01:15.50",
+        "text_l2": "The most (notable) was my sister Waad"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "هيك بيناتنا كانت الشاطرة",
+        "timestamp": "01:17.50",
+        "text_l2": "Like among us she was the smart one"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "فأنا كنت حتى لما أطلع من المدرسة",
+        "timestamp": "01:19.50",
+        "text_l2": "So even when I left school"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "بكير أو شيء",
+        "timestamp": "01:21.50",
+        "text_l2": "Early or something"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "كنت دائماً آخذ منها المواد",
+        "timestamp": "01:23.50",
+        "text_l2": "I would always take the subjects from her"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "على البارد المبرد زي ما بيقولوا",
+        "timestamp": "01:25.50",
+        "text_l2": "Cold copied, as they say"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "آه كنا ننقل بعض",
+        "timestamp": "01:27.50",
+        "text_l2": "Yeah, we used to copy from each other"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "كل شيء كنا إيد واحدة كلياتنا يعني طبعاً",
+        "timestamp": "01:29.00",
+        "text_l2": "Everything, we were one hand, our colleges I mean of course"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "في دائماً عندك هي الصاحب اللي كل الوقت",
+        "timestamp": "01:31.50",
+        "text_l2": "You always have the friend who is there all the time"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "خلص إنه أنتم مجموعة",
+        "timestamp": "01:33.50",
+        "text_l2": "So that you're a group"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "دائماً في رفقة هي اللي بتيجي لعندكم",
+        "timestamp": "01:35.50",
+        "text_l2": "There's always company that comes to you"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "مش أنت بحاجة لشيء براني",
+        "timestamp": "01:37.50",
+        "text_l2": "You don't need anything external"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "من ناحية أنت بتقدرش بالمدرسة",
+        "timestamp": "01:39.50",
+        "text_l2": "In a way, you can't at school"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "إنك تنقل شوي",
+        "timestamp": "01:41.50",
+        "text_l2": "To copy a bit"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "لأنه في عندك مراقبين بفسدوا",
+        "timestamp": "01:43.50",
+        "text_l2": "Because you have proctors who spoil it"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "بفسدوا",
+        "timestamp": "01:45.50",
+        "text_l2": "They spoil it"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "أنت بتروح بتوصي واحد",
+        "timestamp": "01:47.50",
+        "text_l2": "You go and instruct someone"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "المشكلة إنك بتقول له تفسدش",
+        "timestamp": "01:49.50",
+        "text_l2": "The problem is you tell him don't spoil it"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "خلص صار معي هيك تقولش لحدا",
+        "timestamp": "01:51.50",
+        "text_l2": "So it happened with me like this, don't tell anyone"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "أنت بتغلط معه بكلمة فهو دغري بيفتح",
+        "timestamp": "01:53.50",
+        "text_l2": "You make a mistake with one word and he immediately opens up"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "طيب يا عمي خلص لما؟",
+        "timestamp": "01:55.50",
+        "text_l2": "Okay, uncle, so when?"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "إحنا هذا سر بيني وبينك",
+        "timestamp": "01:57.50",
+        "text_l2": "This is a secret between me and you"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "مثلاً واحد يغلط فينا بالمدرسة",
+        "timestamp": "01:59.50",
+        "text_l2": "For example, one of us makes a mistake at school"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "يغلط مع المعلم أو شيء",
+        "timestamp": "02:01.50",
+        "text_l2": "Makes a mistake with the teacher or something"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "واحد منا كان يفسد للأهل",
+        "timestamp": "02:03.50",
+        "text_l2": "One of us would spoil it for the parents"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "وإذا واحد من إخوتي حاول إنه يغطي علي",
+        "timestamp": "02:05.50",
+        "text_l2": "And if one of my siblings tried to cover for me"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "كان هو يتعاقب أكثر مني",
+        "timestamp": "02:07.50",
+        "text_l2": "He would be punished more than me"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "فما كناش نستجري نغطي يعني",
+        "timestamp": "02:09.50",
+        "text_l2": "So we didn't dare to cover, I mean"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "سامي، آه كان يفسد",
+        "timestamp": "02:11.00",
+        "text_l2": "Sami, yeah he used to spoil it"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "بس كان الشيء الصعب دائماً إنه",
+        "timestamp": "02:12.50",
+        "text_l2": "But the hard thing was always that"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "العقاب كان رباعي",
+        "timestamp": "02:14.50",
+        "text_l2": "The punishment was quadruple"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "يعني إذا واحد غلط الأربعة يتعاقبوا",
+        "timestamp": "02:16.50",
+        "text_l2": "I mean if one made a mistake, all four get punished"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "فكنا دائماً مجبورين إنه",
+        "timestamp": "02:18.50",
+        "text_l2": "So we were always forced to"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "الأربعة نوقف ضده يعني",
+        "timestamp": "02:20.50",
+        "text_l2": "All four stand against him, I mean"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "طوش نفس الشيء لما حدا يغلط",
+        "timestamp": "02:22.50",
+        "text_l2": "Same thing when someone makes a mistake"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "الأربعة بنكون محامي دفاع",
+        "timestamp": "02:24.50",
+        "text_l2": "All four we are defense lawyers"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "أكثر شيء بالابتدائية",
+        "timestamp": "02:26.50",
+        "text_l2": "Especially in elementary school"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "ما كان حدا يستجري يحكي معانا",
+        "timestamp": "02:28.50",
+        "text_l2": "No one dared to talk to us"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "كنا فش يعني الأربعة نهجم",
+        "timestamp": "02:30.50",
+        "text_l2": "We were, I mean, all four attack"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "يعني مثلاً كانت واحدة تطلع على أختي",
+        "timestamp": "02:32.50",
+        "text_l2": "Like for example someone would go after my sister"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "أو شيء تضايقها كنت أروح دغري أضربها",
+        "timestamp": "02:34.50",
+        "text_l2": "Or something to bother her, I'd go immediately and hit her"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بتذكر مرة واحد بالرمل هجمنا عليه",
+        "timestamp": "02:36.50",
+        "text_l2": "I remember once someone in the sand we attacked him"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "يعني فش مزح يعني",
+        "timestamp": "02:38.50",
+        "text_l2": "I mean, no joking, I mean"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "اثنين يثبتوا واثنين يضربوا",
+        "timestamp": "02:41.00",
+        "text_l2": "Two hold him and two hit"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "إذا المعلم غلط طبعاً لازم نحن نرد",
+        "timestamp": "02:43.50",
+        "text_l2": "If the teacher made a mistake, of course we had to respond"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "يعني كل الأربعة فش يعني",
+        "timestamp": "02:45.50",
+        "text_l2": "I mean all four, no joke, I mean"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "صح غلط الحق على المعلم",
+        "timestamp": "02:47.50",
+        "text_l2": "True, the mistake is on the teacher"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "عدن مشكلجية شوي مرات",
+        "timestamp": "02:50.50",
+        "text_l2": "Waad is a troublemaker sometimes"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "بس حنونة يعني",
+        "timestamp": "02:52.50",
+        "text_l2": "But kind, I mean"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "عدن لا مبالية خلينا نقول",
+        "timestamp": "02:54.50",
+        "text_l2": "Waad is indifferent, let's say"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "محامي دفاع عدن ومشكلجية عدن",
+        "timestamp": "02:56.50",
+        "text_l2": "Waad is a defense lawyer and Waad is a troublemaker"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "أكيد قالوا لك عني محامية",
+        "timestamp": "02:58.50",
+        "text_l2": "They surely told you I'm a lawyer"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "وبتمشي اللي براسها",
+        "timestamp": "03:01.50",
+        "text_l2": "And does what's in her head"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "سامي أخوي العصبي",
+        "timestamp": "03:03.50",
+        "text_l2": "Sami is my angry brother"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "سامي عصبي فش عنده بتجادلش",
+        "timestamp": "03:05.00",
+        "text_l2": "Sami is angry, no arguing with him"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "عصبي بس بالمواقف عن جد بتلاقيه",
+        "timestamp": "03:07.50",
+        "text_l2": "Angry but in situations you really find him"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "هن قالوا عني أكيد عصبي",
+        "timestamp": "03:09.50",
+        "text_l2": "They said about me surely angry"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "بس بكون دائماً أكيد بتراجع",
+        "timestamp": "03:11.50",
+        "text_l2": "But I always surely back down"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "يعني إذا كنت أنا على غلط بتراجع",
+        "timestamp": "03:13.50",
+        "text_l2": "I mean if I'm wrong I back down"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "هن هيك بيقولوا أنا لا مش عصبي",
+        "timestamp": "03:15.50",
+        "text_l2": "That's why they say I'm not angry"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "وعد الشاطرة",
+        "timestamp": "03:17.50",
+        "text_l2": "Waad the smart one"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "وعد حنونة وعد",
+        "timestamp": "03:18.50",
+        "text_l2": "Waad is kind, Waad"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "حنونة كثير كثير وكثير تهتم بالعيلة",
+        "timestamp": "03:20.50",
+        "text_l2": "Very very kind and cares a lot about the family"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "بيقولوا عني هادية أهدى شيء فيهم",
+        "timestamp": "03:22.50",
+        "text_l2": "They say about me I'm calm, the calmest of them"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "محمد كثير هادي بني آدم كثير هادي",
+        "timestamp": "03:24.50",
+        "text_l2": "Mohammad is very calm, a very calm person"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "طبعه هادي",
+        "timestamp": "03:26.50",
+        "text_l2": "His nature is calm"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "محمد أكثر بني آدم زاتت الدنيا",
+        "timestamp": "03:28.50",
+        "text_l2": "Mohammad is the most person who leaves the world behind him"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "من ورا ظهره ولا...",
+        "timestamp": "03:30.50",
+        "text_l2": "From behind his back and..."
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "بايعها يعني ولا بيسأل عن حدا",
+        "timestamp": "03:32.50",
+        "text_l2": "Sold it, I mean, doesn't ask about anyone"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "بيروح على الشغل وبروح",
+        "timestamp": "03:34.50",
+        "text_l2": "Goes to work and goes"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "بارد الأعصاب أو لا مبالي",
+        "timestamp": "03:36.50",
+        "text_l2": "Cold nerves or indifferent"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "أكثر بيحكوا عني دائماً",
+        "timestamp": "03:38.50",
+        "text_l2": "They talk about me the most always"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "كان في صعوبة على الأهل مش علينا",
+        "timestamp": "03:40.50",
+        "text_l2": "There was difficulty on the parents not on us"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "نحن ما حسينا بالشيء بس الأهل",
+        "timestamp": "03:42.50",
+        "text_l2": "We didn't feel the thing but the parents"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "يعني أنا كيف بشوف ولد صغير بيبكي",
+        "timestamp": "03:44.50",
+        "text_l2": "I mean how can I see a small child crying"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "بتحملش كيف أربعة عم بيبكوا؟",
+        "timestamp": "03:46.50",
+        "text_l2": "Can't bear how four are crying?"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "الفيفة الصبح لما أمي كانت تفيقنا",
+        "timestamp": "03:48.50",
+        "text_l2": "The hassle of morning when mom woke us up"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "مثلاً على المدرسة دائماً لتجهز لأربعة",
+        "timestamp": "03:50.50",
+        "text_l2": "Like for school always to prepare for four"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "كل شيء لأربعة",
+        "timestamp": "03:52.50",
+        "text_l2": "Everything for four"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "أنت كل المسؤولية لأربعة",
+        "timestamp": "03:54.50",
+        "text_l2": "You have all the responsibility for four"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "أنت بتهكلش هم ولد عندك أربعة",
+        "timestamp": "03:56.50",
+        "text_l2": "You don't worry about one child you have four"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "وحتى من ناحية كيف بيقولوها",
+        "timestamp": "03:58.50",
+        "text_l2": "And even in terms of how they say it"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "نطلع نتعلم الأربعة مع بعض نفس الوقت",
+        "timestamp": "04:00.50",
+        "text_l2": "We go out to study all four together at the same time"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "كل فترة لها صعوبتها يعني",
+        "timestamp": "04:02.50",
+        "text_l2": "Every period has its difficulty, I mean"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "بس نحن ما حسينا إنه قد إيه صعب الشيء",
+        "timestamp": "04:04.50",
+        "text_l2": "But we didn't feel how hard the thing was"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "يعني ولا مرة قصروا معنا بشيء",
+        "timestamp": "04:06.50",
+        "text_l2": "I mean they never fell short with us in anything"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "فنحن ما حسينا أنا من طرفي ما حسيت",
+        "timestamp": "04:08.50",
+        "text_l2": "So we didn't feel, I from my side didn't feel"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "إنه كان الشيء صعب يعني",
+        "timestamp": "04:10.50",
+        "text_l2": "That the thing was hard, I mean"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "في كل مراحل حياتي يعني",
+        "timestamp": "04:12.50",
+        "text_l2": "In all stages of my life, I mean"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "بحب إنه بالمستقبل ربنا يرزقني",
+        "timestamp": "04:14.50",
+        "text_l2": "I hope in the future God grants me"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "يكون عندي توأم بس مش أربعة",
+        "timestamp": "04:16.50",
+        "text_l2": "To have twins but not four"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "يمكن بحس إنه شيء صعب",
+        "timestamp": "04:18.50",
+        "text_l2": "Maybe I feel it's a hard thing"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "أصعب شيء أول ما افترقنا",
+        "timestamp": "04:20.50",
+        "text_l2": "The hardest thing was when we first separated"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "أول ما ودعنا بعض فترة الجامعة",
+        "timestamp": "04:22.50",
+        "text_l2": "When we first said goodbye during university period"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "كانت كثير صعبة علينا وحتى على أهلي",
+        "timestamp": "04:24.50",
+        "text_l2": "It was very hard on us and even on my family"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "يعني مرة واحدة الدار فضيت",
+        "timestamp": "04:26.50",
+        "text_l2": "I mean suddenly the house was empty"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "أنا وعدن قررنا إنه نروح تمريض",
+        "timestamp": "04:28.50",
+        "text_l2": "Me and Waad decided to go to nursing"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "وسامي ووعد قرروا إنه يروحوا على طب",
+        "timestamp": "04:30.50",
+        "text_l2": "And Sami and Waad decided to go to medicine"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "الأهل شلبي ما كان لهم فرض",
+        "timestamp": "04:32.50",
+        "text_l2": "The parents, God bless them, didn't impose on them"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "إنه شو نتعلم",
+        "timestamp": "04:34.50",
+        "text_l2": "What we should study"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "المجال نفسه كمجال إنساني",
+        "timestamp": "04:36.50",
+        "text_l2": "The same field as a humanitarian field"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "مجال كثير بيجنن",
+        "timestamp": "04:38.50",
+        "text_l2": "A field that is very amazing"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "من هذا المبدأ طلعنا الأربعة طب",
+        "timestamp": "04:40.50",
+        "text_l2": "From this principle we all four went to medicine"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "لأنه كلنا بنحب الطب يعني",
+        "timestamp": "04:42.50",
+        "text_l2": "Because we all love medicine, I mean"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "ما بنلاقي حالنا بمحلات ثانية صراحة",
+        "timestamp": "04:44.50",
+        "text_l2": "We don't find ourselves in other places honestly"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "أنا تعلمت بجنين بالجامعة العربية",
+        "timestamp": "04:46.50",
+        "text_l2": "I studied in Jenin at the Arab"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "الأمريكية وإخوتي تعلموا بأوكرانيا",
+        "timestamp": "04:48.50",
+        "text_l2": "American University and my siblings studied in Ukraine"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "بس بوقت الحرب هن نقلوا على جورجيا",
+        "timestamp": "04:50.50",
+        "text_l2": "But during the war they transferred to Georgia"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "أولها كان صعب إنه هن برا",
+        "timestamp": "04:52.50",
+        "text_l2": "At first it was hard that they were abroad"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "ونحن بنتعلم هون",
+        "timestamp": "04:54.50",
+        "text_l2": "And we were studying here"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "كنت أول سنة دائماً أظلي مع عدن",
+        "timestamp": "04:56.50",
+        "text_l2": "I spent the first year always with Waad"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "كنا عن جد ندعم بعض",
+        "timestamp": "04:58.50",
+        "text_l2": "We really supported each other"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "بعديها تعودنا إنه خلص كل واحد",
+        "timestamp": "05:00.50",
+        "text_l2": "Then we got used to that each one"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "مجبور يعيش حياته لحاله",
+        "timestamp": "05:02.50",
+        "text_l2": "Is forced to live his life alone"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "أنا ووعد أكثر شيء يعني بنظلنا",
+        "timestamp": "05:04.50",
+        "text_l2": "Me and Waad mostly, I mean we stay"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "حتى لسا بعد ما خلصنا بنظل مع بعض",
+        "timestamp": "05:06.50",
+        "text_l2": "Even still after we finished we stay together"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "حتى لسا برنامجنا عم بنبني إنه",
+        "timestamp": "05:08.50",
+        "text_l2": "Even still our program we are building that"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "نعمل عطلة مشتركة مش إنه كل واحد لحاله",
+        "timestamp": "05:10.50",
+        "text_l2": "To take a joint vacation not each one alone"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "في عنا أخو صغير هو عم بيتعلم صيدلة",
+        "timestamp": "05:12.50",
+        "text_l2": "We have a younger brother who is studying pharmacy"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "بجورجيا",
+        "timestamp": "05:14.50",
+        "text_l2": "In Georgia"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "بعدنا إجا بسبع سنين كان كثير تخوف",
+        "timestamp": "05:16.50",
+        "text_l2": "He came after us by seven years, there was much fear"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "لأنه انحكى إنه رح يطلع توأم يعني زينا",
+        "timestamp": "05:18.50",
+        "text_l2": "Because it was said he would come out twins like us"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "ومزطنا يعني",
+        "timestamp": "05:20.50",
+        "text_l2": "And we panicked, I mean"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "نحن نقول له صغير بالعمر طبعاً",
+        "timestamp": "05:22.50",
+        "text_l2": "We tell him he's young in age of course"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "بس هو لؤي أكبر من جيله وواعي",
+        "timestamp": "05:24.50",
+        "text_l2": "But he is Luay, older than his generation and mature"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "هو بحسه بعيد عن العيلة",
+        "timestamp": "05:26.50",
+        "text_l2": "He feels distant from the family"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "هو بناح ونحن بناح",
+        "timestamp": "05:28.50",
+        "text_l2": "He is on a side and we are on a side"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "وكثير بيجي كشر وحيادي يعني",
+        "timestamp": "05:30.50",
+        "text_l2": "And he comes a lot sour and neutral, I mean"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "ولا حتى بنعرف عنه ولا بيعرف عنا",
+        "timestamp": "05:32.50",
+        "text_l2": "We don't even know about him nor does he know about us"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "اسمع أخوي الصغير دائماً بحكيها",
+        "timestamp": "05:34.50",
+        "text_l2": "Listen, my little brother I always say it"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "البيئة اللي ربته مش إحنا",
+        "timestamp": "05:36.50",
+        "text_l2": "The environment that raised him wasn't us"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "فأي شيء إذا شفت أو سمعت عنه",
+        "timestamp": "05:38.50",
+        "text_l2": "So anything if I see or hear about him"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "نحن بريئين من أفعاله",
+        "timestamp": "05:40.50",
+        "text_l2": "We are innocent of his actions"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "بس لؤي حنون حنون كثير كثير لؤي",
+        "timestamp": "05:42.50",
+        "text_l2": "But Luay is kind, very very kind Luay"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "وعايش الحياة صح كيف بيقولوا",
+        "timestamp": "05:44.50",
+        "text_l2": "And living life right, as they say"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "إذا بتسألني أنا أكيد برجع نفس الشيء",
+        "timestamp": "05:46.50",
+        "text_l2": "If you ask me I surely would return to the same thing"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "مع توأم حياة أكشن",
+        "timestamp": "05:48.50",
+        "text_l2": "With twins life is action"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "بس توأم أكشن بنعمل",
+        "timestamp": "05:50.50",
+        "text_l2": "But twins action we make"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "يمكن لأني أنا تعودت إني أكون",
+        "timestamp": "05:52.50",
+        "text_l2": "Maybe because I got used to being"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "ضمن مجموعة",
+        "timestamp": "05:54.50",
+        "text_l2": "Within a group"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "فإذا رجع فيه الزمن آه لا بختار دائماً",
+        "timestamp": "05:56.50",
+        "text_l2": "So if time went back, ah, I'd always choose"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "إني أكون ضمن التوأم",
+        "timestamp": "05:58.50",
+        "text_l2": "To be within the twins"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "وبس هن التوأم بكونوا معي",
+        "timestamp": "06:00.50",
+        "text_l2": "And only then the twins will be with me"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "لأني مبسوط معهن كثير يعني",
+        "timestamp": "06:02.50",
+        "text_l2": "Because I'm very happy with them, I mean"
+      }
+    ],
+    "phrases_with_token_translations": "أكثر [سؤال] غريب بنسأله هو => The strangest [question] we get asked is\nأكثر سؤال [غريب] بنسأله هو => The [strangest] question we get asked is\nأكثر سؤال غريب [بنسأله] هو => The strangest question [we get asked] is\nأكثر سؤال غريب بنسأله [هو] => The strangest question we get asked [is] # \"huwa\" (he/it) acts as the copula \"is\" in this sentence structure\n\n[أنتم] أربعة؟ => [Are you] four?\nأنتم [أربعة]؟ => Are you [four]?\n\n[كيف] بنفس البطن؟ => [How] (were you) in the same womb?\nكيف [بنفس] البطن؟ => How (were you) [in the same] womb?\nكيف بنفس [البطن]؟ => How (were you) in the same [womb] # البطن literally means \"the belly\" or \"the stomach\" but is used for \"womb\" in this context\n\nإنه [آه]، أربعة توأم ببطن واحد => [Yeah], quadruplets in one womb\nإنه آه، [أربعة توأم] ببطن واحد => Yeah, [quadruplets] in one womb\nإنه آه، أربعة توأم [ب]بطن واحد => Yeah, quadruplets [in] one womb\nإنه آه، أربعة توأم ب[بطن] واحد => Yeah, quadruplets in one [womb]\nإنه آه، أربعة توأم ببطن [واحد] => Yeah, quadruplets in [one] womb\n\n[إنتو] بتحسوا مع بعض؟ => Do [you] feel each other?\nإنتو [بتحسوا] مع بعض؟ => Do you [feel] each other?\nإنتو بتحسوا [مع بعض]؟ => Do you feel [each other]?\n\n[بعديها]: أنتم دكاترة؟! => [Then]: Are you doctors?!\nبعديها: [أنتم] دكاترة؟! => Then: [Are you] doctors?!\nبعديها: أنتم [دكاترة]؟! => Then: Are you [doctors]?!\n\n[إحنا] من أربع توائم، أنا الكبير => [We're] quadruplets, I'm the eldest\nإحنا [من أربع توائم]، أنا الكبير => We're [quadruplets], I'm the eldest\nإحنا من أربع توائم، [أنا] الكبير => We're quadruplets, [I'm] the eldest\nإحنا من أربع توائم، أنا [الكبير] => We're quadruplets, I'm [the eldest]\n\n[أنا] رقم اثنين => [I'm] number two\nأنا [رقم] اثنين => I'm [number] two\nأنا رقم [اثنين] => I'm number [two]\n\n[أنا] نمرة ثلاث => [I'm] number three\nأنا [نمرة] ثلاث => I'm [number] three\nأنا نمرة [ثلاث] => I'm number [three]\n\n[إحنا] أربع توائم وأنا الأخير => [We're] quadruplets and I'm the youngest\nإحنا [أربع توائم] وأنا الأخير => We're [quadruplets] and I'm the youngest\nإحنا أربع توائم [و]أنا الأخير => We're quadruplets [and] I'm the youngest\nإحنا أربع توائم و[أنا] الأخير => We're quadruplets and [I'm] the youngest\nإحنا أربع توائم وأنا [الأخير] => the last, the youngest # literally \"the last,\" but means \"youngest\" in birth order context\n\n[عندنا] الترتيب عكسي، الصغار هن اللي... => [Our] order is reversed, the younger ones are the ones...\nعندنا [الترتيب] عكسي، الصغار هن اللي... => Our [order] is reversed, the younger ones are the ones...\nعندنا الترتيب [عكسي]، الصغار هن اللي... => Our order is [reversed], the younger ones are the ones...\nعندنا الترتيب عكسي، [الصغار] هن اللي... => Our order is reversed, the [younger ones] are the ones...\nعندنا الترتيب عكسي، الصغار [هن اللي]... => Our order is reversed, the younger ones [are the ones]...\n\nفارضين [أكثر] سيطرة => [More] dominant and controlling\nفارضين أكثر [سيطرة] => More dominant and [controlling]\n\nكيف [حكوا] لنا أهلنا إنه => Our parents [told] us that\nكيف حكوا [لنا] أهلنا إنه => Our parents told [us] that\nكيف حكوا لنا [أهلنا] إنه => [Our parents] told us that\nكيف حكوا لنا أهلنا [إنه] => Our parents told us [that]\n\n[ما قالوا] لهم بالأول أربعة => They [weren't told] it was four at first\nما قالوا [لهم] بالأول أربعة => [They] weren't told it was four at first\nما قالوا لهم [بالأول] أربعة => They weren't told it was four [at first]\nما قالوا لهم بالأول [أربعة] => They weren't told it was [four] at first\n\n[هن] راحوا بالأول على أول مستشفى => [They] went to the first hospital first\nهن [راحوا] بالأول على أول مستشفى => They [went] to the first hospital first\nهن راحوا [بالأول] على أول مستشفى => They went to the first hospital [first]\nهن راحوا بالأول [على] أول مستشفى => They went [to] the first hospital first\nهن راحوا بالأول على [أول] مستشفى => They went to the [first] hospital first\nهن راحوا بالأول على أول [مستشفى] => They went to the first [hospital] first\n\n[قالوا] لهم عندكم توم، اثنين يعني => [They told] them you have twins, two I mean\nقالوا [لهم] عندكم توم، اثنين يعني => They told [them] you have twins, two I mean\nقالوا لهم [عندكم] توم، اثنين يعني => They told them [you have] twins, two I mean\nقالوا لهم عندكم [توم]، اثنين يعني => They told them you have [twins], two I mean\nقالوا لهم عندكم توم، [اثنين] يعني => They told them you have twins, [two] I mean\nقالوا لهم عندكم توم، اثنين [يعني] => They told them you have twins, two [I mean]\n\n[بعديها] راحوا بعرفش على أي مستشفى => [Then] they went to another hospital, I don't know which\nبعديها [راحوا] بعرفش على أي مستشفى => Then [they went] to another hospital, I don't know which\nبعديها راحوا [بعرفش] على أي مستشفى => Then they went to another hospital, [I don't know] which\nبعديها راحوا بعرفش [على] أي مستشفى => Then they went [to] another hospital, I don't know which\nبعديها راحوا بعرفش على [أي] مستشفى => Then they went to another hospital, I don't know [which]\nبعديها راحوا بعرفش على أي [مستشفى] => Then they went to another [hospital], I don't know which\n\n[قالوا] لهم ثلاث => [They told] them three\nقالوا [لهم] ثلاث => They told [them] three\nقالوا لهم [ثلاث] => They told them [three]\n\nبمستشفى [الأخير] قالوا أربعة => At the [last] hospital they said four\nبمستشفى الأخير [قالوا] أربعة => At the last hospital [they said] four\nبمستشفى الأخير قالوا [أربعة] => At the last hospital they said [four]\n\n[كانوا] خايفين إنه يروحوا على كمان محل => [They were] afraid to go to another place\nكانوا [خايفين] إنه يروحوا على كمان محل => They were [afraid] to go to another place\nكانوا خايفين [إنه] يروحوا على كمان محل => to # \"إنه\" acts as a complementizer similar to \"to\" in this context\nكانوا خايفين إنه [يروحوا] على كمان محل => They were afraid to [go] to another place\nكانوا خايفين إنه يروحوا [على] كمان محل => They were afraid to go [to] another place\nكانوا خايفين إنه يروحوا على [كمان] محل => They were afraid to go to [another] place\nكانوا خايفين إنه يروحوا على كمان [محل] => They were afraid to go to another [place]\n\n[ليزيدوا] يعني => [In case it increased], I mean\nليزيدوا [يعني] => In case it increased, [I mean]\n\n[آه] كل فحص كان يزيدوا => [Yeah], every checkup it increased\nآه [كل] فحص كان يزيدوا => Yeah, [every] checkup it increased\nآه كل [فحص] كان يزيدوا => Yeah, every [checkup] it increased\nآه كل فحص [كان يزيدوا] => Yeah, every checkup [it increased] # The combination of كان (was/used to) and يزيدوا (increase it) maps to the past action \"it increased\"\n\n[حكوا] لنا الشيء كان صدمة => [They told] us it was a shock\nحكوا [لنا] الشيء كان صدمة => They told [us] it was a shock\nحكوا لنا [الشيء] كان صدمة => They told us [it] was a shock\nحكوا لنا الشيء [كان] صدمة => They told us it [was] a shock\nحكوا لنا الشيء كان [صدمة] => They told us it was [a shock]\n\n[ما كانوا] مستوعبين الشيء => [They couldn't] grasp the thing\nما كانوا [مستوعبين] الشيء => They couldn't [grasp] the thing\nما كانوا مستوعبين [الشيء] => They couldn't grasp [the thing]\n\n[نحن] كنا كل واحد بكيس => [We] were each in a sac\nنحن [كنا] كل واحد بكيس => We [were] each in a sac\nنحن كنا [كل واحد] بكيس => We were [each] in a sac\nنحن كنا كل واحد [بكيس] => We were each [in a sac]\n\n[فعشان هيك] يعني ولا واحد طلع بيشبه الثاني => [So that's why] none of us resembled the other\nفعشان هيك [يعني] ولا واحد طلع بيشبه الثاني => meaning, like, you know\nفعشان هيك يعني [ولا واحد] طلع بيشبه الثاني => [none] of us resembled the other\nفعشان هيك يعني ولا واحد [طلع] بيشبه الثاني => turned out, became\nفعشان هيك يعني ولا واحد طلع [بيشبه] الثاني => none of us [resembled] the other\nفعشان هيك يعني ولا واحد طلع بيشبه [الثاني] => none of us resembled [the other]\n\n[بنفس] الصف لحد صف 12 => [In the same] class until 12th grade\nبنفس [الصف] لحد صف 12 => In the same [class] until 12th grade\nبنفس الصف [لحد] صف 12 => In the same class [until] 12th grade\nبنفس الصف لحد [صف] 12 => In the same class until 12th [grade]\nبنفس الصف لحد صف [12] => In the same class until [12th] grade\n\n[واشتغلنا] بعدها مع بعض برضه سنتين => [And we worked] together for two years after that too\nواشتغلنا [بعدها] مع بعض برضه سنتين => And we worked together for two years [after that] too\nواشتغلنا بعدها [مع بعض] برضه سنتين => And we worked [together] for two years after that too\nواشتغلنا بعدها مع بعض [برضه] سنتين => And we worked together for two years after that [too]\nواشتغلنا بعدها مع بعض برضه [سنتين] => And we worked together for [two years] after that too\n\n[بالتعليم] تفرقنا => [In education] we separated\nبالتعليم [تفرقنا] => In education [we separated]\n\n[اثنين] تمريض واثنين طب => [Two] nursing and two medicine\nاثنين [تمريض] واثنين طب => Two [nursing] and two medicine\nاثنين تمريض [و]اثنين طب => Two nursing [and] two medicine\nاثنين تمريض و[اثنين] طب => Two nursing and [two] medicine\nاثنين تمريض واثنين [طب] => Two nursing and two [medicine]\n\n[كان] كثير شيء حلو => [It was] very nice\nكان [كثير] شيء حلو => It was [very] nice\nكان كثير [شيء] حلو => thing\nكان كثير شيء [حلو] => It was very [nice]\n\n[وكان] دائماً إنه في حدك سند => [And there was] always someone supporting you\nوكان [دائماً] إنه في حدك سند => And there was [always] someone supporting you\nوكان دائماً إنه في [حدك] سند => by your side\nوكان دائماً إنه في حدك [سند] => And there was always [someone supporting] you\n\nإنه [بتحس] دائماً إنك أنت بأمان => You always [feel] safe\nإنه بتحس [دائماً] إنك أنت بأمان => You [always] feel safe\nإنه بتحس دائماً [إنك أنت] بأمان => [You] always feel safe\nإنه بتحس دائماً إنك أنت [بأمان] => You always feel [safe] # literally \"in safety\" or \"with safety\" but functions as \"safe\" here\n\n[وين ما] تمشي شمال يمين بتلاقيهم حدك => [Wherever] you go, left or right, you find them beside you\nوين ما [تمشي] شمال يمين بتلاقيهم حدك => Wherever [you go], left or right, you find them beside you\nوين ما تمشي [شمال] يمين بتلاقيهم حدك => Wherever you go, [left] or right, you find them beside you\nوين ما تمشي شمال [يمين] بتلاقيهم حدك => Wherever you go, left or [right], you find them beside you\nوين ما تمشي شمال يمين [بتلاقيهم] حدك => Wherever you go, left or right, [you find them] beside you\nوين ما تمشي شمال يمين بتلاقيهم [حدك] => Wherever you go, left or right, you find them [beside you]\n\n[بنتساعد] بكل شيء، بكل المجالات بنتساعد => [We help] in everything, in all fields we help\nبنتساعد [بكل شيء]، بكل المجالات بنتساعد => We help [in everything], in all fields we help\nبنتساعد بكل شيء، [بكل] المجالات بنتساعد => We help in everything, [in all] fields we help\nبنتساعد بكل شيء، بكل [المجالات] بنتساعد => We help in everything, in all [fields] we help\nبنتساعد بكل شيء، بكل المجالات [بنتساعد] => We help in everything, in all fields [we help]\n\n[بكل شيء] يعني => [In everything], I mean\n[بكل] شيء يعني => in every, with all # بكل is a combination of the preposition \"ب\" (in/with) and \"كل\" (all/every)\nبكل [شيء] يعني => thing\nبكل شيء [يعني] => In everything, [I mean] # \"يعني\" is a common filler used like \"I mean\" or \"it means\"\n\n[ودائماً] نفس العمر يعني مش إنه أخوك => [And always] the same age, I mean not like your brother\nودائماً [نفس] العمر يعني مش إنه أخوك => And always [the same] age, I mean not like your brother\nودائماً نفس [العمر] يعني مش إنه أخوك => And always the same [age], I mean not like your brother\nودائماً نفس العمر [يعني] مش إنه أخوك => And always the same age, [I mean] not like your brother\nودائماً نفس العمر يعني [مش] إنه أخوك => And always the same age, I mean [not] like your brother\nودائماً نفس العمر يعني مش [إنه] أخوك => like # used to introduce the comparison or instance\nودائماً نفس العمر يعني مش إنه [أخوك] => And always the same age, I mean not like [your brother]\n\n[من] أعمار ثانية بفهمكاش يعني => [From] another age who doesn't understand you, I mean\nمن [أعمار] ثانية بفهمكاش يعني => From another [age] who doesn't understand you, I mean\nمن أعمار [ثانية] بفهمكاش يعني => From [another] age who doesn't understand you, I mean\nمن أعمار ثانية [بفهمكاش] يعني => From another age [who doesn't understand you], I mean\nمن أعمار ثانية بفهمكاش [يعني] => From another age who doesn't understand you, [I mean]\n\n[أكثر] شيء كانت إنه أختي وعد => [The most] (notable) was my sister Waad\nأكثر [شيء] كانت إنه أختي وعد => thing\nأكثر شيء [كانت] إنه أختي وعد => The most (notable) [was] my sister Waad\nأكثر شيء كانت [إنه] أختي وعد => that it was\nأكثر شيء كانت إنه [أختي] وعد => The most (notable) was [my sister] Waad\nأكثر شيء كانت إنه أختي [وعد] => The most (notable) was my sister [Waad]\n\n[هيك] بيناتنا كانت الشاطرة => [Like] among us she was the smart one\nهيك [بيناتنا] كانت الشاطرة => Like [among us] she was the smart one\nهيك بيناتنا [كانت] الشاطرة => Like among us [she was] the smart one\nهيك بيناتنا كانت [الشاطرة] => Like among us she was [the smart one]\n\nفأنا كنت [حتى] لما أطلع من المدرسة => So [even] when I left school\nفأنا كنت حتى [لما] أطلع من المدرسة => So even [when] I left school\nفأنا كنت حتى لما [أطلع] من المدرسة => So even when I [left] school\nفأنا كنت حتى لما أطلع [من] المدرسة => from\nفأنا كنت حتى لما أطلع من [المدرسة] => So even when I left [school]\n\n[بكير] أو شيء => [Early] or something\nبكير [أو] شيء => Early [or] something\nبكير أو [شيء] => Early or [something]\n\n[كنت] دائماً آخذ منها المواد => [I would] always take the subjects from her\nكنت [دائماً] آخذ منها المواد => I would [always] take the subjects from her\nكنت دائماً [آخذ] منها المواد => I would always [take] the subjects from her\nكنت دائماً آخذ [منها] المواد => I would always take the subjects [from her]\nكنت دائماً آخذ منها [المواد] => I would always take [the subjects] from her\n\n[على البارد المبرد] زي ما بيقولوا => [Cold copied], as they say # this is a common idiomatic expression in Levantine/Egyptian Arabic meaning \"easily\" or \"without effort\"\nعلى البارد المبرد [زي ما] بيقولوا => Cold copied, [as] they say\nعلى البارد المبرد زي ما [بيقولوا] => Cold copied, as [they say]\n\n[آه] كنا ننقل بعض => [Yeah], we used to copy from each other\nآه [كنا] ننقل بعض => Yeah, [we used to] copy from each other\nآه كنا [ننقل] بعض => Yeah, we used to [copy] from each other\nآه كنا ننقل [بعض] => each other # localized as \"from each other\" in the sentence, literally means \"some\" or \"each other\"\n\n[كل شيء] كنا إيد واحدة كلياتنا يعني طبعاً => [Everything], we were one hand, our colleges I mean of course\nكل شيء [كنا] إيد واحدة كلياتنا يعني طبعاً => Everything, [we were] one hand, our colleges I mean of course\nكل شيء كنا [إيد] واحدة كلياتنا يعني طبعاً => Everything, we were one [hand], our colleges I mean of course\nكل شيء كنا إيد [واحدة] كلياتنا يعني طبعاً => Everything, we were [one] hand, our colleges I mean of course\nكل شيء كنا إيد واحدة [كلياتنا] يعني طبعاً => all of us # 'Kulliyatna' is used here as 'all of us', common in Levantine Arabic, though the provided English uses a literal morphological translation 'our colleges'\nكل شيء كنا إيد واحدة كلياتنا [يعني] طبعاً => Everything, we were one hand, our colleges [I mean] of course\nكل شيء كنا إيد واحدة كلياتنا يعني [طبعاً] => Everything, we were one hand, our colleges I mean [of course]\n\n[في] دائماً [عندك] هي الصاحب اللي كل الوقت => [You] always [have] the friend who is there all the time\nفي [دائماً] عندك هي الصاحب اللي كل الوقت => You [always] have the friend who is there all the time\nفي دائماً عندك [هي] الصاحب اللي كل الوقت => this, that # 'hay' in this context is a demonstrative meaning 'this' or 'that'\nفي دائماً عندك هي [الصاحب] اللي كل الوقت => You always have the [friend] who is there all the time\nفي دائماً عندك هي الصاحب [اللي] كل الوقت => You always have the friend [who] is there all the time\nفي دائماً عندك هي الصاحب اللي [كل] الوقت => You always have the friend who is there [all] the time\nفي دائماً عندك هي الصاحب اللي كل [الوقت] => You always have the friend who is there all [the time]\n\n[خلص] إنه أنتم مجموعة => [So] that you're a group\nخلص [إنه] أنتم مجموعة => So [that] you're a group\nخلص إنه [أنتم] مجموعة => So that [you're] a group\nخلص إنه أنتم [مجموعة] => So that you're a [group]\n\n[دائماً] في رفقة هي اللي بتيجي لعندكم => There's [always] company that comes to you\nدائماً [في] رفقة هي اللي بتيجي لعندكم => [There's] always company that comes to you\nدائماً في [رفقة] هي اللي بتيجي لعندكم => There's always [company] that comes to you\nدائماً في رفقة [هي اللي] بتيجي لعندكم => There's always company [that] comes to you\nدائماً في رفقة هي اللي [بتيجي] لعندكم => There's always company that [comes] to you\nدائماً في رفقة هي اللي بتيجي [لعندكم] => There's always company that comes [to you]\n\n[مش] أنت بحاجة لشيء براني => You [don't] need anything external\nمش [أنت] بحاجة لشيء براني => [You] don't need anything external\nمش أنت [بحاجة] لشيء براني => You don't [need] anything external\nمش أنت بحاجة [لشيء] براني => You don't need [anything] external\nمش أنت بحاجة لشيء [براني] => You don't need anything [external]\n\n[من ناحية] أنت بتقدرش بالمدرسة => [In a way], you can't at school\nمن ناحية [أنت] بتقدرش بالمدرسة => In a way, [you] can't at school\nمن ناحية أنت [بتقدرش] بالمدرسة => In a way, you [can't] at school\nمن ناحية أنت بتقدرش [بالمدرسة] => In a way, you can't [at school]\n\n[إنك تنقل] شوي => [To copy] a bit\nإنك تنقل [شوي] => To copy [a bit]\n\n[لأنه] في عندك مراقبين بفسدوا => [Because] you have proctors who spoil it\nلأنه [في عندك] مراقبين بفسدوا => Because [you have] proctors who spoil it\nلأنه في عندك [مراقبين] بفسدوا => Because you have [proctors] who spoil it\nلأنه في عندك مراقبين [بفسدوا] => Because you have proctors [who spoil it] # in Arabic this is a single verb meaning \"they spoil\" or \"they snitch\", acting as a relative clause here\n\n[بفسدوا] => [They spoil it]\n[بفسدوا] => they spoil, they are spoiling # The Arabic verb contains the subject \"they\" and the action \"spoil\" within a single word contextually translated as \"they spoil it\"\n\n[أنت] بتروح بتوصي واحد => [You] go and instruct someone\nأنت [بتروح] بتوصي واحد => You [go] and instruct someone\nأنت بتروح [بتوصي] واحد => You go and [instruct] someone\nأنت بتروح بتوصي [واحد] => You go and instruct [someone]\n\n[المشكلة] إنك بتقول له تفسدش => [The problem] is you tell him don't spoil it\nالمشكلة [إنك] بتقول له تفسدش => [is you] tell him don't spoil it\nالمشكلة إنك [بتقول] له تفسدش => The problem is you [tell] him don't spoil it\nالمشكلة إنك بتقول [له] تفسدش => The problem is you tell [him] don't spoil it\nالمشكلة إنك بتقول له [تفسدش] => The problem is you tell him [don't spoil it] # تفسدش includes the negation and refers back to the implied object \"it\"\n\n[خلص] صار معي هيك تقولش لحدا => [So] it happened with me like this, don't tell anyone\nخلص [صار] معي هيك تقولش لحدا => So [it happened] with me like this, don't tell anyone\nخلص صار [معي] هيك تقولش لحدا => So it happened [with me] like this, don't tell anyone\nخلص صار معي [هيك] تقولش لحدا => So it happened with me [like this], don't tell anyone\nخلص صار معي هيك [تقولش] لحدا => So it happened with me like this, [don't tell] anyone\nخلص صار معي هيك تقولش [لحدا] => So it happened with me like this, don't tell [anyone] # in this context the preposition for 'to' is baked into the word 'lahada' meaning 'to anyone/anyone'\n\n[أنت] بتغلط معه بكلمة فهو دغري بيفتح => [You] make a mistake with one word and he immediately opens up\nأنت [بتغلط] معه بكلمة فهو دغري بيفتح => You [make a mistake] with one word and he immediately opens up\nأنت بتغلط [معه] بكلمة فهو دغري بيفتح => with him\nأنت بتغلط معه [بكلمة] فهو دغري بيفتح => You make a mistake [with one word] and he immediately opens up\nأنت بتغلط معه بكلمة [فهو] دغري بيفتح => You make a mistake with one word [and he] immediately opens up\nأنت بتغلط معه بكلمة فهو [دغري] بيفتح => You make a mistake with one word and he [immediately] opens up\nأنت بتغلط معه بكلمة فهو دغري [بيفتح] => You make a mistake with one word and he immediately [opens up]\n\n[طيب] يا عمي خلص لما؟ => [Okay], uncle, so when?\nطيب [يا عمي] خلص لما؟ => Okay, [uncle], so when?\nطيب يا عمي [خلص] لما؟ => Okay, uncle, [so] when?\nطيب يا عمي خلص [لما]؟ => Okay, uncle, so [when]?\n\nإحنا [هذا] سر بيني وبينك => [This is] a secret between me and you\nإحنا هذا [سر] بيني وبينك => This is [a secret] between me and you\nإحنا هذا سر [بيني] وبينك => This is a secret [between me] and you\nإحنا هذا سر بيني [وبينك] => This is a secret between me [and you]\n\n[مثلاً] واحد يغلط فينا بالمدرسة => [For example] one of us makes a mistake at school\nمثلاً [واحد] يغلط فينا بالمدرسة => For example [one] of us makes a mistake at school\nمثلاً واحد [يغلط] فينا بالمدرسة => For example one of us [makes a mistake] at school\nمثلاً واحد يغلط [فينا] بالمدرسة => of us # \"فينا\" literally \"in us\" but means \"of us\" in this context\nمثلاً واحد يغلط فينا [بالمدرسة] => For example one of us makes a mistake [at school]\n\n[يغلط] مع المعلم أو شيء => [Makes a mistake] with the teacher or something\nيغلط [مع] المعلم أو شيء => Makes a mistake [with] the teacher or something\nيغلط مع [المعلم] أو شيء => Makes a mistake with [the teacher] or something\nيغلط مع المعلم [أو] شيء => Makes a mistake with the teacher [or] something\nيغلط مع المعلم أو [شيء] => Makes a mistake with the teacher or [something]\n\n[واحد] منا كان يفسد للأهل => [One] of us would spoil it for the parents\nواحد [منا] كان يفسد للأهل => One [of us] would spoil it for the parents\nواحد منا [كان] يفسد للأهل => One of us [would] spoil it for the parents\nواحد منا كان [يفسد] للأهل => One of us would [spoil it] for the parents\nواحد منا كان يفسد [للأهل] => One of us would spoil it [for the parents] # للأهل literally means \"to/for the family\" but is commonly used for \"parents\" in this context\n\n[وإذا] واحد من إخوتي حاول إنه يغطي علي => [And if] one of my siblings tried to cover for me\nوإذا [واحد] من إخوتي حاول إنه يغطي علي => And if [one] of my siblings tried to cover for me\nوإذا واحد [من] إخوتي حاول إنه يغطي علي => And if one [of] my siblings tried to cover for me\nوإذا واحد من [إخوتي] حاول إنه يغطي علي => And if one of [my siblings] tried to cover for me\nوإذا واحد من إخوتي [حاول] إنه يغطي علي => And if one of my siblings [tried] to cover for me\nوإذا واحد من إخوتي حاول [إنه] يغطي علي => And if one of my siblings tried [to] cover for me # 'innahu' literally means \"that he,\" but functions here to link the verbs like the word \"to\"\nوإذا واحد من إخوتي حاول إنه [يغطي] علي => And if one of my siblings tried to [cover] for me\nوإذا واحد من إخوتي حاول إنه يغطي [علي] => And if one of my siblings tried to cover [for me] # 'alayya' is a combination of 'on/for' and the 'me' pronoun suffix\n\n[كان هو] يتعاقب أكثر مني => [He would] be punished more than me\nكان هو [يتعاقب] أكثر مني => He would [be punished] more than me\nكان هو يتعاقب [أكثر] مني => He would be punished [more] than me\nكان هو يتعاقب أكثر [مني] => He would be punished more [than me]\n\nف[ما كناش] نستجري نغطي يعني => So [we didn't] dare to cover, I mean\nفما كناش [نستجري] نغطي يعني => So we didn't [dare] to cover, I mean\nفما كناش نستجري [نغطي] يعني => So we didn't dare to [cover], I mean\nفما كناش نستجري نغطي [يعني] => So we didn't dare to cover, [I mean] # \"يعني\" is a common filler in Arabic meaning \"I mean\" or \"it means\"\n\n[سامي]، آه كان يفسد => [Sami], yeah he used to spoil it\nسامي، [آه] كان يفسد => Sami, [yeah] he used to spoil it\nسامي، آه [كان] يفسد => he used to, was\nسامي، آه كان [يفسد] => spoil it, ruin it # yufsidu is a transitive verb; the object \"it\" is implied in this context\n\n[بس] كان الشيء الصعب دائماً إنه => [But] the hard thing was always that\nبس [كان] الشيء الصعب دائماً إنه => But the hard thing [was] always that\nبس كان [الشيء] الصعب دائماً إنه => the thing # \"الشيء\" includes the definite article \"ال\", but in English \"the\" is separated from \"thing\" by \"hard\"\nبس كان الشيء [الصعب] دائماً إنه => But the [hard] thing was always that\nبس كان الشيء الصعب [دائماً] إنه => But the hard thing was [always] that\nبس كان الشيء الصعب دائماً [إنه] => But the hard thing was always [that] # إنه functions here as the conjunction \"that\" followed by a ghost pronoun or simply as a complementizer\n\n[العقاب] كان رباعي => [The punishment] was quadruple\nالعقاب [كان] رباعي => The punishment [was] quadruple\nالعقاب كان [رباعي] => The punishment was [quadruple]\n\n[يعني] إذا واحد غلط الأربعة يتعاقبوا => [I mean] if one made a mistake, all four get punished\nيعني [إذا] واحد غلط الأربعة يتعاقبوا => I mean [if] one made a mistake, all four get punished\nيعني إذا [واحد] غلط الأربعة يتعاقبوا => I mean if [one] made a mistake, all four get punished\nيعني إذا واحد [غلط] الأربعة يتعاقبوا => I mean if one [made a mistake], all four get punished\nيعني إذا واحد غلط [الأربعة] يتعاقبوا => I mean if one made a mistake, [all four] get punished\nيعني إذا واحد غلط الأربعة [يتعاقبوا] => I mean if one made a mistake, all four [get punished]\n\n[فكنا] دائماً مجبورين إنه => [So we were] always forced to\nفكنا [دائماً] مجبورين إنه => So we were [always] forced to\nفكنا دائماً [مجبورين] إنه => So we were always [forced] to\nفكنا دائماً مجبورين [إنه] => So we were always forced [to]\n\n[الأربعة] نوقف ضده يعني => [All four] stand against him, I mean\nالأربعة [نوقف] ضده يعني => All four [stand] against him, I mean\nالأربعة نوقف [ضده] يعني => All four stand [against him], I mean\nالأربعة نوقف ضده [يعني] => All four stand against him, [I mean]\n\nطوش [نفس الشيء] لما حدا يغلط => [Same thing] when someone makes a mistake\nطوش نفس الشيء [لما] حدا يغلط => Same thing [when] someone makes a mistake\nطوش نفس الشيء لما [حدا] يغلط => Same thing when [someone] makes a mistake\nطوش نفس الشيء لما حدا [يغلط] => Same thing when someone [makes a mistake]\n\n[الأربعة] بنكون محامي دفاع => [All four] we are defense lawyers\nالأربعة [بنكون] محامي دفاع => All four [we are] defense lawyers\nالأربعة بنكون [محامي] دفاع => All four we are defense [lawyers]\nالأربعة بنكون محامي [دفاع] => All four we are [defense] lawyers\n\n[أكثر شيء] بالابتدائية => [Especially] in elementary school\nأكثر شيء [ب]الابتدائية => Especially [in] elementary school\nأكثر شيء ب[الابتدائية] => Especially in [elementary school]\n\n[ما كان حدا] يستجري يحكي معانا => [No one] dared to talk to us # \"ma kan hada\" literally means \"there wasn't anyone\"\nما كان حدا [يستجري] يحكي معانا => No one [dared] to talk to us\nما كان حدا يستجري [يحكي] معانا => No one dared [to talk] to us\nما كان حدا يستجري يحكي [معانا] => with us # literally \"with us\" (ma'a = with, na = us)\n\n[كنا] فش يعني الأربعة نهجم => [We were], I mean, all four attack\nكنا فش [يعني] الأربعة نهجم => We were, [I mean], all four attack\nكنا فش يعني [الأربعة] نهجم => We were, I mean, [all four] attack\nكنا فش يعني الأربعة [نهجم] => we attack # Arabic verb includes the \"we\" marker 'na-' which is not separate in the English \"attack\" here\n\n[يعني] مثلاً كانت واحدة تطلع على أختي => [Like] for example someone would go after my sister\nيعني [مثلاً] كانت واحدة تطلع على أختي => Like [for example] someone would go after my sister\nيعني مثلاً [كانت] واحدة تطلع على أختي => would # auxiliary verb indicating habitual past\nيعني مثلاً كانت [واحدة] تطلع على أختي => Like for example [someone] would go after my sister\nيعني مثلاً كانت واحدة [تطلع على] أختي => Like for example someone would [go after] my sister # the phrase together means to look at or target someone\nيعني مثلاً كانت واحدة تطلع على [أختي] => Like for example someone would go after [my sister]\n\n[أو] شيء تضايقها كنت أروح دغري أضربها => [Or] something to bother her, I'd go immediately and hit her\nأو [شيء] تضايقها كنت أروح دغري أضربها => Or [something] to bother her, I'd go immediately and hit her\nأو شيء [تضايقها] كنت أروح دغري أضربها => Or something [to bother her], I'd go immediately and hit her\nأو شيء تضايقها [كنت أروح] دغري أضربها => Or something to bother her, [I'd go] immediately and hit her\nأو شيء تضايقها كنت أروح [دغري] أضربها => Or something to bother her, I'd go [immediately] and hit her\nأو شيء تضايقها كنت أروح دغري [أضربها] => hit her # The \"and\" in English is not present as a separate word in this specific Arabic dialect construction.\n\n[بتذكر] مرة واحد بالرمل هجمنا عليه => [I remember] once someone in the sand we attacked him\nبتذكر [مرة] واحد بالرمل هجمنا عليه => I remember [once] someone in the sand we attacked him\nبتذكر مرة [واحد] بالرمل هجمنا عليه => I remember once [someone] in the sand we attacked him\nبتذكر مرة واحد [بالرمل] هجمنا عليه => I remember once someone [in the sand] we attacked him\nبتذكر مرة واحد بالرمل [هجمنا] عليه => I remember once someone in the sand [we attacked] him\nبتذكر مرة واحد بالرمل هجمنا [عليه] => I remember once someone in the sand we attacked [him]\n\n[يعني] فش مزح يعني => [I mean], no joking, I mean\nيعني [فش] مزح يعني => I mean, [no] joking, I mean\nيعني فش [مزح] يعني => I mean, no [joking], I mean\nيعني فش مزح [يعني] => I mean, no joking, [I mean]\n\n[اثنين] يثبتوا واثنين يضربوا => [Two] hold him and two hit\nاثنين [يثبتوا] واثنين يضربوا => Two [hold him] and two hit\nاثنين يثبتوا [و]اثنين يضربوا => Two hold him [and] two hit\nاثنين يثبتوا و[اثنين] يضربوا => Two hold him and [two] hit\nاثنين يثبتوا واثنين [يضربوا] => Two hold him and two [hit]\n\n[إذا] المعلم غلط طبعاً لازم نحن نرد => [If] the teacher made a mistake, of course we had to respond\nإذا [المعلم] غلط طبعاً لازم نحن نرد => If [the teacher] made a mistake, of course we had to respond\nإذا المعلم [غلط] طبعاً لازم نحن نرد => If the teacher [made a mistake], of course we had to respond\nإذا المعلم غلط [طبعاً] لازم نحن نرد => If the teacher made a mistake, [of course] we had to respond\nإذا المعلم غلط طبعاً [لازم] نحن نرد => If the teacher made a mistake, of course we [had to] respond\nإذا المعلم غلط طبعاً لازم [نحن] نرد => If the teacher made a mistake, of course [we] had to respond\nإذا المعلم غلط طبعاً لازم نحن [نرد] => If the teacher made a mistake, of course we had to [respond]\n\n[يعني] كل الأربعة فش يعني => [I mean] all four, no joke, I mean\nيعني [كل] الأربعة فش يعني => I mean [all] four, no joke, I mean\nيعني كل [الأربعة] فش يعني => I mean all [four], no joke, I mean\nيعني كل الأربعة [فش] يعني => no joke # custom translation because 'fish' literally means 'there isn't' but is used here for 'no joke'\nيعني كل الأربعة فش [يعني] => I mean all four, no joke, [I mean]\n\n[صح] غلط الحق على المعلم => [True], the mistake is on the teacher\nصح [غلط] الحق على المعلم => True, the [mistake] is on the teacher\nصح غلط [الحق] على المعلم => the fault, the blame # \"الحق\" here refers to the responsibility or fault in the idiom \"الحق على\"\nصح غلط الحق [على] المعلم => True, the mistake is [on] the teacher\nصح غلط الحق على [المعلم] => True, the mistake is on [the teacher]\n\n[عدن] مشكلجية شوي مرات => [Waad] is a troublemaker sometimes\nعدن [مشكلجية] شوي مرات => Waad is [a troublemaker] sometimes\nعدن مشكلجية [شوي] مرات => a bit, a little\nعدن مشكلجية شوي [مرات] => Waad is a troublemaker [sometimes]\n\n[بس] حنونة يعني => [But] kind, I mean\nبس [حنونة] يعني => But [kind], I mean\nبس حنونة [يعني] => But kind, [I mean]\n\n[عدن] لا مبالية خلينا نقول => [Waad] is indifferent, let's say\nعدن [لا مبالية] خلينا نقول => Waad is [indifferent], let's say\nعدن لا مبالية [خلينا] نقول => Waad is indifferent, [let's] say\nعدن لا مبالية خلينا [نقول] => Waad is indifferent, let's [say]\n\n[محامي دفاع] عدن ومشكلجية عدن => Waad is a [defense lawyer] and Waad is a troublemaker\nمحامي دفاع [عدن] ومشكلجية عدن => [Waad] is a defense lawyer and Waad is a troublemaker\nمحامي دفاع عدن [و]مشكلجية عدن => Waad is a defense lawyer [and] Waad is a troublemaker\nمحامي دفاع عدن و[مشكلجية] عدن => Waad is a defense lawyer and Waad is a [troublemaker]\nمحامي دفاع عدن ومشكلجية [عدن] => Waad is a defense lawyer and [Waad] is a troublemaker\n\n[أكيد] قالوا لك عني محامية => They [surely] told you I'm a lawyer\nأكيد [قالوا] لك عني محامية => they told\nأكيد قالوا [لك] عني محامية => They surely told [you] I'm a lawyer\nأكيد قالوا لك [عني] محامية => that I am, about me\nأكيد قالوا لك عني [محامية] => They surely told you I'm a [lawyer]\n\n[و]بتمشي اللي براسها => [And] does what's in her head\nو[بتمشي] اللي براسها => And [does] what's in her head\nوبتمشي [اللي] براسها => And does [what's] in her head\nوبتمشي اللي [براسها] => And does what's [in her head]\n\n[سامي] أخوي العصبي => [Sami] is my angry brother\nسامي [أخوي] العصبي => Sami is [my brother]\nسامي أخوي [العصبي] => Sami is my [angry] brother\n\n[سامي] عصبي فش عنده بتجادلش => [Sami] is angry, no arguing with him\nسامي [عصبي] فش عنده بتجادلش => Sami [is angry], no arguing with him\nسامي عصبي [فش] عنده بتجادلش => Sami is angry, [no] arguing with him\nسامي عصبي فش [عنده] بتجادلش => Sami is angry, no arguing [with him]\nسامي عصبي فش عنده [بتجادلش] => Sami is angry, no [arguing] with him # بتجادلش contains the negation \"sh\", but \"arguing\" is the closest semantic match in this sentence structure\n\n[عصبي] بس بالمواقف عن جد بتلاقيه => [Angry] but in situations you really find him\nعصبي [بس] بالمواقف عن جد بتلاقيه => Angry [but] in situations you really find him\nعصبي بس [بالمواقف] عن جد بتلاقيه => Angry but [in situations] you really find him\nعصبي بس بالمواقف [عن جد] بتلاقيه => Angry but in situations you [really] find him \nعصبي بس بالمواقف عن جد [بتلاقيه] => you find him # custom translation because 'you... find him' is split by 'really' in the English sentence\n\n[هن] قالوا عني أكيد عصبي => [They] said about me surely angry\nهن [قالوا] عني أكيد عصبي => They [said] about me surely angry\nهن قالوا [عني] أكيد عصبي => They said [about me] surely angry\nهن قالوا عني [أكيد] عصبي => They said about me [surely] angry\nهن قالوا عني أكيد [عصبي] => They said about me [angry]\n\n[بس] بكون دائماً أكيد بتراجع => [But] I always surely back down\nبس [بكون] دائماً أكيد بتراجع => I am, I will be\nبس بكون [دائماً] أكيد بتراجع => But I [always] surely back down\nبس بكون دائماً [أكيد] بتراجع => But I always [surely] back down\nبس بكون دائماً أكيد [بتراجع] => But I always surely [back down]\n\n[يعني] إذا كنت أنا على غلط بتراجع => [I mean] if I'm wrong I back down\nيعني [إذا] كنت أنا على غلط بتراجع => I mean [if] I'm wrong I back down\nيعني إذا [كنت أنا] على غلط بتراجع => I mean if [I'm] wrong I back down # The addition of the pronoun أنا to the verb كنت functions here like the English \"I'm\"\nيعني إذا كنت أنا [على] غلط بتراجع => on\nيعني إذا كنت أنا على [غلط] بتراجع => I mean if I'm [wrong] I back down\nيعني إذا كنت أنا على غلط [بتراجع] => I mean if I'm wrong [I back down] # The prefix (بـ) on the verb includes the first-person subject \"I\"\n\n[هن] هيك بيقولوا أنا لا مش عصبي => That's why [they] say I'm not angry\nهن [هيك] بيقولوا أنا لا مش عصبي => [That's why] they say I'm not angry\nهن هيك [بيقولوا] أنا لا مش عصبي => That's why they [say] I'm not angry\nهن هيك بيقولوا [أنا] لا مش عصبي => That's why they say [I'm] not angry\nهن هيك بيقولوا أنا لا [مش] عصبي => That's why they say I'm [not] angry\nهن هيك بيقولوا أنا لا مش [عصبي] => That's why they say I'm not [angry]\n\n[وعد] الشاطرة => [Waad] the smart one\nوعد [الشاطرة] => Waad [the smart one]\n\n[وعد] حنونة وعد => [Waad] is kind, Waad\nوعد [حنونة] وعد => Waad [is kind], Waad # The Arabic adjective functions as the predicate \"is kind\" in this context\nوعد حنونة [وعد] => Waad is kind, [Waad]\n\n[حنونة] كثير كثير وكثير تهتم بالعيلة => Very very [kind] and cares a lot about the family\n# كثير maps to very.\nحنونة [كثير] كثير وكثير تهتم بالعيلة => [Very] very kind and cares a lot about the family\n# The second كثير acts as the second 'very' for emphasis.\nحنونة كثير [كثير] وكثير تهتم بالعيلة => Very [very] kind and cares a lot about the family\n# وكثير contains both the conjunction 'and' and the adverb 'a lot'. Since they are separated by 'cares' in English, we use a custom translation.\nحنونة كثير كثير [وكثير] تهتم بالعيلة => and a lot\n# تهتم is the verb 'cares'.\nحنونة كثير كثير وكثير [تهتم] بالعيلة => Very very kind and [cares] a lot about the family\n# بالعيلة combines the preposition 'in/about', the definite article, and 'family'.\nحنونة كثير كثير وكثير تهتم [بالعيلة] => Very very kind and cares a lot [about the family]\n\n[بيقولوا] عني هادية أهدى شيء فيهم => [They say] about me I'm calm, the calmest of them\nبيقولوا [عني] هادية أهدى شيء فيهم => They say [about me] I'm calm, the calmest of them\nبيقولوا عني [هادية] أهدى شيء فيهم => They say about me [I'm calm], the calmest of them\nبيقولوا عني هادية [أهدى شيء] فيهم => They say about me I'm calm, [the calmest] of them # aligned as a unit because \"something most/more...\" functions as a superlative\nبيقولوا عني هادية أهدى شيء [فيهم] => They say about me I'm calm, the calmest [of them]\n\n[محمد] كثير هادي بني آدم كثير هادي => [Mohammad] is very calm, a very calm person\nمحمد [كثير] هادي بني آدم كثير هادي => Mohammad is [very] calm, a very calm person\nمحمد كثير [هادي] بني آدم كثير هادي => Mohammad is very [calm], a very calm person\nمحمد كثير هادي [بني آدم] كثير هادي => Mohammad is very calm, a very calm [person]\nمحمد كثير هادي بني آدم [كثير] هادي => Mohammad is very calm, a [very] calm person\nمحمد كثير هادي بني آدم كثير [هادي] => Mohammad is very calm, a very [calm] person\n\n[طبعه] هادي => [His nature] is calm\nطبعه [هادي] => His nature [is calm]\n\n[محمد] أكثر بني آدم زاتت الدنيا => [Mohammad] is the most person who leaves the world behind him\nمحمد [أكثر] بني آدم زاتت الدنيا => Mohammad is [the most] person who leaves the world behind him\nمحمد أكثر [بني آدم] زاتت الدنيا => Mohammad is the most [person] who leaves the world behind him # Literal: sons of Adam, meaning human or person\nمحمد أكثر بني آدم [زاتت] الدنيا => leaves behind, throwing away # Custom translation for the Levantine active participle \"زاتت\" (zātet)\nمحمد أكثر بني آدم زاتت [الدنيا] => Mohammad is the most person who leaves [the world] behind him\n\n[من] ورا ظهره ولا... => [From] behind his back and...\nمن [ورا] ظهره ولا... => From [behind] his back and...\nمن ورا [ظهره] ولا... => From [his back] and...\nمن ورا ظهره [ولا]... => From behind his back [and]...\n\n[بايعها] يعني ولا بيسأل عن حدا => [Sold it], I mean, doesn't ask about anyone\nبايعها [يعني] ولا بيسأل عن حدا => Sold it, [I mean], doesn't ask about anyone\nبايعها يعني [ولا بيسأل] عن حدا => Sold it, I mean, [doesn't ask] about anyone\nبايعها يعني ولا بيسأل [عن] حدا => Sold it, I mean, doesn't ask [about] anyone\nبايعها يعني ولا بيسأل عن [حدا] => Sold it, I mean, doesn't ask about [anyone]\n\n[بيروح] على الشغل وبروح => [Goes] to work and goes\nبيروح [على] الشغل وبروح => Goes [to] work and goes\nبيروح على [الشغل] وبروح => Goes to [work] and goes\nبيروح على الشغل [وبروح] => Goes to work [and goes] # the prefix \"و\" in Arabic translates to \"and\" and is attached to the verb \"بروح\" (goes)\n\n[بارد] الأعصاب أو لا مبالي => [Cold] nerves or indifferent\nبارد [الأعصاب] أو لا مبالي => Cold [nerves] or indifferent\nبارد الأعصاب [أو] لا مبالي => Cold nerves [or] indifferent\nبارد الأعصاب أو [لا مبالي] => Cold nerves or [indifferent]\n\n[أكثر] بيحكوا عني دائماً => They talk about me [the most] always\nأكثر [بيحكوا] عني دائماً => [They talk] about me the most always\nأكثر بيحكوا [عني] دائماً => They talk [about me] the most always\nأكثر بيحكوا عني [دائماً] => They talk about me the most [always]\n\n[كان في] صعوبة على الأهل مش علينا => [There was] difficulty on the parents not on us\nكان في [صعوبة] على الأهل مش علينا => There was [difficulty] on the parents not on us\nكان في صعوبة [على] الأهل مش علينا => There was difficulty [on] the parents not on us\nكان في صعوبة على [الأهل] مش علينا => There was difficulty on [the parents] not on us # الأهل literally means family or kin, but is used here for parents\nكان في صعوبة على الأهل [مش] علينا => There was difficulty on the parents [not] on us\nكان في صعوبة على الأهل مش [علينا] => There was difficulty on the parents not [on us] # علينا includes the preposition and the pronoun \"us\"\n\n[نحن] ما حسينا بالشيء بس الأهل => [We] didn't feel the thing but the parents\nنحن [ما حسينا] بالشيء بس الأهل => We [didn't feel] the thing but the parents\nنحن ما حسينا [بالشيء] بس الأهل => We didn't feel [the thing] but the parents\nنحن ما حسينا بالشيء [بس] الأهل => We didn't feel the thing [but] the parents\nنحن ما حسينا بالشيء بس [الأهل] => We didn't feel the thing but [the parents]\n\n[يعني] أنا كيف بشوف ولد صغير بيبكي => [I mean] how can I see a small child crying\nيعني [أنا] كيف بشوف ولد صغير بيبكي => I mean how can [I] see a small child crying\nيعني أنا [كيف] بشوف ولد صغير بيبكي => I mean [how] can I see a small child crying\nيعني أنا كيف [بشوف] ولد صغير بيبكي => can see, I see # 'بشوف' includes the 'I' subject and the verb 'see'\nيعني أنا كيف بشوف [ولد] صغير بيبكي => I mean how can I see a [child] crying\nيعني أنا كيف بشوف ولد [صغير] بيبكي => I mean how can I see a [small] child crying\nيعني أنا كيف بشوف ولد صغير [بيبكي] => I mean how can I see a small child [crying]\n\n[بتحملش] كيف أربعة عم بيبكوا؟ => [Can't bear] how four are crying?\nبتحملش [كيف] أربعة عم بيبكوا؟ => Can't bear [how] four are crying?\nبتحملش كيف [أربعة] عم بيبكوا؟ => Can't bear how [four] are crying?\nبتحملش كيف أربعة [عم بيبكوا]؟ => Can't bear how four [are crying]? # عم is a continuous marker, and together with بيبكوا they form the \"are crying\" structure.\n\n[الفيفة] الصبح لما أمي كانت تفيقنا => [The hassle] of morning when mom woke us up # assumed \"الفيفة\" correlates to the prompt's translation of \"hassle\"\nالفيفة [الصبح] لما أمي كانت تفيقنا => The hassle of [morning] when mom woke us up\nالفيفة الصبح [لما] أمي كانت تفيقنا => The hassle of morning [when] mom woke us up\nالفيفة الصبح لما [أمي] كانت تفيقنا => The hassle of morning when [mom] woke us up\nالفيفة الصبح لما أمي [كانت تفيقنا] => The hassle of morning when mom [woke us up]\n\n[مثلاً] على المدرسة دائماً لتجهز لأربعة => [Like] for school always to prepare for four\nمثلاً [على] المدرسة دائماً لتجهز لأربعة => Like [for] school always to prepare for four\nمثلاً على [المدرسة] دائماً لتجهز لأربعة => Like for [school] always to prepare for four\nمثلاً على المدرسة [دائماً] لتجهز لأربعة => Like for school [always] to prepare for four\nمثلاً على المدرسة دائماً [لتجهز] لأربعة => Like for school always [to prepare] for four\nمثلاً على المدرسة دائماً لتجهز [لأربعة] => Like for school always to prepare [for four]\n\n[كل شيء] لأربعة => [Everything] for four\n[كل] شيء لأربعة => every # mapping the parts of \"everything\" for learner clarity\nكل [شيء] لأربعة => thing # mapping the parts of \"everything\" for learner clarity\nكل شيء [لـ]أربعة => for\nكل شيء لـ[أربعة] => Everything for [four]\n\n[أنت] كل المسؤولية لأربعة => [You] have all the responsibility for four\nأنت [كل] المسؤولية لأربعة => You have [all] the responsibility for four\nأنت كل [المسؤولية] لأربعة => You have all [the responsibility] for four\nأنت كل المسؤولية [لأربعة] => You have all the responsibility [for four]\n\n[أنت] بتهكلش هم ولد عندك أربعة => [You] don't worry about one child you have four\nأنت [بتهكلش هم] ولد عندك أربعة => You [don't worry] about one child you have four # \"هكل هم\" is a common Levantine idiom for \"to worry\", with the \"sh\" suffix for negation\nأنت بتهكلش هم [ولد] عندك أربعة => You don't worry about [one child] you have four\nأنت بتهكلش هم ولد [عندك] أربعة => You don't worry about one child [you have] four\nأنت بتهكلش هم ولد عندك [أربعة] => You don't worry about one child you have [four]\n\n[وحتى] من ناحية كيف بيقولوها => [And even] in terms of how they say it\nوحتى [من ناحية] كيف بيقولوها => And even [in terms of] how they say it\nوحتى من ناحية [كيف] بيقولوها => And even in terms of [how] they say it\nوحتى من ناحية كيف [بيقولوها] => And even in terms of how [they say it]\n\n[نطلع] نتعلم الأربعة مع بعض نفس الوقت => [We go out] to study all four together at the same time\nنطلع [نتعلم] الأربعة مع بعض نفس الوقت => We go out [to study] all four together at the same time\nنطلع نتعلم [الأربعة] مع بعض نفس الوقت => We go out to study [all four] together at the same time\nنطلع نتعلم الأربعة [مع بعض] نفس الوقت => We go out to study all four [together] at the same time\nنطلع نتعلم الأربعة مع بعض [نفس] الوقت => same\nنطلع نتعلم الأربعة مع بعض نفس [الوقت] => We go out to study all four together at the same [time]\nنطلع نتعلم الأربعة مع بعض [نفس الوقت] => We go out to study all four together [at the same time]\n\n# \"نتعلم\" (we learn/study) maps to \"to study\" in this context\n# \"مع بعض\" is a fixed phrase for \"together\"\n# \"نفس الوقت\" is aligned as a phrase to capture the full English adverbial construction, but also broken down for individual word meanings.\n\n[كل] فترة لها صعوبتها يعني => [Every] period has its difficulty, I mean\nكل [فترة] لها صعوبتها يعني => Every [period] has its difficulty, I mean\nكل فترة [لها] صعوبتها يعني => Every period [has] its difficulty, I mean\nكل فترة لها [صعوبتها] يعني => Every period has [its difficulty], I mean\nكل فترة لها صعوبتها [يعني] => Every period has its difficulty, [I mean]\n\n[بس] نحن ما حسينا إنه قد إيه صعب الشيء => [But] we didn't feel how hard the thing was\nبس [نحن] ما حسينا إنه قد إيه صعب الشيء => But [we] didn't feel how hard the thing was\nبس نحن [ما حسينا] إنه قد إيه صعب الشيء => But we [didn't feel] how hard the thing was\nبس نحن ما حسينا [إنه] قد إيه صعب الشيء => that, it # in this context it introduces the clause\nبس نحن ما حسينا إنه [قد إيه] صعب الشيء => But we didn't feel [how] hard the thing was\nبس نحن ما حسينا إنه قد إيه [صعب] الشيء => But we didn't feel how [hard] the thing was\nبس نحن ما حسينا إنه قد إيه صعب [الشيء] => But we didn't feel how hard [the thing] was\n\n[يعني] ولا مرة قصروا معنا بشيء => [I mean] they never fell short with us in anything\nيعني [ولا مرة] قصروا معنا بشيء => I mean they [never] fell short with us in anything\nيعني ولا مرة [قصروا] معنا بشيء => I mean they never [fell short] with us in anything\nيعني ولا مرة قصروا [معنا] بشيء => I mean they never fell short [with us] in anything\nيعني ولا مرة قصروا معنا [بشيء] => I mean they never fell short with us [in anything]\n\n[فنحن] ما حسينا أنا من طرفي ما حسيت => [So we] didn't feel, I from my side didn't feel\nفنحن [ما حسينا] أنا من طرفي ما حسيت => So we [didn't feel], I from my side didn't feel\nفنحن ما حسينا [أنا] من طرفي ما حسيت => So we didn't feel, [I] from my side didn't feel\nفنحن ما حسينا أنا [من طرفي] ما حسيت => So we didn't feel, I [from my side] didn't feel\nفنحن ما حسينا أنا من طرفي [ما حسيت] => So we didn't feel, I from my side [didn't feel]\n\n[إنه] كان الشيء صعب يعني => [That] the thing was hard, I mean\nإنه [كان] الشيء صعب يعني => That the thing [was] hard, I mean\nإنه كان [الشيء] صعب يعني => That [the thing] was hard, I mean\nإنه كان الشيء [صعب] يعني => That the thing was [hard], I mean\nإنه كان الشيء صعب [يعني] => That the thing was hard, [I mean]\n\n[في] كل مراحل حياتي يعني => [In] all stages of my life, I mean\nفي [كل] مراحل حياتي يعني => In [all] stages of my life, I mean\nفي كل [مراحل] حياتي يعني => In all [stages] of my life, I mean\nفي كل مراحل [حياتي] يعني => In all stages [of my life], I mean\nفي كل مراحل حياتي [يعني] => In all stages of my life, [I mean]\n\n[بحب] إنه بالمستقبل ربنا يرزقني => [I hope] in the future God grants me\nبحب [إنه] بالمستقبل ربنا يرزقني => that # literal meaning of the particle which is omitted in the English translation\nبحب إنه [بالمستقبل] ربنا يرزقني => I hope [in the future] God grants me\nبحب إنه بالمستقبل [ربنا] يرزقني => I hope in the future [God] grants me\nبحب إنه بالمستقبل [ربنا] يرزقني => our Lord # literal meaning of the word (Rabb = Lord, -na = our)\nبحب إنه بالمستقبل ربنا [يرزقني] => I hope in the future God [grants me]\n\n[يكون عندي] توأم بس مش أربعة => [To have] twins but not four\nيكون عندي [توأم] بس مش أربعة => To have [twins] but not four\nيكون عندي توأم [بس] مش أربعة => To have twins [but] not four\nيكون عندي توأم بس [مش] أربعة => To have twins but [not] four\nيكون عندي توأم بس مش [أربعة] => To have twins but not [four]\n\n[يمكن] بحس إنه شيء صعب => [Maybe] I feel it's a hard thing\nيمكن [بحس] إنه شيء صعب => Maybe [I feel] it's a hard thing\nيمكن بحس [إنه] شيء صعب => Maybe I feel [it's] a hard thing # 'innu' functions as 'that it is' in this context\nيمكن بحس إنه [شيء] صعب => Maybe I feel it's a [thing]\nيمكن بحس إنه شيء [صعب] => Maybe I feel it's a [hard] thing\n\n[أصعب] شيء أول ما افترقنا => [The hardest] thing was when we first separated\nأصعب [شيء] أول ما افترقنا => The hardest [thing] was when we first separated\nأصعب شيء [أول] ما افترقنا => The hardest thing was when we [first] separated\nأصعب شيء أول [ما] افترقنا => The hardest thing was [when] we first separated\nأصعب شيء أول ما [افترقنا] => The hardest thing was when [we separated]\n\n[أول] ما ودعنا بعض فترة الجامعة => When we [first] said goodbye during university period\nأول [ما] ودعنا بعض فترة الجامعة => [When] we first said goodbye during university period\nأول ما [ودعنا] بعض فترة الجامعة => When we first [said goodbye] during university period\nأول ما ودعنا [بعض] فترة الجامعة => each other\nأول ما ودعنا بعض [فترة] الجامعة => When we first said goodbye during university [period]\nأول ما ودعنا بعض فترة [الجامعة] => When we first said goodbye during [university] period\n\n[كانت] كثير صعبة علينا وحتى على أهلي => [It was] very hard on us and even on my family\nكانت [كثير] صعبة علينا وحتى على أهلي => It was [very] hard on us and even on my family\nكانت كثير [صعبة] علينا وحتى على أهلي => It was very [hard] on us and even on my family\nكانت كثير صعبة [علينا] وحتى على أهلي => It was very hard [on us] and even on my family\nكانت كثير صعبة علينا [وحتى] على أهلي => It was very hard on us [and even] on my family\nكانت كثير صعبة علينا وحتى [على] أهلي => It was very hard on us and even [on] my family\nكانت كثير صعبة علينا وحتى على [أهلي] => It was very hard on us and even on [my family]\n\n[يعني] مرة واحدة الدار فضيت => [I mean] suddenly the house was empty\nيعني [مرة واحدة] الدار فضيت => [suddenly] the house was empty\nيعني مرة واحدة [الدار] فضيت => I mean suddenly [the house] was empty\nيعني مرة واحدة الدار [فضيت] => I mean suddenly the house [was empty]\n\n[أنا] وعدن قررنا إنه نروح تمريض => [Me] and Waad decided to go to nursing\nأنا [و] عدن قررنا إنه نروح تمريض => Me [and] Waad decided to go to nursing\nأنا و [عدن] قررنا إنه نروح تمريض => Me and [Waad] decided to go to nursing # عدن and Waad are aligned as the name subjects\nأنا وعدن [قررنا] إنه نروح تمريض => Me and Waad [decided] to go to nursing\nأنا وعدن قررنا [إنه نروح] تمريض => Me and Waad decided [to go] to nursing\nأنا وعدن قررنا إنه نروح [تمريض] => Me and Waad decided to go to [nursing]\n\n[و]سامي ووعد قرروا إنه يروحوا على طب => [And] Sami and Waad decided to go to medicine\nو[سامي] ووعد قرروا إنه يروحوا على طب => And [Sami] and Waad decided to go to medicine\nوسامي [و]وعد قرروا إنه يروحوا على طب => And Sami [and] Waad decided to go to medicine\nوسامي و[وعد] قرروا إنه يروحوا على طب => And Sami and [Waad] decided to go to medicine\nوسامي ووعد [قرروا] إنه يروحوا على طب => And Sami and Waad [decided] to go to medicine\nوسامي ووعد قرروا [إنه] يروحوا على طب => that # subordinator connecting the decision and the action\nوسامي ووعد قرروا إنه [يروحوا] على طب => And Sami and Waad decided [to go] to medicine\nوسامي ووعد قرروا إنه يروحوا [على] طب => And Sami and Waad decided to go [to] medicine\nوسامي ووعد قرروا إنه يروحوا على [طب] => And Sami and Waad decided to go to [medicine]\n\n[الأهل] شلبي ما كان لهم فرض => [The parents], God bless them, didn't impose on them\nالأهل [شلبي] ما كان لهم فرض => God bless them # referring to the parents as good/pleasant, translated as a blessing\nالأهل شلبي [ما كان] لهم فرض => The parents, God bless them, [didn't] impose on them\nالأهل شلبي ما كان [لهم] فرض => The parents, God bless them, didn't impose [on them]\nالأهل شلبي ما كان لهم [فرض] => The parents, God bless them, didn't [impose] on them\n\nإنه [شو] نتعلم => [What] we should study\nإنه شو [نتعلم] => What [we should study]\n\n[المجال] نفسه كمجال إنساني => The same [field] as a humanitarian field\nالمجال [نفسه] كمجال إنساني => [The same] field as a humanitarian field\nالمجال نفسه [كمجال] إنساني => as a field\nالمجال نفسه كمجال [إنساني] => The same field as a [humanitarian] field\n\n[مجال] كثير بيجنن => [A field] that is very amazing\nمجال [كثير] بيجنن => A field that is [very] amazing\nمجال كثير [بيجنن] => A field that is very [amazing]\n\n[من] هذا المبدأ طلعنا الأربعة طب => [From] this principle we all four went to medicine\nمن [هذا] المبدأ طلعنا الأربعة طب => From [this] principle we all four went to medicine\nمن هذا [المبدأ] طلعنا الأربعة طب => From this [principle] we all four went to medicine\nمن هذا المبدأ [طلعنا] الأربعة طب => From this principle we all four [went] to medicine\nمن هذا المبدأ طلعنا [الأربعة] طب => From this principle we [all four] went to medicine\nمن هذا المبدأ طلعنا الأربعة [طب] => From this principle we all four went to [medicine]\n\n[لأنه] كلنا بنحب الطب يعني => [Because] we all love medicine, I mean\nلأنه [كلنا] بنحب الطب يعني => Because [we all] love medicine, I mean\nلأنه كلنا [بنحب] الطب يعني => Because we all [love] medicine, I mean\nلأنه كلنا بنحب [الطب] يعني => Because we all love [medicine], I mean\nلأنه كلنا بنحب الطب [يعني] => Because we all love medicine, [I mean]\n\n[ما بنلاقي] حالنا بمحلات ثانية صراحة => [We don't find] ourselves in other places honestly\nما بنلاقي [حالنا] بمحلات ثانية صراحة => We don't find [ourselves] in other places honestly\nما بنلاقي حالنا [بـ]محلات ثانية صراحة => in\nما بنلاقي حالنا بـ[محلات] ثانية صراحة => We don't find ourselves in other [places] honestly\nما بنلاقي حالنا بمحلات [ثانية] صراحة => We don't find ourselves in [other] places honestly\nما بنلاقي حالنا بمحلات ثانية [صراحة] => We don't find ourselves in other places [honestly]\n\n[أنا] تعلمت بجنين بالجامعة العربية => [I] studied in Jenin at the Arab\nأنا [تعلمت] بجنين بالجامعة العربية => I [studied] in Jenin at the Arab\nأنا تعلمت [بجنين] بالجامعة العربية => I studied [in Jenin] at the Arab\nأنا تعلمت بجنين [بالجامعة] العربية => at the university\nأنا تعلمت بجنين بالجامعة [العربية] => I studied in Jenin at [the Arab]\n\n[الأمريكية] وإخوتي تعلموا بأوكرانيا => [American University] and my siblings studied in Ukraine\nالأمريكية [و]إخوتي تعلموا بأوكرانيا => American University [and] my siblings studied in Ukraine\nالأمريكية و[إخوتي] تعلموا بأوكرانيا => American University and [my siblings] studied in Ukraine\nالأمريكية وإخوتي [تعلموا] بأوكرانيا => American University and my siblings [studied] in Ukraine\nالأمريكية وإخوتي تعلموا [ب]أوكرانيا => American University and my siblings studied [in] Ukraine\nالأمريكية وإخوتي تعلموا ب[أوكرانيا] => American University and my siblings studied in [Ukraine]\n\n[بس] بوقت الحرب هن نقلوا على جورجيا => [But] during the war they transferred to Georgia\nبس [بوقت] الحرب هن نقلوا على جورجيا => [during] the war they transferred to Georgia\nبس بوقت [الحرب] هن نقلوا على جورجيا => But during [the war] they transferred to Georgia\nبس بوقت الحرب [هن] نقلوا على جورجيا => But during the war [they] transferred to Georgia\nبس بوقت الحرب هن [نقلوا] على جورجيا => But during the war they [transferred] to Georgia\nبس بوقت الحرب هن نقلوا [على] جورجيا => But during the war they transferred [to] Georgia\nبس بوقت الحرب هن نقلوا على [جورجيا] => But during the war they transferred to [Georgia]\n\n[أولها] كان صعب إنه هن برا => [At first] it was hard that they were abroad\nأولها [كان] صعب إنه هن برا => At first it [was] hard that they were abroad\nأولها كان [صعب] إنه هن برا => At first it was [hard] that they were abroad\nأولها كان صعب [إنه] هن برا => At first it was [that] they were abroad\nأولها كان صعب إنه [هن] برا => At first it was hard that [they] were abroad\nأولها كان صعب إنه هن [برا] => At first it was hard that they were [abroad]\n\n[و]نحن بنتعلم هون => [And] we were studying here\nو[نحن] بنتعلم هون => And [we] were studying here\nونحن [بنتعلم] هون => And we [were studying] here\nونحن بنتعلم [هون] => And we were studying [here]\n\n[كنت] أول سنة دائماً أظلي مع عدن => [I spent] the first year always with Waad\nكنت [أول] سنة دائماً أظلي مع عدن => I spent the [first] year always with Waad\nكنت أول [سنة] دائماً أظلي مع عدن => I spent the first [year] always with Waad\nكنت أول سنة [دائماً] أظلي مع عدن => I spent the first year [always] with Waad\nكنت أول سنة دائماً [أظلي] مع عدن => stay, staying, remain\nكنت أول سنة دائماً أظلي [مع] عدن => I spent the first year always [with] Waad\nكنت أول سنة دائماً أظلي مع [عدن] => I spent the first year always with [Waad] # عدن usually translates to Adan, but following the provided English text for the name \"Waad\"\n\n[كنا] عن جد ندعم بعض => [We] really supported each other\nكنا [عن جد] ندعم بعض => We [really] supported each other\nكنا عن جد [ندعم] بعض => We really [supported] each other\nكنا عن جد ندعم [بعض] => We really supported [each other]\n\n[بعديها] تعودنا إنه خلص كل واحد => [Then] we got used to that each one\nبعديها [تعودنا] إنه خلص كل واحد => Then [we got used to] that each one\nبعديها تعودنا [إنه] خلص كل واحد => Then we got used to [that] each one\nبعديها تعودنا إنه [خلص] كل واحد => that's it, finally # 'خلص' is used here as a filler or a marker of a settled situation\nبعديها تعودنا إنه خلص [كل واحد] => Then we got used to that [each one]\n\n[مجبور] يعيش حياته لحاله => [Is forced] to live his life alone\nمجبور [يعيش] حياته لحاله => Is forced [to live] his life alone\nمجبور يعيش [حياته] لحاله => Is forced to live [his life] alone\nمجبور يعيش حياته [لحاله] => Is forced to live his life [alone]\n\n[أنا] ووعد أكثر شيء يعني بنظلنا => [Me] and Waad mostly, I mean we stay\nأنا [و]وعد أكثر شيء يعني بنظلنا => Me [and] Waad mostly, I mean we stay\nأنا و[وعد] أكثر شيء يعني بنظلنا => Me and [Waad] mostly, I mean we stay\nأنا ووعد [أكثر شيء] يعني بنظلنا => Me and Waad [mostly], I mean we stay\nأنا ووعد أكثر شيء [يعني] بنظلنا => Me and Waad mostly, [I mean] we stay\nأنا ووعد أكثر شيء يعني [بنظلنا] => Me and Waad mostly, I mean [we stay] # بنظلنا translates to \"we stay\" in this context\n\n[حتى] لسا بعد ما خلصنا بنظل مع بعض => [Even] still after we finished we stay together\nحتى [لسا] بعد ما خلصنا بنظل مع بعض => Even [still] after we finished we stay together\nحتى لسا [بعد ما] خلصنا بنظل مع بعض => Even still [after] we finished we stay together\nحتى لسا بعد ما [خلصنا] بنظل مع بعض => Even still after [we finished] we stay together\nحتى لسا بعد ما خلصنا [بنظل] مع بعض => Even still after we finished [we stay] together\nحتى لسا بعد ما خلصنا بنظل [مع بعض] => Even still after we finished we stay [together]\n\n[حتى] لسا برنامجنا عم بنبني إنه => [Even] still our program we are building that\nحتى [لسا] برنامجنا عم بنبني إنه => Even [still] our program we are building that\nحتى لسا [برنامجنا] عم بنبني إنه => Even still [our program] we are building that\nحتى لسا برنامجنا [عم بنبني] إنه => Even still our program [we are building] that\nحتى لسا برنامجنا عم بنبني [إنه] => Even still our program we are building [that]\n\n[نعمل] عطلة مشتركة مش إنه كل واحد لحاله => [To take] a joint vacation not each one alone\nنعمل [عطلة] مشتركة مش إنه كل واحد لحاله => To take a joint [vacation] not each one alone\nنعمل عطلة [مشتركة] مش إنه كل واحد لحاله => To take a [joint] vacation not each one alone\nنعمل عطلة مشتركة [مش] إنه كل واحد لحاله => To take a joint vacation [not] each one alone\nنعمل عطلة مشتركة مش إنه [كل واحد] لحاله => To take a joint vacation not [each one] alone\nنعمل عطلة مشتركة مش إنه كل واحد [لحاله] => To take a joint vacation not each one [alone]\n\n[في عنا] أخو صغير هو عم بيتعلم صيدلة => [We have] a younger brother who is studying pharmacy\nفي عنا [أخو] صغير هو عم بيتعلم صيدلة => We have a younger [brother] who is studying pharmacy\nفي عنا أخو [صغير] هو عم بيتعلم صيدلة => We have a [younger] brother who is studying pharmacy\nفي عنا أخو صغير [هو] عم بيتعلم صيدلة => We have a younger brother [who] is studying pharmacy\nفي عنا أخو صغير هو [عم بيتعلم] صيدلة => We have a younger brother who [is studying] pharmacy\nفي عنا أخو صغير هو عم بيتعلم [صيدلة] => We have a younger brother who is studying [pharmacy]\n\n[بجورجيا] => [In Georgia] # The prefix 'بـ' means 'In' and 'جورجيا' means 'Georgia'\n\n[بعدنا] إجا بسبع سنين كان كثير تخوف => He came [after us] by seven years, there was much fear\nبعدنا [إجا] بسبع سنين كان كثير تخوف => [He came] after us by seven years, there was much fear\nبعدنا إجا [بسبع] سنين كان كثير تخوف => He came after us [by seven] years, there was much fear\nبعدنا إجا بسبع [سنين] كان كثير تخوف => He came after us by seven [years], there was much fear\nبعدنا إجا بسبع سنين [كان] كثير تخوف => He came after us by seven years, [there was] much fear\nبعدنا إجا بسبع سنين كان [كثير] تخوف => He came after us by seven years, there was [much] fear\nبعدنا إجا بسبع سنين كان كثير [تخوف] => He came after us by seven years, there was much [fear]\n\n[لأنه] انحكى إنه رح يطلع توأم يعني زينا => [Because] it was said he would come out twins like us\nلأنه [انحكى] إنه رح يطلع توأم يعني زينا => Because [it was said] he would come out twins like us\nلأنه انحكى [إنه] رح يطلع توأم يعني زينا => Because it was said [he] would come out twins like us\nلأنه انحكى إنه [رح يطلع] توأم يعني زينا => Because it was said he [would come out] twins like us\nلأنه انحكى إنه رح يطلع [توأم] يعني زينا => Because it was said he would come out [twins] like us\nلأنه انحكى إنه رح يطلع توأم [يعني] زينا => means, I mean\nلأنه انحكى إنه رح يطلع توأم يعني [زينا] => Because it was said he would come out twins [like us]\n\n[و]مزطنا يعني => [And] we panicked, I mean\nو[مزطنا] يعني => And [we panicked], I mean\nومزطنا [يعني] => And we panicked, [I mean]\n\n[نحن] نقول له صغير بالعمر طبعاً => [We] tell him he's young in age of course\nنحن [نقول] له صغير بالعمر طبعاً => We [tell] him he's young in age of course\nنحن نقول [له] صغير بالعمر طبعاً => We tell [him] he's young in age of course\nنحن نقول له [صغير] بالعمر طبعاً => We tell him he's [young] in age of course\nنحن نقول له صغير [بالعمر] طبعاً => We tell him he's young [in age] of course\nنحن نقول له صغير بالعمر [طبعاً] => We tell him he's young in age [of course]\n\n[بس] هو لؤي أكبر من جيله وواعي => [But] he is Luay, older than his generation and mature\nبس [هو] لؤي أكبر من جيله وواعي => But [he is] Luay, older than his generation and mature\nبس هو [لؤي] أكبر من جيله وواعي => But he is [Luay], older than his generation and mature\nبس هو لؤي [أكبر] من جيله وواعي => But he is Luay, [older] than his generation and mature\nبس هو لؤي أكبر [من] جيله وواعي => But he is Luay, older [than] his generation and mature\nبس هو لؤي أكبر من [جيله] وواعي => But he is Luay, older than [his generation] and mature\nبس هو لؤي أكبر من جيله [و]واعي => But he is Luay, older than his generation [and] mature\nبس هو لؤي أكبر من جيله و[واعي] => But he is Luay, older than his generation and [mature]\n\n[هو] بحسه بعيد عن العيلة => [He] feels distant from the family\nهو [بحسه] بعيد عن العيلة => I feel him to be, he seems to be # literal translation is \"I feel him\" or \"I feel it [that he is]\"\nهو بحسه [بعيد] عن العيلة => He feels [distant] from the family\nهو بحسه بعيد [عن] العيلة => He feels distant [from] the family\nهو بحسه بعيد عن [العيلة] => He feels distant from [the family]\n\n[هو] بناح ونحن بناح => [He is] on a side and we are on a side\nهو [بناح] ونحن بناح => He is [on a side] and we are on a side\nهو بناح [و]نحن بناح => He is on a side [and] we are on a side\nهو بناح و[نحن] بناح => He is on a side and [we are] on a side\nهو بناح ونحن [بناح] => He is on a side and we are [on a side]\n\n[و]كثير بيجي كشر وحيادي يعني => [And] he comes a lot sour and neutral, I mean\nو[كثير] بيجي كشر وحيادي يعني => And he comes [a lot] sour and neutral, I mean\nوكثير [بيجي] كشر وحيادي يعني => And [he comes] a lot sour and neutral, I mean\nوكثير بيجي [كشر] وحيادي يعني => And he comes a lot [sour] and neutral, I mean\nوكثير بيجي كشر [و]حيادي يعني => And he comes a lot sour [and] neutral, I mean\nوكثير بيجي كشر و[حيادي] يعني => And he comes a lot sour and [neutral], I mean\nوكثير بيجي كشر وحيادي [يعني] => And he comes a lot sour and neutral, [I mean]\n\n[ولا حتى] بنعرف عنه ولا بيعرف عنا => [We don't even] know about him nor does he know about us\nولا حتى [بنعرف] عنه ولا بيعرف عنا => we know\nولا حتى بنعرف [عنه] ولا بيعرف عنا => We don't even know [about him] nor does he know about us\nولا حتى بنعرف عنه [ولا] بيعرف عنا => We don't even know about him [nor] does he know about us\nولا حتى بنعرف عنه ولا [بيعرف] عنا => We don't even know about him nor [does he know] about us\nولا حتى بنعرف عنه ولا بيعرف [عنا] => We don't even know about him nor does he know [about us]\n\n[اسمع] أخوي الصغير دائماً بحكيها => [Listen], my little brother I always say it\nاسمع [أخوي] الصغير دائماً بحكيها => my brother # \"أخوي\" includes the possessive \"my\"\nاسمع أخوي [الصغير] دائماً بحكيها => Listen, my [little] brother I always say it\nاسمع أخوي الصغير [دائماً] بحكيها => Listen, my little brother I [always] say it\nاسمع أخوي الصغير دائماً [بحكيها] => I say it # \"بحكيها\" includes the subject (\"I\") and object (\"it\") around the \"always\" in the English phrase\n\n[البيئة] اللي ربته مش إحنا => [The environment] that raised him wasn't us\nالبيئة [اللي] ربته مش إحنا => The environment [that] raised him wasn't us\nالبيئة اللي [ربته] مش إحنا => The environment that [raised him] wasn't us\nالبيئة اللي ربته [مش] إحنا => The environment that raised him [wasn't] us\nالبيئة اللي ربته مش [إحنا] => The environment that raised him wasn't [us]\n\n[فأي شيء] إذا شفت أو سمعت عنه => [So anything] if I see or hear about him\nفأي شيء [إذا] شفت أو سمعت عنه => So anything [if] I see or hear about him\nفأي شيء إذا [شفت] أو سمعت عنه => So anything if [I see] or hear about him\nفأي شيء إذا شفت [أو] سمعت عنه => So anything if I see [or] hear about him\nفأي شيء إذا شفت أو [سمعت] عنه => So anything if I see or [hear] about him\nفأي شيء إذا شفت أو سمعت [عنه] => So anything if I see or hear [about him]\n\n[نحن] بريئين من أفعاله => [We] are innocent of his actions\nنحن [بريئين] من أفعاله => We are [innocent] of his actions\nنحن بريئين [من] أفعاله => We are innocent [of] his actions\nنحن بريئين من [أفعاله] => We are innocent of [his actions] # his actions (أفعال - actions, ه - his)\n\n[بس] لؤي حنون حنون كثير كثير لؤي => [But] Luay is kind, very very kind Luay\nبس [لؤي] حنون حنون كثير كثير لؤي => But [Luay] is kind, very very kind Luay\nبس لؤي [حنون] حنون كثير كثير لؤي => But Luay is [kind], very very kind Luay\nبس لؤي حنون [حنون] كثير كثير لؤي => But Luay is kind, very very [kind] Luay\nبس لؤي حنون حنون [كثير] كثير لؤي => But Luay is kind, [very] very kind Luay\nبس لؤي حنون حنون كثير [كثير] لؤي => But Luay is kind, very [very] kind Luay\nبس لؤي حنون حنون كثير كثير [لؤي] => But Luay is kind, very very kind [Luay]\n\n[و]عايش الحياة صح كيف بيقولوا => [And] living life right, as they say\nو[عايش] الحياة صح كيف بيقولوا => And [living] life right, as they say\nوعايش [الحياة] صح كيف بيقولوا => And living [life] right, as they say\nوعايش الحياة [صح] كيف بيقولوا => And living life [right], as they say\nوعايش الحياة صح [كيف] بيقولوا => And living life right, [as] they say\nوعايش الحياة صح كيف [بيقولوا] => And living life right, as [they say]\n\n[إذا] بتسألني أنا أكيد برجع نفس الشيء => [If] you ask me I surely would return to the same thing\nإذا [بتسألني] أنا أكيد برجع نفس الشيء => [you ask me] I surely would return to the same thing\nإذا بتسألني [أنا] أكيد برجع نفس الشيء => If you ask me [I] surely would return to the same thing\nإذا بتسألني أنا [أكيد] برجع نفس الشيء => If you ask me I [surely] would return to the same thing\nإذا بتسألني أنا أكيد [برجع] نفس الشيء => If you ask me I surely [would return] to the same thing\nإذا بتسألني أنا أكيد برجع [نفس] الشيء => If you ask me I surely would return to [the same] thing\nإذا بتسألني أنا أكيد برجع نفس [الشيء] => If you ask me I surely would return to the same [thing]\n\n[مع] توأم حياة أكشن => [With] twins life is action\nمع [توأم] حياة أكشن => With [twins] life is action\nمع توأم [حياة] أكشن => With twins [life] is action\nمع توأم حياة [أكشن] => With twins life is [action]\n\n[بس] توأم أكشن بنعمل => [But] twins action we make\nبس [توأم] أكشن بنعمل => But [twins] action we make\nبس توأم [أكشن] بنعمل => But twins [action] we make\nبس توأم أكشن [بنعمل] => But twins action [we make]\n\n[يمكن] لأني أنا تعودت إني أكون => [Maybe] because I got used to being\nيمكن [لأني] أنا تعودت إني أكون => Maybe [because] I got used to being\nيمكن لأني [أنا] تعودت إني أكون => Maybe because [I] got used to being\nيمكن لأني أنا [تعودت] إني أكون => Maybe because I [got used to] being\nيمكن لأني أنا تعودت [إني أكون] => Maybe because I got used to [being] # grouped 'inni akoun' as it functions as the gerund \"being\" in this context\n\n[ضمن] مجموعة => [Within] a group\nضمن [مجموعة] => Within [a group]\n\n[فإذا] رجع فيه الزمن آه لا بختار دائماً => [So if] time went back, ah, I'd always choose\nفإذا [رجع] فيه الزمن آه لا بختار دائماً => So if time [went back], ah, I'd always choose\nفإذا رجع [فيه] الزمن آه لا بختار دائماً => in it\nفإذا رجع فيه [الزمن] آه لا بختار دائماً => So if [time] went back, ah, I'd always choose\nفإذا رجع فيه الزمن [آه] لا بختار دائماً => So if time went back, [ah], I'd always choose\nفإذا رجع فيه الزمن آه [لا بختار] دائماً => I'd choose\nفإذا رجع فيه الزمن آه لا بختار [دائماً] => So if time went back, ah, I'd [always] choose\n\n[إني أكون] ضمن التوأم => [To be] within the twins\nإني أكون [ضمن] التوأم => To be [within] the twins\nإني أكون ضمن [التوأم] => To be within [the twins]\n\n[وبس] هن التوأم بكونوا معي => [And only then] the twins will be with me\nوبس [هن] التوأم بكونوا معي => they\nوبس هن [التوأم] بكونوا معي => And only then [the twins] will be with me\nوبس هن التوأم [بكونوا] معي => And only then the twins [will be] with me\nوبس هن التوأم بكونوا [معي] => And only then the twins will be [with me]\n\n[لأني] مبسوط معهن كثير يعني => [Because I'm] very happy with them, I mean\nلأني [مبسوط] معهن كثير يعني => Because I'm very [happy] with them, I mean\nلأني مبسوط [معهن] كثير يعني => Because I'm very happy [with them], I mean\nلأني مبسوط معهن [كثير] يعني => Because I'm [very] happy with them, I mean\nلأني مبسوط معهن كثير [يعني] => Because I'm very happy with them, [I mean]\n\n",
+    "lessons": "# التوائم الأربعة: مقدمة\n00:00.00 أكثر سؤال غريب بنسأله هو\n00:01.80 أنتم أربعة؟\n00:02.80 كيف بنفس البطن؟\n00:04.10 إنه آه، أربعة توأم ببطن واحد\n00:06.10 إنتو بتحسوا مع بعض؟\n00:07.50 بعديها: أنتم دكاترة؟!\n00:12.80 إحنا من أربع توائم، أنا الكبير\n00:15.30 أنا رقم اثنين\n00:16.50 أنا نمرة ثلاث\n00:17.70 إحنا أربع توائم وأنا الأخير\n\n# الطفولة والتعليم\n00:19.80 عندنا الترتيب عكسي، الصغار هن اللي...\n00:22.30 فارضين أكثر سيطرة\n00:24.50 كيف حكوا لنا أهلنا إنه\n00:26.50 ما قالوا لهم بالأول أربعة\n00:28.80 هن راحوا بالأول على أول مستشفى\n00:30.80 قالوا لهم عندكم توم، اثنين يعني\n00:33.50 بعديها راحوا بعرفش على أي مستشفى\n00:35.50 قالوا لهم ثلاث\n00:36.80 بمستشفى الأخير قالوا أربعة\n00:38.80 كانوا خايفين إنه يروحوا على كمان محل\n00:41.00 ليزيدوا يعني\n00:42.50 آه كل فحص كان يزيدوا\n\n# الحياة المدرسية والترابط\n00:44.30 حكوا لنا الشيء كان صدمة\n00:46.00 ما كانوا مستوعبين الشيء\n00:47.80 نحن كنا كل واحد بكيس\n00:49.50 فعشان هيك يعني ولا واحد طلع بيشبه الثاني\n00:51.50 بنفس الصف لحد صف 12\n00:53.50 واشتغلنا بعدها مع بعض برضه سنتين\n00:55.50 بالتعليم تفرقنا\n00:57.50 اثنين تمريض واثنين طب\n00:59.80 كان كثير شيء حلو\n01:01.50 وكان دائماً إنه في حدك سند\n01:03.50 إنه بتحس دائماً إنك أنت بأمان\n01:05.50 وين ما تمشي شمال يمين بتلاقيهم حدك\n\n# الدعم المتبادل والمسؤولية\n01:07.50 بنتساعد بكل شيء، بكل المجالات بنتساعد\n01:09.50 بكل شيء يعني\n01:11.50 ودائماً نفس العمر يعني مش إنه أخوك\n01:13.50 من أعمار ثانية بفهمكاش يعني\n01:15.50 أكثر شيء كانت إنه أختي وعد\n01:17.50 هيك بيناتنا كانت الشاطرة\n01:19.50 فأنا كنت حتى لما أطلع من المدرسة\n01:21.50 بكير أو شيء\n01:23.50 كنت دائماً آخذ منها المواد\n01:25.50 على البارد المبرد زي ما بيقولوا\n01:27.50 آه كنا ننقل بعض\n\n# التضامن والدفاع عن بعض\n01:29.00 كل شيء كنا إيد واحدة كلياتنا يعني طبعاً\n01:31.50 في دائماً عندك هي الصاحب اللي كل الوقت\n01:33.50 خلص إنه أنتم مجموعة\n01:35.50 دائماً في رفقة هي اللي بتيجي لعندكم\n01:37.50 مش أنت بحاجة لشيء براني\n01:39.50 من ناحية أنت بتقدرش بالمدرسة\n01:41.50 إنك تنقل شوي\n01:43.50 لأنه في عندك مراقبين بفسدوا\n01:45.50 بفسدوا\n01:47.50 أنت بتروح بتوصي واحد\n01:49.50 المشكلة إنك بتقول له تفسدش\n01:51.50 خلص صار معي هيك تقولش لحدا\n01:53.50 أنت بتغلط معه بكلمة فهو دغري بيفتح\n\n# العقاب الجماعي والتضامن\n01:55.50 طيب يا عمي خلص لما؟\n01:57.50 إحنا هذا سر بيني وبينك\n01:59.50 مثلاً واحد يغلط فينا بالمدرسة\n02:01.50 يغلط مع المعلم أو شيء\n02:03.50 واحد منا كان يفسد للأهل\n02:05.50 وإذا واحد من إخوتي حاول إنه يغطي علي\n02:07.50 كان هو يتعاقب أكثر مني\n02:09.50 فما كناش نستجري نغطي يعني\n02:11.00 سامي، آه كان يفسد\n02:12.50 بس كان الشيء الصعب دائماً إنه\n02:14.50 العقاب كان رباعي\n02:16.50 يعني إذا واحد غلط الأربعة يتعاقبوا\n02:18.50 فكنا دائماً مجبورين إنه\n02:20.50 الأربعة نوقف ضده يعني\n\n# الدفاع عن بعض في المدرسة\n02:22.50 طوش نفس الشيء لما حدا يغلط\n02:24.50 الأربعة بنكون محامي دفاع\n02:26.50 أكثر شيء بالابتدائية\n02:28.50 ما كان حدا يستجري يحكي معانا\n02:30.50 كنا فش يعني الأربعة نهجم\n02:32.50 يعني مثلاً كانت واحدة تطلع على أختي\n02:34.50 أو شيء تضايقها كنت أروح دغري أضربها\n02:36.50 بتذكر مرة واحد بالرمل هجمنا عليه\n02:38.50 يعني فش مزح يعني\n02:41.00 اثنين يثبتوا واثنين يضربوا\n02:43.50 إذا المعلم غلط طبعاً لازم نحن نرد\n02:45.50 يعني كل الأربعة فش يعني\n02:47.50 صح غلط الحق على المعلم\n\n# شخصيات التوائم\n02:50.50 عدن مشكلجية شوي مرات\n02:52.50 بس حنونة يعني\n02:54.50 عدن لا مبالية خلينا نقول\n02:56.50 محامي دفاع عدن ومشكلجية عدن\n02:58.50 أكيد قالوا لك عني محامية\n03:01.50 وبتمشي اللي براسها\n03:03.50 سامي أخوي العصبي\n03:05.00 سامي عصبي فش عنده بتجادلش\n03:07.50 عصبي بس بالمواقف عن جد بتلاقيه\n03:09.50 هن قالوا عني أكيد عصبي\n03:11.50 بس بكون دائماً أكيد بتراجع\n03:13.50 يعني إذا كنت أنا على غلط بتراجع\n03:15.50 هن هيك بيقولوا أنا لا مش عصبي\n03:17.50 وعد الشاطرة\n03:18.50 وعد حنونة وعد\n03:20.50 حنونة كثير كثير وكثير تهتم بالعيلة\n03:22.50 بيقولوا عني هادية أهدى شيء فيهم\n03:24.50 محمد كثير هادي بني آدم كثير هادي\n03:26.50 طبعه هادي\n03:28.50 محمد أكثر بني آدم زاتت الدنيا\n03:30.50 من ورا ظهره ولا...\n03:32.50 بايعها يعني ولا بيسأل عن حدا\n03:34.50 بيروح على الشغل وبروح\n03:36.50 بارد الأعصاب أو لا مبالي\n03:38.50 أكثر بيحكوا عني دائماً\n\n# التحديات العائلية\n03:40.50 كان في صعوبة على الأهل مش علينا\n03:42.50 نحن ما حسينا بالشيء بس الأهل\n03:44.50 يعني أنا كيف بشوف ولد صغير بيبكي\n03:46.50 بتحملش كيف أربعة عم بيبكوا؟\n03:48.50 الفيفة الصبح لما أمي كانت تفيقنا\n03:50.50 مثلاً على المدرسة دائماً لتجهز لأربعة\n03:52.50 كل شيء لأربعة\n03:54.50 أنت كل المسؤولية لأربعة\n03:56.50 أنت بتهكلش هم ولد عندك أربعة\n03:58.50 وحتى من ناحية كيف بيقولوها\n04:00.50 نطلع نتعلم الأربعة مع بعض نفس الوقت\n04:02.50 كل فترة لها صعوبتها يعني\n04:04.50 بس نحن ما حسينا إنه قد إيه صعب الشيء\n04:06.50 يعني ولا مرة قصروا معنا بشيء\n04:08.50 فنحن ما حسينا أنا من طرفي ما حسيت\n04:10.50 إنه كان الشيء صعب يعني\n\n# التفرق والدراسة الجامعية\n04:12.50 في كل مراحل حياتي يعني\n04:14.50 بحب إنه بالمستقبل ربنا يرزقني\n04:16.50 يكون عندي توأم بس مش أربعة\n04:18.50 يمكن بحس إنه شيء صعب\n04:20.50 أصعب شيء أول ما افترقنا\n04:22.50 أول ما ودعنا بعض فترة الجامعة\n04:24.50 كانت كثير صعبة علينا وحتى على أهلي\n04:26.50 يعني مرة واحدة الدار فضيت\n04:28.50 أنا وعدن قررنا إنه نروح تمريض\n04:30.50 وسامي ووعد قرروا إنه يروحوا على طب\n04:32.50 الأهل شلبي ما كان لهم فرض\n04:34.50 إنه شو نتعلم\n04:36.50 المجال نفسه كمجال إنساني\n04:38.50 مجال كثير بيجنن\n04:40.50 من هذا المبدأ طلعنا الأربعة طب\n04:42.50 لأنه كلنا بنحب الطب يعني\n04:44.50 ما بنلاقي حالنا بمحلات ثانية صراحة\n\n# الحياة بعد التفرق\n04:46.50 أنا تعلمت بجنين بالجامعة العربية\n04:48.50 الأمريكية وإخوتي تعلموا بأوكرانيا\n04:50.50 بس بوقت الحرب هن نقلوا على جورجيا\n04:52.50 أولها كان صعب إنه هن برا\n04:54.50 ونحن بنتعلم هون\n04:56.50 كنت أول سنة دائماً أظلي مع عدن\n04:58.50 كنا عن جد ندعم بعض\n05:00.50 بعديها تعودنا إنه خلص كل واحد\n05:02.50 مجبور يعيش حياته لحاله\n05:04.50 أنا ووعد أكثر شيء يعني بنظلنا\n05:06.50 حتى لسا بعد ما خلصنا بنظل مع بعض\n05:08.50 حتى لسا برنامجنا عم بنبني إنه\n05:10.50 نعمل عطلة مشتركة مش إنه كل واحد لحاله\n\n# الأخ الأصغر لؤي\n05:12.50 في عنا أخو صغير هو عم بيتعلم صيدلة\n05:14.50 بجورجيا\n05:16.50 بعدنا إجا بسبع سنين كان كثير تخوف\n05:18.50 لأنه انحكى إنه رح يطلع توأم يعني زينا\n05:20.50 ومزطنا يعني\n05:22.50 نحن نقول له صغير بالعمر طبعاً\n05:24.50 بس هو لؤي أكبر من جيله وواعي\n05:26.50 هو بحسه بعيد عن العيلة\n05:28.50 هو بناح ونحن بناح\n05:30.50 وكثير بيجي كشر وحيادي يعني\n05:32.50 ولا حتى بنعرف عنه ولا بيعرف عنا\n05:34.50 اسمع أخوي الصغير دائماً بحكيها\n05:36.50 البيئة اللي ربته مش إحنا\n05:38.50 فأي شيء إذا شفت أو سمعت عنه\n05:40.50 نحن بريئين من أفعاله\n05:42.50 بس لؤي حنون حنون كثير كثير لؤي\n05:44.50 وعايش الحياة صح كيف بيقولوا\n\n# الخاتمة والتأمل\n05:46.50 إذا بتسألني أنا أكيد برجع نفس الشيء\n05:48.50 مع توأم حياة أكشن\n05:50.50 بس توأم أكشن بنعمل\n05:52.50 يمكن لأني أنا تعودت إني أكون\n05:54.50 ضمن مجموعة\n05:56.50 فإذا رجع فيه الزمن آه لا بختار دائماً\n05:58.50 إني أكون ضمن التوأم\n06:00.50 وبس هن التوأم بكونوا معي\n06:02.50 لأني مبسوط معهن كثير يعني",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-03 10:35:28 UTC",
+  "updated_at": "2026-04-03 11:12:19 UTC",
+  "exported_at": "2026-04-03T11:12:19Z"
+}

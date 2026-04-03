@@ -20,5 +20,15 @@ class String
       end
     end
   end
-end
 
+  def slug_for_language
+    return "untitled" if blank?
+
+    downcase
+      .gsub(/[^\p{L}\p{N}\s-]/, "")
+      .gsub(/\s+/, "-")
+      .gsub(/-+/, "-")
+      .strip
+      .first(50)
+  end
+end

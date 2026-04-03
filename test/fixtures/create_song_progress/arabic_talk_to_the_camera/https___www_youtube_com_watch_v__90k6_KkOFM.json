@@ -1,0 +1,1012 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=_90k6-KkOFM",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "لما بتعصبن،",
+        "timestamp": "00:00.00",
+        "text_l2": "When I get angry,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "حراج عليك إذا حدا بيفهمني،",
+        "timestamp": "00:02.40",
+        "text_l2": "It's hard for anyone to understand me,"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "بصير تايلندي.",
+        "timestamp": "00:04.80",
+        "text_l2": "I end up sounding Thai."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "بصراحة إنه أنا في كتير مرات",
+        "timestamp": "00:06.00",
+        "text_l2": "Honestly, there are many times"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "إنه أنا بغني فيها وما بتأتئش.",
+        "timestamp": "00:09.00",
+        "text_l2": "where I sing and I don't stutter."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "كنت نازل على زي تنقول ديت، على موعد.",
+        "timestamp": "00:13.00",
+        "text_l2": "I was going on a, like, date, an appointment."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "أول مرة يعني كنت بطلع معي الصبية.",
+        "timestamp": "00:16.00",
+        "text_l2": "The first time, I was going out with the guys."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "عم بجرب أحكي كل ما أجي أحكي",
+        "timestamp": "00:18.50",
+        "text_l2": "I try to speak, every time I try to speak"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "عم بحس في التأتأة بدها إنه كتير كانت قوية.",
+        "timestamp": "00:21.00",
+        "text_l2": "I feel the stuttering was very strong."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "المشكلة عند حرف الـ س عندي.",
+        "timestamp": "00:25.00",
+        "text_l2": "The problem is with the letter 'S' for me."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "الناس بصير تقول لي شو؟ مش فاهمك، إيش؟",
+        "timestamp": "00:29.00",
+        "text_l2": "People would say to me, What? I don't understand you, huh?"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "إحكي للكاميرا",
+        "timestamp": "00:33.00",
+        "text_l2": "Speak to the camera"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "أنا الاسم تبعي كـ كـ كـ كارين.",
+        "timestamp": "00:37.00",
+        "text_l2": "My name is K-K-K-Karen."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "أنا من حيفا وعمري 20 سنة.",
+        "timestamp": "00:41.00",
+        "text_l2": "I'm from Haifa and I'm 20 years old."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "أنا اسمي وسام غنايم",
+        "timestamp": "00:44.00",
+        "text_l2": "My name is Wissam Ghunaim"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "من سـ سـ سـ سخنين أنا من سخنين.",
+        "timestamp": "00:47.00",
+        "text_l2": "From S-S-S-Sakhnin, I'm from Sakhnin."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "متزوج عمري 43 عندي تلات بنات.",
+        "timestamp": "00:50.00",
+        "text_l2": "Married, I'm 43, I have three daughters."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "اسمي عون زاهر، أنا من عسفيا",
+        "timestamp": "00:54.00",
+        "text_l2": "My name is Awn Zaher, I'm from Isfiya"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "وعمري 18 سنة.",
+        "timestamp": "00:56.50",
+        "text_l2": "And I'm 18 years old."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "أنا عيسى جمال، ناشط اجتماعي",
+        "timestamp": "01:00.00",
+        "text_l2": "I'm Issa Jamal, a social activist"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "من كفر قرع، عمري 26 سنة.",
+        "timestamp": "01:02.50",
+        "text_l2": "From Kafr Qara, I'm 26 years old."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "عندي إعاقة بصرية والتأتأة.",
+        "timestamp": "01:05.00",
+        "text_l2": "I have a visual impairment and stuttering."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "التأتأة هي من ناحية طبية وعلمية",
+        "timestamp": "01:09.00",
+        "text_l2": "Stuttering, medically and scientifically speaking,"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "هي أكتر زي شيء بيجي عن طريق الوراثة.",
+        "timestamp": "01:12.50",
+        "text_l2": "is mostly something that comes through genetics."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "التأتأة مشكلتها بالأعصاب.",
+        "timestamp": "01:17.00",
+        "text_l2": "The problem with stuttering is in the nerves."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "التأتأة هي أكترها التوتر، العصبية،",
+        "timestamp": "01:20.00",
+        "text_l2": "Stuttering is mostly about tension, nervousness,"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "لما بمثل متضايق،",
+        "timestamp": "01:23.50",
+        "text_l2": "when I feel upset,"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "بحس إنه هاد تأثير نفسي.",
+        "timestamp": "01:26.00",
+        "text_l2": "I feel this is a psychological effect."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "أنا بصف خامس",
+        "timestamp": "01:30.00",
+        "text_l2": "I was in fifth grade"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "هي المشكلة اللي عندي إياها بلشت.",
+        "timestamp": "01:32.00",
+        "text_l2": "when this problem I have started."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "ليش وكيف وشو اللي صار؟ ما حدا بيعرف.",
+        "timestamp": "01:35.00",
+        "text_l2": "Why and how and what happened? No one knows."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "إنه مش عارفين إذا الشيء كان إنه هو صدمة",
+        "timestamp": "01:39.00",
+        "text_l2": "They don't know if the thing was a shock"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "أو إنه أنا خلقت هيك.",
+        "timestamp": "01:42.00",
+        "text_l2": "or if I was born like this."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "اكتشفتها بالصف الخامس.",
+        "timestamp": "01:46.00",
+        "text_l2": "I discovered it in fifth grade."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "حسب ما أنا متذكر، كان عمري خمس سنين،",
+        "timestamp": "01:51.00",
+        "text_l2": "As far as I remember, I was five years old,"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "مرة واحدة صار عندي في الحكي صعوبة.",
+        "timestamp": "01:53.50",
+        "text_l2": "suddenly I had difficulty speaking."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "صار لما أحكي صعب أتنفس.",
+        "timestamp": "01:58.00",
+        "text_l2": "It became hard to breathe when I spoke."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "أنا عندي مشكلة التأتأة حسيتها من صف السابع.",
+        "timestamp": "02:00.00",
+        "text_l2": "I have the stuttering problem, I felt it from seventh grade."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أنا كنت بأول صف خامس",
+        "timestamp": "02:05.00",
+        "text_l2": "I was in the beginning of fifth grade"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "وأنا كنت بدي إنه أنا أقرأ",
+        "timestamp": "02:07.50",
+        "text_l2": "and I wanted to read"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "وهون إنه هي علقت معي",
+        "timestamp": "02:10.00",
+        "text_l2": "and here it got stuck with me"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "ومش عم يطلعوا الأحرف من تمي.",
+        "timestamp": "02:13.00",
+        "text_l2": "and the letters weren't coming out of my mouth."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "المريح أنا عندي مثلاً بمجموعة بعرفها.",
+        "timestamp": "02:20.00",
+        "text_l2": "It's comfortable for me, for example, in a group I know."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "وأصعب شيء هاد البني آدم ما بعرفوش",
+        "timestamp": "02:24.00",
+        "text_l2": "And the hardest thing is a person I don't know"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "اللي بلتقي أول مرة فيه يعني.",
+        "timestamp": "02:27.00",
+        "text_l2": "whom I meet for the first time, I mean."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "إنه أول ما صار الشيء أنا حسيت في شيء هون",
+        "timestamp": "02:30.00",
+        "text_l2": "When it first happened, I felt something here"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "إنه يعني كنت بدي إنه أنا أبكي",
+        "timestamp": "02:33.00",
+        "text_l2": "that, I mean, I wanted to cry"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "بس إنه ما بكيت وقتها،",
+        "timestamp": "02:36.00",
+        "text_l2": "but I didn't cry at the time,"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "لأنه ما فكرت إنه الشيء",
+        "timestamp": "02:39.00",
+        "text_l2": "because I didn't think that the thing"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "إنه هو رح يضله عندي.",
+        "timestamp": "02:41.00",
+        "text_l2": "would stay with me."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "ورحت كتير عند دكاترة وقتها،",
+        "timestamp": "02:43.00",
+        "text_l2": "And we went to many doctors back then,"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "اللي يقول لي هي المشكلة ما في لها حل،",
+        "timestamp": "02:45.50",
+        "text_l2": "one would tell me this problem has no solution,"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "اللي يقول بس إنت بتتحكم فيها.",
+        "timestamp": "02:48.00",
+        "text_l2": "another would say you just control it."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "لحد ما حكينا للدكتور تبعي",
+        "timestamp": "02:51.00",
+        "text_l2": "Until we talked to my doctor"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "وهو بعتني عند المعالجة",
+        "timestamp": "02:54.00",
+        "text_l2": "and he sent me to the therapist"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "اللي أنا قعدت عندها حوالي شي خمس سنين.",
+        "timestamp": "02:56.50",
+        "text_l2": "whom I stayed with for about five years."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "بس ما ساعدتنيش إشي يعني.",
+        "timestamp": "03:00.00",
+        "text_l2": "But she didn't help me at all, I mean."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "وقتها أنا كنت أروح عند دكاترة وما في حل.",
+        "timestamp": "03:02.00",
+        "text_l2": "And back then I used to go to doctors and there was no solution."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "كان الأستاذ عنا معالج للنطق",
+        "timestamp": "03:07.00",
+        "text_l2": "There was a teacher, a speech therapist with us"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "وصار يقول لي إحكي لي إي ومي و...",
+        "timestamp": "03:11.50",
+        "text_l2": "and he started telling me say to me Ee and Me and..."
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "يعني إنه أمد الحرف كأنه أنا قاعد بغني.",
+        "timestamp": "03:15.00",
+        "text_l2": "Meaning to stretch the letter as if I was singing."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "قلت له أستاذ حل عني، فـ.. بقدرش.",
+        "timestamp": "03:19.00",
+        "text_l2": "I told him, Teacher, fix me, so... I can't."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "قلت له هاد الموجود وما بدي أتعالج،",
+        "timestamp": "03:24.00",
+        "text_l2": "I told him this is what exists and I don't want treatment,"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "واللي بده يتقبل يتقبل،",
+        "timestamp": "03:27.00",
+        "text_l2": "and whoever wants to accept, accepts,"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "واللي بده يفهمني يفهمني،",
+        "timestamp": "03:30.00",
+        "text_l2": "and whoever wants to understand me, understands me,"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "واللي ما بده بلاش.",
+        "timestamp": "03:31.50",
+        "text_l2": "and whoever doesn't, never mind."
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "كنت نازل على زي تنقول ديت، على موعد.",
+        "timestamp": "03:33.00",
+        "text_l2": "I was going on a, like, date, an appointment."
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "كل ما أجرب أحكي أعلق وأسكت",
+        "timestamp": "03:36.00",
+        "text_l2": "Every time I try to speak I get stuck and stop"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "وظليت كل الديت ساكت يعني",
+        "timestamp": "03:39.00",
+        "text_l2": "and I stayed silent the whole date, I mean"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "وبطلنا من بعد الحدث هاد.",
+        "timestamp": "03:42.00",
+        "text_l2": "and we stopped after this event."
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "لما بغني مثلاً مع حالي بكون مبسوط،",
+        "timestamp": "03:45.00",
+        "text_l2": "When I sing, for example, alone, I'm happy,"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "ما بتأتئش.",
+        "timestamp": "03:48.00",
+        "text_l2": "I don't stutter."
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "إذا بغني وفي حوالي كان ناس،",
+        "timestamp": "03:50.00",
+        "text_l2": "If I sing and there are people around,"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "أنا أكيد إنه أنا رح أتأتئ.",
+        "timestamp": "03:53.50",
+        "text_l2": "I'm sure I will stutter."
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "في مرات إنه قبل ما أحكي الجملة",
+        "timestamp": "03:58.00",
+        "text_l2": "There are times before I say the sentence"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "بكون عارف وين بدي أتأتئ،",
+        "timestamp": "04:01.00",
+        "text_l2": "I know where I'm going to stutter,"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "مثلاً في أي كلمة أو في أي حرف",
+        "timestamp": "04:03.50",
+        "text_l2": "for example, in which word or which letter"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "بدي أعلق شوي.",
+        "timestamp": "04:06.00",
+        "text_l2": "I'm going to get stuck a bit."
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "والله بالأول كنت صعب أتأقلم فيها.",
+        "timestamp": "04:07.00",
+        "text_l2": "By God, at first it was hard for me to adapt to it."
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "كنت عم بساعد بالمركز الجماهيري.",
+        "timestamp": "04:16.00",
+        "text_l2": "I was helping at the community center."
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "كنت بدي إنه أطلب منهن مساعدة،",
+        "timestamp": "04:21.00",
+        "text_l2": "I wanted to ask them for help,"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "كل اللي كانوا هناك صاروا يضحكوا علي",
+        "timestamp": "04:24.00",
+        "text_l2": "everyone there started laughing at me"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "ويتنمروا وهيك.",
+        "timestamp": "04:27.00",
+        "text_l2": "and bully me and so on."
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "فأنا تركتهن ويعني بكيت بعدها يعني.",
+        "timestamp": "04:31.00",
+        "text_l2": "So I left them and, I mean, cried afterwards, I mean."
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "هاد ممكن أقول إنه هاد أكتر موقف",
+        "timestamp": "04:35.00",
+        "text_l2": "This I can say is the most situation"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "اللي هو أثر علي.",
+        "timestamp": "04:38.50",
+        "text_l2": "that affected me."
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "مثلاً لما بدي أحكي شيء",
+        "timestamp": "04:42.00",
+        "text_l2": "For example, when I want to say something"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "ويجي واحد يحكي عني مثلاً هاد",
+        "timestamp": "04:45.00",
+        "text_l2": "and someone comes to speak for me, like this"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "هو يكمل عني الكلمة، بتضايق منه.",
+        "timestamp": "04:47.50",
+        "text_l2": "he finishes the word for me, I get upset with him."
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "في الأول لما كنت أصغر",
+        "timestamp": "04:53.00",
+        "text_l2": "At first when I was younger"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "كان كتير يعني تعمل لي إحراج.",
+        "timestamp": "04:55.00",
+        "text_l2": "it was very, I mean, embarrassing for me."
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "بالابتدائية كانت المدرسة كتير إشي مش منيح،",
+        "timestamp": "04:58.00",
+        "text_l2": "In elementary school, the school was very not good,"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "كانوا يتنمروا علي.",
+        "timestamp": "05:01.00",
+        "text_l2": "they used to bully me."
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "وفي طالب يعني كان يتنمر علي كل يوم،",
+        "timestamp": "05:04.00",
+        "text_l2": "And there was a student, I mean, who bullied me every day,"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "إنه بالرسائل كمان وبالصف وبكل محل.",
+        "timestamp": "05:07.50",
+        "text_l2": "in messages too, and in class, and everywhere."
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "بس أحكي الكل بيفكر إنه أنا بس مضغوط",
+        "timestamp": "05:15.00",
+        "text_l2": "But when I speak, everyone thinks I'm just stressed"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "أو إنه عشان أنا مش عارف أحكي.",
+        "timestamp": "05:18.00",
+        "text_l2": "or because I don't know how to speak."
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "لحد هسا مش عم بتعامل مع الإشي.",
+        "timestamp": "05:20.00",
+        "text_l2": "Until now I'm not dealing with the thing."
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "شفت كتير معلومات عن التأتأة وجربت",
+        "timestamp": "05:23.00",
+        "text_l2": "I saw a lot of information about stuttering and tried"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "بس مش كلهن بس ولا شيء اللي هو ساعدني.",
+        "timestamp": "05:26.50",
+        "text_l2": "but not all of them, just nothing that helped me."
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "هي أكتر لازم تعرف كيف تنظم النفس",
+        "timestamp": "05:31.00",
+        "text_l2": "It's more about knowing how to regulate breathing"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "وإنت عم بتحكي.",
+        "timestamp": "05:34.00",
+        "text_l2": "while you are speaking."
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "إنه مثلاً هسا أنا في نص محادثة،",
+        "timestamp": "05:37.00",
+        "text_l2": "Like, for example, now I'm in the middle of a conversation,"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "لازم زي إنه أعمل في رجلي إيقاع",
+        "timestamp": "05:40.00",
+        "text_l2": "I need to, like, make a rhythm with my leg"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "أو شيء",
+        "timestamp": "05:42.00",
+        "text_l2": "or something"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "عشان الحكي يطلع إنه سلس أكتر.",
+        "timestamp": "05:43.00",
+        "text_l2": "so that the speech comes out smoother."
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "أما شفت إنه هاي الأشياء",
+        "timestamp": "05:47.00",
+        "text_l2": "But I saw that these things"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "مش كتير بتمشي في الحقيقة يعني.",
+        "timestamp": "05:49.00",
+        "text_l2": "don't really work much, in truth, I mean."
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "يعني ممكن يحسوا اللي قبالي بعبء",
+        "timestamp": "05:51.00",
+        "text_l2": "I mean, those in front of me might feel burdened"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "أو مثلاً شفقة،",
+        "timestamp": "05:54.00",
+        "text_l2": "or, for example, pity,"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "بس أنا بقول الشفقة على المجتمع هاد.",
+        "timestamp": "05:56.50",
+        "text_l2": "but I say pity on this society."
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "كتير مرات لما أنا أكون قاعدة",
+        "timestamp": "06:00.00",
+        "text_l2": "Many times when I am sitting"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "مع العيلة تبعتي أو مع الأصحاب.",
+        "timestamp": "06:03.00",
+        "text_l2": "with my family or with friends."
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "باجي بدي أحكي شيء بحرف التاء",
+        "timestamp": "06:06.00",
+        "text_l2": "I come to say something with the letter 'T'"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "وبتعلق معي وشو كلهن بصيروا",
+        "timestamp": "06:09.00",
+        "text_l2": "and it gets stuck with me and what do they all become"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "إنه هن بصيروا",
+        "timestamp": "06:11.00",
+        "text_l2": "that they become"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "إنه يضحكوا علي وأنا بضحك برضه.",
+        "timestamp": "06:12.00",
+        "text_l2": "that they laugh at me and I laugh too."
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "مع أهلي مع أصحابي بتكون في شوي",
+        "timestamp": "06:15.00",
+        "text_l2": "With my family, with my friends, it's a bit"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "أما مش كتير وهن كمان تعودوا عليها.",
+        "timestamp": "06:18.00",
+        "text_l2": "but not much, and they got used to it too."
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "المحيط الأقرب عندي يعني بتفهموا الوضع اللي عندي.",
+        "timestamp": "06:23.00",
+        "text_l2": "The closest circle to me, I mean, they understand my situation."
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "ماشي بحاول أحكي مرتين تلاتة أربعة",
+        "timestamp": "06:26.00",
+        "text_l2": "Okay, I try to speak two, three, four times"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "لما اللي قبالي بينصت منيح بفهمني.",
+        "timestamp": "06:29.00",
+        "text_l2": "when the one in front of me listens well, he understands me."
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "الحمد لله مع الوقت صرت أتقبل الشيء.",
+        "timestamp": "06:33.00",
+        "text_l2": "Praise God, with time I started to accept the thing."
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "صرت من جوا أقول إنه أنا هيك بحكي يعني،",
+        "timestamp": "06:37.00",
+        "text_l2": "I started from within to say that I speak like this, I mean,"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "هاد أنا.",
+        "timestamp": "06:40.00",
+        "text_l2": "this is me."
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "وفش عندي أي نية إني أتغير",
+        "timestamp": "06:42.00",
+        "text_l2": "And I have no intention to change"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "أو أغير من حالي عشان الناس تتقبلني يعني.",
+        "timestamp": "06:45.00",
+        "text_l2": "or change myself so people accept me, I mean."
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "بس الحمد لله أنا متعود عليها متأقلم يعني.",
+        "timestamp": "06:49.00",
+        "text_l2": "But praise God, I'm used to it, adapted, I mean."
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "أنا متقبل حالي 100% لأنه أنا هيك خلقت.",
+        "timestamp": "06:53.00",
+        "text_l2": "I accept myself 100% because I was created like this."
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "السبب الوحيد والرئيسي هي أمي،",
+        "timestamp": "06:57.00",
+        "text_l2": "The only and main reason is my mother,"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "أمي تعلمت عشاني مساعدة",
+        "timestamp": "07:00.00",
+        "text_l2": "My mother learned for my sake, to help"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "عشان أنا.",
+        "timestamp": "07:03.00",
+        "text_l2": "for me."
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "قعدت معي وكانت مرافقتي،",
+        "timestamp": "07:06.00",
+        "text_l2": "She stayed with me and was my companion,"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "هي الداعم الأول والأخير ليلي.",
+        "timestamp": "07:09.00",
+        "text_l2": "she is the first and last supporter for me."
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "فهي سبب تقبلي للتأتأة.",
+        "timestamp": "07:12.00",
+        "text_l2": "So she is the reason for my acceptance of stuttering."
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "لأنه أمي قالت لي اللي بده يتقبلك",
+        "timestamp": "07:16.00",
+        "text_l2": "Because my mother told me whoever wants to accept you"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "بيتقبلك كيف هو عيسى،",
+        "timestamp": "07:19.00",
+        "text_l2": "will accept you as you are, Issa,"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "وتقبل نفسك عشان يتقبلك المجتمع.",
+        "timestamp": "07:21.50",
+        "text_l2": "and accept yourself so society accepts you."
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "إنه حتى الواحد تأتأ",
+        "timestamp": "07:24.00",
+        "text_l2": "That even if one stutters"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "فش شيء يعني صعب علينا.",
+        "timestamp": "07:26.00",
+        "text_l2": "there is nothing, I mean, hard on us."
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "بالابتدائية في معلمة مرة حكت لي",
+        "timestamp": "07:28.00",
+        "text_l2": "In elementary school, a teacher once told me"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "إنه إنت مش رح تاخدي بجروت كامل",
+        "timestamp": "07:31.00",
+        "text_l2": "that you won't get a full Bagrut"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "لأنه إنت عندك هاي المشكلة.",
+        "timestamp": "07:34.00",
+        "text_l2": "because you have this problem."
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "لأنه في بصف 11 بجروت اللي هو مع حكي بيجي.",
+        "timestamp": "07:38.00",
+        "text_l2": "Because in 11th grade Bagrut comes with speaking."
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "فبدي أقول لك يا معلمة",
+        "timestamp": "07:43.00",
+        "text_l2": "So I want to tell you, Oh Teacher"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "إنه أنا أخدت البجروت كامل.",
+        "timestamp": "07:45.00",
+        "text_l2": "that I got the full Bagrut."
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "رسالتي للمجتمع إنه هاي الشغلة مش عيب.",
+        "timestamp": "07:48.00",
+        "text_l2": "My message to society is that this thing is not a shame."
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "صح ما في لها حل أما الشيء مش رح يمنعنا",
+        "timestamp": "07:52.00",
+        "text_l2": "True, there is no solution, but the thing won't prevent us"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "من إنه دائماً نحكي",
+        "timestamp": "07:55.00",
+        "text_l2": "from always speaking"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "ودائماً نعبر.",
+        "timestamp": "07:57.50",
+        "text_l2": "and always expressing."
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "نحن مش غير عنكم يعني إحنا زينا زيكم",
+        "timestamp": "08:01.00",
+        "text_l2": "We are not different from you, I mean, we are like you"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "بس نحن بنحكي بطريقة تانية.",
+        "timestamp": "08:03.50",
+        "text_l2": "but we speak in another way."
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "إحنا جزء لا يتجزأ من هاد المجتمع،",
+        "timestamp": "08:06.00",
+        "text_l2": "We are an integral part of this society,"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "قلتوا آه وإن قلتوا لأ.",
+        "timestamp": "08:09.00",
+        "text_l2": "whether you say yes or say no."
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "إلنا حصة كبيرة بهذا البلد،",
+        "timestamp": "08:11.00",
+        "text_l2": "We have a big share in this country,"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "شايف صرت أتأتئ كمان لأنه انضغطت.",
+        "timestamp": "08:14.00",
+        "text_l2": "See, I started stuttering too because I got stressed."
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "إنه يفهم ويتوعى،",
+        "timestamp": "08:18.00",
+        "text_l2": "To understand and be aware,"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "للأسف عنا مجتمعنا",
+        "timestamp": "08:21.00",
+        "text_l2": "unfortunately, our society"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "بيتقبلش هاي الأشياء بيتقبلش.",
+        "timestamp": "08:23.00",
+        "text_l2": "doesn't accept these things, doesn't accept."
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "بدي أقول لكم إنه تقبلونا مثل ما إحنا،",
+        "timestamp": "08:25.00",
+        "text_l2": "I want to tell you to accept us as we are,"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "كيف نحن بنحب حالنا",
+        "timestamp": "08:28.00",
+        "text_l2": "how we love ourselves"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "كمان أنتم حبونا.",
+        "timestamp": "08:31.00",
+        "text_l2": "you love us too."
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "نحن مش مختلفين نحن مميزين.",
+        "timestamp": "08:37.00",
+        "text_l2": "We are not different, we are distinct."
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "تأتأت، عندك تخربط بالحكي، عادي كمل،",
+        "timestamp": "08:41.00",
+        "text_l2": "You stutter, you get mixed up in speech, it's okay, continue,"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "اللي عندك طلعه وعبر",
+        "timestamp": "08:44.00",
+        "text_l2": "Bring out what you have and express"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "وما تخافش ولا من أي بني آدم.",
+        "timestamp": "08:47.00",
+        "text_l2": "and don't be afraid of any human being."
+      }
+    ],
+    "phrases_with_token_translations": "[لما] بتعصبن => [When] I get angry\nلما [بتعصبن] => When [I get angry]\n\n[حراج عليك] إذا حدا بيفهمني، => [It's hard for] anyone to understand me, # حراج literally means \"auction\" but is used idiomatically here to mean \"it’s difficult\" or \"I challenge\"\nحراج عليك إذا [حدا] بيفهمني، => It's hard for [anyone] to understand me,\nحراج عليك إذا حدا [بيفهمني]، => It's hard for anyone [to understand me],\n\n[بصير] تايلندي. => [I end up sounding] Thai.\nبصير [تايلندي]. => I end up sounding [Thai].\n\n[بصراحة] إنه أنا في كتير مرات => [Honestly], there are many times\nبصراحة [إنه] أنا في كتير مرات => that, truly # 'إنه' acts as a filler or emphatic particle here\nبصراحة إنه [أنا] في كتير مرات => I\nبصراحة إنه أنا [في] كتير مرات => Honestly, [there are] many times\nبصراحة إنه أنا في [كتير] مرات => Honestly, there are [many] times\nبصراحة إنه أنا في كتير [مرات] => Honestly, there are many [times]\n\n[إنه] أنا بغني فيها وما بتأتئش. => [where] I sing and I don't stutter.\nإنه [أنا] بغني فيها وما بتأتئش. => where [I] sing and I don't stutter.\nإنه أنا [بغني] فيها وما بتأتئش. => where I [sing] and I don't stutter.\nإنه أنا بغني [فيها] وما بتأتئش. => in it, in which\nإنه أنا بغني فيها [وما] بتأتئش. => [and I don't] stutter # \"and I don't\" maps to the conjunction and the negative particle \"ma\"\nإنه أنا بغني فيها وما [بتأتئش]. => [stutter] # the word includes the verb for stuttering and the negative suffix \"-sh\"\n\n[كنت] نازل على زي تنقول ديت، على موعد. => [I was] going on a, like, date, an appointment.\nكنت [نازل] على زي تنقول ديت، على موعد. => I was [going] on a, like, date, an appointment.\nكنت نازل [على] زي تنقول ديت، على موعد. => I was going [on] a, like, date, an appointment.\nكنت نازل على [زي تنقول] ديت، على موعد. => as we say, like # literal translation is \"as we say\", but used like the filler \"like\"\nكنت نازل على زي تنقول [ديت]، على موعد. => I was going on a, like, [date], an appointment.\nكنت نازل على زي تنقول ديت، على [موعد]. => I was going on a, like, date, an [appointment]\n\n[أول] مرة يعني كنت بطلع معي الصبية. => [The first] time, I was going out with the guys.\nأول [مرة] يعني كنت بطلع معي الصبية. => The first [time], I was going out with the guys.\nأول مرة [يعني] كنت بطلع معي الصبية. => meaning, I mean # filler word used to clarify or pause\nأول مرة يعني [كنت] بطلع معي الصبية. => The first time, [I was] going out with the guys.\nأول مرة يعني كنت [بطلع] معي الصبية. => The first time, I was [going out] with the guys.\nأول مرة يعني كنت بطلع [معي] الصبية. => with me, with\nأول مرة يعني كنت بطلع معي [الصبية] => The first time, I was going out with [the guys]. # الصبية (as-sibyeh) can refer to young men/boys in some dialects, though often it refers to girls.\n\n[عم بجرب] أحكي كل ما أجي أحكي => [I try] to speak, every time I try to speak\nعم بجرب [أحكي] كل ما أجي أحكي => I try [to speak], every time I try to speak\nعم بجرب أحكي [كل ما] أجي أحكي => I try to speak, [every time] I try to speak\nعم بجرب أحكي كل ما [أجي] أحكي => I come, I go to # using custom translation because أجي literally means \"come\" or \"arrive\", but functions as \"about to\" or \"setting to\" here\nعم بجرب أحكي كل ما أجي [أحكي] => I try to speak, every time I try [to speak]\n\n[عم بحس] في التأتأة بدها إنه كتير كانت قوية. => [I feel] the stuttering was very strong.\nعم بحس في [التأتأة] بدها إنه كتير كانت قوية. => I feel [the stuttering] was very strong.\nعم بحس في التأتأة [بدها] إنه كتير كانت قوية. => it needs, she wants\nعم بحس في التأتأة بدها [إنه] كتير كانت قوية. => that, it\nعم بحس في التأتأة بدها إنه كتير [كانت] قوية. => I feel the stuttering [was] very strong.\nعم بحس في التأتأة بدها إنه [كتير] كانت قوية. => I feel the stuttering was [very] strong.\nعم بحس في التأتأة بدها إنه كتير كانت [قوية]. => I feel the stuttering was very [strong]\n\n[المشكلة] عند حرف الـ س عندي. => [The problem] is with the letter 'S' for me.\nالمشكلة [عند] حرف الـ س عندي. => The problem is [with] the letter 'S' for me.\nالمشكلة عند [حرف] الـ س عندي. => The problem is with the [letter] 'S' for me.\nالمشكلة عند حرف [الـ س] عندي. => The problem is with the letter ['S'] for me.\nالمشكلة عند حرف الـ س [عندي]. => The problem is with the letter 'S' [for me]\n\n[الناس] بصير تقول لي شو؟ مش فاهمك، إيش؟ => [People] would say to me, What? I don't understand you, huh?\nالناس [بصير] تقول لي شو؟ مش فاهمك، إيش؟ => People [would] say to me, What? I don't understand you, huh?\nالناس بصير [تقول] لي شو؟ مش فاهمك، إيش؟ => People would [say] to me, What? I don't understand you, huh?\nالناس بصير تقول [لي] شو؟ مش فاهمك، إيش؟ => People would say [to me], What? I don't understand you, huh?\nالناس بصير تقول لي [شو]؟ مش فاهمك، إيش؟ => People would say to me, [What]? I don't understand you, huh?\nالناس بصير تقول لي شو؟ [مش فاهمك]، إيش؟ => People would say to me, What? [I don't understand you], huh?\nالناس بصير تقول لي شو؟ مش فاهمك، [إيش]؟ => People would say to me, What? I don't understand you, [huh]?\n\n[إحكي] للكاميرا => [Speak] to the camera\nإحكي [للكاميرا] => Speak [to the camera]\n\nأنا [الاسم] تبعي كـ كـ كـ كارين. => My [name] is K-K-K-Karen.\nأنا الاسم [تبعي] كـ كـ كـ كارين. => [My] name is K-K-K-Karen.\nأنا الاسم تبعي [كـ كـ كـ] كارين. => My name is [K-K-K-]Karen.\nأنا الاسم تبعي كـ كـ كـ [كارين]. => My name is K-K-K-[Karen]\n\n[أنا] من حيفا وعمري 20 سنة. => [I'm] from Haifa and I'm 20 years old.\nأنا [من] حيفا وعمري 20 سنة. => I'm [from] Haifa and I'm 20 years old.\nأنا من [حيفا] وعمري 20 سنة. => I'm from [Haifa] and I'm 20 years old.\nأنا من حيفا [و]عمري 20 سنة. => I'm from Haifa [and] I'm 20 years old.\nأنا من حيفا و[عمري] 20 سنة. => my age\nأنا من حيفا وعمري [20] سنة. => I'm from Haifa and I'm [20] years old.\nأنا من حيفا وعمري 20 [سنة]. => I'm from Haifa and I'm 20 [years old].\n\n[أنا اسمي] وسام غنايم => [My name is] Wissam Ghunaim\nأنا اسمي [وسام] غنايم => My name is [Wissam] Ghunaim\nأنا اسمي وسام [غنايم] => My name is Wissam [Ghunaim]\n\n[من] سـ سـ سـ سخنين أنا من سخنين. => [From] S-S-S-Sakhnin, I'm from Sakhnin.\nمن [سـ] سـ سـ سخنين أنا من سخنين. => From [S-]S-S-Sakhnin, I'm from Sakhnin.\nمن سـ [سـ] سـ سخنين أنا من سخنين. => From S-[S-]S-Sakhnin, I'm from Sakhnin.\nمن سـ سـ [سـ] سخنين أنا من سخنين. => From S-S-[S-]Sakhnin, I'm from Sakhnin.\nمن سـ سـ سـ [سخنين] أنا من سخنين. => From S-S-S-[Sakhnin], I'm from Sakhnin.\nمن سـ سـ سـ سخنين [أنا] من سخنين. => From S-S-S-Sakhnin, [I'm] from Sakhnin.\nمن سـ سـ سـ سخنين أنا [من] سخنين. => From S-S-S-Sakhnin, I'm [from] Sakhnin.\nمن سـ سـ سـ سخنين أنا من [سخنين]. => From S-S-S-Sakhnin, I'm from [Sakhnin]. # aligning segments sequentially for the stuttering and repeated city name\n\n[متزوج] عمري 43 عندي تلات بنات. => [Married], I'm 43, I have three daughters.\nمتزوج [عمري] 43 عندي تلات بنات. => my age\nمتزوج عمري [43] عندي تلات بنات. => Married, I'm [43], I have three daughters.\nمتزوج عمري 43 [عندي] تلات بنات. => Married, I'm 43, [I have] three daughters.\nمتزوج عمري 43 عندي [تلات] بنات. => Married, I'm 43, I have [three] daughters.\nمتزوج عمري 43 عندي تلات [بنات]. => Married, I'm 43, I have three [daughters].\n\n[اسمي] عون زاهر، أنا من عسفيا => [My name] is Awn Zaher, I'm from Isfiya\nاسمي [عون زاهر]، أنا من عسفيا => My name is [Awn Zaher], I'm from Isfiya\nاسمي عون زاهر، [أنا] من عسفيا => My name is Awn Zaher, [I'm] from Isfiya\nاسمي عون زاهر، أنا [من] عسفيا => My name is Awn Zaher, I'm [from] Isfiya\nاسمي عون زاهر، أنا من [عسفيا] => My name is Awn Zaher, I'm from [Isfiya]\n\n[و]عمري 18 سنة. => [And] I'm 18 years old.\nو[عمري] 18 سنة. => my age # In Arabic, \"my age\" is the subject, while English uses \"I am\"\nوعمري [18] سنة. => And I'm [18] years old.\nوعمري 18 [سنة]. => And I'm 18 [years old]. # سنة means \"year\" but is used here to match the full phrase \"years old\" in English age construction\n\n[أنا] عيسى جمال، ناشط اجتماعي => [I'm] Issa Jamal, a social activist\nأنا [عيسى جمال]، ناشط اجتماعي => I'm [Issa Jamal], a social activist\nأنا عيسى جمال، [ناشط] اجتماعي => I'm Issa Jamal, a social [activist]\nأنا عيسى جمال، ناشط [اجتماعي] => I'm Issa Jamal, a [social] activist\n\n[من] كفر قرع، عمري 26 سنة. => [From] Kafr Qara, I'm 26 years old.\nمن [كفر قرع]، عمري 26 سنة. => From [Kafr Qara], I'm 26 years old.\nمن كفر قرع، [عمري] 26 سنة. => my age\nمن كفر قرع، عمري [26] سنة. => From Kafr Qara, I'm [26] years old.\nمن كفر قرع، عمري 26 [سنة] => From Kafr Qara, I'm 26 [years old]\n\n[عندي] إعاقة بصرية والتأتأة => [I have] a visual impairment and stuttering.\nعندي [إعاقة] بصرية والتأتأة => I have a visual [impairment] and stuttering.\nعندي إعاقة [بصرية] والتأتأة => I have a [visual] impairment and stuttering.\nعندي إعاقة بصرية [و]التأتأة => I have a visual impairment [and] stuttering.\nعندي إعاقة بصرية و[التأتأة] => I have a visual impairment and [stuttering] # 'التأتأة' includes the definite article but correctly translates to stuttering in this context.\n\n[التأتأة] هي من ناحية طبية وعلمية => [Stuttering], medically and scientifically speaking,\nالتأتأة [هي] من ناحية طبية وعلمية => is\nالتأتأة هي [من ناحية] طبية وعلمية => from the perspective of, speaking\nالتأتأة هي من ناحية [طبية] وعلمية => Stuttering, [medically] and scientifically speaking,\nالتأتأة هي من ناحية طبية [و]علمية => Stuttering, medically [and] scientifically speaking,\nالتأتأة هي من ناحية طبية و[علمية] => Stuttering, medically and [scientifically] speaking,\n\n[هي] أكتر زي شيء بيجي عن طريق الوراثة. => [is] mostly something that comes through genetics.\nهي [أكتر] زي شيء بيجي عن طريق الوراثة. => is [mostly] something that comes through genetics.\nهي أكتر [زي] شيء بيجي عن طريق الوراثة. => like, kind of\nهي أكتر زي [شيء] بيجي عن طريق الوراثة. => is mostly [something] that comes through genetics.\nهي أكتر زي شيء [بيجي] عن طريق الوراثة. => is mostly something that [comes] through genetics.\nهي أكتر زي شيء بيجي [عن طريق] الوراثة. => is mostly something that comes [through] genetics.\nهي أكتر زي شيء بيجي عن طريق [الوراثة]. => is mostly something that comes through [genetics].\n\n[التأتأة] مشكلتها بالأعصاب. => The problem with [stuttering] is in the nerves.\nالتأتأة [مشكلتها] بالأعصاب. => [The problem] with stuttering is in the nerves. # \"مشكلة\" is \"problem\", the suffix \"-ha\" indicates it's definite \"the problem\" in English context\nالتأتأة مشكلتها [بالأعصاب]. => The problem with stuttering is [in the nerves]. # \"بـ\" is \"in\", \"الأعصاب\" is \"the nerves\"\n\n[التأتأة] هي أكترها التوتر، العصبية، => [Stuttering] is mostly about tension, nervousness,\nالتأتأة [هي] أكترها التوتر، العصبية، => Stuttering [is] mostly about tension, nervousness,\nالتأتأة هي [أكترها] التوتر، العصبية، => Stuttering is [mostly] about tension, nervousness,\nالتأتأة هي أكترها [التوتر]، العصبية، => Stuttering is mostly about [tension], nervousness,\nالتأتأة هي أكترها التوتر، [العصبية]، => Stuttering is mostly about tension, [nervousness],\n\n[لما] بمثل متضايق، => [when] I feel upset,\nلما [بمثل] متضايق، => I act, I pretend\nلما بمثل [متضايق]، => when I feel [upset],\n\n[بحس] إنه هاد تأثير نفسي. => [I feel] this is a psychological effect.\nبحس [إنه] هاد تأثير نفسي. => that # connector often used in Levantine before a clause\nبحس إنه [هاد] تأثير نفسي. => I feel [this] is a psychological effect.\nبحس إنه هاد [تأثير] نفسي. => I feel this is a psychological [effect].\nبحس إنه هاد تأثير [نفسي]. => I feel this is a [psychological] effect.\n\n[أنا] بصف خامس => [I] was in fifth grade\nأنا [بصف] خامس => in grade\nأنا بصف [خامس] => I was in [fifth] grade\n\n[هي] المشكلة اللي عندي إياها بلشت. => when [this] problem I have started.\nهي [المشكلة] اللي عندي إياها بلشت. => when this [problem] I have started.\nهي المشكلة [اللي] عندي إياها بلشت. => that, which\nهي المشكلة اللي [عندي إياها] بلشت. => when this problem [I have] started.\nهي المشكلة اللي عندي إياها [بلشت]. => when this problem I have [started].\n\n[ليش] وكيف وشو اللي صار؟ ما حدا بيعرف. => [Why] and how and what happened? No one knows.\nليش [وكيف] وشو اللي صار؟ ما حدا بيعرف. => Why [and how] and what happened? No one knows.\nليش وكيف [وشو اللي] صار؟ ما حدا بيعرف. => Why and how [and what] happened? No one knows. # 'and what' often includes the relative pronoun 'اللي' in this question structure\nليش وكيف وشو اللي [صار]؟ ما حدا بيعرف. => Why and how and what [happened]? No one knows.\nليش وكيف وشو اللي صار؟ [ما حدا] بيعرف. => Why and how and what happened? [No one] knows.\nليش وكيف وشو اللي صار؟ ما حدا [بيعرف]. => Why and how and what happened? No one [knows].\n\nإنه [مش عارفين] إذا الشيء كان إنه هو صدمة => [They don't know] if the thing was a shock\nإنه مش عارفين [إذا] الشيء كان إنه هو صدمة => They don't know [if] the thing was a shock\nإنه مش عارفين إذا [الشيء] كان إنه هو صدمة => They don't know if [the thing] was a shock\nإنه مش عارفين إذا الشيء [كان] إنه هو صدمة => They don't know if the thing [was] a shock\nإنه مش عارفين إذا الشيء كان [إنه هو] صدمة => that it, that it is # Redundant connector/filler in spoken Arabic\nإنه مش عارفين إذا الشيء كان إنه هو [صدمة] => They don't know if the thing was [a shock]\n\n[أو] إنه أنا خلقت هيك. => [or] if I was born like this.\nأو [إنه] أنا خلقت هيك. => or [if] I was born like this.\nأو إنه [أنا] خلقت هيك. => or if [I] was born like this.\nأو إنه أنا [خلقت] هيك. => or if I [was born] like this.\nأو إنه أنا خلقت [هيك]. => or if I was born [like this].\n\n[اكتشفتها] بالصف الخامس. => [I discovered it] in fifth grade.\nاكتشفتها [بالصف] الخامس. => in the grade\nاكتشفتها بالصف [الخامس]. => I discovered it in [fifth] grade.\n\n[حسب ما] أنا متذكر، كان عمري خمس سنين، => [As far as] I remember, I was five years old,\nحسب ما [أنا] متذكر، كان عمري خمس سنين، => As far as [I] remember, I was five years old,\nحسب ما أنا [متذكر]، كان عمري خمس سنين، => As far as I [remember], I was five years old,\nحسب ما أنا متذكر، [كان عمري] خمس سنين، => [I was] five years old,\nحسب ما أنا متذكر، كان عمري [خمس] سنين، => As far as I remember, I was [five] years old,\nحسب ما أنا متذكر، كان عمري خمس [سنين]، => As far as I remember, I was five [years old],\n\n[مرة واحدة] صار عندي في الحكي صعوبة. => [suddenly] I had difficulty speaking.\nمرة واحدة [صار عندي] في الحكي صعوبة. => suddenly [I had] difficulty speaking.\nمرة واحدة صار عندي [في] الحكي صعوبة. => in\nمرة واحدة صار عندي في [الحكي] صعوبة. => suddenly I had difficulty [speaking].\nمرة واحدة صار عندي في الحكي [صعوبة]. => suddenly I had [difficulty] speaking.\n\n[صار] لما أحكي صعب أتنفس. => [It became] hard to breathe when I spoke.\nصار [لما] أحكي صعب أتنفس. => It became hard to breathe [when] I spoke.\nصار لما [أحكي] صعب أتنفس. => It became hard to breathe when [I spoke].\nصار لما أحكي [صعب] أتنفس. => It became [hard] to breathe when I spoke.\nصار لما أحكي صعب [أتنفس]. => It became hard [to breathe] when I spoke.\n\n[أنا] عندي مشكلة التأتأة حسيتها من صف السابع => [I] have the stuttering problem, I felt it from seventh grade.\nأنا [عندي] مشكلة التأتأة حسيتها من صف السابع => I [have] the stuttering problem, I felt it from seventh grade.\nأنا عندي [مشكلة] التأتأة حسيتها من صف السابع => I have the [problem], I felt it from seventh grade.\nأنا عندي مشكلة [التأتأة] حسيتها من صف السابع => I have the [stuttering] problem, I felt it from seventh grade.\nأنا عندي مشكلة التأتأة [حسيتها] من صف السابع => I have the stuttering problem, [I felt it] from seventh grade. # حسيتها includes the verb (felt), the subject (I), and the object (it)\nأنا عندي مشكلة التأتأة حسيتها [من] صف السابع => I have the stuttering problem, I felt it [from] seventh grade.\nأنا عندي مشكلة التأتأة حسيتها من [صف] السابع => I have the stuttering problem, I felt it from seventh [grade]\nأنا عندي مشكلة التأتأة حسيتها من صف [السابع] => I have the stuttering problem, I felt it from [seventh] grade.\n\n[أنا] كنت بأول صف خامس => [I] was in the beginning of fifth grade\nأنا [كنت] بأول صف خامس => I [was] in the beginning of fifth grade\nأنا كنت [بأول] صف خامس => I was [in the beginning of] fifth grade\nأنا كنت بأول صف [خامس] => I was in the beginning of [fifth] grade\nأنا كنت بأول [صف] خامس => I was in the beginning of fifth [grade]\n\n[وأنا] كنت بدي إنه أنا أقرأ => [and I] wanted to read\nوأنا [كنت بدي] إنه أنا أقرأ => and I [wanted] to read\nوأنا كنت بدي [إنه] أنا أقرأ => and I wanted [to] read\nوأنا كنت بدي إنه [أنا] أقرأ => I # although the English sentence has only one \"I\", this second Arabic pronoun specifically means \"I\"\nوأنا كنت بدي إنه أنا [أقرأ] => and I wanted to [read]\n\n[وهون] إنه هي علقت معي => [and here] it got stuck with me\nوهون [إنه] هي علقت معي => that\nوهون إنه [هي] علقت معي => and here [it] got stuck with me\nوهون إنه هي [علقت] معي => and here it [got stuck] with me\nوهون إنه هي علقت [معي] => and here it got stuck [with me]\n\n[و]مش عم يطلعوا الأحرف من تمي. => [and] the letters weren't coming out of my mouth.\nو[مش] عم يطلعوا الأحرف من تمي. => weren't, not # مش is a negation particle, translated here to \"weren't\" (were not)\nومش [عم يطلعوا] الأحرف من تمي. => and the letters weren't [coming out] of my mouth.\nومش عم يطلعوا [الأحرف] من تمي. => and [the letters] weren't coming out of my mouth.\nومش عم يطلعوا الأحرف [من] تمي. => and the letters weren't coming out [of] my mouth.\nومش عم يطلعوا الأحرف من [تمي]. => and the letters weren't coming out of [my mouth]\n\n[المريح] أنا عندي مثلاً بمجموعة بعرفها. => [It's comfortable] for me, for example, in a group I know.\nالمريح [أنا عندي] مثلاً بمجموعة بعرفها. => It's comfortable [for me], for example, in a group I know.\nالمريح أنا عندي [مثلاً] بمجموعة بعرفها. => It's comfortable for me, [for example], in a group I know.\nالمريح أنا عندي مثلاً [بمجموعة] بعرفها. => It's comfortable for me, for example, [in a group] I know.\nالمريح أنا عندي مثلاً بمجموعة [بعرفها] => It's comfortable for me, for example, in a group [I know] # the suffix \"ha\" (it) refers to the group and is implicit in \"I know\" in this context\n\n[وأصعب] شيء هاد البني آدم ما بعرفوش => [And the hardest] thing is a person I don't know\nوأصعب [شيء] هاد البني آدم ما بعرفوش => And the hardest [thing] is a person I don't know\nوأصعب شيء [هاد] البني آدم ما بعرفوش => this # Custom translation as it functions as \"this\" or a demonstrative copula here\nوأصعب شيء هاد [البني آدم] ما بعرفوش => And the hardest thing is [a person] I don't know\nوأصعب شيء هاد البني آدم [ما بعرفوش] => And the hardest thing is a person [I don't know] # \"Ma..sh\" is negation, \"ba'raf\" is know, \"u\" is the object suffix (him)\n\n[اللي] بلتقي أول مرة فيه يعني. => [whom] I meet for the first time, I mean.\nاللي [بلتقي] أول مرة فيه يعني. => whom [I meet] for the first time, I mean.\nاللي بلتقي [أول] مرة فيه يعني. => whom I meet for the [first] time, I mean.\nاللي بلتقي أول [مرة] فيه يعني. => whom I meet for the first [time], I mean.\nاللي بلتقي أول مرة فيه [يعني]. => whom I meet for the first time, [I mean].\n\nإنه [أول ما] صار الشيء أنا حسيت في شيء هون => [When] it first happened, I felt something here\nإنه [أول] ما صار الشيء أنا حسيت في شيء هون => When it [first] happened, I felt something here\nإنه أول ما [صار] الشيء أنا حسيت في شيء هون => When it first [happened], I felt something here\nإنه أول ما صار [الشيء] أنا حسيت في شيء هون => When [it] first happened, I felt something here\nإنه أول ما صار الشيء [أنا] حسيت في شيء هون => When it first happened, [I] felt something here\nإنه أول ما صار الشيء أنا [حسيت] في شيء هون => When it first happened, I [felt] something here\nإنه أول ما صار الشيء أنا حسيت [في شيء] هون => When it first happened, I felt [something] here\nإنه أول ما صار الشيء أنا حسيت في شيء [هون] => When it first happened, I felt something [here]\n\n[إنه] يعني كنت بدي إنه أنا أبكي => [that], I mean, I wanted to cry\nإنه [يعني] كنت بدي إنه أنا أبكي => that, [I mean], I wanted to cry\nإنه يعني [كنت بدي] إنه أنا أبكي => that, I mean, [I wanted] to cry\nإنه يعني كنت بدي [إنه] أنا أبكي => that # as a conjunction\nإنه يعني كنت بدي إنه [أنا] أبكي => I\nإنه يعني كنت بدي إنه أنا [أبكي] => that, I mean, I wanted to [cry]\n\n[بس] إنه ما بكيت وقتها، => [but] I didn't cry at the time,\nبس [إنه] ما بكيت وقتها، => that # functions as a filler or \"that\" in this context\nبس إنه [ما بكيت] وقتها، => but [I didn't cry] at the time,\nبس إنه ما بكيت [وقتها]، => but I didn't cry [at the time],\n\n[لأنه] ما فكرت إنه الشيء => [because] I didn't think that the thing\nلأنه [ما فكرت] إنه الشيء => because [I didn't think] that the thing\nلأنه ما فكرت [إنه] الشيء => because I didn't think [that] the thing\nلأنه ما فكرت إنه [الشيء] => because I didn't think that [the thing]\n\nإنه هو [رح] يضله عندي. => [would] stay with me.\nإنه هو رح [يضله] عندي. => would [stay] with me.\nإنه هو رح يضله [عندي]. => would stay [with me].\n\n[ورحت] كتير عند دكاترة وقتها، => [And we went] to many doctors back then, # و is \"and\", رحت is \"I/we went\"\nورحت [كتير] عند دكاترة وقتها، => And we went to [many] doctors back then,\nورحت كتير [عند] دكاترة وقتها، => And we went [to] many doctors back then, # عند literally means \"at\" or \"with\", but functions as \"to\" for people\nورحت كتير عند [دكاترة] وقتها، => And we went to many [doctors] back then,\nورحت كتير عند دكاترة [وقتها]، => And we went to many doctors [back then], # وقت means \"time\", ها is a suffix; the phrase means \"at that time\"\n\n[اللي] يقول لي هي المشكلة ما في لها حل، => [one] would tell me this problem has no solution,\nاللي [يقول] لي هي المشكلة ما في لها حل، => one [would tell] me this problem has no solution,\nاللي يقول [لي] هي المشكلة ما في لها حل، => one would tell [me] this problem has no solution,\nاللي يقول لي [هي] المشكلة ما في لها حل، => one would tell me [this] problem has no solution,\nاللي يقول لي هي [المشكلة] ما في لها حل، => one would tell me this [problem] has no solution,\nاللي يقول لي هي المشكلة [ما في لها] حل، => one would tell me this problem [has no] solution,\nاللي يقول لي هي المشكلة ما في لها [حل]، => one would tell me this problem has no [solution],\n\n[اللي] يقول بس إنت بتتحكم فيها. => [another] would say you just control it.\nاللي [يقول] بس إنت بتتحكم فيها. => another [would say] you just control it.\nاللي يقول [بس] إنت بتتحكم فيها. => another would say you [just] control it.\nاللي يقول بس [إنت] بتتحكم فيها. => another would say [you] just control it.\nاللي يقول بس إنت [بتتحكم] فيها. => another would say you just [control] it.\nاللي يقول بس إنت بتتحكم [فيها]. => another would say you just control [it]. # \"فيها\" literally means \"in it,\" but functions as the object \"it\" for the verb \"control\" in this context\n\n[لحد ما] حكينا للدكتور تبعي => [Until] we talked to my doctor\nلحد ما [حكينا] للدكتور تبعي => Until [we talked] to my doctor\nلحد ما حكينا [للدكتور] تبعي => Until we talked [to] my [doctor]\nلحد ما حكينا للدكتور [تبعي] => Until we talked to [my] doctor\n\n[وهو] بعتني عند المعالجة => [and he] sent me to the therapist\nوهو [بعتني] عند المعالجة => and he [sent me] to the therapist\nوهو بعتني [عند] المعالجة => and he sent me [to] the therapist # \"عند\" (at/with) is used in Levantine Arabic to mean \"to\" when going to a person or their office\nوهو بعتني عند [المعالجة] => and he sent me to [the therapist]\n\n[اللي] أنا قعدت عندها حوالي شي خمس سنين. => [whom] I stayed with for about five years.\nاللي [أنا] قعدت عندها حوالي شي خمس سنين. => whom [I] stayed with for about five years.\nاللي أنا [قعدت] عندها حوالي شي خمس سنين. => whom I [stayed] with for about five years.\nاللي أنا قعدت [عندها] حوالي شي خمس سنين. => with her\nاللي أنا قعدت عندها [حوالي] شي خمس سنين. => whom I stayed with for [about] five years.\nاللي أنا قعدت عندها حوالي [شي] خمس سنين. => about, roughly\nاللي أنا قعدت عندها حوالي شي [خمس] سنين. => whom I stayed with for about [five] years.\nاللي أنا قعدت عندها حوالي شي خمس [سنين]. => whom I stayed with for about five [years]. # سنين is the plural of سنة (year)\n\n[بس] ما ساعدتنيش إشي يعني. => [But] she didn't help me at all, I mean.\nبس [ما ساعدتنيش] إشي يعني. => But [she didn't help me] at all, I mean. # \"ما...ش\" is the negation, \"ساعدت\" is she helped, and \"ني\" is me\nبس ما ساعدتنيش [إشي] يعني. => But she didn't help me [at all], I mean. # literally \"a thing\", used here as an intensifier for the negation\nبس ما ساعدتنيش إشي [يعني] => But she didn't help me at all, [I mean]\n\n[وقتها] أنا كنت أروح عند دكاترة وما في حل. => And [back then] I used to go to doctors and there was no solution.\nوقتها [أنا] كنت أروح عند دكاترة وما في حل. => And back then [I] used to go to doctors and there was no solution.\nوقتها أنا [كنت أروح] عند دكاترة وما في حل. => And back then I [used to go] to doctors and there was no solution.\nوقتها أنا كنت أروح [عند] دكاترة وما في حل. => And back then I used to go [to] doctors and there was no solution.\nوقتها أنا كنت أروح عند [دكاترة] وما في حل. => And back then I used to go to [doctors] and there was no solution.\nوقتها أنا كنت أروح عند دكاترة [و]ما في حل. => And back then I used to go to doctors [and] there was no solution.\nوقتها أنا كنت أروح عند دكاترة و[ما في] حل. => there is not # literal meaning of \"ma fi\" is \"not in/not there\", but \"there was no\" fits the past context here\nوقتها أنا كنت أروح عند دكاترة وما في [حل] => And back then I used to go to doctors and there was no [solution]\n\n[كان] الأستاذ عنا معالج للنطق => [There was] a teacher, a speech therapist with us\nكان [الأستاذ] عنا معالج للنطق => There was [a teacher], a speech therapist with us\nكان الأستاذ [عنا] معالج للنطق => There was a teacher, a speech therapist [with us] # عنا is a Levantine contraction of \"at/with us\"\nكان الأستاذ عنا [معالج] للنطق => There was a teacher, a speech [therapist] with us\nكان الأستاذ عنا معالج [للنطق] => There was a teacher, a [speech] therapist with us # للنطق literally means \"for speech\" or \"of pronunciation\"\n\n[و]صار يقول لي إحكي لي إي ومي و... => [and] he started telling me say to me Ee and Me and...\nو[صار] يقول لي إحكي لي إي ومي و... => and [he started] telling me say to me Ee and Me and...\nوصار [يقول] لي إحكي لي إي ومي و... => and he started [telling] me say to me Ee and Me and...\nوصار يقول [لي] إحكي لي إي ومي و... => and he started telling [me] say to me Ee and Me and...\nوصار يقول لي [إحكي] لي إي ومي و... => and he started telling me [say] to me Ee and Me and...\nوصار يقول لي إحكي [لي] إي ومي و... => and he started telling me say [to me] Ee and Me and...\nوصار يقول لي إحكي لي [إي] ومي و... => and he started telling me say to me [Ee] and Me and...\nوصار يقول لي إحكي لي إي [ومي] و... => and Me\nوصار يقول لي إحكي لي إي ومي [و]... => and he started telling me say to me Ee and Me [and]... # ignoring the ellipsis (punctuation) per Rule 4\n\n[يعني] إنه أمد الحرف كأنه أنا قاعد بغني. => [Meaning] to stretch the letter as if I was singing.\nيعني [إنه] أمد الحرف كأنه أنا قاعد بغني. => that, that it is # إنه acts as a complementizer or \"that it is\"\nيعني إنه [أمد] الحرف كأنه أنا قاعد بغني. => Meaning [to stretch] the letter as if I was singing.\nيعني إنه أمد [الحرف] كأنه أنا قاعد بغني. => Meaning to stretch [the letter] as if I was singing.\nيعني إنه أمد الحرف [كأنه] أنا قاعد بغني. => Meaning to stretch the letter [as if] I was singing.\nيعني إنه أمد الحرف كأنه [أنا] قاعد بغني. => Meaning to stretch the letter as if [I] was singing.\nيعني إنه أمد الحرف كأنه أنا [قاعد بغني]. => Meaning to stretch the letter as if I [was singing]. # قاعد بغني is a single unit expressing continuous action (was singing)\n\n[قلت] له أستاذ حل عني، فـ.. بقدرش. => [I told] him, Teacher, fix me, so... I can't.\nقلت [له] أستاذ حل عني، فـ.. بقدرش. => I told [him], Teacher, fix me, so... I can't.\nقلت له [أستاذ] حل عني، فـ.. بقدرش. => I told him, [Teacher], fix me, so... I can't.\nقلت له أستاذ [حل عني]، فـ.. بقدرش. => I told him, Teacher, [fix me], so... I can't. # Mapping to the provided English \"fix me\" although usually \"حل عني\" means \"leave me alone\"\nقلت له أستاذ حل عني، [فـ..] بقدرش. => I told him, Teacher, fix me, [so...] I can't.\nقلت له أستاذ حل عني، فـ.. [بقدرش]. => I told him, Teacher, fix me, so... [I can't]. # \"بقدر\" (I can) + \"ش\" (negation) mapped to \"I can't\"\n\n[قلت] له هاد الموجود وما بدي أتعالج، => [I told] him this is what exists and I don't want treatment,\nقلت [له] هاد الموجود وما بدي أتعالج، => I told [him] this is what exists and I don't want treatment,\nقلت له [هاد] الموجود وما بدي أتعالج، => I told him [this] is what exists and I don't want treatment,\nقلت له هاد [الموجود] وما بدي أتعالج، => I told him this is [what exists] and I don't want treatment,\nقلت له هاد الموجود [و]ما بدي أتعالج، => I told him this is what exists [and] I don't want treatment,\nقلت له هاد الموجود و[ما بدي] أتعالج، => I told him this is what exists and [I don't want] treatment,\nقلت له هاد الموجود وما بدي [أتعالج]، => receive treatment, be treated # أتعالج is a verb (I get treated) while the translation uses a noun (treatment)\n\n[واللي] بده يتقبل يتقبل، => [and whoever] wants to accept, accepts,\nواللي [بده] يتقبل يتقبل، => and whoever [wants] to accept, accepts,\nواللي بده [يتقبل] يتقبل، => and whoever wants [to accept], accepts,\nواللي بده يتقبل [يتقبل]، => and whoever wants to accept, [accepts],\n\n[و]اللي بده يفهمني يفهمني => [and] whoever wants to understand me, understands me\nو[اللي] بده يفهمني يفهمني => and [whoever] wants to understand me, understands me\nواللي [بده] يفهمني يفهمني => and whoever [wants to] understand me, understands me\nواللي بده [يفهمني] يفهمني => and whoever wants to [understand me], understands me\nواللي بده يفهمني [يفهمني] => and whoever wants to understand me, [understands me]\n\n[واللي] ما بده بلاش. => [and whoever] doesn't, never mind.\nواللي [ما بده] بلاش. => and whoever [doesn't], never mind. # \"ما بده\" literally means \"doesn't want\", aligned with the English \"doesn't\"\nواللي ما بده [بلاش]. => and whoever doesn't, [never mind].\n\n[كنت] نازل على زي تنقول ديت، على موعد. => [I was] going on a, like, date, an appointment.\nكنت [نازل] على زي تنقول ديت، على موعد. => I was [going] on a, like, date, an appointment.\nكنت نازل [على] زي تنقول ديت، على موعد. => I was going [on] a, like, date, an appointment.\nكنت نازل على [زي] تنقول ديت، على موعد. => I was going on a, [like], date, an appointment.\nكنت نازل على زي [تنقول] ديت، على موعد. => we say, let's say # This literally means \"we say\" or \"let's say\", used here as a filler.\nكنت نازل على زي تنقول [ديت]، على موعد. => I was going on a, like, [date], an appointment.\nكنت نازل على زي تنقول ديت، [على] موعد. => on\nكنت نازل على زي تنقول ديت، على [موعد]. => I was going on a, like, date, an [appointment].\n\n[كل ما] أجرب أحكي أعلق وأسكت => [Every time] I try to speak I get stuck and stop\nكل ما [أجرب] أحكي أعلق وأسكت => Every time [I try] to speak I get stuck and stop\nكل ما أجرب [أحكي] أعلق وأسكت => Every time I try [to speak] I get stuck and stop\nكل ما أجرب أحكي [أعلق] وأسكت => Every time I try to speak [I get stuck] and stop\nكل ما أجرب أحكي أعلق [و]أسكت => Every time I try to speak I get stuck [and] stop\nكل ما أجرب أحكي أعلق و[أسكت] => Every time I try to speak I get stuck and [stop] # usually means I fall silent or I am quiet, but matches \"stop\" in this context\n\n[وظليت] كل الديت ساكت يعني => [and I stayed] silent the whole date, I mean\nوظليت [كل] الديت ساكت يعني => and I stayed silent [the whole] date, I mean\nوظليت كل [الديت] ساكت يعني => and I stayed silent the whole [date], I mean\nوظليت كل الديت [ساكت] يعني => and I stayed [silent] the whole date, I mean\nوظليت كل الديت ساكت [يعني] => and I stayed silent the whole date, [I mean]\n\n[و]بطلنا من بعد الحدث هاد. => [and] we stopped after this event.\nو[بطلنا] من بعد الحدث هاد. => and [we stopped] after this event.\nوبطلنا [من بعد] الحدث هاد. => and we stopped [after] this event.\nوبطلنا من بعد [الحدث] هاد. => and we stopped after this [event].\nوبطلنا من بعد الحدث [هاد]. => and we stopped after [this] event.\n\n[لما] بغني مثلاً مع حالي بكون مبسوط، => [When] I sing, for example, alone, I'm happy,\nلما [بغني] مثلاً مع حالي بكون مبسوط، => When [I sing], for example, alone, I'm happy,\nلما بغني [مثلاً] مع حالي بكون مبسوط، => When I sing, [for example], alone, I'm happy,\nلما بغني مثلاً [مع حالي] بكون مبسوط، => When I sing, for example, [alone], I'm happy,\nلما بغني مثلاً مع حالي [بكون] مبسوط، => When I sing, for example, alone, [I'm] happy,\nلما بغني مثلاً مع حالي بكون [مبسوط]، => When I sing, for example, alone, I'm [happy],\n\n[ما بتأتئش] => [I don't stutter]\nما [بتأتئ]ش => stutter\n[ما] بتأتئ[ش] => don't # the 'ma...sh' framework in Arabic dialects functions as a negation marker like 'don't' or 'not'\n\n[إذا] بغني وفي حوالي كان ناس، => [If] I sing and there are people around,\nإذا [بغني] وفي حوالي كان ناس، => If [I sing] and there are people around,\nإذا بغني [و]في حوالي كان ناس، => If I sing [and] there are people around,\nإذا بغني و[في] حوالي كان ناس، => If I sing and [there are] people around,\nإذا بغني وفي [حوالي] كان ناس، => If I sing and there are people [around],\nإذا بغني وفي حوالي [كان] ناس، => was, were\nإذا بغني وفي حوالي كان [ناس]، => If I sing and there are [people] around,\n\n[أنا] أكيد إنه أنا رح أتأتئ => [I]'m sure I will stutter\nأنا [أكيد] إنه أنا رح أتأتئ => I'm [sure] I will stutter\nأنا أكيد [إنه] أنا رح أتأتئ => that\nأنا أكيد إنه [أنا] رح أتأتئ => I'm sure [I] will stutter\nأنا أكيد إنه أنا [رح] أتأتئ => I'm sure I [will] stutter\nأنا أكيد إنه أنا رح [أتأتئ] => I'm sure I will [stutter]\n\n[في] مرات إنه قبل ما أحكي الجملة => [There are] times before I say the sentence\nفي [مرات] إنه قبل ما أحكي الجملة => There are [times] before I say the sentence\nفي مرات [إنه] قبل ما أحكي الجملة => that, it # \"إنه\" is used here as a connector, often translated as \"that\" or \"the thing is\"\nفي مرات إنه [قبل ما] أحكي الجملة => There are times [before] I say the sentence\nفي مرات إنه قبل ما [أحكي] الجملة => There are times before [I say] the sentence\nفي مرات إنه قبل ما أحكي [الجملة] => There are times before I say [the sentence]\n\n[بكون عارف] وين بدي أتأتئ => [I know] where I'm going to stutter\nبكون عارف [وين] بدي أتأتئ => I know [where] I'm going to stutter\nبكون عارف وين [بدي] أتأتئ => I know where [I'm going to] stutter\nبكون عارف وين بدي [أتأتئ] => I know where I'm going to [stutter]\n\n[مثلاً] في أي كلمة أو في أي حرف => [for example], in which word or which letter\nمثلاً [في] أي كلمة أو في أي حرف => for example, [in] which word or which letter\nمثلاً في [أي] كلمة أو في أي حرف => for example, in [which] word or which letter\nمثلاً في أي [كلمة] أو في أي حرف => for example, in which [word] or which letter\nمثلاً في أي كلمة [أو] في أي حرف => for example, in which word [or] which letter\nمثلاً في أي كلمة أو في [أي] حرف => for example, in which word or [which] letter\nمثلاً في أي كلمة أو في أي [حرف] => for example, in which word or which [letter]\n\n[بدي] أعلق شوي. => [I'm going to] get stuck a bit.\nبدي [أعلق] شوي. => I'm going to [get stuck] a bit.\nبدي أعلق [شوي]. => I'm going to get stuck [a bit].\n\n[والله] بالأول كنت صعب أتأقلم فيها. => [By God], at first it was hard for me to adapt to it.\nوالله [بالأول] كنت صعب أتأقلم فيها. => By God, [at first] it was hard for me to adapt to it.\nوالله بالأول [كنت] صعب أتأقلم فيها. => I was # the Arabic verb \"كنت\" is first-person \"I was\", although the English uses the impersonal \"it was\"\nوالله بالأول كنت [صعب] أتأقلم فيها. => By God, at first it was [hard] for me to adapt to it.\nوالله بالأول كنت صعب [أتأقلم] فيها. => By God, at first it was hard for me [to adapt] to it.\nوالله بالأول كنت صعب أتأقلم [فيها] => By God, at first it was hard for me to adapt [to it]\n\n[كنت] عم بساعد بالمركز الجماهيري. => [I was] helping at the community center.\nكنت [عم بساعد] بالمركز الجماهيري. => I was [helping] at the community center.\nكنت عم بساعد [بالمركز] الجماهيري. => at the center # Includes the preposition 'bi' (at) and the definite article 'al' (the)\nكنت عم بساعد بالمركز [الجماهيري]. => I was helping at the [community] center.\n\n[كنت بدي] إنه أطلب منهن مساعدة، => [I wanted] to ask them for help,\nكنت بدي إنه [أطلب] منهن مساعدة، => I wanted [to ask] them for help,\nكنت بدي إنه أطلب [منهن] مساعدة، => I wanted to ask [them] for help,\nكنت بدي إنه أطلب منهن [مساعدة]، => I wanted to ask them for [help]\n\n[كل اللي] كانوا هناك صاروا يضحكوا علي => [everyone] there started laughing at me\nكل اللي [كانوا] هناك صاروا يضحكوا علي => were\nكل اللي كانوا [هناك] صاروا يضحكوا علي => everyone [there] started laughing at me\nكل اللي كانوا هناك [صاروا] يضحكوا علي => everyone there [started] laughing at me\nكل اللي كانوا هناك صاروا [يضحكوا] علي => everyone there started [laughing] at me\nكل اللي كانوا هناك صاروا يضحكوا [علي] => everyone there started laughing [at me]\n\n[ويتنمروا] وهيك. => [and bully me] and so on.\nويتنمروا [وهيك]. => and bully me [and so on]. # وهيك literally means \"and like that\" or \"and such\"\n\nفأنا [تركتهن] ويعني بكيت بعدها يعني. => So I [left them] and, I mean, cried afterwards, I mean.\nفأنا تركتهن [و]يعني بكيت بعدها يعني. => So I left them [and], I mean, cried afterwards, I mean.\nفأنا تركتهن و[يعني] بكيت بعدها يعني. => So I left them and, [I mean], cried afterwards, I mean.\nفأنا تركتهن ويعني [بكيت] بعدها يعني. => So I left them and, I mean, [cried] afterwards, I mean.\nفأنا تركتهن ويعني بكيت [بعدها] يعني. => So I left them and, I mean, cried [afterwards], I mean.\nفأنا تركتهن ويعني بكيت بعدها [يعني]. => So I left them and, I mean, cried afterwards, [I mean].\n\n[هاد] ممكن أقول إنه هاد أكتر موقف => [This] I can say is the most situation\nهاد [ممكن أقول] إنه هاد أكتر موقف => This [I can say] is the most situation\nهاد ممكن أقول [إنه] هاد أكتر موقف => that it, which\nهاد ممكن أقول إنه [هاد] أكتر موقف => this\nهاد ممكن أقول إنه هاد [أكتر] موقف => This I can say is [the most] situation\nهاد ممكن أقول إنه هاد أكتر [موقف] => This I can say is the most [situation]\n\n[اللي هو] أثر علي. => [that] affected me.\nاللي هو [أثر] علي. => that [affected] me.\nاللي هو أثر [علي]. => that affected [me].\nاللي هو أثر [علي] => on me # \"على\" is the preposition \"on\" and \"ي\" is \"me\"\n\n[مثلاً] لما بدي أحكي شيء => [For example], when I want to say something\nمثلاً [لما] بدي أحكي شيء => For example, [when] I want to say something\nمثلاً لما [بدي] أحكي شيء => For example, when [I want] to say something\nمثلاً لما بدي [أحكي] شيء => For example, when I want to [say] something\nمثلاً لما بدي أحكي [شيء] => For example, when I want to say [something]\n\nويجي [واحد] يحكي عني مثلاً هاد => and [someone] comes to speak for me, like this\nويجي واحد [يحكي] عني مثلاً هاد => and someone comes [to speak] for me, like this\nويجي واحد يحكي [عني] مثلاً هاد => and someone comes to speak [for me], like this\nويجي واحد يحكي عني [مثلاً] هاد => and someone comes to speak for me, [like] this\nويجي واحد يحكي عني مثلاً [هاد] => and someone comes to speak for me, like [this]\n\n[هو] يكمل عني الكلمة، بتضايق منه. => [he] finishes the word for me, I get upset with him.\nهو [يكمل] عني الكلمة، بتضايق منه. => he [finishes] the word for me, I get upset with him.\nهو يكمل [عني] الكلمة، بتضايق منه. => he finishes the word [for me], I get upset with him.\nهو يكمل عني [الكلمة]، بتضايق منه. => he finishes [the word] for me, I get upset with him.\nهو يكمل عني الكلمة، [بتضايق] منه. => he finishes the word for me, [I get upset] with him.\nهو يكمل عني الكلمة، بتضايق [منه]. => he finishes the word for me, I get upset [with him].\n\n[في الأول] لما كنت أصغر => [At first] when I was younger\nفي الأول [لما] كنت أصغر => At first [when] I was younger\nفي الأول لما [كنت] أصغر => At first when [I was] younger\nفي الأول لما كنت [أصغر] => At first when I was [younger]\n\n[كان] كتير يعني تعمل لي إحراج. => [it was] very, I mean, embarrassing for me.\nكان [كتير] يعني تعمل لي إحراج. => it was [very], I mean, embarrassing for me.\nكان كتير [يعني] تعمل لي إحراج. => it was very, [I mean], embarrassing for me.\nكان كتير يعني [تعمل] لي إحراج. => it was causing, it was making # the Arabic verb 'ta'mal' (to do/make) is used here to describe the action of causing embarrassment\nكان كتير يعني تعمل [لي] إحراج. => it was very, I mean, embarrassing [for me].\nكان كتير يعني تعمل لي [إحراج]. => it was very, I mean, [embarrassing] for me.\n\n[بالابتدائية] كانت المدرسة كتير إشي مش منيح، => [In elementary school], the school was very not good,\nبالابتدائية [كانت] المدرسة كتير إشي مش منيح، => In elementary school, the school [was] very not good,\nبالابتدائية كانت [المدرسة] كتير إشي مش منيح، => In elementary school, [the school] was very not good,\nبالابتدائية كانت المدرسة [كتير] إشي مش منيح، => In elementary school, the school was [very] not good,\nبالابتدائية كانت المدرسة كتير [إشي] مش منيح، => thing, something\nبالابتدائية كانت المدرسة كتير إشي [مش] منيح، => In elementary school, the school was very [not] good,\nبالابتدائية كانت المدرسة كتير إشي مش [منيح]، => In elementary school, the school was very not [good],\n\n[كانوا] يتنمروا علي => [they used to] bully me\nكانوا [يتنمروا] علي => they used to [bully] me\nكانوا يتنمروا [علي] => they used to bully [me]\n\n[و]في طالب يعني كان يتنمر علي كل يوم، => [And] there was a student, I mean, who bullied me every day,\nو[في] طالب يعني كان يتنمر علي كل يوم، => And [there was] a student, I mean, who bullied me every day,\nوفي [طالب] يعني كان يتنمر علي كل يوم، => And there was [a student], I mean, who bullied me every day,\nوفي طالب [يعني] كان يتنمر علي كل يوم، => And there was a student, [I mean], who bullied me every day,\nوفي طالب يعني [كان يتنمر] علي كل يوم، => And there was a student, I mean, who [bullied] me every day,\nوفي طالب يعني كان يتنمر [علي] كل يوم، => And there was a student, I mean, who bullied [me] every day,\nوفي طالب يعني كان يتنمر علي [كل] يوم، => And there was a student, I mean, who bullied me [every] day,\nوفي طالب يعني كان يتنمر علي كل [يوم]، => And there was a student, I mean, who bullied me every [day],\n\nإنه [بالرسائل] كمان وبالصف وبكل محل. => [in messages] too, and in class, and everywhere.\nإنه بالرسائل [كمان] وبالصف وبكل محل. => in messages [too], and in class, and everywhere.\nإنه بالرسائل كمان [وبالصف] وبكل محل. => in messages too, [and in class], and everywhere.\nإنه بالرسائل كمان وبالصف [وبكل محل]. => in messages too, and in class, [and everywhere]\n\n[بس] أحكي الكل بيفكر إنه أنا بس مضغوط => [But when] I speak, everyone thinks I'm just stressed # 'بس' can mean 'but' or 'when', here it functions as 'but when'\nبس [أحكي] الكل بيفكر إنه أنا بس مضغوط => I speak # 'أحكي' is the first-person singular form (contains 'I')\nبس أحكي [الكل] بيفكر إنه أنا بس مضغوط => But when I speak, [everyone] thinks I'm just stressed\nبس أحكي الكل [بيفكر] إنه أنا بس مضغوط => But when I speak, everyone [thinks] I'm just stressed\nبس أحكي الكل بيفكر [إنه] أنا بس مضغوط => that # 'إنه' is a conjunction meaning 'that'\nبس أحكي الكل بيفكر إنه [أنا] بس مضغوط => I # custom translation to align with the 'I' part of 'I'm'\nبس أحكي الكل بيفكر إنه أنا [بس] مضغوط => But when I speak, everyone thinks I'm [just] stressed\nبس أحكي الكل بيفكر إنه أنا بس [مضغوط] => But when I speak, everyone thinks I'm just [stressed]\n\n[أو] إنه عشان أنا مش عارف أحكي. => [or] because I don't know how to speak.\nأو [إنه] عشان أنا مش عارف أحكي. => that # functions as a conjunction/linker in Levantine\nأو إنه [عشان] أنا مش عارف أحكي. => or [because] I don't know how to speak.\nأو إنه عشان [أنا] مش عارف أحكي. => or because [I] don't know how to speak.\nأو إنه عشان أنا [مش عارف] أحكي. => or because I [don't know] how to speak.\nأو إنه عشان أنا مش عارف [أحكي]. => or because I don't know how to [speak]\n\n[لحد] هسا مش عم بتعامل مع الإشي. => [Until] now I'm not dealing with the thing.\nلحد [هسا] مش عم بتعامل مع الإشي. => Until [now] I'm not dealing with the thing.\nلحد هسا [مش] عم بتعامل مع الإشي. => Until now I'm [not] dealing with the thing.\nلحد هسا مش [عم بتعامل] مع الإشي. => I'm dealing, am dealing\nلحد هسا مش عم بتعامل [مع] الإشي. => Until now I'm not dealing [with] the thing.\nلحد هسا مش عم بتعامل مع [الإشي]. => Until now I'm not dealing with [the thing].\n\n[شفت] كتير معلومات عن التأتأة وجربت => [I saw] a lot of information about stuttering and tried\nشفت [كتير] معلومات عن التأتأة وجربت => I saw [a lot of] information about stuttering and tried\nشفت كتير [معلومات] عن التأتأة وجربت => I saw a lot of [information] about stuttering and tried\nشفت كتير معلومات [عن] التأتأة وجربت => I saw a lot of information [about] stuttering and tried\nشفت كتير معلومات عن [التأتأة] وجربت => I saw a lot of information about [stuttering] and tried\nشفت كتير معلومات عن التأتأة [وجربت] => I saw a lot of information about stuttering [and tried]\n\n[بس] مش كلهن بس ولا شيء اللي هو ساعدني. => [but] not all of them, just nothing that helped me.\nبس [مش] كلهن بس ولا شيء اللي هو ساعدني. => but [not] all of them, just nothing that helped me.\nبس مش [كلهن] بس ولا شيء اللي هو ساعدني. => but not [all of them], just nothing that helped me.\nبس مش كلهن [بس] ولا شيء اللي هو ساعدني. => but not all of them, [just] nothing that helped me.\nبس مش كلهن بس [ولا شيء] اللي هو ساعدني. => but not all of them, just [nothing] that helped me.\nبس مش كلهن بس ولا شيء [اللي] هو ساعدني. => but not all of them, just nothing [that] helped me.\nبس مش كلهن بس ولا شيء اللي هو [ساعدني] => but not all of them, just nothing that [helped me]\n\n[هي] أكتر لازم تعرف كيف تنظم النفس => [It's] more about knowing how to regulate breathing\nهي [أكتر] لازم تعرف كيف تنظم النفس => It's [more] about knowing how to regulate breathing\nهي أكتر [لازم] تعرف كيف تنظم النفس => is about, must\nهي أكتر لازم [تعرف] كيف تنظم النفس => It's more about [knowing] how to regulate breathing\nهي أكتر لازم تعرف [كيف] تنظم النفس => It's more about knowing [how] to regulate breathing\nهي أكتر لازم تعرف كيف [تنظم] النفس => It's more about knowing how [to regulate] breathing\nهي أكتر لازم تعرف كيف تنظم [النفس] => It's more about knowing how to regulate [breathing]\n\n[و]إنت عم بتحكي. => [while] you are speaking.\nو[إنت] عم بتحكي. => while [you] are speaking.\nوإنت [عم بتحكي]. => while you [are speaking].\n\n[إنه] مثلاً هسا أنا في نص محادثة، => [Like], for example, now I'm in the middle of a conversation,\nإنه [مثلاً] هسا أنا في نص محادثة، => Like, [for example], now I'm in the middle of a conversation,\nإنه مثلاً [هسا] أنا في نص محادثة، => Like, for example, [now] I'm in the middle of a conversation,\nإنه مثلاً هسا [أنا] في نص محادثة، => Like, for example, now [I'm] in the middle of a conversation,\nإنه مثلاً هسا أنا [في] نص محادثة، => Like, for example, now I'm [in] the middle of a conversation,\nإنه مثلاً هسا أنا في [نص] محادثة، => Like, for example, now I'm in [the middle] of a conversation,\nإنه مثلاً هسا أنا في نص [محادثة]، => Like, for example, now I'm in the middle of a [conversation],\n\n[لازم] زي إنه أعمل في رجلي إيقاع => [I need to], like, make a rhythm with my leg\nلازم [زي] إنه أعمل في رجلي إيقاع => I need to, [like], make a rhythm with my leg\nلازم زي إنه [أعمل] في رجلي إيقاع => I need to, like, [make] a rhythm with my leg\nلازم زي إنه أعمل [في] رجلي إيقاع => I need to, like, make a rhythm [with] my leg\nلازم زي إنه أعمل في [رجلي] إيقاع => I need to, like, make a rhythm with [my leg]\nلازم زي إنه أعمل في رجلي [إيقاع] => I need to, like, make [a rhythm] with my leg\n\n[أو] شيء => [or] something\nأو [شيء] => or [something]\n\n[عشان] الحكي يطلع إنه سلس أكتر. => [so that] the speech comes out smoother.\nعشان [الحكي] يطلع إنه سلس أكتر. => so that [the speech] comes out smoother.\nعشان الحكي [يطلع] إنه سلس أكتر. => so that the speech [comes out] smoother.\nعشان الحكي يطلع [إنه] سلس أكتر. => that, it\nعشان الحكي يطلع إنه [سلس] أكتر. => smooth\nعشان الحكي يطلع إنه سلس [أكتر]. => more\nعشان الحكي يطلع إنه [سلس أكتر]. => so that the speech comes out [smoother].\n\n[أما] شفت إنه هاي الأشياء => [But] I saw that these things\nأما [شفت] إنه هاي الأشياء => But [I saw] that these things\nأما شفت [إنه] هاي الأشياء => But I saw [that] these things\nأما شفت إنه [هاي] الأشياء => But I saw that [these] things\nأما شفت إنه هاي [الأشياء] => But I saw that these [things]\n\n[مش] كتير بتمشي في الحقيقة يعني. => [don't] really work much, in truth, I mean.\nمش [كتير] بتمشي في الحقيقة يعني. => really, much\nمش كتير [بتمشي] في الحقيقة يعني. => don't really [work] much, in truth, I mean.\nمش كتير بتمشي [في] الحقيقة يعني. => don't really work much, [in] truth, I mean.\nمش كتير بتمشي في [الحقيقة] يعني. => don't really work much, in [truth], I mean.\nمش كتير بتمشي في الحقيقة [يعني]. => don't really work much, in truth, [I mean].\n\n[يعني] ممكن يحسوا اللي قبالي بعبء => [I mean], those in front of me might feel burdened\nيعني [ممكن] يحسوا اللي قبالي بعبء => I mean, those in front of me [might] feel burdened\nيعني ممكن [يحسوا] اللي قبالي بعبء => I mean, those in front of me might [feel] burdened\nيعني ممكن يحسوا [اللي] قبالي بعبء => I mean, [those] in front of me might feel burdened\nيعني ممكن يحسوا اللي [قبالي] بعبء => I mean, those [in front of me] might feel burdened\nيعني ممكن يحسوا اللي قبالي [بعبء] => I mean, those in front of me might feel [burdened] # Literal: with a burden (noun), localized as the adjective \"burdened\"\n\n[أو] مثلاً شفقة، => [or], for example, pity,\nأو [مثلاً] شفقة، => or, [for example], pity,\nأو مثلاً [شفقة]، => or, for example, [pity],\n\n[بس] أنا بقول الشفقة على المجتمع هاد. => [but] I say pity on this society.\nبس [أنا بقول] الشفقة على المجتمع هاد. => but [I say] pity on this society.\nبس أنا بقول [الشفقة] على المجتمع هاد. => but I say [pity] on this society.\nبس أنا بقول الشفقة [على] المجتمع هاد. => but I say pity [on] this society.\nبس أنا بقول الشفقة على [المجتمع] هاد. => but I say pity on this [society]\nبس أنا بقول الشفقة على المجتمع [هاد]. => but I say pity on [this] society.\n\n[كتير] مرات لما أنا أكون قاعدة => [Many] times when I am sitting\nكتير [مرات] لما أنا أكون قاعدة => Many [times] when I am sitting\nكتير مرات [لما] أنا أكون قاعدة => Many times [when] I am sitting\nكتير مرات لما [أنا] أكون قاعدة => Many times when [I] am sitting\nكتير مرات لما أنا [أكون] قاعدة => Many times when I [am] sitting\nكتير مرات لما أنا أكون [قاعدة] => Many times when I am [sitting]\n\n[مع] العيلة تبعتي أو مع الأصحاب. => [with] my family or with friends.\nمع [العيلة] تبعتي أو مع الأصحاب. => with my [family] or with friends.\nمع العيلة [تبعتي] أو مع الأصحاب. => with [my] family or with friends.\nمع العيلة تبعتي [أو] مع الأصحاب. => with my family [or] with friends.\nمع العيلة تبعتي أو [مع] الأصحاب. => with my family or [with] friends.\nمع العيلة تبعتي أو مع [الأصحاب]. => with my family or with [friends].\n\n[باجي] بدي أحكي شيء بحرف التاء => [I come] to say something with the letter 'T'\nباجي [بدي] أحكي شيء بحرف التاء => I want, I'm going to\nباجي بدي [أحكي] شيء بحرف التاء => to say, to speak\nباجي بدي أحكي [شيء] بحرف التاء => I come to say [something] with the letter 'T'\nباجي بدي أحكي شيء [بحرف] التاء => I come to say something [with the letter] 'T'\nباجي بدي أحكي شيء بحرف [التاء] => I come to say something with the letter ['T'] # although 'at-tā'' includes the article, in English 'T' is used alone here\n\n[وبتعلق] معي وشو كلهن بصيروا => [and it gets stuck] with me and what do they all become\nوبتعلق [معي] وشو كلهن بصيروا => and it gets stuck [with me] and what do they all become\nوبتعلق معي [وشو] كلهن بصيروا => and it gets stuck with me [and what] do they all become\nوبتعلق معي وشو [كلهن] بصيروا => and it gets stuck with me and what do [they all] become\nوبتعلق معي وشو كلهن [بصيروا] => and it gets stuck with me and what do they all [become]\n\n[إنه] هن بصيروا => [that] they become\nإنه [هن] بصيروا => that [they] become\nإنه هن [بصيروا] => that they [become]\n\n[إنه] يضحكوا علي وأنا بضحك برضه. => [that] they laugh at me and I laugh too.\nإنه [يضحكوا] علي وأنا بضحك برضه. => that [they laugh] at me and I laugh too.\nإنه يضحكوا [علي] وأنا بضحك برضه. => that they laugh [at me] and I laugh too.\nإنه يضحكوا علي [وأنا] بضحك برضه. => that they laugh at me [and I] laugh too.\nإنه يضحكوا علي وأنا [بضحك] برضه. => that they laugh at me and I [laugh] too.\nإنه يضحكوا علي وأنا بضحك [برضه]. => that they laugh at me and I laugh [too].\n\n[مع] أهلي مع أصحابي بتكون في شوي => [With] my family, with my friends, it's a bit\nمع [أهلي] مع أصحابي بتكون في شوي => With [my family], with my friends, it's a bit\nمع أهلي [مع] أصحابي بتكون في شوي => With my family, [with] my friends, it's a bit\nمع أهلي مع [أصحابي] بتكون في شوي => With my family, with [my friends], it's a bit\nمع أهلي مع أصحابي [بتكون] في شوي => With my family, with my friends, [it's] a bit\nمع أهلي مع أصحابي بتكون [في] شوي => there is\nمع أهلي مع أصحابي بتكون في [شوي] => With my family, with my friends, it's [a bit]\n\n[أما] مش كتير وهن كمان تعودوا عليها. => [but] not much, and they got used to it too.\nأما [مش] كتير وهن كمان تعودوا عليها. => but [not] much, and they got used to it too.\nأما مش [كتير] وهن كمان تعودوا عليها. => but not [much], and they got used to it too.\nأما مش كتير [و]هن كمان تعودوا عليها. => but not much, [and] they got used to it too.\nأما مش كتير و[هن] كمان تعودوا عليها. => but not much, and [they] got used to it too.\nأما مش كتير وهن [كمان] تعودوا عليها. => but not much, and they got used to it [too]\nأما مش كتير وهن كمان [تعودوا] عليها. => but not much, and they [got used] to it too\nأما مش كتير وهن كمان تعودوا [عليها]. => but not much, and they got used [to it] too # عليها is a combination of the preposition 'ala (to/on) and the pronoun ha (it)\n\n[المحيط] الأقرب عندي يعني بتفهموا الوضع اللي عندي. => The closest [circle] to me, I mean, they understand my situation.\nالمحيط [الأقرب] عندي يعني بتفهموا الوضع اللي عندي. => [The closest] circle to me, I mean, they understand my situation.\nالمحيط الأقرب [عندي] يعني بتفهموا الوضع اللي عندي. => The closest circle [to me], I mean, they understand my situation.\nالمحيط الأقرب عندي [يعني] بتفهموا الوضع اللي عندي. => The closest circle to me, [I mean], they understand my situation.\nالمحيط الأقرب عندي يعني [بتفهموا] الوضع اللي عندي. => The closest circle to me, I mean, [they understand] my situation.\nالمحيط الأقرب عندي يعني بتفهموا [الوضع] اللي عندي. => situation\nالمحيط الأقرب عندي يعني بتفهموا الوضع [اللي عندي] => The closest circle to me, I mean, they understand [my] situation. # the phrase denotes possession here equivalent to \"my\"\n\n[ماشي] بحاول أحكي مرتين تلاتة أربعة => [Okay], I try to speak two, three, four times\nماشي [بحاول] أحكي مرتين تلاتة أربعة => Okay, [I try] to speak two, three, four times\nماشي بحاول [أحكي] مرتين تلاتة أربعة => Okay, I try [to speak] two, three, four times\nماشي بحاول أحكي [مرتين] تلاتة أربعة => two times # مرتين is the dual form of 'مرة' (time/once), meaning 'two times'\nماشي بحاول أحكي مرتين [تلاتة] أربعة => Okay, I try to speak two, [three], four times\nماشي بحاول أحكي مرتين تلاتة [أربعة] => Okay, I try to speak two, three, [four] times\n\n[لما] اللي قبالي بينصت منيح بفهمني. => [when] the one in front of me listens well, he understands me.\nلما [اللي] قبالي بينصت منيح بفهمني. => when [the one] in front of me listens well, he understands me.\nلما اللي [قبالي] بينصت منيح بفهمني. => when the one [in front of me] listens well, he understands me.\nلما اللي قبالي [بينصت] منيح بفهمني. => when the one in front of me [listens] well, he understands me.\nلما اللي قبالي بينصت [منيح] بفهمني. => when the one in front of me listens [well], he understands me.\nلما اللي قبالي بينصت منيح [بفهمني]. => when the one in front of me listens well, [he understands me] # بفهمني includes the prefix (he) and the suffix (me) within the verb structure\n\n[الحمد لله] مع الوقت صرت أتقبل الشيء. => [Praise God], with time I started to accept the thing.\nالحمد لله [مع] الوقت صرت أتقبل الشيء. => Praise God, [with] time I started to accept the thing.\nالحمد لله مع [الوقت] صرت أتقبل الشيء. => Praise God, with [time] I started to accept the thing.\nالحمد لله مع الوقت [صرت] أتقبل الشيء. => Praise God, with time [I started to] accept the thing.\nالحمد لله مع الوقت صرت [أتقبل] الشيء. => Praise God, with time I started [to accept] the thing.\nالحمد لله مع الوقت صرت أتقبل [الشيء] => Praise God, with time I started to accept [the thing]\n\n[صرت] من جوا أقول إنه أنا هيك بحكي يعني، => [I started] from within to say that I speak like this, I mean,\nصرت [من جوا] أقول إنه أنا هيك بحكي يعني، => I started [from within] to say that I speak like this, I mean,\nصرت من جوا [أقول] إنه أنا هيك بحكي يعني، => I started from within to [say] that I speak like this, I mean,\nصرت من جوا أقول [إنه] أنا هيك بحكي يعني، => I started from within to say [that] I speak like this, I mean,\nصرت من جوا أقول إنه [أنا] هيك بحكي يعني، => I started from within to say that [I] speak like this, I mean,\nصرت من جوا أقول إنه أنا [هيك] بحكي يعني، => I started from within to say that I speak [like this], I mean,\nصرت من جوا أقول إنه أنا هيك [بحكي] يعني، => I started from within to say that I [speak] like this, I mean,\nصرت من جوا أقول إنه أنا هيك بحكي [يعني]، => I started from within to say that I speak like this, [I mean],\n\n[هاد] أنا. => [this is] me.\nهاد [أنا]. => this is [me].\n\n[و]فش عندي أي نية إني أتغير => [And] I have no intention to change\nو[فش عندي] أي نية إني أتغير => And [I have no] intention to change # \"fish 'indi\" functions together as \"I don't have\" or \"I have no\"\nوفش عندي [أي] نية إني أتغير => any\nوفش عندي أي [نية] إني أتغير => And I have no [intention] to change\nوفش عندي أي نية [إني] أتغير => And I have no intention [to] change\nوفش عندي أي نية إني [أتغير] => And I have no intention to [change]\n\n[أو] أغير من حالي عشان الناس تتقبلني يعني. => [or] change myself so people accept me, I mean.\nأو [أغير] من حالي عشان الناس تتقبلني يعني. => or [change] myself so people accept me, I mean.\nأو أغير [من حالي] عشان الناس تتقبلني يعني. => or change [myself] so people accept me, I mean.\nأو أغير من حالي [عشان] الناس تتقبلني يعني. => or change myself [so] people accept me, I mean.\nأو أغير من حالي عشان [الناس] تتقبلني يعني. => or change myself so [people] accept me, I mean.\nأو أغير من حالي عشان الناس [تتقبلني] يعني. => or change myself so people [accept me], I mean.\nأو أغير من حالي عشان الناس تتقبلني [يعني]. => or change myself so people accept me, [I mean].\n\n[بس] الحمد لله أنا متعود عليها متأقلم يعني => [But] praise God, I'm used to it, adapted, I mean.\nبس [الحمد لله] أنا متعود عليها متأقلم يعني => But [praise God], I'm used to it, adapted, I mean.\nبس الحمد لله [أنا] متعود عليها متأقلم يعني => But praise God, [I'm] used to it, adapted, I mean.\nبس الحمد لله أنا [متعود] عليها متأقلم يعني => But praise God, I'm [used] to it, adapted, I mean.\nبس الحمد لله أنا متعود [عليها] متأقلم يعني => But praise God, I'm used [to it], adapted, I mean.\nبس الحمد لله أنا متعود عليها [متأقلم] يعني => But praise God, I'm used to it, [adapted], I mean.\nبس الحمد لله أنا متعود عليها متأقلم [يعني] => But praise God, I'm used to it, adapted, [I mean].\n\n[أنا] متقبل حالي 100% لأنه أنا هيك خلقت. => [I] accept myself 100% because I was created like this.\nأنا [متقبل] حالي 100% لأنه أنا هيك خلقت. => I [accept] myself 100% because I was created like this.\nأنا متقبل [حالي] 100% لأنه أنا هيك خلقت. => I accept [myself] 100% because I was created like this.\nأنا متقبل حالي [100%] لأنه أنا هيك خلقت. => I accept myself [100%] because I was created like this.\nأنا متقبل حالي 100% [لأنه] أنا هيك خلقت. => I accept myself 100% [because] I was created like this.\nأنا متقبل حالي 100% لأنه [أنا] هيك خلقت. => I accept myself 100% because [I] was created like this.\nأنا متقبل حالي 100% لأنه أنا [هيك] خلقت. => I accept myself 100% because I was created [like this].\nأنا متقبل حالي 100% لأنه أنا هيك [خلقت]. => I accept myself 100% because I [was created] like this. # the verb خلقت contains the passive voice meaning \"was created\"\n\nالسبب [الوحيد] والرئيسي هي أمي، => The [only] and main reason is my mother,\nالسبب الوحيد [و]الرئيسي هي أمي، => The only [and] main reason is my mother,\nالسبب الوحيد و[الرئيسي] هي أمي، => The only and [main] reason is my mother,\nالسبب الوحيد والرئيسي [هي] أمي، => The only and main reason [is] my mother,\nالسبب الوحيد والرئيسي هي [أمي]، => The only and main reason is [my mother]\n\n[أمي] تعلمت عشاني مساعدة => [My mother] learned for my sake, to help\nأمي [تعلمت] عشاني مساعدة => My mother [learned] for my sake, to help\nأمي تعلمت [عشاني] مساعدة => My mother learned [for my sake], to help\nأمي تعلمت عشاني [مساعدة] => My mother learned for my sake, [to help]\n\n[عشان] أنا. => [for] me.\nعشان [أنا]. => for [me].\n\n[قعدت] معي وكانت مرافقتي، => [She stayed] with me and was my companion,\nقعدت [معي] وكانت مرافقتي، => She stayed [with me] and was my companion,\nقعدت معي [وكانت] مرافقتي، => She stayed with me [and was] my companion,\nقعدت معي وكانت [مرافقتي]، => She stayed with me and was [my companion],\n\n[هي] الداعم الأول والأخير ليلي. => [she is] the first and last supporter for me.\nهي [الداعم] الأول والأخير ليلي. => she is the first and last [supporter] for me.\nهي الداعم [الأول] والأخير ليلي. => she is [the first] and last supporter for me.\nهي الداعم الأول [و]الأخير ليلي. => she is the first [and] last supporter for me.\nهي الداعم الأول و[الأخير] ليلي. => she is the first and [last] supporter for me.\nهي الداعم الأول والأخير [ليلي]. => she is the first and last supporter [for me] # ليلي is a dialectal form of 'for me' (li + li/ili)\n\n[فهي] سبب تقبلي للتأتأة => [So she is] the reason for my acceptance of stuttering\nفهي [سبب] تقبلي للتأتأة => So she is [the reason] for my acceptance of stuttering\nفهي سبب [تقبلي] للتأتأة => So she is the reason for [my acceptance] of stuttering\nفهي سبب تقبلي [للتأتأة] => So she is the reason for my acceptance [of stuttering]\n\n[لأنه] أمي قالت لي اللي بده يتقبلك => [Because] my mother told me whoever wants to accept you\nلأنه [أمي] قالت لي اللي بده يتقبلك => Because [my mother] told me whoever wants to accept you\nلأنه أمي [قالت] لي اللي بده يتقبلك => Because my mother [told] me whoever wants to accept you\nلأنه أمي قالت [لي] اللي بده يتقبلك => Because my mother told [me] whoever wants to accept you\nلأنه أمي قالت لي [اللي] بده يتقبلك => Because my mother told me [whoever] wants to accept you\nلأنه أمي قالت لي اللي [بده] يتقبلك => Because my mother told me whoever [wants] to accept you\nلأنه أمي قالت لي اللي بده [يتقبلك] => Because my mother told me whoever [to accept you]\n\n[بيتقبلك] كيف هو عيسى، => [will accept you] as you are, Issa,\nبيتقبلك [كيف] هو عيسى، => will accept you [as] you are, Issa,\nبيتقبلك كيف [هو] عيسى، => he is # 'هو' literally means 'he' or 'he is', though translated as 'you are' in the full English context\nبيتقبلك كيف هو [عيسى]، => will accept you as you are, [Issa],\n\n[و]تقبل نفسك عشان يتقبلك المجتمع. => [and] accept yourself so society accepts you.\nو[تقبل] نفسك عشان يتقبلك المجتمع. => and [accept] yourself so society accepts you.\nوتقبل [نفسك] عشان يتقبلك المجتمع. => and accept [yourself] so society accepts you.\nوتقبل نفسك [عشان] يتقبلك المجتمع. => and accept yourself [so] society accepts you.\nوتقبل نفسك عشان [يتقبلك] المجتمع. => and accept yourself so society [accepts you]\nوتقبل نفسك عشان يتقبلك [المجتمع]. => and accept yourself so [society] accepts you.\n\n[إنه] حتى الواحد تأتأ => [That] even if one stutters\nإنه [حتى] الواحد تأتأ => That [even] if one stutters\nإنه حتى [الواحد] تأتأ => That even if [one] stutters\nإنه حتى الواحد [تأتأ] => That even if one [stutters]\n\n[فش شيء] يعني صعب علينا. => [there is nothing], I mean, hard on us.\nفش شيء [يعني] صعب علينا. => there is nothing, [I mean], hard on us.\nفش شيء يعني [صعب] علينا. => there is nothing, I mean, [hard] on us.\nفش شيء يعني صعب [علينا]. => there is nothing, I mean, hard [on us].\n\n[بالابتدائية] في معلمة مرة حكت لي => [In elementary school], a teacher once told me\nبالابتدائية [في] معلمة مرة حكت لي => a, there was # In Levantine, \"fi\" often introduces an indefinite noun, equivalent to \"there is/was a\"\nبالابتدائية في [معلمة] مرة حكت لي => In elementary school, a [teacher] once told me\nبالابتدائية في معلمة [مرة] حكت لي => In elementary school, a teacher [once] told me\nبالابتدائية في معلمة مرة [حكت] لي => In elementary school, a teacher once [told] me\nبالابتدائية في معلمة مرة حكت [لي] => In elementary school, a teacher once told [me]\n\n[إنه] إنت مش رح تاخدي بجروت كامل => [that] you won't get a full Bagrut\nإنه [إنت] مش رح تاخدي بجروت كامل => that [you] won't get a full Bagrut\nإنه إنت [مش رح] تاخدي بجروت كامل => that you [won't] get a full Bagrut\nإنه إنت مش رح [تاخدي] بجروت كامل => that you won't [get] a full Bagrut\nإنه إنت مش رح تاخدي [بجروت] كامل => that you won't get a full [Bagrut]\nإنه إنت مش رح تاخدي بجروت [كامل] => that you won't get a [full] Bagrut\n\n[لأنه] إنت عندك هاي المشكلة => [because] you have this problem\nلأنه [إنت] عندك هاي المشكلة => because [you] have this problem\nلأنه إنت [عندك] هاي المشكلة => because you [have] this problem\nلأنه إنت عندك [هاي] المشكلة => because you have [this] problem\nلأنه إنت عندك هاي [المشكلة] => because you have this [problem]\n\n[لأنه] في بصف 11 بجروت اللي هو مع حكي بيجي. => [Because] in 11th grade Bagrut comes with speaking.\nلأنه [في] بصف 11 بجروت اللي هو مع حكي بيجي. => there is\nلأنه في [بصف] 11 بجروت اللي هو مع حكي بيجي. => Because [in] 11th [grade] Bagrut comes with speaking.\nلأنه في بصف [11] بجروت اللي هو مع حكي بيجي. => Because in [11th] grade Bagrut comes with speaking.\nلأنه في بصف 11 [بجروت] اللي هو مع حكي بيجي. => Because in 11th grade [Bagrut] comes with speaking.\nلأنه في بصف 11 بجروت [اللي هو] مع حكي بيجي. => which consists of, which is\nلأنه في بصف 11 بجروت اللي هو [مع] حكي بيجي. => Because in 11th grade Bagrut comes [with] speaking.\nلأنه في بصف 11 بجروت اللي هو مع [حكي] بيجي. => Because in 11th grade Bagrut comes with [speaking]\nلأنه في بصف 11 بجروت اللي هو مع حكي [بيجي]. => Because in 11th grade Bagrut [comes] with speaking.\n\n[ف]بدي أقول لك يا معلمة => [So] I want to tell you, Oh Teacher\nف[بدي] أقول لك يا معلمة => So [I want] to tell you, Oh Teacher\nفبدي [أقول] لك يا معلمة => So I want [to tell] you, Oh Teacher\nفبدي أقول [لك] يا معلمة => So I want to tell [you], Oh Teacher\nفبدي أقول لك [يا] معلمة => So I want to tell you, [Oh] Teacher\nفبدي أقول لك يا [معلمة] => So I want to tell you, Oh [Teacher]\n\n[إنه] أنا أخدت البجروت كامل. => [that] I got the full Bagrut.\nإنه [أنا] أخدت البجروت كامل. => that [I] got the full Bagrut.\nإنه أنا [أخدت] البجروت كامل. => that I [got] the full Bagrut.\nإنه أنا أخدت [البجروت] كامل. => the Bagrut\nإنه أنا أخدت البجروت [كامل]. => that I got the [full] Bagrut.\n\n[رسالتي] للمجتمع إنه هاي الشغلة مش عيب. => [My message] to society is that this thing is not a shame.\nرسالتي [للمجتمع] إنه هاي الشغلة مش عيب. => My message [to society] is that this thing is not a shame.\nرسالتي للمجتمع [إنه] هاي الشغلة مش عيب. => My message to society [is that] this thing is not a shame.\nرسالتي للمجتمع إنه [هاي] الشغلة مش عيب. => My message to society is that [this] thing is not a shame.\nرسالتي للمجتمع إنه هاي [الشغلة] مش عيب. => My message to society is that this [thing] is not a shame.\nرسالتي للمجتمع إنه هاي الشغلة [مش] عيب. => My message to society is that this thing [is not] a shame.\nرسالتي للمجتمع إنه هاي الشغلة مش [عيب] => My message to society is that this thing is not [a shame]\n\n[صح] ما في لها حل أما الشيء مش رح يمنعنا => [True], there is no solution, but the thing won't prevent us\nصح [ما في] لها حل أما الشيء مش رح يمنعنا => True, [there is no] solution, but the thing won't prevent us\nصح ما في [لها] حل أما الشيء مش رح يمنعنا => for it\nصح ما في لها [حل] أما الشيء مش رح يمنعنا => True, there is no [solution], but the thing won't prevent us\nصح ما في لها حل [أما] الشيء مش رح يمنعنا => True, there is no solution, [but] the thing won't prevent us\nصح ما في لها حل أما [الشيء] مش رح يمنعنا => True, there is no solution, but [the thing] won't prevent us\nصح ما في لها حل أما الشيء [مش رح] يمنعنا => True, there is no solution, but the thing [won't] prevent us\nصح ما في لها حل أما الشيء مش رح [يمنعنا] => True, there is no solution, but the thing won't [prevent us] # \"na\" at the end of the verb corresponds to \"us\"\n\n[من] إنه دائماً نحكي => [from] always speaking\nمن [إنه] دائماً نحكي => that\nمن إنه [دائماً] نحكي => from [always] speaking\nمن إنه دائماً [نحكي] => from always [speaking]\n\n[و]دائماً نعبر. => [and] always expressing.\nو[دائماً] نعبر. => and [always] expressing.\nودائماً [نعبر] => and always [expressing] # نعبر literally means \"we express\" but matches \"expressing\" in this phrase context\n\n[نحن] مش غير عنكم يعني إحنا زينا زيكم => [We] are not different from you, I mean, we are like you\nنحن [مش] غير عنكم يعني إحنا زينا زيكم => We are [not] different from you, I mean, we are like you\nنحن مش [غير] عنكم يعني إحنا زينا زيكم => We are not [different] from you, I mean, we are like you\nنحن مش غير [عنكم] يعني إحنا زينا زيكم => We are not different [from you], I mean, we are like you\nنحن مش غير عنكم [يعني] إحنا زينا زيكم => We are not different from you, [I mean], we are like you\nنحن مش غير عنكم يعني [إحنا] زينا زيكم => We are not different from you, I mean, [we] are like you\nنحن مش غير عنكم يعني إحنا [زينا زيكم] => are like you # Literally \"our like is your like,\" an idiomatic way to say \"exactly like you\" or \"just the same as you\"\n\n[بس] نحن بنحكي بطريقة تانية. => [but] we speak in another way.\nبس [نحن] بنحكي بطريقة تانية. => but [we] speak in another way.\nبس نحن [بنحكي] بطريقة تانية. => but we [speak] in another way.\nبس نحن بنحكي [بطريقة] تانية. => in a way, way # Custom translation because 'in' and 'way' are separated by 'another' in the English sentence\nبس نحن بنحكي بطريقة [تانية]. => but we speak in [another] way.\n\n[إحنا] جزء لا يتجزأ من هاد المجتمع، => [We are] an integral part of this society,\nإحنا [جزء] لا يتجزأ من هاد المجتمع، => We are an integral [part] of this society,\nإحنا جزء [لا يتجزأ] من هاد المجتمع، => We are an [integral] part of this society, # translated as a unit because it's a fixed idiom meaning \"inseparable\" or \"integral\"\nإحنا جزء لا يتجزأ [من] هاد المجتمع، => We are an integral part [of] this society,\nإحنا جزء لا يتجزأ من [هاد] المجتمع، => We are an integral part of [this] society,\nإحنا جزء لا يتجزأ من هاد [المجتمع]، => We are an integral part of this [society],\n\n[قلتوا] آه وإن قلتوا لأ => whether [you say] yes or say no\nقلتوا [آه] وإن قلتوا لأ => whether you say [yes] or say no\nقلتوا آه [وإن] قلتوا لأ => whether you say yes [or] say no\nقلتوا آه وإن [قلتوا] لأ => whether you say yes or [say] no\nقلتوا آه وإن قلتوا [لأ] => whether you say yes or say [no]\n\n[إلنا] حصة كبيرة بهذا البلد، => [We have] a big share in this country,\nإلنا [حصة] كبيرة بهذا البلد، => We have a [share] in this country,\nإلنا حصة [كبيرة] بهذا البلد، => We have a [big] share in this country,\nإلنا حصة كبيرة [بهذا] البلد، => We have a big share [in this] country,\nإلنا حصة كبيرة بهذا [البلد]، => We have a big share in this [country], # البلد literally means \"the country\", but maps directly to \"country\" in this context\n\n[شايف] صرت أتأتئ كمان لأنه انضغطت. => [See], I started stuttering too because I got stressed.\nشايف [صرت] أتأتئ كمان لأنه انضغطت. => See, [I started] stuttering too because I got stressed.\nشايف صرت [أتأتئ] كمان لأنه انضغطت. => See, I started [stuttering] too because I got stressed.\nشايف صرت أتأتئ [كمان] لأنه انضغطت. => See, I started stuttering [too] because I got stressed.\nشايف صرت أتأتئ كمان [لأنه] انضغطت. => See, I started stuttering too [because] I got stressed.\nشايف صرت أتأتئ كمان لأنه [انضغطت]. => See, I started stuttering too because [I got stressed].\n\nإنه [يفهم] ويتوعى، => To [understand] and be aware,\nإنه يفهم [و]يتوعى، => To understand [and] be aware,\nإنه يفهم و[يتوعى]، => To understand and [be aware],\n\n[للأسف] عنا مجتمعنا => [unfortunately], our society\nللأسف [عنا] مجتمعنا => we have, in our\nللأسف عنا [مجتمعنا] => unfortunately, [our society]\n\n[بيتقبلش] هاي الأشياء بيتقبلش. => [doesn't accept] these things, doesn't accept.\nبيتقبلش [هاي] الأشياء بيتقبلش. => doesn't accept [these] things, doesn't accept.\nبيتقبلش هاي [الأشياء] بيتقبلش. => doesn't accept these [things], doesn't accept.\nبيتقبلش هاي الأشياء [بيتقبلش]. => doesn't accept these things, [doesn't accept].\n\n[بدي] أقول لكم إنه تقبلونا مثل ما إحنا، => [I want] to tell you to accept us as we are,\nبدي [أقول] لكم إنه تقبلونا مثل ما إحنا، => I want [to tell] you to accept us as we are,\nبدي أقول [لكم] إنه تقبلونا مثل ما إحنا، => I want to tell [you] to accept us as we are,\nبدي أقول لكم إنه [تقبلونا] مثل ما إحنا، => I want to tell you [to accept us] as we are,\nبدي أقول لكم إنه تقبلونا [مثل ما] إحنا، => I want to tell you to accept us [as] we are,\nبدي أقول لكم إنه تقبلونا مثل ما [إحنا]، => I want to tell you to accept us as [we are],\n\n[كيف] نحن بنحب حالنا => [how] we love ourselves\nكيف [نحن] بنحب حالنا => how [we] love ourselves\nكيف نحن [بنحب] حالنا => how we [love] ourselves\nكيف نحن بنحب [حالنا] => how we love [ourselves]\n\n[كمان] أنتم حبونا => you love us [too]\nكمان [أنتم] حبونا => [you] love us too\nكمان أنتم [حبونا] => you [love us] too\n\n[نحن] مش مختلفين نحن مميزين. => [We] are not different, we are distinct.\nنحن [مش] مختلفين نحن مميزين. => We [are not] different, we are distinct.\nنحن مش [مختلفين] نحن مميزين. => We are not [different], we are distinct.\nنحن مش مختلفين [نحن] مميزين. => We are not different, [we are] distinct. # mapping نحن to 'we are' as the Arabic sentence implies the copula\nنحن مش مختلفين نحن [مميزين]. => We are not different, we are [distinct].\n\n[تأتأت]، عندك تخربط بالحكي، عادي كمل، => [You stutter], you get mixed up in speech, it's okay, continue,\nتأتأت، [عندك تخربط] بالحكي، عادي كمل، => You stutter, [you get mixed up] in speech, it's okay, continue,\nتأتأت، عندك تخربط [بالحكي]، عادي كمل، => You stutter, you get mixed up [in speech], it's okay, continue,\nتأتأت، عندك تخربط بالحكي، [عادي] كمل، => You stutter, you get mixed up in speech, [it's okay], continue,\nتأتأت، عندك تخربط بالحكي، عادي [كمل]، => You stutter, you get mixed up in speech, it's okay, [continue],\n\n[اللي] عندك طلعه وعبر => Bring out [what] you have and express\nاللي [عندك] طلعه وعبر => Bring out what [you have] and express\nاللي عندك [طلعه] وعبر => [Bring out] what you have and express\nاللي عندك طلعه [و]عبر => Bring out what you have [and] express\nاللي عندك طلعه و[عبر] => Bring out what you have and [express]\n\n[و]ما تخافش ولا من أي بني آدم. => [and] don't be afraid of any human being.\nو[ما تخافش] ولا من أي بني آدم. => and [don't be afraid] of any human being.\nوما تخافش ولا [من] أي بني آدم. => and don't be afraid [of] any human being.\nوما تخافش ولا من [أي] بني آدم. => and don't be afraid of [any] human being.\nوما تخافش ولا من أي [بني آدم]. => and don't be afraid of any [human being]. # \"بني آدم\" is a common idiom meaning human being or person. \nوما تخافش [ولا] من أي بني آدم. => nor, even # use custom translation because \"ولا\" adds emphasis to the negation which is implied but not explicitly a one-to-one word in the English translation.\n\n",
+    "lessons": "# مقدمة عن التأتأة\n00:00.00 لما بتعصبن،\n00:02.40 حراج عليك إذا حدا بيفهمني،\n00:04.80 بصير تايلندي.\n00:06.00 بصراحة إنه أنا في كتير مرات\n00:09.00 إنه أنا بغني فيها وما بتأتئش.\n00:13.00 كنت نازل على زي تنقول ديت، على موعد.\n00:16.00 أول مرة يعني كنت بطلع معي الصبية.\n\n# تجارب شخصية مع التأتأة (الجزء الأول)\n00:18.50 عم بجرب أحكي كل ما أجي أحكي\n00:21.00 عم بحس في التأتأة بدها إنه كتير كانت قوية.\n00:25.00 المشكلة عند حرف الـ س عندي.\n00:29.00 الناس بصير تقول لي شو؟ مش فاهمك، إيش؟\n00:33.00 إحكي للكاميرا\n00:37.00 أنا الاسم تبعي كـ كـ كـ كارين.\n\n# التعريف بالنفس والتحديات\n00:41.00 أنا من حيفا وعمري 20 سنة.\n00:44.00 أنا اسمي وسام غنايم\n00:47.00 من سـ سـ سـ سخنين أنا من سخنين.\n00:50.00 متزوج عمري 43 عندي تلات بنات.\n00:54.00 اسمي عون زاهر، أنا من عسفيا\n00:56.50 وعمري 18 سنة.\n01:00.00 أنا عيسى جمال، ناشط اجتماعي\n01:02.50 من كفر قرع، عمري 26 سنة.\n\n# فهم التأتأة من الناحية الطبية\n01:05.00 عندي إعاقة بصرية والتأتأة.\n01:09.00 التأتأة هي من ناحية طبية وعلمية\n01:12.50 هي أكتر زي شيء بيجي عن طريق الوراثة.\n01:17.00 التأتأة مشكلتها بالأعصاب.\n01:20.00 التأتأة هي أكترها التوتر، العصبية،\n01:23.50 لما بمثل متضايق،\n01:26.00 بحس إنه هاد تأثير نفسي.\n\n# بداية المشكلة (الجزء الأول)\n01:30.00 أنا بصف خامس\n01:32.00 هي المشكلة اللي عندي إياها بلشت.\n01:35.00 ليش وكيف وشو اللي صار؟ ما حدا بيعرف.\n01:39.00 إنه مش عارفين إذا الشيء كان إنه هو صدمة\n01:42.00 أو إنه أنا خلقت هيك.\n01:46.00 اكتشفتها بالصف الخامس.\n01:51.00 حسب ما أنا متذكر، كان عمري خمس سنين،\n01:53.50 مرة واحدة صار عندي في الحكي صعوبة.\n\n# بداية المشكلة (الجزء الثاني)\n01:58.00 صار لما أحكي صعب أتنفس.\n02:00.00 أنا عندي مشكلة التأتأة حسيتها من صف السابع.\n02:05.00 أنا كنت بأول صف خامس\n02:07.50 وأنا كنت بدي إنه أنا أقرأ\n02:10.00 وهون إنه هي علقت معي\n02:13.00 ومش عم يطلعوا الأحرف من تمي.\n\n# تحديات التواصل اليومي\n02:20.00 المريح أنا عندي مثلاً بمجموعة بعرفها.\n02:24.00 وأصعب شيء هاد البني آدم ما بعرفوش\n02:27.00 اللي بلتقي أول مرة فيه يعني.\n02:30.00 إنه أول ما صار الشيء أنا حسيت في شيء هون\n02:33.00 إنه يعني كنت بدي إنه أنا أبكي\n02:36.00 بس إنه ما بكيت وقتها،\n02:39.00 لأنه ما فكرت إنه الشيء\n02:41.00 إنه هو رح يضله عندي.\n\n# رحلة العلاج (الجزء الأول)\n02:43.00 ورحت كتير عند دكاترة وقتها،\n02:45.50 اللي يقول لي هي المشكلة ما في لها حل،\n02:48.00 اللي يقول بس إنت بتتحكم فيها.\n02:51.00 لحد ما حكينا للدكتور تبعي\n02:54.00 وهو بعتني عند المعالجة\n02:56.50 اللي أنا قعدت عندها حوالي شي خمس سنين.\n03:00.00 بس ما ساعدتنيش إشي يعني.\n\n# رحلة العلاج (الجزء الثاني)\n03:02.00 وقتها أنا كنت أروح عند دكاترة وما في حل.\n03:07.00 كان الأستاذ عنا معالج للنطق\n03:11.50 وصار يقول لي إحكي لي إي ومي و...\n03:15.00 يعني إنه أمد الحرف كأنه أنا قاعد بغني.\n03:19.00 قلت له أستاذ حل عني، فـ.. بقدرش.\n03:24.00 قلت له هاد الموجود وما بدي أتعالج،\n03:27.00 واللي بده يتقبل يتقبل،\n03:30.00 واللي بده يفهمني يفهمني،\n03:31.50 واللي ما بده بلاش.\n\n# تجارب اجتماعية مؤلمة\n03:33.00 كنت نازل على زي تنقول ديت، على موعد.\n03:36.00 كل ما أجرب أحكي أعلق وأسكت\n03:39.00 وظليت كل الديت ساكت يعني\n03:42.00 وبطلنا من بعد الحدث هاد.\n03:45.00 لما بغني مثلاً مع حالي بكون مبسوط،\n03:48.00 ما بتأتئش.\n03:50.00 إذا بغني وفي حوالي كان ناس،\n03:53.50 أنا أكيد إنه أنا رح أتأتئ.\n\n# التنبؤ بالتأتأة ومواجهتها\n03:58.00 في مرات إنه قبل ما أحكي الجملة\n04:01.00 بكون عارف وين بدي أتأتئ،\n04:03.50 مثلاً في أي كلمة أو في أي حرف\n04:06.00 بدي أعلق شوي.\n04:07.00 والله بالأول كنت صعب أتأقلم فيها.\n04:16.00 كنت عم بساعد بالمركز الجماهيري.\n04:21.00 كنت بدي إنه أطلب منهن مساعدة،\n04:24.00 كل اللي كانوا هناك صاروا يضحكوا علي\n04:27.00 ويتنمروا وهيك.\n04:31.00 فأنا تركتهن ويعني بكيت بعدها يعني.\n\n# أثر التنمر\n04:35.00 هاد ممكن أقول إنه هاد أكتر موقف\n04:38.50 اللي هو أثر علي.\n04:42.00 مثلاً لما بدي أحكي شيء\n04:45.00 ويجي واحد يحكي عني مثلاً هاد\n04:47.50 هو يكمل عني الكلمة، بتضايق منه.\n04:53.00 في الأول لما كنت أصغر\n04:55.00 كان كتير يعني تعمل لي إحراج.\n04:58.00 بالابتدائية كانت المدرسة كتير إشي مش منيح،\n05:01.00 كانوا يتنمروا علي.\n\n# استمرار التحديات\n05:04.00 وفي طالب يعني كان يتنمر علي كل يوم،\n05:07.50 إنه بالرسائل كمان وبالصف وبكل محل.\n05:15.00 بس أحكي الكل بيفكر إنه أنا بس مضغوط\n05:18.00 أو إنه عشان أنا مش عارف أحكي.\n05:20.00 لحد هسا مش عم بتعامل مع الإشي.\n05:23.00 شفت كتير معلومات عن التأتأة وجربت\n05:26.50 بس مش كلهن بس ولا شيء اللي هو ساعدني.\n\n# استراتيجيات المواجهة\n05:31.00 هي أكتر لازم تعرف كيف تنظم النفس\n05:34.00 وإنت عم بتحكي.\n05:37.00 إنه مثلاً هسا أنا في نص محادثة،\n05:40.00 لازم زي إنه أعمل في رجلي إيقاع\n05:42.00 أو شيء\n05:43.00 عشان الحكي يطلع إنه سلس أكتر.\n05:47.00 أما شفت إنه هاي الأشياء\n05:49.00 مش كتير بتمشي في الحقيقة يعني.\n\n# ردود الفعل المجتمعية\n05:51.00 يعني ممكن يحسوا اللي قبالي بعبء\n05:54.00 أو مثلاً شفقة،\n05:56.50 بس أنا بقول الشفقة على المجتمع هاد.\n06:00.00 كتير مرات لما أنا أكون قاعدة\n06:03.00 مع العيلة تبعتي أو مع الأصحاب.\n06:06.00 باجي بدي أحكي شيء بحرف التاء\n06:09.00 وبتعلق معي وشو كلهن بصيروا\n06:11.00 إنه هن بصيروا\n06:12.00 إنه يضحكوا علي وأنا بضحك برضه.\n\n# التقبل العائلي والاجتماعي\n06:15.00 مع أهلي مع أصحابي بتكون في شوي\n06:18.00 أما مش كتير وهن كمان تعودوا عليها.\n06:23.00 المحيط الأقرب عندي يعني بتفهموا الوضع اللي عندي.\n06:26.00 ماشي بحاول أحكي مرتين تلاتة أربعة\n06:29.00 لما اللي قبالي بينصت منيح بفهمني.\n06:33.00 الحمد لله مع الوقت صرت أتقبل الشيء.\n\n# تقبل الذات والثقة بالنفس\n06:37.00 صرت من جوا أقول إنه أنا هيك بحكي يعني،\n06:40.00 هاد أنا.\n06:42.00 وفش عندي أي نية إني أتغير\n06:45.00 أو أغير من حالي عشان الناس تتقبلني يعني.\n06:49.00 بس الحمد لله أنا متعود عليها متأقلم يعني.\n06:53.00 أنا متقبل حالي 100% لأنه أنا هيك خلقت.\n\n# دور الأم الداعم\n06:57.00 السبب الوحيد والرئيسي هي أمي،\n07:00.00 أمي تعلمت عشاني مساعدة\n07:03.00 عشان أنا.\n07:06.00 قعدت معي وكانت مرافقتي،\n07:09.00 هي الداعم الأول والأخير ليلي.\n07:12.00 فهي سبب تقبلي للتأتأة.\n07:16.00 لأنه أمي قالت لي اللي بده يتقبلك\n07:19.00 بيتقبلك كيف هو عيسى،\n07:21.50 وتقبل نفسك عشان يتقبلك المجتمع.\n\n# التحدي والنجاح\n07:24.00 إنه حتى الواحد تأتأ\n07:26.00 فش شيء يعني صعب علينا.\n07:28.00 بالابتدائية في معلمة مرة حكت لي\n07:31.00 إنه إنت مش رح تاخدي بجروت كامل\n07:34.00 لأنه إنت عندك هاي المشكلة.\n07:38.00 لأنه في بصف 11 بجروت اللي هو مع حكي بيجي.\n07:43.00 فبدي أقول لك يا معلمة\n07:45.00 إنه أنا أخدت البجروت كامل.\n\n# رسالة للمجتمع (الجزء الأول)\n07:48.00 رسالتي للمجتمع إنه هاي الشغلة مش عيب.\n07:52.00 صح ما في لها حل أما الشيء مش رح يمنعنا\n07:55.00 من إنه دائماً نحكي\n07:57.50 ودائماً نعبر.\n08:01.00 نحن مش غير عنكم يعني إحنا زينا زيكم\n08:03.50 بس نحن بنحكي بطريقة تانية.\n\n# رسالة للمجتمع (الجزء الثاني)\n08:06.00 إحنا جزء لا يتجزأ من هاد المجتمع،\n08:09.00 قلتوا آه وإن قلتوا لأ.\n08:11.00 إلنا حصة كبيرة بهذا البلد،\n08:14.00 شايف صرت أتأتئ كمان لأنه انضغطت.\n08:18.00 إنه يفهم ويتوعى،\n08:21.00 للأسف عنا مجتمعنا\n08:23.00 بيتقبلش هاي الأشياء بيتقبلش.\n\n# دعوة للتقبل والحب\n08:25.00 بدي أقول لكم إنه تقبلونا مثل ما إحنا،\n08:28.00 كيف نحن بنحب حالنا\n08:31.00 كمان أنتم حبونا.\n08:37.00 نحن مش مختلفين نحن مميزين.\n08:41.00 تأتأت، عندك تخربط بالحكي، عادي كمل،\n08:44.00 اللي عندك طلعه وعبر\n08:47.00 وما تخافش ولا من أي بني آدم.",
+    "similar_sounds": "لما بتعصبن،\nحراج عليك إذا حدا بيفهمني،\nبصير تايلندي.\nبصراحة إنه أنا في كتير [مرات]\nإنه أنا بغني فيها وما بتأتئش.\nكنت نازل على زي تنقول ديت، على [موعد].\nأول مرة يعني كنت بطلع معي [الصبية].\nعم بجرب أحكي كل ما أجي أحكي\nعم بحس في التأتأة بدها إنه كتير كانت [قوية].\nالمشكلة عند حرف الـ [س] عندي.\nالناس بصير تقول لي شو؟ مش فاهمك، [إيش]؟\nإحكي للكاميرا\nأنا الاسم تبعي كـ كـ كـ [كارين].\nأنا من حيفا وعمري [20] سنة.\nأنا اسمي وسام غنايم\nمن سـ سـ سـ [سخنين] أنا من سخنين.\nمتزوج عمري [43] عندي تلات بنات.\nاسمي عون زاهر، أنا من [عسفيا]\nوعمري [18] سنة.\nأنا عيسى جمال، ناشط [اجتماعي]\nمن كفر قرع، عمري [26] سنة.\nعندي إعاقة [بصرية] والتأتأة.\nالتأتأة هي من ناحية طبية و[علمية]\nهي أكتر زي شيء بيجي عن طريق [الوراثة].\nالتأتأة مشكلتها بـ [الأعصاب].\nالتأتأة هي أكترها التوتر، [العصبية]،\nلما بمثل متضايق،\nبحس إنه هاد تأثير [نفسي].\nأنا بصف [خامس]\nهي المشكلة اللي عندي إياها بلشت.\nليش وكيف وشو اللي صار؟ ما حدا [بيعرف].\nإنه مش عارفين إذا الشيء كان إنه هو [صدمة]\nأو إنه أنا خلقت [هيك].\nاكتشفتها بالصف [الخامس].\nحسب ما أنا متذكر، كان عمري [خمس] سنين،\nمرة واحدة صار عندي في الحكي [صعوبة].\nصار لما أحكي صعب [أتنفس].\nأنا عندي مشكلة التأتأة حسيتها من صف [السابع].\nأنا كنت بأول صف [خامس]\nوأنا كنت بدي إنه أنا [أقرأ]\nوهون إنه هي علقت معي\nومش عم يطلعوا الأحرف من [تمي].\nالمريح أنا عندي مثلاً بمجموعة [بعرفها].\nوأصعب شيء هاد البني آدم ما [بعرفوش]\nاللي بلتقي أول مرة فيه يعني.\nإنه أول ما صار الشيء أنا حسيت في شيء [هون]\nإنه يعني كنت بدي إنه أنا [أبكي]\nبس إنه ما بكيت [وقتها]،\nلأنه ما فكرت إنه الشيء\nإنه هو رح يضله [عندي].\nورحت كتير عند دكاترة [وقتها]،\nاللي يقول لي هي المشكلة ما في لها [حل]،\nاللي يقول بس إنت بتتحكم [فيها].\nلحد ما حكينا للدكتور تبعي\nوهو بعتني عند [المعالجة]\nاللي أنا قعدت عندها حوالي شي [خمس] سنين.\nبس ما ساعدتنيش إشي [يعني].\nوقتها أنا كنت أروح عند دكاترة وما في [حل].\nكان الأستاذ عنا معالج [للنطق]\nوصار يقول لي إحكي لي إي ومي و...\nيعني إنه أمد الحرف كأنه أنا قاعد [بغني].\nقلت له أستاذ حل [عني]، فـ.. بقدرش.\nقلت له هاد الموجود وما بدي [أتعالج]،\nواللي بده يتقبل [يتقبل]،\nواللي بده يفهمني [يفهمني]،\nواللي ما بده [بلاش].\nكنت نازل على زي تنقول ديت، على [موعد].\nكل ما أجرب أحكي أعلق و[أسكت]\nوظليت كل الديت ساكت [يعني]\nوبطلنا من بعد الحدث [هاد].\nلما بغني مثلاً مع حالي بكون [مبسوط]،\nما بتأتئش.\nإذا بغني وفي حوالي كان [ناس]،\nأنا أكيد إنه أنا رح [أتأتئ].\nفي مرات إنه قبل ما أحكي [الجملة]\nبكون عارف وين بدي [أتأتئ]،\nمثلاً في أي كلمة أو في أي [حرف]\nبدي أعلق شوي.\nوالله بالأول كنت صعب [أتأقلم] فيها.\nكنت عم بساعد بالمركز [الجماهيري].\nكنت بدي إنه أطلب منهن [مساعدة]،\nكل اللي كانوا هناك صاروا يضحكوا [علي]\nويتنمروا وهيك.\nفأنا تركتهن ويعني بكيت بعدها [يعني].\nهاد ممكن أقول إنه هاد أكتر [موقف]\nاللي هو أثر علي.\nمثلاً لما بدي أحكي شيء\nويجي واحد يحكي عني مثلاً [هاد]\nهو يكمل عني الكلمة، بتضايق [منه].\nفي الأول لما كنت أصغر\nكان كتير يعني تعمل لي [إحراج].\nبالابتدائية كانت المدرسة كتير إشي مش منيح،\nكانوا يتنمروا [علي].\nوفي طالب يعني كان يتنمر علي كل [يوم]،\nإنه بالرسائل كمان وبالصف وبكل [محل].\nبس أحكي الكل بيفكر إنه أنا بس [مضغوط]\nأو إنه عشان أنا مش عارف [أحكي].\nلحد هسا مش عم بتعامل مع [الإشي].\nشفت كتير معلومات عن التأتأة و[جربت]\nبس مش كلهن بس ولا شيء اللي هو [ساعدني].\nهي أكتر لازم تعرف كيف تنظم [النفس]\nوإنت عم بتحكي.\nإنه مثلاً هسا أنا في نص [محادثة]،\nلازم زي إنه أعمل في رجلي [إيقاع]\nأو شيء\nعشان الحكي يطلع إنه سلس [أكثر].\nأما شفت إنه هاي الأشياء\nمش كتير بتمشي في الحقيقة [يعني].\nيعني ممكن يحسوا اللي قبالي بـ [عبء]\nأو مثلاً شفقة،\nبس أنا بقول الشفقة على المجتمع [هاد].\nكتير مرات لما أنا أكون قاعدة\nمع العيلة تبعتي أو مع [الأصحاب].\nباجي بدي أحكي شيء بحرف التاء\nوبتعلق معي وشو كلهن بصيروا\nإنه هن بصيروا\nإنه يضحكوا علي وأنا بضحك [برضه].\nمع أهلي مع أصحابي بتكون في شوي\nأما مش كتير وهن كمان تعودوا [عليها].\nالمحيط الأقرب عندي يعني بتفهموا الوضع اللي [عندي].\nماشي بحاول أحكي مرتين تلاتة [أربعة]\nلما اللي قبالي بينصت منيح [يفهمني].\nالحمد لله مع الوقت صرت أتقبل [الشيء].\nصرت من جوا أقول إنه أنا هيك بحكي [يعني]،\nهاد أنا.\nوفش عندي أي نية إني [أتغير]\nأو أغير من حالي عشان الناس تتقبلني [يعني].\nبس الحمد لله أنا متعود عليها متأقلم [يعني].\nأنا متقبل حالي 100% لأنه أنا هيك [خلقت].\nالسبب الوحيد والرئيسي هي [أمي]،\nأمي تعلمت عشاني [مساعدة]\nعشان أنا.\nقعدت معي وكانت مرافقتي،\nهي الداعم الأول والأخير [ليلي].\nفهي سبب تقبلي للتأتأة.\nلأنه أمي قالت لي اللي بده يتقبلك\nبيتقبلك كيف هو [عيسى]،\nوتقبل نفسك عشان يتقبلك [المجتمع].\nإنه حتى الواحد تأتأ\nفش شيء يعني صعب [علينا].\nبالابتدائية في معلمة مرة حكت [لي]\nإنه إنت مش رح تاخدي بجروت [كامل]\nلأنه إنت عندك هاي [المشكلة].\nلأنه في بصف 11 بجروت اللي هو مع حكي [بيجي].\nفبدي أقول لك يا معلمة\nإنه أنا أخدت البجروت [كامل].\nرسالتي للمجتمع إنه هاي الشغلة مش [عيب].\nصح ما في لها حل أما الشيء مش رح يمنعنا\nمن إنه دائماً نحكي\nودائماً [نعبر].\nنحن مش غير عنكم يعني إحنا زينا [زيكم]\nبس نحن بنحكي بطريقة [تانية].\nإحنا جزء لا يتجزأ من هاد [المجتمع]،\nقلتوا آه وإن قلتوا [لأ].\nإلنا حصة كبيرة بهذا [البلد]،\nشايف صرت أتأتئ كمان لأنه [انضغطت].\nإنه يفهم ويتوعى،\nللأسف عنا مجتمعنا\nبيتقبلش هاي الأشياء بيتقبلش.\nبدي أقول لكم إنه تقبلونا مثل ما [إحنا]،\nكيف نحن بنحب حالنا\nكمان أنتم [حبونا].\nنحن مش مختلفين نحن [مميزين].\nتأتأت، عندك تخربط بالحكي، عادي [كمل]،\nاللي عندك طلعه و[عبر]\nوما تخافش ولا من أي بني [آدم]."
+  },
+  "created_at": "2026-04-03 13:43:41 UTC",
+  "updated_at": "2026-04-03 14:29:31 UTC",
+  "exported_at": "2026-04-03T14:29:31Z"
+}

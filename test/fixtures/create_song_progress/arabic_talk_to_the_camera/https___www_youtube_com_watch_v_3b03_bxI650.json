@@ -1,0 +1,898 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=3b03-bxI650",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "متعالجة حكت لي",
+        "timestamp": "00:00.00",
+        "text_l2": "A patient told me"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "إنه هاي الشدة لأمي الله يرحمها",
+        "timestamp": "00:01.00",
+        "text_l2": "That this retainer was my mother's, God have mercy on her"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "في مجال تضيقيها على قياس أسناني",
+        "timestamp": "00:02.50",
+        "text_l2": "She was trying to force it to fit my teeth"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "صراحة الإشي نوعاً ما مقرف يعني",
+        "timestamp": "00:05.00",
+        "text_l2": "Honestly, the thing was kind of gross, I mean"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "شو بقدر أعرف عن الشخص من خلال أسنانه؟",
+        "timestamp": "00:09.00",
+        "text_l2": "What can I know about a person through their teeth?"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "لما أنت تروح تعمل فحص للسيارة",
+        "timestamp": "00:12.00",
+        "text_l2": "When you go to get a car inspection"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "مش مفضل تكون غاسلها",
+        "timestamp": "00:14.00",
+        "text_l2": "It's not preferred that you wash it"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "نفس الإشي دكتور الأسنان",
+        "timestamp": "00:15.00",
+        "text_l2": "Same thing with the dentist"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "الحمد لله إنه صنعوا كمامة",
+        "timestamp": "00:16.00",
+        "text_l2": "Thank God they made masks"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "هاي أهم إشي",
+        "timestamp": "00:17.00",
+        "text_l2": "This is the most important thing"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "دغري بقدر أقول لك إذا هم بيت بحافظ",
+        "timestamp": "00:18.00",
+        "text_l2": "I can immediately tell you if they take care of their home"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "إذا هم بيهتموا بصحة الفم",
+        "timestamp": "00:21.00",
+        "text_l2": "If they care about oral health"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "إذا عندهم التغذية سليمة بالبيت",
+        "timestamp": "00:23.00",
+        "text_l2": "If their nutrition at home is sound"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "وأنا طالبة مدرسة خضت تجربة اللي هي",
+        "timestamp": "00:29.00",
+        "text_l2": "And when I was a school student, I had an experience which was"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "تجربة مش كتير حلوة كانت بالنسبة إلي",
+        "timestamp": "00:31.00",
+        "text_l2": "An experience that wasn't very nice for me"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "بعلاج التقويم، تقويم الأسنان",
+        "timestamp": "00:33.00",
+        "text_l2": "With orthodontic treatment, braces"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أخوي كان يتعلم دكتور عام",
+        "timestamp": "00:36.00",
+        "text_l2": "My brother was studying to be a general doctor"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "فنصحني إنه أفوت طب",
+        "timestamp": "00:37.00",
+        "text_l2": "So he advised me to enter medicine"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "فمن وقتها حكيت إنه أنا لازم أصحح",
+        "timestamp": "00:39.00",
+        "text_l2": "So since then I said I must correct"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "هاي الأغلاط اللي ممكن في دكاترة بيغلطوها",
+        "timestamp": "00:41.50",
+        "text_l2": "These mistakes that doctors might make"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "من وأنا بالمدرسة كان إلي زميل",
+        "timestamp": "00:45.00",
+        "text_l2": "Since I was in school, I had a classmate"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "اللي هو اليوم زوجي والداعم الكبير إلي",
+        "timestamp": "00:47.00",
+        "text_l2": "Who is today my husband and my great supporter"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "كتير نصحني ورحت على هذا المجال",
+        "timestamp": "00:51.00",
+        "text_l2": "He advised me a lot and I went into this field"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "كنت دايماً أركب بزل اللي عبارة عن ألف قطعة",
+        "timestamp": "00:54.00",
+        "text_l2": "I used to always build puzzles that consisted of a thousand pieces"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أو ألفين قطعة وإطلع",
+        "timestamp": "00:57.00",
+        "text_l2": "Or two thousand pieces and finish"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "فحسيت إنه طب الأسنان ملائم إلي",
+        "timestamp": "00:58.50",
+        "text_l2": "So I felt that dentistry was suitable for me"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "مجال الأطفال، مجال شيق فيه إنسانية",
+        "timestamp": "60:00.00",
+        "text_l2": "The field of children, an interesting field with humanity"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "بعطيك إكتفاء ذاتي كتير كتير كتير كبير",
+        "timestamp": "61:00.00",
+        "text_l2": "It gives you a very, very, very great sense of self-fulfillment"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "في ناس كتير بتوصل لعندي",
+        "timestamp": "65:00.00",
+        "text_l2": "Many people come to me"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "فش عندها ثقة بنفسها",
+        "timestamp": "66:06.00",
+        "text_l2": "Who have no confidence in themselves"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "فش عندها ثقة إنه تضحك",
+        "timestamp": "67:07.00",
+        "text_l2": "Who have no confidence to smile"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "بتحط إيدها على ثمها عشان تقدر تحكي",
+        "timestamp": "69:00.00",
+        "text_l2": "They put their hand on their mouth to be able to speak"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "وبحب النتائج اللي بتطلع",
+        "timestamp": "71:11.00",
+        "text_l2": "And I love the results that come out"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "يعني لما بطلع أياتها نتيجة حلوة",
+        "timestamp": "72:12.00",
+        "text_l2": "I mean when I get a nice result for them"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "الفرق قبل وبعد",
+        "timestamp": "74:00.00",
+        "text_l2": "The difference before and after"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "لازم تكون كتير سوي كتير هادي، كتير طيب",
+        "timestamp": "76:00.00",
+        "text_l2": "You must be very mature, very calm, very kind"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "في عندك حب إنك تعطي",
+        "timestamp": "79:00.00",
+        "text_l2": "You have a love for giving"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "أغلب المتعالجين بيحكوا",
+        "timestamp": "81:00.00",
+        "text_l2": "Most patients say"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أنا بخاف من أطباء الأسنان",
+        "timestamp": "82:00.00",
+        "text_l2": "I am afraid of dentists"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "بس الحلو إنه أنا دايماً جوابي بيكون،",
+        "timestamp": "84:00.00",
+        "text_l2": "But the nice thing is my answer is always,"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "إنه ما تحكمش إسا، أصبر",
+        "timestamp": "86:06.00",
+        "text_l2": "Don't judge now, be patient"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "كتير دكاترة بتخاطر مثلاً،",
+        "timestamp": "88:00.00",
+        "text_l2": "Many doctors take risks for example,"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "إذا عنا طاحونة عقل قاعدة بالعصب",
+        "timestamp": "89:50.00",
+        "text_l2": "If we have a wisdom tooth sitting on the nerve"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "أنا شخصياً بعرف دكاترة اللي حاولوا يقلعوها",
+        "timestamp": "92:00.00",
+        "text_l2": "I personally know doctors who tried to extract it"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "وعملوا ضرر كتير كبير اللي هو شلل",
+        "timestamp": "95:00.00",
+        "text_l2": "And caused very big damage which is paralysis"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "فطوالي يبعثوا لمختص لهاي الشغلات",
+        "timestamp": "98:00.00",
+        "text_l2": "So they immediately refer to a specialist for these things"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "كانت مرا كبيرة بالعمر حاملة شدة بإيدها",
+        "timestamp": "101:00.00",
+        "text_l2": "There was an older woman holding a retainer in her hand"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "بتقول لنا: بس الشدة تحفولي إياها، وتحطولي إياها",
+        "timestamp": "103:50.00",
+        "text_l2": "Saying to us: Just preserve the retainer for me, and put it on for me"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "فحصتلها، لقيت في إشي نافخ بثمها",
+        "timestamp": "106:00.00",
+        "text_l2": "I examined her, I found something swollen in her mouth"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "إحنا كمان بنعالج أولاد",
+        "timestamp": "110:00.00",
+        "text_l2": "We also treat children"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "اللي هم مع إحتياجات خاصة",
+        "timestamp": "111:00.00",
+        "text_l2": "Who have special needs"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "مرات بالكراسي اللي إلهم",
+        "timestamp": "113:00.00",
+        "text_l2": "Sometimes in their wheelchairs"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "وعالمحل أنا أعطيتها صورة",
+        "timestamp": "116:00.00",
+        "text_l2": "And at the clinic I gave her an image"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "ورقة إنها تعمل صورة",
+        "timestamp": "118:00.00",
+        "text_l2": "A paper to get an X-ray"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "واللي اتضح إنه فعلاً عندها كان سرطان",
+        "timestamp": "120:00.00",
+        "text_l2": "And it turned out she actually had cancer"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "بس بنفس الوقت أبسطني",
+        "timestamp": "123:00.00",
+        "text_l2": "But at the same time it made me happy"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "إنه اكتشفناه بوقت نوعاً ما بكير",
+        "timestamp": "124:00.00",
+        "text_l2": "That we discovered it at a somewhat early time"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "في عندي حالة وصلت عندي،",
+        "timestamp": "126:06.00",
+        "text_l2": "I had a case that came to me,"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "صارلها 30 سنة ما فاتت عند دكتور أسنان",
+        "timestamp": "127:07.50",
+        "text_l2": "It had been 30 years since she visited a dentist"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "أخطاء في البدايات نعم",
+        "timestamp": "131:00.00",
+        "text_l2": "Mistakes in the beginnings, yes"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "كان في أخطاء يمكن في التشخيص",
+        "timestamp": "133:00.00",
+        "text_l2": "There were mistakes perhaps in the diagnosis"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "لأنه من أول في دكتور كان قالعلها طاحونة وكانت ملتهبة",
+        "timestamp": "136:00.00",
+        "text_l2": "Because initially a doctor had extracted a molar for her and it was inflamed"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "كانوا أسنانها مدمرين شيلة شيلة",
+        "timestamp": "140:00.00",
+        "text_l2": "Her teeth were destroyed, piece by piece"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "إجت عندي متعالجة كانت كتير متضايقة",
+        "timestamp": "142:00.00",
+        "text_l2": "A patient came to me who was very bothered"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "من شكل سنانها",
+        "timestamp": "144:50.00",
+        "text_l2": "By the shape of her teeth"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "صاحباتها بالمدرسة بيتنمروا عليها",
+        "timestamp": "145:50.00",
+        "text_l2": "Her friends at school bullied her"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "لما هيك بنصير نمارس المهنة أكثر،",
+        "timestamp": "147:00.00",
+        "text_l2": "When we practice the profession more like this,"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "ونحبها أكثر، ونتعلمها أكثر،",
+        "timestamp": "149:00.00",
+        "text_l2": "And love it more, and learn it more,"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "بنصير نتخطاها هاي الأخطاء بسهولة يعني",
+        "timestamp": "151:00.00",
+        "text_l2": "We start to overcome these mistakes easily, I mean"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "بالفعل اليوم المريضة كتير كتير مبسوطة",
+        "timestamp": "156:00.00",
+        "text_l2": "Indeed today the patient is very, very happy"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "بطل عندها خوف بتاتاً بتاتاً من طب الأسنان",
+        "timestamp": "159:00.00",
+        "text_l2": "She has no fear at all, at all of dentistry"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "ومن بعد ما فكت التقويم",
+        "timestamp": "163:00.00",
+        "text_l2": "And after she removed the braces"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "البروفايل تبع وجهها كلياته تغير",
+        "timestamp": "164:00.00",
+        "text_l2": "The profile of her face changed entirely"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "وهي عالمحل لما شافت حالها، هي بكيت",
+        "timestamp": "167:00.00",
+        "text_l2": "And she at the clinic when she saw herself, she cried"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "وكان كتير الإشي مؤثر نوعاً ما",
+        "timestamp": "169:50.00",
+        "text_l2": "And it was very affecting somehow"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "أنا بحب كتير الزراعة",
+        "timestamp": "171:00.00",
+        "text_l2": "I really like implants"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "أنا إذا بشوفش دم خلص بمشيش يومي",
+        "timestamp": "172:00.00",
+        "text_l2": "Normally if I see blood, my day is ruined"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "بس وأنا عم بقلع أياتا طاحونة أنا بكون مستمتعة",
+        "timestamp": "174:50.00",
+        "text_l2": "But while I'm extracting a molar for them, I am enjoying it"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "فكثير بحب يكون معي لكساتور،",
+        "timestamp": "177:00.00",
+        "text_l2": "So I really like to have a luxator with me,"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "اللي هو مش اللي بيقلع، الكماشة",
+        "timestamp": "179:00.00",
+        "text_l2": "Which is not the extractor, the forceps"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "اللي هو المفك",
+        "timestamp": "182:00.00",
+        "text_l2": "Which is the screwdriver"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "دموية",
+        "timestamp": "184:00.00",
+        "text_l2": "Bloody"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "بيصير معي مواقف آه بسهب بالحكي",
+        "timestamp": "186:00.00",
+        "text_l2": "I have situations, yes, but I get carried away in talking"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "والولد فاتح ثمه ومش قادر يرد",
+        "timestamp": "189:00.00",
+        "text_l2": "And the boy has his mouth open and can't respond"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "لما أبدأ أشتغل لأياتا متعالج، وهن إيدي بقلب ثمه، دايماً",
+        "timestamp": "192:00.00",
+        "text_l2": "When I start working on a patient, and my hand is turning in their mouth, always"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "ببدأ أحكي معه منفتح حوارات كمان",
+        "timestamp": "196:00.00",
+        "text_l2": "I start talking with them, opening dialogues too"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "كل مريض، إيش في بثمّه إحنا بنفهم عليه",
+        "timestamp": "198:00.00",
+        "text_l2": "Every patient, what is in their mouth we understand about them"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "بكونش أستنى منه جواب",
+        "timestamp": "201:00.00",
+        "text_l2": "I don't wait for an answer from them"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "يعني بس بقوله إرفع إيدك بالإشارات،",
+        "timestamp": "202:00.00",
+        "text_l2": "I just tell him raise your hand with signals,"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "من منطلق أني بدي أسليه وأنسيه وجع العلاج نفسه",
+        "timestamp": "205:00.00",
+        "text_l2": "From the perspective that I want to entertain him and make him forget the pain of the treatment itself"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "في كتير متعالجين بيحط موعد بيفكر إنه معاه كل اليوم",
+        "timestamp": "209:00.00",
+        "text_l2": "Many patients make an appointment thinking he has all day with him"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "وينتا ما هو بده بيقدر يصل عند طبيب الأسنان",
+        "timestamp": "213:00.00",
+        "text_l2": "And you, he doesn't care, he can't get to the dentist"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "وإحنا كتير بيضايقنا هذا الموضوع",
+        "timestamp": "216:00.00",
+        "text_l2": "And this topic bothers us a lot"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "عشان ما يصيرش سلسلة تأخيرات بالأدوار كلها",
+        "timestamp": "219:00.00",
+        "text_l2": "So that there isn't a chain of delays in all the turns"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "بدك تعطيه وقته بدك تعطيه الجودة اللي مطلوبة",
+        "timestamp": "222:00.00",
+        "text_l2": "You want to give him his time, you want to give him the required quality"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "وكمان شغلة يعني هي كتير مش حلوة",
+        "timestamp": "226:00.00",
+        "text_l2": "And another thing, I mean it's very not nice"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "لما باجي بدي أشتغل",
+        "timestamp": "228:50.00",
+        "text_l2": "When I come to work"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "ويكون المتعالج مش فارك سنانه",
+        "timestamp": "230:00.00",
+        "text_l2": "And the patient hasn't brushed his teeth"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "الحمد لله إنه صنعوا كمامة كمامة، هاي أهم إشي",
+        "timestamp": "232:00.00",
+        "text_l2": "Thank God they made masks, masks, this is the most important thing"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "الكمامة كتير كتير مهمة",
+        "timestamp": "234:50.00",
+        "text_l2": "The mask is very, very important"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "أفركوا أسنانكم لو سمحتوا",
+        "timestamp": "236:00.00",
+        "text_l2": "Brush your teeth please"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "التريندات حتى نجحت إنها تفوت على المجال الطبي",
+        "timestamp": "238:00.00",
+        "text_l2": "Even trends succeeded in entering the medical field"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "كتير حالات بتوصلني بدها هوليوود سمايل",
+        "timestamp": "242:00.00",
+        "text_l2": "Many cases come to me wanting a Hollywood Smile"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "وأنا بتطلع شخصياً على أسنانها",
+        "timestamp": "244:50.00",
+        "text_l2": "And I personally look at their teeth"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "بلاقي أسنانها 100 بالمية ولا غلطة",
+        "timestamp": "246:50.00",
+        "text_l2": "I find their teeth 100 percent without a mistake"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "بيفرجوني صورة، شو رأيك بهاي، حابة أعمل هيك",
+        "timestamp": "249:00.00",
+        "text_l2": "They show me a picture, what do you think of this, I want to do like this"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "أو شو رأيك بهذا العلاج مبين كتير حلو",
+        "timestamp": "252:00.00",
+        "text_l2": "Or what do you think of this treatment, it looks very nice"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "هاي الصورة لبقت لهذا المتعالج، بس هاي الصورة مش راح تلبق",
+        "timestamp": "255:00.00",
+        "text_l2": "This picture suited this patient, but this picture won't suit"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "إذا حطيتها على وجهك مش راح تلبق لك",
+        "timestamp": "258:00.00",
+        "text_l2": "If you put it on your face it won't suit you"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "لو بدي أعملها أنا ربحان",
+        "timestamp": "260:00.00",
+        "text_l2": "If I wanted to do it I would profit"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "بس أنا بقبلش على حالي",
+        "timestamp": "261:50.00",
+        "text_l2": "But I don't accept for myself"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "أول إشي عشان أنا بضر أسنان",
+        "timestamp": "262:50.00",
+        "text_l2": "First thing because I would harm teeth"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "لأنه إحنا بنعمل هوليوود سمايل",
+        "timestamp": "264:00.00",
+        "text_l2": "Because when we do a Hollywood Smile"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "إحنا بنحف إشي بسيط من السن، من قدام من الأمام، وبعدين بنركب عليه",
+        "timestamp": "265:50.00",
+        "text_l2": "We carve something simple from the tooth, from the front, and then we mount on it"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "وأول إشي نصلح بالأول الأسنان من جوا نهتم لصحة الأسنان",
+        "timestamp": "269:00.00",
+        "text_l2": "And the first thing we fix first is the teeth from inside, we care for tooth health"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "وبعدين بمرحلة متقدمة أكثر بنهتم لتجميل الأسنان",
+        "timestamp": "273:00.00",
+        "text_l2": "And then at a more advanced stage we care for cosmetic dentistry"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "أنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ",
+        "timestamp": "278:00.00",
+        "text_l2": "I advise her to come every six months, do cleaning, do whitening, and just maintain"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "اتبع الإشي اللي بينصحك عليه طبيبك الأسنان",
+        "timestamp": "284:00.00",
+        "text_l2": "Follow the thing your dentist advises you on"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "مش إيش الموضة إسا بتقول",
+        "timestamp": "287:00.00",
+        "text_l2": "Not what the fashion says now"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "لكل إشي فيه علامات مثلاً التدخين، القهوة،",
+        "timestamp": "289:00.00",
+        "text_l2": "For everything there are signs for example smoking, coffee,"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "عنده مثلاً عادات معينة اللي هي شوي غلط",
+        "timestamp": "293:00.00",
+        "text_l2": "He has for example certain habits which are a bit wrong"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "زي المص بالإصبع زي تقرقط الأظافر",
+        "timestamp": "296:00.00",
+        "text_l2": "Like sucking the finger like biting nails"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "في إشي اسمه بلاك لاين أو بلاك",
+        "timestamp": "299:00.00",
+        "text_l2": "There is something called black line or plaque"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "بصير يبين زي سواد صغير صغير على كل الأسنان، أو بني",
+        "timestamp": "300:50.00",
+        "text_l2": "It appears like small, small blackness on all teeth, or brown"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "بقدر أشخص كمان حالة معينة تقويمياً",
+        "timestamp": "304:00.00",
+        "text_l2": "I can also diagnose a certain orthodontic case"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "عن طريق التلفون",
+        "timestamp": "307:00.00",
+        "text_l2": "Via the phone"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "عن طريق أني أسمع صوت حدا",
+        "timestamp": "308:50.00",
+        "text_l2": "By hearing someone's voice"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "إث أو إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان",
+        "timestamp": "311:00.00",
+        "text_l2": "Th or Dh or F these letters, a bit might indicate a certain mess in the teeth"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "علاجات الأسنان مكلفة إحنا بنخليه مكلف",
+        "timestamp": "318:00.00",
+        "text_l2": "Dental treatments are expensive, we make it expensive"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "لأنه إحنا من الأول ما كنا وقائيين بالدرجة السليمة فالإشي تدهور",
+        "timestamp": "320:50.00",
+        "text_l2": "Because initially we weren't preventive to the right degree so the thing deteriorated"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "وصار في حاجة لعلاج اللي هو متطور أكثر",
+        "timestamp": "329:00.00",
+        "text_l2": "And there became a need for treatment which is more advanced"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "إحنا مش غاليين الدولة غالية",
+        "timestamp": "332:00.00",
+        "text_l2": "We are not expensive, the country is expensive"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "طبعاً كل المواد هي بتكلف كل الأجهزة بتكلف",
+        "timestamp": "334:00.00",
+        "text_l2": "Of course all materials cost, all devices cost"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "أنت في عندك عيادة الصيانة، المساعدة",
+        "timestamp": "337:00.00",
+        "text_l2": "You have clinic maintenance, assistance"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "مندفع ضريبة كتير غالية مندفع أجارات",
+        "timestamp": "341:00.00",
+        "text_l2": "We pay very expensive tax, we pay rents"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "مندفع للمختبر مندفع للإرساليات",
+        "timestamp": "343:50.00",
+        "text_l2": "We pay for the lab, we pay for shipments"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "فبتلاقي إنه إشي بسيط إحنا ربحنا مش إشي غالي",
+        "timestamp": "346:00.00",
+        "text_l2": "So you find that something simple, our profit isn't something expensive"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "إشي بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية",
+        "timestamp": "349:00.00",
+        "text_l2": "Something I hope all patients stop doing, is that they stop drinking soft drinks"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "شغلة كتير مهمة إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي",
+        "timestamp": "355:00.00",
+        "text_l2": "A very important thing is that they really must maintain brushing their teeth at home daily"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "الناس عن جد تبلش تهتم أكثر",
+        "timestamp": "360:00.00",
+        "text_l2": "People really start to care more"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "لصحتها الداخلية، بالضبط",
+        "timestamp": "361:50.00",
+        "text_l2": "For their internal health, exactly"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "كيف بتهتم لمظهرها الخارجي",
+        "timestamp": "363:00.00",
+        "text_l2": "As they care for their external appearance"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "حلمنا إنه دايماً يكون عنا عيادات كبيرة",
+        "timestamp": "367:00.00",
+        "text_l2": "Our dream is that we always have big clinics"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "وكل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها",
+        "timestamp": "371:00.00",
+        "text_l2": "And all the tools that doctors have in the West or in Europe be the same with us"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "لأنه هاي بتساعدنا كتير كتير",
+        "timestamp": "375:00.00",
+        "text_l2": "Because this helps us very, very much"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "وتيجوا لعنا وتفحصوا أسنانكم أكثر وأكثر",
+        "timestamp": "377:00.00",
+        "text_l2": "And come to us and check your teeth more and more"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "وما تستنوا لحتى يصير وجع",
+        "timestamp": "380:00.00",
+        "text_l2": "And don't wait until there is pain"
+      }
+    ],
+    "phrases_with_token_translations": "[متعالجة] حكت لي => [A patient] told me\nمتعالجة [حكت] لي => A patient [told] me\nمتعالجة حكت [لي] => A patient told [me]\n\n[إنه] هاي الشدة لأمي الله يرحمها => [That] this retainer was my mother's, God have mercy on her\nإنه [هاي] الشدة لأمي الله يرحمها => That [this] retainer was my mother's, God have mercy on her\nإنه هاي [الشدة] لأمي الله يرحمها => That this [retainer] was my mother's, God have mercy on her\nإنه هاي الشدة [لأمي] الله يرحمها => That this retainer [was my mother's], God have mercy on her\nإنه هاي الشدة لأمي [الله] يرحمها => That this retainer was my mother's, [God] have mercy on her\nإنه هاي الشدة لأمي الله [يرحمها] => That this retainer was my mother's, God [have mercy on her]\n\nفي مجال تضيقيها [على قياس] أسناني => She was trying to force it [to fit] my teeth\nفي مجال تضيقيها على قياس [أسناني] => She was trying to force it to fit [my teeth]\n\n[صراحة] الإشي نوعاً ما مقرف يعني => [Honestly], the thing was kind of gross, I mean\nصراحة [الإشي] نوعاً ما مقرف يعني => Honestly, [the thing] was kind of gross, I mean\nصراحة الإشي [نوعاً ما] مقرف يعني => Honestly, the thing was [kind of] gross, I mean\nصراحة الإشي نوعاً ما [مقرف] يعني => Honestly, the thing was kind of [gross], I mean\nصراحة الإشي نوعاً ما مقرف [يعني] => Honestly, the thing was kind of gross, [I mean]\n\n[شو] بقدر أعرف عن الشخص من خلال أسنانه؟ => [What] can I know about a person through their teeth?\nشو [بقدر] أعرف عن الشخص من خلال أسنانه؟ => What [can I] know about a person through their teeth?\nشو بقدر [أعرف] عن الشخص من خلال أسنانه؟ => What can I [know] about a person through their teeth?\nشو بقدر أعرف [عن] الشخص من خلال أسنانه؟ => What can I know [about] a person through their teeth?\nشو بقدر أعرف عن [الشخص] من خلال أسنانه؟ => What can I know about [a person] through their teeth?\nشو بقدر أعرف عن الشخص [من خلال] أسنانه؟ => What can I know about a person [through] their teeth?\nشو بقدر أعرف عن الشخص من خلال [أسنانه]؟ => What can I know about a person through [their teeth]? # \"his teeth\" literally, but aligns with \"their teeth\" in the context of the sentence\n\n[لما] أنت تروح تعمل فحص للسيارة => [When] you go to get a car inspection\nلما [أنت] تروح تعمل فحص للسيارة => When [you] go to get a car inspection\nلما أنت [تروح] تعمل فحص للسيارة => When you [go] to get a car inspection\nلما أنت تروح [تعمل] فحص للسيارة => When you go [to get] a car inspection\nلما أنت تروح تعمل [فحص] للسيارة => When you go to get a car [inspection]\nلما أنت تروح تعمل فحص [للسیارة] => for the car # using custom translation as \"للسیارة\" literally means \"for the car\" while in English it's used as an adjective \"car\"\n\n[مش] مفضل تكون غاسلها => [It's not] preferred that you wash it\nمش [مفضل] تكون غاسلها => It's not [preferred] that you wash it\nمش مفضل [تكون] غاسلها => that you # 'takoon' indicates the subject 'you' in this context\nمش مفضل تكون [غاسلها] => It's not preferred that you [wash it]\n\n[نفس] الإشي دكتور الأسنان => [Same] thing with the dentist\nنفس [الإشي] دكتور الأسنان => Same [thing] with the dentist\nنفس الإشي [دكتور الأسنان] => Same thing with [the dentist] # the term \"دكتور الأسنان\" literally means \"doctor of the teeth\" but translates as \"dentist\"\n\n[الحمد لله] إنه صنعوا كمامة => [Thank God] they made masks\nالحمد لله [إنه] صنعوا كمامة => that\nالحمد لله إنه [صنعوا] كمامة => Thank God [they made] masks\nالحمد لله إنه صنعوا [كمامة] => Thank God they made [masks] # كمامة is technically singular \"a mask\" but maps to \"masks\" in the plural English translation context\n\n[هاي] أهم إشي => [This is] the most important thing\nهاي [أهم] إشي => This is [the most important] thing\nهاي أهم [إشي] => This is the most important [thing]\n\n[دغري] بقدر أقول لك إذا هم بيت بحافظ => I can [immediately] tell you if they take care of their home\nدغري [بقدر] أقول لك إذا هم بيت بحافظ => [I can] immediately tell you if they take care of their home\nدغري بقدر [أقول] لك إذا هم بيت بحافظ => I can immediately [tell] you if they take care of their home\nدغري بقدر أقول [لك] إذا هم بيت بحافظ => I can immediately tell [you] if they take care of their home\nدغري بقدر أقول لك [إذا] هم بيت بحافظ => I can immediately tell you [if] they take care of their home\nدغري بقدر أقول لك إذا [هم] بيت بحافظ => I can immediately tell you if [they] take care of their home\nدغري بقدر أقول لك إذا هم [بيت] بحافظ => I can immediately tell you if they take care of their [home]\nدغري بقدر أقول لك إذا هم بيت [بحافظ] => I can immediately tell you if they [take care of] their home # direct mapping reflects the phrasal verb meaning in English\n\n[إذا] هم بيهتموا بصحة الفم => [If] they care about oral health\nإذا [هم] بيهتموا بصحة الفم => If [they] care about oral health\nإذا هم [بيهتموا] بصحة الفم => If they [care about] oral health\nإذا هم بيهتموا [بصحة] الفم => If they care about oral [health]\nإذا هم بيهتموا بصحة [الفم] => oral # literally: \"the mouth\"\n\n[إذا] عندهم التغذية سليمة بالبيت => [If] their nutrition at home is sound\nإذا [عندهم] التغذية سليمة بالبيت => they have, their\nإذا عندهم [التغذية] سليمة بالبيت => If their [nutrition] at home is sound\nإذا عندهم التغذية [سليمة] بالبيت => If their nutrition at home is [sound]\nإذا عندهم التغذية سليمة [بالبيت] => If their nutrition [at home] is sound\n\n[وأنا] طالبة مدرسة خضت تجربة اللي هي => [And when I was] a school student, I had an experience which was\nوأنا [طالبة] مدرسة خضت تجربة اللي هي => And when I was a school [student], I had an experience which was\nوأنا طالبة [مدرسة] خضت تجربة اللي هي => And when I was a [school] student, I had an experience which was\nوأنا طالبة مدرسة [خضت] تجربة اللي هي => And when I was a school student, [I had] an experience which was\nوأنا طالبة مدرسة خضت [تجربة] اللي هي => And when I was a school student, I had [an experience] which was\nوأنا طالبة مدرسة خضت تجربة [اللي هي] => And when I was a school student, I had an experience [which was]\n\n[تجربة] مش كتير حلوة كانت بالنسبة إلي => [An experience] that wasn't very nice for me\nتجربة [مش] كتير حلوة كانت بالنسبة إلي => not\nتجربة مش [كتير] حلوة كانت بالنسبة إلي => An experience that wasn't [very] nice for me\nتجربة مش كتير [حلوة] كانت بالنسبة إلي => An experience that wasn't very [nice] for me\nتجربة مش كتير حلوة [كانت] بالنسبة إلي => was\nتجربة مش كتير حلوة كانت [بالنسبة إلي] => An experience that wasn't very nice [for me]\n\nبعلاج [التقويم]، تقويم الأسنان => With [orthodontic] treatment, braces\nبعلاج التقويم، [تقويم الأسنان] => With orthodontic treatment, [braces] # تقويم الأسنان is a set phrase meaning \"teeth alignment/straightening,\" translated collectively as braces\n\n[أخوي] كان يتعلم دكتور عام => [My brother] was studying to be a general doctor\nأخوي [كان] يتعلم دكتور عام => My brother [was] studying to be a general doctor\nأخوي كان [يتعلم] دكتور عام => My brother was [studying] to be a general doctor\nأخوي كان يتعلم [دكتور] عام => My brother was studying to be a [doctor]\nأخوي كان يتعلم دكتور [عام] => My brother was studying to be a [general] doctor\n\n[فنصحني] إنه أفوت طب => [So he advised me] to enter medicine\nفنصحني [إنه] أفوت طب => So he advised me [to] enter medicine\nفنصحني إنه [أفوت] طب => So he advised me to [enter] medicine\nفنصحني إنه أفوت [طب] => So he advised me to enter [medicine]\n\n[فمن] وقتها حكيت إنه أنا لازم أصحح => [So since] then I said I must correct\nفمن [وقتها] حكيت إنه أنا لازم أصحح => So since [then] I said I must correct\nفمن وقتها [حكيت] إنه أنا لازم أصحح => So since then [I said] I must correct\nفمن وقتها حكيت [إنه] أنا لازم أصحح => that\nفمن وقتها حكيت إنه [أنا لازم] أصحح => So since then I said [I must] correct\nفمن وقتها حكيت إنه أنا لازم [أصحح] => So since then I said I must [correct]\n\n[هاي] الأغلاط اللي ممكن في دكاترة بيغلطوها => [These] mistakes that doctors might make\nهاي [الأغلاط] اللي ممكن في دكاترة بيغلطوها => These [mistakes] that doctors might make\nهاي الأغلاط [اللي] ممكن في دكاترة بيغلطوها => These mistakes [that] doctors might make\nهاي الأغلاط اللي [ممكن] في دكاترة بيغلطوها => These mistakes that [might] doctors make\nهاي الأغلاط اللي ممكن في [دكاترة] بيغلطوها => These mistakes that [doctors] might make\nهاي الأغلاط اللي ممكن في دكاترة [بيغلطوها] => These mistakes that doctors might [make] # the 'ha' suffix in Arabic refers to the mistakes/it, but aligns primarily with 'make' here\n\n[من] وأنا بالمدرسة كان إلي زميل => [Since] I was in school, I had a classmate\nمن [وأنا] بالمدرسة كان إلي زميل => I was # \"وأنا\" literally \"and I,\" but used here to mean \"I was\" in a temporal clause\nمن وأنا [بالمدرسة] كان إلي زميل => Since I was [in school], I had a classmate\nمن وأنا بالمدرسة [كان إلي] زميل => Since I was in school, [I had] a classmate # \"كان إلي\" literally \"was to me,\" translated as \"I had\"\nمن وأنا بالمدرسة كان إلي [زميل] => Since I was in school, I had [a classmate]\n\n[اللي] هو اليوم زوجي والداعم الكبير إلي => [Who] is today my husband and my great supporter\nاللي [هو] اليوم زوجي والداعم الكبير إلي => Who [is] today my husband and my great supporter\nاللي هو [اليوم] زوجي والداعم الكبير إلي => Who is [today] my husband and my great supporter\nاللي هو اليوم [زوجي] والداعم الكبير إلي => Who is today [my husband] and my great supporter\nاللي هو اليوم زوجي [و]الداعم الكبير إلي => Who is today my husband [and] my great supporter\nاللي هو اليوم زوجي و[الداعم] الكبير إلي => Who is today my husband and my [supporter]\nاللي هو اليوم زوجي والداعم [الكبير] إلي => Who is today my husband and my [great] supporter\nاللي هو اليوم زوجي والداعم الكبير [إلي] => to me # literally \"to me\", used here to indicate possession \"my supporter\"\n\n[كتير] نصحني ورحت على هذا المجال => He advised me [a lot] and I went into this field\nكتير [نصحني] ورحت على هذا المجال => [He advised me] a lot and I went into this field\nكتير نصحني [و]رحت على هذا المجال => He advised me a lot [and] I went into this field\nكتير نصحني و[رحت] على هذا المجال => He advised me a lot and [I went] into this field\nكتير نصحني ورحت [على] هذا المجال => He advised me a lot and I went [into] this field\nكتير نصحني ورحت على [هذا] المجال => He advised me a lot and I went into [this] field\nكتير نصحني ورحت على هذا [المجال] => He advised me a lot and I went into this [field]\n\n[كنت] دايماً أركب بزل اللي عبارة عن ألف قطعة => [I used to] always build puzzles that consisted of a thousand pieces\nكنت [دايماً] أركب بزل اللي عبارة عن ألف قطعة => I used to [always] build puzzles that consisted of a thousand pieces\nكنت دايماً [أركب] بزل اللي عبارة عن ألف قطعة => I used to always [build] puzzles that consisted of a thousand pieces\nكنت دايماً أركب [بزل] اللي عبارة عن ألف قطعة => I used to always build [puzzles] that consisted of a thousand pieces\nكنت دايماً أركب بزل [اللي] عبارة عن ألف قطعة => I used to always build puzzles [that] consisted of a thousand pieces\nكنت دايماً أركب بزل اللي [عبارة عن] ألف قطعة => I used to always build puzzles that [consisted of] a thousand pieces\nكنت دايماً أركب بزل اللي عبارة عن [ألف] قطعة => I used to always build puzzles that consisted of [a thousand] pieces\nكنت دايماً أركب بزل اللي عبارة عن ألف [قطعة] => I used to always build puzzles that consisted of a thousand [pieces] # قطعة is singular in Arabic after \"a thousand\", but maps to the plural \"pieces\" in English context.\n\n[أو] ألفين قطعة وإطلع => [Or] two thousand pieces and finish\nأو [ألفين] قطعة وإطلع => Or [two thousand] pieces and finish\nأو ألفين [قطعة] وإطلع => Or two thousand [pieces] and finish\nأو ألفين قطعة [و]إطلع => Or two thousand pieces [and] finish\nأو ألفين قطعة و[إطلع] => Or two thousand pieces and [finish]\n\n[فحسيت] إنه طب الأسنان ملائم إلي => [So I felt] that dentistry was suitable for me\nفحسيت [إنه] طب الأسنان ملائم إلي => So I felt [that] dentistry was suitable for me\nفحسيت إنه [طب الأسنان] ملائم إلي => So I felt that [dentistry] was suitable for me\nفحسيت إنه طب الأسنان [ملائم] إلي => So I felt that dentistry was [suitable] for me\nفحسيت إنه طب الأسنان ملائم [إلي] => So I felt that dentistry was suitable [for me]\n\n[مجال] الأطفال، مجال شيق فيه إنسانية => The [field] of children, an interesting field with humanity\nمجال [الأطفال]، مجال شيق فيه إنسانية => The field of [children], an interesting field with humanity\nمجال الأطفال، [مجال] شيق فيه إنسانية => The field of children, an interesting [field] with humanity\nمجال الأطفال، مجال [شيق] فيه إنسانية => The field of children, an [interesting] field with humanity\nمجال الأطفال، مجال شيق [فيه] إنسانية => The field of children, an interesting field [with] humanity\nمجال الأطفال، مجال شيق فيه [إنسانية] => The field of children, an interesting field with [humanity]\n\n[بعطيك] إكتفاء ذاتي كتير كتير كتير كبير => [It gives you] a very, very, very great sense of self-fulfillment\n# بعطيك (ba'teek): the verb 'gives' includes the subject 'it' and the object 'you' in this context\nبعطيك [إكتفاء ذاتي] كتير كتير كتير كبير => It gives you a very, very, very great sense of [self-fulfillment]\nبعطيك إكتفاء ذاتي [كتير] كتير كتير كبير => It gives you a [very], very, very great sense of self-fulfillment\nبعطيك إكتفاء ذاتي كتير [كتير] كتير كبير => It gives you a very, [very], very great sense of self-fulfillment\nبعطيك إكتفاء ذاتي كتير كتير [كتير] كبير => It gives you a very, very, [very] great sense of self-fulfillment\nبعطيك إكتفاء ذاتي كتير كتير كتير [كبير] => It gives you a very, very, very [great] sense of self-fulfillment\n\nفي [ناس] كتير بتوصل لعندي => Many [people] come to me\nفي ناس [كتير] بتوصل لعندي => [Many] people come to me\nفي ناس كتير [بتوصل] لعندي => Many people [come] to me\nفي ناس كتير بتوصل [لعندي] => Many people come [to me] # \"la\" means to, \"indi\" means me/with me\n\n[فش عندها] ثقة بنفسها => Who [have no] confidence in themselves\nفش عندها [ثقة] بنفسها => Who have no [confidence] in themselves\nفش عندها ثقة [بنفسها] => Who have no confidence [in themselves] # Arabic word is singular (in herself) while English is plural (in themselves) but used for the same concept here\n\n[فش عندها] ثقة إنه تضحك => Who [have no] confidence to smile\nفش عندها [ثقة] إنه تضحك => Who have no [confidence] to smile\nفش عندها ثقة [إنه] تضحك => Who have no confidence [to] smile\nفش عندها ثقة إنه [تضحك] => Who have no confidence to [smile]\n\n[بتحط] إيدها على ثمها عشان تقدر تحكي => [They put] their hand on their mouth to be able to speak\nبتحط [إيدها] على ثمها عشان تقدر تحكي => They put [their hand] on their mouth to be able to speak\nبتحط إيدها [على] ثمها عشان تقدر تحكي => They put their hand [on] their mouth to be able to speak\nبتحط إيدها على [ثمها] عشان تقدر تحكي => They put their hand on [their mouth] to be able to speak\nبتحط إيدها على ثمها [عشان] تقدر تحكي => They put their hand on their mouth [to] be able to speak\nبتحط إيدها على ثمها عشان [تقدر] تحكي => They put their hand on their mouth to [be able] to speak\nبتحط إيدها على ثمها عشان تقدر [تحكي] => They put their hand on their mouth to be able [to speak]\n\n[وبحب] النتائج اللي بتطلع => [And I love] the results that come out\nوبحب [النتائج] اللي بتطلع => And I love [the results] that come out\nوبحب النتائج [اللي] بتطلع => And I love the results [that] come out\nوبحب النتائج اللي [بتطلع] => And I love the results that [come out]\n\n[يعني] لما بطلع أياتها نتيجة حلوة => [I mean] when I get a nice result for them\nيعني [لما] بطلع أياتها نتيجة حلوة => I mean [when] I get a nice result for them\nيعني لما [بطلع] أياتها نتيجة حلوة => I mean when [I get] a nice result for them\nيعني لما بطلع [أياتها] نتيجة حلوة => for them\nيعني لما بطلع أياتها [نتيجة] حلوة => I mean when I get a nice [result] for them\nيعني لما بطلع أياتها نتيجة [حلوة] => I mean when I get a [nice] result for them\n\n[الفرق] قبل وبعد => [The difference] before and after\nالفرق [قبل] وبعد => The difference [before] and after\nالفرق قبل [و]بعد => The difference before [and] after\nالفرق قبل و[بعد] => The difference before and [after]\n\n[لازم تكون] كتير سوي كتير هادي، كتير طيب => [You must be] very mature, very calm, very kind\nلازم تكون [كتير] سوي كتير هادي\n\n[في عندك] حب إنك تعطي => [You have] a love for giving\nفي عندك [حب] إنك تعطي => You have a [love] for giving\nفي عندك حب [إنك] تعطي => that you\nفي عندك حب إنك [تعطي] => You have a love for [giving]\n\n[أغلب] المتعالجين بيحكوا => [Most] patients say\nأغلب [المتعالجين] بيحكوا => Most [patients] say\nأغلب المتعالجين [بيحكوا] => Most patients [say]\n\n[أنا] بخاف من أطباء الأسنان => [I] am afraid of dentists\nأنا [بخاف] من أطباء الأسنان => I [am afraid] of dentists\nأنا بخاف [من] أطباء الأسنان => I am afraid [of] dentists\nأنا بخاف من [أطباء الأسنان] => I am afraid of [dentists]\nأنا بخاف من [أطباء] الأسنان => doctors\nأنا بخاف من أطباء [الأسنان] => the teeth # or just teeth; literal meaning of al-asnan\n\n[بس] الحلو إنه أنا دايماً جوابي بيكون، => [But] the nice thing is my answer is always,\nبس [الحلو] إنه أنا دايماً جوابي بيكون، => [the nice thing] is my answer is always,\nبس الحلو [إنه] أنا دايماً جوابي بيكون، => But the nice thing [is] my answer is always, # the first 'is' in the English sentence\nبس الحلو إنه [أنا] دايماً جوابي بيكون، => I # the literal meaning of أنا is 'I', though it's used for emphasis or topic-setting here\nبس الحلو إنه أنا [دايماً] جوابي بيكون، => But the nice thing is my answer is [always],\nبس الحلو إنه أنا دايماً [جوابي] بيكون، => But the nice thing is [my answer] is always,\nبس الحلو إنه أنا دايماً جوابي [بيكون]، => But the nice thing is my answer [is] always, # the second 'is' in the English sentence\n\nإنه [ما تحكمش] إسا، أصبر => [Don't judge] now, be patient\nإنه ما تحكمش [إسا]، أصبر => Don't judge [now], be patient\nإنه ما تحكمش إسا، [أصبر] => Don't judge now, [be patient]\n\n[كتير] دكاترة بتخاطر مثلاً، => [Many] doctors take risks for example,\nكتير [دكاترة] بتخاطر مثلاً، => Many [doctors] take risks for example,\nكتير دكاترة [بتخاطر] مثلاً، => Many doctors [take risks] for example,\nكتير دكاترة بتخاطر [مثلاً]، => Many doctors take risks [for example],\n\n[إذا] عنا طاحونة عقل قاعدة بالعصب => [If] we have a wisdom tooth sitting on the nerve\nإذا [عنا] طاحونة عقل قاعدة بالعصب => If [we have] a wisdom tooth sitting on the nerve\nإذا عنا [طاحونة عقل] قاعدة بالعصب => If we have [a wisdom tooth] sitting on the nerve\nإذا عنا طاحونة عقل [قاعدة] بالعصب => If we have a wisdom tooth [sitting] on the nerve\nإذا عنا طاحونة عقل قاعدة [بالعصب] => If we have a wisdom tooth sitting [on the nerve] # 'bi' (prefix) corresponds to 'on' and 'al-' to 'the'\n\n[أنا] شخصياً بعرف دكاترة اللي حاولوا يقلعوها => [I] personally know doctors who tried to extract it\nأنا [شخصياً] بعرف دكاترة اللي حاولوا يقلعوها => I [personally] know doctors who tried to extract it\nأنا شخصياً [بعرف] دكاترة اللي حاولوا يقلعوها => I personally [know] doctors who tried to extract it\nأنا شخصياً بعرف [دكاترة] اللي حاولوا يقلعوها => I personally know [doctors] who tried to extract it\nأنا شخصياً بعرف دكاترة [اللي] حاولوا يقلعوها => I personally know doctors [who] tried to extract it\nأنا شخصياً بعرف دكاترة اللي [حاولوا] يقلعوها => I personally know doctors who [tried] to extract it\nأنا شخصياً بعرف دكاترة اللي حاولوا [يقلعوها] => I personally know doctors who tried [to extract it] # Includes the verb and the object suffix \"-ha\" (it)\n\n[و]عملوا ضرر كتير كبير اللي هو شلل => [And] caused very big damage which is paralysis\nو[عملوا] ضرر كتير كبير اللي هو شلل => [caused] very big damage which is paralysis\nوعملوا [ضرر] كتير كبير اللي هو شلل => And caused very big [damage] which is paralysis\nوعملوا ضرر [كتير] كبير اللي هو شلل => And caused [very] big damage which is paralysis\nوعملوا ضرر كتير [كبير] اللي هو شلل => And caused very [big] damage which is paralysis\nوعملوا ضرر كتير كبير [اللي] هو شلل => And caused very big damage [which] is paralysis\nوعملوا ضرر كتير كبير اللي [هو] شلل => And caused very big damage which [is] paralysis\nوعملوا ضرر كتير كبير اللي هو [شلل] => And caused very big damage which is [paralysis]\n\nفطوالي يبعثوا [لمختص] لهاي الشغلات => So they immediately refer [to a specialist] for these things\nفطوالي يبعثوا لمختص [لهاي] الشغلات => So they immediately refer to a specialist [for these] things\nفطوالي يبعثوا لمختص لهاي [الشغلات] => So they immediately refer to a specialist for these [things] # الشغلات is the plural of شغلة (thing)\n\n[كانت] مرا كبيرة بالعمر حاملة شدة بإيدها => [There was] an older woman holding a retainer in her hand\nكانت [مرا] كبيرة بالعمر حاملة شدة بإيدها => There was an older [woman] holding a retainer in her hand\nكانت مرا [كبيرة بالعمر] حاملة شدة بإيدها => There was an [older] woman holding a retainer in her hand\nكانت مرا كبيرة بالعمر [حاملة] شدة بإيدها => There was an older woman [holding] a retainer in her hand\nكانت مرا كبيرة بالعمر حاملة [شدة] بإيدها => There was an older woman holding a [retainer] in her hand\nكانت مرا كبيرة بالعمر حاملة شدة [بإيدها] => There was an older woman holding a retainer [in her hand]\n\n[بتقول] لنا: بس الشدة تحفولي إياها، وتحطولي إياها => [Saying] to us: Just preserve the retainer for me, and put it on for me\nبتقول [لنا]: بس الشدة تحفولي إياها، وتحطولي إياها => Saying [to us]: Just preserve the retainer for me, and put it on for me\nبتقول لنا: [بس] الشدة تحفولي إياها، وتحطولي إياها => Saying to us: [Just] preserve the retainer for me, and put it on for me\nبتقول لنا: بس [الشدة] تحفولي إياها، وتحطولي إياها => Saying to us: Just preserve [the retainer] for me, and put it on for me\nبتقول لنا: بس الشدة [تحفولي] إياها، وتحطولي إياها => preserve for me\nبتقول لنا: بس الشدة تحفولي [إياها]، وتحطولي إياها => it\nبتقول لنا: بس الشدة تحفولي إياها، [و]تحطولي إياها => Saying to us: Just preserve the retainer for me, [and] put it on for me\nبتقول لنا: بس الشدة تحفولي إياها، و[تحطولي] إياها => put on for me\nبتقول لنا: بس الشدة تحفولي إياها، وتحطولي [إياها] => Saying to us: Just preserve the retainer for me, and put [it] on for me\n\n[فحصتلها]، لقيت في إشي نافخ بثمها => [I examined her], I found something swollen in her mouth\nفحصتلها، [لقيت] في إشي نافخ بثمها => I examined her, [I found] something swollen in her mouth\nفحصتلها، لقيت [في] إشي نافخ بثمها => there is # in Levantine Arabic, \"في\" is commonly used to mean \"there is\" or \"there was\"\nفحصتلها، لقيت في [إشي] نافخ بثمها => I examined her, I found [something] swollen in her mouth\nفحصتلها، لقيت في إشي [نافخ] بثمها => I examined her, I found something [swollen] in her mouth\nفحصتلها، لقيت في إشي نافخ [بثمها] => I examined her, I found something swollen [in her mouth]\n\n[إحنا] كمان بنعالج أولاد => [We] also treat children\nإحنا [كمان] بنعالج أولاد => We [also] treat children\nإحنا كمان [بنعالج] أولاد => We also [treat] children\nإحنا كمان بنعالج [أولاد] => We also treat [children]\n\n[اللي] هم مع إحتياجات خاصة => [Who] have special needs\nاللي [هم] مع إحتياجات خاصة => they\nاللي هم [مع] إحتياجات خاصة => Who [have] special needs\nاللي هم مع [إحتياجات] خاصة => Who have special [needs]\nاللي هم مع إحتياجات [خاصة] => Who have [special] needs\n\n[مرات] بالكراسي اللي إلهم => [Sometimes] in their wheelchairs\nمرات [بالكراسي] اللي إلهم => in the chairs # \"بالكراسي\" means \"in the chairs\" (literally \"bi\" + \"al\" + \"karasi\")\nمرات بالكراسي [اللي إلهم] => in [their] wheelchairs # \"اللي إلهم\" is a possessive relative structure meaning \"that belongs to them\" or simply \"their\"\n\n[و]عالمحل أنا أعطيتها صورة => [And] at the clinic I gave her an image\nو[عالمحل] أنا أعطيتها صورة => And [at the clinic] I gave her an image\nوعالمحل [أنا] أعطيتها صورة => And at the clinic [I] gave her an image\nوعالمحل أنا [أعطيتها] صورة => And at the clinic I [gave her] an image\nوعالمحل أنا أعطيتها [صورة] => And at the clinic I gave her [an image]\n\n[ورقة] إنها تعمل صورة => [A paper] to get an X-ray\nورقة [إنها] تعمل صورة => to\nورقة إنها [تعمل] صورة => A paper to [get] an X-ray\nورقة إنها تعمل [صورة] => A paper to get [an X-ray]\n\nواللي [اتضح] إنه فعلاً عندها كان سرطان => And it [turned out] she actually had cancer\nواللي اتضح [إنه] فعلاً عندها كان سرطان => that\nواللي اتضح إنه [فعلاً] عندها كان سرطان => And it turned out she [actually] had cancer\nواللي اتضح إنه فعلاً [عندها] كان سرطان => And it turned out [she] actually had cancer\nواللي اتضح إنه فعلاً عندها [كان] سرطان => And it turned out she actually [had] cancer\nواللي اتضح إنه فعلاً عندها كان [سرطان] => And it turned out she actually had [cancer]\n\n[بس] بنفس الوقت أبسطني => [But] at the same time it made me happy\nبس [بنفس] الوقت أبسطني => at the same\nبس بنفس [الوقت] أبسطني => But at the same [time] it made me happy\nبس بنفس الوقت [أبسطني] => But at the same time [it made me happy] # the subject \"it\" and object \"me\" are contained within the verb suffix and stem\n\n[إنه] اكتشفناه بوقت نوعاً ما بكير => [That] we discovered it at a somewhat early time\nإنه [اكتشفناه] بوقت نوعاً ما بكير => That [we discovered it] at a somewhat early time\nإنه اكتشفناه [بوقت] نوعاً ما بكير => at a time\nإنه اكتشفناه بوقت [نوعاً ما] بكير => That we discovered it at a [somewhat] early time\nإنه اكتشفناه بوقت نوعاً ما [بكير] => That we discovered it at a somewhat [early] time\n\n[في عندي] حالة وصلت عندي، => [I had] a case that came to me,\nفي عندي [حالة] وصلت عندي، => I had [a case] that came to me,\nفي عندي حالة [وصلت] عندي، => I had a case that [came] to me,\nفي عندي حالة وصلت [عندي]، => I had a case that came [to me],\n\n[صارلها] 30 سنة ما فاتت عند دكتور أسنان => [It had been] 30 years since she visited a dentist\nصارلها [30] سنة ما فاتت عند دكتور أسنان => It had been [30] years since she visited a dentist\nصارلها 30 [سنة] ما فاتت عند دكتور أسنان => It had been 30 [years] since she visited a dentist\nصارلها 30 سنة [ما فاتت] عند دكتور أسنان => It had been 30 years [since she visited] a dentist # \"ما فاتت\" literally means \"she didn't enter\", but in this temporal construction it translates to \"since she visited\"\nصارلها 30 سنة ما فاتت عند [دكتور أسنان] => It had been 30 years since she visited [a dentist]\n\n[أخطاء] في البدايات نعم => [Mistakes] in the beginnings, yes\nأخطاء [في] البدايات نعم => Mistakes [in] the beginnings, yes\nأخطاء في [البدايات] نعم => Mistakes in [the beginnings], yes\nأخطاء في البدايات [نعم] => Mistakes in the beginnings, [yes]\n\n[كان في] أخطاء يمكن في التشخيص => [There were] mistakes perhaps in the diagnosis\nكان في [أخطاء] يمكن في التشخيص => There were [mistakes] perhaps in the diagnosis\nكان في أخطاء [يمكن] في التشخيص => There were mistakes [perhaps] in the diagnosis\nكان في أخطاء يمكن [في] التشخيص => There were mistakes perhaps [in] the diagnosis\nكان في أخطاء يمكن في [التشخيص] => There were mistakes perhaps in [the diagnosis]\n\n[لأنه] من أول في دكتور كان قالعلها طاحونة وكانت ملتهبة => [Because] initially a doctor had extracted a molar for her and it was inflamed\nلأنه [من أول] في دكتور كان قالعلها طاحونة وكانت ملتهبة => Because [initially] a doctor had extracted a molar for her and it was inflamed\nلأنه من أول في [دكتور] كان قالعلها طاحونة وكانت ملتهبة => Because initially [a doctor] had extracted a molar for her and it was inflamed\nلأنه من أول في دكتور [كان قالعلها] طاحونة وكانت ملتهبة => had extracted for her # \"كان\" (had) + \"قالع\" (extracted) + \"ل\" (for) + \"ها\" (her)\nلأنه من أول في دكتور كان قالعلها [طاحونة] وكانت ملتهبة => Because initially a doctor had extracted [a molar] for her and it was inflamed\nلأنه من أول في دكتور كان قالعلها طاحونة [وكانت] ملتهبة => Because initially a doctor had extracted a molar for her [and it was] inflamed\nلأنه من أول في دكتور كان قالعلها طاحونة وكانت [ملتهبة] => Because initially a doctor had extracted a molar for her and it was [inflamed]\n\n[كانوا] أسنانها مدمرين شيلة شيلة => Her teeth [were] destroyed, piece by piece\nكانوا [أسنانها] مدمرين شيلة شيلة => [Her teeth] were destroyed, piece by piece\nكانوا أسنانها [مدمرين] شيلة شيلة => Her teeth were [destroyed], piece by piece\nكانوا أسنانها مدمرين [شيلة شيلة] => Her teeth were destroyed, [piece by piece]\n\n[إجت] عندي متعالجة كانت كتير متضايقة => A patient [came] to me who was very bothered\nإجت [عندي] متعالجة كانت كتير متضايقة => A patient came [to me] who was very bothered\nإجت عندي [متعالجة] كانت كتير متضايقة => [A patient] came to me who was very bothered\nإجت عندي متعالجة [كانت] كتير متضايقة => A patient came to me [who was] very bothered\nإجت عندي متعالجة كانت [كتير] متضايقة => A patient came to me who was [very] bothered\nإجت عندي متعالجة كانت كتير [متضايقة] => A patient came to me who was very [bothered]\n\n[من] شكل سنانها => [By] the shape of her teeth\nمن [شكل] سنانها => By [the shape] of her teeth\nمن شكل [سنانها] => By the shape of [her teeth]\n\n[صاحباتها] بالمدرسة بيتنمروا عليها => [Her friends] at school bullied her\nصاحباتها [بالمدرسة] بيتنمروا عليها => Her friends [at school] bullied her\nصاحباتها بالمدرسة [بيتنمروا] عليها => they bully, they are bullying # Arabic verb is in the present/continuous form\nصاحباتها بالمدرسة بيتنمروا [عليها] => on her # literal translation of the prepositional phrase \"on her\" used with the verb bully (yatanmaru 'ala)\n\n[لما] هيك بنصير نمارس المهنة أكثر، => [When] we practice the profession more like this,\nلما [هيك] بنصير نمارس المهنة أكثر، => When we practice the profession more [like this],\nلما هيك [بنصير نمارس] المهنة أكثر، => When [we practice] the profession more like this,\nلما هيك بنصير نمارس [المهنة] أكثر، => When we practice [the profession] more like this,\nلما هيك بنصير نمارس المهنة [أكثر]، => When we practice the profession [more] like this,\n\n[و]نحبها أكثر، ونتعلمها أكثر، => [And] love it more, and learn it more,\nو[نحبها] أكثر، ونتعلمها أكثر، => And [love it] more, and learn it more,\nونحبها [أكثر]، ونتعلمها أكثر، => And love it [more], and learn it more,\nونحبها أكثر، [و]نتعلمها أكثر، => And love it more, [and] learn it more,\nونحبها أكثر، و[نتعلمها] أكثر، => And love it more, and [learn it] more,\nونحبها أكثر، ونتعلمها [أكثر]، => And love it more, and learn it [more],\n\n[بنصير] نتخطاها هاي الأخطاء بسهولة يعني => [We start to] overcome these mistakes easily, I mean\nبنصير [نتخطاها] هاي الأخطاء بسهولة يعني => We start to [overcome] these mistakes easily, I mean # also includes the suffix \"ha\" (them)\nبنصير نتخطاها [هاي] الأخطاء بسهولة يعني => We start to overcome [these] mistakes easily, I mean\nبنصير نتخطاها هاي [الأخطاء] بسهولة يعني => We start to overcome these [mistakes] easily, I mean\nبنصير نتخطاها هاي الأخطاء [بسهولة] يعني => We start to overcome these mistakes [easily], I mean\nبنصير نتخطاها هاي الأخطاء بسهولة [يعني] => We start to overcome these mistakes easily, [I mean]\n\n[بالفعل] اليوم المريضة كتير كتير مبسوطة => [Indeed] today the patient is very, very happy\nبالفعل [اليوم] المريضة كتير كتير مبسوطة => Indeed [today] the patient is very, very happy\nبالفعل اليوم [المريضة] كتير كتير مبسوطة => Indeed today [the patient] is very, very happy\nبالفعل اليوم المريضة [كتير] كتير مبسوطة => Indeed today the patient is [very], very happy\nبالفعل اليوم المريضة كتير [كتير] مبسوطة => Indeed today the patient is very, [very] happy\nبالفعل اليوم المريضة كتير كتير [مبسوطة] => Indeed today the patient is very, very [happy]\n\n[بطل عندها] خوف بتاتاً بتاتاً من طب الأسنان => [She has no] fear at all, at all of dentistry # \"بطل\" means \"stopped/no longer\" and \"عندها\" means \"she has\", combined they match \"she has no\"\nبطل عندها [خوف] بتاتاً بتاتاً من طب الأسنان => She has no [fear] at all, at all of dentistry\nبطل عندها خوف [بتاتاً] بتاتاً من طب الأسنان => She has no fear [at all], at all of dentistry\nبطل عندها خوف بتاتاً [بتاتاً] من طب الأسنان => She has no fear at all, [at all] of dentistry\nبطل عندها خوف بتاتاً بتاتاً [من] طب الأسنان => She has no fear at all, at all [of] dentistry\nبطل عندها خوف بتاتاً بتاتاً من [طب الأسنان] => She has no fear at all, at all of [dentistry] # \"طب الأسنان\" is the compound term for dentistry (literally \"medicine of teeth\")\n\n[ومن] بعد ما فكت التقويم => [And] after she removed the braces\nومن [بعد ما] فكت التقويم => And [after] she removed the braces\nومن بعد ما [فكت] التقويم => And after [she removed] the braces\nومن بعد ما فكت [التقويم] => And after she removed [the braces]\n\n[البروفايل] تبع وجهها كلياته تغير => [The profile] of her face changed entirely\nالبروفايل [تبع] وجهها كلياته تغير => The profile [of] her face changed entirely\nالبروفايل تبع [وجهها] كلياته تغير => The profile of [her face] changed entirely\nالبروفايل تبع وجهها [كلياته] تغير => The profile of her face changed [entirely]\nالبروفايل تبع وجهها كلياته [تغير] => The profile of her face [changed] entirely\n\n[و]هي عالمحل لما شافت حالها، هي بكيت => [And] she at the clinic when she saw herself, she cried\nو[هي] عالمحل لما شافت حالها، هي بكيت => And [she] at the clinic when she saw herself, she cried\nوهي [عالمحل] لما شافت حالها، هي بكيت => And she [at the clinic] when she saw herself, she cried\nوهي عالمحل [لما] شافت حالها، هي بكيت => And she at the clinic [when] she saw herself, she cried\nوهي عالمحل لما [شافت] حالها، هي بكيت => And she at the clinic when [she saw] herself, she cried\nوهي عالمحل لما شافت [حالها]، هي بكيت => And she at the clinic when she saw [herself], she cried\nوهي عالمحل لما شافت حالها، [هي] بكيت => And she at the clinic when she saw herself, [she] cried\nوهي عالمحل لما شافت حالها، هي [بكيت] => And she at the clinic when she saw herself, she [cried]\n\n[وكان] كتير الإشي مؤثر نوعاً ما => [And it was] very affecting somehow\nوكان [كتير] الإشي مؤثر نوعاً ما => And it was [very] affecting somehow\nوكان كتير [الإشي] مؤثر نوعاً ما => the thing\nوكان كتير الإشي [مؤثر] نوعاً ما => And it was very [affecting] somehow\nوكان كتير الإشي مؤثر [نوعاً ما] => And it was very affecting [somehow] # \"نوعاً ما\" is a fixed phrase meaning \"somewhat\" or \"somehow\"\n\n[أنا] بحب كتير الزراعة => [I] really like implants\nأنا [بحب] كتير الزراعة => I really [like] implants\nأنا بحب [كتير] الزراعة => I [really] like implants\nأنا بحب كتير [الزراعة] => I really like [implants]\n\n[أنا] إذا بشوفش دم خلص بمشيش يومي => Normally if [I] see blood, my day is ruined\nأنا [إذا] بشوفش دم خلص بمشيش يومي => Normally [if] I see blood, my day is ruined\nأنا إذا [بشوفش] دم خلص بمشيش يومي => I see # The Arabic is literally \"I don't see,\" but aligned here to \"I see\" based on the provided translation's logic\nأنا إذا بشوفش [دم] خلص بمشيش يومي => Normally if I see [blood], my day is ruined\nأنا إذا بشوفش دم [خلص] بمشيش يومي => then, that's it # \"خلص\" functions as a filler or transition word here\nأنا إذا بشوفش دم خلص [بمشيش] يومي => is ruined # Literally \"doesn't walk\" or \"doesn't go,\" meaning the day doesn't proceed normally\nأنا إذا بشوفش دم خلص بمشيش [يومي] => Normally if I see blood, [my day] is ruined\n\n[بس] وأنا عم بقلع أياتا طاحونة أنا بكون مستمتعة => [But] while I'm extracting a molar for them, I am enjoying it\nبس [وأنا] عم بقلع أياتا طاحونة أنا بكون مستمتعة => But [while I]'m extracting a molar for them, I am enjoying it\nبس وأنا [عم بقلع] أياتا طاحونة أنا بكون مستمتعة => But while [I'm extracting] a molar for them, I am enjoying it\nبس وأنا عم بقلع [أياتا] طاحونة أنا بكون مستمتعة => which, whichever # 'أياتا' is the feminine form of 'any/which', referring to the molar\nبس وأنا عم بقلع أياتا [طاحونة] أنا بكون مستمتعة => But while I'm extracting a [molar] for them, I am enjoying it\nبس وأنا عم بقلع أياتا طاحونة [أنا بكون] مستمتعة => But while I'm extracting a molar for them, [I am] enjoying it\nبس وأنا عم بقلع أياتا طاحونة أنا بكون [مستمتعة] => But while I'm extracting a molar for them, I am [enjoying] it\n\n[فكثير] بحب يكون معي لكساتور، => [So I really] like to have a luxator with me,\nفكثير [بحب] يكون معي لكساتور، => So I really [like] to have a luxator with me,\nفكثير بحب [يكون] معي لكساتور، => to be, to have\nفكثير بحب يكون [معي] لكساتور، => So I really like to have a luxator [with me],\nفكثير بحب يكون معي [لكساتور]، => So I really like to have a [luxator] with me,\n\n[اللي] هو مش اللي بيقلع، الكماشة => [Which] is not the extractor, the forceps\nاللي [هو] مش اللي بيقلع، الكماشة => Which [is] not the extractor, the forceps\nاللي هو [مش] اللي بيقلع، الكماشة => Which is [not] the extractor, the forceps\nاللي هو مش [اللي بيقلع]، الكماشة => Which is not [the extractor], the forceps # 'The one that pulls out' is matched with 'the extractor'\nاللي هو مش اللي بيقلع، [الكماشة] => Which is not the extractor, [the forceps]\n\n[اللي] هو المفك => [Which] is the screwdriver\nاللي [هو] المفك => Which [is] the screwdriver\nاللي هو [المفك] => Which is [the screwdriver]\n\n[دموية] => [Bloody]\n\n[بيصير معي] مواقف آه بسهب بالحكي => [I have] situations, yes, but I get carried away in talking\nبيصير معي [مواقف] آه بسهب بالحكي => I have [situations], yes, but I get carried away in talking\nبيصير معي مواقف [آه] بسهب بالحكي => I have situations, [yes], but I get carried away in talking\nبيصير معي مواقف آه [بسهب] بالحكي => I have situations, yes, but [I get carried away] in talking\nبيصير معي مواقف آه بسهب [بالحكي] => I have situations, yes, but I get carried away [in talking]\n\n[و]الولد فاتح ثمه ومش قادر يرد => [And] the boy has his mouth open and can't respond\nو[الولد] فاتح ثمه ومش قادر يرد => And [the boy] has his mouth open and can't respond\nوالولد [فاتح] ثمه ومش قادر يرد => And the boy has his mouth [open] and can't respond\nوالولد فاتح [ثمه] ومش قادر يرد => And the boy has [his mouth] open and can't respond\nوالولد فاتح ثمه [و]مش قادر يرد => And the boy has his mouth open [and] can't respond\nوالولد فاتح ثمه و[مش قادر] يرد => And the boy has his mouth open and [can't] respond\nوالولد فاتح ثمه ومش قادر [يرد] => And the boy has his mouth open and can't [respond]\n\n[لما] أبدأ أشتغل لأياتا متعالج، وهن إيدي بقلب ثمه، دايماً => [When] I start working on a patient, and my hand is turning in their mouth, always\nلما [أبدأ] أشتغل لأياتا متعالج، وهن إيدي بقلب ثمه، دايماً => When [I start] working on a patient, and my hand is turning in their mouth, always\nلما أبدأ [أشتغل] لأياتا متعالج، وهن إيدي بقلب ثمه، دايماً => When I start [working] on a patient, and my hand is turning in their mouth, always\nلما أبدأ أشتغل [لأياتا] متعالج، وهن إيدي بقلب ثمه، دايماً => for any, on a\nلما أبدأ أشتغل لأياتا [متعالج]، وهن إيدي بقلب ثمه، دايماً => When I start working on [a patient], and my hand is turning in their mouth, always\nلما أبدأ أشتغل لأياتا متعالج، [وهن] إيدي بقلب ثمه، دايماً => and, while\nلما أبدأ أشتغل لأياتا متعالج، وهن [إيدي] بقلب ثمه، دايماً => When I start working on a patient, and [my hand] is turning in their mouth, always\nلما أبدأ أشتغل لأياتا متعالج، وهن إيدي [بقلب] ثمه، دايماً => in, inside\nلما أبدأ أشتغل لأياتا متعالج، وهن إيدي بقلب [ثمه]، دايماً => When I start working on a patient, and my hand is turning in [their mouth], always # thim is dialect for mouth\nلما أبدأ أشتغل لأياتا متعالج، وهن إيدي بقلب ثمه، [دايماً] => When I start working on a patient, and my hand is turning in their mouth, [always]\n\n[ببدأ] أحكي معه منفتح حوارات كمان => [I start] talking with them, opening dialogues too\nببدأ [أحكي] معه منفتح حوارات كمان => I start [talking] with them, opening dialogues too\nببدأ أحكي [معه] منفتح حوارات كمان => I start talking [with them], opening dialogues too\nببدأ أحكي معه [منفتح] حوارات كمان => I start talking with them, [opening] dialogues too\nببدأ أحكي معه منفتح [حوارات] كمان => I start talking with them, opening [dialogues] too\nببدأ أحكي معه منفتح حوارات [كمان] => I start talking with them, opening dialogues [too]\n\n[كل] مريض، إيش في بثمّه إحنا بنفهم عليه => [Every] patient, what is in their mouth we understand about them\nكل [مريض]، إيش في بثمّه إحنا بنفهم عليه => Every [patient], what is in their mouth we understand about them\nكل مريض، [إيش] في بثمّه إحنا بنفهم عليه => Every patient, [what] is in their mouth we understand about them\nكل مريض، إيش [في] بثمّه إحنا بنفهم عليه => Every patient, what [is] in their mouth we understand about them\nكل مريض، إيش في [بثمّه] إحنا بنفهم عليه => Every patient, what is [in their mouth] we understand about them\nكل مريض، إيش في بثمّه [إحنا] بنفهم عليه => Every patient, what is in their mouth [we] understand about them\nكل مريض، إيش في بثمّه إحنا [بنفهم] عليه => Every patient, what is in their mouth we [understand] about them\nكل مريض، إيش في بثمّه إحنا بنفهم [عليه] => Every patient, what is in their mouth we understand [about them] # \"عليه\" refers back to the patient, translated here as \"about them\"\n\nبكونش [أستنى] منه جواب => I don't [wait] for an answer from them\nبكونش أستنى [منه] جواب => I don't wait for an answer [from them] # منه literally means \"from him/it\" but translates here as \"from them\"\nبكونش أستنى منه [جواب] => I don't wait for [an answer] from them\n\nيعني [بس] بقوله إرفع إيدك بالإشارات، => I [just] tell him raise your hand with signals,\nيعني بس [بقوله] إرفع إيدك بالإشارات، => [I] just [tell him] raise your hand with signals,\nيعني بس بقوله [إرفع] إيدك بالإشارات، => I just tell him [raise] your hand with signals,\nيعني بس بقوله إرفع [إيدك] بالإشارات، => I just tell him raise [your hand] with signals,\nيعني بس بقوله إرفع إيدك [بالإشارات]، => I just tell him raise your hand [with signals], # isharat is signals, the prefix bi- is with or in\n\n[من منطلق] أني بدي أسليه وأنسيه وجع العلاج نفسه => [From the perspective] that I want to entertain him and make him forget the pain of the treatment itself\nمن منطلق [أني] بدي أسليه وأنسيه وجع العلاج نفسه => [that I]\nمن منطلق أني [بدي] أسليه وأنسيه وجع العلاج نفسه => [want]\nمن منطلق أني بدي [أسليه] وأنسيه وجع العلاج نفسه => [to entertain him]\nمن منطلق أني بدي أسليه [وأنسيه] وجع العلاج نفسه => [and make him forget]\nمن منطلق أني بدي أسليه وأنسيه [وجع] العلاج نفسه => [the pain]\nمن منطلق أني بدي أسليه وأنسيه وجع [العلاج] نفسه => [the treatment]\nمن منطلق أني بدي أسليه وأنسيه وجع العلاج [نفسه] => [itself]\n\n[في كتير] متعالجين بيحط موعد بيفكر إنه معاه كل اليوم => [Many] patients make an appointment thinking he has all day with him\nفي كتير [متعالجين] بيحط موعد بيفكر إنه معاه كل اليوم => Many [patients] make an appointment thinking he has all day with him\nفي كتير متعالجين [بيحط] موعد بيفكر إنه معاه كل اليوم => Many patients [make] an appointment thinking he has all day with him\nفي كتير متعالجين بيحط [موعد] بيفكر إنه معاه كل اليوم => Many patients make [an appointment] thinking he has all day with him\nفي كتير متعالجين بيحط موعد [بيفكر] إنه معاه كل اليوم => Many patients make an appointment [thinking] he has all day with him\nفي كتير متعالجين بيحط موعد بيفكر [إنه] معاه كل اليوم => he\nفي كتير متعالجين بيحط موعد بيفكر إنه [معاه] كل اليوم => has ... with him # the preposition مع (with) + suffix ـه (him) functions as the verb \"to have\" in this context\nفي كتير متعالجين بيحط موعد بيفكر إنه معاه [كل] اليوم => Many patients make an appointment thinking he has [all] day with him\nفي كتير متعالجين بيحط موعد بيفكر إنه معاه كل [اليوم] => Many patients make an appointment thinking he has all [day] with him\n\nوينتا ما هو بده بيقدر [يصل] عند طبيب الأسنان => And you, he doesn't care, he can't [get to] the dentist\nوينتا ما هو بده بيقدر يصل [عند] طبيب الأسنان => at, to # used as a preposition for visiting someone\nوينتا ما هو بده بيقدر يصل عند [طبيب الأسنان] => And you, he doesn't care, he can't get to [the dentist]\nوينتا ما هو بده بيقدر يصل عند [طبيب] الأسنان => doctor\nوينتا ما هو بده بيقدر يصل عند طبيب [الأسنان] => the teeth\n\n[و]إحنا كتير بيضايقنا هذا الموضوع => [And] this topic bothers us a lot\nو[إحنا] كتير بيضايقنا هذا الموضوع => we\nوإحنا [كتير] بيضايقنا هذا الموضوع => And this topic bothers us [a lot]\nوإحنا كتير [بيضايقنا] هذا الموضوع => And this topic [bothers us] a lot\nوإحنا كتير بيضايقنا [هذا] الموضوع => And [this] topic bothers us a lot\nوإحنا كتير بيضايقنا هذا [الموضوع] => And this [topic] bothers us a lot\n\n[عشان] ما يصيرش سلسلة تأخيرات بالأدوار كلها => [So that] there isn't a chain of delays in all the turns\nعشان [ما يصيرش] سلسلة تأخيرات بالأدوار كلها => So that [there isn't] a chain of delays in all the turns\nعشان ما يصيرش [سلسلة] تأخيرات بالأدوار كلها => So that there isn't [a chain] of delays in all the turns\nعشان ما يصيرش سلسلة [تأخيرات] بالأدوار كلها => So that there isn't a chain of [delays] in all the turns\nعشان ما يصيرش سلسلة تأخيرات [بالأدوار] كلها => in the turns\nعشان ما يصيرش سلسلة تأخيرات بالأدوار [كلها] => So that there isn't a chain of delays in [all] the turns\n\n[بدك] تعطيه وقته بدك تعطيه الجودة اللي مطلوبة => [You want] to give him his time, you want to give him the required quality\nبدك [تعطيه] وقته بدك تعطيه الجودة اللي مطلوبة => You want to [give him] his time, you want to give him the required quality\nبدك تعطيه [وقته] بدك تعطيه الجودة اللي مطلوبة => You want to give him [his time], you want to give him the required quality\nبدك تعطيه وقته [بدك] تعطيه الجودة اللي مطلوبة => You want to give him his time, [you want] to give him the required quality\nبدك تعطيه وقته بدك [تعطيه] الجودة اللي مطلوبة => You want to give him his time, you want to [give him] the required quality\nبدك تعطيه وقته بدك تعطيه [الجودة] اللي مطلوبة => You want to give him his time, you want to give him the [quality]\nبدك تعطيه وقته بدك تعطيه الجودة [اللي] مطلوبة => which, that # \"illi\" acts as a relative pronoun connecting quality to the adjective\nبدك تعطيه وقته بدك تعطيه الجودة اللي [مطلوبة] => You want to give him his time, you want to give him the [required] quality\n\n[و]كمان شغلة يعني هي كتير مش حلوة => [And] another thing, I mean it's very not nice\nو[كمان] شغلة يعني هي كتير مش حلوة => And [another] thing, I mean it's very not nice\nوكمان [شغلة] يعني هي كتير مش حلوة => And another [thing], I mean it's very not nice\nوكمان شغلة [يعني] هي كتير مش حلوة => And another thing, [I mean] it's very not nice\nوكمان شغلة يعني [هي] كتير مش حلوة => she, it # هی is the subject pronoun\nوكمان شغلة يعني هي [كتير] مش حلوة => And another thing, I mean it's [very] not nice\nوكمان شغلة يعني هي كتير [مش] حلوة => And another thing, I mean it's very [not] nice\nوكمان شغلة يعني هي كتير مش [حلوة] => And another thing, I mean it's very not [nice]\n\n[لما] باجي بدي أشتغل => [When] I come to work\nلما [باجي] بدي أشتغل => When [I come] to work\nلما باجي [بدي] أشتغل => I want to, I am about to\nلما باجي بدي [أشتغل] => When I come [to work]\n\n[و]يكون المتعالج مش فارك سنانه => [And] the patient hasn't brushed his teeth\n[يكون] المتعالج مش فارك سنانه => is, to be, to become # particle indicating a state\nويكون [المتعالج] مش فارك سنانه => And [the patient] hasn't brushed his teeth\nويكون المتعالج [مش] فارك سنانه => And the patient [hasn't] brushed his teeth\nويكون المتعالج مش [فارك] سنانه => And the patient hasn't [brushed] his teeth # literally: \"rubbing\" or \"scrubbing\"\nويكون المتعالج مش فارك [سنانه] => And the patient hasn't brushed [his teeth]\n\n[الحمد لله] إنه صنعوا كمامة كمامة، هاي أهم إشي => [Thank God] they made masks, masks, this is the most important thing\nالحمد لله [إنه] صنعوا كمامة كمامة، هاي أهم إشي => that\nالحمد لله إنه [صنعوا] كمامة كمامة، هاي أهم إشي => Thank God [they made] masks, masks, this is the most important thing\nالحمد لله إنه صنعوا [كمامة] كمامة، هاي أهم إشي => Thank God they made [masks], masks, this is the most important thing\nالحمد لله إنه صنعوا كمامة [كمامة]، هاي أهم إشي => Thank God they made masks, [masks], this is the most important thing\nالحمد لله إنه صنعوا كمامة كمامة، [هاي] أهم إشي => Thank God they made masks, masks, [this] is the most important thing\nالحمد لله إنه صنعوا كمامة كمامة، هاي [أهم] إشي => Thank God they made masks, masks, this is [the most important] thing\nالحمد لله إنه صنعوا كمامة كمامة، هاي أهم [إشي] => Thank God they made masks, masks, this is the most important [thing]\n\n[الكمامة] كتير كتير مهمة => [The mask] is very, very important\nالكمامة [كتير] كتير مهمة => The mask is [very], very important\nالكمامة كتير [كتير] مهمة => The mask is very, [very] important\nالكمامة كتير كتير [مهمة] => The mask is very, very [important]\n\n[أفركوا] أسنانكم لو سمحتوا => [Brush] your teeth please\nأفركوا [أسنانكم] لو سمحتوا => Brush [your teeth] please\nأفركوا أسنانكم [لو سمحتوا] => Brush your teeth [please]\n\n[التريندات] حتى نجحت إنها تفوت على المجال الطبي => Even [trends] succeeded in entering the medical field\nالتريندات [حتى] نجحت إنها تفوت على المجال الطبي => [Even] trends succeeded in entering the medical field\nالتريندات حتى [نجحت] إنها تفوت على المجال الطبي => Even trends [succeeded] in entering the medical field\nالتريندات حتى نجحت [إنها تفوت] على المجال الطبي => Even trends succeeded [in entering] the medical field\nالتريندات حتى نجحت إنها تفوت على [المجال] الطبي => Even trends succeeded in entering the medical [field]\nالتريندات حتى نجحت إنها تفوت على المجال [الطبي] => Even trends succeeded in entering the [medical] field # \"الطبي\" (medical) describes the field; in Arabic the adjective follows the noun, while in English it precedes it.\n\n[كتير] حالات بتوصلني بدها هوليوود سمايل => [Many] cases come to me wanting a Hollywood Smile\nكتير [حالات] بتوصلني بدها هوليوود سمايل => Many [cases] come to me wanting a Hollywood Smile\nكتير حالات [بتوصلني] بدها هوليوود سمايل => Many cases [come to me] wanting a Hollywood Smile\nكتير حالات بتوصلني [بدها] هوليوود سمايل => Many cases come to me [wanting] a Hollywood Smile\nكتير حالات بتوصلني بدها [هوليوود] سمايل => Many cases come to me wanting a [Hollywood] Smile\nكتير حالات بتوصلني بدها هوليوود [سمايل] => Many cases come to me wanting a Hollywood [Smile]\n\n[وأنا] بتطلع شخصياً على أسنانها => [And I] personally look at their teeth\nوأنا [بتطلع] شخصياً على أسنانها => And I personally [look] at their teeth\nوأنا بتطلع [شخصياً] على أسنانها => And I [personally] look at their teeth\nوأنا بتطلع شخصياً [على] أسنانها => And I personally look [at] their teeth\nوأنا بتطلع شخصياً على [أسنانها] => And I personally look at [their teeth]\n\n[بلاقي] أسنانها 100 بالمية ولا غلطة => [I find] their teeth 100 percent without a mistake\nبلاقي [أسنانها] 100 بالمية ولا غلطة => I find [their teeth] 100 percent without a mistake\nبلاقي أسنانها [100] بالمية ولا غلطة => I find their teeth [100] percent without a mistake\nبلاقي أسنانها 100 [بالمية] ولا غلطة => I find their teeth 100 [percent] without a mistake\nبلاقي أسنانها 100 بالمية [ولا] غلطة => I find their teeth 100 percent [without] a mistake\nبلاقي أسنانها 100 بالمية ولا [غلطة] => I find their teeth 100 percent without [a mistake]\n\n[بيفرجوني] صورة، شو رأيك بهاي، حابة أعمل هيك => [They show me] a picture, what do you think of this, I want to do like this\nبيفرجوني [صورة]، شو رأيك بهاي، حابة أعمل هيك => They show me [a picture], what do you think of this, I want to do like this\nبيفرجوني صورة، [شو] رأيك بهاي، حابة أعمل هيك => They show me a picture, [what] do you think of this, I want to do like this\nبيفرجوني صورة، شو [رأيك] بهاي، حابة أعمل هيك => They show me a picture, what [do you think] of this, I want to do like this\nبيفرجوني صورة، شو رأيك [بهاي]، حابة أعمل هيك => They show me a picture, what do you think [of this], I want to do like this\nبيفرجوني صورة، شو رأيك بهاي، [حابة] أعمل هيك => They show me a picture, what do you think of this, [I\n\n[أو] شو رأيك بهذا العلاج مبين كتير حلو => [Or] what do you think of this treatment, it looks very nice\nأو [شو] رأيك بهذا العلاج مبين كتير حلو => Or [what] do you think of this treatment, it looks very nice\nأو شو [رأيك] بهذا العلاج مبين كتير حلو => Or what [do you think] of this treatment, it looks very nice\nأو شو رأيك [بهذا] العلاج مبين كتير حلو => Or what do you think [of this] treatment, it looks very nice\nأو شو رأيك بهذا [العلاج] مبين كتير حلو => Or what do you think of this [treatment], it looks very nice\nأو شو رأيك بهذا العلاج [مبين] كتير حلو => Or what do you think of this treatment, [it looks] very nice\nأو شو رأيك بهذا العلاج مبين [كتير] حلو => Or what do you think of this treatment, it looks [very] nice\nأو شو رأيك بهذا العلاج مبين كتير [حلو] => Or what do you think of this treatment, it looks very [nice]\n\n[هاي] الصورة لبقت لهذا المتعالج، بس هاي الصورة مش راح تلبق => [This] picture suited this patient, but this picture won't suit\nهاي [الصورة] لبقت لهذا المتعالج، بس هاي الصورة مش راح تلبق => This [picture] suited this patient, but this picture won't suit\nهاي الصورة [لبقت] لهذا المتعالج، بس هاي الصورة مش راح تلبق => This picture [suited] this patient, but this picture won't suit\nهاي الصورة لبقت [لهذا] المتعالج، بس هاي الصورة مش راح تلبق => This picture suited [this] patient, but this picture won't suit\nهاي الصورة لبقت لهذا [المتعالج]، بس هاي الصورة مش راح تلبق => This picture suited this [patient], but this picture won't suit\nهاي الصورة لبقت لهذا المتعالج، [بس] هاي الصورة مش راح تلبق => This picture suited this patient, [but] this picture won't suit\nهاي الصورة لبقت لهذا المتعالج، بس [هاي] الصورة مش راح تلبق => This picture suited this patient, but [this] picture won't suit\nهاي الصورة لبقت لهذا المتعالج، بس هاي [الصورة] مش راح تلبق => This picture suited this patient, but this [picture] won't suit\nهاي الصورة لبقت لهذا المتعالج، بس هاي الصورة [مش راح] تلبق => This picture suited this patient, but this picture [won't] suit\nهاي الصورة لبقت لهذا المتعالج، بس هاي الصورة مش راح [تلبق] => This picture suited this patient, but this picture won't [suit]\n\n[إذا] حطيتها على وجهك مش راح تلبق لك => [If] you put it on your face it won't suit you\nإذا [حطيتها] على وجهك مش راح تلبق لك => If [you put it] on your face it won't suit you\nإذا حطيتها [على] وجهك مش راح تلبق لك => If you put it [on] your face it won't suit you\nإذا حطيتها على [وجهك] مش راح تلبق لك => If you put it on [your face] it won't suit you\nإذا حطيتها على وجهك [مش راح] تلبق لك => If you put it on your face [it won't] suit you\nإذا حطيتها على وجهك مش راح [تلبق] لك => If you put it on your face it won't [suit] you\nإذا حطيتها على وجهك مش راح تلبق [لك] => If you put it on your face it won't suit [you]\n\n[لو] بدي أعملها أنا ربحان => [If] I wanted to do it I would profit\nلو [بدي] أعملها أنا ربحان => I wanted\nلو بدي [أعملها] أنا ربحان => If I wanted [to do it] I would profit\nلو بدي أعملها [أنا] ربحان => If I wanted to do it [I] would profit\nلو بدي أعملها أنا [ربحان] => would profit # translated as a custom unit as it represents the state or result in this structure\n\n[بس] أنا بقبلش على حالي => [But] I don't accept for myself\nبس [أنا] بقبلش على حالي => But [I] don't accept for myself\nبس أنا [بقبلش] على حالي => But I [don't accept] for myself\nبس أنا بقبلش [على] حالي => But I don't accept [for] myself\nبس أنا بقبلش على [حالي] => But I don't accept for [myself]\n\n[أول] إشي عشان أنا بضر أسنان => [First] thing because I would harm teeth\nأول [إشي] عشان أنا بضر أسنان => First [thing] because I would harm teeth\nأول إشي [عشان] أنا بضر أسنان => First thing [because] I would harm teeth\nأول إشي عشان [أنا] بضر أسنان => First thing because [I] would harm teeth\nأول إشي عشان أنا [بضر] أسنان => First thing because I [would harm] teeth\nأول إشي عشان أنا بضر [أسنان] => First thing because I would harm [teeth]\n\n[لأنه] إحنا بنعمل هوليوود سمايل => [Because] when we do a Hollywood Smile\nلأنه [إحنا] بنعمل هوليوود سمايل => Because when [we] do a Hollywood Smile\nلأنه إحنا [بنعمل] هوليوود سمايل => Because when we [do] a Hollywood Smile\nلأنه إحنا بنعمل [هوليوود] سمايل => Because when we do a [Hollywood] Smile\nلأنه إحنا بنعمل هوليوود [سمايل] => Because when we do a Hollywood [Smile]\n\n[إحنا] بنحف إشي بسيط من السن، من قدام من الأمام، وبعدين بنركب عليه => [We] carve something simple from the tooth, from the front, and then we mount on it\nإحنا [بنحف] إشي بسيط من السن، من قدام من الأمام، وبعدين بنركب عليه => We [carve] something simple from the tooth, from the front, and then we mount on it\nإحنا بنحف [إشي] بسيط من السن، من قدام من الأمام، وبعدين بنركب عليه => We carve [something] simple from the tooth, from the front, and then we mount on it\nإحنا بنحف إشي [بسيط] من السن، من قدام من الأمام، وبعدين بنركب عليه => We carve something [simple] from the tooth, from the front, and then we mount on it\nإحنا بنحف إشي بسيط [من] السن، من قدام من الأمام، وبعدين بنركب عليه => We carve something simple [from] the tooth, from the front, and then we mount on it\nإحنا بنحف إشي بسيط من [السن]، من قدام من الأمام، وبعدين بنركب عليه => We carve something simple from [the tooth], from the front, and then we mount on it\nإحنا بنحف إشي بسيط من السن، [من قدام] من الأمام، وبعدين بنركب عليه => We carve something simple from the tooth, [from the front], and then we mount on it\nإحنا بنحف إشي بسيط من السن، من قدام [من الأمام]، وبعدين بنركب عليه => from the front # repeated for clarity in Arabic, translates to \"from the front\"\nإحنا بنحف إشي بسيط من السن، من قدام من الأمام، [وبعدين] بنركب عليه => We carve something simple from the tooth, from the front, [and then] we mount on it\nإحنا بنحف إشي بسيط من السن، من قدام من الأمام، وبعدين [بنركب] عليه => We carve something simple from the tooth, from the front, and then [we mount] on it\nإحنا بنحف إشي بسيط من السن، من قدام من الأمام، وبعدين بنركب [عليه] => We carve something simple from the tooth, from the front, and then we mount [on it]\n\n[وأول] إشي نصلح بالأول الأسنان من جوا نهتم لصحة الأسنان => [And the first] thing we fix first is the teeth from inside, we care for tooth health\nوأول [إشي] نصلح بالأول الأسنان من جوا نهتم لصحة الأسنان => And the first [thing] we fix first is the teeth from inside, we care for tooth health\nوأول إشي [نصلح] بالأول الأسنان من جوا نهتم لصحة الأسنان => And the first thing [we fix] first is the teeth from inside, we care for tooth health\nوأول إشي نصلح [بالأول] الأسنان من جوا نهتم لصحة الأسنان => And the first thing we fix [first] is the teeth from inside, we care for tooth health\nوأول إشي نصلح بالأول [الأسنان] من جوا نهتم لصحة الأسنان => And the first thing we fix first is [the teeth] from inside, we care for tooth health\nوأول إشي نصلح بالأول الأسنان [من] جوا نهتم لصحة الأسنان => And the first thing we fix first is the teeth [from] inside, we care for tooth health\nوأول إشي نصلح بالأول الأسنان من [جوا] نهتم لصحة الأسنان => And the first thing we fix first is the teeth from [inside], we care for tooth health\nوأول إشي نصلح بالأول الأسنان من جوا [نهتم] لصحة الأسنان => And the first thing we fix first is the teeth from inside, [we care] for tooth health\nوأول إشي نصلح بالأول الأسنان من جوا نهتم [لصحة] الأسنان => And the first thing we fix first is the teeth from inside, we care [for] tooth [health]\nوأول إشي نصلح بالأول الأسنان من جوا نهتم لصحة [الأسنان] => And the first thing we fix first is the teeth from inside, we care for [tooth] health\n\n[وبعدين] بمرحلة متقدمة أكثر بنهتم لتجميل الأسنان => [And then] at a more advanced stage we care for cosmetic dentistry\nوبعدين [بمرحلة] متقدمة أكثر بنهتم لتجميل الأسنان => at a stage # \"bi\" (at/in) and \"marhala\" (stage) are combined in Arabic, while \"at a\" and \"stage\" are split in English\nوبعدين بمرحلة [متقدمة] أكثر بنهتم لتجميل الأسنان => And then at a more [advanced] stage we care for cosmetic dentistry\nوبعدين بمرحلة متقدمة [أكثر] بنهتم لتجميل الأسنان => And then at a [more] advanced stage we care for cosmetic dentistry\nوبعدين بمرحلة متقدمة أكثر [بنهتم] لتجميل الأسنان => And then at a more advanced stage [we care] for cosmetic dentistry\nوبعدين بمرحلة متقدمة أكثر بنهتم [لتجميل] الأسنان => And then at a more advanced stage we care [for cosmetic] dentistry\nوبعدين بمرحلة متقدمة أكثر بنهتم لتجميل [الأسنان] => And then at a more advanced stage we care for cosmetic [dentistry]\n\n[أنا] بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => [I] advise her to come every six months, do cleaning, do whitening, and just maintain\nأنا [بنصحها] إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I [advise her] to come every six months, do cleaning, do whitening, and just maintain\nأنا بنصحها [إنه] تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I advise her [to] come every six months, do cleaning, do whitening, and just maintain\nأنا بنصحها إنه [تيجي] كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I advise her to [come] every six months, do cleaning, do whitening, and just maintain\nأنا بنصحها إنه تيجي [كل] ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I advise her to come [every] six months, do cleaning, do whitening, and just maintain\nأنا بنصحها إنه تيجي كل [ستة] أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I advise her to come every [six] months, do cleaning, do whitening, and just maintain\nأنا بنصحها إنه تيجي كل ستة [أشهر]، تعمل تنظيف، تعمل تبييض، وبس تحافظ => I advise her to come every six [months], do cleaning, do whitening, and just maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، [تعمل] تنظيف، تعمل تبييض، وبس تحافظ => I advise her to come every six months, [do] cleaning, do whitening, and just maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، تعمل [تنظيف]، تعمل تبييض، وبس تحافظ => I advise her to come every six months, do [cleaning], do whitening, and just maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، [تعمل] تبييض، وبس تحافظ => I advise her to come every six months, do cleaning, [do] whitening, and just maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل [تبييض]، وبس تحافظ => I advise her to come every six months, do cleaning, do [whitening], and just maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، [وبس] تحافظ => I advise her to come every six months, do cleaning, do whitening, [and just] maintain\nأنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس [تحافظ] => I advise her to come every six months, do cleaning, do whitening, and just [maintain]\n\n[اتبع] الإشي اللي بينصحك عليه طبيبك الأسنان => [Follow] the thing your dentist advises you on\nاتبع [الإشي] اللي بينصحك عليه طبيبك الأسنان => Follow [the thing] your dentist advises you on\nاتبع الإشي اللي [بينصحك] عليه طبيبك الأسنان => Follow the thing your dentist [advises you] on\nاتبع الإشي اللي بينصحك [عليه] طبيبك الأسنان => Follow the thing your dentist advises you [on]\nاتبع الإشي اللي بينصحك عليه [طبيبك الأسنان] => Follow the thing [your dentist] advises you on\n\n[مش] إيش الموضة إسا بتقول => [Not] what the fashion says now\nمش [إيش] الموضة إسا بتقول => Not [what] the fashion says now\nمش إيش [الموضة] إسا بتقول => Not what [the fashion] says now\nمش إيش الموضة [إسا] بتقول => Not what the fashion says [now]\nمش إيش الموضة إسا [بتقول] => Not what the fashion [says] now\n\n[لكل إشي] فيه علامات مثلاً التدخين، القهوة، => [For everything] there are signs for example smoking, coffee,\nلكل إشي [فيه] علامات مثلاً التدخين، القهوة، => For everything [there are] signs for example smoking, coffee,\nلكل إشي فيه [علامات] مثلاً التدخين، القهوة، => For everything there are [signs] for example smoking, coffee,\nلكل إشي فيه علامات [مثلاً] التدخين، القهوة، => For everything there are signs [for example] smoking, coffee,\nلكل إشي فيه علامات مثلاً [التدخين]، القهوة، => For everything there are signs for example [smoking], coffee,\nلكل إشي فيه علامات مثلاً التدخين، [القهوة]، => For everything there are signs for example smoking, [coffee] # mapping the noun directly regardless of the definite article in Arabic\n\n[عنده] مثلاً عادات معينة اللي هي شوي غلط => [He has] for example certain habits which are a bit wrong\nعنده [مثلاً] عادات معينة اللي هي شوي غلط => He has [for example] certain habits which are a bit wrong\nعنده مثلاً [عادات] معينة اللي هي شوي غلط => He has for example certain [habits] which are a bit wrong\nعنده مثلاً عادات [معينة] اللي هي شوي غلط => He has for example [certain] habits which are a bit wrong\nعنده مثلاً عادات معينة [اللي هي] شوي غلط => He has for example certain habits [which are] a bit wrong\nعنده مثلاً عادات معينة اللي هي [شوي] غلط => He has for example certain habits which are [a bit] wrong\nعنده مثلاً عادات معينة اللي هي شوي [غلط] => He has for example certain habits which are a bit [wrong]\n\n[زي] المص بالإصبع زي تقرقط الأظافر => [Like] sucking the finger like biting nails\nزي [المص] بالإصبع زي تقرقط الأظافر => Like [sucking] the finger like biting nails\nزي المص [بالإصبع] زي تقرقط الأظافر => Like sucking [the finger] like biting nails\nزي المص بالإصبع [زي] تقرقط الأظافر => Like sucking the finger [like] biting nails\nزي المص بالإصبع زي [تقرقط] الأظافر => Like sucking the finger like [biting] nails\nزي المص بالإصبع زي تقرقط [الأظافر] => Like sucking the finger like biting [nails]\n\n[في] إشي اسمه بلاك لاين أو بلاك => [There is] something called black line or plaque\nفي [إشي] اسمه بلاك لاين أو بلاك => There is [something] called black line or plaque\nفي إشي [اسمه] بلاك لاين أو بلاك => There is something [called] black line or plaque\nفي إشي اسمه [بلاك] لاين أو بلاك => There is something called [black] line or plaque\nفي إشي اسمه بلاك [لاين] أو بلاك => There is something called black [line] or plaque\nفي إشي اسمه بلاك لاين [أو] بلاك => There is something called black line [or] plaque\nفي إشي اسمه بلاك لاين أو [بلاك] => There is something called black line or [plaque]\n\n[بصير يبين] زي سواد صغير صغير على كل الأسنان، أو بني => [It appears] like small, small blackness on all teeth, or brown\nبصير يبين [زي] سواد صغير صغير على كل الأسنان، أو بني => It appears [like] small, small blackness on all teeth, or brown\nبصير يبين زي [سواد] صغير صغير على كل الأسنان، أو بني => It appears like small, small [blackness] on all teeth, or brown\nبصير يبين زي سواد [صغير] صغير على كل الأسنان، أو بني => It appears like [small], small blackness on all teeth, or brown\nبصير يبين زي سواد صغير [صغير] على كل الأسنان، أو بني => It appears like small, [small] blackness on all teeth, or brown\nبصير يبين زي سواد صغير صغير [على] كل الأسنان، أو بني => It appears like small, small blackness [on] all teeth, or brown\nبصير يبين زي سواد صغير صغير على [كل] الأسنان، أو بني => It appears like small, small blackness on [all] teeth, or brown\nبصير يبين زي سواد صغير صغير على كل [الأسنان]، أو بني => It appears like small, small blackness on all [teeth], or brown\nبصير يبين زي سواد صغير صغير على كل الأسنان، [أو] بني => It appears like small, small blackness on all teeth, [or] brown\nبصير يبين زي سواد صغير صغير على كل الأسنان، أو [بني] => It appears like small, small blackness on all teeth, or [brown]\n\n[بقدر] أشخص كمان حالة معينة تقويمياً => [I can] also diagnose a certain orthodontic case\nبقدر [أشخص] كمان حالة معينة تقويمياً => I can also [diagnose] a certain orthodontic case\nبقدر أشخص [كمان] حالة معينة تقويمياً => I can [also] diagnose a certain orthodontic case\nبقدر أشخص كمان [حالة] معينة تقويمياً => I can also diagnose a certain orthodontic [case]\nبقدر أشخص كمان حالة [معينة] تقويمياً => I can also diagnose a [certain] orthodontic case\nبقدر أشخص كمان حالة معينة [تقويمياً] => I can also diagnose a certain [orthodontic] case\n\n[عن طريق] التلفون => [Via] the phone\nعن طريق [التلفون] => Via [the phone]\n\n[عن طريق] أني أسمع صوت حدا => [By] hearing someone's voice\nعن طريق [أني] أسمع صوت حدا => that I\nعن طريق أني [أسمع] صوت حدا => By [hearing] someone's voice\nعن طريق أني أسمع [صوت] حدا => By hearing someone's [voice]\nعن طريق أني أسمع صوت [حدا] => By hearing [someone]'s voice\n\n[إث] أو إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => [Th] or Dh or F these letters, a bit might indicate a certain mess in the teeth\nإث [أو] إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => Th [or] Dh or F these letters, a bit might indicate a certain mess in the teeth\nإث أو [إذ] أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => Th or [Dh] or F these letters, a bit might indicate a certain mess in the teeth\nإث أو إذ [أو] إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => Th or Dh [or] F these letters, a bit might indicate a certain mess in the teeth\nإث أو إذ أو [إف] هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => Th or Dh or [F] these letters, a bit might indicate a certain mess in the teeth\nإث أو إذ أو إف [هذول] الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان => Th or Dh or F [these] letters, a bit might indicate a certain mess in the teeth\nإث أو إذ أو إف هذول [الأحرف]، شوي ممكن تدل على خربطة معينة بالأسنان => Th or Dh or F these [letters], a bit might indicate a certain mess in the teeth\nإث أو إذ أو إف هذول الأحرف، [شوي] ممكن تدل على خربطة معينة بالأسنان => Th or Dh or F these letters, [a bit] might indicate a certain mess in the teeth\nإث أو إذ أو إف هذول الأحرف، شوي [ممكن] تدل على خربطة معينة بالأسنان => Th or Dh or F these letters, a bit [might] indicate a certain mess in the teeth\nإث أو إذ أو إف هذول الأحرف، شوي ممكن [تدل على] خربطة معينة بالأسنان => Th or Dh or F these letters, a bit might [indicate] a certain mess in the teeth\nإث أو إذ أو إف هذول الأحرف، شوي ممكن تدل على [خربطة] معينة بالأسنان => Th or Dh or F these letters, a bit might indicate a certain [mess] in the teeth\nإث أو إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة [معينة] بالأسنان => Th or Dh or F these letters, a bit might indicate [a certain] mess in the teeth\nإث أو إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة [بالأسنان] => Th or Dh or F these letters, a bit might indicate a certain mess [in the teeth]\n\n[علاجات] الأسنان مكلفة إحنا بنخليه مكلف => Dental [treatments] are expensive, we make it expensive\nعلاجات [الأسنان] مكلفة إحنا بنخليه مكلف => [Dental] treatments are expensive, we make it expensive\nعلاجات الأسنان [مكلفة] إحنا بنخليه مكلف => Dental treatments [are expensive], we make it expensive\nعلاجات الأسنان مكلفة [إحنا] بنخليه مكلف => Dental treatments are expensive, [we] make it expensive\nعلاجات الأسنان مكلفة إحنا [بنخليه] مكلف => Dental treatments are expensive, we [make it] expensive # بنخليه matches \"make it\" as it contains the verb and the object pronoun\nعلاجات الأسنان مكلفة إحنا بنخليه [مكلف] => Dental treatments are expensive, we make it [expensive]\n\n[لأنه] إحنا من الأول ما كنا وقائيين بالدرجة السليمة فالإشي تدهور => [Because] initially we weren't preventive to the right degree so the thing deteriorated\nلأنه [إحنا] من الأول ما كنا وقائيين بالدرجة السليمة فالإشي تدهور => Because initially [we] weren't preventive to the right degree so the thing deteriorated\nلأنه إحنا [من الأول] ما كنا وقائيين بالدرجة السليمة فالإشي تدهور => Because [initially] we weren't preventive to the right degree so the thing deteriorated\nلأنه إحنا من الأول [ما كنا] وقائيين بالدرجة السليمة فالإشي تدهور => Because initially we [weren't] preventive to the right degree so the thing deteriorated\nلأنه إحنا من الأول ما كنا [وقائيين] بالدرجة السليمة فالإشي تدهور => Because initially we weren't [preventive] to the right degree so the thing deteriorated\nلأنه إحنا من الأول ما كنا وقائيين [بالدرجة] السليمة فالإشي تدهور => to the degree\nلأنه إحنا من الأول ما كنا وقائيين بالدرجة [السليمة] فالإشي تدهور => Because initially we weren't preventive to the [right] degree so the thing deteriorated\nلأنه إحنا من الأول ما كنا وقائيين بالدرجة السليمة [فـ]الإشي تدهور => Because initially we weren't preventive to the right degree [so] the thing deteriorated\nلأنه إحنا من الأول ما كنا وقائيين بالدرجة السليمة فـ[الإشي] تدهور => Because initially we weren't preventive to the right degree so [the thing] deteriorated\nلأنه إحنا من الأول ما كنا وقائيين بالدرجة السليمة فالإشي [تدهور] => Because initially we weren't preventive to the right degree so the thing [deteriorated]\n\n[و]صار في حاجة لعلاج اللي هو متطور أكثر => [And] there became a need for treatment which is more advanced\nو[صار] في حاجة لعلاج اللي هو متطور أكثر => And there [became] a need for treatment which is more advanced\nوصار [في] حاجة لعلاج اللي هو متطور أكثر => And [there] became a need for treatment which is more advanced\nوصار في [حاجة] لعلاج اللي هو متطور أكثر => And there became [a need] for treatment which is more advanced\nوصار في حاجة [لعلاج] اللي هو متطور أكثر => And there became a need [for treatment] which is more advanced\nوصار في حاجة لعلاج [اللي] هو متطور أكثر => And there became a need for treatment [which] is more advanced\nوصار في حاجة لعلاج اللي [هو] متطور أكثر => And there became a need for treatment which [is] more advanced\nوصار في حاجة لعلاج اللي هو [متطور] أكثر => And there became a need for treatment which is more [advanced]\nوصار في حاجة لعلاج اللي هو متطور [أكثر] => And there became a need for treatment which is [more] advanced\n\n[إحنا] مش غاليين الدولة غالية => [We] are not expensive, the country is expensive\nإحنا [مش] غاليين الدولة غالية => We are [not] expensive, the country is expensive\nإحنا مش [غاليين] الدولة غالية => We are not [expensive], the country is expensive\nإحنا مش غاليين [الدولة] غالية => We are not expensive, [the country] is expensive\nإحنا مش غاليين الدولة [غالية] => We are not expensive, the country is [expensive]\n\n[طبعاً] كل المواد هي بتكلف كل الأجهزة بتكلف => [Of course] all materials cost, all devices cost\nطبعاً [كل] المواد هي بتكلف كل الأجهزة بتكلف => Of course [all] materials cost, all devices cost\nطبعاً كل [المواد] هي بتكلف كل الأجهزة بتكلف => Of course all [materials] cost, all devices cost\nطبعاً كل المواد [هي] بتكلف كل الأجهزة بتكلف => it, they # dummy pronoun for emphasis, refers back to the materials\nطبعاً كل المواد هي [بتكلف] كل الأجهزة بتكلف => Of course all materials [cost], all devices cost\nطبعاً كل المواد هي بتكلف [كل] الأجهزة بتكلف => Of course all materials cost, [all] devices cost\nطبعاً كل المواد هي بتكلف كل [الأجهزة] بتكلف => Of course all materials cost, all [devices] cost\nطبعاً كل المواد هي بتكلف كل الأجهزة [بتكلف] => Of course all materials cost, all devices [cost]\n\n[أنت] في عندك عيادة الصيانة، المساعدة => [You] have clinic maintenance, assistance\nأنت في [عندك] عيادة الصيانة، المساعدة => You [have] clinic maintenance, assistance\nأنت في عندك [عيادة] الصيانة، المساعدة => You have [clinic] maintenance, assistance\nأنت في عندك عيادة [الصيانة]، المساعدة => You have clinic [maintenance], assistance\nأنت في عندك عيادة الصيانة، [المساعدة] => You have clinic maintenance, [assistance]\n\n[مندفع] ضريبة كتير غالية مندفع أجارات => [We pay] very expensive tax, we pay rents\nمندفع [ضريبة] كتير غالية مندفع أجارات => We pay very expensive [tax], we pay rents\nمندفع ضريبة [كتير] غالية مندفع أجارات => We pay [very] expensive tax, we pay rents\nمندفع ضريبة كتير [غالية] مندفع أجارات => We pay very [expensive] tax, we pay rents\nمندفع ضريبة كتير غالية [مندفع] أجارات => We pay very expensive tax, [we pay] rents\nمندفع ضريبة كتير غالية مندفع [أجارات] => We pay very expensive tax, we pay [rents]\n\n[مندفع] للمختبر مندفع للإرساليات => [We pay] for the lab, we pay for shipments\nمندفع [للمختبر] مندفع للإرساليات => We pay [for the lab], we pay for shipments\nمندفع للمختبر [مندفع] للإرساليات => We pay for the lab, [we pay] for shipments\nمندفع للمختبر مندفع [للإرساليات] => We pay for the lab, we pay [for shipments]\n\n[فبتلاقي] إنه إشي بسيط إحنا ربحنا مش إشي غالي => [So you find] that something simple, our profit isn't something expensive\nفبتلاقي [إنه] إشي بسيط إحنا ربحنا مش إشي غالي => So you find [that] something simple, our profit isn't something expensive\nفبتلاقي إنه [إشي] بسيط إحنا ربحنا مش إشي غالي => So you find that [something] simple, our profit isn't something expensive\nفبتلاقي إنه إشي [بسيط] إحنا ربحنا مش إشي غالي => So you find that something [simple], our profit isn't something expensive\nفبتلاقي إنه إشي بسيط [إحنا ربحنا] مش إشي غالي => So you find that something simple, [our profit] isn't something expensive\nفبتلاقي إنه إشي بسيط إحنا ربحنا [مش] إشي غالي => So you find that something simple, our profit [isn't] something expensive\nفبتلاقي إنه إشي بسيط إحنا ربحنا مش [إشي] غالي => So you find that something simple, our profit isn't [something] expensive\nفبتلاقي إنه إشي بسيط إحنا ربحنا مش إشي [غالي] => So you find that something simple, our profit isn't something [expensive]\n\n[إشي] بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية => [Something] I hope all patients stop doing, is that they stop drinking soft drinks\nإشي [بتأمل] كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية => Something [I hope] all patients stop doing, is that they stop drinking soft drinks\nإشي بتأمل [كل] المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية => Something I hope [all] patients stop doing, is that they stop drinking soft drinks\nإشي بتأمل كل [المتعالجين] يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية => Something I hope all [patients] stop doing, is that they stop drinking soft drinks\nإشي بتأمل كل المتعالجين [يبطلوا] يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية => Something I hope all patients [stop] doing, is that they stop drinking soft drinks\nإشي بتأمل كل المتعالجين يبطلوا [يعملوه]، هو إنهم يبطلوا يشربوا مشروبات غازية => Something I hope all patients stop [doing], is that they stop drinking soft drinks\nإشي بتأمل كل المتعالجين يبطلوا يعملوه، [هو] إنهم يبطلوا يشربوا مشروبات غازية => Something I hope all patients stop doing, [is] that they stop drinking soft drinks\nإشي بتأمل كل المتعالجين يبطلوا يعملوه، هو [إنهم] يبطلوا يشربوا مشروبات غازية => Something I hope all patients stop doing, is [that they] stop drinking soft drinks\nإشي بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم [يبطلوا] يشربوا مشروبات غازية => Something I hope all patients stop doing, is that they [stop] drinking soft drinks\nإشي بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا [يشربوا] مشروبات غازية => Something I hope all patients stop doing, is that they stop [drinking] soft drinks\nإشي بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا [مشروبات غازية] => Something I hope all patients stop doing, is that they stop drinking [soft drinks]\n\n[شغلة] كتير مهمة إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي => A very important [thing] is that they really must maintain brushing their teeth at home daily\nشغلة [كتير] مهمة إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي => A [very] important thing is that they really must maintain brushing their teeth at home daily\nشغلة كتير [مهمة] إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي => A very [important] thing is that they really must maintain brushing their teeth at home daily\nشغلة كتير مهمة [إنه] عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي => A very important thing is [that] they really must maintain brushing their teeth at home daily\nشغلة كتير مهمة إنه [عن جد] لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي => A very important thing is that they [really] must maintain brushing their teeth at home daily\nشغلة كتير مهمة إنه عن جد [لازم] يحافظوا على فرك إستانهم بالبيت بشكل يومي => A very important thing is that they really [must] maintain brushing their teeth at home daily\nشغلة كتير مهمة إنه عن جد لازم [يحافظوا على] فرك إستانهم بالبيت بشكل يومي => A very important thing is that they really must [maintain] brushing their teeth at home daily\nشغلة كتير مهمة إنه عن جد لازم يحافظوا على [فرك] إستانهم بالبيت بشكل يومي => A very important thing is that they really must maintain [brushing] their teeth at home daily\nشغلة كتير مهمة إنه عن جد لازم يحافظوا على فرك [إستانهم] بالبيت بشكل يومي => A very important thing is that they really must maintain brushing [their teeth] at home daily\nشغلة كتير مهمة إنه عن جد لازم يحافظوا على فرك إستانهم [بالبيت] بشكل يومي => A very important thing is that they really must maintain brushing their teeth [at home] daily\nشغلة كتير مهمة إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت [بشكل يومي] => A very important thing is that they really must maintain brushing their teeth at home [daily]\n\n[الناس] عن جد تبلش تهتم أكثر => [People] really start to care more\nالناس [عن جد] تبلش تهتم أكثر => People [really] start to care more\nالناس عن جد [تبلش] تهتم أكثر => People really [start] to care more\nالناس عن جد تبلش [تهتم] أكثر => People really start [to care] more\nالناس عن جد تبلش تهتم [أكثر] => People really start to care [more]\n\nلصحتها [الداخلية]، بالضبط => For their [internal] health, exactly\nلصحتها الداخلية، [بالضبط] => For their internal health, [exactly]\n\n[كيف] بتهتم لمظهرها الخارجي => [As] they care for their external appearance\nكيف [بتهتم] لمظهرها الخارجي => As [they care] for their external appearance\nكيف بتهتم [لمظهرها] الخارجي => for their appearance # Custom mapping because 'external' splits the components of the English equivalent\nكيف بتهتم لمظهرها [الخارجي] => As they care for their [external] appearance\n\n[حلمنا] إنه دايماً يكون عنا عيادات كبيرة => [Our dream] is that we always have big clinics\nحلمنا [إنه] دايماً يكون عنا عيادات كبيرة => is that\nحلمنا إنه [دايماً] يكون عنا عيادات كبيرة => Our dream is that we [always] have big clinics\nحلمنا إنه دايماً [يكون عنا] عيادات كبيرة => we have # the combination of the verb \"to be\" and the preposition \"with us\" indicates possession\nحلمنا إنه دايماً يكون عنا [عيادات] كبيرة => Our dream is that we always have big [clinics]\nحلمنا إنه دايماً يكون عنا عيادات [كبيرة] => Our dream is that we always have [big] clinics\n\n[و]كل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها => [And] all the tools that doctors have in the West or in Europe be the same with us\nو[كل] الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها => And [all] the tools that doctors have in the West or in Europe be the same with us\nوكل [الأدوات] اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها => And all [the tools] that doctors have in the West or in Europe be the same with us\nوكل الأدوات [اللي] عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها => And all the tools [that] doctors have in the West or in Europe be the same with us\nوكل الأدوات اللي [عند] دكاترة بالغرب ولا بأوروبا تكون عنا نفسها => And all the tools that doctors [have] in the West or in Europe be the same with us\nوكل الأدوات اللي عند [دكاترة] بالغرب ولا بأوروبا تكون عنا نفسها => And all the tools that [doctors] have in the West or in Europe be the same with us\nوكل الأدوات اللي عند دكاترة [بالغرب] ولا بأوروبا تكون عنا نفسها => And all the tools that doctors have [in the West] or in Europe be the same with us\nوكل الأدوات اللي عند دكاترة بالغرب [ولا] بأوروبا تكون عنا نفسها => And all the tools that doctors have in the West [or] in Europe be the same with us\nوكل الأدوات اللي عند دكاترة بالغرب ولا [بأوروبا] تكون عنا نفسها => And all the tools that doctors have in the West or [in Europe] be the same with us\nوكل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا [تكون] عنا نفسها => And all the tools that doctors have in the West or in Europe [be] the same with us\nوكل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون [عنا] نفسها => And all the tools that doctors have in the West or in Europe be the same [with us]\nوكل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا [نفسها] => And all the tools that doctors have in the West or in Europe be [the same] with us\n\n[لأنه] هاي بتساعدنا كتير كتير => [Because] this helps us very, very much\nلأنه [هاي] بتساعدنا كتير كتير => Because [this] helps us very, very much\nلأنه هاي [بتساعدنا] كتير كتير => Because this [helps us] very, very much\nلأنه هاي بتساعدنا [كتير] كتير => Because this helps us [very], very much\nلأنه هاي بتساعدنا كتير [كتير] => Because this helps us very, [very much] # aligned to \"very much\" to cover the remaining English intensity and avoid overlapping with the first \"very\"\n\n[وتيجوا] لعنا وتفحصوا أسنانكم أكثر وأكثر => [And come] to us and check your teeth more and more\nوتيجوا [لعنا] وتفحصوا أسنانكم أكثر وأكثر => And come [to us] and check your teeth more and more\nوتيجوا لعنا [وتفحصوا] أسنانكم أكثر وأكثر => And come to us [and check] your teeth more and more\nوتيجوا لعنا وتفحصوا [أسنانكم] أكثر وأكثر =>\n\n[و]ما تستنوا لحتى يصير وجع => [And] don't wait until there is pain\nو[ما تستنوا] لحتى يصير وجع => And [don't wait] until there is pain\nوما تستنوا [لحتى] يصير وجع => And don't wait [until] there is pain\nوما تستنوا لحتى [يصير] وجع => And don't wait until [there is] pain\nوما تستنوا لحتى يصير [وجع] => And don't wait until there is [pain]\n\n",
+    "lessons": "# مقدمة عن طب الأسنان\n00:00.00 متعالجة حكت لي\n00:01.00 إنه هاي الشدة لأمي الله يرحمها\n00:02.50 في مجال تضيقيها على قياس أسناني\n00:05.00 صراحة الإشي نوعاً ما مقرف يعني\n00:09.00 شو بقدر أعرف عن الشخص من خلال أسنانه؟\n\n# نصائح قبل زيارة الطبيب\n00:12.00 لما أنت تروح تعمل فحص للسيارة\n00:14.00 مش مفضل تكون غاسلها\n00:15.00 نفس الإشي دكتور الأسنان\n00:16.00 الحمد لله إنه صنعوا كمامة\n00:17.00 هاي أهم إشي\n\n# قراءة صحة المريض من أسنانه\n00:18.00 دغري بقدر أقول لك إذا هم بيت بحافظ\n00:21.00 إذا هم بيهتموا بصحة الفم\n00:23.00 إذا عندهم التغذية سليمة بالبيت\n\n# بداية الرحلة المهنية (Part 1)\n00:29.00 وأنا طالبة مدرسة خضت تجربة اللي هي\n00:31.00 تجربة مش كتير حلوة كانت بالنسبة إلي\n00:33.00 بعلاج التقويم، تقويم الأسنان\n00:36.00 أخوي كان يتعلم دكتور عام\n00:37.00 فنصحني إنه أفوت طب\n\n# بداية الرحلة المهنية (Part 2)\n00:39.00 فمن وقتها حكيت إنه أنا لازم أصحح\n00:41.50 هاي الأغلاط اللي ممكن في دكاترة بيغلطوها\n00:45.00 من وأنا بالمدرسة كان إلي زميل\n00:47.00 اللي هو اليوم زوجي والداعم الكبير إلي\n\n# لماذا اخترت طب الأسنان\n00:51.00 كتير نصحني ورحت على هذا المجال\n00:54.00 كنت دايماً أركب بزل اللي عبارة عن ألف قطعة\n00:57.00 أو ألفين قطعة وإطلع\n00:58.50 فحسيت إنه طب الأسنان ملائم إلي\n\n# متعة العمل في طب الأسنان\n60:00.00 مجال الأطفال، مجال شيق فيه إنسانية\n61:00.00 بعطيك إكتفاء ذاتي كتير كتير كتير كبير\n65:00.00 في ناس كتير بتوصل لعندي\n66:06.00 فش عندها ثقة بنفسها\n\n# تحسين الثقة بالنفس\n67:07.00 فش عندها ثقة إنه تضحك\n69:00.00 بتحط إيدها على ثمها عشان تقدر تحكي\n71:11.00 وبحب النتائج اللي بتطلع\n72:12.00 يعني لما بطلع أياتها نتيجة حلوة\n74:00.00 الفرق قبل وبعد\n\n# صفات طبيب الأسنان الناجح\n76:00.00 لازم تكون كتير سوي كتير هادي، كتير طيب\n79:00.00 في عندك حب إنك تعطي\n81:00.00 أغلب المتعالجين بيحكوا\n82:00.00 أنا بخاف من أطباء الأسنان\n\n# التعامل مع مخاوف المرضى\n84:00.00 بس الحلو إنه أنا دايماً جوابي بيكون،\n86:06.00 إنه ما تحكمش إسا، أصبر\n88:00.00 كتير دكاترة بتخاطر مثلاً،\n89:50.00 إذا عنا طاحونة عقل قاعدة بالعصب\n\n# قصص من العيادة (Part 1)\n92:00.00 أنا شخصياً بعرف دكاترة اللي حاولوا يقلعوها\n95:00.00 وعملوا ضرر كتير كبير اللي هو شلل\n98:00.00 فطوالي يبعثوا لمختص لهاي الشغلات\n101:00.00 كانت مرا كبيرة بالعمر حاملة شدة بإيدها\n\n# قصص من العيادة (Part 2)\n103:50.00 بتقول لنا: بس الشدة تحفولي إياها، وتحطولي إياها\n106:00.00 فحصتلها، لقيت في إشي نافخ بثمها\n110:00.00 إحنا كمان بنعالج أولاد\n111:00.00 اللي هم مع إحتياجات خاصة\n\n# اكتشاف الحالات الخطيرة\n113:00.00 مرات بالكراسي اللي إلهم\n116:00.00 وعالمحل أنا أعطيتها صورة\n118:00.00 ورقة إنها تعمل صورة\n120:00.00 واللي اتضح إنه فعلاً عندها كان سرطان\n\n# أهمية الكشف المبكر\n123:00.00 بس بنفس الوقت أبسطني\n124:00.00 إنه اكتشفناه بوقت نوعاً ما بكير\n126:06.00 في عندي حالة وصلت عندي،\n127:07.50 صارلها 30 سنة ما فاتت عند دكتور أسنان\n\n# تصحيح الأخطاء السابقة\n131:00.00 أخطاء في البدايات نعم\n133:00.00 كان في أخطاء يمكن في التشخيص\n136:00.00 لأنه من أول في دكتور كان قالعلها طاحونة وكانت ملتهبة\n140:00.00 كانوا أسنانها مدمرين شيلة شيلة\n\n# تأثير طب الأسنان على الحياة الاجتماعية\n142:00.00 إجت عندي متعالجة كانت كتير متضايقة\n144:50.00 من شكل سنانها\n145:50.00 صاحباتها بالمدرسة بيتنمروا عليها\n147:00.00 لما هيك بنصير نمارس المهنة أكثر،\n149:00.00 ونحبها أكثر، ونتعلمها أكثر،\n\n# تطور المهارات المهنية\n151:00.00 بنصير نتخطاها هاي الأخطاء بسهولة يعني\n156:00.00 بالفعل اليوم المريضة كتير كتير مبسوطة\n159:00.00 بطل عندها خوف بتاتاً بتاتاً من طب الأسنان\n163:00.00 ومن بعد ما فكت التقويم\n\n# تغيير حياة المرضى\n164:00.00 البروفايل تبع وجهها كلياته تغير\n167:00.00 وهي عالمحل لما شافت حالها، هي بكيت\n169:50.00 وكان كتير الإشي مؤثر نوعاً ما\n\n# حب المهنة والتخصص\n171:00.00 أنا بحب كتير الزراعة\n172:00.00 أنا إذا بشوفش دم خلص بمشيش يومي\n174:50.00 بس وأنا عم بقلع أياتا طاحونة أنا بكون مستمتعة\n\n# أدوات طب الأسنان\n177:00.00 فكثير بحب يكون معي لكساتور،\n179:00.00 اللي هو مش اللي بيقلع، الكماشة\n182:00.00 اللي هو المفك\n184:00.00 دموية\n\n# التعامل مع المرضى أثناء العلاج\n186:00.00 بيصير معي مواقف آه بسهب بالحكي\n189:00.00 والولد فاتح ثمه ومش قادر يرد\n192:00.00 لما أبدأ أشتغل لأياتا متعالج، وهن إيدي بقلب ثمه، دايماً\n196:00.00 ببدأ أحكي معه منفتح حوارات كمان\n\n# التواصل مع المرضى\n198:00.00 كل مريض، إيش في بثمّه إحنا بنفهم عليه\n201:00.00 بكونش أستنى منه جواب\n202:00.00 يعني بس بقوله إرفع إيدك بالإشارات،\n205:00.00 من منطلق أني بدي أسليه وأنسيه وجع العلاج نفسه\n\n# أهمية الالتزام بالمواعيد\n209:00.00 في كتير متعالجين بيحط موعد بيفكر إنه معاه كل اليوم\n213:00.00 وينتا ما هو بده بيقدر يصل عند طبيب الأسنان\n216:00.00 وإحنا كتير بيضايقنا هذا الموضوع\n219:00.00 عشان ما يصيرش سلسلة تأخيرات بالأدوار كلها\n\n# جودة العلاج\n222:00.00 بدك تعطيه وقته بدك تعطيه الجودة اللي مطلوبة\n226:00.00 وكمان شغلة يعني هي كتير مش حلوة\n228:50.00 لما باجي بدي أشتغل\n230:00.00 ويكون المتعالج مش فارك سنانه\n\n# أهمية النظافة الشخصية\n232:00.00 الحمد لله إنه صنعوا كمامة كمامة، هاي أهم إشي\n234:50.00 الكمامة كتير كتير مهمة\n236:00.00 أفركوا أسنانكم لو سمحتوا\n\n# موضة هوليوود سمايل (Part 1)\n238:00.00 التريندات حتى نجحت إنها تفوت على المجال الطبي\n242:00.00 كتير حالات بتوصلني بدها هوليوود سمايل\n244:50.00 وأنا بتطلع شخصياً على أسنانها\n246:50.00 بلاقي أسنانها 100 بالمية ولا غلطة\n\n# موضة هوليوود سمايل (Part 2)\n249:00.00 بيفرجوني صورة، شو رأيك بهاي، حابة أعمل هيك\n252:00.00 أو شو رأيك بهذا العلاج مبين كتير حلو\n255:00.00 هاي الصورة لبقت لهذا المتعالج، بس هاي الصورة مش راح تلبق\n258:00.00 إذا حطيتها على وجهك مش راح تلبق لك\n\n# النزاهة المهنية\n260:00.00 لو بدي أعملها أنا ربحان\n261:50.00 بس أنا بقبلش على حالي\n262:50.00 أول إشي عشان أنا بضر أسنان\n264:00.00 لأنه إحنا بنعمل هوليوود سمايل\n\n# خطوات العلاج الصحيحة\n265:50.00 إحنا بنحف إشي بسيط من السن، من قدام من الأمام، وبعدين بنركب عليه\n269:00.00 وأول إشي نصلح بالأول الأسنان من جوا نهتم لصحة الأسنان\n273:00.00 وبعدين بمرحلة متقدمة أكثر بنهتم لتجميل الأسنان\n\n# نصائح للمرضى\n278:00.00 أنا بنصحها إنه تيجي كل ستة أشهر، تعمل تنظيف، تعمل تبييض، وبس تحافظ\n284:00.00 اتبع الإشي اللي بينصحك عليه طبيبك الأسنان\n287:00.00 مش إيش الموضة إسا بتقول\n\n# علامات صحة الفم\n289:00.00 لكل إشي فيه علامات مثلاً التدخين، القهوة،\n293:00.00 عنده مثلاً عادات معينة اللي هي شوي غلط\n296:00.00 زي المص بالإصبع زي تقرقط الأظافر\n\n# تشخيص الحالات عن بعد\n299:00.00 في إشي اسمه بلاك لاين أو بلاك\n300:50.00 بصير يبين زي سواد صغير صغير على كل الأسنان، أو بني\n304:00.00 بقدر أشخص كمان حالة معينة تقويمياً\n307:00.00 عن طريق التلفون\n\n# تشخيص الحالات من خلال الكلام\n308:50.00 عن طريق أني أسمع صوت حدا\n311:00.00 إث أو إذ أو إف هذول الأحرف، شوي ممكن تدل على خربطة معينة بالأسنان\n\n# تكاليف علاج الأسنان\n318:00.00 علاجات الأسنان مكلفة إحنا بنخليه مكلف\n320:50.00 لأنه إحنا من الأول ما كنا وقائيين بالدرجة السليمة فالإشي تدهور\n329:00.00 وصار في حاجة لعلاج اللي هو متطور أكثر\n\n# أسباب ارتفاع التكاليف\n332:00.00 إحنا مش غاليين الدولة غالية\n334:00.00 طبعاً كل المواد هي بتكلف كل الأجهزة بتكلف\n337:00.00 أنت في عندك عيادة الصيانة، المساعدة\n341:00.00 مندفع ضريبة كتير غالية مندفع أجارات\n\n# استمرار التكاليف\n343:50.00 مندفع للمختبر مندفع للإرساليات\n346:00.00 فبتلاقي إنه إشي بسيط إحنا ربحنا مش إشي غالي\n\n# نصائح وقائية\n349:00.00 إشي بتأمل كل المتعالجين يبطلوا يعملوه، هو إنهم يبطلوا يشربوا مشروبات غازية\n355:00.00 شغلة كتير مهمة إنه عن جد لازم يحافظوا على فرك إستانهم بالبيت بشكل يومي\n\n# الاهتمام بالصحة العامة\n360:00.00 الناس عن جد تبلش تهتم أكثر\n361:50.00 لصحتها الداخلية، بالضبط\n363:00.00 كيف بتهتم لمظهرها الخارجي\n\n# أحلام مستقبلية\n367:00.00 حلمنا إنه دايماً يكون عنا عيادات كبيرة\n371:00.00 وكل الأدوات اللي عند دكاترة بالغرب ولا بأوروبا تكون عنا نفسها\n375:00.00 لأنه هاي بتساعدنا كتير كتير\n\n# نصيحة أخيرة\n377:00.00 وتيجوا لعنا وتفحصوا أسنانكم أكثر وأكثر\n380:00.00 وما تستنوا لحتى يصير وجع",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-03 12:26:30 UTC",
+  "updated_at": "2026-04-03 12:59:00 UTC",
+  "exported_at": "2026-04-03T12:59:00Z"
+}
