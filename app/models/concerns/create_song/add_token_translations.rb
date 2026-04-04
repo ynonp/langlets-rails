@@ -3,18 +3,20 @@ module CreateSong
     extend ActiveSupport::Concern
 
     def add_token_translation
+      blocks_per_iteration = 1
       instructions = ApplicationController.renderer.render(
         template: "prompts/add_token_translations",
         formats: [ :md ],
         locals: {
           clip_language:,
-          translation_language:
+          translation_language:,
+          expected_block_count: blocks_per_iteration,
         }
       )
-      max_retries = 0
+      max_retries = 2
       data["phrases_with_token_translations"] = ""
 
-      lyrics_with_translations.lines.each_slice(1) do |block|
+      lyrics_with_translations.lines.each_slice(blocks_per_iteration) do |block|
         retry_count = 0
 
         begin
@@ -26,7 +28,7 @@ module CreateSong
           response = chat.complete
 
           content = strip_model_header(response.content.strip, block.first)
-
+          raise "Output blocks mismatch" if content.strip.scan(/\n\s*\n/).count != (blocks_per_iteration - 1)
           data["phrases_with_token_translations"] += content.strip + "\n\n"
           save!
 
