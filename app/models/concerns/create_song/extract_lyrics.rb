@@ -76,7 +76,8 @@ module CreateSong
         {
           "id" => "phrase_#{line.sequence}",
           "text_l1" => line.text.join(" ").gsub("[", "(").gsub("]", ")"),
-          "timestamp" => Phrase.to_string_timestamp(line.start_time)
+          "timestamp" => Phrase.to_string_timestamp(line.start_time),
+          "timestamp_end" => Phrase.to_string_timestamp(line.end_time)
         }
       end
       .reject { |phrase| phrase["text_l1"].blank? }

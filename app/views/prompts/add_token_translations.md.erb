@@ -9,6 +9,8 @@ Your alignments will become clickable words in an app, showing students the exac
 4. No need to align punctuations - just the text
 
 ## Output Formatting Rules
+Output 1 block of alignments per input line
+
 You have two ways to format a translation line:
 
 **Format A: Direct Mapping (Preferred)**
@@ -30,5 +32,7 @@ Use this ONLY when a direct mapping is impossible, or when the literal meaning d
 
 ## Examples
 <%= render partial: "prompts/add_tokens_examples_#{clip_language.downcase}_#{translation_language.downcase}" %>
+
+** NEVER BREAK A SINGLE LINE TO MULTPIPLE BLOCKS. We expect exactly <%= expected_block_count %> blocks of output **
 
 ## Input:
