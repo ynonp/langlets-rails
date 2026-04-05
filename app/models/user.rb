@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable,
-         omniauth_providers: [:google_oauth2, :github]
+         omniauth_providers: [ :google_oauth2, :github ]
 
   # Ownership relationships
   has_many :courses, dependent: :destroy
@@ -13,7 +13,7 @@ class User < ApplicationRecord
   # Progress tracking relationships
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson
-  
+
   has_many :activity_users, dependent: :destroy
   has_many :completed_activities, through: :activity_users, source: :activity
 
@@ -33,17 +33,17 @@ class User < ApplicationRecord
       new_user.uid = auth.uid
       new_user.confirmed_at = Time.current
     end
-    
+
     # Update provider and uid for existing users logging in with different OAuth provider
     if user.persisted? && (user.provider != auth.provider || user.uid != auth.uid)
       user.update(provider: auth.provider, uid: auth.uid)
     end
-    
+
     # Save if new record
     user.save if user.new_record?
-    
+
     user
-  end  
+  end
 
   def admin?
     self.email == "ynon@hey.com"
@@ -53,14 +53,29 @@ class User < ApplicationRecord
     Course.none
   end
 
+  def languages_with_saved_words
+    Language.joins(phrases_as_l1: { token_translations: :token_translation_users })
+      .where(token_translation_users: { user_id: id })
+      .distinct
+  end
+
+  def saved_token_translations_for_language(language_code)
+    language = Language.find_by(iso_name: language_code)
+    return saved_token_translations.none unless language
+
+    saved_token_translations
+      .joins(phrase: :l1)
+      .where(languages: { id: language.id })
+  end
+
   def sync_local_xp(local_xp_data)
-    return unless local_xp_data.is_a?(Hash) && local_xp_data['dailyXp'].present?
-    
-    daily_xp = local_xp_data['dailyXp'].to_i
-    
+    return unless local_xp_data.is_a?(Hash) && local_xp_data["dailyXp"].present?
+
+    daily_xp = local_xp_data["dailyXp"].to_i
+
     # Only sync if the local XP is from today
-    local_date = local_xp_data['date']
-    if local_date == Time.zone.now.to_date.to_s || local_date == Time.zone.now.to_date.strftime('%a %b %d %Y')
+    local_date = local_xp_data["date"]
+    if local_date == Time.zone.now.to_date.to_s || local_date == Time.zone.now.to_date.strftime("%a %b %d %Y")
       ActivityLog.log_activity_completion(
         user: self,
         active_time: 0, # No time tracking for synced XP

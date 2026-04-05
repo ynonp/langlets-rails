@@ -3,7 +3,8 @@ class ReviewLessonsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    lesson = ReviewLessonBuilder.new(current_user).build!
+    language_code = params[:language_code]
+    lesson = ReviewLessonBuilder.new(current_user, language_code: language_code).build!
     redirect_to review_lesson_path(lesson)
   end
 
