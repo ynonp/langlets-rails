@@ -78,7 +78,7 @@
   >
     <%= render partial: 'activity_navigation' %>
     <div
-      data-controller="progress-tracker audio-feedback"
+      data-controller="progress-tracker audio-feedback bridge--progress-haptic bridge--native-audio-feedback"
       data-action="activity:completed->progress-tracker#sendProgressUpdate audio:correct->audio-feedback#handleCorrect audio:incorrect->audio-feedback#handleIncorrect audio:complete->audio-feedback#handleComplete"
       data-progress-tracker-progress-data-value="<%= @progress_data.to_json %>"
       class="contents"

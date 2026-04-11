@@ -74,7 +74,7 @@
 
 <div class="grid grid-cols-2 gap-4 mt-2">
         <%= button_to user_google_oauth2_omniauth_authorize_path,
-          data: { turbo: false },
+          data: { turbo: false, controller: "bridge--auth-bridge", action: "submit->bridge--auth-bridge#startOAuth", bridge__auth_bridge_provider_value: "google_oauth2" },
           method: :post,
           class: "items-center flex justify-center w-full px-4 py-3 border border-slate-700 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200" do %>
         <svg class="w-5 h-5 text-white mr-2" viewBox="0 0 24 24">
@@ -85,9 +85,9 @@
           </svg>
           <span class="text-white font-medium tracking-wide">GOOGLE</span>
         <% end %>
-        
+
         <%= button_to user_github_omniauth_authorize_path,
-          data: { turbo: false },
+          data: { turbo: false, controller: "bridge--auth-bridge", action: "submit->bridge--auth-bridge#startOAuth", bridge__auth_bridge_provider_value: "github" },
           method: :post,
           class: "w-full flex items-center justify-center px-4 py-3 border border-slate-700 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200" do %>
           <svg class="w-5 h-5 text-white mr-2" fill="currentColor" viewBox="0 0 24 24">

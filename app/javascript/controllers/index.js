@@ -90,3 +90,16 @@ application.register("write-missing-word-activity", WriteMissingWordActivityCont
 
 import YoutubeFormController from "./youtube_form_controller"
 application.register("youtube-form", YoutubeFormController)
+
+// Bridge controllers for Hotwire Native iOS app
+import AuthBridgeController from "./bridge/auth_bridge_controller"
+application.register("bridge--auth-bridge", AuthBridgeController)
+
+import NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
+application.register("bridge--native-audio-feedback", NativeAudioFeedbackController)
+
+import ProgressHapticController from "./bridge/progress_haptic_controller"
+application.register("bridge--progress-haptic", ProgressHapticController)
+
+import SignOutController from "./bridge/sign_out_controller"
+application.register("bridge--sign-out", SignOutController)

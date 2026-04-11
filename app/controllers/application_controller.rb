@@ -4,6 +4,12 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # Returns true if the request comes from the Hotwire Native iOS app.
+  # Used to customize behavior (e.g., OAuth redirects) for the native app.
+  def native_app?
+    request.user_agent&.include?("LangletsNative")
+  end
+
   # Redirect to returnto param after successful sign in
   def after_sign_in_path_for(resource)
     if params[:returnto].present?
