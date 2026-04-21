@@ -1,0 +1,40 @@
+{
+  "settings": {},
+  "rules": [
+    {
+      "patterns": ["/users/auth/.*", "/users/sign_in", "/users/sign_up", "/users/password/new"],
+      "properties": {
+        "context": "modal",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": ["/courses/.*/lessons/.*"],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": ["/review_lessons/.*"],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": ["/new$", "/import_courses/new"],
+      "properties": {
+        "context": "modal",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": [".*"],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": true
+      }
+    }
+  ]
+}
