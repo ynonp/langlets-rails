@@ -434,6 +434,24 @@ The platform implements a modern, accessible authentication system with the foll
 - **Typography**: System font stack with proper scaling
 - **Responsive Design**: Mobile-first approach with breakpoint optimization
 
+### Mobile App (Hotwire Native iOS)
+
+The iOS app is a Hotwire Native wrapper around the Rails web application. It uses WKWebView with shared cookies via `WKWebsiteDataStore.default()`, allowing seamless session sharing with Safari.
+
+#### Onboarding Flow
+1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.
+2. **Language Selection**: After authentication, if no `?lang=<code>` param is present, the server redirects to `/onboarding/language`. The user selects their learning language from a web page that communicates the choice to iOS via a Hotwire Native bridge component (`LanguageSelectionBridgeComponent`).
+3. **Local Persistence**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage`. It is not persisted server-side.
+4. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
+5. **Content Filtering**: `CoursesController#index` and `LearningPathsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
+
+#### Key Files
+- `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
+- `langlets-ios/langlets/langlets/Bridge/LanguageSelectionBridgeComponent.swift` — Receives language selection from web view
+- `langlets-ios/langlets/langlets/Configuration/path_configuration.json` — Path rules for modal/default contexts
+- `app/controllers/onboarding_controller.rb` — Serves the language selection page
+- `app/javascript/controllers/bridge/language_selection_controller.js` — Stimulus bridge controller for sending the selected language
+
 ### Content Processing Pipeline
 1. **YouTube URL Input**: Extract video metadata and audio
 2. **Phrase Extraction**: Generate timestamped bilingual phrases with multi-script support

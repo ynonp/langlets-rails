@@ -1,0 +1,25 @@
+<div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-gray-900">
+  <div class="max-w-md w-full text-center">
+    <h1 class="text-3xl font-bold text-slate-100 mb-3">Welcome to Langlets</h1>
+    <p class="text-slate-400 mb-8 text-lg">Which language do you want to learn?</p>
+
+    <div class="space-y-3">
+      <% @languages.each do |language| %>
+        <button
+          data-controller="bridge--language-selection"
+          data-action="click->bridge--language-selection#selectLanguage"
+          data-bridge--language-selection-iso-value="<%= language.iso_name %>"
+          class="w-full flex items-center justify-between px-5 py-4 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-xl transition-colors duration-200 text-left"
+        >
+          <div>
+            <span class="text-slate-100 font-semibold text-lg block"><%= language.native_name %></span>
+            <span class="text-slate-400 text-sm"><%= language.english_name %></span>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-400">
+            <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -16,6 +16,21 @@ application.register("audio-to-translation-activity", AudioToTranslationActivity
 import AuthController from "./auth_controller"
 application.register("auth", AuthController)
 
+import Bridge__AuthBridgeController from "./bridge/auth_bridge_controller"
+application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
+
+import Bridge__LanguageSelectionController from "./bridge/language_selection_controller"
+application.register("bridge--language-selection", Bridge__LanguageSelectionController)
+
+import Bridge__NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
+application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbackController)
+
+import Bridge__ProgressHapticController from "./bridge/progress_haptic_controller"
+application.register("bridge--progress-haptic", Bridge__ProgressHapticController)
+
+import Bridge__SignOutController from "./bridge/sign_out_controller"
+application.register("bridge--sign-out", Bridge__SignOutController)
+
 import FindAnswersController from "./find_answers_controller"
 application.register("find-answers", FindAnswersController)
 
@@ -90,16 +105,3 @@ application.register("write-missing-word-activity", WriteMissingWordActivityCont
 
 import YoutubeFormController from "./youtube_form_controller"
 application.register("youtube-form", YoutubeFormController)
-
-// Bridge controllers for Hotwire Native iOS app
-import AuthBridgeController from "./bridge/auth_bridge_controller"
-application.register("bridge--auth-bridge", AuthBridgeController)
-
-import NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
-application.register("bridge--native-audio-feedback", NativeAudioFeedbackController)
-
-import ProgressHapticController from "./bridge/progress_haptic_controller"
-application.register("bridge--progress-haptic", ProgressHapticController)
-
-import SignOutController from "./bridge/sign_out_controller"
-application.register("bridge--sign-out", SignOutController)

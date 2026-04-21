@@ -2,9 +2,18 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
-    @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at).to_a
-
+    @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at)
     @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
+
+    if params[:lang].present?
+      language = Language.find_by(iso_name: params[:lang])
+      if language
+        @learning_paths = @learning_paths.joins(courses: :language).where(courses: { language_id: language.id }).distinct
+        @all_courses = @all_courses.where(language: language)
+      end
+    end
+
+    @learning_paths = @learning_paths.to_a
 
     # Convert to array and precompute lesson counts to avoid N+1 queries
     @all_courses = @all_courses.left_joins(:lessons)

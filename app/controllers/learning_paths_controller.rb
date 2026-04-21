@@ -78,6 +78,11 @@ class LearningPathsController < ApplicationController
   
   def get_filtered_courses
     courses = @learning_path.courses.published.includes(:language, :lessons, :tags)
+
+    if params[:lang].present?
+      language = Language.find_by(iso_name: params[:lang])
+      courses = courses.where(language: language) if language
+    end
     
     # Filter by tag if specified
     if params[:tag].present? && params[:tag] != 'all'

@@ -6,8 +6,16 @@ let rootURL = URL(string: "https://langlets.app")!
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
+    private var startLocation: URL {
+        var url = rootURL
+        if let lang = UserDefaults.standard.string(forKey: "selectedLanguage") {
+            url = url.appending(queryItems: [URLQueryItem(name: "lang", value: lang)])
+        }
+        return url
+    }
+
     private lazy var navigator = Navigator(
-        configuration: .init(name: "main", startLocation: rootURL),
+        configuration: .init(name: "main", startLocation: startLocation),
         delegate: self
     )
 
@@ -26,7 +34,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             ProgressHapticComponent.self,
             AudioFeedbackComponent.self,
             SignOutComponent.self,
-            AuthBridgeComponent.self
+            AuthBridgeComponent.self,
+            LanguageSelectionBridgeComponent.self
         ])
 
         // Load path configuration
@@ -46,6 +55,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             object: nil
         )
 
+        // Listen for language selection from onboarding page
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(languageDidSelect(_:)),
+            name: .languageDidSelect,
+            object: nil
+        )
+
         navigator.start()
     }
 
@@ -56,7 +73,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         if url.host == "auth-success" {
             // OAuth completed — navigate to homepage
-            navigator.route(rootURL)
+            navigator.route(startLocation)
         }
     }
 }
@@ -73,7 +90,14 @@ extension SceneDelegate: NavigatorDelegate {
         // OAuth completed via ASWebAuthenticationSession.
         // The session cookie is now in Safari's cookie store,
         // which is shared with WKWebsiteDataStore.default().
-        navigator.route(rootURL)
+        navigator.route(startLocation)
+    }
+
+    @objc private func languageDidSelect(_ notification: Notification) {
+        guard let language = notification.userInfo?["language"] as? String else { return }
+        var url = rootURL
+        url = url.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
+        navigator.route(url)
     }
 }
 

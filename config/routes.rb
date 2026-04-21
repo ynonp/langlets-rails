@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :create_song_progress, only: [ :show ]
   get "home/privacy"
   get "home/terms"
+  get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   root "courses#index"
   get "landing_page/index"
   resources :courses, only: [ :show, :index, :new, :create ] do

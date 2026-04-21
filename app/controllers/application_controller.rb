@@ -2,12 +2,42 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   # allow_browser versions: :modern
 
+  before_action :require_authentication_for_native_app
+  before_action :require_language_for_native_app
+
   protected
 
   # Returns true if the request comes from the Hotwire Native iOS app.
   # Used to customize behavior (e.g., OAuth redirects) for the native app.
   def native_app?
     request.user_agent&.include?("LangletsNative")
+  end
+
+  def require_authentication_for_native_app
+    return unless native_app?
+    return if user_signed_in?
+    return if devise_controller?
+    return if controller_name == "onboarding" && action_name == "language"
+    return if controller_name == "health"
+    return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
+
+    redirect_to new_user_session_path(returnto: request.fullpath), alert: "Please sign in to continue."
+  end
+
+  def require_language_for_native_app
+    return unless native_app?
+    return unless user_signed_in?
+    return if params[:lang].present?
+    return if devise_controller?
+    return if controller_name == "onboarding" && action_name == "language"
+    return if controller_name == "health"
+    return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
+
+    redirect_to onboarding_language_path(returnto: request.fullpath)
+  end
+
+  def default_url_options
+    super.merge(lang: params[:lang]).compact
   end
 
   # Redirect to returnto param after successful sign in

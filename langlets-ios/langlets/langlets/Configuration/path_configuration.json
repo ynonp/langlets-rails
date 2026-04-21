@@ -9,6 +9,13 @@
       }
     },
     {
+      "patterns": ["/onboarding/language"],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
       "patterns": ["/courses/.*/lessons/.*"],
       "properties": {
         "context": "default",
