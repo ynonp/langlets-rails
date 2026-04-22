@@ -32,7 +32,11 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    redirect_to root_path
+    if native_app?
+      redirect_to "langlets://auth-failure"
+    else
+      redirect_to root_path
+    end
   end
 
   private
@@ -46,6 +50,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def native_app?
-    request.user_agent&.include?("LangletsNative")
+    request.user_agent&.include?("LangletsNative") ||
+      request.env["omniauth.params"]&.dig("native_app").present?
   end
 end

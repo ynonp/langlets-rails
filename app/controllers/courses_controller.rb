@@ -5,8 +5,8 @@ class CoursesController < ApplicationController
     @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at)
     @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
 
-    if params[:lang].present?
-      language = Language.find_by(iso_name: params[:lang])
+    if current_language_code.present?
+      language = Language.find_by(iso_name: current_language_code)
       if language
         @learning_paths = @learning_paths.joins(courses: :language).where(courses: { language_id: language.id }).distinct
         @all_courses = @all_courses.where(language: language)

@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   # allow_browser versions: :modern
 
+  before_action :store_language_in_session
   before_action :require_authentication_for_native_app
   before_action :require_language_for_native_app
 
@@ -11,6 +12,19 @@ class ApplicationController < ActionController::Base
   # Used to customize behavior (e.g., OAuth redirects) for the native app.
   def native_app?
     request.user_agent&.include?("LangletsNative")
+  end
+
+  # Returns true for mobile browsers (including tablets).
+  def mobile?
+    request.user_agent&.match?(/Mobi|Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry|Opera Mini/i)
+  end
+
+  def store_language_in_session
+    session[:lang] = params[:lang] if params[:lang].present?
+  end
+
+  def current_language_code
+    params[:lang].presence || session[:lang]
   end
 
   def require_authentication_for_native_app
@@ -25,9 +39,9 @@ class ApplicationController < ActionController::Base
   end
 
   def require_language_for_native_app
-    return unless native_app?
+    return unless native_app? || mobile?
     return unless user_signed_in?
-    return if params[:lang].present?
+    return if (params[:lang] || session[:lang]).present?
     return if devise_controller?
     return if controller_name == "onboarding" && action_name == "language"
     return if controller_name == "health"
@@ -37,7 +51,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    super.merge(lang: params[:lang]).compact
+    super.merge(lang: (params[:lang] || session[:lang])).compact
   end
 
   # Redirect to returnto param after successful sign in

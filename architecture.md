@@ -451,12 +451,20 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 - The onboarding page is context-aware: it shows "Change Learning Language" when accessed from the profile menu, and "Welcome to Langlets" during first-time onboarding.
 - When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
 
+#### OAuth Authentication in Native App
+- Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.
+- The `AuthBridgeComponent` intercepts OAuth sign-in button taps in the web view and sends a bridge message to iOS, which starts `ASWebAuthenticationSession`.
+- **Native App Detection in OAuth Callback**: `ASWebAuthenticationSession` uses Safari's standard user agent, so the server cannot detect the native app via the `LangletsNative` user-agent string. Instead, the iOS app appends `?native_app=1` to the initial OAuth URL (`/users/auth/:provider?native_app=1`). OmniAuth preserves this parameter in `request.env["omniauth.params"]` during the callback phase.
+- The `Users::OmniauthCallbacksController#native_app?` method checks both the user agent and `omniauth.params["native_app"]` to determine if the request came from the native app.
+- On successful authentication, the server redirects to `langlets://auth-success`, which `ASWebAuthenticationSession` intercepts and closes. The app then routes back to the start location. The session cookie is shared between Safari and `WKWebsiteDataStore.default()`, so the WKWebView picks up the authenticated session on reload.
+- On failure, the server redirects to `langlets://auth-failure` for native app flows.
+
 #### Key Files
 - `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
-- `langlets-ios/langlets/langlets/Bridge/LanguageSelectionBridgeComponent.swift` — Receives language selection from web view
-- `langlets-ios/langlets/langlets/Configuration/path_configuration.json` — Path rules for modal/default contexts
-- `app/controllers/onboarding_controller.rb` — Serves the language selection page
-- `app/javascript/controllers/bridge/language_selection_controller.js` — Stimulus bridge controller for sending the selected language
+- `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
+- `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
+- `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app
+- `app/javascript/controllers/bridge/auth_bridge_controller.js` — Stimulus bridge controller for OAuth sign-in buttons
 
 ### Content Processing Pipeline
 1. **YouTube URL Input**: Extract video metadata and audio

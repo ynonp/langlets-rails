@@ -10,7 +10,7 @@ class AuthService: NSObject, ASWebAuthenticationPresentationContextProviding {
     /// Starts an OAuth flow by opening Safari via ASWebAuthenticationSession.
     /// - Parameter provider: The OmniAuth provider name (e.g., "google_oauth2" or "github")
     func startOAuth(provider: String) {
-        guard let url = URL(string: "\(rootURL)/users/auth/\(provider)") else { return }
+        guard let url = URL(string: "\(rootURL)/users/auth/\(provider)?native_app=1") else { return }
         let callbackURLScheme = "langlets"
 
         session = ASWebAuthenticationSession(
