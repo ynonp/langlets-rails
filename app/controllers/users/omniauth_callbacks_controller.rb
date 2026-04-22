@@ -7,8 +7,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
-      sign_in(@user, event: :authentication)
-      remember_me(@user)
+      unless user_signed_in? && current_user == @user
+        sign_in(@user, event: :authentication)
+        remember_me(@user)
+      end
       set_flash_message(:notice, :success, kind: "Google") if is_navigational_format?
       redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
     else
@@ -21,8 +23,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
     if @user.persisted?
-      sign_in(@user, event: :authentication)
-      remember_me(@user)
+      unless user_signed_in? && current_user == @user
+        sign_in(@user, event: :authentication)
+        remember_me(@user)
+      end
       set_flash_message(:notice, :success, kind: "GitHub") if is_navigational_format?
       redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
     else
@@ -41,11 +45,19 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def native_success
+    if user_signed_in?
+      redirect_to "langlets://auth-success", allow_other_host: true
+    else
+      redirect_to "langlets://auth-failure", allow_other_host: true
+    end
+  end
+
   private
 
   def after_sign_in_path_for(resource)
     if native_app?
-      "langlets://auth-success"
+      users_auth_native_success_path
     else
       super
     end

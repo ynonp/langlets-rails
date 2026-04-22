@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     registrations: "users/registrations",
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
+  devise_scope :user do
+    get "users/auth/native_success", to: "users/omniauth_callbacks#native_success"
+  end
   resources :create_song_progress, only: [ :show ]
   get "home/privacy"
   get "home/terms"
