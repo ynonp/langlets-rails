@@ -95,9 +95,15 @@ extension SceneDelegate: NavigatorDelegate {
 
     @objc private func languageDidSelect(_ notification: Notification) {
         guard let language = notification.userInfo?["language"] as? String else { return }
-        var url = rootURL
-        url = url.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
-        navigator.route(url)
+
+        if let redirectUrlString = notification.userInfo?["redirectUrl"] as? String,
+           let redirectUrl = URL(string: redirectUrlString) {
+            navigator.route(redirectUrl)
+        } else {
+            var url = rootURL
+            url = url.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
+            navigator.route(url)
+        }
     }
 }
 

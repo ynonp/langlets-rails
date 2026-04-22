@@ -445,6 +445,12 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 4. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
 5. **Content Filtering**: `CoursesController#index` and `LearningPathsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
 
+#### Changing Learning Language
+- Users can change their learning language at any time from the user dropdown menu (avatar icon) on any authenticated page.
+- The dropdown shows the currently selected language and links to `/onboarding/language?returnto=<current_url>`.
+- The onboarding page is context-aware: it shows "Change Learning Language" when accessed from the profile menu, and "Welcome to Langlets" during first-time onboarding.
+- When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
+
 #### Key Files
 - `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
 - `langlets-ios/langlets/langlets/Bridge/LanguageSelectionBridgeComponent.swift` — Receives language selection from web view

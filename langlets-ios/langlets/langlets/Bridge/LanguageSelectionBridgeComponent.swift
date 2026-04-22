@@ -15,10 +15,14 @@ final class LanguageSelectionBridgeComponent: BridgeComponent {
         UserDefaults.standard.set(data.language, forKey: "selectedLanguage")
 
         DispatchQueue.main.async {
+            var userInfo: [String: Any] = ["language": data.language]
+            if let redirectUrl = data.redirectUrl {
+                userInfo["redirectUrl"] = redirectUrl
+            }
             NotificationCenter.default.post(
                 name: .languageDidSelect,
                 object: nil,
-                userInfo: ["language": data.language]
+                userInfo: userInfo
             )
         }
     }
@@ -27,6 +31,7 @@ final class LanguageSelectionBridgeComponent: BridgeComponent {
 private extension LanguageSelectionBridgeComponent {
     struct MessageData: Decodable {
         let language: String
+        let redirectUrl: String?
     }
 }
 
