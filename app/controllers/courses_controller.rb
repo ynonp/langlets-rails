@@ -44,9 +44,29 @@ class CoursesController < ApplicationController
         course
       end
 
-      # Filter and sort continue learning courses
-      @continue_learning_courses = @all_courses.select(&:has_progress?).sort_by do |course|
-        continue_learning_order[course.id] || Float::INFINITY
+      # Build continue learning from ALL courses with progress (including learning path courses)
+      continue_learning_ids = continue_learning_order.keys
+      if continue_learning_ids.any?
+        continue_courses = Course.published.includes(:language).where(id: continue_learning_ids)
+        if current_language_code.present? && language
+          continue_courses = continue_courses.where(language: language)
+        end
+        continue_courses = continue_courses.left_joins(:lessons)
+                            .select("courses.*, COUNT(lessons.id) AS lessons_count")
+                            .group("courses.id")
+                            .to_a
+
+        continue_progress = calculate_progress_for_courses(continue_courses, current_user)
+
+        @continue_learning_courses = continue_courses.map do |course|
+          course.define_singleton_method(:user_progress) { continue_progress[course.id] || 0 }
+          course.define_singleton_method(:has_progress?) { true }
+          course
+        end.sort_by do |course|
+          continue_learning_order[course.id] || Float::INFINITY
+        end
+      else
+        @continue_learning_courses = []
       end
     else
       @recommended_courses = []

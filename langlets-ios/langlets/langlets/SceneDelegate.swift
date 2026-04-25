@@ -2,7 +2,7 @@ import HotwireNative
 import GoogleSignIn
 import UIKit
 
-let rootURL = URL(string: "https://a8e3-46-120-112-245.ngrok-free.app")!
+let rootURL = URL(string: "https://langlets.app")!
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?

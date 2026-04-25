@@ -56,6 +56,7 @@ export default class extends Controller {
       videoId: this.videoIdValue,
       playerVars: {
         autoplay: 0,
+        playsinline: 1,
         controls: 0,
         modestbranding: 1,
         rel: 0,
