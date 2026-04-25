@@ -3,6 +3,8 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   include Devise::Controllers::Rememberable
 
+  skip_before_action :verify_authenticity_token, only: [:native_google]
+
   def google_oauth2
     @user = User.from_omniauth(request.env["omniauth.auth"])
 
@@ -53,7 +55,80 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  # Accepts a Google serverAuthCode from the native iOS app (Google Sign-In SDK)
+  # and exchanges it for an access token, then signs the user in.
+  def native_google
+    code = params[:code]
+    redirect_uri = params[:redirect_uri].presence || ""
+
+    if code.blank?
+      redirect_to new_user_session_path, alert: "Missing authorization code"
+      return
+    end
+
+    # Exchange the code with Google for tokens
+    token_response = exchange_google_code(code, redirect_uri)
+
+    if token_response["access_token"].blank?
+      Rails.logger.error "Google token exchange failed: #{token_response.inspect}"
+      redirect_to new_user_session_path, alert: "Google authentication failed"
+      return
+    end
+
+    # Fetch user info from Google
+    user_info = fetch_google_user_info(token_response["access_token"])
+
+    if user_info["email"].blank?
+      Rails.logger.error "Google user info missing email: #{user_info.inspect}"
+      redirect_to new_user_session_path, alert: "Could not retrieve user info"
+      return
+    end
+
+    # Build an OmniAuth-style auth hash and sign the user in
+    info = AuthInfo.new(email: user_info["email"], name: user_info["name"])
+    auth = AuthHash.new(provider: "google_oauth2", uid: user_info["id"], info: info)
+
+    @user = User.from_omniauth(auth)
+
+    if @user.persisted?
+      sign_in(@user, event: :authentication)
+      remember_me(@user)
+      redirect_to root_path
+    else
+      session["devise.google_data"] = { info: { email: user_info["email"] } }
+      redirect_to new_user_registration_url
+    end
+  end
+
   private
+
+  def exchange_google_code(code, redirect_uri)
+    uri = URI("https://oauth2.googleapis.com/token")
+    response = Net::HTTP.post_form(uri, {
+      "code" => code,
+      "client_id" => Rails.application.credentials.google_client_id,
+      "client_secret" => Rails.application.credentials.google_client_secret,
+      "redirect_uri" => redirect_uri,
+      "grant_type" => "authorization_code"
+    })
+    JSON.parse(response.body)
+  rescue JSON::ParserError, Net::OpenTimeout, Net::ReadTimeout => e
+    Rails.logger.error "Google token exchange error: #{e.message}"
+    {}
+  end
+
+  def fetch_google_user_info(access_token)
+    uri = URI("https://www.googleapis.com/oauth2/v2/userinfo")
+    req = Net::HTTP::Get.new(uri)
+    req["Authorization"] = "Bearer #{access_token}"
+    response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
+      http.request(req)
+    end
+    JSON.parse(response.body)
+  rescue JSON::ParserError, Net::OpenTimeout, Net::ReadTimeout => e
+    Rails.logger.error "Google user info error: #{e.message}"
+    {}
+  end
 
   def after_sign_in_path_for(resource)
     if native_app?
@@ -67,4 +142,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     request.user_agent&.include?("LangletsNative") ||
       request.env["omniauth.params"]&.dig("native_app").present?
   end
+
+  # Data structures that mimic OmniAuth::AuthHash for User.from_omniauth
+  AuthInfo = Data.define(:email, :name)
+  AuthHash = Data.define(:provider, :uid, :info)
 end

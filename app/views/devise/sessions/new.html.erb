@@ -75,7 +75,7 @@
 <div class="grid grid-cols-2 gap-4 mt-2">
         <%= button_to user_google_oauth2_omniauth_authorize_path,
           method: :post,
-          form: { data: { turbo: false, controller: "bridge--auth-bridge", action: "submit->bridge--auth-bridge#startOAuth", bridge__auth_bridge_provider_value: "google_oauth2" } },
+          form: { data: { turbo: false, controller: "bridge--google-auth", action: "submit->bridge--google-auth#authorize" } },
           class: "items-center flex justify-center w-full px-4 py-3 border border-slate-700 rounded-lg bg-slate-800 hover:bg-slate-700 transition-colors duration-200" do %>
         <svg class="w-5 h-5 text-white mr-2" viewBox="0 0 24 24">
             <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>

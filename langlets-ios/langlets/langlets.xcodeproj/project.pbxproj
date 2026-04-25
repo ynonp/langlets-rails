@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		F725E0B92F8AADF2002916A6 /* HotwireNative in Frameworks */ = {isa = PBXBuildFile; productRef = F725E0B82F8AADF2002916A6 /* HotwireNative */; };
+		F7907DD22F9D00AA00F47E3E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD12F9D00AA00F47E3E /* GoogleSignIn */; };
+		F7907DD42F9D00AA00F47E3E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7907DD42F9D00AA00F47E3E /* GoogleSignInSwift in Frameworks */,
 				F725E0B92F8AADF2002916A6 /* HotwireNative in Frameworks */,
+				F7907DD22F9D00AA00F47E3E /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -84,6 +88,8 @@
 			name = langlets;
 			packageProductDependencies = (
 				F725E0B82F8AADF2002916A6 /* HotwireNative */,
+				F7907DD12F9D00AA00F47E3E /* GoogleSignIn */,
+				F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */,
 			);
 			productName = langlets;
 			productReference = F725E0902F8A7E94002916A6 /* langlets.app */;
@@ -115,6 +121,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				F725E0B72F8AADF2002916A6 /* XCRemoteSwiftPackageReference "hotwire-native-ios" */,
+				F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F725E0912F8A7E94002916A6 /* Products */;
@@ -360,6 +367,14 @@
 				minimumVersion = 1.2.2;
 			};
 		};
+		F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -367,6 +382,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F725E0B72F8AADF2002916A6 /* XCRemoteSwiftPackageReference "hotwire-native-ios" */;
 			productName = HotwireNative;
+		};
+		F7907DD12F9D00AA00F47E3E /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7907DD02F9D00AA00F47E3E /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

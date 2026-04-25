@@ -14,6 +14,10 @@ final class AuthBridgeComponent: BridgeComponent {
         guard message.event == "startOAuth",
               let data: MessageData = message.data() else { return }
 
+        // Google Sign-In is now handled by GoogleAuthComponent via the Google Sign-In SDK.
+        // Only proceed here for non-Google providers (e.g. GitHub).
+        if data.provider == "google_oauth2" { return }
+
         AuthBridgeComponent.authService.startOAuth(provider: data.provider)
     }
 }

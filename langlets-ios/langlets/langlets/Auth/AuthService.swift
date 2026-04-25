@@ -11,6 +11,7 @@ class AuthService: NSObject, ASWebAuthenticationPresentationContextProviding {
     /// - Parameter provider: The OmniAuth provider name (e.g., "google_oauth2" or "github")
     func startOAuth(provider: String) {
         guard let url = URL(string: "\(rootURL)/users/auth/\(provider)?native_app=1") else { return }
+        print("11111")
         let callbackURLScheme = "langlets"
 
         session = ASWebAuthenticationSession(

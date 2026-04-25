@@ -1,7 +1,8 @@
 import HotwireNative
+import GoogleSignIn
 import UIKit
 
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "https://a8e3-46-120-112-245.ngrok-free.app")!
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -29,13 +30,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Hotwire.config.debugLoggingEnabled = true
         #endif
 
+        // Configure Google Sign-In with iOS client ID and web server client ID.
+        // The iOS client ID must be created in Google Cloud Console (type: iOS,
+        // bundle ID: com.ynonp.langlets). The web client ID is the same one
+        // used by the Rails OmniAuth backend.
+        let googleConfig = GIDConfiguration(
+            clientID: "570385807243-546k3gm681na7d6ds3ft3eqg9hupboc0.apps.googleusercontent.com",
+            serverClientID: "570385807243-a77uce7m9eu2i7d8tsbveal8ejpit5d3.apps.googleusercontent.com"
+        )
+        GIDSignIn.sharedInstance.configuration = googleConfig
+
         // Register bridge components (must happen before navigator.start())
         Hotwire.registerBridgeComponents([
             ProgressHapticComponent.self,
             AudioFeedbackComponent.self,
             SignOutComponent.self,
             AuthBridgeComponent.self,
-            LanguageSelectionBridgeComponent.self
+            LanguageSelectionBridgeComponent.self,
+            GoogleAuthComponent.self
         ])
 
         // Load path configuration
@@ -68,10 +80,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     // Handle deep links (OAuth callbacks via custom URL scheme)
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        guard let url = URLContexts.first?.url,
-              url.scheme == "langlets" else { return }
+        guard let url = URLContexts.first?.url else { return }
 
-        if url.host == "auth-success" {
+        // Handle Google Sign-In callback
+        if GIDSignIn.sharedInstance.handle(url) {
+            return
+        }
+
+        if url.scheme == "langlets" && url.host == "auth-success" {
             // OAuth completed — navigate to homepage
             navigator.route(startLocation)
         }
@@ -88,9 +104,9 @@ extension SceneDelegate: NavigatorDelegate {
 
     @objc private func oauthDidSucceed() {
         // OAuth completed via ASWebAuthenticationSession.
-        // The session cookie is now in Safari's cookie store,
-        // which is shared with WKWebsiteDataStore.default().
-        navigator.route(startLocation)
+        // Reload the current page to pick up the session cookie
+        // that was set in Safari's cookie store (shared with WKWebsiteDataStore.default())
+        navigator.reload()
     }
 
     @objc private func languageDidSelect(_ notification: Notification) {

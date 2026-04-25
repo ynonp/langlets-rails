@@ -19,6 +19,9 @@ application.register("auth", AuthController)
 import Bridge__AuthBridgeController from "./bridge/auth_bridge_controller"
 application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
 
+import Bridge__GoogleAuthController from "./bridge/google_auth_controller"
+application.register("bridge--google-auth", Bridge__GoogleAuthController)
+
 import Bridge__LanguageSelectionController from "./bridge/language_selection_controller"
 application.register("bridge--language-selection", Bridge__LanguageSelectionController)
 
