@@ -112,14 +112,17 @@ extension SceneDelegate: NavigatorDelegate {
     @objc private func languageDidSelect(_ notification: Notification) {
         guard let language = notification.userInfo?["language"] as? String else { return }
 
+        let url: URL
         if let redirectUrlString = notification.userInfo?["redirectUrl"] as? String,
-           let redirectUrl = URL(string: redirectUrlString) {
-            navigator.route(redirectUrl)
+           let redirectUrl = URL(string: redirectUrlString, relativeTo: rootURL)?.absoluteURL {
+            url = redirectUrl
         } else {
-            var url = rootURL
-            url = url.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
-            navigator.route(url)
+            url = rootURL.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
         }
+
+        let properties: PathProperties = ["presentation": "replace_root"]
+        let proposal = VisitProposal(url: url, options: VisitOptions(action: .replace), properties: properties)
+        navigator.route(proposal)
     }
 }
 
