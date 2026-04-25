@@ -1,6 +1,7 @@
 import HotwireNative
 import GoogleSignIn
 import UIKit
+import WebKit
 
 let rootURL = URL(string: "https://langlets.app")!
 
@@ -15,10 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return url
     }
 
-    private lazy var navigator = Navigator(
-        configuration: .init(name: "main", startLocation: startLocation),
-        delegate: self
-    )
+    private lazy var navigator: Navigator = {
+        Hotwire.config.makeCustomWebView = { config in
+            config.allowsInlineMediaPlayback = true
+            config.mediaTypesRequiringUserActionForPlayback = []
+            return WKWebView(frame: .zero, configuration: config)
+        }
+        
+        return Navigator(configuration: .init(name: "main", startLocation: startLocation), delegate: self)
+    }()
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
