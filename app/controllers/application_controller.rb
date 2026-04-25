@@ -10,6 +10,7 @@ class ApplicationController < ActionController::Base
 
   # Returns true if the request comes from the Hotwire Native iOS app.
   # Used to customize behavior (e.g., OAuth redirects) for the native app.
+  helper_method :native_app?
   def native_app?
     request.user_agent&.include?("LangletsNative")
   end
