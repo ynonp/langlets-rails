@@ -40,9 +40,4 @@
       <%= yield %>
     </main>
   </body>
-  <script>
-document.addEventListener("turbo:before-cache", () => {
-  document.body.innerHTML = "<div>cached</div>"
-});
-  </script>
 </html>
