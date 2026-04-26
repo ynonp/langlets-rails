@@ -65,6 +65,17 @@ class CoursesController < ApplicationController
         end.sort_by do |course|
           continue_learning_order[course.id] || Float::INFINITY
         end
+
+        # Compute "Next For You" - the next incomplete lesson in the most recent course
+        most_recent_course_id = continue_learning_order.keys.first
+        if most_recent_course_id
+          most_recent_course = continue_courses.find { |c| c.id == most_recent_course_id }
+          if most_recent_course
+            next_lessons = calculate_next_lessons_for_courses([most_recent_course], current_user)
+            @next_for_you_lesson = next_lessons[most_recent_course_id]
+            @next_for_you_course = most_recent_course if @next_for_you_lesson
+          end
+        end
       else
         @continue_learning_courses = []
       end
@@ -178,6 +189,32 @@ class CoursesController < ApplicationController
       course_order[course.id] = index
     end
     course_order
+  end
+
+  def calculate_next_lessons_for_courses(courses, user)
+    return {} unless user && courses.any?
+
+    course_ids = courses.map(&:id)
+
+    # Get completed lesson IDs grouped by course in one query
+    completed_by_course = Lesson.joins(:lesson_users)
+                                .where(course_id: course_ids, lesson_users: { user_id: user.id })
+                                .group(:course_id)
+                                .pluck(:course_id, Arel.sql("ARRAY_AGG(lessons.id)"))
+                                .to_h
+
+    # Get all lessons for these courses ordered by lesson order
+    all_lessons = Lesson.where(course_id: course_ids).order(:order).to_a
+    lessons_by_course = all_lessons.group_by(&:course_id)
+
+    # Find the first incomplete lesson for each course
+    next_lessons = {}
+    courses.each do |course|
+      completed_ids = completed_by_course[course.id] || []
+      next_lessons[course.id] = lessons_by_course[course.id]&.find { |l| !completed_ids.include?(l.id) }
+    end
+
+    next_lessons
   end
 
   def calculate_progress_for_courses(courses, user)

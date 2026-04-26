@@ -251,6 +251,13 @@
   - Indexed on both lesson_id and user_id for efficient queries
 - **Relationships**: Links Users to Lessons for course progression
 
+#### Continue Learning Navigation
+- **Next For You**: A single prominent link at the top of the homepage points to the next incomplete lesson in the user's most recently active course. The link includes `ref=continue` so the back button returns to the course page
+- **Next Lesson Resolution**: `CoursesController#calculate_next_lessons_for_courses` computes the first uncompleted lesson per course (ordered by `lessons.order`) using batch queries to avoid N+1
+- **In-Lesson Back Button**: The activity navigation back button (`_activity_navigation.html.erb`) links to `@course_path`, so users returning from a lesson land on the course show page regardless of entry point
+- **Native App Back Navigation**: When a lesson is loaded with `ref=continue`, `lessons/show.html.erb` runs a script that manipulates the browser history stack: replaces the current entry with the course page, then pushes the lesson URL back. This inserts the course page into the history stack so that the native back button (used in the Hotwire Native iOS app) returns to the course page instead of the homepage
+- **Continue Learning Cards**: Course cards in the Continue Learning section link to the course show page (not directly to the next lesson)
+
 ### Workflow Management
 
 #### 20. **CreateSongProgress** (`create_song_progresses`)

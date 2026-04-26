@@ -35,8 +35,9 @@
   font_size_class = (@phrases.first&.l1&.iso_name == 'ar-JO') ? 'text-3xl' : 'text-xl'
 %>
 
+<turbo-frame id="course-content" class="contents">
 <div class="h-screen flex flex-col lg:flex-row max-w-7xl mx-auto w-full bg-gray-800"
-    data-controller="main-video-player watch-video-activity"
+    data-controller="main-video-player watch-video-activity scroll-top"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= @phrases.first&.l1&.iso_name || 'en' %>"
     data-main-video-player-target="videoListener videoSegment"
@@ -58,7 +59,7 @@
     <div class="px-4 py-4 border-b border-gray-700">
       <h1 class="text-xl sm:text-2xl font-bold text-white"><%= @course.name %></h1>
       <p class="text-sm text-gray-400 mt-1">Full Video with Transcript</p>
-      <a href="<%= course_path(@course.slug) %>" class="text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block">← Back to Course</a>
+      <%= link_to "← Back to Course", course_path(@course.slug), data: { turbo_frame: "course-content", turbo_action: "advance" }, class: "text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block" %>
     </div>
 
     <div
@@ -168,4 +169,5 @@
     </div>
   </div>
 </div>
+</turbo-frame>
 
