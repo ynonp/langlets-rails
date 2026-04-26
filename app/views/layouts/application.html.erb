@@ -42,17 +42,7 @@
   </body>
   <script>
 document.addEventListener("turbo:before-cache", () => {
-  // Find all iframes, videos, and audio tags
-  const heavyElements = document.querySelectorAll("iframe, video, audio");
-  
-  heavyElements.forEach((el) => {
-    // If it's a video/audio tag, stop it
-    if (typeof el.pause === "function") el.pause();
-    
-    // Remove the source and wipe it from the DOM so it doesn't get cached
-    el.removeAttribute("src");
-    el.remove();
-  });
+  document.body.innerHTML = "<div>cached</div>"
 });
   </script>
 </html>
