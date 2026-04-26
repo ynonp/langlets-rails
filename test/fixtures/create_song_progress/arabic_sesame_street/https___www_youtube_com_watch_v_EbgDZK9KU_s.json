@@ -1,0 +1,464 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=EbgDZK9KU-s",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "غريب.",
+        "timestamp": "00:27.00",
+        "timestamp_end": "00:29.00",
+        "text_l2": "Strange."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "إيش السبب بوجود",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "What's the reason for"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "هاي الصحون كلها هون؟",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "all these dishes being here?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "فعلاً، إشي غريب",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "Indeed, it is strange"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "وجود هذا الأكل هون.",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:40.00",
+        "text_l2": "having this food here."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "فاصوليا.",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:43.00",
+        "text_l2": "Beans."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "تنتن، بتعرفي إني أنا كتير كتير كتير",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "Tantan, do you know that I really, really, really"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بحب الفاصوليا لأنها كتير مفيدة للجسم؟",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "love beans because they are very good for the body?"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "وأنا كمان.",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Me too."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "بس ليش الفاصوليا هون؟",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:56.00",
+        "text_l2": "But why are the beans here?"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "وفي كمان فريكة، أنا بحب الفريكة",
+        "timestamp": "00:57.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "And there's also freekeh, I love freekeh"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "وبقدر آكلها بدل الرز.",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:02.00",
+        "text_l2": "and I can eat it instead of rice."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "كتير طيبة الفريكة،",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "Freekeh is very tasty,"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "وأنا كمان بحبها كتير.",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:07.00",
+        "text_l2": "and I love it a lot too."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "شوفي هون، فلافل.",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "Look here, falafel."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "الفلافل كتير طيب يا تنتن،",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "Falafel is very tasty, Tantan,"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أنا كتير بحبه مرات على الفطور",
+        "timestamp": "01:14.00",
+        "timestamp_end": "01:17.00",
+        "text_l2": "I love it a lot, sometimes for breakfast"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "ومرات على العشا.",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:19.00",
+        "text_l2": "and sometimes for dinner."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "فعلاً.",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "Indeed."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "وفول، والفول كمان",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:24.00",
+        "text_l2": "And ful, and ful is also"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "مفيد وصحي.",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:26.00",
+        "text_l2": "beneficial and healthy."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "في هون نوع فاكهة لونه أحمر",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:30.00",
+        "text_l2": "There's a type of fruit here that's red"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "وطعمه طيب.",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:32.00",
+        "text_l2": "and tastes good."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "طعم طيب.",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:35.00",
+        "text_l2": "Good taste."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "فراولة.",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:39.00",
+        "text_l2": "Strawberries."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "الفراولة كتير مفيدة،",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "Strawberries are very beneficial,"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "بتحتوي على فيتامينات كتير",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "they contain many vitamins"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "مهمة للجسم،",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "important for the body,"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "بتنشط الجسم.",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:50.00",
+        "text_l2": "they energize the body."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "يا ترى شو سبب وجود فاصوليا،",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:54.00",
+        "text_l2": "I wonder what's the reason for beans,"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "فريكة، فلافل، وفول،",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "freekeh, falafel, and ful,"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "وفراولة؟",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "and strawberries being here?"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "أكيد في سبب يا تنتن، أكيد.",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:04.00",
+        "text_l2": "There's definitely a reason, Tantan, definitely."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "والتحري جلجل رح يكتشف السبب،",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "And Detective Jaljal will discover the reason,"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "ما تقلقي.",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "don't worry."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "أنا عرفت، أنا عرفت، أنا عرفت.",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "I know, I know, I know."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "إيش يا تنتن؟",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:12.00",
+        "text_l2": "What is it, Tantan?"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "كلهم أكلات صحية",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:15.00",
+        "text_l2": "They are all healthy foods"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "ومفيدة وطعمها زاكي.",
+        "timestamp": "02:15.00",
+        "timestamp_end": "02:17.00",
+        "text_l2": "and beneficial and taste delicious."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "صح يا تنتن صح،",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "Right, Tantan, right,"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "هي أكلات كتير صحية",
+        "timestamp": "02:21.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "they are very healthy foods"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "ومفيدة وشهية.",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:27.00",
+        "text_l2": "and beneficial and appetizing."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "لا.",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:29.00",
+        "text_l2": "No."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "لسا، أكيد في سبب تاني",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:33.00",
+        "text_l2": "Not yet, there's definitely another reason"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "لوجود هاي الصحون كلها هون.",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "for all these dishes being here."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "فاصوليا، فريكة،",
+        "timestamp": "02:38.00",
+        "timestamp_end": "02:41.00",
+        "text_l2": "Beans, freekeh,"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "فلافل، فول،",
+        "timestamp": "02:41.00",
+        "timestamp_end": "02:44.00",
+        "text_l2": "falafel, ful,"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "فراولة.",
+        "timestamp": "02:44.00",
+        "timestamp_end": "02:46.00",
+        "text_l2": "strawberries."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "أكيد في سبب وما تقلقي،",
+        "timestamp": "02:47.00",
+        "timestamp_end": "02:50.00",
+        "text_l2": "There's definitely a reason, don't worry,"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "أنا عرفت، أنا عرفت.",
+        "timestamp": "02:50.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "I know, I know."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "إيش يا تنتن؟ احكيلي.",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:52.00",
+        "text_l2": "What is it, Tantan? Tell me."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "كلهم بيبدوا بحرف الفاء.",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "They all start with the letter 'Fa'."
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "صح يا تنتن صح، مزبوط،",
+        "timestamp": "02:56.00",
+        "timestamp_end": "02:58.00",
+        "text_l2": "Right, Tantan, right, exactly,"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "كلياتهم بيبدوا بحرف الفاء.",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:00.00",
+        "text_l2": "they all start with the letter 'Fa'."
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "فاء: فاصوليا.",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:05.00",
+        "text_l2": "Fa: Beans."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "فاء: فريكة.",
+        "timestamp": "03:06.00",
+        "timestamp_end": "03:09.00",
+        "text_l2": "Fa: Freekeh."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "فاء: فلافل.",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:13.00",
+        "text_l2": "Fa: Falafel."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "فاء: فول.",
+        "timestamp": "03:14.00",
+        "timestamp_end": "03:18.00",
+        "text_l2": "Fa: Ful."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "فاء: فراولة.",
+        "timestamp": "03:19.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "Fa: Strawberries."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "التحري جلجل اكتشف سبب وجود",
+        "timestamp": "03:24.00",
+        "timestamp_end": "03:27.00",
+        "text_l2": "Detective Jaljal discovered the reason for"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "الصحون كلياتها هاي هون.",
+        "timestamp": "03:27.00",
+        "timestamp_end": "03:29.00",
+        "text_l2": "all these dishes being here."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "شكراً يا مساعدتي تنتن شكراً.",
+        "timestamp": "03:30.00",
+        "timestamp_end": "03:33.00",
+        "text_l2": "Thank you, my assistant Tantan, thank you."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "بس أنا اللي اكتشفت.",
+        "timestamp": "03:37.00",
+        "timestamp_end": "03:40.00",
+        "text_l2": "But I'm the one who discovered it."
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "إيمتى رح أصير أنا التحري تنتن؟",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:44.00",
+        "text_l2": "When will I become Detective Tantan?"
+      }
+    ],
+    "phrases_with_token_translations": "[غريب]. => [Strange].\n\n[إيش] السبب بوجود => [What's] the reason for\nإيش [السبب] بوجود => What's [the reason] for\nإيش السبب [بوجود] => presence, existence # custom translation for the noun 'existence' derived from 'wujud'\n\n[هاي] الصحون كلها هون؟ => all [these] dishes being here?\nهاي [الصحون] كلها هون؟ => all these [dishes] being here?\nهاي الصحون [كلها] هون؟ => [all] these dishes being here?\nهاي الصحون كلها [هون]؟ => all these dishes being [here]?\n\n[فعلاً]، إشي غريب => [Indeed], it is strange\nفعلاً، [إشي] غريب => it, something\nفعلاً، إشي [غريب] => Indeed, it is [strange]\n\n[وجود] هذا الأكل هون. => [having] this food here.\nوجود [هذا] الأكل هون. => having [this] food here.\nوجود هذا [الأكل] هون. => having this [food] here.\nوجود هذا الأكل [هون]. => having this food [here].\n\n[فاصوليا]. => [Beans].\n\n[تنتن]، بتعرفي إني أنا كتير كتير كتير => [Tantan], do you know that I really, really, really\nتنتن، [بتعرفي] إني أنا كتير كتير كتير => Tantan, [do you know] that I really, really, really\nتنتن، بتعرفي [إني] أنا كتير كتير كتير => Tantan, do you know [that] I really, really, really\nتنتن، بتعرفي إني [أنا] كتير كتير كتير => Tantan, do you know that [I] really, really, really\nتنتن، بتعرفي إني أنا [كتير] كتير كتير => Tantan, do you know that [really], really, really\nتنتن، بتعرفي إني أنا كتير [كتير] كتير => Tantan, do you know that really, [really], really\nتنتن، بتعرفي إني أنا كتير كتير [كتير] => Tantan, do you know that really, really, [really]\n\n[بحب] الفاصوليا لأنها كتير مفيدة للجسم؟ => [love] beans because they are very good for the body?\nبحب [الفاصوليا] لأنها كتير مفيدة للجسم؟ => love [beans] because they are very good for the body?\nبحب الفاصوليا [لأنها] كتير مفيدة للجسم؟ => love beans [because they are] very good for the body?\nبحب الفاصوليا لأنها [كتير] مفيدة للجسم؟ => love beans because they are [very] good for the body?\nبحب الفاصوليا لأنها كتير [مفيدة] للجسم؟ => love beans because they are very [good] for the body?\nبحب الفاصوليا لأنها كتير مفيدة [للجسم]؟ => love beans because they are very good [for the body]?\n\n[وأنا] كمان => [Me] too\nوأنا [كمان] => Me [too]\n\n[بس] ليش الفاصوليا هون؟ => [But] why are the beans here?\nبس [ليش] الفاصوليا هون؟ => But [why] are the beans here?\nبس ليش [الفاصوليا] هون؟ => But why are [the beans] here?\nبس ليش الفاصوليا [هون]؟ => But why are the beans [here]?\n\n[و]في كمان فريكة، أنا بحب الفريكة => [And] there's also freekeh, I love freekeh\nو[في] كمان فريكة، أنا بحب الفريكة => [there's] also freekeh, I love freekeh\nوفي [كمان] فريكة، أنا بحب الفريكة => And there's [also] freekeh, I love freekeh\nوفي كمان [فريكة]، أنا بحب الفريكة => And there's also [freekeh], I love freekeh\nوفي كمان فريكة، [أنا] بحب الفريكة => And there's also freekeh, [I] love freekeh\nوفي كمان فريكة، أنا [بحب] الفريكة => And there's also freekeh, I [love] freekeh\nوفي كمان فريكة، أنا بحب [الفريكة] => And there's also freekeh, I love [freekeh]\n\n[وبقدر] آكلها بدل الرز. => [and I can] eat it instead of rice.\nوبقدر [آكلها] بدل الرز. => and I can [eat it] instead of rice.\nوبقدر آكلها [بدل] الرز. => and I can eat it [instead of] rice.\nوبقدر آكلها بدل [الرز]. => and I can eat it instead of [rice].\n\n[كتير] طيبة الفريكة، => Freekeh is [very] tasty,\nكتير [طيبة] الفريكة، => Freekeh is very [tasty],\nكتير طيبة [الفريكة]، => [Freekeh] is very tasty,\n\n[وأنا] كمان بحبها كتير. => [and I] love it a lot too.\nوأنا [كمان] بحبها كتير. => and I love it a lot [too]\nوأنا كمان [بحبها] كتير. => and I [love it] a lot too\nوأنا كمان بحبها [كتير]. => and I love it [a lot] too\n\n[شوفي] هون، فلافل. => [Look] here, falafel.\nشوفي [هون]، فلافل. => Look [here], falafel.\nشوفي هون، [فلافل] => Look here, [falafel]\n\n[الفلافل] كتير طيب يا تنتن، => [Falafel] is very tasty, Tantan,\nالفلافل [كتير] طيب يا تنتن، => Falafel is [very] tasty, Tantan,\nالفلافل كتير [طيب] يا تنتن، => Falafel is very [tasty], Tantan,\nالفلافل كتير طيب يا [تنتن]، => Falafel is very tasty, [Tantan],\n\n[أنا] كتير بحبه مرات على الفطور => [I] love it a lot, sometimes for breakfast\nأنا [كتير] بحبه مرات على الفطور => I love it [a lot], sometimes for breakfast\nأنا كتير [بحبه] مرات على الفطور => I [love it] a lot, sometimes for breakfast\nأنا كتير بحبه [مرات] على الفطور => I love it a lot, [sometimes] for breakfast\nأنا كتير بحبه مرات [على] الفطور => I love it a lot, sometimes [for] breakfast\nأنا كتير بحبه مرات على [الفطور] => I love it a lot, sometimes for [breakfast]\n\n[ومرات] على العشا => [and sometimes] for dinner\nومرات [على] العشا => and sometimes [for] dinner\nومرات على [العشا] => and sometimes for [dinner]\n\n[فعلاً]. => [Indeed].\n\n[و]فول، والفول كمان => [And] ful, and ful is also\nو[فول]، والفول كمان => And [ful], and ful is also\nوفول، [والفول] كمان => And ful, [and ful] is also\nوفول، والفول [كمان] => And ful, and ful [is also]\n\n[مفيد] وصحي => [beneficial] and healthy\nمفيد [و]صحي => beneficial [and] healthy\nمفيد و[صحي] => beneficial and [healthy]\n\n[في] هون نوع فاكهة لونه أحمر => [There's] a type of fruit here that's red\nفي [هون] نوع فاكهة لونه أحمر => There's a type of fruit [here] that's red\nفي هون [نوع] فاكهة لونه أحمر => There's a [type] of fruit here that's red\nفي هون نوع [فاكهة] لونه أحمر => There's a type of [fruit] here that's red\nفي هون نوع فاكهة [لونه] أحمر => its color\nفي هون نوع فاكهة لونه [أحمر] => There's a type of fruit here that's [red]\n\n[و]طعمه طيب. => [and] tastes good.\nو[طعمه] طيب. => and [tastes] good.\nوطعمه [طيب]. => and tastes [good].\n\n[طعم] طيب. => Good [taste].\nطعم [طيب]. => [Good] taste.\n\n[فراولة]. => [Strawberries].\n\n[الفراولة] كتير مفيدة، => [Strawberries] are very beneficial,\nالفراولة [كتير] مفيدة، => Strawberries are [very] beneficial,\nالفراولة كتير [مفيدة]، => Strawberries are very [beneficial],\n\n[بتحتوي على] فيتامينات كتير => [they contain] many vitamins\nبتحتوي على فيتامينات [كتير] => they contain [many] vitamins\nبتحتوي على [فيتامينات] كتير => they contain many [vitamins]\n\n[مهمة] للجسم، => [important] for the body,\nمهمة [للجسم]، => [for the body],\n\n[بتنشط] الجسم. => [they energize] the body.\nبتنشط [الجسم] => they energize [the body]\n\n[يا ترى] شو سبب وجود فاصوليا، => [I wonder] what's the reason for beans,\nيا ترى [شو] سبب وجود فاصوليا، => I wonder [what's] the reason for beans,\nيا ترى شو [سبب] وجود فاصوليا، => I wonder what's [the reason] for beans,\nيا ترى شو سبب [وجود] فاصوليا، => existence, presence\nيا ترى شو سبب وجود [فاصوليا]، => I wonder what's the reason for [beans],\n\n[فريكة]، فلافل، وفول، => [freekeh], falafel, and ful,\nفريكة، [فلافل]، وفول، => freekeh, [falafel], and ful,\nفريكة، فلافل، [و]فول، => freekeh, falafel, [and] ful,\nفريكة، فلافل، و[فول]، => freekeh, falafel, and [ful]_\n\n[و]فراولة؟ => [and] strawberries being here?\nو[فراولة]؟ => and [strawberries] being here?\n\n[أكيد] في سبب يا تنتن، أكيد. => There's [definitely] a reason, Tantan, definitely.\nأكيد [في] سبب يا تنتن، أكيد. => [There's] definitely a reason, Tantan, definitely.\nأكيد في [سبب] يا تنتن، أكيد. => There's definitely [a reason], Tantan, definitely.\nأكيد في سبب [يا تنتن]، أكيد. => There's definitely a reason, [Tantan], definitely.\nأكيد في سبب يا تنتن، [أكيد]. => There's definitely a reason, Tantan, [definitely].\n\n[و]التحري جلجل رح يكتشف السبب، => [And] Detective Jaljal will discover the reason,\nو[التحري] جلجل رح يكتشف السبب، => And [Detective] Jaljal will discover the reason,\nوالتحري [جلجل] رح يكتشف السبب، => And Detective [Jaljal] will discover the reason,\nوالتحري جلجل [رح] يكتشف السبب، => And Detective Jaljal [will] discover the reason,\nوالتحري جلجل رح [يكتشف] السبب، => And Detective Jaljal will [discover] the reason,\nوالتحري جلجل رح يكتشف [السبب]، => And Detective Jaljal will discover [the reason],\n\n[ما] تقلقي. => [don't] worry.\nما [تقلقي]. => don't [worry].\n\n[أنا] عرفت، أنا عرفت، أنا عرفت. => [I] know, I know, I know.\nأنا [عرفت]، أنا عرفت، أنا عرفت. => I [know], I know, I know.\nأنا عرفت، [أنا] عرفت، أنا عرفت. => I know, [I] know, I know.\nأنا عرفت، أنا [عرفت]، أنا عرفت. => I know, I [know], I know.\nأنا عرفت، أنا عرفت، [أنا] عرفت. => I know, I know, [I] know.\nأنا عرفت، أنا عرفت، أنا [عرفت]. => I know, I know, I [know].\n\n[إيش] يا تنتن؟ => [What is it], Tantan?\nإيش يا [تنتن]؟ => What is it, [Tantan]?\n\n[كلهم] أكلات صحية => [They are all] healthy foods\nكلهم [أكلات] صحية => They are all healthy [foods]\nكلهم أكلات [صحية] => They are all [healthy] foods\n\n[ومفيدة] وطعمها زاكي. => [and beneficial] and taste delicious.\nومفيدة [و]طعمها زاكي. => and beneficial [and] taste delicious.\nومفيدة و[طعمها] زاكي. => its taste\nومفيدة وطعمها [زاكي]. => and beneficial and taste [delicious.]\n\n[صح] يا تنتن صح، => [Right], Tantan, right,\nصح [يا تنتن] صح، => Right, [Tantan], right,\nصح يا تنتن [صح]، => Right, Tantan, [right],\n\n[هي] أكلات كتير صحية => [they are] very healthy foods\nهي [أكلات] كتير صحية => they are very healthy [foods]\nهي أكلات [كتير] صحية => they are [very] healthy foods\nهي أكلات كتير [صحية] => they are very [healthy] foods\n\n[و]مفيدة وشهية. => [and] beneficial and appetizing.\nو[مفيدة] وشهية. => and [beneficial] and appetizing.\nومفيدة [و]شهية. => and beneficial [and] appetizing.\nومفيدة و[شهية]. => and beneficial and [appetizing].\n\n[لا]. => [No].\n\n[لسا]، أكيد في سبب تاني => [Not yet], there's definitely another reason\nلسا، [أكيد] في سبب تاني => Not yet, there's [definitely] another reason\nلسا، أكيد [في] سبب تاني => Not yet, [there's] definitely another reason\nلسا، أكيد في [سبب] تاني => Not yet, there's definitely another [reason]\nلسا، أكيد في سبب [تاني] => Not yet, there's definitely [another] reason\n\nلوجود [هاي] الصحون كلها هون. => for all [these] dishes being here.\nلوجود هاي [الصحون] كلها هون. => for all these [dishes] being here.\nلوجود هاي الصحون [كلها] هون. => for [all] these dishes being here.\nلوجود هاي الصحون كلها [هون] => for all these dishes being [here]\n\n[فاصوليا]، فريكة، => [Beans], freekeh,\nفاصوليا، [فريكة]، => Beans, [freekeh],\n\n[فلافل]، فول، => [falafel], ful,\nفلافل، [فول]، => falafel, [ful],\n\n[فراولة]. => [strawberries].\n\n[أكيد] في سبب وما تقلقي، => There's [definitely] a reason, don't worry,\nأكيد [في] سبب وما تقلقي، => [There's] definitely a reason, don't worry,\nأكيد في [سبب] وما تقلقي، => There's definitely [a reason], don't worry,\nأكيد في سبب [وما تقلقي]، => There's definitely a reason, [don't worry],\n\n[أنا] عرفت، أنا عرفت. => [I] know, I know.\nأنا [عرفت]، أنا عرفت. => I [know], I know.\nأنا عرفت، [أنا] عرفت. => I know, [I] know.\nأنا عرفت، أنا [عرفت]. => I know, I [know].\n\n[إيش] يا تنتن؟ احكيلي. => [What is it], Tantan? Tell me.\nإيش يا [تنتن]؟ احكيلي. => What is it, [Tantan]? Tell me.\nإيش يا تنتن؟ [احكيلي]. => What is it, Tantan? [Tell me]\n\n[كلهم] بيبدوا بحرف الفاء. => [They all] start with the letter 'Fa'.\nكلهم [بيبدوا] بحرف الفاء. => They all [start] with the letter 'Fa'.\nكلهم بيبدوا [بحرف] الفاء. => They all start [with the letter] 'Fa'.\nكلهم بيبدوا بحرف [الفاء]. => They all start with the letter '[Fa]'.\n\n[صح] يا تنتن صح، مزبوط، => [Right], Tantan, right, exactly,\nصح [يا تنتن] صح، مزبوط، => Right, [Tantan], right, exactly,\nصح يا تنتن [صح]، مزبوط، => Right, Tantan, [right], exactly,\nصح يا تنتن صح، [مزبوط]، => Right, Tantan, right, [exactly]\n\n[كلياتهم] بيبدوا بحرف الفاء. => [they all] start with the letter 'Fa'.\nكلياتهم [بيبدوا] بحرف الفاء. => they all [start] with the letter 'Fa'.\nكلياتهم بيبدوا [بحرف] الفاء. => they all start [with the letter] 'Fa'.\nكلياتهم بيبدوا بحرف [الفاء]. => they all start with the letter ['Fa'].\n\n[فاء]: فاصوليا. => [Fa]: Beans.\nفاء: [فاصوليا]. => Fa: [Beans].\n\n[فاء]: فريكة. => [Fa]: Freekeh.\nفاء: [فريكة]. => Fa: [Freekeh].\n\n[فاء]: فلافل. => [Fa]: Falafel.\nفاء: [فلافل]. => Fa: [Falafel].\n\n[فاء]: فول. => [Fa]: Ful.\nفاء: [فول]. => Fa: [Ful].\n\n[فاء]: فراولة => [Fa]: Strawberries\nفاء: [فراولة] => Fa: [Strawberries]\n\n[التحري] جلجل اكتشف سبب وجود => [Detective] Jaljal discovered the reason for\nالتحري [جلجل] اكتشف سبب وجود => Detective [Jaljal] discovered the reason for\nالتحري جلجل [اكتشف] سبب وجود => Detective Jaljal [discovered] the reason for\nالتحري جلجل اكتشف [سبب] وجود => Detective Jaljal discovered [the reason] for\nالتحري جلجل اكتشف سبب [وجود] => existence, presence # The English sentence ends in \"for\" but \"وجود\" literally means existence or presence\n\n[الصحون] كلياتها هاي هون. => all these [dishes] being here.\nالصحون [كلياتها] هاي هون. => [all] these dishes being here.\nالصحون كلياتها [هاي] هون. => all [these] dishes being here.\nالصحون كلياتها هاي [هون]. => all these dishes being [here].\n\n[شكراً] يا مساعدتي تنتن شكراً. => [Thank you], my assistant Tantan, thank you.\nشكراً يا [مساعدتي] تنتن شكراً. => Thank you, [my assistant] Tantan, thank you.\nشكراً يا مساعدتي [تنتن] شكراً. => Thank you, my assistant [Tantan], thank you.\nشكراً يا مساعدتي تنتن [شكراً]. => Thank you, my assistant Tantan, [thank you].\n\n[بس] أنا اللي اكتشفت. => [But] I'm the one who discovered it.\nبس [أنا] اللي اكتشفت. => But [I'm] the one who discovered it.\nبس أنا [اللي] اكتشفت. => But I'm [the one who] discovered it.\nبس أنا اللي [اكتشفت]. => But I'm the one who [discovered it]. # mapped the verb to include the implied object \"it\" for better clarity for the user regardless of its morphological absence in Arabic\n\n[إيمتى] رح أصير أنا التحري تنتن؟ => [When] will I become Detective Tantan?\nإيمتى [رح] أصير أنا التحري تنتن؟ => will\nإيمتى رح [أصير] أنا التحري تنتن؟ => become\nإيمتى رح أصير [أنا] التحري تنتن؟ => When will [I] become Detective Tantan?\nإيمتى رح أصير أنا [التحري] تنتن؟ => When will I become [Detective] Tantan?\nإيمتى رح أصير أنا التحري [تنتن]؟ => When will I become Detective [Tantan]?\n\n",
+    "lessons": "# اكتشاف غريب في المطبخ\n00:27.00 غريب.\n00:30.00 إيش السبب بوجود\n00:33.00 هاي الصحون كلها هون؟\n00:36.00 فعلاً، إشي غريب\n00:38.00 وجود هذا الأكل هون.\n00:41.00 فاصوليا.\n\n# حوار حول الأطعمة المفضلة (Part 1)\n00:45.00 تنتن، بتعرفي إني أنا كتير كتير كتير\n00:48.00 بحب الفاصوليا لأنها كتير مفيدة للجسم؟\n00:50.00 وأنا كمان.\n00:52.00 بس ليش الفاصوليا هون؟\n00:57.00 وفي كمان فريكة، أنا بحب الفريكة\n01:00.00 وبقدر آكلها بدل الرز.\n\n# حوار حول الأطعمة المفضلة (Part 2)\n01:03.00 كتير طيبة الفريكة،\n01:05.00 وأنا كمان بحبها كتير.\n01:08.00 شوفي هون، فلافل.\n01:11.00 الفلافل كتير طيب يا تنتن،\n01:14.00 أنا كتير بحبه مرات على الفطور\n01:17.00 ومرات على العشا.\n01:20.00 فعلاً.\n\n# الفوائد الصحية للأطعمة\n01:21.00 وفول، والفول كمان\n01:24.00 مفيد وصحي.\n01:27.00 في هون نوع فاكهة لونه أحمر\n01:30.00 وطعمه طيب.\n01:32.00 طعم طيب.\n01:36.00 فراولة.\n01:40.00 الفراولة كتير مفيدة،\n01:43.00 بتحتوي على فيتامينات كتير\n01:46.00 مهمة للجسم،\n01:48.00 بتنشط الجسم.\n\n# البحث عن الحلقة المفقودة\n01:51.00 يا ترى شو سبب وجود فاصوليا،\n01:54.00 فريكة، فلافل، وفول،\n01:57.00 وفراولة؟\n02:02.00 أكيد في سبب يا تنتن، أكيد.\n02:05.00 والتحري جلجل رح يكتشف السبب،\n02:08.00 ما تقلقي.\n\n# الكشف عن السر اللغوي\n02:09.00 أنا عرفت، أنا عرفت، أنا عرفت.\n02:11.00 إيش يا تنتن؟\n02:13.00 كلهم أكلات صحية\n02:15.00 ومفيدة وطعمها زاكي.\n02:18.00 صح يا تنتن صح،\n02:21.00 هي أكلات كتير صحية\n02:24.00 ومفيدة وشهية.\n02:28.00 لا.\n02:30.00 لسا، أكيد في سبب تاني\n02:33.00 لوجود هاي الصحون كلها هون.\n\n# حل اللغز\n02:38.00 فاصوليا، فريكة،\n02:41.00 فلافل، فول،\n02:44.00 فراولة.\n02:47.00 أكيد في سبب وما تقلقي،\n02:50.00 أنا عرفت، أنا عرفت.\n02:51.00 إيش يا تنتن؟ احكيلي.\n02:53.00 كلهم بيبدوا بحرف الفاء.\n02:56.00 صح يا تنتن صح، مزبوط،\n02:58.00 كلياتهم بيبدوا بحرف الفاء.\n\n# تأكيد الاكتشاف\n03:01.00 فاء: فاصوليا.\n03:06.00 فاء: فريكة.\n03:10.00 فاء: فلافل.\n03:14.00 فاء: فول.\n03:19.00 فاء: فراولة.\n03:24.00 التحري جلجل اكتشف سبب وجود\n03:27.00 الصحون كلياتها هاي هون.\n03:30.00 شكراً يا مساعدتي تنتن شكراً.\n03:37.00 بس أنا اللي اكتشفت.\n03:41.00 إيمتى رح أصير أنا التحري تنتن؟",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 20:58:54 UTC",
+  "updated_at": "2026-04-25 21:13:36 UTC",
+  "exported_at": "2026-04-25T21:13:37Z"
+}

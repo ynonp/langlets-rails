@@ -1,0 +1,387 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=rKyG1D9VVjU",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "ممم، مرحبا يا أصدقائي الأطفال.",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:02.00",
+        "text_l2": "Mmm, hello, my little friends."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "اليوم أنا عم بتدرب على",
+        "timestamp": "00:02.00",
+        "timestamp_end": "00:04.00",
+        "text_l2": "Today I'm practicing"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "تجهيز صندوق طعام المدرسة!",
+        "timestamp": "00:04.00",
+        "timestamp_end": "00:07.00",
+        "text_l2": "preparing my school lunchbox!"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "تن تن، تن تن.",
+        "timestamp": "00:07.00",
+        "timestamp_end": "00:10.00",
+        "text_l2": "Tantan, Tantan."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أنا هون يا جلجل.",
+        "timestamp": "00:10.00",
+        "timestamp_end": "00:12.00",
+        "text_l2": "I'm here, Jaljal."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "صندوق طعام المدرسة؟ هه هه!",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:15.00",
+        "text_l2": "School lunchbox? Haha!"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "حكيتي صندوق طعام المدرسة؟",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:18.00",
+        "text_l2": "Did you say school lunchbox?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "امم، أنا عم بجهز فيه.",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:20.00",
+        "text_l2": "Mmm, I'm preparing it."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "شكراً يا تنتن، شكراً.",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:22.00",
+        "text_l2": "Thanks, Tantan, thanks."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "هلا ديّ، دقيقة واحدة.",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "Wait here, just one minute."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "لازم يحتوي على الأشياء المفيدة.",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:27.00",
+        "text_l2": "It needs to contain healthy things."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "أنت كمان جبت صندوق طعام المدرسة؟",
+        "timestamp": "00:27.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Did you bring a school lunchbox too?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "منشان أجهزه معاكي.",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "So I can prepare it with you."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "أول إشي لازم يكون في عنا",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "The first thing we need to have"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "سندويشة صحية ومفيدة.",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "is a healthy and nutritious sandwich."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "أنا عندي جهزت سندويشة زيت وزعتر.",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "I've prepared a za'atar and oil sandwich."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "ممم، وأنا كمان كتير بحب السندويشات.",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:46.00",
+        "text_l2": "Mmm, I also really love sandwiches."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "لحظة شوي، هوو!",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "Wait a sec, whoo!"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "تاتا! أنا بحب سندويشة اللبنة",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "Ta-da! I love labneh sandwiches"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "لأنها بتحتوي على الكالسيوم",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:52.00",
+        "text_l2": "because they contain calcium"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "اللي بيفيد العظم إلنا، ممم.",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "which is good for our bones, mmm."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "صح، أنا كمان بحب سندويشة اللبنة.",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:58.00",
+        "text_l2": "True, I also love labneh sandwiches."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "آه، لحظة شوي.",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:01.00",
+        "text_l2": "Ah, wait a sec."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "وأنا بحب مع اللبنة إشي كتير طيب.",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "And I love having something very nice with labneh."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "هاا، تاتا! الخيار.",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "Haa, ta-da! Cucumbers."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "الخيار كتير طيب",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "Cucumbers are very good"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "لأنه فيه فيتامينات كتير مهمة.",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "because they have many important vitamins."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "صح، الخضروات مفيدة والفواكه كمان.",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:13.00",
+        "text_l2": "True, vegetables are healthy and fruits too."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "عشان هيك أنا جهزت عندي هون تفاحة.",
+        "timestamp": "01:13.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "That's why I prepared an apple here."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "هاا، الفواكه كمان فيها كتير فيتامينات",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "Haa, fruits also have many vitamins"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "مهمة إلنا.",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "important for us."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "أنا بحب أنواع الفواكه كلياتها.",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:23.00",
+        "text_l2": "I love all kinds of fruits."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "باا، تارا! الموز.",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:25.00",
+        "text_l2": "Ba, tara! Bananas."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "أنا بحب الموز.",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:27.00",
+        "text_l2": "I love bananas."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "اللي موجود عنا في البيت",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:29.00",
+        "text_l2": "Whatever we have at home"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بنحطه في صندوق طعام المدرسة.",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:31.00",
+        "text_l2": "we put it in the school lunchbox."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "صحيح يا جلجل.",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:33.00",
+        "text_l2": "That's right, Jaljal."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "هلا أنا جاهز.",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:35.00",
+        "text_l2": "Now I'm ready."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "لا يا جلجل، في إشي كتير مهم",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "No Jaljal, there's something very important"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "لازم ما ننساه.",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "we must not forget."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "إيش هو؟",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "What is it?"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "مطرة المي، المي كتير مفيدة وضرورية.",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "The water bottle, water is very healthy and essential."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "لحظة شوي، أنا مجهزها.",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "Wait a sec, I have it ready."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "هيها هون.",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Here it is."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "وهيك صندوق طعام المدرسة صار جاهز!",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:54.00",
+        "text_l2": "And so the school lunchbox is ready!"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "لا يا تنتن، خليكي معي.",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "No Tantan, stay with me."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "خليني بس أسكره، استني شوي.",
+        "timestamp": "01:57.00",
+        "timestamp_end": "01:59.00",
+        "text_l2": "Let me just close it, wait a sec."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "بس أنا ما نسيت إشي.",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "But I didn't forget anything."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "لا نسينا، نسينا الحقيبة المدرسية!",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:04.00",
+        "text_l2": "Yes we did, we forgot the school bag!"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "آه يا جلجل، بس اليوم الجمعة.",
+        "timestamp": "02:04.00",
+        "timestamp_end": "02:06.00",
+        "text_l2": "Ah Jaljal, but today is Friday."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "ويوم الجمعة ما في مدرسة، في عطلة.",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "And on Friday there's no school, it's a holiday."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "أنا كنت عم بتدرب أنا وأصدقائي الأطفال",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:13.00",
+        "text_l2": "I was practicing with my little friends"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "على تجهيز صندوق طعام المدرسة.",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:17.00",
+        "text_l2": "on preparing the school lunchbox."
+      }
+    ],
+    "phrases_with_token_translations": "[ممم]، مرحبا يا أصدقائي الأطفال. => [Mmm], hello, my little friends.\nممم، [مرحبا] يا أصدقائي الأطفال. => Mmm, [hello], my little friends.\nممم، مرحبا يا [أصدقائي] الأطفال. => my friends\nممم، مرحبا يا أصدقائي [الأطفال]. => Mmm, hello, my [little] friends. # although \"atfal\" literally means children, it is used here to mean \"little\" or \"young\" in the context of little friends.\n\n[اليوم] أنا عم بتدرب على => [Today] I'm practicing\nاليوم [أنا] عم بتدرب على => Today [I]'m practicing\nاليوم أنا [عم بتدرب] على => Today I['m practicing]\nاليوم أنا عم بتدرب [على] => on, with # custom translation for the preposition used with the verb in Arabic\n\n[تجهيز] صندوق طعام المدرسة! => [preparing] my school lunchbox!\nتجهيز [صندوق طعام] المدرسة! => preparing my [lunchbox]!\nتجهيز صندوق طعام [المدرسة]! => preparing my [school] lunchbox!\n\n[تن تن]، تن تن. => [Tantan], Tantan.\nتن تن، [تن تن]. => Tantan, [Tantan].\n\n[أنا] هون يا جلجل. => [I'm] here, Jaljal.\nأنا [هون] يا جلجل. => I'm [here], Jaljal.\nأنا هون يا [جلجل]. => I'm here, [Jaljal].\n\n[صندوق طعام] المدرسة؟ هه هه! => School [lunchbox]? Haha!\nصندوق طعام [المدرسة]؟ هه هه! => [School] lunchbox? Haha!\nصندوق طعام المدرسة؟ [هه هه]! => School lunchbox? [Haha]!\n\n[حكيتي] صندوق طعام المدرسة؟ => [Did you say] school lunchbox?\nحكيتي [صندوق طعام] المدرسة؟ => Did you say school [lunchbox]?\nحكيتي صندوق طعام [المدرسة]؟ => Did you say [school] lunchbox?\n\n[امم]، أنا عم بجهز فيه. => [Mmm], I'm preparing it.\nامم، [أنا] عم بجهز فيه. => Mmm, [I]'m preparing it.\nامم، أنا [عم بجهز] فيه. => Mmm, I'[m preparing] it.\nامم، أنا عم بجهز [فيه]. => Mmm, I'm preparing [it].\n\n[شكراً] يا تنتن، شكراً. => [Thanks], Tantan, thanks.\nشكراً [يا تنتن]، شكراً. => Thanks, [Tantan], thanks.\nشكراً يا تنتن، [شكراً]. => Thanks, Tantan, [thanks].\n\n[هلا] ديّ، دقيقة واحدة => [Wait] here, just one minute # \"Halla'\" literally means \"now\", often used to initiate a request like \"wait\"\nهلا [ديّ]، دقيقة واحدة => Wait [here], just one minute # \"dayyi\" is a dialect term for \"here\" or \"near me\"\nهلا ديّ، [دقيقة] واحدة => Wait here, just one [minute]\nهلا ديّ، دقيقة [واحدة] => Wait here, just [one] minute\n\n[لازم] يحتوي على الأشياء المفيدة. => [It needs to] contain healthy things.\nلازم [يحتوي على] الأشياء المفيدة. => It needs to [contain] healthy things.\nلازم يحتوي على [الأشياء] المفيدة. => It needs to contain healthy [things].\nلازم يحتوي على الأشياء [المفيدة]. => It needs to contain [healthy] things.\n\n[أنت] كمان جبت صندوق طعام المدرسة؟ => Did [you] bring a school lunchbox too?\nأنت [كمان] جبت صندوق طعام المدرسة؟ => Did you bring a school lunchbox [too]?\nأنت كمان [جبت] صندوق طعام المدرسة؟ => Did you [bring] a school lunchbox too?\nأنت كمان جبت [صندوق طعام] المدرسة؟ => Did you bring a [lunchbox] too?\nأنت كمان جبت صندوق طعام [المدرسة]؟ => Did you bring a [school] lunchbox too?\n\n[منشان] أجهزه معاكي. => [So] I can prepare it with you.\nمنشان [أجهزه] معاكي. => So [I can prepare it] with you.\nمنشان أجهزه [معاكي]. => So I can prepare it [with you]\n\n[أول] إشي لازم يكون في عنا => [The first] thing we need to have\nأول [إشي] لازم يكون في عنا => The first [thing] we need to have\nأول إشي [لازم] يكون في عنا => The first thing we [need] to have\nأول إشي لازم [يكون في] عنا => to have, to exist # Used custom to clarify how 'يكون في' functions as existence/possession\nأول إشي لازم يكون في [عنا] => The first thing [we] need to have # aligns 'na' suffix with the subject 'we'\n\n[سندويشة] صحية ومفيدة. => is a healthy and nutritious [sandwich].\nسندويشة [صحية] ومفيدة. => is a [healthy] and nutritious sandwich.\nسندويشة صحية [ومفيدة]. => is a healthy [and nutritious] sandwich.\n\n[أنا] عندي جهزت سندويشة زيت وزعتر => [I]'ve prepared a za'atar and oil sandwich.\nأنا [عندي] جهزت سندويشة زيت وزعتر => have\nأنا عندي [جهزت] سندويشة زيت وزعتر => I've [prepared] a za'atar and oil sandwich.\nأنا عندي جهزت [سندويشة] زيت وزعتر => I've prepared a za'atar and oil [sandwich].\nأنا عندي جهزت سندويشة [زيت] وزعتر => I've prepared a za'atar and [oil] sandwich.\nأنا عندي جهزت سندويشة زيت [و] زعتر => I've prepared a za'atar [and] oil sandwich.\nأنا عندي جهزت سندويشة زيت و [زعتر] => I've prepared a [za'atar] and oil sandwich.\n\n[ممم]، وأنا كمان كتير بحب السندويشات. => [Mmm], I also really love sandwiches.\nممم، [وأنا] كمان كتير بحب السندويشات. => Mmm, [I] also really love sandwiches.\nممم، وأنا [كمان] كتير بحب السندويشات. => Mmm, I [also] really love sandwiches.\nممم، وأنا كمان [كتير] بحب السندويشات. => Mmm, I also [really] love sandwiches.\nممم، وأنا كمان كتير [بحب] السندويشات. => Mmm, I also really [love] sandwiches.\nممم، وأنا كمان كتير بحب [السندويشات]. => Mmm, I also really love [sandwiches].\n\n[لحظة شوي]، هوو! => [Wait a sec], whoo!\nلحظة شوي، [هوو]! => Wait a sec, [whoo]!\n\n[تاتا]! أنا بحب سندويشة اللبنة => [Ta-da]! I love labneh sandwiches\nتاتا! [أنا] بحب سندويشة اللبنة => Ta-da! [I] love labneh sandwiches\nتاتا! أنا [بحب] سندويشة اللبنة => Ta-da! I [love] labneh sandwiches\nتاتا! أنا بحب [سندويشة] اللبنة => Ta-da! I love labneh [sandwiches]\nتاتا! أنا بحب سندويشة [اللبنة] => Ta-da! I love [labneh] sandwiches\n\n[لأنها] بتحتوي على الكالسيوم => [because they] contain calcium\nلأنها [بتحتوي على] الكالسيوم => because they [contain] calcium\nلأنها بتحتوي على [الكالسيوم] => because they contain [calcium]\n\n[اللي] بيفيد العظم إلنا، ممم. => [which] is good for our bones, mmm.\nاللي [بيفيد] العظم إلنا، ممم. => [is good for] our bones, mmm.\nاللي بيفيد [العظم] إلنا، ممم. => which is good for our [bones], mmm.\nاللي بيفيد العظم [إلنا]، ممم. => which is good for [our] bones, mmm.\n\n[صح]، أنا كمان بحب سندويشة اللبنة. => [True], I also love labneh sandwiches.\nصح، [أنا] كمان بحب سندويشة اللبنة. => True, [I] also love labneh sandwiches.\nصح، أنا [كمان] بحب سندويشة اللبنة. => True, I [also] love labneh sandwiches.\nصح، أنا كمان [بحب] سندويشة اللبنة. => True, I also [love] labneh sandwiches.\nصح، أنا كمان بحب [سندويشة] اللبنة. => True, I also love labneh [sandwiches].\nصح، أنا كمان بحب سندويشة [اللبنة]. => True, I also love [labneh] sandwiches.\n\n[آه]، لحظة شوي. => [Ah], wait a sec.\nآه، [لحظة] شوي. => [sec]\nآه، لحظة [شوي]. => a bit, a little # custom translation to clarify meaning of this word in Levantine Arabic\nآه، [لحظة شوي]. => wait a moment, just a second # custom translation for the full idiomatic expression\n\n[و]أنا بحب مع اللبنة إشي كتير طيب. => [And] I love having something very nice with labneh.\nو[أنا] بحب مع اللبنة إشي كتير طيب. => And [I] love having something very nice with labneh.\nوأنا [بحب] مع اللبنة إشي كتير طيب. => And I [love] having something very nice with labneh.\nوأنا بحب [مع] اللبنة إشي كتير طيب. => And I love having something very nice [with] labneh.\nوأنا بحب مع [اللبنة] إشي كتير طيب. => And I love having something very nice with [labneh].\nوأنا بحب مع اللبنة [إشي] كتير طيب. => And I love having [something] very nice with labneh.\nوأنا بحب مع اللبنة إشي [كتير] طيب. => And I love having something [very] nice with labneh.\nوأنا بحب مع اللبنة إشي كتير [طيب]. => And I love having something very [nice] with labneh.\n\n[هاا]، تاتا! الخيار. => [Haa], ta-da! Cucumbers.\nهاا، [تاتا]! الخيار. => Haa, [ta-da]! Cucumbers.\nهاا، تاتا! [الخيار]. => Haa, ta-da! [Cucumbers].\n\n[الخيار] كتير طيب => [Cucumbers] are very good\nالخيار [كتير] طيب => Cucumbers are [very] good\nالخيار كتير [طيب] => Cucumbers are very [good]\n\n[لأنه] فيه فيتامينات كتير مهمة. => [because] they have many important vitamins.\nلأنه [فيه] فيتامينات كتير مهمة. => because [they have] many important vitamins.\nلأنه فيه [فيتامينات] كتير مهمة. => because they have many important [vitamins]\nلأنه فيه فيتامينات [كتير] مهمة. => because they have [many] important vitamins.\nلأنه فيه فيتامينات كتير [مهمة] => because they have many [important] vitamins.\n\n[صح]، الخضروات مفيدة والفواكه كمان => [True], vegetables are healthy and fruits too.\nصح، [الخضروات] مفيدة والفواكه كمان => True, [vegetables] are healthy and fruits too.\nصح، الخضروات [مفيدة] والفواكه كمان => True, vegetables [are healthy] and fruits too.\nصح، الخضروات مفيدة [و]الفواكه كمان => True, vegetables are healthy [and] fruits too.\nصح، الخضروات مفيدة و[الفواكه] كمان => True, vegetables are healthy and [fruits] too.\nصح، الخضروات مفيدة والفواكه [كمان] => True, vegetables are healthy and fruits [too]\n\n[عشان هيك] أنا جهزت عندي هون تفاحة => [That's why] I prepared an apple here\nعشان هيك [أنا] جهزت عندي هون تفاحة => That's why [I] prepared an apple here\nعشان هيك أنا [جهزت] عندي هون تفاحة => That's why I [prepared] an apple here\nعشان هيك أنا جهزت [عندي] هون تفاحة => with me\nعشان هيك أنا جهزت عندي [هون] تفاحة => That's why I prepared an apple [here]\nعشان هيك أنا جهزت عندي هون [تفاحة] => That's why I prepared [an apple] here\n\n[هاا]، الفواكه كمان فيها كتير فيتامينات => [Haa], fruits also have many vitamins\nهاا، [الفواكه] كمان فيها كتير فيتامينات => Haa, [fruits] also have many vitamins\nهاا، الفواكه [كمان] فيها كتير فيتامينات => Haa, fruits [also] have many vitamins\nهاا، الفواكه كمان [فيها] كتير فيتامينات => Haa, fruits also [have] many vitamins\nهاا، الفواكه كمان فيها [كتير] فيتامينات => Haa, fruits also have [many] vitamins\nهاا، الفواكه كمان فيها كتير [فيتامينات] => Haa, fruits also have many [vitamins]\n\n[مهمة] إلنا => [important] for us\nمهمة [إلنا] => important [for us]\n\n[أنا] بحب أنواع الفواكه كلياتها. => [I] love all kinds of fruits.\nأنا [بحب] أنواع الفواكه كلياتها. => I [love] all kinds of fruits.\nأنا بحب [أنواع] الفواكه كلياتها. => I love all [kinds] of fruits.\nأنا بحب أنواع [الفواكه] كلياتها. => I love all kinds of [fruits].\nأنا بحب أنواع الفواكه [كلياتها]. => I love [all] kinds of fruits.\n\n[باا]، تارا! الموز. => [Ba], tara! Bananas.\nباا، [تارا]! الموز. => Ba, [tara]! Bananas.\nباا، تارا! [الموز]. => Ba, tara! [Bananas].\n\n[أنا] بحب الموز => [I] love bananas.\nأنا [بحب] الموز => I [love] bananas.\nأنا بحب [الموز] => I love [bananas].\n\n[اللي] موجود عنا في البيت => [Whatever] we have at home\nاللي [موجود] عنا في البيت => present, existing\nاللي موجود [عنا] في البيت => Whatever [we have] at home\nاللي موجود عنا [في] البيت => Whatever we have [at] home\nاللي موجود عنا في [البيت] => Whatever we have at [home]\n\n[بنحطه] في صندوق طعام المدرسة => [we put it] in the school lunchbox\nبنحطه [في] صندوق طعام المدرسة => we put it [in] the school lunchbox\nبنحطه في [صندوق طعام] المدرسة => we put it in the [lunchbox]\nبنحطه في صندوق طعام [المدرسة] => school # The word lunchbox is preceded by \"the school\", but المدرسة literally means \"the school\" or \"school\" in this genitive context.\n\n[صحيح] يا جلجل. => [That's right], Jaljal.\nصحيح يا [جلجل]. => That's right, [Jaljal].\n\n[هلا] أنا جاهز. => [Now] I'm ready.\nهلا [أنا] جاهز. => Now [I'm] ready.\nهلا أنا [جاهز]. => Now I'm [ready]\n\n[لا] يا جلجل، في إشي كتير مهم => [No] Jaljal, there's something very important\nلا يا [جلجل]، في إشي كتير مهم => No [Jaljal], there's something very important\nلا يا جلجل، [في] إشي كتير مهم => No Jaljal, [there's] something very important\nلا يا جلجل، في [إشي] كتير مهم => No Jaljal, there's [something] very important\nلا يا جلجل، في إشي [كتير] مهم => No Jaljal, there's [very] important\nلا يا جلجل، في إشي كتير [مهم] => No Jaljal, there's very [important]\n\n[لازم] ما ننساه. => we [must] not forget.\nلازم [ما] ننساه. => we must [not] forget.\nلازم ما [ننساه]. => we forget # custom translation to include the subject 'we' which is part of the Arabic verb conjugation 'nansah'\n\n[إيش] هو؟ => [What] is it?\nإيش [هو]؟ => What is [it]?\n\n[مطرة] المي، المي كتير مفيدة وضرورية. => The water [bottle], water is very healthy and essential.\nمطرة [المي]، المي كتير مفيدة وضرورية. => The [water] bottle, water is very healthy and essential.\nمطرة المي، [المي] كتير مفيدة وضرورية. => The water bottle, [water] is very healthy and essential.\nمطرة المي، المي [كتير] مفيدة وضرورية. => The water bottle, water is [very] healthy and essential.\nمطرة المي، المي كتير [مفيدة] وضرورية. => The water bottle, water is very [healthy] and essential.\nمطرة المي، المي كتير مفيدة [و]ضرورية. => The water bottle, water is very healthy [and] essential.\nمطرة المي، المي كتير مفيدة و[ضرورية]. => The water bottle, water is very healthy and [essential].\n\n[لحظة] شوي، أنا مجهزها => [Wait] a sec, I have it ready.\nلحظة [شوي]، أنا مجهزها => Wait [a sec], I have it ready.\nلحظة شوي، [أنا] مجهزها => Wait a sec, [I] have it ready.\nلحظة شوي، أنا [مجهزها] => Wait a sec, I [have it ready] # the Arabic word includes the object pronoun \"it\" and the state of being \"ready\" or \"prepared\"\n\n[هيها] هون. => Here [it is]\nهيها [هون]. => [Here] it is\n\n[وهيك] صندوق طعام المدرسة صار جاهز! => [And so] the school lunchbox is ready!\nوهيك [صندوق طعام] المدرسة صار جاهز! => lunchbox\nوهيك صندوق طعام [المدرسة] صار جاهز! => And so [the school] lunchbox is ready!\nوهيك صندوق طعام المدرسة [صار] جاهز! => And so the school lunchbox [is] ready!\nوهيك صندوق طعام المدرسة صار [جاهز]! => And so the school lunchbox is [ready]!\n\n[لا] يا تنتن، خليكي معي. => [No] Tantan, stay with me.\nلا يا [تنتن]، خليكي معي. => No [Tantan], stay with me.\nلا يا تنتن، [خليكي] معي. => No Tantan, [stay] with me.\nلا يا تنتن، خليكي [معي]. => No Tantan, stay [with me].\n\n[خليني] بس أسكره، استني شوي. => [Let me] just close it, wait a sec.\nخليني [بس] أسكره، استني شوي. => Let me [just] close it, wait a sec.\nخليني بس [أسكره]، استني شوي. => Let me just [close it], wait a sec.\nخليني بس أسكره، [استني] شوي. => Let me just close it, [wait] a sec.\nخليني بس أسكره، استني [شوي] => Let me just close it, wait [a sec]\n\n[بس] أنا ما نسيت إشي. => [But] I didn't forget anything.\nبس [أنا] ما نسيت إشي. => But [I] didn't forget anything.\nبس أنا [ما نسيت] إشي. => But I [didn't forget] anything.\nبس أنا ما نسيت [إشي]. => But I didn't forget [anything].\n\n[لا نسينا]، نسينا الحقيبة المدرسية! => [Yes we did], we forgot the school bag!\nلا نسينا، [نسينا] الحقيبة المدرسية! => Yes we did, [we forgot] the school bag!\nلا نسينا، نسينا [الحقيبة المدرسية]! => Yes we did, we forgot [the school bag]!\nلا نسينا، نسينا [الحقيبة] المدرسية! => bag\nلا نسينا، نسينا الحقيبة [المدرسية]! => school\n\n[آه] يا جلجل، بس اليوم الجمعة. => [Ah] Jaljal, but today is Friday.\nآه [يا جلجل]، بس اليوم الجمعة. => Ah [Jaljal], but today is Friday.\nآه يا جلجل، [بس] اليوم الجمعة. => Ah Jaljal, [but] today is Friday.\nآه يا جلجل، بس [اليوم] الجمعة. => Ah Jaljal, but [today] is Friday.\nآه يا جلجل، بس اليوم [الجمعة] => Ah Jaljal, but today is [Friday]\n\n[و]يوم الجمعة ما في مدرسة، في عطلة. => [And] on Friday there's no school, it's a holiday.\nو[يوم] الجمعة ما في مدرسة، في عطلة. => day\nويوم [الجمعة] ما في مدرسة، في عطلة. => And on [Friday] there's no school, it's a holiday.\nويوم الجمعة [ما في] مدرسة، في عطلة. => And on Friday [there's no] school, it's a holiday.\nويوم الجمعة ما في [مدرسة]، في عطلة. => And on Friday there's no [school], it's a holiday.\nويوم الجمعة ما في مدرسة، [في] عطلة. => And on Friday there's no school, [it's] a holiday.\nويوم الجمعة ما في مدرسة، في [عطلة]. => And on Friday there's no school, it's [a holiday]\n\n[أنا] كنت عم بتدرب أنا وأصدقائي الأطفال => [I] was practicing with my little friends\nأنا [كنت] عم بتدرب أنا وأصدقائي الأطفال => I [was] practicing with my little friends\nأنا كنت [عم بتدرب] أنا وأصدقائي الأطفال => I was [practicing] with my little friends\nأنا كنت عم بتدرب [أنا و]أصدقائي الأطفال => I was practicing [with] my little friends # This construction indicates accompaniment\nأنا كنت عم بتدرب أنا و[أصدقائي] الأطفال => I was practicing with [my friends]\nأنا كنت عم بتدرب أنا وأصدقائي [الأطفال] => I was practicing with [little] friends # referring to the friends as children/little ones\n\n[على] تجهيز صندوق طعام المدرسة. => [on] preparing the school lunchbox.\nعلى [تجهيز] صندوق طعام المدرسة. => on [preparing] the school lunchbox.\nعلى تجهيز [صندوق طعام] المدرسة. => on preparing the school [lunchbox].\nعلى تجهيز صندوق طعام [المدرسة]. => on preparing [the school] lunchbox.\n\n",
+    "lessons": "# التحضير لصندوق الطعام المدرسي (الجزء 1)\n00:00.00 ممم، مرحبا يا أصدقائي الأطفال.\n00:02.00 اليوم أنا عم بتدرب على\n00:04.00 تجهيز صندوق طعام المدرسة!\n00:07.00 تن تن، تن تن.\n00:10.00 أنا هون يا جلجل.\n00:12.00 صندوق طعام المدرسة؟ هه هه!\n00:15.00 حكيتي صندوق طعام المدرسة؟\n00:18.00 امم، أنا عم بجهز فيه.\n00:20.00 شكراً يا تنتن، شكراً.\n00:22.00 هلا ديّ، دقيقة واحدة.\n\n# المكونات الصحية للصندوق (الجزء 2)\n00:24.00 لازم يحتوي على الأشياء المفيدة.\n00:27.00 أنت كمان جبت صندوق طعام المدرسة؟\n00:30.00 منشان أجهزه معاكي.\n00:33.00 أول إشي لازم يكون في عنا\n00:35.00 سندويشة صحية ومفيدة.\n00:38.00 أنا عندي جهزت سندويشة زيت وزعتر.\n00:42.00 ممم، وأنا كمان كتير بحب السندويشات.\n00:46.00 لحظة شوي، هوو!\n\n# السندويشات والمكونات الإضافية (الجزء 3)\n00:48.00 تاتا! أنا بحب سندويشة اللبنة\n00:50.00 لأنها بتحتوي على الكالسيوم\n00:52.00 اللي بيفيد العظم إلنا، ممم.\n00:55.00 صح، أنا كمان بحب سندويشة اللبنة.\n00:58.00 آه، لحظة شوي.\n01:01.00 وأنا بحب مع اللبنة إشي كتير طيب.\n01:03.00 هاا، تاتا! الخيار.\n01:05.00 الخيار كتير طيب\n01:08.00 لأنه فيه فيتامينات كتير مهمة.\n\n# الفواكه والمشروبات (الجزء 4)\n01:10.00 صح، الخضروات مفيدة والفواكه كمان.\n01:13.00 عشان هيك أنا جهزت عندي هون تفاحة.\n01:15.00 هاا، الفواكه كمان فيها كتير فيتامينات\n01:18.00 مهمة إلنا.\n01:21.00 أنا بحب أنواع الفواكه كلياتها.\n01:23.00 باا، تارا! الموز.\n01:25.00 أنا بحب الموز.\n01:27.00 اللي موجود عنا في البيت\n01:29.00 بنحطه في صندوق طعام المدرسة.\n01:31.00 صحيح يا جلجل.\n\n# الخاتمة والنسيان المضحك (الجزء 5)\n01:33.00 هلا أنا جاهز.\n01:35.00 لا يا جلجل، في إشي كتير مهم\n01:38.00 لازم ما ننساه.\n01:41.00 إيش هو؟\n01:43.00 مطرة المي، المي كتير مفيدة وضرورية.\n01:46.00 لحظة شوي، أنا مجهزها.\n01:48.00 هيها هون.\n01:51.00 وهيك صندوق طعام المدرسة صار جاهز!\n01:54.00 لا يا تنتن، خليكي معي.\n01:57.00 خليني بس أسكره، استني شوي.\n01:59.00 بس أنا ما نسيت إشي.\n02:01.00 لا نسينا، نسينا الحقيبة المدرسية!\n02:04.00 آه يا جلجل، بس اليوم الجمعة.\n02:06.00 ويوم الجمعة ما في مدرسة، في عطلة.\n02:09.00 أنا كنت عم بتدرب أنا وأصدقائي الأطفال\n02:13.00 على تجهيز صندوق طعام المدرسة.",
+    "similar_sounds": "\n</think>\n\nممم، مرحبا يا أصدقائي [الأثقال].\nاليوم أنا عم [بتخرب] على\nتجهيز صندوق [ظلام] المدرسة!\n[من] تن، [من] تن.\nأنا [لون] يا جلجل.\nصندوق طعام المدرسة؟ [حه حة]!\n[بكيتي] صندوق طعام المدرسة؟\nامم، أنا عم [بخرب] فيه.\nشكراً يا [تن تن]، شكراً.\nهلا ديّ، [حقيقة] واحدة.\nلازم [يختفي] على الأشياء المفيدة.\nأنت كمان [خبت] صندوق طعام المدرسة؟\nمنشان أجهزه [مكاكي].\nأول إشي لازم يكون في [غنا]\nسندويشة [ضحية] ومفيدة.\nأنا عندي جهزت سندويشة [بيت] وزعتر.\nممم، وأنا كمان كتير [لهب] السندويشات.\n[لازمة] شوي، هوو!\nتاتا! أنا بحب سندويشة [الفتنة]\nلأنها [بتشوي] على الكالسيوم\nاللي بيفيد [الألم] إلنا، ممم.\n[صخ]، أنا كمان بحب سندويشة [الفتنة].\nآه، [لازمة] شوي.\nوأنا بحب مع اللبنة إشي كتير [ريب].\nهاا، تاتا! [التيار].\n[التيار] كتير طيب\nلأنه فيه فيتامينات كتير [مهمة].\nصح، [الخطروات] مفيدة والفواكه كمان.\nعشان هيك أنا جهزت عندي هون [كفاحة].\nهاا، الفواكه كمان فيها كتير [فيتامينات].\nمهمة إلنا.\nأنا بحب أنواع الفواكه كلياتها.\nباا، تارا! الموز.\nأنا بحب الموز.\nاللي موجود عنا في البيت\nبنحطه في صندوق طعام المدرسة.\nصحيح يا جلجل.\nهلا أنا جاهز.\nلا يا جلجل، في إشي كتير مهم\nلازم ما ننساه.\nإيش هو؟\nمطرة المي، المي كتير مفيدة وضرورية.\nلحظة شوي، أنا مجهزها.\nهيها هون.\nوهيك صندوق طعام المدرسة صار جاهز!\nلا يا تنتن، خليكي معي.\nخليني بس أسكره، استني شوي.\nبس أنا ما نسيت إشي.\nلا نسينا، نسينا الحقيبة المدرسية!\nآه يا جلجل، بس اليوم الجمعة.\nويوم الجمعة ما في مدرسة، في عطلة.\nأنا كنت عم بتدرب أنا وأصدقائي الأطفال\nعلى تجهيز صندوق طعام المدرسة."
+  },
+  "created_at": "2026-04-25 20:10:35 UTC",
+  "updated_at": "2026-04-25 20:32:32 UTC",
+  "exported_at": "2026-04-25T20:32:33Z"
+}

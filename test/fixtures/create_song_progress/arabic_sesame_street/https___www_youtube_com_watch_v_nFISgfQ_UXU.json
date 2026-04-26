@@ -1,0 +1,534 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=nFISgfQ-UXU",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "مرحبا، أنا التحري جلجل",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:16.00",
+        "text_l2": "Hello, I'm Detective Jaljal."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "واليوم عندي تدريب لمساعدتي تنتن",
+        "timestamp": "00:16.00",
+        "timestamp_end": "00:18.00",
+        "text_l2": "And today I have training for my assistant, Tantan."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "حتى أشوف مقدرتها على إنها تكون",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:20.00",
+        "text_l2": "To see her ability to be"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "مساعد لتحري كبير زيي أنا",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:22.00",
+        "text_l2": "An assistant to a great detective like me."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "جلجل التحري",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "Jaljal the Detective."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وبيني وبينكم هو اختبار إلها",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "And between us, it's a test for her."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "جاهزة يا تنتن؟",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "Ready, Tantan?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "جاهزة للتدريب",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Ready for training."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "بس الاختبار بعدين",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:32.00",
+        "text_l2": "But the test is later."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "ولا يهمك، ولا يهمك",
+        "timestamp": "00:32.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "Don't worry, don't worry."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "اليوم رح نتعلم كيف نستخدم",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:36.00",
+        "text_l2": "Today we will learn how to use"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "الحواس الخمسة في عمل التحري",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "The five senses in detective work."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "جاهزة؟",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:40.00",
+        "text_l2": "Ready?"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "أكيد يا مساعدتي؟",
+        "timestamp": "00:40.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "Sure, my assistant?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "يلا، إشي إله قشرة خضراء",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:44.00",
+        "text_l2": "Come on, something with a green skin."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "ومن جوا أحمر وفيه نقط سوداء",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:46.00",
+        "text_l2": "And inside is red and has black dots."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "ما عرفت",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "I don't know."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "أكيد ما رح تعرفي",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "Of course you won't know."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "لأنه لسه ما استخدمتي",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:52.00",
+        "text_l2": "Because you haven't used yet"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "ولا حاسة من الحواس الخمسة",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "Even one of the five senses."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "بتقدري تختاري إنتِ هلا",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:56.00",
+        "text_l2": "You can choose now"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "أي حاسة من الحواس حتى نشوف",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:58.00",
+        "text_l2": "Any of the senses so we see."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "بدي أبلش بحاسة اللمس",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "I want to start with the sense of touch."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "حاسة اللمس، كتير مهمة",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:02.00",
+        "text_l2": "The sense of touch is very important."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "تفضلي المسي الإشي",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:04.00",
+        "text_l2": "Go ahead, touch the thing."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "اللي إحنا بدنا إياكِ تعرفيه",
+        "timestamp": "01:04.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "That we want you to know."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "باردة",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "Cold."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "باردة",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "Cold."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "ناعمة",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "Smooth."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "وناعمة",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "And smooth."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "بس ما عرفت",
+        "timestamp": "01:14.00",
+        "timestamp_end": "01:16.00",
+        "text_l2": "But I didn't know."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "أكيد ما رح تعرفي",
+        "timestamp": "01:16.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "Of course you won't know."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "لأنك استخدمتي وحدة من الحواس الخمسة",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "Because you used one of the five senses."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "هلا بتقدري تختاري كمان حاسة",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:22.00",
+        "text_l2": "Now you can choose another sense."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "بدي أستخدم حاسة الشم",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:24.00",
+        "text_l2": "I want to use the sense of smell."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "كتير مهم حاسة الشم",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:26.00",
+        "text_l2": "The sense of smell is very important."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "هلا إنتِ اللمس، إشي بارد وناعم",
+        "timestamp": "01:26.00",
+        "timestamp_end": "01:28.00",
+        "text_l2": "Now you have touch, something cold and smooth."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "هلا شميها",
+        "timestamp": "01:28.00",
+        "timestamp_end": "01:30.00",
+        "text_l2": "Now smell it."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "عرفتي؟",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:32.00",
+        "text_l2": "Did you know?"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "ريحتها زاكية زي الفواكه",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:34.00",
+        "text_l2": "Its smell is fragrant like fruits."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "صح، صح، مضبوط يا مساعدتي",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:36.00",
+        "text_l2": "Yes, yes, correct my assistant."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "هلا صار عندك حاستين",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "Now you have two senses."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "اللمس والشم، عرفتي إيش هو الإشي؟",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "Touch and smell, do you know what the thing is?"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "لسه ما عرفت",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:42.00",
+        "text_l2": "I still don't know."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "إذن لازم تستخدمي كمان حاسة",
+        "timestamp": "01:42.00",
+        "timestamp_end": "01:44.00",
+        "text_l2": "Then you must use another sense."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "بدي أستخدم حاسة السمع",
+        "timestamp": "01:44.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "I want to use the sense of hearing."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "السمع، كتير مهمة حاسة السمع",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "Hearing, the sense of hearing is very important."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "تفضلي",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:50.00",
+        "text_l2": "Go ahead."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "جلجل، ما إلها صوت",
+        "timestamp": "01:50.00",
+        "timestamp_end": "01:52.00",
+        "text_l2": "Jaljal, it has no sound."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "لسه ما عرفت",
+        "timestamp": "01:52.00",
+        "timestamp_end": "01:54.00",
+        "text_l2": "I still don't know."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "أكيد ما رح تعرفي",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:56.00",
+        "text_l2": "Of course you won't know."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "لأنك استخدمتي تلات حواس",
+        "timestamp": "01:56.00",
+        "timestamp_end": "01:58.00",
+        "text_l2": "Because you used three senses."
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "من الحواس الخمسة",
+        "timestamp": "01:58.00",
+        "timestamp_end": "02:00.00",
+        "text_l2": "From the five senses."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "وهلا رح أسمحلك تستخدمي",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:02.00",
+        "text_l2": "And now I will allow you to use"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "الحاستين اللي ضايلين",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:04.00",
+        "text_l2": "The two remaining senses."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "البصر والتذوق",
+        "timestamp": "02:04.00",
+        "timestamp_end": "02:06.00",
+        "text_l2": "Sight and taste."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "حاسة البصر، رح أشيلك هاي العصبة",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "Sense of sight, I will remove this blindfold for you."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "بطيخة، بطيخة، أنا عرفت",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:10.00",
+        "text_l2": "Watermelon, watermelon, I know."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "صح يا تنتن، بطيخة",
+        "timestamp": "02:10.00",
+        "timestamp_end": "02:12.00",
+        "text_l2": "Correct Tantan, watermelon."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "مضبوط، وإنتِ استخدمتي حاسة البصر",
+        "timestamp": "02:12.00",
+        "timestamp_end": "02:14.00",
+        "text_l2": "Correct, and you used the sense of sight."
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "وعرفتي إنها بطيخة",
+        "timestamp": "02:14.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "And you knew it's a watermelon."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "وبحاسة اللمس عرفت إنها ناعمة وباردة",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "And with the sense of touch you knew it's smooth and cold."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "وبالشم عرفت إنه ريحتها زاكية",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:20.00",
+        "text_l2": "And with smell you knew its scent is fragrant."
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "مثل ريحة الفواكه",
+        "timestamp": "02:20.00",
+        "timestamp_end": "02:22.00",
+        "text_l2": "Like the smell of fruits."
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "وعرفت إنه ما إلها صوت لما نسمعها",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "And you knew it has no sound when we hear it."
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "وبالبصر عرفت إنها بطيخة",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:26.00",
+        "text_l2": "And with sight you knew it's a watermelon."
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "صح، صح، مضبوط",
+        "timestamp": "02:26.00",
+        "timestamp_end": "02:28.00",
+        "text_l2": "Yes, yes, correct."
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "إنتِ مساعدة كتير مهمة يا تنتن",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:30.00",
+        "text_l2": "You are a very important assistant, Tantan."
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "رح تكوني مساعدتي للتحري الكبير جلجل",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:32.00",
+        "text_l2": "You will be my assistant to the great detective Jaljal."
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "ضل أستخدم حاسة التذوق",
+        "timestamp": "02:32.00",
+        "timestamp_end": "02:34.00",
+        "text_l2": "Should I use the sense of taste?"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "بس إنتِ خلص عرفتي إنها بطيخة",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:36.00",
+        "text_l2": "But you already knew it's a watermelon."
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "لا، لازم أتأكد أكتر إنها بطيخة",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:38.00",
+        "text_l2": "No, I need to confirm more that it's a watermelon."
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "مساعدين، لازم أدوقها",
+        "timestamp": "02:38.00",
+        "timestamp_end": "02:40.00",
+        "text_l2": "Assistants, I must taste it."
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "لازم أدوقها",
+        "timestamp": "02:40.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "I must taste it."
+      }
+    ],
+    "phrases_with_token_translations": "[مرحبا]، أنا التحري جلجل => [Hello], I'm Detective Jaljal.\nمرحبا، [أنا] التحري جلجل => Hello, [I'm] Detective Jaljal.\nمرحبا، أنا [التحري] جلجل => Hello, I'm [Detective] Jaljal.\nمرحبا، أنا التحري [جلجل] => Hello, I'm Detective [Jaljal].\n\n[و]اليوم عندي تدريب لمساعدتي تنتن => [And] today I have training for my assistant, Tantan.\nو[اليوم] عندي تدريب لمساعدتي تنتن => And [today] I have training for my assistant, Tantan.\nواليوم [عندي] تدريب لمساعدتي تنتن => And today [I have] training for my assistant, Tantan.\nواليوم عندي [تدريب] لمساعدتي تنتن => And today I have [training] for my assistant, Tantan.\nواليوم عندي تدريب [ل]مساعدتي تنتن => And today I have training [for] my assistant, Tantan.\nواليوم عندي تدريب ل[مساعدتي] تنتن => And today I have training for [my assistant], Tantan.\nواليوم عندي تدريب لمساعدتي [تنتن] => And today I have training for my assistant, [Tantan].\n\n[حتى] أشوف مقدرتها على إنها تكون => [To] see her ability to be\nحتى [أشوف] مقدرتها على إنها تكون => To [see] her ability to be\nحتى أشوف [مقدرتها] على إنها تكون => To see [her ability] to be\nحتى أشوف مقدرتها [على] إنها تكون => To see her ability [to] be\nحتى أشوف مقدرتها على [إنها] تكون => that she\nحتى أشوف مقدرتها على إنها [تكون] => To see her ability to [be]\n\n[مساعد] لتحري كبير زيي أنا => [An assistant] to a great detective like me.\nمساعد [لتحري] كبير زيي أنا => An assistant to a great [detective] like me.\nمساعد لتحري [كبير] زيي أنا => An assistant to a [great] detective like me.\nمساعد لتحري كبير [زيي] أنا => like me\nمساعد لتحري كبير زيي [أنا] => me # provides the literal meaning of the emphatic pronoun\n\n[جلجل] التحري => [Jaljal] the Detective\nجلجل [التحري] => Jaljal [the Detective]\n\n[وبيني وبينكم] هو اختبار إلها => [And between us], it's a test for her.\nوبيني وبينكم [هو] اختبار إلها => And between us, [it's] a test for her.\nوبيني وبينكم هو [اختبار] إلها => And between us, it's a [test] for her.\nوبيني وبينكم هو اختبار [إلها] => And between us, it's a test [for her]\n\n[جاهزة] يا تنتن؟ => [Ready], Tantan?\nجاهزة يا [تنتن]؟ => Ready, [Tantan]?\n\n[جاهزة] للتدريب => [Ready] for training.\nجاهزة [للتدريب] => [for training]\n\n[بس] الاختبار بعدين => [But] the test is later.\nبس [الاختبار] بعدين => But [the test] is later.\nبس الاختبار [بعدين] => But the test is [later].\n\n[ولا يهمك]، ولا يهمك => [Don't worry], don't worry.\nولا يهمك، [ولا يهمك] => Don't worry, [don't worry].\n\n[اليوم] رح نتعلم كيف نستخدم => [Today] we will learn how to use\nاليوم [رح نتعلم] كيف نستخدم => Today [we will learn] how to use\nاليوم رح نتعلم [كيف] نستخدم => Today we will learn [how] to use\nاليوم رح نتعلم كيف [نستخدم] => Today we will learn how [to use]\n\n[الحواس] الخمسة في عمل التحري => the senses\nالحواس [الخمسة] في عمل التحري => The [five] senses in detective work\nالحواس الخمسة [في] عمل التحري => The five senses [in] detective work\nالحواس الخمسة في [عمل] التحري => The five senses in detective [work]\nالحواس الخمسة في عمل [التحري] => The five senses in [detective] work\n\n[جاهزة]؟ => [Ready]?\n\n[أكيد] يا مساعدتي؟ => [Sure], my assistant?\nأكيد يا [مساعدتي]؟ => Sure, [my assistant]?\n\n[يلا]، إشي إله قشرة خضراء => [Come on], something with a green skin.\nيلا، [إشي] إله قشرة خضراء => Come on, [something] with a green skin.\nيلا، إشي [إله] قشرة خضراء => Come on, something [with] a green skin. # إله (literally \"to it/it has\") translates to \"with\" in this possessive context\nيلا، إشي إله [قشرة] خضراء => Come on, something with a green [skin].\nيلا، إشي إله قشرة [خضراء] => Come on, something with a [green] skin.\n\n[و]من جوا أحمر وفيه نقط سوداء => [And] inside is red and has black dots.\nو[من جوا] أحمر وفيه نقط سوداء => And [inside] is red and has black dots.\nومن جوا [أحمر] وفيه نقط سوداء => And inside [is red] and has black dots.\nومن جوا أحمر [و]فيه نقط سوداء => And inside is red [and] has black dots.\nومن جوا أحمر و[فيه] نقط سوداء => And inside is red and [has] black dots.\nومن جوا أحمر وفيه [نقط] سوداء => And inside is red and has black [dots].\nومن جوا أحمر وفيه نقط [سوداء] => And inside is red and has [black] dots.\n\n[ما عرفت] => [I don't know].\n\n[أكيد] ما رح تعرفي => [Of course] you won't know\nأكيد [ما رح] تعرفي => Of course you [won't] know\nأكيد ما رح [تعرفي] => you know # \"ta'rifi\" is the feminine second person singular form, meaning \"you know\"\n\n[لأنه] لسه ما استخدمتي => [Because] you haven't used yet\nلأنه [لسه] ما استخدمتي => Because you haven't used [yet]\nلأنه لسه [ما استخدمتي] => Because [you haven't used] yet\n\n[ولا] حاسة من الحواس الخمسة => [Even] one of the five senses.\nولا [حاسة] من الحواس الخمسة => [one] # حاسة literally means \"sense\", but functions as the noun \"one\" in this context\nولا حاسة [من] الحواس الخمسة => Even one [of] the five senses.\nولا حاسة من [الحواس] الخمسة => the senses # الحواس is the definite plural form\nولا حاسة من الحواس [الخمسة] => Even one of the [five] senses.\n\n[بتقدري] تختاري إنتِ هلا => You [can] choose now\nبتقدري [تختاري] إنتِ هلا => You can [choose] now\nبتقدري تختاري [إنتِ] هلا => [You] can choose now\nبتقدري تختاري إنتِ [هلا] => You can choose [now]\n\n[أي] حاسة من الحواس حتى نشوف => [Any] of the senses so we see.\nأي [حاسة] من الحواس حتى نشوف => sense\nأي حاسة [من] الحواس حتى نشوف => Any [of] the senses so we see.\nأي حاسة من [الحواس] حتى نشوف => Any of [the senses] so we see.\nأي حاسة من الحواس [حتى] نشوف => Any of the senses [so] we see.\nأي حاسة من الحواس حتى [نشوف] => Any of the senses so [we see].\n\n[بدي] أبلش بحاسة اللمس => [I want] to start with the sense of touch.\nبدي [أبلش] بحاسة اللمس => I want [to start] with the sense of touch.\nبدي أبلش [بحاسة] اللمس => I want to start [with the sense of] touch.\nبدي أبلش بحاسة [اللمس] => I want to start with the sense of [touch]\n\n[حاسة] اللمس، كتير مهمة => [The sense] of touch is very important\nحاسة [اللمس]، كتير مهمة => The sense of [touch] is very important\nحاسة اللمس، [كتير] مهمة => The sense of touch is [very] important\nحاسة اللمس، كتير [مهمة] => The sense of touch is very [important]\n\n[تفضلي] المسي الإشي => [Go ahead], touch the thing.\nتفضلي [المسي] الإشي => Go ahead, [touch] the thing.\nتفضلي المسي [الإشي] => Go ahead, touch [the thing].\n\n[اللي] إحنا بدنا إياكِ تعرفيه => [That] we want you to know.\nاللي [إحنا] بدنا إياكِ تعرفيه => That [we] want you to know.\nاللي إحنا [بدنا] إياكِ تعرفيه => That we [want] you to know.\nاللي إحنا بدنا [إياكِ] تعرفيه => That we want [you] to know.\nاللي إحنا بدنا إياكِ [تعرفيه] => That we want you [to know].\n\n[باردة] => [Cold].\n\n[باردة] => [Cold].\n\n[ناعمة] => [Smooth].\n\n[و]ناعمة => [And] smooth.\nو[ناعمة] => And [smooth]\n\n[بس] ما عرفت => [But] I didn't know.\nبس [ما عرفت] => But [I didn't know]. # \"ما عرفت\" is grouped to include the negation, verb, and the implicit subject \"I\" (indicated by the suffix -t)\n\n[أكيد] ما رح تعرفي => [Of course] you won't know.\nأكيد [ما رح] تعرفي => Of course you [won't] know.\nأكيد ما رح [تعرفي] => Of course [you] won't [know].\n\n[لأنك] استخدمتي وحدة من الحواس الخمسة => [Because you] used one of the five senses.\nلأنك [استخدمتي] وحدة من الحواس الخمسة => Because you [used] one of the five senses.\nلأنك استخدمتي [وحدة] من الحواس الخمسة => Because you used [one] of the five senses.\nلأنك استخدمتي وحدة [من] الحواس الخمسة => Because you used one [of] the five senses.\nلأنك استخدمتي وحدة من [الحواس] الخمسة => Because you used one of the five [senses]\nلأنك استخدمتي وحدة من الحواس [الخمسة] => Because you used one of the [five] senses.\n\n[هلا] بتقدري تختاري كمان حاسة => [Now] you can choose another sense.\nهلا [بتقدري] تختاري كمان حاسة => Now [you can] choose another sense.\nهلا بتقدري [تختاري] كمان حاسة => Now you can [choose] another sense.\nهلا بتقدري تختاري [كمان] حاسة => Now you can [another] sense.\nهلا بتقدري تختاري كمان [حاسة] => Now you can choose another [sense].\n\n[بدي] أستخدم حاسة الشم => [I want] to use the sense of smell.\nبدي [أستخدم] حاسة الشم => I want [to use] the sense of smell.\nبدي أستخدم [حاسة] الشم => I want to use [the sense] of smell.\nبدي أستخدم حاسة [الشم] => I want to use the sense [of smell].\n\n[كتير] مهم حاسة الشم => The sense of smell is [very] important.\nكتير [مهم] حاسة الشم => The sense of smell is very [important].\nكتير مهم [حاسة] الشم => [The sense] of smell is very important.\nكتير مهم حاسة [الشم] => The sense of [smell] is very important.\n\n[هلا] إنتِ اللمس، إشي بارد وناعم => [Now] you have touch, something cold and smooth.\nهلا [إنتِ] اللمس، إشي بارد وناعم => Now [you] have touch, something cold and smooth.\nهلا إنتِ [اللمس]، إشي بارد وناعم => Now you have [touch], something cold and smooth.\nهلا إنتِ اللمس، [إشي] بارد وناعم => Now you have touch, [something] cold and smooth.\nهلا إنتِ اللمس، إشي [بارد] وناعم => Now you have touch, something [cold] and smooth.\nهلا إنتِ اللمس، إشي بارد [و]ناعم => Now you have touch, something cold [and] smooth.\nهلا إنتِ اللمس، إشي بارد و[ناعم] => Now you have touch, something cold and [smooth]\n\n[هلا] شميها => [Now] smell it.\nهلا [شميها] => Now [smell it]\n\n[عرفتي]؟ => [Did you know]?\n\n[ريحتها] زاكية زي الفواكه => [Its smell] is fragrant like fruits.\nريحتها [زاكية] زي الفواكه => Its smell is [fragrant] like fruits.\nريحتها زاكية [زي] الفواكه => Its smell is fragrant [like] fruits.\nريحتها زاكية زي [الفواكه] => Its smell is fragrant like [fruits]\n\n[صح]، صح، مضبوط يا مساعدتي => [Yes], yes, correct my assistant.\nصح، [صح]، مضبوط يا مساعدتي => Yes, [yes], correct my assistant.\nصح، صح، [مضبوط] يا مساعدتي => Yes, yes, [correct] my assistant.\nصح، صح، مضبوط [يا] مساعدتي => vocative particle # used to address someone directly\nصح، صح، مضبوط يا [مساعدتي] => Yes, yes, correct [my assistant]. # مساعد means assistant and the \"i\" suffix means \"my\"\n\n[هلا] صار عندك حاستين => [Now] you have two senses.\nهلا [صار عندك] حاستين => Now [you have] two senses.\nهلا صار عندك [حاستين] => Now you have [two senses]\n\n[اللمس] والشم، عرفتي إيش هو الإشي؟ => [Touch] and smell, do you know what the thing is?\nاللمس [و]الشم، عرفتي إيش هو الإشي؟ => Touch [and] smell, do you know what the thing is?\nاللمس و[الشم]، عرفتي إيش هو الإشي؟ => Touch and [smell], do you know what the thing is?\nاللمس والشم، [عرفتي] إيش هو الإشي؟ => Touch and smell, [do you know] what the thing is?\nاللمس والشم، عرفتي [إيش] هو الإشي؟ => Touch and smell, do you know [what] the thing is?\nاللمس والشم، عرفتي إيش [هو] الإشي؟ => Touch and smell, do you know what the thing [is]\nاللمس والشم، عرفتي إيش هو [الإشي]؟ => Touch and smell, do you know what [the thing] is?\n\n[لسه] ما عرفت => I [still] don't know.\nلسه [ما] عرفت => I still [don't] know.\nلسه ما [عرفت] => I know # \"عرفت\" (I knew/know) includes the subject \"I\"; custom translation used because \"I\" and \"know\" are separated by \"still don't\" in the English sentence.\n\n[إذن] لازم تستخدمي كمان حاسة => [Then] you must use another sense.\nإذن [لازم] تستخدمي كمان حاسة => Then [you must] use another sense.\nإذن لازم [تستخدمي] كمان حاسة => Then you must [use] another sense.\nإذن لازم تستخدمي [كمان] حاسة => Then you must use [another] sense.\nإذن لازم تستخدمي كمان [حاسة] => Then you must use another [sense].\n\n[بدي] أستخدم حاسة السمع => [I want] to use the sense of hearing.\nبدي [أستخدم] حاسة السمع => I want [to use] the sense of hearing.\nبدي أستخدم [حاسة] السمع => I want to use [the sense] of hearing.\nبدي أستخدم حاسة [السمع] => I want to use the sense of [hearing].\n\n[السمع]، كتير مهمة حاسة السمع => [Hearing], the sense of hearing is very important.\nالسمع، [كتير] مهمة حاسة السمع => Hearing, the sense of hearing is [very] important.\nالسمع، كتير [مهمة] حاسة السمع => Hearing, the sense of hearing is very [important].\nالسمع، كتير مهمة [حاسة] السمع => Hearing, the [sense] of hearing is very important.\nالسمع، كتير مهمة حاسة [السمع] => Hearing, the sense of [hearing] is very important.\n\n[تفضلي] => [Go ahead]\n\n[جلجل]، ما إلها صوت => [Jaljal], it has no sound.\nجلجل، [ما إلها] صوت => Jaljal, [it has no] sound.\nجلجل، ما إلها [صوت] => Jaljal, it has no [sound].\n\n[لسه] ما عرفت => I [still] don't know\nلسه [ما عرفت] => [I] still [don't know]\n\n[أكيد] ما رح تعرفي => [Of course] you won't know\nأكيد [ما رح] تعرفي => Of course you [won't] know\nأكيد ما رح [تعرفي] => you know # 'ta-' prefix and '-i' suffix indicate 'you' (feminine) knows\n\n[لأنك] استخدمتي تلات حواس => [Because you] used three senses.\nلأنك [استخدمتي] تلات حواس => Because you [used] three senses.\nلأنك استخدمتي [تلات] حواس => Because you used [three] senses.\nلأنك استخدمتي تلات [حواس] => Because you used three [senses]\n\n[من] الحواس الخمسة => [From] the five senses.\nمن [الحواس] الخمسة => From the five [senses].\nمن الحواس [الخمسة] => From the [five] senses.\n\n[وهلا] رح أسمحلك تستخدمي => [And now] I will allow you to use\nوهلا [رح أسمحلك] تستخدمي => And now [I will allow you] to use\nوهلا رح أسمحلك [تستخدمي] => And now I will allow you [to use]\n\nالحاستين اللي [ضايلين] => The two [remaining] senses.\n\n[البصر] والتذوق => [Sight] and taste.\nالبصر [و]التذوق => Sight [and] taste.\nالبصر و[التذوق] => Sight and [taste].\n\n[حاسة] البصر، رح أشيلك هاي العصبة => [Sense] of sight, I will remove this blindfold for you.\nحاسة [البصر]، رح أشيلك هاي العصبة => Sense of [sight], I will remove this blindfold for you.\nحاسة البصر، [رح] أشيلك هاي العصبة => Sense of sight, I [will] remove this blindfold for you.\nحاسة البصر، رح [أشيلك] هاي العصبة => I'll remove for you # Custom translation to capture the verb conjugation and the object suffix\nحاسة البصر، رح أشيلك [هاي] العصبة => Sense of sight, I will remove [this] blindfold for you.\nحاسة البصر، رح أشيلك هاي [العصبة] => Sense of sight, I will remove this [blindfold] for you.\n\n[بطيخة]، بطيخة، أنا عرفت => [Watermelon], watermelon, I know.\nبطيخة، [بطيخة]، أنا عرفت => Watermelon, [watermelon], I know.\nبطيخة، بطيخة، [أنا] عرفت => Watermelon, watermelon, [I] know.\nبطيخة، بطيخة، أنا [عرفت] => Watermelon, watermelon, I [know]\n\n[صح] يا تنتن، بطيخة => [Correct] Tantan, watermelon.\nصح يا [تنتن]، بطيخة => Correct [Tantan], watermelon.\nصح يا تنتن، [بطيخة] => Correct Tantan, [watermelon].\n\n[مضبوط]، وإنتِ استخدمتي حاسة البصر => [Correct], and you used the sense of sight.\nمضبوط، [وإنتِ] استخدمتي حاسة البصر => Correct, [and you] used the sense of sight.\nمضبوط، وإنتِ [استخدمتي] حاسة البصر => Correct, and you [used] the sense of sight.\nمضبوط، وإنتِ استخدمتي [حاسة] البصر => Correct, and you used [the sense] of sight.\nمضبوط، وإنتِ استخدمتي حاسة [البصر] => Correct, and you used the sense [of sight]\n\n[و]عرفتي إنها بطيخة => [And] you knew it's a watermelon.\nو[عرفتي] إنها بطيخة => And [you knew] it's a watermelon.\nوعرفتي [إنها] بطيخة => And you knew [it's] a watermelon.\nوعرفتي إنها [بطيخة] => And you knew it's [a watermelon].\n\n[وبحاسة] اللمس عرفت إنها ناعمة وباردة => [And with the sense] of touch you knew it's smooth and cold.\nوبحاسة [اللمس] عرفت إنها ناعمة وباردة => And with the sense of [touch] you knew it's smooth and cold.\nوبحاسة اللمس [عرفت] إنها ناعمة وباردة => And with the sense of touch [you knew] it's smooth and cold.\nوبحاسة اللمس عرفت [إنها] ناعمة وباردة => And with the sense of touch you knew [it's] smooth and cold.\nوبحاسة اللمس عرفت إنها [ناعمة] وباردة => And with the sense of touch you knew it's [smooth] and cold.\nوبحاسة اللمس عرفت إنها ناعمة [وباردة] => And with the sense of touch you knew it's smooth [and cold].\n\n[وبالشم] عرفت إنه ريحتها زاكية => [And with smell] you knew its scent is fragrant.\nوبالشم [عرفت] إنه ريحتها زاكية => And with smell [you knew] its scent is fragrant.\nوبالشم عرفت [إنه] ريحتها زاكية => that it\nوبالشم عرفت إنه [ريحتها] زاكية => And with smell you knew [its scent] is fragrant.\nوبالشم عرفت إنه ريحتها [زاكية] => And with smell you knew its scent is [fragrant].\n\n[مثل] ريحة الفواكه => [Like] the smell of fruits.\nمثل [ريحة] الفواكه => Like [the smell] of fruits.\nمثل ريحة [الفواكه] => Like the smell [of fruits].\n\n[و]عرفت إنه ما إلها صوت لما نسمعها => [And] you knew it has no sound when we hear it.\nو[عرفت] إنه ما إلها صوت لما نسمعها => And [you knew] it has no sound when we hear it.\nوعرفت [إنه] ما إلها صوت لما نسمعها => that it\nوعرفت إنه [ما إلها] صوت لما نسمعها => And you knew [it has no] sound when we hear it.\nوعرفت إنه ما إلها [صوت] لما نسمعها => And you knew it has no [sound] when we hear it.\nوعرفت إنه ما إلها صوت [لما] نسمعها => And you knew it has no sound [when] we hear it.\nوعرفت إنه ما إلها صوت لما [نسمعها] => And you knew it has no sound when [we hear it].\n\n[وبالبصر] عرفت إنها بطيخة => [And with sight] you knew it's a watermelon.\nوبالبصر [عرفت] إنها بطيخة => And with sight [you knew] it's a watermelon.\nوبالبصر عرفت [إنها] بطيخة => And with sight you knew [it's] a watermelon.\nوبالبصر عرفت إنها [بطيخة] => And with sight you knew it's [a watermelon].\n\n[صح]، صح، مضبوط => [Yes], yes, correct.\nصح، [صح]، مضبوط => Yes, [yes], correct.\nصح، صح، [مضبوط] => Yes, yes, [correct].\n\n[إنتِ] مساعدة كتير مهمة يا تنتن => [You are] a very important assistant, Tantan\nإنتِ [مساعدة] كتير مهمة يا تنتن => You are a very important [assistant], Tantan\nإنتِ مساعدة [كتير] مهمة يا تنتن => You are a [very] important assistant, Tantan\nإنتِ مساعدة كتير [مهمة] يا تنتن => You are a very [important] assistant, Tantan\nإنتِ مساعدة كتير مهمة يا [تنتن] => You are a very important assistant, [Tantan]\n\n[رح تكوني] مساعدتي للتحري الكبير جلجل => [You will be] my assistant to the great detective Jaljal.\nرح تكوني [مساعدتي] للتحري الكبير جلجل => You will be [my assistant] to the great detective Jaljal.\nرح تكوني مساعدتي [للتحري] الكبير جلجل => to the detective\nرح تكوني مساعدتي للتحري [الكبير] جلجل => You will be my assistant to [the great] detective Jaljal.\nرح تكوني مساعدتي للتحري الكبير [جلجل] => You will be my assistant to the great detective [Jaljal].\n\nضل [أستخدم] حاسة التذوق => Should I [use] the sense of taste?\nضل أستخدم [حاسة] التذوق => Should I use the [sense] of taste?\nضل أستخدم حاسة [التذوق] => Should I use the sense of [taste]\n\n[بس] إنتِ خلص عرفتي إنها بطيخة => [But] you already knew it's a watermelon.\nبس [إنتِ] خلص عرفتي إنها بطيخة => But [you] already knew it's a watermelon.\nبس إنتِ [خلص] عرفتي إنها بطيخة => But you [already] knew it's a watermelon.\nبس إنتِ خلص [عرفتي] إنها بطيخة => But you already [knew] it's a watermelon.\nبس إنتِ خلص عرفتي [إنها] بطيخة => But you already knew [it's] a watermelon.\nبس إنتِ خلص عرفتي إنها [بطيخة] => But you already knew it's [a watermelon].\n\n[لا]، لازم أتأكد أكتر إنها بطيخة => [No], I need to confirm more that it's a watermelon.\nلا، [لازم] أتأكد أكتر إنها بطيخة => [I need] to confirm more that it's a watermelon.\nلا، لازم [أتأكد] أكتر إنها بطيخة => No, I need [to confirm] more that it's a watermelon.\nلا، لازم أتأكد [أكتر] إنها بطيخة => No, I need to confirm [more] that it's a watermelon.\nلا، لازم أتأكد أكتر [إنها] بطيخة => No, I need to confirm more [that it's] a watermelon.\nلا، لازم أتأكد أكتر إنها [بطيخة] => No, I need to confirm more that it's [a watermelon]\n\n[مساعدين]، لازم أدوقها => [Assistants], I must taste it\nمساعدين، [لازم] أدوقها => Assistants, I [must] taste it\nمساعدين، لازم [أدوقها] => I taste it # contains the subject prefix 'أ' (I) and the object suffix 'ها' (it)\n\n[لازم] أدوقها => I [must] taste it.\nلازم [أدوقها] => I taste it # contains the prefix \"a\" (I) and the suffix \"ha\" (it)\n\n",
+    "lessons": "# مقدمة التحري جلجل وتنتن\n00:14.00 مرحبا، أنا التحري جلجل\n00:16.00 واليوم عندي تدريب لمساعدتي تنتن\n00:18.00 حتى أشوف مقدرتها على إنها تكون\n00:20.00 مساعد لتحري كبير زيي أنا\n00:22.00 جلجل التحري\n00:24.00 وبيني وبينكم هو اختبار إلها\n00:26.00 جاهزة يا تنتن؟\n00:28.00 جاهزة للتدريب\n00:30.00 بس الاختبار بعدين\n00:32.00 ولا يهمك، ولا يهمك\n\n# الحواس الخمسة في التحري (الجزء الأول)\n00:34.00 اليوم رح نتعلم كيف نستخدم\n00:36.00 الحواس الخمسة في عمل التحري\n00:38.00 جاهزة؟\n00:40.00 أكيد يا مساعدتي؟\n00:42.00 يلا، إشي إله قشرة خضراء\n00:44.00 ومن جوا أحمر وفيه نقط سوداء\n00:46.00 ما عرفت\n00:48.00 أكيد ما رح تعرفي\n00:50.00 لأنه لسه ما استخدمتي\n00:52.00 ولا حاسة من الحواس الخمسة\n\n# حاسة اللمس والشم\n00:54.00 بتقدري تختاري إنتِ هلا\n00:56.00 أي حاسة من الحواس حتى نشوف\n00:58.00 بدي أبلش بحاسة اللمس\n01:00.00 حاسة اللمس، كتير مهمة\n01:02.00 تفضلي المسي الإشي\n01:04.00 اللي إحنا بدنا إياكِ تعرفيه\n01:06.00 باردة\n01:08.00 باردة\n01:10.00 ناعمة\n01:12.00 وناعمة\n01:14.00 بس ما عرفت\n01:16.00 أكيد ما رح تعرفي\n01:18.00 لأنك استخدمتي وحدة من الحواس الخمسة\n01:20.00 هلا بتقدري تختاري كمان حاسة\n01:22.00 بدي أستخدم حاسة الشم\n01:24.00 كتير مهم حاسة الشم\n01:26.00 هلا إنتِ اللمس، إشي بارد وناعم\n01:28.00 هلا شميها\n01:30.00 عرفتي؟\n01:32.00 ريحتها زاكية زي الفواكه\n01:34.00 صح، صح، مضبوط يا مساعدتي\n\n# حاسة السمع والبصر\n01:36.00 هلا صار عندك حاستين\n01:38.00 اللمس والشم، عرفتي إيش هو الإشي؟\n01:40.00 لسه ما عرفت\n01:42.00 إذن لازم تستخدمي كمان حاسة\n01:44.00 بدي أستخدم حاسة السمع\n01:46.00 السمع، كتير مهمة حاسة السمع\n01:48.00 تفضلي\n01:50.00 جلجل، ما إلها صوت\n01:52.00 لسه ما عرفت\n01:54.00 أكيد ما رح تعرفي\n01:56.00 لأنك استخدمتي تلات حواس\n01:58.00 من الحواس الخمسة\n02:00.00 وهلا رح أسمحلك تستخدمي\n02:02.00 الحاستين اللي ضايلين\n02:04.00 البصر والتذوق\n02:06.00 حاسة البصر، رح أشيلك هاي العصبة\n02:08.00 بطيخة، بطيخة، أنا عرفت\n\n# الخلاصة وحاسة التذوق\n02:10.00 صح يا تنتن، بطيخة\n02:12.00 مضبوط، وإنتِ استخدمتي حاسة البصر\n02:14.00 وعرفتي إنها بطيخة\n02:16.00 وبحاسة اللمس عرفت إنها ناعمة وباردة\n02:18.00 وبالشم عرفت إنه ريحتها زاكية\n02:20.00 مثل ريحة الفواكه\n02:22.00 وعرفت إنه ما إلها صوت لما نسمعها\n02:24.00 وبالبصر عرفت إنها بطيخة\n02:26.00 صح، صح، مضبوط\n02:28.00 إنتِ مساعدة كتير مهمة يا تنتن\n02:30.00 رح تكوني مساعدتي للتحري الكبير جلجل\n02:32.00 ضل أستخدم حاسة التذوق\n02:34.00 بس إنتِ خلص عرفتي إنها بطيخة\n02:36.00 لا، لازم أتأكد أكتر إنها بطيخة\n02:38.00 مساعدين، لازم أدوقها\n02:40.00 لازم أدوقها",
+    "similar_sounds": "مرحبا، أنا التحري [جلجل]\nواليوم عندي تدريب لمساعدتي [تنتن]\nحتى أشوف مقدرتها على إنها تكون\nمساعد لتحري كبير زيي أنا\n[جلجل] التحري\nوبيني وبينكم هو اختبار إلها\nجاهزة يا [تنتن]؟\nجاهزة للتدريب\nبس الاختبار بعدين\nولا يهمك، ولا يهمك\nاليوم رح نتعلم كيف نستخدم\nالحواس الخمسة في عمل التحري\nجاهزة؟\nأكيد يا مساعدتي؟\nيلا، إشي إله قشرة [خضراء]\nومن جوا أحمر وفيه نقط [سوداء]\nما عرفت\nأكيد ما رح تعرفي\nلأنه لسه ما استخدمتي\nولا حاسة من الحواس الخمسة\nبتقدري تختاري إنتِ هلا\nأي حاسة من الحواس حتى نشوف\nبدي أبلش بحاسة اللمس\nحاسة اللمس، كتير مهمة\nتفضلي المسي الإشي\nاللي إحنا بدنا إياكِ تعرفيه\n[باردة]\n[باردة]\nناعمة\nوناعمة\nبس ما عرفت\nأكيد ما رح تعرفي\nلأنك استخدمتي وحدة من الحواس الخمسة\nهلا بتقدري تختاري كمان حاسة\nبدي أستخدم حاسة الشم\nكتير مهم حاسة الشم\nهلا إنتِ اللمس، إشي بارد وناعم\nهلا شميها\nعرفتي؟\nريحتها زاكية زي الفواكه\nصح، صح، مضبوط يا مساعدتي\nهلا صار عندك حاستين\nاللمس والشم، عرفتي إيش هو الإشي؟\nلسه ما عرفت\nإذن لازم تستخدمي كمان حاسة\nبدي أستخدم حاسة السمع\nالسمع، كتير مهمة حاسة السمع\nتفضلي\n[جلجل]، ما إلها صوت\nلسه ما عرفت\nأكيد ما رح تعرفي\nلأنك استخدمتي تلات حواس\nمن الحواس الخمسة\nوهلا رح أسمحلك تستخدمي\nالحاستين اللي ضايلين\nالبصر والتذوق\nحاسة البصر، رح أشيلك هاي العصبة\n[بطيخة]، [بطيخة]، أنا عرفت\nصح يا [تنتن]، [بطيخة]\nمضبوط، وإنتِ استخدمتي حاسة البصر\nوعرفتي إنها [بطيخة]\nوبحاسة اللمس عرفت إنها ناعمة وباردة\nوبالشم عرفت إنه ريحتها زاكية\nمثل ريحة الفواكه\nوعرفت إنه ما إلها صوت لما نسمعها\nوبالبصر عرفت إنها [بطيخة]\nصح، صح، مضبوط\nإنتِ مساعدة كتير مهمة يا [تنتن]\nرح تكوني مساعدتي للتحري الكبير [جلجل]\nضل أستخدم حاسة التذوق\nبس إنتِ خلص عرفتي إنها [بطيخة]\nلا، لازم أتأكد أكتر إنها [بطيخة]\nمساعدين، لازم أدوقها\nلازم أدوقها"
+  },
+  "created_at": "2026-04-25 18:53:17 UTC",
+  "updated_at": "2026-04-25 19:16:20 UTC",
+  "exported_at": "2026-04-25T19:16:20Z"
+}

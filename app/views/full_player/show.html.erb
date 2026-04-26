@@ -35,9 +35,8 @@
   font_size_class = (@phrases.first&.l1&.iso_name == 'ar-JO') ? 'text-3xl' : 'text-xl'
 %>
 
-<turbo-frame id="course-content" class="contents">
 <div class="h-screen flex flex-col lg:flex-row max-w-7xl mx-auto w-full bg-gray-800"
-    data-controller="main-video-player watch-video-activity full-player-frame"
+    data-controller="main-video-player watch-video-activity"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= @phrases.first&.l1&.iso_name || 'en' %>"
     data-main-video-player-target="videoListener videoSegment"
@@ -59,7 +58,7 @@
     <div class="px-4 py-4 border-b border-gray-700">
       <h1 class="text-xl sm:text-2xl font-bold text-white"><%= @course.name %></h1>
       <p class="text-sm text-gray-400 mt-1">Full Video with Transcript</p>
-      <%= link_to "← Back to Course", course_path(@course.slug), data: { turbo_frame: "course-content", turbo_action: "advance" }, class: "text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block" %>
+      <a href="<%= course_path(@course.slug) %>" class="text-blue-400 hover:text-blue-300 text-sm mt-2 inline-block">← Back to Course</a>
     </div>
 
     <div
@@ -169,5 +168,113 @@
     </div>
   </div>
 </div>
-</turbo-frame>
 
+<!-- Vocabulary Table Section (below video and transcript) -->
+<div class="max-w-7xl mx-auto w-full bg-gray-800 border-t border-gray-700">
+  <div class="px-4 py-6">
+    <div class="flex justify-between items-center mb-4">
+      <h2 class="text-2xl font-bold text-white">Vocabulary</h2>
+      <%= link_to "Download CSV", "#", 
+          id: "download-csv-btn",
+          class: "px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200",
+          data: { course_slug: @course.slug } %>
+    </div>
+
+    <div class="overflow-x-auto bg-gray-900 rounded-lg">
+      <table class="min-w-full divide-y divide-gray-700">
+        <thead class="bg-gray-800">
+          <tr>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Word (<%= @phrases.first&.l1&.english_name || 'L1' %>)
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Translation (<%= @phrases.first&.l2&.english_name || 'L2' %>)
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+              Frequency
+            </th>
+          </tr>
+        </thead>
+        <tbody class="bg-gray-900 divide-y divide-gray-800" id="vocabulary-table-body">
+          <%
+            # Get all token_translations from phrases and calculate frequency
+            token_translations = @phrases.flat_map(&:token_translations)
+            vocabulary_map = {}
+
+            token_translations.each do |tt|
+              word = tt.original_text
+              translation = tt.translation
+              
+              key = "#{word}||#{translation}"
+              if vocabulary_map[key]
+                vocabulary_map[key][:count] += 1
+              else
+                vocabulary_map[key] = {
+                  word: word,
+                  translation: translation,
+                  count: 1
+                }
+              end
+            end
+
+            # Sort by frequency (descending)
+            vocabulary_sorted = vocabulary_map.values.sort_by { |v| -v[:count] }
+          %>
+
+          <% vocabulary_sorted.each do |vocab| %>
+            <tr class="hover:bg-gray-800">
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
+                <%= vocab[:word] %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-teal-400">
+                <%= vocab[:translation] %>
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-300">
+                <%= vocab[:count] %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+  // CSV Download functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const downloadBtn = document.getElementById('download-csv-btn');
+    
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        // Get vocabulary data from the table
+        const rows = document.querySelectorAll('#vocabulary-table-body tr');
+        let csvContent = "Word,Translation,Frequency\n";
+        
+        rows.forEach(row => {
+          const cells = row.querySelectorAll('td');
+          const word = cells[0].textContent.trim().replace(/,/g, '');
+          const translation = cells[1].textContent.trim().replace(/,/g, '');
+          const frequency = cells[2].textContent.trim();
+          
+          csvContent += `"${word}","${translation}",${frequency}\n`;
+        });
+        
+        // Create blob and download
+        const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+        const link = document.createElement('a');
+        const url = URL.createObjectURL(blob);
+        
+        link.setAttribute('href', url);
+        link.setAttribute('download', '<%= @course.slug %>_vocabulary.csv');
+        link.style.visibility = 'hidden';
+        
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      });
+    }
+  });
+</script>

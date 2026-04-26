@@ -130,10 +130,5 @@ extension SceneDelegate: NavigatorDelegate {
         let proposal = VisitProposal(url: url, options: VisitOptions(action: .replace), properties: properties)
         navigator.route(proposal)
     }
-    
-    func navigatorWebViewProcessDidTerminate(_ navigator: Navigator) {
-        print("🚨 WKWebView ran out of memory and crashed! Reloading...")
-        navigator.reload()
-    }
 }
 

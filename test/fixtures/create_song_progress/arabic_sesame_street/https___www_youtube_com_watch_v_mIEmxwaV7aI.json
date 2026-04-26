@@ -1,0 +1,471 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=mIEmxwaV7aI",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "يا عنباتي ما أحلاكم",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:03.00",
+        "text_l2": "Oh my grapes, how sweet you are"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "ما أطيبكم ما أزكاكم",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:06.00",
+        "text_l2": "How delicious, how pure you taste"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "طعم الحبة مثل السكر",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:09.00",
+        "text_l2": "Each berry tastes like sugar"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "مممم يا سلام ما أزكى طعم العنب",
+        "timestamp": "00:10.00",
+        "timestamp_end": "00:13.00",
+        "text_l2": "Mmm, oh my, what a delicious taste of grapes"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "فعلاً يا جلجل",
+        "timestamp": "00:16.00",
+        "timestamp_end": "00:18.00",
+        "text_l2": "Indeed, Jaljal"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بيشهوا ما أزكاهم",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:20.00",
+        "text_l2": "They look so delicious"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "خصوصاً لما يكونوا مقطوفين من الحديقة",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:22.00",
+        "text_l2": "Especially when picked from the garden"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "ومغسولين منيح وناضجين",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "And washed well and ripe"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "ممم العنب من الفواكه المفيدة كتير",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:27.00",
+        "text_l2": "Mmm, grapes are very healthy fruits"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "لما باكله بشعر بالقوة",
+        "timestamp": "00:27.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "When I eat them, I feel strong"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "فعلاً معك حق يا جلجل",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:31.00",
+        "text_l2": "Indeed, you're right, Jaljal"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "مرحباً عمو كامل",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "Hello, Uncle Kamel"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "أهلاً تنتن",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "Welcome, Tantan"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "مرحباً جلجل",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "Hello, Jaljal"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "أهلاً أهلاً يا تنتن",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:37.00",
+        "text_l2": "Welcome, welcome, Tantan"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "ممم إنتو قطفتوا عنب من الدالية",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:40.00",
+        "text_l2": "Mmm, you picked grapes from the vine"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أنا كمان بدي أقطف عنب",
+        "timestamp": "00:40.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "I want to pick grapes too"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "وكتير كتير كتير طيبين",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:45.00",
+        "text_l2": "And lots and lots and lots of good ones"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "تفضلي يا تنتن كلي عنب",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "Here you go, Tantan, eat some grapes"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "شكراً عمو كامل",
+        "timestamp": "00:49.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Thank you, Uncle Kamel"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "بس أنا بدي",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:53.00",
+        "text_l2": "But I want"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "هداك القطف",
+        "timestamp": "00:53.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "That bunch over there"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "هاد يا تنتن؟",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:57.00",
+        "text_l2": "This one, Tantan?"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بس هاد يا تنتن بعده مش ناضج",
+        "timestamp": "00:57.00",
+        "timestamp_end": "00:59.00",
+        "text_l2": "But this one, Tantan, isn't ripe yet"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "بس أنا بدي إياه",
+        "timestamp": "00:59.00",
+        "timestamp_end": "01:01.00",
+        "text_l2": "But I want it"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "بس يا تنتن بحكيلك ما رح يكون ناضج",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "But Tantan, I'm telling you, it won't be ripe"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "يعني رح يكون حامض",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "Meaning it will be sour"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "خليني أجربه",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "Let me try it"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "شوفي العنب كتير قاسي",
+        "timestamp": "01:07.00",
+        "timestamp_end": "01:09.00",
+        "text_l2": "Look, the grapes are very hard"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "يا عمو كامل لو سمحت",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "Uncle Kamel, please"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "حاضر يا تنتن أمري لله",
+        "timestamp": "01:13.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "Sure, Tantan, anything for you"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "مع إنه مش مستوي",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:17.00",
+        "text_l2": "Even though it's not ready"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "بس لازم أغسلك إياه بالأول",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "But I must wash it for you first"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "يا عيني على عنباتي",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:22.50",
+        "text_l2": "Oh my, my lovely grapes"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "شو إنه طعمهم زي العسل",
+        "timestamp": "01:22.50",
+        "timestamp_end": "01:24.00",
+        "text_l2": "Wow, their taste is like honey"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "مثل السكر",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:25.00",
+        "text_l2": "Like sugar"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "تفضلي يا تنتن",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:26.00",
+        "text_l2": "Here you go, Tantan"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "حامض حامض حامض",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:33.00",
+        "text_l2": "Sour, sour, sour"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "بس أنا شايف إنه زاكي",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:35.50",
+        "text_l2": "But I think it's delicious"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "زاكي كتير مثل السكر",
+        "timestamp": "01:35.50",
+        "timestamp_end": "01:37.00",
+        "text_l2": "Very delicious, like sugar"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "لا حامض حامض أنا دقته حامض",
+        "timestamp": "01:37.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "No, sour, sour, I tasted it, it's sour"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "طبعاً حامض يا تنتن",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:42.00",
+        "text_l2": "Of course it's sour, Tantan"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "بس عارفة ليش عنباتك حامضين",
+        "timestamp": "01:42.00",
+        "timestamp_end": "01:44.00",
+        "text_l2": "But do you know why your grapes are sour"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "وعنبات جلجل حلوين وزاكيين؟",
+        "timestamp": "01:44.00",
+        "timestamp_end": "01:47.00",
+        "text_l2": "And Jaljal's grapes are sweet and delicious?"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "ليش؟",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "Why?"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "لأن العنب اللي قدام جلجل عنب ناضج",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Because the grapes in front of Jaljal are ripe"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "يعني مستوي",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "Meaning ready"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "والعنب اللي قدامك عنب لساته مش مستوي",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:56.00",
+        "text_l2": "And the grapes in front of you aren't ready yet"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "طيب أنا كيف رح أعرف إذا العنب مستوي؟",
+        "timestamp": "01:58.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "Okay, how will I know if the grapes are ready?"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "آه هاي بسيطة يا تنتن شوفي",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:03.00",
+        "text_l2": "Ah, that's simple, Tantan, look"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "لما بتطلعي على العنب بتلاقي إنه ملمسه",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:06.00",
+        "text_l2": "When you look at the grapes, you find their texture"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "قاسي كتير معناته مش مستوي",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "Is very hard, meaning it's not ready"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "وإذا كان طري؟",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "And if it's soft?"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "إذا كان طري بكون مستوي",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.00",
+        "text_l2": "If it's soft, it's ready"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "وكمان لونه لما بكون صار على أصفر شوي",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "And also its color, when it turns a bit yellow"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "يعني بكون ناضج",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "Meaning it's ripe"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "صحيح يا جلجل",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:19.00",
+        "text_l2": "True, Jaljal"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "عشان هيك عنباتي حامضين",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:22.00",
+        "text_l2": "That's why my grapes are sour"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "وعنبات جلجل حلوين",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "And Jaljal's grapes are sweet"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "بالضبط يا تنتن برافو عليكي",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:26.00",
+        "text_l2": "Exactly, Tantan, bravo to you"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "يا عنباتي ما أحلاكم",
+        "timestamp": "02:27.00",
+        "timestamp_end": "02:30.00",
+        "text_l2": "Oh my grapes, how sweet you are"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "ما أطيبكم ما أزكاكم",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:33.00",
+        "text_l2": "How delicious, how pure you taste"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "طعم الحبة مثل السكر",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:36.00",
+        "text_l2": "Each berry tastes like sugar"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "يا عنباتي ما أحلاكم",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:39.00",
+        "text_l2": "Oh my grapes, how sweet you are"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "ما أطيبكم ما أزكاكم",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "How delicious, how pure you taste"
+      }
+    ],
+    "phrases_with_token_translations": "[يا] عنباتي ما أحلاكم => [Oh] my grapes, how sweet you are\nيا [عنباتي] ما أحلاكم => Oh [my grapes], how sweet you are\nيا عنباتي [ما] أحلاكم => Oh my grapes, [how] sweet you are\nيا عنباتي ما [أحلاكم] => Oh my grapes, how [sweet you are]\n\n[ما] أطيبكم ما أزكاكم => [How] delicious, how pure you taste\nما [أطيب]كم ما أزكاكم => [delicious]\nما أطيب[كم] ما أزكاكم => you\nما أطيبكم [ما] أزكاكم => How delicious, [how] pure you taste\nما أطيبكم ما [أزكا]كم => [pure]\nما أطيبكم ما أزكا[كم] => How delicious, how pure [you] taste # aligning the suffix to \"you\" within the final phrase structure\n\n[طعم] الحبة مثل السكر => Each berry [tastes] like sugar\nطعم [الحبة] مثل السكر => [Each berry] tastes like sugar\nطعم الحبة [مثل] السكر => Each berry tastes [like] sugar\nطعم الحبة مثل [السكر] => Each berry tastes like [sugar]\n\n[مممم] يا سلام ما أزكى طعم العنب => [Mmm], oh my, what a delicious taste of grapes\nمممم [يا سلام] ما أزكى طعم العنب => Mmm, [oh my], what a delicious taste of grapes\nمممم يا سلام [ما أزكى] طعم العنب => Mmm, oh my, [what a delicious] taste of grapes\nمممم يا سلام ما أزكى [طعم] العنب => Mmm, oh my, what a delicious [taste] of grapes\nمممم يا سلام ما أزكى طعم [العنب] => Mmm, oh my, what a delicious taste [of grapes]\n\n[فعلاً] يا جلجل => [Indeed], Jaljal\nفعلاً [يا] جلجل => vocative particle\nفعلاً يا [جلجل] => Indeed, [Jaljal]\n\n[بيشهوا] ما أزكاهم => [They look] so delicious\nبيشهوا [ما] أزكاهم => They look [so] delicious\nبيشهوا ما [أزكاهم] => They look so [delicious]\n\n[خصوصاً] لما يكونوا مقطوفين من الحديقة => [Especially] when picked from the garden\nخصوصاً [لما] يكونوا مقطوفين من الحديقة => Especially [when] picked from the garden\nخصوصاً لما [يكونوا] مقطوفين من الحديقة => they are\nخصوصاً لما يكونوا [مقطوفين] من الحديقة => Especially when [picked] from the garden\nخصوصاً لما يكونوا مقطوفين [من] الحديقة => Especially when picked [from] the garden\nخصوصاً لما يكونوا مقطوفين من [الحديقة] => Especially when picked from [the garden]\n\n[ومغسولين] منيح وناضجين => [And washed] well and ripe\nومغسولين [منيح] وناضجين => And washed [well] and ripe\nومغسولين منيح [وناضجين] => And washed well [and ripe]\n\n[ممم] العنب من الفواكه المفيدة كتير => [Mmm], grapes are very healthy fruits\nممم [العنب] من الفواكه المفيدة كتير => Mmm, [grapes] are very healthy fruits\nممم العنب [من] الفواكه المفيدة كتير => from, out of\nممم العنب من [الفواكه] المفيدة كتير => Mmm, grapes are very healthy [fruits]\nممم العنب من الفواكه [المفيدة] كتير => Mmm, grapes are very [healthy] fruits\nممم العنب من الفواكه المفيدة [كتير] => Mmm, grapes are [very] healthy fruits\n\n[لما] باكله بشعر بالقوة => [When] I eat them, I feel strong\nلما [باكله] بشعر بالقوة => When [I eat them], I feel strong\nلما باكله [بشعر] بالقوة => When I eat them, [I feel] strong\nلما باكله بشعر [بالقوة] => When I eat them, I feel [strong]\n\n[فعلاً] معك حق يا جلجل => [Indeed], you're right, Jaljal\nفعلاً [معك حق] يا جلجل => Indeed, [you're right], Jaljal\nفعلاً معك حق يا [جلجل] => Indeed, you're right, [Jaljal]\n\n[مرحباً] عمو كامل => [Hello], Uncle Kamel\nمرحباً [عمو] كامل => Hello, [Uncle] Kamel\nمرحباً عمو [كامل] => Hello, Uncle [Kamel]\n\n[أهلاً] تنتن => [Welcome], Tantan\nأهلاً [تنتن] => Welcome, [Tantan]\n\n[مرحباً] جلجل => [Hello], Jaljal\nمرحباً [جلجل] => Hello, [Jaljal]\n\n[أهلاً] أهلاً يا تنتن => [Welcome], welcome, Tantan\nأهلاً [أهلاً] يا تنتن => Welcome, [welcome], Tantan\nأهلاً أهلاً يا [تنتن] => Welcome, welcome, [Tantan]\n\n[ممم] إنتو قطفتوا عنب من الدالية => [Mmm], you picked grapes from the vine\nممم [إنتو] قطفتوا عنب من الدالية => Mmm, [you] picked grapes from the vine\nممم إنتو [قطفتوا] عنب من الدالية => Mmm, you [picked] grapes from the vine\nممم إنتو قطفتوا [عنب] من الدالية => Mmm, you picked [grapes] from the vine\nممم إنتو قطفتوا عنب [من] الدالية => Mmm, you picked grapes [from] the vine\nممم إنتو قطفتوا عنب من [الدالية] => Mmm, you picked grapes from [the vine]\n\n[أنا] كمان بدي أقطف عنب => [I] want to pick grapes too\nأنا [كمان] بدي أقطف عنب => I want to pick grapes [too]\nأنا كمان [بدي] أقطف عنب => I [want] to pick grapes too\nأنا كمان بدي [أقطف] عنب => I want to [pick] grapes too\nأنا كمان بدي أقطف [عنب] => I want to pick [grapes] too\n\n[و]كتير كتير كتير طيبين => [And] lots and lots and lots of good ones\nو[كتير] كتير كتير طيبين => And [lots] and lots and lots of good ones\nوكتير [كتير] كتير طيبين => And lots and [lots] and lots of good ones\nوكتير كتير [كتير] طيبين => And lots and lots and [lots] of good ones\nوكتير كتير كتير [طيبين] => And lots and lots and lots [of good ones]\n\n[تفضلي] يا تنتن كلي عنب => [Here you go], Tantan, eat some grapes\nتفضلي [يا تنتن] كلي عنب => Here you go, [Tantan], eat some grapes\nتفضلي يا تنتن [كلي] عنب => Here you go, Tantan, [eat] some grapes\nتفضلي يا تنتن كلي [عنب] => Here you go, Tantan, eat some [grapes]\n\n[شكراً] عمو كامل => [Thank you], Uncle Kamel\nشكراً [عمو] كامل => Thank you, [Uncle] Kamel\nشكراً عمو [كامل] => Thank you, Uncle [Kamel]\n\n[بس] أنا بدي => [But] I want\nبس [أنا] بدي => But [I] want\nبس أنا [بدي] => But I [want]\n\n[هداك] القطف => [That] bunch [over there]\nهداك [القطف] => That [bunch] over there\n\n[هاد] يا تنتن؟ => [This one], Tantan?\nهاد يا [تنتن]؟ => This one, [Tantan]?\n\n[بس] هاد يا تنتن بعده مش ناضج => [But] this one, Tantan, isn't ripe yet\nبس [هاد] يا تنتن بعده مش ناضج => But [this one], Tantan, isn't ripe yet\nبس هاد يا [تنتن] بعده مش ناضج => But this one, [Tantan], isn't ripe yet\nبس هاد يا تنتن [بعده] مش ناضج => But this one, Tantan, isn't ripe [yet]\nبس هاد يا تنتن بعده [مش] ناضج => But this one, Tantan, [isn't] ripe yet\nبس هاد يا تنتن بعده مش [ناضج] => But this one, Tantan, isn't [ripe] yet\n\n[بس] أنا بدي إياه => [But] I want it\nبس [أنا] بدي إياه => But [I] want it\nبس أنا [بدي] إياه => But I [want] it\nبس أنا بدي [إياه] => But I want [it]\n\n[بس] يا تنتن بحكيلك ما رح يكون ناضج => [But] Tantan, I'm telling you, it won't be ripe\nبس يا [تنتن] بحكيلك ما رح يكون ناضج => But [Tantan], I'm telling you, it won't be ripe\nبس يا تنتن [بحكيلك] ما رح يكون ناضج => But Tantan, [I'm telling you], it won't be ripe\nبس يا تنتن بحكيلك [ما رح] يكون ناضج => But Tantan, I'm telling you, it [won't] be ripe\nبس يا تنتن بحكيلك ما رح [يكون] ناضج => But Tantan, I'm telling you, it won't [be] ripe\nبس يا تنتن بحكيلك ما رح يكون [ناضج] => But Tantan, I'm telling you, it won't be [ripe]\n\n[يعني] رح يكون حامض => [Meaning] it will be sour\nيعني [رح يكون] حامض => Meaning [it will be] sour\nيعني رح يكون [حامض] => Meaning it will be [sour]\n\n[خليني] أجربه => [Let me] try it\nخليني [أجربه] => Let me [try it]\n\n[شوفي] العنب كتير قاسي => [Look], the grapes are very hard\nشوفي [العنب] كتير قاسي => Look, [the grapes] are very hard\nشوفي العنب [كتير] قاسي => Look, the grapes are [very] hard\nشوفي العنب كتير [قاسي] => Look, the grapes are very [hard]\n\n[يا عمو] كامل لو سمحت => [Uncle] Kamel, please\nيا عمو [كامل] لو سمحت => Uncle [Kamel], please\nيا عمو كامل [لو سمحت] => Uncle Kamel, [please]\n\n[حاضر] يا تنتن أمري لله => [Sure], Tantan, anything for you\nحاضر [يا تنتن] أمري لله => Sure, [Tantan], anything for you\nحاضر يا تنتن [أمري لله] => anything for you # idiomatic expression meaning \"I leave my matter to God\", used here to mean \"I give in\" or \"anything for you\"\n\n[مع إنه] مش مستوي => [Even though it's] not ready\nمع إنه [مش] مستوي => Even though it's [not] ready\nمع إنه مش [مستوي] => Even though it's not [ready]\n\n[بس] لازم أغسلك إياه بالأول => [But] I must wash it for you first\nبس [لازم] أغسلك إياه بالأول => But I [must] wash it for you first\nبس لازم [أغسلك] إياه بالأول => I wash for you\nبس لازم أغسلك [إياه] بالأول => But I must wash [it] for you first\nبس لازم أغسلك إياه [بالأول] => But I must wash it for you [first]\n\n[يا عيني] على عنباتي => [Oh my], my lovely grapes\nيا عيني على [عنباتي] => Oh my, [my lovely grapes]\n\n[شو] إنه طعمهم زي العسل => [Wow], their taste is like honey\nشو إنه [طعمهم] زي العسل => Wow, [their taste] is like honey\nشو إنه طعمهم [زي] العسل => Wow, their taste is [like] honey\nشو إنه طعمهم زي [العسل] => Wow, their taste is like [honey]\n\n[مثل] السكر => [Like] sugar\nمثل [السكر] => Like [sugar]\n\n[تفضلي] يا تنتن => [Here you go], Tantan\nتفضلي يا [تنتن] => Here you go, [Tantan]\n\n[حامض] حامض حامض => [Sour], sour, sour\nحامض [حامض] حامض => Sour, [sour], sour\nحامض حامض [حامض] => Sour, sour, [sour]\n\n[بس] أنا شايف إنه زاكي => [But] I think it's delicious\nبس [أنا] شايف إنه زاكي => But [I] think it's delicious\nبس أنا [شايف] إنه زاكي => But I [think] it's delicious\nبس أنا شايف [إنه] زاكي => But I think [it's] delicious\nبس أنا شايف إنه [زاكي] => But I think it's [delicious]\n\n[زاكي] كتير مثل السكر => Very [delicious], like sugar\nزاكي [كتير] مثل السكر => [Very] delicious, like sugar\nزاكي كتير [مثل] السكر => Very delicious, [like] sugar\nزاكي كتير مثل [السكر] => Very delicious, like [sugar]\n\n[لا] حامض حامض أنا دقته حامض => [No], sour, sour, I tasted it, it's sour\nلا [حامض] حامض أنا دقته حامض => No, [sour], sour, I tasted it, it's sour\nلا حامض [حامض] أنا دقته حامض => No, sour, [sour], I tasted it, it's sour\nلا حامض حامض [أنا] دقته حامض => No, sour, sour, [I] tasted it, it's sour\nلا حامض حامض أنا [دقته] حامض => No, sour, sour, I [tasted it], it's sour\nلا حامض حامض أنا دقته [حامض] => No, sour, sour, I tasted it, [it's sour] # 'it's' is implied in the Arabic nominal sentence structure where the adjective 'حامض' acts as the predicate.\n\n[طبعاً] حامض يا تنتن => [Of course] it's sour, Tantan\nطبعاً [حامض] يا تنتن => it's sour\nطبعاً حامض يا [تنتن] => Of course it's sour, [Tantan]\n\n[بس] عارفة ليش عنباتك حامضين => [But] do you know why your grapes are sour\nبس [عارفة] ليش عنباتك حامضين => But [do you know] why your grapes are sour\nبس عارفة [ليش] عنباتك حامضين => But do you know [why] your grapes are sour\nبس عارفة ليش [عنباتك] حامضين => But do you know why [your grapes] are sour\nبس عارفة ليش عنباتك [حامضين] => But do you know why your grapes [are sour]\n\n[و]عنبات جلجل حلوين وزاكيين؟ => [And] Jaljal's grapes are sweet and delicious?\nو[عنبات] جلجل حلوين وزاكيين؟ => And Jaljal's [grapes] are sweet and delicious?\nوعنبات [جلجل] حلوين وزاكيين؟ => And [Jaljal's] grapes are sweet and delicious?\nوعنبات جلجل [حلوين] وزاكيين؟ => And Jaljal's grapes are [sweet] and delicious?\nوعنبات جلجل حلوين [وزاكيين]؟ => And Jaljal's grapes are sweet [and delicious]\n\n[ليش]؟ => [Why]?\n\n[لأن] العنب اللي قدام جلجل عنب ناضج => [Because] the grapes in front of Jaljal are ripe\nلأن [العنب] اللي قدام جلجل عنب ناضج => Because [the grapes] in front of Jaljal are ripe\nلأن العنب اللي [قدام] جلجل عنب ناضج => Because the grapes [in front of] Jaljal are ripe\nلأن العنب اللي قدام [جلجل] عنب ناضج => Because the grapes in front of [Jaljal] are ripe\nلأن العنب اللي قدام جلجل [عنب] ناضج => grapes\nلأن العنب اللي قدام جلجل عنب [ناضج] => Because the grapes in front of Jaljal are [ripe]\n\n[يعني] مستوي => [Meaning] ready\nيعني [مستوي] => Meaning [ready]\n\n[والعنب] اللي قدامك عنب لساته مش مستوي => [And the grapes] in front of you aren't ready yet\nوالعنب اللي [قدامك] عنب لساته مش مستوي => And the grapes [in front of you] aren't ready yet\nوالعنب اللي قدامك عنب [لساته] مش مستوي => still, yet # lissatuh literally means \"it is still\" or \"yet\", referring to the grapes\nوالعنب اللي قدامك عنب لساته [مش] مستوي => And the grapes in front of you [aren't] ready yet # mish is the negation particle\nوالعنب اللي قدامك عنب لساته مش [مستوي] => And the grapes in front of you aren't [ready] yet # mustawi means ripe or ready (lit. cooked/leveled)\n\n[طيب] أنا كيف رح أعرف إذا العنب مستوي؟ => [Okay], how will I know if the grapes are ready?\nطيب [أنا] كيف رح أعرف إذا العنب مستوي؟ => Okay, how will [I] know if the grapes are ready?\nطيب أنا [كيف] رح أعرف إذا العنب مستوي؟ => Okay, [how] will I know if the grapes are ready?\nطيب أنا كيف [رح] أعرف إذا العنب مستوي؟ => Okay, how [will] I know if the grapes are ready?\nطيب أنا كيف رح [أعرف] إذا العنب مستوي؟ => Okay, how will I [know] if the grapes are ready?\nطيب أنا كيف رح أعرف [إذا] العنب مستوي؟ => Okay, how will I know [if] the grapes are ready?\nطيب أنا كيف رح أعرف إذا [العنب] مستوي؟ => Okay, how will I know if [the grapes] are ready?\nطيب أنا كيف رح أعرف إذا العنب [مستوي]؟ => Okay, how will I know if the grapes are [ready]?\n\n[آه] هاي بسيطة يا تنتن شوفي => [Ah], that's simple, Tantan, look\nآه [هاي] بسيطة يا تنتن شوفي => Ah, [that's] simple, Tantan, look\nآه هاي [بسيطة] يا تنتن شوفي => Ah, that's [simple], Tantan, look\nآه هاي بسيطة [يا تنتن] شوفي => Ah, that's simple, [Tantan], look\nآه هاي بسيطة يا تنتن [شوفي] => Ah, that's simple, Tantan, [look]\n\n[لما] بتطلعي على العنب بتلاقي إنه ملمسه => [When] you look at the grapes, you find their texture\nلما [بتطلعي] على العنب بتلاقي إنه ملمسه => When [you look] at the grapes, you find their texture\nلما بتطلعي [على] العنب بتلاقي إنه ملمسه => When you look [at] the grapes, you find their texture\nلما بتطلعي على [العنب] بتلاقي إنه ملمسه => When you look at [the grapes], you find their texture\nلما بتطلعي على العنب [بتلاقي] إنه ملمسه => When you look at the grapes, [you find] their texture\nلما بتطلعي على العنب بتلاقي [إنه] ملمسه => that\nلما بتطلعي على العنب بتلاقي إنه [ملمسه] => When you look at the grapes, you find [their texture]\n\n[قاسي] كتير معناته مش مستوي => Is very [hard], meaning it's not ready\nقاسي [كتير] معناته مش مستوي => Is [very] hard, meaning it's not ready\nقاسي كتير [معناته] مش مستوي => Is very hard, [meaning] it's not ready\nقاسي كتير معناته [مش] مستوي => Is very hard, meaning it's [not] ready\nقاسي كتير معناته مش [مستوي] => Is very hard, meaning it's not [ready] # مستوي literally means ripe or cooked, translated here as ready for the context of fruit/food texture\n\n[وإذا] كان طري => [And if] it's soft\nوإذا [كان] طري => And if [it's] soft\nوإذا كان [طري] => And if it's [soft]\n\n[إذا] كان طري بكون مستوي => [If] it's soft, it's ready\nإذا [كان] طري بكون مستوي => If [it's] soft, it's ready\nإذا كان [طري] بكون مستوي => If it's [soft], it's ready\nإذا كان طري [بكون] مستوي => If it's soft, [it's] ready\nإذا كان طري بكون [مستوي] => If it's soft, it's [ready] # \"mustawi\" means ripe or cooked, fittingly translated as \"ready\" here\n\n[وكمان] لونه لما بكون صار على أصفر شوي => [And also] its color, when it turns a bit yellow\nوكمان [لونه] لما بكون صار على أصفر شوي => And also [its color], when it turns a bit yellow\nوكمان لونه [لما] بكون صار على أصفر شوي => And also its color, [when] it turns a bit yellow\nوكمان لونه لما [بكون صار] على أصفر شوي => it turns\nوكمان لونه لما بكون صار على [أصفر] شوي => And also its color, when it turns a bit [yellow]\nوكمان لونه لما بكون صار على أصفر [شوي] => And also its color, when it turns [a bit] yellow\n\n[يعني] بكون ناضج => [Meaning] it's ripe\nيعني [بكون] ناضج => Meaning [it's] ripe\nيعني بكون [ناضج] => Meaning it's [ripe]\n\n[صحيح] يا جلجل => [True], Jaljal\nصحيح يا [جلجل] => True, [Jaljal]\n\n[عشان هيك] عنباتي حامضين => [That's why] my grapes are sour\nعشان هيك [عنباتي] حامضين => That's why [my grapes] are sour\nعشان هيك عنباتي [حامضين] => That's why my grapes are [sour]\n\n[و]عنبات جلجل حلوين => [And] Jaljal's grapes are sweet\nو[عنبات] جلجل حلوين => And Jaljal's [grapes] are sweet\nوعنبات [جلجل] حلوين => And [Jaljal's] grapes are sweet\nوعنبات جلجل [حلوين] => And Jaljal's grapes [are sweet]\n\n[بالضبط] يا تنتن برافو عليكي => [Exactly], Tantan, bravo to you\nبالضبط [يا تنتن] برافو عليكي => Exactly, [Tantan], bravo to you\nبالضبط يا تنتن [برافو] عليكي => Exactly, Tantan, [bravo] to you\nبالضبط يا تنتن برافو [عليكي] => Exactly, Tantan, bravo [to you]\n\n[يا] عنباتي ما أحلاكم => [Oh] my grapes, how sweet you are\nيا [عنباتي] ما أحلاكم => Oh [my grapes], how sweet you are\nيا عنباتي [ما] أحلاكم => Oh my grapes, [how] sweet you are\nيا عنباتي ما [أحلاكم] => Oh my grapes, how [sweet you are]\n\n[ما] أطيبكم ما أزكاكم => [How] delicious, how pure you taste\nما [أطيبكم] ما أزكاكم => how delicious you taste\nما أطيبكم [ما] أزكاكم => How delicious, [how] pure you taste\nما أطيبكم ما [أزكاكم] => how pure you taste\n\n[طعم] الحبة مثل السكر => Each berry [tastes] like sugar\nطعم [الحبة] مثل السكر => Each [berry] tastes like sugar\nطعم الحبة [مثل] السكر => Each berry tastes [like] sugar\nطعم الحبة مثل [السكر] => Each berry tastes like [sugar]\n\n[يا] عنباتي ما أحلاكم => [Oh] my grapes, how sweet you are\nيا [عنباتي] ما أحلاكم => Oh [my grapes], how sweet you are\nيا عنباتي [ما] أحلاكم => Oh my grapes, [how] sweet you are\nيا عنباتي ما [أحلاكم] => Oh my grapes, how [sweet you are] # أحلاكم contains both the root for \"sweet/pretty\" and the plural \"you\" suffix\n\n[ما أطيبكم] ما أزكاكم => [How delicious], how pure you taste\nما أطيبكم [ما أزكاكم] => How delicious, [how pure you taste]\n\n",
+    "lessons": "# الثناء على العنب\n00:00.00 يا عنباتي ما أحلاكم\n00:03.00 ما أطيبكم ما أزكاكم\n00:06.00 طعم الحبة مثل السكر\n00:10.00 مممم يا سلام ما أزكى طعم العنب\n\n# فوائد العنب\n00:16.00 فعلاً يا جلجل\n00:18.00 بيشهوا ما أزكاهم\n00:20.00 خصوصاً لما يكونوا مقطوفين من الحديقة\n00:22.00 ومغسولين منيح وناضجين\n00:24.00 ممم العنب من الفواكه المفيدة كتير\n00:27.00 لما باكله بشعر بالقوة\n\n# لقاء الأصدقاء (Part 1)\n00:30.00 فعلاً معك حق يا جلجل\n00:31.00 مرحباً عمو كامل\n00:33.00 أهلاً تنتن\n00:34.00 مرحباً جلجل\n00:35.00 أهلاً أهلاً يا تنتن\n00:37.00 ممم إنتو قطفتوا عنب من الدالية\n00:40.00 أنا كمان بدي أقطف عنب\n00:42.00 وكتير كتير كتير طيبين\n\n# لقاء الأصدقاء (Part 2)\n00:46.00 تفضلي يا تنتن كلي عنب\n00:49.00 شكراً عمو كامل\n00:51.00 بس أنا بدي\n00:53.00 هداك القطف\n00:55.00 هاد يا تنتن؟\n00:57.00 بس هاد يا تنتن بعده مش ناضج\n\n# نضج العنب (Part 1)\n00:59.00 بس أنا بدي إياه\n01:01.00 بس يا تنتن بحكيلك ما رح يكون ناضج\n01:03.00 يعني رح يكون حامض\n01:05.00 خليني أجربه\n01:07.00 شوفي العنب كتير قاسي\n01:10.00 يا عمو كامل لو سمحت\n\n# نضج العنب (Part 2)\n01:13.00 حاضر يا تنتن أمري لله\n01:15.00 مع إنه مش مستوي\n01:17.00 بس لازم أغسلك إياه بالأول\n01:21.00 يا عيني على عنباتي\n01:22.50 شو إنه طعمهم زي العسل\n01:24.00 مثل السكر\n01:25.00 تفضلي يا تنتن\n\n# طعم العنب\n01:29.00 حامض حامض حامض\n01:34.00 بس أنا شايف إنه زاكي\n01:35.50 زاكي كتير مثل السكر\n01:37.00 لا حامض حامض أنا دقته حامض\n01:40.00 طبعاً حامض يا تنتن\n\n# معرفة نضج العنب (Part 1)\n01:42.00 بس عارفة ليش عنباتك حامضين\n01:44.00 وعنبات جلجل حلوين وزاكيين؟\n01:47.00 ليش؟\n01:48.00 لأن العنب اللي قدام جلجل عنب ناضج\n01:51.00 يعني مستوي\n01:53.00 والعنب اللي قدامك عنب لساته مش مستوي\n\n# معرفة نضج العنب (Part 2)\n01:58.00 طيب أنا كيف رح أعرف إذا العنب مستوي؟\n02:01.00 آه هاي بسيطة يا تنتن شوفي\n02:03.00 لما بتطلعي على العنب بتلاقي إنه ملمسه\n02:06.00 قاسي كتير معناته مش مستوي\n02:09.00 وإذا كان طري؟\n02:11.00 إذا كان طري بكون مستوي\n\n# نهاية الحوار\n02:13.00 وكمان لونه لما بكون صار على أصفر شوي\n02:16.00 يعني بكون ناضج\n02:18.00 صحيح يا جلجل\n02:19.00 عشان هيك عنباتي حامضين\n02:22.00 وعنبات جلجل حلوين\n02:24.00 بالضبط يا تنتن برافو عليكي\n\n# خاتمة الأغنية\n02:27.00 يا عنباتي ما أحلاكم\n02:30.00 ما أطيبكم ما أزكاكم\n02:33.00 طعم الحبة مثل السكر\n02:36.00 يا عنباتي ما أحلاكم\n02:39.00 ما أطيبكم ما أزكاكم",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 21:14:25 UTC",
+  "updated_at": "2026-04-25 21:25:35 UTC",
+  "exported_at": "2026-04-25T21:25:36Z"
+}

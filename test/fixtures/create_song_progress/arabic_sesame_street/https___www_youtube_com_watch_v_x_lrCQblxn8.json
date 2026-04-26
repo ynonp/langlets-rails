@@ -1,0 +1,170 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=x-lrCQblxn8",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "طيب لؤي، خلينا نغني.",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:03.00",
+        "text_l2": "Okay Luay, let's sing."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "أوكي.",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:04.00",
+        "text_l2": "Okay."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "إنت إيش حافظ أغاني؟",
+        "timestamp": "00:04.00",
+        "timestamp_end": "00:06.00",
+        "text_l2": "What songs do you know?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "ممم، مقطع أغنية الحواس الخمس.",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:09.00",
+        "text_l2": "Hmm, a verse from the Five Senses song."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "ها! الحواس الخمس.",
+        "timestamp": "00:09.00",
+        "timestamp_end": "00:11.00",
+        "text_l2": "Ha! The Five Senses."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "قبل ما تغني، احكيلي شو هن؟",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Before you sing, tell me what they are?"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "الشم والتذوق واللمس.",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:19.00",
+        "text_l2": "Smell, taste, and touch."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "كيف منشم؟",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:21.00",
+        "text_l2": "How do we smell?"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "بالأنف.",
+        "timestamp": "00:21.00",
+        "timestamp_end": "00:23.00",
+        "text_l2": "With the nose."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "الشم وإيش كمان؟",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "Smell and what else?"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "والتذوق.",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "And taste."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "والسمع.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "And hearing."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "سمع؟",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:32.00",
+        "text_l2": "Hearing?"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "والبصر.",
+        "timestamp": "00:32.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "And sight."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "إيش كمان؟",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "What else?"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "واللمس.",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:37.00",
+        "text_l2": "And touch."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "اللمس، طيب المس إيدي.",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:39.00",
+        "text_l2": "Touch, okay touch my hand."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "خليك ماسكها.",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:41.00",
+        "text_l2": "Keep holding it."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "وغنيلي الأغنية.",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:43.00",
+        "text_l2": "And sing me the song."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "أوكي.",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:44.00",
+        "text_l2": "Okay."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "للإنسان أجمل حواس، سموها الحواس الخمس.",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:49.00",
+        "text_l2": "Humans have the most beautiful senses, they call them the Five Senses."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "هي شم وتذوق، وهي سمع وبصر ولمس.",
+        "timestamp": "00:49.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "They are smell and taste, and hearing, sight, and touch."
+      }
+    ],
+    "phrases_with_token_translations": "[طيب] لؤي، خلينا نغني. => [Okay] Luay, let's sing.\nطيب [لؤي]، خلينا نغني. => Okay [Luay], let's sing.\nطيب لؤي، [خلينا] نغني. => Okay Luay, [let's] sing.\nطيب لؤي، خلينا [نغني]. => Okay Luay, let's [sing].\n\n[أوكي]. => [Okay].\n\n[إنت] إيش حافظ أغاني؟ => What songs do [you] know?\nإنت [إيش] حافظ أغاني؟ => [What] songs do you know?\nإنت إيش [حافظ] أغاني؟ => What songs do you [know]?\nإنت إيش حافظ [أغاني]؟ => What [songs] do you know?\n\n[ممم]، مقطع أغنية الحواس الخمس. => [Hmm], a verse from the Five Senses song.\nممم، [مقطع] أغنية الحواس الخمس. => Hmm, [a verse] from the Five Senses song.\nممم، مقطع [أغنية] الحواس الخمس. => Hmm, a verse from the Five Senses [song].\nممم، مقطع أغنية [الحواس] الخمس. => Hmm, a verse from the [Senses] song.\nممم، مقطع أغنية الحواس [الخمس]. => Hmm, a verse from the [Five] Senses song.\n\n[ها]! الحواس الخمس. => [Ha]! The Five Senses.\nها! [الحواس] الخمس. => Ha! The Five [Senses].\nها! الحواس [الخمس]. => Ha! The [Five] Senses.\n\n[قبل ما] تغني، احكيلي شو هن؟ => [Before] you sing, tell me what they are?\nقبل ما [تغني]، احكيلي شو هن؟ => Before [you sing], tell me what they are?\nقبل ما تغني، [احكيلي] شو هن؟ => Before you sing, [tell me] what they are?\nقبل ما تغني، احكيلي [شو] هن؟ => Before you sing, tell me [what] they are?\nقبل ما تغني، احكيلي شو [هن]؟ => Before you sing, tell me what [they are]?\n\n[الشم] والتذوق واللمس. => [Smell], taste, and touch.\nالشم [والتذوق] واللمس. => taste\nالشم والتذوق [واللمس]. => Smell, taste, [and touch].\n\n[كيف] منشم => [How] do we smell\nكيف [منشم] => How [do we smell]\n\n[بالأنف] => [With the nose]\n[بالأنف] => nose # the root word is \"nose\" (أنف) with \"with the\" (بـ + الـ) as prefixes\n\n[الشم] وإيش كمان؟ => [Smell] and what else?\nالشم [و]إيش كمان؟ => Smell [and] what else?\nالشم و[إيش] كمان؟ => Smell and [what] else?\nالشم وإيش [كمان]؟ => Smell and what [else]?\n\n[و]التذوق. => [And] taste.\nو[التذوق]. => And [taste].\n\n[و]السمع => [And] hearing\nو[السمع] => And [hearing]\n\n[سمع]؟ => [Hearing]?\n\n[و]البصر => [And] sight\nو[البصر] => And [sight]\n\n[إيش] كمان؟ => [What] else?\nإيش [كمان]؟ => What [else]?\n\n[و]اللمس. => [And] touch.\nو[اللمس]. => And [touch].\n\n[اللمس]، طيب المس إيدي. => [Touch], okay touch my hand.\nاللمس، [طيب] المس إيدي. => Touch, [okay] touch my hand.\nاللمس، طيب [المس] إيدي. => Touch, okay [touch] my hand.\nاللمس، طيب المس [إيدي]. => Touch, okay touch [my hand].\n\n[خليك] ماسكها => [Keep] holding it\nخليك [ماسكها] => Keep [holding it]\n\n[و]غنيلي الأغنية => [And] sing me the song.\nو[غنيلي] الأغنية => And [sing me] the song.\nوغنيلي [الأغنية] => And sing me [the song].\n\n[أوكي]. => [Okay].\n\n[للإنسان] أجمل حواس، سموها الحواس الخمس. => [Humans have] the most beautiful senses, they call them the Five Senses.\nللإنسان [أجمل] حواس، سموها الحواس الخمس. => Humans have [the most beautiful] senses, they call them the Five Senses.\nللإنسان أجمل [حواس]، سموها الحواس الخمس. => Humans have the most beautiful [senses], they call them the Five Senses.\nللإنسان أجمل حواس، [سموها] الحواس الخمس. => Humans have the most beautiful senses, [they call them] the Five Senses.\nللإنسان أجمل حواس، سموها [الحواس] الخمس. => Humans have the most beautiful senses, they call them the Five [Senses].\nللإنسان أجمل حواس، سموها الحواس [الخمس]. => Humans have the most beautiful senses, they call them the [Five] Senses.\n\n[هي] شم وتذوق، وهي سمع وبصر ولمس. => [They are] smell and taste, and hearing, sight, and touch.\nهي [شم] وتذوق، وهي سمع وبصر ولمس. => They are [smell] and taste, and hearing, sight, and touch.\nهي شم و[تذوق]، وهي سمع وبصر ولمس. => They are smell and [taste], and hearing, sight, and touch.\nهي شم وتذوق، [وهي] سمع وبصر ولمس. => They are smell and taste, [and] hearing, sight, and touch.\nهي شم وتذوق، وهي [سمع] وبصر ولمس. => They are smell and taste, and [hearing], sight, and touch.\nهي شم وتذوق، وهي سمع و[بصر] ولمس. => They are smell and taste, and hearing, [sight], and touch.\nهي شم وتذوق، وهي سمع وبصر و[لمس] => They are smell and taste, and hearing, sight, and [touch]\n\n",
+    "lessons": "# بداية الأغنية\n00:00.00 طيب لؤي، خلينا نغني.\n00:03.00 أوكي.\n00:04.00 إنت إيش حافظ أغاني؟\n00:06.00 ممم، مقطع أغنية الحواس الخمس.\n00:09.00 ها! الحواس الخمس.\n\n# الحواس الخمس (الجزء الأول)\n00:11.00 قبل ما تغني، احكيلي شو هن؟\n00:14.00 الشم والتذوق واللمس.\n00:19.00 كيف منشم؟\n00:21.00 بالأنف.\n00:23.00 الشم وإيش كمان؟\n00:26.00 والتذوق.\n00:28.00 والسمع.\n\n# الحواس الخمس (الجزء الثاني)\n00:30.00 سمع؟\n00:32.00 والبصر.\n00:34.00 إيش كمان؟\n00:35.00 واللمس.\n00:37.00 اللمس، طيب المس إيدي.\n00:39.00 خليك ماسكها.\n00:41.00 وغنيلي الأغنية.\n00:43.00 أوكي.\n\n# أغنية الحواس الخمس\n00:44.00 للإنسان أجمل حواس، سموها الحواس الخمس.\n00:49.00 هي شم وتذوق، وهي سمع وبصر ولمس.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 23:29:37 UTC",
+  "updated_at": "2026-04-25 23:35:09 UTC",
+  "exported_at": "2026-04-25T23:35:09Z"
+}

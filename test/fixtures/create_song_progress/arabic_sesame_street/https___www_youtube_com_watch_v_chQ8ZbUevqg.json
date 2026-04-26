@@ -1,0 +1,814 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=chQ8ZbUevqg",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "تعرف يا جلجل؟",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:01.20",
+        "text_l2": "You know, Jaljal?"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "نعم.",
+        "timestamp": "00:01.20",
+        "timestamp_end": "00:01.60",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "القعدة هون بالشرفة بتجنن.",
+        "timestamp": "00:01.60",
+        "timestamp_end": "00:03.60",
+        "text_l2": "Sitting here on the balcony is amazing."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "همم، أنا كتير بحب أقعد هون.",
+        "timestamp": "00:03.60",
+        "timestamp_end": "00:05.60",
+        "text_l2": "Hmm, I really love sitting here."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "بس قوليلي إنتِ ليش إنتِ",
+        "timestamp": "00:05.60",
+        "timestamp_end": "00:07.30",
+        "text_l2": "But tell me, why do you"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بتحبي تقعدي هون؟",
+        "timestamp": "00:07.30",
+        "timestamp_end": "00:09.00",
+        "text_l2": "like sitting here?"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "لأني بشوف أشياء كتيرة",
+        "timestamp": "00:09.00",
+        "timestamp_end": "00:10.40",
+        "text_l2": "Because I see many things"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "من هون وأنا فوق،",
+        "timestamp": "00:10.40",
+        "timestamp_end": "00:11.80",
+        "text_l2": "from up here,"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "ما بشوفها وأنا تحت",
+        "timestamp": "00:11.80",
+        "timestamp_end": "00:13.10",
+        "text_l2": "I don't see when I'm down"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "بالحديقة.",
+        "timestamp": "00:13.10",
+        "timestamp_end": "00:14.40",
+        "text_l2": "in the garden."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "همم، وأنا زيك.",
+        "timestamp": "00:14.40",
+        "timestamp_end": "00:16.20",
+        "text_l2": "Hmm, me too."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "أنا بحب أشوف الشجر من فوق،",
+        "timestamp": "00:16.20",
+        "timestamp_end": "00:18.40",
+        "text_l2": "I love seeing the trees from above,"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "عالي، كأني في طيارة.",
+        "timestamp": "00:18.40",
+        "timestamp_end": "00:21.40",
+        "text_l2": "high up, like I'm in a plane."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "ها؟",
+        "timestamp": "00:21.40",
+        "timestamp_end": "00:22.60",
+        "text_l2": "Huh?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "طيارة؟",
+        "timestamp": "00:22.60",
+        "timestamp_end": "00:24.20",
+        "text_l2": "A plane?"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "إنت قلت طيارة؟",
+        "timestamp": "00:24.20",
+        "timestamp_end": "00:25.80",
+        "text_l2": "You said plane?"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "آه يا تنتون ليش؟",
+        "timestamp": "00:25.80",
+        "timestamp_end": "00:27.40",
+        "text_l2": "Ah, Tantoun, why?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "طيارة على الشجرة.",
+        "timestamp": "00:27.40",
+        "timestamp_end": "00:29.40",
+        "text_l2": "A kite on the tree."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "طيارة على الشجرة؟",
+        "timestamp": "00:29.40",
+        "timestamp_end": "00:31.40",
+        "text_l2": "A kite on the tree?"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "كيف يا تنتون؟",
+        "timestamp": "00:31.40",
+        "timestamp_end": "00:33.00",
+        "text_l2": "How, Tantoun?"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "هي هي يا جلجل هناك",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:34.70",
+        "text_l2": "There it is, Jaljal, there"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "على الشجرة الكبيرة.",
+        "timestamp": "00:34.70",
+        "timestamp_end": "00:36.40",
+        "text_l2": "on the big tree."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "هه؟",
+        "timestamp": "00:36.40",
+        "timestamp_end": "00:38.40",
+        "text_l2": "Huh?"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "آه، مظبوط، طيارة ورقية.",
+        "timestamp": "00:38.40",
+        "timestamp_end": "00:42.40",
+        "text_l2": "Ah, right, a kite."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "هلق فهمتك يا تنتون.",
+        "timestamp": "00:42.40",
+        "timestamp_end": "00:45.40",
+        "text_l2": "Now I get you, Tantoun."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "ها، فكرك لمين هاي الطيارة؟",
+        "timestamp": "00:45.40",
+        "timestamp_end": "00:48.00",
+        "text_l2": "So, who do you think this kite belongs to?"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "أكيد لواحد من جيراننا وضيعها.",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:51.20",
+        "text_l2": "Surely one of our neighbors lost it."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "آه يا حرام.",
+        "timestamp": "00:51.20",
+        "timestamp_end": "00:53.40",
+        "text_l2": "Oh, poor thing."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "ممكن نكون بنعرفه؟",
+        "timestamp": "00:53.40",
+        "timestamp_end": "00:56.00",
+        "text_l2": "Could we know him?"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "يمكن.",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:57.00",
+        "text_l2": "Maybe."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "طب جلجل،",
+        "timestamp": "00:57.00",
+        "timestamp_end": "00:58.80",
+        "text_l2": "So Jaljal,"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "صاحب الطيارة هلق رح أكيد",
+        "timestamp": "00:58.80",
+        "timestamp_end": "01:00.30",
+        "text_l2": "The kite's owner now will surely"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "رح يكون زعلان عليها.",
+        "timestamp": "01:00.30",
+        "timestamp_end": "01:01.80",
+        "text_l2": "be upset about it."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "أكيد هو هلق حزين.",
+        "timestamp": "01:01.80",
+        "timestamp_end": "01:04.20",
+        "text_l2": "Surely he's sad now."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "بس مين هو يا ترى؟",
+        "timestamp": "01:04.20",
+        "timestamp_end": "01:06.00",
+        "text_l2": "But who is he, I wonder?"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "طب شو رأيك نحكي",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:07.30",
+        "text_l2": "So what do you say we talk"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "لعمو كامل يساعدنا؟",
+        "timestamp": "01:07.30",
+        "timestamp_end": "01:08.60",
+        "text_l2": "to Uncle Kamel to help us?"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "فكرة ممتازة يا تنتون، يلا.",
+        "timestamp": "01:08.60",
+        "timestamp_end": "01:11.00",
+        "text_l2": "Great idea, Tantoun, let's go."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "يلا.",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "Let's go."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "باينتها الأمور مش سهلة.",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "Seems things aren't easy."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "ليش يا عمو كامل؟",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:21.60",
+        "text_l2": "Why, Uncle Kamel?"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "لأنها عالقة بين الأغصان.",
+        "timestamp": "01:21.60",
+        "timestamp_end": "01:24.40",
+        "text_l2": "Because it's stuck between the branches."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "طيب حاول شوي شوي ودير بالك.",
+        "timestamp": "01:24.40",
+        "timestamp_end": "01:27.00",
+        "text_l2": "Okay, try slowly and be careful."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "ولا يهمك يا جلجل،",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:28.30",
+        "text_l2": "Don't worry, Jaljal,"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "رح أطلعها صاغ سليم.",
+        "timestamp": "01:28.30",
+        "timestamp_end": "01:29.60",
+        "text_l2": "Sergeant Salim will get it out."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "عمو كامل؟",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "Uncle Kamel?"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "نعم.",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "إنت خبير بالطيارات الورقية.",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:43.60",
+        "text_l2": "You're an expert with kites."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "آه طبعاً.",
+        "timestamp": "01:43.60",
+        "timestamp_end": "01:45.00",
+        "text_l2": "Ah, of course."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "أنا لما كنت صغير كنت أصنع",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:46.50",
+        "text_l2": "When I was little I used to make"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "وأطير طيارات ورقية.",
+        "timestamp": "01:46.50",
+        "timestamp_end": "01:48.00",
+        "text_l2": "and fly kites."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "هه؟ عن جد؟",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:50.00",
+        "text_l2": "Huh? Really?"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "طبعاً طبعاً.",
+        "timestamp": "01:50.00",
+        "timestamp_end": "01:51.40",
+        "text_l2": "Of course, of course."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "بس عمو كامل؟",
+        "timestamp": "01:51.40",
+        "timestamp_end": "01:52.60",
+        "text_l2": "But Uncle Kamel?"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "نعم.",
+        "timestamp": "01:52.60",
+        "timestamp_end": "01:53.40",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "أكيد صاحب الطيارة اللي ضيعها",
+        "timestamp": "01:53.40",
+        "timestamp_end": "01:54.70",
+        "text_l2": "Surely the owner of the kite who lost it"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "هلق بكون حزين.",
+        "timestamp": "01:54.70",
+        "timestamp_end": "01:56.00",
+        "text_l2": "is sad now."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "آه، وإحنا لهلق ما بنعرف مين هو.",
+        "timestamp": "01:56.00",
+        "timestamp_end": "01:59.00",
+        "text_l2": "Ah, and we still don't know who he is."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "فعلاً، معكم حق.",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "Truly, you're right."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "خلوني أنزل بالأول،",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:03.00",
+        "text_l2": "Let me come down first,"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "وبعدين بنفكر كيف ممكن نلاقي صاحبها.",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:05.40",
+        "text_l2": "and then we'll think how to find its owner."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "بتعرف يا جلجل وتنتون؟",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "You know, Jaljal and Tantoun?"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "ذكرتوني وأنا صغير لما كنت",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:12.50",
+        "text_l2": "You reminded me when I was little when I"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "أصنع وأطير طيارات ورقية.",
+        "timestamp": "02:12.50",
+        "timestamp_end": "02:14.00",
+        "text_l2": "used to make and fly kites."
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "مرة كنت أطير بطيارة ورقية",
+        "timestamp": "02:14.00",
+        "timestamp_end": "02:15.70",
+        "text_l2": "Once I was flying a kite"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "بالسما عالي عالي عالي،",
+        "timestamp": "02:15.70",
+        "timestamp_end": "02:17.40",
+        "text_l2": "in the sky high high high,"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "وفجأة انقطع الخيط.",
+        "timestamp": "02:17.40",
+        "timestamp_end": "02:19.40",
+        "text_l2": "and suddenly the string broke."
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "ودورت على الطيارة ما لقيتها.",
+        "timestamp": "02:19.40",
+        "timestamp_end": "02:22.00",
+        "text_l2": "I looked for the kite but didn't find it."
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "زعلت كتير مشانها.",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "I was very upset about it."
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "بس على فكرة أنا كنت كتير شاطر",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:25.50",
+        "text_l2": "But by the way I was very good"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "وأنا بطير بطيارات ورقية.",
+        "timestamp": "02:25.50",
+        "timestamp_end": "02:27.00",
+        "text_l2": "when I flew kites."
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "ها؟ طير طيارة عالي بالسما؟",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:31.00",
+        "text_l2": "Huh? Fly a kite high in the sky?"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "آه.",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:32.00",
+        "text_l2": "Yeah."
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "لقيتها لقيتها لقيتها!",
+        "timestamp": "02:32.00",
+        "timestamp_end": "02:35.00",
+        "text_l2": "I got it, I got it, I got it!"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "إيش هي يا تنتون إيش هي؟",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "What is it, Tantoun, what is it?"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "بنطير الطيارة هاي هلق عالي بالسما،",
+        "timestamp": "02:37.00",
+        "timestamp_end": "02:39.00",
+        "text_l2": "We'll fly this kite now high in the sky,"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "وأكيد صاحبها رح يشوفها.",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "and surely its owner will see it."
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "ها، فكرة كتير ممتازة.",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:44.00",
+        "text_l2": "Hey, that's a great idea."
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "فكرة رائعة.",
+        "timestamp": "02:44.00",
+        "timestamp_end": "02:45.40",
+        "text_l2": "Wonderful idea."
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "وأكيد رح يميزها.",
+        "timestamp": "02:45.40",
+        "timestamp_end": "02:47.00",
+        "text_l2": "And surely he'll recognize it."
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "إنتِ عبقرية يا تنتون.",
+        "timestamp": "02:47.00",
+        "timestamp_end": "02:49.00",
+        "text_l2": "You're a genius, Tantoun."
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "يلا يلا خلينا نطيرها بسرعة.",
+        "timestamp": "02:49.00",
+        "timestamp_end": "02:50.60",
+        "text_l2": "Come on, come on, let's fly it quickly."
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "يلا يلا يلا.",
+        "timestamp": "02:50.60",
+        "timestamp_end": "02:52.00",
+        "text_l2": "Come on, come on, come on."
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "جاهز يا جلجل؟",
+        "timestamp": "02:52.00",
+        "timestamp_end": "02:53.00",
+        "text_l2": "Ready, Jaljal?"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "جاهز.",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "Ready."
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "خد امسك طرف الخيط.",
+        "timestamp": "02:54.00",
+        "timestamp_end": "02:55.40",
+        "text_l2": "Here, hold the end of the string."
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "أيوه.",
+        "timestamp": "02:55.40",
+        "timestamp_end": "02:56.40",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "يلا، واحد اتنين تلاتة.",
+        "timestamp": "02:56.40",
+        "timestamp_end": "02:58.00",
+        "text_l2": "Come on, one, two, three."
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "ما أحلاها يا جلجل.",
+        "timestamp": "03:04.00",
+        "timestamp_end": "03:05.40",
+        "text_l2": "How beautiful, Jaljal."
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "كتير حلوة يا تنتون.",
+        "timestamp": "03:05.40",
+        "timestamp_end": "03:07.00",
+        "text_l2": "Very beautiful, Tantoun."
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "لو يجي صاحبها يلاقيها.",
+        "timestamp": "03:07.00",
+        "timestamp_end": "03:09.00",
+        "text_l2": "If its owner comes and finds it."
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "وينك يا صاحب الطيارة؟",
+        "timestamp": "03:10.60",
+        "timestamp_end": "03:12.40",
+        "text_l2": "Where are you, kite owner?"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "إحنا لقينا طيارتك.",
+        "timestamp": "03:12.40",
+        "timestamp_end": "03:14.40",
+        "text_l2": "We found your kite."
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "مرحباً.",
+        "timestamp": "03:16.00",
+        "timestamp_end": "03:17.40",
+        "text_l2": "Hello."
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "ها؟ هي طيارتي.",
+        "timestamp": "03:17.40",
+        "timestamp_end": "03:18.80",
+        "text_l2": "Huh? That's my kite."
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "أهلاً جعفر أهلاً أهلاً.",
+        "timestamp": "03:18.80",
+        "timestamp_end": "03:20.60",
+        "text_l2": "Hello Jaafar, hello, hello."
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "أنا ما كنت منتبه عليها،",
+        "timestamp": "03:20.60",
+        "timestamp_end": "03:22.40",
+        "text_l2": "I wasn't paying attention to it,"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "فشكراً كتير لإلك يا عمو كامل",
+        "timestamp": "03:22.40",
+        "timestamp_end": "03:23.70",
+        "text_l2": "So thank you very much to you, Uncle Kamel"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "ولمساعدتك.",
+        "timestamp": "03:23.70",
+        "timestamp_end": "03:25.00",
+        "text_l2": "and for your help."
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "عفواً يا جعفر.",
+        "timestamp": "03:25.00",
+        "timestamp_end": "03:26.60",
+        "text_l2": "You're welcome, Jaafar."
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "عمو كامل،",
+        "timestamp": "03:26.60",
+        "timestamp_end": "03:28.40",
+        "text_l2": "Uncle Kamel,"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "أنا كتير حبيت الطيارة الورقية.",
+        "timestamp": "03:28.40",
+        "timestamp_end": "03:30.60",
+        "text_l2": "I really loved the kite."
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "آه.",
+        "timestamp": "03:30.60",
+        "timestamp_end": "03:32.00",
+        "text_l2": "Ah."
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "بصير تعملي وحدة أنا وجلجل،",
+        "timestamp": "03:32.00",
+        "timestamp_end": "03:34.00",
+        "text_l2": "Can you make one for me and Jaljal,"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "عشان نطيرها جنب طيارة جعفر؟",
+        "timestamp": "03:34.00",
+        "timestamp_end": "03:36.40",
+        "text_l2": "so we can fly it next to Jaafar's kite?"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "آه طبعاً، ليش لأ؟",
+        "timestamp": "03:36.40",
+        "timestamp_end": "03:38.00",
+        "text_l2": "Ah sure, why not?"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "بصير يا تنتون.",
+        "timestamp": "03:38.00",
+        "timestamp_end": "03:39.40",
+        "text_l2": "Sure, Tantoun."
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "تعال يا جعفر ساعدني فيها.",
+        "timestamp": "03:39.40",
+        "timestamp_end": "03:41.00",
+        "text_l2": "Come, Jaafar, help me with it."
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "يلا.",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:42.40",
+        "text_l2": "Let's go."
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "طيارة إلي وإلك.",
+        "timestamp": "03:42.40",
+        "timestamp_end": "03:44.00",
+        "text_l2": "A kite for me and you."
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "صح يا ذكي.",
+        "timestamp": "03:44.00",
+        "timestamp_end": "03:45.40",
+        "text_l2": "Right, smart one."
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "ما أحلاها.",
+        "timestamp": "03:45.40",
+        "timestamp_end": "03:48.00",
+        "text_l2": "How beautiful."
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "طيري يا طيارة طيري.",
+        "timestamp": "03:48.00",
+        "timestamp_end": "03:50.00",
+        "text_l2": "Fly, kite, fly."
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "طيري يا طيارة طيري.",
+        "timestamp": "03:50.00",
+        "timestamp_end": "03:52.00",
+        "text_l2": "Fly, kite, fly."
+      }
+    ],
+    "phrases_with_token_translations": "[تعرف] يا جلجل؟ => [You know], Jaljal?\nتعرف يا [جلجل]؟ => You know, [Jaljal]?\n\n[نعم]. => [Yes].\n\n[القعدة] هون بالشرفة بتجنن => [Sitting] here on the balcony is amazing.\nالقعدة [هون] بالشرفة بتجنن => Sitting [here] on the balcony is amazing.\nالقعدة هون [بالشرفة] بتجنن => Sitting here [on the balcony] is amazing.\nالقعدة هون بالشرفة [بتجنن] => Sitting here on the balcony [is amazing].\n\n[همم]، أنا كتير بحب أقعد هون. => [Hmm], I really love sitting here.\nهمم، [أنا] كتير بحب أقعد هون. => Hmm, [I] really love sitting here.\nهمم، أنا [كتير] بحب أقعد هون. => Hmm, I [really] love sitting here.\nهمم، أنا كتير [بحب] أقعد هون. => Hmm, I really [love] sitting here.\nهمم، أنا كتير بحب [أقعد] هون. => Hmm, I really love [sitting] here.\nهمم، أنا كتير بحب أقعد [هون]. => Hmm, I really love sitting [here]\n\n[بس] قوليلي إنتِ ليش إنتِ => [But] tell me, why do you\nبس [قوليلي] إنتِ ليش إنتِ => But [tell me], why do you\nبس قوليلي [إنتِ] ليش إنتِ => you\nبس قوليلي إنتِ [ليش] إنتِ => But tell me, [why] do you\nبس قوليلي إنتِ ليش [إنتِ] => But tell me, why do [you]\n\n[بتحبي] تقعدي هون؟ => [like] sitting here?\nبتحبي [تقعدي] هون؟ => like [sitting] here?\nبتحبي تقعدي [هون]؟ => like sitting [here]?\n\n[لأني] بشوف أشياء كتيرة => [Because I] see many things\nلأني [بشوف] أشياء كتيرة => Because I [see] many things\nلأني بشوف [أشياء] كتيرة => Because I see many [things]\nلأني بشوف أشياء [كتيرة] => Because I see [many] things\n\n[من] هون وأنا فوق، => [from] up here,\nمن [هون] وأنا فوق، => from up [here],\nمن هون [وأنا] فوق، => and I\nمن هون وأنا [فوق]، => from [up] here,\n\n[ما بشوفها] وأنا تحت => [I don't see] when I'm down\nما بشوفها [وأنا] تحت => [when I'm] down\nما بشوفها وأنا [تحت] => I don't see when I'm [down]\n\n[بالحديقة] => [in the garden]\n\n[همم]، وأنا زيك => [Hmm], me too\nهمم، [وأنا] زيك => [me] too\nهمم، وأنا [زيك] => me [too]\n\n[أنا] بحب أشوف الشجر من فوق، => [I] love seeing the trees from above,\nأنا [بحب] أشوف الشجر من فوق، => I [love] seeing the trees from above,\nأنا بحب [أشوف] الشجر من فوق، => I love [seeing] the trees from above,\nأنا بحب أشوف [الشجر] من فوق، => I love seeing [the trees] from above,\nأنا بحب أشوف الشجر [من] فوق، => I love seeing the trees [from] above,\nأنا بحب أشوف الشجر من [فوق]، => I love seeing the trees from [above],\n\n[عالي]، كأني في طيارة. => [high up], like I'm in a plane.\nعالي، [كأني] في طيارة. => high up, [like I'm] in a plane.\nعالي، كأني [في] طيارة. => high up, like I'm [in] a plane.\nعالي، كأني في [طيارة]. => high up, like I'm in [a plane].\n\n[ها]؟ => [Huh]?\n\n[طيارة]؟ => [A plane]?\n\n[إنت] قلت طيارة؟ => [You] said plane?\nإنت [قلت] طيارة؟ => You [said] plane?\nإنت قلت [طيارة]؟ => You said [plane]?\n\n[آه] يا تنتون ليش => [Ah], Tantoun, why\nآه [يا تنتون] ليش => Ah, [Tantoun], why\nآه يا تنتون [ليش] => Ah, Tantoun, [why]\n\n[طيارة] على الشجرة. => [A kite] on the tree.\nطيارة [على] الشجرة. => A kite [on] the tree.\nطيارة على [الشجرة]. => A kite on [the tree].\n\n[طيارة] على الشجرة؟ => [A kite] on the tree?\nطيارة [على] الشجرة؟ => A kite [on] the tree?\nطيارة على [الشجرة]؟ => A kite on [the tree]?\n\n[كيف] يا تنتون؟ => [How], Tantoun?\nكيف [يا] تنتون؟ => O, vocative particle # Custom translation for the vocative particle\nكيف يا [تنتون]؟ => How, [Tantoun]?\n\n[هي هي] يا جلجل هناك => [There it is], Jaljal, there\nهي هي [يا جلجل] هناك => There it is, [Jaljal], there\nهي هي يا جلجل [هناك] => There it is, Jaljal, [there]\n\n[على] الشجرة الكبيرة. => [on] the big tree.\nعلى [الشجرة] الكبيرة. => the tree\nعلى الشجرة [الكبيرة]. => big\n\n[هه]؟ => [Huh]?\n\n[آه]، مظبوط، طيارة ورقية. => [Ah], right, a kite.\nآه، [مظبوط]، طيارة ورقية. => Ah, [right], a kite.\nآه، مظبوط، [طيارة ورقية]. => Ah, right, [a kite].\n\n[هلق] فهمتك يا تنتون => [Now] I get you, Tantoun\nهلق [فهمتك] يا تنتون => [I get you], Tantoun\nهلق فهمتك يا [تنتون] => Now I get you, [Tantoun]\n\n[ها]، فكرك لمين هاي الطيارة؟ => [So], who do you think this kite belongs to?\nها، [فكرك] لمين هاي الطيارة؟ => So, who [do you think] this kite belongs to?\nها، فكرك [لمين] هاي الطيارة؟ => who ... belongs to\nها، فكرك لمين [هاي] الطيارة؟ => So, who do you think [this] kite belongs to?\nها، فكرك لمين هاي [الطيارة]؟ => So, who do you think this [kite] belongs to?\n\n[أكيد] لواحد من جيراننا وضيعها. => [Surely] one of our neighbors lost it.\nأكيد [لواحد] من جيراننا وضيعها. => Surely [one] of our neighbors lost it.\nأكيد لواحد [من] جيراننا وضيعها. => Surely one [of] our neighbors lost it.\nأكيد لواحد من [جيراننا] وضيعها. => Surely one of [our neighbors] lost it.\nأكيد لواحد من جيراننا [وضيعها] => lost it # loss / misplacement, with the 'wa' (and) prefix omitted in the English translation\n\n[آه] يا حرام. => [Oh], poor thing.\nآه [يا حرام]. => Oh, [poor thing].\n\n[ممكن] نكون بنعرفه => [Could] we know him\nممكن [نكون] بنعرفه => we # نكون (nakūn) means \"we are\" or \"we be\", establishing the subject \"we\"\nممكن نكون [بنعرفه] => Could we [know him] # بنعرفه (bina'rifuh) contains the root for know and the suffix for him\n\n[يمكن]. => [Maybe].\n\n[طب] جلجل => [So] Jaljal\nطب [جلجل] => So [Jaljal]\n\n[صاحب] الطيارة هلق رح أكيد => The kite's [owner] now will surely\nصاحب [الطيارة] هلق رح أكيد => [The kite's] owner now will surely\nصاحب الطيارة [هلق] رح أكيد => The kite's owner [now] will surely\nصاحب الطيارة هلق [رح] أكيد => The kite's owner now [will] surely\nصاحب الطيارة هلق رح [أكيد] => The kite's owner now will [surely]\n\nرح [يكون] زعلان عليها. => [be] upset about it.\nرح يكون [زعلان] عليها. => be [upset] about it.\nرح يكون زعلان [عليها]. => be upset [about it.]\n\n[أكيد] هو هلق حزين. => [Surely] he's sad now.\nأكيد [هو] هلق حزين. => Surely [he's] sad now.\nأكيد هو [هلق] حزين. => Surely he's sad [now]\nأكيد هو هلق [حزين]. => Surely he's [sad] now\n\n[بس] مين هو يا ترى؟ => [But] who is he, I wonder?\nبس [مين] هو يا ترى؟ => But [who] is he, I wonder?\nبس مين [هو] يا ترى؟ => But who is [he], I wonder?\nبس مين هو [يا ترى]؟ => But who is he, [I wonder]?\n\n[طب] شو رأيك نحكي => [So] what do you say we talk\nطب [شو] رأيك نحكي => So [what] do you say we talk\nطب شو [رأيك] نحكي => your opinion\nطب شو رأيك [نحكي] => So what do you say [we talk]\n\n[لعمو] كامل يساعدنا؟ => [to Uncle] Kamel to help us?\nلعمو [كامل] يساعدنا؟ => to Uncle [Kamel] to help us?\nلعمو كامل [يساعدنا]؟ => to Uncle Kamel [to help us]?\n\n[فكرة] ممتازة يا تنتون، يلا => Great [idea], Tantoun, let's go.\nفكرة [ممتازة] يا تنتون، يلا => [Great] idea, Tantoun, let's go.\nفكرة ممتازة يا [تنتون]، يلا => Great idea, [Tantoun], let's go.\nفكرة ممتازة يا تنتون، [يلا] => Great idea, Tantoun, [let's go].\n\n[يلا]. => [Let's go].\n\n[باينتها] الأمور مش سهلة. => [Seems] things aren't easy.\nباينتها [الأمور] مش سهلة. => Seems [things] aren't easy.\nباينتها الأمور [مش] سهلة. => Seems things [aren't] easy.\nباينتها الأمور مش [سهلة]. => Seems things aren't [easy].\n\n[ليش] يا عمو كامل؟ => [Why], Uncle Kamel?\nليش [يا عمو] كامل؟ => Why, [Uncle] Kamel?\nليش يا عمو [كامل]؟ => Why, Uncle [Kamel]?\n\n[لأنها] عالقة بين الأغصان => [Because it's] stuck between the branches\nلأنها [عالقة] بين الأغصان => Because it's [stuck] between the branches\nلأنها عالقة [بين] الأغصان => Because it's stuck [between] the branches\nلأنها عالقة بين [الأغصان] => Because it's stuck between [the branches]\n\n[طيب] حاول شوي شوي ودير بالك => [Okay], try slowly and be careful.\nطيب [حاول] شوي شوي ودير بالك => Okay, [try] slowly and be careful.\nطيب حاول [شوي شوي] ودير بالك => Okay, try [slowly] and be careful.\nطيب حاول شوي شوي [و]دير بالك => Okay, try slowly [and] be careful.\nطيب حاول شوي شوي و[دير بالك] => Okay, try slowly and [be careful]\n\n[ولا يهمك] يا جلجل، => [Don't worry], Jaljal,\nولا يهمك يا [جلجل]، => Don't worry, [Jaljal],\n\n[رح] أطلعها صاغ سليم. => Sergeant Salim [will] get it out.\nرح [أطلعها] صاغ سليم. => Sergeant Salim will [get it out].\nرح أطلعها [صاغ] سليم. => [Sergeant] Salim will get it out.\nرح أطلعها صاغ [سليم]. => Sergeant [Salim] will get it out.\n\n[عمو] كامل؟ => [Uncle] Kamel?\nعمو [كامل]؟ => Uncle [Kamel]?\n\n[نعم]. => [Yes].\n\n[إنت] خبير بالطيارات الورقية. => [You're] an expert with kites.\nإنت [خبير] بالطيارات الورقية. => You're [an expert] with kites.\nإنت خبير [بالطيارات الورقية]. => You're an expert [with kites]. # \"الطيارات الورقية\" translates to \"kites\" and the \"bi-\" prefix translates to \"with\"\n\n[آه] طبعاً => [Ah], of course.\nآه [طبعاً] => Ah, [of course].\n\n[أنا] لما كنت صغير كنت أصنع => When [I] was little I used to make\nأنا [لما] كنت صغير كنت أصنع => [When] I was little I used to make\nأنا لما [كنت] صغير كنت أصنع => When I [was] little I used to make\nأنا لما كنت [صغير] كنت أصنع => When I was [little] I used to make\nأنا لما كنت صغير [كنت أصنع] => When I was little [I used to make] # \"كنت\" functions as \"used to\" and \"أصنع\" as \"make\", with the subject \"I\" included in the conjugation.\n\n[و]أطير طيارات ورقية. => [and] fly kites.\nو[أطير] طيارات ورقية. => and [fly] kites.\nوأطير [طيارات ورقية]. => and fly [kites].\n\n[هه]؟ عن جد؟ => [Huh]? Really?\nهه؟ [عن جد]؟ => Huh? [Really]?\n\n[طبعاً] طبعاً => [Of course], of course\nطبعاً [طبعاً] => Of course, [of course]\n\n[بس] عمو كامل؟ => [But] Uncle Kamel?\nبس [عمو] كامل؟ => But [Uncle] Kamel?\nبس عمو [كامل]؟ => But Uncle [Kamel]?\n\n[نعم]. => [Yes].\n\n[أكيد] صاحب الطيارة اللي ضيعها => [Surely] the owner of the kite who lost it\nأكيد [صاحب] الطيارة اللي ضيعها => Surely [the owner] of the kite who lost it\nأكيد صاحب [الطيارة] اللي ضيعها => Surely the owner of [the kite] who lost it\nأكيد صاحب الطيارة [اللي] ضيعها => Surely the owner of the kite [who] lost it\nأكيد صاحب الطيارة اللي [ضيعها] => Surely the owner of the kite who [lost it]\n\n[هلق] بكون حزين. => is sad [now].\nهلق [بكون] حزين. => [is] sad now.\nهلق بكون [حزين]. => is [sad] now.\n\n[آه]، وإحنا لهلق ما بنعرف مين هو. => [Ah], and we still don't know who he is.\nآه، [و]إحنا لهلق ما بنعرف مين هو. => Ah, [and] we still don't know who he is.\nآه، و[إحنا] لهلق ما بنعرف مين هو. => Ah, and [we] still don't know who he is.\nآه، وإحنا [لهلق] ما بنعرف مين هو. => Ah, and we [still] don't know who he is.\nآه، وإحنا لهلق [ما بنعرف] مين هو. => Ah, and we still [don't know] who he is.\nآه، وإحنا لهلق ما بنعرف [مين] هو. => Ah, and we still don't know [who] he is.\nآه، وإحنا لهلق ما بنعرف مين [هو]. => Ah, and we still don't know who [he is]. # \"هو\" acts as the subject and implied copula (is) in this sentence structure.\n\n[فعلاً]، معكم حق. => [Truly], you're right.\nفعلاً، [معكم] حق. => with you # custom\nفعلاً، معكم [حق]. => Truly, you're [right].\n\n[خلوني] أنزل بالأول، => [Let me] come down first,\nخلوني [أنزل] بالأول، => Let me [come down] first,\nخلوني أنزل [بالأول]، => Let me come down [first],\n\n[وبعدين] بنفكر كيف ممكن نلاقي صاحبها. => [and then] we'll think how to find its owner.\nوبعدين [بنفكر] كيف ممكن نلاقي صاحبها. => and then [we'll think] how to find its owner.\nوبعدين بنفكر [كيف] ممكن نلاقي صاحبها. => and then we'll think [how] to find its owner.\nوبعدين بنفكر كيف [ممكن] نلاقي صاحبها. => possible\nوبعدين بنفكر كيف ممكن [نلاقي] صاحبها. => and then we'll think how [to find] its owner.\nوبعدين بنفكر كيف ممكن نلاقي [صاحبها]. => and then we'll think how to find [its owner].\n\n[بتعرف] يا جلجل وتنتون؟ => [You know], Jaljal and Tantoun?\nبتعرف يا [جلجل] وتنتون؟ => You know, [Jaljal] and Tantoun?\nبتعرف يا جلجل [و]تنتون؟ => You know, Jaljal [and] Tantoun?\nبتعرف يا جلجل و[تنتون]؟ => You know, Jaljal and [Tantoun]?\n\n[ذكرتوني] وأنا صغير لما كنت => [You reminded me] when I was little when I\nذكرتوني [وأنا] صغير لما كنت => when I\nذكرتوني وأنا [صغير] لما كنت => You reminded me when I was [little] when I\nذكرتوني وأنا صغير [لما] كنت => You reminded me when I was little [when] I\nذكرتوني وأنا صغير لما [كنت] => You reminded me when I was little when [I] # the 'tu' suffix in Arabic represents the subject 'I'\n\n[أصنع] وأطير طيارات ورقية. => [used to make] and fly kites.\nأصنع [و]أطير طيارات ورقية. => used to make [and] fly kites.\nأصنع و[أطير] طيارات ورقية. => used to make and [fly] kites.\nأصنع وأطير [طيارات ورقية]. => used to make and fly [kites]. # \"طيارات ورقية\" literally means \"paper planes\" but maps to \"kites\" here\n\n[مرة] كنت أطير بطيارة ورقية => [Once] I was flying a kite\nمرة [كنت] أطير بطيارة ورقية => Once [I was] flying a kite\nمرة كنت [أطير] بطيارة ورقية => Once I was [flying] a kite\nمرة كنت أطير [بطيارة ورقية] => Once I was flying [a kite]\n\n[بالسما] عالي عالي عالي، => [in the sky] high high high,\nبالسما [عالي] عالي عالي، => in the sky [high] high high,\nبالسما عالي [عالي] عالي، => in the sky high [high] high,\nبالسما عالي عالي [عالي]، => in the sky high high [high],\n\n[وفجأة] انقطع الخيط. => [and suddenly] the string broke.\nوفجأة [انقطع] الخيط. => and suddenly the string [broke].\nوفجأة انقطع [الخيط]. => and suddenly [the string] broke.\n\n[ودورت] على الطيارة ما لقيتها. => [I looked] for the kite but didn't find it.\nودورت [على] الطيارة ما لقيتها. => I looked [for] the kite but didn't find it.\nودورت على [الطيارة] ما لقيتها. => I looked for [the kite] but didn't find it.\nودورت على الطيارة [ما] لقيتها. => I looked for the kite but [didn't] find it.\nودورت على الطيارة ما [لقيتها]. => I looked for the kite but didn't [find it]\n\nزعلت [كتير] مشانها. => I was [very] upset about it.\nزعلت كتير [مشانها]. => I was very upset [about it] # مشانها translates to \"about it\" (mshan = about, ha = it)\n\n[بس] على فكرة أنا كنت كتير شاطر => [But] by the way I was very good\nبس [على فكرة] أنا كنت كتير شاطر => But [by the way] I was very good\nبس على فكرة [أنا] كنت كتير شاطر => But by the way [I] was very good\nبس على فكرة أنا [كنت] كتير شاطر => But by the way I [was] very good\nبس على فكرة أنا كنت [كتير] شاطر => But by the way I was [very] good\nبس على فكرة أنا كنت كتير [شاطر] => But by the way I was very [good]\n\n[وأنا] بطير بطيارات ورقية. => [when I] flew kites.\nوأنا [بطير] بطيارات ورقية. => when I [flew] kites.\nوأنا بطير [بطيارات ورقية]. => when I flew [kites].\n\n[ها]؟ طير طيارة عالي بالسما؟ => [Huh]? Fly a kite high in the sky?\nها؟ [طير] طيارة عالي بالسما؟ => Huh? [Fly] a kite high in the sky?\nها؟ طير [طيارة] عالي بالسما؟ => Huh? Fly [a kite] high in the sky?\nها؟ طير طيارة [عالي] بالسما؟ => Huh? Fly a kite [high] in the sky?\nها؟ طير طيارة عالي [بالسما]؟ => Huh? Fly a kite high [in the sky]?\n\n[آه]. => [Yeah].\n\n[لقيتها] لقيتها لقيتها! => [I got it], I got it, I got it!\nلقيتها [لقيتها] لقيتها! => I got it, [I got it], I got it!\nلقيتها لقيتها [لقيتها]! => I got it, I got it, [I got it]!\n\n[إيش] هي يا تنتون إيش هي؟ => [What] is it, Tantoun, what is it?\nإيش [هي] يا تنتون إيش هي؟ => What [is it], Tantoun, what is it?\nإيش هي [يا] تنتون إيش هي؟ => vocative particle # a particle used before a name when calling or addressing someone\nإيش هي يا [تنتون] إيش هي؟ => What is it, [Tantoun], what is it?\nإيش هي يا تنتون [إيش] هي؟ => What is it, Tantoun, [what] is it?\nإيش هي يا تنتون إيش [هي]؟ => What is it, Tantoun, what [is it]?\n\n[بنطير] الطيارة هاي هلق عالي بالسما، => [We'll fly] this kite now high in the sky,\nبنطير [الطيارة] هاي هلق عالي بالسما، => We'll fly this [kite] now high in the sky,\nبنطير الطيارة [هاي] هلق عالي بالسما، => We'll fly [this] kite now high in the sky,\nبنطير الطيارة هاي [هلق] عالي بالسما، => We'll fly this kite [now] high in the sky,\nبنطير الطيارة هاي هلق [عالي] بالسما، => We'll fly this kite now [high] in the sky,\nبنطير الطيارة هاي هلق عالي [بالسما]، => We'll fly this kite now high [in the sky],\n\n[و]أكيد صاحبها رح يشوفها => [and] surely its owner will see it.\nو[أكيد] صاحبها رح يشوفها => and [surely] its owner will see it.\nوأكيد [صاحبها] رح يشوفها => and surely [its owner] will see it.\nوأكيد صاحبها [رح] يشوفها => and surely its owner [will] see it.\nوأكيد صاحبها رح [يشوفها] => and surely its owner will [see it]\n\n[ها]، فكرة كتير ممتازة => [Hey], that's a great idea\nها، [فكرة] كتير ممتازة => Hey, that's a great [idea]\nها، فكرة [كتير] ممتازة => very\nها، فكرة كتير [ممتازة] => Hey, that's a [great] idea\n\n[فكرة] رائعة => Wonderful [idea]\nفكرة [رائعة] => [Wonderful] idea\n\n[و]أكيد رح يميزها. => [And] surely he'll recognize it.\nو[أكيد] رح يميزها. => And [surely] he'll recognize it.\nوأكيد [رح] يميزها. => will\nوأكيد رح [يميزها]. => he recognizes it # 'he' (prefix ي-) + 'recognize' + 'it' (suffix -ها)\n\n[إنتِ] عبقرية يا تنتون. => [You're] a genius, Tantoun.\nإنتِ [عبقرية] يا تنتون. => You're [a genius], Tantoun.\nإنتِ عبقرية يا [تنتون]. => You're a genius, [Tantoun].\n\n[يلا] يلا خلينا نطيرها بسرعة. => [Come on], come on, let's fly it quickly.\nيلا [يلا] خلينا نطيرها بسرعة. => Come on, [come on], let's fly it quickly.\nيلا يلا [خلينا] نطيرها بسرعة. => Come on, come on, [let's] fly it quickly.\nيلا يلا خلينا [نطيرها] بسرعة. => Come on, come on, let's [fly it] quickly.\nيلا يلا خلينا نطيرها [بسرعة]. => Come on, come on, let's fly it [quickly].\n\n[يلا] يلا يلا => [Come on], come on, come on\nيلا [يلا] يلا => Come on, [come on], come on\nيلا يلا [يلا] => Come on, come on, [come on]\n\n[جاهز] يا جلجل؟ => [Ready], Jaljal?\nجاهز يا [جلجل]؟ => Ready, [Jaljal]?\n\n[جاهز]. => [Ready].\n\n[خد] امسك طرف الخيط => [Here], hold the end of the string\nخد [امسك] طرف الخيط => Here, [hold] the end of the string\nخد امسك [طرف] الخيط => Here, hold [the end] of the string\nالخيط => [the string] # Using custom translation for clarity as \"of the\" is not directly in the word \"الخيط\" but implied by the genitive relationship\n\n[أيوه] => [Yes]\n\n[يلا]، واحد اتنين تلاتة. => [Come on], one, two, three.\nيلا، [واحد] اتنين تلاتة. => Come on, [one], two, three.\nيلا، واحد [اتنين] تلاتة. => Come on, one, [two], three.\nيلا، واحد اتنين [تلاتة]. => Come on, one, two, [three].\n\n[ما أحلاها] يا جلجل => [How beautiful], Jaljal\nما أحلاها [يا] جلجل => O # vocative particle used before calling someone\nما أحلاها يا [جلجل] => How beautiful, [Jaljal]\n\n[كتير] حلوة يا تنتون => [Very] beautiful, Tantoun\nكتير [حلوة] يا تنتون => Very [beautiful], Tantoun\nكتير حلوة يا [تنتون] => Very beautiful, [Tantoun]\n\n[لو] يجي صاحبها يلاقيها. => [If] its owner comes and finds it.\nلو [يجي] صاحبها يلاقيها. => If its owner [comes] and finds it.\nلو يجي [صاحبها] يلاقيها. => If [its owner] comes and finds it.\nلو يجي صاحبها [يلاقيها]. => If its owner comes and [finds it]\n\n[وينك] يا صاحب الطيارة؟ => [Where are you], kite owner?\nوينك [يا] صاحب الطيارة؟ => O # vocative particle used to address someone\nوينك يا [صاحب] الطيارة؟ => Where are you, kite [owner]?\nوينك يا صاحب [الطيارة]؟ => Where are you, [kite] owner?\n\n[إحنا] لقينا طيارتك. => [We] found your kite.\nإحنا [لقينا] طيارتك. => We [found] your kite.\nإحنا لقينا [طيارتك]. => We found [your kite].\n\n[مرحباً]. => [Hello].\n\n[ها]؟ هي طيارتي. => [Huh]? That's my kite.\nها؟ [هي] طيارتي. => Huh? [That's] my kite.\nها؟ هي [طيارتي]. => Huh? That's [my kite]\n\n[أهلاً] جعفر أهلاً أهلاً. => [Hello] Jaafar, hello, hello.\nأهلاً [جعفر] أهلاً أهلاً. => Hello [Jaafar], hello, hello.\nأهلاً جعفر [أهلاً] أهلاً. => Hello Jaafar, [hello], hello.\nأهلاً جعفر أهلاً [أهلاً]. => Hello Jaafar, hello, [hello].\n\n[أنا] ما كنت منتبه عليها، => [I] wasn't paying attention to it,\nأنا [ما كنت] منتبه عليها، => I [wasn't] paying attention to it,\nأنا ما كنت [منتبه] عليها، => I wasn't [paying attention] to it,\nأنا ما كنت منتبه [عليها]، => I wasn't paying attention [to it],\n\n[فشكراً] كتير لإلك يا عمو كامل => [So thank you] very much to you, Uncle Kamel\nفشكراً [كتير] لإلك يا عمو كامل => So thank you [very much] to you, Uncle Kamel\nفشكراً كتير [لإلك] يا عمو كامل => So thank you very much [to you], Uncle Kamel\nفشكراً كتير لإلك يا [عمو] كامل => So thank you very much to you, [Uncle] Kamel\nفشكراً كتير لإلك يا عمو [كامل] => So thank you very much to you, Uncle [Kamel]\n\n[و]لمساعدتك => [and] for your help.\nو[ل]مساعدتك => and [for] your help.\nولمساعدة[تك] => and for [your] help.\nول[مساعدة]تك => and for your [help].\n\n[عفواً] يا جعفر => [You're welcome], Jaafar\nعفواً يا [جعفر] => You're welcome, [Jaafar]\n\n[عمو] كامل، => [Uncle] Kamel,\nعمو [كامل]، => Uncle [Kamel],\n\n[أنا] كتير حبيت الطيارة الورقية. => [I] really loved the kite.\nأنا [كتير] حبيت الطيارة الورقية. => I [really] loved the kite.\nأنا كتير [حبيت] الطيارة الورقية. => I really [loved] the kite.\nأنا كتير حبيت [الطيارة الورقية]. => I really loved [the kite].\n\n[آه]. => [Ah].\n\n[بصير] تعملي وحدة أنا وجلجل، => [Can] you make one for me and Jaljal,\nبصير [تعملي] وحدة أنا وجلجل، => Can [you make] one for me and Jaljal,\nبصير تعملي [وحدة] أنا وجلجل، => Can you make [one] for me and Jaljal,\nبصير تعملي وحدة [أنا] وجلجل، => Can you make one for [me] and Jaljal,\nبصير تعملي وحدة أنا [و]جلجل، => Can you make one for me [and] Jaljal,\nبصير تعملي وحدة أنا و[جلجل]، => Can you make one for me and [Jaljal],\n\n[عشان] نطيرها جنب طيارة جعفر؟ => [so] we can fly it next to Jaafar's kite?\nعشان [نطيرها] جنب طيارة جعفر؟ => so [we can fly it] next to Jaafar's kite?\nعشان نطيرها [جنب] طيارة جعفر؟ => so we can fly it [next to] Jaafar's kite?\nعشان نطيرها جنب [طيارة] جعفر؟ => so we can fly it next to Jaafar's [kite]?\nعشان نطيرها جنب طيارة [جعفر]؟ => so we can fly it next to [Jaafar]'s kite?\n\n[آه] طبعاً، ليش لأ؟ => [Ah] sure, why not?\nآه [طبعاً]، ليش لأ؟ => Ah [sure], why not?\nآه طبعاً، [ليش] لأ؟ => Ah sure, [why] not?\nآه طبعاً، ليش [لأ]؟ => Ah sure, why [not]?\n\n[بصير] يا تنتون. => [Sure], Tantoun.\nبصير يا [تنتون]. => Sure, [Tantoun].\n\n[تعال] يا جعفر ساعدني فيها. => [Come], Jaafar, help me with it.\nتعال [يا جعفر] ساعدني فيها. => Come, [Jaafar], help me with it.\nتعال يا جعفر [ساعدني] فيها. => Come, Jaafar, [help me] with it.\nتعال يا جعفر ساعدني [فيها]. => Come, Jaafar, help me [with it]\n\n[يلا]. => [Let's go].\n\n[طيارة] إلي وإلك. => [A kite] for me and you.\nطيارة [إلي] وإلك. => [for me] and you.\nطيارة إلي [و]إلك. => A kite for me [and] you.\nطيارة إلي و[إلك] => A kite for me and [you]\n\n[صح] يا ذكي. => [Right], smart one.\nصح [يا ذكي]. => Right, [smart one].\n\n[ما] أحلاها. => [How] beautiful.\nما [أحلاها]. => How [beautiful].\n\n[طيري] يا طيارة طيري. => [Fly], kite, fly.\nطيري [يا طيارة] طيري. => Fly, [kite], fly.\nطيري يا طيارة [طيري]. => Fly, kite, [fly].\n\n[طيري] يا طيارة طيري => [Fly], kite, fly\nطيري [يا طيارة] طيري => Fly, [kite], fly\nطيري يا طيارة [طيري] => Fly, kite, [fly]\n\n",
+    "lessons": "# التعارف واللقاء الأول\n00:00.00 تعرف يا جلجل؟\n00:01.20 نعم.\n00:01.60 القعدة هون بالشرفة بتجنن.\n00:03.60 همم، أنا كتير بحب أقعد هون.\n00:05.60 بس قوليلي إنتِ ليش إنتِ\n00:07.30 بتحبي تقعدي هون؟\n00:09.00 لأني بشوف أشياء كتيرة\n00:10.40 من هون وأنا فوق،\n00:11.80 ما بشوفها وأنا تحت\n00:13.10 بالحديقة.\n\n# حب المناظر من الأعلى\n00:14.40 همم، وأنا زيك.\n00:16.20 أنا بحب أشوف الشجر من فوق،\n00:18.40 عالي، كأني في طيارة.\n00:21.40 ها؟\n00:22.60 طيارة؟\n00:24.20 إنت قلت طيارة؟\n00:25.80 آه يا تنتون ليش؟\n\n# اكتشاف الطيارة الورقية (Part 1)\n00:27.40 طيارة على الشجرة.\n00:29.40 طيارة على الشجرة؟\n00:31.40 كيف يا تنتون؟\n00:33.00 هي هي يا جلجل هناك\n00:34.70 على الشجرة الكبيرة.\n00:36.40 هه؟\n00:38.40 آه، مظبوط، طيارة ورقية.\n00:42.40 هلق فهمتك يا تنتون.\n\n# مناقشة مصير الطيارة\n00:45.40 ها، فكرك لمين هاي الطيارة؟\n00:48.00 أكيد لواحد من جيراننا وضيعها.\n00:51.20 آه يا حرام.\n00:53.40 ممكن نكون بنعرفه؟\n00:56.00 يمكن.\n00:57.00 طب جلجل،\n00:58.80 صاحب الطيارة هلق رح أكيد\n01:00.30 رح يكون زعلان عليها.\n\n# البحث عن حل\n01:01.80 أكيد هو هلق حزين.\n01:04.20 بس مين هو يا ترى؟\n01:06.00 طب شو رأيك نحكي\n01:07.30 لعمو كامل يساعدنا؟\n01:08.60 فكرة ممتازة يا تنتون، يلا.\n01:11.00 يلا.\n\n# محاولة إنقاذ الطيارة\n01:18.00 باينتها الأمور مش سهلة.\n01:20.00 ليش يا عمو كامل؟\n01:21.60 لأنها عالقة بين الأغصان.\n01:24.40 طيب حاول شوي شوي ودير بالك.\n01:27.00 ولا يهمك يا جلجل،\n01:28.30 رح أطلعها صاغ سليم.\n\n# ذكريات عمو كامل مع الطيارات\n01:39.00 عمو كامل؟\n01:40.00 نعم.\n01:41.00 إنت خبير بالطيارات الورقية.\n01:43.60 آه طبعاً.\n01:45.00 أنا لما كنت صغير كنت أصنع\n01:46.50 وأطير طيارات ورقية.\n01:48.00 هه؟ عن جد؟\n01:50.00 طبعاً طبعاً.\n\n# فكرة عبقرية\n01:51.40 بس عمو كامل؟\n01:52.60 نعم.\n01:53.40 أكيد صاحب الطيارة اللي ضيعها\n01:54.70 هلق بكون حزين.\n01:56.00 آه، وإحنا لهلق ما بنعرف مين هو.\n01:59.00 فعلاً، معكم حق.\n02:01.00 خلوني أنزل بالأول،\n02:03.00 وبعدين بنفكر كيف ممكن نلاقي صاحبها.\n\n# قصة عمو كامل مع الطيارة المفقودة\n02:09.00 بتعرف يا جلجل وتنتون؟\n02:11.00 ذكرتوني وأنا صغير لما كنت\n02:12.50 أصنع وأطير طيارات ورقية.\n02:14.00 مرة كنت أطير بطيارة ورقية\n02:15.70 بالسما عالي عالي عالي،\n02:17.40 وفجأة انقطع الخيط.\n02:19.40 ودورت على الطيارة ما لقيتها.\n02:22.00 زعلت كتير مشانها.\n02:24.00 بس على فكرة أنا كنت كتير شاطر\n02:25.50 وأنا بطير بطيارات ورقية.\n\n# خطة الطيران\n02:29.00 ها؟ طير طيارة عالي بالسما؟\n02:31.00 آه.\n02:32.00 لقيتها لقيتها لقيتها!\n02:35.00 إيش هي يا تنتون إيش هي؟\n02:37.00 بنطير الطيارة هاي هلق عالي بالسما،\n02:39.00 وأكيد صاحبها رح يشوفها.\n\n# تنفيذ الخطة\n02:42.00 ها، فكرة كتير ممتازة.\n02:44.00 فكرة رائعة.\n02:45.40 وأكيد رح يميزها.\n02:47.00 إنتِ عبقرية يا تنتون.\n02:49.00 يلا يلا خلينا نطيرها بسرعة.\n02:50.60 يلا يلا يلا.\n02:52.00 جاهز يا جلجل؟\n02:53.00 جاهز.\n02:54.00 خد امسك طرف الخيط.\n02:55.40 أيوه.\n02:56.40 يلا، واحد اتنين تلاتة.\n\n# نجاح الخطة\n03:04.00 ما أحلاها يا جلجل.\n03:05.40 كتير حلوة يا تنتون.\n03:07.00 لو يجي صاحبها يلاقيها.\n03:10.60 وينك يا صاحب الطيارة؟\n03:12.40 إحنا لقينا طيارتك.\n03:16.00 مرحباً.\n\n# اللقاء مع صاحب الطيارة\n03:17.40 ها؟ هي طيارتي.\n03:18.80 أهلاً جعفر أهلاً أهلاً.\n03:20.60 أنا ما كنت منتبه عليها،\n03:22.40 فشكراً كتير لإلك يا عمو كامل\n03:23.70 ولمساعدتك.\n03:25.00 عفواً يا جعفر.\n\n# نهاية سعيدة\n03:26.60 عمو كامل،\n03:28.40 أنا كتير حبيت الطيارة الورقية.\n03:30.60 آه.\n03:32.00 بصير تعملي وحدة أنا وجلجل،\n03:34.00 عشان نطيرها جنب طيارة جعفر؟\n03:36.40 آه طبعاً، ليش لأ؟\n03:38.00 بصير يا تنتون.\n03:39.40 تعال يا جعفر ساعدني فيها.\n03:41.00 يلا.\n03:42.40 طيارة إلي وإلك.\n03:44.00 صح يا ذكي.\n03:45.40 ما أحلاها.\n03:48.00 طيري يا طيارة طيري.\n03:50.00 طيري يا طيارة طيري.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 19:44:54 UTC",
+  "updated_at": "2026-04-25 20:09:33 UTC",
+  "exported_at": "2026-04-25T20:09:33Z"
+}

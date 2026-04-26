@@ -1,0 +1,233 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=cGQnl9HtSXA",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "أوف وينو وين راح؟",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:17.00",
+        "text_l2": "Ugh, where did it go?"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "أنا متأكدة إني كنت لابسيته اليوم",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:21.00",
+        "text_l2": "I'm sure I was wearing it today."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "وين ممكن يكون ضاع؟",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "Where could it have gotten lost?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "شوفي",
+        "timestamp": "00:29.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Look."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "تحري جلجل؟",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "Detective Jaljal?"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "نعم يا مساعدتي تنتن، شو مالك؟",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:36.00",
+        "text_l2": "Yes, my assistant Tantan, what's wrong?"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "أنا ضيعت إشي",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "I lost something."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "إيش هو هذا الإشي؟",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:40.00",
+        "text_l2": "What is this thing?"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "أنا ضيعت...",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "I lost..."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "نسيت، لما إنت نقزتني أنا نسيت شو ضيعت",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "I forgot, when you startled me I forgot what I lost."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ها، نسيتي؟ ممم",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Oh, you forgot? Hmm."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "أنا التحري جلجل وبقدر أساعدك تتذكري",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "I'm Detective Jaljal and I can help you remember."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "عن جد؟",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:57.00",
+        "text_l2": "Really?"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "يعني رح ألاقي الإشي اللي أنا ضيعته؟",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "So I'll find the thing I lost?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "نعم بسيطة من خلال أسئلة بعرف إيش اللي نسيتيه",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "Yes, simply by asking questions I'll know what you forgot."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "طيب يلا بلش يا تحري جلجل",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "Okay, let's start, Detective Jaljal."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "ما تخافي هاي مهمتي أنا",
+        "timestamp": "01:09.00",
+        "timestamp_end": "01:11.00",
+        "text_l2": "Don't worry, this is my job."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "الإشي اللي بتدوري عليه إلك إنتي ولا لحدا تاني؟",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:16.00",
+        "text_l2": "Is the thing you're looking for for you or someone else?"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "إلي أنا",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:19.00",
+        "text_l2": "For me."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "ممتاز طيب",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "Excellent, okay."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "بتعرفي يا تنتن لو كنتي لابسة العقد اللي دايماً بتلبسيه",
+        "timestamp": "02:17.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "Do you know, Tantan, if you were wearing the necklace you always wear?"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "وبيساعدني إني أكتشف الأشياء كان على طول عرفت شو اللي نسيتيه",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:26.00",
+        "text_l2": "It helps me discover things, like I knew right away what you forgot."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "عقدي!",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:30.00",
+        "text_l2": "My necklace!"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "صح صح صح يا تحري جلجل إنت أشطر تحري موجود",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:34.00",
+        "text_l2": "Yes yes yes, Detective Jaljal, you're the smartest detective ever."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "عقدي أنا مضيعة عقدي هييي",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:38.00",
+        "text_l2": "My necklace, I lost my necklace, hey!"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "أنا التحري جلجل بحل كل المشاكل",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:45.00",
+        "text_l2": "I am Detective Jaljal, I solve all problems."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "وهيك انتهت مهمتي شكراً",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:48.00",
+        "text_l2": "And so my mission is over, thanks."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "جلجل جلجل",
+        "timestamp": "02:52.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "Jaljal Jaljal."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "تحري جلجل",
+        "timestamp": "02:55.00",
+        "timestamp_end": "02:57.00",
+        "text_l2": "Detective Jaljal."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "إنت عرفت إني أنا مضيعة العقد",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:01.00",
+        "text_l2": "You knew that I lost the necklace."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "بس ما لقيتلي إياه",
+        "timestamp": "03:02.00",
+        "timestamp_end": "03:04.00",
+        "text_l2": "But you didn't find it for me."
+      }
+    ],
+    "phrases_with_token_translations": "[أوف] وينو وين راح؟ => [Ugh], where did it go?\nأوف [وينو] وين راح؟ => where is it # custom translation because 'weinu' literally includes 'it' as a suffix\nأوف وينو [وين] راح؟ => Ugh, [where] did it go?\nأوف وينو وين [راح]؟ => Ugh, where did it [go]?\n\n[أنا] متأكدة إني كنت لابسيته اليوم => [I]'m sure I was wearing it today.\nأنا [متأكدة] إني كنت لابسيته اليوم => I'm [sure] I was wearing it today.\nأنا متأكدة [إني] كنت لابسيته اليوم => I'm sure [I] was wearing it today.\nأنا متأكدة إني [كنت] لابسيته اليوم => I'm sure I [was] wearing it today.\nأنا متأكدة إني كنت [لابسيته] اليوم => I'm sure I was [wearing it] today.\nأنا متأكدة إني كنت لابسيته [اليوم] => I'm sure I was wearing it [today].\n\n[وين] ممكن يكون ضاع؟ => [Where] could it have gotten lost?\nوين [ممكن] يكون ضاع؟ => Where [could] it have gotten lost?\nوين ممكن [يكون] ضاع؟ => it have\nوين ممكن يكون [ضاع]؟ => Where could it have [gotten lost]?\n\n[شوفي] => [Look]\n\n[تحري] جلجل؟ => [Detective] Jaljal?\nتحري [جلجل]؟ => Detective [Jaljal]?\n\n[نعم] يا مساعدتي تنتن، شو مالك؟ => [Yes], my assistant Tantan, what's wrong?\nنعم يا [مساعدتي] تنتن، شو مالك؟ => Yes, [my assistant] Tantan, what's wrong?\nنعم يا مساعدتي [تنتن]، شو مالك؟ => Yes, my assistant [Tantan], what's wrong?\nنعم يا مساعدتي تنتن، [شو مالك]؟ => Yes, my assistant Tantan, [what's wrong]? # 'شو مالك' is an idiomatic expression for 'what's wrong' or 'what is with you'\n\n[أنا] ضيعت إشي => [I] lost something.\nأنا [ضيعت] إشي => I [lost] something.\nأنا ضيعت [إشي] => I lost [something].\n\n[إيش] هو هذا الإشي؟ => [What] is this thing?\nإيش [هو] هذا الإشي؟ => What [is] this thing?\nإيش هو [هذا] الإشي؟ => What is [this] thing?\nإيش هو هذا [الإشي]؟ => What is this [thing]?\n\n[أنا] ضيعت... => [I] lost...\nأنا [ضيعت]... => I [lost]...\n\n[نسيت]، لما إنت نقزتني أنا نسيت شو ضيعت => [I forgot], when you startled me I forgot what I lost.\nنسيت، [لما] إنت نقزتني أنا نسيت شو ضيعت => I forgot, [when] you startled me I forgot what I lost.\nنسيت، لما [إنت] نقزتني أنا نسيت شو ضيعت => I forgot, when [you] startled me I forgot what I lost.\nنسيت، لما إنت [نقزتني] أنا نسيت شو ضيعت => I forgot, when you [startled me] I forgot what I lost.\nنسيت، لما إنت نقزتني [أنا] نسيت شو ضيعت => I forgot, when you startled me [I] forgot what I lost.\nنسيت، لما إنت نقزتني أنا [نسيت] شو ضيعت => I forgot, when you startled me I [forgot] what I lost.\nنسيت، لما إنت نقزتني أنا نسيت [شو] ضيعت => I forgot, when you startled me I forgot [what] I lost.\nنسيت، لما إنت نقزتني أنا نسيت شو [ضيعت] => I forgot, when you startled me I forgot what [I lost]. # \"ضيعت\" is past tense first person singular, translating directly to \"I lost\"\n\n[ها]، نسيتي؟ ممم => [Oh], you forgot? Hmm.\nها، [نسيتي]؟ ممم => Oh, [you forgot]? Hmm.\nها، نسيتي؟ [ممم] => Oh, you forgot? [Hmm].\n\n[أنا] التحري جلجل وبقدر أساعدك تتذكري => [I'm] Detective Jaljal and I can help you remember.\nأنا [التحري] جلجل وبقدر أساعدك تتذكري => I'm [Detective] Jaljal and I can help you remember.\nأنا التحري [جلجل] وبقدر أساعدك تتذكري => I'm Detective [Jaljal] and I can help you remember.\nأنا التحري جلجل [و]بقدر أساعدك تتذكري => I'm Detective Jaljal [and] I can help you remember.\nأنا التحري جلجل و[بقدر] أساعدك تتذكري => I'm Detective Jaljal and [I can] help you remember.\nأنا التحري جلجل وبقدر [أساعدك] تتذكري => I'm Detective Jaljal and I can [help you] remember.\nأنا التحري جلجل وبقدر أساعدك [تتذكري] => I'm Detective Jaljal and I can help you [remember].\n\n[عن جد]؟ => [Really]?\n\n[يعني] رح ألاقي الإشي اللي أنا ضيعته؟ => [So] I'll find the thing I lost?\nيعني [رح ألاقي] الإشي اللي أنا ضيعته؟ => So [I'll find] the thing I lost?\nيعني رح ألاقي [الإشي] اللي أنا ضيعته؟ => So I'll find [the thing] I lost?\nيعني رح ألاقي الإشي [اللي] أنا ضيعته؟ => that, which\nيعني رح ألاقي الإشي اللي [أنا] ضيعته؟ => So I'll find the thing [I] lost?\nيعني رح ألاقي الإشي اللي أنا [ضيعته]؟ => So I'll find the thing I [lost]? # ضيعته literally means \"I lost it / lost it\"\n\n[نعم] بسيطة من خلال أسئلة بعرف إيش اللي نسيتيه => [Yes], simply by asking questions I'll know what you forgot.\nنعم [بسيطة] من خلال أسئلة بعرف إيش اللي نسيتيه => Yes, [simply] by asking questions I'll know what you forgot.\nنعم بسيطة [من خلال] أسئلة بعرف إيش اللي نسيتيه => Yes, simply [by] asking questions I'll know what you forgot.\nنعم بسيطة من خلال [أسئلة] بعرف إيش اللي نسيتيه => Yes, simply by asking [questions] I'll know what you forgot.\nنعم بسيطة من خلال أسئلة [بعرف] إيش اللي نسيتيه => Yes, simply by asking questions [I'll know] what you forgot.\nنعم بسيطة من خلال أسئلة بعرف [إيش اللي] نسيتيه => Yes, simply by asking questions I'll know [what] you forgot.\nنعم بسيطة من خلال أسئلة بعرف إيش اللي [نسيتيه] => Yes, simply by asking questions I'll know what [you forgot] # includes the subject and verb in Arabic suffix form\n\n[طيب] يلا بلش يا تحري جلجل => [Okay], let's start, Detective Jaljal.\nطيب [يلا بلش] يا تحري جلجل => Okay, [let's start], Detective Jaljal.\nطيب يلا بلش يا [تحري] جلجل => Okay, let's start, [Detective] Jaljal.\nطيب يلا بلش يا تحري [جلجل] => Okay, let's start, Detective [Jaljal].\n\n[ما تخافي] هاي مهمتي أنا => [Don't worry], this is my job.\nما تخافي [هاي] مهمتي أنا => Don't worry, [this] is my job.\nما تخافي هاي [مهمتي] أنا => Don't worry, this is [my job]\nما تخافي هاي مهمتي [أنا] => I, me # used for emphasis along with the possessive suffix '-i' (my)\n\n[الإشي] اللي بتدوري عليه إلك إنتي ولا لحدا تاني؟ => Is [the thing] you're looking for for you or someone else?\nالإشي [اللي] بتدوري عليه إلك إنتي ولا لحدا تاني؟ => that/which\nالإشي اللي [بتدوري عليه] إلك إنتي ولا لحدا تاني؟ => Is the thing [you're looking for] for you or someone else?\nالإشي اللي بتدوري عليه [إلك إنتي] ولا لحدا تاني؟ => Is the thing you're looking for [for you] or someone else?\nالإشي اللي بتدوري عليه إلك إنتي [ولا] لحدا تاني؟ => Is the thing you're looking for for you [or] someone else?\nالإشي اللي بتدوري عليه إلك إنتي ولا [لحدا] تاني؟ => Is the thing you're looking for for you or [someone] else?\nالإشي اللي بتدوري عليه إلك إنتي ولا لحدا [تاني]؟ => Is the thing you're looking for for you or someone [else]?\n\n[إلي] أنا => [For me]\nإلي [أنا] => For [me]\n\n[ممتاز] طيب => [Excellent], okay.\nممتاز [طيب] => Excellent, [okay].\n\n[بتعرفي] يا تنتن لو كنتي لابسة العقد اللي دايماً بتلبسيه => [Do you know], Tantan, if you were wearing the necklace you always wear?\nبتعرفي [يا تنتن] لو كنتي لابسة العقد اللي دايماً بتلبسيه => Do you know, [Tantan], if you were wearing the necklace you always wear?\nبتعرفي يا تنتن [لو] كنتي لابسة العقد اللي دايماً بتلبسيه => Do you know, Tantan, [if] you were wearing the necklace you always wear?\nبتعرفي يا تنتن لو [كنتي] لابسة العقد اللي دايماً بتلبسيه => Do you know, Tantan, if [you were] wearing the necklace you always wear?\nبتعرفي يا تنتن لو كنتي [لابسة] العقد اللي دايماً بتلبسيه => Do you know, Tantan, if you were [wearing] the necklace you always wear?\nبتعرفي يا تنتن لو كنتي لابسة [العقد] اللي دايماً بتلبسيه => Do you know, Tantan, if you were wearing [the necklace] you always wear?\nبتعرفي يا تنتن لو كنتي لابسة العقد [اللي] دايماً بتلبسيه => that, which # relative pronoun often omitted in English\nبتعرفي يا تنتن لو كنتي لابسة العقد اللي [دايماً] بتلبسيه => Do you know, Tantan, if you were wearing the necklace you [always] wear?\nبتعرفي يا تنتن لو كنتي لابسة العقد اللي دايماً [بتلبسيه] => you wear, wear it # \"bet-\" prefix indicates \"you\" and \"-eh\" suffix indicates \"it\"\n\n[وبيساعدني] إني أكتشف الأشياء كان على طول عرفت شو اللي نسيتيه => [It helps me] discover things, like I knew right away what you forgot.\nوبيساعدني [إني] أكتشف الأشياء كان على طول عرفت شو اللي نسيتيه => that I\nوبيساعدني إني [أكتشف] الأشياء كان على طول عرفت شو اللي نسيتيه => It helps me [discover] things, like I knew right away what you forgot.\nوبيساعدني إني أكتشف [الأشياء] كان على طول عرفت شو اللي نسيتيه => It helps me discover [things], like I knew right away what you forgot.\nوبيساعدني إني أكتشف الأشياء [كان] على طول عرفت شو اللي نسيتيه => like # functions as a hypothetical/filler connector here\nوبيساعدني إني أكتشف الأشياء كان [على طول] عرفت شو اللي نسيتيه => It helps me discover things, like I knew [right away] what you forgot.\nوبيساعدني إني أكتشف الأشياء كان على طول [عرفت] شو اللي نسيتيه => It helps me discover things, like [I knew] right away what you forgot.\nوبيساعدني إني أكتشف الأشياء كان على طول عرفت [شو] اللي نسيتيه => It helps me discover things, like I knew right away [what] you forgot.\nوبيساعدني إني أكتشف الأشياء كان على طول عرفت شو اللي [نسيتيه] => It helps me discover things, like I knew right away what [you forgot]\n\n[عقدي]! => [My necklace]!\n\n[صح] صح صح يا تحري جلجل إنت أشطر تحري موجود => [Yes] yes yes, Detective Jaljal, you're the smartest detective ever.\nصح [صح] صح يا تحري جلجل إنت أشطر تحري موجود => Yes [yes] yes, Detective Jaljal, you're the smartest detective ever.\nصح صح [صح] يا تحري جلجل إنت أشطر تحري موجود => Yes yes [yes], Detective Jaljal, you're the smartest detective ever.\nصح صح صح يا [تحري] جلجل إنت أشطر تحري موجود => Yes yes yes, [Detective] Jaljal, you're the smartest detective ever.\nصح صح صح يا تحري [جلجل] إنت أشطر تحري موجود => Yes yes yes, Detective [Jaljal], you're the smartest detective ever.\nصح صح صح يا تحري جلجل [إنت] أشطر تحري موجود => Yes yes yes, Detective Jaljal, [you're] the smartest detective ever.\nصح صح صح يا تحري جلجل إنت [أشطر] تحري موجود => Yes yes yes, Detective Jaljal, you're [the smartest] detective ever.\nصح صح صح يا تحري جلجل إنت أشطر [تحري] موجود => Yes yes yes, Detective Jaljal, you're the smartest [detective] ever.\nصح صح صح يا تحري جلجل إنت أشطر تحري [موجود] => Yes yes yes, Detective Jaljal, you're the smartest detective [ever]. # \"موجود\" literally means \"present\" or \"existing\" but functions as \"ever\" in this superlative context\n\n[عقدي] أنا مضيعة عقدي هييي => [My necklace], I lost my necklace, hey!\nعقدي [أنا مضيعة] عقدي هييي => My necklace, [I lost] my necklace, hey!\nعقدي أنا مضيعة [عقدي] هييي => My necklace, I lost [my necklace], hey!\nعقدي أنا مضيعة عقدي [هييي] => My necklace, I lost my necklace, [hey]!\n\n[أنا] التحري جلجل بحل كل المشاكل => [I] am Detective Jaljal, I solve all problems.\nأنا [التحري] جلجل بحل كل المشاكل => I am [Detective] Jaljal, I solve all problems.\nأنا التحري [جلجل] بحل كل المشاكل => I am Detective [Jaljal], I solve all problems.\nأنا التحري جلجل [بحل] كل المشاكل => I am Detective Jaljal, [I solve] all problems.\nأنا التحري جلجل بحل [كل] المشاكل => I am Detective Jaljal, I solve [all] problems.\nأنا التحري جلجل بحل كل [المشاكل] => I am Detective Jaljal, I solve all [problems].\n\n[وهيك] انتهت مهمتي شكراً => [And so] my mission is over, thanks.\nوهيك [انتهت] مهمتي شكراً => And so my mission [is over], thanks.\nوهيك انتهت [مهمتي] شكراً => And so [my mission] is over, thanks.\nوهيك انتهت مهمتي [شكراً] => And so my mission is over, [thanks]\n\n[جلجل] جلجل => [Jaljal] Jaljal\nجلجل [جلجل] => Jaljal [Jaljal]\n\n[تحري] جلجل => [Detective] Jaljal\nتحري [جلجل] => Detective [Jaljal]\n\n[إنت] عرفت إني أنا مضيعة العقد => [You] knew that I lost the necklace.\nإنت [عرفت] إني أنا مضيعة العقد => You [knew] that I lost the necklace.\nإنت عرفت [إني] أنا مضيعة العقد => You knew [that] I lost the necklace.\nإنت عرفت إني [أنا] مضيعة العقد => You knew that [I] lost the necklace.\nإنت عرفت إني أنا [مضيعة] العقد => You knew that I [lost] the necklace.\nإنت عرفت إني أنا مضيعة [العقد] => You knew that I lost [the necklace]\n\n[بس] ما لقيتلي إياه => [But] you didn't find it for me.\nبس [ما لقيتلي] إياه => you didn't find for me\nبس ما لقيتلي [إياه] => But you didn't find [it] for me.\n\n",
+    "lessons": "# البحث عن الشيء المفقود (الجزء الأول)\n00:14.00 أوف وينو وين راح؟\n00:18.00 أنا متأكدة إني كنت لابسيته اليوم\n00:26.00 وين ممكن يكون ضاع؟\n00:29.00 شوفي\n00:31.00 تحري جلجل؟\n00:34.00 نعم يا مساعدتي تنتن، شو مالك؟\n00:37.00 أنا ضيعت إشي\n00:39.00 إيش هو هذا الإشي؟\n00:41.00 أنا ضيعت...\n00:44.00 نسيت، لما إنت نقزتني أنا نسيت شو ضيعت\n00:48.00 ها، نسيتي؟ ممم\n\n# التحري جلجل في المهمة (الجزء الثاني)\n00:52.00 أنا التحري جلجل وبقدر أساعدك تتذكري\n00:56.00 عن جد؟\n00:58.00 يعني رح ألاقي الإشي اللي أنا ضيعته؟\n01:01.00 نعم بسيطة من خلال أسئلة بعرف إيش اللي نسيتيه\n01:06.00 طيب يلا بلش يا تحري جلجل\n01:09.00 ما تخافي هاي مهمتي أنا\n\n# اكتشاف الحقيقة (الجزء الثالث)\n01:12.00 الإشي اللي بتدوري عليه إلك إنتي ولا لحدا تاني؟\n01:17.00 إلي أنا\n01:20.00 ممتاز طيب\n02:17.00 بتعرفي يا تنتن لو كنتي لابسة العقد اللي دايماً بتلبسيه\n02:22.00 وبيساعدني إني أكتشف الأشياء كان على طول عرفت شو اللي نسيتيه\n02:29.00 عقدي!\n02:31.00 صح صح صح يا تحري جلجل إنت أشطر تحري موجود\n\n# نهاية المهمة\n02:35.00 عقدي أنا مضيعة عقدي هييي\n02:42.00 أنا التحري جلجل بحل كل المشاكل\n02:46.00 وهيك انتهت مهمتي شكراً\n02:52.00 جلجل جلجل\n02:55.00 تحري جلجل\n02:58.00 إنت عرفت إني أنا مضيعة العقد\n03:02.00 بس ما لقيتلي إياه",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 19:16:59 UTC",
+  "updated_at": "2026-04-25 19:29:22 UTC",
+  "exported_at": "2026-04-25T19:29:23Z"
+}

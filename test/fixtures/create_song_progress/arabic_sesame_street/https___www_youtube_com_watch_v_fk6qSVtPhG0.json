@@ -1,0 +1,128 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=fk6qSVtPhG0",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "احنا مجموعة أصحاب",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:02.00",
+        "text_l2": "We're a group of friends"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "اتجمعنا من هالكون",
+        "timestamp": "00:02.00",
+        "timestamp_end": "00:04.00",
+        "text_l2": "Gathered from across this world"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "مع ذلك ما بيفرقنا",
+        "timestamp": "00:04.00",
+        "timestamp_end": "00:05.50",
+        "text_l2": "Yet nothing sets us apart"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "أصل ولا اسم ولا لون",
+        "timestamp": "00:05.50",
+        "timestamp_end": "00:07.50",
+        "text_l2": "Not origin, name, or color"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "لما بتشتي بنتخبى",
+        "timestamp": "00:09.50",
+        "timestamp_end": "00:11.50",
+        "text_l2": "When it rains, we hide away"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "تحت الشمسية سوا",
+        "timestamp": "00:11.50",
+        "timestamp_end": "00:13.50",
+        "text_l2": "Under the umbrella together"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "ولما بتصيف بنلعب",
+        "timestamp": "00:13.50",
+        "timestamp_end": "00:14.50",
+        "text_l2": "And when summer comes, we play"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بطيارة كل هوا",
+        "timestamp": "00:14.50",
+        "timestamp_end": "00:16.50",
+        "text_l2": "Flying a kite in the breeze"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "وأحلى أوقاتنا",
+        "timestamp": "00:16.50",
+        "timestamp_end": "00:18.50",
+        "text_l2": "And our favorite times"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "لما بنلملم ورد الدحنون",
+        "timestamp": "00:18.50",
+        "timestamp_end": "00:21.50",
+        "text_l2": "Are when we gather the wild blooms"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "السلام عليكم",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "Peace be upon you"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "هاي، كوموستا كا",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:25.50",
+        "text_l2": "Hi, how are you doing?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "في الحقيقة لهجاتنا",
+        "timestamp": "00:25.50",
+        "timestamp_end": "00:27.50",
+        "text_l2": "Truth is, our dialects"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "مختلفة عن بعض شوي",
+        "timestamp": "00:27.50",
+        "timestamp_end": "00:29.50",
+        "text_l2": "Are a little different from each other"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "في بيناتنا شعر ملولب",
+        "timestamp": "00:29.50",
+        "timestamp_end": "00:31.50",
+        "text_l2": "Some of us have curly hair"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "وغيره ناعم زي المي",
+        "timestamp": "00:31.50",
+        "timestamp_end": "00:33.50",
+        "text_l2": "And others smooth like water"
+      }
+    ],
+    "phrases_with_token_translations": "[احنا] مجموعة أصحاب => [We're] a group of friends\nاحنا [مجموعة] أصحاب => We're a [group] of friends\nاحنا مجموعة [أصحاب] => We're a group of [friends]\n\n[اتجمعنا] من هالكون => [Gathered] from across this world\nاتجمعنا [من] هالكون => Gathered [from] across this world\nاتجمعنا من [هالكون] => Gathered from across [this world]\n\n[مع ذلك] ما بيفرقنا => [Yet] nothing sets us apart\nمع ذلك [ما] بيفرقنا => Yet [nothing] sets us apart\nمع ذلك ما [بيفرقنا] => Yet nothing [sets us apart]\n\n[أصل] ولا اسم ولا لون => Not [origin], name, or color\nأصل [ولا] اسم ولا لون => nor, and not\nأصل ولا [اسم] ولا لون => Not origin, [name], or color\nأصل ولا اسم [ولا] لون => Not origin, name, [or] color\nأصل ولا اسم ولا [لون] => Not origin, name, or [color]\n\n[لما] بتشتي بنتخبى => [When] it rains, we hide away\nلما [بتشتي] بنتخبى => When [it rains], we hide away\nلما بتشتي [بنتخبى] => When it rains, [we hide away]\n\n[تحت] الشمسية سوا => [Under] the umbrella together\nتحت [الشمسية] سوا => Under [the umbrella] together\nتحت الشمسية [سوا] => Under the umbrella [together]\n\n[و]لما بتصيف بنلعب => [And] when summer comes, we play\nو[لما] بتصيف بنلعب => And [when] summer comes, we play\nولما [بتصيف] بنلعب => And when [summer comes], we play\nولما بتصيف [بنلعب] => And when summer comes, [we play]\n\n[بطيارة] كل هوا => Flying a [kite] in the breeze\n[بطيارة] كل هوا => flying # custom translation for the implied action\nبطيارة [كل] هوا => in the # custom translation for the idiomatic use of 'kull'\nبطيارة كل [هوا] => Flying a kite in the [breeze]\n\n[و]أحلى أوقاتنا => [And] our favorite times\nو[أحلى] أوقاتنا => And our [favorite] times\nوأحلى [أوقاتنا] => our times\n\n[لما] بنلملم ورد الدحنون => Are [when] we gather the wild blooms\nلما [بنلملم] ورد الدحنون => Are when [we gather] the wild blooms\nلما بنلملم [ورد] الدحنون => Are when we gather the wild [blooms]\nلما بنلملم ورد [الدحنون] => wild poppy # custom translation as \"الدحنون\" refers specifically to the wild red poppy/anemone common in the Levant.\n\n[السلام] عليكم => [Peace] be upon you\nالسلام [عليكم] => Peace [be upon you]\n\n[هاي]، كوموستا كا => [Hi], how are you doing?\nهاي، [كوموستا] كا => Hi, [how are] you doing?\nهاي، كوموستا [كا] => Hi, how are [you] doing?\n\n[في الحقيقة] لهجاتنا => [Truth is], our dialects\nفي الحقيقة [لهجاتنا] => Truth is, [our dialects]\n\n[مختلفة] عن بعض شوي => Are a little [different] from each other\nمختلفة [عن] بعض شوي => Are a little different [from] each other\nمختلفة عن [بعض] شوي => Are a little different from [each other]\nمختلفة عن بعض [شوي] => Are [a little] different from each other\n\n[في بيناتنا] شعر ملولب => [Some of us have] curly hair\nفي بيناتنا [شعر] ملولب => Some of us have curly [hair]\nفي بيناتنا شعر [ملولب] => Some of us have [curly] hair\n\n[وغيره] ناعم زي المي => [And others] smooth like water\nوغيره [ناعم] زي المي => And others [smooth] like water\nوغيره ناعم [زي] المي => And others smooth [like] water\nوغيره ناعم زي [المي] => And others smooth like [water]\n\n",
+    "lessons": "# مجموعة الأصدقاء المتنوعة\n00:00.00 احنا مجموعة أصحاب\n00:02.00 اتجمعنا من هالكون\n00:04.00 مع ذلك ما بيفرقنا\n00:05.50 أصل ولا اسم ولا لون\n\n# اللعب تحت المطر والشمس\n00:09.50 لما بتشتي بنتخبى\n00:11.50 تحت الشمسية سوا\n00:13.50 ولما بتصيف بنلعب\n00:14.50 بطيارة كل هوا\n\n# لحظات جميلة مع الأصدقاء\n00:16.50 وأحلى أوقاتنا\n00:18.50 لما بنلملم ورد الدحنون\n00:22.00 السلام عليكم\n00:24.00 هاي، كوموستا كا\n\n# التنوع بين الأصدقاء\n00:25.50 في الحقيقة لهجاتنا\n00:27.50 مختلفة عن بعض شوي\n00:29.50 في بيناتنا شعر ملولب\n00:31.50 وغيره ناعم زي المي",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 23:35:35 UTC",
+  "updated_at": "2026-04-25 23:41:36 UTC",
+  "exported_at": "2026-04-25T23:41:36Z"
+}

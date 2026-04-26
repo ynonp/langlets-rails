@@ -138,16 +138,6 @@
     </div>
   <% end %>
 
-  <!-- Next For You Section -->
-  <% if user_signed_in? && @next_for_you_lesson.present? %>
-    <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
-      <div class="px-2">
-        <%= render 'next_for_you_card', course: @next_for_you_course, next_lesson: @next_for_you_lesson %>
-      </div>
-    </section>
-  <% end %>
-
   <!-- Continue Learning Section - show courses user has started -->
   <% if user_signed_in? && @continue_learning_courses.any? %>
     <section class="mb-10">
@@ -216,10 +206,10 @@
     </section>
   <% end %>
 
-  <!-- Row: "Recommended For You" - only show if user signed in and has recommended courses -->
+  <!-- Row: "Next For You" - only show if user signed in and has recommended courses -->
   <% if user_signed_in? && @recommended_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Recommended For You</h2>
+      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @recommended_courses.each do |course| %>

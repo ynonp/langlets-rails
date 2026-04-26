@@ -134,7 +134,6 @@
 </header>
 
 <!-- Main content wrapper -->
-<turbo-frame id="course-content">
 <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
   <main class="flex flex-col lg:flex-row gap-8 lg:gap-12">
     <!-- Main lesson list area -->
@@ -153,8 +152,7 @@
       <!-- Watch Full Video Button (only shown if course has full player enabled) -->
       <% if @course.show_full_course_player %>
         <div class="mb-6">
-          <%= link_to course_full_player_path(@course.slug),
-              data: { turbo_frame: "course-content", turbo_action: "advance" },
+          <%= link_to course_full_player_path(@course.slug), 
               class: "inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl" do %>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
@@ -165,7 +163,7 @@
       <% end %>
 
       <!-- Lessons list -->
-      <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad turbo:frame-render@document->scroll-into-view#handleTurboLoad">
+      <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
         <% first_incomplete_found = false %>
         <% @lessons.each_with_index do |lesson, index| %>
           <% is_first_incomplete = !first_incomplete_found && (lesson.in_progress? || lesson.not_started?) %>
@@ -254,21 +252,15 @@
 
         <!-- Video player -->
         <% youtube_video_id = @course.main_media_url.split("v=").last %>
-        <div class="aspect-video overflow-hidden rounded-lg shadow-xl shadow-black/30"
-             data-controller="main-video-player"
-             data-main-video-player-video-id-value="<%= youtube_video_id %>"
-             data-main-video-player-preload-player-value="true">
-          <div data-main-video-player-target="player"
-               class="w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
-          </div>
+        <div class="aspect-video overflow-hidden rounded-lg shadow-xl shadow-black/30">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/<%= youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </aside>
   </main>
 </div>
-</turbo-frame>
 
-
+    
     <footer class="bg-gray-800 border-t border-gray-700 mt-auto">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">

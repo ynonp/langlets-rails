@@ -79,9 +79,6 @@ application.register("progress-tracker", ProgressTrackerController)
 import ScrollIntoViewController from "./scroll_into_view_controller"
 application.register("scroll-into-view", ScrollIntoViewController)
 
-import FullPlayerFrameController from "./full_player_frame_controller"
-application.register("full-player-frame", FullPlayerFrameController)
-
 import SortPhrasesActivityController from "./sort_phrases_activity_controller"
 application.register("sort-phrases-activity", SortPhrasesActivityController)
 

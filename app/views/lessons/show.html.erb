@@ -23,20 +23,6 @@
   <meta property="twitter:title" content="<%= title %>">
   <meta property="twitter:description" content="<%= description %>">
   <meta property="twitter:image" content="<%= thumbnail_url %>">
-
-  <!-- History manipulation for native app back button when coming from Continue Learning -->
-  <script>
-    (function() {
-      var url = new URL(window.location.href);
-      if (url.searchParams.get('ref') === 'continue') {
-        var coursePath = '<%= j @course_path %>';
-        url.searchParams.delete('ref');
-        var lessonUrl = url.toString();
-        history.replaceState({}, '', coursePath);
-        history.pushState({}, '', lessonUrl);
-      }
-    })();
-  </script>
 <% end %>
 
 <% 

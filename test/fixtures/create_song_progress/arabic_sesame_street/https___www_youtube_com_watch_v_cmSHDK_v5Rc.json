@@ -1,0 +1,373 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=cmSHDK_v5Rc",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "مرحباً يا أصدقائي وأهلاً وسهلاً فيكم،",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:02.50",
+        "text_l2": "Hello friends, and welcome everyone,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "واليوم رح نتابع مع بعض",
+        "timestamp": "00:02.50",
+        "timestamp_end": "00:04.50",
+        "text_l2": "And today we'll continue together"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "آخر تدريبات التمثيل.",
+        "timestamp": "00:04.50",
+        "timestamp_end": "00:06.00",
+        "text_l2": "with the final acting exercises."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "جاهزين؟",
+        "timestamp": "00:06.50",
+        "timestamp_end": "00:07.50",
+        "text_l2": "Ready?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "جاهزين!",
+        "timestamp": "00:07.50",
+        "timestamp_end": "00:09.50",
+        "text_l2": "Ready!"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "يلا، مين اللي بده يبدأ",
+        "timestamp": "00:09.50",
+        "timestamp_end": "00:11.50",
+        "text_l2": "Come on, who wants to start"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "أول إشي بلعبة التمثيل؟",
+        "timestamp": "00:11.50",
+        "timestamp_end": "00:13.00",
+        "text_l2": "the acting game first?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "أنا أنا!",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Me, me!"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "يلا يا غالية، مين بده يساعدك؟",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:15.50",
+        "text_l2": "Come on Ghalia, who wants to help you?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "بدي حياة تساعدني.",
+        "timestamp": "00:15.50",
+        "timestamp_end": "00:17.50",
+        "text_l2": "I want Hayat to help me."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ماشي، وحياة بتساعدك،",
+        "timestamp": "00:17.50",
+        "timestamp_end": "00:19.50",
+        "text_l2": "Okay, and Hayat will help you,"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "وحياة رح تساعدها أعزائي المشاهدين.",
+        "timestamp": "00:19.50",
+        "timestamp_end": "00:23.50",
+        "text_l2": "and Hayat will help her, my dear viewers."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "يلا، خلينا كلياتنا نحزر",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:26.50",
+        "text_l2": "Come on, let's all guess"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "إيش بدها تعمل غالية.",
+        "timestamp": "00:26.50",
+        "timestamp_end": "00:29.00",
+        "text_l2": "what Ghalia is going to do."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "عرفتوا؟",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "Did you get it?"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "أنا أنا بدي أحزر،",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:40.00",
+        "text_l2": "Me, I want to guess,"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "معلمة صح؟",
+        "timestamp": "00:40.00",
+        "timestamp_end": "00:41.50",
+        "text_l2": "A teacher, right?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "غلط!",
+        "timestamp": "00:41.50",
+        "timestamp_end": "00:42.50",
+        "text_l2": "Wrong!"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "أنا بحزر.",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:43.50",
+        "text_l2": "I'm guessing."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "إيش يا جلجل؟",
+        "timestamp": "00:43.50",
+        "timestamp_end": "00:45.00",
+        "text_l2": "What is it, Jaljal?"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "شرطي سير.",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "A traffic cop."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "صح! صح! ممتاز!",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:49.00",
+        "text_l2": "Correct! Correct! Excellent!"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "أنا فزت، بعرف بعرف.",
+        "timestamp": "00:49.00",
+        "timestamp_end": "00:51.50",
+        "text_l2": "I won, I know, I know."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بس كنت سرحانة شوي.",
+        "timestamp": "00:51.50",
+        "timestamp_end": "00:53.50",
+        "text_l2": "But I was zoned out a bit."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "طيب، إنتِ يا تنتن، يلا دورك.",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:56.50",
+        "text_l2": "Okay, you, Tantin, come on, your turn."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "لا، دورك إنت يا جلجل.",
+        "timestamp": "00:57.00",
+        "timestamp_end": "00:59.50",
+        "text_l2": "No, it's your turn, Jaljal."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "حياة، ممكن تساعديني؟",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:02.00",
+        "text_l2": "Hayat, can you help me?"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "طبعاً يا جلجل.",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:03.50",
+        "text_l2": "Of course, Jaljal."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "جاهزين؟",
+        "timestamp": "01:15.50",
+        "timestamp_end": "01:17.00",
+        "text_l2": "Ready?"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "جاهزين!",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:18.50",
+        "text_l2": "Ready!"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "حزرتوا؟",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:25.00",
+        "text_l2": "Did you guess?"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "طبيب!",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:26.50",
+        "text_l2": "A doctor!"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "يا عيني عليكِ يا غالية،",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:29.00",
+        "text_l2": "Oh, Ghalia, you're amazing,"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "إنتِ شاطرة كتير في التحزير.",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:31.00",
+        "text_l2": "you're very good at guessing."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "آه، بس هي كانت كتير سهلة يا جلجل،",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:34.00",
+        "text_l2": "Yeah, but it was very easy, Jaljal,"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "وأنا كمان حزرتها.",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:35.50",
+        "text_l2": "and I guessed it too."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "طيب يا تنتن،",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:37.50",
+        "text_l2": "Okay, Tantin,"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "إنتِ جاهزة تقدميلنا؟",
+        "timestamp": "01:37.50",
+        "timestamp_end": "01:39.50",
+        "text_l2": "are you ready to perform for us?"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "آه أنا جاهزة،",
+        "timestamp": "01:39.50",
+        "timestamp_end": "01:41.00",
+        "text_l2": "Yeah, I'm ready,"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "إنتو مستعدين هلا؟",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "Are you ready now?"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "إحنا جاهزين نحزر.",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:44.50",
+        "text_l2": "We're ready to guess."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "يلا، هلا رح أبلش.",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:46.50",
+        "text_l2": "Come on, I'll start now."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "رأسك بوجعك؟",
+        "timestamp": "01:48.50",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Does your head hurt?"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "لا، هلا رح أعيدها، شوفوا.",
+        "timestamp": "01:52.50",
+        "timestamp_end": "01:55.50",
+        "text_l2": "No, I'll do it again now, look."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "عم تتطلعي من الشباك؟",
+        "timestamp": "01:56.50",
+        "timestamp_end": "01:58.50",
+        "text_l2": "Are you looking out the window?"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "لا، غلط،",
+        "timestamp": "01:59.50",
+        "timestamp_end": "02:00.50",
+        "text_l2": "No, wrong,"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "مع إنها هي كتير سهلة.",
+        "timestamp": "02:00.50",
+        "timestamp_end": "02:02.50",
+        "text_l2": "even though it's very easy."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "تنتن، ما حزرنا.",
+        "timestamp": "02:05.50",
+        "timestamp_end": "02:07.50",
+        "text_l2": "Tantin, we didn't guess."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "مع إنها كتير سهلة يا جلجل،",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:10.50",
+        "text_l2": "Even though it's very easy, Jaljal,"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "أنا كنت بمثل إني أنا بلعب كرة قدم",
+        "timestamp": "02:10.50",
+        "timestamp_end": "02:13.50",
+        "text_l2": "I was acting like I was playing soccer"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "وسجلت هدف برأسي، هيك.",
+        "timestamp": "02:13.50",
+        "timestamp_end": "02:16.00",
+        "text_l2": "and scored a goal with my head, like this."
+      }
+    ],
+    "phrases_with_token_translations": "[مرحباً] يا أصدقائي وأهلاً وسهلاً فيكم، => [Hello] friends, and welcome everyone,\nمرحباً [يا أصدقائي] وأهلاً وسهلاً فيكم، => Hello [friends], and welcome everyone,\nمرحباً يا أصدقائي [و]أهلاً وسهلاً فيكم، => Hello friends, [and] welcome everyone,\nمرحباً يا أصدقائي و[أهلاً وسهلاً] فيكم، => Hello friends, and [welcome] everyone,\nمرحباً يا أصدقائي وأهلاً وسهلاً [فيكم]، => Hello friends, and welcome [everyone]\n\n[واليوم] رح نتابع مع بعض => [And today] we'll continue together\nواليوم [رح نتابع] مع بعض => [we'll continue] together\nواليوم رح نتابع [مع بعض] => And today we'll continue [together]\n\n[آخر] تدريبات التمثيل. => with the [final] acting exercises.\nآخر [تدريبات] التمثيل. => with the final acting [exercises.\nآخر تدريبات [التمثيل]. => with the final [acting] exercises.\n\n[جاهزين]؟ => [Ready]?\n\n[جاهزين]! => [Ready]!\n\n[يلا]، مين اللي بده يبدأ => [Come on], who wants to start\nيلا، [مين] اللي بده يبدأ => Come on, [who] wants to start\nيلا، مين [اللي] بده يبدأ => that, who\nيلا، مين اللي [بده] يبدأ => Come on, who [wants] to start\nيلا، مين اللي بده [يبدأ] => Come on, who wants [to start]\n\n[أول] إشي بلعبة التمثيل؟ => the acting game [first]?\nأول [إشي] بلعبة التمثيل؟ => thing\nأول إشي [بلعبة] التمثيل؟ => the acting [game] first?\nأول إشي بلعبة [التمثيل]؟ => [the acting] game first?\n\n[أنا] أنا! => [Me], me!\nأنا [أنا]! => Me, [me]!\n\n[يلا] يا غالية، مين بده يساعدك؟ => [Come on] Ghalia, who wants to help you?\nيلا يا [غالية]، مين بده يساعدك؟ => Come on [Ghalia], who wants to help you?\nيلا يا غالية، [مين] بده يساعدك؟ => Come on Ghalia, [who] wants to help you?\nيلا يا غالية، مين [بده] يساعدك؟ => Come on Ghalia, who [wants] to help you?\nيلا يا غالية، مين بده [يساعدك]؟ => Come on Ghalia, who wants [to help you]?\n\n[بدي] حياة تساعدني. => [I want] Hayat to help me.\nبدي [حياة] تساعدني. => I want [Hayat] to help me.\nبدي حياة [تساعدني]. => I want Hayat [to help me].\n\n[ماشي]، وحياة بتساعدك، => [Okay], and Hayat will help you,\nماشي، [وحياة] بتساعدك، => Okay, [and Hayat] will help you,\nماشي، وحياة [بتساعدك]، => Okay, and Hayat [will help you],\n\n[و]حياة رح تساعدها أعزائي المشاهدين => [and] Hayat will help her, my dear viewers\nو[حياة] رح تساعدها أعزائي المشاهدين => and [Hayat] will help her, my dear viewers\nوحياة [رح] تساعدها أعزائي المشاهدين => and Hayat [will] help her, my dear viewers\nوحياة رح [تساعدها] أعزائي المشاهدين => and Hayat will [help her], my dear viewers\nوحياة رح تساعدها [أعزائي] المشاهدين => and Hayat will help her, [my dear] viewers\nوحياة رح تساعدها أعزائي [المشاهدين] => and Hayat will help her, my dear [viewers]\n\n[يلا]، خلينا كلياتنا نحزر => [Come on], let's all guess\nيلا، [خلينا] كلياتنا نحزر => Come on, [let's] all guess\nيلا، خلينا [كلياتنا] نحزر => Come on, let's [all] guess\nيلا، خلينا كلياتنا [نحزر] => Come on, let's all [guess]\n\n[إيش] بدها تعمل غالية. => [what] Ghalia is going to do.\nإيش [بدها] تعمل غالية. => what Ghalia [is going to] do.\nإيش بدها [تعمل] غالية. => what Ghalia is going to [do].\nإيش بدها تعمل [غالية]. => what [Ghalia] is going to do.\n\n[عرفتوا]؟ => [Did you get it]?\n\n[أنا] أنا بدي أحزر => [Me], I want to guess\nأنا [أنا] بدي أحزر => Me, [I] want to guess\nأنا أنا [بدي] أحزر => Me, I [want] to guess\nأنا أنا بدي [أحزر] => Me, I want to [guess]\n\n[معلمة] صح؟ => [A teacher], right?\nمعلمة [صح]؟ => A teacher, [right]?\n\n[غلط]! => [Wrong]!\n\n[أنا] بحزر => [I]'m guessing\nأنا [بحزر] => I['m guessing]\n\n[إيش] يا جلجل؟ => [What is it], Jaljal?\nإيش يا [جلجل]؟ => What is it, [Jaljal]?\n\n[شرطي] سير. => A traffic [cop].\nشرطي [سير]. => A [traffic] cop.\n\n[صح]! صح! ممتاز! => [Correct]! Correct! Excellent!\nصح! [صح]! ممتاز! => Correct! [Correct]! Excellent!\nصح! صح! [ممتاز]! => Correct! Correct! [Excellent]!\n\n[أنا] فزت، بعرف بعرف. => [I] won, I know, I know.\nأنا [فزت]، بعرف بعرف. => I [won], I know, I know.\nأنا فزت، [بعرف] بعرف. => I won, [I know], I know.\nأنا فزت، بعرف [بعرف]. => I won, I know, [I know].\n\n[بس] كنت سرحانة شوي. => [But] I was zoned out a bit.\nبس [كنت] سرحانة شوي. => But [I was] zoned out a bit.\nبس كنت [سرحانة] شوي. => But I was [zoned out] a bit.\nبس كنت سرحانة [شوي]. => But I was zoned out [a bit].\n\n[طيب]، إنتِ يا تنتن، يلا دورك. => [Okay], you, Tantin, come on, your turn.\nطيب، [إنتِ] يا تنتن، يلا دورك. => Okay, [you], Tantin, come on, your turn.\nطيب، إنتِ [يا تنتن]، يلا دورك. => Okay, you, [Tantin], come on, your turn.\nطيب، إنتِ يا تنتن، [يلا] دورك. => Okay, you, Tantin, [come on], your turn.\nطيب، إنتِ يا تنتن، يلا [دورك]. => Okay, you, Tantin, come on, [your turn]\n\n[لا]، دورك إنت يا جلجل. => [No], it's your turn, Jaljal.\nلا، [دورك] إنت يا جلجل. => No, it's [your turn], Jaljal.\nلا، دورك [إنت] يا جلجل. => you\nلا، دورك إنت يا [جلجل]. => No, it's your turn, [Jaljal].\n\n[حياة]، ممكن تساعديني؟ => [Hayat], can you help me?\nحياة، [ممكن] تساعديني؟ => Hayat, [can] you help me?\nحياة، ممكن [تساعديني]؟ => Hayat, can [you help me]? # تساعديني includes the prefix for \"you\", the verb \"help\", and the suffix for \"me\"\n\n[طبعاً] يا جلجل. => [Of course], Jaljal.\nطبعاً يا [جلجل]. => Of course, [Jaljal].\n\n[جاهزين]؟ => [Ready]?\n\n[جاهزين]! => [Ready]!\n\n[حزرتوا]؟ => [Did you guess]?\n\n[طبيب]! => [A doctor]!\n\n[يا] عيني عليكِ يا غالية، => [Oh], Ghalia, you're amazing,\nيا [عيني عليكِ] يا غالية، => Oh, Ghalia, [you're amazing],\nيا عيني عليكِ يا [غالية]، => Oh, [Ghalia], you're amazing,\n\n[إنتِ] شاطرة كتير في التحزير => [you're] very good at guessing\nإنتِ [شاطرة] كتير في التحزير => you're very [good] at guessing\nإنتِ شاطرة [كتير] في التحزير => you're [very] good at guessing\nإنتِ شاطرة كتير [في] التحزير => you're very good [at] guessing\nإنتِ شاطرة كتير في [التحزير] => you're very good at [guessing]\n\n[آه]، بس هي كانت كتير سهلة يا جلجل، => [Yeah], but it was very easy, Jaljal,\nآه، [بس] هي كانت كتير سهلة يا جلجل، => Yeah, [but] it was very easy, Jaljal,\nآه، بس [هي] كانت كتير سهلة يا جلجل، => Yeah, but [it] was very easy, Jaljal,\nآه، بس هي [كانت] كتير سهلة يا جلجل، => Yeah, but it [was] very easy, Jaljal,\nآه، بس هي كانت [كتير] سهلة يا جلجل، => Yeah, but it was [very] easy, Jaljal,\nآه، بس هي كانت كتير [سهلة] يا جلجل، => Yeah, but it was [easy], Jaljal,\nآه، بس هي كانت كتير سهلة يا [جلجل]، => Yeah, but it was very easy, [Jaljal],\n\n[و]أنا كمان حزرتها => [and] I guessed it too\nو[أنا] كمان حزرتها => and [I] guessed it too\nوأنا [كمان] حزرتها => and I guessed it [too]\nوأنا كمان [حزرتها] => and I [guessed it] too\n\n[طيب] يا تنتن => [Okay], Tantin\nطيب [يا] تنتن => vocative particle # used for calling or addressing someone\nطيب يا [تنتن] => Okay, [Tantin]\n\n[إنتِ] جاهزة تقدميلنا؟ => [are you] ready to perform for us?\nإنتِ [جاهزة] تقدميلنا؟ => are you [ready] to perform for us?\nإنتِ جاهزة [تقدميلنا]؟ => are you ready [to perform for us]?\n\n[آه] أنا جاهزة، => [Yeah], I'm ready,\nآه [أنا] جاهزة، => [I]'m ready,\nآه أنا [جاهزة]، => I'm [ready],\n\n[إنتو] مستعدين هلا؟ => Are [you] ready now?\nإنتو [مستعدين] هلا؟ => Are you [ready] now?\nإنتو مستعدين [هلا]؟ => Are you ready [now]?\n\n[إحنا] جاهزين نحزر => [We're] ready to guess\nإحنا [جاهزين] نحزر => We're [ready] to guess\nإحنا جاهزين [نحزر] => We're ready [to guess]\n\n[يلا]، هلا رح أبلش. => [Come on], I'll start now.\nيلا، [هلا] رح أبلش. => Come on, I'll start [now]\nيلا، هلا [رح أبلش]. => Come on, [I'll start] now.\n\n[رأسك] بوجعك؟ => Does [your head] hurt?\nرأسك [بوجعك]؟ => hurts you # the verb contains the object suffix \"-ak\" meaning \"you\"\n\n[لا]، هلا رح أعيدها، شوفوا => [No], I'll do it again now, look.\nلا، [هلا] رح أعيدها، شوفوا => No, I'll do it again [now], look.\nلا، هلا [رح أعيدها]، شوفوا => No, [I'll do it again] now, look.\nلا، هلا رح أعيدها، [شوفوا] => No, I'll do it again now, [look]\n\n[عم تتطلعي] من الشباك؟ => [Are you looking] out the window?\nعم تتطلعي [من] الشباك؟ => Are you looking [out] the window?\nعم تتطلعي من [الشباك]؟ => Are you looking out [the window]?\n\n[لا]، غلط، => [No], wrong,\nلا، [غلط]، => No, [wrong],\n\n[مع إنها] هي كتير سهلة. => [even though] it's very easy.\nمع إنها [هي] كتير سهلة. => even though [it's] very easy. # \"هي\" acts as the subject/copula \"it is\"\nمع إنها هي [كتير] سهلة. => even though it's [very] easy.\nمع إنها هي كتير [سهلة]. => even though it's very [easy].\n\n[تنتن]، ما حزرنا. => [Tantin], we didn't guess.\nتنتن، [ما] حزرنا. => Tantin, we [didn't] guess.\nتنتن، ما [حزرنا]. => we guessed # \"حزر\" (guess) + suffix \"نا\" (we)\n\n[مع إنها] كتير سهلة يا جلجل، => [Even though it's] very easy, Jaljal,\nمع إنها [كتير] سهلة يا جلجل، => Even though it's [very] easy, Jaljal,\nمع إنها كتير [سهلة] يا جلجل، => Even though it's very [easy], Jaljal,\nمع إنها كتير سهلة يا [جلجل]، => Even though it's very easy, [Jaljal],\n\n[أنا] كنت بمثل إني أنا بلعب كرة قدم => [I] was acting like I was playing soccer\nأنا [كنت] بمثل إني أنا بلعب كرة قدم => I [was] acting like I was playing soccer\nأنا كنت [بمثل] إني أنا بلعب كرة قدم => I was [acting] like I was playing soccer\nأنا كنت بمثل [إني] أنا بلعب كرة قدم => that I, like I # used custom translation because \"inni\" contains both \"that\" and \"I\"\nأنا كنت بمثل إني [أنا] بلعب كرة قدم => I was acting like [I] was playing soccer\nأنا كنت بمثل إني أنا [بلعب] كرة قدم => I was acting like I was [playing] soccer\nأنا كنت بمثل إني أنا بلعب [كرة قدم] => I was acting like I was playing [soccer]\n\n[و]سجلت هدف برأسي، هيك. => [and] scored a goal with my head, like this.\nو[سجلت] هدف برأسي، هيك. => and [scored] a goal with my head, like this.\nوسجلت [هدف] برأسي، هيك. => and scored [a goal] with my head, like this.\nوسجلت هدف [برأسي]، هيك. => and scored a goal [with my head], like this. \nوسجلت هدف برأسي، [هيك] => like this # هيك is an adverb meaning 'like this' or 'this way'\n\n",
+    "lessons": "# مقدمة الدرس والتحضير للعبة التمثيل\n00:00.00 مرحباً يا أصدقائي وأهلاً وسهلاً فيكم،\n00:02.50 واليوم رح نتابع مع بعض\n00:04.50 آخر تدريبات التمثيل.\n00:06.50 جاهزين؟\n00:07.50 جاهزين!\n\n# بداية اللعبة واختيار غالية\n00:09.50 يلا، مين اللي بده يبدأ\n00:11.50 أول إشي بلعبة التمثيل؟\n00:13.00 أنا أنا!\n00:14.00 يلا يا غالية، مين بده يساعدك؟\n00:15.50 بدي حياة تساعدني.\n\n# مساعدة حياة والتحضير للعبة\n00:17.50 ماشي، وحياة بتساعدك،\n00:19.50 وحياة رح تساعدها أعزائي المشاهدين.\n00:24.00 يلا، خلينا كلياتنا نحزر\n00:26.50 إيش بدها تعمل غالية.\n00:37.00 عرفتوا؟\n\n# محاولات التخمين الأولى\n00:38.00 أنا أنا بدي أحزر،\n00:40.00 معلمة صح؟\n00:41.50 غلط!\n00:42.50 أنا بحزر.\n00:43.50 إيش يا جلجل؟\n00:45.00 شرطي سير.\n\n# النجاح في التخمين والتحول إلى تنتن\n00:47.00 صح! صح! ممتاز!\n00:49.00 أنا فزت، بعرف بعرف.\n00:51.50 بس كنت سرحانة شوي.\n00:54.00 طيب، إنتِ يا تنتن، يلا دورك.\n00:57.00 لا، دورك إنت يا جلجل.\n\n# مساعدة حياة وبداية جولة تنتن\n01:00.00 حياة، ممكن تساعديني؟\n01:02.00 طبعاً يا جلجل.\n01:15.50 جاهزين؟\n01:17.00 جاهزين!\n\n# جولة تنتن ومحاولات التخمين\n01:24.00 حزرتوا؟\n01:25.00 طبيب!\n01:27.00 يا عيني عليكِ يا غالية،\n01:29.00 إنتِ شاطرة كتير في التحزير.\n\n# شرح الكلمة وتقديم تنتن\n01:31.00 آه، بس هي كانت كتير سهلة يا جلجل،\n01:34.00 وأنا كمان حزرتها.\n01:36.00 طيب يا تنتن،\n01:37.50 إنتِ جاهزة تقدميلنا؟\n\n# أداء تنتن ومحاولات التخمين الفاشلة\n01:39.50 آه أنا جاهزة،\n01:41.00 إنتو مستعدين هلا؟\n01:43.00 إحنا جاهزين نحزر.\n01:45.00 يلا، هلا رح أبلش.\n01:48.50 رأسك بوجعك؟\n01:52.50 لا، هلا رح أعيدها، شوفوا.\n01:56.50 عم تتطلعي من الشباك؟\n01:59.50 لا، غلط،\n02:00.50 مع إنها هي كتير سهلة.\n\n# الكشف عن الكلمة الصحيحة\n02:05.50 تنتن، ما حزرنا.\n02:08.00 مع إنها كتير سهلة يا جلجل،\n02:10.50 أنا كنت بمثل إني أنا بلعب كرة قدم\n02:13.50 وسجلت هدف برأسي، هيك.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-25 23:15:28 UTC",
+  "updated_at": "2026-04-25 23:25:28 UTC",
+  "exported_at": "2026-04-25T23:25:28Z"
+}

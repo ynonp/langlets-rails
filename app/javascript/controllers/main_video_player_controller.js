@@ -26,11 +26,9 @@ export default class extends Controller {
   }
 
   handleBeforeRender() {
-    if (this.hasPlayerContainerTarget) {
-      this.playerContainerTarget.classList.add('hidden');
-    }
+    this.playerContainerTarget.classList.add('hidden');
     this.segmentStart = null;
-    this.segmentEnd = null;
+    this.segmentEnd = null;    
   }
 
   handleFrameRender() {
