@@ -11,27 +11,25 @@
   user_progress = course.respond_to?(:user_progress) ? course.user_progress : 0
 %>
 
-<div class="<%= container_classes %>">
-  <!-- Course Image - links to course page -->
-  <%= link_to course_path(id: course.slug), class: "block flex-shrink-0" do %>
-    <% if course.main_media_url.present? %>
-      <% youtube_video_id = course.main_media_url.split("v=").last %>
-      <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl">
-    <% else %>
-      <div class="w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center">
-        <svg class="w-12 h-12 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
-        </svg>
-      </div>
-    <% end %>
+<%= link_to course_lesson_path(course, next_lesson, ref: 'continue'), class: container_classes do %>
+  <!-- Course Image -->
+  <% if course.main_media_url.present? %>
+    <% youtube_video_id = course.main_media_url.split("v=").last %>
+    <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+  <% else %>
+    <div class="w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center flex-shrink-0">
+      <svg class="w-12 h-12 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
+        <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
+      </svg>
+    </div>
   <% end %>
   
   <!-- Course Content -->
   <div class="p-4 flex flex-col flex-grow">
     <div class="flex-grow">
-      <!-- Course Title - links to course page -->
+      <!-- Course Title -->
       <h3 class="text-lg font-semibold text-slate-100 mb-2 min-h-[1.75rem] flex items-center">
-        <%= link_to course.name.present? ? course.name : "Untitled Course", course_path(id: course.slug), class: "text-slate-100 hover:text-white no-underline" %>
+        <%= course.name.present? ? course.name : "Untitled Course" %>
       </h3>
       
       <!-- Next Lesson Name (replaces language + lesson count) -->
@@ -56,8 +54,9 @@
       <% end %>
     </div>
     
-    <!-- Action Button - links directly to next lesson -->
-    <%= link_to "Continue Learning", course_lesson_path(course, next_lesson, ref: 'continue'),
-          class: "w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition duration-200 text-center mt-auto no-underline block" %>
+    <!-- Action Button -->
+    <div class="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition duration-200 text-center mt-auto">
+      Continue Learning
+    </div>
   </div>
-</div>
+<% end %>
