@@ -1,0 +1,422 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=11aSxMHXRNc",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "يا سلام! أنا بحب أقرأ وأستمتع يوم العطلة،",
+        "timestamp": "00:02.00",
+        "timestamp_end": "00:05.50",
+        "text_l2": "Oh my! I love to read and enjoy my day off,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "وخصوصاً إنه الجو مش بارد اليوم.",
+        "timestamp": "00:05.50",
+        "timestamp_end": "00:08.00",
+        "text_l2": "Especially since the weather isn't cold today."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "معك حق يا جلجل. شوف ما أحلى الجو",
+        "timestamp": "00:08.00",
+        "timestamp_end": "00:11.50",
+        "text_l2": "You're right, Jaljal. Look how lovely the weather is"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "والعصافير اللي حوالينا.",
+        "timestamp": "00:11.50",
+        "timestamp_end": "00:14.00",
+        "text_l2": "And the birds around us."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "جلجل.",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:21.00",
+        "text_l2": "Jaljal."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "نعم.",
+        "timestamp": "00:21.00",
+        "timestamp_end": "00:21.50",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "مش عارفة أقعد هون، بيصير نغير أماكننا؟",
+        "timestamp": "00:21.50",
+        "timestamp_end": "00:24.00",
+        "text_l2": "I'm not sure about sitting here, can we switch spots?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "طبعاً يا تنتون، أنا بيهمني",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:26.50",
+        "text_l2": "Of course, Tantoon, I care"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "إنك تكوني مرتاحة.",
+        "timestamp": "00:26.50",
+        "timestamp_end": "00:28.00",
+        "text_l2": "That you are comfortable."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "شكراً، كلك ذوق.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Thanks, you're so kind."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "إيه! شو هاد؟",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:45.00",
+        "text_l2": "Hey! What's this?"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "ماله هالعصفور يخرج فضلاته إلا على كتابي؟",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "Why does this bird have to poop on my book?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "شو هالحظ السيء هاد؟",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "What is this bad luck?"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "بالعكس يا جلجل، أنت محظوظ،",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "On the contrary, Jaljal, you're lucky,"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "لأني أنا سمعت لما يوقع على رأس واحد",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:58.00",
+        "text_l2": "Because I heard when it falls on someone's head"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "فضلات عصفور بكون محظوظ.",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "Bird poop means you're lucky."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "معقول يا تنتون؟",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "Really, Tantoon?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "المهم تكون إيجابي ومتفائل.",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "The important thing is to be positive and optimistic."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "صح، أنا لازم أكون إيجابي ومتفائل.",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "Right, I need to be positive and optimistic."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "مزبوط كلامك يا تنتون.",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "You're right, Tantoon."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "إذا بدك، نرجع منغير أماكننا.",
+        "timestamp": "01:13.00",
+        "timestamp_end": "01:16.00",
+        "text_l2": "If you want, we can switch spots back."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "شكراً يا تنتون،",
+        "timestamp": "01:16.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "Thanks, Tantoon,"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "بلكي هيك بتحسن نهاري.",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "Maybe this will improve my day."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "إيش هاد؟",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:37.00",
+        "text_l2": "What's this?"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "هاد صوت نحلة.",
+        "timestamp": "01:37.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "This is the sound of a bee."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "كش! كشي يا نحلة. كشي.",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:44.00",
+        "text_l2": "Shoo! Shoo away, bee. Shoo."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "روحي يا نحلة. إي!",
+        "timestamp": "01:44.00",
+        "timestamp_end": "01:47.00",
+        "text_l2": "Go away, bee. Hey!"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "كشي!",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:49.00",
+        "text_l2": "Shoo!"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "أف!",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "Ugh!"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "شو حظي اليوم؟",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:56.00",
+        "text_l2": "What is my luck today?"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "معلش معلش يا جلجل، خلص، خليك متفائل،",
+        "timestamp": "01:56.00",
+        "timestamp_end": "01:59.00",
+        "text_l2": "It's okay, it's okay, Jaljal, enough, stay optimistic,"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "هلق الأمور أكيد رح تتحسن.",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "Things will surely get better now."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "الواحد لازم يكون إيجابي ومتفائل",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:04.50",
+        "text_l2": "One must be positive and optimistic"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "حتى لو الأمور ما زبطت.",
+        "timestamp": "02:04.50",
+        "timestamp_end": "02:07.00",
+        "text_l2": "Even if things don't go right."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "جلجل، شو رأيك نغير أماكننا",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:12.00",
+        "text_l2": "Jaljal, what do you say we switch spots"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بلكي حظك بيتغير؟",
+        "timestamp": "02:12.00",
+        "timestamp_end": "02:15.00",
+        "text_l2": "Maybe your luck will change?"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "طيب يا تنتون، يلا نغير أماكننا.",
+        "timestamp": "02:15.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "Okay, Tantoon, let's switch spots."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "شو هاد؟",
+        "timestamp": "02:26.00",
+        "timestamp_end": "02:28.00",
+        "text_l2": "What's this?"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "آه! آه!",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:32.00",
+        "text_l2": "Ah! Ah!"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "مش معقول هاد اليوم!",
+        "timestamp": "02:43.00",
+        "timestamp_end": "02:46.00",
+        "text_l2": "This day is unbelievable!"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "هاد اللي ما توقعته! عاصفة؟",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:49.00",
+        "text_l2": "This is what I didn't expect! A storm?"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "هاد اللي كان ناقص!",
+        "timestamp": "02:49.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "This is just what was missing!"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "ما تقلق يا جلجل،",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:53.00",
+        "text_l2": "Don't worry, Jaljal,"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "خليك دائماً إيجابي وتفاءل.",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:55.00",
+        "text_l2": "Always stay positive and optimistic."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "إيجابي؟ حاضر يا تنتون،",
+        "timestamp": "02:55.00",
+        "timestamp_end": "02:58.00",
+        "text_l2": "Positive? Okay, Tantoon,"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "رح أكون إيجابي، ما أنا إيجابي.",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:02.00",
+        "text_l2": "I will be positive, I am positive."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "جلجل، أنا عندي فكرة",
+        "timestamp": "03:02.00",
+        "timestamp_end": "03:05.00",
+        "text_l2": "Jaljal, I have an idea"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "رح تعدل مزاجك وتصلح نهارك.",
+        "timestamp": "03:05.00",
+        "timestamp_end": "03:08.00",
+        "text_l2": "That will fix your mood and save your day."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "هي جبتلك مظلة يا جلجل،",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:13.00",
+        "text_l2": "Here, I brought you an umbrella, Jaljal,"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "هيك بتحسن نهارك.",
+        "timestamp": "03:13.00",
+        "timestamp_end": "03:15.00",
+        "text_l2": "This will improve your day."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "أنا حظي سعيد بتعرفي ليه؟",
+        "timestamp": "03:15.00",
+        "timestamp_end": "03:18.50",
+        "text_l2": "I'm lucky, do you know why?"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "لأنك صديقتي، ومش بس هيك،",
+        "timestamp": "03:18.50",
+        "timestamp_end": "03:21.00",
+        "text_l2": "Because you're my friend, and not just that,"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "صديقتي المفضلة.",
+        "timestamp": "03:21.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "My favorite friend."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "بتعرفي إشي كمان يا تنتون؟",
+        "timestamp": "03:24.00",
+        "timestamp_end": "03:26.00",
+        "text_l2": "Do you know something else, Tantoon?"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "إني شفتك قديش مهتمة تساعديني",
+        "timestamp": "03:26.00",
+        "timestamp_end": "03:29.00",
+        "text_l2": "That I saw how much you care to help me"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "عشان أكون مبسوط.",
+        "timestamp": "03:29.00",
+        "timestamp_end": "03:31.00",
+        "text_l2": "To be happy."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "طبعاً أنا بحب أساعدك يا جلجل",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:34.00",
+        "text_l2": "Of course I love to help you, Jaljal"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "وأساعد كل أصحابي.",
+        "timestamp": "03:34.00",
+        "timestamp_end": "03:36.00",
+        "text_l2": "And help all my friends."
+      }
+    ],
+    "phrases_with_token_translations": "[يا سلام]! أنا بحب أقرأ وأستمتع يوم العطلة، => [Oh my]! I love to read and enjoy my day off,\nيا سلام! [أنا] بحب أقرأ وأستمتع يوم العطلة، => Oh my! [I] love to read and enjoy my day off,\nيا سلام! أنا [بحب] أقرأ وأستمتع يوم العطلة، => Oh my! I [love] to read and enjoy my day off,\nيا سلام! أنا بحب [أقرأ] وأستمتع يوم العطلة، => Oh my! I love [to read] and enjoy my day off,\nيا سلام! أنا بحب أقرأ [وأستمتع] يوم العطلة، => Oh my! I love to read [and enjoy] my day off,\nيا سلام! أنا بحب أقرأ وأستمتع [يوم] العطلة، => Oh my! I love to read and enjoy my [day] off,\nيا سلام! أنا بحب أقرأ وأستمتع يوم [العطلة]، => Oh my! I love to read and enjoy my day [off]\n\n[وخصوصاً] إنه الجو مش بارد اليوم. => [Especially] since the weather isn't cold today.\nوخصوصاً [إنه] الجو مش بارد اليوم. => Especially [since] the weather isn't cold today.\nوخصوصاً إنه [الجو] مش بارد اليوم. => Especially since [the weather] isn't cold today.\nوخصوصاً إنه الجو [مش] بارد اليوم. => Especially since the weather [isn't] cold today.\nوخصوصاً إنه الجو مش [بارد] اليوم. => Especially since the weather isn't [cold] today.\nوخصوصاً إنه الجو مش بارد [اليوم]. => Especially since the weather isn't cold [today.]\n\n[معك حق] يا جلجل. شوف ما أحلى الجو => [You're right], Jaljal. Look how lovely the weather is\nمعك حق يا [جلجل]. شوف ما أحلى الجو => You're right, [Jaljal]. Look how lovely the weather is\nمعك حق يا جلجل. [شوف] ما أحلى الجو => You're right, Jaljal. [Look] how lovely the weather is\nمعك حق يا جلجل. شوف [ما] أحلى الجو => You're right, Jaljal. Look [how] lovely the weather is\nمعك حق يا جلجل. شوف ما [أحلى] الجو => You're right, Jaljal. Look how [lovely] the weather is\nمعك حق يا جلجل. شوف ما أحلى [الجو] => You're right, Jaljal. Look how lovely [the weather] is\n\n[و]العصافير اللي حوالينا. => [And] the birds around us.\nو[العصافير] اللي حوالينا. => And [the birds] around us.\nوالعصافير [اللي] حوالينا. => that, which\nوالعصافير اللي [حوالينا]. => And the birds [around us].\n\n[جلجل]. => [Jaljal].\n\n[نعم]. => [Yes].\n\n[مش عارفة] أقعد هون، بيصير نغير أماكننا؟ => [I'm not sure] about sitting here, can we switch spots?\nمش عارفة [أقعد] هون، بيصير نغير أماكننا؟ => I'm not sure about [sitting] here, can we switch spots?\nمش عارفة أقعد [هون]، بيصير نغير أماكننا؟ => I'm not sure about sitting [here], can we switch spots?\nمش عارفة أقعد هون، [بيصير] نغير أماكننا؟ => I'm not sure about sitting here, [can we] switch spots? # 'bi-seer' literally means 'it happens/is possible', contextually used as 'can we'\nمش عارفة أقعد هون، بيصير [نغير] أماكننا؟ => I'm not sure about sitting here, can we [switch] spots?\nمش عارفة أقعد هون، بيصير نغير [أماكننا]؟ => I'm not sure about sitting here, can we switch [spots]? # Literally 'our places' mapped to 'spots'\n\n[طبعاً] يا تنتون، أنا بيهمني => [Of course], Tantoon, I care\nطبعاً يا [تنتون]، أنا بيهمني => Of course, [Tantoon], I care\nطبعاً يا تنتون، [أنا] بيهمني => Of course, Tantoon, [I] care\nطبعاً يا تنتون، أنا [بيهمني] => it matters to me, I care\n\n[إنك] تكوني مرتاحة. => [That you] are comfortable.\nإنك [تكوني] مرتاحة. => That you [are] comfortable.\nإنك تكوني [مرتاحة]. => That you are [comfortable].\n\n[شكراً]، كلك ذوق. => [Thanks], you're so kind.\nشكراً، [كلك ذوق]. => Thanks, [you're so kind].\nشكراً، [كلك] ذوق. => all of you # custom\nشكراً، كلك [ذوق]. => taste, refinement # custom\n\n[إيه]! شو هاد؟ => [Hey]! What's this?\nإيه! [شو] هاد؟ => Hey! [What's] this?\nإيه! شو [هاد]؟ => Hey! What's [this]?\n\n[ماله] هالعصفور يخرج فضلاته إلا على كتابي؟ => [Why] does this bird have to poop on my book?\nماله [هالعصفور] يخرج فضلاته إلا على كتابي؟ => Why [does this bird] have to poop on my book?\nماله هالعصفور [يخرج فضلاته] إلا على كتابي؟ => Why does this bird have to [poop] on my book?\nماله هالعصفور يخرج فضلاته إلا [على] كتابي؟ => Why does this bird have to poop [on] my book?\nماله هالعصفور يخرج فضلاته إلا على [كتابي]؟ => Why does this bird have to poop on [my book]?\n\n[شو] هالحظ السيء هاد؟ => [What is] this bad luck?\nشو [هـ]الحظ السيء [هاد]؟ => What is [this] bad luck? # The combination of the prefix \"ha\" and \"had\" translates to \"this\"\nشو هـ[الحظ] السيء هاد؟ => luck\nشو هالحظ [السيء] هاد؟ => What is this [bad] luck?\n\n[بالعكس] يا جلجل، أنت محظوظ، => [On the contrary], Jaljal, you're lucky,\nبالعكس [يا] جلجل، أنت محظوظ، => vocative particle # a particle used before a name when addressing someone directly\nبالعكس يا [جلجل]، أنت محظوظ، => On the contrary, [Jaljal], you're lucky,\nبالعكس يا جلجل، [أنت] محظوظ، => On the contrary, Jaljal, [you're] lucky,\nبالعكس يا جلجل، أنت [محظوظ]، => On the contrary, Jaljal, you're [lucky]\n\n[لأني أنا] سمعت لما يوقع على رأس واحد => [Because I] heard when it falls on someone's head\nلأني أنا [سمعت] لما يوقع على رأس واحد => Because I [heard] when it falls on someone's head\nلأني أنا سمعت [لما] يوقع على رأس واحد => Because I heard [when] it falls on someone's head\nلأني أنا سمعت لما [يوقع] على رأس واحد => Because I heard when [it falls] on someone's head\nلأني أنا سمعت لما يوقع [على] رأس واحد => Because I heard when it falls [on] someone's head\nلأني أنا سمعت لما يوقع على [رأس] واحد => Because I heard when it falls on someone's [head]\nلأني أنا سمعت لما يوقع على رأس [واحد] => Because I heard when it falls on [someone's] head\n\n[فضلات] عصفور بكون محظوظ. => Bird [poop] means you're lucky.\nفضلات [عصفور] بكون محظوظ. => [Bird] poop means you're lucky.\nفضلات عصفور [بكون] محظوظ. => means, it will be\nفضلات عصفور بكون [محظوظ]. => Bird poop means you're [lucky].\n\n[معقول] يا تنتون => [Really], Tantoon?\nمعقول يا [تنتون] => Really, [Tantoon]?\n\n[المهم] تكون إيجابي ومتفائل. => [The important thing] is to be positive and optimistic.\nالمهم [تكون] إيجابي ومتفائل. => The important thing is [to be] positive and optimistic.\nالمهم تكون [إيجابي] ومتفائل. => The important thing is to be [positive] and optimistic.\nالمهم تكون إيجابي [و]متفائل. => The important thing is to be positive [and] optimistic.\nالمهم تكون إيجابي و[متفائل]. => The important thing is to be positive and [optimistic].\n\n[صح]، أنا لازم أكون إيجابي ومتفائل. => [Right], I need to be positive and optimistic.\nصح، [أنا] لازم أكون إيجابي ومتفائل. => Right, [I] need to be positive and optimistic.\nصح، أنا [لازم] أكون إيجابي ومتفائل. => Right, I [need to] be positive and optimistic.\nصح، أنا لازم [أكون] إيجابي ومتفائل. => Right, I need to [be] positive and optimistic.\nصح، أنا لازم أكون [إيجابي] ومتفائل. => Right, I need to be [positive] and optimistic.\nصح، أنا لازم أكون إيجابي [و]متفائل. => Right, I need to be positive [and] optimistic.\nصح، أنا لازم أكون إيجابي و[متفائل]. => Right, I need to be positive and [optimistic].\n\n[مزبوط] كلامك يا تنتون => You're [right], Tantoon\nمزبوط [كلامك] يا تنتون => your words, what you said\nمزبوط كلامك يا [تنتون] => You're right, [Tantoon]\n\n[إذا] بدك، نرجع منغير أماكننا. => [If] you want, we can switch spots back.\nإذا [بدك]، نرجع منغير أماكننا. => If [you want], we can switch spots back.\nإذا بدك، [نرجع] منغير أماكننا. => If you want, we can switch spots [back.] # نرجع (literal: we return) functions as \"back/again\" in this context\nإذا بدك، نرجع [منغير] أماكننا. => If you want, we can [switch] spots back.\nإذا بدك، نرجع منغير [أماكننا]. => If you want, we can switch [spots] back. # أماكننا literally means \"our places\" or \"our spots\"\n\n[شكراً] يا تنتون، => [Thanks], Tantoon,\nشكراً [يا تنتون]، => Thanks, [Tantoon],\n\n[بلكي] هيك بتحسن نهاري. => [Maybe] this will improve my day.\nبلكي [هيك] بتحسن نهاري. => Maybe [this] will improve my day.\nبلكي هيك [بتحسن] نهاري. => Maybe this [will improve] my day.\nبلكي هيك بتحسن [نهاري]. => Maybe this will improve [my day].\n\n[إيش] هاد؟ => [What]'s this?\nإيش [هاد]؟ => What's [this]?\n\n[هاد] صوت نحلة => [This is] the sound of a bee\nهاد [صوت] نحلة => This is [the sound] of a bee\nهاد صوت [نحلة] => This is the sound of [a bee]\n\n[كش]! كشي يا نحلة. كشي. => [Shoo]! Shoo away, bee. Shoo.\nكش! [كشي] يا نحلة. كشي. => Shoo! [Shoo away], bee. Shoo. # aligned to the phrasal verb \"shoo away\"\nكش! كشي يا [نحلة]. كشي. => Shoo! Shoo away, [bee]. Shoo.\nكش! كشي يا نحلة. [كشي]. => Shoo! Shoo away, bee. [Shoo].\n\n[روحي] يا نحلة. إي! => [Go away], bee. Hey!\nروحي يا [نحلة]. إي! => Go away, [bee]. Hey!\nروحي يا نحلة. [إي]! => Go away, bee. [Hey]!\n\n[كشي]! => [Shoo]!\n\n[أف]! => [Ugh]!\n\n[شو] حظي اليوم => [What is] my luck today\nشو [حظي] اليوم => What is [my luck] today\nشو حظي [اليوم] => What is my luck [today]\n\n[معلش] معلش يا جلجل، خلص، خليك متفائل، => [It's okay], it's okay, Jaljal, enough, stay optimistic,\nمعلش [معلش] يا جلجل، خلص، خليك متفائل، => It's okay, [it's okay], Jaljal, enough, stay optimistic,\nمعلش معلش [يا جلجل]، خلص، خليك متفائل، => It's okay, it's okay, [Jaljal], enough, stay optimistic,\nمعلش معلش يا جلجل، [خلص]، خليك متفائل، => It's okay, it's okay, Jaljal, [enough], stay optimistic,\nمعلش معلش يا جلجل، خلص، [خليك] متفائل، => It's okay, it's okay, Jaljal, enough, [stay] optimistic,\nمعلش معلش يا جلجل، خلص، خليك [متفائل]، => It's okay, it's okay, Jaljal, enough, stay [optimistic],\n\n[هلق] الأمور أكيد رح تتحسن. => Things will surely get better [now].\nهلق [الأمور] أكيد رح تتحسن. => [Things] will surely get better now.\nهلق الأمور [أكيد] رح تتحسن. => Things will [surely] get better now.\nهلق الأمور أكيد [رح] تتحسن. => Things [will] surely get better now.\nهلق الأمور أكيد رح [تتحسن]. => Things will surely [get better] now.\n\n[الواحد] لازم يكون إيجابي ومتفائل => [One] must be positive and optimistic\nالواحد [لازم] يكون إيجابي ومتفائل => One [must] be positive and optimistic\nالواحد لازم [يكون] إيجابي ومتفائل => One must [be] positive and optimistic\nالواحد لازم يكون [إيجابي] ومتفائل => One must be [positive] and optimistic\nالواحد لازم يكون إيجابي [و]متفائل => One must be positive [and] optimistic\nالواحد لازم يكون إيجابي و[متفائل] => One must be positive and [optimistic]\n\n[حتى] لو الأمور ما زبطت. => [Even] if things don't go right.\nحتى [لو] الأمور ما زبطت. => Even [if] things don't go right.\nحتى لو [الأمور] ما زبطت. => Even if [things] don't go right.\nحتى لو الأمور [ما] زبطت. => Even if things [don't] go right.\nحتى لو الأمور ما [زبطت]. => Even if things don't [go right].\n\n[جلجل]، شو رأيك نغير أماكننا => [Jaljal], what do you say we switch spots\nجلجل، [شو رأيك] نغير أماكننا => Jaljal, [what do you say] we switch spots\nجلجل، شو رأيك [نغير] أماكننا => Jaljal, what do you say [we switch] spots\nجلجل، شو رأيك نغير [أماكننا] => Jaljal, what do you say we switch [spots]\n\n[بلكي] حظك بيتغير؟ => [Maybe] your luck will change?\nبلكي [حظك] بيتغير؟ => Maybe [your luck] will change?\nبلكي حظك [بيتغير]؟ => Maybe your luck [will change]?\n\n[طيب] يا تنتون، يلا نغير أماكننا. => [Okay], Tantoon, let's switch spots.\nطيب [يا تنتون]، يلا نغير أماكننا. => Okay, [Tantoon], let's switch spots.\nطيب يا تنتون، [يلا] نغير أماكننا. => Okay, Tantoon, [let's] switch spots.\nطيب يا تنتون، يلا [نغير] أماكننا. => Okay, Tantoon, let's [switch] spots.\nطيب يا تنتون، يلا نغير [أماكننا]. => Okay, Tantoon, let's switch [spots]. # \"أماكننا\" literally means \"our places/spots\" and aligns with \"spots\" in the localized English sentence.\n\n[شو] هاد؟ => [What]'s this?\nشو [هاد]؟ => What's [this]?\n\n[آه]! آه! => [Ah]! Ah!\nآه! [آه]! => Ah! [Ah]!\n\n[مش معقول] هاد اليوم! => This day is [unbelievable]!\nمش معقول [هاد] اليوم! => [This] day is unbelievable!\nمش معقول هاد [اليوم]! => This [day] is unbelievable!\n\n[هاد] اللي ما توقعته! عاصفة؟ => [This] is what I didn't expect! A storm?\nهاد [اللي] ما توقعته! عاصفة؟ => This is [what] I didn't expect! A storm?\nهاد اللي [ما توقعته]! عاصفة؟ => This is what [I didn't expect]! A storm?\nهاد اللي ما توقعته! [عاصفة]؟ => This is what I didn't expect! [A storm]?\n\n[هاد] اللي كان ناقص! => [This] is just what was missing!\nهاد [اللي] كان ناقص! => This is just [what] was missing!\nهاد اللي [كان] ناقص! => This is just what [was] missing!\nهاد اللي كان [ناقص]! => This is just what was [missing]!\n\n[ما تقلق] يا جلجل، => [Don't worry], Jaljal,\nما تقلق يا [جلجل]، => Don't worry, [Jaljal],\n\n[خليك] دائماً إيجابي وتفاءل. => Always [stay] positive and optimistic.\nخليك [دائماً] إيجابي وتفاءل. => [Always] stay positive and optimistic.\nخليك دائماً [إيجابي] وتفاءل. => Always stay [positive] and optimistic.\nخليك دائماً إيجابي [وتفاءل] => Always stay positive [and optimistic]\n\n[إيجابي]؟ حاضر يا تنتون، => [Positive]? Okay, Tantoon,\nإيجابي؟ [حاضر] يا تنتون، => Positive? [Okay], Tantoon,\nإيجابي؟ حاضر [يا] تنتون، => vocative particle\nإيجابي؟ حاضر يا [تنتون]، => Positive? Okay, [Tantoon],\n\n[رح أكون] إيجابي، ما أنا إيجابي. => [I will be] positive, I am positive.\nرح أكون [إيجابي]، ما أنا إيجابي. => I will be [positive], I am positive.\nرح أكون إيجابي، [ما] أنا إيجابي. => since, after all # 'ما' acts as a pragmatic marker often translated as \"since\" or \"after all\"\nرح أكون إيجابي، ما [أنا] إيجابي. => I will be positive, [I am] positive. # mapped to \"I am\" because the copula is implicit in the Arabic nominal sentence\nرح أكون إيجابي، ما أنا [إيجابي]. => I will be positive, I am [positive]\n\n[جلجل]، أنا عندي فكرة => [Jaljal], I have an idea\nجلجل، [أنا] عندي فكرة => Jaljal, [I] have an idea\nجلجل، أنا [عندي] فكرة => Jaljal, I [have] an idea\nجلجل، أنا عندي [فكرة] => Jaljal, I have [an idea]\n\n[رح تعدل] مزاجك وتصلح نهارك => That [will fix] your mood and save your day.\nرح تعدل [مزاجك] وتصلح نهارك => That will fix [your mood] and save your day.\nرح تعدل مزاجك [وتصلح] نهارك => That will fix your mood [and save] your day.\nرح تعدل مزاجك وتصلح [نهارك] => That will fix your mood and save [your day]\n\n[هي] جبتلك مظلة يا جلجل، => [Here], I brought you an umbrella, Jaljal,\nهي [جبتلك] مظلة يا جلجل، => Here, [I brought you] an umbrella, Jaljal,\nهي جبتلك [مظلة] يا جلجل، => Here, I brought you [an umbrella], Jaljal,\nهي جبتلك مظلة يا [جلجل]، => Here, I brought you an umbrella, [Jaljal],\n\n[هيك] بتحسن نهارك => [This] will improve your day\nهيك [بتحسن] نهارك => This [will improve] your day\nهيك بتحسن [نهارك] => This will improve [your day]\n\n[أنا] حظي سعيد بتعرفي ليه؟ => [I'm] lucky, do you know why?\nأنا [حظي سعيد] بتعرفي ليه؟ => I'm [lucky], do you know why?\nأنا حظي سعيد [بتعرفي] ليه؟ => I'm lucky, [do you know] why?\nأنا حظي سعيد بتعرفي [ليه]؟ => I'm lucky, do you know [why]?\n\n[لأنك] صديقتي، ومش بس هيك، => [Because you're] my friend, and not just that,\nلأنك [صديقتي]، ومش بس هيك، => Because you're [my friend], and not just that,\nلأنك صديقتي، [و]مش بس هيك، => Because you're my friend, [and] not just that,\nلأنك صديقتي، و[مش] بس هيك، => Because you're my friend, and [not] just that,\nلأنك صديقتي، ومش [بس] هيك، => Because you're my friend, and not [just] that,\nلأنك صديقتي، ومش بس [هيك]، => Because you're my friend, and not just [that]\n\nصديقتي [المفضلة]. => My [favorite] friend.\n\n[بتعرفي] إشي كمان يا تنتون؟ => [Do you know] something else, Tantoon?\nبتعرفي [إشي] كمان يا تنتون؟ => Do you know [something] else, Tantoon?\nبتعرفي إشي [كمان] يا تنتون؟ => Do you know something [else], Tantoon?\nبتعرفي إشي كمان يا [تنتون]؟ => Do you know something else, [Tantoon]?\n\n[إني] شفتك قديش مهتمة تساعديني => [That I] saw how much you care to help me\nإني [شفتك] قديش مهتمة تساعديني => saw\nإني شفتك [قديش] مهتمة تساعديني => That I saw [how much] you care to help me\nإني شفتك قديش [مهتمة] تساعديني => That I saw how much [you care] to help me\nإني شفتك قديش مهتمة [تساعديني] => That I saw how much you care [to help me]\n\n[عشان] أكون مبسوط => [To] be happy\nعشان [أكون] مبسوط => To [be] happy\nعشان أكون [مبسوط] => To be [happy]\n\n[طبعاً] أنا بحب أساعدك يا جلجل => [Of course] I love to help you, Jaljal\nطبعاً [أنا] بحب أساعدك يا جلجل => Of course [I] love to help you, Jaljal\nطبعاً أنا [بحب] أساعدك يا جلجل => Of course I [love] to help you, Jaljal\nطبعاً أنا بحب [أساعدك] يا جلجل => Of course I love [to help you], Jaljal\nطبعاً أنا بحب أساعدك يا [جلجل] => Of course I love to help you, [Jaljal]\n\n[وأساعد] كل أصحابي. => [And help] all my friends.\nوأساعد [كل] أصحابي. => And help [all] my friends.\nوأساعد كل [أصحابي] => And help all [my friends]\n\n",
+    "lessons": "# التحية والحديث عن الطقس\n00:02.00 يا سلام! أنا بحب أقرأ وأستمتع يوم العطلة،\n00:05.50 وخصوصاً إنه الجو مش بارد اليوم.\n00:08.00 معك حق يا جلجل. شوف ما أحلى الجو\n00:11.50 والعصافير اللي حوالينا.\n00:19.00 جلجل.\n00:21.00 نعم.\n\n# تغيير المكان\n00:21.50 مش عارفة أقعد هون، بيصير نغير أماكننا؟\n00:24.00 طبعاً يا تنتون، أنا بيهمني\n00:26.50 إنك تكوني مرتاحة.\n00:28.00 شكراً، كلك ذوق.\n\n# الحظ السيء (الجزء الأول)\n00:43.00 إيه! شو هاد؟\n00:45.00 ماله هالعصفور يخرج فضلاته إلا على كتابي؟\n00:48.00 شو هالحظ السيء هاد؟\n00:52.00 بالعكس يا جلجل، أنت محظوظ،\n00:55.00 لأني أنا سمعت لما يوقع على رأس واحد\n00:58.00 فضلات عصفور بكون محظوظ.\n\n# الحظ السيء (الجزء الثاني)\n01:00.00 معقول يا تنتون؟\n01:03.00 المهم تكون إيجابي ومتفائل.\n01:06.00 صح، أنا لازم أكون إيجابي ومتفائل.\n01:10.00 مزبوط كلامك يا تنتون.\n01:13.00 إذا بدك، نرجع منغير أماكننا.\n01:16.00 شكراً يا تنتون،\n01:18.00 بلكي هيك بتحسن نهاري.\n\n# النحلة المزعجة\n01:35.00 إيش هاد؟\n01:37.00 هاد صوت نحلة.\n01:41.00 كش! كشي يا نحلة. كشي.\n01:44.00 روحي يا نحلة. إي!\n01:47.00 كشي!\n01:51.00 أف!\n01:53.00 شو حظي اليوم؟\n\n# التفاؤل في الأوقات الصعبة\n01:56.00 معلش معلش يا جلجل، خلص، خليك متفائل،\n01:59.00 هلق الأمور أكيد رح تتحسن.\n02:01.00 الواحد لازم يكون إيجابي ومتفائل\n02:04.50 حتى لو الأمور ما زبطت.\n02:09.00 جلجل، شو رأيك نغير أماكننا\n02:12.00 بلكي حظك بيتغير؟\n02:15.00 طيب يا تنتون، يلا نغير أماكننا.\n\n# العاصفة المفاجئة\n02:26.00 شو هاد؟\n02:30.00 آه! آه!\n02:43.00 مش معقول هاد اليوم!\n02:46.00 هاد اللي ما توقعته! عاصفة؟\n02:49.00 هاد اللي كان ناقص!\n02:51.00 ما تقلق يا جلجل،\n02:53.00 خليك دائماً إيجابي وتفاءل.\n\n# الصداقة والتقدير\n02:55.00 إيجابي؟ حاضر يا تنتون،\n02:58.00 رح أكون إيجابي، ما أنا إيجابي.\n03:02.00 جلجل، أنا عندي فكرة\n03:05.00 رح تعدل مزاجك وتصلح نهارك.\n03:10.00 هي جبتلك مظلة يا جلجل،\n03:13.00 هيك بتحسن نهارك.\n03:15.00 أنا حظي سعيد بتعرفي ليه؟\n03:18.50 لأنك صديقتي، ومش بس هيك،\n03:21.00 صديقتي المفضلة.\n03:24.00 بتعرفي إشي كمان يا تنتون؟\n03:26.00 إني شفتك قديش مهتمة تساعديني\n03:29.00 عشان أكون مبسوط.\n03:31.00 طبعاً أنا بحب أساعدك يا جلجل\n03:34.00 وأساعد كل أصحابي.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-27 07:27:44 UTC",
+  "updated_at": "2026-04-27 07:42:33 UTC",
+  "exported_at": "2026-04-27T07:42:33Z"
+}

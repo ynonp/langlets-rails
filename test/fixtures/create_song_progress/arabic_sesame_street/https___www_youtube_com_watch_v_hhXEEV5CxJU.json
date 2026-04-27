@@ -1,0 +1,436 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=hhXEEV5CxJU",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "تنتن!",
+        "timestamp": "00:07.00",
+        "timestamp_end": "00:09.00",
+        "text_l2": "Tantan!"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "جلجل!",
+        "timestamp": "00:09.00",
+        "timestamp_end": "00:11.00",
+        "text_l2": "Jaljal!"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "هاي الأصوات كانت منك؟",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Were those sounds from you?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "امم، أنا كنت عم بتدرب على اللعبة",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:17.00",
+        "text_l2": "Um, I was practicing the game"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "اللي لعبناها اليوم بالحضانة، اسمها لعبة الأصوات.",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:20.00",
+        "text_l2": "We played today at kindergarten, it's called the Sounds Game."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "لعبة الأصوات. امم،",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:23.00",
+        "text_l2": "The Sounds Game. Um,"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "بين عليها لعبة حلوة كتير. كيف بتنلعب؟",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "It seems like a very nice game. How do you play?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "أنا بقلد صوت حيوان",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "I imitate an animal sound"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "وأنت لازم تعرفه.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "And you have to guess it."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "هاي سهلة كتير وبين عليها حلوة كتير كتير كتير.",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "That's very easy and seems very, very, very nice."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "يلا، أنا بحب أحزر أصوات.",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:36.00",
+        "text_l2": "Come on, I love guessing sounds."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "يلا يا جلجل، أنا هلا رح أقلد صوت حيوان",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:39.00",
+        "text_l2": "Come on Jaljal, I'm going to imitate an animal sound now"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "وأنت روح هناك ودير وجهك.",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:43.00",
+        "text_l2": "And you go over there and turn your face."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "طيب.",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:45.00",
+        "text_l2": "Okay."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "صوت الحيوان بيعمل هيك:",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "The animal sound goes like this:"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "مياو، مياو.",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Meow, meow."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "مياو؟ مياو؟",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "Meow? Meow?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "هاي صوت القطة.",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:56.00",
+        "text_l2": "That's the cat's sound."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "بطل يا جلجل، صح.",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:59.00",
+        "text_l2": "Great job Jaljal, correct."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "طب حيوان تاني بيعمل هيك:",
+        "timestamp": "00:59.00",
+        "timestamp_end": "01:02.00",
+        "text_l2": "Okay, another animal goes like this:"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "صح صح يا جلجل.",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:13.00",
+        "text_l2": "Correct, correct, Jaljal."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "هذا صوت الحمار.",
+        "timestamp": "01:13.00",
+        "timestamp_end": "01:17.00",
+        "text_l2": "This is the donkey's sound."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "طيب، امم، آه جلجل،",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "Okay, um, ah Jaljal,"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "صوت حيوان بيعمل هيك:",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:23.00",
+        "text_l2": "An animal sound goes like this:"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "هو، هو هو هو!",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:27.00",
+        "text_l2": "Ho, ho ho ho!"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "هو، هو هو هو!",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:32.00",
+        "text_l2": "Ho, ho ho ho!"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "هذا صوت الكلب.",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:34.00",
+        "text_l2": "This is the dog's sound."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "صح، صح يا جلجل.",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:36.00",
+        "text_l2": "Correct, correct, Jaljal."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "شو كمان؟",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "What else?"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "صوت بيعمل هيك:",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "A sound goes like this:"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "مووو، مووو.",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "Moo, moo."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "مووو، اللي بتعطينا الحليب، البقرة.",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:47.00",
+        "text_l2": "Moo, the one that gives us milk, the cow."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "صح يا جلجل.",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:49.00",
+        "text_l2": "Correct, Jaljal."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "يلا، الصوت بده تركيز.",
+        "timestamp": "01:49.00",
+        "timestamp_end": "01:52.00",
+        "text_l2": "Come on, this sound needs focus."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "الصوت بيعمل هيك:",
+        "timestamp": "01:52.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "The sound goes like this:"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "هذا صوت الفيل.",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:05.00",
+        "text_l2": "This is the elephant's sound."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "لا يا جلجل، هذا مو صوتي.",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "No Jaljal, that's not my sound."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "أنا بعرف إنه هذا مش صوتك،",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "I know this isn't your sound,"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "هذا تقليد لصوت الفيل.",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.00",
+        "text_l2": "This is an imitation of an elephant's sound."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "لا يا جلجل، ما عم بعمل صوت فيل،",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "No Jaljal, I'm not making an elephant sound,"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "أنا بدي أعمل صوت تاني.",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "I want to make another sound."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "إذا مش صوت فيل يا جلجل،",
+        "timestamp": "02:21.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "So if it's not an elephant sound, Jaljal,"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "هه، هذا صوت غوريلا.",
+        "timestamp": "02:25.00",
+        "timestamp_end": "02:28.00",
+        "text_l2": "Heh, this is a gorilla sound."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "جلجل، لا صوت فيل ولا صوت غوريلا،",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:31.00",
+        "text_l2": "Jaljal, neither elephant sound nor gorilla sound,"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "هذا مو صوتي أصلاً.",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:34.00",
+        "text_l2": "This isn't my sound at all."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "أنا بعرف إنه مش صوتك، هذا تقليد للصوت.",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "I know it's not your sound, this is mimicking a sound."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "من وين عم بيجي هذا الصوت يا جلجل؟",
+        "timestamp": "02:37.00",
+        "timestamp_end": "02:40.00",
+        "text_l2": "Where is this sound coming from, Jaljal?"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "من هناك، هذا صوت أسد.",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:45.00",
+        "text_l2": "From there, this is a lion's sound."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "أسد! جلجل، في أسد قريب من عندنا هون،",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:48.00",
+        "text_l2": "Lion! Jaljal, there's a lion near us here,"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "يلا نهرب يا جلجل.",
+        "timestamp": "02:48.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "Let's run, Jaljal."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "أسد؟ أسد قريب؟ أسد قريب!",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "Lion? A nearby lion? A nearby lion!"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "أسد! أسد! وين؟ أسد!",
+        "timestamp": "02:56.00",
+        "timestamp_end": "03:00.00",
+        "text_l2": "Lion! Lion! Where? Lion!"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "اهرب يا جلجل، أسد اهرب!",
+        "timestamp": "03:00.00",
+        "timestamp_end": "03:03.00",
+        "text_l2": "Run Jaljal, lion, run!"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "وراكي يا تنتن!",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.00",
+        "text_l2": "Behind you, Tantan!"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "والله إشي بيضحك.",
+        "timestamp": "03:05.00",
+        "timestamp_end": "03:08.00",
+        "text_l2": "I swear, it's funny."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "ليش تنتن وجلجل كانوا بيركضوا هيك؟",
+        "timestamp": "03:08.00",
+        "timestamp_end": "03:12.00",
+        "text_l2": "Why were Tantan and Jaljal running like that?"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "وأنا اللي كنت بدي أناديهم",
+        "timestamp": "03:12.00",
+        "timestamp_end": "03:15.00",
+        "text_l2": "And I was the one who wanted to call them"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "يحضروا معي هذا الفيلم عن الأسود،",
+        "timestamp": "03:15.00",
+        "timestamp_end": "03:17.00",
+        "text_l2": "To watch this movie about lions with me,"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "وهم الاثنين بيحبوا الأسود.",
+        "timestamp": "03:17.00",
+        "timestamp_end": "03:20.00",
+        "text_l2": "And they both love lions."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "فعلاً إشي غريب، ليش كانوا بيركضوا؟",
+        "timestamp": "03:20.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "Really strange, why were they running?"
+      }
+    ],
+    "phrases_with_token_translations": "[تنتن]! => [Tantan]!\n\n[جلجل]! => [Jaljal]!\n\n[هاي] الأصوات كانت منك؟ => Were [those] sounds from you?\nهاي [الأصوات] كانت منك؟ => Were those [sounds] from you?\nهاي الأصوات [كانت] منك؟ => [Were] those sounds from you?\nهاي الأصوات كانت [منك]؟ => Were those sounds [from you]?\n\n[امم]، أنا كنت عم بتدرب على اللعبة => [Um], I was practicing the game\nامم، [أنا] كنت عم بتدرب على اللعبة => Um, [I] was practicing the game\nامم، أنا [كنت] عم بتدرب على اللعبة => Um, I [was] practicing the game\nامم، أنا كنت [عم بتدرب] على اللعبة => Um, I was [practicing] the game\nامم، أنا كنت عم بتدرب [على] اللعبة => on, at # this preposition is required in Arabic for the verb \"to practice\" but is omitted in this English translation\nامم، أنا كنت عم بتدرب على [اللعبة] => Um, I was practicing [the game]\n\n[اللي لعبناها] اليوم بالحضانة، اسمها لعبة الأصوات. => [We played] today at kindergarten, it's called the Sounds Game.\nاللي لعبناها [اليوم] بالحضانة، اسمها لعبة الأصوات. => We played [today] at kindergarten, it's called the Sounds Game.\nاللي لعبناها اليوم [بالحضانة]، اسمها لعبة الأصوات. => We played today [at kindergarten], it's called the Sounds Game.\nاللي لعبناها اليوم بالحضانة، [اسمها] لعبة الأصوات. => We played today at kindergarten, [it's called] the Sounds Game.\nاللي لعبناها اليوم بالحضانة، اسمها [لعبة] الأصوات. => We played today at kindergarten, it's called the Sounds [Game]\nاللي لعبناها اليوم بالحضانة، اسمها لعبة [الأصوات]. => We played today at kindergarten, it's called the [Sounds] Game\n\n[لعبة] الأصوات. امم، => The Sounds [Game]. Um,\nلعبة [الأصوات]. امم، => [The Sounds] Game. Um,\nلعبة الأصوات. [امم]، => The Sounds Game. [Um],\n\n[بين عليها] لعبة حلوة كتير. كيف بتنلعب؟ => [It seems] like a very nice game. How do you play?\nبين عليها [لعبة] حلوة كتير. كيف بتنلعب؟ => It seems like a very nice [game]. How do you play?\nبين عليها لعبة [حلوة] كتير. كيف بتنلعب؟ => It seems like a very [nice] game. How do you play?\nبين عليها لعبة حلوة [كتير]. كيف بتنلعب؟ => It seems like a [very] nice game. How do you play?\nبين عليها لعبة حلوة كتير. [كيف] بتنلعب؟ => It seems like a very nice game. [How] do you play?\nبين عليها لعبة حلوة كتير. كيف [بتنلعب]؟ => It seems like a very nice game. How [do you play]?\n\n[أنا] بقلد صوت حيوان => [I] imitate an animal sound\nأنا [بقلد] صوت حيوان => I [imitate] an animal sound\nأنا بقلد [صوت] حيوان => I imitate an animal [sound]\nأنا بقلد صوت [حيوان] => I imitate [an animal] sound\n\n[و]أنت لازم تعرفه. => [And] you have to guess it.\nو[أنت] لازم تعرفه. => And [you] have to guess it.\nوأنت [لازم] تعرفه. => And you [have to] guess it.\nوأنت لازم [تعرفه]. => And you have to [guess it].\n\n[هاي] سهلة كتير وبين عليها حلوة كتير كتير كتير. => [That's] very easy and seems very, very, very nice.\nهاي [سهلة] كتير وبين عليها حلوة كتير كتير كتير. => That's [easy] and seems very, very, very nice.\nهاي سهلة [كتير] وبين عليها حلوة كتير كتير كتير. => That's [very] easy and seems very, very, very nice.\nهاي سهلة كتير [و]بين عليها حلوة كتير كتير كتير. => That's very easy [and] seems very, very, very nice.\nهاي سهلة كتير و[بين عليها] حلوة كتير كتير كتير. => That's very easy and [seems] very, very, very nice.\nهاي سهلة كتير وبين عليها [حلوة] كتير كتير كتير. => That's very easy and seems very, very, very [nice].\nهاي سهلة كتير وبين عليها حلوة [كتير كتير كتير]. => That's very easy and seems [very, very, very] nice.\n\n[يلا]، أنا بحب أحزر أصوات => [Come on], I love guessing sounds\nيلا، [أنا] بحب أحزر أصوات => Come on, [I] love guessing sounds\nيلا، أنا [بحب] أحزر أصوات => Come on, I [love] guessing sounds\nيلا، أنا بحب [أحزر] أصوات => Come on, I love [guessing] sounds\nيلا، أنا بحب أحزر [أصوات] => Come on, I love guessing [sounds]\n\n[يلا] يا جلجل، أنا هلا رح أقلد صوت حيوان => [Come on] Jaljal, I'm going to imitate an animal sound now\nيلا يا [جلجل]، أنا هلا رح أقلد صوت حيوان => Come on [Jaljal], I'm going to imitate an animal sound now\nيلا يا جلجل، [أنا] هلا رح أقلد صوت حيوان => Come on Jaljal, [I]'m going to imitate an animal sound now\nيلا يا جلجل، أنا [هلا] رح أقلد صوت حيوان => Come on Jaljal, I'm going to imitate an animal sound [now]\nيلا يا جلجل، أنا هلا [رح] أقلد صوت حيوان => Come on Jaljal, I'm [going to] imitate an animal sound now\nيلا يا جلجل، أنا هلا رح [أقلد] صوت حيوان => Come on Jaljal, I'm going to [imitate] an animal sound now\nيلا يا جلجل، أنا هلا رح أقلد [صوت] حيوان => Come on Jaljal, I'm going to imitate an animal [sound] now\nيلا يا جلجل، أنا هلا رح أقلد صوت [حيوان] => Come on Jaljal, I'm going to imitate [an animal] sound now\n\n[وأنت] روح هناك ودير وجهك. => [And you] go over there and turn your face.\nوأنت [روح] هناك ودير وجهك. => And you [go] over there and turn your face.\nوأنت روح [هناك] ودير وجهك. => And you go [over there] and turn your face.\nوأنت روح هناك [ودير] وجهك. => And you go over there [and turn] your face.\nوأنت روح هناك ودير [وجهك]. => And you go over there and turn [your face].\n\n[طيب]. => [Okay].\n\n[صوت] الحيوان بيعمل هيك => The animal [sound] goes like this\nصوت [الحيوان] بيعمل هيك => [The animal] sound goes like this\nصوت الحيوان [بيعمل] هيك => The animal sound [goes] like this\nصوت الحيوان بيعمل [هيك] => The animal sound goes [like this]\n\n[مياو]، مياو. => [Meow], meow.\nمياو، [مياو]. => Meow, [meow].\n\n[مياو]؟ مياو؟ => [Meow]? Meow?\nمياو؟ [مياو]؟ => Meow? [Meow]?\n\n[هاي] صوت القطة => [That's] the cat's sound\nهاي [صوت] القطة => That's the cat's [sound]\nهاي صوت [القطة] => That's [the cat's] sound\n\n[بطل] يا جلجل، صح. => [Great job] Jaljal, correct.\nبطل [يا جلجل]، صح. => Great job [Jaljal], correct.\nبطل يا جلجل، [صح] => Great job Jaljal, [correct]\n\n[طب] حيوان تاني بيعمل هيك: => [Okay], another animal goes like this:\nطب [حيوان] تاني بيعمل هيك: => Okay, another [animal] goes like this:\nطب حيوان [تاني] بيعمل هيك: => Okay, [another] animal goes like this:\nطب حيوان تاني [بيعمل] هيك: => Okay, another animal [goes] like this:\nطب حيوان تاني بيعمل [هيك]: => Okay, another animal goes [like this]:\n\n[صح] صح يا جلجل => [Correct], correct, Jaljal\nصح [صح] يا جلجل => Correct, [correct], Jaljal\nصح صح [يا] جلجل => vocative particle # particle used to address someone\nصح صح يا [جلجل] => Correct, correct, [Jaljal]\n\n[هذا] صوت الحمار. => [This is] the donkey's sound.\nهذا [صوت] الحمار. => This is the donkey's [sound].\nهذا صوت [الحمار]. => This is [the donkey's] sound.\n\n[طيب]، امم، آه جلجل، => [Okay], um, ah Jaljal,\nطيب، [امم]، آه جلجل، => Okay, [um], ah Jaljal,\nطيب، امم، [آه] جلجل، => Okay, um, [ah] Jaljal,\nطيب، امم، آه [جلجل]، => Okay, um, ah [Jaljal],\n\n[صوت] حيوان بيعمل هيك: => An animal [sound] goes like this:\nصوت [حيوان] بيعمل هيك: => [An animal] sound goes like this:\nصوت حيوان [بيعمل] هيك: => An animal sound [goes] like this:\nصوت حيوان بيعمل [هيك]: => An animal sound goes [like this]:\n\n[هو]، هو هو هو! => [Ho], ho ho ho!\nهو، [هو] هو هو! => Ho, [ho] ho ho!\nهو، هو [هو] هو! => Ho, ho [ho] ho!\nهو، هو هو [هو]! => Ho, ho ho [ho]!\n\n[هو]، هو هو هو! => [Ho], ho ho ho!\nهو، [هو] هو هو! => Ho, [ho] ho ho!\nهو، هو [هو] هو! => Ho, ho [ho] ho!\nهو، هو هو [هو]! => Ho, ho ho [ho]!\n\n[هذا] صوت الكلب. => [This is] the dog's sound.\nهذا [صوت] الكلب. => This is the dog's [sound].\nهذا صوت [الكلب]. => This is [the dog's] sound.\n\n[صح]، صح يا جلجل. => [Correct], correct, Jaljal.\nصح، [صح] يا جلجل. => Correct, [correct], Jaljal.\nصح، صح [يا جلجل] => Correct, correct, [Jaljal]\n\n[شو] كمان؟ => [What] else?\nشو [كمان]؟ => What [else]?\n\n[صوت] بيعمل هيك: => [A sound] goes like this:\nصوت [بيعمل] هيك: => A sound [goes] like this:\nصوت بيعمل [هيك]: => A sound goes [like this]:\n\n[مووو]، مووو. => [Moo], moo.\nمووو، [مووو]. => Moo, [moo].\n\n[مووو]، اللي بتعطينا الحليب، البقرة. => [Moo], the one that gives us milk, the cow.\nمووو، [اللي] بتعطينا الحليب، البقرة. => [the one that] gives us milk, the cow.\nمووو، اللي [بتعطينا] الحليب، البقرة. => [gives us] milk, the cow.\nمووو، اللي بتعطينا [الحليب]، البقرة. => the one that gives us [milk], the cow.\nمووو، اللي بتعطينا الحليب، [البقرة]. => the one that gives us milk, [the cow].\n\n[صح] يا جلجل. => [Correct], Jaljal.\nصح يا [جلجل]. => Correct, [Jaljal].\n\n[يلا]، الصوت بده تركيز => [Come on], this sound needs focus.\nيلا، [الصوت] بده تركيز => Come on, [this sound] needs focus.\nيلا، الصوت [بده] تركيز => Come on, this sound [needs] focus.\nيلا، الصوت بده [تركيز] => Come on, this sound needs [focus].\n\n[الصوت] بيعمل هيك => [The sound] goes like this\nالصوت [بيعمل] هيك => The sound [goes] like this\nالصوت بيعمل [هيك] => The sound goes [like this]\n\n[هذا] صوت الفيل. => [This is] the elephant's sound.\nهذا [صوت] الفيل. => This is the elephant's [sound].\nهذا صوت [الفيل]. => This is [the elephant's] sound.\n\n[لا] يا جلجل، هذا مو صوتي. => [No] Jaljal, that's not my sound.\nلا يا [جلجل]، هذا مو صوتي. => No [Jaljal], that's not my sound.\nلا يا جلجل، [هذا] مو صوتي. => No Jaljal, [that]'s not my sound.\nلا يا جلجل، هذا [مو] صوتي. => No Jaljal, that's [not] my sound.\nلا يا جلجل، هذا مو [صوتي] => No Jaljal, that's not [my sound]\n\n[أنا] بعرف إنه هذا مش صوتك، => [I] know this isn't your sound,\nأنا [بعرف] إنه هذا مش صوتك، => I [know] this isn't your sound,\nأنا بعرف [إنه] هذا مش صوتك، => that\nأنا بعرف إنه [هذا] مش صوتك، => I know [this] isn't your sound,\nأنا بعرف إنه هذا [مش] صوتك، => I know this [isn't] your sound,\nأنا بعرف إنه هذا مش [صوتك]، => I know this isn't [your sound]\n\n[هذا] تقليد لصوت الفيل => [This is] an imitation of an elephant's sound\nهذا [تقليد] لصوت الفيل => This is [an imitation] of an elephant's sound\nهذا تقليد [لصوت] الفيل => This is an imitation of an elephant's [sound]\nهذا تقليد لصوت [الفيل] => This is an imitation of [an elephant's] sound\n\n[لا] يا جلجل، ما عم بعمل صوت فيل، => [No] Jaljal, I'm not making an elephant sound,\nلا يا [جلجل]، ما عم بعمل صوت فيل، => No [Jaljal], I'm not making an elephant sound,\nلا يا جلجل، [ما عم بعمل] صوت فيل، => No Jaljal, [I'm not making] an elephant sound,\nلا يا جلجل، ما عم بعمل [صوت] فيل، => No Jaljal, I'm not making an elephant [sound],\nلا يا جلجل، ما عم بعمل صوت [فيل]، => No Jaljal, I'm not making an [elephant] sound,\n\n[أنا] بدي أعمل صوت تاني. => [I] want to make another sound.\nأنا [بدي] أعمل صوت تاني. => I [want] to make another sound.\nأنا بدي [أعمل] صوت تاني. => I want [to make] another sound.\nأنا بدي أعمل [صوت] تاني. => I want to make another [sound].\nأنا بدي أعمل صوت [تاني]. => I want to make [another] sound.\n\n[إذا] مش صوت فيل يا جلجل => So [if] it's not an elephant sound, Jaljal\nإذا [مش] صوت فيل يا جلجل => So if [it's not] an elephant sound, Jaljal\nإذا مش [صوت] فيل يا جلجل => So if it's not an elephant [sound], Jaljal\nإذا مش صوت [فيل] يا جلجل => So if it's not an [elephant] sound, Jaljal\nإذا مش صوت فيل [يا] جلجل => O, hey (vocative particle)\nإذا مش صوت فيل يا [جلجل] => So if it's not an elephant sound, [Jaljal]\n\n[هه]، هذا صوت غوريلا. => [Heh], this is a gorilla sound.\nهه، [هذا] صوت غوريلا. => Heh, [this is] a gorilla sound.\nهه، هذا [صوت] غوريلا. => Heh, this is a gorilla [sound]\nهه، هذا صوت [غوريلا]. => Heh, this is a [gorilla] sound\n\n[جلجل]، لا صوت فيل ولا صوت غوريلا، => [Jaljal], neither elephant sound nor gorilla sound,\nجلجل، [لا] صوت فيل ولا صوت غوريلا، => Jaljal, [neither] elephant sound nor gorilla sound,\nجلجل، لا [صوت] فيل ولا صوت غوريلا، => Jaljal, neither elephant [sound] nor gorilla sound,\nجلجل، لا صوت [فيل] ولا صوت غوريلا، => Jaljal, neither [elephant] sound nor gorilla sound,\nجلجل، لا صوت فيل [ولا] صوت غوريلا، => Jaljal, neither elephant sound [nor] gorilla sound,\nجلجل، لا صوت فيل ولا [صوت] غوريلا، => Jaljal, neither elephant sound nor gorilla [sound],\nجلجل، لا صوت فيل ولا صوت [غوريلا]، => Jaljal, neither elephant sound nor [gorilla] sound,\n\n[هذا] مو صوتي أصلاً. => [This] isn't my sound at all.\nهذا [مو] صوتي أصلاً. => This [isn't] my sound at all.\nهذا مو [صوتي] أصلاً. => This isn't [my sound] at all.\nهذا مو صوتي [أصلاً]. => This isn't my sound [at all].\n\n[أنا] بعرف إنه مش صوتك، هذا تقليد للصوت. => [I] know it's not your sound, this is mimicking a sound.\nأنا [بعرف] إنه مش صوتك، هذا تقليد للصوت. => I [know] it's not your sound, this is mimicking a sound.\nأنا بعرف [إنه] مش صوتك، هذا تقليد للصوت. => I know [it's] not your sound, this is mimicking a sound.\nأنا بعرف إنه [مش] صوتك، هذا تقليد للصوت. => I know it's [not] your sound, this is mimicking a sound.\nأنا بعرف إنه مش [صوتك]، هذا تقليد للصوت. => I know it's not [your sound], this is mimicking a sound.\nأنا بعرف إنه مش صوتك، [هذا] تقليد للصوت. => I know it's not your sound, [this] is mimicking a sound.\nأنا بعرف إنه مش صوتك، هذا [تقليد] للصوت. => I know it's not your sound, this is [mimicking] a sound.\nأنا بعرف إنه مش صوتك، هذا تقليد [للصوت]. => I know it's not your sound, this is mimicking [a sound]\n\n[من] وين عم بيجي هذا الصوت يا جلجل؟ => Where is this sound coming [from], Jaljal?\nمن [وين] عم بيجي هذا الصوت يا جلجل؟ => [Where] is this sound coming from, Jaljal?\nمن وين [عم بيجي] هذا الصوت يا جلجل؟ => is coming\nمن وين عم بيجي [هذا] الصوت يا جلجل؟ => Where is [this] sound coming from, Jaljal?\nمن وين عم بيجي هذا [الصوت] يا جلجل؟ => Where is this [sound] coming from, Jaljal?\nمن وين عم بيجي هذا الصوت يا [جلجل]؟ => Where is this sound coming from, [Jaljal]?\n\n[من] هناك، هذا صوت أسد. => [From] there, this is a lion's sound.\nمن [هناك]، هذا صوت أسد. => From [there], this is a lion's sound.\nمن هناك، [هذا] صوت أسد. => From there, [this] is a lion's sound.\nمن هناك، هذا [صوت] أسد. => From there, this is a lion's [sound]\nمن هناك، هذا صوت [أسد]. => From there, this is [a lion]'s sound # \"a\" and \"'s\" are included to fully capture the English equivalent of the indefinite \"أسد\" within the possessive structure.\n\n[أسد]! جلجل، في أسد قريب من عندنا هون، => [Lion]! Jaljal, there's a lion near us here,\nأسد! [جلجل]، في أسد قريب من عندنا هون، => Lion! [Jaljal], there's a lion near us here,\nأسد! جلجل، [في] أسد قريب من عندنا هون، => Lion! Jaljal, [there's] a lion near us here,\nأسد! جلجل، في [أسد] قريب من عندنا هون، => Lion! Jaljal, there's [a lion] near us here,\nأسد! جلجل، في أسد [قريب من] عندنا هون، => Lion! Jaljal, there's a lion [near] us here,\nأسد! جلجل، في أسد قريب من [عندنا] هون، => Lion! Jaljal, there's a lion near [us] here,\nأسد! جلجل، في أسد قريب من عندنا [هون]، => Lion! Jaljal, there's a lion near us [here],\n\n[يلا] نهرب يا جلجل. => [Let's] run, Jaljal.\nيلا [نهرب] يا جلجل. => Let's [run], Jaljal.\nيلا نهرب [يا] جلجل. => vocative particle # word used to address or call someone directly\nيلا نهرب يا [جلجل]. => Let's run, [Jaljal]\n\n[أسد]؟ أسد قريب؟ أسد قريب! => [Lion]? A nearby lion? A nearby lion!\nأسد؟ [أسد] قريب؟ أسد قريب! => Lion? A nearby [lion]? A nearby lion!\nأسد؟ أسد [قريب]؟ أسد قريب! => Lion? A [nearby] lion? A nearby lion!\nأسد؟ أسد قريب؟ [أسد] قريب! => Lion? A nearby lion? A nearby [lion]!\nأسد؟ أسد قريب؟ أسد [قريب]! => Lion? A nearby lion? A [nearby] lion!\n\n[أسد]! أسد! وين؟ أسد! => [Lion]! Lion! Where? Lion!\nأسد! [أسد]! وين؟ أسد! => Lion! [Lion]! Where? Lion!\nأسد! أسد! [وين]؟ أسد! => Lion! Lion! [Where]? Lion!\nأسد! أسد! وين؟ [أسد]! => Lion! Lion! Where? [Lion]!\n\n[اهرب] يا جلجل، أسد اهرب! => [Run] Jaljal, lion, run!\nاهرب [يا] جلجل، أسد اهرب! => vocative particle (O)\nاهرب يا [جلجل]، أسد اهرب! => Run [Jaljal], lion, run!\nاهرب يا جلجل، [أسد] اهرب! => Run Jaljal, [lion], run!\nاهرب يا جلجل، أسد [اهرب]! => Run Jaljal, lion, [run]!\n\n[وراكي] يا تنتن! => [Behind you], Tantan!\nوراكي يا [تنتن]! => Behind you, [Tantan]!\n\n[والله] إشي بيضحك. => [I swear], it's funny.\nوالله [إشي] بيضحك. => I swear, [it]'s funny.\nوالله إشي [بيضحك]. => I swear, it's [funny].\n\n[ليش] تنتن وجلجل كانوا بيركضوا هيك؟ => [Why] were Tantan and Jaljal running like that?\nليش [تنتن] وجلجل كانوا بيركضوا هيك؟ => Why were [Tantan] and Jaljal running like that?\nليش تنتن [و]جلجل كانوا بيركضوا هيك؟ => Why were Tantan [and] Jaljal running like that?\nليش تنتن و[جلجل] كانوا بيركضوا هيك؟ => Why were Tantan and [Jaljal] running like that?\nليش تنتن وجلجل [كانوا] بيركضوا هيك؟ => Why [were] Tantan and Jaljal running like that?\nليش تنتن وجلجل كانوا [بيركضوا] هيك؟ => Why were Tantan and Jaljal [running] like that?\nليش تنتن وجلجل كانوا بيركضوا [هيك]؟ => Why were Tantan and Jaljal running [like that]?\n\n[وأنا] اللي كنت بدي أناديهم => [And I] was the one who wanted to call them\nوأنا [اللي] كنت بدي أناديهم => And I was [the one who] wanted to call them\nوأنا اللي [كنت] بدي أناديهم => And I [was] the one who wanted to call them\nوأنا اللي كنت [بدي] أناديهم => And I was the one who [wanted] to call them\nوأنا اللي كنت بدي [أناديهم] => And I was the one who wanted [to call them]\n\n[يحضروا] معي هذا الفيلم عن الأسود، => [To watch] this movie about lions with me,\nيحضروا [معي] هذا الفيلم عن الأسود، => To watch this movie about lions [with me],\nيحضروا معي [هذا] الفيلم عن الأسود، => To watch [this] movie about lions with me,\nيحضروا معي هذا [الفيلم] عن الأسود، => To watch this [movie] about lions with me,\nيحضروا معي هذا الفيلم [عن] الأسود، => To watch this movie [about] lions with me,\nيحضروا معي هذا الفيلم عن [الأسود]، => To watch this movie about [lions] with me,\n\n[وهم] الاثنين بيحبوا الأسود. => [And they] both love lions.\nوهم [الاثنين] بيحبوا الأسود. => And they [both] love lions.\nوهم الاثنين [بيحبوا] الأسود. => And they both [love] lions.\nوهم الاثنين بيحبوا [الأسود]. => And they both love [lions]\n\n[فعلاً] إشي غريب، ليش كانوا بيركضوا؟ => [Really] strange, why were they running?\nفعلاً [إشي] غريب، ليش كانوا بيركضوا؟ => thing, something # 'Ishi' literally means 'something' or 'thing'\nفعلاً إشي [غريب]، ليش كانوا بيركضوا؟ => Really [strange], why were they running?\nفعلاً إشي غريب، [ليش] كانوا بيركضوا؟ => Really strange, [why] were they running?\nفعلاً إشي غريب، ليش [كانوا] بيركضوا؟ => Really strange, why [were they] running? # 'kanu' is the third-person plural past tense, incorporating 'they'\nفعلاً إشي غريب، ليش كانوا [بيركضوا]؟ => Really strange, why were they [running]?\n\n",
+    "lessons": "# مقدمة لعبة الأصوات\n00:07.00 تنتن!\n00:09.00 جلجل!\n00:11.00 هاي الأصوات كانت منك؟\n00:14.00 امم، أنا كنت عم بتدرب على اللعبة\n00:17.00 اللي لعبناها اليوم بالحضانة، اسمها لعبة الأصوات.\n00:20.00 لعبة الأصوات. امم،\n00:23.00 بين عليها لعبة حلوة كتير. كيف بتنلعب؟\n\n# قواعد اللعبة\n00:26.00 أنا بقلد صوت حيوان\n00:28.00 وأنت لازم تعرفه.\n00:30.00 هاي سهلة كتير وبين عليها حلوة كتير كتير كتير.\n00:33.00 يلا، أنا بحب أحزر أصوات.\n\n# بداية الأصوات\n00:36.00 يلا يا جلجل، أنا هلا رح أقلد صوت حيوان\n00:39.00 وأنت روح هناك ودير وجهك.\n00:43.00 طيب.\n00:45.00 صوت الحيوان بيعمل هيك:\n00:48.00 مياو، مياو.\n00:51.00 مياو؟ مياو؟\n00:54.00 هاي صوت القطة.\n00:56.00 بطل يا جلجل، صح.\n\n# أصوات الحيوانات (الجزء الأول)\n00:59.00 طب حيوان تاني بيعمل هيك:\n01:11.00 صح صح يا جلجل.\n01:13.00 هذا صوت الحمار.\n01:17.00 طيب، امم، آه جلجل،\n01:20.00 صوت حيوان بيعمل هيك:\n01:23.00 هو، هو هو هو!\n01:30.00 هو، هو هو هو!\n01:32.00 هذا صوت الكلب.\n\n# أصوات الحيوانات (الجزء الثاني)\n01:34.00 صح، صح يا جلجل.\n01:36.00 شو كمان؟\n01:38.00 صوت بيعمل هيك:\n01:40.00 مووو، مووو.\n01:43.00 مووو، اللي بتعطينا الحليب، البقرة.\n01:47.00 صح يا جلجل.\n01:49.00 يلا، الصوت بده تركيز.\n\n# سوء الفهم الكوميدي\n01:52.00 الصوت بيعمل هيك:\n02:03.00 هذا صوت الفيل.\n02:05.00 لا يا جلجل، هذا مو صوتي.\n02:08.00 أنا بعرف إنه هذا مش صوتك،\n02:11.00 هذا تقليد لصوت الفيل.\n02:13.00 لا يا جلجل، ما عم بعمل صوت فيل،\n02:16.00 أنا بدي أعمل صوت تاني.\n\n# الموقف المضحك\n02:21.00 إذا مش صوت فيل يا جلجل،\n02:25.00 هه، هذا صوت غوريلا.\n02:28.00 جلجل، لا صوت فيل ولا صوت غوريلا،\n02:31.00 هذا مو صوتي أصلاً.\n02:34.00 أنا بعرف إنه مش صوتك، هذا تقليد للصوت.\n02:37.00 من وين عم بيجي هذا الصوت يا جلجل؟\n02:42.00 من هناك، هذا صوت أسد.\n\n# الذعر والهروب\n02:45.00 أسد! جلجل، في أسد قريب من عندنا هون،\n02:48.00 يلا نهرب يا جلجل.\n02:51.00 أسد؟ أسد قريب؟ أسد قريب!\n02:56.00 أسد! أسد! وين؟ أسد!\n03:00.00 اهرب يا جلجل، أسد اهرب!\n03:03.00 وراكي يا تنتن!\n\n# الحقيقة المضحكة\n03:05.00 والله إشي بيضحك.\n03:08.00 ليش تنتن وجلجل كانوا بيركضوا هيك؟\n03:12.00 وأنا اللي كنت بدي أناديهم\n03:15.00 يحضروا معي هذا الفيلم عن الأسود،\n03:17.00 وهم الاثنين بيحبوا الأسود.\n03:20.00 فعلاً إشي غريب، ليش كانوا بيركضوا؟",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-27 06:04:47 UTC",
+  "updated_at": "2026-04-27 06:31:29 UTC",
+  "exported_at": "2026-04-27T06:31:29Z"
+}

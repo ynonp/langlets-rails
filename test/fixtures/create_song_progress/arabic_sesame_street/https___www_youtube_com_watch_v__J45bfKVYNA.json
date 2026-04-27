@@ -2,386 +2,386 @@
   "youtubeurl": "https://www.youtube.com/watch?v=_J45bfKVYNA",
   "clip_language": "Arabic",
   "translation_language": "English",
-  "step": null,
+  "step": 5,
   "data": {
+    "lessons": "# الحوار بين جلجل وتن تن\n00:13.60 جلجل\n00:15.00 همم؟\n00:17.00 جلجل سامع؟\n00:19.00 سامع سامع\n00:21.00 سامع صوت؟\n00:23.00 أكيد سامع صوت\n\n# اكتشاف المشكلة\n00:25.00 لا جلجل في صوت إشي بنقط\n00:29.00 آه آه مزبوط في إشي بنقط\n00:32.00 جلجل بقولك في صوت إشي بنقط\n00:36.00 همم أكيد في إشي بنقط يا تن تن\n00:39.00 ها هي أكيد الحنفية\n00:42.00 الحنفية مزبوط\n\n# محاولة الإصلاح (الجزء الأول)\n00:43.00 لا جلجل لازم نصلحها\n00:45.00 ها؟ نصلحها؟\n00:47.00 اممم طيب يلا\n00:50.00 يلا قوم نصلحها بسرعة قوم\n00:56.00 شايف يا جلجل قلتلك إنه الحنفية بتنقط\n00:59.00 مزبوط عنجد إنت كتير كتير كتير نبيهة يا تن تن\n\n# طلب المساعدة من عمو كامل\n01:04.00 طيب جلجل لازم نصلحها بسرعة\n01:07.00 أكيد لازم نصلحها بس إحنا بدنا حدا يساعدنا\n01:11.00 شو رأيك ننادي عمو كامل؟\n01:13.00 آه\n01:14.00 عمو كامل! عمو كامل! عمو كامل!\n\n# وصول عمو كامل\n01:17.00 إيش يا جلجل؟ إيش يا تن تن؟ إيش في؟\n01:20.00 ممكن تيجي تساعدنا؟\n01:22.00 شو المشكلة؟\n01:24.00 تعال ساعدنا الحنفية بتنقط\n01:26.00 حاضر أنا جاي\n\n# عواقب تسرب المياه\n01:31.00 بتعرف يا جلجل؟\n01:33.00 نعم\n01:33.50 لو ضلت الحنفية تنقط هيك ما رح نقدر نشرب مي\n01:36.00 مزبوط ولا رح نقدر نتحمم\n01:39.00 ما رح نقدر نسبح\n01:42.00 مزبوط ولا كمان رح نقدر نغسل إيدينا\n01:45.00 آخ آخ آخ\n\n# المزيد من العواقب\n01:48.00 بتعرف يا جلجل؟\n01:49.00 نعم\n01:49.50 كمان ما رح أقدر أسقي الشجر ولا أسبح سمكتي\n01:52.00 مزبوط كتير أشياء\n01:55.00 ممكن كمان ما أقدر أفرشي سناني آخ\n01:59.00 عمو كامل!\n02:01.00 عمو كامل بسرعة تعال\n\n# إصلاح الحنفية\n02:05.00 هي وصل عمو كامل\n02:08.00 إذا سمحتي يا تن تن امسكي شوي\n02:10.00 حاضر\n02:11.00 شكراً\n02:17.00 هلق بس عمو كامل يصلح الحنفية رح نقدر نشرب مي\n02:21.00 أكيد ورح نقدر نتحمم\n02:23.00 رح أقدر أسبح أنا ورح تقدر تسبح سمكتي\n02:27.00 أكيد ورح نقدر نسقي الشجر\n02:31.00 آه الجلدة خربانة ولازم نغيرها\n03:07.00 يا سلام شفتوا؟ الحنفية ما بتنقط\n03:12.00 هييه!",
     "phrases": [
       {
         "id": "phrase_1",
         "text_l1": "جلجل",
+        "text_l2": "Jaljal",
         "timestamp": "00:13.60",
-        "timestamp_end": "00:15.00",
-        "text_l2": "Jaljal"
+        "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "همم؟",
+        "text_l2": "Hmm?",
         "timestamp": "00:15.00",
-        "timestamp_end": "00:16.00",
-        "text_l2": "Hmm?"
+        "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "جلجل سامع؟",
+        "text_l2": "Jaljal, can you hear?",
         "timestamp": "00:17.00",
-        "timestamp_end": "00:19.00",
-        "text_l2": "Jaljal, can you hear?"
+        "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "سامع سامع",
+        "text_l2": "I hear, I hear",
         "timestamp": "00:19.00",
-        "timestamp_end": "00:21.00",
-        "text_l2": "I hear, I hear"
+        "timestamp_end": "00:21.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "سامع صوت؟",
+        "text_l2": "Do you hear a sound?",
         "timestamp": "00:21.00",
-        "timestamp_end": "00:23.00",
-        "text_l2": "Do you hear a sound?"
+        "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "أكيد سامع صوت",
+        "text_l2": "I definitely hear a sound",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:25.00",
-        "text_l2": "I definitely hear a sound"
+        "timestamp_end": "00:25.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "لا جلجل في صوت إشي بنقط",
+        "text_l2": "No Jaljal, it's the sound of something dripping",
         "timestamp": "00:25.00",
-        "timestamp_end": "00:27.00",
-        "text_l2": "No Jaljal, it's the sound of something dripping"
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "آه آه مزبوط في إشي بنقط",
+        "text_l2": "Ah ah, right, something is dripping",
         "timestamp": "00:29.00",
-        "timestamp_end": "00:32.00",
-        "text_l2": "Ah ah, right, something is dripping"
+        "timestamp_end": "00:32.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "جلجل بقولك في صوت إشي بنقط",
+        "text_l2": "Jaljal, I'm telling you, there's a sound of something dripping",
         "timestamp": "00:32.00",
-        "timestamp_end": "00:36.00",
-        "text_l2": "Jaljal, I'm telling you, there's a sound of something dripping"
+        "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "همم أكيد في إشي بنقط يا تن تن",
+        "text_l2": "Hmm, surely something is dripping, Ten Ten",
         "timestamp": "00:36.00",
-        "timestamp_end": "00:39.00",
-        "text_l2": "Hmm, surely something is dripping, Ten Ten"
+        "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "ها هي أكيد الحنفية",
+        "text_l2": "There it is, surely the faucet",
         "timestamp": "00:39.00",
-        "timestamp_end": "00:42.00",
-        "text_l2": "There it is, surely the faucet"
+        "timestamp_end": "00:42.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "الحنفية مزبوط",
+        "text_l2": "The faucet, right",
         "timestamp": "00:42.00",
-        "timestamp_end": "00:43.00",
-        "text_l2": "The faucet, right"
+        "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "لا جلجل لازم نصلحها",
+        "text_l2": "No Jaljal, we need to fix it",
         "timestamp": "00:43.00",
-        "timestamp_end": "00:45.00",
-        "text_l2": "No Jaljal, we need to fix it"
+        "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "ها؟ نصلحها؟",
+        "text_l2": "Huh? Fix it?",
         "timestamp": "00:45.00",
-        "timestamp_end": "00:47.00",
-        "text_l2": "Huh? Fix it?"
+        "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "اممم طيب يلا",
+        "text_l2": "Umm, okay, let's go",
         "timestamp": "00:47.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "Umm, okay, let's go"
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "يلا قوم نصلحها بسرعة قوم",
+        "text_l2": "Come on, let's get up and fix it quickly, come on",
         "timestamp": "00:50.00",
-        "timestamp_end": "00:52.00",
-        "text_l2": "Come on, let's get up and fix it quickly, come on"
+        "timestamp_end": "00:52.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "شايف يا جلجل قلتلك إنه الحنفية بتنقط",
+        "text_l2": "See Jaljal? I told you the faucet is dripping",
         "timestamp": "00:56.00",
-        "timestamp_end": "00:59.00",
-        "text_l2": "See Jaljal? I told you the faucet is dripping"
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "مزبوط عنجد إنت كتير كتير كتير نبيهة يا تن تن",
+        "text_l2": "Right, really, you are very very very smart, Ten Ten",
         "timestamp": "00:59.00",
-        "timestamp_end": "01:04.00",
-        "text_l2": "Right, really, you are very very very smart, Ten Ten"
+        "timestamp_end": "01:04.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "طيب جلجل لازم نصلحها بسرعة",
+        "text_l2": "Okay Jaljal, we need to fix it quickly",
         "timestamp": "01:04.00",
-        "timestamp_end": "01:07.00",
-        "text_l2": "Okay Jaljal, we need to fix it quickly"
+        "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "أكيد لازم نصلحها بس إحنا بدنا حدا يساعدنا",
+        "text_l2": "Sure we need to fix it, but we need someone to help us",
         "timestamp": "01:07.00",
-        "timestamp_end": "01:11.00",
-        "text_l2": "Sure we need to fix it, but we need someone to help us"
+        "timestamp_end": "01:11.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "شو رأيك ننادي عمو كامل؟",
+        "text_l2": "What do you say we call Uncle Kamel?",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:13.00",
-        "text_l2": "What do you say we call Uncle Kamel?"
+        "timestamp_end": "01:13.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "آه",
+        "text_l2": "Yeah",
         "timestamp": "01:13.00",
-        "timestamp_end": "01:14.00",
-        "text_l2": "Yeah"
+        "timestamp_end": "01:14.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "عمو كامل! عمو كامل! عمو كامل!",
+        "text_l2": "Uncle Kamel! Uncle Kamel! Uncle Kamel!",
         "timestamp": "01:14.00",
-        "timestamp_end": "01:16.00",
-        "text_l2": "Uncle Kamel! Uncle Kamel! Uncle Kamel!"
+        "timestamp_end": "01:16.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "إيش يا جلجل؟ إيش يا تن تن؟ إيش في؟",
+        "text_l2": "What is it Jaljal? What is it Ten Ten? What's wrong?",
         "timestamp": "01:17.00",
-        "timestamp_end": "01:20.00",
-        "text_l2": "What is it Jaljal? What is it Ten Ten? What's wrong?"
+        "timestamp_end": "01:20.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "ممكن تيجي تساعدنا؟",
+        "text_l2": "Can you come help us?",
         "timestamp": "01:20.00",
-        "timestamp_end": "01:22.00",
-        "text_l2": "Can you come help us?"
+        "timestamp_end": "01:22.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "شو المشكلة؟",
+        "text_l2": "What's the problem?",
         "timestamp": "01:22.00",
-        "timestamp_end": "01:24.00",
-        "text_l2": "What's the problem?"
+        "timestamp_end": "01:24.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "تعال ساعدنا الحنفية بتنقط",
+        "text_l2": "Come help us, the faucet is dripping",
         "timestamp": "01:24.00",
-        "timestamp_end": "01:26.00",
-        "text_l2": "Come help us, the faucet is dripping"
+        "timestamp_end": "01:26.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "حاضر أنا جاي",
+        "text_l2": "Okay, I'm coming",
         "timestamp": "01:26.00",
-        "timestamp_end": "01:28.00",
-        "text_l2": "Okay, I'm coming"
+        "timestamp_end": "01:28.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "بتعرف يا جلجل؟",
+        "text_l2": "You know, Jaljal?",
         "timestamp": "01:31.00",
-        "timestamp_end": "01:33.00",
-        "text_l2": "You know, Jaljal?"
+        "timestamp_end": "01:33.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "نعم",
+        "text_l2": "Yes",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:33.50",
-        "text_l2": "Yes"
+        "timestamp_end": "01:33.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "لو ضلت الحنفية تنقط هيك ما رح نقدر نشرب مي",
+        "text_l2": "If the faucet keeps dripping like this, we won't be able to drink water",
         "timestamp": "01:33.50",
-        "timestamp_end": "01:36.00",
-        "text_l2": "If the faucet keeps dripping like this, we won't be able to drink water"
+        "timestamp_end": "01:36.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "مزبوط ولا رح نقدر نتحمم",
+        "text_l2": "Right, and we won't be able to take a shower",
         "timestamp": "01:36.00",
-        "timestamp_end": "01:39.00",
-        "text_l2": "Right, and we won't be able to take a shower"
+        "timestamp_end": "01:39.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "ما رح نقدر نسبح",
+        "text_l2": "We won't be able to swim",
         "timestamp": "01:39.00",
-        "timestamp_end": "01:42.00",
-        "text_l2": "We won't be able to swim"
+        "timestamp_end": "01:42.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "مزبوط ولا كمان رح نقدر نغسل إيدينا",
+        "text_l2": "Right, and also we won't be able to wash our hands",
         "timestamp": "01:42.00",
-        "timestamp_end": "01:45.00",
-        "text_l2": "Right, and also we won't be able to wash our hands"
+        "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "آخ آخ آخ",
+        "text_l2": "Oh oh oh",
         "timestamp": "01:45.00",
-        "timestamp_end": "01:48.00",
-        "text_l2": "Oh oh oh"
+        "timestamp_end": "01:48.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "بتعرف يا جلجل؟",
+        "text_l2": "You know, Jaljal?",
         "timestamp": "01:48.00",
-        "timestamp_end": "01:49.00",
-        "text_l2": "You know, Jaljal?"
+        "timestamp_end": "01:49.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "نعم",
+        "text_l2": "Yes",
         "timestamp": "01:49.00",
-        "timestamp_end": "01:49.50",
-        "text_l2": "Yes"
+        "timestamp_end": "01:49.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "كمان ما رح أقدر أسقي الشجر ولا أسبح سمكتي",
+        "text_l2": "Also I won't be able to water the plants or let my fish swim",
         "timestamp": "01:49.50",
-        "timestamp_end": "01:52.00",
-        "text_l2": "Also I won't be able to water the plants or let my fish swim"
+        "timestamp_end": "01:52.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "مزبوط كتير أشياء",
+        "text_l2": "Right, many things",
         "timestamp": "01:52.00",
-        "timestamp_end": "01:55.00",
-        "text_l2": "Right, many things"
+        "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "ممكن كمان ما أقدر أفرشي سناني آخ",
+        "text_l2": "Maybe also I won't be able to brush my teeth, oh",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:58.00",
-        "text_l2": "Maybe also I won't be able to brush my teeth, oh"
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "عمو كامل!",
+        "text_l2": "Uncle Kamel!",
         "timestamp": "01:59.00",
-        "timestamp_end": "02:01.00",
-        "text_l2": "Uncle Kamel!"
+        "timestamp_end": "02:01.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "عمو كامل بسرعة تعال",
+        "text_l2": "Uncle Kamel, come quickly",
         "timestamp": "02:01.00",
-        "timestamp_end": "02:03.00",
-        "text_l2": "Uncle Kamel, come quickly"
+        "timestamp_end": "02:03.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "هي وصل عمو كامل",
+        "text_l2": "Here comes Uncle Kamel",
         "timestamp": "02:05.00",
-        "timestamp_end": "02:07.00",
-        "text_l2": "Here comes Uncle Kamel"
+        "timestamp_end": "02:07.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "إذا سمحتي يا تن تن امسكي شوي",
+        "text_l2": "If you please, Ten Ten, hold this a bit",
         "timestamp": "02:08.00",
-        "timestamp_end": "02:10.00",
-        "text_l2": "If you please, Ten Ten, hold this a bit"
+        "timestamp_end": "02:10.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "حاضر",
+        "text_l2": "Okay",
         "timestamp": "02:10.00",
-        "timestamp_end": "02:11.00",
-        "text_l2": "Okay"
+        "timestamp_end": "02:11.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "شكراً",
+        "text_l2": "Thanks",
         "timestamp": "02:11.00",
-        "timestamp_end": "02:12.00",
-        "text_l2": "Thanks"
+        "timestamp_end": "02:12.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "هلق بس عمو كامل يصلح الحنفية رح نقدر نشرب مي",
+        "text_l2": "Now once Uncle Kamel fixes the faucet, we'll be able to drink water",
         "timestamp": "02:17.00",
-        "timestamp_end": "02:21.00",
-        "text_l2": "Now once Uncle Kamel fixes the faucet, we'll be able to drink water"
+        "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "أكيد ورح نقدر نتحمم",
+        "text_l2": "Sure, and we'll be able to take a shower",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:23.00",
-        "text_l2": "Sure, and we'll be able to take a shower"
+        "timestamp_end": "02:23.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "رح أقدر أسبح أنا ورح تقدر تسبح سمكتي",
+        "text_l2": "I'll be able to swim and your fish will be able to swim",
         "timestamp": "02:23.00",
-        "timestamp_end": "02:27.00",
-        "text_l2": "I'll be able to swim and your fish will be able to swim"
+        "timestamp_end": "02:27.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "أكيد ورح نقدر نسقي الشجر",
+        "text_l2": "Sure, and we'll be able to water the plants",
         "timestamp": "02:27.00",
-        "timestamp_end": "02:30.00",
-        "text_l2": "Sure, and we'll be able to water the plants"
+        "timestamp_end": "02:30.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "آه الجلدة خربانة ولازم نغيرها",
+        "text_l2": "Ah, the washer is broken and we need to change it",
         "timestamp": "02:31.00",
-        "timestamp_end": "02:34.00",
-        "text_l2": "Ah, the washer is broken and we need to change it"
+        "timestamp_end": "02:34.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "يا سلام شفتوا؟ الحنفية ما بتنقط",
+        "text_l2": "Oh wow, did you see? The faucet isn't dripping",
         "timestamp": "03:07.00",
-        "timestamp_end": "03:10.00",
-        "text_l2": "Oh wow, did you see? The faucet isn't dripping"
+        "timestamp_end": "03:10.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "هييه!",
+        "text_l2": "Yay!",
         "timestamp": "03:12.00",
-        "timestamp_end": "03:14.00",
-        "text_l2": "Yay!"
+        "timestamp_end": "03:14.00"
       }
     ],
-    "phrases_with_token_translations": "[جلجل] => [Jaljal]\n\n[همم]؟ => [Hmm]?\n\n[جلجل] سامع؟ => [Jaljal], can you hear?\nجلجل [سامع]؟ => Jaljal, [can you hear]? # سامع is an active participle literally meaning \"hearing\", used here to mean \"can you hear?\"\n\n[سامع] سامع => [I hear], I hear\nسامع [سامع] => I hear, [I hear]\n\n[سامع] صوت؟ => [Do you hear] a sound?\nسامع [صوت]؟ => Do you hear [a sound]?\n\n[أكيد] سامع صوت => I [definitely] hear a sound\nأكيد [سامع] صوت => I definitely [hear] a sound\nأكيد سامع [صوت] => I definitely hear [a sound]\n\n[لا] جلجل في صوت إشي بنقط => [No] Jaljal, it's the sound of something dripping\nلا [جلجل] في صوت إشي بنقط => No [Jaljal], it's the sound of something dripping\nلا جلجل [في] صوت إشي بنقط => there is, it is\nلا جلجل في [صوت] إشي بنقط => No Jaljal, it's the [sound] of something dripping\nلا جلجل في صوت [إشي] بنقط => No Jaljal, it's the sound of [something] dripping\nلا جلجل في صوت إشي [بنقط] => No Jaljal, it's the sound of something [dripping]\n\n[آه آه] مزبوط في إشي بنقط => [Ah ah], right, something is dripping\nآه آه [مزبوط] في إشي بنقط => Ah ah, [right], something is dripping\nآه آه مزبوط [في] إشي بنقط => there is\nآه آه مزبوط في [إشي] بنقط => Ah ah, right, [something] is dripping\nآه آه مزبوط في إشي [بنقط] => Ah ah, right, something [is dripping]\n\n[جلجل] بقولك في صوت إشي بنقط => [Jaljal], I'm telling you, there's a sound of something dripping\nجلجل [بقولك] في صوت إشي بنقط => Jaljal, [I'm telling you], there's a sound of something dripping\nجلجل بقولك [في] صوت إشي بنقط => Jaljal, I'm telling you, [there's] a sound of something dripping\nجلجل بقولك في [صوت] إشي بنقط => Jaljal, I'm telling you, there's a [sound] of something dripping\nجلجل بقولك في صوت [إشي] بنقط => Jaljal, I'm telling you, there's a sound of [something] dripping\nجلجل بقولك في صوت إشي [بنقط] => Jaljal, I'm telling you, there's a sound of something [dripping]\n\n[همم] أكيد في إشي بنقط يا تن تن => [Hmm], surely something is dripping, Ten Ten\nهمم [أكيد] في إشي بنقط يا تن تن => Hmm, [surely] something is dripping, Ten Ten\nهمم أكيد [في إشي] بنقط يا تن تن => Hmm, surely [something] is dripping, Ten Ten\nهمم أكيد في إشي [بنقط] يا تن تن => Hmm, surely something [is dripping], Ten Ten\nهمم أكيد في إشي بنقط [يا تن تن] => Hmm, surely something is dripping, [Ten Ten]\n\n[ها هي] أكيد الحنفية => [There it is], surely the faucet\nها هي [أكيد] الحنفية => There it is, [surely] the faucet\nها هي أكيد [الحنفية] => There it is, surely [the faucet]\n\n[الحنفية] مزبوط => [The faucet], right\nالحنفية [مزبوط] => The faucet, [right]\n\n[لا] جلجل لازم نصلحها => [No] Jaljal, we need to fix it\nلا [جلجل] لازم نصلحها => No [Jaljal], we need to fix it\nلا جلجل [لازم] نصلحها => No Jaljal, [we need to] fix it\nلا جلجل لازم [نصلحها] => No Jaljal, we need to [fix it]\n\n[ها]؟ نصلحها؟ => [Huh]? Fix it?\nها؟ [نصلحها]؟ => Huh? [Fix it]?\n\n[اممم] طيب يلا => [Umm], okay, let's go\nاممم [طيب] يلا => Umm, [okay], let's go\nاممم طيب [يلا] => Umm, okay, [let's go]\n\n[يلا] قوم نصلحها بسرعة قوم => [Come on], let's get up and fix it quickly, come on\nيلا [قوم] نصلحها بسرعة قوم => Come on, let's [get up] and fix it quickly, come on\nيلا قوم [نصلحها] بسرعة قوم => Come on, let's get up and [fix it] quickly, come on\nيلا قوم نصلحها [بسرعة] قوم => Come on, let's get up and fix it [quickly], come on\nيلا قوم نصلحها بسرعة [قوم] => Come on, let's get up and fix it quickly, [come on]\n\n[شايف] يا جلجل قلتلك إنه الحنفية بتنقط => [See] Jaljal? I told you the faucet is dripping\nشايف [يا جلجل] قلتلك إنه الحنفية بتنقط => See [Jaljal]? I told you the faucet is dripping\nشايف يا جلجل [قلتلك] إنه الحنفية بتنقط => See Jaljal? [I told you] the faucet is dripping\nشايف يا جلجل قلتلك [إنه] الحنفية بتنقط => that\nشايف يا جلجل قلتلك إنه [الحنفية] بتنقط => See Jaljal? I told you [the faucet] is dripping\nشايف يا جلجل قلتلك إنه الحنفية [بتنقط] => See Jaljal? I told you the faucet [is dripping]\n\n[مزبوط] عنجد إنت كتير كتير كتير نبيهة يا تن تن => [Right], really, you are very very very smart, Ten Ten\nمزبوط [عنجد] إنت كتير كتير كتير نبيهة يا تن تن => Right, [really], you are very very very smart, Ten Ten\nمزبوط عنجد [إنت] كتير كتير كتير نبيهة يا تن تن => Right, really, [you are] very very very smart, Ten Ten\nمزبوط عنجد إنت [كتير] كتير كتير نبيهة يا تن تن => Right, really, you are [very] very very smart, Ten Ten\nمزبوط عنجد إنت كتير [كتير] كتير نبيهة يا تن تن => Right, really, you are very [very] very smart, Ten Ten\nمزبوط عنجد إنت كتير كتير [كتير] نبيهة يا تن تن => Right, really, you are very very [very] smart, Ten Ten\nمزبوط عنجد إنت كتير كتير كتير [نبيهة] يا تن تن => Right, really, you are very very very [smart], Ten Ten\nمزبوط عنجد إنت كتير كتير كتير نبيهة يا [تن تن] => Right, really, you are very very very smart, [Ten Ten]\n\n[طيب] جلجل لازم نصلحها بسرعة => [Okay] Jaljal, we need to fix it quickly\nطيب [جلجل] لازم نصلحها بسرعة => Okay [Jaljal], we need to fix it quickly\nطيب جلجل [لازم] نصلحها بسرعة => Okay Jaljal, [we need to] fix it quickly\nطيب جلجل لازم [نصلحها] بسرعة => Okay Jaljal, we need to [fix it] quickly\nطيب جلجل لازم نصلحها [بسرعة] => Okay Jaljal, we need to fix it [quickly]\n\n[أكيد] لازم نصلحها بس إحنا بدنا حدا يساعدنا => [Sure] we need to fix it, but we need someone to help us\nأكيد [لازم] نصلحها بس إحنا بدنا حدا يساعدنا => Sure we [need] to fix it, but we need someone to help us\nأكيد لازم [نصلحها] بس إحنا بدنا حدا يساعدنا => Sure we need to [fix it], but we need someone to help us\nأكيد لازم نصلحها [بس] إحنا بدنا حدا يساعدنا => Sure we need to fix it, [but] we need someone to help us\nأكيد لازم نصلحها بس [إحنا] بدنا حدا يساعدنا => Sure we need to fix it, but [we] need someone to help us\nأكيد لازم نصلحها بس إحنا [بدنا] حدا يساعدنا => Sure we need to fix it, but we [need] someone to help us\nأكيد لازم نصلحها بس إحنا بدنا [حدا] يساعدنا => Sure we need to fix it, but we need [someone] to help us\nأكيد لازم نصلحها بس إحنا بدنا حدا [يساعدنا] => Sure we need to fix it, but we need someone to [help us] # helps us; the suffix -na translates to us\n\n[شو رأيك] ننادي عمو كامل؟ => [What do you say] we call Uncle Kamel?\nشو رأيك [ننادي] عمو كامل؟ => What do you say [we call] Uncle Kamel?\nشو رأيك ننادي [عمو] كامل؟ => What do you say we call [Uncle] Kamel?\nشو رأيك ننادي عمو [كامل]؟ => What do you say we call Uncle [Kamel]?\n\n[آه] => [Yeah]\n\n[عمو] كامل! عمو كامل! عمو كامل! => [Uncle] Kamel! Uncle Kamel! Uncle Kamel!\nعمو [كامل]! عمو كامل! عمو كامل! => Uncle [Kamel]! Uncle Kamel! Uncle Kamel!\nعمو كامل! [عمو] كامل! عمو كامل! => Uncle Kamel! [Uncle] Kamel! Uncle Kamel!\nعمو كامل! عمو [كامل]! عمو كامل! => Uncle Kamel! Uncle [Kamel]! Uncle Kamel!\nعمو كامل! عمو كامل! [عمو] كامل! => Uncle Kamel! Uncle Kamel! [Uncle] Kamel!\nعمو كامل! عمو كامل! عمو [كامل]! => Uncle Kamel! Uncle Kamel! Uncle [Kamel]!\n\n[إيش] يا جلجل؟ إيش يا تن تن؟ إيش في؟ => [What is it] Jaljal? What is it Ten Ten? What's wrong?\nإيش يا [جلجل]؟ إيش يا تن تن؟ إيش في؟ => What is it [Jaljal]? What is it Ten Ten? What's wrong?\nإيش يا جلجل؟ [إيش] يا تن تن؟ إيش في؟ => What is it Jaljal? [What is it] Ten Ten? What's wrong?\nإيش يا جلجل؟ إيش يا [تن تن]؟ إيش في؟ => What is it Jaljal? What is it [Ten Ten]? What's wrong?\nإيش يا جلجل؟ إيش يا تن تن؟ [إيش في]؟ => What is it Jaljal? What is it Ten Ten? [What's wrong] # \"Eish fi\" is a common idiom meaning \"What is there?\" or \"What's wrong?\"\n\n[ممكن] تيجي تساعدنا؟ => [Can you] come help us?\nممكن [تيجي] تساعدنا؟ => Can you [come] help us?\nممكن تيجي [تساعدنا]؟ => Can you come [help us]?\n\n[شو] المشكلة؟ => [What's] the problem?\nشو [المشكلة]؟ => What's [the problem]?\n\n[تعال] ساعدنا الحنفية بتنقط => [Come] help us, the faucet is dripping\nتعال [ساعدنا] الحنفية بتنقط => Come [help us], the faucet is dripping\nتعال ساعدنا [الحنفية] بتنقط => Come help us, [the faucet] is dripping\nتعال ساعدنا الحنفية [بتنقط] => Come help us, the faucet [is dripping]\n\n[حاضر] أنا جاي => [Okay], I'm coming\nحاضر [أنا] جاي => Okay, [I'm] coming\nحاضر أنا [جاي] => Okay, I'm [coming]\n\n[بتعرف] يا جلجل => [You know], Jaljal\nبتعرف يا [جلجل] => You know, [Jaljal]\n\n[نعم] => [Yes]\n\n[لو] ضلت الحنفية تنقط هيك ما رح نقدر نشرب مي => [If] the faucet keeps dripping like this, we won't be able to drink water\nلو [ضلت] الحنفية تنقط هيك ما رح نقدر نشرب مي => If the faucet [keeps] dripping like this, we won't be able to drink water\nلو ضلت [الحنفية] تنقط هيك ما رح نقدر نشرب مي => If [the faucet] keeps dripping like this, we won't be able to drink water\nلو ضلت الحنفية [تنقط] هيك ما رح نقدر نشرب مي => If the faucet keeps [dripping] like this, we won't be able to drink water\nلو ضلت الحنفية تنقط [هيك] ما رح نقدر نشرب مي => If the faucet keeps dripping [like this], we won't be able to drink water\nلو ضلت الحنفية تنقط هيك [ما رح] نقدر نشرب مي => If the faucet keeps dripping like this, we [won't] be able to drink water\nلو ضلت الحنفية تنقط هيك ما رح [نقدر] نشرب مي => If the faucet keeps dripping like this, we won't [be able to] drink water\nلو ضلت الحنفية تنقط هيك ما رح نقدر [نشرب] مي => If the faucet keeps dripping like this, we won't be able to [drink] water\nلو ضلت الحنفية تنقط هيك ما رح نقدر نشرب [مي] => If the faucet keeps dripping like this, we won't be able to drink [water]\n\n[مزبوط] ولا رح نقدر نتحمم => [Right], and we won't be able to take a shower\nمزبوط [ولا رح] نقدر نتحمم => and won't # ولا means \"and not\", رح is the future marker \"will\"\nمزبوط ولا رح [نقدر] نتحمم => Right, and we won't [be able to] take a shower\nمزبوط ولا رح نقدر [نتحمم] => Right, and we won't be able to [take a shower]\n\n[ما رح نقدر] نسبح => [We won't be able to] swim\nما رح نقدر [نسبح] => We won't be able to [swim]\n\n[مزبوط] ولا كمان رح نقدر نغسل إيدينا => [Right], and also we won't be able to wash our hands\nمزبوط [ولا] كمان رح نقدر نغسل إيدينا => and not, won't\nمزبوط ولا [كمان] رح نقدر نغسل إيدينا => Right, and [also] we won't be able to wash our hands\nمزبوط ولا كمان [رح نقدر] نغسل إيدينا => we will be able to\nمزبوط ولا كمان رح نقدر [نغسل] إيدينا => Right, and also we won't be able [to wash] our hands\nمزبوط ولا كمان رح نقدر نغسل [إيدينا] => Right, and also we won't be able to wash [our hands]\n\n[آخ] آخ آخ => [Oh] oh oh\nآخ [آخ] آخ => Oh [oh] oh\nآخ آخ [آخ] => Oh oh [oh]\n\n[بتعرف] يا جلجل؟ => [You know], Jaljal?\nبتعرف [يا] جلجل؟ => vocative particle\nبتعرف يا [جلجل]؟ => You know, [Jaljal]?\n\n[نعم] => [Yes]\n\n[كمان] ما رح أقدر أسقي الشجر ولا أسبح سمكتي => [Also] I won't be able to water the plants or let my fish swim\nكمان [ما رح أقدر] أسقي الشجر ولا أسبح سمكتي => Also [I won't be able] to water the plants or let my fish swim\nكمان ما رح أقدر [أسقي] الشجر ولا أسبح سمكتي => Also I won't be able to [water] the plants or let my fish swim\nكمان ما رح أقدر أسقي [الشجر] ولا أسبح سمكتي => Also I won't be able to water [the plants] or let my fish swim\nكمان ما رح أقدر أسقي الشجر [ولا] أسبح سمكتي => Also I won't be able to water the plants [or] let my fish swim\nكمان ما رح أقدر أسقي الشجر ولا [أسبح] سمكتي => let swim\nكمان ما رح أقدر أسقي الشجر ولا أسبح [سمكتي] => Also I won't be able to water the plants or let [my fish] swim\n\n[مزبوط] كتير أشياء => [Right], many things\nمزبوط [كتير] أشياء => Right, [many] things\nمزبوط كتير [أشياء] => Right, many [things]\n\n[ممكن] كمان ما أقدر أفرشي سناني آخ => [Maybe] also I won't be able to brush my teeth, oh\nممكن [كمان] ما أقدر أفرشي سناني آخ => Maybe [also] I won't be able to brush my teeth, oh\nممكن كمان [ما أقدر] أفرشي سناني آخ => Maybe also [I won't be able] to brush my teeth, oh\nممكن كمان ما أقدر [أفرشي] سناني آخ => Maybe also I won't be able [to brush] my teeth, oh\nممكن كمان ما أقدر أفرشي [سناني] آخ => Maybe also I won't be able to brush [my teeth], oh\nممكن كمان ما أقدر أفرشي سناني [آخ] => Maybe also I won't be able to brush my teeth, [oh]\n\n[عمو] كامل! => [Uncle] Kamel!\nعمو [كامل]! => Uncle [Kamel]!\n\n[عمو] كامل بسرعة تعال => [Uncle] Kamel, come quickly\nعمو [كامل] بسرعة تعال => Uncle [Kamel], come quickly\nعمو كامل [بسرعة] تعال => Uncle Kamel, come [quickly]\nعمو كامل بسرعة [تعال] => Uncle Kamel, [come] quickly\n\n[هي] وصل عمو كامل => [Here] comes Uncle Kamel\nهي [وصل] عمو كامل => Here [comes] Uncle Kamel\nهي وصل [عمو] كامل => Here comes [Uncle] Kamel\nهي وصل عمو [كامل] => Here comes Uncle [Kamel]\n\n[إذا سمحتي] يا تن تن امسكي شوي => [If you please], Ten Ten, hold this a bit\nإذا سمحتي يا [تن تن] امسكي شوي => If you please, [Ten Ten], hold this a bit\nإذا سمحتي يا تن تن [امسكي] شوي => If you please, Ten Ten, [hold] this a bit\nإذا سمحتي يا تن تن امسكي [شوي] => If you please, Ten Ten, hold this [a bit]\n\n[حاضر] => [Okay]\n\n[شكراً] => [Thanks]\n\n[هلق] بس عمو كامل يصلح الحنفية رح نقدر نشرب مي => [Now] once Uncle Kamel fixes the faucet, we'll be able to drink water\nهلق [بس] عمو كامل يصلح الحنفية رح نقدر نشرب مي => Now [once] Uncle Kamel fixes the faucet, we'll be able to drink water\nهلق بس [عمو] كامل يصلح الحنفية رح نقدر نشرب مي => Now once [Uncle] Kamel fixes the faucet, we'll be able to drink water\nهلق بس عمو [كامل] يصلح الحنفية رح نقدر نشرب مي => Now once Uncle [Kamel] fixes the faucet, we'll be able to drink water\nهلق بس عمو كامل [يصلح] الحنفية رح نقدر نشرب مي => Now once Uncle Kamel [fixes] the faucet, we'll be able to drink water\nهلق بس عمو كامل يصلح [الحنفية] رح نقدر نشرب مي => Now once Uncle Kamel fixes [the faucet], we'll be able to drink water\nهلق بس عمو كامل يصلح الحنفية [رح نقدر] نشرب مي => Now once Uncle Kamel fixes the faucet, [we'll be able to] drink water\nهلق بس عمو كامل يصلح الحنفية رح نقدر [نشرب] مي => Now once Uncle Kamel fixes the faucet, we'll be able to [drink] water\nهلق بس عمو كامل يصلح الحنفية رح نقدر نشرب [مي] => Now once Uncle Kamel fixes the faucet, we'll be able to drink [water]\n\n[أكيد] ورح نقدر نتحمم => [Sure], and we'll be able to take a shower\nأكيد [و]رح نقدر نتحمم => Sure, [and] we'll be able to take a shower\nأكيد و[رح] نقدر نتحمم => will\nأكيد ورح [نقدر] نتحمم => Sure, and we'll [be able to] take a shower\nأكيد ورح نقدر [نتحمّم] => Sure, and we'll be able to [take a shower]\n\n[رح أقدر] أسبح أنا ورح تقدر تسبح سمكتي => [I'll be able to] swim and your fish will be able to swim\nرح أقدر [أسبح] أنا ورح تقدر تسبح سمكتي => I'll be able to [swim] and your fish will be able to swim\nرح أقدر أسبح [أنا] ورح تقدر تسبح سمكتي => I\nرح أقدر أسبح أنا [و]رح تقدر تسبح سمكتي => I'll be able to swim [and] your fish will be able to swim\nرح أقدر أسبح أنا و[رح تقدر] تسبح سمكتي => I'll be able to swim and your fish [will be able to] swim\nرح أقدر أسبح أنا ورح تقدر [تسبح] سمكتي => I'll be able to swim and your fish will be able to [swim]\nرح أقدر أسبح أنا ورح تقدر تسبح [سمكتي] => my fish # custom translation because the Arabic suffix -i means \"my\", not \"your\" as shown in the English sentence fragment\n\n[أكيد] ورح نقدر نسقي الشجر => [Sure], and we'll be able to water the plants\nأكيد [و]رح نقدر نسقي الشجر => Sure, [and] we'll be able to water the plants\nأكيد و[رح نقدر] نسقي الشجر => Sure, and [we'll be able] to water the plants\nأكيد ورح نقدر [نسقي] الشجر => Sure, and we'll be able [to water] the plants\nأكيد ورح نقدر نسقي [الشجر] => Sure, and we'll be able to water [the plants]\n\n[آه] الجلدة خربانة ولازم نغيرها => [Ah], the washer is broken and we need to change it\nآه [الجلدة] خربانة ولازم نغيرها => Ah, [the washer] is broken and we need to change it\nآه الجلدة [خربانة] ولازم نغيرها => Ah, the washer is [broken] and we need to change it\nآه الجلدة خربانة [و]لازم نغيرها => and\nآه الجلدة خربانة و[لازم] نغيرها => Ah, the washer is broken and [we need] to change it\nآه الجلدة خربانة ولازم [نغيرها] => Ah, the washer is broken and we need to [change it] # نغير (change) + ها (it)\n\n[يا سلام] شفتوا؟ الحنفية ما بتنقط => [Oh wow], did you see? The faucet isn't dripping\nيا سلام [شفتوا]؟ الحنفية ما بتنقط => Oh wow, [did you see]? The faucet isn't dripping\nيا سلام شفتوا؟ [الحنفية] ما بتنقط => Oh wow, did you see? [The faucet] isn't dripping\nيا سلام شفتوا؟ الحنفية [ما بتنقط] => Oh wow, did you see? The faucet [isn't dripping]\n\n[هييه]! => [Yay]!\n\n",
-    "lessons": "# الحوار بين جلجل وتن تن\n00:13.60 جلجل\n00:15.00 همم؟\n00:17.00 جلجل سامع؟\n00:19.00 سامع سامع\n00:21.00 سامع صوت؟\n00:23.00 أكيد سامع صوت\n\n# اكتشاف المشكلة\n00:25.00 لا جلجل في صوت إشي بنقط\n00:29.00 آه آه مزبوط في إشي بنقط\n00:32.00 جلجل بقولك في صوت إشي بنقط\n00:36.00 همم أكيد في إشي بنقط يا تن تن\n00:39.00 ها هي أكيد الحنفية\n00:42.00 الحنفية مزبوط\n\n# محاولة الإصلاح (الجزء الأول)\n00:43.00 لا جلجل لازم نصلحها\n00:45.00 ها؟ نصلحها؟\n00:47.00 اممم طيب يلا\n00:50.00 يلا قوم نصلحها بسرعة قوم\n00:56.00 شايف يا جلجل قلتلك إنه الحنفية بتنقط\n00:59.00 مزبوط عنجد إنت كتير كتير كتير نبيهة يا تن تن\n\n# طلب المساعدة من عمو كامل\n01:04.00 طيب جلجل لازم نصلحها بسرعة\n01:07.00 أكيد لازم نصلحها بس إحنا بدنا حدا يساعدنا\n01:11.00 شو رأيك ننادي عمو كامل؟\n01:13.00 آه\n01:14.00 عمو كامل! عمو كامل! عمو كامل!\n\n# وصول عمو كامل\n01:17.00 إيش يا جلجل؟ إيش يا تن تن؟ إيش في؟\n01:20.00 ممكن تيجي تساعدنا؟\n01:22.00 شو المشكلة؟\n01:24.00 تعال ساعدنا الحنفية بتنقط\n01:26.00 حاضر أنا جاي\n\n# عواقب تسرب المياه\n01:31.00 بتعرف يا جلجل؟\n01:33.00 نعم\n01:33.50 لو ضلت الحنفية تنقط هيك ما رح نقدر نشرب مي\n01:36.00 مزبوط ولا رح نقدر نتحمم\n01:39.00 ما رح نقدر نسبح\n01:42.00 مزبوط ولا كمان رح نقدر نغسل إيدينا\n01:45.00 آخ آخ آخ\n\n# المزيد من العواقب\n01:48.00 بتعرف يا جلجل؟\n01:49.00 نعم\n01:49.50 كمان ما رح أقدر أسقي الشجر ولا أسبح سمكتي\n01:52.00 مزبوط كتير أشياء\n01:55.00 ممكن كمان ما أقدر أفرشي سناني آخ\n01:59.00 عمو كامل!\n02:01.00 عمو كامل بسرعة تعال\n\n# إصلاح الحنفية\n02:05.00 هي وصل عمو كامل\n02:08.00 إذا سمحتي يا تن تن امسكي شوي\n02:10.00 حاضر\n02:11.00 شكراً\n02:17.00 هلق بس عمو كامل يصلح الحنفية رح نقدر نشرب مي\n02:21.00 أكيد ورح نقدر نتحمم\n02:23.00 رح أقدر أسبح أنا ورح تقدر تسبح سمكتي\n02:27.00 أكيد ورح نقدر نسقي الشجر\n02:31.00 آه الجلدة خربانة ولازم نغيرها\n03:07.00 يا سلام شفتوا؟ الحنفية ما بتنقط\n03:12.00 هييه!",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[جلجل] => [Jaljal]\n\n[همم]؟ => [Hmm]?\n\n[جلجل] سامع؟ => [Jaljal], can you hear?\nجلجل [سامع]؟ => Jaljal, [can you hear]? # سامع is an active participle literally meaning \"hearing\", used here to mean \"can you hear?\"\n\n[سامع] سامع => [I hear], I hear\nسامع [سامع] => I hear, [I hear]\n\n[سامع] صوت؟ => [Do you hear] a sound?\nسامع [صوت]؟ => Do you hear [a sound]?\n\n[أكيد] سامع صوت => I [definitely] hear a sound\nأكيد [سامع] صوت => I definitely [hear] a sound\nأكيد سامع [صوت] => I definitely hear [a sound]\n\n[لا] جلجل في صوت إشي بنقط => [No] Jaljal, it's the sound of something dripping\nلا [جلجل] في صوت إشي بنقط => No [Jaljal], it's the sound of something dripping\nلا جلجل [في] صوت إشي بنقط => there is, it is\nلا جلجل في [صوت] إشي بنقط => No Jaljal, it's the [sound] of something dripping\nلا جلجل في صوت [إشي] بنقط => No Jaljal, it's the sound of [something] dripping\nلا جلجل في صوت إشي [بنقط] => No Jaljal, it's the sound of something [dripping]\n\n[آه آه] مزبوط في إشي بنقط => [Ah ah], right, something is dripping\nآه آه [مزبوط] في إشي بنقط => Ah ah, [right], something is dripping\nآه آه مزبوط [في] إشي بنقط => there is\nآه آه مزبوط في [إشي] بنقط => Ah ah, right, [something] is dripping\nآه آه مزبوط في إشي [بنقط] => Ah ah, right, something [is dripping]\n\n[جلجل] بقولك في صوت إشي بنقط => [Jaljal], I'm telling you, there's a sound of something dripping\nجلجل [بقولك] في صوت إشي بنقط => Jaljal, [I'm telling you], there's a sound of something dripping\nجلجل بقولك [في] صوت إشي بنقط => Jaljal, I'm telling you, [there's] a sound of something dripping\nجلجل بقولك في [صوت] إشي بنقط => Jaljal, I'm telling you, there's a [sound] of something dripping\nجلجل بقولك في صوت [إشي] بنقط => Jaljal, I'm telling you, there's a sound of [something] dripping\nجلجل بقولك في صوت إشي [بنقط] => Jaljal, I'm telling you, there's a sound of something [dripping]\n\n[همم] أكيد في إشي بنقط يا تن تن => [Hmm], surely something is dripping, Ten Ten\nهمم [أكيد] في إشي بنقط يا تن تن => Hmm, [surely] something is dripping, Ten Ten\nهمم أكيد [في إشي] بنقط يا تن تن => Hmm, surely [something] is dripping, Ten Ten\nهمم أكيد في إشي [بنقط] يا تن تن => Hmm, surely something [is dripping], Ten Ten\nهمم أكيد في إشي بنقط [يا تن تن] => Hmm, surely something is dripping, [Ten Ten]\n\n[ها هي] أكيد الحنفية => [There it is], surely the faucet\nها هي [أكيد] الحنفية => There it is, [surely] the faucet\nها هي أكيد [الحنفية] => There it is, surely [the faucet]\n\n[الحنفية] مزبوط => [The faucet], right\nالحنفية [مزبوط] => The faucet, [right]\n\n[لا] جلجل لازم نصلحها => [No] Jaljal, we need to fix it\nلا [جلجل] لازم نصلحها => No [Jaljal], we need to fix it\nلا جلجل [لازم] نصلحها => No Jaljal, [we need to] fix it\nلا جلجل لازم [نصلحها] => No Jaljal, we need to [fix it]\n\n[ها]؟ نصلحها؟ => [Huh]? Fix it?\nها؟ [نصلحها]؟ => Huh? [Fix it]?\n\n[اممم] طيب يلا => [Umm], okay, let's go\nاممم [طيب] يلا => Umm, [okay], let's go\nاممم طيب [يلا] => Umm, okay, [let's go]\n\n[يلا] قوم نصلحها بسرعة قوم => [Come on], let's get up and fix it quickly, come on\nيلا [قوم] نصلحها بسرعة قوم => Come on, let's [get up] and fix it quickly, come on\nيلا قوم [نصلحها] بسرعة قوم => Come on, let's get up and [fix it] quickly, come on\nيلا قوم نصلحها [بسرعة] قوم => Come on, let's get up and fix it [quickly], come on\nيلا قوم نصلحها بسرعة [قوم] => Come on, let's get up and fix it quickly, [come on]\n\n[شايف] يا جلجل قلتلك إنه الحنفية بتنقط => [See] Jaljal? I told you the faucet is dripping\nشايف [يا جلجل] قلتلك إنه الحنفية بتنقط => See [Jaljal]? I told you the faucet is dripping\nشايف يا جلجل [قلتلك] إنه الحنفية بتنقط => See Jaljal? [I told you] the faucet is dripping\nشايف يا جلجل قلتلك [إنه] الحنفية بتنقط => that\nشايف يا جلجل قلتلك إنه [الحنفية] بتنقط => See Jaljal? I told you [the faucet] is dripping\nشايف يا جلجل قلتلك إنه الحنفية [بتنقط] => See Jaljal? I told you the faucet [is dripping]\n\n[مزبوط] عنجد إنت كتير كتير كتير نبيهة يا تن تن => [Right], really, you are very very very smart, Ten Ten\nمزبوط [عنجد] إنت كتير كتير كتير نبيهة يا تن تن => Right, [really], you are very very very smart, Ten Ten\nمزبوط عنجد [إنت] كتير كتير كتير نبيهة يا تن تن => Right, really, [you are] very very very smart, Ten Ten\nمزبوط عنجد إنت [كتير] كتير كتير نبيهة يا تن تن => Right, really, you are [very] very very smart, Ten Ten\nمزبوط عنجد إنت كتير [كتير] كتير نبيهة يا تن تن => Right, really, you are very [very] very smart, Ten Ten\nمزبوط عنجد إنت كتير كتير [كتير] نبيهة يا تن تن => Right, really, you are very very [very] smart, Ten Ten\nمزبوط عنجد إنت كتير كتير كتير [نبيهة] يا تن تن => Right, really, you are very very very [smart], Ten Ten\nمزبوط عنجد إنت كتير كتير كتير نبيهة يا [تن تن] => Right, really, you are very very very smart, [Ten Ten]\n\n[طيب] جلجل لازم نصلحها بسرعة => [Okay] Jaljal, we need to fix it quickly\nطيب [جلجل] لازم نصلحها بسرعة => Okay [Jaljal], we need to fix it quickly\nطيب جلجل [لازم] نصلحها بسرعة => Okay Jaljal, [we need to] fix it quickly\nطيب جلجل لازم [نصلحها] بسرعة => Okay Jaljal, we need to [fix it] quickly\nطيب جلجل لازم نصلحها [بسرعة] => Okay Jaljal, we need to fix it [quickly]\n\n[أكيد] لازم نصلحها بس إحنا بدنا حدا يساعدنا => [Sure] we need to fix it, but we need someone to help us\nأكيد [لازم] نصلحها بس إحنا بدنا حدا يساعدنا => Sure we [need] to fix it, but we need someone to help us\nأكيد لازم [نصلحها] بس إحنا بدنا حدا يساعدنا => Sure we need to [fix it], but we need someone to help us\nأكيد لازم نصلحها [بس] إحنا بدنا حدا يساعدنا => Sure we need to fix it, [but] we need someone to help us\nأكيد لازم نصلحها بس [إحنا] بدنا حدا يساعدنا => Sure we need to fix it, but [we] need someone to help us\nأكيد لازم نصلحها بس إحنا [بدنا] حدا يساعدنا => Sure we need to fix it, but we [need] someone to help us\nأكيد لازم نصلحها بس إحنا بدنا [حدا] يساعدنا => Sure we need to fix it, but we need [someone] to help us\nأكيد لازم نصلحها بس إحنا بدنا حدا [يساعدنا] => Sure we need to fix it, but we need someone to [help us] # helps us; the suffix -na translates to us\n\n[شو رأيك] ننادي عمو كامل؟ => [What do you say] we call Uncle Kamel?\nشو رأيك [ننادي] عمو كامل؟ => What do you say [we call] Uncle Kamel?\nشو رأيك ننادي [عمو] كامل؟ => What do you say we call [Uncle] Kamel?\nشو رأيك ننادي عمو [كامل]؟ => What do you say we call Uncle [Kamel]?\n\n[آه] => [Yeah]\n\n[عمو] كامل! عمو كامل! عمو كامل! => [Uncle] Kamel! Uncle Kamel! Uncle Kamel!\nعمو [كامل]! عمو كامل! عمو كامل! => Uncle [Kamel]! Uncle Kamel! Uncle Kamel!\nعمو كامل! [عمو] كامل! عمو كامل! => Uncle Kamel! [Uncle] Kamel! Uncle Kamel!\nعمو كامل! عمو [كامل]! عمو كامل! => Uncle Kamel! Uncle [Kamel]! Uncle Kamel!\nعمو كامل! عمو كامل! [عمو] كامل! => Uncle Kamel! Uncle Kamel! [Uncle] Kamel!\nعمو كامل! عمو كامل! عمو [كامل]! => Uncle Kamel! Uncle Kamel! Uncle [Kamel]!\n\n[إيش] يا جلجل؟ إيش يا تن تن؟ إيش في؟ => [What is it] Jaljal? What is it Ten Ten? What's wrong?\nإيش يا [جلجل]؟ إيش يا تن تن؟ إيش في؟ => What is it [Jaljal]? What is it Ten Ten? What's wrong?\nإيش يا جلجل؟ [إيش] يا تن تن؟ إيش في؟ => What is it Jaljal? [What is it] Ten Ten? What's wrong?\nإيش يا جلجل؟ إيش يا [تن تن]؟ إيش في؟ => What is it Jaljal? What is it [Ten Ten]? What's wrong?\nإيش يا جلجل؟ إيش يا تن تن؟ [إيش في]؟ => What is it Jaljal? What is it Ten Ten? [What's wrong] # \"Eish fi\" is a common idiom meaning \"What is there?\" or \"What's wrong?\"\n\n[ممكن] تيجي تساعدنا؟ => [Can you] come help us?\nممكن [تيجي] تساعدنا؟ => Can you [come] help us?\nممكن تيجي [تساعدنا]؟ => Can you come [help us]?\n\n[شو] المشكلة؟ => [What's] the problem?\nشو [المشكلة]؟ => What's [the problem]?\n\n[تعال] ساعدنا الحنفية بتنقط => [Come] help us, the faucet is dripping\nتعال [ساعدنا] الحنفية بتنقط => Come [help us], the faucet is dripping\nتعال ساعدنا [الحنفية] بتنقط => Come help us, [the faucet] is dripping\nتعال ساعدنا الحنفية [بتنقط] => Come help us, the faucet [is dripping]\n\n[حاضر] أنا جاي => [Okay], I'm coming\nحاضر [أنا] جاي => Okay, [I'm] coming\nحاضر أنا [جاي] => Okay, I'm [coming]\n\n[بتعرف] يا جلجل => [You know], Jaljal\nبتعرف يا [جلجل] => You know, [Jaljal]\n\n[نعم] => [Yes]\n\n[لو] ضلت الحنفية تنقط هيك ما رح نقدر نشرب مي => [If] the faucet keeps dripping like this, we won't be able to drink water\nلو [ضلت] الحنفية تنقط هيك ما رح نقدر نشرب مي => If the faucet [keeps] dripping like this, we won't be able to drink water\nلو ضلت [الحنفية] تنقط هيك ما رح نقدر نشرب مي => If [the faucet] keeps dripping like this, we won't be able to drink water\nلو ضلت الحنفية [تنقط] هيك ما رح نقدر نشرب مي => If the faucet keeps [dripping] like this, we won't be able to drink water\nلو ضلت الحنفية تنقط [هيك] ما رح نقدر نشرب مي => If the faucet keeps dripping [like this], we won't be able to drink water\nلو ضلت الحنفية تنقط هيك [ما رح] نقدر نشرب مي => If the faucet keeps dripping like this, we [won't] be able to drink water\nلو ضلت الحنفية تنقط هيك ما رح [نقدر] نشرب مي => If the faucet keeps dripping like this, we won't [be able to] drink water\nلو ضلت الحنفية تنقط هيك ما رح نقدر [نشرب] مي => If the faucet keeps dripping like this, we won't be able to [drink] water\nلو ضلت الحنفية تنقط هيك ما رح نقدر نشرب [مي] => If the faucet keeps dripping like this, we won't be able to drink [water]\n\n[مزبوط] ولا رح نقدر نتحمم => [Right], and we won't be able to take a shower\nمزبوط [ولا رح] نقدر نتحمم => and won't # ولا means \"and not\", رح is the future marker \"will\"\nمزبوط ولا رح [نقدر] نتحمم => Right, and we won't [be able to] take a shower\nمزبوط ولا رح نقدر [نتحمم] => Right, and we won't be able to [take a shower]\n\n[ما رح نقدر] نسبح => [We won't be able to] swim\nما رح نقدر [نسبح] => We won't be able to [swim]\n\n[مزبوط] ولا كمان رح نقدر نغسل إيدينا => [Right], and also we won't be able to wash our hands\nمزبوط [ولا] كمان رح نقدر نغسل إيدينا => and not, won't\nمزبوط ولا [كمان] رح نقدر نغسل إيدينا => Right, and [also] we won't be able to wash our hands\nمزبوط ولا كمان [رح نقدر] نغسل إيدينا => we will be able to\nمزبوط ولا كمان رح نقدر [نغسل] إيدينا => Right, and also we won't be able [to wash] our hands\nمزبوط ولا كمان رح نقدر نغسل [إيدينا] => Right, and also we won't be able to wash [our hands]\n\n[آخ] آخ آخ => [Oh] oh oh\nآخ [آخ] آخ => Oh [oh] oh\nآخ آخ [آخ] => Oh oh [oh]\n\n[بتعرف] يا جلجل؟ => [You know], Jaljal?\nبتعرف [يا] جلجل؟ => vocative particle\nبتعرف يا [جلجل]؟ => You know, [Jaljal]?\n\n[نعم] => [Yes]\n\n[كمان] ما رح أقدر أسقي الشجر ولا أسبح سمكتي => [Also] I won't be able to water the plants or let my fish swim\nكمان [ما رح أقدر] أسقي الشجر ولا أسبح سمكتي => Also [I won't be able] to water the plants or let my fish swim\nكمان ما رح أقدر [أسقي] الشجر ولا أسبح سمكتي => Also I won't be able to [water] the plants or let my fish swim\nكمان ما رح أقدر أسقي [الشجر] ولا أسبح سمكتي => Also I won't be able to water [the plants] or let my fish swim\nكمان ما رح أقدر أسقي الشجر [ولا] أسبح سمكتي => Also I won't be able to water the plants [or] let my fish swim\nكمان ما رح أقدر أسقي الشجر ولا [أسبح] سمكتي => let swim\nكمان ما رح أقدر أسقي الشجر ولا أسبح [سمكتي] => Also I won't be able to water the plants or let [my fish] swim\n\n[مزبوط] كتير أشياء => [Right], many things\nمزبوط [كتير] أشياء => Right, [many] things\nمزبوط كتير [أشياء] => Right, many [things]\n\n[ممكن] كمان ما أقدر أفرشي سناني آخ => [Maybe] also I won't be able to brush my teeth, oh\nممكن [كمان] ما أقدر أفرشي سناني آخ => Maybe [also] I won't be able to brush my teeth, oh\nممكن كمان [ما أقدر] أفرشي سناني آخ => Maybe also [I won't be able] to brush my teeth, oh\nممكن كمان ما أقدر [أفرشي] سناني آخ => Maybe also I won't be able [to brush] my teeth, oh\nممكن كمان ما أقدر أفرشي [سناني] آخ => Maybe also I won't be able to brush [my teeth], oh\nممكن كمان ما أقدر أفرشي سناني [آخ] => Maybe also I won't be able to brush my teeth, [oh]\n\n[عمو] كامل! => [Uncle] Kamel!\nعمو [كامل]! => Uncle [Kamel]!\n\n[عمو] كامل بسرعة تعال => [Uncle] Kamel, come quickly\nعمو [كامل] بسرعة تعال => Uncle [Kamel], come quickly\nعمو كامل [بسرعة] تعال => Uncle Kamel, come [quickly]\nعمو كامل بسرعة [تعال] => Uncle Kamel, [come] quickly\n\n[هي] وصل عمو كامل => [Here] comes Uncle Kamel\nهي [وصل] عمو كامل => Here [comes] Uncle Kamel\nهي وصل [عمو] كامل => Here comes [Uncle] Kamel\nهي وصل عمو [كامل] => Here comes Uncle [Kamel]\n\n[إذا سمحتي] يا تن تن امسكي شوي => [If you please], Ten Ten, hold this a bit\nإذا سمحتي يا [تن تن] امسكي شوي => If you please, [Ten Ten], hold this a bit\nإذا سمحتي يا تن تن [امسكي] شوي => If you please, Ten Ten, [hold] this a bit\nإذا سمحتي يا تن تن امسكي [شوي] => If you please, Ten Ten, hold this [a bit]\n\n[حاضر] => [Okay]\n\n[شكراً] => [Thanks]\n\n[هلق] بس عمو كامل يصلح الحنفية رح نقدر نشرب مي => [Now] once Uncle Kamel fixes the faucet, we'll be able to drink water\nهلق [بس] عمو كامل يصلح الحنفية رح نقدر نشرب مي => Now [once] Uncle Kamel fixes the faucet, we'll be able to drink water\nهلق بس [عمو] كامل يصلح الحنفية رح نقدر نشرب مي => Now once [Uncle] Kamel fixes the faucet, we'll be able to drink water\nهلق بس عمو [كامل] يصلح الحنفية رح نقدر نشرب مي => Now once Uncle [Kamel] fixes the faucet, we'll be able to drink water\nهلق بس عمو كامل [يصلح] الحنفية رح نقدر نشرب مي => Now once Uncle Kamel [fixes] the faucet, we'll be able to drink water\nهلق بس عمو كامل يصلح [الحنفية] رح نقدر نشرب مي => Now once Uncle Kamel fixes [the faucet], we'll be able to drink water\nهلق بس عمو كامل يصلح الحنفية [رح نقدر] نشرب مي => Now once Uncle Kamel fixes the faucet, [we'll be able to] drink water\nهلق بس عمو كامل يصلح الحنفية رح نقدر [نشرب] مي => Now once Uncle Kamel fixes the faucet, we'll be able to [drink] water\nهلق بس عمو كامل يصلح الحنفية رح نقدر نشرب [مي] => Now once Uncle Kamel fixes the faucet, we'll be able to drink [water]\n\n[أكيد] ورح نقدر نتحمم => [Sure], and we'll be able to take a shower\nأكيد [و]رح نقدر نتحمم => Sure, [and] we'll be able to take a shower\nأكيد و[رح] نقدر نتحمم => will\nأكيد ورح [نقدر] نتحمم => Sure, and we'll [be able to] take a shower\nأكيد ورح نقدر [نتحمّم] => Sure, and we'll be able to [take a shower]\n\n[رح أقدر] أسبح أنا ورح تقدر تسبح سمكتي => [I'll be able to] swim and your fish will be able to swim\nرح أقدر [أسبح] أنا ورح تقدر تسبح سمكتي => I'll be able to [swim] and your fish will be able to swim\nرح أقدر أسبح [أنا] ورح تقدر تسبح سمكتي => I\nرح أقدر أسبح أنا [و]رح تقدر تسبح سمكتي => I'll be able to swim [and] your fish will be able to swim\nرح أقدر أسبح أنا و[رح تقدر] تسبح سمكتي => I'll be able to swim and your fish [will be able to] swim\nرح أقدر أسبح أنا ورح تقدر [تسبح] سمكتي => I'll be able to swim and your fish will be able to [swim]\nرح أقدر أسبح أنا ورح تقدر تسبح [سمكتي] => my fish # custom translation because the Arabic suffix -i means \"my\", not \"your\" as shown in the English sentence fragment\n\n[أكيد] ورح نقدر نسقي الشجر => [Sure], and we'll be able to water the plants\nأكيد [و]رح نقدر نسقي الشجر => Sure, [and] we'll be able to water the plants\nأكيد و[رح نقدر] نسقي الشجر => Sure, and [we'll be able] to water the plants\nأكيد ورح نقدر [نسقي] الشجر => Sure, and we'll be able [to water] the plants\nأكيد ورح نقدر نسقي [الشجر] => Sure, and we'll be able to water [the plants]\n\n[آه] الجلدة خربانة ولازم نغيرها => [Ah], the washer is broken and we need to change it\nآه [الجلدة] خربانة ولازم نغيرها => Ah, [the washer] is broken and we need to change it\nآه الجلدة [خربانة] ولازم نغيرها => Ah, the washer is [broken] and we need to change it\nآه الجلدة خربانة [و]لازم نغيرها => and\nآه الجلدة خربانة و[لازم] نغيرها => Ah, the washer is broken and [we need] to change it\nآه الجلدة خربانة ولازم [نغيرها] => Ah, the washer is broken and we need to [change it] # نغير (change) + ها (it)\n\n[يا سلام] شفتوا؟ الحنفية ما بتنقط => [Oh wow], did you see? The faucet isn't dripping\nيا سلام [شفتوا]؟ الحنفية ما بتنقط => Oh wow, [did you see]? The faucet isn't dripping\nيا سلام شفتوا؟ [الحنفية] ما بتنقط => Oh wow, did you see? [The faucet] isn't dripping\nيا سلام شفتوا؟ الحنفية [ما بتنقط] => Oh wow, did you see? The faucet [isn't dripping]\n\n[هييه]! => [Yay]!\n\n"
   },
   "created_at": "2026-04-25 21:44:42 UTC",
-  "updated_at": "2026-04-25 21:57:51 UTC",
-  "exported_at": "2026-04-25T21:57:51Z"
+  "updated_at": "2026-04-26 05:56:58 UTC",
+  "exported_at": "2026-04-26T20:10:41Z"
 }

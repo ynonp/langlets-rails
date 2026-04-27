@@ -2,442 +2,442 @@
   "youtubeurl": "https://www.youtube.com/watch?v=kVa9-PLFV6U",
   "clip_language": "Arabic",
   "translation_language": "English",
-  "step": null,
+  "step": 5,
   "data": {
+    "lessons": "# تحضير المفاجأة لجدو سمسم\n00:00.00 جدو سمسم رح يفرح كثير\n00:02.50 لما يعرف إنه إحنا عملناله برواز\n00:04.80 وحطينا فيه صورة إلنا كلنا.\n00:07.00 هاي أحلى مفاجأة رح تكون لجدو سمسم\n00:09.80 لما يشوف الصورة جوات البرواز\n00:12.50 اللي إحنا رح نعمله إياه،\n00:14.00 وهيني جبت العصي منشان نبدأ\n00:16.00 نعمل البرواز.\n\n# بداية صنع البرواز\n00:17.50 جلجل، أنا اخترت هادي الصورة\n00:19.50 وجبت الصمغ.\n00:21.00 آه، الصورة كثير حلوة\n00:23.00 وأنا جاهز هلق نبدأ نعمل البرواز\n00:25.50 المنيح اللي رح نسويه، يلا.\n00:27.80 يلا نبدأ.\n00:32.50 أيوه هيك، كمان.\n00:36.50 يا عيني عليك يا عيني عليك.\n\n# مشكلة شكل البرواز\n00:39.00 جلجل. نعم؟\n00:41.00 هادا البرواز ما رح يزبط.\n00:44.50 ليش؟\n00:46.00 لأنه هادا مثلث وإله تلت أضلاع،\n00:49.00 والصورة اللي عنا فيها أربع أضلاع.\n00:54.00 مزبوط مزبوط، هادا واحد،\n00:57.00 تنين، تلاتة، صح.\n01:02.00 طيب، أنا معي عصي تانيين،\n01:04.50 هلق بجيبهم حتى نكمل البرواز.\n\n# إكمال البرواز\n01:08.00 يلا، هاي مجموعة من العصي يا تنتون\n01:11.00 ورح أسوي أحلى برواز.\n01:15.50 يا سلام، كثير كثير صار حلو يا جلجل.\n01:19.00 أكيد أكيد، أنا ما بعمل\n01:21.50 إلا كل إشي حلو.\n02:00.00 أيوه، صح صح هيك يا جلجل.\n02:02.00 شو رأيك؟\n02:03.50 كثير حلو، هلق هيك بنفع على الصورة.\n02:06.00 وعندنا بكون أربع أضلاع،\n02:09.00 واحد، تنين، تلاتة، أربعة.\n\n# تزيين البرواز\n02:15.00 بس بتعرفي يا تنتون،\n02:17.50 لازم نزين هادا البرواز حتى يكون أحلى.\n02:20.50 فكرة رائعة كثير حلوة يا جلجل،\n02:23.50 يلا بإيش رح نزينه؟\n02:25.50 بمعكرونة ملونة،\n02:27.50 خليني أروح وأجيبها.\n02:29.50 هاي المعكرونة،\n02:31.50 وهلق بنبدأ نزين البرواز.\n02:37.50 وبهيك بكون عنا برواز مزين\n02:40.50 للصورة الحلوة.\n\n# المشاكل النهائية\n02:41.80 حلو حلو حلو كثير يا جلجل،\n02:44.50 أنا كثير حبيته.\n02:46.00 شايفه؟ وهلق ضل الصورة.\n02:55.00 شو رأيك هلق؟\n02:57.00 جلجل؟ نعم؟\n02:59.00 وين المعكرونة؟\n03:00.50 عالبرواز هيها قدامك.\n03:04.50 هلق بعدلك إياها،\n03:07.50 هيك منيح؟\n03:11.50 جلجل؟ نعم؟\n03:13.50 وين الصورة؟\n03:15.50 هلق بعدلك إياها.\n03:22.50 شو رأيك؟\n03:24.50 وين المعكرونة؟\n03:27.50 تنتون!\n03:29.50 أنا لزقتها بالعكس.",
     "phrases": [
       {
         "id": "phrase_1",
         "text_l1": "جدو سمسم رح يفرح كثير",
+        "text_l2": "Grandpa Simsim will be so happy",
         "timestamp": "00:00.00",
-        "timestamp_end": "00:02.50",
-        "text_l2": "Grandpa Simsim will be so happy"
+        "timestamp_end": "00:02.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "لما يعرف إنه إحنا عملناله برواز",
+        "text_l2": "when he finds out we made him a frame",
         "timestamp": "00:02.50",
-        "timestamp_end": "00:04.80",
-        "text_l2": "when he finds out we made him a frame"
+        "timestamp_end": "00:04.80"
       },
       {
         "id": "phrase_3",
         "text_l1": "وحطينا فيه صورة إلنا كلنا.",
+        "text_l2": "and put a picture of all of us in it.",
         "timestamp": "00:04.80",
-        "timestamp_end": "00:07.00",
-        "text_l2": "and put a picture of all of us in it."
+        "timestamp_end": "00:07.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "هاي أحلى مفاجأة رح تكون لجدو سمسم",
+        "text_l2": "This will be the sweetest surprise for Grandpa Simsim",
         "timestamp": "00:07.00",
-        "timestamp_end": "00:09.80",
-        "text_l2": "This will be the sweetest surprise for Grandpa Simsim"
+        "timestamp_end": "00:09.80"
       },
       {
         "id": "phrase_5",
         "text_l1": "لما يشوف الصورة جوات البرواز",
+        "text_l2": "when he sees the picture inside the frame",
         "timestamp": "00:09.80",
-        "timestamp_end": "00:12.50",
-        "text_l2": "when he sees the picture inside the frame"
+        "timestamp_end": "00:12.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "اللي إحنا رح نعمله إياه،",
+        "text_l2": "that we are going to make for him,",
         "timestamp": "00:12.50",
-        "timestamp_end": "00:14.00",
-        "text_l2": "that we are going to make for him,"
+        "timestamp_end": "00:14.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "وهيني جبت العصي منشان نبدأ",
+        "text_l2": "And here I brought the sticks so we can start",
         "timestamp": "00:14.00",
-        "timestamp_end": "00:16.00",
-        "text_l2": "And here I brought the sticks so we can start"
+        "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "نعمل البرواز.",
+        "text_l2": "making the frame.",
         "timestamp": "00:16.00",
-        "timestamp_end": "00:17.50",
-        "text_l2": "making the frame."
+        "timestamp_end": "00:17.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "جلجل، أنا اخترت هادي الصورة",
+        "text_l2": "Jaljal, I chose this picture",
         "timestamp": "00:17.50",
-        "timestamp_end": "00:19.50",
-        "text_l2": "Jaljal, I chose this picture"
+        "timestamp_end": "00:19.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "وجبت الصمغ.",
+        "text_l2": "and brought the glue.",
         "timestamp": "00:19.50",
-        "timestamp_end": "00:21.00",
-        "text_l2": "and brought the glue."
+        "timestamp_end": "00:21.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "آه، الصورة كثير حلوة",
+        "text_l2": "Ah, the picture is very nice",
         "timestamp": "00:21.00",
-        "timestamp_end": "00:23.00",
-        "text_l2": "Ah, the picture is very nice"
+        "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "وأنا جاهز هلق نبدأ نعمل البرواز",
+        "text_l2": "and I'm ready now to start making the frame",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:25.50",
-        "text_l2": "and I'm ready now to start making the frame"
+        "timestamp_end": "00:25.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "المنيح اللي رح نسويه، يلا.",
+        "text_l2": "the nice one we're going to make, come on.",
         "timestamp": "00:25.50",
-        "timestamp_end": "00:27.80",
-        "text_l2": "the nice one we're going to make, come on."
+        "timestamp_end": "00:27.80"
       },
       {
         "id": "phrase_14",
         "text_l1": "يلا نبدأ.",
+        "text_l2": "Let's get started.",
         "timestamp": "00:27.80",
-        "timestamp_end": "00:29.50",
-        "text_l2": "Let's get started."
+        "timestamp_end": "00:29.50"
       },
       {
         "id": "phrase_15",
         "text_l1": "أيوه هيك، كمان.",
+        "text_l2": "Yes like that, more.",
         "timestamp": "00:32.50",
-        "timestamp_end": "00:35.00",
-        "text_l2": "Yes like that, more."
+        "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "يا عيني عليك يا عيني عليك.",
+        "text_l2": "Oh, you're so cute, oh you're so cute.",
         "timestamp": "00:36.50",
-        "timestamp_end": "00:39.00",
-        "text_l2": "Oh, you're so cute, oh you're so cute."
+        "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "جلجل. نعم؟",
+        "text_l2": "Jaljal. Yes?",
         "timestamp": "00:39.00",
-        "timestamp_end": "00:41.00",
-        "text_l2": "Jaljal. Yes?"
+        "timestamp_end": "00:41.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "هادا البرواز ما رح يزبط.",
+        "text_l2": "This frame isn't going to work.",
         "timestamp": "00:41.00",
-        "timestamp_end": "00:43.50",
-        "text_l2": "This frame isn't going to work."
+        "timestamp_end": "00:43.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "ليش؟",
+        "text_l2": "Why?",
         "timestamp": "00:44.50",
-        "timestamp_end": "00:46.00",
-        "text_l2": "Why?"
+        "timestamp_end": "00:46.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "لأنه هادا مثلث وإله تلت أضلاع،",
+        "text_l2": "Because this is a triangle and it has three sides,",
         "timestamp": "00:46.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "Because this is a triangle and it has three sides,"
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "والصورة اللي عنا فيها أربع أضلاع.",
+        "text_l2": "and the picture we have has four sides.",
         "timestamp": "00:49.00",
-        "timestamp_end": "00:53.00",
-        "text_l2": "and the picture we have has four sides."
+        "timestamp_end": "00:53.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "مزبوط مزبوط، هادا واحد،",
+        "text_l2": "Right, right, this is one,",
         "timestamp": "00:54.00",
-        "timestamp_end": "00:57.00",
-        "text_l2": "Right, right, this is one,"
+        "timestamp_end": "00:57.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "تنين، تلاتة، صح.",
+        "text_l2": "two, three, correct.",
         "timestamp": "00:57.00",
-        "timestamp_end": "01:00.50",
-        "text_l2": "two, three, correct."
+        "timestamp_end": "01:00.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "طيب، أنا معي عصي تانيين،",
+        "text_l2": "Okay, I have other sticks,",
         "timestamp": "01:02.00",
-        "timestamp_end": "01:04.50",
-        "text_l2": "Okay, I have other sticks,"
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "هلق بجيبهم حتى نكمل البرواز.",
+        "text_l2": "I'll get them now so we can finish the frame.",
         "timestamp": "01:04.50",
-        "timestamp_end": "01:07.50",
-        "text_l2": "I'll get them now so we can finish the frame."
+        "timestamp_end": "01:07.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "يلا، هاي مجموعة من العصي يا تنتون",
+        "text_l2": "Come on, here's a bunch of sticks, Tantoon",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:11.00",
-        "text_l2": "Come on, here's a bunch of sticks, Tantoon"
+        "timestamp_end": "01:11.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "ورح أسوي أحلى برواز.",
+        "text_l2": "I'm going to make the best frame.",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:13.50",
-        "text_l2": "I'm going to make the best frame."
+        "timestamp_end": "01:13.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "يا سلام، كثير كثير صار حلو يا جلجل.",
+        "text_l2": "Wow, it looks very, very nice, Jaljal.",
         "timestamp": "01:15.50",
-        "timestamp_end": "01:19.00",
-        "text_l2": "Wow, it looks very, very nice, Jaljal."
+        "timestamp_end": "01:19.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "أكيد أكيد، أنا ما بعمل",
+        "text_l2": "Of course, of course, I don't make",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.50",
-        "text_l2": "Of course, of course, I don't make"
+        "timestamp_end": "01:21.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "إلا كل إشي حلو.",
+        "text_l2": "anything but nice things.",
         "timestamp": "01:21.50",
-        "timestamp_end": "01:23.50",
-        "text_l2": "anything but nice things."
+        "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "أيوه، صح صح هيك يا جلجل.",
+        "text_l2": "Yes, exactly, exactly like that, Jaljal.",
         "timestamp": "02:00.00",
-        "timestamp_end": "02:02.00",
-        "text_l2": "Yes, exactly, exactly like that, Jaljal."
+        "timestamp_end": "02:02.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "شو رأيك؟",
+        "text_l2": "What do you think?",
         "timestamp": "02:02.00",
-        "timestamp_end": "02:03.50",
-        "text_l2": "What do you think?"
+        "timestamp_end": "02:03.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "كثير حلو، هلق هيك بنفع على الصورة.",
+        "text_l2": "Very nice, now this fits the picture.",
         "timestamp": "02:03.50",
-        "timestamp_end": "02:05.50",
-        "text_l2": "Very nice, now this fits the picture."
+        "timestamp_end": "02:05.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "وعندنا بكون أربع أضلاع،",
+        "text_l2": "And we have four sides,",
         "timestamp": "02:06.00",
-        "timestamp_end": "02:09.00",
-        "text_l2": "And we have four sides,"
+        "timestamp_end": "02:09.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "واحد، تنين، تلاتة، أربعة.",
+        "text_l2": "one, two, three, four.",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:13.50",
-        "text_l2": "one, two, three, four."
+        "timestamp_end": "02:13.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "بس بتعرفي يا تنتون،",
+        "text_l2": "But you know, Tantoon,",
         "timestamp": "02:15.00",
-        "timestamp_end": "02:17.50",
-        "text_l2": "But you know, Tantoon,"
+        "timestamp_end": "02:17.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "لازم نزين هادا البرواز حتى يكون أحلى.",
+        "text_l2": "we need to decorate this frame to make it nicer.",
         "timestamp": "02:17.50",
-        "timestamp_end": "02:20.50",
-        "text_l2": "we need to decorate this frame to make it nicer."
+        "timestamp_end": "02:20.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "فكرة رائعة كثير حلوة يا جلجل،",
+        "text_l2": "Great idea, very nice, Jaljal,",
         "timestamp": "02:20.50",
-        "timestamp_end": "02:23.50",
-        "text_l2": "Great idea, very nice, Jaljal,"
+        "timestamp_end": "02:23.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "يلا بإيش رح نزينه؟",
+        "text_l2": "Come on, what will we decorate it with?",
         "timestamp": "02:23.50",
-        "timestamp_end": "02:25.50",
-        "text_l2": "Come on, what will we decorate it with?"
+        "timestamp_end": "02:25.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "بمعكرونة ملونة،",
+        "text_l2": "With colored pasta,",
         "timestamp": "02:25.50",
-        "timestamp_end": "02:27.50",
-        "text_l2": "With colored pasta,"
+        "timestamp_end": "02:27.50"
       },
       {
         "id": "phrase_41",
         "text_l1": "خليني أروح وأجيبها.",
+        "text_l2": "Let me go and get it.",
         "timestamp": "02:27.50",
-        "timestamp_end": "02:29.50",
-        "text_l2": "Let me go and get it."
+        "timestamp_end": "02:29.50"
       },
       {
         "id": "phrase_42",
         "text_l1": "هاي المعكرونة،",
+        "text_l2": "Here's the pasta,",
         "timestamp": "02:29.50",
-        "timestamp_end": "02:31.50",
-        "text_l2": "Here's the pasta,"
+        "timestamp_end": "02:31.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "وهلق بنبدأ نزين البرواز.",
+        "text_l2": "and now we'll start decorating the frame.",
         "timestamp": "02:31.50",
-        "timestamp_end": "02:34.50",
-        "text_l2": "and now we'll start decorating the frame."
+        "timestamp_end": "02:34.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "وبهيك بكون عنا برواز مزين",
+        "text_l2": "And thus we'll have a decorated frame",
         "timestamp": "02:37.50",
-        "timestamp_end": "02:40.50",
-        "text_l2": "And thus we'll have a decorated frame"
+        "timestamp_end": "02:40.50"
       },
       {
         "id": "phrase_45",
         "text_l1": "للصورة الحلوة.",
+        "text_l2": "for the nice picture.",
         "timestamp": "02:40.50",
-        "timestamp_end": "02:41.80",
-        "text_l2": "for the nice picture."
+        "timestamp_end": "02:41.80"
       },
       {
         "id": "phrase_46",
         "text_l1": "حلو حلو حلو كثير يا جلجل،",
+        "text_l2": "Nice, nice, very nice, Jaljal,",
         "timestamp": "02:41.80",
-        "timestamp_end": "02:44.50",
-        "text_l2": "Nice, nice, very nice, Jaljal,"
+        "timestamp_end": "02:44.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "أنا كثير حبيته.",
+        "text_l2": "I really loved it.",
         "timestamp": "02:44.50",
-        "timestamp_end": "02:46.00",
-        "text_l2": "I really loved it."
+        "timestamp_end": "02:46.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "شايفه؟ وهلق ضل الصورة.",
+        "text_l2": "See? Now just the picture.",
         "timestamp": "02:46.00",
-        "timestamp_end": "02:48.00",
-        "text_l2": "See? Now just the picture."
+        "timestamp_end": "02:48.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "شو رأيك هلق؟",
+        "text_l2": "What do you think now?",
         "timestamp": "02:55.00",
-        "timestamp_end": "02:56.50",
-        "text_l2": "What do you think now?"
+        "timestamp_end": "02:56.50"
       },
       {
         "id": "phrase_50",
         "text_l1": "جلجل؟ نعم؟",
+        "text_l2": "Jaljal? Yes?",
         "timestamp": "02:57.00",
-        "timestamp_end": "02:59.00",
-        "text_l2": "Jaljal? Yes?"
+        "timestamp_end": "02:59.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "وين المعكرونة؟",
+        "text_l2": "Where's the pasta?",
         "timestamp": "02:59.00",
-        "timestamp_end": "03:00.50",
-        "text_l2": "Where's the pasta?"
+        "timestamp_end": "03:00.50"
       },
       {
         "id": "phrase_52",
         "text_l1": "عالبرواز هيها قدامك.",
+        "text_l2": "On the frame, it's right in front of you.",
         "timestamp": "03:00.50",
-        "timestamp_end": "03:03.50",
-        "text_l2": "On the frame, it's right in front of you."
+        "timestamp_end": "03:03.50"
       },
       {
         "id": "phrase_53",
         "text_l1": "هلق بعدلك إياها،",
+        "text_l2": "Now I'll fix it for you,",
         "timestamp": "03:04.50",
-        "timestamp_end": "03:07.50",
-        "text_l2": "Now I'll fix it for you,"
+        "timestamp_end": "03:07.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "هيك منيح؟",
+        "text_l2": "Like this, good?",
         "timestamp": "03:07.50",
-        "timestamp_end": "03:09.50",
-        "text_l2": "Like this, good?"
+        "timestamp_end": "03:09.50"
       },
       {
         "id": "phrase_55",
         "text_l1": "جلجل؟ نعم؟",
+        "text_l2": "Jaljal? Yes?",
         "timestamp": "03:11.50",
-        "timestamp_end": "03:13.50",
-        "text_l2": "Jaljal? Yes?"
+        "timestamp_end": "03:13.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "وين الصورة؟",
+        "text_l2": "Where's the picture?",
         "timestamp": "03:13.50",
-        "timestamp_end": "03:15.00",
-        "text_l2": "Where's the picture?"
+        "timestamp_end": "03:15.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "هلق بعدلك إياها.",
+        "text_l2": "Now I'll fix it for you.",
         "timestamp": "03:15.50",
-        "timestamp_end": "03:18.50",
-        "text_l2": "Now I'll fix it for you."
+        "timestamp_end": "03:18.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "شو رأيك؟",
+        "text_l2": "What do you think?",
         "timestamp": "03:22.50",
-        "timestamp_end": "03:24.50",
-        "text_l2": "What do you think?"
+        "timestamp_end": "03:24.50"
       },
       {
         "id": "phrase_59",
         "text_l1": "وين المعكرونة؟",
+        "text_l2": "Where's the pasta?",
         "timestamp": "03:24.50",
-        "timestamp_end": "03:26.50",
-        "text_l2": "Where's the pasta?"
+        "timestamp_end": "03:26.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "تنتون!",
+        "text_l2": "Tantoon!",
         "timestamp": "03:27.50",
-        "timestamp_end": "03:29.50",
-        "text_l2": "Tantoon!"
+        "timestamp_end": "03:29.50"
       },
       {
         "id": "phrase_61",
         "text_l1": "أنا لزقتها بالعكس.",
+        "text_l2": "I glued it on backwards.",
         "timestamp": "03:29.50",
-        "timestamp_end": "03:32.50",
-        "text_l2": "I glued it on backwards."
+        "timestamp_end": "03:32.50"
       }
     ],
-    "phrases_with_token_translations": "[جدو] سمسم رح يفرح كثير => [Grandpa] Simsim will be so happy\nجدو [سمسم] رح يفرح كثير => Grandpa [Simsim] will be so happy\nجدو سمسم [رح] يفرح كثير => Grandpa Simsim [will] be so happy\nجدو سمسم رح [يفرح] كثير => Grandpa Simsim will [be happy]\nجدو سمسم رح يفرح [كثير] => Grandpa Simsim will be [so] happy\n\n[لما] يعرف إنه إحنا عملناله برواز => [when] he finds out we made him a frame\nلما [يعرف] إنه إحنا عملناله برواز => when [he finds out] we made him a frame\nلما يعرف [إنه] إحنا عملناله برواز => that\nلما يعرف إنه [إحنا] عملناله برواز => when he finds out [we] made him a frame\nلما يعرف إنه إحنا [عملناله] برواز => when he finds out we [made him] a frame\nلما يعرف إنه إحنا عملناله [برواز] => when he finds out we made him [a frame]\n\n[وحطينا] فيه صورة إلنا كلنا. => [and put] a picture of all of us in it.\nوحطينا [فيه] صورة إلنا كلنا. => and put a picture of all of us [in it].\nوحطينا فيه [صورة] إلنا كلنا. => and put [a picture] of all of us in it.\nوحطينا فيه صورة [إلنا كلنا] => and put a picture [of all of us] in it.\n\n[هاي] أحلى مفاجأة رح تكون لجدو سمسم => [This] will be the sweetest surprise for Grandpa Simsim\nهاي [أحلى] مفاجأة رح تكون لجدو سمسم => This will be [the sweetest] surprise for Grandpa Simsim\nهاي أحلى [مفاجأة] رح تكون لجدو سمسم => This will be the sweetest [surprise] for Grandpa Simsim\nهاي أحلى مفاجأة [رح تكون] لجدو سمسم => This [will be] the sweetest surprise for Grandpa Simsim\nهاي أحلى مفاجأة رح تكون [لجدو] سمسم => This will be the sweetest surprise [for Grandpa] Simsim\nهاي أحلى مفاجأة رح تكون لجدو [سمسم] => This will be the sweetest surprise for Grandpa [Simsim]\n\n[لما] يشوف الصورة جوات البرواز => [when] he sees the picture inside the frame\nلما [يشوف] الصورة جوات البرواز => when [he sees] the picture inside the frame\nلما يشوف [الصورة] جوات البرواز => when he sees [the picture] inside the frame\nلما يشوف الصورة [جوات] البرواز => when he sees the picture [inside] the frame\nلما يشوف الصورة جوات [البرواز] => when he sees the picture inside [the frame]\n\n[اللي] إحنا رح نعمله إياه، => [that] we are going to make for him,\nاللي [إحنا] رح نعمله إياه، => that [we] are going to make for him,\nاللي إحنا [رح نعمله] إياه، => that we [are going to make] for him,\nاللي إحنا رح نعمله [إياه]، => for him # translates the indirect object pronoun structure used in the dialect\n\n[وهيني] جبت العصي منشان نبدأ => [And here] I brought the sticks so we can start\nوهيني [جبت] العصي منشان نبدأ => And here [I brought] the sticks so we can start\nوهيني جبت [العصي] منشان نبدأ => And here I brought [the sticks] so we can start\nوهيني جبت العصي [منشان] نبدأ => And here I brought the sticks [so] we can start\nوهيني جبت العصي منشان [نبدأ] => And here I brought the sticks so [we can start]\n\n[نعمل] البرواز. => [making] the frame.\nنعمل [البرواز]. => making [the frame].\n\n[جلجل]، أنا اخترت هادي الصورة => [Jaljal], I chose this picture\nجلجل، [أنا] اخترت هادي الصورة => Jaljal, [I] chose this picture\nجلجل، أنا [اخترت] هادي الصورة => Jaljal, I [chose] this picture\nجلجل، أنا اخترت [هادي] الصورة => Jaljal, I chose [this] picture\nجلجل، أنا اخترت هادي [الصورة] => Jaljal, I chose this [picture]\n\n[وجبت] الصمغ => [and brought] the glue\nوجبت [الصمغ] => and brought [the glue]\n\n[آه]، الصورة كثير حلوة => [Ah], the picture is very nice\nآه، [الصورة] كثير حلوة => Ah, [the picture] is very nice\nآه، الصورة [كثير] حلوة => Ah, the picture is [very] nice\nآه، الصورة كثير [حلوة] => Ah, the picture is very [nice]\n\n[وأنا] جاهز هلق نبدأ نعمل البرواز => [and I'm] ready now to start making the frame\nوأنا [جاهز] هلق نبدأ نعمل البرواز => and I'm [ready] now to start making the frame\nوأنا جاهز [هلق] نبدأ نعمل البرواز => and I'm ready [now] to start making the frame\nوأنا جاهز هلق [نبدأ] نعمل البرواز => and I'm ready now [to start] making the frame\nوأنا جاهز هلق نبدأ [نعمل] البرواز => and I'm ready now to start [making] the frame\nوأنا جاهز هلق نبدأ نعمل [البرواز] => and I'm ready now to start making [the frame]\n\n[المنيح] اللي رح نسويه، يلا. => [the nice one] we're going to make, come on.\nالمنيح [اللي] رح نسويه، يلا. => that\nالمنيح اللي [رح نسويه]، يلا. => the nice one [we're going to make], come on.\nالمنيح اللي رح نسويه، [يلا] => the nice one we're going to make, [come on]\n\n[يلا] نبدأ => [Let's] get started\nيلا [نبدأ] => Let's [get started]\n\n[أيوه] هيك، كمان. => [Yes] like that, more.\nأيوه [هيك]، كمان. => Yes [like that], more.\nأيوه هيك، [كمان]. => Yes like that, [more].\n\n[يا] عيني عليك يا عيني عليك. => [Oh], you're so cute, oh you're so cute.\nيا [عيني عليك] يا عيني عليك. => Oh, [you're so cute], oh you're so cute.\nيا عيني عليك [يا] عيني عليك. => Oh, you're so cute, [oh] you're so cute.\nيا عيني عليك يا [عيني عليك]. => Oh, you're so cute, oh [you're so cute].\n\n[جلجل]. نعم؟ => [Jaljal]. Yes?\nجلجل. [نعم]؟ => Jaljal. [Yes]?\n\n[هادا] البرواز ما رح يزبط. => [This] frame isn't going to work.\nهادا [البرواز] ما رح يزبط. => This [frame] isn't going to work.\nهادا البرواز [ما رح] يزبط. => This frame [isn't going to] work.\nهادا البرواز ما رح [يزبط]. => This frame isn't going to [work].\n\n[ليش]؟ => [Why]?\n\n[لأنه] هادا مثلث وإله تلت أضلاع، => [Because] this is a triangle and it has three sides,\nلأنه [هادا] مثلث وإله تلت أضلاع، => Because [this] is a triangle and it has three sides,\nلأنه هادا [مثلث] وإله تلت أضلاع، => Because this is a [triangle] and it has three sides,\nلأنه هادا مثلث [وإله] تلت أضلاع، => Because this is a triangle [and it has] three sides,\nلأنه هادا مثلث وإله [تلت] أضلاع، => Because this is a triangle and it has [three] sides,\nلأنه هادا مثلث وإله تلت [أضلاع]، => Because this is a triangle and it has three [sides],\n\n[و]الصورة اللي عنا فيها أربع أضلاع. => [and] the picture we have has four sides.\nو[الصورة] اللي عنا فيها أربع أضلاع. => and [the picture] we have has four sides.\nوالصورة [اللي] عنا فيها أربع أضلاع. => that, which\nوالصورة اللي [عنا] فيها أربع أضلاع. => and the picture [we have] has four sides.\nوالصورة اللي عنا [فيها] أربع أضلاع. => and the picture we have [has] four sides.\nوالصورة اللي عنا فيها [أربع] أضلاع. => and the picture we have has [four] sides.\nوالصورة اللي عنا فيها أربع [أضلاع]. => and the picture we have has four [sides]\n\n[مزبوط] مزبوط، هادا واحد، => [Right], right, this is one,\nمزبوط [مزبوط]، هادا واحد، => Right, [right], this is one,\nمزبوط مزبوط، [هادا] واحد، => Right, right, [this is] one,\nمزبوط مزبوط، هادا [واحد]، => Right, right, this is [one],\n\n[تنين]، تلاتة، صح. => [two], three, correct.\nتنين، [تلاتة]، صح. => two, [three], correct.\nتنين، تلاتة، [صح]. => two, three, [correct]\n\n[طيب]، أنا معي عصي تانيين، => [Okay], I have other sticks,\nطيب، [أنا] معي عصي تانيين، => Okay, [I] have other sticks,\nطيب، أنا [معي] عصي تانيين، => Okay, I [have] other sticks,\nطيب، أنا معي [عصي] تانيين، => Okay, I have other [sticks],\nطيب، أنا معي عصي [تانيين]، => Okay, I have [other] sticks,\n\n[هلق] بجيبهم حتى نكمل البرواز. => I'll get them [now] so we can finish the frame.\nهلق [بجيبهم] حتى نكمل البرواز. => [I'll get them] now so we can finish the frame.\nهلق بجيبهم [حتى] نكمل البرواز. => I'll get them now [so] we can finish the frame.\nهلق بجيبهم حتى [نكمل] البرواز. => I'll get them now so [we can finish] the frame.\nهلق بجيبهم حتى نكمل [البرواز]. => I'll get them now so we can finish [the frame].\n\n[يلا]، هاي مجموعة من العصي يا تنتون => [Come on], here's a bunch of sticks, Tantoon\nيلا، [هاي] مجموعة من العصي يا تنتون => [here's] a bunch of sticks, Tantoon\nيلا، هاي [مجموعة] من العصي يا تنتون => here's [a bunch] of sticks, Tantoon\nيلا، هاي مجموعة [من] العصي يا تنتون => here's a bunch [of] sticks, Tantoon\nيلا، هاي مجموعة من [العصي] يا تنتون => here's a bunch of [sticks], Tantoon\nيلا، هاي مجموعة من العصي يا [تنتون] => here's a bunch of sticks, [Tantoon]\n\n[ورح] أسوي أحلى برواز. => [I'm going to] make the best frame.\nورح [أسوي] أحلى برواز. => I'm going to [make] the best frame.\nورح أسوي [أحلى] برواز. => I'm going to make [the best] frame.\nورح أسوي أحلى [برواز]. => I'm going to make the best [frame].\n\n[يا سلام]، كثير كثير صار حلو يا جلجل. => [Wow], it looks very, very nice, Jaljal.\nيا سلام، [كثير كثير] صار حلو يا جلجل. => Wow, it looks [very, very] nice, Jaljal.\nيا سلام، كثير كثير [صار] حلو يا جلجل. => [it looks] # 'sar' literally means 'became' but implies 'now looks' or 'turned out' in this context\nيا سلام، كثير كثير صار [حلو] يا جلجل. => Wow, it looks very, very [nice], Jaljal.\nيا سلام، كثير كثير صار حلو [يا جلجل]. => Wow, it looks very, very nice, [Jaljal] # grouped vocative particle with the name as it doesn't have a direct English equivalent here\n\n[أكيد] أكيد، أنا ما بعمل => [Of course], of course, I don't make\nأكيد [أكيد]، أنا ما بعمل => Of course, [of course], I don't make\nأكيد أكيد، [أنا] ما بعمل => Of course, of course, [I] don't make\nأكيد أكيد، أنا [ما بعمل] => Of course, of course, I [don't make]\n\n[إلا] كل إشي حلو. => anything [but] nice things.\nإلا [كل إشي] حلو. => [anything] but nice things.\nإلا كل إشي [حلو]. => nice things # 'حلو' literally means 'sweet' or 'nice', but corresponds to 'nice things' in this context\n\n[أيوه]، صح صح هيك يا جلجل. => [Yes], exactly, exactly like that, Jaljal.\nأيوه، [صح] صح هيك يا جلجل. => Yes, [exactly], exactly like that, Jaljal.\nأيوه، صح [صح] هيك يا جلجل. => Yes, exactly, [exactly] like that, Jaljal.\nأيوه، صح صح [هيك] يا جلجل. => Yes, exactly, exactly [like that], Jaljal.\nأيوه، صح صح هيك [يا جلجل]. => Yes, exactly, exactly like that, [Jaljal].\n\n[شو] رأيك؟ => [What] do you think?\nشو [رأيك]؟ => What [do you think]?\n\n[كثير] حلو، هلق هيك بنفع على الصورة. => [Very] nice, now this fits the picture.\nكثير [حلو]، هلق هيك بنفع على الصورة. => Very [nice], now this fits the picture.\nكثير حلو، [هلق] هيك بنفع على الصورة. => Very nice, [now] this fits the picture.\nكثير حلو، هلق [هيك] بنفع على الصورة. => Very nice, now [this] fits the picture.\nكثير حلو، هلق هيك [بنفع] على الصورة. => Very nice, now this [fits] the picture.\nكثير حلو، هلق هيك بنفع [على] الصورة. => on\nكثير حلو، هلق هيك بنفع على [الصورة]. => Very nice, now this fits [the picture]\n\n[و]عندنا بكون أربع أضلاع، => [And] we have four sides,\nو[عندنا] بكون أربع أضلاع، => And [we have] four sides,\nوعندنا [بكون] أربع أضلاع، => there will be, there are\nوعندنا بكون [أربع] أضلاع، => And we have [four] sides,\nوعندنا بكون أربع [أضلاع]، => And we have four [sides],\n\n[واحد]، تنين، تلاتة، أربعة. => [one], two, three, four.\nواحد، [تنين]، تلاتة، أربعة. => one, [two], three, four.\nواحد، تنين، [تلاتة]، أربعة. => one, two, [three], four.\nواحد، تنين، تلاتة، [أربعة]. => one, two, three, [four].\n\n[بس] بتعرفي يا تنتون، => [But] you know, Tantoon,\nبس [بتعرفي] يا تنتون، => But [you know], Tantoon,\nبس بتعرفي [يا] تنتون، => vocative particle (O)\nبس بتعرفي يا [تنتون]، => But you know, [Tantoon],\n\n[لازم] نزين هادا البرواز حتى يكون أحلى. => [we need] to decorate this frame to make it nicer.\nلازم [نزين] هادا البرواز حتى يكون أحلى. => we need to [decorate] this frame to make it nicer.\nلازم نزين [هادا] البرواز حتى يكون أحلى. => we need to decorate [this] frame to make it nicer.\nلازم نزين هادا [البرواز] حتى يكون أحلى. => we need to decorate this [frame] to make it nicer.\nلازم نزين هادا البرواز [حتى] يكون أحلى. => we need to decorate this frame [to] make it nicer.\nلازم نزين هادا البرواز حتى [يكون] أحلى. => be, become\nلازم نزين هادا البرواز حتى يكون [أحلى] => we need to decorate this frame to make it [nicer]\n\n[فكرة] رائعة كثير حلوة يا جلجل، => Great [idea], very nice, Jaljal,\nفكرة [رائعة] كثير حلوة يا جلجل، => [Great] idea, very nice, Jaljal,\nفكرة رائعة [كثير] حلوة يا جلجل، => Great idea, [very] nice, Jaljal,\nفكرة رائعة كثير [حلوة] يا جلجل، => Great idea, very [nice], Jaljal,\nفكرة رائعة كثير حلوة يا [جلجل]، => Great idea, very nice, [Jaljal],\n\n[يلا] بإيش رح نزينه؟ => [Come on], what will we decorate it with?\nيلا [بإيش] رح نزينه؟ => with what\nيلا بإيش [رح] نزينه؟ => Come on, what [will] we decorate it with\nيلا بإيش رح [نزينه]؟ => Come on, what will [we decorate it] with?\n\n[بمعكرونة] ملونة، => with pasta\nبمعكرونة [ملونة]، => With [colored] pasta\n\n[خليني] أروح وأجيبها. => [Let me] go and get it.\nخليني [أروح] وأجيبها. => Let me [go] and get it.\nخليني أروح [و]أجيبها. => Let me go [and] get it.\nخليني أروح و[أجيبها]. => Let me go and [get it].\n\n[هاي] المعكرونة، => [Here's] the pasta,\nهاي [المعكرونة]، => Here's [the pasta],\n\n[وهلق] بنبدأ نزين البرواز. => [and now] we'll start decorating the frame.\nوهلق [بنبدأ] نزين البرواز. => and now [we'll start] decorating the frame.\nوهلق بنبدأ [نزين] البرواز. => and now we'll start [decorating] the frame.\nوهلق بنبدأ نزين [البرواز]. => and now we'll start decorating [the frame]\n\n[وبهيك] بكون عنا برواز مزين => [And thus] we'll have a decorated frame\nوبهيك [بكون عنا] برواز مزين => [we'll have]\nوبهيك بكون عنا [برواز] مزين => And thus we'll have a decorated [frame]\nوبهيك بكون عنا برواز [مزين] => And thus we'll have a [decorated] frame\n\n[للصورة] الحلوة. => [for the] nice [picture.]\nللصورة [الحلوة]. => for the [nice] picture.\n\n[حلو] حلو حلو كثير يا جلجل، => [Nice], nice, very nice, Jaljal,\nحلو [حلو] حلو كثير يا جلجل، => Nice, [nice], very nice, Jaljal,\nحلو حلو [حلو كثير] يا جلجل، => Nice, nice, [very nice], Jaljal,\nحلو حلو حلو كثير [يا جلجل]، => Nice, nice, very nice, [Jaljal],\n\n[أنا] كثير حبيته. => [I] really loved it.\nأنا [كثير] حبيته. => I [really] loved it.\nأنا كثير [حبيته]. => I [loved it].\n\n[شايفه]؟ وهلق ضل الصورة. => [See]? Now just the picture.\nشايفه؟ [وهلق] ضل الصورة. => See? [Now] just the picture.\nشايفه؟ وهلق [ضل] الصورة. => See? Now [just] the picture.\nشايفه؟ وهلق ضل [الصورة]. => See? Now just [the picture]\n\n[شو] رأيك هلق؟ => [What] do you think now?\nشو [رأيك] هلق؟ => What [do you think] now?\nشو رأيك [هلق]؟ => What do you think [now]?\n\n[جلجل]؟ نعم؟ => [Jaljal]? Yes?\nجلجل؟ [نعم]؟ => Jaljal? [Yes]?\n\n[وين] المعكرونة؟ => [Where's] the pasta?\nوين [المعكرونة]؟ => Where's [the pasta]?\n\n[عالبرواز] هيها قدامك. => [On the frame], it's right in front of you.\nعالبرواز [هيها] قدامك. => On the frame, [it's] right in front of you.\nعالبرواز هيها [قدامك]. => On the frame, it's right [in front of you.]\n\n[هلق] بعدلك إياها، => [Now] I'll fix it for you,\nهلق [بعدلك] إياها، => I will fix for you\nهلق بعدلك [إياها]، => Now I'll fix [it] for you,\n\n[هيك] منيح؟ => [Like this], good?\nهيك [منيح]؟ => Like this, [good]?\n\n[جلجل]؟ نعم؟ => [Jaljal]? Yes?\nجلجل؟ [نعم]؟ => Jaljal? [Yes]?\n\n[وين] الصورة؟ => [Where's] the picture?\nوين [الصورة]؟ => Where's [the picture]?\n\n[هلق] بعدلك إياها. => [Now] I'll fix it for you.\nهلق [بعدلك] إياها. => [I'll fix] it [for you].\nهلق بعدلك [إياها]. => Now I'll fix [it] for you.\n\n[شو] رأيك؟ => [What] do you think?\nشو [رأيك]؟ => What [do you think]?\n\n[وين] المعكرونة؟ => [Where's] the pasta?\nوين [المعكرونة]؟ => Where's [the pasta]?\n\n[تنتون]! => [Tantoon]!\n\n[أنا] لزقتها بالعكس => [I] glued it on backwards\nأنا [لزقتها] بالعكس => [glued it] on backwards\nأنا لزقتها [بالعكس] => I glued it on [backwards]\n\n",
-    "lessons": "# تحضير المفاجأة لجدو سمسم\n00:00.00 جدو سمسم رح يفرح كثير\n00:02.50 لما يعرف إنه إحنا عملناله برواز\n00:04.80 وحطينا فيه صورة إلنا كلنا.\n00:07.00 هاي أحلى مفاجأة رح تكون لجدو سمسم\n00:09.80 لما يشوف الصورة جوات البرواز\n00:12.50 اللي إحنا رح نعمله إياه،\n00:14.00 وهيني جبت العصي منشان نبدأ\n00:16.00 نعمل البرواز.\n\n# بداية صنع البرواز\n00:17.50 جلجل، أنا اخترت هادي الصورة\n00:19.50 وجبت الصمغ.\n00:21.00 آه، الصورة كثير حلوة\n00:23.00 وأنا جاهز هلق نبدأ نعمل البرواز\n00:25.50 المنيح اللي رح نسويه، يلا.\n00:27.80 يلا نبدأ.\n00:32.50 أيوه هيك، كمان.\n00:36.50 يا عيني عليك يا عيني عليك.\n\n# مشكلة شكل البرواز\n00:39.00 جلجل. نعم؟\n00:41.00 هادا البرواز ما رح يزبط.\n00:44.50 ليش؟\n00:46.00 لأنه هادا مثلث وإله تلت أضلاع،\n00:49.00 والصورة اللي عنا فيها أربع أضلاع.\n00:54.00 مزبوط مزبوط، هادا واحد،\n00:57.00 تنين، تلاتة، صح.\n01:02.00 طيب، أنا معي عصي تانيين،\n01:04.50 هلق بجيبهم حتى نكمل البرواز.\n\n# إكمال البرواز\n01:08.00 يلا، هاي مجموعة من العصي يا تنتون\n01:11.00 ورح أسوي أحلى برواز.\n01:15.50 يا سلام، كثير كثير صار حلو يا جلجل.\n01:19.00 أكيد أكيد، أنا ما بعمل\n01:21.50 إلا كل إشي حلو.\n02:00.00 أيوه، صح صح هيك يا جلجل.\n02:02.00 شو رأيك؟\n02:03.50 كثير حلو، هلق هيك بنفع على الصورة.\n02:06.00 وعندنا بكون أربع أضلاع،\n02:09.00 واحد، تنين، تلاتة، أربعة.\n\n# تزيين البرواز\n02:15.00 بس بتعرفي يا تنتون،\n02:17.50 لازم نزين هادا البرواز حتى يكون أحلى.\n02:20.50 فكرة رائعة كثير حلوة يا جلجل،\n02:23.50 يلا بإيش رح نزينه؟\n02:25.50 بمعكرونة ملونة،\n02:27.50 خليني أروح وأجيبها.\n02:29.50 هاي المعكرونة،\n02:31.50 وهلق بنبدأ نزين البرواز.\n02:37.50 وبهيك بكون عنا برواز مزين\n02:40.50 للصورة الحلوة.\n\n# المشاكل النهائية\n02:41.80 حلو حلو حلو كثير يا جلجل،\n02:44.50 أنا كثير حبيته.\n02:46.00 شايفه؟ وهلق ضل الصورة.\n02:55.00 شو رأيك هلق؟\n02:57.00 جلجل؟ نعم؟\n02:59.00 وين المعكرونة؟\n03:00.50 عالبرواز هيها قدامك.\n03:04.50 هلق بعدلك إياها،\n03:07.50 هيك منيح؟\n03:11.50 جلجل؟ نعم؟\n03:13.50 وين الصورة؟\n03:15.50 هلق بعدلك إياها.\n03:22.50 شو رأيك؟\n03:24.50 وين المعكرونة؟\n03:27.50 تنتون!\n03:29.50 أنا لزقتها بالعكس.",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[جدو] سمسم رح يفرح كثير => [Grandpa] Simsim will be so happy\nجدو [سمسم] رح يفرح كثير => Grandpa [Simsim] will be so happy\nجدو سمسم [رح] يفرح كثير => Grandpa Simsim [will] be so happy\nجدو سمسم رح [يفرح] كثير => Grandpa Simsim will [be happy]\nجدو سمسم رح يفرح [كثير] => Grandpa Simsim will be [so] happy\n\n[لما] يعرف إنه إحنا عملناله برواز => [when] he finds out we made him a frame\nلما [يعرف] إنه إحنا عملناله برواز => when [he finds out] we made him a frame\nلما يعرف [إنه] إحنا عملناله برواز => that\nلما يعرف إنه [إحنا] عملناله برواز => when he finds out [we] made him a frame\nلما يعرف إنه إحنا [عملناله] برواز => when he finds out we [made him] a frame\nلما يعرف إنه إحنا عملناله [برواز] => when he finds out we made him [a frame]\n\n[وحطينا] فيه صورة إلنا كلنا. => [and put] a picture of all of us in it.\nوحطينا [فيه] صورة إلنا كلنا. => and put a picture of all of us [in it].\nوحطينا فيه [صورة] إلنا كلنا. => and put [a picture] of all of us in it.\nوحطينا فيه صورة [إلنا كلنا] => and put a picture [of all of us] in it.\n\n[هاي] أحلى مفاجأة رح تكون لجدو سمسم => [This] will be the sweetest surprise for Grandpa Simsim\nهاي [أحلى] مفاجأة رح تكون لجدو سمسم => This will be [the sweetest] surprise for Grandpa Simsim\nهاي أحلى [مفاجأة] رح تكون لجدو سمسم => This will be the sweetest [surprise] for Grandpa Simsim\nهاي أحلى مفاجأة [رح تكون] لجدو سمسم => This [will be] the sweetest surprise for Grandpa Simsim\nهاي أحلى مفاجأة رح تكون [لجدو] سمسم => This will be the sweetest surprise [for Grandpa] Simsim\nهاي أحلى مفاجأة رح تكون لجدو [سمسم] => This will be the sweetest surprise for Grandpa [Simsim]\n\n[لما] يشوف الصورة جوات البرواز => [when] he sees the picture inside the frame\nلما [يشوف] الصورة جوات البرواز => when [he sees] the picture inside the frame\nلما يشوف [الصورة] جوات البرواز => when he sees [the picture] inside the frame\nلما يشوف الصورة [جوات] البرواز => when he sees the picture [inside] the frame\nلما يشوف الصورة جوات [البرواز] => when he sees the picture inside [the frame]\n\n[اللي] إحنا رح نعمله إياه، => [that] we are going to make for him,\nاللي [إحنا] رح نعمله إياه، => that [we] are going to make for him,\nاللي إحنا [رح نعمله] إياه، => that we [are going to make] for him,\nاللي إحنا رح نعمله [إياه]، => for him # translates the indirect object pronoun structure used in the dialect\n\n[وهيني] جبت العصي منشان نبدأ => [And here] I brought the sticks so we can start\nوهيني [جبت] العصي منشان نبدأ => And here [I brought] the sticks so we can start\nوهيني جبت [العصي] منشان نبدأ => And here I brought [the sticks] so we can start\nوهيني جبت العصي [منشان] نبدأ => And here I brought the sticks [so] we can start\nوهيني جبت العصي منشان [نبدأ] => And here I brought the sticks so [we can start]\n\n[نعمل] البرواز. => [making] the frame.\nنعمل [البرواز]. => making [the frame].\n\n[جلجل]، أنا اخترت هادي الصورة => [Jaljal], I chose this picture\nجلجل، [أنا] اخترت هادي الصورة => Jaljal, [I] chose this picture\nجلجل، أنا [اخترت] هادي الصورة => Jaljal, I [chose] this picture\nجلجل، أنا اخترت [هادي] الصورة => Jaljal, I chose [this] picture\nجلجل، أنا اخترت هادي [الصورة] => Jaljal, I chose this [picture]\n\n[وجبت] الصمغ => [and brought] the glue\nوجبت [الصمغ] => and brought [the glue]\n\n[آه]، الصورة كثير حلوة => [Ah], the picture is very nice\nآه، [الصورة] كثير حلوة => Ah, [the picture] is very nice\nآه، الصورة [كثير] حلوة => Ah, the picture is [very] nice\nآه، الصورة كثير [حلوة] => Ah, the picture is very [nice]\n\n[وأنا] جاهز هلق نبدأ نعمل البرواز => [and I'm] ready now to start making the frame\nوأنا [جاهز] هلق نبدأ نعمل البرواز => and I'm [ready] now to start making the frame\nوأنا جاهز [هلق] نبدأ نعمل البرواز => and I'm ready [now] to start making the frame\nوأنا جاهز هلق [نبدأ] نعمل البرواز => and I'm ready now [to start] making the frame\nوأنا جاهز هلق نبدأ [نعمل] البرواز => and I'm ready now to start [making] the frame\nوأنا جاهز هلق نبدأ نعمل [البرواز] => and I'm ready now to start making [the frame]\n\n[المنيح] اللي رح نسويه، يلا. => [the nice one] we're going to make, come on.\nالمنيح [اللي] رح نسويه، يلا. => that\nالمنيح اللي [رح نسويه]، يلا. => the nice one [we're going to make], come on.\nالمنيح اللي رح نسويه، [يلا] => the nice one we're going to make, [come on]\n\n[يلا] نبدأ => [Let's] get started\nيلا [نبدأ] => Let's [get started]\n\n[أيوه] هيك، كمان. => [Yes] like that, more.\nأيوه [هيك]، كمان. => Yes [like that], more.\nأيوه هيك، [كمان]. => Yes like that, [more].\n\n[يا] عيني عليك يا عيني عليك. => [Oh], you're so cute, oh you're so cute.\nيا [عيني عليك] يا عيني عليك. => Oh, [you're so cute], oh you're so cute.\nيا عيني عليك [يا] عيني عليك. => Oh, you're so cute, [oh] you're so cute.\nيا عيني عليك يا [عيني عليك]. => Oh, you're so cute, oh [you're so cute].\n\n[جلجل]. نعم؟ => [Jaljal]. Yes?\nجلجل. [نعم]؟ => Jaljal. [Yes]?\n\n[هادا] البرواز ما رح يزبط. => [This] frame isn't going to work.\nهادا [البرواز] ما رح يزبط. => This [frame] isn't going to work.\nهادا البرواز [ما رح] يزبط. => This frame [isn't going to] work.\nهادا البرواز ما رح [يزبط]. => This frame isn't going to [work].\n\n[ليش]؟ => [Why]?\n\n[لأنه] هادا مثلث وإله تلت أضلاع، => [Because] this is a triangle and it has three sides,\nلأنه [هادا] مثلث وإله تلت أضلاع، => Because [this] is a triangle and it has three sides,\nلأنه هادا [مثلث] وإله تلت أضلاع، => Because this is a [triangle] and it has three sides,\nلأنه هادا مثلث [وإله] تلت أضلاع، => Because this is a triangle [and it has] three sides,\nلأنه هادا مثلث وإله [تلت] أضلاع، => Because this is a triangle and it has [three] sides,\nلأنه هادا مثلث وإله تلت [أضلاع]، => Because this is a triangle and it has three [sides],\n\n[و]الصورة اللي عنا فيها أربع أضلاع. => [and] the picture we have has four sides.\nو[الصورة] اللي عنا فيها أربع أضلاع. => and [the picture] we have has four sides.\nوالصورة [اللي] عنا فيها أربع أضلاع. => that, which\nوالصورة اللي [عنا] فيها أربع أضلاع. => and the picture [we have] has four sides.\nوالصورة اللي عنا [فيها] أربع أضلاع. => and the picture we have [has] four sides.\nوالصورة اللي عنا فيها [أربع] أضلاع. => and the picture we have has [four] sides.\nوالصورة اللي عنا فيها أربع [أضلاع]. => and the picture we have has four [sides]\n\n[مزبوط] مزبوط، هادا واحد، => [Right], right, this is one,\nمزبوط [مزبوط]، هادا واحد، => Right, [right], this is one,\nمزبوط مزبوط، [هادا] واحد، => Right, right, [this is] one,\nمزبوط مزبوط، هادا [واحد]، => Right, right, this is [one],\n\n[تنين]، تلاتة، صح. => [two], three, correct.\nتنين، [تلاتة]، صح. => two, [three], correct.\nتنين، تلاتة، [صح]. => two, three, [correct]\n\n[طيب]، أنا معي عصي تانيين، => [Okay], I have other sticks,\nطيب، [أنا] معي عصي تانيين، => Okay, [I] have other sticks,\nطيب، أنا [معي] عصي تانيين، => Okay, I [have] other sticks,\nطيب، أنا معي [عصي] تانيين، => Okay, I have other [sticks],\nطيب، أنا معي عصي [تانيين]، => Okay, I have [other] sticks,\n\n[هلق] بجيبهم حتى نكمل البرواز. => I'll get them [now] so we can finish the frame.\nهلق [بجيبهم] حتى نكمل البرواز. => [I'll get them] now so we can finish the frame.\nهلق بجيبهم [حتى] نكمل البرواز. => I'll get them now [so] we can finish the frame.\nهلق بجيبهم حتى [نكمل] البرواز. => I'll get them now so [we can finish] the frame.\nهلق بجيبهم حتى نكمل [البرواز]. => I'll get them now so we can finish [the frame].\n\n[يلا]، هاي مجموعة من العصي يا تنتون => [Come on], here's a bunch of sticks, Tantoon\nيلا، [هاي] مجموعة من العصي يا تنتون => [here's] a bunch of sticks, Tantoon\nيلا، هاي [مجموعة] من العصي يا تنتون => here's [a bunch] of sticks, Tantoon\nيلا، هاي مجموعة [من] العصي يا تنتون => here's a bunch [of] sticks, Tantoon\nيلا، هاي مجموعة من [العصي] يا تنتون => here's a bunch of [sticks], Tantoon\nيلا، هاي مجموعة من العصي يا [تنتون] => here's a bunch of sticks, [Tantoon]\n\n[ورح] أسوي أحلى برواز. => [I'm going to] make the best frame.\nورح [أسوي] أحلى برواز. => I'm going to [make] the best frame.\nورح أسوي [أحلى] برواز. => I'm going to make [the best] frame.\nورح أسوي أحلى [برواز]. => I'm going to make the best [frame].\n\n[يا سلام]، كثير كثير صار حلو يا جلجل. => [Wow], it looks very, very nice, Jaljal.\nيا سلام، [كثير كثير] صار حلو يا جلجل. => Wow, it looks [very, very] nice, Jaljal.\nيا سلام، كثير كثير [صار] حلو يا جلجل. => [it looks] # 'sar' literally means 'became' but implies 'now looks' or 'turned out' in this context\nيا سلام، كثير كثير صار [حلو] يا جلجل. => Wow, it looks very, very [nice], Jaljal.\nيا سلام، كثير كثير صار حلو [يا جلجل]. => Wow, it looks very, very nice, [Jaljal] # grouped vocative particle with the name as it doesn't have a direct English equivalent here\n\n[أكيد] أكيد، أنا ما بعمل => [Of course], of course, I don't make\nأكيد [أكيد]، أنا ما بعمل => Of course, [of course], I don't make\nأكيد أكيد، [أنا] ما بعمل => Of course, of course, [I] don't make\nأكيد أكيد، أنا [ما بعمل] => Of course, of course, I [don't make]\n\n[إلا] كل إشي حلو. => anything [but] nice things.\nإلا [كل إشي] حلو. => [anything] but nice things.\nإلا كل إشي [حلو]. => nice things # 'حلو' literally means 'sweet' or 'nice', but corresponds to 'nice things' in this context\n\n[أيوه]، صح صح هيك يا جلجل. => [Yes], exactly, exactly like that, Jaljal.\nأيوه، [صح] صح هيك يا جلجل. => Yes, [exactly], exactly like that, Jaljal.\nأيوه، صح [صح] هيك يا جلجل. => Yes, exactly, [exactly] like that, Jaljal.\nأيوه، صح صح [هيك] يا جلجل. => Yes, exactly, exactly [like that], Jaljal.\nأيوه، صح صح هيك [يا جلجل]. => Yes, exactly, exactly like that, [Jaljal].\n\n[شو] رأيك؟ => [What] do you think?\nشو [رأيك]؟ => What [do you think]?\n\n[كثير] حلو، هلق هيك بنفع على الصورة. => [Very] nice, now this fits the picture.\nكثير [حلو]، هلق هيك بنفع على الصورة. => Very [nice], now this fits the picture.\nكثير حلو، [هلق] هيك بنفع على الصورة. => Very nice, [now] this fits the picture.\nكثير حلو، هلق [هيك] بنفع على الصورة. => Very nice, now [this] fits the picture.\nكثير حلو، هلق هيك [بنفع] على الصورة. => Very nice, now this [fits] the picture.\nكثير حلو، هلق هيك بنفع [على] الصورة. => on\nكثير حلو، هلق هيك بنفع على [الصورة]. => Very nice, now this fits [the picture]\n\n[و]عندنا بكون أربع أضلاع، => [And] we have four sides,\nو[عندنا] بكون أربع أضلاع، => And [we have] four sides,\nوعندنا [بكون] أربع أضلاع، => there will be, there are\nوعندنا بكون [أربع] أضلاع، => And we have [four] sides,\nوعندنا بكون أربع [أضلاع]، => And we have four [sides],\n\n[واحد]، تنين، تلاتة، أربعة. => [one], two, three, four.\nواحد، [تنين]، تلاتة، أربعة. => one, [two], three, four.\nواحد، تنين، [تلاتة]، أربعة. => one, two, [three], four.\nواحد، تنين، تلاتة، [أربعة]. => one, two, three, [four].\n\n[بس] بتعرفي يا تنتون، => [But] you know, Tantoon,\nبس [بتعرفي] يا تنتون، => But [you know], Tantoon,\nبس بتعرفي [يا] تنتون، => vocative particle (O)\nبس بتعرفي يا [تنتون]، => But you know, [Tantoon],\n\n[لازم] نزين هادا البرواز حتى يكون أحلى. => [we need] to decorate this frame to make it nicer.\nلازم [نزين] هادا البرواز حتى يكون أحلى. => we need to [decorate] this frame to make it nicer.\nلازم نزين [هادا] البرواز حتى يكون أحلى. => we need to decorate [this] frame to make it nicer.\nلازم نزين هادا [البرواز] حتى يكون أحلى. => we need to decorate this [frame] to make it nicer.\nلازم نزين هادا البرواز [حتى] يكون أحلى. => we need to decorate this frame [to] make it nicer.\nلازم نزين هادا البرواز حتى [يكون] أحلى. => be, become\nلازم نزين هادا البرواز حتى يكون [أحلى] => we need to decorate this frame to make it [nicer]\n\n[فكرة] رائعة كثير حلوة يا جلجل، => Great [idea], very nice, Jaljal,\nفكرة [رائعة] كثير حلوة يا جلجل، => [Great] idea, very nice, Jaljal,\nفكرة رائعة [كثير] حلوة يا جلجل، => Great idea, [very] nice, Jaljal,\nفكرة رائعة كثير [حلوة] يا جلجل، => Great idea, very [nice], Jaljal,\nفكرة رائعة كثير حلوة يا [جلجل]، => Great idea, very nice, [Jaljal],\n\n[يلا] بإيش رح نزينه؟ => [Come on], what will we decorate it with?\nيلا [بإيش] رح نزينه؟ => with what\nيلا بإيش [رح] نزينه؟ => Come on, what [will] we decorate it with\nيلا بإيش رح [نزينه]؟ => Come on, what will [we decorate it] with?\n\n[بمعكرونة] ملونة، => with pasta\nبمعكرونة [ملونة]، => With [colored] pasta\n\n[خليني] أروح وأجيبها. => [Let me] go and get it.\nخليني [أروح] وأجيبها. => Let me [go] and get it.\nخليني أروح [و]أجيبها. => Let me go [and] get it.\nخليني أروح و[أجيبها]. => Let me go and [get it].\n\n[هاي] المعكرونة، => [Here's] the pasta,\nهاي [المعكرونة]، => Here's [the pasta],\n\n[وهلق] بنبدأ نزين البرواز. => [and now] we'll start decorating the frame.\nوهلق [بنبدأ] نزين البرواز. => and now [we'll start] decorating the frame.\nوهلق بنبدأ [نزين] البرواز. => and now we'll start [decorating] the frame.\nوهلق بنبدأ نزين [البرواز]. => and now we'll start decorating [the frame]\n\n[وبهيك] بكون عنا برواز مزين => [And thus] we'll have a decorated frame\nوبهيك [بكون عنا] برواز مزين => [we'll have]\nوبهيك بكون عنا [برواز] مزين => And thus we'll have a decorated [frame]\nوبهيك بكون عنا برواز [مزين] => And thus we'll have a [decorated] frame\n\n[للصورة] الحلوة. => [for the] nice [picture.]\nللصورة [الحلوة]. => for the [nice] picture.\n\n[حلو] حلو حلو كثير يا جلجل، => [Nice], nice, very nice, Jaljal,\nحلو [حلو] حلو كثير يا جلجل، => Nice, [nice], very nice, Jaljal,\nحلو حلو [حلو كثير] يا جلجل، => Nice, nice, [very nice], Jaljal,\nحلو حلو حلو كثير [يا جلجل]، => Nice, nice, very nice, [Jaljal],\n\n[أنا] كثير حبيته. => [I] really loved it.\nأنا [كثير] حبيته. => I [really] loved it.\nأنا كثير [حبيته]. => I [loved it].\n\n[شايفه]؟ وهلق ضل الصورة. => [See]? Now just the picture.\nشايفه؟ [وهلق] ضل الصورة. => See? [Now] just the picture.\nشايفه؟ وهلق [ضل] الصورة. => See? Now [just] the picture.\nشايفه؟ وهلق ضل [الصورة]. => See? Now just [the picture]\n\n[شو] رأيك هلق؟ => [What] do you think now?\nشو [رأيك] هلق؟ => What [do you think] now?\nشو رأيك [هلق]؟ => What do you think [now]?\n\n[جلجل]؟ نعم؟ => [Jaljal]? Yes?\nجلجل؟ [نعم]؟ => Jaljal? [Yes]?\n\n[وين] المعكرونة؟ => [Where's] the pasta?\nوين [المعكرونة]؟ => Where's [the pasta]?\n\n[عالبرواز] هيها قدامك. => [On the frame], it's right in front of you.\nعالبرواز [هيها] قدامك. => On the frame, [it's] right in front of you.\nعالبرواز هيها [قدامك]. => On the frame, it's right [in front of you.]\n\n[هلق] بعدلك إياها، => [Now] I'll fix it for you,\nهلق [بعدلك] إياها، => I will fix for you\nهلق بعدلك [إياها]، => Now I'll fix [it] for you,\n\n[هيك] منيح؟ => [Like this], good?\nهيك [منيح]؟ => Like this, [good]?\n\n[جلجل]؟ نعم؟ => [Jaljal]? Yes?\nجلجل؟ [نعم]؟ => Jaljal? [Yes]?\n\n[وين] الصورة؟ => [Where's] the picture?\nوين [الصورة]؟ => Where's [the picture]?\n\n[هلق] بعدلك إياها. => [Now] I'll fix it for you.\nهلق [بعدلك] إياها. => [I'll fix] it [for you].\nهلق بعدلك [إياها]. => Now I'll fix [it] for you.\n\n[شو] رأيك؟ => [What] do you think?\nشو [رأيك]؟ => What [do you think]?\n\n[وين] المعكرونة؟ => [Where's] the pasta?\nوين [المعكرونة]؟ => Where's [the pasta]?\n\n[تنتون]! => [Tantoon]!\n\n[أنا] لزقتها بالعكس => [I] glued it on backwards\nأنا [لزقتها] بالعكس => [glued it] on backwards\nأنا لزقتها [بالعكس] => I glued it on [backwards]\n\n"
   },
   "created_at": "2026-04-25 21:58:51 UTC",
-  "updated_at": "2026-04-25 22:11:56 UTC",
-  "exported_at": "2026-04-25T22:11:56Z"
+  "updated_at": "2026-04-26 05:56:58 UTC",
+  "exported_at": "2026-04-26T20:10:42Z"
 }

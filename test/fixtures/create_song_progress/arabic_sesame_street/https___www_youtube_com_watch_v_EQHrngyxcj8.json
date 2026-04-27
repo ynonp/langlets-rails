@@ -2,274 +2,274 @@
   "youtubeurl": "https://www.youtube.com/watch?v=EQHrngyxcj8",
   "clip_language": "Arabic",
   "translation_language": "English",
-  "step": null,
+  "step": 5,
   "data": {
+    "lessons": "# التحقيق الأول: الأشياء الغامضة\n00:14.00 طنطن، طنطن، طنطن، هه؟\n00:23.00 إيش اللي جمع هاي الأشياء كلها هون؟\n00:30.00 طنطن! طنطن! طنطن! طنطن! طنطن!\n00:37.00 نعم، تفضل تحري جلجل.\n\n# مساعد الطنطن يتساءل\n00:40.00 يا مساعد طنطن،\n00:43.00 ممكن أعرف إيش اللي جمع كل هاي الأشياء هون؟\n00:48.00 مسطرة\n00:50.00 مثلث\n00:53.00 ممحاة\n00:56.00 مقلمة\n00:58.00 ومقص، ممكن أعرف؟\n\n# اكتشاف حرف الميم\n01:00.00 آه، أنا بعرف بعرف إيش اللي جمعهم.\n01:04.00 اللي جمعهم حرف الميم.\n01:08.00 هه؟ حرف الميم؟\n01:10.00 اممم، ميم مسطرة. مسطرة ميم.\n01:14.00 مثلث ميم. مثلث ميم.\n01:16.00 ميم ممحاة. ياااه.\n01:19.00 ميم مقص. اممم.\n01:21.00 ميم مقلمة.\n\n# مدح التحري جلجل\n01:23.00 رائع! رائع رائع يا جلجل رائع رائع،\n01:26.00 دايماً دايماً بعرف.\n01:29.00 اممم، لكني يا مساعد طنطن،\n01:32.00 أنا التحري جلجل اللي بعرف كل إشي.\n\n# الشك والقلق\n01:35.00 باعتقادي في إشي تاني جمعهم هون،\n01:38.00 وأنا خايف إنه يكون خطير،\n01:41.00 خطير كتير.\n01:45.00 أنا التحري جلجل اللي بعرف كل إشي.\n\n# الحل النهائي\n01:48.00 هه! عرفت عرفت عرفت!\n01:49.00 إيش عرفتي يا مساعد طنطن؟\n01:51.00 اللي جمعهم المدرسة، لأنهم أدوات مدرسية.\n01:55.00 المدرسة، جمعت المسطرة والمثلث\n01:58.00 والممحاة والمقلمة والمقص.\n\n# الخاتمة والمنافسة\n02:06.00 رائع! رائع رائع يا تحري يا جلجل،\n02:09.00 أبدعت باكتشافك العظيم، يا عيني عليك،\n02:12.00 دايماً مبدع في التحري دايماً.\n02:20.00 بس أنا اللي دايماً بكتشف الأشياء.\n02:25.00 إمتى رح أصير التحري طنطن؟",
     "phrases": [
       {
         "id": "phrase_1",
         "text_l1": "طنطن، طنطن، طنطن، هه؟",
+        "text_l2": "Tantan, Tantan, Tantan, huh?",
         "timestamp": "00:14.00",
-        "timestamp_end": "00:18.00",
-        "text_l2": "Tantan, Tantan, Tantan, huh?"
+        "timestamp_end": "00:18.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "إيش اللي جمع هاي الأشياء كلها هون؟",
+        "text_l2": "What brought all these things here together?",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:27.00",
-        "text_l2": "What brought all these things here together?"
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "طنطن! طنطن! طنطن! طنطن! طنطن!",
+        "text_l2": "Tantan! Tantan! Tantan! Tantan! Tantan!",
         "timestamp": "00:30.00",
-        "timestamp_end": "00:36.00",
-        "text_l2": "Tantan! Tantan! Tantan! Tantan! Tantan!"
+        "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "نعم، تفضل تحري جلجل.",
+        "text_l2": "Yes, go ahead Detective Jaljal.",
         "timestamp": "00:37.00",
-        "timestamp_end": "00:39.00",
-        "text_l2": "Yes, go ahead Detective Jaljal."
+        "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "يا مساعد طنطن،",
+        "text_l2": "Oh Assistant Tantan,",
         "timestamp": "00:40.00",
-        "timestamp_end": "00:43.00",
-        "text_l2": "Oh Assistant Tantan,"
+        "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "ممكن أعرف إيش اللي جمع كل هاي الأشياء هون؟",
+        "text_l2": "Can I know what brought all these things here together?",
         "timestamp": "00:43.00",
-        "timestamp_end": "00:47.00",
-        "text_l2": "Can I know what brought all these things here together?"
+        "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "مسطرة",
+        "text_l2": "A ruler",
         "timestamp": "00:48.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "A ruler"
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "مثلث",
+        "text_l2": "A triangle",
         "timestamp": "00:50.00",
-        "timestamp_end": "00:52.00",
-        "text_l2": "A triangle"
+        "timestamp_end": "00:52.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "ممحاة",
+        "text_l2": "An eraser",
         "timestamp": "00:53.00",
-        "timestamp_end": "00:55.00",
-        "text_l2": "An eraser"
+        "timestamp_end": "00:55.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "مقلمة",
+        "text_l2": "A pencil case",
         "timestamp": "00:56.00",
-        "timestamp_end": "00:57.00",
-        "text_l2": "A pencil case"
+        "timestamp_end": "00:57.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "ومقص، ممكن أعرف؟",
+        "text_l2": "And scissors, can I know?",
         "timestamp": "00:58.00",
-        "timestamp_end": "00:59.00",
-        "text_l2": "And scissors, can I know?"
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "آه، أنا بعرف بعرف إيش اللي جمعهم.",
+        "text_l2": "Ah, I know, I know what brought them together.",
         "timestamp": "01:00.00",
-        "timestamp_end": "01:03.00",
-        "text_l2": "Ah, I know, I know what brought them together."
+        "timestamp_end": "01:03.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "اللي جمعهم حرف الميم.",
+        "text_l2": "What brought them together is the letter Meem.",
         "timestamp": "01:04.00",
-        "timestamp_end": "01:07.00",
-        "text_l2": "What brought them together is the letter Meem."
+        "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "هه؟ حرف الميم؟",
+        "text_l2": "Huh? The letter Meem?",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:09.00",
-        "text_l2": "Huh? The letter Meem?"
+        "timestamp_end": "01:09.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "اممم، ميم مسطرة. مسطرة ميم.",
+        "text_l2": "Hmm, Meem Ruler. Ruler Meem.",
         "timestamp": "01:10.00",
-        "timestamp_end": "01:13.00",
-        "text_l2": "Hmm, Meem Ruler. Ruler Meem."
+        "timestamp_end": "01:13.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "مثلث ميم. مثلث ميم.",
+        "text_l2": "Triangle Meem. Triangle Meem.",
         "timestamp": "01:14.00",
-        "timestamp_end": "01:15.00",
-        "text_l2": "Triangle Meem. Triangle Meem."
+        "timestamp_end": "01:15.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "ميم ممحاة. ياااه.",
+        "text_l2": "Meem Eraser. Wow.",
         "timestamp": "01:16.00",
-        "timestamp_end": "01:18.00",
-        "text_l2": "Meem Eraser. Wow."
+        "timestamp_end": "01:18.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "ميم مقص. اممم.",
+        "text_l2": "Meem Scissors. Hmm.",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:20.00",
-        "text_l2": "Meem Scissors. Hmm."
+        "timestamp_end": "01:20.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "ميم مقلمة.",
+        "text_l2": "Meem Pencil Case.",
         "timestamp": "01:21.00",
-        "timestamp_end": "01:22.00",
-        "text_l2": "Meem Pencil Case."
+        "timestamp_end": "01:22.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "رائع! رائع رائع يا جلجل رائع رائع،",
+        "text_l2": "Great! Great great oh Jaljal great great,",
         "timestamp": "01:23.00",
-        "timestamp_end": "01:26.00",
-        "text_l2": "Great! Great great oh Jaljal great great,"
+        "timestamp_end": "01:26.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "دايماً دايماً بعرف.",
+        "text_l2": "Always always I know.",
         "timestamp": "01:26.00",
-        "timestamp_end": "01:28.00",
-        "text_l2": "Always always I know."
+        "timestamp_end": "01:28.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "اممم، لكني يا مساعد طنطن،",
+        "text_l2": "Hmm, but oh Assistant Tantan,",
         "timestamp": "01:29.00",
-        "timestamp_end": "01:32.00",
-        "text_l2": "Hmm, but oh Assistant Tantan,"
+        "timestamp_end": "01:32.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "أنا التحري جلجل اللي بعرف كل إشي.",
+        "text_l2": "I am Detective Jaljal who knows everything.",
         "timestamp": "01:32.00",
-        "timestamp_end": "01:34.00",
-        "text_l2": "I am Detective Jaljal who knows everything."
+        "timestamp_end": "01:34.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "باعتقادي في إشي تاني جمعهم هون،",
+        "text_l2": "I think there's something else that brought them here,",
         "timestamp": "01:35.00",
-        "timestamp_end": "01:38.00",
-        "text_l2": "I think there's something else that brought them here,"
+        "timestamp_end": "01:38.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "وأنا خايف إنه يكون خطير،",
+        "text_l2": "And I'm afraid it might be dangerous,",
         "timestamp": "01:38.00",
-        "timestamp_end": "01:41.00",
-        "text_l2": "And I'm afraid it might be dangerous,"
+        "timestamp_end": "01:41.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "خطير كتير.",
+        "text_l2": "Very dangerous.",
         "timestamp": "01:41.00",
-        "timestamp_end": "01:44.00",
-        "text_l2": "Very dangerous."
+        "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "أنا التحري جلجل اللي بعرف كل إشي.",
+        "text_l2": "I am Detective Jaljal who knows everything.",
         "timestamp": "01:45.00",
-        "timestamp_end": "01:48.00",
-        "text_l2": "I am Detective Jaljal who knows everything."
+        "timestamp_end": "01:48.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "هه! عرفت عرفت عرفت!",
+        "text_l2": "Ha! I know I know I know!",
         "timestamp": "01:48.00",
-        "timestamp_end": "01:48.50",
-        "text_l2": "Ha! I know I know I know!"
+        "timestamp_end": "01:48.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "إيش عرفتي يا مساعد طنطن؟",
+        "text_l2": "What do you know, Oh Assistant Tantan?",
         "timestamp": "01:49.00",
-        "timestamp_end": "01:50.00",
-        "text_l2": "What do you know, Oh Assistant Tantan?"
+        "timestamp_end": "01:50.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "اللي جمعهم المدرسة، لأنهم أدوات مدرسية.",
+        "text_l2": "What brought them together is school, because they are school supplies.",
         "timestamp": "01:51.00",
-        "timestamp_end": "01:54.00",
-        "text_l2": "What brought them together is school, because they are school supplies."
+        "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "المدرسة، جمعت المسطرة والمثلث",
+        "text_l2": "School, brought together the ruler and the triangle",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:58.00",
-        "text_l2": "School, brought together the ruler and the triangle"
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "والممحاة والمقلمة والمقص.",
+        "text_l2": "And the eraser and the pencil case and the scissors.",
         "timestamp": "01:58.00",
-        "timestamp_end": "02:05.00",
-        "text_l2": "And the eraser and the pencil case and the scissors."
+        "timestamp_end": "02:05.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "رائع! رائع رائع يا تحري يا جلجل،",
+        "text_l2": "Great! Great great oh Detective oh Jaljal,",
         "timestamp": "02:06.00",
-        "timestamp_end": "02:09.00",
-        "text_l2": "Great! Great great oh Detective oh Jaljal,"
+        "timestamp_end": "02:09.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "أبدعت باكتشافك العظيم، يا عيني عليك،",
+        "text_l2": "You excelled with your great discovery, oh my dear,",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:12.00",
-        "text_l2": "You excelled with your great discovery, oh my dear,"
+        "timestamp_end": "02:12.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "دايماً مبدع في التحري دايماً.",
+        "text_l2": "Always brilliant at detecting, always.",
         "timestamp": "02:12.00",
-        "timestamp_end": "02:18.00",
-        "text_l2": "Always brilliant at detecting, always."
+        "timestamp_end": "02:18.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "بس أنا اللي دايماً بكتشف الأشياء.",
+        "text_l2": "But I'm the one who always discovers things.",
         "timestamp": "02:20.00",
-        "timestamp_end": "02:24.00",
-        "text_l2": "But I'm the one who always discovers things."
+        "timestamp_end": "02:24.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "إمتى رح أصير التحري طنطن؟",
+        "text_l2": "When will I become Detective Tantan?",
         "timestamp": "02:25.00",
-        "timestamp_end": "02:28.00",
-        "text_l2": "When will I become Detective Tantan?"
+        "timestamp_end": "02:28.00"
       }
     ],
-    "phrases_with_token_translations": "[طنطن]، طنطن، طنطن، هه؟ => [Tantan], Tantan, Tantan, huh?\nطنطن، [طنطن]، طنطن، هه؟ => Tantan, [Tantan], Tantan, huh?\nطنطن، طنطن، [طنطن]، هه؟ => Tantan, Tantan, [Tantan], huh?\nطنطن، طنطن، طنطن، [هه]؟ => Tantan, Tantan, Tantan, [huh]?\n\n[إيش] اللي جمع هاي الأشياء كلها هون؟ => [What] brought all these things here together?\nإيش [اللي] جمع هاي الأشياء كلها هون؟ => that, which\nإيش اللي [جمع] هاي الأشياء كلها هون؟ => brought together\nإيش اللي جمع [هاي] الأشياء كلها هون؟ => What brought all [these] things here together?\nإيش اللي جمع هاي [الأشياء] كلها هون؟ => What brought all these [things] here together?\nإيش اللي جمع هاي الأشياء [كلها] هون؟ => What [all] brought all these things here together?\nإيش اللي جمع هاي الأشياء كلها [هون]؟ => What brought all these things [here] together?\n\n[طنطن]! طنطن! طنطن! طنطن! طنطن! => [Tantan]! Tantan! Tantan! Tantan! Tantan!\nطنطن! [طنطن]! طنطن! طنطن! طنطن! => Tantan! [Tantan]! Tantan! Tantan! Tantan!\nطنطن! طنطن! [طنطن]! طنطن! طنطن! => Tantan! Tantan! [Tantan]! Tantan! Tantan!\nطنطن! طنطن! طنطن! [طنطن]! طنطن! => Tantan! Tantan! Tantan! [Tantan]! Tantan!\nطنطن! طنطن! طنطن! طنطن! [طنطن]! => Tantan! Tantan! Tantan! Tantan! [Tantan]!\n\n[نعم]، تفضل تحري جلجل. => [Yes], go ahead Detective Jaljal.\nنعم، [تفضل] تحري جلجل. => Yes, [go ahead] Detective Jaljal.\nنعم، تفضل [تحري] جلجل. => Yes, go ahead [Detective] Jaljal.\nنعم، تفضل تحري [جلجل]. => Yes, go ahead Detective [Jaljal].\n\n[يا] مساعد طنطن، => [Oh] Assistant Tantan,\nيا [مساعد] طنطن، => Oh [Assistant] Tantan,\nيا مساعد [طنطن]، => Oh Assistant [Tantan],\n\n[ممكن] أعرف إيش اللي جمع كل هاي الأشياء هون؟ => [Can] I know what brought all these things here together?\nممكن [أعرف] إيش اللي جمع كل هاي الأشياء هون؟ => Can [I know] what brought all these things here together?\nممكن أعرف [إيش] اللي جمع كل هاي الأشياء هون؟ => Can I know [what] brought all these things here together?\nممكن أعرف إيش اللي [جمع] كل هاي الأشياء هون؟ => brought together\nممكن أعرف إيش اللي جمع [كل] هاي الأشياء هون؟ => Can I know what brought [all] these things here together?\nممكن أعرف إيش اللي جمع كل [هاي] الأشياء هون؟ => Can I know what brought all [these] things here together?\nممكن أعرف إيش اللي جمع كل هاي [الأشياء] هون؟ => Can I know what brought all these [things] here together?\nممكن أعرف إيش اللي جمع كل هاي الأشياء [هون]؟ => Can I know what brought all these things [here] together?\n\n[مسطرة] => [A ruler]\n\n[مثلث] => [A triangle]\n\n[ممحاة] => [An eraser]\n\n[مقلمة] => [A pencil case]\n\n[و]مقص، ممكن أعرف؟ => [And] scissors, can I know?\nو[مقص]، ممكن أعرف؟ => And [scissors], can I know?\nومقص، [ممكن] أعرف؟ => And scissors, [can] I know?\nومقص، ممكن [أعرف]؟ => And scissors, can [I know]?\n\n[آه]، أنا بعرف بعرف إيش اللي جمعهم. => [Ah], I know, I know what brought them together.\nآه، [أنا] بعرف بعرف إيش اللي جمعهم. => Ah, [I] know, I know what brought them together.\nآه، أنا [بعرف] بعرف إيش اللي جمعهم. => Ah, I [know], I know what brought them together.\nآه، أنا بعرف [بعرف] إيش اللي جمعهم. => Ah, I know, [I know] what brought them together.\nآه، أنا بعرف بعرف [إيش] اللي جمعهم. => Ah, I know, I know [what] brought them together.\nآه، أنا بعرف بعرف إيش [اللي] جمعهم. => that, which # relative pronoun acting as a connector\nآه، أنا بعرف بعرف إيش اللي [جمعهم]. => Ah, I know, I know what [brought them together].\n\n[اللي] جمعهم حرف الميم. => [What] brought them together is the letter Meem.\nاللي [جمعهم] حرف الميم. => What [brought them together] is the letter Meem.\nاللي جمعهم [حرف] الميم. => What brought them together is the [letter] Meem.\nاللي جمعهم حرف [الميم]. => What brought them together is the letter [Meem].\n\n[هه]؟ حرف الميم؟ => [Huh]? The letter Meem?\nهه؟ [حرف] الميم؟ => Huh? [The letter] Meem?\nهه؟ حرف [الميم]؟ => Huh? The letter [Meem]?\n\n[اممم]، ميم مسطرة. مسطرة ميم. => [Hmm], Meem Ruler. Ruler Meem.\nاممم، [ميم] مسطرة. مسطرة ميم. => Hmm, [Meem] Ruler. Ruler Meem.\nاممم، ميم [مسطرة]. مسطرة ميم. => Hmm, Meem [Ruler]. Ruler Meem.\nاممم، ميم مسطرة. [مسطرة] ميم. => Hmm, Meem Ruler. [Ruler] Meem.\nاممم، ميم مسطرة. مسطرة [ميم]. => Hmm, Meem Ruler. Ruler [Meem].\n\n[مثلث] ميم. مثلث ميم. => [Triangle] Meem. Triangle Meem.\nمثلث [ميم]. مثلث ميم. => Triangle [Meem]. Triangle Meem.\nمثلث ميم. [مثلث] ميم. => Triangle Meem. [Triangle] Meem.\nمثلث ميم. مثلث [ميم]. => Triangle Meem. Triangle [Meem].\n\n[ميم] ممحاة. ياااه. => [Meem] Eraser. Wow.\nميم [ممحاة]. ياااه. => Meem [Eraser]. Wow.\nميم ممحاة. [ياااه]. => Meem Eraser. [Wow].\n\n[ميم] مقص. اممم. => [Meem] Scissors. Hmm.\nميم [مقص]. اممم. => Meem [Scissors]. Hmm.\nميم مقص. [اممم]. => Meem Scissors. [Hmm].\n\n[ميم] مقلمة. => [Meem] Pencil Case.\nميم [مقلمة]. => Meem [Pencil Case].\n\n[رائع]! رائع رائع يا جلجل رائع رائع، => [Great]! Great great oh Jaljal great great,\nرائع! [رائع] رائع يا جلجل رائع رائع، => Great! [Great] great oh Jaljal great great,\nرائع! رائع [رائع] يا جلجل رائع رائع، => Great! Great [great] oh Jaljal great great,\nرائع! رائع رائع [يا] جلجل رائع رائع، => Great! Great great [oh] Jaljal great great,\nرائع! رائع رائع يا [جلجل] رائع رائع، => Great! Great great oh [Jaljal] great great,\nرائع! رائع رائع يا جلجل [رائع] رائع، => Great! Great great oh Jaljal [great] great,\nرائع! رائع رائع يا جلجل رائع [رائع]، => Great! Great great oh Jaljal great [great],\n\n[دايماً] دايماً بعرف. => [Always] always I know.\nدايماً [دايماً] بعرف. => Always [always] I know.\nدايماً دايماً [بعرف]. => Always always [I know].\n\n[اممم]، لكني يا مساعد طنطن، => [Hmm], but oh Assistant Tantan,\nاممم، [لكني] يا مساعد طنطن، => Hmm, [but] oh Assistant Tantan,\nاممم، لكني [يا] مساعد طنطن، => Hmm, but [oh] Assistant Tantan,\nاممم، لكني يا [مساعد] طنطن، => Hmm, but oh [Assistant] Tantan,\nاممم، لكني يا مساعد [طنطن]، => Hmm, but oh Assistant [Tantan],\n\n[أنا] التحري جلجل اللي بعرف كل إشي. => [I am] Detective Jaljal who knows everything.\nأنا [التحري] جلجل اللي بعرف كل إشي. => I am [Detective] Jaljal who knows everything.\nأنا التحري [جلجل] اللي بعرف كل إشي. => I am Detective [Jaljal] who knows everything.\nأنا التحري جلجل [اللي] بعرف كل إشي. => I am Detective Jaljal [who] knows everything.\nأنا التحري جلجل اللي [بعرف] كل إشي. => I am Detective Jaljal who [knows] everything.\nأنا التحري جلجل اللي بعرف [كل إشي]. => I am Detective Jaljal who knows [everything].\n\n[باعتقادي] في إشي تاني جمعهم هون، => [I think] there's something else that brought them here,\nباعتقادي [في] إشي تاني جمعهم هون، => I think [there's] something else that brought them here,\nباعتقادي في [إشي] تاني جمعهم هون، => I think there's [something] else that brought them here,\nباعتقادي في إشي [تاني] جمعهم هون، => I think there's something [else] that brought them here,\nباعتقادي في إشي تاني [جمعهم] هون، => I think there's something else [that brought them] here,\nباعتقادي في إشي تاني جمعهم [هون]، => I think there's something else that brought them [here]\n\n[وأنا] خايف إنه يكون خطير، => [And I'm] afraid it might be dangerous,\nوأنا [خايف] إنه يكون خطير، => And I'm [afraid] it might be dangerous,\nوأنا خايف [إنه] يكون خطير، => And I'm afraid [it] might be dangerous,\nوأنا خايف إنه [يكون] خطير، => And I'm afraid it [might be] dangerous,\nوأنا خايف إنه يكون [خطير]، => And I'm afraid it might be [dangerous],\n\n[خطير] كتير. => Very [dangerous].\nخطير [كتير]. => [Very] dangerous.\n\n[أنا] التحري جلجل اللي بعرف كل إشي. => [I] am Detective Jaljal who knows everything.\nأنا [التحري] جلجل اللي بعرف كل إشي. => I am [Detective] Jaljal who knows everything.\nأنا التحري [جلجل] اللي بعرف كل إشي. => I am Detective [Jaljal] who knows everything.\nأنا التحري جلجل [اللي] بعرف كل إشي. => I am Detective Jaljal [who] knows everything.\nأنا التحري جلجل اللي [بعرف] كل إشي. => I am Detective Jaljal who [knows] everything.\nأنا التحري جلجل اللي بعرف [كل إشي] => I am Detective Jaljal who knows [everything]\n\n[هه]! عرفت عرفت عرفت! => [Ha]! I know I know I know!\nهه! [عرفت] عرفت عرفت! => Ha! [I know] I know I know!\nهه! عرفت [عرفت] عرفت! => Ha! I know [I know] I know!\nهه! عرفت عرفت [عرفت]! => Ha! I know I know [I know]!\n\n[إيش] عرفتي يا مساعد طنطن؟ => [What] do you know, Oh Assistant Tantan?\nإيش [عرفتي] يا مساعد طنطن؟ => What [do you know], Oh Assistant Tantan?\nإيش عرفتي [يا] مساعد طنطن؟ => What do you know, [Oh] Assistant Tantan?\nإيش عرفتي يا [مساعد] طنطن؟ => What do you know, Oh [Assistant] Tantan?\nإيش عرفتي يا مساعد [طنطن]؟ => What do you know, Oh Assistant [Tantan]?\n\n[اللي] جمعهم المدرسة، لأنهم أدوات مدرسية. => [What] brought them together is school, because they are school supplies.\nاللي [جمعهم] المدرسة، لأنهم أدوات مدرسية. => What [brought them together] is school, because they are school supplies.\nاللي جمعهم [المدرسة]، لأنهم أدوات مدرسية. => What brought them together is [school], because they are school supplies.\nاللي جمعهم المدرسة، [لأنهم] أدوات مدرسية. => What brought them together is school, [because they are] school supplies.\nاللي جمعهم المدرسة، لأنهم [أدوات] مدرسية. => supplies\nاللي جمعهم المدرسة، لأنهم أدوات [مدرسية]. => school\n\n[المدرسة]، جمعت المسطرة والمثلث => [School], brought together the ruler and the triangle\nالمدرسة، [جمعت] المسطرة والمثلث => School, [brought together] the ruler and the triangle\nالمدرسة، جمعت [المسطرة] والمثلث => School, brought together [the ruler] and the triangle\nالمدرسة، جمعت المسطرة [و]المثلث => School, brought together the ruler [and] the triangle\nالمدرسة، جمعت المسطرة و[المثلث] => School, brought together the ruler and [the triangle]\n\n[و]الممحاة والمقلمة والمقص. => [And] the eraser and the pencil case and the scissors.\nو[الممحاة] والمقلمة والمقص. => And [the eraser] and the pencil case and the scissors.\nوالممحاة [و]المقلمة والمقص. => And the eraser [and] the pencil case and the scissors.\nوالممحاة و[المقلمة] والمقص. => And the eraser and [the pencil case] and the scissors.\nوالممحاة والمقلمة [و]المقص. => And the eraser and the pencil case [and] the scissors.\nوالممحاة والمقلمة و[المقص]. => And the eraser and the pencil case and [the scissors].\n\n[رائع]! رائع رائع يا تحري يا جلجل، => [Great]! Great great oh Detective oh Jaljal,\nرائع! [رائع] رائع يا تحري يا جلجل، => Great! [Great] great oh Detective oh Jaljal,\nرائع! رائع [رائع] يا تحري يا جلجل، => Great! Great [great] oh Detective oh Jaljal,\nرائع! رائع رائع [يا] تحري يا جلجل، => Great! Great great [oh] Detective oh Jaljal,\nرائع! رائع رائع يا [تحري] يا جلجل، => Great! Great great oh [Detective] oh Jaljal,\nرائع! رائع رائع يا تحري [يا] جلجل، => Great! Great great oh Detective [oh] Jaljal,\nرائع! رائع رائع يا تحري يا [جلجل]، => Great! Great great oh Detective oh [Jaljal],\n\n[أبدعت] باكتشافك العظيم، يا عيني عليك، => [You excelled] with your great discovery, oh my dear,\nأبدعت [باكتشافك] العظيم، يا عيني عليك، => with your discovery\nأبدعت باكتشافك [العظيم]، يا عيني عليك، => You excelled with your [great] discovery, oh my dear,\nأبدعت باكتشافك العظيم، [يا عيني عليك]، => You excelled with your great discovery, [oh my dear],\n\n[دايماً] مبدع في التحري دايماً. => [Always] brilliant at detecting, always.\nدايماً [مبدع] في التحري دايماً. => Always [brilliant] at detecting, always.\nدايماً مبدع [في] التحري دايماً. => Always brilliant [at] detecting, always.\nدايماً مبدع في [التحري] دايماً. => Always brilliant at [detecting], always.\nدايماً مبدع في التحري [دايماً]. => Always brilliant at detecting, [always].\n\n[بس] أنا اللي دايماً بكتشف الأشياء. => [But] I'm the one who always discovers things.\nبس [أنا] اللي دايماً بكتشف الأشياء. => But [I'm] the one who always discovers things.\nبس أنا [اللي] دايماً بكتشف الأشياء. => But I'm [the one who] always discovers things.\nبس أنا اللي [دايماً] بكتشف الأشياء. => But I'm the one who [always] discovers things.\nبس أنا اللي دايماً [بكتشف] الأشياء. => But I'm the one who always [discovers] things.\nبس أنا اللي دايماً بكتشف [الأشياء] => But I'm the one who always discovers [things]\n\n[إمتى] رح أصير التحري طنطن؟ => [When] will I become Detective Tantan?\nإمتى [رح] أصير التحري طنطن؟ => When [will] I become Detective Tantan?\nإمتى رح [أصير] التحري طنطن؟ => When will [I become] Detective Tantan?\nإمتى رح أصير [التحري] طنطن؟ => When will I become [Detective] Tantan?\nإمتى رح أصير التحري [طنطن]؟ => When will I become Detective [Tantan]?\n\n",
-    "lessons": "# التحقيق الأول: الأشياء الغامضة\n00:14.00 طنطن، طنطن، طنطن، هه؟\n00:23.00 إيش اللي جمع هاي الأشياء كلها هون؟\n00:30.00 طنطن! طنطن! طنطن! طنطن! طنطن!\n00:37.00 نعم، تفضل تحري جلجل.\n\n# مساعد الطنطن يتساءل\n00:40.00 يا مساعد طنطن،\n00:43.00 ممكن أعرف إيش اللي جمع كل هاي الأشياء هون؟\n00:48.00 مسطرة\n00:50.00 مثلث\n00:53.00 ممحاة\n00:56.00 مقلمة\n00:58.00 ومقص، ممكن أعرف؟\n\n# اكتشاف حرف الميم\n01:00.00 آه، أنا بعرف بعرف إيش اللي جمعهم.\n01:04.00 اللي جمعهم حرف الميم.\n01:08.00 هه؟ حرف الميم؟\n01:10.00 اممم، ميم مسطرة. مسطرة ميم.\n01:14.00 مثلث ميم. مثلث ميم.\n01:16.00 ميم ممحاة. ياااه.\n01:19.00 ميم مقص. اممم.\n01:21.00 ميم مقلمة.\n\n# مدح التحري جلجل\n01:23.00 رائع! رائع رائع يا جلجل رائع رائع،\n01:26.00 دايماً دايماً بعرف.\n01:29.00 اممم، لكني يا مساعد طنطن،\n01:32.00 أنا التحري جلجل اللي بعرف كل إشي.\n\n# الشك والقلق\n01:35.00 باعتقادي في إشي تاني جمعهم هون،\n01:38.00 وأنا خايف إنه يكون خطير،\n01:41.00 خطير كتير.\n01:45.00 أنا التحري جلجل اللي بعرف كل إشي.\n\n# الحل النهائي\n01:48.00 هه! عرفت عرفت عرفت!\n01:49.00 إيش عرفتي يا مساعد طنطن؟\n01:51.00 اللي جمعهم المدرسة، لأنهم أدوات مدرسية.\n01:55.00 المدرسة، جمعت المسطرة والمثلث\n01:58.00 والممحاة والمقلمة والمقص.\n\n# الخاتمة والمنافسة\n02:06.00 رائع! رائع رائع يا تحري يا جلجل،\n02:09.00 أبدعت باكتشافك العظيم، يا عيني عليك،\n02:12.00 دايماً مبدع في التحري دايماً.\n02:20.00 بس أنا اللي دايماً بكتشف الأشياء.\n02:25.00 إمتى رح أصير التحري طنطن؟",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[طنطن]، طنطن، طنطن، هه؟ => [Tantan], Tantan, Tantan, huh?\nطنطن، [طنطن]، طنطن، هه؟ => Tantan, [Tantan], Tantan, huh?\nطنطن، طنطن، [طنطن]، هه؟ => Tantan, Tantan, [Tantan], huh?\nطنطن، طنطن، طنطن، [هه]؟ => Tantan, Tantan, Tantan, [huh]?\n\n[إيش] اللي جمع هاي الأشياء كلها هون؟ => [What] brought all these things here together?\nإيش [اللي] جمع هاي الأشياء كلها هون؟ => that, which\nإيش اللي [جمع] هاي الأشياء كلها هون؟ => brought together\nإيش اللي جمع [هاي] الأشياء كلها هون؟ => What brought all [these] things here together?\nإيش اللي جمع هاي [الأشياء] كلها هون؟ => What brought all these [things] here together?\nإيش اللي جمع هاي الأشياء [كلها] هون؟ => What [all] brought all these things here together?\nإيش اللي جمع هاي الأشياء كلها [هون]؟ => What brought all these things [here] together?\n\n[طنطن]! طنطن! طنطن! طنطن! طنطن! => [Tantan]! Tantan! Tantan! Tantan! Tantan!\nطنطن! [طنطن]! طنطن! طنطن! طنطن! => Tantan! [Tantan]! Tantan! Tantan! Tantan!\nطنطن! طنطن! [طنطن]! طنطن! طنطن! => Tantan! Tantan! [Tantan]! Tantan! Tantan!\nطنطن! طنطن! طنطن! [طنطن]! طنطن! => Tantan! Tantan! Tantan! [Tantan]! Tantan!\nطنطن! طنطن! طنطن! طنطن! [طنطن]! => Tantan! Tantan! Tantan! Tantan! [Tantan]!\n\n[نعم]، تفضل تحري جلجل. => [Yes], go ahead Detective Jaljal.\nنعم، [تفضل] تحري جلجل. => Yes, [go ahead] Detective Jaljal.\nنعم، تفضل [تحري] جلجل. => Yes, go ahead [Detective] Jaljal.\nنعم، تفضل تحري [جلجل]. => Yes, go ahead Detective [Jaljal].\n\n[يا] مساعد طنطن، => [Oh] Assistant Tantan,\nيا [مساعد] طنطن، => Oh [Assistant] Tantan,\nيا مساعد [طنطن]، => Oh Assistant [Tantan],\n\n[ممكن] أعرف إيش اللي جمع كل هاي الأشياء هون؟ => [Can] I know what brought all these things here together?\nممكن [أعرف] إيش اللي جمع كل هاي الأشياء هون؟ => Can [I know] what brought all these things here together?\nممكن أعرف [إيش] اللي جمع كل هاي الأشياء هون؟ => Can I know [what] brought all these things here together?\nممكن أعرف إيش اللي [جمع] كل هاي الأشياء هون؟ => brought together\nممكن أعرف إيش اللي جمع [كل] هاي الأشياء هون؟ => Can I know what brought [all] these things here together?\nممكن أعرف إيش اللي جمع كل [هاي] الأشياء هون؟ => Can I know what brought all [these] things here together?\nممكن أعرف إيش اللي جمع كل هاي [الأشياء] هون؟ => Can I know what brought all these [things] here together?\nممكن أعرف إيش اللي جمع كل هاي الأشياء [هون]؟ => Can I know what brought all these things [here] together?\n\n[مسطرة] => [A ruler]\n\n[مثلث] => [A triangle]\n\n[ممحاة] => [An eraser]\n\n[مقلمة] => [A pencil case]\n\n[و]مقص، ممكن أعرف؟ => [And] scissors, can I know?\nو[مقص]، ممكن أعرف؟ => And [scissors], can I know?\nومقص، [ممكن] أعرف؟ => And scissors, [can] I know?\nومقص، ممكن [أعرف]؟ => And scissors, can [I know]?\n\n[آه]، أنا بعرف بعرف إيش اللي جمعهم. => [Ah], I know, I know what brought them together.\nآه، [أنا] بعرف بعرف إيش اللي جمعهم. => Ah, [I] know, I know what brought them together.\nآه، أنا [بعرف] بعرف إيش اللي جمعهم. => Ah, I [know], I know what brought them together.\nآه، أنا بعرف [بعرف] إيش اللي جمعهم. => Ah, I know, [I know] what brought them together.\nآه، أنا بعرف بعرف [إيش] اللي جمعهم. => Ah, I know, I know [what] brought them together.\nآه، أنا بعرف بعرف إيش [اللي] جمعهم. => that, which # relative pronoun acting as a connector\nآه، أنا بعرف بعرف إيش اللي [جمعهم]. => Ah, I know, I know what [brought them together].\n\n[اللي] جمعهم حرف الميم. => [What] brought them together is the letter Meem.\nاللي [جمعهم] حرف الميم. => What [brought them together] is the letter Meem.\nاللي جمعهم [حرف] الميم. => What brought them together is the [letter] Meem.\nاللي جمعهم حرف [الميم]. => What brought them together is the letter [Meem].\n\n[هه]؟ حرف الميم؟ => [Huh]? The letter Meem?\nهه؟ [حرف] الميم؟ => Huh? [The letter] Meem?\nهه؟ حرف [الميم]؟ => Huh? The letter [Meem]?\n\n[اممم]، ميم مسطرة. مسطرة ميم. => [Hmm], Meem Ruler. Ruler Meem.\nاممم، [ميم] مسطرة. مسطرة ميم. => Hmm, [Meem] Ruler. Ruler Meem.\nاممم، ميم [مسطرة]. مسطرة ميم. => Hmm, Meem [Ruler]. Ruler Meem.\nاممم، ميم مسطرة. [مسطرة] ميم. => Hmm, Meem Ruler. [Ruler] Meem.\nاممم، ميم مسطرة. مسطرة [ميم]. => Hmm, Meem Ruler. Ruler [Meem].\n\n[مثلث] ميم. مثلث ميم. => [Triangle] Meem. Triangle Meem.\nمثلث [ميم]. مثلث ميم. => Triangle [Meem]. Triangle Meem.\nمثلث ميم. [مثلث] ميم. => Triangle Meem. [Triangle] Meem.\nمثلث ميم. مثلث [ميم]. => Triangle Meem. Triangle [Meem].\n\n[ميم] ممحاة. ياااه. => [Meem] Eraser. Wow.\nميم [ممحاة]. ياااه. => Meem [Eraser]. Wow.\nميم ممحاة. [ياااه]. => Meem Eraser. [Wow].\n\n[ميم] مقص. اممم. => [Meem] Scissors. Hmm.\nميم [مقص]. اممم. => Meem [Scissors]. Hmm.\nميم مقص. [اممم]. => Meem Scissors. [Hmm].\n\n[ميم] مقلمة. => [Meem] Pencil Case.\nميم [مقلمة]. => Meem [Pencil Case].\n\n[رائع]! رائع رائع يا جلجل رائع رائع، => [Great]! Great great oh Jaljal great great,\nرائع! [رائع] رائع يا جلجل رائع رائع، => Great! [Great] great oh Jaljal great great,\nرائع! رائع [رائع] يا جلجل رائع رائع، => Great! Great [great] oh Jaljal great great,\nرائع! رائع رائع [يا] جلجل رائع رائع، => Great! Great great [oh] Jaljal great great,\nرائع! رائع رائع يا [جلجل] رائع رائع، => Great! Great great oh [Jaljal] great great,\nرائع! رائع رائع يا جلجل [رائع] رائع، => Great! Great great oh Jaljal [great] great,\nرائع! رائع رائع يا جلجل رائع [رائع]، => Great! Great great oh Jaljal great [great],\n\n[دايماً] دايماً بعرف. => [Always] always I know.\nدايماً [دايماً] بعرف. => Always [always] I know.\nدايماً دايماً [بعرف]. => Always always [I know].\n\n[اممم]، لكني يا مساعد طنطن، => [Hmm], but oh Assistant Tantan,\nاممم، [لكني] يا مساعد طنطن، => Hmm, [but] oh Assistant Tantan,\nاممم، لكني [يا] مساعد طنطن، => Hmm, but [oh] Assistant Tantan,\nاممم، لكني يا [مساعد] طنطن، => Hmm, but oh [Assistant] Tantan,\nاممم، لكني يا مساعد [طنطن]، => Hmm, but oh Assistant [Tantan],\n\n[أنا] التحري جلجل اللي بعرف كل إشي. => [I am] Detective Jaljal who knows everything.\nأنا [التحري] جلجل اللي بعرف كل إشي. => I am [Detective] Jaljal who knows everything.\nأنا التحري [جلجل] اللي بعرف كل إشي. => I am Detective [Jaljal] who knows everything.\nأنا التحري جلجل [اللي] بعرف كل إشي. => I am Detective Jaljal [who] knows everything.\nأنا التحري جلجل اللي [بعرف] كل إشي. => I am Detective Jaljal who [knows] everything.\nأنا التحري جلجل اللي بعرف [كل إشي]. => I am Detective Jaljal who knows [everything].\n\n[باعتقادي] في إشي تاني جمعهم هون، => [I think] there's something else that brought them here,\nباعتقادي [في] إشي تاني جمعهم هون، => I think [there's] something else that brought them here,\nباعتقادي في [إشي] تاني جمعهم هون، => I think there's [something] else that brought them here,\nباعتقادي في إشي [تاني] جمعهم هون، => I think there's something [else] that brought them here,\nباعتقادي في إشي تاني [جمعهم] هون، => I think there's something else [that brought them] here,\nباعتقادي في إشي تاني جمعهم [هون]، => I think there's something else that brought them [here]\n\n[وأنا] خايف إنه يكون خطير، => [And I'm] afraid it might be dangerous,\nوأنا [خايف] إنه يكون خطير، => And I'm [afraid] it might be dangerous,\nوأنا خايف [إنه] يكون خطير، => And I'm afraid [it] might be dangerous,\nوأنا خايف إنه [يكون] خطير، => And I'm afraid it [might be] dangerous,\nوأنا خايف إنه يكون [خطير]، => And I'm afraid it might be [dangerous],\n\n[خطير] كتير. => Very [dangerous].\nخطير [كتير]. => [Very] dangerous.\n\n[أنا] التحري جلجل اللي بعرف كل إشي. => [I] am Detective Jaljal who knows everything.\nأنا [التحري] جلجل اللي بعرف كل إشي. => I am [Detective] Jaljal who knows everything.\nأنا التحري [جلجل] اللي بعرف كل إشي. => I am Detective [Jaljal] who knows everything.\nأنا التحري جلجل [اللي] بعرف كل إشي. => I am Detective Jaljal [who] knows everything.\nأنا التحري جلجل اللي [بعرف] كل إشي. => I am Detective Jaljal who [knows] everything.\nأنا التحري جلجل اللي بعرف [كل إشي] => I am Detective Jaljal who knows [everything]\n\n[هه]! عرفت عرفت عرفت! => [Ha]! I know I know I know!\nهه! [عرفت] عرفت عرفت! => Ha! [I know] I know I know!\nهه! عرفت [عرفت] عرفت! => Ha! I know [I know] I know!\nهه! عرفت عرفت [عرفت]! => Ha! I know I know [I know]!\n\n[إيش] عرفتي يا مساعد طنطن؟ => [What] do you know, Oh Assistant Tantan?\nإيش [عرفتي] يا مساعد طنطن؟ => What [do you know], Oh Assistant Tantan?\nإيش عرفتي [يا] مساعد طنطن؟ => What do you know, [Oh] Assistant Tantan?\nإيش عرفتي يا [مساعد] طنطن؟ => What do you know, Oh [Assistant] Tantan?\nإيش عرفتي يا مساعد [طنطن]؟ => What do you know, Oh Assistant [Tantan]?\n\n[اللي] جمعهم المدرسة، لأنهم أدوات مدرسية. => [What] brought them together is school, because they are school supplies.\nاللي [جمعهم] المدرسة، لأنهم أدوات مدرسية. => What [brought them together] is school, because they are school supplies.\nاللي جمعهم [المدرسة]، لأنهم أدوات مدرسية. => What brought them together is [school], because they are school supplies.\nاللي جمعهم المدرسة، [لأنهم] أدوات مدرسية. => What brought them together is school, [because they are] school supplies.\nاللي جمعهم المدرسة، لأنهم [أدوات] مدرسية. => supplies\nاللي جمعهم المدرسة، لأنهم أدوات [مدرسية]. => school\n\n[المدرسة]، جمعت المسطرة والمثلث => [School], brought together the ruler and the triangle\nالمدرسة، [جمعت] المسطرة والمثلث => School, [brought together] the ruler and the triangle\nالمدرسة، جمعت [المسطرة] والمثلث => School, brought together [the ruler] and the triangle\nالمدرسة، جمعت المسطرة [و]المثلث => School, brought together the ruler [and] the triangle\nالمدرسة، جمعت المسطرة و[المثلث] => School, brought together the ruler and [the triangle]\n\n[و]الممحاة والمقلمة والمقص. => [And] the eraser and the pencil case and the scissors.\nو[الممحاة] والمقلمة والمقص. => And [the eraser] and the pencil case and the scissors.\nوالممحاة [و]المقلمة والمقص. => And the eraser [and] the pencil case and the scissors.\nوالممحاة و[المقلمة] والمقص. => And the eraser and [the pencil case] and the scissors.\nوالممحاة والمقلمة [و]المقص. => And the eraser and the pencil case [and] the scissors.\nوالممحاة والمقلمة و[المقص]. => And the eraser and the pencil case and [the scissors].\n\n[رائع]! رائع رائع يا تحري يا جلجل، => [Great]! Great great oh Detective oh Jaljal,\nرائع! [رائع] رائع يا تحري يا جلجل، => Great! [Great] great oh Detective oh Jaljal,\nرائع! رائع [رائع] يا تحري يا جلجل، => Great! Great [great] oh Detective oh Jaljal,\nرائع! رائع رائع [يا] تحري يا جلجل، => Great! Great great [oh] Detective oh Jaljal,\nرائع! رائع رائع يا [تحري] يا جلجل، => Great! Great great oh [Detective] oh Jaljal,\nرائع! رائع رائع يا تحري [يا] جلجل، => Great! Great great oh Detective [oh] Jaljal,\nرائع! رائع رائع يا تحري يا [جلجل]، => Great! Great great oh Detective oh [Jaljal],\n\n[أبدعت] باكتشافك العظيم، يا عيني عليك، => [You excelled] with your great discovery, oh my dear,\nأبدعت [باكتشافك] العظيم، يا عيني عليك، => with your discovery\nأبدعت باكتشافك [العظيم]، يا عيني عليك، => You excelled with your [great] discovery, oh my dear,\nأبدعت باكتشافك العظيم، [يا عيني عليك]، => You excelled with your great discovery, [oh my dear],\n\n[دايماً] مبدع في التحري دايماً. => [Always] brilliant at detecting, always.\nدايماً [مبدع] في التحري دايماً. => Always [brilliant] at detecting, always.\nدايماً مبدع [في] التحري دايماً. => Always brilliant [at] detecting, always.\nدايماً مبدع في [التحري] دايماً. => Always brilliant at [detecting], always.\nدايماً مبدع في التحري [دايماً]. => Always brilliant at detecting, [always].\n\n[بس] أنا اللي دايماً بكتشف الأشياء. => [But] I'm the one who always discovers things.\nبس [أنا] اللي دايماً بكتشف الأشياء. => But [I'm] the one who always discovers things.\nبس أنا [اللي] دايماً بكتشف الأشياء. => But I'm [the one who] always discovers things.\nبس أنا اللي [دايماً] بكتشف الأشياء. => But I'm the one who [always] discovers things.\nبس أنا اللي دايماً [بكتشف] الأشياء. => But I'm the one who always [discovers] things.\nبس أنا اللي دايماً بكتشف [الأشياء] => But I'm the one who always discovers [things]\n\n[إمتى] رح أصير التحري طنطن؟ => [When] will I become Detective Tantan?\nإمتى [رح] أصير التحري طنطن؟ => When [will] I become Detective Tantan?\nإمتى رح [أصير] التحري طنطن؟ => When will [I become] Detective Tantan?\nإمتى رح أصير [التحري] طنطن؟ => When will I become [Detective] Tantan?\nإمتى رح أصير التحري [طنطن]؟ => When will I become Detective [Tantan]?\n\n"
   },
   "created_at": "2026-04-25 23:05:27 UTC",
-  "updated_at": "2026-04-25 23:14:53 UTC",
-  "exported_at": "2026-04-25T23:14:54Z"
+  "updated_at": "2026-04-26 05:56:58 UTC",
+  "exported_at": "2026-04-26T20:10:43Z"
 }

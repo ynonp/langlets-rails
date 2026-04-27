@@ -2,519 +2,519 @@
   "youtubeurl": "https://www.youtube.com/watch?v=3ynRsUWl8mQ",
   "clip_language": "Arabic",
   "translation_language": "English",
-  "step": null,
+  "step": 5,
   "data": {
+    "lessons": "# التعب من كرة القدم والراحة\n00:01.00 أنا تعبت من كرة القدم يا جلجل\n00:03.00 يعني ما بدك تكملي لعب؟\n00:05.00 خلينا هلا نرتاح شوي\n\n# لقاء القطة الجديدة\n00:07.00 تنتن، جلجل، مرحبا\n00:08.00 أهلاً حياة\n00:10.00 احزروا شو في معي\n00:12.00 احزروا ايش في معه، ايش في؟\n00:14.00 أنا ما حزرت\n00:15.00 ولا أنا\n\n# اكتشاف القطة وتربيتها\n00:16.00 ها، سامعة سامعة يا جلجل؟\n00:18.00 سامعة؟\n00:19.00 هاد صوت قطة، صح صح صح صوت قطة\n00:21.00 هيها، ما أحلاها\n00:25.00 بدي أسميها ديدي\n00:27.00 كتير اسم حلو ديدي\n00:29.00 بقدر ألعب معها؟\n00:31.00 طبعاً يا جلجل\n\n# العناية بالقطة\n00:32.00 وأنا وأنا كمان بدي ألعب معها\n00:34.00 هيها، هلا حطي إيدك على ظهرها يا تنتن\n00:38.00 ومشيها بنعومة\n00:40.00 ما أنعم شعرك يا ديدي يا حلوة\n00:43.00 حياة، نعم جلجل\n00:45.00 القطة بتحب تلعب زينا؟\n\n# الغذاء الصحي للقطة\n00:47.00 أكيد، ولازم نحممها\n00:49.00 وندير بالنا عليها ونطعميها\n00:52.00 هي، طيب يلا خلينا نلعبها كرة قدم\n00:55.00 استنوا استنوا شوي\n00:57.00 هاي الطابة شوية كبيرة عليها\n01:00.00 زي ما أنتوا شايفين صغيرة\n01:03.00 وبدها طابة صغيرة زيها\n\n# التخطيط لإطعام القطة\n01:05.00 آه، طيب حياة\n01:07.00 أنا حاسس إنه القطة جوعانة\n01:11.00 بنقدر نطعميها؟\n01:13.00 طبعاً بنقدر نطعميها\n01:15.00 ولازم نطعميها عشان ندير بالنا عليها\n01:17.00 أنا بعرف بعرف القطة شو بتاكل\n01:20.00 بتاكل لحمة صح؟\n\n# أنواع طعام القطة\n01:22.00 آه، ودجاج وسمك\n01:24.00 صح\n01:27.00 قطة يا حلوة يا ديدي\n01:29.00 مين بتحبي أكتر اللحمة ولا السمك؟\n01:31.00 أنا بقول يا تنتن التنين\n01:33.00 لأنه هي بدها بروتين\n01:35.00 حتى تقوي عضلاتها\n01:37.00 وتكون عضلات قوية، صح يا ديدي؟\n\n# الشراب الصحي للقطة\n01:39.00 صح يا جلجل\n01:41.00 وما ننسى لازم نشربها كمان للقطة\n01:43.00 إيه، تشرب لبن وحليب\n01:47.00 صح يا تنتن، لأنه الحليب واللبن\n01:49.00 فيهم كالسيوم المفيد للعظام\n\n# الذهاب إلى المطبخ\n01:51.00 حياة، ممكن تيجي معي؟\n01:54.00 وين؟\n01:55.00 على المطبخ\n01:56.00 طيب\n\n# وقت الطعام\n02:09.00 هي إجا الأكل يا ديدي\n02:13.00 ها، كل هاد الأكل لديدي؟\n02:17.00 آه، بس هاد كتير\n02:20.00 آه، أنا عرفت لمين هاد الأكل\n02:22.00 هاد إلنا كلنا صح؟\n\n# مشاركة الطعام\n02:25.00 ما هو يا تنتن بعد ما حكينا\n02:28.00 كل هالحكي عن الأكل الزاكي\n02:30.00 جلجل خلانا نجيب كل شي في المطبخ\n02:32.00 بس برضه هاد الأكل إلنا كتير\n02:34.00 لا يا تنتن، إحنا لازم ناكل\n02:36.00 دجاج وسمك ولحمة منشان نقوي عضلاتنا\n02:38.00 ونشرب حليب منشان عظمنا\n02:42.00 وهاد الحليب لمين؟\n02:44.00 الحليب لديدي\n02:46.00 أكيد لديدي\n02:48.00 يلا ناكل\n02:49.00 يلا ناكل\n02:50.00 يلا",
     "phrases": [
       {
         "id": "phrase_1",
         "text_l1": "أنا تعبت من كرة القدم يا جلجل",
+        "text_l2": "I'm tired of football, Jaljal.",
         "timestamp": "00:01.00",
-        "timestamp_end": "00:03.00",
-        "text_l2": "I'm tired of football, Jaljal."
+        "timestamp_end": "00:03.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "يعني ما بدك تكملي لعب؟",
+        "text_l2": "So you don't want to keep playing?",
         "timestamp": "00:03.00",
-        "timestamp_end": "00:05.00",
-        "text_l2": "So you don't want to keep playing?"
+        "timestamp_end": "00:05.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "خلينا هلا نرتاح شوي",
+        "text_l2": "Let's rest a bit now.",
         "timestamp": "00:05.00",
-        "timestamp_end": "00:07.00",
-        "text_l2": "Let's rest a bit now."
+        "timestamp_end": "00:07.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "تنتن، جلجل، مرحبا",
+        "text_l2": "Tantn, Jaljal, hello.",
         "timestamp": "00:07.00",
-        "timestamp_end": "00:08.00",
-        "text_l2": "Tantn, Jaljal, hello."
+        "timestamp_end": "00:08.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "أهلاً حياة",
+        "text_l2": "Hello, Hayat.",
         "timestamp": "00:08.00",
-        "timestamp_end": "00:10.00",
-        "text_l2": "Hello, Hayat."
+        "timestamp_end": "00:10.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "احزروا شو في معي",
+        "text_l2": "Guess what I have with me.",
         "timestamp": "00:10.00",
-        "timestamp_end": "00:12.00",
-        "text_l2": "Guess what I have with me."
+        "timestamp_end": "00:12.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "احزروا ايش في معه، ايش في؟",
+        "text_l2": "Guess what he has, what is it?",
         "timestamp": "00:12.00",
-        "timestamp_end": "00:14.00",
-        "text_l2": "Guess what he has, what is it?"
+        "timestamp_end": "00:14.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "أنا ما حزرت",
+        "text_l2": "I didn't guess.",
         "timestamp": "00:14.00",
-        "timestamp_end": "00:15.00",
-        "text_l2": "I didn't guess."
+        "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "ولا أنا",
+        "text_l2": "Me neither.",
         "timestamp": "00:15.00",
-        "timestamp_end": "00:16.00",
-        "text_l2": "Me neither."
+        "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "ها، سامعة سامعة يا جلجل؟",
+        "text_l2": "Hey, do you hear that, Jaljal?",
         "timestamp": "00:16.00",
-        "timestamp_end": "00:18.00",
-        "text_l2": "Hey, do you hear that, Jaljal?"
+        "timestamp_end": "00:18.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "سامعة؟",
+        "text_l2": "Do you hear it?",
         "timestamp": "00:18.00",
-        "timestamp_end": "00:19.00",
-        "text_l2": "Do you hear it?"
+        "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "هاد صوت قطة، صح صح صح صوت قطة",
+        "text_l2": "That's a cat sound, yes yes yes, a cat sound.",
         "timestamp": "00:19.00",
-        "timestamp_end": "00:21.00",
-        "text_l2": "That's a cat sound, yes yes yes, a cat sound."
+        "timestamp_end": "00:21.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "هيها، ما أحلاها",
+        "text_l2": "There she is, isn't she cute?",
         "timestamp": "00:21.00",
-        "timestamp_end": "00:25.00",
-        "text_l2": "There she is, isn't she cute?"
+        "timestamp_end": "00:25.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "بدي أسميها ديدي",
+        "text_l2": "I want to name her Didi.",
         "timestamp": "00:25.00",
-        "timestamp_end": "00:27.00",
-        "text_l2": "I want to name her Didi."
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "كتير اسم حلو ديدي",
+        "text_l2": "Didi is a very nice name.",
         "timestamp": "00:27.00",
-        "timestamp_end": "00:29.00",
-        "text_l2": "Didi is a very nice name."
+        "timestamp_end": "00:29.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "بقدر ألعب معها؟",
+        "text_l2": "Can I play with her?",
         "timestamp": "00:29.00",
-        "timestamp_end": "00:31.00",
-        "text_l2": "Can I play with her?"
+        "timestamp_end": "00:31.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "طبعاً يا جلجل",
+        "text_l2": "Of course, Jaljal.",
         "timestamp": "00:31.00",
-        "timestamp_end": "00:32.00",
-        "text_l2": "Of course, Jaljal."
+        "timestamp_end": "00:32.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "وأنا وأنا كمان بدي ألعب معها",
+        "text_l2": "And me, I want to play with her too.",
         "timestamp": "00:32.00",
-        "timestamp_end": "00:34.00",
-        "text_l2": "And me, I want to play with her too."
+        "timestamp_end": "00:34.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "هيها، هلا حطي إيدك على ظهرها يا تنتن",
+        "text_l2": "There, now put your hand on her back, Tantn.",
         "timestamp": "00:34.00",
-        "timestamp_end": "00:38.00",
-        "text_l2": "There, now put your hand on her back, Tantn."
+        "timestamp_end": "00:38.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "ومشيها بنعومة",
+        "text_l2": "And pet her gently.",
         "timestamp": "00:38.00",
-        "timestamp_end": "00:40.00",
-        "text_l2": "And pet her gently."
+        "timestamp_end": "00:40.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "ما أنعم شعرك يا ديدي يا حلوة",
+        "text_l2": "Your fur is so soft, Didi, you sweetie.",
         "timestamp": "00:40.00",
-        "timestamp_end": "00:43.00",
-        "text_l2": "Your fur is so soft, Didi, you sweetie."
+        "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "حياة، نعم جلجل",
+        "text_l2": "Hayat, yes Jaljal?",
         "timestamp": "00:43.00",
-        "timestamp_end": "00:45.00",
-        "text_l2": "Hayat, yes Jaljal?"
+        "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "القطة بتحب تلعب زينا؟",
+        "text_l2": "Does the cat like to play like us?",
         "timestamp": "00:45.00",
-        "timestamp_end": "00:47.00",
-        "text_l2": "Does the cat like to play like us?"
+        "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "أكيد، ولازم نحممها",
+        "text_l2": "Sure, and we need to bathe her.",
         "timestamp": "00:47.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "Sure, and we need to bathe her."
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "وندير بالنا عليها ونطعميها",
+        "text_l2": "And take care of her and feed her.",
         "timestamp": "00:49.00",
-        "timestamp_end": "00:52.00",
-        "text_l2": "And take care of her and feed her."
+        "timestamp_end": "00:52.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "هي، طيب يلا خلينا نلعبها كرة قدم",
+        "text_l2": "Hey, okay let's play football with her.",
         "timestamp": "00:52.00",
-        "timestamp_end": "00:55.00",
-        "text_l2": "Hey, okay let's play football with her."
+        "timestamp_end": "00:55.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "استنوا استنوا شوي",
+        "text_l2": "Wait, wait a bit.",
         "timestamp": "00:55.00",
-        "timestamp_end": "00:57.00",
-        "text_l2": "Wait, wait a bit."
+        "timestamp_end": "00:57.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "هاي الطابة شوية كبيرة عليها",
+        "text_l2": "This ball is a bit big for her.",
         "timestamp": "00:57.00",
-        "timestamp_end": "01:00.00",
-        "text_l2": "This ball is a bit big for her."
+        "timestamp_end": "01:00.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "زي ما أنتوا شايفين صغيرة",
+        "text_l2": "As you can see, she's small.",
         "timestamp": "01:00.00",
-        "timestamp_end": "01:03.00",
-        "text_l2": "As you can see, she's small."
+        "timestamp_end": "01:03.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "وبدها طابة صغيرة زيها",
+        "text_l2": "And she needs a small ball like her.",
         "timestamp": "01:03.00",
-        "timestamp_end": "01:05.00",
-        "text_l2": "And she needs a small ball like her."
+        "timestamp_end": "01:05.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "آه، طيب حياة",
+        "text_l2": "Ah, okay Hayat.",
         "timestamp": "01:05.00",
-        "timestamp_end": "01:07.00",
-        "text_l2": "Ah, okay Hayat."
+        "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "أنا حاسس إنه القطة جوعانة",
+        "text_l2": "I feel like the cat is hungry.",
         "timestamp": "01:07.00",
-        "timestamp_end": "01:11.00",
-        "text_l2": "I feel like the cat is hungry."
+        "timestamp_end": "01:11.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "بنقدر نطعميها؟",
+        "text_l2": "Can we feed her?",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:13.00",
-        "text_l2": "Can we feed her?"
+        "timestamp_end": "01:13.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "طبعاً بنقدر نطعميها",
+        "text_l2": "Of course we can feed her.",
         "timestamp": "01:13.00",
-        "timestamp_end": "01:15.00",
-        "text_l2": "Of course we can feed her."
+        "timestamp_end": "01:15.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "ولازم نطعميها عشان ندير بالنا عليها",
+        "text_l2": "And we must feed her to take care of her.",
         "timestamp": "01:15.00",
-        "timestamp_end": "01:17.00",
-        "text_l2": "And we must feed her to take care of her."
+        "timestamp_end": "01:17.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "أنا بعرف بعرف القطة شو بتاكل",
+        "text_l2": "I know, I know what the cat eats.",
         "timestamp": "01:17.00",
-        "timestamp_end": "01:20.00",
-        "text_l2": "I know, I know what the cat eats."
+        "timestamp_end": "01:20.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "بتاكل لحمة صح؟",
+        "text_l2": "She eats meat, right?",
         "timestamp": "01:20.00",
-        "timestamp_end": "01:22.00",
-        "text_l2": "She eats meat, right?"
+        "timestamp_end": "01:22.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "آه، ودجاج وسمك",
+        "text_l2": "Yeah, and chicken and fish.",
         "timestamp": "01:22.00",
-        "timestamp_end": "01:24.00",
-        "text_l2": "Yeah, and chicken and fish."
+        "timestamp_end": "01:24.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "صح",
+        "text_l2": "Correct.",
         "timestamp": "01:24.00",
-        "timestamp_end": "01:27.00",
-        "text_l2": "Correct."
+        "timestamp_end": "01:27.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "قطة يا حلوة يا ديدي",
+        "text_l2": "Cat, you sweetie, Didi.",
         "timestamp": "01:27.00",
-        "timestamp_end": "01:29.00",
-        "text_l2": "Cat, you sweetie, Didi."
+        "timestamp_end": "01:29.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "مين بتحبي أكتر اللحمة ولا السمك؟",
+        "text_l2": "Which do you like more, meat or fish?",
         "timestamp": "01:29.00",
-        "timestamp_end": "01:31.00",
-        "text_l2": "Which do you like more, meat or fish?"
+        "timestamp_end": "01:31.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "أنا بقول يا تنتن التنين",
+        "text_l2": "I say, Tantn, both.",
         "timestamp": "01:31.00",
-        "timestamp_end": "01:33.00",
-        "text_l2": "I say, Tantn, both."
+        "timestamp_end": "01:33.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "لأنه هي بدها بروتين",
+        "text_l2": "Because she needs protein.",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:35.00",
-        "text_l2": "Because she needs protein."
+        "timestamp_end": "01:35.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "حتى تقوي عضلاتها",
+        "text_l2": "To strengthen her muscles.",
         "timestamp": "01:35.00",
-        "timestamp_end": "01:37.00",
-        "text_l2": "To strengthen her muscles."
+        "timestamp_end": "01:37.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "وتكون عضلات قوية، صح يا ديدي؟",
+        "text_l2": "And have strong muscles, right Didi?",
         "timestamp": "01:37.00",
-        "timestamp_end": "01:39.00",
-        "text_l2": "And have strong muscles, right Didi?"
+        "timestamp_end": "01:39.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "صح يا جلجل",
+        "text_l2": "Correct, Jaljal.",
         "timestamp": "01:39.00",
-        "timestamp_end": "01:41.00",
-        "text_l2": "Correct, Jaljal."
+        "timestamp_end": "01:41.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "وما ننسى لازم نشربها كمان للقطة",
+        "text_l2": "And let's not forget, we must give her drink too.",
         "timestamp": "01:41.00",
-        "timestamp_end": "01:43.00",
-        "text_l2": "And let's not forget, we must give her drink too."
+        "timestamp_end": "01:43.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "إيه، تشرب لبن وحليب",
+        "text_l2": "Yes, she drinks milk and yogurt.",
         "timestamp": "01:43.00",
-        "timestamp_end": "01:47.00",
-        "text_l2": "Yes, she drinks milk and yogurt."
+        "timestamp_end": "01:47.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "صح يا تنتن، لأنه الحليب واللبن",
+        "text_l2": "Correct Tantn, because milk and yogurt",
         "timestamp": "01:47.00",
-        "timestamp_end": "01:49.00",
-        "text_l2": "Correct Tantn, because milk and yogurt"
+        "timestamp_end": "01:49.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "فيهم كالسيوم المفيد للعظام",
+        "text_l2": "Have calcium good for bones.",
         "timestamp": "01:49.00",
-        "timestamp_end": "01:51.00",
-        "text_l2": "Have calcium good for bones."
+        "timestamp_end": "01:51.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "حياة، ممكن تيجي معي؟",
+        "text_l2": "Hayat, can you come with me?",
         "timestamp": "01:51.00",
-        "timestamp_end": "01:54.00",
-        "text_l2": "Hayat, can you come with me?"
+        "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "وين؟",
+        "text_l2": "Where?",
         "timestamp": "01:54.00",
-        "timestamp_end": "01:55.00",
-        "text_l2": "Where?"
+        "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "على المطبخ",
+        "text_l2": "To the kitchen.",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:56.00",
-        "text_l2": "To the kitchen."
+        "timestamp_end": "01:56.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "طيب",
+        "text_l2": "Okay.",
         "timestamp": "01:56.00",
-        "timestamp_end": "01:58.00",
-        "text_l2": "Okay."
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "هي إجا الأكل يا ديدي",
+        "text_l2": "Here comes the food, Didi.",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:13.00",
-        "text_l2": "Here comes the food, Didi."
+        "timestamp_end": "02:13.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "ها، كل هاد الأكل لديدي؟",
+        "text_l2": "Hey, is all this food for Didi?",
         "timestamp": "02:13.00",
-        "timestamp_end": "02:17.00",
-        "text_l2": "Hey, is all this food for Didi?"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "آه، بس هاد كتير",
+        "text_l2": "Yeah, but this is a lot.",
         "timestamp": "02:17.00",
-        "timestamp_end": "02:20.00",
-        "text_l2": "Yeah, but this is a lot."
+        "timestamp_end": "02:20.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "آه، أنا عرفت لمين هاد الأكل",
+        "text_l2": "Ah, I know who this food is for.",
         "timestamp": "02:20.00",
-        "timestamp_end": "02:22.00",
-        "text_l2": "Ah, I know who this food is for."
+        "timestamp_end": "02:22.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "هاد إلنا كلنا صح؟",
+        "text_l2": "This is for all of us, right?",
         "timestamp": "02:22.00",
-        "timestamp_end": "02:25.00",
-        "text_l2": "This is for all of us, right?"
+        "timestamp_end": "02:25.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "ما هو يا تنتن بعد ما حكينا",
+        "text_l2": "It's not, Tantn, after we talked",
         "timestamp": "02:25.00",
-        "timestamp_end": "02:28.00",
-        "text_l2": "It's not, Tantn, after we talked"
+        "timestamp_end": "02:28.00"
       },
       {
         "id": "phrase_61",
         "text_l1": "كل هالحكي عن الأكل الزاكي",
+        "text_l2": "All this talk about delicious food.",
         "timestamp": "02:28.00",
-        "timestamp_end": "02:30.00",
-        "text_l2": "All this talk about delicious food."
+        "timestamp_end": "02:30.00"
       },
       {
         "id": "phrase_62",
         "text_l1": "جلجل خلانا نجيب كل شي في المطبخ",
+        "text_l2": "Jaljal made us bring everything in the kitchen.",
         "timestamp": "02:30.00",
-        "timestamp_end": "02:32.00",
-        "text_l2": "Jaljal made us bring everything in the kitchen."
+        "timestamp_end": "02:32.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "بس برضه هاد الأكل إلنا كتير",
+        "text_l2": "But still, this food is a lot for us.",
         "timestamp": "02:32.00",
-        "timestamp_end": "02:34.00",
-        "text_l2": "But still, this food is a lot for us."
+        "timestamp_end": "02:34.00"
       },
       {
         "id": "phrase_64",
         "text_l1": "لا يا تنتن، إحنا لازم ناكل",
+        "text_l2": "No Tantn, we need to eat.",
         "timestamp": "02:34.00",
-        "timestamp_end": "02:36.00",
-        "text_l2": "No Tantn, we need to eat."
+        "timestamp_end": "02:36.00"
       },
       {
         "id": "phrase_65",
         "text_l1": "دجاج وسمك ولحمة منشان نقوي عضلاتنا",
+        "text_l2": "Chicken, fish, and meat to strengthen our muscles.",
         "timestamp": "02:36.00",
-        "timestamp_end": "02:38.00",
-        "text_l2": "Chicken, fish, and meat to strengthen our muscles."
+        "timestamp_end": "02:38.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "ونشرب حليب منشان عظمنا",
+        "text_l2": "And drink milk for our bones.",
         "timestamp": "02:38.00",
-        "timestamp_end": "02:42.00",
-        "text_l2": "And drink milk for our bones."
+        "timestamp_end": "02:42.00"
       },
       {
         "id": "phrase_67",
         "text_l1": "وهاد الحليب لمين؟",
+        "text_l2": "And this milk is for who?",
         "timestamp": "02:42.00",
-        "timestamp_end": "02:44.00",
-        "text_l2": "And this milk is for who?"
+        "timestamp_end": "02:44.00"
       },
       {
         "id": "phrase_68",
         "text_l1": "الحليب لديدي",
+        "text_l2": "The milk is for Didi.",
         "timestamp": "02:44.00",
-        "timestamp_end": "02:46.00",
-        "text_l2": "The milk is for Didi."
+        "timestamp_end": "02:46.00"
       },
       {
         "id": "phrase_69",
         "text_l1": "أكيد لديدي",
+        "text_l2": "Definitely for Didi.",
         "timestamp": "02:46.00",
-        "timestamp_end": "02:48.00",
-        "text_l2": "Definitely for Didi."
+        "timestamp_end": "02:48.00"
       },
       {
         "id": "phrase_70",
         "text_l1": "يلا ناكل",
+        "text_l2": "Let's eat.",
         "timestamp": "02:48.00",
-        "timestamp_end": "02:49.00",
-        "text_l2": "Let's eat."
+        "timestamp_end": "02:49.00"
       },
       {
         "id": "phrase_71",
         "text_l1": "يلا ناكل",
+        "text_l2": "Let's eat.",
         "timestamp": "02:49.00",
-        "timestamp_end": "02:50.00",
-        "text_l2": "Let's eat."
+        "timestamp_end": "02:50.00"
       },
       {
         "id": "phrase_72",
         "text_l1": "يلا",
+        "text_l2": "Let's go.",
         "timestamp": "02:50.00",
-        "timestamp_end": "02:52.00",
-        "text_l2": "Let's go."
+        "timestamp_end": "02:52.00"
       }
     ],
-    "phrases_with_token_translations": "[أنا تعبت] من كرة القدم يا جلجل => [I'm tired] of football, Jaljal.\nأنا تعبت [من] كرة القدم يا جلجل => I'm tired [of] football, Jaljal.\nأنا تعبت من [كرة القدم] يا جلجل => I'm tired of [football], Jaljal.\nأنا تعبت من كرة القدم يا [جلجل] => I'm tired of football, [Jaljal]\n\n[يعني] ما بدك تكملي لعب؟ => [So] you don't want to keep playing?\nيعني [ما بدك] تكملي لعب؟ => So [you don't want] to keep playing?\nيعني ما بدك [تكملي] لعب؟ => So you don't want [to keep] playing?\nيعني ما بدك تكملي [لعب]؟ => So you don't want to keep [playing]?\n\n[خلينا] هلا نرتاح شوي => [Let's] rest a bit now.\nخلينا [هلا] نرتاح شوي => Let's rest a bit [now].\nخلينا هلا [نرتاح] شوي => Let's [rest] a bit now.\nخلينا هلا نرتاح [شوي] => Let's rest [a bit] now.\n\n[تنتن]، جلجل، مرحبا => [Tantn], Jaljal, hello\nتنتن، [جلجل]، مرحبا => Tantn, [Jaljal], hello\nتنتن، جلجل، [مرحبا] => Tantn, Jaljal, [hello]\n\n[أهلاً] حياة => [Hello], Hayat.\nأهلاً [حياة] => Hello, [Hayat].\n\n[احزروا] شو في معي => [Guess] what I have with me.\nاحزروا [شو] في معي => Guess [what] I have with me.\nاحزروا شو [في] معي => there is, I have\nاحزروا شو في [معي] => Guess what I have [with me].\n\n[احزروا] ايش في معه، ايش في؟ => [Guess] what he has, what is it?\nاحزروا [ايش] في معه، ايش في؟ => Guess [what] he has, what is it?\nاحزروا ايش [في معه]، ايش في؟ => Guess what [he has], what is it?\nاحزروا ايش في معه، [ايش] في؟ => Guess what he has, [what] is it?\nاحزروا ايش في معه، ايش [في]؟ => Guess what he has, what [is it]?\n\n[أنا] ما حزرت => [I] didn't guess.\nأنا [ما حزرت] => I [didn't guess].\n\n[ولا] أنا => Me [neither]\nولا [أنا] => [Me] neither\n\n[ها]، سامعة سامعة يا جلجل؟ => [Hey], do you hear that, Jaljal?\nها، [سامعة] سامعة يا جلجل؟ => [do you hear] that, Jaljal?\nها، سامعة [سامعة] يا جلجل؟ => do you hear\nها، سامعة سامعة [يا] جلجل؟ => vocative particle\nها، سامعة سامعة يا [جلجل]؟ => Hey, do you hear that, [Jaljal]?\n\n[سامعة] => [Do you hear it] # 'سامعة' is the feminine active participle of 'to hear', used here as a question meaning 'Are you hearing?' or 'Do you hear it?'\n\n[هاد] صوت قطة، صح صح صح صوت قطة => [That's] a cat sound, yes yes yes, a cat sound.\nهاد [صوت] قطة، صح صح صح صوت قطة => That's a cat [sound], yes yes yes, a cat sound.\nهاد صوت [قطة]، صح صح صح صوت قطة => That's a [cat] sound, yes yes yes, a cat sound.\nهاد صوت قطة، [صح] صح صح صوت قطة => That's a cat sound, [yes] yes yes, a cat sound.\nهاد صوت قطة، صح [صح] صح صوت قطة => That's a cat sound, yes [yes] yes, a cat sound.\nهاد صوت قطة، صح صح [صح] صوت قطة => That's a cat sound, yes [yes] yes, a cat sound.\nهاد صوت قطة، صح صح صح [صوت] قطة => That's a cat sound, yes yes yes, a cat [sound]\nهاد صوت قطة، صح صح صح صوت [قطة] => That's a cat sound, yes yes yes, a [cat] sound\n\n[هيها]، ما أحلاها => [There she is], isn't she cute?\nهيها، [ما أحلاها] => There she is, [isn't she cute]?\n\n[بدي] أسميها ديدي => [I want] to name her Didi.\nبدي [أسميها] ديدي => I want [to name her] Didi.\nبدي أسميها [ديدي] => I want to name her [Didi]\n\n[كتير] اسم حلو ديدي => Didi is a [very] nice name.\nكتير [اسم] حلو ديدي => Didi is a very nice [name].\nكتير اسم [حلو] ديدي => Didi is a very [nice] name.\nكتير اسم حلو [ديدي] => [Didi] is a very nice name.\n\n[بقدر] ألعب معها؟ => [Can I] play with her?\nبقدر [ألعب] معها؟ => Can I [play] with her?\nبقدر ألعب [معها]؟ => Can I play [with her]?\n\n[طبعاً] يا جلجل => [Of course], Jaljal.\nطبعاً [يا] جلجل => vocative particle (O / hey)\nطبعاً يا [جلجل] => Of course, [Jaljal].\n\n[وأنا] وأنا كمان بدي ألعب معها => [And me], I want to play with her too.\nوأنا [وأنا] كمان بدي ألعب معها => And me, [I] want to play with her too.\nوأنا وأنا [كمان] بدي ألعب معها => And me, I want to play with her [too].\nوأنا وأنا كمان [بدي] ألعب معها => And me, I [want] to play with her too.\nوأنا وأنا كمان بدي [ألعب] معها => And me, I want [to play] with her too.\nوأنا وأنا كمان بدي ألعب [معها] => And me, I want to play [with her] too.\n\n[هيها]، هلا حطي إيدك على ظهرها يا تنتن => [There], now put your hand on her back, Tantn.\nهيها، [هلا] حطي إيدك على ظهرها يا تنتن => There, [now] put your hand on her back, Tantn.\nهيها، هلا [حطي] إيدك على ظهرها يا تنتن => There, now [put] your hand on her back, Tantn.\nهيها، هلا حطي [إيدك] على ظهرها يا تنتن => There, now put [your hand] on her back, Tantn.\nهيها، هلا حطي إيدك [على] ظهرها يا تنتن => There, now put your hand [on] her back, Tantn.\nهيها، هلا حطي إيدك على [ظهرها] يا تنتن => There, now put your hand on [her back], Tantn.\nهيها، هلا حطي إيدك على ظهرها يا [تنتن] => There, now put your hand on her back, [Tantn]\n\n[و]مشيها بنعومة => [And] pet her gently.\nو[مشيها] بنعومة => And [pet her] gently.\nومشيها [بنعومة] => And pet her [gently].\n\n[ما أنعم] شعرك يا ديدي يا حلوة => Your fur [is so soft], Didi, you sweetie.\nما أنعم [شعرك] يا ديدي يا حلوة => [Your fur] is so soft, Didi, you sweetie.\nما أنعم شعرك [يا ديدي] يا حلوة => Your fur is so soft, [Didi], you sweetie.\nما أنعم شعرك يا ديدي [يا حلوة] => Your fur is so soft, Didi, [you sweetie] # يا here is a vocative particle used for address\n\n[حياة]، نعم جلجل => [Hayat], yes Jaljal?\nحياة، [نعم] جلجل => Hayat, [yes] Jaljal?\nحياة، نعم [جلجل] => Hayat, yes [Jaljal]?\n\n[القطة] بتحب تلعب زينا؟ => Does [the cat] like to play like us?\nالقطة [بتحب] تلعب زينا؟ => Does the cat [like] to play like us?\nالقطة بتحب [تلعب] زينا؟ => Does the cat like [to play] like us?\nالقطة بتحب تلعب [زينا]؟ => Does the cat like to play [like us]?\n\n[أكيد]، ولازم نحممها => [Sure], and we need to bathe her.\nأكيد، [و]لازم نحممها => Sure, [and] we need to bathe her.\nأكيد، و[لازم] نحممها => Sure, and [we need to] bathe her.\nأكيد، ولازم [نحممها] => Sure, and we need to [bathe her]\n\n[و]ندير بالنا عليها ونطعميها => [And] take care of her and feed her.\nو[ندير بالنا] عليها ونطعميها => And [take care] of her and feed her.\nوندير بالنا [عليها] ونطعميها => And take care [of her] and feed her.\nوندير بالنا عليها [و]نطعميها => And take care of her [and] feed her.\nوندير بالنا عليها و[نطعميها] => And take care of her and [feed her] # the verb and object suffix 'ha' are mapped together to 'feed her'\n\n[هي]، طيب يلا خلينا نلعبها كرة قدم => [Hey], okay let's play football with her.\nهي، [طيب] يلا خلينا نلعبها كرة قدم => Hey, [okay] let's play football with her.\nهي، طيب [يلا خلينا] نلعبها كرة قدم => Hey, okay [let's] play football with her.\nهي، طيب يلا خلينا [نلعبها] كرة قدم => play with her # the Arabic word includes the verb \"play\" and the object pronoun \"her\"\nهي، طيب يلا خلينا نلعبها [كرة قدم] => Hey, okay let's play [football] with her.\n\n[استنوا] استنوا شوي => [Wait], wait a bit.\nاستنوا [استنوا] شوي => Wait, [wait] a bit.\nاستنوا استنوا [شوي] => Wait, wait [a bit].\n\n[هاي] الطابة شوية كبيرة عليها => [This] ball is a bit big for her.\nهاي [الطابة] شوية كبيرة عليها => This [ball] is a bit big for her.\nهاي الطابة [شوية] كبيرة عليها => This [a bit] big for her.\nهاي الطابة شوية [كبيرة] عليها => This a bit [big] for her.\nهاي الطابة شوية كبيرة [عليها] => This a bit big [for her].\n\n[زي ما] أنتوا شايفين صغيرة => [As] you can see, she's small.\nزي ما [أنتوا] شايفين صغيرة => As [you] can see, she's small.\nزي ما أنتوا [شايفين] صغيرة => As you [can see], she's small.\nزي ما أنتوا شايفين [صغيرة] => As you can see, she's [small].\n\n[و]بدها طابة صغيرة زيها => [And] she needs a small ball like her.\nو[بدها] طابة صغيرة زيها => And [she needs] a small ball like her.\nوبدها [طابة] صغيرة زيها => And she needs a [ball] like her.\nوبدها طابة [صغيرة] زيها => And she needs a [small] ball like her.\nوبدها طابة صغيرة [زيها] => And she needs a small ball [like her].\n\n[آه]، طيب حياة => [Ah], okay Hayat.\nآه، [طيب] حياة => Ah, [okay] Hayat.\nآه، طيب [حياة] => Ah, okay [Hayat].\n\n[أنا] حاسس إنه القطة جوعانة => [I] feel like the cat is hungry.\nأنا [حاسس] إنه القطة جوعانة => I [feel] like the cat is hungry.\nأنا حاسس [إنه] القطة جوعانة => I feel [like] the cat is hungry.\nأنا حاسس إنه [القطة] جوعانة => I feel like [the cat] is hungry.\nأنا حاسس إنه القطة [جوعانة] => I feel like the cat is [hungry]\n\n[بنقدر] نطعميها؟ => [Can we] feed her?\nبنقدر [نطعميها]؟ => Can we [feed her]?\n\n[طبعاً] بنقدر نطعميها => [Of course] we can feed her.\nطبعاً [بنقدر] نطعميها => Of course [we can] feed her.\nطبعاً بنقدر [نطعميها] => Of course we can [feed her].\n\n[و]لازم نطعميها عشان ندير بالنا عليها => [And] we must feed her to take care of her\nو[لازم] نطعميها عشان ندير بالنا عليها => must\nولازم [نطعميها] عشان ندير بالنا عليها => we feed her\nولازم نطعميها [عشان] ندير بالنا عليها => And we must feed her [to] take care of her\nولازم نطعميها عشان [ندير بالنا] عليها => we take care # or 'take care'\nولازم نطعميها عشان ندير بالنا [عليها] => And we must feed her to take care [of her]\n\n[أنا] بعرف بعرف القطة شو بتاكل => [I] know, I know what the cat eats.\nأنا [بعرف] بعرف القطة شو بتاكل => I [know], I know what the cat eats.\nأنا بعرف [بعرف] القطة شو بتاكل => I know, [I know] what the cat eats.\nأنا بعرف بعرف [القطة] شو بتاكل => I know, I know what [the cat] eats.\nأنا بعرف بعرف القطة [شو] بتاكل => I know, I know [what] the cat eats.\nأنا بعرف بعرف القطة شو [بتاكل] => I know, I know what the cat [eats].\n\n[بتاكل] لحمة صح؟ => [She eats] meat, right?\nبتاكل [لحمة] صح؟ => She eats [meat], right?\nبتاكل لحمة [صح]؟ => She eats meat, [right]?\n\n[آه]، ودجاج وسمك => [Yeah], and chicken and fish.\nآه، [ودجاج] وسمك => [and chicken] and fish.\nآه، ودجاج [وسمك] => and chicken [and fish].\n\n[صح] => [Correct].\n\n[قطة] يا حلوة يا ديدي => [Cat], you sweetie, Didi.\nقطة [يا] حلوة يا ديدي => Cat, [you] sweetie, Didi.\nقطة يا [حلوة] يا ديدي => Cat, you [sweetie], Didi.\nقطة يا حلوة يا [ديدي] => Cat, you sweetie, [Didi]\n\n[مين] بتحبي أكتر اللحمة ولا السمك؟ => [Which] do you like more, meat or fish?\nمين [بتحبي] أكتر اللحمة ولا السمك؟ => Which [do you like] more, meat or fish?\nمين بتحبي [أكتر] اللحمة ولا السمك؟ => Which do you like [more], meat or fish?\nمين بتحبي أكتر [اللحمة] ولا السمك؟ => Which do you like more, [meat] or fish?\nمين بتحبي أكتر اللحمة [ولا] السمك؟ => Which do you like more, meat [or] fish?\nمين بتحبي أكتر اللحمة ولا [السمك]؟ => Which do you like more, meat or [fish]?\n\n[أنا] بقول يا تنتن التنين => [I] say, Tantn, both.\nأنا [بقول] يا تنتن التنين => I [say], Tantn, both.\nأنا بقول يا [تنتن] التنين => I say, [Tantn], both.\nأنا بقول يا تنتن [التنين] => I say, Tantn, [both].\n\n[لأنه] هي بدها بروتين => [Because] she needs protein.\nلأنه [هي] بدها بروتين => Because [she] needs protein.\nلأنه هي [بدها] بروتين => Because she [needs] protein.\nلأنه هي بدها [بروتين] => Because she needs [protein]\n\n[حتى] تقوي عضلاتها => [To] strengthen her muscles.\nحتى [تقوي] عضلاتها => To [strengthen] her muscles.\nحتى تقوي [عضلاتها] => To strengthen [her muscles].\n\n[وتكون] عضلات قوية، صح يا ديدي؟ => [And have] strong muscles, right Didi?\nوتكون [عضلات] قوية، صح يا ديدي؟ => And have strong [muscles], right Didi?\nوتكون عضلات [قوية]، صح يا ديدي؟ => And have [strong] muscles, right Didi?\nوتكون عضلات قوية، [صح] يا ديدي؟ => And have strong muscles, [right] Didi?\nوتكون عضلات قوية، صح [يا ديدي]؟ => And have strong muscles, right [Didi]?\n\n[صح] يا جلجل => [Correct], Jaljal.\nصح يا [جلجل] => Correct, [Jaljal].\n\n[و]ما ننسى لازم نشربها كمان للقطة => [And] let's not forget, we must give her drink too.\nو[ما] ننسى لازم نشربها كمان للقطة => And let's [not] forget, we must give her drink too.\nوما [ننسى] لازم نشربها كمان للقطة => And let's not [forget], we must give her drink too.\nوما ننسى [لازم] نشربها كمان للقطة => And let's not forget, we [must] give her drink too.\nوما ننسى لازم [نشربها] كمان للقطة => And let's not forget, we must [give her drink] too.\nوما ننسى لازم نشربها [كمان] للقطة => And let's not forget, we must give her drink [too].\nوما ننسى لازم نشربها كمان [للقطة] => to the cat # \"للقطة\" refers specifically to the cat, whereas the English sentence uses \"her\" to refer back to it.\n\n[إيه]، تشرب لبن وحليب => [Yes], she drinks milk and yogurt.\nإيه، [تشرب] لبن وحليب => Yes, [she drinks] milk and yogurt.\nإيه، تشرب [لبن] وحليب => Yes, she drinks milk and [yogurt]\nإيه، تشرب لبن [و]حليب => Yes, she drinks milk [and] yogurt\nإيه، تشرب لبن و[حليب] => Yes, she drinks [milk] and yogurt\n\n[صح] يا تنتن، لأنه الحليب واللبن => [Correct] Tantn, because milk and yogurt\nصح يا [تنتن]، لأنه الحليب واللبن => Correct [Tantn], because milk and yogurt\nصح يا تنتن، [لأنه] الحليب واللبن => Correct Tantn, [because] milk and yogurt\nصح يا تنتن، لأنه [الحليب] واللبن => Correct Tantn, because [milk] and yogurt\nصح يا تنتن، لأنه الحليب [واللبن] => Correct Tantn, because [and yogurt]\n\n[فيهم] كالسيوم المفيد للعظام => [Have] calcium good for bones.\nفيهم [كالسيوم] المفيد للعظام => Have [calcium] good for bones.\nفيهم كالسيوم [المفيد] للعظام => Have calcium [good] for bones.\nفيهم كالسيوم المفيد [للعظام] => Have calcium good [for bones].\n\n[حياة]، ممكن تيجي معي؟ => [Hayat], can you come with me?\nحياة، [ممكن] تيجي معي؟ => Hayat, [can] you come with me?\nحياة، ممكن [تيجي] معي؟ => Hayat, can [you come] with me?\nحياة، ممكن تيجي [معي]؟ => Hayat, can you come [with me]?\n\n[وين]؟ => [Where]?\n\n[على] المطبخ => [To] the kitchen\nعلى [المطبخ] => [the kitchen]\n\n[طيب] => [Okay].\n\n[هي] إجا الأكل يا ديدي => [Here] comes the food, Didi.\nهي [إجا] الأكل يا ديدي => Here [comes] the food, Didi.\nهي إجا [الأكل] يا ديدي => Here comes [the food], Didi.\nهي إجا الأكل يا [ديدي] => Here comes the food, [Didi]\n\n[ها]، كل هاد الأكل لديدي؟ => [Hey], is all this food for Didi?\nها، [كل] هاد الأكل لديدي؟ => Hey, is [all] this food for Didi?\nها، كل [هاد] الأكل لديدي؟ => Hey, is all [this] food for Didi?\nها، كل هاد [الأكل] لديدي؟ => Hey, is all this [food] for Didi?\nها، كل هاد الأكل [لديدي]؟ => Hey, is all this food [for Didi]?\n\n[آه]، بس هاد كتير => [Yeah], but this is a lot\nآه، [بس] هاد كتير => Yeah, [but] this is a lot\nآه، بس [هاد] كتير => Yeah, but [this] is a lot\nآه، بس هاد [كتير] => Yeah, but this [is a lot]\n\n[آه]، أنا عرفت لمين هاد الأكل => [Ah], I know who this food is for.\nآه، [أنا] عرفت لمين هاد الأكل => Ah, [I] know who this food is for.\nآه، أنا [عرفت] لمين هاد الأكل => Ah, I [know] who this food is for.\nآه، أنا عرفت [لمين] هاد الأكل => for whom, who... for\nآه، أنا عرفت لمين [هاد] الأكل => Ah, I know who [this] food is for.\nآه، أنا عرفت لمين هاد [الأكل] => Ah, I know who this [food] is for.\n\n[هاد] إلنا كلنا صح؟ => [This] is for all of us, right?\nهاد [إلنا] كلنا صح؟ => for us\nهاد إلنا [كلنا] صح؟ => all of us\nهاد إلنا كلنا [صح]؟ => This is for all of us, [right]?\n\n[ما هو] يا تنتن بعد ما حكينا => [It's not], Tantn, after we talked\nما هو يا [تنتن] بعد ما حكينا => It's not, [Tantn], after we talked\nما هو يا تنتن [بعد ما] حكينا => It's not, Tantn, [after] we talked\nما هو يا تنتن بعد ما [حكينا] => It's not, Tantn, after [we talked]\n\n[كل] هالحكي عن الأكل الزاكي => [All] this talk about delicious food.\nكل [هالحكي] عن الأكل الزاكي => All [this talk] about delicious food.\nكل هالحكي [عن] الأكل الزاكي => All this talk [about] delicious food.\nكل هالحكي عن [الأكل] الزاكي => All this talk about delicious [food].\nكل هالحكي عن الأكل [الزاكي] => All this talk about [delicious] food.\n\n[جلجل] خلانا نجيب كل شي في المطبخ => [Jaljal] made us bring everything in the kitchen.\nجلجل [خلانا] نجيب كل شي في المطبخ => Jaljal [made us] bring everything in the kitchen.\nجلجل خلانا [نجيب] كل شي في المطبخ => Jaljal made us [bring] everything in the kitchen.\nجلجل خلانا نجيب [كل شي] في المطبخ => Jaljal made us bring [everything] in the kitchen.\nجلجل خلانا نجيب كل شي [في] المطبخ => Jaljal made us bring everything [in] the kitchen.\nجلجل خلانا نجيب كل شي في [المطبخ] => Jaljal made us bring everything in [the kitchen].\n\n[بس] برضه هاد الأكل إلنا كتير => [But] still, this food is a lot for us.\nبس [برضه] هاد الأكل إلنا كتير => But [still], this food is a lot for us.\nبس برضه [هاد] الأكل إلنا كتير => But still, [this] food is a lot for us.\nبس برضه هاد [الأكل] إلنا كتير => But still, this [food] is a lot for us.\nبس برضه هاد الأكل [إلنا] كتير => But still, this food is a lot [for us].\nبس برضه هاد الأكل إلنا [كتير] => But still, this food [is a lot] for us. # كتير maps to \"is a lot\" as the predicate in a nominal sentence\n\n[لا] يا تنتن، إحنا لازم ناكل => [No] Tantn, we need to eat.\nلا يا [تنتن]، إحنا لازم ناكل => No [Tantn], we need to eat.\nلا يا تنتن، [إحنا] لازم ناكل => No Tantn, [we] need to eat.\nلا يا تنتن، إحنا [لازم] ناكل => No Tantn, we [need to] eat.\nلا يا تنتن، إحنا لازم [ناكل] => No Tantn, we need to [eat]\n\n[دجاج] وسمك ولحمة منشان نقوي عضلاتنا => [Chicken], fish, and meat to strengthen our muscles.\nدجاج [وسمك] ولحمة منشان نقوي عضلاتنا => and fish\nدجاج وسمك [ولحمة] منشان نقوي عضلاتنا => Chicken, fish, [and meat] to strengthen our muscles.\nدجاج وسمك ولحمة [منشان] نقوي عضلاتنا => Chicken, fish, and meat [to] strengthen our muscles.\nدجاج وسمك ولحمة منشان [نقوي] عضلاتنا => Chicken, fish, and meat to [strengthen] our muscles.\nدجاج وسمك ولحمة منشان نقوي [عضلاتنا] => Chicken, fish, and meat to strengthen [our muscles] # combination of muscles and the \"na\" suffix for \"our\"\n\n[ونشرب] حليب منشان عظمنا => [And drink] milk for our bones.\nونشرب [حليب] منشان عظمنا => And drink [milk] for our bones.\nونشرب حليب [منشان] عظمنا => And drink milk [for] our bones.\nونشرب حليب منشان [عظمنا] => And drink milk for [our bones].\n\n[و]هاد الحليب لمين؟ => [And] this milk is for who?\nو[هاد] الحليب لمين؟ => And [this] milk is for who?\nوهاد [الحليب] لمين؟ => And this [milk] is for who?\nوهاد الحليب [لمين]؟ => And this milk is [for who]?\n\n[الحليب] لديدي => [The milk] is for Didi.\nالحليب [لديدي] => The milk is [for Didi]\n\n[أكيد] لديدي => [Definitely] for Didi.\nأكيد [لديدي] => Definitely [for Didi]\n\n[يلا] ناكل => [Let's] eat.\nيلا [ناكل] => Let's [eat].\n\n[يلا] ناكل => [Let's] eat.\nيلا [ناكل] => Let's [eat].\n\n[يلا] => [Let's go]\n\n",
-    "lessons": "# التعب من كرة القدم والراحة\n00:01.00 أنا تعبت من كرة القدم يا جلجل\n00:03.00 يعني ما بدك تكملي لعب؟\n00:05.00 خلينا هلا نرتاح شوي\n\n# لقاء القطة الجديدة\n00:07.00 تنتن، جلجل، مرحبا\n00:08.00 أهلاً حياة\n00:10.00 احزروا شو في معي\n00:12.00 احزروا ايش في معه، ايش في؟\n00:14.00 أنا ما حزرت\n00:15.00 ولا أنا\n\n# اكتشاف القطة وتربيتها\n00:16.00 ها، سامعة سامعة يا جلجل؟\n00:18.00 سامعة؟\n00:19.00 هاد صوت قطة، صح صح صح صوت قطة\n00:21.00 هيها، ما أحلاها\n00:25.00 بدي أسميها ديدي\n00:27.00 كتير اسم حلو ديدي\n00:29.00 بقدر ألعب معها؟\n00:31.00 طبعاً يا جلجل\n\n# العناية بالقطة\n00:32.00 وأنا وأنا كمان بدي ألعب معها\n00:34.00 هيها، هلا حطي إيدك على ظهرها يا تنتن\n00:38.00 ومشيها بنعومة\n00:40.00 ما أنعم شعرك يا ديدي يا حلوة\n00:43.00 حياة، نعم جلجل\n00:45.00 القطة بتحب تلعب زينا؟\n\n# الغذاء الصحي للقطة\n00:47.00 أكيد، ولازم نحممها\n00:49.00 وندير بالنا عليها ونطعميها\n00:52.00 هي، طيب يلا خلينا نلعبها كرة قدم\n00:55.00 استنوا استنوا شوي\n00:57.00 هاي الطابة شوية كبيرة عليها\n01:00.00 زي ما أنتوا شايفين صغيرة\n01:03.00 وبدها طابة صغيرة زيها\n\n# التخطيط لإطعام القطة\n01:05.00 آه، طيب حياة\n01:07.00 أنا حاسس إنه القطة جوعانة\n01:11.00 بنقدر نطعميها؟\n01:13.00 طبعاً بنقدر نطعميها\n01:15.00 ولازم نطعميها عشان ندير بالنا عليها\n01:17.00 أنا بعرف بعرف القطة شو بتاكل\n01:20.00 بتاكل لحمة صح؟\n\n# أنواع طعام القطة\n01:22.00 آه، ودجاج وسمك\n01:24.00 صح\n01:27.00 قطة يا حلوة يا ديدي\n01:29.00 مين بتحبي أكتر اللحمة ولا السمك؟\n01:31.00 أنا بقول يا تنتن التنين\n01:33.00 لأنه هي بدها بروتين\n01:35.00 حتى تقوي عضلاتها\n01:37.00 وتكون عضلات قوية، صح يا ديدي؟\n\n# الشراب الصحي للقطة\n01:39.00 صح يا جلجل\n01:41.00 وما ننسى لازم نشربها كمان للقطة\n01:43.00 إيه، تشرب لبن وحليب\n01:47.00 صح يا تنتن، لأنه الحليب واللبن\n01:49.00 فيهم كالسيوم المفيد للعظام\n\n# الذهاب إلى المطبخ\n01:51.00 حياة، ممكن تيجي معي؟\n01:54.00 وين؟\n01:55.00 على المطبخ\n01:56.00 طيب\n\n# وقت الطعام\n02:09.00 هي إجا الأكل يا ديدي\n02:13.00 ها، كل هاد الأكل لديدي؟\n02:17.00 آه، بس هاد كتير\n02:20.00 آه، أنا عرفت لمين هاد الأكل\n02:22.00 هاد إلنا كلنا صح؟\n\n# مشاركة الطعام\n02:25.00 ما هو يا تنتن بعد ما حكينا\n02:28.00 كل هالحكي عن الأكل الزاكي\n02:30.00 جلجل خلانا نجيب كل شي في المطبخ\n02:32.00 بس برضه هاد الأكل إلنا كتير\n02:34.00 لا يا تنتن، إحنا لازم ناكل\n02:36.00 دجاج وسمك ولحمة منشان نقوي عضلاتنا\n02:38.00 ونشرب حليب منشان عظمنا\n02:42.00 وهاد الحليب لمين؟\n02:44.00 الحليب لديدي\n02:46.00 أكيد لديدي\n02:48.00 يلا ناكل\n02:49.00 يلا ناكل\n02:50.00 يلا",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "phrases_with_token_translations": "[أنا تعبت] من كرة القدم يا جلجل => [I'm tired] of football, Jaljal.\nأنا تعبت [من] كرة القدم يا جلجل => I'm tired [of] football, Jaljal.\nأنا تعبت من [كرة القدم] يا جلجل => I'm tired of [football], Jaljal.\nأنا تعبت من كرة القدم يا [جلجل] => I'm tired of football, [Jaljal]\n\n[يعني] ما بدك تكملي لعب؟ => [So] you don't want to keep playing?\nيعني [ما بدك] تكملي لعب؟ => So [you don't want] to keep playing?\nيعني ما بدك [تكملي] لعب؟ => So you don't want [to keep] playing?\nيعني ما بدك تكملي [لعب]؟ => So you don't want to keep [playing]?\n\n[خلينا] هلا نرتاح شوي => [Let's] rest a bit now.\nخلينا [هلا] نرتاح شوي => Let's rest a bit [now].\nخلينا هلا [نرتاح] شوي => Let's [rest] a bit now.\nخلينا هلا نرتاح [شوي] => Let's rest [a bit] now.\n\n[تنتن]، جلجل، مرحبا => [Tantn], Jaljal, hello\nتنتن، [جلجل]، مرحبا => Tantn, [Jaljal], hello\nتنتن، جلجل، [مرحبا] => Tantn, Jaljal, [hello]\n\n[أهلاً] حياة => [Hello], Hayat.\nأهلاً [حياة] => Hello, [Hayat].\n\n[احزروا] شو في معي => [Guess] what I have with me.\nاحزروا [شو] في معي => Guess [what] I have with me.\nاحزروا شو [في] معي => there is, I have\nاحزروا شو في [معي] => Guess what I have [with me].\n\n[احزروا] ايش في معه، ايش في؟ => [Guess] what he has, what is it?\nاحزروا [ايش] في معه، ايش في؟ => Guess [what] he has, what is it?\nاحزروا ايش [في معه]، ايش في؟ => Guess what [he has], what is it?\nاحزروا ايش في معه، [ايش] في؟ => Guess what he has, [what] is it?\nاحزروا ايش في معه، ايش [في]؟ => Guess what he has, what [is it]?\n\n[أنا] ما حزرت => [I] didn't guess.\nأنا [ما حزرت] => I [didn't guess].\n\n[ولا] أنا => Me [neither]\nولا [أنا] => [Me] neither\n\n[ها]، سامعة سامعة يا جلجل؟ => [Hey], do you hear that, Jaljal?\nها، [سامعة] سامعة يا جلجل؟ => [do you hear] that, Jaljal?\nها، سامعة [سامعة] يا جلجل؟ => do you hear\nها، سامعة سامعة [يا] جلجل؟ => vocative particle\nها، سامعة سامعة يا [جلجل]؟ => Hey, do you hear that, [Jaljal]?\n\n[سامعة] => [Do you hear it] # 'سامعة' is the feminine active participle of 'to hear', used here as a question meaning 'Are you hearing?' or 'Do you hear it?'\n\n[هاد] صوت قطة، صح صح صح صوت قطة => [That's] a cat sound, yes yes yes, a cat sound.\nهاد [صوت] قطة، صح صح صح صوت قطة => That's a cat [sound], yes yes yes, a cat sound.\nهاد صوت [قطة]، صح صح صح صوت قطة => That's a [cat] sound, yes yes yes, a cat sound.\nهاد صوت قطة، [صح] صح صح صوت قطة => That's a cat sound, [yes] yes yes, a cat sound.\nهاد صوت قطة، صح [صح] صح صوت قطة => That's a cat sound, yes [yes] yes, a cat sound.\nهاد صوت قطة، صح صح [صح] صوت قطة => That's a cat sound, yes [yes] yes, a cat sound.\nهاد صوت قطة، صح صح صح [صوت] قطة => That's a cat sound, yes yes yes, a cat [sound]\nهاد صوت قطة، صح صح صح صوت [قطة] => That's a cat sound, yes yes yes, a [cat] sound\n\n[هيها]، ما أحلاها => [There she is], isn't she cute?\nهيها، [ما أحلاها] => There she is, [isn't she cute]?\n\n[بدي] أسميها ديدي => [I want] to name her Didi.\nبدي [أسميها] ديدي => I want [to name her] Didi.\nبدي أسميها [ديدي] => I want to name her [Didi]\n\n[كتير] اسم حلو ديدي => Didi is a [very] nice name.\nكتير [اسم] حلو ديدي => Didi is a very nice [name].\nكتير اسم [حلو] ديدي => Didi is a very [nice] name.\nكتير اسم حلو [ديدي] => [Didi] is a very nice name.\n\n[بقدر] ألعب معها؟ => [Can I] play with her?\nبقدر [ألعب] معها؟ => Can I [play] with her?\nبقدر ألعب [معها]؟ => Can I play [with her]?\n\n[طبعاً] يا جلجل => [Of course], Jaljal.\nطبعاً [يا] جلجل => vocative particle (O / hey)\nطبعاً يا [جلجل] => Of course, [Jaljal].\n\n[وأنا] وأنا كمان بدي ألعب معها => [And me], I want to play with her too.\nوأنا [وأنا] كمان بدي ألعب معها => And me, [I] want to play with her too.\nوأنا وأنا [كمان] بدي ألعب معها => And me, I want to play with her [too].\nوأنا وأنا كمان [بدي] ألعب معها => And me, I [want] to play with her too.\nوأنا وأنا كمان بدي [ألعب] معها => And me, I want [to play] with her too.\nوأنا وأنا كمان بدي ألعب [معها] => And me, I want to play [with her] too.\n\n[هيها]، هلا حطي إيدك على ظهرها يا تنتن => [There], now put your hand on her back, Tantn.\nهيها، [هلا] حطي إيدك على ظهرها يا تنتن => There, [now] put your hand on her back, Tantn.\nهيها، هلا [حطي] إيدك على ظهرها يا تنتن => There, now [put] your hand on her back, Tantn.\nهيها، هلا حطي [إيدك] على ظهرها يا تنتن => There, now put [your hand] on her back, Tantn.\nهيها، هلا حطي إيدك [على] ظهرها يا تنتن => There, now put your hand [on] her back, Tantn.\nهيها، هلا حطي إيدك على [ظهرها] يا تنتن => There, now put your hand on [her back], Tantn.\nهيها، هلا حطي إيدك على ظهرها يا [تنتن] => There, now put your hand on her back, [Tantn]\n\n[و]مشيها بنعومة => [And] pet her gently.\nو[مشيها] بنعومة => And [pet her] gently.\nومشيها [بنعومة] => And pet her [gently].\n\n[ما أنعم] شعرك يا ديدي يا حلوة => Your fur [is so soft], Didi, you sweetie.\nما أنعم [شعرك] يا ديدي يا حلوة => [Your fur] is so soft, Didi, you sweetie.\nما أنعم شعرك [يا ديدي] يا حلوة => Your fur is so soft, [Didi], you sweetie.\nما أنعم شعرك يا ديدي [يا حلوة] => Your fur is so soft, Didi, [you sweetie] # يا here is a vocative particle used for address\n\n[حياة]، نعم جلجل => [Hayat], yes Jaljal?\nحياة، [نعم] جلجل => Hayat, [yes] Jaljal?\nحياة، نعم [جلجل] => Hayat, yes [Jaljal]?\n\n[القطة] بتحب تلعب زينا؟ => Does [the cat] like to play like us?\nالقطة [بتحب] تلعب زينا؟ => Does the cat [like] to play like us?\nالقطة بتحب [تلعب] زينا؟ => Does the cat like [to play] like us?\nالقطة بتحب تلعب [زينا]؟ => Does the cat like to play [like us]?\n\n[أكيد]، ولازم نحممها => [Sure], and we need to bathe her.\nأكيد، [و]لازم نحممها => Sure, [and] we need to bathe her.\nأكيد، و[لازم] نحممها => Sure, and [we need to] bathe her.\nأكيد، ولازم [نحممها] => Sure, and we need to [bathe her]\n\n[و]ندير بالنا عليها ونطعميها => [And] take care of her and feed her.\nو[ندير بالنا] عليها ونطعميها => And [take care] of her and feed her.\nوندير بالنا [عليها] ونطعميها => And take care [of her] and feed her.\nوندير بالنا عليها [و]نطعميها => And take care of her [and] feed her.\nوندير بالنا عليها و[نطعميها] => And take care of her and [feed her] # the verb and object suffix 'ha' are mapped together to 'feed her'\n\n[هي]، طيب يلا خلينا نلعبها كرة قدم => [Hey], okay let's play football with her.\nهي، [طيب] يلا خلينا نلعبها كرة قدم => Hey, [okay] let's play football with her.\nهي، طيب [يلا خلينا] نلعبها كرة قدم => Hey, okay [let's] play football with her.\nهي، طيب يلا خلينا [نلعبها] كرة قدم => play with her # the Arabic word includes the verb \"play\" and the object pronoun \"her\"\nهي، طيب يلا خلينا نلعبها [كرة قدم] => Hey, okay let's play [football] with her.\n\n[استنوا] استنوا شوي => [Wait], wait a bit.\nاستنوا [استنوا] شوي => Wait, [wait] a bit.\nاستنوا استنوا [شوي] => Wait, wait [a bit].\n\n[هاي] الطابة شوية كبيرة عليها => [This] ball is a bit big for her.\nهاي [الطابة] شوية كبيرة عليها => This [ball] is a bit big for her.\nهاي الطابة [شوية] كبيرة عليها => This [a bit] big for her.\nهاي الطابة شوية [كبيرة] عليها => This a bit [big] for her.\nهاي الطابة شوية كبيرة [عليها] => This a bit big [for her].\n\n[زي ما] أنتوا شايفين صغيرة => [As] you can see, she's small.\nزي ما [أنتوا] شايفين صغيرة => As [you] can see, she's small.\nزي ما أنتوا [شايفين] صغيرة => As you [can see], she's small.\nزي ما أنتوا شايفين [صغيرة] => As you can see, she's [small].\n\n[و]بدها طابة صغيرة زيها => [And] she needs a small ball like her.\nو[بدها] طابة صغيرة زيها => And [she needs] a small ball like her.\nوبدها [طابة] صغيرة زيها => And she needs a [ball] like her.\nوبدها طابة [صغيرة] زيها => And she needs a [small] ball like her.\nوبدها طابة صغيرة [زيها] => And she needs a small ball [like her].\n\n[آه]، طيب حياة => [Ah], okay Hayat.\nآه، [طيب] حياة => Ah, [okay] Hayat.\nآه، طيب [حياة] => Ah, okay [Hayat].\n\n[أنا] حاسس إنه القطة جوعانة => [I] feel like the cat is hungry.\nأنا [حاسس] إنه القطة جوعانة => I [feel] like the cat is hungry.\nأنا حاسس [إنه] القطة جوعانة => I feel [like] the cat is hungry.\nأنا حاسس إنه [القطة] جوعانة => I feel like [the cat] is hungry.\nأنا حاسس إنه القطة [جوعانة] => I feel like the cat is [hungry]\n\n[بنقدر] نطعميها؟ => [Can we] feed her?\nبنقدر [نطعميها]؟ => Can we [feed her]?\n\n[طبعاً] بنقدر نطعميها => [Of course] we can feed her.\nطبعاً [بنقدر] نطعميها => Of course [we can] feed her.\nطبعاً بنقدر [نطعميها] => Of course we can [feed her].\n\n[و]لازم نطعميها عشان ندير بالنا عليها => [And] we must feed her to take care of her\nو[لازم] نطعميها عشان ندير بالنا عليها => must\nولازم [نطعميها] عشان ندير بالنا عليها => we feed her\nولازم نطعميها [عشان] ندير بالنا عليها => And we must feed her [to] take care of her\nولازم نطعميها عشان [ندير بالنا] عليها => we take care # or 'take care'\nولازم نطعميها عشان ندير بالنا [عليها] => And we must feed her to take care [of her]\n\n[أنا] بعرف بعرف القطة شو بتاكل => [I] know, I know what the cat eats.\nأنا [بعرف] بعرف القطة شو بتاكل => I [know], I know what the cat eats.\nأنا بعرف [بعرف] القطة شو بتاكل => I know, [I know] what the cat eats.\nأنا بعرف بعرف [القطة] شو بتاكل => I know, I know what [the cat] eats.\nأنا بعرف بعرف القطة [شو] بتاكل => I know, I know [what] the cat eats.\nأنا بعرف بعرف القطة شو [بتاكل] => I know, I know what the cat [eats].\n\n[بتاكل] لحمة صح؟ => [She eats] meat, right?\nبتاكل [لحمة] صح؟ => She eats [meat], right?\nبتاكل لحمة [صح]؟ => She eats meat, [right]?\n\n[آه]، ودجاج وسمك => [Yeah], and chicken and fish.\nآه، [ودجاج] وسمك => [and chicken] and fish.\nآه، ودجاج [وسمك] => and chicken [and fish].\n\n[صح] => [Correct].\n\n[قطة] يا حلوة يا ديدي => [Cat], you sweetie, Didi.\nقطة [يا] حلوة يا ديدي => Cat, [you] sweetie, Didi.\nقطة يا [حلوة] يا ديدي => Cat, you [sweetie], Didi.\nقطة يا حلوة يا [ديدي] => Cat, you sweetie, [Didi]\n\n[مين] بتحبي أكتر اللحمة ولا السمك؟ => [Which] do you like more, meat or fish?\nمين [بتحبي] أكتر اللحمة ولا السمك؟ => Which [do you like] more, meat or fish?\nمين بتحبي [أكتر] اللحمة ولا السمك؟ => Which do you like [more], meat or fish?\nمين بتحبي أكتر [اللحمة] ولا السمك؟ => Which do you like more, [meat] or fish?\nمين بتحبي أكتر اللحمة [ولا] السمك؟ => Which do you like more, meat [or] fish?\nمين بتحبي أكتر اللحمة ولا [السمك]؟ => Which do you like more, meat or [fish]?\n\n[أنا] بقول يا تنتن التنين => [I] say, Tantn, both.\nأنا [بقول] يا تنتن التنين => I [say], Tantn, both.\nأنا بقول يا [تنتن] التنين => I say, [Tantn], both.\nأنا بقول يا تنتن [التنين] => I say, Tantn, [both].\n\n[لأنه] هي بدها بروتين => [Because] she needs protein.\nلأنه [هي] بدها بروتين => Because [she] needs protein.\nلأنه هي [بدها] بروتين => Because she [needs] protein.\nلأنه هي بدها [بروتين] => Because she needs [protein]\n\n[حتى] تقوي عضلاتها => [To] strengthen her muscles.\nحتى [تقوي] عضلاتها => To [strengthen] her muscles.\nحتى تقوي [عضلاتها] => To strengthen [her muscles].\n\n[وتكون] عضلات قوية، صح يا ديدي؟ => [And have] strong muscles, right Didi?\nوتكون [عضلات] قوية، صح يا ديدي؟ => And have strong [muscles], right Didi?\nوتكون عضلات [قوية]، صح يا ديدي؟ => And have [strong] muscles, right Didi?\nوتكون عضلات قوية، [صح] يا ديدي؟ => And have strong muscles, [right] Didi?\nوتكون عضلات قوية، صح [يا ديدي]؟ => And have strong muscles, right [Didi]?\n\n[صح] يا جلجل => [Correct], Jaljal.\nصح يا [جلجل] => Correct, [Jaljal].\n\n[و]ما ننسى لازم نشربها كمان للقطة => [And] let's not forget, we must give her drink too.\nو[ما] ننسى لازم نشربها كمان للقطة => And let's [not] forget, we must give her drink too.\nوما [ننسى] لازم نشربها كمان للقطة => And let's not [forget], we must give her drink too.\nوما ننسى [لازم] نشربها كمان للقطة => And let's not forget, we [must] give her drink too.\nوما ننسى لازم [نشربها] كمان للقطة => And let's not forget, we must [give her drink] too.\nوما ننسى لازم نشربها [كمان] للقطة => And let's not forget, we must give her drink [too].\nوما ننسى لازم نشربها كمان [للقطة] => to the cat # \"للقطة\" refers specifically to the cat, whereas the English sentence uses \"her\" to refer back to it.\n\n[إيه]، تشرب لبن وحليب => [Yes], she drinks milk and yogurt.\nإيه، [تشرب] لبن وحليب => Yes, [she drinks] milk and yogurt.\nإيه، تشرب [لبن] وحليب => Yes, she drinks milk and [yogurt]\nإيه، تشرب لبن [و]حليب => Yes, she drinks milk [and] yogurt\nإيه، تشرب لبن و[حليب] => Yes, she drinks [milk] and yogurt\n\n[صح] يا تنتن، لأنه الحليب واللبن => [Correct] Tantn, because milk and yogurt\nصح يا [تنتن]، لأنه الحليب واللبن => Correct [Tantn], because milk and yogurt\nصح يا تنتن، [لأنه] الحليب واللبن => Correct Tantn, [because] milk and yogurt\nصح يا تنتن، لأنه [الحليب] واللبن => Correct Tantn, because [milk] and yogurt\nصح يا تنتن، لأنه الحليب [واللبن] => Correct Tantn, because [and yogurt]\n\n[فيهم] كالسيوم المفيد للعظام => [Have] calcium good for bones.\nفيهم [كالسيوم] المفيد للعظام => Have [calcium] good for bones.\nفيهم كالسيوم [المفيد] للعظام => Have calcium [good] for bones.\nفيهم كالسيوم المفيد [للعظام] => Have calcium good [for bones].\n\n[حياة]، ممكن تيجي معي؟ => [Hayat], can you come with me?\nحياة، [ممكن] تيجي معي؟ => Hayat, [can] you come with me?\nحياة، ممكن [تيجي] معي؟ => Hayat, can [you come] with me?\nحياة، ممكن تيجي [معي]؟ => Hayat, can you come [with me]?\n\n[وين]؟ => [Where]?\n\n[على] المطبخ => [To] the kitchen\nعلى [المطبخ] => [the kitchen]\n\n[طيب] => [Okay].\n\n[هي] إجا الأكل يا ديدي => [Here] comes the food, Didi.\nهي [إجا] الأكل يا ديدي => Here [comes] the food, Didi.\nهي إجا [الأكل] يا ديدي => Here comes [the food], Didi.\nهي إجا الأكل يا [ديدي] => Here comes the food, [Didi]\n\n[ها]، كل هاد الأكل لديدي؟ => [Hey], is all this food for Didi?\nها، [كل] هاد الأكل لديدي؟ => Hey, is [all] this food for Didi?\nها، كل [هاد] الأكل لديدي؟ => Hey, is all [this] food for Didi?\nها، كل هاد [الأكل] لديدي؟ => Hey, is all this [food] for Didi?\nها، كل هاد الأكل [لديدي]؟ => Hey, is all this food [for Didi]?\n\n[آه]، بس هاد كتير => [Yeah], but this is a lot\nآه، [بس] هاد كتير => Yeah, [but] this is a lot\nآه، بس [هاد] كتير => Yeah, but [this] is a lot\nآه، بس هاد [كتير] => Yeah, but this [is a lot]\n\n[آه]، أنا عرفت لمين هاد الأكل => [Ah], I know who this food is for.\nآه، [أنا] عرفت لمين هاد الأكل => Ah, [I] know who this food is for.\nآه، أنا [عرفت] لمين هاد الأكل => Ah, I [know] who this food is for.\nآه، أنا عرفت [لمين] هاد الأكل => for whom, who... for\nآه، أنا عرفت لمين [هاد] الأكل => Ah, I know who [this] food is for.\nآه، أنا عرفت لمين هاد [الأكل] => Ah, I know who this [food] is for.\n\n[هاد] إلنا كلنا صح؟ => [This] is for all of us, right?\nهاد [إلنا] كلنا صح؟ => for us\nهاد إلنا [كلنا] صح؟ => all of us\nهاد إلنا كلنا [صح]؟ => This is for all of us, [right]?\n\n[ما هو] يا تنتن بعد ما حكينا => [It's not], Tantn, after we talked\nما هو يا [تنتن] بعد ما حكينا => It's not, [Tantn], after we talked\nما هو يا تنتن [بعد ما] حكينا => It's not, Tantn, [after] we talked\nما هو يا تنتن بعد ما [حكينا] => It's not, Tantn, after [we talked]\n\n[كل] هالحكي عن الأكل الزاكي => [All] this talk about delicious food.\nكل [هالحكي] عن الأكل الزاكي => All [this talk] about delicious food.\nكل هالحكي [عن] الأكل الزاكي => All this talk [about] delicious food.\nكل هالحكي عن [الأكل] الزاكي => All this talk about delicious [food].\nكل هالحكي عن الأكل [الزاكي] => All this talk about [delicious] food.\n\n[جلجل] خلانا نجيب كل شي في المطبخ => [Jaljal] made us bring everything in the kitchen.\nجلجل [خلانا] نجيب كل شي في المطبخ => Jaljal [made us] bring everything in the kitchen.\nجلجل خلانا [نجيب] كل شي في المطبخ => Jaljal made us [bring] everything in the kitchen.\nجلجل خلانا نجيب [كل شي] في المطبخ => Jaljal made us bring [everything] in the kitchen.\nجلجل خلانا نجيب كل شي [في] المطبخ => Jaljal made us bring everything [in] the kitchen.\nجلجل خلانا نجيب كل شي في [المطبخ] => Jaljal made us bring everything in [the kitchen].\n\n[بس] برضه هاد الأكل إلنا كتير => [But] still, this food is a lot for us.\nبس [برضه] هاد الأكل إلنا كتير => But [still], this food is a lot for us.\nبس برضه [هاد] الأكل إلنا كتير => But still, [this] food is a lot for us.\nبس برضه هاد [الأكل] إلنا كتير => But still, this [food] is a lot for us.\nبس برضه هاد الأكل [إلنا] كتير => But still, this food is a lot [for us].\nبس برضه هاد الأكل إلنا [كتير] => But still, this food [is a lot] for us. # كتير maps to \"is a lot\" as the predicate in a nominal sentence\n\n[لا] يا تنتن، إحنا لازم ناكل => [No] Tantn, we need to eat.\nلا يا [تنتن]، إحنا لازم ناكل => No [Tantn], we need to eat.\nلا يا تنتن، [إحنا] لازم ناكل => No Tantn, [we] need to eat.\nلا يا تنتن، إحنا [لازم] ناكل => No Tantn, we [need to] eat.\nلا يا تنتن، إحنا لازم [ناكل] => No Tantn, we need to [eat]\n\n[دجاج] وسمك ولحمة منشان نقوي عضلاتنا => [Chicken], fish, and meat to strengthen our muscles.\nدجاج [وسمك] ولحمة منشان نقوي عضلاتنا => and fish\nدجاج وسمك [ولحمة] منشان نقوي عضلاتنا => Chicken, fish, [and meat] to strengthen our muscles.\nدجاج وسمك ولحمة [منشان] نقوي عضلاتنا => Chicken, fish, and meat [to] strengthen our muscles.\nدجاج وسمك ولحمة منشان [نقوي] عضلاتنا => Chicken, fish, and meat to [strengthen] our muscles.\nدجاج وسمك ولحمة منشان نقوي [عضلاتنا] => Chicken, fish, and meat to strengthen [our muscles] # combination of muscles and the \"na\" suffix for \"our\"\n\n[ونشرب] حليب منشان عظمنا => [And drink] milk for our bones.\nونشرب [حليب] منشان عظمنا => And drink [milk] for our bones.\nونشرب حليب [منشان] عظمنا => And drink milk [for] our bones.\nونشرب حليب منشان [عظمنا] => And drink milk for [our bones].\n\n[و]هاد الحليب لمين؟ => [And] this milk is for who?\nو[هاد] الحليب لمين؟ => And [this] milk is for who?\nوهاد [الحليب] لمين؟ => And this [milk] is for who?\nوهاد الحليب [لمين]؟ => And this milk is [for who]?\n\n[الحليب] لديدي => [The milk] is for Didi.\nالحليب [لديدي] => The milk is [for Didi]\n\n[أكيد] لديدي => [Definitely] for Didi.\nأكيد [لديدي] => Definitely [for Didi]\n\n[يلا] ناكل => [Let's] eat.\nيلا [ناكل] => Let's [eat].\n\n[يلا] ناكل => [Let's] eat.\nيلا [ناكل] => Let's [eat].\n\n[يلا] => [Let's go]\n\n"
   },
   "created_at": "2026-04-25 22:47:56 UTC",
-  "updated_at": "2026-04-25 23:04:57 UTC",
-  "exported_at": "2026-04-25T23:04:57Z"
+  "updated_at": "2026-04-26 05:56:58 UTC",
+  "exported_at": "2026-04-26T20:10:42Z"
 }

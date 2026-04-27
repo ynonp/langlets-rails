@@ -1,0 +1,485 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=Y1XGmZjdLjE",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "مرحبا يا أصدقائي الأطفال.",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:03.00",
+        "text_l2": "Hello, my little friends."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "إحنا اليوم رح نلعب مع بعض.",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:06.00",
+        "text_l2": "Today we're going to play together."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "لعبة مع تنتن.",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:08.00",
+        "text_l2": "A game with Tenten."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "ولعبة مع جلجل.",
+        "timestamp": "00:08.00",
+        "timestamp_end": "00:11.00",
+        "text_l2": "And a game with Jaljal."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "مرحبا!",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:12.00",
+        "text_l2": "Hello!"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وأنا متأكدة إنكم رح تحبوها كتير.",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:15.00",
+        "text_l2": "And I'm sure you'll love it very much."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "وأنا كمان متأكد إنكم رح تحبوها كتير.",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:19.00",
+        "text_l2": "And I'm also sure you'll love it very much."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "آه، وأنا كمان.",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:21.00",
+        "text_l2": "Ah, me too."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "بس قبل لازم نحكي لأصدقائنا الأطفال",
+        "timestamp": "00:21.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "But first, we need to tell our little friends"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "شو اسم هاي اللعبة.",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "What the name of this game is."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "معك حق يا تنتن.",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "You're right, Tenten."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "منيح اللي تذكرتي.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Good that you remembered."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "لعبتنا اليوم هي البحث عن الأشكال.",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "Our game today is finding shapes."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "دائرة،",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:36.00",
+        "text_l2": "Circle,"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "مربع،",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:39.00",
+        "text_l2": "Square,"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "مثلث،",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "Triangle,"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "ومستطيل.",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:44.00",
+        "text_l2": "And rectangle."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "وإحنا رح ندور أنا وتنتن على الأشكال:",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "And Tenten and I will look for the shapes:"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "المربع والدائرة",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "The square and the circle"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "والمثلث والمستطيل.",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:53.00",
+        "text_l2": "And the triangle and the rectangle."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "ممتاز!",
+        "timestamp": "00:53.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "Excellent!"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "أنا بحكيلكم اسم الشكل",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:58.00",
+        "text_l2": "I'll tell you the name of the shape"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "وإنتو كمان لازم بسرعة تلاقوه.",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "And you also need to find it quickly."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "أنا جاهزة، يلا نبدأ!",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:02.00",
+        "text_l2": "I'm ready, let's start!"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "وإنت كمان يا جلجل بسرعة.",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "You too, Jaljal, quickly."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "آه، يلا.",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "Ah, let's go."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "أول إشي يا تنتن بدنا ندور",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:11.00",
+        "text_l2": "First thing, Tenten, we need to look"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "على أي إشي على شكل دائرة.",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "For anything shaped like a circle."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "هه، لقيتها لقيتها، هي الدائرة!",
+        "timestamp": "01:14.00",
+        "timestamp_end": "01:19.00",
+        "text_l2": "Hehe, I found it, I found it, here's the circle!"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "ممتاز يا تنتن.",
+        "timestamp": "01:19.00",
+        "timestamp_end": "01:22.00",
+        "text_l2": "Excellent, Tenten."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "عجل الدراجة على شكل دائرة.",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:27.00",
+        "text_l2": "The bicycle wheel is shaped like a circle."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "وإنت يا جلجل، لقيت المربع؟",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:31.00",
+        "text_l2": "And you, Jaljal, did you find the square?"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "هيه، لقيته.",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:34.00",
+        "text_l2": "Yeah, I found it."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "هاد هو المربع.",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:37.00",
+        "text_l2": "This is the square."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "صح يا جلجل، هاد فعلاً مربع.",
+        "timestamp": "01:37.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "Correct, Jaljal, this is really a square."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "وإله أربع أضلاع.",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "And it has four sides."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "واحد،",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "One,"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "اتنين،",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:49.00",
+        "text_l2": "Two,"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "تلاتة،",
+        "timestamp": "01:49.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Three,"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "أربعة.",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:54.00",
+        "text_l2": "Four."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "وهلأ دورك يا تنتن،",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "And now it's your turn, Tenten,"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "بدي تلاقي المثلث، يلا بسرعة!",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:00.00",
+        "text_l2": "I want you to find the triangle, come on quickly!"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "هه، هه، هي المثلث!",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:05.00",
+        "text_l2": "Hehe, hehe, here's the triangle!"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "ممتاز يا تنتن، فعلاً هاد مثلث.",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "Excellent, Tenten, this is really a triangle."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "ضلع،",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "One side,"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "ضلعين،",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.00",
+        "text_l2": "Two sides,"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "تلاتة أضلاع.",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "Three sides."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "وهلأ يا تنتن وجلجل",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:19.00",
+        "text_l2": "And now, Tenten and Jaljal,"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "بدي إياكم تلاقولي شكل المستطيل.",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:22.00",
+        "text_l2": "I want you to find the shape of the rectangle."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "معلش أعزائي المشاهدين،",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:25.00",
+        "text_l2": "Sorry, my dear viewers,"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "لهلأ تنتن وجلجل ما لقوا المستطيل.",
+        "timestamp": "02:25.00",
+        "timestamp_end": "02:28.00",
+        "text_l2": "So far Tenten and Jaljal haven't found the rectangle."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "هي تنتن.",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:30.00",
+        "text_l2": "Here is Tenten."
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "ما لقيت المستطيل ومش لاقية جلجل.",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:33.00",
+        "text_l2": "I didn't find the rectangle and I can't find Jaljal."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "جلجل، وينك يا جلجل؟",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:36.00",
+        "text_l2": "Jaljal, where are you, Jaljal?"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "لسا ما خلصت اللعبة.",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:38.00",
+        "text_l2": "The game isn't over yet."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "جلجل!",
+        "timestamp": "02:38.00",
+        "timestamp_end": "02:40.00",
+        "text_l2": "Jaljal!"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "هيني، لقيت المستطيل!",
+        "timestamp": "02:40.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "Here I am, I found the rectangle!"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "طيب تعال اطلع وفرجينا المستطيل.",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:46.00",
+        "text_l2": "Okay, come show us the rectangle."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "هيه قبالكم بالزبط،",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:49.00",
+        "text_l2": "Here it is right in front of you,"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "باب بيت حياة.",
+        "timestamp": "02:49.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "The door to Hayat's house."
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "صح يا جلجل، الباب هو مستطيل.",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "Correct, Jaljal, the door is a rectangle."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "وإله أربع أضلاع.",
+        "timestamp": "02:54.00",
+        "timestamp_end": "02:57.00",
+        "text_l2": "And it has four sides."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "واحد،",
+        "timestamp": "02:57.00",
+        "timestamp_end": "02:59.00",
+        "text_l2": "One,"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "اتنين،",
+        "timestamp": "02:59.00",
+        "timestamp_end": "03:01.00",
+        "text_l2": "Two,"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "تلاتة،",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:03.00",
+        "text_l2": "Three,"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "أربعة.",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.00",
+        "text_l2": "Four."
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "ممتاز يا جلجل، صح!",
+        "timestamp": "03:05.00",
+        "timestamp_end": "03:08.00",
+        "text_l2": "Excellent, Jaljal, correct!"
+      }
+    ],
+    "phrases_with_token_translations": "[مرحبا] يا أصدقائي الأطفال. => [Hello], my little friends.\nمرحبا [يا] أصدقائي الأطفال. => vocative particle (O)\nمرحبا يا [أصدقائي] الأطفال. => my friends\nمرحبا يا أصدقائي [الأطفال]. => Hello, my [little] friends. # \"الأطفال\" literally means \"the children\", here used as \"little\" or \"little ones\"\n\n[إحنا] اليوم رح نلعب مع بعض. => Today [we]'re going to play together.\nإحنا [اليوم] رح نلعب مع بعض. => [Today] we're going to play together.\nإحنا اليوم [رح] نلعب مع بعض. => Today we're [going to] play together.\nإحنا اليوم رح [نلعب] مع بعض. => Today we're going to [play] together.\nإحنا اليوم رح نلعب [مع بعض] => Today we're going to play [together]\n\n[لعبة] مع تنتن. => [A game] with Tenten.\nلعبة [مع] تنتن. => A game [with] Tenten.\nلعبة مع [تنتن]. => A game with [Tenten].\n\n[و]لعبة مع جلجل. => [And] a game with Jaljal.\nو[لعبة] مع جلجل. => And [a game] with Jaljal.\nولعبة [مع] جلجل. => And a game [with] Jaljal.\nولعبة مع [جلجل]. => And a game with [Jaljal].\n\n[مرحبا]! => [Hello]!\n\n[و]أنا متأكدة إنكم رح تحبوها كتير. => [And] I'm sure you'll love it very much.\nو[أنا] متأكدة إنكم رح تحبوها كتير. => And [I]'m sure you'll love it very much.\nوأنا [متأكدة] إنكم رح تحبوها كتير. => And I'm [sure] you'll love it very much.\nوأنا متأكدة [إنكم رح] تحبوها كتير. => And I'm sure [you'll] love it very much.\nوأنا متأكدة إنكم رح [تحبوها] كتير. => And I'm sure you'll [love it] very much.\nوأنا متأكدة إنكم رح تحبوها [كتير]. => And I'm sure you'll love it [very much].\n\n[وأنا] كمان متأكد إنكم رح تحبوها كتير. => [And I'm] also sure you'll love it very much.\nوأنا [كمان] متأكد إنكم رح تحبوها كتير. => And I'm [also] sure you'll love it very much.\nوأنا كمان [متأكد] إنكم رح تحبوها كتير. => And I'm also [sure] you'll love it very much.\nوأنا كمان متأكد [إنكم رح] تحبوها كتير. => And I'm also sure [you'll] love it very much. # إنكم (that you) + رح (will) aligned to the contraction \"you'll\"\nوأنا كمان متأكد إنكم رح [تحبوها] كتير. => And I'm also sure you'll [love it] very much. # تحبو (love) + ها (it)\nوأنا كمان متأكد إنكم رح تحبوها [كتير]. => And I'm also sure you'll love it [very much].\n\n[آه]، وأنا كمان. => [Ah], me too.\nآه، [وأنا] كمان. => Ah, [me] too.\nآه، وأنا [كمان]. => Ah, me [too].\n\n[بس] قبل لازم نحكي لأصدقائنا الأطفال => [But] first, we need to tell our little friends\nبس [قبل] لازم نحكي لأصدقائنا الأطفال => But [first], we need to tell our little friends\nبس قبل [لازم] نحكي لأصدقائنا الأطفال => need to\nبس قبل لازم [نحكي] لأصدقائنا الأطفال => tell\nبس قبل لازم نحكي [لأصدقائنا] الأطفال => But first, we need to tell [our] little [friends]\nبس قبل لازم نحكي لأصدقائنا [الأطفال] => But first, we need to tell our [little] friends\n\n[شو] اسم هاي اللعبة. => [What] the name of this game is.\nشو [اسم] هاي اللعبة. => What the [name] of this game is.\nشو اسم [هاي] اللعبة. => What the name of [this] game is.\nشو اسم هاي [اللعبة]. => What the name of this [game] is.\n\n[معك حق] يا تنتن. => [You're right], Tenten.\nمعك حق [يا] تنتن. => vocative particle\nمعك حق يا [تنتن]. => You're right, [Tenten].\n\n[منيح] اللي تذكرتي => [Good] that you remembered\nمنيح [اللي] تذكرتي => Good [that] you remembered\nمنيح اللي [تذكرتي] => Good that [you remembered]\n\n[لعبتنا] اليوم هي البحث عن الأشكال. => [Our game] today is finding shapes.\nلعبتنا [اليوم] هي البحث عن الأشكال. => Our game [today] is finding shapes.\nلعبتنا اليوم [هي] البحث عن الأشكال. => Our game today [is] finding shapes.\nلعبتنا اليوم هي [البحث عن] الأشكال. => Our game today is [finding] shapes.\nلعبتنا اليوم هي البحث عن [الأشكال] => Our game today is finding [shapes]\n\n[دائرة]، => [Circle],\n\n[مربع]، => [Square], # Aligned the word \"مربع\" with its direct translation \"Square\" while excluding punctuation.\n\n[مثلث]، => [Triangle],\n\n[و]مستطيل => [And] rectangle\nو[مستطيل] => And [rectangle]\n\n[و]إحنا رح ندور أنا وتنتن على الأشكال: => [And] Tenten and I will look for the shapes\nو[إحنا] رح ندور أنا وتنتن على الأشكال: => we\nوإحنا [رح ندور] أنا وتنتن [على] الأشكال: => [will look for]\nوإحنا رح ندور [أنا] وتنتن على الأشكال: => And Tenten and [I] will look for the shapes\nوإحنا رح ندور أنا [و]تنتن على الأشكال: => And Tenten [and] I will look for the shapes\nوإحنا رح ندور أنا و[تنتن] على الأشكال: => And [Tenten] and I will look for the shapes\nوإحنا رح ندور أنا وتنتن على [الأشكال]: => And Tenten and I will look for [the shapes]\n\n[المربع] والدائرة => [The square] and the circle\nالمربع [و]الدائرة => The square [and] the circle\nالمربع و[الدائرة] => The square and [the circle]\n\n[و]المثلث والمستطيل => [And] the triangle and the rectangle\nو[المثلث] والمستطيل => And [the triangle] and the rectangle\nوالمثلث [و]المستطيل => And the triangle [and] the rectangle\nوالمثلث و[المستطيل] => And the triangle and [the rectangle]\n\n[ممتاز]! => [Excellent]!\n\n[أنا] بحكيلكم اسم الشكل => [I]'ll tell you the name of the shape\nأنا [بحكيلكم] اسم الشكل => will tell you\nأنا بحكيلكم [اسم] الشكل => I'll tell you [the name] of the shape\nأنا بحكيلكم اسم [الشكل] => I'll tell you the name of [the shape]\n\n[وإنتو] كمان لازم بسرعة تلاقوه. => [And you] also need to find it quickly.\nوإنتو [كمان] لازم بسرعة تلاقوه. => And you [also] need to find it quickly.\nوإنتو كمان [لازم] بسرعة تلاقوه. => And you also [need to] find it quickly.\nوإنتو كمان لازم [بسرعة] تلاقوه. => And you also need to find it [quickly].\nوإنتو كمان لازم بسرعة [تلاقوه]. => And you also need to [find it] quickly.\n\n[أنا] جاهزة، يلا نبدأ! => [I]'m ready, let's start!\nأنا [جاهزة]، يلا نبدأ! => I'm [ready], let's start!\nأنا جاهزة، [يلا] نبدأ! => I'm ready, [let's] start!\nأنا جاهزة، يلا [نبدأ]! => I'm ready, let's [start]!\n\n[وإنت] كمان يا جلجل بسرعة. => [You] too, Jaljal, quickly.\nوإنت [كمان] يا جلجل بسرعة. => You [too], Jaljal, quickly.\nوإنت كمان يا [جلجل] بسرعة. => You too, [Jaljal], quickly.\nوإنت كمان يا جلجل [بسرعة]. => You too, Jaljal, [quickly].\n\n[آه]، يلا. => [Ah], let's go.\nآه، [يلا]. => Ah, [let's go]. # يلا is a common expression often translated as the entire phrase \"let's go\" or \"come on\"\n\n[أول] إشي يا تنتن بدنا ندور => [First] thing, Tenten, we need to look\nأول [إشي] يا تنتن بدنا ندور => First [thing], Tenten, we need to look\nأول إشي يا [تنتن] بدنا ندور => First thing, [Tenten], we need to look\nأول إشي يا تنتن [بدنا] ندور => First thing, Tenten, [we need] to look\nأول إشي يا تنتن بدنا [ندور] => First thing, Tenten, we need [to look]\n\n[على] أي إشي على شكل دائرة. => [For] anything shaped like a circle.\nعلى [أي إشي] على شكل دائرة. => For [anything] shaped like a circle.\nعلى أي إشي [على شكل] دائرة. => For anything [shaped like] a circle.\nعلى أي إشي على شكل [دائرة]. => For anything shaped like [a circle].\n\n[هه]، لقيتها لقيتها، هي الدائرة! => [Hehe], I found it, I found it, here's the circle!\nهه، [لقيتها] لقيتها، هي الدائرة! => Hehe, [I found it], I found it, here's the circle!\nهه، لقيتها [لقيتها]، هي الدائرة! => Hehe, I found it, [I found it], here's the circle!\nهه، لقيتها لقيتها، [هي] الدائرة! => Hehe, I found it, I found it, [here's] the circle!\nهه، لقيتها لقيتها، هي [الدائرة]! => Hehe, I found it, I found it, here's [the circle]!\n\n[ممتاز] يا تنتن => [Excellent], Tenten\nممتاز يا [تنتن] => Excellent, [Tenten]\n\n[عجل] الدراجة على شكل دائرة. => The bicycle [wheel] is shaped like a circle.\nعجل [الدراجة] على شكل دائرة. => [The bicycle] wheel is shaped like a circle.\nعجل الدراجة [على شكل] دائرة. => The bicycle wheel [is shaped like] a circle.\nعجل الدراجة على شكل [دائرة]. => The bicycle wheel is shaped like [a circle].\n\n[و]إنت يا جلجل، لقيت المربع؟ => [And] you, Jaljal, did you find the square?\nو[إنت] يا جلجل، لقيت المربع؟ => And [you], Jaljal, did you find the square?\nوإنت يا [جلجل]، لقيت المربع؟ => And you, [Jaljal], did you find the square?\nوإنت يا جلجل، [لقيت] المربع؟ => And you, Jaljal, [did you find] the square?\nوإنت يا جلجل، لقيت [المربع]؟ => And you, Jaljal, did you find [the square]?\n\n[هيه]، لقيته. => [Yeah], I found it.\nهيه، [لقيته]. => Yeah, [I found it].\n\n[هاد] هو المربع. => [This] is the square.\nهاد [هو] المربع. => This [is] the square.\nهاد هو [المربع]. => This is [the square].\n\n[صح] يا جلجل، هاد فعلاً مربع. => [Correct], Jaljal, this is really a square.\nصح يا [جلجل]، هاد فعلاً مربع. => Correct, [Jaljal], this is really a square.\nصح يا جلجل، [هاد] فعلاً مربع. => Correct, Jaljal, [this] is really a square.\nصح يا جلجل، هاد [فعلاً] مربع. => Correct, Jaljal, this is [really] a square.\nصح يا جلجل، هاد فعلاً [مربع]. => Correct, Jaljal, this is really [a square].\n\n[و]إله أربع أضلاع => [And] it has four sides.\nو[إله] أربع أضلاع => it has\nوإله [أربع] أضلاع => And it has [four] sides.\nوإله أربع [أضلاع] => And it has four [sides].\n\n[واحد]، => [One],\n\n[اتنين]، => [Two],\n\n[تلاتة]، => [Three],\n\n[أربعة]. => [Four].\n\n[و]هلأ دورك يا تنتن، => [And] now it's your turn, Tenten,\nو[هلأ] دورك يا تنتن، => And [now] it's your turn, Tenten,\nوهلأ [دورك] يا تنتن، => And now [it's your turn], Tenten,\nوهلأ دورك [يا تنتن]، => And now it's your turn, [Tenten],\n\n[بدي] تلاقي المثلث، يلا بسرعة! => [I want] you to find the triangle, come on quickly!\nبدي [تلاقي] المثلث، يلا بسرعة! => I want [you to find] the triangle, come on quickly!\nبدي تلاقي [المثلث]، يلا بسرعة! => I want you to find [the triangle], come on quickly!\nبدي تلاقي المثلث، [يلا] بسرعة! => I want you to find the triangle, [come on] quickly!\nبدي تلاقي المثلث، يلا [بسرعة]! => I want you to find the triangle, come on [quickly]!\n\n[هه]، هه، هي المثلث! => [Hehe], hehe, here's the triangle!\nهه، [هه]، هي المثلث! => Hehe, [hehe], here's the triangle!\nهه، هه، [هي] المثلث! => Hehe, hehe, [here's] the triangle!\nهه، هه، هي [المثلث]! => Hehe, hehe, here's [the triangle]!\n\n[ممتاز] يا تنتن، فعلاً هاد مثلث => [Excellent], Tenten, this is really a triangle.\nممتاز [يا تنتن]، فعلاً هاد مثلث => Excellent, [Tenten], this is really a triangle.\nممتاز يا تنتن، [فعلاً] هاد مثلث => Excellent, Tenten, this is [really] a triangle.\nممتاز يا تنتن، فعلاً [هاد] مثلث => [this is] # هاد means 'this', the 'is' is implicit in Arabic\nممتاز يا تنتن، فعلاً هاد [مثلث] => Excellent, Tenten, this is really a [triangle].\n\n[ضلع]، => [One side],\n\n[ضلعين]، => [Two sides],\n\n[تلاتة] أضلاع => [Three] sides\nتلاتة [أضلاع] => Three [sides]\n\n[وهلأ] يا تنتن وجلجل => [And now], Tenten and Jaljal,\nوهلأ [يا] تنتن وجلجل => vocative particle # particle used to address someone directly\nوهلأ يا [تنتن] وجلجل => And now, [Tenten] and Jaljal,\nوهلأ يا تنتن [و]جلجل => And now, Tenten [and] Jaljal,\nوهلأ يا تنتن و[جلجل] => And now, Tenten and [Jaljal],\n\n[بدي] إياكم تلاقولي شكل المستطيل. => [I want] you to find the shape of the rectangle.\nبدي [إياكم] تلاقولي شكل المستطيل. => I want [you] to find the shape of the rectangle.\nبدي إياكم [تلاقولي] شكل المستطيل. => I want you [to find] the shape of the rectangle. # تلاقولي lit: find for me, but maps well to \"to find\"\nبدي إياكم تلاقولي [شكل] المستطيل. => I want you to find [the shape] of the rectangle.\nبدي إياكم تلاقولي شكل [المستطيل]. => I want you to find the shape of [the rectangle].\n\n[معلش] أعزائي المشاهدين => [Sorry], my dear viewers\nمعلش [أعزائي] المشاهدين => Sorry, [my dear] viewers\nمعلش أعزائي [المشاهدين] => Sorry, my dear [viewers]\n\n[لهلأ] تنتن وجلجل ما لقوا المستطيل. => [So far] Tenten and Jaljal haven't found the rectangle.\nلهلأ [تنتن] وجلجل ما لقوا المستطيل. => So far [Tenten] and Jaljal haven't found the rectangle.\nلهلأ تنتن [وجلجل] ما لقوا المستطيل. => So far Tenten [and Jaljal] haven't found the rectangle.\nلهلأ تنتن وجلجل [ما لقوا] المستطيل. => So far Tenten and Jaljal [haven't found] the rectangle.\nلهلأ تنتن وجلجل ما لقوا [المستطيل]. => So far Tenten and Jaljal haven't found [the rectangle].\n\n[هي] تنتن => [Here is] Tenten\nهي [تنتن] => Here is [Tenten]\n\n[ما لقيت] المستطيل ومش لاقية جلجل. => [I didn't find] the rectangle and I can't find Jaljal.\nما لقيت [المستطيل] ومش لاقية جلجل. => I didn't find [the rectangle] and I can't find Jaljal.\nما لقيت المستطيل [و]مش لاقية جلجل. => I didn't find the rectangle [and] I can't find Jaljal.\nما لقيت المستطيل و[مش لاقية] جلجل. => I didn't find the rectangle and [I can't find] Jaljal.\nما لقيت المستطيل ومش لاقية [جلجل]. => I didn't find the rectangle and I can't find [Jaljal].\n\n[جلجل]، وينك يا جلجل؟ => [Jaljal], where are you, Jaljal?\nجلجل، [وينك] يا جلجل؟ => Jaljal, [where are you], Jaljal?\nجلجل، وينك [يا] جلجل؟ => vocative particle # particle used for calling or addressing someone\nجلجل، وينك يا [جلجل]؟ => Jaljal, where are you, [Jaljal]?\n\n[لسا] ما خلصت اللعبة => The game isn't over [yet]\nلسا [ما خلصت] اللعبة => The game [isn't over] yet\nلسا ما خلصت [اللعبة] => [The game] isn't over yet\n\n[جلجل]! => [Jaljal]!\n\n[هيني]، لقيت المستطيل! => [Here I am], I found the rectangle!\nهيني، [لقيت] المستطيل! => Here I am, [I found] the rectangle!\nهيني، لقيت [المستطيل]! => Here I am, I found [the rectangle]!\n\n[طيب] تعال اطلع وفرجينا المستطيل. => [Okay], come show us the rectangle.\nطيب [تعال] اطلع وفرجينا المستطيل. => Okay, [come] show us the rectangle.\nطيب تعال [اطلع] وفرجينا المستطيل. => come up, come out\nطيب تعال اطلع [وفرجينا] المستطيل. => Okay, come [show us] the rectangle.\nطيب تعال اطلع وفرجينا [المستطيل]. => Okay, come show us [the rectangle]\n\n[هيه] قبالكم بالزبط، => [Here it is] right in front of you,\nهيه [قبالكم] بالزبط، => Here it is right [in front of you],\nهيه قبالكم [بالزبط]، => Here it is [right] in front of you,\n\n[باب] بيت حياة. => [The door] to Hayat's house.\nباب [بيت] حياة. => The door to Hayat's [house].\nباب بيت [حياة]. => The door to [Hayat's] house.\n\n[صح] يا جلجل، الباب هو مستطيل => [Correct], Jaljal, the door is a rectangle.\nصح يا [جلجل]، الباب هو مستطيل => Correct, [Jaljal], the door is a rectangle.\nصح يا جلجل، [الباب] هو مستطيل => Correct, Jaljal, [the door] is a rectangle.\nصح يا جلجل، الباب [هو] مستطيل => Correct, Jaljal, the door [is] a rectangle.\nصح يا جلجل، الباب هو [مستطيل] => Correct, Jaljal, the door is [a rectangle]\n\n[و]إله أربع أضلاع => [And] it has four sides\nو[إله] أربع أضلاع => And [it has] four sides\nوإله [أربع] أضلاع => And it has [four] sides\nوإله أربع [أضلاع] => And it has four [sides]\n\n[واحد]، => [One],\n\n[اتنين]، => [Two],\n\n[تلاتة]، => [Three],\n\n[أربعة] => [Four]\n\n[ممتاز] يا جلجل، صح! => [Excellent], Jaljal, correct!\nممتاز [يا جلجل]، صح! => Excellent, [Jaljal], correct! # aligned the vocative particle 'ya' with the name since it has no direct English equivalent\nممتاز يا جلجل، [صح]! => Excellent, Jaljal, [correct]!\n\n",
+    "lessons": "# مقدمة اللعبة والتحية\n00:00.00 مرحبا يا أصدقائي الأطفال.\n00:03.00 إحنا اليوم رح نلعب مع بعض.\n00:06.00 لعبة مع تنتن.\n00:08.00 ولعبة مع جلجل.\n00:11.00 مرحبا!\n00:12.00 وأنا متأكدة إنكم رح تحبوها كتير.\n00:15.00 وأنا كمان متأكد إنكم رح تحبوها كتير.\n00:19.00 آه، وأنا كمان.\n\n# شرح اللعبة والأشكال\n00:21.00 بس قبل لازم نحكي لأصدقائنا الأطفال\n00:24.00 شو اسم هاي اللعبة.\n00:26.00 معك حق يا تنتن.\n00:28.00 منيح اللي تذكرتي.\n00:30.00 لعبتنا اليوم هي البحث عن الأشكال.\n00:34.00 دائرة،\n00:36.00 مربع،\n00:39.00 مثلث،\n00:42.00 ومستطيل.\n\n# بداية البحث عن الأشكال\n00:44.00 وإحنا رح ندور أنا وتنتن على الأشكال:\n00:47.00 المربع والدائرة\n00:50.00 والمثلث والمستطيل.\n00:53.00 ممتاز!\n00:55.00 أنا بحكيلكم اسم الشكل\n00:58.00 وإنتو كمان لازم بسرعة تلاقوه.\n01:00.00 أنا جاهزة، يلا نبدأ!\n01:02.00 وإنت كمان يا جلجل بسرعة.\n01:06.00 آه، يلا.\n\n# البحث عن الدائرة والمربع\n01:08.00 أول إشي يا تنتن بدنا ندور\n01:11.00 على أي إشي على شكل دائرة.\n01:14.00 هه، لقيتها لقيتها، هي الدائرة!\n01:19.00 ممتاز يا تنتن.\n01:22.00 عجل الدراجة على شكل دائرة.\n01:27.00 وإنت يا جلجل، لقيت المربع؟\n01:31.00 هيه، لقيته.\n01:34.00 هاد هو المربع.\n01:37.00 صح يا جلجل، هاد فعلاً مربع.\n01:40.00 وإله أربع أضلاع.\n01:43.00 واحد،\n01:46.00 اتنين،\n01:49.00 تلاتة،\n01:51.00 أربعة.\n\n# البحث عن المثلث والمستطيل\n01:54.00 وهلأ دورك يا تنتن،\n01:57.00 بدي تلاقي المثلث، يلا بسرعة!\n02:00.00 هه، هه، هي المثلث!\n02:05.00 ممتاز يا تنتن، فعلاً هاد مثلث.\n02:08.00 ضلع،\n02:11.00 ضلعين،\n02:13.00 تلاتة أضلاع.\n\n# اكتشاف المستطيل\n02:16.00 وهلأ يا تنتن وجلجل\n02:19.00 بدي إياكم تلاقولي شكل المستطيل.\n02:22.00 معلش أعزائي المشاهدين،\n02:25.00 لهلأ تنتن وجلجل ما لقوا المستطيل.\n02:28.00 هي تنتن.\n02:30.00 ما لقيت المستطيل ومش لاقية جلجل.\n02:33.00 جلجل، وينك يا جلجل؟\n02:36.00 لسا ما خلصت اللعبة.\n02:38.00 جلجل!\n02:40.00 هيني، لقيت المستطيل!\n02:42.00 طيب تعال اطلع وفرجينا المستطيل.\n02:46.00 هيه قبالكم بالزبط،\n02:49.00 باب بيت حياة.\n02:51.00 صح يا جلجل، الباب هو مستطيل.\n02:54.00 وإله أربع أضلاع.\n02:57.00 واحد،\n02:59.00 اتنين،\n03:01.00 تلاتة،\n03:03.00 أربعة.\n03:05.00 ممتاز يا جلجل، صح!",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-27 07:14:23 UTC",
+  "updated_at": "2026-04-27 07:26:43 UTC",
+  "exported_at": "2026-04-27T07:26:43Z"
+}

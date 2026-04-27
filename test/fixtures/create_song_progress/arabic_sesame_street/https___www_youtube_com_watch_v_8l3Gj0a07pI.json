@@ -1,0 +1,695 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=8l3Gj0a07pI",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "جلجل!",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Jaljal!"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "جلجل؟",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:16.00",
+        "text_l2": "Jaljal?"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "نعم يا تنتن.",
+        "timestamp": "00:16.00",
+        "timestamp_end": "00:16.50",
+        "text_l2": "Yes, Tintin."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "إيش مالك مريض؟",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:18.00",
+        "text_l2": "What's wrong, are you sick?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "لا،",
+        "timestamp": "00:18.50",
+        "timestamp_end": "00:19.00",
+        "text_l2": "No,"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بس بردان شوي.",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:20.50",
+        "text_l2": "Just a little cold."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "بردان؟",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:22.50",
+        "text_l2": "Cold?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "آه.",
+        "timestamp": "00:22.50",
+        "timestamp_end": "00:23.00",
+        "text_l2": "Yeah."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "بس الدنيا دفا،",
+        "timestamp": "00:23.50",
+        "timestamp_end": "00:25.00",
+        "text_l2": "But it's warm outside,"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "أنا هلا كنت بغرفتي",
+        "timestamp": "00:25.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "I was just in my room"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ودافية.",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:26.50",
+        "text_l2": "And it was warm."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "أنا بردان،",
+        "timestamp": "00:27.50",
+        "timestamp_end": "00:28.50",
+        "text_l2": "I'm cold,"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "ما بعرف،",
+        "timestamp": "00:28.50",
+        "timestamp_end": "00:30.00",
+        "text_l2": "I don't know,"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "حاسس الدنيا برد.",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:32.00",
+        "text_l2": "I feel like it's cold."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "آه، طيب",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "Ah, okay"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "انفخ بإيديك",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "Blow on your hands"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "وافركهم هيك.",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:36.50",
+        "text_l2": "And rub them like this."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "جربت يا تنتن،",
+        "timestamp": "00:38.50",
+        "timestamp_end": "00:39.50",
+        "text_l2": "I tried, Tintin,"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "فركت إيدي",
+        "timestamp": "00:39.50",
+        "timestamp_end": "00:40.50",
+        "text_l2": "I rubbed my hands"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "ونفخت عليهم،",
+        "timestamp": "00:40.50",
+        "timestamp_end": "00:41.50",
+        "text_l2": "And blew on them,"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "بس لسا بردان.",
+        "timestamp": "00:41.50",
+        "timestamp_end": "00:42.50",
+        "text_l2": "But I'm still cold."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "في هوا بارد،",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:44.00",
+        "text_l2": "There's cold air,"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "في هوا بارد.",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:46.00",
+        "text_l2": "There's cold air."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "فعلاً،",
+        "timestamp": "00:48.50",
+        "timestamp_end": "00:49.50",
+        "text_l2": "Indeed,"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "في هوا بارد هون.",
+        "timestamp": "00:49.50",
+        "timestamp_end": "00:50.50",
+        "text_l2": "There's cold air here."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "جلجل.",
+        "timestamp": "00:53.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "Jaljal."
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "نعم.",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:54.50",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "هون في برد.",
+        "timestamp": "00:54.50",
+        "timestamp_end": "00:55.50",
+        "text_l2": "It's cold here."
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "مضبوط،",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:56.50",
+        "text_l2": "Exactly,"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "ما هاد اللي عم بحس",
+        "timestamp": "00:56.50",
+        "timestamp_end": "00:57.50",
+        "text_l2": "This isn't what I feel"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "أنا فيه.",
+        "timestamp": "00:57.50",
+        "timestamp_end": "00:58.50",
+        "text_l2": "Inside me."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "أنا بردت.",
+        "timestamp": "01:00.50",
+        "timestamp_end": "01:01.50",
+        "text_l2": "I got cold."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "بردتي؟",
+        "timestamp": "01:01.50",
+        "timestamp_end": "01:02.50",
+        "text_l2": "You got cold?"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "البسي جاكيت.",
+        "timestamp": "01:02.50",
+        "timestamp_end": "01:03.50",
+        "text_l2": "Put on a jacket."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "فعلاً،",
+        "timestamp": "01:04.50",
+        "timestamp_end": "01:05.50",
+        "text_l2": "Indeed,"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "البسي جاكيت يا تنتن.",
+        "timestamp": "01:05.50",
+        "timestamp_end": "01:06.50",
+        "text_l2": "Put on a jacket, Tintin."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "رح ألبس جاكيت.",
+        "timestamp": "01:06.50",
+        "timestamp_end": "01:07.50",
+        "text_l2": "I'll put on a jacket."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "جلجل،",
+        "timestamp": "01:09.50",
+        "timestamp_end": "01:10.50",
+        "text_l2": "Jaljal,"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "هيني لبست جاكيت.",
+        "timestamp": "01:10.50",
+        "timestamp_end": "01:11.50",
+        "text_l2": "I've put on a jacket."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "كتير منيح.",
+        "timestamp": "01:11.50",
+        "timestamp_end": "01:12.50",
+        "text_l2": "Very good."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "تنتن،",
+        "timestamp": "01:12.50",
+        "timestamp_end": "01:13.50",
+        "text_l2": "Tintin,"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "في هوا بارد بيجي.",
+        "timestamp": "01:13.50",
+        "timestamp_end": "01:15.50",
+        "text_l2": "Cold air is coming."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "فعلاً.",
+        "timestamp": "01:16.00",
+        "timestamp_end": "01:16.50",
+        "text_l2": "Indeed."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "الشباك مسكر،",
+        "timestamp": "01:16.50",
+        "timestamp_end": "01:17.50",
+        "text_l2": "The window is closed,"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "من وين بيجي",
+        "timestamp": "01:17.50",
+        "timestamp_end": "01:18.50",
+        "text_l2": "Where is it coming from"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "ما بعرف.",
+        "timestamp": "01:18.50",
+        "timestamp_end": "01:19.50",
+        "text_l2": "I don't know."
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "أنا لسا بردانة.",
+        "timestamp": "01:20.50",
+        "timestamp_end": "01:22.50",
+        "text_l2": "I'm still cold."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "هيك؟",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:23.50",
+        "text_l2": "Like that?"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "إنتي مش حاطة لفحة؟",
+        "timestamp": "01:23.50",
+        "timestamp_end": "01:24.50",
+        "text_l2": "Aren't you wearing a scarf?"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "حطي لفحة يا تنتن.",
+        "timestamp": "01:25.50",
+        "timestamp_end": "01:26.50",
+        "text_l2": "Put on a scarf, Tintin."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "فعلاً،",
+        "timestamp": "01:27.50",
+        "timestamp_end": "01:28.50",
+        "text_l2": "Indeed,"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "رح أحط لفحة.",
+        "timestamp": "01:28.50",
+        "timestamp_end": "01:29.50",
+        "text_l2": "I'll put on a scarf."
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "جلجل،",
+        "timestamp": "01:32.50",
+        "timestamp_end": "01:33.50",
+        "text_l2": "Jaljal,"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "هيني لبست لفحة.",
+        "timestamp": "01:33.50",
+        "timestamp_end": "01:34.50",
+        "text_l2": "I've put on a scarf."
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "الهوا،",
+        "timestamp": "01:35.50",
+        "timestamp_end": "01:36.50",
+        "text_l2": "The air,"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "الهوا البارد",
+        "timestamp": "01:36.50",
+        "timestamp_end": "01:37.50",
+        "text_l2": "The cold air"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "لساته بروح",
+        "timestamp": "01:37.50",
+        "timestamp_end": "01:38.50",
+        "text_l2": "It's still going"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "وبيجي.",
+        "timestamp": "01:38.50",
+        "timestamp_end": "01:39.50",
+        "text_l2": "And coming."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "فعلاً.",
+        "timestamp": "01:39.50",
+        "timestamp_end": "01:40.50",
+        "text_l2": "Indeed."
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "نفسي أعرف",
+        "timestamp": "01:40.50",
+        "timestamp_end": "01:41.50",
+        "text_l2": "I want to know"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "من وين بيجي.",
+        "timestamp": "01:41.50",
+        "timestamp_end": "01:42.50",
+        "text_l2": "Where it's coming from."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "برد.",
+        "timestamp": "01:43.50",
+        "timestamp_end": "01:44.50",
+        "text_l2": "Cold."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "برد كتير.",
+        "timestamp": "01:44.50",
+        "timestamp_end": "01:45.50",
+        "text_l2": "Very cold."
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "برد.",
+        "timestamp": "01:45.50",
+        "timestamp_end": "01:46.50",
+        "text_l2": "Cold."
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "تنتن،",
+        "timestamp": "01:46.50",
+        "timestamp_end": "01:47.50",
+        "text_l2": "Tintin,"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "ليش مش حاطة طاقية؟",
+        "timestamp": "01:47.50",
+        "timestamp_end": "01:48.50",
+        "text_l2": "Why aren't you wearing a hat?"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "حطي طاقية",
+        "timestamp": "01:48.50",
+        "timestamp_end": "01:49.50",
+        "text_l2": "Put on a hat"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "حتى تدفي.",
+        "timestamp": "01:49.50",
+        "timestamp_end": "01:50.50",
+        "text_l2": "To get warm."
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "فعلاً،",
+        "timestamp": "01:51.50",
+        "timestamp_end": "01:52.50",
+        "text_l2": "Indeed,"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "لازم ألبس طاقية",
+        "timestamp": "01:52.50",
+        "timestamp_end": "01:53.50",
+        "text_l2": "I need to wear a hat"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "بدفى.",
+        "timestamp": "01:53.50",
+        "timestamp_end": "01:54.00",
+        "text_l2": "To get warm."
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "الهوا البارد",
+        "timestamp": "01:54.50",
+        "timestamp_end": "01:55.50",
+        "text_l2": "The cold air"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "لساته مستمر.",
+        "timestamp": "01:55.50",
+        "timestamp_end": "01:56.50",
+        "text_l2": "Is still continuing."
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "يا سلام،",
+        "timestamp": "01:56.50",
+        "timestamp_end": "01:58.00",
+        "text_l2": "Oh my,"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "من وين بيجي",
+        "timestamp": "01:58.50",
+        "timestamp_end": "02:00.00",
+        "text_l2": "Where is it coming from"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "والشباك مسكر.",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:01.50",
+        "text_l2": "And the window is closed."
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "جلجل،",
+        "timestamp": "02:03.50",
+        "timestamp_end": "02:04.50",
+        "text_l2": "Jaljal,"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "هيني لبست طاقية.",
+        "timestamp": "02:04.50",
+        "timestamp_end": "02:05.50",
+        "text_l2": "I've put on a hat."
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "منيح.",
+        "timestamp": "02:05.50",
+        "timestamp_end": "02:06.50",
+        "text_l2": "Good."
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "تنتن،",
+        "timestamp": "02:06.50",
+        "timestamp_end": "02:07.50",
+        "text_l2": "Tintin,"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "الهوا البارد",
+        "timestamp": "02:07.50",
+        "timestamp_end": "02:08.50",
+        "text_l2": "The cold air"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "رح يجمدني،",
+        "timestamp": "02:08.50",
+        "timestamp_end": "02:09.50",
+        "text_l2": "Will freeze me,"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "أنا مش عارف",
+        "timestamp": "02:09.50",
+        "timestamp_end": "02:10.50",
+        "text_l2": "I don't know"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "من وين بيجي.",
+        "timestamp": "02:10.50",
+        "timestamp_end": "02:11.50",
+        "text_l2": "Where it's coming from."
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "فعلاً.",
+        "timestamp": "02:11.50",
+        "timestamp_end": "02:12.50",
+        "text_l2": "Indeed."
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "شباك مسكر منيح.",
+        "timestamp": "02:12.50",
+        "timestamp_end": "02:14.00",
+        "text_l2": "Window is tightly closed."
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "آه يا تنتن مسكر.",
+        "timestamp": "02:14.50",
+        "timestamp_end": "02:15.50",
+        "text_l2": "Yes, Tintin, it's closed."
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "ها!",
+        "timestamp": "02:17.50",
+        "timestamp_end": "02:18.50",
+        "text_l2": "Ha!"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "جلجل!",
+        "timestamp": "02:18.50",
+        "timestamp_end": "02:19.00",
+        "text_l2": "Jaljal!"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "إيش؟",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:19.50",
+        "text_l2": "What?"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "المروحة شغالة!",
+        "timestamp": "02:19.50",
+        "timestamp_end": "02:20.50",
+        "text_l2": "The fan is on!"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "هه!",
+        "timestamp": "02:20.50",
+        "timestamp_end": "02:21.50",
+        "text_l2": "Hah!"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "صح يا تنتن،",
+        "timestamp": "02:21.50",
+        "timestamp_end": "02:22.50",
+        "text_l2": "Right, Tintin,"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "المروحة شغالة.",
+        "timestamp": "02:22.50",
+        "timestamp_end": "02:24.00",
+        "text_l2": "The fan is on."
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "عشان هيك في برد.",
+        "timestamp": "02:24.50",
+        "timestamp_end": "02:26.50",
+        "text_l2": "That's why it's cold."
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "بدي أروح أغير أواعيا",
+        "timestamp": "02:27.50",
+        "timestamp_end": "02:29.00",
+        "text_l2": "I'm going to change my clothes"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "وأسكر المروحة.",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:30.50",
+        "text_l2": "And turn off the fan."
+      }
+    ],
+    "phrases_with_token_translations": "[جلجل]! => [Jaljal]!\n\n[جلجل]؟ => [Jaljal]?\n\n[نعم] يا تنتن. => [Yes], Tintin.\nنعم [يا] تنتن. => vocative particle\nنعم يا [تنتن]. => Yes, [Tintin].\n\n[إيش مالك] مريض؟ => [What's wrong], are you sick?\nإيش مالك [مريض]؟ => What's wrong, are you [sick]?\n\n[لا]، => [No],\n\n[بس] بردان شوي. => [Just] a little cold.\nبس [بردان] شوي. => Just a little [cold].\nبس بردان [شوي]. => Just [a little] cold.\n\n[بردان]؟ => [Cold]?\n\n[آه]. => [Yeah].\n\n[بس] الدنيا دفا، => [But] it's warm outside,\nبس [الدنيا] دفا، => the world, the weather, outside\nبس الدنيا [دفا]، => But it's [warm] outside,\n\n[أنا] هلا كنت بغرفتي => [I] was just in my room\nأنا [هلا] كنت بغرفتي => I was [just] in my room\nأنا هلا [كنت] بغرفتي => I [was] just in my room\nأنا هلا كنت [بغرفتي] => I was just [in my room]\n\n[و]دافية. => [And] it was warm.\nو[دافية]. => And it was [warm].\n\n[أنا] بردان، => [I'm] cold,\nأنا [بردان]، => I'm [cold],\n\n[ما بعرف]، => [I don't know],\nما [بعرف]، => I know\n\n[حاسس] الدنيا برد => [I feel] like it's cold\nحاسس [الدنيا] برد => I feel like [it's] cold\nحاسس الدنيا [برد] => I feel like it's [cold]\n\n[آه]، طيب => [Ah], okay\nآه، [طيب] => Ah, [okay]\n\n[انفخ] بإيديك => [Blow] on your hands\nانفخ [بإيديك] => Blow [on your hands]\n\n[وافركهم] هيك. => [And rub them] like this.\nوافركهم [هيك]. => And rub them [like this].\n\n[جربت] يا تنتن، => [I tried], Tintin,\nجربت يا [تنتن]، => I tried, [Tintin],\n\n[فركت] إيدي => [I rubbed] my hands\nفركت [إيدي] => I rubbed [my hands]\n\n[و]نفخت عليهم، => [And] blew on them,\nو[نفخت] عليهم، => And [blew] on them,\nونفخت [عليهم]، => And blew [on them],\n\n[بس] لسا بردان. => [But] I'm still cold.\nبس [لسا] بردان. => But I'm [still] cold.\nبس لسا [بردان]. => But I'm still [cold].\n\n[في] هوا بارد، => [There's] cold air,\nفي [هوا] بارد، => There's cold [air],\nفي هوا [بارد]، => There's [cold] air,\n\n[في] هوا بارد. => [There's] cold air.\nفي [هوا] بارد. => There's cold [air].\nفي هوا [بارد]. => There's [cold] air.\n\n[فعلاً]، => [Indeed],\n\n[في] هوا بارد هون. => [There's] cold air here.\nفي [هوا] بارد هون. => There's cold [air] here.\nفي هوا [بارد] هون. => There's [cold] air here.\nفي هوا بارد [هون]. => There's cold air [here].\n\n[جلجل]. => [Jaljal].\n\n[نعم]. => [Yes].\n\n[هون] في برد. => It's cold [here].\nهون [في] برد. => there is, it is\nهون في [برد]. => It's [cold] here.\n\n[مضبوط]، => [Exactly],\n\n[ما هاد] اللي عم بحس => [This isn't] what I feel\nما هاد [اللي] عم بحس => This isn't [what] I feel\nما هاد اللي [عم بحس] => This isn't what [I feel]\n\n[أنا] فيه => Inside [me]\nأنا [فيه] => [Inside] me\n\n[أنا] بردت => [I] got cold\nأنا [بردت] => I [got cold]\n\n[بردتي]؟ => [You got cold]? # بردتي is a single word in Arabic that includes the subject (you) and the verb (got cold)\n\n[البسي] جاكيت. => [Put on] a jacket.\nالبسي [جاكيت]. => Put on [a jacket].\n\n[فعلاً]، => [Indeed],\n\n[البسي] جاكيت يا تنتن => [Put on] a jacket, Tintin.\nالبسي [جاكيت] يا تنتن => Put on [a jacket], Tintin.\nالبسي جاكيت [يا] تنتن => O\nالبسي جاكيت يا [تنتن] => Put on a jacket, [Tintin].\n\n[رح ألبس] جاكيت. => [I'll put on] a jacket.\nرح [ألبس] جاكيت. => put on\n[رح] ألبس جاكيت. => will\nرح ألبس [جاكيت]. => I'll put on [a jacket].\n\n[جلجل]، => [Jaljal],\n\n[هيني] لبست جاكيت => here I am\nهيني [لبست] جاكيت => I've [put on] a jacket\nهيني لبست [جاكيت] => I've put on [a jacket]\n\n[كتير] منيح => [Very] good\nكتير [منيح] => Very [good]\n\n[تنتن]، => [Tintin],\n\nفي [هوا] بارد بيجي. => Cold [air] is coming.\nفي هوا [بارد] بيجي. => [Cold] air is coming.\nفي هوا بارد [بيجي]. => Cold air [is coming].\n\n[فعلاً] => [Indeed]\n\n[الشباك] مسكر، => [The window] is closed,\nالشباك [مسكر]، => The window [is closed],\n\n[من] وين بيجي => Where is it coming [from]\nمن [وين] بيجي => [Where] is it coming from\nمن وين [بيجي] => Where [is it coming] from\n\n[ما بعرف]. => [I don't know].\nما [بعرف]. => I know # use custom translation because \"I know\" is separated by \"don't\" in the English sentence\n\n[أنا] لسا بردانة. => [I'm] still cold.\nأنا [لسا] بردانة. => I'm [still] cold.\nأنا لسا [بردانة]. => I'm still [cold].\n\n[هيك]؟ => [Like that]?\n\n[إنتي] مش حاطة لفحة؟ => Aren't [you] wearing a scarf?\nإنتي [مش] حاطة لفحة؟ => [Aren't] you wearing a scarf?\nإنتي مش [حاطة] لفحة؟ => Aren't you [wearing] a scarf?\nإنتي مش حاطة [لفحة]؟ => Aren't you wearing [a scarf]?\n\n[حطي] لفحة يا تنتن => [Put on] a scarf, Tintin\nحطي [لفحة] يا تنتن => Put on [a scarf], Tintin\nحطي لفحة يا [تنتن] => Put on a scarf, [Tintin]\n\n[فعلاً]، => [Indeed],\n\n[رح أحط] لفحة. => [I'll put on] a scarf.\nرح أحط [لفحة]. => I'll put on [a scarf].\n\n[جلجل]، => [Jaljal],\n\nهيني [لبست] لفحة. => I've [put on] a scarf.\nهيني لبست [لفحة]. => I've put on [a scarf].\n\n[الهوا]، => [The air],\n\nالهوا [البارد] => The [cold] air\n\n[لساته] بروح => [It's still] going\nلساته [بروح] => It's still [going]\n\n[و]بيجي. => [And] coming.\nو[بيجي]. => And [coming].\n\n[فعلاً]. => [Indeed].\n\n[نفسي] أعرف => [I want] to know\nنفسي [أعرف] => I want [to know]\n\n[من] وين بيجي. => Where it's coming [from].\nمن [وين] بيجي. => [Where] it's coming from.\nمن وين [بيجي]. => Where [it's coming] from.\n\n[برد] => [Cold]\n\n[برد] كتير => Very [cold]\nبرد [كتير] => [Very] cold\n\n[برد]. => [Cold].\n\n[تنتن]، => [Tintin],\n\n[ليش] مش حاطة طاقية؟ => [Why] aren't you wearing a hat?\nليش [مش حاطة] طاقية؟ => Why [aren't you wearing] a hat? # the negation and active participle are mapped together to include the implied subject 'you' and the English auxiliary\nليش مش حاطة [طاقية]؟ => Why aren't you wearing [a hat]?\n\n[حطي] طاقية => [Put on] a hat\nحطي [طاقية] => Put on [a hat]\n\n[حتى] تدفي => [To] get warm\nحتى [تدفي] => To [get warm]\n\n[فعلاً]، => [Indeed],\n\n[لازم] ألبس طاقية => I [need to] wear a hat\nلازم [ألبس] طاقية => I need to [wear] a hat\nلازم ألبس [طاقية] => I need to wear [a hat]\n\n[بدفى] => [To get warm]\n\nالهوا [البارد] => The [cold] air\n\n[لساته] مستمر. => [Is still] continuing.\nلساته [مستمر]. => Is still [continuing].\n\n[يا سلام]، => [Oh my],\n\n[من] وين بيجي => Where is it coming [from]\nمن [وين] بيجي => [Where] is it coming from\nمن وين [بيجي] => Where [is it coming] from\n\n[و]الشباك مسكر => [And] the window is closed\nو[الشباك] مسكر => And [the window] is closed\nوالشباك [مسكر] => And the window [is closed]\n\n[جلجل]، => [Jaljal],\n\nهيني [لبست] طاقية. => [I've put on] a hat.\nهيني لبست [طاقية]. => I've put on [a hat].\n\n[منيح]. => [Good].\n\n[تنتن]، => [Tintin],\n\n[الهوا] البارد => [The] cold [air]\nالهوا [البارد] => The [cold] air\n\n[رح] يجمدني، => [Will] freeze me,\nرح [يجمدني]، => Will [freeze me], # رح is the future marker \"will\"; يجمدني includes the verb \"freeze\" and the object suffix \"me\"\n\n[أنا] مش عارف => [I] don't know\nأنا [مش] عارف => [don't] know\nأنا مش [عارف] => don't [know]\n\n[من] وين بيجي. => Where it's coming [from].\nمن [وين] بيجي. => [Where] it's coming from.\nمن وين [بيجي]. => Where [it's coming] from.\n\n[فعلاً]. => [Indeed].\n\n[شباك] مسكر منيح => [Window] is tightly closed\nشباك [مسكر] منيح => Window is tightly [closed]\nشباك مسكر [منيح] => Window is [tightly] closed\n\n[آه] يا تنتن مسكر. => [Yes], Tintin, it's closed.\nآه [يا تنتن] مسكر. => Yes, [Tintin], it's closed.\nآه يا تنتن [مسكر]. => Yes, Tintin, [it's closed].\n\n[ها]! => [Ha]!\n\n[جلجل]! => [Jaljal]!\n\n[إيش]؟ => [What]?\n\n[المروحة] شغالة! => [The fan] is on!\nالمروحة [شغالة]! => The fan [is on]!\n\n[هه]! => [Hah]!\n\n[صح] يا تنتن، => [Right], Tintin,\nصح يا [تنتن]، => Right, [Tintin],\n\n[المروحة] شغالة. => [The fan] is on.\nالمروحة [شغالة]. => The fan [is on.]\n\n[عشان هيك] في برد. => [That's why] it's cold.\nعشان هيك [في] برد. => there is # 'fi' is the existential 'there is', used here to mean 'it's'\nعشان هيك في [برد]. => That's why it's [cold].\n\n[بدي أروح] أغير أواعيا => [I'm going to] change my clothes # 'بدي أروح' (literally: I want to go) functions as the future intention 'I'm going to'\nبدي أروح [أغير] أواعيا => I'm going to [change] my clothes\nبدي أروح أغير [أواعيا] => I'm going to change [my clothes] # 'أواعيا' combines 'clothes' and the possessive 'my' with a dialectal suffix\n\n[و]أسكر المروحة. => [And] turn off the fan.\nو[أسكر] المروحة. => And [turn off] the fan.\nوأسكر [المروحة]. => And turn off [the fan].\n\n",
+    "lessons": "# بداية الشكوى من البرد\n00:13.00 جلجل!\n00:15.00 جلجل؟\n00:16.00 نعم يا تنتن.\n00:17.00 إيش مالك مريض؟\n00:18.50 لا،\n00:19.00 بس بردان شوي.\n\n# محاولات التدفئة (الجزء 1)\n00:22.00 بردان؟\n00:22.50 آه.\n00:23.50 بس الدنيا دفا،\n00:25.00 أنا هلا كنت بغرفتي\n00:26.00 ودافية.\n00:27.50 أنا بردان،\n00:28.50 ما بعرف،\n00:30.00 حاسس الدنيا برد.\n\n# نصائح للتدفئة\n00:33.00 آه، طيب\n00:34.00 انفخ بإيديك\n00:35.00 وافركهم هيك.\n00:38.50 جربت يا تنتن،\n00:39.50 فركت إيدي\n00:40.50 ونفخت عليهم،\n00:41.50 بس لسا بردان.\n\n# اكتشاف مصدر البرد\n00:42.50 في هوا بارد،\n00:44.00 في هوا بارد.\n00:48.50 فعلاً،\n00:49.50 في هوا بارد هون.\n00:53.00 جلجل.\n00:54.00 نعم.\n00:54.50 هون في برد.\n00:56.00 مضبوط،\n00:56.50 ما هاد اللي عم بحس\n00:57.50 أنا فيه.\n\n# ارتداء الملابس الدافئة\n01:00.50 أنا بردت.\n01:01.50 بردتي؟\n01:02.50 البسي جاكيت.\n01:04.50 فعلاً،\n01:05.50 البسي جاكيت يا تنتن.\n01:06.50 رح ألبس جاكيت.\n01:09.50 جلجل،\n01:10.50 هيني لبست جاكيت.\n01:11.50 كتير منيح.\n\n# استمرار البرد والبحث عن مصدره (الجزء 1)\n01:12.50 تنتن،\n01:13.50 في هوا بارد بيجي.\n01:16.00 فعلاً.\n01:16.50 الشباك مسكر،\n01:17.50 من وين بيجي\n01:18.50 ما بعرف.\n01:20.50 أنا لسا بردانة.\n\n# استمرار البرد والبحث عن مصدره (الجزء 2)\n01:23.00 هيك؟\n01:23.50 إنتي مش حاطة لفحة؟\n01:25.50 حطي لفحة يا تنتن.\n01:27.50 فعلاً،\n01:28.50 رح أحط لفحة.\n01:32.50 جلجل،\n01:33.50 هيني لبست لفحة.\n01:35.50 الهوا،\n01:36.50 الهوا البارد\n01:37.50 لساته بروح\n01:38.50 وبيجي.\n\n# ارتداء الطاقية\n01:39.50 فعلاً.\n01:40.50 نفسي أعرف\n01:41.50 من وين بيجي.\n01:43.50 برد.\n01:44.50 برد كتير.\n01:45.50 برد.\n01:46.50 تنتن،\n01:47.50 ليش مش حاطة طاقية؟\n01:48.50 حطي طاقية\n01:49.50 حتى تدفي.\n01:51.50 فعلاً،\n01:52.50 لازم ألبس طاقية\n01:53.50 بدفى.\n\n# اكتشاف المصدر\n01:54.50 الهوا البارد\n01:55.50 لساته مستمر.\n01:56.50 يا سلام،\n01:58.50 من وين بيجي\n02:00.00 والشباك مسكر.\n02:03.50 جلجل،\n02:04.50 هيني لبست طاقية.\n02:05.50 منيح.\n02:06.50 تنتن،\n02:07.50 الهوا البارد\n02:08.50 رح يجمدني،\n02:09.50 أنا مش عارف\n02:10.50 من وين بيجي.\n\n# الحل النهائي\n02:11.50 فعلاً.\n02:12.50 شباك مسكر منيح.\n02:14.50 آه يا تنتن مسكر.\n02:17.50 ها!\n02:18.50 جلجل!\n02:19.00 إيش؟\n02:19.50 المروحة شغالة!\n02:20.50 هه!\n02:21.50 صح يا تنتن،\n02:22.50 المروحة شغالة.\n02:24.50 عشان هيك في برد.\n02:27.50 بدي أروح أغير أواعيا\n02:29.00 وأسكر المروحة.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-26 20:27:16 UTC",
+  "updated_at": "2026-04-26 20:45:50 UTC",
+  "exported_at": "2026-04-26T20:45:51Z"
+}

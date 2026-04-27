@@ -1,0 +1,849 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=skE1RBiXAe0",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "واحد",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:01.50",
+        "text_l2": "One"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "اثنين",
+        "timestamp": "00:01.50",
+        "timestamp_end": "00:03.00",
+        "text_l2": "Two"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "ثلاثة",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:04.50",
+        "text_l2": "Three"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "أربعة",
+        "timestamp": "00:04.50",
+        "timestamp_end": "00:06.00",
+        "text_l2": "Four"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "خمسة",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:07.50",
+        "text_l2": "Five"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "ستة",
+        "timestamp": "00:07.50",
+        "timestamp_end": "00:09.00",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "سبعة",
+        "timestamp": "00:09.00",
+        "timestamp_end": "00:10.50",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "ثمانية",
+        "timestamp": "00:10.50",
+        "timestamp_end": "00:12.00",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "تسعة",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:13.50",
+        "text_l2": "Nine"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "عشرة",
+        "timestamp": "00:13.50",
+        "timestamp_end": "00:15.00",
+        "text_l2": "Ten"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "خلاص؟",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:18.50",
+        "text_l2": "Done?"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "لسه!",
+        "timestamp": "00:18.50",
+        "timestamp_end": "00:20.50",
+        "text_l2": "Not yet!"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "خلاص يا تن تن؟",
+        "timestamp": "00:21.00",
+        "timestamp_end": "00:22.50",
+        "text_l2": "Done, Tan Tan?"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "أنا مش عارفة وين أتخبى.",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "I don't know where to hide."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "هه، جلجل؟",
+        "timestamp": "00:26.50",
+        "timestamp_end": "00:28.00",
+        "text_l2": "Heh, Jaljal?"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "نعم.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:29.00",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "هاي لعبة الغماية وما بصير تفتح عينيك.",
+        "timestamp": "00:29.00",
+        "timestamp_end": "00:32.50",
+        "text_l2": "This is hide-and-seek, you're not supposed to open your eyes."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "لازم تبدأ مرة تانية وعد من الأول.",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:36.00",
+        "text_l2": "You have to start over and count from the beginning."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "طيب، أنا رح أبدأ من أول وجديد",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:39.50",
+        "text_l2": "Okay, I'll start fresh again"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "بس إنتي بدك تلحقي تتخبي.",
+        "timestamp": "00:39.50",
+        "timestamp_end": "00:41.50",
+        "text_l2": "But you need to hurry and hide."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "واحد",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:44.00",
+        "text_l2": "One"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "اثنين",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:45.50",
+        "text_l2": "Two"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "وين لازم أتخبى عشان جلجل ما يعرف مكاني؟",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:49.50",
+        "text_l2": "Where should I hide so Jaljal doesn't find me?"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "ثلاثة",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:49.50",
+        "text_l2": "Three"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أربعة",
+        "timestamp": "00:49.50",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Four"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "خمسة",
+        "timestamp": "00:51.50",
+        "timestamp_end": "00:53.00",
+        "text_l2": "Five"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "ستة",
+        "timestamp": "00:53.50",
+        "timestamp_end": "00:55.00",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "سبعة",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:56.50",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "ثمانية",
+        "timestamp": "00:57.00",
+        "timestamp_end": "00:58.50",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "شو رأيكم تساعدوني وين أتخبى؟",
+        "timestamp": "00:58.50",
+        "timestamp_end": "01:01.50",
+        "text_l2": "What do you think, help me where should I hide?"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "تسعة",
+        "timestamp": "00:59.50",
+        "timestamp_end": "01:01.00",
+        "text_l2": "Nine"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "عشرة",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:02.50",
+        "text_l2": "Ten"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "ورا الشجرة؟ لا، رح أبين.",
+        "timestamp": "01:02.50",
+        "timestamp_end": "01:05.50",
+        "text_l2": "Behind the tree? No, I'll be seen."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "تن تن؟",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:07.50",
+        "text_l2": "Tan Tan?"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "تن تن، جاهزة أدور عليكي؟",
+        "timestamp": "01:07.50",
+        "timestamp_end": "01:10.50",
+        "text_l2": "Tan Tan, ready for me to look for you?"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "لسه يا جلجل، إنت ليش بتضلك تفتح عينيك؟",
+        "timestamp": "01:10.50",
+        "timestamp_end": "01:14.50",
+        "text_l2": "Not yet, Jaljal, why do you keep opening your eyes?"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "ما هو أنا لازم أفتح عيني مشان أدور عليكي.",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.50",
+        "text_l2": "I have to open my eyes to look for you."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "بس إنت يا جلجل بتعد بسرعة",
+        "timestamp": "01:19.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "But you, Jaljal, are counting fast"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "وأنا ما لحقت أتخبى.",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:22.50",
+        "text_l2": "And I didn't manage to hide."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "أنا بعد كتير بطيء يا تن تن.",
+        "timestamp": "01:23.50",
+        "timestamp_end": "01:25.50",
+        "text_l2": "I'm still very slow, Tan Tan."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "يلا خلينا نجرب كمان مرة.",
+        "timestamp": "01:26.00",
+        "timestamp_end": "01:28.50",
+        "text_l2": "Come on, let's try one more time."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "لا يا جلجل، بدنا نجرب طريقة تانية.",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:32.00",
+        "text_l2": "No, Jaljal, we need to try another way."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "طريقة تانية؟",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:34.50",
+        "text_l2": "Another way?"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "كيف يعني؟",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:36.00",
+        "text_l2": "What do you mean?"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "شو رأيك تعد بالعكس؟",
+        "timestamp": "01:36.50",
+        "timestamp_end": "01:38.50",
+        "text_l2": "How about you count backwards?"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "بالعكس؟",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:40.50",
+        "text_l2": "Backwards?"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "بالعكس يعني واحد، اثنين...",
+        "timestamp": "01:40.50",
+        "timestamp_end": "01:43.50",
+        "text_l2": "Backwards means one, two..."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "لا لا يا جلجل، بالعكس يعني عشرة،",
+        "timestamp": "01:44.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "No no, Jaljal, backwards means ten,"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "تسعة، ثمانية، سبعة...",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:47.50",
+        "text_l2": "Nine, eight, seven..."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "عرفت.",
+        "timestamp": "01:52.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "Got it."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "عشرة",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:55.50",
+        "text_l2": "Ten"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "تسعة",
+        "timestamp": "01:55.50",
+        "timestamp_end": "01:57.00",
+        "text_l2": "Nine"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "ثمانية",
+        "timestamp": "01:57.00",
+        "timestamp_end": "01:58.50",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "سبعة",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:00.50",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "بابا، جلجل بعده بعد بسرعة.",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:04.50",
+        "text_l2": "Dad, Jaljal is still counting fast."
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "ستة",
+        "timestamp": "02:01.50",
+        "timestamp_end": "02:03.00",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "نعم، أنا ما بعد بسرعة،",
+        "timestamp": "02:04.50",
+        "timestamp_end": "02:06.50",
+        "text_l2": "Yes, I'm not counting fast,"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "هيني بطيء شوي شوي.",
+        "timestamp": "02:06.50",
+        "timestamp_end": "02:08.00",
+        "text_l2": "I'm being slow, little by little."
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "ما بدي تعد بالعكس،",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "I don't want you to count backwards,"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "عد كمان مرة من واحد لعشرة",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.50",
+        "text_l2": "Count again from one to ten"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "بس مش بسرعة شوي شوي.",
+        "timestamp": "02:13.50",
+        "timestamp_end": "02:15.50",
+        "text_l2": "But not fast, little by little."
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "حاضر.",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:17.00",
+        "text_l2": "Okay."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "واحد",
+        "timestamp": "02:17.50",
+        "timestamp_end": "02:18.50",
+        "text_l2": "One"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "اثنين",
+        "timestamp": "02:18.50",
+        "timestamp_end": "02:19.50",
+        "text_l2": "Two"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "ثلاثة",
+        "timestamp": "02:19.50",
+        "timestamp_end": "02:20.50",
+        "text_l2": "Three"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "أربعة",
+        "timestamp": "02:20.50",
+        "timestamp_end": "02:21.50",
+        "text_l2": "Four"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "خمسة",
+        "timestamp": "02:21.50",
+        "timestamp_end": "02:22.50",
+        "text_l2": "Five"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "ستة",
+        "timestamp": "02:22.50",
+        "timestamp_end": "02:23.50",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "سبعة",
+        "timestamp": "02:23.50",
+        "timestamp_end": "02:24.50",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "ثمانية",
+        "timestamp": "02:24.50",
+        "timestamp_end": "02:25.50",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "هلق أنا بدي أروح أتخبى بسرعة.",
+        "timestamp": "02:21.50",
+        "timestamp_end": "02:25.00",
+        "text_l2": "Now I want to go hide quickly."
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "ما لحقت أتخبى.",
+        "timestamp": "02:26.00",
+        "timestamp_end": "02:28.50",
+        "text_l2": "I didn't manage to hide."
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "جلجل!",
+        "timestamp": "02:29.50",
+        "timestamp_end": "02:31.00",
+        "text_l2": "Jaljal!"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "نعم.",
+        "timestamp": "02:31.50",
+        "timestamp_end": "02:32.50",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "عد كمان مرة بالعكس.",
+        "timestamp": "02:32.50",
+        "timestamp_end": "02:34.50",
+        "text_l2": "Count backwards one more time."
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "تن تن، ما رح تفرق",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "Tan Tan, it won't make a difference"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "إذا كان بالعكس أو غيره.",
+        "timestamp": "02:37.00",
+        "timestamp_end": "02:38.50",
+        "text_l2": "If it's backwards or something else."
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "أنا عدت من عشرة لواحد",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:41.00",
+        "text_l2": "I counted from ten to one"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "زي من واحد لعشرة ما رح يكون أبطأ.",
+        "timestamp": "02:41.00",
+        "timestamp_end": "02:42.50",
+        "text_l2": "Just like one to ten, it won't be slower."
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بس إنت بتعد بسرعة. طيب خلاص،",
+        "timestamp": "02:43.50",
+        "timestamp_end": "02:46.50",
+        "text_l2": "But you count fast. Okay fine,"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "عد من واحد لعشرة بس مو بسرعة شوي شوي.",
+        "timestamp": "02:46.50",
+        "timestamp_end": "02:49.50",
+        "text_l2": "Count from one to ten but not fast, little by little."
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "حاضر، رح أعد من واحد لعشرة",
+        "timestamp": "02:52.00",
+        "timestamp_end": "02:54.50",
+        "text_l2": "Okay, I'll count from one to ten"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "بس شوي شوي.",
+        "timestamp": "02:54.50",
+        "timestamp_end": "02:55.50",
+        "text_l2": "But little by little."
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "واحد",
+        "timestamp": "02:56.50",
+        "timestamp_end": "02:58.00",
+        "text_l2": "One"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "اثنين",
+        "timestamp": "02:58.00",
+        "timestamp_end": "02:59.50",
+        "text_l2": "Two"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "وين أتخبى؟",
+        "timestamp": "02:59.50",
+        "timestamp_end": "03:01.50",
+        "text_l2": "Where should I hide?"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "ثلاثة",
+        "timestamp": "03:01.50",
+        "timestamp_end": "03:03.00",
+        "text_l2": "Three"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "هيك جلجل رح يشوفني.",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.50",
+        "text_l2": "Like this, Jaljal will see me."
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "أربعة",
+        "timestamp": "03:04.00",
+        "timestamp_end": "03:05.50",
+        "text_l2": "Four"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "خمسة",
+        "timestamp": "03:05.50",
+        "timestamp_end": "03:07.00",
+        "text_l2": "Five"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "ستة",
+        "timestamp": "03:07.00",
+        "timestamp_end": "03:08.50",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "سبعة",
+        "timestamp": "03:08.50",
+        "timestamp_end": "03:10.00",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "ثمانية",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:11.50",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "هيك رح يكشفني،",
+        "timestamp": "03:10.50",
+        "timestamp_end": "03:12.00",
+        "text_l2": "This way he'll find me,"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "وين أتخبى مو عارفة.",
+        "timestamp": "03:12.00",
+        "timestamp_end": "03:13.50",
+        "text_l2": "Where to hide, I don't know."
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "تسعة",
+        "timestamp": "03:12.50",
+        "timestamp_end": "03:14.00",
+        "text_l2": "Nine"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "عشرة، تن تن جاهزة أدور عليكي؟",
+        "timestamp": "03:14.00",
+        "timestamp_end": "03:17.00",
+        "text_l2": "Ten, Tan Tan ready for me to look for you?"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "جلجل؟",
+        "timestamp": "03:18.50",
+        "timestamp_end": "03:20.00",
+        "text_l2": "Jaljal?"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "نعم.",
+        "timestamp": "03:20.00",
+        "timestamp_end": "03:21.00",
+        "text_l2": "Yes."
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "لسه بتعد بسرعة.",
+        "timestamp": "03:21.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "You're still counting fast."
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "أنا عدت كتير بطيء يا تن تن.",
+        "timestamp": "03:23.50",
+        "timestamp_end": "03:26.00",
+        "text_l2": "I counted very slowly, Tan Tan."
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "خلاص جلجل، هلق رح أتخبى منيح",
+        "timestamp": "03:26.50",
+        "timestamp_end": "03:28.50",
+        "text_l2": "Okay Jaljal, now I'll hide properly"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "بس عد كمان مرة يا جلجل شوي شوي.",
+        "timestamp": "03:28.50",
+        "timestamp_end": "03:31.00",
+        "text_l2": "But count one more time, Jaljal, little by little."
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "حاضر، رح أعد شوي شوي هالمرة.",
+        "timestamp": "03:33.00",
+        "timestamp_end": "03:36.00",
+        "text_l2": "Okay, I'll count little by little this time."
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "يلا أنا هلق جاهزة عشان أتخبى،",
+        "timestamp": "03:36.50",
+        "timestamp_end": "03:39.00",
+        "text_l2": "Come on, I'm ready now to hide,"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "عد واحد، اثنين...",
+        "timestamp": "03:39.00",
+        "timestamp_end": "03:40.50",
+        "text_l2": "Count one, two..."
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "واحد",
+        "timestamp": "03:42.50",
+        "timestamp_end": "03:44.00",
+        "text_l2": "One"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "اثنين",
+        "timestamp": "03:44.00",
+        "timestamp_end": "03:45.50",
+        "text_l2": "Two"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "ثلاثة",
+        "timestamp": "03:46.00",
+        "timestamp_end": "03:47.50",
+        "text_l2": "Three"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "أربعة",
+        "timestamp": "03:48.00",
+        "timestamp_end": "03:49.50",
+        "text_l2": "Four"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "خمسة",
+        "timestamp": "03:50.00",
+        "timestamp_end": "03:51.50",
+        "text_l2": "Five"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "ستة",
+        "timestamp": "03:52.00",
+        "timestamp_end": "03:53.50",
+        "text_l2": "Six"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "سبعة",
+        "timestamp": "03:54.00",
+        "timestamp_end": "03:55.50",
+        "text_l2": "Seven"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "ثمانية",
+        "timestamp": "03:56.00",
+        "timestamp_end": "03:57.50",
+        "text_l2": "Eight"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "تسعة",
+        "timestamp": "03:58.00",
+        "timestamp_end": "03:59.50",
+        "text_l2": "Nine"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "عشرة",
+        "timestamp": "04:00.00",
+        "timestamp_end": "04:01.50",
+        "text_l2": "Ten"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "جلجل، أنا تخبيت وإنت ما لقيتني.",
+        "timestamp": "04:03.50",
+        "timestamp_end": "04:07.00",
+        "text_l2": "Jaljal, I hid and you didn't find me."
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "جلجل نام!",
+        "timestamp": "04:10.50",
+        "timestamp_end": "04:12.50",
+        "text_l2": "Jaljal fell asleep!"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "طب أنا هلق مين بده يلاقيني؟",
+        "timestamp": "04:13.00",
+        "timestamp_end": "04:15.50",
+        "text_l2": "So now who's going to find me?"
+      }
+    ],
+    "phrases_with_token_translations": "[واحد] => [One]\n\n[اثنين] => [Two]\n\n[ثلاثة] => [Three]\n\n[أربعة] => [Four]\n\n[خمسة] => [Five]\n\n[ستة] => [Six]\n\n[سبعة] => [Seven]\n\n[ثمانية] => [Eight]\n\n[تسعة] => [Nine]\n\n[عشرة] => [Ten]\n\n[خلاص]؟ => [Done]?\n\n[لسه]! => [Not yet]!\n\n[خلاص] يا تن تن؟ => [Done], Tan Tan?\nخلاص يا [تن تن]؟ => Done, [Tan Tan]?\n\n[أنا] مش عارفة وين أتخبى. => [I] don't know where to hide.\nأنا [مش عارفة] وين أتخبى. => [don't know] where to hide.\nأنا مش عارفة [وين] أتخبى. => I don't know [where] to hide.\nأنا مش عارفة وين [أتخبى]. => I don't know where [to hide]\n\n[هه]، جلجل؟ => [Heh], Jaljal?\nهه، [جلجل]؟ => Heh, [Jaljal]?\n\n[نعم]. => [Yes].\n\n[هاي] لعبة الغماية وما بصير تفتح عينيك. => [This] is hide-and-seek, you're not supposed to open your eyes.\nهاي [لعبة الغماية] وما بصير تفتح عينيك. => This is [hide-and-seek], you're not supposed to open your eyes.\nهاي لعبة الغماية و[ما بصير] تفتح عينيك. => This is hide-and-seek, you're [not supposed to] open your eyes.\nهاي لعبة الغماية وما بصير [تفتح] عينيك. => This is hide-and-seek, you're not supposed to [open] your eyes.\nهاي لعبة الغماية وما بصير تفتح [عينيك]. => This is hide-and-seek, you're not supposed to open [your eyes].\n\n[لازم] تبدأ مرة تانية وعد من الأول. => [You have to] start over and count from the beginning.\nلازم [تبدأ] مرة تانية وعد من الأول. => You have to [start] over and count from the beginning.\nلازم تبدأ [مرة تانية] وعد من الأول. => You have to start [over] and count from the beginning.\nلازم تبدأ مرة تانية [و]عد من الأول. => You have to start over [and] count from the beginning.\nلازم تبدأ مرة تانية و[عد] من الأول. => You have to start over and [count] from the beginning.\nلازم تبدأ مرة تانية وعد [من] الأول. => You have to start over and count [from] the beginning.\nلازم تبدأ مرة تانية وعد من [الأول]. => You have to start over and count from [the beginning].\n\n[طيب]، أنا رح أبدأ من أول وجديد => [Okay], I'll start fresh again\nطيب، [أنا] رح أبدأ من أول وجديد => Okay, [I]'ll start fresh again\nطيب، أنا [رح أبدأ] من أول وجديد => Okay, I['ll start] fresh again\nطيب، أنا رح أبدأ [من أول وجديد] => Okay, I'll start [fresh again] # This idiom literally means \"from first and new\" but maps perfectly to \"fresh again\" in this context\n\n[بس] إنتي بدك تلحقي تتخبي. => [But] you need to hurry and hide.\nبس [إنتي] بدك تلحقي تتخبي. => But [you] need to hurry and hide.\nبس إنتي [بدك] تلحقي تتخبي. => But you [need] to hurry and hide.\nبس إنتي بدك [تلحقي] تتخبي. => to hurry, to manage in time\nبس إنتي بدك تلحقي [تتخبي]. => But you need to hurry [and hide] # mapped to \"and hide\" to capture the sequential action implied in the Arabic structure\n\n[واحد] => [One]\n\n[اثنين] => [Two]\n\n[وين] لازم أتخبى عشان جلجل ما يعرف مكاني؟ => [Where] should I hide so Jaljal doesn't find me?\nوين [لازم] أتخبى عشان جلجل ما يعرف مكاني؟ => Where [should] I hide so Jaljal doesn't find me?\nوين لازم [أتخبى] عشان جلجل ما يعرف مكاني؟ => Where should [I hide] so Jaljal doesn't find me?\nوين لازم أتخبى [عشان] جلجل ما يعرف مكاني؟ => Where should I hide [so] Jaljal doesn't find me?\nوين لازم أتخبى عشان [جلجل] ما يعرف مكاني؟ => Where should I hide so [Jaljal] doesn't find me?\nوين لازم أتخبى عشان جلجل [ما يعرف] مكاني؟ => doesn't know # literally \"doesn't know\", localized as \"doesn't find\"\nوين لازم أتخبى عشان جلجل ما يعرف [مكاني]؟ => my place # literally \"my place\", localized as \"me\"\n\n[ثلاثة] => [Three]\n\n[أربعة] => [Four]\n\n[خمسة] => [Five]\n\n[ستة] => [Six]\n\n[سبعة] => [Seven]\n\n[ثمانية] => [Eight]\n\n[شو] رأيكم تساعدوني وين أتخبى؟ => [What] do you think, help me where should I hide?\nشو [رأيكم] تساعدوني وين أتخبى؟ => What [do you think], help me where should I hide?\nشو رأيكم [تساعدوني] وين أتخبى؟ => What do you think, [help me] where should I hide?\nشو رأيكم تساعدوني [وين] أتخبى؟ => What do you think, help me [where] should I hide?\nشو رأيكم تساعدوني وين [أتخبى]؟ => What do you think, help me where [should I hide]\n\n[تسعة] => [Nine]\n\n[عشرة] => [Ten]\n\n[ورا] الشجرة؟ لا، رح أبين. => [Behind] the tree? No, I'll be seen.\nورا [الشجرة]؟ لا، رح أبين. => Behind [the tree]? No, I'll be seen.\nورا الشجرة؟ [لا]، رح أبين. => Behind the tree? [No], I'll be seen.\nورا الشجرة؟ لا، [رح] أبين. => will # future marker\nورا الشجرة؟ لا، رح [أبين] => appear, show up, be seen # The verb includes the 'I' prefix (a-) and literally means \"to show/appear\" or \"be visible\"\n\n[تن] تن؟ => [Tan] Tan?\nتن [تن]؟ => Tan [Tan]?\n\n[تن تن]، جاهزة أدور عليكي؟ => [Tan Tan], ready for me to look for you?\nتن تن، [جاهزة] أدور عليكي؟ => Tan Tan, [ready] for me to look for you?\nتن تن، جاهزة [أدور] عليكي؟ => Tan Tan, ready [for me to look] for you?\nتن تن، جاهزة أدور [عليكي]؟ => Tan Tan, ready for me to look [for you]?\n\n[لسه] يا جلجل، إنت ليش بتضلك تفتح عينيك؟ => [Not yet], Jaljal, why do you keep opening your eyes?\nلسه [يا جلجل]، إنت ليش بتضلك تفتح عينيك؟ => Not yet, [Jaljal], why do you keep opening your eyes?\nلسه يا جلجل، [إنت] ليش بتضلك تفتح عينيك؟ => Not yet, Jaljal, why do [you] keep opening your eyes?\nلسه يا جلجل، إنت [ليش] بتضلك تفتح عينيك؟ => Not yet, Jaljal, [why] do you keep opening your eyes?\nلسه يا جلجل، إنت ليش [بتضلك] تفتح عينيك؟ => Not yet, Jaljal, why do you [keep] opening your eyes?\nلسه يا جلجل، إنت ليش بتضلك [تفتح] عينيك؟ => Not yet, Jaljal, why do you keep [opening] your eyes?\nلسه يا جلجل، إنت ليش بتضلك تفتح [عينيك]؟ => Not yet, Jaljal, why do you keep opening [your eyes]?\n\nما هو [أنا] لازم أفتح عيني مشان أدور عليكي. => [I] have to open my eyes to look for you.\nما هو أنا [لازم] أفتح عيني مشان أدور عليكي. => I [have to] open my eyes to look for you.\nما هو أنا لازم [أفتح] عيني مشان أدور عليكي. => I have to [open] my eyes to look for you.\nما هو أنا لازم أفتح [عيني] مشان أدور عليكي. => I have to open [my eyes] to look for you.\nما هو أنا لازم أفتح عيني [مشان] أدور عليكي. => I have to open my eyes [to] look for you.\nما هو أنا لازم أفتح عيني مشان [أدور] عليكي. => I have to open my eyes to [look] for you.\nما هو أنا لازم أفتح عيني مشان أدور [عليكي]. => I have to open my eyes to look [for you]. # 'alayki contains both the preposition 'for/on' and the pronoun 'you'\n\n[بس] إنت يا جلجل بتعد بسرعة => [But] you, Jaljal, are counting fast\nبس [إنت] يا جلجل بتعد بسرعة => But [you], Jaljal, are counting fast\nبس إنت يا [جلجل] بتعد بسرعة => But you, [Jaljal], are counting fast\nبس إنت يا جلجل [بتعد] بسرعة => But you, Jaljal, [are counting] fast\nبس إنت يا جلجل بتعد [بسرعة] => But you, Jaljal, are counting [fast]\n\n[وأنا] ما لحقت أتخبى => [And I] didn't manage to hide\nوأنا [ما لحقت] أتخبى => And I [didn't manage] to hide\nوأنا ما لحقت [أتخبى] => And I didn't manage [to hide]\n\n[أنا] بعد كتير بطيء يا تن تن. => [I'm] still very slow, Tan Tan.\nأنا [بعد] كتير بطيء يا تن تن. => I'm [still] very slow, Tan Tan.\nأنا بعد [كتير] بطيء يا تن تن. => I'm still [very] slow, Tan Tan.\nأنا بعد كتير [بطيء] يا تن تن. => I'm still very [slow], Tan Tan.\nأنا بعد كتير بطيء [يا تن تن]. => I'm still very slow, [Tan Tan].\n\n[يلا] خلينا نجرب كمان مرة => [Come on], let's try one more time.\nيلا [خلينا] نجرب كمان مرة => Come on, [let's] try one more time.\nيلا خلينا [نجرب] كمان مرة => Come on, let's [try] one more time.\nيلا خلينا نجرب [كمان] مرة => Come on, let's try [one more] time.\nيلا خلينا نجرب كمان [مرة] => Come on, let's try one more [time]\n\n[لا] يا جلجل، بدنا نجرب طريقة تانية. => [No], Jaljal, we need to try another way.\nلا يا [جلجل]، بدنا نجرب طريقة تانية. => No, [Jaljal], we need to try another way.\nلا يا جلجل، [بدنا] نجرب طريقة تانية. => No, Jaljal, [we need] to try another way.\nلا يا جلجل، بدنا [نجرب] طريقة تانية. => No, Jaljal, we need [to try] another way.\nلا يا جلجل، بدنا نجرب [طريقة] تانية. => No, Jaljal, we need to try another [way]\nلا يا جلجل، بدنا نجرب طريقة [تانية]. => No, Jaljal, we need to try [another] way\n\n[طريقة] تانية؟ => Another [way]?\nطريقة [تانية]؟ => [Another] way?\n\n[كيف] يعني؟ => [What] do you mean? # literally \"how\", but functions as the question word \"what\" here\nكيف [يعني]؟ => What [do you mean]? # literally \"it/he means\", the English translates the intent \"do you mean\"\n\n[شو رأيك] تعد بالعكس؟ => [How about] you count backwards?\nشو رأيك [تعد] بالعكس؟ => How about [you count] backwards?\nشو رأيك تعد [بالعكس]؟ => How about you count [backwards]?\n\n[بالعكس]؟ => [Backwards]?\n\n[بالعكس] يعني واحد، اثنين... => [Backwards] means one, two...\nبالعكس [يعني] واحد، اثنين... => Backwards [means] one, two...\nبالعكس يعني [واحد]، اثنين... => Backwards means [one], two...\nبالعكس يعني واحد، [اثنين]... => Backwards means one, [two]...\n\n[لا لا] يا جلجل، بالعكس يعني عشرة، => [No no], Jaljal, backwards means ten,\nلا لا يا [جلجل]، بالعكس يعني عشرة، => No no, [Jaljal], backwards means ten,\nلا لا يا جلجل، [بالعكس] يعني عشرة، => No no, Jaljal, [backwards] means ten,\nلا لا يا جلجل، بالعكس [يعني] عشرة، => No no, Jaljal, backwards [means] ten,\nلا لا يا جلجل، بالعكس يعني [عشرة]، => No no, Jaljal, backwards means [ten]\n\n[تسعة]، ثمانية، سبعة... => [Nine], eight, seven...\nتسعة، [ثمانية]، سبعة... => Nine, [eight], seven...\nتسعة، ثمانية، [سبعة]... => Nine, eight, [seven]...\n\n[عرفت] => [Got it]\n\n[عشرة] => [Ten]\n\n[تسعة] => [Nine]\n\n[ثمانية] => [Eight]\n\n[سبعة] => [Seven]\n\n[بابا]، جلجل بعده بعد بسرعة => [Dad], Jaljal is still counting fast\nبابا، [جلجل] بعده بعد بسرعة => Dad, [Jaljal] is still counting fast\nبابا، جلجل [بعده] بعد بسرعة => Dad, Jaljal [is still] counting fast\nبابا، جلجل بعده [بعد] بسرعة => Dad, Jaljal is still [counting] fast\nبابا، جلجل بعده بعد [بسرعة] => Dad, Jaljal is still counting [fast]\n\n[ستة] => [Six]\n\n[نعم]، أنا ما بعد بسرعة، => [Yes], I'm not counting fast,\nنعم، [أنا] ما بعد بسرعة، => Yes, [I'm] not counting fast,\nنعم، أنا [ما] بعد بسرعة، => Yes, I'm [not] counting fast,\nنعم، أنا ما [بعد] بسرعة، => Yes, I'm not [counting] fast,\nنعم، أنا ما بعد [بسرعة]، => Yes, I'm not counting [fast],\n\n[هيني] بطيء شوي شوي. => [I'm being] slow, little by little.\nهيني [بطيء] شوي شوي. => I'm being [slow], little by little.\nهيني بطيء [شوي شوي]. => I'm being slow, [little by little].\n\n[ما بدي] تعد بالعكس، => [I don't want] you to count backwards,\nما بدي [تعد] بالعكس، => I don't want [you to count] backwards,\nما بدي تعد [بالعكس]، => I don't want you to count [backwards],\n\n[عد] كمان مرة من واحد لعشرة => [Count] again from one to ten\nعد [كمان مرة] من واحد لعشرة => Count [again] from one to ten\nعد كمان مرة [من] واحد لعشرة => Count again [from] one to ten\nعد كمان مرة من [واحد] لعشرة => Count again from [one] to ten\nعد كمان مرة من واحد [ل]عشرة => Count again from one [to] ten\nعد كمان مرة من واحد ل[عشرة] => Count again from one to [ten]\n\n[بس] مش بسرعة شوي شوي. => [But] not fast, little by little.\nبس [مش] بسرعة شوي شوي. => But [not] fast, little by little.\nبس مش [بسرعة] شوي شوي. => But not [fast], little by little.\nبس مش بسرعة [شوي شوي]. => But not fast, [little by little].\n\n[حاضر]. => [Okay].\n\n[واحد] => [One]\n\n[اثنين] => [Two]\n\n[ثلاثة] => [Three]\n\n[أربعة] => [Four]\n\n[خمسة] => [Five]\n\n[ستة] => [Six]\n\n[سبعة] => [Seven]\n\n[ثمانية] => [Eight]\n\n[هلق] أنا بدي أروح أتخبى بسرعة => [Now] I want to go hide quickly\nهلق [أنا] بدي أروح أتخبى بسرعة => Now [I] want to go hide quickly\nهلق أنا [بدي] أروح أتخبى بسرعة => Now I [want] to go hide quickly\nهلق أنا بدي [أروح] أتخبى بسرعة => Now I want [to go] hide quickly\nهلق أنا بدي أروح [أتخبى] بسرعة => Now I want to go [hide] quickly\nهلق أنا بدي أروح أتخبى [بسرعة] => Now I want to go hide [quickly]\n\n[ما لحقت] أتخبى. => [I didn't manage] to hide.\nما لحقت [أتخبى]. => I didn't manage [to hide] or [to hide myself] # custom translation provided to clarify reflexive nature of أتخبى or simply use direct mapping.\nما لحقت [أتخبى]. => I didn't manage [to hide].\n\n[جلجل]! => [Jaljal]!\n\n[نعم]. => [Yes].\n\n[عد] كمان مرة بالعكس. => [Count] backwards one more time.\nعد [كمان] مرة بالعكس. => Count backwards one [more] time.\nعد كمان [مرة] بالعكس. => Count backwards one more [time].\nعد كمان مرة [بالعكس]. => Count [backwards] one more time.\n\n[تن تن]، ما رح تفرق => [Tan Tan], it won't make a difference\nتن تن، [ما رح] تفرق => Tan Tan, it [won't] make a difference\nتن تن، ما رح [تفرق] => it makes a difference # The verb تفرق implies 'it' as the subject and 'make a difference' as the action\n\n[إذا] كان بالعكس أو غيره. => [If] it's backwards or something else.\nإذا [كان] بالعكس أو غيره. => [it's] backwards or something else.\nإذا كان [بالعكس] أو غيره. => If it's [backwards] or something else.\nإذا كان بالعكس [أو] غيره. => If it's backwards [or] something else.\nإذا كان بالعكس أو [غيره]. => If it's backwards or [something else].\n\n[أنا] عدت من عشرة لواحد => [I] counted from ten to one\nأنا [عدت] من عشرة لواحد => I [counted] from ten to one\nأنا عدت [من] عشرة لواحد => I counted [from] ten to one\nأنا عدت من [عشرة] لواحد => I counted from [ten] to one\nأنا عدت من عشرة [لواحد] => I counted from ten [to one] # The Arabic preposition \"l-\" (to) is prefixed to \"wahid\" (one)\n\n[زي] من واحد لعشرة ما رح يكون أبطأ. => [Just like] one to ten, it won't be slower.\nزي من [واحد] لعشرة ما رح يكون أبطأ. => Just like [one] to ten, it won't be slower.\nزي من واحد [لعشرة] ما رح يكون أبطأ. => Just like one [to ten], it won't be slower.\nزي من واحد لعشرة [ما رح يكون] أبطأ. => Just like one to ten, [it won't be] slower.\nزي من واحد لعشرة ما رح يكون [أبطأ]. => Just like one to ten, it won't be [slower]\n\n[بس] إنت بتعد بسرعة. طيب خلاص، => [But] you count fast. Okay fine,\nبس [إنت] بتعد بسرعة. طيب خلاص، => But [you] count fast. Okay fine,\nبس إنت [بتعد] بسرعة. طيب خلاص، => But you [count] fast. Okay fine,\nبس إنت بتعد [بسرعة]. طيب خلاص، => But you count [fast]. Okay fine,\nبس إنت بتعد بسرعة. [طيب] خلاص، => But you count fast. [Okay] fine,\nبس إنت بتعد بسرعة. طيب [خلاص]، => But you count fast. Okay [fine]\n\n[عد] من واحد لعشرة بس مو بسرعة شوي شوي => [Count] from one to ten but not fast, little by little\nعد [من] واحد لعشرة بس مو بسرعة شوي شوي => Count [from] one to ten but not fast, little by little\nعد من [واحد] لعشرة بس مو بسرعة شوي شوي => Count from [one] to ten but not fast, little by little\nعد من واحد [لعشرة] بس مو بسرعة شوي شوي => Count from one [to ten] but not fast, little by little\nعد من واحد لعشرة [بس] مو بسرعة شوي شوي => Count from one to ten [but] not fast, little by little\nعد من واحد لعشرة بس [مو] بسرعة شوي شوي => Count from one to ten but [not] fast, little by little\nعد من واحد لعشرة بس مو [بسرعة] شوي شوي => Count from one to ten but not [fast], little by little\nعد من واحد لعشرة بس مو بسرعة [شوي شوي] => Count from one to ten but not fast, [little by little]\n\n[حاضر]، رح أعد من واحد لعشرة => [Okay], I'll count from one to ten\nحاضر، [رح أعد] من واحد لعشرة => [I'll count] from one to ten\nحاضر، رح أعد [من] واحد لعشرة => I'll count [from] one to ten\nحاضر، رح أعد من [واحد] لعشرة => I'll count from [one] to ten\nحاضر، رح أعد من واحد [لعشرة] => I'll count from one [to ten]\n\n[بس] شوي شوي. => [But] little by little.\nبس [شوي شوي]. => But [little by little]. # \"shway shway\" is a common adverbial unit meaning \"slowly\" or \"gradually\"\n\n[واحد] => [One]\n\n[اثنين] => [Two]\n\n[وين] أتخبى؟ => [Where] should I hide?\nوين [أتخبى]؟ => Where [should I hide]?\n\n[ثلاثة] => [Three]\n\n[هيك] جلجل رح يشوفني. => [Like this], Jaljal will see me.\nهيك [جلجل] رح يشوفني. => Like this, [Jaljal] will see me.\nهيك جلجل [رح] يشوفني. => Like this, Jaljal [will] see me.\nهيك جلجل رح [يشوفني]. => Like this, Jaljal will [see me].\n\n[أربعة] => [Four]\n\n[خمسة] => [Five]\n\n[ستة] => [Six]\n\n[سبعة] => [Seven]\n\n[ثمانية] => [Eight]\n\n[هيك] رح يكشفني، => [This way] he'll find me,\nهيك [رح] يكشفني، => will\nهيك رح [يكشفني]، => he finds me # the Arabic verb contains both the subject (he) and the object (me)\n\n[وين] أتخبى مو عارفة. => [Where] to hide, I don't know.\nوين [أتخبى] مو عارفة. => Where [to hide], I don't know.\nوين أتخبى [مو عارفة]. => Where to hide, [I don't know].\n\n[تسعة] => [Nine]\n\n[عشرة]، تن تن جاهزة أدور عليكي؟ => [Ten], Tan Tan ready for me to look for you?\nعشرة، [تن تن] جاهزة أدور عليكي؟ => Ten, [Tan Tan] ready for me to look for you?\nعشرة، تن تن [جاهزة] أدور عليكي؟ => Ten, Tan Tan [ready] for me to look for you?\nعشرة، تن تن جاهزة [أدور] عليكي؟ => Ten, Tan Tan ready [for me to look] for you?\nعشرة، تن تن جاهزة أدور [عليكي]؟ => Ten, Tan Tan ready for me to look [for you]?\n\n[جلجل]؟ => [Jaljal]?\n\n[نعم]. => [Yes].\n\n[لسه] بتعد بسرعة. => You're [still] counting fast.\nلسه [بتعد] بسرعة. => you're counting\nلسه بتعد [بسرعة]. => You're still counting [fast]\n\n[أنا] عدت كتير بطيء يا تن تن. => [I] counted very slowly, Tan Tan.\nأنا [عدت] كتير بطيء يا تن تن. => I [counted] very slowly, Tan Tan.\nأنا عدت [كتير] بطيء يا تن تن. => I counted [very] slowly, Tan Tan.\nأنا عدت كتير [بطيء] يا تن تن. => I counted very [slowly], Tan Tan.\nأنا عدت كتير بطيء يا [تن تن] => I counted very slowly, [Tan Tan]\n\n[خلاص] جلجل، هلق رح أتخبى منيح => [Okay] Jaljal, now I'll hide properly\nخلاص [جلجل]، هلق رح أتخبى منيح => Okay [Jaljal], now I'll hide properly\nخلاص جلجل، [هلق] رح أتخبى منيح => Okay Jaljal, [now] I'll hide properly\nخلاص جلجل، هلق [رح أتخبى] منيح => Okay Jaljal, now [I'll hide] properly\nخلاص جلجل، هلق رح أتخبى [منيح] => Okay Jaljal, now I'll hide [properly]\n\n[بس] عد كمان مرة يا جلجل شوي شوي. => [But] count one more time, Jaljal, little by little.\nبس [عد] كمان مرة يا جلجل شوي شوي. => But [count] one more time, Jaljal, little by little.\nبس عد [كمان] مرة يا جلجل شوي شوي. => one more\nبس عد كمان [مرة] يا جلجل شوي شوي. => But count one more [time], Jaljal, little by little.\nبس عد كمان مرة [يا جلجل] شوي شوي. => But count one more time, [Jaljal], little by little.\nبس عد كمان مرة يا جلجل [شوي شوي]. => But count one more time, Jaljal, [little by little].\n\n[حاضر]، رح أعد شوي شوي هالمرة. => [Okay], I'll count little by little this time.\nحاضر، [رح أعد] شوي شوي هالمرة. => Okay, [I'll count] little by little this time. # رح is the future marker and أعد is the verb 'I count', grouped to match the English 'I'll count'\nحاضر، رح أعد [شوي شوي] هالمرة. => Okay, I'll count [little by little] this time. # شوي شوي is an idiomatic phrase meaning 'little by little' or 'slowly'\nحاضر، رح أعد شوي شوي [هالمرة]. => Okay, I'll count little by little [this time]. # هالمرة literally means 'this time' (ha = this, al-marra = the time)\n\n[يلا] أنا هلق جاهزة عشان أتخبى، => [Come on], I'm ready now to hide,\nيلا [أنا] هلق جاهزة عشان أتخبى، => Come on, [I'm] ready now to hide,\nيلا أنا [هلق] جاهزة عشان أتخبى، => Come on, I'm ready [now] to hide,\nيلا أنا هلق [جاهزة] عشان أتخبى، => Come on, I'm [ready] now to hide,\nيلا أنا هلق جاهزة [عشان] أتخبى، => Come on, I'm ready now [to] hide,\nيلا أنا هلق جاهزة عشان [أتخبى]، => Come on, I'm ready now to [hide]\n\n[عد] واحد، اثنين... => [Count] one, two...\nعد [واحد]، اثنين... => Count [one], two...\nعد واحد، [اثنين]... => Count one, [two]...\n\n[واحد] => [One]\n\n[اثنين] => [Two]\n\n[ثلاثة] => [Three]\n\n[أربعة] => [Four]\n\n[خمسة] => [Five]\n\n[ستة] => [Six]\n\n[سبعة] => [Seven]\n\n[ثمانية] => [Eight]\n\n[تسعة] => [Nine]\n\n[عشرة] => [Ten]\n\n[جلجل]، أنا تخبيت وإنت ما لقيتني. => [Jaljal], I hid and you didn't find me.\nجلجل، [أنا] تخبيت وإنت ما لقيتني. => Jaljal, [I] hid and you didn't find me.\nجلجل، أنا [تخبيت] وإنت ما لقيتني. => Jaljal, I [hid] and you didn't find me.\nجلجل، أنا تخبيت [وإنت] ما لقيتني. => Jaljal, I hid [and you] didn't find me.\nجلجل، أنا تخبيت وإنت [ما لقيتني]. => Jaljal, I hid and you [didn't find me]\n\n[جلجل] نام! => [Jaljal] fell asleep!\nجلجل [نام]! => Jaljal [fell asleep]!\n\n[طب] أنا هلق مين بده يلاقيني؟ => [So] now who's going to find me?\nطب [أنا] هلق مين بده يلاقيني؟ => me # In this context, it reinforces the object \"me\"\nطب أنا [هلق] مين بده يلاقيني؟ => So [now] who's going to find me?\nطب أنا هلق [مين] بده يلاقيني؟ => So now [who]'s going to find me?\nطب أنا هلق مين [بده] يلاقيني؟ => So now who's [going to] find me?\nطب أنا هلق مين بده [يلاقيني]؟ => So now who's going to [find me]?\n\n",
+    "lessons": "# تعلم الأرقام من 1 إلى 10\n00:00.00 واحد\n00:01.50 اثنين\n00:03.00 ثلاثة\n00:04.50 أربعة\n00:06.00 خمسة\n00:07.50 ستة\n00:09.00 سبعة\n00:10.50 ثمانية\n00:12.00 تسعة\n00:13.50 عشرة\n\n# بداية اللعبة\n00:17.00 خلاص؟\n00:18.50 لسه!\n00:21.00 خلاص يا تن تن؟\n00:23.00 أنا مش عارفة وين أتخبى.\n00:26.50 هه، جلجل؟\n00:28.00 نعم.\n\n# قواعد لعبة الغماية\n00:29.00 هاي لعبة الغماية وما بصير تفتح عينيك.\n00:33.00 لازم تبدأ مرة تانية وعد من الأول.\n00:37.00 طيب، أنا رح أبدأ من أول وجديد\n00:39.50 بس إنتي بدك تلحقي تتخبي.\n\n# المحاولة الأولى\n00:42.50 واحد\n00:44.00 اثنين\n00:46.00 وين لازم أتخبى عشان جلجل ما يعرف مكاني؟\n00:48.00 ثلاثة\n00:49.50 أربعة\n00:51.50 خمسة\n00:53.50 ستة\n00:55.00 سبعة\n00:57.00 ثمانية\n00:58.50 شو رأيكم تساعدوني وين أتخبى؟\n00:59.50 تسعة\n01:01.00 عشرة\n\n# البحث عن تن تن (الجزء 1)\n01:02.50 ورا الشجرة؟ لا، رح أبين.\n01:06.00 تن تن؟\n01:07.50 تن تن، جاهزة أدور عليكي؟\n01:10.50 لسه يا جلجل، إنت ليش بتضلك تفتح عينيك؟\n\n# مناقشة المشكلة\n01:15.00 ما هو أنا لازم أفتح عيني مشان أدور عليكي.\n01:19.00 بس إنت يا جلجل بتعد بسرعة\n01:21.00 وأنا ما لحقت أتخبى.\n01:23.50 أنا بعد كتير بطيء يا تن تن.\n01:26.00 يلا خلينا نجرب كمان مرة.\n\n# اقتراح جديد\n01:29.00 لا يا جلجل، بدنا نجرب طريقة تانية.\n01:33.00 طريقة تانية؟\n01:35.00 كيف يعني؟\n01:36.50 شو رأيك تعد بالعكس؟\n01:39.00 بالعكس؟\n01:40.50 بالعكس يعني واحد، اثنين...\n01:44.00 لا لا يا جلجل، بالعكس يعني عشرة،\n01:46.00 تسعة، ثمانية، سبعة...\n01:52.00 عرفت.\n\n# المحاولة بالعد العكسي\n01:54.00 عشرة\n01:55.50 تسعة\n01:57.00 ثمانية\n01:59.00 سبعة\n02:01.00 بابا، جلجل بعده بعد بسرعة.\n02:01.50 ستة\n02:04.50 نعم، أنا ما بعد بسرعة،\n02:06.50 هيني بطيء شوي شوي.\n\n# طلب جديد من تن تن\n02:09.00 ما بدي تعد بالعكس،\n02:11.00 عد كمان مرة من واحد لعشرة\n02:13.50 بس مش بسرعة شوي شوي.\n02:16.00 حاضر.\n\n# المحاولة الثالثة\n02:17.50 واحد\n02:18.50 اثنين\n02:19.50 ثلاثة\n02:20.50 أربعة\n02:21.50 خمسة\n02:22.50 ستة\n02:23.50 سبعة\n02:24.50 ثمانية\n02:21.50 هلق أنا بدي أروح أتخبى بسرعة.\n02:26.00 ما لحقت أتخبى.\n\n# النقاش الأخير\n02:29.50 جلجل!\n02:31.50 نعم.\n02:32.50 عد كمان مرة بالعكس.\n02:35.00 تن تن، ما رح تفرق\n02:37.00 إذا كان بالعكس أو غيره.\n02:39.00 أنا عدت من عشرة لواحد\n02:41.00 زي من واحد لعشرة ما رح يكون أبطأ.\n\n# الاتفاق على المحاولة الأخيرة\n02:43.50 بس إنت بتعد بسرعة. طيب خلاص،\n02:46.50 عد من واحد لعشرة بس مو بسرعة شوي شوي.\n02:52.00 حاضر، رح أعد من واحد لعشرة\n02:54.50 بس شوي شوي.\n\n# المحاولة النهائية (الجزء 1)\n02:56.50 واحد\n02:58.00 اثنين\n02:59.50 وين أتخبى؟\n03:01.50 ثلاثة\n03:03.00 هيك جلجل رح يشوفني.\n03:04.00 أربعة\n03:05.50 خمسة\n03:07.00 ستة\n\n# المحاولة النهائية (الجزء 2)\n03:08.50 سبعة\n03:10.00 ثمانية\n03:10.50 هيك رح يكشفني،\n03:12.00 وين أتخبى مو عارفة.\n03:12.50 تسعة\n03:14.00 عشرة، تن تن جاهزة أدور عليكي؟\n\n# نهاية اللعبة\n03:18.50 جلجل؟\n03:20.00 نعم.\n03:21.00 لسه بتعد بسرعة.\n03:23.50 أنا عدت كتير بطيء يا تن تن.\n03:26.50 خلاص جلجل، هلق رح أتخبى منيح\n03:28.50 بس عد كمان مرة يا جلجل شوي شوي.\n\n# المحاولة الأخيرة\n03:33.00 حاضر، رح أعد شوي شوي هالمرة.\n03:36.50 يلا أنا هلق جاهزة عشان أتخبى،\n03:39.00 عد واحد، اثنين...\n03:42.50 واحد\n03:44.00 اثنين\n03:46.00 ثلاثة\n03:48.00 أربعة\n03:50.00 خمسة\n03:52.00 ستة\n03:54.00 سبعة\n03:56.00 ثمانية\n03:58.00 تسعة\n04:00.00 عشرة\n\n# النهاية\n04:03.50 جلجل، أنا تخبيت وإنت ما لقيتني.\n04:10.50 جلجل نام!\n04:13.00 طب أنا هلق مين بده يلاقيني؟",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-04-27 06:33:02 UTC",
+  "updated_at": "2026-04-27 06:56:42 UTC",
+  "exported_at": "2026-04-27T06:56:42Z"
+}
