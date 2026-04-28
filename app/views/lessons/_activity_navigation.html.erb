@@ -72,6 +72,18 @@
             } do %>
             »
           <% end %>
+        <% else %>
+          <%= link_to course_path(@course.slug),
+            class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-green-700 text-white hover:bg-green-600",
+            title: "Back to Course",
+            data: {
+              turbo: false,
+              controller: 'lesson-navigation',
+              action: 'click->lesson-navigation#markLessonCompleted',
+              'lesson-navigation-lesson-id-value': @lesson.id
+            } do %>
+            »
+          <% end %>
         <% end %>
       </div>
     </div>

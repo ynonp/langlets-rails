@@ -88,8 +88,10 @@ class CoursesController < ApplicationController
         .includes(:activities, :lesson_users, activities: :activity_users)
         .with_progress_data(current_user)
         .order(:order)
+      @all_done = @lessons.all?(&:completed?)
     else
       @lessons = @course.lessons
+      @all_done = false
     end
   end
 
@@ -97,6 +99,26 @@ class CoursesController < ApplicationController
     authorize! :create, Course
     @course = Course.new
     @languages = Language.all.order(:english_name)
+  end
+
+  def mark_done
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+
+    @course.lessons.each do |lesson|
+      LessonUser.find_or_create_by(lesson: lesson, user: current_user)
+    end
+
+    redirect_to course_path(@course.slug), notice: "Course marked as done!"
+  end
+
+  def reset_progress
+    @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    authenticate_user!
+
+    LessonUser.where(lesson: @course.lessons, user: current_user).destroy_all
+
+    redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"
   end
 
   def create

@@ -116,6 +116,37 @@ class ProgressController < ApplicationController
     render json: { status: 'error', message: 'Invalid JSON' }, status: 400
   end
   
+  def toggle_lesson
+    return head :unauthorized unless current_user
+
+    lesson = Lesson.find(params[:lesson_id])
+    existing = LessonUser.find_by(lesson: lesson, user: current_user)
+
+    if existing
+      existing.destroy!
+    else
+      LessonUser.create!(lesson: lesson, user: current_user)
+    end
+
+    lesson = lesson.class.includes(:activities, :lesson_users, activities: :activity_users)
+                  .with_progress_data(current_user).find(lesson.id)
+    course = lesson.course
+    lessons = course.lessons.includes(:activities, :lesson_users, activities: :activity_users)
+                    .with_progress_data(current_user).order(:order)
+    all_done = lessons.all?(&:completed?)
+
+    respond_to do |format|
+      format.turbo_stream do
+        render turbo_stream: [
+          turbo_stream.replace(lesson, partial: "courses/lesson_row", locals: { lesson: lesson, course: course, index: 0 }),
+          turbo_stream.replace("mark-done-button", partial: "courses/mark_done_button", locals: { course: course, all_done: all_done })
+        ]
+      end
+      format.json { head :ok }
+      format.html { redirect_back fallback_location: course_path(course.slug) }
+    end
+  end
+
   private
   
   def mark_activity_completed(activity_id)

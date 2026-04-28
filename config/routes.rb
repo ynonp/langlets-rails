@@ -16,6 +16,10 @@ Rails.application.routes.draw do
   root "courses#index"
   get "landing_page/index"
   resources :courses, only: [ :show, :index, :new, :create ] do
+    member do
+      post :mark_done
+      post :reset_progress
+    end
     resources :lessons, only: [ :show ] do
       member do
         get :finish
@@ -33,7 +37,11 @@ Rails.application.routes.draw do
   get "activities/index"
   get "activities/show"
 
-  resources :progress, only: [ :create ]
+  resources :progress, only: [ :create ] do
+    collection do
+      post :toggle_lesson
+    end
+  end
   post "/sync_local_xp", to: "progress#sync_local_xp"
   post "/log", to: "progress#log"
 

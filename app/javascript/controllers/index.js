@@ -16,6 +16,7 @@ application.register("audio-to-translation-activity", AudioToTranslationActivity
 import AuthController from "./auth_controller"
 application.register("auth", AuthController)
 
+
 import Bridge__AuthBridgeController from "./bridge/auth_bridge_controller"
 application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
 

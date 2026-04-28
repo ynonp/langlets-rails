@@ -1,0 +1,68 @@
+<div
+  class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>"
+  id="<%= dom_id(lesson) %>">
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-3 flex-1">
+      <!-- Progress Icon -->
+      <div class="flex-shrink-0">
+        <% if user_signed_in? %>
+          <%= button_to toggle_lesson_progress_index_path(lesson_id: lesson.id),
+                method: :post,
+                class: "focus:outline-none hover:scale-110 transition-transform duration-150" do %>
+            <% if lesson.completed? %>
+              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+              </svg>
+            <% elsif lesson.in_progress? %>
+              <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+              </svg>
+            <% else %>
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+            <% end %>
+          <% end %>
+        <% else %>
+          <% if lesson.completed? %>
+            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+            </svg>
+          <% elsif lesson.in_progress? %>
+            <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+            </svg>
+          <% else %>
+            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+            </svg>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div>
+        <%= link_to course_lesson_path(course, lesson) do %>
+          <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
+            <%= lesson.name %>
+          </h3>
+        <% end %>
+      </div>
+    </div>
+
+    <% if lesson.completed? %>
+      <%= link_to course_lesson_path(course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="hidden md:inline">Review</span>
+      <% end %>
+    <% else %>
+      <%= link_to course_lesson_path(course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="hidden md:inline">Start Lesson</span>
+      <% end %>
+    <% end %>
+  </div>
+</div>

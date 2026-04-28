@@ -149,18 +149,22 @@
         Pro Tip: Practice 1 lesson every day to maximize spaced repetition effect.
       </p>
 
-      <!-- Watch Full Video Button (only shown if course has full player enabled) -->
-      <% if @course.show_full_course_player %>
-        <div class="mb-6">
-          <%= link_to course_full_player_path(@course.slug), 
+      <!-- Watch Full Video Button + Mark Done Button -->
+      <div class="mb-6 flex flex-wrap items-center gap-3">
+        <% if @course.show_full_course_player %>
+          <%= link_to course_full_player_path(@course.slug),
               class: "inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl" do %>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
               <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
             </svg>
             Watch Full Video
           <% end %>
+        <% end %>
+
+        <div id="mark-done-button">
+          <%= render "mark_done_button", course: @course, all_done: @all_done %>
         </div>
-      <% end %>
+      </div>
 
       <!-- Lessons list -->
       <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
@@ -168,65 +172,7 @@
         <% @lessons.each_with_index do |lesson, index| %>
           <% is_first_incomplete = !first_incomplete_found && (lesson.in_progress? || lesson.not_started?) %>
           <% first_incomplete_found = true if is_first_incomplete %>
-          <div
-            class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>"            
-            <%= is_first_incomplete ? ' data-scroll-into-view-target=element' : '' %>>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center gap-3 flex-1">
-                <!-- Progress Icon -->
-                <div class="flex-shrink-0">
-                  <% if lesson.completed? %>
-                    <!-- Completed lesson icon -->
-                    <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                  <% elsif lesson.in_progress? %>
-                    <!-- Partially completed lesson icon -->
-                    <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                    </svg>
-                  <% else %>
-                    <!-- Not started lesson icon -->
-                    <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <circle cx="12" cy="12" r="10"></circle>
-                    </svg>
-                  <% end %>
-                </div>
-                
-                <div>
-                  <% if lesson.completed? %>
-                    <%= link_to course_lesson_path(@course, lesson) do %>
-                      <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
-                        <%= lesson.name %>
-                      </h3>
-                    <% end %>
-                  <% else %>
-                    <%= link_to course_lesson_path(@course, lesson) do %>
-                      <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
-                        <%= lesson.name %>
-                      </h3>
-                    <% end %>
-                  <% end %>
-                </div>
-              </div>
-              
-              <% if lesson.completed? %>
-                <%= link_to course_lesson_path(@course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-                  <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="hidden md:inline">Review</span>
-                <% end %>
-              <% else %>
-                <%= link_to course_lesson_path(@course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-                  <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span class="hidden md:inline">Start Lesson</span>
-                <% end %>
-              <% end %>
-            </div>
-          </div>
+          <%= render "lesson_row", lesson: lesson, course: @course, index: index %>
         <% end %>
       </div>
     </div>
