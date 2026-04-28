@@ -58,7 +58,9 @@ class CoursesController < ApplicationController
 
         continue_progress = calculate_progress_for_courses(continue_courses, current_user)
 
-        @continue_learning_courses = continue_courses.map do |course|
+        @continue_learning_courses = continue_courses.reject do |course|
+          (continue_progress[course.id] || 0) >= 100
+        end.map do |course|
           course.define_singleton_method(:user_progress) { continue_progress[course.id] || 0 }
           course.define_singleton_method(:has_progress?) { true }
           course
