@@ -33,6 +33,7 @@ class CoursesController < ApplicationController
       @all_courses = all_courses_array.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
+        course.define_singleton_method(:completed?) { (progress_data[course.id] || 0) >= 100 }
         course
       end
 
@@ -40,6 +41,7 @@ class CoursesController < ApplicationController
       @recommended_courses = current_user.recommended_for_me.includes(:language).to_a.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
+        course.define_singleton_method(:completed?) { (progress_data[course.id] || 0) >= 100 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end
@@ -63,6 +65,7 @@ class CoursesController < ApplicationController
         end.map do |course|
           course.define_singleton_method(:user_progress) { continue_progress[course.id] || 0 }
           course.define_singleton_method(:has_progress?) { true }
+          course.define_singleton_method(:completed?) { false }
           course
         end.sort_by do |course|
           continue_learning_order[course.id] || Float::INFINITY
@@ -76,6 +79,7 @@ class CoursesController < ApplicationController
       @all_courses = all_courses_array.map do |course|
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
+        course.define_singleton_method(:completed?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end

@@ -19,6 +19,7 @@ class LearningPathsController < ApplicationController
       @courses = courses_array.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
+        course.define_singleton_method(:completed?) { (progress_data[course.id] || 0) >= 100 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end
@@ -26,6 +27,7 @@ class LearningPathsController < ApplicationController
       @courses = courses_array.map do |course|
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
+        course.define_singleton_method(:completed?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end
@@ -49,6 +51,7 @@ class LearningPathsController < ApplicationController
       @courses = courses_array.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
+        course.define_singleton_method(:completed?) { (progress_data[course.id] || 0) >= 100 }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end
@@ -56,6 +59,7 @@ class LearningPathsController < ApplicationController
       @courses = courses_array.map do |course|
         course.define_singleton_method(:user_progress) { 0 }
         course.define_singleton_method(:has_progress?) { false }
+        course.define_singleton_method(:completed?) { false }
         course.define_singleton_method(:cached_lesson_count) { lesson_counts[course.id] || 0 }
         course
       end

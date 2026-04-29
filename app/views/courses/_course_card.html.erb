@@ -13,9 +13,14 @@
   # Set default values for optional locals
   container_classes ||= "block bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition duration-300 cursor-pointer border border-slate-700 flex flex-col h-full min-w-0"
   show_progress = local_assigns.fetch(:show_progress, course.respond_to?(:has_progress?) && course.has_progress?)
-  
+  is_completed = course.respond_to?(:completed?) && course.completed?
+
   # Determine button styling and text based on progress
-  if show_progress
+  if is_completed
+    button_text = "Review"
+    button_classes = "w-full bg-slate-600 text-white py-2 rounded-lg font-medium hover:bg-slate-500 transition duration-200 text-center mt-auto"
+    language_badge_classes = "mr-2 px-2 py-0.5 bg-green-100 text-green-800 rounded-full text-xs font-medium"
+  elsif show_progress
     button_text = "Continue Learning"
     button_classes = "w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition duration-200 text-center mt-auto"
     language_badge_classes = "mr-2 px-2 py-0.5 bg-yellow-100 text-yellow-800 rounded-full text-xs font-medium"
@@ -24,7 +29,7 @@
     button_classes = "w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 text-center mt-auto"
     language_badge_classes = "mr-2 px-2 py-0.5 bg-blue-100 text-blue-800 rounded-full text-xs font-medium"
   end
-  
+
   # Get user progress
   user_progress = course.respond_to?(:user_progress) ? course.user_progress : 0
 %>
@@ -33,12 +38,30 @@
   <!-- Course Image -->
   <% if course.main_media_url.present? %>
     <% youtube_video_id = course.main_media_url.split("v=").last %>
-    <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+    <div class="relative">
+      <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+      <% if is_completed %>
+        <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md flex items-center gap-1">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+          Completed
+        </div>
+      <% end %>
+    </div>
   <% else %>
-    <div class="w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center flex-shrink-0">
+    <div class="relative w-full h-40 bg-slate-700 rounded-t-xl flex items-center justify-center flex-shrink-0">
       <svg class="w-12 h-12 text-slate-500" fill="currentColor" viewBox="0 0 20 20">
         <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"></path>
       </svg>
+      <% if is_completed %>
+        <div class="absolute top-2 right-2 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md flex items-center gap-1">
+          <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
+          </svg>
+          Completed
+        </div>
+      <% end %>
     </div>
   <% end %>
   
@@ -62,7 +85,7 @@
       </div>
       
       <!-- Progress Bar (only if user has progress) -->
-      <% if show_progress && user_progress > 0 %>
+      <% if !is_completed && show_progress && user_progress > 0 %>
         <div class="mb-3">
           <div class="flex items-center justify-between text-xs text-slate-400 mb-1">
             <span>Progress</span>
