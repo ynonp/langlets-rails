@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    <% items.each_with_index do |item, idx| %>
+      {
+        "@type": "ListItem",
+        "position": <%= idx + 1 %>,
+        "name": "<%= j item[:name] %>",
+        "item": "<%= j item[:url] %>"
+      }<%= "," unless idx == items.size - 1 %>
+    <% end %>
+  ]
+}
+</script>

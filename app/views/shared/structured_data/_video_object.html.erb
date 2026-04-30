@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "<%= j local_assigns.fetch(:name, '') %>",
+  "description": "<%= j local_assigns.fetch(:description, '') %>",
+  "thumbnailUrl": "<%= j local_assigns.fetch(:thumbnail_url, '') %>",
+  "embedUrl": "https://www.youtube.com/embed/<%= j local_assigns.fetch(:video_id, '') %>",
+  "contentUrl": "https://www.youtube.com/watch?v=<%= j local_assigns.fetch(:video_id, '') %>",
+  "uploadDate": "<%= j local_assigns.fetch(:upload_date, '') %>",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Langlets"
+  }
+}
+</script>

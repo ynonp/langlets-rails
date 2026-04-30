@@ -1,5 +1,6 @@
 <% content_for :head do %>
   <title><%= @lesson.name %> - Langlets</title>
+  <meta name="robots" content="noindex, follow">
 <% end %>
 
 <% activity_params = @activity.activity_params.merge(is_review_lesson: true) %>

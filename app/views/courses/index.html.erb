@@ -1,3 +1,40 @@
+<% content_for :head do %>
+  <title>Langlets - Learn Languages Through Interactive Video Clips</title>
+  <%= render_meta_tags(
+    title: "Langlets - Learn Languages Through Interactive Video Clips",
+    description: SeoHelper::DEFAULT_DESCRIPTION,
+    url: canonical_url(root_path),
+    image_url: nil
+  ) %>
+  <meta name="keywords" content="language learning, interactive video, learn English, learn Hebrew, learn French, learn Spanish, learn Arabic, bilingual education">
+<% end %>
+
+<% content_for :canonical_url, canonical_url(root_path) %>
+
+<% content_for :structured_data do %>
+  <%= render "shared/structured_data/website" %>
+  <%= render "shared/structured_data/faq_page" %>
+  <% if @learning_paths.any? %>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Featured Learning Paths on Langlets",
+      "itemListElement": [
+        <% @learning_paths.each_with_index do |lp, idx| %>
+          {
+            "@type": "ListItem",
+            "position": <%= idx + 1 %>,
+            "url": "<%= j canonical_url(learning_path_path(lp)) %>",
+            "name": "<%= j lp.name %>"
+          }<%= "," unless idx == @learning_paths.size - 1 %>
+        <% end %>
+      ]
+    }
+    </script>
+  <% end %>
+<% end %>
+
 <!-- Top bar: Use existing authentication bar -->
 <header class="py-6 border-b border-slate-700/60">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
@@ -137,6 +174,22 @@
       </div>
     </div>
   <% end %>
+
+  <!-- GEO: Entity-rich description for search engines and AI crawlers -->
+  <section class="mb-8 px-2">
+    <p class="text-slate-300 text-lg leading-relaxed">
+      Learn
+      <strong class="text-white">English</strong>,
+      <strong class="text-white">Hebrew</strong>,
+      <strong class="text-white">French</strong>,
+      <strong class="text-white">Spanish</strong>, and
+      <strong class="text-white">Arabic</strong>
+      through interactive video clips from real songs, TV shows, and authentic content.
+      Each course breaks down bilingual phrases with word-level translations, timestamps,
+      and AI-powered activities designed to build your listening, speaking, and
+      comprehension skills through spaced repetition.
+    </p>
+  </section>
 
   <!-- Continue Learning Section - show courses user has started -->
   <% if user_signed_in? && @continue_learning_courses.any? %>

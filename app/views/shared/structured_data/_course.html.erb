@@ -1,0 +1,36 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "@id": "<%= j course_url %>#course",
+  "name": "<%= j course.name %>",
+  "description": "<%= j local_assigns.fetch(:description, '') %>",
+  "provider": {
+    "@type": "Organization",
+    "name": "Langlets",
+    "sameAs": "https://www.langlets.app"
+  },
+  "teaches": "<%= j course.language&.english_name || 'Language Learning' %>",
+  "inLanguage": {
+    "@type": "Language",
+    "name": "<%= j course.language&.english_name || 'Multiple languages' %>"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Language Learning"
+  },
+  "educationalLevel": "beginner",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student"
+  },
+  "hasCourseInstance": {
+    "@type": "CourseInstance",
+    "courseMode": "online",
+    "instructor": {
+      "@type": "Person",
+      "name": "Langlets Team"
+    }
+  }
+}
+</script>

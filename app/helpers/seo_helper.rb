@@ -1,0 +1,65 @@
+module SeoHelper
+  DEFAULT_DESCRIPTION = "Learn languages through interactive video clips. " \
+    "Practice listening, speaking, and comprehension with songs, TV shows, " \
+    "and real-world content powered by AI."
+
+  def render_meta_tags(title:, description:, url:, image_url: nil, type: "website")
+    tags = []
+    tags << tag.meta(name: "description", content: description)
+    tags << tag.link(rel: "canonical", href: url)
+
+    tags << tag.meta(property: "og:type", content: type)
+    tags << tag.meta(property: "og:url", content: url)
+    tags << tag.meta(property: "og:title", content: title)
+    tags << tag.meta(property: "og:description", content: description)
+    tags << tag.meta(property: "og:site_name", content: "Langlets")
+    tags << tag.meta(property: "og:locale", content: "en_US")
+
+    if image_url.present?
+      tags << tag.meta(property: "og:image", content: image_url)
+      tags << tag.meta(property: "og:image:width", content: "1280")
+      tags << tag.meta(property: "og:image:height", content: "720")
+    end
+
+    card_type = image_url.present? ? "summary_large_image" : "summary"
+    tags << tag.meta(name: "twitter:card", content: card_type)
+    tags << tag.meta(name: "twitter:url", content: url)
+    tags << tag.meta(name: "twitter:title", content: title)
+    tags << tag.meta(name: "twitter:description", content: description)
+    tags << tag.meta(name: "twitter:image", content: image_url) if image_url.present?
+
+    safe_join(tags, "\n    ")
+  end
+
+  def course_description(course)
+    if course.respond_to?(:description) && course.description.present?
+      return course.description
+    end
+
+    lang = course.language
+    language_name = lang&.english_name || "a new language"
+    lesson_count = course.lessons.size
+
+    "Learn #{language_name} through \"#{course.name}\" — an interactive video course " \
+    "with #{ActionController::Base.helpers.pluralize(lesson_count, 'lesson')}. " \
+    "Practice listening, speaking, and comprehension with AI-powered activities on Langlets."
+  end
+
+  def learning_path_description(learning_path)
+    return learning_path.description if learning_path.description.present?
+
+    course_count = learning_path.courses.published.count
+    "A curated learning path with #{ActionController::Base.helpers.pluralize(course_count, 'interactive video course')}. " \
+    "Master \"#{learning_path.name}\" step by step on Langlets."
+  end
+
+  def extract_youtube_id(url)
+    return nil if url.blank?
+    match = url.match(%r{(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/shorts/)([\w-]{11})})
+    match ? match[1] : url.split("v=").last
+  end
+
+  def canonical_url(path)
+    "https://www.langlets.app#{path}"
+  end
+end

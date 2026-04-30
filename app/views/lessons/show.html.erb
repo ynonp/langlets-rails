@@ -1,28 +1,26 @@
 <% content_for :head do %>
-  <% youtube_video_id = @videoid %>
-  <% thumbnail_url = youtube_thumbnail_url(youtube_video_id) %>
+  <% video_id = @videoid %>
+  <% thumb_url = youtube_thumbnail_url(video_id) if video_id %>
   <% title = "#{@lesson.name} - Langlets" %>
-  <% description = "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
-  
-  <!-- Page title -->
+  <% desc = @lesson.course ? "Learn #{@lesson.course.language&.english_name || 'a new language'} with interactive video lessons based on \"#{@lesson.course.name}\"." : "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
+
   <title><%= title %></title>
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="<%= title %>">
-  <meta property="og:description" content="<%= description %>">
-  <meta property="og:image" content="<%= thumbnail_url %>">
-  <meta property="og:image:width" content="1280">
-  <meta property="og:image:height" content="720">
-  <meta property="og:site_name" content="Langlets">
-  <meta property="og:locale" content="en_US">
-  
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image">
-  <meta property="twitter:url" content="<%= course_url %>">
-  <meta property="twitter:title" content="<%= title %>">
-  <meta property="twitter:description" content="<%= description %>">
-  <meta property="twitter:image" content="<%= thumbnail_url %>">
+  <%= render_meta_tags(
+    title: title,
+    description: desc,
+    url: canonical_url(course_lesson_path(@lesson.course, @lesson)),
+    image_url: thumb_url
+  ) %>
+<% end %>
+
+<% content_for :canonical_url, canonical_url(course_lesson_path(@lesson.course, @lesson)) %>
+
+<% content_for :structured_data do %>
+  <%= render "shared/structured_data/breadcrumb_list", items: [
+    { name: "Home", url: canonical_url(root_path) },
+    { name: @lesson.course.name, url: canonical_url(course_path(@lesson.course)) },
+    { name: @lesson.name, url: canonical_url(course_lesson_path(@lesson.course, @lesson)) }
+  ] %>
 <% end %>
 
 <% 

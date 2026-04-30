@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "home/terms"
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   root "courses#index"
+  get "/sitemap.xml", to: "sitemaps#show", defaults: { format: :xml }
   get "landing_page/index"
   resources :courses, only: [ :show, :index, :new, :create ] do
     member do

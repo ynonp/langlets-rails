@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <% @static_pages.each do |page| %>
+    <url>
+      <loc>https://www.langlets.app<%= page[:path] %></loc>
+      <priority><%= page[:priority] %></priority>
+      <changefreq><%= page[:changefreq] %></changefreq>
+    </url>
+  <% end %>
+
+  <% @courses.each do |course| %>
+    <url>
+      <loc>https://www.langlets.app<%= course_path(course) %></loc>
+      <lastmod><%= course.updated_at.iso8601 %></lastmod>
+      <priority>0.8</priority>
+      <changefreq>weekly</changefreq>
+      <% video_id = extract_youtube_id(course.main_media_url) %>
+      <% if video_id.present? %>
+        <video:video>
+          <video:title><%= course.name %></video:title>
+          <video:description><![CDATA[<%= course_description(course) %>]]></video:description>
+          <video:thumbnail_loc>https://img.youtube.com/vi/<%= video_id %>/hqdefault.jpg</video:thumbnail_loc>
+          <video:content_loc>https://www.youtube.com/watch?v=<%= video_id %></video:content_loc>
+        </video:video>
+      <% end %>
+    </url>
+  <% end %>
+
+  <% @learning_paths.each do |lp| %>
+    <url>
+      <loc>https://www.langlets.app<%= learning_path_path(lp) %></loc>
+      <lastmod><%= lp.updated_at.iso8601 %></lastmod>
+      <priority>0.7</priority>
+      <changefreq>weekly</changefreq>
+    </url>
+  <% end %>
+</urlset>
