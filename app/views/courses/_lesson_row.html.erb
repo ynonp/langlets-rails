@@ -1,6 +1,7 @@
 <div
   class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>"
-  id="<%= dom_id(lesson) %>">
+  id="<%= dom_id(lesson) %>"
+  <%= raw('data-scroll-into-view-target="element"') if local_assigns[:is_first_incomplete] %>>
   <div class="flex items-center justify-between">
     <div class="flex items-center gap-3 flex-1">
       <!-- Progress Icon -->

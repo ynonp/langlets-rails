@@ -173,11 +173,8 @@
 
       <!-- Lessons list -->
       <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
-        <% first_incomplete_found = false %>
         <% @lessons.each_with_index do |lesson, index| %>
-          <% is_first_incomplete = !first_incomplete_found && (lesson.in_progress? || lesson.not_started?) %>
-          <% first_incomplete_found = true if is_first_incomplete %>
-          <%= render "lesson_row", lesson: lesson, course: @course, index: index %>
+          <%= render "lesson_row", lesson: lesson, course: @course, index: index, is_first_incomplete: lesson.id == @first_incomplete_lesson_id %>
         <% end %>
       </div>
     </div>

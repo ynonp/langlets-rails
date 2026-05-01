@@ -6,7 +6,7 @@ module ApplicationHelper
   def link_to_next_activity(text, path, opts)
     route = Rails.application.routes.recognize_path(path)
     if route[:action] == "finish"
-      link_to text, path, {**opts, data: {:"turbo-frame" => "_top"}}
+      link_to text, path, {**opts, data: {:"turbo-frame" => "_top", :"turbo-action" => "replace"}}
     else
       link_to text, path, opts
     end

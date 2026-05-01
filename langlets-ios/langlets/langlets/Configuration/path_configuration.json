@@ -18,9 +18,8 @@
     {
       "patterns": ["/courses/.*/lessons/.*"],
       "properties": {
-        "context": "default",
-        "pull_to_refresh_enabled": false,
-        "navigationBarHidden": true
+        "context": "modal",
+        "pull_to_refresh_enabled": false
       }
     },
     {

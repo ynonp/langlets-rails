@@ -308,6 +308,15 @@ class Course < ApplicationRecord
     ((completed_lessons.to_f / total_lessons) * 100).round
   end
 
+  # First lesson without a completion record for the given user.
+  # Returns the lesson id, or nil if all are completed / user is nil.
+  def first_incomplete_lesson_id_for(user)
+    return nil unless user
+
+    completed = LessonUser.where(user: user).select(:lesson_id)
+    lessons.where.not(id: completed).order(:order).limit(1).pick(:id)
+  end
+
   # Get the medium for this course
   # All lessons in a course share the same medium
   def medium

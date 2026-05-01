@@ -95,9 +95,11 @@ class CoursesController < ApplicationController
         .with_progress_data(current_user)
         .order(:order)
       @all_done = @lessons.all?(&:completed?)
+      @first_incomplete_lesson_id = @lessons.find { |l| l.in_progress? || l.not_started? }&.id
     else
       @lessons = @course.lessons
       @all_done = false
+      @first_incomplete_lesson_id = nil
     end
   end
 
