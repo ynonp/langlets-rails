@@ -81,7 +81,7 @@ class TokenTranslation < ApplicationRecord
   private
 
   def should_generate_audio?
-    original_text.present? && phrase&.l1&.iso_name.present? && word_index?
+    original_text.present? && phrase&.l1&.iso_name.present?
   end
 
   def should_generate_audio_on_update?
