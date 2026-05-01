@@ -42,6 +42,14 @@ class LessonsController < ApplicationController
       lesson_id: (@activity.is_last_in_lesson? ? @lesson.id : nil),
       activity_xp: @activity.xp_value
     }.compact
+
+    # Invalidate cache when navigating between lessons
+    @invalidate_cache = params[:lesson_invalidate_cache].present?
+    
+    respond_to do |format|
+      format.html
+      format.turbo_stream if @invalidate_cache
+    end
   end
 
   def finish

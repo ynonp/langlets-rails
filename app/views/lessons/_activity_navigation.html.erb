@@ -30,7 +30,10 @@
           <%= link_to course_lesson_path(@course, @prev_lesson),
             class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative text-sm bg-gray-700 text-white hover:bg-gray-600",
             title: "Previous Lesson",
-            data: { turbo_frame: 'activity' } do %>
+            data: { 
+              turbo_frame: 'activity',
+              lesson_invalidate_cache: 'true'
+            } do %>
             «
           <% end %>
         <% end %>
@@ -66,6 +69,7 @@
             title: "Next Lesson",
             data: {
               turbo_frame: 'activity',
+              lesson_invalidate_cache: 'true',
               controller: 'lesson-navigation',
               action: 'click->lesson-navigation#markLessonCompleted',
               'lesson-navigation-lesson-id-value': @lesson.id
@@ -77,6 +81,7 @@
             class: "w-8 h-8 mx-2 rounded-full flex items-center justify-center font-bold no-underline relative z-10 transition-all duration-200 text-sm bg-green-700 text-white hover:bg-green-600",
             title: "Back to Course",
             data: {
+              lesson_invalidate_cache: 'true',
               controller: 'lesson-navigation',
               action: 'click->lesson-navigation#markLessonCompleted',
               'lesson-navigation-lesson-id-value': @lesson.id
