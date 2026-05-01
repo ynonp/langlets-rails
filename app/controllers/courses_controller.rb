@@ -89,6 +89,10 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
+    
+    response.headers["Turbo-Visit"] = "reload"
+    response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
+    
     if current_user
       @lessons = @course.lessons
         .includes(:activities, :lesson_users, activities: :activity_users)

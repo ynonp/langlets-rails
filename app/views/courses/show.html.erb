@@ -3,6 +3,7 @@
   <% thumb_url = youtube_thumbnail_url(video_id) if video_id %>
 
   <title><%= @course.name %> - Langlets</title>
+  <meta name="turbo-cache-control" content="no-cache">
   <%= render_meta_tags(
     title: "#{@course.name} - Langlets",
     description: course_description(@course),
