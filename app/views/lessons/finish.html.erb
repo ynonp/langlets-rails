@@ -12,8 +12,7 @@
         class: "text-white p-2 rounded-md hover:bg-white hover:bg-opacity-10 transition-colors duration-200",
         title: "Back to Course",
         data: {
-          :"turbo-frame" => "_top",
-          :turbo => false
+          turbo_action: "replace"
         } do %>
         <svg xmlns="http://www.w3.org/2000/svg" 
           viewBox="0 0 384 512"
@@ -80,7 +79,7 @@
       <!-- Continue button -->
       <%= link_to @course_path,
         class: "block w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg transition-colors duration-200",
-        data: { turbo: false } do %>
+        data: { turbo_action: "replace" } do %>
         Back to Course
       <% end %>
     </div>
