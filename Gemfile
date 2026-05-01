@@ -104,6 +104,8 @@ gem "factory_bot", "~> 6.5"
 
 gem "ruby_llm", "~> 1.14.0"
 
+gem "async", "~> 2.23"
+
 gem "ruby_llm-schema", "~> 0.1.0"
 
 gem "opentelemetry-exporter-otlp", "~> 0.30.0"

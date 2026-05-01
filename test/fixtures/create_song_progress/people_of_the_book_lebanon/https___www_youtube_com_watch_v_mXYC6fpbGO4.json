@@ -1,0 +1,275 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=mXYC6fpbGO4",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "الناس اللي حول رابين جربوا بكل قوتهم",
+        "timestamp": "00:03.40",
+        "timestamp_end": "00:06.80",
+        "text_l2": "The people around Rabin tried with all their might"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "إنه يمنعوني من إني أقترب لرابين.",
+        "timestamp": "00:06.80",
+        "timestamp_end": "00:10.20",
+        "text_l2": "to prevent me from getting close to Rabin."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "رابين كان وقتها كنا نوصل تقريباً بالليل",
+        "timestamp": "00:11.20",
+        "timestamp_end": "00:14.80",
+        "text_l2": "Rabin, back then, we'd arrive roughly at night"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "تقريباً الساعة 12، 1 بالليل،",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:17.20",
+        "text_l2": "around 12, 1 AM,"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "يعملي حطلي كاس عصير سكوتي،",
+        "timestamp": "00:17.20",
+        "timestamp_end": "00:19.80",
+        "text_l2": "he'd tell me, \"Pour me a glass of Scotch juice,\""
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "عصير سكوتي يعني ويسكي.",
+        "timestamp": "00:19.80",
+        "timestamp_end": "00:21.80",
+        "text_l2": "Scotch juice meaning whiskey."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "وكنا ناخد اثنيناتنا كنا ناخد",
+        "timestamp": "00:22.20",
+        "timestamp_end": "00:24.80",
+        "text_l2": "And the two of us would take"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "العصير السكوتي ونبلش نحكي.",
+        "timestamp": "00:24.80",
+        "timestamp_end": "00:27.80",
+        "text_l2": "the Scotch juice and start talking."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "كان يسألني عن العالم العربي،",
+        "timestamp": "00:28.20",
+        "timestamp_end": "00:30.80",
+        "text_l2": "He would ask me about the Arab world,"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "كيف العالم العربي بدو يتطلع على إسرائيل،",
+        "timestamp": "00:30.80",
+        "timestamp_end": "00:34.20",
+        "text_l2": "how the Arab world views Israel,"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "كيف القادة الساسة العرب بيتطلعوا",
+        "timestamp": "00:34.20",
+        "timestamp_end": "00:37.80",
+        "text_l2": "how the Arab political leaders look"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "على دولة إسرائيل، شو يعني في مجال",
+        "timestamp": "00:37.80",
+        "timestamp_end": "00:41.20",
+        "text_l2": "at the State of Israel, is there room"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "للتفاهم وكذا وكذا، يعني هيدي الأسئلة",
+        "timestamp": "00:41.20",
+        "timestamp_end": "00:44.80",
+        "text_l2": "for understanding and so on, these were the questions"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "اللي كانت بيني وبينه.",
+        "timestamp": "00:44.80",
+        "timestamp_end": "00:47.80",
+        "text_l2": "that were between him and me."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "وأكثر من مرة رحت لعنده قلتله:",
+        "timestamp": "00:50.20",
+        "timestamp_end": "00:53.20",
+        "text_l2": "And more than once I went to him and told him:"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "شوف سيادة الرئيس، الانتقاد",
+        "timestamp": "00:53.20",
+        "timestamp_end": "00:56.20",
+        "text_l2": "\"Look, Mr. President, the criticism"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "والمنشورات على الاختراعات",
+        "timestamp": "00:56.20",
+        "timestamp_end": "00:59.80",
+        "text_l2": "and the publications about the fabrications"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "اللي عم بيخبروا عني، أنا ما بدي بهدلك،",
+        "timestamp": "00:59.80",
+        "timestamp_end": "01:03.40",
+        "text_l2": "they're spreading about me, I don't want this for you,"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "أنا فيني استقيل اليوم.",
+        "timestamp": "01:03.40",
+        "timestamp_end": "01:05.80",
+        "text_l2": "I can resign today."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "يعملي: شو إنت حمار؟ أنا بعرف كل شي،",
+        "timestamp": "01:06.20",
+        "timestamp_end": "01:09.20",
+        "text_l2": "He'd say: \"Are you an idiot? I know everything,"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "خليك معي، خليك معي، ما بدي إياك تنهز.",
+        "timestamp": "01:09.20",
+        "timestamp_end": "01:12.20",
+        "text_l2": "stay with me, stay with me, I don't want you to leave.\""
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "بكل مكان كنا نوصل، كان يقدمني،",
+        "timestamp": "01:16.20",
+        "timestamp_end": "01:19.20",
+        "text_l2": "Everywhere we went, he would introduce me,"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "كان يقدمني مش كجاك نيريا بالمرة،",
+        "timestamp": "01:19.20",
+        "timestamp_end": "01:22.20",
+        "text_l2": "he wouldn't introduce me as Jack Neria at all,"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "مش كمستشاره السياسي أو مستشاره",
+        "timestamp": "01:22.20",
+        "timestamp_end": "01:25.20",
+        "text_l2": "not as his political advisor or his"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "الدبلوماسي، كان يخبر كلينتون:",
+        "timestamp": "01:25.20",
+        "timestamp_end": "01:28.20",
+        "text_l2": "diplomatic advisor, he would tell Clinton:"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "جاك نيريا، هو من لبنان.",
+        "timestamp": "01:29.20",
+        "timestamp_end": "01:32.20",
+        "text_l2": "\"Jack Neria, he is from Lebanon.\""
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "آل غور، هو من لبنان.",
+        "timestamp": "01:33.20",
+        "timestamp_end": "01:34.80",
+        "text_l2": "\"Al Gore, he is from Lebanon.\""
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "مرتين بذات السهرة عيطلي حتى يقدمني",
+        "timestamp": "01:35.20",
+        "timestamp_end": "01:38.20",
+        "text_l2": "Twice in the same evening he called me over to introduce me"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "قدام آل غور، قله: هو من لبنان.",
+        "timestamp": "01:38.20",
+        "timestamp_end": "01:41.20",
+        "text_l2": "in front of Al Gore, told him: \"He is from Lebanon.\""
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "يعني هو كان يشوفني كمعجزة،",
+        "timestamp": "01:42.20",
+        "timestamp_end": "01:45.20",
+        "text_l2": "I mean, he saw me as a miracle,"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "لبناني حد رئيس الوزراء الإسرائيلي،",
+        "timestamp": "01:45.20",
+        "timestamp_end": "01:48.20",
+        "text_l2": "a Lebanese beside the Israeli Prime Minister,"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "يعني هيدي مش معقول يعني،",
+        "timestamp": "01:48.20",
+        "timestamp_end": "01:51.20",
+        "text_l2": "I mean, this is unbelievable, I mean,"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "يعني كان من ناحيته ما فهمها كيف وصل،",
+        "timestamp": "01:52.20",
+        "timestamp_end": "01:55.20",
+        "text_l2": "I mean, from his side, he didn't understand how I got here,"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "كيف وصل هاللبناني هيدا، من وين إجا،",
+        "timestamp": "01:55.20",
+        "timestamp_end": "01:58.20",
+        "text_l2": "how this Lebanese guy arrived, where he came from,"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "وقاعد حدي وعم بيساعدني.",
+        "timestamp": "01:58.20",
+        "timestamp_end": "02:01.20",
+        "text_l2": "and is sitting beside me and helping me."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "\"منعوني من الاقتراب من رابين\"",
+        "timestamp": "02:01.20",
+        "timestamp_end": "02:03.20",
+        "text_l2": "\"They Prevented Me From Getting Close to Rabin\""
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "ذكريات جاك نيريا",
+        "timestamp": "02:03.20",
+        "timestamp_end": "02:05.20",
+        "text_l2": "Memories of Jack Neria"
+      }
+    ],
+    "phrases_with_token_translations": "[الناس] اللي حول رابين جربوا بكل قوتهم => [The people] around Rabin tried with all their might\nالناس [اللي حول] رابين جربوا بكل قوتهم => The people [around] Rabin tried with all their might\nالناس اللي حول [رابين] جربوا بكل قوتهم => The people around [Rabin] tried with all their might\nالناس اللي حول رابين [جربوا] بكل قوتهم => The people around Rabin [tried] with all their might\nالناس اللي حول رابين جربوا [بكل] قوتهم => The people around Rabin tried [with all] their might\nالناس اللي حول رابين جربوا بكل [قوتهم] => The people around Rabin tried with all [their might] # refers to strength or power + their suffix\n\nإنه [يمنعوني] من إني أقترب لرابين. => [to prevent me] from getting close to Rabin.\nإنه يمنعوني [من] إني أقترب لرابين. => to prevent me [from] getting close to Rabin.\nإنه يمنعوني من [إني] أقترب لرابين. => that I\nإنه يمنعوني من إني [أقترب] لرابين. => to prevent me from [getting close] to Rabin.\nإنه يمنعوني من إني أقترب [لرابين]. => to prevent me from getting close [to Rabin]\n\n[رابين] كان وقتها كنا نوصل تقريباً بالليل => [Rabin], back then, we'd arrive roughly at night\nرابين كان [وقتها] كنا نوصل تقريباً بالليل => Rabin, [back then], we'd arrive roughly at night\nرابين كان وقتها [كنا نوصل] تقريباً بالليل => Rabin, back then, [we'd arrive] roughly at night\nرابين كان وقتها كنا نوصل [تقريباً] بالليل => Rabin, back then, we'd arrive [roughly] at night\nرابين كان وقتها كنا نوصل تقريباً [بالليل] => Rabin, back then, we'd arrive roughly [at night]\n\n[تقريباً] الساعة 12، 1 بالليل، => [around] 12, 1 AM,\nتقريباً [الساعة] 12، 1 بالليل، => the hour, time\nتقريباً الساعة [12]، 1 بالليل، => around [12], 1 AM,\nتقريباً الساعة 12، [1] بالليل، => around 12, [1] AM,\nتقريباً الساعة 12، 1 [بالليل]، => around 12, 1 [AM]\n\n[يعملي] حطلي كاس عصير سكوتي، => [he'd tell me], \"Pour me a glass of Scotch juice,\"\nيعملي [حطلي] كاس عصير سكوتي، => he'd tell me, \"[Pour me] a glass of Scotch juice,\"\nيعملي حطلي [كاس] عصير سكوتي، => he'd tell me, \"Pour me [a glass] of Scotch juice,\"\nيعملي حطلي كاس [عصير] سكوتي، => he'd tell me, \"Pour me a glass of [juice],\"\nيعملي حطلي كاس عصير [سكوتي]، => he'd tell me, \"Pour me a glass of [Scotch] juice,\"\n\n[عصير] سكوتي يعني ويسكي. => Scotch [juice] meaning whiskey.\nعصير [سكوتي] يعني ويسكي. => [Scotch] juice meaning whiskey.\nعصير سكوتي [يعني] ويسكي. => Scotch juice [meaning] whiskey.\nعصير سكوتي يعني [ويسكي]. => Scotch juice meaning [whiskey].\n\n[و]كنا ناخد اثنيناتنا كنا ناخد => [And] the two of us would take\nو[كنا] ناخد اثنيناتنا كنا ناخد => we were, we used to\nوكنا [ناخد] اثنيناتنا كنا ناخد => [take]\nوكنا ناخد [اثنيناتنا] كنا ناخد => [the two of us] would take\nوكنا ناخد اثنيناتنا [كنا ناخد] => would take # This is a repetition of the earlier phrase 'كنا ناخد' (would take)\n\n[العصير] السكوتي ونبلش نحكي. => the Scotch [juice] and start talking.\nالعصير [السكوتي] ونبلش نحكي. => the [Scotch] juice and start talking.\nالعصير السكوتي [ونبلش] نحكي. => the Scotch juice [and start] talking.\nالعصير السكوتي ونبلش [نحكي]. => the Scotch juice and start [talking].\n\n[كان يسألني] عن العالم العربي، => [He would ask me] about the Arab world,\nكان يسألني [عن] العالم العربي، => He would ask me [about] the Arab world,\nكان يسألني عن [العالم] العربي، => the world\nكان يسألني عن العالم [العربي]، => He would ask me about the [Arab] world,\n\n[كيف] العالم العربي بدو يتطلع على إسرائيل، => [how] the Arab world views Israel,\nكيف [العالم العربي] بدو يتطلع على إسرائيل، => how [the Arab world] views Israel,\nكيف العالم العربي [بدو يتطلع على] إسرائيل، => how the Arab world [views] Israel,\nكيف العالم العربي بدو يتطلع على [إسرائيل]، => how the Arab world views [Israel]\n\n[كيف] القادة الساسة العرب بيتطلعوا => [how] the Arab political leaders look\nكيف [القادة] الساسة العرب بيتطلعوا => how the Arab political [leaders] look\nكيف القادة [الساسة] العرب بيتطلعوا => how the Arab [political] leaders look\nكيف القادة الساسة [العرب] بيتطلعوا => how the [Arab] political leaders look\nكيف القادة الساسة العرب [بيتطلعوا] => how the Arab political leaders [look]\n\n[على] دولة إسرائيل، شو يعني في مجال => [at] the State of Israel, is there room\nعلى [دولة] إسرائيل، شو يعني في مجال => at [the State of] Israel, is there room\nعلى دولة [إسرائيل]، شو يعني في مجال => at the State of [Israel], is there room\nعلى دولة إسرائيل، [شو يعني] في مجال => what I mean; like # colloquial filler not present in the English translation\nعلى دولة إسرائيل، شو يعني [في] مجال => at the State of Israel, [is there] room\nعلى دولة إسرائيل، شو يعني في [مجال] => at the State of Israel, is there [room]\n\n[للتفاهم] وكذا وكذا، يعني هيدي الأسئلة => [for understanding] and so on, these were the questions\nللتفاهم [وكذا وكذا]، يعني هيدي الأسئلة => for understanding [and so on], these were the questions\nللتفاهم وكذا وكذا، [يعني] هيدي الأسئلة => I mean, it means # filler word common in spoken Arabic\nللتفاهم وكذا وكذا، يعني [هيدي] الأسئلة => for understanding and so on, [these] were the questions\nللتفاهم وكذا وكذا، يعني هيدي [الأسئلة] => for understanding and so on, these were [the questions]\n\n[اللي] كانت بيني وبينه => [that] were between him and me\nاللي [كانت] بيني وبينه => that [were] between him and me\nاللي كانت [بيني] وبينه => between me\nاللي كانت بيني [وبينه] => and him\n\n[و]أكثر من مرة رحت لعنده قلتله: => [And] more than once I went to him and told him:\nو[أكثر من] مرة رحت لعنده قلتله: => And [more than] once I went to him and told him:\nوأكثر من [مرة] رحت لعنده قلتله: => And more than [once] I went to him and told him:\nوأكثر من مرة [رحت] لعنده قلتله: => And more than once [I went] to him and told him:\nوأكثر من مرة رحت [لعنده] قلتله: => And more than once I went [to him] and told him:\nوأكثر من مرة رحت لعنده [قلتله]: => And more than once I went to him and [told him]: # the \"قلت\" contains the \"I\" and \"له\" contains \"him\"\n\n[شوف] سيادة الرئيس، الانتقاد => \"[Look], Mr. President, the criticism\nشوف [سيادة] الرئيس، الانتقاد => \"[Mr.] President, the criticism\nشوف سيادة [الرئيس]، الانتقاد => \"Look, Mr. [President], the criticism\nشوف سيادة الرئيس، [الانتقاد] => \"Look, Mr. President, [the criticism]\n\n[والمنشورات] على الاختراعات => [and the publications] about the fabrications\nوالمنشورات [على] الاختراعات => and the publications [about] the fabrications\nوالمنشورات على [الاختراعات] => and the publications about [the fabrications]\n\nاللي [عم بيخبروا] عني، أنا ما بدي بهدلك، => [they're spreading] about me, I don't want this for you,\nاللي عم بيخبروا [عني]، أنا ما بدي بهدلك، => they're spreading [about me], I don't want this for you,\nاللي عم بيخبروا عني، [أنا] ما بدي بهدلك، => they're spreading about me, [I] don't want this for you,\nاللي عم بيخبروا عني، أنا [ما بدي] بهدلك، => they're spreading about me, I [don't want] this for you,\nاللي عم بيخبروا عني، أنا ما بدي [بهدلك]، => they're spreading about me, I don't want [this for you] # \"بهدلة\" means trouble or embarrassment, translated contextually as \"this for you\"\n\n[أنا] فيني استقيل اليوم. => [I] can resign today.\nأنا [فيني] استقيل اليوم. => I [can] resign today.\nأنا فيني [استقيل] اليوم. => I can [resign] today.\nأنا فيني استقيل [اليوم]. => I can resign [today].\n\n[يعملي]: شو إنت حمار؟ أنا بعرف كل شي، => [He'd say]: \"Are you an idiot? I know everything,\nيعملي: [شو] إنت حمار؟ أنا بعرف كل شي، => He'd say: \"[Are] you an idiot? I know everything,\nيعملي: شو [إنت] حمار؟ أنا بعرف كل شي، => He'd say: \"Are [you] an idiot? I know everything,\nيعملي: شو إنت [حمار]؟ أنا بعرف كل شي، => He'd say: \"Are you [an idiot]? I know everything,\nيعملي: شو إنت حمار؟ [أنا] بعرف كل شي، => He'd say: \"Are you an idiot? [I] know everything,\nيعملي: شو إنت حمار؟ أنا [بعرف] كل شي، => He'd say: \"Are you an idiot? I [know] everything,\nيعملي: شو إنت حمار؟ أنا بعرف [كل شي]، => He'd say: \"Are you an idiot? I know [everything],\n\n[خليك] معي، خليك معي، ما بدي إياك تنهز. => [stay] with me, stay with me, I don't want you to leave.\"\nخليك [معي]، خليك معي، ما بدي إياك تنهز. => stay [with me], stay with me, I don't want you to leave.\"\nخليك معي، [خليك] معي، ما بدي إياك تنهز. => stay with me, [stay] with me, I don't want you to leave.\"\nخليك معي، خليك [معي]، ما بدي إياك تنهز. => stay with me, stay [with me], I don't want you to leave.\"\nخليك معي، خليك معي، [ما بدي] إياك تنهز. => stay with me, stay with me, [I don't want] you to leave.\"\nخليك معي، خليك معي، ما بدي [إياك] تنهز. => stay with me, stay with me, I don't want [you] to leave.\"\nخليك معي، خليك معي، ما بدي إياك [تنهز] => stay with me, stay with me, I don't want you [to leave].\" # تنهز literally means to be shaken or to waver, contextually used here as to move or leave\n\n[بكل مكان] كنا نوصل، كان يقدمني، => [Everywhere] we went, he would introduce me,\nبكل مكان [كنا] نوصل، كان يقدمني، => Everywhere [we] went, he would introduce me,\nبكل مكان كنا [نوصل]، كان يقدمني، => Everywhere we [went], he would introduce me,\nبكل مكان كنا نوصل، [كان] يقدمني، => Everywhere we went, [he would] introduce me,\nبكل مكان كنا نوصل، كان [يقدمني]، => Everywhere we went, he would [introduce me],\n\nكان [يقدمني] مش كجاك نيريا بالمرة، => he wouldn't [introduce me] as Jack Neria at all,\nكان يقدمني مش [كـ]جاك نيريا بالمرة، => as\nكان يقدمني مش ك[جاك نيريا] بالمرة، => he wouldn't introduce me as [Jack Neria] at all,\nكان يقدمني مش كجاك نيريا [بالمرة]، => he wouldn't introduce me as Jack Neria [at all],\n\n[مش] كمستشاره السياسي أو مستشاره => [not] as his political advisor or his\nمش [كـ]مستشاره السياسي أو مستشاره => as\nمش كـ[مستشار]ه السياسي أو مستشاره => not as his political [advisor] or his\nمش كـمستشار[ه] السياسي أو مستشاره => not as [his] political advisor or his\nمش كمستشاره [السياسي] أو مستشاره => not as his [political] advisor or his\nمش كمستشاره السياسي [أو] مستشاره => not as his political advisor [or] his\nمش كمستشاره السياسي أو مستشار[ه] => not as his political advisor or [his]\n\n[الدبلوماسي]، كان يخبر كلينتون: => [diplomatic advisor], he would tell Clinton:\nالدبلوماسي، [كان يخبر] كلينتون: => diplomatic advisor, [he would tell] Clinton:\nالدبلوماسي، كان يخبر [كلينتون]: => diplomatic advisor, he would tell [Clinton]:\n\n[جاك نيريا]، هو من لبنان. => \"[Jack Neria], he is from Lebanon.\"\nجاك نيريا، [هو] من لبنان. => \"Jack Neria, [he is] from Lebanon.\"\nجاك نيريا، هو [من] لبنان. => \"Jack Neria, he is [from] Lebanon.\"\nجاك نيريا، هو من [لبنان]. => \"Jack Neria, he is from [Lebanon].\"\n\n[آل غور]، هو من لبنان. => \"[Al Gore], he is from Lebanon.\"\nآل غور، [هو] من لبنان. => \"Al Gore, [he is] from Lebanon.\"\nآل غور، هو [من] لبنان. => \"Al Gore, he is [from] Lebanon.\"\nآل غور، هو من [لبنان]. => \"Al Gore, he is from [Lebanon].\"\n\n[مرتين] بذات السهرة عيطلي حتى يقدمني => [Twice] in the same evening he called me over to introduce me\nمرتين [بذات] السهرة عيطلي حتى يقدمني => Twice [in the same] evening he called me over to introduce me\nمرتين بذات [السهرة] عيطلي حتى يقدمني => Twice in the same [evening] he called me over to introduce me\nمرتين بذات السهرة [عيطلي] حتى يقدمني => Twice in the same evening [he called me over] to introduce me\nمرتين بذات السهرة عيطلي [حتى] يقدمني => Twice in the same evening he called me over [to] introduce me\nمرتين بذات السهرة عيطلي حتى [يقدمني] => Twice in the same evening he called me over to [introduce me]\n\n[قدام] آل غور، قله: هو من لبنان. => [in front of] Al Gore, told him: \"He is from Lebanon.\"\nقدام [آل غور]، قله: هو من لبنان. => in front of [Al Gore], told him: \"He is from Lebanon.\"\nقدام آل غور، [قله]: هو من لبنان. => in front of Al Gore, [told him]: \"He is from Lebanon.\"\nقدام آل غور، قله: [هو] من لبنان. => in front of Al Gore, told him: \"[He] is from Lebanon.\"\nقدام آل غور، قله: هو [من] لبنان. => in front of Al Gore, told him: \"He is [from] Lebanon.\"\nقدام آل غور، قله: هو من [لبنان]. => in front of Al Gore, told him: \"He is from [Lebanon].\"\n\n[يعني] هو كان يشوفني كمعجزة، => [I mean], he saw me as a miracle,\nيعني [هو] كان يشوفني كمعجزة، => I mean, [he] saw me as a miracle,\nيعني هو [كان يشوفني] كمعجزة، => I mean, he [saw me] as a miracle,\nيعني هو كان يشوفني [كمعجزة]، => I mean, he saw me [as a miracle],\n\n[لبناني] حد رئيس الوزراء الإسرائيلي، => [a Lebanese] beside the Israeli Prime Minister,\nلبناني [حد] رئيس الوزراء الإسرائيلي، => a Lebanese [beside] the Israeli Prime Minister,\nلبناني حد [رئيس الوزراء] الإسرائيلي، => a Lebanese beside the [Prime Minister],\nلبناني حد رئيس الوزراء [الإسرائيلي]، => a Lebanese beside [the Israeli] Prime Minister, # الإسرائيلي includes the definite article Al-, which maps to 'the' in English\n\n[يعني] هيدي مش معقول يعني، => [I mean], this is unbelievable, I mean,\nيعني [هيدي] مش معقول يعني، => I mean, [this] is unbelievable, I mean,\nيعني هيدي [مش معقول] يعني، => I mean, this is [unbelievable], I mean,\nيعني هيدي مش معقول [يعني]، => I mean, this is unbelievable, [I mean],\n\n[يعني] كان من ناحيته ما فهمها كيف وصل، => [I mean], from his side, he didn't understand how I got here,\nيعني كان [من] ناحيته ما فهمها كيف وصل، => I mean, [from] his side, he didn't understand how I got here,\nيعني كان من [ناحيته] ما فهمها كيف وصل، => I mean, from [his side], he didn't understand how I got here,\nيعني كان من ناحيته [ما فهمها] كيف وصل، => I mean, from his side, [he didn't understand] how I got here,\nيعني كان من ناحيته ما فهمها [كيف] وصل، => I mean, from his side, he didn't understand [how] I got here,\nيعني كان من ناحيته ما فهمها كيف [وصل]، => I mean, from his side, he didn't understand how [I got here],\n\n[كيف] وصل هاللبناني هيدا، من وين إجا، => [how] this Lebanese guy arrived, where he came from,\nكيف [وصل] هاللبناني هيدا، من وين إجا، => how this Lebanese guy [arrived], where he came from,\nكيف وصل [هاللبناني هيدا]، من وين إجا، => how [this Lebanese guy] arrived, where he came from,\nكيف وصل هاللبناني هيدا، [من] وين إجا، => how this Lebanese guy arrived, where he came [from],\nكيف وصل هاللبناني هيدا، من [وين] إجا، => how this Lebanese guy arrived, [where] he came from,\nكيف وصل هاللبناني هيدا، من وين [إجا]، => how this Lebanese guy arrived, where [he came] from,\n\n[و]قاعد حدي وعم بيساعدني. => [and] is sitting beside me and helping me.\nو[قاعد] حدي وعم بيساعدني. => and [is sitting] beside me and helping me.\nوقاعد [حدي] وعم بيساعدني. => and is sitting [beside me] and helping me.\nوقاعد حدي [وعم] بيساعدني. => and is sitting beside me [and] helping me.\nوقاعد حدي وعم [بيساعدني]. => Helping me # usage of custom translation for the verb with its object suffix\n\n[منعوني] من الاقتراب من رابين => [They Prevented Me] From Getting Close to Rabin\nمنعوني [من] الاقتراب من رابين => They Prevented Me [From] Getting Close to Rabin\nمنعوني من [الاقتراب] من رابين => They Prevented Me From [Getting Close] to Rabin\nمنعوني من الاقتراب [من] رابين => They Prevented Me From Getting Close [to] Rabin\nمنعوني من الاقتراب من [رابين] => They Prevented Me From Getting Close to [Rabin]\n\n[ذكريات] جاك نيريا => [Memories] of Jack Neria\nذكريات [جاك نيريا] => Memories of [Jack Neria]\n\n",
+    "lessons": "# محاولات الاقتراب من رابين\n00:03.40 الناس اللي حول رابين جربوا بكل قوتهم\n00:06.80 إنه يمنعوني من إني أقترب لرابين.\n\n# اللقاء الأول مع رابين\n00:11.20 رابين كان وقتها كنا نوصل تقريباً بالليل\n00:14.80 تقريباً الساعة 12، 1 بالليل،\n00:17.20 يعملي حطلي كاس عصير سكوتي،\n00:19.80 عصير سكوتي يعني ويسكي.\n\n# بداية الحوار\n00:22.20 وكنا ناخد اثنيناتنا كنا ناخد\n00:24.80 العصير السكوتي ونبلش نحكي.\n00:28.20 كان يسألني عن العالم العربي،\n00:30.80 كيف العالم العربي بدو يتطلع على إسرائيل،\n00:34.20 كيف القادة الساسة العرب بيتطلعوا\n00:37.80 على دولة إسرائيل، شو يعني في مجال\n00:41.20 للتفاهم وكذا وكذا، يعني هيدي الأسئلة\n00:44.80 اللي كانت بيني وبينه.\n\n# طلب الاستقالة\n00:50.20 وأكثر من مرة رحت لعنده قلتله:\n00:53.20 شوف سيادة الرئيس، الانتقاد\n00:56.20 والمنشورات على الاختراعات\n00:59.80 اللي عم بيخبروا عني، أنا ما بدي بهدلك،\n01:03.40 أنا فيني استقيل اليوم.\n01:06.20 يعملي: شو إنت حمار؟ أنا بعرف كل شي،\n01:09.20 خليك معي، خليك معي، ما بدي إياك تنهز.\n\n# التقديم للقادة الدوليين\n01:16.20 بكل مكان كنا نوصل، كان يقدمني،\n01:19.20 كان يقدمني مش كجاك نيريا بالمرة،\n01:22.20 مش كمستشاره السياسي أو مستشاره\n01:25.20 الدبلوماسي، كان يخبر كلينتون:\n01:29.20 جاك نيريا، هو من لبنان.\n01:33.20 آل غور، هو من لبنان.\n01:35.20 مرتين بذات السهرة عيطلي حتى يقدمني\n01:38.20 قدام آل غور، قله: هو من لبنان.\n\n# نظرة رابين لجاك نيريا\n01:42.20 يعني هو كان يشوفني كمعجزة،\n01:45.20 لبناني حد رئيس الوزراء الإسرائيلي،\n01:48.20 يعني هيدي مش معقول يعني،\n01:52.20 يعني كان من ناحيته ما فهمها كيف وصل،\n01:55.20 كيف وصل هاللبناني هيدا، من وين إجا،\n01:58.20 وقاعد حدي وعم بيساعدني.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-05-01 11:40:25 UTC",
+  "updated_at": "2026-05-01 11:54:11 UTC",
+  "exported_at": "2026-05-01T11:54:11Z"
+}

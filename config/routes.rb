@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     end
   end
   resources :import_courses, only: [ :new, :create ]
+  resources :resync_timestamps, only: [ :new, :create ]
   get "courses/:course_slug/full-player", to: "full_player#show", as: :course_full_player
   resources :learning_paths, only: [ :show ] do
     member do

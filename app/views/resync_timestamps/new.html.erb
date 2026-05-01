@@ -1,0 +1,82 @@
+<% content_for :title, "Resync Timestamps" %>
+
+<div class="min-h-screen bg-slate-900 text-slate-100">
+  <header class="py-6 border-b border-slate-700/60">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <%= link_to courses_path, class: "text-2xl font-bold text-slate-100 tracking-tight hover:text-blue-400 transition-colors" do %>
+        ← Langlets
+      <% end %>
+      <h1 class="text-xl font-semibold text-slate-200">Resync Timestamps</h1>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="bg-slate-800 rounded-xl shadow-lg border border-slate-700 p-8">
+
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-slate-100 mb-2">Resync Phrase Timestamps</h2>
+        <p class="text-slate-400">Upload a JSON file with corrected timestamps for a course's phrases.</p>
+      </div>
+
+      <% if flash[:alert] %>
+        <div class="mb-6 p-4 bg-red-900/50 border border-red-500 rounded-lg">
+          <p class="text-red-300"><%= flash[:alert] %></p>
+        </div>
+      <% end %>
+
+      <%= form_with url: resync_timestamps_path, local: true, multipart: true, class: "space-y-6" do |form| %>
+
+        <div>
+          <%= form.label :course_slug, "Course Slug", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+          <%= form.text_field :course_slug,
+                class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                placeholder: "e.g., my-course-slug" %>
+        </div>
+
+        <div>
+          <%= form.label :file, "JSON File", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+          <%= form.file_field :file,
+                accept: ".json,application/json",
+                class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:font-semibold file:cursor-pointer hover:file:bg-blue-700" %>
+          <p class="text-xs text-slate-400 mt-1">Upload a JSON file with fixed timestamps. Must match phrase count and order.</p>
+        </div>
+
+        <div class="p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
+          <h3 class="text-blue-300 font-semibold mb-2">JSON File Format</h3>
+          <p class="text-slate-300 text-sm mb-3">The JSON must be an array with exactly one object per phrase, in the same order as the course phrases:</p>
+          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto">[
+  {
+    "text_l1": "Phrase text in original language",
+    "timestamp": "00:22.00"
+  },
+  {
+    "text_l1": "Next phrase text",
+    "timestamp": "00:24.00"
+  }
+]</pre>
+        </div>
+
+        <div class="p-4 bg-yellow-900/50 border border-yellow-500/50 rounded-lg">
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0">
+              <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
+            </svg>
+            <div>
+              <h4 class="text-yellow-400 font-semibold">Important</h4>
+              <p class="text-yellow-200 text-sm mt-1">
+                The JSON array must have exactly the same number of objects as phrases in the course medium, and they must be in the same order (ordered by timestamp). The job runs in the background.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-end space-x-4 pt-6">
+          <%= link_to "Cancel", courses_path, class: "px-6 py-3 text-slate-400 hover:text-slate-200 font-semibold transition-colors" %>
+          <%= form.submit "Resync Timestamps",
+                class: "px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-800" %>
+        </div>
+
+      <% end %>
+    </div>
+  </main>
+</div>

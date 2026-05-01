@@ -1,0 +1,1654 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=GNtCNzcyRGA",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "وسيرة الخطف بلبنان هي معروفة،",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:03.00",
+        "text_l2": "The history of kidnappings in Lebanon is well-known,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "كل طائفة عندها مخطوفين.",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:06.00",
+        "text_l2": "Every sect has its own kidnapped people."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "مش مهم شو مين إنت، مين دينك،",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:09.00",
+        "text_l2": "It doesn't matter who you are, what your religion is,"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "إنت مسيحي، درزي، سني، أرمني، مش مهم،",
+        "timestamp": "00:09.00",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Whether you're Christian, Druze, Sunni, Armenian, it doesn't matter,"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "اللي صارت مع اليهود،",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:17.00",
+        "text_l2": "What happened with the Jews,"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "نحن بهمنا نحن مشان نحن يهود.",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:20.00",
+        "text_l2": "We care because we are Jews."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "وكمان كانت طائفة صغيرة،",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:23.00",
+        "text_l2": "And also it was a small sect,"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "يعني مش جديد علينا هي الخطف.",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:26.00",
+        "text_l2": "I mean, kidnappings aren't new to us."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "اليوم اللي عم بيصير بلبنان، بالمنطقة،",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:29.00",
+        "text_l2": "Today what's happening in Lebanon, in the region,"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "كله عم يتغير، تحت إجرينا كله عم يتغير.",
+        "timestamp": "00:29.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "Everything is changing, under our feet everything is changing."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "وكمان نحن ما بنعرف هني لوين بده يوصل",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:37.00",
+        "text_l2": "And we don't know where all this"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "هيدا كل هيدا التغيير. الحكي هو بلبنان،",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "This change is going. The talk is about Lebanon,"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "يعني اليوم بتشوف واحد لبناني بيقول لك:",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:45.00",
+        "text_l2": "I mean today you see a Lebanese person telling you:"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "إن شاء الله يرجعوا لنا المخطوفين،",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "God willing, they'll return our kidnapped ones to us,"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "إن شاء الله نسمع عليهم.",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:51.00",
+        "text_l2": "God willing, we'll hear news about them."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "مو يهود، نحن هلق بهمنا اليهود،",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "Not Jews, right now we care about the Jews,"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "بهمني أنا أبوي.",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:57.00",
+        "text_l2": "What matters to me is my father."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "أهلين أنا اسمي موسى جاموس،",
+        "timestamp": "00:57.00",
+        "timestamp_end": "01:00.00",
+        "text_l2": "Hello, my name is Musa Jamous,"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "من لبنان، بيروت،",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "From Lebanon, Beirut,"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "من حارة اليهود أبو جميل.",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "From the Jewish quarter, Abu Jamil."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "أنا ابنه لسليم جاموس رئيس الطائفة",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:09.00",
+        "text_l2": "I am the son of Slim Jamous, head of the"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "اليهود الأخراني بلبنان.",
+        "timestamp": "01:09.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "Last Jewish community in Lebanon."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "أبوي بالـ 84 انخطف،",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "My father was kidnapped in '84,"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "وقالوا لنا كمان حزب الله.",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "And they told us it was Hezbollah."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "ولهلق نحن ما بنعرف شو صار معه.",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "And until now we don't know what happened to him."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "هدول اليهود السبعة وأبوك شو صار معهم؟",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:24.00",
+        "text_l2": "These seven Jews and your father, what happened to them?"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "يعني هيك ليش خطفوهم برأيك إنت؟",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:27.00",
+        "text_l2": "I mean, why do you think they kidnapped them?"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "مشان هني يهود، هي أول شي،",
+        "timestamp": "01:27.00",
+        "timestamp_end": "01:30.00",
+        "text_l2": "Because they were Jews, that's the first thing,"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "وكمان يهود هدول مو شعبي يعني،",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:33.00",
+        "text_l2": "And also these Jews weren't ordinary people, I mean,"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "هدول كانوا ماسكين بالطائفة.",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:36.00",
+        "text_l2": "They were holding the community together."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "كل واحد عنده قيمة بالطائفة.",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:39.00",
+        "text_l2": "Each one had value in the community."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "أبوي رئيس الطائفة، وواحد دكتور الطائفة،",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:42.00",
+        "text_l2": "My father was the community head, one was the community doctor,"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "وواحد نقيب الطائفة،",
+        "timestamp": "01:42.00",
+        "timestamp_end": "01:45.00",
+        "text_l2": "And one was the community syndicate head,"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "وواحد خاخام تبع الطائفة، يعني هدول...",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "And one was the community Rabbi, I mean these..."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "هدول عالم يعني مهم كتير كتير",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "These people were very, very important"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بلبنان باليهود بالطائفة.",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:54.00",
+        "text_l2": "In Lebanon, among the Jews, in the community."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "كنا بالبيت، أنا وأخي،",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "We were at home, me and my brother,"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "طيب أبوي نزل طلع لبرا.",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:00.00",
+        "text_l2": "So my father went down and went outside."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "كان لابس يعني مع الغرافة والجاكيت تبعه.",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:03.00",
+        "text_l2": "He was wearing, I mean, his scarf and his jacket."
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "ووقف على الدرج، قال سكروا الباب.",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:06.00",
+        "text_l2": "And he stopped on the stairs, he said close the door."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "سوى لنا بإيده، سلم علينا، أه.",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "He waved to us, said goodbye to us, yeah."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "وهذا هو الوقت اللي قعد بوشي.",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:12.00",
+        "text_l2": "And this was the time he disappeared."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "هي الصورة يعني هذا السلام الأخراني",
+        "timestamp": "02:12.00",
+        "timestamp_end": "02:15.00",
+        "text_l2": "This picture, I mean this last goodbye"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "اللي نحن شفناه.",
+        "timestamp": "02:15.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "That we saw."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "كان عمري خمس سنين، قلبي كان حاسسني.",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "I was five years old, my heart was telling me."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "قلت لها لأمي طيب ما تخافي",
+        "timestamp": "02:21.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "I told my mother, don't worry"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "أنا رايح عالمدرسة.",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:27.00",
+        "text_l2": "I'm going to school."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "وأخي راح عالمدرسة، أنا دغري هربت،",
+        "timestamp": "02:27.00",
+        "timestamp_end": "02:30.00",
+        "text_l2": "And my brother went to school, I immediately ran away,"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "لوين هربت؟ هربت عند أبوي.",
+        "timestamp": "02:30.00",
+        "timestamp_end": "02:33.00",
+        "text_l2": "Where did I run? I ran to my father."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "عالمكتب، وفتحت الباب،",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:36.00",
+        "text_l2": "To the office, and I opened the door,"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "كان طايش بالمكتب.",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:39.00",
+        "text_l2": "It was wrecked in the office."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "كله مكسر، كله مقلوب، الوراق على الأرض،",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "Everything broken, everything overturned, papers on the floor,"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "ومكتوب على الحيط يهودي.",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:45.00",
+        "text_l2": "And written on the wall \"Jew\"."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "اليوم نحن بنعرف، مكتوب يهودي.",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:48.00",
+        "text_l2": "Today we know, it was written \"Jew\"."
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "ودغري ركضت على البيت، قلت لها ماما",
+        "timestamp": "02:48.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "And immediately I ran to the house, I told her Mama"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "ماما ماما تعي شوفي شو صار مع البابا.",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:54.00",
+        "text_l2": "Mama Mama come see what happened to Papa."
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "بابا ما بنعرف وين راح.",
+        "timestamp": "02:54.00",
+        "timestamp_end": "02:57.00",
+        "text_l2": "Papa, we don't know where he went."
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "كلهم بلشوا ركض وهذا وبلشوا ضرب طوشة",
+        "timestamp": "02:57.00",
+        "timestamp_end": "03:00.00",
+        "text_l2": "Everyone started running and this and started fighting chaos"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "عند هاد وبعدين رحنا عند البوليس،",
+        "timestamp": "03:00.00",
+        "timestamp_end": "03:03.00",
+        "text_l2": "At this one and then we went to the police,"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "وإجوا مخابرات وإجوا هاد.",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:06.00",
+        "text_l2": "And intelligence came and this one came."
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "وصارت تصير بالأخبار، وبلشوا فتشوا",
+        "timestamp": "03:06.00",
+        "timestamp_end": "03:09.00",
+        "text_l2": "And it started appearing in the news, and they started searching"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "شو صار هاد.",
+        "timestamp": "03:09.00",
+        "timestamp_end": "03:12.00",
+        "text_l2": "What happened to this one."
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "ومن هون رحنا لهون ورحنا جينا لهون،",
+        "timestamp": "03:12.00",
+        "timestamp_end": "03:15.00",
+        "text_l2": "And from here we went to there and we went came to here,"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "ما عرفنا شو صار معه.",
+        "timestamp": "03:15.00",
+        "timestamp_end": "03:18.00",
+        "text_l2": "We didn't know what happened to him."
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "خلص وهذا آخر شي عرفته؟",
+        "timestamp": "03:18.00",
+        "timestamp_end": "03:21.00",
+        "text_l2": "So this is the last thing you knew?"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "هاد آخر شي عرفنا عنه،",
+        "timestamp": "03:21.00",
+        "timestamp_end": "03:24.00",
+        "text_l2": "This is the last thing we knew about him,"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "بعدين كم يوم اتصلوا المخطوفين.",
+        "timestamp": "03:24.00",
+        "timestamp_end": "03:27.00",
+        "text_l2": "Then after a few days the kidnapped ones called."
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "حكوا مع أمي، لهلق نحن ما بنعرف",
+        "timestamp": "03:27.00",
+        "timestamp_end": "03:30.00",
+        "text_l2": "They spoke with my mother, until now we don't know"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "شو حكوا مع أمي.",
+        "timestamp": "03:30.00",
+        "timestamp_end": "03:33.00",
+        "text_l2": "What they said to my mother."
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "أنا بتذكر كتير كتير العياط اللي كان.",
+        "timestamp": "03:33.00",
+        "timestamp_end": "03:36.00",
+        "text_l2": "I remember very, very much the crying that was there."
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "هني خلوه يحكي معنا، حكي معنا،",
+        "timestamp": "03:36.00",
+        "timestamp_end": "03:39.00",
+        "text_l2": "They let him speak with us, he spoke with us,"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "حكي مع أمي.",
+        "timestamp": "03:39.00",
+        "timestamp_end": "03:42.00",
+        "text_l2": "He spoke with my mother."
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "حكي مع أخي الكبير، وحكي معي أنا.",
+        "timestamp": "03:42.00",
+        "timestamp_end": "03:45.00",
+        "text_l2": "He spoke with my older brother, and he spoke with me."
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "أنا بتذكر شو قال لي، أنا ما بعرف شو",
+        "timestamp": "03:45.00",
+        "timestamp_end": "03:48.00",
+        "text_l2": "I remember what he said to me, I don't know what"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "بتذكر شو قال لأخوي ولأمي.",
+        "timestamp": "03:48.00",
+        "timestamp_end": "03:51.00",
+        "text_l2": "I remember what he said to my brother and my mother."
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "قلت له بابا بابا كيفك؟ مشتاق لك كتير.",
+        "timestamp": "03:51.00",
+        "timestamp_end": "03:54.00",
+        "text_l2": "I said to him Papa Papa how are you? I miss you so much."
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "قال لي أنا بعرف، أنا بحسك،",
+        "timestamp": "03:54.00",
+        "timestamp_end": "03:57.00",
+        "text_l2": "He told me I know, I feel you,"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "وعم تشتاق لي كتير.",
+        "timestamp": "03:57.00",
+        "timestamp_end": "04:00.00",
+        "text_l2": "And you miss me so much."
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "دير بالك عليهم على أخوك الكبير،",
+        "timestamp": "04:00.00",
+        "timestamp_end": "04:03.00",
+        "text_l2": "Take care of them, your older brother,"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "بتعرف أنا بحبك، ما تسوي مشاكل.",
+        "timestamp": "04:03.00",
+        "timestamp_end": "04:06.00",
+        "text_l2": "You know I love you, don't make trouble."
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "انتبه على أخوك الكبير وأخوك الصغير،",
+        "timestamp": "04:06.00",
+        "timestamp_end": "04:09.00",
+        "text_l2": "Look after your older brother and your younger brother,"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "واسمع كلام ماما، شو بتقول لك ساوي.",
+        "timestamp": "04:09.00",
+        "timestamp_end": "04:12.00",
+        "text_l2": "And listen to Mama, whatever she tells you do."
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "قلت له طيب بابا إيمتى بدنا نشوفك؟",
+        "timestamp": "04:12.00",
+        "timestamp_end": "04:15.00",
+        "text_l2": "I said to him okay Papa when will we see you?"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "قال لي قريباً بدك تشوفني.",
+        "timestamp": "04:15.00",
+        "timestamp_end": "04:18.00",
+        "text_l2": "He told me soon you will see me."
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "أنا جاي شوي كان عندي كم شغل وبرجع.",
+        "timestamp": "04:18.00",
+        "timestamp_end": "04:21.00",
+        "text_l2": "I'm coming soon, I had some work and I'll return."
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "بعد ما اختفى هو إنتو قعدتوا بلبنان",
+        "timestamp": "04:21.00",
+        "timestamp_end": "04:24.00",
+        "text_l2": "After he disappeared, you stayed in Lebanon"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "سنتين تقريباً لبين ما طلعتوا على إسرائيل؟",
+        "timestamp": "04:24.00",
+        "timestamp_end": "04:27.00",
+        "text_l2": "For about two years before you left for Israel?"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "أه. كيف كانت الحياة بهديك الفترة",
+        "timestamp": "04:27.00",
+        "timestamp_end": "04:30.00",
+        "text_l2": "Yeah. How was life in that period"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "بعد ما اختفى؟",
+        "timestamp": "04:30.00",
+        "timestamp_end": "04:33.00",
+        "text_l2": "After he disappeared?"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "كان في طوشة كبيرة، بلش الحزب",
+        "timestamp": "04:33.00",
+        "timestamp_end": "04:36.00",
+        "text_l2": "There was big chaos, the party started"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "حزب الله وحزب أمل.",
+        "timestamp": "04:36.00",
+        "timestamp_end": "04:39.00",
+        "text_l2": "Hezbollah and Amal Party."
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "بلشوا تحاربوا بيناتهم، بتعرف الحرب.",
+        "timestamp": "04:39.00",
+        "timestamp_end": "04:42.00",
+        "text_l2": "They started fighting among themselves, you know war."
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "مين حيستلم البناية تبعت الطائفة",
+        "timestamp": "04:42.00",
+        "timestamp_end": "04:45.00",
+        "text_l2": "Who will take over the building of the community"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "تبعت اليهود.",
+        "timestamp": "04:45.00",
+        "timestamp_end": "04:48.00",
+        "text_l2": "Of the Jews."
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "بالطابق الثاني بالبيت اللي تحت منا",
+        "timestamp": "04:48.00",
+        "timestamp_end": "04:51.00",
+        "text_l2": "On the second floor in the building below us"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "كان ساكن رئيس حزب أمل.",
+        "timestamp": "04:51.00",
+        "timestamp_end": "04:54.00",
+        "text_l2": "Lived the head of Amal Party."
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "وفوقنا كانوا ناس تبعت حزب الله.",
+        "timestamp": "04:54.00",
+        "timestamp_end": "04:57.00",
+        "text_l2": "And above us were people from Hezbollah."
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "وكنت تشوفهم بتعرف هني نازلين على الدرج،",
+        "timestamp": "04:57.00",
+        "timestamp_end": "05:00.00",
+        "text_l2": "And you would see them, you know them coming down the stairs,"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "نحن عم نطلع من البيت.",
+        "timestamp": "05:00.00",
+        "timestamp_end": "05:03.00",
+        "text_l2": "While we were leaving the house."
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "نازلين كل واحد طالع نازل على الدرج",
+        "timestamp": "05:03.00",
+        "timestamp_end": "05:06.00",
+        "text_l2": "Coming down, each one going up down on the stairs"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "تشوف سلاح.",
+        "timestamp": "05:06.00",
+        "timestamp_end": "05:09.00",
+        "text_l2": "You see weapons."
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "وأوقات كانوا يتحاربوا بيناتهم،",
+        "timestamp": "05:09.00",
+        "timestamp_end": "05:12.00",
+        "text_l2": "And sometimes they were fighting among themselves,"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "يعني كنا نحن بالبيت وكم مرة بدنا نطلع.",
+        "timestamp": "05:12.00",
+        "timestamp_end": "05:15.00",
+        "text_l2": "I mean we were in the house and several times we wanted to go out."
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "بتشوفهم بيقوصوا واحد على الثاني",
+        "timestamp": "05:15.00",
+        "timestamp_end": "05:18.00",
+        "text_l2": "You'd see them aiming at each other"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "على الدرج يعني ترررر بيقوصوا هيك.",
+        "timestamp": "05:18.00",
+        "timestamp_end": "05:21.00",
+        "text_l2": "On the stairs, I mean vrrrrr they aim like that."
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "وبعدين شفنا الحالة أمي شافت الحالة",
+        "timestamp": "05:21.00",
+        "timestamp_end": "05:24.00",
+        "text_l2": "And then we saw the situation, my mother saw the situation"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "يعني مو كل هالقد حتمشي معنا منيح.",
+        "timestamp": "05:24.00",
+        "timestamp_end": "05:27.00",
+        "text_l2": "I mean it's not all this much going to go well with us."
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "وصار كله حكي بتعرف نروح من بيت لبيت،",
+        "timestamp": "05:27.00",
+        "timestamp_end": "05:30.00",
+        "text_l2": "And it became all talk, you know we go from house to house,"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "بعدين رحنا عند المسيحية.",
+        "timestamp": "05:30.00",
+        "timestamp_end": "05:33.00",
+        "text_l2": "Then we went to the Christians."
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "كنا كم مرة كمان عند حزب الله،",
+        "timestamp": "05:33.00",
+        "timestamp_end": "05:36.00",
+        "text_l2": "We were several times also at Hezbollah,"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "حكينا مع حسن نصر الله.",
+        "timestamp": "05:36.00",
+        "timestamp_end": "05:39.00",
+        "text_l2": "We spoke with Hassan Nasrallah."
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "اللي كان سكرتيرة تبعت حزب الله بالأول.",
+        "timestamp": "05:39.00",
+        "timestamp_end": "05:42.00",
+        "text_l2": "Who was the secretary of Hezbollah in the beginning."
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "مرة على مرة كنا عنده، كم مرة كنا عنده.",
+        "timestamp": "05:42.00",
+        "timestamp_end": "05:45.00",
+        "text_l2": "Time after time we were at his place, several times we were at his place."
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "اعترف، قال لي نحن خطفناه.",
+        "timestamp": "05:45.00",
+        "timestamp_end": "05:48.00",
+        "text_l2": "He confessed, he told me we kidnapped him."
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "حسن نصر الله اعترف؟ اعترف اعترف",
+        "timestamp": "05:48.00",
+        "timestamp_end": "05:51.00",
+        "text_l2": "Hassan Nasrallah confessed? Confessed, confessed"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "نحن خطفناه.",
+        "timestamp": "05:51.00",
+        "timestamp_end": "05:54.00",
+        "text_l2": "We kidnapped him."
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "وكمان شوي بنرجع لكم إياه.",
+        "timestamp": "05:54.00",
+        "timestamp_end": "05:57.00",
+        "text_l2": "And in a little while we will return him to you."
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "هيك حكى؟ هيك حكى.",
+        "timestamp": "05:57.00",
+        "timestamp_end": "06:00.00",
+        "text_l2": "He said that? He said that."
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "وبذات الوقت كان ممنوع نفوت لعنده",
+        "timestamp": "06:00.00",
+        "timestamp_end": "06:03.00",
+        "text_l2": "And at the same time it was forbidden to enter to him"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "على حزب الله على المكاتب تبعهم.",
+        "timestamp": "06:03.00",
+        "timestamp_end": "06:06.00",
+        "text_l2": "To Hezbollah, to their offices."
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "طيب ما بعرف بعدين أمي شو ساوت،",
+        "timestamp": "06:06.00",
+        "timestamp_end": "06:09.00",
+        "text_l2": "Okay I don't know then what my mother did,"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "أمي حكيت مع...",
+        "timestamp": "06:09.00",
+        "timestamp_end": "06:12.00",
+        "text_l2": "My mother spoke with..."
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "يعني كنا بتعرف كنا كمان عند جنبلاط.",
+        "timestamp": "06:12.00",
+        "timestamp_end": "06:15.00",
+        "text_l2": "I mean we knew we were also at Junblat."
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "قال لي حلف، قال لي أنا بعرفه لزوجك،",
+        "timestamp": "06:15.00",
+        "timestamp_end": "06:18.00",
+        "text_l2": "He told me I swear, he told me I know your husband,"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "نحن ما سوينا شي.",
+        "timestamp": "66:18.00",
+        "timestamp_end": "66:21.00",
+        "text_l2": "We didn't do anything."
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "خليني فتش أنا شو بيطلع معي أنا بقول لك.",
+        "timestamp": "66:21.00",
+        "timestamp_end": "66:24.00",
+        "text_l2": "Let me search, what I find I will tell you."
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "يعني ما في حدا بلبنان ما بيعرفه لأبوي.",
+        "timestamp": "66:24.00",
+        "timestamp_end": "66:27.00",
+        "text_l2": "I mean there's no one in Lebanon who doesn't know my father."
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "بهديك الفترة كانوا كتير يهود من سوريا",
+        "timestamp": "66:27.00",
+        "timestamp_end": "66:30.00",
+        "text_l2": "In that period there were many Jews from Syria"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "ما بيطيقوا الحياة بسوريا وكانوا يهربوا،",
+        "timestamp": "66:30.00",
+        "timestamp_end": "66:33.00",
+        "text_l2": "Who couldn't stand life in Syria and they were fleeing,"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "أبوك كان يساعدهم صح؟ صح،",
+        "timestamp": "66:33.00",
+        "timestamp_end": "66:36.00",
+        "text_l2": "Your father was helping them right? Right,"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "اللي بده يجي لإسرائيل مش مهم من وين،",
+        "timestamp": "66:36.00",
+        "timestamp_end": "66:39.00",
+        "text_l2": "Whoever wants to come to Israel, it doesn't matter from where,"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "من تركيا، من أوروبا.",
+        "timestamp": "66:39.00",
+        "timestamp_end": "66:42.00",
+        "text_l2": "From Turkey, from Europe."
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "بتعرف بالوقت هاد كانوا يجوا",
+        "timestamp": "66:42.00",
+        "timestamp_end": "66:45.00",
+        "text_l2": "You know at that time they were coming"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "على طريق لبنان.",
+        "timestamp": "66:45.00",
+        "timestamp_end": "66:48.00",
+        "text_l2": "Through the Lebanon route."
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "لبنان زي نيويورك بهديك الوقت،",
+        "timestamp": "66:48.00",
+        "timestamp_end": "66:51.00",
+        "text_l2": "Lebanon was like New York at that time,"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "كل واحد بده يسوي شوي مصاري،",
+        "timestamp": "66:51.00",
+        "timestamp_end": "66:54.00",
+        "text_l2": "Everyone who wants to make some money,"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "يهودي مش يهودي، من عراق،",
+        "timestamp": "66:54.00",
+        "timestamp_end": "66:57.00",
+        "text_l2": "Jew or not Jew, from Iraq,"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "من وين ما بدك ينزل يسوي مصاري بلبنان.",
+        "timestamp": "66:57.00",
+        "timestamp_end": "67:00.00",
+        "text_l2": "From wherever you want, come down make money in Lebanon."
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "كان في مشكلة بسوريا.",
+        "timestamp": "67:00.00",
+        "timestamp_end": "67:03.00",
+        "text_l2": "There was a problem in Syria."
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "اللي كانوا يتنكلوا كتير كتير",
+        "timestamp": "67:03.00",
+        "timestamp_end": "67:06.00",
+        "text_l2": "Those who were persecuted very much"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "ليهود الشام ويهود حلب.",
+        "timestamp": "67:06.00",
+        "timestamp_end": "67:09.00",
+        "text_l2": "Were the Jews of Damascus and Jews of Aleppo."
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "ما نجحوا مع الأسد.",
+        "timestamp": "67:09.00",
+        "timestamp_end": "67:12.00",
+        "text_l2": "They didn't succeed with Assad."
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "يعني خذ أمي كانت تطلع مظاهرات،",
+        "timestamp": "67:12.00",
+        "timestamp_end": "67:15.00",
+        "text_l2": "I mean take my mother, she was holding protests,"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "كان في كتير مظاهرات تبعت الطائفة",
+        "timestamp": "67:15.00",
+        "timestamp_end": "67:18.00",
+        "text_l2": "There were many protests from the community"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "اليهود الشام.",
+        "timestamp": "67:18.00",
+        "timestamp_end": "67:21.00",
+        "text_l2": "Of the Jews of Damascus."
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "يعني بيقولوا لي أنا سمعت من العالم،",
+        "timestamp": "67:21.00",
+        "timestamp_end": "67:24.00",
+        "text_l2": "I mean they would tell me, I heard from people,"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "قالوا لي تعا شوف كنا نشوف أمك",
+        "timestamp": "67:24.00",
+        "timestamp_end": "67:27.00",
+        "text_l2": "They told me come see, we used to see your mother"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "عم تطلع على الشاشة وتعيط يا أسد يا أسد",
+        "timestamp": "67:27.00",
+        "timestamp_end": "67:30.00",
+        "text_l2": "Appearing on screen crying, oh Assad oh Assad"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "خلينا نطلع من هون.",
+        "timestamp": "67:30.00",
+        "timestamp_end": "67:33.00",
+        "text_l2": "Let us get out of here."
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "إجا الأسد شاف هي مشكلة حتبلش تروح وتكبر.",
+        "timestamp": "67:33.00",
+        "timestamp_end": "67:36.00",
+        "text_l2": "Assad came, saw this problem, it will start to go and grow."
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "هو سوى عملية، بده يشارك سوريا كبيرة،",
+        "timestamp": "67:36.00",
+        "timestamp_end": "67:39.00",
+        "text_l2": "He made an operation, he wants to build a Greater Syria,"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "بده يعملها سوريا الكبيرة.",
+        "timestamp": "67:39.00",
+        "timestamp_end": "67:42.00",
+        "text_l2": "He wants to make it the Greater Syria."
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "لازم يكون معه سلاح، أخذ كل المصاري",
+        "timestamp": "67:42.00",
+        "timestamp_end": "67:45.00",
+        "text_l2": "He needs to have weapons, he took all the money"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "تبعت سوريا واشترى فيهم سلاح.",
+        "timestamp": "67:45.00",
+        "timestamp_end": "67:48.00",
+        "text_l2": "Of Syria and bought weapons with them."
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "بملايين الدولارات، طيب وشو صاير بالأخير",
+        "timestamp": "67:48.00",
+        "timestamp_end": "67:51.00",
+        "text_l2": "With millions of dollars, okay and what happened in the end"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "الشعب ما عنده ياكل.",
+        "timestamp": "67:51.00",
+        "timestamp_end": "67:54.00",
+        "text_l2": "The people have nothing to eat."
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "كل واحد بلش بده يهرب، بلشوا يهود يطلعوا.",
+        "timestamp": "67:54.00",
+        "timestamp_end": "67:57.00",
+        "text_l2": "Everyone started wanting to flee, Jews started leaving."
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "راحوا سووا غروب، اجتمعوا أخذوا كم بنات.",
+        "timestamp": "67:57.00",
+        "timestamp_end": "68:00.00",
+        "text_l2": "They went made a group, they gathered took some girls."
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "أخذوا أول 32 جمعوهم وقالوا لهم",
+        "timestamp": "68:00.00",
+        "timestamp_end": "68:03.00",
+        "text_l2": "They took the first 32, gathered them and told them"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "اطلعوا هلق على لبنان.",
+        "timestamp": "68:03.00",
+        "timestamp_end": "68:06.00",
+        "text_l2": "Go now to Lebanon."
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "ومن هنيك في واحد بيستناكم هو يعني",
+        "timestamp": "68:06.00",
+        "timestamp_end": "68:09.00",
+        "text_l2": "And from there someone is waiting for you, he means"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "بيساعدكم بيطلع... انتقلوا بأمان.",
+        "timestamp": "68:09.00",
+        "timestamp_end": "68:12.00",
+        "text_l2": "He will help you get out... transfer safely."
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "شو صار؟ هدول البنات ما وصلوا للبنان.",
+        "timestamp": "68:12.00",
+        "timestamp_end": "68:15.00",
+        "text_l2": "What happened? These girls didn't reach Lebanon."
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "ذبحوهم هني وطالعين على الحدود، كمشوهم.",
+        "timestamp": "68:15.00",
+        "timestamp_end": "68:18.00",
+        "text_l2": "They slaughtered them there while going to the border, they gathered them."
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "اغتصبوهم وضربوهم وقتلوهم.",
+        "timestamp": "68:18.00",
+        "timestamp_end": "68:21.00",
+        "text_l2": "They raped them, beat them and killed them."
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "مين هدول سواهم؟ الجيش السوري،",
+        "timestamp": "68:21.00",
+        "timestamp_end": "68:24.00",
+        "text_l2": "Who did this to them? The Syrian Army,"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "صار مشكلة كبيرة بطائفة اليهود",
+        "timestamp": "68:24.00",
+        "timestamp_end": "68:27.00",
+        "text_l2": "It became a big problem in the Jewish community"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "تبعت الشام.",
+        "timestamp": "68:27.00",
+        "timestamp_end": "68:30.00",
+        "text_l2": "Of Damascus."
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "إجوا الرئاسة تبعت الطائفة اليهود.",
+        "timestamp": "68:30.00",
+        "timestamp_end": "68:33.00",
+        "text_l2": "The leadership of the Jewish community came."
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "إجا رفعت حمزة هلق بدهم بتعرف بدهم",
+        "timestamp": "68:33.00",
+        "timestamp_end": "68:36.00",
+        "text_l2": "Rafat Hamza came, now they want, you know they want"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "ينزلوا الضغط تبع اللي عم بيصير بالحارة.",
+        "timestamp": "68:36.00",
+        "timestamp_end": "68:39.00",
+        "text_l2": "To reduce the pressure of what's happening in the quarter."
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "قال أختي حتطلع، خذوا أختي،",
+        "timestamp": "68:39.00",
+        "timestamp_end": "68:42.00",
+        "text_l2": "He said my sister will leave, take my sister,"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "وينها مروة قطش؟",
+        "timestamp": "68:42.00",
+        "timestamp_end": "68:45.00",
+        "text_l2": "Where is Marwa Qutash?"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "أمي كانت معروفة، إنتي كمان،",
+        "timestamp": "68:45.00",
+        "timestamp_end": "68:48.00",
+        "text_l2": "My mother was known, you too,"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "وكان بنات كلهم معروفين.",
+        "timestamp": "68:48.00",
+        "timestamp_end": "68:51.00",
+        "text_l2": "And the girls, all of them were known."
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "جمعوهم وطلعوا قالوا لهم اطلعوا للبنان.",
+        "timestamp": "68:51.00",
+        "timestamp_end": "68:54.00",
+        "text_l2": "They gathered them and left, told them go to Lebanon."
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "الله أعطاهم بركة ووصلوا للبنان،",
+        "timestamp": "68:54.00",
+        "timestamp_end": "68:57.00",
+        "text_l2": "God gave them blessing and they reached Lebanon,"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "مين استلمهم؟ أبوي.",
+        "timestamp": "68:57.00",
+        "timestamp_end": "69:00.00",
+        "text_l2": "Who received them? My father."
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "لقى لهم بيوت، لقى لهم منطقة،",
+        "timestamp": "69:00.00",
+        "timestamp_end": "69:03.00",
+        "text_l2": "He found them houses, found them an area,"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "كانوا يعيشوا بالكنيسة.",
+        "timestamp": "69:03.00",
+        "timestamp_end": "69:06.00",
+        "text_l2": "They were living in the church."
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "حطهم بالكنيسة كل واحد يضبط له باسبور،",
+        "timestamp": "69:06.00",
+        "timestamp_end": "69:09.00",
+        "text_l2": "He put them in the church, each one gets his passport,"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "جنسية، ويطلعوا لإسرائيل.",
+        "timestamp": "69:09.00",
+        "timestamp_end": "69:12.00",
+        "text_l2": "Nationality, and they leave for Israel."
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "هي كانت أي سنة؟ هي كانت بأول السبعينات.",
+        "timestamp": "69:12.00",
+        "timestamp_end": "69:15.00",
+        "text_l2": "What year was this? It was in the early seventies."
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "يعني أبوك كان أصله برضه سوري؟",
+        "timestamp": "69:15.00",
+        "timestamp_end": "69:18.00",
+        "text_l2": "I mean your father was originally Syrian too?"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "أبوي حلبي. تربى بحلب، كبر بحلب،",
+        "timestamp": "69:18.00",
+        "timestamp_end": "69:21.00",
+        "text_l2": "My father is Aleppan. Raised in Aleppo, grew up in Aleppo,"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "هو وصغير.",
+        "timestamp": "69:21.00",
+        "timestamp_end": "69:24.00",
+        "text_l2": "Him when he was little."
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "طلع نزل على لبنان، ومن هنيك بلش",
+        "timestamp": "69:24.00",
+        "timestamp_end": "69:27.00",
+        "text_l2": "He went up down to Lebanon, and from there he started"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "يعمر حاله درجة ورا درجة.",
+        "timestamp": "69:27.00",
+        "timestamp_end": "69:30.00",
+        "text_l2": "To build his life step by step."
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "لوصل لرئيس الطائفة تبعت يهود لبنان.",
+        "timestamp": "69:30.00",
+        "timestamp_end": "69:33.00",
+        "text_l2": "Until he reached head of the community of Jews of Lebanon."
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "بتعرف هاد الوقت نحن خلقانين",
+        "timestamp": "69:33.00",
+        "timestamp_end": "69:36.00",
+        "text_l2": "You know at this time we were created"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "على وقت الحرب، الحرب الأهلية.",
+        "timestamp": "69:36.00",
+        "timestamp_end": "69:39.00",
+        "text_l2": "During the war time, the civil war."
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "كنا نتعلم بالمدرسة بتعرف نحن عند",
+        "timestamp": "69:39.00",
+        "timestamp_end": "69:42.00",
+        "text_l2": "We were learning at school, you know we were at"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "الفرنساوية يعني عند المسيحية.",
+        "timestamp": "69:42.00",
+        "timestamp_end": "69:45.00",
+        "text_l2": "The French, I mean at the Christians."
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "ببيروت تعلمنا بـ \"غراند جاردان\"،",
+        "timestamp": "69:45.00",
+        "timestamp_end": "69:48.00",
+        "text_l2": "In Beirut we learned at \"Grand Jardin\","
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "وأنا بصف الأول وصلت أنا.",
+        "timestamp": "69:48.00",
+        "timestamp_end": "69:51.00",
+        "text_l2": "And I was the first in class, I was."
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "العيشة كانت منيحة، ما كان ناقصنا شي",
+        "timestamp": "69:51.00",
+        "timestamp_end": "69:54.00",
+        "text_l2": "Life was good, we lacked nothing"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "بالبيت. بالعكس، شو طلبنا كان عندنا.",
+        "timestamp": "69:54.00",
+        "timestamp_end": "69:57.00",
+        "text_l2": "At home. On the contrary, whatever we asked for we had."
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "نروح دايماً عند أبوي، أهرب من المدرسة",
+        "timestamp": "69:57.00",
+        "timestamp_end": "70:00.00",
+        "text_l2": "We always went to my father, I escape from school"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "روح عند أبوي.",
+        "timestamp": "70:00.00",
+        "timestamp_end": "70:03.00",
+        "text_l2": "Go to my father."
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "وين أروح؟ عند أبوي أقعد روح لعنده",
+        "timestamp": "70:03.00",
+        "timestamp_end": "70:06.00",
+        "text_l2": "Where do I go? To my father I sit, go to him"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "عالمكتب. مكتبه كان بكنيسة اليهود",
+        "timestamp": "70:06.00",
+        "timestamp_end": "70:09.00",
+        "text_l2": "To the office. His office was in the Jewish Synagogue"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "بالطائفة، هنيك كان المكتب تبعه.",
+        "timestamp": "70:09.00",
+        "timestamp_end": "70:12.00",
+        "text_l2": "In the community, there was his office."
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "وبذات اليوم قبل بليلة قبل ما هو انخطف.",
+        "timestamp": "70:12.00",
+        "timestamp_end": "70:15.00",
+        "text_l2": "And on that same day, before, the night before he was kidnapped."
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "الناس اللي كانوا بدهم يخطفوه إجوا أول ليلة.",
+        "timestamp": "70:15.00",
+        "timestamp_end": "70:18.00",
+        "text_l2": "The people who wanted to kidnap him came the first night."
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "فتحنا، أهلين، شو مين إنتو؟",
+        "timestamp": "70:18.00",
+        "timestamp_end": "70:21.00",
+        "text_l2": "We opened, hello, who are you?"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "نحن ناس بدنا مساعدة بدنا نحكي",
+        "timestamp": "70:21.00",
+        "timestamp_end": "70:24.00",
+        "text_l2": "We are people, we want help, we want to speak"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "مع سليم جاموس.",
+        "timestamp": "70:24.00",
+        "timestamp_end": "70:27.00",
+        "text_l2": "With Slim Jamous."
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "بالبيت، قال صح هو بالبيت بس شوي مرتاح.",
+        "timestamp": "70:27.00",
+        "timestamp_end": "70:30.00",
+        "text_l2": "At home, he said yes he is at home but resting a bit."
+      },
+      {
+        "id": "phrase_209",
+        "text_l1": "قالوا طيب خلص مش مهم بنستناه",
+        "timestamp": "70:30.00",
+        "timestamp_end": "70:33.00",
+        "text_l2": "They said okay fine no problem we will wait for him"
+      },
+      {
+        "id": "phrase_210",
+        "text_l1": "بنجي لعنده الصبح.",
+        "timestamp": "70:33.00",
+        "timestamp_end": "70:36.00",
+        "text_l2": "We will come to him in the morning."
+      },
+      {
+        "id": "phrase_211",
+        "text_l1": "وهدول هني استنوه كل الليل عشان يخطفوه.",
+        "timestamp": "70:36.00",
+        "timestamp_end": "70:39.00",
+        "text_l2": "And these ones here waited for him all night to kidnap him."
+      },
+      {
+        "id": "phrase_212",
+        "text_l1": "هدول كانوا اللي بيخطفوه، كانوا يستنوه",
+        "timestamp": "70:39.00",
+        "timestamp_end": "70:42.00",
+        "text_l2": "These were the ones who kidnapped him, they were waiting for him"
+      },
+      {
+        "id": "phrase_213",
+        "text_l1": "برا البيت؟ استنوه قدام الكنيسة.",
+        "timestamp": "70:42.00",
+        "timestamp_end": "70:45.00",
+        "text_l2": "Outside the house? They waited in front of the synagogue."
+      },
+      {
+        "id": "phrase_214",
+        "text_l1": "اليوم في محادثات جديدة مع لبنان،",
+        "timestamp": "70:45.00",
+        "timestamp_end": "70:48.00",
+        "text_l2": "Today there are new talks with Lebanon,"
+      },
+      {
+        "id": "phrase_215",
+        "text_l1": "اليوم حزب الله سقط بهالحرب،",
+        "timestamp": "70:48.00",
+        "timestamp_end": "70:51.00",
+        "text_l2": "Today Hezbollah has fallen in this war,"
+      },
+      {
+        "id": "phrase_216",
+        "text_l1": "شو إنتو كعائلة جاموس شو بتطلبوا من لبنان؟",
+        "timestamp": "70:51.00",
+        "timestamp_end": "70:54.00",
+        "text_l2": "What do you as the Jamous family ask from Lebanon?"
+      },
+      {
+        "id": "phrase_217",
+        "text_l1": "شو بدكم من أي مواطن لبناني شايف هالفيديو؟",
+        "timestamp": "70:54.00",
+        "timestamp_end": "70:57.00",
+        "text_l2": "What do you want from any Lebanese citizen watching this video?"
+      },
+      {
+        "id": "phrase_218",
+        "text_l1": "أنا بدي أحكي للمواطن اللبناني،",
+        "timestamp": "70:57.00",
+        "timestamp_end": "71:00.00",
+        "text_l2": "I want to speak to the Lebanese citizen,"
+      },
+      {
+        "id": "phrase_219",
+        "text_l1": "اللي عايش برا واللي عايش جوا.",
+        "timestamp": "71:00.00",
+        "timestamp_end": "71:03.00",
+        "text_l2": "Who lives outside and who lives inside."
+      },
+      {
+        "id": "phrase_220",
+        "text_l1": "سيرة المخطوفين قريبة علي",
+        "timestamp": "71:03.00",
+        "timestamp_end": "71:06.00",
+        "text_l2": "The story of the kidnapped is close to me"
+      },
+      {
+        "id": "phrase_221",
+        "text_l1": "وقريبة كمان عليكم.",
+        "timestamp": "71:06.00",
+        "timestamp_end": "71:09.00",
+        "text_l2": "And close to you too."
+      },
+      {
+        "id": "phrase_222",
+        "text_l1": "اللي عندكم معلومات تعرفوا شو صار،",
+        "timestamp": "71:09.00",
+        "timestamp_end": "71:12.00",
+        "text_l2": "Whoever has information, knows what happened,"
+      },
+      {
+        "id": "phrase_223",
+        "text_l1": "قولوا لنا.",
+        "timestamp": "71:12.00",
+        "timestamp_end": "71:15.00",
+        "text_l2": "Tell us."
+      },
+      {
+        "id": "phrase_224",
+        "text_l1": "تاني شي لرئيس الجمهورية،",
+        "timestamp": "71:15.00",
+        "timestamp_end": "71:18.00",
+        "text_l2": "Second thing to the President of the Republic,"
+      },
+      {
+        "id": "phrase_225",
+        "text_l1": "لحركة حزب الله، لحركة أمل.",
+        "timestamp": "71:18.00",
+        "timestamp_end": "71:21.00",
+        "text_l2": "To Hezbollah movement, to Amal movement."
+      },
+      {
+        "id": "phrase_226",
+        "text_l1": "قولوا لنا شو صار، من كل الحركات",
+        "timestamp": "71:21.00",
+        "timestamp_end": "71:24.00",
+        "text_l2": "Tell us what happened, from all the movements"
+      },
+      {
+        "id": "phrase_227",
+        "text_l1": "اللي بلبنان.",
+        "timestamp": "71:24.00",
+        "timestamp_end": "71:27.00",
+        "text_l2": "That are in Lebanon."
+      },
+      {
+        "id": "phrase_228",
+        "text_l1": "ساعدونا نخلص القصة، خلص نحن عايشين",
+        "timestamp": "71:27.00",
+        "timestamp_end": "71:30.00",
+        "text_l2": "Help us finish the story, enough we have lived"
+      },
+      {
+        "id": "phrase_229",
+        "text_l1": "40 سنة كمان شوي.",
+        "timestamp": "71:30.00",
+        "timestamp_end": "71:33.00",
+        "text_l2": "40 years, a bit more."
+      },
+      {
+        "id": "phrase_230",
+        "text_l1": "ما عندنا حياة، اللي صار صار.",
+        "timestamp": "71:33.00",
+        "timestamp_end": "71:36.00",
+        "text_l2": "We have no life, what happened happened."
+      },
+      {
+        "id": "phrase_231",
+        "text_l1": "عايشين ميتين مش مهم، رجعوا لنا إياهم.",
+        "timestamp": "71:36.00",
+        "timestamp_end": "71:39.00",
+        "text_l2": "Living dead doesn't matter, return them to us."
+      },
+      {
+        "id": "phrase_232",
+        "text_l1": "هي عندكم بالدين، وعندنا كمان نحن بالدين.",
+        "timestamp": "71:39.00",
+        "timestamp_end": "71:42.00",
+        "text_l2": "It is upon you religiously, and upon us too religiously."
+      },
+      {
+        "id": "phrase_233",
+        "text_l1": "خلص طلعنا من لبنان،",
+        "timestamp": "71:42.00",
+        "timestamp_end": "71:45.00",
+        "text_l2": "Enough, we left Lebanon,"
+      },
+      {
+        "id": "phrase_234",
+        "text_l1": "بس قلبنا لساته لبناني.",
+        "timestamp": "71:45.00",
+        "timestamp_end": "71:48.00",
+        "text_l2": "But our heart is still Lebanese."
+      }
+    ],
+    "phrases_with_token_translations": "[وسيرة] الخطف بلبنان هي معروفة، => [The history] of kidnappings in Lebanon is well-known,\nوسيرة [الخطف] بلبنان هي معروفة، => The history [of kidnappings] in Lebanon is well-known,\nوسيرة الخطف [بلبنان] هي معروفة، => The history of kidnappings [in Lebanon] is well-known,\nوسيرة الخطف بلبنان [هي] معروفة، => The history of kidnappings in Lebanon [is] well-known,\nوسيرة الخطف بلبنان هي [معروفة]، => The history of kidnappings in Lebanon is [well-known],\n\n[كل] طائفة عندها مخطوفين. => [Every] sect has its own kidnapped people.\nكل [طائفة] عندها مخطوفين. => Every [sect] has its own kidnapped people.\nكل طائفة [عندها] مخطوفين. => Every sect [has its own] kidnapped people.\nكل طائفة عندها [مخطوفين]. => Every sect has its own [kidnapped people].\n\n[مش مهم] شو مين إنت، مين دينك، => [It doesn't matter] who you are, what your religion is,\nمش مهم شو [مين] إنت، مين دينك، => It doesn't matter [who] you are, what your religion is,\nمش مهم شو مين [إنت]، مين دينك، => It doesn't matter who [you are], what your religion is,\nمش مهم شو مين إنت، [مين] دينك، => It doesn't matter who you are, [what] your religion is,\nمش مهم شو مين إنت، مين [دينك]، => It doesn't matter who you are, what [your religion is],\n\n[إنت] مسيحي، درزي، سني، أرمني، مش مهم، => Whether [you're] Christian, Druze, Sunni, Armenian, it doesn't matter,\nإنت [مسيحي]، درزي، سني، أرمني، مش مهم، => Whether you're [Christian], Druze, Sunni, Armenian, it doesn't matter,\nإنت مسيحي، [درزي]، سني، أرمني، مش مهم، => Whether you're Christian, [Druze], Sunni, Armenian, it doesn't matter,\nإنت مسيحي، درزي، [سني]، أرمني، مش مهم، => Whether you're Christian, Druze, [Sunni], Armenian, it doesn't matter,\nإنت مسيحي، درزي، سني، [أرمني]، مش مهم، => Whether you're Christian, Druze, Sunni, [Armenian], it doesn't matter,\nإنت مسيحي، درزي، سني، أرمني، [مش مهم]، => Whether you're Christian, Druze, Sunni, Armenian, [it doesn't matter],\n\n[اللي] صارت مع اليهود، => [What] happened with the Jews,\nاللي [صارت] مع اليهود، => What [happened] with the Jews,\nاللي صارت [مع] اليهود، => What happened [with] the Jews,\nاللي صارت مع [اليهود]، => What happened with [the Jews]\n\n[نحن] بهمنا نحن مشان نحن يهود. => [We] care because we are Jews.\nنحن [بهمنا] نحن مشان نحن يهود. => We [care] because we are Jews.\nنحن بهمنا نحن [مشان] نحن يهود. => We care [because] we are Jews.\nنحن بهمنا نحن مشان [نحن] يهود. => We care because [we are] Jews.\nنحن بهمنا نحن مشان نحن [يهود]. => We care because we are [Jews].\n\n[وكمان] كانت طائفة صغيرة، => [And also] it was a small sect,\nوكمان [كانت] طائفة صغيرة، => And also [it was] a small sect,\nوكمان كانت [طائفة] صغيرة، => And also it was a small [sect],\nوكمان كانت طائفة [صغيرة]، => And also it was a [small] sect,\n\n[يعني] مش جديد علينا هي الخطف. => [I mean], kidnappings aren't new to us.\nيعني [مش] جديد علينا هي الخطف. => I mean, kidnappings [aren't] new to us.\nيعني مش [جديد] علينا هي الخطف. => I mean, kidnappings aren't [new] to us.\nيعني مش جديد [علينا] هي الخطف. => I mean, kidnappings aren't new [to us].\nيعني مش جديد علينا هي [الخطف]. => I mean, [kidnappings] aren't new to us.\n\n[اليوم] اللي عم بيصير بلبنان، بالمنطقة، => [Today] what's happening in Lebanon, in the region,\nاليوم [اللي] عم بيصير بلبنان، بالمنطقة، => Today [what's] happening in Lebanon, in the region,\nاليوم اللي [عم بيصير] بلبنان، بالمنطقة، => Today what's [happening] in Lebanon, in the region,\nاليوم اللي عم بيصير [بلبنان]، بالمنطقة، => Today what's happening [in Lebanon], in the region,\nاليوم اللي عم بيصير بلبنان، [بالمنطقة]، => Today what's happening in Lebanon, [in the region]\n\n[كله] عم يتغير، تحت إجرينا كله عم يتغير. => [Everything] is changing, under our feet everything is changing.\nكله [عم يتغير]، تحت إجرينا كله عم يتغير. => Everything [is changing], under our feet everything is changing.\nكله عم يتغير، [تحت] إجرينا كله عم يتغير. => Everything is changing, [under] our feet everything is changing.\nكله عم يتغير، تحت [إجرينا] كله عم يتغير. => Everything is changing, under [our feet] everything is changing.\nكله عم يتغير، تحت إجرينا [كله] عم يتغير. => Everything is changing, under our feet [everything] is changing.\nكله عم يتغير، تحت إجرينا كله [عم يتغير]. => Everything is changing, under our feet everything [is changing].\n\n[وكمان] نحن ما بنعرف هني لوين بده يوصل => [And] we don't know where all this\nوكمان [نحن] ما بنعرف هني لوين بده يوصل => And [we] don't know where all this\nوكمان نحن [ما بنعرف] هني لوين بده يوصل => And we [don't know] where all this\nوكمان نحن ما بنعرف هني [لوين] بده يوصل => And we don't know [where] all this\nوكمان نحن ما بنعرف هني لوين [بده يوصل] => it is going to lead, reach # custom translation because the English sentence \"where all this\" is truncated or interpreted loosely. \"بده يوصل\" literally means \"he/it wants to/is going to arrive/reach\".\n\n[هيدا] كل هيدا التغيير. الحكي هو بلبنان، => [This] change is going. The talk is about Lebanon,\nهيدا كل هيدا [التغيير]. الحكي هو بلبنان، => This [change] is going. The talk is about Lebanon,\nهيدا كل هيدا التغيير. [الحكي] هو بلبنان، => This change is going. [The talk] is about Lebanon,\nهيدا كل هيدا التغيير. الحكي [هو] بلبنان، => This change is going. The talk [is] about Lebanon,\nهيدا كل هيدا التغيير. الحكي هو [ب]لبنان، => about\nهيدا كل هيدا التغيير. الحكي هو ب[لبنان]، => This change is going. The talk is about [Lebanon]\n\n[يعني] اليوم بتشوف واحد لبناني بيقول لك => [I mean] today you see a Lebanese person telling you\nيعني [اليوم] بتشوف واحد لبناني بيقول لك => I mean [today] you see a Lebanese person telling you\nيعني اليوم [بتشوف] واحد لبناني بيقول لك => I mean today [you see] a Lebanese person telling you\nيعني اليوم بتشوف [واحد] لبناني بيقول لك => a person, one\nيعني اليوم بتشوف واحد [لبناني] بيقول لك => I mean today you see a [Lebanese] person telling you\nيعني اليوم بتشوف واحد لبناني [بيقول] لك => I mean today you see a Lebanese person [telling] you\nيعني اليوم بتشوف واحد لبناني بيقول [لك] => I mean today you see a Lebanese person telling [you]\n\n[إن شاء الله] يرجعوا لنا المخطوفين، => [God willing], they'll return our kidnapped ones to us,\nإن شاء الله [يرجعوا] لنا المخطوفين، => God willing, [they'll return] our kidnapped ones to us,\nإن شاء الله يرجعوا [لنا] المخطوفين، => God willing, they'll return our kidnapped ones [to us],\nإن شاء الله يرجعوا لنا [المخطوفين]، => God willing, they'll return [our kidnapped ones] to us,\n\n[إن شاء الله] نسمع عليهم. => [God willing], we'll hear news about them.\nإن شاء الله [نسمع] عليهم. => God willing, [we'll hear] news about them.\nإن شاء الله نسمع [عليهم]. => God willing, we'll hear news [about them].\n\n[مو] يهود، نحن هلق بهمنا اليهود، => [Not] Jews, right now we care about the Jews,\nمو [يهود]، نحن هلق بهمنا اليهود، => Not [Jews], right now we care about the Jews,\nمو يهود، [نحن] هلق بهمنا اليهود، => Not Jews, right now [we] care about the Jews,\nمو يهود، نحن [هلق] بهمنا اليهود، => Not Jews, [right now] we care about the Jews,\nمو يهود، نحن هلق [بهمنا] اليهود، => Not Jews, right now we [care about] the Jews,\nمو يهود، نحن هلق بهمنا [اليهود]، => Not Jews, right now we care about [the Jews],\n\n[بهمني] أنا أبوي. => [What matters to me] is my father.\nبهمني [أنا] أبوي. => me\nبهمني أنا [أبوي]. => What matters to me is [my father].\n\n[أهلين] أنا اسمي موسى جاموس، => [Hello], my name is Musa Jamous,\nأهلين [أنا اسمي] موسى جاموس، => Hello, [my name is] Musa Jamous,\nأهلين أنا اسمي [موسى] جاموس، => Hello, my name is [Musa] Jamous,\nأهلين أنا اسمي موسى [جاموس]، => Hello, my name is Musa [Jamous]\n\n[من] لبنان، بيروت، => [From] Lebanon, Beirut,\nمن [لبنان]، بيروت، => From [Lebanon], Beirut,\nمن لبنان، [بيروت]، => From Lebanon, [Beirut],\n\n[من] حارة اليهود أبو جميل. => [From] the Jewish quarter, Abu Jamil.\nمن [حارة] اليهود أبو جميل. => From the Jewish [quarter], Abu Jamil.\nمن حارة [اليهود] أبو جميل. => From the [Jewish] quarter, Abu Jamil.\nمن حارة اليهود [أبو جميل] => From the Jewish quarter, [Abu Jamil]\n\n[أنا] ابنه لسليم جاموس رئيس الطائفة => [I am] the son of Slim Jamous, head of the\nأنا [ابنه] لسليم جاموس رئيس الطائفة => I am [the son] of Slim Jamous, head of the\nأنا ابنه [لسليم جاموس] رئيس الطائفة => I am the son of [Slim Jamous], head of the\nأنا ابنه لسليم جاموس [رئيس] الطائفة => I am the son of Slim Jamous, [head] of the\nأنا ابنه لسليم جاموس رئيس [الطائفة] => sect, community # English sentence is incomplete/cut off\n\n[اليهود] الأخراني بلبنان. => Last [Jewish community] in Lebanon.\nاليهود [الأخراني] بلبنان. => [Last] Jewish community in Lebanon.\nاليهود الأخراني [بلبنان]. => Last Jewish community [in Lebanon].\n\n[أبوي] بالـ 84 انخطف، => [My father] was kidnapped in '84,\nأبوي [بالـ] 84 انخطف، => My father was kidnapped [in] '84,\nأبوي بالـ [84] انخطف، => My father was kidnapped in ['84],\nأبوي بالـ 84 [انخطف]، => My father [was kidnapped] in '84,\n\n[و]قالوا لنا كمان حزب الله => [And] they told us it was Hezbollah.\nو[قالوا] لنا كمان حزب الله => And [they told] us it was Hezbollah.\nوقالوا [لنا] كمان حزب الله => And they told [us] it was Hezbollah.\nوقالوا لنا [كمان] حزب الله => also, furthermore # كمان literally means \"also\" or \"as well\" in this context\nوقالوا لنا كمان [حزب الله] => And they told us it was [Hezbollah].\n\n[ولهلق] نحن ما بنعرف شو صار معه. => [And until now] we don't know what happened to him.\nولهلق [نحن] ما بنعرف شو صار معه. => And until now [we] don't know what happened to him.\nولهلق نحن [ما بنعرف] شو صار معه. => And until now we [don't know] what happened to him.\nولهلق نحن ما بنعرف [شو] صار معه. => And until now we don't know [what] happened to him.\nولهلق نحن ما بنعرف شو [صار] معه. => And until now we don't know what [happened] to him.\nولهلق نحن ما بنعرف شو صار [معه]. => And until now we don't know what happened [to him]. # معه literally means \"with him\" but functions as \"to him\" in this context\n\n[هدول] اليهود السبعة وأبوك شو صار معهم؟ => [These] seven Jews and your father, what happened to them?\nهدول [اليهود] السبعة وأبوك شو صار معهم؟ => These seven [Jews] and your father, what happened to them?\nهدول اليهود [السبعة] وأبوك شو صار معهم؟ => These [seven] Jews and your father, what happened to them?\nهدول اليهود السبعة [وأبوك] شو صار معهم؟ => These seven Jews [and your father], what happened to them?\nهدول اليهود السبعة وأبوك [شو] صار معهم؟ => These seven Jews and your father, [what] happened to them?\nهدول اليهود السبعة وأبوك شو [صار] معهم؟ => These seven Jews and your father, what [happened] to them?\nهدول اليهود السبعة وأبوك شو صار [معهم]؟ => These seven Jews and your father, what happened [to them]?\n\n[يعني] هيك ليش خطفوهم برأيك إنت؟ => [I mean], why do you think they kidnapped them?\nيعني [هيك] ليش خطفوهم برأيك إنت؟ => so, like this\nيعني هيك [ليش] خطفوهم برأيك إنت؟ => I mean, [why] do you think they kidnapped them?\nيعني هيك ليش [خطفوهم] برأيك إنت؟ => I mean, why do you think [they kidnapped them]?\nيعني هيك ليش خطفوهم [برأيك] إنت؟ => do you think, in your opinion\nيعني هيك ليش خطفوهم برأيك [إنت]؟ => I mean, why do [you] think they kidnapped them?\n\n[مشان] هني يهود، هي أول شي، => [Because] they were Jews, that's the first thing,\nمشان [هني] يهود، هي أول شي، => they were # Arabic nominal sentence uses the pronoun alone to imply the verb 'to be'\nمشان هني [يهود]، هي أول شي، => Because they were [Jews], that's the first thing,\nمشان هني يهود، [هي] أول شي، => Because they were Jews, [that's] the first thing,\nمشان هني يهود، هي [أول] شي، => Because they were Jews, that's [the first] thing,\nمشان هني يهود، هي أول [شي]، => Because they were Jews, that's the first [thing]\n\n[وكمان] يهود هدول مو شعبي يعني، => [And also] these Jews weren't ordinary people, I mean,\nوكمان [يهود] هدول مو شعبي يعني، => And also these [Jews] weren't ordinary people, I mean,\nوكمان يهود [هدول] مو شعبي يعني، => And also [these] Jews weren't ordinary people, I mean,\nوكمان يهود هدول [مو] شعبي يعني، => not, weren't\nوكمان يهود هدول مو [شعبي] يعني، => ordinary people, of the people\nوكمان يهود هدول مو شعبي [يعني]، => And also these Jews weren't ordinary people, [I mean],\n\n[هدول] كانوا ماسكين بالطائفة => [They] were holding the community together\nهدول [كانوا] ماسكين بالطائفة => They [were] holding the community together\nهدول كانوا [ماسكين] بالطائفة => They were [holding] the community [together]\nهدول كانوا ماسكين [بالطائفة] => They were holding [the community] together # Literally \"to the sect\" or \"by the community\" but functions as the object of holding here\n\n[كل] واحد عنده قيمة بالطائفة. => [Each] one had value in the community.\nكل [واحد] عنده قيمة بالطائفة. => Each [one] had value in the community.\nكل واحد [عنده] قيمة بالطائفة. => Each one [had] value in the community.\nكل واحد عنده [قيمة] بالطائفة. => Each one had [value] in the community.\nكل واحد عنده قيمة [بالطائفة]. => Each one had value [in the community].\n\n[أبوي] رئيس الطائفة، وواحد دكتور الطائفة، => [My father] was the community head, one was the community doctor,\nأبوي [رئيس] الطائفة، وواحد دكتور الطائفة، => My father was the community [head], one was the community doctor,\nأبوي رئيس [الطائفة]، وواحد دكتور الطائفة، => My father was [the community] head, one was the community doctor,\nأبوي رئيس الطائفة، [وواحد] دكتور الطائفة، => My father was the community head, [one] was the community doctor,\nأبوي رئيس الطائفة، وواحد [دكتور] الطائفة، => My father was the community head, one was the community [doctor],\nأبوي رئيس الطائفة، وواحد دكتور [الطائفة]، => My father was the community head, one was [the community] doctor,\n\n[و]واحد نقيب الطائفة، => [And] one was the community syndicate head,\nو[واحد] نقيب الطائفة، => And [one] was the community syndicate head,\nوواحد [نقيب] الطائفة، => And one was the community [syndicate head],\nوواحد نقيب [الطائفة]، => And one was the [community] syndicate head,\n\n[وواحد] خاخام تبع الطائفة، يعني هدول... => [And one] was the community Rabbi, I mean these...\nوواحد [خاخام] تبع الطائفة، يعني هدول... => And one was the community [Rabbi], I mean these...\nوواحد خاخام [تبع] الطائفة، يعني هدول... => of, belonging to\nوواحد خاخام تبع [الطائفة]، يعني هدول... => And one was the [community] Rabbi, I mean these...\nوواحد خاخام تبع الطائفة، [يعني] هدول... => And one was the community Rabbi, [I mean] these...\nوواحد خاخام تبع الطائفة، يعني [هدول] => And one was the community Rabbi, I mean [these]\n\n[هدول] عالم يعني مهم كتير كتير => [These] people were very, very important\nهدول [عالم] يعني مهم كتير كتير => These [people] were very, very important\nهدول عالم [يعني] مهم كتير كتير => were\nهدول عالم يعني [مهم] كتير كتير => These people were very, very [important]\nهدول عالم يعني مهم [كتير] كتير => These people were [very], very important\nهدول عالم يعني مهم كتير [كتير] => These people were very, [very] important\n\n[بلبنان] باليهود بالطائفة. => [In Lebanon], among the Jews, in the community.\nبلبنان [باليهود] بالطائفة. => In Lebanon, [among the Jews], in the community.\nبلبنان باليهود [بالطائفة]. => In Lebanon, among the Jews, [in the community].\n\n[كنا] بالبيت، أنا وأخي، => [We were] at home, me and my brother,\nكنا [بالبيت]، أنا وأخي، => We were [at home], me and my brother,\nكنا بالبيت، [أنا] وأخي، => We were at home, [me] and my brother,\nكنا بالبيت، أنا [وأخي]، => We were at home, me [and my brother],\n\n[طيب] أبوي نزل طلع لبرا. => [So] my father went down and went outside.\nطيب [أبوي] نزل طلع لبرا. => So [my father] went down and went outside.\nطيب أبوي [نزل] طلع لبرا. => So my father [went down] and went outside.\nطيب أبوي نزل [طلع] لبرا. => So my father went down and [went] outside.\nطيب أبوي نزل طلع [لبرا]. => So my father went down and went [outside].\n\n[كان لابس] يعني مع الغرافة والجاكيت تبعه. => [He was wearing], I mean, his scarf and his jacket.\nكان لابس [يعني] مع الغرافة والجاكيت تبعه. => He was wearing, [I mean], his scarf and his jacket.\nكان لابس يعني مع [الغرافة] والجاكيت تبعه. => He was wearing, I mean, his [scarf] and his jacket.\nكان لابس يعني مع الغرافة [والجاكيت] تبعه. => He was wearing, I mean, his scarf [and] his [jacket]\nكان لابس يعني مع الغرافة والجاكيت [تبعه]. => his # possessive particle indicating \"his\" items\n\n[ووقف] على الدرج، قال سكروا الباب. => [And he stopped] on the stairs, he said close the door.\nووقف [على] الدرج، قال سكروا الباب. => And he stopped [on] the stairs, he said close the door.\nووقف على [الدرج]، قال سكروا الباب. => And he stopped on [the stairs], he said close the door.\nووقف على الدرج، [قال] سكروا الباب. => And he stopped on the stairs, [he said] close the door.\nووقف على الدرج، قال [سكروا] الباب. => And he stopped on the stairs, he said [close] the door.\nووقف على الدرج، قال سكروا [الباب]. => And he stopped on the stairs, he said close [the door].\n\n[سوى لنا بإيده]، سلم علينا، أه. => [He waved to us], said goodbye to us, yeah.\nسوى لنا بإيده، [سلم] علينا، أه. => He waved to us, [said goodbye] to us, yeah.\nسوى لنا بإيده، سلم [علينا]، أه. => He waved to us, said goodbye [to us], yeah.\nسوى لنا بإيده، سلم علينا، [أه]. => He waved to us, said goodbye to us, [yeah].\n\n[وهذا] هو الوقت اللي قعد بوشي. => [And this] was the time he disappeared.\nوهذا [هو] الوقت اللي قعد بوشي. => And this [was] the time he disappeared.\nوهذا هو [الوقت] اللي قعد بوشي. => And this was [the time] he disappeared.\nوهذا هو الوقت [اللي] قعد بوشي. => that\nوهذا هو الوقت اللي [قعد بوشي] => [he disappeared] # alignment based on context; literally \"stayed/sat in front of me\" but translated here as he disappeared\n\n[هي] الصورة يعني هذا السلام الأخراني => [This] picture, I mean this last goodbye\nهي [الصورة] يعني هذا السلام الأخراني => This [picture], I mean this last goodbye\nهي الصورة [يعني] هذا السلام الأخراني => This picture, [I mean] this last goodbye\nهي الصورة يعني [هذا] السلام الأخراني => This picture, I mean [this] last goodbye\nهي الصورة يعني هذا السلام [الأخراني] => This picture, I mean this [last] goodbye\nهي الصورة يعني هذا [السلام] الأخراني => This picture, I mean this last [goodbye]\n\n[اللي] نحن شفناه. => [That] we saw.\nاللي [نحن] شفناه. => That [we] saw.\nاللي نحن [شفناه]. => That we [saw].\n\nكان عمري [خمس] سنين، قلبي كان حاسسني. => I was [five] years old, my heart was telling me.\nكان عمري خمس [سنين]، قلبي كان حاسسني. => I was five [years] old, my heart was telling me.\nكان عمري خمس سنين، [قلبي] كان حاسسني. => I was five years old, [my heart] was telling me.\nكان عمري خمس سنين، قلبي [كان] حاسسني. => I was five years old, my heart [was] telling me.\nكان عمري خمس سنين، قلبي كان [حاسسني]. => I was five years old, my heart was [telling me] # حاسسني refers to a gut feeling (\"feeling me\") which translates here to \"telling me\"\n\n[قلت] لها لأمي طيب ما تخافي => [I told] my mother, don't worry\nقلت [لها] لأمي طيب ما تخافي => to her\nقلت لها [لأمي] طيب ما تخافي => I told [my mother], don't worry\nقلت لها لأمي [طيب] ما تخافي => okay\nقلت لها لأمي طيب [ما تخافي] => I told my mother, [don't worry]\n\n[أنا] رايح عالمدرسة. => [I'm] going to school.\nأنا [رايح] عالمدرسة. => I'm [going] to school.\nأنا رايح [عالمدرسة]. => I'm going [to school].\n\n[و]أخي راح عالمدرسة، أنا دغري هربت، => [And] my brother went to school, I immediately ran away,\nو[أخي] راح عالمدرسة، أنا دغري هربت، => And [my brother] went to school, I immediately ran away,\nوأخي [راح] عالمدرسة، أنا دغري هربت، => And my brother [went] to school, I immediately ran away,\nوأخي راح [عالمدرسة]، أنا دغري هربت، => And my brother went [to school], I immediately ran away,\nوأخي راح عالمدرسة، [أنا] دغري هربت، => And my brother went to school, [I] immediately ran away,\nوأخي راح عالمدرسة، أنا [دغري] هربت، => And my brother went to school, I [immediately] ran away,\nوأخي راح عالمدرسة، أنا دغري [هربت]، => And my brother went to school, I immediately [ran away]\n\n[لوين] هربت؟ هربت عند أبوي. => [Where] did I run? I ran to my father.\nلوين [هربت]؟ هربت عند أبوي. => Where [did I run]? I ran to my father.\nلوين هربت؟ [هربت] عند أبوي. => Where did I run? [I ran] to my father.\nلوين هربت؟ هربت [عند] أبوي. => Where did I run? I ran [to] my father.\nلوين هربت؟ هربت عند [أبوي]. => Where did I run? I ran to [my father]\n\n[عالمكتب]، وفتحت الباب، => [To the office], and I opened the door,\nعالمكتب، [و]فتحت الباب، => To the office, [and] I opened the door,\nعالمكتب، و[فتحت] الباب، => To the office, and [I opened] the door,\nعالمكتب، وفتحت [الباب]، => To the office, and I opened [the door]\n\n[كان] طايش بالمكتب. => [It was] wrecked in the office.\nكان [طايش] بالمكتب. => It was [wrecked] in the office.\nكان طايش [بالمكتب] => It was wrecked [in the office]\n\n[كله] مكسر، كله مقلوب، الوراق على الأرض، => [Everything] broken, everything overturned, papers on the floor,\nكله [مكسر]، كله مقلوب، الوراق على الأرض، => Everything [broken], everything overturned, papers on the floor,\nكله مكسر، [كله] مقلوب، الوراق على الأرض، => Everything broken, [everything] overturned, papers on the floor,\nكله مكسر، كله [مقلوب]، الوراق على الأرض، => Everything broken, everything [overturned], papers on the floor,\nكله مكسر، كله مقلوب، [الوراق] على الأرض، => Everything broken, everything overturned, [papers] on the floor,\nكله مكسر، كله مقلوب، الوراق [على] الأرض، => Everything broken, everything overturned, papers [on] the floor,\nكله مكسر، كله مقلوب، الوراق على [الأرض]، => Everything broken, everything overturned, papers on [the floor]\n\n[ومكتوب] على الحيط يهودي => [And written] on the wall \"Jew\"\nومكتوب [على] الحيط يهودي => And written [on] the wall \"Jew\"\nومكتوب على [الحيط] يهودي => And written on [the wall] \"Jew\"\nومكتوب على الحيط [يهودي] => And written on the wall [\"Jew\"]\n\n[اليوم] نحن بنعرف، مكتوب يهودي. => [Today] we know, it was written \"Jew\".\nاليوم [نحن] بنعرف، مكتوب يهودي. => Today [we] know, it was written \"Jew\".\nاليوم نحن [بنعرف]، مكتوب يهودي. => Today we [know], it was written \"Jew\".\nاليوم نحن بنعرف، [مكتوب] يهودي. => Today we know, [it was written] \"Jew\".\nاليوم نحن بنعرف، مكتوب [يهودي]. => Today we know, it was written \"[Jew]\"\n\n[ودغري] ركضت على البيت، قلت لها ماما => [And immediately] I ran to the house, I told her Mama\nودغري [ركضت] على البيت، قلت لها ماما => And immediately [I ran] to the house, I told her Mama\nودغري ركضت [على] البيت، قلت لها ماما => And immediately I ran [to] the house, I told her Mama\nودغري ركضت على [البيت]، قلت لها ماما => And immediately I ran to [the house], I told her Mama\nودغري ركضت على البيت، [قلت] لها ماما => And immediately I ran to the house, [I told] her Mama\nودغري ركضت على البيت، قلت [لها] ماما => And immediately I ran to the house, I told [her] Mama\nودغري ركضت على البيت، قلت لها [ماما] => And immediately I ran to the house, I told her [Mama]\n\n[ماما] ماما تعي شوفي شو صار مع البابا. => [Mama] Mama come see what happened to Papa.\nماما [ماما] تعي شوفي شو صار مع البابا. => Mama [Mama] come see what happened to Papa.\nماما ماما [تعي] شوفي شو صار مع البابا. => Mama Mama [come] see what happened to Papa.\nماما ماما تعي [شوفي] شو صار مع البابا. => Mama Mama come [see] what happened to Papa.\nماما ماما تعي شوفي [شو] صار مع البابا. => Mama Mama come see [what] happened to Papa.\nماما ماما تعي شوفي شو [صار] مع البابا. => Mama Mama come see what [happened] to Papa.\nماما ماما تعي شوفي شو صار [مع] البابا. => to\nماما ماما تعي شوفي شو صار مع [البابا]. => Mama Mama come see what happened to [Papa]\n\n[بابا] ما بنعرف وين راح. => [Papa], we don't know where he went.\nبابا [ما بنعرف] وين راح. => Papa, [we don't know] where he went.\nبابا ما بنعرف [وين] راح. => Papa, we don't know [where] he went.\nبابا ما بنعرف وين [راح]. => Papa, we don't know where [he went] # The Arabic verb includes the subject pronoun \"he\"\n\n[كلهم] بلشوا ركض وهذا وبلشوا ضرب طوشة => [Everyone] started running and this and started fighting chaos\nكلهم [بلشوا] ركض وهذا وبلشوا ضرب طوشة => Everyone [started] running and this and started fighting chaos\nكلهم بلشوا [ركض] وهذا وبلشوا ضرب طوشة => Everyone started [running] and this and started fighting chaos\nكلهم بلشوا ركض [وهذا] وبلشوا ضرب طوشة => Everyone started running [and this] and started fighting chaos\nكلهم بلشوا ركض وهذا [وبلشوا] ضرب طوشة => Everyone started running and this [and started] fighting chaos\nكلهم بلشوا ركض وهذا وبلشوا [ضرب] طوشة => Everyone started running and this and started [fighting] chaos\nكلهم بلشوا ركض وهذا وبلشوا ضرب [طوشة] => Everyone started running and this and started fighting [chaos]\n\n[عند] هاد وبعدين رحنا عند البوليس، => [At] this one and then we went to the police,\nعند [هاد] وبعدين رحنا عند البوليس، => At [this one] and then we went to the police,\nعند هاد [وبعدين] رحنا عند البوليس، => At this one [and then] we went to the police,\nعند هاد وبعدين [رحنا] عند البوليس، => At this one and then [we went] to the police,\nعند هاد وبعدين رحنا [عند] البوليس، => At this one and then we went [to] the police,\nعند هاد وبعدين رحنا عند [البوليس]، => At this one and then we went to [the police],\n\n[و]إجوا مخابرات وإجوا هاد. => [And] intelligence came and this one came.\nو[إجوا] مخابرات وإجوا هاد. => And intelligence [came] and this one came.\nوإجوا [مخابرات] وإجوا هاد. => And [intelligence] came and this one came.\nوإجوا مخابرات [و]إجوا هاد. => And intelligence came [and] this one came.\nوإجوا مخابرات و[إجوا] هاد. => And intelligence came and this one [came].\nوإجوا مخابرات وإجوا [هاد]. => And intelligence came and [this one] came.\n\n[وصارت] تصير بالأخبار، وبلشوا فتشوا => [And it started] appearing in the news, and they started searching\nوصارت [تصير] بالأخبار، وبلشوا فتشوا => And it started [appearing] in the news, and they started searching\nوصارت تصير [بالأخبار]، وبلشوا فتشوا => And it started appearing [in the news], and they started searching\nوصارت تصير بالأخبار، [وبلشوا] فتشوا => And it started appearing in the news, [and they started] searching\nوصارت تصير بالأخبار، وبلشوا [فتشوا] => And it started appearing in the news, and they started [searching]\n\n[شو] صار هاد. => [What] happened to this one.\nشو [صار] هاد. => What [happened] to this one.\nشو صار [هاد]. => What happened to [this one]\n\n[ومن] هون رحنا لهون ورحنا جينا لهون، => [And from] here we went to there and we went came to here,\nومن [هون] رحنا لهون ورحنا جينا لهون، => And from [here] we went to there and we went came to here,\nومن هون [رحنا] لهون ورحنا جينا لهون، => And from here [we went] to there and we went came to here,\nومن هون رحنا [لهون] ورحنا جينا لهون، => And from here we went [to there] and we went came to here,\nومن هون رحنا لهون [ورحنا] جينا لهون، => And from here we went to there [and we went] came to here,\nومن هون رحنا لهون ورحنا [جينا] لهون، => And from here we went to there and we went [came] to here,\nومن هون رحنا لهون ورحنا جينا [لهون]، => And from here we went to there and we went came [to here],\n\n[ما عرفنا] شو صار معه. => [We didn't know] what happened to him.\nما عرفنا [شو] صار معه. => We didn't know [what] happened to him.\nما عرفنا شو [صار] معه. => We didn't know what [happened] to him.\nما عرفنا شو صار [معه]. => We didn't know what happened [to him]\n\n[خلص] وهذا آخر شي عرفته؟ => [So] this is the last thing you knew?\nخلص وهذا [هذا] آخر شي عرفته؟ => So [this is] the last thing you knew?\nخلص وهذا [آخر] شي عرفته؟ => So this is the [last] thing you knew?\nخلص وهذا آخر [شي] عرفته؟ => So this is the last [thing] you knew?\nخلص وهذا آخر شي [عرفته]؟ => So this is the last thing [you knew]?\n\n[هاد] آخر شي عرفنا عنه، => [This is] the last thing we knew about him,\nهاد [آخر] شي عرفنا عنه، => This is [the last] thing we knew about him,\nهاد آخر [شي] عرفنا عنه، => This is the last [thing] we knew about him,\nهاد آخر شي [عرفنا] عنه، => This is the last thing [we knew] about him,\nهاد آخر شي عرفنا [عنه]، => This is the last thing we knew [about him],\n\n[بعدين] كم يوم اتصلوا المخطوفين. => [Then] after a few days the kidnapped ones called.  \nبعدين [كم] يوم اتصلوا المخطوفين. => Then after [a few] days the kidnapped ones called.  \nبعدين كم [يوم] اتصلوا المخطوفين. => Then after a few [days] the kidnapped ones called.  \nبعدين كم يوم [اتصلوا] المخطوفين. => Then after a few days the kidnapped ones [called].  \nبعدين كم يوم اتصلوا [المخطوفين]. => Then after a few days [the kidnapped ones] called. # المخطوفين is the definite plural noun meaning \"the kidnapped ones\"\n\n[حكوا] مع أمي، لهلق نحن ما بنعرف => [They spoke] with my mother, until now we don't know\nحكوا [مع] أمي، لهلق نحن ما بنعرف => They spoke [with] my mother, until now we don't know\nحكوا مع [أمي]، لهلق نحن ما بنعرف => They spoke with [my mother], until now we don't know\nحكوا مع أمي، [لهلق] نحن ما بنعرف => They spoke with my mother, [until now] we don't know\nحكوا مع أمي، لهلق [نحن] ما بنعرف => They spoke with my mother, until now [we] don't know\nحكوا مع أمي، لهلق نحن [ما بنعرف] => They spoke with my mother, until now we [don't know]\n\n[شو] حكوا مع أمي. => [What] they said to my mother.\nشو [حكوا] مع أمي. => What [they said] to my mother.\nشو حكوا [مع] أمي. => What they said [to] my mother.\nشو حكوا مع [أمي]. => What they said to [my mother].\n\n[أنا] بتذكر كتير كتير العياط اللي كان. => [I] remember very, very much the crying that was there.\nأنا [بتذكر] كتير كتير العياط اللي كان. => I [remember] very, very much the crying that was there.\nأنا بتذكر [كتير] كتير العياط اللي كان. => I remember [very], very much the crying that was there.\nأنا بتذكر كتير [كتير] العياط اللي كان. => I remember very, [very much] the crying that was there.\nأنا بتذكر كتير كتير [العياط] اللي كان. => I remember very, very much [the crying] that was there.\nأنا بتذكر كتير كتير العياط [اللي] كان. => I remember very, very much the crying [that] was there.\nأنا بتذكر كتير كتير العياط اللي [كان]. => I remember very, very much the crying that [was there].\n\n[هني] خلوه يحكي معنا، حكي معنا، => [They] let him speak with us, he spoke with us,\nهني [خلوه] يحكي معنا، حكي معنا، => They [let him] speak with us, he spoke with us,\nهني خلوه [يحكي] معنا، حكي معنا، => They let him [speak] with us, he spoke with us,\nهني خلوه يحكي [معنا]، حكي معنا، => They let him speak [with us], he spoke with us,\nهني خلوه يحكي معنا، [حكي] معنا، => They let him speak with us, [he spoke] with us,\nهني خلوه يحكي معنا، حكي [معنا]، => They let him speak with us, he spoke [with us],\n\n[حكي] مع أمي. => [He spoke] with my mother.\nحكي [مع] أمي. => He spoke [with] my mother.\nحكي مع [أمي]. => He spoke with [my mother]\n\n[حكي] مع أخي الكبير، وحكي معي أنا. => [He spoke] with my older brother, and he spoke with me.\nحكي [مع] أخي الكبير، وحكي معي أنا. => He spoke [with] my older brother, and he spoke with me.\nحكي مع [أخي] الكبير، وحكي معي أنا. => my brother # \"my brother\" is not a contiguous span in the English sentence\nحكي مع أخي [الكبير]، وحكي معي أنا. => He spoke with my [older] brother, and he spoke with me.\nحكي مع أخي الكبير، [و]حكي معي أنا. => He spoke with my older brother, [and] he spoke with me.\nحكي مع أخي الكبير، و[حكي] معي أنا. => He spoke with my older brother, and [he spoke] with me.\nحكي مع أخي الكبير، وحكي [معي] أنا. => He spoke with my older brother, and he spoke [with me].\nحكي مع أخي الكبير، وحكي معي [أنا]. => me # used for emphasis on \"me\"\n\n[أنا] بتذكر شو قال لي، أنا ما بعرف شو => [I] remember what he said to me, I don't know what\nأنا [بتذكر] شو قال لي، أنا ما بعرف شو => I [remember] what he said to me, I don't know what\nأنا بتذكر [شو] قال لي، أنا ما بعرف شو => I remember [what] he said to me, I don't know what\nأنا بتذكر شو [قال] لي، أنا ما بعرف شو => I remember what [he said] to me, I don't know what\nأنا بتذكر شو قال [لي]، أنا ما بعرف شو => I remember what he said [to me], I don't know what\nأنا بتذكر شو قال لي، [أنا] ما بعرف شو => I remember what he said to me, [I] don't know what\nأنا بتذكر شو قال لي، أنا [ما بعرف] شو => I remember what he said to me, I [don't know] what\nأنا بتذكر شو قال لي، أنا ما بعرف [شو] => I remember what he said to me, I don't know [what]\n\n[بتذكر] شو قال لأخوي ولأمي. => [I remember] what he said to my brother and my mother.\nبتذكر [شو] قال لأخوي ولأمي. => I remember [what] he said to my brother and my mother.\nبتذكر شو [قال] لأخوي ولأمي. => I remember what [he said] to my brother and my mother.\nبتذكر شو قال [لأخوي] ولأمي. => I remember what he said [to my brother] and my mother.\nبتذكر شو قال لأخوي [ولأمي]. => I remember what he said to my brother [and my mother] # maps \"and to my mother\" to the English \"and my mother\" for better flow components\n\n[قلت] له بابا بابا كيفك؟ مشتاق لك كتير. => [I said] to him Papa Papa how are you? I miss you so much.\nقلت [له] بابا بابا كيفك؟ مشتاق لك كتير. => I said [to him] Papa Papa how are you? I miss you so much.\nقلت له [بابا بابا] كيفك؟ مشتاق لك كتير. => I said to him [Papa Papa] how are you? I miss you so much.\nقلت له بابا بابا [كيفك]؟ مشتاق لك كتير. => I said to him Papa Papa [how are you]? I miss you so much.\nقلت له بابا بابا كيفك؟ [مشتاق لك] كتير. => I said to him Papa Papa how are you? [I miss you] so much.\nقلت له بابا بابا كيفك؟ مشتاق لك [كتير]. => I said to him Papa Papa how are you? I miss you [so much].\n\n[قال] لي أنا بعرف، أنا بحسك، => [He told] me I know, I feel you,\nقال [لي] أنا بعرف، أنا بحسك، => He told [me] I know, I feel you,\nقال لي [أنا] بعرف، أنا بحسك، => He told me [I] know, I feel you,\nقال لي أنا [بعرف]، أنا بحسك، => He told me I [know], I feel you,\nقال لي أنا بعرف، [أنا] بحسك، => He told me I know, [I] feel you,\nقال لي أنا بعرف، أنا [بحسك]، => He told me I know, I [feel you]\n\n[و]عم تشتاق لي كتير. => [And] you miss me so much.\nو[عم تشتاق] لي كتير. => And [you miss] me so much.\nوعم تشتاق [لي] كتير. => And you miss [me] so much.\nوعم تشتاق لي [كتير]. => And you miss me [so much].\n\n[دير بالك] عليهم على أخوك الكبير، => [Take care] of them, your older brother,\nدير بالك [عليهم] على أخوك الكبير، => Take care [of them], your older brother,\nدير بالك عليهم على [أخوك] الكبير، => Take care of them, [your brother] # أخوك translates to \"your brother\" as a single unit in Arabic\nدير بالك عليهم على أخوك [الكبير]، => Take care of them, your [older] brother,\n\n[بتعرف] أنا بحبك، ما تسوي مشاكل. => [You know] I love you, don't make trouble.\nبتعرف [أنا] بحبك، ما تسوي مشاكل. => You know [I] love you, don't make trouble.\nبتعرف أنا [بحبك]، ما تسوي مشاكل. => You know I [love you], don't make trouble.\nبتعرف أنا بحبك، [ما] تسوي مشاكل. => You know I love you, [don't] make trouble.\nبتعرف أنا بحبك، ما [تسوي] مشاكل. => You know I love you, don't [make] trouble.\nبتعرف أنا بحبك، ما تسوي [مشاكل]. => You know I love you, don't make [trouble]\n\n[انتبه على] أخوك الكبير وأخوك الصغير، => [Look after] your older brother and your younger brother,\nانتبه على [أخوك] الكبير وأخوك الصغير، => Look after [your brother] and your younger brother,\nانتبه على أخوك [الكبير] وأخوك الصغير، => Look after your [older] brother and your younger brother,\nانتبه على أخوك الكبير [و]أخوك الصغير، => Look after your older brother [and] your younger brother,\nانتبه على أخوك الكبير و[أخوك] الصغير، => Look after your older brother and [your brother],\nانتبه على أخوك الكبير وأخوك [الصغير]، => Look after your older brother and your [younger] brother,\n\n[و]اسمع كلام ماما، شو بتقول لك ساوي. => [And] listen to Mama, whatever she tells you do.\nو[اسمع] كلام ماما، شو بتقول لك ساوي. => And [listen] to Mama, whatever she tells you do.\nواسمع [كلام] ماما، شو بتقول لك ساوي. => speech, words, talk\nواسمع كلام [ماما]، شو بتقول لك ساوي. => And listen to [Mama], whatever she tells you do.\nواسمع كلام ماما، [شو] بتقول لك ساوي. => And listen to Mama, [whatever] she tells you do.\nواسمع كلام ماما، شو [بتقول] لك ساوي. => And listen to Mama, whatever [she tells] you do.\nواسمع كلام ماما، شو بتقول [لك] ساوي. => And listen to Mama, whatever she tells [you] do.\nواسمع كلام ماما، شو بتقول لك [ساوي]. => And listen to Mama, whatever she tells you [do] # from the verb \"to do\" or \"to make\" (sawwa)\n\n[قلت] له طيب بابا إيمتى بدنا نشوفك؟ => [I said] to him okay Papa when will we see you?\nقلت [له] طيب بابا إيمتى بدنا نشوفك؟ => I said [to him] okay Papa when will we see you?\nقلت له [طيب] بابا إيمتى بدنا نشوفك؟ => I said to him [okay] Papa when will we see you?\nقلت له طيب [بابا] إيمتى بدنا نشوفك؟ => I said to him okay [Papa] when will we see you?\nقلت له طيب بابا [إيمتى] بدنا نشوفك؟ => I said to him okay Papa [when] will we see you?\nقلت له طيب بابا إيمتى [بدنا] نشوفك؟ => I said to him okay Papa when [will we] see you?\nقلت له طيب بابا إيمتى بدنا [نشوفك]؟ => I said to him okay Papa when will we [see you]?\n\n[قال] لي قريباً بدك تشوفني. => [He told] me soon you will see me.\nقال [لي] قريباً بدك تشوفني. => He told [me] soon you will see me.\nقال لي [قريباً] بدك تشوفني. => He told me [soon] you will see me.\nقال لي قريباً [بدك] تشوفني. => He told me soon [you will] see me.\nقال لي قريباً بدك [تشوفني]. => He told me soon you will [see me].\n\n[أنا جاي] شوي كان عندي كم شغل وبرجع. => [I'm coming] soon, I had some work and I'll return.\nأنا جاي [شوي] كان عندي كم شغل وبرجع. => I'm coming [soon], I had some work and I'll return.\nأنا جاي شوي [كان عندي] كم شغل وبرجع. => I'm coming soon, [I had] some work and I'll return.\nأنا جاي شوي كان عندي [كم شغل] وبرجع. => I'm coming soon, I had [some work] and I'll return.\nأنا جاي شوي كان عندي كم شغل [وبرجع]. => I'm coming soon, I had some work [and I'll return].\n\n[بعد ما] اختفى هو إنتو قعدتوا بلبنان => [After] he disappeared, you stayed in Lebanon\nبعد ما [اختفى] هو إنتو قعدتوا بلبنان => After he [disappeared], you stayed in Lebanon\nبعد ما اختفى [هو] إنتو قعدتوا بلبنان => After [he] disappeared, you stayed in Lebanon\nبعد ما اختفى هو [إنتو] قعدتوا بلبنان => After he disappeared, [you] stayed in Lebanon\nبعد ما اختفى هو إنتو [قعدتوا] بلبنان => After he disappeared, you [stayed] in Lebanon\nبعد ما اختفى هو إنتو قعدتوا [بلبنان] => After he disappeared, you stayed [in Lebanon]\n\n[سنتين] تقريباً لبين ما طلعتوا على إسرائيل؟ => For about [two years] before you left for Israel?\nسنتين [تقريباً] لبين ما طلعتوا على إسرائيل؟ => For [about] two years before you left for Israel?\nسنتين تقريباً [لبين ما] طلعتوا على إسرائيل؟ => For about two years [before] you left for Israel?\nسنتين تقريباً لبين ما [طلعتوا] على إسرائيل؟ => For about two years before [you left] for Israel?\nسنتين تقريباً لبين ما طلعتوا [على] إسرائيل؟ => For about two years before you left [for] Israel?\nسنتين تقريباً لبين ما طلعتوا على [إسرائيل]؟ => For about two years before you left for [Israel]?\n\n[أه]. كيف كانت الحياة بهديك الفترة => [Yeah]. How was life in that period\nأه. [كيف] كانت الحياة بهديك الفترة => Yeah. [How] was life in that period\nأه. كيف [كانت] الحياة بهديك الفترة => Yeah. How [was] life in that period\nأه. كيف كانت [الحياة] بهديك الفترة => Yeah. How was [life] in that period\nأه. كيف كانت الحياة [بهديك] الفترة => Yeah. How was life [in that] period\nأه. كيف كانت الحياة بهديك [الفترة] => Yeah. How was life in that [period]\n\n[بعد ما] اختفى؟ => [After] he disappeared? # \"بعد ما\" is a compound conjunction meaning \"after\" when followed by a verb\nبعد ما [اختفى]؟ => After [he disappeared]? # The Arabic verb \"اختفى\" inherently includes the 3rd person masculine subject \"he\"\n\n[كان في] طوشة كبيرة، بلش الحزب => [There was] big chaos, the party started\nكان في [طوشة] كبيرة، بلش الحزب => There was big [chaos], the party started\nكان في طوشة [كبيرة]، بلش الحزب => There was [big] chaos, the party started\nكان في طوشة كبيرة، [بلش] الحزب => There was big chaos, the party [started]\nكان في طوشة كبيرة، بلش [الحزب] => There was big chaos, [the party] started\n\n[حزب الله] وحزب أمل. => [Hezbollah] and Amal Party.\nحزب الله [و]حزب أمل. => Hezbollah [and] Amal Party.\nحزب الله و[حزب] أمل. => Hezbollah and Amal [Party]\nحزب الله وحزب [أمل] => Hezbollah and [Amal] Party.\n\n[بلشوا] تحاربوا بيناتهم، بتعرف الحرب. => [They started] fighting among themselves, you know war.\nبلشوا [تحاربوا] بيناتهم، بتعرف الحرب. => They started [fighting] among themselves, you know war.\nبلشوا تحاربوا [بيناتهم]، بتعرف الحرب. => They started fighting [among themselves], you know war.\nبلشوا تحاربوا بيناتهم، [بتعرف] الحرب. => They started fighting among themselves, [you know] war.\nبلشوا تحاربوا بيناتهم، بتعرف [الحرب]. => They started fighting among themselves, you know [war]\n\n[مين] حيستلم البناية تبعت الطائفة => [Who] will take over the building of the community\nمين [حيستلم] البناية تبعت الطائفة => Who [will take over] the building of the community\nمين حيستلم [البناية] تبعت الطائفة => Who will take over [the building] of the community\nمين حيستلم البناية [تبعت] الطائفة => Who will take over the building [of] the community\nمين حيستلم البناية تبعت [الطائفة] => Who will take over the building of [the community]\n\n[تبعت] اليهود => [Of] the Jews\nتبعت [اليهود] => Of [the Jews]\n\nبالطابق [الثاني] بالبيت اللي تحت منا => On the [second] floor in the building below us\nبالطابق الثاني [بالبيت] اللي تحت منا => On the second floor [in the building] below us\nبالطابق الثاني بالبيت اللي [تحت] منا => On the second floor in the building [below] us\nبالطابق الثاني بالبيت اللي تحت [منا] => On the second floor in the building below [us]\n\n[كان ساكن] رئيس حزب أمل. => [Lived] the head of Amal Party.\nكان ساكن [رئيس] حزب أمل. => Lived [the head] of Amal Party.\nكان ساكن رئيس [حزب] أمل. => Lived the head of Amal [Party]\nكان ساكن رئيس حزب [أمل]. => Lived the head of [Amal] Party.\n\n[و]فوقنا كانوا ناس تبعت حزب الله. => [And] above us were people from Hezbollah.\nو[فوقنا] كانوا ناس تبعت حزب الله. => And [above us] were people from Hezbollah.\nوفوقنا [كانوا] ناس تبعت حزب الله. => And above us [were] people from Hezbollah.\nوفوقنا كانوا [ناس] تبعت حزب الله. => And above us were [people] from Hezbollah.\nوفوقنا كانوا ناس [تبعت] حزب الله. => And above us were people [from] Hezbollah.\nوفوقنا كانوا ناس تبعت [حزب الله]. => And above us were people from [Hezbollah].\n\n[و]كنت تشوفهم بتعرف هني نازلين على الدرج، => [And] you would see them, you know them coming down the stairs,\nو[كنت] تشوفهم بتعرف هني نازلين على الدرج، => And [you would] see them, you know them coming down the stairs,\nوكنت [تشوفهم] بتعرف هني نازلين على الدرج، => And you would [see them], you know them coming down the stairs,\nوكنت تشوفهم [بتعرف] هني نازلين على الدرج، => And you would see them, [you know] them coming down the stairs,\nوكنت تشوفهم بتعرف [هني] نازلين على الدرج، => And you would see them, you know [them] coming down the stairs,\nوكنت تشوفهم بتعرف هني [نازلين] على الدرج، => And you would see them, you know them [coming down] the stairs,\nوكنت تشوفهم بتعرف هني نازلين [على] الدرج، => on\nوكنت تشوفهم بتعرف هني نازلين على [الدرج]، => And you would see them, you know them coming down [the stairs],\n\n[نحن] عم نطلع من البيت. => While [we] were leaving the house.\nنحن [عم نطلع] من البيت. => While we [were leaving] the house.\nنحن عم نطلع [من] البيت. => from\nنحن عم نطلع من [البيت]. => While we were leaving the [house]\n\n[نازلين] كل واحد طالع نازل على الدرج => [Coming down], each one going up down on the stairs\nنازلين [كل واحد] طالع نازل على الدرج => Coming down, [each one] going up down on the stairs\nنازلين كل واحد [طالع] نازل على الدرج => Coming down, each one [going up] down on the stairs\nنازلين كل واحد طالع [نازل] على الدرج => Coming down, each one going up [down] on the stairs\nنازلين كل واحد طالع نازل [على] الدرج => Coming down, each one going up down [on] the stairs\nنازلين كل واحد طالع نازل على [الدرج] => Coming down, each one going up down on [the stairs]\n\n[تشوف] سلاح => [You see] weapons\nتشوف [سلاح] => You see [weapons]\n\n[وأوقات] كانوا يتحاربوا بيناتهم، => [And sometimes] they were fighting among themselves,\nوأوقات [كانوا] يتحاربوا بيناتهم، => And sometimes [they were] fighting among themselves,\nوأوقات كانوا [يتحاربوا] بيناتهم، => And sometimes they were [fighting] among themselves,\nوأوقات كانوا يتحاربوا [بيناتهم]، => And sometimes they were fighting [among themselves],\n\n[يعني] كنا نحن بالبيت وكم مرة بدنا نطلع. => [I mean] we were in the house and several times we wanted to go out.\nيعني [كنا نحن] بالبيت وكم مرة بدنا نطلع. => I mean [we were] in the house and several times we wanted to go out.\nيعني كنا نحن [بالبيت] وكم مرة بدنا نطلع. => I mean we were [in the house] and several times we wanted to go out.\nيعني كنا نحن بالبيت [وكم مرة] بدنا نطلع. => I mean we were in the house [and several times] we wanted to go out.\nيعني كنا نحن بالبيت وكم مرة [بدنا] نطلع. => I mean we were in the house and several times [we wanted] to go out.\nيعني كنا نحن بالبيت وكم مرة بدنا [نطلع]. => I mean we were in the house and several times we wanted [to go out].\n\n[بتشوفهم] بيقوصوا واحد على الثاني => [You'd see them] aiming at each other\nبتشوفهم [بيقوصوا] واحد على الثاني => You'd see them [aiming] at each other\nبتشوفهم بيقوصوا [واحد على الثاني] => You'd see them aiming [at each other]\n\n[على] الدرج يعني ترررر بيقوصوا هيك => [On] the stairs, I mean vrrrrr they aim like that\nعلى [الدرج] يعني ترررر بيقوصوا هيك => On [the stairs], I mean vrrrrr they aim like that\nعلى الدرج [يعني] ترررر بيقوصوا هيك => On the stairs, [I mean] vrrrrr they aim like that\nعلى الدرج يعني [ترررر] بيقوصوا هيك => On the stairs, I mean [vrrrrr] they aim like that\nعلى الدرج يعني ترررر [بيقوصوا] هيك => On the stairs, I mean vrrrrr [they aim] like that\nعلى الدرج يعني ترررر بيقوصوا [هيك] => On the stairs, I mean vrrrrr they aim [like that]\n\n[وبعدين] شفنا الحالة أمي شافت الحالة => [And then] we saw the situation, my mother saw the situation\nوبعدين [شفنا] الحالة أمي شافت الحالة => And then [we saw] the situation, my mother saw the situation\nوبعدين شفنا [الحالة] أمي شافت الحالة => And then we saw [the situation], my mother saw the situation\nوبعدين شفنا الحالة [أمي] شافت الحالة => And then we saw the situation, [my mother] saw the situation\nوبعدين شفنا الحالة أمي [شافت] الحالة => And then we saw the situation, my mother [saw] the situation\nوبعدين شفنا الحالة أمي شافت [الحالة] => And then we saw the situation, my mother saw [the situation]\n\n[يعني] مو كل هالقد حتمشي معنا منيح. => [I mean] it's not all this much going to go well with us.\nيعني [مو] كل هالقد حتمشي معنا منيح. => I mean [it's not] all this much going to go well with us.\nيعني مو [كل هالقد] حتمشي معنا منيح. => I mean it's not [all this much] going to go well with us.\nيعني مو كل هالقد [حتمشي] معنا منيح. => I mean it's not all this much [going to go] well with us.\nيعني مو كل هالقد حتمشي [معنا] منيح. => I mean it's not all this much going to go [with us].\nيعني مو كل هالقد حتمشي معنا [منيح]. => I mean it's not all this much going to go [well] with us.\n\n[وصار] كله حكي بتعرف نروح من بيت لبيت، => [And it became] all talk, you know we go from house to house,\nوصار [كله] حكي بتعرف نروح من بيت لبيت، => And it became [all] talk, you know we go from house to house,\nوصار كله [حكي] بتعرف نروح من بيت لبيت، => And it became all [talk], you know we go from house to house, \nوصار كله حكي [بتعرف] نروح من بيت لبيت، => And it became all talk, [you know] we go from house to house,\nوصار كله حكي بتعرف [نروح] من بيت لبيت، => And it became all talk, you know [we go] from house to house,\nوصار كله حكي بتعرف نروح [من] بيت لبيت، => And it became all talk, you know we go [from] house to house,\nوصار كله حكي بتعرف نروح من [بيت] لبيت، => And it became all talk, you know we go from [house] to house,\nوصار كله حكي بتعرف نروح من بيت [لبيت]، => And it became all talk, you know we go from house [to house],\n\n[بعدين] رحنا عند المسيحية. => [Then] we went to the Christians.\nبعدين [رحنا] عند المسيحية. => Then [we went] to the Christians.\nبعدين رحنا [عند] المسيحية. => Then we went [to] the Christians.\nبعدين رحنا عند [المسيحية]. => Then we went to [the Christians].\n\n[كنا] كم مرة كمان عند حزب الله، => [We were] several times also at Hezbollah,\nكنا [كم مرة] كمان عند حزب الله، => We were [several times] also at Hezbollah,\nكنا كم مرة [كمان] عند حزب الله، => We were several times [also] at Hezbollah,\nكنا كم مرة كمان [عند] حزب الله، => We were several times also [at] Hezbollah,\nكنا كم مرة كمان عند [حزب الله]، => We were several times also at [Hezbollah], # Treating the multi-word name as a single unit mapping to its English equivalent\n\n[حكينا] مع حسن نصر الله => [We spoke] with Hassan Nasrallah\nحكينا [مع] حسن نصر الله => We spoke [with] Hassan Nasrallah\nحكينا مع [حسن نصر الله] => We spoke with [Hassan Nasrallah]\n\n[اللي] كان سكرتيرة تبعت حزب الله بالأول. => [Who] was the secretary of Hezbollah in the beginning.\nاللي [كان] سكرتيرة تبعت حزب الله بالأول. => Who [was] the secretary of Hezbollah in the beginning.\nاللي كان [سكرتيرة] تبعت حزب الله بالأول. => Who was [the secretary] of Hezbollah in the beginning.\nاللي كان سكرتيرة [تبعت] حزب الله بالأول. => Who was the secretary [of] Hezbollah in the beginning.\nاللي كان سكرتيرة تبعت [حزب الله] بالأول. => Who was the secretary of [Hezbollah] in the beginning.\nاللي كان سكرتيرة تبعت حزب الله [بالأول] => in the beginning # 'بالأول' functions as a prepositional phrase meaning 'in the beginning' or 'at first'\n\n[مرة على مرة] كنا عنده، كم مرة كنا عنده. => [Time after time] we were at his place, several times we were at his place.\nمرة على مرة [كنا] عنده، كم مرة كنا عنده. => Time after time [we were] at his place, several times we were at his place.\nمرة على مرة كنا [عنده]، كم مرة كنا عنده. => Time after time we were [at his place], several times we were at his place.\nمرة على مرة كنا عنده، [كم مرة] كنا عنده. => several times # كم usually means 'how many' but functions here as 'several' or 'so many'\nمرة على مرة كنا عنده، كم مرة [كنا] عنده. => Time after time we were at his place, several times [we were] at his place.\nمرة على مرة كنا عنده، كم مرة كنا [عنده]. => Time after time we were at his place, several times we were [at his place].\n\n[اعترف]، قال لي نحن خطفناه. => [He confessed], he told me we kidnapped him.\nاعترف، [قال] لي نحن خطفناه. => He confessed, [he told] me we kidnapped him.\nاعترف، قال [لي] نحن خطفناه. => He confessed, he told [me] we kidnapped him.\nاعترف، قال لي [نحن] خطفناه. => He confessed, he told me [we] kidnapped him.\nاعترف، قال لي نحن [خطفناه]. => He confessed, he told me we [kidnapped him]\n\n[حسن] نصر الله اعترف؟ اعترف اعترف => [Hassan] Nasrallah confessed? Confessed, confessed\nحسن [نصر الله] اعترف؟ اعترف اعترف => Hassan [Nasrallah] confessed? Confessed, confessed\nحسن نصر الله [اعترف]؟ اعترف اعترف => Hassan Nasrallah [confessed]? Confessed, confessed\nحسن نصر الله اعترف؟ [اعترف] اعترف => Hassan Nasrallah confessed? [Confessed], confessed\nحسن نصر الله اعترف؟ اعترف [اعترف] => Hassan Nasrallah confessed? Confessed, [confessed]\n\n[نحن] خطفناه. => [We] kidnapped him.\nنحن [خطفناه]. => We [kidnapped him].\n\n[و]كمان شوي بنرجع لكم إياه. => [And] in a little while we will return him to you.\nو[كمان شوي] بنرجع لكم إياه. => And [in a little while] we will return him to you.\nوكمان شوي [بنرجع] لكم إياه. => And in a little while [we will return] him to you.\nوكمان شوي بنرجع [لكم] إياه. => And in a little while we will return him [to you].\nوكمان شوي بنرجع لكم [إياه]. => And in a little while we will return [him] to you.\n\n[هيك] حكى؟ هيك حكى. => He said [that]? He said that.\nهيك [حكى]؟ هيك حكى. => [He said] that? He said that.\nهيك حكى؟ [هيك] حكى. => He said that? He said [that].\nهيك حكى؟ هيك [حكى]. => He said that? [He said] that.\n\n[و]بذات الوقت كان ممنوع نفوت لعنده => [And] at the same time it was forbidden to enter to him\nو[بذات الوقت] كان ممنوع نفوت لعنده => And [at the same time] it was forbidden to enter to him\nوبذات الوقت [كان] ممنوع نفوت لعنده => And at the same time [it was] forbidden to enter to him\nوبذات الوقت كان [ممنوع] نفوت لعنده => And at the same time it was [forbidden] to enter to him\nوبذات الوقت كان ممنوع [نفوت] لعنده => And at the same time it was forbidden [to enter] to him\nوبذات الوقت كان ممنوع نفوت [لعنده] => And at the same time it was forbidden to enter [to him]\n\n[على] حزب الله على المكاتب تبعهم. => [To] Hezbollah, to their offices.\nعلى [حزب الله] على المكاتب تبعهم. => To [Hezbollah], to their offices.\nعلى حزب الله [على] المكاتب تبعهم. => To Hezbollah, [to] their offices.\nعلى حزب الله على [المكاتب] تبعهم. => To Hezbollah, to their [offices].\nعلى حزب الله على المكاتب [تبعهم] => To Hezbollah, to [their] offices.\n\n[طيب] ما بعرف بعدين أمي شو ساوت، => [Okay] I don't know then what my mother did,\nطيب [ما بعرف] بعدين أمي شو ساوت، => Okay [I don't know] then what my mother did,\nطيب ما بعرف [بعدين] أمي شو ساوت، => Okay I don't know [then] what my mother did,\nطيب ما بعرف بعدين [أمي] شو ساوت، => Okay I don't know then what [my mother] did,\nطيب ما بعرف بعدين أمي [شو] ساوت، => Okay I don't know then [what] my mother did,\nطيب ما بعرف بعدين أمي شو [ساوت]، => Okay I don't know then what my mother [did],\n\n[أمي] حكيت مع... => [My mother] spoke with...\nأمي [حكيت] مع... => My mother [spoke] with...\nأمي حكيت [مع]... => My mother spoke [with]...\n\n[يعني] كنا بتعرف كنا كمان عند جنبلاط. => [I mean] we knew we were also at Junblat.\nيعني [كنا بتعرف] كنا كمان عند جنبلاط. => I mean [we knew] we were also at Junblat.\nيعني كنا بتعرف [كنا] كمان عند جنبلاط. => I mean we knew [we were] also at Junblat.\nيعني كنا بتعرف كنا [كمان] عند جنبلاط. => I mean we knew we were [also] at Junblat.\nيعني كنا بتعرف كنا كمان [عند] جنبلاط. => I mean we knew we were also [at] Junblat.\nيعني كنا بتعرف كنا كمان عند [جنبلاط] => I mean we knew we were also at [Junblat]\n\n[قال لي] حلف، قال لي أنا بعرفه لزوجك، => [He told me] I swear, he told me I know your husband,\nقال لي [حلف]، قال لي أنا بعرفه لزوجك، => He told me [I swear], he told me I know your husband,\nقال لي حلف، [قال لي] أنا بعرفه لزوجك، => He told me I swear, [he told me] I know your husband,\nقال لي حلف، قال لي [أنا] بعرفه لزوجك، => He told me I swear, he told me [I] know your husband,\nقال لي حلف، قال لي أنا [بعرفه] لزوجك، => He told me I swear, he told me I [know] your husband,\nقال لي حلف، قال لي أنا بعرفه [لزوجك]، => He told me I swear, he told me I know [your husband],\n\n[نحن] ما سوينا شي. => [We] didn't do anything.\nنحن [ما سوينا] شي. => We [didn't do] anything.\nنحن ما سوينا [شي]. => We didn't do [anything].\n\n[خليني] فتش أنا شو بيطلع معي أنا بقول لك => [Let me] search, what I find I will tell you.\nخليني [فتش] أنا شو بيطلع معي أنا بقول لك => Let me [search], what I find I will tell you.\nخليني فتش أنا [شو] بيطلع معي أنا بقول لك => Let me search, [what] I find I will tell you.\nخليني فتش أنا شو [بيطلع معي] أنا بقول لك => Let me search, what [I find] I will tell you.\nخليني فتش أنا شو بيطلع معي [أنا] بقول لك => Let me search, what I find [I] will tell you.\nخليني فتش أنا شو بيطلع معي أنا [بقول لك] => Let me search, what I find I [will tell you].\n\n[يعني] ما في حدا بلبنان ما بيعرفه لأبوي. => [I mean] there's no one in Lebanon who doesn't know my father.\nيعني [ما في] حدا بلبنان ما بيعرفه لأبوي. => I mean [there's no] one in Lebanon who doesn't know my father.\nيعني ما في [حدا] بلبنان ما بيعرفه لأبوي. => I mean there's no [one] in Lebanon who doesn't know my father.\nيعني ما في حدا [بلبنان] ما بيعرفه لأبوي. => I mean there's no one [in Lebanon] who doesn't know my father.\nيعني ما في حدا بلبنان [ما بيعرفه] لأبوي. => I mean there's no one in Lebanon who [doesn't know] my father.\nيعني ما في حدا بلبنان ما بيعرفه [لأبوي]. => I mean there's no one in Lebanon who doesn't know [my father] # لأبوي corresponds to \"my father\", the \"لـ\" is a grammatical marker for the object here.\n\n[بهديك] الفترة كانوا كتير يهود من سوريا => [In that] period there were many Jews from Syria\nبهديك [الفترة] كانوا كتير يهود من سوريا => In that [period] there were many Jews from Syria\nبهديك الفترة [كانوا] كتير يهود من سوريا => In that period [there were] many Jews from Syria\nبهديك الفترة كانوا [كتير] يهود من سوريا => In that period there were [many] Jews from Syria\nبهديك الفترة كانوا كتير [يهود] من سوريا => In that period there were many [Jews] from Syria\nبهديك الفترة كانوا كتير يهود [من] سوريا => In that period there were many Jews [from] Syria\nبهديك الفترة كانوا كتير يهود من [سوريا] => In that period there were many Jews from [Syria]\n\n[ما بيطيقوا] الحياة بسوريا وكانوا يهربوا، => Who [couldn't stand] life in Syria and they were fleeing,\nما بيطيقوا [الحياة] بسوريا وكانوا يهربوا، => Who couldn't stand [life] in Syria and they were fleeing,\nما بيطيقوا الحياة [بسوريا] وكانوا يهربوا، => Who couldn't stand life [in Syria] and they were fleeing,\nما بيطيقوا الحياة بسوريا [وكانوا] يهربوا، => Who couldn't stand life in Syria [and they were] fleeing,\nما بيطيقوا الحياة بسوريا وكانوا [يهربوا]، => Who couldn't stand life in Syria and they were [fleeing],\n\n[أبوك] كان يساعدهم صح؟ صح، => [Your father] was helping them right? Right,\nأبوك [كان] يساعدهم صح؟ صح، => Your father [was] helping them right? Right,\nأبوك كان [يساعدهم] صح؟ صح، => Your father was [helping them] right? Right,\nأبوك كان يساعدهم [صح]؟ صح، => Your father was helping them [right]? Right,\nأبوك كان يساعدهم صح؟ [صح]، => Your father was helping them right? [Right],\n\n[اللي] بده يجي لإسرائيل مش مهم من وين، => [Whoever] wants to come to Israel, it doesn't matter from where,\nاللي [بده] يجي لإسرائيل مش مهم من وين، => Whoever [wants] to come to Israel, it doesn't matter from where,\nاللي بده [يجي] لإسرائيل مش مهم من وين، => Whoever wants [to come] to Israel, it doesn't matter from where,\nاللي بده يجي [لإسرائيل] مش مهم من وين، => Whoever wants to come [to Israel], it doesn't matter from where,\nاللي بده يجي لإسرائيل [مش مهم] من وين، => Whoever wants to come to Israel, [it doesn't matter] from where,\nاللي بده يجي لإسرائيل مش مهم [من] وين، => Whoever wants to come to Israel, it doesn't matter [from] where,\nاللي بده يجي لإسرائيل مش مهم من [وين]، => Whoever wants to come to Israel, it doesn't matter from [where],\n\n[من] تركيا، من أوروبا. => [From] Turkey, from Europe.\nمن [تركيا]، من أوروبا. => From [Turkey], from Europe.\nمن تركيا، [من] أوروبا. => From Turkey, [from] Europe.\nمن تركيا، من [أوروبا]. => From Turkey, from [Europe]\n\n[بتعرف] بالوقت هاد كانوا يجوا => [You know] at that time they were coming\nبتعرف [بالوقت] هاد كانوا يجوا => at the time\nبتعرف بالوقت [هاد] كانوا يجوا => You know at [that] time they were coming\nبتعرف بالوقت هاد [كانوا] يجوا => You know at that time [they were] coming\nبتعرف بالوقت هاد كانوا [يجوا] => You know at that time they were [coming]\n\n[على] طريق لبنان. => [Through] the Lebanon route\nعلى [طريق] لبنان. => Through the Lebanon [route]\nعلى طريق [لبنان]. => Through the [Lebanon] route\n\n[لبنان] زي نيويورك بهديك الوقت، => [Lebanon] was like New York at that time,\nلبنان [زي] نيويورك بهديك الوقت، => Lebanon was [like] New York at that time,\nلبنان زي [نيويورك] بهديك الوقت، => Lebanon was like [New York] at that time,\nلبنان زي نيويورك [بهديك] الوقت، => Lebanon was like New York [at that] time,\nلبنان زي نيويورك بهديك [الوقت]، => Lebanon was like New York at that [time]\n\n[كل واحد] بده يسوي شوي مصاري، => [Everyone] who wants to make some money,\nكل واحد [بده] يسوي شوي مصاري، => Everyone [who wants] to make some money,\nكل واحد بده [يسوي] شوي مصاري، => Everyone who wants [to make] some money,\nكل واحد بده يسوي [شوي] مصاري، => Everyone who wants to make [some] money,\nكل واحد بده يسوي شوي [مصاري]، => Everyone who wants to make some [money]\n\n[يهودي] مش يهودي، من عراق، => [Jew] or not Jew, from Iraq,\nيهودي [مش] يهودي، من عراق، => Jew or [not] Jew, from Iraq,\nيهودي مش [يهودي]، من عراق، => Jew or not [Jew], from Iraq,\nيهودي مش يهودي، [من] عراق، => Jew or not Jew, [from] Iraq,\nيهودي مش يهودي، من [عراق]، => Jew or not Jew, from [Iraq]\n\n[من] وين ما بدك ينزل يسوي مصاري بلبنان. => [From] wherever you want, come down make money in Lebanon.\nمن [وين ما] بدك ينزل يسوي مصاري بلبنان. => From [wherever] you want, come down make money in Lebanon.\nمن وين ما [بدك] ينزل يسوي مصاري بلبنان. => From wherever [you want], come down make money in Lebanon.\nمن وين ما بدك [ينزل] يسوي مصاري بلبنان. => From wherever you want, [come down] make money in Lebanon.\nمن وين ما بدك ينزل [يسوي] مصاري بلبنان. => From wherever you want, come down [make] money in Lebanon.\nمن وين ما بدك ينزل يسوي [مصاري] بلبنان. => From wherever you want, come down make [money] in Lebanon.\nمن وين ما بدك ينزل يسوي مصاري [بلبنان]. => From wherever you want, come down make money [in Lebanon]\n\n[كان في] مشكلة بسوريا. => [There was] a problem in Syria.\nكان في [مشكلة] بسوريا. => There was [a problem] in Syria.\nكان في مشكلة [بـ]سوريا. => in\nكان في مشكلة بـ[سوريا]. => There was a problem in [Syria].\n\n[اللي] كانوا يتنكلوا كتير كتير => [Those who] were persecuted very much\nاللي [كانوا] يتنكلوا كتير كتير => Those who [were] persecuted very much\nاللي كانوا [يتنكلوا] كتير كتير => Those who [persecuted] very much\nاللي كانوا يتنكلوا [كتير كتير] => Those who were persecuted [very much]\n\nليهود [الشام] ويهود حلب. => Were the Jews of [Damascus] and Jews of Aleppo.\nليهود الشام [و]يهود حلب. => Were the Jews of Damascus [and] Jews of Aleppo.\nليهود الشام و[يهود] حلب. => Were the Jews of Damascus and [Jews] of Aleppo.\nليهود الشام ويهود [حلب]. => Were the Jews of Damascus and Jews of [Aleppo].\n\n[ما نجحوا] مع الأسد. => [They didn't succeed] with Assad.\nما نجحوا [مع] الأسد. => They didn't succeed [with] Assad.\nما نجحوا مع [الأسد]. => They didn't succeed with [Assad].\n\n[يعني] خذ أمي كانت تطلع مظاهرات، => [I mean] take my mother, she was holding protests,\nيعني [خذ] أمي كانت تطلع مظاهرات، => I mean [take] my mother, she was holding protests,\nيعني خذ [أمي] كانت تطلع مظاهرات، => I mean take [my mother], she was holding protests,\nيعني خذ أمي [كانت] تطلع مظاهرات، => I mean take my mother, [she was] holding protests,\nيعني خذ أمي كانت [تطلع] مظاهرات، => I mean take my mother, she was [holding] protests,\nيعني خذ أمي كانت تطلع [مظاهرات]، => I mean take my mother, she was holding [protests],\n\n[كان في] كتير مظاهرات تبعت الطائفة => [There were] many protests from the community\nكان في [كتير] مظاهرات تبعت الطائفة => There were [many] protests from the community\nكان في كتير [مظاهرات] تبعت الطائفة => There were many [protests] from the community\nكان في كتير مظاهرات [تبعت] الطائفة => There were many protests [from] the community\nكان في كتير مظاهرات تبعت [الطائفة] => There were many protests from [the community]\n\n[اليهود] الشام. => Of [the Jews] of Damascus.\nاليهود [الشام]. => Of the Jews of [Damascus].\n\n[يعني] بيقولوا لي أنا سمعت من العالم، => [I mean] they would tell me, I heard from people,\nيعني [بيقولوا] لي أنا سمعت من العالم، => I mean [they would tell] me, I heard from people,\nيعني بيقولوا [لي] أنا سمعت من العالم، => I mean they would tell [me], I heard from people,\nيعني بيقولوا لي [أنا] سمعت من العالم، => I mean they would tell me, [I] heard from people,\nيعني بيقولوا لي أنا [سمعت] من العالم، => I mean they would tell me, I [heard] from people,\nيعني بيقولوا لي أنا سمعت [من] العالم، => I mean they would tell me, I heard [from] people,\nيعني بيقولوا لي أنا سمعت من [العالم]، => I mean they would tell me, I heard from [people],\n\n[قالوا] لي تعا شوف كنا نشوف أمك => [They told] me come see, we used to see your mother\nقالوا [لي] تعا شوف كنا نشوف أمك => They told [me] come see, we used to see your mother\nقالوا لي [تعا] شوف كنا نشوف أمك => They told me [come] see, we used to see your mother\nقالوا لي تعا [شوف] كنا نشوف أمك => They told me come [see], we used to see your mother\nقالوا لي تعا شوف [كنا] نشوف أمك => They told me come see, [we used to] see your mother\nقالوا لي تعا شوف كنا [نشوف] أمك => They told me come see, we used to [see] your mother\nقالوا لي تعا شوف كنا نشوف [أمك] => They told me come see, we used to see [your mother]\n\n[عم تطلع] على الشاشة وتعيط يا أسد يا أسد => [Appearing] on screen crying, oh Assad oh Assad\nعم تطلع [على] الشاشة وتعيط يا أسد يا أسد => Appearing [on] screen crying, oh Assad oh Assad\nعم تطلع على [الشاشة] وتعيط يا أسد يا أسد => Appearing on [screen] crying, oh Assad oh Assad\nعم تطلع على الشاشة [وتعيط] يا أسد يا أسد => crying, and shouting # and crying\nعم تطلع على الشاشة وتعيط [يا] أسد يا أسد => Appearing on screen crying, [oh] Assad oh Assad\nعم تطلع على الشاشة وتعيط يا [أسد] يا أسد => Appearing on screen crying, oh [Assad] oh Assad\nعم تطلع على الشاشة وتعيط يا أسد [يا] أسد => Appearing on screen crying, oh Assad [oh] Assad\nعم تطلع على الشاشة وتعيط يا أسد يا [أسد] => Appearing on screen crying, oh Assad oh [Assad]\n\n[خلينا] نطلع من هون. => [Let us] get out of here.\nخلينا [نطلع] من هون. => Let us [get out] of here.\nخلينا نطلع [من] هون. => Let us get out [of] here.\nخلينا نطلع من [هون]. => Let us get out of [here].\n\n[إجا] الأسد شاف هي مشكلة حتبلش تروح وتكبر. => Assad [came], saw this problem, it will start to go and grow.\nإجا [الأسد] شاف هي مشكلة حتبلش تروح وتكبر. => [Assad] came, saw this problem, it will start to go and grow.\nإجا الأسد [شاف] هي مشكلة حتبلش تروح وتكبر. => Assad came, [saw] this problem, it will start to go and grow.\nإجا الأسد شاف [هي] مشكلة حتبلش تروح وتكبر. => Assad came, saw [this] problem, it will start to go and grow.\nإجا الأسد شاف هي [مشكلة] حتبلش تروح وتكبر. => Assad came, saw this [problem], it will start to go and grow.\nإجا الأسد شاف هي مشكلة [حتبلش] تروح وتكبر. => Assad came, saw this problem, [it will start] to go and grow.\nإجا الأسد شاف هي مشكلة حتبلش [تروح] وتكبر. => Assad came, saw this problem, it will start [to go] and grow.\nإجا الأسد شاف هي مشكلة حتبلش تروح [وتكبر] => Assad came, saw this problem, it will start to go [and grow]\n\n[هو] سوى عملية، بده يشارك سوريا كبيرة، => [He] made an operation, he wants to build a Greater Syria,\nهو [سوى] عملية، بده يشارك سوريا كبيرة، => He [made] an operation, he wants to build a Greater Syria,\nهو سوى [عملية]، بده يشارك سوريا كبيرة، => He made [an operation], he wants to build a Greater Syria,\nهو سوى عملية، [بده] يشارك سوريا كبيرة، => He made an operation, [he wants] to build a Greater Syria,\nهو سوى عملية، بده [يشارك] سوريا كبيرة، => build # literally: to participate or to join\nهو سوى عملية، بده يشارك [سوريا] كبيرة، => He made an operation, he wants to build a Greater [Syria],\nهو سوى عملية، بده يشارك سوريا [كبيرة]، => He made an operation, he wants to build a [Greater] Syria,\n\n[بده] يعملها سوريا الكبيرة. => [He wants] to make it the Greater Syria.\nبده [يعملها] سوريا الكبيرة. => He wants [to make it] the Greater Syria. # 'to make it' includes the prefix and suffix of making\nبده يعملها [سوريا] الكبيرة. => He wants to make it the [Syria]\nبده يعملها سوريا [الكبيرة]. => He wants to make it [the Greater] Syria. # 'al-' corresponds to 'the' and 'kabira' to 'Greater' in this context\n\n[لازم] يكون معه سلاح، أخذ كل المصاري => [He needs] to have weapons, he took all the money\nلازم [يكون معه] سلاح، أخذ كل المصاري => He needs [to have] weapons, he took all the money\nلازم يكون معه [سلاح]، أخذ كل المصاري => He needs to have [weapons], he took all the money\nلازم يكون معه سلاح، [أخذ] كل المصاري => He needs to have weapons, [he took] all the money\nلازم يكون معه سلاح، أخذ [كل] المصاري => He needs to have weapons, he took [all] the money\nلازم يكون معه سلاح، أخذ كل [المصاري] => He needs to have weapons, he took all [the money]\n\n[تبعت] سوريا واشترى فيهم سلاح. => [Of] Syria and bought weapons with them.\nتبعت [سوريا] واشترى فيهم سلاح. => Of [Syria] and bought weapons with them.\nتبعت سوريا [و]اشترى فيهم سلاح. => Of Syria [and] bought weapons with them.\nتبعت سوريا و[اشترى] فيهم سلاح. => Of Syria and [bought] weapons with them.\nتبعت سوريا واشترى فيهم [سلاح]. => Of Syria and bought [weapons] with them.\nتبعت سوريا واشترى [فيهم] سلاح. => Of Syria and bought weapons [with them].\n\n[بملايين] الدولارات، طيب وشو صاير بالأخير => [With millions] of dollars, okay and what happened in the end\nبملايين [الدولارات]، طيب وشو صاير بالأخير => With millions [of dollars], okay and what happened in the end\nبملايين الدولارات، [طيب] وشو صاير بالأخير => With millions of dollars, [okay] and what happened in the end\nبملايين الدولارات، طيب [وشو] صاير بالأخير => With millions of dollars, okay [and what] happened in the end\nبملايين الدولارات، طيب وشو [صاير] بالأخير => With millions of dollars, okay and [happened] in the end\nبملايين الدولارات، طيب وشو صاير [بالأخير] => With millions of dollars, okay and what happened [in the end]\n\n[الشعب] ما عنده ياكل. => [The people] have nothing to eat.\nالشعب [ما عنده] ياكل. => The people [have nothing] to eat.\nالشعب ما عنده [ياكل] => The people have nothing [to eat] # mapping the present verb to the English infinitive as they serve the same function here\n\n[كل واحد] بلش بده يهرب، بلشوا يهود يطلعوا. => [Everyone] started wanting to flee, Jews started leaving.\nكل واحد [بلش] بده يهرب، بلشوا يهود يطلعوا. => Everyone [started] wanting to flee, Jews started leaving.\nكل واحد بلش [بده] يهرب، بلشوا يهود يطلعوا. => Everyone started [wanting] to flee, Jews started leaving.\nكل واحد بلش بده [يهرب]، بلشوا يهود يطلعوا. => Everyone started wanting to [flee], Jews started leaving.\nكل واحد بلش بده يهرب، [بلشوا] يهود يطلعوا. => Everyone started wanting to flee, Jews [started] leaving.\nكل واحد بلش بده يهرب، بلشوا [يهود] يطلعوا. => Everyone started wanting to flee, [Jews] started leaving.\nكل واحد بلش بده يهرب، بلشوا يهود [يطلعوا] => Everyone started wanting to flee, Jews started [leaving]\n\n[راحوا] سووا غروب، اجتمعوا أخذوا كم بنات. => [They went] made a group, they gathered took some girls.\nراحوا [سووا] غروب، اجتمعوا أخذوا كم بنات. => They went [made] a group, they gathered took some girls.\nراحوا سووا [غروب]، اجتمعوا أخذوا كم بنات. => They went made [a group], they gathered took some girls.\nراحوا سووا غروب، [اجتمعوا] أخذوا كم بنات. => They went made a group, [they gathered] took some girls.\nراحوا سووا غروب، اجتمعوا [أخذوا] كم بنات. => They went made a group, they gathered [took] some girls.\nراحوا سووا غروب، اجتمعوا أخذوا [كم] بنات. => They went made a group, they gathered took [some] girls.\nراحوا سووا غروب، اجتمعوا أخذوا كم [بنات]. => They went made a group, they gathered took some [girls].\n\n[أخذوا] أول 32 جمعوهم وقالوا لهم => [They took] the first 32, gathered them and told them\nأخذوا [أول] 32 جمعوهم وقالوا لهم => They took [the first] 32, gathered them and told them\nأخذوا أول [32] جمعوهم وقالوا لهم => They took the first [32], gathered them and told them\nأخذوا أول 32 [جمعوهم] وقالوا لهم => They took the first 32, [gathered them] and told them\nأخذوا أول 32 جمعوهم [و]قالوا لهم => They took the first 32, gathered them [and] told them\nأخذوا أول 32 جمعوهم و[قالوا] لهم => They took the first 32, gathered them and [told] them\nأخذوا أول 32 جمعوهم وقالوا [لهم] => They took the first 32, gathered them and told [them]\n\n[اطلعوا] هلق على لبنان. => [Go] now to Lebanon.\nاطلعوا [هلق] على لبنان. => Go [now] to Lebanon.\nاطلعوا هلق [على] لبنان. => Go now [to] Lebanon.\nاطلعوا هلق على [لبنان]. => Go now to [Lebanon]\n\n[ومن] هنيك في واحد بيستناكم هو يعني => [And from] there someone is waiting for you, he means\nومن [هنيك] في واحد بيستناكم هو يعني => And from [there] someone is waiting for you, he means\nومن هنيك في [واحد] بيستناكم هو يعني => And from there [someone] is waiting for you, he means\nومن هنيك في واحد [بيستناكم] هو يعني => And from there someone [is waiting for you], he means\nومن هنيك في واحد بيستناكم [هو] يعني => And from there someone is waiting for you, [he] means\nومن هنيك في واحد بيستناكم هو [يعني] => And from there someone is waiting for you, he [means]\n\n[بيساعدكم] بيطلع... انتقلوا بأمان. => [He will help you] get out... transfer safely.\nبيساعدكم [بيطلع]... انتقلوا بأمان. => He will help you [get out]... transfer safely.\nبيساعدكم بيطلع... [انتقلوا] بأمان. => He will help you get out... [transfer] safely.\nبيساعدكم بيطلع... انتقلوا [بأمان]. => He will help you get out... transfer [safely]\n\n[شو] صار؟ هدول البنات ما وصلوا للبنان. => [What] happened? These girls didn't reach Lebanon.\nشو [صار]؟ هدول البنات ما وصلوا للبنان. => What [happened]? These girls didn't reach Lebanon.\nشو صار؟ [هدول] البنات ما وصلوا للبنان. => What happened? [These] girls didn't reach Lebanon.\nشو صار؟ هدول [البنات] ما وصلوا للبنان. => What happened? These [girls] didn't reach Lebanon.\nشو صار؟ هدول البنات [ما وصلوا] للبنان. => What happened? These girls [didn't reach] Lebanon.\nشو صار؟ هدول البنات ما وصلوا [للبنان]. => What happened? These girls didn't reach [Lebanon]\n\n[ذبحوهم] هني وطالعين على الحدود، كمشوهم. => [They slaughtered them] there while going to the border, they gathered them.\nذبحوهم [هني] وطالعين على الحدود، كمشوهم. => they # hani/hanni means \"they\" in Levantine Arabic\nذبحوهم هني [وطالعين] على الحدود، كمشوهم. => They slaughtered them there [while going] to the border, they gathered them.\nذبحوهم هني وطالعين [على] الحدود، كمشوهم. => They slaughtered them there while going [to] the border, they gathered them.\nذبحوهم هني وطالعين على [الحدود]، كمشوهم. => They slaughtered them there while going to [the border], they gathered them.\nذبحوهم هني وطالعين على الحدود، [كمشوهم]. => They slaughtered them there while going to the border, [they gathered them].\n\n[اغتصبوهم] وضربوهم وقتلوهم. => [They raped them], beat them and killed them.\nاغتصبوهم و[ضربوهم] وقتلوهم. => They raped them, [beat them] and killed them.\nاغتصبوهم وضربوهم [و]قتلوهم. => They raped them, beat them [and] killed them.\nاغتصبوهم وضربوهم و[قتلوهم]. => They raped them, beat them and [killed them.]\n\n[مين] هدول سواهم؟ الجيش السوري، => [Who] did this to them? The Syrian Army,\nمين [هدول] سواهم؟ الجيش السوري، => this\nمين هدول [سواهم]؟ الجيش السوري، => did to them # Literal: sawwa (did/made) + hom (them)\nمين هدول سواهم؟ [الجيش] السوري، => army\nمين هدول سواهم؟ الجيش [السوري]، => Syrian\n\n[صار] مشكلة كبيرة بطائفة اليهود => [It became] a big problem in the Jewish community\nصار [مشكلة] كبيرة بطائفة اليهود => It became a [problem] in the Jewish community\nصار مشكلة [كبيرة] بطائفة اليهود => It became a [big] problem in the Jewish community\nصار مشكلة كبيرة [بطائفة] اليهود => in the community\nصار مشكلة كبيرة بطائفة [اليهود] => It became a big problem in the [Jewish] community\n\n[تبعت] الشام => [Of] Damascus\nتبعت [الشام] => Of [Damascus]\n\n[إجوا] الرئاسة تبعت الطائفة اليهود. => The leadership of the Jewish community [came].\nإجوا [الرئاسة] تبعت الطائفة اليهود. => [The leadership] of the Jewish community came.\nإجوا الرئاسة [تبعت] الطائفة اليهود. => The leadership [of] the Jewish community came.\nإجوا الرئاسة تبعت [الطائفة] اليهود. => The leadership of the Jewish [community] came.\nإجوا الرئاسة تبعت الطائفة [اليهود]. => The leadership of the [Jewish] community came.\n\n[إجا] رفعت حمزة هلق بدهم بتعرف بدهم => Rafat Hamza [came], now they want, you know they want\nإجا [رفعت حمزة] هلق بدهم بتعرف بدهم => [Rafat Hamza] came, now they want, you know they want\nإجا رفعت حمزة [هلق] بدهم بتعرف بدهم => Rafat Hamza came, [now] they want, you know they want\nإجا رفعت حمزة هلق [بدهم] بتعرف بدهم => Rafat Hamza came, now [they want], you know they want\nإجا رفعت حمزة هلق بدهم [بتعرف] بدهم => Rafat Hamza came, now they want, [you know] they want\nإجا رفعت حمزة هلق بدهم بتعرف [بدهم] => Rafat Hamza came, now they want, you know [they want]\n\n[ينزلوا] الضغط تبع اللي عم بيصير بالحارة. => [To reduce] the pressure of what's happening in the quarter.\nينزلوا [الضغط] تبع اللي عم بيصير بالحارة. => To reduce [the pressure] of what's happening in the quarter.\nينزلوا الضغط [تبع] اللي عم بيصير بالحارة. => To reduce the pressure [of] what's happening in the quarter.\nينزلوا الضغط تبع [اللي] عم بيصير بالحارة. => what\nينزلوا الضغط تبع اللي [عم بيصير] بالحارة. => is happening\nينزلوا الضغط تبع اللي عم بيصير [بالحارة]. => [in the quarter]\n\n[قال] أختي حتطلع، خذوا أختي، => [He said] my sister will leave, take my sister,\nقال [أختي] حتطلع، خذوا أختي، => He said [my sister] will leave, take my sister,\nقال أختي [حتطلع]، خذوا أختي، => He said my sister [will leave], take my sister,\nقال أختي حتطلع، [خذوا] أختي، => He said my sister will leave, [take] my sister,\nقال أختي حتطلع، خذوا [أختي]، => He said my sister will leave, take [my sister],\n\n[وينها] مروة قطش؟ => [Where is] Marwa Qutash?\nوينها [مروة] قطش؟ => Where is [Marwa] Qutash?\nوينها مروة [قطش]؟ => Where is Marwa [Qutash]?\n\n[أمي] كانت معروفة، إنتي كمان، => [My mother] was known, you too,\nأمي [كانت] معروفة، إنتي كمان، => My mother [was] known, you too,\nأمي كانت [معروفة]، إنتي كمان، => My mother was [known], you too,\nأمي كانت معروفة، [إنتي] كمان، => My mother was known, [you] too,\nأمي كانت معروفة، إنتي [كمان]، => My mother was known, you [too]\n\n[و]كان بنات كلهم معروفين. => [And] the girls, all of them were known.\nو[كان] بنات كلهم معروفين. => And the girls, all of them [were] known.\nوكان [بنات] كلهم معروفين. => And the [girls], all of them were known.\nوكان بنات [كلهم] معروفين. => And the girls, [all of them] were known.\nوكان بنات كلهم [معروفين]. => And the girls, all of them were [known].\n\n[جمعوهم] وطلعوا قالوا لهم اطلعوا للبنان. => [They gathered them] and left, told them go to Lebanon.\nجمعوهم [وطلعوا] قالوا لهم اطلعوا للبنان. => They gathered them [and left], told them go to Lebanon.\nجمعوهم وطلعوا [قالوا] لهم اطلعوا للبنان. => They gathered them and left, [told] them go to Lebanon.\nجمعوهم وطلعوا قالوا [لهم] اطلعوا للبنان. => They gathered them and left, told [them] go to Lebanon.\nجمعوهم وطلعوا قالوا لهم [اطلعوا] للبنان. => They gathered them and left, told them [go] to Lebanon.\nجمعوهم وطلعوا قالوا لهم اطلعوا [للبنان]. => They gathered them and left, told them go [to Lebanon]\n\n[الله] أعطاهم بركة ووصلوا للبنان، => [God] gave them blessing and they reached Lebanon,\nالله [أعطاهم] بركة ووصلوا للبنان، => God [gave them] blessing and they reached Lebanon,\nالله أعطاهم [بركة] ووصلوا للبنان، => God gave them [blessing] and they reached Lebanon,\nالله أعطاهم بركة [و]وصلوا للبنان، => God gave them blessing [and] they reached Lebanon,\nالله أعطاهم بركة و[وصلوا] للبنان، => God gave them blessing and [they reached] Lebanon,\nالله أعطاهم بركة ووصلوا [للبنان]، => Lebanon # mapping to 'Lebanon' as 'li' (to) is not explicitly translated in the English verb 'reached' (which is transitive)\n\n[مين] استلمهم؟ أبوي. => [Who] received them? My father.\nمين [استلمهم]؟ أبوي. => Who [received them]? My father.\nمين استلمهم؟ [أبوي]. => Who received them? [My father].\n\n[لقى] لهم بيوت، لقى لهم منطقة، => [He found] them houses, found them an area,\nلقى [لهم] بيوت، لقى لهم منطقة، => He found [them] houses, found them an area,\nلقى لهم [بيوت]، لقى لهم منطقة، => He found them [houses], found them an area,\nلقى لهم بيوت، [لقى] لهم منطقة، => He found them houses, [found] them an area,\nلقى لهم بيوت، لقى [لهم] منطقة، => He found them houses, found [them] an area,\nلقى لهم بيوت، لقى لهم [منطقة]، => He found them houses, found them [an area]\n\n[كانوا] يعيشوا بالكنيسة => [They were] living in the church\nكانوا [يعيشوا] بالكنيسة => They were [living] in the church\nكانوا يعيشوا [بالكنيسة] => They were [in the church]\n\n[حطهم] بالكنيسة كل واحد يضبط له باسبور، => [He put them] in the church, each one gets his passport,\nحطهم [بالكنيسة] كل واحد يضبط له باسبور، => He put them [in the church], each one gets his passport,\nحطهم بالكنيسة [كل واحد] يضبط له باسبور، => He put them in the church, [each one] gets his passport,\nحطهم بالكنيسة كل واحد [يضبط] له باسبور، => He put them in the church, each one [gets] his passport,\nحطهم بالكنيسة كل واحد يضبط [له] باسبور، => He put them in the church, each one gets [his] passport,\nحطهم بالكنيسة كل واحد يضبط له [باسبور]، => He put them in the church, each one gets his [passport],\n\n[جنسية]، ويطلعوا لإسرائيل. => [Nationality], and they leave for Israel.\nجنسية، [و]يطلعوا لإسرائيل. => Nationality, [and] they leave for Israel.\nجنسية، و[يطلعوا] لإسرائيل. => Nationality, and [they leave] for Israel.\nجنسية، ويطلعوا [لإسرائيل]. => Nationality, and they leave [for Israel]\n\n[هي] كانت أي سنة؟ هي كانت بأول السبعينات. => What year was [this]? It was in the early seventies.\nهي [كانت] أي سنة؟ هي كانت بأول السبعينات. => What year [was] this? It was in the early seventies.\nهي كانت [أي] سنة؟ هي كانت بأول السبعينات. => [What] year was this? It was in the early seventies.\nهي كانت أي [سنة]؟ هي كانت بأول السبعينات. => What [year] was this? It was in the early seventies.\nهي كانت أي سنة؟ [هي] كانت بأول السبعينات. => What year was this? [It] was in the early seventies.\nهي كانت أي سنة؟ هي [كانت] بأول السبعينات. => What year was this? It [was] in the early seventies.\nهي كانت أي سنة؟ هي كانت [بأول] السبعينات. => What year was this? It was [in the early] seventies.\nهي كانت أي سنة؟ هي كانت بأول [السبعينات]. => What year was this? It was in the early [seventies].\n\n[يعني] أبوك كان أصله برضه سوري؟ => [I mean] your father was originally Syrian too?\nيعني [أبوك] كان أصله برضه سوري؟ => I mean [your father] was originally Syrian too?\nيعني أبوك [كان] أصله برضه سوري؟ => I mean your father [was] originally Syrian too?\nيعني أبوك كان [أصله] برضه سوري؟ => I mean your father was [originally] Syrian too?\nيعني أبوك كان أصله [برضه] سوري؟ => I mean your father was originally Syrian [too]?\nيعني أبوك كان أصله برضه [سوري]؟ => I mean your father was originally [Syrian] too?\n\n[أبوي] حلبي. تربى بحلب، كبر بحلب، => [My father] is Aleppan. Raised in Aleppo, grew up in Aleppo,\nأبوي [حلبي]. تربى بحلب، كبر بحلب، => My father [is Aleppan]. Raised in Aleppo, grew up in Aleppo,\nأبوي حلبي. [تربى] بحلب، كبر بحلب، => My father is Aleppan. [Raised] in Aleppo, grew up in Aleppo,\nأبوي حلبي. تربى [بحلب]، كبر بحلب، => My father is Aleppan. Raised [in Aleppo], grew up in Aleppo,\nأبوي حلبي. تربى بحلب، [كبر] بحلب، => My father is Aleppan. Raised in Aleppo, [grew up] in Aleppo,\nأبوي حلبي. تربى بحلب، كبر [بحلب]، => My father is Aleppan. Raised in Aleppo, grew up [in Aleppo],\n\n[هو] وصغير. => [Him] when he was little.\nهو [و]صغير. => Him [when] he was little.\nهو و[صغير]. => Him when he was [little].\n\n[طلع] نزل على لبنان، ومن هنيك بلش => [He went up] down to Lebanon, and from there he started\nطلع [نزل] على لبنان، ومن هنيك بلش => He went up [down] to Lebanon, and from there he started\nطلع نزل [على] لبنان، ومن هنيك بلش => He went up down [to] Lebanon, and from there he started\nطلع نزل على [لبنان]، ومن هنيك بلش => He went up down to [Lebanon], and from there he started\nطلع نزل على لبنان، [و]من هنيك بلش => He went up down to Lebanon, [and] from there he started\nطلع نزل على لبنان، و[من] هنيك بلش => He went up down to Lebanon, and [from] there he started\nطلع نزل على لبنان، ومن [هنيك] بلش => He went up down to Lebanon, and from [there] he started\nطلع نزل على لبنان، ومن هنيك [بلش] => He went up down to Lebanon, and from there [he started] # the subject \"he\" is implied in the Arabic verb stem \"بلش\"\n\n[يعمر] حاله درجة ورا درجة => To [build] his life step by step\nيعمر [حاله] درجة ورا درجة => To build [his life] step by step\nيعمر حاله [درجة] ورا درجة => To build his life [step] by step\nيعمر حاله درجة [ورا] درجة => by\nيعمر حاله درجة ورا [درجة] => To build his life step by [step]\n\n[لوصل] لرئيس الطائفة تبعت يهود لبنان. => [Until he reached] head of the community of Jews of Lebanon.\nلوصل [لرئيس] الطائفة تبعت يهود لبنان. => Until he reached [head] of the community of Jews of Lebanon.\nلوصل لرئيس [الطائفة] تبعت يهود لبنان. => Until he reached head of [the community] of Jews of Lebanon.\nلوصل لرئيس الطائفة [تبعت] يهود لبنان. => of\nلوصل لرئيس الطائفة تبعت [يهود] لبنان. => Until he reached head of the community of [Jews] of Lebanon.\nلوصل لرئيس الطائفة تبعت يهود [لبنان]. => Until he reached head of the community of Jews of [Lebanon].\n\n[بتعرف] هاد الوقت نحن خلقانين => [You know] at this time we were created\nبتعرف [هاد] الوقت نحن خلقانين => You know at [this] time we were created\nبتعرف هاد [الوقت] نحن خلقانين => You know at this [time] we were created\nبتعرف هاد الوقت [نحن] خلقانين => You know at this time [we] were created\nبتعرف هاد الوقت نحن [خلقانين] => You know at this time we [were created] # خلقانين is a Levantine participle used here as a state meaning \"were created\" or \"born\"\n\n[على] وقت الحرب، الحرب الأهلية. => [During] the war time, the civil war.\nعلى [وقت] الحرب، الحرب الأهلية. => During the war [time], the civil war.\nعلى وقت [الحرب]، الحرب الأهلية. => During the [war] time, the civil war.\nعلى وقت الحرب، [الحرب] الأهلية. => During the war time, the civil [war]\nعلى وقت الحرب، الحرب [الأهلية]. => During the war time, the [civil] war.\n\n[كنا] نتعلم بالمدرسة بتعرف نحن عند => [We were] learning at school, you know we were at\nكنا [نتعلم] بالمدرسة بتعرف نحن عند => We were [learning] at school, you know we were at\nكنا نتعلم [بالمدرسة] بتعرف نحن عند => We were learning [at school], you know we were at\nكنا نتعلم بالمدرسة [بتعرف] نحن عند => We were learning at school, [you know] we were at\nكنا نتعلم بالمدرسة بتعرف [نحن] عند => We were learning at school, you know [we] were at\nكنا نتعلم بالمدرسة بتعرف نحن [عند] => We were learning at school, you know we were [at]\n\n[الفرنساوية] يعني عند المسيحية => [The French], I mean at the Christians\nالفرنساوية [يعني] عند المسيحية => The French, [I mean] at the Christians\nالفرنساوية يعني [عند] المسيحية => The French, I mean [at] the Christians\nالفرنساوية يعني عند [المسيحية] => The French, I mean at [the Christians]\n\n[ببيروت] تعلمنا بـ \"غراند جاردان\"، => [In Beirut] we learned at \"Grand Jardin\",\nببيروت [تعلمنا] بـ \"غراند جاردان\"، => In Beirut [we learned] at \"Grand Jardin\",\nببيروت تعلمنا [بـ] \"غراند جاردان\"، => In Beirut we learned [at] \"Grand Jardin\",\nببيروت تعلمنا بـ \"[غراند جاردان]\"، => In Beirut we learned at \"[Grand Jardin]\"\n\n[وأنا] بصف الأول وصلت أنا. => [And I] was the first in class, I was\nوأنا [بصف] الأول وصلت أنا. => And I was the first [in class], I was\nوأنا بصف [الأول] وصلت أنا. => And I was [the first] in class, I was\nوأنا بصف الأول [وصلت] أنا. => reached, arrived\nوأنا بصف الأول وصلت [أنا]. => And I was the first in class, [I] was\n\n[العيشة] كانت منيحة، ما كان ناقصنا شي => [Life] was good, we lacked nothing\nالعيشة [كانت] منيحة، ما كان ناقصنا شي => Life [was] good, we lacked nothing\nالعيشة كانت [منيحة]، ما كان ناقصنا شي => Life was [good], we lacked nothing\nالعيشة كانت منيحة، [ما كان ناقصنا شي] => [we lacked nothing]\nالعيشة كانت منيحة، ما كان [ناقصنا] شي => lacking for us # custom: \"na\" suffix translates to \"us\"\nالعيشة كانت منيحة، ما كان ناقصنا [شي] => thing # custom: literal meaning of \"shi\" is \"thing\" or \"something\"\n\n[بالبيت]. بالعكس، شو طلبنا كان عندنا. => [At home]. On the contrary, whatever we asked for we had.\nبالبيت. [بالعكس]، شو طلبنا كان عندنا. => At home. [On the contrary], whatever we asked for we had.\nبالبيت. بالعكس، [شو] طلبنا كان عندنا. => At home. On the contrary, [whatever] we asked for we had.\nبالبيت. بالعكس، شو [طلبنا] كان عندنا. => At home. On the contrary, whatever [we asked for] we had.\nبالبيت. بالعكس، شو طلبنا [كان عندنا]. => At home. On the contrary, whatever we asked for [we had]\n\n[نروح] دايماً عند أبوي، أهرب من المدرسة => [We] always [went] to my father, I escape from school\nنروح [دايماً] عند أبوي، أهرب من المدرسة => We [always] went to my father, I escape from school\nنروح دايماً [عند] أبوي، أهرب من المدرسة => We always went [to] my father, I escape from school\nنروح دايماً عند [أبوي]، أهرب من المدرسة => We always went to [my father], I escape from school\nنروح دايماً عند أبوي، [أهرب] من المدرسة => We always went to my father, [I escape] from school\nنروح دايماً عند أبوي، أهرب [من] المدرسة => We always went to my father, I escape [from] school\nنروح دايماً عند أبوي، أهرب من [المدرسة] => We always went to my father, I escape from [school]\n\n[روح] عند أبوي. => [Go] to my father.\nروح [عند] أبوي. => Go [to] my father.\nروح عند [أبوي]. => Go to [my father]\n\n[وين] أروح؟ عند أبوي أقعد روح لعنده => [Where] do I go? To my father I sit, go to him\nوين [أروح]؟ عند أبوي أقعد روح لعنده => Where [do I go]? To my father I sit, go to him\nوين أروح؟ [عند] أبوي أقعد روح لعنده => Where do I go? [To] my father I sit, go to him\nوين أروح؟ عند [أبوي] أقعد روح لعنده => Where do I go? To [my father] I sit, go to him\nوين أروح؟ عند أبوي [أقعد] روح لعنده => Where do I go? To my father [I sit], go to him\nوين أروح؟ عند أبوي أقعد [روح] لعنده => Where do I go? To my father I sit, [go] to him\nوين أروح؟ عند أبوي أقعد روح [لعنده] => Where do I go? To my father I sit, go [to him]\n\n[عالمكتب]. مكتبه كان بكنيسة اليهود => [To the office]. His office was in the Jewish Synagogue\nعالمكتب. [مكتبه] كان بكنيسة اليهود => To the office. [His office] was in the Jewish Synagogue\nعالمكتب. مكتبه [كان] بكنيسة اليهود => To the office. His office [was] in the Jewish Synagogue\nعالمكتب. مكتبه كان [بكنيسة] اليهود => in the synagogue # \"كنيسة\" refers to a place of worship, translated here as synagogue\nعالمكتب. مكتبه كان بكنيسة [اليهود] => Jewish\n\n[بالطائفة]، هنيك كان المكتب تبعه. => [In the community], there was his office.\nبالطائفة، [هنيك] كان المكتب تبعه. => In the community, [there] was his office.\nبالطائفة، هنيك [كان] المكتب تبعه. => In the community, there [was] his office.\nبالطائفة، هنيك كان [المكتب] تبعه. => In the community, there was his [office].\nبالطائفة، هنيك كان المكتب [تبعه]. => In the community, there was [his] office.\n\n[وبذات] اليوم قبل بليلة قبل ما هو انخطف. => [And on that same] day, before, the night before he was kidnapped.\nوبذات [اليوم] قبل بليلة قبل ما هو انخطف. => And on that same [day], before, the night before he was kidnapped.\nوبذات اليوم [قبل] بليلة قبل ما هو انخطف. => And on that same day, [before], the night before he was kidnapped.\nوبذات اليوم قبل [بليلة] قبل ما هو انخطف. => And on that same day, before, [the night] before he was kidnapped.\nوبذات اليوم قبل بليلة [قبل ما] هو انخطف. => And on that same day, before, the night [before] he was kidnapped.\nوبذات اليوم قبل بليلة قبل ما [هو] انخطف. => And on that same day, before, the night before [he] was kidnapped.\nوبذات اليوم قبل بليلة قبل ما هو [انخطف]. => And on that same day, before, the night before he [was kidnapped].\n\n[الناس] اللي كانوا بدهم يخطفوه إجوا أول ليلة. => [The people] who wanted to kidnap him came the first night.\nالناس [اللي] كانوا بدهم يخطفوه إجوا أول ليلة. => The people [who] wanted to kidnap him came the first night.\nالناس اللي [كانوا بدهم] يخطفوه إجوا أول ليلة. => The people who [wanted] to kidnap him came the first night.\nالناس اللي كانوا بدهم [يخطفوه] إجوا أول ليلة. => The people who wanted [to kidnap him] came the first night.\nالناس اللي كانوا بدهم يخطفوه [إجوا] أول ليلة. => The people who wanted to kidnap him [came] the first night.\nالناس اللي كانوا بدهم يخطفوه إجوا [أول] ليلة. => The people who wanted to kidnap him came [the first] night.\nالناس اللي كانوا بدهم يخطفوه إجوا أول [ليلة]. => The people who wanted to kidnap him came the first [night].\n\n[فتحنا]، أهلين، شو مين إنتو؟ => [We opened], hello, who are you?\nفتحنا، [أهلين]، شو مين إنتو؟ => We opened, [hello], who are you?\nفتحنا، أهلين، [شو] مين إنتو؟ => what # functions as a question opener or \"what\"\nفتحنا، أهلين، شو [مين] إنتو؟ => We opened, hello, [who] are you?\nفتحنا، أهلين، شو مين [إنتو]؟ => We opened, hello, who are [you]?\n\n[نحن] ناس بدنا مساعدة بدنا نحكي => [We] are people, we want help, we want to speak\nنحن [ناس] بدنا مساعدة بدنا نحكي => We are [people], we want help, we want to speak\nنحن ناس [بدنا] مساعدة بدنا نحكي => We are people, [we want] help, we want to speak\nنحن ناس بدنا [مساعدة] بدنا نحكي => We are people, we want [help], we want to speak\nنحن ناس بدنا مساعدة [بدنا] نحكي => We are people, we want help, [we want] to speak\nنحن ناس بدنا مساعدة بدنا [نحكي] => We are people, we want help, we want [to speak]\n\n[مع] سليم جاموس. => [With] Slim Jamous.\nمع [سليم] جاموس. => With [Slim] Jamous.\nمع سليم [جاموس]. => With Slim [Jamous. ]\n\n[بالبيت]، قال صح هو بالبيت بس شوي مرتاح => [At home], he said yes he is at home but resting a bit\nبالبيت، [قال] صح هو بالبيت بس شوي مرتاح => At home, [he said] yes he is at home but resting a bit\nبالبيت، قال [صح] هو بالبيت بس شوي مرتاح => At home, he said [yes] he is at home but resting a bit\nبالبيت، قال صح [هو] بالبيت بس شوي مرتاح => At home, he said yes [he is] at home but resting a bit\nبالبيت، قال صح هو [بالبيت] بس شوي مرتاح => At home, he said yes he is [at home] but resting a bit\nبالبيت، قال صح هو بالبيت [بس] شوي مرتاح => At home, he said yes he is at home [but] resting a bit\nبالبيت، قال صح هو بالبيت بس [شوي] مرتاح => At home, he said yes he is at home but resting [a bit]\nبالبيت، قال صح هو بالبيت بس شوي [مرتاح] => At home, he said yes he is at home but [resting] a bit\n\n[قالوا] طيب خلص مش مهم بنستناه => [They said] okay fine no problem we will wait for him\nقالوا [طيب] خلص مش مهم بنستناه => They said [okay] fine no problem we will wait for him\nقالوا طيب [خلص] مش مهم بنستناه => They said okay [fine] no problem we will wait for him\nقالوا طيب خلص [مش مهم] بنستناه => They said okay fine [no problem] we will wait for him\nقالوا طيب خلص مش مهم [بنستناه] => They said okay fine no problem [we will wait for him]\n\n[بنجي] لعنده الصبح. => [We will come] to him in the morning.\nبنجي [لعنده] الصبح. => We will come [to him] in the morning.\nبنجي لعنده [الصبح] => the morning # Arabic uses the noun \"the morning\" adverbially without a preposition like \"in\" in this context\n\n[وهدول] هني استنوه كل الليل عشان يخطفوه. => [And these] ones here waited for him all night to kidnap him.\nوهدول [هني] استنوه كل الليل عشان يخطفوه. => And these [ones here] waited for him all night to kidnap him.\nوهدول هني [استنوه] كل الليل عشان يخطفوه. => And these ones here [waited for him] all night to kidnap him.\nوهدول هني استنوه [كل] الليل عشان يخطفوه. => And these ones here waited for him [all] night to kidnap him.\nوهدول هني استنوه كل [الليل] عشان يخطفوه. => And these ones here waited for him all [night] to kidnap him.\nوهدول هني استنوه كل الليل [عشان] يخطفوه. => And these ones here waited for him all night [to] kidnap him.\nوهدول هني استنوه كل الليل عشان [يخطفوه]. => And these ones here waited for him all night to [kidnap him].\n\n[هدول] كانوا اللي بيخطفوه، كانوا يستنوه => [These] were the ones who kidnapped him, they were waiting for him\nهدول [كانوا] اللي بيخطفوه، كانوا يستنوه => These [were] the ones who kidnapped him, they were waiting for him\nهدول كانوا [اللي] بيخطفوه، كانوا يستنوه => These were [the ones who] kidnapped him, they were waiting for him\nهدول كانوا اللي [بيخطفوه]، كانوا يستنوه => These were the ones who [kidnapped him], they were waiting for him\nهدول كانوا اللي بيخطفوه، [كانوا] يستنوه => These were the ones who kidnapped him, [they were] waiting for him\nهدول كانوا اللي بيخطفوه، كانوا [يستنوه] => These were the ones who kidnapped him, they were [waiting for him]\n\n[برا] البيت؟ استنوه قدام الكنيسة. => [Outside] the house? They waited in front of the synagogue.\nبرا [البيت]؟ استنوه قدام الكنيسة. => Outside [the house]? They waited in front of the synagogue.\nبرا البيت؟ [استنوه] قدام الكنيسة. => they waited for him # verb contains both the subject \"they\" and the object \"him\"\nبرا البيت؟ استنوه [قدام] الكنيسة. => Outside the house? They waited [in front of] the synagogue.\nبرا البيت؟ استنوه قدام [الكنيسة]. => Outside the house? They waited in front of [the synagogue].\n\n[اليوم] في محادثات جديدة مع لبنان، => [Today] there are new talks with Lebanon,\nاليوم [في] محادثات جديدة مع لبنان، => Today [there are] new talks with Lebanon,\nاليوم في [محادثات] جديدة مع لبنان، => Today there are new [talks] with Lebanon,\nاليوم في محادثات [جديدة] مع لبنان، => Today there are [new] talks with Lebanon,\nاليوم في محادثات جديدة [مع] لبنان، => Today there are new talks [with] Lebanon,\nاليوم في محادثات جديدة مع [لبنان]، => Today there are new talks with [Lebanon],\n\n[اليوم] حزب الله سقط بهالحرب، => [Today] Hezbollah has fallen in this war,\nاليوم [حزب الله] سقط بهالحرب، => Today [Hezbollah] has fallen in this war,\nاليوم حزب الله [سقط] بهالحرب، => Today Hezbollah [has fallen] in this war,\nاليوم حزب الله سقط [بهالحرب]، => Today Hezbollah has fallen [in this war]\n\n[شو] إنتو كعائلة جاموس شو بتطلبوا من لبنان؟ => [What] do you as the Jamous family ask from Lebanon?\nشو [إنتو] كعائلة جاموس شو بتطلبوا من لبنان؟ => What do [you] as the Jamous family ask from Lebanon?\nشو إنتو [كعائلة] جاموس شو بتطلبوا من لبنان؟ => as the family\nشو إنتو كعائلة [جاموس] شو بتطلبوا من لبنان؟ => What do you as the [Jamous] family ask from Lebanon?\nشو إنتو كعائلة جاموس شو [بتطلبوا] من لبنان؟ => What do you as the Jamous family [ask] from Lebanon?\nشو إنتو كعائلة جاموس شو بتطلبوا [من] لبنان؟ => What do you as the Jamous family ask [from] Lebanon?\nشو إنتو كعائلة جاموس شو بتطلبوا من [لبنان]؟ => What do you as the Jamous family ask from [Lebanon] # the word \"Lebanon\" matches \"لبنان\" directly\n\n[شو] بدكم من أي مواطن لبناني شايف هالفيديو؟ => [What] do you want from any Lebanese citizen watching this video?\nشو [بدكم] من أي مواطن لبناني شايف هالفيديو؟ => What [do you want] from any Lebanese citizen watching this video?\nشو بدكم [من] أي مواطن لبناني شايف هالفيديو؟ => What do you want [from] any Lebanese citizen watching this video?\nشو بدكم من [أي] مواطن لبناني شايف هالفيديو؟ => What do you want from [any] Lebanese citizen watching this video?\nشو بدكم من أي [مواطن] لبناني شايف هالفيديو؟ => What do you want from any Lebanese [citizen] watching this video?\nشو بدكم من أي مواطن [لبناني] شايف هالفيديو؟ => What do you want from any [Lebanese] citizen watching this video?\nشو بدكم من أي مواطن لبناني [شايف] هالفيديو؟ => What do you want from any Lebanese citizen [watching] this video?\nشو بدكم من أي مواطن لبناني شايف [هالفيديو]؟ => What do you want from any Lebanese citizen watching [this video]\n\n[أنا] بدي أحكي للمواطن اللبناني، => [I] want to speak to the Lebanese citizen,\nأنا [بدي] أحكي للمواطن اللبناني، => I [want] to speak to the Lebanese citizen,\nأنا بدي [أحكي] للمواطن اللبناني، => I want [to speak] to the Lebanese citizen,\nأنا بدي أحكي [للمواطن] اللبناني، => to the citizen\nأنا بدي أحكي للمواطن [اللبناني]، => I want to speak to the [Lebanese] citizen,\n\n[اللي] عايش برا واللي عايش جوا. => [Who] lives outside and who lives inside.\nاللي [عايش] برا واللي عايش جوا. => Who [lives] outside and who lives inside.\nاللي عايش [برا] واللي عايش جوا. => Who lives [outside] and who lives inside.\nاللي عايش برا [واللي] عايش جوا. => Who lives outside [and who] lives inside.\nاللي عايش برا واللي [عايش] جوا. => Who lives outside and who [lives] inside.\nاللي عايش برا واللي عايش [جوا]. => Who lives outside and who lives [inside].\n\n[سيرة] المخطوفين قريبة علي => [The story] of the kidnapped is close to me\nسيرة [المخطوفين] قريبة علي => The story of [the kidnapped] is close to me\nسيرة المخطوفين [قريبة] علي => The story of the kidnapped [is close] to me\nسيرة المخطوفين قريبة [علي] => The story of the kidnapped is close [to me]\n\n[وقريبة] كمان عليكم. => [And close] to you too.\nوقريبة [كمان] عليكم. => And close to you [too]\nوقريبة كمان [عليكم] => And close [to you] too\n\n[اللي] عندكم معلومات تعرفوا شو صار، => [Whoever] has information, knows what happened,\nاللي [عندكم] معلومات تعرفوا شو صار، => Whoever [has] information, knows what happened,\nاللي عندكم [معلومات] تعرفوا شو صار، => Whoever has [information], knows what happened,\nاللي عندكم معلومات [تعرفوا] شو صار، => Whoever has information, [knows] what happened,\nاللي عندكم معلومات تعرفوا [شو] صار، => Whoever has information, knows [what] happened,\nاللي عندكم معلومات تعرفوا شو [صار]، => Whoever has information, knows what [happened]\n\n[قولوا] لنا => [Tell] us\nقولوا [لنا] => Tell [us]\n\n[تاني] شي لرئيس الجمهورية، => [Second] thing to the President of the Republic,\nتاني [شي] لرئيس الجمهورية، => Second [thing] to the President of the Republic,\nتاني شي [لرئيس] الجمهورية، => Second thing [to the President] of the Republic,\nتاني شي لرئيس [الجمهورية]، => Second thing to the President of [the Republic],\n\n[لحركة] حزب الله، لحركة أمل. => to movement\nلحركة [حزب الله]، لحركة أمل. => To [Hezbollah] movement, to Amal movement\nلحركة حزب الله، [لحركة] أمل. => to movement\nلحركة حزب الله، لحركة [أمل]. => To Hezbollah movement, to [Amal] movement\n\n[قولوا لنا] شو صار، من كل الحركات => [Tell us] what happened, from all the movements\nقولوا لنا [شو] صار، من كل الحركات => Tell us [what] happened, from all the movements\nقولوا لنا شو [صار]، من كل الحركات => Tell us what [happened], from all the movements\nقولوا لنا شو صار، [من] كل الحركات => Tell us what happened, [from] all the movements\nقولوا لنا شو صار، من [كل] الحركات => Tell us what happened, from [all] the movements\nقولوا لنا شو صار، من كل [الحركات] => Tell us what happened, from all [the movements]\n\n[اللي] بلبنان. => [That are] in Lebanon.\nاللي [بلبنان]. => That are [in Lebanon].\n\n[ساعدونا] نخلص القصة، خلص نحن عايشين => [Help us] finish the story, enough we have lived\nساعدونا [نخلص] القصة، خلص نحن عايشين => Help us [finish] the story, enough we have lived\nساعدونا نخلص [القصة]، خلص نحن عايشين => Help us finish [the story], enough we have lived\nساعدونا نخلص القصة، [خلص] نحن عايشين => Help us finish the story, [enough] we have lived\nساعدونا نخلص القصة، خلص [نحن] عايشين => Help us finish the story, enough [we] have lived\nساعدونا نخلص القصة، خلص نحن [عايشين] => Help us finish the story, enough we [have lived]\n\n[40] سنة كمان شوي. => [40] years, a bit more.\n40 [سنة] كمان شوي. => 40 [years], a bit more.\n40 سنة [كمان] شوي. => 40 years, a bit [more]\n40 سنة كمان [شوي]. => 40 years, [a bit] more\n\n[ما عندنا] حياة، اللي صار صار. => [We have no] life, what happened happened.\nما عندنا [حياة]، اللي صار صار. => We have no [life], what happened happened.\nما عندنا حياة، [اللي] صار صار. => We have no life, [what] happened happened.\nما عندنا حياة، اللي [صار] صار. => We have no life, what [happened] happened.\nما عندنا حياة، اللي صار [صار]. => We have no life, what happened [happened].\n\n[عايشين] ميتين مش مهم، رجعوا لنا إياهم. => [Living] dead doesn't matter, return them to us.\nعايشين [ميتين] مش مهم، رجعوا لنا إياهم. => Living [dead] doesn't matter, return them to us.\nعايشين ميتين [مش مهم]، رجعوا لنا إياهم. => Living dead [doesn't matter], return them to us.\nعايشين ميتين مش مهم، [رجعوا] لنا إياهم. => Living dead doesn't matter, [return] them to us.\nعايشين ميتين مش مهم، رجعوا [لنا] إياهم. => Living dead doesn't matter, return them [to us]\nعايشين ميتين مش مهم، رجعوا لنا [إياهم]. => Living dead doesn't matter, return [them] to us.\n\n[هي] عندكم بالدين، وعندنا كمان نحن بالدين. => [It is] upon you religiously, and upon us too religiously.\nهي [عندكم] بالدين، وعندنا كمان نحن بالدين. => It is [upon you] religiously, and upon us too religiously.\nهي عندكم [بالدين]، وعندنا كمان نحن بالدين. => It is upon you [religiously], and upon us too religiously.\nهي عندكم بالدين، [و]عندنا كمان نحن بالدين. => It is upon you religiously, [and] upon us too religiously.\nهي عندكم بالدين، و[عندنا] كمان نحن بالدين. => It is upon you religiously, and [upon us] too religiously.\nهي عندكم بالدين، وعندنا [كمان] نحن بالدين. => It is upon you religiously, and upon us [too] religiously.\nهي عندكم بالدين، وعندنا كمان [نحن] بالدين. => us, we\nهي عندكم بالدين، وعندنا كمان نحن [بالدين]. => It is upon you religiously, and upon us too [religiously].\n\n[خلص] طلعنا من لبنان، => [Enough], we left Lebanon,\nخلص [طلعنا] من لبنان، => Enough, [we left] Lebanon,\nخلص طلعنا [من] لبنان، => from\nخلص طلعنا من [لبنان]، => Enough, we left [Lebanon],\n\n[بس] قلبنا لساته لبناني. => [But] our heart is still Lebanese.\nبس [قلبنا] لساته لبناني. => But [our heart] is still Lebanese.\nبس قلبنا [لساته] لبناني. => But our heart [is still] Lebanese.\nبس قلبنا لساته [لبناني]. => But our heart is still [Lebanese].\n\n",
+    "lessons": "# تاريخ الخطف في لبنان\n00:00.00 وسيرة الخطف بلبنان هي معروفة،\n00:03.00 كل طائفة عندها مخطوفين.\n00:06.00 مش مهم شو مين إنت، مين دينك،\n00:09.00 إنت مسيحي، درزي، سني، أرمني، مش مهم،\n00:14.00 اللي صارت مع اليهود،\n00:17.00 نحن بهمنا نحن مشان نحن يهود.\n00:20.00 وكمان كانت طائفة صغيرة،\n00:23.00 يعني مش جديد علينا هي الخطف.\n\n# التغيرات في المنطقة\n00:26.00 اليوم اللي عم بيصير بلبنان، بالمنطقة،\n00:29.00 كله عم يتغير، تحت إجرينا كله عم يتغير.\n00:33.00 وكمان نحن ما بنعرف هني لوين بده يوصل\n00:37.00 هيدا كل هيدا التغيير. الحكي هو بلبنان،\n00:42.00 يعني اليوم بتشوف واحد لبناني بيقول لك:\n00:45.00 إن شاء الله يرجعوا لنا المخطوفين،\n00:48.00 إن شاء الله نسمع عليهم.\n00:51.00 مو يهود، نحن هلق بهمنا اليهود،\n00:54.00 بهمني أنا أبوي.\n\n# التعريف بالعائلة\n00:57.00 أهلين أنا اسمي موسى جاموس،\n01:00.00 من لبنان، بيروت،\n01:03.00 من حارة اليهود أبو جميل.\n01:06.00 أنا ابنه لسليم جاموس رئيس الطائفة\n01:09.00 اليهود الأخراني بلبنان.\n01:12.00 أبوي بالـ 84 انخطف،\n01:15.00 وقالوا لنا كمان حزب الله.\n01:18.00 ولهلق نحن ما بنعرف شو صار معه.\n\n# أسباب الخطف\n01:21.00 هدول اليهود السبعة وأبوك شو صار معهم؟\n01:24.00 يعني هيك ليش خطفوهم برأيك إنت؟\n01:27.00 مشان هني يهود، هي أول شي،\n01:30.00 وكمان يهود هدول مو شعبي يعني،\n01:33.00 هدول كانوا ماسكين بالطائفة.\n01:36.00 كل واحد عنده قيمة بالطائفة.\n01:39.00 أبوي رئيس الطائفة، وواحد دكتور الطائفة،\n01:42.00 وواحد نقيب الطائفة،\n01:45.00 وواحد خاخام تبع الطائفة، يعني هدول...\n01:48.00 هدول عالم يعني مهم كتير كتير\n01:51.00 بلبنان باليهود بالطائفة.\n\n# اللحظات الأخيرة\n01:54.00 كنا بالبيت، أنا وأخي،\n01:57.00 طيب أبوي نزل طلع لبرا.\n02:00.00 كان لابس يعني مع الغرافة والجاكيت تبعه.\n02:03.00 ووقف على الدرج، قال سكروا الباب.\n02:06.00 سوى لنا بإيده، سلم علينا، أه.\n02:09.00 وهذا هو الوقت اللي قعد بوشي.\n02:12.00 هي الصورة يعني هذا السلام الأخراني\n02:15.00 اللي نحن شفناه.\n\n# البحث عن الأب\n02:18.00 كان عمري خمس سنين، قلبي كان حاسسني.\n02:21.00 قلت لها لأمي طيب ما تخافي\n02:24.00 أنا رايح عالمدرسة.\n02:27.00 وأخي راح عالمدرسة، أنا دغري هربت،\n02:30.00 لوين هربت؟ هربت عند أبوي.\n02:33.00 عالمكتب، وفتحت الباب،\n02:36.00 كان طايش بالمكتب.\n02:39.00 كله مكسر، كله مقلوب، الوراق على الأرض،\n02:42.00 ومكتوب على الحيط يهودي.\n02:45.00 اليوم نحن بنعرف، مكتوب يهودي.\n\n# المكالمة الأخيرة\n02:48.00 ودغري ركضت على البيت، قلت لها ماما\n02:51.00 ماما ماما تعي شوفي شو صار مع البابا.\n02:54.00 بابا ما بنعرف وين راح.\n02:57.00 كلهم بلشوا ركض وهذا وبلشوا ضرب طوشة\n03:00.00 عند هاد وبعدين رحنا عند البوليس،\n03:03.00 وإجوا مخابرات وإجوا هاد.\n03:06.00 وصارت تصير بالأخبار، وبلشوا فتشوا\n03:09.00 شو صار هاد.\n03:12.00 ومن هون رحنا لهون ورحنا جينا لهون،\n03:15.00 ما عرفنا شو صار معه.\n03:18.00 خلص وهذا آخر شي عرفته؟\n03:21.00 هاد آخر شي عرفنا عنه،\n03:24.00 بعدين كم يوم اتصلوا المخطوفين.\n03:27.00 حكوا مع أمي، لهلق نحن ما بنعرف\n03:30.00 شو حكوا مع أمي.\n\n# الحياة بعد الاختفاء\n03:33.00 أنا بتذكر كتير كتير العياط اللي كان.\n03:36.00 هني خلوه يحكي معنا، حكي معنا،\n03:39.00 حكي مع أمي.\n03:42.00 حكي مع أخي الكبير، وحكي معي أنا.\n03:45.00 أنا بتذكر شو قال لي، أنا ما بعرف شو\n03:48.00 بتذكر شو قال لأخوي ولأمي.\n03:51.00 قلت له بابا بابا كيفك؟ مشتاق لك كتير.\n03:54.00 قال لي أنا بعرف، أنا بحسك،\n03:57.00 وعم تشتاق لي كتير.\n04:00.00 دير بالك عليهم على أخوك الكبير،\n\n# رسالة للشعب اللبناني\n04:03.00 بتعرف أنا بحبك، ما تسوي مشاكل.\n04:06.00 انتبه على أخوك الكبير وأخوك الصغير،\n04:09.00 واسمع كلام ماما، شو بتقول لك ساوي.\n04:12.00 قلت له طيب بابا إيمتى بدنا نشوفك؟\n04:15.00 قال لي قريباً بدك تشوفني.\n04:18.00 أنا جاي شوي كان عندي كم شغل وبرجع.\n04:21.00 بعد ما اختفى هو إنتو قعدتوا بلبنان\n04:24.00 سنتين تقريباً لبين ما طلعتوا على إسرائيل؟\n04:27.00 أه. كيف كانت الحياة بهديك الفترة\n04:30.00 بعد ما اختفى؟\n04:33.00 كان في طوشة كبيرة، بلش الحزب\n04:36.00 حزب الله وحزب أمل.\n04:39.00 بلشوا تحاربوا بيناتهم، بتعرف الحرب.\n04:42.00 مين حيستلم البناية تبعت الطائفة\n04:45.00 تبعت اليهود.\n04:48.00 بالطابق الثاني بالبيت اللي تحت منا\n04:51.00 كان ساكن رئيس حزب أمل.\n04:54.00 وفوقنا كانوا ناس تبعت حزب الله.\n04:57.00 وكنت تشوفهم بتعرف هني نازلين على الدرج،\n05:00.00 نحن عم نطلع من البيت.\n05:03.00 نازلين كل واحد طالع نازل على الدرج",
+    "similar_sounds": "وسيرة [الحذف] بلبنان هي معروفة،\n[قل] طائفة عندها مخطوفين.\nمش مهم شو مين إنت، مين [جينك]،\nإنت مسيحي، درزي، سني، [أردني]، مش مهم،\nاللي صارت مع [الوعود]،\nنحن بهمنا نحن مشان نحن [وجود].\nوكمان كانت طائفة [حقيرة]،\nيعني مش جديد علينا هي [الحذف].\nاليوم اللي عم [بيسير] بلبنان، بالمنطقة،\nكله عم [يتشجر]، تحت إجرينا كله عم يتغير.\nوكمان نحن ما بنعرف هني لوين بده [يوصل]\nهيدا كل هيدا [التشجير]. الحكي هو بلبنان،\nيعني اليوم بتشوف واحد لبناني [بيقول] لك:\nإن شاء الله [يرفعوا] لنا المخطوفين،\nإن شاء الله [نجمع] عليهم.\nمو يهود، نحن [هلك] بهمنا اليهود،\n[بهمنني] أنا أبوي.\nأهلين أنا اسمي موسى [حاموس]،\nمن لبنان، [بيروت]،\nمن حارة اليهود أبو [حميل].\nأنا ابنه لسليم [حاموس] رئيس الطائفة\n[الوعود] الأخراني بلبنان.\nأبوي بالـ 84 [انحذف]،\nوقالوا لنا كمان حزب [الله].\n[ولهلك] نحن ما بنعرف شو صار معه.\n[هدول] اليهود السبعة وأبوك شو صار معهم؟\nيعني هيك ليش [حذفوهم] برأيك إنت؟\nمشان هني [وجود]، هي أول شي،\nوكمان [وجود] هدول مو شعبي يعني،\nهدول كانوا [لاسكين] بالطائفة.\nكل واحد عنده [قائمة] بالطائفة.\nأبوي رئيس الطائفة، وواحد دكتور [الطائفة]،\nوواحد نقيب [الطائفة]،\nوواحد [خاخم] تبع الطائفة، يعني هدول...\nهدول عالم يعني [مهم] كتير كتير\nبلبنان [بالوعود] بالطائفة.\nكنا بالبيت، أنا [وأخي]،\nطيب أبوي [نزل] طلع لبرا.\nكان [لابس] يعني مع الغرافة والجاكيت تبعه.\nووقف على [الدرج]، قال سكروا الباب.\n[سوى] لنا بإيده، سلم علينا، أه.\nوهذا هو [الوقت] اللي قعد بوشي.\nهي [الصورة] يعني هذا السلام الأخراني\nاللي نحن [شفناه].\nكان عمري خمس سنين، قلبي كان [حاسسني].\nقلت [لها] لأمي طيب ما تخافي\nأنا رايح [عالمدرسة].\nوأخي راح عالمدرسة، أنا دغري [هربت]،\nلوين هربت؟ هربت عند [أبوي].\nعالمكتب، وفتحت [الباب]،\nكان طايش [بالمكتب].\nكله مكسر، كله مقلوب، الوراق على [الأرض]،\nومكتوب على [الحيت] يهودي.\nاليوم نحن بنعرف، مكتوب [يهودي].\nودغري ركضت على البيت، قلت لها [ماما]\nماما ماما تعي شوفي شو صار مع [البابا].\nبابا ما بنعرف وين [راح].\nكلهم بلشوا ركض وهذا وبلشوا ضرب [طوشة]\nعند هاد وبعدين رحنا عند [البوليس]،\nوإجوا مخابرات وإجوا [هاد].\nوصارت تصير بالأخبار، وبلشوا [فتشوا]\nشو صار [هاد].\nومن هون رحنا لهون ورحنا جينا [لهون]،\nما عرفنا شو صار [معه].\nخلص وهذا آخر شي [عرفته]؟\nهاد آخر شي عرفنا [عنه]،\nبعدين كم يوم اتصلوا [المخطوفين].\nحكوا مع أمي، لهلق نحن ما [بنعرف]\nشو حكوا مع [أمي].\nأنا بتذكر كتير كتير العياط اللي [كان].\nهني خلوه يحكي معنا، حكي [معنا]،\nحكي مع [أمي].\nحكي مع أخي الكبير، وحكي معي [أنا].\nأنا بتذكر شو قال لي، أنا ما بعرف [شو]\nبتذكر شو قال لأخوي [ولأمي].\nقلت له بابا بابا كيفك؟ مشتاق لك [كتير].\nقال لي أنا بعرف، أنا [بحسك]،\nوعم تشتاق لي [كتير].\nدير بالك عليهم على أخوك [الكبير]،\nبتعرف أنا بحبك، ما تسوي [مشاكل].\nانتبه على أخوك الكبير وأخوك [الصغير]،\nواسمع كلام ماما، شو بتقول لك [ساوي].\nقلت له طيب بابا إيمتى بدنا [نشوفك]؟\nقال لي قريباً بدك [تشوفني].\nأنا جاي شوي كان عندي كم شغل [وبرجع].\nبعد ما اختفى هو إنتو قعدتوا [بلبنان]\nسنتين تقريباً لبين ما طلعتوا على [إسرائيل]؟\nأه. كيف كانت الحياة بهديك [الفترة]\nبعد ما [اختفى]؟\nكان في طوشة كبيرة، بلش [الحزب]\nحزب الله وحزب [أمل].\nبلشوا تحاربوا بيناتهم، بتعرف [الحرب].\nمين حيستلم البناية تبعت [الطائفة]\nتبعت [اليهود].\nبالطابق الثاني بالبيت اللي تحت [منا]\nكان ساكن رئيس حزب [أمل].\nوفوقنا كانوا ناس تبعت حزب [الله].\nوكنت تشوفهم بتعرف هني نازلين على [الدرج]،\nنحن عم نطلع من [البيت].\nنازلين كل واحد طالع نازل على [الدرج]\nتشوف [سلاح].\nوأوقات كانوا يتحاربوا [بيناتهم]،\nيعني كنا نحن بالبيت وكم مرة بدنا [نطلع].\nبتشوفهم بيقوصوا واحد على [الثاني]\nعلى الدرج يعني ترررر بيقوصوا [هيك].\nوبعدين شفنا الحالة أمي شافت [الحالة]\nيعني مو كل هالقد حتمشي معنا [منيح].\nوصار كله حكي بتعرف نروح من بيت [لبيت]،\nبعدين رحنا عند [المسيحية].\nكنا كم مرة كمان عند حزب [الله]،\nحكينا مع حسن نصر [الله].\nاللي كان سكرتيرة تبعت حزب الله [بالأول].\nمرة على مرة كنا عنده، كم مرة كنا [عنده].\nاعترف، قال لي نحن [خطفناه].\nحسن نصر الله اعترف؟ اعترف [اعترف]\nنحن [خطفناه].\nوكمان شوي بنرجع لكم [إياه].\nهيك حكى؟ هيك [حكى].\nوبذات الوقت كان ممنوع نفوت [لعنده]\nعلى حزب الله على المكاتب [تبعهم].\nطيب ما بعرف بعدين أمي شو [ساوت]،\nأمي حكيت [مع]...\nيعني كنا بتعرف كنا كمان عند [جنبلاط].\nقال لي حلف، قال لي أنا بعرفه [لزوجك]،\nنحن ما سوينا [شي].\nخليني فتش أنا شو بيطلع معي أنا بقول [لك].\nيعني ما في حدا بلبنان ما بيعرفه [لأبوي].\nبهديك الفترة كانوا كتير يهود من [سوريا]\nما بيطيقوا الحياة بسوريا وكانوا [يهربوا]،\nأبوك كان يساعدهم صح؟ [صح]،\nاللي بده يجي لإسرائيل مش مهم من [وين]،\nمن تركيا، من [أوروبا].\nبتعرف بالوقت هاد كانوا [يجوا]\nعلى طريق [لبنان].\nلبنان زي نيويورك بهديك [الوقت]،\nكل واحد بده يسوي شوي [مصاري]،\nيهودي مش يهودي، من [عراق]،\nمن وين ما بدك ينزل يسوي مصاري [بلبنان].\nكان في مشكلة [بسوريا].\nاللي كانوا يتنكلوا كتير [كتير]\nليهود الشام ويهود [حلب].\nما نجحوا مع [الأسد].\nيعني خذ أمي كانت تطلع [مظاهرات]،\nكان في كتير مظاهرات تبعت [الطائفة]\nاليهود [الشام].\nيعني بيقولوا لي أنا سمعت من [العالم]،\nقالوا لي تعا شوف كنا نشوف [أمك]\nعم تطلع على الشاشة وتعيط يا أسد يا [أسد]\nخلينا نطلع من [هون].\nإجا الأسد شاف هي مشكلة حتبلش تروح [وتكبر].\nهو سوى عملية، بده يشارك سوريا [كبيرة]،\nبده يعملها سوريا [الكبيرة].\nلازم يكون معه سلاح، أخذ كل [المصاري]\nتبعت سوريا واشترى فيهم [سلاح].\nبملايين الدولارات، طيب وشو صاير [بالأخير]\nالشعب ما عنده [ياكل].\nكل واحد بلش بده يهرب، بلشوا يهود [يطلعوا].\nراحوا سووا غروب، اجتمعوا أخذوا كم [بنات].\nأخذوا أول 32 جمعوهم وقالوا [لهم]\nاطلعوا هلق على [لبنان].\nومن هنيك في واحد بيستناكم هو [يعني]\nبيساعدكم بيطلع... انتقلوا [بأمان].\nشو صار؟ هدول البنات ما وصلوا [للبنان].\nذبحوهم هني وطالعين على الحدود، [كمشوهم].\nاغتصبوهم وضربوهم [وقتلوهم].\nمين هدول سواهم؟ الجيش [السوري]،\nصار مشكلة كبيرة بطائفة [اليهود]\nتبعت [الشام].\nإجوا الرئاسة تبعت الطائفة [اليهود].\nإجا رفعت حمزة هلق بدهم بتعرف [بدهم]\nينزلوا الضغط تبع اللي عم بيصير [بالحارة].\nقال أختي حتطلع، خذوا [أختي]،\nوينها مروة [قطش]؟\nأمي كانت معروفة، إنتي [كمان]،\nوكان بنات كلهم [معروفين].\nجمعوهم وطلعوا قالوا لهم اطلعوا [للبنان].\nالله أعطاهم بركة ووصلوا [للبنان]،\nمين استلمهم؟ [أبوي].\nلقى لهم بيوت، لقى لهم [منطقة]،\nكانوا يعيشوا [بالكنيسة].\nحطهم بالكنيسة كل واحد يضبط له [باسبور]،\nجنسية، ويطلعوا [لإسرائيل].\nهي كانت أي سنة؟ هي كانت بأول [السبعينات].\nيعني أبوك كان أصله برضه [سوري]؟\nأبوي حلبي. تربى بحلب، كبر [بحلب]،\nهو [وصغير].\nطلع نزل على لبنان، ومن هنيك [بلش]\nيعمر حاله درجة ورا [درجة].\nلوصل لرئيس الطائفة تبعت يهود [لبنان].\nبتعرف هاد الوقت نحن [خلقانين]\nعلى وقت الحرب، الحرب [الأهلية].\nكنا نتعلم بالمدرسة بتعرف نحن [عند]\nالفرنساوية يعني عند [المسيحية].\nببيروت تعلمنا بـ &quot;غراند [جاردان&quot;]،\nوأنا بصف الأول وصلت [أنا].\nالعيشة كانت منيحة، ما كان ناقصنا [شي]\nبالبيت. بالعكس، شو طلبنا كان [عندنا].\nنروح دايماً عند أبوي، أهرب من [المدرسة]\nروح عند [أبوي].\nوين أروح؟ عند أبوي أقعد روح [لعنده]\nعالمكتب. مكتبه كان بكنيسة [اليهود]\nبالطائفة، هنيك كان المكتب [تبعه].\nوبذات اليوم قبل بليلة قبل ما هو [انخطف].\nالناس اللي كانوا بدهم يخطفوه إجوا أول [ليلة].\nفتحنا، أهلين، شو مين [إنتو]؟\nنحن ناس بدنا مساعدة بدنا [نحكي]\nمع سليم [جاموس].\nبالبيت، قال صح هو بالبيت بس شوي [مرتاح].\nقالوا طيب خلص مش مهم [بنستناه]\nبنجي لعنده [الصبح].\nوهدول هني استنوه كل الليل عشان [يخطفوه].\nهدول كانوا اللي بيخطفوه، كانوا [يستنوه]\nبرا البيت؟ استنوه قدام [الكنيسة].\nاليوم في محادثات جديدة مع [لبنان]،\nاليوم حزب الله سقط [بهالحرب]،\nشو إنتو كعائلة جاموس شو بتطلبوا من [لبنان]؟\nشو بدكم من أي مواطن لبناني شايف [هالفيديو]؟\nأنا بدي أحكي للمواطن [اللبناني]،\nاللي عايش برا واللي عايش [جوا].\nسيرة المخطوفين قريبة [علي]\nوقريبة كمان [عليكم].\nاللي عندكم معلومات تعرفوا شو [صار]،\nقولوا [لنا].\nتاني شي لرئيس [الجمهورية]،\nلحركة حزب الله، لحركة [أمل].\nقولوا لنا شو صار، من كل [الحركات]\nاللي [بلبنان].\nساعدونا نخلص القصة، خلص نحن [عايشين]\n40 سنة كمان [شوي].\nما عندنا حياة، اللي صار [صار].\nعايشين ميتين مش مهم، رجعوا لنا [إياهم].\nهي عندكم بالدين، وعندنا كمان نحن [بالدين].\nخلص طلعنا من [لبنان]،\nبس قلبنا لساته [لبناني]."
+  },
+  "created_at": "2026-05-01 10:35:48 UTC",
+  "updated_at": "2026-05-01 11:36:42 UTC",
+  "exported_at": "2026-05-01T11:36:42Z"
+}

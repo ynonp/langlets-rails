@@ -1,0 +1,1493 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=O3eVCZK3JEA",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "أنا ساكن هون، جاري ساكن قدامي،",
+        "text_l2": "I live here, my neighbor lives across from me,",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:02.50"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "بوادي أبو جميل.",
+        "text_l2": "in Wadi Abu Jamil.",
+        "timestamp": "00:02.50",
+        "timestamp_end": "00:05.00"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "جاري اعتمد بده يسافر، بده يروح",
+        "text_l2": "My neighbor, may he rest in peace, wanted to travel, he wanted to go",
+        "timestamp": "00:06.00",
+        "timestamp_end": "00:08.50"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "لإسرائيل ما عندنا حدود مع إسرائيل.",
+        "text_l2": "to Israel. We don't have borders with Israel.",
+        "timestamp": "00:08.50",
+        "timestamp_end": "00:10.50"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "لبنان فيه حدود، بس مسكرة الحدود.",
+        "text_l2": "Lebanon has borders, but the borders are closed.",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:13.00"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "ما فيه سيارة بتمرق من لبنان لإسرائيل.",
+        "text_l2": "No car can pass from Lebanon to Israel.",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:15.50"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "شو كنا نروح؟ نروح عن طريق قبرص.",
+        "text_l2": "How did we go? We went via Cyprus.",
+        "timestamp": "00:16.00",
+        "timestamp_end": "00:19.00"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "وحتى العفش، البيت، كله كونتينير",
+        "text_l2": "Even the furniture, the house, everything in a container",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:22.50"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "لقبرص ومن قبرص لحيفا.",
+        "text_l2": "to Cyprus, and from Cyprus to Haifa.",
+        "timestamp": "00:22.50",
+        "timestamp_end": "00:25.50"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "بدي أحكي لك هذه، أنت تصدقني؟",
+        "text_l2": "I want to tell you this, do you believe me?",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:28.00"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "يمكن ما عم تصدقني.",
+        "text_l2": "Maybe you don't believe me.",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.50"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "قدامي جاري حضر الكونتينير تبعه",
+        "text_l2": "Across from me, my neighbor prepared his container",
+        "timestamp": "01:31.00",
+        "timestamp_end": "00:33.50"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "مع العفش تبع البيت. أحزر شو كان مكتوب.",
+        "text_l2": "with the house furniture. Guess what was written.",
+        "timestamp": "00:33.50",
+        "timestamp_end": "00:35.50"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "على الكونتينير؟ كونتينير من خشب",
+        "text_l2": "On the container? A wooden container",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:38.00"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "قد هالبيت، كل العفش جوه. شو مكتوب؟",
+        "text_l2": "size of this house, all the furniture inside. What was written?",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:40.50"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "تل أبيب. برافو.",
+        "text_l2": "Tel Aviv. Bravo.",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:45.00"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "عائلة كبريتي، بيروت-قبرص-تل أبيب.",
+        "text_l2": "Kabriti family, Beirut-Cyprus-Tel Aviv.",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:48.50"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "ومين واقف قدام الكونتينير؟",
+        "text_l2": "And who was standing in front of the container?",
+        "timestamp": "00:48.50",
+        "timestamp_end": "00:50.50"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "شرطي لبناني، وهو شو؟ عم بيساعدهم.",
+        "text_l2": "A Lebanese policeman, and what was he doing? Helping them.",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:53.50"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "\"هات هذه، هات هذا، ناولني إياهم، يالله\"",
+        "text_l2": "\"Bring this, bring that, hand them to me, come on\"",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:56.50"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "عم بيحط بالكونتينير.",
+        "text_l2": "He was putting them in the container.",
+        "timestamp": "00:56.50",
+        "timestamp_end": "00:58.50"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "عم بيساعد يهودي يسافر لإسرائيل!",
+        "text_l2": "He was helping a Jew travel to Israel!",
+        "timestamp": "00:59.00",
+        "timestamp_end": "01:01.50"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "أنت بتضحك؟",
+        "text_l2": "Are you laughing?",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:04.50"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "شي بيضحك وشي بيبكي،",
+        "text_l2": "Some things make you laugh, some make you cry,",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:07.50"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "لا، ما بيبكي، شي بيضحك.",
+        "text_l2": "No, it doesn't make you cry, it makes you laugh.",
+        "timestamp": "01:07.50",
+        "timestamp_end": "01:10.00"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "الإمام اليهودي في بيروت |",
+        "text_l2": "The Jewish Imam in Beirut |",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:13.50"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "هنري مكنوز",
+        "text_l2": "Henry Meknouz",
+        "timestamp": "01:13.50",
+        "timestamp_end": "01:15.50"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "ميلانو، إيطاليا",
+        "text_l2": "Milan, Italy",
+        "timestamp": "01:16.00",
+        "timestamp_end": "01:18.50"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "أنا اسمي هنري مكنوز،",
+        "text_l2": "My name is Henry Meknouz,",
+        "timestamp": "01:19.00",
+        "timestamp_end": "01:22.00"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "بس بالهوية مكتوب هارون.",
+        "text_l2": "but on the ID it says Harun.",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:24.50"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "اتولدت ببيروت سنه 1931.",
+        "text_l2": "I was born in Beirut in 1931.",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:27.50"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "كان حواليك يهود؟",
+        "text_l2": "Were there Jews around you?",
+        "timestamp": "01:28.00",
+        "timestamp_end": "01:30.50"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "كله، بيروت كله يهود،",
+        "text_l2": "Everything, all of Beirut was Jews,",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:33.50"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "بوادي أبو جميل، ما فيه غيره.",
+        "text_l2": "in Wadi Abu Jamil, there was nothing else.",
+        "timestamp": "01:33.50",
+        "timestamp_end": "01:35.50"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "وصف لي الحياة اليهودية",
+        "text_l2": "Describe to me the Jewish life",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:38.50"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بهذيك الفترة ببيروت.",
+        "text_l2": "in that period in Beirut.",
+        "timestamp": "01:38.50",
+        "timestamp_end": "01:40.50"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "بقول لك أجمل من هيك ما فيه،",
+        "text_l2": "I tell you, there's nothing more beautiful than this,",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:43.50"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "حياة ماكسيموم، أحلى شيء.",
+        "text_l2": "Maximum life, the best thing.",
+        "timestamp": "01:43.50",
+        "timestamp_end": "01:45.50"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "شو بدك أحلى من هيك؟",
+        "text_l2": "What do you want nicer than this?",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:48.50"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "أحلى من عيشة بيروت؟",
+        "text_l2": "Nicer than life in Beirut?",
+        "timestamp": "01:48.50",
+        "timestamp_end": "01:50.50"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "بيقولوا سويسرا الشرق،",
+        "text_l2": "They say it's the Switzerland of the East,",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:53.50"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "ولك بلا سويسرا بلا بطيخ!",
+        "text_l2": "I tell you, no Switzerland, no nonsense!",
+        "timestamp": "01:53.50",
+        "timestamp_end": "01:55.50"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "بيروت ما فيه غيرها.",
+        "text_l2": "There's no other Beirut.",
+        "timestamp": "01:56.00",
+        "timestamp_end": "01:58.50"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "وما فيه أحلى منها وما فيه مثلها.",
+        "text_l2": "There's nothing nicer than it and nothing like it.",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:01.50"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "أبي كان منجد.",
+        "text_l2": "My father was an upholsterer.",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:04.50"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "بتعرف شو يعني منجد؟",
+        "text_l2": "Do you know what upholsterer means?",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:07.50"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "منجد اللي بيساوي فرش.",
+        "text_l2": "Upholsterer is the one who makes mattresses.",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:10.50"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "فرشه بعد كم سنه بتخفص بتنتزع.",
+        "text_l2": "A mattress after some years gets thin, gets worn out.",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.50"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "بيجي برم برم برم،",
+        "text_l2": "He comes, brm brm brm,",
+        "timestamp": "02:14.00",
+        "timestamp_end": "02:16.50"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "بينظف القطن اللي فيها",
+        "text_l2": "He cleans the cotton inside it",
+        "timestamp": "02:17.00",
+        "timestamp_end": "02:19.50"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "بيصيروا ولا أحلى من هيك.",
+        "text_l2": "They become even nicer than this.",
+        "timestamp": "02:19.50",
+        "timestamp_end": "02:21.50"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "كان فيه كتير منجدين ببيروت،",
+        "text_l2": "There were many upholsterers in Beirut,",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:24.50"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "يمكن أنا بعرف شي عشرة يهود.",
+        "text_l2": "maybe I know about ten Jews.",
+        "timestamp": "02:24.50",
+        "timestamp_end": "02:27.50"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "هذه شغلة مين بيسويها؟",
+        "text_l2": "Who does this work today?",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:30.50"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "اليوم ما بقى ولا واحد بيسويها.",
+        "text_l2": "Today there isn't a single one left doing it.",
+        "timestamp": "02:30.50",
+        "timestamp_end": "02:32.50"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "فيه ماكينات بيحطوا القطن،",
+        "text_l2": "There are machines that put the cotton,",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:35.50"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "بس وين شغل الإيد؟ ولا أحلى من هيك.",
+        "text_l2": "but where is the handiwork? Nothing nicer than this.",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:38.50"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "ببيروت كان عندنا 11 الى 13 كنيس",
+        "text_l2": "In Beirut we had 11 to 13 synagogues",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:41.50"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "كلهم بيشتغلوا.",
+        "text_l2": "All of them were operating.",
+        "timestamp": "02:41.50",
+        "timestamp_end": "02:44.00"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "اسم الكنيس كان شو؟",
+        "text_l2": "What was the name of the synagogue?",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:47.50"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "أنا كنيس الشوام.",
+        "text_l2": "I was at the Shamis Synagogue.",
+        "timestamp": "02:48.00",
+        "timestamp_end": "02:50.50"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "ليش كلهم كانوا شوام؟ من الشام.",
+        "text_l2": "Why were they all Shamis? From the Levant.",
+        "timestamp": "02:50.50",
+        "timestamp_end": "02:52.50"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "الحقيقة، كان غير حياة.",
+        "text_l2": "Truthfully, it was a different life.",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:55.50"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "إن كان حياة الكنيس،",
+        "text_l2": "Whether it was synagogue life,",
+        "timestamp": "02:55.50",
+        "timestamp_end": "02:57.50"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "وإن كان حياة اليهود،",
+        "text_l2": "and whether it was Jewish life,",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:00.50"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "وإن كان حياة الكشروت (الأكل الحلال).",
+        "text_l2": "and whether it was Kashrut life (kosher food).",
+        "timestamp": "03:00.50",
+        "timestamp_end": "03:02.50"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "كاشير ما كاشير، كان فيه حياة حلوة.",
+        "text_l2": "Kosher or not, there was a sweet life.",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.50"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "أهلي، أمي من الشام وأبي من دير القمر.",
+        "text_l2": "My family, my mother from the Levant and my father from Deir al-Qamar.",
+        "timestamp": "03:06.00",
+        "timestamp_end": "03:08.50"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "فيه ضيعة بلبنان اسمها دير القمر.",
+        "text_l2": "There is a village in Lebanon called Deir al-Qamar.",
+        "timestamp": "03:09.00",
+        "timestamp_end": "03:11.50"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "أكثر (يهود بيروت) كانوا من دير القمر.",
+        "text_l2": "Most (Beirut Jews) were from Deir al-Qamar.",
+        "timestamp": "03:11.50",
+        "timestamp_end": "03:14.50"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "كل اللي بيقول لك أنا بيروتي",
+        "text_l2": "Everyone who tells you I am Beiruti",
+        "timestamp": "03:15.00",
+        "timestamp_end": "03:17.50"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "أنا خلقان ببيروت، أنا جئت من بيروت.",
+        "text_l2": "I was created in Beirut, I came from Beirut.",
+        "timestamp": "03:17.50",
+        "timestamp_end": "03:19.50"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "بقبله، أنا ما بحب أكذب حدا،",
+        "text_l2": "I accept it, I don't like to lie to anyone,",
+        "timestamp": "03:20.00",
+        "timestamp_end": "03:22.50"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "كله مضبوط، شو بتقول مضبوط، لو كان غلط.",
+        "text_l2": "It's all correct, what do you say correct, even if it's wrong.",
+        "timestamp": "03:22.50",
+        "timestamp_end": "03:24.50"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "1958 حرب بين المسيحيين والمسلمين ببيروت.",
+        "text_l2": "1958 war between Christians and Muslims in Beirut.",
+        "timestamp": "03:25.00",
+        "timestamp_end": "03:27.50"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "كيف أثرت عليكم؟ أنت واحد يهودي",
+        "text_l2": "How did it affect you? You are a Jew",
+        "timestamp": "03:28.00",
+        "timestamp_end": "03:30.50"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "بيجي للحاجز او شي، حواجز بالشوارع.",
+        "text_l2": "coming to a checkpoint or something, checkpoints in the streets.",
+        "timestamp": "03:30.50",
+        "timestamp_end": "03:32.50"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "أقول لك الحقيقة، على اليهود ما صار شيء.",
+        "text_l2": "I tell you the truth, nothing happened to the Jews.",
+        "timestamp": "03:33.00",
+        "timestamp_end": "03:35.50"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "غيري بيقول لك \"نحن كنا بخطر\"،",
+        "text_l2": "Others tell you \"We were in danger\",",
+        "timestamp": "03:36.00",
+        "timestamp_end": "03:38.50"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "ما كنا لا بخطر ولا شيء.",
+        "text_l2": "We were neither in danger nor anything.",
+        "timestamp": "03:38.50",
+        "timestamp_end": "03:40.50"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "مرتي الله يرحمها خافت كمان،",
+        "text_l2": "My wife, God have mercy on her, was afraid too,",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:43.50"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "نفس الشيء مثل اللي قال بخطر.",
+        "text_l2": "Same thing like those who said in danger.",
+        "timestamp": "03:43.50",
+        "timestamp_end": "03:45.50"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "انه نحن قاعدين ببلاد عربية، ما لازم.",
+        "text_l2": "That we are sitting in Arab countries, it's not necessary.",
+        "timestamp": "03:46.00",
+        "timestamp_end": "03:48.50"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "اليوم ساكتين، بكره بيطلعوا بحرب.",
+        "text_l2": "Today they are quiet, tomorrow they start a war.",
+        "timestamp": "03:49.00",
+        "timestamp_end": "03:51.50"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "بكره بحرب، ثاني يوم غير شيء.",
+        "text_l2": "Tomorrow at war, the day after something else.",
+        "timestamp": "03:52.00",
+        "timestamp_end": "03:54.50"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "النتيجة أحسن شيء، نروح.",
+        "text_l2": "The result, the best thing, we leave.",
+        "timestamp": "03:55.00",
+        "timestamp_end": "03:57.50"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "لوين بدنا نروح؟ ما عندنا بلد",
+        "text_l2": "Where do we want to go? We don't have a country",
+        "timestamp": "03:57.50",
+        "timestamp_end": "04:00.50"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "لوين بدنا نروح؟",
+        "text_l2": "Where do we want to go?",
+        "timestamp": "04:00.50",
+        "timestamp_end": "04:02.50"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "جينا فكرنا أنا وياها،",
+        "text_l2": "We came, we thought, me and her,",
+        "timestamp": "04:03.00",
+        "timestamp_end": "04:05.50"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "هي كانت الجنسية تبعها إيطالية.",
+        "text_l2": "Her nationality was Italian.",
+        "timestamp": "04:05.50",
+        "timestamp_end": "04:07.50"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "ما تسألني كيف الجنسية طلعت إيطالية،",
+        "text_l2": "Don't ask me how the nationality turned out Italian,",
+        "timestamp": "04:08.00",
+        "timestamp_end": "04:10.50"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "ما بعرف، أكثرهم راحوا لإيطاليا.",
+        "text_l2": "I don't know, most of them went to Italy.",
+        "timestamp": "04:10.50",
+        "timestamp_end": "04:12.50"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "وغيرهم اخذوا جنسية أو هوية مثلا",
+        "text_l2": "And others took a nationality or ID for example",
+        "timestamp": "04:13.00",
+        "timestamp_end": "04:15.50"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "أرجنتيني، راحوا على القنصلية",
+        "text_l2": "Argentine, they went to the consulate",
+        "timestamp": "04:16.00",
+        "timestamp_end": "04:18.50"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "الأرجنتينية ببيروت.",
+        "text_l2": "Argentine in Beirut.",
+        "timestamp": "04:18.50",
+        "timestamp_end": "04:20.50"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "أنا كنت إيطالي،",
+        "text_l2": "I was Italian,",
+        "timestamp": "04:21.00",
+        "timestamp_end": "04:23.50"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "بس الجنسية تبعي راحت علي، احترق هذا.",
+        "text_l2": "But my nationality went away from me, this burned out.",
+        "timestamp": "04:23.50",
+        "timestamp_end": "04:25.50"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "طيب، سووا إيطالي.",
+        "text_l2": "Okay, make it Italian.",
+        "timestamp": "04:26.00",
+        "timestamp_end": "04:28.50"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "وإيش كان شغلك بلبنان؟ ببيروت؟",
+        "text_l2": "And what was your work in Lebanon? In Beirut?",
+        "timestamp": "04:29.00",
+        "timestamp_end": "04:31.50"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "كان عندي دكان، محل خردوات.",
+        "text_l2": "I had a shop, a hardware store.",
+        "timestamp": "04:32.00",
+        "timestamp_end": "04:34.50"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "ببيع أمشاط، شفرات حلاقة،",
+        "text_l2": "I sold combs, razor blades,",
+        "timestamp": "04:35.00",
+        "timestamp_end": "04:37.50"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "ماكينات حلاقة، صابون للحلاقه.",
+        "text_l2": "shaving machines, shaving soap.",
+        "timestamp": "04:37.50",
+        "timestamp_end": "04:40.50"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "دواء اسنان، فرشاة الأسنان.",
+        "text_l2": "Tooth medicine, toothbrush.",
+        "timestamp": "04:41.00",
+        "timestamp_end": "04:43.50"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "هذا اسمه خردوات.",
+        "text_l2": "This is called hardware.",
+        "timestamp": "04:43.50",
+        "timestamp_end": "04:45.50"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "والزبائن كانوا من كل الطوائف؟",
+        "text_l2": "And the customers were from all sects?",
+        "timestamp": "04:46.00",
+        "timestamp_end": "04:48.50"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "ما فيه! كان في طوائف؟؟",
+        "text_l2": "No! Were there sects??",
+        "timestamp": "04:49.00",
+        "timestamp_end": "04:51.50"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "عم بتضحك أنت... طيب ما كان فيه طوائف!",
+        "text_l2": "You are laughing... Okay there were no sects!",
+        "timestamp": "04:52.00",
+        "timestamp_end": "04:54.50"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "هذا يجي لعندي، \"أهلا أهلا أبو سمير!",
+        "text_l2": "This one comes to me, \"Welcome, welcome Abu Samir!",
+        "timestamp": "04:55.00",
+        "timestamp_end": "04:57.50"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "شلونك؟ كيفك؟ صار زمان ما شفتك!",
+        "text_l2": "How are you? How are you? It's been a while since I saw you!",
+        "timestamp": "04:57.50",
+        "timestamp_end": "05:00.50"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "ليه ما عم تيجي؟\" هيك.",
+        "text_l2": "Why don't you come?\" Like this.",
+        "timestamp": "05:00.50",
+        "timestamp_end": "05:02.50"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "أنا الحلو تبعي، الدين، الصلاة.",
+        "text_l2": "My sweet thing, religion, prayer.",
+        "timestamp": "05:33.00",
+        "timestamp_end": "05:35.50"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "هذا الحلو، بدوخ، بدوخ، بدوخ.",
+        "text_l2": "This is sweet, dizzying, dizzying, dizzying.",
+        "timestamp": "05:35.50",
+        "timestamp_end": "05:37.50"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "طلعنا بحمدون، فيه كنيس كبيرة،",
+        "text_l2": "We went up to Hammana, there is a big synagogue,",
+        "timestamp": "05:38.00",
+        "timestamp_end": "05:40.50"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "أحلى من هيك ما فيه.",
+        "text_l2": "Nothing is nicer than this.",
+        "timestamp": "05:40.50",
+        "timestamp_end": "05:42.50"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "أنا كنت ساكن بعيد عن الكنيس الكبيرة.",
+        "text_l2": "I lived far from the big synagogue.",
+        "timestamp": "05:43.00",
+        "timestamp_end": "05:45.50"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "كل مره بدي اروح انا الصبح والمساء",
+        "text_l2": "Every time I wanted to go morning and evening",
+        "timestamp": "05:46.00",
+        "timestamp_end": "05:48.50"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "بدي اروح بالشحريت ومنحاة",
+        "text_l2": "I wanted to go for Shacharit and Mincha",
+        "timestamp": "05:48.50",
+        "timestamp_end": "05:50.50"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "(الصلوات اليهودية).",
+        "text_l2": "(Jewish prayers).",
+        "timestamp": "05:50.50",
+        "timestamp_end": "05:52.50"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "أطلب مشوار؟ تعالوا يا جماعة،",
+        "text_l2": "Do I ask for a ride? Come on guys,",
+        "timestamp": "05:53.00",
+        "timestamp_end": "05:55.50"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "ابن خالي ابن خالتي، فلان، اخي.",
+        "text_l2": "My cousin, my cousin, so-and-so, my brother.",
+        "timestamp": "05:55.50",
+        "timestamp_end": "05:57.50"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "تعال نعمل منيان (صلاة جماعة).",
+        "text_l2": "Come let's make a Minyan (group prayer).",
+        "timestamp": "05:58.00",
+        "timestamp_end": "06:00.50"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "عشرة أنفار بيكفينا ونعمل هون كنيس.",
+        "text_l2": "Ten people are enough for us and we make a synagogue here.",
+        "timestamp": "06:00.50",
+        "timestamp_end": "06:02.50"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "شو نعمل هون كنيس؟ بدك مصاري،",
+        "text_l2": "How do we make a synagogue here? You need money,",
+        "timestamp": "06:03.00",
+        "timestamp_end": "06:05.50"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "مصاري؟ أبو المصاري!",
+        "text_l2": "Money? Father of money!",
+        "timestamp": "06:05.50",
+        "timestamp_end": "06:07.50"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "استأجرنا بيت قدام بيتي، تحت،",
+        "text_l2": "We rented a house in front of my house, below,",
+        "timestamp": "06:08.00",
+        "timestamp_end": "06:10.50"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "تلتيتة اسمها المنطقة بحمدون.",
+        "text_l2": "a terrace area called the zone in Hammana.",
+        "timestamp": "06:10.50",
+        "timestamp_end": "06:12.50"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "صرنا نساوي منحاة، شحريت، عربيت",
+        "text_l2": "We started doing Mincha, Shacharit, Arvit",
+        "timestamp": "06:13.00",
+        "timestamp_end": "06:15.50"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "بهالكنيس. بنيتم كنيس صغيرة يعني.",
+        "text_l2": "in this synagogue. You built a small synagogue meaning.",
+        "timestamp": "06:15.50",
+        "timestamp_end": "06:17.50"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "كنيس صغيرة، ما كنت اطلع لفوق.",
+        "text_l2": "A small synagogue, I didn't go up above.",
+        "timestamp": "06:18.00",
+        "timestamp_end": "06:20.50"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "كان في مشكلة بين السوريين الشوام",
+        "text_l2": "Was there a problem between the Syrian Shamis",
+        "timestamp": "06:21.00",
+        "timestamp_end": "06:23.50"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "واللبنانيه الأصليين؟",
+        "text_l2": "and the original Lebanese?",
+        "timestamp": "06:23.50",
+        "timestamp_end": "06:25.50"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "مشكل؟ ما كان فيه، اجوا شوام حظاتها",
+        "text_l2": "Problem? There wasn't, Shamis came at that time",
+        "timestamp": "06:26.00",
+        "timestamp_end": "06:28.50"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "اجوا شوام ناموا ببيوتنا.",
+        "text_l2": "Shamis came and slept in our houses.",
+        "timestamp": "06:28.50",
+        "timestamp_end": "06:30.50"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "بتصدق؟ ما بتصدق! كل واحد دق الباب.",
+        "text_l2": "Do you believe? You don't believe! Everyone knocked on the door.",
+        "timestamp": "06:31.00",
+        "timestamp_end": "06:33.50"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "دق الباب عليك، عليه، علي،",
+        "text_l2": "Knocked on your door, his door, my door,",
+        "timestamp": "06:34.00",
+        "timestamp_end": "06:36.50"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "يابا معنا عيلة تنام عندك.",
+        "text_l2": "Father, we have a family to sleep at your place.",
+        "timestamp": "06:36.50",
+        "timestamp_end": "06:38.50"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "البيوت كانوا كبار! عشر أوض،",
+        "text_l2": "The houses were big! Ten rooms,",
+        "timestamp": "06:39.00",
+        "timestamp_end": "06:41.50"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "خمس أوض، سبع أوض.",
+        "text_l2": "five rooms, seven rooms.",
+        "timestamp": "06:39.50",
+        "timestamp_end": "06:41.50"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "عائلة؟ أهلا وسهلا فيها.",
+        "text_l2": "A family? Welcome to them.",
+        "timestamp": "06:42.00",
+        "timestamp_end": "06:44.50"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "قعدوا ليش؟ منشان تعملوا لهم الأوراق",
+        "text_l2": "Why did they stay? To make papers for them",
+        "timestamp": "06:45.00",
+        "timestamp_end": "06:47.50"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "ويهربوهم لفلسطين، كان فلسطين.",
+        "text_l2": "and smuggle them to Palestine, it was Palestine.",
+        "timestamp": "06:47.50",
+        "timestamp_end": "06:49.50"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "من جنوب لبنان يفوتوا لاسرائيل",
+        "text_l2": "From South Lebanon they enter to Israel",
+        "timestamp": "06:50.00",
+        "timestamp_end": "06:52.50"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "بدهم أوراق، بدهم معاملات.",
+        "text_l2": "They need papers, they need procedures.",
+        "timestamp": "06:52.50",
+        "timestamp_end": "06:54.50"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "وحظاتها ياما تعذبوا! بس بالاخر",
+        "text_l2": "And at that time how they suffered! But in the end",
+        "timestamp": "06:55.00",
+        "timestamp_end": "06:57.50"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "الحمد لله الله ساعدهم.",
+        "text_l2": "Praise God, God helped them.",
+        "timestamp": "06:57.50",
+        "timestamp_end": "06:59.50"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "يروحوا بعد صيدا، صور، بعد صور",
+        "text_l2": "They go after Sidon, Tyre, after Tyre",
+        "timestamp": "07:00.00",
+        "timestamp_end": "07:02.50"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "كم كيلومتر، واقف! يلا نمشي.",
+        "text_l2": "How many kilometers, stop! Let's walk.",
+        "timestamp": "07:02.50",
+        "timestamp_end": "07:04.50"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "مشيوا على اجريهم بالليل،",
+        "text_l2": "They walked on their feet at night,",
+        "timestamp": "07:05.00",
+        "timestamp_end": "07:07.50"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "هربوا هريبة، اذا كمشوهم.",
+        "text_l2": "They fled in a hurry, if they caught them.",
+        "timestamp": "07:07.50",
+        "timestamp_end": "07:09.50"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "حظاتها، فيه ناس انكمشوا وتوقفوا وكله.",
+        "text_l2": "At that time, there were people who were caught and stopped and all.",
+        "timestamp": "07:10.00",
+        "timestamp_end": "07:12.50"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "الكنيس الكبير ايش اسمه ببيروت؟",
+        "text_l2": "What is the name of the big synagogue in Beirut?",
+        "timestamp": "07:13.00",
+        "timestamp_end": "07:15.50"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "ماجين ابراهيم.",
+        "text_l2": "Magen Abraham.",
+        "timestamp": "07:15.50",
+        "timestamp_end": "07:17.50"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "هذا كان وين تصلي أنت؟",
+        "text_l2": "Is this where you prayed?",
+        "timestamp": "07:18.00",
+        "timestamp_end": "07:20.50"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "لا، أنت بشوام كنت.",
+        "text_l2": "No, you were at the Shamis.",
+        "timestamp": "07:20.50",
+        "timestamp_end": "07:22.50"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "أنا كنت بالشوام، بس الحزان",
+        "text_l2": "I was at the Shamis, but the Hazzan",
+        "timestamp": "07:23.00",
+        "timestamp_end": "07:25.50"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "(إمام الصلاة) الرئيسي كنت أنا.",
+        "text_l2": "(Prayer Imam) main was me.",
+        "timestamp": "07:25.50",
+        "timestamp_end": "07:27.50"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "أنا فتت على كنيس ماغن أبراهام",
+        "text_l2": "I went to Magen Abraham Synagogue",
+        "timestamp": "07:28.00",
+        "timestamp_end": "07:30.50"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "لما كان عمري 18 سنة.",
+        "text_l2": "when I was 18 years old.",
+        "timestamp": "07:30.50",
+        "timestamp_end": "07:32.50"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "كان ايمتى؟ رأس السنة، يوم الغفران.",
+        "text_l2": "When was it? Rosh Hashanah, Yom Kippur.",
+        "timestamp": "07:33.00",
+        "timestamp_end": "07:35.50"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "ما عندهم حزان (إمام صلاة).",
+        "text_l2": "They didn't have a Hazzan (Prayer Imam).",
+        "timestamp": "07:36.00",
+        "timestamp_end": "07:38.50"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "بدأت أزمة في بيروت مع الشوام،",
+        "text_l2": "A crisis started in Beirut with the Shamis,",
+        "timestamp": "07:39.00",
+        "timestamp_end": "07:41.50"
+      },
+      {
+        "id": "phrase_162",
+        "text_l1": "وما كان هناك أئمة.",
+        "text_l2": "and there were no Imams there.",
+        "timestamp": "07:41.50",
+        "timestamp_end": "07:43.50"
+      },
+      {
+        "id": "phrase_163",
+        "text_l1": "بيتلفنوا لي، ما كان تلفون!",
+        "text_l2": "They call me, there was no phone!",
+        "timestamp": "07:44.00",
+        "timestamp_end": "07:46.50"
+      },
+      {
+        "id": "phrase_164",
+        "text_l1": "بعتوا لي الخدام.",
+        "text_l2": "They sent me the servant.",
+        "timestamp": "07:46.50",
+        "timestamp_end": "07:48.50"
+      },
+      {
+        "id": "phrase_165",
+        "text_l1": "هنري، دخيلك، بدنا حزان في كنيس دانا.",
+        "text_l2": "Henry, please, we need a Hazzan in Dana Synagogue.",
+        "timestamp": "07:49.00",
+        "timestamp_end": "07:51.50"
+      },
+      {
+        "id": "phrase_166",
+        "text_l1": "بيجي واحد ثاني، دخيلك، بدنا اياك",
+        "text_l2": "Another one comes, please, we need you",
+        "timestamp": "07:52.00",
+        "timestamp_end": "07:54.50"
+      },
+      {
+        "id": "phrase_167",
+        "text_l1": "رأس السنة، يوم الغفران، ما عندنا أئمة!",
+        "text_l2": "Rosh Hashanah, Yom Kippur, we have no Imams!",
+        "timestamp": "07:54.50",
+        "timestamp_end": "07:56.50"
+      },
+      {
+        "id": "phrase_168",
+        "text_l1": "باقول له هذاك طلبني لكنيس دانا،",
+        "text_l2": "I tell him that one asked me for Dana Synagogue,",
+        "timestamp": "07:57.00",
+        "timestamp_end": "07:59.50"
+      },
+      {
+        "id": "phrase_169",
+        "text_l1": "لا هون كنيس المن بده اياك.",
+        "text_l2": "No, here the Magen Synagogue needs you.",
+        "timestamp": "07:59.50",
+        "timestamp_end": "08:01.50"
+      },
+      {
+        "id": "phrase_170",
+        "text_l1": "مرة في رأس السنة ويوم الغفران",
+        "text_l2": "Once on Rosh Hashanah and Yom Kippur",
+        "timestamp": "08:02.00",
+        "timestamp_end": "08:04.50"
+      },
+      {
+        "id": "phrase_171",
+        "text_l1": "درت أربعة او خمس كنايس.",
+        "text_l2": "I toured four or five synagogues.",
+        "timestamp": "08:04.50",
+        "timestamp_end": "08:06.50"
+      },
+      {
+        "id": "phrase_172",
+        "text_l1": "كلهم قراب لبعض؟ كلهم قدام بعضهم ايه.",
+        "text_l2": "Are they all close to each other? All in front of each other yes.",
+        "timestamp": "08:07.00",
+        "timestamp_end": "08:09.50"
+      },
+      {
+        "id": "phrase_173",
+        "text_l1": "وانت اليوم لما بتحضر اخبار لبنان",
+        "text_l2": "And you today when you watch Lebanon news",
+        "timestamp": "08:10.00",
+        "timestamp_end": "08:12.50"
+      },
+      {
+        "id": "phrase_174",
+        "text_l1": "من بعيد من ايطاليا او من هون",
+        "text_l2": "from far from Italy or from here",
+        "timestamp": "08:12.50",
+        "timestamp_end": "08:14.50"
+      },
+      {
+        "id": "phrase_175",
+        "text_l1": "شو بتفكر اليوم اللي صار بلبنان",
+        "text_l2": "What do you think of what happened in Lebanon today",
+        "timestamp": "08:15.00",
+        "timestamp_end": "08:17.50"
+      },
+      {
+        "id": "phrase_176",
+        "text_l1": "بعد كل هالسنين؟",
+        "text_l2": "after all these years?",
+        "timestamp": "08:17.50",
+        "timestamp_end": "08:19.50"
+      },
+      {
+        "id": "phrase_177",
+        "text_l1": "ما عندي، خلص كأني نسيت،",
+        "text_l2": "I have nothing, finish as if I forgot,",
+        "timestamp": "08:20.00",
+        "timestamp_end": "08:22.50"
+      },
+      {
+        "id": "phrase_178",
+        "text_l1": "ما بقى معلق، ما فيه شيء بيعلقني.",
+        "text_l2": "Nothing remains hanging, nothing hangs me.",
+        "timestamp": "08:22.50",
+        "timestamp_end": "08:24.50"
+      },
+      {
+        "id": "phrase_179",
+        "text_l1": "لا عائلة، ولا حدا. مو عائلة بس انا",
+        "text_l2": "No family, no one. Not family just me",
+        "timestamp": "08:25.00",
+        "timestamp_end": "08:27.50"
+      },
+      {
+        "id": "phrase_180",
+        "text_l1": "ومرتي واولادي، عائلة أكبر.",
+        "text_l2": "and my wife and my children, bigger family.",
+        "timestamp": "08:27.50",
+        "timestamp_end": "08:29.50"
+      },
+      {
+        "id": "phrase_181",
+        "text_l1": "اخواتي، أولاد اخي، العائلة كاملة.",
+        "text_l2": "My sisters, my brother's sons, the whole family.",
+        "timestamp": "08:30.00",
+        "timestamp_end": "08:32.50"
+      },
+      {
+        "id": "phrase_182",
+        "text_l1": "ما عندي شيء، ما بفكر.",
+        "text_l2": "I have nothing, I don't think.",
+        "timestamp": "08:33.00",
+        "timestamp_end": "08:35.50"
+      },
+      {
+        "id": "phrase_183",
+        "text_l1": "لو كان اليوم فرصه تروح تزور يوم",
+        "text_l2": "If today there was a chance to go visit a day",
+        "timestamp": "08:36.00",
+        "timestamp_end": "08:38.50"
+      },
+      {
+        "id": "phrase_184",
+        "text_l1": "يومين ثلاثة، شو كان حابب تشوف بلبنان؟",
+        "text_l2": "two days three, what would you like to see in Lebanon?",
+        "timestamp": "08:38.50",
+        "timestamp_end": "08:40.50"
+      },
+      {
+        "id": "phrase_185",
+        "text_l1": "انا سنتين بعد ما تركت بيروت،",
+        "text_l2": "Me two years after I left Beirut,",
+        "timestamp": "08:41.00",
+        "timestamp_end": "08:43.50"
+      },
+      {
+        "id": "phrase_186",
+        "text_l1": "كان صيفية، صيف.",
+        "text_l2": "It was summer, summer.",
+        "timestamp": "08:43.50",
+        "timestamp_end": "08:45.50"
+      },
+      {
+        "id": "phrase_187",
+        "text_l1": "وشو بدي اعمل بميلانو؟",
+        "text_l2": "And what do I want to do in Milan?",
+        "timestamp": "08:46.00",
+        "timestamp_end": "08:48.50"
+      },
+      {
+        "id": "phrase_188",
+        "text_l1": "تعال نروح ع بيروت.",
+        "text_l2": "Come let's go to Beirut.",
+        "timestamp": "08:48.50",
+        "timestamp_end": "08:50.50"
+      },
+      {
+        "id": "phrase_189",
+        "text_l1": "رحت ع بيروت، أقول لك الحقيقة؟",
+        "text_l2": "I went to Beirut, I tell you the truth?",
+        "timestamp": "08:51.00",
+        "timestamp_end": "08:53.50"
+      },
+      {
+        "id": "phrase_190",
+        "text_l1": "هاي مو لإلي.",
+        "text_l2": "This is not for me.",
+        "timestamp": "08:53.50",
+        "timestamp_end": "08:55.50"
+      },
+      {
+        "id": "phrase_191",
+        "text_l1": "قبل كل شيء، شفتها صغيرة،",
+        "text_l2": "Before everything, I saw it small,",
+        "timestamp": "08:56.00",
+        "timestamp_end": "08:58.50"
+      },
+      {
+        "id": "phrase_192",
+        "text_l1": "طلعنا على الجبل، هذه هاي كنا؟",
+        "text_l2": "We went up to the mountain, is this where we were?",
+        "timestamp": "08:58.50",
+        "timestamp_end": "09:00.50"
+      },
+      {
+        "id": "phrase_193",
+        "text_l1": "الطريق ما بتسع سياره مين يقول،",
+        "text_l2": "The road doesn't fit a car, who says,",
+        "timestamp": "09:01.00",
+        "timestamp_end": "09:03.50"
+      },
+      {
+        "id": "phrase_194",
+        "text_l1": "بس تحملتها وقبلتها.",
+        "text_l2": "But I endured it and accepted it.",
+        "timestamp": "09:03.50",
+        "timestamp_end": "09:05.50"
+      },
+      {
+        "id": "phrase_195",
+        "text_l1": "بس تغيرت علي، بقدر أقول: لا،",
+        "text_l2": "But it changed on me, I can say: No,",
+        "timestamp": "09:06.00",
+        "timestamp_end": "09:08.50"
+      },
+      {
+        "id": "phrase_196",
+        "text_l1": "هذه مو لإلي، هاي مو بيروت.",
+        "text_l2": "This is not for me, this is not Beirut.",
+        "timestamp": "09:08.50",
+        "timestamp_end": "09:10.50"
+      },
+      {
+        "id": "phrase_197",
+        "text_l1": "مو عاليه، مو بحمدون، تغيرت.",
+        "text_l2": "Not Aley, not Hammana, it changed.",
+        "timestamp": "09:11.00",
+        "timestamp_end": "09:13.50"
+      },
+      {
+        "id": "phrase_198",
+        "text_l1": "(من صلاة السبت اليهودية)",
+        "text_l2": "(From the Jewish Sabbath Prayer)",
+        "timestamp": "09:14.00",
+        "timestamp_end": "09:16.50"
+      },
+      {
+        "id": "phrase_199",
+        "text_l1": "ستبارك أرواح جميع الكائنات الحية",
+        "text_l2": "Blessed be the souls of all living beings",
+        "timestamp": "09:16.50",
+        "timestamp_end": "09:18.50"
+      },
+      {
+        "id": "phrase_200",
+        "text_l1": "يا الله إلهنا",
+        "text_l2": "Oh God our God",
+        "timestamp": "09:18.50",
+        "timestamp_end": "09:20.50"
+      },
+      {
+        "id": "phrase_201",
+        "text_l1": "يهود ما فيه اليوم في لبنان؟",
+        "text_l2": "Are there no Jews today in Lebanon?",
+        "timestamp": "09:21.00",
+        "timestamp_end": "09:23.50"
+      },
+      {
+        "id": "phrase_202",
+        "text_l1": "بيقولوا شي 50 زلمة.",
+        "text_l2": "They say about 50 men.",
+        "timestamp": "09:24.00",
+        "timestamp_end": "09:26.50"
+      },
+      {
+        "id": "phrase_203",
+        "text_l1": "والخمسين زلمة وين هم؟",
+        "text_l2": "And the fifty men where are they?",
+        "timestamp": "09:27.00",
+        "timestamp_end": "09:29.50"
+      },
+      {
+        "id": "phrase_204",
+        "text_l1": "ساكنين فرد منطقة؟ ما بفتكر.",
+        "text_l2": "Living in one area? I don't think.",
+        "timestamp": "09:29.50",
+        "timestamp_end": "09:31.50"
+      },
+      {
+        "id": "phrase_205",
+        "text_l1": "هذا بيته هون وهذا بيته هون،",
+        "text_l2": "This one's house is here and this one's house is here,",
+        "timestamp": "09:32.00",
+        "timestamp_end": "09:34.50"
+      },
+      {
+        "id": "phrase_206",
+        "text_l1": "صار فرق بين البيوت يعني.",
+        "text_l2": "There's distance between the houses now.",
+        "timestamp": "09:34.50",
+        "timestamp_end": "09:36.50"
+      },
+      {
+        "id": "phrase_207",
+        "text_l1": "\"إله الشكر، سيد العجائب\"",
+        "text_l2": "\"God of thanks, Lord of wonders\"",
+        "timestamp": "09:37.00",
+        "timestamp_end": "09:39.50"
+      },
+      {
+        "id": "phrase_208",
+        "text_l1": "\"خالق كل الأرواح، سيد كل الأفعال\"",
+        "text_l2": "\"Creator of all souls, Lord of all actions\"",
+        "timestamp": "09:40.00",
+        "timestamp_end": "09:42.50"
+      },
+      {
+        "id": "phrase_209",
+        "text_l1": "بدك العربي؟ هاي العربي!",
+        "text_l2": "You want the Arabic? This is the Arabic!",
+        "timestamp": "09:43.00",
+        "timestamp_end": "09:45.50"
+      },
+      {
+        "id": "phrase_210",
+        "text_l1": "اخذناها من العربية سويناها للعبراني.",
+        "text_l2": "We took it from Arabic and made it Hebrew.",
+        "timestamp": "09:45.50",
+        "timestamp_end": "09:47.50"
+      },
+      {
+        "id": "phrase_211",
+        "text_l1": "بنت الشلبية، عيونها لوزية.",
+        "text_l2": "The daughter of Shalabiya, her eyes are almond-shaped.",
+        "timestamp": "09:48.00",
+        "timestamp_end": "09:50.50"
+      }
+    ],
+    "phrases_with_token_translations": "[أنا] ساكن هون، جاري ساكن قدامي، => [I] live here, my neighbor lives across from me,\nأنا [ساكن] هون، جاري ساكن قدامي، => I [live] here, my neighbor lives across from me,\nأنا ساكن [هون]، جاري ساكن قدامي، => I live [here], my neighbor lives across from me,\nأنا ساكن هون، [جاري] ساكن قدامي، => I live here, [my neighbor] lives across from me,\nأنا ساكن هون، جاري [ساكن] قدامي، => I live here, my neighbor [lives] across from me,\nأنا ساكن هون، جاري ساكن [قدامي]، => I live here, my neighbor lives [across from me], # قدامي translates literal as \"in front of me\" but functions as \"across from me\" in this context\n\n[بوادي] أبو جميل. => [in Wadi] Abu Jamil.\nبوادي [أبو] جميل. => in Wadi [Abu] Jamil.\nبوادي أبو [جميل]. => in Wadi Abu [Jamil].\n\n[جاري] اعتمد بده يسافر، بده يروح => [My neighbor], may he rest in peace, wanted to travel, he wanted to go\nجاري [اعتمد] بده يسافر، بده يروح => may he rest in peace # idiomatically used in some dialects to mean he passed away\nجاري اعتمد [بده] يسافر، بده يروح => My neighbor, may he rest in peace, [wanted] to travel, he wanted to go\nجاري اعتمد بده [يسافر]، بده يروح => My neighbor, may he rest in peace, wanted [to travel], he wanted to go\nجاري اعتمد بده يسافر، [بده] يروح => My neighbor, may he rest in peace, wanted to travel, [he wanted] to go\nجاري اعتمد بده يسافر، بده [يروح] => My neighbor, may he rest in peace, wanted to travel, he wanted [to go]\n\n[لإسرائيل] ما عندنا حدود مع إسرائيل. => [to Israel]. We don't have borders with Israel.\nلإسرائيل [ما عندنا] حدود مع إسرائيل. => to Israel. [We don't have] borders with Israel.\nلإسرائيل ما عندنا [حدود] مع إسرائيل. => to Israel. We don't have [borders] with Israel.\nلإسرائيل ما عندنا حدود [مع] إسرائيل. => to Israel. We don't have borders [with] Israel.\nلإسرائيل ما عندنا حدود مع [إسرائيل]. => to Israel. We don't have borders with [Israel].\n\n",
+    "lessons": "# الحياة اليهودية في بيروت القديمة\n00:00.00 أنا ساكن هون، جاري ساكن قدامي،\n00:02.50 بوادي أبو جميل.\n00:06.00 جاري اعتمد بده يسافر، بده يروح\n00:08.50 لإسرائيل ما عندنا حدود مع إسرائيل.\n00:11.00 لبنان فيه حدود، بس مسكرة الحدود.\n00:13.00 ما فيه سيارة بتمرق من لبنان لإسرائيل.\n00:16.00 شو كنا نروح؟ نروح عن طريق قبرص.\n00:20.00 وحتى العفش، البيت، كله كونتينير\n00:22.50 لقبرص ومن قبرص لحيفا.\n\n# رحلة الهجرة غير المباشرة\n00:26.00 بدي أحكي لك هذه، أنت تصدقني؟\n00:28.00 يمكن ما عم تصدقني.\n01:31.00 قدامي جاري حضر الكونتينير تبعه\n00:33.50 مع العفش تبع البيت. أحزر شو كان مكتوب.\n00:36.00 على الكونتينير؟ كونتينير من خشب\n00:38.00 قد هالبيت، كل العفش جوه. شو مكتوب؟\n00:41.00 تل أبيب. برافو.\n00:46.00 عائلة كبريتي، بيروت-قبرص-تل أبيب.\n00:48.50 ومين واقف قدام الكونتينير؟\n00:51.00 شرطي لبناني، وهو شو؟ عم بيساعدهم.\n\n# مساعدة غير متوقعة\n00:54.00 \"هات هذه، هات هذا، ناولني إياهم، يالله\"\n00:56.50 عم بيحط بالكونتينير.\n00:59.00 عم بيساعد يهودي يسافر لإسرائيل!\n01:02.00 أنت بتضحك؟\n01:05.00 شي بيضحك وشي بيبكي،\n01:07.50 لا، ما بيبكي، شي بيضحك.\n\n# التعريف بهنري مكنوز\n01:11.00 الإمام اليهودي في بيروت |\n01:13.50 هنري مكنوز\n01:16.00 ميلانو، إيطاليا\n01:19.00 أنا اسمي هنري مكنوز،\n01:22.00 بس بالهوية مكتوب هارون.\n01:25.00 اتولدت ببيروت سنه 1931.\n01:28.00 كان حواليك يهود؟\n01:31.00 كله، بيروت كله يهود،\n01:33.50 بوادي أبو جميل، ما فيه غيره.\n\n# وصف الحياة في بيروت\n01:36.00 وصف لي الحياة اليهودية\n01:38.50 بهذيك الفترة ببيروت.\n01:41.00 بقول لك أجمل من هيك ما فيه،\n01:43.50 حياة ماكسيموم، أحلى شيء.\n01:46.00 شو بدك أحلى من هيك؟\n01:48.50 أحلى من عيشة بيروت؟\n01:51.00 بيقولوا سويسرا الشرق،\n01:53.50 ولك بلا سويسرا بلا بطيخ!\n01:56.00 بيروت ما فيه غيرها.\n01:59.00 وما فيه أحلى منها وما فيه مثلها.\n\n# مهنة الأب وذكرياتها\n02:02.00 أبي كان منجد.\n02:05.00 بتعرف شو يعني منجد؟\n02:08.00 منجد اللي بيساوي فرش.\n02:11.00 فرشه بعد كم سنه بتخفص بتنتزع.\n02:14.00 بيجي برم برم برم،\n02:17.00 بينظف القطن اللي فيها\n02:19.50 بيصيروا ولا أحلى من هيك.\n02:22.00 كان فيه كتير منجدين ببيروت،\n02:24.50 يمكن أنا بعرف شي عشرة يهود.\n\n# الكنائس اليهودية في بيروت\n02:28.00 هذه شغلة مين بيسويها؟\n02:30.50 اليوم ما بقى ولا واحد بيسويها.\n02:33.00 فيه ماكينات بيحطوا القطن،\n02:36.00 بس وين شغل الإيد؟ ولا أحلى من هيك.\n02:39.00 ببيروت كان عندنا 11 الى 13 كنيس\n02:41.50 كلهم بيشتغلوا.\n02:45.00 اسم الكنيس كان شو؟\n02:48.00 أنا كنيس الشوام.\n02:50.50 ليش كلهم كانوا شوام؟ من الشام.\n\n# الحياة الدينية والاجتماعية\n02:53.00 الحقيقة، كان غير حياة.\n02:55.50 إن كان حياة الكنيس،\n02:58.00 وإن كان حياة اليهود،\n03:00.50 وإن كان حياة الكشروت (الأكل الحلال).\n03:03.00 كاشير ما كاشير، كان فيه حياة حلوة.\n03:06.00 أهلي، أمي من الشام وأبي من دير القمر.\n03:09.00 فيه ضيعة بلبنان اسمها دير القمر.\n03:11.50 أكثر (يهود بيروت) كانوا من دير القمر.\n\n# الهوية البيروتية\n03:15.00 كل اللي بيقول لك أنا بيروتي\n03:17.50 أنا خلقان ببيروت، أنا جئت من بيروت.\n03:20.00 بقبله، أنا ما بحب أكذب حدا،\n03:22.50 كله مضبوط، شو بتقول مضبوط، لو كان غلط.\n\n# حرب 1958 وتأثيرها على اليهود\n03:25.00 1958 حرب بين المسيحيين والمسلمين ببيروت.\n03:28.00 كيف أثرت عليكم؟ أنت واحد يهودي\n03:30.50 بيجي للحاجز او شي، حواجز بالشوارع.\n03:33.00 أقول لك الحقيقة، على اليهود ما صار شيء.\n03:36.00 غيري بيقول لك \"نحن كنا بخطر\"،\n03:38.50 ما كنا لا بخطر ولا شيء.\n\n# قرار الهجرة\n03:41.00 مرتي الله يرحمها خافت كمان،\n03:43.50 نفس الشيء مثل اللي قال بخطر.\n03:46.00 انه نحن قاعدين ببلاد عربية، ما لازم.\n03:49.00 اليوم ساكتين، بكره بيطلعوا بحرب.\n03:52.00 بكره بحرب، ثاني يوم غير شيء.\n03:55.00 النتيجة أحسن شيء، نروح.\n03:57.50 لوين بدنا نروح؟ ما عندنا بلد\n04:00.50 لوين بدنا نروح؟\n\n# الجنسية والهوية\n04:03.00 جينا فكرنا أنا وياها،\n04:05.50 هي كانت الجنسية تبعها إيطالية.\n04:08.00 ما تسألني كيف الجنسية طلعت إيطالية،\n04:10.50 ما بعرف، أكثرهم راحوا لإيطاليا.\n04:13.00 وغيرهم اخذوا جنسية أو هوية مثلا\n04:16.00 أرجنتيني، راحوا على القنصلية\n04:18.50 الأرجنتينية ببيروت.\n04:21.00 أنا كنت إيطالي،\n04:23.50 بس الجنسية تبعي راحت علي، احترق هذا.\n04:26.00 طيب، سووا إيطالي.\n\n# العمل في بيروت\n04:29.00 وإيش كان شغلك بلبنان؟ ببيروت؟\n04:32.00 كان عندي دكان، محل خردوات.\n04:35.00 ببيع أمشاط، شفرات حلاقة،\n04:37.50 ماكينات حلاقة، صابون للحلاقه.\n04:41.00 دواء اسنان، فرشاة الأسنان.\n04:43.50 هذا اسمه خردوات.\n\n# العلاقات بين الطوائف\n04:46.00 والزبائن كانوا من كل الطوائف؟\n04:49.00 ما فيه! كان في طوائف؟؟\n04:52.00 عم بتضحك أنت... طيب ما كان فيه طوائف!\n04:55.00 هذا يجي لعندي، \"أهلا أهلا أبو سمير!\n04:57.50 شلونك؟ كيفك؟ صار زمان ما شفتك!\n05:00.50 ليه ما عم تيجي؟\" هيك.\n\n# الحياة الدينية الشخصية\n05:33.00 أنا الحلو تبعي، الدين، الصلاة.\n05:35.50 هذا الحلو، بدوخ، بدوخ، بدوخ.\n05:38.00 طلعنا بحمدون، فيه كنيس كبيرة،\n05:40.50 أحلى من هيك ما فيه.\n05:43.00 أنا كنت ساكن بعيد عن الكنيس الكبيرة.\n\n# تأسيس كنيس صغير\n05:46.00 كل مره بدي اروح انا الصبح والمساء\n05:48.50 بدي اروح بالشحريت ومنحاة\n05:50.50 (الصلوات اليهودية).\n05:53.00 أطلب مشوار؟ تعالوا يا جماعة،\n05:55.50 ابن خالي ابن خالتي، فلان، اخي.\n05:58.00 تعال نعمل منيان (صلاة جماعة).\n06:00.50 عشرة أنفار بيكفينا ونعمل هون كنيس.\n06:03.00 شو نعمل هون كنيس؟ بدك مصاري،\n06:05.50 مصاري؟ أبو المصاري!\n06:08.00 استأجرنا بيت قدام بيتي، تحت،\n06:10.50 تلتيتة اسمها المنطقة بحمدون.\n\n# صلاة الجماعة\n06:13.00 صرنا نساوي منحاة، شحريت، عربيت\n06:15.50 بهالكنيس. بنيتم كنيس صغيرة يعني.\n06:18.00 كنيس صغيرة، ما كنت اطلع لفوق.\n\n# العلاقة بين السوريين واللبنانيين\n06:21.00 كان في مشكلة بين السوريين الشوام\n06:23.50 واللبنانيه الأصليين؟\n06:26.00 مشكل؟ ما كان فيه، اجوا شوام حظاتها\n06:28.50 اجوا شوام ناموا ببيوتنا.\n06:31.00 بتصدق؟ ما بتصدق! كل واحد دق الباب.\n\n# استضافة اللاجئين\n06:34.00 دق الباب عليك، عليه، علي،\n06:36.50 يابا معنا عيلة تنام عندك.\n06:39.00 البيوت كانوا كبار! عشر أوض،\n06:39.50 خمس أوض، سبع أوض.\n06:42.00 عائلة؟ أهلا وسهلا فيها.\n06:45.00 قعدوا ليش؟ منشان تعملوا لهم الأوراق\n06:47.50 ويهربوهم لفلسطين، كان فلسطين.\n\n# رحلة الهروب\n06:50.00 من جنوب لبنان يفوتوا لاسرائيل\n06:52.50 بدهم أوراق، بدهم معاملات.\n06:55.00 وحظاتها ياما تعذبوا! بس بالاخر\n06:57.50 الحمد لله الله ساعدهم.\n07:00.00 يروحوا بعد صيدا، صور، بعد صور\n07:02.50 كم كيلومتر، واقف! يلا نمشي.\n07:05.00 مشيوا على اجريهم بالليل،\n07:07.50 هربوا هريبة، اذا كمشوهم.\n07:10.00 حظاتها، فيه ناس انكمشوا وتوقفوا وكله.\n\n# الكنيس الرئيسي في بيروت\n07:13.00 الكنيس الكبير ايش اسمه ببيروت؟\n07:15.50 ماجين ابراهيم.\n07:18.00 هذا كان وين تصلي أنت؟\n07:20.50 لا، أنت بشوام كنت.\n07:23.00 أنا كنت بالشوام، بس الحزان\n07:25.50 (إمام الصلاة) الرئيسي كنت أنا.\n\n# تجربة الإمامة\n07:28.00 أنا فتت على كنيس ماغن أبراهام\n07:30.50 لما كان عمري 18 سنة.\n07:33.00 كان ايمتى؟ رأس السنة، يوم الغفران.\n07:36.00 ما عندهم حزان (إمام صلاة).\n07:39.00 بدأت أزمة في بيروت مع الشوام،\n07:41.50 وما كان هناك أئمة.\n07:44.00 بيتلفنوا لي، ما كان تلفون!\n07:46.50 بعتوا لي الخدام.\n\n# الطلبات المتعددة للإمامة\n07:49.00 هنري، دخيلك، بدنا حزان في كنيس دانا.\n07:52.00 بيجي واحد ثاني، دخيلك، بدنا اياك\n07:54.50 رأس السنة، يوم الغفران، ما عندنا أئمة!\n07:57.00 باقول له هذاك طلبني لكنيس دانا،\n07:59.50 لا هون كنيس المن بده اياك.\n08:02.00 مرة في رأس السنة ويوم الغفران\n08:04.50 درت أربعة او خمس كنايس.\n08:07.00 كلهم قراب لبعض؟ كلهم قدام بعضهم ايه.\n\n# نظرة الحالي للبنان\n08:10.00 وانت اليوم لما بتحضر اخبار لبنان\n08:12.50 من بعيد من ايطاليا او من هون\n08:15.00 شو بتفكر اليوم اللي صار بلبنان\n08:17.50 بعد كل هالسنين؟\n08:20.00 ما عندي، خلص كأني نسيت،\n08:22.50 ما بقى معلق، ما فيه شيء بيعلقني.\n08:25.00 لا عائلة، ولا حدا. مو عائلة بس انا\n08:27.50 ومرتي واولادي، عائلة أكبر.\n08:30.00 اخواتي، أولاد اخي، العائلة كاملة.\n08:33.00 ما عندي شيء، ما بفكر.\n\n# زيارة بيروت بعد الهجرة\n08:36.00 لو كان اليوم فرصه تروح تزور يوم\n08:38.50 يومين ثلاثة، شو كان حابب تشوف بلبنان؟\n08:41.00 انا سنتين بعد ما تركت بيروت،\n08:43.50 كان صيفية، صيف.\n08:46.00 وشو بدي اعمل بميلانو؟\n08:48.50 تعال نروح ع بيروت.\n08:51.00 رحت ع بيروت، أقول لك الحقيقة؟\n08:53.50 هاي مو لإلي.\n\n# تغير بيروت\n08:56.00 قبل كل شيء، شفتها صغيرة،\n08:58.50 طلعنا على الجبل، هذه هاي كنا؟\n09:01.00 الطريق ما بتسع سياره مين يقول،\n09:03.50 بس تحملتها وقبلتها.\n09:06.00 بس تغيرت علي، بقدر أقول: لا،\n09:08.50 هذه مو لإلي، هاي مو بيروت.\n09:11.00 مو عاليه، مو بحمدون، تغيرت.\n\n# الصلاة اليهودية\n09:14.00 (من صلاة السبت اليهودية)\n09:16.50 ستبارك أرواح جميع الكائنات الحية\n09:18.50 يا الله إلهنا\n\n# اليهود في لبنان اليوم\n09:21.00 يهود ما فيه اليوم في لبنان؟\n09:24.00 بيقولوا شي 50 زلمة.\n09:27.00 والخمسين زلمة وين هم؟\n09:29.50 ساكنين فرد منطقة؟ ما بفتكر.\n09:32.00 هذا بيته هون وهذا بيته هون،\n09:34.50 صار فرق بين البيوت يعني.\n\n# الصلاة بالعربية والعبرية\n09:37.00 \"إله الشكر، سيد العجائب\"\n09:40.00 \"خالق كل الأرواح، سيد كل الأفعال\"\n09:43.00 بدك العربي؟ هاي العربي!\n09:45.50 اخذناها من العربية سويناها للعبراني.\n09:48.00 بنت الشلبية، عيونها لوزية.",
+    "similar_sounds": "\n</think>\n\nأنا [لاكن] هون، جاري ساكن قدامي،\nبوادي أبو [حليم].\nجاري [قصد] بده يسافر، بده يروح\nلإسرائيل ما عندنا [جدود] مع إسرائيل.\nلبنان فيه [جدود]، بس مسكرة الحدود.\nما فيه [منارة] بتمرق من لبنان لإسرائيل.\nشو كنا [نزوح]؟ نروح عن طريق [قبر].\nوحتى [نفس]، البيت، كله كونتينير\nل[قبر] ومن قبرص لحيفا.\nبدي أحكي لك [هدة]، أنت تصدقني؟\nيمكن ما عم [تطردني].\n[غدامي] جاري حضر الكونتينير تبعه\nمع [نفس] تبع البيت. أحزر شو كان مكتوب.\nعلى الكونتينير؟ كونتينير من [حساب]\nقد هالبيت، كل [نفس] جوه. شو مكتوب؟\nتل أبيب. [جرافو].\nعائلة [كبدي]، بيروت-قبرص-تل أبيب.\nومين واقف [غدام] الكونتينير؟\nشرطي لبناني، وهو شو؟ عم [يساهمهم].\n&quot;هات [هدة]، هات هذا، ناولني إياهم، يالله&quot;\nعم بيحط بال[كونينير].\nعم بيساعد [هودي] يسافر لإسرائيل!\nأنت [بتحسك]؟\nشي بيضحك وشي [بيبقى]،\nلا، ما [يبقى]، شي بيضحك.\nالإمام [الهودي] في بيروت |\nهنري [مكنوس]\nميلانو، [العليا]\nأنا اسمي هنري [مكنوس]،\nبس بال[رؤية] مكتوب هارون.\nاتولدت ب[بيوت] سنه 1931.\nكان حواليك [جود]؟\nكله، [بيوت] كله يهود،\nبوادي أبو جميل، ما فيه [ديره].\nوصف لي الحياة [الهودية]\nبهذيك الفترة ب[بيوت].\nبقول لك [أحلم] من هيك ما فيه،\nحياة ماكسيموم، [أعلى] شيء.\nشو بدك [أعلى] من هيك؟\n[أعلى] من عيشة بيروت؟\nبيقولوا سويسرا [الحرق]،\nولك بلا سويسرا بلا [نطيخ]!\nبيروت ما فيه [ديرها].\nوما فيه [أعلى] منها وما فيه مثلها.\nأبي كان [مجد].\nبتعرف شو يعني [مجد]؟\n[مجد] اللي بيساوي فرش.\nفرشه بعد كم سنه بتخفص [بتنتفع].\nبيجي [جرم] برم برم،\nبينظف [الوطن] اللي فيها\nبيصيروا ولا [أعلى] من هيك.\nكان فيه كتير [مجددين] ببيروت،\nيمكن أنا بعرف شي عشرة [جود].\nهذه شغلة مين [بيرويها]؟\nاليوم ما بقى ولا واحد [بيرويها].\nفيه ماكينات بيحطوا [الوطن]،\nبس وين شغل الإيد؟ ولا [أعلى] من هيك.\nببيروت كان عندنا 11 الى 13 [كنوز]\n[علمهم] بيشتغلوا.\nاسم [الكنوز] كان شو؟\nأنا [كنوز] الشوام.\nليش كلهم كانوا شوام؟ من [النام].\nالحقيقة، كان غير [مياة].\nإن كان [مياة] الكنيس،\nوإن كان [مياة] اليهود،\nوإن كان [مياة] الكشروت (الأكل الحلال).\nكاشير ما كاشير، كان فيه [مياة] حلوة.\nأهلي، أمي من [النام] وأبي من دير القمر.\nفيه ضيعة بلبنان اسمها دير [القمم].\nأكثر (يهود بيروت) كانوا من دير [القمم].\nكل اللي بيقول لك أنا [بيوتي]\nأنا خلقان ب[بيوت]، أنا جئت من بيروت.\nبقبله، أنا ما بحب أكذب [جدا]،\nكله مضبوط، شو بتقول مضبوط، لو كان [خلط].\n1958 [هرب] بين المسيحيين والمسلمين ببيروت.\nكيف أثرت عليكم؟ أنت واحد [هودي]\nبيجي للحاجز او شي، [خواجز] بالشوارع.\nأقول لك الحقيقة، على [الجود] ما صار شيء.\nغيري بيقول لك &quot;نحن كنا ب[حطر]&quot;،\nما كنا لا ب[حطر] ولا شيء.\nمرتي الله يرحمها خافت [مكان]،\nنفس الشيء مثل اللي قال ب[حطر].\nانه نحن قاعدين ببلاد عربية، ما [ناظم].\nاليوم ساكتين، بكره بيطلعوا ب[هرب].\nبكره ب[هرب]، ثاني يوم غير شيء.\nالنتيجة أحسن شيء، [نزوح].\nلوين بدنا [نزوح]؟ ما عندنا بلد\nلوين بدنا [نزوح]؟\nجينا [ذكرنا] أنا وياها،\nهي كانت الجنسية تبعها [العليا].\nما تسألني كيف الجنسية طلعت [العليا]،\nما بعرف، أكثرهم راحوا ل[العليا].\nوغيرهم اخذوا جنسية أو [رؤية] مثلا\nأرجنتيني، راحوا على [المنصلية]\nالأرجنتينية ب[بيوت].\nأنا كنت [العليا]،\nبس الجنسية تبعي راحت علي، [أحرق] هذا.\nطيب، سووا [العليا].\nوإيش كان شغلك بلبنان؟ ب[بيوت]؟\nكان عندي [مكان]، محل خردوات.\nببيع أمشاط، [شجرات] حلاقة،\nماكينات حلاقة، [قانون] للحلاقه.\nدواء اسنان، فرشاة [الأزمان].\nهذا [رسمه] خردوات.\nوالزبائن كانوا من كل [الخوائف]؟\nما فيه! كان في [خوائف]؟؟\nعم [بتحسك] أنت... طيب ما كان فيه خوائف!\nهذا يجي لعندي، &quot;أهلا أهلا أبو [سير]!\n[سلونك]؟ كيفك؟ صار زمان ما شفتك!\n[فيه] ما عم تيجي؟&quot; هيك.\nأنا الحلو تبعي، الدين، [الزلاة].\nهذا [الجلو]، بدوخ، بدوخ، بدوخ.\nطلعنا بحمدون، فيه [كنوز] كبيرة،\n[أعلى] من هيك ما فيه.\nأنا كنت [لاكن] بعيد عن الكنيس الكبيرة.\nكل [قرة] بدي اروح انا الصبح والمساء\nبدي اروح بالشحريت و[منجاة]\n(الصلوات [الهودية]).\nأطلب [مشار]؟ تعالوا يا جماعة،\nابن خالي ابن خالتي، [جلان]، اخي.\nتعال نعمل منيان (صلاة [جماعة]).\nعشرة أنفار بيكفينا ونعمل هون [كنوز].\nشو نعمل هون [كنوز]؟ بدك مصاري،\nمصاري؟ [أحو] المصاري!\nاستأجرنا بيت [غدام] بيتي، تحت،\nتلتيتة اسمها [المنطبة] بحمدون.\nصرنا [نماني] منحاة، شحريت، عربيت\nبهال[كنوز]. بنيتم كنيس صغيرة يعني.\n[كنوز] صغيرة، ما كنت اطلع لفوق.\nكان في [معضلة] بين السوريين الشوام\nواللبنانيه [الأصلين]؟\nمشكل؟ ما كان فيه، اجوا شوام [حظاتا]\nاجوا شوام [داموا] ببيوتنا.\nبتصدق؟ ما بتصدق! كل واحد دق [الخاب].\nدق [عنيك] عليك، عليه، علي،\nيابا معنا [جيلة] تنام عندك.\nالبيوت كانوا [غبار]! عشر أوض،\nخمس أوض، [سبع] أوض.\nعائلة؟ أهلا [سهلا] فيها.\nقعدوا ليش؟ منشان [تعملوا] لهم الأوراق\nويهربوهم لفلسطين، كان [فلسطين].\nمن جنوب لبنان [يفوتوا] لاسرائيل\nبدهم أوراق، بدهم [معاملات].\nوحظاتها ياما تعذبوا! بس [بالاخر]\nالحمد لله الله [ساعدهم].\nيروحوا بعد صيدا، صور، بعد [صور]\nكم كيلومتر، واقف! يلا [نمشي].\nمشيوا على اجريهم [بالليل]،\nهربوا هريبة، اذا [كمشوهم].\nحظاتها، فيه ناس انكمشوا وتوقفوا [وكله].\nالكنيس الكبير ايش اسمه [ببيروت]؟\nماجين [ابراهيم].\nهذا كان وين تصلي [أنت]؟\nلا، أنت بشوام [كنت].\nأنا كنت بالشوام، بس [الحزان]\n(إمام الصلاة) الرئيسي كنت [أنا].\nأنا فتت على كنيس ماغن [أبراهام]\nلما كان عمري 18 [سنة].\nكان ايمتى؟ رأس السنة، يوم [الغفران].\nما عندهم حزان (إمام [صلاة]).\nبدأت أزمة في بيروت مع [الشوام]،\nوما كان هناك [أئمة].\nبيتلفنوا لي، ما كان [تلفون]!\nبعتوا لي [الخدام].\nهنري، دخيلك، بدنا حزان في كنيس [دانا].\nبيجي واحد ثاني، دخيلك، بدنا [اياك]\nرأس السنة، يوم الغفران، ما عندنا [أئمة]!\nباقول له هذاك طلبني لكنيس [دانا]،\nلا هون كنيس المن بده [اياك].\nمرة في رأس السنة ويوم [الغفران]\nدرت أربعة او خمس [كنايس].\nكلهم قراب لبعض؟ كلهم قدام بعضهم [ايه].\nوانت اليوم لما بتحضر اخبار [لبنان]\nمن بعيد من ايطاليا او من [هون]\nشو بتفكر اليوم اللي صار [بلبنان]\nبعد كل [هالسنين]؟\nما عندي، خلص كأني [نسيت]،\nما بقى معلق، ما فيه شيء [بيعلقني].\nلا عائلة، ولا حدا. مو عائلة بس [انا]\nومرتي واولادي، عائلة [أكبر].\nاخواتي، أولاد اخي، العائلة [كاملة].\nما عندي شيء، ما [بفكر].\nلو كان اليوم فرصه تروح تزور [يوم]\nيومين ثلاثة، شو كان حابب تشوف [بلبنان]؟\nانا سنتين بعد ما تركت [بيروت]،\nكان صيفية، [صيف].\nوشو بدي اعمل ب[ميلانو]؟\nتعال نروح ع [بيروت].\nرحت ع بيروت، أقول لك [الحقيقة]؟\nهاي مو [لإلي].\nقبل كل شيء، شفتها [صغيرة]،\nطلعنا على الجبل، هذه هاي [كنا]؟\nالطريق ما بتسع سياره مين [يقول]،\nبس تحملتها و[قبلتها].\nبس تغيرت علي، بقدر أقول: [لا]،\nهذه مو لإلي، هاي مو [بيروت].\nمو عاليه، مو بحمدون، [تغيرت].\n(من صلاة السبت [الهودية])\nستبارك أرواح جميع الكائنات [الحية]\nيا الله [إلهنا]\nيهود ما فيه اليوم في [لبنان]؟\nبيقولوا شي 50 [زلمة].\nوالخمسين زلمة وين [هم]؟\nساكنين فرد منطقة؟ ما [بفتكر].\nهذا بيته هون وهذا بيته [هون]،\nصار فرق بين البيوت [يعني].\n&quot;إله الشكر، سيد [العجائب]&quot;\n&quot;خالق كل الأرواح، سيد كل [الأفعال]&quot;\nبدك العربي؟ هاي [العربي]!\nاخذناها من العربية سويناها ل[للعبراني].\nبنت الشلبية، عيونها [لوزية]."
+  },
+  "created_at": "2026-05-01 09:16:11 UTC",
+  "updated_at": "2026-05-01 09:32:01 UTC",
+  "exported_at": "2026-05-01T09:32:02Z"
+}

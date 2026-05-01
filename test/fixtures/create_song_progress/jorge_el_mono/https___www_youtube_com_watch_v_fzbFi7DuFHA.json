@@ -1,0 +1,408 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=fzbFi7DuFHA",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Jorge, si tienes papel para reciclar,",
+        "timestamp": "00:06.50",
+        "timestamp_end": "00:08.50",
+        "text_l2": "Jorge, if you have paper to recycle,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "ponlo en esta caja, ¿sí?",
+        "timestamp": "00:08.50",
+        "timestamp_end": "00:10.50",
+        "text_l2": "put it in this box, okay?"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Ah, ¿Jorge?",
+        "timestamp": "00:11.50",
+        "timestamp_end": "00:12.50",
+        "text_l2": "Ah, Jorge?"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Un superespía necesitaba un nombre.",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:23.00",
+        "text_l2": "A super spy needed a name."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Jorge se convirtió en el Mono 00.",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:27.00",
+        "text_l2": "Jorge became Monkey 00."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Profesora Wiseman, no sé si pudiera...",
+        "timestamp": "00:29.50",
+        "timestamp_end": "00:32.00",
+        "text_l2": "Professor Wiseman, I don't know if I could..."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "¿podemos vernos una hora más tarde?",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:35.50",
+        "text_l2": "can we meet an hour later?"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Un superespía debía ser astuto, discreto",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:40.50",
+        "text_l2": "A super spy had to be cunning, discreet"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "y rápido con las manos",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:44.50",
+        "text_l2": "and quick with his hands"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "y pies.",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:46.50",
+        "text_l2": "and feet."
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "Hay algo que quiero comprarle a Jorge.",
+        "timestamp": "00:48.50",
+        "timestamp_end": "00:51.50",
+        "text_l2": "There's something I want to buy for Jorge."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Le va a encantar.",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:53.50",
+        "text_l2": "He's going to love it."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "A veces los superespías",
+        "timestamp": "00:57.50",
+        "timestamp_end": "01:00.50",
+        "text_l2": "Sometimes super spies"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "debían actuar encubiertos.",
+        "timestamp": "01:00.50",
+        "timestamp_end": "01:01.50",
+        "text_l2": "had to act undercover."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Ah, gracias. Hasta luego.",
+        "timestamp": "01:02.50",
+        "timestamp_end": "01:04.50",
+        "text_l2": "Ah, thanks. See you later."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Llevaba solo dos minutos de superespía",
+        "timestamp": "01:07.50",
+        "timestamp_end": "01:09.50",
+        "text_l2": "He'd only been a super spy for two minutes"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "y Mono 00 ya tenía su primera misión.",
+        "timestamp": "01:09.50",
+        "timestamp_end": "01:12.00",
+        "text_l2": "and Monkey 00 already had his first mission."
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Averiguar lo que el hombre",
+        "timestamp": "01:12.50",
+        "timestamp_end": "01:14.50",
+        "text_l2": "Find out what the man"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "del sombrero amarillo iba a darle.",
+        "timestamp": "01:14.50",
+        "timestamp_end": "01:16.50",
+        "text_l2": "with the yellow hat was going to give him."
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Pero debía asegurarse de que no lo viera.",
+        "timestamp": "01:17.50",
+        "timestamp_end": "01:20.50",
+        "text_l2": "But he had to make sure he didn't see him."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Era difícil ser un superespía",
+        "timestamp": "01:36.50",
+        "timestamp_end": "01:39.50",
+        "text_l2": "It was hard being a super spy"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "sin herramientas.",
+        "timestamp": "01:39.50",
+        "timestamp_end": "01:40.50",
+        "text_l2": "without tools."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "Lo que necesitaba era un periscopio.",
+        "timestamp": "01:43.50",
+        "timestamp_end": "01:46.50",
+        "text_l2": "What he needed was a periscope."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Por desgracia no tenía uno.",
+        "timestamp": "01:50.50",
+        "timestamp_end": "01:52.50",
+        "text_l2": "Unfortunately he didn't have one."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Pero tal vez podía hacer uno",
+        "timestamp": "01:54.50",
+        "timestamp_end": "01:56.50",
+        "text_l2": "But maybe he could make one"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "mientras que el hombre",
+        "timestamp": "01:56.50",
+        "timestamp_end": "01:58.50",
+        "text_l2": "while the man"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "del sombrero amarillo acomodaba animales.",
+        "timestamp": "01:58.50",
+        "timestamp_end": "02:00.00",
+        "text_l2": "with the yellow hat arranged animals."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Al fin, Mono 00 tenía",
+        "timestamp": "02:05.50",
+        "timestamp_end": "02:09.50",
+        "text_l2": "Finally, Monkey 00 had"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "su periscopio de espía.",
+        "timestamp": "02:09.50",
+        "timestamp_end": "02:11.50",
+        "text_l2": "his spy periscope."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "Y justo a tiempo.",
+        "timestamp": "02:13.50",
+        "timestamp_end": "02:15.50",
+        "text_l2": "And just in time."
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "El periscopio funcionaba muy bien.",
+        "timestamp": "02:26.50",
+        "timestamp_end": "02:28.50",
+        "text_l2": "The periscope worked very well."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Podía ver entre las cosas...",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:30.50",
+        "text_l2": "He could see between things..."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "sobre las cosas...",
+        "timestamp": "02:33.50",
+        "timestamp_end": "02:35.00",
+        "text_l2": "over things..."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "y alrededor de las cosas.",
+        "timestamp": "02:41.00",
+        "timestamp_end": "02:43.00",
+        "text_l2": "and around things."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Nada le impediría ver por su periscopio.",
+        "timestamp": "02:45.50",
+        "timestamp_end": "02:48.50",
+        "text_l2": "Nothing would stop him from seeing through his periscope."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Excepto Charky.",
+        "timestamp": "02:59.50",
+        "timestamp_end": "03:01.00",
+        "text_l2": "Except Charky."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "Ahora, ¿cómo podría vigilar",
+        "timestamp": "03:27.50",
+        "timestamp_end": "03:29.50",
+        "text_l2": "Now, how could he watch"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "al hombre del sombrero amarillo?",
+        "timestamp": "03:29.50",
+        "timestamp_end": "03:31.50",
+        "text_l2": "the man with the yellow hat?"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "Un periscopio roto no detendría",
+        "timestamp": "03:44.50",
+        "timestamp_end": "03:46.50",
+        "text_l2": "A broken periscope wouldn't stop"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "a un superespía con herramientas",
+        "timestamp": "03:46.50",
+        "timestamp_end": "03:48.50",
+        "text_l2": "a super spy with tools"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "como un espejo y el cerebro de un mono.",
+        "timestamp": "03:48.50",
+        "timestamp_end": "03:50.50",
+        "text_l2": "like a mirror and a monkey's brain."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "No me habrás estado espiando,",
+        "timestamp": "04:03.50",
+        "timestamp_end": "04:05.50",
+        "text_l2": "You haven't been spying on me,"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "¿verdad, Jorge?",
+        "timestamp": "04:05.50",
+        "timestamp_end": "04:07.50",
+        "text_l2": "have you, Jorge?"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "¿Tú hiciste esto?",
+        "timestamp": "04:09.50",
+        "timestamp_end": "04:11.50",
+        "text_l2": "Did you make this?"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "¡Ah, guau! Está muy bien.",
+        "timestamp": "04:12.50",
+        "timestamp_end": "04:15.50",
+        "text_l2": "Ah, wow! This is great."
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "¿En serio? Pero déjame decirte, Jorge,",
+        "timestamp": "04:19.50",
+        "timestamp_end": "04:21.50",
+        "text_l2": "Really? But let me tell you, Jorge,"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "que no es correcto espiar a las personas.",
+        "timestamp": "04:21.50",
+        "timestamp_end": "04:23.50",
+        "text_l2": "it's not right to spy on people."
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "Eso podría arruinar sorpresas",
+        "timestamp": "04:28.50",
+        "timestamp_end": "04:30.50",
+        "text_l2": "That could ruin surprises"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "como esta.",
+        "timestamp": "04:30.50",
+        "timestamp_end": "04:32.50",
+        "text_l2": "like this one."
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "¿Quieres un periscopio oficial",
+        "timestamp": "04:35.50",
+        "timestamp_end": "04:37.50",
+        "text_l2": "Do you want an official periscope"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "de Doggy 00",
+        "timestamp": "04:37.50",
+        "timestamp_end": "04:39.50",
+        "text_l2": "from Doggy 00"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "o preferirías hacer otro?",
+        "timestamp": "04:39.50",
+        "timestamp_end": "04:41.50",
+        "text_l2": "or would you prefer to make another one?"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "¿Quieres los dos?",
+        "timestamp": "04:44.50",
+        "timestamp_end": "04:46.50",
+        "text_l2": "Do you want both?"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "Si eres un mono superespía...",
+        "timestamp": "04:49.50",
+        "timestamp_end": "04:52.50",
+        "text_l2": "If you're a super spy monkey..."
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "necesitas herramientas",
+        "timestamp": "04:53.50",
+        "timestamp_end": "04:55.50",
+        "text_l2": "you need tools"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "para no perder de vista nada.",
+        "timestamp": "04:55.50",
+        "timestamp_end": "04:57.50",
+        "text_l2": "to keep an eye on everything."
+      }
+    ],
+    "phrases_with_token_translations": "[Jorge], si tienes papel para reciclar, => [Jorge], if you have paper to recycle,\nJorge, [si] tienes papel para reciclar, => Jorge, [if] you have paper to recycle,\nJorge, si [tienes] papel para reciclar, => Jorge, if [you have] paper to recycle,\nJorge, si tienes [papel] para reciclar, => Jorge, if you have [paper] to recycle,\nJorge, si tienes papel [para] reciclar, => Jorge, if you have paper [to] recycle,\nJorge, si tienes papel para [reciclar], => Jorge, if you have paper to [recycle]\n\n[ponlo] en esta caja, ¿sí? => [put it] in this box, okay?\nponlo [en] esta caja, ¿sí? => put it [in] this box, okay?\nponlo en [esta] caja, ¿sí? => put it in [this] box, okay?\nponlo en esta [caja], ¿sí? => put it in this [box], okay?\nponlo en esta caja, ¿[sí]? => put it in this box, [okay]?\n\n[Ah], ¿Jorge? => [Ah], Jorge?\nAh, ¿[Jorge]? => Ah, [Jorge]?\n\n[Un] superespía necesitaba un nombre. => [A] super spy needed a name.\nUn [superespía] necesitaba un nombre. => A [super spy] needed a name.\nUn superespía [necesitaba] un nombre. => A super spy [needed] a name.\nUn superespía necesitaba [un] nombre. => A super spy needed [a] name.\nUn superespía necesitaba un [nombre] => A super spy needed a [name]\n\n[Jorge] se convirtió en el Mono 00. => [Jorge] became Monkey 00.\nJorge [se convirtió] en el Mono 00. => Jorge [became] Monkey 00.\nJorge se convirtió [en] el Mono 00. => in\nJorge se convirtió en [el] Mono 00. => the\nJorge se convirtió en el [Mono] 00. => Jorge became [Monkey] 00.\nJorge se convirtió en el Mono [00] => Jorge became Monkey [00]\n\n[Profesora] Wiseman, no sé si pudiera... => [Professor] Wiseman, I don't know if I could...\nProfesora [Wiseman], no sé si pudiera... => Professor [Wiseman], I don't know if I could...\nProfesora Wiseman, [no] sé si pudiera... => Professor Wiseman, I [don't] know if I could...\nProfesora Wiseman, no [sé] si pudiera... => Professor Wiseman, I don't [know] if I could...\nProfesora Wiseman, no sé [si] pudiera... => Professor Wiseman, I don't know [if] I could...\nProfesora Wiseman, no sé si [pudiera...] => Professor Wiseman, I don't know if [I could...]\n\n¿[podemos] vernos una hora más tarde? => [can we] meet an hour later?\n¿podemos [vernos] una hora más tarde? => can we [meet] an hour later?\n¿podemos vernos [una] hora más tarde? => can we meet [an] hour later?\n¿podemos vernos una [hora] más tarde? => can we meet an [hour] later?\n¿podemos vernos una hora [más tarde] => can we meet an hour [later]\n\n[Un] superespía debía ser astuto, discreto => [A] super spy had to be cunning, discreet\nUn [superespía] debía ser astuto, discreto => A [super spy] had to be cunning, discreet\nUn superespía [debía] ser astuto, discreto => A super spy [had to] be cunning, discreet\nUn superespía debía [ser] astuto, discreto => A super spy had to [be] cunning, discreet\nUn superespía debía ser [astuto], discreto => A super spy had to be [cunning], discreet\nUn superespía debía ser astuto, [discreto] => A super spy had to be cunning, [discreet]\n\n[y] rápido con las manos => [and] quick with his hands\ny [rápido] con las manos => and [quick] with his hands\ny rápido [con] las manos => and quick [with] his hands\ny rápido con [las] manos => and quick with [his] hands # Spanish uses the definite article 'the' for body parts where English uses possessives\ny rápido con las [manos] => and quick with his [hands]\n\n[y] pies. => [and] feet.\ny [pies.] => and [feet.]\n\n[Hay] algo que quiero comprarle a Jorge. => [There's] something I want to buy for Jorge.\nHay [algo] que quiero comprarle a Jorge. => There's [something] I want to buy for Jorge.\nHay algo [que] quiero comprarle a Jorge. => that\nHay algo que [quiero] comprarle a Jorge. => There's something [I want] to buy for Jorge.\nHay algo que quiero [comprar]le a Jorge. => There's something I want [to buy] for Jorge.\nHay algo que quiero comprar[le] a Jorge. => to him, for him # indirect object pronoun\nHay algo que quiero comprarle [a] Jorge. => There's something I want to buy [for] Jorge.\nHay algo que quiero comprarle a [Jorge]. => There's something I want to buy for [Jorge]\n\n[Le] va a encantar. => [He]'s going to love it.\nLe [va a] encantar. => is going to\nLe va a [encantar.] => He's going to [love] it.\n\n[A veces] los superespías => [Sometimes] super spies\nA veces [los] superespías => the\nA veces los [superespías] => Sometimes [super spies]\n\n[debían] actuar encubiertos. => [had to] act undercover.\ndebían [actuar] encubiertos. => had to [act] undercover.\ndebían actuar [encubiertos]. => had to act [undercover]\n\n[Ah], gracias. Hasta luego. => [Ah], thanks. See you later.\nAh, [gracias]. Hasta luego. => Ah, [thanks]. See you later.\nAh, gracias. [Hasta] luego. => until\nAh, gracias. Hasta [luego]. => Ah, thanks. See you [later].\n\nLlevaba [solo] dos minutos de superespía => He'd [only] been a super spy for two minutes\nLlevaba solo [dos] minutos de superespía => He'd only been a super spy for [two] minutes\nLlevaba solo dos [minutos] de superespía => He'd only been a super spy for two [minutes]\nLlevaba solo dos minutos de [superespía] => He'd only been a [super spy] for two minutes\n\n[y] Mono 00 ya tenía su primera misión. => [and] Monkey 00 already had his first mission.\ny [Mono] 00 ya tenía su primera misión. => and [Monkey] 00 already had his first mission.\ny Mono [00] ya tenía su primera misión. => and Monkey [00] already had his first mission.\ny Mono 00 [ya] tenía su primera misión. => and Monkey 00 [already] had his first mission.\ny Mono 00 ya [tenía] su primera misión. => and Monkey 00 already [had] his first mission.\ny Mono 00 ya tenía [su] primera misión. => and Monkey 00 already had [his] first mission.\ny Mono 00 ya tenía su [primera] misión. => and Monkey 00 already had his [first] mission.\ny Mono 00 ya tenía su primera [misión] => and Monkey 00 already had his first [mission]\n\n[Averiguar] lo que el hombre => [Find out] what the man\nAveriguar [lo que] el hombre => Find out [what] the man\nAveriguar lo que [el] hombre => Find out what [the] man\nAveriguar lo que el [hombre] => Find out what the [man]\n\n[del] sombrero amarillo iba a darle. => [with the] yellow hat was going to give him.\ndel [sombrero] amarillo iba a darle. => with the yellow [hat] was going to give him.\ndel sombrero [amarillo] iba a darle. => with the [yellow] hat was going to give him.\ndel sombrero amarillo [iba] a darle. => with the yellow hat [was going] to give him.\ndel sombrero amarillo iba [a] darle. => with the yellow hat was going [to] give him.\ndel sombrero amarillo iba a [darle]. => with the yellow hat was going to [give him].\n\n[Pero] debía asegurarse de que no lo viera. => [But] he had to make sure he didn't see him.\nPero [debía] asegurarse de que no lo viera. => But [he had to] make sure he didn't see him.\nPero debía [asegurarse] de que no lo viera. => But he had to [make sure] he didn't see him.\nPero debía asegurarse [de que] no lo viera. => that\nPero debía asegurarse de que [no] lo viera. => But he had to make sure he [didn't] see him.\nPero debía asegurarse de que no [lo] viera. => But he had to make sure he didn't see [him].\nPero debía asegurarse de que no lo [viera]. => But he had to make sure he didn't [see] him.\n\n[Era] difícil ser un superespía => [It was] hard being a super spy\nEra [difícil] ser un superespía => It was [hard] being a super spy\nEra difícil [ser] un superespía => It was hard [being] a super spy\nEra difícil ser [un] superespía => It was hard being [a] super spy\nEra difícil ser un [superespía] => It was hard being a [super spy]\n\n[sin] herramientas. => [without] tools.\nsin [herramientas]. => without [tools].\n\n[Lo que] necesitaba era un periscopio. => [What] he needed was a periscope.\nLo que [necesitaba] era un periscopio. => What [he needed] was a periscope.\nLo que necesitaba [era] un periscopio. => What he needed [was] a periscope.\nLo que necesitaba era [un] periscopio. => What he needed was [a] periscope.\nLo que necesitaba era un [periscopio] => What he needed was a [periscope]\n\n[Por desgracia] no tenía uno. => [Unfortunately] he didn't have one.\nPor desgracia [no] tenía uno. => no, not # \"no\" represents the negation in the English contraction \"didn't\"\nPor desgracia no [tenía] uno. => he had, he was having # \"tenía\" combines the subject and verb which are non-consecutive in the English sentence\nPor desgracia no tenía [uno] => Unfortunately he didn't have [one]\n\n[Pero] tal vez podía hacer uno => [But] maybe he could make one\nPero [tal vez] podía hacer uno => But [maybe] he could make one\nPero tal vez [podía] hacer uno => But maybe [he could] make one # \"podía\" is inflected for \"he/she/it\", matching the full English subject-verb unit\nPero tal vez podía [hacer] uno => But maybe he could [make] one\nPero tal vez podía hacer [uno] => But maybe he could make [one]\n\n[mientras que] el hombre => [while] the man\nmientras que [el] hombre => while [the] man\nmientras que el [hombre] => while the [man]\n\n[del] sombrero amarillo acomodaba animales. => [with the] yellow hat arranged animals.\ndel [sombrero] amarillo acomodaba animales. => with the yellow [hat] arranged animals.\ndel sombrero [amarillo] acomodaba animales. => with the [yellow] hat arranged animals.\ndel sombrero amarillo [acomodaba] animales. => with the yellow hat [arranged] animals.\ndel sombrero amarillo acomodaba [animales]. => with the yellow hat arranged [animals].\n\n[Al fin], Mono 00 tenía => [Finally], Monkey 00 had\nAl fin, [Mono] 00 tenía => Finally, [Monkey] 00 had\nAl fin, Mono [00] tenía => Finally, Monkey [00] had\nAl fin, Mono 00 [tenía] => Finally, Monkey 00 [had]\n\n[su] periscopio de espía. => [his] spy periscope.\nsu [periscopio] de espía. => his spy [periscope].\nsu periscopio [de] espía. => of\nsu periscopio de [espía]. => his [spy] periscope.\n\n[Y] justo a tiempo. => [And] just in time.\nY [justo] a tiempo. => And [just] in time.\nY justo [a] tiempo. => And just [in] time.\nY justo a [tiempo] => And just in [time]\n\n[El] periscopio funcionaba muy bien. => [The] periscope worked very well.\nEl [periscopio] funcionaba muy bien. => The [periscope] worked very well.\nEl periscopio [funcionaba] muy bien. => The periscope [worked] very well.\nEl periscopio funcionaba [muy] bien. => The periscope worked [very] well.\nEl periscopio funcionaba muy [bien.] => The periscope worked very [well.]\n\n[Podía] ver entre las cosas... => [He could] see between things...\nPodía [ver] entre las cosas... => He could [see] between things...\nPodía ver [entre] las cosas... => He could see [between] things...\nPodía ver entre [las] cosas... => the\nPodía ver entre las [cosas]... => He could see between [things]...\n\n[sobre] las cosas... => [over] things...\nsobre [las] cosas... => the\nsobre las [cosas]... => [things]...\n\n[y] alrededor de las cosas. => [and] around things.\ny [alrededor de] las cosas. => and [around] things.\ny alrededor de [las] cosas. => the\ny alrededor de las [cosas]. => and around [things].\n\n[Nada] le impediría ver por su periscopio. => [Nothing] would stop him from seeing through his periscope.\nNada [le] impediría ver por su periscopio. => Nothing would stop [him] from seeing through his periscope.\nNada le [impediría] ver por su periscopio. => Nothing [would stop] him from seeing through his periscope.\nNada le impediría [ver] por su periscopio. => Nothing would stop him from [seeing] through his periscope.\nNada le impediría ver [por] su periscopio. => Nothing would stop him from seeing [through] his periscope.\nNada le impediría ver por [su] periscopio. => Nothing would stop him from seeing through [his] periscope.\nNada le impediría ver por su [periscopio] => Nothing would stop him from seeing through his [periscope]\n\n[Excepto] Charky. => [Except] Charky.\nExcepto [Charky]. => Except [Charky].\n\n[Ahora], ¿cómo podría vigilar => [Now], how could he watch\nAhora, ¿[cómo] podría vigilar => Now, [how] could he watch\nAhora, ¿cómo [podría] vigilar => Now, how [could he] watch\nAhora, ¿cómo podría [vigilar] => Now, how could he [watch]\n\n[al] hombre del sombrero amarillo? => [the] man with the yellow hat?\nal [hombre] del sombrero amarillo? => the [man] with the yellow hat?\nal hombre [del] sombrero amarillo? => the man [with the] yellow hat?\nal hombre del [sombrero] amarillo? => the man with the yellow [hat]?\nal hombre del sombrero [amarillo]? => the man with the [yellow] hat?\n\n[Un] periscopio roto no detendría => [A] broken periscope wouldn't stop\nUn [periscopio] roto no detendría => A broken [periscope] wouldn't stop\nUn periscopio [roto] no detendría => A [broken] periscope wouldn't stop\nUn periscopio roto [no detendría] => A broken periscope [wouldn't stop] # Spanish negation + conditional verb maps to English negated auxiliary + verb\n\na [un] superespía con herramientas => [a] super spy with tools\na un [superespía] con herramientas => a [super spy] with tools\na un superespía [con] herramientas => a super spy [with] tools\na un superespía con [herramientas] => a super spy with [tools]\n\n[como] un espejo y el cerebro de un mono. => [like] a mirror and a monkey's brain.\ncomo [un] espejo y el cerebro de un mono. => like [a] mirror and a monkey's brain.\ncomo un [espejo] y el cerebro de un mono. => like a [mirror] and a monkey's brain.\ncomo un espejo [y] el cerebro de un mono. => like a mirror [and] a monkey's brain.\ncomo un espejo y el [cerebro] de un mono. => like a mirror and a monkey's [brain].\ncomo un espejo y el cerebro [de un mono]. => like a mirror and [a monkey's] brain. # 'de un mono' translates to 'a monkey’s' in this possessive structure\n\nNo me habrás [estado] espiando, => You haven't [been] spying on me,\nNo me habrás estado [espiando,] => You haven't been [spying] on me,\n\n¿[verdad], Jorge? => [have you], Jorge?\n¿verdad, [Jorge]? => have you, [Jorge]?\n\n¿Tú hiciste [esto]? => Did you make [this]?\n\n¡[Ah], guau! Está muy bien. => [Ah], wow! This is great.\n¡Ah, [guau]! Está muy bien. => Ah, [wow]! This is great.\n¡Ah, guau! [Está] muy bien. => Ah, wow! [This is] great.\n¡Ah, guau! Está [muy bien]. => great # English used \"great\", \"muy bien\" literally means \"very well\" but is the localized equivalent here\n\n¿[En serio]? Pero déjame decirte, Jorge, => [Really]? But let me tell you, Jorge,\n¿En serio? [Pero] déjame decirte, Jorge, => Really? [But] let me tell you, Jorge,\n¿En serio? Pero [déjame] decirte, Jorge, => Really? But [let me] tell you, Jorge, # Spanish 'déjame' is a single word combining the command 'deja' and 'me'\n¿En serio? Pero déjame [decirte], Jorge, => Really? But let me [tell you], Jorge, # Spanish 'decirte' combines the infinitive 'decir' and 'te'\n¿En serio? Pero déjame decirte, [Jorge], => Really? But let me tell you, [Jorge],\n\nque [no] es correcto espiar a las personas. => it's [not] right to spy on people.\nque no [es] correcto espiar a las personas. => [it's] not right to spy on people. # \"es\" translates to \"it is\", which is contracted to \"it's\" in the English sentence\nque no es [correcto] espiar a las personas. => it's not [right] to spy on people.\nque no es correcto [espiar] a las personas. => it's not right [to spy] on people.\nque no es correcto espiar [a] las personas. => it's not right to spy [on] people.\nque no es correcto espiar a [las personas] => it's not right to spy on [people] # \"las personas\" is mapped to \"people\" as \"the\" is omitted in this general English context\n\n[Eso] podría arruinar sorpresas => [That] could ruin surprises\nEso [podría] arruinar sorpresas => That [could] ruin surprises\nEso podría [arruinar] sorpresas => That could [ruin] surprises\nEso podría arruinar [sorpresas] => That could ruin [surprises]\n\n[como] esta. => [like] this one.\ncomo [esta]. => like [this one].\n\n[¿Quieres] un periscopio oficial => [Do you want] an official periscope\n¿Quieres [un] periscopio oficial => Do you want [an] official periscope\n¿Quieres un [periscopio] oficial => Do you want an official [periscope]\n¿Quieres un periscopio [oficial] => Do you want an [official] periscope\n\n[de] Doggy 00 => [from] Doggy 00\nde [Doggy] 00 => from [Doggy] 00\nde Doggy [00] => from Doggy [00]\n\n[o] preferirías hacer otro? => [or] would you prefer to make another one?\no [preferirías] hacer otro? => or [would you prefer] to make another one?\no preferirías [hacer] otro? => or would you prefer [to make] another one?\no preferirías hacer [otro]? => or would you prefer to make [another one] # \"otro\" translates as \"another one\" in this context\n\n¿Quieres [los dos]? => Do you want [both]?\n¿Quieres [los] dos? => the\n¿Quieres los [dos]? => two\n\n[Si] eres un mono superespía... => [If] you're a super spy monkey...\nSi [eres] un mono superespía... => If [you're] a super spy monkey...\nSi eres [un] mono superespía... => If you're [a] super spy monkey...\nSi eres un [mono] superespía... => If you're a super spy [monkey]...\nSi eres un mono [superespía]... => If you're a [super spy] monkey...\n\n[necesitas] herramientas => [you need] tools\nnecesitas [herramientas] => you need [tools]\n\n[para] no perder de vista nada. => [to] keep an eye on everything.\npara [no perder de vista] nada. => keep an eye on\npara no perder de vista [nada.] => [everything.]\n\n",
+    "lessons": "# Instrucciones para reciclar\n00:06.50 Jorge, si tienes papel para reciclar,\n00:08.50 ponlo en esta caja, ¿sí?\n00:11.50 Ah, ¿Jorge?\n\n# El Nacimiento de un Superespía\n00:20.00 Un superespía necesitaba un nombre.\n00:24.00 Jorge se convirtió en el Mono 00.\n\n# Una Petición Importante\n00:29.50 Profesora Wiseman, no sé si pudiera...\n00:33.00 ¿podemos vernos una hora más tarde?\n\n# Cualidades de un Superespía\n00:37.50 Un superespía debía ser astuto, discreto\n00:42.50 y rápido con las manos\n00:45.00 y pies.\n\n# La Primera Misión (Part 1)\n00:48.50 Hay algo que quiero comprarle a Jorge.\n00:52.00 Le va a encantar.\n00:57.50 A veces los superespías\n01:00.50 debían actuar encubiertos.\n01:02.50 Ah, gracias. Hasta luego.\n01:07.50 Llevaba solo dos minutos de superespía\n01:09.50 y Mono 00 ya tenía su primera misión.\n\n# La Primera Misión (Part 2)\n01:12.50 Averiguar lo que el hombre\n01:14.50 del sombrero amarillo iba a darle.\n01:17.50 Pero debía asegurarse de que no lo viera.\n01:36.50 Era difícil ser un superespía\n01:39.50 sin herramientas.\n\n# La Creación del Periscopio\n01:43.50 Lo que necesitaba era un periscopio.\n01:50.50 Por desgracia no tenía uno.\n01:54.50 Pero tal vez podía hacer uno\n01:56.50 mientras que el hombre\n01:58.50 del sombrero amarillo acomodaba animales.\n\n# El Periscopio en Acción\n02:05.50 Al fin, Mono 00 tenía\n02:09.50 su periscopio de espía.\n02:13.50 Y justo a tiempo.\n02:26.50 El periscopio funcionaba muy bien.\n02:29.00 Podía ver entre las cosas...\n02:33.50 sobre las cosas...\n02:41.00 y alrededor de las cosas.\n\n# Un Obstáculo Inesperado\n02:45.50 Nada le impediría ver por su periscopio.\n02:59.50 Excepto Charky.\n03:27.50 Ahora, ¿cómo podría vigilar\n03:29.50 al hombre del sombrero amarillo?\n\n# La Lección Final\n03:44.50 Un periscopio roto no detendría\n03:46.50 a un superespía con herramientas\n03:48.50 como un espejo y el cerebro de un mono.\n04:03.50 No me habrás estado espiando,\n04:05.50 ¿verdad, Jorge?\n04:09.50 ¿Tú hiciste esto?\n04:12.50 ¡Ah, guau! Está muy bien.\n04:19.50 ¿En serio? Pero déjame decirte, Jorge,\n04:21.50 que no es correcto espiar a las personas.\n04:28.50 Eso podría arruinar sorpresas\n04:30.50 como esta.\n04:35.50 ¿Quieres un periscopio oficial\n04:37.50 de Doggy 00\n04:39.50 o preferirías hacer otro?\n04:44.50 ¿Quieres los dos?\n04:49.50 Si eres un mono superespía...\n04:53.50 necesitas herramientas\n04:55.50 para no perder de vista nada.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-05-01 13:50:32 UTC",
+  "updated_at": "2026-05-01 14:04:36 UTC",
+  "exported_at": "2026-05-01T14:04:36Z"
+}

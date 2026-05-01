@@ -36,18 +36,47 @@
         </div>
 
         <div class="border-t border-slate-700 pt-6 mt-6">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-slate-200">Learning Path (Optional)</h3>
+          <h3 class="text-lg font-semibold text-slate-200 mb-4">Learning Path (Optional)</h3>
+
+          <div class="space-y-3 mb-4">
             <label class="flex items-center cursor-pointer">
-              <%= form.check_box :create_learning_path, 
-                    class: "w-5 h-5 rounded border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
-                    id: "create_learning_path_checkbox"
+              <%= form.radio_button :learning_path_action, "none",
+                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    id: "learning_path_action_none",
+                    checked: true
               %>
-              <span class="ml-2 text-sm text-slate-300">Create learning path</span>
+              <span class="ml-2 text-sm text-slate-300">None</span>
+            </label>
+
+            <label class="flex items-center cursor-pointer">
+              <%= form.radio_button :learning_path_action, "existing",
+                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    id: "learning_path_action_existing"
+              %>
+              <span class="ml-2 text-sm text-slate-300">Add to existing learning path</span>
+            </label>
+
+            <label class="flex items-center cursor-pointer">
+              <%= form.radio_button :learning_path_action, "new",
+                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    id: "learning_path_action_new"
+              %>
+              <span class="ml-2 text-sm text-slate-300">Create new learning path</span>
             </label>
           </div>
 
-          <div id="learning-path-fields" class="hidden space-y-4">
+          <div id="existing-learning-path-fields" class="hidden space-y-4">
+            <div>
+              <%= form.label :learning_path_id, "Learning Path", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+              <%= form.select :learning_path_id,
+                    options_from_collection_for_select(LearningPath.order(:name), :id, :name),
+                    { prompt: "Select a learning path" },
+                    { class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent", id: "learning_path_id_field" }
+              %>
+            </div>
+          </div>
+
+          <div id="new-learning-path-fields" class="hidden space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <%= form.label :learning_path_name, "Name *", class: "block text-sm font-semibold text-slate-200 mb-2" %>
@@ -111,7 +140,7 @@
 
         <div class="flex justify-end space-x-4 pt-6">
           <%= link_to "Cancel", courses_path, class: "px-6 py-3 text-slate-400 hover:text-slate-200 font-semibold transition-colors" %>
-          <%= form.submit "Import Courses", 
+          <%= form.submit "Import Courses",
                 class: "px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-800" %>
         </div>
 
@@ -122,45 +151,66 @@
 
 <script>
   function setupLearningPathToggle() {
-    const checkbox = document.getElementById('create_learning_path_checkbox');
-    const fields = document.getElementById('learning-path-fields');
+    const noneRadio = document.getElementById('learning_path_action_none');
+    const existingRadio = document.getElementById('learning_path_action_existing');
+    const newRadio = document.getElementById('learning_path_action_new');
+    const existingFields = document.getElementById('existing-learning-path-fields');
+    const newFields = document.getElementById('new-learning-path-fields');
+    const existingSelect = document.getElementById('learning_path_id_field');
     const nameField = document.getElementById('learning_path_name_field');
-    
-    if (!checkbox || !fields) return;
-    
+
+    if (!noneRadio || !existingRadio || !newRadio) return;
+
     const toggleFields = () => {
-      if (checkbox.checked) {
-        fields.classList.remove('hidden');
+      if (existingRadio.checked) {
+        existingFields.classList.remove('hidden');
+        newFields.classList.add('hidden');
+        existingSelect?.setAttribute('required', 'required');
+        nameField?.removeAttribute('required');
+      } else if (newRadio.checked) {
+        existingFields.classList.add('hidden');
+        newFields.classList.remove('hidden');
+        existingSelect?.removeAttribute('required');
         nameField?.setAttribute('required', 'required');
       } else {
-        fields.classList.add('hidden');
+        existingFields.classList.add('hidden');
+        newFields.classList.add('hidden');
+        existingSelect?.removeAttribute('required');
         nameField?.removeAttribute('required');
       }
     };
-    
-    checkbox.removeEventListener('change', toggleFields);
-    checkbox.addEventListener('change', toggleFields);
-    
-    const form = checkbox.closest('form');
+
+    noneRadio.addEventListener('change', toggleFields);
+    existingRadio.addEventListener('change', toggleFields);
+    newRadio.addEventListener('change', toggleFields);
+
+    const form = noneRadio.closest('form');
     if (form) {
       form.removeEventListener('submit', validateForm);
       form.addEventListener('submit', validateForm);
     }
-    
+
     function validateForm(e) {
-      if (checkbox.checked) {
+      if (existingRadio.checked) {
+        const selected = existingSelect?.value;
+        if (!selected) {
+          e.preventDefault();
+          alert('Please select a learning path, or choose a different option.');
+          existingSelect?.focus();
+        }
+      } else if (newRadio.checked) {
         const name = nameField?.value?.trim();
         if (!name) {
           e.preventDefault();
-          alert('Please enter a name for the learning path, or uncheck "Create learning path".');
+          alert('Please enter a name for the learning path, or choose a different option.');
           nameField?.focus();
         }
       }
     }
-    
+
     toggleFields();
   }
-  
+
   document.addEventListener('turbo:load', setupLearningPathToggle);
   document.addEventListener('DOMContentLoaded', setupLearningPathToggle);
 </script>

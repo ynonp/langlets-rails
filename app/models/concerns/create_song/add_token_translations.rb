@@ -14,40 +14,54 @@ module CreateSong
         }
       )
       max_retries = 2
-      data["phrases_with_token_translations"] = ""
 
-      lyrics_with_translations.lines.each_slice(blocks_per_iteration) do |block|
-        retry_count = 0
+      blocks = lyrics_with_translations.lines.each_slice(blocks_per_iteration).to_a
 
-        begin
-          chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_quick)
-          chat
-            .with_instructions(instructions)
-            .add_message role: :user, content: block.join
-
-          response = chat.complete
-
-          content = strip_model_header(response.content.strip, block.first)
-          raise "Output blocks mismatch" if content.strip.scan(/\n\s*\n/).count != (blocks_per_iteration - 1)
-          data["phrases_with_token_translations"] += content.strip + "\n\n"
-          save!
-
-        rescue => e
-          retry_count += 1
-          if retry_count <= max_retries
-            wait_time = (2 ** retry_count) + rand(1..3)
-            Rails.logger.warn "AddTokenTranslations attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
-            sleep(wait_time)
-            retry
-          else
-            Rails.logger.error "AddTokenTranslations failed after #{max_retries} attempts: #{e.message}"
-            raise e
+      results = Async do
+        tasks = blocks.each_with_index.map do |block, index|
+          Async do
+            content = fetch_translation(instructions, block, max_retries)
+            [index, content]
           end
         end
-      end
+
+        tasks.map(&:wait).sort_by(&:first).map(&:last)
+      end.result
+
+      data["phrases_with_token_translations"] = results.join("\n\n")
+      save!
     end
 
     private
+
+    def fetch_translation(instructions, block, max_retries)
+      retry_count = 0
+
+      loop do
+        chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_quick)
+        chat
+          .with_instructions(instructions)
+          .add_message role: :user, content: block.join
+
+        response = chat.complete
+
+        content = strip_model_header(response.content.strip, block.first)
+        raise "Output blocks mismatch" if content.strip.scan(/\n\s*\n/).count != (block.size - 1)
+
+        return content.strip
+      rescue => e
+        retry_count += 1
+        if retry_count <= max_retries
+          wait_time = (2 ** retry_count) + rand(1..3)
+          Rails.logger.warn "AddTokenTranslations attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
+          sleep(wait_time)
+          retry
+        else
+          Rails.logger.error "AddTokenTranslations failed after #{max_retries} attempts: #{e.message}"
+          raise e
+        end
+      end
+    end
 
     def lyrics_with_translations
       lyrics = data["phrases"].pluck("text_l1")

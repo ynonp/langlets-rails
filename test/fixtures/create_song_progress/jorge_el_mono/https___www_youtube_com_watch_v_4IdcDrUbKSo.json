@@ -1,0 +1,338 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=4IdcDrUbKSo",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Un mono pequeño puede ocupar mucho espacio.",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:06.00",
+        "text_l2": "A little monkey can take up a lot of space."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "En especial si tiene muchas cosas.",
+        "timestamp": "00:07.00",
+        "timestamp_end": "00:09.00",
+        "text_l2": "Especially if he has lots of things."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "¡Ay! Bien, esa es la última, Jorge.",
+        "timestamp": "00:10.00",
+        "timestamp_end": "00:13.00",
+        "text_l2": "Phew! Okay, that's the last one, Jorge."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "¿Cómo? ¡Jorge!",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:15.00",
+        "text_l2": "What? Jorge!"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "¡Ay!",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:18.00",
+        "text_l2": "Phew!"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Jorge, dime, ¿estás seguro que no sería",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:25.50",
+        "text_l2": "Jorge, tell me, are you sure it wouldn't be"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "mejor regalar todo esto en vez de",
+        "timestamp": "00:25.50",
+        "timestamp_end": "00:28.00",
+        "text_l2": "better to donate all this instead of"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "guardarlo en el sótano?",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:29.00",
+        "text_l2": "storing it in the basement?"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "¡Ay! Jamás volverás a usar nada de esto.",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "Phew! You'll never use any of this again."
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "En la opinión de Jorge,",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:41.00",
+        "text_l2": "In Jorge's opinion,"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "uno debe guardar todo porque nunca sabes",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:43.00",
+        "text_l2": "you should keep everything because you never know"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "cuándo puedes necesitarlo.",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:44.00",
+        "text_l2": "when you might need it."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Ay, está bien. Vamos a llevarlo abajo.",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "Oh, okay. Let's take it downstairs."
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "No bajen con las manos vacías.",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:52.00",
+        "text_l2": "Don't go down empty-handed."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Hundley decidió buscar un lugar",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "Hundley decided to find a place"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "para las cosas de Jorge.",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "for Jorge's things."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "De repente, Hundley pensó que era la",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Suddenly, Hundley thought that it was the"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "primera vez que bajaba solo al sótano.",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "first time he was going down to the basement alone."
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "¿En dónde podía estar esa pelota?",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:02.00",
+        "text_l2": "Where could that ball be?"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Un buen perro guardián no tiene miedo.",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "A good watchdog isn't afraid."
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Para poder localizar el ruido, Jorge",
+        "timestamp": "02:26.00",
+        "timestamp_end": "02:29.00",
+        "text_l2": "To locate the noise, Jorge"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "dividió el sótano en cuatro secciones.",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:31.00",
+        "text_l2": "divided the basement into four sections."
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "Grabó el ruido tenebroso en cada una",
+        "timestamp": "02:38.00",
+        "timestamp_end": "02:41.00",
+        "text_l2": "He recorded the spooky noise in each"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "de las cuatro secciones.",
+        "timestamp": "02:41.00",
+        "timestamp_end": "02:42.00",
+        "text_l2": "of the four sections."
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "¡Ay! Qué ruido tan tenebroso.",
+        "timestamp": "03:16.00",
+        "timestamp_end": "03:19.00",
+        "text_l2": "Oh! What a spooky noise."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Sí, creo que hay que bajar a ver",
+        "timestamp": "03:19.00",
+        "timestamp_end": "03:22.00",
+        "text_l2": "Yeah, I think we have to go down and see"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "de qué se trata.",
+        "timestamp": "03:22.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "what it's about."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Primero usted, ¿sí?",
+        "timestamp": "03:27.00",
+        "timestamp_end": "03:29.00",
+        "text_l2": "You first, okay?"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "No, no, no, no, no, después de usted.",
+        "timestamp": "03:29.00",
+        "timestamp_end": "03:31.00",
+        "text_l2": "No, no, no, no, no, after you."
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "¡Hágalo!",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:32.00",
+        "text_l2": "Do it!"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Hundley tomó una decisión:",
+        "timestamp": "03:33.00",
+        "timestamp_end": "03:35.00",
+        "text_l2": "Hundley made a decision:"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "estaba cansado de tener miedo.",
+        "timestamp": "03:35.00",
+        "timestamp_end": "03:36.00",
+        "text_l2": "he was tired of being afraid."
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "Esta es una vaca.",
+        "timestamp": "03:53.00",
+        "timestamp_end": "03:56.00",
+        "text_l2": "This is a cow."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "La vaca. Sí, ¡muu!",
+        "timestamp": "03:58.00",
+        "timestamp_end": "04:00.00",
+        "text_l2": "The cow. Yeah, moo!"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Oh, Hundley, eres el perro más valiente",
+        "timestamp": "04:01.00",
+        "timestamp_end": "04:04.00",
+        "text_l2": "Oh, Hundley, you're the bravest dog"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "de la ciudad.",
+        "timestamp": "04:04.00",
+        "timestamp_end": "04:05.00",
+        "text_l2": "in the city."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "Bien, vamos a bajar el resto",
+        "timestamp": "04:12.00",
+        "timestamp_end": "04:14.00",
+        "text_l2": "Okay, let's take down the rest"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "de las cajas, Jorge.",
+        "timestamp": "04:14.00",
+        "timestamp_end": "04:15.00",
+        "text_l2": "of the boxes, Jorge."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "Oye, ¿qué no has aprendido que no debes",
+        "timestamp": "04:18.00",
+        "timestamp_end": "04:21.00",
+        "text_l2": "Hey, haven't you learned that you shouldn't"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "tenerle miedo a los ruidos?",
+        "timestamp": "04:21.00",
+        "timestamp_end": "04:22.00",
+        "text_l2": "be afraid of noises?"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "¡No! ¡Ay! ¡Jorge, ciérrala!",
+        "timestamp": "04:24.00",
+        "timestamp_end": "04:26.00",
+        "text_l2": "No! Oh! Jorge, close it!"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Ay, tal vez sea mejor tener tus cosas",
+        "timestamp": "04:30.00",
+        "timestamp_end": "04:33.00",
+        "text_l2": "Oh, maybe it's better to keep your things"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "arriba, Jorge.",
+        "timestamp": "04:33.00",
+        "timestamp_end": "04:34.00",
+        "text_l2": "upstairs, Jorge."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "Nunca sabes cuándo se necesitarán.",
+        "timestamp": "04:34.00",
+        "timestamp_end": "04:36.00",
+        "text_l2": "You never know when they'll be needed."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "¡Auxilio!",
+        "timestamp": "04:39.00",
+        "timestamp_end": "04:40.00",
+        "text_l2": "Help!"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "¡Atención! ¡Atención! ¡Auxilio!",
+        "timestamp": "04:41.00",
+        "timestamp_end": "04:44.00",
+        "text_l2": "Attention! Attention! Help!"
+      }
+    ],
+    "phrases_with_token_translations": "[Un] mono pequeño puede ocupar mucho espacio. => [A] little monkey can take up a lot of space.\nUn [mono] pequeño puede ocupar mucho espacio. => A little [monkey] can take up a lot of space.\nUn mono [pequeño] puede ocupar mucho espacio. => A [little] monkey can take up a lot of space.\nUn mono pequeño [puede] ocupar mucho espacio. => A little monkey [can] take up a lot of space.\nUn mono pequeño puede [ocupar] mucho espacio. => A little monkey can [take up] a lot of space.\nUn mono pequeño puede ocupar [mucho] espacio. => A little monkey can take up [a lot of] space.\nUn mono pequeño puede ocupar mucho [espacio]. => A little monkey can take up a lot of [space].\n\n[En especial] si tiene muchas cosas. => [Especially] if he has lots of things.\nEn especial [si] tiene muchas cosas. => Especially [if] he has lots of things.\nEn especial si [tiene] muchas cosas. => Especially if [he has] lots of things.\nEn especial si tiene [muchas] cosas. => Especially if he has [lots of] things.\nEn especial si tiene muchas [cosas] => Especially if he has lots of [things]\n\n[¡Ay!] Bien, esa es la última, Jorge. => [Phew!] Okay, that's the last one, Jorge.\n¡Ay! [Bien], esa es la última, Jorge. => Phew! [Okay], that's the last one, Jorge.\n¡Ay! Bien, [esa es] la última, Jorge. => Phew! Okay, [that's] the last one, Jorge.\n¡Ay! Bien, esa es [la] última, Jorge. => Phew! Okay, that's [the] last one, Jorge.\n¡Ay! Bien, esa es la [última], Jorge. => last one, final one\n¡Ay! Bien, esa es la última, [Jorge] => Phew! Okay, that's the last one, [Jorge]\n\n¿[Cómo]? ¡Jorge! => [What]? Jorge!\n¿Cómo? ¡[Jorge]! => What? [Jorge]!\n\n[Ay]! => [Phew]!\n\n[Jorge], dime, ¿estás seguro que no sería => [Jorge], tell me, are you sure it wouldn't be\nJorge, [dime], ¿estás seguro que no sería => Jorge, [tell me], are you sure it wouldn't be\nJorge, dime, ¿[estás] seguro que no sería => Jorge, tell me, [are you] sure it wouldn't be\nJorge, dime, ¿estás [seguro] que no sería => Jorge, tell me, are you [sure] it wouldn't be\nJorge, dime, ¿estás seguro [que] no sería => that\nJorge, dime, ¿estás seguro que [no sería] => Jorge, tell me, are you sure [it wouldn't be]\n\n[mejor] regalar todo esto en vez de => [better] to donate all this instead of\nmejor [regalar] todo esto en vez de => better [to donate] all this instead of\nmejor regalar [todo] esto en vez de => better to donate [all] this instead of\nmejor regalar todo [esto] en vez de => better to donate all [this] instead of\nmejor regalar todo esto [en vez de] => better to donate all this [instead of]\n\n[guardarlo] en el sótano? => [storing it] in the basement?\nguardarlo [en] el sótano? => storing it [in] the basement?\nguardarlo en [el] sótano? => storing it in [the] basement?\nguardarlo en el [sótano]? => storing it in the [basement]?\n\n¡[Ay]! Jamás volverás a usar nada de esto. => [Phew!] You'll never use any of this again.\n¡Ay! [Jamás] volverás a usar nada de esto. => Phew! You'll [never] use any of this again.\n¡Ay! Jamás [volverás] a usar nada de esto. => Phew! [You'll] never use any of this again.\n¡Ay! Jamás volverás [a] usar nada de esto. => Phew! You'll never use any of this [again] # In the construction 'volver a', the preposition 'a' links to the repetition meaning 'again'\n¡Ay! Jamás volverás a [usar] nada de esto. => Phew! You'll never [use] any of this again.\n¡Ay! Jamás volverás a usar [nada] de esto. => Phew! You'll never use [any] of this again.\n¡Ay! Jamás volverás a usar nada [de] esto. => Phew! You'll never use any [of] this again.\n¡Ay! Jamás volverás a usar nada de [esto]. => Phew! You'll never use any of [this] again.\n\n[En] la opinión de Jorge, => [In] Jorge's opinion,\nEn [la] opinión de Jorge, => the\nEn la [opinión] de Jorge, => In Jorge's [opinion],\nEn la opinión [de Jorge], => In [Jorge's] opinion, # The Spanish \"de Jorge\" functions as the possessive \"Jorge's\"\n\n[uno] debe guardar todo porque nunca sabes => [you] should keep everything because you never know\nuno [debe] guardar todo porque nunca sabes => you [should] keep everything because you never know\nuno debe [guardar] todo porque nunca sabes => you should [keep] everything because you never know\nuno debe guardar [todo] porque nunca sabes => you should keep [everything] because you never know\nuno debe guardar todo [porque] nunca sabes => you should keep everything [because] you never know\nuno debe guardar todo porque [nunca] sabes => you should keep everything because you [never] know\nuno debe guardar todo porque nunca [sabes] => you should keep everything because you never [know] # the subject \"you\" is included in the verb \"sabes\", but since they aren't consecutive in English we only align the verb itself\n\n[cuándo] puedes necesitarlo. => [when] you might need it.\ncuándo [puedes] necesitarlo. => when [you might] need it. # 'puedes' is the 2nd person singular, thus including the subject 'you' and the auxiliary 'might'\ncuándo puedes [necesitarlo] => when you might [need it] # 'necesitarlo' combines the verb 'necesitar' (need) and the object pronoun 'lo' (it)\n\n[Ay], está bien. Vamos a llevarlo abajo. => [Oh], okay. Let's take it downstairs.\nAy, [está bien]. Vamos a llevarlo abajo. => Oh, [okay]. Let's take it downstairs.\nAy, está bien. [Vamos a] llevarlo abajo. => Oh, okay. [Let's] take it downstairs.\nAy, está bien. Vamos a [llevarlo] abajo. => Oh, okay. Let's [take it] downstairs.\nAy, está bien. Vamos a llevarlo [abajo]. => Oh, okay. Let's take it [downstairs]\n\n[No] bajen con las manos vacías. => [Don't] go down empty-handed.\nNo [bajen] con las manos vacías. => Don't [go down] empty-handed.\nNo bajen [con] las manos vacías. => with\nNo bajen con [las] manos vacías. => the\nNo bajen con las [manos] vacías. => hands\nNo bajen con las manos [vacías]. => empty\n\n[Hundley] decidió buscar un lugar => [Hundley] decided to find a place\nHundley [decidió] buscar un lugar => Hundley [decided] to find a place\nHundley decidió [buscar] un lugar => Hundley decided [to find] a place\nHundley decidió buscar [un] lugar => Hundley decided to find [a] place\nHundley decidió buscar un [lugar] => Hundley decided to find a [place]\n\n[para] las cosas de Jorge. => [for] Jorge's things.\npara las [cosas] de Jorge. => for Jorge's [things].\npara las cosas [de Jorge] => for [Jorge's] things. # the possessive 'de' is represented by 's in English\n\n[De repente], Hundley pensó que era la => [Suddenly], Hundley thought that it was the\nDe repente, [Hundley] pensó que era la => Suddenly, [Hundley] thought that it was the\nDe repente, Hundley [pensó] que era la => Suddenly, Hundley [thought] that it was the\nDe repente, Hundley pensó [que] era la => Suddenly, Hundley thought [that] it was the\nDe repente, Hundley pensó que [era] la => Suddenly, Hundley thought that [it was] the\nDe repente, Hundley pensó que era [la] => Suddenly, Hundley thought that it was [the]\n\n[primera] vez que bajaba solo al sótano. => [first] time he was going down to the basement alone.\nprimera [vez] que bajaba solo al sótano. => first [time] he was going down to the basement alone.\nprimera vez [que] bajaba solo al sótano. => that\nprimera vez que [bajaba] solo al sótano. => first time [he was going down] to the basement alone.\nprimera vez que bajaba [solo] al sótano. => first time he was going down to the basement [alone].\nprimera vez que bajaba solo [al] sótano. => first time he was going down [to the] basement alone.\nprimera vez que bajaba solo al [sótano]. => first time he was going down to the [basement] alone.\n\n¿[En dónde] podía estar esa pelota? => [Where] could that ball be?\n¿En dónde [podía] estar esa pelota? => Where [could] that ball be?\n¿En dónde podía [estar] esa pelota? => Where could that ball [be]?\n¿En dónde podía estar [esa] pelota? => Where could [that] ball be?\n¿En dónde podía estar esa [pelota]? => Where could that [ball] be?\n\n[Un] buen perro guardián no tiene miedo. => [A] good watchdog isn't afraid.\nUn [buen] perro guardián no tiene miedo. => A [good] watchdog isn't afraid.\nUn buen [perro guardián] no tiene miedo. => A good [watchdog] isn't afraid. # \"Perro guardián\" translates to the single English word \"watchdog\"\nUn buen perro guardián [no tiene] miedo. => A good watchdog [isn't] afraid. # \"No tiene\" (doesn't have) corresponds to \"isn't\" (is not) in this idiomatic construction\nUn buen perro guardián no tiene [miedo] => A good watchdog isn't [afraid] # Fear (noun) corresponds to afraid (adjective) in the English translation\n\n[Para] poder localizar el ruido, Jorge => [To] locate the noise, Jorge\nPara [poder] localizar el ruido, Jorge => to be able to\nPara poder [localizar] el ruido, Jorge => To [locate] the noise, Jorge\nPara poder localizar [el] ruido, Jorge => To locate [the] noise, Jorge\nPara poder localizar el [ruido], Jorge => To locate the [noise], Jorge\nPara poder localizar el ruido, [Jorge] => To locate the noise, [Jorge]\n\n[dividió] el sótano en cuatro secciones. => [divided] the basement into four sections.\ndividió [el] sótano en cuatro secciones. => divided [the] basement into four sections.\ndividió el [sótano] en cuatro secciones. => divided the [basement] into four sections.\ndividió el sótano [en] cuatro secciones. => divided the basement [into] four sections.\ndividió el sótano en [cuatro] secciones. => divided the basement into [four] sections.\ndividió el sótano en cuatro [secciones]. => divided the basement into four [sections].\n\n[Grabó] el ruido tenebroso en cada una => [He recorded] the spooky noise in each # Spanish verbs often incorporate the subject pronoun\nGrabó [el] ruido tenebroso en cada una => He recorded [the] spooky noise in each\nGrabó el [ruido] tenebroso en cada una => He recorded the spooky [noise] in each\nGrabó el ruido [tenebroso] en cada una => He recorded the [spooky] noise in each\nGrabó el ruido tenebroso [en] cada una => He recorded the spooky noise [in] each\nGrabó el ruido tenebroso en [cada una] => He recorded the spooky noise in [each] # \"cada una\" translates to \"each\" or \"each one\" in this context\n\n[de] las cuatro secciones. => [of] the four sections.\nde [las] cuatro secciones. => of [the] four sections.\nde las [cuatro] secciones. => of the [four] sections.\nde las cuatro [secciones] => of the four [sections]\n\n[¡Ay!] Qué ruido tan tenebroso. => [Oh!] What a spooky noise.\n¡Ay! [Qué] ruido tan tenebroso. => ¡Ay! [What] a spooky noise.\n¡Ay! Qué [ruido] tan tenebroso. => ¡Ay! What a spooky [noise].\n¡Ay! Qué ruido [tan] tenebroso. => so, very\n¡Ay! Qué ruido tan [tenebroso.] => ¡Ay! What a [spooky] noise.\n\n[Sí,] creo que hay que bajar a ver => [Yeah,] I think we have to go down and see\nSí, [creo] que hay que bajar a ver => Yeah, [I think] we have to go down and see\nSí, creo [que] hay que bajar a ver => that\nSí, creo que [hay que] bajar a ver => Yeah, I think [we have to] go down and see\nSí, creo que hay que [bajar] a ver => Yeah, I think we have to [go down] and see\nSí, creo que hay que bajar [a] ver => Yeah, I think we have to go down [and] see\nSí, creo que hay que bajar a [ver] => Yeah, I think we have to go down and [see]\n\n[de] qué se trata. => what it's [about].\nde [qué] se trata. => [what] it's about.\nde qué [se trata] => what [it's] about. # \"se trata\" functions as the predicate \"it is\" in this contextual idiom\n\n[Primero] usted, ¿sí? => You [first], okay?\nPrimero [usted], ¿sí? => [You] first, okay?\nPrimero usted, ¿[sí]? => You first, [okay]?\n\n[No], no, no, no, no, después de usted. => [No], no, no, no, no, after you.\nNo, [no], no, no, no, después de usted. => No, [no], no, no, no, after you.\nNo, no, [no], no, no, después de usted. => No, no, [no], no, no, after you.\nNo, no, no, [no], no, después de usted. => No, no, no, [no], no, after you.\nNo, no, no, no, [no], después de usted. => No, no, no, no, [no], after you.\nNo, no, no, no, no, [después de] usted. => No, no, no, no, no, [after] you.\nNo, no, no, no, no, después de [usted]. => No, no, no, no, no, after [you].\n\n¡[Hágalo]! => [Do it]! # \"Hágalo\" is a single Spanish word containing both the verb \"haga\" (do) and the object pronoun \"lo\" (it). Because \"Do it\" are consecutive words in English, we can use a direct Format A mapping.\n\n[Hundley] tomó una decisión: => [Hundley] made a decision:\nHundley [tomó] una decisión: => Hundley [made] a decision:\nHundley tomó [una] decisión: => Hundley made [a] decision:\nHundley tomó una [decisión]: => Hundley made a [decision]:\n\n[estaba] cansado de tener miedo. => [he was] tired of being afraid.\nestaba [cansado] de tener miedo. => he was [tired] of being afraid.\nestaba cansado [de] tener miedo. => he was tired [of] being afraid.\nestaba cansado de [tener] miedo. => he was tired of [being] afraid.\nestaba cansado de tener [miedo] => he was tired of being [afraid]\n\n[Esta] es una vaca. => [This] is a cow.\nEsta [es] una vaca. => This [is] a cow.\nEsta es [una] vaca. => This is [a] cow.\nEsta es una [vaca]. => This is a [cow].\n\n[La] vaca. Sí, ¡muu! => [The] cow. Yeah, moo!\nLa [vaca]. Sí, ¡muu! => The [cow]. Yeah, moo!\nLa vaca. [Sí], ¡muu! => The cow. [Yeah], moo!\nLa vaca. Sí, ¡[muu]! => The cow. Yeah, [moo]!\n\n[Oh], Hundley, eres el perro más valiente => [Oh], Hundley, you're the bravest dog\nOh, [Hundley], eres el perro más valiente => Oh, [Hundley], you're the bravest dog\nOh, Hundley, [eres] el perro más valiente => Oh, Hundley, [you're] the bravest dog\nOh, Hundley, eres [el] perro más valiente => Oh, Hundley, you're [the] bravest dog\nOh, Hundley, eres el [perro] más valiente => Oh, Hundley, you're the bravest [dog]\nOh, Hundley, eres el perro [más valiente] => Oh, Hundley, you're the [bravest] dog\n\n[de] la ciudad. => [in] the city.\nde [la] ciudad. => in [the] city.\nde la [ciudad]. => in the [city].\n\n[Bien], vamos a bajar el resto => [Okay], let's take down the rest\nBien, [vamos a] bajar el resto => Okay, [let's] take down the rest\nBien, vamos a [bajar] el resto => Okay, let's [take down] the rest\nBien, vamos a bajar [el] resto => Okay, let's take down [the] rest\nBien, vamos a bajar el [resto] => Okay, let's take down the [rest]\n\n[de] las cajas, Jorge. => [of] the boxes, Jorge.\nde [las] cajas, Jorge. => of [the] boxes, Jorge.\nde las [cajas], Jorge. => of the [boxes], Jorge.\nde las cajas, [Jorge]. => of the boxes, [Jorge].\n\n[Oye], ¿qué no has aprendido que no debes => [Hey], haven't you learned that you shouldn't\nOye, ¿[qué] no has aprendido que no debes => what # often used rhetorically in Spanish to introduce a question\nOye, ¿qué [no has] aprendido que no debes => Hey, [haven't you] learned that you shouldn't\nOye, ¿qué no [aprendido] que no debes => Hey, haven't you [learned] that you shouldn't\nOye, ¿qué no has aprendido [que] no debes => Hey, haven't you learned [that] you shouldn't\nOye, ¿qué no has aprendido que [no debes] => Hey, haven't you learned that [you shouldn't]\n\n[tenerle miedo] a los ruidos? => [be afraid] of noises?\ntenerle miedo [a] los ruidos? => be afraid [of] noises?\ntenerle miedo a [los] ruidos? => the\ntenerle miedo a los [ruidos?] => be afraid of [noises?]\n\n¡[No]! ¡Ay! ¡Jorge, ciérrala! => [No]! Oh! Jorge, close it!\n¡No! ¡[Ay]! ¡Jorge, ciérrala! => No! [Oh]! Jorge, close it!\n¡No! ¡Ay! ¡[Jorge], ciérrala! => No! Oh! [Jorge], close it!\n¡No! ¡Ay! ¡Jorge, [ciérrala]! => No! Oh! Jorge, [close it]! # \"ciérrala\" is a combination of the verb \"cierra\" (close) and the object pronoun \"la\" (it)\n\n[Ay], tal vez sea mejor tener tus cosas => [Oh], maybe it's better to keep your things\nAy, [tal vez] sea mejor tener tus cosas => Oh, [maybe] it's better to keep your things\nAy, tal vez [sea] mejor tener tus cosas => Oh, maybe [it's] better to keep your things\nAy, tal vez sea [mejor] tener tus cosas => Oh, maybe it's [better] to keep your things\nAy, tal vez sea mejor [tener] tus cosas => Oh, maybe it's better [to keep] your things\nAy, tal vez sea mejor tener [tus] cosas => Oh, maybe it's better to keep [your] things\nAy, tal vez sea mejor tener tus [cosas] => Oh, maybe it's better to keep your [things]\n\n[arriba], Jorge. => [upstairs], Jorge.\narriba, [Jorge]. => upstairs, [Jorge].\n\n[Nunca] sabes cuándo se necesitarán. => You [never] know when they'll be needed.\nNunca [sabes] cuándo se necesitarán. => you know\nNunca sabes [cuándo] se necesitarán. => You never know [when] they'll be needed.\nNunca sabes cuándo [se necesitarán]. => You never know when [they'll be needed].\n\n¡[Auxilio]! => [Help]!\n\n¡[Atención]! ¡Atención! ¡Auxilio! => [Attention]! Attention! Help!\n¡Atención! ¡[Atención]! ¡Auxilio! => Attention! [Attention]! Help!\n¡Atención! ¡Atención! ¡[Auxilio]! => Attention! Attention! [Help]!\n\n",
+    "lessons": "# El Mono Pequeño y Sus Cosas\n00:03.00 Un mono pequeño puede ocupar mucho espacio.\n00:07.00 En especial si tiene muchas cosas.\n00:10.00 ¡Ay! Bien, esa es la última, Jorge.\n00:14.00 ¿Cómo? ¡Jorge!\n00:17.00 ¡Ay!\n\n# La Discusión del Sótano\n00:23.00 Jorge, dime, ¿estás seguro que no sería\n00:25.50 mejor regalar todo esto en vez de\n00:28.00 guardarlo en el sótano?\n00:31.00 ¡Ay! Jamás volverás a usar nada de esto.\n00:39.00 En la opinión de Jorge,\n00:41.00 uno debe guardar todo porque nunca sabes\n00:43.00 cuándo puedes necesitarlo.\n\n# Bajando al Sótano\n00:44.00 Ay, está bien. Vamos a llevarlo abajo.\n00:50.00 No bajen con las manos vacías.\n01:38.00 Hundley decidió buscar un lugar\n01:40.00 para las cosas de Jorge.\n01:48.00 De repente, Hundley pensó que era la\n01:51.00 primera vez que bajaba solo al sótano.\n\n# La Búsqueda del Ruido\n02:00.00 ¿En dónde podía estar esa pelota?\n02:06.00 Un buen perro guardián no tiene miedo.\n02:26.00 Para poder localizar el ruido, Jorge\n02:29.00 dividió el sótano en cuatro secciones.\n02:38.00 Grabó el ruido tenebroso en cada una\n02:41.00 de las cuatro secciones.\n\n# El Miedo al Ruido\n03:16.00 ¡Ay! Qué ruido tan tenebroso.\n03:19.00 Sí, creo que hay que bajar a ver\n03:22.00 de qué se trata.\n03:27.00 Primero usted, ¿sí?\n03:29.00 No, no, no, no, no, después de usted.\n03:31.00 ¡Hágalo!\n\n# La Valentía de Hundley\n03:33.00 Hundley tomó una decisión:\n03:35.00 estaba cansado de tener miedo.\n03:53.00 Esta es una vaca.\n03:58.00 La vaca. Sí, ¡muu!\n04:01.00 Oh, Hundley, eres el perro más valiente\n04:04.00 de la ciudad.\n\n# La Lección Final\n04:12.00 Bien, vamos a bajar el resto\n04:14.00 de las cajas, Jorge.\n04:18.00 Oye, ¿qué no has aprendido que no debes\n04:21.00 tenerle miedo a los ruidos?\n04:24.00 ¡No! ¡Ay! ¡Jorge, ciérrala!\n04:30.00 Ay, tal vez sea mejor tener tus cosas\n04:33.00 arriba, Jorge.\n04:34.00 Nunca sabes cuándo se necesitarán.\n04:39.00 ¡Auxilio!\n04:41.00 ¡Atención! ¡Atención! ¡Auxilio!",
+    "similar_sounds": "Un [mano] pequeño puede ocupar mucho espacio.\nEn especial si tiene muchas [rosas].\n¡Ay! Bien, esa es la [íntima], Jorge.\n¿Cómo? ¡[Torpe]!\n¡Ay!\nJorge, dime, ¿estás [puro] que no sería\n[peor] regalar todo esto en vez de\nguardarlo en el [plátano]?\n¡Ay! [Demás] volverás a usar nada de esto.\nEn la [opción] de Jorge,\nuno debe [mirar] todo porque nunca sabes\ncuándo puedes [visitarlo].\nAy, está bien. Vamos a llevarlo [trabajo].\nNo [viajen] con las manos vacías.\nHundley decidió buscar un [hogar]\npara las cosas de Jorge.\nDe [puente], Hundley pensó que era la\n[cimera] vez que bajaba solo al sótano.\n¿En dónde podía estar esa [bellota]?\nUn buen perro guardián no tiene [medio].\nPara poder [focalizar] el ruido, Jorge\n[pidió] el sótano en cuatro secciones.\n[Clavó] el ruido tenebroso en cada una\nde las cuatro [lecciones].\n¡Ay! Qué ruido tan [peligroso].\nSí, [veo] que hay que bajar a ver\nde qué se [plata].\n[Entero] usted, ¿sí?\nNo, no, no, no, no, después de usted.\n¡[Págalo]!\nHundley [comió] una decisión:\nestaba [casado] de tener miedo.\nEsta es una [faca].\nLa vaca. Sí, ¡muu!\nOh, Hundley, eres el perro más [diente]\nde la [salud].\nBien, vamos a bajar el [gesto]\nde las [bajas], Jorge.\n[Hoy], ¿qué no has aprendido que no debes\ntenerle miedo a los [nidos]?\n¡No! ¡Ay! ¡Jorge, [siérrala]!\nAy, tal vez sea mejor [querer] tus cosas\n[arruga], Jorge.\nNunca sabes cuándo se [recitarán].\n¡[Julio]!\n¡[Canción]! ¡Atención! ¡Auxilio!"
+  },
+  "created_at": "2026-05-01 12:46:32 UTC",
+  "updated_at": "2026-05-01 13:02:20 UTC",
+  "exported_at": "2026-05-01T13:02:20Z"
+}

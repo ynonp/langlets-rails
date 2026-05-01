@@ -1,0 +1,1143 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=hmVZ89TpFhc",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "الحاخام إيلي عبادي",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "Rabbi Eli Abadi"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "الحاخام الأكبر للجالية اليهودية هنا في دبي وفي الإمارات",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:27.00",
+        "text_l2": "Chief Rabbi of the Jewish community here in Dubai and in the UAE"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "مرحبا",
+        "timestamp": "00:27.00",
+        "timestamp_end": "00:28.00",
+        "text_l2": "Hello"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "مرحبتين صباح الخير",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:30.00",
+        "text_l2": "Double hello, good morning"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أهلا وسهلا",
+        "timestamp": "00:30.00",
+        "timestamp_end": "00:31.00",
+        "text_l2": "Welcome"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "إحنا هون في المعبد اليهودي",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:34.00",
+        "text_l2": "We are here at the Jewish temple"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "في منطقة جميرا في دبي",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "In the Jumeirah area in Dubai"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "واسم المعبد بوابات الشرق",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "And the temple's name is Gates of the East"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "لشو بيرمز يعني هاد الاسم؟",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:45.00",
+        "text_l2": "What does this name symbolize?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "إلو معنى رمزي يعني",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "It has a symbolic meaning"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "مو بس المعبد اسمو بوابات الشرق",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "Not just the temple is named Gates of the East"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "الجالية كلا سميناها بوابات الشرق",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:52.00",
+        "text_l2": "The whole community we named it Gates of the East"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "والاسم فيه كم معنى الاسم",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:56.00",
+        "text_l2": "And the name has several meanings"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "معنى أول إنو نحن قاعدين بالشرق",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:59.00",
+        "text_l2": "First meaning is that we are sitting in the East"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "بالدنيا كلا هون الشرق أولاً",
+        "timestamp": "00:59.00",
+        "timestamp_end": "01:01.00",
+        "text_l2": "In the whole world, here is the East first"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "وثانياً اليهود دايماً كنا",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "And secondly, Jews we were always"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "الساكنين بأمريكا وبالغرب",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "Living in America and in the West"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "بس بدنا نصلي منصلّي دايماً عالشرق",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:11.00",
+        "text_l2": "But when we pray, we always pray towards the East"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "مشان هي فين القدس قاعدة",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "Because that's where Jerusalem is located"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "ومعنى تالت إنو بوابات الشرق",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "And a third meaning is Gates of the East"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "بالبيت المقدس المسكرين",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:21.00",
+        "text_l2": "In the Holy Temple that are closed"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "نحن منآمن بس ما يجي المشيح",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:25.00",
+        "text_l2": "We believe that when the Messiah comes"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "بدو يفوت مع النبي إلياهو",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:29.00",
+        "text_l2": "He will enter with the Prophet Elijah"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بيفوت من بوابات الشرق",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:32.00",
+        "text_l2": "He will enter through the Gates of the East"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "بقا هول بوابات الشرق",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:35.00",
+        "text_l2": "So these are the Gates of the East"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "يعني اسم ممتاز كتير كتير وعندو معنى حلو كتير",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "I mean, a very excellent name and it has a very nice meaning"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "جميل",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:39.00",
+        "text_l2": "Beautiful"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "الجالية اليهودية أو الوجود اليهودي هون في دبي وفي الإمارات",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:43.00",
+        "text_l2": "The Jewish community or the Jewish presence here in Dubai and in the UAE"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "شي جديد وشي خاص واستثنائي",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:46.00",
+        "text_l2": "Something new and something special and exceptional"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "يعني أنا بعتقد سمعت إنو هاي الجالية الوحيدة في العالم العربي",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:50.00",
+        "text_l2": "I mean, I think I heard that this is the only community in the Arab world"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "اللي عم تكبر مو عم تتقلص يعني",
+        "timestamp": "01:50.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "That is growing, not shrinking, I mean"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "فـ يعني إنت بوقت تاريخي هون",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "So, I mean, you are here at a historic time"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "احكيلنا شوي عن الجالية يعني والوجود اليهودي هون",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "Tell us a bit about the community, I mean, and the Jewish presence here"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "أكيد هون كان في يهود قبل اتفاقات إبراهيم",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:05.00",
+        "text_l2": "Certainly, there were Jews here before the Abraham Accords"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "بس ما كانت جالية مزبطة ومنظمة",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:08.00",
+        "text_l2": "But there wasn't a proper and organized community"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "بعد اتفاقات إبراهيم حتى الحكومة والشعب هون",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:12.00",
+        "text_l2": "After the Abraham Accords, even the government and the people here"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "بدن يكون عندن جالية يهودية منظمة ومع رخصة وكل شي",
+        "timestamp": "02:12.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "Wanted to have an organized Jewish community with a license and everything"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "بقا طلبوني شي أنا كنت زرت هون من تلات سنين",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:20.00",
+        "text_l2": "So they asked me, I had visited here three years ago"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "زرت أول شي الجالية الصغيرة اللي كانت قاعدة هون",
+        "timestamp": "02:20.00",
+        "timestamp_end": "02:23.00",
+        "text_l2": "I first visited the small community that was here"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "بعدين كمان زرنا مع صاحب السمو الشيخ محمد بن زايد",
+        "timestamp": "02:23.00",
+        "timestamp_end": "02:27.00",
+        "text_l2": "Then we also visited with His Highness Sheikh Mohamed bin Zayed"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "زرناه بالقصر تبعو بأبو ظبي وجبنالو سفر توراة",
+        "timestamp": "02:27.00",
+        "timestamp_end": "02:31.00",
+        "text_l2": "We visited him at his palace in Abu Dhabi and brought him a Torah scroll"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "هدية على روح أبوه الشيخ زايد الله يرحمو",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:35.00",
+        "text_l2": "A gift on behalf of his father, Sheikh Zayed, God have mercy on him"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "وتعرفت عالحكومة تعرفت عالناس تعرفت عالجالية",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:39.00",
+        "text_l2": "And I got to know the government, got to know the people, got to know the community"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "وبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة مع رخصة",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:43.00",
+        "text_l2": "And when the Abraham Accords happened, and they wanted to make a community organized with a license"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "يعني جالية رسمية كدين كدين اليهودي",
+        "timestamp": "02:43.00",
+        "timestamp_end": "02:47.00",
+        "text_l2": "I mean, an official community as a religion, as the Jewish religion"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "طلبوني إجي لهون مشان أنا أصلي من الشرق الأوسط",
+        "timestamp": "02:47.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "They asked me to come here because I am from the Middle East"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "بحكي عربي",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:53.00",
+        "text_l2": "I speak Arabic"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "بعرف القرآن الدين الإسلام",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:57.00",
+        "text_l2": "I know the Quran, the religion of Islam"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "وكنت معلم بيشيفا يونيفرسيتي",
+        "timestamp": "02:57.00",
+        "timestamp_end": "03:01.00",
+        "text_l2": "And I was a teacher at Yeshiva University"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "على أيام الوقت اللي كانوا اليهود والإسلام مع بعض ساكنين",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:04.00",
+        "text_l2": "During the time when Jews and Islam were living together"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "اللي هي جامعة يهودية أمريكية في نيويورك صح؟",
+        "timestamp": "03:04.00",
+        "timestamp_end": "03:07.00",
+        "text_l2": "Which is an American Jewish university in New York, right?"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "أيوا جامعة يهودية جامعة يشيفا يونيفرسيتي",
+        "timestamp": "03:07.00",
+        "timestamp_end": "03:11.00",
+        "text_l2": "Yes, a Jewish university, Yeshiva University"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "أنا كنت مدير المدرسة تبع يعقوب صفرا",
+        "timestamp": "03:11.00",
+        "timestamp_end": "03:15.00",
+        "text_l2": "I was the principal of the Jacob Safra School"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "للعلماء السفارديين والشرقيين",
+        "timestamp": "03:15.00",
+        "timestamp_end": "03:18.00",
+        "text_l2": "For Sephardic and Oriental scholars"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "طيب إحنا الآن فبراير 2022 إنت موجود هون من إيمتى إجيت؟",
+        "timestamp": "03:18.00",
+        "timestamp_end": "03:22.00",
+        "text_l2": "Okay, we are now February 2022, when did you come here?"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "هلا موجود هون من نوفمبر من عام 2020",
+        "timestamp": "03:22.00",
+        "timestamp_end": "03:26.00",
+        "text_l2": "I've been here since November of 2020"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "يعني إلي سنة وأربع تشهر",
+        "timestamp": "03:26.00",
+        "timestamp_end": "03:28.00",
+        "text_l2": "I mean, a year and four months"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "المستمعين والمشاهدين أكيد بيسمعوا إنو لهجتك سورية",
+        "timestamp": "03:28.00",
+        "timestamp_end": "03:31.00",
+        "text_l2": "Listeners and viewers surely hear that your accent is Syrian"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "فخلينا نحكي شوي عن سيرتك الشخصية يعني مواليد وين وكيف الحياة؟",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:35.00",
+        "text_l2": "So let's talk a bit about your personal history, I mean, where were you born and how was life?"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "كيف لكان أنا انولدت ببيروت بلبنان",
+        "timestamp": "03:35.00",
+        "timestamp_end": "03:38.00",
+        "text_l2": "How... I was born in Beirut, Lebanon"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "أهلي كانوا لاجئين يهود سوريين",
+        "timestamp": "03:38.00",
+        "timestamp_end": "03:42.00",
+        "text_l2": "My family were Syrian Jewish refugees"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "اللي هربوا من سوريا سنة الـ 48",
+        "timestamp": "03:42.00",
+        "timestamp_end": "03:45.00",
+        "text_l2": "Who fled from Syria in 1948"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "بس ما صار الحرايق الحوادث تبع الحرايق",
+        "timestamp": "03:45.00",
+        "timestamp_end": "03:49.00",
+        "text_l2": "But before the fires, the incidents of the fires"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "في عشر بلاد عربية بس ما طلعت مدينة إسرائيل دولة إسرائيل",
+        "timestamp": "03:49.00",
+        "timestamp_end": "03:53.00",
+        "text_l2": "In ten Arab countries, before the emergence of the State of Israel"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "صار انجموا عالجالية اليهودية بكل البلاد",
+        "timestamp": "03:53.00",
+        "timestamp_end": "03:57.00",
+        "text_l2": "They gathered against the Jewish community in all countries"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "بسوريا بمصر بالعراق بتونس بتونس بكل البلاد العربية عشر بلاد عربية",
+        "timestamp": "03:57.00",
+        "timestamp_end": "04:01.00",
+        "text_l2": "In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab countries, ten Arab countries"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "واليهود اللي كانوا ساكنين بسوريا بحلب وبالشام",
+        "timestamp": "04:01.00",
+        "timestamp_end": "04:05.00",
+        "text_l2": "And the Jews who were living in Syria, in Aleppo and in Damascus"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "خافوا كتير على حياتن مشان انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس",
+        "timestamp": "04:05.00",
+        "timestamp_end": "04:09.00",
+        "text_l2": "Feared greatly for their lives, so they gathered against them, rose against the synagogues, burned the synagogues"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "وأهلك من حلب؟",
+        "timestamp": "04:09.00",
+        "timestamp_end": "04:11.00",
+        "text_l2": "And your family is from Aleppo?"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "أهلي من حلب أهلي من حلب بقا هنن هربوا",
+        "timestamp": "04:11.00",
+        "timestamp_end": "04:14.00",
+        "text_l2": "My family is from Aleppo, my family is from Aleppo, so they fled"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "هربوا للبنان وسكنوا في لبنان",
+        "timestamp": "04:14.00",
+        "timestamp_end": "04:18.00",
+        "text_l2": "They fled to Lebanon and lived in Lebanon"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "لبنان كانت مدينة متل أوروبا تحت سلطة فرنساويّة",
+        "timestamp": "04:18.00",
+        "timestamp_end": "04:22.00",
+        "text_l2": "Lebanon was a city like Europe under French authority"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "وسكنوا بلبنان وأنا خلقت بلبنان",
+        "timestamp": "04:22.00",
+        "timestamp_end": "04:24.00",
+        "text_l2": "And they lived in Lebanon and I was born in Lebanon"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "وكانت هناك جالية يهودية ومؤسسات ومدارس؟",
+        "timestamp": "04:24.00",
+        "timestamp_end": "04:27.00",
+        "text_l2": "And was there a Jewish community and institutions and schools there?"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "كانت جالية يهودية منظمة كتير كتير مأسسة حلو كتير",
+        "timestamp": "04:27.00",
+        "timestamp_end": "04:31.00",
+        "text_l2": "It was a very, very organized Jewish community, very well institutionalized"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "مع مدارس مع معابد يعني كنايس",
+        "timestamp": "04:31.00",
+        "timestamp_end": "04:35.00",
+        "text_l2": "With schools, with temples, I mean synagogues"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "كان في تقريباً شي 22 كنيس يهودي",
+        "timestamp": "04:35.00",
+        "timestamp_end": "04:39.00",
+        "text_l2": "There were approximately 22 Jewish synagogues"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "كانت في تلات مدارس يهودية كمان",
+        "timestamp": "04:39.00",
+        "timestamp_end": "04:42.00",
+        "text_l2": "There were three Jewish schools as well"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "أبي كان حاخام وكان مدير المدرسة كمان اللي تعلمت أنا فيها",
+        "timestamp": "04:42.00",
+        "timestamp_end": "04:46.00",
+        "text_l2": "My father was a rabbi and was also the principal of the school where I studied"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "وضليتوا في بيروت لإيمتى؟",
+        "timestamp": "04:46.00",
+        "timestamp_end": "04:48.00",
+        "text_l2": "And you stayed in Beirut until when?"
+      },
+      {
+        "id": "phrase_81",
+        "text_l1": "ضلينا في بيروت لـ 1971",
+        "timestamp": "04:48.00",
+        "timestamp_end": "04:52.00",
+        "text_l2": "We stayed in Beirut until 1971"
+      },
+      {
+        "id": "phrase_82",
+        "text_l1": "مشان عرفنا إنو كمان لبنان رح تنخرب",
+        "timestamp": "04:52.00",
+        "timestamp_end": "04:56.00",
+        "text_l2": "Because we knew that Lebanon would also be ruined"
+      },
+      {
+        "id": "phrase_83",
+        "text_l1": "مشان بس ما شفنا عرفات والفدائيين تبعولو",
+        "timestamp": "04:56.00",
+        "timestamp_end": "05:00.00",
+        "text_l2": "Because before we saw Arafat and his fedayeen"
+      },
+      {
+        "id": "phrase_84",
+        "text_l1": "اللي دشروا من الأردن بيسموه بشهر سبتمبر الأسود",
+        "timestamp": "05:00.00",
+        "timestamp_end": "05:04.00",
+        "text_l2": "Who entered from Jordan, they call it Black September"
+      },
+      {
+        "id": "phrase_85",
+        "text_l1": "كان في حرب بين إخوان بالأردن والملك حسين دشر عرفات والفدائية",
+        "timestamp": "05:04.00",
+        "timestamp_end": "05:08.00",
+        "text_l2": "There was a war between brothers in Jordan and King Hussein, Arafat and the fedayeen entered"
+      },
+      {
+        "id": "phrase_86",
+        "text_l1": "ولبنان جبروها تقبلن بقا استقبلتن استقبلوهن وإجوا للبنان",
+        "timestamp": "05:08.00",
+        "timestamp_end": "05:12.00",
+        "text_l2": "And Lebanon was forced to accept them, so they welcomed them and they came to Lebanon"
+      },
+      {
+        "id": "phrase_87",
+        "text_l1": "وبلشنا نشوف بالشوارع مظاهرات مع الفدائيين",
+        "timestamp": "05:12.00",
+        "timestamp_end": "05:16.00",
+        "text_l2": "And we started seeing demonstrations in the streets with the fedayeen"
+      },
+      {
+        "id": "phrase_88",
+        "text_l1": "وعرفنا إنو البلد كلا بدا تروح بدا يكون في حرب إخوان كمان هونيك",
+        "timestamp": "05:16.00",
+        "timestamp_end": "05:20.00",
+        "text_l2": "And we knew that the whole country started to go, started to be in a fraternal war there too"
+      },
+      {
+        "id": "phrase_89",
+        "text_l1": "وعرفنا إنو الجالية اليهودية بدا تتأثر كتير فيها كتير كتير",
+        "timestamp": "05:20.00",
+        "timestamp_end": "05:24.00",
+        "text_l2": "And we knew that the Jewish community started to be greatly affected, very, very much"
+      },
+      {
+        "id": "phrase_90",
+        "text_l1": "وفعلاً؟",
+        "timestamp": "05:24.00",
+        "timestamp_end": "05:25.00",
+        "text_l2": "Really?"
+      },
+      {
+        "id": "phrase_91",
+        "text_l1": "وفعلاً كان بس ما تركنا بعد تلات سنين أقل كمان بلش الحرب بلبنان",
+        "timestamp": "05:25.00",
+        "timestamp_end": "05:29.00",
+        "text_l2": "Really, just after we left, after three years less, the war started in Lebanon"
+      },
+      {
+        "id": "phrase_92",
+        "text_l1": "والجالية اليهودية كمان انجبرت تهرب وتروح وفي كم منهن انقتلوا انقتلوا",
+        "timestamp": "05:29.00",
+        "timestamp_end": "05:33.00",
+        "text_l2": "And the Jewish community was also forced to flee and go, and some of them were killed, were killed"
+      },
+      {
+        "id": "phrase_93",
+        "text_l1": "كتير منهن راح على أمريكا؟",
+        "timestamp": "05:33.00",
+        "timestamp_end": "05:35.00",
+        "text_l2": "Many of them went to America?"
+      },
+      {
+        "id": "phrase_94",
+        "text_l1": "كتير منهن راحوا على أمريكا",
+        "timestamp": "05:35.00",
+        "timestamp_end": "05:37.00",
+        "text_l2": "Many of them went to America"
+      },
+      {
+        "id": "phrase_95",
+        "text_l1": "راحوا على مكسيك نحن أهلي راحوا على مكسيك",
+        "timestamp": "05:37.00",
+        "timestamp_end": "05:39.00",
+        "text_l2": "They went to Mexico, my family went to Mexico"
+      },
+      {
+        "id": "phrase_96",
+        "text_l1": "في كتير منهن راحوا لفرنسا ولإيطاليا ولكندا وفي كمان راحوا لإسرائيل",
+        "timestamp": "05:39.00",
+        "timestamp_end": "05:43.00",
+        "text_l2": "Many of them went to France, to Italy, and to Canada, and some also went to Israel"
+      },
+      {
+        "id": "phrase_97",
+        "text_l1": "مشان كنا لاجئين ما كان عنا جواز لبناني ولا جواز سوري",
+        "timestamp": "05:43.00",
+        "timestamp_end": "05:47.00",
+        "text_l2": "Because we were refugees, we didn't have a Lebanese passport or a Syrian passport"
+      },
+      {
+        "id": "phrase_98",
+        "text_l1": "كنا بيسمونا ستايتلس لاجئين بلا دولة بلا دولة",
+        "timestamp": "05:47.00",
+        "timestamp_end": "05:51.00",
+        "text_l2": "They called us stateless, refugees without a state, without a state"
+      },
+      {
+        "id": "phrase_99",
+        "text_l1": "وبس ما تركنا لبنان مختوم كان عالمش جواز جواز رسمي",
+        "timestamp": "05:51.00",
+        "timestamp_end": "05:55.00",
+        "text_l2": "And when we left Lebanon, stamped on it was a passport, an official passport"
+      },
+      {
+        "id": "phrase_100",
+        "text_l1": "ليسيه باسيه كانوا بيسموها روحة بلا رجعة",
+        "timestamp": "05:55.00",
+        "timestamp_end": "05:58.00",
+        "text_l2": "Laissez-passer, they called it a one-way trip"
+      },
+      {
+        "id": "phrase_101",
+        "text_l1": "واو",
+        "timestamp": "05:58.00",
+        "timestamp_end": "05:59.00",
+        "text_l2": "Wow"
+      },
+      {
+        "id": "phrase_102",
+        "text_l1": "يعني كنا بنقدر نطلع من البلد بس ما بنقدر نرجع مشان كنا لاجئين",
+        "timestamp": "05:59.00",
+        "timestamp_end": "06:03.00",
+        "text_l2": "I mean, we could leave the country but we couldn't return because we were refugees"
+      },
+      {
+        "id": "phrase_103",
+        "text_l1": "يعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن",
+        "timestamp": "06:03.00",
+        "timestamp_end": "06:07.00",
+        "text_l2": "I mean, one suddenly became stateless, stateless, we were without, yes, we were exactly, we were stateless"
+      },
+      {
+        "id": "phrase_104",
+        "text_l1": "والقصة إنو نحن تركنا كمان سنة الـ 71",
+        "timestamp": "06:07.00",
+        "timestamp_end": "06:11.00",
+        "text_l2": "And the story is that we left also in 1971"
+      },
+      {
+        "id": "phrase_105",
+        "text_l1": "مشان قبل بكم شهر طلعت صورة أبي مع تلات الحاخامات",
+        "timestamp": "06:11.00",
+        "timestamp_end": "06:15.00",
+        "text_l2": "Because a few months before, a picture of my father came out with three rabbis"
+      },
+      {
+        "id": "phrase_106",
+        "text_l1": "كان في تلات حاخامات تبع البيت الديني أبي كان واحد منهن",
+        "timestamp": "06:15.00",
+        "timestamp_end": "06:19.00",
+        "text_l2": "There were three rabbis from the religious house, my father was one of them"
+      },
+      {
+        "id": "phrase_107",
+        "text_l1": "طلعت صورة ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل",
+        "timestamp": "06:19.00",
+        "timestamp_end": "06:23.00",
+        "text_l2": "A picture came out and under it was written here are the Zionists who help the State of Israel"
+      },
+      {
+        "id": "phrase_108",
+        "text_l1": "ومش كانت كذب كلا كذب بس بتعرف عشان يبرروا يعني الخطوات",
+        "timestamp": "06:23.00",
+        "timestamp_end": "06:27.00",
+        "text_l2": "And it wasn't a lie, no lie, but you know, to justify, I mean, the steps"
+      },
+      {
+        "id": "phrase_109",
+        "text_l1": "أيوا بقا صار خطر كتير على كل حياتو أهلي أكيد وكل العائلة",
+        "timestamp": "06:27.00",
+        "timestamp_end": "06:31.00",
+        "text_l2": "Yes, so it became very dangerous for his whole life, my family certainly, and the whole family"
+      },
+      {
+        "id": "phrase_110",
+        "text_l1": "وكمان عائلة تبع كل الجالية اليهودية فاتت بخطر",
+        "timestamp": "06:31.00",
+        "timestamp_end": "06:35.00",
+        "text_l2": "And also the family of the whole Jewish community came into danger"
+      },
+      {
+        "id": "phrase_111",
+        "text_l1": "بس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير",
+        "timestamp": "06:35.00",
+        "timestamp_end": "06:39.00",
+        "text_l2": "Because if someone says the rabbis of the community are Zionists in an Arab country, I mean, very dangerous"
+      },
+      {
+        "id": "phrase_112",
+        "text_l1": "بقا كمان جربنا نهرب من لبنان ووصلنا لمكسيك وعشنا بمكسيك",
+        "timestamp": "06:39.00",
+        "timestamp_end": "06:43.00",
+        "text_l2": "So we also tried to flee from Lebanon and we reached Mexico and we lived in Mexico"
+      },
+      {
+        "id": "phrase_113",
+        "text_l1": "وإنت كملت دراساتك؟ كملت دراساتي بمكسيك يونيفرسيتي",
+        "timestamp": "06:43.00",
+        "timestamp_end": "06:47.00",
+        "text_l2": "And you completed your studies? I completed my studies at Mexico University"
+      },
+      {
+        "id": "phrase_114",
+        "text_l1": "وكيف قررت إنك تكون طبيب دكتور؟",
+        "timestamp": "06:47.00",
+        "timestamp_end": "06:51.00",
+        "text_l2": "And how did you decide to be a doctor?"
+      },
+      {
+        "id": "phrase_115",
+        "text_l1": "كل حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب",
+        "timestamp": "06:51.00",
+        "timestamp_end": "06:55.00",
+        "text_l2": "All my life I wanted to be a doctor, from when I was five, six years old I wished to be a doctor"
+      },
+      {
+        "id": "phrase_116",
+        "text_l1": "مشان لما كنت صغير كنت أمرض كتير أزمة ورشح وهي",
+        "timestamp": "06:55.00",
+        "timestamp_end": "06:59.00",
+        "text_l2": "Because when I was small I got sick a lot, asthma and colds and such"
+      },
+      {
+        "id": "phrase_117",
+        "text_l1": "بقا قلت لو في حكيم بالعائلة مو ضروري",
+        "timestamp": "06:59.00",
+        "timestamp_end": "07:01.00",
+        "text_l2": "So I said if there is a doctor in the family, it's not necessary"
+      },
+      {
+        "id": "phrase_118",
+        "text_l1": "بنص الليل أهلي يطلعوا",
+        "timestamp": "07:01.00",
+        "timestamp_end": "07:03.00",
+        "text_l2": "In the middle of the night my family would go out"
+      },
+      {
+        "id": "phrase_119",
+        "text_l1": "يروحوا يفتشوا على حكيم",
+        "timestamp": "07:03.00",
+        "timestamp_end": "07:07.00",
+        "text_l2": "Go look for a doctor"
+      },
+      {
+        "id": "phrase_120",
+        "text_l1": "بهديك الأيام ما كان في تليفونات ما كان في تكستينغ ما كان في هيدي",
+        "timestamp": "07:07.00",
+        "timestamp_end": "07:11.00",
+        "text_l2": "In those days there were no telephones, no texting, none of this"
+      },
+      {
+        "id": "phrase_121",
+        "text_l1": "بقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون",
+        "timestamp": "07:11.00",
+        "timestamp_end": "07:15.00",
+        "text_l2": "So it was hard for one to go arrange a doctor, so I said if there is a doctor in the family, it's easier"
+      },
+      {
+        "id": "phrase_122",
+        "text_l1": "أها اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟",
+        "timestamp": "07:15.00",
+        "timestamp_end": "07:19.00",
+        "text_l2": "Ah, today you are a rabbi too, when did you start this journey, I mean with the rabbinate?"
+      },
+      {
+        "id": "phrase_123",
+        "text_l1": "طيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس",
+        "timestamp": "07:19.00",
+        "timestamp_end": "07:23.00",
+        "text_l2": "Well, my father was a rabbi and I come from a chain of rabbis for more than 500 years from Sepharad, from Andalusia"
+      },
+      {
+        "id": "phrase_124",
+        "text_l1": "يعني أصلي من الأندلس أصل عائلتي من 500 سنة من الأندلس",
+        "timestamp": "07:23.00",
+        "timestamp_end": "07:27.00",
+        "text_l2": "I mean, I am originally from Andalusia, my family origin is 500 years from Andalusia"
+      },
+      {
+        "id": "phrase_125",
+        "text_l1": "كان في حاخام تقريباً بكل جيل بقا أبي كان حاخام جيل بعد جيل",
+        "timestamp": "07:27.00",
+        "timestamp_end": "07:29.00",
+        "text_l2": "There was a rabbi in almost every generation, so my father was a rabbi, generation after generation"
+      },
+      {
+        "id": "phrase_126",
+        "text_l1": "جيل بعد جيل كانوا حاخاميم بقا قلت لازم",
+        "timestamp": "07:29.00",
+        "timestamp_end": "07:31.00",
+        "text_l2": "Generation after generation they were rabbis, so I said I must"
+      },
+      {
+        "id": "phrase_127",
+        "text_l1": "أنا أكون كمان حاخام",
+        "timestamp": "07:31.00",
+        "timestamp_end": "07:33.00",
+        "text_l2": "I be a rabbi too"
+      },
+      {
+        "id": "phrase_128",
+        "text_l1": "مشان بدي أكمل هالسلسلة",
+        "timestamp": "07:33.00",
+        "timestamp_end": "07:35.00",
+        "text_l2": "Because I want to complete this chain"
+      },
+      {
+        "id": "phrase_129",
+        "text_l1": "الحاخاميم اللي في عائلتي وبس بعدين وبس بدي أشتغل كطب",
+        "timestamp": "07:35.00",
+        "timestamp_end": "07:39.00",
+        "text_l2": "The rabbis who are in my family, and then, and then I want to work as a doctor"
+      },
+      {
+        "id": "phrase_130",
+        "text_l1": "بس حاخام بس لأتعلم وأتعرف وأعرف كل قوانين الدين",
+        "timestamp": "07:39.00",
+        "timestamp_end": "07:43.00",
+        "text_l2": "But a rabbi, just to learn and know and know all the laws of the religion"
+      },
+      {
+        "id": "phrase_131",
+        "text_l1": "اليوم إنت موجود هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة",
+        "timestamp": "07:43.00",
+        "timestamp_end": "07:47.00",
+        "text_l2": "Today you are here in the UAE and there is a new association, a new position, a new organization"
+      },
+      {
+        "id": "phrase_132",
+        "text_l1": "ممكن تحكي شو اسمها أولاً؟",
+        "timestamp": "07:47.00",
+        "timestamp_end": "07:51.00",
+        "text_l2": "Can you tell us what its name is first?"
+      },
+      {
+        "id": "phrase_133",
+        "text_l1": "بقلك بقا بس ما وصلت أنا لهون بنوفمبر عام 2020",
+        "timestamp": "07:47.00",
+        "timestamp_end": "07:51.00",
+        "text_l2": "I'll tell you, when I arrived here in November 2020"
+      },
+      {
+        "id": "phrase_134",
+        "text_l1": "انتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة",
+        "timestamp": "07:51.00",
+        "timestamp_end": "07:55.00",
+        "text_l2": "I noticed that first there is also a Jewish community in Bahrain, small but there, about 140 years"
+      },
+      {
+        "id": "phrase_135",
+        "text_l1": "وكمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت",
+        "timestamp": "07:55.00",
+        "timestamp_end": "07:59.00",
+        "text_l2": "And I also noticed there are Jews in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait"
+      },
+      {
+        "id": "phrase_136",
+        "text_l1": "هن رجال أعمال معظمهم؟",
+        "timestamp": "07:59.00",
+        "timestamp_end": "08:01.00",
+        "text_l2": "Are they mostly businessmen?"
+      },
+      {
+        "id": "phrase_137",
+        "text_l1": "رجال أعمال رجال يعني علماء كمان وما عندن جالية ومنن منظمين كجالية",
+        "timestamp": "08:01.00",
+        "timestamp_end": "08:05.00",
+        "text_l2": "Businessmen, men, I mean scholars too, and they don't have a community and they aren't organized as a community"
+      },
+      {
+        "id": "phrase_138",
+        "text_l1": "بقا افتكرت قلت لازم نساعدن لازم نقربن لعنا",
+        "timestamp": "08:05.00",
+        "timestamp_end": "08:09.00",
+        "text_l2": "So I thought, I said we must help them, we must bring them closer to us"
+      },
+      {
+        "id": "phrase_139",
+        "text_l1": "ونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل جديد",
+        "timestamp": "08:09.00",
+        "timestamp_end": "08:13.00",
+        "text_l2": "And we are anyway in the Gulf, how do we say, starting a new life and starting a new future"
+      },
+      {
+        "id": "phrase_140",
+        "text_l1": "بكل هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين",
+        "timestamp": "08:13.00",
+        "timestamp_end": "08:17.00",
+        "text_l2": "In all this Gulf region, so I coordinated and asked and with the Jewish community in Bahrain"
+      },
+      {
+        "id": "phrase_141",
+        "text_l1": "سيد إبراهيم نونو وهدى نونو قلنا لازم نبلش",
+        "timestamp": "08:17.00",
+        "timestamp_end": "08:21.00",
+        "text_l2": "Mr. Ibrahim Nono and Huda Nono, we said we must start"
+      },
+      {
+        "id": "phrase_142",
+        "text_l1": "رابطة تنقدر نساعد اليهود",
+        "timestamp": "08:21.00",
+        "timestamp_end": "08:23.00",
+        "text_l2": "An association that can help the Jews"
+      },
+      {
+        "id": "phrase_143",
+        "text_l1": "الساكنين بغير بلاد",
+        "timestamp": "08:23.00",
+        "timestamp_end": "08:25.00",
+        "text_l2": "Living in other countries"
+      },
+      {
+        "id": "phrase_144",
+        "text_l1": "ونقدر نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة",
+        "timestamp": "08:25.00",
+        "timestamp_end": "08:29.00",
+        "text_l2": "And we can help each other, because if there is a community that doesn't have, it can't do a thing like this"
+      },
+      {
+        "id": "phrase_145",
+        "text_l1": "نحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في الخليج",
+        "timestamp": "08:29.00",
+        "timestamp_end": "08:33.00",
+        "text_l2": "We can help them, and so we started an association, we named it the Association of Jewish Communities in the Gulf"
+      },
+      {
+        "id": "phrase_146",
+        "text_l1": "بلشناها بفبراير 2021",
+        "timestamp": "08:33.00",
+        "timestamp_end": "08:37.00",
+        "text_l2": "We started it in February 2021"
+      },
+      {
+        "id": "phrase_147",
+        "text_l1": "واو جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية",
+        "timestamp": "08:37.00",
+        "timestamp_end": "08:41.00",
+        "text_l2": "Wow, new, I mean new, or now we will celebrate our anniversary next Friday"
+      },
+      {
+        "id": "phrase_148",
+        "text_l1": "أنا كمان جيت هون من تلات سنين",
+        "timestamp": "08:41.00",
+        "timestamp_end": "08:43.00",
+        "text_l2": "I also came here three years ago"
+      },
+      {
+        "id": "phrase_149",
+        "text_l1": "كنت عم بحكيلك",
+        "timestamp": "08:43.00",
+        "timestamp_end": "08:45.00",
+        "text_l2": "I was telling you"
+      },
+      {
+        "id": "phrase_150",
+        "text_l1": "جبنا التوراة سفر توراة للجالية هون وتعرفت عليهن عمل كان بعيد بوريم",
+        "timestamp": "08:45.00",
+        "timestamp_end": "08:49.00",
+        "text_l2": "We brought the Torah, a Torah scroll for the community here and got to know them, it was around Purim"
+      },
+      {
+        "id": "phrase_151",
+        "text_l1": "وعملنا حفلة بالفيلا كمان عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا",
+        "timestamp": "08:49.00",
+        "timestamp_end": "08:53.00",
+        "text_l2": "And we had a party at the villa too, quietly, but the government knew about it and blessed us"
+      },
+      {
+        "id": "phrase_152",
+        "text_l1": "وكل شي يعني بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون",
+        "timestamp": "08:53.00",
+        "timestamp_end": "08:57.00",
+        "text_l2": "And everything, I mean, but there was nothing organized and official, before the Abraham Accords, the government here"
+      },
+      {
+        "id": "phrase_153",
+        "text_l1": "كان بدا نساوي إنو جالية رسمية",
+        "timestamp": "08:57.00",
+        "timestamp_end": "08:59.00",
+        "text_l2": "Was starting to make an official community"
+      },
+      {
+        "id": "phrase_154",
+        "text_l1": "منظمة مع رخصة",
+        "timestamp": "08:59.00",
+        "timestamp_end": "09:01.00",
+        "text_l2": "Organized with a license"
+      },
+      {
+        "id": "phrase_155",
+        "text_l1": "وهيدي اللي تغيير السياسة اتغير كتير",
+        "timestamp": "09:01.00",
+        "timestamp_end": "09:03.00",
+        "text_l2": "And this is where the policy changed a lot"
+      },
+      {
+        "id": "phrase_156",
+        "text_l1": "مو بس بهالدولة",
+        "timestamp": "09:03.00",
+        "timestamp_end": "09:05.00",
+        "text_l2": "Not just in this state"
+      },
+      {
+        "id": "phrase_157",
+        "text_l1": "بس كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟",
+        "timestamp": "09:05.00",
+        "timestamp_end": "09:09.00",
+        "text_l2": "But also in the whole Gulf, now it happened and there are plans, I mean, to develop the association and the presence, I mean?"
+      },
+      {
+        "id": "phrase_158",
+        "text_l1": "أكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص",
+        "timestamp": "09:09.00",
+        "timestamp_end": "09:13.00",
+        "text_l2": "Certainly, certainly there are plans, we want to build, we want to build, first we want to build a temple, I mean a dedicated temple"
+      },
+      {
+        "id": "phrase_159",
+        "text_l1": "وبدنا نعمر كل المؤسسات المؤسسات لجالية تقدر تعيش وتكبر وتتقدم",
+        "timestamp": "09:13.00",
+        "timestamp_end": "09:17.00",
+        "text_l2": "And we want to build all the institutions, institutions for a community to live and grow and advance"
+      },
+      {
+        "id": "phrase_160",
+        "text_l1": "موفقين يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي",
+        "timestamp": "09:17.00",
+        "timestamp_end": "09:21.00",
+        "text_l2": "Success, I mean, we wish you success in all your efforts and thank you very much, Rabbi Dr. Eli Abadi"
+      },
+      {
+        "id": "phrase_161",
+        "text_l1": "شكراً إلك تشرفنا أهلاً وسهلاً",
+        "timestamp": "09:21.00",
+        "timestamp_end": "09:25.00",
+        "text_l2": "Thank you, honored to meet you, welcome"
+      }
+    ],
+    "phrases_with_token_translations": "[الحاخام] إيلي عبادي => [Rabbi] Eli Abadi\nالحاخام [إيلي] عبادي => Rabbi [Eli] Abadi\nالحاخام إيلي [عبادي] => Rabbi Eli [Abadi]\n\n[الحاخام الأكبر] للجالية اليهودية هنا في دبي وفي الإمارات => [Chief Rabbi] of the Jewish community here in Dubai and in the UAE\nالحاخام الأكبر [للجالية] اليهودية هنا في دبي وفي الإمارات => of the community\nالحاخام الأكبر للجالية [اليهودية] هنا في دبي وفي الإمارات => Chief Rabbi of the [Jewish] community here in Dubai and in the UAE\nالحاخام الأكبر للجالية اليهودية [هنا] في دبي وفي الإمارات => Chief Rabbi of the Jewish community [here] in Dubai and in the UAE\nالحاخام الأكبر للجالية اليهودية هنا [في] دبي وفي الإمارات => Chief Rabbi of the Jewish community here [in] Dubai and in the UAE\nالحاخام الأكبر للجالية اليهودية هنا في [دبي] وفي الإمارات => Chief Rabbi of the Jewish community here in [Dubai] and in the UAE\nالحاخام الأكبر للجالية اليهودية هنا في دبي [وفي] الإمارات => Chief Rabbi of the Jewish community here in Dubai [and in] the UAE\nالحاخام الأكبر للجالية اليهودية هنا في دبي وفي [الإمارات] => Chief Rabbi of the Jewish community here in Dubai and in [the UAE]\n\n[مرحبا] => [Hello]\n\n[مرحبتين] صباح الخير => [Double hello], good morning\nمرحبتين [صباح] الخير => Double hello, good [morning]\nمرحبتين صباح [الخير] => Double hello, [good] morning\n\n[أهلا وسهلا] => [Welcome]\n\n[إحنا] هون في المعبد اليهودي => [We are] here at the Jewish temple\nإحنا [هون] في المعبد اليهودي => We are [here] at the Jewish temple\nإحنا هون [في] المعبد اليهودي => We are here [at] the Jewish temple\nإحنا هون في [المعبد] اليهودي => the temple\nإحنا هون في المعبد [اليهودي] => We are here at the [Jewish] temple\n\n[في] منطقة جميرا في دبي => [In] the Jumeirah area in Dubai\nفي [منطقة] جميرا في دبي => In the [area] in Dubai\nفي منطقة [جميرا] في دبي => In the [Jumeirah] area in Dubai\nفي منطقة جميرا [في] دبي => In the Jumeirah area [in] Dubai\nفي منطقة جميرا في [دبي] => In the Jumeirah area in [Dubai]\n\n[و]اسم المعبد بوابات الشرق => [And] the temple's name is Gates of the East\nو[اسم] المعبد بوابات الشرق => And the temple's [name] is Gates of the East\nواسم [المعبد] بوابات الشرق => the temple\nواسم المعبد [بوابات] الشرق => And the temple's name is [Gates] of the East\nواسم المعبد بوابات [الشرق] => And the temple's name is Gates of [the East]\n\n[لشو] بيرمز يعني هاد الاسم؟ => [What] does this name symbolize?\nلشو [بيرمز] يعني هاد الاسم؟ => What [does] this name [symbolize]?\nلشو بيرمز [يعني] هاد الاسم؟ => means, I mean # This word functions as a filler here and isn't directly translated in the English sentence\nلشو بيرمز يعني [هاد] الاسم؟ => What does [this] name symbolize?\nلشو بيرمز يعني هاد [الاسم]؟ => What does this [name] symbolize?\n\n[إلو] معنى رمزي يعني => [It has] a symbolic meaning\nإلو [معنى] رمزي يعني => It has a [meaning]\nإلو معنى [رمزي] يعني => It has a [symbolic] meaning\nإلو معنى رمزي [يعني] => meaning, I mean # Custom translation as it acts as a filler or emphasis here\n\n[مو بس] المعبد اسمو بوابات الشرق => [Not just] the temple is named Gates of the East\nمو بس [المعبد] اسمو بوابات الشرق => Not just [the temple] is named Gates of the East\nمو بس المعبد [اسمو] بوابات الشرق => Not just the temple [is named] Gates of the East\nمو بس المعبد اسمو [بوابات] الشرق => Not just the temple is named [Gates] of the East\nمو بس المعبد اسمو بوابات [الشرق] => Not just the temple is named Gates [of the East]\n\n[الجالية] كلا سميناها بوابات الشرق => The whole [community] we named it Gates of the East\nالجالية [كلا] سميناها بوابات الشرق => [The whole] community we named it Gates of the East\nالجالية كلا [سميناها] بوابات الشرق => The whole community [we named it] Gates of the East\nالجالية كلا سميناها [بوابات] الشرق => The whole community we named it [Gates] of the East\nالجالية كلا سميناها بوابات [الشرق] => The whole community we named it Gates of [the East]\n\n[و]الاسم فيه كم معنى الاسم => [And] the name has several meanings\nو[الاسم] فيه كم معنى الاسم => And [the name] has several meanings\nوالاسم [فيه] كم معنى الاسم => And the name [has] several meanings\nوالاسم فيه [كم] معنى الاسم => And the name has [several] meanings\nوالاسم فيه كم [معنى] الاسم => And the name has several [meanings]\nوالاسم فيه كم معنى [الاسم] => the name\n\n[معنى] أول إنو نحن قاعدين بالشرق => First [meaning] is that we are sitting in the East\nمعنى [أول] إنو نحن قاعدين بالشرق => [First] meaning is that we are sitting in the East\nمعنى أول [إنو] نحن قاعدين بالشرق => First meaning is [that] we are sitting in the East\nمعنى أول إنو [نحن] قاعدين بالشرق => First meaning is that [we] are sitting in the East\nمعنى أول إنو نحن [قاعدين] بالشرق => First meaning is that we [are sitting] in the East\nمعنى أول إنو نحن قاعدين [بالشرق] => First meaning is that we are sitting [in the East]\n\nبالدنيا كلا [هون] الشرق أولاً => In the whole world, [here] is the East first\nبالدنيا كلا هون [الشرق] أولاً => In the whole world, here is [the East] first\nبالدنيا كلا هون الشرق [أولاً] => In the whole world, here is the East [first]\n\n[وثانياً] اليهود دايماً كنا => [And secondly], Jews we were always\nوثانياً [اليهود] دايماً كنا => And secondly, [Jews] we were always\nوثانياً اليهود [دايماً] كنا => And secondly, Jews we were [always]\nوثانياً اليهود دايماً [كنا] => And secondly, Jews [we were] always\n\n[الساكنين] بأمريكا وبالغرب => [Living] in America and in the West\nالساكنين [بأمريكا] وبالغرب => Living [in America] and in the West\nالساكنين بأمريكا [وبالغرب] => Living in America [and in the West]\n\n[بس] بدنا نصلي منصلّي دايماً عالشرق => [But] when we pray, we always pray towards the East\nبس [بدنا] نصلي منصلّي دايماً عالشرق => we want to, when we are about to\nبس بدنا [نصلي] منصلّي دايماً عالشرق => But when [we pray], we always pray towards the East\nبس بدنا نصلي [منصلّي] دايماً عالشرق => But when we pray, [we] always [pray] towards the East\nبس بدنا نصلي منصلّي [دايماً] عالشرق => But when we pray, we [always] pray towards the East\nبس بدنا نصلي منصلّي دايماً [عالشرق] => But when we pray, we always pray [towards the East]\n\n[مشان] هي فين القدس قاعدة => [Because] that's where Jerusalem is located\nمشان [هي] فين القدس قاعدة => Because [that's] where Jerusalem is located\nمشان هي [فين] القدس قاعدة => Because that's [where] Jerusalem is located\nمشان هي فين [القدس] قاعدة => Because that's where [Jerusalem] is located\nمشان هي فين القدس [قاعدة] => sitting; located # \"قاعدة\" literally means \"sitting\", but is used here to mean \"located\" or \"situated\"\n\nومعنى [تالت] إنو بوابات الشرق => And a [third] meaning is Gates of the East\nومعنى تالت [إنو] بوابات الشرق => is\nومعنى تالت إنو [بوابات] الشرق => And a third meaning is [Gates] of the East\nومعنى تالت إنو بوابات [الشرق] => And a third meaning is Gates of [the East]\n\nبالبيت [المقدس] المسكرين => In the [Holy] Temple that are closed\nبالبيت المقدس [المسكرين] => In the Holy Temple [that are closed]\n\n[نحن] منآمن بس ما يجي المشيح => [We] believe that when the Messiah comes\nنحن [منآمن] بس ما يجي المشيح => We [believe] that when the Messiah comes\nنحن منآمن [بس ما] يجي المشيح => when\nنحن منآمن بس ما [يجي] المشيح => We believe that when the Messiah [comes]\nنحن منآمن بس ما يجي [المشيح] => We believe that when [the Messiah] comes\n\n[بدو] يفوت مع النبي إلياهو => [He will] enter with the Prophet Elijah\nبدو [يفوت] مع النبي إلياهو => He will [enter] with the Prophet Elijah\nبدو يفوت [مع] النبي إلياهو => He will enter [with] the Prophet Elijah\nبدو يفوت مع [النبي] إلياهو => He will enter with [the Prophet] Elijah\nبدو يفوت مع النبي [إلياهو] => He will enter with the Prophet [Elijah]\n\n[بيفوت] من بوابات الشرق => [He will enter] through the Gates of the East\nبيفوت [من] بوابات الشرق => He will enter [through] the Gates of the East\nبيفوت من [بوابات] الشرق => He will enter through [the Gates] of the East\nبيفوت من بوابات [الشرق] => He will enter through the Gates of [the East]\n\n[بقا] هول بوابات الشرق => [So] these are the Gates of the East\nبقا [هول] بوابات الشرق => So [these are] the Gates of the East\nبقا هول [بوابات] الشرق => So these are [the Gates] of the East\nبقا هول بوابات [الشرق] => So these are the Gates of [the East]\n\n[يعني] اسم ممتاز كتير كتير وعندو معنى حلو كتير => [I mean], a very excellent name and it has a very nice meaning\nيعني [اسم] ممتاز كتير كتير وعندو معنى حلو كتير => I mean, a very excellent [name] and it has a very nice meaning\nيعني اسم [ممتاز] كتير كتير وعندو معنى حلو كتير => I mean, a very [excellent] name and it has a very nice meaning\nيعني اسم ممتاز [كتير كتير] وعندو معنى حلو كتير => very, extremely\nيعني اسم ممتاز كتير كتير [وعندو] معنى حلو كتير => I mean, a very excellent name [and it has] a very nice meaning\nيعني اسم ممتاز كتير كتير وعندو [معنى] حلو كتير => I mean, a very excellent name and it has a very nice [meaning]\nيعني اسم ممتاز كتير كتير وعندو معنى [حلو] كتير => I mean, a very excellent name and it has a very [nice] meaning\nيعني اسم ممتاز كتير كتير وعندو معنى حلو [كتير] => I mean, a very excellent name and it has [a very] nice meaning # aligned to 'a very' to capture the intensifier function in this context\n\n[جميل] => [Beautiful]\n\n[الجالية] اليهودية أو الوجود اليهودي هون في دبي وفي الإمارات => [The] Jewish [community] or the Jewish presence here in Dubai and in the UAE\nالجالية [اليهودية] أو الوجود اليهودي هون في دبي وفي الإمارات => The [Jewish] community or the Jewish presence here in Dubai and in the UAE\nالجالية اليهودية [أو] الوجود اليهودي هون في دبي وفي الإمارات => The Jewish community [or] the Jewish presence here in Dubai and in the UAE\nالجالية اليهودية أو [الوجود] اليهودي هون في دبي وفي الإمارات => The Jewish community or [the] Jewish [presence] here in Dubai and in the UAE\nالجالية اليهودية أو الوجود [اليهودي] هون في دبي وفي الإمارات => The Jewish community or the [Jewish] presence here in Dubai and in the UAE\nالجالية اليهودية أو الوجود اليهودي [هون] في دبي وفي الإمارات => The Jewish community or the Jewish presence [here] in Dubai and in the UAE\nالجالية اليهودية أو الوجود اليهودي هون [في] دبي وفي الإمارات => The Jewish community or the Jewish presence here [in] Dubai and in the UAE\nالجالية اليهودية أو الوجود اليهودي هون في [دبي] وفي الإمارات => The Jewish community or the Jewish presence here in [Dubai] and in the UAE\nالجالية اليهودية أو الوجود اليهودي هون في دبي [وفي] الإمارات => The Jewish community or the Jewish presence here in Dubai [and in] the UAE\nالجالية اليهودية أو الوجود اليهودي هون في دبي وفي [الإمارات] => The Jewish community or the Jewish presence here in Dubai and in [the UAE]\n\n[شي] جديد وشي خاص واستثنائي => [Something] new and something special and exceptional\nشي [جديد] وشي خاص واستثنائي => Something [new] and something special and exceptional\nشي جديد [وشي] خاص واستثنائي => Something new [and something] special and exceptional\nشي جديد وشي [خاص] واستثنائي => Something new and something [special] and exceptional\nشي جديد وشي خاص [واستثنائي] => Something new and something special [and exceptional]\n\n[يعني] أنا بعتقد سمعت إنو هاي الجالية الوحيدة في العالم العربي => [I mean] I think I heard that this is the only community in the Arab world\nيعني [أنا] بعتقد سمعت إنو هاي الجالية الوحيدة في العالم العربي => I mean [I] think I heard that this is the only community in the Arab world\nيعني أنا [بعتقد] سمعت إنو هاي الجالية الوحيدة في العالم العربي => I mean I [think] I heard that this is the only community in the Arab world\nيعني أنا بعتقد [سمعت] إنو هاي الجالية الوحيدة في العالم العربي => I mean I think I [heard] that this is the only community in the Arab world\nيعني أنا بعتقد سمعت [إنو] هاي الجالية الوحيدة في العالم العربي => I mean I think I heard [that] this is the only community in the Arab world\nيعني أنا بعتقد سمعت إنو [هاي] الجالية الوحيدة في العالم العربي => I mean I think I heard that [this] is the only community in the Arab world\nيعني أنا بعتقد سمعت إنو هاي [الجالية] الوحيدة في العالم العربي => I mean I think I heard that this is the [community] in the Arab world\nيعني أنا بعتقد سمعت إنو هاي الجالية [الوحيدة] في العالم العربي => I mean I think I heard that this is [the only] community in the Arab world\nيعني أنا بعتقد سمعت إنو هاي الجالية الوحيدة [في] العالم العربي => I mean I think I heard that this is the only community [in] the Arab world\nيعني أنا بعتقد سمعت إنو هاي الجالية الوحيدة في [العالم] العربي => I mean I think I heard that this is the only community in the Arab [world]\nيعني أنا بعتقد سمعت إنو هاي الجالية الوحيدة في العالم [العربي] => I mean I think I heard that this is the only community in the [Arab] world\n\n[اللي] عم تكبر مو عم تتقلص يعني => [That] is growing, not shrinking, I mean\nاللي [عم تكبر] مو عم تتقلص يعني => That [is growing], not shrinking, I mean\nاللي عم تكبر [مو] عم تتقلص يعني => That is growing, [not] shrinking, I mean\nاللي عم تكبر مو [عم تتقلص] يعني => That is growing, not [shrinking], I mean\nاللي عم تكبر مو عم تتقلص [يعني] => That is growing, not shrinking, [I mean]\n\n[فـ] يعني إنت بوقت تاريخي هون => [So], I mean, you are here at a historic time\nفـ [يعني] إنت بوقت تاريخي هون => So, [I mean], you are here at a historic time\nفـ يعني [إنت] بوقت تاريخي هون => So, I mean, [you] are here at a historic time\nفـ يعني إنت [بوقت] تاريخي هون => at a time\nفـ يعني إنت بوقت [تاريخي] هون => So, I mean, you are here at a [historic] time\nفـ يعني إنت بوقت تاريخي [هون] => So, I mean, you are [here] at a historic time\n\n[احكيلنا] شوي عن الجالية يعني والوجود اليهودي هون => [Tell us] a bit about the community, I mean, and the Jewish presence here\nاحكيلنا [شوي] عن الجالية يعني والوجود اليهودي هون => Tell us [a bit] about the community, I mean, and the Jewish presence here\nاحكيلنا شوي [عن] الجالية يعني والوجود اليهودي هون => Tell us a bit [about] the community, I mean, and the Jewish presence here\nاحكيلنا شوي عن [الجالية] يعني والوجود اليهودي هون => Tell us a bit about [the community], I mean, and the Jewish presence here\nاحكيلنا شوي عن الجالية [يعني] والوجود اليهودي هون => Tell us a bit about the community, [I mean], and the Jewish presence here\nاحكيلنا شوي عن الجالية يعني [والوجود] اليهودي هون => and the presence\nاحكيلنا شوي عن الجالية يعني والوجود [اليهودي] هون => Tell us a bit about the community, I mean, and the [Jewish] presence here\nاحكيلنا شوي عن الجالية يعني والوجود اليهودي [هون] => Tell us a bit about the community, I mean, and the Jewish presence [here]\n\n[أكيد] هون كان في يهود قبل اتفاقات إبراهيم => [Certainly], there were Jews here before the Abraham Accords\nأكيد [هون] كان في يهود قبل اتفاقات إبراهيم => Certainly, there were Jews [here] before the Abraham Accords\nأكيد هون [كان في] يهود قبل اتفاقات إبراهيم => Certainly, [there were] Jews here before the Abraham Accords\nأكيد هون كان في [يهود] قبل اتفاقات إبراهيم => Certainly, there were [Jews] here before the Abraham Accords\nأكيد هون كان في يهود [قبل] اتفاقات إبراهيم => Certainly, there were Jews here [before] the Abraham Accords\nأكيد هون كان في يهود قبل [اتفاقات] إبراهيم => Certainly, there were Jews here before the Abraham [Accords]\nأكيد هون كان في يهود قبل اتفاقات [إبراهيم] => Certainly, there were Jews here before the [Abraham] Accords\n\n[بس] ما كانت جالية مزبطة ومنظمة => [But] there wasn't a proper and organized community\nبس [ما كانت] جالية مزبطة ومنظمة => But [there wasn't] a proper and organized community\nبس ما كانت [جالية] مزبطة ومنظمة => But there wasn't a proper and organized [community]\nبس ما كانت جالية [مزبطة] ومنظمة => But there wasn't a [proper] and organized community\nبس ما كانت جالية مزبطة [و]منظمة => But there wasn't a proper [and] organized community\nبس ما كانت جالية مزبطة و[منظمة] => But there wasn't a proper and [organized] community\n\n[بعد] اتفاقات إبراهيم حتى الحكومة والشعب هون => [After] the Abraham Accords, even the government and the people here\nبعد [اتفاقات] إبراهيم حتى الحكومة والشعب هون => After the Abraham [Accords], even the government and the people here\nبعد اتفاقات [إبراهيم] حتى الحكومة والشعب هون => After the [Abraham] Accords, even the government and the people here\nبعد اتفاقات إبراهيم [حتى] الحكومة والشعب هون => After the Abraham Accords, [even] the government and the people here\nبعد اتفاقات إبراهيم حتى [الحكومة] والشعب هون => After the Abraham Accords, even [the government] and the people here\nبعد اتفاقات إبراهيم حتى الحكومة [والشعب] هون => After the Abraham Accords, even the government [and the people] here\nبعد اتفاقات إبراهيم حتى الحكومة والشعب [هون] => After the Abraham Accords, even the government and the people [here]\n\n[بدن] يكون عندن جالية يهودية منظمة ومع رخصة وكل شي => [Wanted] to have an organized Jewish community with a license and everything\nبدن [يكون عندن] جالية يهودية منظمة ومع رخصة وكل شي => Wanted [to have] an organized Jewish community with a license and everything\nبدن يكون عندن [جالية] يهودية منظمة ومع رخصة وكل شي => Wanted to have an organized Jewish [community] with a license and everything\nبدن يكون عندن جالية [يهودية] منظمة ومع رخصة وكل شي => Wanted to have an organized [Jewish] community with a license and everything\nبدن يكون عندن جالية يهودية [منظمة] ومع رخصة وكل شي => Wanted to have an [organized] Jewish community with a license and everything\nبدن يكون عندن جالية يهودية منظمة [ومع] رخصة وكل شي => and with, with\nبدن يكون عندن جالية يهودية منظمة ومع [رخصة] وكل شي => Wanted to have an organized Jewish community with a [license] and everything\nبدن\n\n[بقا] طلبوني شي أنا كنت زرت هون من تلات سنين => [So] they asked me, I had visited here three years ago\nبقا [طلبوني] شي أنا كنت زرت هون من تلات سنين => So [they asked me], I had visited here three years ago\nبقا طلبوني [شي] أنا كنت زرت هون من تلات سنين => something\nبقا طلبوني شي [أنا] كنت زرت هون من تلات سنين => So they asked me, [I] had visited here three years ago\nبقا طلبوني شي أنا [كنت زرت] هون من تلات سنين => So they asked me, I [had visited] here three years ago\nبقا طلبوني شي أنا كنت زرت [هون] من تلات سنين => So they asked me, I had visited [here] three years ago\nبقا طلبوني شي أنا كنت زرت هون [من] تلات سنين => ago\nبقا طلبوني شي أنا كنت زرت هون من [تلات] سنين => So they asked me, I had visited here [three] years ago\nبقا طلبوني شي أنا كنت زرت هون من تلات [سنين] => So they asked me, I had visited here three [years] ago\n\n[زرت] أول شي الجالية الصغيرة اللي كانت قاعدة هون => [I] first [visited] the small community that was here\nزرت [أول شي] الجالية الصغيرة اللي كانت قاعدة هون => I [first] visited the small community that was here\nزرت أول شي [الجالية] الصغيرة اللي كانت قاعدة هون => I first visited the small [community] that was here\nزرت أول شي الجالية [الصغيرة] اللي كانت قاعدة هون => I first visited the [small] community that was here\nزرت أول شي الجالية الصغيرة [اللي] كانت قاعدة هون => I first visited the small community [that] was here\nزرت أول شي الجالية الصغيرة اللي [كانت] قاعدة هون => I first visited the small community that [was] here\nزرت أول شي الجالية الصغيرة اللي كانت [قاعدة] هون => staying, located, residing # \"qa'da\" literally means sitting, but is used for being/staying in a place\nزرت أول شي الجالية الصغيرة اللي كانت قاعدة [هون] => I first visited the small community that was [here]\n\n[بعدين] كمان زرنا مع صاحب السمو الشيخ محمد بن زايد => [Then] we also visited with His Highness Sheikh Mohamed bin Zayed\nبعدين [كمان] زرنا مع صاحب السمو الشيخ محمد بن زايد => Then we [also] visited with His Highness Sheikh Mohamed bin Zayed\nبعدين كمان [زرنا] مع صاحب السمو الشيخ محمد بن زايد => we visited\nبعدين كمان زرنا [مع] صاحب السمو الشيخ محمد بن زايد => Then we also visited [with] His Highness Sheikh Mohamed bin Zayed\nبعدين كمان زرنا مع [صاحب السمو] الشيخ محمد بن زايد => Then we also visited with [His Highness] Sheikh Mohamed bin Zayed\nبعدين كمان زرنا مع صاحب السمو [الشيخ] محمد بن زايد => Then we also visited with His Highness [Sheikh] Mohamed bin Zayed\nبعدين كمان زرنا مع صاحب السمو الشيخ [محمد] بن زايد => Then we also visited with His Highness Sheikh [Mohamed] bin Zayed\nبعدين كمان زرنا مع صاحب السمو الشيخ محمد [بن] زايد => Then we also visited with His Highness Sheikh Mohamed [bin] Zayed\nبعدين كمان زرنا مع صاحب السمو الشيخ محمد بن [زايد] => Then we also visited with His Highness Sheikh Mohamed bin [Zayed]\n\n[زرناه] بالقصر تبعو بأبو ظبي وجبنالو سفر توراة => [We visited him] at his palace in Abu Dhabi and brought him a Torah scroll\nزرناه [بالقصر] تبعو بأبو ظبي وجبنالو سفر توراة => at the palace # literal translation to handle the 'his' interpolation\nزرناه بالقصر [تبعو] بأبو ظبي وجبنالو سفر توراة => We visited him at [his] palace in Abu Dhabi and brought him a Torah scroll\nزرناه بالقصر تبعو [بأبو ظبي] وجبنالو سفر توراة => We visited him at his palace [in Abu Dhabi] and brought him a Torah scroll\nزرناه بالقصر تبعو بأبو ظبي [وجبنالو] سفر توراة => We visited him at his palace in Abu Dhabi [and brought him] a Torah scroll\nزرناه بالقصر تبعو بأبو ظبي وجبنالو [سفر] توراة => scroll\nزرناه بالقصر تبعو بأبو ظبي وجبنالو سفر [توراة] => We visited him at his palace in Abu Dhabi and brought him a [Torah] scroll\n\n[هدية] على روح أبوه الشيخ زايد الله يرحمو => [A gift] on behalf of his father, Sheikh Zayed, God have mercy on him\nهدية [على روح] أبوه الشيخ زايد الله يرحمو => [on behalf of] his father, Sheikh Zayed, God have mercy on him\nهدية على روح [أبوه] الشيخ زايد الله يرحمو => A gift on behalf of [his father], Sheikh Zayed, God have mercy on him\nهدية على روح أبوه [الشيخ زايد] الله يرحمو => A gift on behalf of his father, [Sheikh Zayed], God have mercy on him\nهدية على روح أبوه الشيخ زايد [الله] يرحمو => A gift on behalf of his father, Sheikh Zayed, [God] have mercy on him\nهدية على روح أبوه الشيخ زايد الله [يرحمو] => A gift on behalf of his father, Sheikh Zayed, God [have mercy on him]\n\n[وتعرفت] عالحكومة تعرفت عالناس تعرفت عالجالية => [And I got to know] the government, got to know the people, got to know the community\nوتعرفت [عالحكومة] تعرفت عالناس تعرفت عالجالية => And I got to know [the government], got to know the people, got to know the community\nوتعرفت عالحكومة [تعرفت] عالناس تعرفت عالجالية => And I got to know the government, [got to know] the people, got to know the community\nوتعرفت عالحكومة تعرفت [عالناس] تعرفت عالجالية => And I got to know the government, got to know [the people], got to know the community\nوتعرفت عالحكومة تعرفت عالناس [تعرفت] عالجالية => And I got to know the government, got to know the people, [got to know] the community\nوتعرفت عالحكومة تعرفت عالناس تعرفت [عالجالية] => And I got to know the government, got to know the people, got to know [the community]\n\n[وبس ما] صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة مع رخصة => [And when] the Abraham Accords happened, and they wanted to make a community organized with a license\nوبس ما [صار] اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة مع رخصة => And when the Abraham Accords [happened], and they wanted to make a community organized with a license\nوبس ما صار [اتفاقات إبراهيم] وبدن يعملوا إنو جالية تكون منظمة مع رخصة => And when [the Abraham Accords] happened, and they wanted to make a community organized with a license\nوبس ما صار اتفاقات إبراهيم [وبدن] يعملوا إنو جالية تكون منظمة مع رخصة => And when the Abraham Accords happened, [and they wanted] to make a community organized with a license\nوبس ما صار اتفاقات إبراهيم وبدن [يعملوا] إنو جالية تكون منظمة مع رخصة => And when the Abraham Accords happened, and they wanted [to make] a community organized with a license\nوبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو [جالية] تكون منظمة مع رخصة => And when the Abraham Accords happened, and they wanted to make [a community] organized with a license\nوبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية [تكون] منظمة مع رخصة => to be\nوبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون [منظمة] مع رخصة => And when the Abraham Accords happened, and they wanted to make a community [organized] with a license\nوبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة [مع] رخصة => And when the Abraham Accords happened, and they wanted to make a community organized [with] a license\nوبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة مع [رخصة] => And when the Abraham Accords happened, and they wanted to make a community organized with a [license]\n\n[يعني] جالية رسمية كدين كدين اليهودي => [I mean], an official community as a religion, as the Jewish religion\nيعني [جالية] رسمية كدين كدين اليهودي => I mean, an official [community] as a religion, as the Jewish religion\nيعني جالية [رسمية] كدين كدين اليهودي => I mean, an [official] community as a religion, as the Jewish religion\nيعني جالية رسمية [كدين] كدين اليهودي => I mean, an official community [as a religion], as the Jewish religion\nيعني جالية رسمية كدين [كدين] اليهودي => as a religion # literal translation 'as (a) religion'\nيعني جالية رسمية كدين كدين [اليهودي] => I mean, an official community as a religion, as [the Jewish] religion\n\n[طلبوني] إجي لهون مشان أنا أصلي من الشرق الأوسط => [They asked me] to come here because I am from the Middle East\nطلبوني [إجي] لهون مشان أنا أصلي من الشرق الأوسط => They asked me [to come] here because I am from the Middle East\nطلبوني إجي [لهون] مشان أنا أصلي من الشرق الأوسط => They asked me to come [here] because I am from the Middle East\nطلبوني إجي لهون [مشان] أنا أصلي من الشرق الأوسط => They asked me to come here [because] I am from the Middle East\nطلبوني إجي لهون مشان [أنا] أصلي من الشرق الأوسط => They asked me to come here because [I am] from the Middle East\nطلبوني إجي لهون مشان أنا [أصلي] من الشرق الأوسط => origin, originally\nطلبوني إجي لهون مشان أنا أصلي [من] الشرق الأوسط => They asked me to come here because I am [from] the Middle East\nطلبوني إجي لهون مشان أنا أصلي من [الشرق الأوسط] => They asked me to come here because I am from [the Middle East]\n\n[بحكي] عربي => [I speak] Arabic\nبحكي [عربي] => I speak [Arabic]\n\n[بعرف] القرآن الدين الإسلام => [I know] the Quran, the religion of Islam\nبعرف [القرآن] الدين الإسلام => I know [the Quran], the religion of Islam\nبعرف القرآن [الدين] الإسلام => I know the Quran, [the religion] of Islam\nبعرف القرآن الدين [الإسلام] => I know the Quran, the religion of [Islam]\n\n[و]كنت معلم بيشيفا يونيفرسيتي => [And] I was a teacher at Yeshiva University\nو[كنت] معلم بيشيفا يونيفرسيتي => And [I was] a teacher at Yeshiva University\nوكنت [معلم] بيشيفا يونيفرسيتي => And I was [a teacher] at Yeshiva University\nوكنت معلم [بيشيفا] يونيفرسيتي => And I was a teacher at [Yeshiva] University\nوكنت معلم بيشيفا [يونيفرسيتي] => And I was a teacher at Yeshiva [University]\n\n[على أيام] الوقت اللي كانوا اليهود والإسلام مع بعض ساكنين => [During] the time when Jews and Islam were living together\nعلى أيام [الوقت] اللي كانوا اليهود والإسلام مع بعض ساكنين => During [the time] when Jews and Islam were living together\nعلى أيام الوقت [اللي] كانوا اليهود والإسلام مع بعض ساكنين => During the time [when] Jews and Islam were living together\nعلى أيام الوقت اللي [كانوا] اليهود والإسلام مع بعض ساكنين => During the time when Jews and Islam [were] living together\nعلى أيام الوقت اللي كانوا [اليهود] والإسلام مع بعض ساكنين => During the time when [Jews] and Islam were living together\nعلى أيام الوقت اللي كانوا اليهود [والإسلام] مع بعض ساكنين => During the time when Jews [and Islam] were living together\nعلى أيام الوقت اللي كانوا اليهود والإسلام [مع بعض] ساكنين => During the time when Jews and Islam were living [together]\nعلى أيام الوقت اللي كانوا اليهود والإسلام مع بعض [ساكنين] => During the time when Jews and Islam were [living] together\n\n[اللي هي] جامعة يهودية أمريكية في نيويورك صح؟ => [Which is] an American Jewish university in New York, right?\nاللي هي [جامعة] يهودية أمريكية في نيويورك صح؟ => Which is an American Jewish [university] in New York, right?\nاللي هي جامعة [يهودية] أمريكية في نيويورك صح؟ => Which is an American [Jewish] university in New York, right?\nاللي هي جامعة يهودية [أمريكية] في نيويورك صح؟ => Which is an [American] Jewish university in New York, right?\nاللي هي جامعة يهودية أمريكية [في] نيويورك صح؟ => Which is an American Jewish university [in] New York, right?\nاللي هي جامعة يهودية أمريكية في [نيويورك] صح؟ => Which is an American Jewish university in [New York], right?\nاللي هي جامعة يهودية أمريكية في نيويورك [صح]؟ => Which is an American Jewish university in New York, [right]?\n\n[أيوا] جامعة يهودية جامعة يشيفا يونيفرسيتي => [Yes], a Jewish university, Yeshiva University\nأيوا [جامعة] يهودية جامعة يشيفا يونيفرسيتي => Yes, a [university], Yeshiva University\nأيوا جامعة [يهودية] جامعة يشيفا يونيفرسيتي => Yes, a [Jewish] university, Yeshiva University\nأيوا جامعة يهودية [جامعة] يشيفا يونيفرسيتي => university\nأيوا جامعة يهودية جامعة [يشيفا] يونيفرسيتي => Yes, a Jewish university, [Yeshiva] University\nأيوا جامعة يهودية جامعة يشيفا [يونيفرسيتي] => Yes, a Jewish university, Yeshiva [University]\n\n[أنا] كنت مدير المدرسة تبع يعقوب صفرا => [I] was the principal of the Jacob Safra School\nأنا [كنت] مدير المدرسة تبع يعقوب صفرا => I [was] the principal of the Jacob Safra School\nأنا كنت [مدير] المدرسة تبع يعقوب صفرا => I was [the principal] of the Jacob Safra School\nأنا كنت مدير [المدرسة] تبع يعقوب صفرا => I was the principal of the Jacob Safra [School]\nأنا كنت مدير المدرسة [تبع] يعقوب صفرا => I was the principal [of] the Jacob Safra School\nأنا كنت مدير المدرسة تبع [يعقوب] صفرا => I was the principal of the [Jacob] Safra School\nأنا كنت مدير المدرسة تبع يعقوب [صفرا] => I was the principal of the Jacob [Safra] School\n\n[للعلماء] السفارديين والشرقيين => [For] Sephardic and Oriental [scholars]\nللعلماء [السفارديين] والشرقيين => For [Sephardic] and Oriental scholars\nللعلماء السفارديين [و]الشرقيين => For Sephardic [and] Oriental scholars\nللعلماء السفارديين و[الشرقيين] => For Sephardic and [Oriental] scholars\n\n[طيب] إحنا الآن فبراير 2022 إنت موجود هون من إيمتى إجيت؟ => [Okay], we are now February 2022, when did you come here?\nطوب [إحنا] الآن فبراير 2022 إنت موجود هون من إيمتى إجيت؟ => Okay, [we] are now February 2022, when did you come here?\nطيب إحنا [الآن] فبراير 2022 إنت موجود هون من إيمتى إجيت؟ => Okay, we are [now] February 2022, when did you come here?\nطيب إحنا الآن [فبراير 2022] إنت موجود هون من إيمتى إجيت؟ => Okay, we are now [February 2022], when did you come here?\nطيب إحنا الآن فبراير 2022 [إنت] موجود هون من إيمتى إجيت؟ => you\nطيب إحنا الآن فبراير 2022 إنت [موجود] هون من إيمتى إجيت؟ => present, existing\nطيب إحنا الآن فبراير 2022 إنت موجود [هون] من إيمتى إجيت؟ => Okay, we are now February 2022, when did you come [here]?\nطيب إحنا الآن فبراير 2022 إنت موجود هون [من إيمتى] إجيت؟ => Okay, we are now February 2022, [when] did you come here?\nطيب إحنا الآن فبراير 2022 إنت موجود هون من إيمتى [إجيت]؟ => you came, did you come\n\n[هلا موجود] هون من نوفمبر من عام 2020 => [I've been] here since November of 2020\nهلا موجود [هون] من نوفمبر من عام 2020 => I've been [here] since November of 2020\nهلا موجود هون [من] نوفمبر من عام 2020 => I've been here [since] November of 2020\nهلا موجود هون من [نوفمبر] من عام 2020 => I've been here since [November] of 2020\nهلا موجود هون من نوفمبر [من] عام 2020 => I've been here since November [of] 2020\nهلا موجود هون من نوفمبر من [عام] 2020 => year\nهلا موجود هون من نوفمبر من عام [2020] => I've been here since November of [2020]\n\n[يعني] إلي سنة وأربع تشهر => [I mean], a year and four months\nيعني [إلي] سنة وأربع تشهر => for me, it's been # is used with time to indicate duration for the speaker\nيعني إلي [سنة] وأربع تشهر => I mean, [a year] and four months\nيعني إلي سنة [و]أربع تشهر => I mean, a year [and] four months\nيعني إلي سنة و[أربع] تشهر => I mean, a year and [four] months\nيعني إلي سنة وأربع [تشهر] => I mean, a year and four [months]\n\n[المستمعين] والمشاهدين أكيد بيسمعوا إنو لهجتك سورية => [Listeners] and viewers surely hear that your accent is Syrian\nالمستمعين [و]المشاهدين أكيد بيسمعوا إنو لهجتك سورية => Listeners [and] viewers surely hear that your accent is Syrian\nالمستمعين و[المشاهدين] أكيد بيسمعوا إنو لهجتك سورية => Listeners and [viewers] surely hear that your accent is Syrian\nالمستمعين والمشاهدين [أكيد] بيسمعوا إنو لهجتك سورية => Listeners and viewers [surely] hear that your accent is Syrian\nالمستمعين والمشاهدين أكيد [بيسمعوا] إنو لهجتك سورية => Listeners and viewers surely [hear] that your accent is Syrian\nالمستمعين والمشاهدين أكيد بيسمعوا [إنو] لهجتك سورية => Listeners and viewers surely hear [that] your accent is Syrian\nالمستمعين والمشاهدين أكيد بيسمعوا إنو [لهجتك] سورية => Listeners and viewers surely hear that [your accent] is Syrian\nالمستمعين والمشاهدين أكيد بيسمعوا إنو لهجتك [سورية] => Listeners and viewers surely hear that your accent is [Syrian]\n\n[فخلينا] نحكي شوي عن سيرتك الشخصية يعني مواليد وين وكيف الحياة؟ => [So let's] talk a bit about your personal history, I mean, where were you born and how was life?\nفخلينا [نحكي] شوي عن سيرتك الشخصية يعني مواليد وين وكيف الحياة؟ => So let's [talk] a bit about your personal history, I mean, where were you born and how was life?\nفخلينا نحكي [شوي] عن سيرتك الشخصية يعني مواليد وين وكيف الحياة؟ => So let's talk [a bit] about your personal history, I mean, where were you born and how was life?\nفخلينا نحكي شوي [عن] سيرتك الشخصية يعني مواليد وين وكيف الحياة؟ => So let's talk a bit [about] your personal history, I mean, where were you born and how was life?\nفخلينا نحكي شوي عن [سيرتك الشخصية] يعني مواليد وين وكيف الحياة؟ => So let's talk a bit about [your personal history], I mean, where were you born and how was life?\nفخلينا نحكي شوي عن سيرتك الشخصية [يعني] مواليد وين وكيف الحياة؟ => So let's talk a bit about your personal history, [I mean], where were you born and how was life?\nفخلينا نحكي شوي عن سيرتك الشخصية يعني [مواليد وين] وكيف الحياة؟ => So let's talk a bit about your personal history, I mean, [where were you born] and how was life?\nفخلينا نحكي شوي عن سيرتك الشخصية يعني مواليد وين [وكيف] الحياة؟ => So let's talk a bit about your personal history, I mean, where were you born [and how] was life?\nفخلينا نحكي شوي عن سيرتك الشخصية يعني مواليد وين وكيف [الحياة]؟ => So let's talk a bit about your personal history, I mean, where were you born and how was [life]\n\n[كيف لكان] أنا انولدت ببيروت بلبنان => [How]... I was born in Beirut, Lebanon\nكيف لكان [أنا] انولدت ببيروت بلبنان => How... [I] was born in Beirut, Lebanon\nكيف لكان أنا [انولدت] ببيروت بلبنان => How... I [was born] in Beirut, Lebanon\nكيف لكان أنا انولدت [ببيروت] بلبنان => How... I was born [in Beirut], Lebanon\nكيف لكان أنا انولدت ببيروت [بلبنان] => in Lebanon # the Arabic word contains the preposition 'bi' (in) which is omitted in the second half of the English sentence\n\n[أهلي] كانوا لاجئين يهود سوريين => [My family] were Syrian Jewish refugees\nأهلي [كانوا] لاجئين يهود سوريين => My family [were] Syrian Jewish refugees\nأهلي كانوا [لاجئين] يهود سوريين => My family were Syrian Jewish [refugees]\nأهلي كانوا لاجئين [يهود] سوريين => My family were Syrian [Jewish] refugees\nأهلي كانوا لاجئين يهود [سوريين] => My family were [Syrian] Jewish refugees\n\n[اللي] هربوا من سوريا سنة الـ 48 => [Who] fled from Syria in 1948\nاللي [هربوا] من سوريا سنة الـ 48 => Who [fled] from Syria in 1948\nاللي هربوا [من] سوريا سنة الـ 48 => Who fled [from] Syria in 1948\nاللي هربوا من [سوريا] سنة الـ 48 => Who fled from [Syria] in 1948\nاللي هربوا من سوريا [سنة] الـ 48 => year\nاللي هربوا من سوريا سنة الـ [48] => Who fled from Syria in [1948]\n\n[بس] ما صار الحرايق الحوادث تبع الحرايق => [But] before the fires, the incidents of the fires\nبس [ما صار] الحرايق الحوادث تبع الحرايق => happened, occurred\nبس ما صار [الحرايق] الحوادث تبع الحرايق => But before [the fires], the incidents of the fires\nبس ما صار الحرايق [الحوادث] تبع الحرايق => But before the fires, [the incidents] of the fires\nبس ما صار الحرايق الحوادث [تبع] الحرايق => But before the fires, the incidents [of] the fires\nبس ما صار الحرايق الحوادث تبع [الحرايق] => But before the fires, the incidents of [the fires]\n\n[في] عشر بلاد عربية بس ما طلعت مدينة إسرائيل دولة إسرائيل => [In] ten Arab countries, before the emergence of the State of Israel\nفي [عشر] بلاد عربية بس ما طلعت مدينة إسرائيل دولة إسرائيل => In [ten] Arab countries, before the emergence of the State of Israel\nفي عشر [بلاد] عربية بس ما طلعت مدينة إسرائيل دولة إسرائيل => In ten Arab [countries], before the emergence of the State of Israel\nفي عشر بلاد [عربية] بس ما طلعت مدينة إسرائيل دولة إسرائيل => In ten [Arab] countries, before the emergence of the State of Israel\nفي عشر بلاد عربية [بس ما طلعت] مدينة إسرائيل دولة إسرائيل => before the emergence # translates the idiomatic sense of the phrase in this context\nفي عشر بلاد عربية بس ما طلعت مدينة إسرائيل [دولة إسرائيل] => In ten Arab countries, before the emergence of the [State of Israel]\n\nصار [انجموا] عالجالية اليهودية بكل البلاد => [They gathered] against the Jewish community in all countries\nصار انجموا [عالجالية] اليهودية بكل البلاد => against the community\nصار انجموا عالجالية [اليهودية] بكل البلاد => They gathered against the [Jewish] community in all countries\nصار انجموا عالجالية اليهودية [بكل] البلاد => They gathered against the Jewish community [in all] countries\nصار انجموا عالجالية اليهودية بكل [البلاد] => They gathered against the Jewish community in all [countries]\n\n[بسوريا] بمصر بالعراق بتونس بتونس بكل البلاد العربية عشر بلاد عربية => [In Syria], in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab countries, ten Arab countries\nبسوريا [بمصر] بالعراق بتونس بتونس بكل البلاد العربية عشر بلاد عربية => In Syria, [in Egypt], in Iraq, in Tunisia, in Tunisia, in all Arab countries, ten Arab countries\nبسوريا بمصر [بالعراق] بتونس بتونس بكل البلاد العربية عشر بلاد عربية => In Syria, in Egypt, [in Iraq], in Tunisia, in Tunisia, in all Arab countries, ten Arab countries\nبسوريا بمصر بالعراق [بتونس] بتونس بكل البلاد العربية عشر بلاد عربية => In Syria, in Egypt, in Iraq, [in Tunisia], in Tunisia, in all Arab countries, ten Arab countries\nبسوريا بمصر بالعراق بتونس [بتونس] بكل البلاد العربية عشر بلاد عربية => In Syria, in Egypt, in Iraq, in Tunisia, [in Tunisia], in all Arab countries, ten Arab countries\nبسوريا بمصر بالعراق بتونس بتونس [بكل] البلاد العربية عشر بلاد عربية => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, [in all] Arab countries, ten Arab countries\nبسوريا بمصر بالعراق بتونس بتونس بكل [البلاد] العربية عشر بلاد عربية => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab [countries], ten Arab countries\nبسوريا بمصر بالعراق بتونس بتونس بكل البلاد [العربية] عشر بلاد عربية => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all [Arab] countries, ten Arab countries\nبسوريا بمصر بالعراق بتونس بتونس بكل البلاد العربية [عشر] بلاد عربية => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab countries, [ten] Arab countries\nبسوريا بمصر بالعراق بتونس بتونس بكل البلاد العربية عشر [بلاد] عربية => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab countries, ten Arab [countries]\nبسوريا بمصر بالعراق بتونس بتونس بكل البلاد العربية عشر بلاد [عربية] => In Syria, in Egypt, in Iraq, in Tunisia, in Tunisia, in all Arab countries, ten [Arab] countries\n\n[واليهود] اللي كانوا ساكنين بسوريا بحلب وبالشام => [And the Jews] who were living in Syria, in Aleppo and in Damascus\nواليهود [اللي] كانوا ساكنين بسوريا بحلب وبالشام => And the Jews [who] were living in Syria, in Aleppo and in Damascus\nواليهود اللي [كانوا] ساكنين بسوريا بحلب وبالشام => And the Jews who [were] living in Syria, in Aleppo and in Damascus\nواليهود اللي كانوا [ساكنين] بسوريا بحلب وبالشام => And the Jews who were [living] in Syria, in Aleppo and in Damascus\nواليهود اللي كانوا ساكنين [بسوريا] بحلب وبالشام => And the Jews who were living [in Syria], in Aleppo and in Damascus\nواليهود اللي كانوا ساكنين بسوريا [بحلب] وبالشام => And the Jews who were living in Syria, [in Aleppo] and in Damascus\nواليهود اللي كانوا ساكنين بسوريا بحلب [وبالشام] => And the Jews who were living in Syria, in Aleppo [and in Damascus]\n\n[خافوا] كتير على حياتن مشان انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس => [Feared] greatly for their lives, so they gathered against them, rose against the synagogues, burned the synagogues\nخافوا [كتير] على حياتن مشان انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس => Feared [greatly] for their lives, so they gathered against them, rose against the synagogues, burned the synagogues\nخافوا كتير [على حياتن] مشان انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس => Feared greatly [for their lives], so they gathered against them, rose against the synagogues, burned the synagogues\nخافوا كتير على حياتن [مشان] انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس => Feared greatly for their lives, [so] they gathered against them, rose against the synagogues, burned the synagogues\nخافوا كتير على حياتن مشان [انجموا] عليهن طلعوا ضد الكنايس حرقوا الكنايس => Feared greatly for their lives, so [they gathered] against them, rose against the synagogues, burned the synagogues\nخافوا كتير على حياتن مشان انجموا [عليهن] طلعوا ضد الكنايس حرقوا الكنايس => Feared greatly for their lives, so they gathered [against them], rose against the synagogues, burned the synagogues\nخافوا كتير على حياتن مشان انجموا عليهن [طلعوا] ضد الكنايس حرقوا الكنايس => Feared greatly for their lives, so they gathered against them, [rose] against the synagogues, burned the synagogues\nخافوا كتير على حياتن مشان انجموا عليهن طلعوا [ضد] الكنايس حرقوا الكنايس => Feared greatly for their lives, so they gathered against them, rose [against] the synagogues, burned the synagogues\nخافوا كتير على حياتن مشان انجموا عليهن طلعوا ضد [الكنايس] حرقوا الكنايس => Feared greatly for their lives, so they gathered against them, rose against [the synagogues], burned the synagogues\nخافوا كتير على حياتن مشان انجموا عليهن طلعوا ضد الكنايس [حرقوا] الكنايس => Feared greatly for their lives, so they gathered against them, rose against the synagogues, [burned] the synagogues\nخافوا كتير على حياتن مشان انجموا عليهن طلعوا ضد الكنايس حرقوا [الكنايس] => Feared greatly for their lives, so they gathered against them, rose against the synagogues, burned [the synagogues]\n\n[و]أهلك من حلب؟ => [And] your family is from Aleppo?\nو[أهلك] من حلب؟ => And [your family] is from Aleppo?\nوأهلك [من] حلب؟ => And your family is [from] Aleppo?\nوأهلك من [حلب]؟ => And your family is from [Aleppo]?\n\n[أهلي] من حلب أهلي من حلب بقا هنن هربوا => [My family] is from Aleppo, my family is from Aleppo, so they fled\nأهلي [من] حلب أهلي من حلب بقا هنن هربوا => My family [is from] Aleppo, my family is from Aleppo, so they fled\nأهلي من [حلب] أهلي من حلب بقا هنن هربوا => My family is from [Aleppo], my family is from Aleppo, so they fled\nأهلي من حلب [أهلي] من حلب بقا هنن هربوا => My family is from Aleppo, [my family] is from Aleppo, so they fled\nأهلي من حلب أهلي [من] حلب بقا هنن هربوا => My family is from Aleppo, my family [is from] Aleppo, so they fled\nأهلي من حلب أهلي من [حلب] بقا هنن هربوا => My family is from Aleppo, my family is from [Aleppo], so they fled\nأهلي من حلب أهلي من حلب [بقا] هنن هربوا => My family is from Aleppo, my family is from Aleppo, [so] they fled\nأهلي من حلب أهلي من حلب بقا [هنن] هربوا => My family is from Aleppo, my family is from Aleppo, so [they] fled\nأهلي من حلب أهلي من حلب بقا هنن [هربوا] => My family is from Aleppo, my family is from Aleppo, so they [fled]\n\n[هربوا] للبنان وسكنوا في لبنان => [They fled] to Lebanon and lived in Lebanon\nهربوا [للبنان] وسكنوا في لبنان => They fled [to Lebanon] and lived in Lebanon\nهربوا للبنان [و]سكنوا في لبنان => They fled to Lebanon [and] lived in Lebanon\nهربوا للبنان و[سكنوا] في لبنان => They fled to Lebanon and [lived] in Lebanon\nهربوا للبنان وسكنوا [في] لبنان => They fled to Lebanon and lived [in] Lebanon\nهربوا للبنان وسكنوا في [لبنان] => They fled to Lebanon and lived in [Lebanon]\n\n[لبنان] كانت مدينة متل أوروبا تحت سلطة فرنساويّة => [Lebanon] was a city like Europe under French authority\nلبنان [كانت] مدينة متل أوروبا تحت سلطة فرنساويّة => Lebanon [was] a city like Europe under French authority\nلبنان كانت [مدينة] متل أوروبا تحت سلطة فرنساويّة => Lebanon was [a city] like Europe under French authority\nلبنان كانت مدينة [متل] أوروبا تحت سلطة فرنساويّة => Lebanon was a city [like] Europe under French authority\nلبنان كانت مدينة متل [أوروبا] تحت سلطة فرنساويّة => Lebanon was a city like [Europe] under French authority\nلبنان كانت مدينة متل أوروبا [تحت] سلطة فرنساويّة => Lebanon was a city like Europe [under] French authority\nلبنان كانت مدينة متل أوروبا تحت [سلطة] فرنساويّة => Lebanon was a city like Europe under French [authority]\nلبنان كانت مدينة متل أوروبا تحت سلطة [فرنساويّة] => Lebanon was a city like Europe under [French] authority\n\n[وسكنوا] بلبنان وأنا خلقت بلبنان => [And they lived] in Lebanon and I was born in Lebanon\nوسكنوا [بلبنان] وأنا خلقت بلبنان => And they lived [in Lebanon] and I was born in Lebanon\nوسكنوا بلبنان [وأنا] خلقت بلبنان => And they lived in Lebanon [and I] was born in Lebanon\nوسكنوا بلبنان وأنا [خلقت] بلبنان => And they lived in Lebanon and I [was born] in Lebanon\nوسكنوا بلبنان وأنا خلقت [بلبنان] => And they lived in Lebanon and I was born [in Lebanon]\n\n[وكانت] هناك جالية يهودية ومؤسسات ومدارس؟ => [And was] there a Jewish community and institutions and schools there?\nوكانت [هناك] جالية يهودية ومؤسسات ومدارس؟ => And was [there] a Jewish community and institutions and schools there?\nوكانت هناك [جالية] يهودية ومؤسسات ومدارس؟ => And was there a Jewish [community] and institutions and schools there?\nوكانت هناك جالية [يهودية] ومؤسسات ومدارس؟ => And was there a [Jewish] community and institutions and schools there?\nوكانت هناك جالية يهودية [ومؤسسات] ومدارس؟ => And was there a Jewish community [and institutions] and schools there?\nوكانت هناك جالية يهودية ومؤسسات [ومدارس]؟ => And was there a Jewish community and institutions [and schools] there?\n\n[كانت] جالية يهودية منظمة كتير كتير مأسسة حلو كتير => [It was] a very, very organized Jewish community, very well institutionalized\nكانت [جالية] يهودية منظمة كتير كتير مأسسة حلو كتير => It was a very, very organized Jewish [community], very well institutionalized\nكانت جالية [يهودية] منظمة كتير كتير مأسسة حلو كتير => It was a very, very organized [Jewish] community, very well institutionalized\nكانت جالية يهودية [منظمة] كتير كتير مأسسة حلو كتير => It was a very, very [organized] Jewish community, very well institutionalized\nكانت جالية يهودية منظمة [كتير كتير] مأسسة حلو كتير => It was a [very, very] organized Jewish community, very well institutionalized\nكانت جالية يهودية منظمة كتير كتير [مأسسة] حلو كتير => It was a very, very organized Jewish community, very well [institutionalized]\nكانت جالية يهودية منظمة كتير كتير مأسسة [حلو كتير] => It was a very, very organized Jewish community, [very well] institutionalized # using \"very well\" for \"حلو كتير\" as it describes the quality of institutionalization in this context\n\n[مع] مدارس مع معابد يعني كنايس => [With] schools, with temples, I mean synagogues\nمع [مدارس] مع معابد يعني كنايس => With [schools], with temples, I mean synagogues\nمع مدارس [مع] معابد يعني كنايس => With schools, [with] temples, I mean synagogues\nمع مدارس مع [معابد] يعني كنايس => With schools, with [temples], I mean synagogues\nمع مدارس مع معابد [يعني] كنايس => With schools, with temples, [I mean] synagogues\nمع مدارس مع معابد يعني [كنايس] => With schools, with temples, I mean [synagogues]\n\n[كان في] تقريباً شي 22 كنيس يهودي => [There were] approximately 22 Jewish synagogues\nكان في [تقريباً] شي 22 كنيس يهودي => There were [approximately] 22 Jewish synagogues\nكان في تقريباً [شي] 22 كنيس يهودي => about, approximately\nكان في تقريباً شي [22] كنيس يهودي => There were approximately [22] Jewish synagogues\nكان في تقريباً شي 22 كنيس [يهودي] => There were approximately 22 [Jewish] synagogues\nكان في تقريباً شي 22 [كنيس] يهودي => There were approximately 22 Jewish [synagogues] # Arabic singular used after numbers 11-99 translates to English plural nouns\n\n[كانت في] تلات مدارس يهودية كمان => [There were] three Jewish schools as well\nكانت في [تلات] مدارس يهودية كمان => There were [three] Jewish schools as well\nكانت في تلات [مدارس] يهودية كمان => There were three [schools] as well\nكانت في تلات مدارس [يهودية] كمان => There were three [Jewish] schools as well\nكانت في تلات مدارس يهودية [كمان] => There were three Jewish schools [as well]\n\n[أبي] كان حاخام وكان مدير المدرسة كمان اللي تعلمت أنا فيها => [My father] was a rabbi and was also the principal of the school where I studied\nأبي [كان] حاخام وكان مدير المدرسة كمان اللي تعلمت أنا فيها => My father [was] a rabbi and was also the principal of the school where I studied\nأبي كان [حاخام] وكان مدير المدرسة كمان اللي تعلمت أنا فيها => My father was [a rabbi] and was also the principal of the school where I studied\nأبي كان حاخام [وكان] مدير المدرسة كمان اللي تعلمت أنا فيها => My father was a rabbi [and was] also the principal of the school where I studied\nأبي كان حاخام وكان [مدير] المدرسة كمان اللي تعلمت أنا فيها => My father was a rabbi and was also [the principal] of the school where I studied\nأبي كان حاخام وكان مدير [المدرسة] كمان اللي تعلمت أنا فيها => My father was a rabbi and was also the principal of [the school] where I studied\nأبي كان حاخام وكان مدير المدرسة [كمان] اللي تعلمت أنا فيها => My father was a rabbi and was [also] the principal of the school where I studied\nأبي كان حاخام وكان مدير المدرسة كمان [اللي] تعلمت أنا فيها => My father was a rabbi and was also the principal of the school [where] I studied\nأبي كان حاخام وكان مدير المدرسة كمان اللي [تعلمت] أنا فيها => My father was a rabbi and was also the principal of the school where I [studied]\nأبي كان حاخام وكان مدير المدرسة كمان اللي تعلمت [أنا] فيها => My father was a rabbi and was also the principal of the school where [I] studied\nأبي كان حاخام وكان مدير المدرسة كمان اللي تعلمت أنا [فيها] => in it # 'فيها' (in it) refers back to the school in the relative clause structure\n\n[و]ضليتوا في بيروت لإيمتى؟ => [And] you stayed in Beirut until when?\nو[ضليتوا] في بيروت لإيمتى؟ => And [you stayed] in Beirut until when?\nوضليتوا [في] بيروت لإيمتى؟ => And you stayed [in] Beirut until when?\nوضليتوا في [بيروت] لإيمتى؟ => And you stayed in [Beirut] until when?\nوضليتوا في بيروت [لإيمتى]؟ => And you stayed in Beirut [until when]?\n\n[ضلينا] في بيروت لـ 1971 => [We stayed] in Beirut until 1971\nضلينا [في] بيروت لـ 1971 => We stayed [in] Beirut until 1971\nضلينا في [بيروت] لـ 1971 => We stayed in [Beirut] until 1971\nضلينا في بيروت [لـ] 1971 => We stayed in Beirut [until] 1971\nضلينا في بيروت لـ [1971] => We stayed in Beirut until [1971]\n\n[مشان] عرفنا إنو كمان لبنان رح تنخرب => [Because] we knew that Lebanon would also be ruined\nمشان [عرفنا] إنو كمان لبنان رح تنخرب => Because [we knew] that Lebanon would also be ruined\nمشان عرفنا [إنو] كمان لبنان رح تنخرب => Because we knew [that] Lebanon would also be ruined\nمشان عرفنا إنو [كمان] لبنان رح تنخرب => Because we knew that Lebanon would [also] be ruined\nمشان عرفنا إنو كمان [لبنان] رح تنخرب => Because we knew that [Lebanon] would also be ruined\nمشان عرفنا إنو كمان لبنان [رح] تنخرب => Because we knew that Lebanon [would] also be ruined\nمشان عرفنا إنو كمان لبنان رح [تنخرب] => Because we knew that Lebanon would also [be ruined]\n\n[مشان] بس ما شفنا عرفات والفدائيين تبعولو => [Because] before we saw Arafat and his fedayeen\nمشان [بس ما] شفنا عرفات والفدائيين تبعولو => before # بس ما acts as a temporal marker here\nمشان بس ما [شفنا] عرفات والفدائيين تبعولو => Because before [we saw] Arafat and his fedayeen\nمشان بس ما شفنا [عرفات] والفدائيين تبعولو => Because before we saw [Arafat] and his fedayeen\nمشان بس ما شفنا عرفات [والفدائيين] تبعولو => and fedayeen # the 'wa' means 'and' and 'al-fida'iyyin' means 'the fedayeen'\nمشان بس ما شفنا عرفات والفدائيين [تبعولو] => Because before we saw Arafat and [his] fedayeen\n\n[اللي] دشروا من الأردن بيسموه بشهر سبتمبر الأسود => [Who] entered from Jordan, they call it Black September\nاللي [دشروا] من الأردن بيسموه بشهر سبتمبر الأسود => Who [entered] from Jordan, they call it Black September\nاللي دشروا [من] الأردن بيسموه بشهر سبتمبر الأسود => Who entered [from] Jordan, they call it Black September\nاللي دشروا من [الأردن] بيسموه بشهر سبتمبر الأسود => Who entered from [Jordan], they call it Black September\nاللي دشروا من الأردن [بيسموه] بشهر سبتمبر الأسود => Who entered from Jordan, [they call it] Black September\nاللي دشروا من الأردن بيسموه [بشهر] سبتمبر الأسود => month # custom translation as \"month\" is not explicitly in the English sentence\nاللي دشروا من الأردن بيسموه بشهر [سبتمبر] الأسود => Who entered from Jordan, they call it Black [September]\nاللي دشروا من الأردن بيسموه بشهر سبتمبر [الأسود] => Who entered from Jordan, they call it [Black] September\n\n[كان في] حرب بين إخوان بالأردن والملك حسين دشر عرفات والفدائية => [There was] a war between brothers in Jordan and King Hussein, Arafat and the fedayeen entered\nكان في [حرب] بين إخوان بالأردن والملك حسين دشر عرفات والفدائية => There was [a war] between brothers in Jordan and King Hussein, Arafat and the fedayeen entered\nكان في حرب [بين] إخوان بالأردن والملك حسين دشر عرفات والفدائية => There was a war [between] brothers in Jordan and King Hussein, Arafat and the fedayeen entered\nكان في حرب بين [إخوان] بالأردن والملك حسين دشر عرفات والفدائية => There was a war between [brothers] in Jordan and King Hussein, Arafat and the fedayeen entered\nكان في حرب بين إخوان [بالأردن] والملك حسين دشر عرفات والفدائية => There was a war between brothers [in Jordan] and King Hussein, Arafat and the fedayeen entered\nكان في حرب بين إخوان بالأردن [والملك حسين] دشر عرفات والفدائية => There was a war between brothers in Jordan [and King Hussein], Arafat and the fedayeen entered\nكان في حرب بين إخوان بالأردن والملك حسين [دشر] عرفات والفدائية => let go, released, left\nكان في حرب بين إخوان بالأردن والملك حسين دشر [عرفات] والفدائية => There was a war between brothers in Jordan and King Hussein, [Arafat] and the fedayeen entered\nكان في حرب بين إخوان بالأردن والملك حسين دشر عرفات [والفدائية] => There was a war between brothers in Jordan and King Hussein, Arafat [and the fedayeen] entered\n\n[و]لبنان جبروها تقبلن بقا استقبلتن استقبلوهن وإجوا للبنان => [And] Lebanon was forced to accept them, so they welcomed them and they came to Lebanon\nو[لبنان] جبروها تقبلن بقا استقبلتن استقبلوهن وإجوا للبنان => And [Lebanon] was forced to accept them, so they welcomed them and they came to Lebanon\nولبنان [جبروها] تقبلن بقا استقبلتن استقبلوهن وإجوا للبنان => was forced\nولبنان جبروها [تقبلن] بقا استقبلتن استقبلوهن وإجوا للبنان => to accept them\nولبنان جبروها تقبلن [بقا] استقبلتن استقبلوهن وإجوا للبنان => And Lebanon was forced to accept them, [so] they welcomed them and they came to Lebanon\nولبنان جبروها تقبلن بقا [استقبلتن] استقبلوهن وإجوا للبنان => welcomed them\nولبنان جبروها تقبلن بقا استقبلتن [استقبلوهن] وإجوا للبنان => And Lebanon was forced to accept them, so [they welcomed them] and they came to Lebanon\nولبنان جبروها تقبلن بقا استقبلتن استقبلوهن [وإجوا] للبنان => And Lebanon was forced to accept them, so they welcomed them [and they came] to Lebanon\nولبنان جبروها تقبلن بقا استقبلتن استقبلوهن وإجوا [للبنان] => And Lebanon was forced to accept them, so they welcomed them and they came [to Lebanon]\n\n[وبلشنا] نشوف بالشوارع مظاهرات مع الفدائيين => [And we started] seeing demonstrations in the streets with the fedayeen\nوبلشنا [نشوف] بالشوارع مظاهرات مع الفدائيين => And we started [seeing] demonstrations in the streets with the fedayeen\nوبلشنا نشوف [بالشوارع] مظاهرات مع الفدائيين => And we started seeing [in the streets] demonstrations with the fedayeen\nوبلشنا نشوف بالشوارع [مظاهرات] مع الفدائيين => And we started seeing [demonstrations] in the streets with the fedayeen\nوبلشنا نشوف بالشوارع مظاهرات [مع] الفدائيين => And we started seeing demonstrations in the streets [with] the fedayeen\nوبلشنا نشوف بالشوارع مظاهرات مع [الفدائيين] => And we started seeing demonstrations in the streets with [the fedayeen]\n\n[وعرفنا] إنو البلد كلا بدا تروح بدا يكون في حرب إخوان كمان هونيك => [And we knew] that the whole country started to go, started to be in a fraternal war there too\nوعرفنا [إنو] البلد كلا بدا تروح بدا يكون في حرب إخوان كمان هونيك => And we knew [that] the whole country started to go, started to be in a fraternal war there too\nوعرفنا إنو [البلد] كلا بدا تروح بدا يكون في حرب إخوان كمان هونيك => And we knew that [the] whole [country] started to go, started to be in a fraternal war there too\nوعرفنا إنو البلد [كلا] بدا تروح بدا يكون في حرب إخوان كمان هونيك => And we knew that the [whole] country started to go, started to be in a fraternal war there too\nوعرفنا إنو البلد كلا [بدا] تروح بدا يكون في حرب إخوان كمان هونيك => And we knew that the whole country [started to] go, started to be in a fraternal war there too\nوعرفنا إنو البلد كلا بدا [تروح] بدا يكون في حرب إخوان كمان هونيك => And we knew that the whole country started to [go], started to be in a fraternal war there too\nوعرفنا إنو البلد كلا بدا تروح [بدا] يكون في حرب إخوان كمان هونيك => And we knew that the whole country started to go, [started to] be in a fraternal war there too\nوعرفنا إنو البلد كلا بدا تروح بدا [يكون] في حرب إخوان كمان هونيك => And we knew that the whole country started to go, started to [be] in a fraternal war there too\nوعرفنا إنو البلد كلا بدا تروح بدا يكون [في] حرب إخوان كمان هونيك => And we knew that the whole country started to go, started to be [in] a fraternal war there too\nوعرفنا إنو البلد كلا بدا تروح بدا يكون في [حرب] إخوان كمان هونيك => And we knew that the whole country started to go, started to be in [a] fraternal [war] there too\nوعرفنا إنو البلد كلا بدا تروح بدا يكون في حرب [إخوان] كمان هونيك => And we knew that the whole country started to go, started to be in a [fraternal] war there too\nوعرفنا إنو البلد كلا بدا تروح بدا يكون في حرب إخوان [كمان] هونيك => And we knew that the whole country started to go, started to be in a fraternal war there [too]\nوعرفنا إنو البلد كلا بدا تروح بدا يكون في حرب إخوان كمان [هونيك] => And we knew that the whole country started to go, started to be in a fraternal war [there] too\n\n[و]عرفنا إنو الجالية اليهودية بدا تتأثر كتير فيها كتير كتير => [And] we knew that the Jewish community started to be greatly affected, very, very much\nو[عرفنا] إنو الجالية اليهودية بدا تتأثر كتير فيها كتير كتير => And [we knew] that the Jewish community started to be greatly affected, very, very much\nوعرفنا [إنو] الجالية اليهودية بدا تتأثر كتير فيها كتير كتير => And we knew [that] the Jewish community started to be greatly affected, very, very much\nوعرفنا إنو [الجالية] اليهودية بدا تتأثر كتير فيها كتير كتير => And we knew that the Jewish [community] started to be greatly affected, very, very much\nوعرفنا إنو الجالية [اليهودية] بدا تتأثر كتير فيها كتير كتير => And we knew that the [Jewish] community started to be greatly affected, very, very much\nوعرفنا إنو الجالية اليهودية [بدا] تتأثر كتير فيها كتير كتير => And we knew that the Jewish community [started to] be greatly affected, very, very much\nوعرفنا إنو الجالية اليهودية بدا [تتأثر] كتير فيها كتير كتير => And we knew that the Jewish community started to [be affected], very, very much\nوعرفنا إنو الجالية اليهودية بدا تتأثر [كتير] فيها كتير كتير => And we knew that the Jewish community started to be [greatly] affected, very, very much\nوعرفنا إنو الجالية اليهودية بدا تتأثر كتير فيها [كتير كتير] => And we knew that the Jewish community started to be greatly affected, [very, very much]\n\n[وفعلاً]؟ => [Really]?\n\n[وفعلاً] كان بس ما تركنا بعد تلات سنين أقل كمان بلش الحرب بلبنان => [Really], just after we left, after three years less, the war started in Lebanon\nوفعلاً كان [بس] ما تركنا بعد تلات سنين أقل كمان بلش الحرب بلبنان => Really, [just] after we left, after three years less, the war started in Lebanon\nوفعلاً كان بس [ما تركنا] بعد تلات سنين أقل كمان بلش الحرب بلبنان => we left\nوفعلاً كان بس ما تركنا [بعد] تلات سنين أقل كمان بلش الحرب بلبنان => Really, just after we left, [after] three years less, the war started in Lebanon\nوفعلاً كان بس ما تركنا بعد [تلات] سنين أقل كمان بلش الحرب بلبنان => Really, just after we left, after [three] years less, the war started in Lebanon\nوفعلاً كان بس ما تركنا بعد تلات [سنين] أقل كمان بلش الحرب بلبنان => Really, just after we left, after three [years] less, the war started in Lebanon\nوفعلاً كان بس ما تركنا بعد تلات سنين [أقل] كمان بلش الحرب بلبنان => Really, just after we left, after three years [less], the war started in Lebanon\nوفعلاً كان بس ما تركنا بعد تلات سنين أقل كمان [بلش] الحرب بلبنان => Really, just after we left, after three years less, the war [started] in Lebanon\nوفعلاً كان بس ما تركنا بعد تلات سنين أقل كمان بلش [الحرب] بلبنان => Really, just after we left, after three years less, [the war] started in Lebanon\nوفعلاً كان بس ما تركنا بعد تلات سنين أقل كمان بلش الحرب [بلبنان] => Really, just after we left, after three years less, the war started [in Lebanon]\n\n[والجالية] اليهودية كمان انجبرت تهرب وتروح وفي كم منهن انقتلوا انقتلوا => [And the] Jewish [community] was also forced to flee and go, and some of them were killed, were killed\nوالجالية [اليهودية] كمان انجبرت تهرب وتروح وفي كم منهن انقتلوا انقتلوا => And the [Jewish] community was also forced to flee and go, and some of them were killed, were killed\nوالجالية اليهودية [كمان] انجبرت تهرب وتروح وفي كم منهن انقتلوا انقتلوا => And the Jewish community was [also] forced to flee and go, and some of them were killed, were killed\nوالجالية اليهودية كمان [انجبرت] تهرب وتروح وفي كم منهن انقتلوا انقتلوا => was forced\nوالجالية اليهودية كمان انجبرت [تهرب] وتروح وفي كم منهن انقتلوا انقتلوا => And the Jewish community was also forced [to flee] and go, and some of them were killed, were killed\nوالجالية اليهودية كمان انجبرت تهرب [وتروح] وفي كم منهن انقتلوا انقتلوا => And the Jewish community was also forced to flee [and go], and some of them were killed, were killed\nوالجالية اليهودية كمان انجبرت تهرب وتروح وفي [كم] منهن انقتلوا انقتلوا => And the Jewish community was also forced to flee and go, and [some] of them were killed, were killed\nوالجالية اليهودية كمان انجبرت تهرب وتروح وفي كم [منهن] انقتلوا انقتلوا => And the Jewish community was also forced to flee and go, and some [of them] were killed, were killed\nوالجالية اليهودية كمان انجبرت تهرب وتروح وفي كم منهن [انقتلوا] انقتلوا => And the Jewish community was also forced to flee and go, and some of them [were killed], were killed\nوالجالية اليهودية كمان انجبرت تهرب وتروح وفي كم منهن انقتلوا [انقتلوا] => And the Jewish community was also forced to flee and go, and some of them were killed, [were killed]\n\n[كتير] منهن راح على أمريكا؟ => [Many] of them went to America?\nكتير [منهن] راح على أمريكا؟ => Many [of them] went to America?\nكتير منهن [راح] على أمريكا؟ => Many of them [went] to America?\nكتير منهن راح [على] أمريكا؟ => Many of them went [to] America?\nكتير منهن راح على [أمريكا]؟ => Many of them went to [America]?\n\n[كتير] منهن راحوا على أمريكا => [Many] of them went to America\nكتير [منهن] راحوا على أمريكا => Many [of them] went to America\nكتير منهن [راحوا] على أمريكا => Many of them [went] to America\nكتير منهن راحوا [على] أمريكا => Many of them went [to] America\nكتير منهن راحوا على [أمريكا] => Many of them went to [America]\n\n[راحوا] على مكسيك نحن أهلي راحوا على مكسيك => [They went] to Mexico, my family went to Mexico\nراحوا [على] مكسيك نحن أهلي راحوا على مكسيك => They went [to] Mexico, my family went to Mexico\nراحوا على [مكسيك] نحن أهلي راحوا على مكسيك => They went to [Mexico], my family went to Mexico\nراحوا على مكسيك [نحن] أهلي راحوا على مكسيك => we # translates to \"we\", often used as a filler or to emphasize the group in this dialect\nراحوا على مكسيك نحن [أهلي] راحوا على مكسيك => They went to Mexico, [my family] went to Mexico\nراحوا على مكسيك نحن أهلي [راحوا] على مكسيك => They went to Mexico, my family [went] to Mexico\nراحوا على مكسيك نحن أهلي راحوا [على] مكسيك => They went to Mexico, my family went [to] Mexico\nراحوا على مكسيك نحن أهلي راحوا على [مكسيك] => They went to Mexico, my family went to [Mexico]\n\n[في كتير منهن] راحوا لفرنسا ولإيطاليا ولكندا وفي كمان راحوا لإسرائيل => [Many of them] went to France, to Italy, and to Canada, and some also went to Israel\nفي كتير منهن [راحوا] لفرنسا ولإيطاليا ولكندا وفي كمان راحوا لإسرائيل => Many of them [went] to France, to Italy, and to Canada, and some also went to Israel\nفي كتير منهن راحوا [لفرنسا] ولإيطاليا ولكندا وفي كمان راحوا لإسرائيل => Many of them went [to France], to Italy, and to Canada, and some also went to Israel\nفي كتير منهن راحوا لفرنسا [ولإيطاليا] ولكندا وفي كمان راحوا لإسرائيل => to Italy # the prefix 'wa' acts like a comma separation in this context\nفي كتير منهن راحوا لفرنسا ولإيطاليا [ولكندا] وفي كمان راحوا لإسرائيل => Many of them went to France, to Italy, [and to Canada], and some also went to Israel\nفي كتير منهن راحوا لفرنسا ولإيطاليا ولكندا [وفي كمان] راحوا لإسرائيل => Many of them went to France, to Italy, and to Canada, [and some also] went to Israel\nفي كتير منهن راحوا لفرنسا ولإيطاليا ولكندا وفي كمان [راحوا] لإسرائيل => Many of them went to France, to Italy, and to Canada, and some also [went] to Israel\nفي كتير منهن راحوا لفرنسا ولإيطاليا ولكندا وفي كمان راحوا [لإسرائيل] => Many of them went to France, to Italy, and to Canada, and some also went [to Israel]\n\n[مشان] كنا لاجئين ما كان عنا جواز لبناني ولا جواز سوري => [Because] we were refugees, we didn't have a Lebanese passport or a Syrian passport\nمشان [كنا] لاجئين ما كان عنا جواز لبناني ولا جواز سوري => Because [we were] refugees, we didn't have a Lebanese passport or a Syrian passport\nمشان كنا [لاجئين] ما كان عنا جواز لبناني ولا جواز سوري => Because we were [refugees], we didn't have a Lebanese passport or a Syrian passport\nمشان كنا لاجئين [ما كان عنا] جواز لبناني ولا جواز سوري => Because we were refugees, [we didn't have] a Lebanese passport or a Syrian passport\nمشان كنا لاجئين ما كان عنا [جواز] لبناني ولا جواز سوري => Because we were refugees, we didn't have a Lebanese [passport] or a Syrian passport\nمشان كنا لاجئين ما كان عنا جواز [لبناني] ولا جواز سوري => Because we were refugees, we didn't have a [Lebanese] passport or a Syrian passport\nمشان كنا لاجئين ما كان عنا جواز لبناني [ولا] جواز سوري => Because we were refugees, we didn't have a Lebanese passport [or] a Syrian passport\nمشان كنا لاجئين ما كان عنا جواز لبناني ولا [جواز] سوري => Because we were refugees, we didn't have a Lebanese passport or a Syrian [passport]\nمشان كنا لاجئين ما كان عنا جواز لبناني ولا جواز [سوري] => Because we were refugees, we didn't have a Lebanese passport or a [Syrian] passport\n\n[كنا بيسمونا] ستايتلس لاجئين بلا دولة بلا دولة => [They called us] stateless, refugees without a state, without a state\nكنا بيسمونا [ستايتلس] لاجئين بلا دولة بلا دولة => They called us [stateless], refugees without a state, without a state\nكنا بيسمونا ستايتلس [لاجئين] بلا دولة بلا دولة => They called us stateless, [refugees] without a state, without a state\nكنا بيسمونا ستايتلس لاجئين [بلا] دولة بلا دولة => They called us stateless, refugees [without] a state, without a state\nكنا بيسمونا ستايتلس لاجئين بلا [دولة] بلا دولة => They called us stateless, refugees without [a state], without a state\nكنا بيسمونا ستايتلس لاجئين بلا دولة [بلا] دولة => They called us stateless, refugees without a state, [without] a state\nكنا بيسمونا ستايتلس لاجئين بلا دولة بلا [دولة] => They called us stateless, refugees without a state, without [a state]\n\n[وبس ما] تركنا لبنان مختوم كان عالمش جواز جواز رسمي => [And when] we left Lebanon, stamped on it was a passport, an official passport\nوبس ما [تركنا] لبنان مختوم كان عالمش جواز جواز رسمي => And when [we left] Lebanon, stamped on it was a passport, an official passport\nوبس ما تركنا [لبنان] مختوم كان عالمش جواز جواز رسمي => And when we left [Lebanon], stamped on it was a passport, an official passport\nوبس ما تركنا لبنان [مختوم] كان عالمش جواز جواز رسمي => And when we left Lebanon, [stamped] on it was a passport, an official passport\nوبس ما تركنا لبنان مختوم [كان] عالمش جواز جواز رسمي => And when we left Lebanon, stamped on it [was] a passport, an official passport\nوبس ما تركنا لبنان مختوم كان [عالمش] جواز جواز رسمي => on it\nوبس ما تركنا لبنان مختوم كان عالمش [جواز] جواز رسمي => And when we left Lebanon, stamped on it was [a passport], an official passport\nوبس ما تركنا لبنان مختوم كان عالمش جواز [جواز] رسمي => And when we left Lebanon, stamped on it was a passport, an official [passport]\nوبس ما تركنا لبنان مختوم كان عالمش جواز جواز [رسمي] => And when we left Lebanon, stamped on it was a passport, an [official] passport\n\n[ليسيه باسيه] كانوا بيسموها روحة بلا رجعة => [Laissez-passer], they called it a one-way trip\nليسيه باسيه [كانوا بيسموها] روحة بلا رجعة => Laissez-passer, [they called it] a one-way trip\nليسيه باسيه كانوا بيسموها [روحة] بلا رجعة => Laissez-passer, they called it a one-way [trip]\nليسيه باسيه كانوا بيسموها روحة [بلا رجعة] => Laissez-passer, they called it a [one-way] trip # \"بلا رجعة\" literally means \"without return,\" functioning as \"one-way\" here\n\n[واو] => [Wow]\n\n[يعني] كنا بنقدر نطلع من البلد بس ما بنقدر نرجع مشان كنا لاجئين => [I mean], we could leave the country but we couldn't return because we were refugees\nيعني [كنا بنقدر] نطلع من البلد بس ما بنقدر نرجع مشان كنا لاجئين => [we could] leave the country but we couldn't return because we were refugees\nيعني كنا بنقدر [نطلع] من البلد بس ما بنقدر نرجع مشان كنا لاجئين => we could [leave] the country but we couldn't return because we were refugees\nيعني كنا بنقدر نطلع من [البلد] بس ما بنقدر نرجع مشان كنا لاجئين => we could leave [the country] but we couldn't return because we were refugees\nيعني كنا بنقدر نطلع من البلد [بس] ما بنقدر نرجع مشان كنا لاجئين => we could leave the country [but] we couldn't return because we were refugees\nيعني كنا بنقدر نطلع من البلد بس [ما بنقدر] نرجع مشان كنا لاجئين => we could leave the country but [we couldn't] return because we were refugees\nيعني كنا بنقدر نطلع من البلد بس ما بنقدر [نرجع] مشان كنا لاجئين => we could leave the country but we couldn't [return] because we were refugees\nيعني كنا بنقدر نطلع من البلد بس ما بنقدر نرجع [مشان] كنا لاجئين => we could leave the country but we couldn't [because] we were refugees\nيعني كنا بنقدر نطلع من البلد بس ما بنقدر نرجع مشان [كنا] لاجئين => we could leave the country but we couldn't because [we were] refugees\nيعني كنا بنقدر نطلع من البلد بس ما بنقدر نرجع مشان كنا [لاجئين] => we could leave the country but we couldn't because we were [refugees]\n\n[يعني] الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن => [I mean], one suddenly became stateless, stateless, we were without, yes, we were exactly, we were stateless\nيعني [الواحد] صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن => I mean, [one] suddenly became stateless, stateless, we were without, yes, we were exactly, we were stateless\nيعني الواحد [صار] بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن => I mean, one suddenly [became] stateless, stateless, we were without, yes, we were exactly, we were stateless\nيعني الواحد صار [بلا وطن] فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن => I mean, one suddenly became [stateless], stateless, we were without, yes, we were exactly, we were stateless\nيعني الواحد صار بلا وطن [فجأة] بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن => I mean, one [suddenly] became stateless, stateless, we were without, yes, we were exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة [بلا وطن] كنا بلا صح كنا مضبوط كنا بلا وطن => I mean, one suddenly became stateless, [stateless], we were without, yes, we were exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن [كنا] بلا صح كنا مضبوط كنا بلا وطن => I mean, one suddenly became stateless, stateless, [we were] without, yes, we were exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا [بلا] صح كنا مضبوط كنا بلا وطن => I mean, one suddenly became stateless, stateless, we were [without], yes, we were exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا [صح] كنا مضبوط كنا بلا وطن => I mean, one suddenly became stateless, stateless, we were without, [yes], we were exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح [كنا] مضبوط كنا بلا وطن => I mean, one suddenly became stateless, stateless, we were without, yes, [we were] exactly, we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا [مضبوط] كنا بلا وطن => I mean, one suddenly became stateless, stateless, we were without, yes, we were [exactly], we were stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط [كنا] بلا وطن => I mean, one suddenly became stateless, stateless, we were without, yes, we were exactly, [we were] stateless\nيعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا [بلا وطن] => I mean, one suddenly became stateless, stateless, we were without, yes, we were exactly, we were [stateless]\n\n[والقصة] إنو نحن تركنا كمان سنة الـ 71 => [And the story] is that we left also in 1971\nوالقصة [إنو] نحن تركنا كمان سنة الـ 71 => And the story [is that] we left also in 1971\nوالقصة إنو [نحن] تركنا كمان سنة الـ 71 => And the story is that [we] left also in 1971\nوالقصة إنو نحن [تركنا] كمان سنة الـ 71 => And the story is that we [left] also in 1971\nوالقصة إنو نحن تركنا [كمان] سنة الـ 71 => And the story is that we left [also] in 1971\nوالقصة إنو نحن تركنا كمان [سنة الـ 71] => And the story is that we left also [in 1971]\n\n[مشان] قبل بكم شهر طلعت صورة أبي مع تلات الحاخامات => [Because] a few months before, a picture of my father came out with three rabbis\nمشان [قبل] بكم شهر طلعت صورة أبي مع تلات الحاخامات => Because a few months [before], a picture of my father came out with three rabbis\nمشان قبل [بكم شهر] طلعت صورة أبي مع تلات الحاخامات => Because [a few months] before, a picture of my father came out with three rabbis\nمشان قبل بكم شهر [طلعت] صورة أبي مع تلات الحاخامات => Because a few months before, a picture of my father [came out] with three rabbis\nمشان قبل بكم شهر طلعت [صورة] أبي مع تلات الحاخامات => Because a few months before, [a picture] of my father came out with three rabbis\nمشان قبل بكم شهر طلعت صورة [أبي] مع تلات الحاخامات => Because a few months before, a picture of [my father] came out with three rabbis\nمشان قبل بكم شهر طلعت صورة أبي [مع] تلات الحاخامات => Because a few months before, a picture of my father came out [with] three rabbis\nمشان قبل بكم شهر طلعت صورة أبي مع [تلات] الحاخامات => Because a few months before, a picture of my father came out with [three] rabbis\nمشان قبل بكم شهر طلعت صورة أبي مع تلات [الحاخامات] => Because a few months before, a picture of my father came out with three [rabbis]\n\n[كان في] تلات حاخامات تبع البيت الديني أبي كان واحد منهن => [There were] three rabbis from the religious house, my father was one of them\nكان في [تلات] حاخامات تبع البيت الديني أبي كان واحد منهن => There were [three] rabbis from the religious house, my father was one of them\nكان في تلات [حاخامات] تبع البيت الديني أبي كان واحد منهن => There were three [rabbis] from the religious house, my father was one of them\nكان في تلات حاخامات [تبع] البيت الديني أبي كان واحد منهن => there were three rabbis [from] the religious house\nكان في تلات حاخامات تبع [البيت] الديني أبي كان واحد منهن => There were three rabbis from the [house], my father was one of them\nكان في تلات حاخامات تبع البيت [الديني] أبي كان واحد منهن => There were three rabbis from the [religious] house, my father was one of them\nكان في تلات حاخامات تبع البيت الديني [أبي] كان واحد منهن => There were three rabbis from the religious house, [my father] was one of them\nكان في تلات حاخامات تبع البيت الديني أبي [كان] واحد منهن => There were three rabbis from the religious house, my father [was] one of them\nكان في تلات حاخامات تبع البيت الديني أبي كان [واحد] منهن => There were three rabbis from the religious house, my father was [one] of them\nكان في تلات حاخامات تبع البيت الديني أبي كان واحد [منهن] => There were three rabbis from the religious house, my father was one [of them]\n\n[طلعت] صورة ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل => A picture [came out] and under it was written here are the Zionists who help the State of Israel\nطلعت [صورة] ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل => [A picture] came out and under it was written here are the Zionists who help the State of Israel\nطلعت صورة [ومن] تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل => A picture came out [and] under it was written here are the Zionists who help the State of Israel\nطلعت صورة ومن [تحتها] مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل => A picture came out and [under it] was written here are the Zionists who help the State of Israel\nطلعت صورة ومن تحتها [مكتوب] هون الصهيونية اللي بيساعدوا دولة إسرائيل => A picture came out and under it [was written] here are the Zionists who help the State of Israel\nطلعت صورة ومن تحتها مكتوب [هون] الصهيونية اللي بيساعدوا دولة إسرائيل => A picture came out and under it was written [here are] the Zionists who help the State of Israel\nطلعت صورة ومن تحتها مكتوب هون [الصهيونية] اللي بيساعدوا دولة إسرائيل => A picture came out and under it was written here are [the Zionists] who help the State of Israel\nطلعت صورة ومن تحتها مكتوب هون الصهيونية [اللي] بيساعدوا دولة إسرائيل => A picture came out and under it was written here are the Zionists [who] help the State of Israel\nطلعت صورة ومن تحتها مكتوب هون الصهيونية اللي [بيساعدوا] دولة إسرائيل => A picture came out and under it was written here are the Zionists who [help] the State of Israel\nطلعت صورة ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا [دولة] إسرائيل => A picture came out and under it was written here are the Zionists who help [the State] of Israel\nطلعت صورة ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة [إسرائيل] => A picture came out and under it was written here are the Zionists who help the State [of Israel]\n\n[ومش كانت] كذب كلا كذب بس بتعرف عشان يبرروا يعني الخطوات => [And it wasn't] a lie, no lie, but you know, to justify, I mean, the steps\nومش كانت [كذب] كلا كذب بس بتعرف عشان يبرروا يعني الخطوات => And it wasn't [a lie], no lie, but you know, to justify, I mean, the steps\nومش كانت كذب [كلا] كذب بس بتعرف عشان يبرروا يعني الخطوات => And it wasn't a lie, [no] lie, but you know, to justify, I mean, the steps\nومش كانت كذب كلا [كذب] بس بتعرف عشان يبرروا يعني الخطوات => And it wasn't a lie, no [lie], but you know, to justify, I mean, the steps\nومش كانت كذب كلا كذب [بس] بتعرف عشان يبرروا يعني الخطوات => And it wasn't a lie, no lie, [but] you know, to justify, I mean, the steps\nومش كانت كذب كلا كذب بس [بتعرف] عشان يبرروا يعني الخطوات => And it wasn't a lie, no lie, but [you know], to justify, I mean, the steps\nومش كانت كذب كلا كذب بس بتعرف [عشان] يبرروا يعني الخطوات => And it wasn't a lie, no lie, but you know, [to] justify, I mean, the steps\nومش كانت كذب كلا كذب بس بتعرف عشان [يبرروا] يعني الخطوات => And it wasn't a lie, no lie, but you know, to [justify], I mean, the steps\nومش كانت كذب كلا كذب بس بتعرف عشان يبرروا [يعني] الخطوات => And it wasn't a lie, no lie, but you know, to justify, [I mean], the steps\nومش كانت كذب كلا كذب بس بتعرف عشان يبرروا يعني [الخطوات] => And it wasn't a lie, no lie, but you know, to justify, I mean, [the steps]\n\n[أيوا] بقا صار خطر كتير على كل حياتو أهلي أكيد وكل العائلة => [Yes], so it became very dangerous for his whole life, my family certainly, and the whole family\nأيوا [بقا] صار خطر كتير على كل حياتو أهلي أكيد وكل العائلة => Yes, [so] it became very dangerous for his whole life, my family certainly, and the whole family\nأيوا بقا [صار] خطر كتير على كل حياتو أهلي أكيد وكل العائلة => Yes, so [it became] very dangerous for his whole life, my family certainly, and the whole family\nأيوا بقا صار [خطر] كتير على كل حياتو أهلي أكيد وكل العائلة => Yes, so it became very [dangerous] for his whole life, my family certainly, and the whole family\nأيوا بقا صار خطر [كتير] على كل حياتو أهلي أكيد وكل العائلة => Yes, so it became [very] dangerous for his whole life, my family certainly, and the whole family\nأيوا بقا صار خطر كتير [على] كل حياتو أهلي أكيد وكل العائلة => Yes, so it became very dangerous [for] his whole life, my family certainly, and the whole family\nأيوا بقا صار خطر كتير على [كل] حياتو أهلي أكيد وكل العائلة => Yes, so it became very dangerous for his [whole] life, my family certainly, and the whole family\nأيوا بقا صار خطر كتير على كل [حياتو] أهلي أكيد وكل العائلة => his life\nأيوا بقا صار خطر كتير على كل حياتو [أهلي] أكيد وكل العائلة => [my family] # direct mapping because \"my family\" exists in English sentence\nأيوا بقا صار خطر كتير على كل حياتو أهلي [أكيد] وكل العائلة => Yes, so it became very dangerous for his whole life, my family [certainly], and the whole family\nأيوا بقا صار خطر كتير على كل حياتو أهلي أكيد [وكل] العائلة => Yes, so it became very dangerous for his whole life, my family certainly, [and the whole] family\nأيوا بقا صار خطر كتير على كل حياتو أهلي أكيد وكل [العائلة] => Yes, so it became very dangerous for his whole life, my family certainly, and the whole [family]\n\n[وكمان] عائلة تبع كل الجالية اليهودية فاتت بخطر => [And also] the family of the whole Jewish community came into danger\nوكمان [عائلة] تبع كل الجالية اليهودية فاتت بخطر => And also [the family] of the whole Jewish community came into danger\nوكمان عائلة [تبع] كل الجالية اليهودية فاتت بخطر => And also the family [of] the whole Jewish community came into danger\nوكمان عائلة تبع [كل] الجالية اليهودية فاتت بخطر => And also the family of [the whole] Jewish community came into danger\nوكمان عائلة تبع كل [الجالية] اليهودية فاتت بخطر => And also the family of the whole [community] came into danger\nوكمان عائلة تبع كل الجالية [اليهودية] فاتت بخطر => And also the family of the whole [Jewish] community came into danger\nوكمان عائلة تبع كل الجالية اليهودية [فاتت] بخطر => And also the family of the whole Jewish community [came into] danger\nوكمان عائلة تبع كل الجالية اليهودية فاتت [بخطر] => And also the family of the whole Jewish community came into [danger]\n\n[بس] ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير => [Because] if someone says the rabbis of the community are Zionists in an Arab country, I mean, very dangerous\nبس [ما] واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير => if\nبس ما [واحد] يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير => [someone]\nبس ما واحد [يقول] الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير => [says]\nبس ما واحد يقول [الحاخامات] تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير => [the rabbis]\nبس ما واحد يقول الحاخامات [تبع] الجالية هن صهيونية ببلد عربي يعني خطر كتير => [of]\nبس ما واحد يقول الحاخامات تبع [الجالية] هن صهيونية ببلد عربي يعني خطر كتير => [the community]\nبس ما واحد يقول الحاخامات تبع الجالية [هن] صهيونية ببلد عربي يعني خطر كتير => [are]\nبس ما واحد يقول الحاخامات تبع الجالية هن [صهيونية] ببلد عربي يعني خطر كتير => [Zionists]\nبس ما واحد يقول الحاخامات تبع الجالية هن صهيونية [ببلد] عربي يعني خطر كتير => in a country\nبس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد [عربي] يعني خطر كتير => [Arab]\nبس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي [يعني] خطر كتير => [I mean]\nبس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني [خطر] كتير => [dangerous]\nبس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر [كتير] => [very]\n\n[بقا] كمان جربنا نهرب من لبنان ووصلنا لمكسيك وعشنا بمكسيك => [So] we also tried to flee from Lebanon and we reached Mexico and we lived in Mexico\nبقا [كمان] جربنا نهرب من لبنان ووصلنا لمكسيك وعشنا بمكسيك => So we [also] tried to flee from Lebanon and we reached Mexico and we lived in Mexico\nبقا كمان [جربنا] نهرب من لبنان ووصلنا لمكسيك وعشنا بمكسيك => we tried\nبقا كمان جربنا [نهرب] من لبنان ووصلنا لمكسيك وعشنا بمكسيك => So we also tried [to flee] from Lebanon and we reached Mexico and we lived in Mexico\nبقا كمان جربنا نهرب [من] لبنان ووصلنا لمكسيك وعشنا بمكسيك => So we also tried to flee [from] Lebanon and we reached Mexico and we lived in Mexico\nبقا كمان جربنا نهرب من [لبنان] ووصلنا لمكسيك وعشنا بمكسيك => So we also tried to flee from [Lebanon] and we reached Mexico and we lived in Mexico\nبقا كمان جربنا نهرب من لبنان [ووصلنا] لمكسيك وعشنا بمكسيك => So we also tried to flee from Lebanon [and we reached] Mexico and we lived in Mexico\nبقا كمان جربنا نهرب من لبنان ووصلنا [لمكسيك] وعشنا بمكسيك => So we also tried to flee from Lebanon and we reached [Mexico] and we lived in Mexico\nبقا كمان جربنا نهرب من لبنان ووصلنا لمكسيك [وعشنا] بمكسيك => So we also tried to flee from Lebanon and we reached Mexico [and we lived] in Mexico\nبقا كمان جربنا نهرب من لبنان ووصلنا لمكسيك وعشنا [بمكسيك] => So we also tried to flee from Lebanon and we reached Mexico and we lived [in Mexico]\n\n[وإنت] كملت دراساتك؟ كملت دراساتي بمكسيك يونيفرسيتي => [And you] completed your studies? I completed my studies at Mexico University\nوإنت [كملت] دراساتك؟ كملت دراساتي بمكسيك يونيفرسيتي => And you [completed] your studies? I completed my studies at Mexico University\nوإنت كملت [دراساتك]؟ كملت دراساتي بمكسيك يونيفرسيتي => And you completed [your studies]? I completed my studies at Mexico University\nوإنت كملت دراساتك؟ [كملت] دراساتي بمكسيك يونيفرسيتي => And you completed your studies? [I completed] my studies at Mexico University\nوإنت كملت دراساتك؟ كملت [دراساتي] بمكسيك يونيفرسيتي => And you completed your studies? I completed [my studies] at Mexico University\nوإنت كملت دراساتك؟ كملت دراساتي [بمكسيك] يونيفرسيتي => And you completed your studies? I completed my studies [at Mexico] University\nوإنت كملت دراساتك؟ كملت دراساتي بمكسيك [يونيفرسيتي] => And you completed your studies? I completed my studies at Mexico [University]\n\n[و]كيف قررت إنك تكون طبيب دكتور؟ => [And] how did you decide to be a doctor?\nو[كيف] قررت إنك تكون طبيب دكتور؟ => And [how] did you decide to be a doctor?\nوكيف [قررت] إنك تكون طبيب دكتور؟ => And how [did you decide] to be a doctor?\nوكيف قررت [إنك] تكون طبيب دكتور؟ => that you\nوكيف قررت إنك [تكون] طبيب دكتور؟ => And how did you decide [to be] a doctor?\nوكيف قررت إنك تكون [طبيب] دكتور؟ => doctor\nوكيف قررت إنك تكون طبيب [دكتور]؟ => And how did you decide to be a [doctor]?\n\n[كل] حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب => [All] my life I wanted to be a doctor, from when I was five, six years old I wished to be a doctor\nكل [حياتي] كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب => All [my life] I wanted to be a doctor, from when I was five, six years old I wished to be a doctor\nكل حياتي [كنت بدي] أكون طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب => All my life [I wanted] to be a doctor, from when I was five, six years old I wished to be a doctor # كنت بدي functions as a single unit in Levantine Arabic for the past tense \"wanted\"\nكل حياتي كنت بدي [أكون] طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب => All my life I wanted [to be] a doctor, from when I was five, six years old I wished to be a doctor\nكل حياتي كنت بدي أكون [طبيب] من كان عمري خمس ست سنين أشتهي أكون طبيب => All my life I wanted to be [a doctor], from when I was five, six years old I wished to be a doctor\nكل حياتي كنت بدي أكون طبيب [من] كان عمري خمس ست سنين أشتهي أكون طبيب => All my life I wanted to be a doctor, [from] when I was five, six years old I wished to be a doctor\nكل حياتي كنت بدي أكون طبيب من [كان عمري] خمس ست سنين أشتهي أكون طبيب => All my life I wanted to be a doctor, from [when I was] five, six years old I wished to be a doctor # كان عمري (literally \"was my age\") maps to \"when I was\" in this context\nكل حياتي كنت بدي أكون طبيب من كان عمري [خمس] ست سنين أشتهي أكون طبيب => All my life I wanted to be a doctor, from when I was [five], six years old I wished to be a doctor\nكل حياتي كنت بدي أكون طبيب من كان عمري خمس [ست] سنين أشتهي أكون طبيب => All my life I wanted to be a doctor, from when I was five, [six] years old I wished to be a doctor\nكل حياتي كنت بدي أكون طبيب من كان عمري خمس ست [سنين] أشتهي أكون طبيب => All my life I wanted to be a doctor, from when I was five, six [years old] I wished to be a doctor\nكل حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين [أشتهي] أكون طبيب => All my life I wanted to be a doctor, from when I was five, six years old [I wished] to be a doctor\nكل حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي [أكون] طبيب => All my life I wanted to be a doctor, from when I was five, six years old I wished [to be] a doctor\nكل حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي أكون [طبيب] => All my life I wanted to be a doctor, from when I was five, six years old I wished to be [a doctor]\n\n[مشان] لما كنت صغير كنت أمرض كتير أزمة ورشح وهي => [Because] when I was small I got sick a lot, asthma and colds and such\nمشان [لما] كنت صغير كنت أمرض كتير أزمة ورشح وهي => Because [when] I was small I got sick a lot, asthma and colds and such\nمشان لما [كنت] صغير كنت أمرض كتير أزمة ورشح وهي => Because when [I was] small I got sick a lot, asthma and colds and such\nمشان لما كنت [صغير] كنت أمرض كتير أزمة ورشح وهي => Because when I was [small] I got sick a lot, asthma and colds and such\nمشان لما كنت صغير [كنت أمرض] كتير أزمة ورشح وهي => Because when I was small [I got sick] a lot, asthma and colds and such\nمشان لما كنت صغير كنت أمرض [كتير] أزمة ورشح وهي => Because when I was small I got sick [a lot], asthma and colds and such\nمشان لما كنت صغير كنت أمرض كتير [أزمة] ورشح وهي => Because when I was small I got sick a lot, [asthma] and colds and such\nمشان لما كنت صغير كنت أمرض كتير أزمة [ورشح] وهي => Because when I was small I got sick a lot, asthma [and colds] and such\nمشان لما كنت صغير كنت أمرض كتير أزمة ورشح [وهي] => Because when I was small I got sick a lot, asthma and colds [and such] # وهي literally means \"and she/it\" but functions here as \"and such\" or \"and so on\"\n\n[بقا] قلت لو في حكيم بالعائلة مو ضروري => [So] I said if there is a doctor in the family, it's not necessary\nبقا [قلت] لو في حكيم بالعائلة مو ضروري => So [I said] if there is a doctor in the family, it's not necessary\nبقا قلت [لو] في حكيم بالعائلة مو ضروري => So I said [if] there is a doctor in the family, it's not necessary\nبقا قلت لو [في] حكيم بالعائلة مو ضروري => So I said if [there is] a doctor in the family, it's not necessary\nبقا قلت لو في [حكيم] بالعائلة مو ضروري => So I said if there is [a doctor] in the family, it's not necessary\nبقا قلت لو في حكيم [بالعائلة] مو ضروري => So I said if there is a doctor [in the family], it's not necessary\nبقا قلت لو في حكيم بالعائلة [مو] ضروري => So I said if there is a doctor in the family, it's [not] necessary\nبقا قلت لو في حكيم بالعائلة مو [ضروري] => So I said if there is a doctor in the family, it's not [necessary]\n\n[بنص] الليل أهلي يطلعوا => [In the middle of] the night my family would go out\nبنص [الليل] أهلي يطلعوا => In the middle of [the night] my family would go out\nبنص الليل [أهلي] يطلعوا => In the middle of the night [my family] would go out\nبنص الليل أهلي [يطلعوا] => In the middle of the night my family [would go out]\n\n[يروحوا] يفتشوا على حكيم => [Go] look for a doctor\nيروحوا [يفتشوا على] حكيم => [look for] a doctor\nيروحوا يفتشوا على [حكيم] => [a doctor]\n\n[بهديك] الأيام ما كان في تليفونات ما كان في تكستينغ ما كان في هيدي => [In those] days there were no telephones, no texting, none of this\nبهديك [الأيام] ما كان في تليفونات ما كان في تكستينغ ما كان في هيدي => In those [days] there were no telephones, no texting, none of this\nبهديك الأيام [ما كان في] تليفونات ما كان في تكستينغ ما كان في هيدي => In those days [there were no] telephones, no texting, none of this\nبهديك الأيام ما كان في [تليفونات] ما كان في تكستينغ ما كان في هيدي => In those days there were no [telephones], no texting, none of this\nبهديك الأيام ما كان في تليفونات [ما كان في] تكستينغ ما كان في هيدي => In those days there were no telephones, [no] texting, none of this\nبهديك الأيام ما كان في تليفونات ما كان في [تكستينغ] ما كان في هيدي => In those days there were no telephones, no [texting], none of this\nبهديك الأيام ما كان في تليفونات ما كان في تكستينغ [ما كان في] هيدي => In those days there were no telephones, no texting, [none of] this\nبهديك الأيام ما كان في تليفونات ما كان في تكستينغ ما كان في [هيدي] => In those days there were no telephones, no texting, none of [this]\n\n[بقا] كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => [So] it was hard for one to go arrange a doctor, so I said if there is a doctor in the family, it's easier\nبقا [كان] صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => So [it was] hard for one to go arrange a doctor, so I said if there is a doctor in the family, it's easier\nبقا كان [صعب] واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => So it was [hard] for one to go arrange a doctor, so I said if there is a doctor in the family, it's easier\nبقا كان صعب [واحد] يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => So it was hard for [one] to go arrange a doctor, so I said if there is a doctor in the family, it's easier\nبقا كان صعب واحد [يروح] يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => So it was hard for one [to go] arrange a doctor, so I said if there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح [يدبر] الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون => So it was hard for one to go [arrange] a doctor, so I said if there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر [الحكيم] بقا قلت إذا كان في شي حكيم بالعائلة أهون => So it was hard for one to go arrange [a doctor], so I said if there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم [بقا] قلت إذا كان في شي حكيم بالعائلة أهون => So it was hard for one to go arrange a doctor, [so] I said if there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا [قلت] إذا كان في شي حكيم بالعائلة أهون => So it was hard for one to go arrange a doctor, so [I said] if there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا قلت [إذا] كان في شي حكيم بالعائلة أهون => So it was hard for one to go arrange a doctor, so I said [if] there is a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا [كان في] شي حكيم بالعائلة أهون => So it was hard for one to go arrange a doctor, so I said if [there is] a doctor in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في [شي حكيم] بالعائلة أهون => So it was hard for one to go arrange a doctor, so I said if there is [a doctor] in the family, it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم [بالعائلة] أهون => So it was hard for one to go arrange a doctor, so I said if there is a doctor [in the family], it's easier\nبقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة [أهون] => So it was hard for one to go arrange a doctor, so I said if there is a doctor in the family, it's [easier] # simpler than attaching the copula \"it is\" which is implicit in Arabic\n\n[أها] اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟ => [Ah], today you are a rabbi too, when did you start this journey, I mean with the rabbinate?\nأها [اليوم] إنت حاخام كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟ => Ah, [today] you are a rabbi too, when did you start this journey, I mean with the rabbinate?\nأها اليوم [إنت] حاخام كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟ => Ah, today [you] are a rabbi too, when did you start this journey, I mean with the rabbinate?\nأها اليوم إنت [حاخام] كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟ => Ah, today you are [a rabbi] too, when did you start this journey, I mean with the rabbinate?\nأها اليوم إنت حاخام [كمان] إيمتى بلشت هالمسيرة يعني مع الحاخامية؟ => Ah, today you are a rabbi [too], when did you start this journey, I mean with the rabbinate?\nأها اليوم إنت حاخام كمان [إيمتى] بلشت هالمسيرة يعني مع الحاخامية؟ => Ah, today you are a rabbi too, [when] did you start this journey, I mean with the rabbinate?\nأها اليوم إنت حاخام كمان إيمتى [بلشت] هالمسيرة يعني مع الحاخامية؟ => Ah, today you are a rabbi too, when [did you start] this journey, I mean with the rabbinate?\nأها اليوم إنت حاخام كمان إيمتى بلشت [هالمسيرة] يعني مع الحاخامية؟ => Ah, today you are a rabbi too, when did you start [this journey], I mean with the rabbinate?\nأها اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة [يعني] مع الحاخامية؟ => Ah, today you are a rabbi too, when did you start this journey, [I mean] with the rabbinate?\nأها اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة يعني [مع] الحاخامية؟ => Ah, today you are a rabbi too, when did you start this journey, I mean [with] the rabbinate?\nأها اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة يعني مع [الحاخامية]؟ => Ah, today you are a rabbi too, when did you start this journey, I mean with [the rabbinate]?\n\n[طيب] أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => [Well], my father was a rabbi and I come from a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب [أبي] حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, [my father] was a rabbi and I come from a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي [حاخام] وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was [a rabbi] and I come from a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام [وأنا] جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi [and I] come from a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا [جاي] من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I [come] from a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي [من] سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come [from] a chain of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من [سلسلة] حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from [a chain] of rabbis for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة [حاخاميم] من أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain [of rabbis] for more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم [من] أكتر من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis [for] more than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من [أكتر] من 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for [more] than 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر [من] 500 سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more [than] 500 years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من [500] سنة من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more than [500] years from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 [سنة] من سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more than 500 [years] from Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة [من] سفاراد من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more than 500 years [from] Sepharad, from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من [سفاراد] من الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more than 500 years from [Sepharad], from Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد [من] الأندلس => Well, my father was a rabbi and I come from a chain of rabbis for more than 500 years from Sepharad, [from] Andalusia\nطيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من [الأندلس] => Well, my father was a rabbi and I come from a chain of rabbis for more than 500 years from Sepharad, from [Andalusia]\n\n[يعني] أصلي من الأندلس أصل عائلتي من 500 سنة من الأندلس => [I mean], I am originally from Andalusia, my family origin is 500 years from Andalusia\nيعني [أصلي] من الأندلس أصل عائلتي من 500 سنة من الأندلس => I mean, [I am originally] from Andalusia, my family origin is 500 years from Andalusia\nيعني أصلي [من] الأندلس أصل عائلتي من 500 سنة من الأندلس => I mean, I am originally [from] Andalusia, my family origin is 500 years from Andalusia\nيعني أصلي من [الأندلس] أصل عائلتي من 500 سنة من الأندلس => I mean, I am originally from [Andalusia], my family origin is 500 years from Andalusia\nيعني أصلي من الأندلس [أصل] عائلتي من 500 سنة من الأندلس => I mean, I am originally from Andalusia, my family [origin] is 500 years from Andalusia\nيعني أصلي من الأندلس أصل [عائلتي] من 500 سنة من الأندلس => I mean, I am originally from Andalusia, [my family] origin is 500 years from Andalusia\nيعني أصلي من الأندلس أصل عائلتي من [500] سنة من الأندلس => I mean, I am originally from Andalusia, my family origin is [500] years from Andalusia\nيعني أصلي من الأندلس أصل عائلتي من 500 [سنة] من الأندلس => I mean, I am originally from Andalusia, my family origin is 500 [years] from Andalusia\nيعني أصلي من الأندلس أصل عائلتي من 500 سنة [من] الأندلس => I mean, I am originally from Andalusia, my family origin is 500 years [from] Andalusia\nيعني أصلي من الأندلس أصل عائلتي من 500 سنة من [الأندلس] => I mean, I am originally from Andalusia, my family origin is 500 years from [Andalusia]\n\n[كان في] حاخام تقريباً بكل جيل بقا أبي كان حاخام جيل بعد جيل => [There was] a rabbi in almost every generation, so my father was a rabbi, generation after generation\nكان في [حاخام] تقريباً بكل جيل بقا أبي كان حاخام جيل بعد جيل => There was [a rabbi] in almost every generation, so my father was a rabbi, generation after generation\nكان في حاخام [تقريباً] بكل جيل بقا أبي كان حاخام جيل بعد جيل => There was a rabbi in [almost] every generation, so my father was a rabbi, generation after generation\nكان في حاخام تقريباً [بكل] جيل بقا أبي كان حاخام جيل بعد جيل => There was a rabbi in [every] generation, so my father was a rabbi, generation after generation\nكان في حاخام تقريباً بكل [جيل] بقا أبي كان حاخام جيل بعد جيل => There was a rabbi in almost every [generation], so my father was a rabbi, generation after generation\nكان في حاخام تقريباً بكل جيل [بقا] أبي كان حاخام جيل بعد جيل => There was a rabbi in almost every generation, [so] my father was a rabbi, generation after generation\nكان في حاخام تقريباً بكل جيل بقا [أبي] كان حاخام جيل بعد جيل => There was a rabbi in almost every generation, so [my father] was a rabbi, generation after generation\nكان في حاخام تقريباً بكل جيل بقا أبي [كان] حاخام جيل بعد جيل => There was a rabbi in almost every generation, so my father [was] a rabbi, generation after generation\nكان في حاخام تقريباً بكل جيل بقا أبي كان [حاخام] جيل بعد جيل => There was a rabbi in almost every generation, so my father was [a rabbi], generation after generation\nكان في حاخام تقريباً بكل جيل بقا أبي كان حاخام [جيل بعد جيل] => There was a rabbi in almost every generation, so my father was a rabbi, [generation after generation]\n\n[جيل] بعد جيل كانوا حاخاميم بقا قلت لازم => [Generation] after generation they were rabbis, so I said I must\nجيل [بعد] جيل كانوا حاخاميم بقا قلت لازم => Generation [after] generation they were rabbis, so I said I must\nجيل بعد [جيل] كانوا حاخاميم بقا قلت لازم => Generation after [generation] they were rabbis, so I said I must\nجيل بعد جيل [كانوا] حاخاميم بقا قلت لازم => Generation after generation [they were] rabbis, so I said I must\nجيل بعد جيل كانوا [حاخاميم] بقا قلت لازم => Generation after generation they were [rabbis], so I said I must\nجيل بعد جيل كانوا حاخاميم [بقا] قلت لازم => Generation after generation they were rabbis, [so] I said I must\nجيل بعد جيل كانوا حاخاميم بقا [قلت] لازم => Generation after generation they were rabbis, so [I said] I must\nجيل بعد جيل كانوا حاخاميم بقا قلت [لازم] => Generation after generation they were rabbis, so I said [I must]\n\n[أنا] أكون كمان حاخام => [I] be a rabbi too\nأنا [أكون] كمان حاخام => I [be] a rabbi too\nأنا أكون [كمان] حاخام => I be a rabbi [too]\nأنا أكون كمان [حاخام] => I be [a rabbi] too\n\n[مشان] بدي أكمل هالسلسلة => [Because] I want to complete this chain\nمشان [بدي] أكمل هالسلسلة => Because [I want] to complete this chain\nمشان بدي [أكمل] هالسلسلة => Because I want [to complete] this chain\nمشان بدي أكمل [هالسلسلة] => Because I want to complete [this chain]\n\n[الحاخاميم] اللي في عائلتي وبس بعدين وبس بدي أشتغل كطب => [The rabbis] who are in my family, and then, and then I want to work as a doctor\nالحاخاميم [اللي] في عائلتي وبس بعدين وبس بدي أشتغل كطب => The rabbis [who] are in my family, and then, and then I want to work as a doctor\nالحاخاميم اللي [في] عائلتي وبس بعدين وبس بدي أشتغل كطب => The rabbis who are [in] my family, and then, and then I want to work as a doctor\nالحاخاميم اللي في [عائلتي] وبس بعدين وبس بدي أشتغل كطب => The rabbis who are in [my family], and then, and then I want to work as a doctor\nالحاخاميم اللي في عائلتي [وبس] بعدين وبس بدي أشتغل كطب => and that's it, only\nالحاخاميم اللي في عائلتي وبس [بعدين] وبس بدي أشتغل كطب => The rabbis who are in my family, and [then], and then I want to work as a doctor\nالحاخاميم اللي في عائلتي وبس بعدين وبس [بدي] أشتغل كطب => The rabbis who are in my family, and then, and then [I want] to work as a doctor\nالحاخاميم اللي في عائلتي وبس بعدين وبس بدي [أشتغل] كطب => The rabbis who are in my family, and then, and then I want [to work] as a doctor\nالحاخاميم اللي في عائلتي وبس بعدين وبس بدي أشتغل [كطب] => The rabbis who are in my family, and then, and then I want to work [as a doctor] # literally \"as medicine\", used here to mean \"as a doctor\" or \"in medicine\"\n\n[بس] حاخام بس لأتعلم وأتعرف وأعرف كل قوانين الدين => [But] a rabbi, just to learn and know and know all the laws of the religion\nبس [حاخام] بس لأتعلم وأتعرف وأعرف كل قوانين الدين => But [a rabbi], just to learn and know and know all the laws of the religion\nبس حاخام [بس] لأتعلم وأتعرف وأعرف كل قوانين الدين => But a rabbi, [just] to learn and know and know all the laws of the religion\nبس حاخام بس [لأتعلم] وأتعرف وأعرف كل قوانين الدين => But a rabbi, just [to learn] and know and know all the laws of the religion\nبس حاخام بس لأتعلم [وأتعرف] وأعرف كل قوانين الدين => But a rabbi, just to learn [and know] and know all the laws of the religion\nبس حاخام بس لأتعلم وأتعرف [وأعرف] كل قوانين الدين => But a rabbi, just to learn and know [and know] all the laws of the religion\nبس حاخام بس لأتعلم وأتعرف وأعرف [كل] قوانين الدين => But a rabbi, just to learn and know and know [all] the laws of the religion\nبس حاخام بس لأتعلم وأتعرف وأعرف كل [قوانين] الدين => But a rabbi, just to learn and know and know all [the laws] of the religion\nبس حاخام بس لأتعلم وأتعرف وأعرف كل قوانين [الدين] => But a rabbi, just to learn and know and know all the laws of [the religion]\n\n[اليوم] إنت موجود هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة => [Today] you are here in the UAE and there is a new association, a new position, a new organization\nاليوم [إنت] موجود هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة => Today [you] are here in the UAE and there is a new association, a new position, a new organization\nاليوم إنت [موجود] هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة => present, here\nاليوم إنت موجود [هون] في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة => Today you are [here] in the UAE and there is a new association, a new position, a new organization\nاليوم إنت موجود هون [في] الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة => Today you are here [in] the UAE and there is a new association, a new position, a new organization\nاليوم إنت موجود هون في [الإمارات] وهناك رابطة جديدة منصب جديد منظمة جديدة => Today you are here in [the UAE] and there is a new association, a new position, a new organization\nاليوم إنت موجود هون في الإمارات [وهناك] رابطة جديدة منصب جديد منظمة جديدة => Today you are here in the UAE [and there is] a new association, a new position, a new organization\nاليوم إنت موجود هون في الإمارات وهناك [رابطة] جديدة منصب جديد منظمة جديدة => Today you are here in the UAE and there is a new [association], a new position, a new organization\nاليوم إنت موجود هون في الإمارات وهناك رابطة [جديدة] منصب جديد منظمة جديدة => Today you are here in the UAE and there is a [new] association, a new position, a new organization\nاليوم إنت موجود هون في الإمارات وهناك رابطة جديدة [منصب] جديد منظمة جديدة => Today you are here in the UAE and there is a new association, a new [position], a new organization\nاليوم إنت موجود هون في الإمارات وهناك رابطة جديدة منصب [جديد] منظمة جديدة => Today you are here in the UAE and there is a new association, a [new] position, a new organization\nاليوم إنت موجود هون في الإمارات وهناك رابطة جديدة منصب جديد [منظمة] جديدة => Today you are here in the UAE and there is a new association, a new position, a new [organization]\nاليوم إنت موجود هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة [جديدة] => Today you are here in the UAE and there is a new association, a new position, a [new] organization\n\n[ممكن] تحكي شو اسمها أولاً؟ => [Can you] tell us what its name is first?\nممكن [تحكي] شو اسمها أولاً؟ => Can you [tell us] what its name is first?\nممكن تحكي [شو] اسمها أولاً؟ => Can you tell us [what] its name is first?\nممكن تحكي شو [اسمها] أولاً؟ => its name\nممكن تحكي شو اسمها [أولاً]؟ => Can you tell us what its name is [first]?\n\n[بقلك] بقا بس ما وصلت أنا لهون بنوفمبر عام 2020 => [I'll tell you], when I arrived here in November 2020\nبقلك [بقا] بس ما وصلت أنا لهون بنوفمبر عام 2020 => then, anyway\nبقلك بقا [بس ما] وصلت أنا لهون بنوفمبر عام 2020 => I'll tell you, [when] I arrived here in November 2020\nبقلك بقا بس ما [وصلت] أنا لهون بنوفمبر عام 2020 => I'll tell you, when I [arrived] here in November 2020\nبقلك بقا بس ما وصلت [أنا] لهون بنوفمبر عام 2020 => I'll tell you, when [I] arrived here in November 2020\nبقلك بقا بس ما وصلت أنا [لهون] بنوفمبر عام 2020 => I'll tell you, when I arrived [here] in November 2020\nبقلك بقا بس ما وصلت أنا لهون [بنوفمبر] عام 2020 => I'll tell you, when I arrived here [in November] 2020\nبقلك بقا بس ما وصلت أنا لهون بنوفمبر [عام] 2020 => year\nبقلك بقا بس ما وصلت أنا لهون بنوفمبر عام [2020] => I'll tell you, when I arrived here in November [2020]\n\n[انتبهت] إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة => [I noticed] that first there is also a Jewish community in Bahrain, small but there, about 140 years\nانتبهت [إنو] في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة => I noticed [that] first there is also a Jewish community in Bahrain, small but there, about 140 years\nانتبهت إنو في [أول شي] كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة => I noticed that [first] there is also a Jewish community in Bahrain, small but there, about 140 years\nانتبهت إنو [في] أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة => I noticed that first [there is] also a Jewish community in Bahrain, small but there, about 140 years\nانتبهت إنو في أول شي [كمان] جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة => I noticed that first there is [also] a Jewish community in Bahrain, small but there, about 140 years\nانتبهت إنو في أول شي كمان [جالية] يهودية بالبحرين صغيرة بس في وإلا 140 سنة => I noticed that first there is also a [community] in Bahrain, small but there, about 140 years\nانتبهت إنو في أول شي كمان جالية [يهودية] بالبحرين صغيرة بس في وإلا 140 سنة => I noticed that first there is also a [Jewish] community in Bahrain, small but there, about 140 years\nانتبهت إنو في أول شي كمان جالية يهودية [بالبحرين] صغيرة بس في وإلا 140 سنة => I noticed that first there is also a Jewish community [in Bahrain], small but there, about 140 years\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين [صغيرة] بس في وإلا 140 سنة => I noticed that first there is also a Jewish community in Bahrain, [small] but there, about 140 years\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة [بس] في وإلا 140 سنة => I noticed that first there is also a Jewish community in Bahrain, small [but] there, about 140 years\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس [في] وإلا 140 سنة => I noticed that first there is also a Jewish community in Bahrain, small but [there], about 140 years\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في [وإلا] 140 سنة => about, roughly\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا [140] سنة => I noticed that first there is also a Jewish community in Bahrain, small but there, about [140] years\nانتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 [سنة] => I noticed that first there is also a Jewish community in Bahrain, small but there, about 140 [years]\n\n[و]كمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت => [And] I also noticed there are Jews in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait\nو[كمان] انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت => And I [also] noticed there are Jews in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait\nوكمان [انتبهت] في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت => And I also [noticed] there are Jews in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait\nوكمان انتبهت [في] يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت => And I also noticed [there are] Jews in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait\nوكمان انتبهت في [يهود] بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت => And I also noticed there are [Jews] in the Gulf cities, I mean in Saudi, Oman, Qatar, Kuwait\nوكمان انتبهت في يهود [بالمدينات] بالخليج يعني بسعودية بعمان بقطر بالكويت => cities\nوكمان انتبهت في يهود بالمدينات [بالخليج] يعني بسعودية بعمان بقطر بالكويت => in the Gulf\nوكمان انتبهت في يهود بالمدينات بالخليج [يعني] بسعودية بعمان بقطر بالكويت => And I also noticed there are Jews in the Gulf cities, [I mean] in Saudi, Oman, Qatar, Kuwait\nوكمان انتبهت في يهود بالمدينات بالخليج يعني [بسعودية] بعمان بقطر بالكويت => And I also noticed there are Jews in the Gulf cities, I mean [in Saudi], Oman, Qatar, Kuwait\nوكمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية [بعمان] بقطر بالكويت => in Oman\nوكمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان [بقطر] بالكويت => in Qatar\nوكمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر [بالكويت] => in Kuwait\n\n[هن] رجال أعمال معظمهم؟ => [Are they] mostly businessmen?\nهن [رجال أعمال] معظمهم؟ => Are they mostly [businessmen]?\nهن رجال أعمال [معظمهم]؟ => Are they [mostly] businessmen?\n\n[رجال أعمال] رجال يعني علماء كمان وما عندن جالية ومنن منظمين كجالية => [Businessmen], men, I mean scholars too, and they don't have a community and they aren't organized as a community\nرجال أعمال [رجال] يعني علماء كمان وما عندن جالية ومنن منظمين كجالية => Businessmen, [men], I mean scholars too, and they don't have a community and they aren't organized as a community\nرجال أعمال رجال [يعني] علماء كمان وما عندن جالية ومنن منظمين كجالية => Businessmen, men, [I mean] scholars too, and they don't have a community and they aren't organized as a community\nرجال أعمال رجال يعني [علماء] كمان وما عندن جالية ومنن منظمين كجالية => Businessmen, men, I mean [scholars] too, and they don't have a community and they aren't organized as a community\nرجال أعمال رجال يعني علماء [كمان] وما عندن جالية ومنن منظمين كجالية => Businessmen, men, I mean scholars [too], and they don't have a community and they aren't organized as a community\nرجال أعمال رجال يعني علماء كمان [و]ما عندن جالية ومنن منظمين كجالية => Businessmen, men, I mean scholars too, [and] they don't have a community and they aren't organized as a community\nرجال أعمال رجال يعني علماء كمان و[ما عندن] جالية ومنن منظمين كجالية => Businessmen, men, I mean scholars too, and [they don't have] a community and they aren't organized as a community\nرجال أعمال رجال يعني علماء كمان وما عندن [جالية] ومنن منظمين كجالية => Businessmen, men, I mean scholars too, and they don't have [a community] and they aren't organized as a community\nرجال أعمال رجال يعني علماء كمان وما عندن جالية [و]منن منظمين كجالية => Businessmen, men, I mean scholars too, and they don't have a community [and] they aren't organized as a community\nرجال أعمال رجال يعني علماء كمان وما عندن جالية و[منن] منظمين كجالية => they aren't # Levantine negation (mannon)\nرجال أعمال رجال يعني علماء كمان وما عندن جالية ومنن [منظمين] كجالية => Businessmen, men, I mean scholars too, and they don't have a community and they aren't [organized] as a community\nرجال أعمال رجال يعني علماء كمان وما عندن جالية ومنن منظمين [كجالية] => Businessmen, men, I mean scholars too, and they don't have a community and they aren't organized [as a community]\n\n[بقا] افتكرت قلت لازم نساعدن لازم نقربن لعنا => [So] I thought, I said we must help them, we must bring them closer to us\nبقا [افتكرت] قلت لازم نساعدن لازم نقربن لعنا => So [I thought], I said we must help them, we must bring them closer to us\nبقا افتكرت [قلت] لازم نساعدن لازم نقربن لعنا => So I thought, [I said] we must help them, we must bring them closer to us\nبقا افتكرت قلت [لازم] نساعدن لازم نقربن لعنا => So I thought, I said [we must] help them, we must bring them closer to us\nبقا افتكرت قلت لازم [نساعدن] لازم نقربن لعنا => So I thought, I said we must [help them], we must bring them closer to us\nبقا افتكرت قلت لازم نساعدن [لازم] نقربن لعنا => So I thought, I said we must help them, [we must] bring them closer to us\nبقا افتكرت قلت لازم نساعدن لازم [نقربن] لعنا => So I thought, I said we must help them, we must [bring them closer] to us\nبقا افتكرت قلت لازم نساعدن لازم نقربن [لعنا] => So I thought, I said we must help them, we must bring them closer [to us] # لعنا is \"to us\" (literally at us/to our place)\n\n[ونحن] على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل جديد => [And we] are anyway in the Gulf, how do we say, starting a new life and starting a new future\nونحن [على كل حال] بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل جديد => And we are [anyway] in the Gulf, how do we say, starting a new life and starting a new future\nونحن على كل حال [بالخليج] عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل جديد => And we are anyway [in the Gulf], how do we say, starting a new life and starting a new future\nونحن على كل حال بالخليج عم [كيف عم نقول] عم نبلش حياة جديدة وعم نبلش مستقبل جديد => And we are anyway in the Gulf, [how do we say], starting a new life and starting a new future\nونحن على كل حال بالخليج عم كيف عم نقول [عم نبلش] حياة جديدة وعم نبلش مستقبل جديد => And we are anyway in the Gulf, how do we say, [starting] a new life and starting a new future\nونحن على كل حال بالخليج عم كيف عم نقول عم نبلش [حياة] جديدة وعم نبلش مستقبل جديد => And we are anyway in the Gulf, how do we say, starting a [life] and starting a new future\nونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة [جديدة] وعم نبلش مستقبل جديد => And we are anyway in the Gulf, how do we say, starting a [new] life and starting a new future\nونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة [وعم نبلش] مستقبل جديد => And we are anyway in the Gulf, how do we say, starting a new life [and starting] a new future\nونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش [مستقبل] جديد => And we are anyway in the Gulf, how do we say, starting a new life and starting a [future]\nونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل [جديد] => And we are anyway in the Gulf, how do we say, starting a new life and starting a [new] future\n\n[بكل] هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين => [In all] this Gulf region, so I coordinated and asked and with the Jewish community in Bahrain\nبكل [هالمنطقة] تبع الخليج بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين => this region\nبكل هالمنطقة [تبع] الخليج بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين => of, belonging to\nبكل هالمنطقة تبع [الخليج] بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين => In all this [Gulf] region, so I coordinated and asked and with the Jewish community in Bahrain\nبكل هالمنطقة تبع الخليج [بقا] تفاهمت وسألت ومع الجالية اليهودية بالبحرين => In all this Gulf region, [so] I coordinated and asked and with the Jewish community in Bahrain\nبكل هالمنطقة تبع الخليج بقا [تفاهمت] وسألت ومع الجالية اليهودية بالبحرين => In all this Gulf region, so [I coordinated] and asked and with the Jewish community in Bahrain\nبكل هالمنطقة تبع الخليج بقا تفاهمت [وسألت] ومع الجالية اليهودية بالبحرين => In all this Gulf region, so I coordinated [and asked] and with the Jewish community in Bahrain\nبكل هالمنطقة تبع الخليج بقا تفاهمت وسألت [ومع] الجالية اليهودية بالبحرين => In all this Gulf region, so I coordinated and asked [and with] the Jewish community in Bahrain\nبكل هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع [الجالية] اليهودية بالبحرين => the community\nبكل هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع الجالية [اليهودية] بالبحرين => In all this Gulf region, so I coordinated and asked and with the [Jewish] community in Bahrain\nبكل هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع الجالية اليهودية [بالبحرين] => In all this Gulf region, so I coordinated and asked and with the Jewish community [in Bahrain]\n\n[سيد] إبراهيم نونو وهدى نونو قلنا لازم نبلش => [Mr.] Ibrahim Nono and Huda Nono, we said we must start\nسيد [إبراهيم] نونو وهدى نونو قلنا لازم نبلش => Mr. [Ibrahim] Nono and Huda Nono, we said we must start\nسيد إبراهيم [نونو] وهدى نونو قلنا لازم نبلش => Mr. Ibrahim [Nono] and Huda Nono, we said we must start\nسيد إبراهيم نونو [و]هدى نونو قلنا لازم نبلش => Mr. Ibrahim Nono [and] Huda Nono, we said we must start\nسيد إبراهيم نونو و[هدى] نونو قلنا لازم نبلش => Mr. Ibrahim Nono and [Huda] Nono, we said we must start\nسيد إبراهيم نونو وهدى [نونو] قلنا لازم نبلش => Mr. Ibrahim Nono and Huda [Nono], we said we must start\nسيد إبراهيم نونو وهدى نونو [قلنا] لازم نبلش => Mr. Ibrahim Nono and Huda Nono, [we said] we must start\nسيد إبراهيم نونو وهدى نونو قلنا [لازم] نبلش => Mr. Ibrahim Nono and Huda Nono, we said [we must] start\nسيد إبراهيم نونو وهدى نونو قلنا لازم [نبلش] => Mr. Ibrahim Nono and Huda Nono, we said we must [start]\n\n[رابطة] تنقدر نساعد اليهود => [An association] that can help the Jews\nرابطة [تنقدر] نساعد اليهود => An association [that can] help the Jews\nرابطة تنقدر [نساعد] اليهود => An association that can [help] the Jews\nرابطة تنقدر نساعد [اليهود] => An association that can help [the Jews]\n\n[الساكنين] بغير بلاد => [Living] in other countries\nالساكنين [بغير] بلاد => Living [in other] countries\nالساكنين بغير [بلاد] => Living in other [countries]\n\n[ونقدر] نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة => [And we can] help each other, because if there is a community that doesn't have, it can't do a thing like this\nونقدر [نساعد] بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة => And we can [help] each other, because if there is a community that doesn't have, it can't do a thing like this\nونقدر نساعد [بعضنا] مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة => And we can help [each other], because if there is a community that doesn't have, it can't do a thing like this\nونقدر نساعد بعضنا [مشان] إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة => And we can help each other, [because] if there is a community that doesn't have, it can't do a thing like this\nونقدر نساعد بعضنا مشان [إذا] في جالية ما عندها ما بتقدر تساوي حسبي شغلة => And we can help each other, because [if] there is a community that doesn't have, it can't do a thing like this\nونقدر نساعد بعضنا مشان إذا [في] جالية ما عندها ما بتقدر تساوي حسبي شغلة => And we can help each other, because if [there is] a community that doesn't have, it can't do a thing like this\nونقدر نساعد بعضنا مشان إذا في [جالية] ما عندها ما بتقدر تساوي حسبي شغلة => And we can help each other, because if there is [a community] that doesn't have, it can't do a thing like this\nونقدر نساعد بعضنا مشان إذا في جالية [ما عندها] ما بتقدر تساوي حسبي شغلة => And we can help each other, because if there is a community [that doesn't have], it can't do a thing like this\nونقدر نساعد بعضنا مشان إذا في جالية ما عندها [ما بتقدر] تساوي حسبي شغلة => And we can help each other, because if there is a community that doesn't have, [it can't] do a thing like this\nونقدر نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر [تساوي] حسبي شغلة => And we can help each other, because if there is a community that doesn't have, it can't [do] a thing like this\nونقدر نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي [حسبي] شغلة => like this # interpreted as a filler modifying the noun\nونقدر نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي [شغلة] => And we can help each other, because if there is a community that doesn't have, it can't do [a thing] like this\n\n[نحن] بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في الخليج => [We] can help them, and so we started an association, we named it the Association of Jewish Communities in the Gulf\nنحن [بنقدر] نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في الخليج => [can]\nنحن بنقدر [نساعدن] وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في الخليج => We can [help them], and so we started an association, we named it the Association of Jewish Communities in the Gulf\nنحن بنقدر نساعدن وهي و[بلشنا] رابطة سميناها رابطة الجاليات اليهودية في الخليج => We can help them, and so we [started] an association, we named it the Association of Jewish Communities in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا [رابطة] سميناها رابطة الجاليات اليهودية في الخليج => We can help them, and so we started [an association], we named it the Association of Jewish Communities in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة [سميناها] رابطة الجاليات اليهودية في الخليج => We can help them, and so we started an association, [we named it] the Association of Jewish Communities in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة سميناها [رابطة] الجاليات اليهودية في الخليج => We can help them, and so we started an association, we named it [the Association] of Jewish Communities in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة [الجاليات] اليهودية في الخليج => We can help them, and so we started an association, we named it the Association of [Communities] in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات [اليهودية] في الخليج => We can help them, and so we started an association, we named it the Association of [Jewish] Communities in the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية [في] الخليج => We can help them, and so we started an association, we named it the Association of Jewish Communities [in] the Gulf\nنحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في [الخليج] => We can help them, and so we started an association, we named it the Association of Jewish Communities in [the Gulf]\n\n[بلشناها] بفبراير 2021 => [We started it] in February 2021\nبلشناها [بفبراير] 2021 => We started it [in February] 2021\nبلشناها بفبراير [2021] => We started it in February [2021]\n\n[واو] جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية => [Wow], new, I mean new, or now we will celebrate our anniversary next Friday\nواو [جديدة] يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية => Wow, [new], I mean new, or now we will celebrate our anniversary next Friday\nواو جديدة [يعني] جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية => Wow, new, [I mean] new, or now we will celebrate our anniversary next Friday\nواو جديدة يعني [جديدة] وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية => Wow, new, I mean [new], or now we will celebrate our anniversary next Friday\nواو جديدة يعني جديدة [وإلا] هلا بدنا نساوي عيدنا السنة الجمعة الجاية => Wow, new, I mean new, [or] now we will celebrate our anniversary next Friday\nواو جديدة يعني جديدة وإلا [هلا] بدنا نساوي عيدنا السنة الجمعة الجاية => Wow, new, I mean new, or [now] we will celebrate our anniversary next Friday\nواو جديدة يعني جديدة وإلا هلا [بدنا] نساوي عيدنا السنة الجمعة الجاية => Wow, new, I mean new, or now [we will] celebrate our anniversary next Friday\nواو جديدة يعني جديدة وإلا هلا بدنا [نساوي] عيدنا السنة الجمعة الجاية => Wow, new, I mean new, or now we will [celebrate] our anniversary next Friday\nواو جديدة يعني جديدة وإلا هلا بدنا نساوي [عيدنا] السنة الجمعة الجاية => Wow, new, I mean new, or now we will celebrate [our anniversary] next Friday\nواو جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا [السنة] الجمعة الجاية => year # literally 'the year', referring to this year's anniversary\nواو جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة [الجمعة] الجاية => Wow, new, I mean new, or now we will celebrate our anniversary next [Friday]\nواو جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة [الجاية] => Wow, new, I mean new, or now we will celebrate our anniversary [next] Friday\n\n[أنا] كمان جيت هون من تلات سنين => [I] also came here three years ago\nأنا [كمان] جيت هون من تلات سنين => I [also] came here three years ago\nأنا كمان [جيت] هون من تلات سنين => I also [came] here three years ago\nأنا كمان جيت [هون] من تلات سنين => I also came [here] three years ago\nأنا كمان جيت هون [من] تلات سنين => I also came here three years [ago]\nأنا كمان جيت هون من [تلات] سنين => I also came here [three] years ago\nأنا كمان جيت هون من تلات [سنين] => I also came here three [years] ago\n\n[كنت] عم بحكيلك => [I was] telling you\nكنت [عم بحكيلك] => I was [telling you]\n\n[جبنا] التوراة سفر توراة للجالية هون وتعرفت عليهن عمل كان بعيد بوريم => [We brought] the Torah, a Torah scroll for the community here and got to know them, it was around Purim\nجبنا [التوراة] سفر توراة للجالية هون وتعرفت عليهن عمل كان بعيد بوريم => We brought [the Torah], a Torah scroll for the community here and got to know them, it was around Purim\nجبنا التوراة [سفر توراة] للجالية هون وتعرفت عليهن عمل كان بعيد بوريم => We brought the Torah, [a Torah scroll] for the community here and got to know them, it was around Purim\nجبنا التوراة سفر توراة [للجالية] هون وتعرفت عليهن عمل كان بعيد بوريم => We brought the Torah, a Torah scroll [for the community] here and got to know them, it was around Purim\nجبنا التوراة سفر توراة للجالية [هون] وتعرفت عليهن عمل كان بعيد بوريم => We brought the Torah, a Torah scroll for the community [here] and got to know them, it was around Purim\nجبنا التوراة سفر توراة للجالية هون [وتعرفت] عليهن عمل كان بعيد بوريم => We brought the Torah, a Torah scroll for the community here [and got to know] them, it was around Purim\nجبنا التوراة سفر توراة للجالية هون وتعرفت [عليهن] عمل كان بعيد بوريم => We brought the Torah, a Torah scroll for the community here and got to know [them], it was around Purim\nجبنا التوراة سفر توراة للجالية هون وتعرفت عليهن [عمل كان] بعيد بوريم => We brought the Torah, a Torah scroll for the community here and got to know them, [it was] around Purim\nجبنا التوراة سفر توراة للجالية هون وتعرفت عليهن عمل كان [بعيد] بوريم => at the holiday of # The translation 'around' is a localized interpretation; 'eid' specifically means holiday\nجبنا التوراة سفر توراة للجالية هون وتعرفت عليهن عمل كان بعيد [بوريم] => We brought the Torah, a Torah scroll for the community here and got to know them, it was around [Purim]\n\n[وعملنا] حفلة بالفيلا كمان عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا => [And we had] a party at the villa too, quietly, but the government knew about it and blessed us\nوعملنا [حفلة] بالفيلا كمان عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا => And we had [a party] at the villa too, quietly, but the government knew about it and blessed us\nوعملنا حفلة [بالفيلا] كمان عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا => And we had a party [at the villa] too, quietly, but the government knew about it and blessed us\nوعملنا حفلة بالفيلا [كمان] عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا => And we had a party at the villa [too], quietly, but the government knew about it and blessed us\nوعملنا حفلة بالفيلا كمان [عالسكوت] بس الحكومة كانت تعرف عليها ومباركتنا => And we had a party at the villa too, [quietly], but the government knew about it and blessed us\nوعملنا حفلة بالفيلا كمان عالسكوت [بس] الحكومة كانت تعرف عليها ومباركتنا => And we had a party at the villa too, quietly, [but] the government knew about it and blessed us\nوعملنا حفلة بالفيلا كمان عالسكوت بس [الحكومة] كانت تعرف عليها ومباركتنا => And we had a party at the villa too, quietly, but [the government] knew about it and blessed us\nوعملنا حفلة بالفيلا كمان عالسكوت بس الحكومة [كانت تعرف] عليها ومباركتنا => And we had a party at the villa too, quietly, but the government [knew] about it and blessed us\nوعملنا حفلة بالفيلا كمان عالسكوت بس الحكومة كانت تعرف [عليها] ومباركتنا => And we had a party at the villa too, quietly, but the government knew [about it] and blessed us\nوعملنا حفلة بالفيلا كمان عالسكوت بس الحكومة كانت تعرف عليها [ومباركتنا] => And we had a party at the villa too, quietly, but the government knew about it [and blessed us]\n\n[وكل شي] يعني بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون => [And everything], I mean, but there was nothing organized and official, before the Abraham Accords, the government here\nوكل شي [يعني] بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون => And everything, [I mean], but there was nothing organized and official, before the Abraham Accords, the government here\nوكل شي يعني [بس] ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون => And everything, I mean, [but] there was nothing organized and official, before the Abraham Accords, the government here\nوكل شي يعني بس [ما كان شي] منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون => And everything, I mean, but [there was nothing] organized and official, before the Abraham Accords, the government here\nوكل شي يعني بس ما كان شي [منظم] ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون => And everything, I mean, but there was nothing [organized] and official, before the Abraham Accords, the government here\nوكل شي يعني بس ما كان شي منظم [ورسمي] بس ما صار اتفاقات إبراهيم هو الحكومة هون => And everything, I mean, but there was nothing organized [and official], before the Abraham Accords, the government here\nوكل شي يعني بس ما كان شي منظم ورسمي بس [ما صار] اتفاقات إبراهيم هو الحكومة هون => before, didn't happen # In this context 'ma sar' (didn't happen) implies the time before the event occurred\nوكل شي يعني بس ما كان شي منظم ورسمي بس ما صار [اتفاقات إبراهيم] هو الحكومة هون => And everything, I mean, but there was nothing organized and official, before [the Abraham Accords], the government here\nوكل شي يعني بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو [الحكومة] هون => And everything, I mean, but there was nothing organized and official, before the Abraham Accords, [the government] here\nوكل شي يعني بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة [هون] => And everything, I mean, but there was nothing organized and official, before the Abraham Accords, the government [here]\n\n[كان بدا] نساوي إنو جالية رسمية => [Was starting] to make an official community\nكان بدا [نساوي] إنو جالية رسمية => Was starting [to make] an official community\nكان بدا نساوي إنو [جالية] رسمية => Was starting to make an official [community]\nكان بدا نساوي إنو جالية [رسمية] => Was starting to make an [official] community\n\n[منظمة] مع رخصة => [Organized] with a license\nمنظمة [مع] رخصة => Organized [with] a license\nمنظمة مع [رخصة] => Organized with [a license]\n\n[وهيدي] اللي تغيير السياسة اتغير كتير => [And this is] where the policy changed a lot\nوهيدي [اللي] تغيير السياسة اتغير كتير => And this is [where] the policy changed a lot\nوهيدي اللي [تغيير] السياسة اتغير كتير => change, changing\nوهيدي اللي تغيير [السياسة] اتغير كتير => And this is where [the policy] changed a lot\nوهيدي اللي تغيير السياسة [اتغير] كتير => And this is where the policy [changed] a lot\nوهيدي اللي تغيير السياسة اتغير [كتير] => And this is where the policy changed [a lot]\n\n[مو] بس بهالدولة => [Not] just in this state\nمو [بس] بهالدولة => Not [just] in this state\nمو بس [بهالدولة] => Not just [in this state]\n\n[بس] كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => [But] also in the whole Gulf, now it happened and there are plans, I mean, to develop the association and the presence, I mean?\nبس [كمان] بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => But [also] in the whole Gulf, now it happened and there are plans, I mean, to develop the association and the presence, I mean?\nبس كمان [بالخليج] كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => in the Gulf\nبس كمان بالخليج [كلو] هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => But also in the [whole] Gulf, now it happened and there are plans, I mean, to develop the association and the presence, I mean?\nبس كمان بالخليج كلو [هلا] صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => But also in the whole Gulf, [now] it happened and there are plans, I mean, to develop the association and the presence, I mean?\nبس كمان بالخليج كلو هلا [صار] وفي خطط يعني لتطوير الرابطة والوجود يعني؟ => But also in the whole Gulf, now [it happened] and there are plans, I mean, to develop the association and the presence, I mean?\nبس كمان بالخليج كلو هلا صار [وفي] خطط يعني لتطوير الرابطة والوجود يعني؟ => But also in the whole Gulf, now it happened [and there are] plans, I mean, to develop the association and the presence, I mean?\nبس كمان بالخليج كلو هلا صار وفي [خطط] يعني لتطوير الرابطة والوجود يعني؟ => But also in the whole Gulf, now it happened and there are [plans], I mean, to develop the association and the presence, I mean?\nبس كمان بالخليج كلو هلا صار وفي خطط [يعني] لتطوير الرابطة والوجود يعني؟ => But also in the whole Gulf, now it happened and there are plans, [I mean], to develop the association and the presence, I mean?\nبس كمان بالخليج كلو هلا صار وفي خطط يعني [لتطوير] الرابطة والوجود يعني؟ => But also in the whole Gulf, now it happened and there are plans, I mean, [to develop] the association and the presence, I mean?\nبس كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير [الرابطة] والوجود يعني؟ => But also in the whole Gulf, now it happened and there are plans, I mean, to develop [the association] and the presence, I mean?\nبس كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة [والوجود] يعني؟ => But also in the whole Gulf, now it happened and there are plans, I mean, to develop the association [and the presence], I mean?\nبس كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود [يعني]؟ => But also in the whole Gulf, now it happened and there are plans, I mean, to develop the association and the presence, [I mean]?\n\n[أكيد] أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => [Certainly], certainly there are plans, we want to build, we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد [أكيد] في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => Certainly, [certainly] there are plans, we want to build, we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد أكيد [في] خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => Certainly, certainly [there are] plans, we want to build, we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد أكيد في [خطط] بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => Certainly, certainly there are [plans], we want to build, we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد أكيد في خطط [بدنا] نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => Certainly, certainly there are plans, [we want] to build, we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد أكيد في خطط بدنا [نعمر] بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص => Certainly, certainly there are plans, we want [to build], we want to build, first we want to build a temple, I mean a dedicated temple\nأكيد أكيد في خطط بدنا نعمر بدنا نعمر [أول شي] بدنا نعمر معبد يعني معبد مخصص => Certainly, certainly there are plans, we want to build, we want to build, [first] we want to build a temple, I mean a dedicated temple\nأكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر [معبد] يعني معبد مخصص => Certainly, certainly there are plans, we want to build, we want to build, first we want to build [a temple], I mean a dedicated temple\nأكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد [يعني] معبد مخصص => Certainly, certainly there are plans, we want to build, we want to build, first we want to build a temple, [I mean] a dedicated temple\nأكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني [معبد] مخصص => Certainly, certainly there are plans, we want to build, we want to build, first we want to build a temple, I mean a dedicated [temple]\nأكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد [مخصص] => Certainly, certainly there are plans, we want to build, we want to build, first we want to build a temple, I mean a [dedicated] temple\n\n[وبدنا] نعمر كل المؤسسات المؤسسات لجالية تقدر تعيش وتكبر وتتقدم => [And we want] to build all the institutions, institutions for a community to live and grow and advance\nوبدنا [نعمر] كل المؤسسات المؤسسات لجالية تقدر تعيش وتكبر وتتقدم => And we want [to build] all the institutions, institutions for a community to live and grow and advance\nوبدنا نعمر [كل] المؤسسات المؤسسات لجالية تقدر تعيش وتكبر وتتقدم => And we want to build [all] the institutions, institutions for a community to live and grow and advance\nوبدنا نعمر كل [المؤسسات] المؤسسات لجالية تقدر تعيش وتكبر وتتقدم => And we want to build all [the institutions], institutions for a community to live and grow and advance\nوبدنا نعمر كل المؤسسات [المؤسسات] لجالية تقدر تعيش وتكبر وتتقدم => And we want to build all the institutions, [institutions] for a community to live and grow and advance\nوبدنا نعمر كل المؤسسات المؤسسات [لجالية] تقدر تعيش وتكبر وتتقدم => And we want to build all the institutions, institutions [for a community] to live and grow and advance\nوبدنا نعمر كل المؤسسات المؤسسات لجالية [تقدر] تعيش وتكبر وتتقدم => can, to be able to\nوبدنا نعمر كل المؤسسات المؤسسات لجالية تقدر [تعيش] وتكبر وتتقدم => And we want to build all the institutions, institutions for a community to [live] and grow and advance\nوبدنا نعمر كل المؤسسات المؤسسات لجالية تقدر تعيش [وتكبر] وتتقدم => And we want to build all the institutions, institutions for a community to live [and grow] and advance\nوبدنا نعمر كل المؤسسات المؤسسات لجالية تقدر تعيش وتكبر [وتتقدم] => And we want to build all the institutions, institutions for a community to live and grow [and advance]\n\n[موفقين] يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => [Success], I mean, we wish you success in all your efforts and thank you very much, Rabbi Dr. Eli Abadi\nموفقين [يعني] بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => Success, [I mean], we wish you success in all your efforts and thank you very much, Rabbi Dr. Eli Abadi\nموفقين يعني [بنتمنالكم] التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => Success, I mean, [we wish you] success in all your efforts and thank you very much, Rabbi Dr. Eli Abadi\nموفقين يعني بنتمنالكم [التوفيق] بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => Success, I mean, we wish you [success] in all your efforts and thank you very much, Rabbi Dr. Eli Abadi\nموفقين يعني بنتمنالكم التوفيق [بكل] جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => Success, I mean, we wish you success [in all] your efforts and thank you very much, Rabbi Dr. Eli Abadi\nموفقين يعني بنتمنالكم التوفيق بكل [جهودك] وشكراً جزيلاً الحاخام الدكتور إيلي عبادي => Success, I mean, we wish you success in all [your efforts] and thank you very much, Rabbi Dr. Eli Abadi\nموفقين يعني بنتمنالكم التوفيق بكل جهودك [وشكراً جزيلاً] الحاخام الدكتور إيلي عبادي => Success, I mean, we wish you success in all your efforts [and thank you very much], Rabbi Dr. Eli Abadi\nموفقين يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً [الحاخام] الدكتور إيلي عبادي => Success, I mean, we wish you success in all your efforts and thank you very much, [Rabbi] Dr. Eli Abadi\nموفقين يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام [الدكتور] إيلي عبادي => Success, I mean, we wish you success in all your efforts and thank you very much, Rabbi [Dr.] Eli Abadi\nموفقين يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور [إيلي عبادي] => Success, I mean, we wish you success in all your efforts and thank you very much, Rabbi Dr. [Eli Abadi]\n\n[شكراً إلك] تشرفنا أهلاً وسهلاً => [Thank you], honored to meet you, welcome\nشكراً إلك [تشرفنا] أهلاً وسهلاً => Thank you, [honored to meet you], welcome\nشكراً إلك تشرفنا [أهلاً وسهلاً] => Thank you, honored to meet you, [welcome]\n\n",
+    "lessons": "# مقدمة الحاخام إيلي عبادي\n00:22.00 الحاخام إيلي عبادي\n00:24.00 الحاخام الأكبر للجالية اليهودية هنا في دبي وفي الإمارات\n00:27.00 مرحبا\n00:28.00 مرحبتين صباح الخير\n00:30.00 أهلا وسهلا\n\n# معبد بوابات الشرق\n00:31.00 إحنا هون في المعبد اليهودي\n00:34.00 في منطقة جميرا في دبي\n00:38.00 واسم المعبد بوابات الشرق\n00:42.00 لشو بيرمز يعني هاد الاسم؟\n\n# معاني اسم بوابات الشرق (الجزء الأول)\n00:45.00 إلو معنى رمزي يعني\n00:47.00 مو بس المعبد اسمو بوابات الشرق\n00:50.00 الجالية كلا سميناها بوابات الشرق\n00:52.00 والاسم فيه كم معنى الاسم\n00:56.00 معنى أول إنو نحن قاعدين بالشرق\n00:59.00 بالدنيا كلا هون الشرق أولاً\n\n# معاني اسم بوابات الشرق (الجزء الثاني)\n01:01.00 وثانياً اليهود دايماً كنا\n01:05.00 الساكنين بأمريكا وبالغرب\n01:08.00 بس بدنا نصلي منصلّي دايماً عالشرق\n01:11.00 مشان هي فين القدس قاعدة\n01:15.00 ومعنى تالت إنو بوابات الشرق\n01:18.00 بالبيت المقدس المسكرين\n\n# معاني اسم بوابات الشرق (الجزء الثالث)\n01:21.00 نحن منآمن بس ما يجي المشيح\n01:25.00 بدو يفوت مع النبي إلياهو\n01:29.00 بيفوت من بوابات الشرق\n01:32.00 بقا هول بوابات الشرق\n01:35.00 يعني اسم ممتاز كتير كتير وعندو معنى حلو كتير\n01:38.00 جميل\n\n# الجالية اليهودية في الإمارات\n01:39.00 الجالية اليهودية أو الوجود اليهودي هون في دبي وفي الإمارات\n01:43.00 شي جديد وشي خاص واستثنائي\n01:46.00 يعني أنا بعتقد سمعت إنو هاي الجالية الوحيدة في العالم العربي\n01:50.00 اللي عم تكبر مو عم تتقلص يعني\n01:53.00 فـ يعني إنت بوقت تاريخي هون\n\n# النشأة والتأسيس\n01:57.00 احكيلنا شوي عن الجالية يعني والوجود اليهودي هون\n02:01.00 أكيد هون كان في يهود قبل اتفاقات إبراهيم\n02:05.00 بس ما كانت جالية مزبطة ومنظمة\n02:08.00 بعد اتفاقات إبراهيم حتى الحكومة والشعب هون\n\n# بداية العلاقة مع الإمارات\n02:12.00 بدن يكون عندن جالية يهودية منظمة ومع رخصة وكل شي\n02:16.00 بقا طلبوني شي أنا كنت زرت هون من تلات سنين\n02:20.00 زرت أول شي الجالية الصغيرة اللي كانت قاعدة هون\n02:23.00 بعدين كمان زرنا مع صاحب السمو الشيخ محمد بن زايد\n02:27.00 زرناه بالقصر تبعو بأبو ظبي وجبنالو سفر توراة\n\n# تأسيس الجالية الرسمية\n02:31.00 هدية على روح أبوه الشيخ زايد الله يرحمو\n02:35.00 وتعرفت عالحكومة تعرفت عالناس تعرفت عالجالية\n02:39.00 وبس ما صار اتفاقات إبراهيم وبدن يعملوا إنو جالية تكون منظمة مع رخصة\n02:43.00 يعني جالية رسمية كدين كدين اليهودي\n02:47.00 طلبوني إجي لهون مشان أنا أصلي من الشرق الأوسط\n02:51.00 بحكي عربي\n\n# الخلفية الأكاديمية\n02:53.00 بعرف القرآن الدين الإسلام\n02:57.00 وكنت معلم بيشيفا يونيفرسيتي\n03:01.00 على أيام الوقت اللي كانوا اليهود والإسلام مع بعض ساكنين\n03:04.00 اللي هي جامعة يهودية أمريكية في نيويورك صح؟\n03:07.00 أيوا جامعة يهودية جامعة يشيفا يونيفرسيتي\n03:11.00 أنا كنت مدير المدرسة تبع يعقوب صفرا\n\n# الوصول إلى الإمارات\n03:15.00 للعلماء السفارديين والشرقيين\n03:18.00 طيب إحنا الآن فبراير 2022 إنت موجود هون من إيمتى إجيت؟\n03:22.00 هلا موجود هون من نوفمبر من عام 2020\n\n# النشأة في بيروت\n03:26.00 يعني إلي سنة وأربع تشهر\n03:28.00 المستمعين والمشاهدين أكيد بيسمعوا إنو لهجتك سورية\n03:31.00 فخلينا نحكي شوي عن سيرتك الشخصية يعني مواليد وين وكيف الحياة؟\n03:35.00 كيف لكان أنا انولدت ببيروت بلبنان\n03:38.00 أهلي كانوا لاجئين يهود سوريين\n\n# هجرة اليهود من الدول العربية\n03:42.00 اللي هربوا من سوريا سنة الـ 48\n03:45.00 بس ما صار الحرايق الحوادث تبع الحرايق\n03:49.00 في عشر بلاد عربية بس ما طلعت مدينة إسرائيل دولة إسرائيل\n03:53.00 صار انجموا عالجالية اليهودية بكل البلاد\n03:57.00 بسوريا بمصر بالعراق بتونس بتونس بكل البلاد العربية عشر بلاد عربية\n04:01.00 واليهود اللي كانوا ساكنين بسوريا بحلب وبالشام\n\n# العائلة من حلب\n04:05.00 خافوا كتير على حياتن مشان انجموا عليهن طلعوا ضد الكنايس حرقوا الكنايس\n04:09.00 وأهلك من حلب؟\n04:11.00 أهلي من حلب أهلي من حلب بقا هنن هربوا\n04:14.00 هربوا للبنان وسكنوا في لبنان\n04:18.00 لبنان كانت مدينة متل أوروبا تحت سلطة فرنساويّة\n\n# الحياة اليهودية في بيروت\n04:22.00 وسكنوا بلبنان وأنا خلقت بلبنان\n04:24.00 وكانت هناك جالية يهودية ومؤسسات ومدارس؟\n04:27.00 كانت جالية يهودية منظمة كتير كتير مأسسة حلو كتير\n04:31.00 مع مدارس مع معابد يعني كنايس\n04:35.00 كان في تقريباً شي 22 كنيس يهودي\n04:39.00 كانت في تلات مدارس يهودية كمان\n\n# الهجرة من لبنان\n04:42.00 أبي كان حاخام وكان مدير المدرسة كمان اللي تعلمت أنا فيها\n04:46.00 وضليتوا في بيروت لإيمتى؟\n04:48.00 ضلينا في بيروت لـ 1971\n04:52.00 مشان عرفنا إنو كمان لبنان رح تنخرب\n04:56.00 مشان بس ما شفنا عرفات والفدائيين تبعولو\n05:00.00 اللي دشروا من الأردن بيسموه بشهر سبتمبر الأسود\n05:04.00 كان في حرب بين إخوان بالأردن والملك حسين دشر عرفات والفدائية\n05:08.00 ولبنان جبروها تقبلن بقا استقبلتن استقبلوهن وإجوا للبنان\n05:12.00 وبلشنا نشوف بالشوارع مظاهرات مع الفدائيين\n05:16.00 وعرفنا إنو البلد كلا بدا تروح بدا يكون في حرب إخوان كمان هونيك\n05:20.00 وعرفنا إنو الجالية اليهودية بدا تتأثر كتير فيها كتير كتير\n\n# نتائج الحرب الأهلية اللبنانية\n05:24.00 وفعلاً؟\n05:25.00 وفعلاً كان بس ما تركنا بعد تلات سنين أقل كمان بلش الحرب بلبنان\n05:29.00 والجالية اليهودية كمان انجبرت تهرب وتروح وفي كم منهن انقتلوا انقتلوا\n05:33.00 كتير منهن راح على أمريكا؟\n05:35.00 كتير منهن راحوا على أمريكا\n05:37.00 راحوا على مكسيك نحن أهلي راحوا على مكسيك\n\n# وضع اللاجئين\n05:39.00 في كتير منهن راحوا لفرنسا ولإيطاليا ولكندا وفي كمان راحوا لإسرائيل\n05:43.00 مشان كنا لاجئين ما كان عنا جواز لبناني ولا جواز سوري\n05:47.00 كنا بيسمونا ستايتلس لاجئين بلا دولة بلا دولة\n05:51.00 وبس ما تركنا لبنان مختوم كان عالمش جواز جواز رسمي\n05:55.00 ليسيه باسيه كانوا بيسموها روحة بلا رجعة\n05:58.00 واو\n05:59.00 يعني كنا بنقدر نطلع من البلد بس ما بنقدر نرجع مشان كنا لاجئين\n\n# أسباب الهجرة من لبنان\n06:03.00 يعني الواحد صار بلا وطن فجأة بلا وطن كنا بلا صح كنا مضبوط كنا بلا وطن\n06:07.00 والقصة إنو نحن تركنا كمان سنة الـ 71\n06:11.00 مشان قبل بكم شهر طلعت صورة أبي مع تلات الحاخامات\n06:15.00 كان في تلات حاخامات تبع البيت الديني أبي كان واحد منهن\n06:19.00 طلعت صورة ومن تحتها مكتوب هون الصهيونية اللي بيساعدوا دولة إسرائيل\n06:23.00 ومش كانت كذب كلا كذب بس بتعرف عشان يبرروا يعني الخطوات\n06:27.00 أيوا بقا صار خطر كتير على كل حياتو أهلي أكيد وكل العائلة\n06:31.00 وكمان عائلة تبع كل الجالية اليهودية فاتت بخطر\n\n# الحياة في المكسيك\n06:35.00 بس ما واحد يقول الحاخامات تبع الجالية هن صهيونية ببلد عربي يعني خطر كتير\n06:39.00 بقا كمان جربنا نهرب من لبنان ووصلنا لمكسيك وعشنا بمكسيك\n\n# حلم الطفولة\n06:43.00 وإنت كملت دراساتك؟ كملت دراساتي بمكسيك يونيفرسيتي\n06:47.00 وكيف قررت إنك تكون طبيب دكتور؟\n06:51.00 كل حياتي كنت بدي أكون طبيب من كان عمري خمس ست سنين أشتهي أكون طبيب\n06:55.00 مشان لما كنت صغير كنت أمرض كتير أزمة ورشح وهي\n06:59.00 بقا قلت لو في حكيم بالعائلة مو ضروري\n07:01.00 بنص الليل أهلي يطلعوا\n07:03.00 يروحوا يفتشوا على حكيم\n07:07.00 بهديك الأيام ما كان في تليفونات ما كان في تكستينغ ما كان في هيدي\n\n# المسار الديني\n07:11.00 بقا كان صعب واحد يروح يدبر الحكيم بقا قلت إذا كان في شي حكيم بالعائلة أهون\n07:15.00 أها اليوم إنت حاخام كمان إيمتى بلشت هالمسيرة يعني مع الحاخامية؟\n07:19.00 طيب أبي حاخام وأنا جاي من سلسلة حاخاميم من أكتر من 500 سنة من سفاراد من الأندلس\n07:23.00 يعني أصلي من الأندلس أصل عائلتي من 500 سنة من الأندلس\n07:27.00 كان في حاخام تقريباً بكل جيل بقا أبي كان حاخام جيل بعد جيل\n07:29.00 جيل بعد جيل كانوا حاخاميم بقا قلت لازم\n07:31.00 أنا أكون كمان حاخام\n07:33.00 مشان بدي أكمل هالسلسلة\n07:35.00 الحاخاميم اللي في عائلتي وبس بعدين وبس بدي أشتغل كطب\n\n# رابطة الجاليات اليهودية في الخليج\n07:39.00 بس حاخام بس لأتعلم وأتعرف وأعرف كل قوانين الدين\n07:43.00 اليوم إنت موجود هون في الإمارات وهناك رابطة جديدة منصب جديد منظمة جديدة\n07:47.00 ممكن تحكي شو اسمها أولاً؟\n07:47.00 بقلك بقا بس ما وصلت أنا لهون بنوفمبر عام 2020\n07:51.00 انتبهت إنو في أول شي كمان جالية يهودية بالبحرين صغيرة بس في وإلا 140 سنة\n07:55.00 وكمان انتبهت في يهود بالمدينات بالخليج يعني بسعودية بعمان بقطر بالكويت\n07:59.00 هن رجال أعمال معظمهم؟\n08:01.00 رجال أعمال رجال يعني علماء كمان وما عندن جالية ومنن منظمين كجالية\n08:05.00 بقا افتكرت قلت لازم نساعدن لازم نقربن لعنا\n08:09.00 ونحن على كل حال بالخليج عم كيف عم نقول عم نبلش حياة جديدة وعم نبلش مستقبل جديد\n08:13.00 بكل هالمنطقة تبع الخليج بقا تفاهمت وسألت ومع الجالية اليهودية بالبحرين\n08:17.00 سيد إبراهيم نونو وهدى نونو قلنا لازم نبلش\n08:21.00 رابطة تنقدر نساعد اليهود\n\n# أهداف الرابطة\n08:23.00 الساكنين بغير بلاد\n08:25.00 ونقدر نساعد بعضنا مشان إذا في جالية ما عندها ما بتقدر تساوي حسبي شغلة\n08:29.00 نحن بنقدر نساعدن وهي وبلشنا رابطة سميناها رابطة الجاليات اليهودية في الخليج\n08:33.00 بلشناها بفبراير 2021\n\n# التطورات الأخيرة\n08:37.00 واو جديدة يعني جديدة وإلا هلا بدنا نساوي عيدنا السنة الجمعة الجاية\n08:41.00 أنا كمان جيت هون من تلات سنين\n08:43.00 كنت عم بحكيلك\n08:45.00 جبنا التوراة سفر توراة للجالية هون وتعرفت عليهن عمل كان بعيد بوريم\n08:49.00 وعملنا حفلة بالفيلا كمان عالسكوت بس الحكومة كانت تعرف عليها ومباركتنا\n08:53.00 وكل شي يعني بس ما كان شي منظم ورسمي بس ما صار اتفاقات إبراهيم هو الحكومة هون\n08:57.00 كان بدا نساوي إنو جالية رسمية\n08:59.00 منظمة مع رخصة\n09:01.00 وهيدي اللي تغيير السياسة اتغير كتير\n09:03.00 مو بس بهالدولة\n\n# خطط مستقبلية\n09:05.00 بس كمان بالخليج كلو هلا صار وفي خطط يعني لتطوير الرابطة والوجود يعني؟\n09:09.00 أكيد أكيد في خطط بدنا نعمر بدنا نعمر أول شي بدنا نعمر معبد يعني معبد مخصص\n09:13.00 وبدنا نعمر كل المؤسسات المؤسسات لجالية تقدر تعيش وتكبر وتتقدم\n\n# الختام\n09:17.00 موفقين يعني بنتمنالكم التوفيق بكل جهودك وشكراً جزيلاً الحاخام الدكتور إيلي عبادي\n09:21.00 شكراً إلك تشرفنا أهلاً وسهلاً",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-05-01 14:19:44 UTC",
+  "updated_at": "2026-05-01 15:09:55 UTC",
+  "exported_at": "2026-05-01T15:09:55Z"
+}

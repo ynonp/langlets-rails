@@ -1,0 +1,408 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=jESS8FktY7E",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Para la semana del patrimonio,",
+        "timestamp": "00:01.00",
+        "timestamp_end": "00:03.00",
+        "text_l2": "For heritage week,"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "el hombre del sombrero amarillo",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:05.00",
+        "text_l2": "the man in the yellow hat"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "pintó la estatua del parque sin fin.",
+        "timestamp": "00:05.00",
+        "timestamp_end": "00:07.00",
+        "text_l2": "painted the statue in the endless park."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Y Jorge lo ayudó.",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:13.00",
+        "text_l2": "And George helped him."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "¡Ah! Dejé un hueco.",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:15.00",
+        "text_l2": "Ah! I left a spot."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Gracias, Jorge.",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:16.00",
+        "text_l2": "Thanks, George."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "¡Ay! ¡Mi sombrero amarillo!",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:24.00",
+        "text_l2": "Oh! My yellow hat!"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "¡Ay! Muchas gracias, Jorge.",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:39.00",
+        "text_l2": "Oh! Thank you very much, George."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Dime, ¿qué ves? ¿Las telarañas?",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "Tell me, what do you see? The spider webs?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Las arañas tejen sus redes",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:46.00",
+        "text_l2": "Spiders weave their webs"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "con una seda especial que tienen.",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:47.00",
+        "text_l2": "with a special silk they have."
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Viven ahí.",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "They live there."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Ajá,",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:53.00",
+        "text_l2": "Uh-huh,"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "y la telaraña atrapa su comida.",
+        "timestamp": "00:53.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "and the web traps their food."
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Las arañas no comen manzanas.",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "Spiders don't eat apples."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Comen insectos pequeños y moscas.",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "They eat small insects and flies."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "Jorge no quería comer moscas,",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "George didn't want to eat flies,"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "pero le gustaban tanto las telarañas",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "but he liked the spider webs so much"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "que se preguntó si podría hacer",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:20.00",
+        "text_l2": "that he wondered if he could make"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "una red de mono que atrapara",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:22.00",
+        "text_l2": "a monkey net that would trap"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "comida de mono.",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:23.00",
+        "text_l2": "monkey food."
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "No, si cayó en tu red, Jorge,",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "No, if it fell in your net, George,"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "quédatelo.",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:39.00",
+        "text_l2": "keep it."
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Jorge, vámonos a casa",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:18.00",
+        "text_l2": "George, let's go home"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "antes de que llueva.",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:19.00",
+        "text_l2": "before it rains."
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "¡Ay! Oye, ¿qué es esto?",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "Oh! Hey, what is this?"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "Es una estupenda red de mono, Jorge.",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:31.00",
+        "text_l2": "It's a great monkey net, George."
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Se veía bien,",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:36.00",
+        "text_l2": "It looked good,"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "pero ¿atraparía algo?",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "but would it catch anything?"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "¿Le puedo ayudar?",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:03.00",
+        "text_l2": "Can I help you?"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Por favor, sí.",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.00",
+        "text_l2": "Please, yes."
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Esta es la colección de postales",
+        "timestamp": "03:05.00",
+        "timestamp_end": "03:07.00",
+        "text_l2": "This is the collection of postcards"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "antiguas de mi abuelo.",
+        "timestamp": "03:07.00",
+        "timestamp_end": "03:08.00",
+        "text_l2": "old ones from my grandfather."
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "Invaluables.",
+        "timestamp": "03:08.00",
+        "timestamp_end": "03:09.00",
+        "text_l2": "Priceless."
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "No podremos con todas.",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:12.00",
+        "text_l2": "We can't carry them all."
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Se fueron.",
+        "timestamp": "03:17.00",
+        "timestamp_end": "03:19.00",
+        "text_l2": "They're gone."
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "El museo quería exhibirlas.",
+        "timestamp": "03:19.00",
+        "timestamp_end": "03:20.00",
+        "text_l2": "The museum wanted to display them."
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Ahora se perdieron.",
+        "timestamp": "03:20.00",
+        "timestamp_end": "03:22.00",
+        "text_l2": "Now they're lost."
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "¡Oh, cielos! Qué suerte que esta especie",
+        "timestamp": "03:28.00",
+        "timestamp_end": "03:30.00",
+        "text_l2": "Oh, my! What luck that this kind"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "de red hubiera estado aquí.",
+        "timestamp": "03:30.00",
+        "timestamp_end": "03:31.00",
+        "text_l2": "of net was here."
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "No, eso no fue suerte.",
+        "timestamp": "03:32.00",
+        "timestamp_end": "03:34.00",
+        "text_l2": "No, that wasn't luck."
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Eso fue un mono.",
+        "timestamp": "03:34.00",
+        "timestamp_end": "03:36.00",
+        "text_l2": "That was a monkey."
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "¡Ay! Llueve.",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:43.00",
+        "text_l2": "Oh! It's raining."
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "Tengo que volver a cubrir la estatua.",
+        "timestamp": "03:43.00",
+        "timestamp_end": "03:45.00",
+        "text_l2": "I have to cover the statue again."
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "¡Ahora!",
+        "timestamp": "03:45.00",
+        "timestamp_end": "03:45.50",
+        "text_l2": "Now!"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "¡Ah! Y yo tengo que llevar esto",
+        "timestamp": "03:45.50",
+        "timestamp_end": "03:47.00",
+        "text_l2": "Ah! And I have to take this"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "al museo. ¡Rápido!",
+        "timestamp": "03:47.00",
+        "timestamp_end": "03:48.00",
+        "text_l2": "to the museum. Quick!"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "Gracias.",
+        "timestamp": "03:50.00",
+        "timestamp_end": "03:51.00",
+        "text_l2": "Thanks."
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "También debía proteger",
+        "timestamp": "04:05.00",
+        "timestamp_end": "04:07.00",
+        "text_l2": "He also had to protect"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "las telarañas de la lluvia.",
+        "timestamp": "04:07.00",
+        "timestamp_end": "04:08.00",
+        "text_l2": "the spider webs from the rain."
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "Hacer redes era difícil.",
+        "timestamp": "04:25.00",
+        "timestamp_end": "04:27.00",
+        "text_l2": "Making webs was hard."
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "A Jorge le impresionaba que arañas",
+        "timestamp": "04:30.00",
+        "timestamp_end": "04:32.00",
+        "text_l2": "George was amazed that spiders"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "tan pequeñas pudieran hacer algo así.",
+        "timestamp": "04:32.00",
+        "timestamp_end": "04:33.00",
+        "text_l2": "so small could make something like that."
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "Jorge se libró de un día lluvioso",
+        "timestamp": "04:35.00",
+        "timestamp_end": "04:38.00",
+        "text_l2": "George escaped a rainy day"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "y le dio a la araña una vista soleada",
+        "timestamp": "04:40.00",
+        "timestamp_end": "04:42.00",
+        "text_l2": "and gave the spider a sunny view"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "de las montañas.",
+        "timestamp": "04:42.00",
+        "timestamp_end": "04:43.00",
+        "text_l2": "of the mountains."
+      }
+    ],
+    "phrases_with_token_translations": "[Para] la semana del patrimonio, => [For] heritage week,\nPara [la] semana del patrimonio, => the\nPara la [semana] del patrimonio, => For heritage [week],\nPara la semana [del] patrimonio, => of the # \"del\" is a contraction of \"de\" (of) and \"el\" (the)\nPara la semana del [patrimonio], => For [heritage] week,\n\n[el] hombre del sombrero amarillo => [the] man in the yellow hat\nel [hombre] del sombrero amarillo => the [man] in the yellow hat\nel hombre [del] sombrero amarillo => in the # \"del\" is a contraction of \"de\" (in/of) and \"el\" (the)\nel hombre del [sombrero] amarillo => the man in the yellow [hat]\nel hombre del sombrero [amarillo] => the man in the [yellow] hat\n\n[pintó] la estatua del parque sin fin. => [painted] the statue in the endless park.\npintó [la] estatua del parque sin fin. => painted [the] statue in the endless park.\npintó la [estatua] del parque sin fin. => painted the [statue] in the endless park.\npintó la estatua [del] parque sin fin. => painted the statue [in the] park.\npintó la estatua del [parque] sin fin. => painted the statue in the [park].\npintó la estatua del parque [sin fin] => painted the statue in the [endless] park. # literally \"without end\"\n\n[Y] Jorge lo ayudó. => [And] George helped him.\nY [Jorge] lo ayudó. => And [George] helped him.\nY Jorge [lo] ayudó. => And George helped [him].\nY Jorge lo [ayudó]. => And George [helped] him.\n\n[Ah] Dejé un hueco => [Ah] I left a spot\n¡Ah! [Dejé] un hueco => Ah! [I left] a spot\n¡Ah! Dejé [un] hueco => Ah! I left [a] spot\n¡Ah! Dejé un [hueco] => Ah! I left a [spot]\n\n[Gracias], Jorge. => [Thanks], George.\nGracias, [Jorge]. => Thanks, [George].\n\n¡Ay! ¡[Mi] sombrero amarillo! => Oh! [My] yellow hat!\n¡Ay! ¡Mi [sombrero] amarillo! => Oh! My yellow [hat]!\n¡Ay! ¡Mi sombrero [amarillo]! => Oh! My [yellow] hat!\n\n[¡Ay!] Muchas gracias, Jorge. => [Oh!] Thank you very much, George.\n¡Ay! [Muchas] gracias, Jorge. => Oh! Thank you [very much], George.\n¡Ay! Muchas [gracias], Jorge. => Oh! [Thank you] very much, George.\n¡Ay! Muchas gracias, [Jorge.] => Oh! Thank you very much, [George.]\n\n[Dime], ¿qué ves? ¿Las telarañas? => [Tell me], what do you see? The spider webs?\nDime, ¿[qué] ves? ¿Las telarañas? => Tell me, [what] do you see? The spider webs?\nDime, ¿qué [ves]? ¿Las telarañas? => Tell me, what [do you see]? The spider webs?\nDime, ¿qué ves? ¿[Las] telarañas? => Tell me, what do you see? [The] spider webs?\nDime, ¿qué ves? ¿Las [telarañas]? => Tell me, what do you see? The [spider webs]?\n\n[Las arañas] tejen sus redes => [Spiders] weave their webs\nLas arañas [tejen] sus redes => Spiders [weave] their webs\nLas arañas tejen [sus] redes => Spiders weave [their] webs\nLas arañas tejen sus [redes] => Spiders weave their [webs]\n\n[con] una seda especial que tienen. => [with] a special silk they have.\ncon [una] seda especial que tienen. => with [a] special silk they have.\ncon una [seda] especial que tienen. => with a special [silk] they have.\ncon una seda [especial] que tienen. => with a [special] silk they have.\ncon una seda especial [que] tienen. => that # 'que' is a relative pronoun, often omitted in English relative clauses like this one\ncon una seda especial que [tienen]. => with a special silk [they have]\n\n[Viven] ahí. => [They live] there.\nViven [ahí]. => They live [there.]\n\n[Ajá], => [Uh-huh],\n\n[y] la telaraña atrapa su comida. => [and] the web traps their food.\ny [la] telaraña atrapa su comida. => and [the] web traps their food.\ny la [telaraña] atrapa su comida. => and the [web] traps their food.\ny la telaraña [atrapa] su comida. => and the web [traps] their food.\ny la telaraña atrapa [su] comida. => and the web traps [their] food.\ny la telaraña atrapa su [comida]. => and the web traps their [food].\n\n[Las arañas] no comen manzanas. => [Spiders] don't eat apples.\nLas arañas [no] comen manzanas. => Spiders [don't] eat apples.\nLas arañas no [comen] manzanas. => Spiders don't [eat] apples.\nLas arañas no comen [manzanas]. => Spiders don't eat [apples].\n\n[Comen] insectos pequeños y moscas. => [They eat] small insects and flies.\nComen [insectos] pequeños y moscas. => They eat small [insects] and flies.\nComen insectos [pequeños] y moscas. => They eat [small] insects and flies.\nComen insectos pequeños [y] moscas. => They eat small insects [and] flies.\nComen insectos pequeños y [moscas]. => They eat small insects and [flies].\n\n[Jorge] no quería comer moscas, => [George] didn't want to eat flies,\nJorge [no quería] comer moscas, => George [didn't want] to eat flies,\nJorge no quería [comer] moscas, => George didn't want [to eat] flies,\nJorge no quería comer [moscas], => George didn't want to eat [flies],\n\n[pero] le gustaban tanto las telarañas => [but] he liked the spider webs so much\npero [le gustaban] tanto las telarañas => but [he liked] the spider webs so much\npero le gustaban [tanto] las telarañas => but he liked the spider webs [so much]\npero le gustaban tanto [las] telarañas => but he liked [the] spider webs so much\npero le gustaban tanto las [telarañas] => but he liked the [spider webs] so much\n\n[que] se preguntó si podría hacer => [that] he wondered if he could make\nque [se preguntó] si podría hacer => that [he wondered] if he could make\nque se preguntó [si] podría hacer => that he wondered [if] he could make\nque se preguntó si [podría] hacer => that he wondered if [he could] make\nque se preguntó si podría [hacer] => that he wondered if he could [make]\n\n[una] red de mono que atrapara => [a] monkey net that would trap\nuna [red] de mono que atrapara => a monkey [net] that would trap\nuna red [de mono] que atrapara => a [monkey] net that would trap\nuna red de mono [que] atrapara => a monkey net [that] would trap\nuna red de mono que [atrapara] => a monkey net that [would trap]\n\n[comida] de mono. => monkey [food].\ncomida [de] mono. => of\ncomida de [mono]. => [monkey] food.\n\n[No], si cayó en tu red, Jorge, => [No], if it fell in your net, George,\nNo, [si] cayó en tu red, Jorge, => No, [if] it fell in your net, George,\nNo, si [cayó] en tu red, Jorge, => No, if [it fell] in your net, George,\nNo, si cayó [en] tu red, Jorge, => No, if it fell [in] your net, George,\nNo, si cayó en [tu] red, Jorge, => No, if it fell in [your] net, George,\nNo, si cayó en tu [red], Jorge, => No, if it fell in your [net], George,\nNo, si cayó en tu red, [Jorge], => No, if it fell in your net, [George],\n\n[quédatelo]. => [keep it]. # \"quédatelo\" is a single word in Spanish containing the verb, the reflexive pronoun, and the direct object pronoun, which maps to the English phrase \"keep it\"\n\n[Jorge], vámonos a casa => [George], let's go home\nJorge, [vámonos] a casa => George, [let's go] home\nJorge, vámonos [a] casa => to\nJorge, vámonos a [casa] => George, let's go [home]\n\n[antes de que] llueva. => [before] it rains.\nantes de que [llueva] => it rains # in Spanish the subject is included in the verb conjugation\n\n¡[Ay]! Oye, ¿qué es esto? => [Oh]! Hey, what is this?\n¡Ay! [Oye], ¿qué es esto? => Oh! [Hey], what is this?\n¡Ay! Oye, ¿[qué] es esto? => Oh! Hey, [what] is this?\n¡Ay! Oye, ¿qué [es] esto? => Oh! Hey, what [is] this?\n¡Ay! Oye, ¿qué es [esto]? => Oh! Hey, what is [this]?\n\n[Es] una estupenda red de mono, Jorge. => [It's] a great monkey net, George.\nEs [una] estupenda red de mono, Jorge. => It's [a] great monkey net, George.\nEs una [estupenda] red de mono, Jorge. => It's a [great] monkey net, George.\nEs una estupenda [red] de mono, Jorge. => It's a great monkey [net], George.\nEs una estupenda red [de] mono, Jorge. => of\nEs una estupenda red de [mono], Jorge. => It's a great [monkey] net, George.\nEs una estupenda red de mono, [Jorge]. => It's a great monkey net, [George].\n\n[Se veía] bien, => [It looked] good,\nSe veía [bien], => It looked [good]\n\n[pero] ¿atraparía algo? => [but] would it catch anything?\npero ¿[atraparía] algo? => but [would it catch] anything? # 'atraparía' is the conditional form which includes the implied subject 'it' and the auxiliary 'would'\npero ¿atraparía [algo]? => but would it catch [anything]?\n\n¿[Le] puedo ayudar? => Can I help [you]?\n¿Le [puedo] ayudar? => [Can I] help you? # \"puedo\" includes both the helping verb \"can\" and the subject \"I\"\n¿Le puedo [ayudar]? => Can I [help] you?\n\n[Por favor], sí. => [Please], yes.\nPor favor, [sí] => Please, [yes]\n\n[Esta] es la colección de postales => [This] is the collection of postcards\nEsta [es] la colección de postales => This [is] the collection of postcards\nEsta es [la] colección de postales => This is [the] collection of postcards\nEsta es la [colección] de postales => This is the [collection] of postcards\nEsta es la colección [de] postales => This is the [of] postcards\nEsta es la colección de [postales] => This is the collection of [postcards]\n\n[antiguas] de mi abuelo. => [old ones] from my grandfather.\nantiguas [de] mi abuelo. => old ones [from] my grandfather.\nantiguas de [mi] abuelo. => old ones from [my] grandfather.\nantiguas de mi [abuelo]. => old ones from my [grandfather].\n\n[Invaluables] => [Priceless]\n\n[No podremos] con todas. => [We can't] carry them all.\nNo podremos [con] todas. => handle, carry # used custom translation to explain the idiomatic use of \"con\" with \"poder\"\nNo podremos con [todas.] => We can't carry [them all.]\n\n[Se fueron] => [They're gone]\n\n[El] museo quería exhibirlas. => [The] museum wanted to display them.\nEl [museo] quería exhibirlas. => The [museum] wanted to display them.\nEl museo [quería] exhibirlas. => The museum [wanted] to display them.\nEl museo quería [exhibirlas] => The museum wanted [to display them] # \"exhibirlas\" combines the infinitive \"to display\" and the object \"them\" (las)\n\n[Ahora] se perdieron. => [Now] they're lost.\nAhora [se perdieron]. => Now [they're lost]. # the reflexive \"se\" and the verb \"perdieron\" together form the meaning \"they got lost\" or \"they are lost\"\n\n¡Oh, cielos! [Qué] suerte que esta especie => Oh, my! [What] luck that this kind\n¡Oh, cielos! Qué [suerte] que esta especie => Oh, my! What [luck] that this kind\n¡Oh, cielos! Qué suerte [que] esta especie => Oh, my! What luck [that] this kind\n¡Oh, cielos! Qué suerte que [esta] especie => Oh, my! What luck that [this] kind\n¡Oh, cielos! Qué suerte que esta [especie] => Oh, my! What luck that this [kind]\n\n[de] red hubiera estado aquí. => [of] net was here.\nde [red] hubiera estado aquí. => of [net] was here.\nde red [hubiera estado] aquí. => of net [was] here.\nde red hubiera estado [aquí] => of net was [here]\n\n[No], eso no fue suerte. => [No], that wasn't luck.\nNo, [eso] no fue suerte. => No, [that] wasn't luck.\nNo, eso [no fue] suerte. => No, that [wasn't] luck.\nNo, eso no fue [suerte]. => No, that wasn't [luck].\n\n[Eso] fue un mono. => [That] was a monkey.\nEso [fue] un mono. => That [was] a monkey.\nEso fue [un] mono. => That was [a] monkey.\nEso fue un [mono]. => That was a [monkey].\n\n[Ay] Llueve. => [Oh] It's raining.\n¡Ay! [Llueve] => Oh! [It's raining]\n\n[Tengo que] volver a cubrir la estatua. => [I have to] cover the statue again.\nTengo que [volver a] cubrir la estatua. => again\nTengo que volver a [cubrir] la estatua. => I have to [cover] the statue again.\nTengo que volver a cubrir [la] estatua. => I have to cover [the] statue again.\nTengo que volver a cubrir la [estatua]. => I have to cover the [statue] again.\n\n¡[Ahora]! => [Now]!\n\n¡Ah! [Y] yo tengo que llevar esto => Ah! [And] I have to take this\n¡Ah! Y [yo] tengo que llevar esto => Ah! And [I] have to take this\n¡Ah! Y yo [tengo que] llevar esto => Ah! And I [have to] take this\n¡Ah! Y yo tengo que [llevar] esto => Ah! And I have to [take] this\n¡Ah! Y yo tengo que llevar [esto] => Ah! And I have to take [this]\n\n[al] museo. ¡Rápido! => [to the] museum. Quick!\nal [museo]. ¡Rápido! => to the [museum]. Quick!\nal museo. ¡[Rápido]! => to the museum. [Quick]!\n\n[Gracias]. => [Thanks].\n\n[También] debía proteger => He [also] had to protect\nTambién [debía] proteger => he had to # mapping 'debía' to 'he had to' as the subject is included in the Spanish verb form\nTambién debía [proteger] => He also had to [protect]\n\n[las] telarañas de la lluvia. => [the] spider webs from the rain.\nlas [telarañas] de la lluvia. => the [spider webs] from the rain.\nlas telarañas [de] la lluvia. => the spider webs [from] the rain.\nlas telarañas de [la] lluvia. => the spider webs from [the] rain.\nlas telarañas de la [lluvia]. => the spider webs from the [rain].\n\n[Hacer] redes era difícil. => [Making] webs was hard.\nHacer [redes] era difícil. => Making [webs] was hard.\nHacer redes [era] difícil. => Making webs [was] hard.\nHacer redes era [difícil] => Making webs was [hard]\n\n[A Jorge] le impresionaba que arañas => [George] was amazed that spiders\nA Jorge [le] impresionaba que arañas => him # redundant object pronoun\nA Jorge le [impresionaba] que arañas => George [was amazed] that spiders\nA Jorge le impresionaba [que] arañas => George was amazed [that] spiders\nA Jorge le impresionaba que [arañas] => George was amazed that [spiders]\n\n[tan] pequeñas pudieran hacer algo así. => [so] small could make something like that.\ntan [pequeñas] pudieran hacer algo así. => so [small] could make something like that.\ntan pequeñas [pudieran] hacer algo así. => so small [could] make something like that.\ntan pequeñas pudieran [hacer] algo así. => so small could [make] something like that.\ntan pequeñas pudieran hacer [algo] así. => so small could make [something] like that.\ntan pequeñas pudieran hacer algo [así]. => so small could make something [like that] # \"así\" translates literally to \"like that\" or \"this way\"\n\n[Jorge] se libró de un día lluvioso => [George] escaped a rainy day\nJorge [se libró] de un día lluvioso => George [escaped] a rainy day\nJorge se libró [de] un día lluvioso => from # the Spanish verb \"librarse\" requires \"de\", which isn't explicitly translated here\nJorge se libró de [un] día lluvioso => George escaped [a] rainy day\nJorge se libró de un [día] lluvioso => George escaped a rainy [day]\nJorge se libró de un día [lluvioso] => George escaped a [rainy] day\n\n[y] le dio a la araña una vista soleada => [and] gave the spider a sunny view\ny [le dio] a la araña una vista soleada => and [gave] the spider a sunny view\ny le dio [a] la araña una vista soleada => to\ny le dio a [la] araña una vista soleada => and gave [the] spider a sunny view\ny le dio a la [araña] una vista soleada => and gave the [spider] a sunny view\ny le dio a la araña [una] vista soleada => and gave the spider [a] sunny view\ny le dio a la araña una [vista] soleada => and gave the spider a sunny [view]\ny le dio a la araña una vista [soleada] => and gave the spider a [sunny] view\n\n[de] las montañas. => [of] the mountains.\nde [las] montañas. => of [the] mountains.\nde las [montañas]. => of the [mountains]\n\n",
+    "lessons": "# La Estatua y el Sombrero Amarillo\n00:01.00 Para la semana del patrimonio,\n00:03.00 el hombre del sombrero amarillo\n00:05.00 pintó la estatua del parque sin fin.\n00:11.00 Y Jorge lo ayudó.\n00:13.00 ¡Ah! Dejé un hueco.\n00:15.00 Gracias, Jorge.\n00:22.00 ¡Ay! ¡Mi sombrero amarillo!\n00:37.00 ¡Ay! Muchas gracias, Jorge.\n\n# El Mundo de las Arañas\n00:39.00 Dime, ¿qué ves? ¿Las telarañas?\n00:44.00 Las arañas tejen sus redes\n00:46.00 con una seda especial que tienen.\n00:47.00 Viven ahí.\n00:52.00 Ajá,\n00:53.00 y la telaraña atrapa su comida.\n01:01.00 Las arañas no comen manzanas.\n01:03.00 Comen insectos pequeños y moscas.\n\n# La Idea de Jorge\n01:10.00 Jorge no quería comer moscas,\n01:12.00 pero le gustaban tanto las telarañas\n01:18.00 que se preguntó si podría hacer\n01:20.00 una red de mono que atrapara\n01:22.00 comida de mono.\n01:36.00 No, si cayó en tu red, Jorge,\n01:38.00 quédatelo.\n\n# El Regreso a Casa\n02:16.00 Jorge, vámonos a casa\n02:18.00 antes de que llueva.\n02:19.00 ¡Ay! Oye, ¿qué es esto?\n02:28.00 Es una estupenda red de mono, Jorge.\n02:34.00 Se veía bien,\n02:36.00 pero ¿atraparía algo?\n\n# El Problema con las Postales\n03:01.00 ¿Le puedo ayudar?\n03:03.00 Por favor, sí.\n03:05.00 Esta es la colección de postales\n03:07.00 antiguas de mi abuelo.\n03:08.00 Invaluables.\n03:10.00 No podremos con todas.\n03:17.00 Se fueron.\n03:19.00 El museo quería exhibirlas.\n03:20.00 Ahora se perdieron.\n\n# El Rescate de las Postales\n03:28.00 ¡Oh, cielos! Qué suerte que esta especie\n03:30.00 de red hubiera estado aquí.\n03:32.00 No, eso no fue suerte.\n03:34.00 Eso fue un mono.\n03:41.00 ¡Ay! Llueve.\n03:43.00 Tengo que volver a cubrir la estatua.\n03:45.00 ¡Ahora!\n03:45.50 ¡Ah! Y yo tengo que llevar esto\n03:47.00 al museo. ¡Rápido!\n03:50.00 Gracias.\n\n# La Lección de Jorge\n04:05.00 También debía proteger\n04:07.00 las telarañas de la lluvia.\n04:25.00 Hacer redes era difícil.\n04:30.00 A Jorge le impresionaba que arañas\n04:32.00 tan pequeñas pudieran hacer algo así.\n04:35.00 Jorge se libró de un día lluvioso\n04:40.00 y le dio a la araña una vista soleada\n04:42.00 de las montañas.",
+    "similar_sounds": ""
+  },
+  "created_at": "2026-05-01 12:31:54 UTC",
+  "updated_at": "2026-05-01 12:45:42 UTC",
+  "exported_at": "2026-05-01T12:45:42Z"
+}

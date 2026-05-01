@@ -30,19 +30,30 @@ class ImportCoursesController < ApplicationController
 
     if successful_imports.any?
       learning_path_id = nil
+      learning_path = nil
+      action = params[:learning_path_action] || "none"
 
-      if params[:create_learning_path] == "1"
-        name = params[:learning_path_name]&.strip
-
-        if name.blank?
-          redirect_to new_import_course_path, alert: "Learning path name is required when creating a learning path.", files: successful_imports
+      case action
+      when "existing"
+        learning_path_id = params[:learning_path_id]
+        if learning_path_id.blank?
+          redirect_to new_import_course_path, alert: "Please select a learning path."
           return
         end
-
-        learning_path = create_learning_path
-        if learning_path
-          learning_path_id = learning_path.id
+        learning_path = LearningPath.find_by(id: learning_path_id)
+        unless learning_path
+          redirect_to new_import_course_path, alert: "Selected learning path not found."
+          return
         end
+        learning_path_id = learning_path.id
+      when "new"
+        name = params[:learning_path_name]&.strip
+        if name.blank?
+          redirect_to new_import_course_path, alert: "Learning path name is required when creating a learning path."
+          return
+        end
+        learning_path = create_learning_path
+        learning_path_id = learning_path.id if learning_path
       end
 
       successful_imports.each do |import_data|

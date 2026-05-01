@@ -1,0 +1,135 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=6-uqp78Jk0U",
+  "clip_language": "Spanish",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Era una tarde hermosa y soleada.",
+        "timestamp": "00:00.00",
+        "timestamp_end": "00:02.50",
+        "text_l2": "It was a beautiful, sunny afternoon."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Demasiado hermosa y soleada",
+        "timestamp": "00:03.00",
+        "timestamp_end": "00:04.50",
+        "text_l2": "Too beautiful and sunny"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "desde el punto de vista de Steve.",
+        "timestamp": "00:04.50",
+        "timestamp_end": "00:06.50",
+        "text_l2": "from Steve's point of view."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "¿Puedes verlo?",
+        "timestamp": "00:07.00",
+        "timestamp_end": "00:08.50",
+        "text_l2": "Can you see it?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "La pantalla brilla.",
+        "timestamp": "00:10.50",
+        "timestamp_end": "00:11.50",
+        "text_l2": "The screen is glowing."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "¡Stevarino!",
+        "timestamp": "00:12.50",
+        "timestamp_end": "00:14.00",
+        "text_l2": "Stevarino!"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "¡Tío Dan! No puedo ir, estoy jugando.",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:17.50",
+        "text_l2": "Uncle Dan! I can't go, I'm playing."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Ja, ja, niños.",
+        "timestamp": "00:18.50",
+        "timestamp_end": "00:19.50",
+        "text_l2": "Ha, ha, kids."
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Jorge, tengo cosas que hacer,",
+        "timestamp": "00:22.00",
+        "timestamp_end": "00:23.50",
+        "text_l2": "Jorge, I have things to do,"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "pero cuando regreses cenaremos,",
+        "timestamp": "00:23.50",
+        "timestamp_end": "00:25.50",
+        "text_l2": "but when you get back we'll have dinner,"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "así que sé un buen mono",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:27.50",
+        "text_l2": "so be a good monkey"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "y no te alejes de aquí.",
+        "timestamp": "00:27.50",
+        "timestamp_end": "00:29.00",
+        "text_l2": "and don't wander off from here."
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Tío Dan, ¿me podrías llevar",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:34.50",
+        "text_l2": "Uncle Dan, could you take me"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "a la ferretería?",
+        "timestamp": "00:34.50",
+        "timestamp_end": "00:35.50",
+        "text_l2": "to the hardware store?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Ya casi no tengo baterías.",
+        "timestamp": "00:35.50",
+        "timestamp_end": "00:36.50",
+        "text_l2": "I'm almost out of batteries."
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Claro, es mi última entrega. Ahora vuelvo.",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:39.50",
+        "text_l2": "Sure, it's my last delivery. I'll be right back."
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "¡Ah! Mucho sol. Ven, vamos a verlo acá.",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:47.50",
+        "text_l2": "Ah! So much sun. Come, let's look at it here."
+      }
+    ],
+    "phrases_with_token_translations": "[Era] una tarde hermosa y soleada. => [It was] a beautiful, sunny afternoon.\nEra [una] tarde hermosa y soleada. => It was [a] beautiful, sunny afternoon.\nEra una [tarde] hermosa y soleada. => It was a beautiful, sunny [afternoon].\nEra una tarde [hermosa] y soleada. => It was a [beautiful], sunny afternoon.\nEra una tarde hermosa [y] soleada. => and # The english sentence uses a comma instead of a conjunction\nEra una tarde hermosa y [soleada]. => It was a beautiful, [sunny] afternoon.\n\n[Demasiado] hermosa y soleada => [Too] beautiful and sunny\nDemasiado [hermosa] y soleada => Too [beautiful] and sunny\nDemasiado hermosa [y] soleada => Too beautiful [and] sunny\nDemasiado hermosa y [soleada] => Too beautiful and [sunny]\n\n[desde] el punto de vista de Steve. => [from] Steve's point of view.\ndesde [el] punto de vista de Steve. => the\ndesde el [punto] de vista de Steve. => from Steve's [point] of view.\ndesde el punto [de] vista de Steve. => from Steve's point [of] view.\ndesde el punto de [vista] de Steve. => from Steve's point of [view].\ndesde el punto de vista [de Steve] => from [Steve's] point of view.\n\n¿[Puedes] verlo? => [Can you] see it?\n¿Puedes [verlo]? => Can you [see it]?\n¿Puedes [ver]lo? => see\n¿Puedes ver[lo]? => it # The word \"verlo\" is composed of \"ver\" (to see) and the object pronoun \"lo\" (it). These custom mappings help the student understand the internal structure of the verb.\n\n[La] pantalla brilla. => [The] screen is glowing.\nLa [pantalla] brilla. => The [screen] is glowing.\nLa pantalla [brilla] => The screen [is glowing]\n\n¡[Stevarino]! => [Stevarino]!\n\n[Tío] Dan! No puedo ir, estoy jugando. => [Uncle] Dan! I can't go, I'm playing.\nTío [Dan]! No puedo ir, estoy jugando. => Uncle [Dan]! I can't go, I'm playing.\nTío Dan! [No puedo] ir, estoy jugando. => Uncle Dan! [I can't] go, I'm playing.\nTío Dan! No puedo [ir], estoy jugando. => Uncle Dan! I can't [go], I'm playing.\nTío Dan! No puedo ir, [estoy] jugando. => Uncle Dan! I can't go, [I'm] playing.\nTío Dan! No puedo ir, estoy [jugando]. => Uncle Dan! I can't go, I'm [playing.]\n\n[Ja], ja, niños. => [Ha], ha, kids.\nJa, [ja], niños. => Ha, [ha], kids.\nJa, ja, [niños]. => Ha, ha, [kids].\n\n[Jorge], tengo cosas que hacer, => [Jorge], I have things to do,\nJorge, [tengo] cosas que hacer, => Jorge, [I have] things to do,\nJorge, tengo [cosas] que hacer, => Jorge, I have [things] to do,\nJorge, tengo cosas [que] hacer, => Jorge, I have things [to] do,\nJorge, tengo cosas que [hacer] => Jorge, I have things to [do]\n\n[pero] cuando regreses cenaremos, => [but] when you get back we'll have dinner,\npero [cuando] regreses cenaremos, => but [when] you get back we'll have dinner,\npero cuando [regreses] cenaremos, => but when [you get back] we'll have dinner,\npero cuando regreses [cenaremos], => but when you get back [we'll have dinner] # \"cenaremos\" is the first-person plural future form of \"cenar\", conveying \"we will have dinner\" in one word\n\n[así que] sé un buen mono => [so] be a good monkey\nasí que [sé] un buen mono => so [be] a good monkey\nasí que sé [un] buen mono => so be [a] good monkey\nasí que sé un [buen] mono => so be a [good] monkey\nasí que sé un buen [mono] => so be a good [monkey]\n\n[y] no te alejes de aquí. => [and] don't wander off from here.\ny [no] te alejes de aquí. => and [don't] wander off from here.\ny no [te alejes] de aquí. => and don't [wander off] from here.\ny no te alejes [de] aquí. => and don't wander off [from] here.\ny no te alejes de [aquí] => and don't wander off from [here]\n\n[Tío] Dan, ¿me podrías llevar => [Uncle] Dan, could you take me\nTío [Dan], ¿me podrías llevar => Uncle [Dan], could you take me\nTío Dan, ¿[me] podrías llevar => Uncle Dan, could you take [me]\nTío Dan, ¿me [podrías] llevar => Uncle Dan, [could you] take me\nTío Dan, ¿me podrías [llevar] => Uncle Dan, could you [take] me\n\n[a] la ferretería? => [to] the hardware store?\na [la] ferretería? => to [the] hardware store?\na la [ferretería]? => to the [hardware store]?\n\nYa [casi] no tengo baterías. => I'm [almost] out of batteries.\nYa casi [no tengo] baterías. => I'm out of, I don't have\nYa casi no tengo [baterías] => I'm almost out of [batteries]\n\n[Claro], es mi última entrega. Ahora vuelvo. => [Sure], it's my last delivery. I'll be right back.\nClaro, [es] mi última entrega. Ahora vuelvo. => Sure, [it's] my last delivery. I'll be right back.\nClaro, es [mi] última entrega. Ahora vuelvo. => Sure, it's [my] last delivery. I'll be right back.\nClaro, es mi [última] entrega. Ahora vuelvo. => Sure, it's my [last] delivery. I'll be right back.\nClaro, es mi última [entrega]. Ahora vuelvo. => Sure, it's my last [delivery]. I'll be right back.\nClaro, es mi última entrega. [Ahora] vuelvo. => now\nClaro, es mi última entrega. Ahora [vuelvo] => I return, I'm coming back\nClaro, es mi última entrega. [Ahora vuelvo] => Sure, it's my last delivery. [I'll be right back] # though \"vuelvo\" is \"return\", the phrase is a direct idiom for \"I'll be right back\"\n\n[Ah] Mucho sol. Ven, vamos a verlo acá. => [Ah] So much sun. Come, let's look at it here.\n¡Ah! [Mucho] sol. Ven, vamos a verlo acá. => ¡Ah! [So much] sun. Come, let's look at it here.\n¡Ah! Mucho [sol]. Ven, vamos a verlo acá. => ¡Ah! So much [sun]. Come, let's look at it here.\n¡Ah! Mucho sol. [Ven], vamos a verlo acá. => ¡Ah! So much sun. [Come], let's look at it here.\n¡Ah! Mucho sol. Ven, [vamos a] verlo acá. => let's, we are going to # Spanish literal meaning is \"we are going to\" but functions as \"let's\" here\n¡Ah! Mucho sol. Ven, vamos a [verlo] acá. => ¡Ah! So much sun. Come, let's [look at it] here. # 'ver' means look/see and 'lo' means it\n¡Ah! Mucho sol. Ven, vamos a verlo [acá]. => ¡Ah! So much sun. Come, let's look at it [here].\n\n",
+    "lessons": "# Un Día Demasiado Soleado\n00:00.00 Era una tarde hermosa y soleada.\n00:03.00 Demasiado hermosa y soleada\n00:04.50 desde el punto de vista de Steve.\n\n# La Llamada de Tío Dan\n00:07.00 ¿Puedes verlo?\n00:10.50 La pantalla brilla.\n00:12.50 ¡Stevarino!\n00:15.00 ¡Tío Dan! No puedo ir, estoy jugando.\n\n# La Conversación Familiar\n00:18.50 Ja, ja, niños.\n00:22.00 Jorge, tengo cosas que hacer,\n00:23.50 pero cuando regreses cenaremos,\n00:26.00 así que sé un buen mono\n00:27.50 y no te alejes de aquí.\n\n# La Petición de Jorge\n00:33.00 Tío Dan, ¿me podrías llevar\n00:34.50 a la ferretería?\n00:35.50 Ya casi no tengo baterías.\n00:37.50 Claro, es mi última entrega. Ahora vuelvo.\n\n# El Plan de Tío Dan\n00:45.00 ¡Ah! Mucho sol. Ven, vamos a verlo acá.",
+    "similar_sounds": "Era una [tarde] hermosa y soleada.\nDemasiado hermosa y [solada]\ndesde el punto de [vista] de Steve.\n¿Puedes [verlo]?\nLa [pantalla] brilla.\n¡Stevarino!\n¡Tío Dan! No puedo [ir], estoy jugando.\nJa, ja, [niños].\nJorge, tengo [cosas] que hacer,\npero cuando [regreses] cenaremos,\nasí que sé un buen [mono]\ny no te [alejes] de aquí.\nTío Dan, ¿me podrías [llevar]\na la [ferretería]?\nYa casi no tengo [baterías].\nClaro, es mi última [entrega]. Ahora vuelvo.\n¡Ah! Mucho [sol]. Ven, vamos a verlo acá."
+  },
+  "created_at": "2026-05-01 13:41:45 UTC",
+  "updated_at": "2026-05-01 13:49:42 UTC",
+  "exported_at": "2026-05-01T13:49:43Z"
+}
