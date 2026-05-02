@@ -1,7 +1,10 @@
 module ActivitiesHelper
   def timestamp_to_seconds(timestamp_mm_ss)
-    minutes, seconds = timestamp_mm_ss.split(":")
-    (minutes.to_f * 60) + seconds.to_f
+    parts = timestamp_mm_ss.split(":")
+    minutes = parts[0].to_f
+    seconds = parts[1].to_f
+    milliseconds = parts[2].to_f / 1000
+    (minutes * 60) + seconds + milliseconds
   end
 
   def wrap_tokens_in_spans(phrase, attributes_map = {})
