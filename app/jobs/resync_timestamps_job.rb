@@ -35,6 +35,20 @@ class ResyncTimestampsJob < ApplicationJob
       Rails.logger.info "Updated phrase #{phrase_id} timestamp: #{old_timestamp} => #{new_timestamp}"
     end
 
+    # Update lesson timestamps based on first and last phrase in each lesson
+    course.lessons.includes(:activities).find_each do |lesson|
+      lesson_phrase_ids = lesson.activities.joins(:phrases).pluck("phrases.id").uniq
+      lesson_phrases = phrases.select { |p| lesson_phrase_ids.include?(p.id) }.sort_by(&:timestamp)
+      
+      if lesson_phrases.any?
+        first_timestamp = lesson_phrases.first.timestamp
+        last_timestamp = lesson_phrases.last.timestamp
+        
+        lesson.update!(start_timestamp: first_timestamp, end_timestamp: last_timestamp)
+        Rails.logger.info "Updated lesson #{lesson.id} timestamps: #{first_timestamp} => #{last_timestamp}"
+      end
+    end
+
     Rails.logger.info "ResyncTimestampsJob completed for course #{course.id}. Updated #{updates.count} phrases."
 
   rescue => e

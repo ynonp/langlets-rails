@@ -40,7 +40,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_language_for_native_app
-    return unless native_app? || mobile?
+    return unless native_app?
     return unless user_signed_in?
     return if (params[:lang] || session[:lang]).present?
     return if devise_controller?
