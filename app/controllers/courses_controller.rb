@@ -94,6 +94,9 @@ class CoursesController < ApplicationController
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
     
     if current_user
+      @daily_xp = ActivityLog.daily_xp_for_user(current_user)
+      @streak_info = ActivityLog.streak_info_for_user(current_user)
+      
       @lessons = @course.lessons
         .includes(:activities, :lesson_users, activities: :activity_users)
         .with_progress_data(current_user)
@@ -104,6 +107,8 @@ class CoursesController < ApplicationController
       @lessons = @course.lessons
       @all_done = false
       @first_incomplete_lesson_id = nil
+      @daily_xp = 0
+      @streak_info = { count: 0, completed_today: false, status: :no_streak }
     end
   end
 
