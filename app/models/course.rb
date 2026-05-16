@@ -333,6 +333,32 @@ class Course < ApplicationRecord
     slug
   end
 
+  def sync_lesson_timestamps
+    ordered_lessons = lessons.includes(activities: { activity_phrases: :phrase }).sort_by(&:order)
+
+    # Precompute sorted unique phrases per lesson to avoid N+1 inside the loop
+    lesson_phrases_map = ordered_lessons.to_h do |lesson|
+      phrases = lesson.activities.flat_map { |a| a.activity_phrases.map(&:phrase) }.uniq.sort_by(&:timestamp)
+      [lesson, phrases]
+    end
+
+    ordered_lessons.each_with_index do |lesson, index|
+      lesson_phrases = lesson_phrases_map[lesson]
+      next if lesson_phrases.empty?
+
+      start_ts = lesson_phrases.first.timestamp
+
+      end_ts = if (next_lesson = ordered_lessons[index + 1])
+        next_phrases = lesson_phrases_map[next_lesson]
+        next_phrases.any? ? next_phrases.first.timestamp : lesson_phrases.last.timestamp
+      else
+        Phrase.to_string_timestamp(lesson_phrases.last.timestamp_seconds + 5)
+      end
+
+      lesson.update!(start_timestamp: start_ts, end_timestamp: end_ts)
+    end
+  end
+
   private
 
   def slug_uniqueness_with_user_check
