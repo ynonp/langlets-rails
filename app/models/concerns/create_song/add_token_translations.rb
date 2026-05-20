@@ -1,9 +1,12 @@
+require "async/semaphore"
+
 module CreateSong
   module AddTokenTranslations
     extend ActiveSupport::Concern
 
     def add_token_translation
       blocks_per_iteration = 1
+      max_concurrency = 3
       instructions = ApplicationController.renderer.render(
         template: "prompts/add_token_translations",
         formats: [ :md ],
@@ -17,11 +20,15 @@ module CreateSong
 
       blocks = lyrics_with_translations.lines.each_slice(blocks_per_iteration).to_a
 
+      semaphore = Async::Semaphore.new(max_concurrency)
+
       results = Async do
         tasks = blocks.each_with_index.map do |block, index|
           Async do
-            content = fetch_translation(instructions, block, max_retries)
-            [index, content]
+            semaphore.acquire do
+              content = fetch_translation(instructions, block, max_retries)
+              [index, content]
+            end
           end
         end
 
