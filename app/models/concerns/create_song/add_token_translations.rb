@@ -6,7 +6,7 @@ module CreateSong
 
     def add_token_translation
       blocks_per_iteration = 1
-      max_concurrency = 3
+      max_concurrency = 1
       instructions = ApplicationController.renderer.render(
         template: "prompts/add_token_translations",
         formats: [ :md ],
@@ -45,15 +45,20 @@ module CreateSong
       retry_count = 0
 
       loop do
-        chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_quick)
+        validate_input_no_brackets!(block)
+
+        chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_smart)
         chat
           .with_instructions(instructions)
           .add_message role: :user, content: block.join
 
         response = chat.complete
+        pp response
 
         content = strip_model_header(response.content.strip, block.first)
         raise "Output blocks mismatch" if content.strip.scan(/\n\s*\n/).count != (block.size - 1)
+
+        validate_one_token_per_line!(content)
 
         return content.strip
       rescue => e
@@ -74,6 +79,25 @@ module CreateSong
       lyrics = data["phrases"].pluck("text_l1")
       translations = data["phrases"].pluck("text_l2")
       lyrics.zip(translations).map { |l, t| "#{l} => #{t}" }.join("\n")
+    end
+
+    def validate_input_no_brackets!(block)
+      block.each do |line|
+        if line.include?("[") || line.include?("]")
+          raise "Input line contains square brackets: #{line.strip}"
+        end
+      end
+    end
+
+    def validate_one_token_per_line!(content)
+      content_blocks = content.strip.split(/\n\s*\n/)
+      content_blocks.each do |output_block|
+        source_side = output_block.split("=>", 2).first
+        match_count = source_side.scan(/\[.*?\]/).count
+        if match_count != 1
+          raise "Expected exactly 1 [...] on source side, got #{match_count} in: #{output_block.strip}"
+        end
+      end
     end
 
     def strip_model_header(content, first_input_line)

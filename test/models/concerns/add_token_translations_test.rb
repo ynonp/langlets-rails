@@ -136,6 +136,57 @@ class AddTokenTranslationsTest < ActiveSupport::TestCase
     assert blocks[2].include?("[j']attends"), "Third block should be phrase 3"
   end
 
+  # --- validate_input_no_brackets! ---
+
+  test "validate_input_no_brackets! passes for clean lines" do
+    block = ["Bref, quand je dois => So, when I have to", "avec une fille => with a girl"]
+    assert_nothing_raised { @progress.send(:validate_input_no_brackets!, block) }
+  end
+
+  test "validate_input_no_brackets! raises when line contains opening bracket" do
+    block = ["[Bref], quand je dois => So, when I have to"]
+    error = assert_raises(RuntimeError) { @progress.send(:validate_input_no_brackets!, block) }
+    assert_match(/square brackets/, error.message)
+  end
+
+  test "validate_input_no_brackets! raises when line contains closing bracket" do
+    block = ["avec une fille] => with a girl"]
+    error = assert_raises(RuntimeError) { @progress.send(:validate_input_no_brackets!, block) }
+    assert_match(/square brackets/, error.message)
+  end
+
+  # --- validate_one_token_per_line! ---
+
+  test "validate_one_token_per_line! passes for valid output with exactly 1 [...] per source side" do
+    content = "[Bref], quand je dois => [So], when I have to\n\navec [une] fille => with [a] girl"
+    assert_nothing_raised { @progress.send(:validate_one_token_per_line!, content) }
+  end
+
+  test "validate_one_token_per_line! passes for custom translations with 1 [...] on source side" do
+    content = "Por fin [se hacía] realidad => was getting, was becoming"
+    assert_nothing_raised { @progress.send(:validate_one_token_per_line!, content) }
+  end
+
+  test "validate_one_token_per_line! raises when source side has zero [...]" do
+    content = "Bref, quand je dois prendre rendez-vous => [So], when I have to make a date"
+    error = assert_raises(RuntimeError) { @progress.send(:validate_one_token_per_line!, content) }
+    assert_match(/Expected exactly 1/, error.message)
+    assert_match(/got 0/, error.message)
+  end
+
+  test "validate_one_token_per_line! raises when source side has multiple [...]" do
+    content = "[Bref], [quand] je dois => [So], when I have to"
+    error = assert_raises(RuntimeError) { @progress.send(:validate_one_token_per_line!, content) }
+    assert_match(/Expected exactly 1/, error.message)
+    assert_match(/got 2/, error.message)
+  end
+
+  test "validate_one_token_per_line! raises when any block in multi-block output fails" do
+    content = "[Bref], quand je dois => [So], when I have to\n\navec une fille => with a girl"
+    error = assert_raises(RuntimeError) { @progress.send(:validate_one_token_per_line!, content) }
+    assert_match(/got 0/, error.message)
+  end
+
   private
 
   def stub_renderer!
