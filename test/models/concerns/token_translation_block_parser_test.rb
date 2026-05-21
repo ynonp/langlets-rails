@@ -270,4 +270,42 @@ Pensé que era un buen [momento] => moment, time
     assert_equal 23, third.l1_end_index
     assert_equal "it,", third.translation
   end
+
+  test "fixes arabic alignment when AI adds spaces after و" do
+    phrase = Phrase.new(
+      text_l1: "وكل شي منيح معكن.",
+      text_l2: "And everything is good with you."
+    )
+    phrase.l1 = languages(:arabic)
+
+    block = <<~END
+      [و] كل شي منيح معكن. => [And] everything is good with you.
+      و [كل شي] منيح معكن. => And [everything] is good with you.
+      و كل شي [منيح] معكن. => And everything is [good] with you.
+      و كل شي منيح [معكن]. => And everything is good [with you].
+    END
+
+    translations = phrase.add_tokens_from(block).token_translations
+    assert_equal 4, translations.length
+
+    # [و] => character index 0..0 in "وكل شي منيح معكن."
+    waw_token = translations.find { |t| t.l1_start_index == 0 && t.l1_end_index == 0 }
+    assert_not_nil waw_token, "Expected token for [و] at index 0"
+    assert_equal "And", waw_token.translation
+
+    # [كل شي] => characters 1..5 in "وكل شي منيح معكن."
+    koll_shi_token = translations.find { |t| t.l1_start_index == 1 && t.l1_end_index == 5 }
+    assert_not_nil koll_shi_token, "Expected token for [كل شي] at indices 1..5"
+    assert_equal "everything", koll_shi_token.translation
+
+    # [منيح] => characters 7..10 in "وكل شي منيح معكن."
+    mnih_token = translations.find { |t| t.l1_start_index == 7 && t.l1_end_index == 10 }
+    assert_not_nil mnih_token, "Expected token for [منيح] at indices 7..10"
+    assert_equal "good", mnih_token.translation
+
+    # [معكن] => characters 12..15 in "وكل شي منيح معكن."
+    ma3kon_token = translations.find { |t| t.l1_start_index == 12 && t.l1_end_index == 15 }
+    assert_not_nil ma3kon_token, "Expected token for [معكن] at indices 12..16"
+    assert_equal "with you.", ma3kon_token.translation
+  end
 end

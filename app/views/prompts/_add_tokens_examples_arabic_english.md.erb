@@ -1,5 +1,8 @@
 ---
 
+## Specific Arabic Rules
+1. Grammatical Markers & Affixes: Do not include English structural markers (like the possessive 's) inside the target [...] if they are not part of the literal translation of the Arabic word. Leave them attached but outside the brackets (e.g., [my aunt]'s).
+
 ## Example input 1:
 
 كذبة وصدقتا => A lie and I believed it
@@ -28,3 +31,20 @@
 
 [عم عاند] ماضي => [I'm resisting] the past # translated عم عاند as a single phrase because it functions as a single text unit
 عم عاند [ماضي] => I'm resisting [the past]
+
+
+## Example input 2:
+
+بيت خالتي => my aunt's house
+
+## Expected output 2:
+
+[بيت] خالتي => my aunt's [house]
+بيت [خالتي] => [my aunt]'s house
+
+## Example input 3:
+نهار التلاتا الصبح => Tuesday morning
+
+## Expexted output 3:
+[نهار التلاتا] الصبح => [Tuesday] morning # "نهار التلاتا" literally means "day of Tuesday" but maps logically to "Tuesday"
+نهار التلاتا [الصبح] => Tuesday [morning]

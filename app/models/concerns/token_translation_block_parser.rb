@@ -47,8 +47,35 @@ module TokenTranslationBlockParser
 
   private
 
+  def preprocess_alignment(line)
+    return line unless l1&.iso_name
+
+    case l1.iso_name
+    when /\Aar/ then preprocess_arabic_alignment(line)
+    else line
+    end
+  end
+
+  def preprocess_arabic_alignment(line)
+    left, right = line.split(/\s*=>\s*/, 2)
+    return line unless left && right
+
+    # Remove spaces after و (the Arabic conjunction) if the original text
+    # doesn't have them. The AI sometimes adds these spaces in alignments.
+    alignment_text = left.delete("[]")
+    fixed_text = alignment_text.gsub(/(و)\s+/, '\1')
+
+    return line if fixed_text == alignment_text
+    return line unless text_l1&.include?(fixed_text)
+
+    fixed_left = left.gsub(/(و\]?)\s+/, '\1')
+    "#{fixed_left} => #{right}"
+  end
+
   def process_line(line)
     return unless token_translations_line?(line)
+
+    line = preprocess_alignment(line)
 
     l1_with_brackets, l2_with_brackets = line.split(/\s*=>\s*/).map(&:strip)
 
