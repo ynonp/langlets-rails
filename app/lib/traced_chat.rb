@@ -14,14 +14,14 @@ class TracedChat < RubyLLM::Chat
     }) do |span|
       messages.each_with_index do |message, index|
         span.set_attribute("gen_ai.prompt.#{index}.role", message.role.to_s)
-        span.set_attribute("gen_ai.prompt.#{index}.content", message.content.to_s)
+        span.set_attribute("gen_ai.prompt.#{index}.content", String.new(message.content.to_s))
       end
       messages.each {|m| puts m.content }
       result = super
       puts result.content
 
-      span.set_attribute("gen_ai.completion.0.role", result.role)
-      span.set_attribute("gen_ai.completion.0.content", result.content)
+      span.set_attribute("gen_ai.completion.0.role", result.role.to_s)
+      span.set_attribute("gen_ai.completion.0.content", String.new(result.content))
       span.set_attribute("gen_ai.completion_json", result.to_json)
 
       result
