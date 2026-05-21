@@ -7,46 +7,53 @@ module CreateSong
     end
 
     def extract_lyrics
-      instructions = ApplicationController.renderer.render(
-        template: "prompts/extract_phrases_from_youtube_url",
-        formats: [ :md ],
-        locals: {
-          clip_language:
-        }
-      )
-
       user_content = Llm::YoutubeUrlContent.new(youtubeurl)
 
-      retry_count = 0
-      max_retries = 0
+      # --- Pass 1: Extract lyrics (SRT with approximate timestamps) ---
+      instructions_pass1 = ApplicationController.renderer.render(
+        template: "prompts/extract_phrases_from_youtube_url",
+        formats: [ :md ],
+        locals: { clip_language: }
+      )
 
-      begin
-        chat = TracedChat.new(span_name: "extract_lyrics", **self.model_params_youtube)
-        chat
-          .with_instructions(instructions)
-          .with_temperature(0.2)
-          .add_message role: :user, content: user_content
+      chat1 = TracedChat.new(span_name: "extract_lyrics_pass1", **self.model_params_youtube)
+      chat1
+        .with_instructions(instructions_pass1)
+        .with_temperature(0.2)
+        .add_message role: :user, content: user_content
 
-        response = chat.complete
+      response1 = chat1.complete
+      srt_rough = response1.content.strip
 
-        phrases = parse_lyrics_response(response.content.strip)
+      # --- Pass 2: Sync timestamps to match the actual video ---
+      instructions_pass2 = ApplicationController.renderer.render(
+        template: "prompts/sync_lyrics_timestamps",
+        formats: [ :md ],
+        locals: { clip_language: }
+      )
 
-        self.data ||= {}
-        self.data["phrases"] = phrases
+      chat2 = TracedChat.new(span_name: "extract_lyrics_pass2", **self.model_params_youtube)
+      chat2
+        .with_instructions(instructions_pass2)
+        .with_temperature(0.2)
 
-        save!
-      rescue => e
-        retry_count += 1
-        if retry_count <= max_retries
-          wait_time = (2 ** retry_count) + rand(1..3)
-          Rails.logger.warn "ExtractLyrics attempt #{retry_count} failed: #{e.message}. Retrying in #{wait_time} seconds..."
-          sleep(wait_time)
-          retry
-        else
-          Rails.logger.error "ExtractLyrics failed after #{max_retries} attempts: #{e.message}"
-          raise e
-        end
+      chat2.add_message(role: :user, content: "Here is the SRT file with approximate timestamps that needs correction:\n\n#{srt_rough}")
+      chat2.add_message(role: :user, content: user_content)
+
+      response2 = chat2.complete
+
+      phrases = parse_lyrics_response(response2.content.strip)
+
+      # Fallback: if pass 2 produced no phrases, use pass 1 result
+      if phrases.empty?
+        Rails.logger.warn "Pass 2 timestamp sync produced no phrases; falling back to pass 1 result"
+        phrases = parse_lyrics_response(srt_rough)
       end
+
+      self.data ||= {}
+      self.data["phrases"] = phrases
+
+      save!
     end
 
     private
@@ -69,8 +76,14 @@ module CreateSong
       [ video_accessed, confidence ]
     end
 
+    # Normalizes 2-part SRT timestamps (MM:SS,mmm) to 3-part (00:MM:SS,mmm)
+    # Only matches lines where BOTH timestamps are 2-part; leaves 3-part lines untouched
+    SRT_NORMALIZE_REGEX = /(\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2},\d{3})/
+
     def parse_lyrics_response(response_text)
-      file = SRT::File.parse(response_text)
+      normalized = response_text.gsub(SRT_NORMALIZE_REGEX, '00:\1 --> 00:\2')
+
+      file = SRT::File.parse(normalized)
 
       file.lines.map do |line|
         {
