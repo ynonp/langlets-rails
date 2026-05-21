@@ -5,7 +5,7 @@ module CreateSong
     extend ActiveSupport::Concern
 
     def add_token_translation
-      blocks_per_iteration = 1
+      blocks_per_iteration = 4
       max_concurrency = 1
       instructions = ApplicationController.renderer.render(
         template: "prompts/add_token_translations",
