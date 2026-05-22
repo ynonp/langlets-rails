@@ -18,7 +18,6 @@ class TracedChat < RubyLLM::Chat
       end
       messages.each {|m| puts m.content }
       result = super
-      puts result.content
 
       span.set_attribute("gen_ai.completion.0.role", result.role.to_s)
       span.set_attribute("gen_ai.completion.0.content", String.new(result.content))

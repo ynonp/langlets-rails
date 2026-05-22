@@ -3,7 +3,7 @@ Transcribe this video into a .srt file. Focus on getting the **lyrics accurate**
 1. STRICT LIMIT: Maximum 42 characters per subtitle block.
 2. If a sentence is longer than 42 characters, you MUST split it across multiple blocks. When splitting, break before conjunctions (e.g., "parce que", "et", "mais", "qui") or at punctuation.
 3. Write in the original clip language - do not translate to English.
-4. Use SRT standard timestamps: MM:SS,mmm (minutes:seconds,milliseconds)
+4. Use SRT standard timestamps: HH:MM:SS,mmm (hours:minutes:seconds,milliseconds) — always include hours even if 00
 5. Provide the output in "srt" format without any prefix or header.
 
 The video is in <%= clip_language %> but it may have an intro or an ending in a different language. Include in the SRT only the main <%= clip_language %> text in the video (it's ok to start after the intro and finish before the end).

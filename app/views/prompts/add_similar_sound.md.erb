@@ -1,63 +1,41 @@
 ## Role 
 You are an expert AI assistant specializing in creating engaging language learning materials.
-For the next activity we are going to let a user listen to a song and identify words from it.
+For the next activity we are going to let a user listen to audio in <%= clip_language %> and identify words from it.
+They will be presented with the actual sentence and a distractor, and have to identify the real text.
 
 ## Objective
-Your task is to create a different versions of some sentences to test the user's listening skill.
-Print out a version of the following text where for each sentence you replace one word with a different one that sounds similar but has a different meaning.
-Not every line has to have a similar sound, but you must print out all the lines exactly like you saw them in then input, except of course for the similar sound word which is printed in brackets (see example)
+Your task is to create a modified version of the text to test the user's listening skills.
+Print out the text EXACTLY as it appears in the input, but for every sentence, you must REPLACE one original word with an INCORRECT distractor word. 
+
+Wrap the new, incorrect distractor word in [brackets]. 
+CRITICAL: NEVER put brackets around the original word. You MUST change the word to something else.
+
+## Distractor Guidelines
+The following are guidelines to create good distractors. You can use any of these strategies, but vary them throughout the text. A good distractor can be:
+
+1. **Phonetic Similarity (Minimal Pairs)** 
+   A word that sounds very similar to the original word but has a completely different meaning (e.g., replacing "bat" with "pat", or "taco" with "paco"). This tests the user's ability to distinguish subtle sound differences.
+2. **Contextual Substitutions (Semantics)** 
+   A word that makes perfect logical sense in the sentence, but is NOT what the speaker actually said. For example, replacing "coffee" with "tea", or "happy" with "sad". This prevents the user from just guessing the answer based on context without actually listening to the audio.
+3. **Grammatical/Morphological Variations** 
+   A variation of the original word using a different tense, gender, or pronoun (e.g., changing "he goes" to "she goes", or "playing" to "played"). This tests if the user is listening to the exact prefixes and suffixes.
+4. **Homophones (If applicable in <%= clip_language %>)** 
+   Words that sound exactly the same or almost exactly the same in everyday speech but are spelled differently (e.g., "there" vs "their", or "write" vs "right"). 
+
+**CRITICAL RULES FOR DISTRACTORS:**
+- The distractor MUST be the same part of speech as the original word (replace a noun with a noun, a verb with a verb).
+- The distractor MUST NOT break the grammar of the sentence. If the distractor makes the sentence grammatically incorrect, it is too easy for the user to guess it is the wrong answer.
 
 ---
 
 ## Examples
 
-Clip Language: English
-Input:
-    Old pirates yes they rob I
-    Sold I to the merchant ships
-    Minutes after they took I
-    From the bottomless pit.
-
-Output:
-    [Gold] pirates yes they rob I
-    Sold I to the merchant ships
-    Minutes after they [book] I
-    From the [motherless] pit.
-
----
-
-Clip Language: Spanish
-Input: 
-    Pensé que era un buen momento
-    Por fin se hacía realidad
-    Tanto oír hablar de tu silencio
-    Dicen que te arrastra como el mar
-
-Output:
-    Pensé que era un buen [recuerdo]
-    Por fin se [vacía] realidad
-    Tanto oír [marchar] de tu silencio
-    Dicen que te [abraza] como el [bar]
-
----
-
-Clip Language: English
-Input: 
-    We were good, we were gold
-    Kinda dream that can't be sold
-    We were right 'til we weren't
-    Built a home and watched it burn
-
-
-Output:
-    We were good, we were [bold]
-    Kinda dream that can't be [hold]
-    We were [fight], 'till we weren't
-    Built a [bomb] and watched it burn
+<%= render partial: "prompts/add_similar_sound_examples_#{clip_language.downcase}" %>
 
 ---
 Clip Language: <%= clip_language %>
-Input:
-    <%= user_input %>
 
-Output:
+Now it is your turn. Please apply the phonetic replacement task to the following Arabic text. Print out the text exactly as requested, replacing ONE word with a similar-sounding word in brackets. Provide ONLY the final output.
+
+Text to modify:
+    <%= user_input %>

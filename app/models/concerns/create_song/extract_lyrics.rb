@@ -76,13 +76,18 @@ module CreateSong
       [ video_accessed, confidence ]
     end
 
-    # Normalizes 2-part SRT timestamps (MM:SS,mmm) to 3-part (00:MM:SS,mmm)
-    # Only matches lines where BOTH timestamps are 2-part; leaves 3-part lines untouched
-    SRT_NORMALIZE_REGEX = /(\d{2}:\d{2},\d{3}) --> (\d{2}:\d{2},\d{3})/
+    # Normalizes SRT timestamps to standard 3-part format (HH:MM:SS,mmm).
+    # The model is asked to output HH:MM:SS,mmm but sometimes still outputs MM:SS,mmm.
+    # This ensures both formats end up as valid 3-part before handing to SRT::File.parse.
+    def normalize_srt_timestamps(text)
+      # Strip any existing "00:" hour prefix from 3-part timestamps first,
+      # then normalize all remaining 2-part timestamps to 3-part.
+      text = text.gsub(/\b00:(\d{2}:\d{2},\d{3})\b/, '\1')
+      text.gsub(/\b(\d{2}:\d{2},\d{3})\b/, '00:\1')
+    end
 
     def parse_lyrics_response(response_text)
-      normalized = response_text.gsub(SRT_NORMALIZE_REGEX, '00:\1 --> 00:\2')
-
+      normalized = normalize_srt_timestamps(response_text)
       file = SRT::File.parse(normalized)
 
       file.lines.map do |line|

@@ -26,9 +26,9 @@ class CreateSongProgress < ApplicationRecord
     LangfuseTracer.in_span(span_name, attributes: { }) do |span|
       extract_lyrics unless data["phrases"].present?
       translate unless data.dig("phrases", 0, "text_l2")
-      add_token_translation unless data["phrases_with_token_translations"]
-      add_lessons unless data["lessons"]
-      add_similar_sound unless data["similar_sounds"]
+      add_token_translation unless data["phrases_with_token_translations"].present?
+      add_lessons unless data["lessons"].present?
+      add_similar_sound unless data["similar_sounds"].present?
     end
   end
 

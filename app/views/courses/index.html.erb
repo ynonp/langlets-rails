@@ -38,9 +38,12 @@
 <!-- Top bar: Use existing authentication bar -->
 <header class="py-6 border-b border-slate-700/60">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-    <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight flex-1">
-      Langlets
-    </h1>
+    <div class="flex-1">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
+        Langlets
+      </h1>
+      <p class="text-slate-400 text-sm sm:text-base mt-1">Understand native content</p>
+    </div>
     
     <% if user_signed_in? %>
       <div class="flex items-center space-x-4">
@@ -192,13 +195,12 @@
   <!-- GEO: Entity-rich description for search engines and AI crawlers -->
   <section class="mb-8 px-2">
     <p class="text-slate-300 text-lg leading-relaxed">
-      Learn
+      Understand native content in
       <strong class="text-white">English</strong>,
       <strong class="text-white">Hebrew</strong>,
       <strong class="text-white">French</strong>,
       <strong class="text-white">Spanish</strong>, and
-      <strong class="text-white">Arabic</strong>
-      through interactive video clips from real songs, TV shows, and authentic content.
+      <strong class="text-white">Arabic</strong>.
       Each course breaks down bilingual phrases with word-level translations, timestamps,
       and AI-powered activities designed to build your listening, speaking, and
       comprehension skills through spaced repetition.
