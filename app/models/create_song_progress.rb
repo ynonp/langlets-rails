@@ -28,7 +28,7 @@ class CreateSongProgress < ApplicationRecord
       translate unless data.dig("phrases", 0, "text_l2")
       add_token_translation unless data["phrases_with_token_translations"].present?
       add_lessons unless data["lessons"].present?
-      add_similar_sound unless data["similar_sounds"].present?
+      add_similar_sound unless similar_sounds_complete?
     end
   end
 
