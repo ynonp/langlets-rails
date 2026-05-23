@@ -10,9 +10,9 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::Translate
 
   attribute :model_params_youtube, default: {model: 'gemini-3.5-flash', provider: :gemini, assume_model_exists: true }
-  attribute :model_params_quick, default: {model: 'gemini-3-flash-preview', provider: :gemini, assume_model_exists: true }
-  attribute :model_params_smart, default: {model: 'gemini-3.1-pro', provider: :gemini, assume_model_exists: true }
-  attribute :model_params_translate, default: {model: 'gemini-3-flash-preview', provider: :gemini, assume_model_exists: true }
+  attribute :model_params_quick, default: {model: 'deepseek-v4-flash:cloud', provider: :openai, assume_model_exists: true }
+  attribute :model_params_smart, default: {model: 'deepseek-v4-pro:cloud', provider: :openai, assume_model_exists: true }
+  attribute :model_params_translate, default: {model: 'qwen3.5:397b-cloud', provider: :openai, assume_model_exists: true }
 
   def use_local_ollama
     # self.model_params_youtube = {model: 'gemini-3-flash-preview:cloud', provider: :openai, assume_model_exists: true}
