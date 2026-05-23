@@ -15,7 +15,7 @@ class ResyncTimestampsController < ApplicationController
     end
 
     if file.nil? || file.blank?
-      redirect_to new_resync_timestamp_path, alert: "Please upload a JSON file."
+      redirect_to new_resync_timestamp_path, alert: "Please upload a JSON or SRT file."
       return
     end
 
@@ -31,6 +31,8 @@ class ResyncTimestampsController < ApplicationController
       return
     end
 
+    original_filename = file.respond_to?(:original_filename) ? file.original_filename : nil
+
     file_content = if file.respond_to?(:read)
                      file.read
     elsif file.is_a?(String)
@@ -42,11 +44,22 @@ class ResyncTimestampsController < ApplicationController
                      return
     end
 
-    begin
-      json_data = JSON.parse(file_content)
-    rescue JSON::ParserError => e
-      redirect_to new_resync_timestamp_path, alert: "Invalid JSON: #{e.message}"
-      return
+    is_srt = original_filename&.end_with?(".srt") || file_content.strip.match?(/^\d+\s*\n\d{2}:\d{2}:\d{2},\d{3}\s*-->/)
+
+    if is_srt
+      begin
+        json_data = parse_srt_to_json_array(file_content)
+      rescue => e
+        redirect_to new_resync_timestamp_path, alert: "Invalid SRT file: #{e.message}"
+        return
+      end
+    else
+      begin
+        json_data = JSON.parse(file_content)
+      rescue JSON::ParserError => e
+        redirect_to new_resync_timestamp_path, alert: "Invalid JSON: #{e.message}"
+        return
+      end
     end
 
     unless json_data.is_a?(Array)
@@ -66,6 +79,21 @@ class ResyncTimestampsController < ApplicationController
   end
 
   private
+
+  def parse_srt_to_json_array(srt_content)
+    blocks = srt_content.strip.split(/\n\s*\n/)
+    blocks.map do |block|
+      lines = block.strip.split("\n")
+      next if lines.length < 2
+
+      # Second line contains the timestamp range: "HH:MM:SS,mmm --> HH:MM:SS,mmm"
+      timestamp_line = lines[1]
+      match = timestamp_line.match(/^(\d{2}:\d{2}:\d{2},\d{3})\s*-->/)
+      next unless match
+
+      { "timestamp" => match[1].sub(",", ".") }
+    end.compact
+  end
 
   def authorize_resync
     authorize! :create, Course

@@ -53,4 +53,36 @@ class CreateSongProgress < ApplicationRecord
 
     File.write(output_file, JSON.pretty_generate(export_data))
   end
+
+  def save_phrases_to_srt(output_file)
+    phrases = data["phrases"]
+    return false unless phrases.present?
+
+    srt_content = phrases.each_with_index.map do |phrase, index|
+      seq = index + 1
+      start_ts = srt_timestamp(phrase["timestamp"])
+      end_ts   = srt_timestamp(phrase["timestamp_end"])
+      text     = phrase["text_l1"]
+
+      "#{seq}\n#{start_ts} --> #{end_ts}\n#{text}\n"
+    end.join("\n")
+
+    File.write(output_file, srt_content, encoding: "UTF-8")
+    true
+  end
+
+  private
+
+  def srt_timestamp(ts)
+    parts = ts.split(":")
+    minutes = parts[0].to_i
+    seconds = parts[1].to_f
+    total_seconds = (minutes * 60) + seconds
+
+    hours   = total_seconds.to_i / 3600
+    mins    = (total_seconds.to_i % 3600) / 60
+    secs    = total_seconds % 60
+
+    format("%02d:%02d:%06.3f", hours, mins, secs).sub(".", ",")
+  end
 end

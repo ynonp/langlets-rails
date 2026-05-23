@@ -15,7 +15,7 @@
 
       <div class="mb-8">
         <h2 class="text-3xl font-bold text-slate-100 mb-2">Resync Phrase Timestamps</h2>
-        <p class="text-slate-400">Upload a JSON file with corrected timestamps for a course's phrases.</p>
+        <p class="text-slate-400">Upload a JSON or SRT file with corrected timestamps for a course's phrases.</p>
       </div>
 
       <% if flash[:alert] %>
@@ -34,26 +34,31 @@
         </div>
 
         <div>
-          <%= form.label :file, "JSON File", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+          <%= form.label :file, "JSON or SRT File", class: "block text-sm font-semibold text-slate-200 mb-2" %>
           <%= form.file_field :file,
-                accept: ".json,application/json",
+                accept: ".json,.srt,application/json",
                 class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:font-semibold file:cursor-pointer hover:file:bg-blue-700" %>
-          <p class="text-xs text-slate-400 mt-1">Upload a JSON file with fixed timestamps. Must match phrase count and order.</p>
+          <p class="text-xs text-slate-400 mt-1">Upload a JSON or SRT file with fixed timestamps. Must match phrase count and order.</p>
         </div>
 
         <div class="p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
-          <h3 class="text-blue-300 font-semibold mb-2">JSON File Format</h3>
-          <p class="text-slate-300 text-sm mb-3">The JSON must be an array with exactly one object per phrase, in the same order as the course phrases:</p>
-          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto">[
-  {
-    "text_l1": "Phrase text in original language",
-    "timestamp": "00:22.00"
-  },
-  {
-    "text_l1": "Next phrase text",
-    "timestamp": "00:24.00"
-  }
+          <h3 class="text-blue-300 font-semibold mb-2">JSON / SRT File Format</h3>
+          <p class="text-slate-300 text-sm mb-3">The file must contain exactly one entry per phrase, in the same order as the course phrases:</p>
+
+          <h4 class="text-blue-400 font-medium text-sm mb-1">JSON</h4>
+          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto mb-4">[
+  { "text_l1": "Phrase text", "timestamp": "00:22.00" },
+  { "text_l1": "Next phrase",  "timestamp": "00:24.00" }
 ]</pre>
+
+          <h4 class="text-blue-400 font-medium text-sm mb-1">SRT</h4>
+          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto">1
+00:00:22,000 --&gt; 00:00:24,000
+Phrase text
+
+2
+00:00:24,000 --&gt; 00:00:27,500
+Next phrase</pre>
         </div>
 
         <div class="p-4 bg-yellow-900/50 border border-yellow-500/50 rounded-lg">
