@@ -1,0 +1,34 @@
+---
+
+## Example input 1
+
+Ich möchte die Welt verändern => I want to change the world
+
+## Expected output 1
+
+[Ich] möchte die Welt verändern => [I] want to change the world
+Ich [möchte] die Welt verändern => I [want] to change the world
+Ich möchte [die Welt] verändern => I want to change [the world]
+Ich möchte die Welt [verändern] => I want to [change] the world
+
+## Example input 2
+
+Er hat das Buch gelesen => He read the book
+
+## Expected output 2
+
+[Er] hat das Buch gelesen => [He] read the book
+Er [hat] das Buch gelesen => He read the book # "hat" is an auxiliary, part of "hat ... gelesen" = "read"
+Er hat [das Buch] gelesen => He read [the book]
+Er hat das Buch [gelesen] => He [read] the book
+
+## Example input 3
+
+Die Kinder spielen im Garten => The children play in the garden
+
+## Expected output 3
+
+[Die Kinder] spielen im Garten => [The children] play in the garden
+Die Kinder [spielen] im Garten => The children [play] in the garden
+Die Kinder spielen [im] Garten => The children play [in the] garden # "im" = contraction of "in dem" = "in the"
+Die Kinder spielen im [Garten] => The children play in the [garden]

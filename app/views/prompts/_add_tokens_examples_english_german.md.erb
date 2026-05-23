@@ -1,0 +1,37 @@
+---
+
+## Example input 1
+
+We are going to the cinema tomorrow => Wir gehen morgen ins Kino
+
+## Expected output 1
+
+[We] are going to the cinema tomorrow => [Wir] gehen morgen ins Kino
+We [are going] to the cinema tomorrow => Wir [gehen] morgen ins Kino # "are going" maps to the single verb "gehen"
+We are going [to the cinema] tomorrow => Wir gehen morgen [ins Kino] # "ins" = contraction of "in das" = "to the"
+We are going to the cinema [tomorrow] => Wir gehen [morgen] ins Kino
+
+## Example input 2
+
+She has never been to Berlin => Sie ist noch nie in Berlin gewesen
+
+## Expected output 2
+
+[She] has never been to Berlin => [Sie] ist noch nie in Berlin gewesen
+She [has] never been to Berlin => Sie [ist] noch nie in Berlin gewesen # auxiliary "has" maps to German auxiliary "ist"
+She has [never] been to Berlin => Sie ist [noch nie] in Berlin gewesen
+She has never [been] to Berlin => Sie ist noch nie in Berlin [gewesen] # past participle at sentence end
+She has never been [to] Berlin => Sie ist noch nie [in] Berlin gewesen
+She has never been to [Berlin] => Sie ist noch nie in [Berlin] gewesen
+
+## Example input 3
+
+I don't know where he lives => Ich weiß nicht, wo er wohnt
+
+## Expected output 3
+
+[I] don't know where he lives => [Ich] weiß nicht, wo er wohnt
+I [don't know] where he lives => Ich [weiß nicht] wo er wohnt # negation is part of the verb phrase
+I don't know [where] he lives => Ich weiß nicht, [wo] er wohnt
+I don't know where [he] lives => Ich weiß nicht, wo [er] wohnt
+I don't know where he [lives] => Ich weiß nicht, wo er [wohnt]

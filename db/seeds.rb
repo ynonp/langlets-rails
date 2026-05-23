@@ -34,6 +34,12 @@ l_es = Language.find_or_create_by!(iso_name: 'es') do |lang|
   lang.pronunciation_variant_name = 'es-ES'
 end
 
+l_de = Language.find_or_create_by!(iso_name: 'de') do |lang|
+  lang.english_name = 'German'
+  lang.native_name = 'Deutsch'
+  lang.pronunciation_variant_name = 'de-DE'
+end
+
 l_ar = Language.find_or_create_by!(iso_name: 'ar-JO') do |lang|
   lang.english_name = 'Arabic'
   lang.native_name = 'العربية الفلسطينية'

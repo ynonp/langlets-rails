@@ -302,6 +302,7 @@ The platform uses **Azure Cognitive Services TTS** for generating pronunciation 
 - **English**: `en-US-AriaNeural`
 - **Spanish**: `es-ES-ElviraNeural` 
 - **French**: `fr-FR-DeniseNeural`
+- **German**: `de-DE-KatjaNeural`
 - **Arabic**: `ar-JO-TaimNeural` (includes Palestinian Arabic fallback)
 - **Hebrew**: `he-IL-AvriNeural`
 
@@ -658,6 +659,7 @@ WAV_BITS_PER_SAMPLE = 16
   "en" => "en-US-AriaNeural",
   "es" => "es-ES-ElviraNeural", 
   "fr" => "fr-FR-DeniseNeural",
+  "de" => "de-DE-KatjaNeural",
   "ar" => "ar-JO-TaimNeural",
   "he" => "he-IL-AvriNeural"
 }

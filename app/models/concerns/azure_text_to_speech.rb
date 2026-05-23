@@ -32,6 +32,8 @@ module AzureTextToSpeech
         "fr-FR-DeniseNeural"
       when "ar", "ar-jo", "ar-eg", "ar-sa", "ar-ps" # Added common variations
         "ar-LB-RamiNeural" # Using Jordanian as a default for Arabic
+      when "de", "de-de", "de-at", "de-ch"
+        "de-DE-KatjaNeural"
       when "he", "he-il"
         "he-IL-AvriNeural"
       else
@@ -52,6 +54,8 @@ module AzureTextToSpeech
         "ar-JO" # Fallback for Palestinian Arabic
       when "fr", "fr-fr", "fr-ca"
         "fr-FR"
+      when "de", "de-de", "de-at", "de-ch"
+        "de-DE"
       when "he", "he-il"
         "he-IL"
       else
