@@ -21,7 +21,12 @@ export default class extends Controller {
   disconnect() {
     this.stopPlaybackMonitoring();
     if (this.player) {
-      this.player.destroy();
+      // Defer YouTube API cleanup so it doesn't block Turbo navigation.
+      // YT.Player.destroy() is synchronous and slow on mobile (video decoder
+      // teardown, postMessage bridge cleanup, memory release).
+      const player = this.player;
+      this.player = null;
+      setTimeout(() => player.destroy(), 0);
     }
   }
 
