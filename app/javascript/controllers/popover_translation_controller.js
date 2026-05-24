@@ -5,32 +5,10 @@ export default class extends Controller {
   static values = { l1Language: String, savedIds: Array };
 
   initialize() {
-    this.hidePopup = this.hidePopup.bind(this);
-    this.showPopup = this.showPopup.bind(this);
     this.currentAudio = null;
     this.currentOriginalText = null;
     this.currentTranslation = null;
     this.currentTokenId = null;
-  }
-
-  connect() {
-    this.element.addEventListener('click', this.showPopup);
-    document.addEventListener('click', this.hidePopup);
-    document.addEventListener('scroll', this.hidePopup, { passive: true });
-    const phrasesContainer = document.getElementById('phrases-container');
-    if (phrasesContainer) {
-      phrasesContainer.addEventListener('scroll', this.hidePopup, { passive: true });
-    }
-  }
-
-  disconnect() {
-    this.element.removeEventListener('click', this.showPopup);
-    document.removeEventListener('click', this.hidePopup);
-    document.removeEventListener('scroll', this.hidePopup);
-    const phrasesContainer = document.getElementById('phrases-container');
-    if (phrasesContainer) {
-      phrasesContainer.removeEventListener('scroll', this.hidePopup);
-    }
   }
 
   hidePopup() {
@@ -42,34 +20,38 @@ export default class extends Controller {
   }
 
   showPopup(ev) {
-    if (ev.target.dataset.translation) {
-      const {translation} = ev.target.dataset;
-      const originalText = ev.target.textContent.trim();
-      const tokenId = ev.target.dataset.tokenId ? parseInt(ev.target.dataset.tokenId) : null;
-
-      this.currentOriginalText = originalText;
-      this.currentTranslation = translation;
-      this.currentTokenId = tokenId;
-
-      this.translationTextTarget.textContent = translation;
-
-      const rect = ev.target.getBoundingClientRect();
-      const left = rect.left + (rect.width / 2);
-      const top = rect.bottom + 5;
-
-      this.translationPopupTarget.style.left = `${left}px`;
-      this.translationPopupTarget.style.top = `${top}px`;
-      this.translationPopupTarget.classList.remove('hidden');
-
-      this._updateSaveButton();
-
-      const audio = ev.currentTarget.parentElement.querySelector('audio');
-      if (audio) {
-        audio.play();
-      }
-
-      ev.stopPropagation();
+    const tokenEl = ev.target.closest('[data-translation]');
+    if (!tokenEl) {
+      this.hidePopup();
+      return;
     }
+
+    const translation = tokenEl.dataset.translation;
+    const originalText = tokenEl.textContent.trim();
+    const tokenId = tokenEl.dataset.tokenId ? parseInt(tokenEl.dataset.tokenId) : null;
+
+    this.currentOriginalText = originalText;
+    this.currentTranslation = translation;
+    this.currentTokenId = tokenId;
+
+    this.translationTextTarget.textContent = translation;
+
+    const rect = tokenEl.getBoundingClientRect();
+    const left = rect.left + (rect.width / 2);
+    const top = rect.bottom + 5;
+
+    this.translationPopupTarget.style.left = `${left}px`;
+    this.translationPopupTarget.style.top = `${top}px`;
+    this.translationPopupTarget.classList.remove('hidden');
+
+    this._updateSaveButton();
+
+    const audioUrl = tokenEl.dataset.audioUrl;
+    if (audioUrl) {
+      this.playAudio(audioUrl);
+    }
+
+    ev.stopPropagation();
   }
 
   _updateSaveButton() {

@@ -61,7 +61,7 @@
         data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
         id="phrases-container"
         data-watch-video-activity-target="container"
-        data-action="scroll@document->popover-translation#hidePopup click@document->popover-translation#hidePopup"
+        data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
         class="order-4 w-full mx-auto bg-gray-800 min-h-0 overflow-y-auto flex-1"                
         >
       <div
@@ -84,7 +84,7 @@
             >
               <%= wrap_tokens_in_spans(phrase,
                                        {class: "cursor-pointer hover:bg-gray-600 rounded inline #{font_size_class}",
-                                      data: {action: "click->popover-translation#showPopup" }}) %>
+                                      }) %>
             </div>
             <div
               class="text-teal-400 mt-1 text-md md:text-xl" data-watch-video-activity-target="translation"

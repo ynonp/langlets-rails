@@ -4,7 +4,7 @@ module Activities
       {
         **video_params,
         rtl: phrases.first.l1.rtl,
-        phrases: phrases.ordered_by_timestamp.includes(:similar_sounds),
+        phrases: phrases.ordered_by_timestamp.includes(:similar_sounds, :token_translations),
         activity_translation_ids: token_translations.ids,
       }
     end
