@@ -404,7 +404,8 @@ class Course < ApplicationRecord
 
     end_char = words[0...end_word].join(" ").length + words[end_word].length - 1
     end_char = start_char + words[start_word..end_word].join(" ").length - 1 if start_word == end_word
-    end_char = words[0...end_word].join(" ").length + 1 + words[end_word].length - 1
+    end_char = words[0...end_word].join(" ").length + words[end_word].length - 1
+    end_char += 1 if end_word > 0
 
     [ start_char, end_char ]
   end
