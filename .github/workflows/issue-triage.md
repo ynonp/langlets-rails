@@ -1,6 +1,6 @@
 ---
 emoji: 🏷️
-description: Triages new issues — labels by type and priority, identifies duplicates, asks clarifying questions, and assigns team members
+description: Triages new issues — labels by type and priority, identifies duplicates, asks clarifying questions
 on:
   issues:
     types: [opened]
@@ -28,12 +28,6 @@ safe-outputs:
       - needs-clarification
       - good-first-issue
   add-comment:
-  assign-to-user:
-    allowed:
-      - team-lead
-      - backend-dev
-      - frontend-dev
-      - devops
   close-issue:
     state-reason: duplicate
 ---
@@ -107,18 +101,7 @@ If the description is unclear or missing critical information:
 - Apply the `needs-clarification` label
 - Post a comment asking specific, friendly questions to get the missing details. Be specific — don't just say "please provide more info." Ask for the exact missing pieces.
 
-### 6. Assign to a Team Member
-
-Based on the issue type and content, assign the most appropriate team member:
-
-- Frontend, UI, UX, CSS, JavaScript, React issues → `frontend-dev`
-- Backend, API, database, server-side logic, performance issues → `backend-dev`
-- Infrastructure, deployment, CI/CD, DevOps, Docker issues → `devops`
-- Cross-cutting, architectural, or unclear → `team-lead`
-
-Use `assign-to-user` to make the assignment. Do not assign if the issue needs clarification first — wait until the reporter provides the missing information.
-
-### 7. Complete
+### 6. Complete
 
 If the issue is already clear, labeled, and there are no duplicates or missing information, call `noop` with a brief confirmation.
 
@@ -126,6 +109,5 @@ If the issue is already clear, labeled, and there are no duplicates or missing i
 
 - Use `add-labels` to apply type and priority labels. You may apply multiple labels in one call.
 - Use `add-comment` to ask clarifying questions or explain duplicate closures. Be kind and professional.
-- Use `assign-to-user` to assign the issue to a team member.
 - Use `close-issue` with `state-reason: duplicate` when a duplicate is identified.
 - Use `noop` with a short explanation when no visible action is required.
