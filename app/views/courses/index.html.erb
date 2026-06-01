@@ -37,13 +37,15 @@
 
 <!-- Top bar: Use existing authentication bar -->
 <header class="py-6 border-b border-slate-700/60">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-    <div class="flex-1">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
-        Langlets
-      </h1>
-      <p class="text-slate-400 text-sm sm:text-base mt-1">Understand native content</p>
-    </div>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2">
+    <!-- Top row: Logo and Auth -->
+    <div class="flex items-center justify-between gap-4 mb-4">
+      <div class="flex-1">
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
+          Langlets
+        </h1>
+        <p class="text-slate-400 text-sm sm:text-base mt-1">Understand native content</p>
+      </div>
     
     <% if user_signed_in? %>
       <div class="flex items-center space-x-4">
@@ -164,6 +166,12 @@
         </div>
       </div>
     <% end %>
+    </div>
+
+    <!-- Language Selector Row -->
+    <div class="border-t border-slate-700/60 pt-4">
+      <%= render 'shared/language_selector' %>
+    </div>
   </div>
 </header>
 

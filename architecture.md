@@ -452,6 +452,50 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 - The onboarding page is context-aware: it shows "Change Learning Language" when accessed from the profile menu, and "Welcome to Langlets" during first-time onboarding.
 - When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
 
+### Web App Language Selection
+
+The web application provides language filtering functionality for all users (authenticated and unauthenticated):
+
+#### Language Selector UI
+- **Visual Display**: A horizontal language selector bar appears at the top of the home page below the header
+- **All Languages Option**: Default view showing content from all languages
+- **Language Options**: Each available language is displayed with:
+  - Emoji flag (🇬🇧 for English, 🇪🇸 for Spanish, 🇫🇷 for French, 🇩🇪 for German, 🇮🇱 for Hebrew, 🇯🇴 for Arabic)
+  - Native language name (e.g., "Deutsch", "עברית", "العربية الفلسطينية")
+- **Active State**: Selected language is highlighted with blue background (`bg-blue-600`), others have slate background (`bg-slate-700`)
+
+#### Language Selection Behavior
+- **URL Parameter**: Language selection is managed via `?lang=<iso_code>` query parameter
+  - Example: `/?lang=de` filters to show only German content
+  - No `?lang` parameter shows all languages
+- **localStorage Persistence**: The selected language is persisted in browser localStorage under key `langlets_selected_language`
+  - When a user selects a language, it's saved to localStorage
+  - On subsequent visits, the saved language preference is applied automatically
+  - Users can clear the preference by selecting "All Languages"
+- **Session Storage**: The language preference is also stored in Rails session for server-side filtering
+- **Content Filtering**:
+  - Courses are filtered by the selected language using `Language.find_by(iso_name: params[:lang])`
+  - Learning paths are filtered to only show those containing courses in the selected language
+  - When no language is selected, all content is displayed
+
+#### Implementation Details
+- **Stimulus Controller**: `language-selector` controller manages the localStorage interaction
+  - Reads saved language preference on page load
+  - Updates URL to include saved language parameter if different from current
+  - Saves language selection to localStorage when user clicks a language option
+- **Helper Methods**:
+  - `language_flag(iso_code)`: Returns appropriate emoji flag for language ISO code
+  - `current_language_code`: Returns the currently selected language from params or session
+- **Shared Partial**: `app/views/shared/_language_selector.html.erb` renders the language selector UI
+
+#### Key Files
+- `app/views/shared/_language_selector.html.erb` — Language selector UI component
+- `app/javascript/controllers/language_selector_controller.js` — Stimulus controller for localStorage persistence
+- `app/helpers/application_helper.rb` — Helper method for language flag emojis
+- `app/controllers/application_controller.rb` — Language session management and helper methods
+
+
+
 #### OAuth Authentication in Native App
 - Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.
 - The `AuthBridgeComponent` intercepts OAuth sign-in button taps in the web view and sends a bridge message to iOS, which starts `ASWebAuthenticationSession`.

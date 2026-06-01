@@ -23,4 +23,18 @@ module ApplicationHelper
       "bg-orange-500"      # Regular orange - no streak
     end
   end
+
+  # Helper method to get emoji flag for language ISO code
+  def language_flag(iso_code)
+    flags = {
+      'en' => '🇬🇧',
+      'es' => '🇪🇸',
+      'fr' => '🇫🇷',
+      'de' => '🇩🇪',
+      'he' => '🇮🇱',
+      'ar' => '🇯🇴',
+      'ar-JO' => '🇯🇴'
+    }
+    flags[iso_code] || '🌐'
+  end
 end

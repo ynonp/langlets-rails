@@ -46,6 +46,9 @@ application.register("flashcard-activity", FlashcardActivityController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import LanguageSelectorController from "./language_selector_controller"
+application.register("language-selector", LanguageSelectorController)
+
 import LearningPathCoursesController from "./learning_path_courses_controller"
 application.register("learning-path-courses", LearningPathCoursesController)
 

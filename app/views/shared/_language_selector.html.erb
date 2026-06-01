@@ -1,0 +1,25 @@
+<div class="flex items-center space-x-2 py-2 overflow-x-auto"
+     data-controller="language-selector"
+     data-language-selector-current-value="<%= current_language_code || '' %>">
+
+  <!-- All Languages Option -->
+  <%= link_to root_path(lang: nil),
+      class: "language-option flex-shrink-0",
+      data: { action: "click->language-selector#selectLanguage", lang: "" } do %>
+    <span class="px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 whitespace-nowrap <%= current_language_code.blank? ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>">
+      All Languages
+    </span>
+  <% end %>
+
+  <!-- Individual Language Options -->
+  <% Language.all.order(:english_name).each do |language| %>
+    <% is_selected = current_language_code == language.iso_name %>
+    <%= link_to root_path(lang: language.iso_name),
+        class: "language-option flex-shrink-0",
+        data: { action: "click->language-selector#selectLanguage", lang: language.iso_name } do %>
+      <span class="px-3 py-2 rounded-lg text-sm font-medium transition-colors duration-200 whitespace-nowrap <%= is_selected ? 'bg-blue-600 text-white' : 'bg-slate-700 text-slate-300 hover:bg-slate-600' %>">
+        <%= language_flag(language.iso_name) %> <%= language.native_name %>
+      </span>
+    <% end %>
+  <% end %>
+</div>
