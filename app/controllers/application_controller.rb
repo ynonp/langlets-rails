@@ -24,6 +24,7 @@ class ApplicationController < ActionController::Base
     session[:lang] = params[:lang] if params[:lang].present?
   end
 
+  helper_method :current_language_code
   def current_language_code
     params[:lang].presence || session[:lang]
   end
