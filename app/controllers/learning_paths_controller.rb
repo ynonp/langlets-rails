@@ -2,6 +2,7 @@ class LearningPathsController < ApplicationController
   before_action :set_learning_path, only: [:show, :search_courses]
   
   def show
+    @languages = Language.order(:english_name)
     @tags = Tag.used_in_learning_path(@learning_path)
     @courses = get_filtered_courses
     @page = [params[:page].to_i, 1].max # Ensure page is at least 1

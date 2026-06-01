@@ -2,6 +2,7 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
+    @languages = Language.order(:english_name)
     @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at)
     @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
 

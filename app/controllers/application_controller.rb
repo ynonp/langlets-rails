@@ -15,17 +15,20 @@ class ApplicationController < ActionController::Base
     request.user_agent&.include?("LangletsNative")
   end
 
+  helper_method :current_language_code
+
   # Returns true for mobile browsers (including tablets).
   def mobile?
     request.user_agent&.match?(/Mobi|Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry|Opera Mini/i)
   end
 
   def store_language_in_session
+    return unless native_app?
     session[:lang] = params[:lang] if params[:lang].present?
   end
 
   def current_language_code
-    params[:lang].presence || session[:lang]
+    params[:lang].presence || (native_app? ? session[:lang] : nil)
   end
 
   def require_authentication_for_native_app
@@ -52,7 +55,7 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    super.merge(lang: (params[:lang] || session[:lang])).compact
+    super.merge(lang: current_language_code).compact
   end
 
   # Redirect to returnto param after successful sign in
