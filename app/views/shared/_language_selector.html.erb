@@ -1,0 +1,27 @@
+<section class="border-b border-slate-700/60">
+  <div
+    class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 overflow-x-auto"
+    data-controller="language-filter"
+    data-language-filter-current-lang-value="<%= current_language_code.to_s %>"
+  >
+    <% selected_classes = "bg-blue-600 text-white border-blue-500" %>
+    <% unselected_classes = "bg-slate-800 text-slate-300 border-slate-700 hover:bg-slate-700" %>
+
+    <%= link_to language_filter_url,
+      class: "inline-flex items-center gap-1 px-3 py-1.5 rounded-full border text-sm font-medium whitespace-nowrap transition-colors #{current_language_code.blank? ? selected_classes : unselected_classes}",
+      data: { action: "click->language-filter#select", lang: "" } do %>
+      <span>🌍</span>
+      <span>All languages</span>
+    <% end %>
+
+    <% languages.each do |language| %>
+      <%= link_to language_filter_url(language.iso_name),
+        class: "inline-flex items-center gap-1 px-3 py-1.5 rounded-full border text-sm font-medium whitespace-nowrap transition-colors #{current_language_code == language.iso_name ? selected_classes : unselected_classes}",
+        title: language.english_name,
+        data: { action: "click->language-filter#select", lang: language.iso_name } do %>
+        <span><%= language_flag_emoji(language) %></span>
+        <span><%= language.native_name %></span>
+      <% end %>
+    <% end %>
+  </div>
+</section>

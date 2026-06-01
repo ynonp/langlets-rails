@@ -109,6 +109,8 @@
   </div>
 </header>
 
+<%= render "shared/language_selector", languages: @languages %>
+
 <main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8" 
       data-controller="learning-path-courses" 
       data-learning-path-courses-learning-path-id-value="<%= @learning_path.id %>"

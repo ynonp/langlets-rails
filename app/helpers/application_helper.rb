@@ -1,6 +1,33 @@
 module ApplicationHelper
+  LANGUAGE_FLAG_MAP = {
+    "ar" => "JO",
+    "de" => "DE",
+    "en" => "US",
+    "es" => "ES",
+    "fr" => "FR",
+    "he" => "IL"
+  }.freeze
+
   def youtube_thumbnail_url(video_id, quality = 'hqdefault')
     Medium.youtube_thumbnail_url(video_id, quality)
+  end
+
+  def language_filter_url(lang_code = nil)
+    query = request.query_parameters.except("lang")
+    query["lang"] = lang_code if lang_code.present?
+    query_string = query.to_query
+
+    query_string.present? ? "#{request.path}?#{query_string}" : request.path
+  end
+
+  def language_flag_emoji(language)
+    iso = language.iso_name.to_s
+    language_code, region_code = iso.split("-", 2)
+    country_code = (region_code || LANGUAGE_FLAG_MAP[language_code] || language_code).to_s.upcase
+
+    return "🌐" unless country_code.match?(/\A[A-Z]{2}\z/)
+
+    country_code.chars.map { |char| (char.ord + 127397).chr(Encoding::UTF_8) }.join
   end
 
   def link_to_next_activity(text, path, opts)

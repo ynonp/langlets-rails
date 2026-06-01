@@ -49,6 +49,9 @@ application.register("hello", HelloController)
 import LearningPathCoursesController from "./learning_path_courses_controller"
 application.register("learning-path-courses", LearningPathCoursesController)
 
+import LanguageFilterController from "./language_filter_controller"
+application.register("language-filter", LanguageFilterController)
+
 import LessonNavigationController from "./lesson_navigation_controller"
 application.register("lesson-navigation", LessonNavigationController)
 
