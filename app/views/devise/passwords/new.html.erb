@@ -1,72 +1,57 @@
-<div class="h-screen w-screen bg-slate-900 flex items-center justify-center">
-  <!-- Close button -->
-  <% if params[:returnto].present? %>
-    <%= link_to params[:returnto], class: "absolute top-6 left-4 sm:left-6 text-slate-400 hover:text-white transition-colors duration-200" do %>
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<div class="sprout" style="--hue: 150;">
+  <div class="min-h-screen w-full flex items-center justify-center relative" style="background: var(--bg); min-height: 100dvh;">
+    <!-- Close button -->
+    <% close_path = params[:returnto].presence || root_path %>
+    <%= link_to close_path, class: "s-ctl absolute", style: "top: 24px; left: 16px; box-shadow: none;" do %>
+      <svg class="w-6 h-6" fill="none" stroke="var(--muted)" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     <% end %>
-  <% else %>
-    <%= link_to root_path, class: "absolute top-6 left-4 sm:left-6 text-slate-400 hover:text-white transition-colors duration-200" do %>
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
-    <% end %>
-  <% end %>
 
-  <!-- Sign in button -->
-  <div class="absolute top-6 right-4 sm:right-6">
-    <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-    <%= link_to "SIGN IN", new_user_session_path(signin_params), class: "text-blue-400 hover:text-blue-300 font-semibold tracking-wide transition-colors duration-200" %>
-  </div>
-
-  <!-- Forgot password form container -->
-  <div class="w-full max-w-md px-6 sm:px-0">
-    <div class="text-center mb-8">
-      <h1 class="text-3xl font-bold text-white mb-2">Reset Password</h1>
-      <p class="text-slate-400">Enter your email to receive reset instructions</p>
+    <!-- Sign in link -->
+    <div class="absolute" style="top: 30px; right: 18px;">
+      <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
+      <%= link_to "SIGN IN", new_user_session_path(signin_params), class: "font-bold tracking-wide", style: "color: var(--accent);" %>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-6" }) do |f| %>
-      <!-- Hidden field to preserve returnto param -->
-      <% if params[:returnto].present? %>
-        <%= hidden_field_tag :returnto, params[:returnto] %>
+    <!-- Forgot password form container -->
+    <div class="w-full max-w-md px-6">
+      <div class="text-center mb-8">
+        <h1 class="s-h1" style="font-size: 30px;">Reset password</h1>
+        <p class="s-small" style="margin-top: 6px;">Enter your email to receive reset instructions</p>
+      </div>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-5" }) do |f| %>
+        <% if params[:returnto].present? %>
+          <%= hidden_field_tag :returnto, params[:returnto] %>
+        <% end %>
+
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "s-input" %>
+        </div>
+
+        <div>
+          <%= f.submit "SEND RESET INSTRUCTIONS", class: "s-btn s-btn--full s-btn--lg" %>
+        </div>
       <% end %>
 
-      <!-- Error messages -->
-      <%= render "devise/shared/error_messages", resource: resource %>
-
-      <!-- Email field -->
-      <div>
-        <%= f.email_field :email, 
-            autofocus: true, 
-            autocomplete: "email",
-            placeholder: "Email address",
-            class: "w-full px-4 py-4 bg-slate-800 border border-slate-700 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-200" %>
+      <div class="mt-6 text-center">
+        <p class="s-small">
+          Remember your password?
+          <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
+          <%= link_to "Sign in", new_user_session_path(signin_params), style: "color: var(--accent); font-weight: 700;" %>
+        </p>
       </div>
 
-      <!-- Submit button -->
-      <div>
-        <%= f.submit "SEND RESET INSTRUCTIONS", class: "w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-4 rounded-lg transition-colors duration-200 tracking-wide" %>
+      <div class="mt-8 text-center">
+        <p class="s-small">
+          By using Langlets, you agree to our
+          <a href="#" style="color: var(--text); font-weight: 700;">Terms</a> and
+          <a href="#" style="color: var(--text); font-weight: 700;">Privacy Policy</a>
+        </p>
       </div>
-    <% end %>
-
-    <!-- Back to sign in -->
-    <div class="mt-6 text-center">
-      <p class="text-slate-400 text-sm">
-        Remember your password? 
-        <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-        <%= link_to "Sign in", new_user_session_path(signin_params), class: "text-blue-400 hover:text-blue-300 transition-colors duration-200" %>
-      </p>
-    </div>
-
-    <!-- Terms and Privacy -->
-    <div class="mt-8 text-center space-y-2">
-      <p class="text-slate-400 text-sm">
-        By using Langlets, you agree to our 
-        <a href="#" class="text-slate-300 hover:text-white">Terms</a> and 
-        <a href="#" class="text-slate-300 hover:text-white">Privacy Policy</a>
-      </p>
     </div>
   </div>
 </div>

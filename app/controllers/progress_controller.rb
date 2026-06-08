@@ -134,12 +134,16 @@ class ProgressController < ApplicationController
     lessons = course.lessons.includes(:activities, :lesson_users, activities: :activity_users)
                     .with_progress_data(current_user).order(:order)
     all_done = lessons.all?(&:completed?)
+    index = lessons.index { |l| l.id == lesson.id } || 0
+    first_incomplete_id = lessons.find { |l| l.in_progress? || l.not_started? }&.id
+    done_count = lessons.count(&:completed?)
 
     respond_to do |format|
       format.turbo_stream do
         render turbo_stream: [
-          turbo_stream.replace(lesson, partial: "courses/lesson_row", locals: { lesson: lesson, course: course, index: 0 }),
-          turbo_stream.replace("mark-done-button", partial: "courses/mark_done_button", locals: { course: course, all_done: all_done })
+          turbo_stream.replace(lesson, partial: "courses/lesson_row", locals: { lesson: lesson, course: course, index: index, is_first_incomplete: (lesson.id == first_incomplete_id) }),
+          turbo_stream.replace("mark-done-button", partial: "courses/mark_done_button", locals: { course: course, all_done: all_done }),
+          turbo_stream.update("lessons-done-count", "#{done_count}/#{lessons.size} done")
         ]
       end
       format.json { head :ok }

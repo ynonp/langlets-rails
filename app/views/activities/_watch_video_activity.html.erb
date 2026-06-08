@@ -2,7 +2,6 @@
     phrases = params[:phrases]
     l1_rtl = params[:l1_rtl]
     l2_rtl = params[:l2_rtl]
-    font_size_class = (params[:l1_name] == 'ar-JO') ? 'text-3xl' : 'text-xl'
 
     timestamp_start = params[:start_timestamp]
     timestamp_end = params[:end_timestamp]
@@ -13,8 +12,8 @@
 <% end %>
 
 <div
-    class="contents"  
-    data-controller="watch-video-activity"  
+    class="contents"
+    data-controller="watch-video-activity"
     data-main-video-player-target="videoListener videoSegment"
     data-action="
       video:play->main-video-player#fullPlayerStartPlayback
@@ -27,34 +26,30 @@
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-watch-video-activity-current-text-line-class="bg-gray-700"
+    data-watch-video-activity-current-text-line-class="s-line-active"
 >
   <div class="contents">
-    <div class="mb-2 text-center order-1">
-      <h2 class="text-xl sm:text-2xl font-bold text-white mb-2"><%= @activity.text_header %></h2>
-      <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
-    </div>
-    
-    <!-- Control Bar -->
-    <div
-      class="px-4 order-4 my-4 pb-4 border-b border-gray-700 flex justify-between items-center">
-      <label class="flex items-center text-white">
-        <input
-          checked="true"
-          type="checkbox"
+    <!-- Header: title + translation toggle -->
+    <div class="order-4 flex items-center justify-between s-pad" style="padding-top: 12px; padding-bottom: 8px;">
+      <div class="s-eyebrow">Tap any word</div>
+      <label class="s-toggle">
+        <input checked="true" type="checkbox"
           data-watch-video-activity-target="showTranslation"
-          data-action="change->watch-video-activity#toggleTranslation"
-          class="mr-2">
+          data-action="change->watch-video-activity#toggleTranslation">
         Translation
       </label>
-      <a href="<%= @next_activity_path %>"
-         data-watch-video-activity-target="startPracticeButton"
-         class="hidden px-6 py-2 bg-green-600 hover:bg-green-700 text-white font-medium rounded-lg transition-colors duration-200">
-        Start Practice
-      </a>
     </div>
 
-    <!-- Phrases Container with scrolling -->
+    <% if @activity.text_header.present? %>
+      <div class="order-4 s-pad" style="padding-bottom: 8px;">
+        <h2 class="s-h2"><%= @activity.text_header %></h2>
+        <% if @activity.text_subheader.present? %>
+          <p class="s-small" style="margin-top: 2px;"><%= @activity.text_subheader %></p>
+        <% end %>
+      </div>
+    <% end %>
+
+    <!-- Phrases breakdown -->
     <div
         data-controller="popover-translation"
         data-popover-translation-l1-language-value="<%= phrases.first&.l1&.english_name || 'Language' %>"
@@ -62,46 +57,38 @@
         id="phrases-container"
         data-watch-video-activity-target="container"
         data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-        class="order-4 w-full mx-auto bg-gray-800 min-h-0 overflow-y-auto flex-1"                
+        class="order-4 s-scroll s-pad"
+        style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
         >
-      <div
-        id="phrases-list" 
-        data-watch-video-activity-target="phrasesList"
-        class="text-white text-sm sm:text-base"
-      >
+      <div id="phrases-list" data-watch-video-activity-target="phrasesList">
         <% phrases.each do |phrase| %>
-        <div
-          data-watch-video-activity-target="subtitles"
-          data-action="click->main-video-player#seekToTimestamp"
-          data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"  
-          class="flex flex-col <%= l1_rtl ? 'items-end' : 'items-start' %>"
-        >
-<div
-            class="px-4 py-3 transition-all duration-200">
-            <div
-              class="text-white text-xl md:text-xl"
-              dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-            >
-              <%= wrap_tokens_in_spans(phrase,
-                                       {class: "cursor-pointer hover:bg-gray-600 rounded inline #{font_size_class}",
-                                      }) %>
+          <div
+            data-watch-video-activity-target="subtitles"
+            data-action="click->main-video-player#seekToTimestamp"
+            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
+            class="s-phrase"
+          >
+            <div class="s-phrase__l1" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
+              <%= wrap_tokens_in_spans(phrase, { class: "s-token" }) %>
             </div>
-            <div
-              class="text-teal-400 mt-1 text-md md:text-xl" data-watch-video-activity-target="translation"
-              dir="<%= l2_rtl ? 'rtl' : 'ltr' %>"
-            >
-
+            <div class="s-phrase__l2" data-watch-video-activity-target="translation" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
               <%= phrase.text_l2 %>
             </div>
           </div>
-        </div>
-          
         <% end %>
       </div>
       <!-- Translation Popup -->
-      <%= render partial: 'activities/translation_popup' %>
+      <%= render partial: 'activities/translation_popup', locals: { popup_class: "s-popover hidden" } %>
+    </div>
+
+    <!-- Start practice -->
+    <div class="order-4 s-pad" style="flex-shrink: 0; padding-top: 12px; padding-bottom: calc(20px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--border);">
+      <a href="<%= @next_activity_path %>"
+         data-watch-video-activity-target="startPracticeButton"
+         class="s-btn s-btn--full s-btn--lg">
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
+        Start practice
+      </a>
     </div>
   </div>
-
-  <!-- preload audio files -->
 </div>

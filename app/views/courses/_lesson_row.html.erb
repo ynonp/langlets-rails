@@ -1,69 +1,43 @@
-<div
-  class="bg-slate-800/50 border border-slate-700/50 rounded-xl p-6 hover:bg-slate-800/70 transition-all duration-200 group <%= index == 0 ? 'ring-2 ring-blue-500/20 border-blue-500/30' : '' %>"
-  id="<%= dom_id(lesson) %>"
-  <%= raw('data-scroll-into-view-target="element"') if local_assigns[:is_first_incomplete] %>>
-  <div class="flex items-center justify-between">
-    <div class="flex items-center gap-3 flex-1">
-      <!-- Progress Icon -->
-      <div class="flex-shrink-0">
-        <% if user_signed_in? %>
-          <%= button_to toggle_lesson_progress_index_path(lesson_id: lesson.id),
-                method: :post,
-                class: "focus:outline-none hover:scale-110 transition-transform duration-150" do %>
-            <% if lesson.completed? %>
-              <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-              </svg>
-            <% elsif lesson.in_progress? %>
-              <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-              </svg>
-            <% else %>
-              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10"></circle>
-              </svg>
-            <% end %>
-          <% end %>
-        <% else %>
-          <% if lesson.completed? %>
-            <svg class="w-6 h-6 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-            </svg>
-          <% elsif lesson.in_progress? %>
-            <svg class="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-            </svg>
-          <% else %>
-            <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <circle cx="12" cy="12" r="10"></circle>
-            </svg>
-          <% end %>
-        <% end %>
-      </div>
+<%#
+  Sprout lesson row. Shared by courses/show (full render) and the
+  progress#toggle_lesson Turbo Stream so both look identical.
 
-      <div>
-        <%= link_to course_lesson_path(course, lesson) do %>
-          <h3 class="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors cursor-pointer">
-            <%= lesson.name %>
-          </h3>
-        <% end %>
-      </div>
-    </div>
-
-    <% if lesson.completed? %>
-      <%= link_to course_lesson_path(course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-        </svg>
-        <span class="hidden md:inline">Review</span>
-      <% end %>
-    <% else %>
-      <%= link_to course_lesson_path(course, lesson), class: "ml-6 md:bg-slate-900 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 group-hover:scale-105" do %>
-        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-        </svg>
-        <span class="hidden md:inline">Start Lesson</span>
-      <% end %>
+  Locals:
+  - lesson, course        (required)
+  - index                 (optional) zero-based position, used for "Lesson N"
+  - is_first_incomplete   (optional) highlights the row with the accent ring
+  - hue                   (optional) language hue; defaults from the course
+-%>
+<%
+  state = lesson.completed? ? :done : (lesson.in_progress? ? :progress : :todo)
+  is_first_incomplete = local_assigns.fetch(:is_first_incomplete, false)
+  hue = local_assigns[:hue] || lang_hue(course.language&.iso_name)
+  number = local_assigns[:index] ? index.to_i + 1 : lesson.order
+%>
+<div class="s-row" id="<%= dom_id(lesson) %>"
+     style="<%= "border:2px solid var(--accent);" if is_first_incomplete %>"
+     <%= raw('data-scroll-into-view-target="element"') if is_first_incomplete %>>
+  <!-- Progress toggle -->
+  <% if user_signed_in? %>
+    <%= button_to toggle_lesson_progress_index_path(lesson_id: lesson.id), method: :post, class: "flex-shrink-0", style: "background:none;border:none;padding:0;cursor:pointer;line-height:0;" do %>
+      <%= render "courses/lesson_state_icon", state: state, hue: hue %>
     <% end %>
-  </div>
+  <% else %>
+    <span class="flex-shrink-0" style="line-height:0;"><%= render "courses/lesson_state_icon", state: state, hue: hue %></span>
+  <% end %>
+
+  <%= link_to course_lesson_path(course, lesson), class: "flex-1 min-w-0", style: "text-decoration:none; color:inherit;" do %>
+    <div class="s-body truncate" style="font-weight: 800;"><%= lesson.name %></div>
+    <div class="s-small" style="margin-top: 2px;">
+      <%= state == :done ? "Completed" : (state == :progress ? "In progress" : "Lesson #{number}") %>
+    </div>
+  <% end %>
+
+  <%= link_to course_lesson_path(course, lesson), class: "flex-shrink-0 flex items-center justify-center", style: "width:38px;height:38px;border-radius:999px;background:#{state == :todo ? 'var(--accent)' : 'var(--surface2)'};text-decoration:none;", title: (state == :done ? "Review" : "Start lesson") do %>
+    <% if state == :done %>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-11" stroke="var(--muted)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <% else %>
+      <svg width="16" height="16" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="<%= state == :todo ? '#fff' : 'var(--muted)' %>"/></svg>
+    <% end %>
+  <% end %>
 </div>

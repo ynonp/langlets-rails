@@ -1,19 +1,26 @@
-<% if user_signed_in? %>
-  <% if all_done %>
-    <%= button_to reset_progress_course_path(course.slug),
-        method: :post,
-        class: "inline-flex items-center gap-2 px-4 py-3 sm:px-6 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl",
-        data: { turbo: false, confirm: "Reset all progress for this course?", role: "mark-done-button" } do %>
-      <span class="hidden sm:inline">&#10003; Done</span>
-      <span class="sm:hidden">Done</span>
-    <% end %>
-  <% else %>
-    <%= button_to mark_done_course_path(course.slug),
-        method: :post,
-        class: "inline-flex items-center gap-2 px-4 py-3 sm:px-6 bg-slate-700 hover:bg-slate-600 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl",
-        data: { turbo: false, role: "mark-done-button" } do %>
-      <span class="hidden sm:inline">Mark As Done</span>
-      <span class="sm:hidden">Done</span>
+<%#
+  Sprout "mark done / reset" button. Shared by courses/show and the
+  progress#toggle_lesson Turbo Stream. The wrapper keeps the id so repeated
+  Turbo Stream replaces always find a target.
+-%>
+<div id="mark-done-button">
+  <% if user_signed_in? %>
+    <% if all_done %>
+      <%= button_to reset_progress_course_path(course.slug),
+          method: :post,
+          class: "s-btn s-btn--soft",
+          style: "white-space:nowrap;",
+          data: { turbo: false, confirm: "Reset all progress for this course?", role: "mark-done-button" } do %>
+        ✓ Done
+      <% end %>
+    <% else %>
+      <%= button_to mark_done_course_path(course.slug),
+          method: :post,
+          class: "s-btn s-btn--soft",
+          style: "white-space:nowrap;",
+          data: { turbo: false, role: "mark-done-button" } do %>
+        Mark done
+      <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>

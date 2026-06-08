@@ -31,232 +31,144 @@
   <% end %>
 <% end %>
 
+<%
+  hue = lang_hue(@course.language&.iso_name)
+  course_rtl = @course.language&.rtl || false
+  youtube_video_id = @course.main_media_url.to_s.split("v=").last
+  user_name = user_signed_in? ? current_user.email.to_s.split("@").first.split(/[._-]/).first.capitalize : "there"
+  streak = user_signed_in? ? @streak_info[:count] : 0
+  next_lesson = @lessons.find { |l| l.id == @first_incomplete_lesson_id } || @lessons.first
+%>
 
-<!-- Top bar: Refined for clarity and presence -->
-<header class="py-6 border-b border-slate-700/60">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-    <%= link_to root_path, class: "text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight hover:text-blue-300 transition-colors duration-200" do %>
-      Langlets
-    <% end %>
-    
-    <% if user_signed_in? %>
-      <div class="flex items-center space-x-4">
-        <!-- XP Display -->
-        <div class="flex items-center space-x-6">
-          <!-- Day Streak -->
-          <% streak = @streak_info[:count] %>
-          
-          <div class="flex items-center text-white">
-            <% bg_class = streak_background_class(@streak_info[:status]) %>
-            <div class="flex items-center <%= bg_class %> px-3 py-1 rounded-full text-sm font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-                <path fill-rule="evenodd" d="M12.963 2.286a.75.75 0 0 0-1.071-.136 9.742 9.742 0 0 0-3.539 6.177A7.547 7.547 0 0 1 6.648 6.61a.75.75 0 0 0-1.152-.082A9 9 0 1 0 15.68 4.534a7.46 7.46 0 0 1-2.717-2.248Z" clip-rule="evenodd" />
-              </svg>
-              <%= streak %> day<%= 's' if streak != 1 %>
-            </div>
+<div class="sprout" style="--hue: <%= hue %>;">
+  <div class="s-screen mx-auto w-full max-w-[480px]">
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <div class="s-safetop"></div>
+
+      <!-- Header: back + streak + avatar -->
+      <header class="flex items-center justify-between s-pad" style="margin-top: 14px; margin-bottom: var(--gap);">
+        <%= link_to root_path, class: "s-ctl", style: "box-shadow:none;", title: "Home" do %>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="var(--muted)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <% end %>
+
+        <div class="flex items-center" style="gap: 10px;">
+          <div class="s-streak">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
+              <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
+            </svg>
+            <span><%= streak %></span>
           </div>
 
-          <!-- Today's XP -->
-          <div class="flex items-center text-white">
-            <div class="flex items-center bg-blue-500 px-3 py-1 rounded-full text-sm font-semibold">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-              </svg>
-              <%= @daily_xp %> XP
-            </div>
-          </div>
-        </div>
-
-        <!-- User Menu -->
-        <div class="relative group">
-          <input type="checkbox" id="user-menu-toggle" class="hidden peer">
-          <label for="user-menu-toggle" class="flex items-center cursor-pointer">
-            <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full border-2 border-blue-500 shadow" />
-          </label>
-          <div class="absolute right-0 mt-2 w-48 bg-slate-800 border border-slate-700 rounded-lg shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50">
-            <% if native_app? %>
-              <% current_lang = Language.find_by(iso_name: params[:lang]) %>
-              <%= link_to onboarding_language_path(returnto: request.fullpath), class: "flex items-center px-4 py-3 text-slate-200 hover:bg-slate-700 transition-colors duration-150" do %>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2 text-blue-400">
-                  <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25ZM8.288 9.01a.75.75 0 0 1 1.042-.018 14.83 14.83 0 0 0 2.39 1.68c.826.495 1.74.845 2.674 1.029a.75.75 0 0 1-.28 1.473 16.303 16.303 0 0 1-3.248-.986 16.304 16.304 0 0 1-2.578-1.813.75.75 0 0 1 0-1.365Zm4.922 4.49a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm-5.25-2.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" clip-rule="evenodd" />
-                </svg>
-                <span class="text-sm">Learning Language: <%= current_lang&.native_name || "Select" %></span>
-              <% end %>
-              <div class="border-t border-slate-700 my-1"></div>
-            <% end %>
-            <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-              <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
-                method: :post,
-                class: "w-full text-left px-4 py-3 text-yellow-300 hover:bg-slate-700 rounded-lg transition-colors duration-150",
-                data: { turbo: false }
-              %>
-            <% end %>
-            <% if current_user.languages_with_saved_words.exists? %>
-              <div class="border-t border-slate-700 my-1"></div>
-            <% end %>
-            <%= link_to "Logout",
-              destroy_user_session_path(returnto: request.fullpath),
-              method: :delete,
-              data: {
-                turbo_method: :delete,
-                controller: "auth bridge--sign-out",
-                action: "click->auth#signOut click->bridge--sign-out#notifySignOut"
-              },
-              class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
-            %>
-          </div>
-        </div>
-      </div>
-    <% else %>
-      <div class="flex flex-col gap-3"
-           data-controller="progress-tracker"
-           data-progress-tracker-authenticated-value="false">
-        <!-- XP Display and Login prompt row for mobile -->
-        <div class="flex items-center justify-between gap-3">
-          <!-- XP Display for unauthenticated users -->
-          <div class="flex items-center text-white">
-            <div class="flex items-center bg-blue-500 px-2 py-1 rounded-full text-xs font-semibold xp-display-container">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 mr-1">
-                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-              </svg>
-              <div class="xp-animation-container" data-progress-tracker-target="animationContainer">
-                <span data-progress-tracker-target="dailyXp">0 XP</span>
+          <% if user_signed_in? %>
+            <div class="relative">
+              <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+              <label for="user-menu-toggle" class="s-avatar cursor-pointer" style="border: 2px solid var(--accent);"><%= user_name.first.upcase %></label>
+              <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden"
+                   style="background: var(--surface); border: 1px solid var(--border);">
+                <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
+                  <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
+                    method: :post, class: "w-full text-left px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);", data: { turbo: false } %>
+                <% end %>
+                <% if current_user.languages_with_saved_words.exists? %>
+                  <div style="border-top: 1px solid var(--border);"></div>
+                <% end %>
+                <%= link_to "Logout", destroy_user_session_path(returnto: request.fullpath),
+                  method: :delete,
+                  data: { turbo_method: :delete, controller: "auth bridge--sign-out", action: "click->auth#signOut click->bridge--sign-out#notifySignOut" },
+                  class: "block px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);" %>
               </div>
             </div>
-          </div>
-          
-          <!-- Mobile login prompt -->
-          <span class="text-slate-300 text-xs">Sign in to save progress</span>
-        </div>
-        
-        <!-- Buttons row -->
-        <div class="flex gap-2">
-          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm flex-1" %>
-          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "text-blue-400 hover:text-blue-600 font-semibold px-4 py-2 rounded-lg transition-colors duration-200 text-sm flex-1 text-center" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</header>
-
-<!-- Main content wrapper -->
-<div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-  <main class="flex flex-col lg:flex-row gap-8 lg:gap-12">
-    <!-- Main lesson list area -->
-    <div class="flex-1">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight flex-1">
-        <%= @course.name %>
-      </h1>
-      <!-- Description text -->
-      <p class="text-slate-400 text-lg mt-8 mb-2 leading-relaxed">
-        Pick any lesson to begin learning. Each one breaks down a line of the song and teaches you something new.         
-      </p>
-      <p  class="text-slate-400 text-lg mb-8 leading-relaxed">
-        Pro Tip: Practice 1 lesson every day to maximize spaced repetition effect.
-      </p>
-
-      <!-- Watch Full Video Button + Mark Done Button -->
-      <div class="mb-6 flex flex-wrap items-center gap-3">
-        <% if @course.show_full_course_player %>
-          <%= link_to course_full_player_path(@course.slug),
-              class: "inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl" do %>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5">
-              <path fill-rule="evenodd" d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z" clip-rule="evenodd" />
-            </svg>
-            Watch Full Video
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn", style: "height: 40px; padding: 0 16px; font-size: 14px;" %>
           <% end %>
-        <% end %>
-
-        <div id="mark-done-button">
-          <%= render "mark_done_button", course: @course, all_done: @all_done %>
         </div>
-      </div>
+      </header>
 
-      <!-- Lessons list -->
-      <div class="space-y-4" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
-        <% @lessons.each_with_index do |lesson, index| %>
-          <%= render "lesson_row", lesson: lesson, course: @course, index: index, is_first_incomplete: lesson.id == @first_incomplete_lesson_id %>
+      <!-- Scrollable content -->
+      <div class="s-scroll s-pad" style="padding-bottom: 8px;">
+
+        <% if notice %>
+          <div class="s-card" style="padding: 12px 16px; color: var(--accent);"><%= notice %></div>
         <% end %>
+        <% if alert %>
+          <div class="s-card" style="padding: 12px 16px; color: oklch(0.6 0.2 25);"><%= alert %></div>
+        <% end %>
+
+        <!-- Hero: title + video -->
+        <div class="s-hero">
+          <div class="flex items-center" style="gap: 7px; margin-bottom: 8px;">
+            <% if @course.language %>
+              <span class="s-badge" style="--lh: <%= hue %>;"><%= lang_badge_code(@course.language) %></span>
+            <% end %>
+            <span class="s-small"><%= pluralize(@lessons.size, "lesson") %></span>
+          </div>
+          <h1 class="s-h1" style="margin-bottom: 13px;" dir="<%= course_rtl ? 'rtl' : 'ltr' %>"><%= @course.name %></h1>
+
+          <% if youtube_video_id.present? %>
+            <div class="s-thumb" style="--th: <%= hue %>; aspect-ratio: 16/9; height: auto; margin-bottom: 13px;">
+              <iframe class="w-full h-full" style="display:block; border:0;" src="https://www.youtube.com/embed/<%= youtube_video_id %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          <% end %>
+
+          <div class="flex" style="gap: 10px;">
+            <% if @course.show_full_course_player %>
+              <%= link_to course_full_player_path(@course.slug), class: "s-btn", style: "flex:1;" do %>
+                <svg width="18" height="18" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+                Watch full video
+              <% end %>
+            <% end %>
+            <% if user_signed_in? %>
+              <%= render "courses/mark_done_button", course: @course, all_done: @all_done %>
+            <% end %>
+          </div>
+        </div>
+
+        <p class="s-small" style="margin-top: -6px;">
+          Pick any lesson to begin. Each one breaks down a line of the song. Pro tip: practice one lesson a day to maximize spaced repetition.
+        </p>
+
+        <!-- Lessons -->
+        <div style="padding-bottom: 6px;">
+          <div class="s-section-head">
+            <h2 class="s-h2">Lessons</h2>
+            <span class="s-small" id="lessons-done-count"><%= @lessons.count(&:completed?) %>/<%= @lessons.size %> done</span>
+          </div>
+
+          <div class="flex flex-col" style="gap: 8px;" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
+            <% @lessons.each_with_index do |lesson, index| %>
+              <%= render "courses/lesson_row",
+                    lesson: lesson,
+                    course: @course,
+                    index: index,
+                    is_first_incomplete: (lesson.id == @first_incomplete_lesson_id),
+                    hue: hue %>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Right sidebar with video -->
-    <aside class="w-full lg:w-[400px] lg:sticky lg:top-8 self-start">
-      <div class="bg-slate-800/70 rounded-xl p-6 backdrop-blur-md border border-slate-700/50 shadow-2xl">
-        <!-- Play Song section -->
-        <div class="mb-6">
-          <div class="flex items-center justify-between mb-4">
-            <h3 class="text-lg font-semibold text-white">Listen to the Full Song</h3>
-            <span class="bg-slate-900 p-2 rounded-lg transition-colors">
-              <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-              </svg>
-            </span>
-          </div>
-          
-          <p class="text-slate-400 text-sm mb-4">
-            You can listen to the full song anytime. After each lesson, come back here and replay the lyrics you've just learned — you'll understand more every time.
-          </p>
-        </div>
-
-        <!-- Video player -->
-        <% youtube_video_id = @course.main_media_url.split("v=").last %>
-        <div class="aspect-video overflow-hidden rounded-lg shadow-xl shadow-black/30">
-          <iframe class="w-full h-full" src="https://www.youtube.com/embed/<%= youtube_video_id %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-      </div>
-    </aside>
-  </main>
+    <!-- Bottom tab bar -->
+    <nav class="s-tabbar">
+      <%= link_to root_path, class: "s-tab" do %>
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" stroke="var(--faint)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Home</span>
+      <% end %>
+      <%= link_to root_path, class: "s-tab" do %>
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--faint)" stroke-width="1.9"/><path d="M15.5 8.5l-2 5-5 2 2-5z" stroke="var(--faint)" stroke-width="1.9" stroke-linejoin="round"/></svg>
+        <span>Explore</span>
+      <% end %>
+      <% if next_lesson %>
+        <%= link_to course_lesson_path(@course, next_lesson), class: "s-tab s-tab--active" do %>
+          <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5l11 11M4 9l-1.5-1.5M9 4L7.5 2.5M15 20l1.5 1.5M20 15l1.5 1.5"/><rect x="4.5" y="4.5" width="4" height="4" rx="1" transform="rotate(45 6.5 6.5)"/><rect x="15.5" y="15.5" width="4" height="4" rx="1" transform="rotate(45 17.5 17.5)"/></svg>
+          <span>Practice</span>
+        <% end %>
+      <% end %>
+      <%= link_to root_path, class: "s-tab" do %>
+        <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="var(--faint)" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c0-3.6 3.1-5.5 7-5.5s7 1.9 7 5.5"/></svg>
+        <span>You</span>
+      <% end %>
+    </nav>
+  </div>
 </div>
-
-    
-    <footer class="bg-gray-800 border-t border-gray-700 mt-auto">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <div class="text-gray-400 text-sm">
-            © <%= Date.current.year %> Langlets. All rights reserved.
-          </div>
-          <div class="flex space-x-6">
-            <%= link_to "Privacy Policy", "/home/privacy", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
-            <%= link_to "Terms of Service", "/home/terms", class: "text-gray-400 hover:text-white text-sm transition-colors duration-200" %>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-<style>
-  /* XP Animation Styles */
-  .xp-animation-container {
-    position: relative;
-    display: inline-block;
-  }
-
-  .xp-gain-animation {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #3B82F6; /* Blue color to match XP background */
-    font-weight: bold;
-    font-size: 1rem;
-    z-index: 10;
-    pointer-events: none;
-    animation: xp-slide-up 1s ease-out forwards;
-  }
-
-  @keyframes xp-slide-up {
-    0% {
-      opacity: 1;
-      transform: translateX(-50%) translateY(0);
-    }
-    100% {
-      opacity: 0;
-      transform: translateX(-50%) translateY(-30px);
-    }
-  }
-
-  /* Ensure the XP display container has relative positioning for animations */
-  .xp-display-container {
-    position: relative;
-  }
-</style>

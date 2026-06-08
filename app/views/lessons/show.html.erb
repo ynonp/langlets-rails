@@ -23,45 +23,48 @@
   ] %>
 <% end %>
 
-<% 
+<%
   activity_params = @activity.activity_params
+  lesson_hue = lang_hue(@lesson.course&.language&.iso_name)
 %>
 
-<div class=" h-screen flex flex-col max-w-xl mx-auto w-full bg-gray-800"
-    data-controller="main-video-player activity-navigation "    
+<div class="sprout s-screen s-screen--fixed max-w-[480px] mx-auto w-full"
+    style="--hue: <%= lesson_hue %>;"
+    data-controller="main-video-player activity-navigation "
     data-main-video-player-video-id-value="<%= @videoid %>"
     data-main-video-player-hl-value="<%= activity_params[:video_hl] %>"
     data-main-video-player-preload-player-value="<%= activity_params[:preload_player] || false %>"
 >
   <div
-    id="main-player"    
+    id="main-player"
     data-main-video-player-target="playerContainer"
-    class="<%= activity_params[:video_player] ? 'px-4 order-2' : 'hidden' %>"
+    class="<%= activity_params[:video_player] ? 'order-2 flex-shrink-0' : 'hidden' %>"
   >
-      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative" 
-       style="background-image: url('<%= "https://img.youtube.com/vi/#{@videoid}/hqdefault.jpg" %>')" 
-       role="img" 
+      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
+       style="background-image: url('<%= "https://img.youtube.com/vi/#{@videoid}/hqdefault.jpg" %>')"
+       role="img"
        aria-label="Video thumbnail">
-    
-        <div class="absolute inset-0 z-20" 
+
+        <div class="absolute inset-0 z-20"
               data-action="click->main-video-player#togglePlayPause"></div>
-        
+
 
         <div
             data-main-video-player-target="player"
             class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
         </div>
               <!-- Custom Progress Bar -->
-        <div class="absolute bottom-0 left-0 w-full h-2 bg-gray-700 z-30 cursor-pointer"
+        <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer"
             data-main-video-player-target="progressBarContainer"
             data-action="click->main-video-player#seekToPosition"
-            style="pointer-events: auto;">
-          <div data-main-video-player-target="progressBar" class="h-full bg-blue-500 transition-all duration-100 ease-linear" style="width: 0%"></div>
+            style="pointer-events: auto; height: 6px; background: rgba(255,255,255,0.25);">
+          <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear" style="width: 0%; background: var(--accent);"></div>
         </div>
-        <button data-main-video-player-target="playButton" 
-                class="text-white text-3xl sm:text-5xl bg-blue-600 bg-opacity-90 px-4 py-3 sm:px-6 sm:py-4 rounded-full shadow-lg hover:bg-blue-700 transition relative z-10">
-          ▶
-        </button>             
+        <button data-main-video-player-target="playButton"
+                class="relative z-10 flex items-center justify-center"
+                style="width: 64px; height: 64px; border-radius: 999px; background: var(--accent); color: #fff; border: none; box-shadow: 0 6px 18px rgba(0,0,0,0.3); cursor: pointer;">
+          <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
+        </button>
       </div>
   </div>
 

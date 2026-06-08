@@ -1,0 +1,17 @@
+<%# state: :done | :progress | :todo ; hue: language hue for tinting -%>
+<% case state
+   when :done %>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="10" fill="var(--accent)"/>
+    <path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+<% when :progress %>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="10" fill="oklch(0.82 0.15 85)"/>
+    <path d="M12 7v5l3 2" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+<% else %>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+    <circle cx="12" cy="12" r="9.5" stroke="var(--faint)" stroke-width="2"/>
+  </svg>
+<% end %>

@@ -44,11 +44,14 @@ module Activities
           segments << create_static_segment(static_text, current_position) unless static_text.strip.empty?
         end
 
-        # Add the token segment
-        token_text = phrase.text_l1[token.l1_start_index...token.l1_end_index]
+        # Add the token segment. l1_end_index is inclusive (see
+        # TokenTranslation#original_text), so slice with `..` and advance the
+        # cursor past the token — otherwise the token's last character leaks
+        # into the following static segment.
+        token_text = phrase.text_l1[token.l1_start_index..token.l1_end_index]
         segments << create_token_segment(token, token_text)
 
-        current_position = token.l1_end_index
+        current_position = token.l1_end_index + 1
       end
 
       # Add any remaining static text after the last token

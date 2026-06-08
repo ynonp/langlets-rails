@@ -1,12 +1,12 @@
 <% if resource.errors.any? %>
-  <div id="error_explanation" data-turbo-cache="false">
-    <h2>
+  <div id="error_explanation" data-turbo-cache="false" class="s-card" style="padding: 14px 16px; border: 1px solid oklch(0.8 0.09 25); background: oklch(0.96 0.04 25);">
+    <h2 style="font: 800 14px 'Nunito', sans-serif; color: oklch(0.5 0.2 25); margin: 0 0 6px;">
       <%= I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
                  resource: resource.class.model_name.human.downcase)
        %>
     </h2>
-    <ul>
+    <ul style="margin: 0; padding-left: 18px; color: oklch(0.5 0.18 25); font: 600 13.5px 'Nunito', sans-serif;">
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
