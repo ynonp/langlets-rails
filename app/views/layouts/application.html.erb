@@ -46,7 +46,9 @@
       <%= yield %>
     </main>
 
-    <%= render "shared/theme_toggle" %>
+    <% unless content_for?(:suppress_floating_theme_toggle) %>
+      <%= render "shared/theme_toggle" %>
+    <% end %>
 
     <%= yield :structured_data %>
     <% unless content_for?(:structured_data) %>

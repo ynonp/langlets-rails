@@ -3,6 +3,10 @@
   <meta name="robots" content="noindex, follow">
 <% end %>
 
+<%# Immersive activity screen — hide the floating theme toggle so it doesn't
+    overlap the video player controls. %>
+<% content_for(:suppress_floating_theme_toggle) { "1" } %>
+
 <% activity_params = @activity.activity_params.merge(is_review_lesson: true) %>
 
 <div class="sprout s-screen s-screen--fixed max-w-[480px] mx-auto w-full"

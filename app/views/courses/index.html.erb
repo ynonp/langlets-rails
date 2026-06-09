@@ -48,6 +48,7 @@
 
     <% if user_signed_in? %>
       <div class="flex items-center space-x-4">
+        <%= render "shared/theme_toggle", inline: true %>
         <!-- XP Display -->
         <div class="flex items-center space-x-6">
           <!-- Day Streak -->
@@ -78,16 +79,16 @@
 
         <!-- Create Course Button (for authorized users) - Hidden on mobile -->
         <% if can? :create, Course %>
-          <%= link_to new_course_path, class: "hidden sm:flex s-btn", style: "height:40px; padding:0 16px; font-size:14px;" do %>
+          <%= link_to new_course_path, class: "hidden sm:flex s-btn s-btn--sm" do %>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
               <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
             </svg>
             Create Course
           <% end %>
-          <%= link_to new_import_course_path, class: "hidden sm:flex s-btn s-btn--soft", style: "height:40px; padding:0 16px; font-size:14px;" do %>
+          <%= link_to new_import_course_path, class: "hidden sm:flex s-btn s-btn--soft s-btn--sm" do %>
             Import
           <% end %>
-          <%= link_to new_resync_timestamp_path, class: "hidden sm:flex s-btn s-btn--soft", style: "height:40px; padding:0 16px; font-size:14px;" do %>
+          <%= link_to new_resync_timestamp_path, class: "hidden sm:flex s-btn s-btn--soft s-btn--sm" do %>
             Resync
           <% end %>
         <% end %>
@@ -137,9 +138,9 @@
     <% else %>
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
         <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
-        <div class="flex gap-2">
-          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn", style: "height:42px; padding:0 18px; font-size:15px;" %>
-          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "s-btn s-btn--soft", style: "height:42px; padding:0 18px; font-size:15px;" %>
+        <div class="flex items-center gap-2">
+          <%= render "shared/theme_toggle", inline: true %>
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn s-btn--sm" %>
         </div>
       </div>
     <% end %>

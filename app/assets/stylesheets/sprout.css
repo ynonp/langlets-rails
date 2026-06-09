@@ -168,18 +168,17 @@
   color: var(--accent-text);
   font: 800 16.5px 'Nunito', sans-serif;
   letter-spacing: 0.2px;
-  box-shadow: 0 4px 0 var(--accent-press);
-  transition: transform 0.06s ease, box-shadow 0.06s ease;
+  transition: background 0.2s ease;
 }
-.s-btn:active { transform: translateY(3px); box-shadow: 0 1px 0 var(--accent-press); }
+.s-btn:hover { background: var(--accent-press); }
 .s-btn--full { width: 100%; padding: 0; }
 .s-btn--lg { height: calc(var(--btn-h) + 4px); }
+.s-btn--sm { height: 40px; padding: 0 16px; font-size: 14px; }
 .s-btn--soft {
   background: var(--accent-soft);
   color: var(--accent);
-  box-shadow: none;
 }
-.s-btn--soft:active { transform: none; box-shadow: none; }
+.s-btn--soft:hover { background: var(--accent-soft); filter: brightness(0.97); }
 
 /* ── Chips ──────────────────────────────────────────────────── */
 .s-chip {
@@ -584,3 +583,16 @@
 .theme-toggle:active { transform: scale(0.94); }
 .theme-toggle svg { width: 20px; height: 20px; }
 .theme-toggle svg[hidden] { display: none; }
+
+/* Inline variant — sits in a header/toolbar instead of floating, with the
+   green accent icon used on the guest landing. */
+.theme-toggle--inline {
+  position: static;
+  right: auto;
+  bottom: auto;
+  z-index: auto;
+  width: 42px;
+  height: 42px;
+  color: var(--accent);
+  box-shadow: none;
+}

@@ -2,6 +2,16 @@ module CourseBuilder
   class BuildSong < Base
     attr_reader :course, :progress
 
+    # Activities 3 & 4 of every non-review lesson from lesson 4 onward are two
+    # random picks from this pool.
+    LESSON_ACTIVITY_POOL = %i[
+      flashcard
+      word_order
+      audio_to_translation
+      tokens_chain
+      language_alignment
+    ].freeze
+
     def initialize(progress, course)
       @progress = progress
       @course = course
@@ -49,6 +59,7 @@ module CourseBuilder
         end
 
         lesson_data = progress.data["lessons"].split("\n\n")
+        @flashcard_assignments = build_flashcard_assignments(lesson_data)
         lesson_index = 0
         created_lessons = []
 
@@ -111,6 +122,28 @@ module CourseBuilder
     end
 
     private
+
+    # The first three lessons (positions 1-3, never review lessons) each get one
+    # activity that is either a FlashcardActivity or a WordOrderActivity. Pre-build
+    # a half/half list of those assignments and shuffle it, so the split is exactly
+    # even (off by one only when the count is odd) and which lesson gets which is
+    # random.
+    def build_flashcard_assignments(lesson_data)
+      slot_count = [lesson_data.size, 3].min
+
+      assignments = [:word_order, :flashcard] * (slot_count / 2)
+      assignments << [:word_order, :flashcard].sample if slot_count.odd?
+      assignments.shuffle
+    end
+
+    def use_word_order_instead_of_flashcard?
+      (@flashcard_assignments.shift || :flashcard) == :word_order
+    end
+
+    def random_phrases(phrases, count)
+      phrases_array = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
+      phrases_array.sample(count)
+    end
 
     def current_lesson_phrases(lesson, all_phrases, first_timestamp, last_timestamp)
       all_phrases.where("timestamp >= ? and timestamp <= ?", first_timestamp, last_timestamp)
@@ -280,12 +313,17 @@ module CourseBuilder
       a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 2, user:)
       a2.phrases = distinct_phrases
 
-      # 3. FlashcardActivity - at most 5, distinct by translation
+      # 3. FlashcardActivity or WordOrderActivity (~50/50) - at most 5, distinct by translation
       unless token_translations.empty?
         flashcard_tokens = distinct_token_translations_by_translation(token_translations, 5)
         unless flashcard_tokens.empty?
-          a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
-          a3.token_translations = flashcard_tokens
+          if use_word_order_instead_of_flashcard?
+            a3 = Activities::WordOrderActivity.create!(lesson:, order: 3, user:)
+            a3.phrases = random_phrases(phrases, 4)
+          else
+            a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
+            a3.token_translations = flashcard_tokens
+          end
         end
       end
 
@@ -328,13 +366,18 @@ module CourseBuilder
         a2.phrases = distinct_phrases_audio
       end
 
-      # 3. FlashcardActivity (70% current + 30% review tokens) - select from different phrases
+      # 3. FlashcardActivity or WordOrderActivity (~50/50). Flashcard uses 70% current + 30% review tokens
       unless current_token_translations.empty? && review_token_translations.empty?
         mixed_tokens = mix_content(current_token_translations, review_token_translations, 70)
         flashcard_tokens = select_tokens_from_different_phrases(mixed_tokens, 5)
         unless flashcard_tokens.empty?
-          a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
-          a3.token_translations = flashcard_tokens
+          if use_word_order_instead_of_flashcard?
+            a3 = Activities::WordOrderActivity.create!(lesson:, order: 3, user:)
+            a3.phrases = random_phrases(phrases, 4)
+          else
+            a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
+            a3.token_translations = flashcard_tokens
+          end
         end
       end
 
@@ -368,17 +411,17 @@ module CourseBuilder
       a2 = Activities::MatchPhrasesActivity.create!(lesson:, order: 2, user:)
       a2.phrases = distinct_mixed_phrases
 
-      # 3. AudioToTranslation (50% current + 50% review)
-      mixed_phrases_audio = mix_content(phrases_array, review_phrases_array, 50)
-      distinct_mixed_phrases_audio = distinct_phrases_by_text_l2(mixed_phrases_audio)
-      a3 = Activities::AudioToTranslation.create!(lesson:, order: 3, user:)
-      a3.phrases = distinct_mixed_phrases_audio.first(5)
-
-      # 4. TokenChainActivity (60% current + 40% review)
-      unless current_token_translations.empty? && review_token_translations.empty?
-        mixed_tokens = mix_content(current_token_translations, review_token_translations, 60)
-        a4 = Activities::TokensChainActivity.create!(lesson:, order: 4, user:)
-        a4.token_translations = mixed_tokens.first(5)
+      # 3 & 4. Two activities chosen at random from the pool, built on this
+      # lesson's content (mixing in review content where the activity supports it).
+      activity_context = {
+        phrases: phrases,
+        phrases_array: phrases_array,
+        review_phrases_array: review_phrases_array,
+        current_token_translations: current_token_translations,
+        review_token_translations: review_token_translations
+      }
+      LESSON_ACTIVITY_POOL.sample(2).each_with_index do |type, index|
+        build_pooled_activity(type, lesson, index + 3, activity_context, user)
       end
 
       # 5. SpeakActivity OR ListenActivity (alternate, current phrases)
@@ -388,6 +431,43 @@ module CourseBuilder
       else
         a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
         a5.phrases = phrases
+      end
+    end
+
+    # Builds one pooled activity (see LESSON_ACTIVITY_POOL) at the given order.
+    # Each type pulls the data it needs from the context; returns nil without
+    # creating anything when the required content is missing.
+    def build_pooled_activity(type, lesson, order, ctx, user)
+      current_tokens = ctx[:current_token_translations]
+      review_tokens = ctx[:review_token_translations]
+
+      case type
+      when :flashcard
+        return if current_tokens.empty? && review_tokens.empty?
+        tokens = select_tokens_from_different_phrases(mix_content(current_tokens, review_tokens, 70), 5)
+        return if tokens.empty?
+        activity = Activities::FlashcardActivity.create!(lesson:, order:, user:)
+        activity.token_translations = tokens
+      when :word_order
+        activity = Activities::WordOrderActivity.create!(lesson:, order:, user:)
+        activity.phrases = random_phrases(ctx[:phrases], 4)
+      when :audio_to_translation
+        distinct_phrases = distinct_phrases_by_text_l2(mix_content(ctx[:phrases_array], ctx[:review_phrases_array], 50))
+        activity = Activities::AudioToTranslation.create!(lesson:, order:, user:)
+        activity.phrases = distinct_phrases.first(5)
+      when :tokens_chain
+        return if current_tokens.empty? && review_tokens.empty?
+        activity = Activities::TokensChainActivity.create!(lesson:, order:, user:)
+        activity.token_translations = mix_content(current_tokens, review_tokens, 60).first(5)
+      when :language_alignment
+        aligned_tokens = TokenTranslation
+          .joins(:phrase)
+          .where(phrase: { id: ctx[:phrases_array].map(&:id) })
+          .where.not(l2_start_index: nil)
+        return if aligned_tokens.empty?
+        activity = Activities::LanguageAlignmentActivity.create!(lesson:, order:, user:)
+        activity.phrases = ctx[:phrases]
+        activity.token_translations = aligned_tokens.sample(5)
       end
     end
 

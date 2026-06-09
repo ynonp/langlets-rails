@@ -71,15 +71,15 @@
 
     <%# Show appropriate button based on progress %>
     <% if is_completed %>
-      <div class="w-full bg-slate-600 text-white py-2 rounded-lg font-medium hover:bg-slate-500 transition duration-200 text-center mt-auto">
+      <div class="s-btn s-btn--soft s-btn--full mt-auto">
         Review
       </div>
     <% elsif course.respond_to?(:has_progress?) && course.has_progress? %>
-      <div class="w-full bg-green-600 text-white py-2 rounded-lg font-medium hover:bg-green-700 transition duration-200 text-center mt-auto">
+      <div class="s-btn s-btn--full mt-auto">
         Continue Learning
       </div>
     <% else %>
-      <div class="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition duration-200 text-center mt-auto">
+      <div class="s-btn s-btn--full mt-auto">
         Start Course
       </div>
     <% end %>

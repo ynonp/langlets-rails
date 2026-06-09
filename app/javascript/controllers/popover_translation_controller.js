@@ -36,13 +36,21 @@ export default class extends Controller {
 
     this.translationTextTarget.textContent = translation;
 
+    // Un-hide first so the popup has a measurable width for clamping.
+    this.translationPopupTarget.classList.remove('hidden');
+
     const rect = tokenEl.getBoundingClientRect();
-    const left = rect.left + (rect.width / 2);
+    const margin = 8;
+    const popupWidth = this.translationPopupTarget.offsetWidth;
+
+    // Anchor on the token, then clamp so the popup stays fully on-screen.
+    let left = rect.left + (rect.width / 2);
+    const maxLeft = window.innerWidth - popupWidth - margin;
+    left = Math.max(margin, Math.min(left, maxLeft));
     const top = rect.bottom + 5;
 
     this.translationPopupTarget.style.left = `${left}px`;
     this.translationPopupTarget.style.top = `${top}px`;
-    this.translationPopupTarget.classList.remove('hidden');
 
     this._updateSaveButton();
 

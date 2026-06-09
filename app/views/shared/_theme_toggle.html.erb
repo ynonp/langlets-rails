@@ -1,8 +1,13 @@
-<%# Floating light/dark theme switcher, rendered globally from the layout.
+<%# Light/dark theme switcher.
+    By default it floats (fixed, bottom-right) and is rendered globally from the
+    layout. Pass `inline: true` to drop it into a header/toolbar next to other
+    buttons (e.g. the guest landing "Sign up" button).
     Wrapped in .sprout so it inherits the sprout color tokens in both themes. %>
-<div class="sprout">
+<% inline = local_assigns.fetch(:inline, false) %>
+<% content_for(:suppress_floating_theme_toggle) { "1" } if inline %>
+<div class="sprout<%= ' inline-flex' if inline %>">
   <button type="button"
-          class="theme-toggle"
+          class="theme-toggle<%= ' theme-toggle--inline' if inline %>"
           data-controller="theme"
           data-theme-url-value="<%= theme_preference_path %>"
           data-action="click->theme#toggle"
