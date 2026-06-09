@@ -114,11 +114,11 @@
         class="s-scroll s-pad"
         style="padding-bottom: 8px;"
     >
-      <div id="phrases-list" data-watch-video-activity-target="phrasesList">
+      <div id="phrases-list" data-watch-video-activity-target="phrasesList"
+           data-action="click->main-video-player#seekToTimestamp">
         <% @phrases.each do |phrase| %>
           <div
             data-watch-video-activity-target="subtitles"
-            data-action="click->main-video-player#seekToTimestamp"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
             class="s-phrase"
           >

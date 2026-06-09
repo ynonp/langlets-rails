@@ -3,6 +3,10 @@
   <meta name="robots" content="noindex, follow">
 <% end %>
 
+<%# Immersive activity screen — hide the floating theme toggle to match the
+    lesson activity pages. %>
+<% content_for(:suppress_floating_theme_toggle) { "1" } %>
+
 <div class="sprout" style="--hue: 150;">
 <div class="min-h-screen flex flex-col max-w-[480px] mx-auto w-full bg-gray-800">
   <!-- Header with X button -->

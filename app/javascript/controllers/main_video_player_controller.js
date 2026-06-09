@@ -217,10 +217,12 @@ export default class extends Controller {
 
 
   seekToTimestamp(ev) {
-    if (this.player) {
-      const targetTime = ev.currentTarget.dataset.timestamp
-      this.player.seekTo(targetTime);
-    }
+    if (!this.player) return;
+    // Delegated: the action lives on the phrases container, so resolve the
+    // clicked phrase (or any ancestor carrying a timestamp).
+    const el = ev.target.closest('[data-timestamp]');
+    if (!el) return;
+    this.player.seekTo(el.dataset.timestamp);
   }
 
   async seekToPosition(event) {
