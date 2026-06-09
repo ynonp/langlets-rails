@@ -33,7 +33,7 @@
     
     <% if user_signed_in? %>
       <div class="flex items-center space-x-4">
-        <%= render "shared/theme_toggle", inline: true %>
+        <%= render "shared/theme_toggle" %>
         <!-- XP Display -->
         <div class="flex items-center space-x-6">
           <!-- Day Streak -->
@@ -102,7 +102,7 @@
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
         <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex items-center gap-2">
-          <%= render "shared/theme_toggle", inline: true %>
+          <%= render "shared/theme_toggle" %>
           <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn s-btn--sm" %>
           <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "s-btn s-btn--soft s-btn--sm" %>
         </div>

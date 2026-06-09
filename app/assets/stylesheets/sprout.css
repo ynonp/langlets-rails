@@ -561,21 +561,18 @@
 }
 
 /* ── Floating light/dark theme toggle ───────────────────────── */
+/* Theme switcher — sits inline in a header/toolbar, with the green accent
+   icon used across the app. */
 .theme-toggle {
-  position: fixed;
-  right: 16px;
-  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
-  z-index: 1000;
-  width: 44px;
-  height: 44px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 42px;
+  height: 42px;
   border-radius: 999px;
   border: 1px solid var(--border);
   background: var(--surface);
-  color: var(--text);
-  box-shadow: var(--shadow);
+  color: var(--accent);
   cursor: pointer;
   transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
@@ -583,16 +580,3 @@
 .theme-toggle:active { transform: scale(0.94); }
 .theme-toggle svg { width: 20px; height: 20px; }
 .theme-toggle svg[hidden] { display: none; }
-
-/* Inline variant — sits in a header/toolbar instead of floating, with the
-   green accent icon used on the guest landing. */
-.theme-toggle--inline {
-  position: static;
-  right: auto;
-  bottom: auto;
-  z-index: auto;
-  width: 42px;
-  height: 42px;
-  color: var(--accent);
-  box-shadow: none;
-}

@@ -15,10 +15,6 @@
 
 <% content_for :canonical_url, canonical_url(course_path(@course)) %>
 
-<%# Immersive player screen — hide the floating theme toggle so it doesn't
-    overlap the video player controls. %>
-<% content_for(:suppress_floating_theme_toggle) { "1" } %>
-
 <%
   # Language directionality + per-language Sprout hue.
   l1 = @phrases.first&.l1
