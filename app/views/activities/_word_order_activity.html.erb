@@ -19,9 +19,6 @@
 <% l2_rtl = params[:l2].rtl %>
 <% hue = lang_hue(params[:l1].iso_name) %>
 
-<%# Sprout activity screen takes over the lesson chrome (step nav hidden by design). %>
-<style>#activity > .activity-stepnav { display: none; }</style>
-
 <div
     data-controller="word-order-activity"
     data-action="stop-audio->main-video-player#stopPlayback"
@@ -29,22 +26,6 @@
     data-word-order-activity-total-phrases-value="<%= total_phrases %>"
     class="sprout"
     style="--hue: <%= hue %>; flex: 1; min-height: 0; display: flex; flex-direction: column; background: var(--bg); color: var(--text);">
-
-  <div class="s-safetop"></div>
-
-  <!-- Header: close + progress + hearts -->
-  <div class="flex items-center s-pad" style="gap: 13px; padding-top: 12px; padding-bottom: 4px;">
-    <%= link_to @course_path, class: "flex items-center justify-center", style: "color: var(--faint);", title: "Close", data: { :"turbo-frame" => "_top", :turbo => false } do %>
-      <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
-    <% end %>
-    <div class="s-track flex-1" style="height: 11px;">
-      <div data-word-order-activity-target="progressBar" id="progress" class="s-track__fill" style="width: 0%; transition: width .5s ease;"></div>
-    </div>
-    <div class="flex items-center" style="gap: 4px;">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.7-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 10c0 5.3-7 10-7 10z" fill="oklch(0.65 0.2 25)" stroke="oklch(0.65 0.2 25)" stroke-width="2" stroke-linejoin="round"/></svg>
-      <span style="font: 800 14px 'Nunito'; color: var(--text);">5</span>
-    </div>
-  </div>
 
   <!-- Scrollable body -->
   <div class="s-scroll s-pad" style="gap: 0; padding-top: 8px;">

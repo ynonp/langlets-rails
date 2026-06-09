@@ -466,7 +466,9 @@ export default class extends Controller {
     
     // Update progress
     const progress = ((this.currentPhraseIndex) / this.totalPhrasesValue) * 100
-    this.progressBarTarget.style.width = `${progress}%`
+    if (this.hasProgressBarTarget) {
+      this.progressBarTarget.style.width = `${progress}%`
+    }
     this.progressTextTarget.textContent = `Question ${this.currentPhraseIndex + 1} of ${this.totalPhrasesValue}`
     
     if (this.currentPhraseIndex < this.phraseContainerTargets.length) {
@@ -482,7 +484,9 @@ export default class extends Controller {
 
   showCompletionMessage() {
     this.progressTextTarget.textContent = `Completed ${this.totalPhrasesValue} of ${this.totalPhrasesValue}`
-    this.progressBarTarget.style.width = '100%'
+    if (this.hasProgressBarTarget) {
+      this.progressBarTarget.style.width = '100%'
+    }
     this.completionMessageTarget.classList.remove('hidden')
     
     animate(this.completionMessageTarget, 
