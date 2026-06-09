@@ -1,0 +1,261 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=zXsZWL8f5Xg",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "قلتلي بتِحبيني",
+        "timestamp": "00:16.20",
+        "timestamp_end": "00:18.50",
+        "text_l2": "You told me you love me"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "و عْطول مِش رَح تِنسيني",
+        "timestamp": "00:18.50",
+        "timestamp_end": "00:22.20",
+        "text_l2": "And that you'd never forget me"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "شو صار تْ عامَلتيني",
+        "timestamp": "00:22.20",
+        "timestamp_end": "00:26.00",
+        "text_l2": "So what happened, how did you treat me"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:30.50",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "مين قِلِّك يا حَياتي",
+        "timestamp": "00:31.50",
+        "timestamp_end": "00:34.00",
+        "text_l2": "Who told you, oh my life"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بنساك لَحْظة بْحَياتي",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:38.00",
+        "text_l2": "That I'd forget you for a moment in my life"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "هَواك مالي أوقاتي",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:42.50",
+        "text_l2": "Your love fills my time"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:47.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "إذا كان بَدِّك تِتْسَلّي",
+        "timestamp": "00:47.50",
+        "timestamp_end": "00:50.00",
+        "text_l2": "If you want to have some fun"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "و لْقيتيني مَوضوع قابِل",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "And found me a suitable topic"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ضَلّي بْعيدة عَنّي ضَلّي",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:58.00",
+        "text_l2": "Stay away from me, stay away"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "لا تْراضيني لا مِش قابِل",
+        "timestamp": "00:58.00",
+        "timestamp_end": "01:03.00",
+        "text_l2": "Don't try to please me, no, I'm not accepting"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "بَدِّك تِعْتِذْري مِنّي",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:06.00",
+        "text_l2": "You want to apologize to me"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "قِدّام اللي قالوا عَنّي",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "In front of those who talked about me"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "مَغرور تْ يشوفوا إنّي",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "Arrogant, so they see that I am"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "01:14.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أوَّل مَرّة بْحِسّ بْقَلبي",
+        "timestamp": "01:50.50",
+        "timestamp_end": "01:53.00",
+        "text_l2": "First time I feel in my heart"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "عَم يوجَعني قَلبِك قاسي",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "Your heart is hurting me, it's hard"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "مِش حاسِس فيّي و بْحُبّي",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:01.00",
+        "text_l2": "Not feeling me and my love"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "فِكري شيلِك مِن إحساسي",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:06.00",
+        "text_l2": "I'm thinking of removing you from my feelings"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "إذا رَح تِبقى بْهالحالة",
+        "timestamp": "02:06.50",
+        "timestamp_end": "02:09.50",
+        "text_l2": "If you're going to stay in this state"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "ما فيك تِشْعُر بْحالي",
+        "timestamp": "02:09.50",
+        "timestamp_end": "02:13.00",
+        "text_l2": "You can't feel my state"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "لَشُو تِبقى بْبالي",
+        "timestamp": "02:13.00",
+        "timestamp_end": "02:17.00",
+        "text_l2": "So why stay on my mind"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "02:17.00",
+        "timestamp_end": "02:21.50",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "و حَياة عيونِك إنتِ",
+        "timestamp": "02:51.50",
+        "timestamp_end": "02:54.00",
+        "text_l2": "I swear by your eyes, it's you"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "الحَياة مَعناها إنتِ",
+        "timestamp": "02:54.00",
+        "timestamp_end": "02:58.00",
+        "text_l2": "Life means you"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "ما بْعيش مِن دونِك إنتِ",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:02.00",
+        "text_l2": "I can't live without you"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "03:02.00",
+        "timestamp_end": "03:07.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "و حَياة عيونَك إنتَ",
+        "timestamp": "03:07.00",
+        "timestamp_end": "03:10.00",
+        "text_l2": "I swear by your eyes, it's you"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "الحَياة مَعناها إنتَ",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:14.00",
+        "text_l2": "Life means you"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "ما بْعيش مِن دونَك إنتَ",
+        "timestamp": "03:14.00",
+        "timestamp_end": "03:18.00",
+        "text_l2": "I can't live without you"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "03:18.00",
+        "timestamp_end": "03:22.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "03:22.00",
+        "timestamp_end": "03:26.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "03:26.00",
+        "timestamp_end": "03:30.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "بالعَكس بالعَكس بالعَكس",
+        "timestamp": "03:30.00",
+        "timestamp_end": "03:34.00",
+        "text_l2": "The opposite, the opposite, the opposite"
+      }
+    ],
+    "phrases_with_token_translations": "[قلتلي] بتِحبيني => [You told me] you love me\nقلتلي [بتِحبيني] => You told me [you love me]\n\n[و] عْطول مِش رَح تِنسيني => [And] that you'd never forget me\nو [عْطول مِش رَح] تِنسيني => And [that you'd never] forget me\nو عْطول مِش رَح [تِنسيني] => And that you'd never [forget me]\n\n[شو صار] تْ عامَلتيني => So [what happened], how did you treat me\nشو صار [تْ عامَلتيني] => how did you treat me\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[مين] قِلِّك يا حَياتي => [Who] told you, oh my life\nمين [قِلِّك] يا حَياتي => Who [told you], oh my life\nمين قِلِّك [يا] حَياتي => Who told you, [oh] my life\nمين قِلِّك يا [حَياتي] => Who told you, oh [my life]\n\n[بنساك] لَحْظة بْحَياتي => That [I'd forget you] for a moment in my life\nبنساك [لَحْظة] بْحَياتي => That I'd forget you for [a moment] in my life\nبنساك لَحْظة [ب]حَياتي => That I'd forget you for a moment [in] my life\nبنساك لَحْظة ب[حَياتي] => That I'd forget you for a moment in [my life]\n\n[هَواك] مالي أوقاتي => [Your love] fills my time\nهَواك [مالي] أوقاتي => Your love [fills] my time\nهَواك مالي [أوقاتي] => Your love fills [my time]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[إذا] كان بَدِّك تِتْسَلّي => [If] you want to have some fun\nإذا كان [بَدِّك] تِتْسَلّي => If [you want] to have some fun\nإذا كان بَدِّك [تِتْسَلّي] => If you want [to have some fun]\n\n[و] لْقيتيني مَوضوع قابِل => [And] found me a suitable topic\nو [لْقيتيني] مَوضوع قابِل => And [found me] a suitable topic\nو لْقيتيني مَوضوع [قابِل] => And found me a [suitable] topic\nو لْقيتيني [مَوضوع] قابِل => And found me a suitable [topic]\n\n[ضَلّي] بْعيدة عَنّي ضَلّي => [Stay] away from me, stay away\nضَلّي [بْعيدة] عَنّي ضَلّي => Stay [away] from me, stay away\nضَلّي بْعيدة [عَنّي] ضَلّي => Stay away [from me], stay away\nضَلّي بْعيدة عَنّي [ضَلّي] => stay away\n\n[لا] تْراضيني لا مِش قابِل => [Don't] try to please me, no, I'm not accepting\nلا [تْراضيني] لا مِش قابِل => Don't [try to please me], no, I'm not accepting\nلا تْراضيني [لا] مِش قابِل => Don't try to please me, [no], I'm not accepting\nلا تْراضيني لا [مِش] قابِل => Don't try to please me, no, I'm [not] accepting\nلا تْراضيني لا مِش [قابِل] => Don't try to please me, no, I'm not [accepting]\n\n[بَدِّك] تِعْتِذْري مِنّي => [You want] to apologize to me\nبَدِّك [تِعْتِذْري] مِنّي => You want [to apologize] to me\nبَدِّك تِعْتِذْري [مِنّي] => You want to apologize [to me]\n\n[قِدّام] اللي قالوا عَنّي => [In front of] those who talked about me\nقِدّام [اللي] قالوا عَنّي => In front of [those who] talked about me\nقِدّام اللي [قالوا] عَنّي => In front of those who [talked] about me\nقِدّام اللي قالوا [عَنّي] => In front of those who talked [about me]\n\n[مَغرور] تْ يشوفوا إنّي => [Arrogant], so they see that I am\nمَغرور [تْ] يشوفوا إنّي => Arrogant, [so] they see that I am\nمَغرور تْ [يشوفوا] إنّي => Arrogant, so [they see] that I am\nمَغرور تْ يشوفوا [إنّي] => Arrogant, so they see [that I am]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[أوَّل مَرّة] بْحِسّ بْقَلبي => [First time] I feel in my heart\nأوَّل مَرّة [بْحِسّ] بْقَلبي => First time [I feel] in my heart\nأوَّل مَرّة بْحِسّ [بْقَلبي] => First time I feel [in my heart]\n\n[عَم يوجَعني] قَلبِك قاسي => Your heart [is hurting me], it's hard\nعَم يوجَعني [قَلبِك] قاسي => [Your heart] is hurting me, it's hard\nعَم يوجَعني قَلبِك [قاسي] => Your heart is hurting me, it's [hard]\n\n[مِش] حاسِس فيّي و بْحُبّي => [Not] feeling me and my love\nمِش [حاسِس] فيّي و بْحُبّي => Not [feeling] me and my love\nمِش حاسِس [فيّي] و بْحُبّي => Not feeling [me] and my love\nمِش حاسِس فيّي [و] بْحُبّي => Not feeling me [and] my love\nمِش حاسِس فيّي و [بْحُبّي] => Not feeling me and [my love]\n\n[فِكري] شيلِك مِن إحساسي => [I'm thinking] of removing you from my feelings\nفِكري [شيلِك] مِن إحساسي => I'm thinking of [removing you] from my feelings\nفِكري شيلِك [مِن] إحساسي => I'm thinking of removing you [from] my feelings\nفِكري شيلِك مِن [إحساسي] => I'm thinking of removing you from [my feelings]\n\n[إذا] رَح تِبقى بْهالحالة => [If] you're going to stay in this state\nإذا [رَح] تِبقى بْهالحالة => If you're [going to] stay in this state\nإذا رَح [تِبقى] بْهالحالة => If you're going to [stay] in this state\nإذا رَح تِبقى [بْ]هالحالة => If you're going to stay [in] this state\nإذا رَح تِبقى بْ[هالحالة] => If you're going to stay in [this state]\n\n[ما فيك] تِشْعُر بْحالي => [You can't] feel my state\nما فيك [تِشْعُر] بْحالي => You can't [feel] my state\nما فيك تِشْعُر بْ[حالي] => You can't feel [my state]\n\n[لَشُو] تِبقى بْبالي => [So why] stay on my mind\nلَشُو [تِبقى] بْبالي => So why [stay] on my mind\nلَشُو تِبقى [بْ]بالي => So why stay [on] my mind\nلَشُو تِبقى بْ[بالي] => So why stay on [my mind]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[و حَياة عيونِك] إنتِ => I swear [by your eyes], it's you\nو حَياة عيونِك [إنتِ] => I swear by your eyes, it's [you]\n\n[الحَياة] مَعناها إنتِ => [Life] means you\nالحَياة [مَعناها] إنتِ => Life [means] you\nالحَياة مَعناها [إنتِ] => Life means [you]\n\n[ما بْعيش] مِن دونِك إنتِ => I [can't live] without you\nما بْعيش [مِن دونِك] إنتِ => I can't live [without you]\nما بْعيش مِن دونِك [إنتِ] => I can't live without [you]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[و حَياة] عيونَك إنتَ => [I swear by] your eyes, it's you\nو حَياة [عيونَك] إنتَ => I swear by [your eyes], it's you\nو حَياة عيونَك [إنتَ] => I swear by your eyes, it's [you]\n\n[الحَياة] مَعناها إنتَ => [Life] means you\nالحَياة [مَعناها] إنتَ => Life [means] you\nالحَياة مَعناها [إنتَ] => Life means [you]\n\n[ما بْعيش] مِن دونَك إنتَ => [I can't live] without you\nما بْعيش [مِن دونَك] إنتَ => I can't live [without you]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]\n\n[بالعَكس] بالعَكس بالعَكس => [The opposite], the opposite, the opposite\nبالعَكس [بالعَكس] بالعَكس => The opposite, [the opposite], the opposite\nبالعَكس بالعَكس [بالعَكس] => The opposite, the opposite, [the opposite]",
+    "lessons": "# بداية الخلاف\n00:16.20 قلتلي بتِحبيني\n00:18.50 و عْطول مِش رَح تِنسيني\n00:22.20 شو صار تْ عامَلتيني\n00:26.00 بالعَكس بالعَكس بالعَكس\n00:31.50 مين قِلِّك يا حَياتي\n00:34.00 بنساك لَحْظة بْحَياتي\n00:38.00 هَواك مالي أوقاتي\n00:42.50 بالعَكس بالعَكس بالعَكس\n\n# الغضب والرفض\n00:47.50 إذا كان بَدِّك تِتْسَلّي\n00:50.00 و لْقيتيني مَوضوع قابِل\n00:54.00 ضَلّي بْعيدة عَنّي ضَلّي\n00:58.00 لا تْراضيني لا مِش قابِل\n01:03.00 بَدِّك تِعْتِذْري مِنّي\n01:06.00 قِدّام اللي قالوا عَنّي\n01:10.00 مَغرور تْ يشوفوا إنّي\n01:14.00 بالعَكس بالعَكس بالعَكس\n\n# أول مرة بحس بقلبي\n01:50.50 أوَّل مَرّة بْحِسّ بْقَلبي\n01:53.00 عَم يوجَعني قَلبِك قاسي\n01:57.00 مِش حاسِس فيّي و بْحُبّي\n02:01.00 فِكري شيلِك مِن إحساسي\n02:06.50 إذا رَح تِبقى بْهالحالة\n02:09.50 ما فيك تِشْعُر بْحالي\n02:13.00 لَشُو تِبقى بْبالي\n02:17.00 بالعَكس بالعَكس بالعَكس\n\n# وحياة عيونك (الرجل)\n02:51.50 و حَياة عيونِك إنتِ\n02:54.00 الحَياة مَعناها إنتِ\n02:58.00 ما بْعيش مِن دونِك إنتِ\n03:02.00 بالعَكس بالعَكس بالعَكس\n\n# وحياة عيونك (المرأة) والختام\n03:07.00 و حَياة عيونَك إنتَ\n03:10.00 الحَياة مَعناها إنتَ\n03:14.00 ما بْعيش مِن دونَك إنتَ\n03:18.00 بالعَكس بالعَكس بالعَكس\n03:22.00 بالعَكس بالعَكس بالعَكس\n03:26.00 بالعَكس بالعَكس بالعَكس\n03:30.00 بالعَكس بالعَكس بالعَكس",
+    "similar_sounds": "[قتلي] بتِحبيني\nو عْطول مِش رَح [تلمسيني]\nشو [صاح] تْ عامَلتيني\n[بالفاكس] بالعَكس بالعَكس\n[بين] قِلِّك يا حَياتي\n[أنساك] لَحْظة بْحَياتي\n[هواك] مالي أوقاتي\n[العكس] بالعَكس بالعَكس\nإذا كان بَدِّك [No alternatives found for 'تِتْسَلّي']\nو لْقيتيني [بموضوع] قابِل\nضَلّي [سعيدة] عَنّي ضَلّي\nلا [No alternatives found for 'تْراضيني'] لا مِش قابِل\nبَدِّك [No alternatives found for 'تِعْتِذْري'] مِنّي\nقِدّام [الله] قالوا عَنّي\nمَغرور تْ يشوفوا [إنسي]\n[العكس] بالعَكس بالعَكس\nأوَّل [مرة] بْحِسّ بْقَلبي\nعَم يوجَعني [قلبك] قاسي\nمِش [حاسوب] فيّي و بْحُبّي\nفِكري شيلِك [من] إحساسي\nإذا رَح تِبقى [بالحالة]\nما فيك تِشْعُر [بحال]\n[No alternatives found for 'لَشُو'] تِبقى بْبالي\nبالعَكس بالعَكس [بالعكس]\nو حَياة عيونِك [إنت]\nالحَياة [معناها] إنتِ\nما بْعيش مِن دونِك [إنتي]\nبالعَكس بالعَكس [العكس]\nو حَياة [عينيك] إنتَ\nالحَياة مَعناها [أنت]\nما بْعيش مِن دونَك [إنتي]\nبالعَكس بالعَكس [بالفاكس]\nبالعَكس [بالعكس] بالعَكس\n[بالفاكس] بالعَكس بالعَكس\nبالعَكس بالعَكس [بالعكس]"
+  },
+  "created_at": "2026-06-09 07:44:11 UTC",
+  "updated_at": "2026-06-09 07:57:36 UTC",
+  "exported_at": "2026-06-09T07:57:36Z"
+}

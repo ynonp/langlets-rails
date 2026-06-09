@@ -1,0 +1,324 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=H_d42ZSB7Pg",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "دلوقتي ويومها بفضل دايماً أنا أفتكر",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:29.50",
+        "text_l2": "Now and back then, I always tend to remember"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "أيام ما تقدر بعزة تحس الموت",
+        "timestamp": "00:32.00",
+        "timestamp_end": "00:37.00",
+        "text_l2": "Days when you can't feel death with pride"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "حبي فيكي اللي غيرتي فيه",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:43.00",
+        "text_l2": "My love for you, which you changed"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "حاسس بالوحدة في قربك ليه",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:46.00",
+        "text_l2": "Why do I feel lonely when close to you"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "هو ده الحب وكله وجع أفتكر",
+        "timestamp": "00:46.50",
+        "timestamp_end": "00:51.50",
+        "text_l2": "Is this love? It's all pain, I suppose"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "ممكن إنتي تبقي من نوع معين من الإحباط",
+        "timestamp": "01:09.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "Maybe you're a certain type of frustration"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "زي حب النهايات، أيوه النهايات",
+        "timestamp": "01:17.00",
+        "timestamp_end": "01:22.00",
+        "text_l2": "Like love of endings, yes, the endings"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "لما اكتشفنا إن ملناش أسباب",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:27.50",
+        "text_l2": "When we discovered we had no reasons"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "قلتيلي إننا ممكن نبقى أصحاب",
+        "timestamp": "01:28.00",
+        "timestamp_end": "01:31.50",
+        "text_l2": "You told me we could be friends"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "برضه أنا مبسوط إنه انتهى",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:36.50",
+        "text_l2": "Still, I'm glad that it ended"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ما كانش لازم تبعديني",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:42.50",
+        "text_l2": "You didn't have to push me away"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "تمشي قدامي وكأن الموضوع",
+        "timestamp": "01:42.50",
+        "timestamp_end": "01:45.00",
+        "text_l2": "You walk away like it was nothing"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "كان ولا حاجة",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:47.00",
+        "text_l2": "Really nothing at all"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "أنا مش محتاجها",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:50.00",
+        "text_l2": "I don't need it"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "عامليني زي الغرب ودي بتوجع",
+        "timestamp": "01:50.00",
+        "timestamp_end": "01:53.50",
+        "text_l2": "You treat me like a stranger and it hurts"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "ما كانش لازم ترمي العبار",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "You didn't have to say those words"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "تمشي بصحابك وتغيري",
+        "timestamp": "01:57.00",
+        "timestamp_end": "01:59.00",
+        "text_l2": "You walk with your friends and change"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "إنتي كل النمر",
+        "timestamp": "01:59.00",
+        "timestamp_end": "02:01.50",
+        "text_l2": "You're fierce like a tiger"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "أظن مش محتاج الحب",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:05.00",
+        "text_l2": "I guess I don't need love"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:08.50",
+        "text_l2": "Now you're someone I don't know"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "02:12.00",
+        "timestamp_end": "02:15.50",
+        "text_l2": "Now you're someone I don't know"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:23.00",
+        "text_l2": "Now you're someone I don't know"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "دلوقتي بفضل دايماً أفتكر أيام التعب",
+        "timestamp": "02:39.00",
+        "timestamp_end": "02:43.00",
+        "text_l2": "Now I always tend to remember the hard days"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "وقلت لنفسي إنه كان دايماً",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:47.50",
+        "text_l2": "And I told myself it was always"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أنا السبب",
+        "timestamp": "02:47.50",
+        "timestamp_end": "02:50.00",
+        "text_l2": "My fault"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "مش هعيش أنا كده",
+        "timestamp": "02:54.00",
+        "timestamp_end": "02:57.00",
+        "text_l2": "I won't live like this"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "أبقى أنا دايماً مشكلة",
+        "timestamp": "02:57.00",
+        "timestamp_end": "03:00.50",
+        "text_l2": "Always being the problem"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "قلتيلي إن مش فارقة وهو",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:03.50",
+        "text_l2": "You told me it doesn't matter, and him"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "وأنا مش هسيبك تمشي مع حد",
+        "timestamp": "03:03.50",
+        "timestamp_end": "03:06.00",
+        "text_l2": "And I won't let you walk with someone else"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "مش شايفه فيه الفوق",
+        "timestamp": "03:06.00",
+        "timestamp_end": "03:08.50",
+        "text_l2": "I don't see anything special in him"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "ما كانش لازم تبعديني",
+        "timestamp": "03:08.50",
+        "timestamp_end": "03:11.50",
+        "text_l2": "You didn't have to push me away"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "تمشي قدامي وكأن الموضوع",
+        "timestamp": "03:12.00",
+        "timestamp_end": "03:14.00",
+        "text_l2": "You walk away like it was nothing"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "كان ولا حاجة",
+        "timestamp": "03:14.00",
+        "timestamp_end": "03:16.00",
+        "text_l2": "Really nothing at all"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "أنا مش محتاجها",
+        "timestamp": "03:16.00",
+        "timestamp_end": "03:18.50",
+        "text_l2": "I don't need it"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "عامليني زي الغرب ودي بتوجع",
+        "timestamp": "03:18.50",
+        "timestamp_end": "03:22.50",
+        "text_l2": "You treat me like a stranger and it hurts"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "ما كانش لازم ترمي العبار",
+        "timestamp": "03:23.00",
+        "timestamp_end": "03:26.00",
+        "text_l2": "You didn't have to say those words"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "تمشي بصحابك وتغيري",
+        "timestamp": "03:26.00",
+        "timestamp_end": "03:28.00",
+        "text_l2": "You walk with your friends and change"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "إنتي كل النمر",
+        "timestamp": "03:28.00",
+        "timestamp_end": "03:30.50",
+        "text_l2": "You're fierce like a tiger"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "أظن مش محتاج الحب",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:33.50",
+        "text_l2": "I guess I don't need love"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "03:34.00",
+        "timestamp_end": "03:37.50",
+        "text_l2": "Now you're someone I don't know"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "ما اعرفهاش",
+        "timestamp": "03:38.50",
+        "timestamp_end": "03:41.00",
+        "text_l2": "I don't know"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "03:41.50",
+        "timestamp_end": "03:45.50",
+        "text_l2": "Now you're someone I don't know"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "ما اعرفهاش",
+        "timestamp": "03:46.50",
+        "timestamp_end": "03:49.00",
+        "text_l2": "I don't know"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "دلوقتي إنتي واحدة أنا ما اعرفهاش",
+        "timestamp": "03:49.00",
+        "timestamp_end": "03:53.00",
+        "text_l2": "Now you're someone I don't know"
+      }
+    ],
+    "phrases_with_token_translations": "[دلوقتي] ويومها بفضل دايماً أنا أفتكر => [Now] and back then, I always tend to remember\nدلوقتي [ويومها] بفضل دايماً أنا أفتكر => Now [and back then], I always tend to remember\nدلوقتي ويومها [بفضل] دايماً أنا أفتكر => Now and back then, I always [tend] to remember\nدلوقتي ويومها بفضل [دايماً] أنا أفتكر => Now and back then, I [always] tend to remember\nدلوقتي ويومها بفضل دايماً [أنا] أفتكر => Now and back then, [I] always tend to remember\nدلوقتي ويومها بفضل دايماً أنا [أفتكر] => Now and back then, I always tend to [remember]\n\n[أيام] ما تقدر بعزة تحس الموت => [Days] when you can't feel death with pride\nأيام [ما تقدر] بعزة تحس الموت => Days when [you can't] feel death with pride\nأيام ما تقدر [بعزة] تحس الموت => Days when you can't feel death [with pride]\nأيام ما تقدر بعزة [تحس] الموت => Days when you can't [feel] death with pride\nأيام ما تقدر بعزة تحس [الموت] => Days when you can't feel [death] with pride\n\n[حبي] فيكي اللي غيرتي فيه => [My love] for you, which you changed\nحبي [فيكي] اللي غيرتي فيه => My love [for you], which you changed\nحبي فيكي [اللي] غيرتي فيه => My love for you, [which] you changed\nحبي فيكي اللي [غيرتي] فيه => My love for you, which [you changed]\n\n[حاسس] بالوحدة في قربك ليه => Why do I [feel] lonely when close to you?\nحاسس [بالوحدة] في قربك ليه => Why do I feel [lonely] when close to you?\nحاسس بالوحدة [في قربك] ليه => Why do I feel lonely [when close to you]?\nحاسس بالوحدة في قربك [ليه] => [Why] do I feel lonely when close to you?\n\n[هو ده] الحب وكله وجع أفتكر => [Is this] love? It's all pain, I suppose\nهو ده [الحب] وكله وجع أفتكر => Is this [love]? It's all pain, I suppose\nهو ده الحب [وكله] وجع أفتكر => Is this love? [It's all] pain, I suppose\nهو ده الحب وكله [وجع] أفتكر => Is this love? It's all [pain], I suppose\nهو ده الحب وكله وجع [أفتكر] => Is this love? It's all pain, [I suppose]\n\n[ممكن] إنتي تبقي من نوع معين من الإحباط => [Maybe] you're a certain type of frustration\nممكن [إنتي تبقي] من نوع معين من الإحباط => Maybe [you're] a certain type of frustration\nممكن إنتي تبقي [من نوع معين] من الإحباط => Maybe you're [a certain type] of frustration\nممكن إنتي تبقي من نوع معين [من] الإحباط => Maybe you're a certain type [of] frustration\nممكن إنتي تبقي من نوع معين من [الإحباط] => Maybe you're a certain type of [frustration]\n\n[زي] حب النهايات، أيوه النهايات => [Like] love of endings, yes, the endings\nزي [حب] النهايات، أيوه النهايات => Like [love] of endings, yes, the endings\nزي حب [النهايات]، أيوه النهايات => Like love of [endings], yes, the endings\nزي حب النهايات، [أيوه] النهايات => Like love of endings, [yes], the endings\nزي حب النهايات، أيوه [النهايات] => Like love of endings, yes, [the endings]\n\n[لما] اكتشفنا إن ملناش أسباب => [When] we discovered we had no reasons\nلما [اكتشفنا] إن ملناش أسباب => When [we discovered] we had no reasons\nلما اكتشفنا [إن] ملناش أسباب => that\nلما اكتشفنا إن [ملناش] أسباب => When we discovered [we had no] reasons\nلما اكتشفنا إن ملناش [أسباب] => When we discovered we had no [reasons]\n\n[قلتيلي] إننا ممكن نبقى أصحاب => [You told me] we could be friends\nقلتيلي [إننا] ممكن نبقى أصحاب => You told me [we] could be friends\nقلتيلي إننا [ممكن] نبقى أصحاب => You told me we [could] be friends\nقلتيلي إننا ممكن [نبقى] أصحاب => You told me we could [be] friends\nقلتيلي إننا ممكن نبقى [أصحاب] => You told me we could be [friends]\n\n[برضه] أنا مبسوط إنه انتهى => [Still], I'm glad that it ended\nبرضه [أنا] مبسوط إنه انتهى => Still, [I]'m glad that it ended\nبرضه أنا [مبسوط] إنه انتهى => Still, I'm [glad] that it ended\nبرضه أنا مبسوط [إنه] انتهى => Still, I'm glad [that it] ended\nبرضه أنا مبسوط إنه [انتهى] => Still, I'm glad that it [ended]\n\n[ما كانش] لازم تبعديني => You [didn't] have to push me away\nما كانش [لازم] تبعديني => You didn't [have to] push me away\nما كانش لازم [تبعديني] => You didn't have to [push me away]\n\n[تمشي] قدامي وكأن الموضوع => You [walk] away like it was nothing\nتمشي [قدامي] وكأن الموضوع => You walk [away] like it was nothing\nتمشي قدامي [وكأن] الموضوع => You walk away [like] it was nothing\nتمشي قدامي وكأن [الموضوع] => it was nothing\n\nكان [ولا حاجة] => Really [nothing at all]\n\n[أنا] مش محتاجها => [I] don't need it\nأنا [مش] محتاجها => I [don't] need it\nأنا مش [محتاجها] => I don't [need it]\n\n[عامليني] زي الغرب ودي بتوجع => [You treat me] like a stranger and it hurts\nعامليني [زي] الغرب ودي بتوجع => You treat me [like] a stranger and it hurts\nعامليني زي [الغرب] ودي بتوجع => You treat me like [a stranger] and it hurts\nعامليني زي الغرب [ودي] بتوجع => You treat me like a stranger [and it] hurts\nعامليني زي الغرب ودي [بتوجع] => You treat me like a stranger and it [hurts]\n\n[ما كانش] لازم ترمي العبار => You [didn't] have to say those words\nما كانش [لازم] ترمي العبار => You didn't [have to] say those words\nما كانش لازم [ترمي] العبار => You didn't have to [say] those words\nما كانش لازم ترمي [العبار] => You didn't have to say [those words]\n\n[تمشي] بصحابك وتغيري => [You walk] with your friends and change\nتمشي [بصحابك] وتغيري => You walk [with your friends] and change\nتمشي بصحابك [وتغيري] => You walk with your friends [and change]\n\n[إنتي] كل النمر => [You]'re fierce like a tiger\nإنتي [كل النمر] => fierce like a tiger  # custom translation: idiom meaning \"fierce like a tiger\"\n\n[أظن] مش محتاج الحب => [I guess] I don't need love\nأظن [مش محتاج] الحب => I guess [I don't need] love\nأظن مش محتاج [الحب] => I guess I don't need [love]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما اعرفهاش] => Now you're someone [I don't know]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما] اعرفهاش => Now you're someone I [don't] know\nدلوقتي إنتي واحدة أنا ما [اعرفهاش] => Now you're someone I don't [know]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما] اعرفهاش => Now you're someone I [don't] know\nدلوقتي إنتي واحدة أنا ما [اعرفهاش] => Now you're someone I don't [know]\n\n[دلوقتي] بفضل دايماً أفتكر أيام التعب => [Now] I always tend to remember the hard days\nدلوقتي [بفضل] دايماً أفتكر أيام التعب => Now I always [tend] to remember the hard days\nدلوقتي بفضل [دايماً] أفتكر أيام التعب => Now I [always] tend to remember the hard days\nدلوقتي بفضل دايماً [أفتكر] أيام التعب => Now I always tend to [remember] the hard days\nدلوقتي بفضل دايماً أفتكر [أيام التعب] => Now I always tend to remember [the hard days]\nدلوقتي بفضل دايماً أفتكر [أيام] التعب => Now I always tend to remember the hard [days]\nدلوقتي بفضل دايماً أفتكر أيام [التعب] => Now I always tend to remember the [hard] days\n\n[و] قولت لنفسي إنه كان دايماً => [And] I told myself it was always\nو [قولت] لنفسي إنه كان دايماً => And [I told] myself it was always\nو قولت [لنفسي] إنه كان دايماً => And I told [myself] it was always\nو قولت لنفسي [إنه] كان دايماً => And I told myself [it] was always\nو قولت لنفسي إنه [كان] دايماً => And I told myself it [was] always\nو قولت لنفسي إنه كان [دايماً] => And I told myself it was [always]\n\nأنا [السبب] => My [fault]\n\n[مش] هعيش أنا كده => not\nمش [هعيش] أنا كده => I won't [live] like this\nمش هعيش [أنا] كده => [I] won't live like this\nمش هعيش أنا [كده] => I won't live [like this]\n\n[أبقى] أنا دايماً مشكلة => being\nأبقى أنا [دايماً] مشكلة => [Always] being the problem\nأبقى أنا دايماً [مشكلة] => Always being the [problem]\n\n[قلتيلي] إن مش فارقة وهو => [You told me] it doesn't matter, and him\nقلتيلي إن [مش فارقة] وهو => You told me [it doesn't matter], and him\nقلتيلي إن مش فارقة [وهو] => You told me it doesn't matter, [and him]\n\n[وأنا] مش هسيبك تمشي مع حد => [And I] won't let you walk with someone else\nوأنا [مش] هسيبك تمشي مع حد => And I [won't] let you walk with someone else\nوأنا مش [هسيبك] تمشي مع حد => And I won't [let you] walk with someone else\nوأنا مش هسيبك [تمشي] مع حد => And I won't let you [walk] with someone else\nوأنا مش هسيبك تمشي [مع] حد => And I won't let you walk [with] someone else\nوأنا مش هسيبك تمشي مع [حد] => And I won't let you walk with [someone] else\n\n[مش] شايفه فيه الفوق => I [don't] see anything special in him\nمش [شايفه] فيه الفوق => I don't [see] anything special in him\nمش شايفه [فيه] الفوق => I don't see anything special [in him]\nمش شايفه فيه [الفوق] => I don't see anything [special] in him\n\n[ما كانش] لازم تبعديني => You [didn't] have to push me away\nما كانش [لازم] تبعديني => You didn't [have to] push me away\nما كانش لازم [تبعديني] => You didn't have to [push me away]\n\n[تمشي] قدامي وكأن الموضوع => You [walk] away like it was nothing\nتمشي [قدامي] وكأن الموضوع => You walk [away] like it was nothing\nتمشي قدامي [وكأن] الموضوع => You walk away [like] it was nothing\nتمشي قدامي وكأن [الموضوع] => You walk away like it was [nothing]\n\nكان [ولا حاجة] => Really [nothing at all]\n\n[أنا] مش محتاجها => [I] don't need it\nأنا [مش] محتاجها => I [don't] need it\nأنا مش [محتاجها] => I don't [need it]\n\n[عامليني] زي الغرب ودي بتوجع => [You treat me] like a stranger and it hurts\nعامليني [زي الغرب] ودي بتوجع => You treat me [like a stranger] and it hurts\nعامليني زي الغرب [ودي] بتوجع => You treat me like a stranger [and it] hurts\nعامليني زي الغرب ودي [بتوجع] => You treat me like a stranger and it [hurts]\n\n[ما كانش لازم] ترمي العبار => [You didn't have to] say those words\nما كانش لازم [ترمي] العبار => You didn't have to [say] those words\nما كانش لازم ترمي [العبار] => You didn't have to say [those words]\n\n[تمشي] بصحابك وتغيري => You [walk] with your friends and change\nتمشي [بصحابك] وتغيري => You walk [with your friends] and change\nتمشي بصحابك [وتغيري] => You walk with your friends [and change]\n\n[إنتي] كل النمر => [You]'re fierce like a tiger\nإنتي [كل] النمر => You're fierce [like] a tiger\nإنتي كل [النمر] => You're fierce like [a tiger]\n\n[أظن] مش محتاج الحب => [I guess] I don't need love\nأظن [مش] محتاج الحب => I guess I [don't] need love\nأظن مش [محتاج] الحب => I guess I don't [need] love\nأظن مش محتاج [الحب] => I guess I don't need [love]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما اعرفهاش] => Now you're someone I [don't know]\n\n[ما اعرفهاش] => [I don't know]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما اعرفهاش] => Now you're someone I [don't know]\n\n[ما اعرفهاش] => [I don't know]\n\n[دلوقتي] إنتي واحدة أنا ما اعرفهاش => [Now] you're someone I don't know\nدلوقتي [إنتي] واحدة أنا ما اعرفهاش => Now [you]'re someone I don't know\nدلوقتي إنتي [واحدة] أنا ما اعرفهاش => Now you're [someone] I don't know\nدلوقتي إنتي واحدة [أنا] ما اعرفهاش => Now you're someone [I] don't know\nدلوقتي إنتي واحدة أنا [ما اعرفهاش] => Now you're someone I [don't know]",
+    "lessons": "# الذكريات والوحدة\n00:24.00 دلوقتي ويومها بفضل دايماً أنا أفتكر\n00:32.00 أيام ما تقدر بعزة تحس الموت\n00:39.00 حبي فيكي اللي غيرتي فيه\n00:43.00 حاسس بالوحدة في قربك ليه\n00:46.50 هو ده الحب وكله وجع أفتكر\n\n# نهايات الحب\n01:09.00 ممكن إنتي تبقي من نوع معين من الإحباط\n01:17.00 زي حب النهايات، أيوه النهايات\n01:24.00 لما اكتشفنا إن ملناش أسباب\n01:28.00 قلتيلي إننا ممكن نبقى أصحاب\n01:32.00 برضه أنا مبسوط إنه انتهى\n\n# جرح البعد\n01:39.00 ما كانش لازم تبعديني\n01:42.50 تمشي قدامي وكأن الموضوع\n01:45.00 كان ولا حاجة\n01:47.00 أنا مش محتاجها\n01:50.00 عامليني زي الغرب ودي بتوجع\n\n# لم أعد أعرفك\n01:54.00 ما كانش لازم ترمي العبار\n01:57.00 تمشي بصحابك وتغيري\n01:59.00 إنتي كل النمر\n02:02.00 أظن مش محتاج الحب\n02:05.00 دلوقتي إنتي واحدة أنا ما اعرفهاش\n02:12.00 دلوقتي إنتي واحدة أنا ما اعرفهاش\n02:19.00 دلوقتي إنتي واحدة أنا ما اعرفهاش\n\n# لوم الذات والغيرة\n02:39.00 دلوقتي بفضل دايماً أفتكر أيام التعب\n02:45.00 وقلت لنفسي إنه كان دايماً\n02:47.50 أنا السبب\n02:54.00 مش هعيش أنا كده\n02:57.00 أبقى أنا دايماً مشكلة\n03:01.00 قلتيلي إن مش فارقة وهو\n03:03.50 وأنا مش هسيبك تمشي مع حد\n03:06.00 مش شايفه فيه الفوق\n\n# جرح البعد يعود\n03:08.50 ما كانش لازم تبعديني\n03:12.00 تمشي قدامي وكأن الموضوع\n03:14.00 كان ولا حاجة\n03:16.00 أنا مش محتاجها\n03:18.50 عامليني زي الغرب ودي بتوجع\n\n# الغريبة من جديد\n03:23.00 ما كانش لازم ترمي العبار\n03:26.00 تمشي بصحابك وتغيري\n03:28.00 إنتي كل النمر\n03:31.00 أظن مش محتاج الحب\n\n# لم أعد أعرفك أبداً\n03:34.00 دلوقتي إنتي واحدة أنا ما اعرفهاش\n03:38.50 ما اعرفهاش\n03:41.50 دلوقتي إنتي واحدة أنا ما اعرفهاش\n03:46.50 ما اعرفهاش\n03:49.00 دلوقتي إنتي واحدة أنا ما اعرفهاش",
+    "similar_sounds": "[وقتي] ويومها بفضل دايماً أنا أفتكر\nأيام ما تقدر [بعثة] تحس الموت\n[أبي] فيكي اللي غيرتي فيه\nحاسس [الوحيدة] في قربك ليه\nهو ده الحب وكله [ومع] أفتكر\nممكن إنتي [بقي] من نوع معين من الإحباط\nزي حب النهايات أيوه [النفايات]\nلما [أكتشفنا] إن ملناش أسباب\nقلتيلي إننا ممكن نبقى [اصحاب]\nبرضه [أنت] مبسوط إنه انتهى\nما كانش [لام] تبعديني\n[أمشي] قدامي وكأن الموضوع\nكان [ألا] حاجة\nأنا مش [أحتاجها]\nعامليني زي الغرب [لدي] بتوجع\nما [كانت] لازم ترمي العبار\n[أمشي] بصحابك وتغيري\n[أنتي] كل النمر\n[أين] مش محتاج الحب\nدلوقتي إنتي واحدة [أنت] ما اعرفهاش\nدلوقتي إنتي [واحده] أنا ما اعرفهاش\nدلوقتي إنتي [وحدة] أنا ما اعرفهاش\nدلوقتي بفضل دايماً [أفكر] أيام التعب\nوقلت لنفسي [أنه] كان دايماً\nأنا [السبت]\nمش هعيش أنا [كدت]\nأبقى [أنت] دايماً مشكلة\nقلتيلي إن مش فارقة [هو]\nوأنا مش [قضيبك] تمشي مع حد\nمش شايفه فيه [الفرق]\nما كانش لازم [تعديني]\nتمشي قدامي [وكأنه] الموضوع\nكان ولا [حانة]\nأنا مش [أحتاجها]\nعامليني زي [الرب] ودي بتوجع\nما كانش [لزم] ترمي العبار\nتمشي بصحابك [وتغيير]\n[أنتي] كل النمر\n[أن] مش محتاج الحب\nدلوقتي [إنني] واحدة أنا ما اعرفهاش\nما [اعرفها]\nدلوقتي إنتي [واحد] أنا ما اعرفهاش\nما [اعرفها]\nدلوقتي إنتي واحدة أنا ما [تعرفها]"
+  },
+  "created_at": "2026-06-09 07:58:52 UTC",
+  "updated_at": "2026-06-09 08:19:03 UTC",
+  "exported_at": "2026-06-09T08:19:03Z"
+}
