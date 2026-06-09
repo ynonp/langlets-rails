@@ -1,5 +1,9 @@
 module CourseBuilder
   class BuildSong < Base
+    # similar_sounds_for_token is the exact check render_phrase_with_blanks uses
+    # to decide whether a token becomes a fillable blank in a ListenActivity.
+    include ActivitiesHelper
+
     attr_reader :course, :progress
 
     # Activities 3 & 4 of every non-review lesson from lesson 4 onward are two
@@ -167,6 +171,18 @@ module CourseBuilder
     def review_token_translations(review_phrases)
       return [] if review_phrases.empty?
       review_phrases.includes(:token_translations).flat_map(&:token_translations)
+    end
+
+    # A ListenActivity is only solvable when at least one of its phrases has a
+    # token translation backed by a similar sound -- that pairing is what
+    # render_phrase_with_blanks turns into a fillable blank. Without any blank the
+    # activity has nothing to complete and the learner gets stuck, so we skip it.
+    # Returns the token translations that would render a blank (may be empty).
+    def listen_blank_tokens(phrases)
+      phrase_list = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
+      phrase_list.flat_map do |phrase|
+        phrase.token_translations.select { |t| similar_sounds_for_token(phrase, t).present? }
+      end
     end
 
     def distinct_token_translations_by_translation(token_translations, limit)
@@ -393,9 +409,13 @@ module CourseBuilder
         end
       end
 
-      # 5. ListenActivity
-      a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
-      a5.phrases = phrases
+      # 5. ListenActivity (only if a fillable blank can be rendered)
+      listen_tokens = listen_blank_tokens(phrases)
+      unless listen_tokens.empty?
+        a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
+        a5.phrases = phrases
+        a5.token_translations = listen_tokens.uniq
+      end
     end
 
     def create_lessons_4plus_activities(lesson, phrases, review_phrases_list, current_token_translations, review_token_translations, lesson_number, user)
@@ -424,13 +444,16 @@ module CourseBuilder
         build_pooled_activity(type, lesson, index + 3, activity_context, user)
       end
 
-      # 5. SpeakActivity OR ListenActivity (alternate, current phrases)
-      if lesson_number.odd?
+      # 5. SpeakActivity OR ListenActivity (alternate, current phrases). Listen
+      # needs a fillable blank; fall back to Speak when no blank can be rendered.
+      listen_tokens = lesson_number.odd? ? [] : listen_blank_tokens(phrases)
+      if lesson_number.odd? || listen_tokens.empty?
         a5 = Activities::SpeakActivity.create!(lesson:, order: 5, user:)
         a5.phrases = phrases
       else
         a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
         a5.phrases = phrases
+        a5.token_translations = listen_tokens.uniq
       end
     end
 
@@ -496,9 +519,15 @@ module CourseBuilder
         a3.token_translations = review_token_translations.sample(5)
       end
 
-      # 4. ListenActivity (all phrases from all previous lessons in order)
-      a4 = Activities::ListenActivity.create!(lesson:, order: 4, user:)
-      a4.phrases = review_phrases.order(timestamp: :asc)
+      # 4. ListenActivity (all phrases from all previous lessons in order, only if
+      # a fillable blank can be rendered)
+      ordered_review_phrases = review_phrases.order(timestamp: :asc)
+      listen_tokens = listen_blank_tokens(ordered_review_phrases)
+      unless listen_tokens.empty?
+        a4 = Activities::ListenActivity.create!(lesson:, order: 4, user:)
+        a4.phrases = ordered_review_phrases
+        a4.token_translations = listen_tokens.uniq
+      end
     end
   end
 end
