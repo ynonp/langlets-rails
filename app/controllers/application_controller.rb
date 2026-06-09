@@ -8,6 +8,14 @@ class ApplicationController < ActionController::Base
 
   protected
 
+  # The active color theme for this request. Logged-in users read it from their
+  # stored preferences; everyone falls back to a cookie, then the default theme.
+  helper_method :current_theme
+  def current_theme
+    candidate = current_user&.theme || cookies[:theme]
+    User::VALID_THEMES.include?(candidate) ? candidate : User::DEFAULT_THEME
+  end
+
   # Returns true if the request comes from the Hotwire Native iOS app.
   # Used to customize behavior (e.g., OAuth redirects) for the native app.
   helper_method :native_app?

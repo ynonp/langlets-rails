@@ -94,6 +94,9 @@ application.register("stop-practicing", StopPracticingController)
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
 
+import ThemeController from "./theme_controller"
+application.register("theme", ThemeController)
+
 import TokensChainActivityController from "./tokens_chain_activity_controller"
 application.register("tokens-chain-activity", TokensChainActivityController)
 

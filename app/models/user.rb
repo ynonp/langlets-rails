@@ -45,6 +45,22 @@ class User < ApplicationRecord
     user
   end
 
+  # Supported UI color themes. Stored under preferences["theme"].
+  VALID_THEMES = %w[light dark].freeze
+  DEFAULT_THEME = "dark".freeze
+
+  # The user's chosen color theme, falling back to the default when unset or invalid.
+  def theme
+    stored = (preferences || {})["theme"]
+    VALID_THEMES.include?(stored) ? stored : DEFAULT_THEME
+  end
+
+  # Persist a new color theme into the preferences JSON blob.
+  def theme=(value)
+    value = DEFAULT_THEME unless VALID_THEMES.include?(value)
+    self.preferences = (preferences || {}).merge("theme" => value)
+  end
+
   def admin?
     self.email == "ynon@hey.com"
   end

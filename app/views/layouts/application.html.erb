@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="<%= current_theme %>">
   <head>
     <title><%= content_for(:title) || "Langlets - Learn Languages Through Interactive Video Clips" %></title>
     <meta name="description" content="<%= content_for(:meta_description) || SeoHelper::DEFAULT_DESCRIPTION %>">
@@ -41,10 +41,12 @@
     <% end %>
   </head>
 
-  <body class="bg-gray-900">
+  <body>
     <main class="flex flex-col min-h-screen">
       <%= yield %>
     </main>
+
+    <%= render "shared/theme_toggle" %>
 
     <%= yield :structured_data %>
     <% unless content_for?(:structured_data) %>

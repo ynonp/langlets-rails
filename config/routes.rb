@@ -49,6 +49,9 @@ Rails.application.routes.draw do
 
   resources :token_translation_users, only: [ :create, :destroy ]
 
+  # Persist the user's light/dark theme choice.
+  patch "preferences/theme", to: "preferences#update", as: :theme_preference
+
   resources :review_lessons, only: [ :create, :show ] do
     member do
       get :finish

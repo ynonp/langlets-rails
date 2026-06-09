@@ -43,14 +43,18 @@
   --thumb-l2: 0.95;
   --thumb-c2: 0.05;
 
+  color-scheme: light;
   font-family: 'Nunito', system-ui, -apple-system, sans-serif;
   background: var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  .sprout {
+/* Dark theme (Langlets Mobile Redesign · dark variant).
+   Applied whenever the user has chosen dark — the layout sets
+   `data-theme="dark"` on <html>, which flips these tokens for all .sprout UI. */
+[data-theme="dark"] .sprout {
+    color-scheme: dark;
     --bg: oklch(0.165 0.012 150);
     --surface: oklch(0.215 0.014 150);
     --surface2: oklch(0.255 0.016 150);
@@ -67,15 +71,12 @@
     --thumb-c1: 0.07;
     --thumb-l2: 0.3;
     --thumb-c2: 0.06;
-  }
 }
 
 /* dark surfaces get a hairline border (matches the mockup) */
-@media (prefers-color-scheme: dark) {
-  .sprout .s-card,
-  .sprout .s-row,
-  .sprout .s-hero { border: 1px solid var(--border); }
-}
+[data-theme="dark"] .sprout .s-card,
+[data-theme="dark"] .sprout .s-row,
+[data-theme="dark"] .sprout .s-hero { border: 1px solid var(--border); }
 
 /* ── Layout helpers ─────────────────────────────────────────── */
 .sprout * { box-sizing: border-box; }
@@ -240,9 +241,7 @@
   border-radius: 999px;
   background: oklch(0.62 0.16 var(--lh));
 }
-@media (prefers-color-scheme: dark) {
-  .s-badge { color: oklch(0.85 0.1 var(--lh)); background: oklch(0.3 0.07 var(--lh)); }
-}
+[data-theme="dark"] .s-badge { color: oklch(0.85 0.1 var(--lh)); background: oklch(0.3 0.07 var(--lh)); }
 
 /* ── Thumbnail (striped placeholder + real-image variant) ───── */
 .s-thumb {
@@ -285,9 +284,7 @@
   padding: 3px 6px;
   border-radius: 6px;
 }
-@media (prefers-color-scheme: dark) {
-  .s-thumb__tag { color: rgba(255, 255, 255, 0.85); background: rgba(0, 0, 0, 0.35); }
-}
+[data-theme="dark"] .s-thumb__tag { color: rgba(255, 255, 255, 0.85); background: rgba(0, 0, 0, 0.35); }
 
 /* ── Progress bars ──────────────────────────────────────────── */
 .s-track {
@@ -563,3 +560,27 @@
   box-shadow: var(--shadow);
   min-width: 180px;
 }
+
+/* ── Floating light/dark theme toggle ───────────────────────── */
+.theme-toggle {
+  position: fixed;
+  right: 16px;
+  bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  z-index: 1000;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+.theme-toggle:hover { background: var(--surface2); }
+.theme-toggle:active { transform: scale(0.94); }
+.theme-toggle svg { width: 20px; height: 20px; }
+.theme-toggle svg[hidden] { display: none; }
