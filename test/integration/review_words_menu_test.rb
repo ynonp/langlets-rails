@@ -182,6 +182,34 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "button", text: "📚 Review Words (#{@hebrew.iso_name})"
   end
 
+  test "root page keeps mobile header stats and theme inside profile menu" do
+    @user.saved_token_translations << @token_en
+
+    sign_in(@user)
+    get root_path
+    assert_response :success
+
+    assert_select "button.theme-toggle", count: 2
+    assert_select ".mobile-header-theme button.theme-toggle", count: 1
+    assert_select ".mobile-header-stats", text: /XP/
+  end
+
+  test "learning path page keeps mobile header stats and theme inside profile menu" do
+    learning_path = LearningPath.create!(
+      name: "Mobile Header Test",
+      slug: "mobile-header-test-#{Time.zone.now.to_i}",
+      published: true
+    )
+
+    sign_in(@user)
+    get learning_path_path(learning_path)
+    assert_response :success
+
+    assert_select "button.theme-toggle", count: 2
+    assert_select ".mobile-header-theme button.theme-toggle", count: 1
+    assert_select ".mobile-header-stats", text: /XP/
+  end
+
   test "menu doesn't show for unauthenticated users" do
     @user.saved_token_translations << @token_en
 
