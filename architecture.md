@@ -842,3 +842,7 @@ All 3 user profile menus show a "📚 Review Words" button when the user has sav
 - `courses/index.html.erb`
 - `courses/show.html.erb`
 - `learning_paths/show.html.erb`
+
+On mobile breakpoints, the top-level header keeps the avatar/profile toggle visible by moving the theme switch and XP/streak chips into the profile dropdown on:
+- `courses/index.html.erb`
+- `learning_paths/show.html.erb`
