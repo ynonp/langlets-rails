@@ -23,7 +23,7 @@ Verify you can connect to the test DB to run tests with:
 ### Copilot database config behavior
 The Copilot setup workflow marks `config/database.yml` with `git update-index --skip-worktree` before applying agent-local database settings. This keeps agent-specific database changes out of PR diffs.
 
-If you intentionally need to edit `config/database.yml` in a Copilot session, first run `git update-index --no-skip-worktree config/database.yml`, make the change, and then restore the skip flag with `git update-index --skip-worktree config/database.yml` when you're done.
+If you intentionally need to edit `config/database.yml` in a Copilot session, first run `git update-index --no-skip-worktree config/database.yml`, make the change, commit or otherwise save the change you want Git to notice, and only then restore the skip flag with `git update-index --skip-worktree config/database.yml`.
 
 ## App Setup
 Your environment has a full Rails environment installed.
