@@ -28,6 +28,7 @@ If you intentionally need to edit `config/database.yml` in a Copilot session:
 2. Make the change
 3. Commit or otherwise save the change you want Git to notice
 4. Run `git update-index --skip-worktree config/database.yml` again
+5. Continue working normally; this re-hides future agent-local edits without changing the file contents already on disk
 
 ## App Setup
 Your environment has a full Rails environment installed.
