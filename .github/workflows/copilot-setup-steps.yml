@@ -41,7 +41,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Ignore local database config changes
+      - name: Mark database config as skip-worktree
         run: git update-index --skip-worktree config/database.yml
 
       - name: Install Ruby and Bundles
