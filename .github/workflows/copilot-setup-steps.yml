@@ -41,6 +41,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Mark database config as skip-worktree
+        run: git update-index --skip-worktree config/database.yml
+
       - name: Install Ruby and Bundles
         uses: ruby/setup-ruby@v1
         with:

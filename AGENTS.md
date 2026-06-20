@@ -20,6 +20,16 @@ Verify you can connect to the DB for development with:
 Verify you can connect to the test DB to run tests with:
 `RAILS_ENV=test ./bin/rails db:version`
 
+### Copilot database config behavior
+The Copilot setup workflow marks `config/database.yml` with `git update-index --skip-worktree` before applying agent-local database settings. This keeps agent-specific database changes out of PR diffs.
+
+If you intentionally need to edit `config/database.yml` in a Copilot session:
+1. Run `git update-index --no-skip-worktree config/database.yml`
+2. Make the change
+3. Commit or otherwise save the change you want Git to notice
+4. Run `git update-index --skip-worktree config/database.yml` again
+5. Continue working normally; this re-hides future agent-local edits without changing the file contents already on disk
+
 ## App Setup
 Your environment has a full Rails environment installed.
 Start the development server with: `./bin/dev`.
@@ -45,4 +55,3 @@ Project guides live in `guides/`. Read the relevant guide before starting work o
 
 ## Time and date
 1. Use Time.zone.now instead of Time.current
-
