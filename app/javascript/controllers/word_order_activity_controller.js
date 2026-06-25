@@ -31,21 +31,6 @@ export default class extends Controller {
     this.isDragging = false
   }
 
-  // Audio playback for tokens
-  playTokenAudio(event) {
-    event.stopPropagation() // Prevent triggering word click
-    const audioUrl = event.currentTarget.dataset.audioUrl
-    if (audioUrl) {
-      if (this.audioElement) {
-        this.audioElement.pause()
-      }
-      this.audioElement = new Audio(audioUrl)
-      this.audioElement.play().catch(error => {
-        console.warn('Audio playback failed:', error)
-      })
-    }
-  }
-
   handleDragStart(event) {
     this.draggedElement = event.target
     event.target.classList.add('dragging')
@@ -222,13 +207,21 @@ export default class extends Controller {
     
     const touchDuration = Date.now() - this.touchStartTime
     
-    // If it was a quick tap (less than 200ms) and no dragging occurred, let click event fire
+    // If it was a quick tap (less than 200ms) and no dragging occurred, place
+    // the word here instead of deferring to the synthesized click event. On
+    // iOS that click can arrive 1-2s later (or be suppressed), which made the
+    // tile feel slow to move. preventDefault stops the ghost click from firing
+    // afterwards and toggling the word back out of its slot.
     if (touchDuration < 200 && !this.isDragging) {
-      // Reset and let the click event handle it
+      event.preventDefault()
+      const wordItem = this.draggedElement.closest('[data-word-order-activity-target="wordItem"]')
       this.draggedElement.classList.remove('dragging')
       this.draggedElement = null
       this.isDragging = false
-      return // Don't prevent default, allow click
+      if (wordItem) {
+        this.placeOrReturnWord(wordItem)
+      }
+      return
     }
     
     event.preventDefault()
@@ -290,7 +283,15 @@ export default class extends Controller {
   handleWordClick(event) {
     const wordItem = event.target.closest('[data-word-order-activity-target="wordItem"]')
     if (!wordItem) return
-    
+
+    this.placeOrReturnWord(wordItem)
+  }
+
+  // Shared tap/click placement logic. Toggles a word between the bank and the
+  // first available slot. Called from both the click handler (desktop) and the
+  // touchend quick-tap branch (mobile) so iOS doesn't have to wait for the
+  // synthesized click event before the tile moves.
+  placeOrReturnWord(wordItem) {
     const phraseIndex = this.getCurrentPhraseIndex()
     const wordBank = this.getWordBankForPhrase(phraseIndex)
 
@@ -304,7 +305,6 @@ export default class extends Controller {
       wordBank.appendChild(wordItem)
     } else {
       // Token is in word bank, try to place it in the first available slot
-      this.playTokenAudio(event);
       const tokenSlot = this.findFirstAvailableSlot(phraseIndex)
       if (tokenSlot) {
         this.clearTokenSlot(tokenSlot)
@@ -312,7 +312,22 @@ export default class extends Controller {
         tokenSlot.classList.add('filled')
         wordItem.classList.add('in-slot')
       }
+      this.playWordItemAudio(wordItem)
     }
+  }
+
+  // Play a word tile's audio without depending on an event target, so it can be
+  // triggered from touchend as well as click.
+  playWordItemAudio(wordItem) {
+    const audioUrl = wordItem.dataset.audioUrl
+    if (!audioUrl) return
+    if (this.audioElement) {
+      this.audioElement.pause()
+    }
+    this.audioElement = new Audio(audioUrl)
+    this.audioElement.play().catch(error => {
+      console.warn('Audio playback failed:', error)
+    })
   }
 
   findTokenSlot(phraseIndex, tokenId) {
