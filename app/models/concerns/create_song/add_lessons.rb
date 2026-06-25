@@ -2,6 +2,12 @@ module CreateSong
   module AddLessons
     extend ActiveSupport::Concern
 
+    MODEL_PARAMS = {
+      model: 'deepseek-v4-pro:cloud',
+      provider: :openai,
+      assume_model_exists: true
+    }.freeze
+
     def add_lessons
       phrases_for_llm = data["phrases"].map do |phrase|
         {
@@ -23,7 +29,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_smart)
+        chat = TracedChat.new(span_name: "add_lessons", **MODEL_PARAMS)
         clip_lines = data["phrases"].map { |p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         user_content = data["phrases"].pluck("text_l1").join("\n")
 

@@ -2,6 +2,12 @@ module CreateSong
   module ExtractLyrics
     extend ActiveSupport::Concern
 
+    MODEL_PARAMS = {
+      model: 'gemini-3.5-flash',
+      provider: :gemini,
+      assume_model_exists: true
+    }.freeze
+
     def full_lyrics
       data["phrases"].pluck("text_l1").join("\n")
     end
@@ -16,7 +22,7 @@ module CreateSong
         locals: { clip_language: }
       )
 
-      chat1 = TracedChat.new(span_name: "extract_lyrics_pass1", **self.model_params_youtube)
+      chat1 = TracedChat.new(span_name: "extract_lyrics_pass1", **MODEL_PARAMS)
       chat1
         .with_instructions(instructions_pass1)
         .with_temperature(0.2)
@@ -106,7 +112,7 @@ module CreateSong
     def sync_srt_segment(segment_number, total_segments, segment, user_content, instructions)
       chat = TracedChat.new(
         span_name: "extract_lyrics_pass2_segment_#{segment_number}",
-        **model_params_youtube
+        **MODEL_PARAMS
       )
       chat
         .with_instructions(instructions)

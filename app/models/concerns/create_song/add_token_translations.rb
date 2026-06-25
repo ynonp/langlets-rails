@@ -4,6 +4,12 @@ module CreateSong
   module AddTokenTranslations
     extend ActiveSupport::Concern
 
+    MODEL_PARAMS = {
+      model: 'deepseek-v4-pro:cloud',
+      provider: :openai,
+      assume_model_exists: true
+    }.freeze
+
     def add_token_translation
       blocks_per_iteration = 4
       max_concurrency = 1
@@ -47,7 +53,7 @@ module CreateSong
       loop do
         validate_input_no_brackets!(block)
 
-        chat = TracedChat.new(span_name: "add_token_translations", **self.model_params_smart)
+        chat = TracedChat.new(span_name: "add_token_translations", **MODEL_PARAMS)
         chat
           .with_instructions(instructions)
           .add_message role: :user, content: block.join

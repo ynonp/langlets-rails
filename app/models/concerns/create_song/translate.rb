@@ -2,6 +2,12 @@ module CreateSong
   module Translate
     extend ActiveSupport::Concern
 
+    MODEL_PARAMS = {
+      model: 'qwen3.5:397b-cloud',
+      provider: :openai,
+      assume_model_exists: true
+    }.freeze
+
     def build_phrases
       data["phrases"].map { |props| Phrase.new(props) }
     end
@@ -24,7 +30,7 @@ module CreateSong
       max_retries = 0
 
       begin
-        chat = TracedChat.new(span_name: "translate", **self.model_params_translate)
+        chat = TracedChat.new(span_name: "translate", **MODEL_PARAMS)
         chat
           .with_instructions(instructions)
           .with_temperature(0.2)

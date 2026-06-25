@@ -2,6 +2,12 @@ module CreateSong
   module AddFlashcards
     extend ActiveSupport::Concern
 
+    MODEL_PARAMS = {
+      model: 'deepseek-v4-flash:cloud',
+      provider: :openai,
+      assume_model_exists: true
+    }.freeze
+
     def add_flashcards
       instructions = ApplicationController.renderer.render(
         template: 'prompts/add_flashcards',
@@ -14,7 +20,7 @@ module CreateSong
       max_retries = 5
 
       begin
-        chat = TracedChat.new(span_name: "add_lessons", **self.model_params_quick)
+        chat = TracedChat.new(span_name: "add_lessons", **MODEL_PARAMS)
         user_content = data["phrases"].map {|p| "#{p["timestamp"]} #{p["text_l1"]}" }.join("\n")
         chat
           .with_temperature(0.4)

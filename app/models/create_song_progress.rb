@@ -9,11 +9,6 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::AddSimilarSound
   include CreateSong::Translate
 
-  attribute :model_params_youtube, default: {model: 'gemini-3.5-flash', provider: :gemini, assume_model_exists: true }
-  attribute :model_params_quick, default: {model: 'deepseek-v4-flash:cloud', provider: :openai, assume_model_exists: true }
-  attribute :model_params_smart, default: {model: 'deepseek-v4-pro:cloud', provider: :openai, assume_model_exists: true }
-  attribute :model_params_translate, default: {model: 'qwen3.5:397b-cloud', provider: :openai, assume_model_exists: true }
-
   def create_data
     span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
     LangfuseTracer.in_span(span_name, attributes: { }) do |span|
