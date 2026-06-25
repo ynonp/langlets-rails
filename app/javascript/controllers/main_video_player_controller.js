@@ -246,7 +246,7 @@ export default class extends Controller {
 
     // Seek to the calculated time
     await this.player.seekTo(targetTime);
-    this.updateProgressBar();
+    this.updateProgressBar(targetTime, this.segmentStart, this.segmentEnd);
     this.dispatchVideoEvent('progress', { at: targetTime })
   }
 }
