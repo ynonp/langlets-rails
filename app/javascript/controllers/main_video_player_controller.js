@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import YouTubePlayer from 'youtube-player';
 
 export default class extends Controller {
-  static targets = ['playerContainer', 'player', 'progressBar', 'playButton', 'pauseButton', 'videoListener', 'videoSegment'];
+  static targets = ['playerContainer', 'player', 'progressBar', 'playButton', 'pauseButton', 'videoListener', 'videoSegment', 'timeElapsed', 'timeDuration'];
 
   static values = {
     videoId: String,
@@ -12,9 +12,19 @@ export default class extends Controller {
 
   connect() {
     this.initialize();
+    this.initializeTimeDisplay();
     // Preload player if requested by activity
     if (this.hasPreloadPlayerValue && this.preloadPlayerValue) {
       this.initializePlayer();
+    }
+  }
+
+  initializeTimeDisplay() {
+    if (!this.hasVideoSegmentTarget) return;
+    const start = Number(this.videoSegmentTarget.dataset.segmentStart);
+    const end = Number(this.videoSegmentTarget.dataset.segmentEnd);
+    if (Number.isFinite(start) && Number.isFinite(end)) {
+      this.updateTimeDisplay(0, end - start);
     }
   }
 
@@ -205,14 +215,36 @@ export default class extends Controller {
     }
   }
 
-  updateProgressBar(currentTime, segmentStart, segmentEnd) {    
+  updateProgressBar(currentTime, segmentStart, segmentEnd) {
     const segmentLength = segmentEnd - segmentStart;
     const elapsed = Math.max(0, currentTime - segmentStart);
     const percentage = Math.min(100, (elapsed / segmentLength) * 100);
 
-    this.progressBarTargets.forEach((el) => {      
+    this.progressBarTargets.forEach((el) => {
       el.style.width = `${percentage}%`;
     })
+
+    this.updateTimeDisplay(elapsed, segmentLength);
+  }
+
+  updateTimeDisplay(elapsed, segmentLength) {
+    if (this.hasTimeElapsedTarget) {
+      this.timeElapsedTargets.forEach((el) => {
+        el.textContent = this.formatTime(Math.min(elapsed, segmentLength));
+      });
+    }
+    if (this.hasTimeDurationTarget) {
+      this.timeDurationTargets.forEach((el) => {
+        el.textContent = this.formatTime(segmentLength);
+      });
+    }
+  }
+
+  formatTime(seconds) {
+    const total = Math.max(0, Math.floor(seconds || 0));
+    const mins = Math.floor(total / 60);
+    const secs = total % 60;
+    return `${mins}:${secs.toString().padStart(2, '0')}`;
   }
 
 
