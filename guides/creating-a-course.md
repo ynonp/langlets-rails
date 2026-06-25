@@ -123,7 +123,6 @@ If Gemini rate limits are hit (or for offline dev), switch to local models:
 ```ruby
 # Option A: Per-instance (must be done on the object that runs the job)
 progress = CreateSongProgress.find(id)
-progress.use_local_ollama  # sets model params to Ollama models
 progress.save!
 # WARNING: This does NOT persist model_params changes across job reloads!
 # The job loads a fresh progress from DB → defaults are restored.
@@ -171,7 +170,7 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `models/gemini-X.Y-pro is not found` | Invalid model name | Fix model name in `CreateSongProgress` defaults or `use_local_ollama` |
+| `models/gemini-X.Y-pro is not found` | Invalid model name | Fix model name in `CreateSongProgress` defaults |
 | `You exceeded your current quota` | Gemini rate limit | Switch to Ollama models or wait |
 | `ContextLengthExceededError` | Prompt too long for model | Split into smaller batches or use a larger-context model |
 | `undefined method '[]' for nil` in `create_data` | `progress.data` is `nil` | Initialize with `progress.data = {}; progress.save!` |

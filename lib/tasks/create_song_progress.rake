@@ -158,7 +158,6 @@ namespace :create_song_progress do
       )
 
       progress.data ||= {}
-      progress.use_local_ollama
 
       begin
         progress.create_data
