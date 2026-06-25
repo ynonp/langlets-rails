@@ -22,6 +22,42 @@ export default class extends Controller {
     this.initializeGrid();
   }
 
+  // Wired via data-action on the grid (touchend->...#handleTouchEnd:!passive).
+  // Allows matching two tokens with a simultaneous two-finger tap; single taps
+  // still fall through to the `click->selectToken` action.
+  handleTouchEnd(event) {
+    // Only intervene on a genuine multi-touch lift. Single-finger taps are left
+    // alone so the synthesized `click` runs the normal sequential flow.
+    const lifted = Array.from(event.changedTouches);
+    if (lifted.length < 2) return;
+
+    // Resolve each lifted touch to the token element under it.
+    const tokens = lifted
+      .map(t => document.elementFromPoint(t.clientX, t.clientY))
+      .map(el => el?.closest('.token-word'))
+      .filter(Boolean);
+
+    // Need exactly two distinct tokens from opposite columns.
+    if (tokens.length !== 2) return;
+    const [a, b] = tokens;
+    if (a === b || a.dataset.column === b.dataset.column) return;
+
+    // Skip tokens that are animating or already matched.
+    const isBusy = el =>
+      el.classList.contains('flash-success') ||
+      el.classList.contains('flash-error') ||
+      el.classList.contains('matched');
+    if (isBusy(a) || isBusy(b)) return;
+
+    // We're fully handling this gesture — stop the browser synthesizing clicks.
+    event.preventDefault();
+
+    // Reuse the existing state machine: select one token, then match the other.
+    this.clearSelection();
+    this.selectNewToken(a, parseInt(a.dataset.tokenId), a.dataset.column);
+    this.attemptMatch(b, parseInt(b.dataset.tokenId));
+  }
+
   preloadAllAudio() {
     // Get all unique audio URLs from tokens
     const audioUrls = [...new Set(
@@ -77,7 +113,7 @@ export default class extends Controller {
 
   createTokenElement(token, column) {
     const element = document.createElement('div');
-    element.className = 'token-word px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-center transition-all duration-200';
+    element.className = 'token-word touch-manipulation px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-center transition-all duration-200';
     element.dataset.tokenId = token.id;
     element.dataset.column = column;
     element.dataset.action = 'click->match-tokens-activity#selectToken';
