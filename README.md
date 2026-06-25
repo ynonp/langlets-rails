@@ -145,7 +145,7 @@
 
 ## 📚 Documentation
 
-- **[Architecture Overview](architecture.md)** - Detailed system architecture
+- **[Architecture Overview](docs/architecture.md)** - Detailed system architecture
 - **[Database Schema](db/schema.rb)** - Complete database structure
 - **[API Integration](docs/api.md)** - External service integration (coming soon)
 
@@ -230,12 +230,12 @@ We love contributions! Langlets is an open-source project, and we welcome contri
 
 ### Development Guidelines
 
-- Read [architecture.md](architecture.md) before starting
+- Read [architecture.md](docs/architecture.md) before starting
 - Review [db/schema.rb](db/schema.rb) to understand the data model
 - Create a detailed plan before implementing features
 - Follow Rails and React best practices
 - Watch for breaking changes - the system is in production
-- Update `architecture.md` after adding new features
+- Update `docs/architecture.md` after adding new features
 
 ### Code Style
 

@@ -3,13 +3,13 @@
 Langlets is an online language learning platform.
 
 Before working on a new feature make sure to:
-1. Read `architecture.md`.
+1. Read `docs/architecture.md`.
 2. Read `db/schema.rb` to understand the database schema.
 3. Create a detailed plan and follow it step by step.
 
 The system is in production. Use Rails and React best practices when implementing new features and watch for breaking changes.
 
-We use `architecture.md` to reflect the state of the platform and for future coding agents so after every feature also update this file.
+We use `docs/architecture.md` to reflect the state of the platform and for future coding agents so after every feature also update this file.
 
 ## DB Setup
 Your environment has a full Rails environment installed with a postgres database.
@@ -37,14 +37,18 @@ After the app starts you can login to the admin page with development credential
    - Username: ynon@hey.com
    - Password: 10203040
 
-# Guides
+# Docs
 
-Project guides live in `guides/`. Read the relevant guide before starting work on a specific topic.
+All project documentation lives in the `docs/` folder. Read the relevant doc
+before starting work on a topic, and keep these files up to date when you change
+the related behavior.
 
-| Guide | Description |
+| Doc | Description |
 |---|---|
-| [Adding a New Language](guides/adding-a-new-language.md) | Complete checklist for adding a new language to the platform — migrations, AI prompts, Azure TTS, and more. |
-| [Creating a Course from a YouTube URL](guides/creating-a-course.md) | How to create a course via UI or console, understand the AI pipeline, debug failures, and switch AI providers. |
+| [Architecture](docs/architecture.md) | The state of the platform — domain model, data flow, and system architecture. Read this before any new feature, and update it after every feature. |
+| [Video Players](docs/video-player.md) | The four kinds of video players in the app (full course player, watch-video activity, hidden audio player, and the compact "mini" layout) — what each is for, what they share, and what to check when changing playback. |
+| [Adding a New Language](docs/guides/adding-a-new-language.md) | Complete checklist for adding a new language to the platform — migrations, AI prompts, Azure TTS, and more. |
+| [Creating a Course from a YouTube URL](docs/guides/creating-a-course.md) | How to create a course via UI or console, understand the AI pipeline, debug failures, and switch AI providers. |
 
 # Coding Context
 
