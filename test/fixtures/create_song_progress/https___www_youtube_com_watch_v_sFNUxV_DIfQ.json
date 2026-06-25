@@ -1,0 +1,240 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=sFNUxV-DIfQ",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "إلينور",
+        "timestamp": "00:55.20",
+        "timestamp_end": "00:57.50",
+        "text_l2": "Elinor"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "إنتِ حلوة مثل الملاك",
+        "timestamp": "00:57.50",
+        "timestamp_end": "01:01.20",
+        "text_l2": "You're sweet like an angel"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "والعيون بتحكي هيك",
+        "timestamp": "01:01.20",
+        "timestamp_end": "01:04.80",
+        "text_l2": "And your eyes speak like that"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "من دونك ما بيسوى هالدني شي",
+        "timestamp": "01:04.80",
+        "timestamp_end": "01:11.50",
+        "text_l2": "Without you, this world means nothing"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "إلينور",
+        "timestamp": "01:13.20",
+        "timestamp_end": "01:15.80",
+        "text_l2": "Elinor"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "وأنا هون وحدي قاعد",
+        "timestamp": "01:15.80",
+        "timestamp_end": "01:19.50",
+        "text_l2": "And I'm sitting here all alone"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "وبفكر فيكِ دايماً",
+        "timestamp": "01:19.50",
+        "timestamp_end": "01:23.00",
+        "text_l2": "And I always think of you"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "لازم تغيري حظك بيوم جاي",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:30.50",
+        "text_l2": "You need to change your luck someday"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "إلينور، خيبتِ ظني كتير",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:36.00",
+        "text_l2": "Elinor, you disappointed me so much"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "ما نمت طول الليالي",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:40.00",
+        "text_l2": "I haven't slept all night long"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "راجع يوم يا إلينور ونكمل دربنا سوا",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:45.00",
+        "text_l2": "Come back someday, Elinor, and we'll complete our journey together"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "مثل هاديك الأيام",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:49.00",
+        "text_l2": "Like those days"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "رمادية ووردية",
+        "timestamp": "01:49.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "Gray and pink"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "إلينور، إنتِ ليّ للأبد",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:57.50",
+        "text_l2": "Elinor, you are mine forever"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "وأنا هون وحدي قاعد",
+        "timestamp": "01:57.50",
+        "timestamp_end": "02:01.50",
+        "text_l2": "And I'm sitting here all alone"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "حزين ومتألم، وحيد ومتحير",
+        "timestamp": "02:01.50",
+        "timestamp_end": "02:07.00",
+        "text_l2": "Sad and in pain, lonely and confused"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "وبفكر بالأيام",
+        "timestamp": "02:07.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "And I think about the days"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "اللي راحت ومضت",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:16.00",
+        "text_l2": "That went and passed"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "هاي حكاية",
+        "timestamp": "02:47.00",
+        "timestamp_end": "02:50.00",
+        "text_l2": "This is a story"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "حب خيب آمالي",
+        "timestamp": "02:50.00",
+        "timestamp_end": "02:53.50",
+        "text_l2": "A love that disappointed my hopes"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "حب وجع في بالي",
+        "timestamp": "02:53.50",
+        "timestamp_end": "02:57.00",
+        "text_l2": "A love that pained my mind"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "والنهاية إن شاء الله تكون خير",
+        "timestamp": "02:57.00",
+        "timestamp_end": "03:03.00",
+        "text_l2": "And God willing, the end will be good"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "إلينور، خيبتِ ظني كتير",
+        "timestamp": "03:05.00",
+        "timestamp_end": "03:10.00",
+        "text_l2": "Elinor, you disappointed me so much"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "ما نمت طول الليالي",
+        "timestamp": "03:10.00",
+        "timestamp_end": "03:14.00",
+        "text_l2": "I haven't slept all night long"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "راجع يوم يا إلينور ونكمل دربنا سوا",
+        "timestamp": "03:14.00",
+        "timestamp_end": "03:19.00",
+        "text_l2": "Come back someday, Elinor, and we'll complete our journey together"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "مثل هاديك الأيام",
+        "timestamp": "03:19.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "Like those days"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "رمادية ووردية",
+        "timestamp": "03:23.00",
+        "timestamp_end": "03:27.00",
+        "text_l2": "Gray and pink"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "إلينور، إنتِ ليّ للأبد",
+        "timestamp": "03:27.00",
+        "timestamp_end": "03:31.50",
+        "text_l2": "Elinor, you are mine forever"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "وأنا هون وحدي قاعد",
+        "timestamp": "03:31.50",
+        "timestamp_end": "03:35.50",
+        "text_l2": "And I'm sitting here all alone"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "حزين ومتألم، وحيد ومتحير",
+        "timestamp": "03:35.50",
+        "timestamp_end": "03:41.00",
+        "text_l2": "Sad and in pain, lonely and confused"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "وبفكر بالأيام",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:45.00",
+        "text_l2": "And I think about the days"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "اللي راحت ومضت",
+        "timestamp": "03:45.00",
+        "timestamp_end": "03:50.00",
+        "text_l2": "That went and passed"
+      }
+    ],
+    "phrases_with_token_translations": "[إلينور] => [Elinor]\n\n[إنتِ] حلوة مثل الملاك => [You]'re sweet like an angel\nإنتِ [حلوة] مثل الملاك => You're [sweet] like an angel\nإنتِ حلوة [مثل] الملاك => You're sweet [like] an angel\nإنتِ حلوة مثل [الملاك] => You're sweet like [an angel]\n\n[و]العيون بتحكي هيك => [And] your eyes speak like that\nو[العيون] بتحكي هيك => And your [eyes] speak like that\nوالعيون [بتحكي] هيك => And your eyes [speak] like that\nوالعيون بتحكي [هيك] => And your eyes speak [like that]\n\n[من دونك] ما بيسوى هالدني شي => [Without you], this world means nothing\nمن دونك [ما بيسوى] هالدني شي => Without you, this world [means nothing]\nمن دونك ما بيسوى [هالدني] شي => Without you, [this world] means nothing\n\n[إلينور] => [Elinor]\n\n[و]أنا هون وحدي قاعد => [And] I'm sitting here all alone\nو[أنا] هون وحدي قاعد => And [I]'m sitting here all alone\nوأنا [هون] وحدي قاعد => And I'm sitting [here] all alone\nوأنا هون [وحدي] قاعد => And I'm sitting here all [alone]\nوأنا هون وحدي [قاعد] => And I'm [sitting] here all alone\n\n[و]بفكر فيكِ دايماً => [And] I always think of you\nو[بفكر] فيكِ دايماً => I think\nوبفكر [فيكِ] دايماً => And I always think [of you]\nوبفكر فيكِ [دايماً] => And I [always] think of you\n\n[لازم] تغيري حظك بيوم جاي => You [need] to change your luck someday\nلازم [تغيري] حظك بيوم جاي => You need to [change] your luck someday\nلازم تغيري [حظك] بيوم جاي => You need to change [your luck] someday\nلازم تغيري حظك [بيوم جاي] => You need to change your luck [someday]\n\n[إلينور]، خيبتِ ظني كتير => [Elinor], you disappointed me so much\nإلينور، [خيبتِ ظني] كتير => Elinor, [you disappointed me] so much\nإلينور، خيبتِ ظني [كتير] => Elinor, you disappointed me [so much]\n\n[ما نمت] طول الليالي => [I haven't slept] all night long\nما نمت [طول الليالي] => I haven't slept [all night long]\n\n[راجع] يوم يا إلينور ونكمل دربنا سوا => [Come back] someday, Elinor, and we'll complete our journey together\nراجع [يوم] يا إلينور ونكمل دربنا سوا => Come back [someday], Elinor, and we'll complete our journey together\nراجع يوم [يا إلينور] ونكمل دربنا سوا => Come back someday, [Elinor], and we'll complete our journey together\nراجع يوم يا إلينور [ونكمل] دربنا سوا => Come back someday, Elinor, [and we'll complete] our journey together\nراجع يوم يا إلينور ونكمل [دربنا] سوا => Come back someday, Elinor, and we'll complete [our journey] together\nراجع يوم يا إلينور ونكمل دربنا [سوا] => Come back someday, Elinor, and we'll complete our journey [together]\n\n[مثل] هاديك الأيام => [Like] those days\nمثل [هاديك] الأيام => Like [those] days\nمثل هاديك [الأيام] => Like those [days]\n\n[رمادية] ووردية => [Gray] and pink\nرمادية [و]وردية => Gray [and] pink\nرمادية و[وردية] => Gray and [pink]\n\n[إلينور]، إنتِ ليّ للأبد => [Elinor], you are mine forever\nإلينور، [إنتِ] ليّ للأبد => Elinor, [you] are mine forever\nإلينور، إنتِ [ليّ] للأبد => Elinor, you are [mine] forever\nإلينور، إنتِ ليّ [للأبد] => Elinor, you are mine [forever]\n\n[و]أنا هون وحدي قاعد => [And] I'm sitting here all alone\nو[أنا] هون وحدي قاعد => And [I]'m sitting here all alone\nوأنا [هون] وحدي قاعد => And I'm sitting [here] all alone\nوأنا هون [وحدي] قاعد => And I'm sitting here all [alone]\nوأنا هون وحدي [قاعد] => And I'm sitting here all alone [sitting]\n\n[حزين] ومتألم، وحيد ومتحير => [Sad] and in pain, lonely and confused\nحزين [و]متألم، وحيد ومتحير => Sad [and] in pain, lonely and confused\nحزين و[متألم]، وحيد ومتحير => Sad and [in pain], lonely and confused\nحزين ومتألم، [وحيد] ومتحير => Sad and in pain, [lonely] and confused\nحزين ومتألم، وحيد [و]متحير => Sad and in pain, lonely [and] confused\nحزين ومتألم، وحيد و[متحير] => Sad and in pain, lonely and [confused]\n\n[وبفكر] بالأيام => [And I think] about the days\nوبفكر [بالأيام] => And I think [about the days]\n\n[اللي] راحت ومضت => [That] went and passed\nاللي [راحت] ومضت => That [went] and passed\nاللي راحت [ومضت] => That went [and passed]\n\n[هاي] حكاية => [This is] a story\nهاي [حكاية] => This is [a story]\n\n[حب] خيب آمالي => [A love] that disappointed my hopes\nحب [خيب] آمالي => A love that [disappointed] my hopes\nحب خيب [آمالي] => A love that disappointed [my hopes]\n\n[حب] وجع في بالي => [A love] that pained my mind\nحب [وجع] في بالي => A love that [pained] my mind\nحب وجع [في بالي] => A love that pained [my mind]\n\n[و]النهاية إن شاء الله تكون خير => [And] God willing, the end will be good\nو[النهاية] إن شاء الله تكون خير => And God willing, [the end] will be good\nوالنهاية [إن شاء الله] تكون خير => And [God willing], the end will be good\nوالنهاية إن شاء الله [تكون] خير => And God willing, the end [will be] good\nوالنهاية إن شاء الله تكون [خير] => And God willing, the end will be [good]\n\n[إلينور]، خيبتِ ظني كتير => [Elinor], you disappointed me so much\nإلينور، [خيبتِ] ظني كتير => Elinor, [you disappointed] me so much\nإلينور، خيبتِ [ظني] كتير => Elinor, you disappointed [me] so much\nإلينور، خيبتِ ظني [كتير] => Elinor, you disappointed me [so much]\n\n[ما نمت] طول الليالي => [I haven't slept] all night long\nما نمت [طول] الليالي => I haven't slept [all] night long\nما نمت طول [الليالي] => I haven't slept all [night] long\n\n[راجع] يوم يا إيلينور ونكمل دربنا سوا => [Come back] someday, Elinor, and we'll complete our journey together\nراجع [يوم] يا إيلينور ونكمل دربنا سوا => Come back [someday], Elinor, and we'll complete our journey together\nراجع يوم يا [إيلينور] ونكمل دربنا سوا => Come back someday, [Elinor], and we'll complete our journey together\nراجع يوم يا إيلينور [و] نكمل دربنا سوا => Come back someday, Elinor, [and] we'll complete our journey together\nراجع يوم يا إيلينور و [نكمل] دربنا سوا => Come back someday, Elinor, and [we'll complete] our journey together\nراجع يوم يا إيلينور ونكمل [دربنا] سوا => Come back someday, Elinor, and we'll complete [our journey] together\nراجع يوم يا إيلينور ونكمل دربنا [سوا] => Come back someday, Elinor, and we'll complete our journey [together]\n\n[مثل] هاديك الأيام => [Like] those days\nمثل [هاديك] الأيام => Like [those] days\nمثل هاديك [الأيام] => Like those [days]\n\n[رمادية] ووردية => [Gray] and pink\nرمادية [و]وردية => Gray [and] pink\nرمادية و[وردية] => Gray and [pink]\n\n[إلينور]، إنتِ ليّ للأبد => [Elinor], you are mine forever\nإلينور، [إنتِ] ليّ للأبد => Elinor, [you] are mine forever\nإلينور، إنتِ [ليّ] للأبد => Elinor, you are [mine] forever\nإلينور، إنتِ ليّ [للأبد] => Elinor, you are mine [forever]\n\n[وأنا] هون وحدي قاعد => [And I]'m sitting here all alone\nوأنا [هون] وحدي قاعد => And I'm [here] all alone\nوأنا هون [وحدي] قاعد => And I'm sitting here [alone]\nوأنا هون وحدي [قاعد] => And I'm [sitting] here all alone\n\n[حزين] ومتألم، وحيد ومتحير => [Sad] and in pain, lonely and confused\nحزين [ومتألم]، وحيد ومتحير => Sad [and in pain], lonely and confused\nحزين ومتألم، [وحيد] ومتحير => Sad and in pain, [lonely] and confused\nحزين ومتألم، وحيد [ومتحير] => Sad and in pain, lonely [and confused]\n\n[وبفكر] بالأيام => [And I think] about the days\nوبفكر [بالأيام] => And I think [about the days]\n\n[اللي] راحت ومضت => [That] went and passed\nاللي [راحت] ومضت => That [went] and passed\nاللي راحت [ومضت] => That went [and passed]",
+    "lessons": "# إلينور مثل الملاك\n00:55.20 إلينور\n00:57.50 إنتِ حلوة مثل الملاك\n01:01.20 والعيون بتحكي هيك\n01:04.80 من دونك ما بيسوى هالدني شي\n01:13.20 إلينور\n01:15.80 وأنا هون وحدي قاعد\n01:19.50 وبفكر فيكِ دايماً\n01:23.00 لازم تغيري حظك بيوم جاي\n\n# خيبة الأمل والعودة\n01:31.00 إلينور، خيبتِ ظني كتير\n01:36.00 ما نمت طول الليالي\n01:40.00 راجع يوم يا إلينور ونكمل دربنا سوا\n01:45.00 مثل هاديك الأيام\n01:49.00 رمادية ووردية\n01:53.00 إلينور، إنتِ ليّ للأبد\n\n# ذكريات الماضي\n01:57.50 وأنا هون وحدي قاعد\n02:01.50 حزين ومتألم، وحيد ومتحير\n02:07.00 وبفكر بالأيام\n02:11.00 اللي راحت ومضت\n\n# حكاية حب مؤلم\n02:47.00 هاي حكاية\n02:50.00 حب خيب آمالي\n02:53.50 حب وجع في بالي\n02:57.00 والنهاية إن شاء الله تكون خير\n\n# خيبة الأمل والعودة (معاد)\n03:05.00 إلينور، خيبتِ ظني كتير\n03:10.00 ما نمت طول الليالي\n03:14.00 راجع يوم يا إلينور ونكمل دربنا سوا\n03:19.00 مثل هاديك الأيام\n03:23.00 رمادية ووردية\n03:27.00 إلينور، إنتِ ليّ للأبد\n\n# ذكريات الماضي (معاد)\n03:31.50 وأنا هون وحدي قاعد\n03:35.50 حزين ومتألم، وحيد ومتحير\n03:41.00 وبفكر بالأيام\n03:45.00 اللي راحت ومضت",
+    "similar_sounds": "[إلينوي]\nإنتِ حلوة [مثلك] الملاك\n[العين] بتحكي هيك\nمن دونك ما بيسوى [والدتي] شي\n[إليانور]\nوأنا [جون] وحدي قاعد\nوبفكر [فيكي] دايماً\n[لزم] تغيري حظك بيوم جاي\nإلينور خيبتِ ظني [كلير]\nما [تمت] طول الليالي\nراجع يوم يا [لينور] ونكمل دربنا سوا\nمثل هاديك [الأمام]\nرمادية [دورية]\nإلينور إنتِ [ليس] للأبد\n[وانا] هون وحدي قاعد\nحزين [وتعلم] وحيد ومتحير\n[وتفكر] بالأيام\n[الله] راحت ومضت\nهاي [نهاية]\nحب خيب [آمالك]\nحب [وضع] في بالي\nوالنهاية إن [شيء] الله تكون خير\nإلينور خيبتِ [مني] كتير\nما نمت طول [الليلي]\n[رائع] يوم يا إلينور ونكمل دربنا سوا\n[مثلك] هاديك الأيام\n[مادية] ووردية\nإلينور [إنت] ليّ للأبد\nوأنا [جون] وحدي قاعد\n[حزينة] ومتألم وحيد ومتحير\nوبفكر [بالقيام]\nاللي [رايت] ومضت"
+  },
+  "created_at": "2026-06-13 06:37:58 UTC",
+  "updated_at": "2026-06-13 06:45:51 UTC",
+  "exported_at": "2026-06-13T06:45:52Z"
+}

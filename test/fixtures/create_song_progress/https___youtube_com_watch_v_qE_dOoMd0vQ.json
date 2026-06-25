@@ -1,0 +1,219 @@
+{
+  "youtubeurl": "https://youtube.com/watch?v=qE-dOoMd0vQ",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "أهلاً بصديقي القديم",
+        "timestamp": "00:19.20",
+        "timestamp_end": "00:24.50",
+        "text_l2": "Welcome, my old friend"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "عدت لحديثك من جديد",
+        "timestamp": "00:24.80",
+        "timestamp_end": "00:30.00",
+        "text_l2": "I've returned to your talk once again"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "فالحلم لا يزال يراودني",
+        "timestamp": "00:30.20",
+        "timestamp_end": "00:35.80",
+        "text_l2": "For the dream still haunts me"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "قد ترك بذوره بينما كنت في نومي",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:41.80",
+        "text_l2": "It left its seeds while I was asleep"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "تلك الرؤى التي غرست داخل ذهني",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:50.50",
+        "text_l2": "Those visions planted inside my mind"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "لا تزال في",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:55.00",
+        "text_l2": "They still remain within"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "ضمن حدود صوت الصمت",
+        "timestamp": "00:55.50",
+        "timestamp_end": "01:02.00",
+        "text_l2": "The bounds of the voice of silence"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "في الأحلام مشيت لوحدي",
+        "timestamp": "01:02.80",
+        "timestamp_end": "01:08.00",
+        "text_l2": "In dreams, I walked alone"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "أرق في أزقة تضيق بي",
+        "timestamp": "01:08.20",
+        "timestamp_end": "01:14.00",
+        "text_l2": "Restless in alleys closing in on me"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "مصباح الشارع لا يضيء حولي",
+        "timestamp": "01:14.20",
+        "timestamp_end": "01:19.80",
+        "text_l2": "The street lamp doesn't light around me"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "برد جعلني أفتح ياقة معطفي",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:25.80",
+        "text_l2": "Cold made me raise my coat collar"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "فجأة أصاب عيني ضوء ساطع",
+        "timestamp": "01:26.00",
+        "timestamp_end": "01:33.50",
+        "text_l2": "Suddenly a bright light struck my eye"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "قد شق الليل",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:38.00",
+        "text_l2": "It pierced the night"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "واتصل بصوت الصمت",
+        "timestamp": "01:38.20",
+        "timestamp_end": "01:45.50",
+        "text_l2": "And connected with the voice of silence"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "تحت النور رأيت بعيني",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:51.00",
+        "text_l2": "Under the light, I saw with my eyes"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "آلاف الناس أمامي",
+        "timestamp": "01:51.20",
+        "timestamp_end": "01:57.00",
+        "text_l2": "Thousands of people before me"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أناس تتحدث من دون صوت",
+        "timestamp": "01:57.20",
+        "timestamp_end": "02:02.80",
+        "text_l2": "People speaking without a voice"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "أناس تسمع دون إنصات",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:08.80",
+        "text_l2": "People hearing without listening"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "أناس تكتب أشعار لم تلقى من قبل بصوت",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:16.50",
+        "text_l2": "People writing poems never before recited with a voice"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "لم يجرؤ أحد",
+        "timestamp": "02:17.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "No one dared"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "على إزعاج صوت الصمت",
+        "timestamp": "02:21.20",
+        "timestamp_end": "02:27.50",
+        "text_l2": "To disturb the voice of silence"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "قلت للحمقى هل تعلمون",
+        "timestamp": "02:28.00",
+        "timestamp_end": "02:33.50",
+        "text_l2": "I said to the fools, do you know"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "الصمت كسرطان ينمو",
+        "timestamp": "02:33.80",
+        "timestamp_end": "02:39.00",
+        "text_l2": "Silence is like a cancer that grows"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "اسمعوا كلمات مني وأعلمكم",
+        "timestamp": "02:39.20",
+        "timestamp_end": "02:44.80",
+        "text_l2": "Listen to words from me and I will teach you"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "خذوا بيدي ربما أصل إليكم",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "Take my hand, perhaps I will reach you"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "فكلماتي مثل قطرات المطر تسقط في صمت",
+        "timestamp": "02:51.50",
+        "timestamp_end": "02:59.80",
+        "text_l2": "For my words are like raindrops falling in silence"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "يعلو صداها",
+        "timestamp": "03:00.00",
+        "timestamp_end": "03:05.50",
+        "text_l2": "Their echo rises"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "داخل آبار",
+        "timestamp": "03:06.00",
+        "timestamp_end": "03:12.00",
+        "text_l2": "Inside the wells"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "صوت الصمت",
+        "timestamp": "03:12.50",
+        "timestamp_end": "03:19.00",
+        "text_l2": "Of the voice of silence"
+      }
+    ],
+    "phrases_with_token_translations": "[أهلاً] بصديقي القديم => [Welcome], my old friend\nأهلاً ب[صديق]ي القديم => Welcome, my old [friend]\nأهلاً بصديق[ي] القديم => Welcome, [my] old friend\nأهلاً بصديقي [القديم] => Welcome, my [old] friend\n\n[عدت] لحديثك من جديد => [I've returned] to your talk once again\nعدت [ل]حديثك من جديد => I've returned [to] your talk once again\nعدت ل[حديث]ك من جديد => I've returned to your [talk] once again\nعدت لحديث[ك] من جديد => I've returned to [your] talk once again\nعدت لحديثك [من جديد] => I've returned to your talk [once again]\n\n[فـ]الحلم لا يزال يراودني => [For] the dream still haunts me\nف[الحلم] لا يزال يراودني => For [the dream] still haunts me\nفالحلم [لا يزال] يراودني => For the dream [still] haunts me\nفالحلم لا يزال [يراود]ني => For the dream still [haunts] me\nفالحلم لا يزال يراود[ني] => For the dream still haunts [me]\n\nقد [ترك] بذوره بينما كنت في نومي => It [left] its seeds while I was asleep\nقد ترك [بذور]ه بينما كنت في نومي => It left its [seeds] while I was asleep\nقد ترك بذور[ه] بينما كنت في نومي => It left [its] seeds while I was asleep\nقد ترك بذوره [بينما] كنت في نومي => It left its seeds [while] I was asleep\nقد ترك بذوره بينما [كنت] في نومي => It left its seeds while [I was] asleep\nقد ترك بذوره بينما كنت [في نومي] => It left its seeds while I was [asleep]\n\n[تلك] الرؤى التي غرست داخل ذهني => [Those] visions planted inside my mind\nتلك [الرؤى] التي غرست داخل ذهني => Those [visions] planted inside my mind\n[تلك الرؤى] التي غرست داخل ذهني => [Those visions] planted inside my mind\nتلك الرؤى التي [غرست] داخل ذهني => Those visions [planted] inside my mind\nتلك الرؤى التي غرست [داخل] ذهني => Those visions planted [inside] my mind\nتلك الرؤى التي غرست داخل [ذهني] => Those visions planted inside [my mind]\n\n[لا تزال] في => [They still remain] within\nلا تزال [في] => They still remain [within]\n\n[ضمن حدود] صوت الصمت => [The bounds] of the voice of silence\nضمن [حدود] صوت الصمت => The [bounds] of the voice of silence\nضمن حدود [صوت] الصمت => The bounds of the [voice] of silence\nضمن حدود صوت [الصمت] => The bounds of the voice of [silence]\n\n[في] الأحلام مشيت لوحدي => [In] dreams, I walked alone\nفي [الأحلام] مشيت لوحدي => In [dreams], I walked alone\n[في الأحلام] مشيت لوحدي => [In dreams], I walked alone\nفي الأحلام [مشيت] لوحدي => In dreams, [I walked] alone\nفي الأحلام مشيت [لوحدي] => In dreams, I walked [alone]\n\n[أرق] في أزقة تضيق بي => [Restless] in alleys closing in on me\nأرق [في] أزقة تضيق بي => Restless [in] alleys closing in on me\nأرق في [أزقة] تضيق بي => Restless in [alleys] closing in on me\nأرق في أزقة [تضيق] بي => Restless in alleys [closing] in on me\nأرق في أزقة تضيق [بي] => Restless in alleys closing in [on me]\n\n[مصباح] الشارع لا يضيء حولي => The street [lamp] doesn't light around me\nمصباح [الشارع] لا يضيء حولي => The [street] lamp doesn't light around me\nمصباح الشارع [لا] يضيء حولي => The street lamp [doesn't] light around me\nمصباح الشارع لا [يضيء] حولي => The street lamp doesn't [light] around me\nمصباح الشارع لا يضيء [حولي] => The street lamp doesn't light [around me]\n\n[برد] جعلني أفتح ياقة معطفي => [Cold] made me raise my coat collar\nبرد [جعلني] أفتح ياقة معطفي => Cold [made me] raise my coat collar\nبرد جعلني [أفتح] ياقة معطفي => Cold made me [raise] my coat collar\nبرد جعلني أفتح [ياقة] معطفي => Cold made me raise my coat [collar]\nبرد جعلني أفتح ياقة [معطفي] => Cold made me raise [my coat] collar\n\n[فجأة] أصاب عيني ضوء ساطع => [Suddenly] a bright light struck my eye\nفجأة [أصاب] عيني ضوء ساطع => Suddenly a bright light [struck] my eye\nفجأة أصاب [عيني] ضوء ساطع => Suddenly a bright light struck [my eye]\nفجأة أصاب عيني [ضوء] ساطع => Suddenly a bright [light] struck my eye\nفجأة أصاب عيني ضوء [ساطع] => Suddenly a [bright] light struck my eye\n\nقد [شق] الليل => It [pierced] the night\nقد شق [الليل] => It pierced [the night]\n\n[و]اتصل بصوت الصمت => [And] connected with the voice of silence\nو[اتصل] بصوت الصمت => And [connected] with the voice of silence\nواتصل [بصوت] الصمت => And connected [with the voice] of silence\nواتصل بصوت [الصمت] => And connected with the voice of [silence]\n\n[تحت] النور رأيت بعيني => [Under] the light, I saw with my eyes\nتحت [النور] رأيت بعيني => Under [the light], I saw with my eyes\nتحت النور [رأيت] بعيني => Under the light, [I saw] with my eyes\nتحت النور رأيت [بعيني] => Under the light, I saw [with my eyes]\n\n[آلاف] الناس أمامي => [Thousands] of people before me\nآلاف [الناس] أمامي => Thousands of [people] before me\nآلاف الناس [أمامي] => Thousands of people [before me]\n\n[أناس] تتحدث من دون صوت => [People] speaking without a voice\nأناس [تتحدث] من دون صوت => People [speaking] without a voice\nأناس تتحدث [من دون] صوت => People speaking [without] a voice\nأناس تتحدث من دون [صوت] => People speaking without a [voice]\n\n[أناس] تسمع دون إنصات => [People] hearing without listening\nأناس [تسمع] دون إنصات => People [hearing] without listening\nأناس تسمع [دون] إنصات => People hearing [without] listening\nأناس تسمع دون [إنصات] => People hearing without [listening]\n\n[أناس] تكتب أشعار لم تلقى من قبل بصوت => [People] writing poems never before recited with a voice\nأناس [تكتب] أشعار لم تلقى من قبل بصوت => People [writing] poems never before recited with a voice\nأناس تكتب [أشعار] لم تلقى من قبل بصوت => People writing [poems] never before recited with a voice\nأناس تكتب أشعار [لم] تلقى من قبل بصوت => People writing poems [never] before recited with a voice\nأناس تكتب أشعار لم [تلقى] من قبل بصوت => People writing poems never [recited] before with a voice\nأناس تكتب أشعار لم تلقى [من قبل] بصوت => People writing poems never recited [before] with a voice\nأناس تكتب أشعار لم تلقى من قبل [ب]صوت => People writing poems never before recited [with] a voice\nأناس تكتب أشعار لم تلقى من قبل ب[صوت] => People writing poems never before recited with a [voice]\n\n[لم] يجرؤ أحد => [No] one dared\nلم [يجرؤ] أحد => No one [dared]\nلم يجرؤ [أحد] => No [one] dared\n\n[على] إزعاج صوت الصمت => [To] disturb the voice of silence\nعلى [إزعاج] صوت الصمت => To [disturb] the voice of silence\nعلى إزعاج [صوت] الصمت => To disturb the [voice] of silence\nعلى إزعاج صوت [الصمت] => To disturb the voice of [silence]\n\n[قلت] للحمقى هل تعلمون => [I said] to the fools, do you know\nقلت [للحمقى] هل تعلمون => I said [to the fools], do you know\nقلت للحمقى [هل تعلمون] => I said to the fools, [do you know]\n\n[الصمت] كسرطان ينمو => [Silence] is like a cancer that grows\nالصمت [كسرطان] ينمو => Silence is [like a cancer] that grows\nالصمت كسرطان [ينمو] => Silence is like a cancer that [grows]\n\n[اسمعوا] كلمات مني وأعلمكم => [Listen] to words from me and I will teach you\nاسمعوا [كلمات] مني وأعلمكم => Listen to [words] from me and I will teach you\nاسمعوا كلمات [مني] وأعلمكم => Listen to words [from me] and I will teach you\nاسمعوا كلمات مني [وأعلمكم] => Listen to words from me [and I will teach you]\n\n[خذوا] بيدي ربما أصل إليكم => [Take] my hand, perhaps I will reach you\nخذوا [بيدي] ربما أصل إليكم => Take [my hand], perhaps I will reach you\nخذوا بيدي [ربما] أصل إليكم => Take my hand, [perhaps] I will reach you\nخذوا بيدي ربما [أصل] إليكم => Take my hand, perhaps [I will reach] you\nخذوا بيدي ربما أصل [إليكم] => Take my hand, perhaps I will reach [you]\n\n[ف]كلماتي مثل قطرات المطر تسقط في صمت => [For] my words are like raindrops falling in silence\nف[كلماتي] مثل قطرات المطر تسقط في صمت => For [my words] are like raindrops falling in silence\nفكلماتي [مثل] قطرات المطر تسقط في صمت => For my words are [like] raindrops falling in silence\nفكلماتي مثل [قطرات المطر] تسقط في صمت => For my words are like [raindrops] falling in silence\nفكلماتي مثل قطرات المطر [تسقط] في صمت => For my words are like raindrops [falling] in silence\nفكلماتي مثل قطرات المطر تسقط [في] صمت => For my words are like raindrops falling [in] silence\nفكلماتي مثل قطرات المطر تسقط في [صمت] => For my words are like raindrops falling in [silence]\n\n[يعلو] صداها => Their echo [rises]\nيعلو [صداها] => [Their echo] rises\n\n[داخل] آبار => [Inside] the wells\nداخل [آبار] => Inside the [wells]\n\n[صوت] الصمت => Of the [voice] of silence\nصوت [الصمت] => Of the voice of [silence]",
+    "lessons": "# بداية الحلم وصوت الصمت\n00:19.20 أهلاً بصديقي القديم\n00:24.80 عدت لحديثك من جديد\n00:30.20 فالحلم لا يزال يراودني\n00:36.00 قد ترك بذوره بينما كنت في نومي\n00:42.00 تلك الرؤى التي غرست داخل ذهني\n00:51.00 لا تزال في\n00:55.50 ضمن حدود صوت الصمت\n\n# المشي وحيداً في الأزقة\n01:02.80 في الأحلام مشيت لوحدي\n01:08.20 أرق في أزقة تضيق بي\n01:14.20 مصباح الشارع لا يضيء حولي\n01:20.00 برد جعلني أفتح ياقة معطفي\n01:26.00 فجأة أصاب عيني ضوء ساطع\n01:34.00 قد شق الليل\n01:38.20 واتصل بصوت الصمت\n\n# النور والناس الصامتون\n01:46.00 تحت النور رأيت بعيني\n01:51.20 آلاف الناس أمامي\n01:57.20 أناس تتحدث من دون صوت\n02:03.00 أناس تسمع دون إنصات\n02:09.00 أناس تكتب أشعار لم تلقى من قبل بصوت\n02:17.00 لم يجرؤ أحد\n02:21.20 على إزعاج صوت الصمت\n\n# مخاطبة الحمقى وكلمات المطر\n02:28.00 قلت للحمقى هل تعلمون\n02:33.80 الصمت كسرطان ينمو\n02:39.20 اسمعوا كلمات مني وأعلمكم\n02:45.00 خذوا بيدي ربما أصل إليكم\n02:51.50 فكلماتي مثل قطرات المطر تسقط في صمت\n03:00.00 يعلو صداها\n03:06.00 داخل آبار\n03:12.50 صوت الصمت",
+    "similar_sounds": "أهلاً بصديقي [القديمة]\nعدت لحديثك من [جيد]\nفالحلم لا يزال [راودني]\nقد ترك [بصوره] بينما كنت في نومي\nتلك الرؤى [الي] غرست داخل ذهني\nلا [زال] في\nضمن [حدد] صوت الصمت\nفي [الأفلام] مشيت لوحدي\n[أرض] في أزقة تضيق بي\nمصباح الشارع لا [يضيع] حولي\nبرد جعلني أفتح ياقة [معطفه]\nفجأة أصاب عيني ضوء [ساضع]\nقد شق [الليلة]\n[اتصل] بصوت الصمت\nتحت النور [رأيته] بعيني\nآلاف الناس [أمام]\nأناس تتحدث من [جون] صوت\nأناس [أسمع] دون إنصات\n[أنا] تكتب أشعار لم تلقى من قبل بصوت\nلم [تجرؤ] أحد\n[إلى] إزعاج صوت الصمت\n[قالت] للحمقى هل تعلمون\n[الصامت] كسرطان ينمو\nاسمعوا [كلماتي] مني وأعلمكم\nخذوا بيدي [بما] أصل إليكم\nفكلماتي مثل قطرات المطر تسقط في [قمت]\nيعلو [يداها]\n[ادخل] آبار\n[موت] الصمت"
+  },
+  "created_at": "2026-06-13 15:57:31 UTC",
+  "updated_at": "2026-06-13 16:05:32 UTC",
+  "exported_at": "2026-06-13T16:05:32Z"
+}

@@ -1,0 +1,310 @@
+{
+  "youtubeurl": "https://youtube.com/watch?v=X-qsqG02Ohw",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "لم يحن وقت التغيير",
+        "timestamp": "00:08.80",
+        "timestamp_end": "00:11.80",
+        "text_l2": "It's not time for change yet"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "اهدأ فقط وتروى",
+        "timestamp": "00:11.80",
+        "timestamp_end": "00:14.80",
+        "text_l2": "Just calm down and take it easy"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "خطؤك أنك صغير",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:18.00",
+        "text_l2": "Your mistake is that you're young"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "عليك تعلم الكثير",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:21.20",
+        "text_l2": "You have much to learn"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "جد فتاة للزواج",
+        "timestamp": "00:21.20",
+        "timestamp_end": "00:24.50",
+        "text_l2": "Find a girl to marry"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "من المهم الاستقرار",
+        "timestamp": "00:24.50",
+        "timestamp_end": "00:27.80",
+        "text_l2": "Stability is important"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "انظر إلي بالرغم من",
+        "timestamp": "00:27.80",
+        "timestamp_end": "00:30.80",
+        "text_l2": "Look at me, despite"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "كبر السن أنا سعيد",
+        "timestamp": "00:30.80",
+        "timestamp_end": "00:34.20",
+        "text_l2": "My age, I am happy"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "مثلك كنت في الماضي",
+        "timestamp": "00:34.20",
+        "timestamp_end": "00:37.50",
+        "text_l2": "I was like you in the past"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "سريعا في قراراتي",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:40.80",
+        "text_l2": "Quick in my decisions"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "خصوصا حينما تجري",
+        "timestamp": "00:40.80",
+        "timestamp_end": "00:43.80",
+        "text_l2": "Especially when there are"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "أشياء كثيرة حولي",
+        "timestamp": "00:43.80",
+        "timestamp_end": "00:47.00",
+        "text_l2": "Many things around me"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "فكر مليا وخذ وقتك",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:50.00",
+        "text_l2": "Think carefully and take your time"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "فكر في كل ما لديك",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:53.20",
+        "text_l2": "Think about all you have"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "قد تكون غدا هنا",
+        "timestamp": "00:53.20",
+        "timestamp_end": "00:56.50",
+        "text_l2": "You may be here tomorrow"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "لكن حلمك ربما",
+        "timestamp": "00:56.50",
+        "timestamp_end": "01:00.00",
+        "text_l2": "But your dream, perhaps"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "كيف يمكنني التفسير",
+        "timestamp": "01:03.80",
+        "timestamp_end": "01:07.00",
+        "text_l2": "How can I explain"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "فأبي لا يريد الاستماع",
+        "timestamp": "01:07.00",
+        "timestamp_end": "01:10.20",
+        "text_l2": "For my father won't listen"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "نفس الشيء دائما",
+        "timestamp": "01:10.20",
+        "timestamp_end": "01:13.20",
+        "text_l2": "The same thing always"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "يحدث معه كل يوم",
+        "timestamp": "01:13.20",
+        "timestamp_end": "01:16.50",
+        "text_l2": "Happens with him every day"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "منذ تعلمت الكلام",
+        "timestamp": "01:16.50",
+        "timestamp_end": "01:19.80",
+        "text_l2": "Since I learned to speak"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "وأنا أؤمر بالسكوت",
+        "timestamp": "01:19.80",
+        "timestamp_end": "01:23.00",
+        "text_l2": "And I'm ordered to be silent"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "والآن لم يبق لي حل",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:26.20",
+        "text_l2": "And now I have no solution left"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "إلا الرحيل من هنا",
+        "timestamp": "01:26.20",
+        "timestamp_end": "01:29.50",
+        "text_l2": "Except to leave this place"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أعلم، علي الرحيل",
+        "timestamp": "01:29.50",
+        "timestamp_end": "01:34.50",
+        "text_l2": "I know, I must leave"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "لم يحن وقت التغيير",
+        "timestamp": "01:37.80",
+        "timestamp_end": "01:41.00",
+        "text_l2": "It's not time for change yet"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "اجلس وخذ الأمر بترو",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:44.20",
+        "text_l2": "Sit down and take it easy"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "خطؤك أنك صغير",
+        "timestamp": "01:44.20",
+        "timestamp_end": "01:47.50",
+        "text_l2": "Your mistake is that you're young"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "عليك مجابهة الكثير",
+        "timestamp": "01:47.50",
+        "timestamp_end": "01:50.80",
+        "text_l2": "You have much to face"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "جد فتاة للزواج",
+        "timestamp": "01:50.80",
+        "timestamp_end": "01:54.00",
+        "text_l2": "Find a girl to marry"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "من المهم الاستقرار",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:57.20",
+        "text_l2": "Stability is important"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "انظر إلي بالرغم من",
+        "timestamp": "01:57.20",
+        "timestamp_end": "02:00.20",
+        "text_l2": "Look at me, despite"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "كبر السن أنا سعيد",
+        "timestamp": "02:00.20",
+        "timestamp_end": "02:03.80",
+        "text_l2": "My age, I am happy"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "كم بكيت من أوقات",
+        "timestamp": "02:03.80",
+        "timestamp_end": "02:07.00",
+        "text_l2": "How many times I've cried"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "ولم أفصح عن كل شيء",
+        "timestamp": "02:07.00",
+        "timestamp_end": "02:10.20",
+        "text_l2": "And I didn't reveal everything"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "فهذا صعب",
+        "timestamp": "02:10.20",
+        "timestamp_end": "02:13.20",
+        "text_l2": "For this is hard"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "لكن الأصعب أن نتجاهل كل شيء",
+        "timestamp": "02:13.20",
+        "timestamp_end": "02:16.50",
+        "text_l2": "But harder is to ignore everything"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "لو كانوا على صواب",
+        "timestamp": "02:16.50",
+        "timestamp_end": "02:19.80",
+        "text_l2": "If they were right"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "لوافقتهم وانتهى الأمر",
+        "timestamp": "02:19.80",
+        "timestamp_end": "02:23.00",
+        "text_l2": "I would agree and it would be over"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "لكن لم يبق لي غير حل",
+        "timestamp": "02:23.00",
+        "timestamp_end": "02:26.20",
+        "text_l2": "But I have no solution left"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "الرحيل من هنا",
+        "timestamp": "02:26.20",
+        "timestamp_end": "02:29.50",
+        "text_l2": "Except to leave this place"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "أعلم، علي الرحيل...",
+        "timestamp": "02:29.50",
+        "timestamp_end": "02:35.00",
+        "text_l2": "I know, I must leave..."
+      }
+    ],
+    "phrases_with_token_translations": "[لم] يحن وقت التغيير => It's [not] time for change yet\nلم يحن [وقت] التغيير => It's not [time] for change yet\nلم يحن وقت [التغيير] => It's not time for [change] yet\n\n[اهدأ] فقط وتروى => Just [calm down] and take it easy\nاهدأ [فقط] وتروى => [Just] calm down and take it easy\nاهدأ فقط [وتروى] => Just calm down [and take it easy]\n\n[خطؤك] أنك صغير => [Your mistake] is that you're young\nخطؤك [أنك] صغير => Your mistake is [that you're] young\nخطؤك أنك [صغير] => Your mistake is that you're [young]\n\n[عليك] تعلم الكثير => [You have] much to learn\nعليك [تعلم] الكثير => You have much [to learn]\nعليك تعلم [الكثير] => You have [much] to learn\n\n[جد] فتاة للزواج => [Find] a girl to marry\nجد [فتاة] للزواج => Find a [girl] to marry\nجد فتاة [للزواج] => Find a girl [to marry]\n\n[من المهم] الاستقرار => Stability [is important]\nمن المهم [الاستقرار] => [Stability] is important\n\n[انظر] إلي بالرغم من => [Look] at me, despite\nانظر [إلي] بالرغم من => Look [at me], despite\nانظر إلي [بالرغم من] => Look at me, [despite]\n\n[كبر السن] أنا سعيد => [My age], I am happy\nكبر السن [أنا سعيد] => My age, [I am happy]\n\n[مثلك] كنت في الماضي => I was [like you] in the past\nمثلك [كنت] في الماضي => [I was] like you in the past\nمثلك كنت [في] الماضي => I was like you [in] the past\nمثلك كنت في [الماضي] => I was like you in [the past]\n\n[سريعا] في قراراتي => [Quick] in my decisions\nسريعا [في] قراراتي => Quick [in] my decisions\nسريعا في [قراراتي] => Quick in [my decisions]\n\n[خصوصا] حينما تجري => [Especially] when there are\nخصوصا [حينما] تجري => Especially [when] there are\nخصوصا حينما [تجري] => Especially when [there are]\n\n[أشياء] كثيرة حولي => Many [things] around me\nأشياء [كثيرة] حولي => [Many] things around me\nأشياء كثيرة [حولي] => Many things [around me]\n\n[فكر] مليا وخذ وقتك => [Think] carefully and take your time\nفكر [مليا] وخذ وقتك => Think [carefully] and take your time\nفكر مليا [وخذ] وقتك => Think carefully [and take] your time\nفكر مليا وخذ [وقتك] => Think carefully and take [your time]\n\n[فكر] في كل ما لديك => [Think] about all you have\nفكر [في] كل ما لديك => Think [about] all you have\nفكر في [كل] ما لديك => Think about [all] you have\nفكر في كل [ما لديك] => Think about all [you have]\n\n[قد] تكون غدا هنا => You [may] be here tomorrow\nقد [تكون] غدا هنا => You may [be] here tomorrow\n[قد تكون] غدا هنا => [You may be] here tomorrow\nقد تكون [غدا] هنا => You may be here [tomorrow]\nقد تكون غدا [هنا] => You may be [here] tomorrow\n\n[لكن] حلمك ربما => [But] your dream, perhaps\nلكن [حلمك] ربما => But [your dream], perhaps\nلكن حلمك [ربما] => But your dream, [perhaps]\n\n[كيف] يمكنني التفسير => [How] can I explain\nكيف [يمكنني] التفسير => How [can I] explain\nكيف يمكنني [التفسير] => How can I [explain]\n\n[فأبي] لا يريد الاستماع => [For my father] won't listen\nفأبي [لا يريد] الاستماع => For my father [won't] listen\nفأبي لا يريد [الاستماع] => For my father won't [listen]\n\n[نفس الشيء] دائما => [The same thing] always\nنفس الشيء [دائما] => The same thing [always]\n\n[يحدث] معه كل يوم => [Happens] with him every day\nيحدث [معه] كل يوم => Happens [with him] every day\nيحدث معه [كل يوم] => Happens with him [every day]\n\n[منذ] تعلمت الكلام => [Since] I learned to speak\nمنذ [تعلمت] الكلام => Since [I learned] to speak\nمنذ تعلمت [الكلام] => Since I learned [to speak]\n\n[و] أنا أؤمر بالسكوت => [And] I'm ordered to be silent\nو [أنا] أؤمر بالسكوت => And [I]'m ordered to be silent\nو أنا [أؤمر] بالسكوت => And I'm [ordered] to be silent\nو أنا أؤمر [بالسكوت] => And I'm ordered [to be silent]\n\n[و] الآن لم يبق لي حل => [And] now I have no solution left\nو [الآن] لم يبق لي حل => And [now] I have no solution left\nو الآن [لم] يبق لي حل => And now I have [no] solution left\nو الآن لم [يبق] لي حل => And now I have no solution [left]\nو الآن لم يبق [لي] حل => to me\nو الآن لم يبق لي [حل] => And now I have no [solution] left\n\n[إلا] الرحيل من هنا => [Except] to leave this place\nإلا [الرحيل] من هنا => Except [to leave] this place\nإلا الرحيل [من هنا] => Except to leave [this place]\n\n[أعلم]، علي الرحيل => [I know], I must leave\nأعلم، [علي] الرحيل => I know, [I must] leave\nأعلم، علي [الرحيل] => I know, I must [leave]\n\n[لم يحن] وقت التغيير => [It's not] time for change yet\nلم يحن [وقت] التغيير => It's not [time] for change yet\nلم يحن وقت [التغيير] => It's not time for [change] yet\n\n[اجلس] وخذ الأمر بترو => [Sit down] and take it easy\nاجلس [وخذ] الأمر بترو => Sit down [and take] it easy\nاجلس وخذ [الأمر] بترو => Sit down and take [it] easy\nاجلس وخذ الأمر [بترو] => Sit down and take it [easy]\n\n[خطؤك] أنك صغير => [Your mistake] is that you're young\nخطؤك [أنك] صغير => Your mistake is [that you]'re young\nخطؤك أنك [صغير] => Your mistake is that you're [young]\n\n[عليك] مجابهة الكثير => [You have] much to face\nعليك [مجابهة] الكثير => You have [to face] much\nعليك مجابهة [الكثير] => You have [much] to face\n\n[جد] فتاة للزواج => [Find] a girl to marry\nجد [فتاة] للزواج => Find [a girl] to marry\nجد فتاة [للزواج] => Find a girl [to marry]\n\nمن المهم [الاستقرار] => [Stability] is important\n[من المهم] الاستقرار => Stability [is important]\n\n[انظر] إلي بالرغم من => [Look] at me, despite\nانظر [إلي] بالرغم من => Look [at me], despite\nانظر إلي [بالرغم من] => Look at me, [despite]\n\n[كبر السن] أنا سعيد => [My age], I am happy\nكبر السن [أنا] سعيد => My age, [I] am happy\nكبر السن أنا [سعيد] => My age, I am [happy]\n\n[كم] بكيت من أوقات => [How many] times I've cried\nكم [بكيت] من أوقات => How many times [I've cried]\nكم بكيت من [أوقات] => How many [times] I've cried\n\n[و]لم أفصح عن كل شيء => [And] I didn't reveal everything\nو[لم] أفصح عن كل شيء => And I [didn't] reveal everything\nولم [أفصح] عن كل شيء => And I didn't [reveal] everything\nولم أفصح عن [كل شيء] => And I didn't reveal [everything]\n\n[ف]هذا صعب => [For] this is hard\nف[هذا] صعب => For [this] is hard\nفهذا [صعب] => For this is [hard]\n\n[لكن] الأصعب أن نتجاهل كل شيء => [But] harder is to ignore everything\nلكن [الأصعب] أن نتجاهل كل شيء => But [harder] is to ignore everything\nلكن الأصعب [أن] نتجاهل كل شيء => But harder is [to] ignore everything\nلكن الأصعب أن [نتجاهل] كل شيء => But harder is to [ignore] everything\nلكن الأصعب أن نتجاهل [كل شيء] => But harder is to ignore [everything]\n\n[لو] كانوا على صواب => [If] they were right\nلو [كانوا] على صواب => If [they were] right\nلو كانوا [على صواب] => If they were [right]\n\n[لوافقتهم] وانتهى الأمر => [I would agree] and it would be over\nلوافقتهم [و]انتهى الأمر => I would agree [and] it would be over\nلوافقتهم و[انتهى الأمر] => I would agree and [it would be over]\n\n[لكن] لم يبق لي غير حل => [But] I have no solution left\nلكن [لم] يبق لي غير حل => But I have [no] solution left\nلكن لم [يبق] لي غير حل => But I have no solution [left]\nلكن لم يبق [لي] غير حل => But [I] have no solution left\nلكن لم يبق لي غير [حل] => But I have no [solution] left\n\n[الرحيل] من هنا => Except to [leave] this place\nالرحيل [من هنا] => Except to leave [this place]\nالرحيل من [هنا] => this place\n\n[أعلم]، علي الرحيل... => [I know], I must leave...\nأعلم، [علي] الرحيل... => I know, [I must] leave...\nأعلم، علي [الرحيل]... => I know, I must [leave]...",
+    "lessons": "# نصيحة الأب: التأني والاستقرار\n00:08.80 لم يحن وقت التغيير\n00:11.80 اهدأ فقط وتروى\n00:14.80 خطؤك أنك صغير\n00:18.00 عليك تعلم الكثير\n00:21.20 جد فتاة للزواج\n00:24.50 من المهم الاستقرار\n00:27.80 انظر إلي بالرغم من\n00:30.80 كبر السن أنا سعيد\n\n# نصيحة الأب: التفكير قبل القرار\n00:34.20 مثلك كنت في الماضي\n00:37.50 سريعا في قراراتي\n00:40.80 خصوصا حينما تجري\n00:43.80 أشياء كثيرة حولي\n00:47.00 فكر مليا وخذ وقتك\n00:50.00 فكر في كل ما لديك\n00:53.20 قد تكون غدا هنا\n00:56.50 لكن حلمك ربما\n\n# معاناة الابن: عدم الاستماع\n01:03.80 كيف يمكنني التفسير\n01:07.00 فأبي لا يريد الاستماع\n01:10.20 نفس الشيء دائما\n01:13.20 يحدث معه كل يوم\n\n# الحل الوحيد: الرحيل\n01:16.50 منذ تعلمت الكلام\n01:19.80 وأنا أؤمر بالسكوت\n01:23.00 والآن لم يبق لي حل\n01:26.20 إلا الرحيل من هنا\n01:29.50 أعلم، علي الرحيل\n\n# نصيحة الأب تتكرر\n01:37.80 لم يحن وقت التغيير\n01:41.00 اجلس وخذ الأمر بترو\n01:44.20 خطؤك أنك صغير\n01:47.50 عليك مجابهة الكثير\n01:50.80 جد فتاة للزواج\n01:54.00 من المهم الاستقرار\n01:57.20 انظر إلي بالرغم من\n02:00.20 كبر السن أنا سعيد\n\n# الألم المخفي (الجزء الأول)\n02:03.80 كم بكيت من أوقات\n02:07.00 ولم أفصح عن كل شيء\n02:10.20 فهذا صعب\n02:13.20 لكن الأصعب أن نتجاهل كل شيء\n\n# الألم المخفي (الجزء الثاني)\n02:16.50 لو كانوا على صواب\n02:19.80 لوافقتهم وانتهى الأمر\n02:23.00 لكن لم يبق لي غير حل\n02:26.20 الرحيل من هنا\n02:29.50 أعلم، علي الرحيل...",
+    "similar_sounds": "لم يحن [وقعت] التغيير\nاهدأ فقط [تروى]\n[خطبك] أنك صغير\nعليك تعلم [بالكثير]\nجد فتاة [زواج]\nمن [التهم] الاستقرار\nانظر إلي [بالرقم] من\nكبر [الان] أنا سعيد\nمثلك [انت] في الماضي\n[سريعة] في قراراتي\n[وخصوصا] حينما تجري\n[أحياء] كثيرة حولي\nفكر [مليء] وخذ وقتك\n[تفكر] في كل ما لديك\nقد [ستكون] غدا هنا\nلكن حلمك [وربما]\nكيف [أيمكنني] التفسير\nفأبي لا يريد [الاجتماع]\nنفس [لشيء] دائما\n[سيحدث] معه كل يوم\nمنذ [تعلم] الكلام\nوأنا أؤمر [بالموت]\nوالآن لم [سبق] لي حل\nإلا الرحيل من [هذا]\nأعلم [على] الرحيل\nلم يحن وقت [للتغيير]\n[اجل] وخذ الأمر بترو\n[خطتك] أنك صغير\n[علي] مجابهة الكثير\nجد [فتاه] للزواج\nمن المهم [الاستمرار]\n[أنظر] إلي بالرغم من\nكبر [الآن] أنا سعيد\nكم بكيت من [أوقفت]\nولم [أنصح] عن كل شيء\n[لهذا] صعب\nلكن الأصعب أن [تتجاهل] كل شيء\nلو كانوا على [صوب]\nلوافقتهم وانتهى [الامر]\nلكن لم [يسبق] لي غير حل\nالرحيل من [هناك]\nأعلم علي [للرحيل]"
+  },
+  "created_at": "2026-06-13 15:33:46 UTC",
+  "updated_at": "2026-06-13 15:43:32 UTC",
+  "exported_at": "2026-06-13T15:43:32Z"
+}

@@ -1,0 +1,408 @@
+{
+  "youtubeurl": "https://youtube.com/watch?v=Wjp52s7ivsg",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "اسمع",
+        "timestamp": "00:07.20",
+        "timestamp_end": "00:09.50",
+        "text_l2": "Listen"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "في صوت عم يحكي",
+        "timestamp": "00:09.80",
+        "timestamp_end": "00:13.20",
+        "text_l2": "There's a voice talking"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "بيجيبني وبيوديني",
+        "timestamp": "00:13.50",
+        "timestamp_end": "00:17.50",
+        "text_l2": "Bringing me and taking me away"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "لمكان غريب كتير",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:21.50",
+        "text_l2": "To a very strange place"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "في ناس",
+        "timestamp": "00:22.50",
+        "timestamp_end": "00:24.50",
+        "text_l2": "There are people"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "معهم حسن نية",
+        "timestamp": "00:25.00",
+        "timestamp_end": "00:27.50",
+        "text_l2": "With good intentions"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "من الأساس",
+        "timestamp": "00:27.50",
+        "timestamp_end": "00:29.50",
+        "text_l2": "From the very start"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "سحبوك وضيعوك",
+        "timestamp": "00:29.80",
+        "timestamp_end": "00:33.00",
+        "text_l2": "They dragged you and lost you"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "وعن عالمنا بعدوك",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:37.00",
+        "text_l2": "And kept you from our world"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "لما بتصحى هيك",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:40.50",
+        "text_l2": "When you wake up like this"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "من الغيوم",
+        "timestamp": "00:40.50",
+        "timestamp_end": "00:44.50",
+        "text_l2": "From the clouds"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "تحكي كلام غريب",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.00",
+        "text_l2": "You speak strange words"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "ومش مفهوم",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:52.00",
+        "text_l2": "And unintelligible"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "إنت كتير ضعيف",
+        "timestamp": "00:52.50",
+        "timestamp_end": "00:55.00",
+        "text_l2": "You are very weak"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "وإنت موهوم",
+        "timestamp": "00:55.00",
+        "timestamp_end": "00:57.50",
+        "text_l2": "And you are deluded"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "ضحكوا عليك وودوك",
+        "timestamp": "00:57.50",
+        "timestamp_end": "01:00.00",
+        "text_l2": "They mocked you and took you"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "لمكان بعيد",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:02.50",
+        "text_l2": "To a distant place"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "من ضو النهار محروم",
+        "timestamp": "01:02.50",
+        "timestamp_end": "01:07.50",
+        "text_l2": "Deprived of daylight"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "لما تحس الساعة",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:10.50",
+        "text_l2": "When you feel the clock"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "بدق ألحان",
+        "timestamp": "01:10.50",
+        "timestamp_end": "01:14.50",
+        "text_l2": "Striking melodies"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "وراسك بيميل",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "And your head tilts"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "ورا وقدام",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:22.50",
+        "text_l2": "Back and forth"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "بتحس الشمس مغطية",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:26.00",
+        "text_l2": "You feel the sun covered"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بغربال",
+        "timestamp": "01:26.00",
+        "timestamp_end": "01:29.50",
+        "text_l2": "By a sieve"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "تسقي حالك مي",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:33.00",
+        "text_l2": "You give yourself water"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "وإنت مو عطشان",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:37.50",
+        "text_l2": "While you aren't thirsty"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "وياما",
+        "timestamp": "01:38.00",
+        "timestamp_end": "01:42.50",
+        "text_l2": "And so many times"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "وإنت مو عطشان",
+        "timestamp": "01:43.00",
+        "timestamp_end": "01:48.50",
+        "text_l2": "While you aren't thirsty"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "يا بوي",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:32.50",
+        "text_l2": "Oh my son"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "شو عقلي متربط",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:37.50",
+        "text_l2": "How my mind is tied up"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "وبيصيح",
+        "timestamp": "02:38.00",
+        "timestamp_end": "02:41.50",
+        "text_l2": "And crying out"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "مش عارف كيف يفك",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:45.50",
+        "text_l2": "Doesn't know how to untie"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "من الطبق",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:48.50",
+        "text_l2": "From the bind"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "بيقولوا كلها فترة",
+        "timestamp": "02:49.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "They say it's just a phase"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "وبتهون",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:53.00",
+        "text_l2": "And it will pass"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "عندك مفتاح ارميه لهون",
+        "timestamp": "02:53.00",
+        "timestamp_end": "02:56.50",
+        "text_l2": "You have a key, throw it here"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "الحل بإيديك اليوم",
+        "timestamp": "02:57.00",
+        "timestamp_end": "03:00.50",
+        "text_l2": "The solution is in your hands today"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "لما بتصحى هيك",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:04.00",
+        "text_l2": "When you wake up like this"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "من الغيوم",
+        "timestamp": "03:04.00",
+        "timestamp_end": "03:07.50",
+        "text_l2": "From the clouds"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "تحكي كلام غريب",
+        "timestamp": "03:08.00",
+        "timestamp_end": "03:11.00",
+        "text_l2": "You speak strange words"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "ومش مفهوم",
+        "timestamp": "03:11.00",
+        "timestamp_end": "03:15.50",
+        "text_l2": "And unintelligible"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "إنت كتير ضعيف",
+        "timestamp": "03:16.00",
+        "timestamp_end": "03:18.00",
+        "text_l2": "You are very weak"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "وإنت موهوم",
+        "timestamp": "03:18.00",
+        "timestamp_end": "03:20.00",
+        "text_l2": "And you are deluded"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "ضحكوا عليك وودوك",
+        "timestamp": "03:20.00",
+        "timestamp_end": "03:23.00",
+        "text_l2": "They mocked you and took you"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "لمكان بعيد",
+        "timestamp": "03:23.00",
+        "timestamp_end": "03:25.00",
+        "text_l2": "To a distant place"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "من ضو النهار محروم",
+        "timestamp": "03:25.00",
+        "timestamp_end": "03:30.50",
+        "text_l2": "Deprived of daylight"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "مشيت لحالي سنين",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:34.00",
+        "text_l2": "I walked alone for years"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "ووصلت للحدود",
+        "timestamp": "03:34.00",
+        "timestamp_end": "03:37.50",
+        "text_l2": "And reached the borders"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "مكان ما تصورت",
+        "timestamp": "03:38.00",
+        "timestamp_end": "03:41.00",
+        "text_l2": "A place I never imagined"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "يكون موجود",
+        "timestamp": "03:41.00",
+        "timestamp_end": "03:45.50",
+        "text_l2": "Could exist"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "حسيت علي نظرة",
+        "timestamp": "03:46.00",
+        "timestamp_end": "03:49.00",
+        "text_l2": "I felt a gaze upon me"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "أمل مفقود",
+        "timestamp": "03:49.00",
+        "timestamp_end": "03:53.50",
+        "text_l2": "A lost hope"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "أيام بتروح",
+        "timestamp": "03:54.00",
+        "timestamp_end": "03:57.00",
+        "text_l2": "Days go by"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "ويا ريتها بيوم تعود",
+        "timestamp": "03:57.00",
+        "timestamp_end": "04:00.50",
+        "text_l2": "I wish they'd return someday"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "وياما",
+        "timestamp": "04:01.00",
+        "timestamp_end": "04:05.50",
+        "text_l2": "And so many times"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "يا ريتها بيوم تعود",
+        "timestamp": "04:06.00",
+        "timestamp_end": "04:11.50",
+        "text_l2": "I wish they'd return someday"
+      }
+    ],
+    "phrases_with_token_translations": "[اسمع] => [Listen]\n\n[في] صوت عم يحكي => [There's] a voice talking\nفي [صوت] عم يحكي => There's a [voice] talking\nفي صوت [عم يحكي] => There's a voice [talking]\n\n[بيجيبني] وبيوديني => [Bringing me] and taking me away\nبيجيبني [و]بيوديني => Bringing me [and] taking me away\nبيجيبني و[بيوديني] => Bringing me and [taking me away]\n\n[لـ]مكان غريب كتير => [To] a very strange place\nلـ[مكان] غريب كتير => To a very strange [place]\nلمكان [غريب كتير] => To a [very strange] place\n\n[في] ناس => [There are] people\nفي [ناس] => There are [people]\n\n[معهم] حسن نية => [With] good intentions\nمعهم [حسن] نية => With [good] intentions\nمعهم حسن [نية] => With good [intentions]\n\n[من] الأساس => [From] the very start\nمن [الأساس] => From [the very start]\n\n[سحبوك] وضيعوك => [They dragged you] and lost you\nسحبوك [وضيعوك] => They dragged you [and lost you]\nسحبوك [و]ضيعوك => They dragged you [and] lost you\n\n[و]عن عالمنا بعدوك => [And] kept you from our world\nو[عن] عالمنا بعدوك => And kept you [from] our world\nوعن [عالمنا] بعدوك => And kept you from [our world]\nوعن عالمنا [بعدوك] => And [kept you] from our world\n\n[لما] بتصحى هيك => [When] you wake up like this\nلما [بتصحى] هيك => When [you wake up] like this\nلما بتصحى [هيك] => When you wake up [like this]\n\n[من] الغيوم => [From] the clouds\nمن [الغيوم] => From [the clouds]\n\n[تحكي] كلام غريب => [You speak] strange words\nتحكي [كلام] غريب => You speak strange [words]\nتحكي كلام [غريب] => You speak [strange] words\n\n[و]مش مفهوم => [And] unintelligible\nومش [مفهوم] => And [unintelligible]\n\n[إنت] كتير ضعيف => [You] are very weak\nإنت [كتير] ضعيف => You are [very] weak\nإنت كتير [ضعيف] => You are very [weak]\n\n[و]إنت موهوم => [And] you are deluded\nو[إنت] موهوم => And [you] are deluded\nوإنت [موهوم] => And you are [deluded]\n\n[ضحكوا عليك] وودوك => [They mocked you] and took you\nضحكوا عليك [وودوك] => They mocked you [and took you]\n\n[ل]مكان بعيد => [To] a distant place\nل[مكان] بعيد => To a distant [place]\nلمكان [بعيد] => To a [distant] place\n\n[من] ضو النهار محروم => Deprived [of] daylight\nمن [ضو] النهار محروم => Deprived of day[light]\nمن ضو [النهار] محروم => Deprived of [day]light\nمن ضو النهار [محروم] => [Deprived] of daylight\nمن [ضو النهار] محروم => Deprived of [daylight]\n\n[لما] تحس الساعة => [When] you feel the clock\nلما [تحس] الساعة => When [you feel] the clock\nلما تحس [الساعة] => When you feel [the clock]\n\n[بدق] ألحان => [Striking] melodies\nبدق [ألحان] => Striking [melodies]\n\n[و]راسك بيميل => [And] your head tilts\nو[راس]ك بيميل => And your [head] tilts\nوراس[ك] بيميل => And [your] head tilts\nوراسك [بيميل] => And your head [tilts]\n\n[ورا] وقدام => [Back] and forth\nورا [و]قدام => Back [and] forth\nورا و[قدام] => Back and [forth]\n\n[بتحس] الشمس مغطية => [You feel] the sun covered\nبتحس [الشمس] مغطية => You feel [the sun] covered\nبتحس الشمس [مغطية] => You feel the sun [covered]\n\n[ب]غربال => [By] a sieve\nب[غربال] => By a [sieve]\n\n[تسقي] حالك مي => [You give] yourself water\nتسقي [حالك] مي => You give [yourself] water\nتسقي حالك [مي] => You give yourself [water]\n\n[وإنت] مو عطشان => [While you] aren't thirsty\nوإنت [مو] عطشان => not\nوإنت مو [عطشان] => While you aren't [thirsty]\n\n[وياما] => [And so many times]\n\n[وإنت] مو عطشان => [While you] aren't thirsty\nوإنت [مو] عطشان => not\nوإنت مو [عطشان] => While you aren't [thirsty]\n\n[يا] بوي => [Oh] my son\nيا [بوي] => Oh [my son]\n\n[شو] عقلي متربط => [How] my mind is tied up\nشو [عقلي] متربط => How [my mind] is tied up\nشو عقلي [متربط] => How my mind is [tied up]\n\n[و] بيصيح => [And] crying out\nو [بيصيح] => And [crying out]\n\n[مش عارف] كيف يفك => [Doesn't know] how to untie\nمش عارف [كيف] يفك => Doesn't know [how] to untie\nمش عارف كيف [يفك] => Doesn't know how [to untie]\n\n[من] الطبق => [From] the bind\nمن [الطبق] => From [the bind]\n\n[بيقولوا] كلها فترة => [They say] it's just a phase\nبيقولوا [كلها] فترة => They say [it's] just a phase\nبيقولوا كلها [فترة] => They say it's just [a phase]\n\n[و] بتهون => [And] it will pass\nو [بتهون] => And [it will pass]\n\n[عندك] مفتاح ارميه لهون => [You have] a key, throw it here\nعندك [مفتاح] ارميه لهون => You have [a key], throw it here\nعندك مفتاح [ارميه] لهون => You have a key, [throw it] here\nعندك مفتاح ارميه [لهون] => You have a key, throw it [here]\n\n[الحل] بإيديك اليوم => [The solution] is in your hands today\nالحل [بإيديك] اليوم => The solution is [in your hands] today\nالحل بإيديك [اليوم] => The solution is in your hands [today]\n\n[لما] بتصحى هيك => [When] you wake up like this\nلما [بتصحى] هيك => When [you wake up] like this\nلما بتصحى [هيك] => When you wake up [like this]\n\n[من] الغيوم => [From] the clouds\nمن [الغيوم] => From [the clouds]\n\n[تحكي] كلام غريب => [You speak] strange words\nتحكي [كلام] غريب => You speak strange [words]\nتحكي كلام [غريب] => You speak [strange] words\n\n[و]مش مفهوم => [And] unintelligible\nومش [مفهوم] => And [unintelligible]\n\n[إنت] كتير ضعيف => [You] are very weak\nإنت [كتير] ضعيف => You are [very] weak\nإنت كتير [ضعيف] => You are very [weak]\n\n[و]إنت موهوم => [And] you are deluded\nو[إنت] موهوم => And [you] are deluded\nوإنت [موهوم] => And you are [deluded]\n\n[ضحكوا] عليك وودوك => [They mocked] you and took you\nضحكوا [عليك] وودوك => They mocked [you] and took you\nضحكوا عليك [و]دوك => They mocked you [and] took you\nضحكوا عليك و[دوك] => They mocked you and [took you]\n\n[لمكان] بعيد => [To a] distant place\nلمكان [بعيد] => To a [distant] place\n\n[من] ضو النهار محروم => Deprived [of] daylight\nمن [ضو النهار] محروم => Deprived of [daylight]\nمن ضو النهار [محروم] => [Deprived] of daylight\n\n[مشيت] لحالي سنين => [I walked] alone for years\nمشيت [لحالي] سنين => I walked [alone] for years\nمشيت لحالي [سنين] => I walked alone for [years]\n\n[ووصلت] للحدود => [And reached] the borders\nووصلت [للحدود] => And reached [the borders]\n\n[مكان] ما تصورت => [A place] I never imagined\nمكان [ما تصورت] => A place [I never imagined]\n\n[يكون موجود] => [Could exist]\n\n[حسيت] علي نظرة => [I felt] a gaze upon me\nحسيت [علي] نظرة => I felt a gaze [upon me]\nحسيت علي [نظرة] => I felt a [gaze] upon me\n\n[أمل] مفقود => A lost [hope]\nأمل [مفقود] => A [lost] hope\n\n[أيام] بتروح => [Days] go by\nأيام [بتروح] => Days [go by]\n\n[ويا ريتها] بيوم تعود => [I wish] they'd return someday\nويا ريتها [بيوم] تعود => I wish they'd return [someday]\nويا ريتها بيوم [تعود] => I wish [they'd return] someday\n\n[وياما] => [And so many times]\n\n[يا ريتها] بيوم تعود => [I wish] they'd return someday\nيا ريتها [بيوم] تعود => I wish they'd return [someday]\nيا ريتها بيوم [تعود] => I wish [they'd return] someday",
+    "lessons": "# الرحلة إلى المكان الغريب\n00:07.20 اسمع\n00:09.80 في صوت عم يحكي\n00:13.50 بيجيبني وبيوديني\n00:18.00 لمكان غريب كتير\n\n# الخداع بحسن النية\n00:22.50 في ناس\n00:25.00 معهم حسن نية\n00:27.50 من الأساس\n00:29.80 سحبوك وضيعوك\n00:33.00 وعن عالمنا بعدوك\n\n# الصحوة من الغيوم (الجزء الأول)\n00:37.50 لما بتصحى هيك\n00:40.50 من الغيوم\n00:45.00 تحكي كلام غريب\n00:48.00 ومش مفهوم\n00:52.50 إنت كتير ضعيف\n\n# المكان البعيد المحروم (الجزء الأول)\n00:55.00 وإنت موهوم\n00:57.50 ضحكوا عليك وودوك\n01:00.00 لمكان بعيد\n01:02.50 من ضو النهار محروم\n\n# عندما تدق الساعة ألحاناً\n01:08.00 لما تحس الساعة\n01:10.50 بدق ألحان\n01:15.00 وراسك بيميل\n01:18.00 ورا وقدام\n01:23.00 بتحس الشمس مغطية\n\n# العطش الوهمي\n01:26.00 بغربال\n01:30.00 تسقي حالك مي\n01:33.00 وإنت مو عطشان\n01:38.00 وياما\n01:43.00 وإنت مو عطشان\n\n# العقل المربوط والصراخ\n02:31.00 يا بوي\n02:33.00 شو عقلي متربط\n02:38.00 وبيصيح\n02:42.00 مش عارف كيف يفك\n02:46.00 من الطبق\n\n# الحل بإيديك اليوم\n02:49.00 بيقولوا كلها فترة\n02:51.00 وبتهون\n02:53.00 عندك مفتاح ارميه لهون\n02:57.00 الحل بإيديك اليوم\n\n# الصحوة من الغيوم (الجزء الثاني)\n03:01.00 لما بتصحى هيك\n03:04.00 من الغيوم\n03:08.00 تحكي كلام غريب\n03:11.00 ومش مفهوم\n03:16.00 إنت كتير ضعيف\n\n# المكان البعيد المحروم (الجزء الثاني)\n03:18.00 وإنت موهوم\n03:20.00 ضحكوا عليك وودوك\n03:23.00 لمكان بعيد\n03:25.00 من ضو النهار محروم\n\n# الوصول إلى الحدود\n03:31.00 مشيت لحالي سنين\n03:34.00 ووصلت للحدود\n03:38.00 مكان ما تصورت\n03:41.00 يكون موجود\n03:46.00 حسيت علي نظرة\n\n# الأمل المفقود\n03:49.00 أمل مفقود\n03:54.00 أيام بتروح\n03:57.00 ويا ريتها بيوم تعود\n04:01.00 وياما\n04:06.00 يا ريتها بيوم تعود",
+    "similar_sounds": "[اسمه]\nفي صوت عم [يحكم]\n[تجيبني] وبيوديني\n[مكان] غريب كتير\nفي [نار]\nمعهم [حين] نية\nمن [الأناس]\nسحبوك [وضعك]\nوعن عالمنا [عدوك]\n[لا] بتصحى هيك\nمن [القيام]\nتحكي كلام [غريبا]\n[ومع] مفهوم\n[كنت] كتير ضعيف\n[وكنت] موهوم\nضحكوا [علي] وودوك\nلمكان [سعيد]\nمن ضو [النهر] محروم\nلما تحس [السرعة]\nبدق [ألوان]\nوراسك [إيميل]\n[وراء] وقدام\nبتحس [الخمس] مغطية\n[بغرابة]\n[تبقي] حالك مي\nوإنت مو [عشان]\n[ياما]\nوإنت مو [عشان]\nيا [بي]\nشو [عقلك] متربط\n[وبيني]\nمش عارف [كي] يفك\nمن [الطرق]\nبيقولوا كلها [فكرة]\n[وتكون]\nعندك مفتاح ارميه [لون]\nالحل بإيديك [ليوم]\nلما بتصحى [هي]\nمن [اليوم]\nتحكي كلام [غريبا]\n[ومن] مفهوم\n[أنت] كتير ضعيف\n[وانت] موهوم\nضحكوا [علي] وودوك\nلمكان [سعيد]\nمن ضو [انهار] محروم\nمشيت لحالي [سكين]\nووصلت [للحصول]\nمكان ما [صورت]\nيكون [بوجود]\nحسيت علي [نظرية]\n[أجل] مفقود\n[ايام] بتروح\nويا ريتها [ليوم] تعود\n[ياما]\nيا [أيتها] بيوم تعود"
+  },
+  "created_at": "2026-06-13 16:06:49 UTC",
+  "updated_at": "2026-06-13 16:18:23 UTC",
+  "exported_at": "2026-06-13T16:18:23Z"
+}

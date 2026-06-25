@@ -1,0 +1,212 @@
+{
+  "youtubeurl": "https://youtube.com/watch?v=caIlwcRBWNk",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "كم من طريق علينا أن نسير",
+        "timestamp": "00:15.80",
+        "timestamp_end": "00:20.50",
+        "text_l2": "How many roads must we walk down"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "حتى ندعى بالرجال؟",
+        "timestamp": "00:20.80",
+        "timestamp_end": "00:25.50",
+        "text_l2": "Before we are called men?"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "وكم من بحر على اليمامة أن تجتاز",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:31.20",
+        "text_l2": "And how many seas must a dove cross"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "حتى تنام في الرمال؟",
+        "timestamp": "00:31.50",
+        "timestamp_end": "00:36.50",
+        "text_l2": "Before she sleeps in the sand?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "وكم من القنابل ستقذفها المدافع",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:42.00",
+        "text_l2": "And how many shells must the cannons fire"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "قبل أن تمنع للأبد؟",
+        "timestamp": "00:42.20",
+        "timestamp_end": "00:47.00",
+        "text_l2": "Before they are banned forever?"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "الجواب يا صديقي في مهب الريح",
+        "timestamp": "00:47.20",
+        "timestamp_end": "00:52.20",
+        "text_l2": "The answer, my friend, is blowin' in the wind"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "الجواب في مهب الريح",
+        "timestamp": "00:52.50",
+        "timestamp_end": "00:57.50",
+        "text_l2": "The answer is blowin' in the wind"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "كم من السنين ستظل الجبال",
+        "timestamp": "01:09.00",
+        "timestamp_end": "01:14.00",
+        "text_l2": "How many years must the mountains stand"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "قبل أن تذوب في البحار؟",
+        "timestamp": "01:14.20",
+        "timestamp_end": "01:19.00",
+        "text_l2": "Before they are washed to the sea?"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "وكم من السنين سيعيش بعض الناس",
+        "timestamp": "01:19.20",
+        "timestamp_end": "01:24.50",
+        "text_l2": "And how many years can some people exist"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "قبل أن يصيروا أحرار؟",
+        "timestamp": "01:24.80",
+        "timestamp_end": "01:29.50",
+        "text_l2": "Before they are allowed to be free?"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "وكم سيدير الإنسان الرأس",
+        "timestamp": "01:29.80",
+        "timestamp_end": "01:34.50",
+        "text_l2": "And how many times can a man turn his head"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "ليتظاهر بأنه لا يرى؟",
+        "timestamp": "01:34.80",
+        "timestamp_end": "01:40.00",
+        "text_l2": "And pretend that he just doesn't see?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "الجواب يا صديقي في مهب الريح",
+        "timestamp": "01:40.20",
+        "timestamp_end": "01:45.00",
+        "text_l2": "The answer, my friend, is blowin' in the wind"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "الجواب في مهب الريح",
+        "timestamp": "01:45.20",
+        "timestamp_end": "01:50.00",
+        "text_l2": "The answer is blowin' in the wind"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "كم مرة علينا رفع رأسنا",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:07.00",
+        "text_l2": "How many times must we raise our heads"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "قبل أن نبصر السماء؟",
+        "timestamp": "02:07.20",
+        "timestamp_end": "02:12.00",
+        "text_l2": "Before we can see the sky?"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "وكم من الآذان يلزم أن نملكها",
+        "timestamp": "02:12.20",
+        "timestamp_end": "02:17.50",
+        "text_l2": "And how many ears must we have"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "قبل أن نسمع البكاء؟",
+        "timestamp": "02:17.80",
+        "timestamp_end": "02:22.50",
+        "text_l2": "Before we can hear people cry?"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "وكم من الوفيات سوف تحدث",
+        "timestamp": "02:22.80",
+        "timestamp_end": "02:28.00",
+        "text_l2": "And how many deaths will it take"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "لندرك أن الكثير قد ماتوا؟",
+        "timestamp": "02:28.20",
+        "timestamp_end": "02:33.00",
+        "text_l2": "Till we know that too many have died?"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "الجواب يا صديقي في مهب الريح",
+        "timestamp": "02:33.20",
+        "timestamp_end": "02:38.00",
+        "text_l2": "The answer, my friend, is blowin' in the wind"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "الجواب في مهب الريح",
+        "timestamp": "02:38.20",
+        "timestamp_end": "02:43.00",
+        "text_l2": "The answer is blowin' in the wind"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "الجواب يا صديقي في مهب الريح",
+        "timestamp": "02:43.50",
+        "timestamp_end": "02:49.00",
+        "text_l2": "The answer, my friend, is blowin' in the wind"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "الجواب في مهب الريح",
+        "timestamp": "02:49.20",
+        "timestamp_end": "02:54.00",
+        "text_l2": "The answer is blowin' in the wind"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "الجواب يا صديقي في مهب الريح",
+        "timestamp": "02:54.20",
+        "timestamp_end": "03:00.00",
+        "text_l2": "The answer, my friend, is blowin' in the wind"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "الجواب في مهب الريح",
+        "timestamp": "03:00.20",
+        "timestamp_end": "03:04.50",
+        "text_l2": "The answer is blowin' in the wind"
+      }
+    ],
+    "phrases_with_token_translations": "[كم] من طريق علينا أن نسير => [How many] roads must we walk down\nكم من [طريق] علينا أن نسير => How many [roads] must we walk down\nكم من طريق [علينا] أن نسير => How many roads [must we] walk down\nكم من طريق علينا أن [نسير] => How many roads must we [walk] down\n\n[حتى] ندعى بالرجال؟ => [Before] we are called men?\nحتى [ندعى] بالرجال؟ => Before [we are called] men?\nحتى ندعى ب[الرجال]؟ => Before we are called [men]?\n\n[و]كم من بحر على اليمامة أن تجتاز => [And] how many seas must a dove cross\nو[كم] من بحر على اليمامة أن تجتاز => And [how many] seas must a dove cross\nوكم من [بحر] على اليمامة أن تجتاز => And how many [seas] must a dove cross\nوكم من بحر [على] اليمامة أن تجتاز => And how many seas [must] a dove cross\nوكم من بحر على [اليمامة] أن تجتاز => And how many seas must [a dove] cross\nوكم من بحر على اليمامة أن [تجاتز] => And how many seas must a dove [cross]\n\n[حتى] تنام في الرمال؟ => [Before] she sleeps in the sand?\nحتى [تنام] في الرمال؟ => Before [she sleeps] in the sand?\nحتى تنام في [الرمال]؟ => Before she sleeps in [the sand]?\n\n[وكم] من القنابل ستقذفها المدافع => [And how many] shells must the cannons fire\nوكم [من] القنابل ستقذفها المدافع => of\nوكم من [القنابل] ستقذفها المدافع => And how many [shells] must the cannons fire\nوكم من القنابل [ستقذفها] المدافع => And how many shells must the cannons [fire]\nوكم من القنابل ستقذفها [المدافع] => And how many shells must [the cannons] fire\n\n[قبل] أن تمنع للأبد؟ => [Before] they are banned forever?\nقبل [أن] تمنع للأبد؟ => that\nقبل أن [تمنع] للأبد؟ => Before they [are banned] forever?\nقبل أن تمنع [للأبد]؟ => Before they are banned [forever]?\n\n[الجواب] يا صديقي في مهب الريح => [The answer], my friend, is blowin' in the wind\nالجواب [يا صديقي] في مهب الريح => The answer, [my friend], is blowin' in the wind\nالجواب يا صديقي [في مهب الريح] => The answer, my friend, is [blowin' in the wind]\nالجواب يا صديقي في مهب [الريح] => The answer, my friend, is blowin' in [the wind]\n\n[الجواب] في مهب الريح => [The answer] is blowin' in the wind\nالجواب [في مهب الريح] => The answer is [blowin' in the wind]\nالجواب في مهب [الريح] => The answer is blowin' in [the wind]\n\n[كم] من السنين ستظل الجبال => [How many] years must the mountains stand\nكم [السنين] ستظل الجبال => How many [years] must the mountains stand\nكم من السنين [ستظل] الجبال => must stand\nكم من السنين ستظل [الجبال] => How many years must [the mountains] stand\n\n[قبل] أن تذوب في البحار؟ => [Before] they are washed to the sea?\nقبل أن [تذوب] في البحار؟ => washed\nقبل أن تذوب [في البحار]؟ => to the sea\n\n[وكما] من السنين سيعيش بعض الناس => [And how many] years can some people exist\nوكما [السنين] سيعيش بعض الناس => And how many [years] can some people exist\nوكما من السنين [سيعيش] بعض الناس => can exist\nوكما من السنين سيعيش [بعض الناس] => And how many years can [some people] exist\n\n[قبل] أن يصيروا أحرار؟ => [Before] they are allowed to be free?\nقبل أن [يصيروا] أحرار؟ => to be\nقبل أن يصيروا [أحرار]؟ => Before they are allowed to be [free]?\n\n[وكم] سيدير الإنسان الرأس => [And how many times] can a man turn his head\nوكم [سيدير] الإنسان الرأس => And how many times can a man [turn] his head\nوكم سيدير [الإنسان] الرأس => And how many times can [a man] turn his head\nوكم سيدير الإنسان [الرأس] => And how many times can a man turn his [head]\n\n[ليتظاهر] بأنه لا يرى؟ => [And pretend] that he just doesn't see?\nليتظاهر [بأنه] لا يرى؟ => And pretend [that he] just doesn't see?\nليتظاهر بأنه [لا] يرى؟ => And pretend that he just [doesn't] see?\nليتظاهر بأنه لا [يرى]؟ => And pretend that he just doesn't [see]?\n\n[الجواب] يا صديقي في مهب الريح => [The answer], my friend, is blowin' in the wind\nالجواب [يا صديقي] في مهب الريح => The answer, [my friend], is blowin' in the wind\nالجواب يا صديقي [في مهب الريح] => The answer, my friend, [is blowin' in the wind]\n\n[الجواب] في مهب الريح => [The answer] is blowin' in the wind\nالجواب [في مهب الريح] => The answer [is blowin' in the wind]\n\n[كم مرة] علينا رفع رأسنا => [How many times] must we raise our heads\nكم مرة [علينا] رفع رأسنا => How many times [must we] raise our heads\nكم مرة علينا [رفع] رأسنا => How many times must we [raise] our heads\nكم مرة علينا رفع [رأسنا] => How many times must we raise [our heads]\n\n[قبل] أن نبصر السماء => [Before] we can see the sky\nقبل أن [نبصر] السماء => we can see\nقبل أن نبصر [السماء] => Before we can see [the sky]\n\n[وك] من الآذان يلزم أن نملكها => [And how many] ears must we have\nوك من [الآذان] يلزم أن نملكها => And how many [ears] must we have\nوك من الآذان [يلزم] أن نملكها => And how many ears [must] we have\nوك من الآذان يلزم أن [نملكها] => we have\n\n[قبل] أن نسمع البكاء => [Before] we can hear people cry\nقبل أن [نسمع] البكاء => we can hear\nقبل أن نسمع [البكاء] => people cry\n\n[و]كم من الوفيات سوف تحدث => [And] how many deaths will it take\nو[كم] من الوفيات سوف تحدث => And [how many] deaths will it take\nوكم من [الوفيات] سوف تحدث => And how many [deaths] will it take\nوكم من الوفيات [سوف تحدث] => will it take\n\n[لندرك] أن الكثير قد ماتوا؟ => [Till we know] that too many have died?\nلندرك [أن] الكثير قد ماتوا؟ => Till we know [that] too many have died?\nلندرك أن [الكثير] قد ماتوا؟ => Till we know that [too many] have died?\nلندرك أن الكثير [قد] ماتوا؟ => Till we know that too many [have] died?\nلندرك أن الكثير قد [ماتوا]؟ => Till we know that too many have [died]?\n\n[الجواب] يا صديقي في مهب الريح => [The answer], my friend, is blowin' in the wind\nالجواب [يا صديقي] في مهب الريح => The answer, [my friend], is blowin' in the wind\nالجواب يا صديقي [في] مهب الريح => The answer, my friend, is blowin' [in] the wind\nالجواب يا صديقي في [مهب] الريح => The answer, my friend, is [blowin'] in the wind\nالجواب يا صديقي في مهب [الريح] => The answer, my friend, is blowin' in [the wind]\n\n[الجواب] في مهب الريح => [The answer] is blowin' in the wind\nالجواب [في] مهب الريح => The answer is blowin' [in] the wind\nالجواب في [مهب] الريح => The answer is [blowin'] in the wind\nالجواب في مهب [الريح] => The answer is blowin' in [the wind]\n\n[الجواب] يا صديقي في مهب الريح => [The answer], my friend, is blowin' in the wind\nالجواب [يا صديقي] في مهب الريح => The answer, [my friend], is blowin' in the wind\nالجواب يا صديقي [في] مهب الريح => The answer, my friend, is blowin' [in] the wind\nالجواب يا صديقي في [مهب] الريح => The answer, my friend, is [blowin'] in the wind\nالجواب يا صديقي في مهب [الريح] => The answer, my friend, is blowin' in [the wind]\n\n[الجواب] في مهب الريح => [The answer] is blowin' in the wind\nالجواب [في] مهب الريح => The answer is blowin' [in] the wind\nالجواب في [مهب] الريح => The answer is [blowin'] in the wind\nالجواب في مهب [الريح] => The answer is blowin' in [the wind]\n\n[الجواب] يا صديقي في مهب الريح => [The answer], my friend, is blowin' in the wind\nالجواب [يا صديقي] في مهب الريح => The answer, [my friend], is blowin' in the wind\nالجواب يا صديقي [في] مهب الريح => The answer, my friend, is blowin' [in] the wind\nالجواب يا صديقي في [مهب] الريح => The answer, my friend, is [blowin'] in the wind\nالجواب يا صديقي في مهب [الريح] => The answer, my friend, is blowin' in [the wind]\n\n[الجواب] في مهب الريح => [The answer] is blowin' in the wind\nالجواب [في] مهب الريح => The answer is blowin' [in] the wind\nالجواب في [مهب] الريح => The answer is [blowin'] in the wind\nالجواب في مهب [الريح] => The answer is blowin' in [the wind]",
+    "lessons": "# كم من طريق؟\n00:15.80 كم من طريق علينا أن نسير\n00:20.80 حتى ندعى بالرجال؟\n00:26.00 وكم من بحر على اليمامة أن تجتاز\n00:31.50 حتى تنام في الرمال؟\n00:37.00 وكم من القنابل ستقذفها المدافع\n00:42.20 قبل أن تمنع للأبد؟\n00:47.20 الجواب يا صديقي في مهب الريح\n00:52.50 الجواب في مهب الريح\n\n# أسئلة الزمن\n01:09.00 كم من السنين ستظل الجبال\n01:14.20 قبل أن تذوب في البحار؟\n01:19.20 وكم من السنين سيعيش بعض الناس\n01:24.80 قبل أن يصيروا أحرار؟\n01:29.80 وكم سيدير الإنسان الرأس\n01:34.80 ليتظاهر بأنه لا يرى؟\n01:40.20 الجواب يا صديقي في مهب الريح\n01:45.20 الجواب في مهب الريح\n\n# أسئلة الإدراك\n02:02.00 كم مرة علينا رفع رأسنا\n02:07.20 قبل أن نبصر السماء؟\n02:12.20 وكم من الآذان يلزم أن نملكها\n02:17.80 قبل أن نسمع البكاء؟\n02:22.80 وكم من الوفيات سوف تحدث\n02:28.20 لندرك أن الكثير قد ماتوا؟\n02:33.20 الجواب يا صديقي في مهب الريح\n02:38.20 الجواب في مهب الريح\n\n# الجواب في مهب الريح\n02:43.50 الجواب يا صديقي في مهب الريح\n02:49.20 الجواب في مهب الريح\n02:54.20 الجواب يا صديقي في مهب الريح\n03:00.20 الجواب في مهب الريح",
+    "similar_sounds": "كم من طريق علينا أن [يسير]\n[متى] ندعى بالرجال\n[لكم] من بحر على اليمامة أن تجتاز\nحتى تنام في [الجمال]\nوكم من القنابل ستقذفها [الدافع]\nقبل أن [تصنع] للأبد\nالجواب يا [صديق] في مهب الريح\nالجواب في [ذهب] الريح\nكم من السنين ستظل [الجبل]\n[قتل] أن تذوب في البحار\nوكم من [التنين] سيعيش بعض الناس\nقبل أن [يصلوا] أحرار\nوكم سيدير الإنسان [الروس]\n[التظاهر] بأنه لا يرى\n[الجوار] يا صديقي في مهب الريح\n[الجوارب] في مهب الريح\nكم مرة علينا رفع [رأينا]\n[قال] أن نبصر السماء\nوكم من الآذان [ملزم] أن نملكها\nقبل أن نسمع [الذكاء]\nوكم من [الفتيات] سوف تحدث\n[لديك] أن الكثير قد ماتوا\n[الجوار] يا صديقي في مهب الريح\nالجواب في مهب [الروح]\nالجواب يا صديقي في مهب [الريف]\nالجواب في مهب [الريف]\nالجواب يا صديقي في مهب [الرياح]\nالجواب في [ذهب] الريح"
+  },
+  "created_at": "2026-06-13 15:24:22 UTC",
+  "updated_at": "2026-06-13 15:32:48 UTC",
+  "exported_at": "2026-06-13T15:32:48Z"
+}

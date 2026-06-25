@@ -1,0 +1,443 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=A_zlC2kquE8",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "اتطلعي لي بعيوني",
+        "timestamp": "00:00.80",
+        "timestamp_end": "00:02.50",
+        "text_l2": "Just look me in the eyes"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "أكيد رح ترجعي تدمعي",
+        "timestamp": "00:02.50",
+        "timestamp_end": "00:04.80",
+        "text_l2": "You're definitely gonna start crying again"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "إنتي ملكة بس لسا",
+        "timestamp": "00:04.80",
+        "timestamp_end": "00:07.00",
+        "text_l2": "You're a queen, but still"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "لسا مش إلي تماماً",
+        "timestamp": "00:07.00",
+        "timestamp_end": "00:10.00",
+        "text_l2": "You're not entirely mine yet"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "خلص فكي عن إيدي",
+        "timestamp": "00:10.00",
+        "timestamp_end": "00:12.00",
+        "text_l2": "Enough, let go of my hand"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "رح تكتشفي بكرا كمان مرة",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:14.80",
+        "text_l2": "You'll discover it again tomorrow"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "ورح يزقفولك من جديد",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:17.50",
+        "text_l2": "And they'll whistle at you anew"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "على كيف تركتيني، أنا بحبك هيك",
+        "timestamp": "00:17.50",
+        "timestamp_end": "00:21.80",
+        "text_l2": "The way you left me, I love you like this"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "لما بتاخدي أواعيكي وبتروحي",
+        "timestamp": "00:21.80",
+        "timestamp_end": "00:24.80",
+        "text_l2": "When you take your stuff and you go"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "بلا خوف لعند أهلك وبتنسي",
+        "timestamp": "00:24.80",
+        "timestamp_end": "00:27.80",
+        "text_l2": "Without fear to your family, and you forget"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "إنه حتى عندهم الله يستر",
+        "timestamp": "00:27.80",
+        "timestamp_end": "00:31.00",
+        "text_l2": "That even there, God forbid"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "ورح إرجع شوفك بكرا وإنتي مش مودي والله",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:35.00",
+        "text_l2": "And I'll come see you tomorrow, and you're not in the mood, I swear"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "وما بتحترميني، إنتي كمان",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:41.00",
+        "text_l2": "And you don't respect me, you either"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "يا حبيبتي تلفوني لسه ناطرك",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:44.00",
+        "text_l2": "Oh my love, my phone is still waiting for you"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "بس إلك وحتى الموت",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:46.50",
+        "text_l2": "Only for you, even until death"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "مين رح يحميكي؟",
+        "timestamp": "00:46.50",
+        "timestamp_end": "00:48.50",
+        "text_l2": "Who's going to protect you?"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "مين رح يروحك عالبيت؟",
+        "timestamp": "00:48.50",
+        "timestamp_end": "00:51.00",
+        "text_l2": "Who's going to take you home?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "كلهم حرامية",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:54.00",
+        "text_l2": "They're all thieves"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "وما بوثق بحدا",
+        "timestamp": "00:54.00",
+        "timestamp_end": "00:56.50",
+        "text_l2": "And I don't trust anyone"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "وأنا بموت فيكي وبموت منك بالليل",
+        "timestamp": "00:56.50",
+        "timestamp_end": "01:01.00",
+        "text_l2": "And I'm dying for you and dying from you at night"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "وقولي لي كيف دايماً الكل بيسمع لوحدك",
+        "timestamp": "01:01.00",
+        "timestamp_end": "01:05.00",
+        "text_l2": "And tell me how always everyone hears only you"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "تلفون واحد وبترجعي لي",
+        "timestamp": "01:05.00",
+        "timestamp_end": "01:08.00",
+        "text_l2": "One call and you come back to me"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "لأنه كل شي هون عالفاضي",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:12.00",
+        "text_l2": "Because everything here is for nothing"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "بنبوس بعض كتير وبنرجع نتخانق",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:15.00",
+        "text_l2": "We kiss a lot and then we fight again"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "بتحظريني وبحظرك أنا كمان",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00",
+        "text_l2": "You forbid me and I forbid you too"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "كأنه ما ضل حروب بالعالم",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:22.00",
+        "text_l2": "As if there are no wars left in the world"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "وعم بيحرقوني جروحاتك",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:25.00",
+        "text_l2": "And your wounds are burning me"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "وعم بيوجعوني دموعك",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:28.00",
+        "text_l2": "And your tears are hurting me"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "ويمكن كل هادي إيغو وسخ",
+        "timestamp": "01:28.00",
+        "timestamp_end": "01:31.00",
+        "text_l2": "And maybe all this is dirty ego"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "طيب ليش؟",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:33.00",
+        "text_l2": "So why?"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "بس اتطلعي بعيوني",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:35.00",
+        "text_l2": "Just look me in the eyes"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "خلصوا الكلمات كيف انهد بيتنا",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:37.00",
+        "text_l2": "The words are done, how our house collapsed"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "وكيف انزعوا الشراشف",
+        "timestamp": "01:37.00",
+        "timestamp_end": "01:39.00",
+        "text_l2": "And how they removed the sheets"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "خلص اتركي لي السما",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "Enough, leave me the sky"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "إنتي مغطية على ربنا، أنا بناديه ولسه",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:45.00",
+        "text_l2": "You're covering up our Lord, I'm calling Him still"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "كيف لسه بشوفك بالغيوم؟",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:48.00",
+        "text_l2": "How do I still see you in the clouds?"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "أنا بكره الوضع هيك لما ما بتوقفي أفلام",
+        "timestamp": "01:48.00",
+        "timestamp_end": "01:53.00",
+        "text_l2": "I hate the situation like this when you don't stop the scenes"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "وظنيت",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:55.00",
+        "text_l2": "And I thought"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "وجعت راسي وصرخت",
+        "timestamp": "01:55.00",
+        "timestamp_end": "01:57.00",
+        "text_l2": "I got a headache and I screamed"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "شو ذنب الجيران مرة تروما",
+        "timestamp": "01:57.00",
+        "timestamp_end": "02:00.00",
+        "text_l2": "What's the neighbors' sin, once trauma"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "ومرة وسواس الله يستر",
+        "timestamp": "02:00.00",
+        "timestamp_end": "02:04.00",
+        "text_l2": "And once obsession, God forbid"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "ورح إرجع شوفك بكرا وإنتي مش مودي",
+        "timestamp": "02:04.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "And I'll come see you tomorrow, and you're not in the mood"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "مرة بتضيعي مني",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "text_l2": "Sometimes you get lost from me"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "ومرة مش عم بلاقيكي",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:14.00",
+        "text_l2": "And sometimes I can't find you"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "يا حبيبتي حضني لسه ناطرك",
+        "timestamp": "02:14.00",
+        "timestamp_end": "02:17.00",
+        "text_l2": "Oh my love, my embrace is still waiting for you"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "بس إلك وحتى الحل",
+        "timestamp": "02:17.00",
+        "timestamp_end": "02:19.00",
+        "text_l2": "Only for you, even until the solution"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "مين رح يحميكي؟",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:21.00",
+        "text_l2": "Who's going to protect you?"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "مين رح يروحك عالبيت؟",
+        "timestamp": "02:21.00",
+        "timestamp_end": "02:24.00",
+        "text_l2": "Who's going to take you home?"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "كلهم حرامية",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:26.00",
+        "text_l2": "They're all thieves"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "وما بوثق بحدا",
+        "timestamp": "02:26.00",
+        "timestamp_end": "02:29.00",
+        "text_l2": "And I don't trust anyone"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "وأنا بموت فيكي وبموت منك بالليل",
+        "timestamp": "02:29.00",
+        "timestamp_end": "02:34.00",
+        "text_l2": "And I'm dying for you and dying from you at night"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "وقولي لي كيف دايماً الكل",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:37.00",
+        "text_l2": "And tell me how always everyone"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "بيسمع لوحدك، تلفون واحد وبترجعي لي",
+        "timestamp": "02:37.00",
+        "timestamp_end": "02:40.00",
+        "text_l2": "Hears only you, one call and you come back to me"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "لأنه كل شي هون عالفاضي",
+        "timestamp": "02:40.00",
+        "timestamp_end": "02:45.00",
+        "text_l2": "Because everything here is for nothing"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "بنبوس بعض كتير وبنرجع نتخانق",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:48.00",
+        "text_l2": "We kiss a lot and then we fight again"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "بتحظريني وبحظرك أنا كمان",
+        "timestamp": "02:48.00",
+        "timestamp_end": "02:51.00",
+        "text_l2": "You forbid me and I forbid you too"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "كأنه ما ضل حروب بالعالم",
+        "timestamp": "02:51.00",
+        "timestamp_end": "02:55.00",
+        "text_l2": "As if there are no wars left in the world"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "وعم بيحرقوني جروحاتك",
+        "timestamp": "02:55.00",
+        "timestamp_end": "02:58.00",
+        "text_l2": "And your wounds are burning me"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "وعم بيوجعوني دموعك",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:01.00",
+        "text_l2": "And your tears are hurting me"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "ويمكن كل هادي إيغو وسخ",
+        "timestamp": "03:01.00",
+        "timestamp_end": "03:04.00",
+        "text_l2": "And maybe all this is dirty ego"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "طيب ليش؟",
+        "timestamp": "03:04.00",
+        "timestamp_end": "03:07.00",
+        "text_l2": "So why?"
+      }
+    ],
+    "phrases_with_token_translations": "[اتطلعي] لي بعيوني => Just [look] me in the eyes\nاتطلعي [لي] بعيوني => Just look [me] in the eyes\nاتطلعي لي [بعيوني] => Just look me in [the eyes]\n\n[أكيد] رح ترجعي تدمعي => You're [definitely] gonna start crying again\nأكيد رح [ترجعي] تدمعي => again\nأكيد رح ترجعي [تدمعي] => You're definitely gonna start [crying] again\n\n[إنتي] ملكة بس لسا => [You're] a queen, but still\nإنتي [ملكة] بس لسا => You're [a queen], but still\nإنتي ملكة [بس] لسا => You're a queen, [but] still\nإنتي ملكة بس [لسا] => You're a queen, but [still]\n\n[لسا] مش إلي تماماً => You're not entirely mine [yet]\nلسا [مش] إلي تماماً => You're [not] entirely mine yet\nلسا مش [إلي] تماماً => You're not entirely [mine] yet\nلسا مش إلي [تماماً] => You're not [entirely] mine yet\n\n[خلص] فكي عن إيدي => [Enough], let go of my hand\nخلص [فكي] عن إيدي => Enough, [let go] of my hand\nخلص فكي [عن] إيدي => Enough, let go [of] my hand\nخلص فكي عن [إيدي] => Enough, let go of [my hand]\nخلص فكي [عن إيدي] => Enough, let go [of my hand]\n\n[بكرا] كمان مرة => [tomorrow] again\nرح تكتشفي [بكرا] كمان مرة => You'll discover it again [tomorrow]\nرح تكتشفي بكرا [كمان مرة] => You'll discover it [again] tomorrow\nرح [تكتشفي] بكرا كمان مرة => You'll [discover] it again tomorrow\n[رح تكتشفي] بكرا كمان مرة => [You'll discover] it again tomorrow\n\n[ورح] يزقفولك من جديد => [And they'll] whistle at you anew\nورح [يزقفولك] من جديد => And they'll [whistle at you] anew\nورح يزقفولك [من جديد] => And they'll whistle at you [anew]\n\n[على كيف] تركتيني، أنا بحبك هيك => [The way] you left me, I love you like this\nعلى كيف [تركتيني]، أنا بحبك هيك => The way [you left me], I love you like this\nعلى كيف تركتيني، [أنا] بحبك هيك => The way you left me, [I] love you like this\nعلى كيف تركتيني، أنا [بحبك] هيك => The way you left me, I [love you] like this\nعلى كيف تركتيني، أنا بحبك [هيك] => The way you left me, I love you [like this]\n\n[لما] بتاخدي أواعيكي وبتروحي => [When] you take your stuff and you go\nلما [بتاخدي] أواعيكي وبتروحي => When [you take] your stuff and you go\nلما بتاخدي [أواعيكي] وبتروحي => When you take [your stuff] and you go\nلما بتاخدي أواعيكي [وبتروحي] => When you take your stuff [and you go]\n\n[بلا] خوف لعند أهلك وبتنسي => [Without] fear to your family, and you forget\nبلا [خوف] لعند أهلك وبتنسي => Without [fear] to your family, and you forget\nبلا خوف [لعند] أهلك وبتنسي => Without fear [to] your family, and you forget\nبلا خوف لعند [أهلك] وبتنسي => Without fear to [your family], and you forget\nبلا خوف لعند أهلك [وبتنسي] => Without fear to your family, [and you forget]\n\n[إنه] حتى عندهم الله يستر => [That] even there, God forbid\nإنه [حتى] عندهم الله يستر => That [even] there, God forbid\nإنه حتى [عندهم] الله يستر => That even [there], God forbid\nإنه حتى عندهم [الله يستر] => That even there, [God forbid]\n\n[و]رح إرجع شوفك بكرا وإنتي مش مودي والله => [And] I'll come see you tomorrow, and you're not in the mood, I swear\nورح [إرجع] شوفك بكرا وإنتي مش مودي والله => And I'll [come] see you tomorrow, and you're not in the mood, I swear\nورح إرجع [شوف]ك بكرا وإنتي مش مودي والله => And I'll come [see] you tomorrow, and you're not in the mood, I swear\nورح إرجع شوف[ك] بكرا وإنتي مش مودي والله => And I'll come see [you] tomorrow, and you're not in the mood, I swear\nورح إرجع شوفك [بكرا] وإنتي مش مودي والله => And I'll come see you [tomorrow], and you're not in the mood, I swear\nورح إرجع شوفك بكرا [و]إنتي مش مودي والله => And I'll come see you tomorrow, [and] you're not in the mood, I swear\nورح إرجع شوفك بكرا و[إنتي] مش مودي والله => And I'll come see you tomorrow, and [you]'re not in the mood, I swear\nورح إرجع شوفك بكرا وإنتي [مش] مودي والله => And I'll come see you tomorrow, and you're [not] in the mood, I swear\nورح إرجع شوفك بكرا وإنتي مش [مودي] والله => mood\nورح إرجع شوفك بكرا وإنتي مش مودي [والله] => And I'll come see you tomorrow, and you're not in the mood, [I swear]\n\n[وما بتحترميني]، إنتي كمان => [And you don't respect me], you either\nوما بتحترميني، [إنتي] كمان => And you don't respect me, [you] either\nوما بتحترميني، إنتي [كمان] => And you don't respect me, you [either]\n\n[يا] حبيبتي تلفوني لسه ناطرك => [Oh] my love, my phone is still waiting for you\nيا [حبيبتي] تلفوني لسه ناطرك => Oh [my love], my phone is still waiting for you\nيا حبيبتي [تلفوني] لسه ناطرك => Oh my love, [my phone] is still waiting for you\nيا حبيبتي تلفوني [لسه] ناطرك => Oh my love, my phone is [still] waiting for you\nيا حبيبتي تلفوني لسه [ناطرك] => Oh my love, my phone is still [waiting for you]\n\n[بس] إلك وحتى الموت => [Only] for you, even until death\nبس [إلك] وحتى الموت => Only [for you], even until death\nبس إلك [وحتى] الموت => Only for you, [even until] death\nبس إلك وحتى [الموت] => Only for you, even until [death]\n\n[مين] رح يحميكي؟ => [Who]'s going to protect you?\nمين [رح] يحميكي؟ => Who's [going to] protect you?\nمين رح [يحميكي]؟ => Who's going to [protect you]?\n\n[مين] رح يروحك عالبيت؟ => [Who]'s going to take you home?\nمين [رح] يروحك عالبيت؟ => Who['s going to] take you home?\nمين رح [يروحك] عالبيت؟ => Who's going to [take you] home?\nمين رح يروحك [عالبيت]؟ => Who's going to take you [home]?\n\n[كلهم] حرامية => They're [all] thieves\nكلهم [حرامية] => They're all [thieves]\n\n[و] ما بوثق بحدا => [And] I don't trust anyone\nو [ما] بوثق بحدا => not\nوما [بوثق] بحدا => And I don't [trust] anyone\nوما بوثق [بحدا] => And I don't trust [anyone]\n\n[و] أنا بموت فيكي وبموت منك بالليل => [And] I'm dying for you and dying from you at night\nو [أنا] بموت فيكي وبموت منك بالليل => And [I]'m dying for you and dying from you at night\nوأنا [بموت] فيكي وبموت منك بالليل => And I'm [dying] for you and dying from you at night\nوأنا بموت [فيكي] وبموت منك بالليل => And I'm dying [for you] and dying from you at night\nوأنا بموت فيكي [و] بموت منك بالليل => And I'm dying for you [and] dying from you at night\nوأنا بموت فيكي و[بموت] منك بالليل => And I'm dying for you and [dying] from you at night\nوأنا بموت فيكي وبموت [منك] بالليل => And I'm dying for you and dying [from you] at night\nوأنا بموت فيكي وبموت منك [بالليل] => And I'm dying for you and dying from you [at night]\n\n[وقولي لي] كيف دايماً الكل بيسمع لوحدك => [And tell me] how always everyone hears only you\nوقولي لي [كيف] دايماً الكل بيسمع لوحدك => And tell me [how] always everyone hears only you\nوقولي لي كيف [دايماً] الكل بيسمع لوحدك => And tell me how [always] everyone hears only you\nوقولي لي كيف دايماً [الكل] بيسمع لوحدك => And tell me how always [everyone] hears only you\nوقولي لي كيف دايماً الكل [بيسمع] لوحدك => And tell me how always everyone [hears] only you\nوقولي لي كيف دايماً الكل بيسمع [لوحدك] => And tell me how always everyone hears [only you]\n\n[تلفون واحد] وبترجعي لي => [One call] and you come back to me\nتلفون [واحد] وبترجعي لي => [One] call and you come back to me\nتلفون واحد [وبترجعي] لي => One call [and you come back] to me\nتلفون واحد وبترجعي [لي] => One call and you come back [to me]\n\n[لأنه] كل شي هون عالفاضي => [Because] everything here is for nothing\nلأنه [كل شي] هون عالفاضي => Because [everything] here is for nothing\nلأنه كل شي [هون] عالفاضي => Because everything [here] is for nothing\nلأنه كل شي هون [عالفاضي] => Because everything here is [for nothing]\n\n[بنبوس] بعض كتير وبنرجع نتخانق => [We kiss] a lot and then we fight again\nبنبوس [بعض] كتير وبنرجع نتخانق => each other\nبنبوس بعض [كتير] وبنرجع نتخانق => We kiss [a lot] and then we fight again\nبنبوس بعض كتير [وبنرجع نتخانق] => We kiss a lot [and then we fight again]\n\n[بتحظريني] وبحظرك أنا كمان => [You forbid me] and I forbid you too\nبتحظريني [و]بحظرك أنا كمان => You forbid me [and] I forbid you too\nبتحظريني و[بحظرك أنا] كمان => You forbid me and [I forbid you] too\nبتحظريني وبحظرك أنا [كمان] => You forbid me and I forbid you [too]\n\n[كأنه] ما ضل حروب بالعالم => [As if] there are no wars left in the world\nكأنه [ما] ضل حروب بالعالم => As if there are [no] wars left in the world\nكأنه ما [ضل] حروب بالعالم => As if there are no wars [left] in the world\nكأنه ما ضل [حروب] بالعالم => As if there are no [wars] left in the world\nكأنه ما ضل حروب [بالعالم] => As if there are no wars left [in the world]\n\n[و]عم بيحرقوني جروحاتك => [And] your wounds are burning me\nوعم [بيحرقوني] جروحاتك => And your wounds [are burning me]\nوعم بيحرقوني [جروحاتك] => And [your wounds] are burning me\n\n[و]عم بيوجعوني دموعك => [And] your tears are hurting me\nوعم [بيوجعوني] دموعك => And your tears [are hurting me]\nوعم بيوجعوني [دموعك] => And [your tears] are hurting me\n\n[ويمكن] كل هادي إيغو وسخ => [And maybe] all this is dirty ego\nويمكن [كل] هادي إيغو وسخ => And maybe [all] this is dirty ego\nويمكن كل [هادي] إيغو وسخ => And maybe all [this] is dirty ego\nويمكن كل هادي [إيغو] وسخ => And maybe all this is dirty [ego]\nويمكن كل هادي إيغو [وسخ] => And maybe all this is [dirty] ego\n\n[طيب] ليش => [So] why?\nطيب [ليش] => So [why]?\n\n[بس] اتطلعي بعيوني => [Just] look me in the eyes\nبس [اتطلعي] بعيوني => Just [look] me in the eyes\nبس اتطلعي [بعيوني] => in my eyes\n\n[خلصوا] الكلمات كيف انهد بيتنا => The words [are done], how our house collapsed\nخلصوا [الكلمات] كيف انهد بيتنا => [The words] are done, how our house collapsed\nخلصوا الكلمات [كيف] انهد بيتنا => The words are done, [how] our house collapsed\nخلصوا الكلمات كيف [انهد] بيتنا => The words are done, how [collapsed] our house\nخلصوا الكلمات كيف انهد [بيتنا] => The words are done, how collapsed [our house]\n\n[وكيف] انزعوا الشراشف => [And how] they removed the sheets\nوكيف [انزعوا] الشراشف => And how [they removed] the sheets\nوكيف انزعوا [الشراشف] => And how they removed [the sheets]\n\n[خلص] اتركي لي السما => [Enough], leave me the sky\nخلص [اتركي] لي السما => Enough, [leave] me the sky\nخلص اتركي [لي] السما => Enough, leave [me] the sky\nخلص اتركي لي [السما] => Enough, leave me [the sky]\n\n[إنتي] مغطية على ربنا، أنا بناديه ولسه => [You]'re covering up our Lord, I'm calling Him still\nإنتي [مغطية] على ربنا، أنا بناديه ولسه => You're [covering] up our Lord, I'm calling Him still\nإنتي مغطية على [ربنا]، أنا بناديه ولسه => You're covering up [our Lord], I'm calling Him still\nإنتي مغطية على ربنا، [أنا] بناديه ولسه => You're covering up our Lord, [I]'m calling Him still\nإنتي مغطية على ربنا، أنا [بناديه] ولسه => You're covering up our Lord, I'm [calling Him] still\nإنتي مغطية على ربنا، أنا بناديه [ولسه] => You're covering up our Lord, I'm calling Him [still]\n\n[كيف] لسه بشوفك بالغيوم؟ => [How] do I still see you in the clouds?\nكيف [لسه] بشوفك بالغيوم؟ => How do I [still] see you in the clouds?\nكيف لسه [بشوفك] بالغيوم؟ => How do I still [see you] in the clouds?\nكيف لسه بشوفك [بالغيوم]؟ => How do I still see you [in the clouds]?\n\n[أنا] بكره الوضع هيك لما ما بتوقفي أفلام => [I] hate the situation like this when you don't stop the scenes\nأنا [بكره] الوضع هيك لما ما بتوقفي أفلام => I [hate] the situation like this when you don't stop the scenes\nأنا بكره [الوضع] هيك لما ما بتوقفي أفلام => I hate [the situation] like this when you don't stop the scenes\nأنا بكره الوضع [هيك] لما ما بتوقفي أفلام => I hate the situation [like this] when you don't stop the scenes\nأنا بكره الوضع هيك [لما] ما بتوقفي أفلام => I hate the situation like this [when] you don't stop the scenes\nأنا بكره الوضع هيك لما [ما بتوقفي] أفلام => I hate the situation like this when [don't stop] the scenes\nأنا بكره الوضع هيك لما ما بتوقفي [أفلام] => I hate the situation like this when you don't stop [the scenes]\n\n[و]ظنيت => [And] I thought\nو[ظنيت] => And [I thought]\n\n[وجعت] راسي وصرخت => [I got] a headache and I screamed\nوجعت [راسي] وصرخت => my head\nوجعت راسي [و]صرخت => I got a headache [and] I screamed\nوجعت راسي و[صرخت] => I got a headache and [I screamed]\n\n[شو] ذنب الجيران مرة تروما => [What]'s the neighbors' sin, once trauma\nشو [ذنب] الجيران مرة تروما => What's the neighbors' [sin], once trauma\nشو ذنب [الجيران] مرة تروما => What's [the neighbors]' sin, once trauma\nشو ذنب الجيران [مرة] تروما => What's the neighbors' sin, [once] trauma\nشو ذنب الجيران مرة [تروما] => What's the neighbors' sin, once [trauma]\n\nومرة [وسواس] الله يستر => And once [obsession], God forbid\nومرة وسواس [الله] يستر => And once obsession, [God] forbid\nومرة وسواس الله [يستر] => And once obsession, God [forbid]\n\n[ورح] إرجع شوفك بكرا وإنتي مش مودي => [And I'll] come see you tomorrow, and you're not in the mood\nورح [إرجع] شوفك بكرا وإنتي مش مودي => And I'll [come] see you tomorrow, and you're not in the mood\nورح إرجع [شوفك] بكرا وإنتي مش مودي => And I'll come [see you] tomorrow, and you're not in the mood\nورح إرجع شوفك [بكرا] وإنتي مش مودي => And I'll come see you [tomorrow], and you're not in the mood\nورح إرجع شوفك بكرا [و] إنتي مش مودي => And I'll come see you tomorrow, [and] you're not in the mood\nورح إرجع شوفك بكرا و [إنتي] مش مودي => And I'll come see you tomorrow, and [you're] not in the mood\nورح إرجع شوفك بكرا وإنتي [مش] مودي => And I'll come see you tomorrow, and you're [not] in the mood\nورح إرجع شوفك بكرا وإنتي مش [مودي] => And I'll come see you tomorrow, and you're not in the [mood]\n\n[مرة] بتضيعي مني => [Sometimes] you get lost from me\nمرة [بتضيعي] مني => Sometimes [you get lost] from me\nمرة بتضيعي [مني] => Sometimes you get lost [from me]\n\n[و] مرة مش عم بلاقيكي => [And] sometimes I can't find you\nو [مرة] مش عم بلاقيكي => And [sometimes] I can't find you\nومرة [مش] عم بلاقيكي => And sometimes I [can't] find you\nومرة مش عم [بلاقيكي] => And sometimes I can't [find you]\n\n[يا حبيبتي] حضني لسه ناطرك => [Oh my love], my embrace is still waiting for you\nيا حبيبتي [حضني] لسه ناطرك => Oh my love, [my embrace] is still waiting for you\nيا حبيبتي حضني [لسه] ناطرك => Oh my love, my embrace is [still] waiting for you\nيا حبيبتي حضني لسه [ناطرك] => Oh my love, my embrace is still [waiting for you]\n\n[بس] إلك وحتى الحل => [Only] for you, even until the solution\nبس [إلك] وحتى الحل => Only [for you], even until the solution\nبس إلك [وحتى] الحل => Only for you, [even until] the solution\nبس إلك وحتى [الحل] => Only for you, even until [the solution]\n\n[مين] رح يحميكي => [Who]'s going to protect you?\nمين [رح] يحميكي => Who [is going to] protect you?\nمين رح [يحميكي] => Who's going to [protect you]\n\n[مين] رح يروحك عالبيت => [Who]'s going to take you home?\nمين [رح] يروحك عالبيت => Who [is going to] take you home?\nمين رح [يروحك] عالبيت => Who's going to [take you] home?\nمين رح يروحك [عالبيت] => Who's going to take you [home]\n\nكلهم [حرامية] => They're all [thieves]\n\n[و] ما بوثق بحدا => [And] I don't trust anyone\nو [ما بوثق] بحدا => And [I don't trust] anyone\nو ما بوثق [بحدا] => And I don't trust [anyone]\n\n[وأنا] بموت فيكي وبموت منك بالليل => [And I]'m dying for you and dying from you at night\nوأنا [بموت] فيكي وبموت منك بالليل => I'm dying\nوأنا بموت [فيكي] وبموت منك بالليل => And I'm dying [for you] and dying from you at night\nوأنا بموت فيكي [وبموت] منك بالليل => And I'm dying for you [and dying] from you at night\nوأنا بموت فيكي وبموت [منك] بالليل => And I'm dying for you and dying [from you] at night\nوأنا بموت فيكي وبموت منك [بالليل] => And I'm dying for you and dying from you [at night]\n\n[و] قولي لي كيف دايماً الكل => [And] tell me how always everyone\nو [قولي] لي كيف دايماً الكل => And [tell] me how always everyone\nو قولي [لي] كيف دايماً الكل => And tell [me] how always everyone\nو قولي لي [كيف] دايماً الكل => And tell me [how] always everyone\nو قولي لي كيف [دايماً] الكل => And tell me how [always] everyone\nو قولي لي كيف دايماً [الكل] => And tell me how always [everyone]\n\n[بيسمع] لوحدك، تلفون واحد وبترجعي لي => [Hears] only you, one call and you come back to me\nبيسمع [لوحدك]، تلفون واحد وبترجعي لي => Hears [only you], one call and you come back to me\nبيسمع لوحدك، [تلفون] واحد وبترجعي لي => Hears only you, one [call] and you come back to me\nبيسمع لوحدك، تلفون [واحد] وبترجعي لي => Hears only you, [one] call and you come back to me\nبيسمع لوحدك، تلفون واحد [وبترجعي] لي => Hears only you, one call [and you come back] to me\nبيسمع لوحدك، تلفون واحد وبترجعي [لي] => Hears only you, one call and you come back [to me]\n\n[لأنه] كل شي هون عالفاضي => [Because] everything here is for nothing\nلأنه [كل شي] هون عالفاضي => Because [everything] here is for nothing\nلأنه كل شي [هون] عالفاضي => Because everything [here] is for nothing\nلأنه كل شي هون [عالفاضي] => Because everything here is [for nothing]\n\n[بنبوس] بعض كتير وبنرجع نتخانق => [We kiss] a lot and then we fight again\nبنبوس بعض [كتير] وبنرجع نتخانق => We kiss a [lot] and then we fight again\nبنبوس بعض كتير وبنرجع [نتخانق] => We kiss a lot and then we [fight] again\n\n[بتحظريني] وبحظرك أنا كمان => [You forbid me] and I forbid you too\nبتحظريني [وبحظرك] أنا كمان => You forbid me [and I forbid you] too\nبتحظريني وبحظرك [أنا] كمان => You forbid me and [I] forbid you too\nبتحظريني وبحظرك أنا [كمان] => You forbid me and I forbid you [too]\n\n[كأنه] ما ضل حروب بالعالم => [As if] there are no wars left in the world\nكأنه [ما ضل حروب] بالعالم => As if there are [no wars left] in the world\nكأنه ما ضل [حروب] بالعالم => As if there are no [wars] left in the world\nكأنه ما ضل حروب [بالعالم] => As if there are no wars left [in the world]\n\n[و]عم بيحرقوني جروحاتك => [And] your wounds are burning me\nو[عم] بيحرقوني جروحاتك => And your wounds [are] burning me\nوعم [بيحرقوني] جروحاتك => And your wounds are [burning me]\nوعم بيحرقوني [جروحاتك] => And [your wounds] are burning me\n\n[و]عم بيوجعوني دموعك => [And] your tears are hurting me\nو[عم] بيوجعوني دموعك => And your tears [are] hurting me\nوعم [بيوجعوني] دموعك => And your tears are [hurting me]\nوعم بيوجعوني [دموعك] => And [your tears] are hurting me\n\n[ويمكن] كل هادي إيغو وسخ => [And maybe] all this is dirty ego\nويمكن [كل هادي] إيغو وسخ => And maybe [all this] is dirty ego\nويمكن كل هادي [إيغو] وسخ => And maybe all this is dirty [ego]\nويمكن كل هادي إيغو [وسخ] => And maybe all this is [dirty] ego\nويمكن كل هادي [إيغو وسخ] => And maybe all this is [dirty ego]\n\n[طيب] ليش؟ => [So] why?\nطيب [ليش]؟ => So [why]?",
+    "lessons": "# العيون والوداع\n00:00.80 اتطلعي لي بعيوني\n00:02.50 أكيد رح ترجعي تدمعي\n00:04.80 إنتي ملكة بس لسا\n00:07.00 لسا مش إلي تماماً\n00:10.00 خلص فكي عن إيدي\n00:12.00 رح تكتشفي بكرا كمان مرة\n00:14.80 ورح يزقفولك من جديد\n00:17.50 على كيف تركتيني، أنا بحبك هيك\n\n# الذهاب إلى الأهل والانتظار\n00:21.80 لما بتاخدي أواعيكي وبتروحي\n00:24.80 بلا خوف لعند أهلك وبتنسي\n00:27.80 إنه حتى عندهم الله يستر\n00:31.00 ورح إرجع شوفك بكرا وإنتي مش مودي والله\n00:35.00 وما بتحترميني، إنتي كمان\n00:41.00 يا حبيبتي تلفوني لسه ناطرك\n\n# الحماية والعودة\n00:44.00 بس إلك وحتى الموت\n00:46.50 مين رح يحميكي؟\n00:48.50 مين رح يروحك عالبيت؟\n00:51.00 كلهم حرامية\n00:54.00 وما بوثق بحدا\n00:56.50 وأنا بموت فيكي وبموت منك بالليل\n01:01.00 وقولي لي كيف دايماً الكل بيسمع لوحدك\n01:05.00 تلفون واحد وبترجعي لي\n\n# الحب والصراع\n01:08.00 لأنه كل شي هون عالفاضي\n01:12.00 بنبوس بعض كتير وبنرجع نتخانق\n01:15.00 بتحظريني وبحظرك أنا كمان\n01:18.00 كأنه ما ضل حروب بالعالم\n01:22.00 وعم بيحرقوني جروحاتك\n01:25.00 وعم بيوجعوني دموعك\n01:28.00 ويمكن كل هادي إيغو وسخ\n01:31.00 طيب ليش؟\n\n# انهيار البيت (الجزء الأول)\n01:33.00 بس اتطلعي بعيوني\n01:35.00 خلصوا الكلمات كيف انهد بيتنا\n01:37.00 وكيف انزعوا الشراشف\n01:39.00 خلص اتركي لي السما\n01:41.00 إنتي مغطية على ربنا، أنا بناديه ولسه\n01:45.00 كيف لسه بشوفك بالغيوم؟\n\n# انهيار البيت (الجزء الثاني)\n01:48.00 أنا بكره الوضع هيك لما ما بتوقفي أفلام\n01:53.00 وظنيت\n01:55.00 وجعت راسي وصرخت\n01:57.00 شو ذنب الجيران مرة تروما\n02:00.00 ومرة وسواس الله يستر\n\n# الضياع والانتظار\n02:04.00 ورح إرجع شوفك بكرا وإنتي مش مودي\n02:09.00 مرة بتضيعي مني\n02:11.00 ومرة مش عم بلاقيكي\n02:14.00 يا حبيبتي حضني لسه ناطرك\n02:17.00 بس إلك وحتى الحل\n\n# الحماية والعودة مجدداً\n02:19.00 مين رح يحميكي؟\n02:21.00 مين رح يروحك عالبيت؟\n02:24.00 كلهم حرامية\n02:26.00 وما بوثق بحدا\n02:29.00 وأنا بموت فيكي وبموت منك بالليل\n02:34.00 وقولي لي كيف دايماً الكل\n02:37.00 بيسمع لوحدك، تلفون واحد وبترجعي لي\n\n# الصراع المستمر\n02:40.00 لأنه كل شي هون عالفاضي\n02:45.00 بنبوس بعض كتير وبنرجع نتخانق\n02:48.00 بتحظريني وبحظرك أنا كمان\n02:51.00 كأنه ما ضل حروب بالعالم\n02:55.00 وعم بيحرقوني جروحاتك\n02:58.00 وعم بيوجعوني دموعك\n03:01.00 ويمكن كل هادي إيغو وسخ\n03:04.00 طيب ليش؟",
+    "similar_sounds": "[اتطلع] لي بعيوني\n[أريد] رح ترجعي تدمعي\nإنتي ملكة بس [لذا]\nلسا مش إلي [تمام]\nخلص فكي عن [يدي]\nرح تكتشفي بكرا [كما] مرة\n[جرح] يزقفولك من جديد\nعلى كيف [تركتني] أنا بحبك هيك\nلما [بادي] أواعيكي وبتروحي\nبلا [خطف] لعند أهلك وبتنسي\nإنه [حتي] عندهم الله يستر\nورح إرجع شوفك بكرا وإنتي مش [عودي] والله\nوما بتحترميني [أنتي] كمان\nيا حبيبتي تلفوني لسه [اترك]\nبس إلك وحتى [الصوت]\nمين رح [يحميك]\n[بين] رح يروحك عالبيت\nكلهم [درامية]\nوما بوثق [أحدا]\nوأنا بموت فيكي وبموت منك [بالليلة]\nوقولي لي كيف دايماً [الكلب] بيسمع لوحدك\n[تكون] واحد وبترجعي لي\n[أنه] كل شي هون عالفاضي\nبنبوس [ببعض] كتير وبنرجع نتخانق\nبتحظريني [بنظرك] أنا كمان\nكأنه ما ضل حروب [بالعام]\n[وهم] بيحرقوني جروحاتك\nوعم بيوجعوني [معك]\nويمكن كل هادي [إيغور] وسخ\nطيب [لي]\nبس [أتطلع] بعيوني\nخلصوا الكلمات [وكيف] انهد بيتنا\nوكيف [انظروا] الشراشف\nخلص اتركي لي [السمك]\nإنتي مغطية على ربنا أنا [ناديه] ولسه\nكيف لسه [بدونك] بالغيوم\nأنا بكره الوضع [هي] لما ما بتوقفي أفلام\n[وظننت]\nوجعت راسي [وصلت]\nشو ذنب الجيران مرة [ترومان]\nومرة وسواس [لله] يستر\n[جرح] إرجع شوفك بكرا وإنتي مش مودي\nمرة [تضعي] مني\n[ثمرة] مش عم بلاقيكي\nيا حبيبتي حضني لسه [اترك]\nبس [إلى] وحتى الحل\nمين رح [يحميك]\nمين رح [يروك] عالبيت\nكلهم [درامية]\nوما [بوث] بحدا\n[أنا] بموت فيكي وبموت منك بالليل\n[قولي] لي كيف دايماً الكل\nبيسمع [لوحدي] تلفون واحد وبترجعي لي\n[بأنه] كل شي هون عالفاضي\n[بنفس] بعض كتير وبنرجع نتخانق\nبتحظريني وبحظرك أنا [كما]\nكأنه ما ضل [حبوب] بالعالم\nوعم [يحرقون] جروحاتك\nوعم بيوجعوني [دموع]\nويمكن كل هادي إيغو [نسخ]\n[طلب] ليش"
+  },
+  "created_at": "2026-06-13 06:59:30 UTC",
+  "updated_at": "2026-06-13 07:18:33 UTC",
+  "exported_at": "2026-06-13T07:18:33Z"
+}
