@@ -8,7 +8,8 @@ require "active_support/concern"
 module WordTokenBuilder
   extend ActiveSupport::Concern
 
-  # words: array of { "text" =>, "translation" =>, "timestamp" =>, "timestamp_end" => }
+  # words: array of { "text" =>, "translation" =>, "timestamp" =>, "timestamp_end" =>,
+  #                    "l1_start_index" =>, "l1_end_index" => }
   def build_word_tokens(words)
     return self if words.blank? || text_l1.blank?
 
@@ -20,12 +21,14 @@ module WordTokenBuilder
       translation = word["translation"].to_s
       next if text.blank? || translation.blank?
 
-      # Locate the word in text_l1 starting from the previous match, so repeated
-      # words map to their correct occurrence even with punctuation/spacing quirks.
-      start_char = text_l1.index(text, cursor)
+      # Prefer the character indices computed during extract_lyrics (see
+      # WordTimingParser#assign_l1_indices). Fall back to locating the word in
+      # text_l1 from the previous match, so repeated words still map to their
+      # correct occurrence even with punctuation/spacing quirks.
+      start_char = word["l1_start_index"] || text_l1.index(text, cursor)
       next unless start_char
 
-      end_char = start_char + text.length - 1
+      end_char = word["l1_end_index"] || (start_char + text.length - 1)
       cursor = end_char + 1
 
       token = token_translations.build(

@@ -72,6 +72,7 @@ module CourseBuilder
         end
 
         lesson_data = progress.data["lessons"].split("\n\n")
+        lesson_data = filter_low_value_lessons(lesson_data)
         @flashcard_assignments = build_flashcard_assignments(lesson_data)
         lesson_index = 0
         created_lessons = []
@@ -135,6 +136,31 @@ module CourseBuilder
     end
 
     private
+
+    # Drop lessons the RateLessons step judged to have no teaching value (a chanted
+    # nonsense hook, pure onomatopoeia, or an exact reprise of an earlier lesson).
+    # Ratings are aligned to lessons by position (the rating "index" is 1-based) and
+    # double-checked against the title. When no ratings are present (older progress
+    # records) every lesson is kept, so the course is never left empty.
+    def filter_low_value_lessons(lesson_data)
+      ratings = progress.data["lesson_ratings"]
+      return lesson_data if ratings.blank?
+
+      kept = lesson_data.each_with_index.reject do |block, idx|
+        rating = rating_for(ratings, block, idx)
+        rating && rating["score"].to_i <= CreateSong::RateLessons::LOW_VALUE_SCORE
+      end.map(&:first)
+
+      # Never strip the course down to nothing if the model was overly harsh.
+      kept.presence || lesson_data
+    end
+
+    def rating_for(ratings, block, idx)
+      title = block.lines.first.to_s.strip.sub(/^#\s*/, "")
+      ratings.find { |r| r["index"].to_i == idx + 1 && r["title"].to_s.strip == title } ||
+        ratings.find { |r| r["index"].to_i == idx + 1 } ||
+        ratings.find { |r| r["title"].to_s.strip == title }
+    end
 
     # The first three lessons (positions 1-3, never review lessons) each get one
     # activity that is either a FlashcardActivity or a WordOrderActivity. Pre-build

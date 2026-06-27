@@ -61,7 +61,7 @@ export default class extends Controller {
     }
     
     // If clicking a phrase from the opposite column, attempt match
-    this.attemptMatch(clickedElement, phraseId);
+    this.attemptMatch(clickedElement);
   }
 
   selectNewPhrase(element, phraseId, column) {
@@ -76,17 +76,31 @@ export default class extends Controller {
     }
   }
 
-  attemptMatch(clickedElement, clickedPhraseId) {
-    const selectedPhraseId = this.selectedPhrase.phraseId;
-    
-    // Check if they match
-    if (selectedPhraseId === clickedPhraseId) {
+  attemptMatch(clickedElement) {
+    const selectedElement = this.selectedPhrase.element;
+
+    // Text-only match: the L1 cell is an audio play button with no visible text,
+    // so both cells carry the pair's L1 and L2 text. They match when both agree
+    // (ignoring punctuation/whitespace).
+    const samePair =
+      this.normalizeText(selectedElement.dataset.textL1) === this.normalizeText(clickedElement.dataset.textL1) &&
+      this.normalizeText(selectedElement.dataset.textL2) === this.normalizeText(clickedElement.dataset.textL2);
+
+    if (samePair) {
       // Successful match
       this.handleSuccessfulMatch(this.selectedPhrase.element, clickedElement);
     } else {
       // Failed match
       this.handleFailedMatch(this.selectedPhrase.element, clickedElement);
     }
+  }
+
+  // Strip dash punctuation (Unicode \p{Pd}: hyphen, en/em dash, etc.),
+  // whitespace, commas and periods so that "uh-huh", "uh huh", "uh, huh."
+  // and "uhhuh" all compare as equal.
+  // We deliberately keep other punctuation (e.g. apostrophes) so "it's" != "its".
+  normalizeText(text) {
+    return (text || '').replace(/[\p{Pd}\s,.]/gu, '');
   }
 
   handleSuccessfulMatch(element1, element2) {

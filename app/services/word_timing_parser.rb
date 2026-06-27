@@ -10,7 +10,8 @@
 # Output (array of phrase hashes):
 #   [{ "id" => "phrase_1", "text_l1" => "Apateu, apateu",
 #      "timestamp" => "00:06.50", "timestamp_end" => "00:07.80",
-#      "words" => [{ "text" => "Apateu,", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10" }, ...] }]
+#      "words" => [{ "text" => "Apateu,", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10",
+#                    "l1_start_index" => 0, "l1_end_index" => 6 }, ...] }]
 class WordTimingParser
   def self.parse(json_text)
     new(json_text).parse
@@ -34,6 +35,8 @@ class WordTimingParser
 
       text_l1 = entry["line_text"].present? ? sanitize(entry["line_text"]) : words.map { |w| w["text"] }.join(" ")
 
+      assign_l1_indices(words, text_l1)
+
       {
         "id" => "phrase_#{idx + 1}",
         "text_l1" => text_l1,
@@ -45,6 +48,46 @@ class WordTimingParser
   end
 
   private
+
+  # Locate each word inside text_l1 and record its character span as
+  # l1_start_index / l1_end_index (end is inclusive, matching TokenTranslation's
+  # character_index convention).
+  #
+  # The same word can appear several times in a line ("kissy face, kissy face"),
+  # so the only reliable way to map a word object to its occurrence is the order
+  # it is sung. We therefore walk the words in timestamp order, advancing a cursor
+  # past each match, which guarantees the Nth occurrence in time maps to the Nth
+  # occurrence in the text. Words that can't be found are left without indices and
+  # are skipped downstream.
+  def assign_l1_indices(words, text_l1)
+    cursor = 0
+
+    words.sort_by { |w| timestamp_seconds(w["timestamp"]) }.each do |word|
+      text = word["text"].to_s
+      next if text.blank?
+
+      start_char = text_l1.index(text, cursor)
+      next unless start_char
+
+      end_char = start_char + text.length - 1
+      cursor = end_char + 1
+
+      word["l1_start_index"] = start_char
+      word["l1_end_index"] = end_char
+    end
+  end
+
+  # Parse the "MM:SS.ss" word timestamps we emit into float seconds for sorting.
+  def timestamp_seconds(ts)
+    return 0.0 if ts.blank?
+
+    parts = ts.to_s.split(":")
+    case parts.length
+    when 3 then parts[0].to_f * 3600 + parts[1].to_f * 60 + parts[2].to_f
+    when 2 then parts[0].to_f * 60 + parts[1].to_f
+    else ts.to_f
+    end
+  end
 
   # The transcript becomes clickable text in the app; square brackets are
   # reserved for token-alignment markup, so strip them like the rest of the

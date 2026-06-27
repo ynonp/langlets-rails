@@ -6,6 +6,7 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::ExtractLyrics
   include CreateSong::AddTokenTranslations
   include CreateSong::AddLessons
+  include CreateSong::RateLessons
   include CreateSong::AddSimilarSound
   include CreateSong::Translate
 
@@ -16,6 +17,7 @@ class CreateSongProgress < ApplicationRecord
       translate unless data.dig("phrases", 0, "text_l2")
       add_token_translation unless data.dig("phrases", 0, "words", 0, "translation").present?
       add_lessons unless data["lessons"].present?
+      rate_lessons unless lessons_rated?
       add_similar_sound unless similar_sounds_complete?
     end
   end

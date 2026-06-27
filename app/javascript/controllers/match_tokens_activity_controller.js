@@ -55,7 +55,7 @@ export default class extends Controller {
     // Reuse the existing state machine: select one token, then match the other.
     this.clearSelection();
     this.selectNewToken(a, parseInt(a.dataset.tokenId), a.dataset.column);
-    this.attemptMatch(b, parseInt(b.dataset.tokenId));
+    this.attemptMatch(b);
   }
 
   preloadAllAudio() {
@@ -116,6 +116,9 @@ export default class extends Controller {
     element.className = 'token-word touch-manipulation px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-center transition-all duration-200';
     element.dataset.tokenId = token.id;
     element.dataset.column = column;
+    // Carry both sides of the pair so matching can be done by text, not id.
+    element.dataset.l1Text = token.l1_word;
+    element.dataset.l2Text = token.l2_translation;
     element.dataset.action = 'click->match-tokens-activity#selectToken';
     
     if (column === 'l1') {
@@ -160,7 +163,7 @@ export default class extends Controller {
     }
     
     // If clicking a token from the opposite column, attempt match
-    this.attemptMatch(clickedToken, tokenId);
+    this.attemptMatch(clickedToken);
   }
 
   selectNewToken(element, tokenId, column) {
@@ -180,17 +183,30 @@ export default class extends Controller {
     }
   }
 
-  attemptMatch(clickedElement, clickedTokenId) {
-    const selectedTokenId = this.selectedToken.tokenId;
-    
-    // Check if they match
-    if (selectedTokenId === clickedTokenId) {
+  attemptMatch(clickedElement) {
+    const selectedElement = this.selectedToken.element;
+
+    // Text-only match: two cells belong to the same pair when both their L1 and
+    // L2 texts agree (ignoring punctuation/whitespace).
+    const samePair =
+      this.normalizeText(selectedElement.dataset.l1Text) === this.normalizeText(clickedElement.dataset.l1Text) &&
+      this.normalizeText(selectedElement.dataset.l2Text) === this.normalizeText(clickedElement.dataset.l2Text);
+
+    if (samePair) {
       // Successful match
       this.handleSuccessfulMatch(this.selectedToken.element, clickedElement);
     } else {
       // Failed match
       this.handleFailedMatch(this.selectedToken.element, clickedElement);
     }
+  }
+
+  // Strip dash punctuation (Unicode \p{Pd}: hyphen, en/em dash, etc.),
+  // whitespace, commas and periods so that "uh-huh", "uh huh", "uh, huh."
+  // and "uhhuh" all compare as equal.
+  // We deliberately keep other punctuation (e.g. apostrophes) so "it's" != "its".
+  normalizeText(text) {
+    return (text || '').replace(/[\p{Pd}\s,.]/gu, '');
   }
 
   handleSuccessfulMatch(element1, element2) {

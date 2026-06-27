@@ -66,6 +66,8 @@
                 data-action="click->main-video-player#playSegment click->audio-to-translation-activity#selectPhrase"
                 data-main-video-player-segment-start-param="<%= timestamp_to_seconds(phrase.timestamp) %>"
                 data-main-video-player-segment-end-param="<%= timestamp_to_seconds(phrase.calculated_end_timestamp) %>"
+                data-text-l1="<%= phrase.text_l1 %>"
+                data-text-l2="<%= phrase.text_l2 %>"
                 data-column="l1">
                 <div class="flex justify-center items-center gap-3">
                   <span
@@ -90,6 +92,8 @@
                 class="phrase-item px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white transition-all duration-200 flex-1 flex items-center min-h-[60px] <%= l2.rtl ? 'justify-end' : 'justify-start' %>"
                 data-phrase-id="<%= phrase.id %>"
                 data-column="l2"
+                data-text-l1="<%= phrase.text_l1 %>"
+                data-text-l2="<%= phrase.text_l2 %>"
                 data-action="click->audio-to-translation-activity#selectPhrase">
                 <span class="phrase-text"><%= phrase.text_l2 %></span>
               </div>

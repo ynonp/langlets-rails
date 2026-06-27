@@ -52,7 +52,6 @@ export default class extends Controller {
     if (this.currentIndex >= this.tokensArray.length) return;
     
     const clickedElement = event.currentTarget;
-    const tokenId = parseInt(clickedElement.dataset.tokenId);
     const clickedText = clickedElement.textContent;
     
     // Don't allow selection of squares that are currently animating or showing L1
@@ -63,13 +62,22 @@ export default class extends Controller {
     }
 
     const currentToken = this.tokensArray[this.currentIndex];
-    
-    // Check if this is the correct match
-    if ((tokenId === currentToken.id) || (currentToken.l1_text === clickedText)) {
+
+    // Text-only match: the clicked square shows the L2 translation, so compare
+    // it to the current token's L2 text (ignoring punctuation/whitespace).
+    if (this.normalizeText(currentToken.l2_text) === this.normalizeText(clickedText)) {
       this.handleCorrectMatch(clickedElement);
     } else {
       this.handleWrongMatch(clickedElement);
     }
+  }
+
+  // Strip dash punctuation (Unicode \p{Pd}: hyphen, en/em dash, etc.),
+  // whitespace, commas and periods so that "uh-huh", "uh huh", "uh, huh."
+  // and "uhhuh" all compare as equal.
+  // We deliberately keep other punctuation (e.g. apostrophes) so "it's" != "its".
+  normalizeText(text) {
+    return (text || '').replace(/[\p{Pd}\s,.]/gu, '');
   }
 
   handleCorrectMatch(element) {

@@ -27,15 +27,15 @@ class AddTokenTranslationsTest < ActiveSupport::TestCase
       data: { "phrases" => @phrases }
     )
 
-    @mock_responses = {
-      "avec une fille" => "avec => with\nune => a\nfille => girl",
-      "trois jours" => "trois => three\njours => days",
+    @dictionary = {
+      "avec" => "with", "une" => "a", "fille" => "girl",
+      "trois" => "three", "jours" => "days",
     }
   end
 
   test "writes a translation onto every word, in order" do
     stub_renderer!
-    stub_translate_phrase_words!(mock_translate(@mock_responses))
+    stub_translate_chunk!(mock_translate(@dictionary))
 
     @progress.add_token_translation
 
@@ -46,24 +46,45 @@ class AddTokenTranslationsTest < ActiveSupport::TestCase
     assert_equal %w[three days], p2_words.map { |w| w["translation"] }
   end
 
-  test "ignores preamble lines and uses only word => translation lines" do
-    translations = @progress.send(:parse_word_translations,
-      "Here are the translations:\navec => with\nune => a\nfille => girl",
-      %w[avec une fille])
+  test "builds one input line per word marking the target in its phrase context" do
+    line = @progress.send(:build_word_line, @phrases[0], 1)
+    assert_equal "une (avec *une* fille) |", line
+  end
+
+  test "parse_chunk_translations ignores lines without a pipe and reads the translation after it" do
+    translations = @progress.send(:parse_chunk_translations,
+      "Here are the translations:\navec (..) | with\nune (..) | a\nfille (..) | girl",
+      3)
 
     assert_equal %w[with a girl], translations
   end
 
-  test "raises when translation count does not match word count" do
+  test "parse_chunk_translations raises when translation count does not match" do
     error = assert_raises(RuntimeError) do
-      @progress.send(:parse_word_translations, "avec => with\nune => a", %w[avec une fille])
+      @progress.send(:parse_chunk_translations, "avec (..) | with\nune (..) | a", 3)
     end
     assert_match(/count mismatch/, error.message)
   end
 
-  test "skips phrases without words" do
-    translations = @progress.send(:translate_phrase_words, "instructions", { "text_l1" => "x", "words" => [] }, 0)
-    assert_equal [], translations
+  test "batches all words across phrases into 200-line chunks" do
+    stub_renderer!
+
+    chunk_sizes = []
+    @progress.define_singleton_method(:translate_chunk) do |instructions, chunk, max_retries|
+      chunk_sizes << chunk.size
+      chunk.map { |entry| [ entry, "x" ] }
+    end
+
+    # 5 words total -> a single chunk
+    @progress.add_token_translation
+    assert_equal [ 5 ], chunk_sizes
+  end
+
+  test "saves without error when there are no words" do
+    @progress.data["phrases"] = [ { "id" => "p1", "text_l1" => "x", "text_l2" => "y", "words" => [] } ]
+    stub_renderer!
+
+    assert_nothing_raised { @progress.add_token_translation }
   end
 
   private
@@ -73,16 +94,20 @@ class AddTokenTranslationsTest < ActiveSupport::TestCase
     renderer.define_singleton_method(:render) { |*args, **kwargs| "Test instructions" }
   end
 
-  def stub_translate_phrase_words!(callable)
-    @progress.define_singleton_method(:translate_phrase_words) do |instructions, phrase, max_retries|
-      callable.call(instructions, phrase, max_retries)
+  def stub_translate_chunk!(callable)
+    @progress.define_singleton_method(:translate_chunk) do |instructions, chunk, max_retries|
+      callable.call(instructions, chunk, max_retries)
     end
   end
 
-  def mock_translate(responses)
-    ->(instructions, phrase, max_retries) {
-      raw = responses.fetch(phrase["text_l1"]) { raise "No mock response for: #{phrase["text_l1"].inspect}" }
-      raw.lines.map { |l| l.split("=>", 2).last.strip }
+  # Maps each chunk entry to [entry, translation] by looking up the target word
+  # (the text before the " (" context) in the dictionary.
+  def mock_translate(dictionary)
+    ->(instructions, chunk, max_retries) {
+      chunk.map do |entry|
+        word = entry[:line].split(" (", 2).first
+        [ entry, dictionary.fetch(word) ]
+      end
     }
   end
 end

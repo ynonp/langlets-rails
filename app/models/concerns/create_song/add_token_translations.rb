@@ -10,17 +10,23 @@ module CreateSong
       assume_model_exists: true
     }.freeze
 
-    # Translates each word of every phrase into the target language. Unlike the
-    # old alignment step, this does NOT compute L2 character ranges -- it simply
-    # produces one translation per word (with the full phrase for context). The
-    # word translations + their timestamps later become karaoke-capable
-    # TokenTranslation records (see Phrase#build_word_tokens).
+    # Words per LLM call. We translate every word of every phrase, so for a long
+    # song this is hundreds of words; batching keeps each request small enough to
+    # stay accurate while still cutting the number of round-trips dramatically.
+    WORDS_PER_CHUNK = 200
+
+    # Translates each word of every phrase into the target language. Every word
+    # across all phrases is collected, grouped into chunks of WORDS_PER_CHUNK and
+    # sent to the LLM with the full phrase as context (the word being translated is
+    # marked with *asterisks*). The resulting per-word translations + their
+    # timestamps later become karaoke-capable TokenTranslation records (see
+    # WordTokenBuilder#build_word_tokens).
     def add_token_translation
       max_concurrency = 4
       max_retries = 2
 
       instructions = ApplicationController.renderer.render(
-        template: "prompts/translate_words",
+        template: "prompts/add_token_translations",
         formats: [ :md ],
         locals: {
           clip_language:,
@@ -28,28 +34,39 @@ module CreateSong
         }
       )
 
-      phrases = data["phrases"]
+      # Flat list of every word with a back-reference to its phrase/word slot, so
+      # we can scatter them into chunks and gather the translations back.
+      entries = []
+      data["phrases"].each_with_index do |phrase, p_index|
+        Array(phrase["words"]).each_with_index do |word, w_index|
+          entries << {
+            phrase_index: p_index,
+            word_index: w_index,
+            line: build_word_line(phrase, w_index)
+          }
+        end
+      end
+
+      return save! if entries.empty?
+
+      chunks = entries.each_slice(WORDS_PER_CHUNK).to_a
       semaphore = Async::Semaphore.new(max_concurrency)
 
       results = Async do
-        tasks = phrases.each_with_index.map do |phrase, index|
+        tasks = chunks.each_with_index.map do |chunk, index|
           Async do
             semaphore.acquire do
-              [ index, translate_phrase_words(instructions, phrase, max_retries) ]
+              [ index, translate_chunk(instructions, chunk, max_retries) ]
             end
           end
         end
 
-        tasks.map(&:wait).sort_by(&:first).map(&:last)
+        tasks.map(&:wait).sort_by(&:first).flat_map(&:last)
       end.result
 
-      results.each_with_index do |translations, index|
-        words = data["phrases"][index]["words"]
-        next if words.blank?
-
-        words.each_with_index do |word, w_index|
-          word["translation"] = translations[w_index]
-        end
+      results.each do |entry, translation|
+        word = data["phrases"][entry[:phrase_index]]["words"][entry[:word_index]]
+        word["translation"] = translation
       end
 
       save!
@@ -57,21 +74,34 @@ module CreateSong
 
     private
 
-    def translate_phrase_words(instructions, phrase, max_retries)
-      words = Array(phrase["words"]).map { |w| w["text"] }
-      return [] if words.empty?
+    # Build the input line for one word: the word, its phrase as context with the
+    # target word marked, and a trailing "|" for the model to complete.
+    #   apateu (Turn this *apateu* into a club) |
+    def build_word_line(phrase, word_index)
+      words = Array(phrase["words"])
+      target = words[word_index]["text"]
 
+      context = words.each_with_index.map do |w, i|
+        i == word_index ? "*#{w["text"]}*" : w["text"]
+      end.join(" ")
+
+      "#{target} (#{context}) |"
+    end
+
+    def translate_chunk(instructions, chunk, max_retries)
+      lines = chunk.map { |e| e[:line] }
       retry_count = 0
 
       loop do
         chat = TracedChat.new(span_name: "add_token_translations", **MODEL_PARAMS)
         chat
           .with_instructions(instructions)
-          .add_message role: :user, content: "Phrase: #{phrase["text_l1"]}\nWords:\n#{words.join("\n")}"
+          .add_message role: :user, content: lines.join("\n")
 
         response = chat.complete
 
-        return parse_word_translations(response.content.strip, words)
+        translations = parse_chunk_translations(response.content.strip, chunk.size)
+        return chunk.zip(translations)
       rescue => e
         retry_count += 1
         if retry_count <= max_retries
@@ -86,17 +116,17 @@ module CreateSong
       end
     end
 
-    # Expects one "word => translation" line per input word, in order. Ignores any
-    # preamble lines that don't contain "=>", then validates the count matches.
-    def parse_word_translations(content, words)
+    # Expects one "<word> (<context>) | <translation>" line per input line, in
+    # order. Ignores any lines that don't contain "|", then validates the count.
+    def parse_chunk_translations(content, expected_count)
       translations = content.lines
         .map(&:strip)
         .reject(&:blank?)
-        .select { |line| line.include?("=>") }
-        .map { |line| line.split("=>", 2).last.to_s.strip }
+        .select { |line| line.include?("|") }
+        .map { |line| line.split("|", 2).last.to_s.strip }
 
-      if translations.size != words.size
-        raise "Word translation count mismatch: got #{translations.size}, expected #{words.size}"
+      if translations.size != expected_count
+        raise "Word translation count mismatch: got #{translations.size}, expected #{expected_count}"
       end
 
       translations

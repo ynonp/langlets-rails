@@ -14,7 +14,9 @@ module CreateSong
 
     # Transcribes the video into word-timed phrases. A single LLM call returns
     # JSON with line- and word-level timestamps (see WordTimingParser), which we
-    # parse into data["phrases"], each carrying a "words" array.
+    # parse into data["phrases"], each carrying a "words" array. Every word also
+    # gets its l1_start_index / l1_end_index (character span within text_l1)
+    # computed here so downstream steps can build tokens without re-searching.
     def extract_lyrics
       user_content = Llm::YoutubeUrlContent.new(youtubeurl)
 
