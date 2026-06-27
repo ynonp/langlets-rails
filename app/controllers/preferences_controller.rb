@@ -14,4 +14,16 @@ class PreferencesController < ApplicationController
       format.html { redirect_back fallback_location: root_path }
     end
   end
+
+  # Persist the watch-video activity toggles (translation / karaoke) into the
+  # signed-in user's preferences JSON. No-op for logged-out visitors.
+  def watch_video
+    if user_signed_in?
+      current_user.watch_video_preferences = params.permit(:translation, :karaoke)
+      current_user.save
+    end
+
+    prefs = current_user&.watch_video_preferences || User::WATCH_VIDEO_DEFAULTS
+    render json: { watch_video: prefs }
+  end
 end

@@ -1,16 +1,49 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startPracticeButton'];
+  static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
   static classes = ['currentTextLine'];
-  static values = { wordTiming: Boolean };
+  static values = { wordTiming: Boolean, prefsUrl: String };
+
+  // PATCH the current toggle states to the server so they persist across visits.
+  persistPrefs() {
+    if (!this.hasPrefsUrlValue) return;
+
+    const body = {};
+    if (this.hasShowTranslationTarget) body.translation = this.showTranslationTarget.checked;
+    if (this.hasShowKaraokeTarget) body.karaoke = this.showKaraokeTarget.checked;
+
+    const token = document.querySelector('meta[name="csrf-token"]')?.content;
+    fetch(this.prefsUrlValue, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+        "X-CSRF-Token": token || ""
+      },
+      body: JSON.stringify(body)
+    }).catch(() => {});
+  }
 
   progress(ev) {
     const {at} = ev.detail
     this.updateSubtitles(at);
-    if (this.wordTimingValue) {
+    if (this.wordTimingValue && this.karaokeEnabled) {
       this.updateWordHighlight(at);
     }
+  }
+
+  // Karaoke highlight is on by default; a checkbox in the header can turn it off.
+  get karaokeEnabled() {
+    return !this.hasShowKaraokeTarget || this.showKaraokeTarget.checked;
+  }
+
+  toggleKaraoke() {
+    // Clear any active highlight when karaoke is disabled.
+    if (!this.showKaraokeTarget.checked && this.tokenSpans) {
+      this.tokenSpans.forEach(span => span.classList.remove('s-token-active'));
+    }
+    this.persistPrefs();
   }
 
   // Karaoke-style highlight: mark the single token whose [start, end] window
@@ -57,6 +90,7 @@ export default class extends Controller {
         translation.classList.add('hidden');
       }
     });
+    this.persistPrefs();
   }
 
   updateSubtitles(currentTime) {

@@ -5,6 +5,8 @@
 
     timestamp_start = params[:start_timestamp]
     timestamp_end = params[:end_timestamp]
+
+    wv_prefs = current_user ? current_user.watch_video_preferences : User::WATCH_VIDEO_DEFAULTS
 %>
 
 <%= content_for :head do %>
@@ -28,17 +30,28 @@
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-watch-video-activity-current-text-line-class="s-line-active"
     data-watch-video-activity-word-timing-value="<%= params[:word_timing] ? true : false %>"
+    data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <div class="contents">
     <!-- Header: title + translation toggle -->
     <div class="order-4 flex items-center justify-between s-pad" style="padding-top: 12px; padding-bottom: 8px;">
       <div class="s-eyebrow">Tap any word</div>
-      <label class="s-toggle">
-        <input checked="true" type="checkbox"
-          data-watch-video-activity-target="showTranslation"
-          data-action="change->watch-video-activity#toggleTranslation">
-        Translation
-      </label>
+      <div class="flex items-center" style="gap: 16px;">
+        <% if params[:word_timing] %>
+          <label class="s-toggle">
+            <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
+              data-watch-video-activity-target="showKaraoke"
+              data-action="change->watch-video-activity#toggleKaraoke">
+            Karaoke
+          </label>
+        <% end %>
+        <label class="s-toggle">
+          <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
+            data-watch-video-activity-target="showTranslation"
+            data-action="change->watch-video-activity#toggleTranslation">
+          Translation
+        </label>
+      </div>
     </div>
 
     <% if @activity.text_header.present? %>
@@ -72,7 +85,7 @@
             <div class="s-phrase__l1" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
               <%= wrap_tokens_in_spans(phrase, { class: "s-token" }) %>
             </div>
-            <div class="s-phrase__l2" data-watch-video-activity-target="translation" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
+            <div class="s-phrase__l2 <%= 'hidden' unless wv_prefs["translation"] %>" data-watch-video-activity-target="translation" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
               <%= phrase.text_l2 %>
             </div>
           </div>
