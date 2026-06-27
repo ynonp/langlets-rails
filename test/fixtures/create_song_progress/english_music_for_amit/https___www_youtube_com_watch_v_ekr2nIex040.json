@@ -9,568 +9,3397 @@
         "id": "phrase_1",
         "text_l1": "Apateu, apateu",
         "timestamp": "00:06.50",
-        "timestamp_end": "00:07.80",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp_end": "00:07.70",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:06.50",
+            "timestamp_end": "00:07.05",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:07.15",
+            "timestamp_end": "00:07.70",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_2",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:08.10",
-        "timestamp_end": "00:09.40",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:07.80",
+        "timestamp_end": "00:09.00",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:07.80",
+            "timestamp_end": "00:08.35",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:08.45",
+            "timestamp_end": "00:09.00",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_3",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:09.70",
-        "timestamp_end": "00:11.00",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:09.10",
+        "timestamp_end": "00:10.30",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:09.10",
+            "timestamp_end": "00:09.65",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:09.75",
+            "timestamp_end": "00:10.30",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_4",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "00:11.30",
-        "timestamp_end": "00:12.80",
+        "timestamp": "00:10.40",
+        "timestamp_end": "00:11.60",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "00:10.40",
+            "timestamp_end": "00:10.70",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "00:10.80",
+            "timestamp_end": "00:11.15",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "00:11.25",
+            "timestamp_end": "00:11.60",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_5",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:13.00",
+        "timestamp": "00:13.10",
         "timestamp_end": "00:14.30",
-        "text_l2": "אפאטו, אפאטו"
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:13.10",
+            "timestamp_end": "00:13.65",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:13.75",
+            "timestamp_end": "00:14.30",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_6",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:14.60",
-        "timestamp_end": "00:15.90",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:14.40",
+        "timestamp_end": "00:15.60",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:14.40",
+            "timestamp_end": "00:14.95",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:15.05",
+            "timestamp_end": "00:15.60",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_7",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:16.20",
-        "timestamp_end": "00:17.50",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:15.70",
+        "timestamp_end": "00:16.90",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:15.70",
+            "timestamp_end": "00:16.25",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:16.35",
+            "timestamp_end": "00:16.90",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_8",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "00:17.80",
-        "timestamp_end": "00:19.30",
+        "timestamp": "00:17.00",
+        "timestamp_end": "00:18.20",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "00:17.00",
+            "timestamp_end": "00:17.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "00:17.40",
+            "timestamp_end": "00:17.75",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "00:17.85",
+            "timestamp_end": "00:18.20",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_9",
-        "text_l1": "Kissy face, kissy face",
-        "timestamp": "00:19.50",
-        "timestamp_end": "00:21.00",
-        "text_l2": "פרצוף נשיקות, פרצוף נשיקות"
+        "text_l1": "Kissy face, kissy face,",
+        "timestamp": "00:19.40",
+        "timestamp_end": "00:20.85",
+        "words": [
+          {
+            "text": "Kissy",
+            "timestamp": "00:19.40",
+            "timestamp_end": "00:19.75",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "מנשק"
+          },
+          {
+            "text": "face,",
+            "timestamp": "00:19.80",
+            "timestamp_end": "00:20.10",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "פרצוף"
+          },
+          {
+            "text": "kissy",
+            "timestamp": "00:20.15",
+            "timestamp_end": "00:20.50",
+            "l1_start_index": 12,
+            "l1_end_index": 16,
+            "translation": "מנשק"
+          },
+          {
+            "text": "face,",
+            "timestamp": "00:20.55",
+            "timestamp_end": "00:20.85",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "פרצוף"
+          }
+        ],
+        "text_l2": "פרצוף נשיקות, פרצוף נשיקות,"
       },
       {
         "id": "phrase_10",
-        "text_l1": "Sent to your phone, but",
-        "timestamp": "00:21.10",
-        "timestamp_end": "00:22.60",
+        "text_l1": "sent to your phone, but",
+        "timestamp": "00:20.90",
+        "timestamp_end": "00:22.00",
+        "words": [
+          {
+            "text": "sent",
+            "timestamp": "00:20.90",
+            "timestamp_end": "00:21.15",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "שלח"
+          },
+          {
+            "text": "to",
+            "timestamp": "00:21.20",
+            "timestamp_end": "00:21.35",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "ל"
+          },
+          {
+            "text": "your",
+            "timestamp": "00:21.40",
+            "timestamp_end": "00:21.55",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "שלך"
+          },
+          {
+            "text": "phone,",
+            "timestamp": "00:21.60",
+            "timestamp_end": "00:21.85",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "טלפון"
+          },
+          {
+            "text": "but",
+            "timestamp": "00:21.90",
+            "timestamp_end": "00:22.00",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "אבל"
+          }
+        ],
         "text_l2": "נשלח לטלפון שלך, אבל"
       },
       {
         "id": "phrase_11",
         "text_l1": "I'm tryna kiss your lips for real",
-        "timestamp": "00:22.70",
-        "timestamp_end": "00:25.00",
+        "timestamp": "00:22.40",
+        "timestamp_end": "00:24.80",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "00:22.40",
+            "timestamp_end": "00:22.65",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "tryna",
+            "timestamp": "00:22.70",
+            "timestamp_end": "00:23.05",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "מנסה"
+          },
+          {
+            "text": "kiss",
+            "timestamp": "00:23.10",
+            "timestamp_end": "00:23.35",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "לנשק"
+          },
+          {
+            "text": "your",
+            "timestamp": "00:23.40",
+            "timestamp_end": "00:23.55",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "שלך"
+          },
+          {
+            "text": "lips",
+            "timestamp": "00:23.60",
+            "timestamp_end": "00:23.90",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "שפתיים"
+          },
+          {
+            "text": "for",
+            "timestamp": "00:23.95",
+            "timestamp_end": "00:24.15",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "בשביל"
+          },
+          {
+            "text": "real",
+            "timestamp": "00:24.20",
+            "timestamp_end": "00:24.80",
+            "l1_start_index": 29,
+            "l1_end_index": 32,
+            "translation": "אמיתי"
+          }
+        ],
         "text_l2": "אני מנסה לנשק את השפתיים שלך באמת"
       },
       {
         "id": "phrase_12",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "00:25.10",
-        "timestamp_end": "00:25.90",
+        "timestamp": "00:24.90",
+        "timestamp_end": "00:25.80",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "00:24.90",
+            "timestamp_end": "00:25.10",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "00:25.15",
+            "timestamp_end": "00:25.45",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "00:25.50",
+            "timestamp_end": "00:25.80",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_13",
-        "text_l1": "Red hearts, red hearts",
-        "timestamp": "00:26.00",
-        "timestamp_end": "00:27.50",
-        "text_l2": "לבבות אדומים, לבבות אדומים"
+        "text_l1": "Red hearts, red hearts,",
+        "timestamp": "00:25.90",
+        "timestamp_end": "00:27.35",
+        "words": [
+          {
+            "text": "Red",
+            "timestamp": "00:25.90",
+            "timestamp_end": "00:26.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אדום"
+          },
+          {
+            "text": "hearts,",
+            "timestamp": "00:26.25",
+            "timestamp_end": "00:26.60",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "לבבות"
+          },
+          {
+            "text": "red",
+            "timestamp": "00:26.65",
+            "timestamp_end": "00:26.95",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "אדום"
+          },
+          {
+            "text": "hearts,",
+            "timestamp": "00:27.00",
+            "timestamp_end": "00:27.35",
+            "l1_start_index": 16,
+            "l1_end_index": 22,
+            "translation": "לבבות"
+          }
+        ],
+        "text_l2": "לבבות אדומים, לבבות אדומים,"
       },
       {
         "id": "phrase_14",
-        "text_l1": "That's what I'm on, yeah",
-        "timestamp": "00:27.60",
-        "timestamp_end": "00:29.10",
-        "text_l2": "זה מה שאני מחפש, כן"
+        "text_l1": "that's what I'm on, yeah",
+        "timestamp": "00:27.40",
+        "timestamp_end": "00:28.50",
+        "words": [
+          {
+            "text": "that's",
+            "timestamp": "00:27.40",
+            "timestamp_end": "00:27.65",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "זה"
+          },
+          {
+            "text": "what",
+            "timestamp": "00:27.70",
+            "timestamp_end": "00:27.85",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "מה"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "00:27.90",
+            "timestamp_end": "00:28.05",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "אני"
+          },
+          {
+            "text": "on,",
+            "timestamp": "00:28.10",
+            "timestamp_end": "00:28.30",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "על"
+          },
+          {
+            "text": "yeah",
+            "timestamp": "00:28.35",
+            "timestamp_end": "00:28.50",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כן"
+          }
+        ],
+        "text_l2": "זה מה שאני מכוון אליו, כן"
       },
       {
         "id": "phrase_15",
         "text_l1": "Come give me something I can feel",
-        "timestamp": "00:29.20",
-        "timestamp_end": "00:31.50",
+        "timestamp": "00:28.90",
+        "timestamp_end": "00:31.00",
+        "words": [
+          {
+            "text": "Come",
+            "timestamp": "00:28.90",
+            "timestamp_end": "00:29.15",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "בוא"
+          },
+          {
+            "text": "give",
+            "timestamp": "00:29.20",
+            "timestamp_end": "00:29.40",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "תן"
+          },
+          {
+            "text": "me",
+            "timestamp": "00:29.45",
+            "timestamp_end": "00:29.60",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "לי"
+          },
+          {
+            "text": "something",
+            "timestamp": "00:29.65",
+            "timestamp_end": "00:30.10",
+            "l1_start_index": 13,
+            "l1_end_index": 21,
+            "translation": "משהו"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:30.15",
+            "timestamp_end": "00:30.30",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "can",
+            "timestamp": "00:30.35",
+            "timestamp_end": "00:30.55",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "יכול"
+          },
+          {
+            "text": "feel",
+            "timestamp": "00:30.60",
+            "timestamp_end": "00:31.00",
+            "l1_start_index": 29,
+            "l1_end_index": 32,
+            "translation": "להרגיש"
+          }
+        ],
         "text_l2": "בואי תני לי משהו שאוכל להרגיש"
       },
       {
         "id": "phrase_16",
-        "text_l1": "Oh-oh, oh",
-        "timestamp": "00:31.60",
-        "timestamp_end": "00:32.40",
-        "text_l2": "או-או, או"
+        "text_l1": "Oh, oh, oh",
+        "timestamp": "00:31.05",
+        "timestamp_end": "00:31.50",
+        "words": [
+          {
+            "text": "Oh,",
+            "timestamp": "00:31.05",
+            "timestamp_end": "00:31.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "או"
+          },
+          {
+            "text": "oh,",
+            "timestamp": "00:31.25",
+            "timestamp_end": "00:31.35",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "או"
+          },
+          {
+            "text": "oh",
+            "timestamp": "00:31.40",
+            "timestamp_end": "00:31.50",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "או"
+          }
+        ],
+        "text_l2": "או, או, או"
       },
       {
         "id": "phrase_17",
         "text_l1": "Don't you want me like I want you, baby?",
-        "timestamp": "00:32.50",
-        "timestamp_end": "00:35.70",
-        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+        "timestamp": "00:32.00",
+        "timestamp_end": "00:35.20",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "00:32.00",
+            "timestamp_end": "00:32.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "אל"
+          },
+          {
+            "text": "you",
+            "timestamp": "00:32.35",
+            "timestamp_end": "00:32.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "want",
+            "timestamp": "00:32.55",
+            "timestamp_end": "00:32.80",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "רוצה"
+          },
+          {
+            "text": "me",
+            "timestamp": "00:32.85",
+            "timestamp_end": "00:33.10",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "00:33.15",
+            "timestamp_end": "00:33.35",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:33.40",
+            "timestamp_end": "00:33.55",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "want",
+            "timestamp": "00:33.60",
+            "timestamp_end": "00:33.85",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "רוצה"
+          },
+          {
+            "text": "you,",
+            "timestamp": "00:33.90",
+            "timestamp_end": "00:34.15",
+            "l1_start_index": 30,
+            "l1_end_index": 33,
+            "translation": "אותך"
+          },
+          {
+            "text": "baby?",
+            "timestamp": "00:34.20",
+            "timestamp_end": "00:35.20",
+            "l1_start_index": 35,
+            "l1_end_index": 39,
+            "translation": "מותק"
+          }
+        ],
+        "text_l2": "את לא רוצה אותי כמו שאני רוצה אותך, יקירה?"
       },
       {
         "id": "phrase_18",
         "text_l1": "Don't you need me like I need you now?",
-        "timestamp": "00:35.80",
-        "timestamp_end": "00:38.90",
-        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+        "timestamp": "00:35.30",
+        "timestamp_end": "00:38.50",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "00:35.30",
+            "timestamp_end": "00:35.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "אל"
+          },
+          {
+            "text": "you",
+            "timestamp": "00:35.65",
+            "timestamp_end": "00:35.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "need",
+            "timestamp": "00:35.85",
+            "timestamp_end": "00:36.10",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "צריך"
+          },
+          {
+            "text": "me",
+            "timestamp": "00:36.15",
+            "timestamp_end": "00:36.40",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "00:36.45",
+            "timestamp_end": "00:36.65",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:36.70",
+            "timestamp_end": "00:36.85",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "need",
+            "timestamp": "00:36.90",
+            "timestamp_end": "00:37.15",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "צריך"
+          },
+          {
+            "text": "you",
+            "timestamp": "00:37.20",
+            "timestamp_end": "00:37.45",
+            "l1_start_index": 30,
+            "l1_end_index": 32,
+            "translation": "אותך"
+          },
+          {
+            "text": "now?",
+            "timestamp": "00:37.50",
+            "timestamp_end": "00:38.50",
+            "l1_start_index": 34,
+            "l1_end_index": 37,
+            "translation": "עכשיו"
+          }
+        ],
+        "text_l2": "את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
       },
       {
         "id": "phrase_19",
-        "text_l1": "Sleep tomorrow, but tonight, go crazy",
-        "timestamp": "00:39.00",
-        "timestamp_end": "00:42.20",
-        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+        "text_l1": "Sleep tomorrow, but tonight go crazy",
+        "timestamp": "00:38.60",
+        "timestamp_end": "00:41.80",
+        "words": [
+          {
+            "text": "Sleep",
+            "timestamp": "00:38.60",
+            "timestamp_end": "00:39.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "תישן"
+          },
+          {
+            "text": "tomorrow,",
+            "timestamp": "00:39.05",
+            "timestamp_end": "00:39.60",
+            "l1_start_index": 6,
+            "l1_end_index": 14,
+            "translation": "מחר"
+          },
+          {
+            "text": "but",
+            "timestamp": "00:39.65",
+            "timestamp_end": "00:39.85",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "אבל"
+          },
+          {
+            "text": "tonight",
+            "timestamp": "00:39.90",
+            "timestamp_end": "00:40.40",
+            "l1_start_index": 20,
+            "l1_end_index": 26,
+            "translation": "הלילה"
+          },
+          {
+            "text": "go",
+            "timestamp": "00:40.45",
+            "timestamp_end": "00:40.75",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "תהיה"
+          },
+          {
+            "text": "crazy",
+            "timestamp": "00:40.80",
+            "timestamp_end": "00:41.80",
+            "l1_start_index": 31,
+            "l1_end_index": 35,
+            "translation": "משוגע"
+          }
+        ],
+        "text_l2": "תישני מחר, אבל הלילה תשתגעי"
       },
       {
         "id": "phrase_20",
         "text_l1": "All you gotta do is just meet me at the",
-        "timestamp": "00:42.30",
-        "timestamp_end": "00:45.50",
-        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+        "timestamp": "00:41.90",
+        "timestamp_end": "00:45.20",
+        "words": [
+          {
+            "text": "All",
+            "timestamp": "00:41.90",
+            "timestamp_end": "00:42.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "כל"
+          },
+          {
+            "text": "you",
+            "timestamp": "00:42.25",
+            "timestamp_end": "00:42.40",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אתה"
+          },
+          {
+            "text": "gotta",
+            "timestamp": "00:42.45",
+            "timestamp_end": "00:42.70",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "חייב"
+          },
+          {
+            "text": "do",
+            "timestamp": "00:42.75",
+            "timestamp_end": "00:42.95",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "לעשות"
+          },
+          {
+            "text": "is",
+            "timestamp": "00:43.00",
+            "timestamp_end": "00:43.15",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "זה"
+          },
+          {
+            "text": "just",
+            "timestamp": "00:43.20",
+            "timestamp_end": "00:43.45",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "00:43.50",
+            "timestamp_end": "00:43.80",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "00:43.85",
+            "timestamp_end": "00:44.10",
+            "l1_start_index": 30,
+            "l1_end_index": 31,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "00:44.15",
+            "timestamp_end": "00:44.35",
+            "l1_start_index": 33,
+            "l1_end_index": 34,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:44.40",
+            "timestamp_end": "00:45.20",
+            "l1_start_index": 36,
+            "l1_end_index": 38,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_21",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:45.60",
-        "timestamp_end": "00:46.90",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:45.30",
+        "timestamp_end": "00:46.50",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:45.30",
+            "timestamp_end": "00:45.85",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:45.95",
+            "timestamp_end": "00:46.50",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_22",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:47.20",
-        "timestamp_end": "00:48.50",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:46.60",
+        "timestamp_end": "00:47.80",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:46.60",
+            "timestamp_end": "00:47.15",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:47.25",
+            "timestamp_end": "00:47.80",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_23",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:48.80",
-        "timestamp_end": "00:50.10",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:47.90",
+        "timestamp_end": "00:49.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:47.90",
+            "timestamp_end": "00:48.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:48.55",
+            "timestamp_end": "00:49.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_24",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "00:50.40",
-        "timestamp_end": "00:51.90",
+        "timestamp": "00:49.20",
+        "timestamp_end": "00:50.40",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "00:49.20",
+            "timestamp_end": "00:49.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "00:49.60",
+            "timestamp_end": "00:49.95",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "00:50.05",
+            "timestamp_end": "00:50.40",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_25",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:52.10",
-        "timestamp_end": "00:53.40",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:51.90",
+        "timestamp_end": "00:53.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:51.90",
+            "timestamp_end": "00:52.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:52.55",
+            "timestamp_end": "00:53.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_26",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:53.70",
-        "timestamp_end": "00:55.00",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:53.20",
+        "timestamp_end": "00:54.40",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:53.20",
+            "timestamp_end": "00:53.75",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:53.85",
+            "timestamp_end": "00:54.40",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_27",
         "text_l1": "Apateu, apateu",
-        "timestamp": "00:55.30",
-        "timestamp_end": "00:56.60",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "00:54.50",
+        "timestamp_end": "00:55.70",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "00:54.50",
+            "timestamp_end": "00:55.05",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "00:55.15",
+            "timestamp_end": "00:55.70",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_28",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "00:56.90",
-        "timestamp_end": "00:58.40",
+        "timestamp": "00:55.80",
+        "timestamp_end": "00:57.00",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "00:55.80",
+            "timestamp_end": "00:56.10",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "00:56.20",
+            "timestamp_end": "00:56.55",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "00:56.65",
+            "timestamp_end": "00:57.00",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_29",
-        "text_l1": "It's whatever, it's whatever",
-        "timestamp": "00:58.60",
-        "timestamp_end": "01:00.10",
-        "text_l2": "זה מה שבא לך, זה מה שבא לך"
+        "text_l1": "It's whatever, it's whatever,",
+        "timestamp": "00:58.00",
+        "timestamp_end": "00:59.45",
+        "words": [
+          {
+            "text": "It's",
+            "timestamp": "00:58.00",
+            "timestamp_end": "00:58.20",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "זה"
+          },
+          {
+            "text": "whatever,",
+            "timestamp": "00:58.25",
+            "timestamp_end": "00:58.70",
+            "l1_start_index": 5,
+            "l1_end_index": 13,
+            "translation": "לא משנה"
+          },
+          {
+            "text": "it's",
+            "timestamp": "00:58.75",
+            "timestamp_end": "00:58.95",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "זה"
+          },
+          {
+            "text": "whatever,",
+            "timestamp": "00:59.00",
+            "timestamp_end": "00:59.45",
+            "l1_start_index": 20,
+            "l1_end_index": 28,
+            "translation": "לא משנה"
+          }
+        ],
+        "text_l2": "זה לא משנה, זה לא משנה,"
       },
       {
         "id": "phrase_30",
-        "text_l1": "It's whatever you like",
-        "timestamp": "01:00.20",
-        "timestamp_end": "01:01.70",
+        "text_l1": "it's whatever you like",
+        "timestamp": "00:59.50",
+        "timestamp_end": "01:01.00",
+        "words": [
+          {
+            "text": "it's",
+            "timestamp": "00:59.50",
+            "timestamp_end": "00:59.70",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "זה"
+          },
+          {
+            "text": "whatever",
+            "timestamp": "00:59.75",
+            "timestamp_end": "01:00.20",
+            "l1_start_index": 5,
+            "l1_end_index": 12,
+            "translation": "לא משנה"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:00.25",
+            "timestamp_end": "01:00.45",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "אתה"
+          },
+          {
+            "text": "like",
+            "timestamp": "01:00.50",
+            "timestamp_end": "01:01.00",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "אוהב"
+          }
+        ],
         "text_l2": "זה מה שבא לך"
       },
       {
         "id": "phrase_31",
         "text_l1": "Turn this apateu into a club",
-        "timestamp": "01:01.80",
-        "timestamp_end": "01:04.10",
-        "text_l2": "הפוך את האפאטו הזה למועדון"
+        "timestamp": "01:01.10",
+        "timestamp_end": "01:03.50",
+        "words": [
+          {
+            "text": "Turn",
+            "timestamp": "01:01.10",
+            "timestamp_end": "01:01.40",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "הפוך"
+          },
+          {
+            "text": "this",
+            "timestamp": "01:01.45",
+            "timestamp_end": "01:01.65",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "את"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:01.70",
+            "timestamp_end": "01:02.20",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "הדירה"
+          },
+          {
+            "text": "into",
+            "timestamp": "01:02.25",
+            "timestamp_end": "01:02.60",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "ל"
+          },
+          {
+            "text": "a",
+            "timestamp": "01:02.65",
+            "timestamp_end": "01:02.80",
+            "l1_start_index": 22,
+            "l1_end_index": 22,
+            "translation": "ל"
+          },
+          {
+            "text": "club",
+            "timestamp": "01:02.85",
+            "timestamp_end": "01:03.50",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "מועדון"
+          }
+        ],
+        "text_l2": "הפכי את הדירה הזו למועדון"
       },
       {
         "id": "phrase_32",
-        "text_l1": "Uh-huh, uh-huh",
-        "timestamp": "01:04.20",
-        "timestamp_end": "01:05.00",
-        "text_l2": "אה-הא, אה-הא"
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "01:03.60",
+        "timestamp_end": "01:04.50",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "01:03.60",
+            "timestamp_end": "01:03.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "01:03.85",
+            "timestamp_end": "01:04.15",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "01:04.20",
+            "timestamp_end": "01:04.50",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
+        "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_33",
         "text_l1": "I'm talking drink, dance, smoke, freak,",
-        "timestamp": "01:05.10",
-        "timestamp_end": "01:07.00",
-        "text_l2": "אני מדבר על שתייה, ריקוד, עישון, פרוע,"
+        "timestamp": "01:04.60",
+        "timestamp_end": "01:06.55",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "01:04.60",
+            "timestamp_end": "01:04.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "talking",
+            "timestamp": "01:04.85",
+            "timestamp_end": "01:05.15",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "מדבר"
+          },
+          {
+            "text": "drink,",
+            "timestamp": "01:05.20",
+            "timestamp_end": "01:05.50",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "שתייה"
+          },
+          {
+            "text": "dance,",
+            "timestamp": "01:05.55",
+            "timestamp_end": "01:05.85",
+            "l1_start_index": 19,
+            "l1_end_index": 24,
+            "translation": "ריקוד"
+          },
+          {
+            "text": "smoke,",
+            "timestamp": "01:05.90",
+            "timestamp_end": "01:06.20",
+            "l1_start_index": 26,
+            "l1_end_index": 31,
+            "translation": "עישון"
+          },
+          {
+            "text": "freak,",
+            "timestamp": "01:06.25",
+            "timestamp_end": "01:06.55",
+            "l1_start_index": 33,
+            "l1_end_index": 38,
+            "translation": "להשתולל"
+          }
+        ],
+        "text_l2": "אני מדבר על שתייה, ריקוד, עישון, השתוללות,"
       },
       {
         "id": "phrase_34",
-        "text_l1": "party all night",
-        "timestamp": "01:07.10",
-        "timestamp_end": "01:08.20",
-        "text_l2": "מסיבה כל הלילה"
+        "text_l1": "party all night, come on",
+        "timestamp": "01:06.60",
+        "timestamp_end": "01:07.90",
+        "words": [
+          {
+            "text": "party",
+            "timestamp": "01:06.60",
+            "timestamp_end": "01:06.95",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "מסיבה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:07.00",
+            "timestamp_end": "01:07.15",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "01:07.20",
+            "timestamp_end": "01:07.50",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "הלילה"
+          },
+          {
+            "text": "come",
+            "timestamp": "01:07.55",
+            "timestamp_end": "01:07.70",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "בוא"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:07.75",
+            "timestamp_end": "01:07.90",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "קדימה"
+          }
+        ],
+        "text_l2": "מסיבה כל הלילה, קדימה"
       },
       {
         "id": "phrase_35",
         "text_l1": "Geonbae, geonbae, girl, what's up?",
-        "timestamp": "01:08.30",
-        "timestamp_end": "01:10.60",
-        "text_l2": "גאונבאה, גאונבאה, ילדה, מה נשמע?"
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:10.00",
+        "words": [
+          {
+            "text": "Geonbae,",
+            "timestamp": "01:08.00",
+            "timestamp_end": "01:08.40",
+            "l1_start_index": 0,
+            "l1_end_index": 7,
+            "translation": "לחיים"
+          },
+          {
+            "text": "geonbae,",
+            "timestamp": "01:08.45",
+            "timestamp_end": "01:08.85",
+            "l1_start_index": 9,
+            "l1_end_index": 16,
+            "translation": "לחיים"
+          },
+          {
+            "text": "girl,",
+            "timestamp": "01:08.90",
+            "timestamp_end": "01:09.20",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "ילדה"
+          },
+          {
+            "text": "what's",
+            "timestamp": "01:09.25",
+            "timestamp_end": "01:09.50",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "מה"
+          },
+          {
+            "text": "up?",
+            "timestamp": "01:09.55",
+            "timestamp_end": "01:10.00",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "קורה"
+          }
+        ],
+        "text_l2": "לחיים, לחיים, ילדה, מה נשמע?"
       },
       {
         "id": "phrase_36",
-        "text_l1": "Oh-oh, oh",
-        "timestamp": "01:10.70",
-        "timestamp_end": "01:11.50",
-        "text_l2": "או-או, או"
+        "text_l1": "Oh, oh, oh",
+        "timestamp": "01:10.05",
+        "timestamp_end": "01:10.50",
+        "words": [
+          {
+            "text": "Oh,",
+            "timestamp": "01:10.05",
+            "timestamp_end": "01:10.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "או"
+          },
+          {
+            "text": "oh,",
+            "timestamp": "01:10.25",
+            "timestamp_end": "01:10.35",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "או"
+          },
+          {
+            "text": "oh",
+            "timestamp": "01:10.40",
+            "timestamp_end": "01:10.50",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "או"
+          }
+        ],
+        "text_l2": "או, או, או"
       },
       {
         "id": "phrase_37",
         "text_l1": "Don't you want me like I want you, baby?",
-        "timestamp": "01:11.60",
-        "timestamp_end": "01:14.80",
-        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:14.20",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "01:11.00",
+            "timestamp_end": "01:11.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "אל"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:11.35",
+            "timestamp_end": "01:11.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "want",
+            "timestamp": "01:11.55",
+            "timestamp_end": "01:11.80",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "רוצה"
+          },
+          {
+            "text": "me",
+            "timestamp": "01:11.85",
+            "timestamp_end": "01:12.10",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "01:12.15",
+            "timestamp_end": "01:12.35",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "01:12.40",
+            "timestamp_end": "01:12.55",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "want",
+            "timestamp": "01:12.60",
+            "timestamp_end": "01:12.85",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "רוצה"
+          },
+          {
+            "text": "you,",
+            "timestamp": "01:12.90",
+            "timestamp_end": "01:13.15",
+            "l1_start_index": 30,
+            "l1_end_index": 33,
+            "translation": "אותך"
+          },
+          {
+            "text": "baby?",
+            "timestamp": "01:13.20",
+            "timestamp_end": "01:14.20",
+            "l1_start_index": 35,
+            "l1_end_index": 39,
+            "translation": "מותק"
+          }
+        ],
+        "text_l2": "את לא רוצה אותי כמו שאני רוצה אותך, יקירה?"
       },
       {
         "id": "phrase_38",
         "text_l1": "Don't you need me like I need you now?",
-        "timestamp": "01:14.90",
-        "timestamp_end": "01:18.00",
-        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+        "timestamp": "01:14.30",
+        "timestamp_end": "01:17.50",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "01:14.30",
+            "timestamp_end": "01:14.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "אל"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:14.65",
+            "timestamp_end": "01:14.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "need",
+            "timestamp": "01:14.85",
+            "timestamp_end": "01:15.10",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "צריך"
+          },
+          {
+            "text": "me",
+            "timestamp": "01:15.15",
+            "timestamp_end": "01:15.40",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "01:15.45",
+            "timestamp_end": "01:15.65",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "01:15.70",
+            "timestamp_end": "01:15.85",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "need",
+            "timestamp": "01:15.90",
+            "timestamp_end": "01:16.15",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "צריך"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:16.20",
+            "timestamp_end": "01:16.45",
+            "l1_start_index": 30,
+            "l1_end_index": 32,
+            "translation": "אותך"
+          },
+          {
+            "text": "now?",
+            "timestamp": "01:16.50",
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 34,
+            "l1_end_index": 37,
+            "translation": "עכשיו"
+          }
+        ],
+        "text_l2": "את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
       },
       {
         "id": "phrase_39",
-        "text_l1": "Sleep tomorrow, but tonight, go crazy",
-        "timestamp": "01:18.10",
-        "timestamp_end": "01:21.30",
-        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+        "text_l1": "Sleep tomorrow, but tonight go crazy",
+        "timestamp": "01:17.60",
+        "timestamp_end": "01:20.80",
+        "words": [
+          {
+            "text": "Sleep",
+            "timestamp": "01:17.60",
+            "timestamp_end": "01:18.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "תישן"
+          },
+          {
+            "text": "tomorrow,",
+            "timestamp": "01:18.05",
+            "timestamp_end": "01:18.60",
+            "l1_start_index": 6,
+            "l1_end_index": 14,
+            "translation": "מחר"
+          },
+          {
+            "text": "but",
+            "timestamp": "01:18.65",
+            "timestamp_end": "01:18.85",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "אבל"
+          },
+          {
+            "text": "tonight",
+            "timestamp": "01:18.90",
+            "timestamp_end": "01:19.40",
+            "l1_start_index": 20,
+            "l1_end_index": 26,
+            "translation": "הלילה"
+          },
+          {
+            "text": "go",
+            "timestamp": "01:19.45",
+            "timestamp_end": "01:19.75",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "תהיה"
+          },
+          {
+            "text": "crazy",
+            "timestamp": "01:19.80",
+            "timestamp_end": "01:20.80",
+            "l1_start_index": 31,
+            "l1_end_index": 35,
+            "translation": "משוגע"
+          }
+        ],
+        "text_l2": "תישני מחר, אבל הלילה תשתגעי"
       },
       {
         "id": "phrase_40",
         "text_l1": "All you gotta do is just meet me at the",
-        "timestamp": "01:21.40",
-        "timestamp_end": "01:24.60",
-        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+        "timestamp": "01:20.90",
+        "timestamp_end": "01:24.20",
+        "words": [
+          {
+            "text": "All",
+            "timestamp": "01:20.90",
+            "timestamp_end": "01:21.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "כל"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:21.25",
+            "timestamp_end": "01:21.40",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אתה"
+          },
+          {
+            "text": "gotta",
+            "timestamp": "01:21.45",
+            "timestamp_end": "01:21.70",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "חייב"
+          },
+          {
+            "text": "do",
+            "timestamp": "01:21.75",
+            "timestamp_end": "01:21.95",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "לעשות"
+          },
+          {
+            "text": "is",
+            "timestamp": "01:22.00",
+            "timestamp_end": "01:22.15",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "זה"
+          },
+          {
+            "text": "just",
+            "timestamp": "01:22.20",
+            "timestamp_end": "01:22.45",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:22.80",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "01:22.85",
+            "timestamp_end": "01:23.10",
+            "l1_start_index": 30,
+            "l1_end_index": 31,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "01:23.15",
+            "timestamp_end": "01:23.35",
+            "l1_start_index": 33,
+            "l1_end_index": 34,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:23.40",
+            "timestamp_end": "01:24.20",
+            "l1_start_index": 36,
+            "l1_end_index": 38,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_41",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:24.70",
-        "timestamp_end": "01:26.00",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:24.30",
+        "timestamp_end": "01:25.50",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:24.30",
+            "timestamp_end": "01:24.85",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:24.95",
+            "timestamp_end": "01:25.50",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_42",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:26.30",
-        "timestamp_end": "01:27.60",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:25.60",
+        "timestamp_end": "01:26.80",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:25.60",
+            "timestamp_end": "01:26.15",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:26.25",
+            "timestamp_end": "01:26.80",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_43",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:27.90",
-        "timestamp_end": "01:29.20",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:26.90",
+        "timestamp_end": "01:28.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:26.90",
+            "timestamp_end": "01:27.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:27.55",
+            "timestamp_end": "01:28.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_44",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "01:29.50",
-        "timestamp_end": "01:31.00",
+        "timestamp": "01:28.20",
+        "timestamp_end": "01:29.40",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "01:28.20",
+            "timestamp_end": "01:28.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "01:28.60",
+            "timestamp_end": "01:28.95",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "01:29.05",
+            "timestamp_end": "01:29.40",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_45",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:31.20",
-        "timestamp_end": "01:32.50",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:30.90",
+        "timestamp_end": "01:32.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:30.90",
+            "timestamp_end": "01:31.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:31.55",
+            "timestamp_end": "01:32.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_46",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:32.80",
-        "timestamp_end": "01:34.10",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:32.20",
+        "timestamp_end": "01:33.40",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:32.20",
+            "timestamp_end": "01:32.75",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:32.85",
+            "timestamp_end": "01:33.40",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_47",
         "text_l1": "Apateu, apateu",
-        "timestamp": "01:34.40",
-        "timestamp_end": "01:35.70",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "01:33.50",
+        "timestamp_end": "01:34.70",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "01:33.50",
+            "timestamp_end": "01:34.05",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "דירה"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "01:34.15",
+            "timestamp_end": "01:34.70",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "דירה"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_48",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "01:36.00",
-        "timestamp_end": "01:37.50",
+        "timestamp": "01:34.80",
+        "timestamp_end": "01:36.00",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "01:34.80",
+            "timestamp_end": "01:35.10",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "01:35.20",
+            "timestamp_end": "01:35.55",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "01:35.65",
+            "timestamp_end": "01:36.00",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       },
       {
         "id": "phrase_49",
         "text_l1": "Hey, so now you know the game",
-        "timestamp": "01:37.60",
-        "timestamp_end": "01:39.90",
+        "timestamp": "01:37.00",
+        "timestamp_end": "01:39.50",
+        "words": [
+          {
+            "text": "Hey,",
+            "timestamp": "01:37.00",
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "היי"
+          },
+          {
+            "text": "so",
+            "timestamp": "01:37.60",
+            "timestamp_end": "01:37.80",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "אז"
+          },
+          {
+            "text": "now",
+            "timestamp": "01:37.85",
+            "timestamp_end": "01:38.10",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:38.15",
+            "timestamp_end": "01:38.30",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "אתה"
+          },
+          {
+            "text": "know",
+            "timestamp": "01:38.35",
+            "timestamp_end": "01:38.60",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "יודע"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:38.65",
+            "timestamp_end": "01:38.85",
+            "l1_start_index": 21,
+            "l1_end_index": 23,
+            "translation": "ה"
+          },
+          {
+            "text": "game",
+            "timestamp": "01:38.90",
+            "timestamp_end": "01:39.50",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "משחק"
+          }
+        ],
         "text_l2": "היי, אז עכשיו את מכירה את המשחק"
       },
       {
         "id": "phrase_50",
         "text_l1": "Are you ready?",
-        "timestamp": "01:40.00",
-        "timestamp_end": "01:41.00",
+        "timestamp": "01:39.60",
+        "timestamp_end": "01:40.65",
+        "words": [
+          {
+            "text": "Are",
+            "timestamp": "01:39.60",
+            "timestamp_end": "01:39.85",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "האם"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:39.90",
+            "timestamp_end": "01:40.10",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אתה"
+          },
+          {
+            "text": "ready?",
+            "timestamp": "01:40.15",
+            "timestamp_end": "01:40.65",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "מוכן"
+          }
+        ],
         "text_l2": "את מוכנה?"
       },
       {
         "id": "phrase_51",
-        "text_l1": "'Cause I'm comin' to get ya, get ya,",
-        "timestamp": "01:41.10",
-        "timestamp_end": "01:42.70",
-        "text_l2": "כי אני בא לקחת אותך, לקחת אותך,"
+        "text_l1": "'Cause I'm coming to get you, get you",
+        "timestamp": "01:40.70",
+        "timestamp_end": "01:43.50",
+        "words": [
+          {
+            "text": "'Cause",
+            "timestamp": "01:40.70",
+            "timestamp_end": "01:40.95",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "כי"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:41.00",
+            "timestamp_end": "01:41.20",
+            "l1_start_index": 7,
+            "l1_end_index": 9,
+            "translation": "אני"
+          },
+          {
+            "text": "coming",
+            "timestamp": "01:41.25",
+            "timestamp_end": "01:41.60",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "בא"
+          },
+          {
+            "text": "to",
+            "timestamp": "01:41.65",
+            "timestamp_end": "01:41.85",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "ל"
+          },
+          {
+            "text": "get",
+            "timestamp": "01:41.90",
+            "timestamp_end": "01:42.15",
+            "l1_start_index": 21,
+            "l1_end_index": 23,
+            "translation": "תפוס"
+          },
+          {
+            "text": "you,",
+            "timestamp": "01:42.20",
+            "timestamp_end": "01:42.60",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "אותך"
+          },
+          {
+            "text": "get",
+            "timestamp": "01:42.65",
+            "timestamp_end": "01:42.90",
+            "l1_start_index": 30,
+            "l1_end_index": 32,
+            "translation": "תפוס"
+          },
+          {
+            "text": "you",
+            "timestamp": "01:42.95",
+            "timestamp_end": "01:43.50",
+            "l1_start_index": 34,
+            "l1_end_index": 36,
+            "translation": "אותך"
+          }
+        ],
+        "text_l2": "כי אני בא לקחת אותך, לקחת אותך"
       },
       {
         "id": "phrase_52",
-        "text_l1": "get ya",
-        "timestamp": "01:42.80",
-        "timestamp_end": "01:43.50",
-        "text_l2": "לקחת אותך"
+        "text_l1": "Hold on, hold on, I'm on my way",
+        "timestamp": "01:43.60",
+        "timestamp_end": "01:46.50",
+        "words": [
+          {
+            "text": "Hold",
+            "timestamp": "01:43.60",
+            "timestamp_end": "01:43.95",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חכה"
+          },
+          {
+            "text": "on,",
+            "timestamp": "01:44.00",
+            "timestamp_end": "01:44.30",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "on"
+          },
+          {
+            "text": "hold",
+            "timestamp": "01:44.35",
+            "timestamp_end": "01:44.70",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "חכה"
+          },
+          {
+            "text": "on,",
+            "timestamp": "01:44.75",
+            "timestamp_end": "01:45.10",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "on"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:45.15",
+            "timestamp_end": "01:45.35",
+            "l1_start_index": 18,
+            "l1_end_index": 20,
+            "translation": "אני"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:45.40",
+            "timestamp_end": "01:45.60",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "ב"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:45.65",
+            "timestamp_end": "01:45.90",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "שלי"
+          },
+          {
+            "text": "way",
+            "timestamp": "01:45.95",
+            "timestamp_end": "01:46.50",
+            "l1_start_index": 28,
+            "l1_end_index": 30,
+            "translation": "דרך"
+          }
+        ],
+        "text_l2": "חכי רגע, חכי רגע, אני בדרך"
       },
       {
         "id": "phrase_53",
-        "text_l1": "Hold on, hold on",
-        "timestamp": "01:43.60",
-        "timestamp_end": "01:46.50",
-        "text_l2": "חכי רגע, חכי רגע"
+        "text_l1": "Yeah, yeah, yeah, yeah, yeah,",
+        "timestamp": "01:49.50",
+        "timestamp_end": "01:51.10",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "01:49.50",
+            "timestamp_end": "01:49.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "01:49.85",
+            "timestamp_end": "01:50.10",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "01:50.15",
+            "timestamp_end": "01:50.40",
+            "l1_start_index": 12,
+            "l1_end_index": 16,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "01:50.45",
+            "timestamp_end": "01:50.70",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "01:50.75",
+            "timestamp_end": "01:51.10",
+            "l1_start_index": 24,
+            "l1_end_index": 28,
+            "translation": "יה"
+          }
+        ],
+        "text_l2": "כן, כן, כן, כן, כן,"
       },
       {
         "id": "phrase_54",
         "text_l1": "I'm on my way",
-        "timestamp": "01:46.60",
-        "timestamp_end": "01:49.80",
+        "timestamp": "01:51.15",
+        "timestamp_end": "01:53.50",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "01:51.15",
+            "timestamp_end": "01:51.35",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:51.40",
+            "timestamp_end": "01:51.60",
+            "l1_start_index": 4,
+            "l1_end_index": 5,
+            "translation": "ב"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:51.65",
+            "timestamp_end": "01:51.90",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "way",
+            "timestamp": "01:51.95",
+            "timestamp_end": "01:53.50",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "דרך"
+          }
+        ],
         "text_l2": "אני בדרך"
       },
       {
         "id": "phrase_55",
-        "text_l1": "Yeah, yeah, yeah, yeah, yeah",
-        "timestamp": "01:49.90",
-        "timestamp_end": "01:53.00",
-        "text_l2": "יה, יה, יה, יה, יה"
+        "text_l1": "Hold on, hold on, I'm on my way",
+        "timestamp": "01:55.60",
+        "timestamp_end": "01:58.50",
+        "words": [
+          {
+            "text": "Hold",
+            "timestamp": "01:55.60",
+            "timestamp_end": "01:55.95",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חכה"
+          },
+          {
+            "text": "on,",
+            "timestamp": "01:56.00",
+            "timestamp_end": "01:56.30",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "on"
+          },
+          {
+            "text": "hold",
+            "timestamp": "01:56.35",
+            "timestamp_end": "01:56.70",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "חכה"
+          },
+          {
+            "text": "on,",
+            "timestamp": "01:56.75",
+            "timestamp_end": "01:57.10",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "on"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:57.15",
+            "timestamp_end": "01:57.35",
+            "l1_start_index": 18,
+            "l1_end_index": 20,
+            "translation": "אני"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:57.40",
+            "timestamp_end": "01:57.60",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "ב"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:57.65",
+            "timestamp_end": "01:57.90",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "שלי"
+          },
+          {
+            "text": "way",
+            "timestamp": "01:57.95",
+            "timestamp_end": "01:58.50",
+            "l1_start_index": 28,
+            "l1_end_index": 30,
+            "translation": "דרך"
+          }
+        ],
+        "text_l2": "חכי רגע, חכי רגע, אני בדרך"
       },
       {
         "id": "phrase_56",
-        "text_l1": "I'm on my way",
-        "timestamp": "01:53.10",
-        "timestamp_end": "01:56.50",
-        "text_l2": "אני בדרך"
+        "text_l1": "Yeah, yeah, yeah, yeah, yeah,",
+        "timestamp": "02:02.50",
+        "timestamp_end": "02:04.10",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "02:02.50",
+            "timestamp_end": "02:02.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "02:02.85",
+            "timestamp_end": "02:03.10",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "02:03.15",
+            "timestamp_end": "02:03.40",
+            "l1_start_index": 12,
+            "l1_end_index": 16,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "02:03.45",
+            "timestamp_end": "02:03.70",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "יה"
+          },
+          {
+            "text": "yeah,",
+            "timestamp": "02:03.75",
+            "timestamp_end": "02:04.10",
+            "l1_start_index": 24,
+            "l1_end_index": 28,
+            "translation": "יה"
+          }
+        ],
+        "text_l2": "כן, כן, כן, כן, כן,"
       },
       {
         "id": "phrase_57",
-        "text_l1": "Hold on, hold on",
-        "timestamp": "01:56.60",
-        "timestamp_end": "01:59.50",
-        "text_l2": "חכי רגע, חכי רגע"
+        "text_l1": "I'm on my way",
+        "timestamp": "02:04.15",
+        "timestamp_end": "02:08.00",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "02:04.15",
+            "timestamp_end": "02:04.35",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "on",
+            "timestamp": "02:04.40",
+            "timestamp_end": "02:04.60",
+            "l1_start_index": 4,
+            "l1_end_index": 5,
+            "translation": "ב"
+          },
+          {
+            "text": "my",
+            "timestamp": "02:04.65",
+            "timestamp_end": "02:04.90",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "way",
+            "timestamp": "02:04.95",
+            "timestamp_end": "02:08.00",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "דרך"
+          }
+        ],
+        "text_l2": "אני בדרך"
       },
       {
         "id": "phrase_58",
-        "text_l1": "I'm on my way",
-        "timestamp": "01:59.60",
-        "timestamp_end": "02:02.80",
-        "text_l2": "אני בדרך"
+        "text_l1": "Don't you want me like I want you, baby?",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:12.20",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "02:09.00",
+            "timestamp_end": "02:09.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "לא"
+          },
+          {
+            "text": "you",
+            "timestamp": "02:09.35",
+            "timestamp_end": "02:09.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "want",
+            "timestamp": "02:09.55",
+            "timestamp_end": "02:09.80",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "רוצה"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:09.85",
+            "timestamp_end": "02:10.10",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:10.15",
+            "timestamp_end": "02:10.35",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:10.40",
+            "timestamp_end": "02:10.55",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "want",
+            "timestamp": "02:10.60",
+            "timestamp_end": "02:10.85",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "רוצה"
+          },
+          {
+            "text": "you,",
+            "timestamp": "02:10.90",
+            "timestamp_end": "02:11.15",
+            "l1_start_index": 30,
+            "l1_end_index": 33,
+            "translation": "אותך"
+          },
+          {
+            "text": "baby?",
+            "timestamp": "02:11.20",
+            "timestamp_end": "02:12.20",
+            "l1_start_index": 35,
+            "l1_end_index": 39,
+            "translation": "מותק"
+          }
+        ],
+        "text_l2": "את לא רוצה אותי כמו שאני רוצה אותך, יקירה?"
       },
       {
         "id": "phrase_59",
-        "text_l1": "Yeah, yeah, yeah, yeah, yeah",
-        "timestamp": "02:02.90",
-        "timestamp_end": "02:06.00",
-        "text_l2": "יה, יה, יה, יה, יה"
+        "text_l1": "Don't you need me like I need you now?",
+        "timestamp": "02:12.30",
+        "timestamp_end": "02:15.50",
+        "words": [
+          {
+            "text": "Don't",
+            "timestamp": "02:12.30",
+            "timestamp_end": "02:12.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "לא"
+          },
+          {
+            "text": "you",
+            "timestamp": "02:12.65",
+            "timestamp_end": "02:12.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אתה"
+          },
+          {
+            "text": "need",
+            "timestamp": "02:12.85",
+            "timestamp_end": "02:13.10",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "צריך"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:13.15",
+            "timestamp_end": "02:13.40",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אותי"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:13.45",
+            "timestamp_end": "02:13.65",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "כמו"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:13.70",
+            "timestamp_end": "02:13.85",
+            "l1_start_index": 23,
+            "l1_end_index": 23,
+            "translation": "אני"
+          },
+          {
+            "text": "need",
+            "timestamp": "02:13.90",
+            "timestamp_end": "02:14.15",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "צריך"
+          },
+          {
+            "text": "you",
+            "timestamp": "02:14.20",
+            "timestamp_end": "02:14.45",
+            "l1_start_index": 30,
+            "l1_end_index": 32,
+            "translation": "אותך"
+          },
+          {
+            "text": "now?",
+            "timestamp": "02:14.50",
+            "timestamp_end": "02:15.50",
+            "l1_start_index": 34,
+            "l1_end_index": 37,
+            "translation": "עכשיו"
+          }
+        ],
+        "text_l2": "את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
       },
       {
         "id": "phrase_60",
-        "text_l1": "I'm on my way",
-        "timestamp": "02:06.10",
-        "timestamp_end": "02:09.50",
-        "text_l2": "אני בדרך"
+        "text_l1": "Sleep tomorrow, but tonight go crazy",
+        "timestamp": "02:15.60",
+        "timestamp_end": "02:18.80",
+        "words": [
+          {
+            "text": "Sleep",
+            "timestamp": "02:15.60",
+            "timestamp_end": "02:16.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "תישן"
+          },
+          {
+            "text": "tomorrow,",
+            "timestamp": "02:16.05",
+            "timestamp_end": "02:16.60",
+            "l1_start_index": 6,
+            "l1_end_index": 14,
+            "translation": "מחר"
+          },
+          {
+            "text": "but",
+            "timestamp": "02:16.65",
+            "timestamp_end": "02:16.85",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "אבל"
+          },
+          {
+            "text": "tonight",
+            "timestamp": "02:16.90",
+            "timestamp_end": "02:17.40",
+            "l1_start_index": 20,
+            "l1_end_index": 26,
+            "translation": "הלילה"
+          },
+          {
+            "text": "go",
+            "timestamp": "02:17.45",
+            "timestamp_end": "02:17.75",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "תהיה"
+          },
+          {
+            "text": "crazy",
+            "timestamp": "02:17.80",
+            "timestamp_end": "02:18.80",
+            "l1_start_index": 31,
+            "l1_end_index": 35,
+            "translation": "משוגע"
+          }
+        ],
+        "text_l2": "תישני מחר, אבל הלילה תשתגעי"
       },
       {
         "id": "phrase_61",
-        "text_l1": "Don't you want me like I want you, baby?",
-        "timestamp": "02:09.60",
-        "timestamp_end": "02:12.80",
-        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+        "text_l1": "All you gotta do is just meet me at the",
+        "timestamp": "02:18.90",
+        "timestamp_end": "02:22.20",
+        "words": [
+          {
+            "text": "All",
+            "timestamp": "02:18.90",
+            "timestamp_end": "02:19.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "כל"
+          },
+          {
+            "text": "you",
+            "timestamp": "02:19.25",
+            "timestamp_end": "02:19.40",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אתה"
+          },
+          {
+            "text": "gotta",
+            "timestamp": "02:19.45",
+            "timestamp_end": "02:19.70",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "צריך"
+          },
+          {
+            "text": "do",
+            "timestamp": "02:19.75",
+            "timestamp_end": "02:19.95",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "לעשות"
+          },
+          {
+            "text": "is",
+            "timestamp": "02:20.00",
+            "timestamp_end": "02:20.15",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "זה"
+          },
+          {
+            "text": "just",
+            "timestamp": "02:20.20",
+            "timestamp_end": "02:20.45",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "02:20.50",
+            "timestamp_end": "02:20.80",
+            "l1_start_index": 25,
+            "l1_end_index": 28,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:20.85",
+            "timestamp_end": "02:21.10",
+            "l1_start_index": 30,
+            "l1_end_index": 31,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "02:21.15",
+            "timestamp_end": "02:21.35",
+            "l1_start_index": 33,
+            "l1_end_index": 34,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:21.40",
+            "timestamp_end": "02:22.20",
+            "l1_start_index": 36,
+            "l1_end_index": 38,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_62",
-        "text_l1": "Don't you need me like I need you now?",
-        "timestamp": "02:12.90",
-        "timestamp_end": "02:16.00",
-        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:22.30",
+        "timestamp_end": "02:23.50",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:22.30",
+            "timestamp_end": "02:22.85",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:22.95",
+            "timestamp_end": "02:23.50",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_63",
-        "text_l1": "Sleep tomorrow, but tonight, go crazy",
-        "timestamp": "02:16.10",
-        "timestamp_end": "02:19.30",
-        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:23.60",
+        "timestamp_end": "02:24.80",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:23.60",
+            "timestamp_end": "02:24.15",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:24.25",
+            "timestamp_end": "02:24.80",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_64",
-        "text_l1": "All you gotta do is just meet me at the",
-        "timestamp": "02:19.40",
-        "timestamp_end": "02:22.60",
-        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:24.90",
+        "timestamp_end": "02:26.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:24.90",
+            "timestamp_end": "02:25.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:25.55",
+            "timestamp_end": "02:26.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_65",
-        "text_l1": "Apateu, apateu",
-        "timestamp": "02:22.70",
-        "timestamp_end": "02:24.00",
-        "text_l2": "אפאטו, אפאטו"
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:26.20",
+        "timestamp_end": "02:27.40",
+        "words": [
+          {
+            "text": "Just",
+            "timestamp": "02:26.20",
+            "timestamp_end": "02:26.45",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "02:26.50",
+            "timestamp_end": "02:26.80",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:26.85",
+            "timestamp_end": "02:27.10",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "02:27.15",
+            "timestamp_end": "02:27.30",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:27.35",
+            "timestamp_end": "02:27.40",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_66",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:24.30",
-        "timestamp_end": "02:25.60",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:27.50",
+        "timestamp_end": "02:28.70",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:27.50",
+            "timestamp_end": "02:28.05",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:28.15",
+            "timestamp_end": "02:28.70",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_67",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:25.90",
-        "timestamp_end": "02:27.20",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:28.80",
+        "timestamp_end": "02:30.00",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:28.80",
+            "timestamp_end": "02:29.35",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:29.45",
+            "timestamp_end": "02:30.00",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_68",
-        "text_l1": "Just meet me at the",
-        "timestamp": "02:27.50",
-        "timestamp_end": "02:29.10",
-        "text_l2": "פשוט פגשי אותי ב"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:30.10",
+        "timestamp_end": "02:31.30",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:30.10",
+            "timestamp_end": "02:30.65",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:30.75",
+            "timestamp_end": "02:31.30",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_69",
-        "text_l1": "Apateu, apateu",
-        "timestamp": "02:29.20",
-        "timestamp_end": "02:30.50",
-        "text_l2": "אפאטו, אפאטו"
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:31.40",
+        "timestamp_end": "02:33.30",
+        "words": [
+          {
+            "text": "Just",
+            "timestamp": "02:31.40",
+            "timestamp_end": "02:31.70",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "02:31.75",
+            "timestamp_end": "02:32.10",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:32.15",
+            "timestamp_end": "02:32.45",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "02:32.50",
+            "timestamp_end": "02:32.70",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:32.75",
+            "timestamp_end": "02:33.30",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_70",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:30.80",
-        "timestamp_end": "02:32.10",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:33.40",
+        "timestamp_end": "02:34.60",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:33.40",
+            "timestamp_end": "02:33.95",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:34.05",
+            "timestamp_end": "02:34.60",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_71",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:32.40",
-        "timestamp_end": "02:33.70",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:34.70",
+        "timestamp_end": "02:35.90",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:34.70",
+            "timestamp_end": "02:35.25",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:35.35",
+            "timestamp_end": "02:35.90",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_72",
-        "text_l1": "Just meet me at the",
-        "timestamp": "02:34.00",
-        "timestamp_end": "02:35.60",
-        "text_l2": "פשוט פגשי אותי ב"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:37.20",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:36.00",
+            "timestamp_end": "02:36.55",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:36.65",
+            "timestamp_end": "02:37.20",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_73",
-        "text_l1": "Apateu, apateu",
-        "timestamp": "02:35.70",
-        "timestamp_end": "02:37.00",
-        "text_l2": "אפאטו, אפאטו"
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:37.30",
+        "timestamp_end": "02:39.20",
+        "words": [
+          {
+            "text": "Just",
+            "timestamp": "02:37.30",
+            "timestamp_end": "02:37.60",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "פשוט"
+          },
+          {
+            "text": "meet",
+            "timestamp": "02:37.65",
+            "timestamp_end": "02:38.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "לפגוש"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:38.05",
+            "timestamp_end": "02:38.35",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "אותי"
+          },
+          {
+            "text": "at",
+            "timestamp": "02:38.40",
+            "timestamp_end": "02:38.60",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:38.65",
+            "timestamp_end": "02:39.20",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "ה"
+          }
+        ],
+        "text_l2": "רק לפגוש אותי ב..."
       },
       {
         "id": "phrase_74",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:37.30",
-        "timestamp_end": "02:38.60",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:39.30",
+        "timestamp_end": "02:40.50",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:39.30",
+            "timestamp_end": "02:39.85",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:39.95",
+            "timestamp_end": "02:40.50",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_75",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:38.90",
-        "timestamp_end": "02:40.20",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:40.60",
+        "timestamp_end": "02:41.80",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:40.60",
+            "timestamp_end": "02:41.15",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:41.25",
+            "timestamp_end": "02:41.80",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_76",
-        "text_l1": "Just meet me at the",
-        "timestamp": "02:40.50",
-        "timestamp_end": "02:42.10",
-        "text_l2": "פשוט פגשי אותי ב"
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:41.90",
+        "timestamp_end": "02:43.10",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:41.90",
+            "timestamp_end": "02:42.45",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:42.55",
+            "timestamp_end": "02:43.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_77",
         "text_l1": "Apateu, apateu",
-        "timestamp": "02:42.20",
-        "timestamp_end": "02:43.50",
-        "text_l2": "אפאטו, אפאטו"
+        "timestamp": "02:43.20",
+        "timestamp_end": "02:44.40",
+        "words": [
+          {
+            "text": "Apateu,",
+            "timestamp": "02:43.20",
+            "timestamp_end": "02:43.75",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "Apateu,"
+          },
+          {
+            "text": "apateu",
+            "timestamp": "02:43.85",
+            "timestamp_end": "02:44.40",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "apateu"
+          }
+        ],
+        "text_l2": "דירה, דירה"
       },
       {
         "id": "phrase_78",
-        "text_l1": "Apateu, apateu",
-        "timestamp": "02:43.80",
-        "timestamp_end": "02:45.10",
-        "text_l2": "אפאטו, אפאטו"
-      },
-      {
-        "id": "phrase_79",
-        "text_l1": "Apateu, apateu",
-        "timestamp": "02:45.40",
-        "timestamp_end": "02:46.70",
-        "text_l2": "אפאטו, אפאטו"
-      },
-      {
-        "id": "phrase_80",
         "text_l1": "Uh, uh-huh, uh-huh",
-        "timestamp": "02:47.00",
-        "timestamp_end": "02:48.50",
+        "timestamp": "02:44.50",
+        "timestamp_end": "02:47.50",
+        "words": [
+          {
+            "text": "Uh,",
+            "timestamp": "02:44.50",
+            "timestamp_end": "02:44.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אה"
+          },
+          {
+            "text": "uh-huh,",
+            "timestamp": "02:44.90",
+            "timestamp_end": "02:45.50",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "אה-הא"
+          },
+          {
+            "text": "uh-huh",
+            "timestamp": "02:45.60",
+            "timestamp_end": "02:47.50",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "אה-הא"
+          }
+        ],
         "text_l2": "אה, אה-הא, אה-הא"
       }
     ],
-    "phrases_with_token_translations": "[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Uh] uh-huh, uh-huh => [אה] אה-הא, אה-הא\nUh [uh-huh], uh-huh => אה [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Kissy] face, kissy face => פרצוף [נשיקות], פרצוף נשיקות\nKissy [face], kissy face => [פרצוף] נשיקות, פרצוף נשיקות\nKissy face, [kissy] face => פרצוף נשיקות, פרצוף [נשיקות]\nKissy face, kissy [face] => פרצוף נשיקות, [פרצוף] נשיקות\n\n[Sent] to your phone, but => [נשלח] לטלפון שלך, אבל\nSent [to] your phone, but => ל\nSent to [your] phone, but => נשלח לטלפון [שלך], אבל\nSent to your [phone], but => נשלח [לטלפון] שלך, אבל\nSent to your phone, [but] => נשלח לטלפון שלך, [אבל]\n\n[I'm] tryna kiss your lips for real => [אני] מנסה לנשק את השפתיים שלך באמת\nI'm [tryna] kiss your lips for real => [מנסה] לנשק את השפתיים שלך באמת\nI'm tryna [kiss] your lips for real => אני מנסה [לנשק] את השפתיים שלך באמת\nI'm tryna kiss [your] lips for real => אני מנסה לנשק את השפתיים [שלך] באמת\nI'm tryna kiss your [lips] for real => אני מנסה לנשק את [השפתיים] שלך באמת\nI'm tryna kiss your lips [for real] => אני מנסה לנשק את השפתיים שלך [באמת]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Red] hearts, red hearts => לבבות [אדומים], לבבות אדומים\nRed [hearts], red hearts => [לבבות] אדומים, לבבות אדומים\nRed hearts, [red] hearts => לבבות אדומים, לבבות [אדומים]\nRed hearts, red [hearts] => לבבות אדומים, [לבבות] אדומים\n\n[That's] what I'm on, yeah => [זה] מה שאני מחפש, כן\nThat's [what] I'm on, yeah => זה [מה] שאני מחפש, כן\nThat's what [I'm] on, yeah => זה מה [שאני] מחפש, כן\nThat's what I'm [on], yeah => זה מה שאני [מחפש], כן\nThat's what I'm on, [yeah] => זה מה שאני מחפש, [כן]\n\n[Come] give me something I can feel => [בואי] תני לי משהו שאוכל להרגיש\nCome [give] me something I can feel => בואי [תני] לי משהו שאוכל להרגיש\nCome give [me] something I can feel => בואי תני [לי] משהו שאוכל להרגיש\nCome give me [something] I can feel => בואי תני לי [משהו] שאוכל להרגיש\nCome give me something [I can] feel => בואי תני לי משהו [שאוכל] להרגיש\nCome give me something I can [feel] => בואי תני לי משהו שאוכל [להרגיש]\n\n[Oh-oh], oh => [או-או], או\nOh-oh, [oh] => או-או, [או]\n\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => האם את לא רוצה אותי כמו [שאני] רוצה אותך, ביבי?\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't] you need me like I need you now? => האם לא\nDon't [you] need me like I need you now? => [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me like [I] need you now? => האם את לא צריכה אותי כמו [שאני] צריך אותך עכשיו?\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => כל מה [שאת] צריכה לעשות זה רק לפגוש אותי ב\nAll you [gotta] do is just meet me at the => כל מה שאת [צריכה] לעשות זה רק לפגוש אותי ב\nAll you gotta [do] is just meet me at the => כל מה שאת צריכה [לעשות] זה רק לפגוש אותי ב\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => ב\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[It's] whatever, it's whatever => [זה] מה שבא לך, זה מה שבא לך\nIt's [whatever], it's whatever => זה [מה שבא לך], זה מה שבא לך\nIt's whatever, [it's] whatever => זה מה שבא לך, [זה] מה שבא לך\nIt's whatever, it's [whatever] => זה מה שבא לך, זה [מה שבא לך]\n\n[It's] whatever you like => [זה] מה שבא לך\nIt's [whatever you like] => זה [מה שבא לך]\n\n[Turn] this apateu into a club => [הפוך] את האפאטו הזה למועדון\nTurn [this apateu] into a club => הפוך [את האפאטו הזה] למועדון\nTurn this [apateu] into a club => אפאטו\nTurn this apateu [into] a club => ל\nTurn this apateu into a [club] => הפוך את האפאטו הזה ל[מועדון]\nTurn this apateu [into a club] => הפוך את האפאטו הזה [למועדון]\n\n[Uh-huh], uh-huh => [אה-הא], אה-הא\nUh-huh, [uh-huh] => אה-הא, [אה-הא]\n\n[I'm talking] drink, dance, smoke, freak, => [אני מדבר על] שתייה, ריקוד, עישון, פרוע,\nI'm talking [drink], dance, smoke, freak, => אני מדבר על [שתייה], ריקוד, עישון, פרוע,\nI'm talking drink, [dance], smoke, freak, => אני מדבר על שתייה, [ריקוד], עישון, פרוע,\nI'm talking drink, dance, [smoke], freak, => אני מדבר על שתייה, ריקוד, [עישון], פרוע,\nI'm talking drink, dance, smoke, [freak], => אני מדבר על שתייה, ריקוד, עישון, [פרוע],\n\n[party] all night => [מסיבה] כל הלילה\nparty [all night] => מסיבה [כל הלילה]\n\n[Geonbae], geonbae, girl, what's up? => [גאונבאה], גאונבאה, ילדה, מה נשמע?\nGeonbae, [geonbae], girl, what's up? => גאונבאה, [גאונבאה], ילדה, מה נשמע?\nGeonbae, geonbae, [girl], what's up? => גאונבאה, גאונבאה, [ילדה], מה נשמע?\nGeonbae, geonbae, girl, [what's up?] => גאונבאה, גאונבאה, ילדה, [מה נשמע?]\n\n[Oh-oh], oh => [או-או], או\nOh-oh, [oh] => או-או, [או]\n\n[Don't you] want me like I want you, baby? => [האם את לא] רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't [you] want me like I want you, baby? => האם [את] לא רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me [like I] want you, baby? => האם את לא רוצה אותי [כמו שאני] רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => אני\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't you] need me like I need you now? => [האם את לא] צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't [you] need me like I need you now? => האם [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me [like I] need you now? => האם את לא צריכה אותי [כמו שאני] צריך אותך עכשיו?\nDon't you need me like [I] need you now? => אני\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All you gotta do] is just meet me at the => [כל מה שאת צריכה לעשות] זה רק לפגוש אותי ב\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => את\nAll you [gotta] do is just meet me at the => צריכה\nAll you gotta [do] is just meet me at the => לעשות\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => כל מה שאת צריכה לעשות זה רק לפגוש אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Hey] so now you know the game => [היי] אז עכשיו את מכירה את המשחק\nHey [so] now you know the game => היי [אז] עכשיו את מכירה את המשחק\nHey so [now] you know the game => היי אז [עכשיו] את מכירה את המשחק\nHey so now [you] know the game => היי אז עכשיו [את] מכירה את המשחק\nHey so now you [know] the game => היי אז עכשיו את [מכירה] את המשחק\nHey so now you know the [game] => היי אז עכשיו את מכירה את [משחק] # skipping \"the\" as it's part of the direct object marker\n\nAre [you] ready? => [את] מוכנה?\nAre you [ready]? => את [מוכנה]?\n\n['Cause] I'm comin' to get ya, get ya, => [כי] אני בא לקחת אותך, לקחת אותך,\n'Cause [I'm] comin' to get ya, get ya, => כי [אני] בא לקחת אותך, לקחת אותך, # aligning \"I\" to \"אני\", skipping \"am\"\n'Cause I'm [comin'] to get ya, get ya, => כי אני [בא] לקחת אותך, לקחת אותך,\n'Cause I'm comin' to [get] ya, get ya, => כי אני בא [לקחת] אותך, לקחת אותך,\n'Cause I'm comin' to get [ya], get ya, => כי אני בא לקחת [אותך], לקחת אותך,\n'Cause I'm comin' to get ya, [get] ya, => כי אני בא לקחת אותך, [לקחת] אותך,\n'Cause I'm comin' to get ya, get [ya], => כי אני בא לקחת אותך, לקחת [אותך],\n\n[get] ya => [לקחת] אותך\nget [ya] => לקחת [אותך]\n\n[Hold on], hold on => [חכי רגע], חכי רגע\nHold on, [hold on] => חכי רגע, [חכי רגע]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Yeah], yeah, yeah, yeah, yeah => [יה], יה, יה, יה, יה\nYeah, [yeah], yeah, yeah, yeah => יה, [יה], יה, יה, יה\nYeah, yeah, [yeah], yeah, yeah => יה, יה, [יה], יה, יה\nYeah, yeah, yeah, [yeah], yeah => יה, יה, יה, [יה], יה\nYeah, yeah, yeah, yeah, [yeah] => יה, יה, יה, יה, [יה]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Hold on] hold on => [חכי רגע] חכי רגע\nHold on [hold on] => חכי רגע [חכי רגע]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Yeah], yeah, yeah, yeah, yeah => [יה], יה, יה, יה, יה\nYeah, [yeah], yeah, yeah, yeah => יה, [יה], יה, יה, יה\nYeah, yeah, [yeah], yeah, yeah => יה, יה, [יה], יה, יה\nYeah, yeah, yeah, [yeah], yeah => יה, יה, יה, [יה], יה\nYeah, yeah, yeah, yeah, [yeah] => יה, יה, יה, יה, [יה]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Don't] you want me like I want you, baby? => האם את [לא] רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't [you] want me like I want you, baby? => האם [את] לא רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => האם את לא רוצה אותי כמו [שאני] רוצה אותך, ביבי?\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't] you need me like I need you now? => האם את [לא] צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't [you] need me like I need you now? => האם [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me like [I] need you now? => האם את לא צריכה אותי כמו [שאני] צריך אותך עכשיו?\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => כל מה [שאת] צריכה לעשות זה רק לפגוש אותי ב\nAll you [gotta] do is just meet me at the => כל מה שאת [צריכה] לעשות זה רק לפגוש אותי ב\nAll you gotta [do] is just meet me at the => כל מה שאת צריכה [לעשות] זה רק לפגוש אותי ב\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => כל מה שאת צריכה לעשות זה רק לפגוש אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at] the => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at the] => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at the] => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]",
-    "lessons": "# The Apateu Intro\n00:06.50 Apateu, apateu\n00:08.10 Apateu, apateu\n00:09.70 Apateu, apateu\n00:11.30 Uh, uh-huh, uh-huh\n00:13.00 Apateu, apateu\n00:14.60 Apateu, apateu\n00:16.20 Apateu, apateu\n00:17.80 Uh, uh-huh, uh-huh\n\n# Kissy Face and Red Hearts\n00:19.50 Kissy face, kissy face\n00:21.10 Sent to your phone, but\n00:22.70 I'm tryna kiss your lips for real\n00:25.10 Uh, uh-huh, uh-huh\n00:26.00 Red hearts, red hearts\n00:27.60 That's what I'm on, yeah\n00:29.20 Come give me something I can feel\n00:31.60 Oh-oh, oh\n\n# Don't You Want Me?\n00:32.50 Don't you want me like I want you, baby?\n00:35.80 Don't you need me like I need you now?\n00:39.00 Sleep tomorrow, but tonight, go crazy\n00:42.30 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu\n00:45.60 Apateu, apateu\n00:47.20 Apateu, apateu\n00:48.80 Apateu, apateu\n00:50.40 Uh, uh-huh, uh-huh\n00:52.10 Apateu, apateu\n00:53.70 Apateu, apateu\n00:55.30 Apateu, apateu\n00:56.90 Uh, uh-huh, uh-huh\n\n# Turn This Apateu Into a Club\n00:58.60 It's whatever, it's whatever\n01:00.20 It's whatever you like\n01:01.80 Turn this apateu into a club\n01:04.20 Uh-huh, uh-huh\n01:05.10 I'm talking drink, dance, smoke, freak,\n01:07.10 party all night\n01:08.30 Geonbae, geonbae, girl, what's up?\n01:10.70 Oh-oh, oh\n\n# Don't You Want Me? (Part 2)\n01:11.60 Don't you want me like I want you, baby?\n01:14.90 Don't you need me like I need you now?\n01:18.10 Sleep tomorrow, but tonight, go crazy\n01:21.40 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu (Part 2)\n01:24.70 Apateu, apateu\n01:26.30 Apateu, apateu\n01:27.90 Apateu, apateu\n01:29.50 Uh, uh-huh, uh-huh\n01:31.20 Apateu, apateu\n01:32.80 Apateu, apateu\n01:34.40 Apateu, apateu\n01:36.00 Uh, uh-huh, uh-huh\n\n# Now You Know the Game (Part 1)\n01:37.60 Hey, so now you know the game\n01:40.00 Are you ready?\n01:41.10 'Cause I'm comin' to get ya, get ya,\n01:42.80 get ya\n01:43.60 Hold on, hold on\n01:46.60 I'm on my way\n\n# I'm On My Way (Part 2)\n01:49.90 Yeah, yeah, yeah, yeah, yeah\n01:53.10 I'm on my way\n01:56.60 Hold on, hold on\n01:59.60 I'm on my way\n02:02.90 Yeah, yeah, yeah, yeah, yeah\n02:06.10 I'm on my way\n\n# Don't You Want Me? (Part 3)\n02:09.60 Don't you want me like I want you, baby?\n02:12.90 Don't you need me like I need you now?\n02:16.10 Sleep tomorrow, but tonight, go crazy\n02:19.40 All you gotta do is just meet me at the\n\n# Just Meet Me at the Apateu (Part 1)\n02:22.70 Apateu, apateu\n02:24.30 Apateu, apateu\n02:25.90 Apateu, apateu\n02:27.50 Just meet me at the\n02:29.20 Apateu, apateu\n02:30.80 Apateu, apateu\n02:32.40 Apateu, apateu\n02:34.00 Just meet me at the\n\n# Just Meet Me at the Apateu (Part 2)\n02:35.70 Apateu, apateu\n02:37.30 Apateu, apateu\n02:38.90 Apateu, apateu\n02:40.50 Just meet me at the\n02:42.20 Apateu, apateu\n02:43.80 Apateu, apateu\n02:45.40 Apateu, apateu\n02:47.00 Uh, uh-huh, uh-huh",
-    "similar_sounds": "[amateur] apateu\n[agate] apateu\nApateu [amateur]\nUh uh huh uh [hub]\n[patel] apateu\nApateu [agate]\nApateu [patel]\nUh uh [hub] uh huh\n[missy] face kissy face\n[send] to your phone but\nI'm tryna kiss your lips [or] real\nUh uh huh uh [hub]\n[re] hearts red hearts\n[that] what I'm on yeah\nCome give me something I can [fees]\nDon't you want me [life] I want you baby\n[done] you need me like I need you now\nSleep tomorrow [out] tonight go crazy\nAll you gotta do is just [feet] me at the\n[amateur] apateu\n[agate] apateu\nApateu [amateur]\nUh uh [hub] uh huh\n[agate] apateu\nApateu [amateur]\n[amateur] apateu\nUh uh [hub] uh huh\n[it'd] whatever it's whatever\nIt's [wherever] you like\nTurn this [agate] into a club\nUh [hugh] uh huh\nI'm talking drink [lance] smoke freak\n[part] all night\nGeonbae geonbae [gil] what's up\nDon't you want me like I want [lou] baby\nDon't you [feed] me like I need you now\nSleep tomorrow but tonight go [craze]\nAll you gotta do is just [met] me at the\n[agate] apateu\n[agate] apateu\n[patel] apateu\nUh uh huh uh [hub]\n[amateur] apateu\n[patel] apateu\nApateu [patel]\nUh uh huh uh [hugh]\nHey so [not] you know the game\nAre [sou] ready\n'Cause I'm comin ' to get ya [set] ya\n[let] ya\nHold on [held] on\n[in] on my way\nYeah [year] yeah yeah yeah\nI'm on my [may]\n[held] on hold on\nI'm on my [was]\nYeah yeah yeah [leah] yeah\n[ism] on my way\nDon't you want me like I want [your] baby\n[won't] you need me like I need you now\nSleep [tomorrows] but tonight go crazy\nAll you [cotta] do is just meet me at the\nApateu [patel]\nApateu [agate]\nApateu [amateur]\nJust [feet] me at the\n[agate] apateu\nApateu [amateur]\n[amateur] apateu\n[dust] meet me at the\nApateu [amateur]\n[patel] apateu\n[patel] apateu\n[must] meet me at the\nApateu [agate]\nApateu [agate]\nApateu [amateur]\nUh uh huh uh [hut]"
+    "lessons": "# The Apateu Chant\n00:06.50 Apateu, apateu\n00:07.80 Apateu, apateu\n00:09.10 Apateu, apateu\n00:10.40 Uh, uh-huh, uh-huh\n00:13.10 Apateu, apateu\n00:14.40 Apateu, apateu\n00:15.70 Apateu, apateu\n00:17.00 Uh, uh-huh, uh-huh\n\n# Kissy Face and Red Hearts\n00:19.40 Kissy face, kissy face,\n00:20.90 sent to your phone, but\n00:22.40 I'm tryna kiss your lips for real\n00:24.90 Uh, uh-huh, uh-huh\n00:25.90 Red hearts, red hearts,\n00:27.40 that's what I'm on, yeah\n00:28.90 Come give me something I can feel\n00:31.05 Oh, oh, oh\n\n# Don't You Want Me?\n00:32.00 Don't you want me like I want you, baby?\n00:35.30 Don't you need me like I need you now?\n00:38.60 Sleep tomorrow, but tonight go crazy\n00:41.90 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu\n00:45.30 Apateu, apateu\n00:46.60 Apateu, apateu\n00:47.90 Apateu, apateu\n00:49.20 Uh, uh-huh, uh-huh\n00:51.90 Apateu, apateu\n00:53.20 Apateu, apateu\n00:54.50 Apateu, apateu\n00:55.80 Uh, uh-huh, uh-huh\n\n# Turn This Apateu Into a Club\n00:58.00 It's whatever, it's whatever,\n00:59.50 it's whatever you like\n01:01.10 Turn this apateu into a club\n01:03.60 Uh, uh-huh, uh-huh\n01:04.60 I'm talking drink, dance, smoke, freak,\n01:06.60 party all night, come on\n01:08.00 Geonbae, geonbae, girl, what's up?\n01:10.05 Oh, oh, oh\n\n# Don't You Want Me? (Reprise)\n01:11.00 Don't you want me like I want you, baby?\n01:14.30 Don't you need me like I need you now?\n01:17.60 Sleep tomorrow, but tonight go crazy\n01:20.90 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu (Reprise)\n01:24.30 Apateu, apateu\n01:25.60 Apateu, apateu\n01:26.90 Apateu, apateu\n01:28.20 Uh, uh-huh, uh-huh\n01:30.90 Apateu, apateu\n01:32.20 Apateu, apateu\n01:33.50 Apateu, apateu\n01:34.80 Uh, uh-huh, uh-huh\n\n# The Game (Part 1)\n01:37.00 Hey, so now you know the game\n01:39.60 Are you ready?\n01:40.70 'Cause I'm coming to get you, get you\n01:43.60 Hold on, hold on, I'm on my way\n01:49.50 Yeah, yeah, yeah, yeah, yeah,\n\n# The Game (Part 2)\n01:51.15 I'm on my way\n01:55.60 Hold on, hold on, I'm on my way\n02:02.50 Yeah, yeah, yeah, yeah, yeah,\n02:04.15 I'm on my way\n\n# Don't You Want Me? (Final)\n02:09.00 Don't you want me like I want you, baby?\n02:12.30 Don't you need me like I need you now?\n02:15.60 Sleep tomorrow, but tonight go crazy\n02:18.90 All you gotta do is just meet me at the\n\n# Outro: Just Meet Me at the Apateu (Part 1)\n02:22.30 Apateu, apateu\n02:23.60 Apateu, apateu\n02:24.90 Apateu, apateu\n02:26.20 Just meet me at the\n02:27.50 Apateu, apateu\n02:28.80 Apateu, apateu\n02:30.10 Apateu, apateu\n02:31.40 Just meet me at the\n\n# Outro: Just Meet Me at the Apateu (Part 2)\n02:33.40 Apateu, apateu\n02:34.70 Apateu, apateu\n02:36.00 Apateu, apateu\n02:37.30 Just meet me at the\n02:39.30 Apateu, apateu\n\n# Outro: Just Meet Me at the Apateu (Part 3)\n02:40.60 Apateu, apateu\n02:41.90 Apateu, apateu\n02:43.20 Apateu, apateu\n02:44.50 Uh, uh-huh, uh-huh",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "The Apateu Chant",
+        "score": 1,
+        "reason": "Only contains the non-English word 'apateu' and filler interjections; no real English vocabulary to learn."
+      },
+      {
+        "index": 2,
+        "title": "Kissy Face and Red Hearts",
+        "score": 4,
+        "reason": "Introduces several real English phrases and vocabulary like 'kissy face', 'sent to your phone', and 'come give me something I can feel'."
+      },
+      {
+        "index": 3,
+        "title": "Don't You Want Me?",
+        "score": 5,
+        "reason": "Full of meaningful English sentences and structures, including questions and imperatives, ideal for learning."
+      },
+      {
+        "index": 4,
+        "title": "Meet Me at the Apateu",
+        "score": 1,
+        "reason": "Exact reprise of the first lesson's chant with no new English content."
+      },
+      {
+        "index": 5,
+        "title": "Turn This Apateu Into a Club",
+        "score": 4,
+        "reason": "Contains useful English vocabulary like 'drink, dance, smoke, freak, party' and phrases like 'it's whatever you like'."
+      },
+      {
+        "index": 6,
+        "title": "Don't You Want Me? (Reprise)",
+        "score": 1,
+        "reason": "Exact repetition of lesson 3, adding no new learning value."
+      },
+      {
+        "index": 7,
+        "title": "Meet Me at the Apateu (Reprise)",
+        "score": 1,
+        "reason": "Exact repetition of the chant from lessons 1 and 4, no new English words."
+      },
+      {
+        "index": 8,
+        "title": "The Game (Part 1)",
+        "score": 3,
+        "reason": "Introduces some real phrases like 'know the game', 'are you ready', and 'I'm on my way', but includes filler 'yeah'."
+      },
+      {
+        "index": 9,
+        "title": "The Game (Part 2)",
+        "score": 2,
+        "reason": "Mostly repeats 'I'm on my way' and 'hold on' from Part 1 with many filler 'yeah's; very limited new content."
+      },
+      {
+        "index": 10,
+        "title": "Don't You Want Me? (Final)",
+        "score": 1,
+        "reason": "Another reprise of the same chorus from lesson 3, no new material."
+      },
+      {
+        "index": 11,
+        "title": "Outro: Just Meet Me at the Apateu (Part 1)",
+        "score": 1,
+        "reason": "Repeats the non-English chant and the already-learned phrase 'just meet me at the'."
+      },
+      {
+        "index": 12,
+        "title": "Outro: Just Meet Me at the Apateu (Part 2)",
+        "score": 1,
+        "reason": "Same as Part 1, only the chant and the previously introduced phrase."
+      },
+      {
+        "index": 13,
+        "title": "Outro: Just Meet Me at the Apateu (Part 3)",
+        "score": 1,
+        "reason": "Only the chant and filler interjections, no new English words."
+      }
+    ],
+    "similar_sounds": "Apateu [amateur]\n[amateur] apateu\n[amateur] apateu\nUh uh [hugh] uh huh\nApateu [agate]\nApateu [patel]\n[agate] apateu\nUh uh huh uh [hugh]\n[missy] face kissy face\nsent to your phone [out]\nI'm tryna kiss your [tips] for real\nUh uh [hub] uh huh\nRed [hearth] red hearts\nthat's [hat] I'm on yeah\nCome give me [somethings] I can feel\nDon't you [went] me like I want you baby\nDon't [your] need me like I need you now\nSleep tomorrow but [night] go crazy\nAll you gotta do is just meet me at [he]\n[amateur] apateu\nApateu [agate]\n[agate] apateu\nUh uh [hugh] uh huh\nApateu [amateur]\nApateu [patel]\n[amateur] apateu\nUh uh [hugh] uh huh\n[its] whatever it's whatever\nit's whatever [sou] like\nTurn this apateu into a [clue]\nUh uh huh uh [hugh]\nI'm talking drink dance [spoke] freak\n[part] all night come on\nGeonbae geonbae girl [whats] up\nDon't [sou] want me like I want you baby\nDon't you [feed] me like I need you now\nSleep tomorrow but [tight] go crazy\nAll you gotta do is just [met] me at the\nApateu [amateur]\nApateu [agate]\nApateu [patel]\nUh uh [hub] uh huh\n[patel] apateu\nApateu [amateur]\n[patel] apateu\nUh uh [hub] uh huh\nHey so [not] you know the game\n[area] you ready\n'Cause I'm [homing] to get you get you\n[old] on hold on I'm on my way\nYeah [year] yeah yeah yeah\nI'm on my [was]\n[held] on hold on I'm on my way\n[yea] yeah yeah yeah yeah\n[ism] on my way\n[done] you want me like I want you baby\nDon't you need me like I need [sou] now\nSleep [tomorrows] but tonight go crazy\n[fall] you gotta do is just meet me at the\n[patel] apateu\n[agate] apateu\nApateu [agate]\nJust meet me at [they]\nApateu [amateur]\n[agate] apateu\nApateu [amateur]\nJust meet me at [he]\n[agate] apateu\n[agate] apateu\nApateu [patel]\n[bust] meet me at the\nApateu [amateur]\nApateu [patel]\n[amateur] apateu\n[patel] apateu\nUh uh [hugh] uh huh"
   },
-  "created_at": "2026-06-26 21:12:45 UTC",
-  "updated_at": "2026-06-26 21:21:21 UTC",
-  "exported_at": "2026-06-26T21:21:22Z"
+  "created_at": "2026-06-27 12:55:29 UTC",
+  "updated_at": "2026-06-27 12:59:12 UTC",
+  "exported_at": "2026-06-27T12:59:12Z"
 }

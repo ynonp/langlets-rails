@@ -8,499 +8,4410 @@
       {
         "id": "phrase_1",
         "text_l1": "I live my day as if it was the last",
-        "timestamp": "00:10.50",
-        "timestamp_end": "00:13.00",
-        "text_l2": "אני חי את יומי כאילו זה האחרון"
+        "timestamp": "00:10.00",
+        "timestamp_end": "00:12.80",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "00:10.00",
+            "timestamp_end": "00:10.20",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "live",
+            "timestamp": "00:10.20",
+            "timestamp_end": "00:10.50",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "חי"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:10.50",
+            "timestamp_end": "00:10.70",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "00:10.70",
+            "timestamp_end": "00:11.10",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "00:11.10",
+            "timestamp_end": "00:11.30",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "כ"
+          },
+          {
+            "text": "if",
+            "timestamp": "00:11.30",
+            "timestamp_end": "00:11.50",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "אילו"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:11.50",
+            "timestamp_end": "00:11.70",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:11.70",
+            "timestamp_end": "00:12.00",
+            "l1_start_index": 23,
+            "l1_end_index": 25,
+            "translation": "היה"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:12.00",
+            "timestamp_end": "00:12.20",
+            "l1_start_index": 27,
+            "l1_end_index": 29,
+            "translation": "ה"
+          },
+          {
+            "text": "last",
+            "timestamp": "00:12.20",
+            "timestamp_end": "00:12.80",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "אחרון"
+          }
+        ],
+        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
       },
       {
         "id": "phrase_2",
         "text_l1": "Live my day as if there was no past",
-        "timestamp": "00:13.00",
-        "timestamp_end": "00:15.50",
-        "text_l2": "חי את יומי כאילו אין עבר"
+        "timestamp": "00:12.90",
+        "timestamp_end": "00:15.80",
+        "words": [
+          {
+            "text": "Live",
+            "timestamp": "00:12.90",
+            "timestamp_end": "00:13.20",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיה"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:13.20",
+            "timestamp_end": "00:13.40",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "00:13.40",
+            "timestamp_end": "00:13.80",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "00:13.80",
+            "timestamp_end": "00:14.00",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "כ"
+          },
+          {
+            "text": "if",
+            "timestamp": "00:14.00",
+            "timestamp_end": "00:14.20",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אילו"
+          },
+          {
+            "text": "there",
+            "timestamp": "00:14.20",
+            "timestamp_end": "00:14.40",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "there"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:14.40",
+            "timestamp_end": "00:14.70",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "היה"
+          },
+          {
+            "text": "no",
+            "timestamp": "00:14.70",
+            "timestamp_end": "00:15.00",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "לא"
+          },
+          {
+            "text": "past",
+            "timestamp": "00:15.00",
+            "timestamp_end": "00:15.80",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "עבר"
+          }
+        ],
+        "text_l2": "חי את יומי כאילו לא היה עבר"
       },
       {
         "id": "phrase_3",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "00:15.50",
-        "timestamp_end": "00:18.00",
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "00:15.90",
+        "timestamp_end": "00:18.20",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "00:15.90",
+            "timestamp_end": "00:16.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:16.30",
+            "timestamp_end": "00:16.50",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:16.50",
+            "timestamp_end": "00:16.80",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "00:16.80",
+            "timestamp_end": "00:17.20",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:17.20",
+            "timestamp_end": "00:17.50",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "00:17.50",
+            "timestamp_end": "00:18.20",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
         "text_l2": "עושה את זה כל הלילה, כל הקיץ"
       },
       {
         "id": "phrase_4",
-        "text_l1": "Doin' it the way I wanna",
-        "timestamp": "00:18.00",
-        "timestamp_end": "00:20.50",
-        "text_l2": "עושה את זה איך שבא לי"
+        "text_l1": "Doing it the way I wanna",
+        "timestamp": "00:18.30",
+        "timestamp_end": "00:20.20",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "00:18.30",
+            "timestamp_end": "00:18.70",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:18.70",
+            "timestamp_end": "00:18.90",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:18.90",
+            "timestamp_end": "00:19.10",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "ה"
+          },
+          {
+            "text": "way",
+            "timestamp": "00:19.10",
+            "timestamp_end": "00:19.40",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "דרך"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:19.40",
+            "timestamp_end": "00:19.60",
+            "l1_start_index": 17,
+            "l1_end_index": 17,
+            "translation": "אני"
+          },
+          {
+            "text": "wanna",
+            "timestamp": "00:19.60",
+            "timestamp_end": "00:20.20",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "רוצה"
+          }
+        ],
+        "text_l2": "עושה את זה איך שאני רוצה"
       },
       {
         "id": "phrase_5",
-        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
-        "timestamp": "00:20.50",
-        "timestamp_end": "00:23.00",
-        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+        "text_l1": "Yeah, I'm gonna dance my heart out",
+        "timestamp": "00:20.30",
+        "timestamp_end": "00:22.10",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "00:20.30",
+            "timestamp_end": "00:20.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כן"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "00:20.60",
+            "timestamp_end": "00:20.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אני"
+          },
+          {
+            "text": "gonna",
+            "timestamp": "00:20.80",
+            "timestamp_end": "00:21.10",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "הולך"
+          },
+          {
+            "text": "dance",
+            "timestamp": "00:21.10",
+            "timestamp_end": "00:21.40",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "לרקוד"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:21.40",
+            "timestamp_end": "00:21.60",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "שלי"
+          },
+          {
+            "text": "heart",
+            "timestamp": "00:21.60",
+            "timestamp_end": "00:21.90",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "לב"
+          },
+          {
+            "text": "out",
+            "timestamp": "00:21.90",
+            "timestamp_end": "00:22.10",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "החוצה"
+          }
+        ],
+        "text_l2": "כן, אני הולך לרקוד עד כלות"
       },
       {
         "id": "phrase_6",
-        "text_l1": "But I won't be done when morning comes",
-        "timestamp": "00:23.00",
-        "timestamp_end": "00:25.50",
-        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+        "text_l1": "till the dawn",
+        "timestamp": "00:22.15",
+        "timestamp_end": "00:23.20",
+        "words": [
+          {
+            "text": "till",
+            "timestamp": "00:22.15",
+            "timestamp_end": "00:22.30",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "עד"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:22.30",
+            "timestamp_end": "00:22.50",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "ה"
+          },
+          {
+            "text": "dawn",
+            "timestamp": "00:22.50",
+            "timestamp_end": "00:23.20",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "שחר"
+          }
+        ],
+        "text_l2": "עד השחר"
       },
       {
         "id": "phrase_7",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "00:25.50",
-        "timestamp_end": "00:28.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "00:23.30",
+        "timestamp_end": "00:25.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "00:23.30",
+            "timestamp_end": "00:23.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:23.50",
+            "timestamp_end": "00:23.70",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "won't",
+            "timestamp": "00:23.70",
+            "timestamp_end": "00:24.00",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לא"
+          },
+          {
+            "text": "be",
+            "timestamp": "00:24.00",
+            "timestamp_end": "00:24.20",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "להיות"
+          },
+          {
+            "text": "done",
+            "timestamp": "00:24.20",
+            "timestamp_end": "00:24.50",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גמור"
+          },
+          {
+            "text": "when",
+            "timestamp": "00:24.50",
+            "timestamp_end": "00:24.70",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כש"
+          },
+          {
+            "text": "morning",
+            "timestamp": "00:24.70",
+            "timestamp_end": "00:25.10",
+            "l1_start_index": 25,
+            "l1_end_index": 31,
+            "translation": "בוקר"
+          },
+          {
+            "text": "comes",
+            "timestamp": "00:25.10",
+            "timestamp_end": "00:25.50",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "מגיע"
+          }
+        ],
+        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
       },
       {
         "id": "phrase_8",
-        "text_l1": "Gonna spend it like no other",
-        "timestamp": "00:28.00",
-        "timestamp_end": "00:31.00",
-        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "00:25.60",
+        "timestamp_end": "00:27.80",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "00:25.60",
+            "timestamp_end": "00:26.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:26.00",
+            "timestamp_end": "00:26.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:26.20",
+            "timestamp_end": "00:26.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "00:26.50",
+            "timestamp_end": "00:26.90",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:26.90",
+            "timestamp_end": "00:27.20",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "00:27.20",
+            "timestamp_end": "00:27.80",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
       },
       {
         "id": "phrase_9",
-        "text_l1": "It was a crush",
-        "timestamp": "00:31.00",
-        "timestamp_end": "00:32.50",
-        "text_l2": "זה היה קראש"
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "00:27.90",
+        "timestamp_end": "00:30.50",
+        "words": [
+          {
+            "text": "Gonna",
+            "timestamp": "00:27.90",
+            "timestamp_end": "00:28.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "הולך"
+          },
+          {
+            "text": "spend",
+            "timestamp": "00:28.30",
+            "timestamp_end": "00:28.70",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לבלות"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:28.70",
+            "timestamp_end": "00:28.90",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "00:28.90",
+            "timestamp_end": "00:29.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "כמו"
+          },
+          {
+            "text": "no",
+            "timestamp": "00:29.20",
+            "timestamp_end": "00:29.50",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "שום"
+          },
+          {
+            "text": "other",
+            "timestamp": "00:29.50",
+            "timestamp_end": "00:30.50",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "אחר"
+          }
+        ],
+        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
       },
       {
         "id": "phrase_10",
-        "text_l1": "But I couldn't, couldn't get enough",
-        "timestamp": "00:32.50",
-        "timestamp_end": "00:36.00",
-        "text_l2": "אבל לא יכולתי, לא יכולתי להסתפק"
+        "text_l1": "It was a crush",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "words": [
+          {
+            "text": "It",
+            "timestamp": "00:31.00",
+            "timestamp_end": "00:31.30",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:31.30",
+            "timestamp_end": "00:31.60",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "היה"
+          },
+          {
+            "text": "a",
+            "timestamp": "00:31.60",
+            "timestamp_end": "00:31.80",
+            "l1_start_index": 7,
+            "l1_end_index": 7,
+            "translation": "a"
+          },
+          {
+            "text": "crush",
+            "timestamp": "00:31.80",
+            "timestamp_end": "00:33.00",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "קראש"
+          }
+        ],
+        "text_l2": "זה היה קראש"
       },
       {
         "id": "phrase_11",
-        "text_l1": "It was a rush",
-        "timestamp": "00:36.00",
-        "timestamp_end": "00:37.50",
-        "text_l2": "זה היה ריגוש"
+        "text_l1": "But I couldn't, couldn't get enough",
+        "timestamp": "00:33.10",
+        "timestamp_end": "00:35.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "00:33.10",
+            "timestamp_end": "00:33.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:33.30",
+            "timestamp_end": "00:33.50",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "couldn't,",
+            "timestamp": "00:33.50",
+            "timestamp_end": "00:34.00",
+            "l1_start_index": 6,
+            "l1_end_index": 14,
+            "translation": "לא יכולתי"
+          },
+          {
+            "text": "couldn't",
+            "timestamp": "00:34.00",
+            "timestamp_end": "00:34.50",
+            "l1_start_index": 16,
+            "l1_end_index": 23,
+            "translation": "לא יכולתי"
+          },
+          {
+            "text": "get",
+            "timestamp": "00:34.50",
+            "timestamp_end": "00:34.80",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "לקבל"
+          },
+          {
+            "text": "enough",
+            "timestamp": "00:34.80",
+            "timestamp_end": "00:35.50",
+            "l1_start_index": 29,
+            "l1_end_index": 34,
+            "translation": "מספיק"
+          }
+        ],
+        "text_l2": "אבל לא יכולתי, לא יכולתי לקבל מספיק"
       },
       {
         "id": "phrase_12",
-        "text_l1": "But I gave it up",
-        "timestamp": "00:37.50",
-        "timestamp_end": "00:41.00",
-        "text_l2": "אבל ויתרתי על זה"
+        "text_l1": "It was a rush",
+        "timestamp": "00:35.60",
+        "timestamp_end": "00:37.80",
+        "words": [
+          {
+            "text": "It",
+            "timestamp": "00:35.60",
+            "timestamp_end": "00:35.90",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:35.90",
+            "timestamp_end": "00:36.20",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "היה"
+          },
+          {
+            "text": "a",
+            "timestamp": "00:36.20",
+            "timestamp_end": "00:36.40",
+            "l1_start_index": 7,
+            "l1_end_index": 7,
+            "translation": "a"
+          },
+          {
+            "text": "rush",
+            "timestamp": "00:36.40",
+            "timestamp_end": "00:37.80",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "ריגוש"
+          }
+        ],
+        "text_l2": "זה היה ריגוש"
       },
       {
         "id": "phrase_13",
-        "text_l1": "It was a crush",
-        "timestamp": "00:41.00",
-        "timestamp_end": "00:42.50",
-        "text_l2": "זה היה קראש"
+        "text_l1": "But I gave it up",
+        "timestamp": "00:37.90",
+        "timestamp_end": "00:40.00",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "00:37.90",
+            "timestamp_end": "00:38.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:38.20",
+            "timestamp_end": "00:38.40",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "gave",
+            "timestamp": "00:38.40",
+            "timestamp_end": "00:38.80",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "נתתי"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:38.80",
+            "timestamp_end": "00:39.00",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "זה"
+          },
+          {
+            "text": "up",
+            "timestamp": "00:39.00",
+            "timestamp_end": "00:40.00",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "על"
+          }
+        ],
+        "text_l2": "אבל ויתרתי על זה"
       },
       {
         "id": "phrase_14",
-        "text_l1": "Now I might have went and said too much",
-        "timestamp": "00:42.50",
-        "timestamp_end": "00:46.00",
-        "text_l2": "אולי אמרתי יותר מדי"
-      },
-      {
-        "id": "phrase_15",
-        "text_l1": "But that's all it was",
-        "timestamp": "00:46.00",
-        "timestamp_end": "00:47.50",
-        "text_l2": "אבל זה כל מה שזה היה"
-      },
-      {
-        "id": "phrase_16",
-        "text_l1": "So I gave it up",
-        "timestamp": "00:47.50",
-        "timestamp_end": "00:49.50",
-        "text_l2": "אז ויתרתי על זה"
-      },
-      {
-        "id": "phrase_17",
-        "text_l1": "I live my day as if it was the last",
-        "timestamp": "00:49.50",
-        "timestamp_end": "00:52.00",
-        "text_l2": "אני חי את יומי כאילו זה האחרון"
-      },
-      {
-        "id": "phrase_18",
-        "text_l1": "Live my day as if there was no past",
-        "timestamp": "00:52.00",
-        "timestamp_end": "00:54.50",
-        "text_l2": "חי את יומי כאילו אין עבר"
-      },
-      {
-        "id": "phrase_19",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "00:54.50",
-        "timestamp_end": "00:57.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
-      },
-      {
-        "id": "phrase_20",
-        "text_l1": "Doin' it the way I wanna",
-        "timestamp": "00:57.00",
-        "timestamp_end": "00:59.50",
-        "text_l2": "עושה את זה איך שבא לי"
-      },
-      {
-        "id": "phrase_21",
-        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
-        "timestamp": "00:59.50",
-        "timestamp_end": "01:02.00",
-        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
-      },
-      {
-        "id": "phrase_22",
-        "text_l1": "But I won't be done when morning comes",
-        "timestamp": "01:02.00",
-        "timestamp_end": "01:04.50",
-        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
-      },
-      {
-        "id": "phrase_23",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "01:04.50",
-        "timestamp_end": "01:07.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
-      },
-      {
-        "id": "phrase_24",
-        "text_l1": "Gonna spend it like no other",
-        "timestamp": "01:07.00",
-        "timestamp_end": "01:10.00",
-        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
-      },
-      {
-        "id": "phrase_25",
         "text_l1": "It was a crush",
-        "timestamp": "01:10.00",
-        "timestamp_end": "01:11.50",
+        "timestamp": "00:40.50",
+        "timestamp_end": "00:42.50",
+        "words": [
+          {
+            "text": "It",
+            "timestamp": "00:40.50",
+            "timestamp_end": "00:40.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:40.80",
+            "timestamp_end": "00:41.10",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "היה"
+          },
+          {
+            "text": "a",
+            "timestamp": "00:41.10",
+            "timestamp_end": "00:41.30",
+            "l1_start_index": 7,
+            "l1_end_index": 7,
+            "translation": "a"
+          },
+          {
+            "text": "crush",
+            "timestamp": "00:41.30",
+            "timestamp_end": "00:42.50",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "קראש"
+          }
+        ],
         "text_l2": "זה היה קראש"
       },
       {
-        "id": "phrase_26",
-        "text_l1": "I kept saying I'ma stay in touch",
-        "timestamp": "01:11.50",
-        "timestamp_end": "01:15.00",
-        "text_l2": "המשכתי להגיד שאישאר בקשר"
+        "id": "phrase_15",
+        "text_l1": "Now I might not want to say too much",
+        "timestamp": "00:42.60",
+        "timestamp_end": "00:45.20",
+        "words": [
+          {
+            "text": "Now",
+            "timestamp": "00:42.60",
+            "timestamp_end": "00:42.90",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:42.90",
+            "timestamp_end": "00:43.10",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "might",
+            "timestamp": "00:43.10",
+            "timestamp_end": "00:43.40",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "אולי"
+          },
+          {
+            "text": "not",
+            "timestamp": "00:43.40",
+            "timestamp_end": "00:43.70",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "לא"
+          },
+          {
+            "text": "want",
+            "timestamp": "00:43.70",
+            "timestamp_end": "00:44.00",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "רוצה"
+          },
+          {
+            "text": "to",
+            "timestamp": "00:44.00",
+            "timestamp_end": "00:44.20",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "ל"
+          },
+          {
+            "text": "say",
+            "timestamp": "00:44.20",
+            "timestamp_end": "00:44.50",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "לומר"
+          },
+          {
+            "text": "too",
+            "timestamp": "00:44.50",
+            "timestamp_end": "00:44.80",
+            "l1_start_index": 28,
+            "l1_end_index": 30,
+            "translation": "מדי"
+          },
+          {
+            "text": "much",
+            "timestamp": "00:44.80",
+            "timestamp_end": "00:45.20",
+            "l1_start_index": 32,
+            "l1_end_index": 35,
+            "translation": "הרבה"
+          }
+        ],
+        "text_l2": "עכשיו אולי אני לא רוצה להגיד יותר מדי"
       },
       {
-        "id": "phrase_27",
-        "text_l1": "But that thing went bust",
-        "timestamp": "01:15.00",
-        "timestamp_end": "01:16.50",
-        "text_l2": "אבל זה התפוצץ"
+        "id": "phrase_16",
+        "text_l1": "But that's all it was",
+        "timestamp": "00:45.30",
+        "timestamp_end": "00:47.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "00:45.30",
+            "timestamp_end": "00:45.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "that's",
+            "timestamp": "00:45.60",
+            "timestamp_end": "00:46.00",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:46.00",
+            "timestamp_end": "00:46.30",
+            "l1_start_index": 11,
+            "l1_end_index": 13,
+            "translation": "הכל"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:46.30",
+            "timestamp_end": "00:46.60",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:46.60",
+            "timestamp_end": "00:47.50",
+            "l1_start_index": 18,
+            "l1_end_index": 20,
+            "translation": "היה"
+          }
+        ],
+        "text_l2": "אבל זה כל מה שזה היה"
       },
       {
-        "id": "phrase_28",
+        "id": "phrase_17",
         "text_l1": "So I gave it up",
-        "timestamp": "01:16.50",
-        "timestamp_end": "01:20.00",
+        "timestamp": "00:47.60",
+        "timestamp_end": "00:49.80",
+        "words": [
+          {
+            "text": "So",
+            "timestamp": "00:47.60",
+            "timestamp_end": "00:47.90",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "אז"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:47.90",
+            "timestamp_end": "00:48.10",
+            "l1_start_index": 3,
+            "l1_end_index": 3,
+            "translation": "אני"
+          },
+          {
+            "text": "gave",
+            "timestamp": "00:48.10",
+            "timestamp_end": "00:48.50",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "נתתי"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:48.50",
+            "timestamp_end": "00:48.70",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "זה"
+          },
+          {
+            "text": "up",
+            "timestamp": "00:48.70",
+            "timestamp_end": "00:49.80",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "על"
+          }
+        ],
         "text_l2": "אז ויתרתי על זה"
       },
       {
+        "id": "phrase_18",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "00:49.90",
+        "timestamp_end": "00:52.50",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "00:49.90",
+            "timestamp_end": "00:50.10",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "live",
+            "timestamp": "00:50.10",
+            "timestamp_end": "00:50.40",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "חי"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:50.40",
+            "timestamp_end": "00:50.60",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "00:50.60",
+            "timestamp_end": "00:51.00",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "00:51.00",
+            "timestamp_end": "00:51.20",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "כ"
+          },
+          {
+            "text": "if",
+            "timestamp": "00:51.20",
+            "timestamp_end": "00:51.40",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "אילו"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:51.40",
+            "timestamp_end": "00:51.60",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:51.60",
+            "timestamp_end": "00:51.90",
+            "l1_start_index": 23,
+            "l1_end_index": 25,
+            "translation": "היה"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:51.90",
+            "timestamp_end": "00:52.10",
+            "l1_start_index": 27,
+            "l1_end_index": 29,
+            "translation": "ה"
+          },
+          {
+            "text": "last",
+            "timestamp": "00:52.10",
+            "timestamp_end": "00:52.50",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "אחרון"
+          }
+        ],
+        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "00:52.60",
+        "timestamp_end": "00:55.20",
+        "words": [
+          {
+            "text": "Live",
+            "timestamp": "00:52.60",
+            "timestamp_end": "00:52.90",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיה"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:52.90",
+            "timestamp_end": "00:53.10",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "00:53.10",
+            "timestamp_end": "00:53.50",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "00:53.50",
+            "timestamp_end": "00:53.70",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "כ"
+          },
+          {
+            "text": "if",
+            "timestamp": "00:53.70",
+            "timestamp_end": "00:53.90",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אילו"
+          },
+          {
+            "text": "there",
+            "timestamp": "00:53.90",
+            "timestamp_end": "00:54.10",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "there"
+          },
+          {
+            "text": "was",
+            "timestamp": "00:54.10",
+            "timestamp_end": "00:54.40",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "היה"
+          },
+          {
+            "text": "no",
+            "timestamp": "00:54.40",
+            "timestamp_end": "00:54.70",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "לא"
+          },
+          {
+            "text": "past",
+            "timestamp": "00:54.70",
+            "timestamp_end": "00:55.20",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "עבר"
+          }
+        ],
+        "text_l2": "חי את יומי כאילו לא היה עבר"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "00:55.30",
+        "timestamp_end": "00:57.50",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "00:55.30",
+            "timestamp_end": "00:55.70",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:55.70",
+            "timestamp_end": "00:55.90",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:55.90",
+            "timestamp_end": "00:56.20",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "00:56.20",
+            "timestamp_end": "00:56.60",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "00:56.60",
+            "timestamp_end": "00:56.90",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "00:56.90",
+            "timestamp_end": "00:57.50",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Doing it the way I wanna",
+        "timestamp": "00:57.60",
+        "timestamp_end": "00:59.50",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "00:57.60",
+            "timestamp_end": "00:58.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "00:58.00",
+            "timestamp_end": "00:58.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:58.20",
+            "timestamp_end": "00:58.40",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "ה"
+          },
+          {
+            "text": "way",
+            "timestamp": "00:58.40",
+            "timestamp_end": "00:58.70",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "דרך"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:58.70",
+            "timestamp_end": "00:58.90",
+            "l1_start_index": 17,
+            "l1_end_index": 17,
+            "translation": "אני"
+          },
+          {
+            "text": "wanna",
+            "timestamp": "00:58.90",
+            "timestamp_end": "00:59.50",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "רוצה"
+          }
+        ],
+        "text_l2": "עושה את זה איך שאני רוצה"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Yeah, I'm gonna dance my heart out",
+        "timestamp": "00:59.60",
+        "timestamp_end": "01:01.40",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "00:59.60",
+            "timestamp_end": "00:59.90",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כן"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "00:59.90",
+            "timestamp_end": "01:00.10",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אני"
+          },
+          {
+            "text": "gonna",
+            "timestamp": "01:00.10",
+            "timestamp_end": "01:00.40",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "הולך"
+          },
+          {
+            "text": "dance",
+            "timestamp": "01:00.40",
+            "timestamp_end": "01:00.70",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "לרקוד"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:00.70",
+            "timestamp_end": "01:00.90",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "שלי"
+          },
+          {
+            "text": "heart",
+            "timestamp": "01:00.90",
+            "timestamp_end": "01:01.20",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "לב"
+          },
+          {
+            "text": "out",
+            "timestamp": "01:01.20",
+            "timestamp_end": "01:01.40",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "החוצה"
+          }
+        ],
+        "text_l2": "כן, אני הולך לרקוד עד כלות"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "till the dawn",
+        "timestamp": "01:01.45",
+        "timestamp_end": "01:02.20",
+        "words": [
+          {
+            "text": "till",
+            "timestamp": "01:01.45",
+            "timestamp_end": "01:01.60",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "עד"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:01.60",
+            "timestamp_end": "01:01.80",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "ה"
+          },
+          {
+            "text": "dawn",
+            "timestamp": "01:01.80",
+            "timestamp_end": "01:02.20",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "שחר"
+          }
+        ],
+        "text_l2": "עד השחר"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "01:02.30",
+        "timestamp_end": "01:04.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "01:02.30",
+            "timestamp_end": "01:02.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "01:02.50",
+            "timestamp_end": "01:02.70",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "won't",
+            "timestamp": "01:02.70",
+            "timestamp_end": "01:03.00",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לא"
+          },
+          {
+            "text": "be",
+            "timestamp": "01:03.00",
+            "timestamp_end": "01:03.20",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "להיות"
+          },
+          {
+            "text": "done",
+            "timestamp": "01:03.20",
+            "timestamp_end": "01:03.50",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גמור"
+          },
+          {
+            "text": "when",
+            "timestamp": "01:03.50",
+            "timestamp_end": "01:03.70",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כש"
+          },
+          {
+            "text": "morning",
+            "timestamp": "01:03.70",
+            "timestamp_end": "01:04.10",
+            "l1_start_index": 25,
+            "l1_end_index": 31,
+            "translation": "בוקר"
+          },
+          {
+            "text": "comes",
+            "timestamp": "01:04.10",
+            "timestamp_end": "01:04.50",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "מגיע"
+          }
+        ],
+        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "01:04.60",
+        "timestamp_end": "01:06.80",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "01:04.60",
+            "timestamp_end": "01:05.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:05.00",
+            "timestamp_end": "01:05.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:05.20",
+            "timestamp_end": "01:05.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "01:05.50",
+            "timestamp_end": "01:05.90",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:05.90",
+            "timestamp_end": "01:06.20",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "01:06.20",
+            "timestamp_end": "01:06.80",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "01:06.90",
+        "timestamp_end": "01:09.50",
+        "words": [
+          {
+            "text": "Gonna",
+            "timestamp": "01:06.90",
+            "timestamp_end": "01:07.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "הולך"
+          },
+          {
+            "text": "spend",
+            "timestamp": "01:07.30",
+            "timestamp_end": "01:07.70",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לבלות"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:07.70",
+            "timestamp_end": "01:07.90",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "01:07.90",
+            "timestamp_end": "01:08.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "כמו"
+          },
+          {
+            "text": "no",
+            "timestamp": "01:08.20",
+            "timestamp_end": "01:08.50",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "שום"
+          },
+          {
+            "text": "other",
+            "timestamp": "01:08.50",
+            "timestamp_end": "01:09.50",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "אחר"
+          }
+        ],
+        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "It was a crush",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:12.00",
+        "words": [
+          {
+            "text": "It",
+            "timestamp": "01:10.00",
+            "timestamp_end": "01:10.30",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "זה"
+          },
+          {
+            "text": "was",
+            "timestamp": "01:10.30",
+            "timestamp_end": "01:10.60",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "היה"
+          },
+          {
+            "text": "a",
+            "timestamp": "01:10.60",
+            "timestamp_end": "01:10.80",
+            "l1_start_index": 7,
+            "l1_end_index": 7,
+            "translation": "a"
+          },
+          {
+            "text": "crush",
+            "timestamp": "01:10.80",
+            "timestamp_end": "01:12.00",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "קראש"
+          }
+        ],
+        "text_l2": "זה היה קראש"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "I kept saying I'm gonna stay in touch",
+        "timestamp": "01:12.10",
+        "timestamp_end": "01:14.50",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "01:12.10",
+            "timestamp_end": "01:12.30",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "kept",
+            "timestamp": "01:12.30",
+            "timestamp_end": "01:12.60",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "המשכתי"
+          },
+          {
+            "text": "saying",
+            "timestamp": "01:12.60",
+            "timestamp_end": "01:13.00",
+            "l1_start_index": 7,
+            "l1_end_index": 12,
+            "translation": "לומר"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:13.00",
+            "timestamp_end": "01:13.20",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "אני"
+          },
+          {
+            "text": "gonna",
+            "timestamp": "01:13.20",
+            "timestamp_end": "01:13.50",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "הולך"
+          },
+          {
+            "text": "stay",
+            "timestamp": "01:13.50",
+            "timestamp_end": "01:13.80",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "להישאר"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:13.80",
+            "timestamp_end": "01:14.00",
+            "l1_start_index": 29,
+            "l1_end_index": 30,
+            "translation": "ב"
+          },
+          {
+            "text": "touch",
+            "timestamp": "01:14.00",
+            "timestamp_end": "01:14.50",
+            "l1_start_index": 32,
+            "l1_end_index": 36,
+            "translation": "קשר"
+          }
+        ],
+        "text_l2": "המשכתי להגיד שאני הולך להישאר בקשר"
+      },
+      {
         "id": "phrase_29",
-        "text_l1": "No tricks, no bluff",
-        "timestamp": "01:20.00",
-        "timestamp_end": "01:21.50",
-        "text_l2": "בלי טריקים, בלי בלופים"
+        "text_l1": "But that thing went bust",
+        "timestamp": "01:14.60",
+        "timestamp_end": "01:16.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "01:14.60",
+            "timestamp_end": "01:14.90",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "that",
+            "timestamp": "01:14.90",
+            "timestamp_end": "01:15.20",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "הזה"
+          },
+          {
+            "text": "thing",
+            "timestamp": "01:15.20",
+            "timestamp_end": "01:15.50",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "דבר"
+          },
+          {
+            "text": "went",
+            "timestamp": "01:15.50",
+            "timestamp_end": "01:15.80",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "הלך"
+          },
+          {
+            "text": "bust",
+            "timestamp": "01:15.80",
+            "timestamp_end": "01:16.50",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כישלון"
+          }
+        ],
+        "text_l2": "אבל הדבר הזה נכשל"
       },
       {
         "id": "phrase_30",
-        "text_l1": "I'm just better off without them cuffs",
-        "timestamp": "01:21.50",
-        "timestamp_end": "01:25.00",
-        "text_l2": "אני מסתדר טוב יותר בלי הכבלים האלה"
+        "text_l1": "So I gave it up",
+        "timestamp": "01:16.60",
+        "timestamp_end": "01:18.80",
+        "words": [
+          {
+            "text": "So",
+            "timestamp": "01:16.60",
+            "timestamp_end": "01:16.90",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "אז"
+          },
+          {
+            "text": "I",
+            "timestamp": "01:16.90",
+            "timestamp_end": "01:17.10",
+            "l1_start_index": 3,
+            "l1_end_index": 3,
+            "translation": "אני"
+          },
+          {
+            "text": "gave",
+            "timestamp": "01:17.10",
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "נתתי"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:17.50",
+            "timestamp_end": "01:17.70",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "זה"
+          },
+          {
+            "text": "up",
+            "timestamp": "01:17.70",
+            "timestamp_end": "01:18.80",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "על"
+          }
+        ],
+        "text_l2": "אז ויתרתי על זה"
       },
       {
         "id": "phrase_31",
-        "text_l1": "Yeah the sun won't set on us",
-        "timestamp": "01:25.00",
-        "timestamp_end": "01:30.00",
-        "text_l2": "כן, השמש לא תשקע עלינו"
+        "text_l1": "No tricks, no bluff",
+        "timestamp": "01:19.50",
+        "timestamp_end": "01:21.50",
+        "words": [
+          {
+            "text": "No",
+            "timestamp": "01:19.50",
+            "timestamp_end": "01:19.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "בלי"
+          },
+          {
+            "text": "tricks,",
+            "timestamp": "01:19.80",
+            "timestamp_end": "01:20.30",
+            "l1_start_index": 3,
+            "l1_end_index": 9,
+            "translation": "טריקים"
+          },
+          {
+            "text": "no",
+            "timestamp": "01:20.30",
+            "timestamp_end": "01:20.60",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "בלי"
+          },
+          {
+            "text": "bluff",
+            "timestamp": "01:20.60",
+            "timestamp_end": "01:21.50",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "בלוף"
+          }
+        ],
+        "text_l2": "בלי טריקים, בלי בלוף"
       },
       {
         "id": "phrase_32",
-        "text_l1": "Went low, went high",
-        "timestamp": "01:30.00",
-        "timestamp_end": "01:32.50",
-        "text_l2": "ירדנו נמוך, עלינו גבוה"
+        "text_l1": "I'm just better off without them cuffs",
+        "timestamp": "01:21.60",
+        "timestamp_end": "01:24.20",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "01:21.60",
+            "timestamp_end": "01:21.90",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "just",
+            "timestamp": "01:21.90",
+            "timestamp_end": "01:22.20",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "פשוט"
+          },
+          {
+            "text": "better",
+            "timestamp": "01:22.20",
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 9,
+            "l1_end_index": 14,
+            "translation": "עדיף"
+          },
+          {
+            "text": "off",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:22.80",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "off"
+          },
+          {
+            "text": "without",
+            "timestamp": "01:22.80",
+            "timestamp_end": "01:23.20",
+            "l1_start_index": 20,
+            "l1_end_index": 26,
+            "translation": "בלי"
+          },
+          {
+            "text": "them",
+            "timestamp": "01:23.20",
+            "timestamp_end": "01:23.50",
+            "l1_start_index": 28,
+            "l1_end_index": 31,
+            "translation": "ההם"
+          },
+          {
+            "text": "cuffs",
+            "timestamp": "01:23.50",
+            "timestamp_end": "01:24.20",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "אזיקים"
+          }
+        ],
+        "text_l2": "אני פשוט יותר טוב בלי האזיקים האלה"
       },
       {
         "id": "phrase_33",
-        "text_l1": "Still waters run dry",
-        "timestamp": "01:32.50",
-        "timestamp_end": "01:35.00",
-        "text_l2": "מים שקטים מתייבשים"
+        "text_l1": "Yeah, the sun won't set on us",
+        "timestamp": "01:24.30",
+        "timestamp_end": "01:26.50",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "01:24.30",
+            "timestamp_end": "01:24.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כן"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:24.60",
+            "timestamp_end": "01:24.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "ה"
+          },
+          {
+            "text": "sun",
+            "timestamp": "01:24.80",
+            "timestamp_end": "01:25.10",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "שמש"
+          },
+          {
+            "text": "won't",
+            "timestamp": "01:25.10",
+            "timestamp_end": "01:25.40",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "לא"
+          },
+          {
+            "text": "set",
+            "timestamp": "01:25.40",
+            "timestamp_end": "01:25.70",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "תשקע"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:25.70",
+            "timestamp_end": "01:26.00",
+            "l1_start_index": 24,
+            "l1_end_index": 25,
+            "translation": "על"
+          },
+          {
+            "text": "us",
+            "timestamp": "01:26.00",
+            "timestamp_end": "01:26.50",
+            "l1_start_index": 27,
+            "l1_end_index": 28,
+            "translation": "אותנו"
+          }
+        ],
+        "text_l2": "כן, השמש לא תשקע עלינו"
       },
       {
         "id": "phrase_34",
-        "text_l1": "Gotta get back in the groove",
-        "timestamp": "01:35.00",
-        "timestamp_end": "01:37.50",
-        "text_l2": "צריך לחזור לקצב"
+        "text_l1": "Went low, went high",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:32.80",
+        "words": [
+          {
+            "text": "Went",
+            "timestamp": "01:30.00",
+            "timestamp_end": "01:30.40",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "הלך"
+          },
+          {
+            "text": "low,",
+            "timestamp": "01:30.40",
+            "timestamp_end": "01:31.20",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "נמוך"
+          },
+          {
+            "text": "went",
+            "timestamp": "01:31.20",
+            "timestamp_end": "01:31.60",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "הלך"
+          },
+          {
+            "text": "high",
+            "timestamp": "01:31.60",
+            "timestamp_end": "01:32.80",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גבוה"
+          }
+        ],
+        "text_l2": "הלך נמוך, הלך גבוה"
       },
       {
         "id": "phrase_35",
-        "text_l1": "I ain't ever hurtin'",
-        "timestamp": "01:37.50",
-        "timestamp_end": "01:40.00",
-        "text_l2": "אני לא נפגע לעולם"
+        "text_l1": "Still water runs dry",
+        "timestamp": "01:32.90",
+        "timestamp_end": "01:35.20",
+        "words": [
+          {
+            "text": "Still",
+            "timestamp": "01:32.90",
+            "timestamp_end": "01:33.40",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "דומם"
+          },
+          {
+            "text": "water",
+            "timestamp": "01:33.40",
+            "timestamp_end": "01:33.90",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "מים"
+          },
+          {
+            "text": "runs",
+            "timestamp": "01:33.90",
+            "timestamp_end": "01:34.40",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "מתייבש"
+          },
+          {
+            "text": "dry",
+            "timestamp": "01:34.40",
+            "timestamp_end": "01:35.20",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "יבש"
+          }
+        ],
+        "text_l2": "מים עומדים מתייבשים"
       },
       {
         "id": "phrase_36",
-        "text_l1": "Went low, went high",
-        "timestamp": "01:40.00",
-        "timestamp_end": "01:42.50",
-        "text_l2": "ירדנו נמוך, עלינו גבוה"
+        "text_l1": "Got to get back in the groove",
+        "timestamp": "01:35.30",
+        "timestamp_end": "01:37.50",
+        "words": [
+          {
+            "text": "Got",
+            "timestamp": "01:35.30",
+            "timestamp_end": "01:35.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "חייב"
+          },
+          {
+            "text": "to",
+            "timestamp": "01:35.60",
+            "timestamp_end": "01:35.80",
+            "l1_start_index": 4,
+            "l1_end_index": 5,
+            "translation": "to"
+          },
+          {
+            "text": "get",
+            "timestamp": "01:35.80",
+            "timestamp_end": "01:36.10",
+            "l1_start_index": 7,
+            "l1_end_index": 9,
+            "translation": "לחזור"
+          },
+          {
+            "text": "back",
+            "timestamp": "01:36.10",
+            "timestamp_end": "01:36.40",
+            "l1_start_index": 11,
+            "l1_end_index": 14,
+            "translation": "חזרה"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:36.40",
+            "timestamp_end": "01:36.60",
+            "l1_start_index": 16,
+            "l1_end_index": 17,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:36.60",
+            "timestamp_end": "01:36.80",
+            "l1_start_index": 19,
+            "l1_end_index": 21,
+            "translation": "ה"
+          },
+          {
+            "text": "groove",
+            "timestamp": "01:36.80",
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 23,
+            "l1_end_index": 28,
+            "translation": "קצב"
+          }
+        ],
+        "text_l2": "צריך לחזור לקצב"
       },
       {
         "id": "phrase_37",
-        "text_l1": "What matters is now",
-        "timestamp": "01:42.50",
-        "timestamp_end": "01:45.00",
-        "text_l2": "מה שחשוב זה עכשיו"
+        "text_l1": "I ain't in a hurry",
+        "timestamp": "01:37.60",
+        "timestamp_end": "01:39.50",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "01:37.60",
+            "timestamp_end": "01:37.80",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "ain't",
+            "timestamp": "01:37.80",
+            "timestamp_end": "01:38.10",
+            "l1_start_index": 2,
+            "l1_end_index": 6,
+            "translation": "לא"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:38.10",
+            "timestamp_end": "01:38.30",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "ב"
+          },
+          {
+            "text": "a",
+            "timestamp": "01:38.30",
+            "timestamp_end": "01:38.50",
+            "l1_start_index": 11,
+            "l1_end_index": 11,
+            "translation": "a"
+          },
+          {
+            "text": "hurry",
+            "timestamp": "01:38.50",
+            "timestamp_end": "01:39.50",
+            "l1_start_index": 13,
+            "l1_end_index": 17,
+            "translation": "חיפזון"
+          }
+        ],
+        "text_l2": "אני לא ממהר"
       },
       {
         "id": "phrase_38",
-        "text_l1": "Getting right back in the mood",
-        "timestamp": "01:45.00",
-        "timestamp_end": "01:48.50",
-        "text_l2": "חוזר ישר למוד"
+        "text_l1": "Went low, went high",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:42.80",
+        "words": [
+          {
+            "text": "Went",
+            "timestamp": "01:40.00",
+            "timestamp_end": "01:40.40",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "הלך"
+          },
+          {
+            "text": "low,",
+            "timestamp": "01:40.40",
+            "timestamp_end": "01:41.20",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "נמוך"
+          },
+          {
+            "text": "went",
+            "timestamp": "01:41.20",
+            "timestamp_end": "01:41.60",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "הלך"
+          },
+          {
+            "text": "high",
+            "timestamp": "01:41.60",
+            "timestamp_end": "01:42.80",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גבוה"
+          }
+        ],
+        "text_l2": "הלך נמוך, הלך גבוה"
       },
       {
         "id": "phrase_39",
-        "text_l1": "I live my day as if it was the last",
-        "timestamp": "01:48.50",
-        "timestamp_end": "01:51.00",
-        "text_l2": "אני חי את יומי כאילו זה האחרון"
+        "text_l1": "What matters is now",
+        "timestamp": "01:42.90",
+        "timestamp_end": "01:44.80",
+        "words": [
+          {
+            "text": "What",
+            "timestamp": "01:42.90",
+            "timestamp_end": "01:43.30",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "מה"
+          },
+          {
+            "text": "matters",
+            "timestamp": "01:43.30",
+            "timestamp_end": "01:43.80",
+            "l1_start_index": 5,
+            "l1_end_index": 11,
+            "translation": "חשוב"
+          },
+          {
+            "text": "is",
+            "timestamp": "01:43.80",
+            "timestamp_end": "01:44.10",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "הוא"
+          },
+          {
+            "text": "now",
+            "timestamp": "01:44.10",
+            "timestamp_end": "01:44.80",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "עכשיו"
+          }
+        ],
+        "text_l2": "מה שחשוב זה עכשיו"
       },
       {
         "id": "phrase_40",
-        "text_l1": "Live my day as if there was no past",
-        "timestamp": "01:51.00",
-        "timestamp_end": "01:53.50",
-        "text_l2": "חי את יומי כאילו אין עבר"
+        "text_l1": "Getting right back in the mood",
+        "timestamp": "01:44.90",
+        "timestamp_end": "01:47.50",
+        "words": [
+          {
+            "text": "Getting",
+            "timestamp": "01:44.90",
+            "timestamp_end": "01:45.30",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "חוזר"
+          },
+          {
+            "text": "right",
+            "timestamp": "01:45.30",
+            "timestamp_end": "01:45.60",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "מיד"
+          },
+          {
+            "text": "back",
+            "timestamp": "01:45.60",
+            "timestamp_end": "01:45.90",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "חזרה"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:45.90",
+            "timestamp_end": "01:46.10",
+            "l1_start_index": 19,
+            "l1_end_index": 20,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:46.10",
+            "timestamp_end": "01:46.30",
+            "l1_start_index": 22,
+            "l1_end_index": 24,
+            "translation": "ה"
+          },
+          {
+            "text": "mood",
+            "timestamp": "01:46.30",
+            "timestamp_end": "01:47.50",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "מצב רוח"
+          }
+        ],
+        "text_l2": "נכנס חזרה בדיוק למצב רוח"
       },
       {
         "id": "phrase_41",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "01:53.50",
-        "timestamp_end": "01:56.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "01:49.00",
+        "timestamp_end": "01:51.50",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "01:49.00",
+            "timestamp_end": "01:49.20",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "live",
+            "timestamp": "01:49.20",
+            "timestamp_end": "01:49.50",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "חי"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:49.50",
+            "timestamp_end": "01:49.70",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "01:49.70",
+            "timestamp_end": "01:50.10",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "01:50.10",
+            "timestamp_end": "01:50.30",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "כאילו"
+          },
+          {
+            "text": "if",
+            "timestamp": "01:50.30",
+            "timestamp_end": "01:50.50",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "אם"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:50.50",
+            "timestamp_end": "01:50.70",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "הוא"
+          },
+          {
+            "text": "was",
+            "timestamp": "01:50.70",
+            "timestamp_end": "01:51.00",
+            "l1_start_index": 23,
+            "l1_end_index": 25,
+            "translation": "היה"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:51.00",
+            "timestamp_end": "01:51.20",
+            "l1_start_index": 27,
+            "l1_end_index": 29,
+            "translation": "ה"
+          },
+          {
+            "text": "last",
+            "timestamp": "01:51.20",
+            "timestamp_end": "01:51.50",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "אחרון"
+          }
+        ],
+        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
       },
       {
         "id": "phrase_42",
-        "text_l1": "Doin' it the way I wanna",
-        "timestamp": "01:56.00",
-        "timestamp_end": "01:58.50",
-        "text_l2": "עושה את זה איך שבא לי"
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "01:51.60",
+        "timestamp_end": "01:54.20",
+        "words": [
+          {
+            "text": "Live",
+            "timestamp": "01:51.60",
+            "timestamp_end": "01:51.90",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיה"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:51.90",
+            "timestamp_end": "01:52.10",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "01:52.10",
+            "timestamp_end": "01:52.50",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "01:52.50",
+            "timestamp_end": "01:52.70",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "כאילו"
+          },
+          {
+            "text": "if",
+            "timestamp": "01:52.70",
+            "timestamp_end": "01:52.90",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אם"
+          },
+          {
+            "text": "there",
+            "timestamp": "01:52.90",
+            "timestamp_end": "01:53.10",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "היה"
+          },
+          {
+            "text": "was",
+            "timestamp": "01:53.10",
+            "timestamp_end": "01:53.40",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "היה"
+          },
+          {
+            "text": "no",
+            "timestamp": "01:53.40",
+            "timestamp_end": "01:53.70",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "לא"
+          },
+          {
+            "text": "past",
+            "timestamp": "01:53.70",
+            "timestamp_end": "01:54.20",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "עבר"
+          }
+        ],
+        "text_l2": "חי את יומי כאילו לא היה עבר"
       },
       {
         "id": "phrase_43",
-        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
-        "timestamp": "01:58.50",
-        "timestamp_end": "02:01.00",
-        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "01:54.30",
+        "timestamp_end": "01:56.50",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "01:54.30",
+            "timestamp_end": "01:54.70",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:54.70",
+            "timestamp_end": "01:54.90",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:54.90",
+            "timestamp_end": "01:55.20",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "01:55.20",
+            "timestamp_end": "01:55.60",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:55.60",
+            "timestamp_end": "01:55.90",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "01:55.90",
+            "timestamp_end": "01:56.50",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
       },
       {
         "id": "phrase_44",
-        "text_l1": "But I won't be done when morning comes",
-        "timestamp": "02:01.00",
-        "timestamp_end": "02:03.50",
-        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+        "text_l1": "Doing it the way I wanna",
+        "timestamp": "01:56.60",
+        "timestamp_end": "01:58.50",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "01:56.60",
+            "timestamp_end": "01:57.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:57.00",
+            "timestamp_end": "01:57.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:57.20",
+            "timestamp_end": "01:57.40",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "ה"
+          },
+          {
+            "text": "way",
+            "timestamp": "01:57.40",
+            "timestamp_end": "01:57.70",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "דרך"
+          },
+          {
+            "text": "I",
+            "timestamp": "01:57.70",
+            "timestamp_end": "01:57.90",
+            "l1_start_index": 17,
+            "l1_end_index": 17,
+            "translation": "אני"
+          },
+          {
+            "text": "wanna",
+            "timestamp": "01:57.90",
+            "timestamp_end": "01:58.50",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "רוצה"
+          }
+        ],
+        "text_l2": "עושה את זה איך שאני רוצה"
       },
       {
         "id": "phrase_45",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "02:03.50",
-        "timestamp_end": "02:06.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        "text_l1": "Yeah, I'm gonna dance my heart out",
+        "timestamp": "01:58.60",
+        "timestamp_end": "02:00.40",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "01:58.60",
+            "timestamp_end": "01:58.90",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כן"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:58.90",
+            "timestamp_end": "01:59.10",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אני"
+          },
+          {
+            "text": "gonna",
+            "timestamp": "01:59.10",
+            "timestamp_end": "01:59.40",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "הולך"
+          },
+          {
+            "text": "dance",
+            "timestamp": "01:59.40",
+            "timestamp_end": "01:59.70",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "לרקוד"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:59.70",
+            "timestamp_end": "01:59.90",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "שלי"
+          },
+          {
+            "text": "heart",
+            "timestamp": "01:59.90",
+            "timestamp_end": "02:00.20",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "לב"
+          },
+          {
+            "text": "out",
+            "timestamp": "02:00.20",
+            "timestamp_end": "02:00.40",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "החוצה"
+          }
+        ],
+        "text_l2": "כן, אני הולך לרקוד עד כלות"
       },
       {
         "id": "phrase_46",
-        "text_l1": "Gonna spend it like no other",
-        "timestamp": "02:06.00",
-        "timestamp_end": "02:09.00",
-        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+        "text_l1": "till the dawn",
+        "timestamp": "02:00.45",
+        "timestamp_end": "02:01.20",
+        "words": [
+          {
+            "text": "till",
+            "timestamp": "02:00.45",
+            "timestamp_end": "02:00.60",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "עד"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:00.60",
+            "timestamp_end": "02:00.80",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "ה"
+          },
+          {
+            "text": "dawn",
+            "timestamp": "02:00.80",
+            "timestamp_end": "02:01.20",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "שחר"
+          }
+        ],
+        "text_l2": "עד השחר"
       },
       {
         "id": "phrase_47",
-        "text_l1": "Now I found another crush",
-        "timestamp": "02:09.00",
-        "timestamp_end": "02:11.50",
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "02:01.30",
+        "timestamp_end": "02:03.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "02:01.30",
+            "timestamp_end": "02:01.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:01.50",
+            "timestamp_end": "02:01.70",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "won't",
+            "timestamp": "02:01.70",
+            "timestamp_end": "02:02.00",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לא"
+          },
+          {
+            "text": "be",
+            "timestamp": "02:02.00",
+            "timestamp_end": "02:02.20",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "אהיה"
+          },
+          {
+            "text": "done",
+            "timestamp": "02:02.20",
+            "timestamp_end": "02:02.50",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גמור"
+          },
+          {
+            "text": "when",
+            "timestamp": "02:02.50",
+            "timestamp_end": "02:02.70",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כש"
+          },
+          {
+            "text": "morning",
+            "timestamp": "02:02.70",
+            "timestamp_end": "02:03.10",
+            "l1_start_index": 25,
+            "l1_end_index": 31,
+            "translation": "בוקר"
+          },
+          {
+            "text": "comes",
+            "timestamp": "02:03.10",
+            "timestamp_end": "02:03.50",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "יגיע"
+          }
+        ],
+        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
       },
       {
         "id": "phrase_48",
-        "text_l1": "The lush life's given me a rush",
-        "timestamp": "02:11.50",
-        "timestamp_end": "02:14.00",
-        "text_l2": "החיים השופעים נתנו לי ריגוש"
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "02:03.60",
+        "timestamp_end": "02:05.80",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "02:03.60",
+            "timestamp_end": "02:04.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:04.00",
+            "timestamp_end": "02:04.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:04.20",
+            "timestamp_end": "02:04.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "02:04.50",
+            "timestamp_end": "02:04.90",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:04.90",
+            "timestamp_end": "02:05.20",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "02:05.20",
+            "timestamp_end": "02:05.80",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
       },
       {
         "id": "phrase_49",
-        "text_l1": "Had one chance to make me blush",
-        "timestamp": "02:14.00",
-        "timestamp_end": "02:16.50",
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "02:05.90",
+        "timestamp_end": "02:08.50",
+        "words": [
+          {
+            "text": "Gonna",
+            "timestamp": "02:05.90",
+            "timestamp_end": "02:06.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "הולך"
+          },
+          {
+            "text": "spend",
+            "timestamp": "02:06.30",
+            "timestamp_end": "02:06.70",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לבלות"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:06.70",
+            "timestamp_end": "02:06.90",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:06.90",
+            "timestamp_end": "02:07.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "כמו"
+          },
+          {
+            "text": "no",
+            "timestamp": "02:07.20",
+            "timestamp_end": "02:07.50",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "אף"
+          },
+          {
+            "text": "other",
+            "timestamp": "02:07.50",
+            "timestamp_end": "02:08.50",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "אחר"
+          }
+        ],
+        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
       },
       {
         "id": "phrase_50",
-        "text_l1": "Second time is one too late",
-        "timestamp": "02:16.50",
-        "timestamp_end": "02:19.00",
-        "text_l2": "פעם שנייה זה מאוחר מדי"
+        "text_l1": "Now I found another crush",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "words": [
+          {
+            "text": "Now",
+            "timestamp": "02:09.00",
+            "timestamp_end": "02:09.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:09.30",
+            "timestamp_end": "02:09.50",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "found",
+            "timestamp": "02:09.50",
+            "timestamp_end": "02:09.80",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "מצאתי"
+          },
+          {
+            "text": "another",
+            "timestamp": "02:09.80",
+            "timestamp_end": "02:10.30",
+            "l1_start_index": 12,
+            "l1_end_index": 18,
+            "translation": "עוד"
+          },
+          {
+            "text": "crush",
+            "timestamp": "02:10.30",
+            "timestamp_end": "02:11.00",
+            "l1_start_index": 20,
+            "l1_end_index": 24,
+            "translation": "קראש"
+          }
+        ],
+        "text_l2": "עכשיו מצאתי קראש אחר"
       },
       {
         "id": "phrase_51",
-        "text_l1": "Now I found another crush",
-        "timestamp": "02:19.00",
-        "timestamp_end": "02:21.50",
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        "text_l1": "And it's like giving me a rush",
+        "timestamp": "02:11.10",
+        "timestamp_end": "02:13.20",
+        "words": [
+          {
+            "text": "And",
+            "timestamp": "02:11.10",
+            "timestamp_end": "02:11.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ו"
+          },
+          {
+            "text": "it's",
+            "timestamp": "02:11.30",
+            "timestamp_end": "02:11.60",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:11.60",
+            "timestamp_end": "02:11.90",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "כמו"
+          },
+          {
+            "text": "giving",
+            "timestamp": "02:11.90",
+            "timestamp_end": "02:12.30",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "נותן"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:12.30",
+            "timestamp_end": "02:12.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "לי"
+          },
+          {
+            "text": "a",
+            "timestamp": "02:12.50",
+            "timestamp_end": "02:12.70",
+            "l1_start_index": 24,
+            "l1_end_index": 24,
+            "translation": "a"
+          },
+          {
+            "text": "rush",
+            "timestamp": "02:12.70",
+            "timestamp_end": "02:13.20",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "ריגוש"
+          }
+        ],
+        "text_l2": "וזה כמו נותן לי ריגוש"
       },
       {
         "id": "phrase_52",
-        "text_l1": "The lush life's given me a rush",
-        "timestamp": "02:21.50",
-        "timestamp_end": "02:24.00",
-        "text_l2": "החיים השופעים נתנו לי ריגוש"
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "02:13.30",
+        "timestamp_end": "02:15.50",
+        "words": [
+          {
+            "text": "Had",
+            "timestamp": "02:13.30",
+            "timestamp_end": "02:13.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "הייתה"
+          },
+          {
+            "text": "one",
+            "timestamp": "02:13.60",
+            "timestamp_end": "02:13.90",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אחת"
+          },
+          {
+            "text": "chance",
+            "timestamp": "02:13.90",
+            "timestamp_end": "02:14.30",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "הזדמנות"
+          },
+          {
+            "text": "to",
+            "timestamp": "02:14.30",
+            "timestamp_end": "02:14.50",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "ל"
+          },
+          {
+            "text": "make",
+            "timestamp": "02:14.50",
+            "timestamp_end": "02:14.80",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "לגרום"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:14.80",
+            "timestamp_end": "02:15.00",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "לי"
+          },
+          {
+            "text": "blush",
+            "timestamp": "02:15.00",
+            "timestamp_end": "02:15.50",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "להסמיק"
+          }
+        ],
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
       },
       {
         "id": "phrase_53",
-        "text_l1": "Had one chance to make me blush",
-        "timestamp": "02:24.00",
-        "timestamp_end": "02:26.50",
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        "text_l1": "Second time is once too much",
+        "timestamp": "02:15.60",
+        "timestamp_end": "02:18.00",
+        "words": [
+          {
+            "text": "Second",
+            "timestamp": "02:15.60",
+            "timestamp_end": "02:16.10",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "שני"
+          },
+          {
+            "text": "time",
+            "timestamp": "02:16.10",
+            "timestamp_end": "02:16.50",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "פעם"
+          },
+          {
+            "text": "is",
+            "timestamp": "02:16.50",
+            "timestamp_end": "02:16.80",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "היא"
+          },
+          {
+            "text": "once",
+            "timestamp": "02:16.80",
+            "timestamp_end": "02:17.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "פעם אחת"
+          },
+          {
+            "text": "too",
+            "timestamp": "02:17.20",
+            "timestamp_end": "02:17.50",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "מדי"
+          },
+          {
+            "text": "much",
+            "timestamp": "02:17.50",
+            "timestamp_end": "02:18.00",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "יותר"
+          }
+        ],
+        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
       },
       {
         "id": "phrase_54",
-        "text_l1": "Second time is one too late",
-        "timestamp": "02:26.50",
-        "timestamp_end": "02:37.50",
-        "text_l2": "פעם שנייה זה מאוחר מדי"
-      },
-      {
-        "id": "phrase_55",
-        "text_l1": "I live my day as if it was the last",
-        "timestamp": "02:37.50",
-        "timestamp_end": "02:40.00",
-        "text_l2": "אני חי את יומי כאילו זה האחרון"
-      },
-      {
-        "id": "phrase_56",
-        "text_l1": "Live my day as if there was no past",
-        "timestamp": "02:40.00",
-        "timestamp_end": "02:42.50",
-        "text_l2": "חי את יומי כאילו אין עבר"
-      },
-      {
-        "id": "phrase_57",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "02:42.50",
-        "timestamp_end": "02:45.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
-      },
-      {
-        "id": "phrase_58",
-        "text_l1": "Doin' it the way I wanna",
-        "timestamp": "02:45.00",
-        "timestamp_end": "02:47.50",
-        "text_l2": "עושה את זה איך שבא לי"
-      },
-      {
-        "id": "phrase_59",
-        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
-        "timestamp": "02:47.50",
-        "timestamp_end": "02:50.00",
-        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
-      },
-      {
-        "id": "phrase_60",
-        "text_l1": "But I won't be done when morning comes",
-        "timestamp": "02:50.00",
-        "timestamp_end": "02:52.50",
-        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
-      },
-      {
-        "id": "phrase_61",
-        "text_l1": "Doin' it all night, all summer",
-        "timestamp": "02:52.50",
-        "timestamp_end": "02:55.00",
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
-      },
-      {
-        "id": "phrase_62",
-        "text_l1": "Gonna spend it like no other",
-        "timestamp": "02:55.00",
-        "timestamp_end": "02:58.00",
-        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
-      },
-      {
-        "id": "phrase_63",
         "text_l1": "Now I found another crush",
-        "timestamp": "02:58.00",
-        "timestamp_end": "03:00.50",
+        "timestamp": "02:18.10",
+        "timestamp_end": "02:20.20",
+        "words": [
+          {
+            "text": "Now",
+            "timestamp": "02:18.10",
+            "timestamp_end": "02:18.40",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:18.40",
+            "timestamp_end": "02:18.60",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "found",
+            "timestamp": "02:18.60",
+            "timestamp_end": "02:18.90",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "מצאתי"
+          },
+          {
+            "text": "another",
+            "timestamp": "02:18.90",
+            "timestamp_end": "02:19.40",
+            "l1_start_index": 12,
+            "l1_end_index": 18,
+            "translation": "עוד"
+          },
+          {
+            "text": "crush",
+            "timestamp": "02:19.40",
+            "timestamp_end": "02:20.20",
+            "l1_start_index": 20,
+            "l1_end_index": 24,
+            "translation": "קראש"
+          }
+        ],
         "text_l2": "עכשיו מצאתי קראש אחר"
       },
       {
-        "id": "phrase_64",
-        "text_l1": "The lush life's given me a rush",
-        "timestamp": "03:00.50",
-        "timestamp_end": "03:03.00",
-        "text_l2": "החיים השופעים נתנו לי ריגוש"
+        "id": "phrase_55",
+        "text_l1": "And it's like giving me a rush",
+        "timestamp": "02:20.30",
+        "timestamp_end": "02:22.50",
+        "words": [
+          {
+            "text": "And",
+            "timestamp": "02:20.30",
+            "timestamp_end": "02:20.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ו"
+          },
+          {
+            "text": "it's",
+            "timestamp": "02:20.50",
+            "timestamp_end": "02:20.80",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:20.80",
+            "timestamp_end": "02:21.10",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "כמו"
+          },
+          {
+            "text": "giving",
+            "timestamp": "02:21.10",
+            "timestamp_end": "02:21.50",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "נותן"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:21.50",
+            "timestamp_end": "02:21.70",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "לי"
+          },
+          {
+            "text": "a",
+            "timestamp": "02:21.70",
+            "timestamp_end": "02:21.90",
+            "l1_start_index": 24,
+            "l1_end_index": 24,
+            "translation": "a"
+          },
+          {
+            "text": "rush",
+            "timestamp": "02:21.90",
+            "timestamp_end": "02:22.50",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "ריגוש"
+          }
+        ],
+        "text_l2": "וזה כמו נותן לי ריגוש"
       },
       {
-        "id": "phrase_65",
+        "id": "phrase_56",
         "text_l1": "Had one chance to make me blush",
-        "timestamp": "03:03.00",
-        "timestamp_end": "03:05.50",
+        "timestamp": "02:22.60",
+        "timestamp_end": "02:24.80",
+        "words": [
+          {
+            "text": "Had",
+            "timestamp": "02:22.60",
+            "timestamp_end": "02:22.90",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "הייתה"
+          },
+          {
+            "text": "one",
+            "timestamp": "02:22.90",
+            "timestamp_end": "02:32.20",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אחת"
+          },
+          {
+            "text": "chance",
+            "timestamp": "02:23.20",
+            "timestamp_end": "02:23.60",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "הזדמנות"
+          },
+          {
+            "text": "to",
+            "timestamp": "02:23.60",
+            "timestamp_end": "02:23.80",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "ל"
+          },
+          {
+            "text": "make",
+            "timestamp": "02:23.80",
+            "timestamp_end": "02:24.10",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "לגרום"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:24.10",
+            "timestamp_end": "02:24.30",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "לי"
+          },
+          {
+            "text": "blush",
+            "timestamp": "02:24.30",
+            "timestamp_end": "02:24.80",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "להסמיק"
+          }
+        ],
         "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
       },
       {
+        "id": "phrase_57",
+        "text_l1": "Second time is once too much",
+        "timestamp": "02:24.90",
+        "timestamp_end": "02:27.50",
+        "words": [
+          {
+            "text": "Second",
+            "timestamp": "02:24.90",
+            "timestamp_end": "02:25.40",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "שני"
+          },
+          {
+            "text": "time",
+            "timestamp": "02:25.40",
+            "timestamp_end": "02:25.80",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "פעם"
+          },
+          {
+            "text": "is",
+            "timestamp": "02:25.80",
+            "timestamp_end": "02:26.10",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "היא"
+          },
+          {
+            "text": "once",
+            "timestamp": "02:26.10",
+            "timestamp_end": "02:26.50",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "פעם אחת"
+          },
+          {
+            "text": "too",
+            "timestamp": "02:26.50",
+            "timestamp_end": "02:26.80",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "מדי"
+          },
+          {
+            "text": "much",
+            "timestamp": "02:26.80",
+            "timestamp_end": "02:27.50",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "יותר"
+          }
+        ],
+        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "02:37.50",
+        "timestamp_end": "02:40.00",
+        "words": [
+          {
+            "text": "I",
+            "timestamp": "02:37.50",
+            "timestamp_end": "02:37.70",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "אני"
+          },
+          {
+            "text": "live",
+            "timestamp": "02:37.70",
+            "timestamp_end": "02:38.00",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "חי"
+          },
+          {
+            "text": "my",
+            "timestamp": "02:38.00",
+            "timestamp_end": "02:38.20",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "02:38.20",
+            "timestamp_end": "02:38.60",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "02:38.60",
+            "timestamp_end": "02:38.80",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "כאילו"
+          },
+          {
+            "text": "if",
+            "timestamp": "02:38.80",
+            "timestamp_end": "02:39.00",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "אם"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:39.00",
+            "timestamp_end": "02:39.20",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "הוא"
+          },
+          {
+            "text": "was",
+            "timestamp": "02:39.20",
+            "timestamp_end": "02:39.50",
+            "l1_start_index": 23,
+            "l1_end_index": 25,
+            "translation": "היה"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:39.50",
+            "timestamp_end": "02:39.70",
+            "l1_start_index": 27,
+            "l1_end_index": 29,
+            "translation": "ה"
+          },
+          {
+            "text": "last",
+            "timestamp": "02:39.70",
+            "timestamp_end": "02:40.00",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "אחרון"
+          }
+        ],
+        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "02:40.10",
+        "timestamp_end": "02:42.80",
+        "words": [
+          {
+            "text": "Live",
+            "timestamp": "02:40.10",
+            "timestamp_end": "02:40.40",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיה"
+          },
+          {
+            "text": "my",
+            "timestamp": "02:40.40",
+            "timestamp_end": "02:40.60",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "שלי"
+          },
+          {
+            "text": "day",
+            "timestamp": "02:40.60",
+            "timestamp_end": "02:41.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "יום"
+          },
+          {
+            "text": "as",
+            "timestamp": "02:41.00",
+            "timestamp_end": "02:41.20",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "כאילו"
+          },
+          {
+            "text": "if",
+            "timestamp": "02:41.20",
+            "timestamp_end": "02:41.40",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "אם"
+          },
+          {
+            "text": "there",
+            "timestamp": "02:41.40",
+            "timestamp_end": "02:41.60",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "היה"
+          },
+          {
+            "text": "was",
+            "timestamp": "02:41.60",
+            "timestamp_end": "02:41.90",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "היה"
+          },
+          {
+            "text": "no",
+            "timestamp": "02:41.90",
+            "timestamp_end": "02:42.20",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "לא"
+          },
+          {
+            "text": "past",
+            "timestamp": "02:42.20",
+            "timestamp_end": "02:42.80",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "עבר"
+          }
+        ],
+        "text_l2": "חי את יומי כאילו לא היה עבר"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "02:42.90",
+        "timestamp_end": "02:45.20",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "02:42.90",
+            "timestamp_end": "02:43.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:43.30",
+            "timestamp_end": "02:43.50",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:43.50",
+            "timestamp_end": "02:43.80",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "02:43.80",
+            "timestamp_end": "02:44.20",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:44.20",
+            "timestamp_end": "02:44.50",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "02:44.50",
+            "timestamp_end": "02:45.20",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "Doing it the way I wanna",
+        "timestamp": "02:45.30",
+        "timestamp_end": "02:47.20",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "02:45.30",
+            "timestamp_end": "02:45.70",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:45.70",
+            "timestamp_end": "02:45.90",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:45.90",
+            "timestamp_end": "02:46.10",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "ה"
+          },
+          {
+            "text": "way",
+            "timestamp": "02:46.10",
+            "timestamp_end": "02:46.40",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "דרך"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:46.40",
+            "timestamp_end": "02:46.60",
+            "l1_start_index": 17,
+            "l1_end_index": 17,
+            "translation": "אני"
+          },
+          {
+            "text": "wanna",
+            "timestamp": "02:46.60",
+            "timestamp_end": "02:47.20",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "רוצה"
+          }
+        ],
+        "text_l2": "עושה את זה איך שאני רוצה"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Yeah, I'm gonna dance my heart out",
+        "timestamp": "02:47.30",
+        "timestamp_end": "02:49.10",
+        "words": [
+          {
+            "text": "Yeah,",
+            "timestamp": "02:47.30",
+            "timestamp_end": "02:47.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כן"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "02:47.60",
+            "timestamp_end": "02:47.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "אני"
+          },
+          {
+            "text": "gonna",
+            "timestamp": "02:47.80",
+            "timestamp_end": "02:48.10",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "הולך"
+          },
+          {
+            "text": "dance",
+            "timestamp": "02:48.10",
+            "timestamp_end": "02:48.40",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "לרקוד"
+          },
+          {
+            "text": "my",
+            "timestamp": "02:48.40",
+            "timestamp_end": "02:48.60",
+            "l1_start_index": 22,
+            "l1_end_index": 23,
+            "translation": "שלי"
+          },
+          {
+            "text": "heart",
+            "timestamp": "02:48.60",
+            "timestamp_end": "02:48.90",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "לב"
+          },
+          {
+            "text": "out",
+            "timestamp": "02:48.90",
+            "timestamp_end": "02:49.10",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "החוצה"
+          }
+        ],
+        "text_l2": "כן, אני הולך לרקוד עד כלות"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "till the dawn",
+        "timestamp": "02:49.15",
+        "timestamp_end": "02:50.00",
+        "words": [
+          {
+            "text": "till",
+            "timestamp": "02:49.15",
+            "timestamp_end": "02:49.30",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "עד"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:49.30",
+            "timestamp_end": "02:49.50",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "ה"
+          },
+          {
+            "text": "dawn",
+            "timestamp": "02:49.50",
+            "timestamp_end": "02:50.00",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "שחר"
+          }
+        ],
+        "text_l2": "עד השחר"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "02:50.10",
+        "timestamp_end": "02:52.50",
+        "words": [
+          {
+            "text": "But",
+            "timestamp": "02:50.10",
+            "timestamp_end": "02:50.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אבל"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:50.30",
+            "timestamp_end": "02:50.50",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "won't",
+            "timestamp": "02:50.50",
+            "timestamp_end": "02:50.80",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לא"
+          },
+          {
+            "text": "be",
+            "timestamp": "02:50.80",
+            "timestamp_end": "02:51.00",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "אהיה"
+          },
+          {
+            "text": "done",
+            "timestamp": "02:51.00",
+            "timestamp_end": "02:51.30",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "גמור"
+          },
+          {
+            "text": "when",
+            "timestamp": "02:51.30",
+            "timestamp_end": "02:51.50",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "כש"
+          },
+          {
+            "text": "morning",
+            "timestamp": "02:51.50",
+            "timestamp_end": "02:51.90",
+            "l1_start_index": 25,
+            "l1_end_index": 31,
+            "translation": "בוקר"
+          },
+          {
+            "text": "comes",
+            "timestamp": "02:51.90",
+            "timestamp_end": "02:52.50",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "יגיע"
+          }
+        ],
+        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Doing it all night, all summer",
+        "timestamp": "02:52.60",
+        "timestamp_end": "02:54.80",
+        "words": [
+          {
+            "text": "Doing",
+            "timestamp": "02:52.60",
+            "timestamp_end": "02:53.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "עושה"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:53.00",
+            "timestamp_end": "02:53.20",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:53.20",
+            "timestamp_end": "02:53.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "כל"
+          },
+          {
+            "text": "night,",
+            "timestamp": "02:53.50",
+            "timestamp_end": "02:53.90",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "לילה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:53.90",
+            "timestamp_end": "02:54.20",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "כל"
+          },
+          {
+            "text": "summer",
+            "timestamp": "02:54.20",
+            "timestamp_end": "02:54.80",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "קיץ"
+          }
+        ],
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
         "id": "phrase_66",
-        "text_l1": "Second time is one too late",
-        "timestamp": "03:05.50",
-        "timestamp_end": "03:08.00",
-        "text_l2": "פעם שנייה זה מאוחר מדי"
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "02:54.90",
+        "timestamp_end": "02:57.50",
+        "words": [
+          {
+            "text": "Gonna",
+            "timestamp": "02:54.90",
+            "timestamp_end": "02:55.30",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "הולך"
+          },
+          {
+            "text": "spend",
+            "timestamp": "02:55.30",
+            "timestamp_end": "02:55.70",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "לבלות"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:55.70",
+            "timestamp_end": "02:55.90",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "אותו"
+          },
+          {
+            "text": "like",
+            "timestamp": "02:55.90",
+            "timestamp_end": "02:56.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "כמו"
+          },
+          {
+            "text": "no",
+            "timestamp": "02:56.20",
+            "timestamp_end": "02:56.50",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "שום"
+          },
+          {
+            "text": "other",
+            "timestamp": "02:56.50",
+            "timestamp_end": "02:57.50",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "אחר"
+          }
+        ],
+        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
       },
       {
         "id": "phrase_67",
         "text_l1": "Now I found another crush",
-        "timestamp": "03:08.00",
-        "timestamp_end": "03:10.50",
+        "timestamp": "02:57.60",
+        "timestamp_end": "02:59.80",
+        "words": [
+          {
+            "text": "Now",
+            "timestamp": "02:57.60",
+            "timestamp_end": "02:57.90",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:57.90",
+            "timestamp_end": "02:58.10",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "found",
+            "timestamp": "02:58.10",
+            "timestamp_end": "02:58.40",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "מצאתי"
+          },
+          {
+            "text": "another",
+            "timestamp": "02:58.40",
+            "timestamp_end": "02:58.90",
+            "l1_start_index": 12,
+            "l1_end_index": 18,
+            "translation": "עוד"
+          },
+          {
+            "text": "crush",
+            "timestamp": "02:58.90",
+            "timestamp_end": "02:59.80",
+            "l1_start_index": 20,
+            "l1_end_index": 24,
+            "translation": "קראש"
+          }
+        ],
         "text_l2": "עכשיו מצאתי קראש אחר"
       },
       {
         "id": "phrase_68",
-        "text_l1": "The lush life's given me a rush",
-        "timestamp": "03:10.50",
-        "timestamp_end": "03:13.00",
-        "text_l2": "החיים השופעים נתנו לי ריגוש"
+        "text_l1": "And it's like giving me a rush",
+        "timestamp": "02:59.90",
+        "timestamp_end": "03:02.00",
+        "words": [
+          {
+            "text": "And",
+            "timestamp": "02:59.90",
+            "timestamp_end": "03:00.10",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ו"
+          },
+          {
+            "text": "it's",
+            "timestamp": "03:00.10",
+            "timestamp_end": "03:00.40",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "03:00.40",
+            "timestamp_end": "03:00.70",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "כמו"
+          },
+          {
+            "text": "giving",
+            "timestamp": "03:00.70",
+            "timestamp_end": "03:01.10",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "נותן"
+          },
+          {
+            "text": "me",
+            "timestamp": "03:01.10",
+            "timestamp_end": "03:01.30",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "לי"
+          },
+          {
+            "text": "a",
+            "timestamp": "03:01.30",
+            "timestamp_end": "03:01.50",
+            "l1_start_index": 24,
+            "l1_end_index": 24,
+            "translation": "a"
+          },
+          {
+            "text": "rush",
+            "timestamp": "03:01.50",
+            "timestamp_end": "03:02.00",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "אדרנלין"
+          }
+        ],
+        "text_l2": "וזה כמו נותן לי ריגוש"
       },
       {
         "id": "phrase_69",
         "text_l1": "Had one chance to make me blush",
-        "timestamp": "03:13.00",
-        "timestamp_end": "03:15.50",
+        "timestamp": "03:02.10",
+        "timestamp_end": "03:04.20",
+        "words": [
+          {
+            "text": "Had",
+            "timestamp": "03:02.10",
+            "timestamp_end": "03:02.40",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "היה"
+          },
+          {
+            "text": "one",
+            "timestamp": "03:02.40",
+            "timestamp_end": "03:02.70",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אחד"
+          },
+          {
+            "text": "chance",
+            "timestamp": "03:02.70",
+            "timestamp_end": "03:03.10",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "סיכוי"
+          },
+          {
+            "text": "to",
+            "timestamp": "03:03.10",
+            "timestamp_end": "03:03.30",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "ל"
+          },
+          {
+            "text": "make",
+            "timestamp": "03:03.30",
+            "timestamp_end": "03:03.60",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "לגרום"
+          },
+          {
+            "text": "me",
+            "timestamp": "03:03.60",
+            "timestamp_end": "03:03.80",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "לי"
+          },
+          {
+            "text": "blush",
+            "timestamp": "03:03.80",
+            "timestamp_end": "03:04.20",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "להסמיק"
+          }
+        ],
         "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
       },
       {
         "id": "phrase_70",
-        "text_l1": "Second time is one too late",
-        "timestamp": "03:15.50",
-        "timestamp_end": "03:18.00",
-        "text_l2": "פעם שנייה זה מאוחר מדי"
+        "text_l1": "Second time is once too much",
+        "timestamp": "03:04.30",
+        "timestamp_end": "03:06.80",
+        "words": [
+          {
+            "text": "Second",
+            "timestamp": "03:04.30",
+            "timestamp_end": "03:04.80",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "שני"
+          },
+          {
+            "text": "time",
+            "timestamp": "03:04.80",
+            "timestamp_end": "03:05.20",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "פעם"
+          },
+          {
+            "text": "is",
+            "timestamp": "03:05.20",
+            "timestamp_end": "03:05.50",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "היא"
+          },
+          {
+            "text": "once",
+            "timestamp": "03:05.50",
+            "timestamp_end": "03:05.90",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "פעם"
+          },
+          {
+            "text": "too",
+            "timestamp": "03:05.90",
+            "timestamp_end": "03:06.20",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "מדי"
+          },
+          {
+            "text": "much",
+            "timestamp": "03:06.20",
+            "timestamp_end": "03:06.80",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "הרבה"
+          }
+        ],
+        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "Now I found another crush",
+        "timestamp": "03:06.90",
+        "timestamp_end": "03:09.00",
+        "words": [
+          {
+            "text": "Now",
+            "timestamp": "03:06.90",
+            "timestamp_end": "03:07.20",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "עכשיו"
+          },
+          {
+            "text": "I",
+            "timestamp": "03:07.20",
+            "timestamp_end": "03:07.40",
+            "l1_start_index": 4,
+            "l1_end_index": 4,
+            "translation": "אני"
+          },
+          {
+            "text": "found",
+            "timestamp": "03:07.40",
+            "timestamp_end": "03:07.70",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "מצאתי"
+          },
+          {
+            "text": "another",
+            "timestamp": "03:07.70",
+            "timestamp_end": "03:08.20",
+            "l1_start_index": 12,
+            "l1_end_index": 18,
+            "translation": "עוד"
+          },
+          {
+            "text": "crush",
+            "timestamp": "03:08.20",
+            "timestamp_end": "03:09.00",
+            "l1_start_index": 20,
+            "l1_end_index": 24,
+            "translation": "קראש"
+          }
+        ],
+        "text_l2": "עכשיו מצאתי קראש אחר"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "And it's like giving me a rush",
+        "timestamp": "03:09.10",
+        "timestamp_end": "03:11.20",
+        "words": [
+          {
+            "text": "And",
+            "timestamp": "03:09.10",
+            "timestamp_end": "03:09.30",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ו"
+          },
+          {
+            "text": "it's",
+            "timestamp": "03:09.30",
+            "timestamp_end": "03:09.60",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זה"
+          },
+          {
+            "text": "like",
+            "timestamp": "03:09.60",
+            "timestamp_end": "03:09.90",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "כמו"
+          },
+          {
+            "text": "giving",
+            "timestamp": "03:09.90",
+            "timestamp_end": "03:10.30",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "נותן"
+          },
+          {
+            "text": "me",
+            "timestamp": "03:10.30",
+            "timestamp_end": "03:10.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "לי"
+          },
+          {
+            "text": "a",
+            "timestamp": "03:10.50",
+            "timestamp_end": "03:10.70",
+            "l1_start_index": 24,
+            "l1_end_index": 24,
+            "translation": "a"
+          },
+          {
+            "text": "rush",
+            "timestamp": "03:10.70",
+            "timestamp_end": "03:11.20",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "אדרנלין"
+          }
+        ],
+        "text_l2": "וזה כמו נותן לי ריגוש"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "03:11.30",
+        "timestamp_end": "03:13.50",
+        "words": [
+          {
+            "text": "Had",
+            "timestamp": "03:11.30",
+            "timestamp_end": "03:11.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "היה"
+          },
+          {
+            "text": "one",
+            "timestamp": "03:11.60",
+            "timestamp_end": "03:11.90",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "אחד"
+          },
+          {
+            "text": "chance",
+            "timestamp": "03:11.90",
+            "timestamp_end": "03:12.30",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "סיכוי"
+          },
+          {
+            "text": "to",
+            "timestamp": "03:12.30",
+            "timestamp_end": "03:12.50",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "ל"
+          },
+          {
+            "text": "make",
+            "timestamp": "03:12.50",
+            "timestamp_end": "03:12.80",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "לגרום"
+          },
+          {
+            "text": "me",
+            "timestamp": "03:12.80",
+            "timestamp_end": "03:13.00",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "לי"
+          },
+          {
+            "text": "blush",
+            "timestamp": "03:13.00",
+            "timestamp_end": "03:13.50",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "להסמיק"
+          }
+        ],
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "Second time is once too much",
+        "timestamp": "03:13.60",
+        "timestamp_end": "03:16.50",
+        "words": [
+          {
+            "text": "Second",
+            "timestamp": "03:13.60",
+            "timestamp_end": "03:14.10",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "שני"
+          },
+          {
+            "text": "time",
+            "timestamp": "03:14.10",
+            "timestamp_end": "03:14.50",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "פעם"
+          },
+          {
+            "text": "is",
+            "timestamp": "03:14.50",
+            "timestamp_end": "03:14.80",
+            "l1_start_index": 12,
+            "l1_end_index": 13,
+            "translation": "היא"
+          },
+          {
+            "text": "once",
+            "timestamp": "03:14.80",
+            "timestamp_end": "03:15.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "פעם"
+          },
+          {
+            "text": "too",
+            "timestamp": "03:15.20",
+            "timestamp_end": "03:15.50",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "מדי"
+          },
+          {
+            "text": "much",
+            "timestamp": "03:15.50",
+            "timestamp_end": "03:16.50",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "הרבה"
+          }
+        ],
+        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
       }
     ],
-    "phrases_with_token_translations": "[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי את [יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי את [יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if there was [no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה את [זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה את [זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => עושה את זה איך ש[בא לי]\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן] אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't] be done when morning comes => אבל אני [לא] אסיים כשהבוקר יגיע\nBut I won't [be done] when morning comes => אבל אני לא [אסיים] כשהבוקר יגיע\nBut I won't be done [when morning comes] => אבל אני לא אסיים [כשהבוקר יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\nGonna [spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\nGonna spend it [like] no other => אבזבז את זה [כמו] שאף אחד אחר\nGonna spend it like no [other] => אבזבז את זה כמו שאף אחד [אחר]\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was a [crush] => זה היה [קראש]\n\n[But] I couldn't, couldn't get enough => [אבל] לא יכולתי, לא יכולתי להסתפק\nBut [I couldn't], couldn't get enough => אבל [לא יכולתי], לא יכולתי להסתפק\nBut I couldn't, [couldn't] get enough => אבל לא יכולתי, [לא יכולתי] להסתפק\nBut I couldn't, couldn't [get enough] => אבל לא יכולתי, לא יכולתי [להסתפק]\n\n[It] was a rush => [זה] היה ריגוש\nIt [was] a rush => זה [היה] ריגוש\nIt was a [rush] => זה היה [ריגוש]\n\n[But] I gave it up => [אבל] ויתרתי על זה\nBut [I gave up] it => אבל [ויתרתי] על זה\nBut I gave [it] up => אבל ויתרתי [על זה]\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was a [crush] => זה היה [קראש]\n\nI [might have] went and said too much => [אולי] אמרתי יותר מדי\nI might have went and [said] too much => אולי [אמרתי] יותר מדי\nI might have went and said [too much] => אולי אמרתי [יותר מדי]\n\n[But] that's all it was => [אבל] זה כל מה שזה היה\nBut [that]'s all it was => אבל [זה] כל מה שזה היה\nBut that's [all] it was => אבל זה [כל] מה שזה היה\nBut that's all [it was] => אבל זה כל מה [שזה היה]\nBut that's all it [was] => אבל זה כל מה שזה [היה]\n\n[So] I gave it up => [אז] ויתרתי על זה\nSo I gave [it] up => אז ויתרתי [על זה]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if there was [no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה את [זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => שבא לי\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => עד כלות\nYeah I'ma dance my heart out ['til the dawn] => כן, אני ארקוד עד כלות [עד השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut [I won't be done] when morning comes => אבל [לא אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like] no other => אבזבז את זה [כמו] שאף אחד אחר\nGonna spend it like [no other] => שאף אחד אחר\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was [a crush] => זה היה [קראש]\n\n[I kept] saying I'ma stay in touch => [המשכתי] להגיד שאשאר בקשר\nI kept [saying] I'ma stay in touch => המשכתי [להגיד] שאשאר בקשר\nI kept saying [I'ma stay] in touch => המשכתי להגיד [שאשאר] בקשר\nI kept saying I'ma stay [in touch] => המשכתי להגיד שאשאר [בקשר]\n\n[But] that thing went bust => [אבל] זה התפוצץ\nBut [that thing] went bust => אבל [זה] התפוצץ\nBut that thing [went bust] => אבל זה [התפוצץ]\n\n[So] I gave it up => [אז] ויתרתי על זה\nSo [I gave up] it => אז [ויתרתי] על זה\nSo I gave up [it] => אז ויתרתי [על זה]\n\n[No] tricks, no bluff => [בלי] טריקים, בלי בלופים\nNo [tricks], no bluff => בלי [טריקים], בלי בלופים\nNo tricks, [no] bluff => בלי טריקים, [בלי] בלופים\nNo tricks, no [bluff] => בלי טריקים, בלי [בלופים]\n\n[I'm] just better off without them cuffs => [אני] מסתדר טוב יותר בלי הכבלים האלה\nI'm [just] better off without them cuffs => פשוט # just is omitted in the Hebrew, so custom translation\nI'm just [better off] without them cuffs => אני [מסתדר טוב יותר] בלי הכבלים האלה\nI'm just better off [without] them cuffs => [בלי] הכבלים האלה\nI'm just better off without [them] cuffs => בלי הכבלים [האלה] # them (those) maps to האלה\nI'm just better off without them [cuffs] => בלי [הכבלים] האלה # cuffs (handcuffs) maps to הכבלים\n\n[Yeah] the sun won't set on us => [כן], השמש לא תשקע עלינו\nYeah [the sun] won't set on us => כן, [השמש] לא תשקע עלינו\nYeah the sun [won't] set on us => [לא] תשקע # won't (will not) maps to the negation לא\nYeah the sun won't [set] on us => לא [תשקע] עלינו\nYeah the sun won't set [on us] => [עלינו] # on us maps to עלינו\n\n[Went low], went high => [ירדנו נמוך], עלינו גבוה\nWent [low], went high => ירדנו [נמוך], עלינו גבוה\nWent low, [went high] => ירדנו נמוך, [עלינו גבוה]\nWent low, went [high] => ירדנו נמוך, עלינו [גבוה]\n\n[Still] waters run dry => מים [שקטים] מתייבשים\nStill [waters] run dry => [מים] שקטים מתייבשים\nStill waters [run dry] => מים שקטים [מתייבשים]\n\n[Gotta] get back in the groove => [צריך] לחזור לקצב\nGotta [get back] in the groove => צריך [לחזור] לקצב\nGotta get back [in the groove] => צריך לחזור [לקצב]\n\n[I] ain't ever hurtin' => [אני] לא נפגע לעולם\nI [ain't] ever hurtin' => אני [לא] נפגע לעולם\nI ain't [ever] hurtin' => אני לא נפגע [לעולם]\nI ain't ever [hurtin'] => אני לא [נפגע] לעולם\n\n[Went] low, went high => [ירדנו] נמוך, עלינו גבוה\nWent [low], went high => ירדנו [נמוך], עלינו גבוה\nWent low, [went] high => ירדנו נמוך, [עלינו] גבוה\nWent low, went [high] => ירדנו נמוך, עלינו [גבוה]\n\n[What matters] is now => [מה שחשוב] זה עכשיו\nWhat matters [is] now => מה שחשוב [זה] עכשיו\nWhat matters is [now] => מה שחשוב זה [עכשיו]\n\n[Getting] right back in the mood => [חוזר] ישר למוד\nGetting [right back] in the mood => חוזר [ישר] למוד\nGetting right back [in the mood] => חוזר ישר [למוד]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [את יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [את יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if [there was no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [את זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => עושה את זה איך [שבא לי]\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן, אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן, אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן, אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't] be done when morning comes => אבל [לא] אסיים כשהבוקר יגיע\nBut I won't [be done] when morning comes => אבל לא [אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another crush] => עכשיו מצאתי [קראש אחר]\n\n[The lush life]'s given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe lush life ['s given me] a rush => החיים השופעים [נתנו לי] ריגוש\nThe lush life's given me [a rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is one [too] late => פעם שנייה זה [מדי] מאוחר\nSecond time is one too [late] => פעם שנייה זה [מאוחר] מדי\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\nThe [lush] life's given me a rush => החיים [השופעים] נתנו לי ריגוש\nThe lush [life]'s given me a rush => [החיים] השופעים נתנו לי ריגוש\nThe lush life's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life's given me a [rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => [לגרום] לי להסמיק\nHad one chance to make [me] blush => [לי] להסמיק\nHad one chance to make me [blush] => [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is one [too late] => [מאוחר מדי]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [את יומי] כאילו זה האחרון\nI live my day [as if] it was the last => [כאילו] זה האחרון\nI live my day as if [it] was the last => [זה] האחרון\nI live my day as if it was [the last] => [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [את יומי] כאילו אין עבר\nLive my day [as if] there was no past => [כאילו] אין עבר\nLive my day as if [there was no] past => [אין] עבר\nLive my day as if there was no [past] => [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [את זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => שבא לי\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן, אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן, אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן, אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't be done] when morning comes => אבל [לא אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\n[The lush life]'s given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe lush life's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life's given me [a rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => [שנייה] פעם זה מאוחר מדי\nSecond [time] is one too late => פעם [שנייה] זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is [one too late] => פעם שנייה זה [מאוחר מדי]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\n[The lush life] 's given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe [lush] life 's given me a rush => החיים [השופעים] נתנו לי ריגוש\nThe lush [life] 's given me a rush => [החיים] השופעים נתנו לי ריגוש\nThe lush life 's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life 's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life 's given me a [rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה [אחת] הזדמנות לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is [one too late] => פעם שנייה זה [מאוחר מדי]",
-    "lessons": "# Living for the Moment\n00:10.50 I live my day as if it was the last\n00:13.00 Live my day as if there was no past\n00:15.50 Doin' it all night, all summer\n00:18.00 Doin' it the way I wanna\n00:20.50 Yeah I'ma dance my heart out 'til the dawn\n00:23.00 But I won't be done when morning comes\n00:25.50 Doin' it all night, all summer\n00:28.00 Gonna spend it like no other\n\n# A Fleeting Crush\n00:31.00 It was a crush\n00:32.50 But I couldn't, couldn't get enough\n00:36.00 It was a rush\n00:37.50 But I gave it up\n00:41.00 It was a crush\n00:42.50 Now I might have went and said too much\n00:46.00 But that's all it was\n00:47.50 So I gave it up\n\n# Dancing Till Dawn\n00:49.50 I live my day as if it was the last\n00:52.00 Live my day as if there was no past\n00:54.50 Doin' it all night, all summer\n00:57.00 Doin' it the way I wanna\n00:59.50 Yeah I'ma dance my heart out 'til the dawn\n01:02.00 But I won't be done when morning comes\n01:04.50 Doin' it all night, all summer\n01:07.00 Gonna spend it like no other\n\n# Moving On\n01:10.00 It was a crush\n01:11.50 I kept saying I'ma stay in touch\n01:15.00 But that thing went bust\n01:16.50 So I gave it up\n01:20.00 No tricks, no bluff\n01:21.50 I'm just better off without them cuffs\n01:25.00 Yeah the sun won't set on us\n01:30.00 Went low, went high\n\n# Getting Back in the Mood\n01:32.50 Still waters run dry\n01:35.00 Gotta get back in the groove\n01:37.50 I ain't ever hurtin'\n01:40.00 Went low, went high\n01:42.50 What matters is now\n01:45.00 Getting right back in the mood\n\n# Living for the Moment (Reprise)\n01:48.50 I live my day as if it was the last\n01:51.00 Live my day as if there was no past\n01:53.50 Doin' it all night, all summer\n01:56.00 Doin' it the way I wanna\n01:58.50 Yeah I'ma dance my heart out 'til the dawn\n02:01.00 But I won't be done when morning comes\n02:03.50 Doin' it all night, all summer\n02:06.00 Gonna spend it like no other\n\n# The Lush Life Rush\n02:09.00 Now I found another crush\n02:11.50 The lush life's given me a rush\n02:14.00 Had one chance to make me blush\n02:16.50 Second time is one too late\n02:19.00 Now I found another crush\n02:21.50 The lush life's given me a rush\n02:24.00 Had one chance to make me blush\n02:26.50 Second time is one too late\n\n# Dancing Till Dawn (Final)\n02:37.50 I live my day as if it was the last\n02:40.00 Live my day as if there was no past\n02:42.50 Doin' it all night, all summer\n02:45.00 Doin' it the way I wanna\n02:47.50 Yeah I'ma dance my heart out 'til the dawn\n02:50.00 But I won't be done when morning comes\n02:52.50 Doin' it all night, all summer\n02:55.00 Gonna spend it like no other\n\n# The Lush Life Rush (Final)\n02:58.00 Now I found another crush\n03:00.50 The lush life's given me a rush\n03:03.00 Had one chance to make me blush\n03:05.50 Second time is one too late\n03:08.00 Now I found another crush\n03:10.50 The lush life's given me a rush\n03:13.00 Had one chance to make me blush\n03:15.50 Second time is one too late",
-    "similar_sounds": "I live my day as if it was [﻿the] last\nLive my [may] as if there was no past\nDoin ' it [al] night all summer\nDoin ' it the [was] I wanna\nYeah I'ma dance my heart [oct] 'til the dawn\nBut I won't be [one] when morning comes\nDoin ' it all night [call] summer\n[lonna] spend it like no other\nIt [way] a crush\nBut I couldn't couldn't [set] enough\nIt [has] a rush\nBut I [have] it up\nIt was a [brush]\nNow I might have went and said too [mach]\nBut that's [fall] it was\nSo I [have] it up\nI [line] my day as if it was the last\nLive my [way] as if there was no past\nDoin ' it all [might] all summer\nDoin ' it the way I [wanda]\nYeah [irma] dance my heart out 'til the dawn\nBut I won't be done [then] morning comes\nDoin ' it all night [fall] summer\nGonna spend it [life] no other\nIt was a [rush]\nI [sept] saying I'ma stay in touch\n[put] that thing went bust\nSo I [save] it up\nNo tricks no [buff]\nI'm just [bitter] off without them cuffs\nYeah [he] sun won't set on us\nWent [law] went high\nStill waters [fun] dry\nGotta get [pack] in the groove\nI ain't ever [hurting] '\nWent [now] went high\nWhat matters is [no]\nGetting [light] back in the mood\nI [like] my day as if it was the last\nLive my day as if [these] was no past\n[join] ' it all night all summer\nDoin ' it the [may] I wanna\nYeah I'ma dance my heart [oct] 'til the dawn\nBut I won't be [one] when morning comes\nDoin ' it [call] night all summer\n[donna] spend it like no other\nNow I [round] another crush\nThe lush life's [giver] me a rush\nHad one chance to [makes] me blush\n[record] time is one too late\n[no] I found another crush\nThe [bush] life's given me a rush\nHad one chance to make me [bush]\nSecond time is one too [rate]\nI live my day as if it [way] the last\nLive my day as if there was no [post]\nDoin ' it all [might] all summer\nDoin ' it the [was] I wanna\nYeah I'ma [dancer] my heart out 'til the dawn\n[out] I won't be done when morning comes\nDoin ' it all [light] all summer\nGonna spend it [line] no other\n[new] I found another crush\nThe lush life's [gives] me a rush\nHad one chance to [made] me blush\nSecond time is [on] too late\n[no] I found another crush\nThe lush life's [gives] me a rush\nHad one chance to make me [brush]\nSecond [times] is one too late"
+    "lessons": "# Living for the Moment\n00:10.00 I live my day as if it was the last\n00:12.90 Live my day as if there was no past\n00:15.90 Doing it all night, all summer\n00:18.30 Doing it the way I wanna\n00:20.30 Yeah, I'm gonna dance my heart out\n00:22.15 till the dawn\n00:23.30 But I won't be done when morning comes\n00:25.60 Doing it all night, all summer\n00:27.90 Gonna spend it like no other\n\n# That Crush\n00:31.00 It was a crush\n00:33.10 But I couldn't, couldn't get enough\n00:35.60 It was a rush\n00:37.90 But I gave it up\n00:40.50 It was a crush\n00:42.60 Now I might not want to say too much\n00:45.30 But that's all it was\n00:47.60 So I gave it up\n\n# Dancing Till Dawn\n00:49.90 I live my day as if it was the last\n00:52.60 Live my day as if there was no past\n00:55.30 Doing it all night, all summer\n00:57.60 Doing it the way I wanna\n00:59.60 Yeah, I'm gonna dance my heart out\n01:01.45 till the dawn\n01:02.30 But I won't be done when morning comes\n01:04.60 Doing it all night, all summer\n01:06.90 Gonna spend it like no other\n\n# Gave It Up\n01:10.00 It was a crush\n01:12.10 I kept saying I'm gonna stay in touch\n01:14.60 But that thing went bust\n01:16.60 So I gave it up\n01:19.50 No tricks, no bluff\n01:21.60 I'm just better off without them cuffs\n01:24.30 Yeah, the sun won't set on us\n\n# Back in the Groove\n01:30.00 Went low, went high\n01:32.90 Still water runs dry\n01:35.30 Got to get back in the groove\n01:37.60 I ain't in a hurry\n01:40.00 Went low, went high\n01:42.90 What matters is now\n01:44.90 Getting right back in the mood\n\n# All Night, All Summer\n01:49.00 I live my day as if it was the last\n01:51.60 Live my day as if there was no past\n01:54.30 Doing it all night, all summer\n01:56.60 Doing it the way I wanna\n01:58.60 Yeah, I'm gonna dance my heart out\n02:00.45 till the dawn\n02:01.30 But I won't be done when morning comes\n02:03.60 Doing it all night, all summer\n02:05.90 Gonna spend it like no other\n\n# Another Crush\n02:09.00 Now I found another crush\n02:11.10 And it's like giving me a rush\n02:13.30 Had one chance to make me blush\n02:15.60 Second time is once too much\n02:18.10 Now I found another crush\n02:20.30 And it's like giving me a rush\n02:22.60 Had one chance to make me blush\n02:24.90 Second time is once too much\n\n# Till the Dawn\n02:37.50 I live my day as if it was the last\n02:40.10 Live my day as if there was no past\n02:42.90 Doing it all night, all summer\n02:45.30 Doing it the way I wanna\n02:47.30 Yeah, I'm gonna dance my heart out\n02:49.15 till the dawn\n02:50.10 But I won't be done when morning comes\n02:52.60 Doing it all night, all summer\n02:54.90 Gonna spend it like no other\n\n# Second Time\n02:57.60 Now I found another crush\n02:59.90 And it's like giving me a rush\n03:02.10 Had one chance to make me blush\n03:04.30 Second time is once too much\n03:06.90 Now I found another crush\n03:09.10 And it's like giving me a rush\n03:11.30 Had one chance to make me blush\n03:13.60 Second time is once too much",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "Living for the Moment",
+        "score": 5,
+        "reason": "Introduces varied vocabulary about living fully, with useful phrases like 'dance my heart out' and 'spend it like no other'."
+      },
+      {
+        "index": 2,
+        "title": "That Crush",
+        "score": 5,
+        "reason": "Teaches real words and expressions such as 'crush', 'rush', 'gave it up', and 'say too much'."
+      },
+      {
+        "index": 3,
+        "title": "Dancing Till Dawn",
+        "score": 1,
+        "reason": "Exact reprise of lesson 1; no new words to learn."
+      },
+      {
+        "index": 4,
+        "title": "Gave It Up",
+        "score": 5,
+        "reason": "Offers new idioms like 'stay in touch', 'went bust', 'no tricks, no bluff', and 'better off'."
+      },
+      {
+        "index": 5,
+        "title": "Back in the Groove",
+        "score": 5,
+        "reason": "Contains useful expressions: 'get back in the groove', 'in a hurry', 'what matters is now'."
+      },
+      {
+        "index": 6,
+        "title": "All Night, All Summer",
+        "score": 1,
+        "reason": "Another exact reprise of lesson 1; no new content."
+      },
+      {
+        "index": 7,
+        "title": "Another Crush",
+        "score": 5,
+        "reason": "Introduces 'blush', 'second time is once too much', and reinforces 'crush' and 'rush' in a new context."
+      },
+      {
+        "index": 8,
+        "title": "Till the Dawn",
+        "score": 1,
+        "reason": "Yet another reprise of lesson 1; adds nothing new."
+      },
+      {
+        "index": 9,
+        "title": "Second Time",
+        "score": 1,
+        "reason": "Exact reprise of lesson 7; no new vocabulary."
+      }
+    ],
+    "similar_sounds": "I live my day as if it was the [list]\nLive my [days] as if there was no past\n[going] it all night all summer\nDoing it the way I [wanda]\nYeah [in] gonna dance my heart out\ntill the [drawn]\nBut I [want] be done when morning comes\nDoing it all night [call] summer\nGonna [spent] it like no other\nIt [has] a crush\n[out] I couldn't couldn't get enough\nIt [as] a rush\n[buy] I gave it up\nIt was a [rush]\nNow I might not want to say [two] much\nBut that's [call] it was\nSo I [game] it up\nI live my [days] as if it was the last\n[life] my day as if there was no past\nDoing it all night all [hummer]\nDoing it the way I [hanna]\nYeah I'm gonna dance my heart [our]\n[will] the dawn\nBut I won't be done [hen] morning comes\n[going] it all night all summer\nGonna [send] it like no other\nIt [has] a crush\nI kept saying I'm [donna] stay in touch\nBut that thing went [best]\nSo I [have] it up\nNo tricks no [bluffs]\nI'm just better off without them [buffs]\nYeah the [san] won't set on us\n[want] low went high\nStill water [guns] dry\nGot to get back in the [grove]\nI ain't in a [harry]\nWent [now] went high\nWhat [batters] is now\nGetting [light] back in the mood\nI live my day as if it was [they] last\nLive my day as if there [way] no past\n[dying] it all night all summer\nDoing it [they] way I wanna\nYeah I'm gonna dance my heart [but]\ntill [he] dawn\nBut I [don't] be done when morning comes\nDoing it all night [fall] summer\nGonna spend it like no [others]\nNow I [sound] another crush\nAnd it's [live] giving me a rush\nHad [on] chance to make me blush\nSecond time is once too [mech]\nNow I found [mother] crush\nAnd it's like giving me a [brush]\n[hard] one chance to make me blush\nSecond time is [one] too much\nI live my day as if it was [he] last\nLive my [way] as if there was no past\nDoing it [al] night all summer\n[dong] it the way I wanna\nYeah I'm gonna dance my heart [but]\n[still] the dawn\nBut I won't be done when [mornings] comes\nDoing it [al] night all summer\nGonna [send] it like no other\nNow I [round] another crush\nAnd it's like giving me a [brush]\nHad one [change] to make me blush\nSecond [tim] is once too much\nNow I found another [rush]\nAnd [is] like giving me a rush\nHad [on] chance to make me blush\nSecond [tie] is once too much"
   },
-  "created_at": "2026-06-26 20:35:07 UTC",
-  "updated_at": "2026-06-26 20:45:26 UTC",
-  "exported_at": "2026-06-26T20:45:27Z"
+  "created_at": "2026-06-27 12:37:14 UTC",
+  "updated_at": "2026-06-27 12:42:41 UTC",
+  "exported_at": "2026-06-27T12:42:42Z"
 }

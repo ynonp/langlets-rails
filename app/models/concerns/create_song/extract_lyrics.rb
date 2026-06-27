@@ -3,7 +3,7 @@ module CreateSong
     extend ActiveSupport::Concern
 
     MODEL_PARAMS = {
-      model: 'gemini-3.1-pro-preview',
+      model: 'gemini-3.5-flash',
       provider: :gemini,
       assume_model_exists: true
     }.freeze

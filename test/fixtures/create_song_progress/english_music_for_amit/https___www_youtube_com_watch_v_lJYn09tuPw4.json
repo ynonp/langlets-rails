@@ -7,255 +7,1745 @@
     "phrases": [
       {
         "id": "phrase_1",
-        "text_l1": "Writer of my symphony",
+        "text_l1": "Writer of my symphony, play with me",
         "timestamp": "00:14.20",
-        "timestamp_end": "00:16.20",
-        "text_l2": "כותב הסימפוניה שלי"
+        "timestamp_end": "00:17.10",
+        "words": [
+          {
+            "text": "Writer",
+            "timestamp": "00:14.20",
+            "timestamp_end": "00:14.70",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "כותב"
+          },
+          {
+            "text": "of",
+            "timestamp": "00:14.70",
+            "timestamp_end": "00:14.85",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "של"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:14.85",
+            "timestamp_end": "00:15.10",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "שלי"
+          },
+          {
+            "text": "symphony,",
+            "timestamp": "00:15.10",
+            "timestamp_end": "00:15.80",
+            "l1_start_index": 13,
+            "l1_end_index": 21,
+            "translation": "סימפוניה"
+          },
+          {
+            "text": "play",
+            "timestamp": "00:15.90",
+            "timestamp_end": "00:16.30",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "נגן"
+          },
+          {
+            "text": "with",
+            "timestamp": "00:16.30",
+            "timestamp_end": "00:16.50",
+            "l1_start_index": 28,
+            "l1_end_index": 31,
+            "translation": "עם"
+          },
+          {
+            "text": "me,",
+            "timestamp": "00:16.50",
+            "timestamp_end": "00:17.10",
+            "translation": "איתי"
+          }
+        ],
+        "text_l2": "כותב הסימפוניה שלי, נגן איתי"
       },
       {
         "id": "phrase_2",
-        "text_l1": "Play with me",
-        "timestamp": "00:16.20",
-        "timestamp_end": "00:17.50",
-        "text_l2": "נגן איתי"
-      },
-      {
-        "id": "phrase_3",
         "text_l1": "Look into my eyes and see",
-        "timestamp": "00:17.50",
-        "timestamp_end": "00:19.80",
+        "timestamp": "00:17.20",
+        "timestamp_end": "00:19.20",
+        "words": [
+          {
+            "text": "Look",
+            "timestamp": "00:17.20",
+            "timestamp_end": "00:17.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "הבט"
+          },
+          {
+            "text": "into",
+            "timestamp": "00:17.50",
+            "timestamp_end": "00:17.80",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "לתוך"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:17.80",
+            "timestamp_end": "00:18.00",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "שלי"
+          },
+          {
+            "text": "eyes",
+            "timestamp": "00:18.00",
+            "timestamp_end": "00:18.40",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "עיניים"
+          },
+          {
+            "text": "and",
+            "timestamp": "00:18.40",
+            "timestamp_end": "00:18.60",
+            "l1_start_index": 18,
+            "l1_end_index": 20,
+            "translation": "ו"
+          },
+          {
+            "text": "see,",
+            "timestamp": "00:18.60",
+            "timestamp_end": "00:19.20",
+            "translation": "ראה"
+          }
+        ],
         "text_l2": "הבט לתוך עיניי וראה"
       },
       {
-        "id": "phrase_4",
+        "id": "phrase_3",
         "text_l1": "People walk away but never say goodbye",
-        "timestamp": "00:19.80",
-        "timestamp_end": "00:24.30",
-        "text_l2": "אנשים הולכים אך לעולם לא נפרדים לשלום"
+        "timestamp": "00:19.40",
+        "timestamp_end": "00:23.50",
+        "words": [
+          {
+            "text": "People",
+            "timestamp": "00:19.40",
+            "timestamp_end": "00:19.80",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "אנשים"
+          },
+          {
+            "text": "walk",
+            "timestamp": "00:19.80",
+            "timestamp_end": "00:20.10",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "הולכים"
+          },
+          {
+            "text": "away",
+            "timestamp": "00:20.10",
+            "timestamp_end": "00:20.60",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "משם"
+          },
+          {
+            "text": "but",
+            "timestamp": "00:20.60",
+            "timestamp_end": "00:20.80",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "אבל"
+          },
+          {
+            "text": "never",
+            "timestamp": "00:20.80",
+            "timestamp_end": "00:21.20",
+            "l1_start_index": 21,
+            "l1_end_index": 25,
+            "translation": "אף פעם"
+          },
+          {
+            "text": "say",
+            "timestamp": "00:21.20",
+            "timestamp_end": "00:21.60",
+            "l1_start_index": 27,
+            "l1_end_index": 29,
+            "translation": "אומרים"
+          },
+          {
+            "text": "goodbye",
+            "timestamp": "00:21.60",
+            "timestamp_end": "00:23.50",
+            "l1_start_index": 31,
+            "l1_end_index": 37,
+            "translation": "שלום"
+          }
+        ],
+        "text_l2": "אנשים הולכים אבל לעולם לא אומרים שלום"
       },
       {
-        "id": "phrase_5",
+        "id": "phrase_4",
         "text_l1": "Someone stole the moon tonight",
-        "timestamp": "00:25.40",
-        "timestamp_end": "00:27.50",
+        "timestamp": "00:25.00",
+        "timestamp_end": "00:27.10",
+        "words": [
+          {
+            "text": "Someone",
+            "timestamp": "00:25.00",
+            "timestamp_end": "00:25.50",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "מישהו"
+          },
+          {
+            "text": "stole",
+            "timestamp": "00:25.50",
+            "timestamp_end": "00:25.80",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "גנב"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:25.80",
+            "timestamp_end": "00:26.00",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "את"
+          },
+          {
+            "text": "moon",
+            "timestamp": "00:26.00",
+            "timestamp_end": "00:26.40",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "ירח"
+          },
+          {
+            "text": "tonight,",
+            "timestamp": "00:26.40",
+            "timestamp_end": "00:27.10",
+            "translation": "הלילה"
+          }
+        ],
         "text_l2": "מישהו גנב את הירח הלילה"
       },
       {
+        "id": "phrase_5",
+        "text_l1": "Took my light, everything is black and white",
+        "timestamp": "00:27.20",
+        "timestamp_end": "00:30.20",
+        "words": [
+          {
+            "text": "Took",
+            "timestamp": "00:27.20",
+            "timestamp_end": "00:27.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "לקח"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:27.50",
+            "timestamp_end": "00:27.70",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "שלי"
+          },
+          {
+            "text": "light,",
+            "timestamp": "00:27.70",
+            "timestamp_end": "00:28.20",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "אור"
+          },
+          {
+            "text": "everything",
+            "timestamp": "00:28.20",
+            "timestamp_end": "00:28.80",
+            "l1_start_index": 15,
+            "l1_end_index": 24,
+            "translation": "הכל"
+          },
+          {
+            "text": "is",
+            "timestamp": "00:28.80",
+            "timestamp_end": "00:29.00",
+            "l1_start_index": 26,
+            "l1_end_index": 27,
+            "translation": "is"
+          },
+          {
+            "text": "black",
+            "timestamp": "00:29.00",
+            "timestamp_end": "00:29.40",
+            "l1_start_index": 29,
+            "l1_end_index": 33,
+            "translation": "שחור"
+          },
+          {
+            "text": "and",
+            "timestamp": "00:29.40",
+            "timestamp_end": "00:29.60",
+            "l1_start_index": 35,
+            "l1_end_index": 37,
+            "translation": "ו"
+          },
+          {
+            "text": "white",
+            "timestamp": "00:29.60",
+            "timestamp_end": "00:30.20",
+            "l1_start_index": 39,
+            "l1_end_index": 43,
+            "translation": "לבן"
+          }
+        ],
+        "text_l2": "לקח את האור שלי, הכל שחור לבן"
+      },
+      {
         "id": "phrase_6",
-        "text_l1": "Took my light",
-        "timestamp": "00:27.50",
-        "timestamp_end": "00:28.80",
-        "text_l2": "לקח את האור שלי"
+        "text_l1": "Who's the fool who told you boys don't cry?",
+        "timestamp": "00:30.40",
+        "timestamp_end": "00:34.50",
+        "words": [
+          {
+            "text": "Who's",
+            "timestamp": "00:30.40",
+            "timestamp_end": "00:30.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "מי"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:30.80",
+            "timestamp_end": "00:31.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "ה"
+          },
+          {
+            "text": "fool",
+            "timestamp": "00:31.00",
+            "timestamp_end": "00:31.40",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "טיפש"
+          },
+          {
+            "text": "who",
+            "timestamp": "00:31.40",
+            "timestamp_end": "00:31.60",
+            "l1_start_index": 15,
+            "l1_end_index": 17,
+            "translation": "ש"
+          },
+          {
+            "text": "told",
+            "timestamp": "00:31.60",
+            "timestamp_end": "00:32.00",
+            "l1_start_index": 19,
+            "l1_end_index": 22,
+            "translation": "אמר"
+          },
+          {
+            "text": "you",
+            "timestamp": "00:32.00",
+            "timestamp_end": "00:32.20",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "לך"
+          },
+          {
+            "text": "boys",
+            "timestamp": "00:32.20",
+            "timestamp_end": "00:32.60",
+            "l1_start_index": 28,
+            "l1_end_index": 31,
+            "translation": "בנים"
+          },
+          {
+            "text": "don't",
+            "timestamp": "00:32.60",
+            "timestamp_end": "00:33.00",
+            "l1_start_index": 33,
+            "l1_end_index": 37,
+            "translation": "לא"
+          },
+          {
+            "text": "cry?",
+            "timestamp": "00:33.00",
+            "timestamp_end": "00:34.50",
+            "l1_start_index": 39,
+            "l1_end_index": 42,
+            "translation": "בוכים"
+          }
+        ],
+        "text_l2": "מי השוטה שאמר לכם שבנים לא בוכים?"
       },
       {
         "id": "phrase_7",
-        "text_l1": "Everything is black and white",
-        "timestamp": "00:28.80",
-        "timestamp_end": "00:31.00",
-        "text_l2": "הכל שחור לבן"
+        "text_l1": "Hours and hours and powers",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:39.00",
+        "words": [
+          {
+            "text": "Hours",
+            "timestamp": "00:36.00",
+            "timestamp_end": "00:36.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "שעות"
+          },
+          {
+            "text": "and",
+            "timestamp": "00:36.80",
+            "timestamp_end": "00:37.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "ו"
+          },
+          {
+            "text": "hours",
+            "timestamp": "00:37.00",
+            "timestamp_end": "00:37.80",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "שעות"
+          },
+          {
+            "text": "and",
+            "timestamp": "00:37.80",
+            "timestamp_end": "00:38.00",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "ו"
+          },
+          {
+            "text": "powers,",
+            "timestamp": "00:38.00",
+            "timestamp_end": "00:39.00",
+            "translation": "כוחות"
+          }
+        ],
+        "text_l2": "שעות ושעות וכוחות"
       },
       {
         "id": "phrase_8",
-        "text_l1": "Who's the fool who told you",
-        "timestamp": "00:31.00",
-        "timestamp_end": "00:33.00",
-        "text_l2": "מי זה הכסיל שאמר לך"
+        "text_l1": "Life is no game, but it's ours, wild",
+        "timestamp": "00:39.20",
+        "timestamp_end": "00:43.20",
+        "words": [
+          {
+            "text": "Life",
+            "timestamp": "00:39.20",
+            "timestamp_end": "00:39.60",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיים"
+          },
+          {
+            "text": "is",
+            "timestamp": "00:39.60",
+            "timestamp_end": "00:39.80",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "is"
+          },
+          {
+            "text": "no",
+            "timestamp": "00:39.80",
+            "timestamp_end": "00:40.10",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "לא"
+          },
+          {
+            "text": "game,",
+            "timestamp": "00:40.10",
+            "timestamp_end": "00:40.60",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "משחק"
+          },
+          {
+            "text": "but",
+            "timestamp": "00:40.60",
+            "timestamp_end": "00:40.80",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "אבל"
+          },
+          {
+            "text": "it's",
+            "timestamp": "00:40.80",
+            "timestamp_end": "00:41.10",
+            "l1_start_index": 21,
+            "l1_end_index": 24,
+            "translation": "זה"
+          },
+          {
+            "text": "ours,",
+            "timestamp": "00:41.10",
+            "timestamp_end": "00:41.80",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "שלנו"
+          },
+          {
+            "text": "wild",
+            "timestamp": "00:41.80",
+            "timestamp_end": "00:43.20",
+            "l1_start_index": 32,
+            "l1_end_index": 35,
+            "translation": "פרוע"
+          }
+        ],
+        "text_l2": "החיים זה לא משחק, אבל הם שלנו, פראיים"
       },
       {
         "id": "phrase_9",
-        "text_l1": "Boys don't cry?",
-        "timestamp": "00:33.00",
-        "timestamp_end": "00:35.50",
-        "text_l2": "בנים לא בוכים?"
+        "text_l1": "The time goes wild",
+        "timestamp": "00:43.40",
+        "timestamp_end": "00:46.20",
+        "words": [
+          {
+            "text": "The",
+            "timestamp": "00:43.40",
+            "timestamp_end": "00:43.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ה"
+          },
+          {
+            "text": "time",
+            "timestamp": "00:43.80",
+            "timestamp_end": "00:44.40",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זמן"
+          },
+          {
+            "text": "goes",
+            "timestamp": "00:44.40",
+            "timestamp_end": "00:44.80",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "נעשה"
+          },
+          {
+            "text": "wild",
+            "timestamp": "00:44.80",
+            "timestamp_end": "00:46.20",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "פרוע"
+          }
+        ],
+        "text_l2": "הזמן משתולל"
       },
       {
         "id": "phrase_10",
-        "text_l1": "Hours and hours and powers",
-        "timestamp": "00:36.60",
-        "timestamp_end": "00:39.50",
-        "text_l2": "שעות ושעות וכוחות"
+        "text_l1": "Every day I'm losing my mind",
+        "timestamp": "00:47.00",
+        "timestamp_end": "00:51.00",
+        "words": [
+          {
+            "text": "Every",
+            "timestamp": "00:47.00",
+            "timestamp_end": "00:47.60",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כל"
+          },
+          {
+            "text": "day",
+            "timestamp": "00:47.60",
+            "timestamp_end": "00:48.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "יום"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "00:48.00",
+            "timestamp_end": "00:48.30",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "אני"
+          },
+          {
+            "text": "losing",
+            "timestamp": "00:48.30",
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "מאבד"
+          },
+          {
+            "text": "my",
+            "timestamp": "00:49.00",
+            "timestamp_end": "00:49.30",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "שלי"
+          },
+          {
+            "text": "mind,",
+            "timestamp": "00:49.30",
+            "timestamp_end": "00:51.00",
+            "translation": "דעת"
+          }
+        ],
+        "text_l2": "כל יום אני מאבד את השפיות"
       },
       {
         "id": "phrase_11",
-        "text_l1": "Life is no game but it's ours",
-        "timestamp": "00:39.50",
-        "timestamp_end": "00:42.20",
-        "text_l2": "החיים זה לא משחק אבל הם שלנו"
+        "text_l1": "Holding on in this mysterious ride",
+        "timestamp": "00:51.10",
+        "timestamp_end": "00:56.00",
+        "words": [
+          {
+            "text": "Holding",
+            "timestamp": "00:51.10",
+            "timestamp_end": "00:51.80",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "מחזיק"
+          },
+          {
+            "text": "on",
+            "timestamp": "00:51.80",
+            "timestamp_end": "00:52.40",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "על"
+          },
+          {
+            "text": "in",
+            "timestamp": "00:52.40",
+            "timestamp_end": "02:00.40",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "ב"
+          },
+          {
+            "text": "this",
+            "timestamp": "00:52.80",
+            "timestamp_end": "00:53.20",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "הזו"
+          },
+          {
+            "text": "mysterious",
+            "timestamp": "00:53.20",
+            "timestamp_end": "00:54.40",
+            "l1_start_index": 19,
+            "l1_end_index": 28,
+            "translation": "מסתורית"
+          },
+          {
+            "text": "ride,",
+            "timestamp": "00:54.40",
+            "timestamp_end": "00:56.00",
+            "translation": "נסיעה"
+          }
+        ],
+        "text_l2": "מחזיק מעמד במסע המסתורי הזה"
       },
       {
         "id": "phrase_12",
-        "text_l1": "While the time goes wild",
-        "timestamp": "00:42.20",
-        "timestamp_end": "00:46.80",
-        "text_l2": "כשהזמן משתולל"
+        "text_l1": "Dancing in the storm, I got nothing to hide",
+        "timestamp": "00:57.00",
+        "timestamp_end": "01:01.80",
+        "words": [
+          {
+            "text": "Dancing",
+            "timestamp": "00:57.00",
+            "timestamp_end": "00:57.80",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "רוקד"
+          },
+          {
+            "text": "in",
+            "timestamp": "00:57.80",
+            "timestamp_end": "00:58.10",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "00:58.10",
+            "timestamp_end": "00:58.40",
+            "l1_start_index": 11,
+            "l1_end_index": 13,
+            "translation": "ה"
+          },
+          {
+            "text": "storm,",
+            "timestamp": "00:58.40",
+            "timestamp_end": "00:59.20",
+            "l1_start_index": 15,
+            "l1_end_index": 20,
+            "translation": "סערה"
+          },
+          {
+            "text": "I",
+            "timestamp": "00:59.20",
+            "timestamp_end": "00:59.50",
+            "l1_start_index": 22,
+            "l1_end_index": 22,
+            "translation": "אני"
+          },
+          {
+            "text": "got",
+            "timestamp": "00:59.50",
+            "timestamp_end": "00:59.80",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "יש"
+          },
+          {
+            "text": "nothing",
+            "timestamp": "00:59.80",
+            "timestamp_end": "01:00.40",
+            "l1_start_index": 28,
+            "l1_end_index": 34,
+            "translation": "שום דבר"
+          },
+          {
+            "text": "to",
+            "timestamp": "01:00.40",
+            "timestamp_end": "01:00.60",
+            "l1_start_index": 36,
+            "l1_end_index": 37,
+            "translation": "ל"
+          },
+          {
+            "text": "hide,",
+            "timestamp": "01:00.60",
+            "timestamp_end": "01:01.80",
+            "translation": "להסתיר"
+          }
+        ],
+        "text_l2": "רוקד בסופה, אין לי מה להסתיר"
       },
       {
         "id": "phrase_13",
-        "text_l1": "Every day I'm losing my mind",
-        "timestamp": "00:46.80",
-        "timestamp_end": "00:51.00",
-        "text_l2": "כל יום אני מאבד את השפיות"
+        "text_l1": "Take it all and leave the world behind",
+        "timestamp": "01:02.20",
+        "timestamp_end": "01:06.80",
+        "words": [
+          {
+            "text": "Take",
+            "timestamp": "01:02.20",
+            "timestamp_end": "01:02.80",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "קח"
+          },
+          {
+            "text": "it",
+            "timestamp": "01:02.80",
+            "timestamp_end": "01:03.10",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "01:03.10",
+            "timestamp_end": "01:03.60",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "הכל"
+          },
+          {
+            "text": "and",
+            "timestamp": "01:03.60",
+            "timestamp_end": "01:04.00",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "ו"
+          },
+          {
+            "text": "leave",
+            "timestamp": "01:04.00",
+            "timestamp_end": "01:04.40",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "עזוב"
+          },
+          {
+            "text": "the",
+            "timestamp": "01:04.40",
+            "timestamp_end": "01:04.70",
+            "l1_start_index": 22,
+            "l1_end_index": 24,
+            "translation": "את"
+          },
+          {
+            "text": "world",
+            "timestamp": "01:04.70",
+            "timestamp_end": "01:05.20",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "עולם"
+          },
+          {
+            "text": "behind,",
+            "timestamp": "01:05.20",
+            "timestamp_end": "01:06.80",
+            "translation": "מאחור"
+          }
+        ],
+        "text_l2": "קח את הכל והשאר את העולם מאחור"
       },
       {
         "id": "phrase_14",
-        "text_l1": "Holding on in this mysterious ride",
-        "timestamp": "00:51.00",
-        "timestamp_end": "00:56.50",
-        "text_l2": "נאחז במסע המסתורי הזה"
+        "text_l1": "Baby, promise me you'll hold me again",
+        "timestamp": "01:08.20",
+        "timestamp_end": "01:13.00",
+        "words": [
+          {
+            "text": "Baby,",
+            "timestamp": "01:08.20",
+            "timestamp_end": "01:09.20",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "מותק"
+          },
+          {
+            "text": "promise",
+            "timestamp": "01:09.20",
+            "timestamp_end": "01:09.80",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "הבטח"
+          },
+          {
+            "text": "me",
+            "timestamp": "01:09.80",
+            "timestamp_end": "01:10.10",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "לי"
+          },
+          {
+            "text": "you'll",
+            "timestamp": "01:10.10",
+            "timestamp_end": "01:10.40",
+            "l1_start_index": 17,
+            "l1_end_index": 22,
+            "translation": "אתה"
+          },
+          {
+            "text": "hold",
+            "timestamp": "01:10.40",
+            "timestamp_end": "01:10.80",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "תחזיק"
+          },
+          {
+            "text": "me",
+            "timestamp": "01:10.80",
+            "timestamp_end": "01:11.10",
+            "l1_start_index": 29,
+            "l1_end_index": 30,
+            "translation": "אותי"
+          },
+          {
+            "text": "again,",
+            "timestamp": "01:11.10",
+            "timestamp_end": "01:13.00",
+            "translation": "שוב"
+          }
+        ],
+        "text_l2": "יקירי, הבט לי שתחזיק אותי שוב"
       },
       {
         "id": "phrase_15",
-        "text_l1": "Dancing in the storm",
-        "timestamp": "00:56.50",
-        "timestamp_end": "00:59.30",
-        "text_l2": "רוקד בתוך הסערה"
+        "text_l1": "I'm still broken from this hurricane",
+        "timestamp": "01:13.10",
+        "timestamp_end": "01:18.00",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "01:13.10",
+            "timestamp_end": "01:13.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "still",
+            "timestamp": "01:13.50",
+            "timestamp_end": "01:14.00",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "עדיין"
+          },
+          {
+            "text": "broken",
+            "timestamp": "01:14.00",
+            "timestamp_end": "01:14.80",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "שבור"
+          },
+          {
+            "text": "from",
+            "timestamp": "01:14.80",
+            "timestamp_end": "01:15.20",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "מ"
+          },
+          {
+            "text": "this",
+            "timestamp": "01:15.20",
+            "timestamp_end": "01:15.60",
+            "l1_start_index": 22,
+            "l1_end_index": 25,
+            "translation": "הזה"
+          },
+          {
+            "text": "hurricane,",
+            "timestamp": "01:15.60",
+            "timestamp_end": "01:18.00",
+            "translation": "הוריקן"
+          }
+        ],
+        "text_l2": "אני עדיין שבור מההוריקן הזה"
       },
       {
         "id": "phrase_16",
-        "text_l1": "I got nothing to hide",
-        "timestamp": "00:59.30",
-        "timestamp_end": "01:02.00",
-        "text_l2": "אין לי מה להסתיר"
+        "text_l1": "This hurricane",
+        "timestamp": "01:18.20",
+        "timestamp_end": "01:21.50",
+        "words": [
+          {
+            "text": "This",
+            "timestamp": "01:18.20",
+            "timestamp_end": "01:19.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "זה"
+          },
+          {
+            "text": "hurricane",
+            "timestamp": "01:19.00",
+            "timestamp_end": "01:21.50",
+            "l1_start_index": 5,
+            "l1_end_index": 13,
+            "translation": "הוריקן"
+          }
+        ],
+        "text_l2": "ההוריקן הזה"
       },
       {
         "id": "phrase_17",
-        "text_l1": "Take it all and leave the world behind",
-        "timestamp": "01:02.00",
-        "timestamp_end": "01:07.80",
-        "text_l2": "קח הכל והשאר את העולם מאחור"
-      },
-      {
-        "id": "phrase_18",
-        "text_l1": "Baby, promise me you'll hold me again",
-        "timestamp": "01:07.80",
-        "timestamp_end": "01:13.30",
-        "text_l2": "יקירי, הבט לי שתחזיק אותי שוב"
-      },
-      {
-        "id": "phrase_19",
-        "text_l1": "I'm still broken from this hurricane",
-        "timestamp": "01:13.30",
-        "timestamp_end": "01:18.50",
-        "text_l2": "עדיין שבור מההוריקן הזה"
-      },
-      {
-        "id": "phrase_20",
-        "text_l1": "This hurricane",
-        "timestamp": "01:18.50",
-        "timestamp_end": "01:22.00",
-        "text_l2": "ההוריקן הזה"
-      },
-      {
-        "id": "phrase_21",
         "text_l1": "Living in a fantasy, ecstasy",
         "timestamp": "01:31.00",
         "timestamp_end": "01:34.00",
+        "words": [
+          {
+            "text": "Living",
+            "timestamp": "01:31.00",
+            "timestamp_end": "01:31.60",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "חי"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:31.60",
+            "timestamp_end": "01:31.80",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "ב"
+          },
+          {
+            "text": "a",
+            "timestamp": "01:31.80",
+            "timestamp_end": "01:32.00",
+            "l1_start_index": 10,
+            "l1_end_index": 10,
+            "translation": "a"
+          },
+          {
+            "text": "fantasy,",
+            "timestamp": "01:32.00",
+            "timestamp_end": "01:32.80",
+            "l1_start_index": 12,
+            "l1_end_index": 19,
+            "translation": "פנטזיה"
+          },
+          {
+            "text": "ecstasy,",
+            "timestamp": "01:32.80",
+            "timestamp_end": "01:34.00",
+            "translation": "אקסטזה"
+          }
+        ],
         "text_l2": "חי בפנטזיה, אקסטזה"
       },
       {
-        "id": "phrase_22",
+        "id": "phrase_18",
         "text_l1": "Everything is meant to be",
-        "timestamp": "01:34.00",
-        "timestamp_end": "01:36.80",
+        "timestamp": "01:34.10",
+        "timestamp_end": "01:37.00",
+        "words": [
+          {
+            "text": "Everything",
+            "timestamp": "01:34.10",
+            "timestamp_end": "01:35.00",
+            "l1_start_index": 0,
+            "l1_end_index": 9,
+            "translation": "הכל"
+          },
+          {
+            "text": "is",
+            "timestamp": "01:35.00",
+            "timestamp_end": "01:35.30",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "is"
+          },
+          {
+            "text": "meant",
+            "timestamp": "01:35.30",
+            "timestamp_end": "01:35.80",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "אמור"
+          },
+          {
+            "text": "to",
+            "timestamp": "01:35.80",
+            "timestamp_end": "01:36.10",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "ל"
+          },
+          {
+            "text": "be,",
+            "timestamp": "01:36.10",
+            "timestamp_end": "01:37.00",
+            "translation": "להיות"
+          }
+        ],
         "text_l2": "הכל נועד להיות"
       },
       {
-        "id": "phrase_23",
+        "id": "phrase_19",
         "text_l1": "We shall pass but love will never die",
-        "timestamp": "01:36.80",
+        "timestamp": "01:37.10",
         "timestamp_end": "01:41.50",
-        "text_l2": "נחלוף אך האהבה לעולם לא תמות"
+        "words": [
+          {
+            "text": "We",
+            "timestamp": "01:37.10",
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "אנחנו"
+          },
+          {
+            "text": "shall",
+            "timestamp": "01:37.50",
+            "timestamp_end": "01:37.80",
+            "l1_start_index": 3,
+            "l1_end_index": 7,
+            "translation": "shall"
+          },
+          {
+            "text": "pass",
+            "timestamp": "01:37.80",
+            "timestamp_end": "01:38.40",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "נחלוף"
+          },
+          {
+            "text": "but",
+            "timestamp": "01:38.40",
+            "timestamp_end": "01:38.80",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "אבל"
+          },
+          {
+            "text": "love",
+            "timestamp": "01:38.80",
+            "timestamp_end": "01:39.40",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "אהבה"
+          },
+          {
+            "text": "will",
+            "timestamp": "01:39.40",
+            "timestamp_end": "01:39.80",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "will"
+          },
+          {
+            "text": "never",
+            "timestamp": "01:39.80",
+            "timestamp_end": "01:40.20",
+            "l1_start_index": 28,
+            "l1_end_index": 32,
+            "translation": "לעולם לא"
+          },
+          {
+            "text": "die",
+            "timestamp": "01:40.20",
+            "timestamp_end": "01:41.50",
+            "l1_start_index": 34,
+            "l1_end_index": 36,
+            "translation": "תמות"
+          }
+        ],
+        "text_l2": "נחלוף אבל האהבה לעולם לא תמות"
       },
       {
-        "id": "phrase_24",
+        "id": "phrase_20",
         "text_l1": "Hours and hours and powers",
-        "timestamp": "01:42.20",
+        "timestamp": "01:42.00",
         "timestamp_end": "01:45.00",
+        "words": [
+          {
+            "text": "Hours",
+            "timestamp": "01:42.00",
+            "timestamp_end": "01:42.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "שעות"
+          },
+          {
+            "text": "and",
+            "timestamp": "01:42.80",
+            "timestamp_end": "01:43.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "ו"
+          },
+          {
+            "text": "hours",
+            "timestamp": "01:43.00",
+            "timestamp_end": "01:43.80",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "שעות"
+          },
+          {
+            "text": "and",
+            "timestamp": "01:43.80",
+            "timestamp_end": "01:44.00",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "ו"
+          },
+          {
+            "text": "powers,",
+            "timestamp": "01:44.00",
+            "timestamp_end": "01:45.00",
+            "translation": "כוחות"
+          }
+        ],
         "text_l2": "שעות ושעות וכוחות"
       },
       {
-        "id": "phrase_25",
-        "text_l1": "Life is no game but it's ours",
-        "timestamp": "01:45.00",
-        "timestamp_end": "01:47.80",
-        "text_l2": "החיים זה לא משחק אבל הם שלנו"
+        "id": "phrase_21",
+        "text_l1": "Life is no game, but it's ours, wild",
+        "timestamp": "01:45.10",
+        "timestamp_end": "01:49.00",
+        "words": [
+          {
+            "text": "Life",
+            "timestamp": "01:45.10",
+            "timestamp_end": "01:45.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "חיים"
+          },
+          {
+            "text": "is",
+            "timestamp": "01:45.50",
+            "timestamp_end": "01:45.80",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "is"
+          },
+          {
+            "text": "no",
+            "timestamp": "01:45.80",
+            "timestamp_end": "01:46.10",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "לא"
+          },
+          {
+            "text": "game,",
+            "timestamp": "01:46.10",
+            "timestamp_end": "01:46.60",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "משחק"
+          },
+          {
+            "text": "but",
+            "timestamp": "01:46.60",
+            "timestamp_end": "01:46.80",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "אבל"
+          },
+          {
+            "text": "it's",
+            "timestamp": "01:46.80",
+            "timestamp_end": "01:47.10",
+            "l1_start_index": 21,
+            "l1_end_index": 24,
+            "translation": "זה"
+          },
+          {
+            "text": "ours,",
+            "timestamp": "01:47.10",
+            "timestamp_end": "01:47.80",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "שלנו"
+          },
+          {
+            "text": "wild",
+            "timestamp": "01:47.80",
+            "timestamp_end": "01:49.00",
+            "l1_start_index": 32,
+            "l1_end_index": 35,
+            "translation": "פרוע"
+          }
+        ],
+        "text_l2": "החיים זה לא משחק, אבל הם שלנו, פראיים"
       },
       {
-        "id": "phrase_26",
-        "text_l1": "While the time goes wild",
-        "timestamp": "01:47.80",
-        "timestamp_end": "01:52.50",
-        "text_l2": "כשהזמן משתולל"
+        "id": "phrase_22",
+        "text_l1": "The time goes wild",
+        "timestamp": "01:49.20",
+        "timestamp_end": "01:52.00",
+        "words": [
+          {
+            "text": "The",
+            "timestamp": "01:49.20",
+            "timestamp_end": "01:49.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "ה"
+          },
+          {
+            "text": "time",
+            "timestamp": "01:49.60",
+            "timestamp_end": "01:50.20",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "זמן"
+          },
+          {
+            "text": "goes",
+            "timestamp": "01:50.20",
+            "timestamp_end": "01:50.60",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "נעשה"
+          },
+          {
+            "text": "wild",
+            "timestamp": "01:50.60",
+            "timestamp_end": "01:52.00",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "פרוע"
+          }
+        ],
+        "text_l2": "הזמן משתולל"
       },
       {
-        "id": "phrase_27",
+        "id": "phrase_23",
         "text_l1": "Every day I'm losing my mind",
-        "timestamp": "01:52.50",
-        "timestamp_end": "01:56.80",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:57.00",
+        "words": [
+          {
+            "text": "Every",
+            "timestamp": "01:53.00",
+            "timestamp_end": "01:53.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "כל"
+          },
+          {
+            "text": "day",
+            "timestamp": "01:53.80",
+            "timestamp_end": "01:54.20",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "יום"
+          },
+          {
+            "text": "I'm",
+            "timestamp": "01:54.20",
+            "timestamp_end": "01:54.50",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "אני"
+          },
+          {
+            "text": "losing",
+            "timestamp": "01:54.50",
+            "timestamp_end": "01:55.20",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "מאבד"
+          },
+          {
+            "text": "my",
+            "timestamp": "01:55.20",
+            "timestamp_end": "01:55.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "שלי"
+          },
+          {
+            "text": "mind,",
+            "timestamp": "01:55.50",
+            "timestamp_end": "01:57.00",
+            "translation": "דעת"
+          }
+        ],
         "text_l2": "כל יום אני מאבד את השפיות"
       },
       {
-        "id": "phrase_28",
+        "id": "phrase_24",
         "text_l1": "Holding on in this mysterious ride",
-        "timestamp": "01:56.80",
-        "timestamp_end": "02:02.20",
-        "text_l2": "נאחז במסע המסתורי הזה"
+        "timestamp": "01:57.10",
+        "timestamp_end": "02:01.80",
+        "words": [
+          {
+            "text": "Holding",
+            "timestamp": "01:57.10",
+            "timestamp_end": "01:57.80",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "מחזיק"
+          },
+          {
+            "text": "on",
+            "timestamp": "01:57.80",
+            "timestamp_end": "01:58.40",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "על"
+          },
+          {
+            "text": "in",
+            "timestamp": "01:58.40",
+            "timestamp_end": "01:58.80",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "ב"
+          },
+          {
+            "text": "this",
+            "timestamp": "01:58.80",
+            "timestamp_end": "01:59.20",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "הזו"
+          },
+          {
+            "text": "mysterious",
+            "timestamp": "01:59.20",
+            "timestamp_end": "02:00.40",
+            "l1_start_index": 19,
+            "l1_end_index": 28,
+            "translation": "מסתורית"
+          },
+          {
+            "text": "ride,",
+            "timestamp": "02:00.40",
+            "timestamp_end": "02:01.80",
+            "translation": "נסיעה"
+          }
+        ],
+        "text_l2": "מחזיק מעמד במסע המסתורי הזה"
       },
       {
-        "id": "phrase_29",
-        "text_l1": "Dancing in the storm",
-        "timestamp": "02:02.20",
-        "timestamp_end": "02:05.00",
-        "text_l2": "רוקד בתוך הסערה"
+        "id": "phrase_25",
+        "text_l1": "Dancing in the storm, I got nothing to hide",
+        "timestamp": "02:02.80",
+        "timestamp_end": "02:07.60",
+        "words": [
+          {
+            "text": "Dancing",
+            "timestamp": "02:02.80",
+            "timestamp_end": "02:03.60",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "רוקד"
+          },
+          {
+            "text": "in",
+            "timestamp": "02:03.60",
+            "timestamp_end": "02:03.90",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "ב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:03.90",
+            "timestamp_end": "02:04.20",
+            "l1_start_index": 11,
+            "l1_end_index": 13,
+            "translation": "ה"
+          },
+          {
+            "text": "storm,",
+            "timestamp": "02:04.20",
+            "timestamp_end": "02:05.00",
+            "l1_start_index": 15,
+            "l1_end_index": 20,
+            "translation": "סערה"
+          },
+          {
+            "text": "I",
+            "timestamp": "02:05.00",
+            "timestamp_end": "02:05.30",
+            "l1_start_index": 22,
+            "l1_end_index": 22,
+            "translation": "אני"
+          },
+          {
+            "text": "got",
+            "timestamp": "02:05.30",
+            "timestamp_end": "02:05.60",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "יש"
+          },
+          {
+            "text": "nothing",
+            "timestamp": "02:05.60",
+            "timestamp_end": "02:06.20",
+            "l1_start_index": 28,
+            "l1_end_index": 34,
+            "translation": "שום דבר"
+          },
+          {
+            "text": "to",
+            "timestamp": "02:06.20",
+            "timestamp_end": "02:06.40",
+            "l1_start_index": 36,
+            "l1_end_index": 37,
+            "translation": "ל"
+          },
+          {
+            "text": "hide,",
+            "timestamp": "02:06.40",
+            "timestamp_end": "02:07.60",
+            "translation": "להסתיר"
+          }
+        ],
+        "text_l2": "רוקד בסופה, אין לי מה להסתיר"
       },
       {
-        "id": "phrase_30",
-        "text_l1": "I got nothing to hide",
-        "timestamp": "02:05.00",
-        "timestamp_end": "02:07.80",
-        "text_l2": "אין לי מה להסתיר"
-      },
-      {
-        "id": "phrase_31",
+        "id": "phrase_26",
         "text_l1": "Take it all and leave the world behind",
-        "timestamp": "02:07.80",
-        "timestamp_end": "02:13.50",
-        "text_l2": "קח הכל והשאר את העולם מאחור"
+        "timestamp": "02:08.20",
+        "timestamp_end": "02:12.80",
+        "words": [
+          {
+            "text": "Take",
+            "timestamp": "02:08.20",
+            "timestamp_end": "02:08.80",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "קח"
+          },
+          {
+            "text": "it",
+            "timestamp": "02:08.80",
+            "timestamp_end": "02:09.10",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "זה"
+          },
+          {
+            "text": "all",
+            "timestamp": "02:09.10",
+            "timestamp_end": "02:09.60",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "הכל"
+          },
+          {
+            "text": "and",
+            "timestamp": "02:09.60",
+            "timestamp_end": "02:10.00",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "ו"
+          },
+          {
+            "text": "leave",
+            "timestamp": "02:10.00",
+            "timestamp_end": "02:10.40",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "עזוב"
+          },
+          {
+            "text": "the",
+            "timestamp": "02:10.40",
+            "timestamp_end": "02:10.70",
+            "l1_start_index": 22,
+            "l1_end_index": 24,
+            "translation": "את"
+          },
+          {
+            "text": "world",
+            "timestamp": "02:10.70",
+            "timestamp_end": "02:11.20",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "עולם"
+          },
+          {
+            "text": "behind,",
+            "timestamp": "02:11.20",
+            "timestamp_end": "02:12.80",
+            "translation": "מאחור"
+          }
+        ],
+        "text_l2": "קח את הכל והשאר את העולם מאחור"
       },
       {
-        "id": "phrase_32",
+        "id": "phrase_27",
         "text_l1": "Baby, promise me you'll hold me again",
-        "timestamp": "02:13.50",
-        "timestamp_end": "02:19.00",
+        "timestamp": "02:13.80",
+        "timestamp_end": "02:18.50",
+        "words": [
+          {
+            "text": "Baby,",
+            "timestamp": "02:13.80",
+            "timestamp_end": "02:14.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "מותק"
+          },
+          {
+            "text": "promise",
+            "timestamp": "02:14.80",
+            "timestamp_end": "02:15.40",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "הבטח"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:15.40",
+            "timestamp_end": "02:15.70",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "לי"
+          },
+          {
+            "text": "you'll",
+            "timestamp": "02:15.70",
+            "timestamp_end": "02:16.00",
+            "l1_start_index": 17,
+            "l1_end_index": 22,
+            "translation": "אתה"
+          },
+          {
+            "text": "hold",
+            "timestamp": "02:16.00",
+            "timestamp_end": "02:16.40",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "תחזיק"
+          },
+          {
+            "text": "me",
+            "timestamp": "02:16.40",
+            "timestamp_end": "02:16.70",
+            "l1_start_index": 29,
+            "l1_end_index": 30,
+            "translation": "אותי"
+          },
+          {
+            "text": "again,",
+            "timestamp": "02:16.70",
+            "timestamp_end": "02:18.50",
+            "translation": "שוב"
+          }
+        ],
         "text_l2": "יקירי, הבט לי שתחזיק אותי שוב"
       },
       {
-        "id": "phrase_33",
+        "id": "phrase_28",
         "text_l1": "I'm still broken from this hurricane",
-        "timestamp": "02:19.00",
-        "timestamp_end": "02:24.20",
-        "text_l2": "עדיין שבור מההוריקן הזה"
+        "timestamp": "02:19.10",
+        "timestamp_end": "02:24.00",
+        "words": [
+          {
+            "text": "I'm",
+            "timestamp": "02:19.10",
+            "timestamp_end": "02:19.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "אני"
+          },
+          {
+            "text": "still",
+            "timestamp": "02:19.50",
+            "timestamp_end": "02:20.00",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "עדיין"
+          },
+          {
+            "text": "broken",
+            "timestamp": "02:20.00",
+            "timestamp_end": "02:20.80",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "שבור"
+          },
+          {
+            "text": "from",
+            "timestamp": "02:20.80",
+            "timestamp_end": "02:21.20",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "מ"
+          },
+          {
+            "text": "this",
+            "timestamp": "02:21.20",
+            "timestamp_end": "02:21.60",
+            "l1_start_index": 22,
+            "l1_end_index": 25,
+            "translation": "הזה"
+          },
+          {
+            "text": "hurricane,",
+            "timestamp": "02:21.60",
+            "timestamp_end": "02:24.00",
+            "translation": "הוריקן"
+          }
+        ],
+        "text_l2": "אני עדיין שבור מההוריקן הזה"
       },
       {
-        "id": "phrase_34",
+        "id": "phrase_29",
         "text_l1": "This hurricane",
         "timestamp": "02:24.20",
         "timestamp_end": "02:27.50",
+        "words": [
+          {
+            "text": "This",
+            "timestamp": "02:24.20",
+            "timestamp_end": "02:25.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "זה"
+          },
+          {
+            "text": "hurricane",
+            "timestamp": "02:25.00",
+            "timestamp_end": "02:27.50",
+            "l1_start_index": 5,
+            "l1_end_index": 13,
+            "translation": "הוריקן"
+          }
+        ],
         "text_l2": "ההוריקן הזה"
       },
       {
-        "id": "phrase_35",
-        "text_l1": "This hurricane",
-        "timestamp": "02:35.50",
-        "timestamp_end": "02:39.00",
-        "text_l2": "ההוריקן הזה"
+        "id": "phrase_30",
+        "text_l1": "It's hurricane",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:38.00",
+        "words": [
+          {
+            "text": "It's",
+            "timestamp": "02:35.00",
+            "timestamp_end": "02:35.80",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "זה"
+          },
+          {
+            "text": "hurricane",
+            "timestamp": "02:35.80",
+            "timestamp_end": "02:38.00",
+            "l1_start_index": 5,
+            "l1_end_index": 13,
+            "translation": "הוריקן"
+          }
+        ],
+        "text_l2": "זה הוריקן"
       }
     ],
-    "phrases_with_token_translations": "[Writer] of my symphony => [כותב] הסימפוניה שלי\nWriter of [my] symphony => כותב הסימפוניה [שלי]\nWriter of my [symphony] => כותב [הסימפוניה] שלי\n\n[Play] with me => [נגן] איתי\nPlay [with me] => נגן [איתי]\n\n[Look] into my eyes and see => [הבט] לתוך עיניי וראה\nLook [into] my eyes and see => הבט [לתוך] עיניי וראה\nLook into [my eyes] and see => הבט לתוך [עיניי] וראה\nLook into my eyes and [see] => הבט לתוך עיניי [וראה]\n\n[People] walk away but never say goodbye => [אנשים] הולכים אך לעולם לא נפרדים לשלום\nPeople [walk] away but never say goodbye => אנשים [הולכים] אך לעולם לא נפרדים לשלום\nPeople walk away [but] never say goodbye => אנשים הולכים [אך] לעולם לא נפרדים לשלום\nPeople walk away but [never] say goodbye => אנשים הולכים אך [לעולם לא] נפרדים לשלום\nPeople walk away but never [say goodbye] => אנשים הולכים אך לעולם לא [נפרדים לשלום]\n\n[Someone] stole the moon tonight => [מישהו] גנב את הירח הלילה\nSomeone [stole] the moon tonight => מישהו [גנב] את הירח הלילה\nSomeone stole [the moon] tonight => מישהו גנב את [הירח] הלילה\nSomeone stole the moon [tonight] => מישהו גנב את הירח [הלילה]\n\n[Took] my light => [לקח] את האור שלי\nTook [my] light => לקח את האור [שלי]\nTook my [light] => לקח את ה[אור] שלי\n\n[Everything] is black and white => [הכל] שחור לבן\nEverything is [black] and white => הכל [שחור] לבן\nEverything is black and [white] => הכל שחור [לבן]\n\n[Who's] the fool who told you => [מי זה] הכסיל שאמר לך\nWho's [the fool] who told you => מי זה [הכסיל] שאמר לך\nWho's the fool [who] told you => ש\nWho's the fool who [told] you => מי זה הכסיל ש[אמר] לך\nWho's the fool who told [you] => מי זה הכסיל שאמר [לך]\n\n[Boys] don't cry? => [בנים] לא בוכים?\nBoys [don't] cry? => בנים [לא] בוכים?\nBoys don't [cry]? => בנים לא [בוכים]?\n\n[Hours] and hours and powers => [שעות] ושעות וכוחות\nHours and [hours] and powers => שעות [ושעות] וכוחות\nHours and hours and [powers] => שעות ושעות [וכוחות]\nHours [and] hours and powers => ו\nHours and hours [and] powers => ו\n\n[Life] is no game but it's ours => [החיים] זה לא משחק אבל הם שלנו\nLife [is] no game but it's ours => החיים [זה] לא משחק אבל הם שלנו\nLife is [no] game but it's ours => החיים זה [לא] משחק אבל הם שלנו\nLife is no [game] but it's ours => החיים זה לא [משחק] אבל הם שלנו\nLife is no game [but] it's ours => החיים זה לא משחק [אבל] הם שלנו\nLife is no game but [it's] ours => החיים זה לא משחק אבל [הם] שלנו\nLife is no game but it's [ours] => החיים זה לא משחק אבל הם [שלנו]\n\nWhile the time [goes wild] => כשהזמן [משתולל]\n[While the time] goes wild => [כשהזמן] משתולל\n[While] the time goes wild => כש\nWhile [the] time goes wild => ה\nWhile the [time] goes wild => זמן\n\n[Every day] I'm losing my mind => [כל יום] אני מאבד את השפיות\nEvery day [I'm] losing my mind => כל יום [אני] מאבד את השפיות\nEvery day I'm [losing] my mind => כל יום אני [מאבד] את השפיות\nEvery day I'm losing my [mind] => כל יום אני מאבד את [השפיות]\n\n[Holding on] in this mysterious ride => [נאחז] במסע המסתורי הזה\nHolding on [in] this mysterious ride => ב\nHolding on in [this] mysterious ride => נאחז במסע המסתורי [הזה]\nHolding on in this [mysterious] ride => נאחז במסע [המסתורי] הזה\nHolding on in this mysterious [ride] => מסע\n\n[Dancing] in the storm => [רוקד] בתוך הסערה\nDancing [in] the storm => רוקד [בתוך] הסערה\nDancing in [the storm] => רוקד בתוך [הסערה]\n\n[I] got nothing to hide => לי\nI [got] nothing to hide => אין\nI got [nothing] to hide => מה\nI got nothing [to hide] => אין לי מה [להסתיר]\n\n[Take] it all and leave the world behind => [קח] הכל והשאר את העולם מאחור\nTake [it all] and leave the world behind => קח [הכל] והשאר את העולם מאחור\nTake it all [and leave] the world behind => קח הכל [והשאר] את העולם מאחור\nTake it all and leave [the world] behind => קח הכל והשאר [העולם] מאחור\nTake it all and leave the world [behind] => קח הכל והשאר את העולם [מאחור]\n\n[Baby,] promise me you'll hold me again => [יקירי,] הבט לי שתחזיק אותי שוב\nBaby, [promise] me you'll hold me again => יקירי, [הבט] לי שתחזיק אותי שוב\nBaby, promise [me] you'll hold me again => יקירי, הבט [לי] שתחזיק אותי שוב\nBaby, promise me [you'll hold] me again => יקירי, הבט לי [שתחזיק] אותי שוב\nBaby, promise me you'll hold [me] again => יקירי, הבט לי שתחזיק [אותי] שוב\nBaby, promise me you'll hold me [again] => יקירי, הבט לי שתחזיק אותי [שוב]\n\nI'm [still] broken from this hurricane => [עדיין] שבור מההוריקן הזה\nI'm still [broken] from this hurricane => עדיין [שבור] מההוריקן הזה\nI'm still broken [from] this hurricane => מ\nI'm still broken from [this] hurricane => עדיין שבור מההוריקן [הזה]\nI'm still broken from this [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => [ההוריקן] הזה\n\n[Living] in a fantasy, ecstasy => [חי] בפנטזיה, אקסטזה\nLiving [in a fantasy], ecstasy => חי [בפנטזיה], אקסטזה\nLiving in a fantasy, [ecstasy] => חי בפנטזיה, [אקסטזה]\n\n[Everything] is meant to be => [הכל] נועד להיות\nEverything [is meant] to be => הכל [נועד] להיות\nEverything is meant [to be] => הכל נועד [להיות]\n\n[We shall pass] but love will never die => [נחלוף] אך האהבה לעולם לא תמות\nWe shall pass [but] love will never die => נחלוף [אך] האהבה לעולם לא תמות\nWe shall pass but [love] will never die => נחלוף אך [האהבה] לעולם לא תמות\nWe shall pass but love [will never die] => נחלוף אך האהבה [לעולם לא תמות]\nWe shall pass but love will [never] die => לעולם לא\nWe shall pass but love will never [die] => נחלוף אך האהבה לעולם לא [תמות]\n\n[Hours] and hours and powers => [שעות] ושעות וכוחות\nHours [and] hours and powers => ו\nHours and [hours] and powers => שעות ו[שעות] וכוחות\nHours and hours [and] powers => ו\nHours and hours and [powers] => שעות ושעות ו[כוחות]\n\n[Life] is no game but it's ours => [החיים] זה לא משחק אבל הם שלנו\nLife [is] no game but it's ours => החיים [זה] לא משחק אבל הם שלנו\nLife is [no] game but it's ours => החיים זה [לא] משחק אבל הם שלנו\nLife is no [game] but it's ours => החיים זה לא [משחק] אבל הם שלנו\nLife is no game [but] it's ours => החיים זה לא משחק [אבל] הם שלנו\nLife is no game but [it's] ours => החיים זה לא משחק אבל [הם] שלנו\nLife is no game but it's [ours] => החיים זה לא משחק אבל הם [שלנו]\n\n[While] the time goes wild => כש\nWhile [the] time goes wild => ה\nWhile the [time] goes wild => זמן\nWhile the time [goes wild] => כשהזמן [משתולל]\n\n[Every] day I'm losing my mind => [כל] יום אני מאבד את השפיות\nEvery [day] I'm losing my mind => כל [יום] אני מאבד את השפיות\nEvery day [I'm] losing my mind => כל יום [אני] מאבד את השפיות\nEvery day I'm [losing] my mind => כל יום אני [מאבד] את השפיות\nEvery day I'm losing [my mind] => כל יום אני מאבד [את השפיות]\n\n[Holding on] in this mysterious ride => [נאחז] במסע המסתורי הזה\nHolding on [in] this mysterious ride => ב\nHolding on in [this] mysterious ride => נאחז במסע המסתורי [הזה]\nHolding on in this [mysterious] ride => נאחז במסע [המסתורי] הזה\nHolding on in this mysterious [ride] => נאחז [במסע] המסתורי הזה\n\n[Dancing] in the storm => [רוקד] בתוך הסערה\nDancing [in] the storm => רוקד [בתוך] הסערה\nDancing in [the storm] => רוקד בתוך [הסערה]\n\n[I got] nothing to hide => [אין לי] מה להסתיר\nI got [nothing] to hide => אין לי [מה] להסתיר\nI got nothing [to hide] => אין לי מה [להסתיר]\n\n[Take] it all and leave the world behind => [קח] הכל והשאר את העולם מאחור\nTake [it all] and leave the world behind => קח [הכל] והשאר את העולם מאחור\nTake it all [and] leave the world behind => ו\nTake it all and [leave] the world behind => קח הכל [והשאר] את העולם מאחור\nTake it all and leave [the world] behind => קח הכל והשאר את [העולם] מאחור\nTake it all and leave the world [behind] => קח הכל והשאר את העולם [מאחור]\n\n[Baby], promise me you'll hold me again => [יקירי], הבט לי שתחזיק אותי שוב\nBaby, [promise] me you'll hold me again => יקירי, [הבט] לי שתחזיק אותי שוב\nBaby, promise [me] you'll hold me again => יקירי, הבט [לי] שתחזיק אותי שוב\nBaby, promise me [you'll hold] me again => יקירי, הבט לי [שתחזיק] אותי שוב\nBaby, promise me you'll hold [me] again => יקירי, הבט לי שתחזיק [אותי] שוב\nBaby, promise me you'll hold me [again] => יקירי, הבט לי שתחזיק אותי [שוב]\n\nI'm [still] broken from this hurricane => [עדיין] שבור מההוריקן הזה\nI'm still [broken] from this hurricane => עדיין [שבור] מההוריקן הזה\nI'm still broken [from] this hurricane => מ\nI'm still broken from [this] hurricane => עדיין שבור מההוריקן [הזה]\nI'm still broken from this [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => הוריקן",
-    "lessons": "# The Symphony Begins\n00:14.20 Writer of my symphony\n00:16.20 Play with me\n00:17.50 Look into my eyes and see\n00:19.80 People walk away but never say goodbye\n\n# Stolen Moon\n00:25.40 Someone stole the moon tonight\n00:27.50 Took my light\n00:28.80 Everything is black and white\n00:31.00 Who's the fool who told you\n00:33.00 Boys don't cry?\n\n# Hours and Powers\n00:36.60 Hours and hours and powers\n00:39.50 Life is no game but it's ours\n00:42.20 While the time goes wild\n00:46.80 Every day I'm losing my mind\n00:51.00 Holding on in this mysterious ride\n00:56.50 Dancing in the storm\n00:59.30 I got nothing to hide\n\n# Leave the World Behind\n01:02.00 Take it all and leave the world behind\n01:07.80 Baby, promise me you'll hold me again\n01:13.30 I'm still broken from this hurricane\n01:18.50 This hurricane\n\n# Living in a Fantasy\n01:31.00 Living in a fantasy, ecstasy\n01:34.00 Everything is meant to be\n01:36.80 We shall pass but love will never die\n01:42.20 Hours and hours and powers\n01:45.00 Life is no game but it's ours\n01:47.80 While the time goes wild\n\n# Mysterious Ride\n01:52.50 Every day I'm losing my mind\n01:56.80 Holding on in this mysterious ride\n02:02.20 Dancing in the storm\n02:05.00 I got nothing to hide\n\n# Promise Me Again\n02:07.80 Take it all and leave the world behind\n02:13.50 Baby, promise me you'll hold me again\n02:19.00 I'm still broken from this hurricane\n02:24.20 This hurricane\n02:35.50 This hurricane",
-    "similar_sounds": "Writer of my [syphon]\n[plays] with me\nLook into my eyes [add] see\nPeople walk away [out] never say goodbye\nSomeone stole the [soon] tonight\nTook my [night]\nEverything is black [any] white\n[who'd] the fool who told you\nBoys don't [dry]\nHours and hours and [power]\nLife is no [same] but it's ours\nWhile the time goes [will]\nEvery [may] I'm losing my mind\n[golding] on in this mysterious ride\nDancing in [he] storm\nI [get] nothing to hide\nTake it [call] and leave the world behind\nBaby promise me [you'd] hold me again\nI'm still [broker] from this hurricane\nThis [hurricanes]\nLiving in a fantasy [No alternatives found for 'ecstasy']\n[No alternatives found for 'everything'] is meant to be\nWe shall pass but [move] will never die\nHours and hours [an] powers\nLife is no game [buy] it's ours\nWhile the [tim] goes wild\n[very] day I'm losing my mind\nHolding on in [thin] mysterious ride\nDancing in the [story]\nI got nothing to [side]\nTake it all and leave the [would] behind\nBaby promise me you'll [old] me again\n[i'd] still broken from this hurricane\n[thin] hurricane\nThis [hurricanes]"
+    "lessons": "# The Stolen Moon\n00:14.20 Writer of my symphony, play with me\n00:17.20 Look into my eyes and see\n00:19.40 People walk away but never say goodbye\n00:25.00 Someone stole the moon tonight\n00:27.20 Took my light, everything is black and white\n00:30.40 Who's the fool who told you boys don't cry?\n\n# The Wild Ride\n00:36.00 Hours and hours and powers\n00:39.20 Life is no game, but it's ours, wild\n00:43.40 The time goes wild\n00:47.00 Every day I'm losing my mind\n00:51.10 Holding on in this mysterious ride\n00:57.00 Dancing in the storm, I got nothing to hide\n01:02.20 Take it all and leave the world behind\n\n# Love Will Never Die\n01:08.20 Baby, promise me you'll hold me again\n01:13.10 I'm still broken from this hurricane\n01:18.20 This hurricane\n01:31.00 Living in a fantasy, ecstasy\n01:34.10 Everything is meant to be\n01:37.10 We shall pass but love will never die\n\n# The Wild Ride (Reprise)\n01:42.00 Hours and hours and powers\n01:45.10 Life is no game, but it's ours, wild\n01:49.20 The time goes wild\n01:53.00 Every day I'm losing my mind\n01:57.10 Holding on in this mysterious ride\n02:02.80 Dancing in the storm, I got nothing to hide\n02:08.20 Take it all and leave the world behind\n\n# This Hurricane\n02:13.80 Baby, promise me you'll hold me again\n02:19.10 I'm still broken from this hurricane\n02:24.20 This hurricane\n02:35.00 It's hurricane",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "The Stolen Moon",
+        "score": 5,
+        "reason": "Rich vocabulary and metaphors, including 'symphony', 'stole the moon', and 'black and white'."
+      },
+      {
+        "index": 2,
+        "title": "The Wild Ride",
+        "score": 5,
+        "reason": "Teaches useful expressions like 'losing my mind', 'mysterious ride', and 'dancing in the storm'."
+      },
+      {
+        "index": 3,
+        "title": "Love Will Never Die",
+        "score": 5,
+        "reason": "Contains meaningful phrases such as 'broken from this hurricane', 'fantasy, ecstasy', and 'love will never die'."
+      },
+      {
+        "index": 4,
+        "title": "The Wild Ride (Reprise)",
+        "score": 1,
+        "reason": "Exact repetition of lesson 2; no new vocabulary or structures to learn."
+      },
+      {
+        "index": 5,
+        "title": "This Hurricane",
+        "score": 1,
+        "reason": "Reprise of the hurricane lines from lesson 3; adds no new teaching value."
+      }
+    ],
+    "similar_sounds": "Writer of my [syphon] play with me\n[book] into my eyes and see\nPeople walk away [buy] never say goodbye\n[someones] stole the moon tonight\nTook my light [No alternatives found for 'everything'] is black and white\nWho's the fool who told you boys [won't] cry\nHours and [yours] and powers\nLife is no game [out] it's ours wild\nThe time goes [wind]\n[avery] day I'm losing my mind\n[golding] on in this mysterious ride\nDancing in the storm I got nothing to [wide]\nTake it all and leave the [worlds] behind\n[abby] promise me you'll hold me again\n[i'd] still broken from this hurricane\nThis [hurricanes]\nLiving in a [fantast] ecstasy\nEverything is [mean] to be\nWe shall pass but [lose] will never die\nHours and hours [any] powers\nLife is no game but it's ours [wind]\nThe [tie] goes wild\nEvery [may] I'm losing my mind\nHolding on in this [mysteriously] ride\nDancing in [﻿the] storm I got nothing to hide\nTake it all and [lease] the world behind\nBaby [promised] me you'll hold me again\n[i'd] still broken from this hurricane\nThis [hurricanes]\n[its] hurricane"
   },
-  "created_at": "2026-06-26 21:01:25 UTC",
-  "updated_at": "2026-06-26 21:09:26 UTC",
-  "exported_at": "2026-06-26T21:09:26Z"
+  "created_at": "2026-06-27 12:49:17 UTC",
+  "updated_at": "2026-06-27 12:52:29 UTC",
+  "exported_at": "2026-06-27T12:52:29Z"
 }

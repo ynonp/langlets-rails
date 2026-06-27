@@ -11,10 +11,18 @@
 #   [{ "id" => "phrase_1", "text_l1" => "Apateu, apateu",
 #      "timestamp" => "00:06.50", "timestamp_end" => "00:07.80",
 #      "words" => [{ "text" => "Apateu,", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10",
-#                    "l1_start_index" => 0, "l1_end_index" => 6 }, ...] }]
+#                    "l1_start_index" => 0, "l1_end_index" => 5 }, ...] }]
 class WordTimingParser
   def self.parse(json_text)
     new(json_text).parse
+  end
+
+  # Recompute l1_start_index / l1_end_index on already-parsed phrase words using
+  # the current matching logic. Used to repair stored CreateSongProgress data
+  # that was parsed before locate_word understood line-final punctuation.
+  # Mutates each word in place.
+  def self.reindex_phrase_words(words, text_l1)
+    new("[]").send(:assign_l1_indices, Array(words), text_l1.to_s)
   end
 
   def initialize(json_text)
@@ -66,15 +74,30 @@ class WordTimingParser
       text = word["text"].to_s
       next if text.blank?
 
-      start_char = text_l1.index(text, cursor)
-      next unless start_char
+      span = locate_word(text, text_l1, cursor)
+      next unless span
 
-      end_char = start_char + text.length - 1
+      start_char, end_char = span
       cursor = end_char + 1
 
       word["l1_start_index"] = start_char
       word["l1_end_index"] = end_char
     end
+  end
+
+  # Find a word inside text_l1 at or after cursor. We match on the word with any
+  # surrounding punctuation stripped: the transcription attaches punctuation that
+  # isn't part of the word itself (a trailing comma on a line's final word,
+  # quotes, etc.), and the token span should cover just the word -- "symphony"
+  # rather than "symphony,". Returns [start_index, end_index] (end inclusive) or
+  # nil when the word can't be located. Words that are pure punctuation are
+  # skipped.
+  def locate_word(text, text_l1, cursor)
+    needle = text.gsub(/\A[[:punct:]]+|[[:punct:]]+\z/, "")
+    return nil if needle.blank?
+
+    idx = text_l1.index(needle, cursor)
+    idx ? [ idx, idx + needle.length - 1 ] : nil
   end
 
   # Parse the "MM:SS.ss" word timestamps we emit into float seconds for sorting.
