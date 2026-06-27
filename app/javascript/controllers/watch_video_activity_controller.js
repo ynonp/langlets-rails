@@ -1,5 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 
+// How long (seconds) a word may stay highlighted past its own end timestamp
+// while waiting for the next word. This bridges the small gaps between words
+// (so the highlight doesn't blink off) without holding a word lit through a
+// long instrumental break.
+const KARAOKE_HOLD_LIMIT = 1.5;
+
 export default class extends Controller {
   static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
   static classes = ['currentTextLine'];
@@ -40,24 +46,53 @@ export default class extends Controller {
 
   toggleKaraoke() {
     // Clear any active highlight when karaoke is disabled.
-    if (!this.showKaraokeTarget.checked && this.tokenSpans) {
-      this.tokenSpans.forEach(span => span.classList.remove('s-token-active'));
+    if (!this.showKaraokeTarget.checked && this.karaokeTokens) {
+      this.karaokeTokens.forEach(({ span }) => span.classList.remove('s-token-active'));
     }
     this.persistPrefs();
   }
 
-  // Karaoke-style highlight: mark the single token whose [start, end] window
-  // contains the current playback time. Tokens without timing data (older songs)
-  // have no data-token-start attribute and are ignored.
+  // Karaoke-style highlight. Rather than lighting a word only while playback is
+  // inside its own [start, end] window (which blinks off during the gap before
+  // the next word), we keep the most recently started word highlighted until
+  // the next word starts. The final word, and long instrumental gaps, fall back
+  // to the word's own end (plus a small grace period) so nothing stays stuck.
   updateWordHighlight(currentTime) {
-    if (!this.tokenSpans) {
-      this.tokenSpans = Array.from(this.element.querySelectorAll('[data-token-start]'));
+    if (!this.karaokeTokens) {
+      this.karaokeTokens = Array.from(this.element.querySelectorAll('[data-token-start]'))
+        .filter(span => span.dataset.tokenStart !== '')
+        .map(span => ({
+          span,
+          start: Number(span.dataset.tokenStart),
+          end: Number(span.dataset.tokenEnd),
+        }))
+        .filter(({ start, end }) => Number.isFinite(start) && Number.isFinite(end))
+        .sort((a, b) => a.start - b.start);
     }
 
-    for (const span of this.tokenSpans) {
-      const start = Number(span.dataset.tokenStart);
-      const end = Number(span.dataset.tokenEnd);
-      span.classList.toggle('s-token-active', currentTime >= start && currentTime <= end);
+    const tokens = this.karaokeTokens;
+
+    // The active word is the last one that has already started.
+    let activeIndex = -1;
+    for (let i = 0; i < tokens.length && tokens[i].start <= currentTime; i++) {
+      activeIndex = i;
+    }
+
+    let active = null;
+    if (activeIndex !== -1) {
+      const token = tokens[activeIndex];
+      const next = tokens[activeIndex + 1];
+      if (next && currentTime < next.start) {
+        // Hold across the inter-word gap, unless it's a long pause.
+        if (currentTime - token.end <= KARAOKE_HOLD_LIMIT) active = token;
+      } else if (!next && currentTime <= token.end) {
+        // Final word: respect its own end so it isn't stuck lit forever.
+        active = token;
+      }
+    }
+
+    for (const token of tokens) {
+      token.span.classList.toggle('s-token-active', token === active);
     }
   }
 
