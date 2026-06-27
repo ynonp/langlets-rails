@@ -13,8 +13,11 @@
 #      "words" => [{ "text" => "Apateu,", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10",
 #                    "l1_start_index" => 0, "l1_end_index" => 5 }, ...] }]
 class WordTimingParser
-  def self.parse(json_text)
-    new(json_text).parse
+  # Accepts either a raw JSON string (the apt_word_timing.json fixture, or any
+  # legacy free-form LLM text) or an already-parsed structure from a structured
+  # output call: an Array of line hashes, or a Hash wrapping them under "lines".
+  def self.parse(input)
+    new(input).parse
   end
 
   # Recompute l1_start_index / l1_end_index on already-parsed phrase words using
@@ -25,12 +28,12 @@ class WordTimingParser
     new("[]").send(:assign_l1_indices, Array(words), text_l1.to_s)
   end
 
-  def initialize(json_text)
-    @json_text = json_text
+  def initialize(input)
+    @input = input
   end
 
   def parse
-    entries = JSON.parse(strip_code_fences(@json_text))
+    entries = normalize_entries(@input)
 
     entries.each_with_index.map do |entry, idx|
       words = Array(entry["words"]).map do |w|
@@ -117,6 +120,19 @@ class WordTimingParser
   # pipeline does.
   def sanitize(text)
     text.to_s.gsub("[", "(").gsub("]", ")").strip
+  end
+
+  # Coerce the constructor input into the array of line hashes we iterate over.
+  # Strings are JSON-parsed (fixtures / legacy free-form responses); structured
+  # output hands us a Hash keyed by "lines" (or a bare Array).
+  def normalize_entries(input)
+    data = input.is_a?(String) ? JSON.parse(strip_code_fences(input)) : input
+
+    case data
+    when Array then data
+    when Hash  then Array(data["lines"] || data[:lines])
+    else            []
+    end
   end
 
   def strip_code_fences(text)

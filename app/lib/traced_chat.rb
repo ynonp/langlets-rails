@@ -19,8 +19,10 @@ class TracedChat < RubyLLM::Chat
       messages.each {|m| puts m.content }
       result = super
 
+      # With a schema, result.content is a parsed Hash rather than a String.
+      completion_text = result.content.is_a?(String) ? result.content : result.content.to_json
       span.set_attribute("gen_ai.completion.0.role", result.role.to_s)
-      span.set_attribute("gen_ai.completion.0.content", String.new(result.content))
+      span.set_attribute("gen_ai.completion.0.content", String.new(completion_text))
       span.set_attribute("gen_ai.completion_json", result.to_json)
 
       result

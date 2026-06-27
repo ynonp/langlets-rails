@@ -29,11 +29,20 @@ module CreateSong
       chat = TracedChat.new(span_name: "extract_lyrics", **MODEL_PARAMS)
       chat
         .with_instructions(instructions)
+        .with_schema(LyricsTranscriptionSchema)
+        # gemini-3.5-flash is a reasoning model and, left unbounded, spends its
+        # entire ~64k output-token budget "thinking" -- the JSON then truncates
+        # mid-line and fails to parse. Transcription is mechanical, so cap the
+        # reasoning to thinkingLevel:low (≈800 thinking tokens vs ≈63k), which
+        # leaves the budget for the actual output. (thinkingBudget is ignored by
+        # the Gemini 3 family; only the effort/level control works here.)
+        .with_thinking(effort: :low)
         .with_temperature(0.2)
         .add_message role: :user, content: user_content
 
+      # With a schema, response.content is the parsed Hash ({ "lines" => [...] }).
       response = chat.complete
-      phrases = WordTimingParser.parse(response.content.strip)
+      phrases = WordTimingParser.parse(response.content)
 
       self.data ||= {}
       self.data["phrases"] = phrases

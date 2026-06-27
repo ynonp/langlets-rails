@@ -18,10 +18,12 @@ CRITICAL INSTRUCTIONS FOR WORD-LEVEL SYNC:
     matches the end of the last word.
 5.  Max 42 characters per line.
 
-FORMATTING RULES: Output ONLY valid JSON. Do not include markdown formatting,
-backticks, preambles, or explanations. Use the exact structure below.
+COMPLETENESS (MOST IMPORTANT): Transcribe EVERY sung line of the song, from the
+very first word to the very last word, including every repeated chorus. Do NOT
+stop after the first verse or chorus -- keep going until the vocals end. A full
+song has many lines (often dozens); returning only a handful means you stopped
+too early. Continue until there are no more sung words.
 
-Example Output Format: [ { "line_start": "00:00:06,500", "line_end":
-"00:00:07,800", "line_text": "Apateu, apateu", "words": [ { "word": "Apateu,",
-"start": "00:00:06,500", "end": "00:00:07,100" }, { "word": "apateu", "start":
-"00:00:07,250", "end": "00:00:07,800" } ] } ]
+Timestamps use the format "HH:MM:SS,mmm" (e.g. 00:00:06,500). Return one entry
+per line, each with its line_start, line_end, line_text and a words array where
+every word has word, start and end.

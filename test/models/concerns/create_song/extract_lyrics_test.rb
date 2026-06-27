@@ -126,6 +126,14 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
       self
     end
 
+    def with_schema(*)
+      self
+    end
+
+    def with_thinking(*)
+      self
+    end
+
     def with_temperature(*)
       self
     end
