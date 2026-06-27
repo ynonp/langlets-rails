@@ -27,6 +27,7 @@
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-watch-video-activity-current-text-line-class="s-line-active"
+    data-watch-video-activity-word-timing-value="<%= params[:word_timing] ? true : false %>"
 >
   <div class="contents">
     <!-- Header: title + translation toggle -->

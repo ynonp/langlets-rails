@@ -401,6 +401,13 @@
 /* the subtitle line currently playing (set by watch-video-activity controller) */
 .s-line-active { background: var(--accent-soft) !important; }
 
+/* karaoke: the word currently being sung (set by watch-video-activity controller) */
+.s-token-active {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 6px;
+}
+
 .s-phrase {
   display: block;
   cursor: pointer;

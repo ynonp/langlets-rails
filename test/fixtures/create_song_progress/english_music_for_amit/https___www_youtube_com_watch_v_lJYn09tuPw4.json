@@ -1,0 +1,261 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=lJYn09tuPw4",
+  "clip_language": "English",
+  "translation_language": "Hebrew",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Writer of my symphony",
+        "timestamp": "00:14.20",
+        "timestamp_end": "00:16.20",
+        "text_l2": "כותב הסימפוניה שלי"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Play with me",
+        "timestamp": "00:16.20",
+        "timestamp_end": "00:17.50",
+        "text_l2": "נגן איתי"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Look into my eyes and see",
+        "timestamp": "00:17.50",
+        "timestamp_end": "00:19.80",
+        "text_l2": "הבט לתוך עיניי וראה"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "People walk away but never say goodbye",
+        "timestamp": "00:19.80",
+        "timestamp_end": "00:24.30",
+        "text_l2": "אנשים הולכים אך לעולם לא נפרדים לשלום"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Someone stole the moon tonight",
+        "timestamp": "00:25.40",
+        "timestamp_end": "00:27.50",
+        "text_l2": "מישהו גנב את הירח הלילה"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Took my light",
+        "timestamp": "00:27.50",
+        "timestamp_end": "00:28.80",
+        "text_l2": "לקח את האור שלי"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Everything is black and white",
+        "timestamp": "00:28.80",
+        "timestamp_end": "00:31.00",
+        "text_l2": "הכל שחור לבן"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Who's the fool who told you",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "text_l2": "מי זה הכסיל שאמר לך"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Boys don't cry?",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:35.50",
+        "text_l2": "בנים לא בוכים?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Hours and hours and powers",
+        "timestamp": "00:36.60",
+        "timestamp_end": "00:39.50",
+        "text_l2": "שעות ושעות וכוחות"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "Life is no game but it's ours",
+        "timestamp": "00:39.50",
+        "timestamp_end": "00:42.20",
+        "text_l2": "החיים זה לא משחק אבל הם שלנו"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "While the time goes wild",
+        "timestamp": "00:42.20",
+        "timestamp_end": "00:46.80",
+        "text_l2": "כשהזמן משתולל"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Every day I'm losing my mind",
+        "timestamp": "00:46.80",
+        "timestamp_end": "00:51.00",
+        "text_l2": "כל יום אני מאבד את השפיות"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "Holding on in this mysterious ride",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:56.50",
+        "text_l2": "נאחז במסע המסתורי הזה"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Dancing in the storm",
+        "timestamp": "00:56.50",
+        "timestamp_end": "00:59.30",
+        "text_l2": "רוקד בתוך הסערה"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "I got nothing to hide",
+        "timestamp": "00:59.30",
+        "timestamp_end": "01:02.00",
+        "text_l2": "אין לי מה להסתיר"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "Take it all and leave the world behind",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:07.80",
+        "text_l2": "קח הכל והשאר את העולם מאחור"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Baby, promise me you'll hold me again",
+        "timestamp": "01:07.80",
+        "timestamp_end": "01:13.30",
+        "text_l2": "יקירי, הבט לי שתחזיק אותי שוב"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "I'm still broken from this hurricane",
+        "timestamp": "01:13.30",
+        "timestamp_end": "01:18.50",
+        "text_l2": "עדיין שבור מההוריקן הזה"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "This hurricane",
+        "timestamp": "01:18.50",
+        "timestamp_end": "01:22.00",
+        "text_l2": "ההוריקן הזה"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Living in a fantasy, ecstasy",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:34.00",
+        "text_l2": "חי בפנטזיה, אקסטזה"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Everything is meant to be",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:36.80",
+        "text_l2": "הכל נועד להיות"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "We shall pass but love will never die",
+        "timestamp": "01:36.80",
+        "timestamp_end": "01:41.50",
+        "text_l2": "נחלוף אך האהבה לעולם לא תמות"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Hours and hours and powers",
+        "timestamp": "01:42.20",
+        "timestamp_end": "01:45.00",
+        "text_l2": "שעות ושעות וכוחות"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Life is no game but it's ours",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:47.80",
+        "text_l2": "החיים זה לא משחק אבל הם שלנו"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "While the time goes wild",
+        "timestamp": "01:47.80",
+        "timestamp_end": "01:52.50",
+        "text_l2": "כשהזמן משתולל"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "Every day I'm losing my mind",
+        "timestamp": "01:52.50",
+        "timestamp_end": "01:56.80",
+        "text_l2": "כל יום אני מאבד את השפיות"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Holding on in this mysterious ride",
+        "timestamp": "01:56.80",
+        "timestamp_end": "02:02.20",
+        "text_l2": "נאחז במסע המסתורי הזה"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "Dancing in the storm",
+        "timestamp": "02:02.20",
+        "timestamp_end": "02:05.00",
+        "text_l2": "רוקד בתוך הסערה"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "I got nothing to hide",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:07.80",
+        "text_l2": "אין לי מה להסתיר"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Take it all and leave the world behind",
+        "timestamp": "02:07.80",
+        "timestamp_end": "02:13.50",
+        "text_l2": "קח הכל והשאר את העולם מאחור"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Baby, promise me you'll hold me again",
+        "timestamp": "02:13.50",
+        "timestamp_end": "02:19.00",
+        "text_l2": "יקירי, הבט לי שתחזיק אותי שוב"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "I'm still broken from this hurricane",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:24.20",
+        "text_l2": "עדיין שבור מההוריקן הזה"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "This hurricane",
+        "timestamp": "02:24.20",
+        "timestamp_end": "02:27.50",
+        "text_l2": "ההוריקן הזה"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "This hurricane",
+        "timestamp": "02:35.50",
+        "timestamp_end": "02:39.00",
+        "text_l2": "ההוריקן הזה"
+      }
+    ],
+    "phrases_with_token_translations": "[Writer] of my symphony => [כותב] הסימפוניה שלי\nWriter of [my] symphony => כותב הסימפוניה [שלי]\nWriter of my [symphony] => כותב [הסימפוניה] שלי\n\n[Play] with me => [נגן] איתי\nPlay [with me] => נגן [איתי]\n\n[Look] into my eyes and see => [הבט] לתוך עיניי וראה\nLook [into] my eyes and see => הבט [לתוך] עיניי וראה\nLook into [my eyes] and see => הבט לתוך [עיניי] וראה\nLook into my eyes and [see] => הבט לתוך עיניי [וראה]\n\n[People] walk away but never say goodbye => [אנשים] הולכים אך לעולם לא נפרדים לשלום\nPeople [walk] away but never say goodbye => אנשים [הולכים] אך לעולם לא נפרדים לשלום\nPeople walk away [but] never say goodbye => אנשים הולכים [אך] לעולם לא נפרדים לשלום\nPeople walk away but [never] say goodbye => אנשים הולכים אך [לעולם לא] נפרדים לשלום\nPeople walk away but never [say goodbye] => אנשים הולכים אך לעולם לא [נפרדים לשלום]\n\n[Someone] stole the moon tonight => [מישהו] גנב את הירח הלילה\nSomeone [stole] the moon tonight => מישהו [גנב] את הירח הלילה\nSomeone stole [the moon] tonight => מישהו גנב את [הירח] הלילה\nSomeone stole the moon [tonight] => מישהו גנב את הירח [הלילה]\n\n[Took] my light => [לקח] את האור שלי\nTook [my] light => לקח את האור [שלי]\nTook my [light] => לקח את ה[אור] שלי\n\n[Everything] is black and white => [הכל] שחור לבן\nEverything is [black] and white => הכל [שחור] לבן\nEverything is black and [white] => הכל שחור [לבן]\n\n[Who's] the fool who told you => [מי זה] הכסיל שאמר לך\nWho's [the fool] who told you => מי זה [הכסיל] שאמר לך\nWho's the fool [who] told you => ש\nWho's the fool who [told] you => מי זה הכסיל ש[אמר] לך\nWho's the fool who told [you] => מי זה הכסיל שאמר [לך]\n\n[Boys] don't cry? => [בנים] לא בוכים?\nBoys [don't] cry? => בנים [לא] בוכים?\nBoys don't [cry]? => בנים לא [בוכים]?\n\n[Hours] and hours and powers => [שעות] ושעות וכוחות\nHours and [hours] and powers => שעות [ושעות] וכוחות\nHours and hours and [powers] => שעות ושעות [וכוחות]\nHours [and] hours and powers => ו\nHours and hours [and] powers => ו\n\n[Life] is no game but it's ours => [החיים] זה לא משחק אבל הם שלנו\nLife [is] no game but it's ours => החיים [זה] לא משחק אבל הם שלנו\nLife is [no] game but it's ours => החיים זה [לא] משחק אבל הם שלנו\nLife is no [game] but it's ours => החיים זה לא [משחק] אבל הם שלנו\nLife is no game [but] it's ours => החיים זה לא משחק [אבל] הם שלנו\nLife is no game but [it's] ours => החיים זה לא משחק אבל [הם] שלנו\nLife is no game but it's [ours] => החיים זה לא משחק אבל הם [שלנו]\n\nWhile the time [goes wild] => כשהזמן [משתולל]\n[While the time] goes wild => [כשהזמן] משתולל\n[While] the time goes wild => כש\nWhile [the] time goes wild => ה\nWhile the [time] goes wild => זמן\n\n[Every day] I'm losing my mind => [כל יום] אני מאבד את השפיות\nEvery day [I'm] losing my mind => כל יום [אני] מאבד את השפיות\nEvery day I'm [losing] my mind => כל יום אני [מאבד] את השפיות\nEvery day I'm losing my [mind] => כל יום אני מאבד את [השפיות]\n\n[Holding on] in this mysterious ride => [נאחז] במסע המסתורי הזה\nHolding on [in] this mysterious ride => ב\nHolding on in [this] mysterious ride => נאחז במסע המסתורי [הזה]\nHolding on in this [mysterious] ride => נאחז במסע [המסתורי] הזה\nHolding on in this mysterious [ride] => מסע\n\n[Dancing] in the storm => [רוקד] בתוך הסערה\nDancing [in] the storm => רוקד [בתוך] הסערה\nDancing in [the storm] => רוקד בתוך [הסערה]\n\n[I] got nothing to hide => לי\nI [got] nothing to hide => אין\nI got [nothing] to hide => מה\nI got nothing [to hide] => אין לי מה [להסתיר]\n\n[Take] it all and leave the world behind => [קח] הכל והשאר את העולם מאחור\nTake [it all] and leave the world behind => קח [הכל] והשאר את העולם מאחור\nTake it all [and leave] the world behind => קח הכל [והשאר] את העולם מאחור\nTake it all and leave [the world] behind => קח הכל והשאר [העולם] מאחור\nTake it all and leave the world [behind] => קח הכל והשאר את העולם [מאחור]\n\n[Baby,] promise me you'll hold me again => [יקירי,] הבט לי שתחזיק אותי שוב\nBaby, [promise] me you'll hold me again => יקירי, [הבט] לי שתחזיק אותי שוב\nBaby, promise [me] you'll hold me again => יקירי, הבט [לי] שתחזיק אותי שוב\nBaby, promise me [you'll hold] me again => יקירי, הבט לי [שתחזיק] אותי שוב\nBaby, promise me you'll hold [me] again => יקירי, הבט לי שתחזיק [אותי] שוב\nBaby, promise me you'll hold me [again] => יקירי, הבט לי שתחזיק אותי [שוב]\n\nI'm [still] broken from this hurricane => [עדיין] שבור מההוריקן הזה\nI'm still [broken] from this hurricane => עדיין [שבור] מההוריקן הזה\nI'm still broken [from] this hurricane => מ\nI'm still broken from [this] hurricane => עדיין שבור מההוריקן [הזה]\nI'm still broken from this [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => [ההוריקן] הזה\n\n[Living] in a fantasy, ecstasy => [חי] בפנטזיה, אקסטזה\nLiving [in a fantasy], ecstasy => חי [בפנטזיה], אקסטזה\nLiving in a fantasy, [ecstasy] => חי בפנטזיה, [אקסטזה]\n\n[Everything] is meant to be => [הכל] נועד להיות\nEverything [is meant] to be => הכל [נועד] להיות\nEverything is meant [to be] => הכל נועד [להיות]\n\n[We shall pass] but love will never die => [נחלוף] אך האהבה לעולם לא תמות\nWe shall pass [but] love will never die => נחלוף [אך] האהבה לעולם לא תמות\nWe shall pass but [love] will never die => נחלוף אך [האהבה] לעולם לא תמות\nWe shall pass but love [will never die] => נחלוף אך האהבה [לעולם לא תמות]\nWe shall pass but love will [never] die => לעולם לא\nWe shall pass but love will never [die] => נחלוף אך האהבה לעולם לא [תמות]\n\n[Hours] and hours and powers => [שעות] ושעות וכוחות\nHours [and] hours and powers => ו\nHours and [hours] and powers => שעות ו[שעות] וכוחות\nHours and hours [and] powers => ו\nHours and hours and [powers] => שעות ושעות ו[כוחות]\n\n[Life] is no game but it's ours => [החיים] זה לא משחק אבל הם שלנו\nLife [is] no game but it's ours => החיים [זה] לא משחק אבל הם שלנו\nLife is [no] game but it's ours => החיים זה [לא] משחק אבל הם שלנו\nLife is no [game] but it's ours => החיים זה לא [משחק] אבל הם שלנו\nLife is no game [but] it's ours => החיים זה לא משחק [אבל] הם שלנו\nLife is no game but [it's] ours => החיים זה לא משחק אבל [הם] שלנו\nLife is no game but it's [ours] => החיים זה לא משחק אבל הם [שלנו]\n\n[While] the time goes wild => כש\nWhile [the] time goes wild => ה\nWhile the [time] goes wild => זמן\nWhile the time [goes wild] => כשהזמן [משתולל]\n\n[Every] day I'm losing my mind => [כל] יום אני מאבד את השפיות\nEvery [day] I'm losing my mind => כל [יום] אני מאבד את השפיות\nEvery day [I'm] losing my mind => כל יום [אני] מאבד את השפיות\nEvery day I'm [losing] my mind => כל יום אני [מאבד] את השפיות\nEvery day I'm losing [my mind] => כל יום אני מאבד [את השפיות]\n\n[Holding on] in this mysterious ride => [נאחז] במסע המסתורי הזה\nHolding on [in] this mysterious ride => ב\nHolding on in [this] mysterious ride => נאחז במסע המסתורי [הזה]\nHolding on in this [mysterious] ride => נאחז במסע [המסתורי] הזה\nHolding on in this mysterious [ride] => נאחז [במסע] המסתורי הזה\n\n[Dancing] in the storm => [רוקד] בתוך הסערה\nDancing [in] the storm => רוקד [בתוך] הסערה\nDancing in [the storm] => רוקד בתוך [הסערה]\n\n[I got] nothing to hide => [אין לי] מה להסתיר\nI got [nothing] to hide => אין לי [מה] להסתיר\nI got nothing [to hide] => אין לי מה [להסתיר]\n\n[Take] it all and leave the world behind => [קח] הכל והשאר את העולם מאחור\nTake [it all] and leave the world behind => קח [הכל] והשאר את העולם מאחור\nTake it all [and] leave the world behind => ו\nTake it all and [leave] the world behind => קח הכל [והשאר] את העולם מאחור\nTake it all and leave [the world] behind => קח הכל והשאר את [העולם] מאחור\nTake it all and leave the world [behind] => קח הכל והשאר את העולם [מאחור]\n\n[Baby], promise me you'll hold me again => [יקירי], הבט לי שתחזיק אותי שוב\nBaby, [promise] me you'll hold me again => יקירי, [הבט] לי שתחזיק אותי שוב\nBaby, promise [me] you'll hold me again => יקירי, הבט [לי] שתחזיק אותי שוב\nBaby, promise me [you'll hold] me again => יקירי, הבט לי [שתחזיק] אותי שוב\nBaby, promise me you'll hold [me] again => יקירי, הבט לי שתחזיק [אותי] שוב\nBaby, promise me you'll hold me [again] => יקירי, הבט לי שתחזיק אותי [שוב]\n\nI'm [still] broken from this hurricane => [עדיין] שבור מההוריקן הזה\nI'm still [broken] from this hurricane => עדיין [שבור] מההוריקן הזה\nI'm still broken [from] this hurricane => מ\nI'm still broken from [this] hurricane => עדיין שבור מההוריקן [הזה]\nI'm still broken from this [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => הוריקן\n\n[This] hurricane => ההוריקן [הזה]\nThis [hurricane] => הוריקן",
+    "lessons": "# The Symphony Begins\n00:14.20 Writer of my symphony\n00:16.20 Play with me\n00:17.50 Look into my eyes and see\n00:19.80 People walk away but never say goodbye\n\n# Stolen Moon\n00:25.40 Someone stole the moon tonight\n00:27.50 Took my light\n00:28.80 Everything is black and white\n00:31.00 Who's the fool who told you\n00:33.00 Boys don't cry?\n\n# Hours and Powers\n00:36.60 Hours and hours and powers\n00:39.50 Life is no game but it's ours\n00:42.20 While the time goes wild\n00:46.80 Every day I'm losing my mind\n00:51.00 Holding on in this mysterious ride\n00:56.50 Dancing in the storm\n00:59.30 I got nothing to hide\n\n# Leave the World Behind\n01:02.00 Take it all and leave the world behind\n01:07.80 Baby, promise me you'll hold me again\n01:13.30 I'm still broken from this hurricane\n01:18.50 This hurricane\n\n# Living in a Fantasy\n01:31.00 Living in a fantasy, ecstasy\n01:34.00 Everything is meant to be\n01:36.80 We shall pass but love will never die\n01:42.20 Hours and hours and powers\n01:45.00 Life is no game but it's ours\n01:47.80 While the time goes wild\n\n# Mysterious Ride\n01:52.50 Every day I'm losing my mind\n01:56.80 Holding on in this mysterious ride\n02:02.20 Dancing in the storm\n02:05.00 I got nothing to hide\n\n# Promise Me Again\n02:07.80 Take it all and leave the world behind\n02:13.50 Baby, promise me you'll hold me again\n02:19.00 I'm still broken from this hurricane\n02:24.20 This hurricane\n02:35.50 This hurricane",
+    "similar_sounds": "Writer of my [syphon]\n[plays] with me\nLook into my eyes [add] see\nPeople walk away [out] never say goodbye\nSomeone stole the [soon] tonight\nTook my [night]\nEverything is black [any] white\n[who'd] the fool who told you\nBoys don't [dry]\nHours and hours and [power]\nLife is no [same] but it's ours\nWhile the time goes [will]\nEvery [may] I'm losing my mind\n[golding] on in this mysterious ride\nDancing in [he] storm\nI [get] nothing to hide\nTake it [call] and leave the world behind\nBaby promise me [you'd] hold me again\nI'm still [broker] from this hurricane\nThis [hurricanes]\nLiving in a fantasy [No alternatives found for 'ecstasy']\n[No alternatives found for 'everything'] is meant to be\nWe shall pass but [move] will never die\nHours and hours [an] powers\nLife is no game [buy] it's ours\nWhile the [tim] goes wild\n[very] day I'm losing my mind\nHolding on in [thin] mysterious ride\nDancing in the [story]\nI got nothing to [side]\nTake it all and leave the [would] behind\nBaby promise me you'll [old] me again\n[i'd] still broken from this hurricane\n[thin] hurricane\nThis [hurricanes]"
+  },
+  "created_at": "2026-06-26 21:01:25 UTC",
+  "updated_at": "2026-06-26 21:09:26 UTC",
+  "exported_at": "2026-06-26T21:09:26Z"
+}

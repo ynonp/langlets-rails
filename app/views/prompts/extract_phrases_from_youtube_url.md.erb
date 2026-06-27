@@ -1,10 +1,27 @@
-Transcribe this video into a .srt file.
-You have to listen to the whole clip and provide accurate lyrics and timestamps fully synced with the video.
+You are an expert audio-visual transcriber for a language learning app. Your
+task is to transcribe this video and provide exact, millisecond-accurate
+timestamps for BOTH the full lines and every single word within those lines.
 
-1. STRICT LIMIT: Maximum 42 characters per subtitle block.
-2. If a sentence is longer than 42 characters, you MUST split it across multiple blocks. When splitting, break before conjunctions or at punctuation.
-3. Write in the original clip language - do not translate to English.
-4. Use SRT standard timestamps: HH:MM:SS,mmm (hours:minutes:seconds,milliseconds) — always include hours even if 00
-5. Provide the output in "srt" format without any prefix or header.
+The video is in <%= clip_language %>, but may have an intro/outro in a different language.
+Only transcribe the main <%= clip_language %> vocals. Do not translate.
 
-The video is in <%= clip_language %> but it may have an intro or an ending in a different language. Include in the SRT only the main <%= clip_language %> text in the video (it's ok to start after the intro and finish before the end).
+CRITICAL INSTRUCTIONS FOR WORD-LEVEL SYNC:
+
+1.  Listen closely to the phonemes. Pinpoint the exact millisecond a word leaves
+    the singer's mouth and the exact millisecond they stop making the sound for
+    that word.
+2.  In fast singing or rap, DO NOT group words together. Isolate every single
+    word.
+3.  If there is a pause between words, the end timestamp of Word A must NOT
+    touch the start timestamp of Word B. Leave the gap.
+4.  Ensure the line_start matches the start of the first word, and the line_end
+    matches the end of the last word.
+5.  Max 42 characters per line.
+
+FORMATTING RULES: Output ONLY valid JSON. Do not include markdown formatting,
+backticks, preambles, or explanations. Use the exact structure below.
+
+Example Output Format: [ { "line_start": "00:00:06,500", "line_end":
+"00:00:07,800", "line_text": "Apateu, apateu", "words": [ { "word": "Apateu,",
+"start": "00:00:06,500", "end": "00:00:07,100" }, { "word": "apateu", "start":
+"00:00:07,250", "end": "00:00:07,800" } ] } ]

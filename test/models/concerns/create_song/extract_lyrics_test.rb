@@ -8,241 +8,33 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
       translation_language: "English"
     )
 
-    # SRT fixture spanning 0:00 to 1:25 — will split into 3x30s segments
-    @rough_srt = <<~SRT
-      1
-      00:00:05,000 --> 00:00:08,000
-      First line of lyrics
-
-      2
-      00:00:25,000 --> 00:00:28,500
-      Second line here
-
-      3
-      00:00:55,000 --> 00:00:58,200
-      Third line comes later
-
-      4
-      00:01:20,000 --> 00:01:23,000
-      Fourth and final line
-    SRT
+    @word_timing_json = <<~JSON
+      [
+        {
+          "line_start": "00:00:05,000",
+          "line_end": "00:00:08,000",
+          "line_text": "First line",
+          "words": [
+            { "word": "First", "start": "00:00:05,000", "end": "00:00:06,200" },
+            { "word": "line", "start": "00:00:06,400", "end": "00:00:08,000" }
+          ]
+        },
+        {
+          "line_start": "00:00:25,000",
+          "line_end": "00:00:28,500",
+          "line_text": "Second line here",
+          "words": [
+            { "word": "Second", "start": "00:00:25,000", "end": "00:00:26,000" },
+            { "word": "line", "start": "00:00:26,200", "end": "00:00:27,000" },
+            { "word": "here", "start": "00:00:27,200", "end": "00:00:28,500" }
+          ]
+        }
+      ]
+    JSON
   end
 
-  # ── split_srt_into_segments ──────────────────────────────────────────
-
-  test "split_srt_into_segments splits by time into correct buckets" do
-    with_segment_duration(30) do
-      segments = @progress.send(:split_srt_into_segments, @rough_srt)
-
-      assert_equal 3, segments.length, "Expected 3 segments, got #{segments.length}"
-
-      # Segment 1: 00:00:00 - 00:00:30
-      assert_equal "00:00:00 - 00:00:30", segments[0][:time_range]
-      assert_match(/First line/, segments[0][:srt_text])
-      assert_match(/Second line/, segments[0][:srt_text])
-      assert_no_match(/Third line/, segments[0][:srt_text])
-
-      # Segment 2: 00:00:30 - 00:01:00
-      assert_equal "00:00:30 - 00:01:00", segments[1][:time_range]
-      assert_match(/Third line/, segments[1][:srt_text])
-      assert_no_match(/First line/, segments[1][:srt_text])
-      assert_no_match(/Fourth/, segments[1][:srt_text])
-
-      # Segment 3: 00:01:00 - 00:01:30
-      assert_equal "00:01:00 - 00:01:30", segments[2][:time_range]
-      assert_match(/Fourth/, segments[2][:srt_text])
-    end
-  end
-
-  test "split_srt_into_segments returns single segment when SRT is shorter than duration" do
-    with_segment_duration(300) do # 5 minutes
-      segments = @progress.send(:split_srt_into_segments, @rough_srt)
-
-      assert_equal 1, segments.length
-      assert_equal "00:00:00 - 00:05:00", segments[0][:time_range]
-      assert_match(/First line/, segments[0][:srt_text])
-      assert_match(/Fourth/, segments[0][:srt_text])
-    end
-  end
-
-  test "split_srt_into_segments returns empty array for empty SRT" do
-    segments = @progress.send(:split_srt_into_segments, "")
-    assert_equal [], segments
-  end
-
-  test "split_srt_into_segments handles entry exactly on segment boundary" do
-    # Entry at exactly 30.0s should land in segment 2 (30-60), not segment 1 (0-30)
-    boundary_srt = <<~SRT
-      1
-      00:00:30,000 --> 00:00:33,000
-      Boundary line
-    SRT
-
-    with_segment_duration(30) do
-      segments = @progress.send(:split_srt_into_segments, boundary_srt)
-
-      assert_equal 1, segments.length
-      assert_equal "00:00:30 - 00:01:00", segments[0][:time_range],
-        "Entry at 30.0s should go to the 30-60 bucket, not 0-30"
-    end
-  end
-
-  test "split_srt_into_segments skips empty buckets" do
-    # SRT with entries only at 0:10 and 1:05 — middle bucket should be skipped
-    sparse_srt = <<~SRT
-      1
-      00:00:10,000 --> 00:00:13,000
-      Early line
-
-      2
-      00:01:05,000 --> 00:01:08,000
-      Late line
-    SRT
-
-    with_segment_duration(30) do
-      segments = @progress.send(:split_srt_into_segments, sparse_srt)
-
-      assert_equal 2, segments.length,
-        "Expected 2 non-empty segments, got #{segments.length}"
-      assert_equal "00:00:00 - 00:00:30", segments[0][:time_range]
-      assert_equal "00:01:00 - 00:01:30", segments[1][:time_range]
-    end
-  end
-
-  # ── combine_and_renumber_srt ─────────────────────────────────────────
-
-  test "combine_and_renumber_srt produces continuous sequence numbers" do
-    seg1 = <<~SRT
-      1
-      00:00:05,000 --> 00:00:08,000
-      Alpha
-
-      2
-      00:00:10,000 --> 00:00:13,000
-      Beta
-    SRT
-
-    seg2 = <<~SRT
-      1
-      00:00:50,000 --> 00:00:53,000
-      Gamma
-    SRT
-
-    combined = @progress.send(:combine_and_renumber_srt, [seg1, seg2])
-
-    # Should have 3 entries with sequences 1, 2, 3
-    lines = combined.split("\n")
-    sequences = lines.select { |l| l.match?(/^\d+$/) }.map(&:to_i)
-    assert_equal [1, 2, 3], sequences
-
-    # Verify content preserved
-    assert_match(/Alpha/, combined)
-    assert_match(/Beta/, combined)
-    assert_match(/Gamma/, combined)
-  end
-
-  test "combine_and_renumber_srt preserves timestamps and text" do
-    seg1 = <<~SRT
-      1
-      00:01:30,500 --> 00:01:33,200
-      Original text
-    SRT
-
-    combined = @progress.send(:combine_and_renumber_srt, [seg1])
-
-    assert_match(/00:01:30,500 --> 00:01:33,200/, combined)
-    assert_match(/Original text/, combined)
-    assert_match(/^1$/, combined.lines.first.strip)
-  end
-
-  test "combine_and_renumber_srt handles empty input" do
-    combined = @progress.send(:combine_and_renumber_srt, [])
-    assert_equal "", combined
-  end
-
-  # ── format_srt_segment_time ──────────────────────────────────────────
-
-  test "format_srt_segment_time formats seconds correctly" do
-    assert_equal "00:00:00", @progress.send(:format_srt_segment_time, 0)
-    assert_equal "00:00:30", @progress.send(:format_srt_segment_time, 30)
-    assert_equal "00:01:05", @progress.send(:format_srt_segment_time, 65)
-    assert_equal "01:01:01", @progress.send(:format_srt_segment_time, 3661)
-  end
-
-  # ── full extract_lyrics integration (stubbed LLM) ────────────────────
-
-  test "extract_lyrics splits SRT and syncs each segment via separate LLM calls" do
-    synced_seg1 = <<~SRT
-      1
-      00:00:04,800 --> 00:00:07,900
-      First line synced
-
-      2
-      00:00:24,500 --> 00:00:28,200
-      Second line synced
-    SRT
-
-    synced_seg2 = <<~SRT
-      1
-      00:00:54,700 --> 00:00:58,000
-      Third line synced
-    SRT
-
-    synced_seg3 = <<~SRT
-      1
-      00:01:19,800 --> 00:01:22,700
-      Fourth line synced
-    SRT
-
-    # Build a fake chat that returns predefined responses in order:
-    # call 1 → pass 1 (rough SRT), calls 2-4 → pass 2 segments
-    responses = [
-      @rough_srt,   # pass 1
-      synced_seg1,  # segment 1
-      synced_seg2,  # segment 2
-      synced_seg3   # segment 3
-    ]
-    fake_chat = FakeChatQueue.new(responses)
-
-    stub_renderer_for_extract_lyrics!
-    with_fake_chat(fake_chat) do
-      with_segment_duration(30) do
-        @progress.extract_lyrics
-      end
-    end
-
-    phrases = @progress.data["phrases"]
-    assert_equal 4, phrases.length, "Expected 4 phrases, got #{phrases.length}"
-
-    assert_equal "First line synced", phrases[0]["text_l1"]
-    assert_equal "Third line synced", phrases[2]["text_l1"]
-    assert_equal "Fourth line synced", phrases[3]["text_l1"]
-
-    # Verify pass 1 was called once and pass 2 called 3 times (one per segment)
-    assert_equal 4, fake_chat.call_count
-  end
-
-  test "extract_lyrics falls back to pass 1 when pass 2 produces no valid phrases" do
-    # Pass 1 returns normal SRT, but all pass 2 segments return garbage
-    garbage = "No SRT here, just random text"
-
-    responses = [@rough_srt, garbage, garbage]
-    fake_chat = FakeChatQueue.new(responses)
-
-    stub_renderer_for_extract_lyrics!
-    with_fake_chat(fake_chat) do
-      with_segment_duration(300) do # 1 segment only
-        @progress.extract_lyrics
-      end
-    end
-
-    phrases = @progress.data["phrases"]
-    assert_equal 4, phrases.length, "Fallback should use pass 1 result with 4 phrases"
-  end
-
-  test "extract_lyrics handles empty SRT from pass 1 gracefully" do
-    responses = ["", ""]
-    fake_chat = FakeChatQueue.new(responses)
+  test "extract_lyrics parses word-timed JSON into phrases with words" do
+    fake_chat = FakeChatQueue.new([ @word_timing_json ])
 
     stub_renderer_for_extract_lyrics!
     with_fake_chat(fake_chat) do
@@ -250,24 +42,60 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
     end
 
     phrases = @progress.data["phrases"]
-    assert_equal [], phrases
+    assert_equal 2, phrases.length
+
+    assert_equal "First line", phrases[0]["text_l1"]
+    assert_equal "00:05.00", phrases[0]["timestamp"]
+    assert_equal "00:08.00", phrases[0]["timestamp_end"]
+
+    words = phrases[0]["words"]
+    assert_equal 2, words.length
+    assert_equal "First", words[0]["text"]
+    assert_equal "00:05.00", words[0]["timestamp"]
+    assert_equal "00:06.20", words[0]["timestamp_end"]
+    assert_equal "line", words[1]["text"]
+
+    assert_equal 1, fake_chat.call_count
+  end
+
+  test "extract_lyrics handles empty JSON gracefully" do
+    fake_chat = FakeChatQueue.new([ "[]" ])
+
+    stub_renderer_for_extract_lyrics!
+    with_fake_chat(fake_chat) do
+      @progress.extract_lyrics
+    end
+
+    assert_equal [], @progress.data["phrases"]
+  end
+
+  # ── WordTimingParser ─────────────────────────────────────────────────
+
+  test "WordTimingParser strips code fences and square brackets" do
+    fenced = "```json\n[{\"line_start\":\"00:00:01,000\",\"line_end\":\"00:00:02,000\",\"line_text\":\"a [b] c\",\"words\":[{\"word\":\"a\",\"start\":\"00:00:01,000\",\"end\":\"00:00:01,500\"}]}]\n```"
+
+    phrases = WordTimingParser.parse(fenced)
+
+    assert_equal 1, phrases.length
+    assert_equal "a (b) c", phrases[0]["text_l1"]
+    assert_equal "00:01.00", phrases[0]["timestamp"]
+  end
+
+  test "WordTimingParser falls back to joined words when line_text missing" do
+    json = "[{\"line_start\":\"00:00:01,000\",\"line_end\":\"00:00:02,000\",\"words\":[{\"word\":\"hello\",\"start\":\"00:00:01,000\",\"end\":\"00:00:01,400\"},{\"word\":\"world\",\"start\":\"00:00:01,500\",\"end\":\"00:00:02,000\"}]}]"
+
+    phrases = WordTimingParser.parse(json)
+
+    assert_equal "hello world", phrases[0]["text_l1"]
   end
 
   private
-
-  # Temporarily override segment duration for isolated method tests.
-  def with_segment_duration(seconds, &block)
-    @progress.define_singleton_method(:srt_sync_segment_duration) { seconds }
-    block.call
-  ensure
-    @progress.singleton_class.remove_method(:srt_sync_segment_duration) rescue nil
-  end
 
   # Temporarily intercept TracedChat.new to return a fake chat.
   def with_fake_chat(fake_chat, &block)
     original_new = TracedChat.method(:new)
     TracedChat.define_singleton_method(:new) do |**kwargs|
-      if kwargs[:span_name].to_s.start_with?("extract_lyrics_")
+      if kwargs[:span_name].to_s.start_with?("extract_lyrics")
         fake_chat
       else
         original_new.call(**kwargs)

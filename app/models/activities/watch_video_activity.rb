@@ -10,10 +10,19 @@ module Activities
         **video_params,
         phrases: ordered_phrases,
         video_player: true,
+        word_timing: word_timing_enabled?(ordered_phrases),
         l1_rtl: lesson.rtl_language,
         l2_rtl: l2.rtl,
         l1_name: lesson.media_language,
       }
+    end
+
+    private
+
+    # Karaoke word highlighting is available only when this lesson's tokens carry
+    # per-word timestamps (new pipeline). Older songs fall back to line highlight.
+    def word_timing_enabled?(phrases)
+      phrases.any? { |phrase| phrase.token_translations.any? { |t| t.start_timestamp.present? } }
     end
 
   end

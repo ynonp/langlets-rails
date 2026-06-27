@@ -8,7 +8,15 @@ class TokenTranslation < ApplicationRecord
   attribute :index_type, :integer
   enum :index_type, { word_index: 0, character_index: 1 }, default: :word_index
 
+  has_timestamp [ :start_timestamp, :end_timestamp ]
+
   validate :validate_indexes
+
+  # Capability: a token with a start timestamp can drive karaoke-style word
+  # highlighting in the video players.
+  def karaoke?
+    start_timestamp.present?
+  end
 
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")

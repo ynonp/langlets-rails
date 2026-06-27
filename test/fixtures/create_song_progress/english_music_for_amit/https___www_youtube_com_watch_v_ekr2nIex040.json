@@ -1,0 +1,576 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=ekr2nIex040",
+  "clip_language": "English",
+  "translation_language": "Hebrew",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:06.50",
+        "timestamp_end": "00:07.80",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:08.10",
+        "timestamp_end": "00:09.40",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:09.70",
+        "timestamp_end": "00:11.00",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "00:11.30",
+        "timestamp_end": "00:12.80",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:14.30",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:14.60",
+        "timestamp_end": "00:15.90",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:16.20",
+        "timestamp_end": "00:17.50",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "00:17.80",
+        "timestamp_end": "00:19.30",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Kissy face, kissy face",
+        "timestamp": "00:19.50",
+        "timestamp_end": "00:21.00",
+        "text_l2": "פרצוף נשיקות, פרצוף נשיקות"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "Sent to your phone, but",
+        "timestamp": "00:21.10",
+        "timestamp_end": "00:22.60",
+        "text_l2": "נשלח לטלפון שלך, אבל"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "I'm tryna kiss your lips for real",
+        "timestamp": "00:22.70",
+        "timestamp_end": "00:25.00",
+        "text_l2": "אני מנסה לנשק את השפתיים שלך באמת"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "00:25.10",
+        "timestamp_end": "00:25.90",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "Red hearts, red hearts",
+        "timestamp": "00:26.00",
+        "timestamp_end": "00:27.50",
+        "text_l2": "לבבות אדומים, לבבות אדומים"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "That's what I'm on, yeah",
+        "timestamp": "00:27.60",
+        "timestamp_end": "00:29.10",
+        "text_l2": "זה מה שאני מחפש, כן"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Come give me something I can feel",
+        "timestamp": "00:29.20",
+        "timestamp_end": "00:31.50",
+        "text_l2": "בואי תני לי משהו שאוכל להרגיש"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "Oh-oh, oh",
+        "timestamp": "00:31.60",
+        "timestamp_end": "00:32.40",
+        "text_l2": "או-או, או"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "Don't you want me like I want you, baby?",
+        "timestamp": "00:32.50",
+        "timestamp_end": "00:35.70",
+        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Don't you need me like I need you now?",
+        "timestamp": "00:35.80",
+        "timestamp_end": "00:38.90",
+        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "Sleep tomorrow, but tonight, go crazy",
+        "timestamp": "00:39.00",
+        "timestamp_end": "00:42.20",
+        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "All you gotta do is just meet me at the",
+        "timestamp": "00:42.30",
+        "timestamp_end": "00:45.50",
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:45.60",
+        "timestamp_end": "00:46.90",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:47.20",
+        "timestamp_end": "00:48.50",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:48.80",
+        "timestamp_end": "00:50.10",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "00:50.40",
+        "timestamp_end": "00:51.90",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:52.10",
+        "timestamp_end": "00:53.40",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:53.70",
+        "timestamp_end": "00:55.00",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "00:55.30",
+        "timestamp_end": "00:56.60",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "00:56.90",
+        "timestamp_end": "00:58.40",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "It's whatever, it's whatever",
+        "timestamp": "00:58.60",
+        "timestamp_end": "01:00.10",
+        "text_l2": "זה מה שבא לך, זה מה שבא לך"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "It's whatever you like",
+        "timestamp": "01:00.20",
+        "timestamp_end": "01:01.70",
+        "text_l2": "זה מה שבא לך"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Turn this apateu into a club",
+        "timestamp": "01:01.80",
+        "timestamp_end": "01:04.10",
+        "text_l2": "הפוך את האפאטו הזה למועדון"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Uh-huh, uh-huh",
+        "timestamp": "01:04.20",
+        "timestamp_end": "01:05.00",
+        "text_l2": "אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "I'm talking drink, dance, smoke, freak,",
+        "timestamp": "01:05.10",
+        "timestamp_end": "01:07.00",
+        "text_l2": "אני מדבר על שתייה, ריקוד, עישון, פרוע,"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "party all night",
+        "timestamp": "01:07.10",
+        "timestamp_end": "01:08.20",
+        "text_l2": "מסיבה כל הלילה"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Geonbae, geonbae, girl, what's up?",
+        "timestamp": "01:08.30",
+        "timestamp_end": "01:10.60",
+        "text_l2": "גאונבאה, גאונבאה, ילדה, מה נשמע?"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Oh-oh, oh",
+        "timestamp": "01:10.70",
+        "timestamp_end": "01:11.50",
+        "text_l2": "או-או, או"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "Don't you want me like I want you, baby?",
+        "timestamp": "01:11.60",
+        "timestamp_end": "01:14.80",
+        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Don't you need me like I need you now?",
+        "timestamp": "01:14.90",
+        "timestamp_end": "01:18.00",
+        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "Sleep tomorrow, but tonight, go crazy",
+        "timestamp": "01:18.10",
+        "timestamp_end": "01:21.30",
+        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "All you gotta do is just meet me at the",
+        "timestamp": "01:21.40",
+        "timestamp_end": "01:24.60",
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:24.70",
+        "timestamp_end": "01:26.00",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:26.30",
+        "timestamp_end": "01:27.60",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:27.90",
+        "timestamp_end": "01:29.20",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "01:29.50",
+        "timestamp_end": "01:31.00",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:31.20",
+        "timestamp_end": "01:32.50",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:32.80",
+        "timestamp_end": "01:34.10",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "01:34.40",
+        "timestamp_end": "01:35.70",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:37.50",
+        "text_l2": "אה, אה-הא, אה-הא"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "Hey, so now you know the game",
+        "timestamp": "01:37.60",
+        "timestamp_end": "01:39.90",
+        "text_l2": "היי, אז עכשיו את מכירה את המשחק"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "Are you ready?",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:41.00",
+        "text_l2": "את מוכנה?"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "'Cause I'm comin' to get ya, get ya,",
+        "timestamp": "01:41.10",
+        "timestamp_end": "01:42.70",
+        "text_l2": "כי אני בא לקחת אותך, לקחת אותך,"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "get ya",
+        "timestamp": "01:42.80",
+        "timestamp_end": "01:43.50",
+        "text_l2": "לקחת אותך"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "Hold on, hold on",
+        "timestamp": "01:43.60",
+        "timestamp_end": "01:46.50",
+        "text_l2": "חכי רגע, חכי רגע"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "I'm on my way",
+        "timestamp": "01:46.60",
+        "timestamp_end": "01:49.80",
+        "text_l2": "אני בדרך"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "Yeah, yeah, yeah, yeah, yeah",
+        "timestamp": "01:49.90",
+        "timestamp_end": "01:53.00",
+        "text_l2": "יה, יה, יה, יה, יה"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "I'm on my way",
+        "timestamp": "01:53.10",
+        "timestamp_end": "01:56.50",
+        "text_l2": "אני בדרך"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Hold on, hold on",
+        "timestamp": "01:56.60",
+        "timestamp_end": "01:59.50",
+        "text_l2": "חכי רגע, חכי רגע"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "I'm on my way",
+        "timestamp": "01:59.60",
+        "timestamp_end": "02:02.80",
+        "text_l2": "אני בדרך"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Yeah, yeah, yeah, yeah, yeah",
+        "timestamp": "02:02.90",
+        "timestamp_end": "02:06.00",
+        "text_l2": "יה, יה, יה, יה, יה"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "I'm on my way",
+        "timestamp": "02:06.10",
+        "timestamp_end": "02:09.50",
+        "text_l2": "אני בדרך"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "Don't you want me like I want you, baby?",
+        "timestamp": "02:09.60",
+        "timestamp_end": "02:12.80",
+        "text_l2": "האם את לא רוצה אותי כמו שאני רוצה אותך, ביבי?"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Don't you need me like I need you now?",
+        "timestamp": "02:12.90",
+        "timestamp_end": "02:16.00",
+        "text_l2": "האם את לא צריכה אותי כמו שאני צריך אותך עכשיו?"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "Sleep tomorrow, but tonight, go crazy",
+        "timestamp": "02:16.10",
+        "timestamp_end": "02:19.30",
+        "text_l2": "תישני מחר, אבל הלילה, השתגעי"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "All you gotta do is just meet me at the",
+        "timestamp": "02:19.40",
+        "timestamp_end": "02:22.60",
+        "text_l2": "כל מה שאת צריכה לעשות זה רק לפגוש אותי ב"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:22.70",
+        "timestamp_end": "02:24.00",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:24.30",
+        "timestamp_end": "02:25.60",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:25.90",
+        "timestamp_end": "02:27.20",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:27.50",
+        "timestamp_end": "02:29.10",
+        "text_l2": "פשוט פגשי אותי ב"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:29.20",
+        "timestamp_end": "02:30.50",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:30.80",
+        "timestamp_end": "02:32.10",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_71",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:32.40",
+        "timestamp_end": "02:33.70",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_72",
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:35.60",
+        "text_l2": "פשוט פגשי אותי ב"
+      },
+      {
+        "id": "phrase_73",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:35.70",
+        "timestamp_end": "02:37.00",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_74",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:37.30",
+        "timestamp_end": "02:38.60",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_75",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:38.90",
+        "timestamp_end": "02:40.20",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_76",
+        "text_l1": "Just meet me at the",
+        "timestamp": "02:40.50",
+        "timestamp_end": "02:42.10",
+        "text_l2": "פשוט פגשי אותי ב"
+      },
+      {
+        "id": "phrase_77",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:42.20",
+        "timestamp_end": "02:43.50",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_78",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:43.80",
+        "timestamp_end": "02:45.10",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_79",
+        "text_l1": "Apateu, apateu",
+        "timestamp": "02:45.40",
+        "timestamp_end": "02:46.70",
+        "text_l2": "אפאטו, אפאטו"
+      },
+      {
+        "id": "phrase_80",
+        "text_l1": "Uh, uh-huh, uh-huh",
+        "timestamp": "02:47.00",
+        "timestamp_end": "02:48.50",
+        "text_l2": "אה, אה-הא, אה-הא"
+      }
+    ],
+    "phrases_with_token_translations": "[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Apateu] apateu => [אפאטו] אפאטו\nApateu [apateu] => אפאטו [אפאטו]\n\n[Uh] uh-huh, uh-huh => [אה] אה-הא, אה-הא\nUh [uh-huh], uh-huh => אה [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Kissy] face, kissy face => פרצוף [נשיקות], פרצוף נשיקות\nKissy [face], kissy face => [פרצוף] נשיקות, פרצוף נשיקות\nKissy face, [kissy] face => פרצוף נשיקות, פרצוף [נשיקות]\nKissy face, kissy [face] => פרצוף נשיקות, [פרצוף] נשיקות\n\n[Sent] to your phone, but => [נשלח] לטלפון שלך, אבל\nSent [to] your phone, but => ל\nSent to [your] phone, but => נשלח לטלפון [שלך], אבל\nSent to your [phone], but => נשלח [לטלפון] שלך, אבל\nSent to your phone, [but] => נשלח לטלפון שלך, [אבל]\n\n[I'm] tryna kiss your lips for real => [אני] מנסה לנשק את השפתיים שלך באמת\nI'm [tryna] kiss your lips for real => [מנסה] לנשק את השפתיים שלך באמת\nI'm tryna [kiss] your lips for real => אני מנסה [לנשק] את השפתיים שלך באמת\nI'm tryna kiss [your] lips for real => אני מנסה לנשק את השפתיים [שלך] באמת\nI'm tryna kiss your [lips] for real => אני מנסה לנשק את [השפתיים] שלך באמת\nI'm tryna kiss your lips [for real] => אני מנסה לנשק את השפתיים שלך [באמת]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Red] hearts, red hearts => לבבות [אדומים], לבבות אדומים\nRed [hearts], red hearts => [לבבות] אדומים, לבבות אדומים\nRed hearts, [red] hearts => לבבות אדומים, לבבות [אדומים]\nRed hearts, red [hearts] => לבבות אדומים, [לבבות] אדומים\n\n[That's] what I'm on, yeah => [זה] מה שאני מחפש, כן\nThat's [what] I'm on, yeah => זה [מה] שאני מחפש, כן\nThat's what [I'm] on, yeah => זה מה [שאני] מחפש, כן\nThat's what I'm [on], yeah => זה מה שאני [מחפש], כן\nThat's what I'm on, [yeah] => זה מה שאני מחפש, [כן]\n\n[Come] give me something I can feel => [בואי] תני לי משהו שאוכל להרגיש\nCome [give] me something I can feel => בואי [תני] לי משהו שאוכל להרגיש\nCome give [me] something I can feel => בואי תני [לי] משהו שאוכל להרגיש\nCome give me [something] I can feel => בואי תני לי [משהו] שאוכל להרגיש\nCome give me something [I can] feel => בואי תני לי משהו [שאוכל] להרגיש\nCome give me something I can [feel] => בואי תני לי משהו שאוכל [להרגיש]\n\n[Oh-oh], oh => [או-או], או\nOh-oh, [oh] => או-או, [או]\n\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => האם את לא רוצה אותי כמו [שאני] רוצה אותך, ביבי?\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't] you need me like I need you now? => האם לא\nDon't [you] need me like I need you now? => [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me like [I] need you now? => האם את לא צריכה אותי כמו [שאני] צריך אותך עכשיו?\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => כל מה [שאת] צריכה לעשות זה רק לפגוש אותי ב\nAll you [gotta] do is just meet me at the => כל מה שאת [צריכה] לעשות זה רק לפגוש אותי ב\nAll you gotta [do] is just meet me at the => כל מה שאת צריכה [לעשות] זה רק לפגוש אותי ב\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => ב\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[It's] whatever, it's whatever => [זה] מה שבא לך, זה מה שבא לך\nIt's [whatever], it's whatever => זה [מה שבא לך], זה מה שבא לך\nIt's whatever, [it's] whatever => זה מה שבא לך, [זה] מה שבא לך\nIt's whatever, it's [whatever] => זה מה שבא לך, זה [מה שבא לך]\n\n[It's] whatever you like => [זה] מה שבא לך\nIt's [whatever you like] => זה [מה שבא לך]\n\n[Turn] this apateu into a club => [הפוך] את האפאטו הזה למועדון\nTurn [this apateu] into a club => הפוך [את האפאטו הזה] למועדון\nTurn this [apateu] into a club => אפאטו\nTurn this apateu [into] a club => ל\nTurn this apateu into a [club] => הפוך את האפאטו הזה ל[מועדון]\nTurn this apateu [into a club] => הפוך את האפאטו הזה [למועדון]\n\n[Uh-huh], uh-huh => [אה-הא], אה-הא\nUh-huh, [uh-huh] => אה-הא, [אה-הא]\n\n[I'm talking] drink, dance, smoke, freak, => [אני מדבר על] שתייה, ריקוד, עישון, פרוע,\nI'm talking [drink], dance, smoke, freak, => אני מדבר על [שתייה], ריקוד, עישון, פרוע,\nI'm talking drink, [dance], smoke, freak, => אני מדבר על שתייה, [ריקוד], עישון, פרוע,\nI'm talking drink, dance, [smoke], freak, => אני מדבר על שתייה, ריקוד, [עישון], פרוע,\nI'm talking drink, dance, smoke, [freak], => אני מדבר על שתייה, ריקוד, עישון, [פרוע],\n\n[party] all night => [מסיבה] כל הלילה\nparty [all night] => מסיבה [כל הלילה]\n\n[Geonbae], geonbae, girl, what's up? => [גאונבאה], גאונבאה, ילדה, מה נשמע?\nGeonbae, [geonbae], girl, what's up? => גאונבאה, [גאונבאה], ילדה, מה נשמע?\nGeonbae, geonbae, [girl], what's up? => גאונבאה, גאונבאה, [ילדה], מה נשמע?\nGeonbae, geonbae, girl, [what's up?] => גאונבאה, גאונבאה, ילדה, [מה נשמע?]\n\n[Oh-oh], oh => [או-או], או\nOh-oh, [oh] => או-או, [או]\n\n[Don't you] want me like I want you, baby? => [האם את לא] רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't [you] want me like I want you, baby? => האם [את] לא רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me [like I] want you, baby? => האם את לא רוצה אותי [כמו שאני] רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => אני\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't you] need me like I need you now? => [האם את לא] צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't [you] need me like I need you now? => האם [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me [like I] need you now? => האם את לא צריכה אותי [כמו שאני] צריך אותך עכשיו?\nDon't you need me like [I] need you now? => אני\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All you gotta do] is just meet me at the => [כל מה שאת צריכה לעשות] זה רק לפגוש אותי ב\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => את\nAll you [gotta] do is just meet me at the => צריכה\nAll you gotta [do] is just meet me at the => לעשות\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => כל מה שאת צריכה לעשות זה רק לפגוש אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]\n\n[Hey] so now you know the game => [היי] אז עכשיו את מכירה את המשחק\nHey [so] now you know the game => היי [אז] עכשיו את מכירה את המשחק\nHey so [now] you know the game => היי אז [עכשיו] את מכירה את המשחק\nHey so now [you] know the game => היי אז עכשיו [את] מכירה את המשחק\nHey so now you [know] the game => היי אז עכשיו את [מכירה] את המשחק\nHey so now you know the [game] => היי אז עכשיו את מכירה את [משחק] # skipping \"the\" as it's part of the direct object marker\n\nAre [you] ready? => [את] מוכנה?\nAre you [ready]? => את [מוכנה]?\n\n['Cause] I'm comin' to get ya, get ya, => [כי] אני בא לקחת אותך, לקחת אותך,\n'Cause [I'm] comin' to get ya, get ya, => כי [אני] בא לקחת אותך, לקחת אותך, # aligning \"I\" to \"אני\", skipping \"am\"\n'Cause I'm [comin'] to get ya, get ya, => כי אני [בא] לקחת אותך, לקחת אותך,\n'Cause I'm comin' to [get] ya, get ya, => כי אני בא [לקחת] אותך, לקחת אותך,\n'Cause I'm comin' to get [ya], get ya, => כי אני בא לקחת [אותך], לקחת אותך,\n'Cause I'm comin' to get ya, [get] ya, => כי אני בא לקחת אותך, [לקחת] אותך,\n'Cause I'm comin' to get ya, get [ya], => כי אני בא לקחת אותך, לקחת [אותך],\n\n[get] ya => [לקחת] אותך\nget [ya] => לקחת [אותך]\n\n[Hold on], hold on => [חכי רגע], חכי רגע\nHold on, [hold on] => חכי רגע, [חכי רגע]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Yeah], yeah, yeah, yeah, yeah => [יה], יה, יה, יה, יה\nYeah, [yeah], yeah, yeah, yeah => יה, [יה], יה, יה, יה\nYeah, yeah, [yeah], yeah, yeah => יה, יה, [יה], יה, יה\nYeah, yeah, yeah, [yeah], yeah => יה, יה, יה, [יה], יה\nYeah, yeah, yeah, yeah, [yeah] => יה, יה, יה, יה, [יה]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Hold on] hold on => [חכי רגע] חכי רגע\nHold on [hold on] => חכי רגע [חכי רגע]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Yeah], yeah, yeah, yeah, yeah => [יה], יה, יה, יה, יה\nYeah, [yeah], yeah, yeah, yeah => יה, [יה], יה, יה, יה\nYeah, yeah, [yeah], yeah, yeah => יה, יה, [יה], יה, יה\nYeah, yeah, yeah, [yeah], yeah => יה, יה, יה, [יה], יה\nYeah, yeah, yeah, yeah, [yeah] => יה, יה, יה, יה, [יה]\n\n[I'm] on my way => [אני] בדרך\nI'm [on my way] => אני [בדרך]\n\n[Don't] you want me like I want you, baby? => האם את [לא] רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't [you] want me like I want you, baby? => האם [את] לא רוצה אותי כמו שאני רוצה אותך, ביבי?\nDon't you [want] me like I want you, baby? => האם את לא [רוצה] אותי כמו שאני רוצה אותך, ביבי?\nDon't you want [me] like I want you, baby? => האם את לא רוצה [אותי] כמו שאני רוצה אותך, ביבי?\nDon't you want me [like] I want you, baby? => האם את לא רוצה אותי [כמו] שאני רוצה אותך, ביבי?\nDon't you want me like [I] want you, baby? => האם את לא רוצה אותי כמו [שאני] רוצה אותך, ביבי?\nDon't you want me like I [want] you, baby? => האם את לא רוצה אותי כמו שאני [רוצה] אותך, ביבי?\nDon't you want me like I want [you], baby? => האם את לא רוצה אותי כמו שאני רוצה [אותך], ביבי?\nDon't you want me like I want you, [baby]? => האם את לא רוצה אותי כמו שאני רוצה אותך, [ביבי]?\n\n[Don't] you need me like I need you now? => האם את [לא] צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't [you] need me like I need you now? => האם [את] לא צריכה אותי כמו שאני צריך אותך עכשיו?\nDon't you [need] me like I need you now? => האם את לא [צריכה] אותי כמו שאני צריך אותך עכשיו?\nDon't you need [me] like I need you now? => האם את לא צריכה [אותי] כמו שאני צריך אותך עכשיו?\nDon't you need me [like] I need you now? => האם את לא צריכה אותי [כמו] שאני צריך אותך עכשיו?\nDon't you need me like [I] need you now? => האם את לא צריכה אותי כמו [שאני] צריך אותך עכשיו?\nDon't you need me like I [need] you now? => האם את לא צריכה אותי כמו שאני [צריך] אותך עכשיו?\nDon't you need me like I need [you] now? => האם את לא צריכה אותי כמו שאני צריך [אותך] עכשיו?\nDon't you need me like I need you [now]? => האם את לא צריכה אותי כמו שאני צריך אותך [עכשיו]?\n\n[Sleep] tomorrow, but tonight, go crazy => [תישני] מחר, אבל הלילה, השתגעי\nSleep [tomorrow], but tonight, go crazy => תישני [מחר], אבל הלילה, השתגעי\nSleep tomorrow, [but] tonight, go crazy => תישני מחר, [אבל] הלילה, השתגעי\nSleep tomorrow, but [tonight], go crazy => תישני מחר, אבל [הלילה], השתגעי\nSleep tomorrow, but tonight, [go crazy] => תישני מחר, אבל הלילה, [השתגעי]\n\n[All] you gotta do is just meet me at the => [כל] מה שאת צריכה לעשות זה רק לפגוש אותי ב\nAll [you] gotta do is just meet me at the => כל מה [שאת] צריכה לעשות זה רק לפגוש אותי ב\nAll you [gotta] do is just meet me at the => כל מה שאת [צריכה] לעשות זה רק לפגוש אותי ב\nAll you gotta [do] is just meet me at the => כל מה שאת צריכה [לעשות] זה רק לפגוש אותי ב\nAll you gotta do [is] just meet me at the => כל מה שאת צריכה לעשות [זה] רק לפגוש אותי ב\nAll you gotta do is [just] meet me at the => כל מה שאת צריכה לעשות זה [רק] לפגוש אותי ב\nAll you gotta do is just [meet] me at the => כל מה שאת צריכה לעשות זה רק [לפגוש] אותי ב\nAll you gotta do is just meet [me] at the => כל מה שאת צריכה לעשות זה רק לפגוש [אותי] ב\nAll you gotta do is just meet me [at the] => כל מה שאת צריכה לעשות זה רק לפגוש אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at] the => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at the] => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Just] meet me at the => [פשוט] פגשי אותי ב\nJust [meet] me at the => פשוט [פגשי] אותי ב\nJust meet [me] at the => פשוט פגשי [אותי] ב\nJust meet me [at the] => פשוט פגשי אותי [ב]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Apateu], apateu => [אפאטו], אפאטו\nApateu, [apateu] => אפאטו, [אפאטו]\n\n[Uh], uh-huh, uh-huh => [אה], אה-הא, אה-הא\nUh, [uh-huh], uh-huh => אה, [אה-הא], אה-הא\nUh, uh-huh, [uh-huh] => אה, אה-הא, [אה-הא]",
+    "lessons": "# The Apateu Intro\n00:06.50 Apateu, apateu\n00:08.10 Apateu, apateu\n00:09.70 Apateu, apateu\n00:11.30 Uh, uh-huh, uh-huh\n00:13.00 Apateu, apateu\n00:14.60 Apateu, apateu\n00:16.20 Apateu, apateu\n00:17.80 Uh, uh-huh, uh-huh\n\n# Kissy Face and Red Hearts\n00:19.50 Kissy face, kissy face\n00:21.10 Sent to your phone, but\n00:22.70 I'm tryna kiss your lips for real\n00:25.10 Uh, uh-huh, uh-huh\n00:26.00 Red hearts, red hearts\n00:27.60 That's what I'm on, yeah\n00:29.20 Come give me something I can feel\n00:31.60 Oh-oh, oh\n\n# Don't You Want Me?\n00:32.50 Don't you want me like I want you, baby?\n00:35.80 Don't you need me like I need you now?\n00:39.00 Sleep tomorrow, but tonight, go crazy\n00:42.30 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu\n00:45.60 Apateu, apateu\n00:47.20 Apateu, apateu\n00:48.80 Apateu, apateu\n00:50.40 Uh, uh-huh, uh-huh\n00:52.10 Apateu, apateu\n00:53.70 Apateu, apateu\n00:55.30 Apateu, apateu\n00:56.90 Uh, uh-huh, uh-huh\n\n# Turn This Apateu Into a Club\n00:58.60 It's whatever, it's whatever\n01:00.20 It's whatever you like\n01:01.80 Turn this apateu into a club\n01:04.20 Uh-huh, uh-huh\n01:05.10 I'm talking drink, dance, smoke, freak,\n01:07.10 party all night\n01:08.30 Geonbae, geonbae, girl, what's up?\n01:10.70 Oh-oh, oh\n\n# Don't You Want Me? (Part 2)\n01:11.60 Don't you want me like I want you, baby?\n01:14.90 Don't you need me like I need you now?\n01:18.10 Sleep tomorrow, but tonight, go crazy\n01:21.40 All you gotta do is just meet me at the\n\n# Meet Me at the Apateu (Part 2)\n01:24.70 Apateu, apateu\n01:26.30 Apateu, apateu\n01:27.90 Apateu, apateu\n01:29.50 Uh, uh-huh, uh-huh\n01:31.20 Apateu, apateu\n01:32.80 Apateu, apateu\n01:34.40 Apateu, apateu\n01:36.00 Uh, uh-huh, uh-huh\n\n# Now You Know the Game (Part 1)\n01:37.60 Hey, so now you know the game\n01:40.00 Are you ready?\n01:41.10 'Cause I'm comin' to get ya, get ya,\n01:42.80 get ya\n01:43.60 Hold on, hold on\n01:46.60 I'm on my way\n\n# I'm On My Way (Part 2)\n01:49.90 Yeah, yeah, yeah, yeah, yeah\n01:53.10 I'm on my way\n01:56.60 Hold on, hold on\n01:59.60 I'm on my way\n02:02.90 Yeah, yeah, yeah, yeah, yeah\n02:06.10 I'm on my way\n\n# Don't You Want Me? (Part 3)\n02:09.60 Don't you want me like I want you, baby?\n02:12.90 Don't you need me like I need you now?\n02:16.10 Sleep tomorrow, but tonight, go crazy\n02:19.40 All you gotta do is just meet me at the\n\n# Just Meet Me at the Apateu (Part 1)\n02:22.70 Apateu, apateu\n02:24.30 Apateu, apateu\n02:25.90 Apateu, apateu\n02:27.50 Just meet me at the\n02:29.20 Apateu, apateu\n02:30.80 Apateu, apateu\n02:32.40 Apateu, apateu\n02:34.00 Just meet me at the\n\n# Just Meet Me at the Apateu (Part 2)\n02:35.70 Apateu, apateu\n02:37.30 Apateu, apateu\n02:38.90 Apateu, apateu\n02:40.50 Just meet me at the\n02:42.20 Apateu, apateu\n02:43.80 Apateu, apateu\n02:45.40 Apateu, apateu\n02:47.00 Uh, uh-huh, uh-huh",
+    "similar_sounds": "[amateur] apateu\n[agate] apateu\nApateu [amateur]\nUh uh huh uh [hub]\n[patel] apateu\nApateu [agate]\nApateu [patel]\nUh uh [hub] uh huh\n[missy] face kissy face\n[send] to your phone but\nI'm tryna kiss your lips [or] real\nUh uh huh uh [hub]\n[re] hearts red hearts\n[that] what I'm on yeah\nCome give me something I can [fees]\nDon't you want me [life] I want you baby\n[done] you need me like I need you now\nSleep tomorrow [out] tonight go crazy\nAll you gotta do is just [feet] me at the\n[amateur] apateu\n[agate] apateu\nApateu [amateur]\nUh uh [hub] uh huh\n[agate] apateu\nApateu [amateur]\n[amateur] apateu\nUh uh [hub] uh huh\n[it'd] whatever it's whatever\nIt's [wherever] you like\nTurn this [agate] into a club\nUh [hugh] uh huh\nI'm talking drink [lance] smoke freak\n[part] all night\nGeonbae geonbae [gil] what's up\nDon't you want me like I want [lou] baby\nDon't you [feed] me like I need you now\nSleep tomorrow but tonight go [craze]\nAll you gotta do is just [met] me at the\n[agate] apateu\n[agate] apateu\n[patel] apateu\nUh uh huh uh [hub]\n[amateur] apateu\n[patel] apateu\nApateu [patel]\nUh uh huh uh [hugh]\nHey so [not] you know the game\nAre [sou] ready\n'Cause I'm comin ' to get ya [set] ya\n[let] ya\nHold on [held] on\n[in] on my way\nYeah [year] yeah yeah yeah\nI'm on my [may]\n[held] on hold on\nI'm on my [was]\nYeah yeah yeah [leah] yeah\n[ism] on my way\nDon't you want me like I want [your] baby\n[won't] you need me like I need you now\nSleep [tomorrows] but tonight go crazy\nAll you [cotta] do is just meet me at the\nApateu [patel]\nApateu [agate]\nApateu [amateur]\nJust [feet] me at the\n[agate] apateu\nApateu [amateur]\n[amateur] apateu\n[dust] meet me at the\nApateu [amateur]\n[patel] apateu\n[patel] apateu\n[must] meet me at the\nApateu [agate]\nApateu [agate]\nApateu [amateur]\nUh uh huh uh [hut]"
+  },
+  "created_at": "2026-06-26 21:12:45 UTC",
+  "updated_at": "2026-06-26 21:21:21 UTC",
+  "exported_at": "2026-06-26T21:21:22Z"
+}

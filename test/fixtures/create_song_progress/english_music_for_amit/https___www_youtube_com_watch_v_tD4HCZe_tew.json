@@ -1,0 +1,506 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=tD4HCZe-tew",
+  "clip_language": "English",
+  "translation_language": "Hebrew",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "00:10.50",
+        "timestamp_end": "00:13.00",
+        "text_l2": "אני חי את יומי כאילו זה האחרון"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:15.50",
+        "text_l2": "חי את יומי כאילו אין עבר"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "00:15.50",
+        "timestamp_end": "00:18.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "Doin' it the way I wanna",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:20.50",
+        "text_l2": "עושה את זה איך שבא לי"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
+        "timestamp": "00:20.50",
+        "timestamp_end": "00:23.00",
+        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:25.50",
+        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "00:25.50",
+        "timestamp_end": "00:28.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:31.00",
+        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "It was a crush",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:32.50",
+        "text_l2": "זה היה קראש"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "But I couldn't, couldn't get enough",
+        "timestamp": "00:32.50",
+        "timestamp_end": "00:36.00",
+        "text_l2": "אבל לא יכולתי, לא יכולתי להסתפק"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "It was a rush",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:37.50",
+        "text_l2": "זה היה ריגוש"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "But I gave it up",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:41.00",
+        "text_l2": "אבל ויתרתי על זה"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "It was a crush",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:42.50",
+        "text_l2": "זה היה קראש"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "Now I might have went and said too much",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:46.00",
+        "text_l2": "אולי אמרתי יותר מדי"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "But that's all it was",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:47.50",
+        "text_l2": "אבל זה כל מה שזה היה"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "So I gave it up",
+        "timestamp": "00:47.50",
+        "timestamp_end": "00:49.50",
+        "text_l2": "אז ויתרתי על זה"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "00:49.50",
+        "timestamp_end": "00:52.00",
+        "text_l2": "אני חי את יומי כאילו זה האחרון"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:54.50",
+        "text_l2": "חי את יומי כאילו אין עבר"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "00:54.50",
+        "timestamp_end": "00:57.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Doin' it the way I wanna",
+        "timestamp": "00:57.00",
+        "timestamp_end": "00:59.50",
+        "text_l2": "עושה את זה איך שבא לי"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
+        "timestamp": "00:59.50",
+        "timestamp_end": "01:02.00",
+        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:04.50",
+        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "01:04.50",
+        "timestamp_end": "01:07.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "01:07.00",
+        "timestamp_end": "01:10.00",
+        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "It was a crush",
+        "timestamp": "01:10.00",
+        "timestamp_end": "01:11.50",
+        "text_l2": "זה היה קראש"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "I kept saying I'ma stay in touch",
+        "timestamp": "01:11.50",
+        "timestamp_end": "01:15.00",
+        "text_l2": "המשכתי להגיד שאישאר בקשר"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "But that thing went bust",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:16.50",
+        "text_l2": "אבל זה התפוצץ"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "So I gave it up",
+        "timestamp": "01:16.50",
+        "timestamp_end": "01:20.00",
+        "text_l2": "אז ויתרתי על זה"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "No tricks, no bluff",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:21.50",
+        "text_l2": "בלי טריקים, בלי בלופים"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "I'm just better off without them cuffs",
+        "timestamp": "01:21.50",
+        "timestamp_end": "01:25.00",
+        "text_l2": "אני מסתדר טוב יותר בלי הכבלים האלה"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "Yeah the sun won't set on us",
+        "timestamp": "01:25.00",
+        "timestamp_end": "01:30.00",
+        "text_l2": "כן, השמש לא תשקע עלינו"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "Went low, went high",
+        "timestamp": "01:30.00",
+        "timestamp_end": "01:32.50",
+        "text_l2": "ירדנו נמוך, עלינו גבוה"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "Still waters run dry",
+        "timestamp": "01:32.50",
+        "timestamp_end": "01:35.00",
+        "text_l2": "מים שקטים מתייבשים"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "Gotta get back in the groove",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:37.50",
+        "text_l2": "צריך לחזור לקצב"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "I ain't ever hurtin'",
+        "timestamp": "01:37.50",
+        "timestamp_end": "01:40.00",
+        "text_l2": "אני לא נפגע לעולם"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Went low, went high",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:42.50",
+        "text_l2": "ירדנו נמוך, עלינו גבוה"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "What matters is now",
+        "timestamp": "01:42.50",
+        "timestamp_end": "01:45.00",
+        "text_l2": "מה שחשוב זה עכשיו"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "Getting right back in the mood",
+        "timestamp": "01:45.00",
+        "timestamp_end": "01:48.50",
+        "text_l2": "חוזר ישר למוד"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "01:48.50",
+        "timestamp_end": "01:51.00",
+        "text_l2": "אני חי את יומי כאילו זה האחרון"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:53.50",
+        "text_l2": "חי את יומי כאילו אין עבר"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "01:53.50",
+        "timestamp_end": "01:56.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "Doin' it the way I wanna",
+        "timestamp": "01:56.00",
+        "timestamp_end": "01:58.50",
+        "text_l2": "עושה את זה איך שבא לי"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
+        "timestamp": "01:58.50",
+        "timestamp_end": "02:01.00",
+        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:03.50",
+        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "02:03.50",
+        "timestamp_end": "02:06.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "02:06.00",
+        "timestamp_end": "02:09.00",
+        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Now I found another crush",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.50",
+        "text_l2": "עכשיו מצאתי קראש אחר"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "The lush life's given me a rush",
+        "timestamp": "02:11.50",
+        "timestamp_end": "02:14.00",
+        "text_l2": "החיים השופעים נתנו לי ריגוש"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "02:14.00",
+        "timestamp_end": "02:16.50",
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "Second time is one too late",
+        "timestamp": "02:16.50",
+        "timestamp_end": "02:19.00",
+        "text_l2": "פעם שנייה זה מאוחר מדי"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "Now I found another crush",
+        "timestamp": "02:19.00",
+        "timestamp_end": "02:21.50",
+        "text_l2": "עכשיו מצאתי קראש אחר"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "The lush life's given me a rush",
+        "timestamp": "02:21.50",
+        "timestamp_end": "02:24.00",
+        "text_l2": "החיים השופעים נתנו לי ריגוש"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:26.50",
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "Second time is one too late",
+        "timestamp": "02:26.50",
+        "timestamp_end": "02:37.50",
+        "text_l2": "פעם שנייה זה מאוחר מדי"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "I live my day as if it was the last",
+        "timestamp": "02:37.50",
+        "timestamp_end": "02:40.00",
+        "text_l2": "אני חי את יומי כאילו זה האחרון"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "Live my day as if there was no past",
+        "timestamp": "02:40.00",
+        "timestamp_end": "02:42.50",
+        "text_l2": "חי את יומי כאילו אין עבר"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "02:42.50",
+        "timestamp_end": "02:45.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "Doin' it the way I wanna",
+        "timestamp": "02:45.00",
+        "timestamp_end": "02:47.50",
+        "text_l2": "עושה את זה איך שבא לי"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Yeah I'ma dance my heart out 'til the dawn",
+        "timestamp": "02:47.50",
+        "timestamp_end": "02:50.00",
+        "text_l2": "כן, אני ארקוד עד כלות עד השחר"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "But I won't be done when morning comes",
+        "timestamp": "02:50.00",
+        "timestamp_end": "02:52.50",
+        "text_l2": "אבל לא אסיים כשהבוקר יגיע"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "Doin' it all night, all summer",
+        "timestamp": "02:52.50",
+        "timestamp_end": "02:55.00",
+        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Gonna spend it like no other",
+        "timestamp": "02:55.00",
+        "timestamp_end": "02:58.00",
+        "text_l2": "אבזבז את זה כמו שאף אחד אחר"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "Now I found another crush",
+        "timestamp": "02:58.00",
+        "timestamp_end": "03:00.50",
+        "text_l2": "עכשיו מצאתי קראש אחר"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "The lush life's given me a rush",
+        "timestamp": "03:00.50",
+        "timestamp_end": "03:03.00",
+        "text_l2": "החיים השופעים נתנו לי ריגוש"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:05.50",
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "Second time is one too late",
+        "timestamp": "03:05.50",
+        "timestamp_end": "03:08.00",
+        "text_l2": "פעם שנייה זה מאוחר מדי"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "Now I found another crush",
+        "timestamp": "03:08.00",
+        "timestamp_end": "03:10.50",
+        "text_l2": "עכשיו מצאתי קראש אחר"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "The lush life's given me a rush",
+        "timestamp": "03:10.50",
+        "timestamp_end": "03:13.00",
+        "text_l2": "החיים השופעים נתנו לי ריגוש"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "Had one chance to make me blush",
+        "timestamp": "03:13.00",
+        "timestamp_end": "03:15.50",
+        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Second time is one too late",
+        "timestamp": "03:15.50",
+        "timestamp_end": "03:18.00",
+        "text_l2": "פעם שנייה זה מאוחר מדי"
+      }
+    ],
+    "phrases_with_token_translations": "[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי את [יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי את [יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if there was [no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה את [זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה את [זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => עושה את זה איך ש[בא לי]\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן] אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't] be done when morning comes => אבל אני [לא] אסיים כשהבוקר יגיע\nBut I won't [be done] when morning comes => אבל אני לא [אסיים] כשהבוקר יגיע\nBut I won't be done [when morning comes] => אבל אני לא אסיים [כשהבוקר יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\nGonna [spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\nGonna spend it [like] no other => אבזבז את זה [כמו] שאף אחד אחר\nGonna spend it like no [other] => אבזבז את זה כמו שאף אחד [אחר]\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was a [crush] => זה היה [קראש]\n\n[But] I couldn't, couldn't get enough => [אבל] לא יכולתי, לא יכולתי להסתפק\nBut [I couldn't], couldn't get enough => אבל [לא יכולתי], לא יכולתי להסתפק\nBut I couldn't, [couldn't] get enough => אבל לא יכולתי, [לא יכולתי] להסתפק\nBut I couldn't, couldn't [get enough] => אבל לא יכולתי, לא יכולתי [להסתפק]\n\n[It] was a rush => [זה] היה ריגוש\nIt [was] a rush => זה [היה] ריגוש\nIt was a [rush] => זה היה [ריגוש]\n\n[But] I gave it up => [אבל] ויתרתי על זה\nBut [I gave up] it => אבל [ויתרתי] על זה\nBut I gave [it] up => אבל ויתרתי [על זה]\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was a [crush] => זה היה [קראש]\n\nI [might have] went and said too much => [אולי] אמרתי יותר מדי\nI might have went and [said] too much => אולי [אמרתי] יותר מדי\nI might have went and said [too much] => אולי אמרתי [יותר מדי]\n\n[But] that's all it was => [אבל] זה כל מה שזה היה\nBut [that]'s all it was => אבל [זה] כל מה שזה היה\nBut that's [all] it was => אבל זה [כל] מה שזה היה\nBut that's all [it was] => אבל זה כל מה [שזה היה]\nBut that's all it [was] => אבל זה כל מה שזה [היה]\n\n[So] I gave it up => [אז] ויתרתי על זה\nSo I gave [it] up => אז ויתרתי [על זה]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if there was [no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה את [זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => שבא לי\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => עד כלות\nYeah I'ma dance my heart out ['til the dawn] => כן, אני ארקוד עד כלות [עד השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut [I won't be done] when morning comes => אבל [לא אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like] no other => אבזבז את זה [כמו] שאף אחד אחר\nGonna spend it like [no other] => שאף אחד אחר\n\n[It] was a crush => [זה] היה קראש\nIt [was] a crush => זה [היה] קראש\nIt was [a crush] => זה היה [קראש]\n\n[I kept] saying I'ma stay in touch => [המשכתי] להגיד שאשאר בקשר\nI kept [saying] I'ma stay in touch => המשכתי [להגיד] שאשאר בקשר\nI kept saying [I'ma stay] in touch => המשכתי להגיד [שאשאר] בקשר\nI kept saying I'ma stay [in touch] => המשכתי להגיד שאשאר [בקשר]\n\n[But] that thing went bust => [אבל] זה התפוצץ\nBut [that thing] went bust => אבל [זה] התפוצץ\nBut that thing [went bust] => אבל זה [התפוצץ]\n\n[So] I gave it up => [אז] ויתרתי על זה\nSo [I gave up] it => אז [ויתרתי] על זה\nSo I gave up [it] => אז ויתרתי [על זה]\n\n[No] tricks, no bluff => [בלי] טריקים, בלי בלופים\nNo [tricks], no bluff => בלי [טריקים], בלי בלופים\nNo tricks, [no] bluff => בלי טריקים, [בלי] בלופים\nNo tricks, no [bluff] => בלי טריקים, בלי [בלופים]\n\n[I'm] just better off without them cuffs => [אני] מסתדר טוב יותר בלי הכבלים האלה\nI'm [just] better off without them cuffs => פשוט # just is omitted in the Hebrew, so custom translation\nI'm just [better off] without them cuffs => אני [מסתדר טוב יותר] בלי הכבלים האלה\nI'm just better off [without] them cuffs => [בלי] הכבלים האלה\nI'm just better off without [them] cuffs => בלי הכבלים [האלה] # them (those) maps to האלה\nI'm just better off without them [cuffs] => בלי [הכבלים] האלה # cuffs (handcuffs) maps to הכבלים\n\n[Yeah] the sun won't set on us => [כן], השמש לא תשקע עלינו\nYeah [the sun] won't set on us => כן, [השמש] לא תשקע עלינו\nYeah the sun [won't] set on us => [לא] תשקע # won't (will not) maps to the negation לא\nYeah the sun won't [set] on us => לא [תשקע] עלינו\nYeah the sun won't set [on us] => [עלינו] # on us maps to עלינו\n\n[Went low], went high => [ירדנו נמוך], עלינו גבוה\nWent [low], went high => ירדנו [נמוך], עלינו גבוה\nWent low, [went high] => ירדנו נמוך, [עלינו גבוה]\nWent low, went [high] => ירדנו נמוך, עלינו [גבוה]\n\n[Still] waters run dry => מים [שקטים] מתייבשים\nStill [waters] run dry => [מים] שקטים מתייבשים\nStill waters [run dry] => מים שקטים [מתייבשים]\n\n[Gotta] get back in the groove => [צריך] לחזור לקצב\nGotta [get back] in the groove => צריך [לחזור] לקצב\nGotta get back [in the groove] => צריך לחזור [לקצב]\n\n[I] ain't ever hurtin' => [אני] לא נפגע לעולם\nI [ain't] ever hurtin' => אני [לא] נפגע לעולם\nI ain't [ever] hurtin' => אני לא נפגע [לעולם]\nI ain't ever [hurtin'] => אני לא [נפגע] לעולם\n\n[Went] low, went high => [ירדנו] נמוך, עלינו גבוה\nWent [low], went high => ירדנו [נמוך], עלינו גבוה\nWent low, [went] high => ירדנו נמוך, [עלינו] גבוה\nWent low, went [high] => ירדנו נמוך, עלינו [גבוה]\n\n[What matters] is now => [מה שחשוב] זה עכשיו\nWhat matters [is] now => מה שחשוב [זה] עכשיו\nWhat matters is [now] => מה שחשוב זה [עכשיו]\n\n[Getting] right back in the mood => [חוזר] ישר למוד\nGetting [right back] in the mood => חוזר [ישר] למוד\nGetting right back [in the mood] => חוזר ישר [למוד]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [את יומי] כאילו זה האחרון\nI live my day [as if] it was the last => אני חי את יומי [כאילו] זה האחרון\nI live my day as if [it] was the last => אני חי את יומי כאילו [זה] האחרון\nI live my day as if it was [the last] => אני חי את יומי כאילו זה [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [את יומי] כאילו אין עבר\nLive my day [as if] there was no past => חי את יומי [כאילו] אין עבר\nLive my day as if [there was no] past => חי את יומי כאילו [אין] עבר\nLive my day as if there was no [past] => חי את יומי כאילו אין [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [את זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => עושה את זה איך [שבא לי]\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן, אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן, אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן, אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't] be done when morning comes => אבל [לא] אסיים כשהבוקר יגיע\nBut I won't [be done] when morning comes => אבל לא [אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another crush] => עכשיו מצאתי [קראש אחר]\n\n[The lush life]'s given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe lush life ['s given me] a rush => החיים השופעים [נתנו לי] ריגוש\nThe lush life's given me [a rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is one [too] late => פעם שנייה זה [מדי] מאוחר\nSecond time is one too [late] => פעם שנייה זה [מאוחר] מדי\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\nThe [lush] life's given me a rush => החיים [השופעים] נתנו לי ריגוש\nThe lush [life]'s given me a rush => [החיים] השופעים נתנו לי ריגוש\nThe lush life's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life's given me a [rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => [לגרום] לי להסמיק\nHad one chance to make [me] blush => [לי] להסמיק\nHad one chance to make me [blush] => [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is one [too late] => [מאוחר מדי]\n\n[I] live my day as if it was the last => [אני] חי את יומי כאילו זה האחרון\nI [live] my day as if it was the last => אני [חי] את יומי כאילו זה האחרון\nI live [my day] as if it was the last => אני חי [את יומי] כאילו זה האחרון\nI live my day [as if] it was the last => [כאילו] זה האחרון\nI live my day as if [it] was the last => [זה] האחרון\nI live my day as if it was [the last] => [האחרון]\n\n[Live] my day as if there was no past => [חי] את יומי כאילו אין עבר\nLive [my day] as if there was no past => חי [את יומי] כאילו אין עבר\nLive my day [as if] there was no past => [כאילו] אין עבר\nLive my day as if [there was no] past => [אין] עבר\nLive my day as if there was no [past] => [עבר]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all] night, all summer => עושה את זה [כל] הלילה, כל הקיץ\nDoin' it all [night], all summer => עושה את זה כל [הלילה], כל הקיץ\nDoin' it all night, [all] summer => עושה את זה כל הלילה, [כל] הקיץ\nDoin' it all night, all [summer] => עושה את זה כל הלילה, כל [הקיץ]\n\n[Doin'] it the way I wanna => [עושה] את זה איך שבא לי\nDoin' [it] the way I wanna => עושה [את זה] איך שבא לי\nDoin' it [the way] I wanna => עושה את זה [איך] שבא לי\nDoin' it the way [I wanna] => שבא לי\n\n[Yeah] I'ma dance my heart out 'til the dawn => [כן], אני ארקוד עד כלות עד השחר\nYeah [I'ma] dance my heart out 'til the dawn => כן, [אני] ארקוד עד כלות עד השחר\nYeah I'ma [dance] my heart out 'til the dawn => כן, אני [ארקוד] עד כלות עד השחר\nYeah I'ma dance [my heart out] 'til the dawn => כן, אני ארקוד [עד כלות] עד השחר\nYeah I'ma dance my heart out ['til] the dawn => כן, אני ארקוד עד כלות [עד] השחר\nYeah I'ma dance my heart out 'til [the dawn] => כן, אני ארקוד עד כלות עד [השחר]\n\n[But] I won't be done when morning comes => [אבל] לא אסיים כשהבוקר יגיע\nBut I [won't be done] when morning comes => אבל [לא אסיים] כשהבוקר יגיע\nBut I won't be done [when morning] comes => אבל לא אסיים [כשהבוקר] יגיע\nBut I won't be done when morning [comes] => אבל לא אסיים כשהבוקר [יגיע]\n\n[Doin'] it all night, all summer => [עושה] את זה כל הלילה, כל הקיץ\nDoin' [it] all night, all summer => עושה [את זה] כל הלילה, כל הקיץ\nDoin' it [all night], all summer => עושה את זה [כל הלילה], כל הקיץ\nDoin' it all night, [all summer] => עושה את זה כל הלילה, [כל הקיץ]\n\n[Gonna spend] it like no other => [אבזבז] את זה כמו שאף אחד אחר\nGonna spend [it] like no other => אבזבז [את זה] כמו שאף אחד אחר\nGonna spend it [like no other] => אבזבז את זה [כמו שאף אחד אחר]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\n[The lush life]'s given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe lush life's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life's given me [a rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה הזדמנות [אחת] לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => [שנייה] פעם זה מאוחר מדי\nSecond [time] is one too late => פעם [שנייה] זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is [one too late] => פעם שנייה זה [מאוחר מדי]\n\n[Now] I found another crush => [עכשיו] מצאתי קראש אחר\nNow [I found] another crush => עכשיו [מצאתי] קראש אחר\nNow I found [another] crush => עכשיו מצאתי קראש [אחר]\nNow I found another [crush] => עכשיו מצאתי [קראש] אחר\n\n[The lush life] 's given me a rush => [החיים השופעים] נתנו לי ריגוש\nThe [lush] life 's given me a rush => החיים [השופעים] נתנו לי ריגוש\nThe lush [life] 's given me a rush => [החיים] השופעים נתנו לי ריגוש\nThe lush life 's [given] me a rush => החיים השופעים [נתנו] לי ריגוש\nThe lush life 's given [me] a rush => החיים השופעים נתנו [לי] ריגוש\nThe lush life 's given me a [rush] => החיים השופעים נתנו לי [ריגוש]\n\n[Had] one chance to make me blush => [הייתה] הזדמנות אחת לגרום לי להסמיק\nHad [one] chance to make me blush => הייתה [אחת] הזדמנות לגרום לי להסמיק\nHad one [chance] to make me blush => הייתה [הזדמנות] אחת לגרום לי להסמיק\nHad one chance [to make] me blush => הייתה הזדמנות אחת [לגרום] לי להסמיק\nHad one chance to make [me] blush => הייתה הזדמנות אחת לגרום [לי] להסמיק\nHad one chance to make me [blush] => הייתה הזדמנות אחת לגרום לי [להסמיק]\n\n[Second] time is one too late => פעם [שנייה] זה מאוחר מדי\nSecond [time] is one too late => [פעם] שנייה זה מאוחר מדי\nSecond time [is] one too late => פעם שנייה [זה] מאוחר מדי\nSecond time is [one too late] => פעם שנייה זה [מאוחר מדי]",
+    "lessons": "# Living for the Moment\n00:10.50 I live my day as if it was the last\n00:13.00 Live my day as if there was no past\n00:15.50 Doin' it all night, all summer\n00:18.00 Doin' it the way I wanna\n00:20.50 Yeah I'ma dance my heart out 'til the dawn\n00:23.00 But I won't be done when morning comes\n00:25.50 Doin' it all night, all summer\n00:28.00 Gonna spend it like no other\n\n# A Fleeting Crush\n00:31.00 It was a crush\n00:32.50 But I couldn't, couldn't get enough\n00:36.00 It was a rush\n00:37.50 But I gave it up\n00:41.00 It was a crush\n00:42.50 Now I might have went and said too much\n00:46.00 But that's all it was\n00:47.50 So I gave it up\n\n# Dancing Till Dawn\n00:49.50 I live my day as if it was the last\n00:52.00 Live my day as if there was no past\n00:54.50 Doin' it all night, all summer\n00:57.00 Doin' it the way I wanna\n00:59.50 Yeah I'ma dance my heart out 'til the dawn\n01:02.00 But I won't be done when morning comes\n01:04.50 Doin' it all night, all summer\n01:07.00 Gonna spend it like no other\n\n# Moving On\n01:10.00 It was a crush\n01:11.50 I kept saying I'ma stay in touch\n01:15.00 But that thing went bust\n01:16.50 So I gave it up\n01:20.00 No tricks, no bluff\n01:21.50 I'm just better off without them cuffs\n01:25.00 Yeah the sun won't set on us\n01:30.00 Went low, went high\n\n# Getting Back in the Mood\n01:32.50 Still waters run dry\n01:35.00 Gotta get back in the groove\n01:37.50 I ain't ever hurtin'\n01:40.00 Went low, went high\n01:42.50 What matters is now\n01:45.00 Getting right back in the mood\n\n# Living for the Moment (Reprise)\n01:48.50 I live my day as if it was the last\n01:51.00 Live my day as if there was no past\n01:53.50 Doin' it all night, all summer\n01:56.00 Doin' it the way I wanna\n01:58.50 Yeah I'ma dance my heart out 'til the dawn\n02:01.00 But I won't be done when morning comes\n02:03.50 Doin' it all night, all summer\n02:06.00 Gonna spend it like no other\n\n# The Lush Life Rush\n02:09.00 Now I found another crush\n02:11.50 The lush life's given me a rush\n02:14.00 Had one chance to make me blush\n02:16.50 Second time is one too late\n02:19.00 Now I found another crush\n02:21.50 The lush life's given me a rush\n02:24.00 Had one chance to make me blush\n02:26.50 Second time is one too late\n\n# Dancing Till Dawn (Final)\n02:37.50 I live my day as if it was the last\n02:40.00 Live my day as if there was no past\n02:42.50 Doin' it all night, all summer\n02:45.00 Doin' it the way I wanna\n02:47.50 Yeah I'ma dance my heart out 'til the dawn\n02:50.00 But I won't be done when morning comes\n02:52.50 Doin' it all night, all summer\n02:55.00 Gonna spend it like no other\n\n# The Lush Life Rush (Final)\n02:58.00 Now I found another crush\n03:00.50 The lush life's given me a rush\n03:03.00 Had one chance to make me blush\n03:05.50 Second time is one too late\n03:08.00 Now I found another crush\n03:10.50 The lush life's given me a rush\n03:13.00 Had one chance to make me blush\n03:15.50 Second time is one too late",
+    "similar_sounds": "I live my day as if it was [﻿the] last\nLive my [may] as if there was no past\nDoin ' it [al] night all summer\nDoin ' it the [was] I wanna\nYeah I'ma dance my heart [oct] 'til the dawn\nBut I won't be [one] when morning comes\nDoin ' it all night [call] summer\n[lonna] spend it like no other\nIt [way] a crush\nBut I couldn't couldn't [set] enough\nIt [has] a rush\nBut I [have] it up\nIt was a [brush]\nNow I might have went and said too [mach]\nBut that's [fall] it was\nSo I [have] it up\nI [line] my day as if it was the last\nLive my [way] as if there was no past\nDoin ' it all [might] all summer\nDoin ' it the way I [wanda]\nYeah [irma] dance my heart out 'til the dawn\nBut I won't be done [then] morning comes\nDoin ' it all night [fall] summer\nGonna spend it [life] no other\nIt was a [rush]\nI [sept] saying I'ma stay in touch\n[put] that thing went bust\nSo I [save] it up\nNo tricks no [buff]\nI'm just [bitter] off without them cuffs\nYeah [he] sun won't set on us\nWent [law] went high\nStill waters [fun] dry\nGotta get [pack] in the groove\nI ain't ever [hurting] '\nWent [now] went high\nWhat matters is [no]\nGetting [light] back in the mood\nI [like] my day as if it was the last\nLive my day as if [these] was no past\n[join] ' it all night all summer\nDoin ' it the [may] I wanna\nYeah I'ma dance my heart [oct] 'til the dawn\nBut I won't be [one] when morning comes\nDoin ' it [call] night all summer\n[donna] spend it like no other\nNow I [round] another crush\nThe lush life's [giver] me a rush\nHad one chance to [makes] me blush\n[record] time is one too late\n[no] I found another crush\nThe [bush] life's given me a rush\nHad one chance to make me [bush]\nSecond time is one too [rate]\nI live my day as if it [way] the last\nLive my day as if there was no [post]\nDoin ' it all [might] all summer\nDoin ' it the [was] I wanna\nYeah I'ma [dancer] my heart out 'til the dawn\n[out] I won't be done when morning comes\nDoin ' it all [light] all summer\nGonna spend it [line] no other\n[new] I found another crush\nThe lush life's [gives] me a rush\nHad one chance to [made] me blush\nSecond time is [on] too late\n[no] I found another crush\nThe lush life's [gives] me a rush\nHad one chance to make me [brush]\nSecond [times] is one too late"
+  },
+  "created_at": "2026-06-26 20:35:07 UTC",
+  "updated_at": "2026-06-26 20:45:26 UTC",
+  "exported_at": "2026-06-26T20:45:27Z"
+}

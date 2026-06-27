@@ -10,30 +10,32 @@ module CreateSong
       assume_model_exists: true
     }.freeze
 
+    # Translates each word of every phrase into the target language. Unlike the
+    # old alignment step, this does NOT compute L2 character ranges -- it simply
+    # produces one translation per word (with the full phrase for context). The
+    # word translations + their timestamps later become karaoke-capable
+    # TokenTranslation records (see Phrase#build_word_tokens).
     def add_token_translation
-      blocks_per_iteration = 4
-      max_concurrency = 1
+      max_concurrency = 4
+      max_retries = 2
+
       instructions = ApplicationController.renderer.render(
-        template: "prompts/add_token_translations",
+        template: "prompts/translate_words",
         formats: [ :md ],
         locals: {
           clip_language:,
           translation_language:,
-          expected_block_count: blocks_per_iteration,
         }
       )
-      max_retries = 2
 
-      blocks = lyrics_with_translations.lines.each_slice(blocks_per_iteration).to_a
-
+      phrases = data["phrases"]
       semaphore = Async::Semaphore.new(max_concurrency)
 
       results = Async do
-        tasks = blocks.each_with_index.map do |block, index|
+        tasks = phrases.each_with_index.map do |phrase, index|
           Async do
             semaphore.acquire do
-              content = fetch_translation(instructions, block, max_retries)
-              [index, content]
+              [ index, translate_phrase_words(instructions, phrase, max_retries) ]
             end
           end
         end
@@ -41,32 +43,35 @@ module CreateSong
         tasks.map(&:wait).sort_by(&:first).map(&:last)
       end.result
 
-      data["phrases_with_token_translations"] = results.join("\n\n")
+      results.each_with_index do |translations, index|
+        words = data["phrases"][index]["words"]
+        next if words.blank?
+
+        words.each_with_index do |word, w_index|
+          word["translation"] = translations[w_index]
+        end
+      end
+
       save!
     end
 
     private
 
-    def fetch_translation(instructions, block, max_retries)
+    def translate_phrase_words(instructions, phrase, max_retries)
+      words = Array(phrase["words"]).map { |w| w["text"] }
+      return [] if words.empty?
+
       retry_count = 0
 
       loop do
-        validate_input_no_brackets!(block)
-
         chat = TracedChat.new(span_name: "add_token_translations", **MODEL_PARAMS)
         chat
           .with_instructions(instructions)
-          .add_message role: :user, content: block.join
+          .add_message role: :user, content: "Phrase: #{phrase["text_l1"]}\nWords:\n#{words.join("\n")}"
 
         response = chat.complete
-        pp response
 
-        content = strip_model_header(response.content.strip, block.first)
-        raise "Output blocks mismatch" if content.strip.scan(/\n\s*\n/).count != (block.size - 1)
-
-        validate_one_token_per_line!(content)
-
-        return content.strip
+        return parse_word_translations(response.content.strip, words)
       rescue => e
         retry_count += 1
         if retry_count <= max_retries
@@ -81,45 +86,20 @@ module CreateSong
       end
     end
 
-    def lyrics_with_translations
-      lyrics = data["phrases"].pluck("text_l1")
-      translations = data["phrases"].pluck("text_l2")
-      lyrics.zip(translations).map { |l, t| "#{l} => #{t}" }.join("\n")
-    end
+    # Expects one "word => translation" line per input word, in order. Ignores any
+    # preamble lines that don't contain "=>", then validates the count matches.
+    def parse_word_translations(content, words)
+      translations = content.lines
+        .map(&:strip)
+        .reject(&:blank?)
+        .select { |line| line.include?("=>") }
+        .map { |line| line.split("=>", 2).last.to_s.strip }
 
-    def validate_input_no_brackets!(block)
-      block.each do |line|
-        if line.include?("[") || line.include?("]")
-          raise "Input line contains square brackets: #{line.strip}"
-        end
-      end
-    end
-
-    def validate_one_token_per_line!(content)
-      content_blocks = content.strip.split(/\n\s*\n/)
-      content_blocks.each do |output_block|
-        source_side = output_block.split("=>", 2).first
-        match_count = source_side.scan(/\[.*?\]/).count
-        if match_count != 1
-          raise "Expected exactly 1 [...] on source side, got #{match_count} in: #{output_block.strip}"
-        end
-      end
-    end
-
-    def strip_model_header(content, first_input_line)
-      first_input_without_brackets = first_input_line.strip.gsub(/\[|\]/, "").sub(/\s*#.*$/, "")
-
-      content_lines = content.lines
-      first_valid_line_index = content_lines.find_index do |line|
-        stripped = line.strip.gsub(/\[|\]/, "").sub(/\s*#.*$/, "")
-        stripped == first_input_without_brackets
+      if translations.size != words.size
+        raise "Word translation count mismatch: got #{translations.size}, expected #{words.size}"
       end
 
-      if first_valid_line_index
-        content_lines[first_valid_line_index..].join
-      else
-        content
-      end
+      translations
     end
   end
 end

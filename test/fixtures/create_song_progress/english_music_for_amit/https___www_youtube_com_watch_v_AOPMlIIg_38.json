@@ -1,0 +1,506 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=AOPMlIIg_38",
+  "clip_language": "English",
+  "translation_language": "Hebrew",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "You're picture perfect blue",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:17.40",
+        "text_l2": "אתה כחול מושלם כמו תמונה"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "Sunbathing on the moon",
+        "timestamp": "00:17.40",
+        "timestamp_end": "00:20.00",
+        "text_l2": "משתזף על הירח"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "Stars shining as your bones illuminate",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:24.80",
+        "text_l2": "כוכבים זורחים כשהעצמות שלך מאירות"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "First kiss just like a drug",
+        "timestamp": "00:25.20",
+        "timestamp_end": "00:27.80",
+        "text_l2": "נשיקה ראשונה כמו סם"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "Under your influence",
+        "timestamp": "00:27.80",
+        "timestamp_end": "00:30.40",
+        "text_l2": "תחת ההשפעה שלך"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "You take me over,",
+        "timestamp": "00:30.40",
+        "timestamp_end": "00:31.80",
+        "text_l2": "אתה משתלט עלי,"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "you're the magic in my veins",
+        "timestamp": "00:31.80",
+        "timestamp_end": "00:33.40",
+        "text_l2": "אתה הקסם שבוורידים שלי"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "This must be love",
+        "timestamp": "00:33.40",
+        "timestamp_end": "00:35.60",
+        "text_l2": "זו חייבת להיות אהבה"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "Boom clap",
+        "timestamp": "00:35.60",
+        "timestamp_end": "00:36.80",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "The sound of my heart",
+        "timestamp": "00:36.80",
+        "timestamp_end": "00:38.20",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "00:38.20",
+        "timestamp_end": "00:40.80",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "Boom clap",
+        "timestamp": "00:40.80",
+        "timestamp_end": "00:42.00",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "You make me feel good",
+        "timestamp": "00:42.00",
+        "timestamp_end": "00:43.40",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "00:43.40",
+        "timestamp_end": "00:46.00",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "Boom clap",
+        "timestamp": "00:46.00",
+        "timestamp_end": "00:47.20",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "The sound of my heart",
+        "timestamp": "00:47.20",
+        "timestamp_end": "00:48.60",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "00:48.60",
+        "timestamp_end": "00:51.20",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "Boom clap",
+        "timestamp": "00:51.20",
+        "timestamp_end": "00:52.40",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "You make me feel good",
+        "timestamp": "00:52.40",
+        "timestamp_end": "00:53.80",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "00:53.80",
+        "timestamp_end": "00:56.40",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "No silver or no gold",
+        "timestamp": "01:02.00",
+        "timestamp_end": "01:04.60",
+        "text_l2": "לא כסף ולא זהב"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "Could dress me up so good",
+        "timestamp": "01:04.60",
+        "timestamp_end": "01:07.20",
+        "text_l2": "ילבישו אותי כל כך טוב"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "You're the glitter",
+        "timestamp": "01:07.20",
+        "timestamp_end": "01:09.00",
+        "text_l2": "אתה הברק"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "in the darkness of my world",
+        "timestamp": "01:09.00",
+        "timestamp_end": "01:12.40",
+        "text_l2": "בחושך של עולמי"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "Just tell me what to do",
+        "timestamp": "01:12.40",
+        "timestamp_end": "01:15.00",
+        "text_l2": "רק תגיד לי מה לעשות"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "I'll fall right into you",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:17.60",
+        "text_l2": "אני אפול ישר אליך"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "Going under, cast a spell,",
+        "timestamp": "01:17.60",
+        "timestamp_end": "01:19.40",
+        "text_l2": "נכנע, מטיל כישוף,"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "just say the word",
+        "timestamp": "01:19.40",
+        "timestamp_end": "01:20.60",
+        "text_l2": "רק תגיד את המילה"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "I feel your love",
+        "timestamp": "01:20.60",
+        "timestamp_end": "01:22.80",
+        "text_l2": "אני מרגישה את האהבה שלך"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "Boom clap",
+        "timestamp": "01:22.80",
+        "timestamp_end": "01:24.00",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "The sound of my heart",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:25.40",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "01:25.40",
+        "timestamp_end": "01:28.00",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "Boom clap",
+        "timestamp": "01:28.00",
+        "timestamp_end": "01:29.20",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "You make me feel good",
+        "timestamp": "01:29.20",
+        "timestamp_end": "01:30.60",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "01:30.60",
+        "timestamp_end": "01:33.20",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "Boom clap",
+        "timestamp": "01:33.20",
+        "timestamp_end": "01:34.40",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "The sound of my heart",
+        "timestamp": "01:34.40",
+        "timestamp_end": "01:35.80",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "01:35.80",
+        "timestamp_end": "01:38.40",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "Boom clap",
+        "timestamp": "01:38.40",
+        "timestamp_end": "01:39.60",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_40",
+        "text_l1": "You make me feel good",
+        "timestamp": "01:39.60",
+        "timestamp_end": "01:41.00",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_41",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:43.60",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_42",
+        "text_l1": "You are the light and I will follow",
+        "timestamp": "01:45.40",
+        "timestamp_end": "01:50.60",
+        "text_l2": "אתה האור ואני אלך אחריך"
+      },
+      {
+        "id": "phrase_43",
+        "text_l1": "You let me lose my shadow",
+        "timestamp": "01:50.60",
+        "timestamp_end": "01:55.80",
+        "text_l2": "אתה נותן לי לאבד את הצל שלי"
+      },
+      {
+        "id": "phrase_44",
+        "text_l1": "You are the sun, the glowing halo",
+        "timestamp": "01:55.80",
+        "timestamp_end": "02:01.00",
+        "text_l2": "אתה השמש, ההילה הזוהרת"
+      },
+      {
+        "id": "phrase_45",
+        "text_l1": "And you keep burning me up",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:02.80",
+        "text_l2": "ואתה ממשיך לשרוף אותי"
+      },
+      {
+        "id": "phrase_46",
+        "text_l1": "with all of your love",
+        "timestamp": "02:02.80",
+        "timestamp_end": "02:04.40",
+        "text_l2": "עם כל האהבה שלך"
+      },
+      {
+        "id": "phrase_47",
+        "text_l1": "Boom clap",
+        "timestamp": "02:04.40",
+        "timestamp_end": "02:05.60",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_48",
+        "text_l1": "The sound of my heart",
+        "timestamp": "02:05.60",
+        "timestamp_end": "02:07.00",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_49",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "02:07.00",
+        "timestamp_end": "02:09.60",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_50",
+        "text_l1": "Boom clap",
+        "timestamp": "02:09.60",
+        "timestamp_end": "02:10.80",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_51",
+        "text_l1": "You make me feel good",
+        "timestamp": "02:10.80",
+        "timestamp_end": "02:12.20",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_52",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "02:12.20",
+        "timestamp_end": "02:14.80",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_53",
+        "text_l1": "Boom clap",
+        "timestamp": "02:14.80",
+        "timestamp_end": "02:16.00",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_54",
+        "text_l1": "The sound of my heart",
+        "timestamp": "02:16.00",
+        "timestamp_end": "02:17.40",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_55",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "02:17.40",
+        "timestamp_end": "02:20.00",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_56",
+        "text_l1": "Boom clap",
+        "timestamp": "02:20.00",
+        "timestamp_end": "02:21.20",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_57",
+        "text_l1": "You make me feel good",
+        "timestamp": "02:21.20",
+        "timestamp_end": "02:22.60",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_58",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "02:22.60",
+        "timestamp_end": "02:25.20",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_59",
+        "text_l1": "Boom clap",
+        "timestamp": "02:25.20",
+        "timestamp_end": "02:26.40",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_60",
+        "text_l1": "The sound of my heart",
+        "timestamp": "02:26.40",
+        "timestamp_end": "02:27.80",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_61",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "02:27.80",
+        "timestamp_end": "02:30.40",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_62",
+        "text_l1": "Boom clap",
+        "timestamp": "02:30.40",
+        "timestamp_end": "02:31.60",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_63",
+        "text_l1": "You make me feel good",
+        "timestamp": "02:31.60",
+        "timestamp_end": "02:33.00",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_64",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:35.60",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      },
+      {
+        "id": "phrase_65",
+        "text_l1": "Boom clap",
+        "timestamp": "02:35.60",
+        "timestamp_end": "02:36.80",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_66",
+        "text_l1": "The sound of my heart",
+        "timestamp": "02:36.80",
+        "timestamp_end": "02:38.20",
+        "text_l2": "הצליל של הלב שלי"
+      },
+      {
+        "id": "phrase_67",
+        "text_l1": "The beat goes on and on and on and on and",
+        "timestamp": "02:38.20",
+        "timestamp_end": "02:40.80",
+        "text_l2": "הקצב נמשך שוב ושוב ושוב ושוב ו"
+      },
+      {
+        "id": "phrase_68",
+        "text_l1": "Boom clap",
+        "timestamp": "02:40.80",
+        "timestamp_end": "02:42.00",
+        "text_l2": "בום קלאפ"
+      },
+      {
+        "id": "phrase_69",
+        "text_l1": "You make me feel good",
+        "timestamp": "02:42.00",
+        "timestamp_end": "02:43.40",
+        "text_l2": "אתה גורם לי להרגיש טוב"
+      },
+      {
+        "id": "phrase_70",
+        "text_l1": "Come on to me, come on to me now",
+        "timestamp": "02:43.40",
+        "timestamp_end": "02:46.00",
+        "text_l2": "בוא אלי, בוא אלי עכשיו"
+      }
+    ],
+    "phrases_with_token_translations": "[You're] picture perfect blue => [אתה] כחול מושלם כמו תמונה\nYou're [picture] perfect blue => אתה כחול מושלם כמו [תמונה]\nYou're picture [perfect] blue => אתה כחול [מושלם] כמו תמונה\nYou're picture perfect [blue] => אתה [כחול] מושלם כמו תמונה\n\n[Sunbathing] on the moon => [משתזף] על הירח\nSunbathing [on] the moon => משתזף [על] הירח\nSunbathing on [the moon] => משתזף על [הירח]\n\n[Stars] shining as your bones illuminate => [כוכבים] זורחים כשהעצמות שלך מאירות\nStars [shining] as your bones illuminate => כוכבים [זורחים] כשהעצמות שלך מאירות\nStars shining [as] your bones illuminate => כש\nStars shining as [your] bones illuminate => כוכבים זורחים כשהעצמות [שלך] מאירות\nStars shining as your [bones] illuminate => עצמות\nStars shining as your bones [illuminate] => כוכבים זורחים כשהעצמות שלך [מאירות]\n\n[First] kiss just like a drug => נשיקה [ראשונה] כמו סם\nFirst [kiss] just like a drug => [נשיקה] ראשונה כמו סם\nFirst kiss [just like] a drug => נשיקה ראשונה [כמו] סם\nFirst kiss just like [a drug] => נשיקה ראשונה כמו [סם]\n\n[Under] your influence => [תחת] ההשפעה שלך\nUnder [your] influence => תחת ההשפעה [שלך]\nUnder your [influence] => תחת [ההשפעה] שלך\n\n[You] take me over, => [אתה] משתלט עלי,\nYou [take over] me, => אתה [משתלט] עלי,\nYou take [me] over, => אתה משתלט [עלי],\n\n[you're] the magic in my veins => [אתה] הקסם שבוורידים שלי\nyou're [the magic] in my veins => אתה [הקסם] שבוורידים שלי\nyou're the magic [in my veins] => אתה הקסם [שבוורידים שלי]\n\n[This] must be love => [זו] חייבת להיות אהבה\nThis [must] be love => זו [חייבת] להיות אהבה\nThis must [be] love => זו חייבת [להיות] אהבה\nThis must be [love] => זו חייבת להיות [אהבה]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on and on [and on] and on and on and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on and on [and on] and on and on and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on and on [and on] and on and => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come on] to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come on] to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [on] and on and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on on [and on] and on and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on [and on] and on and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on [and on] and => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come on] to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come on] to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[No] silver or no gold => [לא] כסף ולא זהב\nNo [silver] or no gold => לא [כסף] ולא זהב\nNo silver [or] no gold => ו\nNo silver or [no] gold => לא\nNo silver or no [gold] => לא כסף ולא [זהב]\n\nCould [dress up] me so good => [ילבישו] אותי כל כך טוב\nCould dress up [me] so good => ילבישו [אותי] כל כך טוב\nCould dress up me [so] good => ילבישו אותי [כל כך] טוב\nCould dress up me so [good] => ילבישו אותי כל כך [טוב]\n\n[You're] the glitter => [אתה] הברק\nYou're [the glitter] => אתה [הברק]\n\n[in] the darkness of my world => ב\nin the [darkness] of my world => חושך\nin the darkness [of] my world => בחושך [של] עולמי\nin the darkness of [my world] => בחושך של [עולמי]\n\n[Just] tell me what to do => [רק] תגיד לי מה לעשות\nJust [tell] me what to do => רק [תגיד] לי מה לעשות\nJust tell [me] what to do => רק תגיד [לי] מה לעשות\nJust tell me [what] to do => רק תגיד לי [מה] לעשות\nJust tell me what [to do] => רק תגיד לי מה [לעשות]\n\n[I'll] fall right into you => [אני] אפול ישר אליך\nI'll [fall] right into you => אני [אפול] ישר אליך\nI'll fall [right] into you => אני אפול [ישר] אליך\nI'll fall right [into you] => אני אפול ישר [אליך]\n\n[Going under], cast a spell, => [נכנע], מטיל כישוף,\nGoing under, [cast] a spell, => נכנע, [מטיל] כישוף,\nGoing under, cast a [spell], => נכנע, מטיל [כישוף],\n\n[Just] say the word => [רק] תגיד את המילה\nJust [say] the word => רק [תגיד] את המילה\nJust say [the word] => רק תגיד [המילה]\n\n[I] feel your love => [אני] מרגישה את האהבה שלך\nI [feel] your love => אני [מרגישה] את האהבה שלך\nI feel [your] love => אני מרגישה את האהבה [שלך]\nI feel your [love] => אני מרגישה את [האהבה] שלך\nI feel [your love] => אני מרגישה את [האהבה שלך]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\nThe sound [of my heart] => הצליל [של הלב שלי]\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on and on [and on] and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on and on [and on] and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on and on [and on] => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come] on to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come] on to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on and on [and on] and on and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on and on [and on] and on and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on and on [and on] and => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on and [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come] on to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come] on to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[You] are the light and I will follow => [אתה] האור ואני אלך אחריך\nYou are [the light] and I will follow => אתה [האור] ואני אלך אחריך\nYou are the light [and] I will follow => ו\nYou are the light and [I] will follow => אני\nYou are the light and I [will follow] => אתה האור ואני [אלך אחריך]\n\n[You] let me lose my shadow => [אתה] נותן לי לאבד את הצל שלי\nYou [let] me lose my shadow => אתה [נותן] לי לאבד את הצל שלי\nYou let [me] lose my shadow => אתה נותן [לי] לאבד את הצל שלי\nYou let me [lose] my shadow => אתה נותן לי [לאבד] את הצל שלי\nYou let me lose [my] shadow => אתה נותן לי לאבד את [שלי]\nYou let me lose my [shadow] => אתה נותן לי לאבד את [הצל] שלי\n\n[You] are the sun, the glowing halo => [אתה] השמש, ההילה הזוהרת\nYou are [the sun], the glowing halo => אתה [השמש], ההילה הזוהרת\nYou are the sun, [the glowing halo] => אתה השמש, [ההילה הזוהרת]\nYou are the sun, the [glowing] halo => אתה השמש, [הזוהרת]\nYou are the sun, the glowing [halo] => אתה השמש, [ההילה] הזוהרת\n\n[And you] keep burning me up => [ואתה] ממשיך לשרוף אותי\nAnd you [keep] burning me up => ואתה [ממשיך] לשרוף אותי\nAnd you keep [burning] me up => ואתה ממשיך [לשרוף] אותי\nAnd you keep burning [me] up => ואתה ממשיך לשרוף [אותי]\n\n[with] all of your love => [עם] כל האהבה שלך\nwith [all] of your love => עם [כל] האהבה שלך\nwith all of [your] love => עם כל האהבה [שלך]\nwith all of your [love] => עם כל [האהבה] שלך\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on and on [and on] and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on and on [and on] and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on and [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come] on to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come] on to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes] on and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes [on] and on and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and => הקצב נמשך שוב [ושוב] ושוב ושוב ו\nThe beat goes on and on [and on] and on and => הקצב נמשך שוב ושוב [ושוב] ושוב ו\nThe beat goes on and on and on [and on] and => הקצב נמשך שוב ושוב ושוב [ושוב] ו\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come] on to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on to me, [come] on to me now => בוא אלי, [בוא] אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my] heart => הצליל של הלב [שלי]\nThe sound of my [heart] => הצליל של [הלב] שלי\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and => שוב\nThe beat goes on and on [and on] and on and => ושוב\nThe beat goes on and on and on [and on] and => ושוב\nThe beat goes on and on and on and on [and on] => ושוב\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come on] to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come on] to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[The sound] of my heart => [הצליל] של הלב שלי\nThe sound [of] my heart => הצליל [של] הלב שלי\nThe sound of [my heart] => הצליל של [הלב שלי]\n\n[The beat] goes on and on and on and on and => [הקצב] נמשך שוב ושוב ושוב ושוב ו\nThe beat [goes on] and on and on and on and => הקצב [נמשך] שוב ושוב ושוב ושוב ו\nThe beat goes on [and on] and on and on and => הקצב נמשך [שוב] ושוב ושוב ושוב ו\nThe beat goes on and on [and on] and on and => הקצב נמשך שוב [שוב] ושוב ושוב ו\nThe beat goes on and on and on [and on] and => הקצב נמשך שוב ושוב [שוב] ושוב ו\nThe beat goes on and on and on and on [and] => הקצב נמשך שוב ושוב ושוב [שוב] ו\nThe beat goes on and on and on and on and => הקצב נמשך שוב ושוב ושוב ושוב [ו]\n\n[Boom] clap => [בום] קלאפ\nBoom [clap] => בום [קלאפ]\n\n[You] make me feel good => [אתה] גורם לי להרגיש טוב\nYou [make] me feel good => אתה [גורם] לי להרגיש טוב\nYou make [me] feel good => אתה גורם [לי] להרגיש טוב\nYou make me [feel] good => אתה גורם לי [להרגיש] טוב\nYou make me feel [good] => אתה גורם לי להרגיש [טוב]\n\n[Come on] to me, come on to me now => [בוא] אלי, בוא אלי עכשיו\nCome on [to me], come on to me now => בוא [אלי], בוא אלי עכשיו\nCome on to me, [come on] to me now => בוא אלי, [בוא] אלי עכשיו\nCome on to me, come on [to me] now => בוא אלי, בוא [אלי] עכשיו\nCome on to me, come on to me [now] => בוא אלי, בוא אלי [עכשיו]",
+    "lessons": "# Picture Perfect Blue\n00:14.80 You're picture perfect blue\n00:17.40 Sunbathing on the moon\n00:20.00 Stars shining as your bones illuminate\n00:25.20 First kiss just like a drug\n00:27.80 Under your influence\n00:30.40 You take me over,\n00:31.80 you're the magic in my veins\n00:33.40 This must be love\n\n# Boom Clap (First Chorus)\n00:35.60 Boom clap\n00:36.80 The sound of my heart\n00:38.20 The beat goes on and on and on and on and\n00:40.80 Boom clap\n00:42.00 You make me feel good\n00:43.40 Come on to me, come on to me now\n\n# No Silver or No Gold\n00:46.00 Boom clap\n00:47.20 The sound of my heart\n00:48.60 The beat goes on and on and on and on and\n00:51.20 Boom clap\n00:52.40 You make me feel good\n00:53.80 Come on to me, come on to me now\n01:02.00 No silver or no gold\n01:04.60 Could dress me up so good\n01:07.20 You're the glitter\n\n# Boom Clap (Second Chorus)\n01:09.00 in the darkness of my world\n01:12.40 Just tell me what to do\n01:15.00 I'll fall right into you\n01:17.60 Going under, cast a spell,\n01:19.40 just say the word\n01:20.60 I feel your love\n\n# You Are the Light\n01:22.80 Boom clap\n01:24.00 The sound of my heart\n01:25.40 The beat goes on and on and on and on and\n01:28.00 Boom clap\n01:29.20 You make me feel good\n\n# Boom Clap (Outro Part 1)\n01:30.60 Come on to me, come on to me now\n01:33.20 Boom clap\n01:34.40 The sound of my heart\n01:35.80 The beat goes on and on and on and on and\n01:38.40 Boom clap\n01:39.60 You make me feel good\n\n# Boom Clap (Outro Part 2)\n01:41.00 Come on to me, come on to me now\n01:45.40 You are the light and I will follow\n01:50.60 You let me lose my shadow\n01:55.80 You are the sun, the glowing halo\n02:01.00 And you keep burning me up\n02:02.80 with all of your love\n\n# Boom Clap (Outro Part 3)\n02:04.40 Boom clap\n02:05.60 The sound of my heart\n02:07.00 The beat goes on and on and on and on and\n02:09.60 Boom clap\n02:10.80 You make me feel good\n02:12.20 Come on to me, come on to me now\n\n# Boom Clap (Outro Part 4)\n02:14.80 Boom clap\n02:16.00 The sound of my heart\n02:17.40 The beat goes on and on and on and on and\n02:20.00 Boom clap\n02:21.20 You make me feel good\n02:22.60 Come on to me, come on to me now",
+    "similar_sounds": "You're [pictures] perfect blue\n[No alternatives found for 'sunbathing'] on the moon\nStars shining as your [ones] illuminate\n[firsts] kiss just like a drug\nUnder your [influenza]\n[your] take me over\nyou're the [magi] in my veins\nThis [most] be love\nBoom [clay]\nThe sound of my [heard]\nThe beat goes on [add] on and on and on and\nBoom [clay]\nYou [makes] me feel good\n[code] on to me come on to me now\nBoom [clip]\nThe [round] of my heart\nThe beat goes on and on [any] on and on and\nBoom [cap]\nYou make me [feed] good\n[some] on to me come on to me now\nNo silver or no [good]\n[gould] dress me up so good\nYou're the [glitters]\nin the darkness of my [word]\nJust tell me [chat] to do\nI'll fall [rights] into you\nGoing under [last] a spell\njust [may] the word\nI [fees] your love\n[room] clap\nThe sound of my [heat]\n[they] beat goes on and on and on and on and\nBoom [cap]\nYou [take] me feel good\n[home] on to me come on to me now\n[zoom] clap\nThe [round] of my heart\nThe [best] goes on and on and on and on and\n[book] clap\nYou make me [feed] good\n[code] on to me come on to me now\nYou are the light and I will [follows]\nYou let me [love] my shadow\n[sou] are the sun the glowing halo\n[add] you keep burning me up\nwith [al] of your love\nBoom [clay]\n[he] sound of my heart\nThe beat goes on and on and on [any] on and\nBoom [clay]\n[your] make me feel good\nCome on to me come on to me [not]\nBoom [clip]\nThe [found] of my heart\nThe beat [toes] on and on and on and on and\n[zoom] clap\n[your] make me feel good\nCome on to me come on to me [no]\n[room] clap\nThe [round] of my heart\nThe beat goes on and on [any] on and on and\nBoom [cap]\nYou make me [fees] good\nCome on to me [code] on to me now\n[zoom] clap\nThe [found] of my heart\nThe beat goes on and on and on [an] on and\nBoom [clay]\nYou make me feel [gold]\nCome on to me come on to me [new]"
+  },
+  "created_at": "2026-06-26 20:47:55 UTC",
+  "updated_at": "2026-06-26 20:59:55 UTC",
+  "exported_at": "2026-06-26T20:59:56Z"
+}

@@ -15,6 +15,15 @@ module ActivitiesHelper
     end
   end
 
+  # True when any token in the given phrases carries a start timestamp, meaning
+  # the video player can use karaoke-style per-word highlighting. Older songs
+  # (tokens without timestamps) return false and fall back to line highlighting.
+  def word_timing_enabled?(phrases)
+    Array(phrases).any? do |phrase|
+      phrase.token_translations.any? { |t| t.start_timestamp.present? }
+    end
+  end
+
   def wrap_tokens_in_spans(phrase, attributes_map = {})
     if phrase.token_translations.empty?
       content_tag(:span, phrase.text_l1)
@@ -32,6 +41,8 @@ module ActivitiesHelper
           "l2" => val.translation,
           "last_index" => l1_end,
           "token_id" => val.id,
+          "token_start" => val.start_timestamp_seconds,
+          "token_end" => val.end_timestamp_seconds,
           "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil
         }
         if acc.empty?
@@ -70,6 +81,8 @@ module ActivitiesHelper
                      data: { **(attributes_map[:data] || {}),
                              translation: val["l2"],
                              token_id: val["token_id"],
+                             token_start: val["token_start"],
+                             token_end: val["token_end"],
                              audio_url: audio_url
                      }
                     })

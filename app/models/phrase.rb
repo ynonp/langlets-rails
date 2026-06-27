@@ -1,6 +1,7 @@
 class Phrase < ApplicationRecord
   include AzureTextToSpeech
   include TokenTranslationBlockParser
+  include WordTokenBuilder
   belongs_to :medium
 
   belongs_to :l1, class_name: "Language"

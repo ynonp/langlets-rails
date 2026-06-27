@@ -47,9 +47,18 @@ module CourseBuilder
         phrases = medium.phrases.order(timestamp: :asc)
 
         begin
-          t = TokenTranslationParser.new(progress_ordered_phrases, progress.data["phrases_with_token_translations"])
-          t.call
-          progress_ordered_phrases.each { |p| p.save }
+          if progress.data.dig("phrases", 0, "words").present?
+            # Word-timed pipeline: each word becomes a karaoke-capable token.
+            progress_ordered_phrases.each_with_index do |phrase, idx|
+              phrase.build_word_tokens(progress.data["phrases"][idx]["words"])
+              phrase.save
+            end
+          else
+            # Legacy pipeline: parse the L1<->L2 alignment blocks.
+            t = TokenTranslationParser.new(progress_ordered_phrases, progress.data["phrases_with_token_translations"])
+            t.call
+            progress_ordered_phrases.each { |p| p.save }
+          end
         rescue => e
           Rails.logger.warn "Token translation parsing failed: #{e.message}. Continuing course creation without token translations."
         end

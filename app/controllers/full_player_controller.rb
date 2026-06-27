@@ -18,6 +18,9 @@ class FullPlayerController < ApplicationController
     # Get start and end timestamps from phrases
     @start_timestamp = @phrases.first&.timestamp || "00:00"
     @end_timestamp = @phrases.last&.timestamp || "00:00"
+
+    # Karaoke word highlighting is enabled only when tokens carry per-word timestamps.
+    @word_timing = helpers.word_timing_enabled?(@phrases)
   end
 
   private

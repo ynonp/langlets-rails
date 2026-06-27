@@ -59,6 +59,16 @@ the complete video. It is the most "video-like" of the players:
   [`watch-video-activity`](../app/javascript/controllers/watch_video_activity_controller.js)
   controller listening to `video:progress`).
 
+> **Karaoke word highlighting.** When the song's token translations carry
+> per-word timestamps (the word-timing pipeline), the transcript additionally
+> highlights the single word currently being sung (`.s-token-active`). This is
+> gated by the `word-timing` Stimulus value, which Rails sets from
+> `word_timing_enabled?(phrases)` — true only when at least one token has a
+> `start_timestamp`. Older songs (tokens without timestamps) keep line-only
+> highlighting. Each token span exposes `data-token-start` / `data-token-end`
+> (seconds); `updateWordHighlight` toggles the active class on the span whose
+> window contains the current time.
+
 It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course), and `fullPlayerStartPlayback` / `fullPlayerStopPlayback`
 toggle the visibility of the play button.

@@ -3,10 +3,29 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'startPracticeButton'];
   static classes = ['currentTextLine'];
+  static values = { wordTiming: Boolean };
 
   progress(ev) {
     const {at} = ev.detail
     this.updateSubtitles(at);
+    if (this.wordTimingValue) {
+      this.updateWordHighlight(at);
+    }
+  }
+
+  // Karaoke-style highlight: mark the single token whose [start, end] window
+  // contains the current playback time. Tokens without timing data (older songs)
+  // have no data-token-start attribute and are ignored.
+  updateWordHighlight(currentTime) {
+    if (!this.tokenSpans) {
+      this.tokenSpans = Array.from(this.element.querySelectorAll('[data-token-start]'));
+    }
+
+    for (const span of this.tokenSpans) {
+      const start = Number(span.dataset.tokenStart);
+      const end = Number(span.dataset.tokenEnd);
+      span.classList.toggle('s-token-active', currentTime >= start && currentTime <= end);
+    }
   }
 
   handleVideoStart() {
