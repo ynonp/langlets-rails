@@ -25,7 +25,7 @@ require "uri"
 
 CONFIG_DIR = File.join(Dir.home, ".config", "langlets")
 CONFIG_PATH = File.join(CONFIG_DIR, "config.json")
-DEFAULT_SERVER = "https://www.langlets.app"
+DEFAULT_SERVER = "https://langlets.app"
 SCOPES = "vocabulary:read courses:read"
 LOGIN_TIMEOUT_SECONDS = 300
 PREFERRED_CALLBACK_PORT = 8917

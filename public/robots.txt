@@ -4,4 +4,4 @@ Allow: /
 Disallow: /users/auth/
 Disallow: /azure_token
 
-Sitemap: https://www.langlets.app/sitemap.xml
+Sitemap: https://langlets.app/sitemap.xml

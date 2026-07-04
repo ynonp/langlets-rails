@@ -4,7 +4,7 @@
 
   <% @static_pages.each do |page| %>
     <url>
-      <loc>https://www.langlets.app<%= page[:path] %></loc>
+      <loc>https://langlets.app<%= page[:path] %></loc>
       <priority><%= page[:priority] %></priority>
       <changefreq><%= page[:changefreq] %></changefreq>
     </url>
@@ -12,7 +12,7 @@
 
   <% @courses.each do |course| %>
     <url>
-      <loc>https://www.langlets.app<%= course_path(course) %></loc>
+      <loc>https://langlets.app<%= course_path(course) %></loc>
       <lastmod><%= course.updated_at.iso8601 %></lastmod>
       <priority>0.8</priority>
       <changefreq>weekly</changefreq>
@@ -30,7 +30,7 @@
 
   <% @learning_paths.each do |lp| %>
     <url>
-      <loc>https://www.langlets.app<%= learning_path_path(lp) %></loc>
+      <loc>https://langlets.app<%= learning_path_path(lp) %></loc>
       <lastmod><%= lp.updated_at.iso8601 %></lastmod>
       <priority>0.7</priority>
       <changefreq>weekly</changefreq>

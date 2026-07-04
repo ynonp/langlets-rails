@@ -60,6 +60,6 @@ module SeoHelper
   end
 
   def canonical_url(path)
-    "https://www.langlets.app#{path}"
+    "https://langlets.app#{path}"
   end
 end
