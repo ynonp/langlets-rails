@@ -139,6 +139,10 @@
             <% if current_user.languages_with_saved_words.exists? %>
               <div style="border-top: 1px solid var(--border);"></div>
             <% end %>
+            <%= link_to "Connected Apps", settings_connections_path,
+              class: "block px-4 py-3 s-body hover:opacity-70",
+              style: "color: var(--text);"
+            %>
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,

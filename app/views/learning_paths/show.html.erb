@@ -102,6 +102,9 @@
             <% if current_user.languages_with_saved_words.exists? %>
               <div class="border-t border-slate-700 my-1"></div>
             <% end %>
+            <%= link_to "Connected Apps", settings_connections_path,
+              class: "block px-4 py-3 text-slate-200 hover:bg-slate-700 rounded-lg transition-colors duration-150"
+            %>
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,

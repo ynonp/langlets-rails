@@ -3,6 +3,8 @@ require_relative "../config/environment"
 require "rails/test_help"
 require "json"
 
+Dir[Rails.root.join("test/support/**/*.rb")].sort.each { |file| require file }
+
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers

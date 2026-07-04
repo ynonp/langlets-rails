@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html data-theme="<%= current_theme %>">
+<head>
+  <title><%= content_for(:title) || t('doorkeeper.layouts.application.title') %></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <%= yield :head %>
+
+  <link rel="icon" href="/icon.png" type="image/png">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+</head>
+<body>
+  <%- if flash[:notice].present? %>
+    <div class="s-card" style="padding: 14px 16px; margin: 16px; color: var(--accent);">
+      <%= flash[:notice] %>
+    </div>
+  <% end -%>
+
+  <%= yield %>
+</body>
+</html>

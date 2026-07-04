@@ -1,0 +1,773 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=Hmm40oetbgU",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "أمير علي مالوش مثيل على أبابوا احترموه, يلا بجلوه, وانحنو ليه",
+        "timestamp": "00:01.80",
+        "timestamp_end": "00:12.00",
+        "words": [
+          {
+            "text": "أمير",
+            "timestamp": "00:01.80",
+            "timestamp_end": "00:02.80",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "Amir"
+          },
+          {
+            "text": "علي",
+            "timestamp": "00:02.80",
+            "timestamp_end": "00:03.80",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "Ali"
+          },
+          {
+            "text": "مالوش",
+            "timestamp": "00:03.80",
+            "timestamp_end": "00:04.50",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "he doesn't have"
+          },
+          {
+            "text": "مثيل",
+            "timestamp": "00:04.50",
+            "timestamp_end": "00:05.20",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "equal"
+          },
+          {
+            "text": "على",
+            "timestamp": "00:05.20",
+            "timestamp_end": "00:05.60",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "on"
+          },
+          {
+            "text": "أبابوا",
+            "timestamp": "00:05.60",
+            "timestamp_end": "00:07.50",
+            "l1_start_index": 24,
+            "l1_end_index": 29,
+            "translation": "Ababwa"
+          },
+          {
+            "text": "احترموه,",
+            "timestamp": "00:07.50",
+            "timestamp_end": "00:08.80",
+            "l1_start_index": 31,
+            "l1_end_index": 37,
+            "translation": "respect him"
+          },
+          {
+            "text": "يلا",
+            "timestamp": "00:08.80",
+            "timestamp_end": "00:09.20",
+            "l1_start_index": 40,
+            "l1_end_index": 42,
+            "translation": "come on"
+          },
+          {
+            "text": "بجلوه,",
+            "timestamp": "00:09.20",
+            "timestamp_end": "00:10.20",
+            "l1_start_index": 44,
+            "l1_end_index": 48,
+            "translation": "glorify him"
+          },
+          {
+            "text": "وانحنو",
+            "timestamp": "00:10.20",
+            "timestamp_end": "00:11.00",
+            "l1_start_index": 51,
+            "l1_end_index": 56,
+            "translation": "and bow"
+          },
+          {
+            "text": "ليه",
+            "timestamp": "00:11.00",
+            "timestamp_end": "00:12.00",
+            "l1_start_index": 58,
+            "l1_end_index": 60,
+            "translation": "to him"
+          }
+        ],
+        "text_l2": "Prince Ali has no equal, by my life respect him, come on glorify him, and bow to him."
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "ده أمير مش عايزة كلام يستاهل تعظيم سلام وتعالوا شوفوا الأبهة كلها فيه",
+        "timestamp": "00:13.00",
+        "timestamp_end": "00:22.50",
+        "words": [
+          {
+            "text": "ده",
+            "timestamp": "00:13.00",
+            "timestamp_end": "00:13.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "أمير",
+            "timestamp": "00:13.50",
+            "timestamp_end": "00:14.20",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "prince"
+          },
+          {
+            "text": "مش",
+            "timestamp": "00:14.20",
+            "timestamp_end": "00:14.60",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "not"
+          },
+          {
+            "text": "عايزة",
+            "timestamp": "00:14.60",
+            "timestamp_end": "00:15.00",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "needs"
+          },
+          {
+            "text": "كلام",
+            "timestamp": "00:15.00",
+            "timestamp_end": "00:16.00",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "words"
+          },
+          {
+            "text": "يستاهل",
+            "timestamp": "00:16.00",
+            "timestamp_end": "00:17.00",
+            "l1_start_index": 22,
+            "l1_end_index": 27,
+            "translation": "deserves"
+          },
+          {
+            "text": "تعظيم",
+            "timestamp": "00:17.00",
+            "timestamp_end": "00:17.80",
+            "l1_start_index": 29,
+            "l1_end_index": 33,
+            "translation": "glorification"
+          },
+          {
+            "text": "سلام",
+            "timestamp": "00:17.80",
+            "timestamp_end": "00:18.80",
+            "l1_start_index": 35,
+            "l1_end_index": 38,
+            "translation": "salute"
+          },
+          {
+            "text": "وتعالوا",
+            "timestamp": "00:18.80",
+            "timestamp_end": "00:19.80",
+            "l1_start_index": 40,
+            "l1_end_index": 46,
+            "translation": "and come"
+          },
+          {
+            "text": "شوفوا",
+            "timestamp": "00:19.80",
+            "timestamp_end": "00:20.20",
+            "l1_start_index": 48,
+            "l1_end_index": 52,
+            "translation": "see"
+          },
+          {
+            "text": "الأبهة",
+            "timestamp": "00:20.20",
+            "timestamp_end": "00:21.00",
+            "l1_start_index": 54,
+            "l1_end_index": 59,
+            "translation": "splendor"
+          },
+          {
+            "text": "كلها",
+            "timestamp": "00:21.00",
+            "timestamp_end": "00:21.80",
+            "l1_start_index": 61,
+            "l1_end_index": 64,
+            "translation": "all of it"
+          },
+          {
+            "text": "فيه",
+            "timestamp": "00:21.80",
+            "timestamp_end": "00:22.50",
+            "l1_start_index": 66,
+            "l1_end_index": 68,
+            "translation": "in him"
+          }
+        ],
+        "text_l2": "This is a prince, not wanting talk, deserves glorification greeting, and come see the grandeur all in him."
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "ده أشجع من الشجعان ويقول ابعتولي كمان, ده أمير علي",
+        "timestamp": "00:34.00",
+        "timestamp_end": "00:43.50",
+        "words": [
+          {
+            "text": "ده",
+            "timestamp": "00:34.00",
+            "timestamp_end": "00:34.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "أشجع",
+            "timestamp": "00:34.80",
+            "timestamp_end": "00:35.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "braver"
+          },
+          {
+            "text": "من",
+            "timestamp": "00:35.50",
+            "timestamp_end": "00:36.00",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "than"
+          },
+          {
+            "text": "الشجعان",
+            "timestamp": "00:36.00",
+            "timestamp_end": "00:37.50",
+            "l1_start_index": 11,
+            "l1_end_index": 17,
+            "translation": "the brave"
+          },
+          {
+            "text": "ويقول",
+            "timestamp": "00:39.00",
+            "timestamp_end": "00:40.00",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "and he says"
+          },
+          {
+            "text": "ابعتولي",
+            "timestamp": "00:40.00",
+            "timestamp_end": "00:41.00",
+            "l1_start_index": 25,
+            "l1_end_index": 31,
+            "translation": "send me"
+          },
+          {
+            "text": "كمان,",
+            "timestamp": "00:41.00",
+            "timestamp_end": "00:42.00",
+            "l1_start_index": 33,
+            "l1_end_index": 36,
+            "translation": "more"
+          },
+          {
+            "text": "ده",
+            "timestamp": "00:42.00",
+            "timestamp_end": "00:42.50",
+            "l1_start_index": 39,
+            "l1_end_index": 40,
+            "translation": "this"
+          },
+          {
+            "text": "أمير",
+            "timestamp": "00:42.50",
+            "timestamp_end": "00:43.00",
+            "l1_start_index": 42,
+            "l1_end_index": 45,
+            "translation": "Prince"
+          },
+          {
+            "text": "علي",
+            "timestamp": "00:43.00",
+            "timestamp_end": "00:43.50",
+            "l1_start_index": 47,
+            "l1_end_index": 49,
+            "translation": "Ali"
+          }
+        ],
+        "text_l2": "This is braver than the brave and says send me more, this is Prince Ali."
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "مش بذمة حلوين؟ بالك إيه، ريشهم يهبل",
+        "timestamp": "00:48.00",
+        "timestamp_end": "00:54.50",
+        "words": [
+          {
+            "text": "مش",
+            "timestamp": "00:48.00",
+            "timestamp_end": "00:48.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "not"
+          },
+          {
+            "text": "بذمة",
+            "timestamp": "00:48.50",
+            "timestamp_end": "00:49.20",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "honestly"
+          },
+          {
+            "text": "حلوين؟",
+            "timestamp": "00:49.20",
+            "timestamp_end": "00:50.00",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "beautiful?"
+          },
+          {
+            "text": "بالك",
+            "timestamp": "00:50.50",
+            "timestamp_end": "00:51.50",
+            "l1_start_index": 15,
+            "l1_end_index": 18,
+            "translation": "what do you think"
+          },
+          {
+            "text": "إيه،",
+            "timestamp": "00:51.50",
+            "timestamp_end": "00:52.50",
+            "l1_start_index": 20,
+            "l1_end_index": 22,
+            "translation": "what"
+          },
+          {
+            "text": "ريشهم",
+            "timestamp": "00:53.00",
+            "timestamp_end": "00:54.00",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "their feathers"
+          },
+          {
+            "text": "يهبل",
+            "timestamp": "00:54.00",
+            "timestamp_end": "00:54.50",
+            "l1_start_index": 31,
+            "l1_end_index": 34,
+            "translation": "amazes"
+          }
+        ],
+        "text_l2": "Aren't they handsome by conscience? What's in your mind, their feathers dazzle."
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "أمير علي شكله جميل على أبابوا ماشاءالله, قوم يلا وانحني ليه",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:15.50",
+        "words": [
+          {
+            "text": "أمير",
+            "timestamp": "01:06.00",
+            "timestamp_end": "01:07.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "Prince"
+          },
+          {
+            "text": "علي",
+            "timestamp": "01:07.00",
+            "timestamp_end": "01:07.80",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "Ali"
+          },
+          {
+            "text": "شكله",
+            "timestamp": "01:07.80",
+            "timestamp_end": "01:08.50",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "his appearance"
+          },
+          {
+            "text": "جميل",
+            "timestamp": "01:08.50",
+            "timestamp_end": "01:09.20",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "beautiful"
+          },
+          {
+            "text": "على",
+            "timestamp": "01:09.20",
+            "timestamp_end": "01:09.60",
+            "l1_start_index": 19,
+            "l1_end_index": 21,
+            "translation": "on"
+          },
+          {
+            "text": "أبابوا",
+            "timestamp": "01:09.60",
+            "timestamp_end": "01:11.00",
+            "l1_start_index": 23,
+            "l1_end_index": 28,
+            "translation": "Ababwa"
+          },
+          {
+            "text": "ماشاءالله,",
+            "timestamp": "01:11.50",
+            "timestamp_end": "01:12.80",
+            "l1_start_index": 30,
+            "l1_end_index": 38,
+            "translation": "Mashallah"
+          },
+          {
+            "text": "قوم",
+            "timestamp": "01:12.80",
+            "timestamp_end": "01:13.20",
+            "l1_start_index": 41,
+            "l1_end_index": 43,
+            "translation": "stand up"
+          },
+          {
+            "text": "يلا",
+            "timestamp": "01:13.20",
+            "timestamp_end": "01:14.00",
+            "l1_start_index": 45,
+            "l1_end_index": 47,
+            "translation": "come on"
+          },
+          {
+            "text": "وانحني",
+            "timestamp": "01:14.00",
+            "timestamp_end": "01:14.80",
+            "l1_start_index": 49,
+            "l1_end_index": 54,
+            "translation": "and bow"
+          },
+          {
+            "text": "ليه",
+            "timestamp": "01:14.80",
+            "timestamp_end": "01:15.50",
+            "l1_start_index": 56,
+            "l1_end_index": 58,
+            "translation": "to him"
+          }
+        ],
+        "text_l2": "Prince Ali, his look is beautiful, by my life God willed, stand up come and bow to him."
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "رايح لقصر السلطان راكبله فيل مش حصان يلا اتفضل وبحلق لأمير علي",
+        "timestamp": "01:16.50",
+        "timestamp_end": "01:25.50",
+        "words": [
+          {
+            "text": "رايح",
+            "timestamp": "01:16.50",
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "going"
+          },
+          {
+            "text": "لقصر",
+            "timestamp": "01:17.50",
+            "timestamp_end": "01:18.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "to the palace"
+          },
+          {
+            "text": "السلطان",
+            "timestamp": "01:18.00",
+            "timestamp_end": "01:19.20",
+            "l1_start_index": 10,
+            "l1_end_index": 16,
+            "translation": "the sultan"
+          },
+          {
+            "text": "راكبله",
+            "timestamp": "01:19.20",
+            "timestamp_end": "01:20.00",
+            "l1_start_index": 18,
+            "l1_end_index": 23,
+            "translation": "riding"
+          },
+          {
+            "text": "فيل",
+            "timestamp": "01:20.00",
+            "timestamp_end": "01:20.50",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "elephant"
+          },
+          {
+            "text": "مش",
+            "timestamp": "01:20.50",
+            "timestamp_end": "01:21.00",
+            "l1_start_index": 29,
+            "l1_end_index": 30,
+            "translation": "not"
+          },
+          {
+            "text": "حصان",
+            "timestamp": "01:21.00",
+            "timestamp_end": "01:22.00",
+            "l1_start_index": 32,
+            "l1_end_index": 35,
+            "translation": "horse"
+          },
+          {
+            "text": "يلا",
+            "timestamp": "01:22.00",
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 37,
+            "l1_end_index": 39,
+            "translation": "come on"
+          },
+          {
+            "text": "اتفضل",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:23.20",
+            "l1_start_index": 41,
+            "l1_end_index": 45,
+            "translation": "please"
+          },
+          {
+            "text": "وبحلق",
+            "timestamp": "01:23.20",
+            "timestamp_end": "01:24.00",
+            "l1_start_index": 47,
+            "l1_end_index": 51,
+            "translation": "and I shave"
+          },
+          {
+            "text": "لأمير",
+            "timestamp": "01:24.00",
+            "timestamp_end": "01:24.80",
+            "l1_start_index": 53,
+            "l1_end_index": 57,
+            "translation": "for Prince"
+          },
+          {
+            "text": "علي",
+            "timestamp": "01:24.80",
+            "timestamp_end": "01:25.50",
+            "l1_start_index": 59,
+            "l1_end_index": 61,
+            "translation": "Ali"
+          }
+        ],
+        "text_l2": "Going to the Sultan's palace, riding an elephant not a horse, come on welcome and gaze at Prince Ali."
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "الأمير علي, اهو ده الحبيب علي أبابوا للأميرة ده هيكون أحلى خطيب",
+        "timestamp": "01:50.00",
+        "timestamp_end": "02:01.00",
+        "words": [
+          {
+            "text": "الأمير",
+            "timestamp": "01:50.00",
+            "timestamp_end": "01:51.00",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "the prince"
+          },
+          {
+            "text": "علي,",
+            "timestamp": "01:51.00",
+            "timestamp_end": "01:52.00",
+            "l1_start_index": 7,
+            "l1_end_index": 9,
+            "translation": "Ali"
+          },
+          {
+            "text": "اهو",
+            "timestamp": "01:52.00",
+            "timestamp_end": "01:52.80",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "here he is"
+          },
+          {
+            "text": "ده",
+            "timestamp": "01:52.80",
+            "timestamp_end": "01:53.20",
+            "l1_start_index": 16,
+            "l1_end_index": 17,
+            "translation": "this"
+          },
+          {
+            "text": "الحبيب",
+            "timestamp": "01:53.20",
+            "timestamp_end": "01:54.00",
+            "l1_start_index": 19,
+            "l1_end_index": 24,
+            "translation": "the beloved"
+          },
+          {
+            "text": "علي",
+            "timestamp": "01:54.00",
+            "timestamp_end": "01:54.50",
+            "l1_start_index": 26,
+            "l1_end_index": 28,
+            "translation": "Ali"
+          },
+          {
+            "text": "أبابوا",
+            "timestamp": "01:54.50",
+            "timestamp_end": "01:56.00",
+            "l1_start_index": 30,
+            "l1_end_index": 35,
+            "translation": "Ababwa"
+          },
+          {
+            "text": "للأميرة",
+            "timestamp": "01:57.00",
+            "timestamp_end": "01:58.20",
+            "l1_start_index": 37,
+            "l1_end_index": 43,
+            "translation": "for the princess"
+          },
+          {
+            "text": "ده",
+            "timestamp": "01:58.20",
+            "timestamp_end": "01:58.80",
+            "l1_start_index": 45,
+            "l1_end_index": 46,
+            "translation": "this"
+          },
+          {
+            "text": "هيكون",
+            "timestamp": "01:58.80",
+            "timestamp_end": "01:59.50",
+            "l1_start_index": 48,
+            "l1_end_index": 52,
+            "translation": "will be"
+          },
+          {
+            "text": "أحلى",
+            "timestamp": "01:59.50",
+            "timestamp_end": "02:00.20",
+            "l1_start_index": 54,
+            "l1_end_index": 57,
+            "translation": "sweetest"
+          },
+          {
+            "text": "خطيب",
+            "timestamp": "02:00.20",
+            "timestamp_end": "02:01.00",
+            "l1_start_index": 59,
+            "l1_end_index": 62,
+            "translation": "fiancé"
+          }
+        ],
+        "text_l2": "The Prince Ali, here he is the beloved, by my life to the princess, this will be the sweetest fiancé."
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "علشان كده اهو يا ناس عدا كل المسافات",
+        "timestamp": "02:02.00",
+        "timestamp_end": "02:08.00",
+        "words": [
+          {
+            "text": "علشان",
+            "timestamp": "02:02.00",
+            "timestamp_end": "02:03.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "because"
+          },
+          {
+            "text": "كده",
+            "timestamp": "02:03.00",
+            "timestamp_end": "02:03.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "so"
+          },
+          {
+            "text": "اهو",
+            "timestamp": "02:03.50",
+            "timestamp_end": "02:04.00",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "here he is"
+          },
+          {
+            "text": "يا",
+            "timestamp": "02:04.00",
+            "timestamp_end": "02:04.50",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "O"
+          },
+          {
+            "text": "ناس",
+            "timestamp": "02:04.50",
+            "timestamp_end": "02:05.20",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "people"
+          },
+          {
+            "text": "عدا",
+            "timestamp": "02:05.20",
+            "timestamp_end": "02:06.00",
+            "l1_start_index": 21,
+            "l1_end_index": 23,
+            "translation": "crossed"
+          },
+          {
+            "text": "كل",
+            "timestamp": "02:06.00",
+            "timestamp_end": "02:06.50",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "all"
+          },
+          {
+            "text": "المسافات",
+            "timestamp": "02:06.50",
+            "timestamp_end": "02:08.00",
+            "l1_start_index": 28,
+            "l1_end_index": 35,
+            "translation": "the distances"
+          }
+        ],
+        "text_l2": "Because of this, here he is, oh people, passed all the distances."
+      }
+    ],
+    "lessons": "# مديح الأمير علي (الجزء الأول)\n00:01.80 أمير علي مالوش مثيل على أبابوا احترموه, يلا بجلوه, وانحنو ليه\n00:13.00 ده أمير مش عايزة كلام يستاهل تعظيم سلام وتعالوا شوفوا الأبهة كلها فيه\n00:34.00 ده أشجع من الشجعان ويقول ابعتولي كمان, ده أمير علي\n00:48.00 مش بذمة حلوين؟ بالك إيه، ريشهم يهبل\n\n# مديح الأمير علي (الجزء الثاني)\n01:06.00 أمير علي شكله جميل على أبابوا ماشاءالله, قوم يلا وانحني ليه\n01:16.50 رايح لقصر السلطان راكبله فيل مش حصان يلا اتفضل وبحلق لأمير علي\n01:50.00 الأمير علي, اهو ده الحبيب علي أبابوا للأميرة ده هيكون أحلى خطيب\n02:02.00 علشان كده اهو يا ناس عدا كل المسافات",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "مديح الأمير علي (الجزء الأول)",
+        "score": 5,
+        "reason": "Introduces a wide range of useful vocabulary and expressions like 'مالوش مثيل', 'احترموه', 'أشجع من الشجعان', and 'ريشهم يهبل'."
+      },
+      {
+        "index": 2,
+        "title": "مديح الأمير علي (الجزء الثاني)",
+        "score": 5,
+        "reason": "Continues with new, meaningful phrases such as 'شكله جميل', 'راكبله فيل مش حصان', and 'أحلى خطيب', offering further learning value."
+      }
+    ],
+    "similar_sounds": "أمير علي مالوش مثيل على [أرادوا] احترموه يلا بجلوه وانحنو ليه\nده أمير مش عايزة كلام يستاهل تعظيم سلام وتعالوا شوفوا الأبهة [لها] فيه\nده أشجع من الشجعان ويقول ابعتولي كمان ده [أمي] علي\nمش بذمة حلوين بالك إيه ريشهم [يهبط]\nأمير علي شكله جميل على أبابوا ماشاءالله قوم يلا وانحني [ليس]\nرايح لقصر السلطان راكبله فيل مش حصان يلا [افضل] وبحلق لأمير علي\nالأمير علي [وهو] ده الحبيب علي أبابوا للأميرة ده هيكون أحلى خطيب\nعلشان كده اهو يا [نفس] عدا كل المسافات"
+  },
+  "created_at": "2026-06-28 18:33:51 UTC",
+  "updated_at": "2026-06-28 18:36:07 UTC",
+  "exported_at": "2026-06-28T18:36:07Z"
+}

@@ -1,0 +1,55 @@
+<% content_for :head do %>
+  <title>Authorize <%= @pre_auth.client.name %> - Langlets</title>
+<% end %>
+
+<div class="sprout min-h-screen flex items-center justify-center" style="--hue: 150;">
+  <div class="s-card w-full max-w-md mx-4" style="padding: 32px;">
+    <h1 class="text-xl font-bold mb-4" style="color: var(--text);">
+      Connect <span style="color: var(--accent);"><%= @pre_auth.client.name %></span>
+    </h1>
+
+    <p class="s-body mb-4" style="color: var(--text);">
+      <strong><%= @pre_auth.client.name %></strong> is asking for access to your Langlets account.
+    </p>
+
+    <% if @pre_auth.scopes.count > 0 %>
+      <div id="oauth-permissions" class="mb-6">
+        <p class="s-body text-sm mb-2" style="color: var(--text); opacity: 0.8;">It will be able to:</p>
+        <ul class="s-body text-sm space-y-1" style="color: var(--text);">
+          <% @pre_auth.scopes.each do |scope| %>
+            <li>&bull; <%= t scope, scope: [ :doorkeeper, :scopes ], default: scope %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="actions flex gap-3">
+      <%= form_tag oauth_authorization_path, method: :post, class: "flex-1" do %>
+        <%= hidden_field_tag :client_id, @pre_auth.client.uid, id: nil %>
+        <%= hidden_field_tag :redirect_uri, @pre_auth.redirect_uri, id: nil %>
+        <%= hidden_field_tag :state, @pre_auth.state, id: nil %>
+        <%= hidden_field_tag :response_type, @pre_auth.response_type, id: nil %>
+        <%= hidden_field_tag :response_mode, @pre_auth.response_mode, id: nil %>
+        <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
+        <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
+        <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
+        <%= submit_tag t("doorkeeper.authorizations.buttons.authorize"), class: "s-btn w-full cursor-pointer" %>
+      <% end %>
+      <%= form_tag oauth_authorization_path, method: :delete, class: "flex-1" do %>
+        <%= hidden_field_tag :client_id, @pre_auth.client.uid, id: nil %>
+        <%= hidden_field_tag :redirect_uri, @pre_auth.redirect_uri, id: nil %>
+        <%= hidden_field_tag :state, @pre_auth.state, id: nil %>
+        <%= hidden_field_tag :response_type, @pre_auth.response_type, id: nil %>
+        <%= hidden_field_tag :response_mode, @pre_auth.response_mode, id: nil %>
+        <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
+        <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
+        <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
+        <%= submit_tag t("doorkeeper.authorizations.buttons.deny"), class: "s-btn s-btn--soft w-full cursor-pointer" %>
+      <% end %>
+    </div>
+
+    <p class="s-body text-xs mt-6" style="color: var(--text); opacity: 0.6;">
+      You can revoke this access anytime from Connected Apps in your profile menu.
+    </p>
+  </div>
+</div>

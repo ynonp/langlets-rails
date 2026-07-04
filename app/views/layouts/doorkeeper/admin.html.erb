@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html data-theme="<%= respond_to?(:current_theme) ? current_theme : "dark" %>">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= t('doorkeeper.layouts.admin.title') %></title>
+  <%= stylesheet_link_tag :app %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="sprout min-h-screen" style="--hue: 150;">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
+    <nav class="flex items-center gap-4 mb-8">
+      <%= link_to t('doorkeeper.layouts.admin.nav.oauth2_provider'), oauth_applications_path, class: "s-btn s-btn--sm" %>
+      <% if respond_to?(:root_path) %>
+        <%= link_to t('doorkeeper.layouts.admin.nav.home'), root_path, class: "s-btn s-btn--soft s-btn--sm" %>
+      <% end %>
+    </nav>
+
+    <%- if flash[:notice].present? %>
+      <div class="s-card mb-6" style="padding: 14px 16px; color: var(--accent);">
+        <%= flash[:notice] %>
+      </div>
+    <% end -%>
+
+    <div class="s-card" style="padding: 24px; color: var(--text);">
+      <%= yield %>
+    </div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1232 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=h8SfF8w7_j8",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "تسألني ما أهم شيء للدب أو ألذ شيء",
+        "timestamp": "00:09.80",
+        "timestamp_end": "00:14.80",
+        "words": [
+          {
+            "text": "تسألني",
+            "timestamp": "00:09.80",
+            "timestamp_end": "00:11.00",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "you ask me"
+          },
+          {
+            "text": "ما",
+            "timestamp": "00:11.00",
+            "timestamp_end": "00:11.40",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "what"
+          },
+          {
+            "text": "أهم",
+            "timestamp": "00:11.40",
+            "timestamp_end": "00:11.90",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "most important"
+          },
+          {
+            "text": "شيء",
+            "timestamp": "00:11.90",
+            "timestamp_end": "00:12.30",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "thing"
+          },
+          {
+            "text": "للدب",
+            "timestamp": "00:12.30",
+            "timestamp_end": "00:13.10",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "for the bear"
+          },
+          {
+            "text": "أو",
+            "timestamp": "00:13.10",
+            "timestamp_end": "00:13.50",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "or"
+          },
+          {
+            "text": "ألذ",
+            "timestamp": "00:13.50",
+            "timestamp_end": "00:14.20",
+            "l1_start_index": 26,
+            "l1_end_index": 28,
+            "translation": "most delicious"
+          },
+          {
+            "text": "شيء",
+            "timestamp": "00:14.20",
+            "timestamp_end": "00:14.80",
+            "l1_start_index": 30,
+            "l1_end_index": 32,
+            "translation": "thing"
+          }
+        ],
+        "text_l2": "You ask me what is the most important thing for the bear or the tastiest thing"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "سوف أخبرك بسر جديد",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:19.20",
+        "words": [
+          {
+            "text": "سوف",
+            "timestamp": "00:14.80",
+            "timestamp_end": "00:15.60",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "will"
+          },
+          {
+            "text": "أخبرك",
+            "timestamp": "00:15.60",
+            "timestamp_end": "00:16.50",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "I tell you"
+          },
+          {
+            "text": "بسر",
+            "timestamp": "00:16.50",
+            "timestamp_end": "00:17.40",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "a secret"
+          },
+          {
+            "text": "جديد",
+            "timestamp": "00:17.40",
+            "timestamp_end": "00:19.20",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "new"
+          }
+        ],
+        "text_l2": "I will tell you a new secret"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "وسأحكي عن أهم شيء فلتسمعني كي تستفيد",
+        "timestamp": "00:19.20",
+        "timestamp_end": "00:24.00",
+        "words": [
+          {
+            "text": "وسأحكي",
+            "timestamp": "00:19.20",
+            "timestamp_end": "00:20.40",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "and I will tell"
+          },
+          {
+            "text": "عن",
+            "timestamp": "00:20.40",
+            "timestamp_end": "00:20.80",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "about"
+          },
+          {
+            "text": "أهم",
+            "timestamp": "00:20.80",
+            "timestamp_end": "00:21.20",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "most important"
+          },
+          {
+            "text": "شيء",
+            "timestamp": "00:21.20",
+            "timestamp_end": "00:21.60",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "thing"
+          },
+          {
+            "text": "فلتسمعني",
+            "timestamp": "00:21.60",
+            "timestamp_end": "00:22.80",
+            "l1_start_index": 18,
+            "l1_end_index": 25,
+            "translation": "so listen to me"
+          },
+          {
+            "text": "كي",
+            "timestamp": "00:22.80",
+            "timestamp_end": "00:23.20",
+            "l1_start_index": 27,
+            "l1_end_index": 28,
+            "translation": "so that"
+          },
+          {
+            "text": "تستفيد",
+            "timestamp": "00:23.20",
+            "timestamp_end": "00:24.00",
+            "l1_start_index": 30,
+            "l1_end_index": 35,
+            "translation": "you benefit"
+          }
+        ],
+        "text_l2": "And I will tell about the most important thing so listen to me to benefit"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "الدب يحبه ويكون سعيد",
+        "timestamp": "00:24.00",
+        "timestamp_end": "00:28.50",
+        "words": [
+          {
+            "text": "الدب",
+            "timestamp": "00:24.00",
+            "timestamp_end": "00:25.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "the bear"
+          },
+          {
+            "text": "يحبه",
+            "timestamp": "00:25.00",
+            "timestamp_end": "00:26.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "loves it"
+          },
+          {
+            "text": "ويكون",
+            "timestamp": "00:26.00",
+            "timestamp_end": "00:27.20",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "and is"
+          },
+          {
+            "text": "سعيد",
+            "timestamp": "00:27.20",
+            "timestamp_end": "00:28.50",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "happy"
+          }
+        ],
+        "text_l2": "The bear loves it and is happy"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "وسط الطبيعة",
+        "timestamp": "00:28.50",
+        "timestamp_end": "00:31.00",
+        "words": [
+          {
+            "text": "وسط",
+            "timestamp": "00:28.50",
+            "timestamp_end": "00:29.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "amidst"
+          },
+          {
+            "text": "الطبيعة",
+            "timestamp": "00:29.50",
+            "timestamp_end": "00:31.00",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "nature"
+          }
+        ],
+        "text_l2": "In the midst of nature"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "بين الأشجار",
+        "timestamp": "00:31.00",
+        "timestamp_end": "00:33.00",
+        "words": [
+          {
+            "text": "بين",
+            "timestamp": "00:31.00",
+            "timestamp_end": "00:31.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "among"
+          },
+          {
+            "text": "الأشجار",
+            "timestamp": "00:31.80",
+            "timestamp_end": "00:33.00",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "the trees"
+          }
+        ],
+        "text_l2": "Between the trees"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "كأني نحلة",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:35.00",
+        "words": [
+          {
+            "text": "كأني",
+            "timestamp": "00:33.00",
+            "timestamp_end": "00:34.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "as if I am"
+          },
+          {
+            "text": "نحلة",
+            "timestamp": "00:34.00",
+            "timestamp_end": "00:35.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "a bee"
+          }
+        ],
+        "text_l2": "As if I am a bee"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "بين الأزهار",
+        "timestamp": "00:35.00",
+        "timestamp_end": "00:37.50",
+        "words": [
+          {
+            "text": "بين",
+            "timestamp": "00:35.00",
+            "timestamp_end": "00:36.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "among"
+          },
+          {
+            "text": "الأزهار",
+            "timestamp": "00:36.00",
+            "timestamp_end": "00:37.50",
+            "l1_start_index": 4,
+            "l1_end_index": 10,
+            "translation": "the flowers"
+          }
+        ],
+        "text_l2": "Between the flowers"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "تسعد برزقها الحلال دوماً في منتهى الجمال",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:43.50",
+        "words": [
+          {
+            "text": "تسعد",
+            "timestamp": "00:37.50",
+            "timestamp_end": "00:38.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "she rejoices"
+          },
+          {
+            "text": "برزقها",
+            "timestamp": "00:38.50",
+            "timestamp_end": "00:39.50",
+            "l1_start_index": 5,
+            "l1_end_index": 10,
+            "translation": "with her provision"
+          },
+          {
+            "text": "الحلال",
+            "timestamp": "00:39.50",
+            "timestamp_end": "00:40.50",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "lawful"
+          },
+          {
+            "text": "دوماً",
+            "timestamp": "00:40.50",
+            "timestamp_end": "00:41.20",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "always"
+          },
+          {
+            "text": "في",
+            "timestamp": "00:41.20",
+            "timestamp_end": "00:41.80",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "in"
+          },
+          {
+            "text": "منتهى",
+            "timestamp": "00:41.80",
+            "timestamp_end": "00:42.50",
+            "l1_start_index": 28,
+            "l1_end_index": 32,
+            "translation": "the utmost"
+          },
+          {
+            "text": "الجمال",
+            "timestamp": "00:42.50",
+            "timestamp_end": "00:43.50",
+            "l1_start_index": 34,
+            "l1_end_index": 39,
+            "translation": "beauty"
+          }
+        ],
+        "text_l2": "She is happy with her lawful sustenance always in utmost beauty"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "آه لو أقدر أن أصور وأرسم سحر الطبيعة حقاً",
+        "timestamp": "00:43.50",
+        "timestamp_end": "00:49.00",
+        "words": [
+          {
+            "text": "آه",
+            "timestamp": "00:43.50",
+            "timestamp_end": "00:44.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "Ah"
+          },
+          {
+            "text": "لو",
+            "timestamp": "00:44.00",
+            "timestamp_end": "00:44.40",
+            "l1_start_index": 3,
+            "l1_end_index": 4,
+            "translation": "if"
+          },
+          {
+            "text": "أقدر",
+            "timestamp": "00:44.40",
+            "timestamp_end": "00:44.90",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "I can"
+          },
+          {
+            "text": "أن",
+            "timestamp": "00:44.90",
+            "timestamp_end": "00:45.30",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "to"
+          },
+          {
+            "text": "أصور",
+            "timestamp": "00:45.30",
+            "timestamp_end": "00:45.90",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "I photograph"
+          },
+          {
+            "text": "وأرسم",
+            "timestamp": "00:45.90",
+            "timestamp_end": "00:46.50",
+            "l1_start_index": 19,
+            "l1_end_index": 23,
+            "translation": "and I draw"
+          },
+          {
+            "text": "سحر",
+            "timestamp": "00:46.50",
+            "timestamp_end": "00:47.20",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "magic"
+          },
+          {
+            "text": "الطبيعة",
+            "timestamp": "00:47.20",
+            "timestamp_end": "00:48.20",
+            "l1_start_index": 29,
+            "l1_end_index": 35,
+            "translation": "nature"
+          },
+          {
+            "text": "حقاً",
+            "timestamp": "00:48.20",
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 37,
+            "l1_end_index": 40,
+            "translation": "truly"
+          }
+        ],
+        "text_l2": "Ah if I could photograph and draw the magic of nature truly"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "شهي الطعام",
+        "timestamp": "00:49.00",
+        "timestamp_end": "00:50.50",
+        "words": [
+          {
+            "text": "شهي",
+            "timestamp": "00:49.00",
+            "timestamp_end": "00:49.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "delicious"
+          },
+          {
+            "text": "الطعام",
+            "timestamp": "00:49.80",
+            "timestamp_end": "00:50.50",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "the food"
+          }
+        ],
+        "text_l2": "Delicious the food"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "الرفاهية التي نحبها",
+        "timestamp": "00:58.50",
+        "timestamp_end": "01:03.00",
+        "words": [
+          {
+            "text": "الرفاهية",
+            "timestamp": "00:58.50",
+            "timestamp_end": "01:00.50",
+            "l1_start_index": 0,
+            "l1_end_index": 7,
+            "translation": "the luxury"
+          },
+          {
+            "text": "التي",
+            "timestamp": "01:00.50",
+            "timestamp_end": "01:01.50",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "that"
+          },
+          {
+            "text": "نحبها",
+            "timestamp": "01:01.50",
+            "timestamp_end": "01:03.00",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "we love it"
+          }
+        ],
+        "text_l2": "The luxury that we love"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "نعشقها",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:05.50",
+        "words": [
+          {
+            "text": "نعشقها",
+            "timestamp": "01:03.00",
+            "timestamp_end": "01:05.50",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "we adore it"
+          }
+        ],
+        "text_l2": "We adore it"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "واسألني ماذا يفضل الدب فيما يأكل",
+        "timestamp": "01:05.50",
+        "timestamp_end": "01:11.00",
+        "words": [
+          {
+            "text": "واسألني",
+            "timestamp": "01:05.50",
+            "timestamp_end": "01:07.00",
+            "l1_start_index": 0,
+            "l1_end_index": 6,
+            "translation": "and ask me"
+          },
+          {
+            "text": "ماذا",
+            "timestamp": "01:07.00",
+            "timestamp_end": "01:07.80",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "what"
+          },
+          {
+            "text": "يفضل",
+            "timestamp": "01:07.80",
+            "timestamp_end": "01:08.50",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "prefers"
+          },
+          {
+            "text": "الدب",
+            "timestamp": "01:08.50",
+            "timestamp_end": "01:09.20",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "the bear"
+          },
+          {
+            "text": "فيما",
+            "timestamp": "01:09.20",
+            "timestamp_end": "01:10.00",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "in what"
+          },
+          {
+            "text": "يأكل",
+            "timestamp": "01:10.00",
+            "timestamp_end": "01:11.00",
+            "l1_start_index": 28,
+            "l1_end_index": 31,
+            "translation": "he eats"
+          }
+        ],
+        "text_l2": "And ask me what does the bear prefer in what he eats"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "بالطبع هي الفاكهة يا صغير",
+        "timestamp": "01:11.00",
+        "timestamp_end": "01:15.00",
+        "words": [
+          {
+            "text": "بالطبع",
+            "timestamp": "01:11.00",
+            "timestamp_end": "01:12.20",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "of course"
+          },
+          {
+            "text": "هي",
+            "timestamp": "01:12.20",
+            "timestamp_end": "01:12.80",
+            "l1_start_index": 7,
+            "l1_end_index": 8,
+            "translation": "it is"
+          },
+          {
+            "text": "الفاكهة",
+            "timestamp": "01:12.80",
+            "timestamp_end": "01:13.80",
+            "l1_start_index": 10,
+            "l1_end_index": 16,
+            "translation": "the fruit"
+          },
+          {
+            "text": "يا",
+            "timestamp": "01:13.80",
+            "timestamp_end": "01:14.20",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "O"
+          },
+          {
+            "text": "صغير",
+            "timestamp": "01:14.20",
+            "timestamp_end": "01:15.00",
+            "l1_start_index": 21,
+            "l1_end_index": 24,
+            "translation": "little one"
+          }
+        ],
+        "text_l2": "Of course it is the fruit oh little one"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "استمتع هيا بموزتك ولتحكي لي عن متعتك",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:20.00",
+        "words": [
+          {
+            "text": "استمتع",
+            "timestamp": "01:15.00",
+            "timestamp_end": "01:16.20",
+            "l1_start_index": 0,
+            "l1_end_index": 5,
+            "translation": "enjoy"
+          },
+          {
+            "text": "هيا",
+            "timestamp": "01:16.20",
+            "timestamp_end": "01:16.80",
+            "l1_start_index": 7,
+            "l1_end_index": 9,
+            "translation": "come on"
+          },
+          {
+            "text": "بموزتك",
+            "timestamp": "01:16.80",
+            "timestamp_end": "01:17.80",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "with your banana"
+          },
+          {
+            "text": "ولتحكي",
+            "timestamp": "01:17.80",
+            "timestamp_end": "01:18.80",
+            "l1_start_index": 18,
+            "l1_end_index": 23,
+            "translation": "and tell"
+          },
+          {
+            "text": "لي",
+            "timestamp": "01:18.80",
+            "timestamp_end": "01:19.20",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "to me"
+          },
+          {
+            "text": "عن",
+            "timestamp": "01:19.20",
+            "timestamp_end": "01:19.50",
+            "l1_start_index": 28,
+            "l1_end_index": 29,
+            "translation": "about"
+          },
+          {
+            "text": "متعتك",
+            "timestamp": "01:19.50",
+            "timestamp_end": "01:20.00",
+            "l1_start_index": 31,
+            "l1_end_index": 35,
+            "translation": "your enjoyment"
+          }
+        ],
+        "text_l2": "Enjoy come on with your banana and tell me about your pleasure"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "لدينا من الموز هنا الكثير",
+        "timestamp": "01:20.00",
+        "timestamp_end": "01:24.00",
+        "words": [
+          {
+            "text": "لدينا",
+            "timestamp": "01:20.00",
+            "timestamp_end": "01:21.20",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "we have"
+          },
+          {
+            "text": "من",
+            "timestamp": "01:21.20",
+            "timestamp_end": "01:21.60",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "of"
+          },
+          {
+            "text": "الموز",
+            "timestamp": "01:21.60",
+            "timestamp_end": "01:22.40",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "the bananas"
+          },
+          {
+            "text": "هنا",
+            "timestamp": "01:22.40",
+            "timestamp_end": "01:22.80",
+            "l1_start_index": 15,
+            "l1_end_index": 17,
+            "translation": "here"
+          },
+          {
+            "text": "الكثير",
+            "timestamp": "01:22.80",
+            "timestamp_end": "01:24.00",
+            "l1_start_index": 19,
+            "l1_end_index": 24,
+            "translation": "a lot"
+          }
+        ],
+        "text_l2": "We have much of bananas here"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "هيا اقطف بمهارة لكي لا تندم",
+        "timestamp": "01:24.00",
+        "timestamp_end": "01:28.00",
+        "words": [
+          {
+            "text": "هيا",
+            "timestamp": "01:24.00",
+            "timestamp_end": "01:25.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "come on"
+          },
+          {
+            "text": "اقطف",
+            "timestamp": "01:25.00",
+            "timestamp_end": "01:25.80",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "pick"
+          },
+          {
+            "text": "بمهارة",
+            "timestamp": "01:25.80",
+            "timestamp_end": "01:26.80",
+            "l1_start_index": 9,
+            "l1_end_index": 14,
+            "translation": "with skill"
+          },
+          {
+            "text": "لكي",
+            "timestamp": "01:26.80",
+            "timestamp_end": "01:27.20",
+            "l1_start_index": 16,
+            "l1_end_index": 18,
+            "translation": "so that"
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:27.20",
+            "timestamp_end": "01:27.50",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "not"
+          },
+          {
+            "text": "تندم",
+            "timestamp": "01:27.50",
+            "timestamp_end": "01:28.00",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "you regret"
+          }
+        ],
+        "text_l2": "Come on pick with skill so that you do not regret"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "تنقصك الخبرة",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:31.00",
+        "words": [
+          {
+            "text": "تنقصك",
+            "timestamp": "01:29.00",
+            "timestamp_end": "01:30.20",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "you lack"
+          },
+          {
+            "text": "الخبرة",
+            "timestamp": "01:30.20",
+            "timestamp_end": "01:31.00",
+            "l1_start_index": 6,
+            "l1_end_index": 11,
+            "translation": "experience"
+          }
+        ],
+        "text_l2": "You lack the experience"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "بعد ذلك فلتهتم",
+        "timestamp": "01:31.00",
+        "timestamp_end": "01:33.00",
+        "words": [
+          {
+            "text": "بعد",
+            "timestamp": "01:31.00",
+            "timestamp_end": "01:31.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "after"
+          },
+          {
+            "text": "ذلك",
+            "timestamp": "01:31.80",
+            "timestamp_end": "01:32.40",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "that"
+          },
+          {
+            "text": "فلتهتم",
+            "timestamp": "01:32.40",
+            "timestamp_end": "01:33.00",
+            "l1_start_index": 8,
+            "l1_end_index": 13,
+            "translation": "then take care"
+          }
+        ],
+        "text_l2": "After that so let him care"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "هنا أشهى سلطة فاكهة في الغابة المتعة للمنتهى",
+        "timestamp": "01:33.00",
+        "timestamp_end": "01:39.00",
+        "words": [
+          {
+            "text": "هنا",
+            "timestamp": "01:33.00",
+            "timestamp_end": "01:34.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "here"
+          },
+          {
+            "text": "أشهى",
+            "timestamp": "01:34.00",
+            "timestamp_end": "01:34.60",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "most delicious"
+          },
+          {
+            "text": "سلطة",
+            "timestamp": "01:34.60",
+            "timestamp_end": "01:35.20",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "salad"
+          },
+          {
+            "text": "فاكهة",
+            "timestamp": "01:35.20",
+            "timestamp_end": "01:35.80",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "fruit"
+          },
+          {
+            "text": "في",
+            "timestamp": "01:35.80",
+            "timestamp_end": "01:36.20",
+            "l1_start_index": 20,
+            "l1_end_index": 21,
+            "translation": "in"
+          },
+          {
+            "text": "الغابة",
+            "timestamp": "01:36.20",
+            "timestamp_end": "01:36.80",
+            "l1_start_index": 23,
+            "l1_end_index": 28,
+            "translation": "the forest"
+          },
+          {
+            "text": "المتعة",
+            "timestamp": "01:36.80",
+            "timestamp_end": "01:37.80",
+            "l1_start_index": 30,
+            "l1_end_index": 35,
+            "translation": "the enjoyment"
+          },
+          {
+            "text": "للمنتهى",
+            "timestamp": "01:37.80",
+            "timestamp_end": "01:39.00",
+            "l1_start_index": 37,
+            "l1_end_index": 43,
+            "translation": "to the utmost"
+          }
+        ],
+        "text_l2": "Here most delicious fruit salad in the forest the pleasure to the utmost"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "بقدمك كدب تماماً كدب دون أن تطلب تجد المرء",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:44.00",
+        "words": [
+          {
+            "text": "بقدمك",
+            "timestamp": "01:39.00",
+            "timestamp_end": "01:40.20",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "with your foot"
+          },
+          {
+            "text": "كدب",
+            "timestamp": "01:40.20",
+            "timestamp_end": "01:40.80",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "like a bear"
+          },
+          {
+            "text": "تماماً",
+            "timestamp": "01:40.80",
+            "timestamp_end": "01:41.40",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "exactly"
+          },
+          {
+            "text": "كدب",
+            "timestamp": "01:41.40",
+            "timestamp_end": "01:42.00",
+            "l1_start_index": 17,
+            "l1_end_index": 19,
+            "translation": "like a bear"
+          },
+          {
+            "text": "دون",
+            "timestamp": "01:42.00",
+            "timestamp_end": "01:42.50",
+            "l1_start_index": 21,
+            "l1_end_index": 23,
+            "translation": "without"
+          },
+          {
+            "text": "أن",
+            "timestamp": "01:42.50",
+            "timestamp_end": "01:42.80",
+            "l1_start_index": 25,
+            "l1_end_index": 26,
+            "translation": "that"
+          },
+          {
+            "text": "تطلب",
+            "timestamp": "01:42.80",
+            "timestamp_end": "01:43.40",
+            "l1_start_index": 28,
+            "l1_end_index": 31,
+            "translation": "you ask"
+          },
+          {
+            "text": "تجد",
+            "timestamp": "01:43.40",
+            "timestamp_end": "01:43.80",
+            "l1_start_index": 33,
+            "l1_end_index": 35,
+            "translation": "you find"
+          },
+          {
+            "text": "المرء",
+            "timestamp": "01:43.80",
+            "timestamp_end": "01:44.00",
+            "l1_start_index": 37,
+            "l1_end_index": 41,
+            "translation": "the person"
+          }
+        ],
+        "text_l2": "With your foot as a bear exactly as a bear without that you ask you find the one"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "ألم أقل لك من قبل",
+        "timestamp": "01:44.00",
+        "timestamp_end": "01:46.00",
+        "words": [
+          {
+            "text": "ألم",
+            "timestamp": "01:44.00",
+            "timestamp_end": "01:44.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "didn't I"
+          },
+          {
+            "text": "أقل",
+            "timestamp": "01:44.80",
+            "timestamp_end": "01:45.20",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "say"
+          },
+          {
+            "text": "لك",
+            "timestamp": "01:45.20",
+            "timestamp_end": "01:45.50",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "to you"
+          },
+          {
+            "text": "من",
+            "timestamp": "01:45.50",
+            "timestamp_end": "01:45.80",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "before"
+          },
+          {
+            "text": "قبل",
+            "timestamp": "01:45.80",
+            "timestamp_end": "01:46.00",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "before"
+          }
+        ],
+        "text_l2": "Did I not say to you before"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "أهم شيء في الدنيا ما هو",
+        "timestamp": "01:54.50",
+        "timestamp_end": "01:58.50",
+        "words": [
+          {
+            "text": "أهم",
+            "timestamp": "01:54.50",
+            "timestamp_end": "01:55.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "most important"
+          },
+          {
+            "text": "شيء",
+            "timestamp": "01:55.80",
+            "timestamp_end": "01:56.40",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "thing"
+          },
+          {
+            "text": "في",
+            "timestamp": "01:56.40",
+            "timestamp_end": "01:56.80",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "in"
+          },
+          {
+            "text": "الدنيا",
+            "timestamp": "01:56.80",
+            "timestamp_end": "01:57.50",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "the world"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:57.50",
+            "timestamp_end": "01:58.00",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "what"
+          },
+          {
+            "text": "هو",
+            "timestamp": "01:58.00",
+            "timestamp_end": "01:58.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "is it"
+          }
+        ],
+        "text_l2": "The most important thing in the world what is it"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "أعيش في غابة هذا هو",
+        "timestamp": "01:58.50",
+        "timestamp_end": "02:01.50",
+        "words": [
+          {
+            "text": "أعيش",
+            "timestamp": "01:58.50",
+            "timestamp_end": "01:59.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "I live"
+          },
+          {
+            "text": "في",
+            "timestamp": "01:59.50",
+            "timestamp_end": "01:59.80",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "in"
+          },
+          {
+            "text": "غابة",
+            "timestamp": "01:59.80",
+            "timestamp_end": "02:00.50",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "a forest"
+          },
+          {
+            "text": "هذا",
+            "timestamp": "02:00.50",
+            "timestamp_end": "02:01.00",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "this"
+          },
+          {
+            "text": "هو",
+            "timestamp": "02:01.00",
+            "timestamp_end": "02:01.50",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "is it"
+          }
+        ],
+        "text_l2": "I live in a forest this is it"
+      }
+    ],
+    "lessons": "# السر الجديد\n00:09.80 تسألني ما أهم شيء للدب أو ألذ شيء\n00:14.80 سوف أخبرك بسر جديد\n00:19.20 وسأحكي عن أهم شيء فلتسمعني كي تستفيد\n00:24.00 الدب يحبه ويكون سعيد\n\n# سحر الطبيعة\n00:28.50 وسط الطبيعة\n00:31.00 بين الأشجار\n00:33.00 كأني نحلة\n00:35.00 بين الأزهار\n00:37.50 تسعد برزقها الحلال دوماً في منتهى الجمال\n00:43.50 آه لو أقدر أن أصور وأرسم سحر الطبيعة حقاً\n\n# الفاكهة المفضلة\n00:49.00 شهي الطعام\n00:58.50 الرفاهية التي نحبها\n01:03.00 نعشقها\n01:05.50 واسألني ماذا يفضل الدب فيما يأكل\n01:11.00 بالطبع هي الفاكهة يا صغير\n\n# قطف الموز\n01:15.00 استمتع هيا بموزتك ولتحكي لي عن متعتك\n01:20.00 لدينا من الموز هنا الكثير\n01:24.00 هيا اقطف بمهارة لكي لا تندم\n01:29.00 تنقصك الخبرة\n01:31.00 بعد ذلك فلتهتم\n\n# أهم شيء في الدنيا\n01:33.00 هنا أشهى سلطة فاكهة في الغابة المتعة للمنتهى\n01:39.00 بقدمك كدب تماماً كدب دون أن تطلب تجد المرء\n01:44.00 ألم أقل لك من قبل\n01:54.50 أهم شيء في الدنيا ما هو\n01:58.50 أعيش في غابة هذا هو",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "السر الجديد",
+        "score": 5,
+        "reason": "Introduces varied vocabulary and complete sentences about secrets and what bears love, with useful structures like 'سوف أخبرك' and 'كي تستفيد'."
+      },
+      {
+        "index": 2,
+        "title": "سحر الطبيعة",
+        "score": 5,
+        "reason": "Rich nature-related vocabulary (trees, bees, flowers) and expressive phrases like 'في منتهى الجمال' and 'آه لو أقدر أن أصور'."
+      },
+      {
+        "index": 3,
+        "title": "الفاكهة المفضلة",
+        "score": 4,
+        "reason": "Teaches food and preference vocabulary (شهي, نعشقها, يفضل) in short but meaningful sentences."
+      },
+      {
+        "index": 4,
+        "title": "قطف الموز",
+        "score": 4,
+        "reason": "Contains practical verbs and phrases (استمتع, اقطف بمهارة, لكي لا تندم) with some repetition but clear teaching value."
+      },
+      {
+        "index": 5,
+        "title": "أهم شيء في الدنيا",
+        "score": 4,
+        "reason": "Includes useful expressions (أشهى سلطة, دون أن تطلب, ألم أقل لك) though sentences are slightly fragmented; still offers real vocabulary."
+      }
+    ],
+    "similar_sounds": "تسألني ما أهم شيء للدب أو [ألم] شيء\nسوف أخبرك [سر] جديد\n[وسأحضر] عن أهم شيء فلتسمعني كي تستفيد\nالدب يحبه [ليكون] سعيد\nوسط [الطبية]\n[بي] الأشجار\n[بأني] نحلة\nبين [الأزرار]\nتسعد برزقها [التلال] دوماً في منتهى الجمال\nآه لو أقدر أن أصور وأرسم سحر الطبيعة [حال]\n[هي] الطعام\n[الكفاية] التي نحبها\n[نعرفها]\nواسألني ماذا يفضل الدب [فيها] يأكل\nبالطبع هي [الفكاهة] يا صغير\nاستمتع هيا بموزتك [التحكم] لي عن متعتك\nلدينا من [الموت] هنا الكثير\n[هنا] اقطف بمهارة لكي لا تندم\n[تقصد] الخبرة\nبعد [كذلك] فلتهتم\nهنا أشهى سلطة فاكهة في [الغرابة] المتعة للمنتهى\nبقدمك [كلب] تماماً كدب دون أن تطلب تجد المرء\nألم [أجل] لك من قبل\nأهم شيء في [لدينا] ما هو\nأعيش في [شابة] هذا هو"
+  },
+  "created_at": "2026-06-28 18:20:00 UTC",
+  "updated_at": "2026-06-28 18:22:30 UTC",
+  "exported_at": "2026-06-28T18:22:30Z"
+}

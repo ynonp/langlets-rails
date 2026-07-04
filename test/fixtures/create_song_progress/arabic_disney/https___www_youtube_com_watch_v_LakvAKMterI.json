@@ -1,0 +1,1488 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=LakvAKMterI",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "الثلج الليلة كالصحراء، لم تلمسه اقدام",
+        "timestamp": "00:14.80",
+        "timestamp_end": "00:21.30",
+        "words": [
+          {
+            "text": "الثلج",
+            "timestamp": "00:14.80",
+            "timestamp_end": "00:15.70",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "snow"
+          },
+          {
+            "text": "الليلة",
+            "timestamp": "00:15.70",
+            "timestamp_end": "00:16.30",
+            "l1_start_index": 6,
+            "l1_end_index": 11,
+            "translation": "tonight"
+          },
+          {
+            "text": "كالصحراء،",
+            "timestamp": "00:16.30",
+            "timestamp_end": "00:18.00",
+            "l1_start_index": 13,
+            "l1_end_index": 20,
+            "translation": "like the desert"
+          },
+          {
+            "text": "لم",
+            "timestamp": "00:18.00",
+            "timestamp_end": "00:18.70",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "not"
+          },
+          {
+            "text": "تلمسه",
+            "timestamp": "00:18.70",
+            "timestamp_end": "00:19.80",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "touch it"
+          },
+          {
+            "text": "اقدام",
+            "timestamp": "00:19.80",
+            "timestamp_end": "00:21.30",
+            "l1_start_index": 32,
+            "l1_end_index": 36,
+            "translation": "feet"
+          }
+        ],
+        "text_l2": "The snow tonight is like the desert, feet have not touched it"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "مملكة للحيارى، أحكمها بسلام",
+        "timestamp": "00:21.30",
+        "timestamp_end": "00:28.00",
+        "words": [
+          {
+            "text": "مملكة",
+            "timestamp": "00:21.30",
+            "timestamp_end": "00:23.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "kingdom"
+          },
+          {
+            "text": "للحيارى،",
+            "timestamp": "00:23.00",
+            "timestamp_end": "00:24.70",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "for the confused"
+          },
+          {
+            "text": "أحكمها",
+            "timestamp": "00:24.70",
+            "timestamp_end": "00:26.30",
+            "l1_start_index": 15,
+            "l1_end_index": 20,
+            "translation": "I rule it"
+          },
+          {
+            "text": "بسلام",
+            "timestamp": "00:26.30",
+            "timestamp_end": "00:28.00",
+            "l1_start_index": 22,
+            "l1_end_index": 26,
+            "translation": "with peace"
+          }
+        ],
+        "text_l2": "A kingdom for the lost, I rule it in peace"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "الريح تعوي مثل العاصفة داخلي",
+        "timestamp": "00:28.00",
+        "timestamp_end": "00:36.00",
+        "words": [
+          {
+            "text": "الريح",
+            "timestamp": "00:28.00",
+            "timestamp_end": "00:30.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "the wind"
+          },
+          {
+            "text": "تعوي",
+            "timestamp": "00:30.00",
+            "timestamp_end": "00:31.50",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "howls"
+          },
+          {
+            "text": "مثل",
+            "timestamp": "00:31.50",
+            "timestamp_end": "00:32.50",
+            "l1_start_index": 11,
+            "l1_end_index": 13,
+            "translation": "like"
+          },
+          {
+            "text": "العاصفة",
+            "timestamp": "00:32.50",
+            "timestamp_end": "00:34.00",
+            "l1_start_index": 15,
+            "l1_end_index": 21,
+            "translation": "the storm"
+          },
+          {
+            "text": "داخلي",
+            "timestamp": "00:34.00",
+            "timestamp_end": "00:36.00",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "inside me"
+          }
+        ],
+        "text_l2": "The wind howls like the storm inside me"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "كيف تختفي، حاولت جاهدة",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:43.00",
+        "words": [
+          {
+            "text": "كيف",
+            "timestamp": "00:36.00",
+            "timestamp_end": "00:37.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "how"
+          },
+          {
+            "text": "تختفي،",
+            "timestamp": "00:37.50",
+            "timestamp_end": "00:38.50",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "you disappear"
+          },
+          {
+            "text": "حاولت",
+            "timestamp": "00:38.50",
+            "timestamp_end": "00:40.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "I tried"
+          },
+          {
+            "text": "جاهدة",
+            "timestamp": "00:40.50",
+            "timestamp_end": "00:43.00",
+            "l1_start_index": 17,
+            "l1_end_index": 21,
+            "translation": "hard"
+          }
+        ],
+        "text_l2": "How you disappear, I tried hard"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "لا تكشفي سر الجليد، كوني كما شعبك يريد",
+        "timestamp": "00:43.00",
+        "timestamp_end": "00:50.00",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "00:43.00",
+            "timestamp_end": "00:44.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "don't"
+          },
+          {
+            "text": "تكشفي",
+            "timestamp": "00:44.00",
+            "timestamp_end": "00:45.00",
+            "l1_start_index": 3,
+            "l1_end_index": 7,
+            "translation": "you reveal"
+          },
+          {
+            "text": "سر",
+            "timestamp": "00:45.00",
+            "timestamp_end": "00:45.50",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "secret"
+          },
+          {
+            "text": "الجليد،",
+            "timestamp": "00:45.50",
+            "timestamp_end": "00:46.50",
+            "l1_start_index": 12,
+            "l1_end_index": 17,
+            "translation": "the ice"
+          },
+          {
+            "text": "كوني",
+            "timestamp": "00:46.50",
+            "timestamp_end": "00:47.50",
+            "l1_start_index": 20,
+            "l1_end_index": 23,
+            "translation": "be"
+          },
+          {
+            "text": "كما",
+            "timestamp": "00:47.50",
+            "timestamp_end": "00:48.00",
+            "l1_start_index": 25,
+            "l1_end_index": 27,
+            "translation": "as"
+          },
+          {
+            "text": "شعبك",
+            "timestamp": "00:48.00",
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 29,
+            "l1_end_index": 32,
+            "translation": "your people"
+          },
+          {
+            "text": "يريد",
+            "timestamp": "00:49.00",
+            "timestamp_end": "00:50.00",
+            "l1_start_index": 34,
+            "l1_end_index": 37,
+            "translation": "wants"
+          }
+        ],
+        "text_l2": "Do not reveal the secret of the ice, be as your people want"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "تخفي الإحساس، كى يجهلوا قد عرفوا",
+        "timestamp": "00:50.00",
+        "timestamp_end": "01:00.00",
+        "words": [
+          {
+            "text": "تخفي",
+            "timestamp": "00:50.00",
+            "timestamp_end": "00:51.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "you hide"
+          },
+          {
+            "text": "الإحساس،",
+            "timestamp": "00:51.00",
+            "timestamp_end": "00:52.50",
+            "l1_start_index": 5,
+            "l1_end_index": 11,
+            "translation": "the feeling"
+          },
+          {
+            "text": "كى",
+            "timestamp": "00:52.50",
+            "timestamp_end": "00:53.50",
+            "l1_start_index": 14,
+            "l1_end_index": 15,
+            "translation": "so that"
+          },
+          {
+            "text": "يجهلوا",
+            "timestamp": "00:53.50",
+            "timestamp_end": "00:56.00",
+            "l1_start_index": 17,
+            "l1_end_index": 22,
+            "translation": "they be ignorant"
+          },
+          {
+            "text": "قد",
+            "timestamp": "00:56.00",
+            "timestamp_end": "00:57.00",
+            "l1_start_index": 24,
+            "l1_end_index": 25,
+            "translation": "already"
+          },
+          {
+            "text": "عرفوا",
+            "timestamp": "00:57.00",
+            "timestamp_end": "01:00.00",
+            "l1_start_index": 27,
+            "l1_end_index": 31,
+            "translation": "they knew"
+          }
+        ],
+        "text_l2": "Hide the feeling, so that they ignore what they have known"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "اطلقي سرك، لن أتحمل العذاب",
+        "timestamp": "01:00.00",
+        "timestamp_end": "01:07.00",
+        "words": [
+          {
+            "text": "اطلقي",
+            "timestamp": "01:00.00",
+            "timestamp_end": "01:01.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "سرك،",
+            "timestamp": "01:01.50",
+            "timestamp_end": "01:03.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "your secret"
+          },
+          {
+            "text": "لن",
+            "timestamp": "01:03.50",
+            "timestamp_end": "01:04.50",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "will not"
+          },
+          {
+            "text": "أتحمل",
+            "timestamp": "01:04.50",
+            "timestamp_end": "01:05.50",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "I bear"
+          },
+          {
+            "text": "العذاب",
+            "timestamp": "01:05.50",
+            "timestamp_end": "01:07.00",
+            "l1_start_index": 20,
+            "l1_end_index": 25,
+            "translation": "the torment"
+          }
+        ],
+        "text_l2": "Release your secret, I will not bear the torture"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "اطلقي سرك، اغلقي خلفك الابوات",
+        "timestamp": "01:07.00",
+        "timestamp_end": "01:14.00",
+        "words": [
+          {
+            "text": "اطلقي",
+            "timestamp": "01:07.00",
+            "timestamp_end": "01:08.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "سرك،",
+            "timestamp": "01:08.50",
+            "timestamp_end": "01:10.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "your secret"
+          },
+          {
+            "text": "اغلقي",
+            "timestamp": "01:10.50",
+            "timestamp_end": "01:11.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "close"
+          },
+          {
+            "text": "خلفك",
+            "timestamp": "01:11.50",
+            "timestamp_end": "01:12.50",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "behind you"
+          },
+          {
+            "text": "الابوات",
+            "timestamp": "01:12.50",
+            "timestamp_end": "01:14.00",
+            "l1_start_index": 22,
+            "l1_end_index": 28,
+            "translation": "the doors"
+          }
+        ],
+        "text_l2": "Release your secret, close the doors behind you"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "لا اخشى كل ما سيقال",
+        "timestamp": "01:14.00",
+        "timestamp_end": "01:21.00",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "01:14.00",
+            "timestamp_end": "01:15.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "don't"
+          },
+          {
+            "text": "اخشى",
+            "timestamp": "01:15.00",
+            "timestamp_end": "01:17.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "I fear"
+          },
+          {
+            "text": "كل",
+            "timestamp": "01:17.00",
+            "timestamp_end": "01:18.00",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "all"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:18.00",
+            "timestamp_end": "01:18.50",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "that"
+          },
+          {
+            "text": "سيقال",
+            "timestamp": "01:18.50",
+            "timestamp_end": "01:21.00",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "will be said"
+          }
+        ],
+        "text_l2": "I do not fear all that will be said"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "اطلقي العنان، الثل لا يشعرني باكتئاب",
+        "timestamp": "01:21.00",
+        "timestamp_end": "01:28.00",
+        "words": [
+          {
+            "text": "اطلقي",
+            "timestamp": "01:21.00",
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "العنان،",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:25.00",
+            "l1_start_index": 6,
+            "l1_end_index": 11,
+            "translation": "the reins"
+          },
+          {
+            "text": "الثل",
+            "timestamp": "01:25.00",
+            "timestamp_end": "01:25.50",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "the snow"
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:25.50",
+            "timestamp_end": "01:26.00",
+            "l1_start_index": 19,
+            "l1_end_index": 20,
+            "translation": "not"
+          },
+          {
+            "text": "يشعرني",
+            "timestamp": "01:26.00",
+            "timestamp_end": "01:27.00",
+            "l1_start_index": 22,
+            "l1_end_index": 27,
+            "translation": "makes me feel"
+          },
+          {
+            "text": "باكتئاب",
+            "timestamp": "01:27.00",
+            "timestamp_end": "01:28.00",
+            "l1_start_index": 29,
+            "l1_end_index": 35,
+            "translation": "with depression"
+          }
+        ],
+        "text_l2": "Let go, the snow does not make me feel depression"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "المشكلات ستصغر لو نراها من بعيد",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:38.50",
+        "words": [
+          {
+            "text": "المشكلات",
+            "timestamp": "01:32.00",
+            "timestamp_end": "01:34.00",
+            "l1_start_index": 0,
+            "l1_end_index": 7,
+            "translation": "the problems"
+          },
+          {
+            "text": "ستصغر",
+            "timestamp": "01:34.00",
+            "timestamp_end": "01:35.50",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "will become smaller"
+          },
+          {
+            "text": "لو",
+            "timestamp": "01:35.50",
+            "timestamp_end": "01:36.00",
+            "l1_start_index": 15,
+            "l1_end_index": 16,
+            "translation": "if"
+          },
+          {
+            "text": "نراها",
+            "timestamp": "01:36.00",
+            "timestamp_end": "01:37.00",
+            "l1_start_index": 18,
+            "l1_end_index": 22,
+            "translation": "we see them"
+          },
+          {
+            "text": "من",
+            "timestamp": "01:37.00",
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 24,
+            "l1_end_index": 25,
+            "translation": "from"
+          },
+          {
+            "text": "بعيد",
+            "timestamp": "01:37.50",
+            "timestamp_end": "01:38.50",
+            "l1_start_index": 27,
+            "l1_end_index": 30,
+            "translation": "afar"
+          }
+        ],
+        "text_l2": "Problems will become small if we see them from afar"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "و الخوف الذى تملكني، لم يعد منه مزيد",
+        "timestamp": "01:38.50",
+        "timestamp_end": "01:46.00",
+        "words": [
+          {
+            "text": "و",
+            "timestamp": "01:38.50",
+            "timestamp_end": "01:39.00",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "and"
+          },
+          {
+            "text": "الخوف",
+            "timestamp": "01:39.00",
+            "timestamp_end": "01:40.00",
+            "l1_start_index": 2,
+            "l1_end_index": 6,
+            "translation": "the fear"
+          },
+          {
+            "text": "الذى",
+            "timestamp": "01:40.00",
+            "timestamp_end": "01:41.00",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "that"
+          },
+          {
+            "text": "تملكني،",
+            "timestamp": "01:41.00",
+            "timestamp_end": "01:42.50",
+            "l1_start_index": 13,
+            "l1_end_index": 18,
+            "translation": "possessed me"
+          },
+          {
+            "text": "لم",
+            "timestamp": "01:42.50",
+            "timestamp_end": "01:43.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "not"
+          },
+          {
+            "text": "يعد",
+            "timestamp": "01:43.50",
+            "timestamp_end": "01:44.00",
+            "l1_start_index": 24,
+            "l1_end_index": 26,
+            "translation": "remains"
+          },
+          {
+            "text": "منه",
+            "timestamp": "01:44.00",
+            "timestamp_end": "01:44.50",
+            "l1_start_index": 28,
+            "l1_end_index": 30,
+            "translation": "of it"
+          },
+          {
+            "text": "مزيد",
+            "timestamp": "01:44.50",
+            "timestamp_end": "01:46.00",
+            "l1_start_index": 32,
+            "l1_end_index": 35,
+            "translation": "more"
+          }
+        ],
+        "text_l2": "And the fear that possessed me, there is no more of it"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "قد حان الوقت لانتصارات، لى اختبر كل القدرات",
+        "timestamp": "01:46.00",
+        "timestamp_end": "01:53.50",
+        "words": [
+          {
+            "text": "قد",
+            "timestamp": "01:46.00",
+            "timestamp_end": "01:47.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "indeed"
+          },
+          {
+            "text": "حان",
+            "timestamp": "01:47.00",
+            "timestamp_end": "01:48.00",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "has come"
+          },
+          {
+            "text": "الوقت",
+            "timestamp": "01:48.00",
+            "timestamp_end": "01:48.50",
+            "l1_start_index": 7,
+            "l1_end_index": 11,
+            "translation": "the time"
+          },
+          {
+            "text": "لانتصارات،",
+            "timestamp": "01:48.50",
+            "timestamp_end": "01:50.00",
+            "l1_start_index": 13,
+            "l1_end_index": 21,
+            "translation": "for victories"
+          },
+          {
+            "text": "لى",
+            "timestamp": "01:50.00",
+            "timestamp_end": "01:51.00",
+            "l1_start_index": 24,
+            "l1_end_index": 25,
+            "translation": "for me"
+          },
+          {
+            "text": "اختبر",
+            "timestamp": "01:51.00",
+            "timestamp_end": "01:52.00",
+            "l1_start_index": 27,
+            "l1_end_index": 31,
+            "translation": "I test"
+          },
+          {
+            "text": "كل",
+            "timestamp": "01:52.00",
+            "timestamp_end": "01:52.50",
+            "l1_start_index": 33,
+            "l1_end_index": 34,
+            "translation": "all"
+          },
+          {
+            "text": "القدرات",
+            "timestamp": "01:52.50",
+            "timestamp_end": "01:53.50",
+            "l1_start_index": 36,
+            "l1_end_index": 42,
+            "translation": "the abilities"
+          }
+        ],
+        "text_l2": "The time has come for victories, for me to test all capabilities"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "بلا حدود تمنعني أمضي",
+        "timestamp": "01:53.50",
+        "timestamp_end": "02:01.00",
+        "words": [
+          {
+            "text": "بلا",
+            "timestamp": "01:53.50",
+            "timestamp_end": "01:54.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "without"
+          },
+          {
+            "text": "حدود",
+            "timestamp": "01:54.50",
+            "timestamp_end": "01:55.50",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "limits"
+          },
+          {
+            "text": "تمنعني",
+            "timestamp": "01:55.50",
+            "timestamp_end": "01:57.50",
+            "l1_start_index": 9,
+            "l1_end_index": 14,
+            "translation": "prevent me"
+          },
+          {
+            "text": "أمضي",
+            "timestamp": "01:57.50",
+            "timestamp_end": "02:01.00",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "I proceed"
+          }
+        ],
+        "text_l2": "Without limits preventing me, I proceed"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "اطلقى سرك، توحدي مع الاكوان",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:08.00",
+        "words": [
+          {
+            "text": "اطلقى",
+            "timestamp": "02:01.00",
+            "timestamp_end": "02:03.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "سرك،",
+            "timestamp": "02:03.00",
+            "timestamp_end": "02:05.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "your secret"
+          },
+          {
+            "text": "توحدي",
+            "timestamp": "02:05.00",
+            "timestamp_end": "02:06.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "unite"
+          },
+          {
+            "text": "مع",
+            "timestamp": "02:06.50",
+            "timestamp_end": "02:07.00",
+            "l1_start_index": 17,
+            "l1_end_index": 18,
+            "translation": "with"
+          },
+          {
+            "text": "الاكوان",
+            "timestamp": "02:07.00",
+            "timestamp_end": "02:08.00",
+            "l1_start_index": 20,
+            "l1_end_index": 26,
+            "translation": "the universes"
+          }
+        ],
+        "text_l2": "Release your secret, unite with the universes"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "اثلقى سرك، لن ابكي بعد الآن",
+        "timestamp": "02:08.00",
+        "timestamp_end": "02:15.00",
+        "words": [
+          {
+            "text": "اثلقى",
+            "timestamp": "02:08.00",
+            "timestamp_end": "02:10.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "سرك،",
+            "timestamp": "02:10.00",
+            "timestamp_end": "02:11.50",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "your secret"
+          },
+          {
+            "text": "لن",
+            "timestamp": "02:11.50",
+            "timestamp_end": "02:12.50",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "will not"
+          },
+          {
+            "text": "ابكي",
+            "timestamp": "02:12.50",
+            "timestamp_end": "02:13.50",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "I cry"
+          },
+          {
+            "text": "بعد",
+            "timestamp": "02:13.50",
+            "timestamp_end": "02:14.00",
+            "l1_start_index": 19,
+            "l1_end_index": 21,
+            "translation": "after"
+          },
+          {
+            "text": "الآن",
+            "timestamp": "02:14.00",
+            "timestamp_end": "02:15.00",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "now"
+          }
+        ],
+        "text_l2": "Release your secret, I will not cry anymore"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "ارضي هنا، وبها سأبقى",
+        "timestamp": "02:15.00",
+        "timestamp_end": "02:22.00",
+        "words": [
+          {
+            "text": "ارضي",
+            "timestamp": "02:15.00",
+            "timestamp_end": "02:17.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "my land"
+          },
+          {
+            "text": "هنا،",
+            "timestamp": "02:17.00",
+            "timestamp_end": "02:18.50",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "here"
+          },
+          {
+            "text": "وبها",
+            "timestamp": "02:18.50",
+            "timestamp_end": "02:20.00",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "and in it"
+          },
+          {
+            "text": "سأبقى",
+            "timestamp": "02:20.00",
+            "timestamp_end": "02:22.00",
+            "l1_start_index": 15,
+            "l1_end_index": 19,
+            "translation": "I will remain"
+          }
+        ],
+        "text_l2": "Be satisfied here, and in it I will remain"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "اطلقي العنان",
+        "timestamp": "02:22.00",
+        "timestamp_end": "02:27.00",
+        "words": [
+          {
+            "text": "اطلقي",
+            "timestamp": "02:22.00",
+            "timestamp_end": "02:24.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "release"
+          },
+          {
+            "text": "العنان",
+            "timestamp": "02:24.00",
+            "timestamp_end": "02:27.00",
+            "l1_start_index": 6,
+            "l1_end_index": 11,
+            "translation": "the reins"
+          }
+        ],
+        "text_l2": "Let go"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "فقوتي تسري من الهواء إلى الصخور",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:41.00",
+        "words": [
+          {
+            "text": "فقوتي",
+            "timestamp": "02:34.00",
+            "timestamp_end": "02:35.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "for my power"
+          },
+          {
+            "text": "تسري",
+            "timestamp": "02:35.50",
+            "timestamp_end": "02:36.50",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "flows"
+          },
+          {
+            "text": "من",
+            "timestamp": "02:36.50",
+            "timestamp_end": "02:37.00",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "from"
+          },
+          {
+            "text": "الهواء",
+            "timestamp": "02:37.00",
+            "timestamp_end": "02:38.50",
+            "l1_start_index": 14,
+            "l1_end_index": 19,
+            "translation": "the air"
+          },
+          {
+            "text": "إلى",
+            "timestamp": "02:38.50",
+            "timestamp_end": "02:39.00",
+            "l1_start_index": 21,
+            "l1_end_index": 23,
+            "translation": "to"
+          },
+          {
+            "text": "الصخور",
+            "timestamp": "02:39.00",
+            "timestamp_end": "02:41.00",
+            "l1_start_index": 25,
+            "l1_end_index": 30,
+            "translation": "the rocks"
+          }
+        ],
+        "text_l2": "So my power flows from the air to the rocks"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "و روحي كلولب ثلجى يلمع مثل النور",
+        "timestamp": "02:41.00",
+        "timestamp_end": "02:48.00",
+        "words": [
+          {
+            "text": "و",
+            "timestamp": "02:41.00",
+            "timestamp_end": "02:41.50",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "and"
+          },
+          {
+            "text": "روحي",
+            "timestamp": "02:41.50",
+            "timestamp_end": "02:42.50",
+            "l1_start_index": 2,
+            "l1_end_index": 5,
+            "translation": "my soul"
+          },
+          {
+            "text": "كلولب",
+            "timestamp": "02:42.50",
+            "timestamp_end": "02:43.50",
+            "l1_start_index": 7,
+            "l1_end_index": 11,
+            "translation": "like a spiral"
+          },
+          {
+            "text": "ثلجى",
+            "timestamp": "02:43.50",
+            "timestamp_end": "02:44.50",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "icy"
+          },
+          {
+            "text": "يلمع",
+            "timestamp": "02:44.50",
+            "timestamp_end": "02:45.50",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "shines"
+          },
+          {
+            "text": "مثل",
+            "timestamp": "02:45.50",
+            "timestamp_end": "02:46.50",
+            "l1_start_index": 23,
+            "l1_end_index": 25,
+            "translation": "like"
+          },
+          {
+            "text": "النور",
+            "timestamp": "02:46.50",
+            "timestamp_end": "02:48.00",
+            "l1_start_index": 27,
+            "l1_end_index": 31,
+            "translation": "the light"
+          }
+        ],
+        "text_l2": "And my soul is a snow spiral shining like the light"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "و تتبلور فتكون قذيفة من جليد",
+        "timestamp": "02:48.00",
+        "timestamp_end": "02:55.00",
+        "words": [
+          {
+            "text": "و",
+            "timestamp": "02:48.00",
+            "timestamp_end": "02:48.50",
+            "l1_start_index": 0,
+            "l1_end_index": 0,
+            "translation": "and"
+          },
+          {
+            "text": "تتبلور",
+            "timestamp": "02:48.50",
+            "timestamp_end": "02:50.00",
+            "l1_start_index": 2,
+            "l1_end_index": 7,
+            "translation": "it crystallizes"
+          },
+          {
+            "text": "فتكون",
+            "timestamp": "02:50.00",
+            "timestamp_end": "02:51.50",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "and it becomes"
+          },
+          {
+            "text": "قذيفة",
+            "timestamp": "02:51.50",
+            "timestamp_end": "02:53.00",
+            "l1_start_index": 15,
+            "l1_end_index": 19,
+            "translation": "a projectile"
+          },
+          {
+            "text": "من",
+            "timestamp": "02:53.00",
+            "timestamp_end": "02:53.50",
+            "l1_start_index": 21,
+            "l1_end_index": 22,
+            "translation": "of"
+          },
+          {
+            "text": "جليد",
+            "timestamp": "02:53.50",
+            "timestamp_end": "02:55.00",
+            "l1_start_index": 24,
+            "l1_end_index": 27,
+            "translation": "ice"
+          }
+        ],
+        "text_l2": "And it crystallizes so it becomes a shell of ice"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "انا حتما لن أعود، الماضي بعيدا صار",
+        "timestamp": "02:55.00",
+        "timestamp_end": "03:03.00",
+        "words": [
+          {
+            "text": "انا",
+            "timestamp": "02:55.00",
+            "timestamp_end": "02:56.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "I"
+          },
+          {
+            "text": "حتما",
+            "timestamp": "02:56.00",
+            "timestamp_end": "02:57.00",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "certainly"
+          },
+          {
+            "text": "لن",
+            "timestamp": "02:57.00",
+            "timestamp_end": "02:58.00",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "will not"
+          },
+          {
+            "text": "أعود،",
+            "timestamp": "02:58.00",
+            "timestamp_end": "02:59.50",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "I return"
+          },
+          {
+            "text": "الماضي",
+            "timestamp": "02:59.50",
+            "timestamp_end": "03:01.00",
+            "l1_start_index": 18,
+            "l1_end_index": 23,
+            "translation": "the past"
+          },
+          {
+            "text": "بعيدا",
+            "timestamp": "03:01.00",
+            "timestamp_end": "03:02.00",
+            "l1_start_index": 25,
+            "l1_end_index": 29,
+            "translation": "far"
+          },
+          {
+            "text": "صار",
+            "timestamp": "03:02.00",
+            "timestamp_end": "03:03.00",
+            "l1_start_index": 31,
+            "l1_end_index": 33,
+            "translation": "has become"
+          }
+        ],
+        "text_l2": "I definitely will not return, the past has become far"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "لن تعود، لن تعود، و سأشرق مثل النور",
+        "timestamp": "03:03.00",
+        "timestamp_end": "03:09.00",
+        "words": [
+          {
+            "text": "لن",
+            "timestamp": "03:03.00",
+            "timestamp_end": "03:04.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "will not"
+          },
+          {
+            "text": "تعود،",
+            "timestamp": "03:04.00",
+            "timestamp_end": "03:05.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "she returns"
+          },
+          {
+            "text": "لن",
+            "timestamp": "03:05.00",
+            "timestamp_end": "03:05.50",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "will not"
+          },
+          {
+            "text": "تعود،",
+            "timestamp": "03:05.50",
+            "timestamp_end": "03:06.50",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "she returns"
+          },
+          {
+            "text": "و",
+            "timestamp": "03:06.50",
+            "timestamp_end": "03:07.00",
+            "l1_start_index": 18,
+            "l1_end_index": 18,
+            "translation": "and"
+          },
+          {
+            "text": "سأشرق",
+            "timestamp": "03:07.00",
+            "timestamp_end": "03:08.00",
+            "l1_start_index": 20,
+            "l1_end_index": 24,
+            "translation": "I will shine"
+          },
+          {
+            "text": "مثل",
+            "timestamp": "03:08.00",
+            "timestamp_end": "03:08.50",
+            "l1_start_index": 26,
+            "l1_end_index": 28,
+            "translation": "like"
+          },
+          {
+            "text": "النور",
+            "timestamp": "03:08.50",
+            "timestamp_end": "03:09.00",
+            "l1_start_index": 30,
+            "l1_end_index": 34,
+            "translation": "the light"
+          }
+        ],
+        "text_l2": "You will not return, you will not return, and I will shine like the light"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "لن يعود، لن يعود، فقدت برائتي",
+        "timestamp": "03:09.00",
+        "timestamp_end": "03:17.00",
+        "words": [
+          {
+            "text": "لن",
+            "timestamp": "03:09.00",
+            "timestamp_end": "03:10.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "will not"
+          },
+          {
+            "text": "يعود،",
+            "timestamp": "03:10.50",
+            "timestamp_end": "03:11.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "he returns"
+          },
+          {
+            "text": "لن",
+            "timestamp": "03:11.50",
+            "timestamp_end": "03:12.50",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "will not"
+          },
+          {
+            "text": "يعود،",
+            "timestamp": "03:12.50",
+            "timestamp_end": "03:13.50",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "he returns"
+          },
+          {
+            "text": "فقدت",
+            "timestamp": "03:13.50",
+            "timestamp_end": "03:15.00",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "I lost"
+          },
+          {
+            "text": "برائتي",
+            "timestamp": "03:15.00",
+            "timestamp_end": "03:17.00",
+            "l1_start_index": 23,
+            "l1_end_index": 28,
+            "translation": "my innocence"
+          }
+        ],
+        "text_l2": "It will not return, it will not return, I lost my innocence"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "ها أنا الآن اقف أمام الباس",
+        "timestamp": "03:17.00",
+        "timestamp_end": "03:25.00",
+        "words": [
+          {
+            "text": "ها",
+            "timestamp": "03:17.00",
+            "timestamp_end": "03:18.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "here"
+          },
+          {
+            "text": "أنا",
+            "timestamp": "03:18.00",
+            "timestamp_end": "03:18.50",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "I"
+          },
+          {
+            "text": "الآن",
+            "timestamp": "03:18.50",
+            "timestamp_end": "03:19.50",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "now"
+          },
+          {
+            "text": "اقف",
+            "timestamp": "03:19.50",
+            "timestamp_end": "03:21.00",
+            "l1_start_index": 12,
+            "l1_end_index": 14,
+            "translation": "I stand"
+          },
+          {
+            "text": "أمام",
+            "timestamp": "03:21.00",
+            "timestamp_end": "03:23.00",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "in front of"
+          },
+          {
+            "text": "الباس",
+            "timestamp": "03:23.00",
+            "timestamp_end": "03:25.00",
+            "l1_start_index": 21,
+            "l1_end_index": 25,
+            "translation": "the might"
+          }
+        ],
+        "text_l2": "Here I am now standing before the pass"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "وسط الرياح",
+        "timestamp": "03:25.00",
+        "timestamp_end": "03:31.00",
+        "words": [
+          {
+            "text": "وسط",
+            "timestamp": "03:25.00",
+            "timestamp_end": "03:27.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "amidst"
+          },
+          {
+            "text": "الرياح",
+            "timestamp": "03:27.00",
+            "timestamp_end": "03:31.00",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "the winds"
+          }
+        ],
+        "text_l2": "Amidst the winds"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "الثلج لا يشعرني بإكتئاب",
+        "timestamp": "03:31.00",
+        "timestamp_end": "03:35.00",
+        "words": [
+          {
+            "text": "الثلج",
+            "timestamp": "03:31.00",
+            "timestamp_end": "03:32.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "the snow"
+          },
+          {
+            "text": "لا",
+            "timestamp": "03:32.50",
+            "timestamp_end": "03:33.00",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "not"
+          },
+          {
+            "text": "يشعرني",
+            "timestamp": "03:33.00",
+            "timestamp_end": "03:34.00",
+            "l1_start_index": 9,
+            "l1_end_index": 14,
+            "translation": "makes me feel"
+          },
+          {
+            "text": "بإكتئاب",
+            "timestamp": "03:34.00",
+            "timestamp_end": "03:35.00",
+            "l1_start_index": 16,
+            "l1_end_index": 22,
+            "translation": "with depression"
+          }
+        ],
+        "text_l2": "The snow does not make me feel depression"
+      }
+    ],
+    "lessons": "# مملكة الجليد والعزلة\n00:14.80 الثلج الليلة كالصحراء، لم تلمسه اقدام\n00:21.30 مملكة للحيارى، أحكمها بسلام\n00:28.00 الريح تعوي مثل العاصفة داخلي\n00:36.00 كيف تختفي، حاولت جاهدة\n00:43.00 لا تكشفي سر الجليد، كوني كما شعبك يريد\n00:50.00 تخفي الإحساس، كى يجهلوا قد عرفوا\n\n# إطلاق السراح (الجزء الأول)\n01:00.00 اطلقي سرك، لن أتحمل العذاب\n01:07.00 اطلقي سرك، اغلقي خلفك الابوات\n01:14.00 لا اخشى كل ما سيقال\n01:21.00 اطلقي العنان، الثل لا يشعرني باكتئاب\n\n# رؤية جديدة\n01:32.00 المشكلات ستصغر لو نراها من بعيد\n01:38.50 و الخوف الذى تملكني، لم يعد منه مزيد\n01:46.00 قد حان الوقت لانتصارات، لى اختبر كل القدرات\n01:53.50 بلا حدود تمنعني أمضي\n\n# التحرر الكامل\n02:01.00 اطلقى سرك، توحدي مع الاكوان\n02:08.00 اثلقى سرك، لن ابكي بعد الآن\n02:15.00 ارضي هنا، وبها سأبقى\n02:22.00 اطلقي العنان\n\n# قوة الطبيعة\n02:34.00 فقوتي تسري من الهواء إلى الصخور\n02:41.00 و روحي كلولب ثلجى يلمع مثل النور\n02:48.00 و تتبلور فتكون قذيفة من جليد\n02:55.00 انا حتما لن أعود، الماضي بعيدا صار\n\n# الانتصار والتحرر\n03:03.00 لن تعود، لن تعود، و سأشرق مثل النور\n03:09.00 لن يعود، لن يعود، فقدت برائتي\n03:17.00 ها أنا الآن اقف أمام الباس\n03:25.00 وسط الرياح\n03:31.00 الثلج لا يشعرني بإكتئاب",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "مملكة الجليد والعزلة",
+        "score": 5,
+        "reason": "Introduces rich vocabulary about nature, emotions, and concealment."
+      },
+      {
+        "index": 2,
+        "title": "إطلاق السراح (الجزء الأول)",
+        "score": 4,
+        "reason": "Teaches key phrases for release and defiance, though somewhat repetitive."
+      },
+      {
+        "index": 3,
+        "title": "رؤية جديدة",
+        "score": 5,
+        "reason": "Offers new vocabulary on perspective, fear, and empowerment."
+      },
+      {
+        "index": 4,
+        "title": "التحرر الكامل",
+        "score": 3,
+        "reason": "Reprises the chorus with minor new words like 'universe' and 'cry', but largely repetitive."
+      },
+      {
+        "index": 5,
+        "title": "قوة الطبيعة",
+        "score": 5,
+        "reason": "Poetic bridge with fresh vocabulary on nature, power, and transformation."
+      },
+      {
+        "index": 6,
+        "title": "الانتصار والتحرر",
+        "score": 3,
+        "reason": "Final chorus reuses earlier lines but adds 'innocence' and 'cold', offering limited new content."
+      }
+    ],
+    "similar_sounds": "الثلج الليلة كالصحراء لم [لمسه] اقدام\nمملكة للحيارى [أنكما] بسلام\nالريح تعوي مثل العاصفة [داخل]\nكيف تختفي حاولت [جاهزة]\nلا تكشفي سر الجليد [توني] كما شعبك يريد\n[تكفي] الإحساس كى يجهلوا قد عرفوا\nاطلقي سرك لن [تحمل] العذاب\nاطلقي سرك اغلقي خلفك [الادوات]\nلا اخشى كل ما [يقال]\nاطلقي العنان الثل لا [تشعرين] باكتئاب\nالمشكلات [أصغر] لو نراها من بعيد\nو الخوف الذى تملكني لم يعد منه [يزيد]\nقد حان الوقت [No alternatives found for 'لانتصارات'] لى اختبر كل القدرات\nبلا حدود تمنعني [أمري]\nاطلقى سرك [تحدي] مع الاكوان\n[القى] سرك لن ابكي بعد الآن\nارضي [هناك] وبها سأبقى\nاطلقي [العناء]\nفقوتي تسري من الهواء [على] الصخور\nو [روبي] كلولب ثلجى يلمع مثل النور\nو [تتصور] فتكون قذيفة من جليد\nانا حتما لن [تعود] الماضي بعيدا صار\nلن تعود لن [يعود] و سأشرق مثل النور\nلن يعود لن [أعود] فقدت برائتي\nها أنا الآن [اسف] أمام الباس\n[قسط] الرياح\n[بالثلج] لا يشعرني بإكتئاب"
+  },
+  "created_at": "2026-06-28 18:30:15 UTC",
+  "updated_at": "2026-06-28 18:33:22 UTC",
+  "exported_at": "2026-06-28T18:33:22Z"
+}

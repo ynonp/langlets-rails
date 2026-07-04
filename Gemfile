@@ -112,12 +112,16 @@ gem "opentelemetry-exporter-otlp", "~> 0.30.0"
 
 gem "opentelemetry-instrumentation-net_http", "~> 0.23.0"
 
-gem "tidewave", "~> 0.2.0", group: :development
-
 gem "opentelemetry-instrumentation-all", "~> 0.80.0"
 
 gem "deepl-rb", "~> 3.2", require: 'deepl'
 
 gem "rack-timeout", "~> 0.7.0"
 
+gem "rack-attack", "~> 6.7"
+
 gem "srt", "~> 0.1.5"
+
+gem "doorkeeper", "~> 5.9"
+
+gem "mcp", "~> 0.4"

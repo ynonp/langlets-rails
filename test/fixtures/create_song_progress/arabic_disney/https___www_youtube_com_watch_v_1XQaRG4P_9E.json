@@ -1,0 +1,1578 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=1XQaRG4P-9E",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "هاتي إيدك هنشوف",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:15.50",
+        "words": [
+          {
+            "text": "هاتي",
+            "timestamp": "00:12.00",
+            "timestamp_end": "00:13.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "give"
+          },
+          {
+            "text": "إيدك",
+            "timestamp": "00:13.00",
+            "timestamp_end": "00:14.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "your hand"
+          },
+          {
+            "text": "هنشوف",
+            "timestamp": "00:14.00",
+            "timestamp_end": "00:15.50",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "we'll see"
+          }
+        ],
+        "text_l2": "Give me your hand, we'll see"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "دنيا جديدة بتلمع",
+        "timestamp": "00:15.50",
+        "timestamp_end": "00:19.50",
+        "words": [
+          {
+            "text": "دنيا",
+            "timestamp": "00:15.50",
+            "timestamp_end": "00:16.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "world"
+          },
+          {
+            "text": "جديدة",
+            "timestamp": "00:16.50",
+            "timestamp_end": "00:17.80",
+            "l1_start_index": 5,
+            "l1_end_index": 9,
+            "translation": "new"
+          },
+          {
+            "text": "بتلمع",
+            "timestamp": "00:17.80",
+            "timestamp_end": "00:19.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "shining"
+          }
+        ],
+        "text_l2": "A new world shining"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "يا أميرة",
+        "timestamp": "00:19.50",
+        "timestamp_end": "00:21.50",
+        "words": [
+          {
+            "text": "يا",
+            "timestamp": "00:19.50",
+            "timestamp_end": "00:20.20",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "O"
+          },
+          {
+            "text": "أميرة",
+            "timestamp": "00:20.20",
+            "timestamp_end": "00:21.50",
+            "l1_start_index": 3,
+            "l1_end_index": 7,
+            "translation": "princess"
+          }
+        ],
+        "text_l2": "Oh princess"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "إمتى قلبك كان ليكي يوم لا غير؟",
+        "timestamp": "00:21.50",
+        "timestamp_end": "00:26.50",
+        "words": [
+          {
+            "text": "إمتى",
+            "timestamp": "00:21.50",
+            "timestamp_end": "00:22.20",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "when"
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "00:22.20",
+            "timestamp_end": "00:23.20",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "your heart"
+          },
+          {
+            "text": "كان",
+            "timestamp": "00:23.20",
+            "timestamp_end": "00:23.80",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "was"
+          },
+          {
+            "text": "ليكي",
+            "timestamp": "00:23.80",
+            "timestamp_end": "00:24.50",
+            "l1_start_index": 14,
+            "l1_end_index": 17,
+            "translation": "for you"
+          },
+          {
+            "text": "يوم",
+            "timestamp": "00:24.50",
+            "timestamp_end": "00:25.20",
+            "l1_start_index": 19,
+            "l1_end_index": 21,
+            "translation": "day"
+          },
+          {
+            "text": "لا",
+            "timestamp": "00:25.20",
+            "timestamp_end": "00:25.80",
+            "l1_start_index": 23,
+            "l1_end_index": 24,
+            "translation": "no"
+          },
+          {
+            "text": "غير؟",
+            "timestamp": "00:25.80",
+            "timestamp_end": "00:26.50",
+            "l1_start_index": 26,
+            "l1_end_index": 28,
+            "translation": "other"
+          }
+        ],
+        "text_l2": "When was your heart yours one day only?"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "سيبي قلبك ليا",
+        "timestamp": "00:26.50",
+        "timestamp_end": "00:30.50",
+        "words": [
+          {
+            "text": "سيبي",
+            "timestamp": "00:26.50",
+            "timestamp_end": "00:28.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "leave"
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "00:28.00",
+            "timestamp_end": "00:29.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "your heart"
+          },
+          {
+            "text": "ليا",
+            "timestamp": "00:29.00",
+            "timestamp_end": "00:30.50",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "for me"
+          }
+        ],
+        "text_l2": "Leave your heart to me"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "ويشوف دنيا عجيبة",
+        "timestamp": "00:30.50",
+        "timestamp_end": "00:34.50",
+        "words": [
+          {
+            "text": "ويشوف",
+            "timestamp": "00:30.50",
+            "timestamp_end": "00:32.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "and he sees"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "00:32.00",
+            "timestamp_end": "00:33.00",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "world"
+          },
+          {
+            "text": "عجيبة",
+            "timestamp": "00:33.00",
+            "timestamp_end": "00:34.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "wonderful"
+          }
+        ],
+        "text_l2": "And see a wonderful world"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "دنيا بعيدة وقريبة",
+        "timestamp": "00:34.50",
+        "timestamp_end": "00:37.50",
+        "words": [
+          {
+            "text": "دنيا",
+            "timestamp": "00:34.50",
+            "timestamp_end": "00:35.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "world"
+          },
+          {
+            "text": "بعيدة",
+            "timestamp": "00:35.50",
+            "timestamp_end": "00:36.50",
+            "l1_start_index": 5,
+            "l1_end_index": 9,
+            "translation": "far"
+          },
+          {
+            "text": "وقريبة",
+            "timestamp": "00:36.50",
+            "timestamp_end": "00:37.50",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "and near"
+          }
+        ],
+        "text_l2": "A world far and near"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "على البساط السحري نطير",
+        "timestamp": "00:37.50",
+        "timestamp_end": "00:41.00",
+        "words": [
+          {
+            "text": "على",
+            "timestamp": "00:37.50",
+            "timestamp_end": "00:38.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "on"
+          },
+          {
+            "text": "البساط",
+            "timestamp": "00:38.00",
+            "timestamp_end": "00:39.00",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "the carpet"
+          },
+          {
+            "text": "السحري",
+            "timestamp": "00:39.00",
+            "timestamp_end": "00:40.00",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "the magic"
+          },
+          {
+            "text": "نطير",
+            "timestamp": "00:40.00",
+            "timestamp_end": "00:41.00",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "we fly"
+          }
+        ],
+        "text_l2": "On the magic carpet we fly"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "لدنيا فوق",
+        "timestamp": "00:41.00",
+        "timestamp_end": "00:45.00",
+        "words": [
+          {
+            "text": "لدنيا",
+            "timestamp": "00:41.00",
+            "timestamp_end": "00:43.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "to a world"
+          },
+          {
+            "text": "فوق",
+            "timestamp": "00:43.00",
+            "timestamp_end": "00:45.00",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "above"
+          }
+        ],
+        "text_l2": "To a world above"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "ده عالم تاني مش معروف",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:48.50",
+        "words": [
+          {
+            "text": "ده",
+            "timestamp": "00:45.00",
+            "timestamp_end": "00:45.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "عالم",
+            "timestamp": "00:45.80",
+            "timestamp_end": "00:46.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "تاني",
+            "timestamp": "00:46.50",
+            "timestamp_end": "00:47.20",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "other"
+          },
+          {
+            "text": "مش",
+            "timestamp": "00:47.20",
+            "timestamp_end": "00:47.80",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "not"
+          },
+          {
+            "text": "معروف",
+            "timestamp": "00:47.80",
+            "timestamp_end": "00:48.50",
+            "l1_start_index": 16,
+            "l1_end_index": 20,
+            "translation": "known"
+          }
+        ],
+        "text_l2": "This is another unknown world"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "ما نحسش فيه بخوف",
+        "timestamp": "00:48.50",
+        "timestamp_end": "00:51.00",
+        "words": [
+          {
+            "text": "ما",
+            "timestamp": "00:48.50",
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "not"
+          },
+          {
+            "text": "نحسش",
+            "timestamp": "00:49.00",
+            "timestamp_end": "00:49.80",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "we feel"
+          },
+          {
+            "text": "فيه",
+            "timestamp": "00:49.80",
+            "timestamp_end": "00:50.20",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "in it"
+          },
+          {
+            "text": "بخوف",
+            "timestamp": "00:50.20",
+            "timestamp_end": "00:51.00",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "fear"
+          }
+        ],
+        "text_l2": "We don't feel fear in it"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "وفيه نشوف",
+        "timestamp": "00:51.00",
+        "timestamp_end": "00:53.00",
+        "words": [
+          {
+            "text": "وفيه",
+            "timestamp": "00:51.00",
+            "timestamp_end": "00:52.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "and in it"
+          },
+          {
+            "text": "نشوف",
+            "timestamp": "00:52.00",
+            "timestamp_end": "00:53.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "we see"
+          }
+        ],
+        "text_l2": "And in it we see"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "الحلم يبقى حقيقة",
+        "timestamp": "00:53.00",
+        "timestamp_end": "00:56.00",
+        "words": [
+          {
+            "text": "الحلم",
+            "timestamp": "00:53.00",
+            "timestamp_end": "00:54.20",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "the dream"
+          },
+          {
+            "text": "يبقى",
+            "timestamp": "00:54.20",
+            "timestamp_end": "00:55.00",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "becomes"
+          },
+          {
+            "text": "حقيقة",
+            "timestamp": "00:55.00",
+            "timestamp_end": "00:56.00",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "reality"
+          }
+        ],
+        "text_l2": "The dream becomes reality"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "دي دنيا فوق",
+        "timestamp": "00:56.00",
+        "timestamp_end": "00:59.50",
+        "words": [
+          {
+            "text": "دي",
+            "timestamp": "00:56.00",
+            "timestamp_end": "00:56.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "00:56.80",
+            "timestamp_end": "00:58.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "فوق",
+            "timestamp": "00:58.00",
+            "timestamp_end": "00:59.50",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "above"
+          }
+        ],
+        "text_l2": "This is a world above"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "ده عالم تاني ما اعرفوش",
+        "timestamp": "00:59.50",
+        "timestamp_end": "01:03.00",
+        "words": [
+          {
+            "text": "ده",
+            "timestamp": "00:59.50",
+            "timestamp_end": "01:00.20",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "عالم",
+            "timestamp": "01:00.20",
+            "timestamp_end": "01:01.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "تاني",
+            "timestamp": "01:01.00",
+            "timestamp_end": "01:01.80",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "other"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:01.80",
+            "timestamp_end": "01:02.20",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "not"
+          },
+          {
+            "text": "اعرفوش",
+            "timestamp": "01:02.20",
+            "timestamp_end": "01:03.00",
+            "l1_start_index": 16,
+            "l1_end_index": 21,
+            "translation": "I know it"
+          }
+        ],
+        "text_l2": "This is another world I don't know"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "وأنا وياك بعيد",
+        "timestamp": "01:03.00",
+        "timestamp_end": "01:06.00",
+        "words": [
+          {
+            "text": "وأنا",
+            "timestamp": "01:03.00",
+            "timestamp_end": "01:04.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "and I"
+          },
+          {
+            "text": "وياك",
+            "timestamp": "01:04.00",
+            "timestamp_end": "01:05.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "with you"
+          },
+          {
+            "text": "بعيد",
+            "timestamp": "01:05.00",
+            "timestamp_end": "01:06.00",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "far"
+          }
+        ],
+        "text_l2": "And me with you far away"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "أكيد أكيد",
+        "timestamp": "01:06.00",
+        "timestamp_end": "01:08.00",
+        "words": [
+          {
+            "text": "أكيد",
+            "timestamp": "01:06.00",
+            "timestamp_end": "01:07.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "sure"
+          },
+          {
+            "text": "أكيد",
+            "timestamp": "01:07.00",
+            "timestamp_end": "01:08.00",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "sure"
+          }
+        ],
+        "text_l2": "Surely, surely"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "بقيت في عالم تاني ما اعرفوش",
+        "timestamp": "01:08.00",
+        "timestamp_end": "01:12.00",
+        "words": [
+          {
+            "text": "بقيت",
+            "timestamp": "01:08.00",
+            "timestamp_end": "01:09.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "I became"
+          },
+          {
+            "text": "في",
+            "timestamp": "01:09.00",
+            "timestamp_end": "01:09.50",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "in"
+          },
+          {
+            "text": "عالم",
+            "timestamp": "01:09.50",
+            "timestamp_end": "01:10.50",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "world"
+          },
+          {
+            "text": "تاني",
+            "timestamp": "01:10.50",
+            "timestamp_end": "01:11.20",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "other"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:11.20",
+            "timestamp_end": "01:11.50",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "not"
+          },
+          {
+            "text": "اعرفوش",
+            "timestamp": "01:11.50",
+            "timestamp_end": "01:12.00",
+            "l1_start_index": 21,
+            "l1_end_index": 26,
+            "translation": "I know it"
+          }
+        ],
+        "text_l2": "I'm in another world I don't know"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "وأنا في عالم تاني ما اعرفوش",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:16.00",
+        "words": [
+          {
+            "text": "وأنا",
+            "timestamp": "01:12.00",
+            "timestamp_end": "01:13.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "and I"
+          },
+          {
+            "text": "في",
+            "timestamp": "01:13.00",
+            "timestamp_end": "01:13.50",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "in"
+          },
+          {
+            "text": "عالم",
+            "timestamp": "01:13.50",
+            "timestamp_end": "01:14.50",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "world"
+          },
+          {
+            "text": "تاني",
+            "timestamp": "01:14.50",
+            "timestamp_end": "01:15.20",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "other"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:15.20",
+            "timestamp_end": "01:15.50",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "not"
+          },
+          {
+            "text": "اعرفوش",
+            "timestamp": "01:15.50",
+            "timestamp_end": "01:16.00",
+            "l1_start_index": 21,
+            "l1_end_index": 26,
+            "translation": "I know it"
+          }
+        ],
+        "text_l2": "And I'm in another world I don't know"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "دنيا ما تقولش حلم",
+        "timestamp": "01:16.00",
+        "timestamp_end": "01:19.00",
+        "words": [
+          {
+            "text": "دنيا",
+            "timestamp": "01:16.00",
+            "timestamp_end": "01:17.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "world"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:17.00",
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 5,
+            "l1_end_index": 6,
+            "translation": "not"
+          },
+          {
+            "text": "تقولش",
+            "timestamp": "01:17.50",
+            "timestamp_end": "01:18.20",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "you say"
+          },
+          {
+            "text": "حلم",
+            "timestamp": "01:18.20",
+            "timestamp_end": "01:19.00",
+            "l1_start_index": 14,
+            "l1_end_index": 16,
+            "translation": "dream"
+          }
+        ],
+        "text_l2": "A world not called a dream"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "وحلم وأنت هو صاحي",
+        "timestamp": "01:19.00",
+        "timestamp_end": "01:22.50",
+        "words": [
+          {
+            "text": "وحلم",
+            "timestamp": "01:19.00",
+            "timestamp_end": "01:20.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "and a dream"
+          },
+          {
+            "text": "وأنت",
+            "timestamp": "01:20.50",
+            "timestamp_end": "01:21.20",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "and you"
+          },
+          {
+            "text": "هو",
+            "timestamp": "01:21.20",
+            "timestamp_end": "01:21.80",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "he"
+          },
+          {
+            "text": "صاحي",
+            "timestamp": "01:21.80",
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "awake"
+          }
+        ],
+        "text_l2": "And a dream while you are awake"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "فوق وتحت، حواليا بشوف",
+        "timestamp": "01:22.50",
+        "timestamp_end": "01:26.00",
+        "words": [
+          {
+            "text": "فوق",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:23.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "above"
+          },
+          {
+            "text": "وتحت،",
+            "timestamp": "01:23.50",
+            "timestamp_end": "01:24.20",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "and below"
+          },
+          {
+            "text": "حواليا",
+            "timestamp": "01:24.20",
+            "timestamp_end": "01:25.20",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "around me"
+          },
+          {
+            "text": "بشوف",
+            "timestamp": "01:25.20",
+            "timestamp_end": "01:26.00",
+            "l1_start_index": 17,
+            "l1_end_index": 20,
+            "translation": "I see"
+          }
+        ],
+        "text_l2": "Above and below, around me I see"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "سما صافية مالها حدود",
+        "timestamp": "01:26.00",
+        "timestamp_end": "01:29.00",
+        "words": [
+          {
+            "text": "سما",
+            "timestamp": "01:26.00",
+            "timestamp_end": "01:27.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "sky"
+          },
+          {
+            "text": "صافية",
+            "timestamp": "01:27.00",
+            "timestamp_end": "01:27.80",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "clear"
+          },
+          {
+            "text": "مالها",
+            "timestamp": "01:27.80",
+            "timestamp_end": "01:28.50",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "it has no"
+          },
+          {
+            "text": "حدود",
+            "timestamp": "01:28.50",
+            "timestamp_end": "01:29.00",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "limits"
+          }
+        ],
+        "text_l2": "A clear sky with no limits"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "دي دنيا فوق، بس ما تغمضيش",
+        "timestamp": "01:29.00",
+        "timestamp_end": "01:32.00",
+        "words": [
+          {
+            "text": "دي",
+            "timestamp": "01:29.00",
+            "timestamp_end": "01:29.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "01:29.50",
+            "timestamp_end": "01:30.20",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "فوق،",
+            "timestamp": "01:30.20",
+            "timestamp_end": "01:31.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "above"
+          },
+          {
+            "text": "بس",
+            "timestamp": "01:31.00",
+            "timestamp_end": "01:31.50",
+            "l1_start_index": 13,
+            "l1_end_index": 14,
+            "translation": "but"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:31.50",
+            "timestamp_end": "01:31.80",
+            "l1_start_index": 16,
+            "l1_end_index": 17,
+            "translation": "not"
+          },
+          {
+            "text": "تغمضيش",
+            "timestamp": "01:31.80",
+            "timestamp_end": "01:32.00",
+            "l1_start_index": 19,
+            "l1_end_index": 24,
+            "translation": "you close your eyes"
+          }
+        ],
+        "text_l2": "This is a world above, but don't close your eyes"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "نفسي أشوف حاجات كتير، لسه ياما هتشوفي",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:36.00",
+        "words": [
+          {
+            "text": "نفسي",
+            "timestamp": "01:32.00",
+            "timestamp_end": "01:33.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "I wish"
+          },
+          {
+            "text": "أشوف",
+            "timestamp": "01:33.00",
+            "timestamp_end": "01:33.80",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "I see"
+          },
+          {
+            "text": "حاجات",
+            "timestamp": "01:33.80",
+            "timestamp_end": "01:34.50",
+            "l1_start_index": 10,
+            "l1_end_index": 14,
+            "translation": "things"
+          },
+          {
+            "text": "كتير،",
+            "timestamp": "01:34.50",
+            "timestamp_end": "01:35.00",
+            "l1_start_index": 16,
+            "l1_end_index": 19,
+            "translation": "many"
+          },
+          {
+            "text": "لسه",
+            "timestamp": "01:35.00",
+            "timestamp_end": "01:35.50",
+            "l1_start_index": 22,
+            "l1_end_index": 24,
+            "translation": "still"
+          },
+          {
+            "text": "ياما",
+            "timestamp": "01:35.50",
+            "timestamp_end": "01:35.80",
+            "l1_start_index": 26,
+            "l1_end_index": 29,
+            "translation": "so much"
+          },
+          {
+            "text": "هتشوفي",
+            "timestamp": "01:35.80",
+            "timestamp_end": "01:36.00",
+            "l1_start_index": 31,
+            "l1_end_index": 36,
+            "translation": "you will see"
+          }
+        ],
+        "text_l2": "I want to see many things, still many days you will see"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "طايرة بلا جناح",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:39.00",
+        "words": [
+          {
+            "text": "طايرة",
+            "timestamp": "01:36.00",
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "flying"
+          },
+          {
+            "text": "بلا",
+            "timestamp": "01:37.50",
+            "timestamp_end": "01:38.20",
+            "l1_start_index": 6,
+            "l1_end_index": 8,
+            "translation": "without"
+          },
+          {
+            "text": "جناح",
+            "timestamp": "01:38.20",
+            "timestamp_end": "01:39.00",
+            "l1_start_index": 10,
+            "l1_end_index": 13,
+            "translation": "wing"
+          }
+        ],
+        "text_l2": "Flying without wings"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "قلبي مرتاح",
+        "timestamp": "01:39.00",
+        "timestamp_end": "01:40.50",
+        "words": [
+          {
+            "text": "قلبي",
+            "timestamp": "01:39.00",
+            "timestamp_end": "01:39.80",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "my heart"
+          },
+          {
+            "text": "مرتاح",
+            "timestamp": "01:39.80",
+            "timestamp_end": "01:40.50",
+            "l1_start_index": 5,
+            "l1_end_index": 9,
+            "translation": "at ease"
+          }
+        ],
+        "text_l2": "My heart is at ease"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "مش عايز يرجع تاني يبقى أسير",
+        "timestamp": "01:40.50",
+        "timestamp_end": "01:44.50",
+        "words": [
+          {
+            "text": "مش",
+            "timestamp": "01:40.50",
+            "timestamp_end": "01:41.20",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "not"
+          },
+          {
+            "text": "عايز",
+            "timestamp": "01:41.20",
+            "timestamp_end": "01:41.80",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "want"
+          },
+          {
+            "text": "يرجع",
+            "timestamp": "01:41.80",
+            "timestamp_end": "01:42.50",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "return"
+          },
+          {
+            "text": "تاني",
+            "timestamp": "01:42.50",
+            "timestamp_end": "01:43.20",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "again"
+          },
+          {
+            "text": "يبقى",
+            "timestamp": "01:43.20",
+            "timestamp_end": "01:43.80",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "become"
+          },
+          {
+            "text": "أسير",
+            "timestamp": "01:43.80",
+            "timestamp_end": "01:44.50",
+            "l1_start_index": 23,
+            "l1_end_index": 26,
+            "translation": "prisoner"
+          }
+        ],
+        "text_l2": "I don't want to return again and become a prisoner"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "دي دنيا فوق",
+        "timestamp": "01:44.50",
+        "timestamp_end": "01:47.00",
+        "words": [
+          {
+            "text": "دي",
+            "timestamp": "01:44.50",
+            "timestamp_end": "01:45.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "01:45.00",
+            "timestamp_end": "01:46.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "فوق",
+            "timestamp": "01:46.00",
+            "timestamp_end": "01:47.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "above"
+          }
+        ],
+        "text_l2": "This is a world above"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "شفت الدنيا بصحيح، دي دنيا تانية ومش أحلام",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:50.50",
+        "words": [
+          {
+            "text": "شفت",
+            "timestamp": "01:47.00",
+            "timestamp_end": "01:47.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "I saw"
+          },
+          {
+            "text": "الدنيا",
+            "timestamp": "01:47.80",
+            "timestamp_end": "01:48.50",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "the world"
+          },
+          {
+            "text": "بصحيح،",
+            "timestamp": "01:48.50",
+            "timestamp_end": "01:49.00",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "truly"
+          },
+          {
+            "text": "دي",
+            "timestamp": "01:49.00",
+            "timestamp_end": "01:49.50",
+            "l1_start_index": 18,
+            "l1_end_index": 19,
+            "translation": "this"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "01:49.50",
+            "timestamp_end": "01:49.80",
+            "l1_start_index": 21,
+            "l1_end_index": 24,
+            "translation": "world"
+          },
+          {
+            "text": "تانية",
+            "timestamp": "01:49.80",
+            "timestamp_end": "01:50.20",
+            "l1_start_index": 26,
+            "l1_end_index": 30,
+            "translation": "other"
+          },
+          {
+            "text": "ومش",
+            "timestamp": "01:50.20",
+            "timestamp_end": "01:50.50",
+            "l1_start_index": 32,
+            "l1_end_index": 34,
+            "translation": "and not"
+          },
+          {
+            "text": "أحلام",
+            "timestamp": "01:50.50",
+            "timestamp_end": "01:50.50",
+            "l1_start_index": 36,
+            "l1_end_index": 40,
+            "translation": "dreams"
+          }
+        ],
+        "text_l2": "I saw the world for real, this is another world and not dreams"
+      },
+      {
+        "id": "phrase_31",
+        "text_l1": "خديني حواليكي",
+        "timestamp": "01:50.50",
+        "timestamp_end": "01:51.50",
+        "words": [
+          {
+            "text": "خديني",
+            "timestamp": "01:50.50",
+            "timestamp_end": "01:51.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "take me"
+          },
+          {
+            "text": "حواليكي",
+            "timestamp": "01:51.00",
+            "timestamp_end": "01:51.50",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "around you"
+          }
+        ],
+        "text_l2": "Take me around you"
+      },
+      {
+        "id": "phrase_32",
+        "text_l1": "يا عيني ما تناميش",
+        "timestamp": "01:51.50",
+        "timestamp_end": "01:53.00",
+        "words": [
+          {
+            "text": "يا",
+            "timestamp": "01:51.50",
+            "timestamp_end": "01:52.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "O"
+          },
+          {
+            "text": "عيني",
+            "timestamp": "01:52.00",
+            "timestamp_end": "01:52.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "my eye"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:52.50",
+            "timestamp_end": "01:52.80",
+            "l1_start_index": 8,
+            "l1_end_index": 9,
+            "translation": "not"
+          },
+          {
+            "text": "تناميش",
+            "timestamp": "01:52.80",
+            "timestamp_end": "01:53.00",
+            "l1_start_index": 11,
+            "l1_end_index": 16,
+            "translation": "you sleep"
+          }
+        ],
+        "text_l2": "Oh my eyes, don't sleep"
+      },
+      {
+        "id": "phrase_33",
+        "text_l1": "خلينا نعيش",
+        "timestamp": "01:53.00",
+        "timestamp_end": "01:55.00",
+        "words": [
+          {
+            "text": "خلينا",
+            "timestamp": "01:53.00",
+            "timestamp_end": "01:54.00",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "let us"
+          },
+          {
+            "text": "نعيش",
+            "timestamp": "01:54.00",
+            "timestamp_end": "01:55.00",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "we live"
+          }
+        ],
+        "text_l2": "Let us live"
+      },
+      {
+        "id": "phrase_34",
+        "text_l1": "ما تخليش ولا لحظة تضيع وتفوت",
+        "timestamp": "01:55.00",
+        "timestamp_end": "02:01.00",
+        "words": [
+          {
+            "text": "ما",
+            "timestamp": "01:55.00",
+            "timestamp_end": "01:56.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "not"
+          },
+          {
+            "text": "تخليش",
+            "timestamp": "01:56.00",
+            "timestamp_end": "01:57.00",
+            "l1_start_index": 3,
+            "l1_end_index": 7,
+            "translation": "you let"
+          },
+          {
+            "text": "ولا",
+            "timestamp": "01:57.00",
+            "timestamp_end": "01:57.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "not a single"
+          },
+          {
+            "text": "لحظة",
+            "timestamp": "01:57.50",
+            "timestamp_end": "01:58.50",
+            "l1_start_index": 13,
+            "l1_end_index": 16,
+            "translation": "moment"
+          },
+          {
+            "text": "تضيع",
+            "timestamp": "01:58.50",
+            "timestamp_end": "01:59.50",
+            "l1_start_index": 18,
+            "l1_end_index": 21,
+            "translation": "get lost"
+          },
+          {
+            "text": "وتفوت",
+            "timestamp": "01:59.50",
+            "timestamp_end": "02:01.00",
+            "l1_start_index": 23,
+            "l1_end_index": 27,
+            "translation": "and pass"
+          }
+        ],
+        "text_l2": "Don't let a single moment get lost and pass"
+      },
+      {
+        "id": "phrase_35",
+        "text_l1": "دي دنيا فوق",
+        "timestamp": "02:01.00",
+        "timestamp_end": "02:05.00",
+        "words": [
+          {
+            "text": "دي",
+            "timestamp": "02:01.00",
+            "timestamp_end": "02:02.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "دنيا",
+            "timestamp": "02:02.00",
+            "timestamp_end": "02:03.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "world"
+          },
+          {
+            "text": "فوق",
+            "timestamp": "02:03.50",
+            "timestamp_end": "02:05.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "above"
+          }
+        ],
+        "text_l2": "This is a world above"
+      },
+      {
+        "id": "phrase_36",
+        "text_l1": "فيها هنعيش",
+        "timestamp": "02:05.00",
+        "timestamp_end": "02:09.00",
+        "words": [
+          {
+            "text": "فيها",
+            "timestamp": "02:05.00",
+            "timestamp_end": "02:07.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "in it"
+          },
+          {
+            "text": "هنعيش",
+            "timestamp": "02:07.00",
+            "timestamp_end": "02:09.00",
+            "l1_start_index": 5,
+            "l1_end_index": 9,
+            "translation": "we will live"
+          }
+        ],
+        "text_l2": "In it we will live"
+      },
+      {
+        "id": "phrase_37",
+        "text_l1": "ده حلم كبير",
+        "timestamp": "02:09.00",
+        "timestamp_end": "02:11.00",
+        "words": [
+          {
+            "text": "ده",
+            "timestamp": "02:09.00",
+            "timestamp_end": "02:09.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "this"
+          },
+          {
+            "text": "حلم",
+            "timestamp": "02:09.50",
+            "timestamp_end": "02:10.20",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "dream"
+          },
+          {
+            "text": "كبير",
+            "timestamp": "02:10.20",
+            "timestamp_end": "02:11.00",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "big"
+          }
+        ],
+        "text_l2": "This is a big dream"
+      },
+      {
+        "id": "phrase_38",
+        "text_l1": "مفروش بحرير",
+        "timestamp": "02:11.00",
+        "timestamp_end": "02:13.50",
+        "words": [
+          {
+            "text": "مفروش",
+            "timestamp": "02:11.00",
+            "timestamp_end": "02:12.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "furnished"
+          },
+          {
+            "text": "بحرير",
+            "timestamp": "02:12.50",
+            "timestamp_end": "02:13.50",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "with silk"
+          }
+        ],
+        "text_l2": "Spread with silk"
+      },
+      {
+        "id": "phrase_39",
+        "text_l1": "وفيه هنعيش",
+        "timestamp": "02:13.50",
+        "timestamp_end": "02:18.00",
+        "words": [
+          {
+            "text": "وفيه",
+            "timestamp": "02:13.50",
+            "timestamp_end": "02:15.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "and in it"
+          },
+          {
+            "text": "هنعيش",
+            "timestamp": "02:15.50",
+            "timestamp_end": "02:18.00",
+            "l1_start_index": 5,
+            "l1_end_index": 9,
+            "translation": "we will live"
+          }
+        ],
+        "text_l2": "And in it we will live"
+      }
+    ],
+    "lessons": "# على البساط السحري\n00:12.00 هاتي إيدك هنشوف\n00:15.50 دنيا جديدة بتلمع\n00:19.50 يا أميرة\n00:21.50 إمتى قلبك كان ليكي يوم لا غير؟\n00:26.50 سيبي قلبك ليا\n00:30.50 ويشوف دنيا عجيبة\n00:34.50 دنيا بعيدة وقريبة\n00:37.50 على البساط السحري نطير\n\n# دنيا فوق\n00:41.00 لدنيا فوق\n00:45.00 ده عالم تاني مش معروف\n00:48.50 ما نحسش فيه بخوف\n00:51.00 وفيه نشوف\n00:53.00 الحلم يبقى حقيقة\n\n# عالم تاني\n00:56.00 دي دنيا فوق\n00:59.50 ده عالم تاني ما اعرفوش\n01:03.00 وأنا وياك بعيد\n01:06.00 أكيد أكيد\n01:08.00 بقيت في عالم تاني ما اعرفوش\n01:12.00 وأنا في عالم تاني ما اعرفوش\n\n# حلم وأنت صاحي\n01:16.00 دنيا ما تقولش حلم\n01:19.00 وحلم وأنت هو صاحي\n01:22.50 فوق وتحت، حواليا بشوف\n01:26.00 سما صافية مالها حدود\n01:29.00 دي دنيا فوق، بس ما تغمضيش\n\n# نفسي أشوف\n01:32.00 نفسي أشوف حاجات كتير، لسه ياما هتشوفي\n01:36.00 طايرة بلا جناح\n01:39.00 قلبي مرتاح\n01:40.50 مش عايز يرجع تاني يبقى أسير\n\n# شفت الدنيا بصحيح\n01:44.50 دي دنيا فوق\n01:47.00 شفت الدنيا بصحيح، دي دنيا تانية ومش أحلام\n01:50.50 خديني حواليكي\n01:51.50 يا عيني ما تناميش\n01:53.00 خلينا نعيش\n01:55.00 ما تخليش ولا لحظة تضيع وتفوت\n\n# حلم كبير\n02:01.00 دي دنيا فوق\n02:05.00 فيها هنعيش\n02:09.00 ده حلم كبير\n02:11.00 مفروش بحرير\n02:13.50 وفيه هنعيش",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "على البساط السحري",
+        "score": 5,
+        "reason": "Rich, varied vocabulary and grammar: imperatives, negation, future tense, and descriptive phrases."
+      },
+      {
+        "index": 2,
+        "title": "دنيا فوق",
+        "score": 4,
+        "reason": "Introduces new words like 'عالم تاني' and 'حقيقة', with useful negation and verb forms."
+      },
+      {
+        "index": 3,
+        "title": "عالم تاني",
+        "score": 3,
+        "reason": "Expands on previous theme but is repetitive; adds 'بعيد' and 'أكيد' but limited new content."
+      },
+      {
+        "index": 4,
+        "title": "حلم وأنت صاحي",
+        "score": 4,
+        "reason": "New vocabulary: 'صاحي', 'سما صافية', 'حدود', and a negative imperative."
+      },
+      {
+        "index": 5,
+        "title": "نفسي أشوف",
+        "score": 5,
+        "reason": "Teaches 'نفسي', 'حاجات كتير', 'بلا جناح', 'مرتاح', and a complex sentence about not returning to captivity."
+      },
+      {
+        "index": 6,
+        "title": "شفت الدنيا بصحيح",
+        "score": 4,
+        "reason": "New phrases like 'بصحيح', 'خديني حواليكي', and a warning about not wasting moments."
+      },
+      {
+        "index": 7,
+        "title": "حلم كبير",
+        "score": 3,
+        "reason": "Short coda with 'مفروش بحرير' as the only new word; otherwise repeats the 'دنيا فوق' motif."
+      }
+    ],
+    "similar_sounds": "هاتي إيدك [نشوة]\nدنيا جديدة [بتلك]\nيا [أخيرة]\nإمتى [قلبه] كان ليكي يوم لا غير\nسيبي قلبك [يا]\n[وسوف] دنيا عجيبة\nدنيا بعيدة [وقريبا]\nعلى البساط [السحرية] نطير\nلدنيا [فرق]\nده عالم تاني مش [معروفة]\nما نحسش [فهي] بخوف\nوفيه [سوف]\n[الألم] يبقى حقيقة\nدي دنيا [فرق]\nده عالم تاني ما [تعرفون]\nوأنا وياك [عيد]\nأكيد [تأكيد]\nبقيت في عالم [داني] ما اعرفوش\nوأنا في عالم [تعني] ما اعرفوش\nدنيا ما [تقوله] حلم\n[ولم] وأنت هو صاحي\nفوق [وضحت] حواليا بشوف\nسما صافية [حالها] حدود\nدي [دينا] فوق بس ما تغمضيش\nنفسي أشوف حاجات كتير لسه [عاما] هتشوفي\n[طاهرة] بلا جناح\nقلبي [مرتاحة]\nمش عايز يرجع [تعني] يبقى أسير\nدي دنيا [فو]\nشفت الدنيا بصحيح دي دنيا [تانيا] ومش أحلام\nخديني [اليكي]\nيا عيني ما [تنامي]\n[إلينا] نعيش\nما تخليش ولا لحظة تضيع [تفوت]\nدي دنيا [فو]\n[فيه] هنعيش\nده حلم [كبيرة]\n[مشروع] بحرير\nوفيه [لنعيش]"
+  },
+  "created_at": "2026-06-28 18:13:13 UTC",
+  "updated_at": "2026-06-28 18:15:33 UTC",
+  "exported_at": "2026-06-28T18:15:34Z"
+}

@@ -1,0 +1,304 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# langlets - CLI for the Langlets language-learning app.
+#
+# Authenticates via OAuth 2.1 (authorization code + PKCE): registers itself as
+# a public client (RFC 7591 dynamic client registration), opens the browser
+# for consent, and receives the callback on a loopback port. Ruby stdlib only.
+#
+#   langlets login [--server URL]
+#   langlets vocabulary [--language xx] [--page N] [--per-page N] [--json]
+#   langlets courses --language xx [--page N] [--per-page N] [--json]
+#   langlets logout
+
+require "base64"
+require "fileutils"
+require "json"
+require "net/http"
+require "openssl"
+require "optparse"
+require "securerandom"
+require "socket"
+require "timeout"
+require "uri"
+
+CONFIG_DIR = File.join(Dir.home, ".config", "langlets")
+CONFIG_PATH = File.join(CONFIG_DIR, "config.json")
+DEFAULT_SERVER = "https://www.langlets.app"
+SCOPES = "vocabulary:read courses:read"
+LOGIN_TIMEOUT_SECONDS = 300
+PREFERRED_CALLBACK_PORT = 8917
+
+def load_config
+  return {} unless File.exist?(CONFIG_PATH)
+  JSON.parse(File.read(CONFIG_PATH))
+rescue JSON::ParserError
+  {}
+end
+
+def save_config(config)
+  FileUtils.mkdir_p(CONFIG_DIR)
+  File.write(CONFIG_PATH, JSON.pretty_generate(config))
+  File.chmod(0o600, CONFIG_PATH)
+end
+
+def http_request(method, url, body: nil, form: nil, headers: {})
+  uri = URI.parse(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = uri.scheme == "https"
+  request = (method == :post ? Net::HTTP::Post : Net::HTTP::Get).new(uri)
+  headers.each { |key, value| request[key] = value }
+  if form
+    request.set_form_data(form)
+  elsif body
+    request["Content-Type"] = "application/json"
+    request.body = JSON.generate(body)
+  end
+  http.request(request)
+end
+
+def parse_json(response)
+  JSON.parse(response.body)
+rescue JSON::ParserError
+  {}
+end
+
+# --- OAuth login flow ------------------------------------------------------
+
+def free_loopback_server
+  server = TCPServer.new("127.0.0.1", PREFERRED_CALLBACK_PORT) rescue TCPServer.new("127.0.0.1", 0)
+  [ server, server.addr[1] ]
+end
+
+def register_client(server_url, redirect_uri)
+  response = http_request(:post, "#{server_url}/oauth/register", body: {
+    client_name: "langlets CLI (#{Socket.gethostname})",
+    redirect_uris: [ redirect_uri ],
+    grant_types: %w[authorization_code refresh_token],
+    response_types: %w[code],
+    token_endpoint_auth_method: "none",
+    scope: SCOPES
+  })
+  abort("Registration failed: #{response.code} #{response.body}") unless response.code == "201"
+  parse_json(response).fetch("client_id")
+end
+
+def open_browser(url)
+  command = case RUBY_PLATFORM
+  when /darwin/ then [ "open", url ]
+  when /linux/ then [ "xdg-open", url ]
+  end
+  system(*command, out: File::NULL, err: File::NULL) if command
+end
+
+def wait_for_callback(server, expected_state)
+  client = Timeout.timeout(LOGIN_TIMEOUT_SECONDS) { server.accept }
+  request_line = client.gets.to_s
+  path = request_line.split(" ")[1].to_s
+  query = URI.parse(path).query.to_s
+  params = URI.decode_www_form(query).to_h
+
+  message, ok = if params["error"]
+    [ "Authorization denied: #{params["error"]}", false ]
+  elsif params["state"] != expected_state
+    [ "State mismatch - possible CSRF, aborting.", false ]
+  elsif params["code"].to_s.empty?
+    [ "No authorization code received.", false ]
+  else
+    [ "Logged in! You can return to your terminal.", true ]
+  end
+
+  client.print("HTTP/1.1 200 OK\r\nContent-Type: text/html\r\nConnection: close\r\n\r\n" \
+               "<html><body style='font-family:sans-serif'><h2>#{message}</h2></body></html>")
+  client.close
+  abort(message) unless ok
+  params["code"]
+rescue Timeout::Error
+  abort("Timed out waiting for the browser callback (#{LOGIN_TIMEOUT_SECONDS}s).")
+ensure
+  server.close rescue nil
+end
+
+def exchange_code(server_url, client_id, code, redirect_uri, verifier)
+  response = http_request(:post, "#{server_url}/oauth/token", form: {
+    grant_type: "authorization_code",
+    code: code,
+    redirect_uri: redirect_uri,
+    client_id: client_id,
+    code_verifier: verifier
+  })
+  abort("Token exchange failed: #{response.code} #{response.body}") unless response.code == "200"
+  parse_json(response)
+end
+
+def command_login(options)
+  server_url = (options[:server] || load_config["server"] || DEFAULT_SERVER).chomp("/")
+
+  callback_server, port = free_loopback_server
+  redirect_uri = "http://127.0.0.1:#{port}/callback"
+  client_id = register_client(server_url, redirect_uri)
+
+  verifier = SecureRandom.urlsafe_base64(48)
+  challenge = Base64.urlsafe_encode64(OpenSSL::Digest::SHA256.digest(verifier), padding: false)
+  state = SecureRandom.hex(16)
+
+  authorize_url = "#{server_url}/oauth/authorize?" + URI.encode_www_form(
+    client_id: client_id,
+    redirect_uri: redirect_uri,
+    response_type: "code",
+    scope: SCOPES,
+    state: state,
+    code_challenge: challenge,
+    code_challenge_method: "S256"
+  )
+
+  puts "Opening your browser to authorize the langlets CLI..."
+  puts "If it doesn't open, visit:\n\n  #{authorize_url}\n\n"
+  open_browser(authorize_url)
+
+  code = wait_for_callback(callback_server, state)
+  tokens = exchange_code(server_url, client_id, code, redirect_uri, verifier)
+
+  save_config(
+    "server" => server_url,
+    "client_id" => client_id,
+    "access_token" => tokens["access_token"],
+    "refresh_token" => tokens["refresh_token"],
+    "expires_at" => Time.now.to_i + tokens["expires_in"].to_i
+  )
+  puts "Logged in to #{server_url}. Tokens saved to #{CONFIG_PATH}."
+end
+
+def command_logout
+  config = load_config
+  if config["access_token"] && config["server"]
+    http_request(:post, "#{config["server"]}/oauth/revoke", form: {
+      token: config["access_token"],
+      client_id: config["client_id"]
+    })
+  end
+  File.delete(CONFIG_PATH) if File.exist?(CONFIG_PATH)
+  puts "Logged out."
+end
+
+# --- Authenticated API calls ------------------------------------------------
+
+def refresh_tokens!(config)
+  abort("Session expired. Run: langlets login") unless config["refresh_token"]
+
+  response = http_request(:post, "#{config["server"]}/oauth/token", form: {
+    grant_type: "refresh_token",
+    refresh_token: config["refresh_token"],
+    client_id: config["client_id"]
+  })
+  abort("Session expired. Run: langlets login") unless response.code == "200"
+
+  tokens = parse_json(response)
+  config["access_token"] = tokens["access_token"]
+  config["refresh_token"] = tokens["refresh_token"] if tokens["refresh_token"]
+  config["expires_at"] = Time.now.to_i + tokens["expires_in"].to_i
+  save_config(config)
+end
+
+def api_get(path, params)
+  config = load_config
+  abort("Not logged in. Run: langlets login") unless config["access_token"]
+
+  refresh_tokens!(config) if config["expires_at"].to_i <= Time.now.to_i + 30
+
+  url = "#{config["server"]}#{path}?" + URI.encode_www_form(params.compact)
+  response = http_request(:get, url, headers: { "Authorization" => "Bearer #{config["access_token"]}" })
+
+  if response.code == "401"
+    refresh_tokens!(config)
+    response = http_request(:get, url, headers: { "Authorization" => "Bearer #{config["access_token"]}" })
+  end
+
+  body = parse_json(response)
+  unless response.code == "200"
+    abort("Request failed (#{response.code}): #{body["error_description"] || body["error"] || response.body}")
+  end
+  body
+end
+
+def print_table(rows, columns)
+  widths = columns.map { |header, key| [ header.length, *rows.map { |row| row[key].to_s.length } ].max }
+  line = columns.each_with_index.map { |(header, _), i| header.ljust(widths[i]) }.join("  ")
+  puts line
+  puts "-" * line.length
+  rows.each do |row|
+    puts columns.each_with_index.map { |(_, key), i| row[key].to_s.ljust(widths[i]) }.join("  ")
+  end
+end
+
+def print_pagination(body)
+  more = body["has_more"] ? " (more available: --page #{body["page"] + 1})" : ""
+  puts "\nPage #{body["page"]}, #{body["items"].size} items#{more}"
+end
+
+def command_vocabulary(options)
+  body = api_get("/api/v1/vocabulary",
+    language: options[:language], page: options[:page], per_page: options[:per_page])
+  return puts(JSON.pretty_generate(body)) if options[:json]
+
+  if body["items"].empty?
+    puts "No saved words#{options[:language] ? " for language '#{options[:language]}'" : ""}."
+    return
+  end
+
+  print_table(body["items"], [ [ "WORD", "word" ], [ "TRANSLATION", "translation" ],
+                               [ "LANG", "language" ], [ "CONTEXT", "context" ] ])
+  print_pagination(body)
+end
+
+def command_courses(options)
+  abort("--language is required (e.g. langlets courses --language es)") unless options[:language]
+
+  body = api_get("/api/v1/courses",
+    language: options[:language], page: options[:page], per_page: options[:per_page])
+  return puts(JSON.pretty_generate(body)) if options[:json]
+
+  if body["items"].empty?
+    puts "No published courses for language '#{options[:language]}'."
+    return
+  end
+
+  print_table(body["items"], [ [ "NAME", "name" ], [ "LESSONS", "lesson_count" ], [ "URL", "url" ] ])
+  print_pagination(body)
+end
+
+# --- Entry point ------------------------------------------------------------
+
+options = {}
+parser = OptionParser.new do |opts|
+  opts.banner = <<~BANNER
+    Usage: langlets COMMAND [options]
+
+    Commands:
+      login         Authorize this CLI with your Langlets account (opens browser)
+      vocabulary    List your saved vocabulary words
+      courses       List published courses in a language
+      logout        Revoke the CLI token and delete local credentials
+
+  BANNER
+  opts.on("--server URL", "Langlets server (login only, default #{DEFAULT_SERVER})") { |v| options[:server] = v }
+  opts.on("--language CODE", "ISO language code, e.g. es, he, fr") { |v| options[:language] = v }
+  opts.on("--page N", Integer, "Page number") { |v| options[:page] = v }
+  opts.on("--per-page N", Integer, "Items per page (max 100)") { |v| options[:per_page] = v }
+  opts.on("--json", "Print the raw JSON response") { options[:json] = true }
+  opts.on("-h", "--help", "Show this help") { puts opts; exit }
+end
+
+command = ARGV.shift
+parser.parse!(ARGV)
+
+case command
+when "login" then command_login(options)
+when "logout" then command_logout
+when "vocabulary" then command_vocabulary(options)
+when "courses" then command_courses(options)
+else
+  puts parser
+  exit(command.nil? ? 0 : 1)
+end

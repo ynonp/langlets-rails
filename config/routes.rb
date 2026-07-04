@@ -1,4 +1,31 @@
 Rails.application.routes.draw do
+  # OAuth 2.1 provider for AI agents (MCP clients, CLI). Token management UI
+  # lives at settings/connections instead of Doorkeeper's authorized_applications.
+  use_doorkeeper do
+    skip_controllers :authorized_applications
+  end
+  post "/oauth/register", to: "oauth/registrations#create"
+  get "/.well-known/oauth-authorization-server", to: "well_known#oauth_authorization_server"
+  get "/.well-known/oauth-protected-resource", to: "well_known#oauth_protected_resource"
+  get "/.well-known/oauth-protected-resource/mcp", to: "well_known#oauth_protected_resource"
+
+  match "/mcp", to: "mcp#handle", via: [ :get, :post, :delete ]
+
+  namespace :api do
+    namespace :v1 do
+      get "vocabulary", to: "vocabulary#index"
+      get "courses", to: "courses#index"
+    end
+  end
+
+  namespace :settings do
+    resources :connections, only: [ :index, :destroy ] do
+      collection do
+        delete :revoke_application
+      end
+    end
+  end
+
   devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations",

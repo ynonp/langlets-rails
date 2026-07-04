@@ -1,0 +1,98 @@
+<% content_for :head do %>
+  <title>Connected Apps - Langlets</title>
+<% end %>
+
+<div class="sprout min-h-screen" style="--hue: 150;">
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
+    <div class="flex items-center gap-3 mb-2">
+      <%= link_to root_path, style: "color: var(--accent);" do %>
+        <%= render "shared/home_icon", size: 26 %>
+      <% end %>
+      <h1 class="text-2xl sm:text-3xl font-bold" style="color: var(--text);">Connected Apps</h1>
+    </div>
+    <p class="s-body mb-8" style="color: var(--text-muted, var(--text));">
+      AI agents and tools you've given access to your Langlets account.
+      Revoking a token signs that connection out immediately.
+    </p>
+
+    <% if notice.present? %>
+      <div class="s-card mb-6" style="padding: 14px 16px; color: var(--accent);">
+        <%= notice %>
+      </div>
+    <% end %>
+
+    <% if @connections.empty? %>
+      <div class="s-card" style="padding: 24px;">
+        <p class="s-body" style="color: var(--text);">No connected apps yet.</p>
+        <p class="s-body mt-2 text-sm" style="color: var(--text-muted, var(--text)); opacity: 0.8;">
+          When you connect an AI agent (like Claude) or the langlets CLI to your account,
+          its access tokens will show up here.
+        </p>
+      </div>
+    <% end %>
+
+    <% @connections.each do |application, tokens| %>
+      <div class="s-card mb-6" style="padding: 20px;">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h2 class="text-lg font-semibold" style="color: var(--text);">
+              <%= application&.name || "Unknown application" %>
+            </h2>
+            <p class="text-sm s-body" style="color: var(--text-muted, var(--text)); opacity: 0.8;">
+              <%= tokens.size %> active <%= "token".pluralize(tokens.size) %>
+            </p>
+          </div>
+          <% if application %>
+            <%= button_to "Disconnect app",
+              revoke_application_settings_connections_path(application_id: application.id),
+              method: :delete,
+              class: "s-btn s-btn--soft s-btn--sm",
+              data: { turbo_confirm: "Revoke all access for #{application.name}?" } %>
+          <% end %>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm" style="color: var(--text);">
+            <thead>
+              <tr class="text-left" style="border-bottom: 1px solid var(--border);">
+                <th class="py-2 pr-4 font-medium">Scopes</th>
+                <th class="py-2 pr-4 font-medium">Created</th>
+                <th class="py-2 pr-4 font-medium">Last used</th>
+                <th class="py-2 pr-4 font-medium">Expires</th>
+                <th class="py-2"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% tokens.each do |token| %>
+                <tr style="border-bottom: 1px solid var(--border);">
+                  <td class="py-2 pr-4">
+                    <% token.scopes.to_a.each do |scope| %>
+                      <span class="s-chip text-xs"><%= scope %></span>
+                    <% end %>
+                  </td>
+                  <td class="py-2 pr-4"><%= token.created_at.strftime("%b %-d, %Y") %></td>
+                  <td class="py-2 pr-4">
+                    <%= token.last_used_at ? time_ago_in_words(token.last_used_at) + " ago" : "Never" %>
+                  </td>
+                  <td class="py-2 pr-4">
+                    <% if token.expires_in %>
+                      <%= time_ago_in_words(token.created_at + token.expires_in.seconds) %> from now
+                    <% else %>
+                      Never
+                    <% end %>
+                  </td>
+                  <td class="py-2 text-right">
+                    <%= button_to "Revoke", settings_connection_path(token),
+                      method: :delete,
+                      class: "s-btn s-btn--soft s-btn--sm",
+                      data: { turbo_confirm: "Revoke this token?" } %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

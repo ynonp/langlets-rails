@@ -1,0 +1,1055 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=wb5XTPwLt_o",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "text_l1": "لقد بدأت أفهم",
+        "timestamp": "00:14.00",
+        "timestamp_end": "00:16.00",
+        "words": [
+          {
+            "text": "لقد",
+            "timestamp": "00:14.00",
+            "timestamp_end": "00:14.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "already"
+          },
+          {
+            "text": "بدأت",
+            "timestamp": "00:14.50",
+            "timestamp_end": "00:15.20",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "I started"
+          },
+          {
+            "text": "أفهم",
+            "timestamp": "00:15.20",
+            "timestamp_end": "00:16.00",
+            "l1_start_index": 9,
+            "l1_end_index": 12,
+            "translation": "I understand"
+          }
+        ],
+        "text_l2": "I have started to understand"
+      },
+      {
+        "id": "phrase_2",
+        "text_l1": "لا يوجد أحد يعلم",
+        "timestamp": "00:16.50",
+        "timestamp_end": "00:18.00",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "00:16.50",
+            "timestamp_end": "00:16.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "no"
+          },
+          {
+            "text": "يوجد",
+            "timestamp": "00:16.80",
+            "timestamp_end": "00:17.20",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "there is"
+          },
+          {
+            "text": "أحد",
+            "timestamp": "00:17.20",
+            "timestamp_end": "00:17.60",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "anyone"
+          },
+          {
+            "text": "يعلم",
+            "timestamp": "00:17.60",
+            "timestamp_end": "00:18.00",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "knows"
+          }
+        ],
+        "text_l2": "There is no one who knows"
+      },
+      {
+        "id": "phrase_3",
+        "text_l1": "الآن هما بالطبع سعيدان",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:22.00",
+        "words": [
+          {
+            "text": "الآن",
+            "timestamp": "00:19.00",
+            "timestamp_end": "00:19.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "now"
+          },
+          {
+            "text": "هما",
+            "timestamp": "00:19.50",
+            "timestamp_end": "00:20.00",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "they"
+          },
+          {
+            "text": "بالطبع",
+            "timestamp": "00:20.00",
+            "timestamp_end": "00:20.80",
+            "l1_start_index": 9,
+            "l1_end_index": 14,
+            "translation": "of course"
+          },
+          {
+            "text": "سعيدان",
+            "timestamp": "00:20.80",
+            "timestamp_end": "00:22.00",
+            "l1_start_index": 16,
+            "l1_end_index": 21,
+            "translation": "happy"
+          }
+        ],
+        "text_l2": "Now they are of course happy"
+      },
+      {
+        "id": "phrase_4",
+        "text_l1": "وها نحن اثنان",
+        "timestamp": "00:22.20",
+        "timestamp_end": "00:24.50",
+        "words": [
+          {
+            "text": "وها",
+            "timestamp": "00:22.20",
+            "timestamp_end": "00:22.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "and here"
+          },
+          {
+            "text": "نحن",
+            "timestamp": "00:22.80",
+            "timestamp_end": "00:23.50",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "we"
+          },
+          {
+            "text": "اثنان",
+            "timestamp": "00:23.50",
+            "timestamp_end": "00:24.50",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "two"
+          }
+        ],
+        "text_l2": "And here we are two"
+      },
+      {
+        "id": "phrase_5",
+        "text_l1": "وعادا يلتقيان",
+        "timestamp": "00:25.50",
+        "timestamp_end": "00:28.00",
+        "words": [
+          {
+            "text": "وعادا",
+            "timestamp": "00:25.50",
+            "timestamp_end": "00:26.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "and they returned"
+          },
+          {
+            "text": "يلتقيان",
+            "timestamp": "00:26.80",
+            "timestamp_end": "00:28.00",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "they meet"
+          }
+        ],
+        "text_l2": "And they meet again"
+      },
+      {
+        "id": "phrase_6",
+        "text_l1": "معاً هما اثنان",
+        "timestamp": "00:28.50",
+        "timestamp_end": "00:31.00",
+        "words": [
+          {
+            "text": "معاً",
+            "timestamp": "00:28.50",
+            "timestamp_end": "00:29.20",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "together"
+          },
+          {
+            "text": "هما",
+            "timestamp": "00:29.20",
+            "timestamp_end": "00:29.80",
+            "l1_start_index": 5,
+            "l1_end_index": 7,
+            "translation": "they"
+          },
+          {
+            "text": "اثنان",
+            "timestamp": "00:29.80",
+            "timestamp_end": "00:31.00",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "two"
+          }
+        ],
+        "text_l2": "Together they are two"
+      },
+      {
+        "id": "phrase_7",
+        "text_l1": "وفي ظل هذا الجو البديع",
+        "timestamp": "00:31.50",
+        "timestamp_end": "00:36.50",
+        "words": [
+          {
+            "text": "وفي",
+            "timestamp": "00:31.50",
+            "timestamp_end": "00:32.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "and in"
+          },
+          {
+            "text": "ظل",
+            "timestamp": "00:32.00",
+            "timestamp_end": "00:32.50",
+            "l1_start_index": 4,
+            "l1_end_index": 5,
+            "translation": "shade"
+          },
+          {
+            "text": "هذا",
+            "timestamp": "00:32.50",
+            "timestamp_end": "00:33.00",
+            "l1_start_index": 7,
+            "l1_end_index": 9,
+            "translation": "this"
+          },
+          {
+            "text": "الجو",
+            "timestamp": "00:33.00",
+            "timestamp_end": "00:34.50",
+            "l1_start_index": 11,
+            "l1_end_index": 14,
+            "translation": "atmosphere"
+          },
+          {
+            "text": "البديع",
+            "timestamp": "00:34.50",
+            "timestamp_end": "00:36.50",
+            "l1_start_index": 16,
+            "l1_end_index": 21,
+            "translation": "wonderful"
+          }
+        ],
+        "text_l2": "And under this wonderful atmosphere"
+      },
+      {
+        "id": "phrase_8",
+        "text_l1": "معاً سيمرحان",
+        "timestamp": "00:37.00",
+        "timestamp_end": "00:41.00",
+        "words": [
+          {
+            "text": "معاً",
+            "timestamp": "00:37.00",
+            "timestamp_end": "00:38.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "together"
+          },
+          {
+            "text": "سيمرحان",
+            "timestamp": "00:38.00",
+            "timestamp_end": "00:41.00",
+            "l1_start_index": 5,
+            "l1_end_index": 11,
+            "translation": "they will have fun"
+          }
+        ],
+        "text_l2": "Together they will have fun"
+      },
+      {
+        "id": "phrase_9",
+        "text_l1": "هل تشعر بما أشعر؟",
+        "timestamp": "00:45.00",
+        "timestamp_end": "00:51.00",
+        "words": [
+          {
+            "text": "هل",
+            "timestamp": "00:45.00",
+            "timestamp_end": "00:46.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "do"
+          },
+          {
+            "text": "تشعر",
+            "timestamp": "00:46.00",
+            "timestamp_end": "00:48.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "you feel"
+          },
+          {
+            "text": "بما",
+            "timestamp": "00:48.00",
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "what"
+          },
+          {
+            "text": "أشعر؟",
+            "timestamp": "00:49.00",
+            "timestamp_end": "00:51.00",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "I feel"
+          }
+        ],
+        "text_l2": "Do you feel what I feel?"
+      },
+      {
+        "id": "phrase_10",
+        "text_l1": "سعادة وسلام",
+        "timestamp": "00:52.00",
+        "timestamp_end": "00:57.00",
+        "words": [
+          {
+            "text": "سعادة",
+            "timestamp": "00:52.00",
+            "timestamp_end": "00:54.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "happiness"
+          },
+          {
+            "text": "وسلام",
+            "timestamp": "00:54.50",
+            "timestamp_end": "00:57.00",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "and peace"
+          }
+        ],
+        "text_l2": "Happiness and peace"
+      },
+      {
+        "id": "phrase_11",
+        "text_l1": "لا بد من أن أتذكر",
+        "timestamp": "00:57.50",
+        "timestamp_end": "01:03.00",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "00:57.50",
+            "timestamp_end": "00:58.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "no"
+          },
+          {
+            "text": "بد",
+            "timestamp": "00:58.50",
+            "timestamp_end": "00:59.50",
+            "l1_start_index": 3,
+            "l1_end_index": 4,
+            "translation": "must"
+          },
+          {
+            "text": "من",
+            "timestamp": "00:59.50",
+            "timestamp_end": "01:00.00",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "from"
+          },
+          {
+            "text": "أن",
+            "timestamp": "01:00.00",
+            "timestamp_end": "01:01.00",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "to"
+          },
+          {
+            "text": "أتذكر",
+            "timestamp": "01:01.00",
+            "timestamp_end": "01:03.00",
+            "l1_start_index": 12,
+            "l1_end_index": 16,
+            "translation": "I remember"
+          }
+        ],
+        "text_l2": "I must remember"
+      },
+      {
+        "id": "phrase_12",
+        "text_l1": "لكي أنسى الألم",
+        "timestamp": "01:03.20",
+        "timestamp_end": "01:08.00",
+        "words": [
+          {
+            "text": "لكي",
+            "timestamp": "01:03.20",
+            "timestamp_end": "01:04.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "in order to"
+          },
+          {
+            "text": "أنسى",
+            "timestamp": "01:04.50",
+            "timestamp_end": "01:06.00",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "I forget"
+          },
+          {
+            "text": "الألم",
+            "timestamp": "01:06.00",
+            "timestamp_end": "01:08.00",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "the pain"
+          }
+        ],
+        "text_l2": "In order to forget the pain"
+      },
+      {
+        "id": "phrase_13",
+        "text_l1": "لدي ما أقول",
+        "timestamp": "01:09.50",
+        "timestamp_end": "01:12.50",
+        "words": [
+          {
+            "text": "لدي",
+            "timestamp": "01:09.50",
+            "timestamp_end": "01:10.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "I have"
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:10.80",
+            "timestamp_end": "01:11.50",
+            "l1_start_index": 4,
+            "l1_end_index": 5,
+            "translation": "something"
+          },
+          {
+            "text": "أقول",
+            "timestamp": "01:11.50",
+            "timestamp_end": "01:12.50",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "I say"
+          }
+        ],
+        "text_l2": "I have something to say"
+      },
+      {
+        "id": "phrase_14",
+        "text_l1": "كيف تصدقني؟",
+        "timestamp": "01:12.60",
+        "timestamp_end": "01:15.50",
+        "words": [
+          {
+            "text": "كيف",
+            "timestamp": "01:12.60",
+            "timestamp_end": "01:13.80",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "how"
+          },
+          {
+            "text": "تصدقني؟",
+            "timestamp": "01:13.80",
+            "timestamp_end": "01:15.50",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "you believe me"
+          }
+        ],
+        "text_l2": "How can you believe me?"
+      },
+      {
+        "id": "phrase_15",
+        "text_l1": "فسر الماضي لو كشفته",
+        "timestamp": "01:15.60",
+        "timestamp_end": "01:18.50",
+        "words": [
+          {
+            "text": "فسر",
+            "timestamp": "01:15.60",
+            "timestamp_end": "01:16.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "explain"
+          },
+          {
+            "text": "الماضي",
+            "timestamp": "01:16.50",
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 4,
+            "l1_end_index": 9,
+            "translation": "the past"
+          },
+          {
+            "text": "لو",
+            "timestamp": "01:17.50",
+            "timestamp_end": "01:17.80",
+            "l1_start_index": 11,
+            "l1_end_index": 12,
+            "translation": "if"
+          },
+          {
+            "text": "كشفته",
+            "timestamp": "01:17.80",
+            "timestamp_end": "01:18.50",
+            "l1_start_index": 14,
+            "l1_end_index": 18,
+            "translation": "you revealed it"
+          }
+        ],
+        "text_l2": "Explain the past if you revealed it"
+      },
+      {
+        "id": "phrase_16",
+        "text_l1": "حتماً ستكرهني",
+        "timestamp": "01:18.60",
+        "timestamp_end": "01:21.50",
+        "words": [
+          {
+            "text": "حتماً",
+            "timestamp": "01:18.60",
+            "timestamp_end": "01:19.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "certainly"
+          },
+          {
+            "text": "ستكرهني",
+            "timestamp": "01:19.80",
+            "timestamp_end": "01:21.50",
+            "l1_start_index": 6,
+            "l1_end_index": 12,
+            "translation": "you will hate me"
+          }
+        ],
+        "text_l2": "Surely you will hate me"
+      },
+      {
+        "id": "phrase_17",
+        "text_l1": "يا ليتك تبوح",
+        "timestamp": "01:22.00",
+        "timestamp_end": "01:24.20",
+        "words": [
+          {
+            "text": "يا",
+            "timestamp": "01:22.00",
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "O"
+          },
+          {
+            "text": "ليتك",
+            "timestamp": "01:22.50",
+            "timestamp_end": "01:23.50",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "I wish you"
+          },
+          {
+            "text": "تبوح",
+            "timestamp": "01:23.50",
+            "timestamp_end": "01:24.20",
+            "l1_start_index": 8,
+            "l1_end_index": 11,
+            "translation": "you reveal"
+          }
+        ],
+        "text_l2": "I wish you would confess"
+      },
+      {
+        "id": "phrase_18",
+        "text_l1": "قد احترت معك",
+        "timestamp": "01:24.30",
+        "timestamp_end": "01:27.50",
+        "words": [
+          {
+            "text": "قد",
+            "timestamp": "01:24.30",
+            "timestamp_end": "01:25.20",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "have"
+          },
+          {
+            "text": "احترت",
+            "timestamp": "01:25.20",
+            "timestamp_end": "01:26.50",
+            "l1_start_index": 3,
+            "l1_end_index": 7,
+            "translation": "I became confused"
+          },
+          {
+            "text": "معك",
+            "timestamp": "01:26.50",
+            "timestamp_end": "01:27.50",
+            "l1_start_index": 9,
+            "l1_end_index": 11,
+            "translation": "with you"
+          }
+        ],
+        "text_l2": "I have become confused with you"
+      },
+      {
+        "id": "phrase_19",
+        "text_l1": "لماذا تخفي الملك",
+        "timestamp": "01:27.60",
+        "timestamp_end": "01:30.50",
+        "words": [
+          {
+            "text": "لماذا",
+            "timestamp": "01:27.60",
+            "timestamp_end": "01:28.80",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "why"
+          },
+          {
+            "text": "تخفي",
+            "timestamp": "01:28.80",
+            "timestamp_end": "01:29.50",
+            "l1_start_index": 6,
+            "l1_end_index": 9,
+            "translation": "you hide"
+          },
+          {
+            "text": "الملك",
+            "timestamp": "01:29.50",
+            "timestamp_end": "01:30.50",
+            "l1_start_index": 11,
+            "l1_end_index": 15,
+            "translation": "the king"
+          }
+        ],
+        "text_l2": "Why do you hide the king"
+      },
+      {
+        "id": "phrase_20",
+        "text_l1": "الذي أراه بداخلك؟",
+        "timestamp": "01:30.60",
+        "timestamp_end": "01:34.00",
+        "words": [
+          {
+            "text": "الذي",
+            "timestamp": "01:30.60",
+            "timestamp_end": "01:31.50",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "that"
+          },
+          {
+            "text": "أراه",
+            "timestamp": "01:31.50",
+            "timestamp_end": "01:32.50",
+            "l1_start_index": 5,
+            "l1_end_index": 8,
+            "translation": "I see"
+          },
+          {
+            "text": "بداخلك؟",
+            "timestamp": "01:32.50",
+            "timestamp_end": "01:34.00",
+            "l1_start_index": 10,
+            "l1_end_index": 15,
+            "translation": "inside you"
+          }
+        ],
+        "text_l2": "That I see inside you?"
+      },
+      {
+        "id": "phrase_21",
+        "text_l1": "هل تشعر بما أشعر؟",
+        "timestamp": "01:35.00",
+        "timestamp_end": "01:41.00",
+        "words": [
+          {
+            "text": "هل",
+            "timestamp": "01:35.00",
+            "timestamp_end": "01:36.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "do"
+          },
+          {
+            "text": "تشعر",
+            "timestamp": "01:36.00",
+            "timestamp_end": "01:38.00",
+            "l1_start_index": 3,
+            "l1_end_index": 6,
+            "translation": "you feel"
+          },
+          {
+            "text": "بما",
+            "timestamp": "01:38.00",
+            "timestamp_end": "01:39.00",
+            "l1_start_index": 8,
+            "l1_end_index": 10,
+            "translation": "what"
+          },
+          {
+            "text": "أشعر؟",
+            "timestamp": "01:39.00",
+            "timestamp_end": "01:41.00",
+            "l1_start_index": 12,
+            "l1_end_index": 15,
+            "translation": "I feel"
+          }
+        ],
+        "text_l2": "Do you feel what I feel?"
+      },
+      {
+        "id": "phrase_22",
+        "text_l1": "سعادة وسلام",
+        "timestamp": "01:41.20",
+        "timestamp_end": "01:46.50",
+        "words": [
+          {
+            "text": "سعادة",
+            "timestamp": "01:41.20",
+            "timestamp_end": "01:43.50",
+            "l1_start_index": 0,
+            "l1_end_index": 4,
+            "translation": "happiness"
+          },
+          {
+            "text": "وسلام",
+            "timestamp": "01:43.50",
+            "timestamp_end": "01:46.50",
+            "l1_start_index": 6,
+            "l1_end_index": 10,
+            "translation": "and peace"
+          }
+        ],
+        "text_l2": "Happiness and peace"
+      },
+      {
+        "id": "phrase_23",
+        "text_l1": "لا بد من أن أتذكر",
+        "timestamp": "02:12.50",
+        "timestamp_end": "02:15.00",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "02:12.50",
+            "timestamp_end": "02:13.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "no"
+          },
+          {
+            "text": "بد",
+            "timestamp": "02:13.00",
+            "timestamp_end": "02:13.50",
+            "l1_start_index": 3,
+            "l1_end_index": 4,
+            "translation": "must"
+          },
+          {
+            "text": "من",
+            "timestamp": "02:13.50",
+            "timestamp_end": "02:14.00",
+            "l1_start_index": 6,
+            "l1_end_index": 7,
+            "translation": "from"
+          },
+          {
+            "text": "أن",
+            "timestamp": "02:14.00",
+            "timestamp_end": "02:14.50",
+            "l1_start_index": 9,
+            "l1_end_index": 10,
+            "translation": "to"
+          },
+          {
+            "text": "أتذكر",
+            "timestamp": "02:14.50",
+            "timestamp_end": "02:15.00",
+            "l1_start_index": 12,
+            "l1_end_index": 16,
+            "translation": "I remember"
+          }
+        ],
+        "text_l2": "I must remember"
+      },
+      {
+        "id": "phrase_24",
+        "text_l1": "لكي أنسى الألم",
+        "timestamp": "02:15.20",
+        "timestamp_end": "02:22.00",
+        "words": [
+          {
+            "text": "لكي",
+            "timestamp": "02:15.20",
+            "timestamp_end": "02:16.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "in order to"
+          },
+          {
+            "text": "أنسى",
+            "timestamp": "02:16.50",
+            "timestamp_end": "02:18.50",
+            "l1_start_index": 4,
+            "l1_end_index": 7,
+            "translation": "I forget"
+          },
+          {
+            "text": "الألم",
+            "timestamp": "02:18.50",
+            "timestamp_end": "02:22.00",
+            "l1_start_index": 9,
+            "l1_end_index": 13,
+            "translation": "the pain"
+          }
+        ],
+        "text_l2": "In order to forget the pain"
+      },
+      {
+        "id": "phrase_25",
+        "text_l1": "كأن سيمبا لم يكن",
+        "timestamp": "02:24.00",
+        "timestamp_end": "02:29.00",
+        "words": [
+          {
+            "text": "كأن",
+            "timestamp": "02:24.00",
+            "timestamp_end": "02:25.00",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "as if"
+          },
+          {
+            "text": "سيمبا",
+            "timestamp": "02:25.00",
+            "timestamp_end": "02:26.50",
+            "l1_start_index": 4,
+            "l1_end_index": 8,
+            "translation": "Simba"
+          },
+          {
+            "text": "لم",
+            "timestamp": "02:26.50",
+            "timestamp_end": "02:27.50",
+            "l1_start_index": 10,
+            "l1_end_index": 11,
+            "translation": "did not"
+          },
+          {
+            "text": "يكن",
+            "timestamp": "02:27.50",
+            "timestamp_end": "02:29.00",
+            "l1_start_index": 13,
+            "l1_end_index": 15,
+            "translation": "he was"
+          }
+        ],
+        "text_l2": "As if Simba was not"
+      },
+      {
+        "id": "phrase_26",
+        "text_l1": "ولد قبل اليوم",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:35.50",
+        "words": [
+          {
+            "text": "ولد",
+            "timestamp": "02:31.00",
+            "timestamp_end": "02:32.50",
+            "l1_start_index": 0,
+            "l1_end_index": 2,
+            "translation": "he was born"
+          },
+          {
+            "text": "قبل",
+            "timestamp": "02:32.50",
+            "timestamp_end": "02:33.50",
+            "l1_start_index": 4,
+            "l1_end_index": 6,
+            "translation": "before"
+          },
+          {
+            "text": "اليوم",
+            "timestamp": "02:33.50",
+            "timestamp_end": "02:35.50",
+            "l1_start_index": 8,
+            "l1_end_index": 12,
+            "translation": "today"
+          }
+        ],
+        "text_l2": "Born before today"
+      },
+      {
+        "id": "phrase_27",
+        "text_l1": "هل يصحبنا معه؟",
+        "timestamp": "02:37.00",
+        "timestamp_end": "02:40.00",
+        "words": [
+          {
+            "text": "هل",
+            "timestamp": "02:37.00",
+            "timestamp_end": "02:37.80",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "does"
+          },
+          {
+            "text": "يصحبنا",
+            "timestamp": "02:37.80",
+            "timestamp_end": "02:39.20",
+            "l1_start_index": 3,
+            "l1_end_index": 8,
+            "translation": "he takes us"
+          },
+          {
+            "text": "معه؟",
+            "timestamp": "02:39.20",
+            "timestamp_end": "02:40.00",
+            "l1_start_index": 10,
+            "l1_end_index": 12,
+            "translation": "with him"
+          }
+        ],
+        "text_l2": "Will he take us with him?"
+      },
+      {
+        "id": "phrase_28",
+        "text_l1": "أم يتركنا؟",
+        "timestamp": "02:40.10",
+        "timestamp_end": "02:42.50",
+        "words": [
+          {
+            "text": "أم",
+            "timestamp": "02:40.10",
+            "timestamp_end": "02:41.00",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "or"
+          },
+          {
+            "text": "يتركنا؟",
+            "timestamp": "02:41.00",
+            "timestamp_end": "02:42.50",
+            "l1_start_index": 3,
+            "l1_end_index": 8,
+            "translation": "he leaves us"
+          }
+        ],
+        "text_l2": "Or will he leave us?"
+      },
+      {
+        "id": "phrase_29",
+        "text_l1": "أم سوف نرحل",
+        "timestamp": "02:42.60",
+        "timestamp_end": "02:45.50",
+        "words": [
+          {
+            "text": "أم",
+            "timestamp": "02:42.60",
+            "timestamp_end": "02:43.20",
+            "l1_start_index": 0,
+            "l1_end_index": 1,
+            "translation": "or"
+          },
+          {
+            "text": "سوف",
+            "timestamp": "02:43.20",
+            "timestamp_end": "02:44.20",
+            "l1_start_index": 3,
+            "l1_end_index": 5,
+            "translation": "will"
+          },
+          {
+            "text": "نرحل",
+            "timestamp": "02:44.20",
+            "timestamp_end": "02:45.50",
+            "l1_start_index": 7,
+            "l1_end_index": 10,
+            "translation": "we leave"
+          }
+        ],
+        "text_l2": "Or will we depart"
+      },
+      {
+        "id": "phrase_30",
+        "text_l1": "بعيد",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:51.00",
+        "words": [
+          {
+            "text": "بعيد",
+            "timestamp": "02:46.00",
+            "timestamp_end": "02:51.00",
+            "l1_start_index": 0,
+            "l1_end_index": 3,
+            "translation": "far"
+          }
+        ],
+        "text_l2": "Far"
+      }
+    ],
+    "lessons": "# بداية الفهم واللقاء\n00:14.00 لقد بدأت أفهم\n00:16.50 لا يوجد أحد يعلم\n00:19.00 الآن هما بالطبع سعيدان\n00:22.20 وها نحن اثنان\n00:25.50 وعادا يلتقيان\n00:28.50 معاً هما اثنان\n00:31.50 وفي ظل هذا الجو البديع\n00:37.00 معاً سيمرحان\n\n# سؤال الشعور والسر\n00:45.00 هل تشعر بما أشعر؟\n00:52.00 سعادة وسلام\n00:57.50 لا بد من أن أتذكر\n01:03.20 لكي أنسى الألم\n01:09.50 لدي ما أقول\n01:12.60 كيف تصدقني؟\n01:15.60 فسر الماضي لو كشفته\n01:18.60 حتماً ستكرهني\n\n# البوح والمشاعر\n01:22.00 يا ليتك تبوح\n01:24.30 قد احترت معك\n01:27.60 لماذا تخفي الملك\n01:30.60 الذي أراه بداخلك؟\n01:35.00 هل تشعر بما أشعر؟\n01:41.20 سعادة وسلام\n02:12.50 لا بد من أن أتذكر\n02:15.20 لكي أنسى الألم\n\n# مصير سيمبا\n02:24.00 كأن سيمبا لم يكن\n02:31.00 ولد قبل اليوم\n02:37.00 هل يصحبنا معه؟\n02:40.10 أم يتركنا؟\n02:42.60 أم سوف نرحل\n02:46.00 بعيد",
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "title": "بداية الفهم واللقاء",
+        "score": 5,
+        "reason": "Introduces varied vocabulary and sentence structures about understanding and meeting."
+      },
+      {
+        "index": 2,
+        "title": "سؤال الشعور والسر",
+        "score": 5,
+        "reason": "Contains useful expressions for emotions, memory, and secrets."
+      },
+      {
+        "index": 3,
+        "title": "البوح والمشاعر",
+        "score": 3,
+        "reason": "First half offers new vocabulary, but second half repeats content from lesson 2."
+      },
+      {
+        "index": 4,
+        "title": "مصير سيمبا",
+        "score": 5,
+        "reason": "Presents new, meaningful sentences about fate and departure."
+      }
+    ],
+    "similar_sounds": "[فقد] بدأت أفهم\nلا يوجد أحد [تعلم]\n[والآن] هما بالطبع سعيدان\nوها نحن [اثنين]\n[وعاد] يلتقيان\n[معاك] هما اثنان\nوفي ظل هذا [الجوي] البديع\nمعاً [سيمران]\nهل تشعر بما [أشهر]\n[إعادة] وسلام\nلا بد من أن [تتذكر]\n[لك] أنسى الألم\n[لديه] ما أقول\n[وكيف] تصدقني\nفسر [القاضي] لو كشفته\n[تمام] ستكرهني\nيا [ليلتك] تبوح\nقد احترت [معي]\nلماذا [تكفي] الملك\nالذي [أراهن] بداخلك\nهل تشعر بما [تشعر]\nسعادة [وسام]\nلا بد من أن [أذكر]\n[لي] أنسى الألم\n[أن] سيمبا لم يكن\nولد [بل] اليوم\nهل [يحبني] معه\nأم [يتركني]\nأم سوف [رحل]\n[سعيد]"
+  },
+  "created_at": "2026-06-28 18:27:17 UTC",
+  "updated_at": "2026-06-28 18:29:25 UTC",
+  "exported_at": "2026-06-28T18:29:25Z"
+}
