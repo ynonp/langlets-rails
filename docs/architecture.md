@@ -497,6 +497,14 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 
 The platform implements a modern, YouTube-inspired interface for browsing learning paths:
 
+#### Courses Index View (`app/views/courses/index.html.erb`)
+- **Header**: Site branding, streak/XP display, user profile dropdown with mobile-responsive controls.
+- **Continue Learning** (signed-in users only): Responsive grid of courses the user has already started.
+- **Tab Navigation** (Stimulus `tabs` controller):
+  - **Courses** tab (default): Displays all published learning paths in a responsive 4-column grid. Cards link to the learning path detail page.
+  - **Standalone Clips** tab: Displays all published courses not belonging to any learning path in the same responsive grid.
+- **Next For You** (signed-in users only): Responsive grid of AI-recommended courses.
+
 #### Learning Path Show View (`app/views/learning_paths/show.html.erb`)
 - **Header Section**: 
   - Back navigation to main courses page
