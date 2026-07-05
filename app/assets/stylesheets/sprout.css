@@ -344,6 +344,26 @@
 }
 .s-tab--active { color: var(--accent); font-weight: 800; }
 
+/* Page-level tab navigation (courses index) */
+[data-tabs-target="tab"] {
+  color: var(--faint);
+  border-bottom: 2px solid transparent;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+  font: 600 15px 'Nunito', sans-serif;
+  padding: 12px 20px;
+  margin-bottom: -1px;
+  transition: color 0.15s;
+}
+[data-tabs-target="tab"][data-active="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 800;
+}
+
 /* round control buttons (lesson player) */
 .s-ctl {
   width: 44px;
