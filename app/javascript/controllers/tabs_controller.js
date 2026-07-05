@@ -43,6 +43,8 @@ export default class extends Controller {
       event.preventDefault()
       this.activate(event.currentTarget.dataset.tabsTabId)
       break
+    default:
+      break
     }
   }
 
