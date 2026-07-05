@@ -846,3 +846,13 @@ All 3 user profile menus show a "📚 Review Words" button when the user has sav
 On mobile, the courses index and learning path headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`
 - `learning_paths/show.html.erb`
+
+## Homepage "Courses" / "Standalone Clips" Tabs
+
+The homepage (`courses/index.html.erb`, `CoursesController#index`) groups the two main content sections behind tabs instead of stacking a horizontally scrolling row on top of a grid:
+
+- **Default tab "Courses"**: renders `@learning_paths` (published learning paths) as cards in a responsive grid (`grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4`).
+- **Secondary tab "Standalone Clips"**: renders `@all_courses` (published courses not part of any learning path) using the existing `course_card` partial, in the same grid layout.
+- Both panels use the same responsive grid classes so the layout is consistent whichever tab is active, and fully responsive on mobile and desktop.
+- Tab switching is handled client-side by the `tabs` Stimulus controller (`app/javascript/controllers/tabs_controller.js`), which toggles the `hidden` attribute on `data-tabs-target="panel"` elements and the `s-btn--soft` class on `data-tabs-target="tab"` buttons based on a `data-tabs-name-param` clicked. No page reload or extra request is needed.
+- The "Continue Learning" and "Next For You" sections elsewhere on the page are unrelated carousels and still use the `swiper` Stimulus controller/library for horizontal scrolling.

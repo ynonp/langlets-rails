@@ -211,52 +211,58 @@
     </section>
   <% end %>
 
-  <!-- Courses (Learning Paths) -->
-  <% if @learning_paths.any? %>
-    <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Courses</h2>
-      <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
-        <div class="swiper-wrapper">
-          <% @learning_paths.each_with_index do |learning_path, index| %>
-            <% lp_hue = lang_hue(learning_path.courses.first&.language&.iso_name) %>
-            <div class="swiper-slide">
-              <%= link_to learning_path_path(learning_path), class: "block w-64 sm:w-72 md:w-80 s-card cursor-pointer flex flex-col h-full overflow-hidden", style: "padding: 0;" do %>
-                <!-- Path Image -->
-                <% if learning_path.cover_image_url %>
-                  <img src="<%= learning_path.cover_image_url %>" alt="<%= learning_path.name %>" class="w-full h-40 object-cover flex-shrink-0">
-                <% else %>
-                  <div class="s-thumb w-full h-40 flex-shrink-0" style="--th: <%= lp_hue %>; border-radius: 0;"></div>
-                <% end %>
+  <!-- Courses / Standalone Clips -->
+  <% if @learning_paths.any? || @all_courses.any? %>
+    <section class="mb-10 px-2" data-controller="tabs">
+      <div class="flex flex-wrap gap-3 mb-6" role="tablist" aria-label="Browse courses">
+        <button type="button" role="tab" aria-selected="true" class="s-btn"
+                data-tabs-target="tab" data-tabs-name-param="courses"
+                data-action="click->tabs#select">
+          Courses
+        </button>
+        <button type="button" role="tab" aria-selected="false" class="s-btn s-btn--soft"
+                data-tabs-target="tab" data-tabs-name-param="standalone"
+                data-action="click->tabs#select">
+          Standalone Clips
+        </button>
+      </div>
 
-                <!-- Path Content -->
-                <div class="p-4 flex flex-col flex-grow">
-                  <div class="flex-grow">
-                    <h3 class="s-h2 mb-2"><%= learning_path.name %></h3>
-                    <% if learning_path.description.present? %>
-                      <p class="s-small mb-3 line-clamp-2"><%= truncate(learning_path.description, length: 80) %></p>
-                    <% end %>
-                    <div class="s-small mb-3">
-                      <%= pluralize(learning_path.courses.count, 'clip') %>
-                    </div>
-                  </div>
-                  <div class="s-btn w-full">Start Path</div>
-                </div>
+      <div data-tabs-target="panel" data-tabs-name="courses" role="tabpanel">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <% @learning_paths.each do |learning_path| %>
+            <% lp_hue = lang_hue(learning_path.courses.first&.language&.iso_name) %>
+            <%= link_to learning_path_path(learning_path), class: "block s-card cursor-pointer flex flex-col h-full min-w-0 overflow-hidden", style: "padding: 0;" do %>
+              <!-- Path Image -->
+              <% if learning_path.cover_image_url %>
+                <img src="<%= learning_path.cover_image_url %>" alt="<%= learning_path.name %>" class="w-full h-40 object-cover flex-shrink-0">
+              <% else %>
+                <div class="s-thumb w-full h-40 flex-shrink-0" style="--th: <%= lp_hue %>; border-radius: 0;"></div>
               <% end %>
-            </div>
+
+              <!-- Path Content -->
+              <div class="p-4 flex flex-col flex-grow">
+                <div class="flex-grow">
+                  <h3 class="s-h2 mb-2"><%= learning_path.name %></h3>
+                  <% if learning_path.description.present? %>
+                    <p class="s-small mb-3 line-clamp-2"><%= truncate(learning_path.description, length: 80) %></p>
+                  <% end %>
+                  <div class="s-small mb-3">
+                    <%= pluralize(learning_path.courses.count, 'clip') %>
+                  </div>
+                </div>
+                <div class="s-btn w-full">Start Path</div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
-    </section>
-  <% end %>
 
-  <!-- Standalone Clips -->
-  <% if @all_courses.any? %>
-    <section class="px-2">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Standalone Clips</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
-        <% @all_courses.each do |course| %>
-          <%= render 'course_card', course: course %>
-        <% end %>
+      <div data-tabs-target="panel" data-tabs-name="standalone" role="tabpanel" hidden>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+          <% @all_courses.each do |course| %>
+            <%= render 'course_card', course: course %>
+          <% end %>
+        </div>
       </div>
     </section>
   <% end %>
