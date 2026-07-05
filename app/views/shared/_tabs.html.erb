@@ -1,0 +1,39 @@
+<% return if tabs.blank? %>
+<% default_tab = local_assigns.fetch(:default_tab, tabs.first[:id]) %>
+
+<div data-controller="tabs" data-tabs-default-tab-value="<%= default_tab %>">
+  <div class="mb-6 flex items-center gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Content sections">
+    <% tabs.each do |tab| %>
+      <% active = tab[:id] == default_tab %>
+      <button
+        type="button"
+        id="<%= "#{tab[:id]}-tab" %>"
+        data-testid="tabs-tab-<%= tab[:id] %>"
+        data-tabs-target="tab"
+        data-tabs-tab-id="<%= tab[:id] %>"
+        data-action="click->tabs#select keydown->tabs#onKeydown"
+        role="tab"
+        aria-controls="<%= "#{tab[:id]}-panel" %>"
+        aria-selected="<%= active %>"
+        tabindex="<%= active ? 0 : -1 %>"
+        class="rounded-full px-4 py-2 text-sm whitespace-nowrap transition-colors <%= active ? 'bg-slate-100 text-slate-900 font-semibold' : 'bg-slate-800 text-slate-300 hover:bg-slate-700 hover:text-slate-100' %>"
+      >
+        <%= tab[:label] %>
+      </button>
+    <% end %>
+  </div>
+
+  <% tabs.each do |tab| %>
+    <div
+      id="<%= "#{tab[:id]}-panel" %>"
+      data-testid="tabs-panel-<%= tab[:id] %>"
+      data-tabs-target="panel"
+      data-tabs-tab-id="<%= tab[:id] %>"
+      role="tabpanel"
+      aria-labelledby="<%= "#{tab[:id]}-tab" %>"
+      <%= "hidden" unless tab[:id] == default_tab %>
+    >
+      <%= render tab[:partial], **(tab[:locals] || {}) %>
+    </div>
+  <% end %>
+</div>

@@ -194,6 +194,46 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "[data-testid='header-xp-mobile-menu']", count: 1
   end
 
+  test "root page uses tabs to switch between courses and standalone clips" do
+    learning_path = LearningPath.create!(
+      name: "Beginner Tracks",
+      slug: "beginner-tracks-#{Time.zone.now.to_i}",
+      published: true
+    )
+
+    course_in_path = Course.create!(
+      name: "Path Course #{Time.zone.now.to_i}",
+      slug: "path-course-#{Time.zone.now.to_i}",
+      main_media_url: "https://www.youtube.com/watch?v=path123",
+      user: @user,
+      language: @english,
+      status: :published
+    )
+    learning_path.courses << course_in_path
+
+    Course.create!(
+      name: "Standalone Course #{Time.zone.now.to_i}",
+      slug: "standalone-course-#{Time.zone.now.to_i}",
+      main_media_url: "https://www.youtube.com/watch?v=clip123",
+      user: @user,
+      language: @spanish,
+      status: :published
+    )
+
+    get root_path
+    assert_response :success
+
+    assert_select "[data-testid='tabs-tab-courses']", text: "Courses", count: 1
+    assert_select "[data-testid='tabs-tab-standalone-clips']", text: "Standalone clips", count: 1
+
+    assert_select "[data-testid='tabs-panel-courses']:not([hidden])", count: 1
+    assert_select "[data-testid='tabs-panel-standalone-clips'][hidden]", count: 1
+
+    assert_select "[data-testid='tabs-panel-courses']", text: /Beginner Tracks/
+    assert_select "[data-testid='tabs-panel-standalone-clips']", text: /Standalone Course/
+    assert_select ".swiper", count: 0
+  end
+
   test "learning path header keeps theme and xp controls in mobile profile menu" do
     learning_path = LearningPath.create!(
       name: "Mobile Header Test Path",

@@ -445,6 +445,7 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 3. **Local Persistence**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage`. It is not persisted server-side.
 4. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
 5. **Content Filtering**: `CoursesController#index` and `LearningPathsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
+6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (learning path grid) and a secondary **Standalone clips** tab (standalone course grid).
 
 #### Changing Learning Language
 - Users can change their learning language at any time from the user dropdown menu (avatar icon) on any authenticated page.
