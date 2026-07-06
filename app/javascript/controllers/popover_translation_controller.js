@@ -69,13 +69,13 @@ export default class extends Controller {
     if (isSaved) {
       this.saveIconTarget.textContent = '✓';
       this.saveTextTarget.textContent = 'Saved';
-      this.saveButtonTarget.classList.add('bg-green-50', 'border-green-200');
-      this.saveButtonTarget.classList.remove('bg-gray-50', 'border-gray-200');
+      this.saveButtonTarget.classList.add('bg-emerald-100', 'dark:bg-emerald-900/40', 'border-emerald-300', 'dark:border-emerald-700');
+      this.saveButtonTarget.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'border-gray-200', 'dark:border-gray-600');
     } else {
       this.saveIconTarget.textContent = '🔖';
       this.saveTextTarget.textContent = 'Save';
-      this.saveButtonTarget.classList.add('bg-gray-50', 'border-gray-200');
-      this.saveButtonTarget.classList.remove('bg-green-50', 'border-green-200');
+      this.saveButtonTarget.classList.add('bg-gray-100', 'dark:bg-gray-700', 'border-gray-200', 'dark:border-gray-600');
+      this.saveButtonTarget.classList.remove('bg-emerald-100', 'dark:bg-emerald-900/40', 'border-emerald-300', 'dark:border-emerald-700');
     }
 
     // Hide save button if no token id (not a saveable token or no session)

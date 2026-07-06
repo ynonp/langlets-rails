@@ -31,32 +31,32 @@
     data-match-tokens-activity-tokens-value="<%= tokens.to_json %>"
     data-match-tokens-activity-total-tokens-value="<%= total_tokens %>"
     data-match-tokens-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
-    class="flex-col flex items-center bg-gray-800">
-  
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
     <div class="mb-6">
-      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Match Words to Their Translations" %></h2>
-      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
-        <div data-match-tokens-activity-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Match Words to Their Translations" %></h2>
+      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
+        <div data-match-tokens-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>
     </div>
 
     <div id="match-tokens" class="flex flex-col gap-4">
 
       <!-- Completion message -->
-      <div data-match-tokens-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div data-match-tokens-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
-          <p class="text-center sm:text-left text-gray-300">You've matched all the words correctly.</p>
+          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
+          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've matched all the words correctly.</p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "s-btn w-full sm:w-auto") %>
+        <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
       <!-- Grid container -->
       <div class="grid grid-cols-2 gap-4 min-h-[400px]" data-match-tokens-activity-target="grid" data-action="touchend->match-tokens-activity#handleTouchEnd:!passive">
         <!-- Left column (L1 words) -->
         <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-700 text-white font-semibold rounded text-sm">
+          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
             <%= l1.english_name %> Words
           </div>
           <div data-match-tokens-activity-target="l1Column" class="flex flex-col gap-3">
@@ -66,7 +66,7 @@
 
         <!-- Right column (L2 translations) -->
         <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-700 text-white font-semibold rounded text-sm">
+          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
             <%= l2.english_name %> Translations
           </div>
           <div data-match-tokens-activity-target="l2Column" class="flex flex-col gap-3">
@@ -108,8 +108,8 @@
 }
 
 .token-word.selected {
-  border-color: rgb(59, 130, 246);
-  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  border-color: var(--color-emerald-500);
+  box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-emerald-500) 30%, transparent);
 }
 
 .token-word.matched {

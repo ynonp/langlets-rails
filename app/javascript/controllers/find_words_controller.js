@@ -97,8 +97,7 @@ export default class extends Controller {
     if (originalPhrase && this.hasOriginalPhrasesContainerTarget) {
       // Remove highlighting from all original phrases
       this.element.querySelectorAll('.original-phrase').forEach(phrase => {
-        phrase.classList.remove('ring-2', 'ring-blue-400', 'bg-gray-800');
-        phrase.classList.add('bg-gray-900');
+        phrase.classList.remove('ring-2', 'ring-blue-400');
       });
             
       // Calculate the position to scroll to

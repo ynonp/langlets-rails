@@ -92,7 +92,7 @@ export default class extends Controller {
       currentToken.blank.textContent = selectedWord;
       currentToken.blank.classList.remove('text-gray-400');
       currentToken.blank.classList.remove('blank-line');
-      currentToken.blank.classList.add('text-white');
+      currentToken.blank.classList.add('text-gray-900', 'dark:text-gray-50');
       currentToken.filled = true;
       
       // Award XP for correct answer (2 XP per correct answer)
@@ -153,7 +153,7 @@ export default class extends Controller {
                 data-word="${word.word}" 
                 data-correct="${word.correct}" 
                 data-action="click->listen-activity#selectWord"
-                class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
+                class="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
           ${word.word}
         </button>
       `).join('');

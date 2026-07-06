@@ -28,24 +28,24 @@
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
-    data-watch-video-activity-current-text-line-class="s-line-active"
+    data-watch-video-activity-current-text-line-class="line-active"
     data-watch-video-activity-word-timing-value="<%= params[:word_timing] ? true : false %>"
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
   <div class="contents">
     <!-- Header: title + translation toggle -->
-    <div class="order-4 flex items-center justify-between s-pad" style="padding-top: 12px; padding-bottom: 8px;">
-      <div class="s-eyebrow">Tap any word</div>
-      <div class="flex items-center" style="gap: 16px;">
+    <div class="order-4 flex items-center justify-between px-5 pt-3 pb-2">
+      <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Tap any word</div>
+      <div class="flex items-center gap-4">
         <% if params[:word_timing] %>
-          <label class="s-toggle">
+          <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
             <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
               data-watch-video-activity-target="showKaraoke"
               data-action="change->watch-video-activity#toggleKaraoke">
             Karaoke
           </label>
         <% end %>
-        <label class="s-toggle">
+        <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
           <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
             data-watch-video-activity-target="showTranslation"
             data-action="change->watch-video-activity#toggleTranslation">
@@ -55,10 +55,10 @@
     </div>
 
     <% if @activity.text_header.present? %>
-      <div class="order-4 s-pad" style="padding-bottom: 8px;">
-        <h2 class="s-h2"><%= @activity.text_header %></h2>
+      <div class="order-4 px-5 pb-2">
+        <h2 class="text-lg font-extrabold tracking-tight"><%= @activity.text_header %></h2>
         <% if @activity.text_subheader.present? %>
-          <p class="s-small" style="margin-top: 2px;"><%= @activity.text_subheader %></p>
+          <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5"><%= @activity.text_subheader %></p>
         <% end %>
       </div>
     <% end %>
@@ -71,7 +71,7 @@
         id="phrases-container"
         data-watch-video-activity-target="container"
         data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-        class="order-4 s-scroll s-pad"
+        class="order-4 flex-1 overflow-y-auto flex flex-col gap-4 px-5"
         style="padding-bottom: calc(16px + env(safe-area-inset-bottom));"
         >
       <div id="phrases-list" data-watch-video-activity-target="phrasesList"
@@ -80,29 +80,46 @@
           <div
             data-watch-video-activity-target="subtitles"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-            class="s-phrase"
+            class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <div class="s-phrase__l1" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-              <%= wrap_tokens_in_spans(phrase, { class: "s-token" }) %>
+            <div class="text-xl font-extrabold leading-relaxed" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
+              <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40" }) %>
             </div>
-            <div class="s-phrase__l2 <%= 'hidden' unless wv_prefs["translation"] %>" data-watch-video-activity-target="translation" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
+            <div class="mt-1 text-base italic text-gray-500 dark:text-gray-400 <%= 'hidden' unless wv_prefs["translation"] %>" data-watch-video-activity-target="translation" dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
               <%= phrase.text_l2 %>
             </div>
           </div>
         <% end %>
       </div>
       <!-- Translation Popup -->
-      <%= render partial: 'activities/translation_popup', locals: { popup_class: "s-popover hidden", l1_rtl: l1_rtl } %>
+      <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden absolute z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px]", l1_rtl: l1_rtl } %>
     </div>
 
     <!-- Start practice -->
-    <div class="order-4 s-pad" style="flex-shrink: 0; padding-top: 12px; padding-bottom: calc(20px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--border);">
+    <div class="order-4 px-5 flex-shrink-0 pt-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: calc(20px + env(safe-area-inset-bottom));">
       <a href="<%= @next_activity_path %>"
          data-watch-video-activity-target="startPracticeButton"
-         class="s-btn s-btn--full s-btn--lg">
+         class="w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors">
         <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
         Start practice
       </a>
     </div>
   </div>
 </div>
+
+<style>
+/* the subtitle line currently playing (set by watch-video-activity controller) */
+[data-controller="watch-video-activity"] .line-active {
+  background: var(--color-emerald-100) !important;
+}
+[data-theme="dark"] [data-controller="watch-video-activity"] .line-active {
+  background: color-mix(in oklab, var(--color-emerald-900) 40%, transparent) !important;
+}
+
+/* karaoke: the word currently being sung (set by watch-video-activity controller) */
+[data-controller="watch-video-activity"] .s-token-active {
+  background: var(--color-emerald-500);
+  color: #fff;
+  border-radius: 6px;
+}
+</style>

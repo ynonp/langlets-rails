@@ -1,9 +1,8 @@
 <%# Light/dark theme switcher. Rendered inline inside a header/toolbar next to
-    other buttons. Wrapped in .sprout so it inherits the sprout color tokens in
-    both themes. %>
-<div class="sprout inline-flex">
+    other buttons. %>
+<div class="inline-flex">
   <button type="button"
-          class="theme-toggle"
+          class="inline-flex items-center justify-center w-[42px] h-[42px] rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-emerald-600 dark:text-emerald-400 cursor-pointer transition-colors hover:bg-gray-100 dark:hover:bg-gray-800 active:scale-95 [&_svg]:w-5 [&_svg]:h-5"
           data-controller="theme"
           data-theme-url-value="<%= theme_preference_path %>"
           data-action="click->theme#toggle"

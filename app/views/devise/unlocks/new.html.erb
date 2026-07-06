@@ -1,34 +1,32 @@
-<div class="sprout" style="--hue: 150;">
-  <div class="min-h-screen w-full flex items-center justify-center relative" style="background: var(--bg); min-height: 100dvh;">
-    <%= link_to root_path, class: "s-ctl absolute", style: "top: 24px; left: 16px; box-shadow: none;" do %>
-      <svg class="w-6 h-6" fill="none" stroke="var(--muted)" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-      </svg>
+<div class="min-h-screen w-full flex items-center justify-center relative bg-emerald-50 dark:bg-gray-950" style="min-height: 100dvh;">
+  <%= link_to root_path, class: "absolute top-6 left-4 w-11 h-11 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-500 dark:text-gray-400" do %>
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  <% end %>
+
+  <div class="w-full max-w-md px-6">
+    <div class="text-center mb-8">
+      <h1 class="text-2xl font-extrabold tracking-tight text-[30px]">Resend unlock</h1>
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5">We'll email you new unlock instructions</p>
+    </div>
+
+    <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: "space-y-5" }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+      </div>
+
+      <div>
+        <%= f.submit "RESEND UNLOCK", class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
+      </div>
     <% end %>
 
-    <div class="w-full max-w-md px-6">
-      <div class="text-center mb-8">
-        <h1 class="s-h1" style="font-size: 30px;">Resend unlock</h1>
-        <p class="s-small" style="margin-top: 6px;">We'll email you new unlock instructions</p>
-      </div>
-
-      <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post, class: "space-y-5" }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
-
-        <div>
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "s-input" %>
-        </div>
-
-        <div>
-          <%= f.submit "RESEND UNLOCK", class: "s-btn s-btn--full s-btn--lg" %>
-        </div>
-      <% end %>
-
-      <div class="mt-6 text-center">
-        <p class="s-small">
-          <%= link_to "Back to sign in", new_user_session_path, style: "color: var(--accent); font-weight: 700;" %>
-        </p>
-      </div>
+    <div class="mt-6 text-center">
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
+        <%= link_to "Back to sign in", new_user_session_path, class: "text-emerald-600 dark:text-emerald-400 font-bold" %>
+      </p>
     </div>
   </div>
 </div>

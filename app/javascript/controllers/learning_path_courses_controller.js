@@ -64,13 +64,13 @@ export default class extends Controller {
   updateActiveTag(activeButton) {
     // Remove active class from all tag buttons
     document.querySelectorAll('.tag-filter').forEach(button => {
-      button.classList.remove('bg-blue-600', 'text-white')
-      button.classList.add('bg-slate-700', 'text-slate-300', 'hover:bg-slate-600')
+      button.classList.remove('bg-emerald-500', 'text-white')
+      button.classList.add('bg-gray-100', 'dark:bg-gray-800', 'text-gray-500', 'dark:text-gray-400', 'hover:bg-gray-200', 'dark:hover:bg-gray-700')
     })
-    
+
     // Add active class to clicked button
-    activeButton.classList.remove('bg-slate-700', 'text-slate-300', 'hover:bg-slate-600')
-    activeButton.classList.add('bg-blue-600', 'text-white')
+    activeButton.classList.remove('bg-gray-100', 'dark:bg-gray-800', 'text-gray-500', 'dark:text-gray-400', 'hover:bg-gray-200', 'dark:hover:bg-gray-700')
+    activeButton.classList.add('bg-emerald-500', 'text-white')
   }
 
   loadMore() {

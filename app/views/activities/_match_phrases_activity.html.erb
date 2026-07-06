@@ -24,16 +24,16 @@
     data-action="stop-audio->main-video-player#stopPlayback"
     data-match-activity-l1-value="<%= params[:l1].iso_name %>"
     data-match-activity-total-phrases-value="<%= total_phrases %>"
-    class="flex-col flex items-center bg-gray-800">
-  
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg">
+    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
     <div class="mb-1">
-      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Click On The Translation" %></h2>
-      <p class="text-gray-400 text-sm sm:text-base mb-2">
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Click On The Translation" %></h2>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-2">
         <span data-match-activity-target="progressText">Question 1 of <%= total_phrases %></span>
       </p>
-      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-4">
-        <div data-match-activity-target="progressBar" id="progress" class="bg-green-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
+        <div data-match-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>
     </div>
     
@@ -55,24 +55,24 @@
           data-popover-translation-l1-language-value="<%= params[:l1].english_name || 'Language' %>"
           data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
           data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-          class="my-4 text-md md:text-xl text-white w-full text-left px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 flex items-center justify-between">
-          <span 
-            class="text-white text-md md:text-xl relative"
+          class="my-4 text-md md:text-xl text-gray-900 dark:text-gray-50 w-full text-left px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 flex items-center justify-between">
+          <span
+            class="text-gray-900 dark:text-gray-50 text-md md:text-xl relative"
             dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-          >            
+          >
             <%= wrap_tokens_in_spans(phrase,
-                                   {class: "cursor-pointer hover:bg-gray-600 rounded inline relative",
+                                   {class: "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded inline relative",
                                     }) %>
           </span>
-          
-          <button 
+
+          <button
             data-action="click->main-video-player#playSegment"
             data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
             data-main-video-player-segment-end-param="<%= timestamp_to_seconds(timestamp_end) %>"
             data-match-activity-target="speakerButton"
             data-phrase="<%= original %>"
             data-phrase-index="<%= index %>"
-            class="<%= l1_rtl ? "text-right" : "text-left" %> ml-3 p-2 text-gray-400 hover:text-white transition-colors duration-200 flex-shrink-0"
+            class="<%= l1_rtl ? "text-right" : "text-left" %> ml-3 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 flex-shrink-0"
             title="Play audio">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
               <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
@@ -80,7 +80,7 @@
           </button>
           
           <!-- Translation Popup - moved outside and positioned absolutely -->
-          <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed bg-white text-gray-900 p-2 rounded shadow-lg z-50 max-w-xs" } %>
+          <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-2 rounded shadow-lg z-50 max-w-xs" } %>
         </div>
         
         <!-- Options section for this phrase -->
@@ -115,7 +115,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 hover:bg-gray-700 text-white transition-all duration-200 text-base text-md md:text-xl">
+              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-base text-md md:text-xl">
               <%= option %>
             </button>
           <% end %>
@@ -125,12 +125,12 @@
     
     <div data-match-activity-target="feedbackMessage" class="hidden mt-4 p-3 rounded-lg text-center text-lg font-medium"></div>
     
-    <div data-match-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden mt-8 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+    <div data-match-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden mt-8 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
-        <p class="text-center sm:text-left text-gray-300">You've completed all the phrases.</p>
+        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've completed all the phrases.</p>
       </div>
-      <%= link_to_next_activity("Next", @next_activity_path, class: "s-btn w-full sm:w-auto") %>
+      <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
     </div>
   </div>  
 

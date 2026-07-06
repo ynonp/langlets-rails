@@ -10,16 +10,23 @@
     100% { transform: scale(1); }
   }
   
-  @keyframes correct-feedback {
-    0% { background-color: rgb(55, 65, 81); }
-    50% { background-color: rgb(34, 197, 94); }
-    100% { background-color: rgb(55, 65, 81); }
+  .word-option-button {
+    --option-bg: var(--color-gray-100);
   }
-  
+  [data-theme="dark"] .word-option-button {
+    --option-bg: var(--color-gray-800);
+  }
+
+  @keyframes correct-feedback {
+    0% { background-color: var(--option-bg); }
+    50% { background-color: rgb(34, 197, 94); }
+    100% { background-color: var(--option-bg); }
+  }
+
   @keyframes incorrect-feedback {
-    0% { background-color: rgb(55, 65, 81); }
+    0% { background-color: var(--option-bg); }
     50% { background-color: rgb(239, 68, 68); }
-    100% { background-color: rgb(55, 65, 81); }
+    100% { background-color: var(--option-bg); }
   }
   
   .word-option-button {
@@ -36,62 +43,62 @@
 </style>
 
 <div
-    class="flex-col flex items-center bg-gray-800 overflow-hidden"
-    data-controller="listen-activity"    
+    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950 overflow-hidden"
+    data-controller="listen-activity"
     data-main-video-player-target="videoListener videoSegment"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
     data-segment-end="<%= timestamp_to_seconds(params[:end_timestamp]) %>"
     data-next-activity-path="<%= @next_activity_path %>"
-    data-action="      
+    data-action="
       video:progress->listen-activity#progress
       listen-activity:pause-video->main-video-player#stopPlayback
       listen-activity:play-video->main-video-player#resume"
 >
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-lg shadow-lg flex flex-col h-[calc(100vh-160px)]">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md flex flex-col h-[calc(100vh-160px)] bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
     <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
-      <p class="text-sm sm:text-base text-gray-400"><%= @activity.text_subheader %></p>
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
+      <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
     </div>
 
     <%= render partial: 'activities/mini_video_player', locals: {params: params} %>
 
     <!-- Completion Message (Initially Hidden) -->
-    <div class="my-4 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
+    <div class="my-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
       <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
-        <p class="text-center sm:text-left text-gray-300">You've completed all the listening exercises.</p>
+        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
+        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've completed all the listening exercises.</p>
       </div>
-      <%= link_to_next_activity("Next", @next_activity_path, class: "s-btn w-full sm:w-auto") %>
-    </div>    
+      <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
+    </div>
 
     <!-- Phrases Container with scrolling -->
     <div
         id="phrases-container"
         data-listen-activity-target="phrasesContainer container"
-        class="w-full mx-auto bg-gray-800 flex-1 overflow-y-auto"
+        class="w-full mx-auto bg-white dark:bg-gray-900 flex-1 overflow-y-auto"
         dir="<%= rtl ? 'rtl' : 'ltr' %>"
         >
       <div
-        id="phrases-list" 
+        id="phrases-list"
         data-listen-activity-target="phrasesList"
-        class="text-white text-sm sm:text-base pb-14 ">
+        class="text-gray-900 dark:text-gray-50 text-sm sm:text-base pb-14 ">
         <% phrases.each_with_index do |phrase, phrase_index| %>
           <div
-            data-listen-activity-target="subtitles phrase"            
+            data-listen-activity-target="subtitles phrase"
             data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
             data-phrase-id="<%= phrase_index %>"
             class="px-4 py-3 transition-all duration-200">
-            <div class="text-white text-md md:text-xl">
+            <div class="text-gray-900 dark:text-gray-50 text-md md:text-xl">
               <%= render_phrase_with_blanks(phrase) %>
             </div>
-            <div class="text-teal-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
+            <div class="text-gray-500 dark:text-gray-400 mt-1 text-md md:text-xl hidden" data-listen-activity-target="translation">
               <%= phrase.text_l2 %>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-    
+
     <!-- Word Selection Area -->
     <div class="my-6 flex justify-center space-x-4" data-listen-activity-target="wordSelection">
       <%
@@ -129,7 +136,7 @@
               data-word="<%= word_data[:word] %>" 
               data-correct="<%= word_data[:correct] %>"
               data-action="click->listen-activity#selectWord"
-              class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
+              class="px-6 py-3 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 font-medium rounded-lg transition-colors duration-200 text-center word-option-button">
               <%= word_data[:word] %>
             </button>
       <%  end

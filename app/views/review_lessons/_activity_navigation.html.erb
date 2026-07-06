@@ -1,16 +1,16 @@
 <% current_activity_order = params[:a].to_i %>
 <% current_activity_order = @activity.order if current_activity_order == 0 %>
 
-<div class="s-stepnav activity-stepnav">
+<% step_base = "w-[30px] h-[30px] rounded-full inline-flex items-center justify-center font-extrabold text-[13px] no-underline flex-shrink-0 transition-transform" %>
+<div class="flex items-center gap-2.5 px-5 py-3 bg-emerald-50 dark:bg-gray-950 border-b border-gray-200 dark:border-gray-700 flex-shrink-0 overflow-x-auto activity-stepnav">
   <%= link_to root_path,
-    class: "flex items-center justify-center flex-shrink-0",
-    style: "color: var(--faint);",
+    class: "flex items-center justify-center flex-shrink-0 text-gray-400 dark:text-gray-600",
     title: "Back to Home",
     data: { :"turbo-frame" => "_top", :turbo => false } do %>
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
   <% end %>
 
-  <div class="flex-1 flex items-center justify-center" style="gap: 8px;">
+  <div class="flex-1 flex items-center justify-center gap-2">
     <% @activities.each do |activity| %>
       <%
         status = if activity.order < current_activity_order
@@ -20,9 +20,14 @@
                  else
                    "upcoming"
                  end
+        step_classes = case status
+                       when "done" then "bg-emerald-500 text-white"
+                       when "current" then "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 ring-2 ring-emerald-500"
+                       else "bg-gray-100 dark:bg-gray-800 text-gray-400 dark:text-gray-600 border border-gray-200 dark:border-gray-700"
+                       end
       %>
       <%= link_to review_lesson_path(@lesson, a: activity.order),
-          class: "s-step s-step--#{status}",
+          class: "#{step_base} #{step_classes}",
           data: { turbo_frame: 'activity' },
           aria: { label: "Activity #{activity.order}" } do %>
         <% if status == "done" %>
@@ -34,5 +39,5 @@
     <% end %>
   </div>
 
-  <div style="width: 22px; flex-shrink: 0;"></div>
+  <div class="w-[22px] flex-shrink-0"></div>
 </div>

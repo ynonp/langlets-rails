@@ -92,7 +92,7 @@ export default class extends Controller {
       <button
         data-action="click->write-missing-word-activity#selectHintOption"
         data-option="${opt}"
-        class="hint-option px-4 py-4 bg-gray-800 hover:bg-gray-700 border-2 border-gray-600 rounded-lg text-white text-base sm:text-lg font-medium transition-colors duration-200 text-center">
+        class="hint-option px-4 py-4 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-gray-50 text-base sm:text-lg font-medium transition-colors duration-200 text-center">
         ${opt}
       </button>
     `).join("")
@@ -113,21 +113,21 @@ export default class extends Controller {
     this.feedbackTarget.classList.remove("hidden")
 
     if (isCorrect) {
-      selected.classList.add("border-green-500", "bg-green-900")
+      selected.classList.add("border-emerald-500", "bg-emerald-100", "dark:bg-emerald-900/40")
       this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
-      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-green-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 1
       this.dispatch("xp", { detail: { xp: 1 } })
       if (this.currentAudio) this.currentAudio.play().catch(() => {})
       setTimeout(() => this.nextCard(), 1000)
     } else {
-      selected.classList.add("border-red-500", "bg-red-900")
+      selected.classList.add("border-red-500", "bg-red-100", "dark:bg-red-900/40")
       // Re-enable the other options so the user can try again
       allOptions.forEach(btn => {
         if (btn !== selected) btn.disabled = false
       })
       this.feedbackTarget.textContent = `✗ Wrong — try again!`
-      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-600 dark:text-red-400"
     }
   }
 
@@ -152,7 +152,7 @@ export default class extends Controller {
 
     if (correct) {
       this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
-      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-green-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 2
       this.dispatch("xp", { detail: { xp: 2 } })
       if (this.currentAudio) {
@@ -161,7 +161,7 @@ export default class extends Controller {
       setTimeout(() => this.nextCard(), 1200)
     } else {
       this.feedbackTarget.textContent = `✗ The answer is "${card.answer}". Try to remember it!`
-      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-400"
+      this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-600 dark:text-red-400"
       this.awaitingContinue = true
       this.checkButtonTarget.textContent = "Continue →"
       this.checkButtonTarget.disabled = false

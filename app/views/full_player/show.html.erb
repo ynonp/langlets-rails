@@ -16,155 +16,162 @@
 <% content_for :canonical_url, canonical_url(course_path(@course)) %>
 
 <%
-  # Language directionality + per-language Sprout hue.
   l1 = @phrases.first&.l1
   l2 = @phrases.first&.l2
   l1_rtl = l1&.rtl || false
   l2_rtl = l2&.rtl || false
-  hue = lang_hue(l1&.iso_name)
 
   wv_prefs = current_user ? current_user.watch_video_preferences : User::WATCH_VIDEO_DEFAULTS
 %>
 
-<div class="sprout">
-  <div class="s-screen s-screen--fixed mx-auto w-full max-w-[480px]"
-      style="--hue: <%= hue %>;"
-      data-controller="main-video-player watch-video-activity"
-      data-main-video-player-video-id-value="<%= @video_id %>"
-      data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"
-      data-main-video-player-target="videoListener videoSegment"
-      data-action="
-        video:play->main-video-player#fullPlayerStartPlayback
-        video:stop->main-video-player#fullPlayerStopPlayback
-        video:play->watch-video-activity#handleVideoStart
-        video:end->watch-video-activity#handleVideoEnd
-        video:stop->watch-video-activity#handleVideoPause
-        video:progress->watch-video-activity#progress
-      "
-      data-show-player="true"
-      data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
-      data-segment-end="<%= timestamp_to_seconds(@end_timestamp) %>"
-      data-watch-video-activity-current-text-line-class="s-line-active"
-      data-watch-video-activity-word-timing-value="<%= @word_timing ? true : false %>"
-      data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
-  >
-    <!-- Video hero -->
-    <div class="s-video-hero" id="main-player" data-main-video-player-target="playerContainer">
-      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
-           style="background-image: url('https://img.youtube.com/vi/<%= @video_id %>/hqdefault.jpg')"
-           role="img"
-           aria-label="Video thumbnail">
+<div class="h-screen max-h-screen min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
+    data-controller="main-video-player watch-video-activity"
+    data-main-video-player-video-id-value="<%= @video_id %>"
+    data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"
+    data-main-video-player-target="videoListener videoSegment"
+    data-action="
+      video:play->main-video-player#fullPlayerStartPlayback
+      video:stop->main-video-player#fullPlayerStopPlayback
+      video:play->watch-video-activity#handleVideoStart
+      video:end->watch-video-activity#handleVideoEnd
+      video:stop->watch-video-activity#handleVideoPause
+      video:progress->watch-video-activity#progress
+    "
+    data-show-player="true"
+    data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
+    data-segment-end="<%= timestamp_to_seconds(@end_timestamp) %>"
+    data-watch-video-activity-current-text-line-class="line-active"
+    data-watch-video-activity-word-timing-value="<%= @word_timing ? true : false %>"
+    data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
+>
+  <!-- Video hero -->
+  <div class="relative flex-shrink-0 bg-gray-100 dark:bg-gray-900" id="main-player" data-main-video-player-target="playerContainer">
+    <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
+         style="background-image: url('https://img.youtube.com/vi/<%= @video_id %>/hqdefault.jpg')"
+         role="img"
+         aria-label="Video thumbnail">
 
-        <div class="absolute inset-0 z-20" data-action="click->main-video-player#togglePlayPause"></div>
+      <div class="absolute inset-0 z-20" data-action="click->main-video-player#togglePlayPause"></div>
 
-        <div data-main-video-player-target="player"
-             class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
+      <div data-main-video-player-target="player"
+           class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
 
-        <!-- Back button -->
-        <a href="<%= course_path(@course.slug) %>" class="s-hero-pill absolute z-30" style="top: 14px; left: var(--pad);" aria-label="Back to course">
-          <svg width="11" height="18" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <!-- Back button -->
+      <a href="<%= course_path(@course.slug) %>" class="absolute z-30 top-3.5 left-5 w-[38px] h-[38px] rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center" aria-label="Back to course">
+        <svg width="11" height="18" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
 
-        <!-- Language badge -->
-        <% if l1 %>
-          <span class="s-badge absolute z-30" style="top: 16px; right: var(--pad); --lh: <%= hue %>; background: rgba(0,0,0,0.4); color:#fff;"><%= lang_badge_code(l1) %></span>
-        <% end %>
+      <!-- Language badge -->
+      <% if l1 %>
+        <span class="absolute z-30 top-4 right-5 inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-mono font-extrabold text-[11px] tracking-wide bg-black/40 text-white"><%= lang_badge_code(l1) %></span>
+      <% end %>
 
-        <!-- Title gradient -->
-        <div class="absolute left-0 right-0 bottom-0 z-20" style="padding: 26px var(--pad) 14px; background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">
-          <div class="s-h2" style="color:#fff;"><%= @course.name %></div>
-        </div>
+      <!-- Title gradient -->
+      <div class="absolute left-0 right-0 bottom-0 z-20 pt-6 px-5 pb-3.5" style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">
+        <div class="text-lg font-extrabold tracking-tight text-white"><%= @course.name %></div>
+      </div>
 
-        <!-- Center play button -->
-        <button data-main-video-player-target="playButton"
-                class="relative z-10 flex items-center justify-center"
-                style="width: 64px; height: 64px; border-radius: 999px; background: var(--accent); color:#fff; border:none; box-shadow: 0 6px 18px rgba(0,0,0,0.3); cursor:pointer;">
-          <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
-        </button>
+      <!-- Center play button -->
+      <button data-main-video-player-target="playButton"
+              class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white border-none cursor-pointer"
+              style="box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
+        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
+      </button>
 
-        <!-- Time display (elapsed / total) -->
-        <div class="absolute z-30 flex items-center gap-1 tabular-nums"
-             style="bottom: 12px; right: var(--pad); color:#fff; font-size: 12px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
-          <span data-main-video-player-target="timeElapsed">0:00</span>
-          <span style="opacity: 0.7;">/</span>
-          <span data-main-video-player-target="timeDuration" style="opacity: 0.7;">0:00</span>
-        </div>
+      <!-- Time display (elapsed / total) -->
+      <div class="absolute z-30 flex items-center gap-1 tabular-nums bottom-3 right-5 text-white text-xs"
+           style="font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
+        <span data-main-video-player-target="timeElapsed">0:00</span>
+        <span class="opacity-70">/</span>
+        <span data-main-video-player-target="timeDuration" class="opacity-70">0:00</span>
+      </div>
 
-        <!-- Scrubber (functional progress bar) -->
-        <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer"
-            style="height: 6px; background: rgba(255,255,255,0.25);"
-            data-main-video-player-target="progressBarContainer"
-            data-action="click->main-video-player#seekToPosition">
-          <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear" style="width: 0%; background: var(--accent);"></div>
-        </div>
+      <!-- Scrubber (functional progress bar) -->
+      <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer h-1.5 bg-white/25"
+          data-main-video-player-target="progressBarContainer"
+          data-action="click->main-video-player#seekToPosition">
+        <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear bg-emerald-500" style="width: 0%;"></div>
       </div>
     </div>
-
-    <!-- Breakdown header -->
-    <div class="flex items-center justify-between s-pad" style="padding-top: 12px; padding-bottom: 4px;">
-      <div class="s-eyebrow">Tap any word</div>
-      <div class="flex items-center" style="gap: 16px;">
-        <% if @word_timing %>
-          <label class="s-toggle">
-            <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
-              data-watch-video-activity-target="showKaraoke"
-              data-action="change->watch-video-activity#toggleKaraoke">
-            Karaoke
-          </label>
-        <% end %>
-        <label class="s-toggle">
-          <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
-                 data-watch-video-activity-target="showTranslation"
-                 data-action="change->watch-video-activity#toggleTranslation">
-          Show translation
-        </label>
-      </div>
-    </div>
-
-    <!-- Word-by-word breakdown -->
-    <div
-        data-controller="popover-translation"
-        data-popover-translation-l1-language-value="<%= l1&.english_name || 'Language' %>"
-        data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
-        id="phrases-container"
-        data-watch-video-activity-target="container"
-        data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-        class="s-scroll s-pad"
-        style="padding-bottom: 8px;"
-    >
-      <div id="phrases-list" data-watch-video-activity-target="phrasesList"
-           data-action="click->main-video-player#seekToTimestamp">
-        <% @phrases.each do |phrase| %>
-          <div
-            data-watch-video-activity-target="subtitles"
-            data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-            class="s-phrase"
-          >
-            <div class="s-phrase__l1" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-              <%= wrap_tokens_in_spans(phrase, { class: "s-token" }) %>
-            </div>
-            <div class="s-phrase__l2 <%= 'hidden' unless wv_prefs["translation"] %>"
-                 data-watch-video-activity-target="translation"
-                 dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
-              <%= phrase.text_l2 %>
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-      <!-- Translation popup -->
-      <%= render partial: 'activities/translation_popup', locals: { popup_class: "s-popover hidden", l1_rtl: l1_rtl } %>
-    </div>
-
-    <!-- Bottom action bar -->
-    <% if @course.lessons.any? %>
-      <% first_lesson = @course.lessons.order(:order).first %>
-      <div class="s-pad" style="flex-shrink: 0; padding-top: 12px; padding-bottom: calc(26px + env(safe-area-inset-bottom)); background: var(--surface); border-top: 1px solid var(--border);">
-        <%= button_to course_lesson_path(@course, first_lesson), method: :get, class: "s-btn s-btn--full s-btn--lg", form: { style: "width:100%" } do %>
-          <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
-          Start practice
-        <% end %>
-      </div>
-    <% end %>
   </div>
+
+  <!-- Breakdown header -->
+  <div class="flex items-center justify-between px-5 pt-3 pb-1">
+    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Tap any word</div>
+    <div class="flex items-center gap-4">
+      <% if @word_timing %>
+        <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
+          <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
+            data-watch-video-activity-target="showKaraoke"
+            data-action="change->watch-video-activity#toggleKaraoke">
+          Karaoke
+        </label>
+      <% end %>
+      <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
+        <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
+               data-watch-video-activity-target="showTranslation"
+               data-action="change->watch-video-activity#toggleTranslation">
+        Show translation
+      </label>
+    </div>
+  </div>
+
+  <!-- Word-by-word breakdown -->
+  <div
+      data-controller="popover-translation"
+      data-popover-translation-l1-language-value="<%= l1&.english_name || 'Language' %>"
+      data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
+      id="phrases-container"
+      data-watch-video-activity-target="container"
+      data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
+      class="flex-1 overflow-y-auto flex flex-col gap-4 px-5 pb-2"
+  >
+    <div id="phrases-list" data-watch-video-activity-target="phrasesList"
+         data-action="click->main-video-player#seekToTimestamp">
+      <% @phrases.each do |phrase| %>
+        <div
+          data-watch-video-activity-target="subtitles"
+          data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
+          class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800"
+        >
+          <div class="text-xl font-extrabold leading-relaxed" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
+            <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40" }) %>
+          </div>
+          <div class="mt-1 text-base italic text-gray-500 dark:text-gray-400 <%= 'hidden' unless wv_prefs["translation"] %>"
+               data-watch-video-activity-target="translation"
+               dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
+            <%= phrase.text_l2 %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Translation popup -->
+    <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden absolute z-40 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 border border-gray-200 dark:border-gray-700 rounded-2xl p-3 shadow-md min-w-[180px]", l1_rtl: l1_rtl } %>
+  </div>
+
+  <!-- Bottom action bar -->
+  <% if @course.lessons.any? %>
+    <% first_lesson = @course.lessons.order(:order).first %>
+    <div class="px-5 flex-shrink-0 pt-3 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700" style="padding-bottom: calc(26px + env(safe-area-inset-bottom));">
+      <%= button_to course_lesson_path(@course, first_lesson), method: :get, class: "w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors", form: { style: "width:100%" } do %>
+        <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
+        Start practice
+      <% end %>
+    </div>
+  <% end %>
 </div>
+
+<style>
+[data-controller="watch-video-activity"] .line-active {
+  background: var(--color-emerald-100) !important;
+}
+[data-theme="dark"] [data-controller="watch-video-activity"] .line-active {
+  background: color-mix(in oklab, var(--color-emerald-900) 40%, transparent) !important;
+}
+[data-controller="watch-video-activity"] .s-token-active {
+  background: var(--color-emerald-500);
+  color: #fff;
+  border-radius: 6px;
+}
+</style>

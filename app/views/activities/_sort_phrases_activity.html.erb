@@ -19,12 +19,12 @@
 <div
     data-controller="sort-phrases-activity"
     data-sort-phrases-activity-correct-order-value="<%= phrases %>"
-    class="flex-col flex items-center bg-gray-800">
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
     <div class="mb-6">
-      <h2 class="text-xl sm:text-2xl text-white mb-2"><%= @activity.text_header || "Drag The Phrases To The Correct Order" %></h2>
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Drag The Phrases To The Correct Order" %></h2>
     </div>
-    
+
     <%= render partial: 'activities/mini_video_player', locals: {params: params} %>
 
     <div id="sort-phrases" class="flex flex-col">
@@ -32,14 +32,14 @@
         data-action="click->sort-phrases-activity#checkOrder"
         data-sort-phrases-activity-target="checkButton"
         id="check-order"
-        class="s-btn w-full sm:w-auto my-2"
+        class="inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto my-2"
       >Check Order</button>
-      <div data-sort-phrases-activity-target="completionMessage" data-progress-tracker-target="completion" id="completion-message" class="hidden my-4 p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div data-sort-phrases-activity-target="completionMessage" data-progress-tracker-target="completion" id="completion-message" class="hidden my-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-white">Great job!</h3>
-          <p class="text-center sm:text-left text-gray-300">You've sorted all the phrases correctly.</p>
+          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
+          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've sorted all the phrases correctly.</p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "s-btn w-full sm:w-auto") %>
+        <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
 
       <div
@@ -50,7 +50,7 @@
           <div
               data-sort-phrases-activity-target="phraseItem"
               draggable
-              class="md:my-4 px-4 py-3 sm:px-5 border border-gray-700 rounded-lg bg-gray-900 hover:bg-gray-700 text-white text-center cursor-move text-md md:text-xl"
+              class="md:my-4 px-4 py-3 sm:px-5 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 text-center cursor-move text-md md:text-xl"
               data-id="<%= item[:id] %>"
               >
             <%= item[:text] %>
@@ -59,10 +59,10 @@
       </div>
     </div>
 
-    <div data-sort-phrases-activity-target="resultMessage" id="result-message" class="mt-4 p-4 bg-red-200 border border-red-500 text-red-800 rounded-lg text-center hidden">
+    <div data-sort-phrases-activity-target="resultMessage" id="result-message" class="mt-4 p-4 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-500/50 text-red-700 dark:text-red-300 rounded-lg text-center hidden">
       <p id="result-text" class="text-lg font-medium">Not quite right. Try again!</p>
-    </div>    
-  </div>  
+    </div>
+  </div>
 </div>
 
 <style>

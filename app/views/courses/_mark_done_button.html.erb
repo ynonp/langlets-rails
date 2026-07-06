@@ -8,16 +8,14 @@
     <% if all_done %>
       <%= button_to reset_progress_course_path(course.slug),
           method: :post,
-          class: "s-btn s-btn--soft",
-          style: "white-space:nowrap;",
+          class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold transition-colors whitespace-nowrap",
           data: { turbo: false, confirm: "Reset all progress for this course?", role: "mark-done-button" } do %>
         ✓ Done
       <% end %>
     <% else %>
       <%= button_to mark_done_course_path(course.slug),
           method: :post,
-          class: "s-btn s-btn--soft",
-          style: "white-space:nowrap;",
+          class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold transition-colors whitespace-nowrap",
           data: { turbo: false, role: "mark-done-button" } do %>
         Mark done
       <% end %>

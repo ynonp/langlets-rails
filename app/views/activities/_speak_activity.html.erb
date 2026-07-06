@@ -29,17 +29,17 @@
     data-controller="speak-activity"
     data-speak-activity-l1-value="<%= params[:azure_speech_name] %>"
     data-speak-activity-phrases-value="<%= params[:phrases].map { |p| { timestamp: p.timestamp, calculated_end_timestamp: p.calculated_end_timestamp } }.to_json %>"
-  class="flex-col flex items-center bg-gray-800">
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
+  class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
     <div class="mb-6">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-        <h2 class="text-xl sm:text-2xl text-white"><%= @activity.text_header || "Click on the microphone and say the phrases in #{params[:l1]}" %></h2>
-        <%= link_to_next_activity("Can't Speak Now", @next_activity_path, class: "px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white text-sm font-medium rounded-lg transition-colors duration-200 text-center whitespace-nowrap") %>
+        <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50"><%= @activity.text_header || "Click on the microphone and say the phrases in #{params[:l1]}" %></h2>
+        <%= link_to_next_activity("Can't Speak Now", @next_activity_path, class: "px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 text-sm font-medium rounded-lg transition-colors duration-200 text-center whitespace-nowrap") %>
       </div>
-      
+
       <!-- Progress Bar -->
-      <div class="w-full bg-gray-700 rounded-full h-2.5 mt-3">
-        <div data-speak-activity-target="progressBar" class="bg-blue-600 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
+      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-3">
+        <div data-speak-activity-target="progressBar" class="bg-emerald-500 h-2.5 rounded-full transition-all duration-300" style="width: 0%"></div>
       </div>
     </div>
     
@@ -51,21 +51,21 @@
       <% params[:phrases].each_with_index do |phrase, phrase_index| %>
         <div class="relative phrase-container <%= phrase_index == 0 ? '' : 'hidden' %>" data-phrase-id="<%= phrase_index %>" data-speak-activity-target="phraseContainer">
           <!-- Original Text (L1) with Microphone -->
-          <div 
-            class="original-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-900 text-white text-center text-base sm:text-xl mb-3"
+          <div
+            class="original-phrase px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 text-center text-base sm:text-xl mb-3"
             data-phrase-id="<%= phrase_index %>"
             data-speak-activity-target="originalPhrase"
             dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
             <div class="flex items-center <%= l1_rtl ? 'flex-row-reverse' : 'justify-between' %>">
               <div data-controller="popover-translation" data-popover-translation-l1-language-value="<%= params[:l1] || 'Language' %>" data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>" class="flex-grow text-center">
-                <%= wrap_tokens_in_spans(phrase, {class: "inline cursor-pointer hover:bg-gray-600 rounded"}) %>
-                
+                <%= wrap_tokens_in_spans(phrase, {class: "inline cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded"}) %>
+
                 <!-- Translation Popup -->
                 <%= render partial: 'activities/translation_popup' %>
               </div>
-              
+
               <!-- Microphone Button with its own Speech Recognition Controller -->
-              <div 
+              <div
                   data-controller="speech-recognition"
                   data-speech-recognition-phrase-text-value="<%= phrase.text_l1 %>"
                   data-speech-recognition-phrase-index-value="<%= phrase_index %>"
@@ -73,7 +73,7 @@
               >
                 <button
                     data-action="click->speech-recognition#toggleRecord"
-                    class="microphone-button text-white bg-blue-600 p-2 rounded-full hover:bg-blue-700 transition ml-2">
+                    class="microphone-button text-white bg-emerald-500 p-2 rounded-full hover:bg-emerald-600 transition ml-2">
                     <svg
                         data-speech-recognition-target="micIcon"
                         class="mic-icon" 
@@ -113,8 +113,8 @@
           </div>
 
           <!-- Translation (L2) -->
-          <div 
-            class="translation-phrase px-4 py-4 border border-gray-700 rounded-lg bg-gray-800 text-white text-center text-base sm:text-lg"
+          <div
+            class="translation-phrase px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 text-center text-base sm:text-lg"
             data-phrase-id="<%= phrase_index %>"
             data-speak-activity-target="translationPhrase"
             dir="<%= l2_rtl ? 'rtl' : 'ltr' %>">
@@ -124,42 +124,42 @@
       <% end %>
 
       <!-- Completion Message - positioned to replace the original phrase -->
-      <div 
-        data-speak-activity-target="completionMessage" 
+      <div
+        data-speak-activity-target="completionMessage"
         data-progress-tracker-target="completion"
-        class="hidden p-4 bg-gray-700 border border-gray-600 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
+        class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-white">Good Work!</h3>
-          <p class="text-center sm:text-left text-gray-300">You've completed this pronunciation exercise.</p>
+          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Good Work!</h3>
+          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've completed this pronunciation exercise.</p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "s-btn w-full sm:w-auto") %>
+        <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
     </div>
-    
+
     <!-- Assessment Result -->
     <div data-speak-activity-target="assessmentResult" id="assessment-result" class="hidden mt-4">
-      <div id="result-details" class="p-4 bg-gray-700 rounded-lg mb-4">
-        <h3 class="text-lg font-semibold text-white mb-2">Your pronunciation:</h3>
+      <div id="result-details" class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mb-4">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Your pronunciation:</h3>
         <div
           data-speak-activity-target="pronunciationText"
-          id="pronunciation-text" class="text-white text-center py-2"></div>
+          id="pronunciation-text" class="text-gray-900 dark:text-gray-50 text-center py-2"></div>
         <div class="flex justify-between mt-4">
           <div class="text-center">
-            <div data-speak-activity-target="accuracyScore" class="text-lg font-bold text-white" id="accuracy-score">0</div>
-            <div class="text-sm text-gray-400">Accuracy</div>
+            <div data-speak-activity-target="accuracyScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="accuracy-score">0</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Accuracy</div>
           </div>
           <div class="text-center">
-            <div data-speak-activity-target="fluencyScore" class="text-lg font-bold text-white" id="fluency-score">0</div>
-            <div class="text-sm text-gray-400">Fluency</div>
+            <div data-speak-activity-target="fluencyScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="fluency-score">0</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Fluency</div>
           </div>
           <div class="text-center">
-            <div data-speak-activity-target="completenessScore" class="text-lg font-bold text-white" id="completeness-score">0</div>
-            <div class="text-sm text-gray-400">Completeness</div>
+            <div data-speak-activity-target="completenessScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="completeness-score">0</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400">Completeness</div>
           </div>
         </div>
       </div>
     </div>
-  
+
   </div>
 </div>
 

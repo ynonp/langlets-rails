@@ -2,29 +2,29 @@
   <title>Connected Apps - Langlets</title>
 <% end %>
 
-<div class="sprout min-h-screen" style="--hue: 150;">
+<div class="min-h-screen bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
   <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8">
     <div class="flex items-center gap-3 mb-2">
-      <%= link_to root_path, style: "color: var(--accent);" do %>
+      <%= link_to root_path, class: "text-emerald-600 dark:text-emerald-400" do %>
         <%= render "shared/home_icon", size: 26 %>
       <% end %>
-      <h1 class="text-2xl sm:text-3xl font-bold" style="color: var(--text);">Connected Apps</h1>
+      <h1 class="text-2xl sm:text-3xl font-bold">Connected Apps</h1>
     </div>
-    <p class="s-body mb-8" style="color: var(--text-muted, var(--text));">
+    <p class="font-semibold text-[15.5px] mb-8 text-gray-500 dark:text-gray-400">
       AI agents and tools you've given access to your Langlets account.
       Revoking a token signs that connection out immediately.
     </p>
 
     <% if notice.present? %>
-      <div class="s-card mb-6" style="padding: 14px 16px; color: var(--accent);">
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md mb-6 px-4 py-3.5 text-emerald-600 dark:text-emerald-400">
         <%= notice %>
       </div>
     <% end %>
 
     <% if @connections.empty? %>
-      <div class="s-card" style="padding: 24px;">
-        <p class="s-body" style="color: var(--text);">No connected apps yet.</p>
-        <p class="s-body mt-2 text-sm" style="color: var(--text-muted, var(--text)); opacity: 0.8;">
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-6">
+        <p class="font-semibold text-[15.5px]">No connected apps yet.</p>
+        <p class="font-semibold text-[15.5px] mt-2 text-sm text-gray-500 dark:text-gray-400">
           When you connect an AI agent (like Claude) or the langlets CLI to your account,
           its access tokens will show up here.
         </p>
@@ -32,13 +32,13 @@
     <% end %>
 
     <% @connections.each do |application, tokens| %>
-      <div class="s-card mb-6" style="padding: 20px;">
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-5 mb-6">
         <div class="flex items-center justify-between mb-4">
           <div>
-            <h2 class="text-lg font-semibold" style="color: var(--text);">
+            <h2 class="text-lg font-semibold">
               <%= application&.name || "Unknown application" %>
             </h2>
-            <p class="text-sm s-body" style="color: var(--text-muted, var(--text)); opacity: 0.8;">
+            <p class="text-sm font-semibold text-gray-500 dark:text-gray-400">
               <%= tokens.size %> active <%= "token".pluralize(tokens.size) %>
             </p>
           </div>
@@ -46,15 +46,15 @@
             <%= button_to "Disconnect app",
               revoke_application_settings_connections_path(application_id: application.id),
               method: :delete,
-              class: "s-btn s-btn--soft s-btn--sm",
+              class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors",
               data: { turbo_confirm: "Revoke all access for #{application.name}?" } %>
           <% end %>
         </div>
 
         <div class="overflow-x-auto">
-          <table class="w-full text-sm" style="color: var(--text);">
+          <table class="w-full text-sm">
             <thead>
-              <tr class="text-left" style="border-bottom: 1px solid var(--border);">
+              <tr class="text-left border-b border-gray-200 dark:border-gray-800">
                 <th class="py-2 pr-4 font-medium">Scopes</th>
                 <th class="py-2 pr-4 font-medium">Created</th>
                 <th class="py-2 pr-4 font-medium">Last used</th>
@@ -64,10 +64,10 @@
             </thead>
             <tbody>
               <% tokens.each do |token| %>
-                <tr style="border-bottom: 1px solid var(--border);">
+                <tr class="border-b border-gray-200 dark:border-gray-800">
                   <td class="py-2 pr-4">
                     <% token.scopes.to_a.each do |scope| %>
-                      <span class="s-chip text-xs"><%= scope %></span>
+                      <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700"><%= scope %></span>
                     <% end %>
                   </td>
                   <td class="py-2 pr-4"><%= token.created_at.strftime("%b %-d, %Y") %></td>
@@ -84,7 +84,7 @@
                   <td class="py-2 text-right">
                     <%= button_to "Revoke", settings_connection_path(token),
                       method: :delete,
-                      class: "s-btn s-btn--soft s-btn--sm",
+                      class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors",
                       data: { turbo_confirm: "Revoke this token?" } %>
                   </td>
                 </tr>

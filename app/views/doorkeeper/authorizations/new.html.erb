@@ -2,20 +2,20 @@
   <title>Authorize <%= @pre_auth.client.name %> - Langlets</title>
 <% end %>
 
-<div class="sprout min-h-screen flex items-center justify-center" style="--hue: 150;">
-  <div class="s-card w-full max-w-md mx-4" style="padding: 32px;">
-    <h1 class="text-xl font-bold mb-4" style="color: var(--text);">
-      Connect <span style="color: var(--accent);"><%= @pre_auth.client.name %></span>
+<div class="min-h-screen flex items-center justify-center bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
+  <div class="w-full max-w-md mx-4 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-8">
+    <h1 class="text-xl font-bold mb-4">
+      Connect <span class="text-emerald-600 dark:text-emerald-400"><%= @pre_auth.client.name %></span>
     </h1>
 
-    <p class="s-body mb-4" style="color: var(--text);">
+    <p class="font-semibold text-[15.5px] mb-4">
       <strong><%= @pre_auth.client.name %></strong> is asking for access to your Langlets account.
     </p>
 
     <% if @pre_auth.scopes.count > 0 %>
       <div id="oauth-permissions" class="mb-6">
-        <p class="s-body text-sm mb-2" style="color: var(--text); opacity: 0.8;">It will be able to:</p>
-        <ul class="s-body text-sm space-y-1" style="color: var(--text);">
+        <p class="font-semibold text-[15.5px] text-sm mb-2 opacity-80">It will be able to:</p>
+        <ul class="font-semibold text-[15.5px] text-sm space-y-1">
           <% @pre_auth.scopes.each do |scope| %>
             <li>&bull; <%= t scope, scope: [ :doorkeeper, :scopes ], default: scope %></li>
           <% end %>
@@ -33,7 +33,7 @@
         <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
         <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
         <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
-        <%= submit_tag t("doorkeeper.authorizations.buttons.authorize"), class: "s-btn w-full cursor-pointer" %>
+        <%= submit_tag t("doorkeeper.authorizations.buttons.authorize"), class: "w-full h-14 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors cursor-pointer" %>
       <% end %>
       <%= form_tag oauth_authorization_path, method: :delete, class: "flex-1" do %>
         <%= hidden_field_tag :client_id, @pre_auth.client.uid, id: nil %>
@@ -44,11 +44,11 @@
         <%= hidden_field_tag :scope, @pre_auth.scope, id: nil %>
         <%= hidden_field_tag :code_challenge, @pre_auth.code_challenge, id: nil %>
         <%= hidden_field_tag :code_challenge_method, @pre_auth.code_challenge_method, id: nil %>
-        <%= submit_tag t("doorkeeper.authorizations.buttons.deny"), class: "s-btn s-btn--soft w-full cursor-pointer" %>
+        <%= submit_tag t("doorkeeper.authorizations.buttons.deny"), class: "w-full h-14 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold transition-colors cursor-pointer" %>
       <% end %>
     </div>
 
-    <p class="s-body text-xs mt-6" style="color: var(--text); opacity: 0.6;">
+    <p class="font-semibold text-[15.5px] text-xs mt-6 opacity-60">
       You can revoke this access anytime from Connected Apps in your profile menu.
     </p>
   </div>

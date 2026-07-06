@@ -1,29 +1,28 @@
 <% if learning_paths.any? %>
   <%= render layout: "shared/card_grid" do %>
     <% learning_paths.each do |learning_path| %>
-      <% lp_hue = lang_hue(learning_path.courses.first&.language&.iso_name) %>
-      <%= link_to learning_path_path(learning_path), class: "block s-card cursor-pointer flex flex-col h-full overflow-hidden", style: "padding: 0;" do %>
+      <%= link_to learning_path_path(learning_path), class: "block bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md cursor-pointer flex flex-col h-full overflow-hidden p-0" do %>
         <% if learning_path.cover_image_url %>
           <img src="<%= learning_path.cover_image_url %>" alt="<%= learning_path.name %>" class="w-full h-40 object-cover flex-shrink-0">
         <% else %>
-          <div class="s-thumb w-full h-40 flex-shrink-0" style="--th: <%= lp_hue %>; border-radius: 0;"></div>
+          <div class="w-full h-40 flex-shrink-0 bg-gray-100 dark:bg-gray-800"></div>
         <% end %>
 
         <div class="p-4 flex flex-col flex-grow">
           <div class="flex-grow">
-            <h3 class="s-h2 mb-2"><%= learning_path.name %></h3>
+            <h3 class="text-lg font-extrabold tracking-tight mb-2"><%= learning_path.name %></h3>
             <% if learning_path.description.present? %>
-              <p class="s-small mb-3 line-clamp-2"><%= truncate(learning_path.description, length: 80) %></p>
+              <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3 line-clamp-2"><%= truncate(learning_path.description, length: 80) %></p>
             <% end %>
-            <div class="s-small mb-3">
+            <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3">
               <%= pluralize(learning_path.courses.count, "clip") %>
             </div>
           </div>
-          <div class="s-btn w-full">Start Path</div>
+          <div class="inline-flex items-center justify-center h-14 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full">Start Path</div>
         </div>
       <% end %>
     <% end %>
   <% end %>
 <% else %>
-  <p class="px-2 text-slate-400">No courses available yet.</p>
+  <p class="px-2 text-gray-400 dark:text-gray-600">No courses available yet.</p>
 <% end %>

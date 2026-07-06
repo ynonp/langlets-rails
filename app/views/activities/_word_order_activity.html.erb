@@ -9,29 +9,25 @@
   This activity shows one phrase in L2 at a time, with blank lines below it.
   The user arranges words from L1 into the correct order to match the L2 phrase.
   Words can be dragged or clicked. Continues until all phrases are completed.
-
-  Retrofitted to the Sprout mobile redesign (Langlets Mobile Redesign · Option 1).
  %>
 
 <% phrases = (params[:phrases] || []) %>
 <% total_phrases = phrases.length %>
 <% l1_rtl = params[:l1].rtl %>
 <% l2_rtl = params[:l2].rtl %>
-<% hue = lang_hue(params[:l1].iso_name) %>
 
 <div
     data-controller="word-order-activity"
     data-action="stop-audio->main-video-player#stopPlayback"
     data-word-order-activity-l1-value="<%= params[:l1].iso_name %>"
     data-word-order-activity-total-phrases-value="<%= total_phrases %>"
-    class="sprout"
-    style="--hue: <%= hue %>; flex: 1; min-height: 0; display: flex; flex-direction: column; background: var(--bg); color: var(--text);">
+    class="flex-1 min-h-0 flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
 
   <!-- Scrollable body -->
-  <div class="s-scroll s-pad" style="gap: 0; padding-top: 8px;">
-    <div class="s-eyebrow" style="margin-bottom: 8px;">Build the sentence</div>
-    <h2 class="s-h1" style="margin-bottom: calc(var(--gap) + 2px);"><%= @activity.text_header || "Translate this sentence" %></h2>
-    <p class="s-small" data-word-order-activity-target="progressText" style="margin-bottom: var(--gap);">Question 1 of <%= total_phrases %></p>
+  <div class="flex-1 overflow-y-auto flex flex-col px-5 pt-2">
+    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400 mb-2">Build the sentence</div>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-4"><%= @activity.text_header || "Translate this sentence" %></h2>
+    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4" data-word-order-activity-target="progressText">Question 1 of <%= total_phrases %></p>
 
     <% phrases.each_with_index do |phrase_data, index| %>
       <div
@@ -41,7 +37,7 @@
         class="phraseContainer <%= index == 0 ? '' : 'hidden' %>">
 
         <!-- Audio prompt card (L2 sentence to translate) -->
-        <div class="s-card flex items-center" style="gap: 13px; padding: 16px; margin-bottom: var(--gap);">
+        <div class="flex items-center gap-3 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-4 mb-4 shadow-md">
           <button
             data-action="click->main-video-player#playSegment"
             data-main-video-player-segment-start-param="<%= timestamp_to_seconds(phrase_data[:timestamp_start]) %>"
@@ -49,27 +45,25 @@
             data-word-order-activity-target="speakerButton"
             data-phrase="<%= phrase_data[:l2_text] %>"
             data-phrase-index="<%= index %>"
-            class="flex items-center justify-center flex-shrink-0"
-            style="width: 50px; height: 50px; border-radius: 999px; background: var(--accent); border: none; cursor: pointer;"
+            class="flex items-center justify-center flex-shrink-0 w-12 h-12 rounded-full bg-emerald-500 border-none cursor-pointer"
             title="Tap to listen">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#fff"/><path d="M17 8a5 5 0 0 1 0 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
           </button>
           <div class="min-w-0">
-            <div class="s-small" style="margin-bottom: 2px;">Tap to listen</div>
-            <div class="s-h2 <%= l2_rtl ? 'text-right' : 'text-left' %>"><%= phrase_data[:l2_text] %></div>
+            <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-0.5">Tap to listen</div>
+            <div class="text-lg font-extrabold tracking-tight <%= l2_rtl ? 'text-right' : 'text-left' %>"><%= phrase_data[:l2_text] %></div>
           </div>
         </div>
 
         <!-- Answer slots -->
         <div
           data-word-order-activity-target="resultLine"
-          class="result-line flex flex-wrap items-center <%= l1_rtl ? 'flex-row-reverse' : '' %>"
-          data-phrase-index="<%= index %>"
-          style="gap: 9px; align-content: flex-start; min-height: 60px; padding-bottom: 12px; margin-bottom: 6px; border-bottom: 2px solid var(--border);">
+          class="result-line flex flex-wrap items-center gap-2.5 content-start min-h-[60px] pb-3 mb-1.5 border-b-2 border-gray-200 dark:border-gray-700 <%= l1_rtl ? 'flex-row-reverse' : '' %>"
+          data-phrase-index="<%= index %>">
 
           <% phrase_data[:word_segments].each_with_index do |segment, seg_index| %>
             <% if segment[:type] == "static" %>
-              <span class="whitespace-pre-wrap s-h2" style="line-height: 44px;"><%= segment[:text] %></span>
+              <span class="whitespace-pre-wrap text-lg font-extrabold tracking-tight leading-[44px]"><%= segment[:text] %></span>
             <% else %>
               <div
                 data-word-order-activity-target="tokenSlot"
@@ -83,15 +77,14 @@
             <% end %>
           <% end %>
         </div>
-        <div class="s-small" style="margin-bottom: 14px;">Tap words to add them in order</div>
+        <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3.5">Tap words to add them in order</div>
 
         <!-- Word bank -->
         <div
           data-word-order-activity-target="wordBank"
           data-action="dragover->word-order-activity#handleDragOver dragleave->word-order-activity#handleDragLeave drop->word-order-activity#handleDrop"
-          class="word-bank flex flex-wrap <%= l1_rtl ? 'flex-row-reverse' : '' %>"
-          data-phrase-index="<%= index %>"
-          style="gap: 10px; margin-bottom: calc(var(--gap) + 2px);">
+          class="word-bank flex flex-wrap gap-2.5 mb-4 <%= l1_rtl ? 'flex-row-reverse' : '' %>"
+          data-phrase-index="<%= index %>">
           <%
             token_segments = phrase_data[:word_segments].select { |segment| segment[:type] == "token" }
             shuffled_tokens = token_segments.shuffle
@@ -104,7 +97,7 @@
               data-audio-url="<%= segment[:audio_url] %>"
               data-action="click->word-order-activity#handleWordClick dragstart->word-order-activity#handleDragStart dragend->word-order-activity#handleDragEnd touchstart->word-order-activity#handleTouchStart touchmove->word-order-activity#handleTouchMove touchend->word-order-activity#handleTouchEnd"
               draggable="true"
-              class="word-item s-tile">
+              class="word-item inline-flex items-center font-extrabold text-base px-4 py-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 shadow-md cursor-pointer select-none">
               <%= segment[:text] %>
             </span>
           <% end %>
@@ -115,21 +108,21 @@
           data-action="click->word-order-activity#checkAnswer"
           data-word-order-activity-target="continueButton"
           data-phrase-index="<%= index %>"
-          class="s-btn s-btn--full s-btn--lg">
+          class="w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-11" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
           Check
         </button>
       </div>
     <% end %>
 
-    <div data-word-order-activity-target="feedbackMessage" class="hidden" style="margin-top: 16px; padding: 12px; border-radius: 14px; text-align: center; font: 800 16px 'Nunito';"></div>
+    <div data-word-order-activity-target="feedbackMessage" class="hidden"></div>
 
-    <div data-word-order-activity-target="completionMessage" data-progress-tracker-target="completion" class="s-card hidden flex flex-col sm:flex-row items-center justify-between" style="margin-top: 24px; gap: 16px;">
+    <div data-word-order-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden flex flex-col sm:flex-row items-center justify-between bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md mt-6 gap-4">
       <div>
-        <h3 class="s-h2 text-center sm:text-left">Great job!</h3>
-        <p class="s-body s-muted text-center sm:text-left">You've completed all the phrases.</p>
+        <h3 class="text-lg font-extrabold text-center sm:text-left">Great job!</h3>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 text-center sm:text-left">You've completed all the phrases.</p>
       </div>
-      <a href="<%= @next_activity_path %>" class="s-btn w-full sm:w-auto">Next</a>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors">Next</a>
     </div>
   </div>
 </div>
@@ -149,54 +142,55 @@
 .animate-fade-in { animation: fade-in 0.5s ease-out forwards; }
 
 /* Word bank tiles */
-.sprout .word-item {
+[data-controller="word-order-activity"] .word-item {
   touch-action: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
-.sprout .word-item:hover { transform: translateY(-2px); }
-.sprout .word-item.dragging { opacity: 0.7; transform: scale(1.05); z-index: 10; }
+[data-controller="word-order-activity"] .word-item:hover { transform: translateY(-2px); }
+[data-controller="word-order-activity"] .word-item.dragging { opacity: 0.7; transform: scale(1.05); z-index: 10; }
 
 /* Tiles placed into the answer line read as accent chips */
-.sprout .result-line .word-item {
-  background: var(--accent);
+[data-controller="word-order-activity"] .result-line .word-item {
+  background: var(--color-emerald-500);
   color: #fff;
   border: none;
-  box-shadow: 0 3px 0 var(--accent-press);
+  box-shadow: 0 3px 0 var(--color-emerald-600);
 }
 
 /* Answer line */
-.sprout .result-line { transition: border-color 0.3s ease; min-height: 60px; }
-.sprout .result-line.drag-over { border-color: var(--accent); }
+[data-controller="word-order-activity"] .result-line { transition: border-color 0.3s ease; min-height: 60px; }
+[data-controller="word-order-activity"] .result-line.drag-over { border-color: var(--color-emerald-500); }
 
 /* Empty answer slots (dashed ghost tiles) */
-.sprout .token-slot {
+[data-controller="word-order-activity"] .token-slot {
   min-width: 70px;
   min-height: 44px;
-  border: 2px dashed var(--border);
-  border-radius: calc(var(--chip-r) + 2px);
+  border: 2px dashed var(--color-gray-300);
+  border-radius: 12px;
   background: transparent;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
-.sprout .token-slot.drag-over { border-color: var(--accent); background: var(--accent-soft); }
-.sprout .token-slot.filled { border: 0; background: transparent; width: auto; min-width: inherit; }
-.sprout .token-slot.correct { border-color: var(--accent); }
-.sprout .token-slot.incorrect { border-color: oklch(0.62 0.2 25); }
+[data-theme="dark"] [data-controller="word-order-activity"] .token-slot { border-color: var(--color-gray-700); }
+[data-controller="word-order-activity"] .token-slot.drag-over { border-color: var(--color-emerald-500); background: var(--color-emerald-100); }
+[data-theme="dark"] [data-controller="word-order-activity"] .token-slot.drag-over { background: color-mix(in oklab, var(--color-emerald-900) 40%, transparent); }
+[data-controller="word-order-activity"] .token-slot.filled { border: 0; background: transparent; width: auto; min-width: inherit; }
+[data-controller="word-order-activity"] .token-slot.correct { border-color: var(--color-emerald-500); }
+[data-controller="word-order-activity"] .token-slot.incorrect { border-color: var(--color-red-500); }
 
 /* Feedback states */
-.sprout .correct-feedback { background: var(--accent-soft) !important; border-color: var(--accent) !important; color: var(--accent) !important; }
-.sprout .incorrect-feedback { background: oklch(0.95 0.06 25) !important; border-color: oklch(0.62 0.2 25) !important; color: oklch(0.55 0.2 25) !important; }
-@media (prefers-color-scheme: dark) {
-  .sprout .incorrect-feedback { background: oklch(0.3 0.07 25) !important; }
-}
+[data-controller="word-order-activity"] .correct-feedback { background: var(--color-emerald-100) !important; border-color: var(--color-emerald-500) !important; color: var(--color-emerald-700) !important; }
+[data-theme="dark"] [data-controller="word-order-activity"] .correct-feedback { background: color-mix(in oklab, var(--color-emerald-900) 40%, transparent) !important; color: var(--color-emerald-300) !important; }
+[data-controller="word-order-activity"] .incorrect-feedback { background: var(--color-red-100) !important; border-color: var(--color-red-500) !important; color: var(--color-red-700) !important; }
+[data-theme="dark"] [data-controller="word-order-activity"] .incorrect-feedback { background: color-mix(in oklab, var(--color-red-900) 40%, transparent) !important; color: var(--color-red-300) !important; }
 
 /* RTL spacing */
-.sprout .result-line.flex-row-reverse .word-item,
-.sprout .word-bank.flex-row-reverse .word-item { margin-left: 0; margin-right: 0; }
+[data-controller="word-order-activity"] .result-line.flex-row-reverse .word-item,
+[data-controller="word-order-activity"] .word-bank.flex-row-reverse .word-item { margin-left: 0; margin-right: 0; }
 
 /* Audio button inside a placed tile */
-.sprout .word-item button { font-size: 12px; line-height: 1; padding: 2px; }
+[data-controller="word-order-activity"] .word-item button { font-size: 12px; line-height: 1; padding: 2px; }
 
 @media (max-width: 640px) {
-  .sprout .token-slot { min-width: 60px; min-height: 40px; font-size: 14px; }
+  [data-controller="word-order-activity"] .token-slot { min-width: 60px; min-height: 40px; font-size: 14px; }
 }
 </style>

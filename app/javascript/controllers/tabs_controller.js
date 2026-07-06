@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
-const ACTIVE_CLASSES = ["bg-slate-100", "text-slate-900"]
-const INACTIVE_CLASSES = ["bg-slate-800", "text-slate-300", "hover:bg-slate-700", "hover:text-slate-100"]
+const ACTIVE_CLASSES = ["bg-emerald-500", "text-white"]
+const INACTIVE_CLASSES = ["bg-gray-100", "dark:bg-gray-800", "text-gray-500", "dark:text-gray-400", "hover:bg-gray-200", "dark:hover:bg-gray-700", "hover:text-gray-900", "dark:hover:text-gray-50"]
 
 export default class extends Controller {
   static targets = ["tab", "panel"]

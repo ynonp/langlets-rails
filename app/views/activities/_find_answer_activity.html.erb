@@ -1,10 +1,10 @@
 <div
-    class="flex-col flex items-center min-h-screen bg-gray-800"
+    class="flex-col flex items-center min-h-screen bg-emerald-50 dark:bg-gray-950"
     data-controller="find-answers"
     data-find-answers-questions-value="<%= params[:questions].to_json %>"
     data-find-answers-current-question-value="0"
 >
-  <div class="w-full max-w-[800px] bg-gray-800 p-6 rounded-lg text-white">
+  <div class="w-full max-w-[800px] bg-white dark:bg-gray-900 dark:border dark:border-gray-800 p-6 rounded-2xl shadow-md text-gray-900 dark:text-gray-50">
     <div class="mb-6">
       <%= render partial: 'activities/activity_progress_bar' %>
     </div>
@@ -13,7 +13,7 @@
         id="current-question"
         class="text-xl mb-4 font-semibold text-center">
     </h2>
-    
+
     <div class="flex gap-4">
       <div id="phrases-container" class="mt-4 space-y-4 flex-1">
         <% params[:phrases].each do |p| %>
@@ -25,8 +25,8 @@
           </div>
         <% end %>
       </div>
-      
-      <div id="translations-container" class="mt-4 space-y-4 flex-1 text-gray-400">
+
+      <div id="translations-container" class="mt-4 space-y-4 flex-1 text-gray-500 dark:text-gray-400">
         <% params[:text].each do |t| %>
           <div class="text-lg rounded">
             <%= t[:translation] %>
@@ -34,13 +34,13 @@
         <% end %>
       </div>
     </div>
-    
-    <div 
+
+    <div
       data-find-answers-target="completionMessage"
       data-progress-tracker-target="completion"
       id="success-message" class="hidden mt-6 text-center">
-      <h3 class="text-xl font-bold text-green-500 mb-4">Good Work!</h3>
-      <%= link_to "Next", @next_activity_path, { class: "s-btn" } %>
+      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">Good Work!</h3>
+      <%= link_to "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
     </div>
   </div>
 </div>

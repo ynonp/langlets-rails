@@ -35,15 +35,15 @@
   <% end %>
 <% end %>
 
-<div class="sprout min-h-screen flex flex-col" style="--hue: 150;">
+<div class="min-h-screen flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
 <!-- Top bar: Use existing authentication bar -->
-<header class="py-6 border-b border-slate-700/60">
+<header class="py-6 border-b border-gray-200 dark:border-gray-800">
   <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
     <div class="flex-1">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-100 tracking-tight">
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
         Langlets
       </h1>
-      <p class="text-slate-400 text-sm sm:text-base mt-1">Understand native content</p>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-1">Understand native content</p>
     </div>
 
     <% if user_signed_in? %>
@@ -58,8 +58,8 @@
         <!-- XP Display -->
         <div class="flex items-center space-x-6">
           <!-- Day Streak -->
-          <div class="flex items-center text-white">
-            <div class="s-streak">
+          <div class="flex items-center">
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 font-extrabold text-sm">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
                 <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
                 <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
@@ -70,7 +70,7 @@
 
           <!-- Today's XP -->
           <div class="hidden sm:flex items-center" data-testid="header-xp-desktop">
-            <div class="s-chip s-chip--active" style="--lh: 235; background: oklch(0.66 0.15 235);">
+            <div class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold bg-blue-500 text-white">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
                 <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
               </svg>
@@ -81,16 +81,16 @@
 
         <!-- Create Course Button (for authorized users) - Hidden on mobile -->
         <% if can? :create, Course %>
-          <%= link_to new_course_path, class: "hidden sm:flex s-btn s-btn--sm" do %>
+          <%= link_to new_course_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" do %>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
               <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
             </svg>
             Create Course
           <% end %>
-          <%= link_to new_import_course_path, class: "hidden sm:flex s-btn s-btn--soft s-btn--sm" do %>
+          <%= link_to new_import_course_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" do %>
             Import
           <% end %>
-          <%= link_to new_resync_timestamp_path, class: "hidden sm:flex s-btn s-btn--soft s-btn--sm" do %>
+          <%= link_to new_resync_timestamp_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" do %>
             Resync
           <% end %>
         <% end %>
@@ -99,66 +99,63 @@
         <div class="relative group">
           <input type="checkbox" id="user-menu-toggle" class="hidden peer">
           <label for="user-menu-toggle" class="flex items-center cursor-pointer">
-            <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full shadow" style="border: 2px solid var(--accent);" />
+            <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full shadow border-2 border-emerald-500" />
           </label>
-          <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden" style="background: var(--surface); border: 1px solid var(--border);">
+          <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
             <% if native_app? %>
               <% current_lang = Language.find_by(iso_name: params[:lang]) %>
-              <%= link_to onboarding_language_path(returnto: request.fullpath), class: "block px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);" do %>
+              <%= link_to onboarding_language_path(returnto: request.fullpath), class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" do %>
                 <span class="text-sm">Learning Language: <%= current_lang&.native_name || "Select" %></span>
               <% end %>
-              <div style="border-top: 1px solid var(--border);"></div>
+              <div class="border-t border-gray-200 dark:border-gray-800"></div>
             <% end %>
             <!-- Create Course Button (for mobile) -->
             <% if can? :create, Course %>
-              <%= link_to "Create Course", new_course_path, class: "sm:hidden block px-4 py-3 s-body hover:opacity-70", style: "color: var(--accent);" %>
-              <%= link_to "Import Courses", new_import_course_path, class: "sm:hidden block px-4 py-3 s-body hover:opacity-70", style: "color: var(--accent);" %>
-              <%= link_to "Resync Timestamps", new_resync_timestamp_path, class: "sm:hidden block px-4 py-3 s-body hover:opacity-70", style: "color: var(--accent);" %>
-              <div class="sm:hidden" style="border-top: 1px solid var(--border);"></div>
+              <%= link_to "Create Course", new_course_path, class: "sm:hidden block px-4 py-3 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:opacity-70" %>
+              <%= link_to "Import Courses", new_import_course_path, class: "sm:hidden block px-4 py-3 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:opacity-70" %>
+              <%= link_to "Resync Timestamps", new_resync_timestamp_path, class: "sm:hidden block px-4 py-3 text-sm font-semibold text-emerald-600 dark:text-emerald-400 hover:opacity-70" %>
+              <div class="sm:hidden border-t border-gray-200 dark:border-gray-800"></div>
             <% end %>
             <div class="sm:hidden px-4 py-3" data-testid="header-theme-mobile-menu">
               <%= render "shared/theme_toggle" %>
             </div>
             <div class="sm:hidden px-4 pb-3" data-testid="header-xp-mobile-menu">
-              <div class="s-chip s-chip--active inline-flex" style="--lh: 235; background: oklch(0.66 0.15 235);">
+              <div class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold bg-blue-500 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
                   <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
                 </svg>
                 <%= daily_xp %> XP
               </div>
             </div>
-            <div class="sm:hidden" style="border-top: 1px solid var(--border);"></div>
+            <div class="sm:hidden border-t border-gray-200 dark:border-gray-800"></div>
             <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
               <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
                 method: :post,
-                class: "w-full text-left px-4 py-3 s-body hover:opacity-70",
-                style: "color: var(--text);",
+                class: "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70",
                 data: { turbo: false }
               %>
             <% end %>
             <% if current_user.languages_with_saved_words.exists? %>
-              <div style="border-top: 1px solid var(--border);"></div>
+              <div class="border-t border-gray-200 dark:border-gray-800"></div>
             <% end %>
             <%= link_to "Connected Apps", settings_connections_path,
-              class: "block px-4 py-3 s-body hover:opacity-70",
-              style: "color: var(--text);"
+              class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70"
             %>
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,
               data: { turbo_method: :delete, controller: "bridge--sign-out", action: "click->bridge--sign-out#notifySignOut" },
-              class: "block px-4 py-3 s-body hover:opacity-70",
-              style: "color: var(--text);"
+              class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70"
             %>
           </div>
         </div>
       </div>
     <% else %>
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-        <span class="text-slate-300 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex items-center gap-2">
           <%= render "shared/theme_toggle" %>
-          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn s-btn--sm" %>
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
         </div>
       </div>
     <% end %>
@@ -169,26 +166,26 @@
 
   <!-- Flash Messages -->
   <% if notice %>
-    <div class="s-card mb-6" style="padding: 14px 16px; color: var(--accent);">
+    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md mb-6 px-4 py-3.5 text-emerald-600 dark:text-emerald-400">
       <%= notice %>
     </div>
   <% end %>
 
   <% if alert %>
-    <div class="s-card mb-6" style="padding: 14px 16px; color: oklch(0.6 0.2 25);">
+    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md mb-6 px-4 py-3.5 text-red-600 dark:text-red-400">
       <%= alert %>
     </div>
   <% end %>
 
   <!-- GEO: Entity-rich description for search engines and AI crawlers -->
   <section class="mb-8 px-2">
-    <p class="text-slate-300 text-lg leading-relaxed">
+    <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
       Understand native content in
-      <strong class="text-white">English</strong>,
-      <strong class="text-white">Hebrew</strong>,
-      <strong class="text-white">French</strong>,
-      <strong class="text-white">Spanish</strong>, and
-      <strong class="text-white">Arabic</strong>.
+      <strong class="text-gray-900 dark:text-gray-50">English</strong>,
+      <strong class="text-gray-900 dark:text-gray-50">Hebrew</strong>,
+      <strong class="text-gray-900 dark:text-gray-50">French</strong>,
+      <strong class="text-gray-900 dark:text-gray-50">Spanish</strong>, and
+      <strong class="text-gray-900 dark:text-gray-50">Arabic</strong>.
       Each course breaks down bilingual phrases with word-level translations, timestamps,
       and AI-powered activities designed to build your listening, speaking, and
       comprehension skills through spaced repetition.
@@ -198,12 +195,12 @@
   <!-- Continue Learning Section - show courses user has started -->
   <% if user_signed_in? && @continue_learning_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Continue Learning</h2>
+      <h2 class="text-3xl font-bold mb-6 px-2">Continue Learning</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @continue_learning_courses.each do |course| %>
             <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 s-card cursor-pointer flex flex-col h-full" %>
+              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md cursor-pointer flex flex-col h-full" %>
             </div>
           <% end %>
         </div>
@@ -214,7 +211,7 @@
   <!-- Courses and Standalone Clips -->
   <% if @learning_paths.any? || @all_courses.any? %>
     <section class="mb-10 px-2">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6">Browse</h2>
+      <h2 class="text-3xl font-bold mb-6">Browse</h2>
       <%= render "shared/tabs",
         default_tab: "courses",
         tabs: [
@@ -227,12 +224,12 @@
   <!-- Row: "Next For You" - only show if user signed in and has recommended courses -->
   <% if user_signed_in? && @recommended_courses.any? %>
     <section class="mb-10 mt-10">
-      <h2 class="text-3xl font-bold text-slate-100 mb-6 px-2">Next For You</h2>
+      <h2 class="text-3xl font-bold mb-6 px-2">Next For You</h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @recommended_courses.each do |course| %>
             <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 s-card cursor-pointer flex flex-col h-full" %>
+              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md cursor-pointer flex flex-col h-full" %>
             </div>
           <% end %>
         </div>
@@ -242,15 +239,15 @@
 
 </main>
 
-<footer class="border-t mt-auto" style="background: var(--surface); border-color: var(--border);">
+<footer class="border-t mt-auto bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-      <div class="s-small">
+      <div class="text-xs font-semibold text-gray-500 dark:text-gray-400">
         © <%= Date.current.year %> Langlets. All rights reserved.
       </div>
       <div class="flex space-x-6">
-        <%= link_to "Privacy Policy", "/home/privacy", class: "s-small hover:opacity-70" %>
-        <%= link_to "Terms of Service", "/home/terms", class: "s-small hover:opacity-70" %>
+        <%= link_to "Privacy Policy", "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+        <%= link_to "Terms of Service", "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
       </div>
     </div>
   </div>

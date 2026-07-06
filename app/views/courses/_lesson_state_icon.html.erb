@@ -2,7 +2,7 @@
 <% case state
    when :done %>
   <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="10" fill="var(--accent)"/>
+    <circle cx="12" cy="12" r="10" fill="var(--color-emerald-500)"/>
     <path d="M7.5 12.5l3 3 6-6.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 <% when :progress %>
@@ -11,7 +11,7 @@
     <path d="M12 7v5l3 2" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>
 <% else %>
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-    <circle cx="12" cy="12" r="9.5" stroke="var(--faint)" stroke-width="2"/>
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" class="text-gray-300 dark:text-gray-700">
+    <circle cx="12" cy="12" r="9.5" stroke="currentColor" stroke-width="2"/>
   </svg>
 <% end %>

@@ -6,21 +6,21 @@
      data-write-missing-word-activity-cards-value="<%= cards.to_json %>"
      data-write-missing-word-activity-l1-rtl-value="<%= l1_rtl %>"
      data-write-missing-word-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
-     class="flex flex-col items-center bg-gray-800">
-  <div class="w-full max-w-2xl p-4 sm:p-6 bg-gray-800 rounded-lg shadow-lg">
-    <h2 class="text-xl sm:text-2xl md:text-3xl text-white mb-2 font-bold"><%= @activity.text_header || "Write the Missing Word" %></h2>
+     class="flex flex-col items-center bg-emerald-50 dark:bg-gray-950">
+  <div class="w-full max-w-2xl p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
+    <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-900 dark:text-gray-50 mb-2 font-bold"><%= @activity.text_header || "Write the Missing Word" %></h2>
 
-    <p data-write-missing-word-activity-target="progress" class="text-gray-300 mb-4">Question 1 of <%= cards.length %></p>
+    <p data-write-missing-word-activity-target="progress" class="text-gray-500 dark:text-gray-400 mb-4">Question 1 of <%= cards.length %></p>
 
     <div data-write-missing-word-activity-target="card"
          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-         class="bg-gray-700 p-4 sm:p-8 rounded-lg text-white flex flex-col gap-4">
+         class="bg-gray-100 dark:bg-gray-800 p-4 sm:p-8 rounded-lg text-gray-900 dark:text-gray-50 flex flex-col gap-4">
 
       <div data-write-missing-word-activity-target="translation"
-           class="text-yellow-300 text-base sm:text-lg font-medium"></div>
+           class="text-yellow-700 dark:text-yellow-300 text-base sm:text-lg font-medium"></div>
 
       <div data-write-missing-word-activity-target="sentence"
-           class="text-white text-lg sm:text-xl leading-relaxed"></div>
+           class="text-gray-900 dark:text-gray-50 text-lg sm:text-xl leading-relaxed"></div>
 
       <div data-write-missing-word-activity-target="writeInterface"
            class="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-2">
@@ -28,7 +28,7 @@
           type="text"
           data-write-missing-word-activity-target="answer"
           data-action="keydown.enter->write-missing-word-activity#checkAnswer"
-          class="flex-1 px-4 py-3 rounded-lg bg-gray-600 text-white text-base sm:text-lg border-2 border-gray-500 focus:border-blue-500 focus:outline-none"
+          class="flex-1 px-4 py-3 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-50 text-base sm:text-lg border-2 border-gray-300 dark:border-gray-600 focus:border-emerald-500 focus:outline-none"
           placeholder="Type the missing word..."
           autocomplete="off"
           autocorrect="off"
@@ -38,12 +38,12 @@
         <div class="flex gap-2">
           <button data-action="click->write-missing-word-activity#checkAnswer"
                   data-write-missing-word-activity-target="checkButton"
-                  class="s-btn flex-1 sm:flex-none">
+                  class="inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors flex-1 sm:flex-none">
             Check
           </button>
           <button data-action="click->write-missing-word-activity#showHint"
                   data-write-missing-word-activity-target="hintButton"
-                  class="px-4 py-3 bg-gray-600 hover:bg-gray-500 rounded-lg text-white text-sm font-medium transition-colors duration-200">
+                  class="px-4 py-3 bg-gray-200 dark:bg-gray-600 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-lg text-gray-900 dark:text-gray-50 text-sm font-medium transition-colors duration-200">
             Hint
           </button>
         </div>
@@ -60,8 +60,8 @@
     <div data-write-missing-word-activity-target="completion"
          class="hidden mt-6 text-center"
          data-progress-tracker-target="completion">
-      <h3 class="text-xl font-bold text-green-500 mb-4">Great Work!</h3>
-      <%= link_to_next_activity "Next", @next_activity_path, { class: "s-btn" } %>
+      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">Great Work!</h3>
+      <%= link_to_next_activity "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
     </div>
   </div>
 </div>

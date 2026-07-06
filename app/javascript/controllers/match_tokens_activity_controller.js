@@ -113,7 +113,7 @@ export default class extends Controller {
 
   createTokenElement(token, column) {
     const element = document.createElement('div');
-    element.className = 'token-word touch-manipulation px-4 py-3 border-2 border-gray-600 rounded-lg bg-gray-900 hover:bg-gray-800 text-white text-center transition-all duration-200';
+    element.className = 'token-word touch-manipulation px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 text-center transition-all duration-200';
     element.dataset.tokenId = token.id;
     element.dataset.column = column;
     // Carry both sides of the pair so matching can be done by text, not id.

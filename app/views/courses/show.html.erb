@@ -32,90 +32,88 @@
 <% end %>
 
 <%
-  hue = lang_hue(@course.language&.iso_name)
   course_rtl = @course.language&.rtl || false
   youtube_video_id = @course.main_media_url.to_s.split("v=").last
   user_name = user_signed_in? ? current_user.email.to_s.split("@").first.split(/[._-]/).first.capitalize : "there"
   streak = user_signed_in? ? @streak_info[:count] : 0
 %>
 
-<div class="sprout" style="--hue: <%= hue %>;">
-  <div class="s-screen mx-auto w-full max-w-[480px]">
-    <div class="flex-1 flex flex-col overflow-hidden">
-      <div class="s-safetop"></div>
+<div class="min-h-screen flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]">
+  <div class="flex-1 flex flex-col overflow-hidden">
+    <div class="h-[env(safe-area-inset-top,0px)] flex-shrink-0"></div>
 
-      <!-- Header: back + streak + avatar -->
-      <header class="flex items-center justify-between s-pad" style="margin-top: 14px; margin-bottom: var(--gap);">
-        <%= link_to root_path, class: "hover:opacity-80 transition-opacity", style: "color: var(--accent);", title: "Home" do %>
-          <%= render "shared/home_icon", size: 24 %>
-        <% end %>
+    <!-- Header: back + streak + avatar -->
+    <header class="flex items-center justify-between px-5 mt-3.5 mb-4">
+      <%= link_to root_path, class: "hover:opacity-80 transition-opacity text-emerald-600 dark:text-emerald-400", title: "Home" do %>
+        <%= render "shared/home_icon", size: 24 %>
+      <% end %>
 
-        <div class="flex items-center" style="gap: 10px;">
-          <%= render "shared/theme_toggle" %>
-          <div class="s-streak">
-            <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-              <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
-              <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
-            </svg>
-            <span><%= streak %></span>
-          </div>
-
-          <% if user_signed_in? %>
-            <div class="relative">
-              <input type="checkbox" id="user-menu-toggle" class="hidden peer">
-              <label for="user-menu-toggle" class="s-avatar cursor-pointer" style="border: 2px solid var(--accent);"><%= user_name.first.upcase %></label>
-              <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden"
-                   style="background: var(--surface); border: 1px solid var(--border);">
-                <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-                  <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
-                    method: :post, class: "w-full text-left px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);", data: { turbo: false } %>
-                <% end %>
-                <% if current_user.languages_with_saved_words.exists? %>
-                  <div style="border-top: 1px solid var(--border);"></div>
-                <% end %>
-                <%= link_to "Connected Apps", settings_connections_path,
-                  class: "block px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);" %>
-                <%= link_to "Logout", destroy_user_session_path(returnto: request.fullpath),
-                  method: :delete,
-                  data: { turbo_method: :delete, controller: "auth bridge--sign-out", action: "click->auth#signOut click->bridge--sign-out#notifySignOut" },
-                  class: "block px-4 py-3 s-body hover:opacity-70", style: "color: var(--text);" %>
-              </div>
-            </div>
-          <% else %>
-            <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "s-btn s-btn--sm" %>
-          <% end %>
+      <div class="flex items-center gap-2.5">
+        <%= render "shared/theme_toggle" %>
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 font-extrabold text-sm">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+            <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
+            <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
+          </svg>
+          <span><%= streak %></span>
         </div>
-      </header>
+
+        <% if user_signed_in? %>
+          <div class="relative">
+            <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+            <label for="user-menu-toggle" class="cursor-pointer w-10 h-10 rounded-full border-2 border-emerald-500 bg-gradient-to-br from-emerald-300 to-emerald-500 flex items-center justify-center font-extrabold text-white"><%= user_name.first.upcase %></label>
+            <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden
+                 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
+              <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
+                <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
+                  method: :post, class: "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70", data: { turbo: false } %>
+              <% end %>
+              <% if current_user.languages_with_saved_words.exists? %>
+                <div class="border-t border-gray-200 dark:border-gray-800"></div>
+              <% end %>
+              <%= link_to "Connected Apps", settings_connections_path,
+                class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
+              <%= link_to "Logout", destroy_user_session_path(returnto: request.fullpath),
+                method: :delete,
+                data: { turbo_method: :delete, controller: "auth bridge--sign-out", action: "click->auth#signOut click->bridge--sign-out#notifySignOut" },
+                class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
+        <% end %>
+      </div>
+    </header>
 
       <!-- Scrollable content -->
-      <div class="s-scroll s-pad" style="padding-bottom: 8px;">
+      <div class="flex-1 overflow-y-auto flex flex-col gap-4 px-5 pb-2">
 
         <% if notice %>
-          <div class="s-card" style="padding: 12px 16px; color: var(--accent);"><%= notice %></div>
+          <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md px-4 py-3 text-emerald-600 dark:text-emerald-400"><%= notice %></div>
         <% end %>
         <% if alert %>
-          <div class="s-card" style="padding: 12px 16px; color: oklch(0.6 0.2 25);"><%= alert %></div>
+          <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md px-4 py-3 text-red-600 dark:text-red-400"><%= alert %></div>
         <% end %>
 
         <!-- Hero: title + video -->
-        <div class="s-hero">
-          <div class="flex items-center" style="gap: 7px; margin-bottom: 8px;">
+        <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md">
+          <div class="flex items-center gap-1.5 mb-2">
             <% if @course.language %>
-              <span class="s-badge" style="--lh: <%= hue %>;"><%= lang_badge_code(@course.language) %></span>
+              <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-mono font-extrabold text-[11px] tracking-wide text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-900/40"><%= lang_badge_code(@course.language) %></span>
             <% end %>
-            <span class="s-small"><%= pluralize(@lessons.size, "lesson") %></span>
+            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400"><%= pluralize(@lessons.size, "lesson") %></span>
           </div>
-          <h1 class="s-h1" style="margin-bottom: 13px;" dir="<%= course_rtl ? 'rtl' : 'ltr' %>"><%= @course.name %></h1>
+          <h1 class="text-2xl font-extrabold tracking-tight mb-3.5" dir="<%= course_rtl ? 'rtl' : 'ltr' %>"><%= @course.name %></h1>
 
           <% if youtube_video_id.present? %>
-            <div class="s-thumb" style="--th: <%= hue %>; aspect-ratio: 16/9; height: auto; margin-bottom: 13px;">
-              <iframe class="w-full h-full" style="display:block; border:0;" src="https://www.youtube.com/embed/<%= youtube_video_id %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 mb-3.5" style="aspect-ratio: 16/9;">
+              <iframe class="w-full h-full block border-0" src="https://www.youtube.com/embed/<%= youtube_video_id %>" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           <% end %>
 
-          <div class="flex" style="gap: 10px;">
+          <div class="flex gap-2.5">
             <% if @course.show_full_course_player %>
-              <%= link_to course_full_player_path(@course.slug), class: "s-btn", style: "flex:1;" do %>
+              <%= link_to course_full_player_path(@course.slug), class: "flex-1 inline-flex items-center justify-center gap-2 h-14 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" do %>
                 <svg width="18" height="18" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
                 Watch full video
               <% end %>
@@ -126,25 +124,24 @@
           </div>
         </div>
 
-        <p class="s-small" style="margin-top: -6px;">
+        <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 -mt-1.5">
           Pick any lesson to begin. Each one breaks down a line of the song. Pro tip: practice one lesson a day to maximize spaced repetition.
         </p>
 
         <!-- Lessons -->
-        <div style="padding-bottom: 6px;">
-          <div class="s-section-head">
-            <h2 class="s-h2">Lessons</h2>
-            <span class="s-small" id="lessons-done-count"><%= @lessons.count(&:completed?) %>/<%= @lessons.size %> done</span>
+        <div class="pb-1.5">
+          <div class="flex items-baseline justify-between mb-2.5">
+            <h2 class="text-lg font-extrabold tracking-tight">Lessons</h2>
+            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400" id="lessons-done-count"><%= @lessons.count(&:completed?) %>/<%= @lessons.size %> done</span>
           </div>
 
-          <div class="flex flex-col" style="gap: 8px;" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
+          <div class="flex flex-col gap-2" data-controller="scroll-into-view" data-action="turbo:load@document->scroll-into-view#handleTurboLoad">
             <% @lessons.each_with_index do |lesson, index| %>
               <%= render "courses/lesson_row",
                     lesson: lesson,
                     course: @course,
                     index: index,
-                    is_first_incomplete: (lesson.id == @first_incomplete_lesson_id),
-                    hue: hue %>
+                    is_first_incomplete: (lesson.id == @first_incomplete_lesson_id) %>
             <% end %>
           </div>
         </div>
@@ -152,18 +149,17 @@
     </div>
 
     <!-- Footer -->
-    <footer class="border-t mt-auto" style="background: var(--surface); border-color: var(--border);">
+    <footer class="border-t mt-auto bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-          <div class="s-small">
+          <div class="text-xs font-semibold text-gray-500 dark:text-gray-400">
             © <%= Date.current.year %> Langlets. All rights reserved.
           </div>
           <div class="flex space-x-6">
-            <%= link_to "Privacy Policy", "/home/privacy", class: "s-small hover:opacity-70" %>
-            <%= link_to "Terms of Service", "/home/terms", class: "s-small hover:opacity-70" %>
+            <%= link_to "Privacy Policy", "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+            <%= link_to "Terms of Service", "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
           </div>
         </div>
       </div>
     </footer>
-  </div>
 </div>

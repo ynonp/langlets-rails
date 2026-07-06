@@ -1,78 +1,77 @@
 <% content_for :title, "Import Courses" %>
 
-<div class="sprout" style="--hue: 150;">
-<div class="min-h-screen bg-slate-900 text-slate-100">
-  <header class="py-6 border-b border-slate-700/60">
+<div class="min-h-screen bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
+  <header class="py-6 border-b border-gray-200 dark:border-gray-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-      <%= link_to courses_path, class: "text-2xl font-bold text-slate-100 tracking-tight hover:text-blue-400 transition-colors" do %>
+      <%= link_to courses_path, class: "text-2xl font-bold tracking-tight hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors" do %>
         ← Langlets
       <% end %>
-      <h1 class="text-xl font-semibold text-slate-200">Import Courses</h1>
+      <h1 class="text-xl font-semibold text-gray-500 dark:text-gray-400">Import Courses</h1>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-    <div class="bg-slate-800 rounded-xl shadow-lg border border-slate-700 p-8">
-      
+    <div class="bg-white dark:bg-gray-900 rounded-2xl shadow-md border border-gray-200 dark:border-gray-800 p-8">
+
       <div class="mb-8">
-        <h2 class="text-3xl font-bold text-slate-100 mb-2">Import Courses from JSON</h2>
-        <p class="text-slate-400">Upload one or more JSON files exported from the course creation process.</p>
+        <h2 class="text-3xl font-bold mb-2">Import Courses from JSON</h2>
+        <p class="text-gray-500 dark:text-gray-400">Upload one or more JSON files exported from the course creation process.</p>
       </div>
 
       <% if flash[:alert] %>
-        <div class="mb-6 p-4 bg-red-900/50 border border-red-500 rounded-lg">
-          <p class="text-red-300"><%= flash[:alert] %></p>
+        <div class="mb-6 p-4 bg-red-100 dark:bg-red-900/30 border border-red-400 dark:border-red-500/50 rounded-lg">
+          <p class="text-red-600 dark:text-red-300"><%= flash[:alert] %></p>
         </div>
       <% end %>
 
       <%= form_with url: import_courses_path, local: true, multipart: true, class: "space-y-6" do |form| %>
-        
+
         <div>
-          <%= form.label :files, "JSON Files", class: "block text-sm font-semibold text-slate-200 mb-2" %>
-          <%= form.file_field :files, 
+          <%= form.label :files, "JSON Files", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
+          <%= form.file_field :files,
                 multiple: true,
                 accept: ".json,application/json",
-                class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:bg-blue-600 file:text-white file:font-semibold file:cursor-pointer hover:file:bg-blue-700" %>
-          <p class="text-xs text-slate-400 mt-1">Select one or more JSON files. Each file should contain course data from a previous export.</p>
+                class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent file:mr-4 file:py-1 file:px-4 file:rounded-lg file:border-0 file:bg-emerald-500 file:text-white file:font-semibold file:cursor-pointer hover:file:bg-emerald-600" %>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Select one or more JSON files. Each file should contain course data from a previous export.</p>
         </div>
 
-        <div class="border-t border-slate-700 pt-6 mt-6">
-          <h3 class="text-lg font-semibold text-slate-200 mb-4">Learning Path (Optional)</h3>
+        <div class="border-t border-gray-200 dark:border-gray-800 pt-6 mt-6">
+          <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-4">Learning Path (Optional)</h3>
 
           <div class="space-y-3 mb-4">
             <label class="flex items-center cursor-pointer">
               <%= form.radio_button :learning_path_action, "none",
-                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
                     id: "learning_path_action_none",
                     checked: true
               %>
-              <span class="ml-2 text-sm text-slate-300">None</span>
+              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">None</span>
             </label>
 
             <label class="flex items-center cursor-pointer">
               <%= form.radio_button :learning_path_action, "existing",
-                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
                     id: "learning_path_action_existing"
               %>
-              <span class="ml-2 text-sm text-slate-300">Add to existing learning path</span>
+              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Add to existing learning path</span>
             </label>
 
             <label class="flex items-center cursor-pointer">
               <%= form.radio_button :learning_path_action, "new",
-                    class: "w-4 h-4 border-slate-600 bg-slate-700 text-blue-600 focus:ring-blue-500 focus:ring-offset-slate-800",
+                    class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
                     id: "learning_path_action_new"
               %>
-              <span class="ml-2 text-sm text-slate-300">Create new learning path</span>
+              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Create new learning path</span>
             </label>
           </div>
 
           <div id="existing-learning-path-fields" class="hidden space-y-4">
             <div>
-              <%= form.label :learning_path_id, "Learning Path", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+              <%= form.label :learning_path_id, "Learning Path", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
               <%= form.select :learning_path_id,
                     options_from_collection_for_select(LearningPath.order(:name), :id, :name),
                     { prompt: "Select a learning path" },
-                    { class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent", id: "learning_path_id_field" }
+                    { class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent", id: "learning_path_id_field" }
               %>
             </div>
           </div>
@@ -80,41 +79,41 @@
           <div id="new-learning-path-fields" class="hidden space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <%= form.label :learning_path_name, "Name *", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+                <%= form.label :learning_path_name, "Name *", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
                 <%= form.text_field :learning_path_name,
-                      class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                      class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent",
                       placeholder: "e.g., Arabic for Beginners",
                       id: "learning_path_name_field"
                 %>
               </div>
 
               <div>
-                <%= form.label :difficulty_level, "Difficulty Level", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+                <%= form.label :difficulty_level, "Difficulty Level", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
                 <%= form.select :difficulty_level,
                       options_for_select([["Beginner", 1], ["Intermediate", 2], ["Advanced", 3]]),
                       { prompt: "Select difficulty" },
-                      { class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" }
+                      { class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent" }
                 %>
               </div>
             </div>
 
             <div>
-              <%= form.label :learning_path_description, "Description", class: "block text-sm font-semibold text-slate-200 mb-2" %>
+              <%= form.label :learning_path_description, "Description", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
               <%= form.text_area :learning_path_description,
-                    class: "w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent",
+                    class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent",
                     rows: 3,
                     placeholder: "Describe what learners will achieve in this learning path..."
               %>
             </div>
 
-            <p class="text-xs text-slate-400">All imported courses will be added to this learning path in the order they are processed.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">All imported courses will be added to this learning path in the order they are processed.</p>
           </div>
         </div>
 
-        <div class="p-4 bg-blue-900/30 border border-blue-500/50 rounded-lg">
-          <h3 class="text-blue-300 font-semibold mb-2">JSON File Format</h3>
-          <p class="text-slate-300 text-sm mb-3">Each JSON file must contain the following fields:</p>
-          <pre class="bg-slate-900/50 p-3 rounded text-xs text-slate-300 overflow-x-auto">{
+        <div class="p-4 bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-300 dark:border-emerald-700/50 rounded-lg">
+          <h3 class="text-emerald-700 dark:text-emerald-300 font-semibold mb-2">JSON File Format</h3>
+          <p class="text-gray-500 dark:text-gray-400 text-sm mb-3">Each JSON file must contain the following fields:</p>
+          <pre class="bg-gray-100 dark:bg-gray-800/60 p-3 rounded text-xs text-gray-600 dark:text-gray-300 overflow-x-auto">{
   "youtubeurl": "https://youtube.com/watch?v=...",
   "clip_language": "Hebrew",
   "translation_language": "English",
@@ -125,14 +124,14 @@
 }</pre>
         </div>
 
-        <div class="p-4 bg-yellow-900/50 border border-yellow-500/50 rounded-lg">
+        <div class="p-4 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-400 dark:border-yellow-500/50 rounded-lg">
           <div class="flex items-start">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-yellow-400 mr-3 mt-0.5 flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 text-yellow-600 dark:text-yellow-400 mr-3 mt-0.5 flex-shrink-0">
               <path fill-rule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003ZM12 8.25a.75.75 0 0 1 .75.75v3.75a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75Zm0 8.25a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
             </svg>
             <div>
-              <h4 class="text-yellow-400 font-semibold">Course Import Processing</h4>
-              <p class="text-yellow-200 text-sm mt-1">
+              <h4 class="text-yellow-700 dark:text-yellow-400 font-semibold">Course Import Processing</h4>
+              <p class="text-yellow-700 dark:text-yellow-200 text-sm mt-1">
                 Each course will be processed in the background. You'll receive an email notification when each course is ready.
               </p>
             </div>
@@ -140,15 +139,14 @@
         </div>
 
         <div class="flex justify-end space-x-4 pt-6">
-          <%= link_to "Cancel", courses_path, class: "px-6 py-3 text-slate-400 hover:text-slate-200 font-semibold transition-colors" %>
+          <%= link_to "Cancel", courses_path, class: "px-6 py-3 text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-50 font-semibold transition-colors" %>
           <%= form.submit "Import Courses",
-                class: "s-btn" %>
+                class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors cursor-pointer" %>
         </div>
 
       <% end %>
     </div>
   </main>
-</div>
 </div>
 
 <script>

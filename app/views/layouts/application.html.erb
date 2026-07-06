@@ -12,7 +12,6 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap" rel="stylesheet">
 
     <%= yield :head %>
 
@@ -41,7 +40,7 @@
     <% end %>
   </head>
 
-  <body>
+  <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
     <main class="flex flex-col min-h-screen">
       <%= yield %>
     </main>

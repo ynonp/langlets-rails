@@ -39,7 +39,7 @@ export default class extends Controller {
 
       return `
         <div class="option-item">
-          <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-gray-800 rounded h-20">${opt}</button>
+          <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 rounded h-20">${opt}</button>
           ${audioHtml}
         </div>
       `
@@ -56,8 +56,8 @@ export default class extends Controller {
     const displayedPhrase = card.phrase_html
 
     this.cardTarget.innerHTML = `
-      <div class="mb-3 text-gray-300 text-lg md:text-xl">${card.translation}</div>
-      <div dir="${phraseDir}" class="mb-6 text-white font-semibold text-2xl md:text-3xl ${phraseAlignClass}">${displayedPhrase}</div>
+      <div class="mb-3 text-gray-500 dark:text-gray-400 text-lg md:text-xl">${card.translation}</div>
+      <div dir="${phraseDir}" class="mb-6 text-gray-900 dark:text-gray-50 font-semibold text-2xl md:text-3xl ${phraseAlignClass}">${displayedPhrase}</div>
       <div class="mt-6 grid grid-cols-2 gap-4">${optionsHtml}</div>
       ${this.isReviewLessonValue ? stopPracticingHtml(card.id) : ''}
     `

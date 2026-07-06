@@ -112,8 +112,8 @@ export default class extends Controller {
           this.currentL1Element.classList.remove('current-l1');
         }
         // Update styling to show it's now displaying L1
-        element.classList.remove('flash-success', 'bg-gray-900', 'hover:bg-gray-800');
-        element.classList.add('showing-l1', 'bg-gray-700', 'cursor-pointer', 'current-l1');
+        element.classList.remove('flash-success', 'bg-white', 'dark:bg-gray-900', 'hover:bg-gray-100', 'dark:hover:bg-gray-800');
+        element.classList.add('showing-l1', 'bg-gray-100', 'dark:bg-gray-800', 'cursor-pointer', 'current-l1');
         // Store the token ID so we can find its audio element later
         element.setAttribute('data-l1-token-id', currentToken.id);
         // Add click handler for L1 audio playback

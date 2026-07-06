@@ -1,12 +1,11 @@
-<div class="sprout" style="--hue: 150;">
-<div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-gray-900">
+<div class="min-h-screen flex flex-col items-center justify-center px-4 py-12 bg-emerald-50 dark:bg-gray-950">
   <div class="max-w-md w-full text-center">
     <% if @return_to.present? %>
-      <h1 class="text-3xl font-bold text-slate-100 mb-3">Change Learning Language</h1>
-      <p class="text-slate-400 mb-8 text-lg">Select the language you want to learn</p>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-3">Change Learning Language</h1>
+      <p class="text-gray-500 dark:text-gray-400 mb-8 text-lg">Select the language you want to learn</p>
     <% else %>
-      <h1 class="text-3xl font-bold text-slate-100 mb-3">Welcome to Langlets</h1>
-      <p class="text-slate-400 mb-8 text-lg">Which language do you want to learn?</p>
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-3">Welcome to Langlets</h1>
+      <p class="text-gray-500 dark:text-gray-400 mb-8 text-lg">Which language do you want to learn?</p>
     <% end %>
 
     <div class="space-y-3">
@@ -17,18 +16,18 @@
           data-action="click->bridge--language-selection#selectLanguage"
           data-bridge--language-selection-iso-value="<%= language.iso_name %>"
           data-bridge--language-selection-redirect-url-value="<%= language_redirect_url(language.iso_name) %>"
-          class="w-full flex items-center justify-between px-5 py-4 bg-slate-800 hover:bg-slate-700 <%= is_selected ? 'border-blue-500 ring-2 ring-blue-500/50' : 'border-slate-700' %> rounded-xl transition-colors duration-200 text-left"
+          class="w-full flex items-center justify-between px-5 py-4 bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 border <%= is_selected ? 'border-emerald-500 ring-2 ring-emerald-500/50' : 'border-gray-200 dark:border-gray-700' %> rounded-2xl transition-colors duration-200 text-left"
         >
           <div>
-            <span class="text-slate-100 font-semibold text-lg block"><%= language.native_name %></span>
-            <span class="text-slate-400 text-sm"><%= language.english_name %></span>
+            <span class="text-gray-900 dark:text-gray-50 font-semibold text-lg block"><%= language.native_name %></span>
+            <span class="text-gray-500 dark:text-gray-400 text-sm"><%= language.english_name %></span>
           </div>
           <% if is_selected %>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-emerald-600 dark:text-emerald-400">
               <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
             </svg>
           <% else %>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-blue-400">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-gray-400 dark:text-gray-500">
               <path fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z" clip-rule="evenodd" />
             </svg>
           <% end %>
@@ -36,5 +35,4 @@
       <% end %>
     </div>
   </div>
-</div>
 </div>

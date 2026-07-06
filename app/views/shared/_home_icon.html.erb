@@ -1,7 +1,5 @@
-<%# Home icon — the house glyph from the "Langlets Mobile Redesign" lesson-player
-    frames. Stroked with currentColor so it follows whatever color the caller sets
-    (use color: var(--accent) to track the sprout theme in light and dark).
-    `size` is the rendered px. %>
+<%# Home icon. Stroked with currentColor so it follows whatever text color class
+    the caller sets on the wrapping element. `size` is the rendered px. %>
 <% size ||= 24 %>
 <svg width="<%= size %>" height="<%= size %>" viewBox="0 0 24 24"
      fill="none" stroke="currentColor" stroke-width="2.2"

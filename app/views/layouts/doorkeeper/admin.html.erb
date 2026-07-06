@@ -7,26 +7,24 @@
   <%= stylesheet_link_tag :app %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<div class="sprout min-h-screen" style="--hue: 150;">
+<body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 min-h-screen">
   <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8">
     <nav class="flex items-center gap-4 mb-8">
-      <%= link_to t('doorkeeper.layouts.admin.nav.oauth2_provider'), oauth_applications_path, class: "s-btn s-btn--sm" %>
+      <%= link_to t('doorkeeper.layouts.admin.nav.oauth2_provider'), oauth_applications_path, class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
       <% if respond_to?(:root_path) %>
-        <%= link_to t('doorkeeper.layouts.admin.nav.home'), root_path, class: "s-btn s-btn--soft s-btn--sm" %>
+        <%= link_to t('doorkeeper.layouts.admin.nav.home'), root_path, class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" %>
       <% end %>
     </nav>
 
     <%- if flash[:notice].present? %>
-      <div class="s-card mb-6" style="padding: 14px 16px; color: var(--accent);">
+      <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md mb-6 px-4 py-3.5 text-emerald-600 dark:text-emerald-400">
         <%= flash[:notice] %>
       </div>
     <% end -%>
 
-    <div class="s-card" style="padding: 24px; color: var(--text);">
+    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md p-6">
       <%= yield %>
     </div>
   </div>
-</div>
 </body>
 </html>
