@@ -1,9 +1,9 @@
 <% if courses.any? %>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
+  <%= render layout: "shared/card_grid" do %>
     <% courses.each do |course| %>
       <%= render "course_card", course: course %>
     <% end %>
-  </div>
+  <% end %>
 <% else %>
   <p class="px-2 text-slate-400">No standalone clips available yet.</p>
 <% end %>

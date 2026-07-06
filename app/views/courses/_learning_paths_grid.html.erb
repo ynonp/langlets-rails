@@ -1,5 +1,5 @@
 <% if learning_paths.any? %>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+  <%= render layout: "shared/card_grid" do %>
     <% learning_paths.each do |learning_path| %>
       <% lp_hue = lang_hue(learning_path.courses.first&.language&.iso_name) %>
       <%= link_to learning_path_path(learning_path), class: "block s-card cursor-pointer flex flex-col h-full overflow-hidden", style: "padding: 0;" do %>
@@ -23,7 +23,7 @@
         </div>
       <% end %>
     <% end %>
-  </div>
+  <% end %>
 <% else %>
   <p class="px-2 text-slate-400">No courses available yet.</p>
 <% end %>
