@@ -19,7 +19,7 @@
       <h1 class="text-2xl font-extrabold tracking-tight text-[30px]">Log in</h1>
     </div>
 
-    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-5" }) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-5", data: { turbo_action: "replace" } }) do |f| %>
       <% if params[:returnto].present? %>
         <%= hidden_field_tag :returnto, params[:returnto] %>
       <% end %>
