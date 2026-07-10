@@ -8,29 +8,32 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
       translation_language: "English"
     )
 
-    @word_timing_json = <<~JSON
-      [
+    # Real schema shape: an object with "lines" (RubyLLM hands us the parsed
+    # Hash, not a raw JSON string).
+    @word_timing_json = {
+      "lines" => [
         {
-          "line_start": "00:00:05,000",
-          "line_end": "00:00:08,000",
-          "line_text": "First line",
-          "words": [
-            { "word": "First", "start": "00:00:05,000", "end": "00:00:06,200" },
-            { "word": "line", "start": "00:00:06,400", "end": "00:00:08,000" }
+          "line_start" => "00:00:05,000",
+          "line_end" => "00:00:08,000",
+          "line_text" => "First line",
+          "words" => [
+            { "word" => "First", "start" => "00:00:05,000", "end" => "00:00:06,200" },
+            { "word" => "line", "start" => "00:00:06,400", "end" => "00:00:08,000" }
           ]
         },
         {
-          "line_start": "00:00:25,000",
-          "line_end": "00:00:28,500",
-          "line_text": "Second line here",
-          "words": [
-            { "word": "Second", "start": "00:00:25,000", "end": "00:00:26,000" },
-            { "word": "line", "start": "00:00:26,200", "end": "00:00:27,000" },
-            { "word": "here", "start": "00:00:27,200", "end": "00:00:28,500" }
+          "line_start" => "00:00:25,000",
+          "line_end" => "00:00:28,500",
+          "line_text" => "Second line here",
+          "words" => [
+            { "word" => "Second", "start" => "00:00:25,000", "end" => "00:00:26,000" },
+            { "word" => "line", "start" => "00:00:26,200", "end" => "00:00:27,000" },
+            { "word" => "here", "start" => "00:00:27,200", "end" => "00:00:28,500" }
           ]
         }
-      ]
-    JSON
+      ],
+      "has_more" => false
+    }
   end
 
   test "extract_lyrics parses word-timed JSON into phrases with words" do
@@ -218,7 +221,7 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
   end
 
   test "extract_lyrics handles empty JSON gracefully" do
-    fake_chat = FakeChatQueue.new([ "[]" ])
+    fake_chat = FakeChatQueue.new([ { "lines" => [], "has_more" => false } ])
 
     stub_renderer_for_extract_lyrics!
     with_fake_chat(fake_chat) do
@@ -226,6 +229,66 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
     end
 
     assert_equal [], @progress.data["phrases"]
+  end
+
+  test "extract_lyrics retries a truncated turn and recovers" do
+    # RubyLLM hands back a raw String when it can't parse the (truncated)
+    # response; the next attempt returns a clean Hash.
+    fake_chat = FakeChatQueue.new([
+      "{ \"lines\": [ { \"line_text\": \"trunc",           # truncated -> retried
+      { "lines" => lines_batch(1, 2), "has_more" => false } # retry succeeds
+    ])
+
+    stub_renderer_for_extract_lyrics!
+    def @progress.sleep(*) = nil # skip retry backoff in tests
+
+    with_fake_chat(fake_chat) do
+      @progress.extract_lyrics
+    end
+
+    assert_equal 2, @progress.data["phrases"].length
+    assert_equal 2, fake_chat.call_count
+    # The truncated assistant turn was popped, so only the good turn remains.
+    assert_equal 1, fake_chat.messages.length
+    # Completed cleanly -> resume flag cleared.
+    assert_equal false, @progress.data["extract_lyrics_in_progress"]
+  end
+
+  test "extract_lyrics persists earlier turns when a later turn fails hard" do
+    # First turn succeeds; the second truncates on every attempt and exhausts
+    # the retries. The phrases from the first turn must survive in the DB.
+    fake_chat = FakeChatQueue.new([
+      { "lines" => lines_batch(1, 2), "has_more" => true },
+      "trunc", "trunc", "trunc" # initial + MAX_COMPLETION_RETRIES, all bad
+    ])
+
+    stub_renderer_for_extract_lyrics!
+    def @progress.sleep(*) = nil
+
+    assert_raises(CreateSong::ExtractLyrics::TruncatedResponseError) do
+      with_fake_chat(fake_chat) { @progress.extract_lyrics }
+    end
+
+    # Saved incrementally after the first (good) turn, before the failure.
+    assert_equal 2, @progress.reload.data["phrases"].length
+    assert_equal 4, fake_chat.call_count # 1 good + 3 failed attempts
+    # Never finished -> resume flag stays set so create_data re-runs the step.
+    assert_equal true, @progress.data["extract_lyrics_in_progress"]
+  end
+
+  test "extract_lyrics leaves the resume flag set when coverage is too low" do
+    # Lines reach 00:03 of a 00:10 video (30% covered) -> raises after saving.
+    fake_chat = FakeChatQueue.new([
+      { "lines" => lines_batch(1, 3), "has_more" => false, "video_length" => "00:00:10,000" }
+    ])
+
+    stub_renderer_for_extract_lyrics!
+    assert_raises(CreateSong::ExtractLyrics::IncompleteTranscriptionError) do
+      with_fake_chat(fake_chat) { @progress.extract_lyrics }
+    end
+
+    # Coverage failure raises before the flag is cleared.
+    assert_equal true, @progress.reload.data["extract_lyrics_in_progress"]
   end
 
   test "extract_lyrics raises when less than half the video is transcribed" do
@@ -330,12 +393,13 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
   # A fake chat that returns queued responses for .complete calls,
   # and returns self for all chained methods.
   class FakeChatQueue
-    attr_reader :call_count, :all_messages
+    attr_reader :call_count, :all_messages, :messages
 
     def initialize(responses)
       @responses = responses
       @call_count = 0
       @all_messages = []
+      @messages = []
     end
 
     def with_instructions(*)
@@ -362,10 +426,18 @@ class CreateSongExtractLyricsTest < ActiveSupport::TestCase
     def complete
       resp = @responses[@call_count]
       @call_count += 1
+      # Mimic RubyLLM::Chat#complete: it appends the assistant turn to messages
+      # (which the retry path pops on failure) and hands back already-parsed
+      # content -- a Hash for a schema response, or the raw String when parsing
+      # failed (our truncation signal). Tests pass content in that final shape.
+      @messages << FakeMessage.new(:assistant)
       FakeResponse.new(resp)
     end
   end
 
   # Minimal stub with a .content accessor, like RubyLLM response objects.
   FakeResponse = Struct.new(:content)
+
+  # Minimal stub mirroring RubyLLM::Message (only .role is used by the retry).
+  FakeMessage = Struct.new(:role)
 end

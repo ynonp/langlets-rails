@@ -25,8 +25,8 @@ Always report the total running length of the whole video in the video_length fi
 same value in every response, even in continuation turns.
 
 BATCHING
-Return at most 30 lines per response. If the video contains more content than
-fits in 30 lines, return the first 30 lines (from the start of the untranscribed
+Return at most 40 lines per response. If the video contains more content than
+fits in 40 lines, return the first 40 lines (from the start of the untranscribed
 content) and set has_more to true. Set has_more to false only when the lines you
 are returning reach the end of the video with nothing left to transcribe. When
 asked to continue, resume from immediately after the last line you were given and

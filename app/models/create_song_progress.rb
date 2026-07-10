@@ -13,7 +13,12 @@ class CreateSongProgress < ApplicationRecord
   def create_data
     span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
     LangfuseTracer.in_span(span_name, attributes: { }) do |span|
-      extract_lyrics unless data["phrases"].present?
+      # Run extract_lyrics when we have no phrases yet, or when a previous run
+      # started the step but never finished it (the in-progress flag is still
+      # set). Relying on phrases alone isn't enough: extract_lyrics now saves
+      # phrases turn-by-turn, so a partially-transcribed, failed run also leaves
+      # phrases present -- the flag is what tells "done" apart from "interrupted".
+      extract_lyrics if data["phrases"].blank? || data["extract_lyrics_in_progress"]
       translate unless data.dig("phrases", 0, "text_l2")
       add_token_translation unless data.dig("phrases", 0, "words", 0, "translation").present?
       add_lessons unless data["lessons"].present?
