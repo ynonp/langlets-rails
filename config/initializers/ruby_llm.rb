@@ -6,8 +6,7 @@ RubyLLM.configure do |config|
   config.request_timeout = 600
 
   # use ollama cloud endpoint
-  config.openai_api_key = Rails.application.credentials.dig(:ollama_api_key)
-  config.openai_api_base = "http://localhost:11434/v1" # Your endpoint
-  config.openai_use_system_role = true
+  config.ollama_api_key = Rails.application.credentials.dig(:ollama_api_key)
+  config.ollama_api_base = "https://ollama.com/v1"
 end
 
