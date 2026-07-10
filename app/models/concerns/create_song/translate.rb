@@ -4,7 +4,7 @@ module CreateSong
 
     MODEL_PARAMS = {
       model: 'qwen3.5:397b-cloud',
-      provider: :openai,
+      provider: :ollama,
       assume_model_exists: true
     }.freeze
 

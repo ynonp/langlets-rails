@@ -4,7 +4,7 @@ module CreateSong
 
     MODEL_PARAMS = {
       model: 'deepseek-v4-pro:cloud',
-      provider: :openai,
+      provider: :ollama,
       assume_model_exists: true
     }.freeze
 
