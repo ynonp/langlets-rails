@@ -105,14 +105,7 @@ class WordTimingParser
 
   # Parse the "MM:SS.ss" word timestamps we emit into float seconds for sorting.
   def timestamp_seconds(ts)
-    return 0.0 if ts.blank?
-
-    parts = ts.to_s.split(":")
-    case parts.length
-    when 3 then parts[0].to_f * 3600 + parts[1].to_f * 60 + parts[2].to_f
-    when 2 then parts[0].to_f * 60 + parts[1].to_f
-    else ts.to_f
-    end
+    HasTimestamp.timestamp_to_seconds(ts) || ts.to_f
   end
 
   # The transcript becomes clickable text in the app; square brackets are
@@ -146,19 +139,11 @@ class WordTimingParser
     Phrase.to_string_timestamp(srt_to_seconds(srt))
   end
 
-  # Parse "HH:MM:SS,mmm" / "MM:SS,mmm" / "HH:MM:SS.mmm" into float seconds.
+  # Parse "HH:MM:SS,mmm" / "MM:SS,mmm" / "HH:MM:SS.mmm" into float seconds. SRT
+  # uses a comma decimal separator, so normalize it to a dot before delegating to
+  # the shared HasTimestamp parser.
   def srt_to_seconds(srt)
-    return 0.0 if srt.blank?
-
     normalized = srt.to_s.strip.tr(",", ".")
-    parts = normalized.split(":")
-    case parts.length
-    when 3
-      parts[0].to_f * 3600 + parts[1].to_f * 60 + parts[2].to_f
-    when 2
-      parts[0].to_f * 60 + parts[1].to_f
-    else
-      normalized.to_f
-    end
+    HasTimestamp.timestamp_to_seconds(normalized) || normalized.to_f
   end
 end

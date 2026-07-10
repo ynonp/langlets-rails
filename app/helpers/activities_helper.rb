@@ -1,4 +1,8 @@
 module ActivitiesHelper
+  # NOTE: intentionally NOT the same as HasTimestamp.timestamp_to_seconds. This
+  # helper parses a 3-segment value as "MM:SS:mmm" (the third field is
+  # milliseconds), whereas HasTimestamp reads three segments as "HH:MM:SS". The
+  # two are not interchangeable, so this stays a separate parser.
   def timestamp_to_seconds(timestamp)
     parts = timestamp.split(":")
     case parts.length

@@ -44,11 +44,15 @@ class Phrase < ApplicationRecord
   )
   }
 
-  # Class method to convert seconds to timestamp string format ("MM:SS")
+  # Convert seconds to an "MM:SS.ss" timestamp string. Delegates to HasTimestamp,
+  # the single source of truth for timestamp conversions.
   def self.to_string_timestamp(timestamp_seconds)
-    total_seconds = timestamp_seconds.to_f
-    minutes = total_seconds.to_i / 60
-    seconds = total_seconds % 60
-    format("%02d:%05.2f", minutes, seconds)
+    HasTimestamp.seconds_to_timestamp(timestamp_seconds)
+  end
+
+  # Inverse of to_string_timestamp: parse an "MM:SS.ss" / "HH:MM:SS.ss" string
+  # into float seconds, defaulting to 0.0 for blank/malformed input.
+  def self.timestamp_to_seconds(timestamp)
+    HasTimestamp.timestamp_to_seconds(timestamp) || 0.0
   end
 end

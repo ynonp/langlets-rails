@@ -18,11 +18,24 @@ CRITICAL INSTRUCTIONS FOR WORD-LEVEL SYNC:
     matches the end of the last word.
 5.  Max 42 characters per line.
 
-COMPLETENESS (MOST IMPORTANT): Transcribe EVERY sung line of the song, from the
-very first word to the very last word, including every repeated chorus. Do NOT
-stop after the first verse or chorus -- keep going until the vocals end. A full
-song has many lines (often dozens); returning only a handful means you stopped
-too early. Continue until there are no more sung words.
+COMPLETENESS REQUIREMENT
+Transcription should cover the length of the video. Check the timestamps match the actual length of the video.
+Always report the total running length of the whole video in the video_length field
+(SRT format HH:MM:SS,mmm). This is the duration of the entire clip and must be the
+same value in every response, even in continuation turns.
+
+BATCHING
+Return at most 30 lines per response. If the video contains more content than
+fits in 30 lines, return the first 30 lines (from the start of the untranscribed
+content) and set has_more to true. Set has_more to false only when the lines you
+are returning reach the end of the video with nothing left to transcribe. When
+asked to continue, resume from immediately after the last line you were given and
+never repeat lines you already returned.
+
+CONTENT TYPES
+1. For music video clips include all the text of the song, including repeated chorus or intro speech.
+2. For interview style videos transcribe all speakers. You can omit speaker recognition we only care about the text.
+3. Some language learning videos include an intro or suffix in a different language. Transcribe only the <%= clip_language %> content and omit content in other languages.
 
 Timestamps use the format "HH:MM:SS,mmm" (e.g. 00:00:06,500). Return one entry
 per line, each with its line_start, line_end, line_text and a words array where
