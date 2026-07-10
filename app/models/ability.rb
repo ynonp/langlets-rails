@@ -11,5 +11,6 @@ class Ability
   def editor(user)
     can :create, Course
     can :manage, Course, user: user
+    can :manage, LearningPath
   end
 end

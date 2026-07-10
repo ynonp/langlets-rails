@@ -1,6 +1,7 @@
 class LearningPathsController < ApplicationController
-  before_action :set_learning_path, only: [:show, :search_courses]
-  
+  before_action :authenticate_user!, only: [:destroy]
+  before_action :set_learning_path, only: [:show, :search_courses, :destroy]
+
   def show
     @tags = Tag.used_in_learning_path(@learning_path)
     @courses = get_filtered_courses
@@ -74,8 +75,14 @@ class LearningPathsController < ApplicationController
     }
   end
   
+  def destroy
+    authorize! :destroy, @learning_path
+    @learning_path.destroy
+    redirect_to root_path, notice: "Learning path deleted."
+  end
+
   private
-  
+
   def set_learning_path
     @learning_path = LearningPath.find(params[:id])
   end
