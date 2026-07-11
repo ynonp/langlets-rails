@@ -1,23 +1,20 @@
 import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 
-// Notifies the native app when the user signs out, so it can clear
-// any native state (cookies, cache, etc.).
+// Notifies the native app that the user signed out, so it can clear
+// its WKWebView cookie store and cache.
 //
-// This controller is placed on sign-out links. When the native app is
-// present, it sends a "signedOut" message so the app can clear its
-// WKWebView data store.
+// Rendered on the page the server redirects to after sign-out
+// (layouts/application, when ?signed_out=1 is present). Firing here —
+// rather than on the sign-out link click — guarantees the cookie wipe
+// happens only after DELETE /users/sign_out completed on the server,
+// so the request can't lose its session cookie mid-flight.
 export default class extends BridgeComponent {
   static component = "sign-out"
 
   connect() {
     super.connect()
-  }
-
-  // Called when the sign-out link is clicked in the native app.
-  // Only sends the message when running in the native app.
-  // The native SignOutComponent clears WKWebView website data.
-  notifySignOut(event) {
-    if (!this.enabled) return // Only in native app
-    this.send("signedOut")
+    if (this.enabled) {
+      this.send("signedOut")
+    }
   }
 }

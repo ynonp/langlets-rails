@@ -49,5 +49,9 @@
     <% unless content_for?(:structured_data) %>
       <%= render "shared/structured_data/website" %>
     <% end %>
+
+    <% if params[:signed_out].present? %>
+      <div data-controller="bridge--sign-out" hidden></div>
+    <% end %>
   </body>
 </html>

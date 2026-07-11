@@ -75,7 +75,7 @@
                 class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
               <%= link_to "Logout", destroy_user_session_path(returnto: request.fullpath),
                 method: :delete,
-                data: { turbo_method: :delete, controller: "auth bridge--sign-out", action: "click->auth#signOut click->bridge--sign-out#notifySignOut" },
+                data: { turbo_method: :delete, controller: "auth", action: "click->auth#signOut" },
                 class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
             </div>
           </div>

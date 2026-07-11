@@ -109,7 +109,7 @@
             <%= link_to "Logout",
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,
-              data: { turbo_method: :delete, controller: "bridge--sign-out", action: "click->bridge--sign-out#notifySignOut" },
+              data: { turbo_method: :delete },
               class: "block px-4 py-3 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-150"
             %>
           </div>
