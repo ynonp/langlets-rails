@@ -1,4 +1,6 @@
 <div class="grid grid-cols-2 gap-4 mt-5">
+  <p data-native-auth-error hidden class="col-span-2 text-sm text-red-600 dark:text-red-400 text-center"></p>
+
   <%= button_to user_apple_omniauth_authorize_path,
     method: :post,
     form: { class: "w-full col-span-2", data: { turbo: false, controller: "bridge--apple-auth", action: "submit->bridge--apple-auth#authorize" } },

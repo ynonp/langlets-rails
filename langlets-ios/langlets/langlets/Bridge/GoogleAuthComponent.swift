@@ -46,6 +46,13 @@ final class GoogleAuthComponent: BridgeComponent {
             withPresenting: viewController
         ) { [weak self] signInResult, error in
             if let error = error {
+                // Canceling the sheet is not an error worth alerting about,
+                // and replying mid-dismissal would make the web page show an
+                // error while the sheet is still animating away.
+                if (error as NSError).code == GIDSignInError.canceled.rawValue {
+                    print("[GoogleAuthComponent] Sign-in canceled by user")
+                    return
+                }
                 print("[GoogleAuthComponent] Sign-in error: \(error.localizedDescription)")
                 self?.reply(with: message.replacing(data: AuthorizeMessageData(code: nil, error: error.localizedDescription)))
                 return

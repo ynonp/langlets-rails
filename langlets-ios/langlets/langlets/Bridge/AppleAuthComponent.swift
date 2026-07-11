@@ -66,8 +66,13 @@ final class AppleAuthComponent: BridgeComponent {
 
             case .failure(let error):
                 // Canceling the sheet is not an error worth alerting about.
-                if let authError = error as? ASAuthorizationError, authError.code == .canceled {
-                    print("[AppleAuthComponent] Sign-in canceled by user")
+                // Cancellation surfaces as .canceled, but also as .unknown when
+                // the sheet is dismissed before Face ID or without an iCloud
+                // account — replying here would make the web page show an error
+                // mid-dismissal.
+                if let authError = error as? ASAuthorizationError,
+                   authError.code == .canceled || authError.code == .unknown {
+                    print("[AppleAuthComponent] Sign-in canceled by user (code \(authError.code.rawValue))")
                     return
                 }
                 print("[AppleAuthComponent] Sign-in error: \(error.localizedDescription)")

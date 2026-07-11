@@ -30,7 +30,7 @@ export default class extends BridgeComponent {
 
   handleAuthorization(data) {
     if (!data.code) {
-      alert(data.error || "Could not authenticate using Google, please try another way.")
+      this.showError(data.error || "Could not authenticate using Google, please try another way.")
       return
     }
 
@@ -46,11 +46,25 @@ export default class extends BridgeComponent {
         if (response.redirected) {
           window.location.href = response.url
         } else {
-          alert("Google authentication failed, please try another way.")
+          this.showError("Google authentication failed, please try another way.")
         }
       })
       .catch(() => {
-        alert("Google authentication failed, please try another way.")
+        this.showError("Google authentication failed, please try another way.")
       })
+  }
+
+  // Never use alert() here: replies from the native component can arrive
+  // while the Google sheet is still dismissing, and a JS alert at that moment
+  // can't be presented natively — WebKit then crashes the app because the
+  // alert panel's completion handler is never called.
+  showError(message) {
+    const el = document.querySelector("[data-native-auth-error]")
+    if (el) {
+      el.textContent = message
+      el.hidden = false
+    } else {
+      console.error(message)
+    }
   }
 }
