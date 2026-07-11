@@ -40,6 +40,7 @@ Rails.application.routes.draw do
   resources :create_song_progress, only: [ :show ]
   get "home/privacy"
   get "home/terms"
+  get "support", to: "home#support"
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   root "courses#index"
   get "/sitemap.xml", to: "sitemaps#show", defaults: { format: :xml }

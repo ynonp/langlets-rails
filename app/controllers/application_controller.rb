@@ -44,7 +44,7 @@ class ApplicationController < ActionController::Base
     return if controller_name == "health"
     return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
 
-    redirect_to new_user_session_path(returnto: request.fullpath), alert: "Please sign in to continue."
+    redirect_to new_user_session_path(returnto: request.fullpath)
   end
 
   def require_language_for_native_app
