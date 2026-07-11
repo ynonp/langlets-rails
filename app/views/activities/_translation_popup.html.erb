@@ -2,6 +2,7 @@
 <% l1_rtl = local_assigns[:l1_rtl] || false %>
 <div data-popover-translation-target="translationPopup" class="<%= popup_class %>">
   <div data-popover-translation-target="translationText" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>" class="<%= 'text-right' if l1_rtl %>"></div>
+  <% unless native_app? %>
   <button
     data-popover-translation-target="aiButton"
     data-action="click->popover-translation#openChatGPT"
@@ -12,6 +13,7 @@
     </svg>
     <span class="text-sm text-emerald-700 dark:text-emerald-300 font-medium">AI</span>
   </button>
+  <% end %>
   <% if user_signed_in? %>
   <button
     data-popover-translation-target="saveButton"
