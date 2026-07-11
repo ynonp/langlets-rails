@@ -16,46 +16,59 @@ export default class extends Controller {
     this.matchedTokens = 0;
     this.selectedToken = null;
     this.currentAudio = null;
+    this.activeTouches = new Map(); // Track multi-touch points by identifier
     this.preloadedAudio = new Map(); // Cache for preloaded audio
     
     this.preloadAllAudio();
     this.initializeGrid();
   }
 
-  // Wired via data-action on the grid (touchend->...#handleTouchEnd:!passive).
-  // Allows matching two tokens with a simultaneous two-finger tap; single taps
-  // still fall through to the `click->selectToken` action.
+  // Record each touch point on touchstart so we can match pairs on touchend.
+  // touchend fires per-finger, so changedTouches.length is always 1 — we can't
+  // detect multi-touch from touchend alone.
+  handleTouchStart(event) {
+    for (const t of event.changedTouches) {
+      const el = document.elementFromPoint(t.clientX, t.clientY)?.closest('.token-word');
+      if (el) {
+        this.activeTouches.set(t.identifier, { element: el, column: el.dataset.column });
+      }
+    }
+  }
+
+  // On touchend, check whether we have two tracked touches from opposite
+  // columns.  If so, perform the match.  Single-finger taps are left alone so
+  // the synthesized `click` runs the normal sequential flow.
   handleTouchEnd(event) {
-    // Only intervene on a genuine multi-touch lift. Single-finger taps are left
-    // alone so the synthesized `click` runs the normal sequential flow.
-    const lifted = Array.from(event.changedTouches);
-    if (lifted.length < 2) return;
+    // Snapshot before removing the lifting finger — touchend fires per-finger,
+    // so we must check the full set while both touches are still recorded.
+    const tracked = Array.from(this.activeTouches.values());
 
-    // Resolve each lifted touch to the token element under it.
-    const tokens = lifted
-      .map(t => document.elementFromPoint(t.clientX, t.clientY))
-      .map(el => el?.closest('.token-word'))
-      .filter(Boolean);
+    // Remove the lifting finger(s).
+    for (const t of event.changedTouches) {
+      this.activeTouches.delete(t.identifier);
+    }
 
-    // Need exactly two distinct tokens from opposite columns.
-    if (tokens.length !== 2) return;
-    const [a, b] = tokens;
-    if (a === b || a.dataset.column === b.dataset.column) return;
+    // Need at least two touches from opposite columns.
+    if (tracked.length < 2) return;
+    const l1Touch = tracked.find(t => t.column === 'l1');
+    const l2Touch = tracked.find(t => t.column === 'l2');
+    if (!l1Touch || !l2Touch) return;
 
-    // Skip tokens that are animating or already matched.
+    // Skip tokens that are animating, already matched, or the same element.
     const isBusy = el =>
       el.classList.contains('flash-success') ||
       el.classList.contains('flash-error') ||
       el.classList.contains('matched');
-    if (isBusy(a) || isBusy(b)) return;
+    if (l1Touch.element === l2Touch.element || isBusy(l1Touch.element) || isBusy(l2Touch.element)) return;
 
-    // We're fully handling this gesture — stop the browser synthesizing clicks.
+    // We're fully handling this gesture — stop synthesized clicks.
     event.preventDefault();
+    this.activeTouches.clear();
 
-    // Reuse the existing state machine: select one token, then match the other.
+    // Reuse the existing state machine.
     this.clearSelection();
-    this.selectNewToken(a, parseInt(a.dataset.tokenId), a.dataset.column);
-    this.attemptMatch(b);
+    this.selectNewToken(l1Touch.element, parseInt(l1Touch.element.dataset.tokenId), l1Touch.element.dataset.column);
+    this.attemptMatch(l2Touch.element);
   }
 
   preloadAllAudio() {
