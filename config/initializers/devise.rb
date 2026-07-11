@@ -274,6 +274,17 @@ Devise.setup do |config|
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'  
   config.omniauth :google_oauth2, Rails.application.credentials.google_client_id, Rails.application.credentials.google_client_secret, {}
   config.omniauth :github, Rails.application.credentials.github_key, Rails.application.credentials.github_secret, scope: 'user'
+  config.omniauth :apple, Rails.application.credentials.apple_client_id, "", {
+    scope: "email name",
+    team_id: Rails.application.credentials.apple_team_id,
+    key_id: Rails.application.credentials.apple_key_id,
+    pem: Rails.application.credentials.apple_private_key,
+    # Apple returns the callback as a cross-site POST, so the Lax session
+    # cookie (and the omniauth.state it holds) never arrives. Security is
+    # provided by the nonce instead, kept in an encrypted SameSite=None cookie.
+    provider_ignores_state: true,
+    nonce: :local
+  }
   
 
   # ==> Warden configuration

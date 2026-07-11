@@ -152,7 +152,7 @@
   - Unconfirmed email handling for email changes
   - Indexed email field for efficient lookups
 - **User Interface**: Modern dark-themed login/registration forms with:
-  - Social authentication placeholders (Google, Facebook)
+  - Social authentication buttons (Apple, Google, GitHub) rendered from the shared `devise/shared/_social_buttons` partial
   - Responsive design with Tailwind CSS
   - Password visibility controls
   - Terms and privacy policy acceptance
@@ -392,7 +392,7 @@ Active Storage Blobs (1) ──→ (many) Active Storage Variant Records
 - **Account Security**: Password reset, email confirmation, and session management
 - **Modern UI/UX**: Dark-themed responsive login and registration forms
 - **Progress Tracking**: Individual user progress through lessons and activities
-- **Social Authentication Ready**: UI prepared for Google and Facebook integration
+- **Social Authentication**: OmniAuth sign-in with Google, GitHub and Apple (`omniauth-apple` uses `nonce: :local` + `provider_ignores_state` because Apple returns its callback as a cross-site form POST that drops the Lax session cookie). The native iOS app has dedicated flows: Google via the Google Sign-In SDK posting a serverAuthCode to `users/auth/native_google`, and Apple via AuthenticationServices posting the identity token to `users/auth/native_apple`, where the JWT is verified against Apple's JWKS (issuer, audience = app bundle id, expiry)
 - **Privacy Compliance**: Terms of service and privacy policy integration
 
 ### User Authentication UI Design
@@ -413,8 +413,8 @@ The platform implements a modern, accessible authentication system with the foll
 - **Navigation Elements**: 
   - Close button (top-left) for modal-style interaction
   - Sign-up link (top-right) for account creation
-- **Social Authentication Ready**: 
-  - Google and Facebook buttons with proper branding
+- **Social Authentication**: 
+  - Apple, Google and GitHub buttons with proper branding (shared partial `devise/shared/_social_buttons`)
   - SVG icons with consistent styling
   - Grid layout for multiple providers
 - **Form Validation**: 

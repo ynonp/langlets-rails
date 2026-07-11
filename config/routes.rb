@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "users/auth/native_success", to: "users/omniauth_callbacks#native_success"
     post "users/auth/native_google", to: "users/omniauth_callbacks#native_google"
+    post "users/auth/native_apple", to: "users/omniauth_callbacks#native_apple"
   end
   resources :create_song_progress, only: [ :show ]
   get "home/privacy"

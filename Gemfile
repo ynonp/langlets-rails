@@ -96,6 +96,10 @@ gem "omniauth-google-oauth2", "~> 1.2"
 
 gem "omniauth-github", "~> 2.0"
 
+# Fork adds nonce: :local (encrypted SameSite=None cookie) so Apple's
+# cross-site form_post callback works despite Rails' Lax session cookie.
+gem "omniauth-apple", github: "bvogel/omniauth-apple", branch: "fix/apple-session-handling"
+
 gem "cancancan", "~> 3.6"
 
 gem "good_job", "~> 4.11"

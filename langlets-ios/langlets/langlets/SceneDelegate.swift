@@ -53,7 +53,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             SignOutComponent.self,
             AuthBridgeComponent.self,
             LanguageSelectionBridgeComponent.self,
-            GoogleAuthComponent.self
+            GoogleAuthComponent.self,
+            AppleAuthComponent.self
         ])
 
         // Load path configuration

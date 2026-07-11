@@ -3,7 +3,9 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   include Devise::Controllers::Rememberable
 
-  skip_before_action :verify_authenticity_token, only: [:native_google]
+  # :apple is included because Apple delivers its callback as a cross-site
+  # form POST, which carries no Rails CSRF token.
+  skip_before_action :verify_authenticity_token, only: [ :native_google, :native_apple, :apple ]
 
   def google_oauth2
     @user = User.from_omniauth(request.env["omniauth.auth"])
@@ -35,6 +37,23 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       Rails.logger.info request.env["omniauth.auth"]
       Rails.logger.warn "User not persisted: #{@user.errors.full_messages.join(', ')}"
       session["devise.github_data"] = request.env["omniauth.auth"].except(:extra)
+      redirect_to new_user_registration_url
+    end
+  end
+
+  def apple
+    @user = User.from_omniauth(request.env["omniauth.auth"])
+
+    if @user.persisted?
+      unless user_signed_in? && current_user == @user
+        sign_in(@user, event: :authentication)
+        remember_me(@user)
+      end
+      set_flash_message(:notice, :success, kind: "Apple") if is_navigational_format?
+      redirect_to after_sign_in_path_for(@user), allow_other_host: native_app?
+    else
+      Rails.logger.warn "User not persisted: #{@user.errors.full_messages.join(', ')}"
+      session["devise.apple_data"] = request.env["omniauth.auth"].except(:extra)
       redirect_to new_user_registration_url
     end
   end
@@ -100,7 +119,61 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  # Accepts an Apple identity token (JWT) from the native iOS app
+  # (AuthenticationServices / Sign in with Apple), verifies it against
+  # Apple's public keys and signs the user in.
+  def native_apple
+    identity_token = params[:identity_token]
+
+    if identity_token.blank?
+      redirect_to new_user_session_path, alert: "Missing identity token"
+      return
+    end
+
+    claims = decode_apple_identity_token(identity_token)
+
+    if claims.nil? || claims[:email].blank?
+      redirect_to new_user_session_path, alert: "Apple authentication failed"
+      return
+    end
+
+    info = AuthInfo.new(email: claims[:email], name: params[:name].presence)
+    auth = AuthHash.new(provider: "apple", uid: claims[:sub], info: info)
+
+    @user = User.from_omniauth(auth)
+
+    if @user.persisted?
+      sign_in(@user, event: :authentication)
+      remember_me(@user)
+      redirect_to root_path
+    else
+      session["devise.apple_data"] = { info: { email: claims[:email] } }
+      redirect_to new_user_registration_url
+    end
+  end
+
   private
+
+  APPLE_ISSUER = "https://appleid.apple.com"
+  # Audiences allowed for native identity tokens: the iOS app's bundle id.
+  APPLE_NATIVE_CLIENT_IDS = [ "com.ynonp.langlets" ].freeze
+
+  # Verifies signature (against Apple's JWKS), issuer, audience and expiry.
+  # Returns the token claims, or nil when the token is invalid.
+  def decode_apple_identity_token(token)
+    id_token = JSON::JWT.decode(token, :skip_verification)
+    jwk = JSON::JWK::Set::Fetcher.fetch("#{APPLE_ISSUER}/auth/keys", kid: id_token.kid)
+    id_token.verify!(jwk)
+
+    return nil unless id_token[:iss] == APPLE_ISSUER
+    return nil unless APPLE_NATIVE_CLIENT_IDS.include?(id_token[:aud])
+    return nil unless id_token[:exp].to_i >= Time.now.to_i
+
+    id_token
+  rescue StandardError => e
+    Rails.logger.error "Apple identity token verification failed: #{e.message}"
+    nil
+  end
 
   def exchange_google_code(code, redirect_uri)
     uri = URI("https://oauth2.googleapis.com/token")
