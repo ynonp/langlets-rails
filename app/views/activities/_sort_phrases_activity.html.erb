@@ -19,7 +19,7 @@
 <div
     data-controller="sort-phrases-activity"
     data-sort-phrases-activity-correct-order-value="<%= phrases %>"
-    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+    class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
     <div class="mb-6">
       <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Drag The Phrases To The Correct Order" %></h2>

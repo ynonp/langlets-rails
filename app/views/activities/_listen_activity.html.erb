@@ -43,7 +43,7 @@
 </style>
 
 <div
-    class="flex-col flex items-center bg-emerald-50 dark:bg-gray-950 overflow-hidden"
+    class="flex-1 min-h-0 flex-col flex items-center bg-emerald-50 dark:bg-gray-950 overflow-hidden"
     data-controller="listen-activity"
     data-main-video-player-target="videoListener videoSegment"
     data-segment-start="<%= timestamp_to_seconds(params[:start_timestamp]) %>"
@@ -54,7 +54,7 @@
       listen-activity:pause-video->main-video-player#stopPlayback
       listen-activity:play-video->main-video-player#resume"
 >
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md flex flex-col h-[calc(100vh-160px)] bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
+  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md flex flex-col flex-1 min-h-0 bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
     <div class="mb-6 text-center">
       <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
       <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
