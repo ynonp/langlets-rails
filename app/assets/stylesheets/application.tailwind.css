@@ -16,7 +16,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     min-height: 100dvh;
+    /* viewport-fit=cover makes the page extend behind the status bar / native
+       nav bar (webview); keep content below it. Bottom insets are handled
+       per-screen so action bars can paint their background into the inset. */
+    padding-top: env(safe-area-inset-top, 0px);
   }
+
+/* Full-height app screens (fixed column, internal scroll). Plain 100dvh would
+   overflow the bottom by the top inset now that body pads the top. */
+@utility h-dvh-safe {
+  height: calc(100dvh - env(safe-area-inset-top, 0px));
+  max-height: calc(100dvh - env(safe-area-inset-top, 0px));
+}
 
   @keyframes float {
 

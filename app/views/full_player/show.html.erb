@@ -24,7 +24,7 @@
   wv_prefs = current_user ? current_user.watch_video_preferences : User::WATCH_VIDEO_DEFAULTS
 %>
 
-<div class="h-dvh max-h-dvh min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
+<div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
     data-controller="main-video-player watch-video-activity"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"

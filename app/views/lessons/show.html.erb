@@ -27,7 +27,7 @@
   activity_params = @activity.activity_params
 %>
 
-<div class="h-dvh max-h-dvh min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 max-w-[480px] mx-auto w-full"
+<div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 max-w-[480px] mx-auto w-full"
     data-controller="main-video-player activity-navigation "
     data-main-video-player-video-id-value="<%= @videoid %>"
     data-main-video-player-hl-value="<%= activity_params[:video_hl] %>"
