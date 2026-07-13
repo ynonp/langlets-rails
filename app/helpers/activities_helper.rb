@@ -47,7 +47,7 @@ module ActivitiesHelper
           "token_id" => val.id,
           "token_start" => val.start_timestamp_seconds,
           "token_end" => val.end_timestamp_seconds,
-          "audio_url" => val&.l1_audio.persisted? ? url_for(val.l1_audio) : nil
+          "audio_url" => val.l1_audio_url
         }
         if acc.empty?
           if l1_start.zero?
@@ -161,8 +161,7 @@ module ActivitiesHelper
 
     filtered_token_translations.map do |t|
       l1_word = t.original_text
-      audio_url = t.l1_audio.attached? ?
-        Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
+      audio_url = t.l1_audio_url
 
       {
         l1_word: l1_word,
@@ -219,7 +218,7 @@ module ActivitiesHelper
     cards = token_translations.map do |t|
       l1_word = t.original_text
       l2_translation = t.translation
-      audio_url = t.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(t.l1_audio, only_path: true) : nil
+      audio_url = t.l1_audio_url
 
       distractors_pool = l1_texts - [ l1_word ]
       distractors = unique_song_words.reject { |w| w.downcase == l1_word.downcase }.sample(3)
@@ -227,7 +226,7 @@ module ActivitiesHelper
 
       audio_map = token_translations.each_with_object({}) do |tt, memo|
         key = tt.original_text
-        memo[key] = tt.l1_audio.attached? ? Rails.application.routes.url_helpers.rails_blob_path(tt.l1_audio, only_path: true) : nil
+        memo[key] = tt.l1_audio_url
       end
 
       options_audio_urls = options.map { |opt| audio_map[opt] }

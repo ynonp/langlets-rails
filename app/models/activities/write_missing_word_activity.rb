@@ -23,8 +23,7 @@ module Activities
           phrase_with_blank: phrase_with_blank,
           answer: answer,
           translation: token.translation,
-          audio_url: token.l1_audio.attached? ?
-            Rails.application.routes.url_helpers.rails_blob_path(token.l1_audio, only_path: true) : nil
+          audio_url: token.l1_audio_url
         }
       end.compact
 

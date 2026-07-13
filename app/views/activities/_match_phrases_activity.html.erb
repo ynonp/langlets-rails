@@ -138,7 +138,7 @@
   <% params[:phrases].each do |phrase| %>
     <% phrase.token_translations.each do |token| %>
       <% if token.l1_audio.attached? %>
-        <audio src="<%= url_for(token.l1_audio) %>" preload="auto" />
+        <audio src="<%= token.l1_audio_url %>" preload="auto" />
       <% end %>
     <% end %>
   <% end %>

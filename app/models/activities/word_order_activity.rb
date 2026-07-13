@@ -77,8 +77,7 @@ module Activities
         text: text,
         token_id: token.id,
         position: token.l1_start_character_index,
-        audio_url: token.l1_audio.attached? ? 
-          Rails.application.routes.url_helpers.rails_blob_path(token.l1_audio, only_path: true) : nil
+        audio_url: token.l1_audio_url
       }
     end
 

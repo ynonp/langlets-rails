@@ -18,6 +18,12 @@ class TokenTranslation < ApplicationRecord
     start_timestamp.present?
   end
 
+  # Permanent public S3 URL (the s3_public service is public), so playback
+  # doesn't round-trip through the Rails blob-redirect controller.
+  def l1_audio_url
+    l1_audio.attached? ? l1_audio.url : nil
+  end
+
   scope :with_questions, ->() {
     where("questions is not null and cardinality(questions) > 0")
   }
