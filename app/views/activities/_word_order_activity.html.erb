@@ -18,7 +18,7 @@
 
 <div
     data-controller="word-order-activity"
-    data-action="stop-audio->main-video-player#stopPlayback"
+    data-action="stop-audio->main-video-player#stopPlayback click->word-order-activity#handleWordClick dragstart->word-order-activity#handleDragStart dragend->word-order-activity#handleDragEnd dragover->word-order-activity#handleDragOver dragleave->word-order-activity#handleDragLeave drop->word-order-activity#handleDrop touchstart->word-order-activity#handleTouchStart touchmove->word-order-activity#handleTouchMove touchend->word-order-activity#handleTouchEnd"
     data-word-order-activity-l1-value="<%= params[:l1].iso_name %>"
     data-word-order-activity-total-phrases-value="<%= total_phrases %>"
     class="flex-1 min-h-0 flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
@@ -67,7 +67,6 @@
             <% else %>
               <div
                 data-word-order-activity-target="tokenSlot"
-                data-action="dragover->word-order-activity#handleSlotDragOver dragleave->word-order-activity#handleSlotDragLeave drop->word-order-activity#handleSlotDrop"
                 data-token-id="<%= segment[:token_id] %>"
                 data-expected-text="<%= segment[:text] %>"
                 data-audio-url="<%= segment[:audio_url] %>"
@@ -82,7 +81,6 @@
         <!-- Word bank -->
         <div
           data-word-order-activity-target="wordBank"
-          data-action="dragover->word-order-activity#handleDragOver dragleave->word-order-activity#handleDragLeave drop->word-order-activity#handleDrop"
           class="word-bank flex flex-wrap gap-2.5 mb-4 <%= l1_rtl ? 'flex-row-reverse' : '' %>"
           data-phrase-index="<%= index %>">
           <%
@@ -95,7 +93,6 @@
               data-token-id="<%= segment[:token_id] %>"
               data-word-text="<%= segment[:text] %>"
               data-audio-url="<%= segment[:audio_url] %>"
-              data-action="click->word-order-activity#handleWordClick dragstart->word-order-activity#handleDragStart dragend->word-order-activity#handleDragEnd touchstart->word-order-activity#handleTouchStart touchmove->word-order-activity#handleTouchMove touchend->word-order-activity#handleTouchEnd"
               draggable="true"
               class="word-item inline-flex items-center font-extrabold text-base px-4 py-2.5 rounded-xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 shadow-md cursor-pointer select-none">
               <%= segment[:text] %>

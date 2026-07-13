@@ -31,94 +31,119 @@ export default class extends Controller {
     this.isDragging = false
   }
 
+  // All drag/touch/click actions are bound once on the controller root and
+  // delegated here via closest(), instead of one listener set per tile/slot.
+
+  findWordItem(event) {
+    return event.target.closest('[data-word-order-activity-target="wordItem"]')
+  }
+
+  findDropTarget(event) {
+    return event.target.closest('[data-word-order-activity-target="tokenSlot"], [data-word-order-activity-target="wordBank"]')
+  }
+
   handleDragStart(event) {
-    this.draggedElement = event.target
-    event.target.classList.add('dragging')
+    const wordItem = this.findWordItem(event)
+    if (!wordItem) return
+
+    this.draggedElement = wordItem
+    wordItem.classList.add('dragging')
     event.dataTransfer.effectAllowed = 'move'
-    event.dataTransfer.setData('text/html', event.target.outerHTML)
+    event.dataTransfer.setData('text/html', wordItem.outerHTML)
   }
 
   handleDragEnd(event) {
-    event.target.classList.remove('dragging')
+    const wordItem = this.findWordItem(event)
+    if (wordItem) {
+      wordItem.classList.remove('dragging')
+    }
     this.draggedElement = null
   }
 
   handleDragOver(event) {
+    const dropTarget = this.findDropTarget(event)
+    if (!dropTarget) return
+
     event.preventDefault()
     event.dataTransfer.dropEffect = 'move'
-    event.currentTarget.classList.add('drag-over')
+    dropTarget.classList.add('drag-over')
   }
 
   handleDragLeave(event) {
-    event.currentTarget.classList.remove('drag-over')
+    const dropTarget = this.findDropTarget(event)
+    if (dropTarget) {
+      dropTarget.classList.remove('drag-over')
+    }
   }
 
   handleDrop(event) {
+    const dropTarget = this.findDropTarget(event)
+    if (!dropTarget) return
+
     event.preventDefault()
-    event.currentTarget.classList.remove('drag-over')
-    
+    dropTarget.classList.remove('drag-over')
+
     if (!this.draggedElement) return
 
-    const dropTarget = event.currentTarget
     const draggedElement = this.draggedElement
 
-    // Check if dropping on word bank
-    if (dropTarget.dataset.wordOrderActivityTarget === 'wordBank') {
-      // Remove from slot if it was in one
-      if (draggedElement.classList.contains('in-slot')) {
-        const currentSlot = draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
-        if (currentSlot) {
-          currentSlot.classList.remove('filled')
-        }
-        draggedElement.classList.remove('in-slot')
-      }
-      
-      // Find the insertion point based on drop position
-      const insertionPoint = this.findInsertionPoint(dropTarget, event.clientX, event.clientY)
-      if (insertionPoint) {
-        dropTarget.insertBefore(draggedElement, insertionPoint)
-      } else {
-        dropTarget.appendChild(draggedElement)
-      }
+    // Dropping on a token slot
+    if (dropTarget.dataset.wordOrderActivityTarget === 'tokenSlot') {
+      this.dropWordOnSlot(dropTarget, draggedElement)
+      return
     }
-    // Note: Token slot drops are handled by handleSlotDrop
-  }
-  handleSlotDragOver(event) {
-    event.preventDefault()
-    event.dataTransfer.dropEffect = 'move'
-    event.currentTarget.classList.add('drag-over')
-  }
 
-  handleSlotDragLeave(event) {
-    event.currentTarget.classList.remove('drag-over')
-  }
+    // Dropping on the word bank - free the slot the word came from, if any
+    this.releaseFromSlot(draggedElement)
 
-  handleSlotDrop(event) {
-    event.preventDefault()
-    event.currentTarget.classList.remove('drag-over')
-    
-    if (!this.draggedElement) return
-
-    const tokenSlot = event.currentTarget
-    const draggedElement = this.draggedElement
-
-    // Allow dropping in any available slot
-    if (!tokenSlot.classList.contains('filled')) {
-      // Clear the slot first
-      this.clearTokenSlot(tokenSlot)
-      
-      // Move the token to the slot
-      tokenSlot.appendChild(draggedElement)
-      tokenSlot.classList.add('filled')
-      
-      // Update word item styling for being in a slot
-      draggedElement.classList.add('in-slot')
+    // Find the insertion point based on drop position
+    const insertionPoint = this.findInsertionPoint(dropTarget, event.clientX, event.clientY)
+    if (insertionPoint) {
+      dropTarget.insertBefore(draggedElement, insertionPoint)
     } else {
-      // Slot is filled - return to word bank
-      const phraseIndex = this.getCurrentPhraseIndex()
-      const wordBank = this.getWordBankForPhrase(phraseIndex)
-      wordBank.appendChild(draggedElement)
+      dropTarget.appendChild(draggedElement)
     }
+  }
+
+  // Place a dragged word into a slot. If the slot is taken, the two words swap
+  // places when the dragged word came from another slot; a word dragged from
+  // the bank sends the occupant back to the bank instead.
+  dropWordOnSlot(slot, draggedElement) {
+    if (slot.contains(draggedElement)) return // dropped back on its own slot
+
+    const occupant = slot.querySelector('[data-word-order-activity-target="wordItem"]')
+    const originSlot = draggedElement.classList.contains('in-slot')
+      ? draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
+      : null
+
+    if (occupant) {
+      if (originSlot) {
+        // Swap: the occupant takes the dragged word's slot, which stays filled
+        originSlot.appendChild(occupant)
+      } else {
+        occupant.classList.remove('in-slot')
+        const wordBank = this.getWordBankForPhrase(this.getCurrentPhraseIndex())
+        wordBank.appendChild(occupant)
+      }
+    } else if (originSlot) {
+      originSlot.classList.remove('filled')
+    }
+
+    slot.appendChild(draggedElement)
+    slot.classList.add('filled')
+    draggedElement.classList.add('in-slot')
+  }
+
+  // Detach a word from the slot it currently occupies (if any) so that slot
+  // becomes available again. Must be called before moving the word elsewhere,
+  // while it is still a child of its origin slot.
+  releaseFromSlot(wordItem) {
+    if (!wordItem.classList.contains('in-slot')) return
+    const currentSlot = wordItem.closest('[data-word-order-activity-target="tokenSlot"]')
+    if (currentSlot) {
+      currentSlot.classList.remove('filled')
+    }
+    wordItem.classList.remove('in-slot')
   }
 
   clearTokenSlot(tokenSlot) {
@@ -135,18 +160,21 @@ export default class extends Controller {
 
   // Touch event handlers for mobile support
   handleTouchStart(event) {
+    const wordItem = this.findWordItem(event)
+    if (!wordItem) return
+
     this.touchStartTime = Date.now()
     this.touchStartPosition = {
       x: event.touches[0].clientX,
       y: event.touches[0].clientY
     }
     this.isDragging = false
-    
+
     // Don't prevent default immediately - let it potentially become a click
-    this.draggedElement = event.target
-    
+    this.draggedElement = wordItem
+
     const touch = event.touches[0]
-    const rect = event.target.getBoundingClientRect()
+    const rect = wordItem.getBoundingClientRect()
     this.touchOffset = {
       x: touch.clientX - rect.left,
       y: touch.clientY - rect.top
@@ -248,22 +276,12 @@ export default class extends Controller {
         const tokenSlot = elementBelow.closest('[data-word-order-activity-target="tokenSlot"]')
         const wordBank = elementBelow.closest('[data-word-order-activity-target="wordBank"]')
         
-        if (tokenSlot && !tokenSlot.classList.contains('filled')) {
-          // Valid token slot that is available
-          this.clearTokenSlot(tokenSlot)
-          tokenSlot.appendChild(this.draggedElement)
-          tokenSlot.classList.add('filled')
-          this.draggedElement.classList.add('in-slot')
+        if (tokenSlot) {
+          this.dropWordOnSlot(tokenSlot, this.draggedElement)
         } else if (wordBank) {
-          // Return to word bank
-          if (this.draggedElement.classList.contains('in-slot')) {
-            const currentSlot = this.draggedElement.closest('[data-word-order-activity-target="tokenSlot"]')
-            if (currentSlot) {
-              currentSlot.classList.remove('filled')
-            }
-            this.draggedElement.classList.remove('in-slot')
-          }
-          
+          // Return to word bank - free the slot the word came from, if any
+          this.releaseFromSlot(this.draggedElement)
+
           // Find the insertion point based on touch position
           const insertionPoint = this.findInsertionPoint(wordBank, touch.clientX, touch.clientY)
           if (insertionPoint) {
@@ -297,11 +315,7 @@ export default class extends Controller {
 
     if (wordItem.classList.contains('in-slot')) {
       // Token is in a slot, move it back to word bank
-      wordItem.classList.remove('in-slot')
-      const tokenSlot = wordItem.closest('[data-word-order-activity-target="tokenSlot"]')
-      if (tokenSlot) {
-        tokenSlot.classList.remove('filled')
-      }
+      this.releaseFromSlot(wordItem)
       wordBank.appendChild(wordItem)
     } else {
       // Token is in word bank, try to place it in the first available slot
@@ -383,7 +397,8 @@ export default class extends Controller {
   }
 
   checkAnswer(event) {
-    const phraseIndex = parseInt(event.target.dataset.phraseIndex)
+    const button = event.currentTarget
+    const phraseIndex = parseInt(button.dataset.phraseIndex)
     const phraseContainer = this.phraseContainerTargets.find(container => 
       parseInt(container.dataset.index) === phraseIndex
     )
@@ -404,6 +419,8 @@ export default class extends Controller {
     })
 
     if (allCorrect) {
+      // Prevent a double-click from scheduling moveToNextPhrase twice
+      button.disabled = true
       // Mark slots as correct
       tokenSlots.forEach(slot => slot.classList.add('correct'))
       this.showCorrectFeedback()
