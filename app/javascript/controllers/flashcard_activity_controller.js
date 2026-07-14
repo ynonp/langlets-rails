@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
 
 export default class extends Controller {
-  static targets = ["card", "completion", "progress"]
+  static targets = ["card", "completion", "progress", "progressBar", "progressTrack"]
   static values = { cards: Array, l1Rtl: Boolean, isReviewLesson: Boolean }
 
   connect() {
@@ -23,8 +23,15 @@ export default class extends Controller {
     if (!this.hasProgressTarget) return
     if (this.index >= this.cardsValue.length) {
       this.progressTarget.textContent = ''
+      if (this.hasProgressBarTarget) this.progressBarTarget.style.width = '100%'
     } else {
       this.progressTarget.textContent = `Question ${this.index + 1} of ${this.cardsValue.length}`
+      if (this.hasProgressBarTarget) {
+        this.progressBarTarget.style.width = `${(this.index + 1) / this.cardsValue.length * 100}%`
+      }
+      if (this.hasProgressTrackTarget) {
+        this.progressTrackTarget.setAttribute('aria-valuenow', this.index + 1)
+      }
     }
   }
 
@@ -41,7 +48,7 @@ export default class extends Controller {
 
     const optionsHtml = card.options.map((opt, idx) => {
       return `
-        <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 rounded h-20">${opt}</button>
+        <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button w-full min-h-[58px] flex items-center justify-center px-2 py-3.5 bg-white dark:bg-gray-800 border border-gray-200 dark:border-white/10 text-gray-900 dark:text-gray-100 rounded-lg text-sm sm:text-base font-medium transition-colors cursor-pointer disabled:cursor-default">${opt}</button>
       `
     }).join('')
 
@@ -55,13 +62,19 @@ export default class extends Controller {
 
     const displayedPhrase = card.phrase_html.replace(
       "________",
-      `<span class="flashcard-answer-slot" data-flashcard-correct-answer aria-live="polite">________</span>`
+      `<span class="inline-flex flex-col items-center align-top leading-tight">
+        <span class="block min-w-24 border-b-[3px] border-gray-500 dark:border-gray-400 leading-tight text-transparent" data-flashcard-correct-answer aria-live="polite">________</span>
+        <span class="mt-2 text-gray-500 dark:text-gray-400 text-sm italic font-normal leading-5 [direction:auto]">${card.translation}</span>
+      </span>`
     )
 
     this.cardTarget.innerHTML = `
-      <div class="mb-3 text-gray-500 dark:text-gray-400 text-lg md:text-xl">${card.translation}</div>
-      <div dir="${phraseDir}" class="mb-6 text-gray-900 dark:text-gray-50 font-semibold text-2xl md:text-3xl ${phraseAlignClass}">${displayedPhrase}</div>
-      <div class="mt-6 grid grid-cols-2 gap-4">${optionsHtml}</div>
+      <div class="flex min-h-[180px] items-center justify-center py-8 text-center">
+        <div>
+          <div dir="${phraseDir}" class="text-gray-900 dark:text-gray-50 font-medium text-2xl sm:text-[28px] leading-relaxed ${phraseAlignClass}">${displayedPhrase}</div>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2.5">${optionsHtml}</div>
       ${this.isReviewLessonValue ? stopPracticingHtml(card.id) : ''}
     `
   }
@@ -74,14 +87,14 @@ export default class extends Controller {
     buttons.forEach(btn => btn.disabled = true)
 
     if (selected.textContent.trim() === card.correct) {
-      selected.classList.add('correct')
+      selected.classList.add('bg-emerald-500/15', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-300')
       this.awardXp(2)
       this.playAudio(this.correctAnswerAudio).then(() => {
         this.revealCorrectAnswer(card.correct)
         setTimeout(() => this.nextCard(), 1400)
       })
     } else {
-      selected.classList.add('incorrect')
+      selected.classList.add('bg-red-500/10', 'border-red-500', 'text-red-600', 'dark:text-red-300')
       setTimeout(() => buttons.forEach(btn => btn.disabled = false), 800)
     }
   }
@@ -91,7 +104,8 @@ export default class extends Controller {
     if (!answerSlot) return
 
     answerSlot.textContent = answer
-    answerSlot.classList.add('flashcard-answer-reveal')
+    answerSlot.classList.remove('text-transparent', 'border-gray-500', 'dark:border-gray-400')
+    answerSlot.classList.add('text-emerald-600', 'dark:text-emerald-300', 'border-transparent', 'flashcard-answer-reveal')
   }
 
   preloadCorrectAudio(card) {

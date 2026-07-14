@@ -85,11 +85,11 @@ export default class extends Controller {
       currentContainer.classList.add('hidden');
     }
     
-    // Update progress
-    this.updateProgress();
-    
     // Move to next phrase
     this.currentPhraseValue += 1;
+
+    // Update progress for the question now being displayed
+    this.updateProgress();
     
     // If we still have phrases, show the next one
     if (this.currentPhraseValue < this.totalPhrasesValue) {
@@ -117,8 +117,10 @@ export default class extends Controller {
   }
   
   updateProgress() {
-    const percentage = (this.currentPhraseValue + 1) / this.totalPhrasesValue * 100;
+    const currentQuestion = Math.min(this.currentPhraseValue + 1, this.totalPhrasesValue);
+    const percentage = currentQuestion / this.totalPhrasesValue * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
+    this.progressBarTarget.parentElement.setAttribute('aria-valuenow', currentQuestion);
   }
 
   // Award XP by calling the progress tracker controller

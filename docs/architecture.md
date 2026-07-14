@@ -179,8 +179,9 @@
 
 #### Activity Types:
 - **WatchVideoActivity**: Video viewing with synchronized subtitles
-- **MatchPhrasesActivity**: Phrase-to-translation matching exercises
-- **SortPhrasesActivity**: Chronological phrase ordering
+- **FlashcardActivity**: Missing-word multiple-choice practice. It uses the standard compact question/progress header above a frameless exercise area, with a centered L1 sentence, an L2 gloss anchored below the blank, and a 2×2 grid of contrasting answer tiles.
+- **MatchPhrasesActivity**: Phrase-to-translation matching exercises. Each question uses a compact progress header, an audio-enabled L1 phrase card, an L1-to-L2 language direction label, and a vertical set of L2 answer options.
+- **SortPhrasesActivity**: Chronological phrase ordering in a compact, frameless exercise layout. The activity presents its instruction and media hint before a draggable list with visible grip handles, followed by the check action and inline result or completion feedback. Its visual states are implemented with Tailwind utilities.
 - **LanguageAlignmentActivity**: Word-level alignment exercises
 - **SpeakActivity**: Pronunciation practice
 - **ListenActivity**: Audio comprehension with token identification
@@ -807,6 +808,7 @@ Users can save individual word/token translations they encounter during lessons 
   - MatchTokensActivity (if ≥3 saved tokens, up to 15)
   - TokensChainActivity (if ≥4 saved tokens, up to 15)
   - WriteMissingWordActivity (always, up to 10)
+- TokensChainActivity uses a frameless exercise layout with an inline matched-word count and progress bar. Each correct translation becomes the next highlighted L1 prompt, while previously found translations are visually muted.
 
 ### New Controllers
 

@@ -3,7 +3,7 @@ import { animate } from "motion/mini"
 
 // Connects to data-controller="tokens-chain-activity"
 export default class extends Controller {
-  static targets = ['grid', 'startButton', 'completionMessage', 'progressBar', 'stopPracticingContainer'];
+  static targets = ['grid', 'startButton', 'completionMessage', 'progressBar', 'progressText', 'stopPracticingContainer'];
   static values = { 
     tokens: Array,
     totalTokens: Number
@@ -110,9 +110,11 @@ export default class extends Controller {
         // Remove current highlight from previous L1
         if (this.currentL1Element) {
           this.currentL1Element.classList.remove('current-l1');
+          this.currentL1Element.classList.add('found-translation');
         }
         // Update styling to show it's now displaying L1
         element.classList.remove('flash-success', 'bg-white', 'dark:bg-gray-900', 'hover:bg-gray-100', 'dark:hover:bg-gray-800');
+        element.classList.remove('found-translation');
         element.classList.add('showing-l1', 'bg-gray-100', 'dark:bg-gray-800', 'cursor-pointer', 'current-l1');
         // Store the token ID so we can find its audio element later
         element.setAttribute('data-l1-token-id', currentToken.id);
@@ -149,8 +151,9 @@ export default class extends Controller {
 
 
   updateProgress() {
-    const matchedCount = this.element.querySelectorAll('.showing-l1').length;
+    const matchedCount = this.currentIndex;
     const percentage = (matchedCount / this.totalTokensValue) * 100;
+    this.progressTextTarget.textContent = `${matchedCount} / ${this.totalTokensValue} matched`;
     this.progressBarTarget.style.width = `${percentage}%`;
   }
 
@@ -197,4 +200,3 @@ export default class extends Controller {
     }
   }
 }
-

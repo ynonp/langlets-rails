@@ -26,14 +26,15 @@
     data-match-activity-total-phrases-value="<%= total_phrases %>"
     class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
 
-  <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
-    <div class="mb-1">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Click On The Translation" %></h2>
-      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mb-2">
+  <div class="w-full max-w-[460px] p-4 sm:py-6">
+    <h2 class="sr-only"><%= @activity.text_header || "Click On The Translation" %></h2>
+
+    <div class="flex items-center justify-between gap-4 mb-5">
+      <p class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
         <span data-match-activity-target="progressText">Question 1 of <%= total_phrases %></span>
       </p>
-      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
-        <div data-match-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <div class="w-24 bg-gray-200 dark:bg-gray-700 rounded-full h-1 overflow-hidden" role="progressbar" aria-label="Question progress" aria-valuemin="1" aria-valuemax="<%= total_phrases %>" aria-valuenow="<%= total_phrases.positive? ? 1 : 0 %>">
+        <div data-match-activity-target="progressBar" class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: <%= total_phrases.positive? ? 100.0 / total_phrases : 0 %>%"></div>
       </div>
     </div>
     
@@ -55,16 +56,7 @@
           data-popover-translation-l1-language-value="<%= params[:l1].english_name || 'Language' %>"
           data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
           data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
-          class="my-4 text-md md:text-xl text-gray-900 dark:text-gray-50 w-full text-left px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 flex items-center justify-between">
-          <span
-            class="text-gray-900 dark:text-gray-50 text-md md:text-xl relative"
-            dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
-          >
-            <%= wrap_tokens_in_spans(phrase,
-                                   {class: "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded inline relative",
-                                    }) %>
-          </span>
-
+          class="w-full mb-2 p-5 rounded-xl bg-white dark:bg-gray-900 flex items-center gap-3 text-gray-900 dark:text-gray-50">
           <button
             data-action="click->main-video-player#playSegment"
             data-main-video-player-segment-start-param="<%= timestamp_to_seconds(timestamp_start) %>"
@@ -72,19 +64,37 @@
             data-match-activity-target="speakerButton"
             data-phrase="<%= original %>"
             data-phrase-index="<%= index %>"
-            class="<%= l1_rtl ? "text-right" : "text-left" %> ml-3 p-2 text-gray-400 dark:text-gray-500 hover:text-gray-900 dark:hover:text-gray-50 transition-colors duration-200 flex-shrink-0"
-            title="Play audio">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            class="w-9 h-9 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 inline-flex items-center justify-center text-emerald-600 dark:text-emerald-400 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 flex-shrink-0"
+            title="Play audio"
+            aria-label="Play phrase audio">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true">
               <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
             </svg>
           </button>
-          
+
+          <span
+            class="text-lg sm:text-xl font-medium text-gray-900 dark:text-gray-50 relative"
+            dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
+          >
+            <%= wrap_tokens_in_spans(phrase,
+                                   {class: "cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 rounded inline relative",
+                                    }) %>
+          </span>
+
           <!-- Translation Popup - moved outside and positioned absolutely -->
           <%= render partial: 'activities/translation_popup', locals: { popup_class: "hidden fixed bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-50 p-2 rounded shadow-lg z-50 max-w-xs" } %>
         </div>
+
+        <div class="flex items-center gap-2 mx-0.5 my-3 text-xs font-medium text-gray-600 dark:text-gray-400">
+          <span><%= params[:l1].english_name %></span>
+          <svg viewBox="0 0 20 20" fill="none" class="w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true">
+            <path d="M4 10h12m-4-4 4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span><%= params[:l2].english_name %></span>
+        </div>
         
         <!-- Options section for this phrase -->
-        <div class="space-y-3" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
+        <div class="space-y-5" data-match-activity-target="optionsContainer" data-phrase-index="<%= index %>">
           <% 
             # Create distractors - using other translations
             all_translations = params[:phrases].map { |p| phrase_text_l2(p) }
@@ -115,7 +125,7 @@
               data-action="click->match-activity#selectOption"
               data-match-activity-target="optionButton"
               data-correct="<%= option == translation %>"
-              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-4 border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-base text-md md:text-xl">
+              class="optionButton <%= l2_rtl ? 'text-right' : 'text-left' %> w-full px-4 py-3.5 border border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-900 hover:bg-gray-50 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 text-sm sm:text-base">
               <%= option %>
             </button>
           <% end %>
