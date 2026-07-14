@@ -7,8 +7,16 @@ export default class extends Controller {
 
   connect() {
     this.index = 0
+    this.correctAnswerAudio = null
+    this.correctAnswerAudioUrl = null
     this.updateProgress()
     this.renderCard()
+  }
+
+  disconnect() {
+    this.correctAnswerAudio?.pause()
+    this.correctAnswerAudio = null
+    this.correctAnswerAudioUrl = null
   }
 
   updateProgress() {
@@ -29,19 +37,11 @@ export default class extends Controller {
     }
 
     const card = this.cardsValue[this.index]
-    const dirClass = this.l1RtlValue ? 'text-right' : 'text-left'
+    this.preloadCorrectAudio(card)
 
     const optionsHtml = card.options.map((opt, idx) => {
-      const audioUrl = (card.options_audio_urls && card.options_audio_urls[idx]) ? card.options_audio_urls[idx] : ''
-      const audioHtml = audioUrl
-        ? `<audio preload="auto" data-option-audio-index="${idx}" src="${audioUrl}"></audio>`
-        : ''
-
       return `
-        <div class="option-item">
-          <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 rounded h-20">${opt}</button>
-          ${audioHtml}
-        </div>
+        <button data-action="click->flashcard-activity#selectOption" data-option-index="${idx}" class="option-button text-lg md:text-xl flex items-center justify-center px-6 py-4 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 rounded h-20">${opt}</button>
       `
     }).join('')
 
@@ -53,7 +53,10 @@ export default class extends Controller {
     this.cardTarget.classList.remove('text-left', 'text-right')
     this.cardTarget.classList.add(phraseAlignClass)
 
-    const displayedPhrase = card.phrase_html
+    const displayedPhrase = card.phrase_html.replace(
+      "________",
+      `<span class="flashcard-answer-slot" data-flashcard-correct-answer aria-live="polite">________</span>`
+    )
 
     this.cardTarget.innerHTML = `
       <div class="mb-3 text-gray-500 dark:text-gray-400 text-lg md:text-xl">${card.translation}</div>
@@ -70,17 +73,39 @@ export default class extends Controller {
     const buttons = Array.from(this.cardTarget.querySelectorAll('.option-button'))
     buttons.forEach(btn => btn.disabled = true)
 
-    const optionAudio = selected.parentElement?.querySelector('audio')
-    this.playOptionAudio(optionAudio)
-
     if (selected.textContent.trim() === card.correct) {
       selected.classList.add('correct')
       this.awardXp(2)
-      setTimeout(() => this.nextCard(), 800)
+      this.playAudio(this.correctAnswerAudio).then(() => {
+        this.revealCorrectAnswer(card.correct)
+        setTimeout(() => this.nextCard(), 1400)
+      })
     } else {
       selected.classList.add('incorrect')
       setTimeout(() => buttons.forEach(btn => btn.disabled = false), 800)
     }
+  }
+
+  revealCorrectAnswer(answer) {
+    const answerSlot = this.cardTarget.querySelector('[data-flashcard-correct-answer]')
+    if (!answerSlot) return
+
+    answerSlot.textContent = answer
+    answerSlot.classList.add('flashcard-answer-reveal')
+  }
+
+  preloadCorrectAudio(card) {
+    const audioUrl = card?.audio_url
+    if (!audioUrl || this.correctAnswerAudioUrl === audioUrl) return
+
+    this.correctAnswerAudio?.pause()
+
+    const audio = new Audio()
+    audio.preload = 'auto'
+    audio.src = audioUrl
+    audio.load()
+    this.correctAnswerAudio = audio
+    this.correctAnswerAudioUrl = audioUrl
   }
 
   nextCard() {
@@ -88,18 +113,20 @@ export default class extends Controller {
     this.renderCard()
   }
 
-  playOptionAudio(audioElement) {
-    if (!audioElement) return
+  playAudio(audioElement) {
+    if (!audioElement) return Promise.resolve()
 
     try {
       audioElement.currentTime = 0
       const playPromise = audioElement.play()
       if (playPromise && typeof playPromise.catch === 'function') {
-        playPromise.catch(err => console.warn('Failed to play option audio', err))
+        return playPromise.catch(err => console.warn('Failed to play flashcard audio', err))
       }
     } catch (err) {
-      console.warn('Failed to play option audio', err)
+      console.warn('Failed to play flashcard audio', err)
     }
+
+    return Promise.resolve()
   }
 
   showCompletion() {

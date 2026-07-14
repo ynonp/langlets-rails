@@ -224,13 +224,6 @@ module ActivitiesHelper
       distractors = unique_song_words.reject { |w| w.downcase == l1_word.downcase }.sample(3)
       options = ([ l1_word ] + distractors).shuffle
 
-      audio_map = token_translations.each_with_object({}) do |tt, memo|
-        key = tt.original_text
-        memo[key] = tt.l1_audio_url
-      end
-
-      options_audio_urls = options.map { |opt| audio_map[opt] }
-
       token_start = t.l1_start_index
       token_end = t.l1_end_index
       phrase_text = t.phrase.text_l1
@@ -248,7 +241,6 @@ module ActivitiesHelper
         translation: l2_translation,
         correct: l1_word,
         options: options,
-        options_audio_urls: options_audio_urls,
         audio_url: audio_url
       }
     end

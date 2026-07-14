@@ -480,6 +480,7 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 ### Learning Activity Types
 - **Video Comprehension**: Synchronized subtitle viewing with original audio
 - **Phrase Matching**: Translation pair exercises with TTS pronunciation
+- **Flashcards**: Learners choose the missing source-language word; the controller preloads the displayed card's correct-answer audio, then a correct choice fills the sentence blank with a brief flash-in animation synchronized to playback before the next card appears
 - **Chronological Sorting**: Temporal sequence understanding
 - **Word Alignment**: Granular translation mapping with audio feedback
 - **Pronunciation Practice**: Speaking exercises with TTS model audio
