@@ -91,7 +91,8 @@
       class="contents"
       data-activity-navigation-target="content"
       data-activity-navigation-url="<%= @current_url %>"
-    >  
+      data-activity-navigation-next-url="<%= @next_activity_path unless @is_last_activity %>"
+    >
       <%= render partial: @activity.partial_name, locals: { params: activity_params } %>
     </div>
   </turbo-frame>
