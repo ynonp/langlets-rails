@@ -51,7 +51,7 @@ class ImportCourseJob < ApplicationJob
   rescue => e
     if course&.persisted?
       course.error!
-      CourseMailer.creation_failed(course, e.message).deliver_now
+      CourseMailer.creation_failed(course, e).deliver_now
     end
     Rails.logger.error "ImportCourseJob failed: #{e.message}"
     Rails.logger.error e.backtrace.join("\n")

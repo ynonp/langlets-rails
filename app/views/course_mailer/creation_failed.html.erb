@@ -9,6 +9,12 @@
       .header { background: #ef4444; color: white; padding: 20px; text-align: center; }
       .content { padding: 20px; background: #f9fafb; }
       .error-box { background: #fef2f2; border: 1px solid #fecaca; padding: 16px; border-radius: 8px; margin: 16px 0; }
+      .debug-box { background: #f3f4f6; border: 1px solid #d1d5db; padding: 16px; border-radius: 8px; margin: 16px 0; font-size: 13px; }
+      .debug-box h3 { margin: 0 0 8px; font-size: 14px; color: #374151; }
+      .debug-box table { border-collapse: collapse; width: 100%; }
+      .debug-box td { padding: 2px 8px 2px 0; vertical-align: top; }
+      .debug-box td.key { color: #6b7280; white-space: nowrap; font-weight: bold; }
+      .backtrace { margin: 8px 0 0; padding: 12px; background: #1f2937; color: #e5e7eb; border-radius: 6px; overflow-x: auto; font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; line-height: 1.5; white-space: pre; }
     </style>
   </head>
   <body>
@@ -24,9 +30,28 @@
         
         <div class="error-box">
           <strong>Error Details:</strong><br>
-          <%= @error_message %>
+          <% if @error_class.present? %><code><%= @error_class %></code>: <% end %><%= @error_message %>
         </div>
-        
+
+        <div class="debug-box">
+          <h3>🔍 Debug information</h3>
+          <table>
+            <tr><td class="key">Course</td><td><%= @course.name %></td></tr>
+            <tr><td class="key">Course ID</td><td><%= @course.id %></td></tr>
+            <tr><td class="key">Slug</td><td><%= @course.slug %></td></tr>
+            <tr><td class="key">Source URL</td><td><%= @course.main_media_url %></td></tr>
+            <tr><td class="key">Language</td><td><%= @course.language&.english_name || "—" %></td></tr>
+            <tr><td class="key">Failed at</td><td><%= @failed_at.utc.iso8601 %></td></tr>
+            <% if @error_cause.present? %>
+              <tr><td class="key">Caused by</td><td><code><%= @error_cause.class.name %></code>: <%= @error_cause.message %></td></tr>
+            <% end %>
+          </table>
+
+          <% if @backtrace.present? %>
+            <div class="backtrace"><%= @backtrace.join("\n") %></div>
+          <% end %>
+        </div>
+
         <p>Please try again or contact our support team if the problem persists. We apologize for the inconvenience.</p>
         
         <p>Best regards,<br>The Langlets Team</p>

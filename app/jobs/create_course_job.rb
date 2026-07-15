@@ -19,7 +19,7 @@ class CreateCourseJob < ApplicationJob
     Rails.logger.error e.backtrace.join("\n")
 
     # Send failure email
-    CourseMailer.creation_failed(course, e.message).deliver_now
+    CourseMailer.creation_failed(course, e).deliver_now
     raise e
   end
 
