@@ -1,4 +1,6 @@
 class Course < ApplicationRecord
+  include FriendlyName # to_param -> slug, so course URLs use the slug not the id
+
   belongs_to :user
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
   belongs_to :language, optional: true
