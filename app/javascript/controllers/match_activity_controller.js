@@ -21,7 +21,27 @@ export default class extends Controller {
   };
 
   connect() {
-    // Audio will now be played using the video player when user clicks the speaker icon
+    // Warm the shared audio cache: next phrase first, then the current one,
+    // so the current phrase's words are the most recently used entries.
+    this.preloadPhraseAudio(1)
+    this.preloadPhraseAudio(0)
+  }
+
+  // Ask the audio-cache controller to preload the word audio of a phrase.
+  preloadPhraseAudio(index) {
+    const container = this.phraseContainerTargets.find(
+      c => parseInt(c.dataset.index) === index
+    )
+    if (!container) return
+
+    const urls = Array.from(container.querySelectorAll('[data-audio-url]'))
+      .map(el => el.dataset.audioUrl)
+    if (urls.length === 0) return
+
+    this.element.dispatchEvent(new CustomEvent('audio-cache:preload', {
+      bubbles: true,
+      detail: { urls }
+    }))
   }
 
   selectOption(event) {
@@ -100,7 +120,10 @@ export default class extends Controller {
         nextContainer.classList.remove('hidden');
         // Update progress text
         this.progressTextTarget.textContent = `Question ${this.currentPhraseValue + 1} of ${this.totalPhrasesValue}`;
-        // Audio will now be played only when user clicks the speaker icon
+        // Preload the next batch of word audio, then refresh the current
+        // phrase's recency in the cache
+        this.preloadPhraseAudio(this.currentPhraseValue + 1);
+        this.preloadPhraseAudio(this.currentPhraseValue);
       }
     } else {
       // Play completion sound

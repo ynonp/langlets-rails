@@ -41,7 +41,9 @@
   </head>
 
   <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
-    <main class="flex flex-col min-h-screen">
+    <main class="flex flex-col min-h-screen"
+          data-controller="audio-cache"
+          data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">
       <%= yield %>
     </main>
 

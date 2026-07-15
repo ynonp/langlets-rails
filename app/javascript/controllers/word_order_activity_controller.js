@@ -25,7 +25,6 @@ export default class extends Controller {
     this.currentPhraseIndex = 0
     this.draggedElement = null
     this.touchOffset = { x: 0, y: 0 }
-    this.audioElement = null
     this.touchStartTime = null
     this.touchStartPosition = null
     this.isDragging = false
@@ -335,13 +334,10 @@ export default class extends Controller {
   playWordItemAudio(wordItem) {
     const audioUrl = wordItem.dataset.audioUrl
     if (!audioUrl) return
-    if (this.audioElement) {
-      this.audioElement.pause()
-    }
-    this.audioElement = new Audio(audioUrl)
-    this.audioElement.play().catch(error => {
-      console.warn('Audio playback failed:', error)
-    })
+    this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+      bubbles: true,
+      detail: { url: audioUrl }
+    }))
   }
 
   findTokenSlot(phraseIndex, tokenId) {

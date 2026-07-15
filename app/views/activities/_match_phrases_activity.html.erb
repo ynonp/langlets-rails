@@ -142,16 +142,7 @@
       </div>
       <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
     </div>
-  </div>  
-
-  <!-- Preload audio files -->
-  <% params[:phrases].each do |phrase| %>
-    <% phrase.token_translations.each do |token| %>
-      <% if token.l1_audio.attached? %>
-        <audio src="<%= token.l1_audio_url %>" preload="auto" />
-      <% end %>
-    <% end %>
-  <% end %>
+  </div>
 </div>
 
 <style>

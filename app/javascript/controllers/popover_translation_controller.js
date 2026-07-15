@@ -5,18 +5,16 @@ export default class extends Controller {
   static values = { l1Language: String, savedIds: Array };
 
   initialize() {
-    this.currentAudio = null;
     this.currentOriginalText = null;
     this.currentTranslation = null;
     this.currentTokenId = null;
   }
 
   hidePopup() {
+    if (this.translationPopupTarget.classList.contains('hidden')) return;
     this.translationPopupTarget.classList.add('hidden');
-    if (this.currentAudio) {
-      this.currentAudio.pause();
-      this.currentAudio.currentTime = 0;
-    }
+    // Stop the word audio that was started when the popup opened
+    this.element.dispatchEvent(new CustomEvent('audio-cache:stop', { bubbles: true }));
   }
 
   showPopup(ev) {
@@ -54,10 +52,8 @@ export default class extends Controller {
 
     this._updateSaveButton();
 
-    const audioUrl = tokenEl.dataset.audioUrl;
-    if (audioUrl) {
-      this.playAudio(audioUrl);
-    }
+    // Word audio playback is handled by the audio-cache controller, which
+    // sees the click in the capture phase (before stopPropagation below).
 
     ev.stopPropagation();
   }
@@ -179,18 +175,4 @@ Tasks:
     }
   }
 
-  playAudio(audioUrl) {
-    if (this.currentAudio) {
-      this.currentAudio.pause();
-      this.currentAudio.currentTime = 0;
-    }
-    this.currentAudio = new Audio(audioUrl);
-    this.currentAudio.volume = 0.7;
-    this.currentAudio.onerror = () => {
-      console.warn('Failed to load audio:', audioUrl);
-    };
-    this.currentAudio.play().catch(error => {
-      console.warn('Failed to play audio:', error);
-    });
-  }
 }

@@ -79,7 +79,7 @@ module ActivitiesHelper
 
       safe_join(texts.map do |val|
         audio_url = val["audio_url"]
-        span_content = content_tag(:span,
+        content_tag(:span,
                     val["l1"],
                     { **(val["l2"].present? ? attributes_map : {}),
                      data: { **(attributes_map[:data] || {}),
@@ -87,16 +87,11 @@ module ActivitiesHelper
                              token_id: val["token_id"],
                              token_start: val["token_start"],
                              token_end: val["token_end"],
-                             audio_url: audio_url
+                             audio_url: audio_url,
+                             # Opt into click-to-play via the audio-cache controller
+                             audio_click: (true if audio_url.present?)
                      }
                     })
-
-        if audio_url.present?
-          content_tag(:span,
-                      span_content + content_tag(:audio, "", src: audio_url, preload: "none"))
-        else
-          span_content
-        end
       end)
     end
   end

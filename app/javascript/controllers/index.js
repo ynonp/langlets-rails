@@ -7,6 +7,9 @@ import { application } from "./application"
 import ActivityNavigationController from "./activity_navigation_controller"
 application.register("activity-navigation", ActivityNavigationController)
 
+import AudioCacheController from "./audio_cache_controller"
+application.register("audio-cache", AudioCacheController)
+
 import AudioFeedbackController from "./audio_feedback_controller"
 application.register("audio-feedback", AudioFeedbackController)
 

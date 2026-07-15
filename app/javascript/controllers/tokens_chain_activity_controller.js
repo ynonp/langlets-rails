@@ -13,38 +13,29 @@ export default class extends Controller {
     this.currentIndex = 0; // Start at first token (already displayed in top-left)
     this.tokensArray = this.tokensValue || [];
     this.currentL1Element = this.startButtonTarget; // Track which element shows current L1
-    this.currentAudio = null; // Track currently playing audio
-    
+
     // Mark initial L1 as current
     this.startButtonTarget.classList.add('current-l1');
+
+    // Warm the shared audio cache for the start of the chain
+    this.preloadUpcomingAudio();
   }
 
   playL1Audio(event) {
-    // Stop any currently playing audio
-    if (this.currentAudio) {
-      this.currentAudio.pause();
-      this.currentAudio.currentTime = 0;
-    }
-    
-    // Find the token ID for this square
-    const square = event.currentTarget;
-    const tokenId = square.getAttribute('data-l1-token-id') || square.getAttribute('data-token-id');
-    if (!tokenId) return;
-    
-    // Find the square that has this token's audio element
-    const squareWithAudio = this.gridTarget.querySelector(`[data-token-id="${tokenId}"]`);
-    if (!squareWithAudio) return;
-    
-    const audioElement = squareWithAudio.querySelector('audio[data-token-audio]');
-    if (!audioElement) return;
-    
-    // Play the audio element
-    this.currentAudio = audioElement;
-    audioElement.currentTime = 0;
-    audioElement.volume = 0.7;
-    audioElement.play().catch(error => {
-      console.warn('Audio playback failed:', error);
-    });
+    // The square showing the current L1 word carries its own audio URL
+    this.playAudioUrl(event.currentTarget.dataset.audioUrl);
+  }
+
+  playAudioUrl(url) {
+    this.element.dispatchEvent(new CustomEvent('audio-cache:play', { bubbles: true, detail: { url } }));
+  }
+
+  // Preload the current token's audio and the next couple in the chain
+  preloadUpcomingAudio() {
+    const urls = this.tokensArray
+      .slice(this.currentIndex, this.currentIndex + 3)
+      .map(token => token.audio_url);
+    this.element.dispatchEvent(new CustomEvent('audio-cache:preload', { bubbles: true, detail: { urls } }));
   }
 
   selectSquare(event) {
@@ -93,7 +84,8 @@ export default class extends Controller {
     // Move to next token
     this.currentIndex++;
     this.updateProgress();
-    
+    this.preloadUpcomingAudio();
+
     if (this.currentIndex >= this.tokensArray.length) {
       // All tokens matched
       setTimeout(() => {
@@ -116,23 +108,17 @@ export default class extends Controller {
         element.classList.remove('flash-success', 'bg-white', 'dark:bg-gray-900', 'hover:bg-gray-100', 'dark:hover:bg-gray-800');
         element.classList.remove('found-translation');
         element.classList.add('showing-l1', 'bg-gray-100', 'dark:bg-gray-800', 'cursor-pointer', 'current-l1');
-        // Store the token ID so we can find its audio element later
-        element.setAttribute('data-l1-token-id', currentToken.id);
+        // Store the audio URL so tapping the square replays its word
+        element.dataset.audioUrl = currentToken.audio_url || '';
         // Add click handler for L1 audio playback
         element.setAttribute('data-action', 'click->tokens-chain-activity#playL1Audio');
         // Remove token ID since it now shows L1
         element.removeAttribute('data-token-id');
         // Update current L1 element reference
         this.currentL1Element = element;
-        
-        // Find and play the audio element for the next token
-        const squareWithNextTokenAudio = this.gridTarget.querySelector(`[data-token-id="${currentToken.id}"]`);
-        if (squareWithNextTokenAudio) {
-          const audioElement = squareWithNextTokenAudio.querySelector('audio[data-token-audio]');
-          if (audioElement) {
-            this.playAudioForElement(audioElement);
-          }
-        }
+
+        // Play the next token's word
+        this.playAudioUrl(currentToken.audio_url);
       }, 600);
     }
   }
@@ -168,24 +154,6 @@ export default class extends Controller {
     );
     this.element.dispatchEvent(new CustomEvent('activity:completed', { bubbles: true }));
     this.gridTarget.classList.add('hidden');
-  }
-
-  playAudioForElement(audioElement) {
-    // Stop any currently playing audio
-    if (this.currentAudio) {
-      this.currentAudio.pause();
-      this.currentAudio.currentTime = 0;
-    }
-    
-    if (!audioElement) return;
-    
-    // Play the audio element
-    this.currentAudio = audioElement;
-    audioElement.currentTime = 0;
-    audioElement.volume = 0.7;
-    audioElement.play().catch(error => {
-      console.warn('Audio playback failed:', error);
-    });
   }
 
   // Award XP by calling the progress tracker controller

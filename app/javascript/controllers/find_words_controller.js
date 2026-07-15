@@ -8,8 +8,7 @@ export default class extends Controller {
   connect() {
     this.currentPhraseIndex = 0;
     this.totalPhrases = this.translationPhraseTargets.length;
-    this.currentAudio = null; // Initialize audio player
-    
+
     // Scroll to the first phrase when the activity loads
     setTimeout(() => {
       this.scrollToOriginalPhrase(0);
@@ -124,27 +123,12 @@ export default class extends Controller {
 
   playTokenAudio(token) {
     const audioUrl = token.getAttribute('data-audio-url');
-    
+
     if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
-      // Stop any currently playing audio
-      if (this.currentAudio) {
-        this.currentAudio.pause();
-        this.currentAudio.currentTime = 0;
-      }
-      
-      // Create and play new audio
-      this.currentAudio = new Audio(audioUrl);
-      this.currentAudio.volume = 0.7; // Set volume to 70%
-      
-      // Handle audio playback errors gracefully
-      this.currentAudio.onerror = () => {
-        console.warn('Failed to play audio for token:', token.textContent);
-      };
-      
-      // Play the audio
-      this.currentAudio.play().catch(error => {
-        console.warn('Audio playback failed:', error);
-      });
+      this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+        bubbles: true,
+        detail: { url: audioUrl }
+      }));
     }
   }
 

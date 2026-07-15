@@ -7,16 +7,8 @@ export default class extends Controller {
 
   connect() {
     this.index = 0
-    this.correctAnswerAudio = null
-    this.correctAnswerAudioUrl = null
     this.updateProgress()
     this.renderCard()
-  }
-
-  disconnect() {
-    this.correctAnswerAudio?.pause()
-    this.correctAnswerAudio = null
-    this.correctAnswerAudioUrl = null
   }
 
   updateProgress() {
@@ -89,10 +81,9 @@ export default class extends Controller {
     if (selected.textContent.trim() === card.correct) {
       selected.classList.add('bg-emerald-500/15', 'border-emerald-500', 'text-emerald-600', 'dark:text-emerald-300')
       this.awardXp(2)
-      this.playAudio(this.correctAnswerAudio).then(() => {
-        this.revealCorrectAnswer(card.correct)
-        setTimeout(() => this.nextCard(), 1400)
-      })
+      this.playCardAudio(card)
+      this.revealCorrectAnswer(card.correct)
+      setTimeout(() => this.nextCard(), 1400)
     } else {
       selected.classList.add('bg-red-500/10', 'border-red-500', 'text-red-600', 'dark:text-red-300')
       setTimeout(() => buttons.forEach(btn => btn.disabled = false), 800)
@@ -110,37 +101,27 @@ export default class extends Controller {
 
   preloadCorrectAudio(card) {
     const audioUrl = card?.audio_url
-    if (!audioUrl || this.correctAnswerAudioUrl === audioUrl) return
+    if (!audioUrl) return
 
-    this.correctAnswerAudio?.pause()
+    this.element.dispatchEvent(new CustomEvent('audio-cache:preload', {
+      bubbles: true,
+      detail: { urls: [audioUrl] }
+    }))
+  }
 
-    const audio = new Audio()
-    audio.preload = 'auto'
-    audio.src = audioUrl
-    audio.load()
-    this.correctAnswerAudio = audio
-    this.correctAnswerAudioUrl = audioUrl
+  playCardAudio(card) {
+    const audioUrl = card?.audio_url
+    if (!audioUrl) return
+
+    this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+      bubbles: true,
+      detail: { url: audioUrl }
+    }))
   }
 
   nextCard() {
     this.index += 1
     this.renderCard()
-  }
-
-  playAudio(audioElement) {
-    if (!audioElement) return Promise.resolve()
-
-    try {
-      audioElement.currentTime = 0
-      const playPromise = audioElement.play()
-      if (playPromise && typeof playPromise.catch === 'function') {
-        return playPromise.catch(err => console.warn('Failed to play flashcard audio', err))
-      }
-    } catch (err) {
-      console.warn('Failed to play flashcard audio', err)
-    }
-
-    return Promise.resolve()
   }
 
   showCompletion() {

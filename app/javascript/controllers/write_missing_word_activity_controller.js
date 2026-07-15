@@ -73,10 +73,12 @@ export default class extends Controller {
       this.stopPracticingContainerTarget.innerHTML = stopPracticingHtml(card.id)
     }
 
-    if (card.audio_url) {
-      this.currentAudio = new Audio(card.audio_url)
-    } else {
-      this.currentAudio = null
+    this.currentAudioUrl = card.audio_url || null
+    if (this.currentAudioUrl) {
+      this.element.dispatchEvent(new CustomEvent('audio-cache:preload', {
+        bubbles: true,
+        detail: { urls: [this.currentAudioUrl] }
+      }))
     }
 
     setTimeout(() => this.answerTarget.focus(), 50)
@@ -118,7 +120,7 @@ export default class extends Controller {
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 1
       this.dispatch("xp", { detail: { xp: 1 } })
-      if (this.currentAudio) this.currentAudio.play().catch(() => {})
+      this.playCurrentAudio()
       setTimeout(() => this.nextCard(), 1000)
     } else {
       selected.classList.add("border-red-500", "bg-red-100", "dark:bg-red-900/40")
@@ -155,9 +157,7 @@ export default class extends Controller {
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 2
       this.dispatch("xp", { detail: { xp: 2 } })
-      if (this.currentAudio) {
-        this.currentAudio.play().catch(() => {})
-      }
+      this.playCurrentAudio()
       setTimeout(() => this.nextCard(), 1200)
     } else {
       this.feedbackTarget.textContent = `✗ The answer is "${card.answer}". Try to remember it!`
@@ -167,6 +167,14 @@ export default class extends Controller {
       this.checkButtonTarget.disabled = false
       this.checkButtonTarget.classList.remove("opacity-50")
     }
+  }
+
+  playCurrentAudio() {
+    if (!this.currentAudioUrl) return
+    this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+      bubbles: true,
+      detail: { url: this.currentAudioUrl }
+    }))
   }
 
   nextCard() {

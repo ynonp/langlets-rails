@@ -15,10 +15,8 @@ export default class extends Controller {
     this.displayedTokens = []; // Currently displayed tokens (max 5)
     this.matchedTokens = 0;
     this.selectedToken = null;
-    this.currentAudio = null;
     this.activeTouches = new Map(); // Track multi-touch points by identifier
-    this.preloadedAudio = new Map(); // Cache for preloaded audio
-    
+
     this.preloadAllAudio();
     this.initializeGrid();
   }
@@ -78,26 +76,12 @@ export default class extends Controller {
         .map(token => token.audio_url)
         .filter(url => url && url !== 'null' && url !== '')
     )];
-    
-    // Preload each audio file
-    audioUrls.forEach(audioUrl => {
-      const audio = new Audio(audioUrl);
-      audio.volume = 0.7;
-      audio.preload = 'auto';
-      
-      // Handle preload completion
-      audio.addEventListener('canplaythrough', () => {
-        this.preloadedAudio.set(audioUrl, audio);
-      });
-      
-      // Handle preload errors gracefully
-      audio.addEventListener('error', () => {
-        console.warn('Failed to preload audio:', audioUrl);
-      });
-      
-      // Start preloading
-      audio.load();
-    });
+
+    // Warm the shared audio cache (it caps how many it keeps)
+    this.element.dispatchEvent(new CustomEvent('audio-cache:preload', {
+      bubbles: true,
+      detail: { urls: audioUrls }
+    }));
   }
 
   initializeGrid() {
@@ -354,40 +338,12 @@ export default class extends Controller {
 
   playTokenAudio(element) {
     const audioUrl = element.dataset.audioUrl;
-    
+
     if (audioUrl && audioUrl !== 'null' && audioUrl !== '') {
-      // Stop any currently playing audio
-      if (this.currentAudio) {
-        this.currentAudio.pause();
-        this.currentAudio.currentTime = 0;
-      }
-      
-      // Try to use preloaded audio first
-      const preloadedAudio = this.preloadedAudio.get(audioUrl);
-      if (preloadedAudio) {
-        // Reset audio to beginning and play
-        preloadedAudio.currentTime = 0;
-        this.currentAudio = preloadedAudio;
-        
-        // Play the preloaded audio
-        this.currentAudio.play().catch(error => {
-          console.warn('Preloaded audio playback failed:', error);
-        });
-      } else {
-        // Fallback to creating new Audio object if preloading failed
-        this.currentAudio = new Audio(audioUrl);
-        this.currentAudio.volume = 0.7;
-        
-        // Handle audio playback errors gracefully
-        this.currentAudio.onerror = () => {
-          console.warn('Failed to play audio for token:', element.textContent);
-        };
-        
-        // Play the audio
-        this.currentAudio.play().catch(error => {
-          console.warn('Audio playback failed:', error);
-        });
-      }
+      this.element.dispatchEvent(new CustomEvent('audio-cache:play', {
+        bubbles: true,
+        detail: { url: audioUrl }
+      }));
     }
   }
 
