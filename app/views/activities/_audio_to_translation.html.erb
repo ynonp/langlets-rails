@@ -1,43 +1,59 @@
 <%# Expects:
   params[:phrases] - An array of phrase objects with timestamp, calculated_end_timestamp, text_l1, text_l2
-  params[:l1] - Language object for original phrases
+  params[:l1] - Language object for original phrases (the audio language)
   params[:l2] - Language object for translation phrases
   params[:video_id] - YouTube video ID
   params[:start_timestamp] - Start timestamp for the video segment
   params[:end_timestamp] - End timestamp for the video segment
-  
-  This activity shows a 2-column grid where users match phrases to their translations:
-  1. Left column shows phrases in L1 with play buttons, right column shows translations in L2
-  2. Columns are shuffled separately so phrases and translations are not aligned
-  3. User clicks play button on a phrase, then selects its match in the other column
-  4. Successful matches flash green and disappear
-  5. Failed matches flash red and selection is cleared
-  6. Progress bar shows completion status
-  7. When all phrases are matched, shows completion message
+
+  This activity shows a 2-column grid where users match audio to their translations:
+  1. Left column shows audio cards (play button + a waveform "fingerprint" of the phrase)
+  2. Right column shows translations in L2
+  3. Columns are shuffled separately so audio and translations are not aligned
+  4. The waveform bars are generated deterministically from the phrase text (see controller)
+  5. User plays an audio card, then selects its matching translation
+  6. Correct matches flash green, then stay in place disabled + marked done (✓)
+  7. Failed matches flash red and selection is cleared
+  8. Progress bar + counter show completion status
+  9. When all phrases are matched, shows completion message
+
+  Per-cell state is driven by a `data-state` attribute (set by the controller to
+  "selected" or "matched"); all styling is Tailwind via data-/group-data variants.
 %>
 
-<% 
+<%
   phrases = params[:phrases] || []
   l1 = params[:l1]
   l2 = params[:l2]
   total_phrases = phrases.length
-  
-  # Shuffle in Ruby for server-side rendering
-  shuffled_l1 = phrases.shuffle
-  shuffled_l2 = phrases.shuffle
+
+  # Shuffle each column separately for server-side rendering, then zip so each
+  # grid row holds one (unrelated) audio card and one translation card.
+  rows = phrases.shuffle.zip(phrases.shuffle)
+
+  # Shared cell styling. The state variants mirror the old CSS: a gentle emerald
+  # outline while selected, and a dimmed emerald "done" look once matched.
+  cell_base = "group relative flex items-center min-h-[76px] max-h-[5.5rem] overflow-hidden px-4 py-3 rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50 cursor-pointer transition-all duration-200 hover:scale-[1.02]"
+  cell_state = "data-[state=selected]:border-emerald-400 data-[state=selected]:ring-2 data-[state=selected]:ring-emerald-500/25 data-[state=selected]:bg-emerald-50/70 dark:data-[state=selected]:bg-emerald-900/40 data-[state=matched]:border-emerald-500 data-[state=matched]:bg-emerald-50 dark:data-[state=matched]:bg-emerald-900/40 data-[state=matched]:opacity-[0.65] data-[state=matched]:cursor-default data-[state=matched]:pointer-events-none"
+  check_classes = "hidden group-data-[state=matched]:block shrink-0 text-base font-bold leading-none text-emerald-600 dark:text-emerald-300"
 %>
 
 <div
     data-controller="audio-to-translation-activity"
     data-audio-to-translation-activity-total-phrases-value="<%= total_phrases %>"
-    class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950">
+    class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center">
 
-  <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
+  <div class="w-full max-w-[640px] p-4 sm:p-6">
     <div class="mb-6">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2 font-extrabold"><%= @activity.text_header || "Match Audio to Translation" %></h2>
-      <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
-        <div data-audio-to-translation-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+      <div class="flex items-center gap-3 sm:gap-4">
+        <p data-audio-to-translation-activity-target="counter" class="shrink-0 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 tabular-nums">
+          0 / <%= total_phrases %> matched
+        </p>
+        <div class="min-w-0 flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-2.5">
+          <div data-audio-to-translation-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
+        </div>
       </div>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-4"><%= @activity.text_header || "Play each phrase and tap its translation" %></p>
     </div>
 
     <div id="audio-to-translation" class="flex flex-col gap-4">
@@ -51,115 +67,47 @@
         <%= link_to_next_activity("Next", @next_activity_path, class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors") %>
       </div>
 
-      <!-- Grid container -->
-      <div class="grid grid-cols-2 gap-4 min-h-[400px]" data-audio-to-translation-activity-target="grid">
-        <!-- Left column (L1 phrases with play buttons) -->
-        <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
-            <%= l1.english_name %> Phrases
-          </div>
-          <div data-audio-to-translation-activity-target="l1Column" class="flex flex-col gap-3 flex-1">
-            <% shuffled_l1.each do |phrase| %>
-              <button
-                class="phrase-item px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 flex-1 flex items-center justify-center min-h-[60px]"
-                data-phrase-id="<%= phrase.id %>"
-                data-action="click->main-video-player#playSegment click->audio-to-translation-activity#selectPhrase"
-                data-main-video-player-segment-start-param="<%= timestamp_to_seconds(phrase.timestamp) %>"
-                data-main-video-player-segment-end-param="<%= timestamp_to_seconds(phrase.calculated_end_timestamp) %>"
-                data-text-l1="<%= phrase.text_l1 %>"
-                data-text-l2="<%= phrase.text_l2 %>"
-                data-column="l1">
-                <div class="flex justify-center items-center gap-3">
-                  <span
-                    class="text-white bg-emerald-500 rounded-full hover:bg-emerald-600 transition flex items-center justify-center w-10 h-10 text-sm font-semibold"
-                    style="padding-left: 2px;">
-                    ▶
-                  </span>
-                </div>
-              </button>
-            <% end %>
-          </div>
-        </div>
+      <!-- Grid container: audio cards (left) + translations (right) -->
+      <div class="grid grid-cols-2 gap-x-4 gap-y-3.5" data-audio-to-translation-activity-target="grid">
 
-        <!-- Right column (L2 translations) -->
-        <div class="flex flex-col gap-3">
-          <div class="text-center px-2 py-2 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-gray-50 font-semibold rounded text-sm">
-            <%= l2.english_name %> Translations
+        <!-- Column headers -->
+        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Audio</div>
+        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translation</div>
+
+        <% rows.each do |audio_phrase, translation_phrase| %>
+          <!-- Audio card (L1) -->
+          <button
+            class="<%= cell_base %> gap-3.5 <%= cell_state %>"
+            data-phrase-id="<%= audio_phrase.id %>"
+            data-column="l1"
+            data-text-l1="<%= audio_phrase.text_l1 %>"
+            data-text-l2="<%= audio_phrase.text_l2 %>"
+            data-action="click->main-video-player#playSegment click->audio-to-translation-activity#selectPhrase"
+            data-main-video-player-segment-start-param="<%= timestamp_to_seconds(audio_phrase.timestamp) %>"
+            data-main-video-player-segment-end-param="<%= timestamp_to_seconds(audio_phrase.calculated_end_timestamp) %>">
+            <span class="shrink-0 flex items-center justify-center w-9 h-9 rounded-full bg-emerald-500 text-white text-sm" style="padding-left: 2px;">▶</span>
+            <!-- Waveform fingerprint (hidden once solved) -->
+            <span class="wf flex items-center justify-between gap-0.5 h-7 flex-1 min-w-0 group-data-[state=matched]:hidden" data-audio-to-translation-activity-target="waveform" data-text="<%= audio_phrase.text_l1 %>"></span>
+            <!-- Revealed phrase text (shown once solved) -->
+            <span class="hidden group-data-[state=matched]:block flex-1 min-w-0 truncate text-[15px] leading-snug text-emerald-700 dark:text-emerald-300" dir="auto"><%= audio_phrase.text_l1 %></span>
+            <span class="<%= check_classes %> ms-auto ps-2" aria-hidden="true">✓</span>
+          </button>
+
+          <!-- Translation card (L2) -->
+          <div
+            class="<%= cell_base %> <%= l2.rtl ? 'justify-end' : 'justify-start' %> <%= cell_state %>"
+            data-phrase-id="<%= translation_phrase.id %>"
+            data-column="l2"
+            data-text-l1="<%= translation_phrase.text_l1 %>"
+            data-text-l2="<%= translation_phrase.text_l2 %>"
+            data-action="click->audio-to-translation-activity#selectPhrase">
+            <span class="line-clamp-3 break-words leading-normal text-[15px] <%= l2.rtl ? 'text-right' : 'text-left' %> group-data-[state=matched]:text-emerald-700 dark:group-data-[state=matched]:text-emerald-300"><%= translation_phrase.text_l2 %></span>
+            <span class="<%= check_classes %> <%= l2.rtl ? 'me-auto pe-2' : 'ms-auto ps-2' %>" aria-hidden="true">✓</span>
           </div>
-          <div data-audio-to-translation-activity-target="l2Column" class="flex flex-col gap-3 flex-1" data-rtl="<%= l2.rtl %>">
-            <% shuffled_l2.each do |phrase| %>
-              <div
-                class="phrase-item px-4 py-3 border-2 border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-900 dark:text-gray-50 transition-all duration-200 flex-1 flex items-center min-h-[60px] <%= l2.rtl ? 'justify-end' : 'justify-start' %>"
-                data-phrase-id="<%= phrase.id %>"
-                data-column="l2"
-                data-text-l1="<%= phrase.text_l1 %>"
-                data-text-l2="<%= phrase.text_l2 %>"
-                data-action="click->audio-to-translation-activity#selectPhrase">
-                <span class="phrase-text"><%= phrase.text_l2 %></span>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <% end %>
+
       </div>
 
     </div>
   </div>
 </div>
-
-<style>
-@keyframes flash-success {
-  0% { background-color: rgb(34, 197, 94); }
-  100% { background-color: transparent; }
-}
-
-@keyframes flash-error {
-  0% { background-color: rgb(239, 68, 68); }
-  100% { background-color: transparent; }
-}
-
-.flash-success {
-  animation: flash-success 0.6s ease-out;
-}
-
-.flash-error {
-  animation: flash-error 0.6s ease-out;
-}
-
-.phrase-item {
-  transition: all 0.2s ease;
-  cursor: pointer;
-  max-height: 5.5rem; /* Approximately 3 lines of text (88px) */
-  overflow: hidden;
-}
-
-.phrase-item .phrase-text {
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  word-wrap: break-word;
-  line-height: 1.5;
-  text-align: left;
-}
-
-[data-rtl="true"] .phrase-item .phrase-text {
-  text-align: right;
-}
-
-.phrase-item:hover {
-  transform: scale(1.02);
-}
-
-.phrase-item.selected {
-  border-color: var(--color-emerald-500);
-  border-width: 3px;
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--color-emerald-500) 40%, transparent), 0 0 10px color-mix(in oklab, var(--color-emerald-500) 30%, transparent);
-  background-color: var(--color-emerald-100) !important;
-}
-[data-theme="dark"] .phrase-item.selected {
-  background-color: color-mix(in oklab, var(--color-emerald-900) 50%, transparent) !important;
-}
-
-</style>
-
