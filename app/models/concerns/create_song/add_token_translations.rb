@@ -25,6 +25,11 @@ module CreateSong
       max_concurrency = 4
       max_retries = 2
 
+      # Collects per-chunk failures (error + the raw LLM response that produced
+      # it) while the async tasks run. We can't safely write to the DB from
+      # inside the reactor, so we accumulate here and persist in the rescue.
+      @translation_failures = []
+
       instructions = ApplicationController.renderer.render(
         template: "prompts/add_token_translations",
         formats: [ :md ],
@@ -62,7 +67,7 @@ module CreateSong
         end
 
         tasks.map(&:wait).sort_by(&:first).flat_map(&:last)
-      end.result
+      end.wait
 
       results.each do |entry, translation|
         word = data["phrases"][entry[:phrase_index]]["words"][entry[:word_index]]
@@ -70,6 +75,9 @@ module CreateSong
       end
 
       save!
+    rescue => e
+      persist_translation_failures(e)
+      raise e
     end
 
     private
@@ -91,6 +99,7 @@ module CreateSong
     def translate_chunk(instructions, chunk, max_retries)
       lines = chunk.map { |e| e[:line] }
       retry_count = 0
+      response = nil
 
       loop do
         chat = TracedChat.new(span_name: "add_token_translations", **MODEL_PARAMS)
@@ -111,9 +120,45 @@ module CreateSong
           retry
         else
           Rails.logger.error "AddTokenTranslations failed after #{max_retries} attempts: #{e.message}"
+          # Stash the failing chunk's input and the raw LLM response so we can
+          # inspect why parsing failed later (see persist_translation_failures).
+          @translation_failures << {
+            "occurred_at" => Time.current.iso8601,
+            "attempts" => retry_count,
+            "error_class" => e.class.name,
+            "error_message" => e.message,
+            "input_lines" => lines,
+            "agent_response" => response&.content
+          }
           raise e
         end
       end
+    end
+
+    # Writes any captured translation failures (LLM response + error) into
+    # `data["errors"]` so a failed course can be debugged after the fact.
+    # Runs outside the async reactor, from add_token_translation's rescue.
+    def persist_translation_failures(top_level_error)
+      failures = Array(@translation_failures)
+
+      # If nothing was captured at the chunk level (e.g. the error came from
+      # somewhere other than an LLM call), still record the top-level error.
+      if failures.empty?
+        failures << {
+          "occurred_at" => Time.current.iso8601,
+          "error_class" => top_level_error.class.name,
+          "error_message" => top_level_error.message,
+          "input_lines" => nil,
+          "agent_response" => nil
+        }
+      end
+
+      data["errors"] ||= []
+      failures.each { |failure| data["errors"] << failure.merge("step" => "add_token_translations") }
+      save!
+    rescue => persist_error
+      # Never let debug logging mask the real failure.
+      Rails.logger.error "Failed to persist translation failures: #{persist_error.class}: #{persist_error.message}"
     end
 
     # Expects one "<word> (<context>) | <translation>" line per input line, in
