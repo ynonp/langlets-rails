@@ -10,17 +10,19 @@ module CreateSong
       assume_model_exists: true
     }.freeze
 
-    # Words per LLM call. We translate every word of every phrase, so for a long
-    # song this is hundreds of words; batching keeps each request small enough to
-    # stay accurate while still cutting the number of round-trips dramatically.
+    # Soft cap on words per LLM call. We translate every word of every phrase, so
+    # for a long song this is hundreds of words; batching keeps each request small
+    # enough to stay accurate while still cutting the number of round-trips
+    # dramatically. Chunks are packed by whole phrase, so a chunk may come in
+    # under this and a single over-long phrase may exceed it (see build_chunks).
     WORDS_PER_CHUNK = 200
 
     # Translates each word of every phrase into the target language. Every word
-    # across all phrases is collected, grouped into chunks of WORDS_PER_CHUNK and
-    # sent to the LLM with the full phrase as context (the word being translated is
-    # marked with *asterisks*). The resulting per-word translations + their
-    # timestamps later become karaoke-capable TokenTranslation records (see
-    # WordTokenBuilder#build_word_tokens).
+    # across all phrases is collected, packed into chunks of at most
+    # WORDS_PER_CHUNK words and sent to the LLM with the full phrase as context
+    # (the word being translated is marked with *asterisks*). The resulting
+    # per-word translations + their timestamps later become karaoke-capable
+    # TokenTranslation records (see WordTokenBuilder#build_word_tokens).
     def add_token_translation
       max_concurrency = 4
       max_retries = 2
@@ -39,22 +41,22 @@ module CreateSong
         }
       )
 
-      # Flat list of every word with a back-reference to its phrase/word slot, so
-      # we can scatter them into chunks and gather the translations back.
-      entries = []
-      data["phrases"].each_with_index do |phrase, p_index|
-        Array(phrase["words"]).each_with_index do |word, w_index|
-          entries << {
+      # One group per phrase, each holding that phrase's words with a
+      # back-reference to their phrase/word slot, so we can scatter them into
+      # chunks and gather the translations back.
+      phrase_groups = data["phrases"].each_with_index.map do |phrase, p_index|
+        Array(phrase["words"]).each_index.map do |w_index|
+          {
             phrase_index: p_index,
             word_index: w_index,
             line: build_word_line(phrase, w_index)
           }
         end
-      end
+      end.reject(&:empty?)
 
-      return save! if entries.empty?
+      return save! if phrase_groups.empty?
 
-      chunks = entries.each_slice(WORDS_PER_CHUNK).to_a
+      chunks = build_chunks(phrase_groups)
       semaphore = Async::Semaphore.new(max_concurrency)
 
       results = Async do
@@ -81,6 +83,22 @@ module CreateSong
     end
 
     private
+
+    # Greedily packs whole phrases into chunks of at most WORDS_PER_CHUNK words.
+    # A chunk must never end mid-phrase: every input line carries its full phrase
+    # as context, so a phrase cut across two chunks lets the model see words it
+    # wasn't asked about and translate them anyway, overshooting the line count
+    # parse_chunk_translations expects. A phrase longer than the cap gets a chunk
+    # of its own.
+    def build_chunks(phrase_groups)
+      phrase_groups.each_with_object([]) do |group, chunks|
+        if chunks.last && chunks.last.size + group.size <= WORDS_PER_CHUNK
+          chunks.last.concat(group)
+        else
+          chunks << group.dup
+        end
+      end
+    end
 
     # Build the input line for one word: the word, its phrase as context with the
     # target word marked, and a trailing "|" for the model to complete.

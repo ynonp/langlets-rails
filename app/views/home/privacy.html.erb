@@ -5,128 +5,181 @@
     </h1>
 
     <p class="text-gray-500 dark:text-gray-400 mb-6">
-      <strong class="text-gray-900 dark:text-gray-50">Last updated:</strong> <%= Date.current.strftime("%B %d, %Y") %>
+      <strong class="text-gray-900 dark:text-gray-50">Last updated:</strong> July 16, 2026
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Introduction
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Welcome to Langlets ("we," "our," or "us"). We are committed to protecting your privacy and being transparent about how we handle information when you use our language learning application.
+      Welcome to Langlets ("we," "our," or "us"). We are committed to protecting your privacy and being transparent about how we handle information when you use our language learning application. This policy explains what we collect, why we collect it, who we share it with, and what control you have over it.
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Information We Collect
     </h2>
-    
+
     <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
-      Personal Information
+      Account Information
+    </h3>
+    <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+      On the web, you can browse courses and lessons without an account, and we collect no account information from you. An account is needed for features that are tied to you personally — saving words, tracking progress, and creating content — and the Langlets iOS app asks you to sign in when it starts. If you create an account, either with an email address and password or by signing in with Apple, Google, or GitHub, we collect and store:
+    </p>
+    <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
+      <li>Your email address, which identifies your account and is used to send confirmation and password reset messages</li>
+      <li>Your password, stored only as a salted cryptographic hash — we never store it in readable form</li>
+      <li>If you use Apple, Google, or GitHub sign-in: the name of that provider and the user identifier it assigns you</li>
+    </ul>
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      We do not store your name. Sign-in providers may send us your name as part of the sign-in response, but we discard it and it is never written to our database. We do not collect your phone number, physical address, contacts, photos, or location.
+    </p>
+
+    <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
+      Learning Data
+    </h3>
+    <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+      Langlets saves your learning progress on our servers so that it is available across your devices. This data is linked to your account and includes:
+    </p>
+    <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-6 space-y-2 ml-4">
+      <li>Vocabulary words and translations you save for review</li>
+      <li>Lessons and activities you have completed, and a log of your activity within them</li>
+      <li>Your experience points, daily streak, and most recent activity date</li>
+      <li>Your chosen learning language and app preferences</li>
+      <li>Any courses, lessons, or activities you create</li>
+    </ul>
+
+    <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
+      Microphone and Voice
     </h3>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Langlets does not require user registration or login. We do not collect, store, or process any personal information such as names, email addresses, or contact details.
+      The pronunciation practice activity uses your microphone, and only while that activity is active and you have started a recording. Audio is streamed to the Microsoft Azure Speech service, which returns a real-time transcript so we can score your pronunciation. We do not record, store, or retain your voice, and Azure processes the audio to service the request rather than to retain it. Only the resulting score is kept with your progress. Your device will ask for microphone permission before this happens, and the rest of the app works without it.
     </p>
-    
-    <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
-      User Data
-    </h3>
-    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      We do not save any user-generated content, progress data, or learning activities on our servers. All interactions with the app are processed locally and are not stored permanently.
-    </p>
-    
+
     <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
       Analytics Information
     </h3>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
       We use Microsoft Clarity, a user behavior analytics service provided by Microsoft Corporation, to help us understand how users interact with our application. Microsoft Clarity may collect the following information:
     </p>
-    <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-6 space-y-2 ml-4">
+    <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
       <li>Device and browser information (browser type, operating system, screen resolution)</li>
       <li>Usage patterns and interactions within the app (clicks, scrolls, page views)</li>
       <li>Session recordings and heatmaps of user interactions</li>
       <li>IP address (which may be used to determine general geographic location)</li>
     </ul>
-    
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      We do not send your email address or any account identifier to Microsoft Clarity. We also use Cloudflare Web Analytics, which measures aggregate page traffic without using cookies and without fingerprinting visitors.
+    </p>
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       How We Use Information
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      The analytics data collected through Microsoft Clarity is used solely to:
+      We use the information described above only to:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-6 space-y-2 ml-4">
+      <li>Create and secure your account, and sign you in</li>
+      <li>Send transactional messages such as email confirmation and password resets</li>
+      <li>Save your progress, saved words, and preferences, and build personalized review sessions</li>
+      <li>Score your pronunciation in practice activities</li>
       <li>Improve the user experience and functionality of Langlets</li>
-      <li>Identify and fix technical issues</li>
-      <li>Understand usage patterns to enhance our language learning features</li>
-      <li>Optimize the app's performance and design</li>
+      <li>Identify and fix technical issues, and optimize performance and design</li>
     </ul>
-    
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      We do not use your information for advertising, and we do not send marketing email.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
+      We Do Not Track You
+    </h2>
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      We do not track you as that term is defined by Apple's App Tracking Transparency policy. We do not link data collected in Langlets with third-party data for advertising purposes, and we do not share your data with data brokers. Langlets contains no advertising networks and no attribution or ad-measurement software, and it never accesses your device's advertising identifier (IDFA). The analytics described above are used solely to understand and improve Langlets itself.
+    </p>
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Information Sharing
     </h2>
-    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Since we do not collect personal information or user data, there is no personal information to share. The analytics data collected by Microsoft Clarity is governed by Microsoft's privacy policy and is used in accordance with their terms of service.
+    <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+      We do not sell your personal information and we do not share it for advertising. We share limited information with the service providers that make the app work:
     </p>
-    
+    <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-4 space-y-2 ml-4">
+      <li><strong class="text-gray-900 dark:text-gray-50">Microsoft</strong> — Clarity analytics, and the Azure Speech service used for pronunciation scoring</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">Cloudflare</strong> — traffic delivery and cookieless web analytics</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">Apple, Google, and GitHub</strong> — only if you choose to sign in with them, and only to authenticate you</li>
+      <li><strong class="text-gray-900 dark:text-gray-50">YouTube</strong> — lesson videos are streamed from YouTube's embedded player, so Google may receive your IP address and set cookies under its own privacy policy</li>
+    </ul>
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      We may also disclose information if required to do so by law, or to protect the rights, safety, and security of our users and our service.
+    </p>
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
-      Data Security
+      Data Retention and Security
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      While we do not store user data, we take reasonable measures to ensure the security of our application and protect against unauthorized access to our systems.
+      We keep your account information and learning data for as long as your account exists. When you delete your account, your account record and the learning data attached to it — saved words, progress, activity logs, statistics, and content you created — are deleted along with it. We take reasonable technical and organizational measures to protect against unauthorized access to our systems, including encrypted connections and hashed passwords. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Third-Party Services
     </h2>
-    
+
     <h3 class="text-xl font-medium text-gray-700 dark:text-gray-300 mt-6 mb-3">
       Microsoft Clarity
     </h3>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      Our app uses Microsoft Clarity for analytics purposes. Microsoft Clarity's collection and use of data is governed by the Microsoft Privacy Statement, which can be found at: 
+      Our app uses Microsoft Clarity for analytics purposes. Microsoft Clarity's collection and use of data is governed by the Microsoft Privacy Statement, which can be found at:
       <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
         https://privacy.microsoft.com/en-us/privacystatement
       </a>
     </p>
-    
+
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      You can opt out of Microsoft Clarity data collection by visiting: 
+      You can opt out of Microsoft Clarity data collection by visiting:
       <a href="https://clarity.microsoft.com/terms" target="_blank" rel="noopener noreferrer" class="text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline transition-colors duration-200">
         https://clarity.microsoft.com/terms
       </a>
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Your Rights and Choices
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
-      Since we do not collect or store personal information, there is no personal data for you to access, modify, or delete. However, you can:
+      You have control over the information you give us. You can:
     </p>
     <ul class="list-disc list-inside text-gray-500 dark:text-gray-400 mb-6 space-y-2 ml-4">
-      <li>Use browser settings to disable cookies and tracking</li>
-      <li>Opt out of Microsoft Clarity tracking using the link provided above</li>
-      <li>Contact us with any privacy-related questions or concerns</li>
+      <li>Browse the Langlets website without creating an account at all</li>
+      <li>Access and update your account details from your account settings</li>
+      <li>Delete your account at any time, which permanently removes your account and the learning data attached to it — contact us at the address below and we will delete it promptly</li>
+      <li>Request a copy of your personal information, or ask us to correct it, by contacting us</li>
+      <li>Decline or revoke microphone permission in your device settings, which disables only pronunciation practice</li>
+      <li>Opt out of Microsoft Clarity data collection using the link provided above</li>
+      <li>Use browser settings to disable cookies</li>
     </ul>
-    
+    <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
+      Depending on where you live, you may have additional rights under laws such as the GDPR or the CCPA, including the right to object to or restrict processing and the right to data portability. Contact us at the address below and we will honor them.
+    </p>
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Children's Privacy
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Langlets does not knowingly collect personal information from children under 13 years of age. Since we do not collect personal information from any users, our service is safe for users of all ages.
+      Langlets is not directed to children under 13, and we do not knowingly collect personal information from children under 13. If you believe a child under 13 has created an account, please contact us and we will delete the account and its data.
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       International Users
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
-      Langlets may be accessed by users worldwide. The analytics data collected by Microsoft Clarity may be transferred to and processed in countries other than your own, in accordance with Microsoft's privacy practices.
+      Langlets may be accessed by users worldwide. Your account information, learning data, and analytics data may be transferred to and processed in countries other than your own, including by the service providers listed above, in accordance with their privacy practices. Langlets behaves the same way in every country and region.
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Changes to This Privacy Policy
     </h2>
     <p class="text-gray-500 dark:text-gray-400 mb-6 leading-relaxed">
       We may update this privacy policy from time to time to reflect changes in our practices or applicable laws. We will post any changes on this page and update the "Last updated" date above. We encourage you to review this privacy policy periodically.
     </p>
-    
+
     <h2 class="text-2xl font-semibold mt-8 mb-4 border-l-4 border-emerald-500 pl-4">
       Contact Us
     </h2>
@@ -135,11 +188,11 @@
     </p>
     <div class="bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-6">
       <p class="text-gray-500 dark:text-gray-400">
-        <strong class="text-gray-900 dark:text-gray-50">Email:</strong> [Your contact email]<br>
-        <strong class="text-gray-900 dark:text-gray-50">Website:</strong> [Your website URL]
+        <strong class="text-gray-900 dark:text-gray-50">Email:</strong> ynon@langlets.app<br>
+        <strong class="text-gray-900 dark:text-gray-50">Website:</strong> https://langlets.app
       </p>
     </div>
-    
+
     <hr class="border-gray-300 dark:border-gray-700 my-8">
 
     <p class="text-gray-400 dark:text-gray-600 italic text-sm">
