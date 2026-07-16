@@ -57,10 +57,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             AppleAuthComponent.self
         ])
 
-        // Load path configuration
+        // Load path configuration. The bundled file is the offline fallback and
+        // seeds the very first launch; the server copy wins once it arrives, so
+        // routing rules can change without shipping a new build.
+        var pathConfigurationSources: [PathConfiguration.Source] = []
         if let pathConfigURL = Bundle.main.url(forResource: "path_configuration", withExtension: "json") {
-            Hotwire.loadPathConfiguration(from: [.file(pathConfigURL)])
+            pathConfigurationSources.append(.file(pathConfigURL))
         }
+        pathConfigurationSources.append(.server(rootURL.appending(path: "/configurations/ios_v1.json")))
+        Hotwire.loadPathConfiguration(from: pathConfigurationSources)
 
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = navigator.rootViewController

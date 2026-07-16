@@ -28,9 +28,14 @@ module CourseBuilder
         l1 = Language.find_by(english_name: progress.clip_language)
         l2 = Language.find_by(english_name: progress.translation_language)
         user = course.user
-        medium = Medium.find_or_create_by!(url: progress.youtubeurl) do |m|
-          m.language = l1
-        end
+        # Keyed on the language pair, not the URL alone: the same video imported
+        # for a second translation language must get its own medium, or the
+        # destroy_all below wipes the first course's phrases.
+        medium = Medium.find_or_create_by!(
+          url: progress.youtubeurl,
+          language: l1,
+          translation_language: l2
+        )
 
         medium.phrases.destroy_all
 

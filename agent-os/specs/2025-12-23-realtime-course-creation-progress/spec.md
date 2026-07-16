@@ -1,5 +1,24 @@
 # Specification: Realtime Course Creation Progress
 
+> **SUPERSEDED — not implemented, do not implement.**
+>
+> Import progress is now surfaced by the mobile app's Queue screen, which polls a
+> `progress_percent` column on `import_requests` every 3s rather than streaming
+> over Action Cable. The reasoning: this app has no `app/channels` at all (even
+> `ApplicationCable::Connection` would be new), WKWebView sockets drop whenever
+> iOS backgrounds the app, and pipeline updates only arrive at LLM-step
+> boundaries — tens of seconds apart — so sub-second delivery buys nothing. The
+> signal that actually matters when an import finishes is an APNs push.
+>
+> Two artifacts of this spec leaked onto `main` and have been cleaned up: a dead
+> `resources :create_song_progress` route pointing at a controller that never
+> existed, and the unbacked `courses.create_song_progress_id` column (now covered
+> by `db/migrate/20251225152852_connect_course_to_creator.rb`).
+>
+> Earlier attempts live on `origin/copilot/create-song-progress-view` (850c820)
+> and the local `create-song-progress-view` branch (685da3e). Neither is an
+> ancestor of `main`.
+
 ## Goal
 Build a public progress page that displays real-time updates as a CreateSongProgress record generates a course, allowing users to watch lyrics extraction and translation streaming live via Action Cable and Turbo Streams.
 

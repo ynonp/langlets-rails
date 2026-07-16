@@ -56,7 +56,11 @@ class Course < ApplicationRecord
 
     l1 = Language.find_by(english_name: data_hash["clip_language"])
     l2 = Language.find_by(english_name: data_hash["translation_language"])
-    medium = Medium.find_or_create_by!(url: data_hash["youtubeurl"])
+    medium = Medium.find_or_create_by!(
+      url: data_hash["youtubeurl"],
+      language: l1,
+      translation_language: l2
+    )
 
     self.lessons.destroy_all
     medium.phrases.destroy_all
@@ -157,7 +161,11 @@ class Course < ApplicationRecord
     l1 = Language.find_by(english_name: data_hash["clip_language"])
     l2 = Language.find_by(english_name: data_hash["translation_language"])
     Rails.logger.info("Finding medium")
-    medium = Medium.find_or_create_by!(url: data_hash["youtubeurl"], language: l1)
+    medium = Medium.find_or_create_by!(
+      url: data_hash["youtubeurl"],
+      language: l1,
+      translation_language: l2
+    )
 
     all_alignment_tokens = []
     all_listen_tokens = []

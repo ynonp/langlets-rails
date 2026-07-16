@@ -13,8 +13,11 @@ class LearningPath < ApplicationRecord
 
   def destroy_with_all_courses
     courses.each do |course|
-      url = course.main_media_url
-      medium = Medium.find_by(url:)
+      # Read through the course's own lessons rather than looking the medium up
+      # by URL: one URL now has a medium per language pair, so a URL lookup could
+      # return another pair's medium and destroy the wrong course's phrases.
+      # Captured before course.destroy, which cascades the lessons away.
+      medium = course.medium
       lesson_ids = course.lessons.pluck(:id)
       ActivityLog.where(lesson_id: lesson_ids).destroy_all
       course.destroy

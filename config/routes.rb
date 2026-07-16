@@ -37,7 +37,9 @@ Rails.application.routes.draw do
     post "users/auth/native_google", to: "users/omniauth_callbacks#native_google"
     post "users/auth/native_apple", to: "users/omniauth_callbacks#native_apple"
   end
-  resources :create_song_progress, only: [ :show ]
+  # Hotwire Native path configuration for the iOS app (see ConfigurationsController).
+  get "/configurations/ios_v1", to: "configurations#ios_v1"
+
   get "home/privacy"
   get "home/terms"
   get "support", to: "home#support"

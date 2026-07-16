@@ -9,7 +9,7 @@ namespace :media do
     l2 = Language.find_by(iso_name: args[:translation_language])
     raise ArgumentError, "Missing translation_language" unless l2
     
-    m = Medium.find_or_create_by!(url: args[:video_url])    
+    m = Medium.find_or_create_by!(url: args[:video_url], language: l1, translation_language: l2)
     m.create_phrases(l1, l2)
   end
 end

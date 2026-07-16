@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_04_142700) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -294,8 +294,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_04_142700) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "language_id"
+    t.bigint "translation_language_id"
     t.index ["language_id"], name: "index_media_on_language_id"
-    t.index ["url"], name: "index_media_on_url", unique: true
+    t.index ["translation_language_id"], name: "index_media_on_translation_language_id"
+    t.index ["url", "language_id", "translation_language_id"], name: "index_media_on_url_and_language_pair", unique: true
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -459,6 +461,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_04_142700) do
   add_foreign_key "lessons", "courses", on_delete: :cascade
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
+  add_foreign_key "media", "languages", column: "translation_language_id"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
   add_foreign_key "phrases", "languages", column: "l1_id"

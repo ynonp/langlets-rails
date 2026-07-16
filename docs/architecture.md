@@ -69,13 +69,27 @@
   - Belongs to Script
 
 #### 5. **Medium** (`media`)
-- **Purpose**: Store references to external media content (YouTube videos)
+- **Purpose**: Store one video *transcribed into one language pair* — not simply "a video"
 - **Key Features**:
-  - Unique URL constraint
+  - **Keyed on `(url, language_id, translation_language_id)`**, uniquely indexed as
+    `index_media_on_url_and_language_pair`. `language` is the clip language,
+    `translation_language` the language it was translated into, so the same URL has
+    one row per pair.
+  - This is load-bearing, not incidental: `medium.phrases` is treated as "this
+    course's phrases" throughout the app (`FullPlayerController`, the activity
+    builders, `Lesson`, `ResyncTimestampsJob`). Keying on URL alone made two courses
+    for the same video share a medium, so `CourseBuilder::BuildSong`'s
+    `medium.phrases.destroy_all` wiped the other course's phrases, and the player
+    interleaved both languages. Keying on the pair keeps every `medium.phrases`
+    caller correct by construction — **never look a medium up by URL alone**; read it
+    through `course.medium`.
+  - `translation_language` is `optional: true` only to tolerate pre-existing rows
+    with no phrases to backfill from. New records always set it.
   - YouTube video ID extraction
-- **Relationships**: 
+- **Relationships**:
   - One-to-many with Lessons
   - One-to-many with Phrases
+  - Belongs to Language (clip language) and Language (translation_language)
 
 #### 6. **Course** (`courses`)
 - **Purpose**: Group lessons into structured learning paths
@@ -439,6 +453,16 @@ The platform implements a modern, accessible authentication system with the foll
 ### Mobile App (Hotwire Native iOS)
 
 The iOS app is a Hotwire Native wrapper around the Rails web application. It uses WKWebView with shared cookies via `WKWebsiteDataStore.default()`, allowing seamless session sharing with Safari.
+
+#### Path Configuration (which screens are modals)
+
+`SceneDelegate` loads path configuration from two sources, **in order**:
+1. `.file(...)` — the copy bundled at `langlets-ios/langlets/langlets/Configuration/path_configuration.json`. Offline fallback and first-launch seed.
+2. `.server(...)` — `GET /configurations/ios_v1.json`, served by `ConfigurationsController` from `config/hotwire/ios_path_configuration.json`. **This one wins at runtime**, so routing rules can change with a Rails deploy instead of an App Store release.
+
+Two things to know before touching this:
+- `ConfigurationsController` inherits `ActionController::API`, *not* `ApplicationController`. Under `ApplicationController`, `require_authentication_for_native_app` would answer a signed-out native request with a redirect to the sign-in page and the app would parse that HTML as path configuration.
+- The bundled and served copies must stay identical in the repo; `test/controllers/configurations_controller_test.rb` enforces it. Edit both together.
 
 #### Onboarding Flow
 1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.

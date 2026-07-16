@@ -5,6 +5,13 @@ class Medium < ApplicationRecord
   has_many :phrases
   belongs_to :language
 
+  # A medium is one video transcribed into one language pair: `language` is the
+  # clip language, `translation_language` the one it was translated into. The
+  # same URL therefore appears once per pair, which is what keeps `phrases`
+  # scoped to a single course. Optional only to tolerate pre-existing rows that
+  # have no phrases to derive it from.
+  belongs_to :translation_language, class_name: "Language", optional: true
+
   def self.youtube_thumbnail_url(video_id, quality = 'hqdefault')
     "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
   end
