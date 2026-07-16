@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   get "home/terms"
   get "support", to: "home#support"
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
+  get "profile", to: "profile#show", as: :profile
   root "courses#index"
   get "/sitemap.xml", to: "sitemaps#show", defaults: { format: :xml }
   get "landing_page/index"

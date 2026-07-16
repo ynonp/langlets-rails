@@ -20,6 +20,22 @@ class User < ApplicationRecord
   # Activity logging relationship
   has_many :activity_logs, dependent: :destroy
 
+  # XP / streak counters. Required for destroy: user_game_stats has a foreign
+  # key to users with no ON DELETE rule, so without this the delete raises
+  # ActiveRecord::InvalidForeignKey for any user who has earned XP.
+  has_many :user_game_stats, dependent: :destroy
+
+  # OAuth tokens issued to AI agents and the CLI (see settings/connections).
+  # Destroyed with the account so a deleted user's tokens can't keep calling /mcp.
+  has_many :oauth_access_grants,
+           class_name: "Doorkeeper::AccessGrant",
+           foreign_key: :resource_owner_id,
+           dependent: :destroy
+  has_many :oauth_access_tokens,
+           class_name: "Doorkeeper::AccessToken",
+           foreign_key: :resource_owner_id,
+           dependent: :destroy
+
   # Saved token translations for personal review
   has_many :token_translation_users, dependent: :destroy
   has_many :saved_token_translations, through: :token_translation_users, source: :token_translation

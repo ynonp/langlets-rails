@@ -103,6 +103,9 @@
             <% if current_user.languages_with_saved_words.exists? %>
               <div class="border-t border-gray-200 dark:border-gray-800 my-1"></div>
             <% end %>
+            <%= link_to "Profile", profile_path,
+              class: "block px-4 py-3 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-150"
+            %>
             <%= link_to "Connected Apps", settings_connections_path,
               class: "block px-4 py-3 text-gray-900 dark:text-gray-50 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg transition-colors duration-150"
             %>

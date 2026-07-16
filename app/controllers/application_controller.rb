@@ -2,6 +2,11 @@ class ApplicationController < ActionController::Base
   # Only allow modern browsers supporting webp images, web push, badges, import maps, CSS nesting, and CSS :has.
   # allow_browser versions: :modern
 
+  # ?lang=all means "show content in every language": it clears the stored
+  # language rather than selecting one. Web only — the native app always has a
+  # language, picked during onboarding.
+  ALL_LANGUAGES = "all".freeze
+
   before_action :store_language_in_session
   before_action :require_authentication_for_native_app
   before_action :require_language_for_native_app
@@ -29,11 +34,21 @@ class ApplicationController < ActionController::Base
   end
 
   def store_language_in_session
-    session[:lang] = params[:lang] if params[:lang].present?
+    return if params[:lang].blank?
+
+    if params[:lang] == ALL_LANGUAGES
+      session.delete(:lang)
+    else
+      session[:lang] = params[:lang]
+    end
   end
 
+  # The language the user is learning, or nil when they asked to see content in
+  # every language.
+  helper_method :current_language_code
   def current_language_code
-    params[:lang].presence || session[:lang]
+    code = params[:lang].presence || session[:lang]
+    code unless code == ALL_LANGUAGES
   end
 
   def require_authentication_for_native_app
@@ -50,7 +65,7 @@ class ApplicationController < ActionController::Base
   def require_language_for_native_app
     return unless native_app?
     return unless user_signed_in?
-    return if (params[:lang] || session[:lang]).present?
+    return if current_language_code.present?
     return if devise_controller?
     return if controller_name == "onboarding" && action_name == "language"
     return if controller_name == "health"
@@ -59,8 +74,10 @@ class ApplicationController < ActionController::Base
     redirect_to onboarding_language_path(returnto: request.fullpath)
   end
 
+  # Carries the selected language onto every generated URL, so all content stays
+  # in that language. Dropped once the user asks to see all content.
   def default_url_options
-    super.merge(lang: (params[:lang] || session[:lang])).compact
+    super.merge(lang: current_language_code).compact
   end
 
   # Redirect to returnto param after successful sign in

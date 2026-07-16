@@ -14,6 +14,23 @@ class ActivityLog < ApplicationRecord
     where(user: user).sum(:xp_gained)
   end
 
+  # XP totals for each of the last `days` days, oldest first, including days
+  # with no activity so the caller always gets a full series to chart.
+  # Bucketed in Ruby against Time.zone rather than SQL DATE() so the days line
+  # up with daily_xp_for_user, which uses zone-aware day boundaries.
+  def self.daily_xp_series_for_user(user, days: 7)
+    today = Time.zone.now.to_date
+    first_day = today - (days - 1).days
+
+    totals = where(user: user, created_at: first_day.beginning_of_day..today.end_of_day)
+      .pluck(:created_at, :xp_gained)
+      .each_with_object(Hash.new(0)) do |(created_at, xp), acc|
+        acc[created_at.in_time_zone.to_date] += xp.to_i
+      end
+
+    (first_day..today).map { |date| { date: date, xp: totals[date] } }
+  end
+
   # Streak calculation method
   def self.current_streak_for_user(user)
     streak_data = streak_info_for_user(user)
