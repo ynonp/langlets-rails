@@ -1,6 +1,14 @@
 require "test_helper"
 
 class AppleSignInTest < ActionDispatch::IntegrationTest
+  setup do
+    OmniAuth.config.test_mode = true
+  end
+
+  teardown do
+    OmniAuth.config.test_mode = false
+  end
+
   test "login page shows the Apple sign-in button" do
     get new_user_session_path
 
@@ -49,5 +57,19 @@ class AppleSignInTest < ActionDispatch::IntegrationTest
     assert_equal "apple", user.provider
     assert_equal "001234.abcdef", user.uid
     assert user.confirmed?
+  end
+
+  test "apple callback failures are not replaced by cross-origin CSRF errors" do
+    previous_forgery_protection = ActionController::Base.allow_forgery_protection
+    ActionController::Base.allow_forgery_protection = true
+    OmniAuth.config.mock_auth[:apple] = :invalid_credentials
+
+    post user_apple_omniauth_callback_path,
+      headers: { "HTTP_ORIGIN" => "https://appleid.apple.com" }
+
+    assert_redirected_to root_path
+  ensure
+    ActionController::Base.allow_forgery_protection = previous_forgery_protection
+    OmniAuth.config.mock_auth.delete(:apple)
   end
 end

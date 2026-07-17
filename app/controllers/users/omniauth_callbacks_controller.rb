@@ -3,9 +3,11 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   include Devise::Controllers::Rememberable
 
-  # :apple is included because Apple delivers its callback as a cross-site
-  # form POST, which carries no Rails CSRF token.
-  skip_before_action :verify_authenticity_token, only: [ :native_google, :native_apple, :apple ]
+  # Apple delivers its callback as a cross-site form POST, which carries no
+  # Rails CSRF token. OmniAuth dispatches callback errors to #failure using the
+  # same request, so that action must be exempt as well or the OAuth error gets
+  # replaced by an InvalidAuthenticityToken response.
+  skip_before_action :verify_authenticity_token, only: [ :native_google, :native_apple, :apple, :failure ]
 
   def google_oauth2
     @user = User.from_omniauth(request.env["omniauth.auth"])

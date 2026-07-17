@@ -3,7 +3,7 @@ import GoogleSignIn
 import UIKit
 import WebKit
 
-let rootURL = URL(string: "http://localhost:3000")!
+let rootURL = URL(string: "https://langlets.app")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
