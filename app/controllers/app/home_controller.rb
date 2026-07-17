@@ -21,7 +21,7 @@ module App
       @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)
       @completed_counts = completed_counts_for(candidates.map(&:course_id))
 
-      @enrollments = candidates.reject { |enrollment| finished?(enrollment) }
+      @enrollments = candidates.reject { |enrollment| finished?(enrollment) }.first(2)
 
       # First run = nothing to continue and nothing just imported: the screen
       # becomes a song picker instead of a progress list.

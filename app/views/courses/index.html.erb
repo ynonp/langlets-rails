@@ -96,8 +96,10 @@
         <% end %>
 
         <!-- User Menu -->
-        <div class="relative group">
-          <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+        <div class="relative group"
+             data-controller="profile-menu"
+             data-action="click@document->profile-menu#close">
+          <input type="checkbox" id="user-menu-toggle" class="hidden peer" data-profile-menu-target="toggle">
           <label for="user-menu-toggle" class="flex items-center cursor-pointer">
             <img src="<%= 'https://ui-avatars.com/api/?name=' + ERB::Util.url_encode(current_user.email) %>" alt="Avatar" class="w-10 h-10 rounded-full shadow border-2 border-emerald-500" />
           </label>

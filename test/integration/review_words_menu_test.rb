@@ -164,6 +164,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
 
     assert_select "button", text: "📚 Review Words (#{@english.iso_name})"
     assert_select "button", text: "📚 Review Words (#{@arabic.iso_name})"
+    assert_web_profile_menu
   end
 
   test "playlist show page shows language-specific review buttons" do
@@ -180,6 +181,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_response :success
 
     assert_select "button", text: "📚 Review Words (#{@hebrew.iso_name})"
+    assert_web_profile_menu
   end
 
   test "root header keeps theme and xp controls in mobile profile menu" do
@@ -192,6 +194,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "[data-testid='header-xp-desktop']", count: 1
     assert_select "[data-testid='header-theme-mobile-menu']", count: 1
     assert_select "[data-testid='header-xp-mobile-menu']", count: 1
+    assert_web_profile_menu
   end
 
   test "root page uses tabs to switch between courses and standalone clips" do
@@ -261,6 +264,12 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   private
+
+  def assert_web_profile_menu
+    assert_select "[data-controller='profile-menu'][data-action='click@document->profile-menu#close']" do
+      assert_select "input[data-profile-menu-target='toggle']", count: 1
+    end
+  end
 
   def sign_in(user)
     post user_session_url, params: {

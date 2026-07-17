@@ -554,7 +554,7 @@ The native tab controller, navigator roots and non-opaque webviews all use the a
 
 The 2.x app pages render only the floating Add button (except Home, which swaps it for an inline dashed "bring your own" card, `app/views/app/home/_import_card.html.erb`); the native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Queue item. The server gates `/app` screens on the 2.x user agent so already-shipped 1.x builds remain on the regular web UI. Tab-root paths deliberately have no `replace_root` path-configuration rule because cross-tab routing is native; modal routes retain their existing rules.
 
-- **Home has two states** (`App::HomeController#index`). With something to continue: greeting, optional "just imported" hero, "Keep it going" rows, and two Library suggestions under "More from the library". With nothing to continue (`@first_run`): a "Pick your first song" picker of four Library suggestions. Suggestions are random published courses in the learning language the user isn't enrolled in — deliberately dumb until real selection lands. Both states also show the signed-in user's personal playlists, including empty playlists; system playlists and other users' playlists are excluded from this section. Playlist rows link to the existing authorized playlist page and count only published courses.
+- **Home has two states** (`App::HomeController#index`). With something to continue: greeting, optional "just imported" hero, the two most recently practiced unfinished courses under "Keep it going" with a centered Library "See all" link below them, and two Library suggestions under "More from the library". With nothing to continue (`@first_run`): a "Pick your first song" picker of four Library suggestions. Suggestions are random published courses in the learning language the user isn't enrolled in — deliberately dumb until real selection lands. Both states also show the signed-in user's personal playlists, including empty playlists; system playlists and other users' playlists are excluded from this section. Playlist rows link to the existing authorized playlist page and count only published courses.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
 - Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities.
@@ -975,6 +975,11 @@ All 3 user profile menus show a "📚 Review Words" button when the user has sav
 - `courses/index.html.erb`
 - `courses/show.html.erb`
 - `playlists/show.html.erb`
+
+These checkbox-backed web profile menus use `profile_menu_controller.js` to clear
+their toggle when a document click lands outside the menu. The same controller
+also closes the native Home header's `details` menu, keeping outside-click
+behavior consistent across both menu implementations.
 
 The native app Home header also uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
 - `app/views/app/shared/_header.html.erb`

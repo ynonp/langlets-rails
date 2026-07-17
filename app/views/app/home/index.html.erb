@@ -66,17 +66,21 @@
 
     <%# Keep it going %>
     <% if @enrollments.any? %>
-      <div class="flex items-baseline justify-between">
+      <div data-testid="keep-it-going" class="flex flex-col gap-2.5">
         <h2 class="text-[15px] font-bold">Keep it going</h2>
-        <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
-      </div>
 
-      <div class="flex flex-col gap-2.5">
-        <% @enrollments.each do |enrollment| %>
-          <%= render "app/home/course_row", course: enrollment.course,
-                     total: @lesson_counts[enrollment.course_id].to_i,
-                     completed: @completed_counts[enrollment.course_id].to_i %>
-        <% end %>
+        <div class="flex flex-col gap-2.5">
+          <% @enrollments.each do |enrollment| %>
+            <%= render "app/home/course_row", course: enrollment.course,
+                       total: @lesson_counts[enrollment.course_id].to_i,
+                       completed: @completed_counts[enrollment.course_id].to_i %>
+          <% end %>
+        </div>
+
+        <p class="text-center mt-1">
+          <%= link_to "See all", app_library_path,
+                      class: "text-app-accent text-[13px] font-semibold" %>
+        </p>
       </div>
     <% end %>
 

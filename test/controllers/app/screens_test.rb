@@ -131,6 +131,42 @@ module App
       assert second.persisted?
     end
 
+    test "Home shows the two latest courses with See all below them" do
+      older_medium = Medium.create!(url: "https://www.youtube.com/watch?v=oldercourse1",
+                                    language: @spanish, translation_language: @english)
+      older_course = Course.create!(name: "Older Course", slug: "older-course",
+                                    main_media_url: older_medium.url, youtube_video_id: "oldercourse1",
+                                    language: @spanish, translation_language: @english,
+                                    user: @user, status: :published)
+      Lesson.create!(course: older_course, medium: older_medium, user: @user,
+                     slug: "older-lesson", name: "Older lesson", order: 0)
+      Enrollment.create!(user: @user, course: older_course, source: :library,
+                         last_practiced_at: 2.hours.ago)
+
+      latest_medium = Medium.create!(url: "https://www.youtube.com/watch?v=latestcours",
+                                     language: @spanish, translation_language: @english)
+      latest_course = Course.create!(name: "Latest Course", slug: "latest-course",
+                                     main_media_url: latest_medium.url, youtube_video_id: "latestcours",
+                                     language: @spanish, translation_language: @english,
+                                     user: @user, status: :published)
+      Lesson.create!(course: latest_course, medium: latest_medium, user: @user,
+                     slug: "latest-lesson", name: "Latest lesson", order: 0)
+      Enrollment.create!(user: @user, course: latest_course, source: :library,
+                         last_practiced_at: 30.minutes.ago)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "[data-testid='keep-it-going']" do
+        assert_select "h2:first-child", text: "Keep it going"
+        assert_select "a[href=?]", app_library_path, text: "See all", count: 1
+        assert_select "a", text: /Latest Course/
+        assert_select "a", text: /Despacito/
+        assert_select "a", text: /Older Course/, count: 0
+        assert_select "p:last-child a", text: "See all"
+      end
+    end
+
     # With nothing to continue, Home becomes the first-run song picker: library
     # courses in the user's language, none of which they're enrolled in.
     test "Home with an empty account shows the song picker with library courses" do

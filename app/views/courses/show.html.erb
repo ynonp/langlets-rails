@@ -57,8 +57,10 @@
         </div>
 
         <% if user_signed_in? %>
-          <div class="relative">
-            <input type="checkbox" id="user-menu-toggle" class="hidden peer">
+          <div class="relative"
+               data-controller="profile-menu"
+               data-action="click@document->profile-menu#close">
+            <input type="checkbox" id="user-menu-toggle" class="hidden peer" data-profile-menu-target="toggle">
             <label for="user-menu-toggle" class="cursor-pointer w-10 h-10 rounded-full border-2 border-emerald-500 bg-gradient-to-br from-emerald-300 to-emerald-500 flex items-center justify-center font-extrabold text-white"><%= user_name.first.upcase %></label>
             <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden
                  bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
