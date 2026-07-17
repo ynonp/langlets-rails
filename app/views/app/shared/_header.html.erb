@@ -14,7 +14,10 @@
       <span class="text-app-credits text-[13px] font-bold"><%= current_user.credit_balance %></span>
     <% end %>
 
-    <details class="relative" data-testid="app-profile-menu">
+    <details class="relative"
+             data-testid="app-profile-menu"
+             data-controller="profile-menu"
+             data-action="click@document->profile-menu#close">
       <summary class="w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center cursor-pointer list-none [&::-webkit-details-marker]:hidden"
                aria-label="Open profile menu">
         <span class="text-[13px] font-bold text-[#B9C7D2]"><%= current_user.email.first.upcase %></span>

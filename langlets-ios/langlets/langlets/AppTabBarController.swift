@@ -1,5 +1,6 @@
 import HotwireNative
 import UIKit
+import WebKit
 
 /// The native tab bar hosting the three app screens. Each tab owns its own
 /// Navigator, so switching is instant and every tab keeps its webview — scroll
@@ -105,6 +106,7 @@ final class AppTabBarController: UITabBarController {
     }
 
     func selectTab(at index: Int) {
+        closeProfileMenus(except: index)
         selectedIndex = index
         routeTabIfNeeded(at: index)
     }
@@ -115,6 +117,7 @@ final class AppTabBarController: UITabBarController {
     /// badge; an unknown slug just falls back to the ordinary Home.
     func showJustImported(courseSlug: String) {
         let index = Self.homeTabIndex
+        closeProfileMenus(except: index)
         selectedIndex = index
 
         // The tab is now routed; don't let routeTabIfNeeded overwrite this with
@@ -160,6 +163,25 @@ final class AppTabBarController: UITabBarController {
         navigators[index].route(proposal)
     }
 
+    /// Each tab retains its webview, including the open state of HTML details
+    /// elements. Close profile menus before their tab moves to the background
+    /// so they are not still open when the user returns.
+    private func closeProfileMenus(except selectedIndex: Int) {
+        for index in navigators.indices where index != selectedIndex {
+            webViews(in: navigators[index].rootViewController.view).forEach { webView in
+                webView.evaluateJavaScript(
+                    "document.querySelectorAll('[data-testid=app-profile-menu][open]').forEach((menu) => menu.removeAttribute('open'))"
+                )
+            }
+        }
+    }
+
+    private func webViews(in view: UIView) -> [WKWebView] {
+        var matches = view.subviews.compactMap { $0 as? WKWebView }
+        matches.append(contentsOf: view.subviews.flatMap { webViews(in: $0) })
+        return matches
+    }
+
     /// The tab's start URL, carrying the language picked during onboarding —
     /// the same UserDefaults key SceneDelegate used for the single-navigator
     /// start location. Without it, a cold launch's first request has no `lang`
@@ -177,6 +199,7 @@ final class AppTabBarController: UITabBarController {
 
 extension AppTabBarController: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        closeProfileMenus(except: selectedIndex)
         routeTabIfNeeded(at: selectedIndex)
     }
 }

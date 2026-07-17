@@ -94,6 +94,9 @@ application.register("poll", PollController)
 import PopoverTranslationController from "./popover_translation_controller"
 application.register("popover-translation", PopoverTranslationController)
 
+import ProfileMenuController from "./profile_menu_controller"
+application.register("profile-menu", ProfileMenuController)
+
 import ProgressTrackerController from "./progress_tracker_controller"
 application.register("progress-tracker", ProgressTrackerController)
 
