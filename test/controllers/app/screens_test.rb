@@ -6,7 +6,8 @@ module App
   class ScreensTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
 
-    NATIVE = { "User-Agent" => "LangletsNative/1.0" }.freeze
+    NATIVE = { "User-Agent" => "LangletsNative/2.0" }.freeze
+    LEGACY_NATIVE = { "User-Agent" => "LangletsNative/1.0" }.freeze
     WEB = { "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" }.freeze
 
     SCREENS = {
@@ -57,6 +58,13 @@ module App
       SCREENS.each_value do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
+      end
+    end
+
+    test "a legacy app build is redirected away from native-tab screens" do
+      SCREENS.each_value do |path|
+        get path, headers: LEGACY_NATIVE
+        assert_redirected_to root_path, "#{path} should be gated to native-tab builds"
       end
     end
 

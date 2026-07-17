@@ -28,6 +28,14 @@ class ApplicationController < ActionController::Base
     request.user_agent&.include?("LangletsNative")
   end
 
+  # Returns true for app builds that draw their own native tab bar (2.x). The
+  # 1.x builds render the web tab bar in _tab_bar.html.erb instead. Like
+  # native_app?, this is UA sniffing and only ever changes presentation.
+  helper_method :native_tabs_app?
+  def native_tabs_app?
+    request.user_agent&.include?("LangletsNative/2")
+  end
+
   # Returns true for mobile browsers (including tablets).
   def mobile?
     request.user_agent&.match?(/Mobi|Android|iPhone|iPad|iPod|Windows Phone|webOS|BlackBerry|Opera Mini/i)

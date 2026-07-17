@@ -3,34 +3,29 @@ import GoogleSignIn
 import UIKit
 import WebKit
 
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "http://localhost:3000")!
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
 
-    private var startLocation: URL {
-        var url = rootURL
-        if let lang = UserDefaults.standard.string(forKey: "selectedLanguage") {
-            url = url.appending(queryItems: [URLQueryItem(name: "lang", value: lang)])
-        }
-        return url
-    }
+    // The tab bar controller owns one Navigator per tab. Created lazily so
+    // Hotwire.config is fully set up in scene(_:willConnectTo:) before any
+    // Navigator (and its webview) exists.
+    private lazy var tabBarController = AppTabBarController(navigatorDelegate: self)
 
-    private lazy var navigator: Navigator = {
+    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
+        guard let windowScene = scene as? UIWindowScene else { return }
+
         Hotwire.config.makeCustomWebView = { config in
             config.allowsInlineMediaPlayback = true
             config.mediaTypesRequiringUserActionForPlayback = []
             return WKWebView(frame: .zero, configuration: config)
         }
-        
-        return Navigator(configuration: .init(name: "main", startLocation: startLocation), delegate: self)
-    }()
 
-    func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = scene as? UIWindowScene else { return }
-
-        // Configure Hotwire Native
-        Hotwire.config.applicationUserAgentPrefix = "LangletsNative/1.0"
+        // Configure Hotwire Native. The /2.0 marks builds with the native tab
+        // bar: the server only routes those into the /app screens — 1.x builds
+        // keep the web UI (ApplicationController#native_tabs_app?).
+        Hotwire.config.applicationUserAgentPrefix = "LangletsNative/2.0"
 
         #if DEBUG
         Hotwire.config.debugLoggingEnabled = true
@@ -46,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
         GIDSignIn.sharedInstance.configuration = googleConfig
 
-        // Register bridge components (must happen before navigator.start())
+        // Register bridge components (must happen before the first navigator starts)
         Hotwire.registerBridgeComponents([
             ProgressHapticComponent.self,
             AudioFeedbackComponent.self,
@@ -54,7 +49,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             AuthBridgeComponent.self,
             LanguageSelectionBridgeComponent.self,
             GoogleAuthComponent.self,
-            AppleAuthComponent.self
+            AppleAuthComponent.self,
+            TabBadgeComponent.self
         ])
 
         // Load path configuration. The bundled file is the offline fallback and
@@ -68,7 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Hotwire.loadPathConfiguration(from: pathConfigurationSources)
 
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = navigator.rootViewController
+        window?.rootViewController = tabBarController
         window?.makeKeyAndVisible()
 
         // Listen for OAuth success notification from AuthService
@@ -87,7 +83,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             object: nil
         )
 
-        navigator.start()
+        // Listen for queue badge counts reported by the app screens
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(queueBadgeDidChange(_:)),
+            name: .queueBadgeDidChange,
+            object: nil
+        )
+
+        tabBarController.start()
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)
@@ -100,8 +104,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         if url.scheme == "langlets" && url.host == "auth-success" {
-            // OAuth completed — navigate to homepage
-            navigator.route(startLocation)
+            // OAuth completed — every tab's content predates the session
+            oauthDidSucceed()
         }
     }
 }
@@ -109,32 +113,55 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 // MARK: - NavigatorDelegate
 
 extension SceneDelegate: NavigatorDelegate {
-    func handle(proposal: VisitProposal) -> UIViewController? {
-        // No native screens in v1 — all routes render in web view
-        return nil
+    func handle(proposal: VisitProposal, from navigator: Navigator) -> ProposalResult {
+        // A link to another tab's root switches tabs instead of pushing that
+        // screen onto the current stack — Home's "See all" lands on the real
+        // Library tab, and the post-import redirect lands on the real Queue.
+        if let index = tabBarController.tabIndex(forPath: proposal.url.path),
+           tabBarController.navigator(forTabAt: index) !== navigator {
+            // If the proposal came out of a modal (the new-import sheet
+            // redirecting to the Queue), the modal stays presented on the
+            // source tab because the rejected proposal never dismisses it.
+            navigator.rootViewController.presentedViewController?.dismiss(animated: true)
+            tabBarController.selectTab(at: index)
+            return .reject
+        }
+
+        // A visit heading into the auth flow means the session is gone;
+        // whatever the other tabs show predates it.
+        if proposal.url.path.hasPrefix("/users/") {
+            tabBarController.reloadOtherTabs(than: navigator)
+        }
+
+        return .accept
     }
 
     @objc private func oauthDidSucceed() {
-        // OAuth completed via ASWebAuthenticationSession.
-        // Reload the current page to pick up the session cookie
-        // that was set in Safari's cookie store (shared with WKWebsiteDataStore.default())
-        navigator.reload()
+        // OAuth completed via ASWebAuthenticationSession. Re-route every tab to
+        // pick up the session cookie that was set in Safari's cookie store
+        // (shared with WKWebsiteDataStore.default()) — re-routing the visible
+        // tab also dismisses its sign-in modal.
+        tabBarController.reloadAllTabs()
     }
 
     @objc private func languageDidSelect(_ notification: Notification) {
-        guard let language = notification.userInfo?["language"] as? String else { return }
-
-        let url: URL
+        // The bridge component already stored the language in UserDefaults, so
+        // the tab URLs pick it up. When onboarding was interrupted on its way
+        // somewhere specific, honor that redirect in the visible tab.
         if let redirectUrlString = notification.userInfo?["redirectUrl"] as? String,
            let redirectUrl = URL(string: redirectUrlString, relativeTo: rootURL)?.absoluteURL {
-            url = redirectUrl
+            tabBarController.reloadOtherTabs(than: tabBarController.activeNavigator)
+            let properties: PathProperties = ["presentation": "replace_root"]
+            let proposal = VisitProposal(url: redirectUrl, options: VisitOptions(action: .replace), properties: properties)
+            tabBarController.activeNavigator.route(proposal)
         } else {
-            url = rootURL.appending(queryItems: [URLQueryItem(name: "lang", value: language)])
+            tabBarController.reloadAllTabs()
         }
+    }
 
-        let properties: PathProperties = ["presentation": "replace_root"]
-        let proposal = VisitProposal(url: url, options: VisitOptions(action: .replace), properties: properties)
-        navigator.route(proposal)
+    @objc private func queueBadgeDidChange(_ notification: Notification) {
+        guard let count = notification.userInfo?["count"] as? Int else { return }
+
+        tabBarController.setQueueBadge(count)
     }
 }
-

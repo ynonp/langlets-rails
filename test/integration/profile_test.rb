@@ -46,6 +46,20 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "[data-controller=?]", "bridge--language-selection", count: 0
   end
 
+  test "native profile shows the current language in a compact bridge select" do
+    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+    sign_in_as @user
+
+    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative/2.0" }
+
+    assert_response :success
+    assert_select "select[data-controller=?][data-action=?]",
+      "bridge--language-selection", "change->bridge--language-selection#selectLanguage", count: 1
+    assert_select "select option[selected][value=?]", language.iso_name, text: /#{language.english_name}/
+    assert_select "[data-controller=?]", "language-select", count: 0
+    assert_select "button[data-controller=?]", "bridge--language-selection", count: 0
+  end
+
   test "selecting a language keeps lang on generated urls, and all content clears it" do
     language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user

@@ -10,6 +10,22 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
     assert config["rules"].any?, "expected at least one routing rule"
   end
 
+  # The 2.x builds' tab bar is a native UITabBarController with one navigator
+  # per tab; a replace_root rule on the tab roots would blow away a tab's stack
+  # on every in-app link to one of them. (1.x builds never visit /app — the
+  # screens are gated on the 2.x user agent — so no rule serves them either.)
+  test "the tab roots carry no replace_root rule" do
+    get "/configurations/ios_v1.json"
+    rules = JSON.parse(response.body)["rules"]
+
+    tab_roots = ["^/app$", "^/app/library$", "^/app/import_requests$"]
+    assert_not rules.any? { |rule|
+      rule.dig("properties", "presentation") == "replace_root" &&
+        (rule.fetch("patterns", []) & tab_roots).any?
+    },
+               "tabs are native now — a replace_root rule would reset a tab's stack on every tab-root link"
+  end
+
   # The trap this guards: ConfigurationsController inherits ActionController::API
   # rather than ApplicationController. Under ApplicationController,
   # require_authentication_for_native_app would answer a signed-out native request

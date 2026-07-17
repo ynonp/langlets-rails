@@ -40,6 +40,9 @@ application.register("bridge--progress-haptic", Bridge__ProgressHapticController
 import Bridge__SignOutController from "./bridge/sign_out_controller"
 application.register("bridge--sign-out", Bridge__SignOutController)
 
+import Bridge__TabBadgeController from "./bridge/tab_badge_controller"
+application.register("bridge--tab-badge", Bridge__TabBadgeController)
+
 import CoursePathsController from "./course_paths_controller"
 application.register("course-paths", CoursePathsController)
 

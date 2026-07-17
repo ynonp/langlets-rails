@@ -12,15 +12,19 @@ module App
 
     private
 
-    # Gate on the existing user-agent check. Note this is presentation only: it's
-    # UA sniffing and trivially spoofed, so nothing here may authorise a credit
-    # spend on the strength of it. Imports::Create does its own checking.
+    # Gate on the user-agent check, and on the 2.x builds specifically: these
+    # screens have no navigation of their own — the tab bar is the native
+    # UITabBarController that only 2.x draws — so a 1.x build landing here
+    # would be stranded. 1.x keeps the web UI at root. Note this is
+    # presentation only: it's UA sniffing and trivially spoofed, so nothing
+    # here may authorise a credit spend on the strength of it. Imports::Create
+    # does its own checking.
     #
     # The ?native=1 escape hatch exists because otherwise every CSS tweak needs
     # the simulator, and these screens will be iterated on a lot. It only ever
     # relaxes which layout you see, never what you're allowed to do.
     def require_native_app
-      return if native_app?
+      return if native_tabs_app?
       return if native_preview?
 
       redirect_to root_path

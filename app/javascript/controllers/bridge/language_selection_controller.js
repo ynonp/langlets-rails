@@ -16,15 +16,21 @@ export default class extends BridgeComponent {
   selectLanguage(event) {
     event.preventDefault()
 
+    const select = event.currentTarget instanceof HTMLSelectElement ? event.currentTarget : null
+    const selectedOption = select?.selectedOptions[0]
+    const language = select?.value || this.isoValue
+    const redirectUrl = selectedOption?.dataset.redirectUrl ||
+      (this.hasRedirectUrlValue ? this.redirectUrlValue : null)
+
     // Outside the native app there is no bridge to send to — navigate directly.
     if (!this.enabled) {
-      if (this.hasRedirectUrlValue) window.location.href = this.redirectUrlValue
+      if (redirectUrl) window.location.href = redirectUrl
       return
     }
 
-    const payload = { language: this.isoValue }
-    if (this.hasRedirectUrlValue) {
-      payload.redirectUrl = this.redirectUrlValue
+    const payload = { language }
+    if (redirectUrl) {
+      payload.redirectUrl = redirectUrl
     }
 
     this.send("languageSelected", payload)

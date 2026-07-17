@@ -533,6 +533,10 @@ Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (
 
 The **only** place the web knows about them is one line in `CoursesController#index`: signed-in native users are redirected to `app_home_path`. Deciding it server-side rather than changing the app's start location means it can change without an App Store release.
 
+App builds advertising `LangletsNative/2.x` use `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and Queue tab. Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. Links to another tab root are intercepted by `SceneDelegate` and select that tab instead of pushing a duplicate root onto the current stack. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
+
+The 2.x app pages render only the floating Add button; the native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Queue item. The server gates `/app` screens on the 2.x user agent so already-shipped 1.x builds remain on the regular web UI. Tab-root paths deliberately have no `replace_root` path-configuration rule because cross-tab routing is native; modal routes retain their existing rules.
+
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
 - The Queue **polls** (`poll_controller.js`, 3s, stops when nothing is active). See ImportRequest above for why not Action Cable.
@@ -553,6 +557,7 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - The dropdown shows the currently selected language and links to `/onboarding/language?returnto=<current_url>`.
 - The onboarding page is context-aware: it shows "Change Learning Language" when accessed from the profile menu, and "Welcome to Langlets" during first-time onboarding.
 - When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
+- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync.
 
 #### OAuth Authentication in Native App
 - Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.
@@ -563,7 +568,9 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - On failure, the server redirects to `langlets://auth-failure` for native app flows.
 
 #### Key Files
+- `langlets-ios/langlets/langlets/AppTabBarController.swift` — Native tabs, per-tab navigators, lazy loading and tab state retention
 - `langlets-ios/langlets/langlets/SceneDelegate.swift` — App entry point, bridge registration, and URL routing
+- `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — Updates the native Queue badge from web content
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
 - `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
 - `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app
