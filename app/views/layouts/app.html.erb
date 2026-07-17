@@ -31,6 +31,16 @@
       <div data-controller="bridge--tab-badge"
            data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
            hidden></div>
+
+      <%# Hands the APNs device token to the server: the native side has the
+          token but no session, this side has the session but no token.
+          `ask` gates the permission prompt — see App::BaseController#ask_for_push?.
+          Registration itself is silent for anyone who already granted it, so the
+          token refreshes on every launch. %>
+      <div data-controller="bridge--push"
+           data-bridge--push-ask-value="<%= ask_for_push? %>"
+           data-bridge--push-endpoint-value="<%= app_device_tokens_path %>"
+           hidden></div>
     <% end %>
   </body>
 </html>

@@ -1,32 +1,48 @@
 <%# Spotify-style "Add to playlist" popup. Rendered for all signed-in users. %>
 <div data-course-paths-target="overlay"
-     class="hidden fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
+     class="playlist-sheet-overlay hidden fixed inset-0 z-[100] flex items-end sm:items-center justify-center">
   <div class="absolute inset-0 bg-black/60" data-action="click->course-paths#close"></div>
 
-  <div class="relative w-full max-w-[480px] max-h-[85vh] flex flex-col rounded-t-3xl sm:rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden">
+  <div class="playlist-sheet relative w-full max-w-[480px] flex flex-col rounded-t-3xl sm:rounded-3xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-2xl overflow-hidden">
     <!-- Header -->
-    <div class="grid grid-cols-3 items-center px-4 py-3.5 border-b border-gray-100 dark:border-gray-800">
+    <div class="flex items-center justify-between gap-4 px-4 py-3.5 border-b border-gray-100 dark:border-gray-800">
+      <h3 class="text-left text-base font-extrabold text-gray-900 dark:text-gray-50">Add to playlist</h3>
       <button type="button" data-action="course-paths#close"
-              class="justify-self-start text-sm font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70">Cancel</button>
-      <h3 class="text-center text-base font-extrabold text-gray-900 dark:text-gray-50">Add to playlist</h3>
-      <span class="justify-self-end"></span>
+              class="h-10 px-6 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-extrabold transition-colors">Done</button>
     </div>
 
-    <!-- New playlist button -->
-    <div class="px-4 pt-4">
-      <button type="button" data-action="course-paths#createNew"
-              class="w-full h-12 rounded-full bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors">
-        New playlist
-      </button>
-    </div>
-
-    <!-- Search -->
-    <div class="px-4 pt-3">
-      <div class="flex items-center gap-2 h-11 px-3 rounded-xl bg-gray-100 dark:bg-gray-800">
+    <!-- Search and new playlist actions -->
+    <div class="flex items-center gap-3 px-4 pt-4">
+      <div data-course-paths-target="searchContainer"
+           class="hidden flex flex-1 items-center gap-2 h-11 px-3 rounded-xl bg-gray-100 dark:bg-gray-800">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" class="text-gray-400 flex-shrink-0"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M20 20l-3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
         <input type="text" placeholder="Find a playlist"
                data-course-paths-target="search" data-action="input->course-paths#filter"
-               class="flex-1 bg-transparent outline-none text-sm font-semibold text-gray-900 dark:text-gray-50 placeholder-gray-400">
+               class="min-w-0 flex-1 bg-transparent outline-none text-sm font-semibold text-gray-900 dark:text-gray-50 placeholder-gray-400">
+      </div>
+      <button type="button" data-course-paths-target="newButton" data-action="course-paths#createNew"
+              class="w-full h-11 px-5 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 text-sm font-bold transition-colors">
+        New Playlist
+      </button>
+    </div>
+
+    <div data-course-paths-target="createOverlay"
+         class="hidden absolute inset-0 z-10 flex items-end sm:items-center justify-center bg-black/60">
+      <div class="w-full sm:mx-4 rounded-t-3xl sm:rounded-3xl bg-white dark:bg-gray-900 p-5 shadow-2xl">
+        <h4 class="text-lg font-extrabold text-gray-900 dark:text-gray-50">New playlist</h4>
+        <form class="mt-4" data-action="submit->course-paths#submitCreate">
+          <label for="new-playlist-name" class="block text-sm font-semibold text-gray-700 dark:text-gray-300">Playlist name</label>
+          <input id="new-playlist-name" type="text" required maxlength="255" autocomplete="off"
+                 data-course-paths-target="createName"
+                 class="mt-2 w-full h-12 rounded-xl border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 px-4 text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500">
+          <p data-course-paths-target="createError" class="hidden mt-2 text-sm font-semibold text-red-600 dark:text-red-400" role="alert"></p>
+          <div class="mt-5 flex gap-3">
+            <button type="button" data-action="course-paths#closeCreate"
+                    class="flex-1 h-11 rounded-full border border-gray-300 dark:border-gray-600 font-bold text-gray-700 dark:text-gray-200">Cancel</button>
+            <button type="submit" data-course-paths-target="createButton"
+                    class="flex-1 h-11 rounded-full bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 text-white font-extrabold">Create</button>
+          </div>
+        </form>
       </div>
     </div>
 
@@ -36,10 +52,5 @@
       <div data-course-paths-target="empty" class="hidden py-10 text-center text-sm font-semibold text-gray-400">No playlists found.</div>
     </div>
 
-    <!-- Footer -->
-    <div class="p-4 border-t border-gray-100 dark:border-gray-800 flex justify-center">
-      <button type="button" data-action="course-paths#close"
-              class="h-12 px-10 rounded-full bg-gray-900 dark:bg-gray-50 text-white dark:text-gray-900 font-extrabold hover:opacity-90 transition-opacity">Done</button>
-    </div>
   </div>
 </div>

@@ -33,6 +33,9 @@ class PlaylistsDestroyTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "form[action=?][method=post] button", playlist_path(@playlist)
     assert_select "button", text: /Delete/
+    assert_select '[data-playlist-courses-target="deleteOverlay"].playlist-sheet-overlay'
+    assert_select '[data-playlist-courses-target="deleteOverlay"] .playlist-sheet'
+    assert_select 'form[data-turbo-confirm]', count: 0
   end
 
   test "show page hides the Delete button for a regular user on a system playlist" do

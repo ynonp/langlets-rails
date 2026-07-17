@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ["searchInput", "coursesGrid", "loadingIndicator", "loadMoreButton", "infiniteScrollTrigger"]
+  static targets = ["searchInput", "coursesGrid", "loadingIndicator", "loadMoreButton", "infiniteScrollTrigger", "deleteOverlay"]
   static values = { 
     playlistId: Number,
     currentPage: Number,
@@ -19,6 +19,14 @@ export default class extends Controller {
     if (this.observer) {
       this.observer.disconnect()
     }
+  }
+
+  openDelete() {
+    this.deleteOverlayTarget.classList.remove("hidden")
+  }
+
+  closeDelete() {
+    this.deleteOverlayTarget.classList.add("hidden")
   }
 
   setupInfiniteScroll() {

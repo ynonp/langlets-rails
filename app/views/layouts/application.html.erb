@@ -4,7 +4,7 @@
     <%= render "layouts/head" %>
   </head>
 
-  <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
+  <body class="bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50" <%= "data-native-tabs" if native_tabs_app? %>>
     <main class="flex flex-col min-h-screen"
           data-controller="audio-cache"
           data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">

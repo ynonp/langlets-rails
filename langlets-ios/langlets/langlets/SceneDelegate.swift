@@ -64,8 +64,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             LanguageSelectionBridgeComponent.self,
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
-            TabBadgeComponent.self
+            TabBadgeComponent.self,
+            PushComponent.self
         ])
+
+        // A notification tapped while the app was NOT running arrives here, in
+        // connectionOptions — not in the UNUserNotificationCenterDelegate
+        // callback. Handling only the delegate drops the deep link for exactly
+        // the users who weren't already in the app. Captured now, replayed below
+        // once the tab bar exists.
+        PushNotifications.shared.handleLaunch(options: connectionOptions)
 
         // Load path configuration. The bundled file is the offline fallback and
         // seeds the very first launch; the server copy wins once it arrives, so
@@ -112,7 +120,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             object: nil
         )
 
+        // Listen for a tapped "your course is ready" notification while running
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(notificationDidTap(_:)),
+            name: PushNotifications.didTapNotification,
+            object: nil
+        )
+
         tabBarController.start()
+
+        // Replay a notification that launched the app cold, now that the tab bar
+        // is up and can be routed.
+        if let slug = PushNotifications.shared.consumePendingCourseSlug() {
+            tabBarController.showJustImported(courseSlug: slug)
+        }
     }
 
     private static func isCourseLessonURL(_ url: URL) -> Bool {
@@ -199,5 +221,13 @@ extension SceneDelegate: NavigatorDelegate {
 
     @objc private func userDidSignOut() {
         tabBarController.setTabsVisible(false)
+    }
+
+    /// The warm path: a notification tapped while the app was already running.
+    /// The cold path is handled in scene(_:willConnectTo:) via connectionOptions.
+    @objc private func notificationDidTap(_ notification: Notification) {
+        guard let slug = notification.userInfo?["course_slug"] as? String else { return }
+
+        tabBarController.showJustImported(courseSlug: slug)
     }
 }

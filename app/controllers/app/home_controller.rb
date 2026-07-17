@@ -12,6 +12,10 @@ module App
       @greeting_name = greeting_name
       @hero_course = hero_course
       @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
+      @playlists = current_user.playlists
+                               .includes(courses: [ :language, :translation_language ])
+                               .order(updated_at: :desc)
+                               .to_a
 
       candidates = candidate_enrollments
       @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)

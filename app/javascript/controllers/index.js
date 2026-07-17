@@ -37,6 +37,9 @@ application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbac
 import Bridge__ProgressHapticController from "./bridge/progress_haptic_controller"
 application.register("bridge--progress-haptic", Bridge__ProgressHapticController)
 
+import Bridge__PushController from "./bridge/push_controller"
+application.register("bridge--push", Bridge__PushController)
+
 import Bridge__SignOutController from "./bridge/sign_out_controller"
 application.register("bridge--sign-out", Bridge__SignOutController)
 

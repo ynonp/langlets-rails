@@ -65,6 +65,11 @@ class CreateCourseJob < ApplicationJob
     imports_for(course).find_each do |import_request|
       enroll!(import_request)
       import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
+
+      # Separate job so a push failure can't fail an import that has already
+      # succeeded. The completion email still goes out below regardless — it's
+      # the fallback for anyone who never granted notification permission.
+      SendImportReadyPushJob.perform_later(import_request.id)
     end
   end
 

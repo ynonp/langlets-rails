@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_17_110000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -164,6 +164,21 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_110000) do
     t.index ["subject_type", "subject_id"], name: "index_credit_ledger_entries_on_subject"
     t.index ["user_id", "created_at"], name: "index_credit_ledger_entries_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_credit_ledger_entries_on_user_id"
+  end
+
+  create_table "device_tokens", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "token", null: false
+    t.integer "platform", default: 0, null: false
+    t.string "environment", default: "production", null: false
+    t.string "app_version"
+    t.datetime "last_seen_at"
+    t.datetime "invalidated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["token"], name: "index_device_tokens_on_token", unique: true
+    t.index ["user_id", "invalidated_at"], name: "index_device_tokens_on_user_id_and_invalidated_at"
+    t.index ["user_id"], name: "index_device_tokens_on_user_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -523,6 +538,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_110000) do
   add_foreign_key "courses_playlists", "courses"
   add_foreign_key "courses_playlists", "playlists"
   add_foreign_key "credit_ledger_entries", "users"
+  add_foreign_key "device_tokens", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
   add_foreign_key "import_requests", "courses"

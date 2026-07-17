@@ -60,6 +60,8 @@ Rails.application.routes.draw do
       end
     end
     resource :credits, only: [ :show ]
+    # The iOS app posts its APNs token here via bridge--push.
+    resources :device_tokens, only: [ :create ]
   end
 
   get "home/privacy"

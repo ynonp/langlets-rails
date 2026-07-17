@@ -25,6 +25,7 @@ final class AppTabBarController: UITabBarController {
         Tab(title: "Queue", path: "/app/import_requests", image: "clock", selectedImage: "clock.fill")
     ]
 
+    private static let homeTabIndex = 0
     private static let queueTabIndex = 2
 
     private var navigators: [Navigator] = []
@@ -106,6 +107,32 @@ final class AppTabBarController: UITabBarController {
     func selectTab(at index: Int) {
         selectedIndex = index
         routeTabIfNeeded(at: index)
+    }
+
+    /// Land on Home with a freshly imported course as the hero — where a tapped
+    /// "your course is ready" notification goes. HomeController reads
+    /// `just_imported` and puts that course at the top with the JUST IMPORTED
+    /// badge; an unknown slug just falls back to the ordinary Home.
+    func showJustImported(courseSlug: String) {
+        let index = Self.homeTabIndex
+        selectedIndex = index
+
+        // The tab is now routed; don't let routeTabIfNeeded overwrite this with
+        // the plain start URL afterwards.
+        needsRoute[index] = false
+
+        var url = Self.url(for: Self.tabs[index])
+        url = url.appending(queryItems: [URLQueryItem(name: "just_imported", value: courseSlug)])
+
+        // replace_root, matching routeTabIfNeeded: arriving from a notification
+        // should reset the tab's stack and dismiss anything modal on it, not push
+        // onto whatever the user happened to leave open.
+        let proposal = VisitProposal(
+            url: url,
+            options: VisitOptions(action: .replace),
+            properties: ["presentation": "replace_root", "animated": false]
+        )
+        navigators[index].route(proposal)
     }
 
     func setQueueBadge(_ count: Int) {

@@ -300,3 +300,22 @@
 [data-native-tabs] .app-scroll-pad {
   padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
 }
+
+/* Course pages still use the regular web layout inside the 2.x native app.
+   Keep their playlist sheet above the native UITabBar and reduce its available
+   height by the same amount so its controls never extend behind the bar. */
+.playlist-sheet-overlay {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.playlist-sheet {
+  max-height: min(85dvh, calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 16px));
+}
+
+[data-native-tabs] .playlist-sheet-overlay {
+  padding-bottom: calc(49px + env(safe-area-inset-bottom, 0px));
+}
+
+[data-native-tabs] .playlist-sheet {
+  max-height: min(85dvh, calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px) - 65px));
+}

@@ -13,8 +13,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Must be set before the app finishes launching, or a notification that
+        // launched the app is never delivered to the delegate.
+        PushNotifications.shared.configure()
         return true
+    }
+
+    // MARK: - Push notifications
+
+    func application(_ application: UIApplication,
+                     didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        // The token goes to the server through the bridge, not from here: this
+        // callback has no session, and the web view does.
+        PushNotifications.shared.didRegister(deviceToken: deviceToken)
+    }
+
+    func application(_ application: UIApplication,
+                     didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        PushNotifications.shared.didFailToRegister(error: error)
     }
 
     // MARK: UISceneSession Lifecycle

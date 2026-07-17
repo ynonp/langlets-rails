@@ -1,0 +1,23 @@
+<% published_courses = playlist.courses.select(&:published?) %>
+<% cover_course = published_courses.first %>
+
+<%= link_to playlist_path(playlist),
+            class: "app-hairline bg-app-card rounded-app-card p-2.5 flex items-center gap-3" do %>
+  <% if cover_course %>
+    <%= image_tag Medium.youtube_thumbnail_url(cover_course.youtube_video_id, "mqdefault"),
+                  alt: "", loading: "lazy",
+                  class: "shrink-0 w-[92px] h-[52px] rounded-app-thumb object-cover bg-app-inset" %>
+  <% else %>
+    <div class="shrink-0 w-[92px] h-[52px] rounded-app-thumb bg-app-inset flex items-center justify-center"
+         aria-hidden="true">
+      <span class="text-app-text-3 text-lg font-bold">♫</span>
+    </div>
+  <% end %>
+
+  <div class="flex-1 min-w-0">
+    <p class="text-sm font-semibold truncate"><%= playlist.name %></p>
+    <p class="text-app-text-2 text-xs mt-1"><%= pluralize(published_courses.size, "song") %></p>
+  </div>
+
+  <%= app_icon "chevron", class: "w-2 h-3 text-app-text-2 shrink-0" %>
+<% end %>

@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 // Spotify-style popup for assigning a course to playlists.
 // Lists the playlists the user can edit, lets them toggle membership, and create new ones.
 export default class extends Controller {
-  static targets = ["overlay", "list", "search", "loading", "empty"]
+  static targets = ["overlay", "list", "search", "searchContainer", "newButton", "loading", "empty", "createOverlay", "createName", "createError", "createButton"]
   static values = { courseId: String }
 
   connect() {
@@ -44,7 +44,11 @@ export default class extends Controller {
 
     const term = (this.hasSearchTarget ? this.searchTarget.value : "").trim().toLowerCase()
     const visible = this.paths.filter((p) => p.name.toLowerCase().includes(term))
+    const hasPlaylists = this.paths.length > 0
 
+    this.searchContainerTarget.classList.toggle("hidden", !hasPlaylists)
+    this.newButtonTarget.classList.toggle("w-full", !hasPlaylists)
+    this.newButtonTarget.classList.toggle("shrink-0", hasPlaylists)
     this.emptyTarget.classList.toggle("hidden", visible.length > 0)
     visible.forEach((p) => this.listTarget.insertAdjacentHTML("beforeend", this.rowHtml(p)))
   }
@@ -103,10 +107,29 @@ export default class extends Controller {
     }
   }
 
-  async createNew() {
-    const name = window.prompt("Name your new playlist")
-    if (!name || !name.trim()) return
+  createNew() {
+    this.createErrorTarget.classList.add("hidden")
+    this.createNameTarget.value = ""
+    this.createOverlayTarget.classList.remove("hidden")
+    requestAnimationFrame(() => this.createNameTarget.focus())
+  }
 
+  closeCreate() {
+    this.createOverlayTarget.classList.add("hidden")
+  }
+
+  async submitCreate(event) {
+    event.preventDefault()
+    const name = this.createNameTarget.value.trim()
+    if (!name) {
+      this.createErrorTarget.textContent = "Enter a playlist name."
+      this.createErrorTarget.classList.remove("hidden")
+      this.createNameTarget.focus()
+      return
+    }
+
+    this.createButtonTarget.disabled = true
+    this.createErrorTarget.classList.add("hidden")
     try {
       const res = await fetch(this.baseUrl(), {
         method: "POST",
@@ -117,9 +140,14 @@ export default class extends Controller {
       const data = await res.json()
       this.paths.unshift(data.path)
       if (this.hasSearchTarget) this.searchTarget.value = ""
+      this.closeCreate()
       this.render()
     } catch (e) {
       console.error(e)
+      this.createErrorTarget.textContent = "Could not create the playlist. Please try again."
+      this.createErrorTarget.classList.remove("hidden")
+    } finally {
+      this.createButtonTarget.disabled = false
     }
   }
 

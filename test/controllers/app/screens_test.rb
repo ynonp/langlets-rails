@@ -181,6 +181,24 @@ module App
       assert_match @user.credit_balance.to_s, response.body
     end
 
+    test "Home shows only the current user's playlists" do
+      own_playlist = Playlist.create!(name: "Road Trip Songs", slug: "road-trip-songs", user: @user)
+      own_playlist.courses << @course
+      empty_playlist = Playlist.create!(name: "Empty Favorites", slug: "empty-favorites", user: @user)
+      Playlist.create!(name: "Featured Songs", slug: "featured-songs", published: true)
+      other_user = User.create!(email: "other@example.com", password: "password123", confirmed_at: Time.zone.now)
+      Playlist.create!(name: "Someone Else's Mix", slug: "someone-elses-mix", user: other_user)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "h2", text: "Your playlists"
+      assert_select "a[href=?]", playlist_path(own_playlist), text: /Road Trip Songs.*1 song/m
+      assert_select "a[href=?]", playlist_path(empty_playlist), text: /Empty Favorites.*0 songs/m
+      assert_no_match "Featured Songs", response.body
+      assert_no_match "Someone Else's Mix", response.body
+    end
+
     test "Home profile menu exposes profile, word practice, and logout" do
       phrase = Phrase.create!(medium: @medium, l1: @spanish, l2: @english,
                               text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")

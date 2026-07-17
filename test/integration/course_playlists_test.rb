@@ -32,6 +32,12 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select 'button[data-action="course-paths#open"]'
     assert_select '[data-controller="course-paths"]'
+    assert_select 'form[data-action="submit->course-paths#submitCreate"]'
+    assert_select 'input[data-course-paths-target="createName"]'
+    assert_select 'button[data-action="course-paths#close"]', text: "Done", count: 1
+    assert_select 'button[data-course-paths-target="newButton"]', text: "New Playlist"
+    assert_select '[data-course-paths-target="searchContainer"] input[placeholder="Find a playlist"]'
+    assert_select 'button[data-action="course-paths#close"]', text: "Cancel", count: 0
   end
 
   test "show page renders the + button for any signed-in user" do
@@ -39,6 +45,15 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
     get course_url(@course.slug)
     assert_response :success
     assert_select 'button[data-action="course-paths#open"]'
+  end
+
+  test "native tab builds mark the layout and render a tab-safe playlist sheet" do
+    sign_in(@other)
+    get course_url(@course.slug, lang: "en"), headers: { "User-Agent" => "LangletsNative/2.0" }
+
+    assert_response :success
+    assert_select "body[data-native-tabs]"
+    assert_select ".playlist-sheet-overlay .playlist-sheet"
   end
 
   test "show page hides the + button for anonymous users" do

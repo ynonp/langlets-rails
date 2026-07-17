@@ -41,5 +41,23 @@ module App
     def set_queue_badge_count
       @queue_badge_count = current_user.import_requests.active.count
     end
+
+    # Whether the app should put up the iOS notification prompt on this page load.
+    #
+    # Not at launch. iOS gives you exactly one chance at that prompt per install —
+    # a "Don't Allow" is effectively permanent, and asking before the app has done
+    # anything for the user is the way to earn one. So we wait until they have an
+    # import in flight or finished: at that point "we'll tell you when it's ready"
+    # is an obvious trade rather than a cold call.
+    #
+    # It's only a hint. The native side still checks the real authorization status
+    # and stays silent unless it's genuinely undetermined, so a user who already
+    # decided is never asked twice.
+    helper_method :ask_for_push?
+    def ask_for_push?
+      return false unless native_tabs_app?
+
+      current_user.import_requests.where(status: [ :queued, :importing, :ready ]).exists?
+    end
   end
 end

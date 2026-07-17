@@ -104,6 +104,10 @@ gem "cancancan", "~> 3.6"
 
 gem "good_job", "~> 4.11"
 
+# APNs push for the iOS app. HTTP/2 with connection pooling and token (.p8) auth,
+# rather than the dead `houston` and its legacy binary protocol.
+gem "apnotic", "~> 1.7"
+
 gem "factory_bot", "~> 6.5"
 
 gem "ruby_llm", "~> 1.14.0"
