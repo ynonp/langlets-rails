@@ -959,6 +959,7 @@ Users can save individual word/token translations they encounter during lessons 
 - Added `toggleSave()` action — calls API to save/unsave; updates button UI
 - Reads `data-token-id` from clicked token span (already present via `wrap_tokens_in_spans` helper)
 - Save button shows 🔖 Save / ✓ Saved state
+- The popup displays the stored translation and, for signed-in users, the save action; it does not link to an external AI explanation service
 
 #### _translation_popup.html.erb
 - Added Save button with `saveButton`, `saveIcon`, `saveText` targets

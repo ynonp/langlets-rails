@@ -1,12 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-  static targets = ['translationPopup', 'translationText', 'aiButton', 'saveButton', 'saveIcon', 'saveText'];
-  static values = { l1Language: String, savedIds: Array };
+  static targets = ['translationPopup', 'translationText', 'saveButton', 'saveIcon', 'saveText'];
+  static values = { savedIds: Array };
 
   initialize() {
-    this.currentOriginalText = null;
-    this.currentTranslation = null;
     this.currentTokenId = null;
   }
 
@@ -25,11 +23,8 @@ export default class extends Controller {
     }
 
     const translation = tokenEl.dataset.translation;
-    const originalText = tokenEl.textContent.trim();
     const tokenId = tokenEl.dataset.tokenId ? parseInt(tokenEl.dataset.tokenId) : null;
 
-    this.currentOriginalText = originalText;
-    this.currentTranslation = translation;
     this.currentTokenId = tokenId;
 
     this.translationTextTarget.textContent = translation;
@@ -109,69 +104,6 @@ export default class extends Controller {
       this._updateSaveButton();
     } catch (err) {
       console.warn('Failed to toggle save:', err);
-    }
-  }
-
-  openChatGPT() {
-    if (!this.currentOriginalText || !this.currentTranslation || !this.l1LanguageValue) {
-      return;
-    }
-    const prompt = this.getChatgptPrompt(this.l1LanguageValue, this.currentOriginalText, this.currentTranslation);
-    const encodedPrompt = encodeURIComponent(prompt);
-    const chatgptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
-    window.open(chatgptUrl, '_blank');
-  }
-
-  getChatgptPrompt(language, text, translation) {
-    if (text.split(/\s+/).length === 1) {
-      return `Act as a professional ${language} teacher.
-
-Explain the following SINGLE WORD from ${language} for a learner.
-IMPORTANT:
-- Write the explanation in English.
-- The provided meaning reflects how the word is used in context and may be idiomatic, metaphorical, or derived from a larger expression.
-- Do NOT assume the literal dictionary meaning is the intended one.
-
-Word: "${text}"
-Intended meaning: "${translation}"
-
-Tasks:
-1. Identify the word's base form (infinitive / singular / lemma) and part of speech.
-2. Explain the word's literal meaning and its etymology (brief).
-3. Explain how this word can acquire the intended meaning:
-   - through idiomatic usage
-   - metaphorical extension
-   - ellipsis of a longer common expression
-   - or semantic shift
-4. If the word typically appears as part of a fixed phrase, reconstruct the most common full expression and explain it.
-5. Provide:
-   - one example sentence showing the literal meaning (if applicable)
-   - one example sentence showing the intended/contextual meaning
-6. Add relevant usage notes (register, frequency, formality, regional usage).      
-`
-    } else {
-      return `Act as a professional ${language} teacher.
-
-Explain the following ${language} text for a learner.
-IMPORTANT:
-- Write the explanation in English.
-- The provided meaning may be contextual or idiomatic, not literal.
-- If the text is a fragment, infer the most likely full construction.
-
-Text: "${text}"
-Intended meaning: "${translation}"
-
-Tasks:
-1. Identify whether the meaning is literal or idiomatic.
-2. Break the text into words or morphemes and explain each:
-   - base form / infinitive
-   - etymology (brief)
-   - literal meaning
-   - example sentence
-3. Explain how the words combine to produce the intended meaning.
-4. If the meaning relies on an implied or common expression, explain the missing parts.
-5. Add relevant grammar or usage notes (register, frequency, formality, dialect, region).
-`
     }
   }
 

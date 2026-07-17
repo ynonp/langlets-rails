@@ -66,7 +66,6 @@
     <!-- Phrases breakdown -->
     <div
         data-controller="popover-translation"
-        data-popover-translation-l1-language-value="<%= phrases.first&.l1&.english_name || 'Language' %>"
         data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
         id="phrases-container"
         data-watch-video-activity-target="container"
