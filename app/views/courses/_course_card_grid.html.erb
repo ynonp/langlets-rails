@@ -2,7 +2,7 @@
 <% is_completed = course.respond_to?(:completed?) && course.completed? %>
 <%= link_to course_path(id: course.slug), class: "block bg-white dark:bg-gray-900 rounded-2xl shadow-md hover:shadow-lg transition duration-300 cursor-pointer border border-gray-200 dark:border-gray-800 flex flex-col h-full min-w-0" do %>
   <% if course.main_media_url.present? %>
-    <% youtube_video_id = course.main_media_url.split("v=").last %>
+    <% youtube_video_id = course_youtube_video_id(course) %>
     <div class="relative">
       <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
       <% if is_completed %>

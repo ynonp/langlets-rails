@@ -99,6 +99,7 @@
   - Main media URL for course overview
   - **Identity in the Library is `(youtube_video_id, language_id, translation_language_id)`**, enforced for published courses by the partial unique index `idx_courses_published_video_pair`. `language` is the clip language, `translation_language` the language it's taught in. The index lives in the database, not application code, so two importers racing on the same video can't both publish. It's scoped to `status = 1` so failed or in-flight imports don't wedge the video for everyone else.
   - `main_media_url` is free text and unreliable for comparison (`youtu.be/X` vs `watch?v=X&t=9`) — always compare `youtube_video_id`, via `Youtube::Url`.
+  - Course thumbnails use the stored `youtube_video_id` rather than parsing `main_media_url`; a `Youtube::Url` fallback supports legacy rows where the stored ID is blank.
   - **User ownership**: All courses belong to a specific user (creator). Note this is *creator*, not *owner* — under dedupe, a course is a shared community artifact other users have enrollments and progress against, which is why `Ability` still grants `:manage, Course` to admins only.
 - **Relationships**:
   - One-to-many with Lessons

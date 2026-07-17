@@ -3,6 +3,10 @@ module ApplicationHelper
     Medium.youtube_thumbnail_url(video_id, quality)
   end
 
+  def course_youtube_video_id(course)
+    course.youtube_video_id.presence || Youtube::Url.video_id(course.main_media_url)
+  end
+
   def link_to_next_activity(text, path, opts)
     route = Rails.application.routes.recognize_path(path)
     if route[:action] == "finish"
