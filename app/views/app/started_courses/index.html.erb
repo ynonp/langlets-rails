@@ -1,0 +1,26 @@
+<% content_for :title, "Started videos · langlets." %>
+
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
+  <div>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]">Started videos</h1>
+    <p class="text-app-text-2 text-sm mt-1">All the videos you’ve started, most recent first.</p>
+  </div>
+
+  <% if @enrollments.empty? %>
+    <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
+      <p class="text-app-text-2 text-sm">You haven’t started a video yet.</p>
+      <%= link_to "Browse the Library", app_library_path,
+                  class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
+    </div>
+  <% else %>
+    <div class="flex flex-col gap-2.5">
+      <% @enrollments.each do |enrollment| %>
+        <%= render "app/home/course_row", course: enrollment.course,
+                   total: @lesson_counts[enrollment.course_id].to_i,
+                   completed: @completed_counts[enrollment.course_id].to_i %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "app/shared/fab" %>

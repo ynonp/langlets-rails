@@ -12,6 +12,7 @@ module App
 
     SCREENS = {
       "Home" => "/app",
+      "Started videos" => "/app/started_courses",
       "Library" => "/app/library",
       "Queue" => "/app/import_requests",
       "Add a video" => "/app/import_requests/new",
@@ -159,12 +160,41 @@ module App
       assert_response :success
       assert_select "[data-testid='keep-it-going']" do
         assert_select "h2:first-child", text: "Keep it going"
-        assert_select "a[href=?]", app_library_path, text: "See all", count: 1
+        assert_select "a[href=?]", app_started_courses_path, text: "See all", count: 1
         assert_select "a", text: /Latest Course/
         assert_select "a", text: /Despacito/
         assert_select "a", text: /Older Course/, count: 0
         assert_select "p:last-child a", text: "See all"
       end
+    end
+
+    test "Started videos shows every practiced course in recent order" do
+      older_medium = Medium.create!(url: "https://www.youtube.com/watch?v=oldercourse1",
+                                    language: @spanish, translation_language: @english)
+      older_course = Course.create!(name: "Older Course", slug: "older-course",
+                                    main_media_url: older_medium.url, youtube_video_id: "oldercourse1",
+                                    language: @spanish, translation_language: @english,
+                                    user: @user, status: :published)
+      older_lesson = Lesson.create!(course: older_course, medium: older_medium, user: @user,
+                                    slug: "older-lesson", name: "Older lesson", order: 0)
+      older_enrollment = Enrollment.create!(user: @user, course: older_course, source: :library,
+                                            last_practiced_at: 2.hours.ago)
+      LessonUser.create!(user: @user, lesson: older_lesson)
+      older_enrollment.update_column(:last_practiced_at, 2.hours.ago)
+
+      unstarted = Course.create!(name: "Not Started", slug: "not-started",
+                                 main_media_url: "https://www.youtube.com/watch?v=notstarted1",
+                                 youtube_video_id: "notstarted1", language: @spanish,
+                                 translation_language: @english, user: @user, status: :published)
+      Enrollment.create!(user: @user, course: unstarted, source: :library)
+
+      get "/app/started_courses", headers: NATIVE
+
+      assert_response :success
+      assert_select "h1", text: "Started videos"
+      assert_match(/Despacito.*Older Course/m, response.body)
+      assert_no_match "Not Started", response.body
+      assert_select "a[href=?]", course_path(older_course), text: /Older Course/
     end
 
     # With nothing to continue, Home becomes the first-run song picker: library

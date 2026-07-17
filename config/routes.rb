@@ -53,6 +53,7 @@ Rails.application.routes.draw do
     # controller: pinned — a singular `resource` would otherwise look for
     # App::LibrariesController.
     resource :library, only: [ :show ], controller: "library"
+    resources :started_courses, only: [ :index ]
     resources :enrollments, only: [ :create ]
     resources :import_requests, only: [ :index, :new, :create, :destroy ] do
       member do
