@@ -17,6 +17,9 @@ class User < ApplicationRecord
   # Videos the user has asked to turn into courses (the Queue screen).
   has_many :import_requests, dependent: :destroy
 
+  # The user's own playlists. System playlists (user_id nil) are not included.
+  has_many :playlists, dependent: :destroy
+
   # Progress tracking relationships
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson

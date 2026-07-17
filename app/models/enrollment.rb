@@ -6,7 +6,7 @@ class Enrollment < ApplicationRecord
   belongs_to :user
   belongs_to :course
 
-  enum :source, { imported: 0, library: 1, learning_path: 2 }
+  enum :source, { imported: 0, library: 1, playlist: 2 }
 
   validates :course_id, uniqueness: { scope: :user_id }
 

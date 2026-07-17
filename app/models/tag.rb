@@ -4,9 +4,9 @@ class Tag < ApplicationRecord
   
   validates :name, presence: true, uniqueness: true
   
-  scope :used_in_learning_path, ->(learning_path) {
-    joins(courses: :learning_paths)
-      .where(learning_paths: { id: learning_path.id })
+  scope :used_in_playlist, ->(playlist) {
+    joins(courses: :playlists)
+      .where(playlists: { id: playlist.id })
       .distinct
       .order(:name)
   }

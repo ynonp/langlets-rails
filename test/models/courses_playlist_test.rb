@@ -1,6 +1,6 @@
 require "test_helper"
 
-class CoursesLearningPathTest < ActiveSupport::TestCase
+class CoursesPlaylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

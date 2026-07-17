@@ -29,39 +29,39 @@ class ImportCoursesController < ApplicationController
     end
 
     if successful_imports.any?
-      learning_path_id = nil
-      learning_path = nil
-      action = params[:learning_path_action] || "none"
+      playlist_id = nil
+      playlist = nil
+      action = params[:playlist_action] || "none"
 
       case action
       when "existing"
-        learning_path_id = params[:learning_path_id]
-        if learning_path_id.blank?
-          redirect_to new_import_course_path, alert: "Please select a learning path."
+        playlist_id = params[:playlist_id]
+        if playlist_id.blank?
+          redirect_to new_import_course_path, alert: "Please select a playlist."
           return
         end
-        learning_path = LearningPath.find_by(id: learning_path_id)
-        unless learning_path
-          redirect_to new_import_course_path, alert: "Selected learning path not found."
+        playlist = Playlist.find_by(id: playlist_id)
+        unless playlist
+          redirect_to new_import_course_path, alert: "Selected playlist not found."
           return
         end
-        learning_path_id = learning_path.id
+        playlist_id = playlist.id
       when "new"
-        name = params[:learning_path_name]&.strip
+        name = params[:playlist_name]&.strip
         if name.blank?
-          redirect_to new_import_course_path, alert: "Learning path name is required when creating a learning path."
+          redirect_to new_import_course_path, alert: "Playlist name is required when creating a playlist."
           return
         end
-        learning_path = create_learning_path
-        learning_path_id = learning_path.id if learning_path
+        playlist = create_playlist
+        playlist_id = playlist.id if playlist
       end
 
       successful_imports.each do |import_data|
-        ImportCourseJob.perform_later(import_data[:progress_id], current_user.id, learning_path_id)
+        ImportCourseJob.perform_later(import_data[:progress_id], current_user.id, playlist_id)
       end
 
       flash[:notice] = "#{successful_imports.count} course(s) are being imported. You'll receive an email when each one is ready."
-      flash[:notice] += " Courses will be added to the learning path '#{learning_path.name}'." if learning_path
+      flash[:notice] += " Courses will be added to the playlist '#{playlist.name}'." if playlist
       redirect_to courses_path
     else
       redirect_to new_import_course_path, alert: "Failed to import courses: #{errors.join(', ')}"
@@ -74,21 +74,23 @@ class ImportCoursesController < ApplicationController
     authorize! :create, Course
   end
 
-  def create_learning_path
-    name = params[:learning_path_name]&.strip
-    description = params[:learning_path_description]&.strip
+  # The importer is an admin surface (see authorize_import), so playlists
+  # created here are system playlists — user is intentionally left nil.
+  def create_playlist
+    name = params[:playlist_name]&.strip
+    description = params[:playlist_description]&.strip
     difficulty_level = params[:difficulty_level]&.to_i
 
     return nil if name.blank?
 
-    LearningPath.create!(
+    Playlist.create!(
       name: name,
       description: description,
       difficulty_level: difficulty_level.presence,
       published: true
     )
   rescue => e
-    Rails.logger.error "Failed to create learning path: #{e.message}"
+    Rails.logger.error "Failed to create playlist: #{e.message}"
     nil
   end
 

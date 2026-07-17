@@ -61,9 +61,6 @@ application.register("hello", HelloController)
 import LanguageSelectController from "./language_select_controller"
 application.register("language-select", LanguageSelectController)
 
-import LearningPathCoursesController from "./learning_path_courses_controller"
-application.register("learning-path-courses", LearningPathCoursesController)
-
 import LessonNavigationController from "./lesson_navigation_controller"
 application.register("lesson-navigation", LessonNavigationController)
 
@@ -84,6 +81,9 @@ application.register("mini-player", MiniPlayerController)
 
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
+
+import PlaylistCoursesController from "./playlist_courses_controller"
+application.register("playlist-courses", PlaylistCoursesController)
 
 import PollController from "./poll_controller"
 application.register("poll", PollController)

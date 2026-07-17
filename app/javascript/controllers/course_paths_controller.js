@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Spotify-style popup for assigning a course to learning paths.
-// Lists every learning path, lets the user toggle membership, and create new ones.
+// Spotify-style popup for assigning a course to playlists.
+// Lists the playlists the user can edit, lets them toggle membership, and create new ones.
 export default class extends Controller {
   static targets = ["overlay", "list", "search", "loading", "empty"]
   static values = { courseId: String }
@@ -26,14 +26,14 @@ export default class extends Controller {
   async load() {
     try {
       const res = await fetch(this.baseUrl(), { headers: { Accept: "application/json" } })
-      if (!res.ok) throw new Error("Failed to load learning paths")
+      if (!res.ok) throw new Error("Failed to load playlists")
       const data = await res.json()
       this.paths = data.paths
       this.loaded = true
       this.render()
     } catch (e) {
       console.error(e)
-      this.loadingTarget.textContent = "Could not load learning paths."
+      this.loadingTarget.textContent = "Could not load playlists."
     }
   }
 
@@ -89,7 +89,7 @@ export default class extends Controller {
         const res = await fetch(this.baseUrl(), {
           method: "POST",
           headers: this.headers(),
-          body: JSON.stringify({ learning_path_id: id })
+          body: JSON.stringify({ playlist_id: id })
         })
         if (!res.ok) throw new Error("add failed")
         path.member = true
@@ -104,7 +104,7 @@ export default class extends Controller {
   }
 
   async createNew() {
-    const name = window.prompt("Name your new learning path")
+    const name = window.prompt("Name your new playlist")
     if (!name || !name.trim()) return
 
     try {
@@ -124,7 +124,7 @@ export default class extends Controller {
   }
 
   baseUrl() {
-    return `/courses/${this.courseIdValue}/learning_paths`
+    return `/courses/${this.courseIdValue}/playlists`
   }
 
   headers() {

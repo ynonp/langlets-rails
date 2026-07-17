@@ -36,54 +36,54 @@
         </div>
 
         <div class="border-t border-gray-200 dark:border-gray-800 pt-6 mt-6">
-          <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-4">Learning Path (Optional)</h3>
+          <h3 class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-4">Playlist (Optional)</h3>
 
           <div class="space-y-3 mb-4">
             <label class="flex items-center cursor-pointer">
-              <%= form.radio_button :learning_path_action, "none",
+              <%= form.radio_button :playlist_action, "none",
                     class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
-                    id: "learning_path_action_none",
+                    id: "playlist_action_none",
                     checked: true
               %>
               <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">None</span>
             </label>
 
             <label class="flex items-center cursor-pointer">
-              <%= form.radio_button :learning_path_action, "existing",
+              <%= form.radio_button :playlist_action, "existing",
                     class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
-                    id: "learning_path_action_existing"
+                    id: "playlist_action_existing"
               %>
-              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Add to existing learning path</span>
+              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Add to existing playlist</span>
             </label>
 
             <label class="flex items-center cursor-pointer">
-              <%= form.radio_button :learning_path_action, "new",
+              <%= form.radio_button :playlist_action, "new",
                     class: "w-4 h-4 border-gray-300 dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-emerald-600 focus:ring-emerald-500 focus:ring-offset-white dark:focus:ring-offset-gray-900",
-                    id: "learning_path_action_new"
+                    id: "playlist_action_new"
               %>
-              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Create new learning path</span>
+              <span class="ml-2 text-sm text-gray-500 dark:text-gray-400">Create new playlist</span>
             </label>
           </div>
 
-          <div id="existing-learning-path-fields" class="hidden space-y-4">
+          <div id="existing-playlist-fields" class="hidden space-y-4">
             <div>
-              <%= form.label :learning_path_id, "Learning Path", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
-              <%= form.select :learning_path_id,
-                    options_from_collection_for_select(LearningPath.order(:name), :id, :name),
-                    { prompt: "Select a learning path" },
-                    { class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent", id: "learning_path_id_field" }
+              <%= form.label :playlist_id, "Playlist", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
+              <%= form.select :playlist_id,
+                    options_from_collection_for_select(Playlist.system_playlists.order(:name), :id, :name),
+                    { prompt: "Select a playlist" },
+                    { class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent", id: "playlist_id_field" }
               %>
             </div>
           </div>
 
-          <div id="new-learning-path-fields" class="hidden space-y-4">
+          <div id="new-playlist-fields" class="hidden space-y-4">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
-                <%= form.label :learning_path_name, "Name *", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
-                <%= form.text_field :learning_path_name,
+                <%= form.label :playlist_name, "Name *", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
+                <%= form.text_field :playlist_name,
                       class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent",
                       placeholder: "e.g., Arabic for Beginners",
-                      id: "learning_path_name_field"
+                      id: "playlist_name_field"
                 %>
               </div>
 
@@ -98,15 +98,15 @@
             </div>
 
             <div>
-              <%= form.label :learning_path_description, "Description", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
-              <%= form.text_area :learning_path_description,
+              <%= form.label :playlist_description, "Description", class: "block text-sm font-semibold text-gray-500 dark:text-gray-400 mb-2" %>
+              <%= form.text_area :playlist_description,
                     class: "w-full px-4 py-3 bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent",
                     rows: 3,
-                    placeholder: "Describe what learners will achieve in this learning path..."
+                    placeholder: "Describe what learners will achieve in this playlist..."
               %>
             </div>
 
-            <p class="text-xs text-gray-500 dark:text-gray-400">All imported courses will be added to this learning path in the order they are processed.</p>
+            <p class="text-xs text-gray-500 dark:text-gray-400">All imported courses will be added to this playlist in the order they are processed.</p>
           </div>
         </div>
 
@@ -150,14 +150,14 @@
 </div>
 
 <script>
-  function setupLearningPathToggle() {
-    const noneRadio = document.getElementById('learning_path_action_none');
-    const existingRadio = document.getElementById('learning_path_action_existing');
-    const newRadio = document.getElementById('learning_path_action_new');
-    const existingFields = document.getElementById('existing-learning-path-fields');
-    const newFields = document.getElementById('new-learning-path-fields');
-    const existingSelect = document.getElementById('learning_path_id_field');
-    const nameField = document.getElementById('learning_path_name_field');
+  function setupPlaylistToggle() {
+    const noneRadio = document.getElementById('playlist_action_none');
+    const existingRadio = document.getElementById('playlist_action_existing');
+    const newRadio = document.getElementById('playlist_action_new');
+    const existingFields = document.getElementById('existing-playlist-fields');
+    const newFields = document.getElementById('new-playlist-fields');
+    const existingSelect = document.getElementById('playlist_id_field');
+    const nameField = document.getElementById('playlist_name_field');
 
     if (!noneRadio || !existingRadio || !newRadio) return;
 
@@ -195,14 +195,14 @@
         const selected = existingSelect?.value;
         if (!selected) {
           e.preventDefault();
-          alert('Please select a learning path, or choose a different option.');
+          alert('Please select a playlist, or choose a different option.');
           existingSelect?.focus();
         }
       } else if (newRadio.checked) {
         const name = nameField?.value?.trim();
         if (!name) {
           e.preventDefault();
-          alert('Please enter a name for the learning path, or choose a different option.');
+          alert('Please enter a name for the playlist, or choose a different option.');
           nameField?.focus();
         }
       }
@@ -211,6 +211,6 @@
     toggleFields();
   }
 
-  document.addEventListener('turbo:load', setupLearningPathToggle);
-  document.addEventListener('DOMContentLoaded', setupLearningPathToggle);
+  document.addEventListener('turbo:load', setupPlaylistToggle);
+  document.addEventListener('DOMContentLoaded', setupPlaylistToggle);
 </script>

@@ -3,7 +3,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["searchInput", "coursesGrid", "loadingIndicator", "loadMoreButton", "infiniteScrollTrigger"]
   static values = { 
-    learningPathId: Number,
+    playlistId: Number,
     currentPage: Number,
     hasMore: Boolean
   }
@@ -94,7 +94,7 @@ export default class extends Controller {
         page: this.currentPageValue
       })
 
-      const response = await fetch(`/learning_paths/${this.learningPathIdValue}/search_courses?${params}`, {
+      const response = await fetch(`/playlists/${this.playlistIdValue}/search_courses?${params}`, {
         headers: {
           'Accept': 'application/json',
           'X-Requested-With': 'XMLHttpRequest'

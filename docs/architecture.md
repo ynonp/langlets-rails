@@ -92,7 +92,7 @@
   - Belongs to Language (clip language) and Language (translation_language)
 
 #### 6. **Course** (`courses`)
-- **Purpose**: Group lessons into structured learning paths
+- **Purpose**: Group lessons into structured playlists
 - **Key Features**:
   - Hierarchical organization with slugs. **`slug` is the identifier** — uniquely indexed, and what `FriendlyName#to_param` returns.
   - **`name` is NOT unique.** It was, back when one admin typed every title. Two users importing different videos that share a title must not collide on a display field.
@@ -103,7 +103,7 @@
 - **Relationships**:
   - One-to-many with Lessons
   - Belongs to Language (clip), Language (translation_language) and User
-  - Many-to-many with LearningPaths (through CoursesLearningPath)
+  - Many-to-many with Playlists (through CoursesPlaylist)
   - One-to-many with Enrollments
 
 #### 7. **Lesson** (`lessons`)
@@ -204,8 +204,12 @@
 - **ListenActivity**: Audio comprehension with token identification
 - **FindAnswerActivity**: Question-answer exercises
 
-#### 12. **LearningPath** (`learning_paths`)
-- **Purpose**: Define structured curriculum pathways with YouTube-like browsing experience
+#### 12. **Playlist** (`playlists`)
+- **Purpose**: Define structured curriculum pathways with YouTube-like browsing experience (formerly `LearningPath` / `learning_paths`; old `/learning_paths/:id` URLs redirect to `/playlists/:id`)
+- **Ownership** (`user_id`, optional):
+  - `user_id` nil = **system playlist**: curated by admins, shown to everyone on the home page, listed in the sitemap. Only admins can modify or delete them.
+  - `user_id` set = **personal playlist**: belongs to that user. Any signed-in user can create playlists and add *any* course to them (via the "+" popup on a course page); only the owner (or an admin) can view, modify, or delete them. Created via `CoursePlaylistsController`; admins creating playlists there produce system playlists.
+  - Home page shows published system playlists plus the current user's own (`Playlist.visible_to(user)`); `PlaylistsController#show` 404s personal playlists for anyone but their owner/admin. Authorization lives in `Ability` (`can [:update, :destroy], Playlist, user_id: user.id`; admins `can :manage, Playlist`).
 - **Key Features**:
   - Named learning sequences with descriptions
   - Difficulty level classification (integer)
@@ -213,13 +217,13 @@
   - **YouTube-style View**: Dedicated show page with search, tag filtering, and grid layout
   - **Ajax Search**: Real-time course filtering by name
   - **Tag-based Filtering**: Dynamic tag system for course categorization
-- **Relationships**: Many-to-many with Courses (through CoursesLearningPath)
+- **Relationships**: Many-to-many with Courses (through CoursesPlaylist); optionally belongs to a User
 
 #### 13. **Tag** (`tags`)
-- **Purpose**: Categorization system for courses within learning paths
+- **Purpose**: Categorization system for courses within playlists
 - **Key Features**:
   - Unique tag names (e.g., "Music", "French", "Beginner")
-  - Used for filtering courses in learning path views
+  - Used for filtering courses in playlist views
   - Supports YouTube-like tag filtering interface
 - **Relationships**: Many-to-many with Courses (through CourseTag)
 
@@ -230,12 +234,12 @@
   - Enables tag-based filtering and categorization
 - **Relationships**: Links Courses to Tags
 
-#### 15. **CoursesLearningPath** (`courses_learning_paths`)
-- **Purpose**: Join table linking courses to learning paths
+#### 15. **CoursesPlaylist** (`courses_playlists`)
+- **Purpose**: Join table linking courses to playlists
 - **Key Features**:
-  - Ordered sequence within learning paths (integer order field)
+  - Ordered sequence within playlists (integer order field)
   - Timestamps for tracking
-- **Relationships**: Links Courses to LearningPaths
+- **Relationships**: Links Courses to Playlists
 
 ### Join Tables
 
@@ -289,7 +293,7 @@ Three rules, each load-bearing:
 #### **Enrollment** (`enrollments`)
 - **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
 - **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
-- `source`: `imported` (spent a credit), `library` (added from the catalog), `learning_path`.
+- `source`: `imported` (spent a credit), `library` (added from the catalog), `playlist`.
 - `last_practiced_at` drives Home's "Keep it going" ordering; `recently_practiced` sorts NULLS LAST so never-opened courses fall below in-progress ones.
 
 ### Workflow Management
@@ -439,12 +443,13 @@ Phrase (1) ──→ (many) TokenTranslation
 Phrase (many) ←──→ (many) Activity (through ActivityPhrase)
 Activity (many) ←──→ (many) TokenTranslation (through ActivityTokenTranslation)
 
-# Learning Path System
-LearningPath (many) ←──→ (many) Course (through CoursesLearningPath)
+# Playlist System
+Playlist (many) ←──→ (many) Course (through CoursesPlaylist)
 Course (many) ←──→ (many) Tag (through CourseTag)
 
 # User Management & Ownership (Devise)
 User (1) ──→ (many) Course # Content ownership
+User (1) ──→ (many) Playlist # Personal playlists (user_id nil = system playlist)
 User (1) ──→ (many) Lesson # Content ownership
 User (1) ──→ (many) Activity # Content ownership
 User (many) ←──→ (many) Activity (through ActivityUser) # Progress tracking
@@ -553,8 +558,8 @@ Deliberately **not** built from the mockup, because both would be controls that 
 2. **Language Selection**: After authentication, if no `?lang=<code>` param is present, the server redirects to `/onboarding/language`. The user selects their learning language from a web page that communicates the choice to iOS via a Hotwire Native bridge component (`LanguageSelectionBridgeComponent`).
 3. **Local Persistence**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage`. It is not persisted server-side.
 4. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
-5. **Content Filtering**: `CoursesController#index` and `LearningPathsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
-6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (learning path grid) and a secondary **Standalone clips** tab (standalone course grid).
+5. **Content Filtering**: `CoursesController#index` and `PlaylistsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
+6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (playlist grid) and a secondary **Standalone clips** tab (standalone course grid).
 
 #### Changing Learning Language
 - Users can change their learning language at any time from the user dropdown menu (avatar icon) on any authenticated page.
@@ -608,14 +613,14 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - **Sound Similarity**: Pronunciation confusion detection
 - **Character Indexing**: Precise word boundary detection across scripts
 
-### YouTube-Style Learning Path Interface
+### YouTube-Style Playlist Interface
 
-The platform implements a modern, YouTube-inspired interface for browsing learning paths:
+The platform implements a modern, YouTube-inspired interface for browsing playlists:
 
-#### Learning Path Show View (`app/views/learning_paths/show.html.erb`)
+#### Playlist Show View (`app/views/playlists/show.html.erb`)
 - **Header Section**: 
   - Back navigation to main courses page
-  - Learning path title and description
+  - Playlist title and description
   - User authentication controls (sign up/login or user menu with XP tracking)
 - **Search & Filter Section**:
   - Real-time search bar with debounced input
@@ -626,22 +631,22 @@ The platform implements a modern, YouTube-inspired interface for browsing learni
   - Infinite scroll structure (ready for implementation)
   - Ajax-powered updates without page refresh
 
-#### Interactive Features (`app/javascript/controllers/learning_path_courses_controller.js`)
+#### Interactive Features (`app/javascript/controllers/playlist_courses_controller.js`)
 - **Real-time Search**: Debounced search with 300ms delay for optimal performance
 - **Tag Filtering**: Dynamic filtering by course tags with visual feedback
 - **Infinite Scroll**: Intersection Observer API for loading more courses
 - **Error Handling**: Graceful degradation with user-friendly error messages
 - **State Management**: Maintains current page, search term, and active filters
 
-#### Backend Support (`app/controllers/learning_paths_controller.rb`)
+#### Backend Support (`app/controllers/playlists_controller.rb`)
 - **Optimized Queries**: Single-query approach for courses with progress data
 - **Ajax Endpoints**: JSON responses for search and filtering
 - **Pagination**: Server-side pagination with configurable page size
-- **Tag Integration**: Dynamic tag loading based on learning path content
+- **Tag Integration**: Dynamic tag loading based on playlist content
 
 #### Tag System for Course Categorization
 - **Flexible Tagging**: Courses can have multiple tags (Music, French, Beginner, etc.)
-- **Learning Path Scoping**: Tags are filtered by learning path context
+- **Playlist Scoping**: Tags are filtered by playlist context
 - **Sample Data**: Migration includes common tags for immediate functionality
 - **Unique Constraints**: Prevents duplicate tag assignments
 
@@ -676,7 +681,7 @@ app/models/
 ├── phrase.rb                   # has_one_attached :l1_audio
 ├── token_translation.rb        # has_one_attached :l1_audio
 ├── user.rb                     # Devise authentication
-├── learning_path.rb            # Learning path curriculum
+├── playlist.rb                 # Playlists (system-curated and user-owned)
 ├── tag.rb                      # Course categorization tags
 ├── course_tag.rb               # Course-tag associations
 ├── activity_phrase.rb          # Join table model
@@ -685,16 +690,16 @@ app/models/
 ├── lesson_user.rb              # User progress on lessons
 └── create_song_progress.rb     # Workflow tracking
 
-app/views/learning_paths/       # YouTube-style learning path views
-├── show.html.erb              # Main learning path view with search/filter
+app/views/playlists/       # YouTube-style playlist views
+├── show.html.erb              # Main playlist view with search/filter
 └── _courses.html.erb          # Course grid partial for Ajax updates
 
 app/controllers/
-├── learning_paths_controller.rb # Learning path browsing and search
+├── playlists_controller.rb # Playlist browsing and search
 └── ...                        # Other controllers
 
 app/javascript/controllers/
-├── learning_path_courses_controller.js # Search, filtering, infinite scroll
+├── playlist_courses_controller.js # Search, filtering, infinite scroll
 └── ...                        # Other Stimulus controllers
 
 app/views/devise/               # Devise authentication views
@@ -957,11 +962,11 @@ The following views now pass `data-popover-translation-saved-ids-value` with the
 All 3 user profile menus show a "📚 Review Words" button when the user has saved token translations:
 - `courses/index.html.erb`
 - `courses/show.html.erb`
-- `learning_paths/show.html.erb`
+- `playlists/show.html.erb`
 
 The native app Home header also uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
 - `app/views/app/shared/_header.html.erb`
 
-On mobile, the courses index and learning path headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
+On mobile, the courses index and playlist headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`
-- `learning_paths/show.html.erb`
+- `playlists/show.html.erb`

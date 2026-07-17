@@ -75,7 +75,7 @@ Rails.application.routes.draw do
       post :mark_done
       post :reset_progress
     end
-    resources :learning_paths, only: [ :index, :create, :destroy ], controller: "course_learning_paths"
+    resources :playlists, only: [ :index, :create, :destroy ], controller: "course_playlists"
     resources :lessons, only: [ :show ] do
       member do
         get :finish
@@ -85,11 +85,13 @@ Rails.application.routes.draw do
   resources :import_courses, only: [ :new, :create ]
   resources :resync_timestamps, only: [ :new, :create ]
   get "courses/:course_slug/full-player", to: "full_player#show", as: :course_full_player
-  resources :learning_paths, only: [ :show, :destroy ] do
+  resources :playlists, only: [ :show, :destroy ] do
     member do
       get :search_courses, defaults: { format: :json }
     end
   end
+  # Learning paths became playlists; keep old URLs (indexed via the sitemap) alive.
+  get "/learning_paths/:id", to: redirect("/playlists/%{id}")
   get "/azure_token", to: "azure_speech#token"
   get "activities/index"
   get "activities/show"

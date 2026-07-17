@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_17_110000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -127,14 +127,14 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
     t.index ["youtube_video_id"], name: "index_courses_on_youtube_video_id"
   end
 
-  create_table "courses_learning_paths", force: :cascade do |t|
+  create_table "courses_playlists", force: :cascade do |t|
     t.bigint "course_id", null: false
-    t.bigint "learning_path_id", null: false
+    t.bigint "playlist_id", null: false
     t.integer "order"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["course_id"], name: "index_courses_learning_paths_on_course_id"
-    t.index ["learning_path_id"], name: "index_courses_learning_paths_on_learning_path_id"
+    t.index ["course_id"], name: "index_courses_playlists_on_course_id"
+    t.index ["playlist_id"], name: "index_courses_playlists_on_playlist_id"
   end
 
   create_table "create_song_progresses", force: :cascade do |t|
@@ -307,22 +307,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
   end
 
-  create_table "learning_paths", force: :cascade do |t|
-    t.string "name"
-    t.text "description"
-    t.integer "difficulty_level"
-    t.boolean "published"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "subtitle"
-    t.string "hero_image_url"
-    t.string "cta_text"
-    t.string "cta_link"
-    t.string "primary_color"
-    t.string "layout_style", default: "default"
-    t.string "slug"
-  end
-
   create_table "lesson_users", force: :cascade do |t|
     t.bigint "lesson_id", null: false
     t.bigint "user_id", null: false
@@ -419,6 +403,24 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
     t.index ["l1_id"], name: "index_phrases_on_l1_id"
     t.index ["l2_id"], name: "index_phrases_on_l2_id"
     t.index ["medium_id"], name: "index_phrases_on_medium_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "difficulty_level"
+    t.boolean "published"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "subtitle"
+    t.string "hero_image_url"
+    t.string "cta_text"
+    t.string "cta_link"
+    t.string "primary_color"
+    t.string "layout_style", default: "default"
+    t.string "slug"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 
   create_table "similar_sounds", force: :cascade do |t|
@@ -518,8 +520,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
   add_foreign_key "courses", "languages"
   add_foreign_key "courses", "languages", column: "translation_language_id"
   add_foreign_key "courses", "users"
-  add_foreign_key "courses_learning_paths", "courses"
-  add_foreign_key "courses_learning_paths", "learning_paths"
+  add_foreign_key "courses_playlists", "courses"
+  add_foreign_key "courses_playlists", "playlists"
   add_foreign_key "credit_ledger_entries", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
@@ -537,6 +539,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
   add_foreign_key "phrases", "languages", column: "l1_id"
   add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"
+  add_foreign_key "playlists", "users"
   add_foreign_key "similar_sounds", "phrases"
   add_foreign_key "token_translation_users", "token_translations"
   add_foreign_key "token_translation_users", "users"

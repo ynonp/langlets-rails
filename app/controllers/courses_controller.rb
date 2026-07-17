@@ -9,18 +9,20 @@ class CoursesController < ApplicationController
     # Store release.
     return redirect_to app_home_path if native_app? && user_signed_in?
 
-    @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at)
-    @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
+    # Everyone sees the published system playlists; signed-in users also see
+    # their own playlists.
+    @playlists = Playlist.visible_to(current_user).includes(courses: :language).order(:created_at)
+    @all_courses = Course.published.includes(:language).not_in_playlists.order(created_at: :desc)
 
     if current_language_code.present?
       language = Language.find_by(iso_name: current_language_code)
       if language
-        @learning_paths = @learning_paths.joins(courses: :language).where(courses: { language_id: language.id }).distinct
+        @playlists = @playlists.joins(courses: :language).where(courses: { language_id: language.id }).distinct
         @all_courses = @all_courses.where(language: language)
       end
     end
 
-    @learning_paths = @learning_paths.to_a
+    @playlists = @playlists.to_a
 
     # Convert to array and precompute lesson counts to avoid N+1 queries
     @all_courses = @all_courses.left_joins(:lessons)

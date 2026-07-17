@@ -14,20 +14,20 @@
 <% content_for :structured_data do %>
   <%= render "shared/structured_data/website" %>
   <%= render "shared/structured_data/faq_page" %>
-  <% if @learning_paths.any? %>
+  <% if @playlists.any? %>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Featured Learning Paths on Langlets",
+      "name": "Featured Playlists on Langlets",
       "itemListElement": [
-        <% @learning_paths.each_with_index do |lp, idx| %>
+        <% @playlists.each_with_index do |lp, idx| %>
           {
             "@type": "ListItem",
             "position": <%= idx + 1 %>,
-            "url": "<%= j canonical_url(learning_path_path(lp)) %>",
+            "url": "<%= j canonical_url(playlist_path(lp)) %>",
             "name": "<%= j lp.name %>"
-          }<%= "," unless idx == @learning_paths.size - 1 %>
+          }<%= "," unless idx == @playlists.size - 1 %>
         <% end %>
       ]
     }
@@ -212,13 +212,13 @@
   <% end %>
 
   <!-- Courses and Standalone Clips -->
-  <% if @learning_paths.any? || @all_courses.any? %>
+  <% if @playlists.any? || @all_courses.any? %>
     <section class="mb-10 px-2">
       <h2 class="text-3xl font-bold mb-6">Browse</h2>
       <%= render "shared/tabs",
         default_tab: "courses",
         tabs: [
-          { id: "courses", label: "Courses", partial: "courses/learning_paths_grid", locals: { learning_paths: @learning_paths } },
+          { id: "courses", label: "Courses", partial: "courses/playlists_grid", locals: { playlists: @playlists } },
           { id: "standalone-clips", label: "Standalone clips", partial: "courses/standalone_clips_grid", locals: { courses: @all_courses } }
         ] %>
     </section>

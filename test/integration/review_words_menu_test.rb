@@ -166,8 +166,8 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "button", text: "📚 Review Words (#{@arabic.iso_name})"
   end
 
-  test "learning path show page shows language-specific review buttons" do
-    learning_path = LearningPath.create!(
+  test "playlist show page shows language-specific review buttons" do
+    playlist = Playlist.create!(
       name: "Test Path",
       slug: "test-path-#{Time.zone.now.to_i}",
       published: true
@@ -176,7 +176,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @user.saved_token_translations << @token_he
 
     sign_in(@user)
-    get learning_path_path(learning_path)
+    get playlist_path(playlist)
     assert_response :success
 
     assert_select "button", text: "📚 Review Words (#{@hebrew.iso_name})"
@@ -195,7 +195,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "root page uses tabs to switch between courses and standalone clips" do
-    learning_path = LearningPath.create!(
+    playlist = Playlist.create!(
       name: "Beginner Tracks",
       slug: "beginner-tracks-#{Time.zone.now.to_i}",
       published: true
@@ -209,7 +209,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       language: @english,
       status: :published
     )
-    learning_path.courses << course_in_path
+    playlist.courses << course_in_path
 
     Course.create!(
       name: "Standalone Course #{Time.zone.now.to_i}",
@@ -234,15 +234,15 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select ".swiper", count: 0
   end
 
-  test "learning path header keeps theme and xp controls in mobile profile menu" do
-    learning_path = LearningPath.create!(
+  test "playlist header keeps theme and xp controls in mobile profile menu" do
+    playlist = Playlist.create!(
       name: "Mobile Header Test Path",
       slug: "mobile-header-test-path-#{Time.zone.now.to_i}",
       published: true
     )
 
     sign_in(@user)
-    get learning_path_path(learning_path)
+    get playlist_path(playlist)
     assert_response :success
 
     assert_select "[data-testid='header-theme-desktop']", count: 1

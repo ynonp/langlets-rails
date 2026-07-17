@@ -17,6 +17,11 @@ class Ability
   # CreateCourseJob build the Course server-side.
   def initialize(user)
     return if user.blank?
+
+    # Every signed-in user owns their playlists: add/remove courses, delete.
+    # System playlists (user_id nil) stay admin-only via `editor`.
+    can [ :update, :destroy ], Playlist, user_id: user.id
+
     return unless user.admin?
 
     editor(user)
@@ -25,6 +30,6 @@ class Ability
   def editor(user)
     can :create, Course
     can :manage, Course, user: user
-    can :manage, LearningPath
+    can :manage, Playlist
   end
 end

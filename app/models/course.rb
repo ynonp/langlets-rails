@@ -10,8 +10,8 @@ class Course < ApplicationRecord
   belongs_to :language, optional: true
   belongs_to :translation_language, class_name: "Language", optional: true
 
-  has_many :courses_learning_paths, dependent: :destroy
-  has_many :learning_paths, through: :courses_learning_paths
+  has_many :courses_playlists, dependent: :destroy
+  has_many :playlists, through: :courses_playlists
 
   has_many :course_tags, dependent: :destroy
   has_many :tags, through: :course_tags
@@ -38,9 +38,12 @@ class Course < ApplicationRecord
   scope :published_courses, -> { where(status: :published) }
   scope :processing_courses, -> { where(status: :processing) }
   scope :with_full_player, -> { where(show_full_course_player: true) }
-  scope :not_in_learning_paths, -> {
+  # Only system playlists count here: a course tucked into someone's personal
+  # playlist should still show up in the public "all courses" grid.
+  scope :not_in_playlists, -> {
     where.not(
-      id: LearningPath
+      id: Playlist
+      .system_playlists
       .published
       .joins(:courses)
       .select("courses.id")

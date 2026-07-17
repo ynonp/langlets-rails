@@ -28,9 +28,9 @@
     </url>
   <% end %>
 
-  <% @learning_paths.each do |lp| %>
+  <% @playlists.each do |lp| %>
     <url>
-      <loc>https://langlets.app<%= learning_path_path(lp) %></loc>
+      <loc>https://langlets.app<%= playlist_path(lp) %></loc>
       <lastmod><%= lp.updated_at.iso8601 %></lastmod>
       <priority>0.7</priority>
       <changefreq>weekly</changefreq>

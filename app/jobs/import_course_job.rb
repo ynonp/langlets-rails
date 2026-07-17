@@ -4,10 +4,10 @@ require "json"
 class ImportCourseJob < ApplicationJob
   queue_as :default
 
-  def perform(create_song_progress_id, user_id, learning_path_id = nil)
+  def perform(create_song_progress_id, user_id, playlist_id = nil)
     progress = CreateSongProgress.find(create_song_progress_id)
     user = User.find(user_id)
-    learning_path = learning_path_id ? LearningPath.find_by(id: learning_path_id) : nil
+    playlist = playlist_id ? Playlist.find_by(id: playlist_id) : nil
 
     video_id = extract_video_id(progress.youtubeurl)
     title = fetch_video_title(video_id, progress.youtubeurl)
@@ -39,9 +39,9 @@ class ImportCourseJob < ApplicationJob
 
     course.published!
 
-    if learning_path
-      add_to_learning_path(course, learning_path)
-      Rails.logger.info "Added course #{course.id} to learning path #{learning_path.id}"
+    if playlist
+      add_to_playlist(course, playlist)
+      Rails.logger.info "Added course #{course.id} to playlist #{playlist.id}"
     end
 
     CourseMailer.creation_complete(course).deliver_now
@@ -60,16 +60,16 @@ class ImportCourseJob < ApplicationJob
 
   private
 
-  def add_to_learning_path(course, learning_path)
-    existing_assoc = CoursesLearningPath.find_by(course: course)
+  def add_to_playlist(course, playlist)
+    existing_assoc = CoursesPlaylist.find_by(course: course)
 
     if existing_assoc
-      existing_assoc.update!(learning_path: learning_path)
+      existing_assoc.update!(playlist: playlist)
     else
-      max_order = learning_path.courses_learning_paths.maximum(:order) || 0
-      CoursesLearningPath.create!(
+      max_order = playlist.courses_playlists.maximum(:order) || 0
+      CoursesPlaylist.create!(
         course: course,
-        learning_path: learning_path,
+        playlist: playlist,
         order: max_order + 1
       )
     end

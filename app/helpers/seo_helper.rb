@@ -45,12 +45,12 @@ module SeoHelper
     "Practice listening, speaking, and comprehension with AI-powered activities on Langlets."
   end
 
-  def learning_path_description(learning_path)
-    return learning_path.description if learning_path.description.present?
+  def playlist_description(playlist)
+    return playlist.description if playlist.description.present?
 
-    course_count = learning_path.courses.published.count
-    "A curated learning path with #{ActionController::Base.helpers.pluralize(course_count, 'interactive video course')}. " \
-    "Master \"#{learning_path.name}\" step by step on Langlets."
+    course_count = playlist.courses.published.count
+    "A curated playlist with #{ActionController::Base.helpers.pluralize(course_count, 'interactive video course')}. " \
+    "Master \"#{playlist.name}\" step by step on Langlets."
   end
 
   def extract_youtube_id(url)
