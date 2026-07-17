@@ -12,6 +12,8 @@ final class SignOutComponent: BridgeComponent {
     override func onReceive(message: Message) {
         guard message.event == "signedOut" else { return }
 
+        NotificationCenter.default.post(name: .userDidSignOut, object: nil)
+
         // Clear cookies stored at the URLSession level as well.
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)
 
@@ -26,4 +28,8 @@ final class SignOutComponent: BridgeComponent {
             dataStore.httpCookieStore.getAllCookies { _ in }
         }
     }
+}
+
+extension Notification.Name {
+    static let userDidSignOut = Notification.Name("userDidSignOut")
 }

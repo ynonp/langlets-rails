@@ -48,6 +48,10 @@ final class AppTabBarController: UITabBarController {
             return navigator.rootViewController
         }
 
+        // Authentication is established by the first rendered /app page.
+        // Keep the navigation controls out of the signed-out experience until
+        // SceneDelegate receives that page's tab-badge bridge message.
+        tabBar.isHidden = true
         delegate = self
     }
 
@@ -104,6 +108,10 @@ final class AppTabBarController: UITabBarController {
 
     func setQueueBadge(_ count: Int) {
         viewControllers?[Self.queueTabIndex].tabBarItem.badgeValue = count > 0 ? String(count) : nil
+    }
+
+    func setTabsVisible(_ visible: Bool) {
+        tabBar.isHidden = !visible
     }
 
     // MARK: - Private

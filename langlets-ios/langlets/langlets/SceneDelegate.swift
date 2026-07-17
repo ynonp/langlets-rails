@@ -91,6 +91,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             object: nil
         )
 
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(userDidSignOut),
+            name: .userDidSignOut,
+            object: nil
+        )
+
         tabBarController.start()
     }
 
@@ -130,6 +137,7 @@ extension SceneDelegate: NavigatorDelegate {
         // A visit heading into the auth flow means the session is gone;
         // whatever the other tabs show predates it.
         if proposal.url.path.hasPrefix("/users/") {
+            tabBarController.setTabsVisible(false)
             tabBarController.reloadOtherTabs(than: navigator)
         }
 
@@ -162,6 +170,13 @@ extension SceneDelegate: NavigatorDelegate {
     @objc private func queueBadgeDidChange(_ notification: Notification) {
         guard let count = notification.userInfo?["count"] as? Int else { return }
 
+        // This bridge exists only in the authenticated app layout, so receipt
+        // is the native shell's confirmation that tabs are safe to reveal.
+        tabBarController.setTabsVisible(true)
         tabBarController.setQueueBadge(count)
+    }
+
+    @objc private func userDidSignOut() {
+        tabBarController.setTabsVisible(false)
     }
 }
