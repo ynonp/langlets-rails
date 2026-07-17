@@ -57,7 +57,7 @@ final class PushNotifications: NSObject {
         pendingTokenHandler = completion
 
         UNUserNotificationCenter.current().getNotificationSettings { [weak self] settings in
-            Task { @MainActor in
+            Task { @MainActor [weak self] in
                 guard let self else { return }
 
                 switch settings.authorizationStatus {

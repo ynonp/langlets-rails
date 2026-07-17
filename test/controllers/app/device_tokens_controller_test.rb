@@ -10,6 +10,7 @@ module App
 
     setup do
       @user = User.create!(email: "device-api@example.com", password: "password123", confirmed_at: Time.zone.now)
+      new_user_session_path # Load Devise's lazy route mapping before sign_in.
       sign_in @user
       get "/app?lang=es", headers: NATIVE # seeds session[:lang]
     end
@@ -53,7 +54,7 @@ module App
 
       post app_device_tokens_path, params: { token: TOKEN }, headers: NATIVE
 
-      assert_redirected_to new_user_session_path(returnto: "/app/device_tokens")
+      assert_redirected_to new_user_session_path(returnto: "/app/device_tokens?lang=es")
       assert_equal 0, DeviceToken.count
     end
 
@@ -72,6 +73,7 @@ module App
 
     setup do
       @user = User.create!(email: "prompt@example.com", password: "password123", confirmed_at: Time.zone.now)
+      new_user_session_path # Load Devise's lazy route mapping before sign_in.
       sign_in @user
       get "/app?lang=es", headers: NATIVE
     end

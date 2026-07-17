@@ -326,6 +326,14 @@ The job is enqueued **inside** the transaction — good_job is Postgres-backed, 
 
 Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `CreateCourseJob` enrolls everyone attached once it publishes.
 
+#### Course-ready push notifications
+
+Once `CreateCourseJob` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request. Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
+
+The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
+
+`Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
+
 #### **CreateCourseJob** — charge lifecycle
 `good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise here is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
 
