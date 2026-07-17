@@ -159,12 +159,14 @@ module App
 
       assert_response :success
       assert_select "[data-testid='keep-it-going']" do
-        assert_select "h2:first-child", text: "Keep it going"
+        assert_select "div:first-child" do
+          assert_select "h2", text: "Keep it going"
+          assert_select "a[href=?]", app_started_courses_path, text: "See all", count: 1
+        end
         assert_select "a[href=?]", app_started_courses_path, text: "See all", count: 1
         assert_select "a", text: /Latest Course/
         assert_select "a", text: /Despacito/
         assert_select "a", text: /Older Course/, count: 0
-        assert_select "p:last-child a", text: "See all"
       end
     end
 

@@ -67,7 +67,11 @@
     <%# Keep it going %>
     <% if @enrollments.any? %>
       <div data-testid="keep-it-going" class="flex flex-col gap-2.5">
-        <h2 class="text-[15px] font-bold">Keep it going</h2>
+        <div class="flex items-baseline justify-between">
+          <h2 class="text-[15px] font-bold">Keep it going</h2>
+          <%= link_to "See all", app_started_courses_path,
+                      class: "text-app-accent text-[13px] font-semibold" %>
+        </div>
 
         <div class="flex flex-col gap-2.5">
           <% @enrollments.each do |enrollment| %>
@@ -77,10 +81,6 @@
           <% end %>
         </div>
 
-        <p class="text-center mt-1">
-          <%= link_to "See all", app_started_courses_path,
-                      class: "text-app-accent text-[13px] font-semibold" %>
-        </p>
       </div>
     <% end %>
 
