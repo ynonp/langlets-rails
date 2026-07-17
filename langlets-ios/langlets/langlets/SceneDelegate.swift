@@ -4,6 +4,7 @@ import UIKit
 import WebKit
 
 let rootURL = URL(string: "http://localhost:3000")!
+let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
@@ -19,7 +20,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         Hotwire.config.makeCustomWebView = { config in
             config.allowsInlineMediaPlayback = true
             config.mediaTypesRequiringUserActionForPlayback = []
-            return WKWebView(frame: .zero, configuration: config)
+            let webView = WKWebView(frame: .zero, configuration: config)
+            webView.isOpaque = false
+            webView.backgroundColor = appBackgroundColor
+            webView.scrollView.backgroundColor = appBackgroundColor
+            return webView
         }
 
         // Configure Hotwire Native. The /2.0 marks builds with the native tab

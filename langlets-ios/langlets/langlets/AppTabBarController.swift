@@ -40,6 +40,7 @@ final class AppTabBarController: UITabBarController {
         }
 
         viewControllers = zip(Self.tabs, navigators).map { tab, navigator in
+            navigator.rootViewController.view.backgroundColor = appBackgroundColor
             navigator.rootViewController.tabBarItem = UITabBarItem(
                 title: tab.title,
                 image: UIImage(systemName: tab.image),
@@ -52,6 +53,7 @@ final class AppTabBarController: UITabBarController {
         // Keep the navigation controls out of the signed-out experience until
         // SceneDelegate receives that page's tab-badge bridge message.
         tabBar.isHidden = true
+        view.backgroundColor = appBackgroundColor
         delegate = self
     }
 
