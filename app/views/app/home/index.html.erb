@@ -1,0 +1,41 @@
+<% content_for :title, "langlets." %>
+
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-5">
+  <%= render "app/shared/header" %>
+
+  <%# Greeting %>
+  <div>
+    <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">
+      Ready to practice<%= ", #{@greeting_name}" if @greeting_name.present? %>?
+    </h1>
+    <p class="text-app-text-2 text-sm mt-1">
+      <%= @hero_course ? "Your newest import just landed." : "Pick up where you left off." %>
+    </p>
+  </div>
+
+  <%# "Just imported" hero %>
+  <% if @hero_course %>
+    <%= render "app/home/hero", course: @hero_course,
+               lessons_count: @lesson_counts[@hero_course.id].to_i %>
+  <% end %>
+
+  <%# Keep it going %>
+  <% if @enrollments.any? %>
+    <div class="flex items-baseline justify-between">
+      <h2 class="text-[15px] font-bold">Keep it going</h2>
+      <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
+    </div>
+
+    <div class="flex flex-col gap-2.5">
+      <% @enrollments.each do |enrollment| %>
+        <%= render "app/home/course_row", course: enrollment.course,
+                   total: @lesson_counts[enrollment.course_id].to_i,
+                   completed: @completed_counts[enrollment.course_id].to_i %>
+      <% end %>
+    </div>
+  <% elsif @hero_course.nil? %>
+    <%= render "app/home/empty" %>
+  <% end %>
+</div>
+
+<%= render "app/shared/tab_bar", active: :home %>

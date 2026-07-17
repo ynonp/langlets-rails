@@ -2,6 +2,13 @@ class CoursesController < ApplicationController
   before_action :authenticate_user!, only: [ :new, :create ]
 
   def index
+    # The one place the web UI knows about the mobile app. Signed-in native users
+    # land on the app's Home instead of this page; everyone on the web sees
+    # exactly what they always have. Deciding this server-side (rather than
+    # changing the app's start location) means it can be changed without an App
+    # Store release.
+    return redirect_to app_home_path if native_app? && user_signed_in?
+
     @learning_paths = LearningPath.published.includes(courses: :language).order(:created_at)
     @all_courses = Course.published.includes(:language).not_in_learning_paths.order(created_at: :desc)
 

@@ -1,0 +1,48 @@
+<% content_for :title, "Library · langlets." %>
+
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
+  <div>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]">Library</h1>
+    <p class="text-app-text-2 text-sm mt-1">Every video the community has turned into lessons.</p>
+  </div>
+
+  <%# The mockup draws this as static text; it needs to be a real field. %>
+  <%= form_with url: app_library_path, method: :get, data: { turbo_frame: "_top" } do |f| %>
+    <label class="app-hairline bg-app-card rounded-app-field flex items-center gap-2.5 py-3 px-3.5">
+      <%= app_icon "search", class: "w-[18px] h-[18px] text-app-text-3 shrink-0" %>
+      <%= f.search_field :q, value: @query,
+                         placeholder: "Search titles, channels, songs…",
+                         class: "w-full bg-transparent text-[15px] text-app-text placeholder:text-app-text-3 outline-none",
+                         autocomplete: "off" %>
+    </label>
+  <% end %>
+
+  <%# The mockup has All / Music / Shows / Kids / News chips here. They're
+      deliberately absent: the category taxonomy comes from pipeline metadata that
+      nothing populates yet, so every chip but "All" would return an empty grid.
+      They arrive with the classifier. %>
+
+  <% if @courses.empty? %>
+    <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
+      <p class="text-app-text-2 text-sm">
+        <% if @query.present? %>
+          Nothing matches “<%= @query %>” yet.
+        <% else %>
+          The Library is empty for this language.
+        <% end %>
+      </p>
+      <%= link_to "Import a video", new_app_import_request_path,
+                  class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
+    </div>
+  <% else %>
+    <div class="grid grid-cols-2 gap-3">
+      <% @courses.each do |course| %>
+        <%= render "app/library/card", course: course,
+                   lessons_count: @lesson_counts[course.id].to_i,
+                   enrolled: @enrolled_course_ids.include?(course.id) %>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "app/shared/tab_bar", active: :library %>

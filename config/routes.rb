@@ -45,6 +45,23 @@ Rails.application.routes.draw do
   # Hotwire Native path configuration for the iOS app (see ConfigurationsController).
   get "/configurations/ios_v1", to: "configurations#ios_v1"
 
+  # The langlets. mobile app. Server-rendered screens shown only inside the
+  # native shell (App::BaseController#require_native_app); the web UI at root is
+  # untouched.
+  namespace :app do
+    root to: "home#index", as: :home
+    # controller: pinned — a singular `resource` would otherwise look for
+    # App::LibrariesController.
+    resource :library, only: [ :show ], controller: "library"
+    resources :enrollments, only: [ :create ]
+    resources :import_requests, only: [ :index, :new, :create, :destroy ] do
+      member do
+        post :retry
+      end
+    end
+    resource :credits, only: [ :show ]
+  end
+
   get "home/privacy"
   get "home/terms"
   get "support", to: "home#support"

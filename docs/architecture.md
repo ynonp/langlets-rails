@@ -519,9 +519,26 @@ The iOS app is a Hotwire Native wrapper around the Rails web application. It use
 1. `.file(...)` — the copy bundled at `langlets-ios/langlets/langlets/Configuration/path_configuration.json`. Offline fallback and first-launch seed.
 2. `.server(...)` — `GET /configurations/ios_v1.json`, served by `ConfigurationsController` from `config/hotwire/ios_path_configuration.json`. **This one wins at runtime**, so routing rules can change with a Rails deploy instead of an App Store release.
 
-Two things to know before touching this:
+> **Rule order is the opposite of what it looks like.** Hotwire Native merges the properties of *every* rule whose pattern matches, with **later rules winning** (`PathConfiguration#properties`: `properties.merge(rule.properties) { _, new in new }`), and patterns are unanchored regexes so `.*` matches everything. The catch-all therefore belongs **first**, as the baseline that later, more specific rules override.
+>
+> It used to sit last, which silently defeated every modal rule in the file — auth, lessons and `/new` were all presenting as plain pushes no matter what they asked for. Fixed in Phase 3; keep the most specific rules at the bottom.
+
+Two more things to know before touching this:
 - `ConfigurationsController` inherits `ActionController::API`, *not* `ApplicationController`. Under `ApplicationController`, `require_authentication_for_native_app` would answer a signed-out native request with a redirect to the sign-in page and the app would parse that HTML as path configuration.
 - The bundled and served copies must stay identical in the repo; `test/controllers/configurations_controller_test.rb` enforces it. Edit both together.
+
+#### The app screens (`/app`)
+
+Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). They are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator.
+
+The **only** place the web knows about them is one line in `CoursesController#index`: signed-in native users are redirected to `app_home_path`. Deciding it server-side rather than changing the app's start location means it can change without an App Store release.
+
+- **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
+- Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
+- The Queue **polls** (`poll_controller.js`, 3s, stops when nothing is active). See ImportRequest above for why not Action Cable.
+- Screens are gated by `require_language_for_native_app` too: a native user with no `?lang=` is sent to `/onboarding/language` before any of this is reachable.
+
+Deliberately **not** built from the mockup, because both would be controls that do nothing: the Library's category chips (nothing populates the taxonomy until the classifier lands) and the Add sheet's "Search YouTube" segment (needs the Data API).
 
 #### Onboarding Flow
 1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.

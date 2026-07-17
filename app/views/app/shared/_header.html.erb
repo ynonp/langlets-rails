@@ -1,0 +1,23 @@
+<%# Wordmark, credits pill, avatar. The brand is "langlets." — lowercase, with a
+    green full stop. (The written spec calls the app "Turn"; the mockup never
+    does, and "turn" is the verb from the tagline.) %>
+<div class="flex items-center justify-between">
+  <span class="text-2xl font-extrabold tracking-[-0.5px]">
+    langlets<span class="text-app-accent">.</span>
+  </span>
+
+  <div class="flex items-center gap-2.5">
+    <%= link_to app_credits_path,
+                class: "flex items-center gap-1.5 bg-app-pill rounded-full py-1.5 px-3",
+                aria: { label: app_credits_label(current_user.credit_balance) } do %>
+      <%= app_icon "bolt", class: "w-[13px] h-[13px] text-app-accent" %>
+      <span class="text-app-credits text-[13px] font-bold"><%= current_user.credit_balance %></span>
+    <% end %>
+
+    <%= link_to profile_path,
+                class: "w-[34px] h-[34px] rounded-full bg-app-pill flex items-center justify-center",
+                aria: { label: "Your profile" } do %>
+      <span class="text-[13px] font-bold text-[#B9C7D2]"><%= current_user.email.first.upcase %></span>
+    <% end %>
+  </div>
+</div>

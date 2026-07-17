@@ -1,0 +1,30 @@
+<div class="app-hairline bg-app-card rounded-app-card overflow-hidden flex flex-col">
+  <%= link_to course_path(course) do %>
+    <%= image_tag Medium.youtube_thumbnail_url(course.youtube_video_id, "mqdefault"),
+                  alt: "", loading: "lazy",
+                  class: "w-full h-[94px] object-cover bg-app-inset" %>
+  <% end %>
+
+  <div class="px-3 pt-2.5 pb-3 flex flex-col gap-1 flex-1">
+    <%# The mockup pins these to a fixed 34px height; line-clamp is the same two
+        lines without breaking when the font metrics differ. %>
+    <%= link_to course.name, course_path(course),
+                class: "app-clamp-2 text-[13px] font-semibold leading-[1.3] min-h-[34px]" %>
+
+    <p class="text-app-text-2 text-[11px]">
+      <%= course.language&.english_name %> · <%= pluralize(lessons_count, "lesson") %>
+    </p>
+
+    <div class="mt-auto pt-1">
+      <% if enrolled %>
+        <span class="text-app-text-3 text-xs font-bold">On your Home</span>
+      <% else %>
+        <%# Free: the content is already imported, so there's no AI work to bill. %>
+        <%= button_to app_enrollments_path(course_slug: course.slug),
+                      class: "text-app-accent text-xs font-bold" do %>
+          + Learn this
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

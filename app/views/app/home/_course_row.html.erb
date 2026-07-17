@@ -1,0 +1,18 @@
+<% percent = app_progress_percent(completed, total) %>
+<% next_lesson = [ completed + 1, [ total, 1 ].max ].min %>
+
+<%= link_to course_path(course), class: "app-hairline bg-app-card rounded-app-card p-2.5 flex items-center gap-3" do %>
+  <%= image_tag Medium.youtube_thumbnail_url(course.youtube_video_id, "mqdefault"),
+                alt: "", loading: "lazy",
+                class: "shrink-0 w-[92px] h-[52px] rounded-app-thumb object-cover bg-app-inset" %>
+
+  <%# min-w-0 is what lets the title actually truncate inside a flex row. %>
+  <div class="flex-1 min-w-0 flex flex-col gap-1">
+    <p class="text-sm font-semibold truncate"><%= course.name %></p>
+    <p class="text-app-text-2 text-xs">Lesson <%= next_lesson %> of <%= [ total, 1 ].max %></p>
+
+    <div class="h-1 rounded-full bg-white/12 overflow-hidden mt-0.5">
+      <div class="h-1 rounded-full bg-app-accent" style="width: <%= percent %>%"></div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+<%# "Just imported" hero card. Cards separate by border alone — no shadow. %>
+<div class="app-hairline bg-app-card rounded-app-hero overflow-hidden">
+  <div class="relative">
+    <%= image_tag Medium.youtube_thumbnail_url(course.youtube_video_id, "hqdefault"),
+                  alt: "", loading: "lazy",
+                  class: "w-full h-[174px] object-cover bg-app-inset" %>
+
+    <span class="pointer-events-none absolute top-3 left-3 bg-app-accent text-app-on-accent-sm
+                 text-[11px] font-extrabold tracking-[0.08em] rounded-full py-1 px-2.5">
+      JUST IMPORTED
+    </span>
+  </div>
+
+  <div class="px-4 pt-3.5 pb-4 flex flex-col gap-3">
+    <div>
+      <h3 class="text-[17px] font-bold leading-snug"><%= course.name %></h3>
+      <p class="text-app-text-2 text-xs mt-1"><%= app_course_meta(course, lessons_count: lessons_count) %></p>
+    </div>
+
+    <%= link_to "Start Course", course_path(course),
+                class: "block text-center bg-app-accent text-app-on-accent rounded-full py-3 text-[15px] font-bold" %>
+  </div>
+</div>

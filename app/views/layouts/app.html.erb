@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<%# The langlets. mobile app shell. Dark-only by design (see the mockup), so the
+    theme is hard-coded rather than read from the user's preference — a user who
+    picked light mode on the web still gets the app's dark palette here.
+
+    Never use `dark:` utilities in views rendered by this layout: the variant keys
+    off this very attribute, so they'd be unconditionally on and the intent would
+    be invisible. Use the app-* tokens directly. %>
+<html data-theme="dark">
+  <head>
+    <%= render "layouts/head" %>
+  </head>
+
+  <body class="bg-app-bg text-app-text font-app antialiased">
+    <main class="min-h-dvh"
+          data-controller="audio-cache"
+          data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">
+      <%= yield %>
+    </main>
+
+    <% if params[:signed_out].present? %>
+      <div data-controller="bridge--sign-out" hidden></div>
+    <% end %>
+  </body>
+</html>

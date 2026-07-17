@@ -1,6 +1,30 @@
 {
   "settings": {},
+  "_comment": [
+    "ORDER MATTERS, AND NOT THE WAY IT LOOKS. Hotwire Native merges the",
+    "properties of every rule whose pattern matches, with LATER rules winning",
+    "(PathConfiguration#properties: `properties.merge(rule.properties) { _, new in new }`).",
+    "Patterns are unanchored regexes, so `.*` matches every path.",
+    "",
+    "The catch-all therefore has to come FIRST, as the baseline that specific",
+    "rules below override. It used to sit last, which silently defeated every",
+    "modal rule in this file — auth, lessons and /new have all been presenting",
+    "as plain pushes regardless of what they asked for.",
+    "",
+    "Keep the most specific rules at the bottom.",
+    "",
+    "This file is served to the app by ConfigurationsController and must stay",
+    "identical to langlets-ios/langlets/langlets/Configuration/path_configuration.json,",
+    "which is the offline fallback. A test enforces it."
+  ],
   "rules": [
+    {
+      "patterns": [".*"],
+      "properties": {
+        "context": "default",
+        "pull_to_refresh_enabled": true
+      }
+    },
     {
       "patterns": ["/users/auth/.*", "/users/sign_in", "/users/sign_up", "/users/password/new"],
       "properties": {
@@ -37,10 +61,19 @@
       }
     },
     {
-      "patterns": [".*"],
+      "patterns": ["^/app$", "^/app/library$", "^/app/import_requests$"],
       "properties": {
         "context": "default",
+        "presentation": "replace_root",
         "pull_to_refresh_enabled": true
+      }
+    },
+    {
+      "patterns": ["^/app/import_requests/new$", "^/app/credits$"],
+      "properties": {
+        "context": "modal",
+        "modal_style": "medium",
+        "pull_to_refresh_enabled": false
       }
     }
   ]

@@ -1,0 +1,34 @@
+<% content_for :title, "Credits · langlets." %>
+
+<%# Presented as a bottom sheet by the path configuration, same as Add a video. %>
+<div class="min-h-dvh flex flex-col justify-end">
+  <div class="app-sheet-top bg-app-sheet rounded-t-app-sheet px-5 pt-2.5 pb-11 flex flex-col gap-4">
+    <div class="flex justify-center">
+      <div class="w-9 h-[5px] rounded-full bg-white/20"></div>
+    </div>
+
+    <div class="flex justify-end">
+      <%= link_to app_home_path,
+                  class: "w-[30px] h-[30px] rounded-full bg-app-pill flex items-center justify-center text-app-text-2",
+                  aria: { label: "Close" } do %>
+        <%= app_icon "close", class: "w-3.5 h-3.5" %>
+      <% end %>
+    </div>
+
+    <% if @balance.positive? %>
+      <div class="flex flex-col items-center text-center gap-2.5 pb-2">
+        <div class="w-14 h-14 rounded-full bg-app-accent/[0.14] flex items-center justify-center">
+          <%= app_icon "bolt", class: "w-[26px] h-[26px] text-app-accent", stroke: 1.2 %>
+        </div>
+        <h2 class="text-xl font-extrabold tracking-[-0.4px]">
+          <%= pluralize(@balance, "credit") %> left
+        </h2>
+        <p class="text-app-text-2 text-sm leading-[1.45] max-w-[290px]">
+          Each import uses 1 credit. Adding something from the Library is always free.
+        </p>
+      </div>
+    <% else %>
+      <%= render "app/credits/out_of_credits_body" %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<% content_for :title, "Queue · langlets." %>
+<% active_count = @import_requests.count(&:active?) %>
+
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4">
+  <div>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]">Queue</h1>
+    <p class="text-app-text-2 text-sm mt-1">
+      <% if active_count.positive? %>
+        <%= pluralize(active_count, "import") %> in progress — we'll ping you when they're ready.
+      <% else %>
+        Nothing importing right now.
+      <% end %>
+    </p>
+  </div>
+
+  <%# Polls rather than streams. There is no Action Cable in this app at all (no
+      app/channels, not even ApplicationCable::Connection), a WKWebView socket
+      drops whenever iOS backgrounds the app, and pipeline updates land at LLM
+      step boundaries tens of seconds apart — so a socket buys nothing a 3s poll
+      doesn't. The signal that matters when an import finishes is the push.
+      The controller stops polling once nothing is active. %>
+  <div id="queue"
+       data-controller="poll"
+       data-poll-interval-value="3000"
+       data-poll-active-value="<%= active_count.positive? %>">
+    <% if @import_requests.empty? %>
+      <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
+        <p class="text-app-text-2 text-sm">Nothing here yet.</p>
+        <%= link_to "Add a video", new_app_import_request_path,
+                    class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
+      </div>
+    <% else %>
+      <div class="flex flex-col gap-2.5">
+        <%= render partial: "app/import_requests/import_request", collection: @import_requests %>
+      </div>
+    <% end %>
+  </div>
+
+  <% if active_count.positive? %>
+    <p class="text-center text-app-text-3 text-[13px] leading-relaxed px-4 py-2">
+      Imports take a few minutes. Feel free to close the app — we'll send a push when each one is ready.
+    </p>
+  <% end %>
+</div>
+
+<%= render "app/shared/tab_bar", active: :queue %>

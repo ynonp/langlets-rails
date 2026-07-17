@@ -82,6 +82,9 @@ application.register("mini-player", MiniPlayerController)
 import MultiselectController from "./multiselect_controller"
 application.register("multiselect", MultiselectController)
 
+import PollController from "./poll_controller"
+application.register("poll", PollController)
+
 import PopoverTranslationController from "./popover_translation_controller"
 application.register("popover-translation", PopoverTranslationController)
 
