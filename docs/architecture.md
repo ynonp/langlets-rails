@@ -850,6 +850,7 @@ The platform implements comprehensive progress tracking through dedicated join t
 - **Analytics Ready**: Data structure supports learning analytics and reporting
 
 #### Progress Data Applications
+- **Course reset**: The Done button on a completed course resets it to not started by deleting the current user's `lesson_users` and `activity_users` rows for every lesson/activity in that course. Enrollment and XP/activity logs are retained because they represent library membership and historical rewards rather than resumable course progress.
 - **Personalized Learning**: Adaptive content delivery based on completion history
 - **Performance Analytics**: User engagement and learning effectiveness metrics
 - **Achievement Systems**: Badges, streaks, and milestone recognition

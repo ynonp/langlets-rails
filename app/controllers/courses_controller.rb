@@ -142,7 +142,15 @@ class CoursesController < ApplicationController
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
     authenticate_user!
 
-    LessonUser.where(lesson: @course.lessons, user: current_user).destroy_all
+    lesson_ids = @course.lessons.select(:id)
+
+    ApplicationRecord.transaction do
+      ActivityUser.where(
+        activity: Activity.where(lesson_id: lesson_ids),
+        user: current_user
+      ).destroy_all
+      LessonUser.where(lesson_id: lesson_ids, user: current_user).destroy_all
+    end
 
     redirect_to course_path(@course.slug), notice: "Progress reset. You can start fresh!"
   end
