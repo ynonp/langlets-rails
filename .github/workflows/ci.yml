@@ -59,6 +59,14 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
+      # Catches constants that aren't autoloadable — e.g. an error class declared
+      # inside another class's file. Production eager-loads and the test suite
+      # loads files in an order that hides these, so nothing else catches them.
+      - name: Check Zeitwerk autoloading
+        env:
+          RAILS_ENV: test
+        run: bin/rails zeitwerk:check
+
       - name: Run tests
         env:
           RAILS_ENV: test

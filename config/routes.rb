@@ -15,6 +15,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "vocabulary", to: "vocabulary#index"
       get "courses", to: "courses#index"
+
+      # Used by the iOS app and its share extension (bearer auth — an extension
+      # can't read the host app's session cookie).
+      resources :import_requests, only: [ :index, :create ]
+      resource :credits, only: [ :show ]
     end
   end
 

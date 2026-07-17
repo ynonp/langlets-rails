@@ -9,6 +9,16 @@ class CreateSongProgress < ApplicationRecord
   include CreateSong::RateLessons
   include CreateSong::AddSimilarSound
   include CreateSong::Translate
+  include CreateSong::ProgressReporting
+
+  # This row is shared by every user importing the same video + language pair, so
+  # one pipeline legitimately backs several people's queue cards — hence
+  # update_all across all of them rather than a single request.
+  #
+  # Pushed forward on save rather than computed when the Queue asks, because
+  # `data` is a multi-megabyte jsonb blob and the Queue polls. Here it's already
+  # in memory, so the percent is free.
+  after_save :sync_import_requests_progress
 
   def create_data
     span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
@@ -67,6 +77,11 @@ class CreateSongProgress < ApplicationRecord
   end
 
   private
+
+  def sync_import_requests_progress
+    ImportRequest.where(create_song_progress_id: id, status: :importing)
+                 .update_all(progress_percent: progress_percent)
+  end
 
   def srt_timestamp(ts)
     parts = ts.split(":")

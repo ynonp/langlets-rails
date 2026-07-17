@@ -77,7 +77,14 @@ module CreateSong
 
         # The model reports the total video length on every turn; keep the latest
         # non-blank value so we can measure how much of the video we covered.
-        video_length = response.content["video_length"] if response.content["video_length"].present?
+        if response.content["video_length"].present?
+          video_length = response.content["video_length"]
+          # Persisted (not just held locally) so the Queue can report partial
+          # progress through this step: it's the longest one by far, and without
+          # a denominator the bar would sit at 0% for minutes and read as broken.
+          # Saved by the `save!` below, alongside the phrases from this turn.
+          self.data["video_length_seconds"] = srt_to_seconds(video_length)
+        end
 
         previous_count = phrases.length
         phrases = merge_phrases(phrases, WordTimingParser.parse(response.content))

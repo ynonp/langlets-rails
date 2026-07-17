@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_17_090500) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_17_100000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -269,6 +269,33 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_090500) do
     t.index ["scheduled_at"], name: "index_good_jobs_on_scheduled_at", where: "(finished_at IS NULL)"
   end
 
+  create_table "import_requests", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "youtube_url", null: false
+    t.string "youtube_video_id", null: false
+    t.string "clip_language", null: false
+    t.string "translation_language", null: false
+    t.string "title"
+    t.integer "status", default: 0, null: false
+    t.bigint "course_id"
+    t.bigint "create_song_progress_id"
+    t.integer "progress_percent", default: 0, null: false
+    t.string "failure_reason"
+    t.boolean "charged", default: false, null: false
+    t.boolean "refunded", default: false, null: false
+    t.datetime "notified_at"
+    t.string "client_token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_token"], name: "index_import_requests_on_client_token", unique: true
+    t.index ["course_id"], name: "index_import_requests_on_course_id"
+    t.index ["create_song_progress_id"], name: "index_import_requests_on_create_song_progress_id"
+    t.index ["user_id", "created_at"], name: "index_import_requests_on_user_id_and_created_at"
+    t.index ["user_id", "status"], name: "index_import_requests_on_user_id_and_status"
+    t.index ["user_id", "youtube_video_id", "clip_language", "translation_language"], name: "idx_import_requests_active_dedupe", unique: true, where: "(status = ANY (ARRAY[0, 1]))"
+    t.index ["user_id"], name: "index_import_requests_on_user_id"
+  end
+
   create_table "languages", force: :cascade do |t|
     t.string "iso_name"
     t.string "english_name"
@@ -496,6 +523,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_090500) do
   add_foreign_key "credit_ledger_entries", "users"
   add_foreign_key "enrollments", "courses"
   add_foreign_key "enrollments", "users"
+  add_foreign_key "import_requests", "courses"
+  add_foreign_key "import_requests", "create_song_progresses"
+  add_foreign_key "import_requests", "users"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "courses", on_delete: :cascade

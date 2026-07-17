@@ -1,5 +1,7 @@
 module Credits
-  class InsufficientCredits < StandardError; end
+  # InsufficientCredits lives in its own file so Zeitwerk can autoload it —
+  # declaring it here made `rescue Credits::InsufficientCredits` a NameError for
+  # any caller that hadn't already loaded this file.
 
   # The only supported way to move credits. Every call writes users.credit_balance
   # and a CreditLedgerEntry in one transaction, keyed by an idempotency_key so

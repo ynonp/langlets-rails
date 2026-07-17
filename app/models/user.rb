@@ -14,6 +14,9 @@ class User < ApplicationRecord
   has_many :enrollments, dependent: :destroy
   has_many :enrolled_courses, through: :enrollments, source: :course
 
+  # Videos the user has asked to turn into courses (the Queue screen).
+  has_many :import_requests, dependent: :destroy
+
   # Progress tracking relationships
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson

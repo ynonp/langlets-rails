@@ -294,6 +294,39 @@ Three rules, each load-bearing:
 
 ### Workflow Management
 
+#### **ImportRequest** (`import_requests`) — the Queue
+
+A user's request to turn a video into a course. There are three distinct things in the import flow and it's worth being precise about which is which:
+
+| | Scope | Keyed on |
+|---|---|---|
+| `CreateSongProgress` | the **shared pipeline cache** — no `user_id` | `(youtubeurl, clip_language, translation_language)` |
+| `Course` | the **shared output** — one per video+pair | `(youtube_video_id, language_id, translation_language_id)` |
+| `ImportRequest` | the **per-user intent** | `(user_id, youtube_video_id, clip_language, translation_language)` while active |
+
+> **One `CreateSongProgress` → many `ImportRequest`s → one `Course`.**
+
+Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
+
+- `idx_import_requests_active_dedupe` is a **partial** unique index over active (queued/importing) rows, so a double-tapped Import button is a database impossibility, while a failed import can still be retried.
+- `progress_percent` is **written forward** by `CreateSongProgress#sync_import_requests_progress`, never computed on read — `data` is a multi-megabyte jsonb blob and the Queue polls.
+
+#### **Imports::Create** (`app/services/imports/create.rb`)
+The single entry point for the Add sheet, the share extension and the API. Order is deliberate: **the video is checked before a credit moves**, so a private or deleted video costs nothing (`Youtube::Oembed` doubles as the availability check). Four outcomes:
+- `:created` — charged 1 credit, queued the pipeline.
+- `:deduped` — already published; enrolled, free.
+- `:joined` — **someone else is importing it right now**; rides along on their course, free. Without this, both users create a pending course and whichever publishes second violates `idx_courses_published_video_pair`, failing an import the user paid for.
+- `:already_queued` — this user already asked; no second charge.
+
+The job is enqueued **inside** the transaction — good_job is Postgres-backed, so the job row commits atomically with the request. Enqueuing after commit would leave a charged request nothing ever picks up.
+
+Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `CreateCourseJob` enrolls everyone attached once it publishes.
+
+#### **CreateCourseJob** — charge lifecycle
+`good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise here is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
+
+Only whoever actually paid is refunded — `:joined` riders were never charged. The `"refund:<id>"` idempotency key means a manual re-run can't mint credits.
+
 #### 20. **CreateSongProgress** (`create_song_progresses`)
 - **Purpose**: Track async content creation pipeline
 - **Key Features**:
