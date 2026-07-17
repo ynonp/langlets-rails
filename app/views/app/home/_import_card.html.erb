@@ -1,0 +1,13 @@
+<%# Dashed "bring your own" card — Home's route into Add a video, in place of
+    the floating button the other screens use. %>
+<%= link_to new_app_import_request_path,
+            class: "app-border-queued rounded-app-card py-3 px-3.5 flex items-center gap-3" do %>
+  <%= app_icon "plus", class: "w-[18px] h-[18px] text-app-text-2 shrink-0" %>
+
+  <div class="flex-1 min-w-0">
+    <p class="text-[13px] font-semibold"><%= title %></p>
+    <p class="text-app-text-2 text-[11px]">Turn any YouTube video into practice</p>
+  </div>
+
+  <%= app_icon "chevron", class: "w-2 h-3 text-app-text-2 shrink-0" %>
+<% end %>

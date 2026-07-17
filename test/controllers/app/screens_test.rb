@@ -131,6 +131,48 @@ module App
       assert second.persisted?
     end
 
+    # With nothing to continue, Home becomes the first-run song picker: library
+    # courses in the user's language, none of which they're enrolled in.
+    test "Home with an empty account shows the song picker with library courses" do
+      Enrollment.delete_all
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_match "Pick your first song", response.body
+      assert_match "Despacito", response.body
+      assert_match "Bring your own song", response.body
+      assert_no_match "Keep it going", response.body
+    end
+
+    test "the song picker only offers courses in the user's language" do
+      Enrollment.delete_all
+      french = languages(:french)
+      Course.create!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
+                     youtube_video_id: "frenchaaaaa", language: french,
+                     translation_language: @english, user: @user, status: :published)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_match "Despacito", response.body
+      assert_no_match "La Vie en Rose", response.body
+    end
+
+    test "Home suggests library courses the user is not enrolled in" do
+      Course.create!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
+                     youtube_video_id: "bailandoaaa", language: @spanish,
+                     translation_language: @english, user: @user, status: :published)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_match "Keep it going", response.body
+      assert_match "More from the library", response.body
+      assert_match "Bailando", response.body
+      assert_match "Make your own lesson", response.body
+    end
+
     test "Home shows an enrolled course and the credit balance" do
       get "/app", headers: NATIVE
 

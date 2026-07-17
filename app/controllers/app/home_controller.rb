@@ -1,6 +1,7 @@
 module App
-  # Screen 01. Only ever this user's content — courses they imported, or added
-  # from the Library. Both are Enrollments.
+  # Screen 01. The user's own courses (Enrollments — imported or added from the
+  # Library), plus a few Library suggestions: four as a first-run song picker
+  # when there's nothing to continue, two under "More from the library" otherwise.
   class HomeController < BaseController
     # Within this window a finished import still counts as "just imported" and
     # gets the hero card. Also how the push deep link lands: it routes to
@@ -10,12 +11,19 @@ module App
     def index
       @greeting_name = greeting_name
       @hero_course = hero_course
+      @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
 
       candidates = candidate_enrollments
       @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)
       @completed_counts = completed_counts_for(candidates.map(&:course_id))
 
       @enrollments = candidates.reject { |enrollment| finished?(enrollment) }
+
+      # First run = nothing to continue and nothing just imported: the screen
+      # becomes a song picker instead of a progress list.
+      @first_run = @hero_course.nil? && @enrollments.empty?
+      @library_picks = library_picks(count: @first_run ? 4 : 2)
+      @lesson_counts.merge!(lesson_counts_for(@library_picks))
     end
 
     private
@@ -58,6 +66,16 @@ module App
                           .recently_practiced
       scope = scope.where.not(course_id: @hero_course.id) if @hero_course
       scope.limit(20).to_a
+    end
+
+    # Courses from the Library the user hasn't added yet, in their language.
+    # Deliberately dumb for now — random picks; real selection comes later.
+    def library_picks(count:)
+      scope = Course.published.includes(:language, :translation_language)
+      scope = scope.where(language: @learning_language) if @learning_language
+      scope = scope.where.not(id: current_user.enrollments.select(:course_id))
+      scope = scope.where.not(id: @hero_course.id) if @hero_course
+      scope.order(Arel.sql("RANDOM()")).limit(count).to_a
     end
 
     # "Keep it going" means in progress. A finished course showing "Lesson 16 of

@@ -3,39 +3,88 @@
 <div class="app-scroll-pad px-5 pt-6 flex flex-col gap-5">
   <%= render "app/shared/header" %>
 
-  <%# Greeting %>
-  <div>
-    <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">
-      Ready to practice<%= ", #{@greeting_name}" if @greeting_name.present? %>?
-    </h1>
-    <p class="text-app-text-2 text-sm mt-1">
-      <%= @hero_course ? "Your newest import just landed." : "Pick up where you left off." %>
-    </p>
-  </div>
-
-  <%# "Just imported" hero %>
-  <% if @hero_course %>
-    <%= render "app/home/hero", course: @hero_course,
-               lessons_count: @lesson_counts[@hero_course.id].to_i %>
-  <% end %>
-
-  <%# Keep it going %>
-  <% if @enrollments.any? %>
-    <div class="flex items-baseline justify-between">
-      <h2 class="text-[15px] font-bold">Keep it going</h2>
-      <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
+  <% if @first_run %>
+    <%# First run: nothing to continue yet, so the screen is a song picker. %>
+    <div>
+      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">Pick your first song</h1>
+      <p class="text-app-text-2 text-sm mt-1">
+        Learn <%= @learning_language&.english_name || "a new language" %> through music you'll actually enjoy.
+      </p>
     </div>
 
-    <div class="flex flex-col gap-2.5">
-      <% @enrollments.each do |enrollment| %>
-        <%= render "app/home/course_row", course: enrollment.course,
-                   total: @lesson_counts[enrollment.course_id].to_i,
-                   completed: @completed_counts[enrollment.course_id].to_i %>
-      <% end %>
+    <% if @library_picks.any? %>
+      <div>
+        <div class="grid grid-cols-2 gap-3">
+          <% @library_picks.each do |course| %>
+            <%= render "app/library/card", course: course,
+                       lessons_count: @lesson_counts[course.id].to_i,
+                       enrolled: false %>
+          <% end %>
+        </div>
+
+        <p class="text-center mt-4">
+          <%= link_to "None of these? Browse the library", app_library_path,
+                      class: "text-app-accent text-[13px] font-semibold" %>
+        </p>
+      </div>
+    <% else %>
+      <%# The Library has nothing in this language yet; importing is the only way in. %>
+      <p class="text-app-text-2 text-sm">
+        The Library is empty for this language — bring the first song.
+        You have <%= pluralize(current_user.credit_balance, "credit") %> to start.
+      </p>
+    <% end %>
+
+    <%= render "app/home/import_card", title: "Bring your own song" %>
+  <% else %>
+    <%# Greeting %>
+    <div>
+      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">
+        Ready to practice<%= ", #{@greeting_name}" if @greeting_name.present? %>?
+      </h1>
+      <p class="text-app-text-2 text-sm mt-1">
+        <%= @hero_course ? "Your newest import just landed." : "Pick up where you left off." %>
+      </p>
     </div>
-  <% elsif @hero_course.nil? %>
-    <%= render "app/home/empty" %>
+
+    <%# "Just imported" hero %>
+    <% if @hero_course %>
+      <%= render "app/home/hero", course: @hero_course,
+                 lessons_count: @lesson_counts[@hero_course.id].to_i %>
+    <% end %>
+
+    <%# Keep it going %>
+    <% if @enrollments.any? %>
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-[15px] font-bold">Keep it going</h2>
+        <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
+      </div>
+
+      <div class="flex flex-col gap-2.5">
+        <% @enrollments.each do |enrollment| %>
+          <%= render "app/home/course_row", course: enrollment.course,
+                     total: @lesson_counts[enrollment.course_id].to_i,
+                     completed: @completed_counts[enrollment.course_id].to_i %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%# More from the library %>
+    <% if @library_picks.any? %>
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-[15px] font-bold">More from the library</h2>
+        <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
+      </div>
+
+      <div class="grid grid-cols-2 gap-3">
+        <% @library_picks.each do |course| %>
+          <%= render "app/library/card", course: course,
+                     lessons_count: @lesson_counts[course.id].to_i,
+                     enrolled: false %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= render "app/home/import_card", title: "Make your own lesson" %>
   <% end %>
 </div>
-
-<%= render "app/shared/fab" %>
