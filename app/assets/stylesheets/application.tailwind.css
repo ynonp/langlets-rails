@@ -294,11 +294,11 @@
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
-/* In the 2.x app builds (data-native-tabs on <body>) the tab bar is native and
-   already inside the safe-area inset, so the pad only clears the floating Add
-   button: 18px gap + 44px button + 18px breathing room. */
+/* In the 2.x app builds (data-native-tabs on <body>) the web view extends under
+   the native tab bar. Keep the full tab-bar clearance here as well; the bottom
+   safe-area inset alone only clears the home indicator, not UITabBar itself. */
 [data-native-tabs] .app-scroll-pad {
-  padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Course pages still use the regular web layout inside the 2.x native app.

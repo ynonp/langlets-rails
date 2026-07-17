@@ -11,9 +11,9 @@
     <%= render "layouts/head" %>
   </head>
 
-  <%# data-native-tabs: the 2.x app builds draw a native tab bar, so
-      app-scroll-pad shrinks to clear only the floating Add button (see
-      application.tailwind.css). %>
+  <%# data-native-tabs: the 2.x app builds draw a native tab bar. The web view
+      extends beneath it, so app-scroll-pad reserves the tab bar and safe-area
+      clearance (see application.tailwind.css). %>
   <body class="bg-app-bg text-app-text font-app antialiased" <%= "data-native-tabs" if native_tabs_app? %>>
     <main class="min-h-dvh"
           data-controller="audio-cache"
