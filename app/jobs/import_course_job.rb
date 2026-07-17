@@ -76,15 +76,7 @@ class ImportCourseJob < ApplicationJob
   end
 
   def generate_slug_with_video_id(title, video_id)
-    base_slug = generate_slug(title)
-
-    # If slug is too short (e.g., Arabic/Hebrew titles stripped), use video ID
-    if base_slug.length < 3 && video_id
-      base_slug = video_id.downcase
-    end
-
-    # Append video ID for guaranteed uniqueness
-    video_id ? "#{base_slug}-#{video_id.downcase}" : base_slug
+    Courses::Naming.call(title: title, video_id: video_id).slug
   end
 
   def create_course_with_unique_slug(user:, name:, slug:, main_media_url:, language:, max_retries: 10)
@@ -115,31 +107,12 @@ class ImportCourseJob < ApplicationJob
   end
 
   def extract_video_id(url)
-    match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|shorts\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/)
-    match ? match[1] : nil
+    Youtube::Url.video_id(url)
   end
 
-  def fetch_video_title(video_id, fallback_url)
-    return "Untitled Course" unless video_id
-
-    oembed_url = "https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=#{video_id}&format=json"
-
-    uri = URI(oembed_url)
-    response = Net::HTTP.get_response(uri)
-
-    if response.is_a?(Net::HTTPSuccess)
-      data = JSON.parse(response.body)
-      data["title"] || "Untitled Course"
-    else
-      Rails.logger.warn "Failed to fetch video title for #{video_id}: #{response.code}"
-      video_id
-    end
-  rescue => e
-    Rails.logger.warn "Failed to fetch video title for #{video_id}: #{e.message}"
-    video_id
-  end
-
-  def generate_slug(title)
-    title.slug_for_language
+  # Best-effort by design: this job runs after the work has been committed to, so
+  # a weak title beats a failed import.
+  def fetch_video_title(_video_id, fallback_url)
+    Youtube::Oembed.fetch_title(fallback_url)
   end
 end

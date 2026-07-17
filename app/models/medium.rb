@@ -55,18 +55,7 @@ class Medium < ApplicationRecord
   end
 
   def extract_youtube_video_id
-    # Match patterns like:
-    # - https://www.youtube.com/watch?v=VIDEO_ID
-    # - https://youtu.be/VIDEO_ID
-    # - https://www.youtube.com/shorts/VIDEO_ID
-    regex = %r{
-      (?:youtube\.com/(?:watch\?v=|shorts/)|
-       youtu\.be/)           # Match the base domain and path
-      ([\w-]{11})            # Capture the 11-character video ID
-    }x
-  
-    match = url.match(regex)
-    match[1] if match
+    Youtube::Url.video_id(url)
   end
 
   def download_youtube_video

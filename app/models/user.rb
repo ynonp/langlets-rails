@@ -10,6 +10,10 @@ class User < ApplicationRecord
   has_many :lessons, dependent: :destroy
   has_many :activities, dependent: :destroy
 
+  # Courses on the user's Home — imported by them, or added from the Library.
+  has_many :enrollments, dependent: :destroy
+  has_many :enrolled_courses, through: :enrollments, source: :course
+
   # Progress tracking relationships
   has_many :lesson_users, dependent: :destroy
   has_many :completed_lessons, through: :lesson_users, source: :lesson
@@ -39,6 +43,23 @@ class User < ApplicationRecord
   # Saved token translations for personal review
   has_many :token_translation_users, dependent: :destroy
   has_many :saved_token_translations, through: :token_translation_users, source: :token_translation
+
+  # Credits meter video imports. users.credit_balance is the authority; the ledger
+  # is the append-only audit behind it. Always move credits via Credits::Ledger.
+  #
+  # delete_all, not destroy: CreditLedgerEntry blocks destroy to stay append-only,
+  # so `dependent: :destroy` would raise ReadOnlyRecord and make deleting an
+  # account impossible. Erasing the account erases its ledger with it.
+  has_many :credit_ledger_entries, dependent: :delete_all
+
+  # What every new account starts with. There is no way to buy more yet, so when
+  # these are gone, they're gone.
+  SIGNUP_CREDITS = 3
+
+  # after_create rather than after_create_commit so the user row, the balance and
+  # the ledger entry all commit atomically — no window where an account exists
+  # with no credits and no entry explaining why.
+  after_create :grant_signup_credits
 
   def self.from_omniauth(auth)
     user = where(email: auth.info.email).first_or_initialize do |new_user|
@@ -101,6 +122,11 @@ class User < ApplicationRecord
     self.email == "ynon@hey.com"
   end
 
+  # True when the user can afford to import a video.
+  def credits?
+    credit_balance.positive?
+  end
+
   def recommended_for_me
     Course.none
   end
@@ -134,5 +160,25 @@ class User < ApplicationRecord
         xp_gained: daily_xp
       )
     end
+  end
+
+  private
+
+  # Keyed on the user id so a replay — or the backfill rake task — can never
+  # double-grant.
+  def grant_signup_credits
+    Credits::Ledger.grant!(
+      user: self,
+      amount: SIGNUP_CREDITS,
+      reason: :signup_grant,
+      idempotency_key: "signup:#{id}"
+    )
+
+    # The ledger moves the balance with an UPDATE (it has to — that's what makes
+    # spending safe under concurrency), which leaves this instance's copy at the
+    # column default. Refresh it so `User.create!(...).credit_balance` isn't a
+    # surprising 0. Safe here: the row is already inserted, and nothing else on
+    # the instance is unsaved.
+    reload
   end
 end

@@ -3,13 +3,21 @@ class Course < ApplicationRecord
 
   belongs_to :user
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
+
+  # `language` is the language spoken in the video; `translation_language` is the
+  # one it's taught in. Together with youtube_video_id they identify a course in
+  # the Library — see idx_courses_published_video_pair.
   belongs_to :language, optional: true
+  belongs_to :translation_language, class_name: "Language", optional: true
 
   has_many :courses_learning_paths, dependent: :destroy
   has_many :learning_paths, through: :courses_learning_paths
 
   has_many :course_tags, dependent: :destroy
   has_many :tags, through: :course_tags
+
+  has_many :enrollments, dependent: :destroy
+  has_many :enrolled_users, through: :enrollments, source: :user
 
   # Status enum
   enum :status, {
@@ -20,7 +28,9 @@ class Course < ApplicationRecord
   }
 
   validates :slug, presence: true
-  validates :name, presence: true, uniqueness: true
+  # Not unique: slug is the identifier (see FriendlyName), and two users can
+  # legitimately import different videos that share a title.
+  validates :name, presence: true
   validates :main_media_url, presence: true
   validate :slug_uniqueness_with_user_check
 

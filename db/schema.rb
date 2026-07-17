@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_17_090500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -116,11 +116,15 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
     t.integer "status", default: 0, null: false
     t.boolean "show_full_course_player", default: true, null: false
     t.bigint "create_song_progress_id"
+    t.string "youtube_video_id"
+    t.bigint "translation_language_id"
     t.index ["create_song_progress_id"], name: "index_courses_on_create_song_progress_id"
     t.index ["language_id"], name: "index_courses_on_language_id"
-    t.index ["name"], name: "index_courses_on_name", unique: true
     t.index ["slug"], name: "index_courses_on_slug", unique: true
+    t.index ["translation_language_id"], name: "index_courses_on_translation_language_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
+    t.index ["youtube_video_id", "language_id", "translation_language_id"], name: "idx_courses_published_video_pair", unique: true, where: "(status = 1)"
+    t.index ["youtube_video_id"], name: "index_courses_on_youtube_video_id"
   end
 
   create_table "courses_learning_paths", force: :cascade do |t|
@@ -143,6 +147,36 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
     t.datetime "updated_at", null: false
     t.text "lyrics"
     t.index ["youtubeurl", "clip_language", "translation_language"], name: "idx_on_youtubeurl_clip_language_translation_languag_d876aa04dc", unique: true
+  end
+
+  create_table "credit_ledger_entries", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "amount", null: false
+    t.integer "reason", null: false
+    t.integer "balance_after", null: false
+    t.string "subject_type"
+    t.bigint "subject_id"
+    t.string "idempotency_key", null: false
+    t.jsonb "metadata", default: {}, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["idempotency_key"], name: "index_credit_ledger_entries_on_idempotency_key", unique: true
+    t.index ["subject_type", "subject_id"], name: "index_credit_ledger_entries_on_subject"
+    t.index ["user_id", "created_at"], name: "index_credit_ledger_entries_on_user_id_and_created_at"
+    t.index ["user_id"], name: "index_credit_ledger_entries_on_user_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.integer "source", default: 0, null: false
+    t.datetime "last_practiced_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_enrollments_on_course_id"
+    t.index ["user_id", "course_id"], name: "index_enrollments_on_user_id_and_course_id", unique: true
+    t.index ["user_id", "last_practiced_at"], name: "index_enrollments_on_user_id_and_last_practiced_at"
+    t.index ["user_id"], name: "index_enrollments_on_user_id"
   end
 
   create_table "good_job_batches", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -433,9 +467,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
     t.string "uid"
     t.bigint "preferred_language_id"
     t.jsonb "preferences", default: {}, null: false
+    t.integer "credit_balance", default: 0, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["preferred_language_id"], name: "index_users_on_preferred_language_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.check_constraint "credit_balance >= 0", name: "credit_balance_non_negative"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
@@ -453,9 +489,13 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_16_230000) do
   add_foreign_key "course_tags", "courses"
   add_foreign_key "course_tags", "tags"
   add_foreign_key "courses", "languages"
+  add_foreign_key "courses", "languages", column: "translation_language_id"
   add_foreign_key "courses", "users"
   add_foreign_key "courses_learning_paths", "courses"
   add_foreign_key "courses_learning_paths", "learning_paths"
+  add_foreign_key "credit_ledger_entries", "users"
+  add_foreign_key "enrollments", "courses"
+  add_foreign_key "enrollments", "users"
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "courses", on_delete: :cascade

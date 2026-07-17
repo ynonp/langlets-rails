@@ -94,14 +94,17 @@
 #### 6. **Course** (`courses`)
 - **Purpose**: Group lessons into structured learning paths
 - **Key Features**:
-  - Hierarchical organization with slugs
+  - Hierarchical organization with slugs. **`slug` is the identifier** — uniquely indexed, and what `FriendlyName#to_param` returns.
+  - **`name` is NOT unique.** It was, back when one admin typed every title. Two users importing different videos that share a title must not collide on a display field.
   - Main media URL for course overview
-  - Language association for target learning language
-  - **User ownership**: All courses belong to a specific user (creator)
-- **Relationships**: 
+  - **Identity in the Library is `(youtube_video_id, language_id, translation_language_id)`**, enforced for published courses by the partial unique index `idx_courses_published_video_pair`. `language` is the clip language, `translation_language` the language it's taught in. The index lives in the database, not application code, so two importers racing on the same video can't both publish. It's scoped to `status = 1` so failed or in-flight imports don't wedge the video for everyone else.
+  - `main_media_url` is free text and unreliable for comparison (`youtu.be/X` vs `watch?v=X&t=9`) — always compare `youtube_video_id`, via `Youtube::Url`.
+  - **User ownership**: All courses belong to a specific user (creator). Note this is *creator*, not *owner* — under dedupe, a course is a shared community artifact other users have enrollments and progress against, which is why `Ability` still grants `:manage, Course` to admins only.
+- **Relationships**:
   - One-to-many with Lessons
-  - Belongs to Language and User
+  - Belongs to Language (clip), Language (translation_language) and User
   - Many-to-many with LearningPaths (through CoursesLearningPath)
+  - One-to-many with Enrollments
 
 #### 7. **Lesson** (`lessons`)
 - **Purpose**: Define specific learning segments from media content
@@ -265,6 +268,29 @@
   - Lesson navigation behavior: clicking the in-lesson "Next Lesson" control sends a background progress update that marks the current lesson as completed for authenticated users
   - Indexed on both lesson_id and user_id for efficient queries
 - **Relationships**: Links Users to Lessons for course progression
+- **Side effect**: creating a LessonUser touches the user's `Enrollment` for that course (`last_practiced_at`), and *creates* the enrollment if there isn't one — so reaching a lesson via a shared link puts the course on the user's Home.
+
+### Credits
+
+Video imports cost credits. New accounts get `User::SIGNUP_CREDITS` (3). **There is no way to buy more yet** — StoreKit is deferred, so when a user runs out, that's the end.
+
+#### **Credits::Ledger** (`app/services/credits/ledger.rb`)
+The only supported way to move credits. Two stores, written together in one transaction:
+- `users.credit_balance` — the authority. Fast to read (Home renders it on every request) and safely lockable. A CHECK constraint enforces `>= 0`.
+- `credit_ledger_entries` — append-only audit (`CreditLedgerEntry#readonly?` is true once persisted, and destroy raises). This is what makes refunds and support questions answerable.
+
+Three rules, each load-bearing:
+1. **Never read-modify-write the balance.** `Ledger` spends with `UPDATE ... WHERE credit_balance >= ?`, so Postgres evaluates the guard under the row lock and exactly one of two concurrent spends wins. `user.credit_balance -= 1; user.save!` is a lost update. There's a real two-thread test for this (`test/services/credits/ledger_test.rb`).
+2. **Every call passes an `idempotency_key`** (`"import:42"`, `"refund:42"`, `"signup:7"`), uniquely indexed. GoodJob retries jobs; without the key a retry double-charges. A replay returns the original entry and moves nothing.
+3. **The ledger does not refresh the caller's in-memory user** — it moves the balance with an UPDATE. Call `user.reload` if you need the new value. (`User#grant_signup_credits` does exactly this, which is why `User.create!(...).credit_balance` correctly reads 3.)
+
+`User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
+
+#### **Enrollment** (`enrollments`)
+- **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
+- **Why it exists**: enrollment could not be inferred. A created course is `courses.user_id`, a started course is implied by `lesson_users` — but the Library's "+ Learn this" adds a course to Home *before* any lesson is completed, so it needs a record of its own.
+- `source`: `imported` (spent a credit), `library` (added from the catalog), `learning_path`.
+- `last_practiced_at` drives Home's "Keep it going" ordering; `recently_practiced` sorts NULLS LAST so never-opened courses fall below in-progress ones.
 
 ### Workflow Management
 
