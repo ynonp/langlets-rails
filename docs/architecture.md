@@ -954,6 +954,9 @@ All 3 user profile menus show a "📚 Review Words" button when the user has sav
 - `courses/show.html.erb`
 - `learning_paths/show.html.erb`
 
+The native app Home header also uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
+- `app/views/app/shared/_header.html.erb`
+
 On mobile, the courses index and learning path headers keep the profile avatar visible by moving the theme toggle and XP chip into the profile dropdown while keeping desktop header controls unchanged:
 - `courses/index.html.erb`
 - `learning_paths/show.html.erb`

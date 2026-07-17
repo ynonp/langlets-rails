@@ -139,6 +139,27 @@ module App
       assert_match @user.credit_balance.to_s, response.body
     end
 
+    test "Home profile menu exposes profile, word practice, and logout" do
+      phrase = Phrase.create!(medium: @medium, l1: @spanish, l2: @english,
+                              text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")
+      token = TokenTranslation.create!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
+                                       index_type: :character_index, translation: "Hello")
+      @user.saved_token_translations << token
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "details[data-testid='app-profile-menu']" do
+        assert_select "summary[aria-label='Open profile menu']", text: "S"
+        assert_select "a[href=?]", profile_path, text: "Profile"
+        assert_select "form[action=?]", review_lessons_path(language_code: @spanish.iso_name) do
+          assert_select "button", text: "Practice Words (#{@spanish.iso_name})"
+        end
+        assert_select "a[href=?][data-turbo-method='delete']",
+                      destroy_user_session_path(returnto: app_home_path), text: "Logout"
+      end
+    end
+
     test "the queue badge counts only active imports" do
       @user.import_requests.create!(youtube_url: @medium.url, youtube_video_id: "kJQP7kiw5Fk",
                                     clip_language: "Spanish", translation_language: "English",
