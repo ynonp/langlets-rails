@@ -294,14 +294,14 @@
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
-/* In the 2.x app builds (data-native-tabs on <body>) the web view extends under
+/* In the native app (data-native-tabs on <body>) the web view extends under
    the native tab bar. Keep the full tab-bar clearance here as well; the bottom
    safe-area inset alone only clears the home indicator, not UITabBar itself. */
 [data-native-tabs] .app-scroll-pad {
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
-/* Course pages still use the regular web layout inside the 2.x native app.
+/* Course pages still use the regular web layout inside the native app.
    Keep their playlist sheet above the native UITabBar and reduce its available
    height by the same amount so its controls never extend behind the bar. */
 .playlist-sheet-overlay {

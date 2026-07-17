@@ -4,8 +4,7 @@ import WebKit
 
 /// The native tab bar hosting the three app screens. Each tab owns its own
 /// Navigator, so switching is instant and every tab keeps its webview — scroll
-/// position and page state survive. This replaces the web tab bar the 1.x
-/// builds render (`app/views/app/shared/_tab_bar.html.erb` still serves them).
+/// position and page state survive.
 ///
 /// Tabs route lazily, on first selection, not up front. A signed-out cold
 /// launch would otherwise fire three parallel visits that all redirect to the

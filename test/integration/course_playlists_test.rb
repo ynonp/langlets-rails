@@ -49,7 +49,7 @@ class CoursePlaylistsTest < ActionDispatch::IntegrationTest
 
   test "native tab builds mark the layout and render a tab-safe playlist sheet" do
     sign_in(@other)
-    get course_url(@course.slug, lang: "en"), headers: { "User-Agent" => "LangletsNative/2.0" }
+    get course_url(@course.slug, lang: "en"), headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
     assert_select "body[data-native-tabs]"

@@ -4,7 +4,7 @@ module App
   class DeviceTokensControllerTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
 
-    NATIVE = { "User-Agent" => "LangletsNative/2.0" }.freeze
+    NATIVE = { "User-Agent" => "LangletsNative" }.freeze
     WEB = { "User-Agent" => "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" }.freeze
     TOKEN = "a" * 64
 
@@ -69,7 +69,7 @@ module App
   class PushPromptTimingTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
 
-    NATIVE = { "User-Agent" => "LangletsNative/2.0" }.freeze
+    NATIVE = { "User-Agent" => "LangletsNative" }.freeze
 
     setup do
       @user = User.create!(email: "prompt@example.com", password: "password123", confirmed_at: Time.zone.now)

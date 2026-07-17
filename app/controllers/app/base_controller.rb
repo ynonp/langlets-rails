@@ -12,11 +12,8 @@ module App
 
     private
 
-    # Gate on the user-agent check, and on the 2.x builds specifically: these
-    # screens have no navigation of their own — the tab bar is the native
-    # UITabBarController that only 2.x draws — so a 1.x build landing here
-    # would be stranded. 1.x keeps the web UI at root. Note this is
-    # presentation only: it's UA sniffing and trivially spoofed, so nothing
+    # Gate on the native-app user-agent check. This is presentation only: user
+    # agent sniffing is trivially spoofed, so nothing
     # here may authorise a credit spend on the strength of it. Imports::Create
     # does its own checking.
     #
@@ -24,7 +21,7 @@ module App
     # the simulator, and these screens will be iterated on a lot. It only ever
     # relaxes which layout you see, never what you're allowed to do.
     def require_native_app
-      return if native_tabs_app?
+      return if native_app?
       return if native_preview?
 
       redirect_to root_path
@@ -55,7 +52,7 @@ module App
     # decided is never asked twice.
     helper_method :ask_for_push?
     def ask_for_push?
-      return false unless native_tabs_app?
+      return false unless native_app?
 
       current_user.import_requests.where(status: [ :queued, :importing, :ready ]).exists?
     end

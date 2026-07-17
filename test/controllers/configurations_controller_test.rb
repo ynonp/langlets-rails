@@ -10,10 +10,9 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
     assert config["rules"].any?, "expected at least one routing rule"
   end
 
-  # The 2.x builds' tab bar is a native UITabBarController with one navigator
-  # per tab; a replace_root rule on the tab roots would blow away a tab's stack
-  # on every in-app link to one of them. (1.x builds never visit /app — the
-  # screens are gated on the 2.x user agent — so no rule serves them either.)
+  # The app's tab bar is a native UITabBarController with one navigator per tab;
+  # a replace_root rule on the tab roots would blow away a tab's stack on every
+  # in-app link to one of them.
   test "the tab roots carry no replace_root rule" do
     get "/configurations/ios_v1.json"
     rules = JSON.parse(response.body)["rules"]
@@ -32,7 +31,7 @@ class ConfigurationsControllerTest < ActionDispatch::IntegrationTest
   # with a redirect to /users/sign_in, and Hotwire Native would try to parse the
   # sign-in HTML as path configuration.
   test "serves json to a signed-out native app instead of redirecting to sign in" do
-    get "/configurations/ios_v1.json", headers: { "User-Agent" => "LangletsNative/1.0" }
+    get "/configurations/ios_v1.json", headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
     assert_nothing_raised { JSON.parse(response.body) }

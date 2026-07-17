@@ -50,7 +50,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user
 
-    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative/2.0" }
+    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
 
     assert_response :success
     assert_select "select[data-controller=?][data-action=?]",

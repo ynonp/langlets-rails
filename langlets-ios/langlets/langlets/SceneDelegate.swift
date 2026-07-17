@@ -27,10 +27,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             return webView
         }
 
-        // Configure Hotwire Native. The /2.0 marks builds with the native tab
-        // bar: the server only routes those into the /app screens — 1.x builds
-        // keep the web UI (ApplicationController#native_tabs_app?).
-        Hotwire.config.applicationUserAgentPrefix = "LangletsNative/2.0"
+        // Configure Hotwire Native. Rails uses this stable marker to route all
+        // iOS shells to the shared /app web content.
+        Hotwire.config.applicationUserAgentPrefix = "LangletsNative"
 
         // Course lessons are modal flows. Give them an explicit close control
         // while keeping ordinary pages on Hotwire's default controller.

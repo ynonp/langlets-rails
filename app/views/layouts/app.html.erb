@@ -11,10 +11,10 @@
     <%= render "layouts/head" %>
   </head>
 
-  <%# data-native-tabs: the 2.x app builds draw a native tab bar. The web view
+  <%# data-native-tabs: the iOS app draws a native tab bar. The web view
       extends beneath it, so app-scroll-pad reserves the tab bar and safe-area
       clearance (see application.tailwind.css). %>
-  <body class="bg-app-bg text-app-text font-app antialiased" <%= "data-native-tabs" if native_tabs_app? %>>
+  <body class="bg-app-bg text-app-text font-app antialiased" <%= "data-native-tabs" if native_app? %>>
     <main class="min-h-dvh"
           data-controller="audio-cache"
           data-action="click->audio-cache#handleClick:capture audio-cache:play->audio-cache#playEvent audio-cache:preload->audio-cache#preloadEvent audio-cache:stop->audio-cache#stop">
@@ -27,7 +27,7 @@
 
     <%# Mirrors the Queue badge onto the native tab bar item, once per page
         load — the same freshness the web tab bar's badge gets. %>
-    <% if native_tabs_app? %>
+    <% if native_app? %>
       <div data-controller="bridge--tab-badge"
            data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
            hidden></div>
