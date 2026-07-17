@@ -32,6 +32,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // keep the web UI (ApplicationController#native_tabs_app?).
         Hotwire.config.applicationUserAgentPrefix = "LangletsNative/2.0"
 
+        // Course lessons are modal flows. Give them an explicit close control
+        // while keeping ordinary pages on Hotwire's default controller.
+        Hotwire.config.defaultViewController = { url in
+            if Self.isCourseLessonURL(url) {
+                return LessonViewController(url: url)
+            }
+            return HotwireWebViewController(url: url)
+        }
+
         #if DEBUG
         Hotwire.config.debugLoggingEnabled = true
         #endif
@@ -104,6 +113,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         )
 
         tabBarController.start()
+    }
+
+    private static func isCourseLessonURL(_ url: URL) -> Bool {
+        let components = url.path.split(separator: "/")
+        return components.count >= 4 &&
+            components[0] == "courses" &&
+            components[2] == "lessons"
     }
 
     // Handle deep links (OAuth callbacks via custom URL scheme)
