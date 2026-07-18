@@ -52,27 +52,3 @@ admin = User.find_or_create_by(email: 'ynon@hey.com') do |user|
   user.password_confirmation = '10203040'
   user.skip_confirmation!
 end
-
-a_dios_le_pido_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "juanes.json")))
-
-mediun = Medium.find_or_create_by(url: a_dios_le_pido_data["youtubeurl"])
-course1 = Course.create!(
-  slug: "a-dios-le-pido",
-  name: "A Dios Le Pido",
-  main_media_url: a_dios_le_pido_data["youtubeurl"],
-  language: l_es,
-  user: admin,
-  status: :published
-)
-course1.create_song!(a_dios_le_pido_data)
-
-haifa_jenin_data = JSON.parse(File.read(Rails.root.join("test", "fixtures", "courses", "haifa-jenin.json")))
-course2 = Course.create!(
-  slug: 'haifa-jenin',
-  name: 'حيفا جنين',
-  main_media_url: haifa_jenin_data["youtubeurl"],
-  language: l_ar,
-  user: admin,
-  status: :published
-)
-course2.create_song!(haifa_jenin_data)

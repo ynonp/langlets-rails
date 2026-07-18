@@ -1,4 +1,6 @@
 class TokenTranslation < ApplicationRecord
+  include WordToCharIndex
+
   belongs_to :phrase_token, inverse_of: :token_translations
   belongs_to :language
 
@@ -17,11 +19,7 @@ class TokenTranslation < ApplicationRecord
     return nil if index.nil?
     return index if phrase_token.character_index?
 
-    words = phrase_translation_text.to_s.split
-    return nil if index.negative? || index >= words.length
-
-    position = index.zero? ? 0 : words.first(index).join(" ").length + 1
-    inclusive ? position + words[index].length - 1 : position
+    word_to_char_index(phrase_translation_text, index, inclusive: inclusive)
   end
 
   def phrase_translation_text

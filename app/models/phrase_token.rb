@@ -1,5 +1,6 @@
 class PhraseToken < ApplicationRecord
   include AzureTextToSpeech
+  include WordToCharIndex
 
   belongs_to :phrase
   has_many :token_translations, dependent: :destroy, inverse_of: :phrase_token
@@ -30,11 +31,11 @@ class PhraseToken < ApplicationRecord
   end
 
   def l1_start_character_index
-    character_index? ? self[:l1_start_index] : word_to_char_l1(self[:l1_start_index])
+    character_index? ? self[:l1_start_index] : word_to_char_index(phrase&.text_l1, self[:l1_start_index])
   end
 
   def l1_end_character_index
-    character_index? ? self[:l1_end_index] : word_to_char_l1(self[:l1_end_index], inclusive: true)
+    character_index? ? self[:l1_end_index] : word_to_char_index(phrase&.text_l1, self[:l1_end_index], inclusive: true)
   end
 
   def l1_start_index = l1_start_character_index
@@ -46,16 +47,6 @@ class PhraseToken < ApplicationRecord
   after_update :generate_l1_audio, if: :should_generate_audio_on_update?
 
   private
-
-  def word_to_char_l1(word_index, inclusive: false)
-    return nil if word_index.nil? || phrase&.text_l1.blank?
-
-    words = phrase.text_l1.split
-    return nil if word_index.negative? || word_index >= words.length
-
-    position = word_index.zero? ? 0 : words.first(word_index).join(" ").length + 1
-    inclusive ? position + words[word_index].length - 1 : position
-  end
 
   def validate_l1_indexes
     return if phrase&.text_l1.blank?

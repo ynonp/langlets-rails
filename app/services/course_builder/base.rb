@@ -1,5 +1,7 @@
 module CourseBuilder
   class Base
+    include WordToCharIndex
+
     def collect_json_data(progress)
       phrases_map = progress.data["phrases"].group_by { |p| p["id"] }.transform_values(&:first)
       translations_map = progress.data["phrases_with_token_translations"]["phrases"].group_by { |p| p["phrase_id"] }.transform_values { |v| v.first["translations"] }
@@ -41,21 +43,11 @@ module CourseBuilder
     private
 
     def word_indices_to_char_indices(word_indices, text)
-      return [ nil, nil ] if word_indices.nil? || text.nil?
+      return [ nil, nil ] if word_indices.nil?
 
-      words = text.split
-      start_word = word_indices.first
-      end_word = word_indices.last
-
-      return [ nil, nil ] if start_word.nil? || end_word.nil?
-
-      start_char = if start_word == 0
-        0
-      else
-        words[0...start_word].join(" ").length + 1
-      end
-
-      end_char = words[0...end_word].join(" ").length + 1 + words[end_word].length - 1
+      start_char = word_to_char_index(text, word_indices.first)
+      end_char = word_to_char_index(text, word_indices.last, inclusive: true)
+      return [ nil, nil ] if start_char.nil? || end_char.nil?
 
       [ start_char, end_char ]
     end
