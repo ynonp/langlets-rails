@@ -6,14 +6,14 @@ class TokenTranslationParser
   end
 
   def call
-    all_translations = []
-
     @phrases.each_with_index do |phrase, idx|
       block = @blocks[idx]
       next unless block
 
-      translations = phrase.add_tokens_from(block)
+      phrase.add_tokens_from(block)
     end
+
+    @phrases
   end
 
   private

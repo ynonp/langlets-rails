@@ -16,7 +16,10 @@ Por fin [se hacía] realidad => was getting, was becoming # custom translation"
 
   test 'parses multiple phrases from full LLM response' do
     parser = TokenTranslationParser.new(@phrases, @llm_response)
-    translations = parser.call
+    parsed_phrases = parser.call
+    translations = parsed_phrases.flat_map(&:translated_phrase_tokens)
+
+    assert_same @phrases, parsed_phrases
     assert_equal 6, translations.length
 
     # First phrase translations
@@ -32,62 +35,25 @@ Por fin [se hacía] realidad => was getting, was becoming # custom translation"
 
   test 'matches blocks to phrases correctly' do
     parser = TokenTranslationParser.new(@phrases, @llm_response)
-    translations = parser.call
-    assert_operator translations.length, :>, 0
+    parser.call
+
+    assert_equal 4, @phrase1.translated_phrase_tokens.length
+    assert_equal 2, @phrase2.translated_phrase_tokens.length
   end
 
   test 'handles mismatched number of blocks' do
     extra_block_response = @llm_response + "\n\nExtra block"
     parser = TokenTranslationParser.new([@phrase1], extra_block_response)
-    translations = parser.call
-    assert_equal 4, translations.length # Only first block matched
+    parser.call
+
+    assert_equal 4, @phrase1.translated_phrase_tokens.length # Only first block matched
   end
 
-  test 'returns empty if no matching blocks' do
+  test 'does not add tokens for a mismatched block' do
     mismatched_response = "[Mismatched] text => something"
     parser = TokenTranslationParser.new([@phrase1], mismatched_response)
-    assert_equal [], parser.call
-  end
-end
+    parser.call
 
-class TokenTranslationParser
-  def initialize(phrases, llm_response)
-    @phrases = phrases
-    @llm_response = llm_response
-    @blocks = split_into_blocks(llm_response)
-  end
-
-  def call
-    all_translations = []
-
-    @phrases.each_with_index do |phrase, idx|
-      block = @blocks[idx]
-      next unless block
-
-      next unless matches_phrase?(block, phrase)
-
-      translations = phrase.add_tokens_from(block).translated_phrase_tokens
-      all_translations.concat(translations)
-    end
-
-    all_translations
-  end
-
-  private
-
-  def split_into_blocks(response)
-    response.to_s.split(/\n\s*\n/).map(&:strip).reject(&:empty?)
-  end
-
-  def matches_phrase?(block, phrase)
-    lines = block.split("\n")
-    phrase_text = phrase.text_l1.strip
-    lines.any? do |line|
-      parts = line.split('=>', 2)
-      next false unless parts.length == 2
-      left_side = parts[0].strip
-      left_clean = left_side.gsub(/\[.*?\]/, '').strip
-      phrase_text.include?(left_clean)
-    end
+    assert_empty @phrase1.phrase_tokens
   end
 end
