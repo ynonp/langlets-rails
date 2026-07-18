@@ -18,7 +18,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       language: @english
     )
 
-    @phrase_en = Phrase.create!(
+    @phrase_en = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,
@@ -27,7 +27,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       timestamp: "00:01:30"
     )
 
-    @phrase_ar = Phrase.create!(
+    @phrase_ar = create_translated_phrase!(
       medium: @medium,
       l1: @arabic,
       l2: @english,
@@ -36,7 +36,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       timestamp: "00:02:00"
     )
 
-    @phrase_he = Phrase.create!(
+    @phrase_he = create_translated_phrase!(
       medium: @medium,
       l1: @hebrew,
       l2: @english,
@@ -45,7 +45,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       timestamp: "00:03:00"
     )
 
-    @token_en = TokenTranslation.create!(
+    @token_en = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -53,7 +53,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       translation: "Hola"
     )
 
-    @token_ar1 = TokenTranslation.create!(
+    @token_ar1 = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -61,7 +61,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       translation: "Hi"
     )
 
-    @token_ar2 = TokenTranslation.create!(
+    @token_ar2 = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 6,
       l1_end_index: 10,
@@ -69,7 +69,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       translation: "World"
     )
 
-    @token_he = TokenTranslation.create!(
+    @token_he = create_translated_token!(
       phrase: @phrase_he,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -88,7 +88,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "menu shows single language when user has tokens from one language" do
-    @user.saved_token_translations << @token_en
+    @user.saved_phrase_tokens << @token_en
 
     sign_in(@user)
     get root_path
@@ -99,9 +99,9 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "menu shows multiple languages when user has tokens from multiple languages" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_he
 
     sign_in(@user)
     get root_path
@@ -115,9 +115,9 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "menu shows language buttons alphabetically ordered by iso_name" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_he
 
     sign_in(@user)
     get root_path
@@ -134,8 +134,8 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "menu groups tokens by L1 language" do
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_ar2
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_ar2
 
     sign_in(@user)
     get root_path
@@ -155,8 +155,8 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       user: @user
     )
 
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar1
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar1
 
     sign_in(@user)
     get course_path(course)
@@ -174,7 +174,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
       published: true
     )
 
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_he
 
     sign_in(@user)
     get playlist_path(playlist)
@@ -255,7 +255,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   end
 
   test "menu doesn't show for unauthenticated users" do
-    @user.saved_token_translations << @token_en
+    @user.saved_phrase_tokens << @token_en
 
     get root_path
     assert_response :success

@@ -42,7 +42,7 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "an already published video comes back ready, free" do
-    course = Course.create!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
+    course = create_translated_course!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                             user: @user, status: :published)
 

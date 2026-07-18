@@ -38,7 +38,7 @@ class ResyncTimestampsJobTest < ActiveJob::TestCase
       user: @user
     )
 
-    @phrase1 = Phrase.create!(
+    @phrase1 = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,
@@ -47,7 +47,7 @@ class ResyncTimestampsJobTest < ActiveJob::TestCase
       timestamp: "00:01:00"
     )
 
-    @phrase2 = Phrase.create!(
+    @phrase2 = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,

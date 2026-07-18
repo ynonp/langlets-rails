@@ -13,7 +13,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     @progress = CreateSongProgress.create!(
       youtubeurl: CANONICAL, clip_language: "Spanish", translation_language: "English", data: {}
     )
-    @course = Course.create!(
+    @course = create_translated_course!(
       name: "Despacito", slug: "despacito-#{VIDEO_ID.downcase}", main_media_url: CANONICAL,
       youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
       user: @user, status: :pending

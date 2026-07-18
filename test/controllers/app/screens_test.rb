@@ -24,7 +24,7 @@ module App
       @english = languages(:english)
       @medium = Medium.create!(url: "https://www.youtube.com/watch?v=kJQP7kiw5Fk",
                                language: @spanish)
-      @course = Course.create!(name: "Despacito", slug: "despacito-x", main_media_url: @medium.url,
+      @course = create_translated_course!(name: "Despacito", slug: "despacito-x", main_media_url: @medium.url,
                                youtube_video_id: "kJQP7kiw5Fk", language: @spanish,
                                translation_language: @english, user: @user, status: :published)
       Lesson.create!(course: @course, medium: @medium, user: @user, slug: "l1", name: "L1", order: 0)
@@ -127,7 +127,7 @@ module App
     test "Home shows the two latest courses with See all below them" do
       older_medium = Medium.create!(url: "https://www.youtube.com/watch?v=oldercourse1",
                                     language: @spanish)
-      older_course = Course.create!(name: "Older Course", slug: "older-course",
+      older_course = create_translated_course!(name: "Older Course", slug: "older-course",
                                     main_media_url: older_medium.url, youtube_video_id: "oldercourse1",
                                     language: @spanish, translation_language: @english,
                                     user: @user, status: :published)
@@ -138,7 +138,7 @@ module App
 
       latest_medium = Medium.create!(url: "https://www.youtube.com/watch?v=latestcours",
                                      language: @spanish)
-      latest_course = Course.create!(name: "Latest Course", slug: "latest-course",
+      latest_course = create_translated_course!(name: "Latest Course", slug: "latest-course",
                                      main_media_url: latest_medium.url, youtube_video_id: "latestcours",
                                      language: @spanish, translation_language: @english,
                                      user: @user, status: :published)
@@ -165,7 +165,7 @@ module App
     test "Started videos shows every practiced course in recent order" do
       older_medium = Medium.create!(url: "https://www.youtube.com/watch?v=oldercourse1",
                                     language: @spanish)
-      older_course = Course.create!(name: "Older Course", slug: "older-course",
+      older_course = create_translated_course!(name: "Older Course", slug: "older-course",
                                     main_media_url: older_medium.url, youtube_video_id: "oldercourse1",
                                     language: @spanish, translation_language: @english,
                                     user: @user, status: :published)
@@ -176,7 +176,7 @@ module App
       LessonUser.create!(user: @user, lesson: older_lesson)
       older_enrollment.update_column(:last_practiced_at, 2.hours.ago)
 
-      unstarted = Course.create!(name: "Not Started", slug: "not-started",
+      unstarted = create_translated_course!(name: "Not Started", slug: "not-started",
                                  main_media_url: "https://www.youtube.com/watch?v=notstarted1",
                                  youtube_video_id: "notstarted1", language: @spanish,
                                  translation_language: @english, user: @user, status: :published)
@@ -208,7 +208,7 @@ module App
     test "the song picker only offers courses in the user's language" do
       Enrollment.delete_all
       french = languages(:french)
-      Course.create!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
+      create_translated_course!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
                      youtube_video_id: "frenchaaaaa", language: french,
                      translation_language: @english, user: @user, status: :published)
 
@@ -220,7 +220,7 @@ module App
     end
 
     test "Home suggests library courses the user is not enrolled in" do
-      Course.create!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
+      create_translated_course!(name: "Bailando", slug: "bailando-x", main_media_url: "https://www.youtube.com/watch?v=bailandoaaa",
                      youtube_video_id: "bailandoaaa", language: @spanish,
                      translation_language: @english, user: @user, status: :published)
 
@@ -260,11 +260,11 @@ module App
     end
 
     test "Home profile menu exposes profile, word practice, and logout" do
-      phrase = Phrase.create!(medium: @medium, l1: @spanish, l2: @english,
+      phrase = create_translated_phrase!(medium: @medium, l1: @spanish, l2: @english,
                               text_l1: "Hola", text_l2: "Hello", timestamp: "00:00:01")
-      token = TokenTranslation.create!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
+      token = create_translated_token!(phrase: phrase, l1_start_index: 0, l1_end_index: 3,
                                        index_type: :character_index, translation: "Hello")
-      @user.saved_token_translations << token
+      @user.saved_phrase_tokens << token
 
       get "/app", headers: NATIVE
 
@@ -374,7 +374,7 @@ module App
       french = languages(:french)
       other_medium = Medium.create!(url: "https://www.youtube.com/watch?v=bbbbbbbbbbb",
                                     language: french)
-      Course.create!(name: "Bonjour", slug: "bonjour-x", main_media_url: other_medium.url,
+      create_translated_course!(name: "Bonjour", slug: "bonjour-x", main_media_url: other_medium.url,
                      youtube_video_id: "bbbbbbbbbbb", language: french,
                      translation_language: @english, user: @user, status: :published)
 

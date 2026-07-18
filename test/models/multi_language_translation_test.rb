@@ -48,7 +48,7 @@ class MultiLanguageTranslationTest < ActiveSupport::TestCase
     course = Course.create!(name: "Course", slug: "multi-course", main_media_url: @medium.url, language: @spanish, user: user)
     lesson = Lesson.create!(name: "Lesson", course: course, medium: @medium, user: user)
     activity = Activities::FlashcardActivity.create!(lesson: lesson, user: user)
-    activity.token_translations = [ @token ]
+    activity.phrase_tokens = [ @token ]
 
     assert_equal [ @token.id ], activity.reload.phrase_tokens.ids
     assert_equal 1, ActivityPhraseToken.where(activity: activity, phrase_token: @token).count
@@ -76,7 +76,7 @@ class MultiLanguageTranslationTest < ActiveSupport::TestCase
     )
     lesson = Lesson.create!(name: "Lesson", course: course, medium: @medium, user: user)
     activity = Activities::FlashcardActivity.create!(lesson: lesson, user: user)
-    activity.token_translations = [ @token ]
+    activity.phrase_tokens = [ @token ]
     user.phrase_token_users.create!(phrase_token: @token, language: @english)
 
     counts = [ course.lessons.count, Activity.where(lesson: course.lessons).count, PhraseTokenUser.count ]

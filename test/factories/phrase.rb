@@ -1,36 +1,20 @@
 FactoryBot.define do
-  factory :phrase do    
+  factory :phrase do
     # Use fixture languages by default
     l1 { languages(:english) }
-    l2 { languages(:spanish) }
+    transient do
+      l2 { languages(:spanish) }
+      text_l2 { "Hola mundo" }
+    end
     
     # Default timestamp
     timestamp { "00:01:30" }
     
-    # Transient attributes for passing text content
-    transient do
-      text_l1 { "Hello world" }
-      text_l2 { "Hola mundo" }
-    end
-    
-    # Create text_l1 using nested attributes with default script
-    text_l1_attributes do
-      {
-        language: l1,
-        script_variants_attributes: [
-          { script: l1.default_script, content: text_l1 }
-        ]
-      }
-    end
-    
-    # Create text_l2 using nested attributes with default script
-    text_l2_attributes do
-      {
-        language: l2,
-        script_variants_attributes: [
-          { script: l2.default_script, content: text_l2 }
-        ]
-      }
+    text_l1 { "Hello world" }
+
+    after(:create) do |phrase, evaluator|
+      phrase.phrase_translations.create!(language: evaluator.l2, text: evaluator.text_l2)
+      Current.translation_language ||= evaluator.l2
     end
     
     # Trait for Hebrew phrases

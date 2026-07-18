@@ -18,7 +18,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       language: @english
     )
 
-    @phrase_en = Phrase.create!(
+    @phrase_en = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,
@@ -27,7 +27,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       timestamp: "00:01:30"
     )
 
-    @phrase_ar = Phrase.create!(
+    @phrase_ar = create_translated_phrase!(
       medium: @medium,
       l1: @arabic,
       l2: @english,
@@ -36,7 +36,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       timestamp: "00:02:00"
     )
 
-    @phrase_he = Phrase.create!(
+    @phrase_he = create_translated_phrase!(
       medium: @medium,
       l1: @hebrew,
       l2: @english,
@@ -45,7 +45,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       timestamp: "00:03:00"
     )
 
-    @token_en1 = TokenTranslation.create!(
+    @token_en1 = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -53,7 +53,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       translation: "Hola"
     )
 
-    @token_en2 = TokenTranslation.create!(
+    @token_en2 = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 6,
       l1_end_index: 10,
@@ -61,7 +61,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       translation: "Mundo"
     )
 
-    @token_ar1 = TokenTranslation.create!(
+    @token_ar1 = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -69,7 +69,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       translation: "Hi"
     )
 
-    @token_ar2 = TokenTranslation.create!(
+    @token_ar2 = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 6,
       l1_end_index: 10,
@@ -77,7 +77,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
       translation: "World"
     )
 
-    @token_he = TokenTranslation.create!(
+    @token_he = create_translated_token!(
       phrase: @phrase_he,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -87,7 +87,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
   end
 
   test "build! creates lesson without language filter" do
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
 
     builder = ReviewLessonBuilder.new(@user)
     lesson = builder.build!
@@ -99,7 +99,7 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
   end
 
   test "build! creates lesson with language code in name" do
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
 
     builder = ReviewLessonBuilder.new(@user, language_code: "en")
     lesson = builder.build!
@@ -108,14 +108,14 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
   end
 
   test "build! includes all tokens when no language specified" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_he
 
     builder = ReviewLessonBuilder.new(@user)
     lesson = builder.build!
 
-    all_tokens_in_lesson = lesson.activities.flat_map(&:token_translations)
+    all_tokens_in_lesson = lesson.activities.flat_map(&:phrase_tokens)
 
     assert_includes all_tokens_in_lesson, @token_en1
     assert_includes all_tokens_in_lesson, @token_ar1
@@ -123,16 +123,16 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
   end
 
   test "build! filters tokens by language when language_code provided" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_en2
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_ar2
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_ar2
+    @user.saved_phrase_tokens << @token_he
 
     builder = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name)
     lesson = builder.build!
 
-    all_tokens_in_lesson = lesson.activities.flat_map(&:token_translations)
+    all_tokens_in_lesson = lesson.activities.flat_map(&:phrase_tokens)
 
     assert_includes all_tokens_in_lesson, @token_ar1
     assert_includes all_tokens_in_lesson, @token_ar2
@@ -142,13 +142,13 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
   end
 
   test "build! filters correctly by L1 language" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_ar1
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_ar1
 
     builder_en = ReviewLessonBuilder.new(@user, language_code: @english.iso_name)
     lesson_en = builder_en.build!
 
-    tokens_en = lesson_en.activities.flat_map(&:token_translations)
+    tokens_en = lesson_en.activities.flat_map(&:phrase_tokens)
 
     assert_includes tokens_en, @token_en1
     assert_not_includes tokens_en, @token_ar1
@@ -156,31 +156,31 @@ class ReviewLessonBuilderTest < ActiveSupport::TestCase
     builder_ar = ReviewLessonBuilder.new(@user, language_code: @arabic.iso_name)
     lesson_ar = builder_ar.build!
 
-    tokens_ar = lesson_ar.activities.flat_map(&:token_translations)
+    tokens_ar = lesson_ar.activities.flat_map(&:phrase_tokens)
 
     assert_includes tokens_ar, @token_ar1
     assert_not_includes tokens_ar, @token_en1
   end
 
   test "build! creates lesson with no tokens when language has no saved words" do
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
 
     builder = ReviewLessonBuilder.new(@user, language_code: @hebrew.iso_name)
     lesson = builder.build!
 
-    all_tokens_in_lesson = lesson.activities.flat_map(&:token_translations)
+    all_tokens_in_lesson = lesson.activities.flat_map(&:phrase_tokens)
 
     assert_empty all_tokens_in_lesson
   end
 
   test "build! creates multiple tokens from same language" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_en2
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
 
     builder = ReviewLessonBuilder.new(@user, language_code: @english.iso_name)
     lesson = builder.build!
 
-    all_tokens_in_lesson = lesson.activities.flat_map(&:token_translations)
+    all_tokens_in_lesson = lesson.activities.flat_map(&:phrase_tokens)
 
     assert_includes all_tokens_in_lesson, @token_en1
     assert_includes all_tokens_in_lesson, @token_en2

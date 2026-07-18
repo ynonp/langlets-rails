@@ -2,7 +2,7 @@ require "test_helper"
 
 class WordTokenBuilderTest < ActiveSupport::TestCase
   setup do
-    @phrase = Phrase.new(text_l1: "Apateu, apateu", text_l2: "Apartment, apartment")
+    @phrase = build_translated_phrase(text_l1: "Apateu, apateu", text_l2: "Apartment, apartment")
     @words = [
       { "text" => "Apateu,", "translation" => "Apartment,", "timestamp" => "00:06.50", "timestamp_end" => "00:07.10" },
       { "text" => "apateu", "translation" => "apartment", "timestamp" => "00:07.25", "timestamp_end" => "00:07.80" },
@@ -11,7 +11,7 @@ class WordTokenBuilderTest < ActiveSupport::TestCase
 
   test "builds one character-indexed token per word with timestamps" do
     @phrase.build_word_tokens(@words)
-    tokens = @phrase.token_translations.sort_by(&:l1_start_index)
+    tokens = @phrase.translated_phrase_tokens.sort_by(&:l1_start_index)
 
     assert_equal 2, tokens.length
 
@@ -32,7 +32,7 @@ class WordTokenBuilderTest < ActiveSupport::TestCase
 
   test "maps repeated words to distinct occurrences" do
     @phrase.build_word_tokens(@words)
-    starts = @phrase.token_translations.map(&:l1_start_index).sort
+    starts = @phrase.translated_phrase_tokens.map(&:l1_start_index).sort
     assert_equal [0, 8], starts # second "apateu" starts at index 8, not 0
   end
 
@@ -42,12 +42,12 @@ class WordTokenBuilderTest < ActiveSupport::TestCase
       { "text" => "apateu", "translation" => "apartment", "timestamp" => "00:07.25", "timestamp_end" => "00:07.80" },
     ]
     @phrase.build_word_tokens(words)
-    assert_equal 1, @phrase.token_translations.length
-    assert_equal "apartment", @phrase.token_translations.first.translation
+    assert_equal 1, @phrase.translated_phrase_tokens.length
+    assert_equal "apartment", @phrase.translated_phrase_tokens.first.translation
   end
 
   test "returns self and builds nothing for blank words" do
     assert_equal @phrase, @phrase.build_word_tokens([])
-    assert_empty @phrase.token_translations
+    assert_empty @phrase.translated_phrase_tokens
   end
 end

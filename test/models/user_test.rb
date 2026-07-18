@@ -18,7 +18,7 @@ class UserTest < ActiveSupport::TestCase
       language: @english
     )
 
-    @phrase_en = Phrase.create!(
+    @phrase_en = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,
@@ -27,7 +27,7 @@ class UserTest < ActiveSupport::TestCase
       timestamp: "00:01:30"
     )
 
-    @phrase_ar = Phrase.create!(
+    @phrase_ar = create_translated_phrase!(
       medium: @medium,
       l1: @arabic,
       l2: @english,
@@ -36,7 +36,7 @@ class UserTest < ActiveSupport::TestCase
       timestamp: "00:02:00"
     )
 
-    @phrase_he = Phrase.create!(
+    @phrase_he = create_translated_phrase!(
       medium: @medium,
       l1: @hebrew,
       l2: @english,
@@ -45,7 +45,7 @@ class UserTest < ActiveSupport::TestCase
       timestamp: "00:03:00"
     )
 
-    @token_en = TokenTranslation.create!(
+    @token_en = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -53,7 +53,7 @@ class UserTest < ActiveSupport::TestCase
       translation: "Hola"
     )
 
-    @token_ar = TokenTranslation.create!(
+    @token_ar = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -61,7 +61,7 @@ class UserTest < ActiveSupport::TestCase
       translation: "Hi"
     )
 
-    @token_he = TokenTranslation.create!(
+    @token_he = create_translated_token!(
       phrase: @phrase_he,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -75,8 +75,8 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "languages_with_saved_words returns distinct languages for saved tokens" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar
 
     languages = @user.languages_with_saved_words.order(:iso_name)
     assert_equal 2, languages.count
@@ -84,7 +84,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "languages_with_saved_words returns only unique languages" do
-    token_en2 = TokenTranslation.create!(
+    token_en2 = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 6,
       l1_end_index: 10,
@@ -92,26 +92,26 @@ class UserTest < ActiveSupport::TestCase
       translation: "Mundo"
     )
 
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << token_en2
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << token_en2
 
     languages = @user.languages_with_saved_words
     assert_equal 1, languages.count
     assert_equal @english.iso_name, languages.first.iso_name
   end
 
-  test "saved_token_translations_for_language returns empty when language not found" do
-    assert_equal 0, @user.saved_token_translations_for_language("nonexistent").count
+  test "saved_phrase_tokens_for_language returns empty when language not found" do
+    assert_equal 0, @user.saved_phrase_tokens_for_language("nonexistent").count
   end
 
-  test "saved_token_translations_for_language returns tokens for specified language" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar
-    @user.saved_token_translations << @token_he
+  test "saved_phrase_tokens_for_language returns tokens for specified language" do
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar
+    @user.saved_phrase_tokens << @token_he
 
-    en_tokens = @user.saved_token_translations_for_language(@english.iso_name)
-    ar_tokens = @user.saved_token_translations_for_language(@arabic.iso_name)
-    he_tokens = @user.saved_token_translations_for_language(@hebrew.iso_name)
+    en_tokens = @user.saved_phrase_tokens_for_language(@english.iso_name)
+    ar_tokens = @user.saved_phrase_tokens_for_language(@arabic.iso_name)
+    he_tokens = @user.saved_phrase_tokens_for_language(@hebrew.iso_name)
 
     assert_equal 1, en_tokens.count
     assert_equal 1, ar_tokens.count
@@ -122,14 +122,14 @@ class UserTest < ActiveSupport::TestCase
     assert_includes he_tokens, @token_he
   end
 
-  test "saved_token_translations_for_language filters by L1 language" do
-    @user.saved_token_translations << @token_en
+  test "saved_phrase_tokens_for_language filters by L1 language" do
+    @user.saved_phrase_tokens << @token_en
 
-    tokens = @user.saved_token_translations_for_language(@english.iso_name)
+    tokens = @user.saved_phrase_tokens_for_language(@english.iso_name)
     assert_equal 1, tokens.count
     assert_equal @token_en, tokens.first
 
-    tokens = @user.saved_token_translations_for_language(@spanish.iso_name)
+    tokens = @user.saved_phrase_tokens_for_language(@spanish.iso_name)
     assert_equal 0, tokens.count
   end
 end

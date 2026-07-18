@@ -12,15 +12,15 @@ class McpControllerTest < ActionDispatch::IntegrationTest
     @spanish = languages(:spanish)
 
     medium = Medium.create!(url: "https://www.youtube.com/watch?v=mcp1", language: @english)
-    phrase = Phrase.create!(
+    phrase = create_translated_phrase!(
       medium: medium, l1: @english, l2: @spanish,
       text_l1: "Hello world", text_l2: "Hola mundo", timestamp: "00:01:30"
     )
-    token_translation = TokenTranslation.create!(
+    token_translation = create_translated_token!(
       phrase: phrase, l1_start_index: 0, l1_end_index: 4,
       index_type: :character_index, translation: "Hola"
     )
-    @user.saved_token_translations << token_translation
+    @user.saved_phrase_tokens << token_translation
 
     Course.create!(
       name: "MCP Spanish Songs", slug: "mcp-spanish-songs", main_media_url: "https://example.com/1",

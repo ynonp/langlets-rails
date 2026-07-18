@@ -18,7 +18,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       language: @english
     )
 
-    @phrase_en = Phrase.create!(
+    @phrase_en = create_translated_phrase!(
       medium: @medium,
       l1: @english,
       l2: @spanish,
@@ -27,7 +27,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       timestamp: "00:01:30"
     )
 
-    @phrase_ar = Phrase.create!(
+    @phrase_ar = create_translated_phrase!(
       medium: @medium,
       l1: @arabic,
       l2: @english,
@@ -36,7 +36,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       timestamp: "00:02:00"
     )
 
-    @phrase_he = Phrase.create!(
+    @phrase_he = create_translated_phrase!(
       medium: @medium,
       l1: @hebrew,
       l2: @english,
@@ -45,7 +45,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       timestamp: "00:03:00"
     )
 
-    @token_en1 = TokenTranslation.create!(
+    @token_en1 = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -53,7 +53,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       translation: "Hola"
     )
 
-    @token_en2 = TokenTranslation.create!(
+    @token_en2 = create_translated_token!(
       phrase: @phrase_en,
       l1_start_index: 6,
       l1_end_index: 10,
@@ -61,7 +61,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       translation: "Mundo"
     )
 
-    @token_ar1 = TokenTranslation.create!(
+    @token_ar1 = create_translated_token!(
       phrase: @phrase_ar,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -69,7 +69,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       translation: "Hi"
     )
 
-    @token_he = TokenTranslation.create!(
+    @token_he = create_translated_token!(
       phrase: @phrase_he,
       l1_start_index: 0,
       l1_end_index: 4,
@@ -86,9 +86,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "create builds review lesson for specific language" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_he
 
     post review_lessons_url(language_code: @arabic.iso_name)
 
@@ -98,15 +98,15 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     lesson = Lesson.last
     assert_equal "Review Words (#{@arabic.iso_name})", lesson.name
 
-    lesson_tokens = lesson.activities.flat_map(&:token_translations)
+    lesson_tokens = lesson.activities.flat_map(&:phrase_tokens)
     assert_includes lesson_tokens, @token_ar1
     assert_not_includes lesson_tokens, @token_en1
     assert_not_includes lesson_tokens, @token_he
   end
 
   test "create builds review lesson without language parameter" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_ar1
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_ar1
 
     post review_lessons_url
 
@@ -115,7 +115,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     lesson = Lesson.last
     assert_equal "Review Words", lesson.name
 
-    lesson_tokens = lesson.activities.flat_map(&:token_translations)
+    lesson_tokens = lesson.activities.flat_map(&:phrase_tokens)
     assert_includes lesson_tokens, @token_en1
     assert_includes lesson_tokens, @token_ar1
   end
@@ -123,7 +123,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   test "create requires authentication" do
     delete destroy_user_session_url
 
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
 
     post review_lessons_url(language_code: @english.iso_name)
 
@@ -132,9 +132,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "show displays review lesson with only language-specific tokens" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_en2
-    @user.saved_token_translations << @token_ar1
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.saved_phrase_tokens << @token_ar1
 
     lesson = ReviewLessonBuilder.new(@user, language_code: @english.iso_name).build!
 
@@ -146,7 +146,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   test "show requires authentication" do
     delete destroy_user_session_url
 
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
     lesson = ReviewLessonBuilder.new(@user).build!
 
     get review_lesson_url(lesson)
@@ -162,7 +162,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
       confirmed_at: Time.zone.now
     )
 
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
     lesson = ReviewLessonBuilder.new(@user).build!
 
     delete destroy_user_session_url
@@ -179,7 +179,7 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "finish adds xp and redirects" do
-    @user.saved_token_translations << @token_en1
+    @user.saved_phrase_tokens << @token_en1
     lesson = ReviewLessonBuilder.new(@user).build!
 
     get finish_review_lesson_url(lesson)
@@ -188,10 +188,10 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "language separated lessons work independently" do
-    @user.saved_token_translations << @token_en1
-    @user.saved_token_translations << @token_en2
-    @user.saved_token_translations << @token_ar1
-    @user.saved_token_translations << @token_he
+    @user.saved_phrase_tokens << @token_en1
+    @user.saved_phrase_tokens << @token_en2
+    @user.saved_phrase_tokens << @token_ar1
+    @user.saved_phrase_tokens << @token_he
 
     post review_lessons_url(language_code: @english.iso_name)
     assert_response :redirect
@@ -205,9 +205,9 @@ class ReviewLessonsControllerTest < ActionDispatch::IntegrationTest
     assert_response :redirect
     lesson_he = Lesson.find_by(name: "Review Words (#{@hebrew.iso_name})")
 
-    tokens_en = lesson_en.activities.flat_map(&:token_translations)
-    tokens_ar = lesson_ar.activities.flat_map(&:token_translations)
-    tokens_he = lesson_he.activities.flat_map(&:token_translations)
+    tokens_en = lesson_en.activities.flat_map(&:phrase_tokens)
+    tokens_ar = lesson_ar.activities.flat_map(&:phrase_tokens)
+    tokens_he = lesson_he.activities.flat_map(&:phrase_tokens)
 
     assert_includes tokens_en, @token_en1
     assert_includes tokens_en, @token_en2

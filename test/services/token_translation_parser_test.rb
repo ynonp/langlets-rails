@@ -2,8 +2,8 @@ require 'test_helper'
 
 class TokenTranslationParserTest < ActiveSupport::TestCase
   setup do
-    @phrase1 = Phrase.new(text_l1: "Pensé que era un buen momento", text_l2: "I thought it was a good time", id: 1)
-    @phrase2 = Phrase.new(text_l1: "Por fin se hacía realidad", text_l2: "It was finally coming true", id: 2)
+    @phrase1 = build_translated_phrase(text_l1: "Pensé que era un buen momento", text_l2: "I thought it was a good time", id: 1)
+    @phrase2 = build_translated_phrase(text_l1: "Por fin se hacía realidad", text_l2: "It was finally coming true", id: 2)
     @phrases = [@phrase1, @phrase2]
     @llm_response = "[Pensé] que era un buen momento => [I thought] it was a good time
 Pensé que [era] un buen momento => I thought [it was] a good time
@@ -66,7 +66,7 @@ class TokenTranslationParser
 
       next unless matches_phrase?(block, phrase)
 
-      translations = phrase.add_tokens_from(block).token_translations
+      translations = phrase.add_tokens_from(block).translated_phrase_tokens
       all_translations.concat(translations)
     end
 

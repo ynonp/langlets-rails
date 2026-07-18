@@ -14,27 +14,27 @@ class VocabularyQueryTest < ActiveSupport::TestCase
 
     @medium = Medium.create!(url: "https://www.youtube.com/watch?v=vq1", language: @english)
 
-    @phrase_en = Phrase.create!(
+    @phrase_en = create_translated_phrase!(
       medium: @medium, l1: @english, l2: @spanish,
       text_l1: "Hello world", text_l2: "Hola mundo", timestamp: "00:01:30"
     )
-    @phrase_ar = Phrase.create!(
+    @phrase_ar = create_translated_phrase!(
       medium: @medium, l1: @arabic, l2: @english,
       text_l1: "مرحبا بالعالم", text_l2: "Hello world", timestamp: "00:02:00"
     )
 
-    @token_en = TokenTranslation.create!(
+    @token_en = create_translated_token!(
       phrase: @phrase_en, l1_start_index: 0, l1_end_index: 4,
       index_type: :character_index, translation: "Hola"
     )
-    @token_ar = TokenTranslation.create!(
+    @token_ar = create_translated_token!(
       phrase: @phrase_ar, l1_start_index: 0, l1_end_index: 4,
       index_type: :character_index, translation: "Hi"
     )
   end
 
   test "returns word, translation and context for saved tokens" do
-    @user.saved_token_translations << @token_en
+    @user.saved_phrase_tokens << @token_en
 
     result = VocabularyQuery.new(user: @user).call
 
@@ -51,8 +51,8 @@ class VocabularyQueryTest < ActiveSupport::TestCase
 
   test "only returns the user's own saved tokens" do
     other = User.create!(email: "other-vocab@example.com", password: "password123", confirmed_at: Time.zone.now)
-    other.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar
+    other.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar
 
     result = VocabularyQuery.new(user: @user).call
 
@@ -60,8 +60,8 @@ class VocabularyQueryTest < ActiveSupport::TestCase
   end
 
   test "filters by language iso code" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar
 
     result = VocabularyQuery.new(user: @user, language: "ar-JO").call
 
@@ -76,8 +76,8 @@ class VocabularyQueryTest < ActiveSupport::TestCase
   end
 
   test "paginates with exact has_more" do
-    @user.saved_token_translations << @token_en
-    @user.saved_token_translations << @token_ar
+    @user.saved_phrase_tokens << @token_en
+    @user.saved_phrase_tokens << @token_ar
 
     page1 = VocabularyQuery.new(user: @user, page: 1, per_page: 1).call
     page2 = VocabularyQuery.new(user: @user, page: 2, per_page: 1).call

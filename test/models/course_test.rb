@@ -111,10 +111,10 @@ class CourseTest < ActiveSupport::TestCase
     @activity1 = Activities::WatchVideoActivity.create!(lesson: @lesson1, order: 1, user: @user)
     @activity2 = Activities::WatchVideoActivity.create!(lesson: @lesson2, order: 1, user: @user)
 
-    @phrase1 = Phrase.create!(medium: @medium, l1: @english, l2: @spanish, text_l1: "A", text_l2: "A", timestamp: "00:01:00")
-    @phrase2 = Phrase.create!(medium: @medium, l1: @english, l2: @spanish, text_l1: "B", text_l2: "B", timestamp: "00:02:00")
-    @phrase3 = Phrase.create!(medium: @medium, l1: @english, l2: @spanish, text_l1: "C", text_l2: "C", timestamp: "00:03:00")
-    @phrase4 = Phrase.create!(medium: @medium, l1: @english, l2: @spanish, text_l1: "D", text_l2: "D", timestamp: "00:04:00")
+    @phrase1 = create_translated_phrase!(medium: @medium, l1: @english, l2: @spanish, text_l1: "A", text_l2: "A", timestamp: "00:01:00")
+    @phrase2 = create_translated_phrase!(medium: @medium, l1: @english, l2: @spanish, text_l1: "B", text_l2: "B", timestamp: "00:02:00")
+    @phrase3 = create_translated_phrase!(medium: @medium, l1: @english, l2: @spanish, text_l1: "C", text_l2: "C", timestamp: "00:03:00")
+    @phrase4 = create_translated_phrase!(medium: @medium, l1: @english, l2: @spanish, text_l1: "D", text_l2: "D", timestamp: "00:04:00")
 
     @activity1.phrases << @phrase1
     @activity1.phrases << @phrase2

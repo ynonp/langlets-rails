@@ -10,7 +10,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     @spanish = languages(:spanish)
     @english = languages(:english)
     @medium = Medium.create!(url: CANONICAL, language: @spanish)
-    @course = Course.create!(name: "Despacito", slug: "despacito-push", main_media_url: CANONICAL,
+    @course = create_translated_course!(name: "Despacito", slug: "despacito-push", main_media_url: CANONICAL,
                              youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                              user: @user, status: :published)
     2.times { |i| Lesson.create!(course: @course, medium: @medium, user: @user, slug: "l#{i}", name: "L#{i}", order: i) }
