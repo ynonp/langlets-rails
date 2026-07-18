@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
+import { t } from "../utils/i18n"
 
 export default class extends Controller {
   static targets = ["card", "completion", "progress", "progressBar", "progressTrack"]
@@ -17,7 +18,7 @@ export default class extends Controller {
       this.progressTarget.textContent = ''
       if (this.hasProgressBarTarget) this.progressBarTarget.style.width = '100%'
     } else {
-      this.progressTarget.textContent = `Question ${this.index + 1} of ${this.cardsValue.length}`
+      this.progressTarget.textContent = t("flashcard.question_of", { current: this.index + 1, total: this.cardsValue.length })
       if (this.hasProgressBarTarget) {
         this.progressBarTarget.style.width = `${(this.index + 1) / this.cardsValue.length * 100}%`
       }

@@ -8,9 +8,9 @@
      data-write-missing-word-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>"
      class="flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-emerald-50 dark:bg-gray-950">
   <div class="w-full max-w-2xl p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
-    <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-900 dark:text-gray-50 mb-2 font-bold"><%= @activity.text_header || "Write the Missing Word" %></h2>
+    <h2 class="text-xl sm:text-2xl md:text-3xl text-gray-900 dark:text-gray-50 mb-2 font-bold"><%= @activity.text_header || t(".title") %></h2>
 
-    <p data-write-missing-word-activity-target="progress" class="text-gray-500 dark:text-gray-400 mb-4">Question 1 of <%= cards.length %></p>
+    <p data-write-missing-word-activity-target="progress" class="text-gray-500 dark:text-gray-400 mb-4"><%= t(".question_of", current: 1, total: cards.length) %></p>
 
     <div data-write-missing-word-activity-target="card"
          dir="<%= l1_rtl ? 'rtl' : 'ltr' %>"
@@ -60,7 +60,7 @@
     <div data-write-missing-word-activity-target="completion"
          class="hidden mt-6 text-center"
          data-progress-tracker-target="completion">
-      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">Great Work!</h3>
+      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4"><%= t(".great_work") %></h3>
       <%= link_to_next_activity "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
     </div>
   </div>

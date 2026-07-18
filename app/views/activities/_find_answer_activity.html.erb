@@ -39,9 +39,8 @@
       data-find-answers-target="completionMessage"
       data-progress-tracker-target="completion"
       id="success-message" class="hidden mt-6 text-center">
-      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4">Good Work!</h3>
+      <h3 class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-4"><%= t(".good_work") %></h3>
       <%= link_to "Next", @next_activity_path, { class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" } %>
     </div>
   </div>
 </div>
-

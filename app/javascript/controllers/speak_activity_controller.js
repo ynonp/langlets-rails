@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
 
 // Connects to data-controller="speak-activity"
@@ -110,7 +111,7 @@ export default class extends Controller {
     
     const nbest = jsonResult.NBest && jsonResult.NBest.length > 0 ? jsonResult.NBest[0] : null;
     if (!nbest) {
-      this.pronunciationTextTarget.innerHTML = '<span class="text-red-600 dark:text-red-400">Could not assess pronunciation. Please try again.</span>';
+      this.pronunciationTextTarget.innerHTML = `<span class="text-red-600 dark:text-red-400">${t("speak.assessment_failed")}</span>`;
       this.assessmentResultTarget.classList.remove('hidden');
       return;
     }
@@ -126,9 +127,9 @@ export default class extends Controller {
     // Show a simple success message since words were highlighted in real-time
     const averageScore = (scores.AccuracyScore + scores.FluencyScore + scores.CompletenessScore) / 3;
     if (averageScore >= 60) {
-      this.pronunciationTextTarget.innerHTML = '<span class="text-emerald-600 dark:text-emerald-400 text-center">✓ Great pronunciation!</span>';
+      this.pronunciationTextTarget.innerHTML = `<span class="text-emerald-600 dark:text-emerald-400 text-center">${t("speak.great_pronunciation")}</span>`;
     } else {
-      this.pronunciationTextTarget.innerHTML = '<span class="text-yellow-700 dark:text-yellow-400 text-center">Good effort! Keep practicing.</span>';
+      this.pronunciationTextTarget.innerHTML = `<span class="text-yellow-700 dark:text-yellow-400 text-center">${t("speak.keep_practicing")}</span>`;
     }
 
     // Show the assessment result
@@ -230,4 +231,3 @@ export default class extends Controller {
     return 0;
   }
 }
-

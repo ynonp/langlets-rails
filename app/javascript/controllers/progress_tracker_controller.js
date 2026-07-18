@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 
 export default class extends Controller {
   static values = { 
@@ -178,7 +179,7 @@ export default class extends Controller {
   updateLocalXpDisplay() {
     if (!this.authenticatedValue && this.hasDailyXpTarget) {
       const dailyXp = this.getLocalDailyXp()
-      this.dailyXpTarget.textContent = `${dailyXp} XP`
+      this.dailyXpTarget.textContent = t("progress_tracker.xp", { xp: dailyXp })
     }
   }
 

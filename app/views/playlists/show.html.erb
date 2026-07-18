@@ -125,8 +125,8 @@
         <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex items-center gap-2">
           <%= render "shared/theme_toggle" %>
-          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
-          <%= link_to "Log in", new_user_session_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" %>
+          <%= link_to t(".sign_up"), new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
+          <%= link_to t(".log_in"), new_user_session_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" %>
         </div>
       </div>
     <% end %>

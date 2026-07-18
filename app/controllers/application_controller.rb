@@ -23,6 +23,9 @@ class ApplicationController < ActionController::Base
     code = request.subdomains.first.presence || "en"
     Current.translation_language = Language.find_by(iso_name: code) ||
       Language.find_by(english_name: "English") || Language.first
+
+    locale = Current.translation_language&.iso_name&.to_sym
+    I18n.locale = I18n.available_locales.include?(locale) ? locale : :en
   end
 
   # The active color theme for this request. Logged-in users read it from their

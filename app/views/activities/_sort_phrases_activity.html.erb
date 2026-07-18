@@ -16,10 +16,10 @@
   <div class="w-full max-w-lg">
     <header class="mb-6">
       <h2 class="text-lg font-semibold text-gray-900 dark:text-gray-50 sm:text-xl">
-        <%= @activity.text_header.presence || "Put the lines in the order you hear them" %>
+        <%= @activity.text_header.presence || t(".instruction") %>
       </h2>
       <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">
-        <%= @activity.text_subheader.presence || "Play the song, then drag each line up or down to match the order in the recording." %>
+        <%= @activity.text_subheader.presence || t(".subinstruction") %>
       </p>
     </header>
 
@@ -30,7 +30,7 @@
         <circle cx="12" cy="12" r="9"></circle>
         <path stroke-linecap="round" d="M12 11v5m0-8h.01"></path>
       </svg>
-      <span>Listening is the hint — the lines appear in order in the song.</span>
+      <span><%= t(".hint") %></span>
     </p>
 
     <div id="sort-phrases" class="flex flex-col">
@@ -81,8 +81,8 @@
         data-progress-tracker-target="completion"
         class="mt-7 hidden flex flex-col gap-4 rounded-xl border border-emerald-200 bg-emerald-50 p-4 sm:flex-row sm:items-center sm:justify-between dark:border-emerald-800 dark:bg-emerald-950/30">
         <div>
-          <h3 class="font-bold text-emerald-900 dark:text-emerald-100">Great job!</h3>
-          <p class="mt-1 text-sm text-emerald-700 dark:text-emerald-300">You've sorted all the phrases correctly.</p>
+          <h3 class="font-bold text-emerald-900 dark:text-emerald-100"><%= t(".great_job") %></h3>
+          <p class="mt-1 text-sm text-emerald-700 dark:text-emerald-300"><%= t(".completed") %></p>
         </div>
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex h-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500 px-6 font-bold text-white transition hover:bg-emerald-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-500") %>
       </div>

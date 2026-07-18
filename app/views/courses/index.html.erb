@@ -160,7 +160,7 @@
         <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
         <div class="flex items-center gap-2">
           <%= render "shared/theme_toggle" %>
-          <%= link_to "Sign up", new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
+          <%= link_to t(".sign_up"), new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
         </div>
       </div>
     <% end %>
@@ -185,22 +185,19 @@
   <!-- GEO: Entity-rich description for search engines and AI crawlers -->
   <section class="mb-8 px-2">
     <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-      Understand native content in
-      <strong class="text-gray-900 dark:text-gray-50">English</strong>,
-      <strong class="text-gray-900 dark:text-gray-50">Hebrew</strong>,
-      <strong class="text-gray-900 dark:text-gray-50">French</strong>,
-      <strong class="text-gray-900 dark:text-gray-50">Spanish</strong>, and
-      <strong class="text-gray-900 dark:text-gray-50">Arabic</strong>.
-      Each course breaks down bilingual phrases with word-level translations, timestamps,
-      and AI-powered activities designed to build your listening, speaking, and
-      comprehension skills through spaced repetition.
+      <%= t(".description_html",
+            english: content_tag(:strong, t(".languages.english"), class: "text-gray-900 dark:text-gray-50"),
+            hebrew: content_tag(:strong, t(".languages.hebrew"), class: "text-gray-900 dark:text-gray-50"),
+            french: content_tag(:strong, t(".languages.french"), class: "text-gray-900 dark:text-gray-50"),
+            spanish: content_tag(:strong, t(".languages.spanish"), class: "text-gray-900 dark:text-gray-50"),
+            arabic: content_tag(:strong, t(".languages.arabic"), class: "text-gray-900 dark:text-gray-50")) %>
     </p>
   </section>
 
   <!-- Continue Learning Section - show courses user has started -->
   <% if user_signed_in? && @continue_learning_courses.any? %>
     <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-6 px-2">Continue Learning</h2>
+      <h2 class="text-3xl font-bold mb-6 px-2"><%= t(".continue_learning") %></h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @continue_learning_courses.each do |course| %>
@@ -216,12 +213,12 @@
   <!-- Courses and Standalone Clips -->
   <% if @playlists.any? || @all_courses.any? %>
     <section class="mb-10 px-2">
-      <h2 class="text-3xl font-bold mb-6">Browse</h2>
+      <h2 class="text-3xl font-bold mb-6"><%= t(".browse") %></h2>
       <%= render "shared/tabs",
         default_tab: "courses",
         tabs: [
-          { id: "courses", label: "Courses", partial: "courses/playlists_grid", locals: { playlists: @playlists } },
-          { id: "standalone-clips", label: "Standalone clips", partial: "courses/standalone_clips_grid", locals: { courses: @all_courses } }
+          { id: "courses", label: t(".tabs.courses"), partial: "courses/playlists_grid", locals: { playlists: @playlists } },
+          { id: "standalone-clips", label: t(".tabs.standalone_clips"), partial: "courses/standalone_clips_grid", locals: { courses: @all_courses } }
         ] %>
     </section>
   <% end %>
@@ -229,7 +226,7 @@
   <!-- Row: "Next For You" - only show if user signed in and has recommended courses -->
   <% if user_signed_in? && @recommended_courses.any? %>
     <section class="mb-10 mt-10">
-      <h2 class="text-3xl font-bold mb-6 px-2">Next For You</h2>
+      <h2 class="text-3xl font-bold mb-6 px-2"><%= t(".next_for_you") %></h2>
       <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
         <div class="swiper-wrapper">
           <% @recommended_courses.each do |course| %>

@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 
 // Spotify-style popup for assigning a course to playlists.
 // Lists the playlists the user can edit, lets them toggle membership, and create new ones.
@@ -33,7 +34,7 @@ export default class extends Controller {
       this.render()
     } catch (e) {
       console.error(e)
-      this.loadingTarget.textContent = "Could not load playlists."
+      this.loadingTarget.textContent = t("course_paths.load_failed")
     }
   }
 
@@ -58,7 +59,7 @@ export default class extends Controller {
   }
 
   rowHtml(path) {
-    const count = path.courses_count === 1 ? "1 course" : `${path.courses_count} courses`
+    const count = t(path.courses_count === 1 ? "course_paths.one_course" : "course_paths.many_courses", { count: path.courses_count })
     const checked = path.member
     return `
       <button type="button" data-path-id="${path.id}" data-action="course-paths#toggle"
@@ -122,7 +123,7 @@ export default class extends Controller {
     event.preventDefault()
     const name = this.createNameTarget.value.trim()
     if (!name) {
-      this.createErrorTarget.textContent = "Enter a playlist name."
+      this.createErrorTarget.textContent = t("course_paths.enter_name")
       this.createErrorTarget.classList.remove("hidden")
       this.createNameTarget.focus()
       return
@@ -144,7 +145,7 @@ export default class extends Controller {
       this.render()
     } catch (e) {
       console.error(e)
-      this.createErrorTarget.textContent = "Could not create the playlist. Please try again."
+      this.createErrorTarget.textContent = t("course_paths.create_failed")
       this.createErrorTarget.classList.remove("hidden")
     } finally {
       this.createButtonTarget.disabled = false

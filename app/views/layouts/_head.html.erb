@@ -1,4 +1,4 @@
-<title><%= content_for(:title) || "Langlets - Learn Languages Through Interactive Video Clips" %></title>
+<title><%= content_for(:title) || t(".title") %></title>
 <meta name="description" content="<%= content_for(:meta_description) || SeoHelper::DEFAULT_DESCRIPTION %>">
 <link rel="canonical" href="<%= content_for(:canonical_url) || 'https://langlets.app' %>">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -6,6 +6,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 <%= csrf_meta_tags %>
 <%= csp_meta_tag %>
+<script type="application/json" id="i18n-strings"><%= raw I18n.t("js").to_json %></script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

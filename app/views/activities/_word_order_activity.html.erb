@@ -25,9 +25,9 @@
 
   <!-- Scrollable body -->
   <div class="flex-1 overflow-y-auto flex flex-col px-5 pt-2">
-    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400 mb-2">Build the sentence</div>
-    <h2 class="text-2xl font-extrabold tracking-tight mb-4"><%= @activity.text_header || "Translate this sentence" %></h2>
-    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4" data-word-order-activity-target="progressText">Question 1 of <%= total_phrases %></p>
+    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400 mb-2"><%= t(".build_sentence") %></div>
+    <h2 class="text-2xl font-extrabold tracking-tight mb-4"><%= @activity.text_header || t(".instruction") %></h2>
+    <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-4" data-word-order-activity-target="progressText"><%= t(".question_of", current: 1, total: total_phrases) %></p>
 
     <% phrases.each_with_index do |phrase_data, index| %>
       <div
@@ -50,7 +50,7 @@
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9v6h4l5 4V5L8 9H4z" fill="#fff"/><path d="M17 8a5 5 0 0 1 0 8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
           </button>
           <div class="min-w-0">
-            <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-0.5">Tap to listen</div>
+            <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-0.5"><%= t(".tap_to_listen") %></div>
             <div class="text-lg font-extrabold tracking-tight <%= l2_rtl ? 'text-right' : 'text-left' %>"><%= phrase_data[:l2_text] %></div>
           </div>
         </div>
@@ -76,7 +76,7 @@
             <% end %>
           <% end %>
         </div>
-        <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3.5">Tap words to add them in order</div>
+        <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mb-3.5"><%= t(".tap_words") %></div>
 
         <!-- Word bank -->
         <div
@@ -116,10 +116,10 @@
 
     <div data-word-order-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden flex flex-col sm:flex-row items-center justify-between bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl p-5 shadow-md mt-6 gap-4">
       <div>
-        <h3 class="text-lg font-extrabold text-center sm:text-left">Great job!</h3>
-        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 text-center sm:text-left">You've completed all the phrases.</p>
+        <h3 class="text-lg font-extrabold text-center sm:text-left"><%= t(".great_job") %></h3>
+        <p class="text-sm font-semibold text-gray-500 dark:text-gray-400 text-center sm:text-left"><%= t(".completed") %></p>
       </div>
-      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors">Next</a>
+      <a href="<%= @next_activity_path %>" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors"><%= t(".next") %></a>
     </div>
   </div>
 </div>

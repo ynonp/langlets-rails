@@ -1,4 +1,5 @@
 import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
+import { t } from "../../utils/i18n"
 
 // Intercepts Google sign-in button clicks in the native app and routes them
 // through the Google Sign-In SDK instead of the WKWebView.
@@ -30,7 +31,7 @@ export default class extends BridgeComponent {
 
   handleAuthorization(data) {
     if (!data.code) {
-      this.showError(data.error || "Could not authenticate using Google, please try another way.")
+      this.showError(data.error || t("bridge.google.could_not_authenticate"))
       return
     }
 
@@ -46,11 +47,11 @@ export default class extends BridgeComponent {
         if (response.redirected) {
           window.location.href = response.url
         } else {
-          this.showError("Google authentication failed, please try another way.")
+          this.showError(t("bridge.google.authentication_failed"))
         }
       })
       .catch(() => {
-        this.showError("Google authentication failed, please try another way.")
+        this.showError(t("bridge.google.authentication_failed"))
       })
   }
 

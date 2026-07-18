@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 
 export default class extends Controller {
   static targets = ['translationPopup', 'translationText', 'saveButton', 'saveIcon', 'saveText'];
@@ -59,12 +60,12 @@ export default class extends Controller {
     const isSaved = this.currentTokenId && this.savedIdsValue.includes(this.currentTokenId);
     if (isSaved) {
       this.saveIconTarget.textContent = '✓';
-      this.saveTextTarget.textContent = 'Saved';
+      this.saveTextTarget.textContent = t("popover_translation.saved");
       this.saveButtonTarget.classList.add('bg-emerald-100', 'dark:bg-emerald-900/40', 'border-emerald-300', 'dark:border-emerald-700');
       this.saveButtonTarget.classList.remove('bg-gray-100', 'dark:bg-gray-700', 'border-gray-200', 'dark:border-gray-600');
     } else {
       this.saveIconTarget.textContent = '🔖';
-      this.saveTextTarget.textContent = 'Save';
+      this.saveTextTarget.textContent = t("popover_translation.save");
       this.saveButtonTarget.classList.add('bg-gray-100', 'dark:bg-gray-700', 'border-gray-200', 'dark:border-gray-600');
       this.saveButtonTarget.classList.remove('bg-emerald-100', 'dark:bg-emerald-900/40', 'border-emerald-300', 'dark:border-emerald-700');
     }

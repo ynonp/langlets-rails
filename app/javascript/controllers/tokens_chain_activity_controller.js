@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
 
 // Connects to data-controller="tokens-chain-activity"
@@ -139,7 +140,7 @@ export default class extends Controller {
   updateProgress() {
     const matchedCount = this.currentIndex;
     const percentage = (matchedCount / this.totalTokensValue) * 100;
-    this.progressTextTarget.textContent = `${matchedCount} / ${this.totalTokensValue} matched`;
+    this.progressTextTarget.textContent = t("tokens_chain.matched", { current: matchedCount, total: this.totalTokensValue });
     this.progressBarTarget.style.width = `${percentage}%`;
   }
 

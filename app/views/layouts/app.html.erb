@@ -6,7 +6,7 @@
     Never use `dark:` utilities in views rendered by this layout: the variant keys
     off this very attribute, so they'd be unconditionally on and the intent would
     be invisible. Use the app-* tokens directly. %>
-<html data-theme="dark">
+<html lang="<%= current_translation_language&.iso_name || I18n.locale %>" dir="<%= current_translation_language&.rtl? ? 'rtl' : 'ltr' %>" data-theme="dark">
   <head>
     <%= render "layouts/head" %>
   </head>

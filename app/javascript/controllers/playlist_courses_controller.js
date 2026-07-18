@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 
 export default class extends Controller {
   static targets = ["searchInput", "coursesGrid", "loadingIndicator", "loadMoreButton", "infiniteScrollTrigger", "deleteOverlay"]
@@ -159,6 +160,6 @@ export default class extends Controller {
 
   showError() {
     // You could implement a more sophisticated error display here
-    alert('Error loading courses. Please try again.')
+    alert(t("playlist_courses.load_failed"))
   }
 }

@@ -19,9 +19,23 @@
 
 The public course library uses the optional `lang` query parameter both to
 filter its source-language content and to select its header subhead. Header
-copy is stored in `config/locales/en.yml` as `subhead` and `subhead_<iso>`
-translations; regional codes such as `ar-JO` use their base code (`ar`). A
-missing or unconfigured language uses the generic `subhead` translation.
+copy is stored in locale files under `subhead.<iso>`; regional codes such as
+`ar-JO` use their base code (`ar`). A missing or unconfigured language uses
+`subhead.default`.
+
+### Interface localization
+
+Rails chooses the interface locale from `Current.translation_language`, which
+is resolved from the request subdomain. English and Hebrew catalogs live in
+`config/locales/en.yml` and `config/locales/he.yml`; Spanish, Arabic, German,
+and French currently fall back to English. The layouts expose the translation
+language through the document's `lang` and `dir` attributes, independently of
+the language of learning content.
+
+User-facing server-rendered copy uses Rails I18n lazy lookup. A single JSON
+payload in the shared head exposes the `js` locale subtree to Stimulus through
+`app/javascript/utils/i18n.js`, so dynamic activity feedback uses the same
+request locale and fallback behavior as ERB views.
 
 ### Translation localization
 

@@ -8,8 +8,9 @@ export function stopPracticingHtml(tokenId) {
       <button data-stop-practicing-target="button"
               data-action="click->stop-practicing#toggle"
               class="text-xs text-gray-400 hover:text-red-400 py-1 px-2 rounded transition-colors duration-200">
-        <span data-stop-practicing-target="label">🚫 Stop Practicing This Word</span>
+        <span data-stop-practicing-target="label">${t("stop_practicing.stop")}</span>
       </button>
     </div>
   `
 }
+import { t } from "./i18n"

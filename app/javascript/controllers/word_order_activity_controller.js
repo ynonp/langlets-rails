@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
 
 export default class extends Controller {
@@ -449,7 +450,7 @@ export default class extends Controller {
     this.awardXp(5);
     
     const feedbackMessage = this.feedbackMessageTarget
-    feedbackMessage.textContent = "Correct! Well done!"
+    feedbackMessage.textContent = t("word_order.correct")
     feedbackMessage.className = "mt-4 p-3 rounded-lg text-center text-lg font-medium correct-feedback"
     feedbackMessage.classList.remove('hidden')
     
@@ -458,7 +459,7 @@ export default class extends Controller {
     }, 1500)
   }
 
-  showIncorrectFeedback(message = "Not quite right. Try again!") {
+  showIncorrectFeedback(message = t("word_order.incorrect")) {
     const feedbackMessage = this.feedbackMessageTarget
     feedbackMessage.textContent = message
     feedbackMessage.className = "mt-4 p-3 rounded-lg text-center text-lg font-medium incorrect-feedback"
@@ -497,7 +498,7 @@ export default class extends Controller {
     if (this.hasProgressBarTarget) {
       this.progressBarTarget.style.width = `${progress}%`
     }
-    this.progressTextTarget.textContent = `Question ${this.currentPhraseIndex + 1} of ${this.totalPhrasesValue}`
+    this.progressTextTarget.textContent = t("word_order.question_of", { current: this.currentPhraseIndex + 1, total: this.totalPhrasesValue })
     
     if (this.currentPhraseIndex < this.phraseContainerTargets.length) {
       // Show next phrase
@@ -511,7 +512,7 @@ export default class extends Controller {
   }
 
   showCompletionMessage() {
-    this.progressTextTarget.textContent = `Completed ${this.totalPhrasesValue} of ${this.totalPhrasesValue}`
+    this.progressTextTarget.textContent = t("word_order.completed_of", { current: this.totalPhrasesValue, total: this.totalPhrasesValue })
     if (this.hasProgressBarTarget) {
       this.progressBarTarget.style.width = '100%'
     }

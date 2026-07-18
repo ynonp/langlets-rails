@@ -47,13 +47,13 @@
     <div class="mb-6">
       <div class="flex items-center gap-3 sm:gap-4">
         <p data-audio-to-translation-activity-target="counter" class="shrink-0 text-sm sm:text-base font-medium text-gray-700 dark:text-gray-300 tabular-nums">
-          0 / <%= total_phrases %> matched
+          <%= t(".matched", current: 0, total: total_phrases) %>
         </p>
         <div class="min-w-0 flex-1 bg-gray-100 dark:bg-gray-800 rounded-full h-2.5">
           <div data-audio-to-translation-activity-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
         </div>
       </div>
-      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-4"><%= @activity.text_header || "Play each phrase and tap its translation" %></p>
+      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-4"><%= @activity.text_header || t(".instruction") %></p>
     </div>
 
     <div id="audio-to-translation" class="flex flex-col gap-4">
@@ -61,18 +61,18 @@
       <!-- Completion message -->
       <div data-audio-to-translation-activity-target="completionMessage" data-progress-tracker-target="completion" class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
-          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've matched all the phrases correctly.</p>
+          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
+          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
         </div>
-        <%= link_to_next_activity("Next", @next_activity_path, class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors") %>
+        <%= link_to_next_activity(t(".next"), @next_activity_path, class: "w-full sm:w-auto inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors") %>
       </div>
 
       <!-- Grid container: audio cards (left) + translations (right) -->
       <div class="grid grid-cols-2 gap-x-4 gap-y-3.5" data-audio-to-translation-activity-target="grid">
 
         <!-- Column headers -->
-        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l1.english_name %> Audio</div>
-        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= l2.english_name %> Translation</div>
+        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".audio", language: l1.native_name) %></div>
+        <div class="text-xs uppercase tracking-wide text-gray-400 dark:text-gray-500 font-semibold px-1 mb-1"><%= t(".translation", language: l2.native_name) %></div>
 
         <% rows.each do |audio_phrase, translation_phrase| %>
           <!-- Audio card (L1) -->

@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
 
 // Connects to data-controller="match-activity"
@@ -59,7 +60,7 @@ export default class extends Controller {
       });
       option.classList.add('correct-answer');
       this.incrementScore();
-      this.showFeedback("Correct!", "bg-green-600");
+      this.showFeedback(t("match.correct"), "bg-green-600");
         // Wait a moment before moving to the next phrase
       setTimeout(() => {
         this.moveToNextPhrase();
@@ -70,7 +71,7 @@ export default class extends Controller {
       this.element.dispatchEvent(new CustomEvent('audio:incorrect', { bubbles: true }));
       
       option.classList.add('incorrect-answer');
-      this.showFeedback("Incorrect", "bg-red-600");
+      this.showFeedback(t("match.incorrect"), "bg-red-600");
       setTimeout(() => {
         option.classList.remove('incorrect-answer');
         this.feedbackMessageTarget.classList.add('hidden');
@@ -119,7 +120,7 @@ export default class extends Controller {
       if (nextContainer) {
         nextContainer.classList.remove('hidden');
         // Update progress text
-        this.progressTextTarget.textContent = `Question ${this.currentPhraseValue + 1} of ${this.totalPhrasesValue}`;
+        this.progressTextTarget.textContent = t("match.question_of", { current: this.currentPhraseValue + 1, total: this.totalPhrasesValue });
         // Preload the next batch of word audio, then refresh the current
         // phrase's recency in the cache
         this.preloadPhraseAudio(this.currentPhraseValue + 1);

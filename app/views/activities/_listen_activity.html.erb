@@ -56,7 +56,7 @@
 >
   <div class="w-full max-w-[640px] p-4 sm:p-6 rounded-2xl shadow-md flex flex-col flex-1 min-h-0 bg-white dark:bg-gray-900 dark:border dark:border-gray-800">
     <div class="mb-6 text-center">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || 'Listen and click on the missing word' %></h2>
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || t(".instruction") %></h2>
       <p class="text-sm sm:text-base text-gray-500 dark:text-gray-400"><%= @activity.text_subheader %></p>
     </div>
 
@@ -65,8 +65,8 @@
     <!-- Completion Message (Initially Hidden) -->
     <div class="my-4 p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4 hidden" data-listen-activity-target="completion">
       <div>
-        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Great job!</h3>
-        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've completed all the listening exercises.</p>
+        <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".great_job") %></h3>
+        <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
       </div>
       <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
     </div>

@@ -1,38 +1,216 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
-  subhead: "Learn languages from youtube"
-  subhead_ar: "Learn Arabic from YouTube"
-  subhead_de: "Learn German from YouTube"
-  subhead_en: "Learn English from YouTube"
-  subhead_es: "Learn Spanish from YouTube"
-  subhead_fr: "Learn French from YouTube"
-  subhead_he: "Learn Hebrew from YouTube"
+  subhead:
+    default: "Learn languages from youtube"
+    ar: "Learn Arabic from YouTube"
+    de: "Learn German from YouTube"
+    en: "Learn English from YouTube"
+    es: "Learn Spanish from YouTube"
+    fr: "Learn French from YouTube"
+    he: "Learn Hebrew from YouTube"
+  layouts:
+    head:
+      title: "Langlets - Learn Languages Through Interactive Video Clips"
+  activities:
+    audio_to_translation:
+      matched: "%{current} / %{total} matched"
+      instruction: "Play each phrase and tap its translation"
+      great_job: "Great job!"
+      completed: "You've matched all the phrases correctly."
+      next: "Next"
+      audio: "%{language} Audio"
+      translation: "%{language} Translation"
+    find_answer_activity:
+      good_work: "Good Work!"
+    flashcard_activity:
+      title: "Flashcards"
+      question_of: "Question %{current} of %{total}"
+      good_work: "Good Work!"
+    write_missing_word_activity:
+      title: "Write the Missing Word"
+      question_of: "Question %{current} of %{total}"
+      great_work: "Great Work!"
+    translation_popup:
+      save: "Save"
+    watch_video_activity:
+      tap_any_word: "Tap any word"
+    language_alignment_activity:
+      instruction: "Click on the words in the original text that match the highlighted words"
+      good_work: "Good Work!"
+      completed: "You've matched all the words correctly."
+    listen_activity:
+      instruction: "Listen and click on the missing word"
+      great_job: "Great job!"
+      completed: "You've completed all the listening exercises."
+    match_tokens_activity:
+      instruction: "Match Words to Their Translations"
+      great_job: "Great job!"
+      completed: "You've matched all the words correctly."
+    tokens_chain_activity:
+      instruction: "Tap the translation of the highlighted word"
+      great_job: "Great job!"
+      completed: "You've matched all the tokens correctly."
+    word_order_activity:
+      build_sentence: "Build the sentence"
+      instruction: "Translate this sentence"
+      question_of: "Question %{current} of %{total}"
+      tap_to_listen: "Tap to listen"
+      tap_words: "Tap words to add them in order"
+      great_job: "Great job!"
+      completed: "You've completed all the phrases."
+      next: "Next"
+    match_phrases_activity:
+      instruction: "Click On The Translation"
+      question_of: "Question %{current} of %{total}"
+      great_job: "Great job!"
+      completed: "You've completed all the phrases."
+    speak_activity:
+      instruction: "Click on the microphone and say the phrases in %{language}"
+      good_work: "Good Work!"
+      completed: "You've completed this pronunciation exercise."
+      your_pronunciation: "Your pronunciation:"
+      accuracy: "Accuracy"
+      fluency: "Fluency"
+      completeness: "Completeness"
+    sort_phrases_activity:
+      instruction: "Put the lines in the order you hear them"
+      subinstruction: "Play the song, then drag each line up or down to match the order in the recording."
+      hint: "Listening is the hint — the lines appear in order in the song."
+      great_job: "Great job!"
+      completed: "You've sorted all the phrases correctly."
+  app:
+    home:
+      index:
+        pick_first_song: "Pick your first song"
+        learn_through_music: "Learn %{language} through music you'll actually enjoy."
+        new_language: "a new language"
+        your_playlists: "Your playlists"
+        keep_it_going: "Keep it going"
+        more_from_library: "More from the library"
+    library:
+      show:
+        title: "Library"
+        description: "Every video the community has turned into lessons."
+    import_requests:
+      index:
+        title: "Queue"
+        empty: "Nothing here yet."
+      new:
+        page_title: "Add a video · langlets."
+        title: "Add a video"
+        video_language: "Video language"
+        translate_to: "Translate to"
+        import_credit: "Import · 1 credit"
+  onboarding:
+    language:
+      change_title: "Change Learning Language"
+      change_prompt: "Select the language you want to learn"
+      welcome: "Welcome to Langlets"
+      prompt: "Which language do you want to learn?"
+  courses:
+    index:
+      continue_learning: "Continue Learning"
+      browse: "Browse"
+      next_for_you: "Next For You"
+      sign_up: "Sign up"
+      description_html: "Understand native content in %{english}, %{hebrew}, %{french}, %{spanish}, and %{arabic}. Each course breaks down bilingual phrases with word-level translations, timestamps, and AI-powered activities designed to build your listening, speaking, and comprehension skills through spaced repetition."
+      languages:
+        english: "English"
+        hebrew: "Hebrew"
+        french: "French"
+        spanish: "Spanish"
+        arabic: "Arabic"
+      tabs:
+        courses: "Courses"
+        standalone_clips: "Standalone Clips"
+    show:
+      lessons: "Lessons"
+      done: "%{current}/%{total} done"
+      sign_up: "Sign up"
+    course_card:
+      progress: "Progress"
+    course_card_grid:
+      progress: "Progress"
+    playlists_grid:
+      clip_count:
+        one: "1 clip"
+        other: "%{count} clips"
+    add_to_paths_modal:
+      title: "Add to playlist"
+      new_playlist: "New playlist"
+      playlist_name: "Playlist name"
+      loading: "Loading…"
+      empty: "No playlists found."
+  playlists:
+    show:
+      sign_up: "Sign up"
+      log_in: "Log in"
+  devise:
+    sessions:
+      new:
+        sign_up: "SIGN UP"
+        title: "Log in"
+        email_placeholder: "Email or username"
+        password_placeholder: "Password"
+        forgot: "FORGOT?"
+        submit: "LOG IN"
+        or: "OR"
+    registrations:
+      new:
+        log_in: "LOG IN"
+        title: "Sign up"
+        email_placeholder: "Email"
+        password_placeholder: "Password (%{count} characters minimum)"
+        confirm_password: "Confirm password"
+        submit: "SIGN UP"
+        or: "OR"
+  js:
+    word_order:
+      correct: "Correct! Well done!"
+      incorrect: "Not quite right. Try again!"
+      question_of: "Question %{current} of %{total}"
+      completed_of: "Completed %{current} of %{total}"
+    match:
+      correct: "Correct!"
+      incorrect: "Incorrect"
+      question_of: "Question %{current} of %{total}"
+    write_missing_word:
+      question_of: "Question %{current} of %{total}"
+      check: "Check"
+      correct: "✓ Correct! \"%{answer}\""
+      wrong_try_again: "✗ Wrong — try again!"
+      answer_is: "✗ The answer is \"%{answer}\". Try to remember it!"
+      continue: "Continue →"
+    flashcard:
+      question_of: "Question %{current} of %{total}"
+    speak:
+      assessment_failed: "Could not assess pronunciation. Please try again."
+      great_pronunciation: "✓ Great pronunciation!"
+      keep_practicing: "Good effort! Keep practicing."
+    audio_to_translation:
+      matched: "%{current} / %{total} matched"
+    tokens_chain:
+      matched: "%{current} / %{total} matched"
+    popover_translation:
+      save: "Save"
+      saved: "Saved"
+    stop_practicing:
+      stop: "🚫 Stop Practicing This Word"
+      removed: "Word removed from your vocab. %{undo}"
+      undo: "undo"
+    course_paths:
+      load_failed: "Could not load playlists."
+      one_course: "1 course"
+      many_courses: "%{count} courses"
+      enter_name: "Enter a playlist name."
+      create_failed: "Could not create the playlist. Please try again."
+    playlist_courses:
+      load_failed: "Error loading courses. Please try again."
+    progress_tracker:
+      xp: "%{xp} XP"
+    bridge:
+      apple:
+        could_not_authenticate: "Could not authenticate using Apple, please try another way."
+        authentication_failed: "Apple authentication failed, please try another way."
+      google:
+        could_not_authenticate: "Could not authenticate using Google, please try another way."
+        authentication_failed: "Google authentication failed, please try another way."

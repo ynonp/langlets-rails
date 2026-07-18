@@ -1,4 +1,5 @@
 import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
+import { t } from "../../utils/i18n"
 
 // Intercepts Apple sign-in button clicks in the native app and routes them
 // through Apple's native AuthenticationServices sheet instead of the WKWebView.
@@ -31,7 +32,7 @@ export default class extends BridgeComponent {
 
   handleAuthorization(data) {
     if (!data.identityToken) {
-      this.showError(data.error || "Could not authenticate using Apple, please try another way.")
+      this.showError(data.error || t("bridge.apple.could_not_authenticate"))
       return
     }
 
@@ -47,11 +48,11 @@ export default class extends BridgeComponent {
         if (response.redirected) {
           window.location.href = response.url
         } else {
-          this.showError("Apple authentication failed, please try another way.")
+          this.showError(t("bridge.apple.authentication_failed"))
         }
       })
       .catch(() => {
-        this.showError("Apple authentication failed, please try another way.")
+        this.showError(t("bridge.apple.authentication_failed"))
       })
   }
 

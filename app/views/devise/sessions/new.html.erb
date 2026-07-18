@@ -10,13 +10,13 @@
   <!-- Sign up link -->
   <div class="absolute top-[30px] right-[18px]">
     <% signup_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-    <%= link_to "SIGN UP", new_user_registration_path(signup_params), class: "font-bold tracking-wide text-emerald-600 dark:text-emerald-400" %>
+    <%= link_to t(".sign_up"), new_user_registration_path(signup_params), class: "font-bold tracking-wide text-emerald-600 dark:text-emerald-400" %>
   </div>
 
   <!-- Login form container -->
   <div class="w-full max-w-md px-6">
     <div class="text-center mb-8">
-      <h1 class="text-2xl font-extrabold tracking-tight text-[30px]">Log in</h1>
+      <h1 class="text-2xl font-extrabold tracking-tight text-[30px]"><%= t(".title") %></h1>
     </div>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "space-y-5", data: { turbo_action: "replace" } }) do |f| %>
@@ -25,22 +25,22 @@
       <% end %>
 
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email or username", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t(".email_placeholder"), class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
       </div>
 
       <div class="relative">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", class: "w-full px-4 py-3.5 pr-[90px] rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: t(".password_placeholder"), class: "w-full px-4 py-3.5 pr-[90px] rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
         <div class="absolute right-4 top-1/2 -translate-y-1/2">
           <% forgot_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-          <%= link_to "FORGOT?", new_password_path(resource_name, forgot_params), class: "text-sm font-bold tracking-wide text-gray-400 dark:text-gray-600" %>
+          <%= link_to t(".forgot"), new_password_path(resource_name, forgot_params), class: "text-sm font-bold tracking-wide text-gray-400 dark:text-gray-600" %>
         </div>
       </div>
 
       <div>
-        <%= f.submit "LOG IN", class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
+        <%= f.submit t(".submit"), class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
       </div>
 
-      <div class="flex items-center gap-3 text-gray-400 dark:text-gray-600 font-bold text-xs tracking-wide before:content-[''] before:flex-1 before:h-px before:bg-gray-200 dark:before:bg-gray-700 after:content-[''] after:flex-1 after:h-px after:bg-gray-200 dark:after:bg-gray-700">OR</div>
+      <div class="flex items-center gap-3 text-gray-400 dark:text-gray-600 font-bold text-xs tracking-wide before:content-[''] before:flex-1 before:h-px before:bg-gray-200 dark:before:bg-gray-700 after:content-[''] after:flex-1 after:h-px after:bg-gray-200 dark:after:bg-gray-700"><%= t(".or") %></div>
     <% end %>
 
     <%= render "devise/shared/social_buttons" %>

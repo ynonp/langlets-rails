@@ -59,7 +59,7 @@
       <% if !is_completed && course.respond_to?(:has_progress?) && course.has_progress? && course.user_progress > 0 %>
         <div class="mb-3">
           <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mb-1">
-            <span>Progress</span>
+            <span><%= t(".progress") %></span>
             <span><%= course.user_progress %>%</span>
           </div>
           <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-2">

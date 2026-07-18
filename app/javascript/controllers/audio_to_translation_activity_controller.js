@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 import { animate } from "motion/mini"
 
 // Connects to data-controller="audio-to-translation-activity"
@@ -259,7 +260,7 @@ export default class extends Controller {
     const percentage = (this.matchedPhrases / this.totalPhrasesValue) * 100;
     this.progressBarTarget.style.width = `${percentage}%`;
     if (this.hasCounterTarget) {
-      this.counterTarget.textContent = `${this.matchedPhrases} / ${this.totalPhrasesValue} matched`;
+      this.counterTarget.textContent = t("audio_to_translation.matched", { current: this.matchedPhrases, total: this.totalPhrasesValue });
     }
   }
 
@@ -288,4 +289,3 @@ export default class extends Controller {
     }
   }
 }
-

@@ -28,7 +28,7 @@
 <div class="flex-1 min-h-0 overflow-y-auto flex-col flex items-center bg-emerald-50 dark:bg-gray-950" data-controller="find-words">
   <div class=" w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md flex flex-col">
     <div class="mb-6">
-      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || "Click on the words in the original text that match the highlighted words" %></h2>
+      <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50 mb-2"><%= @activity.text_header || t(".instruction") %></h2>
       <div class="w-full bg-gray-100 dark:bg-gray-800 rounded-full h-2.5 mt-4">
         <div data-find-words-target="progressBar" id="progress" class="bg-emerald-500 h-2.5 rounded-full w-0 transition-all duration-500"></div>
       </div>
@@ -88,8 +88,8 @@
         <!-- Completion message now positioned to replace the translation phrase -->
         <div data-find-words-target="completionMessage" data-progress-tracker-target="completion" class="hidden translation-phrase p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
           <div>
-            <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Good Work!</h3>
-            <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've matched all the words correctly.</p>
+            <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".good_work") %></h3>
+            <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
           </div>
           <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
         </div>

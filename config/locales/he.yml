@@ -1,0 +1,216 @@
+he:
+  subhead:
+    default: "לומדים שפות מיוטיוב"
+    ar: "לומדים שפות מיוטיוב"
+    de: "לומדים גרמנית מיוטיוב"
+    en: "לומדים אנגלית מיוטיוב"
+    es: "לומדים ספרדית מיוטיוב"
+    fr: "לומדים צרפתית מיוטיוב"
+    he: "לומדים עברית מיוטיוב"
+  layouts:
+    head:
+      title: "Langlets - לימוד שפות בעזרת סרטונים אינטראקטיביים"
+  activities:
+    audio_to_translation:
+      matched: "%{current} / %{total} הותאמו"
+      instruction: "השמיעו כל משפט והקישו על התרגום שלו"
+      great_job: "כל הכבוד!"
+      completed: "התאמתם נכון את כל המשפטים."
+      next: "הבא"
+      audio: "שמע ב%{language}"
+      translation: "תרגום ל%{language}"
+    find_answer_activity:
+      good_work: "עבודה מצוינת!"
+    flashcard_activity:
+      title: "כרטיסיות"
+      question_of: "שאלה %{current} מתוך %{total}"
+      good_work: "עבודה מצוינת!"
+    write_missing_word_activity:
+      title: "כתבו את המילה החסרה"
+      question_of: "שאלה %{current} מתוך %{total}"
+      great_work: "עבודה מצוינת!"
+    translation_popup:
+      save: "שמירה"
+    watch_video_activity:
+      tap_any_word: "הקישו על מילה כלשהי"
+    language_alignment_activity:
+      instruction: "הקישו על המילים בטקסט המקורי שמתאימות למילים המודגשות"
+      good_work: "עבודה מצוינת!"
+      completed: "התאמתם נכון את כל המילים."
+    listen_activity:
+      instruction: "האזינו והקישו על המילה החסרה"
+      great_job: "כל הכבוד!"
+      completed: "השלמתם את כל תרגילי ההאזנה."
+    match_tokens_activity:
+      instruction: "התאימו מילים לתרגומים שלהן"
+      great_job: "כל הכבוד!"
+      completed: "התאמתם נכון את כל המילים."
+    tokens_chain_activity:
+      instruction: "הקישו על התרגום של המילה המודגשת"
+      great_job: "כל הכבוד!"
+      completed: "התאמתם נכון את כל המילים."
+    word_order_activity:
+      build_sentence: "בנו את המשפט"
+      instruction: "תרגמו את המשפט הזה"
+      question_of: "שאלה %{current} מתוך %{total}"
+      tap_to_listen: "הקישו להאזנה"
+      tap_words: "הקישו על המילים לפי הסדר"
+      great_job: "כל הכבוד!"
+      completed: "השלמתם את כל המשפטים."
+      next: "הבא"
+    match_phrases_activity:
+      instruction: "הקישו על התרגום"
+      question_of: "שאלה %{current} מתוך %{total}"
+      great_job: "כל הכבוד!"
+      completed: "השלמתם את כל המשפטים."
+    speak_activity:
+      instruction: "הקישו על המיקרופון ואמרו את המשפטים ב%{language}"
+      good_work: "עבודה מצוינת!"
+      completed: "השלמתם את תרגיל ההגייה."
+      your_pronunciation: "ההגייה שלכם:"
+      accuracy: "דיוק"
+      fluency: "שטף"
+      completeness: "שלמות"
+    sort_phrases_activity:
+      instruction: "סדרו את השורות לפי הסדר שבו הן נשמעות"
+      subinstruction: "השמיעו את השיר וגררו כל שורה למעלה או למטה בהתאם לסדר בהקלטה."
+      hint: "ההאזנה היא הרמז — השורות מופיעות לפי הסדר בשיר."
+      great_job: "כל הכבוד!"
+      completed: "סידרתם נכון את כל המשפטים."
+  app:
+    home:
+      index:
+        pick_first_song: "בחרו את השיר הראשון שלכם"
+        learn_through_music: "לומדים %{language} דרך מוזיקה שבאמת כיף לשמוע."
+        new_language: "שפה חדשה"
+        your_playlists: "הפלייליסטים שלכם"
+        keep_it_going: "ממשיכים ללמוד"
+        more_from_library: "עוד מהספרייה"
+    library:
+      show:
+        title: "ספרייה"
+        description: "כל הסרטונים שהקהילה הפכה לשיעורים."
+    import_requests:
+      index:
+        title: "תור"
+        empty: "עדיין אין כאן כלום."
+      new:
+        page_title: "הוספת סרטון · langlets."
+        title: "הוספת סרטון"
+        video_language: "שפת הסרטון"
+        translate_to: "תרגום אל"
+        import_credit: "ייבוא · נקודת זכות אחת"
+  onboarding:
+    language:
+      change_title: "שינוי שפת הלימוד"
+      change_prompt: "בחרו את השפה שתרצו ללמוד"
+      welcome: "ברוכים הבאים ל-Langlets"
+      prompt: "איזו שפה תרצו ללמוד?"
+  courses:
+    index:
+      continue_learning: "המשך למידה"
+      browse: "עיון בקורסים"
+      next_for_you: "הבא בשבילכם"
+      sign_up: "הירשמו"
+      description_html: "מבינים תוכן מקורי ב%{english}, %{hebrew}, %{french}, %{spanish} וב%{arabic}. כל קורס מפרק משפטים דו־לשוניים לתרגומים ברמת המילה, חותמות זמן ופעילויות מבוססות בינה מלאכותית, שנועדו לפתח את כישורי ההאזנה, הדיבור וההבנה באמצעות חזרה מרווחת."
+      languages:
+        english: "אנגלית"
+        hebrew: "עברית"
+        french: "צרפתית"
+        spanish: "ספרדית"
+        arabic: "ערבית"
+      tabs:
+        courses: "קורסים"
+        standalone_clips: "קטעים עצמאיים"
+    show:
+      lessons: "שיעורים"
+      done: "%{current}/%{total} הושלמו"
+      sign_up: "הירשמו"
+    course_card:
+      progress: "התקדמות"
+    course_card_grid:
+      progress: "התקדמות"
+    playlists_grid:
+      clip_count:
+        one: "סרט אחד"
+        other: "%{count} סרטים"
+    add_to_paths_modal:
+      title: "הוספה לפלייליסט"
+      new_playlist: "פלייליסט חדש"
+      playlist_name: "שם הפלייליסט"
+      loading: "טוען…"
+      empty: "לא נמצאו פלייליסטים."
+  playlists:
+    show:
+      sign_up: "הירשמו"
+      log_in: "התחברו"
+  devise:
+    sessions:
+      new:
+        sign_up: "הירשמו"
+        title: "התחברות"
+        email_placeholder: "דוא״ל או שם משתמש"
+        password_placeholder: "סיסמה"
+        forgot: "שכחתם?"
+        submit: "התחברו"
+        or: "או"
+    registrations:
+      new:
+        log_in: "התחברו"
+        title: "הרשמה"
+        email_placeholder: "דוא״ל"
+        password_placeholder: "סיסמה (%{count} תווים לפחות)"
+        confirm_password: "אימות סיסמה"
+        submit: "הירשמו"
+        or: "או"
+  js:
+    word_order:
+      correct: "נכון! כל הכבוד!"
+      incorrect: "לא בדיוק. נסו שוב!"
+      question_of: "שאלה %{current} מתוך %{total}"
+      completed_of: "הושלמו %{current} מתוך %{total}"
+    match:
+      correct: "נכון!"
+      incorrect: "לא נכון"
+      question_of: "שאלה %{current} מתוך %{total}"
+    write_missing_word:
+      question_of: "שאלה %{current} מתוך %{total}"
+      check: "בדיקה"
+      correct: "✓ נכון! \"%{answer}\""
+      wrong_try_again: "✗ לא נכון — נסו שוב!"
+      answer_is: "✗ התשובה היא \"%{answer}\". נסו לזכור אותה!"
+      continue: "המשך ←"
+    flashcard:
+      question_of: "שאלה %{current} מתוך %{total}"
+    speak:
+      assessment_failed: "לא הצלחנו להעריך את ההגייה. נסו שוב."
+      great_pronunciation: "✓ הגייה מצוינת!"
+      keep_practicing: "מאמץ יפה! המשיכו לתרגל."
+    audio_to_translation:
+      matched: "%{current} / %{total} הותאמו"
+    tokens_chain:
+      matched: "%{current} / %{total} הותאמו"
+    popover_translation:
+      save: "שמירה"
+      saved: "נשמר"
+    stop_practicing:
+      stop: "🚫 הפסקת תרגול המילה"
+      removed: "המילה הוסרה מאוצר המילים שלכם. %{undo}"
+      undo: "ביטול"
+    course_paths:
+      load_failed: "לא הצלחנו לטעון את הפלייליסטים."
+      one_course: "קורס אחד"
+      many_courses: "%{count} קורסים"
+      enter_name: "הזינו שם לפלייליסט."
+      create_failed: "לא הצלחנו ליצור את הפלייליסט. נסו שוב."
+    playlist_courses:
+      load_failed: "שגיאה בטעינת הקורסים. נסו שוב."
+    progress_tracker:
+      xp: "%{xp} XP"
+    bridge:
+      apple:
+        could_not_authenticate: "לא הצלחנו להתחבר באמצעות Apple. נסו דרך אחרת."
+        authentication_failed: "ההתחברות באמצעות Apple נכשלה. נסו דרך אחרת."
+      google:
+        could_not_authenticate: "לא הצלחנו להתחבר באמצעות Google. נסו דרך אחרת."
+        authentication_failed: "ההתחברות באמצעות Google נכשלה. נסו דרך אחרת."

@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus"
 import { stopPracticingHtml } from "../utils/stop_practicing_html"
+import { t } from "../utils/i18n"
 
 function normalizeText(text) {
   if (!text) return ""
@@ -46,7 +47,7 @@ export default class extends Controller {
       return
     }
 
-    this.progressTarget.textContent = `Question ${this.currentIndex + 1} of ${this.cardsValue.length}`
+    this.progressTarget.textContent = t("write_missing_word.question_of", { current: this.currentIndex + 1, total: this.cardsValue.length })
     this.translationTarget.textContent = `"${card.translation}"`
     this.sentenceTarget.textContent = card.phrase_with_blank
     this.answerTarget.value = ""
@@ -54,7 +55,7 @@ export default class extends Controller {
     this.feedbackTarget.textContent = ""
     this.checkButtonTarget.disabled = false
     this.checkButtonTarget.classList.remove("opacity-50")
-    this.checkButtonTarget.textContent = "Check"
+    this.checkButtonTarget.textContent = t("write_missing_word.check")
     this.awaitingContinue = false
 
     // Reset to write mode
@@ -116,7 +117,7 @@ export default class extends Controller {
 
     if (isCorrect) {
       selected.classList.add("border-emerald-500", "bg-emerald-100", "dark:bg-emerald-900/40")
-      this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
+      this.feedbackTarget.textContent = t("write_missing_word.correct", { answer: card.answer })
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 1
       this.dispatch("xp", { detail: { xp: 1 } })
@@ -128,7 +129,7 @@ export default class extends Controller {
       allOptions.forEach(btn => {
         if (btn !== selected) btn.disabled = false
       })
-      this.feedbackTarget.textContent = `✗ Wrong — try again!`
+      this.feedbackTarget.textContent = t("write_missing_word.wrong_try_again")
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-600 dark:text-red-400"
     }
   }
@@ -153,17 +154,17 @@ export default class extends Controller {
     this.feedbackTarget.classList.remove("hidden")
 
     if (correct) {
-      this.feedbackTarget.textContent = `✓ Correct! "${card.answer}"`
+      this.feedbackTarget.textContent = t("write_missing_word.correct", { answer: card.answer })
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-emerald-600 dark:text-emerald-400"
       this.totalXp += 2
       this.dispatch("xp", { detail: { xp: 2 } })
       this.playCurrentAudio()
       setTimeout(() => this.nextCard(), 1200)
     } else {
-      this.feedbackTarget.textContent = `✗ The answer is "${card.answer}". Try to remember it!`
+      this.feedbackTarget.textContent = t("write_missing_word.answer_is", { answer: card.answer })
       this.feedbackTarget.className = "text-base sm:text-lg font-semibold mt-2 text-red-600 dark:text-red-400"
       this.awaitingContinue = true
-      this.checkButtonTarget.textContent = "Continue →"
+      this.checkButtonTarget.textContent = t("write_missing_word.continue")
       this.checkButtonTarget.disabled = false
       this.checkButtonTarget.classList.remove("opacity-50")
     }
@@ -192,4 +193,3 @@ export default class extends Controller {
     this.dispatch("completed", { detail: { xp: this.totalXp }, bubbles: true })
   }
 }
-

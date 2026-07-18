@@ -1,4 +1,5 @@
 import { Controller } from "@hotwired/stimulus"
+import { t } from "../utils/i18n"
 
 // Connects to data-controller="stop-practicing"
 // Handles removing/restoring a token translation from user's saved vocabulary.
@@ -36,13 +37,13 @@ export default class extends Controller {
     if (!this.hasLabelTarget) return
 
     if (this.removedValue) {
-      this.labelTarget.innerHTML = 'Word removed from your vocab. <span class="underline">undo</span>'
+      this.labelTarget.innerHTML = t("stop_practicing.removed", { undo: `<span class="underline">${t("stop_practicing.undo")}</span>` })
       this.buttonTarget.classList.remove('text-gray-400', 'hover:text-red-400')
       this.buttonTarget.classList.add('text-yellow-400', 'hover:text-yellow-300')
       this.buttonTarget.disabled = false
       this.buttonTarget.style.cursor = ''
     } else {
-      this.labelTarget.textContent = '🚫 Stop Practicing This Word'
+      this.labelTarget.textContent = t("stop_practicing.stop")
       this.buttonTarget.classList.remove('text-yellow-400', 'hover:text-yellow-300')
       this.buttonTarget.classList.add('text-gray-400', 'hover:text-red-400')
       this.buttonTarget.disabled = false

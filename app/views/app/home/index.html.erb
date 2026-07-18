@@ -6,9 +6,9 @@
   <% if @first_run %>
     <%# First run: nothing to continue yet, so the screen is a song picker. %>
     <div>
-      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">Pick your first song</h1>
+      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight"><%= t(".pick_first_song") %></h1>
       <p class="text-app-text-2 text-sm mt-1">
-        Learn <%= @learning_language&.english_name || "a new language" %> through music you'll actually enjoy.
+        <%= t(".learn_through_music", language: @learning_language&.native_name || t(".new_language")) %>
       </p>
     </div>
 
@@ -37,7 +37,7 @@
 
     <% if @playlists.any? %>
       <div>
-        <h2 class="text-[15px] font-bold mb-2.5">Your playlists</h2>
+        <h2 class="text-[15px] font-bold mb-2.5"><%= t(".your_playlists") %></h2>
         <div class="flex flex-col gap-2.5">
           <% @playlists.each do |playlist| %>
             <%= render "app/home/playlist_row", playlist: playlist %>
@@ -68,7 +68,7 @@
     <% if @enrollments.any? %>
       <div data-testid="keep-it-going" class="flex flex-col gap-2.5">
         <div class="flex items-baseline justify-between">
-          <h2 class="text-[15px] font-bold">Keep it going</h2>
+          <h2 class="text-[15px] font-bold"><%= t(".keep_it_going") %></h2>
           <%= link_to "See all", app_started_courses_path,
                       class: "text-app-accent text-[13px] font-semibold" %>
         </div>
@@ -86,7 +86,7 @@
 
     <% if @playlists.any? %>
       <div>
-        <h2 class="text-[15px] font-bold mb-2.5">Your playlists</h2>
+        <h2 class="text-[15px] font-bold mb-2.5"><%= t(".your_playlists") %></h2>
         <div class="flex flex-col gap-2.5">
           <% @playlists.each do |playlist| %>
             <%= render "app/home/playlist_row", playlist: playlist %>
@@ -98,7 +98,7 @@
     <%# More from the library %>
     <% if @library_picks.any? %>
       <div class="flex items-baseline justify-between">
-        <h2 class="text-[15px] font-bold">More from the library</h2>
+        <h2 class="text-[15px] font-bold"><%= t(".more_from_library") %></h2>
         <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
       </div>
 

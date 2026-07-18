@@ -33,7 +33,7 @@
   <div class="w-full max-w-[640px] p-4 sm:p-6 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md">
     <div class="mb-6">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-4">
-        <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50"><%= @activity.text_header || "Click on the microphone and say the phrases in #{params[:l1]}" %></h2>
+        <h2 class="text-xl sm:text-2xl text-gray-900 dark:text-gray-50"><%= @activity.text_header || t(".instruction", language: params[:l1]) %></h2>
         <%= link_to_next_activity("Can't Speak Now", @next_activity_path, class: "px-4 py-2 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-900 dark:text-gray-50 text-sm font-medium rounded-lg transition-colors duration-200 text-center whitespace-nowrap") %>
       </div>
 
@@ -129,8 +129,8 @@
         data-progress-tracker-target="completion"
         class="hidden p-4 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-center flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
-          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50">Good Work!</h3>
-          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400">You've completed this pronunciation exercise.</p>
+          <h3 class="text-center sm:text-left text-xl font-bold text-gray-900 dark:text-gray-50"><%= t(".good_work") %></h3>
+          <p class="text-center sm:text-left text-gray-500 dark:text-gray-400"><%= t(".completed") %></p>
         </div>
         <%= link_to_next_activity("Next", @next_activity_path, class: "inline-flex items-center justify-center gap-2 h-14 px-6 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors w-full sm:w-auto") %>
       </div>
@@ -139,22 +139,22 @@
     <!-- Assessment Result -->
     <div data-speak-activity-target="assessmentResult" id="assessment-result" class="hidden mt-4">
       <div id="result-details" class="p-4 bg-gray-100 dark:bg-gray-800 rounded-lg mb-4">
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2">Your pronunciation:</h3>
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-50 mb-2"><%= t(".your_pronunciation") %></h3>
         <div
           data-speak-activity-target="pronunciationText"
           id="pronunciation-text" class="text-gray-900 dark:text-gray-50 text-center py-2"></div>
         <div class="flex justify-between mt-4">
           <div class="text-center">
             <div data-speak-activity-target="accuracyScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="accuracy-score">0</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Accuracy</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400"><%= t(".accuracy") %></div>
           </div>
           <div class="text-center">
             <div data-speak-activity-target="fluencyScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="fluency-score">0</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Fluency</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400"><%= t(".fluency") %></div>
           </div>
           <div class="text-center">
             <div data-speak-activity-target="completenessScore" class="text-lg font-bold text-gray-900 dark:text-gray-50" id="completeness-score">0</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400">Completeness</div>
+            <div class="text-sm text-gray-500 dark:text-gray-400"><%= t(".completeness") %></div>
           </div>
         </div>
       </div>

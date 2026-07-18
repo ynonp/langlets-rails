@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-theme="<%= current_theme %>">
+<html lang="<%= current_translation_language&.iso_name || I18n.locale %>" dir="<%= current_translation_language&.rtl? ? 'rtl' : 'ltr' %>" data-theme="<%= current_theme %>">
   <head>
     <%= render "layouts/head" %>
   </head>

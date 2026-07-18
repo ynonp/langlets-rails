@@ -1,4 +1,4 @@
-<% content_for :title, "Add a video · langlets." %>
+<% content_for :title, t(".page_title") %>
 <% broke = current_user.credit_balance.zero? %>
 
 <%# Rendered as a full page, not a Turbo Frame overlay. iOS presents it as a real
@@ -16,7 +16,7 @@
 
     <div class="flex items-center justify-between">
       <div class="flex items-center gap-2.5">
-        <h1 class="text-xl font-extrabold tracking-[-0.4px]">Add a video</h1>
+        <h1 class="text-xl font-extrabold tracking-[-0.4px]"><%= t(".title") %></h1>
         <span class="flex items-center gap-1.5 bg-app-pill rounded-full py-1 px-2.5">
           <%= app_icon "bolt", class: "w-[11px] h-[11px] text-app-accent" %>
           <span class="text-app-credits text-xs font-bold"><%= app_credits_label(current_user.credit_balance) %></span>
@@ -54,7 +54,7 @@
 
         <div class="app-inset-hairline bg-app-inset rounded-app-field overflow-hidden">
           <label class="flex items-center justify-between py-3.5 px-4 border-b-[0.5px] border-white/8">
-            <span class="text-app-text-dim text-sm">Video language</span>
+            <span class="text-app-text-dim text-sm"><%= t(".video_language") %></span>
             <%= f.select :clip_language,
                          options_from_collection_for_select(@languages, :english_name, :english_name, @clip_language&.english_name),
                          {},
@@ -62,7 +62,7 @@
           </label>
 
           <label class="flex items-center justify-between py-3.5 px-4">
-            <span class="text-app-text-dim text-sm">Translate to</span>
+            <span class="text-app-text-dim text-sm"><%= t(".translate_to") %></span>
             <%= f.select :translation_language,
                          options_from_collection_for_select(@languages, :english_name, :english_name, @translation_language&.english_name),
                          {},
@@ -71,7 +71,7 @@
         </div>
 
         <div class="flex flex-col gap-2">
-          <%= f.submit "Import · 1 credit",
+          <%= f.submit t(".import_credit"),
                        class: "w-full bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
           <p class="text-center text-app-text-3 text-xs">
             Usually ready in ~5 min — we'll send you a push.
