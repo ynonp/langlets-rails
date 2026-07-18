@@ -153,6 +153,9 @@ long gone.
 - **Relationships**: 
   - Belongs to Course, Medium, and User
   - One-to-many with Activities
+  - Reaching the lesson finish page is the authoritative completion event for
+    authenticated learners. It idempotently creates the `LessonUser` record, so
+    a lesson is complete even when an activity (such as speaking) was skipped.
 
 #### 8. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps

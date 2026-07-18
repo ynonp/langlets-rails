@@ -63,6 +63,7 @@ class LessonsController < ApplicationController
     
     # Get user stats from ActivityLog (only for authenticated users)
     if current_user
+      LessonUser.find_or_create_by!(lesson: @lesson, user: current_user)
       add_lesson_xp
     else
       @daily_xp = 0
