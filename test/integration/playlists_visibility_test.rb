@@ -14,6 +14,17 @@ class PlaylistsVisibilityTest < ActionDispatch::IntegrationTest
     )
     @system_playlist = Playlist.create!(name: "System Playlist", published: true, slug: "system-#{SecureRandom.hex(4)}")
     @own_playlist = Playlist.create!(name: "Personal Playlist", published: true, slug: "personal-#{SecureRandom.hex(4)}", user: @user)
+    # A playlist with no visible courses is hidden from the index, so each
+    # playlist needs a published course to be listed at all.
+    [ @system_playlist, @own_playlist ].each do |playlist|
+      playlist.courses << Course.create!(
+        user: @user,
+        name: "Course for #{playlist.name}",
+        slug: "course-#{SecureRandom.hex(4)}",
+        main_media_url: "https://www.youtube.com/watch?v=abc123",
+        status: :published
+      )
+    end
   end
 
   def sign_in(user)

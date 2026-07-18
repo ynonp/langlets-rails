@@ -91,7 +91,9 @@ class PlaylistsController < ApplicationController
   end
 
   def get_filtered_courses
-    courses = @playlist.courses.published.includes(:language, :lessons, :tags)
+    courses = @playlist.courses.published
+                       .ready_in(Current.translation_language)
+                       .includes(:language, :lessons, :tags)
 
     if current_language_code.present?
       language = Language.find_by(iso_name: current_language_code)

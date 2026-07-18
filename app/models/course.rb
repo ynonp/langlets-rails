@@ -41,16 +41,20 @@ class Course < ApplicationRecord
   scope :published_courses, -> { where(status: :published) }
   scope :processing_courses, -> { where(status: :processing) }
   scope :with_full_player, -> { where(show_full_course_player: true) }
+  # Courses with a ready translation in the given language; courses that predate
+  # translations (no course_translations rows at all) show everywhere. EXISTS
+  # rather than a left join so the scope composes with other joins and grouped
+  # COUNTs without duplicating rows.
   scope :ready_in, ->(language) {
     language ||= Language.find_by(english_name: "English")
-    left_joins(:course_translations)
-      .where(
-        "(course_translations.language_id = ? AND course_translations.status = ?) OR " \
-        "NOT EXISTS (SELECT 1 FROM course_translations all_translations WHERE all_translations.course_id = courses.id)",
-        language&.id,
-        CourseTranslation.statuses[:ready]
-      )
-      .distinct
+    where(
+      "EXISTS (SELECT 1 FROM course_translations ready_translations " \
+      "WHERE ready_translations.course_id = courses.id " \
+      "AND ready_translations.language_id = ? AND ready_translations.status = ?) OR " \
+      "NOT EXISTS (SELECT 1 FROM course_translations all_translations WHERE all_translations.course_id = courses.id)",
+      language&.id,
+      CourseTranslation.statuses[:ready]
+    )
   }
 
   def translation_language = localized_translation&.language || Current.translation_language

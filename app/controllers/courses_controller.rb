@@ -10,19 +10,36 @@ class CoursesController < ApplicationController
     return redirect_to app_home_path if native_app? && user_signed_in?
 
     # Everyone sees the published system playlists; signed-in users also see
-    # their own playlists.
-    @playlists = Playlist.visible_to(current_user).includes(courses: :language).order(:created_at)
-    @all_courses = Course.published.includes(:language).not_in_playlists.order(created_at: :desc)
+    # their own playlists. Only courses with a ready translation in the
+    # subdomain's language are shown, and a playlist with none of those is
+    # hidden entirely.
+    visible_courses = Course.published.ready_in(Current.translation_language)
+    @all_courses = Course.published.ready_in(Current.translation_language)
+                         .includes(:language).not_in_playlists.order(created_at: :desc)
 
     if current_language_code.present?
       language = Language.find_by(iso_name: current_language_code)
       if language
-        @playlists = @playlists.joins(courses: :language).where(courses: { language_id: language.id }).distinct
+        visible_courses = visible_courses.where(language: language)
         @all_courses = @all_courses.where(language: language)
       end
     end
 
-    @playlists = @playlists.to_a
+    # One grouped query decides which playlists survive and what clip count
+    # their cards show, instead of a COUNT per playlist in the view.
+    clip_counts = Playlist.visible_to(current_user)
+                          .joins(:courses)
+                          .merge(visible_courses)
+                          .group("playlists.id")
+                          .count
+    @playlists = Playlist.where(id: clip_counts.keys)
+                         .includes(courses: :language)
+                         .order(:created_at)
+                         .to_a
+    @playlists.each do |playlist|
+      count = clip_counts[playlist.id]
+      playlist.define_singleton_method(:visible_clip_count) { count }
+    end
 
     # Convert to array and precompute lesson counts to avoid N+1 queries
     @all_courses = @all_courses.left_joins(:lessons)
@@ -58,7 +75,8 @@ class CoursesController < ApplicationController
       # Build continue learning from ALL courses with progress (including learning path courses)
       continue_learning_ids = continue_learning_order.keys
       if continue_learning_ids.any?
-        continue_courses = Course.published.includes(:language).where(id: continue_learning_ids)
+        continue_courses = Course.published.ready_in(Current.translation_language)
+                                 .includes(:language).where(id: continue_learning_ids)
         if current_language_code.present? && language
           continue_courses = continue_courses.where(language: language)
         end
