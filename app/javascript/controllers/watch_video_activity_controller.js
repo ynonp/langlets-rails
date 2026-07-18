@@ -8,7 +8,6 @@ const KARAOKE_HOLD_LIMIT = 1.5;
 
 export default class extends Controller {
   static targets = ['subtitles', 'container', 'phrasesList', 'translation', 'showTranslation', 'showKaraoke', 'startPracticeButton'];
-  static classes = ['currentTextLine'];
   static values = { wordTiming: Boolean, prefsUrl: String };
 
   // PATCH the current toggle states to the server so they persist across visits.
@@ -47,7 +46,7 @@ export default class extends Controller {
   toggleKaraoke() {
     // Clear any active highlight when karaoke is disabled.
     if (!this.showKaraokeTarget.checked && this.karaokeTokens) {
-      this.karaokeTokens.forEach(({ span }) => span.classList.remove('s-token-active'));
+      this.karaokeTokens.forEach(({ span }) => span.removeAttribute('data-active'));
     }
     this.persistPrefs();
   }
@@ -91,8 +90,9 @@ export default class extends Controller {
       }
     }
 
+    // Views style the active word via Tailwind data-active: variants.
     for (const token of tokens) {
-      token.span.classList.toggle('s-token-active', token === active);
+      token.span.toggleAttribute('data-active', token === active);
     }
   }
 
@@ -133,7 +133,8 @@ export default class extends Controller {
     const index = subtitlesLines.map(item => Number(item.dataset.timestamp)).findLastIndex(t => t < currentTime);
 
     if (index !== -1) {
-      subtitlesLines[index].classList.add(this.currentTextLineClass);
+      // Views style the active line via Tailwind data-active: variants.
+      subtitlesLines[index].setAttribute('data-active', '');
       
       // Emit event when a phrase becomes active
       const event = new CustomEvent('video-player:phrase-activated', {
@@ -163,7 +164,7 @@ export default class extends Controller {
 
     for (let i=0; i < subtitlesLines.length; i++) {
       if (i !== index) {
-        subtitlesLines[i].classList.remove(this.currentTextLineClass);
+        subtitlesLines[i].removeAttribute('data-active');
       }
     }
   }

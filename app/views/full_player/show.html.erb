@@ -40,7 +40,6 @@
     data-show-player="true"
     data-segment-start="<%= timestamp_to_seconds(@start_timestamp) %>"
     data-segment-end="<%= timestamp_to_seconds(@end_timestamp) %>"
-    data-watch-video-activity-current-text-line-class="line-active"
     data-watch-video-activity-word-timing-value="<%= @word_timing ? true : false %>"
     data-watch-video-activity-prefs-url-value="<%= watch_video_preferences_path %>"
 >
@@ -131,10 +130,10 @@
         <div
           data-watch-video-activity-target="subtitles"
           data-timestamp="<%= timestamp_to_seconds(phrase.timestamp) %>"
-          class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800"
+          class="phrase block cursor-pointer rounded-2xl px-3.5 py-3 hover:bg-gray-100 dark:hover:bg-gray-800 data-active:bg-emerald-100! dark:data-active:bg-emerald-900/40!"
         >
           <div class="text-xl font-extrabold leading-relaxed" dir="<%= l1_rtl ? 'rtl' : 'ltr' %>">
-            <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40" }) %>
+            <%= wrap_tokens_in_spans(phrase, { class: "token cursor-pointer rounded px-0.5 border-b-[2.5px] border-dotted border-gray-400 dark:border-gray-600 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 data-active:bg-emerald-500! data-active:text-white data-active:rounded-md" }) %>
           </div>
           <div class="mt-1 text-base italic text-gray-500 dark:text-gray-400 <%= 'hidden' unless wv_prefs["translation"] %>"
                data-watch-video-activity-target="translation"
@@ -160,17 +159,3 @@
     </div>
   <% end %>
 </div>
-
-<style>
-[data-controller="watch-video-activity"] .line-active {
-  background: var(--color-emerald-100) !important;
-}
-[data-theme="dark"] [data-controller="watch-video-activity"] .line-active {
-  background: color-mix(in oklab, var(--color-emerald-900) 40%, transparent) !important;
-}
-[data-controller="watch-video-activity"] .s-token-active {
-  background: var(--color-emerald-500);
-  color: #fff;
-  border-radius: 6px;
-}
-</style>
