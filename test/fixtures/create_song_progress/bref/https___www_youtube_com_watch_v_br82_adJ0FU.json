@@ -9,420 +9,637 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, j'avais rien à faire.",
-        "text_l2": "Anyway, I had nothing to do.",
         "timestamp": "00:02.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "Donc j'ai fait comme tous ceux",
-        "text_l2": "So I did like everyone else",
         "timestamp": "00:04.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "qu'ont rien à faire,",
-        "text_l2": "who has nothing to do,",
         "timestamp": "00:05.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "je suis allé sur internet.",
-        "text_l2": "I went on the internet.",
         "timestamp": "00:05.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "J'ai checké mes mails, rien.",
-        "text_l2": "I checked my emails, nothing.",
         "timestamp": "00:07.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "J'ai checké Facebook, rien.",
-        "text_l2": "I checked Facebook, nothing.",
         "timestamp": "00:08.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "Je me suis branlé.",
-        "text_l2": "I jerked off.",
         "timestamp": "00:10.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "J'ai re-checké mes mails, rien.",
-        "text_l2": "I re-checked my emails, nothing.",
         "timestamp": "00:11.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "J'ai bloqué la touche \"i\" de mon clavier.",
-        "text_l2": "I stuck the \"i\" key on my keyboard.",
         "timestamp": "00:12.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "Je l'ai tapé, ça s'est arrêté.",
-        "text_l2": "I hit it, it stopped.",
         "timestamp": "00:14.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "Je me suis re-branlé.",
-        "text_l2": "I jerked off again.",
         "timestamp": "00:15.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "J'ai remarqué qu'il y avait",
-        "text_l2": "I noticed there were",
         "timestamp": "00:16.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "des petits dessins dessinés",
-        "text_l2": "little drawings drawn",
         "timestamp": "00:17.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "sur le Sopalin.",
-        "text_l2": "on the paper towels.",
         "timestamp": "00:18.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "Je me suis demandé si quelqu'un",
-        "text_l2": "I wondered if someone",
         "timestamp": "00:18.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "était payé pour les dessiner.",
-        "text_l2": "got paid to draw them.",
         "timestamp": "00:19.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "Ça m'a déconcentré.",
-        "text_l2": "It distracted me.",
         "timestamp": "00:20.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "J'ai re-checké Facebook, rien.",
-        "text_l2": "I re-checked Facebook, nothing.",
         "timestamp": "00:22.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "Non, attends.",
-        "text_l2": "No, wait.",
         "timestamp": "00:23.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "C'était cette fille que j'avais",
-        "text_l2": "It was this girl I had",
         "timestamp": "00:24.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "croisée en soirée.",
-        "text_l2": "met at a party.",
         "timestamp": "00:25.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "Elle venait d'accepter",
-        "text_l2": "She had just accepted",
         "timestamp": "00:25.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "ma demande d'amis.",
-        "text_l2": "my friend request.",
         "timestamp": "00:26.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "Je suis allé sur son profil.",
-        "text_l2": "I went to her profile.",
         "timestamp": "00:27.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "J'ai cherché ses photos.",
-        "text_l2": "I looked for her photos.",
         "timestamp": "00:28.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "J'ai cherché un album \"Été 2011\", rien.",
-        "text_l2": "I looked for an album \"Summer 2011\", nothing.",
         "timestamp": "00:29.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "Été 2010, rien.",
-        "text_l2": "Summer 2010, nothing.",
         "timestamp": "00:30.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "Il y avait seulement",
-        "text_l2": "There were only",
         "timestamp": "00:31.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "des photos de ski, pas terrible.",
-        "text_l2": "ski photos, not great.",
         "timestamp": "00:32.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "J'ai vu qu'elle aimait les Simpson",
-        "text_l2": "I saw she liked The Simpsons",
         "timestamp": "00:33.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "et les Daft Punk.",
-        "text_l2": "and Daft Punk.",
         "timestamp": "00:34.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "J'étais content",
-        "text_l2": "I was happy",
         "timestamp": "00:35.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "parce que moi aussi j'aime les Simpson",
-        "text_l2": "because I like The Simpsons too",
         "timestamp": "00:35.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "et les Daft Punk.",
-        "text_l2": "and Daft Punk.",
         "timestamp": "00:36.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "Après je me suis dit que",
-        "text_l2": "Then I thought that",
         "timestamp": "00:37.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "tout le monde aime les Simpson",
-        "text_l2": "everyone likes The Simpsons",
         "timestamp": "00:38.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "et les Daft Punk.",
-        "text_l2": "and Daft Punk.",
         "timestamp": "00:39.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "J'étais moins content.",
-        "text_l2": "I was less happy.",
         "timestamp": "00:40.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "Kheiron m'a écrit :",
-        "text_l2": "Kheiron wrote to me:",
         "timestamp": "00:41.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "\"Hey ! t'es ami avec cette fille ?\"",
-        "text_l2": "\"Hey! Are you friends with this girl?\"",
         "timestamp": "00:42.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "Je lui ai pas répondu.",
-        "text_l2": "I didn't answer him.",
         "timestamp": "00:43.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "Il m'a envoyé un e-mail",
-        "text_l2": "He sent me an email",
         "timestamp": "00:44.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "qui me demandait : \"Tu vas la baiser ?\"",
-        "text_l2": "asking me: \"Are you gonna fuck her?\"",
         "timestamp": "00:45.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "Un tweet : \"Tu vas la baiser ?\"",
-        "text_l2": "A tweet: \"Are you gonna fuck her?\"",
         "timestamp": "00:45.50"
       },
       {
         "id": "phrase_45",
         "text_l1": "J'ai reçu un texto :",
-        "text_l2": "I got a text:",
         "timestamp": "00:46.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "\"TU VAS LA BAISER OU QUOI ?!\"",
-        "text_l2": "\"ARE YOU GONNA FUCK HER OR WHAT?!\"",
         "timestamp": "00:47.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "Je lui ai gentiment demandé",
-        "text_l2": "I politely asked him",
         "timestamp": "00:52.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "de me laisser tranquille.",
-        "text_l2": "to leave me alone.",
         "timestamp": "00:53.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "À 15h32, il lui a laissé",
-        "text_l2": "At 3:32 PM, he left her",
         "timestamp": "00:54.50"
       },
       {
         "id": "phrase_50",
         "text_l1": "un message bien faux-cul.",
-        "text_l2": "a really fake message.",
         "timestamp": "00:55.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "À 15h33, il m'a envoyé un message :",
-        "text_l2": "At 3:33 PM, he sent me a message:",
         "timestamp": "00:56.50"
       },
       {
         "id": "phrase_52",
         "text_l1": "\"C'est le jeu, mec !\"",
-        "text_l2": "\"It's the game, man!\"",
         "timestamp": "00:58.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "Je suis allé voir les photos",
-        "text_l2": "I went to see the photos",
         "timestamp": "00:59.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "où elle était taguée.",
-        "text_l2": "where she was tagged.",
         "timestamp": "01:00.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "Elle était tout le temps jolie.",
-        "text_l2": "She was pretty all the time.",
         "timestamp": "01:00.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "En regardant de plus près,",
-        "text_l2": "Looking closer,",
         "timestamp": "01:01.50"
       },
       {
         "id": "phrase_57",
         "text_l1": "j'ai remarqué qu'un mec revenait",
-        "text_l2": "I noticed a guy appeared",
         "timestamp": "01:02.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "beaucoup de fois sur les photos.",
-        "text_l2": "a lot of times in the photos.",
         "timestamp": "01:03.50"
       },
       {
         "id": "phrase_59",
         "text_l1": "Mon coloc est arrivé, il m'a demandé :",
-        "text_l2": "My roommate arrived, he asked me:",
         "timestamp": "01:05.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "Il est où le Sopalin ?",
-        "text_l2": "Where's the paper towels?",
         "timestamp": "01:06.50"
       },
       {
         "id": "phrase_61",
         "text_l1": "Il a vu le Sopalin.",
-        "text_l2": "He saw the paper towels.",
         "timestamp": "01:10.50"
       },
       {
         "id": "phrase_62",
         "text_l1": "J'ai compris qu'il avait compris.",
-        "text_l2": "I understood that he understood.",
         "timestamp": "01:11.50"
       },
       {
         "id": "phrase_63",
         "text_l1": "Il a compris que j'avais compris",
-        "text_l2": "He understood that I understood",
         "timestamp": "01:12.50"
       },
       {
         "id": "phrase_64",
         "text_l1": "qu'il avait compris.",
-        "text_l2": "that he understood.",
         "timestamp": "01:13.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "Je lui ai dit :",
-        "text_l2": "I told him:",
         "timestamp": "01:14.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "Il est là.",
-        "text_l2": "It's there.",
         "timestamp": "01:14.50"
       },
       {
         "id": "phrase_67",
         "text_l1": "Alors il a répondu :",
-        "text_l2": "So he answered:",
         "timestamp": "01:15.50"
       },
       {
         "id": "phrase_68",
         "text_l1": "Je vais en prendre un autre rouleau.",
-        "text_l2": "I'll go get another roll.",
         "timestamp": "01:17.50"
       },
       {
         "id": "phrase_69",
         "text_l1": "Bref, j'ai traîné sur internet.",
-        "text_l2": "Anyway, I hung out on the internet.",
         "timestamp": "01:20.50"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], j'avais rien à faire. => [Anyway], I had nothing to do.\nBref, [j']avais rien à faire. => Anyway, [I] had nothing to do.\nBref, j'[avais] rien à faire. => Anyway, I [had] nothing to do.\nBref, j'avais [rien] à faire. => Anyway, I had [nothing] to do.\nBref, j'avais rien [à] faire. => Anyway, I had nothing [to] do.\nBref, j'avais rien à [faire]. => Anyway, I had nothing to [do].\n\n[Donc] j'ai fait comme tous ceux => [So] I did like everyone else\n[j']ai fait comme tous ceux => [I] did like everyone else\nj'[ai fait] comme tous ceux => I [did] like everyone else # \"ai fait\" is the past tense of the verb \"faire\" (to do)\nDonc j'ai fait [comme] tous ceux => So I did [like] everyone else\nDonc j'ai fait comme [tous ceux] => So I did like [everyone else] # \"tous ceux\" (literally \"all those\") translates to \"everyone else\" in this context\n\n[qu']ont rien à faire, => [who] has nothing to do,\nqu'[ont] rien à faire, => who [has] nothing to do,\nqu'ont [rien] à faire, => who has [nothing] to do,\nqu'ont rien [à] faire, => who has nothing [to] do,\nqu'ont rien à [faire], => who has nothing to [do], # \"qu'\" is the elided form of \"qui\" (who) acting as subject; \"ont\" is mapped to \"has\" despite the plural/singular difference.\n\n[je] suis allé sur internet. => [I] went on the internet.\nje [suis allé] sur internet. => I [went] on the internet.\nje suis allé [sur] internet. => I went [on] the internet.\nje suis allé sur [internet] => I went on [the internet] # English requires \"the\" while French often omits the article for internet\n\nJ'[ai checké] mes mails, rien. => I [checked] my emails, nothing.\nJ'ai checké [mes] mails, rien. => I checked [my] emails, nothing.\nJ'ai checké mes [mails], rien. => I checked my [emails], nothing.\nJ'ai checké mes mails, [rien]. => I checked my emails, [nothing].\n\n[J'ai] checké Facebook, rien. => [I] checked Facebook, nothing.\nJ'ai [checké] Facebook, rien. => I [checked] Facebook, nothing.\nJ'ai checké [Facebook], rien. => I checked [Facebook], nothing.\nJ'ai checké Facebook, [rien]. => I checked Facebook, [nothing].\n\n[Je] me suis branlé. => [I] jerked off.\nJe [me suis branlé]. => I [jerked off]. # \"me suis\" marks the reflexive past tense, which maps to the past tense of the phrasal verb \"jerked off\"\n\n[J']ai re-checké mes mails, rien. => [I] re-checked my emails, nothing.\nJ'ai [re-checké] mes mails, rien. => I [re-checked] my emails, nothing. # \"ai\" is the auxiliary verb for the passé composé, which translates to the simple past \"re-checked\" here\nJ'ai re-checké [mes] mails, rien. => I re-checked [my] emails, nothing.\nJ'ai re-checké mes [mails], rien. => I re-checked my [emails], nothing.\nJ'ai re-checké mes mails, [rien]. => I re-checked my emails, [nothing].\n\nJ'ai bloqué [la] touche \"i\" de mon clavier. => I stuck [the] \"i\" key on my keyboard.\nJ'ai bloqué la [touche] \"i\" de mon clavier. => I stuck the \"i\" [key] on my keyboard.\nJ'ai bloqué la touche \"[i]\" de mon clavier. => I stuck the \"[i]\" key on my keyboard.\nJ'ai bloqué la touche \"i\" [de] mon clavier. => I stuck the \"i\" key [on] my keyboard.\nJ'ai bloqué la touche \"i\" de [mon] clavier. => I stuck the \"i\" key on [my] keyboard.\nJ'ai bloqué la touche \"i\" de mon [clavier]. => I stuck the \"i\" key on my [keyboard].\n\n[Je] l'ai tapé, ça s'est arrêté. => [I] hit it, it stopped.\nJe [l']ai tapé, ça s'est arrêté. => I hit [it], it stopped.\nJe l'[ai tapé], ça s'est arrêté. => I [hit] it, it stopped.\nJe l'ai tapé, [ça] s'est arrêté. => I hit it, [it] stopped.\nJe l'ai tapé, ça [s'est arrêté]. => I hit it, it [stopped]. # \"s'est arrêté\" is the past tense of the reflexive verb \"s'arrêter\" (to stop)\n\n[Je] me suis re-branlé. => [I] jerked off again.\nJe [me suis re-branlé]. => I [jerked off again]. # \"me suis\" is the auxiliary/reflexive marker for the past tense, which maps to the past tense \"jerked\". \"re-\" matches \"again\" and \"branlé\" matches \"jerked off\".\n\n[J']ai remarqué qu'il y avait => [I] noticed there were\nJ'[ai remarqué] qu'il y avait => I [noticed] there were\nJ'ai remarqué qu'[il y avait] => I noticed [there were] # \"il y avait\" is the past tense of the fixed expression \"il y a\" (there is/are)\n\ndes [petits] dessins dessinés => [little] drawings drawn\ndes petits [dessins] dessinés => little [drawings] drawn\ndes petits dessins [dessinés] => little drawings [drawn]\n\n[sur] le Sopalin. => [on] the paper towels.\nsur [le] Sopalin. => on [the] paper towels.\nsur le [Sopalin]. => on the [paper towels]. # Sopalin is a common French brand name used generically for paper towels\n\n[Je] me suis demandé si quelqu'un => [I] wondered if someone\nJe [me suis demandé] si quelqu'un => I [wondered] if someone\nJe me suis demandé [si] quelqu'un => I wondered [if] someone\nJe me suis demandé si [quelqu'un] => I wondered if [someone]\n\n[était] payé pour les dessiner. => [got] paid to draw them.\nétait [payé] pour les dessiner. => got [paid] to draw them.\nétait payé [pour] les dessiner. => got paid [to] draw them.\nétait payé pour [les] dessiner. => got paid to draw [them]\nétait payé pour les [dessiner]. => got paid to [draw] them.\n\n[Ça] m'a déconcentré. => [It] distracted me.\nÇa [m']a déconcentré. => It distracted [me].\nÇa m'[a déconcentré] => It [distracted] me.\n\nJ'ai re-checké [Facebook], rien. => I re-checked [Facebook], nothing.\nJ'ai re-checké Facebook, [rien]. => I re-checked Facebook, [nothing].\n\n[Non], attends. => [No], wait.\nNon, [attends]. => No, [wait].\n\n[C'était] cette fille que j'avais => [It was] this girl I had\nC'était [cette] fille que j'avais => It was [this] girl I had\nC'était cette [fille] que j'avais => It was this [girl] I had\nC'était cette fille [que] j'avais => that\nC'était cette fille que [j']avais => It was this girl [I] had\nC'était cette fille que j'[avais] => It was this girl I [had]\n\n[croisée] en soirée. => [met] at a party.\ncroisée [en] soirée. => met [at a] party.\ncroisée en [soirée]. => met at a [party].\n\n[Elle] venait d'accepter => [She] had just accepted\nElle [venait d']accepter => She [had just] accepted\nElle venait d'[accepter] => She had just [accepted]\n\n[ma] demande d'amis. => [my] friend request.\nma [demande] d'amis. => my friend [request].\nma demande [d'amis]. => my [friend] request. # while \"d'amis\" is literally \"of friends\", in this context it maps to \"friend\"\n\n[Je] suis allé sur son profil. => [I] went to her profile.\nJe [suis allé] sur son profil. => I [went] to her profile.\nJe suis allé [sur] son profil. => I went [to] her profile.\nJe suis allé sur [son] profil. => I went to [her] profile.\nJe suis allé sur son [profil]. => I went to her [profile].\n\nJ'ai cherché [ses] photos. => I looked for [her] photos.\nJ'ai cherché ses [photos]. => I looked for her [photos]\n\n[J']ai cherché un album \"Été 2011\", rien. => [I] looked for an album \"Summer 2011\", nothing.\nJ'[ai cherché] un album \"Été 2011\", rien. => I [looked for] an album \"Summer 2011\", nothing. # \"chercher\" includes the preposition \"for\"\nJ'ai cherché [un] album \"Été 2011\", rien. => I looked for [an] album \"Summer 2011\", nothing.\nJ'ai cherché un [album] \"Été 2011\", rien. => I looked for an [album] \"Summer 2011\", nothing.\nJ'ai cherché un album \"[Été] 2011\", rien. => I looked for an album \"[Summer] 2011\", nothing.\nJ'ai cherché un album \"Été [2011]\", rien. => I looked for an album \"Summer [2011]\", nothing.\nJ'ai cherché un album \"Été 2011\", [rien]. => I looked for an album \"Summer 2011\", [nothing].\n\n[Été] 2010, rien. => [Summer] 2010, nothing.\nÉté [2010], rien. => Summer [2010], nothing.\nÉté 2010, [rien]. => Summer 2010, [nothing].\n\n[Il y avait] seulement => [There were] only\nIl y avait [seulement] => There were [only]\n\ndes [photos] de ski, pas terrible. => ski [photos], not great.\ndes photos [de ski], pas terrible. => [ski] photos, not great. # \"de ski\" functions as the modifier for photos, similar to \"ski\" in English\ndes photos de ski, [pas] terrible. => ski photos, [not] great.\ndes photos de ski, pas [terrible]. => ski photos, not [great] # in this context \"pas terrible\" means \"not great\" OR \"not that good\"\n\nJ'[ai vu] qu'elle aimait les Simpson => I [saw] she liked The Simpsons\nJ'ai vu qu'[elle] aimait les Simpson => I saw [she] liked The Simpsons\nJ'ai vu qu'elle [aimait] les Simpson => I saw she [liked] The Simpsons\nJ'ai vu qu'elle aimait [les Simpson] => I saw she liked [The Simpsons] # \"Simpson\" is singular in French but \"The Simpsons\" is plural in English\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk]. # Names are kept together as a single entity\n\n[J']étais content => [I] was happy\nJ'[étais] content => I [was] happy\nJ'étais [content] => I was [happy]\n\n[parce que] moi aussi j'aime les Simpson => [because] I like The Simpsons too\nparce que [moi] aussi j'aime les Simpson => I, me\nparce que moi [aussi] j'aime les Simpson => because I like The Simpsons [too]\nparce que moi aussi [j'aime] les Simpson => because [I like] The Simpsons too\nparce que moi aussi j'aime [les] Simpson => because I like [The] Simpsons too\nparce que moi aussi j'aime les [Simpson] => because I like The [Simpsons] too # In French, the family name used as a plural does not take an \"s\" like in English\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk].\n\n[Après] je me suis dit que => [Then] I thought that\nAprès [je] me suis dit que => Then [I] thought that\nAprès je [me suis dit] que => Then I [thought] that\nAprès je me suis dit [que] => Then I thought [that]\n\n[tout le monde] aime les Simpson => [everyone] likes The Simpsons # fixed expression\ntout le monde [aime] les Simpson => everyone [likes] The Simpsons\ntout le monde aime [les] Simpson => everyone likes [The] Simpsons\ntout le monde aime les [Simpson] => everyone likes The [Simpsons]\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk].\n\n[J']étais moins content. => [I] was less happy.\nJ'[étais] moins content. => I [was] less happy.\nJ'étais [moins] content. => I was [less] happy.\nJ'étais moins [content]. => I was less [happy].\n\n[Kheiron] m'a écrit : => [Kheiron] wrote to me:\nKheiron [m']a écrit : => Kheiron wrote [to me]:\nKheiron m'[a écrit] : => Kheiron [wrote] to me:\n\n[Hey] ! t'es ami avec cette fille ? => [Hey]! Are you friends with this girl?\nHey ! [t']es ami avec cette fille ? => Hey! Are [you] friends with this girl?\nHey ! t'[es] ami avec cette fille ? => Hey! [Are] you friends with this girl?\nHey ! t'es [ami] avec cette fille ? => Hey! Are you [friends] with this girl?\nHey ! t'es ami [avec] cette fille ? => Hey! Are you [with] this girl?\nHey ! t'es ami avec [cette] fille ? => Hey! Are you friends with [this] girl?\nHey ! t'es ami avec cette [fille] ? => Hey! Are you friends with this [girl]?\n\n[Je] lui ai pas répondu. => [I] didn't answer him.\nJe [lui] ai pas répondu. => I didn't answer [him].\nJe lui [ai pas] répondu. => I [didn't] answer him. # \"ai pas\" functions as the negation marker in this past tense structure\nJe lui ai pas [répondu]. => I didn't [answer] him.\n\n[Il] m'a envoyé un e-mail => [He] sent me an email\nIl [m']a envoyé un e-mail => He sent [me] an email\nIl m'[a envoyé] un e-mail => He [sent] me an email\nIl m'a envoyé [un] e-mail => He sent me [an] email\nIl m'a envoyé un [e-mail] => He sent me an [email]\n\nqui [me] demandait : \"Tu vas la baiser ?\" => asking [me]: \"Are you gonna fuck her?\"\nqui me [demandait] : \"Tu vas la baiser ?\" => [asking] me: \"Are you gonna fuck her?\"\nqui me demandait : \"[Tu] vas la baiser ?\" => asking me: \"Are [you] gonna fuck her?\"\nqui me demandait : \"Tu [vas] la baiser ?\" => asking me: \"Are you [gonna] fuck her?\" # \"vas\" corresponds to the \"am/is/are going to\" construction\nqui me demandait : \"Tu vas [la] baiser ?\" => asking me: \"Are you gonna fuck [her]?\"\nqui me demandait : \"Tu vas la [baiser] ?\" => asking me: \"Are you gonna [fuck] her?\"\n\n[Un] tweet : \"Tu vas la baiser ?\" => [A] tweet: \"Are you gonna fuck her?\"\nUn [tweet] : \"Tu vas la baiser ?\" => A [tweet]: \"Are you gonna fuck her?\"\nUn tweet : \"[Tu] vas la baiser ?\" => A tweet: \"Are [you] gonna fuck her?\"\nUn tweet : \"Tu [vas] la baiser ?\" => A tweet: \"[Are] you [gonna] fuck her?\" # \"vas\" is the auxiliary for the near future, translated here as \"are gonna\"\nUn tweet : \"Tu vas [la] baiser ?\" => A tweet: \"Are you gonna fuck [her]?\"\nUn tweet : \"Tu vas la [baiser] ?\" => A tweet: \"Are you gonna [fuck] her?\"\n\n[J']ai reçu un texto : => [I] got a text:\nJ'[ai reçu] un texto : => I [got] a text:\nJ'ai reçu [un] texto : => I got [a] text:\nJ'ai reçu un [texto] : => I got a [text]:\n\n[TU] VAS LA BAISER OU QUOI ?! => ARE [YOU] GONNA FUCK HER OR WHAT?!\nTU [VAS] LA BAISER OU QUOI ?! => are going to, are gonna # \"vas\" functions as the future auxiliary here\nTU VAS [LA] BAISER OU QUOI ?! => ARE YOU GONNA FUCK [HER] OR WHAT?!\nTU VAS LA [BAISER] OU QUOI ?! => ARE YOU GONNA [FUCK] HER OR WHAT?!\nTU VAS LA BAISER [OU] QUOI ?! => ARE YOU GONNA FUCK HER [OR] WHAT?!\nTU VAS LA BAISER OU [QUOI] ?! => ARE YOU GONNA FUCK HER OR [WHAT]?!\n\n[Je] lui ai gentiment demandé => [I] politely asked him\nJe [lui] ai gentiment demandé => I politely asked [him]\nJe lui ai [gentiment] demandé => I [politely] asked him\nJe lui [ai] gentiment [demandé] => I politely [asked] him # \"ai demandé\" is the compound past (passé composé) of \"demander\", matching the English simple past \"asked\"\n\n[de] me laisser tranquille. => [to] leave me alone.\nde [me] laisser tranquille. => to [me] leave alone.\nde me [laisser] tranquille. => to [leave] me alone.\nde me laisser [tranquille]. => to leave me [alone].\n\n[À] 15h32, il lui a laissé => [At] 3:32 PM, he left her\nÀ [15h32], il lui a laissé => At [3:32 PM], he left her\nÀ 15h32, [il] lui a laissé => At 3:32 PM, [he] left her\nÀ 15h32, il [lui] a laissé => At 3:32 PM, he left [her]\nÀ 15h32, il lui [a laissé] => At 3:32 PM, he [left] her\n\n[un] message bien faux-cul. => [a] really fake message.\nun [message] bien faux-cul. => a really fake [message].\nun message [bien] faux-cul. => a [really] fake message.\nun message bien [faux-cul]. => a really [fake] message.\n\n[À] 15h33, il m'a envoyé un message : => [At] 3:33 PM, he sent me a message:\nÀ [15h33], il m'a envoyé un message : => At [3:33 PM], he sent me a message:\nÀ 15h33, [il] m'a envoyé un message : => At 3:33 PM, [he] sent me a message:\nÀ 15h33, il [m']a envoyé un message : => At 3:33 PM, he sent [me] a message:\nÀ 15h33, il m'[a envoyé] un message : => At 3:33 PM, he [sent] me a message:\nÀ 15h33, il m'a envoyé [un] message : => At 3:33 PM, he sent me [a] message:\nÀ 15h33, il m'a envoyé un [message] : => At 3:33 PM, he sent me a [message]:\n\n[C'est] le jeu, mec ! => [It's] the game, man!\nC'est [le] jeu, mec ! => It's [the] game, man!\nC'est le [jeu], mec ! => It's the [game], man!\nC'est le jeu, [mec] ! => It's the game, [man]!\n\n[Je] suis allé voir les photos => [I] went to see the photos\nJe [suis allé] voir les photos => I [went] to see the photos\nJe suis allé [voir] les photos => I went [to see] the photos\nJe suis allé voir [les] photos => I went to see [the] photos\nJe suis allé voir les [photos] => I went to see the [photos]\n\n[où] elle était taguée. => [where] she was tagged.\noù [elle] était taguée. => where [she] was tagged.\noù elle [était] taguée. => where she [was] tagged.\noù elle était [taguée]. => where she was [tagged].\n\n[Elle] était tout le temps jolie. => [She] was pretty all the time.\nElle [était] tout le temps jolie. => She [was] pretty all the time.\nElle était [tout] le temps jolie. => She was pretty [all] the time.\nElle était tout [le] temps jolie. => She was pretty all [the] time.\nElle était tout le [temps] jolie. => She was pretty all the [time].\nElle était tout le temps [jolie]. => She was [pretty] all the time.\n\n[En regardant] de plus près, => [Looking] closer,\nEn regardant [de plus près], => Looking [closer], # while \"plus près\" means closer, \"de\" is part of this common adverbial phrase in French\n\n[j']ai remarqué qu'un mec revenait => [I] noticed a guy appeared\nj'[ai remarqué] qu'un mec revenait => I [noticed] a guy appeared\nj'ai remarqué qu'[un] mec revenait => I noticed [a] guy appeared\nj'ai remarqué qu'un [mec] revenait => I noticed a [guy] appeared\nj'ai remarqué qu'un mec [revenait] => I noticed a guy [appeared] # mapping different past tenses as they correspond in this context\n\n[beaucoup de] fois sur les photos. => [a lot of] times in the photos.\nbeaucoup de [fois] sur les photos. => a lot of [times] in the photos.\nbeaucoup de fois [sur] les photos. => a lot of times [in] the photos.\nbeaucoup de fois sur [les] photos. => a lot of times in [the] photos.\nbeaucoup de fois sur les [photos]. => a lot of times in the [photos].\n\n[Mon] coloc est arrivé, il m'a demandé : => [My] roommate arrived, he asked me:\nMon [coloc] est arrivé, il m'a demandé : => My [roommate] arrived, he asked me:\nMon coloc [est arrivé], il m'a demandé : => My roommate [arrived], he asked me:\nMon coloc est arrivé, [il] m'a demandé : => My roommate arrived, [he] asked me:\nMon coloc est arrivé, il [m']a demandé : => My roommate arrived, he asked [me]:\nMon coloc est arrivé, il m'[a demandé] : => My roommate arrived, he [asked] me:\n\nIl [est] où le Sopalin ? => Where['s] the paper towels?\nIl est [où] le Sopalin ? => [Where]'s the paper towels? # \"où\" aligns with the interrogative part of the contraction\nIl est où [le] Sopalin ? => Where's [the] paper towels?\nIl est où le [Sopalin] ? => Where's the [paper towels]? # \"Sopalin\" is a common French brand name used for paper towels / kitchen roll\n\n[Il] a vu le Sopalin. => [He] saw the paper towels.\nIl [a vu] le Sopalin. => He [saw] the paper towels.\nIl a vu [le] Sopalin. => He saw [the] paper towels.\nIl a vu le [Sopalin]. => He saw the [paper towels] # Sopalin is a brand name for paper towels.\n\nJ'[ai compris] qu'il avait compris. => I [understood] that he understood. # The passé composé \"ai compris\" maps to the first \"understood\"\nJ'ai compris [qu']il avait compris. => I understood [that] he understood.\nJ'ai compris qu'[il] avait compris. => I understood that [he] understood.\nJ'ai compris qu'il [avait compris]. => I understood that he [understood]. # The plus-que-parfait \"avait compris\" maps to the second \"understood\"\n\n[Il] a compris que j'avais compris => [He] understood that I understood\nIl [a compris] que j'avais compris => He [understood] that I understood\nIl a compris [que] j'avais compris => He understood [that] I understood\nIl a compris que [j']avais compris => He understood that [I] understood\nIl a compris que j'[avais compris] => He understood that I [understood]\n\n[qu']il avait compris. => [that] he understood.\nqu'[il] avait compris. => that [he] understood.\nqu'il [avait compris]. => that he [understood.] # \"avait compris\" is a compound tense matching the single verb \"understood\"\n\n[Je] lui ai dit : => [I] told him:\nJe [lui] ai dit : => I told [him]:\nJe lui [ai dit] : => I [told] him: # ai dit is the past tense of dire, mapping to the past tense told\n\n[Il] est là. => [It]'s there.\nIl [est] là. => It['s] there.\nIl est [là]. => It's [there].\n\n[Alors] il a répondu : => [So] he answered:\nAlors [il] a répondu : => So [he] answered:\nAlors il [a répondu] : => So he [answered]:\n\n[Je] vais en prendre un autre rouleau. => [I]'ll go get another roll.\nJe [vais] en prendre un autre rouleau. => I'll [go] get another roll.\nJe vais en [prendre] un autre rouleau. => I'll go [get] another roll.\nJe vais en prendre [un autre] rouleau. => I'll go get [another] roll.\nJe vais en prendre un autre [rouleau]. => I'll go get another [roll].\n\n[Bref], j'ai traîné sur internet. => [Anyway], I hung out on the internet.\nBref, [j']ai traîné sur internet. => Anyway, [I] hung out on the internet.\nBref, j'[ai traîné] sur internet. => Anyway, I [hung out] on the internet.\nBref, j'ai traîné [sur] internet. => Anyway, I hung out [on] the internet.\nBref, j'ai traîné sur [internet]. => Anyway, I hung out on [the internet]. # English requires the article \"the\" here whereas French commonly omits it for internet\n\n"
+    "phrases_with_token_translations": "[Bref], j'avais rien à faire. => [Anyway], I had nothing to do.\nBref, [j']avais rien à faire. => Anyway, [I] had nothing to do.\nBref, j'[avais] rien à faire. => Anyway, I [had] nothing to do.\nBref, j'avais [rien] à faire. => Anyway, I had [nothing] to do.\nBref, j'avais rien [à] faire. => Anyway, I had nothing [to] do.\nBref, j'avais rien à [faire]. => Anyway, I had nothing to [do].\n\n[Donc] j'ai fait comme tous ceux => [So] I did like everyone else\n[j']ai fait comme tous ceux => [I] did like everyone else\nj'[ai fait] comme tous ceux => I [did] like everyone else # \"ai fait\" is the past tense of the verb \"faire\" (to do)\nDonc j'ai fait [comme] tous ceux => So I did [like] everyone else\nDonc j'ai fait comme [tous ceux] => So I did like [everyone else] # \"tous ceux\" (literally \"all those\") translates to \"everyone else\" in this context\n\n[qu']ont rien à faire, => [who] has nothing to do,\nqu'[ont] rien à faire, => who [has] nothing to do,\nqu'ont [rien] à faire, => who has [nothing] to do,\nqu'ont rien [à] faire, => who has nothing [to] do,\nqu'ont rien à [faire], => who has nothing to [do], # \"qu'\" is the elided form of \"qui\" (who) acting as subject; \"ont\" is mapped to \"has\" despite the plural/singular difference.\n\n[je] suis allé sur internet. => [I] went on the internet.\nje [suis allé] sur internet. => I [went] on the internet.\nje suis allé [sur] internet. => I went [on] the internet.\nje suis allé sur [internet] => I went on [the internet] # English requires \"the\" while French often omits the article for internet\n\nJ'[ai checké] mes mails, rien. => I [checked] my emails, nothing.\nJ'ai checké [mes] mails, rien. => I checked [my] emails, nothing.\nJ'ai checké mes [mails], rien. => I checked my [emails], nothing.\nJ'ai checké mes mails, [rien]. => I checked my emails, [nothing].\n\n[J'ai] checké Facebook, rien. => [I] checked Facebook, nothing.\nJ'ai [checké] Facebook, rien. => I [checked] Facebook, nothing.\nJ'ai checké [Facebook], rien. => I checked [Facebook], nothing.\nJ'ai checké Facebook, [rien]. => I checked Facebook, [nothing].\n\n[Je] me suis branlé. => [I] jerked off.\nJe [me suis branlé]. => I [jerked off]. # \"me suis\" marks the reflexive past tense, which maps to the past tense of the phrasal verb \"jerked off\"\n\n[J']ai re-checké mes mails, rien. => [I] re-checked my emails, nothing.\nJ'ai [re-checké] mes mails, rien. => I [re-checked] my emails, nothing. # \"ai\" is the auxiliary verb for the passé composé, which translates to the simple past \"re-checked\" here\nJ'ai re-checké [mes] mails, rien. => I re-checked [my] emails, nothing.\nJ'ai re-checké mes [mails], rien. => I re-checked my [emails], nothing.\nJ'ai re-checké mes mails, [rien]. => I re-checked my emails, [nothing].\n\nJ'ai bloqué [la] touche \"i\" de mon clavier. => I stuck [the] \"i\" key on my keyboard.\nJ'ai bloqué la [touche] \"i\" de mon clavier. => I stuck the \"i\" [key] on my keyboard.\nJ'ai bloqué la touche \"[i]\" de mon clavier. => I stuck the \"[i]\" key on my keyboard.\nJ'ai bloqué la touche \"i\" [de] mon clavier. => I stuck the \"i\" key [on] my keyboard.\nJ'ai bloqué la touche \"i\" de [mon] clavier. => I stuck the \"i\" key on [my] keyboard.\nJ'ai bloqué la touche \"i\" de mon [clavier]. => I stuck the \"i\" key on my [keyboard].\n\n[Je] l'ai tapé, ça s'est arrêté. => [I] hit it, it stopped.\nJe [l']ai tapé, ça s'est arrêté. => I hit [it], it stopped.\nJe l'[ai tapé], ça s'est arrêté. => I [hit] it, it stopped.\nJe l'ai tapé, [ça] s'est arrêté. => I hit it, [it] stopped.\nJe l'ai tapé, ça [s'est arrêté]. => I hit it, it [stopped]. # \"s'est arrêté\" is the past tense of the reflexive verb \"s'arrêter\" (to stop)\n\n[Je] me suis re-branlé. => [I] jerked off again.\nJe [me suis re-branlé]. => I [jerked off again]. # \"me suis\" is the auxiliary/reflexive marker for the past tense, which maps to the past tense \"jerked\". \"re-\" matches \"again\" and \"branlé\" matches \"jerked off\".\n\n[J']ai remarqué qu'il y avait => [I] noticed there were\nJ'[ai remarqué] qu'il y avait => I [noticed] there were\nJ'ai remarqué qu'[il y avait] => I noticed [there were] # \"il y avait\" is the past tense of the fixed expression \"il y a\" (there is/are)\n\ndes [petits] dessins dessinés => [little] drawings drawn\ndes petits [dessins] dessinés => little [drawings] drawn\ndes petits dessins [dessinés] => little drawings [drawn]\n\n[sur] le Sopalin. => [on] the paper towels.\nsur [le] Sopalin. => on [the] paper towels.\nsur le [Sopalin]. => on the [paper towels]. # Sopalin is a common French brand name used generically for paper towels\n\n[Je] me suis demandé si quelqu'un => [I] wondered if someone\nJe [me suis demandé] si quelqu'un => I [wondered] if someone\nJe me suis demandé [si] quelqu'un => I wondered [if] someone\nJe me suis demandé si [quelqu'un] => I wondered if [someone]\n\n[était] payé pour les dessiner. => [got] paid to draw them.\nétait [payé] pour les dessiner. => got [paid] to draw them.\nétait payé [pour] les dessiner. => got paid [to] draw them.\nétait payé pour [les] dessiner. => got paid to draw [them]\nétait payé pour les [dessiner]. => got paid to [draw] them.\n\n[Ça] m'a déconcentré. => [It] distracted me.\nÇa [m']a déconcentré. => It distracted [me].\nÇa m'[a déconcentré] => It [distracted] me.\n\nJ'ai re-checké [Facebook], rien. => I re-checked [Facebook], nothing.\nJ'ai re-checké Facebook, [rien]. => I re-checked Facebook, [nothing].\n\n[Non], attends. => [No], wait.\nNon, [attends]. => No, [wait].\n\n[C'était] cette fille que j'avais => [It was] this girl I had\nC'était [cette] fille que j'avais => It was [this] girl I had\nC'était cette [fille] que j'avais => It was this [girl] I had\nC'était cette fille [que] j'avais => that\nC'était cette fille que [j']avais => It was this girl [I] had\nC'était cette fille que j'[avais] => It was this girl I [had]\n\n[croisée] en soirée. => [met] at a party.\ncroisée [en] soirée. => met [at a] party.\ncroisée en [soirée]. => met at a [party].\n\n[Elle] venait d'accepter => [She] had just accepted\nElle [venait d']accepter => She [had just] accepted\nElle venait d'[accepter] => She had just [accepted]\n\n[ma] demande d'amis. => [my] friend request.\nma [demande] d'amis. => my friend [request].\nma demande [d'amis]. => my [friend] request. # while \"d'amis\" is literally \"of friends\", in this context it maps to \"friend\"\n\n[Je] suis allé sur son profil. => [I] went to her profile.\nJe [suis allé] sur son profil. => I [went] to her profile.\nJe suis allé [sur] son profil. => I went [to] her profile.\nJe suis allé sur [son] profil. => I went to [her] profile.\nJe suis allé sur son [profil]. => I went to her [profile].\n\nJ'ai cherché [ses] photos. => I looked for [her] photos.\nJ'ai cherché ses [photos]. => I looked for her [photos]\n\n[J']ai cherché un album \"Été 2011\", rien. => [I] looked for an album \"Summer 2011\", nothing.\nJ'[ai cherché] un album \"Été 2011\", rien. => I [looked for] an album \"Summer 2011\", nothing. # \"chercher\" includes the preposition \"for\"\nJ'ai cherché [un] album \"Été 2011\", rien. => I looked for [an] album \"Summer 2011\", nothing.\nJ'ai cherché un [album] \"Été 2011\", rien. => I looked for an [album] \"Summer 2011\", nothing.\nJ'ai cherché un album \"[Été] 2011\", rien. => I looked for an album \"[Summer] 2011\", nothing.\nJ'ai cherché un album \"Été [2011]\", rien. => I looked for an album \"Summer [2011]\", nothing.\nJ'ai cherché un album \"Été 2011\", [rien]. => I looked for an album \"Summer 2011\", [nothing].\n\n[Été] 2010, rien. => [Summer] 2010, nothing.\nÉté [2010], rien. => Summer [2010], nothing.\nÉté 2010, [rien]. => Summer 2010, [nothing].\n\n[Il y avait] seulement => [There were] only\nIl y avait [seulement] => There were [only]\n\ndes [photos] de ski, pas terrible. => ski [photos], not great.\ndes photos [de ski], pas terrible. => [ski] photos, not great. # \"de ski\" functions as the modifier for photos, similar to \"ski\" in English\ndes photos de ski, [pas] terrible. => ski photos, [not] great.\ndes photos de ski, pas [terrible]. => ski photos, not [great] # in this context \"pas terrible\" means \"not great\" OR \"not that good\"\n\nJ'[ai vu] qu'elle aimait les Simpson => I [saw] she liked The Simpsons\nJ'ai vu qu'[elle] aimait les Simpson => I saw [she] liked The Simpsons\nJ'ai vu qu'elle [aimait] les Simpson => I saw she [liked] The Simpsons\nJ'ai vu qu'elle aimait [les Simpson] => I saw she liked [The Simpsons] # \"Simpson\" is singular in French but \"The Simpsons\" is plural in English\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk]. # Names are kept together as a single entity\n\n[J']étais content => [I] was happy\nJ'[étais] content => I [was] happy\nJ'étais [content] => I was [happy]\n\n[parce que] moi aussi j'aime les Simpson => [because] I like The Simpsons too\nparce que [moi] aussi j'aime les Simpson => I, me\nparce que moi [aussi] j'aime les Simpson => because I like The Simpsons [too]\nparce que moi aussi [j'aime] les Simpson => because [I like] The Simpsons too\nparce que moi aussi j'aime [les] Simpson => because I like [The] Simpsons too\nparce que moi aussi j'aime les [Simpson] => because I like The [Simpsons] too # In French, the family name used as a plural does not take an \"s\" like in English\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk].\n\n[Après] je me suis dit que => [Then] I thought that\nAprès [je] me suis dit que => Then [I] thought that\nAprès je [me suis dit] que => Then I [thought] that\nAprès je me suis dit [que] => Then I thought [that]\n\n[tout le monde] aime les Simpson => [everyone] likes The Simpsons # fixed expression\ntout le monde [aime] les Simpson => everyone [likes] The Simpsons\ntout le monde aime [les] Simpson => everyone likes [The] Simpsons\ntout le monde aime les [Simpson] => everyone likes The [Simpsons]\n\n[et] les Daft Punk. => [and] Daft Punk.\net les [Daft Punk]. => and [Daft Punk].\n\n[J']étais moins content. => [I] was less happy.\nJ'[étais] moins content. => I [was] less happy.\nJ'étais [moins] content. => I was [less] happy.\nJ'étais moins [content]. => I was less [happy].\n\n[Kheiron] m'a écrit : => [Kheiron] wrote to me:\nKheiron [m']a écrit : => Kheiron wrote [to me]:\nKheiron m'[a écrit] : => Kheiron [wrote] to me:\n\n[Hey] ! t'es ami avec cette fille ? => [Hey]! Are you friends with this girl?\nHey ! [t']es ami avec cette fille ? => Hey! Are [you] friends with this girl?\nHey ! t'[es] ami avec cette fille ? => Hey! [Are] you friends with this girl?\nHey ! t'es [ami] avec cette fille ? => Hey! Are you [friends] with this girl?\nHey ! t'es ami [avec] cette fille ? => Hey! Are you [with] this girl?\nHey ! t'es ami avec [cette] fille ? => Hey! Are you friends with [this] girl?\nHey ! t'es ami avec cette [fille] ? => Hey! Are you friends with this [girl]?\n\n[Je] lui ai pas répondu. => [I] didn't answer him.\nJe [lui] ai pas répondu. => I didn't answer [him].\nJe lui [ai pas] répondu. => I [didn't] answer him. # \"ai pas\" functions as the negation marker in this past tense structure\nJe lui ai pas [répondu]. => I didn't [answer] him.\n\n[Il] m'a envoyé un e-mail => [He] sent me an email\nIl [m']a envoyé un e-mail => He sent [me] an email\nIl m'[a envoyé] un e-mail => He [sent] me an email\nIl m'a envoyé [un] e-mail => He sent me [an] email\nIl m'a envoyé un [e-mail] => He sent me an [email]\n\nqui [me] demandait : \"Tu vas la baiser ?\" => asking [me]: \"Are you gonna fuck her?\"\nqui me [demandait] : \"Tu vas la baiser ?\" => [asking] me: \"Are you gonna fuck her?\"\nqui me demandait : \"[Tu] vas la baiser ?\" => asking me: \"Are [you] gonna fuck her?\"\nqui me demandait : \"Tu [vas] la baiser ?\" => asking me: \"Are you [gonna] fuck her?\" # \"vas\" corresponds to the \"am/is/are going to\" construction\nqui me demandait : \"Tu vas [la] baiser ?\" => asking me: \"Are you gonna fuck [her]?\"\nqui me demandait : \"Tu vas la [baiser] ?\" => asking me: \"Are you gonna [fuck] her?\"\n\n[Un] tweet : \"Tu vas la baiser ?\" => [A] tweet: \"Are you gonna fuck her?\"\nUn [tweet] : \"Tu vas la baiser ?\" => A [tweet]: \"Are you gonna fuck her?\"\nUn tweet : \"[Tu] vas la baiser ?\" => A tweet: \"Are [you] gonna fuck her?\"\nUn tweet : \"Tu [vas] la baiser ?\" => A tweet: \"[Are] you [gonna] fuck her?\" # \"vas\" is the auxiliary for the near future, translated here as \"are gonna\"\nUn tweet : \"Tu vas [la] baiser ?\" => A tweet: \"Are you gonna fuck [her]?\"\nUn tweet : \"Tu vas la [baiser] ?\" => A tweet: \"Are you gonna [fuck] her?\"\n\n[J']ai reçu un texto : => [I] got a text:\nJ'[ai reçu] un texto : => I [got] a text:\nJ'ai reçu [un] texto : => I got [a] text:\nJ'ai reçu un [texto] : => I got a [text]:\n\n[TU] VAS LA BAISER OU QUOI ?! => ARE [YOU] GONNA FUCK HER OR WHAT?!\nTU [VAS] LA BAISER OU QUOI ?! => are going to, are gonna # \"vas\" functions as the future auxiliary here\nTU VAS [LA] BAISER OU QUOI ?! => ARE YOU GONNA FUCK [HER] OR WHAT?!\nTU VAS LA [BAISER] OU QUOI ?! => ARE YOU GONNA [FUCK] HER OR WHAT?!\nTU VAS LA BAISER [OU] QUOI ?! => ARE YOU GONNA FUCK HER [OR] WHAT?!\nTU VAS LA BAISER OU [QUOI] ?! => ARE YOU GONNA FUCK HER OR [WHAT]?!\n\n[Je] lui ai gentiment demandé => [I] politely asked him\nJe [lui] ai gentiment demandé => I politely asked [him]\nJe lui ai [gentiment] demandé => I [politely] asked him\nJe lui [ai] gentiment [demandé] => I politely [asked] him # \"ai demandé\" is the compound past (passé composé) of \"demander\", matching the English simple past \"asked\"\n\n[de] me laisser tranquille. => [to] leave me alone.\nde [me] laisser tranquille. => to [me] leave alone.\nde me [laisser] tranquille. => to [leave] me alone.\nde me laisser [tranquille]. => to leave me [alone].\n\n[À] 15h32, il lui a laissé => [At] 3:32 PM, he left her\nÀ [15h32], il lui a laissé => At [3:32 PM], he left her\nÀ 15h32, [il] lui a laissé => At 3:32 PM, [he] left her\nÀ 15h32, il [lui] a laissé => At 3:32 PM, he left [her]\nÀ 15h32, il lui [a laissé] => At 3:32 PM, he [left] her\n\n[un] message bien faux-cul. => [a] really fake message.\nun [message] bien faux-cul. => a really fake [message].\nun message [bien] faux-cul. => a [really] fake message.\nun message bien [faux-cul]. => a really [fake] message.\n\n[À] 15h33, il m'a envoyé un message : => [At] 3:33 PM, he sent me a message:\nÀ [15h33], il m'a envoyé un message : => At [3:33 PM], he sent me a message:\nÀ 15h33, [il] m'a envoyé un message : => At 3:33 PM, [he] sent me a message:\nÀ 15h33, il [m']a envoyé un message : => At 3:33 PM, he sent [me] a message:\nÀ 15h33, il m'[a envoyé] un message : => At 3:33 PM, he [sent] me a message:\nÀ 15h33, il m'a envoyé [un] message : => At 3:33 PM, he sent me [a] message:\nÀ 15h33, il m'a envoyé un [message] : => At 3:33 PM, he sent me a [message]:\n\n[C'est] le jeu, mec ! => [It's] the game, man!\nC'est [le] jeu, mec ! => It's [the] game, man!\nC'est le [jeu], mec ! => It's the [game], man!\nC'est le jeu, [mec] ! => It's the game, [man]!\n\n[Je] suis allé voir les photos => [I] went to see the photos\nJe [suis allé] voir les photos => I [went] to see the photos\nJe suis allé [voir] les photos => I went [to see] the photos\nJe suis allé voir [les] photos => I went to see [the] photos\nJe suis allé voir les [photos] => I went to see the [photos]\n\n[où] elle était taguée. => [where] she was tagged.\noù [elle] était taguée. => where [she] was tagged.\noù elle [était] taguée. => where she [was] tagged.\noù elle était [taguée]. => where she was [tagged].\n\n[Elle] était tout le temps jolie. => [She] was pretty all the time.\nElle [était] tout le temps jolie. => She [was] pretty all the time.\nElle était [tout] le temps jolie. => She was pretty [all] the time.\nElle était tout [le] temps jolie. => She was pretty all [the] time.\nElle était tout le [temps] jolie. => She was pretty all the [time].\nElle était tout le temps [jolie]. => She was [pretty] all the time.\n\n[En regardant] de plus près, => [Looking] closer,\nEn regardant [de plus près], => Looking [closer], # while \"plus près\" means closer, \"de\" is part of this common adverbial phrase in French\n\n[j']ai remarqué qu'un mec revenait => [I] noticed a guy appeared\nj'[ai remarqué] qu'un mec revenait => I [noticed] a guy appeared\nj'ai remarqué qu'[un] mec revenait => I noticed [a] guy appeared\nj'ai remarqué qu'un [mec] revenait => I noticed a [guy] appeared\nj'ai remarqué qu'un mec [revenait] => I noticed a guy [appeared] # mapping different past tenses as they correspond in this context\n\n[beaucoup de] fois sur les photos. => [a lot of] times in the photos.\nbeaucoup de [fois] sur les photos. => a lot of [times] in the photos.\nbeaucoup de fois [sur] les photos. => a lot of times [in] the photos.\nbeaucoup de fois sur [les] photos. => a lot of times in [the] photos.\nbeaucoup de fois sur les [photos]. => a lot of times in the [photos].\n\n[Mon] coloc est arrivé, il m'a demandé : => [My] roommate arrived, he asked me:\nMon [coloc] est arrivé, il m'a demandé : => My [roommate] arrived, he asked me:\nMon coloc [est arrivé], il m'a demandé : => My roommate [arrived], he asked me:\nMon coloc est arrivé, [il] m'a demandé : => My roommate arrived, [he] asked me:\nMon coloc est arrivé, il [m']a demandé : => My roommate arrived, he asked [me]:\nMon coloc est arrivé, il m'[a demandé] : => My roommate arrived, he [asked] me:\n\nIl [est] où le Sopalin ? => Where['s] the paper towels?\nIl est [où] le Sopalin ? => [Where]'s the paper towels? # \"où\" aligns with the interrogative part of the contraction\nIl est où [le] Sopalin ? => Where's [the] paper towels?\nIl est où le [Sopalin] ? => Where's the [paper towels]? # \"Sopalin\" is a common French brand name used for paper towels / kitchen roll\n\n[Il] a vu le Sopalin. => [He] saw the paper towels.\nIl [a vu] le Sopalin. => He [saw] the paper towels.\nIl a vu [le] Sopalin. => He saw [the] paper towels.\nIl a vu le [Sopalin]. => He saw the [paper towels] # Sopalin is a brand name for paper towels.\n\nJ'[ai compris] qu'il avait compris. => I [understood] that he understood. # The passé composé \"ai compris\" maps to the first \"understood\"\nJ'ai compris [qu']il avait compris. => I understood [that] he understood.\nJ'ai compris qu'[il] avait compris. => I understood that [he] understood.\nJ'ai compris qu'il [avait compris]. => I understood that he [understood]. # The plus-que-parfait \"avait compris\" maps to the second \"understood\"\n\n[Il] a compris que j'avais compris => [He] understood that I understood\nIl [a compris] que j'avais compris => He [understood] that I understood\nIl a compris [que] j'avais compris => He understood [that] I understood\nIl a compris que [j']avais compris => He understood that [I] understood\nIl a compris que j'[avais compris] => He understood that I [understood]\n\n[qu']il avait compris. => [that] he understood.\nqu'[il] avait compris. => that [he] understood.\nqu'il [avait compris]. => that he [understood.] # \"avait compris\" is a compound tense matching the single verb \"understood\"\n\n[Je] lui ai dit : => [I] told him:\nJe [lui] ai dit : => I told [him]:\nJe lui [ai dit] : => I [told] him: # ai dit is the past tense of dire, mapping to the past tense told\n\n[Il] est là. => [It]'s there.\nIl [est] là. => It['s] there.\nIl est [là]. => It's [there].\n\n[Alors] il a répondu : => [So] he answered:\nAlors [il] a répondu : => So [he] answered:\nAlors il [a répondu] : => So he [answered]:\n\n[Je] vais en prendre un autre rouleau. => [I]'ll go get another roll.\nJe [vais] en prendre un autre rouleau. => I'll [go] get another roll.\nJe vais en [prendre] un autre rouleau. => I'll go [get] another roll.\nJe vais en prendre [un autre] rouleau. => I'll go get [another] roll.\nJe vais en prendre un autre [rouleau]. => I'll go get another [roll].\n\n[Bref], j'ai traîné sur internet. => [Anyway], I hung out on the internet.\nBref, [j']ai traîné sur internet. => Anyway, [I] hung out on the internet.\nBref, j'[ai traîné] sur internet. => Anyway, I [hung out] on the internet.\nBref, j'ai traîné [sur] internet. => Anyway, I hung out [on] the internet.\nBref, j'ai traîné sur [internet]. => Anyway, I hung out on [the internet]. # English requires the article \"the\" here whereas French commonly omits it for internet\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway, I had nothing to do.",
+            "words": []
+          },
+          {
+            "text": "So I did like everyone else",
+            "words": []
+          },
+          {
+            "text": "who has nothing to do,",
+            "words": []
+          },
+          {
+            "text": "I went on the internet.",
+            "words": []
+          },
+          {
+            "text": "I checked my emails, nothing.",
+            "words": []
+          },
+          {
+            "text": "I checked Facebook, nothing.",
+            "words": []
+          },
+          {
+            "text": "I jerked off.",
+            "words": []
+          },
+          {
+            "text": "I re-checked my emails, nothing.",
+            "words": []
+          },
+          {
+            "text": "I stuck the \"i\" key on my keyboard.",
+            "words": []
+          },
+          {
+            "text": "I hit it, it stopped.",
+            "words": []
+          },
+          {
+            "text": "I jerked off again.",
+            "words": []
+          },
+          {
+            "text": "I noticed there were",
+            "words": []
+          },
+          {
+            "text": "little drawings drawn",
+            "words": []
+          },
+          {
+            "text": "on the paper towels.",
+            "words": []
+          },
+          {
+            "text": "I wondered if someone",
+            "words": []
+          },
+          {
+            "text": "got paid to draw them.",
+            "words": []
+          },
+          {
+            "text": "It distracted me.",
+            "words": []
+          },
+          {
+            "text": "I re-checked Facebook, nothing.",
+            "words": []
+          },
+          {
+            "text": "No, wait.",
+            "words": []
+          },
+          {
+            "text": "It was this girl I had",
+            "words": []
+          },
+          {
+            "text": "met at a party.",
+            "words": []
+          },
+          {
+            "text": "She had just accepted",
+            "words": []
+          },
+          {
+            "text": "my friend request.",
+            "words": []
+          },
+          {
+            "text": "I went to her profile.",
+            "words": []
+          },
+          {
+            "text": "I looked for her photos.",
+            "words": []
+          },
+          {
+            "text": "I looked for an album \"Summer 2011\", nothing.",
+            "words": []
+          },
+          {
+            "text": "Summer 2010, nothing.",
+            "words": []
+          },
+          {
+            "text": "There were only",
+            "words": []
+          },
+          {
+            "text": "ski photos, not great.",
+            "words": []
+          },
+          {
+            "text": "I saw she liked The Simpsons",
+            "words": []
+          },
+          {
+            "text": "and Daft Punk.",
+            "words": []
+          },
+          {
+            "text": "I was happy",
+            "words": []
+          },
+          {
+            "text": "because I like The Simpsons too",
+            "words": []
+          },
+          {
+            "text": "and Daft Punk.",
+            "words": []
+          },
+          {
+            "text": "Then I thought that",
+            "words": []
+          },
+          {
+            "text": "everyone likes The Simpsons",
+            "words": []
+          },
+          {
+            "text": "and Daft Punk.",
+            "words": []
+          },
+          {
+            "text": "I was less happy.",
+            "words": []
+          },
+          {
+            "text": "Kheiron wrote to me:",
+            "words": []
+          },
+          {
+            "text": "\"Hey! Are you friends with this girl?\"",
+            "words": []
+          },
+          {
+            "text": "I didn't answer him.",
+            "words": []
+          },
+          {
+            "text": "He sent me an email",
+            "words": []
+          },
+          {
+            "text": "asking me: \"Are you gonna fuck her?\"",
+            "words": []
+          },
+          {
+            "text": "A tweet: \"Are you gonna fuck her?\"",
+            "words": []
+          },
+          {
+            "text": "I got a text:",
+            "words": []
+          },
+          {
+            "text": "\"ARE YOU GONNA FUCK HER OR WHAT?!\"",
+            "words": []
+          },
+          {
+            "text": "I politely asked him",
+            "words": []
+          },
+          {
+            "text": "to leave me alone.",
+            "words": []
+          },
+          {
+            "text": "At 3:32 PM, he left her",
+            "words": []
+          },
+          {
+            "text": "a really fake message.",
+            "words": []
+          },
+          {
+            "text": "At 3:33 PM, he sent me a message:",
+            "words": []
+          },
+          {
+            "text": "\"It's the game, man!\"",
+            "words": []
+          },
+          {
+            "text": "I went to see the photos",
+            "words": []
+          },
+          {
+            "text": "where she was tagged.",
+            "words": []
+          },
+          {
+            "text": "She was pretty all the time.",
+            "words": []
+          },
+          {
+            "text": "Looking closer,",
+            "words": []
+          },
+          {
+            "text": "I noticed a guy appeared",
+            "words": []
+          },
+          {
+            "text": "a lot of times in the photos.",
+            "words": []
+          },
+          {
+            "text": "My roommate arrived, he asked me:",
+            "words": []
+          },
+          {
+            "text": "Where's the paper towels?",
+            "words": []
+          },
+          {
+            "text": "He saw the paper towels.",
+            "words": []
+          },
+          {
+            "text": "I understood that he understood.",
+            "words": []
+          },
+          {
+            "text": "He understood that I understood",
+            "words": []
+          },
+          {
+            "text": "that he understood.",
+            "words": []
+          },
+          {
+            "text": "I told him:",
+            "words": []
+          },
+          {
+            "text": "It's there.",
+            "words": []
+          },
+          {
+            "text": "So he answered:",
+            "words": []
+          },
+          {
+            "text": "I'll go get another roll.",
+            "words": []
+          },
+          {
+            "text": "Anyway, I hung out on the internet.",
+            "words": []
+          }
+        ],
+        "lessons": "# Une Journée sur Internet\n00:02.50 Bref, j'avais rien à faire.\n00:04.00 Donc j'ai fait comme tous ceux\n00:05.00 qu'ont rien à faire,\n00:05.50 je suis allé sur internet.\n00:07.50 J'ai checké mes mails, rien.\n00:08.50 J'ai checké Facebook, rien.\n00:10.00 Je me suis branlé.\n00:11.00 J'ai re-checké mes mails, rien.\n\n# Les Découvertes Numériques\n00:12.00 J'ai bloqué la touche \"i\" de mon clavier.\n00:14.50 Je l'ai tapé, ça s'est arrêté.\n00:15.50 Je me suis re-branlé.\n00:16.50 J'ai remarqué qu'il y avait\n00:17.50 des petits dessins dessinés\n00:18.00 sur le Sopalin.\n00:18.50 Je me suis demandé si quelqu'un\n00:19.50 était payé pour les dessiner.\n00:20.50 Ça m'a déconcentré.\n\n# La Nouvelle Amie Facebook\n00:22.00 J'ai re-checké Facebook, rien.\n00:23.00 Non, attends.\n00:24.00 C'était cette fille que j'avais\n00:25.00 croisée en soirée.\n00:25.50 Elle venait d'accepter\n00:26.50 ma demande d'amis.\n00:27.00 Je suis allé sur son profil.\n00:28.00 J'ai cherché ses photos.\n00:29.00 J'ai cherché un album \"Été 2011\", rien.\n00:30.00 Été 2010, rien.\n\n# Les Goûts en Commun\n00:31.00 Il y avait seulement\n00:32.00 des photos de ski, pas terrible.\n00:33.50 J'ai vu qu'elle aimait les Simpson\n00:34.50 et les Daft Punk.\n00:35.00 J'étais content\n00:35.50 parce que moi aussi j'aime les Simpson\n00:36.50 et les Daft Punk.\n00:37.50 Après je me suis dit que\n00:38.50 tout le monde aime les Simpson\n00:39.50 et les Daft Punk.\n00:40.00 J'étais moins content.\n\n# Les Messages de Kheiron\n00:41.00 Kheiron m'a écrit :\n00:42.00 \"Hey ! t'es ami avec cette fille ?\"\n00:43.00 Je lui ai pas répondu.\n00:44.00 Il m'a envoyé un e-mail\n00:45.00 qui me demandait : \"Tu vas la baiser ?\"\n00:45.50 Un tweet : \"Tu vas la baiser ?\"\n00:46.00 J'ai reçu un texto :\n00:47.00 \"TU VAS LA BAISER OU QUOI ?!\"\n\n# Le Jeu Social\n00:52.50 Je lui ai gentiment demandé\n00:53.50 de me laisser tranquille.\n00:54.50 À 15h32, il lui a laissé\n00:55.50 un message bien faux-cul.\n00:56.50 À 15h33, il m'a envoyé un message :\n00:58.00 \"C'est le jeu, mec !\"\n00:59.00 Je suis allé voir les photos\n01:00.00 où elle était taguée.\n01:00.50 Elle était tout le temps jolie.\n\n# Le Mystérieux Garçon des Photos\n01:01.50 En regardant de plus près,\n01:02.50 j'ai remarqué qu'un mec revenait\n01:03.50 beaucoup de fois sur les photos.\n01:05.50 Mon coloc est arrivé, il m'a demandé :\n01:06.50 Il est où le Sopalin ?\n01:10.50 Il a vu le Sopalin.\n01:11.50 J'ai compris qu'il avait compris.\n01:12.50 Il a compris que j'avais compris\n01:13.50 qu'il avait compris.\n\n# La Conclusion Gênante\n01:14.00 Je lui ai dit :\n01:14.50 Il est là.\n01:15.50 Alors il a répondu :\n01:17.50 Je vais en prendre un autre rouleau.\n01:20.50 Bref, j'ai traîné sur internet."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 16:44:26 UTC",
   "updated_at": "2026-04-02 19:19:50 UTC",

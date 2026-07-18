@@ -8,7 +8,16 @@ class AddCourseTranslationJob < ApplicationJob
     requests = ImportRequest.active.where(course: course, create_song_progress: progress, translation_language: language.english_name)
 
     requests.update_all(status: ImportRequest.statuses[:importing], updated_at: Time.zone.now)
-    progress.create_data if progress.data["phrases"].blank?
+    if progress.data.blank? || progress.data["phrases"].blank?
+      if course.medium&.phrases&.exists?
+        # The course already has content, so reconstruct the blob from it
+        # instead of re-transcribing: a fresh transcription may segment
+        # differently and misalign with the persisted tokens.
+        CreateSongProgressRebuilder.new(course, progress: progress).call
+      else
+        progress.create_data
+      end
+    end
     progress.add_translation(language) unless progress.translation_complete?(language)
     CourseBuilder::BuildSong.new(progress, course).add_translation(language) unless course.translation_ready?(language)
 

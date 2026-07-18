@@ -135,7 +135,7 @@ module Imports
       CreateSongProgress.find_by(
         youtubeurl: video.canonical_url,
         clip_language: clip_language,
-      )
+      )&.tap(&:assert_current_data_format!)
     end
 
     def enroll!(course, source:)
@@ -160,6 +160,9 @@ module Imports
           p.translation_language = translation_language
           p.data = {}
         end
+        # A found row may predate the multi-language format; fail here, before
+        # any credit moves, rather than inside the pipeline.
+        progress.assert_current_data_format!
 
         course = build_course!(video)
         course.update!(create_song_progress: progress)
@@ -252,6 +255,7 @@ module Imports
           row.translation_language = translation_language
           row.data = {}
         end
+        progress.assert_current_data_format!
         course.update!(create_song_progress: progress) unless course.create_song_progress_id
         course.course_translations.find_or_create_by!(language: translation_language_record) do |translation|
           translation.name = course.name

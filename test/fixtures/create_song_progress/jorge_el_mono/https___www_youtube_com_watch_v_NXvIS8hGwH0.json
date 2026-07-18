@@ -9,678 +9,976 @@
         "id": "phrase_1",
         "text_l1": "Era un hermoso día.",
         "timestamp": "00:02.40",
-        "timestamp_end": "00:04.40",
-        "text_l2": "It was a beautiful day."
+        "timestamp_end": "00:04.40"
       },
       {
         "id": "phrase_2",
         "text_l1": "Jorge y Marco paseaban en la calle",
         "timestamp": "00:05.40",
-        "timestamp_end": "00:07.40",
-        "text_l2": "Jorge and Marco were walking down the street"
+        "timestamp_end": "00:07.40"
       },
       {
         "id": "phrase_3",
         "text_l1": "cuando de repente...",
         "timestamp": "00:07.40",
-        "timestamp_end": "00:09.40",
-        "text_l2": "when suddenly..."
+        "timestamp_end": "00:09.40"
       },
       {
         "id": "phrase_4",
         "text_l1": "¡Toda una calle estaba de fiesta!",
         "timestamp": "00:10.40",
-        "timestamp_end": "00:14.40",
-        "text_l2": "A whole street was partying!"
+        "timestamp_end": "00:14.40"
       },
       {
         "id": "phrase_5",
         "text_l1": "¿Era el cumpleaños de la calle?",
         "timestamp": "00:15.40",
-        "timestamp_end": "00:17.40",
-        "text_l2": "Was it the street's birthday?"
+        "timestamp_end": "00:17.40"
       },
       {
         "id": "phrase_6",
         "text_l1": "¡Feliz año nuevo!",
         "timestamp": "00:25.00",
-        "timestamp_end": "00:26.50",
-        "text_l2": "Happy New Year!"
+        "timestamp_end": "00:26.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "No es año nuevo.",
         "timestamp": "00:27.50",
-        "timestamp_end": "00:28.50",
-        "text_l2": "It's not New Year's."
+        "timestamp_end": "00:28.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "Año nuevo es el primero de enero.",
         "timestamp": "00:28.50",
-        "timestamp_end": "00:30.50",
-        "text_l2": "New Year's is on January first."
+        "timestamp_end": "00:30.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "Sí, pero hoy es el año nuevo chino.",
         "timestamp": "00:31.50",
-        "timestamp_end": "00:34.50",
-        "text_l2": "Yes, but today is Chinese New Year."
+        "timestamp_end": "00:34.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "Además supuse que ustedes no eran chinos",
         "timestamp": "00:35.00",
-        "timestamp_end": "00:37.00",
-        "text_l2": "Plus I figured you weren't Chinese"
+        "timestamp_end": "00:37.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "porque llegaron aquí mirando así.",
         "timestamp": "00:37.00",
-        "timestamp_end": "00:38.50",
-        "text_l2": "because you arrived here looking like that."
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "Bienvenidos al barrio chino. Soy Lili.",
         "timestamp": "00:41.50",
-        "timestamp_end": "00:43.50",
-        "text_l2": "Welcome to Chinatown. I'm Lili."
+        "timestamp_end": "00:43.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "Soy Marco y él es Jorge.",
         "timestamp": "00:44.50",
-        "timestamp_end": "00:46.50",
-        "text_l2": "I'm Marco and this is Jorge."
+        "timestamp_end": "00:46.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "Gong Xi Fa Cai, tía Lili.",
         "timestamp": "00:49.00",
-        "timestamp_end": "00:51.00",
-        "text_l2": "Gong Xi Fa Cai, Aunt Lili."
+        "timestamp_end": "00:51.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "Feliz año nuevo a ti también, Lili.",
         "timestamp": "00:51.00",
-        "timestamp_end": "00:53.00",
-        "text_l2": "Happy New Year to you too, Lili."
+        "timestamp_end": "00:53.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "Pero lamento decirte",
         "timestamp": "00:54.00",
-        "timestamp_end": "00:56.00",
-        "text_l2": "But I'm sorry to tell you"
+        "timestamp_end": "00:56.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "que tus primos vienen retrasados",
         "timestamp": "00:56.00",
-        "timestamp_end": "00:57.50",
-        "text_l2": "that your cousins are running late"
+        "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "y no tendrán tiempo de practicar.",
         "timestamp": "00:57.50",
-        "timestamp_end": "00:59.00",
-        "text_l2": "and won't have time to practice."
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "¡Ay, no!",
         "timestamp": "00:59.00",
-        "timestamp_end": "01:00.00",
-        "text_l2": "Oh, no!"
+        "timestamp_end": "01:00.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "No hay de qué preocuparse.",
         "timestamp": "01:00.00",
-        "timestamp_end": "01:02.00",
-        "text_l2": "No need to worry."
+        "timestamp_end": "01:02.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "Mientras tanto, tu papá quiere",
         "timestamp": "01:03.00",
-        "timestamp_end": "01:04.50",
-        "text_l2": "Meanwhile, your dad wants"
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "que le traigas salsa de ciruela",
         "timestamp": "01:04.50",
-        "timestamp_end": "01:06.50",
-        "text_l2": "you to bring him plum sauce"
+        "timestamp_end": "01:06.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "de la bodega.",
         "timestamp": "01:06.50",
-        "timestamp_end": "01:07.50",
-        "text_l2": "from the warehouse."
+        "timestamp_end": "01:07.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "No hay problema.",
         "timestamp": "01:07.50",
-        "timestamp_end": "01:08.50",
-        "text_l2": "No problem."
+        "timestamp_end": "01:08.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "¡Oh, y esto te traerá",
         "timestamp": "01:09.00",
-        "timestamp_end": "01:10.50",
-        "text_l2": "Oh, and this will bring you"
+        "timestamp_end": "01:10.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "buena suerte este año!",
         "timestamp": "01:10.50",
-        "timestamp_end": "01:12.50",
-        "text_l2": "good luck this year!"
+        "timestamp_end": "01:12.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "¡Guau! ¡Xie xie!",
         "timestamp": "01:13.00",
-        "timestamp_end": "01:14.50",
-        "text_l2": "Wow! Xie xie!"
+        "timestamp_end": "01:14.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "¿Qué es eso?",
         "timestamp": "01:17.00",
-        "timestamp_end": "01:18.50",
-        "text_l2": "What is that?"
+        "timestamp_end": "01:18.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "Es una tradición china dar dinero",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.00",
-        "text_l2": "It's a Chinese tradition to give money"
+        "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "a los niños en año nuevo.",
         "timestamp": "01:21.00",
-        "timestamp_end": "01:23.50",
-        "text_l2": "to children on New Year's."
+        "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "Es buena suerte.",
         "timestamp": "01:23.50",
-        "timestamp_end": "01:25.00",
-        "text_l2": "It's good luck."
+        "timestamp_end": "01:25.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "Oigan, ¿quieren ver un dragón?",
         "timestamp": "01:26.00",
-        "timestamp_end": "01:28.00",
-        "text_l2": "Hey, do you want to see a dragon?"
+        "timestamp_end": "01:28.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "¡Síganme!",
         "timestamp": "01:31.00",
-        "timestamp_end": "01:32.50",
-        "text_l2": "Follow me!"
+        "timestamp_end": "01:32.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "Hay fuegos artificiales hoy.",
         "timestamp": "01:35.00",
-        "timestamp_end": "01:36.50",
-        "text_l2": "There are fireworks today."
+        "timestamp_end": "01:36.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "Y un desfile.",
         "timestamp": "01:37.00",
-        "timestamp_end": "01:38.50",
-        "text_l2": "And a parade."
+        "timestamp_end": "01:38.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "Y al terminar el desfile,",
         "timestamp": "01:39.00",
-        "timestamp_end": "01:40.50",
-        "text_l2": "And when the parade ends,"
+        "timestamp_end": "01:40.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "pues habrá un dragón.",
         "timestamp": "01:40.50",
-        "timestamp_end": "01:42.50",
-        "text_l2": "well, there will be a dragon."
+        "timestamp_end": "01:42.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "Hola, Jorge. Hola, Marco.",
         "timestamp": "01:51.00",
-        "timestamp_end": "01:53.00",
-        "text_l2": "Hi, Jorge. Hi, Marco."
+        "timestamp_end": "01:53.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "Lucen deliciosos.",
         "timestamp": "01:53.00",
-        "timestamp_end": "01:55.00",
-        "text_l2": "Those look delicious."
+        "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "Yo siempre estoy a la mitad,",
         "timestamp": "01:59.00",
-        "timestamp_end": "02:01.00",
-        "text_l2": "I'm always in the middle,"
+        "timestamp_end": "02:01.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "pero este año yo dirigiré",
         "timestamp": "02:02.00",
-        "timestamp_end": "02:04.50",
-        "text_l2": "but this year I will lead"
+        "timestamp_end": "02:04.50"
       },
       {
         "id": "phrase_42",
         "text_l1": "la danza del dragón.",
         "timestamp": "02:04.50",
-        "timestamp_end": "02:06.00",
-        "text_l2": "the dragon dance."
+        "timestamp_end": "02:06.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "Este es un gran honor.",
         "timestamp": "02:06.00",
-        "timestamp_end": "02:07.50",
-        "text_l2": "This is a great honor."
+        "timestamp_end": "02:07.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "Mis padres están muy orgullosos.",
         "timestamp": "02:07.50",
-        "timestamp_end": "02:09.00",
-        "text_l2": "My parents are very proud."
+        "timestamp_end": "02:09.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "Se suponía que practicaría hoy.",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:10.50",
-        "text_l2": "I was supposed to practice today."
+        "timestamp_end": "02:10.50"
       },
       {
         "id": "phrase_46",
         "text_l1": "¿Oyeron lo de mis primos?",
         "timestamp": "02:11.00",
-        "timestamp_end": "02:13.00",
-        "text_l2": "Did you hear about my cousins?"
+        "timestamp_end": "02:13.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "Oigan, ¿y si ustedes me ayudan",
         "timestamp": "02:14.00",
-        "timestamp_end": "02:15.50",
-        "text_l2": "Hey, what if you help me"
+        "timestamp_end": "02:15.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "con la danza?",
         "timestamp": "02:15.50",
-        "timestamp_end": "02:17.00",
-        "text_l2": "with the dance?"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "Marco, tú irás a la mitad.",
         "timestamp": "02:19.50",
-        "timestamp_end": "02:21.00",
-        "text_l2": "Marco, you'll go in the middle."
+        "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "Jorge, tú hasta el final.",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:23.00",
-        "text_l2": "Jorge, you go to the end."
+        "timestamp_end": "02:23.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "Tienen que caminar y moverlo",
         "timestamp": "02:25.00",
-        "timestamp_end": "02:26.50",
-        "text_l2": "You have to walk and move it"
+        "timestamp_end": "02:26.50"
       },
       {
         "id": "phrase_52",
         "text_l1": "de un lado a otro.",
         "timestamp": "02:26.50",
-        "timestamp_end": "02:27.50",
-        "text_l2": "from side to side."
+        "timestamp_end": "02:27.50"
       },
       {
         "id": "phrase_53",
         "text_l1": "¡Actúen como dragón!",
         "timestamp": "02:28.00",
-        "timestamp_end": "02:29.50",
-        "text_l2": "Act like a dragon!"
+        "timestamp_end": "02:29.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "¡Síganme!",
         "timestamp": "02:32.00",
-        "timestamp_end": "02:33.50",
-        "text_l2": "Follow me!"
+        "timestamp_end": "02:33.50"
       },
       {
         "id": "phrase_55",
         "text_l1": "¡Ay, no!",
         "timestamp": "02:42.00",
-        "timestamp_end": "02:43.50",
-        "text_l2": "Oh, no!"
+        "timestamp_end": "02:43.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "No mantuve la vista al frente",
         "timestamp": "02:44.00",
-        "timestamp_end": "02:45.50",
-        "text_l2": "I didn't keep my eyes forward"
+        "timestamp_end": "02:45.50"
       },
       {
         "id": "phrase_57",
         "text_l1": "y he arruinado el dragón",
         "timestamp": "02:46.00",
-        "timestamp_end": "02:47.50",
-        "text_l2": "and I've ruined the dragon"
+        "timestamp_end": "02:47.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "de mi bisabuelo.",
         "timestamp": "02:47.50",
-        "timestamp_end": "02:49.00",
-        "text_l2": "of my great-grandfather."
+        "timestamp_end": "02:49.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "No puede salir así",
         "timestamp": "02:50.00",
-        "timestamp_end": "02:51.50",
-        "text_l2": "It can't go out like this"
+        "timestamp_end": "02:51.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "en el desfile.",
         "timestamp": "02:51.50",
-        "timestamp_end": "02:53.00",
-        "text_l2": "in the parade."
+        "timestamp_end": "02:53.00"
       },
       {
         "id": "phrase_61",
         "text_l1": "¡Perfecto!",
         "timestamp": "02:58.00",
-        "timestamp_end": "02:59.50",
-        "text_l2": "Perfect!"
+        "timestamp_end": "02:59.50"
       },
       {
         "id": "phrase_62",
         "text_l1": "Pero el resto de la cabeza",
         "timestamp": "03:00.00",
-        "timestamp_end": "03:01.50",
-        "text_l2": "But the rest of the head"
+        "timestamp_end": "03:01.50"
       },
       {
         "id": "phrase_63",
         "text_l1": "del dragón tiene tela roja.",
         "timestamp": "03:01.50",
-        "timestamp_end": "03:03.00",
-        "text_l2": "of the dragon has red fabric."
+        "timestamp_end": "03:03.00"
       },
       {
         "id": "phrase_64",
         "text_l1": "Necesitamos tela roja",
         "timestamp": "03:03.00",
-        "timestamp_end": "03:04.50",
-        "text_l2": "We need red fabric"
+        "timestamp_end": "03:04.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "para hacer la nariz.",
         "timestamp": "03:04.50",
-        "timestamp_end": "03:06.00",
-        "text_l2": "to make the nose."
+        "timestamp_end": "03:06.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "¡Y rápido!",
         "timestamp": "03:06.00",
-        "timestamp_end": "03:07.00",
-        "text_l2": "And quick!"
+        "timestamp_end": "03:07.00"
       },
       {
         "id": "phrase_67",
         "text_l1": "Las servilletas eran perfectas.",
         "timestamp": "03:18.50",
-        "timestamp_end": "03:20.50",
-        "text_l2": "The napkins were perfect."
+        "timestamp_end": "03:20.50"
       },
       {
         "id": "phrase_68",
         "text_l1": "Y al poco rato,",
         "timestamp": "03:22.00",
-        "timestamp_end": "03:23.50",
-        "text_l2": "And shortly after,"
+        "timestamp_end": "03:23.50"
       },
       {
         "id": "phrase_69",
         "text_l1": "la nariz estaba como nueva.",
         "timestamp": "03:23.50",
-        "timestamp_end": "03:25.50",
-        "text_l2": "the nose was like new."
+        "timestamp_end": "03:25.50"
       },
       {
         "id": "phrase_70",
         "text_l1": "El dragón se ve estupendo.",
         "timestamp": "03:26.00",
-        "timestamp_end": "03:28.50",
-        "text_l2": "The dragon looks great."
+        "timestamp_end": "03:28.50"
       },
       {
         "id": "phrase_71",
         "text_l1": "¡Ay, pero ya es muy tarde!",
         "timestamp": "03:29.00",
-        "timestamp_end": "03:31.00",
-        "text_l2": "Oh, but it's very late!"
+        "timestamp_end": "03:31.00"
       },
       {
         "id": "phrase_72",
         "text_l1": "El desfile seguro empezó.",
         "timestamp": "03:32.00",
-        "timestamp_end": "03:33.50",
-        "text_l2": "The parade surely started."
+        "timestamp_end": "03:33.50"
       },
       {
         "id": "phrase_73",
         "text_l1": "Oye, dijiste que el desfile",
         "timestamp": "03:34.00",
-        "timestamp_end": "03:35.50",
-        "text_l2": "Hey, you said the parade"
+        "timestamp_end": "03:35.50"
       },
       {
         "id": "phrase_74",
         "text_l1": "termina con la danza del dragón.",
         "timestamp": "03:35.50",
-        "timestamp_end": "03:37.50",
-        "text_l2": "ends with the dragon dance."
+        "timestamp_end": "03:37.50"
       },
       {
         "id": "phrase_75",
         "text_l1": "Sí, pero es tan tarde",
         "timestamp": "03:37.50",
-        "timestamp_end": "03:39.00",
-        "text_l2": "Yes, but it's so late"
+        "timestamp_end": "03:39.00"
       },
       {
         "id": "phrase_76",
         "text_l1": "que no sé si podremos llegar",
         "timestamp": "03:39.00",
-        "timestamp_end": "03:40.50",
-        "text_l2": "that I don't know if we can arrive"
+        "timestamp_end": "03:40.50"
       },
       {
         "id": "phrase_77",
         "text_l1": "antes de que termine.",
         "timestamp": "03:40.50",
-        "timestamp_end": "03:42.00",
-        "text_l2": "before it ends."
+        "timestamp_end": "03:42.00"
       },
       {
         "id": "phrase_78",
         "text_l1": "¿Estás hablando en serio?",
         "timestamp": "03:42.00",
-        "timestamp_end": "03:43.50",
-        "text_l2": "Are you serious?"
+        "timestamp_end": "03:43.50"
       },
       {
         "id": "phrase_79",
         "text_l1": "Tomaremos el atajo del parque.",
         "timestamp": "03:43.50",
-        "timestamp_end": "03:45.50",
-        "text_l2": "We'll take the park shortcut."
+        "timestamp_end": "03:45.50"
       },
       {
         "id": "phrase_80",
         "text_l1": "Con lo que hemos practicado,",
         "timestamp": "03:45.50",
-        "timestamp_end": "03:47.00",
-        "text_l2": "With what we've practiced,"
+        "timestamp_end": "03:47.00"
       },
       {
         "id": "phrase_81",
         "text_l1": "somos expertos",
         "timestamp": "03:47.00",
-        "timestamp_end": "03:48.50",
-        "text_l2": "we are experts"
+        "timestamp_end": "03:48.50"
       },
       {
         "id": "phrase_82",
         "text_l1": "en el manejo del dragón.",
         "timestamp": "03:48.50",
-        "timestamp_end": "03:50.50",
-        "text_l2": "in handling the dragon."
+        "timestamp_end": "03:50.50"
       },
       {
         "id": "phrase_83",
         "text_l1": "Está bien, hay que intentarlo.",
         "timestamp": "03:53.50",
-        "timestamp_end": "03:55.50",
-        "text_l2": "Okay, we have to try."
+        "timestamp_end": "03:55.50"
       },
       {
         "id": "phrase_84",
         "text_l1": "¡Hola, papá!",
         "timestamp": "03:56.00",
-        "timestamp_end": "03:57.50",
-        "text_l2": "Hi, Dad!"
+        "timestamp_end": "03:57.50"
       },
       {
         "id": "phrase_85",
         "text_l1": "Lili, ¿dónde estabas?",
         "timestamp": "03:58.00",
-        "timestamp_end": "03:59.50",
-        "text_l2": "Lili, where were you?"
+        "timestamp_end": "03:59.50"
       },
       {
         "id": "phrase_86",
         "text_l1": "No importa, tengo malas noticias.",
         "timestamp": "04:00.00",
-        "timestamp_end": "04:02.00",
-        "text_l2": "Never mind, I have bad news."
+        "timestamp_end": "04:02.00"
       },
       {
         "id": "phrase_87",
         "text_l1": "Tus primos siguen atorados",
         "timestamp": "04:03.00",
-        "timestamp_end": "04:05.50",
-        "text_l2": "Your cousins are still stuck"
+        "timestamp_end": "04:05.50"
       },
       {
         "id": "phrase_88",
         "text_l1": "en el tránsito",
         "timestamp": "04:05.50",
-        "timestamp_end": "04:06.50",
-        "text_l2": "in traffic"
+        "timestamp_end": "04:06.50"
       },
       {
         "id": "phrase_89",
         "text_l1": "y no hay quien te ayude",
         "timestamp": "04:06.50",
-        "timestamp_end": "04:08.50",
-        "text_l2": "and there's no one to help you"
+        "timestamp_end": "04:08.50"
       },
       {
         "id": "phrase_90",
         "text_l1": "con el dragón.",
         "timestamp": "04:08.50",
-        "timestamp_end": "04:09.50",
-        "text_l2": "with the dragon."
+        "timestamp_end": "04:09.50"
       },
       {
         "id": "phrase_91",
         "text_l1": "Disculpa.",
         "timestamp": "04:09.50",
-        "timestamp_end": "04:10.50",
-        "text_l2": "Sorry."
+        "timestamp_end": "04:10.50"
       },
       {
         "id": "phrase_92",
         "text_l1": "Claro, conozco un par de expertos.",
         "timestamp": "04:10.50",
-        "timestamp_end": "04:12.50",
-        "text_l2": "Sure, I know a couple of experts."
+        "timestamp_end": "04:12.50"
       },
       {
         "id": "phrase_93",
         "text_l1": "Y así,",
         "timestamp": "04:24.00",
-        "timestamp_end": "04:25.50",
-        "text_l2": "And so,"
+        "timestamp_end": "04:25.50"
       },
       {
         "id": "phrase_94",
         "text_l1": "con un poco de práctica",
         "timestamp": "04:26.00",
-        "timestamp_end": "04:27.50",
-        "text_l2": "with a little practice"
+        "timestamp_end": "04:27.50"
       },
       {
         "id": "phrase_95",
         "text_l1": "y los materiales adecuados,",
         "timestamp": "04:27.50",
-        "timestamp_end": "04:29.50",
-        "text_l2": "and the right materials,"
+        "timestamp_end": "04:29.50"
       },
       {
         "id": "phrase_96",
         "text_l1": "un mono se convirtió en dragón.",
         "timestamp": "04:30.00",
-        "timestamp_end": "04:33.00",
-        "text_l2": "a monkey became a dragon."
+        "timestamp_end": "04:33.00"
       }
     ],
     "phrases_with_token_translations": "[Era] un hermoso día. => [It was] a beautiful day.\nEra [un] hermoso día. => It was [a] beautiful day.\nEra un [hermoso] día. => It was a [beautiful] day.\nEra un hermoso [día]. => It was a beautiful [day].\n\n[Jorge] y Marco paseaban en la calle => [Jorge] and Marco were walking down the street\nJorge [y] Marco paseaban en la calle => Jorge [and] Marco were walking down the street\nJorge y [Marco] paseaban en la calle => Jorge and [Marco] were walking down the street\nJorge y Marco [paseaban] en la calle => Jorge and Marco [were walking] down the street\nJorge y Marco paseaban [en] la calle => Jorge and Marco were walking [down] the street\nJorge y Marco paseaban en [la] calle => Jorge and Marco were walking down [the] street\nJorge y Marco paseaban en la [calle] => Jorge and Marco were walking down the [street]\n\n[cuando] de repente... => [when] suddenly...\ncuando [de repente]... => when [suddenly]...\n\n¡[Toda] una calle estaba de fiesta! => A [whole] street was partying!\n¡Toda [una] calle estaba de fiesta! => [A] whole street was partying!\n¡Toda una [calle] estaba de fiesta! => A whole [street] was partying!\n¡Toda una calle [estaba] de fiesta! => A whole street [was] partying!\n¡Toda una calle estaba [de fiesta]! => A whole street was [partying]!\n\n¿Era el [cumpleaños] de la calle? => Was it the street's [birthday]?\n¿Era el cumpleaños [de] la calle? => of\n¿Era el cumpleaños de [la] calle? => Was it [the] street's birthday?\n¿Era el cumpleaños de la [calle]? => street # mapping the noun directly to avoid the possessive 's for clarity\n\n¡[Feliz] año nuevo! => [Happy] New Year!\n¡Feliz [año] nuevo! => Happy New [Year]!\n¡Feliz año [nuevo]! => Happy [New] Year!\n\n[No] es año nuevo. => It's [not] New Year's.\nNo [es] año nuevo. => it is # \"es\" is \"is\", \"It's\" is \"it is\"\nNo es [año] nuevo. => It's not New [Year's.]\nNo es año [nuevo.] => It's not [New] Year's.\n\n[Año nuevo] es el primero de enero. => [New Year's] is on January first.\nAño nuevo [es] el primero de enero. => New Year's [is] on January first.\nAño nuevo es [el] primero de enero. => the\nAño nuevo es el [primero] de enero. => New Year's is on January [first.]\nAño nuevo es el primero [de] enero. => of\nAño nuevo es el primero de [enero.] => New Year's is on [January] first.\n\n[Sí], pero hoy es el año nuevo chino. => [Yes], but today is Chinese New Year.\nSí, [pero] hoy es el año nuevo chino. => Yes, [but] today is Chinese New Year.\nSí, pero [hoy] es el año nuevo chino. => Yes, but [today] is Chinese New Year.\nSí, pero hoy [es] el año nuevo chino. => Yes, but today [is] Chinese New Year.\nSí, pero hoy es [el] año nuevo chino. => the\nSí, pero hoy es el [año nuevo] chino. => Yes, but today is Chinese [New Year]\nSí, pero hoy es el año nuevo [chino]. => Yes, but today is [Chinese] New Year.\n\n[Además] supuse que ustedes no eran chinos => [Plus] I figured you weren't Chinese\nAdemás [supuse] que ustedes no eran chinos => Plus [I figured] you weren't Chinese\nAdemás supuse [que] ustedes no eran chinos => that\nAdemás supuse que [ustedes] no eran chinos => Plus I figured [you] weren't Chinese\nAdemás supuse que ustedes [no eran] chinos => Plus I figured you [weren't] Chinese\nAdemás supuse que ustedes no eran [chinos] => Plus I figured you weren't [Chinese]\n\n[porque] llegaron aquí mirando así. => [because] you arrived here looking like that.\nporque [llegaron] aquí mirando así. => because [you arrived] here looking like that.\nporque llegaron [aquí] mirando así. => because you arrived [here] looking like that.\nporque llegaron aquí [mirando] así. => because you arrived here [looking] like that.\nporque llegaron aquí mirando [así] => because you arrived here looking [like that]\n\n[Bienvenidos] al barrio chino. Soy Lili. => [Welcome] to Chinatown. I'm Lili.\nBienvenidos [al] barrio chino. Soy Lili. => Welcome [to] Chinatown. I'm Lili.\nBienvenidos al [barrio chino]. Soy Lili. => Welcome to [Chinatown]. I'm Lili.\nBienvenidos al barrio chino. [Soy] Lili. => Welcome to Chinatown. [I'm] Lili.\nBienvenidos al barrio chino. Soy [Lili]. => Welcome to Chinatown. I'm [Lili]\n\n[Soy] Marco y él es Jorge. => [I'm] Marco and this is Jorge.\nSoy [Marco] y él es Jorge. => I'm [Marco] and this is Jorge.\nSoy Marco [y] él es Jorge. => I'm Marco [and] this is Jorge.\nSoy Marco y [él] es Jorge. => I'm Marco and [this] is Jorge.\nSoy Marco y él [es] Jorge. => I'm Marco and this [is] Jorge.\nSoy Marco y él es [Jorge]. => I'm Marco and this is [Jorge].\n\n[Gong Xi Fa Cai], tía Lili. => [Gong Xi Fa Cai], Aunt Lili.\nGong Xi Fa Cai, [tía] Lili. => Gong Xi Fa Cai, [Aunt] Lili.\nGong Xi Fa Cai, tía [Lili] => Gong Xi Fa Cai, Aunt [Lili]\n\n[Feliz] año nuevo a ti también, Lili. => [Happy] New Year to you too, Lili.\nFeliz [año] nuevo a ti también, Lili. => Happy New [Year] to you too, Lili.\nFeliz año [nuevo] a ti también, Lili. => Happy [New] Year to you too, Lili.\nFeliz año nuevo [a] ti también, Lili. => Happy New Year [to] you too, Lili.\nFeliz año nuevo a [ti] también, Lili. => Happy New Year to [you] too, Lili.\nFeliz año nuevo a ti [también], Lili. => Happy New Year to you [too], Lili.\nFeliz año nuevo a ti también, [Lili] => Happy New Year to you too, [Lili]\n\n[Pero] lamento decirte => [But] I'm sorry to tell you\nPero [lamento] decirte => But [I'm sorry] to tell you\nPero lamento [decirte] => But I'm sorry [to tell you]\n\n[que] tus primos vienen retrasados => [that] your cousins are running late\nque [tus] primos vienen retrasados => that [your] cousins are running late\nque tus [primos] vienen retrasados => that your [cousins] are running late\nque tus primos [vienen] retrasados => that your cousins [are running] late # 'vienen' literally translates to 'come' but functions as 'are running' in this context\nque tus primos vienen [retrasados] => that your cousins are running [late]\n\n[y] no tendrán tiempo de practicar. => [and] won't have time to practice.\ny [no tendrán] tiempo de practicar. => and [won't have] time to practice.\ny no tendrán [tiempo] de practicar. => and won't have [time] to practice.\ny no tendrán tiempo [de] practicar. => and won't have time [to] practice.\ny no tendrán tiempo de [practicar] => and won't have time to [practice]\n\n[¡Ay], no! => [Oh], no!\n¡Ay, [no]! => Oh, [no]!\n\n[No] hay de qué preocuparse. => [No] need to worry.\nNo [hay] de qué preocuparse. => there is, need\nNo hay [de qué] preocuparse. => of what, about which\nNo hay de qué [preocuparse]. => No need [to worry].\n\n[Mientras tanto], tu papá quiere => [Meanwhile], your dad wants\nMientras tanto, [tu] papá quiere => Meanwhile, [your] dad wants\nMientras tanto, tu [papá] quiere => Meanwhile, your [dad] wants\nMientras tanto, tu papá [quiere] => Meanwhile, your dad [wants]\n\nque [le] traigas salsa de ciruela => you to bring [him] plum sauce\nque le [traigas] salsa de ciruela => you to bring\nque le traigas [salsa] de ciruela => you to bring him plum [sauce]\nque le traigas salsa de [ciruela] => you to bring him [plum] sauce\n\n[de] la bodega. => [from] the warehouse.\nde [la] bodega. => from [the] warehouse.\nde la [bodega] => from the [warehouse]\n\n[No] hay problema => [No] problem\nNo [hay] problema => there is\nNo hay [problema] => No [problem]\n\n¡[Oh], y esto te traerá => [Oh], and this will bring you\n¡Oh, [y] esto te traerá => Oh, [and] this will bring you\n¡Oh, y [esto] te traerá => Oh, and [this] will bring you\n¡Oh, y esto [te] traerá => Oh, and this will bring [you]\n¡Oh, y esto te [traerá] => Oh, and this [will bring] you\n\n[buena] suerte este año! => [good] luck this year!\nbuena [suerte] este año! => good [luck] this year!\nbuena suerte [este] año! => good luck [this] year!\nbuena suerte este [año] => good luck this [year]\n\n¡[Guau]! ¡Xie xie! => [Wow]! Xie xie!\n¡Guau! ¡[Xie] xie! => Wow! [Xie] xie!\n¡Guau! ¡Xie [xie]! => Wow! Xie [xie]!\n\n¿[Qué] es eso? => [What] is that?\n¿Qué [es] eso? => What [is] that?\n¿Qué es [eso]? => What is [that]?\n\n[Es] una tradición china dar dinero => [It's] a Chinese tradition to give money\nEs [una] tradición china dar dinero => It's [a] Chinese tradition to give money\nEs una [tradición] china dar dinero => It's a Chinese [tradition] to give money\nEs una tradición [china] dar dinero => It's a [Chinese] tradition to give money\nEs una tradición china [dar] dinero => It's a Chinese tradition [to give] money\nEs una tradición china dar [dinero] => It's a Chinese tradition to give [money]\n\n[a] los niños en año nuevo. => [to] children on New Year's.\na [los] niños en año nuevo. => the # translated as \"the\", but omitted in the English sentence\na los [niños] en año nuevo. => to [children] on New Year's.\na los niños [en] año nuevo. => to children [on] New Year's.\na los niños en [año nuevo]. => to children on [New Year's].\n\n[Es] buena suerte. => [It's] good luck.\nEs [buena] suerte. => It's [good] luck.\nEs buena [suerte]. => It's good [luck]\n\n[Oigan], ¿quieren ver un dragón? => [Hey], do you want to see a dragon?\nOigan, ¿[quieren] ver un dragón? => Hey, [do you want] to see a dragon? # Spanish verb conjugation covers the subject and question auxiliary\nOigan, ¿quieren [ver] un dragón? => Hey, do you want [to see] a dragon?\nOigan, ¿quieren ver [un] dragón? => Hey, do you want to see [a] dragon?\nOigan, ¿quieren ver un [dragón]? => Hey, do you want to see a [dragon]?\n\n¡[Síganme]! => [Follow me]!\n\n[Hay] fuegos artificiales hoy. => [There are] fireworks today.\nHay [fuegos artificiales] hoy. => There are [fireworks] today.\nHay fuegos artificiales [hoy]. => There are fireworks [today].\n\n[Y] un desfile. => [And] a parade.\nY [un] desfile. => And [a] parade.\nY un [desfile]. => And a [parade].\n\n[Y] al terminar el desfile, => [And] when the parade ends,\nY [al terminar] el desfile, => upon ending, when finishing\nY al terminar [el desfile], => And when [the parade] ends,\n\n[pues] habrá un dragón. => [well], there will be a dragon.\npues [habrá] un dragón. => well, [there will be] a dragon.\npues habrá [un] dragón. => well, there will be [a] dragon.\npues habrá un [dragón] => well, there will be a [dragon]\n\n[Hola], Jorge. Hola, Marco. => [Hi], Jorge. Hi, Marco.\nHola, [Jorge]. Hola, Marco. => Hi, [Jorge]. Hi, Marco.\nHola, Jorge. [Hola], Marco. => Hi, Jorge. [Hi], Marco.\nHola, Jorge. Hola, [Marco]. => Hi, Jorge. Hi, [Marco].\n\n[Lucen] deliciosos. => [Those look] delicious.\nLucen [deliciosos]. => Those look [delicious].\n\nYo [siempre] estoy a la mitad, => I'm [always] in the middle,\nYo siempre [estoy] a la mitad, => am\nYo siempre estoy [a] la mitad, => I'm always [in] the middle,\nYo siempre estoy a [la] mitad, => I'm always in [the] middle,\nYo siempre estoy a la [mitad], => I'm always in the [middle], # Aligned components of \"I'm\" and \"a la mitad\" individually for maximum granularity\n\n[pero] este año yo dirigiré => [but] this year I will lead\npero [este] año yo dirigiré => but [this] year I will lead\npero este [año] yo dirigiré => but this [year] I will lead\npero este año [yo] dirigiré => but this year [I] will lead\npero este año yo [dirigiré] => but this year I [will lead]\n\n[la] danza del dragón => [the] dragon dance\nla [danza] del dragón => the dragon [dance]\nla danza [del] dragón => of the\nla danza del [dragón] => the [dragon] dance\n\n[Este] es un gran honor. => [This] is a great honor.\nEste [es] un gran honor. => This [is] a great honor.\nEste es [un] gran honor. => This is [a] great honor.\nEste es un [gran] honor. => This is a [great] honor.\nEste es un gran [honor] => This is a great [honor]\n\n[Mis] padres están muy orgullosos. => [My] parents are very proud.\nMis [padres] están muy orgullosos. => My [parents] are very proud.\nMis padres [están] muy orgullosos. => My parents [are] very proud.\nMis padres están [muy] orgullosos. => My parents are [very] proud.\nMis padres están muy [orgullosos]. => My parents are [proud].\n\n[Se suponía] que practicaría hoy. => [I was supposed] to practice today.\nSe suponía [que] practicaría hoy. => that # The conjunction \"that\" is omitted in the English sentence\nSe suponía que [practicaría] hoy. => I was supposed [to practice] today.\nSe suponía que practicaría [hoy]. => I was supposed to practice [today].\n\n¿[Oyeron] lo de mis primos? => [Did you hear] about my cousins?\n¿Oyeron [lo de] mis primos? => Did you hear [about] my cousins? # \"lo de\" is a common Spanish structure meaning \"the thing about\" or \"the news about\"\n¿Oyeron lo de [mis] primos? => Did you hear about [my] cousins?\n¿Oyeron lo de mis [primos]? => Did you hear about my [cousins]?\n\n[Oigan], ¿y si ustedes me ayudan => [Hey], what if you help me\nOigan, ¿[y si] ustedes me ayudan => Hey, [what if] you help me\nOigan, ¿y si [ustedes] me ayudan => Hey, what if [you] help me\nOigan, ¿y si ustedes [me] ayudan => Hey, what if you help [me]\nOigan, ¿y si ustedes me [ayudan] => Hey, what if you [help] me\n\n[con] la danza? => [with] the dance?\ncon [la] danza? => with [the] dance?\ncon la [danza]? => with the [dance]?\n\n[Marco], tú irás a la mitad. => [Marco], you'll go in the middle.\nMarco, [tú] irás a la mitad. => you\nMarco, tú [irás] a la mitad. => will go # \"irás\" contains both the future tense auxiliary and the main verb \"go\"\nMarco, tú irás [a] la mitad. => Marco, you'll go [in] the middle.\nMarco, tú irás a [la] mitad. => Marco, you'll go in [the] middle.\nMarco, tú irás a la [mitad]. => Marco, you'll go in the [middle].\n\n[Jorge], tú hasta el final. => [Jorge], you go to the end.\nJorge, [tú] hasta el final. => Jorge, [you] go to the end.\nJorge, tú [hasta] el final. => Jorge, you go [to] the end.\nJorge, tú hasta [el] final. => Jorge, you go to [the] end.\nJorge, tú hasta el [final]. => Jorge, you go to the [end].\n\n[Tienen que] caminar y moverlo => [You have to] walk and move it\nTienen que [caminar] y moverlo => You have to [walk] and move it\nTienen que caminar [y] moverlo => You have to walk [and] move it\nTienen que caminar y [moverlo] => You have to walk and [move it]\n\n[de] un lado a otro. => [from] side to side.\nde [un] lado a otro. => a, one\nde un [lado] a otro. => from [side] to side.\nde un lado [a] otro. => from side [to] side.\nde un lado a [otro]. => from side to [side].\n\n¡[Actúen] como dragón! => [Act] like a dragon!\n¡Actúen [como] dragón! => Act [like] a dragon!\n¡Actúen como [dragón]! => Act like a [dragon]\n\n¡[Síganme]! => [Follow me]! # \"Síganme\" is the plural imperative of \"seguir\" (to follow) with the attached object pronoun \"me\" (me)\n\n[¡Ay], no! => [Oh], no!\n¡Ay, [no]! => Oh, [no]!\n\n[No mantuve] la vista al frente => [I didn't keep] my eyes forward\nNo mantuve [la vista] al frente => I didn't keep [my eyes] forward\nNo mantuve la vista [al frente] => I didn't keep my eyes [forward]\n\n[y] he arruinado el dragón => [and] I've ruined the dragon\ny [he] arruinado el dragón => and [I've] ruined the dragon # he implies the subject \"I\" and the auxiliary \"have\"\ny he [arruinado] el dragón => and I've [ruined] the dragon\ny he arruinado [el] dragón => and I've ruined [the] dragon\ny he arruinado el [dragón] => and I've ruined the [dragon]\n\n[de] mi bisabuelo. => [of] my great-grandfather.\nde [mi] bisabuelo. => of [my] great-grandfather.\nde mi [bisabuelo]. => of my [great-grandfather].\n\n[No puede] salir así => [It can't] go out like this\nNo puede [salir] así => It can't [go out] like this\nNo puede salir [así] => It can't go out [like this]\n\n[en] el desfile. => [in] the parade.\nen [el] desfile. => in [the] parade.\nen el [desfile]. => in the [parade].\n\n¡[Perfecto]! => [Perfect]!\n\n[Pero] el resto de la cabeza => [But] the rest of the head\nPero [el] resto de la cabeza => But [the] rest of the head\nPero el [resto] de la cabeza => But the [rest] of the head\nPero el resto [de] la cabeza => But the rest [of] the head\nPero el resto de [la] cabeza => But the rest of [the] head\nPero el resto de la [cabeza] => But the rest of the [head]\n\n[del] dragón tiene tela roja. => [of the] dragon has red fabric.\ndel [dragón] tiene tela roja. => of the [dragon] has red fabric.\ndel dragón [tiene] tela roja. => of the dragon [has] red fabric.\ndel dragón tiene [tela] roja. => of the dragon has red [fabric].\ndel dragón tiene tela [roja]. => of the dragon has [red] fabric.\n\n[Necesitamos] tela roja => [We need] red fabric\nNecesitamos [tela] roja => We need red [fabric]\nNecesitamos tela [roja] => We need [red] fabric\n\n[para] hacer la nariz. => [to] make the nose.\npara [hacer] la nariz. => to [make] the nose.\npara hacer [la] nariz. => to make [the] nose.\npara hacer la [nariz] => to make the [nose]\n\n¡[Y] rápido! => [And] quick!\n¡Y [rápido]! => And [quick]!\n\n[Las] servilletas eran perfectas. => [The] napkins were perfect.\nLas [servilletas] eran perfectas. => The [napkins] were perfect.\nLas servilletas [eran] perfectas. => The napkins [were] perfect.\nLas servilletas eran [perfectas]. => The napkins were [perfect].\n\n[Y] al poco rato, => [And] shortly after,\nY [al poco rato], => And [shortly after],\nY al [poco] rato, => short, little\nY al poco [rato], => while, bit of time, moment\n\n[la] nariz estaba como nueva. => [the] nose was like new.\nla [nariz] estaba como nueva. => the [nose] was like new.\nla nariz [estaba] como nueva. => the nose [was] like new.\nla nariz estaba [como] nueva. => the nose was [like] new.\nla nariz estaba como [nueva]. => the nose was like [new].\n\n[El] dragón se ve estupendo. => [The] dragon looks great.\nEl [dragón] se ve estupendo. => The [dragon] looks great.\nEl dragón [se ve] estupendo. => The dragon [looks] great.\nEl dragón se ve [estupendo] => The dragon looks [great]\n\n¡[Ay], pero ya es muy tarde! => [Oh], but it's very late!\n¡Ay, [pero] ya es muy tarde! => Oh, [but] it's very late!\n¡Ay, pero [ya] es muy tarde! => already, now\n¡Ay, pero ya [es] muy tarde! => Oh, but [it's] very late!\n¡Ay, pero ya es [muy] tarde! => Oh, but it's [very] late!\n¡Ay, pero ya es muy [tarde]! => Oh, but it's very [late]!\n\n[El] desfile seguro empezó. => [The] parade surely started.\nEl [desfile] seguro empezó. => The [parade] surely started.\nEl desfile [seguro] empezó. => The parade [surely] started.\nEl desfile seguro [empezó.] => The parade surely [started.]\n\n[Oye], dijiste que el desfile => [Hey], you said the parade\nOye, [dijiste] que el desfile => Hey, [you said] the parade\nOye, dijiste [que] el desfile => that\nOye, dijiste que [el] desfile => Hey, you said [the] parade\nOye, dijiste que el [desfile] => Hey, you said the [parade]\n\n[termina] con la danza del dragón. => [ends] with the dragon dance.\ntermina [con] la danza del dragón. => ends [with] the dragon dance.\ntermina con [la] danza del dragón. => ends with [the] dragon dance.\ntermina con la [danza] del dragón. => ends with the dragon [dance].\ntermina con la danza [del] dragón. => of the\ntermina con la danza del [dragón]. => ends with the [dragon] dance.\n\n[Sí], pero es tan tarde => [Yes], but it's so late\nSí, [pero] es tan tarde => Yes, [but] it's so late\nSí, pero [es] tan tarde => Yes, but [it's] so late\nSí, pero es [tan] tarde => Yes, but it's [so] late\nSí, pero es tan [tarde] => Yes, but it's so [late]\n\n[que] no sé si podremos llegar => [that] I don't know if we can arrive\nque [no sé] si podremos llegar => that [I don't know] if we can arrive\nque no sé [si] podremos llegar => that I don't know [if] we can arrive\nque no sé si [podremos] llegar => that I don't know if [we can] arrive\nque no sé si podremos [llegar] => that I don't know if we can [arrive]\n\n[antes de que] termine => [before] it ends\nantes de que [termine] => before [it ends]\n\n¿[Estás] hablando en serio? => [Are you] serious?\n¿Estás [hablando] en serio? => talking, speaking\n¿Estás hablando [en serio]? => Are you [serious]?\n\n[Tomaremos] el atajo del parque. => [We'll take] the park shortcut.\nTomaremos [el] atajo del parque. => We'll take [the] park shortcut.\nTomaremos el [atajo] del parque. => We'll take the park [shortcut].\nTomaremos el atajo [del] parque. => of the # \"del\" is a contraction of \"de\" and \"el\"\nTomaremos el atajo del [parque]. => We'll take the [park] shortcut.\n\n[Con] lo que hemos practicado, => [With] what we've practiced,\nCon [lo que] hemos practicado, => With [what] we've practiced,\nCon lo que [hemos] practicado, => With what [we've] practiced, # Spanish \"hemos\" encodes both \"we\" and \"have\"\nCon lo que hemos [practicado], => With what we've [practiced],\n\n[somos] expertos => [we are] experts\nsomos [expertos] => we are [experts]\n\n[en] el manejo del dragón. => [in] handling the dragon.\nen el [manejo] del dragón. => in [handling] the dragon.\nen el manejo [del] dragón. => in handling [the] dragon. # \"del\" is \"de + el\", mapping to the English article\nen el manejo del [dragón.] => in handling the [dragon.]\n\n[Está bien], hay que intentarlo. => [Okay], we have to try.\nEstá bien, [hay que] intentarlo. => Okay, [we have to] try.\nEstá bien, hay que [intentarlo] => to try it # 'intentar' is 'to try' and 'lo' is 'it'\n\n[¡Hola], papá! => [Hi], Dad!\n¡Hola, [papá]! => Hi, [Dad]!\n\n[Lili], ¿dónde estabas? => [Lili], where were you?\nLili, ¿[dónde] estabas? => Lili, [where] were you?\nLili, ¿dónde [estabas]? => Lili, where [were you]?\n\n[No importa], tengo malas noticias. => [Never mind], I have bad news.\nNo importa, [tengo] malas noticias. => No importa, [I have] bad news.\nNo importa, tengo [malas] noticias. => Never mind, I have [bad] news.\nNo importa, tengo malas [noticias]. => Never mind, I have bad [news].\n\n[Tus] primos siguen atorados => [Your] cousins are still stuck\nTus [primos] siguen atorados => Your [cousins] are still stuck\nTus primos [siguen] atorados => Your cousins [are still] stuck\nTus primos siguen [atorados] => Your cousins are still [stuck]\n\n[en] el tránsito => [in] traffic\nen [el] tránsito => the\nen el [tránsito] => in [traffic]\n\n[y] no hay quien te ayude => [and] there's no one to help you\ny [no hay] quien te ayude => and [there's no] one to help you\ny no hay [quien] te ayude => and there's no [one] to help you\ny no hay quien [te] ayude => and there's no one to help [you]\ny no hay quien te [ayude] => and there's no one [to help] you\n\n[con] el dragón. => [with] the dragon.\ncon [el] dragón. => with [the] dragon.\ncon el [dragón]. => with the [dragon].\n\n[Disculpa]. => [Sorry].\n\n[Claro], conozco un par de expertos. => [Sure], I know a couple of experts.\nClaro, [conozco] un par de expertos. => Sure, [I know] a couple of experts.\nClaro, conozco [un] par de expertos. => Sure, I know [a] couple of experts.\nClaro, conozco un [par] de expertos. => Sure, I know a [couple] of experts.\nClaro, conozco un par [de] expertos. => Sure, I know a couple [of] experts.\nClaro, conozco un par de [expertos] => Sure, I know a couple of [experts]\n\n[Y] así, => [And] so,\nY [así], => And [so],\n\n[con] un poco de práctica => [with] a little practice\ncon [un] poco de práctica => with [a] little practice\ncon un [poco] de práctica => with a [little] practice\ncon un poco [de] práctica => of\ncon un poco de [práctica] => with a little [practice]\n\n[y] los materiales adecuados, => [and] the right materials,\ny [los] materiales adecuados, => and [the] right materials,\ny los [materiales] adecuados, => and the right [materials],\ny los materiales [adecuados], => and the [right] materials,\n\n[un] mono se convirtió en dragón. => [a] monkey became a dragon.\nun [mono] se convirtió en dragón. => a [monkey] became a dragon.\nun mono [se convirtió en] dragón. => a monkey [became] a dragon.\nun mono se convirtió en [dragón]. => a monkey became a [dragon].\n\n",
     "lessons": "# Un Encuentro Inesperado\n00:02.40 Era un hermoso día.\n00:05.40 Jorge y Marco paseaban en la calle\n00:07.40 cuando de repente...\n00:10.40 ¡Toda una calle estaba de fiesta!\n00:15.40 ¿Era el cumpleaños de la calle?\n\n# La Explicación del Año Nuevo Chino\n00:25.00 ¡Feliz año nuevo!\n00:27.50 No es año nuevo.\n00:28.50 Año nuevo es el primero de enero.\n00:31.50 Sí, pero hoy es el año nuevo chino.\n00:35.00 Además supuse que ustedes no eran chinos\n00:37.00 porque llegaron aquí mirando así.\n\n# Presentaciones en el Barrio Chino\n00:41.50 Bienvenidos al barrio chino. Soy Lili.\n00:44.50 Soy Marco y él es Jorge.\n00:49.00 Gong Xi Fa Cai, tía Lili.\n00:51.00 Feliz año nuevo a ti también, Lili.\n\n# La Sorpresa de los Primos\n00:54.00 Pero lamento decirte\n00:56.00 que tus primos vienen retrasados\n00:57.50 y no tendrán tiempo de practicar.\n00:59.00 ¡Ay, no!\n01:00.00 No hay de qué preocuparse.\n01:03.00 Mientras tanto, tu papá quiere\n01:04.50 que le traigas salsa de ciruela\n01:06.50 de la bodega.\n01:07.50 No hay problema.\n\n# La Buena Suerte del Año Nuevo\n01:09.00 ¡Oh, y esto te traerá\n01:10.50 buena suerte este año!\n01:13.00 ¡Guau! ¡Xie xie!\n01:17.00 ¿Qué es eso?\n01:19.00 Es una tradición china dar dinero\n01:21.00 a los niños en año nuevo.\n01:23.50 Es buena suerte.\n\n# La Invitación al Desfile\n01:26.00 Oigan, ¿quieren ver un dragón?\n01:31.00 ¡Síganme!\n01:35.00 Hay fuegos artificiales hoy.\n01:37.00 Y un desfile.\n01:39.00 Y al terminar el desfile,\n01:40.50 pues habrá un dragón.\n\n# El Encuentro con el Dragón\n01:51.00 Hola, Jorge. Hola, Marco.\n01:53.00 Lucen deliciosos.\n01:59.00 Yo siempre estoy a la mitad,\n02:02.00 pero este año yo dirigiré\n02:04.50 la danza del dragón.\n02:06.00 Este es un gran honor.\n02:07.50 Mis padres están muy orgullosos.\n\n# El Problema de Práctica\n02:09.00 Se suponía que practicaría hoy.\n02:11.00 ¿Oyeron lo de mis primos?\n02:14.00 Oigan, ¿y si ustedes me ayudan\n02:15.50 con la danza?\n02:19.50 Marco, tú irás a la mitad.\n02:21.00 Jorge, tú hasta el final.\n02:25.00 Tienen que caminar y moverlo\n02:26.50 de un lado a otro.\n02:28.00 ¡Actúen como dragón!\n02:32.00 ¡Síganme!\n\n# El Accidente del Dragón\n02:42.00 ¡Ay, no!\n02:44.00 No mantuve la vista al frente\n02:46.00 y he arruinado el dragón\n02:47.50 de mi bisabuelo.\n02:50.00 No puede salir así\n02:51.50 en el desfile.\n02:58.00 ¡Perfecto!\n\n# La Reparación del Dragón\n03:00.00 Pero el resto de la cabeza\n03:01.50 del dragón tiene tela roja.\n03:03.00 Necesitamos tela roja\n03:04.50 para hacer la nariz.\n03:06.00 ¡Y rápido!\n03:18.50 Las servilletas eran perfectas.\n03:22.00 Y al poco rato,\n03:23.50 la nariz estaba como nueva.\n\n# La Carrera Contra el Tiempo\n03:26.00 El dragón se ve estupendo.\n03:29.00 ¡Ay, pero ya es muy tarde!\n03:32.00 El desfile seguro empezó.\n03:34.00 Oye, dijiste que el desfile\n03:35.50 termina con la danza del dragón.\n03:37.50 Sí, pero es tan tarde\n03:39.00 que no sé si podremos llegar\n03:40.50 antes de que termine.\n03:42.00 ¿Estás hablando en serio?\n\n# El Atajo y la Decisión\n03:43.50 Tomaremos el atajo del parque.\n03:45.50 Con lo que hemos practicado,\n03:47.00 somos expertos\n03:48.50 en el manejo del dragón.\n03:53.50 Está bien, hay que intentarlo.\n\n# La Sorpresa Final\n03:56.00 ¡Hola, papá!\n03:58.00 Lili, ¿dónde estabas?\n04:00.00 No importa, tengo malas noticias.\n04:03.00 Tus primos siguen atorados\n04:05.50 en el tránsito\n04:06.50 y no hay quien te ayude\n04:08.50 con el dragón.\n04:09.50 Disculpa.\n04:10.50 Claro, conozco un par de expertos.\n\n# La Conclusión\n04:24.00 Y así,\n04:26.00 con un poco de práctica\n04:27.50 y los materiales adecuados,\n04:30.00 un mono se convirtió en dragón.",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "It was a beautiful day.",
+            "words": []
+          },
+          {
+            "text": "Jorge and Marco were walking down the street",
+            "words": []
+          },
+          {
+            "text": "when suddenly...",
+            "words": []
+          },
+          {
+            "text": "A whole street was partying!",
+            "words": []
+          },
+          {
+            "text": "Was it the street's birthday?",
+            "words": []
+          },
+          {
+            "text": "Happy New Year!",
+            "words": []
+          },
+          {
+            "text": "It's not New Year's.",
+            "words": []
+          },
+          {
+            "text": "New Year's is on January first.",
+            "words": []
+          },
+          {
+            "text": "Yes, but today is Chinese New Year.",
+            "words": []
+          },
+          {
+            "text": "Plus I figured you weren't Chinese",
+            "words": []
+          },
+          {
+            "text": "because you arrived here looking like that.",
+            "words": []
+          },
+          {
+            "text": "Welcome to Chinatown. I'm Lili.",
+            "words": []
+          },
+          {
+            "text": "I'm Marco and this is Jorge.",
+            "words": []
+          },
+          {
+            "text": "Gong Xi Fa Cai, Aunt Lili.",
+            "words": []
+          },
+          {
+            "text": "Happy New Year to you too, Lili.",
+            "words": []
+          },
+          {
+            "text": "But I'm sorry to tell you",
+            "words": []
+          },
+          {
+            "text": "that your cousins are running late",
+            "words": []
+          },
+          {
+            "text": "and won't have time to practice.",
+            "words": []
+          },
+          {
+            "text": "Oh, no!",
+            "words": []
+          },
+          {
+            "text": "No need to worry.",
+            "words": []
+          },
+          {
+            "text": "Meanwhile, your dad wants",
+            "words": []
+          },
+          {
+            "text": "you to bring him plum sauce",
+            "words": []
+          },
+          {
+            "text": "from the warehouse.",
+            "words": []
+          },
+          {
+            "text": "No problem.",
+            "words": []
+          },
+          {
+            "text": "Oh, and this will bring you",
+            "words": []
+          },
+          {
+            "text": "good luck this year!",
+            "words": []
+          },
+          {
+            "text": "Wow! Xie xie!",
+            "words": []
+          },
+          {
+            "text": "What is that?",
+            "words": []
+          },
+          {
+            "text": "It's a Chinese tradition to give money",
+            "words": []
+          },
+          {
+            "text": "to children on New Year's.",
+            "words": []
+          },
+          {
+            "text": "It's good luck.",
+            "words": []
+          },
+          {
+            "text": "Hey, do you want to see a dragon?",
+            "words": []
+          },
+          {
+            "text": "Follow me!",
+            "words": []
+          },
+          {
+            "text": "There are fireworks today.",
+            "words": []
+          },
+          {
+            "text": "And a parade.",
+            "words": []
+          },
+          {
+            "text": "And when the parade ends,",
+            "words": []
+          },
+          {
+            "text": "well, there will be a dragon.",
+            "words": []
+          },
+          {
+            "text": "Hi, Jorge. Hi, Marco.",
+            "words": []
+          },
+          {
+            "text": "Those look delicious.",
+            "words": []
+          },
+          {
+            "text": "I'm always in the middle,",
+            "words": []
+          },
+          {
+            "text": "but this year I will lead",
+            "words": []
+          },
+          {
+            "text": "the dragon dance.",
+            "words": []
+          },
+          {
+            "text": "This is a great honor.",
+            "words": []
+          },
+          {
+            "text": "My parents are very proud.",
+            "words": []
+          },
+          {
+            "text": "I was supposed to practice today.",
+            "words": []
+          },
+          {
+            "text": "Did you hear about my cousins?",
+            "words": []
+          },
+          {
+            "text": "Hey, what if you help me",
+            "words": []
+          },
+          {
+            "text": "with the dance?",
+            "words": []
+          },
+          {
+            "text": "Marco, you'll go in the middle.",
+            "words": []
+          },
+          {
+            "text": "Jorge, you go to the end.",
+            "words": []
+          },
+          {
+            "text": "You have to walk and move it",
+            "words": []
+          },
+          {
+            "text": "from side to side.",
+            "words": []
+          },
+          {
+            "text": "Act like a dragon!",
+            "words": []
+          },
+          {
+            "text": "Follow me!",
+            "words": []
+          },
+          {
+            "text": "Oh, no!",
+            "words": []
+          },
+          {
+            "text": "I didn't keep my eyes forward",
+            "words": []
+          },
+          {
+            "text": "and I've ruined the dragon",
+            "words": []
+          },
+          {
+            "text": "of my great-grandfather.",
+            "words": []
+          },
+          {
+            "text": "It can't go out like this",
+            "words": []
+          },
+          {
+            "text": "in the parade.",
+            "words": []
+          },
+          {
+            "text": "Perfect!",
+            "words": []
+          },
+          {
+            "text": "But the rest of the head",
+            "words": []
+          },
+          {
+            "text": "of the dragon has red fabric.",
+            "words": []
+          },
+          {
+            "text": "We need red fabric",
+            "words": []
+          },
+          {
+            "text": "to make the nose.",
+            "words": []
+          },
+          {
+            "text": "And quick!",
+            "words": []
+          },
+          {
+            "text": "The napkins were perfect.",
+            "words": []
+          },
+          {
+            "text": "And shortly after,",
+            "words": []
+          },
+          {
+            "text": "the nose was like new.",
+            "words": []
+          },
+          {
+            "text": "The dragon looks great.",
+            "words": []
+          },
+          {
+            "text": "Oh, but it's very late!",
+            "words": []
+          },
+          {
+            "text": "The parade surely started.",
+            "words": []
+          },
+          {
+            "text": "Hey, you said the parade",
+            "words": []
+          },
+          {
+            "text": "ends with the dragon dance.",
+            "words": []
+          },
+          {
+            "text": "Yes, but it's so late",
+            "words": []
+          },
+          {
+            "text": "that I don't know if we can arrive",
+            "words": []
+          },
+          {
+            "text": "before it ends.",
+            "words": []
+          },
+          {
+            "text": "Are you serious?",
+            "words": []
+          },
+          {
+            "text": "We'll take the park shortcut.",
+            "words": []
+          },
+          {
+            "text": "With what we've practiced,",
+            "words": []
+          },
+          {
+            "text": "we are experts",
+            "words": []
+          },
+          {
+            "text": "in handling the dragon.",
+            "words": []
+          },
+          {
+            "text": "Okay, we have to try.",
+            "words": []
+          },
+          {
+            "text": "Hi, Dad!",
+            "words": []
+          },
+          {
+            "text": "Lili, where were you?",
+            "words": []
+          },
+          {
+            "text": "Never mind, I have bad news.",
+            "words": []
+          },
+          {
+            "text": "Your cousins are still stuck",
+            "words": []
+          },
+          {
+            "text": "in traffic",
+            "words": []
+          },
+          {
+            "text": "and there's no one to help you",
+            "words": []
+          },
+          {
+            "text": "with the dragon.",
+            "words": []
+          },
+          {
+            "text": "Sorry.",
+            "words": []
+          },
+          {
+            "text": "Sure, I know a couple of experts.",
+            "words": []
+          },
+          {
+            "text": "And so,",
+            "words": []
+          },
+          {
+            "text": "with a little practice",
+            "words": []
+          },
+          {
+            "text": "and the right materials,",
+            "words": []
+          },
+          {
+            "text": "a monkey became a dragon.",
+            "words": []
+          }
+        ],
+        "lessons": "# Un Encuentro Inesperado\n00:02.40 Era un hermoso día.\n00:05.40 Jorge y Marco paseaban en la calle\n00:07.40 cuando de repente...\n00:10.40 ¡Toda una calle estaba de fiesta!\n00:15.40 ¿Era el cumpleaños de la calle?\n\n# La Explicación del Año Nuevo Chino\n00:25.00 ¡Feliz año nuevo!\n00:27.50 No es año nuevo.\n00:28.50 Año nuevo es el primero de enero.\n00:31.50 Sí, pero hoy es el año nuevo chino.\n00:35.00 Además supuse que ustedes no eran chinos\n00:37.00 porque llegaron aquí mirando así.\n\n# Presentaciones en el Barrio Chino\n00:41.50 Bienvenidos al barrio chino. Soy Lili.\n00:44.50 Soy Marco y él es Jorge.\n00:49.00 Gong Xi Fa Cai, tía Lili.\n00:51.00 Feliz año nuevo a ti también, Lili.\n\n# La Sorpresa de los Primos\n00:54.00 Pero lamento decirte\n00:56.00 que tus primos vienen retrasados\n00:57.50 y no tendrán tiempo de practicar.\n00:59.00 ¡Ay, no!\n01:00.00 No hay de qué preocuparse.\n01:03.00 Mientras tanto, tu papá quiere\n01:04.50 que le traigas salsa de ciruela\n01:06.50 de la bodega.\n01:07.50 No hay problema.\n\n# La Buena Suerte del Año Nuevo\n01:09.00 ¡Oh, y esto te traerá\n01:10.50 buena suerte este año!\n01:13.00 ¡Guau! ¡Xie xie!\n01:17.00 ¿Qué es eso?\n01:19.00 Es una tradición china dar dinero\n01:21.00 a los niños en año nuevo.\n01:23.50 Es buena suerte.\n\n# La Invitación al Desfile\n01:26.00 Oigan, ¿quieren ver un dragón?\n01:31.00 ¡Síganme!\n01:35.00 Hay fuegos artificiales hoy.\n01:37.00 Y un desfile.\n01:39.00 Y al terminar el desfile,\n01:40.50 pues habrá un dragón.\n\n# El Encuentro con el Dragón\n01:51.00 Hola, Jorge. Hola, Marco.\n01:53.00 Lucen deliciosos.\n01:59.00 Yo siempre estoy a la mitad,\n02:02.00 pero este año yo dirigiré\n02:04.50 la danza del dragón.\n02:06.00 Este es un gran honor.\n02:07.50 Mis padres están muy orgullosos.\n\n# El Problema de Práctica\n02:09.00 Se suponía que practicaría hoy.\n02:11.00 ¿Oyeron lo de mis primos?\n02:14.00 Oigan, ¿y si ustedes me ayudan\n02:15.50 con la danza?\n02:19.50 Marco, tú irás a la mitad.\n02:21.00 Jorge, tú hasta el final.\n02:25.00 Tienen que caminar y moverlo\n02:26.50 de un lado a otro.\n02:28.00 ¡Actúen como dragón!\n02:32.00 ¡Síganme!\n\n# El Accidente del Dragón\n02:42.00 ¡Ay, no!\n02:44.00 No mantuve la vista al frente\n02:46.00 y he arruinado el dragón\n02:47.50 de mi bisabuelo.\n02:50.00 No puede salir así\n02:51.50 en el desfile.\n02:58.00 ¡Perfecto!\n\n# La Reparación del Dragón\n03:00.00 Pero el resto de la cabeza\n03:01.50 del dragón tiene tela roja.\n03:03.00 Necesitamos tela roja\n03:04.50 para hacer la nariz.\n03:06.00 ¡Y rápido!\n03:18.50 Las servilletas eran perfectas.\n03:22.00 Y al poco rato,\n03:23.50 la nariz estaba como nueva.\n\n# La Carrera Contra el Tiempo\n03:26.00 El dragón se ve estupendo.\n03:29.00 ¡Ay, pero ya es muy tarde!\n03:32.00 El desfile seguro empezó.\n03:34.00 Oye, dijiste que el desfile\n03:35.50 termina con la danza del dragón.\n03:37.50 Sí, pero es tan tarde\n03:39.00 que no sé si podremos llegar\n03:40.50 antes de que termine.\n03:42.00 ¿Estás hablando en serio?\n\n# El Atajo y la Decisión\n03:43.50 Tomaremos el atajo del parque.\n03:45.50 Con lo que hemos practicado,\n03:47.00 somos expertos\n03:48.50 en el manejo del dragón.\n03:53.50 Está bien, hay que intentarlo.\n\n# La Sorpresa Final\n03:56.00 ¡Hola, papá!\n03:58.00 Lili, ¿dónde estabas?\n04:00.00 No importa, tengo malas noticias.\n04:03.00 Tus primos siguen atorados\n04:05.50 en el tránsito\n04:06.50 y no hay quien te ayude\n04:08.50 con el dragón.\n04:09.50 Disculpa.\n04:10.50 Claro, conozco un par de expertos.\n\n# La Conclusión\n04:24.00 Y así,\n04:26.00 con un poco de práctica\n04:27.50 y los materiales adecuados,\n04:30.00 un mono se convirtió en dragón."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-05-01 13:03:23 UTC",
   "updated_at": "2026-05-01 13:23:17 UTC",

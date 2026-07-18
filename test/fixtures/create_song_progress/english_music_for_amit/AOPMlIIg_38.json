@@ -12,7 +12,6 @@
           {
             "text": "You're",
             "timestamp": "00:14.50",
-            "translation": "את",
             "l1_end_index": 5,
             "timestamp_end": "00:15.00",
             "l1_start_index": 0
@@ -20,7 +19,6 @@
           {
             "text": "picture",
             "timestamp": "00:15.00",
-            "translation": "תמונה",
             "l1_end_index": 13,
             "timestamp_end": "00:15.60",
             "l1_start_index": 7
@@ -28,7 +26,6 @@
           {
             "text": "perfect",
             "timestamp": "00:15.60",
-            "translation": "מושלם",
             "l1_end_index": 21,
             "timestamp_end": "00:16.30",
             "l1_start_index": 15
@@ -36,14 +33,12 @@
           {
             "text": "blue",
             "timestamp": "00:16.30",
-            "translation": "כחול",
             "l1_end_index": 26,
             "timestamp_end": "00:17.20",
             "l1_start_index": 23
           }
         ],
         "text_l1": "You're picture perfect blue",
-        "text_l2": "את כחולה מושלמת כמו תמונה",
         "timestamp": "00:14.50",
         "timestamp_end": "00:17.20"
       },
@@ -53,7 +48,6 @@
           {
             "text": "Sunbathing",
             "timestamp": "00:17.50",
-            "translation": "משתזף",
             "l1_end_index": 9,
             "timestamp_end": "00:18.50",
             "l1_start_index": 0
@@ -61,7 +55,6 @@
           {
             "text": "on",
             "timestamp": "00:18.50",
-            "translation": "על",
             "l1_end_index": 12,
             "timestamp_end": "00:18.80",
             "l1_start_index": 11
@@ -69,7 +62,6 @@
           {
             "text": "the",
             "timestamp": "00:18.80",
-            "translation": "ה",
             "l1_end_index": 16,
             "timestamp_end": "00:19.10",
             "l1_start_index": 14
@@ -77,14 +69,12 @@
           {
             "text": "moon",
             "timestamp": "00:19.10",
-            "translation": "ירח",
             "l1_end_index": 21,
             "timestamp_end": "00:19.80",
             "l1_start_index": 18
           }
         ],
         "text_l1": "Sunbathing on the moon",
-        "text_l2": "משתזפת על הירח",
         "timestamp": "00:17.50",
         "timestamp_end": "00:19.80"
       },
@@ -94,7 +84,6 @@
           {
             "text": "Stars",
             "timestamp": "00:20.00",
-            "translation": "כוכבים",
             "l1_end_index": 4,
             "timestamp_end": "00:20.60",
             "l1_start_index": 0
@@ -102,7 +91,6 @@
           {
             "text": "shining",
             "timestamp": "00:20.60",
-            "translation": "זורחים",
             "l1_end_index": 12,
             "timestamp_end": "00:21.20",
             "l1_start_index": 6
@@ -110,7 +98,6 @@
           {
             "text": "as",
             "timestamp": "00:21.20",
-            "translation": "כאשר",
             "l1_end_index": 15,
             "timestamp_end": "00:21.50",
             "l1_start_index": 14
@@ -118,7 +105,6 @@
           {
             "text": "your",
             "timestamp": "00:21.50",
-            "translation": "שלך",
             "l1_end_index": 20,
             "timestamp_end": "00:21.80",
             "l1_start_index": 17
@@ -126,7 +112,6 @@
           {
             "text": "bones",
             "timestamp": "00:21.80",
-            "translation": "עצמות",
             "l1_end_index": 26,
             "timestamp_end": "00:22.40",
             "l1_start_index": 22
@@ -134,14 +119,12 @@
           {
             "text": "illuminate",
             "timestamp": "00:22.40",
-            "translation": "מאירות",
             "l1_end_index": 37,
             "timestamp_end": "00:23.50",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Stars shining as your bones illuminate",
-        "text_l2": "כוכבים זורחים כשהעצמות שלך מאירות",
         "timestamp": "00:20.00",
         "timestamp_end": "00:23.50"
       },
@@ -151,7 +134,6 @@
           {
             "text": "First",
             "timestamp": "00:25.00",
-            "translation": "ראשונה",
             "l1_end_index": 4,
             "timestamp_end": "00:25.60",
             "l1_start_index": 0
@@ -159,7 +141,6 @@
           {
             "text": "kiss",
             "timestamp": "00:25.60",
-            "translation": "נשיקה",
             "l1_end_index": 9,
             "timestamp_end": "00:26.10",
             "l1_start_index": 6
@@ -167,7 +148,6 @@
           {
             "text": "just",
             "timestamp": "00:26.10",
-            "translation": "ממש",
             "l1_end_index": 14,
             "timestamp_end": "00:26.50",
             "l1_start_index": 11
@@ -175,7 +155,6 @@
           {
             "text": "like",
             "timestamp": "00:26.50",
-            "translation": "כמו",
             "l1_end_index": 19,
             "timestamp_end": "00:26.90",
             "l1_start_index": 16
@@ -183,7 +162,6 @@
           {
             "text": "a",
             "timestamp": "00:26.90",
-            "translation": "a",
             "l1_end_index": 21,
             "timestamp_end": "00:27.10",
             "l1_start_index": 21
@@ -191,14 +169,12 @@
           {
             "text": "drug",
             "timestamp": "00:27.10",
-            "translation": "סם",
             "l1_end_index": 26,
             "timestamp_end": "00:27.80",
             "l1_start_index": 23
           }
         ],
         "text_l1": "First kiss just like a drug",
-        "text_l2": "נשיקה ראשונה ממש כמו סם",
         "timestamp": "00:25.00",
         "timestamp_end": "00:27.80"
       },
@@ -208,7 +184,6 @@
           {
             "text": "Under",
             "timestamp": "00:28.00",
-            "translation": "תחת",
             "l1_end_index": 4,
             "timestamp_end": "00:28.80",
             "l1_start_index": 0
@@ -216,7 +191,6 @@
           {
             "text": "your",
             "timestamp": "00:28.80",
-            "translation": "שלך",
             "l1_end_index": 9,
             "timestamp_end": "00:29.20",
             "l1_start_index": 6
@@ -224,14 +198,12 @@
           {
             "text": "influence",
             "timestamp": "00:29.20",
-            "translation": "השפעה",
             "l1_end_index": 19,
             "timestamp_end": "00:30.50",
             "l1_start_index": 11
           }
         ],
         "text_l1": "Under your influence",
-        "text_l2": "תחת ההשפעה שלך",
         "timestamp": "00:28.00",
         "timestamp_end": "00:30.50"
       },
@@ -241,7 +213,6 @@
           {
             "text": "You",
             "timestamp": "00:30.60",
-            "translation": "אתה",
             "l1_end_index": 2,
             "timestamp_end": "00:31.00",
             "l1_start_index": 0
@@ -249,7 +220,6 @@
           {
             "text": "take",
             "timestamp": "00:31.00",
-            "translation": "לוקח",
             "l1_end_index": 7,
             "timestamp_end": "00:31.30",
             "l1_start_index": 4
@@ -257,7 +227,6 @@
           {
             "text": "me",
             "timestamp": "00:31.30",
-            "translation": "אותי",
             "l1_end_index": 10,
             "timestamp_end": "00:31.60",
             "l1_start_index": 9
@@ -265,7 +234,6 @@
           {
             "text": "over",
             "timestamp": "00:31.60",
-            "translation": "על",
             "l1_end_index": 15,
             "timestamp_end": "00:32.00",
             "l1_start_index": 12
@@ -273,7 +241,6 @@
           {
             "text": "all",
             "timestamp": "00:32.00",
-            "translation": "כל",
             "l1_end_index": 19,
             "timestamp_end": "00:32.30",
             "l1_start_index": 17
@@ -281,7 +248,6 @@
           {
             "text": "the",
             "timestamp": "00:32.30",
-            "translation": "ה",
             "l1_end_index": 23,
             "timestamp_end": "00:32.50",
             "l1_start_index": 21
@@ -289,7 +255,6 @@
           {
             "text": "magic",
             "timestamp": "00:32.50",
-            "translation": "קסם",
             "l1_end_index": 29,
             "timestamp_end": "00:33.00",
             "l1_start_index": 25
@@ -297,7 +262,6 @@
           {
             "text": "in",
             "timestamp": "00:33.00",
-            "translation": "בתוך",
             "l1_end_index": 32,
             "timestamp_end": "00:33.20",
             "l1_start_index": 31
@@ -305,7 +269,6 @@
           {
             "text": "my",
             "timestamp": "00:33.20",
-            "translation": "שלי",
             "l1_end_index": 35,
             "timestamp_end": "00:33.40",
             "l1_start_index": 34
@@ -313,14 +276,12 @@
           {
             "text": "veins",
             "timestamp": "00:33.40",
-            "translation": "ורידים",
             "l1_end_index": 41,
             "timestamp_end": "00:33.80",
             "l1_start_index": 37
           }
         ],
         "text_l1": "You take me over all the magic in my veins",
-        "text_l2": "את משתלטת עלי ועל כל הקסם בוורידים שלי",
         "timestamp": "00:30.60",
         "timestamp_end": "00:33.80"
       },
@@ -330,7 +291,6 @@
           {
             "text": "This",
             "timestamp": "00:33.90",
-            "translation": "זה",
             "l1_end_index": 3,
             "timestamp_end": "00:34.40",
             "l1_start_index": 0
@@ -338,7 +298,6 @@
           {
             "text": "must",
             "timestamp": "00:34.40",
-            "translation": "חייב",
             "l1_end_index": 8,
             "timestamp_end": "00:34.80",
             "l1_start_index": 5
@@ -346,7 +305,6 @@
           {
             "text": "be",
             "timestamp": "00:34.80",
-            "translation": "להיות",
             "l1_end_index": 11,
             "timestamp_end": "00:35.00",
             "l1_start_index": 10
@@ -354,14 +312,12 @@
           {
             "text": "love",
             "timestamp": "00:35.00",
-            "translation": "אהבה",
             "l1_end_index": 16,
             "timestamp_end": "00:35.50",
             "l1_start_index": 13
           }
         ],
         "text_l1": "This must be love",
-        "text_l2": "זו חייבת להיות אהבה",
         "timestamp": "00:33.90",
         "timestamp_end": "00:35.50"
       },
@@ -371,7 +327,6 @@
           {
             "text": "Boom",
             "timestamp": "00:35.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "00:36.00",
             "l1_start_index": 0
@@ -379,7 +334,6 @@
           {
             "text": "clap",
             "timestamp": "00:36.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "00:36.50",
             "l1_start_index": 5
@@ -387,7 +341,6 @@
           {
             "text": "the",
             "timestamp": "00:36.50",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "00:37.00",
             "l1_start_index": 11
@@ -395,7 +348,6 @@
           {
             "text": "sound",
             "timestamp": "00:37.00",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "00:37.50",
             "l1_start_index": 15
@@ -403,7 +355,6 @@
           {
             "text": "of",
             "timestamp": "00:37.50",
-            "translation": "של",
             "l1_end_index": 22,
             "timestamp_end": "00:37.80",
             "l1_start_index": 21
@@ -411,7 +362,6 @@
           {
             "text": "my",
             "timestamp": "00:37.80",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "00:38.00",
             "l1_start_index": 24
@@ -419,14 +369,12 @@
           {
             "text": "heart",
             "timestamp": "00:38.00",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "00:38.50",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "00:35.60",
         "timestamp_end": "00:38.50"
       },
@@ -436,7 +384,6 @@
           {
             "text": "The",
             "timestamp": "00:38.60",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "00:38.90",
             "l1_start_index": 0
@@ -444,7 +391,6 @@
           {
             "text": "beat",
             "timestamp": "00:38.90",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "00:39.20",
             "l1_start_index": 4
@@ -452,7 +398,6 @@
           {
             "text": "goes",
             "timestamp": "00:39.20",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "00:39.50",
             "l1_start_index": 9
@@ -460,7 +405,6 @@
           {
             "text": "on",
             "timestamp": "00:39.50",
-            "translation": "הלאה",
             "l1_end_index": 15,
             "timestamp_end": "00:39.80",
             "l1_start_index": 14
@@ -468,7 +412,6 @@
           {
             "text": "and",
             "timestamp": "00:39.80",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "00:40.00",
             "l1_start_index": 17
@@ -476,7 +419,6 @@
           {
             "text": "on",
             "timestamp": "00:40.00",
-            "translation": "הלאה",
             "l1_end_index": 22,
             "timestamp_end": "00:40.20",
             "l1_start_index": 21
@@ -484,7 +426,6 @@
           {
             "text": "and",
             "timestamp": "00:40.20",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "00:40.40",
             "l1_start_index": 24
@@ -492,7 +433,6 @@
           {
             "text": "on",
             "timestamp": "00:40.40",
-            "translation": "הלאה",
             "l1_end_index": 29,
             "timestamp_end": "00:40.60",
             "l1_start_index": 28
@@ -500,7 +440,6 @@
           {
             "text": "and",
             "timestamp": "00:40.60",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "00:40.80",
             "l1_start_index": 31
@@ -508,7 +447,6 @@
           {
             "text": "on",
             "timestamp": "00:40.80",
-            "translation": "הלאה",
             "l1_end_index": 36,
             "timestamp_end": "00:40.90",
             "l1_start_index": 35
@@ -516,14 +454,12 @@
           {
             "text": "and",
             "timestamp": "00:40.90",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "00:41.00",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "00:38.60",
         "timestamp_end": "00:41.00"
       },
@@ -533,7 +469,6 @@
           {
             "text": "Boom",
             "timestamp": "00:41.10",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "00:41.50",
             "l1_start_index": 0
@@ -541,7 +476,6 @@
           {
             "text": "clap",
             "timestamp": "00:41.50",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "00:42.00",
             "l1_start_index": 5
@@ -549,7 +483,6 @@
           {
             "text": "you",
             "timestamp": "00:42.00",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "00:42.40",
             "l1_start_index": 11
@@ -557,7 +490,6 @@
           {
             "text": "make",
             "timestamp": "00:42.40",
-            "translation": "גורם",
             "l1_end_index": 18,
             "timestamp_end": "00:42.70",
             "l1_start_index": 15
@@ -565,7 +497,6 @@
           {
             "text": "me",
             "timestamp": "00:42.70",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "00:42.90",
             "l1_start_index": 20
@@ -573,7 +504,6 @@
           {
             "text": "feel",
             "timestamp": "00:42.90",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "00:43.20",
             "l1_start_index": 23
@@ -581,14 +511,12 @@
           {
             "text": "good",
             "timestamp": "00:43.20",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "00:43.50",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "00:41.10",
         "timestamp_end": "00:43.50"
       },
@@ -598,7 +526,6 @@
           {
             "text": "Come",
             "timestamp": "00:43.60",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "00:44.00",
             "l1_start_index": 0
@@ -606,7 +533,6 @@
           {
             "text": "on",
             "timestamp": "00:44.00",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "00:44.30",
             "l1_start_index": 5
@@ -614,7 +540,6 @@
           {
             "text": "to",
             "timestamp": "00:44.30",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "00:44.50",
             "l1_start_index": 8
@@ -622,7 +547,6 @@
           {
             "text": "me",
             "timestamp": "00:44.50",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "00:44.80",
             "l1_start_index": 11
@@ -630,7 +554,6 @@
           {
             "text": "come",
             "timestamp": "00:44.80",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "00:45.20",
             "l1_start_index": 15
@@ -638,7 +561,6 @@
           {
             "text": "on",
             "timestamp": "00:45.20",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "00:45.50",
             "l1_start_index": 20
@@ -646,7 +568,6 @@
           {
             "text": "to",
             "timestamp": "00:45.50",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "00:45.70",
             "l1_start_index": 23
@@ -654,7 +575,6 @@
           {
             "text": "me",
             "timestamp": "00:45.70",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "00:45.90",
             "l1_start_index": 26
@@ -662,14 +582,12 @@
           {
             "text": "now",
             "timestamp": "00:45.90",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "00:46.20",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "00:43.60",
         "timestamp_end": "00:46.20"
       },
@@ -679,7 +597,6 @@
           {
             "text": "Boom",
             "timestamp": "00:46.30",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "00:46.70",
             "l1_start_index": 0
@@ -687,7 +604,6 @@
           {
             "text": "clap",
             "timestamp": "00:46.70",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "00:47.20",
             "l1_start_index": 5
@@ -695,7 +611,6 @@
           {
             "text": "the",
             "timestamp": "00:47.20",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "00:47.50",
             "l1_start_index": 11
@@ -703,7 +618,6 @@
           {
             "text": "sound",
             "timestamp": "00:47.50",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "00:47.90",
             "l1_start_index": 15
@@ -711,7 +625,6 @@
           {
             "text": "of",
             "timestamp": "00:47.90",
-            "translation": "של",
             "l1_end_index": 22,
             "timestamp_end": "00:48.10",
             "l1_start_index": 21
@@ -719,7 +632,6 @@
           {
             "text": "my",
             "timestamp": "00:48.10",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "00:48.30",
             "l1_start_index": 24
@@ -727,14 +639,12 @@
           {
             "text": "heart",
             "timestamp": "00:48.30",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "00:48.50",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "00:46.30",
         "timestamp_end": "00:48.50"
       },
@@ -744,7 +654,6 @@
           {
             "text": "The",
             "timestamp": "00:48.60",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "00:48.90",
             "l1_start_index": 0
@@ -752,7 +661,6 @@
           {
             "text": "beat",
             "timestamp": "00:48.90",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "00:49.20",
             "l1_start_index": 4
@@ -760,7 +668,6 @@
           {
             "text": "goes",
             "timestamp": "00:49.20",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "00:49.50",
             "l1_start_index": 9
@@ -768,7 +675,6 @@
           {
             "text": "on",
             "timestamp": "00:49.50",
-            "translation": "הלאה",
             "l1_end_index": 15,
             "timestamp_end": "00:49.80",
             "l1_start_index": 14
@@ -776,7 +682,6 @@
           {
             "text": "and",
             "timestamp": "00:49.80",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "00:50.00",
             "l1_start_index": 17
@@ -784,7 +689,6 @@
           {
             "text": "on",
             "timestamp": "00:50.00",
-            "translation": "הלאה",
             "l1_end_index": 22,
             "timestamp_end": "00:50.20",
             "l1_start_index": 21
@@ -792,7 +696,6 @@
           {
             "text": "and",
             "timestamp": "00:50.20",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "00:50.40",
             "l1_start_index": 24
@@ -800,7 +703,6 @@
           {
             "text": "on",
             "timestamp": "00:50.40",
-            "translation": "הלאה",
             "l1_end_index": 29,
             "timestamp_end": "00:50.60",
             "l1_start_index": 28
@@ -808,7 +710,6 @@
           {
             "text": "and",
             "timestamp": "00:50.60",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "00:50.80",
             "l1_start_index": 31
@@ -816,7 +717,6 @@
           {
             "text": "on",
             "timestamp": "00:50.80",
-            "translation": "הלאה",
             "l1_end_index": 36,
             "timestamp_end": "00:50.90",
             "l1_start_index": 35
@@ -824,14 +724,12 @@
           {
             "text": "and",
             "timestamp": "00:50.90",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "00:51.00",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "00:48.60",
         "timestamp_end": "00:51.00"
       },
@@ -841,7 +739,6 @@
           {
             "text": "Boom",
             "timestamp": "00:51.10",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "00:51.50",
             "l1_start_index": 0
@@ -849,7 +746,6 @@
           {
             "text": "clap",
             "timestamp": "00:51.50",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "00:52.00",
             "l1_start_index": 5
@@ -857,7 +753,6 @@
           {
             "text": "you",
             "timestamp": "00:52.00",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "00:52.40",
             "l1_start_index": 11
@@ -865,7 +760,6 @@
           {
             "text": "make",
             "timestamp": "00:52.40",
-            "translation": "גורם",
             "l1_end_index": 18,
             "timestamp_end": "00:52.70",
             "l1_start_index": 15
@@ -873,7 +767,6 @@
           {
             "text": "me",
             "timestamp": "00:52.70",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "00:52.90",
             "l1_start_index": 20
@@ -881,7 +774,6 @@
           {
             "text": "feel",
             "timestamp": "00:52.90",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "00:53.20",
             "l1_start_index": 23
@@ -889,14 +781,12 @@
           {
             "text": "good",
             "timestamp": "00:53.20",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "00:53.50",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "00:51.10",
         "timestamp_end": "00:53.50"
       },
@@ -906,7 +796,6 @@
           {
             "text": "Come",
             "timestamp": "00:53.60",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "00:54.00",
             "l1_start_index": 0
@@ -914,7 +803,6 @@
           {
             "text": "on",
             "timestamp": "00:54.00",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "00:54.30",
             "l1_start_index": 5
@@ -922,7 +810,6 @@
           {
             "text": "to",
             "timestamp": "00:54.30",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "00:54.50",
             "l1_start_index": 8
@@ -930,7 +817,6 @@
           {
             "text": "me",
             "timestamp": "00:54.50",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "00:54.80",
             "l1_start_index": 11
@@ -938,7 +824,6 @@
           {
             "text": "come",
             "timestamp": "00:54.80",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "00:55.20",
             "l1_start_index": 15
@@ -946,7 +831,6 @@
           {
             "text": "on",
             "timestamp": "00:55.20",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "00:55.50",
             "l1_start_index": 20
@@ -954,7 +838,6 @@
           {
             "text": "to",
             "timestamp": "00:55.50",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "00:55.70",
             "l1_start_index": 23
@@ -962,7 +845,6 @@
           {
             "text": "me",
             "timestamp": "00:55.70",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "00:55.90",
             "l1_start_index": 26
@@ -970,14 +852,12 @@
           {
             "text": "now",
             "timestamp": "00:55.90",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "00:56.50",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "00:53.60",
         "timestamp_end": "00:56.50"
       },
@@ -987,7 +867,6 @@
           {
             "text": "No",
             "timestamp": "01:01.50",
-            "translation": "לא",
             "l1_end_index": 1,
             "timestamp_end": "01:02.00",
             "l1_start_index": 0
@@ -995,7 +874,6 @@
           {
             "text": "silver",
             "timestamp": "01:02.00",
-            "translation": "כסף",
             "l1_end_index": 8,
             "timestamp_end": "01:02.80",
             "l1_start_index": 3
@@ -1003,7 +881,6 @@
           {
             "text": "or",
             "timestamp": "01:02.80",
-            "translation": "או",
             "l1_end_index": 11,
             "timestamp_end": "01:03.10",
             "l1_start_index": 10
@@ -1011,7 +888,6 @@
           {
             "text": "no",
             "timestamp": "01:03.10",
-            "translation": "לא",
             "l1_end_index": 14,
             "timestamp_end": "01:03.40",
             "l1_start_index": 13
@@ -1019,14 +895,12 @@
           {
             "text": "gold",
             "timestamp": "01:03.40",
-            "translation": "זהב",
             "l1_end_index": 19,
             "timestamp_end": "01:04.00",
             "l1_start_index": 16
           }
         ],
         "text_l1": "No silver or no gold",
-        "text_l2": "לא כסף ולא זהב",
         "timestamp": "01:01.50",
         "timestamp_end": "01:04.00"
       },
@@ -1036,7 +910,6 @@
           {
             "text": "Could",
             "timestamp": "01:04.10",
-            "translation": "יכול",
             "l1_end_index": 4,
             "timestamp_end": "01:04.60",
             "l1_start_index": 0
@@ -1044,7 +917,6 @@
           {
             "text": "dress",
             "timestamp": "01:04.60",
-            "translation": "להלביש",
             "l1_end_index": 10,
             "timestamp_end": "01:05.20",
             "l1_start_index": 6
@@ -1052,7 +924,6 @@
           {
             "text": "me",
             "timestamp": "01:05.20",
-            "translation": "אותי",
             "l1_end_index": 13,
             "timestamp_end": "01:05.50",
             "l1_start_index": 12
@@ -1060,7 +931,6 @@
           {
             "text": "up",
             "timestamp": "01:05.50",
-            "translation": "up",
             "l1_end_index": 16,
             "timestamp_end": "01:05.80",
             "l1_start_index": 15
@@ -1068,7 +938,6 @@
           {
             "text": "so",
             "timestamp": "01:05.80",
-            "translation": "כל כך",
             "l1_end_index": 19,
             "timestamp_end": "01:06.20",
             "l1_start_index": 18
@@ -1076,14 +945,12 @@
           {
             "text": "good",
             "timestamp": "01:06.20",
-            "translation": "טוב",
             "l1_end_index": 24,
             "timestamp_end": "01:07.00",
             "l1_start_index": 21
           }
         ],
         "text_l1": "Could dress me up so good",
-        "text_l2": "יכלו להלביש אותי כל כך טוב",
         "timestamp": "01:04.10",
         "timestamp_end": "01:07.00"
       },
@@ -1093,7 +960,6 @@
           {
             "text": "You're",
             "timestamp": "01:07.10",
-            "translation": "את",
             "l1_end_index": 5,
             "timestamp_end": "01:07.60",
             "l1_start_index": 0
@@ -1101,7 +967,6 @@
           {
             "text": "the",
             "timestamp": "01:07.60",
-            "translation": "ה",
             "l1_end_index": 9,
             "timestamp_end": "01:07.90",
             "l1_start_index": 7
@@ -1109,7 +974,6 @@
           {
             "text": "glitter",
             "timestamp": "01:07.90",
-            "translation": "נצנצים",
             "l1_end_index": 17,
             "timestamp_end": "01:08.50",
             "l1_start_index": 11
@@ -1117,7 +981,6 @@
           {
             "text": "in",
             "timestamp": "01:08.50",
-            "translation": "בתוך",
             "l1_end_index": 20,
             "timestamp_end": "01:08.80",
             "l1_start_index": 19
@@ -1125,7 +988,6 @@
           {
             "text": "the",
             "timestamp": "01:08.80",
-            "translation": "ה",
             "l1_end_index": 24,
             "timestamp_end": "01:09.10",
             "l1_start_index": 22
@@ -1133,7 +995,6 @@
           {
             "text": "darkness",
             "timestamp": "01:09.10",
-            "translation": "חושך",
             "l1_end_index": 33,
             "timestamp_end": "01:09.80",
             "l1_start_index": 26
@@ -1141,7 +1002,6 @@
           {
             "text": "of",
             "timestamp": "01:09.80",
-            "translation": "של",
             "l1_end_index": 36,
             "timestamp_end": "01:10.10",
             "l1_start_index": 35
@@ -1149,7 +1009,6 @@
           {
             "text": "my",
             "timestamp": "01:10.10",
-            "translation": "שלי",
             "l1_end_index": 39,
             "timestamp_end": "01:10.40",
             "l1_start_index": 38
@@ -1157,14 +1016,12 @@
           {
             "text": "world",
             "timestamp": "01:10.40",
-            "translation": "עולם",
             "l1_end_index": 45,
             "timestamp_end": "01:11.50",
             "l1_start_index": 41
           }
         ],
         "text_l1": "You're the glitter in the darkness of my world",
-        "text_l2": "את הברק בחושך של העולם שלי",
         "timestamp": "01:07.10",
         "timestamp_end": "01:11.50"
       },
@@ -1174,7 +1031,6 @@
           {
             "text": "Just",
             "timestamp": "01:12.00",
-            "translation": "פשוט",
             "l1_end_index": 3,
             "timestamp_end": "01:12.50",
             "l1_start_index": 0
@@ -1182,7 +1038,6 @@
           {
             "text": "tell",
             "timestamp": "01:12.50",
-            "translation": "תגיד",
             "l1_end_index": 8,
             "timestamp_end": "01:13.00",
             "l1_start_index": 5
@@ -1190,7 +1045,6 @@
           {
             "text": "me",
             "timestamp": "01:13.00",
-            "translation": "לי",
             "l1_end_index": 11,
             "timestamp_end": "01:13.30",
             "l1_start_index": 10
@@ -1198,7 +1052,6 @@
           {
             "text": "what",
             "timestamp": "01:13.30",
-            "translation": "מה",
             "l1_end_index": 16,
             "timestamp_end": "01:13.70",
             "l1_start_index": 13
@@ -1206,7 +1059,6 @@
           {
             "text": "to",
             "timestamp": "01:13.70",
-            "translation": "ל",
             "l1_end_index": 19,
             "timestamp_end": "01:14.00",
             "l1_start_index": 18
@@ -1214,14 +1066,12 @@
           {
             "text": "do",
             "timestamp": "01:14.00",
-            "translation": "לעשות",
             "l1_end_index": 22,
             "timestamp_end": "01:14.50",
             "l1_start_index": 21
           }
         ],
         "text_l1": "Just tell me what to do",
-        "text_l2": "רק תגידי לי מה לעשות",
         "timestamp": "01:12.00",
         "timestamp_end": "01:14.50"
       },
@@ -1231,7 +1081,6 @@
           {
             "text": "I'll",
             "timestamp": "01:14.60",
-            "translation": "אני",
             "l1_end_index": 3,
             "timestamp_end": "01:15.10",
             "l1_start_index": 0
@@ -1239,7 +1088,6 @@
           {
             "text": "fall",
             "timestamp": "01:15.10",
-            "translation": "אפול",
             "l1_end_index": 8,
             "timestamp_end": "01:15.60",
             "l1_start_index": 5
@@ -1247,7 +1095,6 @@
           {
             "text": "right",
             "timestamp": "01:15.60",
-            "translation": "ישר",
             "l1_end_index": 14,
             "timestamp_end": "01:16.10",
             "l1_start_index": 10
@@ -1255,7 +1102,6 @@
           {
             "text": "into",
             "timestamp": "01:16.10",
-            "translation": "לתוך",
             "l1_end_index": 19,
             "timestamp_end": "01:16.80",
             "l1_start_index": 16
@@ -1263,14 +1109,12 @@
           {
             "text": "you",
             "timestamp": "01:16.80",
-            "translation": "אותך",
             "l1_end_index": 23,
             "timestamp_end": "01:17.50",
             "l1_start_index": 21
           }
         ],
         "text_l1": "I'll fall right into you",
-        "text_l2": "אפול ישר אלייך",
         "timestamp": "01:14.60",
         "timestamp_end": "01:17.50"
       },
@@ -1280,7 +1124,6 @@
           {
             "text": "Going",
             "timestamp": "01:17.60",
-            "translation": "הולך",
             "l1_end_index": 4,
             "timestamp_end": "01:18.10",
             "l1_start_index": 0
@@ -1288,7 +1131,6 @@
           {
             "text": "under",
             "timestamp": "01:18.10",
-            "translation": "מתחת",
             "l1_end_index": 10,
             "timestamp_end": "01:18.60",
             "l1_start_index": 6
@@ -1296,7 +1138,6 @@
           {
             "text": "cast",
             "timestamp": "01:18.60",
-            "translation": "להטיל",
             "l1_end_index": 15,
             "timestamp_end": "01:19.00",
             "l1_start_index": 12
@@ -1304,7 +1145,6 @@
           {
             "text": "a",
             "timestamp": "01:19.00",
-            "translation": "a",
             "l1_end_index": 17,
             "timestamp_end": "01:19.20",
             "l1_start_index": 17
@@ -1312,7 +1152,6 @@
           {
             "text": "spell",
             "timestamp": "01:19.20",
-            "translation": "כישוף",
             "l1_end_index": 23,
             "timestamp_end": "01:19.60",
             "l1_start_index": 19
@@ -1320,7 +1159,6 @@
           {
             "text": "say",
             "timestamp": "01:19.60",
-            "translation": "אמור",
             "l1_end_index": 28,
             "timestamp_end": "01:20.00",
             "l1_start_index": 26
@@ -1328,7 +1166,6 @@
           {
             "text": "the",
             "timestamp": "01:20.00",
-            "translation": "ה",
             "l1_end_index": 32,
             "timestamp_end": "01:20.20",
             "l1_start_index": 30
@@ -1336,14 +1173,12 @@
           {
             "text": "word",
             "timestamp": "01:20.20",
-            "translation": "מילה",
             "l1_end_index": 37,
             "timestamp_end": "01:20.50",
             "l1_start_index": 34
           }
         ],
         "text_l1": "Going under cast a spell, say the word",
-        "text_l2": "נכנעת, הטילי כישוף, תגידי את המילה",
         "timestamp": "01:17.60",
         "timestamp_end": "01:20.50"
       },
@@ -1353,7 +1188,6 @@
           {
             "text": "I",
             "timestamp": "01:20.60",
-            "translation": "אני",
             "l1_end_index": 0,
             "timestamp_end": "01:21.00",
             "l1_start_index": 0
@@ -1361,7 +1195,6 @@
           {
             "text": "feel",
             "timestamp": "01:21.00",
-            "translation": "מרגיש",
             "l1_end_index": 5,
             "timestamp_end": "01:21.40",
             "l1_start_index": 2
@@ -1369,7 +1202,6 @@
           {
             "text": "your",
             "timestamp": "01:21.40",
-            "translation": "שלך",
             "l1_end_index": 10,
             "timestamp_end": "01:21.70",
             "l1_start_index": 7
@@ -1377,14 +1209,12 @@
           {
             "text": "love",
             "timestamp": "01:21.70",
-            "translation": "אהבה",
             "l1_end_index": 15,
             "timestamp_end": "01:22.20",
             "l1_start_index": 12
           }
         ],
         "text_l1": "I feel your love",
-        "text_l2": "אני מרגיש את האהבה שלך",
         "timestamp": "01:20.60",
         "timestamp_end": "01:22.20"
       },
@@ -1394,7 +1224,6 @@
           {
             "text": "Boom",
             "timestamp": "01:22.30",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "01:22.70",
             "l1_start_index": 0
@@ -1402,7 +1231,6 @@
           {
             "text": "clap",
             "timestamp": "01:22.70",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "01:23.20",
             "l1_start_index": 5
@@ -1410,7 +1238,6 @@
           {
             "text": "the",
             "timestamp": "01:23.20",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "01:23.50",
             "l1_start_index": 11
@@ -1418,7 +1245,6 @@
           {
             "text": "sound",
             "timestamp": "01:23.50",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "01:24.00",
             "l1_start_index": 15
@@ -1426,7 +1252,6 @@
           {
             "text": "of",
             "timestamp": "01:24.00",
-            "translation": "של",
             "l1_end_index": 22,
             "timestamp_end": "01:24.30",
             "l1_start_index": 21
@@ -1434,7 +1259,6 @@
           {
             "text": "my",
             "timestamp": "01:24.30",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "01:24.50",
             "l1_start_index": 24
@@ -1442,14 +1266,12 @@
           {
             "text": "heart",
             "timestamp": "01:24.50",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "01:25.00",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "01:22.30",
         "timestamp_end": "01:25.00"
       },
@@ -1459,7 +1281,6 @@
           {
             "text": "The",
             "timestamp": "01:25.10",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "01:25.40",
             "l1_start_index": 0
@@ -1467,7 +1288,6 @@
           {
             "text": "beat",
             "timestamp": "01:25.40",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "01:25.70",
             "l1_start_index": 4
@@ -1475,7 +1295,6 @@
           {
             "text": "goes",
             "timestamp": "01:25.70",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "01:26.00",
             "l1_start_index": 9
@@ -1483,7 +1302,6 @@
           {
             "text": "on",
             "timestamp": "01:26.00",
-            "translation": "הלאה",
             "l1_end_index": 15,
             "timestamp_end": "01:26.30",
             "l1_start_index": 14
@@ -1491,7 +1309,6 @@
           {
             "text": "and",
             "timestamp": "01:26.30",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "01:26.50",
             "l1_start_index": 17
@@ -1499,7 +1316,6 @@
           {
             "text": "on",
             "timestamp": "01:26.50",
-            "translation": "הלאה",
             "l1_end_index": 22,
             "timestamp_end": "01:26.70",
             "l1_start_index": 21
@@ -1507,7 +1323,6 @@
           {
             "text": "and",
             "timestamp": "01:26.70",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "01:26.90",
             "l1_start_index": 24
@@ -1515,7 +1330,6 @@
           {
             "text": "on",
             "timestamp": "01:26.90",
-            "translation": "הלאה",
             "l1_end_index": 29,
             "timestamp_end": "01:27.10",
             "l1_start_index": 28
@@ -1523,7 +1337,6 @@
           {
             "text": "and",
             "timestamp": "01:27.10",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "01:27.30",
             "l1_start_index": 31
@@ -1531,7 +1344,6 @@
           {
             "text": "on",
             "timestamp": "01:27.30",
-            "translation": "הלאה",
             "l1_end_index": 36,
             "timestamp_end": "01:27.40",
             "l1_start_index": 35
@@ -1539,14 +1351,12 @@
           {
             "text": "and",
             "timestamp": "01:27.40",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "01:27.50",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "01:25.10",
         "timestamp_end": "01:27.50"
       },
@@ -1556,7 +1366,6 @@
           {
             "text": "Boom",
             "timestamp": "01:27.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "01:28.00",
             "l1_start_index": 0
@@ -1564,7 +1373,6 @@
           {
             "text": "clap",
             "timestamp": "01:28.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "01:28.50",
             "l1_start_index": 5
@@ -1572,7 +1380,6 @@
           {
             "text": "you",
             "timestamp": "01:28.50",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "01:28.90",
             "l1_start_index": 11
@@ -1580,7 +1387,6 @@
           {
             "text": "make",
             "timestamp": "01:28.90",
-            "translation": "גורם",
             "l1_end_index": 18,
             "timestamp_end": "01:29.20",
             "l1_start_index": 15
@@ -1588,7 +1394,6 @@
           {
             "text": "me",
             "timestamp": "01:29.20",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "01:29.40",
             "l1_start_index": 20
@@ -1596,7 +1401,6 @@
           {
             "text": "feel",
             "timestamp": "01:29.40",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "01:29.70",
             "l1_start_index": 23
@@ -1604,14 +1408,12 @@
           {
             "text": "good",
             "timestamp": "01:29.70",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "01:30.00",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "01:27.60",
         "timestamp_end": "01:30.00"
       },
@@ -1621,7 +1423,6 @@
           {
             "text": "Come",
             "timestamp": "01:30.10",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "01:30.50",
             "l1_start_index": 0
@@ -1629,7 +1430,6 @@
           {
             "text": "on",
             "timestamp": "01:30.50",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "01:30.80",
             "l1_start_index": 5
@@ -1637,7 +1437,6 @@
           {
             "text": "to",
             "timestamp": "01:30.80",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "01:31.00",
             "l1_start_index": 8
@@ -1645,7 +1444,6 @@
           {
             "text": "me",
             "timestamp": "01:31.00",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "01:31.30",
             "l1_start_index": 11
@@ -1653,7 +1451,6 @@
           {
             "text": "come",
             "timestamp": "01:31.30",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "01:31.70",
             "l1_start_index": 15
@@ -1661,7 +1458,6 @@
           {
             "text": "on",
             "timestamp": "01:31.70",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "01:32.00",
             "l1_start_index": 20
@@ -1669,7 +1465,6 @@
           {
             "text": "to",
             "timestamp": "01:32.00",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "01:32.20",
             "l1_start_index": 23
@@ -1677,7 +1472,6 @@
           {
             "text": "me",
             "timestamp": "01:32.20",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "01:32.40",
             "l1_start_index": 26
@@ -1685,14 +1479,12 @@
           {
             "text": "now",
             "timestamp": "01:32.40",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "01:32.80",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "01:30.10",
         "timestamp_end": "01:32.80"
       },
@@ -1702,7 +1494,6 @@
           {
             "text": "Boom",
             "timestamp": "01:32.90",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "01:33.30",
             "l1_start_index": 0
@@ -1710,7 +1501,6 @@
           {
             "text": "clap",
             "timestamp": "01:33.30",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "01:33.80",
             "l1_start_index": 5
@@ -1718,7 +1508,6 @@
           {
             "text": "the",
             "timestamp": "01:33.80",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "01:34.10",
             "l1_start_index": 11
@@ -1726,7 +1515,6 @@
           {
             "text": "sound",
             "timestamp": "01:34.10",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "01:34.50",
             "l1_start_index": 15
@@ -1734,7 +1522,6 @@
           {
             "text": "of",
             "timestamp": "01:34.50",
-            "translation": "של",
             "l1_end_index": 22,
             "timestamp_end": "01:34.70",
             "l1_start_index": 21
@@ -1742,7 +1529,6 @@
           {
             "text": "my",
             "timestamp": "01:34.70",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "01:34.90",
             "l1_start_index": 24
@@ -1750,14 +1536,12 @@
           {
             "text": "heart",
             "timestamp": "01:34.90",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "01:35.20",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "01:32.90",
         "timestamp_end": "01:35.20"
       },
@@ -1767,7 +1551,6 @@
           {
             "text": "The",
             "timestamp": "01:35.30",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "01:35.60",
             "l1_start_index": 0
@@ -1775,7 +1558,6 @@
           {
             "text": "beat",
             "timestamp": "01:35.60",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "01:35.90",
             "l1_start_index": 4
@@ -1783,7 +1565,6 @@
           {
             "text": "goes",
             "timestamp": "01:35.90",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "01:36.20",
             "l1_start_index": 9
@@ -1791,7 +1572,6 @@
           {
             "text": "on",
             "timestamp": "01:36.20",
-            "translation": "הלאה",
             "l1_end_index": 15,
             "timestamp_end": "01:36.50",
             "l1_start_index": 14
@@ -1799,7 +1579,6 @@
           {
             "text": "and",
             "timestamp": "01:36.50",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "01:36.70",
             "l1_start_index": 17
@@ -1807,7 +1586,6 @@
           {
             "text": "on",
             "timestamp": "01:36.70",
-            "translation": "הלאה",
             "l1_end_index": 22,
             "timestamp_end": "01:36.90",
             "l1_start_index": 21
@@ -1815,7 +1593,6 @@
           {
             "text": "and",
             "timestamp": "01:36.90",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "01:37.10",
             "l1_start_index": 24
@@ -1823,7 +1600,6 @@
           {
             "text": "on",
             "timestamp": "01:37.10",
-            "translation": "הלאה",
             "l1_end_index": 29,
             "timestamp_end": "01:37.30",
             "l1_start_index": 28
@@ -1831,7 +1607,6 @@
           {
             "text": "and",
             "timestamp": "01:37.30",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "01:37.50",
             "l1_start_index": 31
@@ -1839,7 +1614,6 @@
           {
             "text": "on",
             "timestamp": "01:37.50",
-            "translation": "הלאה",
             "l1_end_index": 36,
             "timestamp_end": "01:37.60",
             "l1_start_index": 35
@@ -1847,14 +1621,12 @@
           {
             "text": "and",
             "timestamp": "01:37.60",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "01:37.80",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "01:35.30",
         "timestamp_end": "01:37.80"
       },
@@ -1864,7 +1636,6 @@
           {
             "text": "Boom",
             "timestamp": "01:37.90",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "01:38.30",
             "l1_start_index": 0
@@ -1872,7 +1643,6 @@
           {
             "text": "clap",
             "timestamp": "01:38.30",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "01:38.80",
             "l1_start_index": 5
@@ -1880,7 +1650,6 @@
           {
             "text": "you",
             "timestamp": "01:38.80",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "01:39.20",
             "l1_start_index": 11
@@ -1888,7 +1657,6 @@
           {
             "text": "make",
             "timestamp": "01:39.20",
-            "translation": "עושה",
             "l1_end_index": 18,
             "timestamp_end": "01:39.50",
             "l1_start_index": 15
@@ -1896,7 +1664,6 @@
           {
             "text": "me",
             "timestamp": "01:39.50",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "01:39.70",
             "l1_start_index": 20
@@ -1904,7 +1671,6 @@
           {
             "text": "feel",
             "timestamp": "01:39.70",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "01:40.00",
             "l1_start_index": 23
@@ -1912,14 +1678,12 @@
           {
             "text": "good",
             "timestamp": "01:40.00",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "01:40.20",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "01:37.90",
         "timestamp_end": "01:40.20"
       },
@@ -1929,7 +1693,6 @@
           {
             "text": "Come",
             "timestamp": "01:40.30",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "01:40.70",
             "l1_start_index": 0
@@ -1937,7 +1700,6 @@
           {
             "text": "on",
             "timestamp": "01:40.70",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "01:41.00",
             "l1_start_index": 5
@@ -1945,7 +1707,6 @@
           {
             "text": "to",
             "timestamp": "01:41.00",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "01:41.20",
             "l1_start_index": 8
@@ -1953,7 +1714,6 @@
           {
             "text": "me",
             "timestamp": "01:41.20",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "01:41.50",
             "l1_start_index": 11
@@ -1961,7 +1721,6 @@
           {
             "text": "come",
             "timestamp": "01:41.50",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "01:41.90",
             "l1_start_index": 15
@@ -1969,7 +1728,6 @@
           {
             "text": "on",
             "timestamp": "01:41.90",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "01:42.20",
             "l1_start_index": 20
@@ -1977,7 +1735,6 @@
           {
             "text": "to",
             "timestamp": "01:42.20",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "01:42.40",
             "l1_start_index": 23
@@ -1985,7 +1742,6 @@
           {
             "text": "me",
             "timestamp": "01:42.40",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "01:42.60",
             "l1_start_index": 26
@@ -1993,14 +1749,12 @@
           {
             "text": "now",
             "timestamp": "01:42.60",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "01:43.50",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "01:40.30",
         "timestamp_end": "01:43.50"
       },
@@ -2010,7 +1764,6 @@
           {
             "text": "You",
             "timestamp": "01:45.00",
-            "translation": "אתה",
             "l1_end_index": 2,
             "timestamp_end": "01:45.50",
             "l1_start_index": 0
@@ -2018,7 +1771,6 @@
           {
             "text": "are",
             "timestamp": "01:45.50",
-            "translation": "are",
             "l1_end_index": 6,
             "timestamp_end": "01:46.00",
             "l1_start_index": 4
@@ -2026,7 +1778,6 @@
           {
             "text": "the",
             "timestamp": "01:46.00",
-            "translation": "ה",
             "l1_end_index": 10,
             "timestamp_end": "01:46.50",
             "l1_start_index": 8
@@ -2034,7 +1785,6 @@
           {
             "text": "light",
             "timestamp": "01:46.50",
-            "translation": "אור",
             "l1_end_index": 16,
             "timestamp_end": "01:47.50",
             "l1_start_index": 12
@@ -2042,7 +1792,6 @@
           {
             "text": "and",
             "timestamp": "01:47.50",
-            "translation": "ו",
             "l1_end_index": 20,
             "timestamp_end": "01:48.00",
             "l1_start_index": 18
@@ -2050,7 +1799,6 @@
           {
             "text": "I",
             "timestamp": "01:48.00",
-            "translation": "אני",
             "l1_end_index": 22,
             "timestamp_end": "01:48.50",
             "l1_start_index": 22
@@ -2058,7 +1806,6 @@
           {
             "text": "will",
             "timestamp": "01:48.50",
-            "translation": "will",
             "l1_end_index": 27,
             "timestamp_end": "01:49.00",
             "l1_start_index": 24
@@ -2066,14 +1813,12 @@
           {
             "text": "follow",
             "timestamp": "01:49.00",
-            "translation": "לעקוב",
             "l1_end_index": 34,
             "timestamp_end": "01:50.00",
             "l1_start_index": 29
           }
         ],
         "text_l1": "You are the light and I will follow",
-        "text_l2": "את האור ואני אעקוב",
         "timestamp": "01:45.00",
         "timestamp_end": "01:50.00"
       },
@@ -2083,7 +1828,6 @@
           {
             "text": "You",
             "timestamp": "01:50.50",
-            "translation": "אתה",
             "l1_end_index": 2,
             "timestamp_end": "01:51.20",
             "l1_start_index": 0
@@ -2091,7 +1835,6 @@
           {
             "text": "let",
             "timestamp": "01:51.20",
-            "translation": "נותן",
             "l1_end_index": 6,
             "timestamp_end": "01:51.80",
             "l1_start_index": 4
@@ -2099,7 +1842,6 @@
           {
             "text": "me",
             "timestamp": "01:51.80",
-            "translation": "לי",
             "l1_end_index": 9,
             "timestamp_end": "01:52.20",
             "l1_start_index": 8
@@ -2107,7 +1849,6 @@
           {
             "text": "lose",
             "timestamp": "01:52.20",
-            "translation": "לאבד",
             "l1_end_index": 14,
             "timestamp_end": "01:53.00",
             "l1_start_index": 11
@@ -2115,7 +1856,6 @@
           {
             "text": "my",
             "timestamp": "01:53.00",
-            "translation": "שלי",
             "l1_end_index": 17,
             "timestamp_end": "01:53.50",
             "l1_start_index": 16
@@ -2123,14 +1863,12 @@
           {
             "text": "shadow",
             "timestamp": "01:53.50",
-            "translation": "צל",
             "l1_end_index": 24,
             "timestamp_end": "01:54.80",
             "l1_start_index": 19
           }
         ],
         "text_l1": "You let me lose my shadow",
-        "text_l2": "את נותנת לי לאבד את הצל שלי",
         "timestamp": "01:50.50",
         "timestamp_end": "01:54.80"
       },
@@ -2140,7 +1878,6 @@
           {
             "text": "You",
             "timestamp": "01:55.00",
-            "translation": "אתה",
             "l1_end_index": 2,
             "timestamp_end": "01:55.50",
             "l1_start_index": 0
@@ -2148,7 +1885,6 @@
           {
             "text": "are",
             "timestamp": "01:55.50",
-            "translation": "are",
             "l1_end_index": 6,
             "timestamp_end": "01:56.00",
             "l1_start_index": 4
@@ -2156,7 +1892,6 @@
           {
             "text": "the",
             "timestamp": "01:56.00",
-            "translation": "ה",
             "l1_end_index": 10,
             "timestamp_end": "01:56.50",
             "l1_start_index": 8
@@ -2164,7 +1899,6 @@
           {
             "text": "sun",
             "timestamp": "01:56.50",
-            "translation": "שמש",
             "l1_end_index": 14,
             "timestamp_end": "01:57.50",
             "l1_start_index": 12
@@ -2172,7 +1906,6 @@
           {
             "text": "the",
             "timestamp": "01:57.50",
-            "translation": "ה",
             "l1_end_index": 19,
             "timestamp_end": "01:58.00",
             "l1_start_index": 17
@@ -2180,7 +1913,6 @@
           {
             "text": "glow",
             "timestamp": "01:58.00",
-            "translation": "זוהר",
             "l1_end_index": 24,
             "timestamp_end": "01:58.80",
             "l1_start_index": 21
@@ -2188,7 +1920,6 @@
           {
             "text": "an",
             "timestamp": "01:58.80",
-            "translation": "an",
             "l1_end_index": 28,
             "timestamp_end": "01:59.20",
             "l1_start_index": 27
@@ -2196,14 +1927,12 @@
           {
             "text": "halo",
             "timestamp": "01:59.20",
-            "translation": "הילה",
             "l1_end_index": 33,
             "timestamp_end": "02:00.00",
             "l1_start_index": 30
           }
         ],
         "text_l1": "You are the sun, the glow, an halo",
-        "text_l2": "את השמש, הזוהר, הילה",
         "timestamp": "01:55.00",
         "timestamp_end": "02:00.00"
       },
@@ -2213,7 +1942,6 @@
           {
             "text": "And",
             "timestamp": "02:00.10",
-            "translation": "ו",
             "l1_end_index": 2,
             "timestamp_end": "02:00.50",
             "l1_start_index": 0
@@ -2221,7 +1949,6 @@
           {
             "text": "you",
             "timestamp": "02:00.50",
-            "translation": "אתה",
             "l1_end_index": 6,
             "timestamp_end": "02:00.80",
             "l1_start_index": 4
@@ -2229,7 +1956,6 @@
           {
             "text": "keep",
             "timestamp": "02:00.80",
-            "translation": "ממשיך",
             "l1_end_index": 11,
             "timestamp_end": "02:01.20",
             "l1_start_index": 8
@@ -2237,7 +1963,6 @@
           {
             "text": "on",
             "timestamp": "02:01.20",
-            "translation": "on",
             "l1_end_index": 14,
             "timestamp_end": "02:01.50",
             "l1_start_index": 13
@@ -2245,7 +1970,6 @@
           {
             "text": "keeping",
             "timestamp": "02:01.50",
-            "translation": "מחזיק",
             "l1_end_index": 22,
             "timestamp_end": "02:02.00",
             "l1_start_index": 16
@@ -2253,7 +1977,6 @@
           {
             "text": "me",
             "timestamp": "02:02.00",
-            "translation": "אותי",
             "l1_end_index": 25,
             "timestamp_end": "02:02.30",
             "l1_start_index": 24
@@ -2261,7 +1984,6 @@
           {
             "text": "up",
             "timestamp": "02:02.30",
-            "translation": "ער",
             "l1_end_index": 28,
             "timestamp_end": "02:02.60",
             "l1_start_index": 27
@@ -2269,7 +1991,6 @@
           {
             "text": "with",
             "timestamp": "02:02.60",
-            "translation": "עם",
             "l1_end_index": 33,
             "timestamp_end": "02:02.90",
             "l1_start_index": 30
@@ -2277,7 +1998,6 @@
           {
             "text": "all",
             "timestamp": "02:02.90",
-            "translation": "כל",
             "l1_end_index": 37,
             "timestamp_end": "02:03.20",
             "l1_start_index": 35
@@ -2285,7 +2005,6 @@
           {
             "text": "of",
             "timestamp": "02:03.20",
-            "translation": "of",
             "l1_end_index": 40,
             "timestamp_end": "02:03.40",
             "l1_start_index": 39
@@ -2293,7 +2012,6 @@
           {
             "text": "your",
             "timestamp": "02:03.40",
-            "translation": "שלך",
             "l1_end_index": 45,
             "timestamp_end": "02:03.60",
             "l1_start_index": 42
@@ -2301,7 +2019,6 @@
           {
             "text": "love",
             "timestamp": "02:03.60",
-            "translation": "אהבה",
             "l1_end_index": 50,
             "timestamp_end": "02:03.80",
             "l1_start_index": 47
@@ -2309,14 +2026,12 @@
           {
             "text": "oh",
             "timestamp": "02:03.80",
-            "translation": "או",
             "l1_end_index": 54,
             "timestamp_end": "02:04.00",
             "l1_start_index": 53
           }
         ],
         "text_l1": "And you keep on keeping me up with all of your love, oh",
-        "text_l2": "ואת ממשיכה להחזיק אותי למעלה עם כל האהבה שלך, או",
         "timestamp": "02:00.10",
         "timestamp_end": "02:04.00"
       },
@@ -2326,7 +2041,6 @@
           {
             "text": "Boom",
             "timestamp": "02:04.10",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:04.50",
             "l1_start_index": 0
@@ -2334,7 +2048,6 @@
           {
             "text": "clap",
             "timestamp": "02:04.50",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:05.00",
             "l1_start_index": 5
@@ -2342,7 +2055,6 @@
           {
             "text": "the",
             "timestamp": "02:05.00",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "02:05.30",
             "l1_start_index": 11
@@ -2350,7 +2062,6 @@
           {
             "text": "sound",
             "timestamp": "02:05.30",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "02:05.80",
             "l1_start_index": 15
@@ -2358,7 +2069,6 @@
           {
             "text": "of",
             "timestamp": "02:05.80",
-            "translation": "of",
             "l1_end_index": 22,
             "timestamp_end": "02:06.10",
             "l1_start_index": 21
@@ -2366,7 +2076,6 @@
           {
             "text": "my",
             "timestamp": "02:06.10",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "02:06.30",
             "l1_start_index": 24
@@ -2374,14 +2083,12 @@
           {
             "text": "heart",
             "timestamp": "02:06.30",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "02:07.00",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "02:04.10",
         "timestamp_end": "02:07.00"
       },
@@ -2391,7 +2098,6 @@
           {
             "text": "The",
             "timestamp": "02:07.10",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "02:07.40",
             "l1_start_index": 0
@@ -2399,7 +2105,6 @@
           {
             "text": "beat",
             "timestamp": "02:07.40",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "02:07.70",
             "l1_start_index": 4
@@ -2407,7 +2112,6 @@
           {
             "text": "goes",
             "timestamp": "02:07.70",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "02:08.00",
             "l1_start_index": 9
@@ -2415,7 +2119,6 @@
           {
             "text": "on",
             "timestamp": "02:08.00",
-            "translation": "on",
             "l1_end_index": 15,
             "timestamp_end": "02:08.30",
             "l1_start_index": 14
@@ -2423,7 +2126,6 @@
           {
             "text": "and",
             "timestamp": "02:08.30",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "02:08.50",
             "l1_start_index": 17
@@ -2431,7 +2133,6 @@
           {
             "text": "on",
             "timestamp": "02:08.50",
-            "translation": "on",
             "l1_end_index": 22,
             "timestamp_end": "02:08.70",
             "l1_start_index": 21
@@ -2439,7 +2140,6 @@
           {
             "text": "and",
             "timestamp": "02:08.70",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "02:08.90",
             "l1_start_index": 24
@@ -2447,7 +2147,6 @@
           {
             "text": "on",
             "timestamp": "02:08.90",
-            "translation": "on",
             "l1_end_index": 29,
             "timestamp_end": "02:09.10",
             "l1_start_index": 28
@@ -2455,7 +2154,6 @@
           {
             "text": "and",
             "timestamp": "02:09.10",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "02:09.30",
             "l1_start_index": 31
@@ -2463,7 +2161,6 @@
           {
             "text": "on",
             "timestamp": "02:09.30",
-            "translation": "on",
             "l1_end_index": 36,
             "timestamp_end": "02:09.40",
             "l1_start_index": 35
@@ -2471,14 +2168,12 @@
           {
             "text": "and",
             "timestamp": "02:09.40",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "02:09.50",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "02:07.10",
         "timestamp_end": "02:09.50"
       },
@@ -2488,7 +2183,6 @@
           {
             "text": "Boom",
             "timestamp": "02:09.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:10.00",
             "l1_start_index": 0
@@ -2496,7 +2190,6 @@
           {
             "text": "clap",
             "timestamp": "02:10.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:10.50",
             "l1_start_index": 5
@@ -2504,7 +2197,6 @@
           {
             "text": "you",
             "timestamp": "02:10.50",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "02:10.90",
             "l1_start_index": 11
@@ -2512,7 +2204,6 @@
           {
             "text": "make",
             "timestamp": "02:10.90",
-            "translation": "עושה",
             "l1_end_index": 18,
             "timestamp_end": "02:11.20",
             "l1_start_index": 15
@@ -2520,7 +2211,6 @@
           {
             "text": "me",
             "timestamp": "02:11.20",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "02:11.40",
             "l1_start_index": 20
@@ -2528,7 +2218,6 @@
           {
             "text": "feel",
             "timestamp": "02:11.40",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "02:11.70",
             "l1_start_index": 23
@@ -2536,14 +2225,12 @@
           {
             "text": "good",
             "timestamp": "02:11.70",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "02:12.00",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "02:09.60",
         "timestamp_end": "02:12.00"
       },
@@ -2553,7 +2240,6 @@
           {
             "text": "Come",
             "timestamp": "02:12.10",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "02:12.50",
             "l1_start_index": 0
@@ -2561,7 +2247,6 @@
           {
             "text": "on",
             "timestamp": "02:12.50",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "02:12.80",
             "l1_start_index": 5
@@ -2569,7 +2254,6 @@
           {
             "text": "to",
             "timestamp": "02:12.80",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "02:13.00",
             "l1_start_index": 8
@@ -2577,7 +2261,6 @@
           {
             "text": "me",
             "timestamp": "02:13.00",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "02:13.30",
             "l1_start_index": 11
@@ -2585,7 +2268,6 @@
           {
             "text": "come",
             "timestamp": "02:13.30",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "02:13.70",
             "l1_start_index": 15
@@ -2593,7 +2275,6 @@
           {
             "text": "on",
             "timestamp": "02:13.70",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "02:14.00",
             "l1_start_index": 20
@@ -2601,7 +2282,6 @@
           {
             "text": "to",
             "timestamp": "02:14.00",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "02:14.20",
             "l1_start_index": 23
@@ -2609,7 +2289,6 @@
           {
             "text": "me",
             "timestamp": "02:14.20",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "02:14.40",
             "l1_start_index": 26
@@ -2617,14 +2296,12 @@
           {
             "text": "now",
             "timestamp": "02:14.40",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "02:14.50",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "02:12.10",
         "timestamp_end": "02:14.50"
       },
@@ -2634,7 +2311,6 @@
           {
             "text": "Boom",
             "timestamp": "02:14.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:15.00",
             "l1_start_index": 0
@@ -2642,7 +2318,6 @@
           {
             "text": "clap",
             "timestamp": "02:15.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:15.50",
             "l1_start_index": 5
@@ -2650,7 +2325,6 @@
           {
             "text": "the",
             "timestamp": "02:15.50",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "02:15.80",
             "l1_start_index": 11
@@ -2658,7 +2332,6 @@
           {
             "text": "sound",
             "timestamp": "02:15.80",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "02:16.30",
             "l1_start_index": 15
@@ -2666,7 +2339,6 @@
           {
             "text": "of",
             "timestamp": "02:16.30",
-            "translation": "of",
             "l1_end_index": 22,
             "timestamp_end": "02:16.60",
             "l1_start_index": 21
@@ -2674,7 +2346,6 @@
           {
             "text": "my",
             "timestamp": "02:16.60",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "02:16.80",
             "l1_start_index": 24
@@ -2682,14 +2353,12 @@
           {
             "text": "heart",
             "timestamp": "02:16.80",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "02:17.00",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "02:14.60",
         "timestamp_end": "02:17.00"
       },
@@ -2699,7 +2368,6 @@
           {
             "text": "The",
             "timestamp": "02:17.10",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "02:17.40",
             "l1_start_index": 0
@@ -2707,7 +2375,6 @@
           {
             "text": "beat",
             "timestamp": "02:17.40",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "02:17.70",
             "l1_start_index": 4
@@ -2715,7 +2382,6 @@
           {
             "text": "goes",
             "timestamp": "02:17.70",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "02:18.00",
             "l1_start_index": 9
@@ -2723,7 +2389,6 @@
           {
             "text": "on",
             "timestamp": "02:18.00",
-            "translation": "on",
             "l1_end_index": 15,
             "timestamp_end": "02:18.30",
             "l1_start_index": 14
@@ -2731,7 +2396,6 @@
           {
             "text": "and",
             "timestamp": "02:18.30",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "02:18.50",
             "l1_start_index": 17
@@ -2739,7 +2403,6 @@
           {
             "text": "on",
             "timestamp": "02:18.50",
-            "translation": "on",
             "l1_end_index": 22,
             "timestamp_end": "02:18.70",
             "l1_start_index": 21
@@ -2747,7 +2410,6 @@
           {
             "text": "and",
             "timestamp": "02:18.70",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "02:18.90",
             "l1_start_index": 24
@@ -2755,7 +2417,6 @@
           {
             "text": "on",
             "timestamp": "02:18.90",
-            "translation": "on",
             "l1_end_index": 29,
             "timestamp_end": "02:19.10",
             "l1_start_index": 28
@@ -2763,7 +2424,6 @@
           {
             "text": "and",
             "timestamp": "02:19.10",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "02:19.30",
             "l1_start_index": 31
@@ -2771,7 +2431,6 @@
           {
             "text": "on",
             "timestamp": "02:19.30",
-            "translation": "on",
             "l1_end_index": 36,
             "timestamp_end": "02:19.40",
             "l1_start_index": 35
@@ -2779,14 +2438,12 @@
           {
             "text": "and",
             "timestamp": "02:19.40",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "02:19.50",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "02:17.10",
         "timestamp_end": "02:19.50"
       },
@@ -2796,31 +2453,26 @@
           {
             "text": "Boom",
             "timestamp": "02:19.60",
-            "translation": "בום",
             "timestamp_end": "02:20.00"
           },
           {
             "text": "clap",
             "timestamp": "02:20.00",
-            "translation": "קלאפ",
             "timestamp_end": "02:20.50"
           },
           {
             "text": "you",
             "timestamp": "02:20.50",
-            "translation": "אתה",
             "timestamp_end": "02:20.90"
           },
           {
             "text": "make",
             "timestamp": "02:20.90",
-            "translation": "עושה",
             "timestamp_end": "02:11.20"
           },
           {
             "text": "me",
             "timestamp": "02:11.20",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "02:11.40",
             "l1_start_index": 20
@@ -2828,7 +2480,6 @@
           {
             "text": "feel",
             "timestamp": "02:11.40",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "02:11.70",
             "l1_start_index": 23
@@ -2836,14 +2487,12 @@
           {
             "text": "good",
             "timestamp": "02:11.70",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "02:12.00",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "02:19.60",
         "timestamp_end": "02:22.00"
       },
@@ -2853,7 +2502,6 @@
           {
             "text": "Come",
             "timestamp": "02:22.10",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "02:22.50",
             "l1_start_index": 0
@@ -2861,7 +2509,6 @@
           {
             "text": "on",
             "timestamp": "02:22.50",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "02:22.80",
             "l1_start_index": 5
@@ -2869,7 +2516,6 @@
           {
             "text": "to",
             "timestamp": "02:22.80",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "02:23.00",
             "l1_start_index": 8
@@ -2877,7 +2523,6 @@
           {
             "text": "me",
             "timestamp": "02:23.00",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "02:23.30",
             "l1_start_index": 11
@@ -2885,7 +2530,6 @@
           {
             "text": "come",
             "timestamp": "02:23.30",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "02:23.70",
             "l1_start_index": 15
@@ -2893,7 +2537,6 @@
           {
             "text": "on",
             "timestamp": "02:23.70",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "02:24.00",
             "l1_start_index": 20
@@ -2901,7 +2544,6 @@
           {
             "text": "to",
             "timestamp": "02:24.00",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "02:24.20",
             "l1_start_index": 23
@@ -2909,7 +2551,6 @@
           {
             "text": "me",
             "timestamp": "02:24.20",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "02:24.40",
             "l1_start_index": 26
@@ -2917,14 +2558,12 @@
           {
             "text": "now",
             "timestamp": "02:24.40",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "02:25.00",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "02:22.10",
         "timestamp_end": "02:25.00"
       },
@@ -2934,7 +2573,6 @@
           {
             "text": "Boom",
             "timestamp": "02:25.10",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:25.50",
             "l1_start_index": 0
@@ -2942,7 +2580,6 @@
           {
             "text": "clap",
             "timestamp": "02:25.50",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:26.00",
             "l1_start_index": 5
@@ -2950,7 +2587,6 @@
           {
             "text": "the",
             "timestamp": "02:26.00",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "02:26.30",
             "l1_start_index": 11
@@ -2958,7 +2594,6 @@
           {
             "text": "sound",
             "timestamp": "02:26.30",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "02:26.80",
             "l1_start_index": 15
@@ -2966,7 +2601,6 @@
           {
             "text": "of",
             "timestamp": "02:26.80",
-            "translation": "of",
             "l1_end_index": 22,
             "timestamp_end": "02:27.10",
             "l1_start_index": 21
@@ -2974,7 +2608,6 @@
           {
             "text": "my",
             "timestamp": "02:27.10",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "02:27.30",
             "l1_start_index": 24
@@ -2982,14 +2615,12 @@
           {
             "text": "heart",
             "timestamp": "02:27.30",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "02:27.50",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "02:25.10",
         "timestamp_end": "02:27.50"
       },
@@ -2999,7 +2630,6 @@
           {
             "text": "The",
             "timestamp": "02:27.60",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "02:27.90",
             "l1_start_index": 0
@@ -3007,7 +2637,6 @@
           {
             "text": "beat",
             "timestamp": "02:27.90",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "02:28.20",
             "l1_start_index": 4
@@ -3015,7 +2644,6 @@
           {
             "text": "goes",
             "timestamp": "02:28.20",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "02:28.50",
             "l1_start_index": 9
@@ -3023,7 +2651,6 @@
           {
             "text": "on",
             "timestamp": "02:28.50",
-            "translation": "on",
             "l1_end_index": 15,
             "timestamp_end": "02:28.80",
             "l1_start_index": 14
@@ -3031,7 +2658,6 @@
           {
             "text": "and",
             "timestamp": "02:28.80",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "02:29.00",
             "l1_start_index": 17
@@ -3039,7 +2665,6 @@
           {
             "text": "on",
             "timestamp": "02:29.00",
-            "translation": "on",
             "l1_end_index": 22,
             "timestamp_end": "02:29.20",
             "l1_start_index": 21
@@ -3047,7 +2672,6 @@
           {
             "text": "and",
             "timestamp": "02:29.20",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "02:29.40",
             "l1_start_index": 24
@@ -3055,7 +2679,6 @@
           {
             "text": "on",
             "timestamp": "02:29.40",
-            "translation": "on",
             "l1_end_index": 29,
             "timestamp_end": "02:29.60",
             "l1_start_index": 28
@@ -3063,7 +2686,6 @@
           {
             "text": "and",
             "timestamp": "02:29.60",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "02:29.80",
             "l1_start_index": 31
@@ -3071,7 +2693,6 @@
           {
             "text": "on",
             "timestamp": "02:29.80",
-            "translation": "on",
             "l1_end_index": 36,
             "timestamp_end": "02:29.90",
             "l1_start_index": 35
@@ -3079,14 +2700,12 @@
           {
             "text": "and",
             "timestamp": "02:29.90",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "02:30.00",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "02:27.60",
         "timestamp_end": "02:30.00"
       },
@@ -3096,7 +2715,6 @@
           {
             "text": "Boom",
             "timestamp": "02:30.10",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:30.50",
             "l1_start_index": 0
@@ -3104,7 +2722,6 @@
           {
             "text": "clap",
             "timestamp": "02:30.50",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:31.00",
             "l1_start_index": 5
@@ -3112,7 +2729,6 @@
           {
             "text": "you",
             "timestamp": "02:31.00",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "02:31.40",
             "l1_start_index": 11
@@ -3120,7 +2736,6 @@
           {
             "text": "make",
             "timestamp": "02:31.40",
-            "translation": "עושה",
             "l1_end_index": 18,
             "timestamp_end": "02:31.70",
             "l1_start_index": 15
@@ -3128,7 +2743,6 @@
           {
             "text": "me",
             "timestamp": "02:31.70",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "02:31.90",
             "l1_start_index": 20
@@ -3136,7 +2750,6 @@
           {
             "text": "feel",
             "timestamp": "02:31.90",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "02:32.20",
             "l1_start_index": 23
@@ -3144,14 +2757,12 @@
           {
             "text": "good",
             "timestamp": "02:32.20",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "02:32.50",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "02:30.10",
         "timestamp_end": "02:32.50"
       },
@@ -3161,7 +2772,6 @@
           {
             "text": "Come",
             "timestamp": "02:32.60",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "02:33.00",
             "l1_start_index": 0
@@ -3169,7 +2779,6 @@
           {
             "text": "on",
             "timestamp": "02:33.00",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "02:33.30",
             "l1_start_index": 5
@@ -3177,7 +2786,6 @@
           {
             "text": "to",
             "timestamp": "02:33.30",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "02:33.50",
             "l1_start_index": 8
@@ -3185,7 +2793,6 @@
           {
             "text": "me",
             "timestamp": "02:33.50",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "02:33.80",
             "l1_start_index": 11
@@ -3193,7 +2800,6 @@
           {
             "text": "come",
             "timestamp": "02:33.80",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "02:34.20",
             "l1_start_index": 15
@@ -3201,7 +2807,6 @@
           {
             "text": "on",
             "timestamp": "02:34.20",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "02:34.50",
             "l1_start_index": 20
@@ -3209,7 +2814,6 @@
           {
             "text": "to",
             "timestamp": "02:34.50",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "02:34.70",
             "l1_start_index": 23
@@ -3217,7 +2821,6 @@
           {
             "text": "me",
             "timestamp": "02:34.70",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "02:34.90",
             "l1_start_index": 26
@@ -3225,14 +2828,12 @@
           {
             "text": "now",
             "timestamp": "02:34.90",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "02:35.50",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "02:32.60",
         "timestamp_end": "02:35.50"
       },
@@ -3242,7 +2843,6 @@
           {
             "text": "Boom",
             "timestamp": "02:35.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:36.00",
             "l1_start_index": 0
@@ -3250,7 +2850,6 @@
           {
             "text": "clap",
             "timestamp": "02:36.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:36.50",
             "l1_start_index": 5
@@ -3258,7 +2857,6 @@
           {
             "text": "the",
             "timestamp": "02:36.50",
-            "translation": "ה",
             "l1_end_index": 13,
             "timestamp_end": "02:36.80",
             "l1_start_index": 11
@@ -3266,7 +2864,6 @@
           {
             "text": "sound",
             "timestamp": "02:36.80",
-            "translation": "צליל",
             "l1_end_index": 19,
             "timestamp_end": "02:37.30",
             "l1_start_index": 15
@@ -3274,7 +2871,6 @@
           {
             "text": "of",
             "timestamp": "02:37.30",
-            "translation": "of",
             "l1_end_index": 22,
             "timestamp_end": "02:37.60",
             "l1_start_index": 21
@@ -3282,7 +2878,6 @@
           {
             "text": "my",
             "timestamp": "02:37.60",
-            "translation": "שלי",
             "l1_end_index": 25,
             "timestamp_end": "02:37.80",
             "l1_start_index": 24
@@ -3290,14 +2885,12 @@
           {
             "text": "heart",
             "timestamp": "02:37.80",
-            "translation": "לב",
             "l1_end_index": 31,
             "timestamp_end": "02:38.00",
             "l1_start_index": 27
           }
         ],
         "text_l1": "Boom clap, the sound of my heart",
-        "text_l2": "בום קלאפ, הצליל של הלב שלי",
         "timestamp": "02:35.60",
         "timestamp_end": "02:38.00"
       },
@@ -3307,7 +2900,6 @@
           {
             "text": "The",
             "timestamp": "02:38.10",
-            "translation": "ה",
             "l1_end_index": 2,
             "timestamp_end": "02:38.40",
             "l1_start_index": 0
@@ -3315,7 +2907,6 @@
           {
             "text": "beat",
             "timestamp": "02:38.40",
-            "translation": "קצב",
             "l1_end_index": 7,
             "timestamp_end": "02:38.70",
             "l1_start_index": 4
@@ -3323,7 +2914,6 @@
           {
             "text": "goes",
             "timestamp": "02:38.70",
-            "translation": "ממשיך",
             "l1_end_index": 12,
             "timestamp_end": "02:39.00",
             "l1_start_index": 9
@@ -3331,7 +2921,6 @@
           {
             "text": "on",
             "timestamp": "02:39.00",
-            "translation": "on",
             "l1_end_index": 15,
             "timestamp_end": "02:39.30",
             "l1_start_index": 14
@@ -3339,7 +2928,6 @@
           {
             "text": "and",
             "timestamp": "02:39.30",
-            "translation": "ו",
             "l1_end_index": 19,
             "timestamp_end": "02:39.50",
             "l1_start_index": 17
@@ -3347,7 +2935,6 @@
           {
             "text": "on",
             "timestamp": "02:39.50",
-            "translation": "on",
             "l1_end_index": 22,
             "timestamp_end": "02:39.70",
             "l1_start_index": 21
@@ -3355,7 +2942,6 @@
           {
             "text": "and",
             "timestamp": "02:39.70",
-            "translation": "ו",
             "l1_end_index": 26,
             "timestamp_end": "02:39.90",
             "l1_start_index": 24
@@ -3363,7 +2949,6 @@
           {
             "text": "on",
             "timestamp": "02:39.90",
-            "translation": "on",
             "l1_end_index": 29,
             "timestamp_end": "02:40.10",
             "l1_start_index": 28
@@ -3371,7 +2956,6 @@
           {
             "text": "and",
             "timestamp": "02:40.10",
-            "translation": "ו",
             "l1_end_index": 33,
             "timestamp_end": "02:40.30",
             "l1_start_index": 31
@@ -3379,7 +2963,6 @@
           {
             "text": "on",
             "timestamp": "02:40.30",
-            "translation": "on",
             "l1_end_index": 36,
             "timestamp_end": "02:40.40",
             "l1_start_index": 35
@@ -3387,14 +2970,12 @@
           {
             "text": "and",
             "timestamp": "02:40.40",
-            "translation": "ו",
             "l1_end_index": 40,
             "timestamp_end": "02:40.50",
             "l1_start_index": 38
           }
         ],
         "text_l1": "The beat goes on and on and on and on and",
-        "text_l2": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
         "timestamp": "02:38.10",
         "timestamp_end": "02:40.50"
       },
@@ -3404,7 +2985,6 @@
           {
             "text": "Boom",
             "timestamp": "02:40.60",
-            "translation": "בום",
             "l1_end_index": 3,
             "timestamp_end": "02:41.00",
             "l1_start_index": 0
@@ -3412,7 +2992,6 @@
           {
             "text": "clap",
             "timestamp": "02:41.00",
-            "translation": "קלאפ",
             "l1_end_index": 8,
             "timestamp_end": "02:41.50",
             "l1_start_index": 5
@@ -3420,7 +2999,6 @@
           {
             "text": "you",
             "timestamp": "02:41.50",
-            "translation": "אתה",
             "l1_end_index": 13,
             "timestamp_end": "02:41.90",
             "l1_start_index": 11
@@ -3428,7 +3006,6 @@
           {
             "text": "make",
             "timestamp": "02:41.90",
-            "translation": "עושה",
             "l1_end_index": 18,
             "timestamp_end": "02:42.20",
             "l1_start_index": 15
@@ -3436,7 +3013,6 @@
           {
             "text": "me",
             "timestamp": "02:42.20",
-            "translation": "לי",
             "l1_end_index": 21,
             "timestamp_end": "02:42.40",
             "l1_start_index": 20
@@ -3444,7 +3020,6 @@
           {
             "text": "feel",
             "timestamp": "02:42.40",
-            "translation": "להרגיש",
             "l1_end_index": 26,
             "timestamp_end": "02:42.70",
             "l1_start_index": 23
@@ -3452,14 +3027,12 @@
           {
             "text": "good",
             "timestamp": "02:42.70",
-            "translation": "טוב",
             "l1_end_index": 31,
             "timestamp_end": "02:43.00",
             "l1_start_index": 28
           }
         ],
         "text_l1": "Boom clap, you make me feel good",
-        "text_l2": "בום קלאפ, את גורמת לי להרגיש טוב",
         "timestamp": "02:40.60",
         "timestamp_end": "02:43.00"
       },
@@ -3469,7 +3042,6 @@
           {
             "text": "Come",
             "timestamp": "02:43.10",
-            "translation": "בוא",
             "l1_end_index": 3,
             "timestamp_end": "02:43.50",
             "l1_start_index": 0
@@ -3477,7 +3049,6 @@
           {
             "text": "on",
             "timestamp": "02:43.50",
-            "translation": "קדימה",
             "l1_end_index": 6,
             "timestamp_end": "02:43.80",
             "l1_start_index": 5
@@ -3485,7 +3056,6 @@
           {
             "text": "to",
             "timestamp": "02:43.80",
-            "translation": "אל",
             "l1_end_index": 9,
             "timestamp_end": "02:44.00",
             "l1_start_index": 8
@@ -3493,7 +3063,6 @@
           {
             "text": "me",
             "timestamp": "02:44.00",
-            "translation": "אותי",
             "l1_end_index": 12,
             "timestamp_end": "02:44.30",
             "l1_start_index": 11
@@ -3501,7 +3070,6 @@
           {
             "text": "come",
             "timestamp": "02:44.30",
-            "translation": "בוא",
             "l1_end_index": 18,
             "timestamp_end": "02:44.70",
             "l1_start_index": 15
@@ -3509,7 +3077,6 @@
           {
             "text": "on",
             "timestamp": "02:44.70",
-            "translation": "קדימה",
             "l1_end_index": 21,
             "timestamp_end": "02:45.00",
             "l1_start_index": 20
@@ -3517,7 +3084,6 @@
           {
             "text": "to",
             "timestamp": "02:45.00",
-            "translation": "אל",
             "l1_end_index": 24,
             "timestamp_end": "02:45.20",
             "l1_start_index": 23
@@ -3525,7 +3091,6 @@
           {
             "text": "me",
             "timestamp": "02:45.20",
-            "translation": "אותי",
             "l1_end_index": 27,
             "timestamp_end": "02:45.40",
             "l1_start_index": 26
@@ -3533,14 +3098,12 @@
           {
             "text": "now",
             "timestamp": "02:45.40",
-            "translation": "עכשיו",
             "l1_end_index": 31,
             "timestamp_end": "02:46.00",
             "l1_start_index": 29
           }
         ],
         "text_l1": "Come on to me, come on to me now",
-        "text_l2": "בואי אלי, בואי אלי עכשיו",
         "timestamp": "02:43.10",
         "timestamp_end": "02:46.00"
       }
@@ -3589,7 +3152,654 @@
         "reason": "Another repetition of the chorus; adds no new vocabulary."
       }
     ],
-    "similar_sounds": "You're picture [perfects] blue\nSunbathing on the [mon]\nStars shining as your bones [illuminates]\nFirst kiss just [live] a drug\nUnder your [influenced]\nYou take me over all the magic in my [vein]\nThis must be [lose]\n[zoom] clap the sound of my heart\nThe beat goes on and on [any] on and on and\nBoom [cap] you make me feel good\n[code] on to me come on to me now\nBoom [cap] the sound of my heart\nThe beat goes on and on and on and on [an]\nBoom clap you [makes] me feel good\nCome on to me [code] on to me now\nNo [solver] or no gold\n[would] dress me up so good\nYou're the glitter in [﻿the] darkness of my world\n[bust] tell me what to do\nI'll fall right into [your]\nGoing under cast a spell say [they] word\nI feel [four] love\nBoom clap the [round] of my heart\nThe beat goes on [any] on and on and on and\nBoom clap you [take] me feel good\nCome on to me [some] on to me now\n[room] clap the sound of my heart\nThe beat goes on and on [any] on and on and\nBoom clap you [take] me feel good\nCome on to me [home] on to me now\nYou are the light and I will [fellow]\nYou let me lose my [shadowy]\n[lou] are the sun the glow an halo\nAnd you keep on keeping me up [wish] all of your love oh\nBoom clap the sound of my [heard]\nThe beat goes on [add] on and on and on and\nBoom clap you [makes] me feel good\nCome on to me come on to me [not]\nBoom clap the [found] of my heart\nThe beat goes on [add] on and on and on and\nBoom clap [sou] make me feel good\nCome on to me come on to me [no]\nBoom [clay] the sound of my heart\nThe beat goes on and on and on and on [add]\nBoom clap you [makes] me feel good\nCome on to me [home] on to me now\nBoom clap the [sounds] of my heart\nThe beat goes on and on and on [an] on and\nBoom [clip] you make me feel good\n[home] on to me come on to me now"
+    "similar_sounds": "You're picture [perfects] blue\nSunbathing on the [mon]\nStars shining as your bones [illuminates]\nFirst kiss just [live] a drug\nUnder your [influenced]\nYou take me over all the magic in my [vein]\nThis must be [lose]\n[zoom] clap the sound of my heart\nThe beat goes on and on [any] on and on and\nBoom [cap] you make me feel good\n[code] on to me come on to me now\nBoom [cap] the sound of my heart\nThe beat goes on and on and on and on [an]\nBoom clap you [makes] me feel good\nCome on to me [code] on to me now\nNo [solver] or no gold\n[would] dress me up so good\nYou're the glitter in [﻿the] darkness of my world\n[bust] tell me what to do\nI'll fall right into [your]\nGoing under cast a spell say [they] word\nI feel [four] love\nBoom clap the [round] of my heart\nThe beat goes on [any] on and on and on and\nBoom clap you [take] me feel good\nCome on to me [some] on to me now\n[room] clap the sound of my heart\nThe beat goes on and on [any] on and on and\nBoom clap you [take] me feel good\nCome on to me [home] on to me now\nYou are the light and I will [fellow]\nYou let me lose my [shadowy]\n[lou] are the sun the glow an halo\nAnd you keep on keeping me up [wish] all of your love oh\nBoom clap the sound of my [heard]\nThe beat goes on [add] on and on and on and\nBoom clap you [makes] me feel good\nCome on to me come on to me [not]\nBoom clap the [found] of my heart\nThe beat goes on [add] on and on and on and\nBoom clap [sou] make me feel good\nCome on to me come on to me [no]\nBoom [clay] the sound of my heart\nThe beat goes on and on and on and on [add]\nBoom clap you [makes] me feel good\nCome on to me [home] on to me now\nBoom clap the [sounds] of my heart\nThe beat goes on and on and on [an] on and\nBoom [clip] you make me feel good\n[home] on to me come on to me now",
+    "translations": {
+      "he": {
+        "language_id": 44,
+        "language_name": "Hebrew",
+        "phrases": [
+          {
+            "text": "את כחולה מושלמת כמו תמונה",
+            "words": [
+              "את",
+              "תמונה",
+              "מושלם",
+              "כחול"
+            ]
+          },
+          {
+            "text": "משתזפת על הירח",
+            "words": [
+              "משתזף",
+              "על",
+              "ה",
+              "ירח"
+            ]
+          },
+          {
+            "text": "כוכבים זורחים כשהעצמות שלך מאירות",
+            "words": [
+              "כוכבים",
+              "זורחים",
+              "כאשר",
+              "שלך",
+              "עצמות",
+              "מאירות"
+            ]
+          },
+          {
+            "text": "נשיקה ראשונה ממש כמו סם",
+            "words": [
+              "ראשונה",
+              "נשיקה",
+              "ממש",
+              "כמו",
+              "a",
+              "סם"
+            ]
+          },
+          {
+            "text": "תחת ההשפעה שלך",
+            "words": [
+              "תחת",
+              "שלך",
+              "השפעה"
+            ]
+          },
+          {
+            "text": "את משתלטת עלי ועל כל הקסם בוורידים שלי",
+            "words": [
+              "אתה",
+              "לוקח",
+              "אותי",
+              "על",
+              "כל",
+              "ה",
+              "קסם",
+              "בתוך",
+              "שלי",
+              "ורידים"
+            ]
+          },
+          {
+            "text": "זו חייבת להיות אהבה",
+            "words": [
+              "זה",
+              "חייב",
+              "להיות",
+              "אהבה"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "של",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "גורם",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "של",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "גורם",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "לא כסף ולא זהב",
+            "words": [
+              "לא",
+              "כסף",
+              "או",
+              "לא",
+              "זהב"
+            ]
+          },
+          {
+            "text": "יכלו להלביש אותי כל כך טוב",
+            "words": [
+              "יכול",
+              "להלביש",
+              "אותי",
+              "up",
+              "כל כך",
+              "טוב"
+            ]
+          },
+          {
+            "text": "את הברק בחושך של העולם שלי",
+            "words": [
+              "את",
+              "ה",
+              "נצנצים",
+              "בתוך",
+              "ה",
+              "חושך",
+              "של",
+              "שלי",
+              "עולם"
+            ]
+          },
+          {
+            "text": "רק תגידי לי מה לעשות",
+            "words": [
+              "פשוט",
+              "תגיד",
+              "לי",
+              "מה",
+              "ל",
+              "לעשות"
+            ]
+          },
+          {
+            "text": "אפול ישר אלייך",
+            "words": [
+              "אני",
+              "אפול",
+              "ישר",
+              "לתוך",
+              "אותך"
+            ]
+          },
+          {
+            "text": "נכנעת, הטילי כישוף, תגידי את המילה",
+            "words": [
+              "הולך",
+              "מתחת",
+              "להטיל",
+              "a",
+              "כישוף",
+              "אמור",
+              "ה",
+              "מילה"
+            ]
+          },
+          {
+            "text": "אני מרגיש את האהבה שלך",
+            "words": [
+              "אני",
+              "מרגיש",
+              "שלך",
+              "אהבה"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "של",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "גורם",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "של",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו",
+              "הלאה",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "עושה",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "את האור ואני אעקוב",
+            "words": [
+              "אתה",
+              "are",
+              "ה",
+              "אור",
+              "ו",
+              "אני",
+              "will",
+              "לעקוב"
+            ]
+          },
+          {
+            "text": "את נותנת לי לאבד את הצל שלי",
+            "words": [
+              "אתה",
+              "נותן",
+              "לי",
+              "לאבד",
+              "שלי",
+              "צל"
+            ]
+          },
+          {
+            "text": "את השמש, הזוהר, הילה",
+            "words": [
+              "אתה",
+              "are",
+              "ה",
+              "שמש",
+              "ה",
+              "זוהר",
+              "an",
+              "הילה"
+            ]
+          },
+          {
+            "text": "ואת ממשיכה להחזיק אותי למעלה עם כל האהבה שלך, או",
+            "words": [
+              "ו",
+              "אתה",
+              "ממשיך",
+              "on",
+              "מחזיק",
+              "אותי",
+              "ער",
+              "עם",
+              "כל",
+              "of",
+              "שלך",
+              "אהבה",
+              "או"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "of",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "עושה",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "of",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "עושה",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "of",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "עושה",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, הצליל של הלב שלי",
+            "words": [
+              "בום",
+              "קלאפ",
+              "ה",
+              "צליל",
+              "of",
+              "שלי",
+              "לב"
+            ]
+          },
+          {
+            "text": "הפעמה נמשכת והלאה והלאה והלאה והלאה ו",
+            "words": [
+              "ה",
+              "קצב",
+              "ממשיך",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו",
+              "on",
+              "ו"
+            ]
+          },
+          {
+            "text": "בום קלאפ, את גורמת לי להרגיש טוב",
+            "words": [
+              "בום",
+              "קלאפ",
+              "אתה",
+              "עושה",
+              "לי",
+              "להרגיש",
+              "טוב"
+            ]
+          },
+          {
+            "text": "בואי אלי, בואי אלי עכשיו",
+            "words": [
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "בוא",
+              "קדימה",
+              "אל",
+              "אותי",
+              "עכשיו"
+            ]
+          }
+        ],
+        "lessons": "# First Verse: Picture Perfect Blue\n00:14.50 You're picture perfect blue\n00:17.50 Sunbathing on the moon\n00:20.00 Stars shining as your bones illuminate\n00:25.00 First kiss just like a drug\n00:28.00 Under your influence\n00:30.60 You take me over all the magic in my veins\n00:33.90 This must be love\n\n# Chorus: Boom Clap\n00:35.60 Boom clap, the sound of my heart\n00:38.60 The beat goes on and on and on and on and\n00:41.10 Boom clap, you make me feel good\n00:43.60 Come on to me, come on to me now\n00:46.30 Boom clap, the sound of my heart\n00:48.60 The beat goes on and on and on and on and\n00:51.10 Boom clap, you make me feel good\n00:53.60 Come on to me, come on to me now\n\n# Second Verse: No Silver or No Gold\n01:01.50 No silver or no gold\n01:04.10 Could dress me up so good\n01:07.10 You're the glitter in the darkness of my world\n01:12.00 Just tell me what to do\n01:14.60 I'll fall right into you\n01:17.60 Going under cast a spell, say the word\n01:20.60 I feel your love\n\n# Chorus: Boom Clap (Reprise)\n01:22.30 Boom clap, the sound of my heart\n01:25.10 The beat goes on and on and on and on and\n01:27.60 Boom clap, you make me feel good\n01:30.10 Come on to me, come on to me now\n01:32.90 Boom clap, the sound of my heart\n01:35.30 The beat goes on and on and on and on and\n01:37.90 Boom clap, you make me feel good\n01:40.30 Come on to me, come on to me now\n\n# Bridge: You Are the Light\n01:45.00 You are the light and I will follow\n01:50.50 You let me lose my shadow\n01:55.00 You are the sun, the glow, an halo\n02:00.10 And you keep on keeping me up with all of your love, oh\n\n# Final Chorus (Part 1)\n02:04.10 Boom clap, the sound of my heart\n02:07.10 The beat goes on and on and on and on and\n02:09.60 Boom clap, you make me feel good\n02:12.10 Come on to me, come on to me now\n02:14.60 Boom clap, the sound of my heart\n02:17.10 The beat goes on and on and on and on and\n02:19.60 Boom clap, you make me feel good\n02:22.10 Come on to me, come on to me now\n\n# Final Chorus (Part 2)\n02:25.10 Boom clap, the sound of my heart\n02:27.60 The beat goes on and on and on and on and\n02:30.10 Boom clap, you make me feel good\n02:32.60 Come on to me, come on to me now\n02:35.60 Boom clap, the sound of my heart\n02:38.10 The beat goes on and on and on and on and\n02:40.60 Boom clap, you make me feel good\n02:43.10 Come on to me, come on to me now"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-27 16:39:14 UTC",
   "updated_at": "2026-06-27 16:46:39 UTC",

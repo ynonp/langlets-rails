@@ -9,594 +9,856 @@
         "id": "phrase_1",
         "text_l1": "كيف بيصير قوس قزح بالسما؟",
         "timestamp": "00:00.00",
-        "timestamp_end": "00:03.00",
-        "text_l2": "How does a rainbow happen in the sky?"
+        "timestamp_end": "00:03.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "ممم...",
         "timestamp": "00:03.00",
-        "timestamp_end": "00:05.00",
-        "text_l2": "Hmm..."
+        "timestamp_end": "00:05.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "أكيد التحري جلجل عنده الجواب.",
         "timestamp": "00:05.00",
-        "timestamp_end": "00:07.80",
-        "text_l2": "Detective Jaljal surely has the answer."
+        "timestamp_end": "00:07.80"
       },
       {
         "id": "phrase_4",
         "text_l1": "ها ها ها!",
         "timestamp": "00:07.80",
-        "timestamp_end": "00:09.50",
-        "text_l2": "Ha ha ha!"
+        "timestamp_end": "00:09.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "التحري جلجل موجود يا تنتن.",
         "timestamp": "00:09.50",
-        "timestamp_end": "00:12.50",
-        "text_l2": "Detective Jaljal is here, Tintin."
+        "timestamp_end": "00:12.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "وأكيد إنتي بدك تسألي",
         "timestamp": "00:12.50",
-        "timestamp_end": "00:15.00",
-        "text_l2": "And surely you want to ask"
+        "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "عن قوس قزح، صح؟",
         "timestamp": "00:15.00",
-        "timestamp_end": "00:17.50",
-        "text_l2": "about the rainbow, right?"
+        "timestamp_end": "00:17.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "كيف بيصير قوس قزح بالسما؟",
         "timestamp": "00:17.50",
-        "timestamp_end": "00:20.50",
-        "text_l2": "How does a rainbow happen in the sky?"
+        "timestamp_end": "00:20.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "ها! الأسئلة كتير مهمة يا تنتن.",
         "timestamp": "00:20.50",
-        "timestamp_end": "00:23.50",
-        "text_l2": "Ha! Questions are very important, Tintin."
+        "timestamp_end": "00:23.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "وهي اللي بتخليني",
         "timestamp": "00:23.50",
-        "timestamp_end": "00:25.50",
-        "text_l2": "They are what make me"
+        "timestamp_end": "00:25.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "دايماً تحري ناجح.",
         "timestamp": "00:25.50",
-        "timestamp_end": "00:28.50",
-        "text_l2": "always a successful detective."
+        "timestamp_end": "00:28.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "ها!",
         "timestamp": "00:28.50",
-        "timestamp_end": "00:30.50",
-        "text_l2": "Ha!"
+        "timestamp_end": "00:30.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "لازم نسأل الشمس.",
         "timestamp": "00:30.50",
-        "timestamp_end": "00:33.50",
-        "text_l2": "We must ask the Sun."
+        "timestamp_end": "00:33.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "ها؟ الشمس؟ ممم.",
         "timestamp": "00:33.50",
-        "timestamp_end": "00:36.50",
-        "text_l2": "Huh? The Sun? Hmm."
+        "timestamp_end": "00:36.50"
       },
       {
         "id": "phrase_15",
         "text_l1": "يا شمس! يا شمس!",
         "timestamp": "00:36.50",
-        "timestamp_end": "00:38.50",
-        "text_l2": "Oh Sun! Oh Sun!"
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "يا شمس! وينك يا شمس؟",
         "timestamp": "00:38.50",
-        "timestamp_end": "00:40.50",
-        "text_l2": "Oh Sun! Where are you, Sun?"
+        "timestamp_end": "00:40.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "هيها هيها! أهلاً أهلاً يا شمس.",
         "timestamp": "00:40.50",
-        "timestamp_end": "00:42.50",
-        "text_l2": "Heha heha! Welcome, welcome, Sun."
+        "timestamp_end": "00:42.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "أهلاً، مرحباً يا شمس.",
         "timestamp": "00:42.50",
-        "timestamp_end": "00:45.50",
-        "text_l2": "Welcome, hello, Sun."
+        "timestamp_end": "00:45.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "أهلاً أهلاً.",
         "timestamp": "00:45.50",
-        "timestamp_end": "00:47.50",
-        "text_l2": "Welcome, welcome."
+        "timestamp_end": "00:47.50"
       },
       {
         "id": "phrase_20",
         "text_l1": "ممكن تقولي لنا مين اللي بيرسم",
         "timestamp": "00:47.50",
-        "timestamp_end": "00:50.00",
-        "text_l2": "Can you tell us who paints"
+        "timestamp_end": "00:50.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "قوس قزح في السما؟",
         "timestamp": "00:50.00",
-        "timestamp_end": "00:51.50",
-        "text_l2": "the rainbow in the sky?"
+        "timestamp_end": "00:51.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "شعاعي الضوئي.",
         "timestamp": "00:51.50",
-        "timestamp_end": "00:53.50",
-        "text_l2": "My light ray."
+        "timestamp_end": "00:53.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "ها! شعاعك الضوئي؟",
         "timestamp": "00:53.50",
-        "timestamp_end": "00:55.50",
-        "text_l2": "Ha! Your light ray?"
+        "timestamp_end": "00:55.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "وطبعاً مش بس لحالي.",
         "timestamp": "00:55.50",
-        "timestamp_end": "00:57.50",
-        "text_l2": "And of course not just by myself."
+        "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "آه، مين بيساعدك؟",
         "timestamp": "00:57.50",
-        "timestamp_end": "00:59.50",
-        "text_l2": "Ah, who helps you?"
+        "timestamp_end": "00:59.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "قطرة المي اللي بالغيمة.",
         "timestamp": "00:59.50",
-        "timestamp_end": "01:02.50",
-        "text_l2": "The water drop in the cloud."
+        "timestamp_end": "01:02.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "شايفة يا تنتن؟",
         "timestamp": "01:02.50",
-        "timestamp_end": "01:04.50",
-        "text_l2": "See, Tintin?"
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "أنا كنت متأكد",
         "timestamp": "01:04.50",
-        "timestamp_end": "01:06.50",
-        "text_l2": "I was sure"
+        "timestamp_end": "01:06.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "من خلال الأسئلة رح أكتشف الحقائق.",
         "timestamp": "01:06.50",
-        "timestamp_end": "01:09.50",
-        "text_l2": "that through questions I'd discover the facts."
+        "timestamp_end": "01:09.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "أنا التحري جلجل اللي اكتشفت",
         "timestamp": "01:09.50",
-        "timestamp_end": "01:12.50",
-        "text_l2": "I, Detective Jaljal, discovered"
+        "timestamp_end": "01:12.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "إن الموضوع كمان فيه غيم ومي.",
         "timestamp": "01:12.50",
-        "timestamp_end": "01:15.50",
-        "text_l2": "that the matter also involves clouds and water."
+        "timestamp_end": "01:15.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "ممم.",
         "timestamp": "01:15.50",
-        "timestamp_end": "01:18.50",
-        "text_l2": "Hmm."
+        "timestamp_end": "01:18.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "طبعاً، قبل شوي مر شعاعي",
         "timestamp": "01:18.50",
-        "timestamp_end": "01:20.50",
-        "text_l2": "Of course, a while ago my ray passed"
+        "timestamp_end": "01:20.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "من مكان فيه قطرات مطر.",
         "timestamp": "01:20.50",
-        "timestamp_end": "01:23.50",
-        "text_l2": "through a place with raindrops."
+        "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "وهيك الألوان اللي بيحملها شعاعي بتظهر.",
         "timestamp": "01:23.50",
-        "timestamp_end": "01:27.50",
-        "text_l2": "And so the colors my ray carries appear."
+        "timestamp_end": "01:27.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "وبتتشكل على شكل قوس قزح.",
         "timestamp": "01:27.50",
-        "timestamp_end": "01:31.50",
-        "text_l2": "And they form into a rainbow shape."
+        "timestamp_end": "01:31.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "ممم. فعلاً يا تحري جلجل،",
         "timestamp": "01:31.50",
-        "timestamp_end": "01:33.50",
-        "text_l2": "Hmm. Indeed, Detective Jaljal,"
+        "timestamp_end": "01:33.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "قبل شوي نزل شوية مطر.",
         "timestamp": "01:33.50",
-        "timestamp_end": "01:36.50",
-        "text_l2": "a little while ago some rain fell."
+        "timestamp_end": "01:36.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "يعني الشمس لازم تكون طالعة",
         "timestamp": "01:36.50",
-        "timestamp_end": "01:38.50",
-        "text_l2": "So the sun must be out"
+        "timestamp_end": "01:38.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "عشان يصير قوس قزح.",
         "timestamp": "01:38.50",
-        "timestamp_end": "01:41.50",
-        "text_l2": "for a rainbow to happen."
+        "timestamp_end": "01:41.50"
       },
       {
         "id": "phrase_41",
         "text_l1": "طيب لو سمحتي يا شمس، كيف؟",
         "timestamp": "01:41.50",
-        "timestamp_end": "01:45.50",
-        "text_l2": "Okay, please, Sun, how?"
+        "timestamp_end": "01:45.50"
       },
       {
         "id": "phrase_42",
         "text_l1": "بيدخل شعاعي جوا حبة المطر.",
         "timestamp": "01:45.50",
-        "timestamp_end": "01:49.50",
-        "text_l2": "My ray enters inside the raindrop."
+        "timestamp_end": "01:49.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "ولما يطلع منها بيظهروا ألوانه السبعة.",
         "timestamp": "01:49.50",
-        "timestamp_end": "01:53.50",
-        "text_l2": "And when it exits, its seven colors appear."
+        "timestamp_end": "01:53.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "الأحمر والبرتقالي والأصفر والأخضر",
         "timestamp": "01:53.50",
-        "timestamp_end": "01:56.50",
-        "text_l2": "Red, orange, yellow, and green"
+        "timestamp_end": "01:56.50"
       },
       {
         "id": "phrase_45",
         "text_l1": "والأزرق والنيلي والبنفسجي.",
         "timestamp": "01:56.50",
-        "timestamp_end": "02:00.50",
-        "text_l2": "and blue, indigo, and violet."
+        "timestamp_end": "02:00.50"
       },
       {
         "id": "phrase_46",
         "text_l1": "لو سمحتي وضحي بالتفصيل.",
         "timestamp": "02:00.50",
-        "timestamp_end": "02:03.50",
-        "text_l2": "Please explain in detail."
+        "timestamp_end": "02:03.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "آه آه.",
         "timestamp": "02:03.50",
-        "timestamp_end": "02:05.50",
-        "text_l2": "Ah ah."
+        "timestamp_end": "02:05.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "شعاعي أصلاً بيتكون من سبعة ألوان.",
         "timestamp": "02:05.50",
-        "timestamp_end": "02:08.50",
-        "text_l2": "My ray is originally made of seven colors."
+        "timestamp_end": "02:08.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "أحمر، برتقالي، أصفر، أخضر،",
         "timestamp": "02:08.50",
-        "timestamp_end": "02:11.50",
-        "text_l2": "Red, orange, yellow, green,"
+        "timestamp_end": "02:11.50"
       },
       {
         "id": "phrase_50",
         "text_l1": "أزرق، نيلي وبنفسجي.",
         "timestamp": "02:11.50",
-        "timestamp_end": "02:16.50",
-        "text_l2": "blue, indigo, and violet."
+        "timestamp_end": "02:16.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "بس لما تتحد هاي الألوان",
         "timestamp": "02:16.50",
-        "timestamp_end": "02:18.50",
-        "text_l2": "But when these colors combine"
+        "timestamp_end": "02:18.50"
       },
       {
         "id": "phrase_52",
         "text_l1": "بيصير لونها أبيض.",
         "timestamp": "02:18.50",
-        "timestamp_end": "02:21.50",
-        "text_l2": "their color becomes white."
+        "timestamp_end": "02:21.50"
       },
       {
         "id": "phrase_53",
         "text_l1": "ولما يدخل شعاعي حبة المطر",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:24.50",
-        "text_l2": "And when my ray enters the raindrop"
+        "timestamp_end": "02:24.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "تتفكك ألوانه وبتظهر في السما",
         "timestamp": "02:24.50",
-        "timestamp_end": "02:28.50",
-        "text_l2": "its colors separate and appear in the sky"
+        "timestamp_end": "02:28.50"
       },
       {
         "id": "phrase_55",
         "text_l1": "على شكل قوس قزح.",
         "timestamp": "02:28.50",
-        "timestamp_end": "02:32.50",
-        "text_l2": "in the shape of a rainbow."
+        "timestamp_end": "02:32.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "إذاً عشان يصير قوس قزح",
         "timestamp": "02:32.50",
-        "timestamp_end": "02:35.50",
-        "text_l2": "So for a rainbow to happen"
+        "timestamp_end": "02:35.50"
       },
       {
         "id": "phrase_57",
         "text_l1": "لازم شعاع الشمس",
         "timestamp": "02:35.50",
-        "timestamp_end": "02:37.50",
-        "text_l2": "the sun's ray must"
+        "timestamp_end": "02:37.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "يروح ويمر من قطرة المي",
         "timestamp": "02:37.50",
-        "timestamp_end": "02:41.50",
-        "text_l2": "go and pass through the water drop"
+        "timestamp_end": "02:41.50"
       },
       {
         "id": "phrase_59",
         "text_l1": "اللي موجودة في الغيمة.",
         "timestamp": "02:41.50",
-        "timestamp_end": "02:43.50",
-        "text_l2": "that is in the cloud."
+        "timestamp_end": "02:43.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "مضبوط، وهيك بيصير قوس قزح.",
         "timestamp": "02:43.50",
-        "timestamp_end": "02:45.50",
-        "text_l2": "Correct, and that's how a rainbow happens."
+        "timestamp_end": "02:45.50"
       },
       {
         "id": "phrase_61",
         "text_l1": "يا عيني عليك يا تحري يا جلجل",
         "timestamp": "02:45.50",
-        "timestamp_end": "02:49.50",
-        "text_l2": "Oh my dear, Detective Jaljal,"
+        "timestamp_end": "02:49.50"
       },
       {
         "id": "phrase_62",
         "text_l1": "اللي بتكتشف الحقائق.",
         "timestamp": "02:49.50",
-        "timestamp_end": "02:51.50",
-        "text_l2": "who discovers the facts."
+        "timestamp_end": "02:51.50"
       },
       {
         "id": "phrase_63",
         "text_l1": "أنا كتير بحب قوس قزح.",
         "timestamp": "02:51.50",
-        "timestamp_end": "02:53.50",
-        "text_l2": "I really love the rainbow."
+        "timestamp_end": "02:53.50"
       },
       {
         "id": "phrase_64",
         "text_l1": "وينك يا قوس قزح؟ وينك يا فنان؟",
         "timestamp": "02:53.50",
-        "timestamp_end": "02:55.50",
-        "text_l2": "Where are you, Rainbow? Where are you, Artist?"
+        "timestamp_end": "02:55.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "أنا قوس قزح الفنان",
         "timestamp": "03:00.00",
-        "timestamp_end": "03:03.00",
-        "text_l2": "I am the Rainbow Artist"
+        "timestamp_end": "03:03.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "ألواني أحلى الألوان",
         "timestamp": "03:03.00",
-        "timestamp_end": "03:05.50",
-        "text_l2": "My colors are the loveliest colors"
+        "timestamp_end": "03:05.50"
       },
       {
         "id": "phrase_67",
         "text_l1": "أنا قوس قزح الفنان",
         "timestamp": "03:05.50",
-        "timestamp_end": "03:08.50",
-        "text_l2": "I am the Rainbow Artist"
+        "timestamp_end": "03:08.50"
       },
       {
         "id": "phrase_68",
         "text_l1": "ألواني أحلى الألوان",
         "timestamp": "03:08.50",
-        "timestamp_end": "03:11.50",
-        "text_l2": "My colors are the loveliest colors"
+        "timestamp_end": "03:11.50"
       },
       {
         "id": "phrase_69",
         "text_l1": "ما أجمل ألواني السبعة",
         "timestamp": "03:11.50",
-        "timestamp_end": "03:14.50",
-        "text_l2": "How beautiful are my seven colors"
+        "timestamp_end": "03:14.50"
       },
       {
         "id": "phrase_70",
         "text_l1": "فيها البهجة فيها المتعة",
         "timestamp": "03:14.50",
-        "timestamp_end": "03:17.50",
-        "text_l2": "In them is joy, in them is fun"
+        "timestamp_end": "03:17.50"
       },
       {
         "id": "phrase_71",
         "text_l1": "ما أجمل ألواني السبعة",
         "timestamp": "03:17.50",
-        "timestamp_end": "03:20.50",
-        "text_l2": "How beautiful are my seven colors"
+        "timestamp_end": "03:20.50"
       },
       {
         "id": "phrase_72",
         "text_l1": "فيها البهجة فيها المتعة",
         "timestamp": "03:20.50",
-        "timestamp_end": "03:23.50",
-        "text_l2": "In them is joy, in them is fun"
+        "timestamp_end": "03:23.50"
       },
       {
         "id": "phrase_73",
         "text_l1": "أنا قوس قزح الفنان",
         "timestamp": "03:23.50",
-        "timestamp_end": "03:25.50",
-        "text_l2": "I am the Rainbow Artist"
+        "timestamp_end": "03:25.50"
       },
       {
         "id": "phrase_74",
         "text_l1": "برتقالي والأخضر",
         "timestamp": "03:25.50",
-        "timestamp_end": "03:28.50",
-        "text_l2": "Orange and green"
+        "timestamp_end": "03:28.50"
       },
       {
         "id": "phrase_75",
         "text_l1": "نلعب مع أحمر والأصفر",
         "timestamp": "03:28.50",
-        "timestamp_end": "03:31.50",
-        "text_l2": "We play with red and yellow"
+        "timestamp_end": "03:31.50"
       },
       {
         "id": "phrase_76",
         "text_l1": "برتقالي والأخضر",
         "timestamp": "03:31.50",
-        "timestamp_end": "03:34.50",
-        "text_l2": "Orange and green"
+        "timestamp_end": "03:34.50"
       },
       {
         "id": "phrase_77",
         "text_l1": "نلعب مع أحمر والأصفر",
         "timestamp": "03:34.50",
-        "timestamp_end": "03:37.50",
-        "text_l2": "We play with red and yellow"
+        "timestamp_end": "03:37.50"
       },
       {
         "id": "phrase_78",
         "text_l1": "أزرق نيلي وبنفسج",
         "timestamp": "03:37.50",
-        "timestamp_end": "03:40.50",
-        "text_l2": "Blue, indigo, and violet"
+        "timestamp_end": "03:40.50"
       },
       {
         "id": "phrase_79",
         "text_l1": "نحن الأحلى نحن الأبهج",
         "timestamp": "03:40.50",
-        "timestamp_end": "03:42.50",
-        "text_l2": "We are the loveliest, we are the brightest"
+        "timestamp_end": "03:42.50"
       },
       {
         "id": "phrase_80",
         "text_l1": "نظهر مع قطرات الماء",
         "timestamp": "03:42.50",
-        "timestamp_end": "03:45.50",
-        "text_l2": "We appear with water drops"
+        "timestamp_end": "03:45.50"
       },
       {
         "id": "phrase_81",
         "text_l1": "والشمس الحلوة المعطاء",
         "timestamp": "03:45.50",
-        "timestamp_end": "03:48.50",
-        "text_l2": "And the sweet, giving sun"
+        "timestamp_end": "03:48.50"
       },
       {
         "id": "phrase_82",
         "text_l1": "هل تعرفنا أنا سبعة",
         "timestamp": "03:48.50",
-        "timestamp_end": "03:51.50",
-        "text_l2": "Did you know we are seven"
+        "timestamp_end": "03:51.50"
       },
       {
         "id": "phrase_83",
         "text_l1": "يا للفرحة يا للروعة",
         "timestamp": "03:51.50",
-        "timestamp_end": "03:54.50",
-        "text_l2": "Oh what joy, oh what splendor"
+        "timestamp_end": "03:54.50"
       },
       {
         "id": "phrase_84",
         "text_l1": "أنا...",
         "timestamp": "03:54.50",
-        "timestamp_end": "03:55.50",
-        "text_l2": "I am..."
+        "timestamp_end": "03:55.50"
       }
     ],
     "phrases_with_token_translations": "[كيف] بيصير قوس قزح بالسما؟ => [How] does a rainbow happen in the sky?\nكيف [بيصير] قوس قزح بالسما؟ => How [does] a rainbow [happen] in the sky?\nكيف بيصير [قوس قزح] بالسما؟ => How does [a rainbow] happen in the sky?\nكيف بيصير قوس قزح [بالسما]؟ => How does a rainbow happen [in the sky]?\n\n[ممم]... => [Hmm]...\n\n[أكيد] التحري جلجل عنده الجواب. => Detective Jaljal [surely] has the answer.\nأكيد [التحري] جلجل عنده الجواب. => [Detective] Jaljal surely has the answer.\nأكيد التحري [جلجل] عنده الجواب. => Detective [Jaljal] surely has the answer.\nأكيد التحري جلجل [عنده] الجواب. => Detective Jaljal surely [has] the answer.\nأكيد التحري جلجل عنده [الجواب]. => Detective Jaljal surely has [the answer]\n\n[ها ها ها]! => [Ha ha ha]!\n\n[التحري] جلجل موجود يا تنتن => [Detective] Jaljal is here, Tintin\nالتحري [جلجل] موجود يا تنتن => Detective [Jaljal] is here, Tintin\nالتحري جلجل [موجود] يا تنتن => Detective Jaljal [is here], Tintin\nالتحري جلجل موجود يا [تنتن] => Detective Jaljal is here, [Tintin]\n\n[وأكيد] إنتي بدك تسألي => [And surely] you want to ask\nوأكيد [إنتي] بدك تسألي => And surely [you] want to ask\nوأكيد إنتي [بدك] تسألي => And surely you [want] to ask\nوأكيد إنتي بدك [تسألي] => And surely you want [to ask]\n\n[عن] قوس قزح، صح؟ => [about] the rainbow, right?\nعن [قوس قزح]، صح؟ => about [the rainbow], right?\nعن قوس قزح، [صح]؟ => about the rainbow, [right]?\n\n[كيف] بيصير قوس قزح بالسما؟ => [How] does a rainbow happen in the sky?\nكيف [بيصير] قوس قزح بالسما؟ => How [does] a rainbow [happen] in the sky?\nكيف بيصير [قوس قزح] بالسما؟ => How does [a rainbow] happen in the sky?\nكيف بيصير قوس قزح [بالسما]؟ => How does a rainbow happen [in the sky]?\n\n[ها]! الأسئلة كتير مهمة يا تنتن. => [Ha]! Questions are very important, Tintin.\nها! [الأسئلة] كتير مهمة يا تنتن. => Ha! [Questions] are very important, Tintin.\nها! الأسئلة [كتير] مهمة يا تنتن. => Ha! Questions are [very] important, Tintin.\nها! الأسئلة كتير [مهمة] يا تنتن. => Ha! Questions are very [important], Tintin.\nها! الأسئلة كتير مهمة [يا تنتن]. => Ha! Questions are very important, [Tintin].\n\n[وهي] اللي بتخليني => [They are] what make me\nوهي [اللي] بتخليني => They are [what] make me\nوهي اللي [بتخليني] => They are [make me]\n\n[دايماً] تحري ناجح. => [always] a successful detective.\nدايماً تحري [ناجح] => always a [successful] detective.\nدايماً [تحري] ناجح. => detective # use custom word translation as \"a detective\" is the intended meaning but \"detective\" is the direct word-for-word match.\n\n[ها]! => [Ha]!\n\n[لازم] نسأل الشمس. => We [must] ask the Sun.\nلازم [نسأل] الشمس. => [We] must [ask] the Sun.\nلازم نسأل [الشمس]. => We must ask [the Sun].\n\n[ها]؟ الشمس؟ ممم. => [Huh]? The Sun? Hmm.\nها؟ [الشمس]؟ ممم. => Huh? [The Sun]? Hmm.\nها؟ الشمس؟ [ممم]. => Huh? The Sun? [Hmm].\n\n[يا] شمس! يا شمس! => [Oh] Sun! Oh Sun!\nيا [شمس]! يا شمس! => Oh [Sun]! Oh Sun!\nيا شمس! [يا] شمس! => Oh Sun! [Oh] Sun!\nيا شمس! يا [شمس]! => Oh Sun! Oh [Sun]!\n\n[يا] شمس! وينك يا شمس؟ => [Oh] Sun! Where are you, Sun?\nيا [شمس]! وينك يا شمس؟ => Oh [Sun]! Where are you, Sun?\nيا شمس! [وينك] يا شمس؟ => Oh Sun! [Where are you], Sun?\nيا شمس! وينك يا [شمس]؟ => Oh Sun! Where are you, [Sun]?\n\n[هيها] هيها! أهلاً أهلاً يا شمس. => [Heha] heha! Welcome, welcome, Sun.\nهيها [هيها]! أهلاً أهلاً يا شمس. => Heha [heha]! Welcome, welcome, Sun.\nهيها هيها! [أهلاً] أهلاً يا شمس. => Heha heha! [Welcome], welcome, Sun.\nهيها هيها! أهلاً [أهلاً] يا شمس. => Heha heha! Welcome, [welcome], Sun.\nهيها هيها! أهلاً أهلاً [يا] شمس. => oh # vocative particle used for calling out to someone\nهيها هيها! أهلاً أهلاً يا [شمس]. => Heha heha! Welcome, welcome, [Sun].\n\n[أهلاً]، مرحباً يا شمس. => [Welcome], hello, Sun.\nأهلاً، [مرحباً] يا شمس. => Welcome, [hello], Sun.\nأهلاً، مرحباً [يا] شمس. => O # vocative particle used to address someone\nأهلاً، مرحباً يا [شمس]. => Welcome, hello, [Sun].\n\n[أهلاً] أهلاً. => [Welcome], welcome.\nأهلاً [أهلاً]. => Welcome, [welcome].\n\n[ممكن] تقولي لنا مين اللي بيرسم => [Can] you tell us who paints\nممكن [تقولي] لنا مين اللي بيرسم => Can [you tell] us who paints\nممكن تقولي [لنا] مين اللي بيرسم => Can you tell [us] who paints\nممكن تقولي لنا [مين اللي] بيرسم => Can you tell [who] paints\nممكن تقولي لنا مين اللي [بيرسم] => Can you tell us who [paints]\n\n[قوس قزح] في السما؟ => [the rainbow] in the sky?\nقوس قزح [في] السما؟ => the rainbow [in] the sky?\nقوس قزح في [السما]؟ => the rainbow in [the sky]?\n\n[شعاعي] الضوئي => my ray\nشعاعي [الضوئي] => My [light] ray\n\n[ها]! شعاعك الضوئي؟ => [Ha]! Your light ray?\nها! [شعاعك] الضوئي؟ => your ray\nها! شعاعك [الضوئي]؟ => Ha! Your [light] ray?\n\n[وطبعاً] مش بس لحالي. => [And of course] not just by myself.\nوطبعاً [مش] بس لحالي. => And of course [not] just by myself.\nوطبعاً مش [بس] لحالي. => And of course not [just] by myself.\nوطبعاً مش بس [لحالي]. => And of course not just [by myself]\n\n[آه]، مين بيساعدك؟ => [Ah], who helps you?\nآه، [مين] بيساعدك؟ => Ah, [who] helps you?\nآه، مين [بيساعدك]؟ => Ah, who [helps you]?\n\n[قطرة] المي اللي بالغيمة. => The water [drop] in the cloud.\nقطرة [المي] اللي بالغيمة. => [The water] drop in the cloud.\nقطرة المي [اللي] بالغيمة. => that is, which is\nقطرة المي اللي [بالغيمة]. => The water drop [in the cloud].\n\n[شايفة] يا تنتن؟ => [See], Tintin?\nشايفة يا [تنتن]؟ => See, [Tintin]?\n\n[أنا] كنت متأكد => [I] was sure\nأنا [كنت] متأكد => I [was] sure\nأنا كنت [متأكد] => I was [sure]\n\n[من خلال] الأسئلة رح أكتشف الحقائق. => that [through] questions I'd discover the facts.\nمن خلال [الأسئلة] رح أكتشف الحقائق. => that through [questions] I'd discover the facts.\nمن خلال الأسئلة [رح أكتشف] الحقائق. => that through questions [I'd discover] the facts.\nمن خلال الأسئلة رح أكتشف [الحقائق]. => that through questions I'd discover [the facts].\n\n[أنا] التحري جلجل اللي اكتشفت => [I], Detective Jaljal, discovered\nأنا [التحري] جلجل اللي اكتشفت => I, [Detective] Jaljal, discovered\nأنا التحري [جلجل] اللي اكتشفت => I, Detective [Jaljal], discovered\nأنا التحري جلجل [اللي] اكتشفت => who, that\nأنا التحري جلجل اللي [اكتشفت] => I, Detective Jaljal, [discovered]\n\n[إن] الموضوع كمان فيه غيم ومي. => [that] the matter also involves clouds and water.\nإن [الموضوع] كمان فيه غيم ومي. => that [the matter] also involves clouds and water.\nإن الموضوع [كمان] فيه غيم ومي. => that the matter [also] involves clouds and water.\nإن الموضوع كمان [فيه] غيم ومي. => that the matter also [involves] clouds and water.\nإن الموضوع كمان فيه [غيم] ومي. => that the matter also involves [clouds] and water.\nإن الموضوع كمان فيه غيم [ومي]. => that the matter also involves clouds [and water].\n\n[ممم]. => [Hmm]. # thinking sound/interjection\n\n[طبعاً]، قبل شوي مر شعاعي => [Of course], a while ago my ray passed\nطبعاً، [قبل شوي] مر شعاعي => Of course, [a while ago] my ray passed\nطبعاً، قبل شوي [مر] شعاعي => Of course, a while ago my ray [passed]\nطبعاً، قبل شوي مر [شعاعي] => Of course, a while ago [my ray] passed\n\n[من] مكان فيه قطرات مطر. => [through] a place with raindrops.\nمن [مكان] فيه قطرات مطر. => through [a place] with raindrops.\nمن مكان [فيه] قطرات مطر. => through a place [with] raindrops.\nمن مكان فيه [قطرات مطر]. => through a place with [raindrops].\n\n[وهيك] الألوان اللي بيحملها شعاعي بتظهر. => [And so] the colors my ray carries appear.\nوهيك [الألوان] اللي بيحملها شعاعي بتظهر. => And so [the colors] my ray carries appear.\nوهيك الألوان [اللي] بيحملها شعاعي بتظهر. => that, which\nوهيك الألوان اللي [بيحملها] شعاعي بتظهر. => And so the colors my ray [carries] appear.\nوهيك الألوان اللي بيحملها [شعاعي] بتظهر. => And so the colors [my ray] carries appear.\nوهيك الألوان اللي بيحملها شعاعي [بتظهر]. => And so the colors my ray carries [appear]. # \"bi-\" prefix indicates present tense \"appear\"\n\n[و]بتتشكل على شكل قوس قزح. => [And] they form into a rainbow shape.\nو[بتتشكل] على شكل قوس قزح. => And [they form] into a rainbow shape.\nوبتتشكل [على] شكل قوس قزح. => And they form [into] a rainbow shape.\nوبتتشكل على [شكل] قوس قزح. => And they form into a [shape].\nوبتتشكل على شكل [قوس قزح]. => And they form into a [rainbow] shape.\n\n[ممم]. فعلاً يا تحري جلجل، => [Hmm]. Indeed, Detective Jaljal,\nممم. [فعلاً] يا تحري جلجل، => Hmm. [Indeed], Detective Jaljal,\nممم. فعلاً [يا] تحري جلجل، => vocative particle used before a name\nممم. فعلاً يا [تحري] جلجل، => Hmm. Indeed, [Detective] Jaljal,\nممم. فعلاً يا تحري [جلجل]، => Hmm. Indeed, Detective [Jaljal],\n\n[قبل شوي] نزل شوية مطر. => [a little while ago] some rain fell.\nقبل شوي [نزل] شوية مطر. => a little while ago some rain [fell]\nقبل شوي نزل [شوية] مطر. => a little while ago [some] rain fell\nقبل شوي نزل شوية [مطر]. => a little while ago some [rain] fell\n\n[يعني] الشمس لازم تكون طالعة => [So] the sun must be out\nيعني [الشمس] لازم تكون طالعة => So [the sun] must be out\nيعني الشمس [لازم] تكون طالعة => So the sun [must] be out\nيعني الشمس لازم [تكون] طالعة => So the sun must [be] out\nيعني الشمس لازم تكون [طالعة] => So the sun must be [out]\n\n[عشان] يصير قوس قزح => [for] a rainbow to happen\nعشان [يصير] قوس قزح => for a rainbow [to happen]\nعشان يصير [قوس قزح] => for [a rainbow] to happen\n\n[طيب] لو سمحتي يا شمس، كيف؟ => [Okay], please, Sun, how?\nطيب [لو سمحتي] يا شمس، كيف؟ => Okay, [please], Sun, how?\nطيب لو سمحتي يا [شمس]، كيف؟ => Okay, please, [Sun], how?\nطيب لو سمحتي يا شمس، [كيف]؟ => Okay, please, Sun, [how]? # يا is the vocative particle which is often omitted in translation before names or titles\n\n[بيدخل] شعاعي جوا حبة المطر. => My ray [enters] inside the raindrop.\nبيدخل [شعاعي] جوا حبة المطر. => [My ray] enters inside the raindrop.\nبيدخل شعاعي [جوا] حبة المطر. => My ray enters [inside] the raindrop.\nبيدخل شعاعي جوا [حبة المطر]. => My ray enters inside [the raindrop].\n\n[و]لما يطلع منها بيظهروا ألوانه السبعة. => [And] when it exits, its seven colors appear.\nو[لما] يطلع منها بيظهروا ألوانه السبعة. => And [when] it exits, its seven colors appear.\nولما [يطلع] منها بيظهروا ألوانه السبعة. => And when [it exits], its seven colors appear.\nولما يطلع [منها] بيظهروا ألوانه السبعة. => from it\nولما يطلع منها [بيظهروا] ألوانه السبعة. => And when it exits, its seven colors [appear].\nولما يطلع منها بيظهروا [ألوانه] السبعة. => its colors\nولما يطلع منها بيظهروا ألوانه [السبعة]. => And when it exits, its [seven] colors appear.\n\n[الأحمر] والبرتقالي والأصفر والأخضر => [Red], orange, yellow, and green\nالأحمر و[البرتقالي] والأصفر والأخضر => Red, [orange], yellow, and green\nالأحمر والبرتقالي و[الأصفر] والأخضر => Red, orange, [yellow], and green\nالأحمر والبرتقالي والأصفر [و]الأخضر => Red, orange, yellow, [and] green\nالأحمر والبرتقالي والأصفر و[الأخضر] => Red, orange, yellow, and [green]\n\n[والأزرق] والنيلي والبنفسجي. => [and blue], indigo, and violet.\nوالأزرق [والنيلي] والبنفسجي. => indigo\nوالأزرق والنيلي [والبنفسجي]. => and blue, indigo, [and violet].\n\n[لو سمحتي] وضحي بالتفصيل. => [Please] explain in detail.\nلو سمحتي [وضحي] بالتفصيل. => Please [explain] in detail.\nلو سمحتي وضحي [بالتفصيل]. => Please explain [in detail].\n\n[آه] آه. => [Ah] ah.\nآه [آه]. => Ah [ah].\n\n[شعاعي] أصلاً بيتكون من سبعة ألوان. => [My ray] is originally made of seven colors.\nشعاعي [أصلاً] بيتكون من سبعة ألوان. => My ray is [originally] made of seven colors.\nشعاعي أصلاً [بيتكون] من سبعة ألوان. => is made, consists\nشعاعي أصلاً بيتكون [من] سبعة ألوان. => My ray is originally made [of] seven colors.\nشعاعي أصلاً بيتكون من [سبعة] ألوان. => My ray is originally made of [seven] colors.\nشعاعي أصلاً بيتكون من سبعة [ألوان]. => My ray is originally made of seven [colors]\n\n[أحمر]، برتقالي، أصفر، أخضر، => [Red], orange, yellow, green,\nأحمر، [برتقالي]، أصفر، أخضر، => Red, [orange], yellow, green,\nأحمر، برتقالي، [أصفر]، أخضر، => Red, orange, [yellow], green,\nأحمر، برتقالي، أصفر، [أخضر]، => Red, orange, yellow, [green],\n\n[أزرق]، نيلي وبنفسجي. => [blue], indigo, and violet.\nأزرق، [نيلي] وبنفسجي. => blue, [indigo], and violet.\nأزرق، نيلي [وبنفسجي]. => blue, indigo, [and violet].\n\n[بس] لما تتحد هاي الألوان => [But] when these colors combine\nبس [لما] تتحد هاي الألوان => But [when] these colors combine\nبس لما [تتحد] هاي الألوان => But when these colors [combine]\nبس لما تتحد [هاي] الألوان => But when [these] colors combine\nبس لما تتحد هاي [الألوان] => But when these [colors] combine\n\n[بيصير] لونها أبيض. => their color [becomes] white.\nبيصير [لونها] أبيض. => [their color] becomes white.\nبيصير لونها [أبيض]. => their color becomes [white].\n\n[ولما] يدخل شعاعي حبة المطر => [And when] my ray enters the raindrop\nولما [يدخل] شعاعي حبة المطر => And when my ray [enters] the raindrop\nولما يدخل [شعاعي] حبة المطر => And when [my ray] enters the raindrop\nولما يدخل شعاعي [حبة المطر] => And when my ray enters [the raindrop]\n\n[تتفكك] ألوانه وبتظهر في السما => its colors [separate] and appear in the sky\nتتفكك [ألوانه] وبتظهر في السما => [its colors] separate and appear in the sky\nتتفكك ألوانه [وبتظهر] في السما => its colors separate [and appear] in the sky\nتتفكك ألوانه وبتظهر [في] السما => its colors separate and appear [in] the sky\nتتفكك ألوانه وبتظهر في [السما] => its colors separate and appear in [the sky]\n\n[على] شكل قوس قزح. => [in] the shape of a rainbow.\nعلى [شكل] قوس قزح. => in the [shape] of a rainbow.\nعلى شكل [قوس قزح]. => in the shape of a [rainbow].\n\n[إذاً] عشان يصير قوس قزح => [So] for a rainbow to happen\nإذاً [عشان] يصير قوس قزح => So [for] a rainbow to happen\nإذاً عشان [يصير] قوس قزح => So for a rainbow [to happen]\nإذاً عشان يصير [قوس قزح] => So for [a rainbow] to happen\n\n[لازم] شعاع الشمس => the sun's ray [must]\nلازم [شعاع] الشمس => the sun's [ray] must\nلازم شعاع [الشمس] => [the sun's] ray must\n\n[يروح] ويمر من قطرة المي => [go] and pass through the water drop\nيروح [ويمر] من قطرة المي => go [and pass] through the water drop # و implies \"and\" while يمر translates to \"pass\"\nيروح ويمر [من] قطرة المي => go and pass [through] the water drop\nيروح ويمر من [قطرة] المي => go and pass through the [drop]\nيروح ويمر من قطرة [المي] => go and pass through the [water] drop\n\n[اللي] موجودة في الغيمة. => [that] is in the cloud.\nاللي [موجودة] في الغيمة. => that [is] in the cloud.\nاللي موجودة [في] الغيمة. => that is [in] the cloud.\nاللي موجودة في [الغيمة]. => that is in [the cloud].\n\n[مضبوط]، وهيك بيصير قوس قزح. => [Correct], and that's how a rainbow happens.\nمضبوط، [وهيك] بيصير قوس قزح. => Correct, [and that's how] a rainbow happens.\nمضبوط، وهيك [بيصير] قوس قزح. => Correct, and that's how a rainbow [happens].\nمضبوط، وهيك بيصير [قوس قزح]. => Correct, and that's how [a rainbow] happens.\n\n[يا عيني عليك] يا تحري يا جلجل => [Oh my dear], Detective Jaljal,\nيا عيني عليك يا [تحري] يا جلجل => Oh my dear, [Detective] Jaljal,\nيا عيني عليك يا تحري يا [جلجل] => Oh my dear, Detective [Jaljal],\n\n[اللي] بتكتشف الحقائق. => [who] discovers the facts.\nاللي [بتكتشف] الحقائق. => who [discovers] the facts.\nاللي بتكتشف [الحقائق]. => who discovers [the facts].\n\n[أنا] كتير بحب قوس قزح. => [I] really love the rainbow.\nأنا [كتير] بحب قوس قزح. => I [really] love the rainbow.\nأنا كتير [بحب] قوس قزح. => I really [love] the rainbow.\nأنا كتير بحب [قوس قزح]. => I really love [the rainbow]. # mapped as a single unit meaning rainbow\n\n[وينك] يا قوس قزح؟ وينك يا فنان؟ => [Where are you], Rainbow? Where are you, Artist?\nوينك يا [قوس قزح]؟ وينك يا فنان؟ => Where are you, [Rainbow]? Where are you, Artist?\nوينك يا قوس قزح؟ [وينك] يا فنان؟ => Where are you, Rainbow? [Where are you], Artist?\nوينك يا قوس قزح؟ وينك يا [فنان]؟ => Where are you, Rainbow? Where are you, [Artist]?\n\n[أنا] قوس قزح الفنان => [I am] the Rainbow Artist\nأنا [قوس قزح] الفنان => I am [the Rainbow] Artist\nأنا قوس قزح [الفنان] => I am the Rainbow [Artist]\n\n[ألواني] أحلى الألوان => [My colors] are the loveliest colors\nألواني [أحلى] الألوان => My colors are [the loveliest] colors\nألواني أحلى [الألوان] => My colors are the loveliest [colors]\n\n[أنا] قوس قزح الفنان => [I am] the Rainbow Artist\nأنا [قوس قزح] الفنان => I am the [Rainbow] Artist\nأنا قوس قزح [الفنان] => I am the Rainbow [Artist]\n\n[ألواني] أحلى الألوان => [My colors] are the loveliest colors\nألواني [أحلى] الألوان => My colors are [the loveliest] colors\nألواني أحلى [الألوان] => My colors are the loveliest [colors]\n\n[ما أجمل] ألواني السبعة => [How beautiful are] my seven colors\nما أجمل [ألواني] السبعة => my colors\nما أجمل ألواني [السبعة] => How beautiful are my [seven] colors\n\n[فيها] البهجة فيها المتعة => [In them] is joy, in them is fun\nفيها [البهجة] فيها المتعة => In them is [joy], in them is fun\nفيها البهجة [فيها] المتعة => In them is joy, [in them] is fun\nفيها البهجة فيها [المتعة] => In them is joy, in them is [fun]\n\n[ما أجمل] ألواني السبعة => [How beautiful] are my seven colors\nما أجمل [ألواني] السبعة => How beautiful are [my colors]\nما أجمل ألواني [السبعة] => How beautiful are my [seven] colors\n\n[فيها] البهجة فيها المتعة => [In them is] joy, in them is fun\nفيها [البهجة] فيها المتعة => In them is [joy], in them is fun\nفيها البهجة [فيها] المتعة => In them is joy, [in them is] fun\nفيها البهجة فيها [المتعة] => In them is joy, in them is [fun]\n\n[أنا] قوس قزح الفنان => [I am] the Rainbow Artist\nأنا [قوس قزح] الفنان => I am the [Rainbow] Artist\nأنا قوس قزح [الفنان] => I am the Rainbow [Artist]\n\n[برتقالي] والأخضر => [Orange] and green\nبرتقالي [و]الأخضر => Orange [and] green\nبرتقالي و[الأخضر] => Orange and [green]\n\n[نلعب] مع أحمر والأصفر => [We play] with red and yellow\nنلعب [مع] أحمر والأصفر => We play [with] red and yellow\nنلعب مع [أحمر] والأصفر => We play with [red] and yellow\nنلعب مع أحمر [و]الأصفر => We play with red [and] yellow\nنلعب مع أحمر و[الأصفر] => We play with red and [yellow]\n\n[برتقالي] والأخضر => [Orange] and green\nبرتقالي [و]الأخضر => and\nبرتقالي و[الأخضر] => Orange and [green]\n\n[نلعب] مع أحمر والأصفر => [We play] with red and yellow\nنلعب [مع] أحمر والأصفر => We play [with] red and yellow\nنلعب مع [أحمر] والأصفر => We play with [red] and yellow\nنلعب مع أحمر [والأصفر] => We play with red [and yellow]\n\n[أزرق] نيلي وبنفسج => [Blue], indigo, and violet\nأزرق [نيلي] وبنفسج => Blue, [indigo], and violet\nأزرق نيلي [و]بنفسج => Blue, indigo, [and] violet\nأزرق نيلي و[بنفسج] => Blue, indigo, and [violet]\n\n[نحن] الأحلى نحن الأبهج => [We are] the loveliest, we are the brightest\nنحن [الأحلى] نحن الأبهج => We are [the loveliest], we are the brightest\nنحن الأحلى [نحن] الأبهج => We are the loveliest, [we are] the brightest\nنحن الأحلى نحن [الأبهج] => We are the loveliest, we are [the brightest]\n\n[نظهر] مع قطرات الماء => [We appear] with water drops\nنظهر [مع] قطرات الماء => We appear [with] water drops\nنظهر مع [قطرات] الماء => We appear with water [drops]\nنظهر مع قطرات [الماء] => We appear with [water] drops\n\n[و]الشمس الحلوة المعطاء => [And] the sweet, giving sun\nو[الشمس] الحلوة المعطاء => the sun\nوالشمس [الحلوة] المعطاء => And the [sweet], giving sun\nوالشمس الحلوة [المعطاء] => And the sweet, [giving] sun\n\n[هل] تعرفنا أنا سبعة => [Did] you know we are seven\nهل [تعرفنا] أنا سبعة => Did [you know] we are seven\nهل تعرفنا [أنا] سبعة => we are\nهل تعرفنا أنا [سبعة] => Did you know we are [seven]\n\n[يا] للفرحة يا للروعة => [Oh] what joy, oh what splendor\nيا [للفرحة] يا للروعة => Oh [what joy], oh what splendor\nيا للفرحة [يا] للروعة => Oh what joy, [oh] what splendor\nيا للفرحة يا [للروعة] => Oh what joy, oh [what splendor]\n\n[أنا]... => [I am]...\n\n",
     "lessons": "# الاستفسار عن قوس قزح\n00:00.00 كيف بيصير قوس قزح بالسما؟\n00:03.00 ممم...\n00:05.00 أكيد التحري جلجل عنده الجواب.\n00:07.80 ها ها ها!\n00:09.50 التحري جلجل موجود يا تنتن.\n00:12.50 وأكيد إنتي بدك تسألي\n00:15.00 عن قوس قزح، صح؟\n\n# بداية التحقيق\n00:17.50 كيف بيصير قوس قزح بالسما؟\n00:20.50 ها! الأسئلة كتير مهمة يا تنتن.\n00:23.50 وهي اللي بتخليني\n00:25.50 دايماً تحري ناجح.\n00:28.50 ها!\n00:30.50 لازم نسأل الشمس.\n\n# محادثة مع الشمس (الجزء الأول)\n00:33.50 ها؟ الشمس؟ ممم.\n00:36.50 يا شمس! يا شمس!\n00:38.50 يا شمس! وينك يا شمس؟\n00:40.50 هيها هيها! أهلاً أهلاً يا شمس.\n00:42.50 أهلاً، مرحباً يا شمس.\n00:45.50 أهلاً أهلاً.\n00:47.50 ممكن تقولي لنا مين اللي بيرسم\n00:50.00 قوس قزح في السما؟\n00:51.50 شعاعي الضوئي.\n\n# اكتشاف العوامل المؤثرة\n00:53.50 ها! شعاعك الضوئي؟\n00:55.50 وطبعاً مش بس لحالي.\n00:57.50 آه، مين بيساعدك؟\n00:59.50 قطرة المي اللي بالغيمة.\n01:02.50 شايفة يا تنتن؟\n01:04.50 أنا كنت متأكد\n01:06.50 من خلال الأسئلة رح أكتشف الحقائق.\n01:09.50 أنا التحري جلجل اللي اكتشفت\n01:12.50 إن الموضوع كمان فيه غيم ومي.\n01:15.50 ممم.\n\n# كيف يتشكل قوس قزح (الجزء الأول)\n01:18.50 طبعاً، قبل شوي مر شعاعي\n01:20.50 من مكان فيه قطرات مطر.\n01:23.50 وهيك الألوان اللي بيحملها شعاعي بتظهر.\n01:27.50 وبتتشكل على شكل قوس قزح.\n01:31.50 ممم. فعلاً يا تحري جلجل،\n01:33.50 قبل شوي نزل شوية مطر.\n01:36.50 يعني الشمس لازم تكون طالعة\n01:38.50 عشان يصير قوس قزح.\n\n# كيف يتشكل قوس قزح (الجزء الثاني)\n01:41.50 طيب لو سمحتي يا شمس، كيف؟\n01:45.50 بيدخل شعاعي جوا حبة المطر.\n01:49.50 ولما يطلع منها بيظهروا ألوانه السبعة.\n01:53.50 الأحمر والبرتقالي والأصفر والأخضر\n01:56.50 والأزرق والنيلي والبنفسجي.\n\n# ألوان الطيف السبعة\n02:00.50 لو سمحتي وضحي بالتفصيل.\n02:03.50 آه آه.\n02:05.50 شعاعي أصلاً بيتكون من سبعة ألوان.\n02:08.50 أحمر، برتقالي، أصفر، أخضر،\n02:11.50 أزرق، نيلي وبنفسجي.\n02:16.50 بس لما تتحد هاي الألوان\n02:18.50 بيصير لونها أبيض.\n02:21.00 ولما يدخل شعاعي حبة المطر\n02:24.50 تتفكك ألوانه وبتظهر في السما\n02:28.50 على شكل قوس قزح.\n\n# الخلاصة والأنشودة (الجزء الأول)\n02:32.50 إذاً عشان يصير قوس قزح\n02:35.50 لازم شعاع الشمس\n02:37.50 يروح ويمر من قطرة المي\n02:41.50 اللي موجودة في الغيمة.\n02:43.50 مضبوط، وهيك بيصير قوس قزح.\n02:45.50 يا عيني عليك يا تحري يا جلجل\n02:49.50 اللي بتكتشف الحقائق.\n02:51.50 أنا كتير بحب قوس قزح.\n\n# أنشودة قوس قزح\n02:53.50 وينك يا قوس قزح؟ وينك يا فنان؟\n03:00.00 أنا قوس قزح الفنان\n03:03.00 ألواني أحلى الألوان\n03:05.50 أنا قوس قزح الفنان\n03:08.50 ألواني أحلى الألوان\n03:11.50 ما أجمل ألواني السبعة\n03:14.50 فيها البهجة فيها المتعة\n03:17.50 ما أجمل ألواني السبعة\n03:20.50 فيها البهجة فيها المتعة\n03:23.50 أنا قوس قزح الفنان\n03:25.50 برتقالي والأخضر\n03:28.50 نلعب مع أحمر والأصفر\n03:31.50 برتقالي والأخضر\n03:34.50 نلعب مع أحمر والأصفر\n03:37.50 أزرق نيلي وبنفسج\n03:40.50 نحن الأحلى نحن الأبهج\n03:42.50 نظهر مع قطرات الماء\n03:45.50 والشمس الحلوة المعطاء\n03:48.50 هل تعرفنا أنا سبعة\n03:51.50 يا للفرحة يا للروعة\n03:54.50 أنا...",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "How does a rainbow happen in the sky?",
+            "words": []
+          },
+          {
+            "text": "Hmm...",
+            "words": []
+          },
+          {
+            "text": "Detective Jaljal surely has the answer.",
+            "words": []
+          },
+          {
+            "text": "Ha ha ha!",
+            "words": []
+          },
+          {
+            "text": "Detective Jaljal is here, Tintin.",
+            "words": []
+          },
+          {
+            "text": "And surely you want to ask",
+            "words": []
+          },
+          {
+            "text": "about the rainbow, right?",
+            "words": []
+          },
+          {
+            "text": "How does a rainbow happen in the sky?",
+            "words": []
+          },
+          {
+            "text": "Ha! Questions are very important, Tintin.",
+            "words": []
+          },
+          {
+            "text": "They are what make me",
+            "words": []
+          },
+          {
+            "text": "always a successful detective.",
+            "words": []
+          },
+          {
+            "text": "Ha!",
+            "words": []
+          },
+          {
+            "text": "We must ask the Sun.",
+            "words": []
+          },
+          {
+            "text": "Huh? The Sun? Hmm.",
+            "words": []
+          },
+          {
+            "text": "Oh Sun! Oh Sun!",
+            "words": []
+          },
+          {
+            "text": "Oh Sun! Where are you, Sun?",
+            "words": []
+          },
+          {
+            "text": "Heha heha! Welcome, welcome, Sun.",
+            "words": []
+          },
+          {
+            "text": "Welcome, hello, Sun.",
+            "words": []
+          },
+          {
+            "text": "Welcome, welcome.",
+            "words": []
+          },
+          {
+            "text": "Can you tell us who paints",
+            "words": []
+          },
+          {
+            "text": "the rainbow in the sky?",
+            "words": []
+          },
+          {
+            "text": "My light ray.",
+            "words": []
+          },
+          {
+            "text": "Ha! Your light ray?",
+            "words": []
+          },
+          {
+            "text": "And of course not just by myself.",
+            "words": []
+          },
+          {
+            "text": "Ah, who helps you?",
+            "words": []
+          },
+          {
+            "text": "The water drop in the cloud.",
+            "words": []
+          },
+          {
+            "text": "See, Tintin?",
+            "words": []
+          },
+          {
+            "text": "I was sure",
+            "words": []
+          },
+          {
+            "text": "that through questions I'd discover the facts.",
+            "words": []
+          },
+          {
+            "text": "I, Detective Jaljal, discovered",
+            "words": []
+          },
+          {
+            "text": "that the matter also involves clouds and water.",
+            "words": []
+          },
+          {
+            "text": "Hmm.",
+            "words": []
+          },
+          {
+            "text": "Of course, a while ago my ray passed",
+            "words": []
+          },
+          {
+            "text": "through a place with raindrops.",
+            "words": []
+          },
+          {
+            "text": "And so the colors my ray carries appear.",
+            "words": []
+          },
+          {
+            "text": "And they form into a rainbow shape.",
+            "words": []
+          },
+          {
+            "text": "Hmm. Indeed, Detective Jaljal,",
+            "words": []
+          },
+          {
+            "text": "a little while ago some rain fell.",
+            "words": []
+          },
+          {
+            "text": "So the sun must be out",
+            "words": []
+          },
+          {
+            "text": "for a rainbow to happen.",
+            "words": []
+          },
+          {
+            "text": "Okay, please, Sun, how?",
+            "words": []
+          },
+          {
+            "text": "My ray enters inside the raindrop.",
+            "words": []
+          },
+          {
+            "text": "And when it exits, its seven colors appear.",
+            "words": []
+          },
+          {
+            "text": "Red, orange, yellow, and green",
+            "words": []
+          },
+          {
+            "text": "and blue, indigo, and violet.",
+            "words": []
+          },
+          {
+            "text": "Please explain in detail.",
+            "words": []
+          },
+          {
+            "text": "Ah ah.",
+            "words": []
+          },
+          {
+            "text": "My ray is originally made of seven colors.",
+            "words": []
+          },
+          {
+            "text": "Red, orange, yellow, green,",
+            "words": []
+          },
+          {
+            "text": "blue, indigo, and violet.",
+            "words": []
+          },
+          {
+            "text": "But when these colors combine",
+            "words": []
+          },
+          {
+            "text": "their color becomes white.",
+            "words": []
+          },
+          {
+            "text": "And when my ray enters the raindrop",
+            "words": []
+          },
+          {
+            "text": "its colors separate and appear in the sky",
+            "words": []
+          },
+          {
+            "text": "in the shape of a rainbow.",
+            "words": []
+          },
+          {
+            "text": "So for a rainbow to happen",
+            "words": []
+          },
+          {
+            "text": "the sun's ray must",
+            "words": []
+          },
+          {
+            "text": "go and pass through the water drop",
+            "words": []
+          },
+          {
+            "text": "that is in the cloud.",
+            "words": []
+          },
+          {
+            "text": "Correct, and that's how a rainbow happens.",
+            "words": []
+          },
+          {
+            "text": "Oh my dear, Detective Jaljal,",
+            "words": []
+          },
+          {
+            "text": "who discovers the facts.",
+            "words": []
+          },
+          {
+            "text": "I really love the rainbow.",
+            "words": []
+          },
+          {
+            "text": "Where are you, Rainbow? Where are you, Artist?",
+            "words": []
+          },
+          {
+            "text": "I am the Rainbow Artist",
+            "words": []
+          },
+          {
+            "text": "My colors are the loveliest colors",
+            "words": []
+          },
+          {
+            "text": "I am the Rainbow Artist",
+            "words": []
+          },
+          {
+            "text": "My colors are the loveliest colors",
+            "words": []
+          },
+          {
+            "text": "How beautiful are my seven colors",
+            "words": []
+          },
+          {
+            "text": "In them is joy, in them is fun",
+            "words": []
+          },
+          {
+            "text": "How beautiful are my seven colors",
+            "words": []
+          },
+          {
+            "text": "In them is joy, in them is fun",
+            "words": []
+          },
+          {
+            "text": "I am the Rainbow Artist",
+            "words": []
+          },
+          {
+            "text": "Orange and green",
+            "words": []
+          },
+          {
+            "text": "We play with red and yellow",
+            "words": []
+          },
+          {
+            "text": "Orange and green",
+            "words": []
+          },
+          {
+            "text": "We play with red and yellow",
+            "words": []
+          },
+          {
+            "text": "Blue, indigo, and violet",
+            "words": []
+          },
+          {
+            "text": "We are the loveliest, we are the brightest",
+            "words": []
+          },
+          {
+            "text": "We appear with water drops",
+            "words": []
+          },
+          {
+            "text": "And the sweet, giving sun",
+            "words": []
+          },
+          {
+            "text": "Did you know we are seven",
+            "words": []
+          },
+          {
+            "text": "Oh what joy, oh what splendor",
+            "words": []
+          },
+          {
+            "text": "I am...",
+            "words": []
+          }
+        ],
+        "lessons": "# الاستفسار عن قوس قزح\n00:00.00 كيف بيصير قوس قزح بالسما؟\n00:03.00 ممم...\n00:05.00 أكيد التحري جلجل عنده الجواب.\n00:07.80 ها ها ها!\n00:09.50 التحري جلجل موجود يا تنتن.\n00:12.50 وأكيد إنتي بدك تسألي\n00:15.00 عن قوس قزح، صح؟\n\n# بداية التحقيق\n00:17.50 كيف بيصير قوس قزح بالسما؟\n00:20.50 ها! الأسئلة كتير مهمة يا تنتن.\n00:23.50 وهي اللي بتخليني\n00:25.50 دايماً تحري ناجح.\n00:28.50 ها!\n00:30.50 لازم نسأل الشمس.\n\n# محادثة مع الشمس (الجزء الأول)\n00:33.50 ها؟ الشمس؟ ممم.\n00:36.50 يا شمس! يا شمس!\n00:38.50 يا شمس! وينك يا شمس؟\n00:40.50 هيها هيها! أهلاً أهلاً يا شمس.\n00:42.50 أهلاً، مرحباً يا شمس.\n00:45.50 أهلاً أهلاً.\n00:47.50 ممكن تقولي لنا مين اللي بيرسم\n00:50.00 قوس قزح في السما؟\n00:51.50 شعاعي الضوئي.\n\n# اكتشاف العوامل المؤثرة\n00:53.50 ها! شعاعك الضوئي؟\n00:55.50 وطبعاً مش بس لحالي.\n00:57.50 آه، مين بيساعدك؟\n00:59.50 قطرة المي اللي بالغيمة.\n01:02.50 شايفة يا تنتن؟\n01:04.50 أنا كنت متأكد\n01:06.50 من خلال الأسئلة رح أكتشف الحقائق.\n01:09.50 أنا التحري جلجل اللي اكتشفت\n01:12.50 إن الموضوع كمان فيه غيم ومي.\n01:15.50 ممم.\n\n# كيف يتشكل قوس قزح (الجزء الأول)\n01:18.50 طبعاً، قبل شوي مر شعاعي\n01:20.50 من مكان فيه قطرات مطر.\n01:23.50 وهيك الألوان اللي بيحملها شعاعي بتظهر.\n01:27.50 وبتتشكل على شكل قوس قزح.\n01:31.50 ممم. فعلاً يا تحري جلجل،\n01:33.50 قبل شوي نزل شوية مطر.\n01:36.50 يعني الشمس لازم تكون طالعة\n01:38.50 عشان يصير قوس قزح.\n\n# كيف يتشكل قوس قزح (الجزء الثاني)\n01:41.50 طيب لو سمحتي يا شمس، كيف؟\n01:45.50 بيدخل شعاعي جوا حبة المطر.\n01:49.50 ولما يطلع منها بيظهروا ألوانه السبعة.\n01:53.50 الأحمر والبرتقالي والأصفر والأخضر\n01:56.50 والأزرق والنيلي والبنفسجي.\n\n# ألوان الطيف السبعة\n02:00.50 لو سمحتي وضحي بالتفصيل.\n02:03.50 آه آه.\n02:05.50 شعاعي أصلاً بيتكون من سبعة ألوان.\n02:08.50 أحمر، برتقالي، أصفر، أخضر،\n02:11.50 أزرق، نيلي وبنفسجي.\n02:16.50 بس لما تتحد هاي الألوان\n02:18.50 بيصير لونها أبيض.\n02:21.00 ولما يدخل شعاعي حبة المطر\n02:24.50 تتفكك ألوانه وبتظهر في السما\n02:28.50 على شكل قوس قزح.\n\n# الخلاصة والأنشودة (الجزء الأول)\n02:32.50 إذاً عشان يصير قوس قزح\n02:35.50 لازم شعاع الشمس\n02:37.50 يروح ويمر من قطرة المي\n02:41.50 اللي موجودة في الغيمة.\n02:43.50 مضبوط، وهيك بيصير قوس قزح.\n02:45.50 يا عيني عليك يا تحري يا جلجل\n02:49.50 اللي بتكتشف الحقائق.\n02:51.50 أنا كتير بحب قوس قزح.\n\n# أنشودة قوس قزح\n02:53.50 وينك يا قوس قزح؟ وينك يا فنان؟\n03:00.00 أنا قوس قزح الفنان\n03:03.00 ألواني أحلى الألوان\n03:05.50 أنا قوس قزح الفنان\n03:08.50 ألواني أحلى الألوان\n03:11.50 ما أجمل ألواني السبعة\n03:14.50 فيها البهجة فيها المتعة\n03:17.50 ما أجمل ألواني السبعة\n03:20.50 فيها البهجة فيها المتعة\n03:23.50 أنا قوس قزح الفنان\n03:25.50 برتقالي والأخضر\n03:28.50 نلعب مع أحمر والأصفر\n03:31.50 برتقالي والأخضر\n03:34.50 نلعب مع أحمر والأصفر\n03:37.50 أزرق نيلي وبنفسج\n03:40.50 نحن الأحلى نحن الأبهج\n03:42.50 نظهر مع قطرات الماء\n03:45.50 والشمس الحلوة المعطاء\n03:48.50 هل تعرفنا أنا سبعة\n03:51.50 يا للفرحة يا للروعة\n03:54.50 أنا..."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-27 06:57:56 UTC",
   "updated_at": "2026-04-27 07:13:29 UTC",

@@ -8,37 +8,62 @@
       {
         "id": "phrase_2",
         "text_l1": "Tres cerditos salieron a caminar",
-        "timestamp": "06:22",
-        "text_l2": "Three little pigs went out for a walk"
+        "timestamp": "06:22"
       },
       {
         "id": "phrase_3",
         "text_l1": "cada uno su casa formó",
-        "timestamp": "06:27",
-        "text_l2": "each one built his house"
+        "timestamp": "06:27"
       },
       {
         "id": "phrase_4",
         "text_l1": "la de paja voló",
-        "timestamp": "06:30",
-        "text_l2": "the straw one blew away"
+        "timestamp": "06:30"
       },
       {
         "id": "phrase_5",
         "text_l1": "la de madera cayó",
-        "timestamp": "06:33",
-        "text_l2": "the wooden one fell down"
+        "timestamp": "06:33"
       },
       {
         "id": "phrase_6",
         "text_l1": "la de ladrillo se quedó",
-        "timestamp": "06:37",
-        "text_l2": "the brick one remained"
+        "timestamp": "06:37"
       }
     ],
     "phrases_with_token_translations": "[Tres] cerditos salieron a caminar => [Three] little pigs went out for a walk\nTres [cerditos] salieron a caminar => Three [little pigs] went out for a walk\nTres cerditos [salieron a caminar] => Three little pigs [went out for a walk]\n\n[cada] uno su casa formó => [each] one built his house\ncada [uno] su casa formó => each [one] built his house\ncada uno [su] casa formó => each one built [his] house\ncada uno su [casa] formó => each one built his [house]\ncada uno su casa [formó] => each one [built] his house\n\n[la de paja] voló => [the straw one] blew away\nla de paja [voló] => the straw one [blew away]\n[la] de paja voló => [the] straw one blew away\nla [de paja] voló => the [straw] one blew away\n\n[la de madera] cayó => [the wooden one] fell down\nla de madera [cayó] => the wooden one [fell down]\n[la] de madera cayó => [the] wooden one fell down\nla [de madera] cayó => the [wooden] one fell down\n\n[la de ladrillo] se quedó => [the brick one] remained\nla de ladrillo [se quedó] => the brick one [remained]\n[la] de ladrillo se quedó => [the] brick one remained\nla [de ladrillo] se quedó => the [brick] one remained\n\n",
     "lessons": "# The Three Little Pigs\n06:22 Tres cerditos salieron a caminar\n06:27 cada uno su casa formó\n06:30 la de paja voló\n06:33 la de madera cayó\n\n# The Strongest House\n06:37 la de ladrillo se quedó",
-    "similar_sounds": "Tres cerditos salieron a [cantar]\ncada uno su [caza] formó\nla de paja [votó]\nla de madera [calló]\nla de ladrillo se [quejó]"
+    "similar_sounds": "Tres cerditos salieron a [cantar]\ncada uno su [caza] formó\nla de paja [votó]\nla de madera [calló]\nla de ladrillo se [quejó]",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Three little pigs went out for a walk",
+            "words": []
+          },
+          {
+            "text": "each one built his house",
+            "words": []
+          },
+          {
+            "text": "the straw one blew away",
+            "words": []
+          },
+          {
+            "text": "the wooden one fell down",
+            "words": []
+          },
+          {
+            "text": "the brick one remained",
+            "words": []
+          }
+        ],
+        "lessons": "# The Three Little Pigs\n06:22 Tres cerditos salieron a caminar\n06:27 cada uno su casa formó\n06:30 la de paja voló\n06:33 la de madera cayó\n\n# The Strongest House\n06:37 la de ladrillo se quedó"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-03-21 17:59:00 UTC",
   "updated_at": "2026-03-21 18:06:41 UTC",

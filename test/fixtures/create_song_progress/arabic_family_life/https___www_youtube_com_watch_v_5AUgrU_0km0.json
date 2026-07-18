@@ -8,799 +8,1205 @@
       {
         "id": "phrase_2",
         "text_l1": "أنا ما صدقت",
-        "timestamp": "00:04",
-        "text_l2": "I couldn't believe it"
+        "timestamp": "00:04"
       },
       {
         "id": "phrase_3",
         "text_l1": "لما شفت سند",
-        "timestamp": "00:05",
-        "text_l2": "When I saw Sanad"
+        "timestamp": "00:05"
       },
       {
         "id": "phrase_4",
         "text_l1": "واقف على المسرح",
-        "timestamp": "00:06",
-        "text_l2": "Standing on the stage"
+        "timestamp": "00:06"
       },
       {
         "id": "phrase_5",
         "text_l1": "ولا أنا صراحة",
-        "timestamp": "00:07",
-        "text_l2": "Neither could I, honestly"
+        "timestamp": "00:07"
       },
       {
         "id": "phrase_6",
         "text_l1": "سند موهوب كثير",
-        "timestamp": "00:09",
-        "text_l2": "Sanad is very talented"
+        "timestamp": "00:09"
       },
       {
         "id": "phrase_7",
         "text_l1": "على فكرة وخفيف دم",
-        "timestamp": "00:11",
-        "text_l2": "By the way, and witty"
+        "timestamp": "00:11"
       },
       {
         "id": "phrase_8",
         "text_l1": "طالع لأمه",
-        "timestamp": "00:13",
-        "text_l2": "He takes after his mother"
+        "timestamp": "00:13"
       },
       {
         "id": "phrase_9",
         "text_l1": "إمتى راح تقدموا",
-        "timestamp": "00:14",
-        "text_l2": "When are you going to present"
+        "timestamp": "00:14"
       },
       {
         "id": "phrase_10",
         "text_l1": "المسرحية للأهل",
-        "timestamp": "00:15",
-        "text_l2": "The play for the parents?"
+        "timestamp": "00:15"
       },
       {
         "id": "phrase_11",
         "text_l1": "ألو يابا",
-        "timestamp": "00:19",
-        "text_l2": "Hello, Dad"
+        "timestamp": "00:19"
       },
       {
         "id": "phrase_12",
         "text_l1": "شو",
-        "timestamp": "00:21",
-        "text_l2": "What?"
+        "timestamp": "00:21"
       },
       {
         "id": "phrase_13",
         "text_l1": "هيني جاي",
-        "timestamp": "00:22",
-        "text_l2": "I'm coming right now"
+        "timestamp": "00:22"
       },
       {
         "id": "phrase_14",
         "text_l1": "هيني جاي",
-        "timestamp": "00:23",
-        "text_l2": "I'm coming right now"
+        "timestamp": "00:23"
       },
       {
         "id": "phrase_15",
         "text_l1": "شو في يا عصام",
-        "timestamp": "00:24",
-        "text_l2": "What's wrong, Issam?"
+        "timestamp": "00:24"
       },
       {
         "id": "phrase_16",
         "text_l1": "أمي رجعت تعبت كثير",
-        "timestamp": "00:25",
-        "text_l2": "My mother got very sick again"
+        "timestamp": "00:25"
       },
       {
         "id": "phrase_17",
         "text_l1": "راح أخذها على المستشفى",
-        "timestamp": "00:27",
-        "text_l2": "I'm going to take her to the hospital"
+        "timestamp": "00:27"
       },
       {
         "id": "phrase_18",
         "text_l1": "أنا جاي معك",
-        "timestamp": "00:28",
-        "text_l2": "I'm coming with you"
+        "timestamp": "00:28"
       },
       {
         "id": "phrase_19",
         "text_l1": "ليش مستشفى",
-        "timestamp": "00:29",
-        "text_l2": "Why the hospital?"
+        "timestamp": "00:29"
       },
       {
         "id": "phrase_20",
         "text_l1": "شو صار للتيتة",
-        "timestamp": "00:30",
-        "text_l2": "What happened to Grandma?"
+        "timestamp": "00:30"
       },
       {
         "id": "phrase_21",
         "text_l1": "أنا بدي أجي معكم",
-        "timestamp": "00:32",
-        "text_l2": "I want to come with you"
+        "timestamp": "00:32"
       },
       {
         "id": "phrase_22",
         "text_l1": "لا خليكم هون",
-        "timestamp": "00:33",
-        "text_l2": "No, stay here"
+        "timestamp": "00:33"
       },
       {
         "id": "phrase_23",
         "text_l1": "ما تقلقوا ماما",
-        "timestamp": "00:34",
-        "text_l2": "Don't worry, Mom"
+        "timestamp": "00:34"
       },
       {
         "id": "phrase_24",
         "text_l1": "إن شاء الله خير",
-        "timestamp": "00:35",
-        "text_l2": "Hopefully, it will be fine"
+        "timestamp": "00:35"
       },
       {
         "id": "phrase_25",
         "text_l1": "ماما كيف صارت التيتة",
-        "timestamp": "00:54",
-        "text_l2": "Mom, how is Grandma?"
+        "timestamp": "00:54"
       },
       {
         "id": "phrase_26",
         "text_l1": "ماما إحنا هلا عندها",
-        "timestamp": "00:56",
-        "text_l2": "Mom, we are with her now"
+        "timestamp": "00:56"
       },
       {
         "id": "phrase_27",
         "text_l1": "وكل الدكاترة معها",
-        "timestamp": "00:57",
-        "text_l2": "And all the doctors are with her"
+        "timestamp": "00:57"
       },
       {
         "id": "phrase_28",
         "text_l1": "بخبرك أول بأول",
-        "timestamp": "00:58",
-        "text_l2": "I'll keep you updated"
+        "timestamp": "00:58"
       },
       {
         "id": "phrase_29",
         "text_l1": "شو بيصير",
-        "timestamp": "01:00",
-        "text_l2": "On what happens"
+        "timestamp": "01:00"
       },
       {
         "id": "phrase_30",
         "text_l1": "حبيبتي ماما",
-        "timestamp": "01:01",
-        "text_l2": "My dear Mom"
+        "timestamp": "01:01"
       },
       {
         "id": "phrase_31",
         "text_l1": "بليز فوتوا ناموا",
-        "timestamp": "01:02",
-        "text_l2": "Please go to sleep"
+        "timestamp": "01:02"
       },
       {
         "id": "phrase_32",
         "text_l1": "بكره عليكم امتحان",
-        "timestamp": "01:03",
-        "text_l2": "You have an exam tomorrow"
+        "timestamp": "01:03"
       },
       {
         "id": "phrase_33",
         "text_l1": "أوكي",
-        "timestamp": "01:04",
-        "text_l2": "Okay"
+        "timestamp": "01:04"
       },
       {
         "id": "phrase_34",
         "text_l1": "ماما احكي للتيتة",
-        "timestamp": "01:06",
-        "text_l2": "Mom, tell Grandma"
+        "timestamp": "01:06"
       },
       {
         "id": "phrase_35",
         "text_l1": "إننا بنحبها",
-        "timestamp": "01:07",
-        "text_l2": "That we love her"
+        "timestamp": "01:07"
       },
       {
         "id": "phrase_36",
         "text_l1": "بنحبها كثير",
-        "timestamp": "01:08",
-        "text_l2": "We love her very much"
+        "timestamp": "01:08"
       },
       {
         "id": "phrase_37",
         "text_l1": "طمنيني عليها",
-        "timestamp": "01:10",
-        "text_l2": "Reassure me about her"
+        "timestamp": "01:10"
       },
       {
         "id": "phrase_38",
         "text_l1": "إن شاء الله خير حبيبي",
-        "timestamp": "01:16",
-        "text_l2": "Hopefully, it's good news, my dear"
+        "timestamp": "01:16"
       },
       {
         "id": "phrase_39",
         "text_l1": "مش عارف",
-        "timestamp": "01:18",
-        "text_l2": "I don't know"
+        "timestamp": "01:18"
       },
       {
         "id": "phrase_40",
         "text_l1": "الدكتور قال لي",
-        "timestamp": "01:20",
-        "text_l2": "The doctor told me"
+        "timestamp": "01:20"
       },
       {
         "id": "phrase_41",
         "text_l1": "إنه وضعها صعب",
-        "timestamp": "01:21",
-        "text_l2": "That her condition is difficult"
+        "timestamp": "01:21"
       },
       {
         "id": "phrase_42",
         "text_l1": "يعني مسألة ساعات",
-        "timestamp": "01:23",
-        "text_l2": "Meaning it's a matter of hours"
+        "timestamp": "01:23"
       },
       {
         "id": "phrase_43",
         "text_l1": "شو أم سند",
-        "timestamp": "01:30",
-        "text_l2": "What's the news, Um Sanad?"
+        "timestamp": "01:30"
       },
       {
         "id": "phrase_44",
         "text_l1": "لهلا ما رجعتوا",
-        "timestamp": "01:31",
-        "text_l2": "You haven't come back yet?"
+        "timestamp": "01:31"
       },
       {
         "id": "phrase_45",
         "text_l1": "كيفها حماتك",
-        "timestamp": "01:32",
-        "text_l2": "How is your mother-in-law?"
+        "timestamp": "01:32"
       },
       {
         "id": "phrase_46",
         "text_l1": "طمنينا",
-        "timestamp": "01:33",
-        "text_l2": "Reassure us"
+        "timestamp": "01:33"
       },
       {
         "id": "phrase_47",
         "text_l1": "صدقي الوضع صعب كثير",
-        "timestamp": "01:35",
-        "text_l2": "Believe me, the situation is very difficult"
+        "timestamp": "01:35"
       },
       {
         "id": "phrase_48",
         "text_l1": "يا أم إنصاف",
-        "timestamp": "01:36",
-        "text_l2": "Um Insaf"
+        "timestamp": "01:36"
       },
       {
         "id": "phrase_49",
         "text_l1": "حالتها عم تتدهور بسرعة",
-        "timestamp": "01:37",
-        "text_l2": "Her condition is deteriorating quickly"
+        "timestamp": "01:37"
       },
       {
         "id": "phrase_50",
         "text_l1": "بتستنى رحمة ربها",
-        "timestamp": "01:39",
-        "text_l2": "She is waiting for God's mercy"
+        "timestamp": "01:39"
       },
       {
         "id": "phrase_51",
         "text_l1": "حبيبتي الله يقويكم",
-        "timestamp": "01:41",
-        "text_l2": "My dear, may God give you strength"
+        "timestamp": "01:41"
       },
       {
         "id": "phrase_52",
         "text_l1": "يي شكله الوضع",
-        "timestamp": "01:43",
-        "text_l2": "Oh, it looks like the situation"
+        "timestamp": "01:43"
       },
       {
         "id": "phrase_53",
         "text_l1": "مش مطمئن",
-        "timestamp": "01:44",
-        "text_l2": "Is not reassuring"
+        "timestamp": "01:44"
       },
       {
         "id": "phrase_54",
         "text_l1": "الله يرحمك يا أم عصام",
-        "timestamp": "01:47",
-        "text_l2": "May God have mercy on you, Um Issam"
+        "timestamp": "01:47"
       },
       {
         "id": "phrase_55",
         "text_l1": "يا خالتي",
-        "timestamp": "01:49",
-        "text_l2": "Oh, dear lady"
+        "timestamp": "01:49"
       },
       {
         "id": "phrase_56",
         "text_l1": "يا أعز الناس",
-        "timestamp": "01:51",
-        "text_l2": "Oh, dearest of people"
+        "timestamp": "01:51"
       },
       {
         "id": "phrase_57",
         "text_l1": "يا الله لسه ما إجوا",
-        "timestamp": "02:02",
-        "text_l2": "Oh God, they still haven't come"
+        "timestamp": "02:02"
       },
       {
         "id": "phrase_58",
         "text_l1": "ما بعتوا شيء",
-        "timestamp": "02:03",
-        "text_l2": "They haven't sent anything"
+        "timestamp": "02:03"
       },
       {
         "id": "phrase_59",
         "text_l1": "ماما ليش الخط مشغول",
-        "timestamp": "02:08",
-        "text_l2": "Mom, why is the line busy"
+        "timestamp": "02:08"
       },
       {
         "id": "phrase_60",
         "text_l1": "كل الوقت",
-        "timestamp": "02:09",
-        "text_l2": "All the time?"
+        "timestamp": "02:09"
       },
       {
         "id": "phrase_61",
         "text_l1": "ليش ما بتردي",
-        "timestamp": "02:10",
-        "text_l2": "Why aren't you answering?"
+        "timestamp": "02:10"
       },
       {
         "id": "phrase_62",
         "text_l1": "شو",
-        "timestamp": "02:22",
-        "text_l2": "What?"
+        "timestamp": "02:22"
       },
       {
         "id": "phrase_63",
         "text_l1": "شو فكرك",
-        "timestamp": "02:29",
-        "text_l2": "What do you think?"
+        "timestamp": "02:29"
       },
       {
         "id": "phrase_64",
         "text_l1": "نحكي للأولاد هلا",
-        "timestamp": "02:30",
-        "text_l2": "Should we tell the kids now"
+        "timestamp": "02:30"
       },
       {
         "id": "phrase_65",
         "text_l1": "ولا نستنى بس يرجعوا",
-        "timestamp": "02:32",
-        "text_l2": "Or wait until they return"
+        "timestamp": "02:32"
       },
       {
         "id": "phrase_66",
         "text_l1": "من المدرسة",
-        "timestamp": "02:33",
-        "text_l2": "From school?"
+        "timestamp": "02:33"
       },
       {
         "id": "phrase_67",
         "text_l1": "سالي عندها امتحان",
-        "timestamp": "02:34",
-        "text_l2": "Sally has an exam"
+        "timestamp": "02:34"
       },
       {
         "id": "phrase_68",
         "text_l1": "نهائي اليوم",
-        "timestamp": "02:35",
-        "text_l2": "A final today"
+        "timestamp": "02:35"
       },
       {
         "id": "phrase_69",
         "text_l1": "مش عارف",
-        "timestamp": "02:36",
-        "text_l2": "I don't know"
+        "timestamp": "02:36"
       },
       {
         "id": "phrase_70",
         "text_l1": "هلا بنشوف",
-        "timestamp": "02:37",
-        "text_l2": "We'll see now"
+        "timestamp": "02:37"
       },
       {
         "id": "phrase_71",
         "text_l1": "سالي",
-        "timestamp": "02:40",
-        "text_l2": "Sally"
+        "timestamp": "02:40"
       },
       {
         "id": "phrase_72",
         "text_l1": "سالي ماما",
-        "timestamp": "02:41",
-        "text_l2": "Sally, honey"
+        "timestamp": "02:41"
       },
       {
         "id": "phrase_73",
         "text_l1": "ليش نايمة هون",
-        "timestamp": "02:42",
-        "text_l2": "Why are you sleeping here?"
+        "timestamp": "02:42"
       },
       {
         "id": "phrase_74",
         "text_l1": "التيتة ماتت صح",
-        "timestamp": "02:44",
-        "text_l2": "Grandma died, right?"
+        "timestamp": "02:44"
       },
       {
         "id": "phrase_75",
         "text_l1": "آه حبيبتي صح",
-        "timestamp": "02:46",
-        "text_l2": "Yes, honey, that's right"
+        "timestamp": "02:46"
       },
       {
         "id": "phrase_76",
         "text_l1": "التيتة أعطتك عمرها",
-        "timestamp": "02:47",
-        "text_l2": "Grandma has passed away"
+        "timestamp": "02:47"
       },
       {
         "id": "phrase_77",
         "text_l1": "بس كيف إنت عرفتي",
-        "timestamp": "02:51",
-        "text_l2": "But how did you know?"
+        "timestamp": "02:51"
       },
       {
         "id": "phrase_78",
         "text_l1": "إحنا لسه ما خبرنا حدا",
-        "timestamp": "02:52",
-        "text_l2": "We haven't told anyone yet"
+        "timestamp": "02:52"
       },
       {
         "id": "phrase_79",
         "text_l1": "كيف عرفت",
-        "timestamp": "02:54",
-        "text_l2": "How did I know?"
+        "timestamp": "02:54"
       },
       {
         "id": "phrase_80",
         "text_l1": "كل حدا بيعرف",
-        "timestamp": "02:55",
-        "text_l2": "Everyone knows"
+        "timestamp": "02:55"
       },
       {
         "id": "phrase_81",
         "text_l1": "أنتي أم إنصاف",
-        "timestamp": "02:57",
-        "text_l2": "Auntie Um Insaf"
+        "timestamp": "02:57"
       },
       {
         "id": "phrase_82",
         "text_l1": "حطت بوست",
-        "timestamp": "02:58",
-        "text_l2": "Posted a post"
+        "timestamp": "02:58"
       },
       {
         "id": "phrase_83",
         "text_l1": "وأنا ضليتني أرن عليكم",
-        "timestamp": "03:00",
-        "text_l2": "And I kept calling you"
+        "timestamp": "03:00"
       },
       {
         "id": "phrase_84",
         "text_l1": "ليش ما رديتوا علي",
-        "timestamp": "03:01",
-        "text_l2": "Why didn't you answer me?"
+        "timestamp": "03:01"
       },
       {
         "id": "phrase_85",
         "text_l1": "ليش",
-        "timestamp": "03:02",
-        "text_l2": "Why?"
+        "timestamp": "03:02"
       },
       {
         "id": "phrase_86",
         "text_l1": "شو",
-        "timestamp": "03:04",
-        "text_l2": "What?"
+        "timestamp": "03:04"
       },
       {
         "id": "phrase_87",
         "text_l1": "أم إنصاف",
-        "timestamp": "03:05",
-        "text_l2": "Um Insaf?"
+        "timestamp": "03:05"
       },
       {
         "id": "phrase_88",
         "text_l1": "شو في",
-        "timestamp": "03:06",
-        "text_l2": "What's going on?"
+        "timestamp": "03:06"
       },
       {
         "id": "phrase_89",
         "text_l1": "سالي سند",
-        "timestamp": "03:07",
-        "text_l2": "Sally, Sanad"
+        "timestamp": "03:07"
       },
       {
         "id": "phrase_90",
         "text_l1": "أنتوا بتعرفوا",
-        "timestamp": "03:08",
-        "text_l2": "You know"
+        "timestamp": "03:08"
       },
       {
         "id": "phrase_91",
         "text_l1": "إن التيتة صار لها فترة",
-        "timestamp": "03:09",
-        "text_l2": "That Grandma has been for a while"
+        "timestamp": "03:09"
       },
       {
         "id": "phrase_92",
         "text_l1": "مريضة وتعبانة",
-        "timestamp": "03:10",
-        "text_l2": "Sick and weak"
+        "timestamp": "03:10"
       },
       {
         "id": "phrase_93",
         "text_l1": "وإمبارح بالليل",
-        "timestamp": "03:12",
-        "text_l2": "And last night"
+        "timestamp": "03:12"
       },
       {
         "id": "phrase_94",
         "text_l1": "جسمها بطل",
-        "timestamp": "03:14",
-        "text_l2": "Her body stopped"
+        "timestamp": "03:14"
       },
       {
         "id": "phrase_95",
         "text_l1": "قادر يتحمل",
-        "timestamp": "03:15",
-        "text_l2": "Being able to endure"
+        "timestamp": "03:15"
       },
       {
         "id": "phrase_96",
         "text_l1": "شو قصدك",
-        "timestamp": "03:17",
-        "text_l2": "What do you mean?"
+        "timestamp": "03:17"
       },
       {
         "id": "phrase_97",
         "text_l1": "التيتة ماتت",
-        "timestamp": "03:18",
-        "text_l2": "Grandma died"
+        "timestamp": "03:18"
       },
       {
         "id": "phrase_98",
         "text_l1": "يي علينا",
-        "timestamp": "03:28",
-        "text_l2": "Oh my goodness"
+        "timestamp": "03:28"
       },
       {
         "id": "phrase_99",
         "text_l1": "مش ملحقة تعازي",
-        "timestamp": "03:29",
-        "text_l2": "I can't keep up with the condolences"
+        "timestamp": "03:29"
       },
       {
         "id": "phrase_100",
         "text_l1": "أنا مش فاهم",
-        "timestamp": "03:31",
-        "text_l2": "I don't understand"
+        "timestamp": "03:31"
       },
       {
         "id": "phrase_101",
         "text_l1": "يعني عادي",
-        "timestamp": "03:32",
-        "text_l2": "I mean, is it normal"
+        "timestamp": "03:32"
       },
       {
         "id": "phrase_102",
         "text_l1": "إنك تخبري الناس",
-        "timestamp": "03:33",
-        "text_l2": "That you tell people"
+        "timestamp": "03:33"
       },
       {
         "id": "phrase_103",
         "text_l1": "قبل ما عيلتها يخبروا",
-        "timestamp": "03:34",
-        "text_l2": "Before her family tells them?"
+        "timestamp": "03:34"
       },
       {
         "id": "phrase_104",
         "text_l1": "ولو أنا من العيلة",
-        "timestamp": "03:37",
-        "text_l2": "Come on, I'm like family"
+        "timestamp": "03:37"
       },
       {
         "id": "phrase_105",
         "text_l1": "خلي الناس تعرف",
-        "timestamp": "03:38",
-        "text_l2": "Let people know"
+        "timestamp": "03:38"
       },
       {
         "id": "phrase_106",
         "text_l1": "وتقوم بالواجب",
-        "timestamp": "03:39",
-        "text_l2": "And perform their duty"
+        "timestamp": "03:39"
       },
       {
         "id": "phrase_107",
         "text_l1": "وبنعمل شوية حركة",
-        "timestamp": "03:41",
-        "text_l2": "And we'll get some engagement"
+        "timestamp": "03:41"
       },
       {
         "id": "phrase_108",
         "text_l1": "على صفحتي كمان",
-        "timestamp": "03:42",
-        "text_l2": "On my page too"
+        "timestamp": "03:42"
       },
       {
         "id": "phrase_109",
         "text_l1": "آه أم رزق",
-        "timestamp": "03:49",
-        "text_l2": "Yes, Um Rizq"
+        "timestamp": "03:49"
       },
       {
         "id": "phrase_110",
         "text_l1": "حياتك الباقية حبيبتي",
-        "timestamp": "03:50",
-        "text_l2": "May you live a long life, my dear"
+        "timestamp": "03:50"
       },
       {
         "id": "phrase_111",
         "text_l1": "يا حرام",
-        "timestamp": "03:52",
-        "text_l2": "Poor thing"
+        "timestamp": "03:52"
       },
       {
         "id": "phrase_112",
         "text_l1": "اتغلبت كثير",
-        "timestamp": "03:53",
-        "text_l2": "She suffered a lot"
+        "timestamp": "03:53"
       },
       {
         "id": "phrase_113",
         "text_l1": "ارتاحت وريحت",
-        "timestamp": "03:55",
-        "text_l2": "She is at peace now"
+        "timestamp": "03:55"
       },
       {
         "id": "phrase_114",
         "text_l1": "حرام",
-        "timestamp": "03:57",
-        "text_l2": "Poor thing"
+        "timestamp": "03:57"
       },
       {
         "id": "phrase_115",
         "text_l1": "آه آه بيقولوا",
-        "timestamp": "03:59",
-        "text_l2": "Yes, yes, they say"
+        "timestamp": "03:59"
       },
       {
         "id": "phrase_116",
         "text_l1": "عندها أرض على طريق المطار",
-        "timestamp": "04:00",
-        "text_l2": "She has land on the Airport Road"
+        "timestamp": "04:00"
       },
       {
         "id": "phrase_117",
         "text_l1": "عشر دونم",
-        "timestamp": "04:01",
-        "text_l2": "Ten dunams"
+        "timestamp": "04:01"
       },
       {
         "id": "phrase_118",
         "text_l1": "الله يرحمها الوالدة",
-        "timestamp": "04:03",
-        "text_l2": "May God have mercy on your mother"
+        "timestamp": "04:03"
       },
       {
         "id": "phrase_119",
         "text_l1": "يا أبو سند",
-        "timestamp": "04:04",
-        "text_l2": "Abu Sanad"
+        "timestamp": "04:04"
       },
       {
         "id": "phrase_120",
         "text_l1": "سند لا تبكي حبيبي",
-        "timestamp": "04:05",
-        "text_l2": "Sanad, don't cry, my dear"
+        "timestamp": "04:05"
       },
       {
         "id": "phrase_121",
         "text_l1": "أنت زلمة",
-        "timestamp": "04:07",
-        "text_l2": "You are a man"
+        "timestamp": "04:07"
       },
       {
         "id": "phrase_122",
         "text_l1": "ولازم توقف مع أبوك",
-        "timestamp": "04:08",
-        "text_l2": "And you must stand by your father"
+        "timestamp": "04:08"
       },
       {
         "id": "phrase_123",
         "text_l1": "شو يعني زلمة",
-        "timestamp": "04:10",
-        "text_l2": "What does \"a man\" mean?"
+        "timestamp": "04:10"
       },
       {
         "id": "phrase_124",
         "text_l1": "ما عندها مشاعر",
-        "timestamp": "04:11",
-        "text_l2": "That he doesn't have feelings?"
+        "timestamp": "04:11"
       },
       {
         "id": "phrase_125",
         "text_l1": "خليه خليه يبكي",
-        "timestamp": "04:13",
-        "text_l2": "Let him, let him cry"
+        "timestamp": "04:13"
       },
       {
         "id": "phrase_126",
         "text_l1": "لازم يعبر",
-        "timestamp": "04:14",
-        "text_l2": "He needs to express himself"
+        "timestamp": "04:14"
       },
       {
         "id": "phrase_127",
         "text_l1": "أبو سند",
-        "timestamp": "04:16",
-        "text_l2": "Abu Sanad"
+        "timestamp": "04:16"
       },
       {
         "id": "phrase_128",
         "text_l1": "إذا بدك أي شيء",
-        "timestamp": "04:17",
-        "text_l2": "If you need anything"
+        "timestamp": "04:17"
       },
       {
         "id": "phrase_129",
         "text_l1": "شادر أضوية كراسي قهوة",
-        "timestamp": "04:18",
-        "text_l2": "A tent, lights, chairs, coffee"
+        "timestamp": "04:18"
       },
       {
         "id": "phrase_130",
         "text_l1": "الموضوع عندي",
-        "timestamp": "04:19",
-        "text_l2": "I'll handle it"
+        "timestamp": "04:19"
       },
       {
         "id": "phrase_131",
         "text_l1": "وبأسعار تفضيلية",
-        "timestamp": "04:20",
-        "text_l2": "And at special prices"
+        "timestamp": "04:20"
       },
       {
         "id": "phrase_132",
         "text_l1": "أخوك أنا",
-        "timestamp": "04:21",
-        "text_l2": "I'm your brother"
+        "timestamp": "04:21"
       },
       {
         "id": "phrase_133",
         "text_l1": "حبيبي أبو سند",
-        "timestamp": "04:23",
-        "text_l2": "My dear Abu Sanad"
+        "timestamp": "04:23"
       }
     ],
     "phrases_with_token_translations": "[أنا] ما صدقت => [I] couldn't believe it\nأنا [ما صدقت] => I [couldn't believe it]\n\n[لما] شفت سند => [When] I saw Sanad\nلما [شفت] سند => When [I saw] Sanad\nلما شفت [سند] => When I saw [Sanad]\n\n[واقف] على المسرح => [Standing] on the stage\nواقف [على] المسرح => Standing [on] the stage\nواقف على [المسرح] => Standing on [the stage]\n\n[ولا أنا] صراحة => [Neither could I], honestly\nولا أنا [صراحة] => Neither could I, [honestly]\n\n[سند] موهوب كثير => [Sanad] is very talented\nسند [موهوب] كثير => Sanad is [talented] very\nسند موهوب [كثير] => Sanad is talented [very]\nسند [موهوب كثير] => Sanad [is very talented]\n\n[على فكرة] وخفيف دم => [By the way], and witty\nعلى فكرة [وخفيف دم] => By the way, [and witty]\nعلى فكرة و[خفيف دم] => By the way, and [witty]\n\n[طالع] لأمه => [He takes after] his mother\nطالع [لأمه] => He takes after [his mother]\n\n[إمتى] راح تقدموا => [When] are you going to present\nإمتى [راح تقدموا] => When [are you going to present]\n\n[المسرحية] للأهل => [The play] for the parents?\nالمسرحية [للأهل] => The play [for the parents?]\n\n[ألو] يابا => [Hello], Dad\nألو [يابا] => Hello, [Dad]\n\n[شو] => [What?]\n\n[هيني] جاي => [I'm] coming right now\nهيني [جاي] => I'm [coming right now]\n[هيني جاي] => [I'm coming right now]\n\n[هيني جاي] => [I'm coming right now]\n[هيني] جاي => right now # word order differs in English\nهيني [جاي] => I'm coming # word order differs in English\n\n[شو في] يا عصام => [What's wrong], Issam\nشو في يا [عصام] => What's wrong, [Issam]\n\n[أمي] رجعت تعبت كثير => [My mother] got very sick again\nأمي [رجعت] تعبت كثير => again # position differs in English\nأمي رجعت [تعبت كثير] => My mother [got very sick] again\n\n[راح] أخذها على المستشفى => [I'm going to] take her to the hospital\nراح [أخذها] على المستشفى => I'm going to [take her] to the hospital\nراح أخذها [على] المستشفى => I'm going to take her [to] the hospital\nراح أخذها على [المستشفى] => I'm going to take her to [the hospital]\n\n[أنا جاي] معك => [I'm coming] with you\nأنا [جاي معك] => I'm [coming with you]\n\n[ليش] مستشفى => [Why] the hospital?\nليش [مستشفى] => Why [the hospital]?\n\n[شو] صار للتيتة => [What] happened to Grandma?\nشو [صار] للتيتة => What [happened] to Grandma?\nشو صار [للتيتة] => What happened [to Grandma]?\n\n[أنا] بدي أجي معكم => [I] want to come with you\nأنا [بدي] أجي معكم => I [want] to come with you\nأنا بدي [أجي] معكم => I want [to come] with you\nأنا بدي أجي [معكم] => I want to come [with you]\n\n[لا] خليكم هون => [No], stay here\nلا [خليكم] هون => No, [stay] here\nلا خليكم [هون] => No, stay [here]\n\n[ما] تقلقوا ماما => [Don't] worry, Mom\nما [تقلقوا] ماما => Don't [worry], Mom\nما تقلقوا [ماما] => Don't worry, [Mom]\n\n[إن شاء الله] خير => [Hopefully], it will be fine\nإن شاء الله [خير] => Hopefully, [it will be fine]\n\n[ماما] كيف صارت التيتة => [Mom], how is Grandma?\nماما [كيف صارت] التيتة => Mom, [how is] Grandma?\nماما كيف صارت [التيتة] => Mom, how is [Grandma]?\n\n[ماما] إحنا هلا عندها => [Mom], we are with her now\nماما [إحنا] هلا عندها => Mom, [we are] with her now\nماما إحنا [هلا] عندها => Mom, we are with her [now]\nماما إحنا هلا [عندها] => Mom, we are [with her] now\n\n[و] كل الدكاترة معها => [And] all the doctors are with her\nو [كل] الدكاترة معها => And [all] the doctors are with her\nوكل [الدكاترة] معها => And all [the doctors] are with her\nوكل الدكاترة [معها] => And all the doctors are [with her]\n\n[بخبرك أول بأول] => [I'll keep you updated]\n\n[شو] بيصير => On [what] happens\nشو [بيصير] => On what [happens]\n\n[حبيبتي] ماما => [My dear] Mom\nحبيبتي [ماما] => My dear [Mom]\n\n[بليز] فوتوا ناموا => [Please] go to sleep\nبليز [فوتوا ناموا] => Please [go to sleep]\n\n[بكره] عليكم امتحان => [tomorrow] you have an exam\nبكره [عليكم] امتحان => tomorrow [you have] an exam\nبكره عليكم [امتحان] => tomorrow you have [an exam]\n\n[أوكي] => [Okay]\n\n[ماما] احكي للتيتة => [Mom], tell Grandma\nماما [احكي] للتيتة => Mom, [tell] Grandma\nماما احكي [للتيتة] => Mom, tell [Grandma]\n\n[إننا] بنحبها => [That we] love her\nإننا [بنحبها] => That we [love her]\n\n[بنحبها] كثير => [We love her] very much\nبنحبها [كثير] => We love her [very much]\n\n[طمنيني] عليها => [Reassure me] about her\nطمنيني [عليها] => Reassure me [about her]\n\n[إن شاء الله] خير حبيبي => [Hopefully], it's good news, my dear\nإن شاء الله [خير] حبيبي => Hopefully, it's [good news], my dear\nإن شاء الله خير [حبيبي] => Hopefully, it's good news, [my dear]\n\n[مش عارف] => I don't know\n\n[الدكتور] قال لي => [The doctor] told me\nالدكتور [قال لي] => The doctor [told me]\n\n[إنه] وضعها صعب => [That] her condition is difficult\nإنه [وضعها] صعب => That [her condition] is difficult\nإنه وضعها [صعب] => That her condition [is difficult]\n\n[يعني] مسألة ساعات => [Meaning] it's a matter of hours\nيعني [مسألة ساعات] => Meaning [it's a matter of hours]\n\n[شو] أم سند => [What's] the news, Um Sanad?\nشو [أم سند] => What's the news, [Um Sanad]\n\n[لهلا] ما رجعتوا => You haven't come back [yet]?\nلهلا [ما رجعتوا] => [You haven't come back] yet?\n\n[كيفها] حماتك => [How is] your mother-in-law?\nكيفها [حماتك] => How is [your mother-in-law]?\n\n[طمنينا] => Reassure us\n\n[صدقي] الوضع صعب كثير => [Believe me], the situation is very difficult\nصدقي [الوضع] صعب كثير => Believe me, [the situation] is very difficult\nصدقي الوضع [صعب كثير] => Believe me, the situation [is very difficult]\n\n[يا أم إنصاف] => Um Insaf\n\n[حالتها] عم تتدهور بسرعة => [Her condition] is deteriorating quickly\nحالتها [عم تتدهور] بسرعة => Her condition [is deteriorating] quickly\nحالتها عم تتدهور [بسرعة] => Her condition is deteriorating [quickly]\n\n[بتستنى] رحمة ربها => [She is waiting for] God's mercy\nبتستنى [رحمة] ربها => She is waiting for [mercy]\nبتستنى رحمة [ربها] => She is waiting for [God's] mercy\n\n[حبيبتي] الله يقويكم => [My dear], may God give you strength\nحبيبتي [الله] يقويكم => My dear, may [God] give you strength\nحبيبتي الله [يقويكم] => My dear, may God [give you strength]\n\n[يي] شكله الوضع => [Oh], it looks like the situation\nيي [شكله] الوضع => Oh, [it looks like] the situation\nيي شكله [الوضع] => Oh, it looks like [the situation]\n\n[مش] مطمئن => [is not] reassuring\nمش [مطمئن] => is not [reassuring]\n\n[الله يرحمك] يا أم عصام => [May God have mercy on you], Um Issam\nالله [يرحمك] يا أم عصام => May God [have mercy on you], Um Issam\nالله يرحمك [يا] أم عصام => May God have mercy on you, [Oh] Um Issam\nالله يرحمك يا [أم عصام] => May God have mercy on you, [Um Issam]\n\n[يا] خالتي => [Oh], dear lady\nيا [خالتي] => Oh, [dear lady]\n\n[يا] أعز الناس => [Oh], dearest of people\nيا [أعز الناس] => Oh, [dearest of people]\n\n[يا الله] لسه ما إجوا => [Oh God], they still haven't come\nيا الله [لسه] ما إجوا => Oh God, they [still] haven't come\nيا الله لسه [ما إجوا] => Oh God, they still [haven't come]\n\n[ما بعتوا] شيء => [They haven't sent] anything\nما بعتوا [شيء] => They haven't sent [anything]\n\n[ماما] ليش الخط مشغول => [Mom], why is the line busy\nماما [ليش] الخط مشغول => Mom, [why] is the line busy\nماما ليش [الخط] مشغول => Mom, why is [the line] busy\nماما ليش الخط [مشغول] => Mom, why is the line [busy]\n\n[كل] الوقت => [All] the time?\nكل [الوقت] => All [the time]?\n\n[ليش] ما بتردي => [Why] aren't you answering?\nليش [ما بتردي] => Why [aren't you answering]?\n\n[شو] => [What?]\n\n[شو] فكرك => [What] do you think?\nشو [فكرك] => What [do you think?]\n\n[نحكي] للأولاد هلا => [Should we tell] the kids now\nنحكي [للأولاد] هلا => Should we tell [the kids] now\nنحكي للأولاد [هلا] => Should we tell the kids [now]\n\n[ولا] نستنى بس يرجعوا => [Or] wait until they return\nولا [نستنى] بس يرجعوا => Or [wait] until they return\nولا نستنى [بس يرجعوا] => Or wait [until they return]\n\n[من المدرسة] => [From school?]\n\n[سالي] عندها امتحان => [Sally] has an exam\nسالي [عندها] امتحان => Sally [has] an exam\nسالي عندها [امتحان] => Sally has [an exam]\n\n[نهائي] اليوم => [A final] today\nنهائي [اليوم] => A final [today]\n\n[مش عارف] => [I don't know]\n\nهلا [بنشوف] => [We'll see] now\n[هلا] بنشوف => We'll see [now]\n\n[سالي] => [Sally]\n\n[سالي] ماما => [Sally], honey\nسالي [ماما] => Sally, [honey]\n\n[ليش] نايمة هون؟ => [Why] are you sleeping here?\nليش [نايمة] هون؟ => Why [are you sleeping] here?\nليش نايمة [هون]؟ => Why are you sleeping [here?]\n\n[التيتة] ماتت صح => [Grandma] died, right?\nالتيتة [ماتت] صح => Grandma [died], right?\nالتيتة ماتت [صح] => Grandma died, [right]?\n\n[آه] حبيبتي صح => [Yes], honey, that's right\nآه [حبيبتي] صح => Yes, [honey], that's right\nآه حبيبتي [صح] => Yes, honey, [that's right]\n\n[التيتة] أعطتك عمرها => [Grandma] has passed away\nالتيتة [أعطتك عمرها] => Grandma [has passed away]\n\n[بس] كيف إنت عرفتي => [But] how did you know?\nبس [كيف] إنت عرفتي => But [how] did you know?\nبس كيف [إنت عرفتي] => But how [did you know]?\n\n[إحنا] لسه ما خبرنا حدا => [We] haven't told anyone yet\nإحنا [لسه] ما خبرنا حدا => We haven't told anyone [yet]\nإحنا لسه [ما خبرنا] حدا => We [haven't told] anyone yet\nإحنا لسه ما خبرنا [حدا] => We haven't told [anyone] yet\n\n[كيف] عرفت => [How] did I know?\nكيف [عرفت] => How [did I know]?\n\n[كل حدا] بيعرف => [Everyone] knows\nكل حدا [بيعرف] => Everyone [knows]\n\n[أنتي] أم إنصاف => [Auntie] Um Insaf\nأنتي [أم إنصاف] => Auntie [Um Insaf]\n\n[حطت] بوست => [Posted] a post\nحطت [بوست] => Posted [a post]\n\n[وأنا] ضليتني أرن عليكم => [And I] kept calling you\nوأنا [ضليتني] أرن عليكم => And I [kept] calling you\nوأنا ضليتني [أرن] عليكم => And I kept [calling] you\nوأنا ضليتني أرن [عليكم] => And I kept calling [you]\n\n[ليش] ما رديتوا علي => [Why] didn't you answer me?\nليش [ما رديتوا] علي => Why [didn't you answer] me?\nليش ما رديتوا [علي] => Why didn't you answer [me]?\n\n[ليش] => [Why]\n\n[شو] => [What?]\n\n[أم] إنصاف => [Um] Insaf?\nأم [إنصاف] => Um [Insaf?]\n\n[شو] في => [What's] going on?\nشو [في] => What's [going on]?\n\n[سالي] سند => [Sally,] Sanad\nسالي [سند] => Sally, [Sanad]\n\n[أنتوا] بتعرفوا => [You] know\nأنتوا [بتعرفوا] => You [know]\n\n[إن] التيتة صار لها فترة => [That] Grandma has been for a while\nإن [التيتة] صار لها فترة => That [Grandma] has been for a while\nإن التيتة [صار لها] فترة => That Grandma [has been] for a while\nإن التيتة صار لها [فترة] => That Grandma has been [for a while]\n\n[مريضة] وتعبانة => [Sick] and weak\nمريضة [و] تعبانة => Sick [and] weak\nمريضة و[تعبانة] => Sick and [weak]\n\n[و] إمبارح بالليل => [And] last night\nو[إمبارح بالليل] => And [last night]\n\n[جسمها] بطل => [Her body] stopped\nجسمها [بطل] => Her body [stopped]\n\n[قادر] يتحمل => [Being able] to endure\nقادر [يتحمل] => Being able [to endure]\n\n[شو] قصدك => [What] do you mean?\nشو [قصدك] => What [do you mean]?\n\n[التيتة] ماتت => [Grandma] died\nالتيتة [ماتت] => Grandma [died]\n\n[يي علينا] => [Oh my goodness] # idiomatic expression expressing distress\n\n[مش ملحقة] تعازي => [I can't keep up] with the condolences\nمش ملحقة [تعازي] => I can't keep up with [the condolences]\n\n[أنا] مش فاهم => [I] don't understand\nأنا [مش فاهم] => I [don't understand]\n\n[يعني] عادي => [I mean], is it normal\nيعني [عادي] => I mean, [is it normal]\n\n[إنك] تخبري الناس => [That you] tell people\nإنك [تخبري] الناس => That you [tell] people\nإنك تخبري [الناس] => That you tell [people]\n\n[قبل ما] عيلتها يخبروا => [Before] her family tells them?\nقبل ما [عيلتها] يخبروا => Before [her family] tells them?\nقبل ما عيلتها [يخبروا] => Before her family [tells them]?\n\n[ولو] أنا من العيلة => [Come on], I'm like family\nولو [أنا] من العيلة => Come on, [I'm] like family\nولو أنا [من العيلة] => Come on, I'm [like family]\n\n[خلي] الناس تعرف => [Let] people know\nخلي [الناس] تعرف => Let [people] know\nخلي الناس [تعرف] => Let people [know]\n\n[وتقوم] بالواجب => [And perform] their duty\nوتقوم [بالواجب] => And perform [their duty]\n\n[وبنعمل] شوية حركة => [And we'll get] some engagement\nوبنعمل [شوية] حركة => And we'll get [some] engagement\nوبنعمل شوية [حركة] => And we'll get some [engagement]\n\n[على] صفحتي كمان => [On] my page too\nعلى [صفحتي] كمان => On [my page] too\nعلى صفحتي [كمان] => On my page [too]\n\n[آه] أم رزق => [Yes], Um Rizq\nآه [أم رزق] => Yes, [Um Rizq]\n\n[حياتك الباقية] حبيبتي => [May you live a long life], my dear\nحياتك الباقية [حبيبتي] => May you live a long life, [my dear]\n\n[يا حرام] => [Poor thing]\n\n[اتغلبت] كثير => [She suffered] a lot\nاتغلبت [كثير] => She suffered [a lot]\n\n[ارتاحت وريحت] => [She is at peace now]\n\n[حرام] => [Poor thing]\n\n[آه] آه بيقولوا => [Yes], yes, they say\nآه [آه] بيقولوا => Yes, [yes], they say\nآه آه [بيقولوا] => Yes, yes, [they say]\n\n[عندها] أرض على طريق المطار => [She has] land on the Airport Road\nعندها [أرض] على طريق المطار => She has [land] on the Airport Road\nعندها أرض [على طريق المطار] => She has land [on the Airport Road]\n\n[عشر] دونم => [Ten] dunams\nعشر [دونم] => Ten [dunams]\n\n[الله] يرحمها الوالدة => [May God] have mercy on your mother\nالله [يرحمها] الوالدة => May God [have mercy on] your mother\nالله يرحمها [الوالدة] => May God have mercy on [your mother]\n\n[يا أبو سند] => [Abu Sanad]\n\n[سند] لا تبكي حبيبي => [Sanad], don't cry, my dear\nسند [لا تبكي] حبيبي => Sanad, [don't cry], my dear\nسند لا تبكي [حبيبي] => Sanad, don't cry, [my dear]\n\n[أنت] زلمة => [You] are a man\nأنت [زلمة] => You are [a man]\n\n[ولازم] توقف مع أبوك => And [you must] stand by your father # \"لازم\" means \"must/need to\"\nولازم [توقف مع] أبوك => And you must [stand by] your father # \"توقف مع\" together means \"stand by\"\nولازم توقف مع [أبوك] => And you must stand by [your father]\n\n[شو] يعني زلمة => [What] does \"a man\" mean?\nشو يعني [زلمة] => What does [\"a man\"] mean?\nشو [يعني] زلمة => does ... mean # custom translation because \"يعني\" maps to non-consecutive words in the question form\n\n[ما عندها] مشاعر => [That he doesn't have] feelings? # phrase that conveys the concept \"he doesn't have\"\nما عندها [مشاعر] => That he doesn't have [feelings]\n\n[خليه] خليه يبكي => [Let him], let him cry # first occurrence\nخليه [خليه] يبكي => Let him, [let him] cry # second occurrence\nخليه خليه [يبكي] => Let him, let him [cry]\n\n[لازم] يعبر => [He needs to] express himself\nلازم [يعبر] => He needs to [express himself]\n\n[أبو] سند => [Abu] Sanad # \"أبو\" is \"father of\" used as a title\nأبو [سند] => Abu [Sanad] # \"سند\" is a name\n\n[إذا] بدك أي شيء => [If] you need anything\nإذا [بدك] أي شيء => If [you need] anything # \"بدك\" means \"you want/need\"\nإذا بدك [أي شيء] => If you need [anything] # \"أي شيء\" means \"anything\"\n\n[شادر] أضوية كراسي قهوة => [A tent], lights, chairs, coffee\nشادر [أضوية] كراسي قهوة => A tent, [lights], chairs, coffee\nشادر أضوية [كراسي] قهوة => A tent, lights, [chairs], coffee\nشادر أضوية كراسي [قهوة] => A tent, lights, chairs, [coffee]\n\n[الموضوع عندي] => [I'll handle it] # idiomatic expression; literal: \"the matter is with me\"\n[الموضوع] => the matter # literal meaning\n[عندي] => with me # literal meaning\n\n[و]بأسعار تفضيلية => [And] at special prices\nوبأسعار [تفضيلية] => And at [special] prices # \"تفضيلية\" means \"special/preferential\"\n[بأسعار] => at prices # custom: بـ (at) + أسعار (prices), not consecutive in English\n\n[أخوك أنا] => [I'm your brother] # Arabic structure: \"your brother, I\" = topic-comment\n[أخوك] => your brother # literal meaning\n[أنا] => I # literal meaning\n\n[حبيبي] أبو سند => [My dear] Abu Sanad # \"حبيبي\" means \"my dear/my love\"\nحبيبي [أبو] سند => My dear [Abu] Sanad\nحبيبي أبو [سند] => My dear Abu [Sanad]\n\n",
     "lessons": "# Proud Parents\n00:04 أنا ما صدقت\n00:05 لما شفت سند\n00:06 واقف على المسرح\n00:07 ولا أنا صراحة\n00:09 سند موهوب كثير\n00:11 على فكرة وخفيف دم\n\n# Family Traits and Plans\n00:13 طالع لأمه\n00:14 إمتى راح تقدموا\n00:15 المسرحية للأهل\n00:19 ألو يابا\n00:21 شو\n00:22 هيني جاي\n\n# The Emergency\n00:23 هيني جاي\n00:24 شو في يا عصام\n00:25 أمي رجعت تعبت كثير\n00:27 راح أخذها على المستشفى\n00:28 أنا جاي معك\n00:29 ليش مستشفى\n\n# Worrying for Grandma\n00:30 شو صار للتيتة\n00:32 أنا بدي أجي معكم\n00:33 لا خليكم هون\n00:34 ما تقلقوا ماما\n00:35 إن شاء الله خير\n\n# Calling from the Hospital\n00:54 ماما كيف صارت التيتة\n00:56 ماما إحنا هلا عندها\n00:57 وكل الدكاترة معها\n00:58 بخبرك أول بأول\n01:00 شو بيصير\n\n# Instructions for the Kids\n01:01 حبيبتي ماما\n01:02 بليز فوتوا ناموا\n01:03 بكره عليكم امتحان\n01:04 أوكي\n01:06 ماما احكي للتيتة\n01:07 إننا بنحبها\n\n# A Difficult Situation\n01:08 بنحبها كثير\n01:10 طمنيني عليها\n01:16 إن شاء الله خير حبيبي\n01:18 مش عارف\n01:20 الدكتور قال لي\n01:21 إنه وضعها صعب\n\n# Matter of Hours\n01:23 يعني مسألة ساعات\n01:30 شو أم سند\n01:31 لهلا ما رجعتوا\n01:32 كيفها حماتك\n01:33 طمنينا\n\n# Deteriorating Health\n01:35 صدقي الوضع صعب كثير\n01:36 يا أم إنصاف\n01:37 حالتها عم تتدهور بسرعة\n01:39 بتستنى رحمة ربها\n01:41 حبيبتي الله يقويكم\n\n# The Loss of a Loved One\n01:43 يي شكله الوضع\n01:44 مش مطمئن\n01:47 الله يرحمك يا أم عصام\n01:49 يا خالتي\n01:51 يا أعز الناس\n\n# Waiting in Silence\n02:02 يا الله لسه ما إجوا\n02:03 ما بعتوا شيء\n02:08 ماما ليش الخط مشغول\n02:09 كل الوقت\n02:10 ليش ما بتردي\n\n# How to Tell the Children\n02:22 شو\n02:29 شو فكرك\n02:30 نحكي للأولاد هلا\n02:32 ولا نستنى بس يرجعوا\n02:33 من المدرسة\n\n# School and Exams\n02:34 سالي عندها امتحان\n02:35 نهائي اليوم\n02:36 مش عارف\n02:37 هلا بنشوف\n02:40 سالي\n02:41 سالي ماما\n\n# The Sad Truth\n02:42 ليش نايمة هون\n02:44 التيتة ماتت صح\n02:46 آه حبيبتي صح\n02:47 التيتة أعطتك عمرها\n02:51 بس كيف إنت عرفتي\n\n# The Social Media Leak\n02:52 إحنا لسه ما خبرنا حدا\n02:54 كيف عرفت\n02:55 كل حدا بيعرف\n02:57 أنتي أم إنصاف\n02:58 حطت بوست\n\n# Why Didn't You Answer?\n03:00 وأنا ضليتني أرن عليكم\n03:01 ليش ما رديتوا علي\n03:02 ليش\n03:04 شو\n03:05 أم إنصاف\n03:06 شو في\n\n# Explaining the Illness\n03:07 سالي سند\n03:08 أنتوا بتعرفوا\n03:09 إن التيتة صار لها فترة\n03:10 مريضة وتعبانة\n03:12 وإمبارح بالليل\n\n# The Body Gave Out\n03:14 جسمها بطل\n03:15 قادر يتحمل\n03:17 شو قصدك\n03:18 التيتة ماتت\n\n# Social Media Etiquette\n03:28 يي علينا\n03:29 مش ملحقة تعازي\n03:31 أنا مش فاهم\n03:32 يعني عادي\n03:33 إنك تخبري الناس\n03:34 قبل ما عيلتها يخبروا\n\n# Doing One's Duty\n03:37 ولو أنا من العيلة\n03:38 خلي الناس تعرف\n03:39 وتقوم بالواجب\n03:41 وبنعمل شوية حركة\n03:42 على صفحتي كمان\n\n# Condolences and Gossip\n03:49 آه أم رزق\n03:50 حياتك الباقية حبيبتي\n03:52 يا حرام\n03:53 اتغلبت كثير\n03:55 ارتاحت وريحت\n\n# Inheritance Talk\n03:57 حرام\n03:59 آه آه بيقولوا\n04:00 عندها أرض على طريق المطار\n04:01 عشر دونم\n04:03 الله يرحمها الوالدة\n\n# Be a Man\n04:04 يا أبو سند\n04:05 سند لا تبكي حبيبي\n04:07 أنت زلمة\n04:08 ولازم توقف مع أبوك\n04:10 شو يعني زلمة\n\n# Expressing Feelings\n04:11 ما عندها مشاعر\n04:13 خليه خليه يبكي\n04:14 لازم يعبر\n04:16 أبو سند\n\n# The Business of Mourning\n04:17 إذا بدك أي شيء\n04:18 شادر أضوية كراسي قهوة\n04:19 الموضوع عندي\n04:20 وبأسعار تفضيلية\n04:21 أخوك أنا\n04:23 حبيبي أبو سند",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "I couldn't believe it",
+            "words": []
+          },
+          {
+            "text": "When I saw Sanad",
+            "words": []
+          },
+          {
+            "text": "Standing on the stage",
+            "words": []
+          },
+          {
+            "text": "Neither could I, honestly",
+            "words": []
+          },
+          {
+            "text": "Sanad is very talented",
+            "words": []
+          },
+          {
+            "text": "By the way, and witty",
+            "words": []
+          },
+          {
+            "text": "He takes after his mother",
+            "words": []
+          },
+          {
+            "text": "When are you going to present",
+            "words": []
+          },
+          {
+            "text": "The play for the parents?",
+            "words": []
+          },
+          {
+            "text": "Hello, Dad",
+            "words": []
+          },
+          {
+            "text": "What?",
+            "words": []
+          },
+          {
+            "text": "I'm coming right now",
+            "words": []
+          },
+          {
+            "text": "I'm coming right now",
+            "words": []
+          },
+          {
+            "text": "What's wrong, Issam?",
+            "words": []
+          },
+          {
+            "text": "My mother got very sick again",
+            "words": []
+          },
+          {
+            "text": "I'm going to take her to the hospital",
+            "words": []
+          },
+          {
+            "text": "I'm coming with you",
+            "words": []
+          },
+          {
+            "text": "Why the hospital?",
+            "words": []
+          },
+          {
+            "text": "What happened to Grandma?",
+            "words": []
+          },
+          {
+            "text": "I want to come with you",
+            "words": []
+          },
+          {
+            "text": "No, stay here",
+            "words": []
+          },
+          {
+            "text": "Don't worry, Mom",
+            "words": []
+          },
+          {
+            "text": "Hopefully, it will be fine",
+            "words": []
+          },
+          {
+            "text": "Mom, how is Grandma?",
+            "words": []
+          },
+          {
+            "text": "Mom, we are with her now",
+            "words": []
+          },
+          {
+            "text": "And all the doctors are with her",
+            "words": []
+          },
+          {
+            "text": "I'll keep you updated",
+            "words": []
+          },
+          {
+            "text": "On what happens",
+            "words": []
+          },
+          {
+            "text": "My dear Mom",
+            "words": []
+          },
+          {
+            "text": "Please go to sleep",
+            "words": []
+          },
+          {
+            "text": "You have an exam tomorrow",
+            "words": []
+          },
+          {
+            "text": "Okay",
+            "words": []
+          },
+          {
+            "text": "Mom, tell Grandma",
+            "words": []
+          },
+          {
+            "text": "That we love her",
+            "words": []
+          },
+          {
+            "text": "We love her very much",
+            "words": []
+          },
+          {
+            "text": "Reassure me about her",
+            "words": []
+          },
+          {
+            "text": "Hopefully, it's good news, my dear",
+            "words": []
+          },
+          {
+            "text": "I don't know",
+            "words": []
+          },
+          {
+            "text": "The doctor told me",
+            "words": []
+          },
+          {
+            "text": "That her condition is difficult",
+            "words": []
+          },
+          {
+            "text": "Meaning it's a matter of hours",
+            "words": []
+          },
+          {
+            "text": "What's the news, Um Sanad?",
+            "words": []
+          },
+          {
+            "text": "You haven't come back yet?",
+            "words": []
+          },
+          {
+            "text": "How is your mother-in-law?",
+            "words": []
+          },
+          {
+            "text": "Reassure us",
+            "words": []
+          },
+          {
+            "text": "Believe me, the situation is very difficult",
+            "words": []
+          },
+          {
+            "text": "Um Insaf",
+            "words": []
+          },
+          {
+            "text": "Her condition is deteriorating quickly",
+            "words": []
+          },
+          {
+            "text": "She is waiting for God's mercy",
+            "words": []
+          },
+          {
+            "text": "My dear, may God give you strength",
+            "words": []
+          },
+          {
+            "text": "Oh, it looks like the situation",
+            "words": []
+          },
+          {
+            "text": "Is not reassuring",
+            "words": []
+          },
+          {
+            "text": "May God have mercy on you, Um Issam",
+            "words": []
+          },
+          {
+            "text": "Oh, dear lady",
+            "words": []
+          },
+          {
+            "text": "Oh, dearest of people",
+            "words": []
+          },
+          {
+            "text": "Oh God, they still haven't come",
+            "words": []
+          },
+          {
+            "text": "They haven't sent anything",
+            "words": []
+          },
+          {
+            "text": "Mom, why is the line busy",
+            "words": []
+          },
+          {
+            "text": "All the time?",
+            "words": []
+          },
+          {
+            "text": "Why aren't you answering?",
+            "words": []
+          },
+          {
+            "text": "What?",
+            "words": []
+          },
+          {
+            "text": "What do you think?",
+            "words": []
+          },
+          {
+            "text": "Should we tell the kids now",
+            "words": []
+          },
+          {
+            "text": "Or wait until they return",
+            "words": []
+          },
+          {
+            "text": "From school?",
+            "words": []
+          },
+          {
+            "text": "Sally has an exam",
+            "words": []
+          },
+          {
+            "text": "A final today",
+            "words": []
+          },
+          {
+            "text": "I don't know",
+            "words": []
+          },
+          {
+            "text": "We'll see now",
+            "words": []
+          },
+          {
+            "text": "Sally",
+            "words": []
+          },
+          {
+            "text": "Sally, honey",
+            "words": []
+          },
+          {
+            "text": "Why are you sleeping here?",
+            "words": []
+          },
+          {
+            "text": "Grandma died, right?",
+            "words": []
+          },
+          {
+            "text": "Yes, honey, that's right",
+            "words": []
+          },
+          {
+            "text": "Grandma has passed away",
+            "words": []
+          },
+          {
+            "text": "But how did you know?",
+            "words": []
+          },
+          {
+            "text": "We haven't told anyone yet",
+            "words": []
+          },
+          {
+            "text": "How did I know?",
+            "words": []
+          },
+          {
+            "text": "Everyone knows",
+            "words": []
+          },
+          {
+            "text": "Auntie Um Insaf",
+            "words": []
+          },
+          {
+            "text": "Posted a post",
+            "words": []
+          },
+          {
+            "text": "And I kept calling you",
+            "words": []
+          },
+          {
+            "text": "Why didn't you answer me?",
+            "words": []
+          },
+          {
+            "text": "Why?",
+            "words": []
+          },
+          {
+            "text": "What?",
+            "words": []
+          },
+          {
+            "text": "Um Insaf?",
+            "words": []
+          },
+          {
+            "text": "What's going on?",
+            "words": []
+          },
+          {
+            "text": "Sally, Sanad",
+            "words": []
+          },
+          {
+            "text": "You know",
+            "words": []
+          },
+          {
+            "text": "That Grandma has been for a while",
+            "words": []
+          },
+          {
+            "text": "Sick and weak",
+            "words": []
+          },
+          {
+            "text": "And last night",
+            "words": []
+          },
+          {
+            "text": "Her body stopped",
+            "words": []
+          },
+          {
+            "text": "Being able to endure",
+            "words": []
+          },
+          {
+            "text": "What do you mean?",
+            "words": []
+          },
+          {
+            "text": "Grandma died",
+            "words": []
+          },
+          {
+            "text": "Oh my goodness",
+            "words": []
+          },
+          {
+            "text": "I can't keep up with the condolences",
+            "words": []
+          },
+          {
+            "text": "I don't understand",
+            "words": []
+          },
+          {
+            "text": "I mean, is it normal",
+            "words": []
+          },
+          {
+            "text": "That you tell people",
+            "words": []
+          },
+          {
+            "text": "Before her family tells them?",
+            "words": []
+          },
+          {
+            "text": "Come on, I'm like family",
+            "words": []
+          },
+          {
+            "text": "Let people know",
+            "words": []
+          },
+          {
+            "text": "And perform their duty",
+            "words": []
+          },
+          {
+            "text": "And we'll get some engagement",
+            "words": []
+          },
+          {
+            "text": "On my page too",
+            "words": []
+          },
+          {
+            "text": "Yes, Um Rizq",
+            "words": []
+          },
+          {
+            "text": "May you live a long life, my dear",
+            "words": []
+          },
+          {
+            "text": "Poor thing",
+            "words": []
+          },
+          {
+            "text": "She suffered a lot",
+            "words": []
+          },
+          {
+            "text": "She is at peace now",
+            "words": []
+          },
+          {
+            "text": "Poor thing",
+            "words": []
+          },
+          {
+            "text": "Yes, yes, they say",
+            "words": []
+          },
+          {
+            "text": "She has land on the Airport Road",
+            "words": []
+          },
+          {
+            "text": "Ten dunams",
+            "words": []
+          },
+          {
+            "text": "May God have mercy on your mother",
+            "words": []
+          },
+          {
+            "text": "Abu Sanad",
+            "words": []
+          },
+          {
+            "text": "Sanad, don't cry, my dear",
+            "words": []
+          },
+          {
+            "text": "You are a man",
+            "words": []
+          },
+          {
+            "text": "And you must stand by your father",
+            "words": []
+          },
+          {
+            "text": "What does \"a man\" mean?",
+            "words": []
+          },
+          {
+            "text": "That he doesn't have feelings?",
+            "words": []
+          },
+          {
+            "text": "Let him, let him cry",
+            "words": []
+          },
+          {
+            "text": "He needs to express himself",
+            "words": []
+          },
+          {
+            "text": "Abu Sanad",
+            "words": []
+          },
+          {
+            "text": "If you need anything",
+            "words": []
+          },
+          {
+            "text": "A tent, lights, chairs, coffee",
+            "words": []
+          },
+          {
+            "text": "I'll handle it",
+            "words": []
+          },
+          {
+            "text": "And at special prices",
+            "words": []
+          },
+          {
+            "text": "I'm your brother",
+            "words": []
+          },
+          {
+            "text": "My dear Abu Sanad",
+            "words": []
+          }
+        ],
+        "lessons": "# Proud Parents\n00:04 أنا ما صدقت\n00:05 لما شفت سند\n00:06 واقف على المسرح\n00:07 ولا أنا صراحة\n00:09 سند موهوب كثير\n00:11 على فكرة وخفيف دم\n\n# Family Traits and Plans\n00:13 طالع لأمه\n00:14 إمتى راح تقدموا\n00:15 المسرحية للأهل\n00:19 ألو يابا\n00:21 شو\n00:22 هيني جاي\n\n# The Emergency\n00:23 هيني جاي\n00:24 شو في يا عصام\n00:25 أمي رجعت تعبت كثير\n00:27 راح أخذها على المستشفى\n00:28 أنا جاي معك\n00:29 ليش مستشفى\n\n# Worrying for Grandma\n00:30 شو صار للتيتة\n00:32 أنا بدي أجي معكم\n00:33 لا خليكم هون\n00:34 ما تقلقوا ماما\n00:35 إن شاء الله خير\n\n# Calling from the Hospital\n00:54 ماما كيف صارت التيتة\n00:56 ماما إحنا هلا عندها\n00:57 وكل الدكاترة معها\n00:58 بخبرك أول بأول\n01:00 شو بيصير\n\n# Instructions for the Kids\n01:01 حبيبتي ماما\n01:02 بليز فوتوا ناموا\n01:03 بكره عليكم امتحان\n01:04 أوكي\n01:06 ماما احكي للتيتة\n01:07 إننا بنحبها\n\n# A Difficult Situation\n01:08 بنحبها كثير\n01:10 طمنيني عليها\n01:16 إن شاء الله خير حبيبي\n01:18 مش عارف\n01:20 الدكتور قال لي\n01:21 إنه وضعها صعب\n\n# Matter of Hours\n01:23 يعني مسألة ساعات\n01:30 شو أم سند\n01:31 لهلا ما رجعتوا\n01:32 كيفها حماتك\n01:33 طمنينا\n\n# Deteriorating Health\n01:35 صدقي الوضع صعب كثير\n01:36 يا أم إنصاف\n01:37 حالتها عم تتدهور بسرعة\n01:39 بتستنى رحمة ربها\n01:41 حبيبتي الله يقويكم\n\n# The Loss of a Loved One\n01:43 يي شكله الوضع\n01:44 مش مطمئن\n01:47 الله يرحمك يا أم عصام\n01:49 يا خالتي\n01:51 يا أعز الناس\n\n# Waiting in Silence\n02:02 يا الله لسه ما إجوا\n02:03 ما بعتوا شيء\n02:08 ماما ليش الخط مشغول\n02:09 كل الوقت\n02:10 ليش ما بتردي\n\n# How to Tell the Children\n02:22 شو\n02:29 شو فكرك\n02:30 نحكي للأولاد هلا\n02:32 ولا نستنى بس يرجعوا\n02:33 من المدرسة\n\n# School and Exams\n02:34 سالي عندها امتحان\n02:35 نهائي اليوم\n02:36 مش عارف\n02:37 هلا بنشوف\n02:40 سالي\n02:41 سالي ماما\n\n# The Sad Truth\n02:42 ليش نايمة هون\n02:44 التيتة ماتت صح\n02:46 آه حبيبتي صح\n02:47 التيتة أعطتك عمرها\n02:51 بس كيف إنت عرفتي\n\n# The Social Media Leak\n02:52 إحنا لسه ما خبرنا حدا\n02:54 كيف عرفت\n02:55 كل حدا بيعرف\n02:57 أنتي أم إنصاف\n02:58 حطت بوست\n\n# Why Didn't You Answer?\n03:00 وأنا ضليتني أرن عليكم\n03:01 ليش ما رديتوا علي\n03:02 ليش\n03:04 شو\n03:05 أم إنصاف\n03:06 شو في\n\n# Explaining the Illness\n03:07 سالي سند\n03:08 أنتوا بتعرفوا\n03:09 إن التيتة صار لها فترة\n03:10 مريضة وتعبانة\n03:12 وإمبارح بالليل\n\n# The Body Gave Out\n03:14 جسمها بطل\n03:15 قادر يتحمل\n03:17 شو قصدك\n03:18 التيتة ماتت\n\n# Social Media Etiquette\n03:28 يي علينا\n03:29 مش ملحقة تعازي\n03:31 أنا مش فاهم\n03:32 يعني عادي\n03:33 إنك تخبري الناس\n03:34 قبل ما عيلتها يخبروا\n\n# Doing One's Duty\n03:37 ولو أنا من العيلة\n03:38 خلي الناس تعرف\n03:39 وتقوم بالواجب\n03:41 وبنعمل شوية حركة\n03:42 على صفحتي كمان\n\n# Condolences and Gossip\n03:49 آه أم رزق\n03:50 حياتك الباقية حبيبتي\n03:52 يا حرام\n03:53 اتغلبت كثير\n03:55 ارتاحت وريحت\n\n# Inheritance Talk\n03:57 حرام\n03:59 آه آه بيقولوا\n04:00 عندها أرض على طريق المطار\n04:01 عشر دونم\n04:03 الله يرحمها الوالدة\n\n# Be a Man\n04:04 يا أبو سند\n04:05 سند لا تبكي حبيبي\n04:07 أنت زلمة\n04:08 ولازم توقف مع أبوك\n04:10 شو يعني زلمة\n\n# Expressing Feelings\n04:11 ما عندها مشاعر\n04:13 خليه خليه يبكي\n04:14 لازم يعبر\n04:16 أبو سند\n\n# The Business of Mourning\n04:17 إذا بدك أي شيء\n04:18 شادر أضوية كراسي قهوة\n04:19 الموضوع عندي\n04:20 وبأسعار تفضيلية\n04:21 أخوك أنا\n04:23 حبيبي أبو سند"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-03-08 01:09:01 UTC",
   "updated_at": "2026-03-08 01:38:10 UTC",

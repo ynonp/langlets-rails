@@ -50,6 +50,23 @@ runs once, while `add_translation(language)` stores language-keyed output under
 phrase, token, lesson, and course translations without deleting lessons,
 activities, progress, or vocabulary.
 
+The `data` blob is versioned (`CreateSongProgress::DataFormat`,
+`data["format_version"]`). Version 1 carried a single language inline
+(`text_l2` on phrases, `translation` on words); version 2 is the neutral +
+`data["translations"]` shape above. Course building, `add_translation`, and
+both import surfaces (the admin uploader and `rake
+create_song_progress:import`) refuse legacy blobs; `rake
+create_song_progress:convert_files` / `convert_records` upgrade JSON exports
+and DB rows.
+
+The stored record is a cache, not a source of truth: when a published course's
+progress row is missing or empty, `CreateSongProgressRebuilder` reconstructs
+the blob from the course's persisted phrases, tokens, lessons, and
+translations. Rebuilding from those rows (rather than re-transcribing)
+guarantees the positional alignment `BuildSong#add_translation` depends on,
+and keeps exports possible for any course whose original pipeline record is
+long gone.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)

@@ -131,6 +131,14 @@ class ImportCoursesController < ApplicationController
       }
     end
 
+    unless CreateSongProgress::DataFormat.current?(json_data["data"])
+      filename = file.respond_to?(:original_filename) ? file.original_filename : "unknown"
+      return {
+        success: false,
+        error: "#{filename} uses the legacy single-language format; convert it first with rake create_song_progress:convert_files"
+      }
+    end
+
     clip_language = json_data["clip_language"]
     translation_language = json_data["translation_language"]
 

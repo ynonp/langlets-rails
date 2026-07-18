@@ -71,6 +71,12 @@ namespace :create_song_progress do
       exit 1
     end
 
+    unless CreateSongProgress::DataFormat.current?(import_data["data"])
+      puts "This file uses the legacy single-language data format."
+      puts "Convert it first: rake \"create_song_progress:convert_files[#{args[:input_file]}]\""
+      exit 1
+    end
+
     overwrite = args[:overwrite]&.downcase == "true"
 
     existing_progress = CreateSongProgress.find_by(
@@ -208,20 +214,82 @@ namespace :create_song_progress do
     progress.data = { "phrases" => phrases }
     progress.save!
 
-    puts "1/4 translate (line-level L2)..."
-    progress.translate
-    puts "2/4 add_token_translation (per-word translations)..."
-    progress.add_token_translation
-    puts "3/4 add_lessons..."
+    puts "1/3 add_lessons..."
     progress.add_lessons
-    puts "4/4 add_similar_sound..."
+    puts "2/3 add_similar_sound..."
     progress.add_similar_sound
+    puts "3/3 add_translation (line-level L2 + per-word translations)..."
+    progress.add_translation(args[:translation_language])
 
     output_file = args[:output_file] || "word_timed_progress_#{Time.current.to_i}.json"
     progress.export(output_file)
 
     puts "Done! Exported to: #{output_file}"
     puts "Import with: rake \"create_song_progress:import[#{output_file},true]\""
+  end
+
+  desc "Convert legacy-format CreateSongProgress JSON files (exports and fixtures) to the multi-language format"
+  task :convert_files, [ :glob ] => :environment do |t, args|
+    pattern = args[:glob].presence || Rails.root.join("test/fixtures/create_song_progress/**/*.json").to_s
+    files = Dir.glob(pattern).sort
+
+    if files.empty?
+      puts "No files match #{pattern}"
+      exit 1
+    end
+
+    converted = skipped = failed = 0
+
+    files.each do |path|
+      json = JSON.parse(File.read(path))
+
+      if CreateSongProgress::DataFormat.current?(json["data"])
+        skipped += 1
+        next
+      end
+
+      language = Language.find_by(english_name: json["translation_language"])
+      if language.nil?
+        puts "FAILED #{path}: unknown translation language #{json['translation_language'].inspect}"
+        failed += 1
+        next
+      end
+
+      CreateSongProgress::DataFormat.pack_translation(json["data"], language)
+      File.write(path, JSON.pretty_generate(json))
+      puts "converted #{path}"
+      converted += 1
+    rescue JSON::ParserError => e
+      puts "FAILED #{path}: invalid JSON (#{e.message})"
+      failed += 1
+    end
+
+    puts
+    puts "#{converted} converted, #{skipped} already current, #{failed} failed"
+    exit 1 if failed > 0
+  end
+
+  desc "Convert legacy-format CreateSongProgress DB records to the multi-language format"
+  task convert_records: :environment do
+    converted = skipped = failed = 0
+
+    CreateSongProgress.find_each do |progress|
+      if progress.current_data_format?
+        skipped += 1
+        next
+      end
+
+      progress.upgrade_data_format!
+      puts "converted #{progress.id} #{progress.youtubeurl} (#{progress.clip_language} / #{progress.translation_language})"
+      converted += 1
+    rescue => e
+      puts "FAILED #{progress.id} #{progress.youtubeurl}: #{e.message}"
+      failed += 1
+    end
+
+    puts
+    puts "#{converted} converted, #{skipped} already current, #{failed} failed"
+    exit 1 if failed > 0
   end
 
   desc "List all CreateSongProgress records"

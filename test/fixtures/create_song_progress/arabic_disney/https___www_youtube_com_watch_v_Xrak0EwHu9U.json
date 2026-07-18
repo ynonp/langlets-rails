@@ -16,19 +16,16 @@
             "timestamp": "00:00.50",
             "timestamp_end": "00:01.80",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "00:01.80",
             "timestamp_end": "00:03.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_2",
@@ -41,27 +38,23 @@
             "timestamp": "00:03.50",
             "timestamp_end": "00:04.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "wisdom"
+            "l1_end_index": 3
           },
           {
             "text": "نغمها",
             "timestamp": "00:04.50",
             "timestamp_end": "00:05.50",
             "l1_start_index": 5,
-            "l1_end_index": 9,
-            "translation": "its melody"
+            "l1_end_index": 9
           },
           {
             "text": "لذيذ",
             "timestamp": "00:05.50",
             "timestamp_end": "00:06.50",
             "l1_start_index": 11,
-            "l1_end_index": 14,
-            "translation": "delicious"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "A wisdom whose melody is delicious"
+        ]
       },
       {
         "id": "phrase_3",
@@ -74,19 +67,16 @@
             "timestamp": "00:07.00",
             "timestamp_end": "00:08.20",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "00:08.20",
             "timestamp_end": "00:09.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_4",
@@ -99,35 +89,30 @@
             "timestamp": "00:09.50",
             "timestamp_end": "00:10.20",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "throw away"
+            "l1_end_index": 3
           },
           {
             "text": "الماضي",
             "timestamp": "00:10.20",
             "timestamp_end": "00:11.20",
             "l1_start_index": 5,
-            "l1_end_index": 10,
-            "translation": "the past"
+            "l1_end_index": 10
           },
           {
             "text": "اللي",
             "timestamp": "00:11.20",
             "timestamp_end": "00:11.70",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "that"
+            "l1_end_index": 15
           },
           {
             "text": "يغيظ",
             "timestamp": "00:11.70",
             "timestamp_end": "00:12.50",
             "l1_start_index": 17,
-            "l1_end_index": 20,
-            "translation": "angers"
+            "l1_end_index": 20
           }
-        ],
-        "text_l2": "Throw away the past that annoys"
+        ]
       },
       {
         "id": "phrase_5",
@@ -140,19 +125,16 @@
             "timestamp": "00:12.50",
             "timestamp_end": "00:13.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "forget it"
+            "l1_end_index": 4
           },
           {
             "text": "والمستقبل",
             "timestamp": "00:13.30",
             "timestamp_end": "00:14.50",
             "l1_start_index": 6,
-            "l1_end_index": 14,
-            "translation": "and the future"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Forget it and the future"
+        ]
       },
       {
         "id": "phrase_6",
@@ -165,27 +147,23 @@
             "timestamp": "00:14.50",
             "timestamp_end": "00:15.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "give it"
+            "l1_end_index": 3
           },
           {
             "text": "كل",
             "timestamp": "00:15.50",
             "timestamp_end": "00:16.20",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "all"
+            "l1_end_index": 6
           },
           {
             "text": "التركيز",
             "timestamp": "00:16.20",
             "timestamp_end": "00:18.00",
             "l1_start_index": 8,
-            "l1_end_index": 14,
-            "translation": "the focus"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Give it all the focus"
+        ]
       },
       {
         "id": "phrase_7",
@@ -198,27 +176,23 @@
             "timestamp": "00:18.50",
             "timestamp_end": "00:19.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "this"
+            "l1_end_index": 2
           },
           {
             "text": "هو",
             "timestamp": "00:19.20",
             "timestamp_end": "00:19.70",
             "l1_start_index": 4,
-            "l1_end_index": 5,
-            "translation": "is"
+            "l1_end_index": 5
           },
           {
             "text": "البهريز",
             "timestamp": "00:19.70",
             "timestamp_end": "00:21.00",
             "l1_start_index": 7,
-            "l1_end_index": 13,
-            "translation": "philosophy"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "This is the Bahreez"
+        ]
       },
       {
         "id": "phrase_8",
@@ -231,11 +205,9 @@
             "timestamp": "00:21.00",
             "timestamp_end": "00:23.50",
             "l1_start_index": 0,
-            "l1_end_index": 6,
-            "translation": "the philosophical"
+            "l1_end_index": 6
           }
-        ],
-        "text_l2": "The philosophical"
+        ]
       },
       {
         "id": "phrase_9",
@@ -248,19 +220,16 @@
             "timestamp": "00:23.80",
             "timestamp_end": "00:25.00",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "00:25.00",
             "timestamp_end": "00:26.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_10",
@@ -273,35 +242,30 @@
             "timestamp": "00:42.00",
             "timestamp_end": "00:42.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "when"
+            "l1_end_index": 2
           },
           {
             "text": "كان",
             "timestamp": "00:42.50",
             "timestamp_end": "00:43.00",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "was"
+            "l1_end_index": 6
           },
           {
             "text": "خنزير",
             "timestamp": "00:43.00",
             "timestamp_end": "00:43.80",
             "l1_start_index": 8,
-            "l1_end_index": 12,
-            "translation": "pig"
+            "l1_end_index": 12
           },
           {
             "text": "صغنون",
             "timestamp": "00:43.80",
             "timestamp_end": "00:44.50",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "small"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "When he was a little pig"
+        ]
       },
       {
         "id": "phrase_11",
@@ -314,35 +278,30 @@
             "timestamp": "00:44.50",
             "timestamp_end": "00:45.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "when"
+            "l1_end_index": 2
           },
           {
             "text": "كنت",
             "timestamp": "00:45.20",
             "timestamp_end": "00:45.80",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "I was"
+            "l1_end_index": 6
           },
           {
             "text": "خنزير",
             "timestamp": "00:45.80",
             "timestamp_end": "00:46.80",
             "l1_start_index": 8,
-            "l1_end_index": 12,
-            "translation": "pig"
+            "l1_end_index": 12
           },
           {
             "text": "صغنون",
             "timestamp": "00:46.80",
             "timestamp_end": "00:48.00",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "small"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "When I was a little pig"
+        ]
       },
       {
         "id": "phrase_12",
@@ -355,43 +314,37 @@
             "timestamp": "00:51.00",
             "timestamp_end": "00:51.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "I discovered"
+            "l1_end_index": 4
           },
           {
             "text": "إن",
             "timestamp": "00:51.50",
             "timestamp_end": "00:51.80",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "that"
+            "l1_end_index": 7
           },
           {
             "text": "ريحته",
             "timestamp": "00:51.80",
             "timestamp_end": "00:52.20",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "his smell"
+            "l1_end_index": 13
           },
           {
             "text": "سرها",
             "timestamp": "00:52.20",
             "timestamp_end": "00:52.60",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "its secret"
+            "l1_end_index": 18
           },
           {
             "text": "مستحيل",
             "timestamp": "00:52.60",
             "timestamp_end": "00:53.00",
             "l1_start_index": 20,
-            "l1_end_index": 25,
-            "translation": "impossible"
+            "l1_end_index": 25
           }
-        ],
-        "text_l2": "Discovered that its smell, keeping it secret is impossible"
+        ]
       },
       {
         "id": "phrase_13",
@@ -404,51 +357,44 @@
             "timestamp": "00:53.00",
             "timestamp_end": "00:53.80",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "smells it"
+            "l1_end_index": 4
           },
           {
             "text": "المزكوم",
             "timestamp": "00:53.80",
             "timestamp_end": "00:54.50",
             "l1_start_index": 6,
-            "l1_end_index": 12,
-            "translation": "the congested one"
+            "l1_end_index": 12
           },
           {
             "text": "من",
             "timestamp": "00:54.50",
             "timestamp_end": "00:54.80",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "from"
+            "l1_end_index": 15
           },
           {
             "text": "على",
             "timestamp": "00:54.80",
             "timestamp_end": "00:55.10",
             "l1_start_index": 17,
-            "l1_end_index": 19,
-            "translation": "at"
+            "l1_end_index": 19
           },
           {
             "text": "بعد",
             "timestamp": "00:55.10",
             "timestamp_end": "00:55.50",
             "l1_start_index": 21,
-            "l1_end_index": 23,
-            "translation": "distance"
+            "l1_end_index": 23
           },
           {
             "text": "ميل",
             "timestamp": "00:55.50",
             "timestamp_end": "00:56.00",
             "l1_start_index": 25,
-            "l1_end_index": 27,
-            "translation": "mile"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "The congested one smells it from a mile away"
+        ]
       },
       {
         "id": "phrase_14",
@@ -461,27 +407,23 @@
             "timestamp": "00:56.00",
             "timestamp_end": "00:56.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I was"
+            "l1_end_index": 2
           },
           {
             "text": "بمشي",
             "timestamp": "00:56.80",
             "timestamp_end": "00:57.80",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "walking"
+            "l1_end_index": 7
           },
           {
             "text": "لوحدي",
             "timestamp": "00:57.80",
             "timestamp_end": "00:58.50",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "alone"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I was walking alone"
+        ]
       },
       {
         "id": "phrase_15",
@@ -494,27 +436,23 @@
             "timestamp": "00:58.50",
             "timestamp_end": "00:59.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "in"
+            "l1_end_index": 1
           },
           {
             "text": "سهول",
             "timestamp": "00:59.00",
             "timestamp_end": "01:00.00",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "plains"
+            "l1_end_index": 6
           },
           {
             "text": "السند",
             "timestamp": "01:00.00",
             "timestamp_end": "01:01.00",
             "l1_start_index": 8,
-            "l1_end_index": 12,
-            "translation": "the Sindh"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "In the plains of Sind"
+        ]
       },
       {
         "id": "phrase_16",
@@ -527,35 +465,30 @@
             "timestamp": "01:02.00",
             "timestamp_end": "01:02.80",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "I find"
+            "l1_end_index": 4
           },
           {
             "text": "دموعي",
             "timestamp": "01:02.80",
             "timestamp_end": "01:03.30",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "my tears"
+            "l1_end_index": 10
           },
           {
             "text": "عملت",
             "timestamp": "01:03.30",
             "timestamp_end": "01:03.70",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "made"
+            "l1_end_index": 15
           },
           {
             "text": "غابة",
             "timestamp": "01:03.70",
             "timestamp_end": "01:04.00",
             "l1_start_index": 17,
-            "l1_end_index": 20,
-            "translation": "forest"
+            "l1_end_index": 20
           }
-        ],
-        "text_l2": "I found my tears made a forest"
+        ]
       },
       {
         "id": "phrase_17",
@@ -568,27 +501,23 @@
             "timestamp": "01:04.50",
             "timestamp_end": "01:05.80",
             "l1_start_index": 0,
-            "l1_end_index": 6,
-            "translation": "so they hurried"
+            "l1_end_index": 6
           },
           {
             "text": "على",
             "timestamp": "01:05.80",
             "timestamp_end": "01:06.20",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "to"
+            "l1_end_index": 10
           },
           {
             "text": "الهند",
             "timestamp": "01:06.20",
             "timestamp_end": "01:07.00",
             "l1_start_index": 12,
-            "l1_end_index": 16,
-            "translation": "India"
+            "l1_end_index": 16
           }
-        ],
-        "text_l2": "So they hurried to India"
+        ]
       },
       {
         "id": "phrase_18",
@@ -601,35 +530,30 @@
             "timestamp": "01:07.00",
             "timestamp_end": "01:07.50",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "O"
+            "l1_end_index": 1
           },
           {
             "text": "كسوفي",
             "timestamp": "01:07.50",
             "timestamp_end": "01:08.20",
             "l1_start_index": 3,
-            "l1_end_index": 7,
-            "translation": "my eclipse"
+            "l1_end_index": 7
           },
           {
             "text": "في",
             "timestamp": "01:08.20",
             "timestamp_end": "01:08.50",
             "l1_start_index": 9,
-            "l1_end_index": 10,
-            "translation": "in"
+            "l1_end_index": 10
           },
           {
             "text": "عالمي",
             "timestamp": "01:08.50",
             "timestamp_end": "01:09.00",
             "l1_start_index": 12,
-            "l1_end_index": 16,
-            "translation": "my world"
+            "l1_end_index": 16
           }
-        ],
-        "text_l2": "Oh my eclipse in my world"
+        ]
       },
       {
         "id": "phrase_19",
@@ -642,19 +566,16 @@
             "timestamp": "01:09.00",
             "timestamp_end": "01:09.70",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "and you get eclipsed"
+            "l1_end_index": 5
           },
           {
             "text": "ليه؟",
             "timestamp": "01:09.70",
             "timestamp_end": "01:10.00",
             "l1_start_index": 7,
-            "l1_end_index": 9,
-            "translation": "why?"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "And why be eclipsed?"
+        ]
       },
       {
         "id": "phrase_20",
@@ -667,27 +588,23 @@
             "timestamp": "01:10.00",
             "timestamp_end": "01:10.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "I thought"
+            "l1_end_index": 3
           },
           {
             "text": "أغير",
             "timestamp": "01:10.80",
             "timestamp_end": "01:11.30",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "change"
+            "l1_end_index": 8
           },
           {
             "text": "اسمي",
             "timestamp": "01:11.30",
             "timestamp_end": "01:11.80",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "my name"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I thought to change my name"
+        ]
       },
       {
         "id": "phrase_21",
@@ -700,27 +617,23 @@
             "timestamp": "01:11.80",
             "timestamp_end": "01:12.20",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "the name"
+            "l1_end_index": 4
           },
           {
             "text": "بومبا",
             "timestamp": "01:12.20",
             "timestamp_end": "01:12.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "Pumbaa"
+            "l1_end_index": 10
           },
           {
             "text": "إيه؟",
             "timestamp": "01:12.70",
             "timestamp_end": "01:13.00",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "what?"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "The name Pumbaa, what?"
+        ]
       },
       {
         "id": "phrase_22",
@@ -733,27 +646,23 @@
             "timestamp": "01:13.00",
             "timestamp_end": "01:13.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "I escaped"
+            "l1_end_index": 3
           },
           {
             "text": "من",
             "timestamp": "01:13.80",
             "timestamp_end": "01:14.20",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "from"
+            "l1_end_index": 6
           },
           {
             "text": "الغابة",
             "timestamp": "01:14.20",
             "timestamp_end": "01:14.80",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "the forest"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I fled from the forest"
+        ]
       },
       {
         "id": "phrase_23",
@@ -766,19 +675,16 @@
             "timestamp": "01:14.80",
             "timestamp_end": "01:15.30",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "because"
+            "l1_end_index": 3
           },
           {
             "text": "غشيم",
             "timestamp": "01:15.30",
             "timestamp_end": "01:15.80",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "rude"
+            "l1_end_index": 8
           }
-        ],
-        "text_l2": "Because I was clumsy"
+        ]
       },
       {
         "id": "phrase_24",
@@ -791,27 +697,23 @@
             "timestamp": "01:15.80",
             "timestamp_end": "01:16.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "and I lived"
+            "l1_end_index": 3
           },
           {
             "text": "في",
             "timestamp": "01:16.80",
             "timestamp_end": "01:17.10",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "in"
+            "l1_end_index": 6
           },
           {
             "text": "كآبة",
             "timestamp": "01:17.10",
             "timestamp_end": "01:17.50",
             "l1_start_index": 8,
-            "l1_end_index": 11,
-            "translation": "gloom"
+            "l1_end_index": 11
           }
-        ],
-        "text_l2": "And I lived in melancholy"
+        ]
       },
       {
         "id": "phrase_25",
@@ -824,19 +726,16 @@
             "timestamp": "01:20.00",
             "timestamp_end": "01:21.20",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "01:21.20",
             "timestamp_end": "01:22.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_26",
@@ -849,27 +748,23 @@
             "timestamp": "01:22.50",
             "timestamp_end": "01:23.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "wisdom"
+            "l1_end_index": 3
           },
           {
             "text": "نغمها",
             "timestamp": "01:23.50",
             "timestamp_end": "01:24.50",
             "l1_start_index": 5,
-            "l1_end_index": 9,
-            "translation": "its melody"
+            "l1_end_index": 9
           },
           {
             "text": "لذيذ",
             "timestamp": "01:24.50",
             "timestamp_end": "01:25.50",
             "l1_start_index": 11,
-            "l1_end_index": 14,
-            "translation": "delicious"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "A wisdom whose melody is delicious"
+        ]
       },
       {
         "id": "phrase_27",
@@ -882,19 +777,16 @@
             "timestamp": "01:25.50",
             "timestamp_end": "01:26.80",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "01:26.80",
             "timestamp_end": "01:28.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_28",
@@ -907,35 +799,30 @@
             "timestamp": "01:28.00",
             "timestamp_end": "01:28.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "throw away"
+            "l1_end_index": 3
           },
           {
             "text": "الماضي",
             "timestamp": "01:28.80",
             "timestamp_end": "01:29.80",
             "l1_start_index": 5,
-            "l1_end_index": 10,
-            "translation": "the past"
+            "l1_end_index": 10
           },
           {
             "text": "اللي",
             "timestamp": "01:29.80",
             "timestamp_end": "01:30.20",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "that"
+            "l1_end_index": 15
           },
           {
             "text": "يغيظ",
             "timestamp": "01:30.20",
             "timestamp_end": "01:31.00",
             "l1_start_index": 17,
-            "l1_end_index": 20,
-            "translation": "angers"
+            "l1_end_index": 20
           }
-        ],
-        "text_l2": "Throw away the past that annoys"
+        ]
       },
       {
         "id": "phrase_29",
@@ -948,19 +835,16 @@
             "timestamp": "01:31.00",
             "timestamp_end": "01:31.80",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "forget it"
+            "l1_end_index": 4
           },
           {
             "text": "والمستقبل",
             "timestamp": "01:31.80",
             "timestamp_end": "01:33.00",
             "l1_start_index": 6,
-            "l1_end_index": 14,
-            "translation": "and the future"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Forget it and the future"
+        ]
       },
       {
         "id": "phrase_30",
@@ -973,27 +857,23 @@
             "timestamp": "01:33.00",
             "timestamp_end": "01:34.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "give it"
+            "l1_end_index": 3
           },
           {
             "text": "كل",
             "timestamp": "01:34.00",
             "timestamp_end": "01:34.80",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "all"
+            "l1_end_index": 6
           },
           {
             "text": "التركيز",
             "timestamp": "01:34.80",
             "timestamp_end": "01:36.50",
             "l1_start_index": 8,
-            "l1_end_index": 14,
-            "translation": "the focus"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Give it all the focus"
+        ]
       },
       {
         "id": "phrase_31",
@@ -1006,27 +886,23 @@
             "timestamp": "01:37.00",
             "timestamp_end": "01:37.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "this"
+            "l1_end_index": 2
           },
           {
             "text": "هو",
             "timestamp": "01:37.80",
             "timestamp_end": "01:38.20",
             "l1_start_index": 4,
-            "l1_end_index": 5,
-            "translation": "is"
+            "l1_end_index": 5
           },
           {
             "text": "البهريز",
             "timestamp": "01:38.20",
             "timestamp_end": "01:39.50",
             "l1_start_index": 7,
-            "l1_end_index": 13,
-            "translation": "philosophy"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "This is the Bahreez"
+        ]
       },
       {
         "id": "phrase_32",
@@ -1039,11 +915,9 @@
             "timestamp": "01:39.50",
             "timestamp_end": "01:42.00",
             "l1_start_index": 0,
-            "l1_end_index": 6,
-            "translation": "the philosophical"
+            "l1_end_index": 6
           }
-        ],
-        "text_l2": "The philosophical"
+        ]
       },
       {
         "id": "phrase_33",
@@ -1056,19 +930,16 @@
             "timestamp": "01:42.00",
             "timestamp_end": "01:43.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "01:43.50",
             "timestamp_end": "01:45.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_34",
@@ -1081,35 +952,30 @@
             "timestamp": "03:10.50",
             "timestamp_end": "03:11.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:11.50",
             "timestamp_end": "03:12.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           },
           {
             "text": "هاكونا",
             "timestamp": "03:12.50",
             "timestamp_end": "03:13.50",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "Hakuna"
+            "l1_end_index": 19
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:13.50",
             "timestamp_end": "03:15.00",
             "l1_start_index": 21,
-            "l1_end_index": 26,
-            "translation": "Matata"
+            "l1_end_index": 26
           }
-        ],
-        "text_l2": "Hakuna Matata Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_35",
@@ -1122,19 +988,16 @@
             "timestamp": "03:15.00",
             "timestamp_end": "03:15.80",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "forget it"
+            "l1_end_index": 4
           },
           {
             "text": "والمستقبل",
             "timestamp": "03:15.80",
             "timestamp_end": "03:17.00",
             "l1_start_index": 6,
-            "l1_end_index": 14,
-            "translation": "and the future"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Forget it and the future"
+        ]
       },
       {
         "id": "phrase_36",
@@ -1147,27 +1010,23 @@
             "timestamp": "03:17.00",
             "timestamp_end": "03:18.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "give it"
+            "l1_end_index": 3
           },
           {
             "text": "كل",
             "timestamp": "03:18.00",
             "timestamp_end": "03:18.80",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "all"
+            "l1_end_index": 6
           },
           {
             "text": "التركيز",
             "timestamp": "03:18.80",
             "timestamp_end": "03:20.50",
             "l1_start_index": 8,
-            "l1_end_index": 14,
-            "translation": "the focus"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Give it all the focus"
+        ]
       },
       {
         "id": "phrase_37",
@@ -1180,27 +1039,23 @@
             "timestamp": "03:20.50",
             "timestamp_end": "03:21.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "this"
+            "l1_end_index": 2
           },
           {
             "text": "هو",
             "timestamp": "03:21.50",
             "timestamp_end": "03:22.00",
             "l1_start_index": 4,
-            "l1_end_index": 5,
-            "translation": "is"
+            "l1_end_index": 5
           },
           {
             "text": "البهريز",
             "timestamp": "03:22.00",
             "timestamp_end": "03:23.50",
             "l1_start_index": 7,
-            "l1_end_index": 13,
-            "translation": "philosophy"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "This is the Bahreez"
+        ]
       },
       {
         "id": "phrase_38",
@@ -1213,11 +1068,9 @@
             "timestamp": "03:23.50",
             "timestamp_end": "03:26.00",
             "l1_start_index": 0,
-            "l1_end_index": 6,
-            "translation": "the philosophical"
+            "l1_end_index": 6
           }
-        ],
-        "text_l2": "The philosophical"
+        ]
       },
       {
         "id": "phrase_39",
@@ -1230,19 +1083,16 @@
             "timestamp": "03:26.00",
             "timestamp_end": "03:27.00",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:27.00",
             "timestamp_end": "03:28.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_40",
@@ -1255,19 +1105,16 @@
             "timestamp": "03:29.00",
             "timestamp_end": "03:30.00",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:30.00",
             "timestamp_end": "03:31.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_41",
@@ -1280,19 +1127,16 @@
             "timestamp": "03:32.00",
             "timestamp_end": "03:33.00",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:33.00",
             "timestamp_end": "03:34.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_42",
@@ -1305,19 +1149,16 @@
             "timestamp": "03:35.00",
             "timestamp_end": "03:36.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:36.50",
             "timestamp_end": "03:38.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_43",
@@ -1330,19 +1171,16 @@
             "timestamp": "03:44.00",
             "timestamp_end": "03:45.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:45.50",
             "timestamp_end": "03:47.50",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       },
       {
         "id": "phrase_44",
@@ -1355,19 +1193,16 @@
             "timestamp": "03:48.00",
             "timestamp_end": "03:49.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "Hakuna"
+            "l1_end_index": 5
           },
           {
             "text": "ماتاتا",
             "timestamp": "03:49.50",
             "timestamp_end": "03:51.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "Matata"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "Hakuna Matata"
+        ]
       }
     ],
     "lessons": "# هاكونا ماتاتا: الحكمة\n00:00.50 هاكونا ماتاتا\n00:03.50 حكمة نغمها لذيذ\n00:07.00 هاكونا ماتاتا\n00:09.50 ارمي الماضي اللي يغيظ\n00:12.50 انساه والمستقبل\n00:14.50 اديه كل التركيز\n00:18.50 هذا هو البهريز\n00:21.00 الفلسفي\n\n# قصة بومبا (الجزء الأول)\n00:23.80 هاكونا ماتاتا\n00:42.00 لما كان خنزير صغنون\n00:44.50 لما كنت خنزير صغنون\n00:51.00 اكتشف إن ريحته سرها مستحيل\n00:53.00 يشمها المزكوم من على بعد ميل\n00:56.00 كنت بمشي لوحدي\n00:58.50 في سهول السند\n01:02.00 ألاقي دموعي عملت غابة\n\n# قصة بومبا (الجزء الثاني)\n01:04.50 فالسعوا على الهند\n01:07.00 يا كسوفي في عالمي\n01:09.00 وتنكسف ليه؟\n01:10.00 فكرت أغير اسمي\n01:11.80 الاسم بومبا إيه؟\n01:13.00 هربت من الغابة\n01:14.80 عشان غشيم\n01:15.80 وعشت في كآبة\n\n# هاكونا ماتاتا: التكرار\n01:20.00 هاكونا ماتاتا\n01:22.50 حكمة نغمها لذيذ\n01:25.50 هاكونا ماتاتا\n01:28.00 ارمي الماضي اللي يغيظ\n01:31.00 انساه والمستقبل\n01:33.00 اديه كل التركيز\n01:37.00 هذا هو البهريز\n01:39.50 الفلسفي\n\n# الختام: الحكمة الأخيرة\n01:42.00 هاكونا ماتاتا\n03:10.50 هاكونا ماتاتا هاكونا ماتاتا\n03:15.00 انساه والمستقبل\n03:17.00 اديه كل التركيز\n03:20.50 هذا هو البهريز\n03:23.50 الفلسفي\n\n# الختام: هاكونا ماتاتا\n03:26.00 هاكونا ماتاتا\n03:29.00 هاكونا ماتاتا\n03:32.00 هاكونا ماتاتا\n03:35.00 هاكونا ماتاتا\n03:44.00 هاكونا ماتاتا\n03:48.00 هاكونا ماتاتا",
@@ -1409,7 +1244,358 @@
         "reason": "Only the non-Arabic phrase 'Hakuna Matata' repeated; teaches no Arabic words."
       }
     ],
-    "similar_sounds": "[هانا] ماتاتا\nحكمة [نفسها] لذيذ\n[اكون] ماتاتا\nارمي [الماضى] اللي يغيظ\n[انسان] والمستقبل\n[ايه] كل التركيز\n[هذه] هو البهريز\n[الفلفل]\n[ساكون] ماتاتا\n[لا] كان خنزير صغنون\nلما كنت خنزير [يغنون]\nاكتشف إن ريحته سرها [مستحيلا]\nيشمها المزكوم من [الى] بعد ميل\n[أنت] بمشي لوحدي\nفي سهول [السنة]\nألاقي دموعي [علمت] غابة\n[No alternatives found for 'فالسعوا'] على الهند\nيا كسوفي في [عالم]\n[تنكسر] ليه\nفكرت أغير [اسمع]\nالاسم بومبا [إنه]\n[هرب] من الغابة\nعشان [غريم]\nوعشت في [كذبة]\n[اكون] ماتاتا\n[حكم] نغمها لذيذ\n[اكون] ماتاتا\nارمي الماضي [التي] يغيظ\n[انسه] والمستقبل\n[ايه] كل التركيز\nهذا هو [البشرية]\n[الخلفي]\nهاكونا [ماتت]\nهاكونا ماتاتا [هانا] ماتاتا\n[انسه] والمستقبل\nاديه كل [للتركيز]\nهذا هو [البشرية]\n[الفلسفة]\nهاكونا [ماتوا]\nهاكونا [ماتت]\nهاكونا [مارتا]\nهاكونا [ماتوا]\n[اكون] ماتاتا\nهاكونا [مارتا]"
+    "similar_sounds": "[هانا] ماتاتا\nحكمة [نفسها] لذيذ\n[اكون] ماتاتا\nارمي [الماضى] اللي يغيظ\n[انسان] والمستقبل\n[ايه] كل التركيز\n[هذه] هو البهريز\n[الفلفل]\n[ساكون] ماتاتا\n[لا] كان خنزير صغنون\nلما كنت خنزير [يغنون]\nاكتشف إن ريحته سرها [مستحيلا]\nيشمها المزكوم من [الى] بعد ميل\n[أنت] بمشي لوحدي\nفي سهول [السنة]\nألاقي دموعي [علمت] غابة\n[No alternatives found for 'فالسعوا'] على الهند\nيا كسوفي في [عالم]\n[تنكسر] ليه\nفكرت أغير [اسمع]\nالاسم بومبا [إنه]\n[هرب] من الغابة\nعشان [غريم]\nوعشت في [كذبة]\n[اكون] ماتاتا\n[حكم] نغمها لذيذ\n[اكون] ماتاتا\nارمي الماضي [التي] يغيظ\n[انسه] والمستقبل\n[ايه] كل التركيز\nهذا هو [البشرية]\n[الخلفي]\nهاكونا [ماتت]\nهاكونا ماتاتا [هانا] ماتاتا\n[انسه] والمستقبل\nاديه كل [للتركيز]\nهذا هو [البشرية]\n[الفلسفة]\nهاكونا [ماتوا]\nهاكونا [ماتت]\nهاكونا [مارتا]\nهاكونا [ماتوا]\n[اكون] ماتاتا\nهاكونا [مارتا]",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "A wisdom whose melody is delicious",
+            "words": [
+              "wisdom",
+              "its melody",
+              "delicious"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Throw away the past that annoys",
+            "words": [
+              "throw away",
+              "the past",
+              "that",
+              "angers"
+            ]
+          },
+          {
+            "text": "Forget it and the future",
+            "words": [
+              "forget it",
+              "and the future"
+            ]
+          },
+          {
+            "text": "Give it all the focus",
+            "words": [
+              "give it",
+              "all",
+              "the focus"
+            ]
+          },
+          {
+            "text": "This is the Bahreez",
+            "words": [
+              "this",
+              "is",
+              "philosophy"
+            ]
+          },
+          {
+            "text": "The philosophical",
+            "words": [
+              "the philosophical"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "When he was a little pig",
+            "words": [
+              "when",
+              "was",
+              "pig",
+              "small"
+            ]
+          },
+          {
+            "text": "When I was a little pig",
+            "words": [
+              "when",
+              "I was",
+              "pig",
+              "small"
+            ]
+          },
+          {
+            "text": "Discovered that its smell, keeping it secret is impossible",
+            "words": [
+              "I discovered",
+              "that",
+              "his smell",
+              "its secret",
+              "impossible"
+            ]
+          },
+          {
+            "text": "The congested one smells it from a mile away",
+            "words": [
+              "smells it",
+              "the congested one",
+              "from",
+              "at",
+              "distance",
+              "mile"
+            ]
+          },
+          {
+            "text": "I was walking alone",
+            "words": [
+              "I was",
+              "walking",
+              "alone"
+            ]
+          },
+          {
+            "text": "In the plains of Sind",
+            "words": [
+              "in",
+              "plains",
+              "the Sindh"
+            ]
+          },
+          {
+            "text": "I found my tears made a forest",
+            "words": [
+              "I find",
+              "my tears",
+              "made",
+              "forest"
+            ]
+          },
+          {
+            "text": "So they hurried to India",
+            "words": [
+              "so they hurried",
+              "to",
+              "India"
+            ]
+          },
+          {
+            "text": "Oh my eclipse in my world",
+            "words": [
+              "O",
+              "my eclipse",
+              "in",
+              "my world"
+            ]
+          },
+          {
+            "text": "And why be eclipsed?",
+            "words": [
+              "and you get eclipsed",
+              "why?"
+            ]
+          },
+          {
+            "text": "I thought to change my name",
+            "words": [
+              "I thought",
+              "change",
+              "my name"
+            ]
+          },
+          {
+            "text": "The name Pumbaa, what?",
+            "words": [
+              "the name",
+              "Pumbaa",
+              "what?"
+            ]
+          },
+          {
+            "text": "I fled from the forest",
+            "words": [
+              "I escaped",
+              "from",
+              "the forest"
+            ]
+          },
+          {
+            "text": "Because I was clumsy",
+            "words": [
+              "because",
+              "rude"
+            ]
+          },
+          {
+            "text": "And I lived in melancholy",
+            "words": [
+              "and I lived",
+              "in",
+              "gloom"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "A wisdom whose melody is delicious",
+            "words": [
+              "wisdom",
+              "its melody",
+              "delicious"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Throw away the past that annoys",
+            "words": [
+              "throw away",
+              "the past",
+              "that",
+              "angers"
+            ]
+          },
+          {
+            "text": "Forget it and the future",
+            "words": [
+              "forget it",
+              "and the future"
+            ]
+          },
+          {
+            "text": "Give it all the focus",
+            "words": [
+              "give it",
+              "all",
+              "the focus"
+            ]
+          },
+          {
+            "text": "This is the Bahreez",
+            "words": [
+              "this",
+              "is",
+              "philosophy"
+            ]
+          },
+          {
+            "text": "The philosophical",
+            "words": [
+              "the philosophical"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata",
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Forget it and the future",
+            "words": [
+              "forget it",
+              "and the future"
+            ]
+          },
+          {
+            "text": "Give it all the focus",
+            "words": [
+              "give it",
+              "all",
+              "the focus"
+            ]
+          },
+          {
+            "text": "This is the Bahreez",
+            "words": [
+              "this",
+              "is",
+              "philosophy"
+            ]
+          },
+          {
+            "text": "The philosophical",
+            "words": [
+              "the philosophical"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          },
+          {
+            "text": "Hakuna Matata",
+            "words": [
+              "Hakuna",
+              "Matata"
+            ]
+          }
+        ],
+        "lessons": "# هاكونا ماتاتا: الحكمة\n00:00.50 هاكونا ماتاتا\n00:03.50 حكمة نغمها لذيذ\n00:07.00 هاكونا ماتاتا\n00:09.50 ارمي الماضي اللي يغيظ\n00:12.50 انساه والمستقبل\n00:14.50 اديه كل التركيز\n00:18.50 هذا هو البهريز\n00:21.00 الفلسفي\n\n# قصة بومبا (الجزء الأول)\n00:23.80 هاكونا ماتاتا\n00:42.00 لما كان خنزير صغنون\n00:44.50 لما كنت خنزير صغنون\n00:51.00 اكتشف إن ريحته سرها مستحيل\n00:53.00 يشمها المزكوم من على بعد ميل\n00:56.00 كنت بمشي لوحدي\n00:58.50 في سهول السند\n01:02.00 ألاقي دموعي عملت غابة\n\n# قصة بومبا (الجزء الثاني)\n01:04.50 فالسعوا على الهند\n01:07.00 يا كسوفي في عالمي\n01:09.00 وتنكسف ليه؟\n01:10.00 فكرت أغير اسمي\n01:11.80 الاسم بومبا إيه؟\n01:13.00 هربت من الغابة\n01:14.80 عشان غشيم\n01:15.80 وعشت في كآبة\n\n# هاكونا ماتاتا: التكرار\n01:20.00 هاكونا ماتاتا\n01:22.50 حكمة نغمها لذيذ\n01:25.50 هاكونا ماتاتا\n01:28.00 ارمي الماضي اللي يغيظ\n01:31.00 انساه والمستقبل\n01:33.00 اديه كل التركيز\n01:37.00 هذا هو البهريز\n01:39.50 الفلسفي\n\n# الختام: الحكمة الأخيرة\n01:42.00 هاكونا ماتاتا\n03:10.50 هاكونا ماتاتا هاكونا ماتاتا\n03:15.00 انساه والمستقبل\n03:17.00 اديه كل التركيز\n03:20.50 هذا هو البهريز\n03:23.50 الفلسفي\n\n# الختام: هاكونا ماتاتا\n03:26.00 هاكونا ماتاتا\n03:29.00 هاكونا ماتاتا\n03:32.00 هاكونا ماتاتا\n03:35.00 هاكونا ماتاتا\n03:44.00 هاكونا ماتاتا\n03:48.00 هاكونا ماتاتا"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-28 18:16:21 UTC",
   "updated_at": "2026-06-28 18:19:23 UTC",

@@ -8,1195 +8,1799 @@
       {
         "id": "phrase_2",
         "text_l1": "شوفوا شوفوا البنت الجديدة",
-        "timestamp": "00:05",
-        "text_l2": "Look, look at the new girl"
+        "timestamp": "00:05"
       },
       {
         "id": "phrase_3",
         "text_l1": "شوفوا شو لابسة",
-        "timestamp": "00:07",
-        "text_l2": "Look at what she's wearing"
+        "timestamp": "00:07"
       },
       {
         "id": "phrase_4",
         "text_l1": "شو ستايلها قديم",
-        "timestamp": "00:09",
-        "text_l2": "Her style is so old"
+        "timestamp": "00:09"
       },
       {
         "id": "phrase_5",
         "text_l1": "شكله من خزانة أمها",
-        "timestamp": "00:11",
-        "text_l2": "It looks like it's from her mother's closet"
+        "timestamp": "00:11"
       },
       {
         "id": "phrase_6",
         "text_l1": "قصدك من خزانة ستها",
-        "timestamp": "00:13",
-        "text_l2": "You mean from her grandmother's closet"
+        "timestamp": "00:13"
       },
       {
         "id": "phrase_7",
         "text_l1": "شكلها زي برداية مطبخ ستي",
-        "timestamp": "00:16",
-        "text_l2": "She looks like my grandmother's kitchen curtain"
+        "timestamp": "00:16"
       },
       {
         "id": "phrase_8",
         "text_l1": "صباح الخير",
-        "timestamp": "00:21",
-        "text_l2": "Good morning"
+        "timestamp": "00:21"
       },
       {
         "id": "phrase_9",
         "text_l1": "قبل ما نبدأ درس اليوم",
-        "timestamp": "00:22",
-        "text_l2": "Before we start today's lesson"
+        "timestamp": "00:22"
       },
       {
         "id": "phrase_10",
         "text_l1": "بدي أعرفكم على زميلتكم الجديدة",
-        "timestamp": "00:24",
-        "text_l2": "I want to introduce you to your new classmate"
+        "timestamp": "00:24"
       },
       {
         "id": "phrase_11",
         "text_l1": "لونا، صح؟",
-        "timestamp": "00:26",
-        "text_l2": "Luna, right?"
+        "timestamp": "00:26"
       },
       {
         "id": "phrase_12",
         "text_l1": "مس مس",
-        "timestamp": "00:27",
-        "text_l2": "Miss, Miss"
+        "timestamp": "00:27"
       },
       {
         "id": "phrase_13",
         "text_l1": "بس هي بتحب النادي الملونة",
-        "timestamp": "00:28",
-        "text_l2": "But she likes to be called Mulawana"
+        "timestamp": "00:28"
       },
       {
         "id": "phrase_14",
         "text_l1": "آه اوكي ملونة",
-        "timestamp": "00:31",
-        "text_l2": "Oh okay, Mulawana"
+        "timestamp": "00:31"
       },
       {
         "id": "phrase_15",
         "text_l1": "مبسوطين إنك معنا",
-        "timestamp": "00:32",
-        "text_l2": "We're happy you're with us"
+        "timestamp": "00:32"
       },
       {
         "id": "phrase_16",
         "text_l1": "أنا متأكدة إنك رح تصيري صحبة مع البنات بسرعة",
-        "timestamp": "00:34",
-        "text_l2": "I'm sure you'll become friends with the girls quickly"
+        "timestamp": "00:34"
       },
       {
         "id": "phrase_17",
         "text_l1": "اليوم رح نكمل درس الأسبوع الماضي",
-        "timestamp": "00:39",
-        "text_l2": "Today we will continue last week's lesson"
+        "timestamp": "00:39"
       },
       {
         "id": "phrase_18",
         "text_l1": "ضرب الكسور المركبة",
-        "timestamp": "00:41",
-        "text_l2": "Multiplying mixed fractions"
+        "timestamp": "00:41"
       },
       {
         "id": "phrase_19",
         "text_l1": "شتتية دنيتي",
-        "timestamp": "00:55",
-        "text_l2": "My world rained"
+        "timestamp": "00:55"
       },
       {
         "id": "phrase_20",
         "text_l1": "تيزي تيزي",
-        "timestamp": "00:56",
-        "text_l2": "Tizi tizi"
+        "timestamp": "00:56"
       },
       {
         "id": "phrase_21",
         "text_l1": "دمو سم",
-        "timestamp": "00:57",
-        "text_l2": "Dammo sam"
+        "timestamp": "00:57"
       },
       {
         "id": "phrase_22",
         "text_l1": "نويعلى",
-        "timestamp": "00:58",
-        "text_l2": "Nway'ala"
+        "timestamp": "00:58"
       },
       {
         "id": "phrase_23",
         "text_l1": "هلا هلا",
-        "timestamp": "00:59",
-        "text_l2": "Hala hala"
+        "timestamp": "00:59"
       },
       {
         "id": "phrase_24",
         "text_l1": "هلا هلا",
-        "timestamp": "01:00",
-        "text_l2": "Hala hala"
+        "timestamp": "01:00"
       },
       {
         "id": "phrase_25",
         "text_l1": "ألو أبو أبو النواف",
-        "timestamp": "01:04",
-        "text_l2": "Hello Abu Abu Al-Nawaf"
+        "timestamp": "01:04"
       },
       {
         "id": "phrase_26",
         "text_l1": "كيف حالك؟",
-        "timestamp": "01:05",
-        "text_l2": "How are you?"
+        "timestamp": "01:05"
       },
       {
         "id": "phrase_27",
         "text_l1": "شو أخبارك؟",
-        "timestamp": "01:06",
-        "text_l2": "What's your news?"
+        "timestamp": "01:06"
       },
       {
         "id": "phrase_28",
         "text_l1": "كيف الشتوية معك خيو؟",
-        "timestamp": "01:07",
-        "text_l2": "How is the winter with you, brother?"
+        "timestamp": "01:07"
       },
       {
         "id": "phrase_29",
         "text_l1": "الحمد لله",
-        "timestamp": "01:09",
-        "text_l2": "Thank God"
+        "timestamp": "01:09"
       },
       {
         "id": "phrase_30",
         "text_l1": "الحمد لله على المطر يا عطى",
-        "timestamp": "01:10",
-        "text_l2": "Thank God for the rain, Ata"
+        "timestamp": "01:10"
       },
       {
         "id": "phrase_31",
         "text_l1": "شو الواحد بده يحكي غير هيك",
-        "timestamp": "01:12",
-        "text_l2": "What else can one say"
+        "timestamp": "01:12"
       },
       {
         "id": "phrase_32",
         "text_l1": "الحمد لله الحمد لله",
-        "timestamp": "01:14",
-        "text_l2": "Thank God, thank God"
+        "timestamp": "01:14"
       },
       {
         "id": "phrase_33",
         "text_l1": "اسمع إذا الحيطان عندك رطبوا",
-        "timestamp": "01:16",
-        "text_l2": "Listen, if your walls got damp"
+        "timestamp": "01:16"
       },
       {
         "id": "phrase_34",
         "text_l1": "طلع عليهن عفن",
-        "timestamp": "01:19",
-        "text_l2": "And mold appeared on them"
+        "timestamp": "01:19"
       },
       {
         "id": "phrase_35",
         "text_l1": "بس رن علي",
-        "timestamp": "01:21",
-        "text_l2": "Just call me"
+        "timestamp": "01:21"
       },
       {
         "id": "phrase_36",
         "text_l1": "باجي عالسريع",
-        "timestamp": "01:22",
-        "text_l2": "I'll come quickly"
+        "timestamp": "01:22"
       },
       {
         "id": "phrase_37",
         "text_l1": "لا حبيبي",
-        "timestamp": "01:25",
-        "text_l2": "No, my dear"
+        "timestamp": "01:25"
       },
       {
         "id": "phrase_38",
         "text_l1": "باخذ زي المرة الماضية",
-        "timestamp": "01:26",
-        "text_l2": "I'll take the same as last time"
+        "timestamp": "01:26"
       },
       {
         "id": "phrase_39",
         "text_l1": "وفوقيهم 10%",
-        "timestamp": "01:28",
-        "text_l2": "Plus 10%"
+        "timestamp": "01:28"
       },
       {
         "id": "phrase_40",
         "text_l1": "شو شفت الجمعية الخيرية؟",
-        "timestamp": "01:29",
-        "text_l2": "What, did you think this was a charity?"
+        "timestamp": "01:29"
       },
       {
         "id": "phrase_41",
         "text_l1": "أهليين",
-        "timestamp": "01:31",
-        "text_l2": "Welcome"
+        "timestamp": "01:31"
       },
       {
         "id": "phrase_42",
         "text_l1": "ما أنا صرت محترف",
-        "timestamp": "01:32",
-        "text_l2": "I've become a professional now"
+        "timestamp": "01:32"
       },
       {
         "id": "phrase_43",
         "text_l1": "بخلص كل الشغل حبيبي عالسريع",
-        "timestamp": "01:34",
-        "text_l2": "I finish all the work quickly, my dear"
+        "timestamp": "01:34"
       },
       {
         "id": "phrase_44",
         "text_l1": "يلا حبيبي بستنى تليفونك",
-        "timestamp": "01:36",
-        "text_l2": "Alright, my dear, I'm waiting for your call"
+        "timestamp": "01:36"
       },
       {
         "id": "phrase_45",
         "text_l1": "مش تنسى",
-        "timestamp": "01:38",
-        "text_l2": "Don't forget"
+        "timestamp": "01:38"
       },
       {
         "id": "phrase_46",
         "text_l1": "سلام",
-        "timestamp": "01:39",
-        "text_l2": "Peace"
+        "timestamp": "01:39"
       },
       {
         "id": "phrase_47",
         "text_l1": "شتتية دنيتي",
-        "timestamp": "01:41",
-        "text_l2": "My world rained"
+        "timestamp": "01:41"
       },
       {
         "id": "phrase_48",
         "text_l1": "تيزي تيزي",
-        "timestamp": "01:42",
-        "text_l2": "Tizi tizi"
+        "timestamp": "01:42"
       },
       {
         "id": "phrase_49",
         "text_l1": "دمو سم",
-        "timestamp": "01:43",
-        "text_l2": "Dammo sam"
+        "timestamp": "01:43"
       },
       {
         "id": "phrase_50",
         "text_l1": "نويعلى",
-        "timestamp": "01:44",
-        "text_l2": "Nway'ala"
+        "timestamp": "01:44"
       },
       {
         "id": "phrase_51",
         "text_l1": "هلا هلا",
-        "timestamp": "01:45",
-        "text_l2": "Hala hala"
+        "timestamp": "01:45"
       },
       {
         "id": "phrase_52",
         "text_l1": "هلا هلا",
-        "timestamp": "01:46",
-        "text_l2": "Hala hala"
+        "timestamp": "01:46"
       },
       {
         "id": "phrase_53",
         "text_l1": "ماما لا تعالي خذيني هلا",
-        "timestamp": "01:55",
-        "text_l2": "Mom, no, come pick me up now"
+        "timestamp": "01:55"
       },
       {
         "id": "phrase_54",
         "text_l1": "ما حدا يحبني هون",
-        "timestamp": "01:57",
-        "text_l2": "No one likes me here"
+        "timestamp": "01:57"
       },
       {
         "id": "phrase_55",
         "text_l1": "وكلهم عم بيضحكوا علي",
-        "timestamp": "01:58",
-        "text_l2": "And they are all laughing at me"
+        "timestamp": "01:58"
       },
       {
         "id": "phrase_56",
         "text_l1": "مش قادرة مش قادرة أتحمل",
-        "timestamp": "02:00",
-        "text_l2": "I can't, I can't bear it"
+        "timestamp": "02:00"
       },
       {
         "id": "phrase_57",
         "text_l1": "خلص بليز تعالي خذيني",
-        "timestamp": "02:02",
-        "text_l2": "Enough, please come pick me up"
+        "timestamp": "02:02"
       },
       {
         "id": "phrase_58",
         "text_l1": "وين راحت الشمسية؟",
-        "timestamp": "02:12",
-        "text_l2": "Where did the umbrella go?"
+        "timestamp": "02:12"
       },
       {
         "id": "phrase_59",
         "text_l1": "رطوبة لا حول ولا قوة",
-        "timestamp": "02:15",
-        "text_l2": "Dampness, there is no power or strength but with God"
+        "timestamp": "02:15"
       },
       {
         "id": "phrase_60",
         "text_l1": "كيف عرف عطى إنه هيك رح يصير؟",
-        "timestamp": "02:18",
-        "text_l2": "How did Ata know this would happen?"
+        "timestamp": "02:18"
       },
       {
         "id": "phrase_61",
         "text_l1": "أكيد في إنّ",
-        "timestamp": "02:20",
-        "text_l2": "There's definitely something fishy"
+        "timestamp": "02:20"
       },
       {
         "id": "phrase_62",
         "text_l1": "لا لا لا لا أنا أكيد",
-        "timestamp": "02:21",
-        "text_l2": "No no no no, I'm sure"
+        "timestamp": "02:21"
       },
       {
         "id": "phrase_63",
         "text_l1": "ولا يمكن",
-        "timestamp": "02:24",
-        "text_l2": "No way"
+        "timestamp": "02:24"
       },
       {
         "id": "phrase_64",
         "text_l1": "هسا إذا عرفت أم إنصاف بالموضوع",
-        "timestamp": "02:26",
-        "text_l2": "Now if Um Insaf finds out about this"
+        "timestamp": "02:26"
       },
       {
         "id": "phrase_65",
         "text_l1": "رح تخلينا ندهن الدار",
-        "timestamp": "02:28",
-        "text_l2": "She'll make us paint the house"
+        "timestamp": "02:28"
       },
       {
         "id": "phrase_66",
         "text_l1": "وبعدين بصير بدها تغير العفش",
-        "timestamp": "02:30",
-        "text_l2": "And then she'll want to change the furniture"
+        "timestamp": "02:30"
       },
       {
         "id": "phrase_67",
         "text_l1": "مش معقول",
-        "timestamp": "02:33",
-        "text_l2": "Unbelievable"
+        "timestamp": "02:33"
       },
       {
         "id": "phrase_68",
         "text_l1": "عشان يليق على لون الحيطان الجديد",
-        "timestamp": "02:34",
-        "text_l2": "So it matches the new wall color"
+        "timestamp": "02:34"
       },
       {
         "id": "phrase_69",
         "text_l1": "ما هو ما بينفع الفرش القديم",
-        "timestamp": "02:36",
-        "text_l2": "Because the old furniture won't work"
+        "timestamp": "02:36"
       },
       {
         "id": "phrase_70",
         "text_l1": "عالدهان الجديد",
-        "timestamp": "02:38",
-        "text_l2": "With the new paint"
+        "timestamp": "02:38"
       },
       {
         "id": "phrase_71",
         "text_l1": "لا لا لا لا لا",
-        "timestamp": "02:40",
-        "text_l2": "No no no no no"
+        "timestamp": "02:40"
       },
       {
         "id": "phrase_72",
         "text_l1": "بنات بعثت لكم مسج",
-        "timestamp": "02:49",
-        "text_l2": "Girls, I sent you a message"
+        "timestamp": "02:49"
       },
       {
         "id": "phrase_73",
         "text_l1": "عشان تيجوا على عيد ميلادي",
-        "timestamp": "02:51",
-        "text_l2": "So you come to my birthday"
+        "timestamp": "02:51"
       },
       {
         "id": "phrase_74",
         "text_l1": "شفتوها؟",
-        "timestamp": "02:53",
-        "text_l2": "Did you see it?"
+        "timestamp": "02:53"
       },
       {
         "id": "phrase_75",
         "text_l1": "آه كثير متحمسة",
-        "timestamp": "02:54",
-        "text_l2": "Yes, I'm so excited"
+        "timestamp": "02:54"
       },
       {
         "id": "phrase_76",
         "text_l1": "كل حفلة بتعمليها أحلى من الثانية",
-        "timestamp": "02:56",
-        "text_l2": "Every party you throw is better than the last"
+        "timestamp": "02:56"
       },
       {
         "id": "phrase_77",
         "text_l1": "آه طبعاً",
-        "timestamp": "02:59",
-        "text_l2": "Yes, of course"
+        "timestamp": "02:59"
       },
       {
         "id": "phrase_78",
         "text_l1": "كلكم رح تيجوا صح؟",
-        "timestamp": "03:01",
-        "text_l2": "You're all coming, right?"
+        "timestamp": "03:01"
       },
       {
         "id": "phrase_79",
         "text_l1": "آه أكيد أكيد رح نيجي",
-        "timestamp": "03:02",
-        "text_l2": "Yes, definitely, definitely we'll come"
+        "timestamp": "03:02"
       },
       {
         "id": "phrase_80",
         "text_l1": "سالي إنتي جاية صح؟",
-        "timestamp": "03:06",
-        "text_l2": "Sally, you're coming, right?"
+        "timestamp": "03:06"
       },
       {
         "id": "phrase_81",
         "text_l1": "إيه آه آه أكيد جاي",
-        "timestamp": "03:08",
-        "text_l2": "Yeah, yeah, definitely coming"
+        "timestamp": "03:08"
       },
       {
         "id": "phrase_82",
         "text_l1": "وشو رأيك تعزمي لونا كمان؟",
-        "timestamp": "03:11",
-        "text_l2": "And what do you think about inviting Luna too?"
+        "timestamp": "03:11"
       },
       {
         "id": "phrase_83",
         "text_l1": "ملونة؟",
-        "timestamp": "03:13",
-        "text_l2": "Mulawana?"
+        "timestamp": "03:13"
       },
       {
         "id": "phrase_84",
         "text_l1": "تمزحي صح؟",
-        "timestamp": "03:14",
-        "text_l2": "You're joking, right?"
+        "timestamp": "03:14"
       },
       {
         "id": "phrase_85",
         "text_l1": "ليش نعزمها إن شاء الله؟",
-        "timestamp": "03:16",
-        "text_l2": "Why on earth would we invite her?"
+        "timestamp": "03:16"
       },
       {
         "id": "phrase_86",
         "text_l1": "ليش لا؟",
-        "timestamp": "03:18",
-        "text_l2": "Why not?"
+        "timestamp": "03:18"
       },
       {
         "id": "phrase_87",
         "text_l1": "بحس لازم نتعرف عليها أكثر",
-        "timestamp": "03:19",
-        "text_l2": "I feel we should get to know her more"
+        "timestamp": "03:19"
       },
       {
         "id": "phrase_88",
         "text_l1": "آه معك حق",
-        "timestamp": "03:21",
-        "text_l2": "Yeah, you're right"
+        "timestamp": "03:21"
       },
       {
         "id": "phrase_89",
         "text_l1": "ماشي بنعزمها",
-        "timestamp": "03:22",
-        "text_l2": "Okay, we'll invite her"
+        "timestamp": "03:22"
       },
       {
         "id": "phrase_90",
         "text_l1": "بس بشرط",
-        "timestamp": "03:24",
-        "text_l2": "But on one condition"
+        "timestamp": "03:24"
       },
       {
         "id": "phrase_91",
         "text_l1": "بنحكي لها إنه الجاس كود",
-        "timestamp": "03:25",
-        "text_l2": "We tell her the dress code"
+        "timestamp": "03:25"
       },
       {
         "id": "phrase_92",
         "text_l1": "بجامة وشعر منكوش",
-        "timestamp": "03:27",
-        "text_l2": "Is pajamas and messy hair"
+        "timestamp": "03:27"
       },
       {
         "id": "phrase_93",
         "text_l1": "بس كلنا نيجي لابسين فساتين",
-        "timestamp": "03:30",
-        "text_l2": "But we all come wearing dresses"
+        "timestamp": "03:30"
       },
       {
         "id": "phrase_94",
         "text_l1": "وشعرنا مظبط",
-        "timestamp": "03:32",
-        "text_l2": "And our hair done"
+        "timestamp": "03:32"
       },
       {
         "id": "phrase_95",
         "text_l1": "ما عدا هي",
-        "timestamp": "03:34",
-        "text_l2": "Except for her"
+        "timestamp": "03:34"
       },
       {
         "id": "phrase_96",
         "text_l1": "كيف خطرت لك هاي الفكرة؟",
-        "timestamp": "03:36",
-        "text_l2": "How did you think of this idea?"
+        "timestamp": "03:36"
       },
       {
         "id": "phrase_97",
         "text_l1": "إنتي عبقرية",
-        "timestamp": "03:38",
-        "text_l2": "You're a genius"
+        "timestamp": "03:38"
       },
       {
         "id": "phrase_98",
         "text_l1": "رح تطلع زي المهرج",
-        "timestamp": "03:40",
-        "text_l2": "She'll look like a clown"
+        "timestamp": "03:40"
       },
       {
         "id": "phrase_99",
         "text_l1": "يا الله مش قادرة أتخيل كيف رح يكون منظرها",
-        "timestamp": "03:42",
-        "text_l2": "Oh God, I can't imagine how she'll look"
+        "timestamp": "03:42"
       },
       {
         "id": "phrase_100",
         "text_l1": "كثير بيضحك صح سالي؟",
-        "timestamp": "03:45",
-        "text_l2": "It's so funny, right Sally?"
+        "timestamp": "03:45"
       },
       {
         "id": "phrase_101",
         "text_l1": "آه كثير بيضحك",
-        "timestamp": "03:48",
-        "text_l2": "Yes, very funny"
+        "timestamp": "03:48"
       },
       {
         "id": "phrase_102",
         "text_l1": "ملونة ملونة اسمعي",
-        "timestamp": "03:53",
-        "text_l2": "Mulawana, Mulawana, listen"
+        "timestamp": "03:53"
       },
       {
         "id": "phrase_103",
         "text_l1": "بدي أعزمك على عيد ميلادي بكرة",
-        "timestamp": "03:55",
-        "text_l2": "I want to invite you to my birthday tomorrow"
+        "timestamp": "03:55"
       },
       {
         "id": "phrase_104",
         "text_l1": "إذا فاضية بكرة طبعاً",
-        "timestamp": "03:57",
-        "text_l2": "If you're free tomorrow, of course"
+        "timestamp": "03:57"
       },
       {
         "id": "phrase_105",
         "text_l1": "مين أنا؟",
-        "timestamp": "03:59",
-        "text_l2": "Who, me?"
+        "timestamp": "03:59"
       },
       {
         "id": "phrase_106",
         "text_l1": "عن جد عن جد بدكم تعزموني أنا؟",
-        "timestamp": "04:00",
-        "text_l2": "Really, really, you want to invite me?"
+        "timestamp": "04:00"
       },
       {
         "id": "phrase_107",
         "text_l1": "آه حابين نتعرف عليكي كثير",
-        "timestamp": "04:03",
-        "text_l2": "Yes, we'd love to get to know you a lot"
+        "timestamp": "04:03"
       },
       {
         "id": "phrase_108",
         "text_l1": "اوكي أكيد باجي",
-        "timestamp": "04:06",
-        "text_l2": "Okay, I'll definitely come"
+        "timestamp": "04:06"
       },
       {
         "id": "phrase_109",
         "text_l1": "ممتاز اسمعي",
-        "timestamp": "04:07",
-        "text_l2": "Excellent, listen"
+        "timestamp": "04:07"
       },
       {
         "id": "phrase_110",
         "text_l1": "البسي أبشع بجامة عندك",
-        "timestamp": "04:09",
-        "text_l2": "Wear the ugliest pajamas you have"
+        "timestamp": "04:09"
       },
       {
         "id": "phrase_111",
         "text_l1": "وخلي شعرك كثير منكوش",
-        "timestamp": "04:12",
-        "text_l2": "And keep your hair very messy"
+        "timestamp": "04:12"
       },
       {
         "id": "phrase_112",
         "text_l1": "أصلاً الجاس كود بجامة وشعر منكوش",
-        "timestamp": "04:14",
-        "text_l2": "Actually, the dress code is pajamas and messy hair"
+        "timestamp": "04:14"
       },
       {
         "id": "phrase_113",
         "text_l1": "آه ورح يكون في جائزة",
-        "timestamp": "04:18",
-        "text_l2": "Yes, and there will be a prize"
+        "timestamp": "04:18"
       },
       {
         "id": "phrase_114",
         "text_l1": "لأكثر لوك مجنون",
-        "timestamp": "04:20",
-        "text_l2": "For the craziest look"
+        "timestamp": "04:20"
       },
       {
         "id": "phrase_115",
         "text_l1": "يا الله أكيد رح ننبسط",
-        "timestamp": "04:22",
-        "text_l2": "Oh God, we'll definitely have fun"
+        "timestamp": "04:22"
       },
       {
         "id": "phrase_116",
         "text_l1": "اوكي خلص بدي أفك عالجروب",
-        "timestamp": "04:24",
-        "text_l2": "Okay, I'm going to post on the group"
+        "timestamp": "04:24"
       },
       {
         "id": "phrase_117",
         "text_l1": "وببعث لك كل التفاصيل بكرة",
-        "timestamp": "04:26",
-        "text_l2": "And I'll send you all the details tomorrow"
+        "timestamp": "04:26"
       },
       {
         "id": "phrase_118",
         "text_l1": "شكراً كثير عشانكم عزمتوني",
-        "timestamp": "04:28",
-        "text_l2": "Thank you so much for inviting me"
+        "timestamp": "04:28"
       },
       {
         "id": "phrase_119",
         "text_l1": "كثير كثير متحمسة",
-        "timestamp": "04:30",
-        "text_l2": "I'm so, so excited"
+        "timestamp": "04:30"
       },
       {
         "id": "phrase_120",
         "text_l1": "مش قادرة أستنى",
-        "timestamp": "04:32",
-        "text_l2": "I can't wait"
+        "timestamp": "04:32"
       },
       {
         "id": "phrase_121",
         "text_l1": "ألو",
-        "timestamp": "04:37",
-        "text_l2": "Hello"
+        "timestamp": "04:37"
       },
       {
         "id": "phrase_122",
         "text_l1": "مش معقول إنت يا زلمة",
-        "timestamp": "04:38",
-        "text_l2": "You're unbelievable, man"
+        "timestamp": "04:38"
       },
       {
         "id": "phrase_123",
         "text_l1": "كيف هيك عرفت إنه حيطان القعدة مرطبة؟",
-        "timestamp": "04:40",
-        "text_l2": "How did you know the living room walls are damp?"
+        "timestamp": "04:40"
       },
       {
         "id": "phrase_124",
         "text_l1": "إذا فاضي هذا الأسبوع تعال",
-        "timestamp": "04:42",
-        "text_l2": "If you're free this week, come"
+        "timestamp": "04:42"
       },
       {
         "id": "phrase_125",
         "text_l1": "طب يا زلمة لا تقتل الهم",
-        "timestamp": "04:44",
-        "text_l2": "Well, man, don't worry"
+        "timestamp": "04:44"
       },
       {
         "id": "phrase_126",
         "text_l1": "موضوعك سهل جداً",
-        "timestamp": "04:45",
-        "text_l2": "Your issue is very easy"
+        "timestamp": "04:45"
       },
       {
         "id": "phrase_127",
         "text_l1": "ساعتين وبيكونوا الحيطان يلمعن لمع",
-        "timestamp": "04:47",
-        "text_l2": "Two hours and the walls will be shining"
+        "timestamp": "04:47"
       },
       {
         "id": "phrase_128",
         "text_l1": "وكله بس ب 150 ليرة",
-        "timestamp": "04:51",
-        "text_l2": "And all for just 150 Dinars"
+        "timestamp": "04:51"
       },
       {
         "id": "phrase_129",
         "text_l1": "اسمع هذا السعر بس للعائلات الحبايب",
-        "timestamp": "04:54",
-        "text_l2": "Listen, this price is only for beloved families"
+        "timestamp": "04:54"
       },
       {
         "id": "phrase_130",
         "text_l1": "يعني للروح للروح",
-        "timestamp": "04:58",
-        "text_l2": "Like, for the dearest friends"
+        "timestamp": "04:58"
       },
       {
         "id": "phrase_131",
         "text_l1": "لا تشكرني ولا أشكرك",
-        "timestamp": "05:00",
-        "text_l2": "No need for thanks between us"
+        "timestamp": "05:00"
       },
       {
         "id": "phrase_132",
         "text_l1": "وين رطوبة بالضبط؟",
-        "timestamp": "05:02",
-        "text_l2": "Where is the dampness exactly?"
+        "timestamp": "05:02"
       },
       {
         "id": "phrase_133",
         "text_l1": "آه هيها شفتها",
-        "timestamp": "05:03",
-        "text_l2": "Ah, there it is, I see it"
+        "timestamp": "05:03"
       },
       {
         "id": "phrase_134",
         "text_l1": "أهلاً وسهلاً ملونة",
-        "timestamp": "05:19",
-        "text_l2": "Welcome, Mulawana"
+        "timestamp": "05:19"
       },
       {
         "id": "phrase_135",
         "text_l1": "في جروب حفلة عيد ميلادي",
-        "timestamp": "05:21",
-        "text_l2": "To my birthday party group"
+        "timestamp": "05:21"
       },
       {
         "id": "phrase_136",
         "text_l1": "كلنا متحمسين تكوني معنا",
-        "timestamp": "05:23",
-        "text_l2": "We're all excited for you to be with us"
+        "timestamp": "05:23"
       },
       {
         "id": "phrase_137",
         "text_l1": "ونشوفك بأغرب بجامة",
-        "timestamp": "05:25",
-        "text_l2": "And to see you in the weirdest pajamas"
+        "timestamp": "05:25"
       },
       {
         "id": "phrase_138",
         "text_l1": "وتسريحة شعر",
-        "timestamp": "05:27",
-        "text_l2": "And hairstyle"
+        "timestamp": "05:27"
       },
       {
         "id": "phrase_139",
         "text_l1": "الملونة بتقول كثير كثير متحمسة مش قادرة أستنى",
-        "timestamp": "05:29",
-        "text_l2": "Mulawana says she's so, so excited, she can't wait"
+        "timestamp": "05:29"
       },
       {
         "id": "phrase_140",
         "text_l1": "يا الله رح يصير فضيحة اليوم",
-        "timestamp": "05:33",
-        "text_l2": "Oh God, there's going to be a scandal today"
+        "timestamp": "05:33"
       },
       {
         "id": "phrase_141",
         "text_l1": "واو أنتوا البنات جد بتخوفوا",
-        "timestamp": "05:36",
-        "text_l2": "Wow, you girls are really scary"
+        "timestamp": "05:36"
       },
       {
         "id": "phrase_142",
         "text_l1": "جد طلعتوا ألم منا بكثير",
-        "timestamp": "05:39",
-        "text_l2": "You really turned out to be much more cunning than us"
+        "timestamp": "05:39"
       },
       {
         "id": "phrase_143",
         "text_l1": "شو رح نعمل؟",
-        "timestamp": "05:41",
-        "text_l2": "What are we going to do?"
+        "timestamp": "05:41"
       },
       {
         "id": "phrase_144",
         "text_l1": "خلص شو رأيك كمان نروح الحفلة؟",
-        "timestamp": "05:43",
-        "text_l2": "Fine, what do you think if we also go to the party?"
+        "timestamp": "05:43"
       },
       {
         "id": "phrase_145",
         "text_l1": "آه معك حق",
-        "timestamp": "05:45",
-        "text_l2": "Yeah, you're right"
+        "timestamp": "05:45"
       },
       {
         "id": "phrase_146",
         "text_l1": "إذا ما رحنا ما رح نفكر بالموضوع",
-        "timestamp": "05:46",
-        "text_l2": "If we don't go, we won't think about it"
+        "timestamp": "05:46"
       },
       {
         "id": "phrase_147",
         "text_l1": "وما رح نشوف الإحراج اللي رح يصير",
-        "timestamp": "05:48",
-        "text_l2": "And we won't see the embarrassment that will happen"
+        "timestamp": "05:48"
       },
       {
         "id": "phrase_148",
         "text_l1": "وهيك بنرتاح نفسياً",
-        "timestamp": "05:50",
-        "text_l2": "And that way we'll feel better"
+        "timestamp": "05:50"
       },
       {
         "id": "phrase_149",
         "text_l1": "بس لونا لسه رايحة ورح تنحرج كثير",
-        "timestamp": "05:52",
-        "text_l2": "But Luna is still going and she'll be very embarrassed"
+        "timestamp": "05:52"
       },
       {
         "id": "phrase_150",
         "text_l1": "يعني ما رح تعملوا شيء تساعدوها؟",
-        "timestamp": "05:55",
-        "text_l2": "You mean you won't do anything to help her?"
+        "timestamp": "05:55"
       },
       {
         "id": "phrase_151",
         "text_l1": "لو إحنا كان ساعدنا بعض مش زيكم",
-        "timestamp": "05:57",
-        "text_l2": "If it were us, we would have helped each other, not like you"
+        "timestamp": "05:57"
       },
       {
         "id": "phrase_152",
         "text_l1": "آه مستحيل نضل ساكتين",
-        "timestamp": "06:00",
-        "text_l2": "Yeah, it's impossible for us to stay silent"
+        "timestamp": "06:00"
       },
       {
         "id": "phrase_153",
         "text_l1": "يا عطى كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟",
-        "timestamp": "06:04",
-        "text_l2": "Ata, how many times do I have to tell you to fix the pipe on the roof?"
+        "timestamp": "06:04"
       },
       {
         "id": "phrase_154",
         "text_l1": "كل مرة الدنيا بتشتي",
-        "timestamp": "06:08",
-        "text_l2": "Every time it rains"
+        "timestamp": "06:08"
       },
       {
         "id": "phrase_155",
         "text_l1": "الرطوبة بتعبي العمارة",
-        "timestamp": "06:10",
-        "text_l2": "Dampness fills the building"
+        "timestamp": "06:10"
       },
       {
         "id": "phrase_156",
         "text_l1": "خلص يا رجل شوف لك حل",
-        "timestamp": "06:12",
-        "text_l2": "Enough, man, find a solution"
+        "timestamp": "06:12"
       },
       {
         "id": "phrase_157",
         "text_l1": "إنتوا كمان عندكم رطوبة؟",
-        "timestamp": "06:14",
-        "text_l2": "You have dampness too?"
+        "timestamp": "06:14"
       },
       {
         "id": "phrase_158",
         "text_l1": "ولا يهمك أبو سند",
-        "timestamp": "06:16",
-        "text_l2": "Don't worry, Abu Sanad"
+        "timestamp": "06:16"
       },
       {
         "id": "phrase_159",
         "text_l1": "أنا بحل لك إياها وبنص السعر كمان",
-        "timestamp": "06:18",
-        "text_l2": "I'll fix it for you, and at half price too"
+        "timestamp": "06:18"
       },
       {
         "id": "phrase_160",
         "text_l1": "ليكون قاصد ما تصلح الماسورة",
-        "timestamp": "06:21",
-        "text_l2": "Could it be you're intentionally not fixing the pipe?"
+        "timestamp": "06:21"
       },
       {
         "id": "phrase_161",
         "text_l1": "عشان تضل العمارة ترطب ونضل نجيبك كل مرة",
-        "timestamp": "06:24",
-        "text_l2": "So the building stays damp and we keep bringing you back every time"
+        "timestamp": "06:24"
       },
       {
         "id": "phrase_162",
         "text_l1": "وترقع ترقيع",
-        "timestamp": "06:27",
-        "text_l2": "And you just patch it up"
+        "timestamp": "06:27"
       },
       {
         "id": "phrase_163",
         "text_l1": "لا يا أبو سند أنا شو دخلني؟",
-        "timestamp": "06:29",
-        "text_l2": "No, Abu Sanad, what do I have to do with it?"
+        "timestamp": "06:29"
       },
       {
         "id": "phrase_164",
         "text_l1": "أنا ما عملت شيء",
-        "timestamp": "06:31",
-        "text_l2": "I didn't do anything"
+        "timestamp": "06:31"
       },
       {
         "id": "phrase_165",
         "text_l1": "هاي هي المشكلة بحد ذاتها",
-        "timestamp": "06:33",
-        "text_l2": "That is the problem itself"
+        "timestamp": "06:33"
       },
       {
         "id": "phrase_166",
         "text_l1": "إنك ما عملت شيء",
-        "timestamp": "06:35",
-        "text_l2": "That you didn't do anything"
+        "timestamp": "06:35"
       },
       {
         "id": "phrase_167",
         "text_l1": "اللي بيشوف الغلط وما بيصلحه",
-        "timestamp": "06:36",
-        "text_l2": "He who sees a wrong and doesn't fix it"
+        "timestamp": "06:36"
       },
       {
         "id": "phrase_168",
         "text_l1": "وما بيعمل الصح زيه زي اللي عامل الغلط",
-        "timestamp": "06:38",
-        "text_l2": "And doesn't do what's right is just like the one who did the wrong"
+        "timestamp": "06:38"
       },
       {
         "id": "phrase_169",
         "text_l1": "يلا يا أولاد يلا ساعدونا بالتنظيف",
-        "timestamp": "06:42",
-        "text_l2": "Come on, kids, come on, help us clean"
+        "timestamp": "06:42"
       },
       {
         "id": "phrase_170",
         "text_l1": "هاي لونا أسفة جننتك قد ما بعثت مسجات",
-        "timestamp": "06:48",
-        "text_l2": "Hi Luna, sorry I've driven you crazy with all the messages"
+        "timestamp": "06:48"
       },
       {
         "id": "phrase_171",
         "text_l1": "بس في شيء كثير مهم لازم أقولك إياه",
-        "timestamp": "07:07",
-        "text_l2": "But there's something very important I have to tell you"
+        "timestamp": "07:07"
       },
       {
         "id": "phrase_172",
         "text_l1": "بليز رني لي قبل ما تروحي عالحفلة",
-        "timestamp": "07:09",
-        "text_l2": "Please call me before you go to the party"
+        "timestamp": "07:09"
       },
       {
         "id": "phrase_173",
         "text_l1": "ضروري كثير",
-        "timestamp": "07:11",
-        "text_l2": "It's very urgent"
+        "timestamp": "07:11"
       },
       {
         "id": "phrase_174",
         "text_l1": "لونا ردت عليكي لونا مش عم ترد علي",
-        "timestamp": "07:14",
-        "text_l2": "Did Luna reply to you? Luna isn't replying to me"
+        "timestamp": "07:14"
       },
       {
         "id": "phrase_175",
         "text_l1": "لا أنا كمان ما ردت علي",
-        "timestamp": "07:18",
-        "text_l2": "No, she didn't reply to me either"
+        "timestamp": "07:18"
       },
       {
         "id": "phrase_176",
         "text_l1": "هلا أكيد هي بطريق الحفلة",
-        "timestamp": "07:21",
-        "text_l2": "Now she's definitely on her way to the party"
+        "timestamp": "07:21"
       },
       {
         "id": "phrase_177",
         "text_l1": "كان لازم عملنا شيء من قبل",
-        "timestamp": "07:23",
-        "text_l2": "We should have done something before"
+        "timestamp": "07:23"
       },
       {
         "id": "phrase_178",
         "text_l1": "شو رح يصير هلا؟",
-        "timestamp": "07:25",
-        "text_l2": "What will happen now?"
+        "timestamp": "07:25"
       },
       {
         "id": "phrase_179",
         "text_l1": "اسمعي ضل شيء واحد ممكن نعمله",
-        "timestamp": "07:27",
-        "text_l2": "Listen, there's one thing left we can do"
+        "timestamp": "07:27"
       },
       {
         "id": "phrase_180",
         "text_l1": "بس أتوقع ما رح يعجبك كثير",
-        "timestamp": "07:30",
-        "text_l2": "But I expect you won't like it much"
+        "timestamp": "07:30"
       },
       {
         "id": "phrase_181",
         "text_l1": "سالي اتركي هالموبايل",
-        "timestamp": "07:32",
-        "text_l2": "Sally, leave that phone"
+        "timestamp": "07:32"
       },
       {
         "id": "phrase_182",
         "text_l1": "يلا تعالي نظفي معنا ومساعدينا شوي",
-        "timestamp": "07:34",
-        "text_l2": "Come on, come clean with us and help us a bit"
+        "timestamp": "07:34"
       },
       {
         "id": "phrase_183",
         "text_l1": "أسفة بابا بابا في شيء مهم لازم أعمله هلا هلا",
-        "timestamp": "07:36",
-        "text_l2": "Sorry Dad, Dad, there's something important I have to do right now"
+        "timestamp": "07:36"
       },
       {
         "id": "phrase_184",
         "text_l1": "حبيبتي متأكدة إنه وصلت الدعوة صح",
-        "timestamp": "07:43",
-        "text_l2": "Sweetie, are you sure the invitation arrived correctly?"
+        "timestamp": "07:43"
       },
       {
         "id": "phrase_185",
         "text_l1": "ما بدي إياكي تنحرجي",
-        "timestamp": "07:46",
-        "text_l2": "I don't want you to be embarrassed"
+        "timestamp": "07:46"
       },
       {
         "id": "phrase_186",
         "text_l1": "ما تقلقي يا ماما",
-        "timestamp": "07:48",
-        "text_l2": "Don't worry, Mom"
+        "timestamp": "07:48"
       },
       {
         "id": "phrase_187",
         "text_l1": "الكل رح يكون لابس هيك",
-        "timestamp": "07:49",
-        "text_l2": "Everyone will be dressed like this"
+        "timestamp": "07:49"
       },
       {
         "id": "phrase_188",
         "text_l1": "هم حكوا لي هيك رح ننبسط كثير",
-        "timestamp": "07:51",
-        "text_l2": "They told me so, we're going to have a lot of fun"
+        "timestamp": "07:51"
       },
       {
         "id": "phrase_189",
         "text_l1": "اوكي حبيبتي يلا برجع باخذك كمان ساعتين",
-        "timestamp": "07:54",
-        "text_l2": "Okay sweetie, I'll come back to pick you up in two hours"
+        "timestamp": "07:54"
       },
       {
         "id": "phrase_190",
         "text_l1": "بحبك ماما باي",
-        "timestamp": "07:56",
-        "text_l2": "Love you Mom, bye"
+        "timestamp": "07:56"
       },
       {
         "id": "phrase_191",
         "text_l1": "باي",
-        "timestamp": "07:58",
-        "text_l2": "Bye"
+        "timestamp": "07:58"
       },
       {
         "id": "phrase_192",
         "text_l1": "ملونة",
-        "timestamp": "08:11",
-        "text_l2": "Mulawana"
+        "timestamp": "08:11"
       },
       {
         "id": "phrase_193",
         "text_l1": "هاي أسفين عالتاخير",
-        "timestamp": "08:16",
-        "text_l2": "Hi, sorry we're late"
+        "timestamp": "08:16"
       },
       {
         "id": "phrase_194",
         "text_l1": "آه أخذنا وقت نجهز حالنا",
-        "timestamp": "08:18",
-        "text_l2": "Yeah, it took us time to get ready"
+        "timestamp": "08:18"
       },
       {
         "id": "phrase_195",
         "text_l1": "ليش ما حدا منهم لابس بجامة وشعرهم هيك؟",
-        "timestamp": "08:33",
-        "text_l2": "Why is none of them wearing pajamas and their hair like that?"
+        "timestamp": "08:33"
       },
       {
         "id": "phrase_196",
         "text_l1": "لأنهم جبناء",
-        "timestamp": "08:36",
-        "text_l2": "Because they are cowards"
+        "timestamp": "08:36"
       },
       {
         "id": "phrase_197",
         "text_l1": "آه مش جريئين زينا",
-        "timestamp": "08:38",
-        "text_l2": "Yeah, they aren't bold like us"
+        "timestamp": "08:38"
       },
       {
         "id": "phrase_198",
         "text_l1": "إحنا الثلاثة طالعين كثير كول",
-        "timestamp": "08:40",
-        "text_l2": "The three of us look so cool"
+        "timestamp": "08:40"
       },
       {
         "id": "phrase_199",
         "text_l1": "تعالوا تعالوا نتصور",
-        "timestamp": "08:42",
-        "text_l2": "Come on, come on, let's take a picture"
+        "timestamp": "08:42"
       }
     ],
     "phrases_with_token_translations": "[شوفوا] شوفوا البنت الجديدة => [Look], look at the new girl\nشوفوا [شوفوا] البنت الجديدة => Look, [look] at the new girl\nشوفوا شوفوا [البنت الجديدة] => Look, look at [the new girl]\n\n[شوفوا] شو لابسة => [Look at] what she's wearing\nشوفوا [شو] لابسة => Look at [what] she's wearing\nشوفوا شو [لابسة] => Look at what [she's wearing]\n\n[شو] ستايلها قديم => Her style is [so] old\nشو [ستايلها] قديم => [Her style] is so old\nشو ستايلها [قديم] => Her style is so [old]\n\n[شكله] من خزانة أمها => [It looks like] it's from her mother's closet\nشكله [من] خزانة أمها => It looks like [it's from] her mother's closet\nشكله من [خزانة] أمها => It looks like it's from her mother's [closet]\nشكله من خزانة [أمها] => It looks like it's from [her mother's] closet\n\n[قصدك] من خزانة ستها => [You mean] from her grandmother's closet\nقصدك [من] خزانة ستها => You mean [from] her grandmother's closet\nقصدك من [خزانة] ستها => You mean from her grandmother's [closet]\nقصدك من خزانة [ستها] => You mean from [her grandmother's] closet\n\n[شكلها] زي برداية مطبخ ستي => [She looks like] my grandmother's kitchen curtain\nشكلها [زي] برداية مطبخ ستي => She looks [like] my grandmother's kitchen curtain\nشكلها زي [برداية مطبخ ستي] => She looks like [my grandmother's kitchen curtain]\nشكلها زي [برداية] مطبخ ستي => curtain\nشكلها زي برداية [مطبخ] ستي => kitchen\nشكلها زي برداية مطبخ [ستي] => my grandmother's\n\n[صباح الخير] => [Good morning]\n[صباح] الخير => [Good] morning\nصباح [الخير] => Good [morning]\n\n[قبل ما نبدأ] درس اليوم => [Before we start] today's lesson\nقبل ما نبدأ [درس اليوم] => Before we start [today's lesson]\nقبل ما نبدأ [درس] اليوم => Before we start today's [lesson]\nقبل ما نبدأ درس [اليوم] => Before we start [today's] lesson\n\n[بدي] أعرفكم على زميلتكم الجديدة => [I want to] introduce you to your new classmate\nبدي [أعرفكم] على زميلتكم الجديدة => I want to [introduce you] to your new classmate\nبدي أعرفكم [على] زميلتكم الجديدة => I want to introduce you [to] your new classmate\nبدي أعرفكم على [زميلتكم الجديدة] => I want to introduce you to [your new classmate]\nبدي أعرفكم على زميلتكم [الجديدة] => I want to introduce you to your [new] classmate\n\n[لونا]، صح؟ => [Luna], right?\nلونا، [صح]؟ => Luna, [right?]\n\n[مس] مس => [Miss] Miss\nمس [مس] => Miss [Miss]\n\n[بس] هي بتحب النادي الملونة => [But] she likes to be called Mulawana\nبس [هي] بتحب النادي الملونة => But [she] likes to be called Mulawana\nبس هي [بتحب] النادي الملونة => But she [likes] to be called Mulawana\nبس هي بتحب [النادي الملونة] => But she likes [to be called Mulawana]\nبس هي بتحب النادي [الملونة] => But she likes to be called [Mulawana]\n\n[آه] اوكي ملونة => [Oh] okay, Mulawana\nآه [اوكي] ملونة => Oh [okay], Mulawana\nآه اوكي [ملونة] => Oh okay, [Mulawana]\n\n[مبسوطين] إنك معنا => [We're happy] you're with us\nمبسوطين [إنك] معنا => We're happy [you're] with us\nمبسوطين إنك [معنا] => We're happy you're [with us]\n\n[أنا متأكدة] إنك رح تصيري صحبة مع البنات بسرعة => [I'm sure] you'll become friends with the girls quickly\nأنا متأكدة [إنك رح] تصيري صحبة مع البنات بسرعة => I'm sure [you'll] become friends with the girls quickly\nأنا متأكدة إنك رح [تصيري] صحبة مع البنات بسرعة => I'm sure you'll [become] friends with the girls quickly\nأنا متأكدة إنك رح تصيري [صحبة] مع البنات بسرعة => I'm sure you'll become [friends] with the girls quickly\nأنا متأكدة إنك رح تصيري صحبة [مع] البنات بسرعة => I'm sure you'll become friends [with] the girls quickly\nأنا متأكدة إنك رح تصيري صحبة مع [البنات] بسرعة => I'm sure you'll become friends with [the girls] quickly\nأنا متأكدة إنك رح تصيري صحبة مع البنات [بسرعة] => I'm sure you'll become friends with the girls [quickly]\n\n[اليوم] رح نكمل درس الأسبوع الماضي => [Today] we will continue last week's lesson\nاليوم [رح نكمل] درس الأسبوع الماضي => Today [we will continue] last week's lesson\nاليوم رح نكمل [درس الأسبوع الماضي] => Today we will continue [last week's lesson]\n\n[ضرب] الكسور المركبة => [Multiplying] mixed fractions\nضرب [الكسور المركبة] => Multiplying [mixed fractions]\n\n[شتتية دنيتي] => [My world rained]\n\n[تيزي تيزي] => [Tizi tizi]\n\n[دمو] سم => [Dammo] sam\nدمو [سم] => Dammo [sam]\n\n[نويعلى] => [Nway'ala]\n\n[هلا هلا] => [Hala hala]\n\n[هلا هلا] => [Hala hala]\n\n[ألو] أبو أبو النواف => [Hello] Abu Abu Al-Nawaf\nألو [أبو أبو النواف] => Hello [Abu Abu Al-Nawaf]\n\n[كيف] حالك؟ => [How] are you?\nكيف [حالك؟] => How [are you?]\n\n[شو] أخبارك؟ => [What's] your news?\nشو [أخبارك؟] => What's [your news?]\n\n[كيف] الشتوية معك خيو؟ => [How] is the winter with you, brother?\nكيف [الشتوية] معك خيو؟ => How [is the winter] with you, brother?\nكيف الشتوية [معك] خيو؟ => How is the winter [with you], brother?\nكيف الشتوية معك [خيو]؟ => How is the winter with you, [brother]?\n\n[الحمد لله] => [Thank God]\n\n[الحمد لله] على المطر يا عطى => [Thank God] for the rain, Ata\nالحمد لله [على] المطر يا عطى => Thank God [for] the rain, Ata\nالحمد لله على [المطر] يا عطى => Thank God for [the rain], Ata\nالحمد لله على المطر يا [عطى] => Thank God for the rain, [Ata]\n\n[شو] الواحد بده يحكي غير هيك => [What] else can one say\nشو [الواحد] بده يحكي غير هيك => What else can [one] say\nشو الواحد [بده] يحكي غير هيك => What else can one say # بده means \"wants\" but here functions as \"can\"\nشو الواحد بده [يحكي] غير هيك => What else can one [say]\nشو الواحد بده يحكي [غير] هيك => What [else] can one say\n\n[الحمد لله] الحمد لله => [Thank God], thank God\nالحمد لله [الحمد لله] => Thank God, [thank God]\n\n[اسمع] إذا الحيطان عندك رطبوا => [Listen], if your walls got damp\nاسمع [إذا] الحيطان عندك رطبوا => Listen, [if] your walls got damp\nاسمع إذا [الحيطان] عندك رطبوا => Listen, if [your walls] got damp\nاسمع إذا الحيطان عندك [رطبوا] => Listen, if your walls [got damp]\n\n[طلع] عليهن عفن => [And appeared] on them mold # طلع means \"appeared\" and \"And\" is added in English\nطلع [عليهن] عفن => And appeared [on them] mold\nطلع عليهن [عفن] => And appeared on them [mold]\n[طلع عليهن عفن] => [And mold appeared on them]\n\n[بس] رن علي => [Just] call me\nبس [رن] علي => Just [call] me\nبس رن [علي] => Just call [me]\n\n[باجي] عالسريع => [I'll come] quickly\nباجي [عالسريع] => I'll come [quickly]\n\n[لا] حبيبي => [No], my dear\nلا [حبيبي] => No, [my dear]\n\n[باخذ] زي المرة الماضية => [I'll take] the same as last time\nباخذ [زي] المرة الماضية => I'll take [the same as] last time\nباخذ زي [المرة الماضية] => I'll take the same as [last time]\n\n[وفوقيهم] 10% => [Plus] 10%\nوفوقيهم [10%] => Plus [10%]\n\n[شو] شفت الجمعية الخيرية؟ => [What], did you think this was a charity?\nشو [شفت] الجمعية الخيرية؟ => What, [did you think] this was a charity?\nشو شفت [الجمعية الخيرية]؟ => What, did you think this was a [charity]?\n\n[أهليين] => [Welcome]\n\n[ما أنا صرت] محترف => [I've become] a professional now\nما أنا صرت [محترف] => I've become [a professional] now\n\n[بخلص] كل الشغل حبيبي عالسريع => [I finish] all the work quickly, my dear\nبخلص [كل] الشغل حبيبي عالسريع => I finish [all] the work quickly, my dear\nبخلص كل [الشغل] حبيبي عالسريع => I finish all [the work] quickly, my dear\nبخلص كل الشغل [حبيبي] عالسريع => I finish all the work quickly, [my dear]\nبخلص كل الشغل حبيبي [عالسريع] => I finish all the work [quickly], my dear\n\n[يلا] حبيبي بستنى تليفونك => [Alright], my dear, I'm waiting for your call\nيلا [حبيبي] بستنى تليفونك => Alright, [my dear], I'm waiting for your call\nيلا حبيبي [بستنى] تليفونك => Alright, my dear, [I'm waiting] for your call\nيلا حبيبي بستنى [تليفونك] => Alright, my dear, I'm waiting for [your call]\n\n[مش تنسى] => [Don't forget]\n\n[سلام] => [Peace]\n\n[شتتية] دنيتي => My world [rained]\nشتتية [دنيتي] => [My world] rained\n\n[تيزي] تيزي => [Tizi] tizi\nتيزي [تيزي] => Tizi [tizi]\n\n[دمو] سم => [Dammo] sam\nدمو [سم] => Dammo [sam]\n\n[نويعلى] => [Nway'ala]\n\n[هلا] هلا => [Hala] hala\nهلا [هلا] => Hala [hala]\n\n[هلا] هلا => [Hala] hala\nهلا [هلا] => Hala [hala]\n\n[ماما] لا تعالي خذيني هلا => [Mom], no, come pick me up now\nماما [لا] تعالي خذيني هلا => Mom, [no], come pick me up now\nماما لا [تعالي] خذيني هلا => Mom, no, [come] pick me up now\nماما لا تعالي [خذيني] هلا => Mom, no, come [pick me up] now\nماما لا تعالي خذيني [هلا] => Mom, no, come pick me up [now]\n\n[ما حدا] يحبني هون => [No one] likes me here\nما حدا [يحبني] هون => No one [likes me] here\nما حدا يحبني [هون] => No one likes me [here]\n\n[وكلهم] عم بيضحكوا علي => [And they are all] laughing at me\nوكلهم [عم بيضحكوا] علي => And they are all [laughing] at me\nوكلهم عم بيضحكوا [علي] => And they are all laughing [at me]\n\n[مش قادرة] مش قادرة أتحمل => [I can't], I can't bear it\nمش قادرة [مش قادرة] أتحمل => I can't, [I can't] bear it\nمش قادرة مش قادرة [أتحمل] => I can't, I can't [bear it]\n\n[خلص] بليز تعالي خذيني => [Enough], please come pick me up\nخلص [بليز] تعالي خذيني => Enough, [please] come pick me up\nخلص بليز [تعالي] خذيني => Enough, please [come] pick me up\nخلص بليز تعالي [خذيني] => Enough, please come [pick me up]\n\n[وين] راحت الشمسية؟ => [Where] did the umbrella go?\nوين [راحت] الشمسية؟ => Where did the umbrella [go]?\nوين راحت [الشمسية]؟ => Where did [the umbrella] go?\n\n[رطوبة] لا حول ولا قوة => [Dampness], there is no power or strength but with God\nرطوبة [لا حول ولا قوة] => Dampness, [there is no power or strength but with God]\n\n[كيف] عرف عطى إنه هيك رح يصير؟ => [How] did Ata know this would happen?\nكيف [عرف] عطى إنه هيك رح يصير؟ => How did Ata [know] this would happen?\nكيف عرف [عطى] إنه هيك رح يصير؟ => How did [Ata] know this would happen?\nكيف عرف عطى [إنه] هيك رح يصير؟ => that\nكيف عرف عطى إنه [هيك رح يصير]؟ => How did Ata know [this would happen]?\n\n[أكيد] في إنّ => There's [definitely] something fishy\nأكيد [في] إنّ => [There's] definitely something fishy\nأكيد في [إنّ] => There's definitely [something fishy]\n\n[لا] لا لا لا أنا أكيد => [No] no no no, I'm sure\nلا [لا] لا لا أنا أكيد => No [no] no no, I'm sure\nلا لا [لا] لا أنا أكيد => No no [no] no, I'm sure\nلا لا لا [لا] أنا أكيد => No no no [no], I'm sure\nلا لا لا لا [أنا] أكيد => No no no no, [I'm] sure\nلا لا لا لا أنا [أكيد] => No no no no, I'm [sure]\n\n[ولا يمكن] => [No way]\n\n[هسا] إذا عرفت أم إنصاف بالموضوع => [Now] if Um Insaf finds out about this\nهسا [إذا] عرفت أم إنصاف بالموضوع => Now [if] Um Insaf finds out about this\nهسا إذا عرفت [أم إنصاف] بالموضوع => Now if [Um Insaf] finds out about this\nهسا إذا [عرفت] أم إنصاف بالموضوع => Now if Um Insaf [finds out] about this\nهسا إذا عرفت أم إنصاف [بالموضوع] => Now if Um Insaf finds out [about this]\n\n[رح تخلينا] ندهن الدار => [She'll make us] paint the house\nرح تخلينا [ندهن] الدار => She'll make us [paint] the house\nرح تخلينا ندهن [الدار] => She'll make us paint [the house]\n\n[وبعدين] بصير بدها تغير العفش => [And then] she'll want to change the furniture\nوبعدين بصير بدها [تغير] العفش => And then she'll want [to change] the furniture\nوبعدين بصير بدها تغير [العفش] => And then she'll want to change [the furniture]\n\n[مش معقول] => [Unbelievable]\n\n[عشان] يليق على لون الحيطان الجديد => [So] it matches the new wall color\nعشان [يليق على] لون الحيطان الجديد => So [it matches] the new wall color\nعشان يليق على [لون الحيطان الجديد] => So it matches [the new wall color]\n\n[ما هو] ما بينفع الفرش القديم => [Because] the old furniture won't work\nما هو [ما بينفع] الفرش القديم => Because the old furniture [won't work]\nما هو ما بينفع [الفرش القديم] => Because [the old furniture] won't work\n\n[عالدهان الجديد] => [With the new paint]\nعالدهان [الجديد] => With the [new] paint\n\n[لا] لا لا لا لا => [No] no no no no\nلا [لا] لا لا لا => No [no] no no no\nلا لا [لا] لا لا => No no [no] no no\nلا لا لا [لا] لا => No no no [no] no\nلا لا لا لا [لا] => No no no no [no]\n\n[بنات] بعثت لكم مسج => [Girls,] I sent you a message\nبنات [بعثت] لكم مسج => Girls, [I sent] you a message\nبنات بعثت [لكم] مسج => Girls, I sent [you] a message\nبنات بعثت لكم [مسج] => Girls, I sent you [a message]\n\n[عشان] تيجوا على عيد ميلادي => [So] you come to my birthday\nعشان [تيجوا] على عيد ميلادي => So [you come] to my birthday\nعشان تيجوا [على] عيد ميلادي => So you come [to] my birthday\nعشان تيجوا على [عيد ميلادي] => So you come to [my birthday]\n\n[شفتوها]؟ => [Did you see it?]\n\n[آه] كثير متحمسة => [Yes], I'm so excited\nآه [كثير] متحمسة => Yes, I'm [so] excited\nآه كثير [متحمسة] => Yes, I'm so [excited]\n\n[كل] حفلة بتعمليها أحلى من الثانية => [Every] party you throw is better than the last\nكل [حفلة] بتعمليها أحلى من الثانية => Every [party] you throw is better than the last\nكل حفلة [بتعمليها] أحلى من الثانية => Every party [you throw] is better than the last\nكل حفلة بتعمليها [أحلى] من الثانية => Every party you throw is [better] than the last\nكل حفلة بتعمليها أحلى [من] الثانية => Every party you throw is better [than] the last\nكل حفلة بتعمليها أحلى من [الثانية] => Every party you throw is better than [the last]\n\n[آه] طبعاً => [Yes], of course\nآه [طبعاً] => Yes, [of course]\n\n[كلكم] رح تيجوا صح؟ => [You're all] coming, right?\nكلكم [رح تيجوا] صح؟ => You're all [coming], right?\nكلكم رح تيجوا [صح]؟ => You're all coming, [right]?\n\n[آه] أكيد أكيد رح نيجي => [Yes], definitely, definitely we'll come\nآه [أكيد] أكيد رح نيجي => Yes, [definitely], definitely we'll come\nآه أكيد [أكيد] رح نيجي => Yes, definitely, [definitely] we'll come\nآه أكيد أكيد [رح نيجي] => Yes, definitely, definitely [we'll come]\n\n[سالي] إنتي جاية صح؟ => [Sally], you're coming, right?\nسالي [إنتي] جاية صح؟ => Sally, [you're] coming, right?\nسالي إنتي [جاية] صح؟ => Sally, you're [coming], right?\nسالي إنتي جاية [صح]؟ => Sally, you're coming, [right]?\n\n[إيه] آه آه أكيد جاي => [Yeah], yeah, definitely coming\nإيه [آه] آه أكيد جاي => Yeah, [yeah], definitely coming\nإيه آه [آه] أكيد جاي => yeah # emphatic particle\nإيه آه آه [أكيد] جاي => Yeah, yeah, [definitely] coming\nإيه آه آه أكيد [جاي] => Yeah, yeah, definitely [coming]\n\n[وشو] رأيك تعزمي لونا كمان؟ => [And what] do you think about inviting Luna too?\nوشو [رأيك] تعزمي لونا كمان؟ => And what [do you think] about inviting Luna too?\nوشو رأيك [تعزمي] لونا كمان؟ => to invite # custom - verb form\nوشو رأيك تعزمي [لونا] كمان؟ => And what do you think about inviting [Luna] too?\nوشو رأيك تعزمي لونا [كمان]؟ => And what do you think about inviting Luna [too]?\n\n[ملونة]؟ => [Mulawana]?\n\n[تمزحي] صح؟ => [You're joking], right?\nتمزحي [صح]؟ => You're joking, [right]?\n\n[ليش] نعزمها إن شاء الله؟ => [Why] on earth would we invite her?\nليش [نعزمها] إن شاء الله؟ => Why [would we invite her] on earth?\nليش نعزمها [إن شاء الله]؟ => on earth # custom - emphatic use meaning \"why on earth\"\n\n[ليش] لا؟ => [Why] not?\nليش [لا]؟ => Why [not]?\n\n[بحس] لازم نتعرف عليها أكثر => [I feel] we should get to know her more\nبحس [لازم] نتعرف عليها أكثر => I feel we [should] get to know her more\nبحس [لازم نتعرف] عليها أكثر => I feel [we should get to know] her more\nبحس لازم [نتعرف] عليها أكثر => I feel we should [get to know] her more\nبحس لازم نتعرف [عليها] أكثر => I feel we should get to know [her] more\nبحس لازم نتعرف عليها [أكثر] => I feel we should get to know her [more]\n\n[آه] معك حق => [Yeah], you're right\nآه [معك حق] => Yeah, [you're right]\nآه معك [حق] => Yeah, you're [right]\n\n[ماشي] بنعزمها => [Okay], we'll invite her\nماشي [بنعزمها] => Okay, [we'll invite her]\n\n[بس] بشرط => [But] on one condition\nبس [بشرط] => But [on one condition]\n\n[بنحكي] لها إنه الجاس كود => [We tell] her the dress code\nبنحكي [لها] إنه الجاس كود => We tell [her] the dress code\nبنحكي لها إنه [الجاس] كود => We tell her [the dress] code\nبنحكي لها إنه الجاس [كود] => We tell her the dress [code]\nبنحكي لها إنه [الجاس كود] => We tell her [the dress code]\n\n[بجامة] وشعر منكوش => Is [pajamas] and messy hair\nبجامة [و] شعر منكوش => Is pajamas [and] messy hair\nبجامة و[شعر منكوش] => Is pajamas and [messy hair]\n\n[بس] كلنا نيجي لابسين فساتين => [But] we all come wearing dresses\nبس [كلنا] نيجي لابسين فساتين => But [we all] come wearing dresses\nبس كلنا [نيجي] لابسين فساتين => But we all [come] wearing dresses\nبس كلنا نيجي [لابسين] فساتين => But we all come [wearing] dresses\nبس كلنا نيجي لابسين [فساتين] => But we all come wearing [dresses]\n\n[و] شعرنا مظبط => [And] our hair done\nو [شعرنا] مظبط => And [our hair] done\nو شعرنا [مظبط] => And our hair [done]\n\n[ما عدا] هي => [Except for] her\nما عدا [هي] => Except for [her]\n[ما عدا هي] => [Except for her]\n\n[كيف] خطرت لك هاي الفكرة؟ => [How] did you think of this idea?\nكيف [خطرت لك] هاي الفكرة؟ => How [did you think of] this idea?\nكيف خطرت لك [هاي] الفكرة؟ => How did you think of [this] idea?\nكيف خطرت لك هاي [الفكرة]؟ => How did you think of this [idea]?\nكيف خطرت لك [هاي الفكرة]؟ => How did you think of [this idea]?\n\n[إنتي] عبقرية => [You're] a genius\nإنتي [عبقرية] => You're [a genius]\n[إنتي عبقرية] => [You're a genius]\n\n[رح] تطلع زي المهرج => [She'll] look like a clown\nرح [تطلع] زي المهرج => She'll [look] like a clown\nرح تطلع [زي] المهرج => She'll look [like] a clown\nرح تطلع زي [المهرج] => She'll look like [a clown]\n\n[يا الله] مش قادرة أتخيل كيف رح يكون منظرها => [Oh God], I can't imagine how she'll look\nيا الله [مش قادرة] أتخيل كيف رح يكون منظرها => Oh God, [I can't] imagine how she'll look\nيا الله مش قادرة [أتخيل] كيف رح يكون منظرها => Oh God, I can't [imagine] how she'll look\nيا الله مش قادرة أتخيل [كيف رح يكون منظرها] => Oh God, I can't imagine [how she'll look]\n\n[كثير بيضحك] صح سالي؟ => [It's so funny], right Sally?\nكثير بيضحك [صح] سالي؟ => It's so funny, [right] Sally?\nكثير بيضحك صح [سالي]؟ => It's so funny, right [Sally]?\n\n[آه] كثير بيضحك => [Yes], very funny\nآه [كثير] بيضحك => Yes, [very] funny\nآه كثير [بيضحك] => Yes, very [funny]\n\n[ملونة] ملونة اسمعي => [Mulawana], Mulawana, listen\nملونة [ملونة] اسمعي => Mulawana, [Mulawana], listen\nملونة ملونة [اسمعي] => Mulawana, Mulawana, [listen]\n\n[بدي] أعزمك على عيد ميلادي بكرة => [I want] to invite you to my birthday tomorrow\nبدي [أعزمك] على عيد ميلادي بكرة => I want [to invite you] to my birthday tomorrow\nبدي أعزمك [على] عيد ميلادي بكرة => I want to invite you [to] my birthday tomorrow\nبدي أعزمك على [عيد ميلادي] بكرة => I want to invite you to [my birthday] tomorrow\nبدي أعزمك على عيد ميلادي [بكرة] => I want to invite you to my birthday [tomorrow]\n\n[إذا] فاضية بكرة طبعاً => [If] you're free tomorrow, of course\nإذا [فاضية] بكرة طبعاً => If [you're free] tomorrow, of course\nإذا فاضية [بكرة] طبعاً => If you're free [tomorrow], of course\nإذا فاضية بكرة [طبعاً] => If you're free tomorrow, [of course]\n\n[مين] أنا؟ => [Who], me?\nمين [أنا]؟ => Who, [me]?\n\n[عن جد] عن جد بدكم تعزموني أنا؟ => [Really], really, you want to invite me?\nعن جد [عن جد] بدكم تعزموني أنا؟ => Really, [really], you want to invite me?\nعن جد عن جد [بدكم] تعزموني أنا؟ => Really, really, [you want] to invite me?\nعن جد عن جد بدكم [تعزموني] أنا؟ => Really, really, you want [to invite me]?\n\n[آه] حابين نتعرف عليكي كثير => [Yes], we'd love to get to know you a lot\nآه [حابين] نتعرف عليكي كثير => Yes, [we'd love] to get to know you a lot\nآه حابين [نتعرف عليكي] كثير => Yes, we'd love [to get to know you] a lot\nآه حابين نتعرف عليكي [كثير] => Yes, we'd love to get to know you [a lot]\n\n[اوكي] أكيد باجي => [Okay], I'll definitely come\nاوكي [أكيد] باجي => Okay, [definitely] I'll come\nاوكي أكيد [باجي] => Okay, definitely [I'll come]\n\n[ممتاز] اسمعي => [Excellent], listen\nممتاز [اسمعي] => Excellent, [listen]\n\n[البسي] أبشع بجامة عندك => [Wear] the ugliest pajamas you have\nالبسي [أبشع] بجامة عندك => Wear the [ugliest] pajamas you have\nالبسي أبشع [بجامة] عندك => Wear the ugliest [pajamas] you have\nالبسي أبشع بجامة [عندك] => Wear the ugliest pajamas [you have]\n\n[وخلي] شعرك كثير منكوش => [And keep] your hair very messy\nوخلي [شعرك] كثير منكوش => And keep [your hair] very messy\nوخلي شعرك [كثير] منكوش => And keep your hair [very] messy\nوخلي شعرك كثير [منكوش] => And keep your hair very [messy]\n\n[أصلاً] الجاس كود بجامة وشعر منكوش => [Actually,] the dress code is pajamas and messy hair\nأصلاً [الجاس كود] بجامة وشعر منكوش => Actually, [the dress code] is pajamas and messy hair\nأصلاً الجاس كود [بجامة] وشعر منكوش => Actually, the dress code is [pajamas] and messy hair\nأصلاً الجاس كود بجامة [وشعر منكوش] => Actually, the dress code is pajamas [and messy hair]\n\n[آه] ورح يكون في جائزة => [Yes,] and there will be a prize\nآه [ورح يكون في] جائزة => Yes, [and there will be] a prize\nآه ورح يكون في [جائزة] => Yes, and there will be [a prize]\n\n[لأكثر] لوك مجنون => [For the] craziest look\nلأكثر [لوك] مجنون => For the [look] craziest\nلأكثر لوك [مجنون] => For the look [craziest]\n\n[يا الله] أكيد رح ننبسط => [Oh God,] we'll definitely have fun\nيا الله [أكيد] رح ننبسط => Oh God, [definitely] we'll have fun\nيا الله أكيد [رح ننبسط] => Oh God, definitely [we'll have fun]\n\n[اوكي] خلص بدي أفك عالجروب => [Okay,] I'm going to post on the group\nاوكي [خلص بدي أفك] عالجروب => Okay, [I'm going to post] on the group\nاوكي خلص بدي أفك [عالجروب] => Okay, I'm going to post [on the group]\n\n[وببعث] لك كل التفاصيل بكرة => [And I'll send] you all the details tomorrow\nوببعث [لك] كل التفاصيل بكرة => And I'll send [you] all the details tomorrow\nوببعث لك [كل] التفاصيل بكرة => And I'll send you [all] the details tomorrow\nوببعث لك كل [التفاصيل] بكرة => And I'll send you all [the details] tomorrow\nوببعث لك كل التفاصيل [بكرة] => And I'll send you all the details [tomorrow]\n\n[شكراً] كثير عشانكم عزمتوني => [Thank you] so much for inviting me\nشكراً [كثير] عشانكم عزمتوني => Thank you [so much] for inviting me\nشكراً كثير [عشانكم عزمتوني] => Thank you so much [for inviting me]\n\n[كثير كثير] متحمسة => [so, so] excited\nكثير كثير [متحمسة] => so, so [excited]\n\n[مش قادرة] أستنى => [I can't] wait\nمش قادرة [أستنى] => I can't [wait]\n\n[ألو] => [Hello]\n\n[مش معقول] إنت يا زلمة => You're [unbelievable], man\nمش معقول [إنت] يا زلمة => [You're] unbelievable, man\nمش معقول إنت [يا زلمة] => You're unbelievable, [man]\n\n[كيف] هيك عرفت إنه حيطان القعدة مرطبة؟ => [How] did you know the living room walls are damp?\nكيف هيك [عرفت] إنه حيطان القعدة مرطبة؟ => How [did you know] the living room walls are damp?\nكيف هيك عرفت [إنه] حيطان القعدة مرطبة؟ => How did you know [that] the living room walls are damp?\nكيف هيك عرفت إنه [حيطان القعدة] مرطبة؟ => How did you know that [the living room walls] are damp?\nكيف هيك عرفت إنه حيطان القعدة [مرطبة]؟ => How did you know that the living room walls [are damp]?\n\n[إذا] فاضي هذا الأسبوع تعال => [If] you're free this week, come\nإذا [فاضي] هذا الأسبوع تعال => If [you're free] this week, come\nإذا فاضي [هذا الأسبوع] تعال => If you're free [this week], come\nإذا فاضي هذا الأسبوع [تعال] => If you're free this week, [come]\n\n[طب] يا زلمة لا تقتل الهم => [Well], man, don't worry\nطب [يا زلمة] لا تقتل الهم => Well, [man], don't worry\nطب يا زلمة [لا تقتل الهم] => Well, man, [don't worry]\n\n[موضوعك] سهل جداً => [Your issue] is very easy\nموضوعك [سهل جداً] => Your issue is [very easy]\n\n[ساعتين] وبيكونوا الحيطان يلمعن لمع => [Two hours] and the walls will be shining\nساعتين [و] بيكونوا الحيطان يلمعن لمع => Two hours [and] the walls will be shining\nساعتين و [بيكونوا الحيطان] يلمعن لمع => Two hours and [the walls will be] shining\nساعتين وبيكونوا الحيطان [يلمعن لمع] => Two hours and the walls will be [shining]\n\n[وكله] بس ب 150 ليرة => [And all] for just 150 Dinars\nوكله [بس ب 150 ليرة] => And all [for just 150 Dinars]\n\n[اسمع] هذا السعر بس للعائلات الحبايب => [Listen], this price is only for beloved families\nاسمع [هذا السعر] بس للعائلات الحبايب => Listen, [this price] is only for beloved families\nاسمع هذا السعر [بس] للعائلات الحبايب => Listen, this price [is only] for beloved families\nاسمع هذا السعر بس [للعائلات الحبايب] => Listen, this price is only [for beloved families]\n\n[يعني] للروح للروح => [Like], for the dearest friends\nيعني [للروح للروح] => Like, [for the dearest friends]\n\n[لا تشكرني ولا أشكرك] => [No need for thanks between us]\n\n[وين] رطوبة بالضبط؟ => [Where] is the dampness exactly?\nوين [رطوبة] بالضبط؟ => Where is [the dampness] exactly?\nوين رطوبة [بالضبط]؟ => Where is the dampness [exactly]?\n\n[آه] هيها شفتها => [Ah], there it is, I see it\nآه [هيها] شفتها => Ah, [there it is], I see it\nآه هيها [شفتها] => Ah, there it is, [I see it]\n\n[أهلاً وسهلاً] ملونة => [Welcome], Mulawana\nأهلاً وسهلاً [ملونة] => Welcome, [Mulawana]\n\n[في] جروب حفلة عيد ميلادي => [To] my birthday party group\nفي جروب [حفلة] عيد ميلادي => To my birthday [party] group\nفي جروب حفلة [عيد ميلادي] => To my [birthday] party group\nفي [جروب] حفلة عيد ميلادي => To my birthday party [group]\n\n[كلنا] متحمسين تكوني معنا => [We're all] excited for you to be with us\nكلنا [متحمسين] تكوني معنا => We're all [excited] for you to be with us\nكلنا متحمسين [تكوني معنا] => We're all excited [for you to be with us]\n\n[و]نشوفك بأغرب بجامة => [And] to see you in the weirdest pajamas\n[ونشوفك] بأغرب بجامة => [And to see you] in the weirdest pajamas\nونشوفك [بأغرب] بجامة => And to see you [in the weirdest] pajamas\nونشوفك بأغرب [بجامة] => And to see you in the weirdest [pajamas]\n\n[و]تسريحة شعر => [And] hairstyle\nو[تسريحة شعر] => And [hairstyle]\n\n[الملونة] بتقول كثير كثير متحمسة مش قادرة أستنى => [Mulawana] says she's so, so excited, she can't wait\nالملونة [بتقول] كثير كثير متحمسة مش قادرة أستنى => Mulawana [says] she's so, so excited, she can't wait\nالملونة بتقول [كثير كثير] متحمسة مش قادرة أستنى => Mulawana says she's [so, so] excited, she can't wait\nالملونة بتقول كثير كثير [متحمسة] مش قادرة أستنى => Mulawana says she's so, so [excited], she can't wait\nالملونة بتقول كثير كثير متحمسة [مش قادرة أستنى] => Mulawana says she's so, so excited, [she can't wait]\n\n[يا الله] رح يصير فضيحة اليوم => [Oh God], there's going to be a scandal today\nيا الله [رح يصير] فضيحة اليوم => Oh God, [there's going to be] a scandal today\nيا الله رح يصير [فضيحة] اليوم => Oh God, there's going to be a [scandal] today\nيا الله رح يصير فضيحة [اليوم] => Oh God, there's going to be a scandal [today]\n\n[واو] أنتوا البنات جد بتخوفوا => [Wow], you girls are really scary\nواو [أنتوا البنات] جد بتخوفوا => Wow, [you girls] are really scary\nواو أنتوا البنات [جد] بتخوفوا => Wow, you girls are [really] scary\nواو أنتوا البنات جد [بتخوفوا] => Wow, you girls are really [scary]\n\n[جد] طلعتوا ألم منا بكثير => You [really] turned out to be much more cunning than us\nجد [طلعتوا] ألم منا بكثير => You really [turned out to be] much more cunning than us\nجد طلعتوا [ألم منا بكثير] => You really turned out to be [much more cunning than us]\n\n[شو] رح نعمل؟ => [What] are we going to do?\nشو [رح نعمل]؟ => What [are we going to do]?\n\n[خلص] شو رأيك كمان نروح الحفلة؟ => [Fine], what do you think if we also go to the party?\nخلص [شو رأيك] كمان نروح الحفلة؟ => Fine, [what do you think] if we also go to the party?\nخلص شو رأيك [كمان] نروح الحفلة؟ => Fine, what do you think if we [also] go to the party?\nخلص شو رأيك كمان [نروح] الحفلة؟ => Fine, what do you think if we also [go] to the party?\nخلص شو رأيك كمان نروح [الحفلة]؟ => Fine, what do you think if we also go to [the party]?\n\n[آه] معك حق => [Yeah], you're right\nآه [معك حق] => Yeah, [you're right]\n\n[إذا] ما رحنا ما رح نفكر بالموضوع => [If] we don't go, we won't think about it\nإذا [ما رحنا] ما رح نفكر بالموضوع => If [we don't go], we won't think about it\nإذا ما رحنا [ما رح نفكر] بالموضوع => If we don't go, [we won't think] about it\nإذا ما رحنا ما رح نفكر [بالموضوع] => If we don't go, we won't think [about it]\n\n[وما رح نشوف] الإحراج اللي رح يصير => [And we won't see] the embarrassment that will happen\nوما رح نشوف [الإحراج] اللي رح يصير => And we won't see [the embarrassment] that will happen\nوما رح نشوف الإحراج [اللي رح يصير] => And we won't see the embarrassment [that will happen]\n\n[وهيك] بنرتاح نفسياً => [And that way] we'll feel better\nوهيك [بنرتاح نفسياً] => And that way [we'll feel better]\n\n[بس] لونا لسه رايحة ورح تنحرج كثير => [But] Luna is still going and she'll be very embarrassed\nبس [لونا] لسه رايحة ورح تنحرج كثير => But [Luna] is still going and she'll be very embarrassed\nبس لونا [لسه] رايحة ورح تنحرج كثير => But Luna [is still] going and she'll be very embarrassed\nبس لونا لسه [رايحة] ورح تنحرج كثير => But Luna is still [going] and she'll be very embarrassed\nبس لونا لسه رايحة [ورح] تنحرج كثير => But Luna is still going [and she'll] be very embarrassed\nبس لونا لسه رايحة ورح [تنحرج] كثير => be embarrassed\nبس لونا لسه رايحة ورح تنحرج [كثير] => But Luna is still going and she'll be [very] embarrassed\n\n[يعني] ما رح تعملوا شيء تساعدوها؟ => [You mean] you won't do anything to help her?\nيعني [ما رح تعملوا] شيء تساعدوها؟ => You mean [you won't do] anything to help her?\nيعني ما رح تعملوا [شيء] تساعدوها؟ => You mean you won't do [anything] to help her?\nيعني ما رح تعملوا شيء [تساعدوها]؟ => You mean you won't do anything [to help her]?\n\n[لو إحنا] كان ساعدنا بعض مش زيكم => [If it were us], we would have helped each other, not like you\nلو إحنا [كان ساعدنا] بعض مش زيكم => If it were us, [we would have helped] each other, not like you\nلو إحنا كان ساعدنا [بعض] مش زيكم => If it were us, we would have helped [each other], not like you\nلو إحنا كان ساعدنا بعض [مش زيكم] => If it were us, we would have helped each other, [not like you]\n\n[آه] مستحيل نضل ساكتين => [Yeah], it's impossible for us to stay silent\nآه [مستحيل] نضل ساكتين => Yeah, [it's impossible] for us to stay silent\nآه مستحيل [نضل ساكتين] => Yeah, it's impossible [for us to stay silent]\n\n[يا عطى] كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟ => [Ata], how many times do I have to tell you to fix the pipe on the roof?\nيا عطى [كم مرة] بدي أقولك تصلح الماسورة اللي عالسطح؟ => Ata, [how many times] do I have to tell you to fix the pipe on the roof?\nيا عطى كم مرة [بدي أقولك] تصلح الماسورة اللي عالسطح؟ => Ata, how many times [do I have to tell you] to fix the pipe on the roof?\nيا عطى كم مرة بدي أقولك [تصلح] الماسورة اللي عالسطح؟ => Ata, how many times do I have to tell you [to fix] the pipe on the roof?\nيا عطى كم مرة بدي أقولك تصلح [الماسورة] اللي عالسطح؟ => Ata, how many times do I have to tell you to fix [the pipe] on the roof?\nيا عطى كم مرة بدي أقولك تصلح الماسورة [اللي عالسطح]؟ => Ata, how many times do I have to tell you to fix the pipe [on the roof]?\n\n[كل مرة] الدنيا بتشتي => [Every time] it rains\nكل مرة [الدنيا بتشتي] => Every time [it rains]\n\n[الرطوبة] بتعبي العمارة => [Dampness] fills the building\nالرطوبة [بتعبي] العمارة => Dampness [fills] the building\nالرطوبة بتعبي [العمارة] => Dampness fills [the building]\n\n[خلص] يا رجل شوف لك حل => [Enough], man, find a solution\nخلص [يا رجل] شوف لك حل => Enough, [man], find a solution\nخلص يا رجل [شوف لك حل] => Enough, man, [find a solution]\n\n[إنتوا] كمان عندكم رطوبة؟ => [You] have dampness too?\nإنتوا [كمان] عندكم رطوبة؟ => You have dampness [too]?\nإنتوا كمان [عندكم] رطوبة؟ => You [have] dampness too?\nإنتوا كمان عندكم [رطوبة]؟ => You have [dampness] too?\n\n[ولا يهمك] أبو سند => [Don't worry], Abu Sanad\nولا يهمك [أبو سند] => Don't worry, [Abu Sanad]\n\n[أنا بحل] لك إياها وبنص السعر كمان => [I'll fix] it for you, and at half price too\nأنا بحل [لك إياها] وبنص السعر كمان => I'll fix [it for you], and at half price too\nأنا بحل لك إياها [وبنص السعر] كمان => I'll fix it for you, [and at half price] too\nأنا بحل لك إياها وبنص السعر [كمان] => I'll fix it for you, and at half price [too]\n\n[ليكون] قاصد ما تصلح الماسورة => [Could it be] you're intentionally not fixing the pipe?\nليكون [قاصد ما تصلح] الماسورة => Could it be [you're intentionally not fixing] the pipe?\nليكون قاصد ما تصلح [الماسورة] => Could it be you're intentionally not fixing [the pipe]?\n\n[عشان] تضل العمارة ترطب ونضل نجيبك كل مرة => [So] the building stays damp and we keep bringing you back every time\nعشان [تضل العمارة] ترطب ونضل نجيبك كل مرة => So [the building stays] damp and we keep bringing you back every time\nعشان تضل [العمارة] ترطب ونضل نجيبك كل مرة => So [the building] stays damp and we keep bringing you back every time\nعشان تضل العمارة [ترطب] ونضل نجيبك كل مرة => So the building [stays damp] and we keep bringing you back every time\nعشان تضل العمارة ترطب [ونضل] نجيبك كل مرة => So the building stays damp [and we keep] bringing you back every time\nعشان تضل العمارة ترطب ونضل [نجيبك] كل مرة => So the building stays damp and [bringing you back] every time\nعشان تضل العمارة ترطب ونضل نجيبك [كل مرة] => So the building stays damp and we keep bringing you back [every time]\n\n[وترقع ترقيع] => [And you just patch it up]\n\n[لا] يا أبو سند أنا شو دخلني؟ => [No], Abu Sanad, what do I have to do with it?\nلا [يا أبو سند] أنا شو دخلني؟ => No, [Abu Sanad], what do I have to do with it?\nلا يا أبو سند [أنا شو دخلني]؟ => No, Abu Sanad, [what do I have to do with it]?\n\n[أنا] ما عملت شيء => [I] didn't do anything\nأنا [ما عملت] شيء => I [didn't do] anything\nأنا ما عملت [شيء] => I didn't do [anything]\n\n[هاي] هي المشكلة بحد ذاتها => [That] is the problem itself\nهاي [هي] المشكلة بحد ذاتها => That [is] the problem itself\nهاي هي [المشكلة] بحد ذاتها => That is [the problem] itself\nهاي هي المشكلة [بحد ذاتها] => That is the problem [itself]\n\n[إنك] ما عملت شيء => [That you] didn't do anything\nإنك [ما عملت] شيء => That you [didn't do] anything\nإنك ما عملت [شيء] => That you didn't do [anything]\n\n[اللي] بيشوف الغلط وما بيصلحه => [He who] sees a wrong and doesn't fix it\nاللي [بيشوف] الغلط وما بيصلحه => He who [sees] a wrong and doesn't fix it\nاللي بيشوف [الغلط] وما بيصلحه => He who sees [a wrong] and doesn't fix it\nاللي بيشوف الغلط [و] ما بيصلحه => He who sees a wrong [and] doesn't fix it\nاللي بيشوف الغطف وما [بيصلحه] => He who sees a wrong and doesn't [fix it]\n\n[و] ما بيعمل الصح زيه زي اللي عامل الغلط => [And] doesn't do what's right is just like the one who did the wrong\nو [ما] بيعمل الصح زيه زي اللي عامل الغلط => And [doesn't] do what's right is just like the one who did the wrong\nوما [بيعمل] الصح زيه زي اللي عامل الغلط => And doesn't [do] what's right is just like the one who did the wrong\nوما بيعمل [الصح] زيه زي اللي عامل الغلط => And doesn't do [what's right] is just like the one who did the wrong\nوما بيعمل الصح [زيه زي] اللي عامل الغلط => And doesn't do what's right [is just like] the one who did the wrong\nوما بيعمل الصح زيه زي [اللي] عامل الغلط => And doesn't do what's right is just like [the one who] did the wrong\nوما بيعمل الصح زيه زي اللي [عامل] الغلط => And doesn't do what's right is just like the one who [did] the wrong\nوما بيعمل الصح زيه زي اللي عامل [الغلط] => And doesn't do what's right is just like the one who did [the wrong]\n\n[يلا] يا أولاد يلا ساعدونا بالتنظيف => [Come on], kids, come on, help us clean\nيلا [يا أولاد] يلا ساعدونا بالتنظيف => Come on, [kids], come on, help us clean\nيلا يا أولاد [يلا] ساعدونا بالتنظيف => Come on, kids, [come on], help us clean\nيلا يا أولاد يلا [ساعدونا] بالتنظيف => Come on, kids, come on, [help us] clean\nيلا يا أولاد يلا ساعدونا [بالتنظيف] => Come on, kids, come on, help us [clean]\n\n[هاي] لونا أسفة جننتك قد ما بعثت مسجات => [Hi] Luna, sorry I've driven you crazy with all the messages\nهاي [لونا] أسفة جننتك قد ما بعثت مسجات => Hi [Luna], sorry I've driven you crazy with all the messages\nهاي لونا [أسفة] جننتك قد ما بعثت مسجات => Hi Luna, [sorry] I've driven you crazy with all the messages\nهاي لونا أسفة [جننتك] قد ما بعثت مسجات => Hi Luna, sorry [I've driven you crazy] with all the messages\nهاي لونا أسفة جننتك [قد ما] بعثت مسجات => Hi Luna, sorry I've driven you crazy [with all] the messages\nهاي لونا أسفة جننتك قد ما [بعثت مسجات] => Hi Luna, sorry I've driven you crazy with all [the messages]\n\n[بس] في شيء كثير مهم لازم أقولك إياه => [But] there's something very important I have to tell you\nبس [في] شيء كثير مهم لازم أقولك إياه => But [there's] something very important I have to tell you\nبس في [شيء] كثير مهم لازم أقولك إياه => But there's [something] very important I have to tell you\nبس في شيء [كثير] مهم لازم أقولك إياه => But there's something [very] important I have to tell you\nبس في شيء كثير [مهم] لازم أقولك إياه => But there's something very [important] I have to tell you\nبس في شيء كثير مهم [لازم أقولك إياه] => But there's something very important [I have to tell you]\n\n[بليز] رني لي قبل ما تروحي عالحفلة => [Please] call me before you go to the party\nبليز [رني لي] قبل ما تروحي عالحفلة => Please [call me] before you go to the party\nبليز رني لي [قبل ما] تروحي عالحفلة => Please call me [before] you go to the party\nبليز رني لي قبل ما [تروحي] عالحفلة => Please call me before [you go] to the party\nبليز رني لي قبل ما تروحي [عالحفلة] => Please call me before you go [to the party]\n\n[ضروري كثير] => [It's very urgent]\nضروري => urgent, necessary\nكثير => very, a lot\n\n[لونا] ردت عليكي => Did [Luna] reply to you?\nلونا [ردت] عليكي => Did Luna [reply] to you?\nلونا ردت [عليكي] => Did Luna reply [to you]?\n\n[لونا] مش عم ترد علي => [Luna] isn't replying to me\nلونا [مش عم ترد] علي => Luna [isn't replying] to me\nلونا مش عم ترد [علي] => Luna isn't replying [to me]\n\n[لا] أنا كمان ما ردت علي => [No], she didn't reply to me either\n[أنا كمان ما ردت علي] => [she didn't reply to me either]\n[ما ردت] علي => [didn't reply] to me\nما ردت [علي] => didn't reply [to me]\n\n[هلا] أكيد هي بطريق الحفلة => [Now] she's definitely on her way to the party\nهلا [أكيد] هي بطريق الحفلة => Now [definitely] she's on her way to the party\nهلا أكيد [هي] بطريق الحفلة => Now [she]'s definitely on her way to the party\nهلا أكيد هي [بطريق] الحفلة => Now she's definitely [on her way] to the party\nهلا أكيد هي بطريق [الحفلة] => Now she's definitely on her way to [the party]\n\n[كان لازم عملنا] شيء من قبل => [We should have done] something before\nكان لازم عملنا [شيء] من قبل => We should have done [something] before\nكان لازم عملنا شيء [من قبل] => We should have done something [before]\n\n[شو] رح يصير هلا؟ => [What] will happen now?\nشو [رح] يصير هلا؟ => What [will] happen now?\nشو رح [يصير] هلا؟ => What will [happen] now?\nشو رح يصير [هلا]؟ => What will happen [now]?\n\n[اسمعي] ضل شيء واحد ممكن نعمله => [Listen], there's one thing left we can do\nاسمعي [ضل شيء واحد] ممكن نعمله => Listen, [there's one thing left] we can do\nاسمعي ضل شيء واحد [ممكن نعمله] => Listen, there's one thing left [we can do]\n\n[بس] أتوقع ما رح يعجبك كثير => [But] I expect you won't like it much\nبس [أتوقع] ما رح يعجبك كثير => But [I expect] you won't like it much\nبس أتوقع [ما رح يعجبك] كثير => But I expect [you won't like it] much\nبس أتوقع ما رح يعجبك [كثير] => But I expect you won't like it [much]\n\n[سالي] اتركي هالموبايل => [Sally], leave that phone\nسالي [اتركي] هالموبايل => Sally, [leave] that phone\nسالي اتركي [هالموبايل] => Sally, leave [that phone]\n\n[يلا] تعالي نظفي معنا ومساعدينا شوي => [Come on], come clean with us and help us a bit\nيلا [تعالي] نظفي معنا ومساعدينا شوي => Come on, [come] clean with us and help us a bit\nيلا تعالي [نظفي] معنا ومساعدينا شوي => Come on, come [clean] with us and help us a bit\nيلا تعالي نظفي [معنا] ومساعدينا شوي => Come on, come clean [with us] and help us a bit\nيلا تعالي نظفي معنا [ومساعدينا] شوي => Come on, come clean with us [and help us] a bit\nيلا تعالي نظفي معنا ومساعدينا [شوي] => Come on, come clean with us and help us [a bit]\n\n[أسفة] بابا بابا في شيء مهم لازم أعمله هلا هلا => [Sorry] Dad, Dad, there's something important I have to do right now\nأسفة [بابا] بابا في شيء مهم لازم أعمله هلا هلا => Sorry [Dad], Dad, there's something important I have to do right now\nأسفة بابا [بابا] في شيء مهم لازم أعمله هلا هلا => Sorry Dad, [Dad], there's something important I have to do right now\nأسفة بابا بابا [في] شيء مهم لازم أعمله هلا هلا => Sorry Dad, Dad, [there's] something important I have to do right now\nأسفة بابا بابا في [شيء] مهم لازم أعمله هلا هلا => Sorry Dad, Dad, there's [something] important I have to do right now\nأسفة بابا بابا في شيء [مهم] لازم أعمله هلا هلا => Sorry Dad, Dad, there's something [important] I have to do right now\nأسفة بابا بابا في شيء مهم [لازم أعمله] هلا هلا => Sorry Dad, Dad, there's something important [I have to do] right now\nأسفة بابا بابا في شيء مهم لازم أعمله [هلا هلا] => Sorry Dad, Dad, there's something important I have to do [right now]\n\n[حبيبتي] متأكدة إنه وصلت الدعوة صح => [Sweetie], are you sure the invitation arrived correctly?\nحبيبتي [متأكدة] إنه وصلت الدعوة صح => Sweetie, [are you sure] the invitation arrived correctly?\nحبيبتي متأكدة [إنه] وصلت الدعوة صح => Sweetie, are you sure [that] the invitation arrived correctly?\nحبيبتي متأكدة إنه [وصلت الدعوة] صح => Sweetie, are you sure that [the invitation arrived] correctly?\nحبيبتي متأكدة إنه وصلت الدعوة [صح] => Sweetie, are you sure that the invitation arrived [correctly]?\n\n[ما بدي] إياكي تنحرجي => [I don't want] you to be embarrassed\nما بدي [إياكي] تنحرجي => I don't want [you] to be embarrassed\nما بدي إياكي [تنحرجي] => I don't want you [to be embarrassed]\n\n[ما تقلقي] يا ماما => [Don't worry], Mom\nما تقلقي [يا ماما] => Don't worry, [Mom]\n\n[الكل] رح يكون لابس هيك => [Everyone] will be dressed like this\nالكل [رح يكون] لابس هيك => Everyone [will be] dressed like this\nالكل رح يكون [لابس] هيك => Everyone will be [dressed] like this\nالكل رح يكون لابس [هيك] => Everyone will be dressed [like this]\n\n[هم] حكوا لي هيك رح ننبسط كثير => [They] told me so, we're going to have a lot of fun\nهم [حكوا] لي هيك رح ننبسط كثير => They [told] me so, we're going to have a lot of fun\nهم حكوا [لي] هيك رح ننبسط كثير => They told [me] so, we're going to have a lot of fun\nهم حكوا لي [هيك] رح ننبسط كثير => They told me [so], we're going to have a lot of fun\nهم حكوا لي هيك [رح] ننبسط كثير => They told me so, [will] have a lot of fun\nهم حكوا لي هيك رح [ننبسط] كثير => They told me so, will [have fun] a lot\nهم حكوا لي هيك رح ننبسط [كثير] => They told me so, will have fun [a lot]\n\n[أوكي] حبيبتي يلا برجع باخذك كمان ساعتين => [Okay] sweetie, I'll come back to pick you up in two hours\nأوكي [حبيبتي] يلا برجع باخذك كمان ساعتين => Okay [sweetie], I'll come back to pick you up in two hours\nأوكي حبيبتي [يلا] برجع باخذك كمان ساعتين => come on, let's go # custom translation\nأوكي حبيبتي يلا [برجع] باخذك كمان ساعتين => Okay sweetie, come on [I'll come back] to pick you up in two hours\nأوكي حبيبتي يلا برجع [باخذك] كمان ساعتين => Okay sweetie, come on, I'll come back [to pick you up] in two hours\nأوكي حبيبتي يلا برجع باخذك [كمان ساعتين] => Okay sweetie, come on, I'll come back to pick you up [in two hours]\n\n[بحبك] ماما باي => [Love you] Mom, bye\nبحبك [ماما] باي => Love you [Mom], bye\nبحبك ماما [باي] => Love you Mom, [bye]\n\n[باي] => [Bye]\n\n[ملونة] => [Mulawana]\n\n[هاي] أسفين عالتاخير => [Hi], sorry we're late\nهاي [أسفين] عالتاخير => Hi, [sorry] we're late\nهاي أسفين [عالتاخير] => Hi, sorry [we're late]\n\n[آه] أخذنا وقت نجهز حالنا => [Yeah], it took us time to get ready\nآه [أخذنا] وقت نجهز حالنا => Yeah, [it took us] time to get ready\nآه أخذنا [وقت] نجهز حالنا => Yeah, it took us [time] to get ready\nآه أخذنا وقت [نجهز حالنا] => Yeah, it took us time [to get ready]\n\n[ليش] ما حدا منهم لابس بجامة وشعرهم هيك؟ => [Why] is none of them wearing pajamas and their hair like that?\nليش [ما حدا] منهم لابس بجامة وشعرهم هيك؟ => Why is [none] of them wearing pajamas and their hair like that?\nليش ما حدا [منهم] لابس بجامة وشعرهم هيك؟ => Why is none [of them] wearing pajamas and their hair like that?\nليش ما حدا منهم [لابس] بجامة وشعرهم هيك؟ => Why is none of them [wearing] pajamas and their hair like that?\nليش ما حدا منهم لابس [بجامة] وشعرهم هيك؟ => Why is none of them wearing [pajamas] and their hair like that?\nليش ما حدا منهم لابس بجامة [وشعرهم هيك]؟ => Why is none of them wearing pajamas [and their hair like that]?\n\n[لأنهم] جبناء => [Because they are] cowards\nلأنهم [جبناء] => Because they are [cowards]\n\n[آه] مش جريئين زينا => [Yeah], they aren't bold like us\nآه [مش] جريئين زينا => Yeah, [they aren't] bold like us\nآه مش [جريئين] زينا => Yeah, they aren't [bold] like us\nآه مش جريئين [زينا] => Yeah, they aren't bold [like us]\n\n[إحنا الثلاثة] طالعين كثير كول => [The three of us] look so cool\nإحنا الثلاثة [طالعين] كثير كول => The three of us [look] so cool\nإحنا الثلاثة طالعين [كثير] كول => The three of us look [so] cool\nإحنا الثلاثة طالعين كثير [كول] => The three of us look so [cool]\n\n[تعالوا] تعالوا نتصور => [Come on], come on, let's take a picture\nتعالوا [تعالوا] نتصور => Come on, [come on], let's take a picture\nتعالوا تعالوا [نتصور] => Come on, come on, [let's take a picture]\n\n",
     "lessons": "# The New Girl's Style\n00:05 شوفوا شوفوا البنت الجديدة\n00:07 شوفوا شو لابسة\n00:09 شو ستايلها قديم\n00:11 شكله من خزانة أمها\n00:13 قصدك من خزانة ستها\n00:16 شكلها زي برداية مطبخ ستي\n\n# Welcome to Class\n00:21 صباح الخير\n00:22 قبل ما نبدأ درس اليوم\n00:24 بدي أعرفكم على زميلتكم الجديدة\n00:26 لونا، صح؟\n00:27 مس مس\n00:28 بس هي بتحب النادي الملونة\n\n# Classroom Introductions\n00:31 آه اوكي ملونة\n00:32 مبسوطين إنك معنا\n00:34 أنا متأكدة إنك رح تصيري صحبة مع البنات بسرعة\n00:39 اليوم رح نكمل درس الأسبوع الماضي\n00:41 ضرب الكسور المركبة\n\n# Musical Interlude 1\n00:55 شتتية دنيتي\n00:56 تيزي تيزي\n00:57 دمو سم\n00:58 نويعلى\n00:59 هلا هلا\n01:00 هلا هلا\n\n# The Handyman's Call\n01:04 ألو أبو أبو النواف\n01:05 كيف حالك؟\n01:06 شو أخبارك؟\n01:07 كيف الشتوية معك خيو؟\n01:09 الحمد لله\n01:10 الحمد لله على المطر يا عطى\n\n# Business and Mold\n01:12 شو الواحد بده يحكي غير هيك\n01:14 الحمد لله الحمد لله\n01:16 اسمع إذا الحيطان عندك رطبوا\n01:19 طلع عليهن عفن\n01:21 بس رن علي\n01:22 باجي عالسريع\n\n# Negotiating the Price\n01:25 لا حبيبي\n01:26 باخذ زي المرة الماضية\n01:28 وفوقيهم 10%\n01:29 شو شفت الجمعية الخيرية؟\n01:31 أهليين\n01:32 ما أنا صرت محترف\n\n# Closing the Deal\n01:34 بخلص كل الشغل حبيبي عالسريع\n01:36 يلا حبيبي بستنى تليفونك\n01:38 مش تنسى\n01:39 سلام\n\n# Musical Interlude 2\n01:41 شتتية دنيتي\n01:42 تيزي تيزي\n01:43 دمو سم\n01:44 نويعلى\n01:45 هلا هلا\n01:46 هلا هلا\n\n# Feeling Left Out\n01:55 ماما لا تعالي خذيني هلا\n01:57 ما حدا يحبني هون\n01:58 وكلهم عم بيضحكوا علي\n02:00 مش قادرة مش قادرة أتحمل\n02:02 خلص بليز تعالي خذيني\n\n# The Damp Wall Dilemma\n02:12 وين راحت الشمسية؟\n02:15 رطوبة لا حول ولا قوة\n02:18 كيف عرف عطى إنه هيك رح يصير؟\n02:20 أكيد في إنّ\n02:21 لا لا لا لا أنا أكيد\n02:24 ولا يمكن\n\n# Home Improvement Worries\n02:26 هسا إذا عرفت أم إنصاف بالموضوع\n02:28 رح تخلينا ندهن الدار\n02:30 وبعدين بصير بدها تغير العفش\n02:33 مش معقول\n02:34 عشان يليق على لون الحيطان الجديد\n02:36 ما هو ما بينفع الفرش القديم\n\n# The Birthday Invitation\n02:38 عالدهان الجديد\n02:40 لا لا لا لا لا\n02:49 بنات بعثت لكم مسج\n02:51 عشان تيجوا على عيد ميلادي\n02:53 شفتوها؟\n02:54 آه كثير متحمسة\n\n# Party Planning\n02:56 كل حفلة بتعمليها أحلى من الثانية\n02:59 آه طبعاً\n03:01 كلكم رح تيجوا صح؟\n03:02 آه أكيد أكيد رح نيجي\n03:06 سالي إنتي جاية صح؟\n03:08 إيه آه آه أكيد جاي\n\n# The Prank Idea\n03:11 وشو رأيك تعزمي لونا كمان؟\n03:13 ملونة؟\n03:14 تمزحي صح؟\n03:16 ليش نعزمها إن شاء الله؟\n03:18 ليش لا؟\n03:19 بحس لازم نتعرف عليها أكثر\n\n# Setting the Dress Code\n03:21 آه معك حق\n03:22 ماشي بنعزمها\n03:24 بس بشرط\n03:25 بنحكي لها إنه الجاس كود\n03:27 بجامة وشعر منكوش\n03:30 بس كلنا نيجي لابسين فساتين\n\n# Plotting the Embarrassment\n03:32 وشعرنا مظبط\n03:34 ما عدا هي\n03:36 كيف خطرت لك هاي الفكرة؟\n03:38 إنتي عبقرية\n03:40 رح تطلع زي المهرج\n03:42 يا الله مش قادرة أتخيل كيف رح يكون منظرها\n\n# Inviting Luna\n03:45 كثير بيضحك صح سالي؟\n03:48 آه كثير بيضحك\n03:53 ملونة ملونة اسمعي\n03:55 بدي أعزمك على عيد ميلادي بكرة\n03:57 إذا فاضية بكرة طبعاً\n03:59 مين أنا؟\n\n# The Fake Theme\n04:00 عن جد عن جد بدكم تعزموني أنا؟\n04:03 آه حابين نتعرف عليكي كثير\n04:06 اوكي أكيد باجي\n04:07 ممتاز اسمعي\n04:09 البسي أبشع بجامة عندك\n04:12 وخلي شعرك كثير منكوش\n\n# The Crazy Look Prize\n04:14 أصلاً الجاس كود بجامة وشعر منكوش\n04:18 آه ورح يكون في جائزة\n04:20 لأكثر لوك مجنون\n04:22 يا الله أكيد رح ننبسط\n04:24 اوكي خلص بدي أفك عالجروب\n04:26 وببعث لك كل التفاصيل بكرة\n\n# Luna's Excitement\n04:28 شكراً كثير عشانكم عزمتوني\n04:30 كثير كثير متحمسة\n04:32 مش قادرة أستنى\n04:37 ألو\n04:38 مش معقول إنت يا زلمة\n04:40 كيف هيك عرفت إنه حيطان القعدة مرطبة؟\n\n# The Repair Quote\n04:42 إذا فاضي هذا الأسبوع تعال\n04:44 طب يا زلمة لا تقتل الهم\n04:45 موضوعك سهل جداً\n04:47 ساعتين وبيكونوا الحيطان يلمعن لمع\n04:51 وكله بس ب 150 ليرة\n04:54 اسمع هذا السعر بس للعائلات الحبايب\n\n# Inspecting the Damage\n04:58 يعني للروح للروح\n05:00 لا تشكرني ولا أشكرك\n05:02 وين رطوبة بالضبط؟\n05:03 آه هيها شفتها\n05:19 أهلاً وسهلاً ملونة\n05:21 في جروب حفلة عيد ميلادي\n\n# Group Chat Gossip\n05:23 كلنا متحمسين تكوني معنا\n05:25 ونشوفك بأغرب بجامة\n05:27 وتسريحة شعر\n05:29 الملونة بتقول كثير كثير متحمسة مش قادرة أستنى\n05:33 يا الله رح يصير فضيحة اليوم\n05:36 واو أنتوا البنات جد بتخوفوا\n\n# Conscience and Conflict\n05:39 جد طلعتوا ألم منا بكثير\n05:41 شو رح نعمل؟\n05:43 خلص شو رأيك كمان نروح الحفلة؟\n05:45 آه معك حق\n05:46 إذا ما رحنا ما رح نفكر بالموضوع\n05:48 وما رح نشوف الإحراج اللي رح يصير\n\n# Helping Luna\n05:50 وهيك بنرتاح نفسياً\n05:52 بس لونا لسه رايحة ورح تنحرج كثير\n05:55 يعني ما رح تعملوا شيء تساعدوها؟\n05:57 لو إحنا كان ساعدنا بعض مش زيكم\n06:00 آه مستحيل نضل ساكتين\n\n# Confronting the Landlord\n06:04 يا عطى كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟\n06:08 كل مرة الدنيا بتشتي\n06:10 الرطوبة بتعبي العمارة\n06:12 خلص يا رجل شوف لك حل\n06:14 إنتوا كمان عندكم رطوبة؟\n06:16 ولا يهمك أبو سند\n\n# The Moral Lesson\n06:18 أنا بحل لك إياها وبنص السعر كمان\n06:21 ليكون قاصد ما تصلح الماسورة\n06:24 عشان تضل العمارة ترطب ونضل نجيبك كل مرة\n06:27 وترقع ترقيع\n06:29 لا يا أبو سند أنا شو دخلني؟\n06:31 أنا ما عملت شيء\n\n# Responsibility\n06:33 هاي هي المشكلة بحد ذاتها\n06:35 إنك ما عملت شيء\n06:36 اللي بيشوف الغلط وما بيصلحه\n06:38 وما بيعمل الصح زيه زي اللي عامل الغلط\n06:42 يلا يا أولاد يلا ساعدونا بالتنظيف\n\n# Trying to Warn Her\n06:48 هاي لونا أسفة جننتك قد ما بعثت مسجات\n07:07 بس في شيء كثير مهم لازم أقولك إياه\n07:09 بليز رني لي قبل ما تروحي عالحفلة\n07:11 ضروري كثير\n07:14 لونا ردت عليكي لونا مش عم ترد علي\n07:18 لا أنا كمان ما ردت علي\n\n# The Last Chance\n07:21 هلا أكيد هي بطريق الحفلة\n07:23 كان لازم عملنا شيء من قبل\n07:25 شو رح يصير هلا؟\n07:27 اسمعي ضل شيء واحد ممكن نعمله\n07:30 بس أتوقع ما رح يعجبك كثير\n07:32 سالي اتركي هالموبايل\n\n# Off to the Party\n07:34 يلا تعالي نظفي معنا ومساعدينا شوي\n07:36 أسفة بابا بابا في شيء مهم لازم أعمله هلا هلا\n07:43 حبيبتي متأكدة إنه وصلت الدعوة صح\n07:46 ما بدي إياكي تنحرجي\n07:48 ما تقلقي يا ماما\n07:49 الكل رح يكون لابس هيك\n\n# The Arrival\n07:51 هم حكوا لي هيك رح ننبسط كثير\n07:54 اوكي حبيبتي يلا برجع باخذك كمان ساعتين\n07:56 بحبك ماما باي\n07:58 باي\n08:11 ملونة\n08:16 هاي أسفين عالتاخير\n\n# True Friends\n08:18 آه أخذنا وقت نجهز حالنا\n08:33 ليش ما حدا منهم لابس بجامة وشعرهم هيك؟\n08:36 لأنهم جبناء\n08:38 آه مش جريئين زينا\n08:40 إحنا الثلاثة طالعين كثير كول\n08:42 تعالوا تعالوا نتصور",
-    "similar_sounds": "شوفوا شوفوا [البيت] الجديدة\nشوفوا شو لابسة\nشو ستايلها [كريم]\nشكله من خزانة أمها\nقصدك من [حسانة] ستها\nشكلها زي برداية مطبخ ستي\nصباح الخير\nقبل ما نبدأ درس اليوم\nبدي أعرفكم على [عميلتكم] الجديدة\nلونا، صح؟\nمس مس\nبس هي بتحب [الناقة] الملونة\nآه اوكي ملونة\nمبسوطين إنك معنا\nأنا متأكدة إنك رح تصيري صحبة مع البنات بسرعة\nاليوم رح نكمل درس الأسبوع الماضي\nضرب [الخصور] المركبة\nشتتية دنيتي\nتيزي تيزي\nدمو سم\nنويعلى\nهلا هلا\nهلا هلا\nألو أبو أبو النواف\nكيف حالك؟\nشو أخبارك؟\nكيف [الستوية] معك خيو؟\nالحمد لله\nالحمد لله على [القدر] يا عطى\nشو الواحد بده يحكي غير هيك\nالحمد لله الحمد لله\nاسمع إذا [البيتان] عندك رطبوا\nطلع عليهن عفن\nبس رن علي\nباجي عالسريع\nلا حبيبي\nباخذ زي المرة الماضية\nوفوقيهم 10%\nشو شفت الجمعية الخيرية؟\nأهليين\nما أنا صرت محترف\nبخلص كل الشغل حبيبي عالسريع\nيلا حبيبي بستنى تليفونك\nمش تنسى\nسلام\nشتتية دنيتي\nتيزي تيزي\nدمو سم\nنويعلى\nهلا هلا\nهلا هلا\nماما لا تعالي خذيني هلا\nما حدا يحبني هون\nوكلهم عم بيضحكوا علي\nمش قادرة مش قادرة أتحمل\nخلص بليز تعالي خذيني\nوين راحت الشمسية؟\nرطوبة لا حول ولا قوة\nكيف عرف عطى إنه هيك رح يصير؟\nأكيد في إنّ\nلا لا لا لا أنا أكيد\nولا يمكن\nهسا إذا عرفت أم إنصاف بالموضوع\nرح تخلينا ندهن الدار\nوبعدين بصير بدها تغير العفش\nمش معقول\nعشان يليق على لون الحيطان الجديد\nما هو ما بينفع الفرش القديم\nعالدهان الجديد\nلا لا لا لا لا\nبنات بعثت لكم مسج\nعشان تيجوا على عيد ميلادي\nشفتوها؟\nآه كثير متحمسة\nكل حفلة بتعمليها أحلى من الثانية\nآه طبعاً\nكلكم رح تيجوا صح؟\nآه أكيد أكيد رح نيجي\nسالي إنتي جاية صح؟\nإيه آه آه أكيد جاي\nوشو رأيك تعزمي لونا كمان؟\nملونة؟\nتمزحي صح؟\nليش نعزمها إن شاء الله؟\nليش لا؟\nبحس لازم نتعرف عليها أكثر\nآه معك حق\nماشي بنعزمها\nبس بشرط\nبنحكي لها إنه الجاس كود\nبجامة وشعر منكوش\nبس كلنا نيجي لابسين فساتين\nوشعرنا مظبط\nما عدا هي\nكيف خطرت لك هاي الفكرة؟\nإنتي عبقرية\nرح تطلع زي المهرج\nيا الله مش قادرة أتخيل كيف رح يكون منظرها\nكثير بيضحك صح سالي؟\nآه كثير بيضحك\nملونة ملونة اسمعي\nبدي أعزمك على عيد ميلادي بكرة\nإذا فاضية بكرة طبعاً\nمين أنا؟\nعن جد عن جد بدكم تعزموني أنا؟\nآه حابين نتعرف عليكي كثير\nاوكي أكيد باجي\nممتاز اسمعي\nالبسي أبشع بجامة عندك\nوخلي شعرك كثير منكوش\nأصلاً الجاس كود بجامة وشعر منكوش\nآه ورح يكون في جائزة\nلأكثر لوك مجنون\nيا الله أكيد رح ننبسط\nاوكي خلص بدي أفك عالجروب\nوببعث لك كل التفاصيل بكرة\nشكراً كثير عشانكم عزمتوني\nكثير كثير متحمسة\nمش قادرة أستنى\nألو\nمش معقول إنت يا زلمة\nكيف هيك عرفت إنه حيطان القعدة مرطبة؟\nإذا فاضي هذا الأسبوع تعال\nطب يا زلمة لا تقتل الهم\nموضوعك سهل جداً\nساعتين وبيكونوا الحيطان يلمعن لمع\nوكله بس ب 150 ليرة\nاسمع هذا السعر بس للعائلات الحبايب\nيعني للروح للروح\nلا تشكرني ولا أشكرك\nوين رطوبة بالضبط؟\nآه هيها شفتها\nأهلاً وسهلاً ملونة\nفي جروب حفلة عيد ميلادي\nكلنا متحمسين تكوني معنا\nونشوفك بأغرب بجامة\nوتسريحة شعر\nالملونة بتقول كثير كثير متحمسة مش قادرة أستنى\nيا الله رح يصير فضيحة اليوم\nواو أنتوا البنات جد بتخوفوا\nجد طلعتوا ألم منا بكثير\nشو رح نعمل؟\nخلص شو رأيك كمان نروح الحفلة؟\nآه معك حق\nإذا ما رحنا ما رح نفكر بالموضوع\nوما رح نشوف الإحراج اللي رح يصير\nوهيك بنرتاح نفسياً\nبس لونا لسه رايحة ورح تنحرج كثير\nيعني ما رح تعملوا شيء تساعدوها؟\nلو إحنا كان ساعدنا بعض مش زيكم\nآه مستحيل نضل ساكتين\nيا عطى كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟\nكل مرة الدنيا بتشتي\nالرطوبة بتعبي العمارة\nخلص يا رجل شوف لك حل\nإنتوا كمان عندكم رطوبة؟\nولا يهمك أبو سند\nأنا بحل لك إياها وبنص السعر كمان\nليكون قاصد ما تصلح الماسورة\nعشان تضل العمارة ترطب ونضل نجيبك كل مرة\nوترقع ترقيع\nلا يا أبو سند أنا شو دخلني؟\nأنا ما عملت شيء\nهاي هي المشكلة بحد ذاتها\nإنك ما عملت شيء\nاللي بيشوف الغلط وما بيصلحه\nوما بيعمل الصح زيه زي اللي عامل الغلط\nيلا يا أولاد يلا ساعدونا بالتنظيف\nهاي لونا أسفة جننتك قد ما بعثت مسجات\nبس في شيء كثير مهم لازم أقولك إياه\nبليز رني لي قبل ما تروحي عالحفلة\nضروري كثير\nلونا ردت عليكي لونا مش عم ترد علي\nلا أنا كمان ما ردت علي\nهلا أكيد هي بطريق الحفلة\nكان لازم عملنا شيء من قبل\nشو رح يصير هلا؟\nاسمعي ضل شيء واحد ممكن نعمله\nبس أتوقع ما رح يعجبك كثير\nسالي اتركي هالموبايل\nيلا تعالي نظفي معنا ومساعدينا شوي\nأسفة بابا بابا في شيء مهم لازم أعمله هلا هلا\nحبيبتي متأكدة إنه وصلت الدعوة صح\nما بدي إياكي تنحرجي\nما تقلقي يا ماما\nالكل رح يكون لابس هيك\nهم حكوا لي هيك رح ننبسط كثير\nاوكي حبيبتي يلا برجع باخذك كمان ساعتين\nبحبك ماما باي\nباي\nملونة\nهاي أسفين عالتاخير\nآه أخذنا وقت نجهز حالنا\nليش ما حدا منهم لابس بجامة وشعرهم هيك؟\nلأنهم جبناء\nآه مش جريئين زينا\nإحنا الثلاثة طالعين كثير كول\nتعالوا تعالوا نتصور"
+    "similar_sounds": "شوفوا شوفوا [البيت] الجديدة\nشوفوا شو لابسة\nشو ستايلها [كريم]\nشكله من خزانة أمها\nقصدك من [حسانة] ستها\nشكلها زي برداية مطبخ ستي\nصباح الخير\nقبل ما نبدأ درس اليوم\nبدي أعرفكم على [عميلتكم] الجديدة\nلونا، صح؟\nمس مس\nبس هي بتحب [الناقة] الملونة\nآه اوكي ملونة\nمبسوطين إنك معنا\nأنا متأكدة إنك رح تصيري صحبة مع البنات بسرعة\nاليوم رح نكمل درس الأسبوع الماضي\nضرب [الخصور] المركبة\nشتتية دنيتي\nتيزي تيزي\nدمو سم\nنويعلى\nهلا هلا\nهلا هلا\nألو أبو أبو النواف\nكيف حالك؟\nشو أخبارك؟\nكيف [الستوية] معك خيو؟\nالحمد لله\nالحمد لله على [القدر] يا عطى\nشو الواحد بده يحكي غير هيك\nالحمد لله الحمد لله\nاسمع إذا [البيتان] عندك رطبوا\nطلع عليهن عفن\nبس رن علي\nباجي عالسريع\nلا حبيبي\nباخذ زي المرة الماضية\nوفوقيهم 10%\nشو شفت الجمعية الخيرية؟\nأهليين\nما أنا صرت محترف\nبخلص كل الشغل حبيبي عالسريع\nيلا حبيبي بستنى تليفونك\nمش تنسى\nسلام\nشتتية دنيتي\nتيزي تيزي\nدمو سم\nنويعلى\nهلا هلا\nهلا هلا\nماما لا تعالي خذيني هلا\nما حدا يحبني هون\nوكلهم عم بيضحكوا علي\nمش قادرة مش قادرة أتحمل\nخلص بليز تعالي خذيني\nوين راحت الشمسية؟\nرطوبة لا حول ولا قوة\nكيف عرف عطى إنه هيك رح يصير؟\nأكيد في إنّ\nلا لا لا لا أنا أكيد\nولا يمكن\nهسا إذا عرفت أم إنصاف بالموضوع\nرح تخلينا ندهن الدار\nوبعدين بصير بدها تغير العفش\nمش معقول\nعشان يليق على لون الحيطان الجديد\nما هو ما بينفع الفرش القديم\nعالدهان الجديد\nلا لا لا لا لا\nبنات بعثت لكم مسج\nعشان تيجوا على عيد ميلادي\nشفتوها؟\nآه كثير متحمسة\nكل حفلة بتعمليها أحلى من الثانية\nآه طبعاً\nكلكم رح تيجوا صح؟\nآه أكيد أكيد رح نيجي\nسالي إنتي جاية صح؟\nإيه آه آه أكيد جاي\nوشو رأيك تعزمي لونا كمان؟\nملونة؟\nتمزحي صح؟\nليش نعزمها إن شاء الله؟\nليش لا؟\nبحس لازم نتعرف عليها أكثر\nآه معك حق\nماشي بنعزمها\nبس بشرط\nبنحكي لها إنه الجاس كود\nبجامة وشعر منكوش\nبس كلنا نيجي لابسين فساتين\nوشعرنا مظبط\nما عدا هي\nكيف خطرت لك هاي الفكرة؟\nإنتي عبقرية\nرح تطلع زي المهرج\nيا الله مش قادرة أتخيل كيف رح يكون منظرها\nكثير بيضحك صح سالي؟\nآه كثير بيضحك\nملونة ملونة اسمعي\nبدي أعزمك على عيد ميلادي بكرة\nإذا فاضية بكرة طبعاً\nمين أنا؟\nعن جد عن جد بدكم تعزموني أنا؟\nآه حابين نتعرف عليكي كثير\nاوكي أكيد باجي\nممتاز اسمعي\nالبسي أبشع بجامة عندك\nوخلي شعرك كثير منكوش\nأصلاً الجاس كود بجامة وشعر منكوش\nآه ورح يكون في جائزة\nلأكثر لوك مجنون\nيا الله أكيد رح ننبسط\nاوكي خلص بدي أفك عالجروب\nوببعث لك كل التفاصيل بكرة\nشكراً كثير عشانكم عزمتوني\nكثير كثير متحمسة\nمش قادرة أستنى\nألو\nمش معقول إنت يا زلمة\nكيف هيك عرفت إنه حيطان القعدة مرطبة؟\nإذا فاضي هذا الأسبوع تعال\nطب يا زلمة لا تقتل الهم\nموضوعك سهل جداً\nساعتين وبيكونوا الحيطان يلمعن لمع\nوكله بس ب 150 ليرة\nاسمع هذا السعر بس للعائلات الحبايب\nيعني للروح للروح\nلا تشكرني ولا أشكرك\nوين رطوبة بالضبط؟\nآه هيها شفتها\nأهلاً وسهلاً ملونة\nفي جروب حفلة عيد ميلادي\nكلنا متحمسين تكوني معنا\nونشوفك بأغرب بجامة\nوتسريحة شعر\nالملونة بتقول كثير كثير متحمسة مش قادرة أستنى\nيا الله رح يصير فضيحة اليوم\nواو أنتوا البنات جد بتخوفوا\nجد طلعتوا ألم منا بكثير\nشو رح نعمل؟\nخلص شو رأيك كمان نروح الحفلة؟\nآه معك حق\nإذا ما رحنا ما رح نفكر بالموضوع\nوما رح نشوف الإحراج اللي رح يصير\nوهيك بنرتاح نفسياً\nبس لونا لسه رايحة ورح تنحرج كثير\nيعني ما رح تعملوا شيء تساعدوها؟\nلو إحنا كان ساعدنا بعض مش زيكم\nآه مستحيل نضل ساكتين\nيا عطى كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟\nكل مرة الدنيا بتشتي\nالرطوبة بتعبي العمارة\nخلص يا رجل شوف لك حل\nإنتوا كمان عندكم رطوبة؟\nولا يهمك أبو سند\nأنا بحل لك إياها وبنص السعر كمان\nليكون قاصد ما تصلح الماسورة\nعشان تضل العمارة ترطب ونضل نجيبك كل مرة\nوترقع ترقيع\nلا يا أبو سند أنا شو دخلني؟\nأنا ما عملت شيء\nهاي هي المشكلة بحد ذاتها\nإنك ما عملت شيء\nاللي بيشوف الغلط وما بيصلحه\nوما بيعمل الصح زيه زي اللي عامل الغلط\nيلا يا أولاد يلا ساعدونا بالتنظيف\nهاي لونا أسفة جننتك قد ما بعثت مسجات\nبس في شيء كثير مهم لازم أقولك إياه\nبليز رني لي قبل ما تروحي عالحفلة\nضروري كثير\nلونا ردت عليكي لونا مش عم ترد علي\nلا أنا كمان ما ردت علي\nهلا أكيد هي بطريق الحفلة\nكان لازم عملنا شيء من قبل\nشو رح يصير هلا؟\nاسمعي ضل شيء واحد ممكن نعمله\nبس أتوقع ما رح يعجبك كثير\nسالي اتركي هالموبايل\nيلا تعالي نظفي معنا ومساعدينا شوي\nأسفة بابا بابا في شيء مهم لازم أعمله هلا هلا\nحبيبتي متأكدة إنه وصلت الدعوة صح\nما بدي إياكي تنحرجي\nما تقلقي يا ماما\nالكل رح يكون لابس هيك\nهم حكوا لي هيك رح ننبسط كثير\nاوكي حبيبتي يلا برجع باخذك كمان ساعتين\nبحبك ماما باي\nباي\nملونة\nهاي أسفين عالتاخير\nآه أخذنا وقت نجهز حالنا\nليش ما حدا منهم لابس بجامة وشعرهم هيك؟\nلأنهم جبناء\nآه مش جريئين زينا\nإحنا الثلاثة طالعين كثير كول\nتعالوا تعالوا نتصور",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Look, look at the new girl",
+            "words": []
+          },
+          {
+            "text": "Look at what she's wearing",
+            "words": []
+          },
+          {
+            "text": "Her style is so old",
+            "words": []
+          },
+          {
+            "text": "It looks like it's from her mother's closet",
+            "words": []
+          },
+          {
+            "text": "You mean from her grandmother's closet",
+            "words": []
+          },
+          {
+            "text": "She looks like my grandmother's kitchen curtain",
+            "words": []
+          },
+          {
+            "text": "Good morning",
+            "words": []
+          },
+          {
+            "text": "Before we start today's lesson",
+            "words": []
+          },
+          {
+            "text": "I want to introduce you to your new classmate",
+            "words": []
+          },
+          {
+            "text": "Luna, right?",
+            "words": []
+          },
+          {
+            "text": "Miss, Miss",
+            "words": []
+          },
+          {
+            "text": "But she likes to be called Mulawana",
+            "words": []
+          },
+          {
+            "text": "Oh okay, Mulawana",
+            "words": []
+          },
+          {
+            "text": "We're happy you're with us",
+            "words": []
+          },
+          {
+            "text": "I'm sure you'll become friends with the girls quickly",
+            "words": []
+          },
+          {
+            "text": "Today we will continue last week's lesson",
+            "words": []
+          },
+          {
+            "text": "Multiplying mixed fractions",
+            "words": []
+          },
+          {
+            "text": "My world rained",
+            "words": []
+          },
+          {
+            "text": "Tizi tizi",
+            "words": []
+          },
+          {
+            "text": "Dammo sam",
+            "words": []
+          },
+          {
+            "text": "Nway'ala",
+            "words": []
+          },
+          {
+            "text": "Hala hala",
+            "words": []
+          },
+          {
+            "text": "Hala hala",
+            "words": []
+          },
+          {
+            "text": "Hello Abu Abu Al-Nawaf",
+            "words": []
+          },
+          {
+            "text": "How are you?",
+            "words": []
+          },
+          {
+            "text": "What's your news?",
+            "words": []
+          },
+          {
+            "text": "How is the winter with you, brother?",
+            "words": []
+          },
+          {
+            "text": "Thank God",
+            "words": []
+          },
+          {
+            "text": "Thank God for the rain, Ata",
+            "words": []
+          },
+          {
+            "text": "What else can one say",
+            "words": []
+          },
+          {
+            "text": "Thank God, thank God",
+            "words": []
+          },
+          {
+            "text": "Listen, if your walls got damp",
+            "words": []
+          },
+          {
+            "text": "And mold appeared on them",
+            "words": []
+          },
+          {
+            "text": "Just call me",
+            "words": []
+          },
+          {
+            "text": "I'll come quickly",
+            "words": []
+          },
+          {
+            "text": "No, my dear",
+            "words": []
+          },
+          {
+            "text": "I'll take the same as last time",
+            "words": []
+          },
+          {
+            "text": "Plus 10%",
+            "words": []
+          },
+          {
+            "text": "What, did you think this was a charity?",
+            "words": []
+          },
+          {
+            "text": "Welcome",
+            "words": []
+          },
+          {
+            "text": "I've become a professional now",
+            "words": []
+          },
+          {
+            "text": "I finish all the work quickly, my dear",
+            "words": []
+          },
+          {
+            "text": "Alright, my dear, I'm waiting for your call",
+            "words": []
+          },
+          {
+            "text": "Don't forget",
+            "words": []
+          },
+          {
+            "text": "Peace",
+            "words": []
+          },
+          {
+            "text": "My world rained",
+            "words": []
+          },
+          {
+            "text": "Tizi tizi",
+            "words": []
+          },
+          {
+            "text": "Dammo sam",
+            "words": []
+          },
+          {
+            "text": "Nway'ala",
+            "words": []
+          },
+          {
+            "text": "Hala hala",
+            "words": []
+          },
+          {
+            "text": "Hala hala",
+            "words": []
+          },
+          {
+            "text": "Mom, no, come pick me up now",
+            "words": []
+          },
+          {
+            "text": "No one likes me here",
+            "words": []
+          },
+          {
+            "text": "And they are all laughing at me",
+            "words": []
+          },
+          {
+            "text": "I can't, I can't bear it",
+            "words": []
+          },
+          {
+            "text": "Enough, please come pick me up",
+            "words": []
+          },
+          {
+            "text": "Where did the umbrella go?",
+            "words": []
+          },
+          {
+            "text": "Dampness, there is no power or strength but with God",
+            "words": []
+          },
+          {
+            "text": "How did Ata know this would happen?",
+            "words": []
+          },
+          {
+            "text": "There's definitely something fishy",
+            "words": []
+          },
+          {
+            "text": "No no no no, I'm sure",
+            "words": []
+          },
+          {
+            "text": "No way",
+            "words": []
+          },
+          {
+            "text": "Now if Um Insaf finds out about this",
+            "words": []
+          },
+          {
+            "text": "She'll make us paint the house",
+            "words": []
+          },
+          {
+            "text": "And then she'll want to change the furniture",
+            "words": []
+          },
+          {
+            "text": "Unbelievable",
+            "words": []
+          },
+          {
+            "text": "So it matches the new wall color",
+            "words": []
+          },
+          {
+            "text": "Because the old furniture won't work",
+            "words": []
+          },
+          {
+            "text": "With the new paint",
+            "words": []
+          },
+          {
+            "text": "No no no no no",
+            "words": []
+          },
+          {
+            "text": "Girls, I sent you a message",
+            "words": []
+          },
+          {
+            "text": "So you come to my birthday",
+            "words": []
+          },
+          {
+            "text": "Did you see it?",
+            "words": []
+          },
+          {
+            "text": "Yes, I'm so excited",
+            "words": []
+          },
+          {
+            "text": "Every party you throw is better than the last",
+            "words": []
+          },
+          {
+            "text": "Yes, of course",
+            "words": []
+          },
+          {
+            "text": "You're all coming, right?",
+            "words": []
+          },
+          {
+            "text": "Yes, definitely, definitely we'll come",
+            "words": []
+          },
+          {
+            "text": "Sally, you're coming, right?",
+            "words": []
+          },
+          {
+            "text": "Yeah, yeah, definitely coming",
+            "words": []
+          },
+          {
+            "text": "And what do you think about inviting Luna too?",
+            "words": []
+          },
+          {
+            "text": "Mulawana?",
+            "words": []
+          },
+          {
+            "text": "You're joking, right?",
+            "words": []
+          },
+          {
+            "text": "Why on earth would we invite her?",
+            "words": []
+          },
+          {
+            "text": "Why not?",
+            "words": []
+          },
+          {
+            "text": "I feel we should get to know her more",
+            "words": []
+          },
+          {
+            "text": "Yeah, you're right",
+            "words": []
+          },
+          {
+            "text": "Okay, we'll invite her",
+            "words": []
+          },
+          {
+            "text": "But on one condition",
+            "words": []
+          },
+          {
+            "text": "We tell her the dress code",
+            "words": []
+          },
+          {
+            "text": "Is pajamas and messy hair",
+            "words": []
+          },
+          {
+            "text": "But we all come wearing dresses",
+            "words": []
+          },
+          {
+            "text": "And our hair done",
+            "words": []
+          },
+          {
+            "text": "Except for her",
+            "words": []
+          },
+          {
+            "text": "How did you think of this idea?",
+            "words": []
+          },
+          {
+            "text": "You're a genius",
+            "words": []
+          },
+          {
+            "text": "She'll look like a clown",
+            "words": []
+          },
+          {
+            "text": "Oh God, I can't imagine how she'll look",
+            "words": []
+          },
+          {
+            "text": "It's so funny, right Sally?",
+            "words": []
+          },
+          {
+            "text": "Yes, very funny",
+            "words": []
+          },
+          {
+            "text": "Mulawana, Mulawana, listen",
+            "words": []
+          },
+          {
+            "text": "I want to invite you to my birthday tomorrow",
+            "words": []
+          },
+          {
+            "text": "If you're free tomorrow, of course",
+            "words": []
+          },
+          {
+            "text": "Who, me?",
+            "words": []
+          },
+          {
+            "text": "Really, really, you want to invite me?",
+            "words": []
+          },
+          {
+            "text": "Yes, we'd love to get to know you a lot",
+            "words": []
+          },
+          {
+            "text": "Okay, I'll definitely come",
+            "words": []
+          },
+          {
+            "text": "Excellent, listen",
+            "words": []
+          },
+          {
+            "text": "Wear the ugliest pajamas you have",
+            "words": []
+          },
+          {
+            "text": "And keep your hair very messy",
+            "words": []
+          },
+          {
+            "text": "Actually, the dress code is pajamas and messy hair",
+            "words": []
+          },
+          {
+            "text": "Yes, and there will be a prize",
+            "words": []
+          },
+          {
+            "text": "For the craziest look",
+            "words": []
+          },
+          {
+            "text": "Oh God, we'll definitely have fun",
+            "words": []
+          },
+          {
+            "text": "Okay, I'm going to post on the group",
+            "words": []
+          },
+          {
+            "text": "And I'll send you all the details tomorrow",
+            "words": []
+          },
+          {
+            "text": "Thank you so much for inviting me",
+            "words": []
+          },
+          {
+            "text": "I'm so, so excited",
+            "words": []
+          },
+          {
+            "text": "I can't wait",
+            "words": []
+          },
+          {
+            "text": "Hello",
+            "words": []
+          },
+          {
+            "text": "You're unbelievable, man",
+            "words": []
+          },
+          {
+            "text": "How did you know the living room walls are damp?",
+            "words": []
+          },
+          {
+            "text": "If you're free this week, come",
+            "words": []
+          },
+          {
+            "text": "Well, man, don't worry",
+            "words": []
+          },
+          {
+            "text": "Your issue is very easy",
+            "words": []
+          },
+          {
+            "text": "Two hours and the walls will be shining",
+            "words": []
+          },
+          {
+            "text": "And all for just 150 Dinars",
+            "words": []
+          },
+          {
+            "text": "Listen, this price is only for beloved families",
+            "words": []
+          },
+          {
+            "text": "Like, for the dearest friends",
+            "words": []
+          },
+          {
+            "text": "No need for thanks between us",
+            "words": []
+          },
+          {
+            "text": "Where is the dampness exactly?",
+            "words": []
+          },
+          {
+            "text": "Ah, there it is, I see it",
+            "words": []
+          },
+          {
+            "text": "Welcome, Mulawana",
+            "words": []
+          },
+          {
+            "text": "To my birthday party group",
+            "words": []
+          },
+          {
+            "text": "We're all excited for you to be with us",
+            "words": []
+          },
+          {
+            "text": "And to see you in the weirdest pajamas",
+            "words": []
+          },
+          {
+            "text": "And hairstyle",
+            "words": []
+          },
+          {
+            "text": "Mulawana says she's so, so excited, she can't wait",
+            "words": []
+          },
+          {
+            "text": "Oh God, there's going to be a scandal today",
+            "words": []
+          },
+          {
+            "text": "Wow, you girls are really scary",
+            "words": []
+          },
+          {
+            "text": "You really turned out to be much more cunning than us",
+            "words": []
+          },
+          {
+            "text": "What are we going to do?",
+            "words": []
+          },
+          {
+            "text": "Fine, what do you think if we also go to the party?",
+            "words": []
+          },
+          {
+            "text": "Yeah, you're right",
+            "words": []
+          },
+          {
+            "text": "If we don't go, we won't think about it",
+            "words": []
+          },
+          {
+            "text": "And we won't see the embarrassment that will happen",
+            "words": []
+          },
+          {
+            "text": "And that way we'll feel better",
+            "words": []
+          },
+          {
+            "text": "But Luna is still going and she'll be very embarrassed",
+            "words": []
+          },
+          {
+            "text": "You mean you won't do anything to help her?",
+            "words": []
+          },
+          {
+            "text": "If it were us, we would have helped each other, not like you",
+            "words": []
+          },
+          {
+            "text": "Yeah, it's impossible for us to stay silent",
+            "words": []
+          },
+          {
+            "text": "Ata, how many times do I have to tell you to fix the pipe on the roof?",
+            "words": []
+          },
+          {
+            "text": "Every time it rains",
+            "words": []
+          },
+          {
+            "text": "Dampness fills the building",
+            "words": []
+          },
+          {
+            "text": "Enough, man, find a solution",
+            "words": []
+          },
+          {
+            "text": "You have dampness too?",
+            "words": []
+          },
+          {
+            "text": "Don't worry, Abu Sanad",
+            "words": []
+          },
+          {
+            "text": "I'll fix it for you, and at half price too",
+            "words": []
+          },
+          {
+            "text": "Could it be you're intentionally not fixing the pipe?",
+            "words": []
+          },
+          {
+            "text": "So the building stays damp and we keep bringing you back every time",
+            "words": []
+          },
+          {
+            "text": "And you just patch it up",
+            "words": []
+          },
+          {
+            "text": "No, Abu Sanad, what do I have to do with it?",
+            "words": []
+          },
+          {
+            "text": "I didn't do anything",
+            "words": []
+          },
+          {
+            "text": "That is the problem itself",
+            "words": []
+          },
+          {
+            "text": "That you didn't do anything",
+            "words": []
+          },
+          {
+            "text": "He who sees a wrong and doesn't fix it",
+            "words": []
+          },
+          {
+            "text": "And doesn't do what's right is just like the one who did the wrong",
+            "words": []
+          },
+          {
+            "text": "Come on, kids, come on, help us clean",
+            "words": []
+          },
+          {
+            "text": "Hi Luna, sorry I've driven you crazy with all the messages",
+            "words": []
+          },
+          {
+            "text": "But there's something very important I have to tell you",
+            "words": []
+          },
+          {
+            "text": "Please call me before you go to the party",
+            "words": []
+          },
+          {
+            "text": "It's very urgent",
+            "words": []
+          },
+          {
+            "text": "Did Luna reply to you? Luna isn't replying to me",
+            "words": []
+          },
+          {
+            "text": "No, she didn't reply to me either",
+            "words": []
+          },
+          {
+            "text": "Now she's definitely on her way to the party",
+            "words": []
+          },
+          {
+            "text": "We should have done something before",
+            "words": []
+          },
+          {
+            "text": "What will happen now?",
+            "words": []
+          },
+          {
+            "text": "Listen, there's one thing left we can do",
+            "words": []
+          },
+          {
+            "text": "But I expect you won't like it much",
+            "words": []
+          },
+          {
+            "text": "Sally, leave that phone",
+            "words": []
+          },
+          {
+            "text": "Come on, come clean with us and help us a bit",
+            "words": []
+          },
+          {
+            "text": "Sorry Dad, Dad, there's something important I have to do right now",
+            "words": []
+          },
+          {
+            "text": "Sweetie, are you sure the invitation arrived correctly?",
+            "words": []
+          },
+          {
+            "text": "I don't want you to be embarrassed",
+            "words": []
+          },
+          {
+            "text": "Don't worry, Mom",
+            "words": []
+          },
+          {
+            "text": "Everyone will be dressed like this",
+            "words": []
+          },
+          {
+            "text": "They told me so, we're going to have a lot of fun",
+            "words": []
+          },
+          {
+            "text": "Okay sweetie, I'll come back to pick you up in two hours",
+            "words": []
+          },
+          {
+            "text": "Love you Mom, bye",
+            "words": []
+          },
+          {
+            "text": "Bye",
+            "words": []
+          },
+          {
+            "text": "Mulawana",
+            "words": []
+          },
+          {
+            "text": "Hi, sorry we're late",
+            "words": []
+          },
+          {
+            "text": "Yeah, it took us time to get ready",
+            "words": []
+          },
+          {
+            "text": "Why is none of them wearing pajamas and their hair like that?",
+            "words": []
+          },
+          {
+            "text": "Because they are cowards",
+            "words": []
+          },
+          {
+            "text": "Yeah, they aren't bold like us",
+            "words": []
+          },
+          {
+            "text": "The three of us look so cool",
+            "words": []
+          },
+          {
+            "text": "Come on, come on, let's take a picture",
+            "words": []
+          }
+        ],
+        "lessons": "# The New Girl's Style\n00:05 شوفوا شوفوا البنت الجديدة\n00:07 شوفوا شو لابسة\n00:09 شو ستايلها قديم\n00:11 شكله من خزانة أمها\n00:13 قصدك من خزانة ستها\n00:16 شكلها زي برداية مطبخ ستي\n\n# Welcome to Class\n00:21 صباح الخير\n00:22 قبل ما نبدأ درس اليوم\n00:24 بدي أعرفكم على زميلتكم الجديدة\n00:26 لونا، صح؟\n00:27 مس مس\n00:28 بس هي بتحب النادي الملونة\n\n# Classroom Introductions\n00:31 آه اوكي ملونة\n00:32 مبسوطين إنك معنا\n00:34 أنا متأكدة إنك رح تصيري صحبة مع البنات بسرعة\n00:39 اليوم رح نكمل درس الأسبوع الماضي\n00:41 ضرب الكسور المركبة\n\n# Musical Interlude 1\n00:55 شتتية دنيتي\n00:56 تيزي تيزي\n00:57 دمو سم\n00:58 نويعلى\n00:59 هلا هلا\n01:00 هلا هلا\n\n# The Handyman's Call\n01:04 ألو أبو أبو النواف\n01:05 كيف حالك؟\n01:06 شو أخبارك؟\n01:07 كيف الشتوية معك خيو؟\n01:09 الحمد لله\n01:10 الحمد لله على المطر يا عطى\n\n# Business and Mold\n01:12 شو الواحد بده يحكي غير هيك\n01:14 الحمد لله الحمد لله\n01:16 اسمع إذا الحيطان عندك رطبوا\n01:19 طلع عليهن عفن\n01:21 بس رن علي\n01:22 باجي عالسريع\n\n# Negotiating the Price\n01:25 لا حبيبي\n01:26 باخذ زي المرة الماضية\n01:28 وفوقيهم 10%\n01:29 شو شفت الجمعية الخيرية؟\n01:31 أهليين\n01:32 ما أنا صرت محترف\n\n# Closing the Deal\n01:34 بخلص كل الشغل حبيبي عالسريع\n01:36 يلا حبيبي بستنى تليفونك\n01:38 مش تنسى\n01:39 سلام\n\n# Musical Interlude 2\n01:41 شتتية دنيتي\n01:42 تيزي تيزي\n01:43 دمو سم\n01:44 نويعلى\n01:45 هلا هلا\n01:46 هلا هلا\n\n# Feeling Left Out\n01:55 ماما لا تعالي خذيني هلا\n01:57 ما حدا يحبني هون\n01:58 وكلهم عم بيضحكوا علي\n02:00 مش قادرة مش قادرة أتحمل\n02:02 خلص بليز تعالي خذيني\n\n# The Damp Wall Dilemma\n02:12 وين راحت الشمسية؟\n02:15 رطوبة لا حول ولا قوة\n02:18 كيف عرف عطى إنه هيك رح يصير؟\n02:20 أكيد في إنّ\n02:21 لا لا لا لا أنا أكيد\n02:24 ولا يمكن\n\n# Home Improvement Worries\n02:26 هسا إذا عرفت أم إنصاف بالموضوع\n02:28 رح تخلينا ندهن الدار\n02:30 وبعدين بصير بدها تغير العفش\n02:33 مش معقول\n02:34 عشان يليق على لون الحيطان الجديد\n02:36 ما هو ما بينفع الفرش القديم\n\n# The Birthday Invitation\n02:38 عالدهان الجديد\n02:40 لا لا لا لا لا\n02:49 بنات بعثت لكم مسج\n02:51 عشان تيجوا على عيد ميلادي\n02:53 شفتوها؟\n02:54 آه كثير متحمسة\n\n# Party Planning\n02:56 كل حفلة بتعمليها أحلى من الثانية\n02:59 آه طبعاً\n03:01 كلكم رح تيجوا صح؟\n03:02 آه أكيد أكيد رح نيجي\n03:06 سالي إنتي جاية صح؟\n03:08 إيه آه آه أكيد جاي\n\n# The Prank Idea\n03:11 وشو رأيك تعزمي لونا كمان؟\n03:13 ملونة؟\n03:14 تمزحي صح؟\n03:16 ليش نعزمها إن شاء الله؟\n03:18 ليش لا؟\n03:19 بحس لازم نتعرف عليها أكثر\n\n# Setting the Dress Code\n03:21 آه معك حق\n03:22 ماشي بنعزمها\n03:24 بس بشرط\n03:25 بنحكي لها إنه الجاس كود\n03:27 بجامة وشعر منكوش\n03:30 بس كلنا نيجي لابسين فساتين\n\n# Plotting the Embarrassment\n03:32 وشعرنا مظبط\n03:34 ما عدا هي\n03:36 كيف خطرت لك هاي الفكرة؟\n03:38 إنتي عبقرية\n03:40 رح تطلع زي المهرج\n03:42 يا الله مش قادرة أتخيل كيف رح يكون منظرها\n\n# Inviting Luna\n03:45 كثير بيضحك صح سالي؟\n03:48 آه كثير بيضحك\n03:53 ملونة ملونة اسمعي\n03:55 بدي أعزمك على عيد ميلادي بكرة\n03:57 إذا فاضية بكرة طبعاً\n03:59 مين أنا؟\n\n# The Fake Theme\n04:00 عن جد عن جد بدكم تعزموني أنا؟\n04:03 آه حابين نتعرف عليكي كثير\n04:06 اوكي أكيد باجي\n04:07 ممتاز اسمعي\n04:09 البسي أبشع بجامة عندك\n04:12 وخلي شعرك كثير منكوش\n\n# The Crazy Look Prize\n04:14 أصلاً الجاس كود بجامة وشعر منكوش\n04:18 آه ورح يكون في جائزة\n04:20 لأكثر لوك مجنون\n04:22 يا الله أكيد رح ننبسط\n04:24 اوكي خلص بدي أفك عالجروب\n04:26 وببعث لك كل التفاصيل بكرة\n\n# Luna's Excitement\n04:28 شكراً كثير عشانكم عزمتوني\n04:30 كثير كثير متحمسة\n04:32 مش قادرة أستنى\n04:37 ألو\n04:38 مش معقول إنت يا زلمة\n04:40 كيف هيك عرفت إنه حيطان القعدة مرطبة؟\n\n# The Repair Quote\n04:42 إذا فاضي هذا الأسبوع تعال\n04:44 طب يا زلمة لا تقتل الهم\n04:45 موضوعك سهل جداً\n04:47 ساعتين وبيكونوا الحيطان يلمعن لمع\n04:51 وكله بس ب 150 ليرة\n04:54 اسمع هذا السعر بس للعائلات الحبايب\n\n# Inspecting the Damage\n04:58 يعني للروح للروح\n05:00 لا تشكرني ولا أشكرك\n05:02 وين رطوبة بالضبط؟\n05:03 آه هيها شفتها\n05:19 أهلاً وسهلاً ملونة\n05:21 في جروب حفلة عيد ميلادي\n\n# Group Chat Gossip\n05:23 كلنا متحمسين تكوني معنا\n05:25 ونشوفك بأغرب بجامة\n05:27 وتسريحة شعر\n05:29 الملونة بتقول كثير كثير متحمسة مش قادرة أستنى\n05:33 يا الله رح يصير فضيحة اليوم\n05:36 واو أنتوا البنات جد بتخوفوا\n\n# Conscience and Conflict\n05:39 جد طلعتوا ألم منا بكثير\n05:41 شو رح نعمل؟\n05:43 خلص شو رأيك كمان نروح الحفلة؟\n05:45 آه معك حق\n05:46 إذا ما رحنا ما رح نفكر بالموضوع\n05:48 وما رح نشوف الإحراج اللي رح يصير\n\n# Helping Luna\n05:50 وهيك بنرتاح نفسياً\n05:52 بس لونا لسه رايحة ورح تنحرج كثير\n05:55 يعني ما رح تعملوا شيء تساعدوها؟\n05:57 لو إحنا كان ساعدنا بعض مش زيكم\n06:00 آه مستحيل نضل ساكتين\n\n# Confronting the Landlord\n06:04 يا عطى كم مرة بدي أقولك تصلح الماسورة اللي عالسطح؟\n06:08 كل مرة الدنيا بتشتي\n06:10 الرطوبة بتعبي العمارة\n06:12 خلص يا رجل شوف لك حل\n06:14 إنتوا كمان عندكم رطوبة؟\n06:16 ولا يهمك أبو سند\n\n# The Moral Lesson\n06:18 أنا بحل لك إياها وبنص السعر كمان\n06:21 ليكون قاصد ما تصلح الماسورة\n06:24 عشان تضل العمارة ترطب ونضل نجيبك كل مرة\n06:27 وترقع ترقيع\n06:29 لا يا أبو سند أنا شو دخلني؟\n06:31 أنا ما عملت شيء\n\n# Responsibility\n06:33 هاي هي المشكلة بحد ذاتها\n06:35 إنك ما عملت شيء\n06:36 اللي بيشوف الغلط وما بيصلحه\n06:38 وما بيعمل الصح زيه زي اللي عامل الغلط\n06:42 يلا يا أولاد يلا ساعدونا بالتنظيف\n\n# Trying to Warn Her\n06:48 هاي لونا أسفة جننتك قد ما بعثت مسجات\n07:07 بس في شيء كثير مهم لازم أقولك إياه\n07:09 بليز رني لي قبل ما تروحي عالحفلة\n07:11 ضروري كثير\n07:14 لونا ردت عليكي لونا مش عم ترد علي\n07:18 لا أنا كمان ما ردت علي\n\n# The Last Chance\n07:21 هلا أكيد هي بطريق الحفلة\n07:23 كان لازم عملنا شيء من قبل\n07:25 شو رح يصير هلا؟\n07:27 اسمعي ضل شيء واحد ممكن نعمله\n07:30 بس أتوقع ما رح يعجبك كثير\n07:32 سالي اتركي هالموبايل\n\n# Off to the Party\n07:34 يلا تعالي نظفي معنا ومساعدينا شوي\n07:36 أسفة بابا بابا في شيء مهم لازم أعمله هلا هلا\n07:43 حبيبتي متأكدة إنه وصلت الدعوة صح\n07:46 ما بدي إياكي تنحرجي\n07:48 ما تقلقي يا ماما\n07:49 الكل رح يكون لابس هيك\n\n# The Arrival\n07:51 هم حكوا لي هيك رح ننبسط كثير\n07:54 اوكي حبيبتي يلا برجع باخذك كمان ساعتين\n07:56 بحبك ماما باي\n07:58 باي\n08:11 ملونة\n08:16 هاي أسفين عالتاخير\n\n# True Friends\n08:18 آه أخذنا وقت نجهز حالنا\n08:33 ليش ما حدا منهم لابس بجامة وشعرهم هيك؟\n08:36 لأنهم جبناء\n08:38 آه مش جريئين زينا\n08:40 إحنا الثلاثة طالعين كثير كول\n08:42 تعالوا تعالوا نتصور"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-03-07 20:13:43 UTC",
   "updated_at": "2026-03-07 21:18:41 UTC",

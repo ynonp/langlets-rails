@@ -8,1519 +8,2285 @@
       {
         "id": "phrase_2",
         "text_l1": "مرحبا أصدقائي",
-        "timestamp": "00:00",
-        "text_l2": "Hello my friends"
+        "timestamp": "00:00"
       },
       {
         "id": "phrase_3",
         "text_l1": "عندنا مفاجأة",
-        "timestamp": "00:01",
-        "text_l2": "We have a surprise"
+        "timestamp": "00:01"
       },
       {
         "id": "phrase_4",
         "text_l1": "كثير حلوة لكم",
-        "timestamp": "00:02",
-        "text_l2": "A very nice one for you"
+        "timestamp": "00:02"
       },
       {
         "id": "phrase_5",
         "text_l1": "لا لا أنا مش حامل",
-        "timestamp": "00:04",
-        "text_l2": "No, no, I'm not pregnant"
+        "timestamp": "00:04"
       },
       {
         "id": "phrase_6",
         "text_l1": "بس متحمسين نشارككم",
-        "timestamp": "00:07",
-        "text_l2": "But we are excited to share with you"
+        "timestamp": "00:07"
       },
       {
         "id": "phrase_7",
         "text_l1": "ستايل جديد",
-        "timestamp": "00:08",
-        "text_l2": "A new style"
+        "timestamp": "00:08"
       },
       {
         "id": "phrase_8",
         "text_l1": "عم نشتغل عليه",
-        "timestamp": "00:09",
-        "text_l2": "We are working on it"
+        "timestamp": "00:09"
       },
       {
         "id": "phrase_9",
         "text_l1": "احضروا الحلقة كاملة",
-        "timestamp": "00:11",
-        "text_l2": "Watch the full episode"
+        "timestamp": "00:11"
       },
       {
         "id": "phrase_10",
         "text_l1": "واحكوا لنا رأيكم",
-        "timestamp": "00:12",
-        "text_l2": "And tell us your opinion"
+        "timestamp": "00:12"
       },
       {
         "id": "phrase_11",
         "text_l1": "بالتعليقات",
-        "timestamp": "00:13",
-        "text_l2": "In the comments"
+        "timestamp": "00:13"
       },
       {
         "id": "phrase_12",
         "text_l1": "وما تنسوا تعملوا",
-        "timestamp": "00:15",
-        "text_l2": "And don't forget to"
+        "timestamp": "00:15"
       },
       {
         "id": "phrase_13",
         "text_l1": "سبسكرايب",
-        "timestamp": "00:16",
-        "text_l2": "Subscribe"
+        "timestamp": "00:16"
       },
       {
         "id": "phrase_14",
         "text_l1": "أبو يزن",
-        "timestamp": "00:20",
-        "text_l2": "Abu Yazan"
+        "timestamp": "00:20"
       },
       {
         "id": "phrase_15",
         "text_l1": "شوف شوف",
-        "timestamp": "00:21",
-        "text_l2": "Look, look"
+        "timestamp": "00:21"
       },
       {
         "id": "phrase_16",
         "text_l1": "تتذكر شهر العسل",
-        "timestamp": "00:22",
-        "text_l2": "Do you remember the honeymoon?"
+        "timestamp": "00:22"
       },
       {
         "id": "phrase_17",
         "text_l1": "قضينا هون أحلى أيام",
-        "timestamp": "00:24",
-        "text_l2": "We spent the best days here"
+        "timestamp": "00:24"
       },
       {
         "id": "phrase_18",
         "text_l1": "يا",
-        "timestamp": "00:26",
-        "text_l2": "Yeah"
+        "timestamp": "00:26"
       },
       {
         "id": "phrase_19",
         "text_l1": "بتعرف إنها كانت أول",
-        "timestamp": "00:27",
-        "text_l2": "You know it was the first"
+        "timestamp": "00:27"
       },
       {
         "id": "phrase_20",
         "text_l1": "وآخر رحلة إلنا مع بعض",
-        "timestamp": "00:28",
-        "text_l2": "And last trip we took together"
+        "timestamp": "00:28"
       },
       {
         "id": "phrase_21",
         "text_l1": "طلع قديش سعر الرحلة رخيص",
-        "timestamp": "00:30",
-        "text_l2": "Look how cheap the price of the trip is"
+        "timestamp": "00:30"
       },
       {
         "id": "phrase_22",
         "text_l1": "شو رأيك نرجع نعملها",
-        "timestamp": "00:33",
-        "text_l2": "What do you think about doing it again?"
+        "timestamp": "00:33"
       },
       {
         "id": "phrase_23",
         "text_l1": "ونسافر شهر عسل ثاني",
-        "timestamp": "00:35",
-        "text_l2": "And going on a second honeymoon?"
+        "timestamp": "00:35"
       },
       {
         "id": "phrase_24",
         "text_l1": "هاتي هاتي أشوف قديش يعني رخيص",
-        "timestamp": "00:37",
-        "text_l2": "Give it, give it, let me see how cheap it is"
+        "timestamp": "00:37"
       },
       {
         "id": "phrase_25",
         "text_l1": "أوف",
-        "timestamp": "00:39",
-        "text_l2": "Oof"
+        "timestamp": "00:39"
       },
       {
         "id": "phrase_26",
         "text_l1": "هذا عن جد العرض خرافي",
-        "timestamp": "00:40",
-        "text_l2": "This offer is truly legendary"
+        "timestamp": "00:40"
       },
       {
         "id": "phrase_27",
         "text_l1": "آه بس استني",
-        "timestamp": "00:42",
-        "text_l2": "Yeah, but wait"
+        "timestamp": "00:42"
       },
       {
         "id": "phrase_28",
         "text_l1": "هذا للجروبات يا حبيبتي",
-        "timestamp": "00:43",
-        "text_l2": "This is for groups, my dear"
+        "timestamp": "00:43"
       },
       {
         "id": "phrase_29",
         "text_l1": "يعني عيلتين أو أكثر",
-        "timestamp": "00:44",
-        "text_l2": "Meaning two families or more"
+        "timestamp": "00:44"
       },
       {
         "id": "phrase_30",
         "text_l1": "يعني أكيد مش هاني مون",
-        "timestamp": "00:46",
-        "text_l2": "So it's definitely not a honeymoon"
+        "timestamp": "00:46"
       },
       {
         "id": "phrase_31",
         "text_l1": "هاني مون قال",
-        "timestamp": "00:48",
-        "text_l2": "\"Honeymoon,\" she says"
+        "timestamp": "00:48"
       },
       {
         "id": "phrase_32",
         "text_l1": "طيب بنجيب عيلة ثانية معنا",
-        "timestamp": "00:50",
-        "text_l2": "Okay, we'll bring another family with us"
+        "timestamp": "00:50"
       },
       {
         "id": "phrase_33",
         "text_l1": "بس بدنا حدا هيك ظله خفيف",
-        "timestamp": "00:52",
-        "text_l2": "But we want someone light-hearted"
+        "timestamp": "00:52"
       },
       {
         "id": "phrase_34",
         "text_l1": "وناس مش نكديين",
-        "timestamp": "00:54",
-        "text_l2": "And people who aren't grumpy"
+        "timestamp": "00:54"
       },
       {
         "id": "phrase_35",
         "text_l1": "وما يجننونا",
-        "timestamp": "00:55",
-        "text_l2": "And who won't drive us crazy"
+        "timestamp": "00:55"
       },
       {
         "id": "phrase_36",
         "text_l1": "وهيك بنترك الأولاد معهم",
-        "timestamp": "00:57",
-        "text_l2": "And that way we leave the kids with them"
+        "timestamp": "00:57"
       },
       {
         "id": "phrase_37",
         "text_l1": "وبنطش لحالنا",
-        "timestamp": "00:59",
-        "text_l2": "And we go out by ourselves"
+        "timestamp": "00:59"
       },
       {
         "id": "phrase_38",
         "text_l1": "شو رأيك",
-        "timestamp": "01:00",
-        "text_l2": "What do you think?"
+        "timestamp": "01:00"
       },
       {
         "id": "phrase_39",
         "text_l1": "بمين عم بتفكري",
-        "timestamp": "01:01",
-        "text_l2": "Who are you thinking of?"
+        "timestamp": "01:01"
       },
       {
         "id": "phrase_40",
         "text_l1": "بليز بليز بابا",
-        "timestamp": "01:04",
-        "text_l2": "Please, please Dad"
+        "timestamp": "01:04"
       },
       {
         "id": "phrase_41",
         "text_l1": "لو سمحت",
-        "timestamp": "01:06",
-        "text_l2": "If you please"
+        "timestamp": "01:06"
       },
       {
         "id": "phrase_42",
         "text_l1": "يا بابا يا بابا",
-        "timestamp": "01:07",
-        "text_l2": "Oh Dad, oh Dad"
+        "timestamp": "01:07"
       },
       {
         "id": "phrase_43",
         "text_l1": "ماشي بنروح",
-        "timestamp": "01:10",
-        "text_l2": "Okay, we'll go"
+        "timestamp": "01:10"
       },
       {
         "id": "phrase_44",
         "text_l1": "صفرة صفرة صفرة",
-        "timestamp": "01:11",
-        "text_l2": "A trip, a trip, a trip!"
+        "timestamp": "01:11"
       },
       {
         "id": "phrase_45",
         "text_l1": "أنا رايحة أخبر أم يزن",
-        "timestamp": "01:14",
-        "text_l2": "I'm going to tell Umm Yazan"
+        "timestamp": "01:14"
       },
       {
         "id": "phrase_46",
         "text_l1": "ونتفق على كل التفاصيل",
-        "timestamp": "01:15",
-        "text_l2": "And we'll agree on all the details"
+        "timestamp": "01:15"
       },
       {
         "id": "phrase_47",
         "text_l1": "بابا مش قادر أجر الشنطة",
-        "timestamp": "01:21",
-        "text_l2": "Dad, I can't pull the suitcase"
+        "timestamp": "01:21"
       },
       {
         "id": "phrase_48",
         "text_l1": "خلي رنا تساعدك يابا",
-        "timestamp": "01:24",
-        "text_l2": "Let Rana help you, son"
+        "timestamp": "01:24"
       },
       {
         "id": "phrase_49",
         "text_l1": "خليني باللي أنا فيه",
-        "timestamp": "01:26",
-        "text_l2": "Leave me to what I'm dealing with"
+        "timestamp": "01:26"
       },
       {
         "id": "phrase_50",
         "text_l1": "مش قادر",
-        "timestamp": "01:28",
-        "text_l2": "I can't"
+        "timestamp": "01:28"
       },
       {
         "id": "phrase_51",
         "text_l1": "تقيلة عليك حبيبي",
-        "timestamp": "01:29",
-        "text_l2": "It's heavy for you, my dear"
+        "timestamp": "01:29"
       },
       {
         "id": "phrase_52",
         "text_l1": "شد حيلك معي أغراض كثير",
-        "timestamp": "01:30",
-        "text_l2": "Be strong, I have many things"
+        "timestamp": "01:30"
       },
       {
         "id": "phrase_53",
         "text_l1": "بابا رنا مش قابلة تساعدني",
-        "timestamp": "01:32",
-        "text_l2": "Dad, Rana refuses to help me"
+        "timestamp": "01:32"
       },
       {
         "id": "phrase_54",
         "text_l1": "دبروا حالكم",
-        "timestamp": "01:36",
-        "text_l2": "Manage yourselves"
+        "timestamp": "01:36"
       },
       {
         "id": "phrase_55",
         "text_l1": "مش شايفني مشغول",
-        "timestamp": "01:37",
-        "text_l2": "Don't you see I'm busy?"
+        "timestamp": "01:37"
       },
       {
         "id": "phrase_56",
         "text_l1": "شو اللي عم بصير هون",
-        "timestamp": "01:39",
-        "text_l2": "What is happening here?"
+        "timestamp": "01:39"
       },
       {
         "id": "phrase_57",
         "text_l1": "أنت شايف",
-        "timestamp": "01:41",
-        "text_l2": "You see"
+        "timestamp": "01:41"
       },
       {
         "id": "phrase_58",
         "text_l1": "قال هذه البلايز لبسوها على شهر العسل",
-        "timestamp": "01:43",
-        "text_l2": "He said wear these shirts for the honeymoon"
+        "timestamp": "01:43"
       },
       {
         "id": "phrase_59",
         "text_l1": "بابا شوف سالي",
-        "timestamp": "01:48",
-        "text_l2": "Dad, look at Sally"
+        "timestamp": "01:48"
       },
       {
         "id": "phrase_60",
         "text_l1": "أخذت هاي المخدة اللي بنحطها على الرقبة",
-        "timestamp": "01:49",
-        "text_l2": "She took this pillow that we put on the neck"
+        "timestamp": "01:49"
       },
       {
         "id": "phrase_61",
         "text_l1": "هي لمين",
-        "timestamp": "01:51",
-        "text_l2": "Who is it for?"
+        "timestamp": "01:51"
       },
       {
         "id": "phrase_62",
         "text_l1": "إلك",
-        "timestamp": "01:52",
-        "text_l2": "For you"
+        "timestamp": "01:52"
       },
       {
         "id": "phrase_63",
         "text_l1": "بالضبط هي مش بس إلك سيد سند",
-        "timestamp": "01:54",
-        "text_l2": "Exactly, it's not just for you, Mr. Sanad"
+        "timestamp": "01:54"
       },
       {
         "id": "phrase_64",
         "text_l1": "هي إلنا كلنا وأنا سبقت عليها",
-        "timestamp": "01:56",
-        "text_l2": "It's for all of us and I got to it first"
+        "timestamp": "01:56"
       },
       {
         "id": "phrase_65",
         "text_l1": "خلص يا ولاد دور دور",
-        "timestamp": "01:59",
-        "text_l2": "Enough kids, turns, turns"
+        "timestamp": "01:59"
       },
       {
         "id": "phrase_66",
         "text_l1": "طيب أنا أول",
-        "timestamp": "02:01",
-        "text_l2": "Okay, I'm first"
+        "timestamp": "02:01"
       },
       {
         "id": "phrase_67",
         "text_l1": "يا سند",
-        "timestamp": "02:02",
-        "text_l2": "Oh Sanad"
+        "timestamp": "02:02"
       },
       {
         "id": "phrase_68",
         "text_l1": "نداء نهائي",
-        "timestamp": "02:04",
-        "text_l2": "Final call"
+        "timestamp": "02:04"
       },
       {
         "id": "phrase_69",
         "text_l1": "وأخيرا لعيلة أبو سند",
-        "timestamp": "02:05",
-        "text_l2": "And finally for Abu Sanad's family"
+        "timestamp": "02:05"
       },
       {
         "id": "phrase_70",
         "text_l1": "وعيلة أبو يزن",
-        "timestamp": "02:06",
-        "text_l2": "And Abu Yazan's family"
+        "timestamp": "02:06"
       },
       {
         "id": "phrase_71",
         "text_l1": "هو ما في غيركم في المطار",
-        "timestamp": "02:08",
-        "text_l2": "Is there no one else but you in the airport?"
+        "timestamp": "02:08"
       },
       {
         "id": "phrase_72",
         "text_l1": "الرجاء التوجه فورا",
-        "timestamp": "02:11",
-        "text_l2": "Please proceed immediately"
+        "timestamp": "02:11"
       },
       {
         "id": "phrase_73",
         "text_l1": "للبوابة رقم ثلاثة",
-        "timestamp": "02:13",
-        "text_l2": "To gate number three"
+        "timestamp": "02:13"
       },
       {
         "id": "phrase_74",
         "text_l1": "خلصونا",
-        "timestamp": "02:15",
-        "text_l2": "Hurry up"
+        "timestamp": "02:15"
       },
       {
         "id": "phrase_75",
         "text_l1": "الطيارة كلها بتستنى فيكم",
-        "timestamp": "02:16",
-        "text_l2": "The whole plane is waiting for you"
+        "timestamp": "02:16"
       },
       {
         "id": "phrase_76",
         "text_l1": "وبعدين معاكم",
-        "timestamp": "02:18",
-        "text_l2": "What's with you guys?"
+        "timestamp": "02:18"
       },
       {
         "id": "phrase_77",
         "text_l1": "يلا يا جماعة",
-        "timestamp": "02:20",
-        "text_l2": "Come on everyone"
+        "timestamp": "02:20"
       },
       {
         "id": "phrase_78",
         "text_l1": "يلا ركض",
-        "timestamp": "02:21",
-        "text_l2": "Come on, run"
+        "timestamp": "02:21"
       },
       {
         "id": "phrase_79",
         "text_l1": "يزن هلا قوم",
-        "timestamp": "02:25",
-        "text_l2": "Yazan, get up now"
+        "timestamp": "02:25"
       },
       {
         "id": "phrase_80",
         "text_l1": "هذا محلي",
-        "timestamp": "02:26",
-        "text_l2": "This is my seat"
+        "timestamp": "02:26"
       },
       {
         "id": "phrase_81",
         "text_l1": "مش قايم أنا سبقت",
-        "timestamp": "02:28",
-        "text_l2": "I'm not getting up, I got here first"
+        "timestamp": "02:28"
       },
       {
         "id": "phrase_82",
         "text_l1": "اللي سبق لبق",
-        "timestamp": "02:30",
-        "text_l2": "First come, first served"
+        "timestamp": "02:30"
       },
       {
         "id": "phrase_83",
         "text_l1": "يزن بلاش ما أنا هذه المضيفة",
-        "timestamp": "02:32",
-        "text_l2": "Yazan, don't make me... this flight attendant"
+        "timestamp": "02:32"
       },
       {
         "id": "phrase_84",
         "text_l1": "بتقومك غصب عنك",
-        "timestamp": "02:34",
-        "text_l2": "Will make you get up against your will"
+        "timestamp": "02:34"
       },
       {
         "id": "phrase_85",
         "text_l1": "أم يزن وين كنتوا",
-        "timestamp": "02:36",
-        "text_l2": "Umm Yazan, where were you?"
+        "timestamp": "02:36"
       },
       {
         "id": "phrase_86",
         "text_l1": "قلقنا عليكم تأخرتوا",
-        "timestamp": "02:38",
-        "text_l2": "We worried about you, you're late"
+        "timestamp": "02:38"
       },
       {
         "id": "phrase_87",
         "text_l1": "لما سافرنا شهر العسل",
-        "timestamp": "02:40",
-        "text_l2": "When we traveled for the honeymoon"
+        "timestamp": "02:40"
       },
       {
         "id": "phrase_88",
         "text_l1": "أبو يزن شرالي ريحة من السوق الحرة",
-        "timestamp": "02:41",
-        "text_l2": "Abu Yazan bought me a perfume from the Duty Free"
+        "timestamp": "02:41"
       },
       {
         "id": "phrase_89",
         "text_l1": "وضلينا ندور عليها عبال ما لقيناها",
-        "timestamp": "02:44",
-        "text_l2": "And we kept looking for it until we found it"
+        "timestamp": "02:44"
       },
       {
         "id": "phrase_90",
         "text_l1": "منيح اللي اجيتوا",
-        "timestamp": "02:47",
-        "text_l2": "Good thing you came"
+        "timestamp": "02:47"
       },
       {
         "id": "phrase_91",
         "text_l1": "بابا خلي يزن يقوم هلا",
-        "timestamp": "02:48",
-        "text_l2": "Dad, make Yazan get up now"
+        "timestamp": "02:48"
       },
       {
         "id": "phrase_92",
         "text_l1": "يزن تحرك من محلك بسرعة",
-        "timestamp": "02:51",
-        "text_l2": "Yazan, move from your place quickly"
+        "timestamp": "02:51"
       },
       {
         "id": "phrase_93",
         "text_l1": "طب بابا بديش أقعد جنبها",
-        "timestamp": "02:53",
-        "text_l2": "But Dad, I don't want to sit next to her"
+        "timestamp": "02:53"
       },
       {
         "id": "phrase_94",
         "text_l1": "بقعد محلك",
-        "timestamp": "02:54",
-        "text_l2": "I'll sit in your place"
+        "timestamp": "02:54"
       },
       {
         "id": "phrase_95",
         "text_l1": "لا يا حبيبي ما حزرت",
-        "timestamp": "02:56",
-        "text_l2": "No, my dear, no way"
+        "timestamp": "02:56"
       },
       {
         "id": "phrase_96",
         "text_l1": "لأنه إحنا حجزنا ورا لحالنا",
-        "timestamp": "02:57",
-        "text_l2": "Because we booked in the back by ourselves"
+        "timestamp": "02:57"
       },
       {
         "id": "phrase_97",
         "text_l1": "تفضلي يا قلبي",
-        "timestamp": "03:00",
-        "text_l2": "After you, my heart"
+        "timestamp": "03:00"
       },
       {
         "id": "phrase_98",
         "text_l1": "يا حبيبي ما أحلى البيوت",
-        "timestamp": "03:10",
-        "text_l2": "Oh my, how beautiful the houses are"
+        "timestamp": "03:10"
       },
       {
         "id": "phrase_99",
         "text_l1": "هجوم",
-        "timestamp": "03:12",
-        "text_l2": "Charge!"
+        "timestamp": "03:12"
       },
       {
         "id": "phrase_100",
         "text_l1": "حطوا أغراضكم",
-        "timestamp": "03:14",
-        "text_l2": "Put your things down"
+        "timestamp": "03:14"
       },
       {
         "id": "phrase_101",
         "text_l1": "نتلاقى عندنا كمان نص ساعة",
-        "timestamp": "03:15",
-        "text_l2": "We'll meet at our place in half an hour"
+        "timestamp": "03:15"
       },
       {
         "id": "phrase_102",
         "text_l1": "شوف ما أحلى التخت",
-        "timestamp": "03:17",
-        "text_l2": "Look how nice the bed is"
+        "timestamp": "03:17"
       },
       {
         "id": "phrase_103",
         "text_l1": "بتقدر تنط عالي كثير",
-        "timestamp": "03:18",
-        "text_l2": "You can jump very high"
+        "timestamp": "03:18"
       },
       {
         "id": "phrase_104",
         "text_l1": "راح ألبس هذا الفستان على البحر",
-        "timestamp": "03:21",
-        "text_l2": "I'm going to wear this dress at the beach"
+        "timestamp": "03:21"
       },
       {
         "id": "phrase_105",
         "text_l1": "جبتي تبعك صح",
-        "timestamp": "03:23",
-        "text_l2": "You brought yours, right?"
+        "timestamp": "03:23"
       },
       {
         "id": "phrase_106",
         "text_l1": "طبعا أول شيء طبيته",
-        "timestamp": "03:25",
-        "text_l2": "Of course, it's the first thing I grabbed"
+        "timestamp": "03:25"
       },
       {
         "id": "phrase_107",
         "text_l1": "شو رأيكم أنا وأبو يزن",
-        "timestamp": "03:28",
-        "text_l2": "What do you think, Abu Yazan and I"
+        "timestamp": "03:28"
       },
       {
         "id": "phrase_108",
         "text_l1": "بنطلع نجيب شوية أغراض للبيت",
-        "timestamp": "03:29",
-        "text_l2": "Will go out to get some things for the house"
+        "timestamp": "03:29"
       },
       {
         "id": "phrase_109",
         "text_l1": "بس عاد أنا وأم يزن قلنا",
-        "timestamp": "03:31",
-        "text_l2": "But Umm Yazan and I said"
+        "timestamp": "03:31"
       },
       {
         "id": "phrase_110",
         "text_l1": "بنروح نجيب خبز ومعجنات للأولاد",
-        "timestamp": "03:33",
-        "text_l2": "We'll go get bread and pastries for the kids"
+        "timestamp": "03:33"
       },
       {
         "id": "phrase_111",
         "text_l1": "يعني صح أم يزن شو",
-        "timestamp": "03:36",
-        "text_l2": "Right, Umm Yazan, what?"
+        "timestamp": "03:36"
       },
       {
         "id": "phrase_112",
         "text_l1": "آه في مخبز قريب من هون",
-        "timestamp": "03:40",
-        "text_l2": "Yeah, there's a bakery near here"
+        "timestamp": "03:40"
       },
       {
         "id": "phrase_113",
         "text_l1": "كنا كل يوم ناكل فيه أنا وأبو يزن",
-        "timestamp": "03:42",
-        "text_l2": "Abu Yazan and I used to eat there every day"
+        "timestamp": "03:42"
       },
       {
         "id": "phrase_114",
         "text_l1": "لما يجينا هون",
-        "timestamp": "03:44",
-        "text_l2": "When we came here"
+        "timestamp": "03:44"
       },
       {
         "id": "phrase_115",
         "text_l1": "بنجيب لكم معنا قهوة كمان",
-        "timestamp": "03:45",
-        "text_l2": "We'll bring you coffee with us too"
+        "timestamp": "03:45"
       },
       {
         "id": "phrase_116",
         "text_l1": "أنتوا خليكم مرتاحوا هون مع الأولاد",
-        "timestamp": "03:47",
-        "text_l2": "You guys stay and relax here with the kids"
+        "timestamp": "03:47"
       },
       {
         "id": "phrase_117",
         "text_l1": "ما بنطول عليكم",
-        "timestamp": "03:48",
-        "text_l2": "We won't be long"
+        "timestamp": "03:48"
       },
       {
         "id": "phrase_118",
         "text_l1": "خلص تمام تمام",
-        "timestamp": "03:51",
-        "text_l2": "Okay, fine, fine"
+        "timestamp": "03:51"
       },
       {
         "id": "phrase_119",
         "text_l1": "أنتوا روحوا جيبوا الخبز والمعجنات",
-        "timestamp": "03:53",
-        "text_l2": "You go get the bread and pastries"
+        "timestamp": "03:53"
       },
       {
         "id": "phrase_120",
         "text_l1": "وإحنا بس ترجعوا بنطلع نجيب أغراض البيت الثانية",
-        "timestamp": "03:55",
-        "text_l2": "And when you return, we'll go get the other house supplies"
+        "timestamp": "03:55"
       },
       {
         "id": "phrase_121",
         "text_l1": "شو رأيك عصام",
-        "timestamp": "03:58",
-        "text_l2": "What do you think, Issam?"
+        "timestamp": "03:58"
       },
       {
         "id": "phrase_122",
         "text_l1": "ماشي",
-        "timestamp": "04:00",
-        "text_l2": "Okay"
+        "timestamp": "04:00"
       },
       {
         "id": "phrase_123",
         "text_l1": "يلا مع السلامة باي",
-        "timestamp": "04:01",
-        "text_l2": "Come on, goodbye, bye"
+        "timestamp": "04:01"
       },
       {
         "id": "phrase_124",
         "text_l1": "دينا خلينا نطلع نجيب الأغراض هلا",
-        "timestamp": "04:03",
-        "text_l2": "Dina, let's go out and get the things now"
+        "timestamp": "04:03"
       },
       {
         "id": "phrase_125",
         "text_l1": "شو والأولاد",
-        "timestamp": "04:06",
-        "text_l2": "What about the kids?"
+        "timestamp": "04:06"
       },
       {
         "id": "phrase_126",
         "text_l1": "أي شو بده يصير عليهم",
-        "timestamp": "04:08",
-        "text_l2": "What's going to happen to them?"
+        "timestamp": "04:08"
       },
       {
         "id": "phrase_127",
         "text_l1": "صاروا كبار وكلها نص ساعة",
-        "timestamp": "04:09",
-        "text_l2": "They've grown up and it's only half an hour"
+        "timestamp": "04:09"
       },
       {
         "id": "phrase_128",
         "text_l1": "يا ولاد إحنا طالعين",
-        "timestamp": "04:12",
-        "text_l2": "Kids, we are going out"
+        "timestamp": "04:12"
       },
       {
         "id": "phrase_129",
         "text_l1": "أقل من ساعة نجيب كل أغراض البيت",
-        "timestamp": "04:14",
-        "text_l2": "Less than an hour to get all the house supplies"
+        "timestamp": "04:14"
       },
       {
         "id": "phrase_130",
         "text_l1": "ديروا بالكم عبال ما نرجع",
-        "timestamp": "04:16",
-        "text_l2": "Take care until we return"
+        "timestamp": "04:16"
       },
       {
         "id": "phrase_131",
         "text_l1": "سالي ورنا أنتوا المسؤولين عن إخوانكم",
-        "timestamp": "04:18",
-        "text_l2": "Sally and Rana, you are responsible for your brothers"
+        "timestamp": "04:18"
       },
       {
         "id": "phrase_132",
         "text_l1": "ما حدا يطلع من البيت مفهوم",
-        "timestamp": "04:21",
-        "text_l2": "No one leaves the house, understood?"
+        "timestamp": "04:21"
       },
       {
         "id": "phrase_133",
         "text_l1": "مفهوم",
-        "timestamp": "04:23",
-        "text_l2": "Understood"
+        "timestamp": "04:23"
       },
       {
         "id": "phrase_134",
         "text_l1": "مش مصدق إنه الجيم اللي بنحبها موجودة بالبيت",
-        "timestamp": "04:26",
-        "text_l2": "I can't believe the game we love is in the house"
+        "timestamp": "04:26"
       },
       {
         "id": "phrase_135",
         "text_l1": "عن جد هذا بيت الأحلام",
-        "timestamp": "04:29",
-        "text_l2": "Truly, this is the dream house"
+        "timestamp": "04:29"
       },
       {
         "id": "phrase_136",
         "text_l1": "سند ويزن تعالوا بسرعة رتبوا أغراضكم",
-        "timestamp": "04:31",
-        "text_l2": "Sanad and Yazan, come quickly and arrange your things"
+        "timestamp": "04:31"
       },
       {
         "id": "phrase_137",
         "text_l1": "من أول ما اجيتوا أنتوا عم تلعبوا",
-        "timestamp": "04:34",
-        "text_l2": "Since you arrived, you've been playing"
+        "timestamp": "04:34"
       },
       {
         "id": "phrase_138",
         "text_l1": "مش فاضيين بعد شوي",
-        "timestamp": "04:37",
-        "text_l2": "We're busy, in a bit"
+        "timestamp": "04:37"
       },
       {
         "id": "phrase_139",
         "text_l1": "حبايبي ما تنسوا إنه إحنا المسؤولين",
-        "timestamp": "04:39",
-        "text_l2": "Dears, don't forget that we are the ones in charge"
+        "timestamp": "04:39"
       },
       {
         "id": "phrase_140",
         "text_l1": "يلا تفضلوا",
-        "timestamp": "04:41",
-        "text_l2": "Come on, go ahead"
+        "timestamp": "04:41"
       },
       {
         "id": "phrase_141",
         "text_l1": "رنا شو بتعملي",
-        "timestamp": "04:44",
-        "text_l2": "Rana, what are you doing?"
+        "timestamp": "04:44"
       },
       {
         "id": "phrase_142",
         "text_l1": "إذا ماما شالت الشاحن عن موبايلك بتقول شيء",
-        "timestamp": "04:46",
-        "text_l2": "If Mom took the charger off your phone, would you say something?"
+        "timestamp": "04:46"
       },
       {
         "id": "phrase_143",
         "text_l1": "أنا هون المسؤولة عنك حبيبي",
-        "timestamp": "04:49",
-        "text_l2": "I am the one in charge of you here, my dear"
+        "timestamp": "04:49"
       },
       {
         "id": "phrase_144",
         "text_l1": "سند وين ريموت التلفزيون",
-        "timestamp": "04:52",
-        "text_l2": "Sanad, where is the TV remote?"
+        "timestamp": "04:52"
       },
       {
         "id": "phrase_145",
         "text_l1": "سند اقعد منيح",
-        "timestamp": "04:58",
-        "text_l2": "Sanad, sit properly"
+        "timestamp": "04:58"
       },
       {
         "id": "phrase_146",
         "text_l1": "يا سلام شو مالها قعدتي",
-        "timestamp": "05:00",
-        "text_l2": "Oh please, what's wrong with how I'm sitting?"
+        "timestamp": "05:00"
       },
       {
         "id": "phrase_147",
         "text_l1": "هلا إذا توسخ العفش بيدفعونا بداله",
-        "timestamp": "05:02",
-        "text_l2": "Now if the furniture gets dirty, they'll make us pay for it"
+        "timestamp": "05:02"
       },
       {
         "id": "phrase_148",
         "text_l1": "نزل إجرك",
-        "timestamp": "05:04",
-        "text_l2": "Put your leg down"
+        "timestamp": "05:04"
       },
       {
         "id": "phrase_149",
         "text_l1": "مضبوط وأنت كمان سيد يزن",
-        "timestamp": "05:06",
-        "text_l2": "Correct, and you too, Mr. Yazan"
+        "timestamp": "05:06"
       },
       {
         "id": "phrase_150",
         "text_l1": "لا هيك صار كثير",
-        "timestamp": "05:08",
-        "text_l2": "No, this has become too much"
+        "timestamp": "05:08"
       },
       {
         "id": "phrase_151",
         "text_l1": "أكثر من كثير",
-        "timestamp": "05:10",
-        "text_l2": "More than too much"
+        "timestamp": "05:10"
       },
       {
         "id": "phrase_152",
         "text_l1": "إحنا طالعين وما راح نرجع",
-        "timestamp": "05:12",
-        "text_l2": "We are going out and we won't come back"
+        "timestamp": "05:12"
       },
       {
         "id": "phrase_153",
         "text_l1": "غير لما أهلنا المسؤولين عنا يرجعوا",
-        "timestamp": "05:14",
-        "text_l2": "Until our parents who are responsible for us return"
+        "timestamp": "05:14"
       },
       {
         "id": "phrase_154",
         "text_l1": "وين رايحين الدنيا عتمة",
-        "timestamp": "05:17",
-        "text_l2": "Where are you going? It's dark out"
+        "timestamp": "05:17"
       },
       {
         "id": "phrase_155",
         "text_l1": "ارجعوا لهون بسرعة",
-        "timestamp": "05:19",
-        "text_l2": "Come back here quickly"
+        "timestamp": "05:19"
       },
       {
         "id": "phrase_156",
         "text_l1": "بقول ارجعوا",
-        "timestamp": "05:20",
-        "text_l2": "I said come back"
+        "timestamp": "05:20"
       },
       {
         "id": "phrase_157",
         "text_l1": "شو راح نعمل هلا",
-        "timestamp": "05:23",
-        "text_l2": "What are we going to do now?"
+        "timestamp": "05:23"
       },
       {
         "id": "phrase_158",
         "text_l1": "هيك الواحد بيعرف أصحابه",
-        "timestamp": "05:27",
-        "text_l2": "This is how one knows their friends"
+        "timestamp": "05:27"
       },
       {
         "id": "phrase_159",
         "text_l1": "بيطلعوا بيسافروا وبيروحوا",
-        "timestamp": "05:29",
-        "text_l2": "They go out, travel, and leave"
+        "timestamp": "05:29"
       },
       {
         "id": "phrase_160",
         "text_l1": "ومش حاكيين للولو",
-        "timestamp": "05:30",
-        "text_l2": "And they haven't told Lulu"
+        "timestamp": "05:30"
       },
       {
         "id": "phrase_161",
         "text_l1": "أصل السفرة مش حلوة بدوني",
-        "timestamp": "05:32",
-        "text_l2": "Actually, the trip isn't nice without me"
+        "timestamp": "05:32"
       },
       {
         "id": "phrase_162",
         "text_l1": "هم الخسرانين",
-        "timestamp": "05:34",
-        "text_l2": "They are the losers"
+        "timestamp": "05:34"
       },
       {
         "id": "phrase_163",
         "text_l1": "باقي هيئة ومنصف",
-        "timestamp": "05:36",
-        "text_l2": "Only Hay'a and Munsif are left"
+        "timestamp": "05:36"
       },
       {
         "id": "phrase_164",
         "text_l1": "أنت سامعني",
-        "timestamp": "05:40",
-        "text_l2": "Are you hearing me?"
+        "timestamp": "05:40"
       },
       {
         "id": "phrase_165",
         "text_l1": "هو أنا بس اللي سامع",
-        "timestamp": "05:42",
-        "text_l2": "Is it just me hearing?"
+        "timestamp": "05:42"
       },
       {
         "id": "phrase_166",
         "text_l1": "كل الحارة سمعتك",
-        "timestamp": "05:45",
-        "text_l2": "The whole neighborhood heard you"
+        "timestamp": "05:45"
       },
       {
         "id": "phrase_167",
         "text_l1": "طب إحنا وين راح نروح هلا",
-        "timestamp": "05:47",
-        "text_l2": "So where are we going to go now?"
+        "timestamp": "05:47"
       },
       {
         "id": "phrase_168",
         "text_l1": "أنت صدقت مش راح نروح محل",
-        "timestamp": "05:49",
-        "text_l2": "You believed it? We aren't going anywhere"
+        "timestamp": "05:49"
       },
       {
         "id": "phrase_169",
         "text_l1": "تعال هون ورا الشجرة",
-        "timestamp": "05:50",
-        "text_l2": "Come here behind the tree"
+        "timestamp": "05:50"
       },
       {
         "id": "phrase_170",
         "text_l1": "وشو راح نعمل",
-        "timestamp": "05:52",
-        "text_l2": "And what are we going to do?"
+        "timestamp": "05:52"
       },
       {
         "id": "phrase_171",
         "text_l1": "راح نعلمهم درس",
-        "timestamp": "05:54",
-        "text_l2": "We're going to teach them a lesson"
+        "timestamp": "05:54"
       },
       {
         "id": "phrase_172",
         "text_l1": "وخلينا نشوف شو بدهم يقولوا لأهلنا",
-        "timestamp": "05:55",
-        "text_l2": "And let's see what they'll say to our parents"
+        "timestamp": "05:55"
       },
       {
         "id": "phrase_173",
         "text_l1": "بس يرجعوا ما نكون موجودين",
-        "timestamp": "05:57",
-        "text_l2": "When they return and we aren't there"
+        "timestamp": "05:57"
       },
       {
         "id": "phrase_174",
         "text_l1": "يا سلام عليك",
-        "timestamp": "05:59",
-        "text_l2": "Good for you!"
+        "timestamp": "05:59"
       },
       {
         "id": "phrase_175",
         "text_l1": "شو هالصوت",
-        "timestamp": "06:02",
-        "text_l2": "What is that sound?"
+        "timestamp": "06:02"
       },
       {
         "id": "phrase_176",
         "text_l1": "مش عارف",
-        "timestamp": "06:04",
-        "text_l2": "I don't know"
+        "timestamp": "06:04"
       },
       {
         "id": "phrase_177",
         "text_l1": "هي مين هذا",
-        "timestamp": "06:05",
-        "text_l2": "Hey, who is this?"
+        "timestamp": "06:05"
       },
       {
         "id": "phrase_178",
         "text_l1": "حرامي حرامي",
-        "timestamp": "06:07",
-        "text_l2": "Thief! Thief!"
+        "timestamp": "06:07"
       },
       {
         "id": "phrase_179",
         "text_l1": "بس وطي صوتك",
-        "timestamp": "06:09",
-        "text_l2": "But lower your voice"
+        "timestamp": "06:09"
       },
       {
         "id": "phrase_180",
         "text_l1": "إحنا لازم نحكي مع البابا والماما",
-        "timestamp": "06:10",
-        "text_l2": "We must talk to Dad and Mom"
+        "timestamp": "06:10"
       },
       {
         "id": "phrase_181",
         "text_l1": "أو مع الشرطة بسرعة",
-        "timestamp": "06:12",
-        "text_l2": "Or with the police quickly"
+        "timestamp": "06:12"
       },
       {
         "id": "phrase_182",
         "text_l1": "قبل ما يدخل البيت",
-        "timestamp": "06:14",
-        "text_l2": "Before he enters the house"
+        "timestamp": "06:14"
       },
       {
         "id": "phrase_183",
         "text_l1": "ما في وقت للتلفونات لازم نتصرف",
-        "timestamp": "06:15",
-        "text_l2": "There's no time for phones, we must act"
+        "timestamp": "06:15"
       },
       {
         "id": "phrase_184",
         "text_l1": "طب شو بدنا نعمل أنا خايف",
-        "timestamp": "06:18",
-        "text_l2": "So what are we going to do? I'm scared"
+        "timestamp": "06:18"
       },
       {
         "id": "phrase_185",
         "text_l1": "ابعت لسالي ورنا وراح نتصرف",
-        "timestamp": "06:21",
-        "text_l2": "Send a message to Sally and Rana and we will act"
+        "timestamp": "06:21"
       },
       {
         "id": "phrase_186",
         "text_l1": "شو في سالي",
-        "timestamp": "06:24",
-        "text_l2": "What's up, Sally?"
+        "timestamp": "06:24"
       },
       {
         "id": "phrase_187",
         "text_l1": "في حرامي عم بيحاول يدخل البيت",
-        "timestamp": "06:27",
-        "text_l2": "There's a thief trying to enter the house"
+        "timestamp": "06:27"
       },
       {
         "id": "phrase_188",
         "text_l1": "أنتي متأكدة",
-        "timestamp": "06:29",
-        "text_l2": "Are you sure?"
+        "timestamp": "06:29"
       },
       {
         "id": "phrase_189",
         "text_l1": "هذول أكيد بيعملوا فينا مقلب",
-        "timestamp": "06:31",
-        "text_l2": "They are definitely playing a prank on us"
+        "timestamp": "06:31"
       },
       {
         "id": "phrase_190",
         "text_l1": "آه ممكن مقلب",
-        "timestamp": "06:33",
-        "text_l2": "Yeah, maybe a prank"
+        "timestamp": "06:33"
       },
       {
         "id": "phrase_191",
         "text_l1": "حرامي حرامي شو بدنا نعمل",
-        "timestamp": "06:35",
-        "text_l2": "Thief, thief, what are we going to do?"
+        "timestamp": "06:35"
       },
       {
         "id": "phrase_192",
         "text_l1": "إحنا لازم نتعاون نعمل خطة",
-        "timestamp": "06:37",
-        "text_l2": "We must cooperate to make a plan"
+        "timestamp": "06:37"
       },
       {
         "id": "phrase_193",
         "text_l1": "هلا ببعت لسند",
-        "timestamp": "06:39",
-        "text_l2": "I'll send a message to Sanad now"
+        "timestamp": "06:39"
       },
       {
         "id": "phrase_194",
         "text_l1": "سند شو الخطة احكي لي",
-        "timestamp": "06:41",
-        "text_l2": "Sanad, what's the plan? Tell me"
+        "timestamp": "06:41"
       },
       {
         "id": "phrase_195",
         "text_l1": "راح أدور على حبل",
-        "timestamp": "06:43",
-        "text_l2": "I'll look for a rope"
+        "timestamp": "06:43"
       },
       {
         "id": "phrase_196",
         "text_l1": "وأنت جيب كيس الألعاب اللي هناك والحقني",
-        "timestamp": "06:44",
-        "text_l2": "And you bring the toy bag over there and follow me"
+        "timestamp": "06:44"
       },
       {
         "id": "phrase_197",
         "text_l1": "أوك",
-        "timestamp": "06:47",
-        "text_l2": "Okay"
+        "timestamp": "06:47"
       },
       {
         "id": "phrase_198",
         "text_l1": "حرامي حرامي شو بدنا نعمل",
-        "timestamp": "06:53",
-        "text_l2": "Thief, thief, what are we going to do?"
+        "timestamp": "06:53"
       },
       {
         "id": "phrase_199",
         "text_l1": "إحنا لازم نتعاون نعمل خطة",
-        "timestamp": "06:57",
-        "text_l2": "We must cooperate to make a plan"
+        "timestamp": "06:57"
       },
       {
         "id": "phrase_200",
         "text_l1": "هلا ببعت لسند",
-        "timestamp": "07:00",
-        "text_l2": "I'll send a message to Sanad now"
+        "timestamp": "07:00"
       },
       {
         "id": "phrase_201",
         "text_l1": "سند شو الخطة احكي لي",
-        "timestamp": "07:03",
-        "text_l2": "Sanad, what's the plan? Tell me"
+        "timestamp": "07:03"
       },
       {
         "id": "phrase_202",
         "text_l1": "راح أدور على حبل",
-        "timestamp": "07:05",
-        "text_l2": "I'll look for a rope"
+        "timestamp": "07:05"
       },
       {
         "id": "phrase_203",
         "text_l1": "وأنت جيب كيس الألعاب اللي هناك والحقني",
-        "timestamp": "07:07",
-        "text_l2": "And you bring the toy bag over there and follow me"
+        "timestamp": "07:07"
       },
       {
         "id": "phrase_204",
         "text_l1": "أوك",
-        "timestamp": "07:11",
-        "text_l2": "Okay"
+        "timestamp": "07:11"
       },
       {
         "id": "phrase_205",
         "text_l1": "مسكوه مسكوه",
-        "timestamp": "07:15",
-        "text_l2": "They caught him, they caught him!"
+        "timestamp": "07:15"
       },
       {
         "id": "phrase_206",
         "text_l1": "مش معقول الخطة رهيبة",
-        "timestamp": "07:18",
-        "text_l2": "Unbelievable, the plan is awesome"
+        "timestamp": "07:18"
       },
       {
         "id": "phrase_207",
         "text_l1": "وأنتوا مفزعين",
-        "timestamp": "07:20",
-        "text_l2": "And you guys are formidable"
+        "timestamp": "07:20"
       },
       {
         "id": "phrase_208",
         "text_l1": "عملناها",
-        "timestamp": "07:22",
-        "text_l2": "We did it!"
+        "timestamp": "07:22"
       },
       {
         "id": "phrase_209",
         "text_l1": "يزن شو هال شجاعة هاي",
-        "timestamp": "07:23",
-        "text_l2": "Yazan, what is this bravery?"
+        "timestamp": "07:23"
       },
       {
         "id": "phrase_210",
         "text_l1": "إزاي ما بيقولوا الأجانب",
-        "timestamp": "07:26",
-        "text_l2": "As the foreigners say"
+        "timestamp": "07:26"
       },
       {
         "id": "phrase_211",
         "text_l1": "تيم ورك ميكس ذا دريم ورك",
-        "timestamp": "07:28",
-        "text_l2": "Teamwork makes the dream work"
+        "timestamp": "07:28"
       },
       {
         "id": "phrase_212",
         "text_l1": "قلت لك ما رديتي علي",
-        "timestamp": "07:31",
-        "text_l2": "I told you, but you didn't listen to me"
+        "timestamp": "07:31"
       },
       {
         "id": "phrase_213",
         "text_l1": "يعني معقول هذا الكلام معقول",
-        "timestamp": "07:32",
-        "text_l2": "I mean, is this talk reasonable?"
+        "timestamp": "07:32"
       },
       {
         "id": "phrase_214",
         "text_l1": "ليش بدك تحط الحق علي",
-        "timestamp": "07:34",
-        "text_l2": "Why do you want to put the blame on me?"
+        "timestamp": "07:34"
       },
       {
         "id": "phrase_215",
         "text_l1": "شو يا جماعة وين الخبز والأشياء الزاكية",
-        "timestamp": "07:36",
-        "text_l2": "Hey guys, where is the bread and the yummy things?"
+        "timestamp": "07:36"
       },
       {
         "id": "phrase_216",
         "text_l1": "شايفة إيديكم فاضية",
-        "timestamp": "07:38",
-        "text_l2": "I see your hands are empty"
+        "timestamp": "07:38"
       },
       {
         "id": "phrase_217",
         "text_l1": "قلت لها يعني من 20 سنة",
-        "timestamp": "07:41",
-        "text_l2": "I told her, I mean, it's been 20 years"
+        "timestamp": "07:41"
       },
       {
         "id": "phrase_218",
         "text_l1": "معقول بده يكون المحل لسه بمحله",
-        "timestamp": "07:42",
-        "text_l2": "Is it possible the shop would still be in its place?"
+        "timestamp": "07:42"
       },
       {
         "id": "phrase_219",
         "text_l1": "أي هو في شيء بيضل زي ما هو",
-        "timestamp": "07:44",
-        "text_l2": "Is there anything that stays as it is?"
+        "timestamp": "07:44"
       },
       {
         "id": "phrase_220",
         "text_l1": "لو كان عندك نت أصلا",
-        "timestamp": "07:47",
-        "text_l2": "If you had internet in the first place"
+        "timestamp": "07:47"
       },
       {
         "id": "phrase_221",
         "text_l1": "كان لقيناه وما ضيعنا ساعة وتكسروا إجرينا",
-        "timestamp": "07:48",
-        "text_l2": "We would have found it and not wasted an hour and worn out our legs"
+        "timestamp": "07:48"
       },
       {
         "id": "phrase_222",
         "text_l1": "له له له يا جماعة طولوا بالكم",
-        "timestamp": "07:51",
-        "text_l2": "No, no, no, guys, be patient"
+        "timestamp": "07:51"
       },
       {
         "id": "phrase_223",
         "text_l1": "خلص تعالوا إحنا جبنا أشياء كثير",
-        "timestamp": "07:55",
-        "text_l2": "It's okay, come, we brought many things"
+        "timestamp": "07:55"
       },
       {
         "id": "phrase_224",
         "text_l1": "خلص ما تقلقوا",
-        "timestamp": "07:57",
-        "text_l2": "It's okay, don't worry"
+        "timestamp": "07:57"
       },
       {
         "id": "phrase_225",
         "text_l1": "شو في أنتوا ليش بره",
-        "timestamp": "07:59",
-        "text_l2": "What's going on? Why are you outside?"
+        "timestamp": "07:59"
       },
       {
         "id": "phrase_226",
         "text_l1": "مين هذا",
-        "timestamp": "08:01",
-        "text_l2": "Who is this?"
+        "timestamp": "08:01"
       },
       {
         "id": "phrase_227",
         "text_l1": "أنتوا شو عملتوا بالزلمة",
-        "timestamp": "08:02",
-        "text_l2": "What did you do to the man?"
+        "timestamp": "08:02"
       },
       {
         "id": "phrase_228",
         "text_l1": "قدرنا نلقطه عن الحرامي",
-        "timestamp": "08:04",
-        "text_l2": "We managed to catch the thief"
+        "timestamp": "08:04"
       },
       {
         "id": "phrase_229",
         "text_l1": "حرامي",
-        "timestamp": "08:05",
-        "text_l2": "Thief?"
+        "timestamp": "08:05"
       },
       {
         "id": "phrase_230",
         "text_l1": "شو حرامي",
-        "timestamp": "08:07",
-        "text_l2": "What thief?"
+        "timestamp": "08:07"
       },
       {
         "id": "phrase_231",
         "text_l1": "هذا الشاب اللي بده يصلح الشباك",
-        "timestamp": "08:08",
-        "text_l2": "This is the young man who is supposed to fix the window"
+        "timestamp": "08:08"
       },
       {
         "id": "phrase_232",
         "text_l1": "أنتوا شو عملتوا",
-        "timestamp": "08:10",
-        "text_l2": "What did you do?"
+        "timestamp": "08:10"
       },
       {
         "id": "phrase_233",
         "text_l1": "الشركة رنت علينا وحكوا لنا إنه جاي",
-        "timestamp": "08:12",
-        "text_l2": "The company called us and told us he was coming"
+        "timestamp": "08:12"
       },
       {
         "id": "phrase_234",
         "text_l1": "شو",
-        "timestamp": "08:15",
-        "text_l2": "What?"
+        "timestamp": "08:15"
       },
       {
         "id": "phrase_235",
         "text_l1": "قلت لك ما تتسرع",
-        "timestamp": "08:16",
-        "text_l2": "I told you not to rush"
+        "timestamp": "08:16"
       },
       {
         "id": "phrase_236",
         "text_l1": "لا لازم إحنا نتصرف",
-        "timestamp": "08:17",
-        "text_l2": "No, we had to act"
+        "timestamp": "08:17"
       },
       {
         "id": "phrase_237",
         "text_l1": "أنا مش رنا اللي قالت أنا عندي خطة",
-        "timestamp": "08:20",
-        "text_l2": "I'm not... it was Rana who said \"I have a plan\""
+        "timestamp": "08:20"
       },
       {
         "id": "phrase_238",
         "text_l1": "يعني هلا صار الحق علي",
-        "timestamp": "08:23",
-        "text_l2": "So now the blame is on me?"
+        "timestamp": "08:23"
       },
       {
         "id": "phrase_239",
         "text_l1": "آه الحق عليكي ولا على مين",
-        "timestamp": "08:25",
-        "text_l2": "Yes, the blame is on you, who else?"
+        "timestamp": "08:25"
       },
       {
         "id": "phrase_240",
         "text_l1": "يمكن إحنا كإخوة ما بنتفق مرات",
-        "timestamp": "08:29",
-        "text_l2": "Maybe as siblings we don't agree sometimes"
+        "timestamp": "08:29"
       },
       {
         "id": "phrase_241",
         "text_l1": "وبنتطوش على أشياء كثير",
-        "timestamp": "08:32",
-        "text_l2": "And we fight over many things"
+        "timestamp": "08:32"
       },
       {
         "id": "phrase_242",
         "text_l1": "ومع هيك إحنا بنحب بعض كثير",
-        "timestamp": "08:34",
-        "text_l2": "And yet, we love each other very much"
+        "timestamp": "08:34"
       },
       {
         "id": "phrase_243",
         "text_l1": "والإخوان ما إلهم إلا بعض",
-        "timestamp": "08:37",
-        "text_l2": "And siblings have no one but each other"
+        "timestamp": "08:37"
       },
       {
         "id": "phrase_244",
         "text_l1": "وأكيد أحلى شيء",
-        "timestamp": "08:39",
-        "text_l2": "And surely the best thing"
+        "timestamp": "08:39"
       },
       {
         "id": "phrase_245",
         "text_l1": "إنه نخلق ذكريات حلوة ونضحك مع بعض",
-        "timestamp": "08:41",
-        "text_l2": "Is that we create beautiful memories and laugh together"
+        "timestamp": "08:41"
       },
       {
         "id": "phrase_246",
         "text_l1": "صح يا شباب",
-        "timestamp": "08:44",
-        "text_l2": "Right, guys?"
+        "timestamp": "08:44"
       },
       {
         "id": "phrase_247",
         "text_l1": "أكيد صح",
-        "timestamp": "08:45",
-        "text_l2": "Definitely right"
+        "timestamp": "08:45"
       },
       {
         "id": "phrase_248",
         "text_l1": "اسمعي",
-        "timestamp": "08:49",
-        "text_l2": "Listen"
+        "timestamp": "08:49"
       },
       {
         "id": "phrase_249",
         "text_l1": "شفت مخبز شكله حلو على الطريق",
-        "timestamp": "08:50",
-        "text_l2": "I saw a bakery that looks nice on the way"
+        "timestamp": "08:50"
       },
       {
         "id": "phrase_250",
         "text_l1": "وعندهم قهوة زاكية",
-        "timestamp": "08:52",
-        "text_l2": "And they have delicious coffee"
+        "timestamp": "08:52"
       },
       {
         "id": "phrase_251",
         "text_l1": "شو يلا",
-        "timestamp": "08:54",
-        "text_l2": "What? Let's go!"
+        "timestamp": "08:54"
       },
       {
         "id": "phrase_252",
         "text_l1": "شكله إحنا اللي علقنا مع الأولاد اليوم",
-        "timestamp": "08:58",
-        "text_l2": "It looks like we are the ones stuck with the kids today"
+        "timestamp": "08:58"
       },
       {
         "id": "phrase_253",
         "text_l1": "شو حبيتوا الستايل",
-        "timestamp": "09:04",
-        "text_l2": "How did you like the style?"
+        "timestamp": "09:04"
       }
     ],
     "phrases_with_token_translations": "[مرحبا] أصدقائي => [Hello] my friends\nمرحبا [أصدقائي] => Hello [my friends]\n\n[عندنا] مفاجأة => [We have] a surprise\nعندنا [مفاجأة] => We have [a surprise]\n\n[كثير] حلوة لكم => A [very] nice one for you\nكثير [حلوة] لكم => A very [nice] one for you\nكثير حلوة [لكم] => A very nice one [for you]\n\n[لا] لا أنا مش حامل => [No], no, I'm not pregnant\nلا [لا] أنا مش حامل => No, [no], I'm not pregnant\nلا لا [أنا] مش حامل => No, no, [I'm] not pregnant\nلا لا أنا [مش] حامل => No, no, I'm [not] pregnant\nلا لا أنا مش [حامل] => No, no, I'm not [pregnant]\n\n[بس] متحمسين نشارككم => [But] we are excited to share with you\nبس [متحمسين] نشارككم => But [we are excited] to share with you\nبس متحمسين [نشارككم] => But we are excited [to share with you]\n\n[ستايل جديد] => [A new style]\nستايل [جديد] => A [new] style\n[ستايل] جديد => style\n\n[عم نشتغل] عليه => [We are working] on it\nعم نشتغل [عليه] => We are working [on it]\n\n[احضروا] الحلقة كاملة => [Watch] the full episode\nاحضروا الحلقة [كاملة] => Watch the [full] episode\nاحضروا [الحلقة كاملة] => Watch [the full episode]\nاحضروا [الحلقة] كاملة => the episode\n\n[واحكوا] لنا رأيكم => [And tell] us your opinion\nواحكوا [لنا] رأيكم => And tell [us] your opinion\nواحكوا لنا [رأيكم] => And tell us [your opinion]\n\n[بالتعليقات] => [In the comments]\n\n[وما] تنسوا تعملوا => [And don't] forget to\nوما [تنسوا] تعملوا => And don't [forget] to\nوما تنسوا [تعملوا] => And don't forget [to]\n\n[سبسكرايب] => [Subscribe]\n\n[أبو يزن] => [Abu Yazan]\n\n[شوف] شوف => [Look], look\nشوف [شوف] => Look, [look]\n\n[تتذكر] شهر العسل => [Do you remember] the honeymoon\nتتذكر [شهر العسل] => Do you remember [the honeymoon]\n\n[قضينا] هون أحلى أيام => [We spent] the best days here\nقضينا [هون] أحلى أيام => We spent the best days [here]\nقضينا هون [أحلى أيام] => We spent [the best days] here\n\n[يا] => [Yeah]\n\n[بتعرف] إنها كانت أول => [You know] it was the first\nبتعرف [إنها] كانت أول => You know [it] was the first\nبتعرف إنها [كانت] أول => You know it [was] the first\nبتعرف إنها كانت [أول] => You know it was [the first]\n\n[وآخر] رحلة إلنا مع بعض => [And last] trip we took together\nوآخر [رحلة] إلنا مع بعض => And last [trip] we took together\nوآخر رحلة [إلنا مع بعض] => And last trip [we took together]\n\n[طلع] قديش سعر الرحلة رخيص => [Look] how cheap the price of the trip is\nطلع [قديش] سعر الرحلة رخيص => Look [how] cheap the price of the trip is\nطلع قديش [سعر] الرحلة رخيص => Look how cheap the [price] of the trip is\nطلع قديش سعر [الرحلة] رخيص => Look how cheap the price of [the trip] is\nطلع قديش [سعر الرحلة] رخيص => Look how cheap [the price of the trip] is\nطلع قديش سعر الرحلة [رخيص] => Look how [cheap] the price of the trip is\n\n[شو] رأيك نرجع نعملها => [What] do you think about doing it again\nشو [رأيك] نرجع نعملها => What [do you think] about doing it again\nشو رأيك [نرجع نعملها] => What do you think [about doing it again]\n\n[ونسافر] شهر عسل ثاني => [And going on] a second honeymoon\nونسافر [شهر عسل ثاني] => And going on [a second honeymoon]\n\n[هاتي هاتي] أشوف قديش يعني رخيص => [Give it, give it] let me see how cheap it is\nهاتي هاتي [أشوف] قديش يعني رخيص => Give it, give it [let me see] how cheap it is\nهاتي هاتي أشوف [قديش يعني رخيص] => Give it, give it, let me see [how cheap it is]\n\n[أوف] => [Oof]\n\n[هذا] عن جد العرض خرافي => [This] offer is truly legendary\nهذا [عن جد] العرض خرافي => This offer [is truly] legendary\nهذا عن جد [العرض] خرافي => This [offer] is truly legendary\nهذا عن جد العرض [خرافي] => This offer is truly [legendary]\n\n[آه] بس استني => [Yeah], but wait\nآه [بس] استني => Yeah, [but] wait\nآه بس [استني] => Yeah, but [wait]\n\n[هذا] للجروبات يا حبيبتي => [This] is for groups, my dear\nهذا [للجروبات] يا حبيبتي => This [is for groups], my dear\nهذا للجروبات [يا حبيبتي] => This is for groups, [my dear]\n\n[يعني] عيلتين أو أكثر => [Meaning] two families or more\nيعني [عيلتين] أو أكثر => Meaning [two families] or more\nيعني عيلتين [أو] أكثر => Meaning two families [or] more\nيعني عيلتين أو [أكثر] => Meaning two families or [more]\n\n[يعني] أكيد مش هاني مون => [So] it's definitely not a honeymoon\nيعني [أكيد] مش هاني مون => So it's [definitely] not a honeymoon\nيعني أكيد [مش] هاني مون => So it's definitely [not] a honeymoon\nيعني أكيد مش [هاني مون] => So it's definitely not [a honeymoon]\n\n[هاني مون] قال => [\"Honeymoon,\"] she says\nهاني مون [قال] => \"Honeymoon,\" [she says]\n\n[طيب] بنجيب عيلة ثانية معنا => [Okay], we'll bring another family with us\nطيب [بنجيب] عيلة ثانية معنا => Okay, [we'll bring] another family with us\nطيب بنجيب [عيلة ثانية] معنا => Okay, we'll bring [another family] with us\nطيب بنجيب عيلة ثانية [معنا] => Okay, we'll bring another family [with us]\n\n[بس] بدنا حدا هيك ظله خفيف => [But] we want someone light-hearted\nبس [بدنا] حدا هيك ظله خفيف => But [we want] someone light-hearted\nبس بدنا [حدا] هيك ظله خفيف => But we want [someone] light-hearted\nبس بدنا حدا [هيك ظله خفيف] => But we want someone [light-hearted]\n\n[و] ناس مش نكديين => [And] people who aren't grumpy\nو [ناس] مش نكديين => And [people] who aren't grumpy\nو ناس [مش] نكديين => And people [who aren't] grumpy\nو ناس مش [نكديين] => And people who aren't [grumpy]\n\n[و] ما يجننونا => [And] who won't drive us crazy\nو [ما] يجننونا => And who [won't] drive us crazy\nو ما [يجننونا] => And who won't [drive us crazy]\n\n[و] هيك بنترك الأولاد معهم => [And] that way we leave the kids with them\nو [هيك] بنترك الأولاد معهم => And [that way] we leave the kids with them\nو هيك [بنترك] الأولاد معهم => And that way [we leave] the kids with them\nو هيك بنترك [الأولاد] معهم => And that way we leave [the kids] with them\nو هيك بنترك الأولاد [معهم] => And that way we leave the kids [with them]\n\n[و] بنطش لحالنا => [And] we go out by ourselves\nو [بنطش] لحالنا => And [we go out] by ourselves\nو بنطش [لحالنا] => And we go out [by ourselves]\n\n[شو] رأيك => [What] do you think?\nشو [رأيك] => What [do you think]?\n\n[بمين] عم بتفكري => [Who] are you thinking of?\nبمين [عم بتفكري] => Who [are you thinking] of?\n\n[بليز] بليز بابا => [Please], please Dad\nبليز [بليز] بابا => Please, [please] Dad\nبليز بليز [بابا] => Please, please [Dad]\n\n[لو سمحت] => [If you please]\n\n[يا] بابا يا بابا => [Oh] Dad, oh Dad\nيا [بابا] يا بابا => Oh [Dad], oh Dad\nيا بابا [يا] بابا => Oh Dad, [oh] Dad\nيا بابا يا [بابا] => Oh Dad, oh [Dad]\n\n[ماشي] بنروح => [Okay], we'll go\nماشي [بنروح] => Okay, [we'll go]\n\n[صفرة] صفرة صفرة => [A trip], a trip, a trip!\nصفرة [صفرة] صفرة => A trip, [a trip], a trip!\nصفرة صفرة [صفرة] => A trip, a trip, [a trip]!\n\n[أنا] رايحة أخبر أم يزن => [I]'m going to tell Umm Yazan\nأنا [رايحة] أخبر أم يزن => I'm [going] to tell Umm Yazan\nأنا رايحة [أخبر] أم يزن => I'm going to [tell] Umm Yazan\nأنا رايحة أخبر [أم يزن] => I'm going to tell [Umm Yazan]\n\n[ونتفق] على كل التفاصيل => [And we'll agree] on all the details\nونتفق [على] كل التفاصيل => And we'll agree [on] all the details\nونتفق على [كل] التفاصيل => And we'll agree on [all] the details\nونتفق على كل [التفاصيل] => And we'll agree on all [the details]\n\n[بابا] مش قادر أجر الشنطة => [Dad], I can't pull the suitcase\nبابا [مش قادر] أجر الشنطة => Dad, [I can't] pull the suitcase\nبابا مش قادر [أجر] الشنطة => Dad, I can't [pull] the suitcase\nبابا مش قادر أجر [الشنطة] => Dad, I can't pull [the suitcase]\n\n[خلي] رنا تساعدك يابا => [Let] Rana help you, son\nخلي [رنا] تساعدك يابا => Let [Rana] help you, son\nخلي رنا [تساعدك] يابا => Let Rana [help you], son\nخلي رنا تساعدك [يابا] => Let Rana help you, [son]\n\n[خليني] باللي أنا فيه => [Leave me] to what I'm dealing with\nخليني [باللي أنا فيه] => Leave me [to what I'm dealing with]\n\n[مش قادر] => [I can't]\n\n[تقيلة] عليك حبيبي => It's [heavy] for you, my dear\nتقيلة [عليك] حبيبي => It's heavy [for you], my dear\nتقيلة عليك [حبيبي] => It's heavy for you, [my dear]\n\n[شد حيلك] معي أغراض كثير => [Be strong], I have many things\nشد حيلك [معي] أغراض كثير => Be strong, [I have] many things\nشد حيلك معي [أغراض كثير] => Be strong, I have [many things]\n\n[بابا] رنا مش قابلة تساعدني => [Dad], Rana refuses to help me\nبابا [رنا] مش قابلة تساعدني => Dad, [Rana] refuses to help me\nبابا رنا [مش قابلة] تساعدني => Dad, Rana [refuses] to help me\nبابا رنا مش قابلة [تساعدني] => Dad, Rana refuses [to help me]\n\n[دبروا حالكم] => [Manage yourselves]\n\n[مش شايفني] مشغول => [Don't you see] I'm busy?\nمش شايفني [مشغول] => Don't you see [I'm busy]?\n\n[شو] اللي عم بصير هون => [What] is happening here?\nشو [اللي عم بصير] هون => What [is happening] here?\nشو اللي عم بصير [هون] => What is happening [here]?\n\n[أنت] شايف => [You] see\nأنت [شايف] => You [see]\n\n[قال] هذه البلايز لبسوها على شهر العسل => [He said] wear these shirts for the honeymoon\nقال [هذه البلايز] لبسوها على شهر العسل => He said [these shirts] wear for the honeymoon\nقال هذه البلايز [لبسوها] على شهر العسل => He said these shirts [wear] for the honeymoon\nقال هذه البلايز لبسوها [على شهر العسل] => He said wear these shirts [for the honeymoon]\n\n[بابا] شوف سالي => [Dad], look at Sally\nبابا [شوف] سالي => Dad, [look at] Sally\nبابا شوف [سالي] => Dad, look at [Sally]\n\n[أخذت] هاي المخدة اللي بنحطها على الرقبة => [She took] this pillow that we put on the neck\nأخذت [هاي المخدة] اللي بنحطها على الرقبة => She took [this pillow] that we put on the neck\nأخذت هاي المخدة [اللي بنحطها] على الرقبة => She took this pillow [that we put] on the neck\nأخذت هاي المخدة اللي بنحطها [على الرقبة] => She took this pillow that we put [on the neck]\n\n[هي] لمين => Who is [it] for?\nهي [لمين] => Who is it [for]?\n\n[إلك] => [For you]\n\n[بالضبط] => [Exactly]\n[هي] => [it's]\n[مش] => [not]\n[بس] => [just]\n[إلك] => [for you]\n[سيد] => [Mr.]\n[سند] => [Sanad]\n\n[هي] => [It's]\n[إلنا كلنا] => [for all of us]\n[وأنا] => [and I]\n[سبقت عليها] => [got to it first]\n\n[خلص] => [Enough]\n[يا ولاد] => [kids]\n[دور] => [turns]\n[دور] => [turns]\n\n[طيب] => [Okay]\n[أنا] => [I'm]\n[أول] => [first]\n\n[يا] => [Oh]\n[سند] => [Sanad]\n\n[نداء نهائي] => [Final call]\n\n[وأخيرا] => [And finally]\n[لعيلة أبو سند] => [for Abu Sanad's family]\n\n[وعيلة أبو يزن] => [And Abu Yazan's family]\n\n[هو] => [Is there]\n[ما في] => [no one]\n[غيركم] => [else but you]\n[في] => [in]\n[المطار] => [the airport]\n\n[الرجاء] => [Please]\n[التوجه] => [proceed]\n[فورا] => [immediately]\n\n[للبوابة] => [To gate]\n[رقم] => [number]\n[ثلاثة] => [three]\n\n[خلصونا] => [Hurry up]\n\n[الطيارة كلها] بتستنى فيكم => [The whole plane] is waiting for you\nالطيارة كلها [بتستنى] فيكم => The whole plane [is waiting] for you\nالطيارة كلها بتستنى [فيكم] => The whole plane is waiting [for you]\n\n[وبعدين معاكم] => [What's with you guys?]\n\n[يلا] يا جماعة => [Come on] everyone\nيلا [يا جماعة] => Come on [everyone]\n\n[يلا] ركض => [Come on], run\nيلا [ركض] => Come on, [run]\n\n[يزن] هلا قوم => [Yazan] get up now\nيزن [هلا قوم] => Yazan [get up now]\n\n[هذا] محلي => [This] is my seat\nهذا [محلي] => This [is my seat]\n[هذا محلي] => [This is my seat]\n\n[مش قايم] أنا سبقت => [I'm not getting up] I got here first\nمش قايم [أنا] سبقت => I'm not getting up, [I] got here first\nمش قايم أنا [سبقت] => I'm not getting up, I [got here first]\n\n[اللي سبق لبق] => [First come, first served]\n\n[يزن] بلاش ما أنا هذه المضيفة => [Yazan] don't make me... this flight attendant\nيزن [بلاش] ما أنا هذه المضيفة => Yazan [don't] make me... this flight attendant\nيزن بلاش ما أنا [هذه المضيفة] => Yazan don't make me... [this flight attendant]\n\n[بتقومك] غصب عنك => [Will make you get up] against your will\nبتقومك [غصب عنك] => Will make you get up [against your will]\n\n[أم يزن] وين كنتوا => [Umm Yazan], where were you?\nأم يزن [وين] كنتوا => Umm Yazan, [where] were you?\nأم يزن وين [كنتوا] => Umm Yazan, where [were you]?\n\n[قلقنا] عليكم تأخرتوا => [We worried] about you, you're late\nقلقنا [عليكم] تأخرتوا => We worried [about you], you're late\nقلقنا عليكم [تأخرتوا] => We worried about you, [you're late]\n\n[لما] سافرنا شهر العسل => [When] we traveled for the honeymoon\nلما [سافرنا] شهر العسل => When [we traveled] for the honeymoon\nلما سافرنا [شهر العسل] => When we traveled [for the honeymoon]\n\n[أبو يزن] شرالي ريحة من السوق الحرة => [Abu Yazan] bought me a perfume from the Duty Free\nأبو يزن [شرالي] ريحة من السوق الحرة => Abu Yazan [bought me] a perfume from the Duty Free\nأبو يزن شرالي [ريحة] من السوق الحرة => Abu Yazan bought me [a perfume] from the Duty Free\nأبو يزن شرالي ريحة [من] السوق الحرة => Abu Yazan bought me a perfume [from] the Duty Free\nأبو يزن شرالي ريحة من [السوق الحرة] => Abu Yazan bought me a perfume from [the Duty Free]\n\n[وضلينا] ندور عليها عبال ما لقيناها => [And we kept] looking for it until we found it\nوضلينا [ندور] عليها عبال ما لقيناها => And we kept [looking] for it until we found it\nوضلينا ندور [عليها] عبال ما لقيناها => And we kept looking [for it] until we found it\nوضلينا ندور عليها [عبال ما] لقيناها => And we kept looking for it [until] we found it\nوضلينا ندور عليها عبال ما [لقيناها] => And we kept looking for it until [we found it]\n\n[منيح] اللي اجيتوا => [Good] thing you came\nمنيح [اللي] اجيتوا => Good [thing] you came\nمنيح اللي [اجيتوا] => Good thing [you came]\n\n[بابا] خلي يزن يقوم هلا => [Dad], make Yazan get up now\nبابا [خلي] يزن يقوم هلا => Dad, [make] Yazan get up now\nبابا خلي [يزن] يقوم هلا => Dad, make [Yazan] get up now\nبابا خلي يزن [يقوم] هلا => Dad, make Yazan [get up] now\nبابا خلي يزن يقوم [هلا] => Dad, make Yazan get up [now]\n\n[يزن] تحرك من محلك بسرعة => [Yazan], move from your place quickly\nيزن [تحرك] من محلك بسرعة => Yazan, [move] from your place quickly\nيزن تحرك [من] محلك بسرعة => Yazan, move [from] your place quickly\nيزن تحرك من [محلك] بسرعة => Yazan, move from [your place] quickly\nيزن تحرك من محلك [بسرعة] => Yazan, move from your place [quickly]\n\n[طب] بابا بديش أقعد جنبها => [But] Dad, I don't want to sit next to her\nطب [بابا] بديش أقعد جنبها => But [Dad], I don't want to sit next to her\nطب بابا [بديش] أقعد جنبها => But Dad, [I don't want] to sit next to her\nطب بابا بديش [أقعد] جنبها => But Dad, I don't want [to sit] next to her\nطب بابا بديش أقعد [جنبها] => But Dad, I don't want to sit [next to her]\n\n[بقعد] محلك => [I'll sit] in your place\nبقعد [محلك] => I'll sit [in your place]\n\n[لا] يا حبيبي ما حزرت => [No], my dear, no way\nلا [يا حبيبي] ما حزرت => No, [my dear], no way\nلا يا حبيبي [ما حزرت] => No, my dear, [no way]\n\n[لأنه] إحنا حجزنا ورا لحالنا => [Because] we booked in the back by ourselves\nلأنه [إحنا] حجزنا ورا لحالنا => Because [we] booked in the back by ourselves\nلأنه إحنا [حجزنا] ورا لحالنا => Because we [booked] in the back by ourselves\nلأنه إحنا حجزنا [ورا] لحالنا => Because we booked [in the back] by ourselves\nلأنه إحنا حجزنا ورا [لحالنا] => Because we booked in the back [by ourselves]\n\n[تفضلي] يا قلبي => [After you], my heart\nتفضلي [يا قلبي] => After you, [my heart]\n\n[يا حبيبي] ما أحلى البيوت => [Oh my], how beautiful the houses are\nيا حبيبي [ما أحلى] البيوت => Oh my, [how beautiful] the houses are\nيا حبيبي ما أحلى [البيوت] => Oh my, how beautiful [the houses are]\n\n[هجوم] => [Charge!]\n\n[حطوا] أغراضكم => [Put] your things down\nحطوا [أغراضكم] => Put [your things] down\n\n[نتلاقى] عندنا كمان نص ساعة => [We'll meet] at our place in half an hour\nنتلاقى [عندنا] كمان نص ساعة => We'll meet [at our place] in half an hour\nنتلاقى عندنا [كمان نص ساعة] => We'll meet at our place [in half an hour]\n\n[شوف] ما أحلى التخت => [Look] how nice the bed is\nشوف [ما أحلى] التخت => Look [how nice] the bed is\nشوف ما أحلى [التخت] => Look how nice [the bed is]\n\n[بتقدر] تنط عالي كثير => [You can] jump very high\nبتقدر [تنط] عالي كثير => You can [jump] very high\nبتقدر تنط [عالي كثير] => You can jump [very high]\n\n[راح] ألبس هذا الفستان على البحر => [I'm going to] wear this dress at the beach\nراح [ألبس] هذا الفستان على البحر => I'm going to [wear] this dress at the beach\nراح ألبس [هذا الفستان] على البحر => I'm going to wear [this dress] at the beach\nراح ألبس هذا الفستان [على البحر] => I'm going to wear this dress [at the beach]\n\n[جبتي] تبعك صح => [You brought] yours, right?\nجبتي [تبعك] صح => You brought [yours], right?\nجبتي تبعك [صح] => You brought yours, [right?]\n\n[طبعا] أول شيء طبيته => [Of course], it's the first thing I grabbed\nطبعا [أول شيء] طبيته => Of course, [the first thing] I grabbed\nطبعا أول شيء [طبيته] => Of course, it's the first thing [I grabbed]\n\n[شو رأيكم] أنا وأبو يزن => [What do you think], Abu Yazan and I\nشو رأيكم [أنا وأبو يزن] => What do you think, [Abu Yazan and I]\n\n[بنطلع] نجيب شوية أغراض للبيت => [Will go out] to get some things for the house\nبنطلع [نجيب] شوية أغراض للبيت => Will go out [to get] some things for the house\nبنطلع نجيب [شوية أغراض] للبيت => Will go out to get [some things] for the house\nبنطلع نجيب شوية أغراض [للبيت] => Will go out to get some things [for the house]\n\n[بس] عاد أنا وأم يزن قلنا => [But] Umm Yazan and I said\nبس عاد [أنا وأم يزن] قلنا => But [Umm Yazan and I] said\nبس عاد أنا وأم يزن [قلنا] => But Umm Yazan and I [said]\n\n[بنروح نجيب] خبز ومعجنات للأولاد => [We'll go get] bread and pastries for the kids\nبنروح نجيب [خبز] ومعجنات للأولاد => We'll go get [bread] and pastries for the kids\nبنروح نجيب خبز [ومعجنات] للأولاد => We'll go get bread [and pastries] for the kids\nبنروح نجيب خبز ومعجنات [للأولاد] => We'll go get bread and pastries [for the kids]\n\n[يعني] صح أم يزن شو => [Right], Umm Yazan, what?\nيعني [صح] أم يزن شو => Right, [Umm Yazan], what?\nيعني صح [أم يزن] شو => Right, [Umm Yazan], what?\nيعني صح أم يزن [شو] => Right, Umm Yazan, [what]?\n\n[آه] في مخبز قريب من هون => [Yeah], there's a bakery near here\nآه [في] مخبز قريب من هون => Yeah, [there's] a bakery near here\nآه في [مخبز] قريب من هون => Yeah, there's a [bakery] near here\nآه في مخبز [قريب] من هون => Yeah, there's a bakery [near] here\nآه في مخبز قريب [من هون] => Yeah, there's a bakery [near here]\n\n[كنا] كل يوم ناكل فيه أنا وأبو يزن => Abu Yazan and I [used to] eat there every day\nكنا [كل يوم] ناكل فيه أنا وأبو يزن => Abu Yazan and I used to eat there [every day]\nكنا كل يوم [ناكل] فيه أنا وأبو يزن => Abu Yazan and I used to [eat] there every day\nكنا كل يوم ناكل [فيه] أنا وأبو يزن => Abu Yazan and I used to eat [there] every day\nكنا كل يوم ناكل فيه [أنا وأبو يزن] => [Abu Yazan and I] used to eat there every day\n\n[لما] يجينا هون => [When] we came here\nلما [يجينا] هون => When [we came] here\nلما يجينا [هون] => When we came [here]\n\n[بنجيب] لكم معنا قهوة كمان => [We'll bring] you coffee with us too\nبنجيب [لكم] معنا قهوة كمان => We'll bring [you] coffee with us too\nبنجيب لكم [معنا] قهوة كمان => We'll bring you coffee [with us] too\nبنجيب لكم معنا [قهوة] كمان => We'll bring you coffee [with us] too\nبنجيب لكم معنا قهوة [كمان] => We'll bring you coffee with us [too]\n\n[أنتوا] خليكم مرتاحوا هون مع الأولاد => [You guys] stay and relax here with the kids\nأنتوا [خليكم] مرتاحوا هون مع الأولاد => You guys [stay] and relax here with the kids\nأنتوا خليكم [مرتاحوا] هون مع الأولاد => You guys stay and [relax] here with the kids\nأنتوا خليكم مرتاحوا [هون] مع الأولاد => You guys stay and relax [here] with the kids\nأنتوا خليكم مرتاحوا هون [مع الأولاد] => You guys stay and relax here [with the kids]\n\n[ما بنطول] عليكم => [We won't be long]\nما بنطول [عليكم] => We won't be long [on you] # custom translation needed as \"عليكم\" doesn't map directly to English word order\n\n[خلص] تمام تمام => [Okay], fine, fine\nخلص [تمام] تمام => Okay, [fine], fine\nخلص تمام [تمام] => Okay, fine, [fine]\n\n[أنتوا] روحوا جيبوا الخبز والمعجنات => [You] go get the bread and pastries\nأنتوا [روحوا] جيبوا الخبز والمعجنات => You [go] get the bread and pastries\nأنتوا روحوا [جيبوا] الخبز والمعجنات => You go [get] the bread and pastries\nأنتوا روحوا جيبوا [الخبز] والمعجنات => You go get [the bread] and pastries\nأنتوا روحوا جيبوا الخبز [والمعجنات] => You go get the bread [and pastries]\n\n[وإحنا] بس ترجعوا بنطلع نجيب أغراض البيت الثانية => [And] when you return, we'll go get the other house supplies\nوإحنا [بس ترجعوا] بنطلع نجيب أغراض البيت الثانية => And [when you return], we'll go get the other house supplies\nوإحنا بس ترجعوا [بنطلع] نجيب أغراض البيت الثانية => And when you return, [we'll go] get the other house supplies\nوإحنا بس ترجعوا بنطلع [نجيب] أغراض البيت الثانية => And when you return, we'll go [get] the other house supplies\nوإحنا بس ترجعوا بنطلع نجيب [أغراض البيت الثانية] => And when you return, we'll go get [the other house supplies]\n\n[شو] رأيك عصام => [What] do you think, Issam?\nشو [رأيك] عصام => What [do you think], Issam?\nشو رأيك [عصام] => What do you think, [Issam]?\n\n[ماشي] => [Okay]\n\n[يلا] مع السلامة باي => [Come on], goodbye, bye\nيلا [مع السلامة] باي => Come on, [goodbye], bye\nيلا مع السلامة [باي] => Come on, goodbye, [bye]\n\n[دينا] خلينا نطلع نجيب الأغراض هلا => [Dina], let's go out and get the things now\nدينا [خلينا] نطلع نجيب الأغراض هلا => Dina, [let's] go out and get the things now\nدينا خلينا [نطلع] نجيب الأغراض هلا => Dina, let's [go out] and get the things now\nدينا خلينا نطلع [نجيب] الأغراض هلا => Dina, let's go out [and get] the things now\nدينا خلينا نطلع نجيب [الأغراض] هلا => Dina, let's go out and get [the things] now\nدينا خلينا نطلع نجيب الأغراض [هلا] => Dina, let's go out and get the things [now]\n\n[شو والأولاد] => [What about the kids]? # idiomatic phrase for \"what about\"\n\n[أي] => well # emphatic particle\n[أي شو] بده يصير عليهم => [What's] going to happen to them?\nأي شو [بده] يصير عليهم => What's [going to] happen to them?\nأي شو بده [يصير] عليهم => What's going to [happen] to them?\nأي شو بده يصير [عليهم] => What's going to happen [to them]?\n\n[صاروا كبار] وكلها نص ساعة => [They've grown up] and it's only half an hour\nصاروا كبار [و] كلها نص ساعة => They've grown up [and] it's only half an hour\nصاروا كبار و [كلها] نص ساعة => They've grown up and [it's only] half an hour\nصاروا كبار وكلها [نص ساعة] => They've grown up and it's only [half an hour]\n\n[يا] => O # vocative particle\n[يا ولاد] إحنا طالعين => [Kids], we are going out\nيا [ولاد] إحنا طالعين => [Kids], we are going out\nيا ولاد [إحنا] طالعين => Kids, [we] are going out\nيا ولاد إحنا [طالعين] => Kids, we are [going out]\n\n[أقل] من ساعة نجيب كل أغراض البيت => [Less] than an hour to get all the house supplies\nأقل [من] ساعة نجيب كل أغراض البيت => Less [than] an hour to get all the house supplies\nأقل من [ساعة] نجيب كل أغراض البيت => Less than [an hour] to get all the house supplies\nأقل من ساعة [نجيب] كل أغراض البيت => Less than an hour [to get] all the house supplies\nأقل من ساعة نجيب [كل أغراض البيت] => Less than an hour to get [all the house supplies]\n\n[ديروا بالكم] عبال ما نرجع => [Take care] until we return\nديروا بالكم [عبال ما] نرجع => Take care [until] we return\nديروا بالكم عبال ما [نرجع] => Take care until [we return]\n\n[سالي ورنا] أنتوا المسؤولين عن إخوانكم => [Sally and Rana], you are responsible for your brothers\nسالي [ورنا] أنتوا المسؤولين عن إخوانكم => Sally [and Rana], you are responsible for your brothers\nسالي ورنا [أنتوا] المسؤولين عن إخوانكم => Sally and Rana, [you] are responsible for your brothers\nسالي ورنا أنتوا [المسؤولين] عن إخوانكم => Sally and Rana, you are [responsible] for your brothers\nسالي ورنا أنتوا المسؤولين [عن] إخوانكم => Sally and Rana, you are responsible [for] your brothers\nسالي ورنا أنتوا المسؤولين عن [إخوانكم] => Sally and Rana, you are responsible for [your brothers]\n\n[ما حدا] يطلع من البيت مفهوم => [No one] leaves the house, understood?\nما حدا [يطلع من البيت] مفهوم => No one [leaves the house], understood?\nما حدا يطلع من البيت [مفهوم] => No one leaves the house, [understood]?\n\n[مفهوم] => [Understood]\n\n[مش مصدق إنه] الجيم اللي بنحبها موجودة بالبيت => [I can't believe] the game we love is in the house\nمش مصدق إنه [الجيم] اللي بنحبها موجودة بالبيت => I can't believe [the game] we love is in the house\nمش مصدق إنه الجيم [اللي بنحبها] موجودة بالبيت => I can't believe the game [we love] is in the house\nمش مصدق إنه الجيم اللي بنحبها [موجودة بالبيت] => I can't believe the game we love [is in the house]\n\n[عن جد] هذا بيت الأحلام => [Truly], this is the dream house\nعن جد [هذا] بيت الأحلام => Truly, [this] is the dream house\nعن جد هذا [بيت الأحلام] => Truly, this is [the dream house]\n\n[سند ويزن] تعالوا بسرعة رتبوا أغراضكم => [Sanad and Yazan], come quickly and arrange your things\nسند ويزن [تعالوا] بسرعة ربتوا أغراضكم => Sanad and Yazan, [come] quickly and arrange your things\nسند ويزن تعالوا [بسرعة] رتبوا أغراضكم => Sanad and Yazan, come [quickly] and arrange your things\nسند ويزن تعالوا بسرعة [رتبوا] أغراضكم => Sanad and Yazan, come quickly and [arrange] your things\nسند ويزن تعالوا بسرعة رتبوا [أغراضكم] => Sanad and Yazan, come quickly and arrange [your things]\n\n[من أول ما اجيتوا] أنتوا عم تلعبوا => [Since you arrived], you've been playing\nمن أول ما [اجيتوا] أنتوا عم تلعبوا => Since you [arrived], you've been playing\nمن أول ما اجيتوا [أنتوا عم تلعبوا] => Since you arrived, [you've been playing]\n\n[مش فاضيين] بعد شوي => [We're busy], in a bit\nمش فاضيين [بعد شوي] => We're busy, [in a bit]\n\n[حبايبي] ما تنسوا إنه إحنا المسؤولين => [Dears], don't forget that we are the ones in charge\nحبايبي [ما تنسوا] إنه إحنا المسؤولين => Dears, [don't forget] that we are the ones in charge\nحبايبي ما تنسوا [إنه] إحنا المسؤولين => Dears, don't forget [that] we are the ones in charge\nحبايبي ما تنسوا إنه [إحنا المسؤولين] => Dears, don't forget that [we are the ones in charge]\n\n[يلا] تفضلوا => [Come on], go ahead\nيلا [تفضلوا] => Come on, [go ahead]\n\n[رنا] شو بتعملي => [Rana], what are you doing?\nرنا [شو] بتعملي => Rana, [what] are you doing?\nرنا شو [بتعملي] => Rana, what [are you doing?]\n\n[إذا] ماما شالت الشاحن عن موبايلك بتقول شيء => [If] Mom took the charger off your phone, would you say something?\nإذا [ماما] شالت الشاحن عن موبايلك بتقول شيء => If [Mom] took the charger off your phone, would you say something?\nإذا ماما [شالت] الشاحن عن موبايلك بتقول شيء => If Mom [took] the charger off your phone, would you say something?\nإذا ماما شالت [الشاحن] عن موبايلك بتقول شيء => If Mom took [the charger] off your phone, would you say something?\nإذا ماما شالت الشاحن [عن موبايلك] بتقول شيء => If Mom took the charger [off your phone], would you say something?\nإذا ماما شالت الشاحن عن موبايلك [بتقول شيء] => If Mom took the charger off your phone, [would you say something?]\nإذا ماما شالت الشاحن عن موبايلك بتقول [شيء] => If Mom took the charger off your phone, would you say [something?]\n\n[أنا] هون المسؤولة عنك حبيبي => [I] am the one in charge of you here, my dear\nأنا [هون] المسؤولة عنك حبيبي => I am the one in charge of you [here], my dear\nأنا هون [المسؤولة عنك] حبيبي => I am [the one in charge of you] here, my dear\nأنا هون المسؤولة عنك [حبيبي] => I am the one in charge of you here, [my dear]\n\n[سند] وين ريموت التلفزيون => [Sanad], where is the TV remote?\nسند [وين] ريموت التلفزيون => Sanad, [where] is the TV remote?\nسند وين [ريموت التلفزيون] => Sanad, where is [the TV remote]?\n\n[سند] اقعد منيح => [Sanad], sit properly\nسند [اقعد] منيح => Sanad, [sit] properly\nسند اقعد [منيح] => Sanad, sit [properly]\n\n[يا سلام] شو مالها قعدتي => [Oh please], what's wrong with how I'm sitting?\nيا سلام [شو] مالها قعدتي => Oh please, [what's] wrong with how I'm sitting?\nيا سلام شو [مالها] قعدتي => Oh please, what's [wrong with] how I'm sitting?\nيا سلام شو مالها [قعدتي] => Oh please, what's wrong with [how I'm sitting]?\n\n[هلا] إذا توسخ العفش بيدفعونا بداله => [Now] if the furniture gets dirty, they'll make us pay for it\nهلا [إذا] توسخ العفش بيدفعونا بداله => Now [if] the furniture gets dirty, they'll make us pay for it\nهلا إذا [توسخ] العفش بيدفعونا بداله => Now if the furniture [gets dirty], they'll make us pay for it\nهلا إذا توسخ [العفش] بيدفعونا بداله => Now if [the furniture] gets dirty, they'll make us pay for it\nهلا إذا توسخ العفش [بيدفعونا] بداله => Now if the furniture gets dirty, [they'll make us pay] for it\nهلا إذا توسخ العفش بيدفعونا [بداله] => Now if the furniture gets dirty, they'll make us pay [for it]\n\nنزل [إجرك] => Put [your leg] down\n[نزل] => Put down\n\n[مضبوط] وأنت كمان سيد يزن => [Correct], and you too, Mr. Yazan\nمضبوط [وأنت كمان] سيد يزن => Correct, [and you too], Mr. Yazan\nمضبوط وأنت كمان [سيد يزن] => Correct, and you too, [Mr. Yazan]\n\n[لا] هيك صار كثير => [No], this has become too much\nلا [هيك] صار كثير => No, [this] has become too much\nلا هيك [صار] كثير => No, this [has become] too much\nلا هيك صار [كثير] => No, this has become [too much]\n\n[أكثر] من كثير => [More] than too much\nأكثر [من] كثير => More [than] too much\nأكثر من [كثير] => More than [too much]\n\n[إحنا] طالعين وما راح نرجع => [We] are going out and we won't come back\nإحنا [طالعين] وما راح نرجع => We [are going out] and we won't come back\nإحنا طالعين [وما راح] نرجع => We are going out [and we won't] come back\nإحنا طالعين وما راح [نرجع] => We are going out and we won't [come back]\n\n[غير لما] أهلنا المسؤولين عنا يرجعوا => [Until] our parents who are responsible for us return\nغير لما [أهلنا] المسؤولين عنا يرجعوا => Until [our parents] who are responsible for us return\nغير لما أهلنا [المسؤولين عنا] يرجعوا => Until our parents [who are responsible for us] return\nغير لما أهلنا المسؤولين عنا [يرجعوا] => Until our parents who are responsible for us [return]\n\n[وين] رايحين الدنيا عتمة => [Where] are you going? It's dark out\nوين [رايحين] الدنيا عتمة => Where [are you going]? It's dark out\nوين رايحين [الدنيا عتمة] => Where are you going? [It's dark out]\n\n[ارجعوا] لهون بسرعة => [Come back] here quickly\nارجعوا [لهون] بسرعة => Come back [here] quickly\nارجعوا لهون [بسرعة] => Come back here [quickly]\n\n[بقول] ارجعوا => [I said] come back\nبقول [ارجعوا] => I said [come back]\n\n[شو] راح نعمل هلا => [What] are we going to do now?\nشو [راح نعمل] هلا => What [are we going to do] now?\nشو راح نعمل [هلا] => What are we going to do [now]?\n\n[هيك] الواحد بيعرف أصحابه => [This is how] one knows their friends\nهيك [الواحد] بيعرف أصحابه => This is how [one] knows their friends\nهيك الواحد [بيعرف] أصحابه => This is how one [knows] their friends\nهيك الواحد بيعرف [أصحابه] => This is how one knows [their friends]\n\n[بيطلعوا] بيسافروا وبيروحوا => [They go out], travel, and leave\nبيطلعوا [بيسافروا] وبيروحوا => They go out, [travel], and leave\nبيطلعوا بيسافروا [وبيروحوا] => They go out, travel, [and leave]\n\n[ومش] حاكيين للولو => [And] they haven't told Lulu\nومش [حاكيين] للولو => And [they haven't told] Lulu\nومش حاكيين [للولو] => And they haven't told [Lulu]\n\n[أصل] السفرة مش حلوة بدوني => [Actually], the trip isn't nice without me\nأصل [السفرة] مش حلوة بدوني => Actually, [the trip] isn't nice without me\nأصل السفرة [مش حلوة] بدوني => Actually, the trip [isn't nice] without me\nأصل السفرة مش حلوة [بدوني] => Actually, the trip isn't nice [without me]\n\n[هم] الخسرانين => [They are] the losers\nهم [الخسرانين] => They are [the losers]\n\n[باقي] هيئة ومنصف => Only Hay'a and Munsif [are left]\nباقي [هيئة] ومنصف => Only [Hay'a] and Munsif are left\nباقي هيئة [ومنصف] => Only Hay'a [and Munsif] are left\n\n[أنت] سامعني => [Are you] hearing me?\nأنت [سامعني] => Are you [hearing me]?\n\n[هو] أنا بس اللي سامع => [Is it] just me hearing?\nهو [أنا بس] اللي سامع => Is it [just me] hearing?\nهو أنا بس [اللي سامع] => Is it just me [hearing]?\n\n[كل] الحارة سمعتك => [The whole] neighborhood heard you\nكل [الحارة] سمعتك => The whole [neighborhood] heard you\nكل الحارة [سمعتك] => The whole neighborhood [heard you]\n\n[طب] إحنا وين راح نروح هلا => [So] where are we going to go now?\nطب [إحنا] وين راح نروح هلا => So where [are we] going to go now?\nطب إحنا [وين] راح نروح هلا => So [where] are we going to go now?\nطب إحنا وين [راح نروح] هلا => So where are we [going to go] now?\nطب إحنا وين راح نروح [هلا] => So where are we going to go [now]?\n\n[أنت] صدقت مش راح نروح محل => [You] believed it? We aren't going anywhere\nأنت [صدقت] مش راح نروح محل => You [believed it]? We aren't going anywhere\nأنت صدقت [مش راح نروح] محل => You believed it? [We aren't going] anywhere\nأنت صدقت مش راح نروح [محل] => You believed it? We aren't going [anywhere]\n\n[تعال] هون ورا الشجرة => [Come] here behind the tree\nتعال [هون] ورا الشجرة => Come [here] behind the tree\nتعال هون [ورا] الشجرة => Come here [behind] the tree\nتعال هون ورا [الشجرة] => Come here behind [the tree]\n\n[وشو] راح نعمل => [And what] are we going to do?\nوشو [راح نعمل] => And what [are we going to do]?\n\n[راح نعلمهم] درس => [We're going to teach them] a lesson\nراح نعلمهم [درس] => We're going to teach them [a lesson]\n\n[وخلينا] نشوف شو بدهم يقولوا لأهلنا => [And let's] see what they'll say to our parents\nوخلينا [نشوف] شو بدهم يقولوا لأهلنا => And let's [see] what they'll say to our parents\nوخلينا نشوف [شو] بدهم يقولوا لأهلنا => And let's see [what] they'll say to our parents\nوخلينا نشوف شو [بدهم] يقولوا لأهلنا => And let's see what [they'll] say to our parents\nوخلينا نشوف شو بدهم [يقولوا] لأهلنا => And let's see what they'll [say] to our parents\nوخلينا نشوف شو بدهم يقولوا [لأهلنا] => And let's see what they'll say [to our parents]\n\n[بس] يرجعوا ما نكون موجودين => [When] they return and we aren't there\nبس [يرجعوا] ما نكون موجودين => When [they return] and we aren't there\nبس يرجعوا [ما نكون موجودين] => When they return [and we aren't there]\n\n[يا سلام عليك] => [Good for you!]\n\n[شو] هالصوت => [What] is that sound?\nشو [هالصوت] => What is [that sound]?\n\n[مش عارف] => [I don't know]\n\n[هي] مين هذا => [Hey], who is this?\nهي [مين] هذا => Hey, [who] is this?\nهي مين [هذا] => Hey, who is [this]?\n\n[حرامي] حرامي => [Thief!] Thief!\nحرامي [حرامي] => Thief! [Thief!]\n\n[بس] وطي صوتك => [But] lower your voice\nبس [وطي] صوتك => But [lower] your voice\nبس وطي [صوتك] => But lower [your voice]\n\n[إحنا] لازم نحكي مع البابا والماما => [We] must talk to Dad and Mom\nإحنا [لازم] نحكي مع البابا والماما => We [must] talk to Dad and Mom\nإحنا لازم [نحكي] مع البابا والماما => We must [talk] to Dad and Mom\nإحنا لازم نحكي [مع] البابا والماما => We must talk [to] Dad and Mom\nإحنا لازم نحكي مع [البابا] والماما => We must talk to [Dad] and Mom\nإحنا لازم نحكي مع البابا [والماما] => We must talk to Dad [and Mom]\n\n[أو] مع الشرطة بسرعة => [Or] with the police quickly\nأو [مع] الشرطة بسرعة => Or [with] the police quickly\nأو مع [الشرطة] بسرعة => Or with [the police] quickly\nأو مع الشرطة [بسرعة] => Or with the police [quickly]\n\n[قبل] ما يدخل البيت => [Before] he enters the house\nقبل [ما يدخل] البيت => Before [he enters] the house\nقبل ما يدخل [البيت] => Before he enters [the house]\n\n[ما في وقت] للتلفونات لازم نتصرف => [There's no time] for phones, we must act\nما في وقت [للتلفونات] لازم نتصرف => There's no time [for phones], we must act\nما في وقت للتلفونات [لازم نتصرف] => There's no time for phones, [we must act]\n\n[طب] شو بدنا نعمل أنا خايف => [So] what are we going to do? I'm scared\nطب [شو بدنا نعمل] أنا خايف => So [what are we going to do?] I'm scared\nطب شو بدنا نعمل [أنا خايف] => So what are we going to do? [I'm scared]\n\n[ابعت] لسالي ورنا وراح نتصرف => [Send] a message to Sally and Rana and we will act\nابعت [لسالي] ورنا وراح نتصرف => Send a message [to Sally] and Rana and we will act\nابعت لسالي [ورنا] وراح نتصرف => Send a message to Sally [and Rana] and we will act\nابعت لسالي ورنا [وراح نتصرف] => Send a message to Sally and Rana [and we will act]\n\n[شو في] سالي => [What's up], Sally?\nشو في [سالي] => What's up, [Sally]?\n\n[في] حرامي عم بيحاول يدخل البيت => [There's] a thief trying to enter the house\nفي [حرامي] عم بيحاول يدخل البيت => There's [a thief] trying to enter the house\nفي حرامي [عم بيحاول] يدخل البيت => There's a thief [trying to] enter the house\nفي حرامي عم بيحاول [يدخل] البيت => There's a thief trying to [enter] the house\nفي حرامي عم بيحاول يدخل [البيت] => There's a thief trying to enter [the house]\n\n[أنتي] متأكدة => Are [you] sure?\nأنتي [متأكدة] => Are you [sure]?\n\n[هذول] أكيد بيعملوا فينا مقلب => [They] are definitely playing a prank on us\nهذول [أكيد] بيعملوا فينا مقلب => They are [definitely] playing a prank on us\nهذول أكيد [بيعملوا فينا مقلب] => They are definitely [playing a prank on us]\n\n[آه] ممكن مقلب => [Yeah], maybe a prank\nآه [ممكن] مقلب => Yeah, [maybe] a prank\nآه ممكن [مقلب] => Yeah, maybe [a prank]\n\n[حرامي] حرامي شو بدنا نعمل => [Thief], thief, what are we going to do?\nحرامي [حرامي] شو بدنا نعمل => Thief, [thief], what are we going to do?\nحرامي حرامي [شو بدنا نعمل] => Thief, thief, [what are we going to do?]\n\n[إحنا] لازم نتعاون نعمل خطة => [We] must cooperate to make a plan\nإحنا [لازم نتعاون] نعمل خطة => We [must cooperate] to make a plan\nإحنا لازم نتعاون [نعمل خطة] => We must cooperate [to make a plan]\n\n[هلا] ببعت لسند => I'll send a message to Sanad [now]\nهلا [ببعت] لسند => [I'll send] a message to Sanad now\nهلا ببعت [لسند] => I'll send a message [to Sanad] now\n\n[سند] شو الخطة احكي لي => [Sanad], what's the plan? Tell me\nسند [شو] الخطة احكي لي => Sanad, [what's] the plan? Tell me\nسند شو [الخطة] احكي لي => Sanad, what's [the plan]? Tell me\nسند شو الخطة [احكي لي] => Sanad, what's the plan? [Tell me]\n\n[راح أدور على] حبل => [I'll look for] a rope\nراح أدور على [حبل] => I'll look for [a rope]\n\n[وأنت] جيب كيس الألعاب اللي هناك والحقني => [And you] bring the toy bag over there and follow me\nوأنت [جيب] كيس الألعاب اللي هناك والحقني => And you [bring] the toy bag over there and follow me\nوأنت جيب [كيس الألعاب] اللي هناك والحقني => And you bring [the toy bag] over there and follow me\nوأنت جيب كيس الألعاب [اللي هناك] والحقني => And you bring the toy bag [over there] and follow me\nوأنت جيب كيس الألعاب اللي هناك [والحقني] => And you bring the toy bag over there [and follow me]\n\n[أوك] => [Okay]\n\n[حرامي] حرامي شو بدنا نعمل => [Thief], thief, what are we going to do?\nحرامي [حرامي] شو بدنا نعمل => Thief, [thief], what are we going to do?\nحرامي حرامي [شو] بدنا نعمل => Thief, thief, [what] are we going to do?\nحرامي حرامي شو [بدنا نعمل] => Thief, thief, what [are we going to do]?\n\n[إحنا] لازم نتعاون نعمل خطة => [We] must cooperate to make a plan\nإحنا [لازم] نتعاون نعمل خطة => We [must] cooperate to make a plan\nإحنا لازم [نتعاون] نعمل خطة => We must [cooperate] to make a plan\nإحنا لازم نتعاون [نعمل خطة] => We must cooperate [to make a plan]\n\n[هلا] ببعت لسند => I'll send a message to Sanad [now]\nهلا [ببعت] لسند => [I'll send a message] to Sanad now\nهلا ببعت [لسند] => I'll send a message [to Sanad] now\n\n[سند] شو الخطة احكي لي => [Sanad], what's the plan? Tell me\nسند [شو] الخطة احكي لي => Sanad, [what's] the plan? Tell me\nسند شو [الخطة] احكي لي => Sanad, what's [the plan]? Tell me\nسند شو الخطة [احكي لي] => Sanad, what's the plan? [Tell me]\n\n[راح أدور على] حبل => [I'll look for] a rope\nراح أدور على [حبل] => I'll look for [a rope]\n\n[وأنت] جيب كيس الألعاب اللي هناك والحقني => [And you] bring the toy bag over there and follow me\nوأنت [جيب] كيس الألعاب اللي هناك والحقني => And you [bring] the toy bag over there and follow me\nوأنت جيب [كيس الألعاب] اللي هناك والحقني => And you bring [the toy bag] over there and follow me\nوأنت جيب كيس الألعاب [اللي هناك] والحقني => And you bring the toy bag [over there] and follow me\nوأنت جيب كيس الألعاب اللي هناك [والحقني] => And you bring the toy bag over there [and follow me]\n\n[أوك] => [Okay]\n\n[مسكوه] مسكوه => [They caught him], they caught him!\nمسكوه [مسكوه] => They caught him, [they caught him]!\n\n[مش معقول] الخطة رهيبة => [Unbelievable], the plan is awesome\nمش معقول [الخطة] رهيبة => Unbelievable, [the plan] is awesome\nمش معقول الخطة [رهيبة] => Unbelievable, the plan [is awesome]\n\n[وأنتوا] مفزعين => [And you guys] are formidable\nوأنتوا [مفزعين] => And you guys [are formidable]\n\n[عملناها] => [We did it!]\n\n[يزن] شو هال شجاعة هاي => [Yazan], what is this bravery?\nيزن [شو] هال شجاعة هاي => Yazan, [what] is this bravery?\nيزن شو [هال شجاعة هاي] => Yazan, what [is this bravery]\n\n[إزاي] ما بيقولوا الأجانب => [As] the foreigners say\nإزاي [ما بيقولوا الأجانب] => As [the foreigners say]\n\n[تيم ورك] ميكس ذا دريم ورك => [Teamwork] makes the dream work\nتيم ورك [ميكس] ذا دريم ورك => Teamwork [makes] the dream work\nتيم ورك ميكس [ذا دريم] ورك => Teamwork makes [the dream] work\nتيم ورك ميكس ذا دريم [ورك] => Teamwork makes the dream [work]\n\n[قلت] لك ما رديتي علي => [I told] you, but you didn't listen to me\nقلت [لك] ما رديتي علي => I told [you], but you didn't listen to me\nقلت لك [ما رديتي علي] => I told you, [but you didn't listen to me]\n\n[يعني] معقول هذا الكلام معقول => [I mean], is this talk reasonable?\nيعني [معقول] هذا الكلام معقول => I mean, [is] this talk reasonable?\nيعني معقول [هذا] الكلام معقول => I mean, is [this] talk reasonable?\nيعني معقول هذا [الكلام] معقول => I mean, is this [talk] reasonable?\nيعني معقول هذا الكلام [معقول] => I mean, is this talk [reasonable]\n\n[ليش] بدك تحط الحق علي => [Why] do you want to put the blame on me?\nليش [بدك] تحط الحق علي => Why [do you want] to put the blame on me?\nليش بدك [تحط] الحق علي => Why do you want [to put] the blame on me?\nليش بدك تحط [الحق] علي => Why do you want to put [the blame] on me?\nليش بدك تحط الحق [علي] => Why do you want to put the blame [on me]\n\n[شو] يا جماعة وين الخبز والأشياء الزاكية => [Hey] guys, where is the bread and the yummy things?\nشو [يا جماعة] وين الخبز والأشياء الزاكية => Hey [guys], where is the bread and the yummy things?\nشو يا جماعة [وين] الخبز والأشياء الزاكية => Hey guys, [where] is the bread and the yummy things?\nشو يا جماعة وين [الخبز] والأشياء الزاكية => Hey guys, where is [the bread] and the yummy things?\nشو يا جماعة وين الخبز [و] الأشياء الزاكية => Hey guys, where is the bread [and] the yummy things?\nشو يا جماعة وين الخبز و [الأشياء الزاكية] => Hey guys, where is the bread and [the yummy things]\n\n[شايفة] إيديكم فاضية => [I see] your hands are empty\nشايفة [إيديكم] فاضية => I see [your hands] are empty\nشايفة إيديكم [فاضية] => I see your hands [are empty]\n\n[قلت] لها يعني من 20 سنة => [I told] her, I mean, it's been 20 years\nقلت [لها] يعني من 20 سنة => I told [her], I mean, it's been 20 years\nقلت لها [يعني] من 20 سنة => I told her, [I mean], it's been 20 years\nقلت لها يعني [من 20 سنة] => I told her, I mean, [it's been 20 years]\n\n[معقول] بده يكون المحل لسه بمحله => [Is it possible] the shop would still be in its place?\nمعقول [بده يكون] المحل لسه بمحله => Is it possible [would be] the shop would still be in its place?\nمعقول بده يكون [المحل] لسه بمحله => Is it possible the shop [the shop] would still be in its place?\nمعقول بده يكون المحل [لسه] بمحله => Is it possible the shop would [still] be in its place?\nمعقول بده يكون المحل لسه [بمحله] => Is it possible the shop would still be [in its place]?\n\n[أي] هو في شيء بيضل زي ما هو => [Is] there anything that stays as it is?\nأي [هو في] شيء بيضل زي ما هو => Is [there] anything that stays as it is?\nأي هو في [شيء] بيضل زي ما هل => Is there [anything] that stays as it is?\nأي هو في شيء [بيضل] زي ما هو => Is there anything [stays] as it is?\nأي هو في شيء بيضل [زي ما هو] => Is there anything that stays [as it is]?\n\n[لو] كان عندك نت أصلا => [If] you had internet in the first place\nلو [كان عندك] نت أصلا => If [you had] internet in the first place\nلو كان عندك [نت] أصلا => If you had [internet] in the first place\nلو كان عندك نت [أصلا] => If you had internet [in the first place]\n\n[كان لقيناه] وما ضيعنا ساعة وتكسروا إجرينا => [We would have found it] and not wasted an hour and worn out our legs\nكان لقيناه [وما ضيعنا] ساعة وتكسروا إجرينا => We would have found it [and not wasted] an hour and worn out our legs\nكان لقيناه وما ضيعنا [ساعة] وتكسروا إجرينا => We would have found it and not wasted [an hour] and worn out our legs\nكان لقيناه وما ضيعنا ساعة [وتكسروا إجرينا] => We would have found it and not wasted an hour [and worn out our legs]\n\n[له له له] يا جماعة طولوا بالكم => [No, no, no], guys, be patient\nله له له [يا جماعة] طولوا بالكم => No, no, no, [guys], be patient\nله له له يا جماعة [طولوا بالكم] => No, no, no, guys, [be patient]\n\n[خلص] تعالوا إحنا جبنا أشياء كثير => [It's okay], come, we brought many things\nخلص [تعالوا] إحنا جبنا أشياء كثير => It's okay, [come], we brought many things\nخلص تعالوا [إحنا جبنا] أشياء كثير => It's okay, come, [we brought] many things\nخلص تعالوا إحنا جبنا [أشياء كثير] => It's okay, come, we brought [many things]\n\n[خلص] ما تقلقوا => [It's okay], don't worry\nخلص [ما تقلقوا] => It's okay, [don't worry]\n\n[شو في] أنتوا ليش بره => [What's going on]? Why are you outside?\nشو في [أنتوا] ليش بره => What's going on? [you] Why are you outside?\nشو في أنتوا [ليش] بره => What's going on? [Why] are you outside?\nشو في أنتوا ليش [بره] => What's going on? Why are you [outside]?\n\n[مين] هذا => [Who] is this?\nمين [هذا] => Who [is this]?\n\n[أنتوا] شو عملتوا بالزلمة => [you] What did you do to the man?\nأنتوا [شو] عملتوا بالزلمة => you [What] did you do to the man?\nأنتوا شو [عملتوا] بالزلمة => you What [did] you do to the man?\nأنتوا شو عملتوا [بالزلمة] => you What did you do [to the man]?\n\n[قدرنا] نلقطه عن الحرامي => [We managed] to catch the thief\nقدرنا [نلقطه] عن الحرامي => We managed [to catch] from the thief\nقدرنا نلقطه [عن] الحرامي => We managed to catch [from] the thief\nقدرنا نلقطه عن [الحرامي] => We managed to catch from [the thief]\n\n[حرامي] => [Thief]?\n\n[شو] حرامي => [What] thief?\nشو [حرامي] => What [thief]?\n\n[هذا] الشاب اللي بده يصلح الشباك => [This is] the young man who is supposed to fix the window\nهذا [الشاب] اللي بده يصلح الشباك => This is [the young man] who is supposed to fix the window\nهذا الشاب [اللي] بده يصلح الشباك => This is the young man [who] is supposed to fix the window\nهذا الشاب اللي [بده يصلح] الشباك => This is the young man who [is supposed to fix] the window\nهذا الشاب اللي بده يصلح [الشباك] => This is the young man who is supposed to fix [the window]\n\nأنتوا [شو] عملتوا => [What] did you do?\nأنتوا شو [عملتوا] => What [did you do]?\n\n[الشركة] рнт علينا وحكوا لنا إنه جاي => [The company] called us and told us he was coming\nالشركة [رنت علينا] وحكوا لنا إنه جاي => The company [called us] and told us he was coming\nالشركة رنت علينا [وحكوا لنا] إنه جاي => The company called us [and told us] he was coming\nالشركة رنت علينا وحكوا لنا [إنه جاي] => The company called us and told us [he was coming]\n\n[شو] => [What]?\n\n[قلت لك] ما تتسرع => [I told you] not to rush\nقلت لك [ما تتسرع] => I told you [not to rush]\n\n[لا] لازم إحنا نتصرف => [No], we had to act\nلا [لازم إحنا نتصرف] => No, [we had to act]\n\n[أنا مش] رنا اللي قالت أنا عندي خطة => [I'm not...] it was Rana who said \"I have a plan\"\nأنا مش [رنا] اللي قالت أنا عندي خطة => I'm not... [Rana] who said \"I have a plan\"\nأنا مش رنا [اللي قالت] أنا عندي خطة => I'm not... it was Rana [who said] \"I have a plan\"\nأنا مش رنا اللي قالت [أنا عندي خطة] => I'm not... it was Rana who said [\"I have a plan\"]\n\n[يعني] هلا صار الحق علي => [So] now the blame is on me?\nيعني [هلا] صار الحق علي => So [now] the blame is on me?\nيعني هلا صار [الحق] علي => So now the [blame] is on me?\nيعني هلا صار الحق [علي] => So now the blame is [on me]?\n\n[آه] الحق عليكي ولا على مين => [Yes,] the blame is on you, who else?\nآه [الحق] عليكي ولا على مين => Yes, [the blame] is on you, who else?\nآه الحق [عليكي] ولا على مين => Yes, the blame is [on you], who else?\nآه الحق عليكي [ولا على مين] => Yes, the blame is on you, [who else]?\n\n[يمكن] إحنا كإخوة ما بنتفق مرات => [Maybe] as siblings we don't agree sometimes\nيمكن [إحنا كإخوة] ما بنتفق مرات => Maybe [as siblings we] don't agree sometimes\nيمكن إحنا كإخوة [ما بنتفق] مرات => Maybe as siblings we [don't agree] sometimes\nيمكن إحنا كإخوة ما بنتفق [مرات] => Maybe as siblings we don't agree [sometimes]\n\n[وبنتطوش] على أشياء كثير => [And we fight] over many things\nوبنتطوش [على] أشياء كثير => And we fight [over] many things\nوبنتطوش على [أشياء كثير] => And we fight over [many things]\n\n[ومع هيك] إحنا بنحب بعض كثير => [And yet], we love each other very much\nومع هيك [إحنا] بنحب بعض كثير => And yet, [we] love each other very much\nومع هيك إحنا [بنحب] بعض كثير => And yet, we [love] each other very much\nومع هيك إحنا بنحب [بعض] كثير => And yet, we love [each other] very much\nومع هيك إحنا بنحب بعض [كثير] => And yet, we love each other [very much]\n\n[والإخوان] ما إلهم إلا بعض => [And siblings] have no one but each other\nوالإخوان [ما إلهم] إلا بعض => And siblings [have no one] but each other\nوالإخوان ما إلهم [إلا] بعض => And siblings have no one [but] each other\nوالإخوان ما إلهم إلا [بعض] => And siblings have no one but [each other]\n\n[وأكيد] أحلى شيء => [And surely] the best thing\nوأكيد [أحلى] شيء => And surely [the best] thing\nوأكيد أحلى [شيء] => And surely the best [thing]\n\n[إنه] نخلق ذكريات حلوة ونضحك مع بعض => [Is that] we create beautiful memories and laugh together\nإنه [نخلق] ذكريات حلوة ونضحك مع بعض => Is that [we create] beautiful memories and laugh together\nإنه نخلق [ذكريات] حلوة ونضحك مع بعض => Is that we create beautiful [memories] and laugh together\nإنه نخلق ذكريات [حلوة] ونضحك مع بعض => Is that we create [beautiful] memories and laugh together\nإنه نخلق ذكريات حلوة [ونضحك] مع بعض => Is that we create beautiful memories [and laugh] together\nإنه نخلق ذكريات حلوة ونضحك [مع بعض] => Is that we create beautiful memories and laugh [together]\n\n[صح] يا شباب => [Right], guys?\nصح [يا شباب] => Right, [guys]?\n\n[أكيد] صح => [Definitely] right\nأكيد [صح] => Definitely [right]\n\n[اسمعي] => [Listen]\n\n[شفت] مخبز شكله حلو على الطريق => [I saw] a bakery that looks nice on the way\nشفت [مخبز] شكله حلو على الطريق => I saw [a bakery] that looks nice on the way\nشفت مخبز [شكله حلو] على الطريق => I saw a bakery [that looks nice] on the way\nشفت مخبز شكله حلو [على الطريق] => I saw a bakery that looks nice [on the way]\n\n[وعندهم] قهوة زاكية => [And they have] delicious coffee\nوعندهم [قهوة] زاكية => And they have delicious [coffee]\nوعندهم قهوة [زاكية] => And they have [delicious] coffee\n\n[شو] يلا => [What]? Let's go!\nشو [يلا] => What? [Let's go]!\n\n[شكله] إحنا اللي علقنا مع الأولاد اليوم => [It looks like] we are the ones stuck with the kids today\nشكله [إحنا] اللي علقنا مع الأولاد اليوم => It looks like [we] are the ones stuck with the kids today\nشكله إحنا [اللي] علقنا مع الأولاد اليوم => It looks like we [are the ones] stuck with the kids today\nشكله إحنا اللي [علقنا] مع الأولاد اليوم => It looks like we are the ones [stuck] with the kids today\nشكله إحنا اللي علقنا [مع الأولاد] اليوم => It looks like we are the ones stuck [with the kids] today\nشكله إحنا اللي علقنا مع الأولاد [اليوم] => It looks like we are the ones stuck with the kids [today]\n\n[شو] حبيتوا الستايل => [How] did you like the style?\nشو [حبيتوا] الستايل => How [did you like] the style?\nشو حبيتوا [الستايل] => How did you like [the style]?\n\n",
     "lessons": "# A Special Surprise\n00:00 مرحبا أصدقائي\n00:01 عندنا مفاجأة\n00:02 كثير حلوة لكم\n00:04 لا لا أنا مش حامل\n\n# A New Style\n00:07 بس متحمسين نشارككم\n00:08 ستايل جديد\n00:09 عم نشتغل عليه\n00:11 احضروا الحلقة كاملة\n\n# Call to Action\n00:12 واحكوا لنا رأيكم\n00:13 بالتعليقات\n00:15 وما تنسوا تعملوا\n00:16 سبسكرايب\n\n# Reminiscing\n00:20 أبو يزن\n00:21 شوف شوف\n00:22 تتذكر شهر العسل\n00:24 قضينا هون أحلى أيام\n\n# A Travel Deal\n00:26 يا\n00:27 بتعرف إنها كانت أول\n00:28 وآخر رحلة إلنا مع بعض\n00:30 طلع قديش سعر الرحلة رخيص\n\n# A Second Honeymoon\n00:33 شو رأيك نرجع نعملها\n00:35 ونسافر شهر عسل ثاني\n00:37 هاتي هاتي أشوف قديش يعني رخيص\n00:39 أوف\n\n# The Group Offer\n00:40 هذا عن جد العرض خرافي\n00:42 آه بس استني\n00:43 هذا للجروبات يا حبيبتي\n00:44 يعني عيلتين أو أكثر\n\n# Not a Honeymoon\n00:46 يعني أكيد مش هاني مون\n00:48 هاني مون قال\n00:50 طيب بنجيب عيلة ثانية معنا\n00:52 بس بدنا حدا هيك ظله خفيف\n\n# The Perfect Travel Partners\n00:54 وناس مش نكديين\n00:55 وما يجننونا\n00:57 وهيك بنترك الأولاد معهم\n00:59 وبنطش لحالنا\n\n# Who Are You Thinking Of?\n01:00 شو رأيك\n01:01 بمين عم بتفكري\n01:04 بليز بليز بابا\n01:06 لو سمحت\n\n# The Trip is On\n01:07 يا بابا يا بابا\n01:10 ماشي بنروح\n01:11 صفرة صفرة صفرة\n01:14 أنا رايحة أخبر أم يزن\n\n# Planning Details\n01:15 ونتفق على كل التفاصيل\n01:21 بابا مش قادر أجر الشنطة\n01:24 خلي رنا تساعدك يابا\n01:26 خليني باللي أنا فيه\n\n# Heavy Luggage\n01:28 مش قادر\n01:29 تقيلة عليك حبيبي\n01:30 شد حيلك معي أغراض كثير\n01:32 بابا رنا مش قابلة تساعدني\n\n# Busy Parents\n01:36 دبروا حالكم\n01:37 مش شايفني مشغول\n01:39 شو اللي عم بصير هون\n01:41 أنت شايف\n\n# Honeymoon Outfits\n01:43 قال هذه البلايز لبسوها على شهر العسل\n01:48 بابا شوف سالي\n01:49 أخذت هاي المخدة اللي بنحطها على الرقبة\n01:51 هي لمين\n\n# The Neck Pillow Dispute\n01:52 إلك\n01:54 بالضبط هي مش بس إلك سيد سند\n01:56 هي إلنا كلنا وأنا سبقت عليها\n01:59 خلص يا ولاد دور دور\n\n# Final Call at the Airport\n02:01 طيب أنا أول\n02:02 يا سند\n02:04 نداء نهائي\n02:05 وأخيرا لعيلة أبو سند\n\n# Hurry to the Gate\n02:06 وعيلة أبو يزن\n02:08 هو ما في غيركم في المطار\n02:11 الرجاء التوجه فورا\n02:13 للبوابة رقم ثلاثة\n\n# The Plane is Waiting\n02:15 خلصونا\n02:16 الطيارة كلها بتستنى فيكم\n02:18 وبعدين معاكم\n02:20 يلا يا جماعة\n02:21 يلا ركض\n\n# Seat Stealing\n02:25 يزن هلا قوم\n02:26 هذا محلي\n02:28 مش قايم أنا سبقت\n02:30 اللي سبق لبق\n\n# The Flight Attendant\n02:32 يزن بلاش ما أنا هذه المضيفة\n02:34 بتقومك غصب عنك\n02:36 أم يزن وين كنتوا\n02:38 قلقنا عليكم تأخرتوا\n\n# Duty Free Memories\n02:40 لما سافرنا شهر العسل\n02:41 أبو يزن شرالي ريحة من السوق الحرة\n02:44 وضلينا ندور عليها عبال ما لقيناها\n02:47 منيح اللي اجيتوا\n\n# Moving Seats\n02:48 بابا خلي يزن يقوم هلا\n02:51 يزن تحرك من محلك بسرعة\n02:53 طب بابا بديش أقعد جنبها\n02:54 بقعد محلك\n\n# Sitting Separately\n02:56 لا يا حبيبي ما حزرت\n02:57 لأنه إحنا حجزنا ورا لحالنا\n03:00 تفضلي يا قلبي\n03:10 يا حبيبي ما أحلى البيوت\n\n# Arrival at the House\n03:12 هجوم\n03:14 حطوا أغراضكم\n03:15 نتلاقى عندنا كمان نص ساعة\n03:17 شوف ما أحلى التخت\n\n# Vacation Excitement\n03:18 بتقدر تنط عالي كثير\n03:21 راح ألبس هذا الفستان على البحر\n03:23 جبتي تبعك صح\n03:25 طبعا أول شيء طبيته\n\n# Getting Supplies\n03:28 شو رأيكم أنا وأبو يزن\n03:29 بنطلع نجيب شوية أغراض للبيت\n03:31 بس عاد أنا وأم يزن قلنا\n03:33 بنروح نجيب خبز ومعجنات للأولاد\n\n# The Local Bakery\n03:36 يعني صح أم يزن شو\n03:40 آه في مخبز قريب من هون\n03:42 كنا كل يوم ناكل فيه أنا وأبو يزن\n03:44 لما يجينا هون\n\n# Coffee and Rest\n03:45 بنجيب لكم معنا قهوة كمان\n03:47 أنتوا خليكم مرتاحوا هون مع الأولاد\n03:48 ما بنطول عليكم\n03:51 خلص تمام تمام\n\n# The Plan for Later\n03:53 أنتوا روحوا جيبوا الخبز ومعجنات\n03:55 وإحنا بس ترجعوا بنطلع نجيب أغراض البيت الثانية\n03:58 شو رأيك عصام\n04:00 ماشي\n\n# Leaving the Kids Alone\n04:01 يلا مع السلامة باي\n04:03 دينا خلينا نطلع نجيب الأغراض هلا\n04:06 شو والأولاد\n04:08 أي شو بده يصير عليهم\n\n# Setting the Rules\n04:09 صاروا كبار وكلها نص ساعة\n04:12 يا ولاد إحنا طالعين\n04:14 أقل من ساعة نجيب كل أغراض البيت\n04:16 ديروا بالكم عبال ما نرجع\n\n# Sisters in Charge\n04:18 سالي ورنا أنتوا المسؤولين عن إخوانكم\n04:21 ما حدا يطلع من البيت مفهوم\n04:23 مفهوم\n04:26 مش مصدق إنه الجيم اللي بنحبها موجودة بالبيت\n\n# The Dream House\n04:29 عن جد هذا بيت الأحلام\n04:31 سند ويزن تعالوا بسرعة رتبوا أغراضكم\n04:34 من أول ما اجيتوا أنتوا عم تلعبوا\n04:37 مش فاضيين بعد شوي\n\n# Taking Responsibility\n04:39 حبايبي ما تنسوا إنه إحنا المسؤولين\n04:41 يلا تفضلوا\n04:44 رنا شو بتعملي\n04:46 إذا ماما شالت الشاحن عن موبايلك بتقول شيء\n\n# The New Boss\n04:49 أنا هون المسؤولة عنك حبيبي\n04:52 سند وين ريموت التلفزيون\n04:58 سند اقعد منيح\n05:00 يا سلام شو مالها قعدتي\n\n# Protecting the Furniture\n05:02 هلا إذا توسخ العفش بيدفعونا بداله\n05:04 نزل إجرك\n05:06 مضبوط وأنت كمان سيد يزن\n05:08 لا هيك صار كثير\n\n# Fed Up\n05:10 أكثر من كثير\n05:12 إحنا طالعين وما راح نرجع\n05:14 غير لما أهلنا المسؤولين عنا يرجعوا\n05:17 وين رايحين الدنيا عتمة\n\n# Don't Leave\n05:19 ارجعوا لهون بسرعة\n05:20 بقول ارجعوا\n05:23 شو راح نعمل هلا\n05:27 هيك الواحد بيعرف أصحابه\n\n# Lulu's Complaint\n05:29 بيطلعوا بيسافروا وبيروحوا\n05:30 ومش حاكيين للولو\n05:32 أصل السفرة مش حلوة بدوني\n05:34 هم الخسرانين\n\n# The Neighborhood Hears\n05:36 باقي هيئة ومنصف\n05:40 أنت سامعني\n05:42 هو أنا بس اللي سامع\n05:45 كل الحارة سمعتك\n\n# Hiding Behind the Tree\n05:47 طب إحنا وين راح نروح هلا\n05:49 أنت صدقت مش راح نروح محل\n05:50 تعال هون ورا الشجرة\n05:52 وشو راح نعمل\n\n# Teaching a Lesson\n05:54 راح نعلمهم درس\n05:55 وخلينا نشوف شو بدهم يقولوا لأهلنا\n05:57 بس يرجعوا ما نكون موجودين\n05:59 يا سلام عليك\n\n# Strange Noises\n06:02 شو هالصوت\n06:04 مش عارف\n06:05 هي مين هذا\n06:07 حرامي حرامي\n\n# Emergency Response\n06:09 بس وطي صوتك\n06:10 إحنا لازم نحكي مع البابا والماما\n06:12 أو مع الشرطة بسرعة\n06:14 قبل ما يدخل البيت\n\n# No Time for Phones\n06:15 ما في وقت للتلفونات لازم نتصرف\n06:18 طب شو بدنا نعمل أنا خايف\n06:21 ابعت لسالي ورنا وراح نتصرف\n06:24 شو في سالي\n\n# A Thief in the House?\n06:27 في حرامي عم بيحاول يدخل البيت\n06:29 أنتي متأكدة\n06:31 هذول أكيد بيعملوا فينا مقلب\n06:33 آه ممكن مقلب\n\n# Formulating a Plan\n06:35 حرامي حرامي شو بدنا نعمل\n06:37 إحنا لازم نتعاون نعمل خطة\n06:39 هلا ببعت لسند\n06:41 سند شو الخطة احكي لي\n\n# Tools for the Trap\n06:43 راح أدور على حبل\n06:44 وأنت جيب كيس الألعاب اللي هناك والحقني\n06:47 أوك\n06:53 حرامي حرامي شو بدنا نعمل\n\n# Coordinating the Team\n06:57 إحنا لازم نتعاون نعمل خطة\n07:00 هلا ببعت لسند\n07:03 سند شو الخطة احكي لي\n07:05 راح أدور على حبل\n\n# Executing the Plan\n07:07 وأنت جيب كيس الألعاب اللي هناك والحقني\n07:11 أوك\n07:15 مسكوه مسكوه\n07:18 مش معقول الخطة رهيبة\n\n# Teamwork Success\n07:20 وأنتوا مفزعين\n07:22 عملناها\n07:23 يزن شو هال شجاعة هاي\n07:26 إزاي ما بيقولوا الأجانب\n\n# Teamwork Makes the Dream Work\n07:28 تيم ورك ميكس ذا دريم ورك\n07:31 قلت لك ما رديتي علي\n07:32 يعني معقول هذا الكلام معقول\n07:34 ليش بدك تحط الحق علي\n\n# Empty Handed Parents\n07:36 شو يا جماعة وين الخبز والأشياء الزاكية\n07:38 شايفة إيديكم فاضية\n07:41 قلت لها يعني من 20 سنة\n07:42 معقول بده يكون المحل لسه بمحله\n\n# Lost Without Internet\n07:44 أي هو في شيء بيضل زي ما هو\n07:47 لو كان عندك نت أصلا\n07:48 كان لقيناه وما ضيعنا ساعة وتكسروا إجرينا\n07:51 له له له يا جماعة طولوا بالكم\n\n# Who is the Intruder?\n07:55 خلص تعالوا إحنا جبنا أشياء كثير\n07:57 خلص ما تقلقوا\n07:59 شو في أنتوا ليش بره\n08:01 مين هذا\n\n# The Repairman Mistake\n08:02 أنتوا شو عملتوا بالزلمة\n08:04 قدرنا نلقطه عن الحرامي\n08:05 حرامي\n08:07 شو حرامي\n\n# Miscommunication\n08:08 هذا الشاب اللي بده يصلح الشباك\n08:10 أنتوا شو عملتوا\n08:12 الشركة رنت علينا وحكوا لنا إنه جاي\n08:15 شو\n\n# Shifting Blame\n08:16 قلت لك ما تتسرع\n08:17 لا لازم إحنا نتصرف\n08:20 أنا مش رنا اللي قالت أنا عندي خطة\n08:23 يعني هلا صار الحق علي\n\n# Sibling Bonds\n08:25 آه الحق عليكي ولا على مين\n08:29 يمكن إحنا كإخوة ما بنتفق مرات\n08:32 وبنتطوش على أشياء كثير\n08:34 ومع هيك إحنا بنحب بعض كثير\n\n# Creating Memories\n08:37 والإخوان ما إلهم إلا بعض\n08:39 وأكيد أحلى شيء\n08:41 إنه نخلق ذكريات حلوة ونضحك مع بعض\n08:44 صح يا شباب\n\n# Finding the New Bakery\n08:45 أكيد صح\n08:49 اسمعي\n08:50 شفت مخبز شكله حلو على الطريق\n08:52 وعندهم قهوة زاكية\n\n# Stuck with the Kids\n08:54 شو يلا\n08:58 شكله إحنا اللي علقنا مع الأولاد اليوم\n09:04 شو حبيتوا الستايل",
-    "similar_sounds": "مرحبا أصدقائي\nعندنا مفاجأة\nكثير [حلية] لكم\nلا لا أنا مش [حالم]\nبس متحمسين نشارككم\nستايل جديد\nعم نشتغل عليه\nاحضروا الحلقة كاملة\nواحكوا لنا رأيكم\nبالتعليقات\nوما تنسوا تعملوا\nسبسكرايب\nأبو يزن\nشوف شوف\nتتذكر شهر [الأمل]\nقضينا هون أحلى [أقوام]\nيا\nبتعرف إنها كانت أول\nوآخر رحلة إلنا مع بعض\nطلع قديش سعر الرحلة [رفيق]\nشو رأيك نرجع نعملها\nونسافر شهر عسل ثاني\nهاتي هاتي أشوف قديش يعني رخيص\nأوف\nهذا عن جد العرض خرافي\nآه بس استني\nهذا للجروبات يا حبيبتي\nيعني عيلتين أو أكثر\nيعني أكيد مش هاني مون\nهاني مون قال\nطيب بنجيب عيلة ثانية معنا\nبس بدنا حدا هيك ظله خفيف\nوناس مش نكديين\nوما يجننونا\nوهيك بنترك الأولاد معهم\nوبنطش لحالنا\nشو رأيك\nبمين عم بتفكري\nبليز بليز بابا\nلو سمحت\nيا بابا يا بابا\nماشي بنروح\nصفرة صفرة صفرة\nأنا رايحة أخبر أم يزن\nونتفق على كل التفاصيل\nبابا مش قادر أجر الشنطة\nخلي رنا تساعدك يابا\nخليني باللي أنا فيه\nمش قادر\nتقيلة عليك حبيبي\nشد حيلك معي أغراض كثير\nبابا رنا مش قابلة تساعدني\nدبروا حالكم\nمش شايفني مشغول\nشو اللي عم بصير هون\nأنت شايف\nقال هذه البلايز لبسوها على شهر العسل\nبابا شوف سالي\nأخذت هاي المخدة اللي بنحطها على الرقبة\nهي لمين\nإلك\nبالضبط هي مش بس إلك سيد سند\nهي إلنا كلنا وأنا سبقت عليها\nخلص يا ولاد دور دور\nطيب أنا أول\nيا سند\nنداء نهائي\nوأخيرا لعيلة أبو سند\nوعيلة أبو يزن\nهو ما في غيركم في المطار\nالرجاء التوجه فورا\nللبوابة رقم ثلاثة\nخلصونا\nالطيارة كلها بتستنى فيكم\nوبعدين معاكم\nيلا يا جماعة\nيلا ركض\nيزن هلا قوم\nهذا محلي\nمش قايم أنا سبقت\nاللي سبق لبق\nيزن بلاش ما أنا هذه المضيفة\nبتقومك غصب عنك\nأم يزن وين كنتوا\nقلقنا عليكم تأخرتوا\nلما سافرنا شهر العسل\nأبو يزن شرالي ريحة من السوق الحرة\nوضلينا ندور عليها عبال ما لقيناها\nمنيح اللي اجيتوا\nبابا خلي يزن يقوم هلا\nيزن تحرك من محلك بسرعة\nطب بابا بديش أقعد جنبها\nبقعد محلك\nلا يا حبيبي ما حزرت\nلأنه إحنا حجزنا ورا لحالنا\nتفضلي يا قلبي\nيا حبيبي ما أحلى البيوت\nهجوم\nحطوا أغراضكم\nنتلاقى عندنا كمان نص ساعة\nشوف ما أحلى التخت\nبتقدر تنط عالي كثير\nراح ألبس هذا الفستان على البحر\nجبتي تبعك صح\nطبعا أول شيء طبيته\nشو رأيكم أنا وأبو يزن\nبنطلع نجيب شوية أغراض للبيت\nبس عاد أنا وأم يزن قلنا\nبنروح نجيب خبز ومعجنات للأولاد\nيعني صح أم يزن شو\nآه في مخبز قريب من هون\nكنا كل يوم ناكل فيه أنا وأبو يزن\nلما يجينا هون\nبنجيب لكم معنا قهوة كمان\nأنتوا خليكم مرتاحوا هون مع الأولاد\nما بنطول عليكم\nخلص تمام تمام\nأنتوا روحوا جيبوا الخبز والمعجنات\nوإحنا بس ترجعوا بنطلع نجيب أغراض البيت الثانية\nشو رأيك عصام\nماشي\nيلا مع السلامة باي\nدينا خلينا نطلع نجيب الأغراض هلا\nشو والأولاد\nأي شو بده يصير عليهم\nصاروا كبار وكلها نص ساعة\nيا ولاد إحنا طالعين\nأقل من ساعة نجيب كل أغراض البيت\nديروا بالكم عبال ما نرجع\nسالي ورنا أنتوا المسؤولين عن إخوانكم\nما حدا يطلع من البيت مفهوم\nمفهوم\nمش مصدق إنه الجيم اللي بنحبها موجودة بالبيت\nعن جد هذا بيت الأحلام\nسند ويزن تعالوا بسرعة رتبوا أغراضكم\nمن أول ما اجيتوا أنتوا عم تلعبوا\nمش فاضيين بعد شوي\nحبايبي ما تنسوا إنه إحنا المسؤولين\nيلا تفضلوا\nرنا شو بتعملي\nإذا ماما شالت الشاحن عن موبايلك بتقول شيء\nأنا هون المسؤولة عنك حبيبي\nسند وين ريموت التلفزيون\nسند اقعد منيح\nيا سلام شو مالها قعدتي\nهلا إذا توسخ العفش بيدفعونه بداله\nنزل إجرك\nمضبوط وأنت كمان سيد يزن\nلا هيك صار كثير\nأكثر من كثير\nإحنا طالعين وما راح نرجع\nغير لما أهلنا المسؤولين عنا يرجعوا\nوين رايحين الدنيا عتمة\nارجعوا لهون بسرعة\nبقول ارجعوا\nشو راح نعمل هلا\nهيك الواحد بيعرف أصحابه\nبيطلعوا بيسافروا وبيروحوا\nومش حاكيين للولو\nأصل السفرة مش حلوة بدوني\nهم الخسرانين\nباقي هيئة ومنصف\nأنت سامعني\nهو أنا بس اللي سامع\nكل الحارة سمعتك\nطب إحنا وين راح نروح هلا\nأنت صدقت مش راح نروح محل\nتعال هون ورا الشجرة\nوشو راح نعمل\nراح نعلمهم درس\nوخلينا نشوف شو بدهم يقولوا لأهلنا\nبس يرجعوا ما نكون موجودين\nيا سلام عليك\nشو هالصوت\nمش عارف\nهي مين هذا\nحرامي حرامي\nبس وطي صوتك\nإحنا لازم نحكي مع البابا والماما\nأو مع الشرطة بسرعة\nقبل ما يدخل البيت\nما في وقت للتلفونات لازم نتصرف\nطب شو بدنا نعمل أنا خايف\nابعت لسالي ورنا وراح نتصرف\nشو في سالي\nفي حرامي عم بيحاول يدخل البيت\nأنتي متأكدة\nهذول أكيد بيعملوا فينا مقلب\nآه ممكن مقلب\nحرامي حرامي شو بدنا نعمل\nإحنا لازم نتعاون نعمل خطة\nهلا ببعت لسند\nسند شو الخطة احكي لي\nراح أدور على حبل\nوأنت جيب كيس الألعاب اللي هناك والحقني\nأوك\nمسكوه مسكوه\nمش معقول الخطة رهيبة\nوأنتوا مفزعين\nعملناها\nيزن شو هال شجاعة هاي\nإزاي ما بيقولوا الأجانب\nتيم ورك ميكس ذا دريم ورك\nقلت لك ما رديتي علي\nيعني معقول هذا الكلام معقول\nليش بدك تحط الحق علي\nشو يا جماعة وين الخبز والأشياء الزاكية\nشايفة إيديكم فاضية\nقلت لها يعني من 20 سنة\nمعقول بده يكون المحل لسه بمحله\nأي هو في شيء بيضل زي ما هو\nلو كان عندك نت أصلا\nكان لقيناه وما ضيعنا ساعة وتكسروا إجرينا\nله له له يا جماعة طولوا بالكم\nخلص تعالوا إحنا جبنا أشياء كثير\nخلص ما تقلقوا\nشو في أنتوا ليش بره\nمين هذا\nأنتوا شو عملتوا بالزلمة\nقدرنا نلقطه عن الحرامي\nحرامي\nشو حرامي\nهذا الشاب اللي بده يصلح الشباك\nأنتوا شو عملتوا\nالشركة رنت علينا وحكوا لنا إنه جاي\nشو\nقلت لك ما تتسرع\nلا لازم إحنا نتصرف\nأنا مش رنا اللي قالت أنا عندي خطة\nيعني هلا صار الحق علي\nآه الحق عليكي ولا على مين\nيمكن إحنا كإخوة ما بنتفق مرات\nوبنتطوش على أشياء كثير\nومع هيك إحنا بنحب بعض كثير\nوالإخوان ما إلهم إلا بعض\nوأكيد أحلى شيء\nإنه نخلق ذكريات حلوة ونضحك مع بعض\nصح يا شباب\nأكيد صح\nاسمعي\nشفت مخبز شكله حلو على الطريق\nوعندهم قهوة زاكية\nشو يلا\nشكله إحنا اللي علقنا مع الأولاد اليوم\nشو حبيتوا الستايل"
+    "similar_sounds": "مرحبا أصدقائي\nعندنا مفاجأة\nكثير [حلية] لكم\nلا لا أنا مش [حالم]\nبس متحمسين نشارككم\nستايل جديد\nعم نشتغل عليه\nاحضروا الحلقة كاملة\nواحكوا لنا رأيكم\nبالتعليقات\nوما تنسوا تعملوا\nسبسكرايب\nأبو يزن\nشوف شوف\nتتذكر شهر [الأمل]\nقضينا هون أحلى [أقوام]\nيا\nبتعرف إنها كانت أول\nوآخر رحلة إلنا مع بعض\nطلع قديش سعر الرحلة [رفيق]\nشو رأيك نرجع نعملها\nونسافر شهر عسل ثاني\nهاتي هاتي أشوف قديش يعني رخيص\nأوف\nهذا عن جد العرض خرافي\nآه بس استني\nهذا للجروبات يا حبيبتي\nيعني عيلتين أو أكثر\nيعني أكيد مش هاني مون\nهاني مون قال\nطيب بنجيب عيلة ثانية معنا\nبس بدنا حدا هيك ظله خفيف\nوناس مش نكديين\nوما يجننونا\nوهيك بنترك الأولاد معهم\nوبنطش لحالنا\nشو رأيك\nبمين عم بتفكري\nبليز بليز بابا\nلو سمحت\nيا بابا يا بابا\nماشي بنروح\nصفرة صفرة صفرة\nأنا رايحة أخبر أم يزن\nونتفق على كل التفاصيل\nبابا مش قادر أجر الشنطة\nخلي رنا تساعدك يابا\nخليني باللي أنا فيه\nمش قادر\nتقيلة عليك حبيبي\nشد حيلك معي أغراض كثير\nبابا رنا مش قابلة تساعدني\nدبروا حالكم\nمش شايفني مشغول\nشو اللي عم بصير هون\nأنت شايف\nقال هذه البلايز لبسوها على شهر العسل\nبابا شوف سالي\nأخذت هاي المخدة اللي بنحطها على الرقبة\nهي لمين\nإلك\nبالضبط هي مش بس إلك سيد سند\nهي إلنا كلنا وأنا سبقت عليها\nخلص يا ولاد دور دور\nطيب أنا أول\nيا سند\nنداء نهائي\nوأخيرا لعيلة أبو سند\nوعيلة أبو يزن\nهو ما في غيركم في المطار\nالرجاء التوجه فورا\nللبوابة رقم ثلاثة\nخلصونا\nالطيارة كلها بتستنى فيكم\nوبعدين معاكم\nيلا يا جماعة\nيلا ركض\nيزن هلا قوم\nهذا محلي\nمش قايم أنا سبقت\nاللي سبق لبق\nيزن بلاش ما أنا هذه المضيفة\nبتقومك غصب عنك\nأم يزن وين كنتوا\nقلقنا عليكم تأخرتوا\nلما سافرنا شهر العسل\nأبو يزن شرالي ريحة من السوق الحرة\nوضلينا ندور عليها عبال ما لقيناها\nمنيح اللي اجيتوا\nبابا خلي يزن يقوم هلا\nيزن تحرك من محلك بسرعة\nطب بابا بديش أقعد جنبها\nبقعد محلك\nلا يا حبيبي ما حزرت\nلأنه إحنا حجزنا ورا لحالنا\nتفضلي يا قلبي\nيا حبيبي ما أحلى البيوت\nهجوم\nحطوا أغراضكم\nنتلاقى عندنا كمان نص ساعة\nشوف ما أحلى التخت\nبتقدر تنط عالي كثير\nراح ألبس هذا الفستان على البحر\nجبتي تبعك صح\nطبعا أول شيء طبيته\nشو رأيكم أنا وأبو يزن\nبنطلع نجيب شوية أغراض للبيت\nبس عاد أنا وأم يزن قلنا\nبنروح نجيب خبز ومعجنات للأولاد\nيعني صح أم يزن شو\nآه في مخبز قريب من هون\nكنا كل يوم ناكل فيه أنا وأبو يزن\nلما يجينا هون\nبنجيب لكم معنا قهوة كمان\nأنتوا خليكم مرتاحوا هون مع الأولاد\nما بنطول عليكم\nخلص تمام تمام\nأنتوا روحوا جيبوا الخبز والمعجنات\nوإحنا بس ترجعوا بنطلع نجيب أغراض البيت الثانية\nشو رأيك عصام\nماشي\nيلا مع السلامة باي\nدينا خلينا نطلع نجيب الأغراض هلا\nشو والأولاد\nأي شو بده يصير عليهم\nصاروا كبار وكلها نص ساعة\nيا ولاد إحنا طالعين\nأقل من ساعة نجيب كل أغراض البيت\nديروا بالكم عبال ما نرجع\nسالي ورنا أنتوا المسؤولين عن إخوانكم\nما حدا يطلع من البيت مفهوم\nمفهوم\nمش مصدق إنه الجيم اللي بنحبها موجودة بالبيت\nعن جد هذا بيت الأحلام\nسند ويزن تعالوا بسرعة رتبوا أغراضكم\nمن أول ما اجيتوا أنتوا عم تلعبوا\nمش فاضيين بعد شوي\nحبايبي ما تنسوا إنه إحنا المسؤولين\nيلا تفضلوا\nرنا شو بتعملي\nإذا ماما شالت الشاحن عن موبايلك بتقول شيء\nأنا هون المسؤولة عنك حبيبي\nسند وين ريموت التلفزيون\nسند اقعد منيح\nيا سلام شو مالها قعدتي\nهلا إذا توسخ العفش بيدفعونه بداله\nنزل إجرك\nمضبوط وأنت كمان سيد يزن\nلا هيك صار كثير\nأكثر من كثير\nإحنا طالعين وما راح نرجع\nغير لما أهلنا المسؤولين عنا يرجعوا\nوين رايحين الدنيا عتمة\nارجعوا لهون بسرعة\nبقول ارجعوا\nشو راح نعمل هلا\nهيك الواحد بيعرف أصحابه\nبيطلعوا بيسافروا وبيروحوا\nومش حاكيين للولو\nأصل السفرة مش حلوة بدوني\nهم الخسرانين\nباقي هيئة ومنصف\nأنت سامعني\nهو أنا بس اللي سامع\nكل الحارة سمعتك\nطب إحنا وين راح نروح هلا\nأنت صدقت مش راح نروح محل\nتعال هون ورا الشجرة\nوشو راح نعمل\nراح نعلمهم درس\nوخلينا نشوف شو بدهم يقولوا لأهلنا\nبس يرجعوا ما نكون موجودين\nيا سلام عليك\nشو هالصوت\nمش عارف\nهي مين هذا\nحرامي حرامي\nبس وطي صوتك\nإحنا لازم نحكي مع البابا والماما\nأو مع الشرطة بسرعة\nقبل ما يدخل البيت\nما في وقت للتلفونات لازم نتصرف\nطب شو بدنا نعمل أنا خايف\nابعت لسالي ورنا وراح نتصرف\nشو في سالي\nفي حرامي عم بيحاول يدخل البيت\nأنتي متأكدة\nهذول أكيد بيعملوا فينا مقلب\nآه ممكن مقلب\nحرامي حرامي شو بدنا نعمل\nإحنا لازم نتعاون نعمل خطة\nهلا ببعت لسند\nسند شو الخطة احكي لي\nراح أدور على حبل\nوأنت جيب كيس الألعاب اللي هناك والحقني\nأوك\nمسكوه مسكوه\nمش معقول الخطة رهيبة\nوأنتوا مفزعين\nعملناها\nيزن شو هال شجاعة هاي\nإزاي ما بيقولوا الأجانب\nتيم ورك ميكس ذا دريم ورك\nقلت لك ما رديتي علي\nيعني معقول هذا الكلام معقول\nليش بدك تحط الحق علي\nشو يا جماعة وين الخبز والأشياء الزاكية\nشايفة إيديكم فاضية\nقلت لها يعني من 20 سنة\nمعقول بده يكون المحل لسه بمحله\nأي هو في شيء بيضل زي ما هو\nلو كان عندك نت أصلا\nكان لقيناه وما ضيعنا ساعة وتكسروا إجرينا\nله له له يا جماعة طولوا بالكم\nخلص تعالوا إحنا جبنا أشياء كثير\nخلص ما تقلقوا\nشو في أنتوا ليش بره\nمين هذا\nأنتوا شو عملتوا بالزلمة\nقدرنا نلقطه عن الحرامي\nحرامي\nشو حرامي\nهذا الشاب اللي بده يصلح الشباك\nأنتوا شو عملتوا\nالشركة رنت علينا وحكوا لنا إنه جاي\nشو\nقلت لك ما تتسرع\nلا لازم إحنا نتصرف\nأنا مش رنا اللي قالت أنا عندي خطة\nيعني هلا صار الحق علي\nآه الحق عليكي ولا على مين\nيمكن إحنا كإخوة ما بنتفق مرات\nوبنتطوش على أشياء كثير\nومع هيك إحنا بنحب بعض كثير\nوالإخوان ما إلهم إلا بعض\nوأكيد أحلى شيء\nإنه نخلق ذكريات حلوة ونضحك مع بعض\nصح يا شباب\nأكيد صح\nاسمعي\nشفت مخبز شكله حلو على الطريق\nوعندهم قهوة زاكية\nشو يلا\nشكله إحنا اللي علقنا مع الأولاد اليوم\nشو حبيتوا الستايل",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hello my friends",
+            "words": []
+          },
+          {
+            "text": "We have a surprise",
+            "words": []
+          },
+          {
+            "text": "A very nice one for you",
+            "words": []
+          },
+          {
+            "text": "No, no, I'm not pregnant",
+            "words": []
+          },
+          {
+            "text": "But we are excited to share with you",
+            "words": []
+          },
+          {
+            "text": "A new style",
+            "words": []
+          },
+          {
+            "text": "We are working on it",
+            "words": []
+          },
+          {
+            "text": "Watch the full episode",
+            "words": []
+          },
+          {
+            "text": "And tell us your opinion",
+            "words": []
+          },
+          {
+            "text": "In the comments",
+            "words": []
+          },
+          {
+            "text": "And don't forget to",
+            "words": []
+          },
+          {
+            "text": "Subscribe",
+            "words": []
+          },
+          {
+            "text": "Abu Yazan",
+            "words": []
+          },
+          {
+            "text": "Look, look",
+            "words": []
+          },
+          {
+            "text": "Do you remember the honeymoon?",
+            "words": []
+          },
+          {
+            "text": "We spent the best days here",
+            "words": []
+          },
+          {
+            "text": "Yeah",
+            "words": []
+          },
+          {
+            "text": "You know it was the first",
+            "words": []
+          },
+          {
+            "text": "And last trip we took together",
+            "words": []
+          },
+          {
+            "text": "Look how cheap the price of the trip is",
+            "words": []
+          },
+          {
+            "text": "What do you think about doing it again?",
+            "words": []
+          },
+          {
+            "text": "And going on a second honeymoon?",
+            "words": []
+          },
+          {
+            "text": "Give it, give it, let me see how cheap it is",
+            "words": []
+          },
+          {
+            "text": "Oof",
+            "words": []
+          },
+          {
+            "text": "This offer is truly legendary",
+            "words": []
+          },
+          {
+            "text": "Yeah, but wait",
+            "words": []
+          },
+          {
+            "text": "This is for groups, my dear",
+            "words": []
+          },
+          {
+            "text": "Meaning two families or more",
+            "words": []
+          },
+          {
+            "text": "So it's definitely not a honeymoon",
+            "words": []
+          },
+          {
+            "text": "\"Honeymoon,\" she says",
+            "words": []
+          },
+          {
+            "text": "Okay, we'll bring another family with us",
+            "words": []
+          },
+          {
+            "text": "But we want someone light-hearted",
+            "words": []
+          },
+          {
+            "text": "And people who aren't grumpy",
+            "words": []
+          },
+          {
+            "text": "And who won't drive us crazy",
+            "words": []
+          },
+          {
+            "text": "And that way we leave the kids with them",
+            "words": []
+          },
+          {
+            "text": "And we go out by ourselves",
+            "words": []
+          },
+          {
+            "text": "What do you think?",
+            "words": []
+          },
+          {
+            "text": "Who are you thinking of?",
+            "words": []
+          },
+          {
+            "text": "Please, please Dad",
+            "words": []
+          },
+          {
+            "text": "If you please",
+            "words": []
+          },
+          {
+            "text": "Oh Dad, oh Dad",
+            "words": []
+          },
+          {
+            "text": "Okay, we'll go",
+            "words": []
+          },
+          {
+            "text": "A trip, a trip, a trip!",
+            "words": []
+          },
+          {
+            "text": "I'm going to tell Umm Yazan",
+            "words": []
+          },
+          {
+            "text": "And we'll agree on all the details",
+            "words": []
+          },
+          {
+            "text": "Dad, I can't pull the suitcase",
+            "words": []
+          },
+          {
+            "text": "Let Rana help you, son",
+            "words": []
+          },
+          {
+            "text": "Leave me to what I'm dealing with",
+            "words": []
+          },
+          {
+            "text": "I can't",
+            "words": []
+          },
+          {
+            "text": "It's heavy for you, my dear",
+            "words": []
+          },
+          {
+            "text": "Be strong, I have many things",
+            "words": []
+          },
+          {
+            "text": "Dad, Rana refuses to help me",
+            "words": []
+          },
+          {
+            "text": "Manage yourselves",
+            "words": []
+          },
+          {
+            "text": "Don't you see I'm busy?",
+            "words": []
+          },
+          {
+            "text": "What is happening here?",
+            "words": []
+          },
+          {
+            "text": "You see",
+            "words": []
+          },
+          {
+            "text": "He said wear these shirts for the honeymoon",
+            "words": []
+          },
+          {
+            "text": "Dad, look at Sally",
+            "words": []
+          },
+          {
+            "text": "She took this pillow that we put on the neck",
+            "words": []
+          },
+          {
+            "text": "Who is it for?",
+            "words": []
+          },
+          {
+            "text": "For you",
+            "words": []
+          },
+          {
+            "text": "Exactly, it's not just for you, Mr. Sanad",
+            "words": []
+          },
+          {
+            "text": "It's for all of us and I got to it first",
+            "words": []
+          },
+          {
+            "text": "Enough kids, turns, turns",
+            "words": []
+          },
+          {
+            "text": "Okay, I'm first",
+            "words": []
+          },
+          {
+            "text": "Oh Sanad",
+            "words": []
+          },
+          {
+            "text": "Final call",
+            "words": []
+          },
+          {
+            "text": "And finally for Abu Sanad's family",
+            "words": []
+          },
+          {
+            "text": "And Abu Yazan's family",
+            "words": []
+          },
+          {
+            "text": "Is there no one else but you in the airport?",
+            "words": []
+          },
+          {
+            "text": "Please proceed immediately",
+            "words": []
+          },
+          {
+            "text": "To gate number three",
+            "words": []
+          },
+          {
+            "text": "Hurry up",
+            "words": []
+          },
+          {
+            "text": "The whole plane is waiting for you",
+            "words": []
+          },
+          {
+            "text": "What's with you guys?",
+            "words": []
+          },
+          {
+            "text": "Come on everyone",
+            "words": []
+          },
+          {
+            "text": "Come on, run",
+            "words": []
+          },
+          {
+            "text": "Yazan, get up now",
+            "words": []
+          },
+          {
+            "text": "This is my seat",
+            "words": []
+          },
+          {
+            "text": "I'm not getting up, I got here first",
+            "words": []
+          },
+          {
+            "text": "First come, first served",
+            "words": []
+          },
+          {
+            "text": "Yazan, don't make me... this flight attendant",
+            "words": []
+          },
+          {
+            "text": "Will make you get up against your will",
+            "words": []
+          },
+          {
+            "text": "Umm Yazan, where were you?",
+            "words": []
+          },
+          {
+            "text": "We worried about you, you're late",
+            "words": []
+          },
+          {
+            "text": "When we traveled for the honeymoon",
+            "words": []
+          },
+          {
+            "text": "Abu Yazan bought me a perfume from the Duty Free",
+            "words": []
+          },
+          {
+            "text": "And we kept looking for it until we found it",
+            "words": []
+          },
+          {
+            "text": "Good thing you came",
+            "words": []
+          },
+          {
+            "text": "Dad, make Yazan get up now",
+            "words": []
+          },
+          {
+            "text": "Yazan, move from your place quickly",
+            "words": []
+          },
+          {
+            "text": "But Dad, I don't want to sit next to her",
+            "words": []
+          },
+          {
+            "text": "I'll sit in your place",
+            "words": []
+          },
+          {
+            "text": "No, my dear, no way",
+            "words": []
+          },
+          {
+            "text": "Because we booked in the back by ourselves",
+            "words": []
+          },
+          {
+            "text": "After you, my heart",
+            "words": []
+          },
+          {
+            "text": "Oh my, how beautiful the houses are",
+            "words": []
+          },
+          {
+            "text": "Charge!",
+            "words": []
+          },
+          {
+            "text": "Put your things down",
+            "words": []
+          },
+          {
+            "text": "We'll meet at our place in half an hour",
+            "words": []
+          },
+          {
+            "text": "Look how nice the bed is",
+            "words": []
+          },
+          {
+            "text": "You can jump very high",
+            "words": []
+          },
+          {
+            "text": "I'm going to wear this dress at the beach",
+            "words": []
+          },
+          {
+            "text": "You brought yours, right?",
+            "words": []
+          },
+          {
+            "text": "Of course, it's the first thing I grabbed",
+            "words": []
+          },
+          {
+            "text": "What do you think, Abu Yazan and I",
+            "words": []
+          },
+          {
+            "text": "Will go out to get some things for the house",
+            "words": []
+          },
+          {
+            "text": "But Umm Yazan and I said",
+            "words": []
+          },
+          {
+            "text": "We'll go get bread and pastries for the kids",
+            "words": []
+          },
+          {
+            "text": "Right, Umm Yazan, what?",
+            "words": []
+          },
+          {
+            "text": "Yeah, there's a bakery near here",
+            "words": []
+          },
+          {
+            "text": "Abu Yazan and I used to eat there every day",
+            "words": []
+          },
+          {
+            "text": "When we came here",
+            "words": []
+          },
+          {
+            "text": "We'll bring you coffee with us too",
+            "words": []
+          },
+          {
+            "text": "You guys stay and relax here with the kids",
+            "words": []
+          },
+          {
+            "text": "We won't be long",
+            "words": []
+          },
+          {
+            "text": "Okay, fine, fine",
+            "words": []
+          },
+          {
+            "text": "You go get the bread and pastries",
+            "words": []
+          },
+          {
+            "text": "And when you return, we'll go get the other house supplies",
+            "words": []
+          },
+          {
+            "text": "What do you think, Issam?",
+            "words": []
+          },
+          {
+            "text": "Okay",
+            "words": []
+          },
+          {
+            "text": "Come on, goodbye, bye",
+            "words": []
+          },
+          {
+            "text": "Dina, let's go out and get the things now",
+            "words": []
+          },
+          {
+            "text": "What about the kids?",
+            "words": []
+          },
+          {
+            "text": "What's going to happen to them?",
+            "words": []
+          },
+          {
+            "text": "They've grown up and it's only half an hour",
+            "words": []
+          },
+          {
+            "text": "Kids, we are going out",
+            "words": []
+          },
+          {
+            "text": "Less than an hour to get all the house supplies",
+            "words": []
+          },
+          {
+            "text": "Take care until we return",
+            "words": []
+          },
+          {
+            "text": "Sally and Rana, you are responsible for your brothers",
+            "words": []
+          },
+          {
+            "text": "No one leaves the house, understood?",
+            "words": []
+          },
+          {
+            "text": "Understood",
+            "words": []
+          },
+          {
+            "text": "I can't believe the game we love is in the house",
+            "words": []
+          },
+          {
+            "text": "Truly, this is the dream house",
+            "words": []
+          },
+          {
+            "text": "Sanad and Yazan, come quickly and arrange your things",
+            "words": []
+          },
+          {
+            "text": "Since you arrived, you've been playing",
+            "words": []
+          },
+          {
+            "text": "We're busy, in a bit",
+            "words": []
+          },
+          {
+            "text": "Dears, don't forget that we are the ones in charge",
+            "words": []
+          },
+          {
+            "text": "Come on, go ahead",
+            "words": []
+          },
+          {
+            "text": "Rana, what are you doing?",
+            "words": []
+          },
+          {
+            "text": "If Mom took the charger off your phone, would you say something?",
+            "words": []
+          },
+          {
+            "text": "I am the one in charge of you here, my dear",
+            "words": []
+          },
+          {
+            "text": "Sanad, where is the TV remote?",
+            "words": []
+          },
+          {
+            "text": "Sanad, sit properly",
+            "words": []
+          },
+          {
+            "text": "Oh please, what's wrong with how I'm sitting?",
+            "words": []
+          },
+          {
+            "text": "Now if the furniture gets dirty, they'll make us pay for it",
+            "words": []
+          },
+          {
+            "text": "Put your leg down",
+            "words": []
+          },
+          {
+            "text": "Correct, and you too, Mr. Yazan",
+            "words": []
+          },
+          {
+            "text": "No, this has become too much",
+            "words": []
+          },
+          {
+            "text": "More than too much",
+            "words": []
+          },
+          {
+            "text": "We are going out and we won't come back",
+            "words": []
+          },
+          {
+            "text": "Until our parents who are responsible for us return",
+            "words": []
+          },
+          {
+            "text": "Where are you going? It's dark out",
+            "words": []
+          },
+          {
+            "text": "Come back here quickly",
+            "words": []
+          },
+          {
+            "text": "I said come back",
+            "words": []
+          },
+          {
+            "text": "What are we going to do now?",
+            "words": []
+          },
+          {
+            "text": "This is how one knows their friends",
+            "words": []
+          },
+          {
+            "text": "They go out, travel, and leave",
+            "words": []
+          },
+          {
+            "text": "And they haven't told Lulu",
+            "words": []
+          },
+          {
+            "text": "Actually, the trip isn't nice without me",
+            "words": []
+          },
+          {
+            "text": "They are the losers",
+            "words": []
+          },
+          {
+            "text": "Only Hay'a and Munsif are left",
+            "words": []
+          },
+          {
+            "text": "Are you hearing me?",
+            "words": []
+          },
+          {
+            "text": "Is it just me hearing?",
+            "words": []
+          },
+          {
+            "text": "The whole neighborhood heard you",
+            "words": []
+          },
+          {
+            "text": "So where are we going to go now?",
+            "words": []
+          },
+          {
+            "text": "You believed it? We aren't going anywhere",
+            "words": []
+          },
+          {
+            "text": "Come here behind the tree",
+            "words": []
+          },
+          {
+            "text": "And what are we going to do?",
+            "words": []
+          },
+          {
+            "text": "We're going to teach them a lesson",
+            "words": []
+          },
+          {
+            "text": "And let's see what they'll say to our parents",
+            "words": []
+          },
+          {
+            "text": "When they return and we aren't there",
+            "words": []
+          },
+          {
+            "text": "Good for you!",
+            "words": []
+          },
+          {
+            "text": "What is that sound?",
+            "words": []
+          },
+          {
+            "text": "I don't know",
+            "words": []
+          },
+          {
+            "text": "Hey, who is this?",
+            "words": []
+          },
+          {
+            "text": "Thief! Thief!",
+            "words": []
+          },
+          {
+            "text": "But lower your voice",
+            "words": []
+          },
+          {
+            "text": "We must talk to Dad and Mom",
+            "words": []
+          },
+          {
+            "text": "Or with the police quickly",
+            "words": []
+          },
+          {
+            "text": "Before he enters the house",
+            "words": []
+          },
+          {
+            "text": "There's no time for phones, we must act",
+            "words": []
+          },
+          {
+            "text": "So what are we going to do? I'm scared",
+            "words": []
+          },
+          {
+            "text": "Send a message to Sally and Rana and we will act",
+            "words": []
+          },
+          {
+            "text": "What's up, Sally?",
+            "words": []
+          },
+          {
+            "text": "There's a thief trying to enter the house",
+            "words": []
+          },
+          {
+            "text": "Are you sure?",
+            "words": []
+          },
+          {
+            "text": "They are definitely playing a prank on us",
+            "words": []
+          },
+          {
+            "text": "Yeah, maybe a prank",
+            "words": []
+          },
+          {
+            "text": "Thief, thief, what are we going to do?",
+            "words": []
+          },
+          {
+            "text": "We must cooperate to make a plan",
+            "words": []
+          },
+          {
+            "text": "I'll send a message to Sanad now",
+            "words": []
+          },
+          {
+            "text": "Sanad, what's the plan? Tell me",
+            "words": []
+          },
+          {
+            "text": "I'll look for a rope",
+            "words": []
+          },
+          {
+            "text": "And you bring the toy bag over there and follow me",
+            "words": []
+          },
+          {
+            "text": "Okay",
+            "words": []
+          },
+          {
+            "text": "Thief, thief, what are we going to do?",
+            "words": []
+          },
+          {
+            "text": "We must cooperate to make a plan",
+            "words": []
+          },
+          {
+            "text": "I'll send a message to Sanad now",
+            "words": []
+          },
+          {
+            "text": "Sanad, what's the plan? Tell me",
+            "words": []
+          },
+          {
+            "text": "I'll look for a rope",
+            "words": []
+          },
+          {
+            "text": "And you bring the toy bag over there and follow me",
+            "words": []
+          },
+          {
+            "text": "Okay",
+            "words": []
+          },
+          {
+            "text": "They caught him, they caught him!",
+            "words": []
+          },
+          {
+            "text": "Unbelievable, the plan is awesome",
+            "words": []
+          },
+          {
+            "text": "And you guys are formidable",
+            "words": []
+          },
+          {
+            "text": "We did it!",
+            "words": []
+          },
+          {
+            "text": "Yazan, what is this bravery?",
+            "words": []
+          },
+          {
+            "text": "As the foreigners say",
+            "words": []
+          },
+          {
+            "text": "Teamwork makes the dream work",
+            "words": []
+          },
+          {
+            "text": "I told you, but you didn't listen to me",
+            "words": []
+          },
+          {
+            "text": "I mean, is this talk reasonable?",
+            "words": []
+          },
+          {
+            "text": "Why do you want to put the blame on me?",
+            "words": []
+          },
+          {
+            "text": "Hey guys, where is the bread and the yummy things?",
+            "words": []
+          },
+          {
+            "text": "I see your hands are empty",
+            "words": []
+          },
+          {
+            "text": "I told her, I mean, it's been 20 years",
+            "words": []
+          },
+          {
+            "text": "Is it possible the shop would still be in its place?",
+            "words": []
+          },
+          {
+            "text": "Is there anything that stays as it is?",
+            "words": []
+          },
+          {
+            "text": "If you had internet in the first place",
+            "words": []
+          },
+          {
+            "text": "We would have found it and not wasted an hour and worn out our legs",
+            "words": []
+          },
+          {
+            "text": "No, no, no, guys, be patient",
+            "words": []
+          },
+          {
+            "text": "It's okay, come, we brought many things",
+            "words": []
+          },
+          {
+            "text": "It's okay, don't worry",
+            "words": []
+          },
+          {
+            "text": "What's going on? Why are you outside?",
+            "words": []
+          },
+          {
+            "text": "Who is this?",
+            "words": []
+          },
+          {
+            "text": "What did you do to the man?",
+            "words": []
+          },
+          {
+            "text": "We managed to catch the thief",
+            "words": []
+          },
+          {
+            "text": "Thief?",
+            "words": []
+          },
+          {
+            "text": "What thief?",
+            "words": []
+          },
+          {
+            "text": "This is the young man who is supposed to fix the window",
+            "words": []
+          },
+          {
+            "text": "What did you do?",
+            "words": []
+          },
+          {
+            "text": "The company called us and told us he was coming",
+            "words": []
+          },
+          {
+            "text": "What?",
+            "words": []
+          },
+          {
+            "text": "I told you not to rush",
+            "words": []
+          },
+          {
+            "text": "No, we had to act",
+            "words": []
+          },
+          {
+            "text": "I'm not... it was Rana who said \"I have a plan\"",
+            "words": []
+          },
+          {
+            "text": "So now the blame is on me?",
+            "words": []
+          },
+          {
+            "text": "Yes, the blame is on you, who else?",
+            "words": []
+          },
+          {
+            "text": "Maybe as siblings we don't agree sometimes",
+            "words": []
+          },
+          {
+            "text": "And we fight over many things",
+            "words": []
+          },
+          {
+            "text": "And yet, we love each other very much",
+            "words": []
+          },
+          {
+            "text": "And siblings have no one but each other",
+            "words": []
+          },
+          {
+            "text": "And surely the best thing",
+            "words": []
+          },
+          {
+            "text": "Is that we create beautiful memories and laugh together",
+            "words": []
+          },
+          {
+            "text": "Right, guys?",
+            "words": []
+          },
+          {
+            "text": "Definitely right",
+            "words": []
+          },
+          {
+            "text": "Listen",
+            "words": []
+          },
+          {
+            "text": "I saw a bakery that looks nice on the way",
+            "words": []
+          },
+          {
+            "text": "And they have delicious coffee",
+            "words": []
+          },
+          {
+            "text": "What? Let's go!",
+            "words": []
+          },
+          {
+            "text": "It looks like we are the ones stuck with the kids today",
+            "words": []
+          },
+          {
+            "text": "How did you like the style?",
+            "words": []
+          }
+        ],
+        "lessons": "# A Special Surprise\n00:00 مرحبا أصدقائي\n00:01 عندنا مفاجأة\n00:02 كثير حلوة لكم\n00:04 لا لا أنا مش حامل\n\n# A New Style\n00:07 بس متحمسين نشارككم\n00:08 ستايل جديد\n00:09 عم نشتغل عليه\n00:11 احضروا الحلقة كاملة\n\n# Call to Action\n00:12 واحكوا لنا رأيكم\n00:13 بالتعليقات\n00:15 وما تنسوا تعملوا\n00:16 سبسكرايب\n\n# Reminiscing\n00:20 أبو يزن\n00:21 شوف شوف\n00:22 تتذكر شهر العسل\n00:24 قضينا هون أحلى أيام\n\n# A Travel Deal\n00:26 يا\n00:27 بتعرف إنها كانت أول\n00:28 وآخر رحلة إلنا مع بعض\n00:30 طلع قديش سعر الرحلة رخيص\n\n# A Second Honeymoon\n00:33 شو رأيك نرجع نعملها\n00:35 ونسافر شهر عسل ثاني\n00:37 هاتي هاتي أشوف قديش يعني رخيص\n00:39 أوف\n\n# The Group Offer\n00:40 هذا عن جد العرض خرافي\n00:42 آه بس استني\n00:43 هذا للجروبات يا حبيبتي\n00:44 يعني عيلتين أو أكثر\n\n# Not a Honeymoon\n00:46 يعني أكيد مش هاني مون\n00:48 هاني مون قال\n00:50 طيب بنجيب عيلة ثانية معنا\n00:52 بس بدنا حدا هيك ظله خفيف\n\n# The Perfect Travel Partners\n00:54 وناس مش نكديين\n00:55 وما يجننونا\n00:57 وهيك بنترك الأولاد معهم\n00:59 وبنطش لحالنا\n\n# Who Are You Thinking Of?\n01:00 شو رأيك\n01:01 بمين عم بتفكري\n01:04 بليز بليز بابا\n01:06 لو سمحت\n\n# The Trip is On\n01:07 يا بابا يا بابا\n01:10 ماشي بنروح\n01:11 صفرة صفرة صفرة\n01:14 أنا رايحة أخبر أم يزن\n\n# Planning Details\n01:15 ونتفق على كل التفاصيل\n01:21 بابا مش قادر أجر الشنطة\n01:24 خلي رنا تساعدك يابا\n01:26 خليني باللي أنا فيه\n\n# Heavy Luggage\n01:28 مش قادر\n01:29 تقيلة عليك حبيبي\n01:30 شد حيلك معي أغراض كثير\n01:32 بابا رنا مش قابلة تساعدني\n\n# Busy Parents\n01:36 دبروا حالكم\n01:37 مش شايفني مشغول\n01:39 شو اللي عم بصير هون\n01:41 أنت شايف\n\n# Honeymoon Outfits\n01:43 قال هذه البلايز لبسوها على شهر العسل\n01:48 بابا شوف سالي\n01:49 أخذت هاي المخدة اللي بنحطها على الرقبة\n01:51 هي لمين\n\n# The Neck Pillow Dispute\n01:52 إلك\n01:54 بالضبط هي مش بس إلك سيد سند\n01:56 هي إلنا كلنا وأنا سبقت عليها\n01:59 خلص يا ولاد دور دور\n\n# Final Call at the Airport\n02:01 طيب أنا أول\n02:02 يا سند\n02:04 نداء نهائي\n02:05 وأخيرا لعيلة أبو سند\n\n# Hurry to the Gate\n02:06 وعيلة أبو يزن\n02:08 هو ما في غيركم في المطار\n02:11 الرجاء التوجه فورا\n02:13 للبوابة رقم ثلاثة\n\n# The Plane is Waiting\n02:15 خلصونا\n02:16 الطيارة كلها بتستنى فيكم\n02:18 وبعدين معاكم\n02:20 يلا يا جماعة\n02:21 يلا ركض\n\n# Seat Stealing\n02:25 يزن هلا قوم\n02:26 هذا محلي\n02:28 مش قايم أنا سبقت\n02:30 اللي سبق لبق\n\n# The Flight Attendant\n02:32 يزن بلاش ما أنا هذه المضيفة\n02:34 بتقومك غصب عنك\n02:36 أم يزن وين كنتوا\n02:38 قلقنا عليكم تأخرتوا\n\n# Duty Free Memories\n02:40 لما سافرنا شهر العسل\n02:41 أبو يزن شرالي ريحة من السوق الحرة\n02:44 وضلينا ندور عليها عبال ما لقيناها\n02:47 منيح اللي اجيتوا\n\n# Moving Seats\n02:48 بابا خلي يزن يقوم هلا\n02:51 يزن تحرك من محلك بسرعة\n02:53 طب بابا بديش أقعد جنبها\n02:54 بقعد محلك\n\n# Sitting Separately\n02:56 لا يا حبيبي ما حزرت\n02:57 لأنه إحنا حجزنا ورا لحالنا\n03:00 تفضلي يا قلبي\n03:10 يا حبيبي ما أحلى البيوت\n\n# Arrival at the House\n03:12 هجوم\n03:14 حطوا أغراضكم\n03:15 نتلاقى عندنا كمان نص ساعة\n03:17 شوف ما أحلى التخت\n\n# Vacation Excitement\n03:18 بتقدر تنط عالي كثير\n03:21 راح ألبس هذا الفستان على البحر\n03:23 جبتي تبعك صح\n03:25 طبعا أول شيء طبيته\n\n# Getting Supplies\n03:28 شو رأيكم أنا وأبو يزن\n03:29 بنطلع نجيب شوية أغراض للبيت\n03:31 بس عاد أنا وأم يزن قلنا\n03:33 بنروح نجيب خبز ومعجنات للأولاد\n\n# The Local Bakery\n03:36 يعني صح أم يزن شو\n03:40 آه في مخبز قريب من هون\n03:42 كنا كل يوم ناكل فيه أنا وأبو يزن\n03:44 لما يجينا هون\n\n# Coffee and Rest\n03:45 بنجيب لكم معنا قهوة كمان\n03:47 أنتوا خليكم مرتاحوا هون مع الأولاد\n03:48 ما بنطول عليكم\n03:51 خلص تمام تمام\n\n# The Plan for Later\n03:53 أنتوا روحوا جيبوا الخبز ومعجنات\n03:55 وإحنا بس ترجعوا بنطلع نجيب أغراض البيت الثانية\n03:58 شو رأيك عصام\n04:00 ماشي\n\n# Leaving the Kids Alone\n04:01 يلا مع السلامة باي\n04:03 دينا خلينا نطلع نجيب الأغراض هلا\n04:06 شو والأولاد\n04:08 أي شو بده يصير عليهم\n\n# Setting the Rules\n04:09 صاروا كبار وكلها نص ساعة\n04:12 يا ولاد إحنا طالعين\n04:14 أقل من ساعة نجيب كل أغراض البيت\n04:16 ديروا بالكم عبال ما نرجع\n\n# Sisters in Charge\n04:18 سالي ورنا أنتوا المسؤولين عن إخوانكم\n04:21 ما حدا يطلع من البيت مفهوم\n04:23 مفهوم\n04:26 مش مصدق إنه الجيم اللي بنحبها موجودة بالبيت\n\n# The Dream House\n04:29 عن جد هذا بيت الأحلام\n04:31 سند ويزن تعالوا بسرعة رتبوا أغراضكم\n04:34 من أول ما اجيتوا أنتوا عم تلعبوا\n04:37 مش فاضيين بعد شوي\n\n# Taking Responsibility\n04:39 حبايبي ما تنسوا إنه إحنا المسؤولين\n04:41 يلا تفضلوا\n04:44 رنا شو بتعملي\n04:46 إذا ماما شالت الشاحن عن موبايلك بتقول شيء\n\n# The New Boss\n04:49 أنا هون المسؤولة عنك حبيبي\n04:52 سند وين ريموت التلفزيون\n04:58 سند اقعد منيح\n05:00 يا سلام شو مالها قعدتي\n\n# Protecting the Furniture\n05:02 هلا إذا توسخ العفش بيدفعونا بداله\n05:04 نزل إجرك\n05:06 مضبوط وأنت كمان سيد يزن\n05:08 لا هيك صار كثير\n\n# Fed Up\n05:10 أكثر من كثير\n05:12 إحنا طالعين وما راح نرجع\n05:14 غير لما أهلنا المسؤولين عنا يرجعوا\n05:17 وين رايحين الدنيا عتمة\n\n# Don't Leave\n05:19 ارجعوا لهون بسرعة\n05:20 بقول ارجعوا\n05:23 شو راح نعمل هلا\n05:27 هيك الواحد بيعرف أصحابه\n\n# Lulu's Complaint\n05:29 بيطلعوا بيسافروا وبيروحوا\n05:30 ومش حاكيين للولو\n05:32 أصل السفرة مش حلوة بدوني\n05:34 هم الخسرانين\n\n# The Neighborhood Hears\n05:36 باقي هيئة ومنصف\n05:40 أنت سامعني\n05:42 هو أنا بس اللي سامع\n05:45 كل الحارة سمعتك\n\n# Hiding Behind the Tree\n05:47 طب إحنا وين راح نروح هلا\n05:49 أنت صدقت مش راح نروح محل\n05:50 تعال هون ورا الشجرة\n05:52 وشو راح نعمل\n\n# Teaching a Lesson\n05:54 راح نعلمهم درس\n05:55 وخلينا نشوف شو بدهم يقولوا لأهلنا\n05:57 بس يرجعوا ما نكون موجودين\n05:59 يا سلام عليك\n\n# Strange Noises\n06:02 شو هالصوت\n06:04 مش عارف\n06:05 هي مين هذا\n06:07 حرامي حرامي\n\n# Emergency Response\n06:09 بس وطي صوتك\n06:10 إحنا لازم نحكي مع البابا والماما\n06:12 أو مع الشرطة بسرعة\n06:14 قبل ما يدخل البيت\n\n# No Time for Phones\n06:15 ما في وقت للتلفونات لازم نتصرف\n06:18 طب شو بدنا نعمل أنا خايف\n06:21 ابعت لسالي ورنا وراح نتصرف\n06:24 شو في سالي\n\n# A Thief in the House?\n06:27 في حرامي عم بيحاول يدخل البيت\n06:29 أنتي متأكدة\n06:31 هذول أكيد بيعملوا فينا مقلب\n06:33 آه ممكن مقلب\n\n# Formulating a Plan\n06:35 حرامي حرامي شو بدنا نعمل\n06:37 إحنا لازم نتعاون نعمل خطة\n06:39 هلا ببعت لسند\n06:41 سند شو الخطة احكي لي\n\n# Tools for the Trap\n06:43 راح أدور على حبل\n06:44 وأنت جيب كيس الألعاب اللي هناك والحقني\n06:47 أوك\n06:53 حرامي حرامي شو بدنا نعمل\n\n# Coordinating the Team\n06:57 إحنا لازم نتعاون نعمل خطة\n07:00 هلا ببعت لسند\n07:03 سند شو الخطة احكي لي\n07:05 راح أدور على حبل\n\n# Executing the Plan\n07:07 وأنت جيب كيس الألعاب اللي هناك والحقني\n07:11 أوك\n07:15 مسكوه مسكوه\n07:18 مش معقول الخطة رهيبة\n\n# Teamwork Success\n07:20 وأنتوا مفزعين\n07:22 عملناها\n07:23 يزن شو هال شجاعة هاي\n07:26 إزاي ما بيقولوا الأجانب\n\n# Teamwork Makes the Dream Work\n07:28 تيم ورك ميكس ذا دريم ورك\n07:31 قلت لك ما رديتي علي\n07:32 يعني معقول هذا الكلام معقول\n07:34 ليش بدك تحط الحق علي\n\n# Empty Handed Parents\n07:36 شو يا جماعة وين الخبز والأشياء الزاكية\n07:38 شايفة إيديكم فاضية\n07:41 قلت لها يعني من 20 سنة\n07:42 معقول بده يكون المحل لسه بمحله\n\n# Lost Without Internet\n07:44 أي هو في شيء بيضل زي ما هو\n07:47 لو كان عندك نت أصلا\n07:48 كان لقيناه وما ضيعنا ساعة وتكسروا إجرينا\n07:51 له له له يا جماعة طولوا بالكم\n\n# Who is the Intruder?\n07:55 خلص تعالوا إحنا جبنا أشياء كثير\n07:57 خلص ما تقلقوا\n07:59 شو في أنتوا ليش بره\n08:01 مين هذا\n\n# The Repairman Mistake\n08:02 أنتوا شو عملتوا بالزلمة\n08:04 قدرنا نلقطه عن الحرامي\n08:05 حرامي\n08:07 شو حرامي\n\n# Miscommunication\n08:08 هذا الشاب اللي بده يصلح الشباك\n08:10 أنتوا شو عملتوا\n08:12 الشركة رنت علينا وحكوا لنا إنه جاي\n08:15 شو\n\n# Shifting Blame\n08:16 قلت لك ما تتسرع\n08:17 لا لازم إحنا نتصرف\n08:20 أنا مش رنا اللي قالت أنا عندي خطة\n08:23 يعني هلا صار الحق علي\n\n# Sibling Bonds\n08:25 آه الحق عليكي ولا على مين\n08:29 يمكن إحنا كإخوة ما بنتفق مرات\n08:32 وبنتطوش على أشياء كثير\n08:34 ومع هيك إحنا بنحب بعض كثير\n\n# Creating Memories\n08:37 والإخوان ما إلهم إلا بعض\n08:39 وأكيد أحلى شيء\n08:41 إنه نخلق ذكريات حلوة ونضحك مع بعض\n08:44 صح يا شباب\n\n# Finding the New Bakery\n08:45 أكيد صح\n08:49 اسمعي\n08:50 شفت مخبز شكله حلو على الطريق\n08:52 وعندهم قهوة زاكية\n\n# Stuck with the Kids\n08:54 شو يلا\n08:58 شكله إحنا اللي علقنا مع الأولاد اليوم\n09:04 شو حبيتوا الستايل"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-03-07 16:25:56 UTC",
   "updated_at": "2026-03-07 17:42:57 UTC",

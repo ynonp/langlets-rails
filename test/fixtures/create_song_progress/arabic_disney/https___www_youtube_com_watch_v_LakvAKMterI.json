@@ -16,51 +16,44 @@
             "timestamp": "00:14.80",
             "timestamp_end": "00:15.70",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "snow"
+            "l1_end_index": 4
           },
           {
             "text": "الليلة",
             "timestamp": "00:15.70",
             "timestamp_end": "00:16.30",
             "l1_start_index": 6,
-            "l1_end_index": 11,
-            "translation": "tonight"
+            "l1_end_index": 11
           },
           {
             "text": "كالصحراء،",
             "timestamp": "00:16.30",
             "timestamp_end": "00:18.00",
             "l1_start_index": 13,
-            "l1_end_index": 20,
-            "translation": "like the desert"
+            "l1_end_index": 20
           },
           {
             "text": "لم",
             "timestamp": "00:18.00",
             "timestamp_end": "00:18.70",
             "l1_start_index": 23,
-            "l1_end_index": 24,
-            "translation": "not"
+            "l1_end_index": 24
           },
           {
             "text": "تلمسه",
             "timestamp": "00:18.70",
             "timestamp_end": "00:19.80",
             "l1_start_index": 26,
-            "l1_end_index": 30,
-            "translation": "touch it"
+            "l1_end_index": 30
           },
           {
             "text": "اقدام",
             "timestamp": "00:19.80",
             "timestamp_end": "00:21.30",
             "l1_start_index": 32,
-            "l1_end_index": 36,
-            "translation": "feet"
+            "l1_end_index": 36
           }
-        ],
-        "text_l2": "The snow tonight is like the desert, feet have not touched it"
+        ]
       },
       {
         "id": "phrase_2",
@@ -73,35 +66,30 @@
             "timestamp": "00:21.30",
             "timestamp_end": "00:23.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "kingdom"
+            "l1_end_index": 4
           },
           {
             "text": "للحيارى،",
             "timestamp": "00:23.00",
             "timestamp_end": "00:24.70",
             "l1_start_index": 6,
-            "l1_end_index": 12,
-            "translation": "for the confused"
+            "l1_end_index": 12
           },
           {
             "text": "أحكمها",
             "timestamp": "00:24.70",
             "timestamp_end": "00:26.30",
             "l1_start_index": 15,
-            "l1_end_index": 20,
-            "translation": "I rule it"
+            "l1_end_index": 20
           },
           {
             "text": "بسلام",
             "timestamp": "00:26.30",
             "timestamp_end": "00:28.00",
             "l1_start_index": 22,
-            "l1_end_index": 26,
-            "translation": "with peace"
+            "l1_end_index": 26
           }
-        ],
-        "text_l2": "A kingdom for the lost, I rule it in peace"
+        ]
       },
       {
         "id": "phrase_3",
@@ -114,43 +102,37 @@
             "timestamp": "00:28.00",
             "timestamp_end": "00:30.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "the wind"
+            "l1_end_index": 4
           },
           {
             "text": "تعوي",
             "timestamp": "00:30.00",
             "timestamp_end": "00:31.50",
             "l1_start_index": 6,
-            "l1_end_index": 9,
-            "translation": "howls"
+            "l1_end_index": 9
           },
           {
             "text": "مثل",
             "timestamp": "00:31.50",
             "timestamp_end": "00:32.50",
             "l1_start_index": 11,
-            "l1_end_index": 13,
-            "translation": "like"
+            "l1_end_index": 13
           },
           {
             "text": "العاصفة",
             "timestamp": "00:32.50",
             "timestamp_end": "00:34.00",
             "l1_start_index": 15,
-            "l1_end_index": 21,
-            "translation": "the storm"
+            "l1_end_index": 21
           },
           {
             "text": "داخلي",
             "timestamp": "00:34.00",
             "timestamp_end": "00:36.00",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "inside me"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "The wind howls like the storm inside me"
+        ]
       },
       {
         "id": "phrase_4",
@@ -163,35 +145,30 @@
             "timestamp": "00:36.00",
             "timestamp_end": "00:37.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "how"
+            "l1_end_index": 2
           },
           {
             "text": "تختفي،",
             "timestamp": "00:37.50",
             "timestamp_end": "00:38.50",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "you disappear"
+            "l1_end_index": 8
           },
           {
             "text": "حاولت",
             "timestamp": "00:38.50",
             "timestamp_end": "00:40.50",
             "l1_start_index": 11,
-            "l1_end_index": 15,
-            "translation": "I tried"
+            "l1_end_index": 15
           },
           {
             "text": "جاهدة",
             "timestamp": "00:40.50",
             "timestamp_end": "00:43.00",
             "l1_start_index": 17,
-            "l1_end_index": 21,
-            "translation": "hard"
+            "l1_end_index": 21
           }
-        ],
-        "text_l2": "How you disappear, I tried hard"
+        ]
       },
       {
         "id": "phrase_5",
@@ -204,67 +181,58 @@
             "timestamp": "00:43.00",
             "timestamp_end": "00:44.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "don't"
+            "l1_end_index": 1
           },
           {
             "text": "تكشفي",
             "timestamp": "00:44.00",
             "timestamp_end": "00:45.00",
             "l1_start_index": 3,
-            "l1_end_index": 7,
-            "translation": "you reveal"
+            "l1_end_index": 7
           },
           {
             "text": "سر",
             "timestamp": "00:45.00",
             "timestamp_end": "00:45.50",
             "l1_start_index": 9,
-            "l1_end_index": 10,
-            "translation": "secret"
+            "l1_end_index": 10
           },
           {
             "text": "الجليد،",
             "timestamp": "00:45.50",
             "timestamp_end": "00:46.50",
             "l1_start_index": 12,
-            "l1_end_index": 17,
-            "translation": "the ice"
+            "l1_end_index": 17
           },
           {
             "text": "كوني",
             "timestamp": "00:46.50",
             "timestamp_end": "00:47.50",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "be"
+            "l1_end_index": 23
           },
           {
             "text": "كما",
             "timestamp": "00:47.50",
             "timestamp_end": "00:48.00",
             "l1_start_index": 25,
-            "l1_end_index": 27,
-            "translation": "as"
+            "l1_end_index": 27
           },
           {
             "text": "شعبك",
             "timestamp": "00:48.00",
             "timestamp_end": "00:49.00",
             "l1_start_index": 29,
-            "l1_end_index": 32,
-            "translation": "your people"
+            "l1_end_index": 32
           },
           {
             "text": "يريد",
             "timestamp": "00:49.00",
             "timestamp_end": "00:50.00",
             "l1_start_index": 34,
-            "l1_end_index": 37,
-            "translation": "wants"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "Do not reveal the secret of the ice, be as your people want"
+        ]
       },
       {
         "id": "phrase_6",
@@ -277,51 +245,44 @@
             "timestamp": "00:50.00",
             "timestamp_end": "00:51.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "you hide"
+            "l1_end_index": 3
           },
           {
             "text": "الإحساس،",
             "timestamp": "00:51.00",
             "timestamp_end": "00:52.50",
             "l1_start_index": 5,
-            "l1_end_index": 11,
-            "translation": "the feeling"
+            "l1_end_index": 11
           },
           {
             "text": "كى",
             "timestamp": "00:52.50",
             "timestamp_end": "00:53.50",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "so that"
+            "l1_end_index": 15
           },
           {
             "text": "يجهلوا",
             "timestamp": "00:53.50",
             "timestamp_end": "00:56.00",
             "l1_start_index": 17,
-            "l1_end_index": 22,
-            "translation": "they be ignorant"
+            "l1_end_index": 22
           },
           {
             "text": "قد",
             "timestamp": "00:56.00",
             "timestamp_end": "00:57.00",
             "l1_start_index": 24,
-            "l1_end_index": 25,
-            "translation": "already"
+            "l1_end_index": 25
           },
           {
             "text": "عرفوا",
             "timestamp": "00:57.00",
             "timestamp_end": "01:00.00",
             "l1_start_index": 27,
-            "l1_end_index": 31,
-            "translation": "they knew"
+            "l1_end_index": 31
           }
-        ],
-        "text_l2": "Hide the feeling, so that they ignore what they have known"
+        ]
       },
       {
         "id": "phrase_7",
@@ -334,43 +295,37 @@
             "timestamp": "01:00.00",
             "timestamp_end": "01:01.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "سرك،",
             "timestamp": "01:01.50",
             "timestamp_end": "01:03.50",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "your secret"
+            "l1_end_index": 8
           },
           {
             "text": "لن",
             "timestamp": "01:03.50",
             "timestamp_end": "01:04.50",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "will not"
+            "l1_end_index": 12
           },
           {
             "text": "أتحمل",
             "timestamp": "01:04.50",
             "timestamp_end": "01:05.50",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "I bear"
+            "l1_end_index": 18
           },
           {
             "text": "العذاب",
             "timestamp": "01:05.50",
             "timestamp_end": "01:07.00",
             "l1_start_index": 20,
-            "l1_end_index": 25,
-            "translation": "the torment"
+            "l1_end_index": 25
           }
-        ],
-        "text_l2": "Release your secret, I will not bear the torture"
+        ]
       },
       {
         "id": "phrase_8",
@@ -383,43 +338,37 @@
             "timestamp": "01:07.00",
             "timestamp_end": "01:08.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "سرك،",
             "timestamp": "01:08.50",
             "timestamp_end": "01:10.50",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "your secret"
+            "l1_end_index": 8
           },
           {
             "text": "اغلقي",
             "timestamp": "01:10.50",
             "timestamp_end": "01:11.50",
             "l1_start_index": 11,
-            "l1_end_index": 15,
-            "translation": "close"
+            "l1_end_index": 15
           },
           {
             "text": "خلفك",
             "timestamp": "01:11.50",
             "timestamp_end": "01:12.50",
             "l1_start_index": 17,
-            "l1_end_index": 20,
-            "translation": "behind you"
+            "l1_end_index": 20
           },
           {
             "text": "الابوات",
             "timestamp": "01:12.50",
             "timestamp_end": "01:14.00",
             "l1_start_index": 22,
-            "l1_end_index": 28,
-            "translation": "the doors"
+            "l1_end_index": 28
           }
-        ],
-        "text_l2": "Release your secret, close the doors behind you"
+        ]
       },
       {
         "id": "phrase_9",
@@ -432,43 +381,37 @@
             "timestamp": "01:14.00",
             "timestamp_end": "01:15.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "don't"
+            "l1_end_index": 1
           },
           {
             "text": "اخشى",
             "timestamp": "01:15.00",
             "timestamp_end": "01:17.00",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "I fear"
+            "l1_end_index": 6
           },
           {
             "text": "كل",
             "timestamp": "01:17.00",
             "timestamp_end": "01:18.00",
             "l1_start_index": 8,
-            "l1_end_index": 9,
-            "translation": "all"
+            "l1_end_index": 9
           },
           {
             "text": "ما",
             "timestamp": "01:18.00",
             "timestamp_end": "01:18.50",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "that"
+            "l1_end_index": 12
           },
           {
             "text": "سيقال",
             "timestamp": "01:18.50",
             "timestamp_end": "01:21.00",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "will be said"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "I do not fear all that will be said"
+        ]
       },
       {
         "id": "phrase_10",
@@ -481,51 +424,44 @@
             "timestamp": "01:21.00",
             "timestamp_end": "01:22.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "العنان،",
             "timestamp": "01:22.50",
             "timestamp_end": "01:25.00",
             "l1_start_index": 6,
-            "l1_end_index": 11,
-            "translation": "the reins"
+            "l1_end_index": 11
           },
           {
             "text": "الثل",
             "timestamp": "01:25.00",
             "timestamp_end": "01:25.50",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "the snow"
+            "l1_end_index": 17
           },
           {
             "text": "لا",
             "timestamp": "01:25.50",
             "timestamp_end": "01:26.00",
             "l1_start_index": 19,
-            "l1_end_index": 20,
-            "translation": "not"
+            "l1_end_index": 20
           },
           {
             "text": "يشعرني",
             "timestamp": "01:26.00",
             "timestamp_end": "01:27.00",
             "l1_start_index": 22,
-            "l1_end_index": 27,
-            "translation": "makes me feel"
+            "l1_end_index": 27
           },
           {
             "text": "باكتئاب",
             "timestamp": "01:27.00",
             "timestamp_end": "01:28.00",
             "l1_start_index": 29,
-            "l1_end_index": 35,
-            "translation": "with depression"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "Let go, the snow does not make me feel depression"
+        ]
       },
       {
         "id": "phrase_11",
@@ -538,51 +474,44 @@
             "timestamp": "01:32.00",
             "timestamp_end": "01:34.00",
             "l1_start_index": 0,
-            "l1_end_index": 7,
-            "translation": "the problems"
+            "l1_end_index": 7
           },
           {
             "text": "ستصغر",
             "timestamp": "01:34.00",
             "timestamp_end": "01:35.50",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "will become smaller"
+            "l1_end_index": 13
           },
           {
             "text": "لو",
             "timestamp": "01:35.50",
             "timestamp_end": "01:36.00",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "if"
+            "l1_end_index": 16
           },
           {
             "text": "نراها",
             "timestamp": "01:36.00",
             "timestamp_end": "01:37.00",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "we see them"
+            "l1_end_index": 22
           },
           {
             "text": "من",
             "timestamp": "01:37.00",
             "timestamp_end": "01:37.50",
             "l1_start_index": 24,
-            "l1_end_index": 25,
-            "translation": "from"
+            "l1_end_index": 25
           },
           {
             "text": "بعيد",
             "timestamp": "01:37.50",
             "timestamp_end": "01:38.50",
             "l1_start_index": 27,
-            "l1_end_index": 30,
-            "translation": "afar"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "Problems will become small if we see them from afar"
+        ]
       },
       {
         "id": "phrase_12",
@@ -595,67 +524,58 @@
             "timestamp": "01:38.50",
             "timestamp_end": "01:39.00",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "and"
+            "l1_end_index": 0
           },
           {
             "text": "الخوف",
             "timestamp": "01:39.00",
             "timestamp_end": "01:40.00",
             "l1_start_index": 2,
-            "l1_end_index": 6,
-            "translation": "the fear"
+            "l1_end_index": 6
           },
           {
             "text": "الذى",
             "timestamp": "01:40.00",
             "timestamp_end": "01:41.00",
             "l1_start_index": 8,
-            "l1_end_index": 11,
-            "translation": "that"
+            "l1_end_index": 11
           },
           {
             "text": "تملكني،",
             "timestamp": "01:41.00",
             "timestamp_end": "01:42.50",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "possessed me"
+            "l1_end_index": 18
           },
           {
             "text": "لم",
             "timestamp": "01:42.50",
             "timestamp_end": "01:43.50",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "not"
+            "l1_end_index": 22
           },
           {
             "text": "يعد",
             "timestamp": "01:43.50",
             "timestamp_end": "01:44.00",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "remains"
+            "l1_end_index": 26
           },
           {
             "text": "منه",
             "timestamp": "01:44.00",
             "timestamp_end": "01:44.50",
             "l1_start_index": 28,
-            "l1_end_index": 30,
-            "translation": "of it"
+            "l1_end_index": 30
           },
           {
             "text": "مزيد",
             "timestamp": "01:44.50",
             "timestamp_end": "01:46.00",
             "l1_start_index": 32,
-            "l1_end_index": 35,
-            "translation": "more"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "And the fear that possessed me, there is no more of it"
+        ]
       },
       {
         "id": "phrase_13",
@@ -668,67 +588,58 @@
             "timestamp": "01:46.00",
             "timestamp_end": "01:47.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "indeed"
+            "l1_end_index": 1
           },
           {
             "text": "حان",
             "timestamp": "01:47.00",
             "timestamp_end": "01:48.00",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "has come"
+            "l1_end_index": 5
           },
           {
             "text": "الوقت",
             "timestamp": "01:48.00",
             "timestamp_end": "01:48.50",
             "l1_start_index": 7,
-            "l1_end_index": 11,
-            "translation": "the time"
+            "l1_end_index": 11
           },
           {
             "text": "لانتصارات،",
             "timestamp": "01:48.50",
             "timestamp_end": "01:50.00",
             "l1_start_index": 13,
-            "l1_end_index": 21,
-            "translation": "for victories"
+            "l1_end_index": 21
           },
           {
             "text": "لى",
             "timestamp": "01:50.00",
             "timestamp_end": "01:51.00",
             "l1_start_index": 24,
-            "l1_end_index": 25,
-            "translation": "for me"
+            "l1_end_index": 25
           },
           {
             "text": "اختبر",
             "timestamp": "01:51.00",
             "timestamp_end": "01:52.00",
             "l1_start_index": 27,
-            "l1_end_index": 31,
-            "translation": "I test"
+            "l1_end_index": 31
           },
           {
             "text": "كل",
             "timestamp": "01:52.00",
             "timestamp_end": "01:52.50",
             "l1_start_index": 33,
-            "l1_end_index": 34,
-            "translation": "all"
+            "l1_end_index": 34
           },
           {
             "text": "القدرات",
             "timestamp": "01:52.50",
             "timestamp_end": "01:53.50",
             "l1_start_index": 36,
-            "l1_end_index": 42,
-            "translation": "the abilities"
+            "l1_end_index": 42
           }
-        ],
-        "text_l2": "The time has come for victories, for me to test all capabilities"
+        ]
       },
       {
         "id": "phrase_14",
@@ -741,35 +652,30 @@
             "timestamp": "01:53.50",
             "timestamp_end": "01:54.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "without"
+            "l1_end_index": 2
           },
           {
             "text": "حدود",
             "timestamp": "01:54.50",
             "timestamp_end": "01:55.50",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "limits"
+            "l1_end_index": 7
           },
           {
             "text": "تمنعني",
             "timestamp": "01:55.50",
             "timestamp_end": "01:57.50",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "prevent me"
+            "l1_end_index": 14
           },
           {
             "text": "أمضي",
             "timestamp": "01:57.50",
             "timestamp_end": "02:01.00",
             "l1_start_index": 16,
-            "l1_end_index": 19,
-            "translation": "I proceed"
+            "l1_end_index": 19
           }
-        ],
-        "text_l2": "Without limits preventing me, I proceed"
+        ]
       },
       {
         "id": "phrase_15",
@@ -782,43 +688,37 @@
             "timestamp": "02:01.00",
             "timestamp_end": "02:03.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "سرك،",
             "timestamp": "02:03.00",
             "timestamp_end": "02:05.00",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "your secret"
+            "l1_end_index": 8
           },
           {
             "text": "توحدي",
             "timestamp": "02:05.00",
             "timestamp_end": "02:06.50",
             "l1_start_index": 11,
-            "l1_end_index": 15,
-            "translation": "unite"
+            "l1_end_index": 15
           },
           {
             "text": "مع",
             "timestamp": "02:06.50",
             "timestamp_end": "02:07.00",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "with"
+            "l1_end_index": 18
           },
           {
             "text": "الاكوان",
             "timestamp": "02:07.00",
             "timestamp_end": "02:08.00",
             "l1_start_index": 20,
-            "l1_end_index": 26,
-            "translation": "the universes"
+            "l1_end_index": 26
           }
-        ],
-        "text_l2": "Release your secret, unite with the universes"
+        ]
       },
       {
         "id": "phrase_16",
@@ -831,51 +731,44 @@
             "timestamp": "02:08.00",
             "timestamp_end": "02:10.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "سرك،",
             "timestamp": "02:10.00",
             "timestamp_end": "02:11.50",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "your secret"
+            "l1_end_index": 8
           },
           {
             "text": "لن",
             "timestamp": "02:11.50",
             "timestamp_end": "02:12.50",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "will not"
+            "l1_end_index": 12
           },
           {
             "text": "ابكي",
             "timestamp": "02:12.50",
             "timestamp_end": "02:13.50",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "I cry"
+            "l1_end_index": 17
           },
           {
             "text": "بعد",
             "timestamp": "02:13.50",
             "timestamp_end": "02:14.00",
             "l1_start_index": 19,
-            "l1_end_index": 21,
-            "translation": "after"
+            "l1_end_index": 21
           },
           {
             "text": "الآن",
             "timestamp": "02:14.00",
             "timestamp_end": "02:15.00",
             "l1_start_index": 23,
-            "l1_end_index": 26,
-            "translation": "now"
+            "l1_end_index": 26
           }
-        ],
-        "text_l2": "Release your secret, I will not cry anymore"
+        ]
       },
       {
         "id": "phrase_17",
@@ -888,35 +781,30 @@
             "timestamp": "02:15.00",
             "timestamp_end": "02:17.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "my land"
+            "l1_end_index": 3
           },
           {
             "text": "هنا،",
             "timestamp": "02:17.00",
             "timestamp_end": "02:18.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "here"
+            "l1_end_index": 7
           },
           {
             "text": "وبها",
             "timestamp": "02:18.50",
             "timestamp_end": "02:20.00",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "and in it"
+            "l1_end_index": 13
           },
           {
             "text": "سأبقى",
             "timestamp": "02:20.00",
             "timestamp_end": "02:22.00",
             "l1_start_index": 15,
-            "l1_end_index": 19,
-            "translation": "I will remain"
+            "l1_end_index": 19
           }
-        ],
-        "text_l2": "Be satisfied here, and in it I will remain"
+        ]
       },
       {
         "id": "phrase_18",
@@ -929,19 +817,16 @@
             "timestamp": "02:22.00",
             "timestamp_end": "02:24.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "release"
+            "l1_end_index": 4
           },
           {
             "text": "العنان",
             "timestamp": "02:24.00",
             "timestamp_end": "02:27.00",
             "l1_start_index": 6,
-            "l1_end_index": 11,
-            "translation": "the reins"
+            "l1_end_index": 11
           }
-        ],
-        "text_l2": "Let go"
+        ]
       },
       {
         "id": "phrase_19",
@@ -954,51 +839,44 @@
             "timestamp": "02:34.00",
             "timestamp_end": "02:35.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "for my power"
+            "l1_end_index": 4
           },
           {
             "text": "تسري",
             "timestamp": "02:35.50",
             "timestamp_end": "02:36.50",
             "l1_start_index": 6,
-            "l1_end_index": 9,
-            "translation": "flows"
+            "l1_end_index": 9
           },
           {
             "text": "من",
             "timestamp": "02:36.50",
             "timestamp_end": "02:37.00",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "from"
+            "l1_end_index": 12
           },
           {
             "text": "الهواء",
             "timestamp": "02:37.00",
             "timestamp_end": "02:38.50",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "the air"
+            "l1_end_index": 19
           },
           {
             "text": "إلى",
             "timestamp": "02:38.50",
             "timestamp_end": "02:39.00",
             "l1_start_index": 21,
-            "l1_end_index": 23,
-            "translation": "to"
+            "l1_end_index": 23
           },
           {
             "text": "الصخور",
             "timestamp": "02:39.00",
             "timestamp_end": "02:41.00",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "the rocks"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "So my power flows from the air to the rocks"
+        ]
       },
       {
         "id": "phrase_20",
@@ -1011,59 +889,51 @@
             "timestamp": "02:41.00",
             "timestamp_end": "02:41.50",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "and"
+            "l1_end_index": 0
           },
           {
             "text": "روحي",
             "timestamp": "02:41.50",
             "timestamp_end": "02:42.50",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "my soul"
+            "l1_end_index": 5
           },
           {
             "text": "كلولب",
             "timestamp": "02:42.50",
             "timestamp_end": "02:43.50",
             "l1_start_index": 7,
-            "l1_end_index": 11,
-            "translation": "like a spiral"
+            "l1_end_index": 11
           },
           {
             "text": "ثلجى",
             "timestamp": "02:43.50",
             "timestamp_end": "02:44.50",
             "l1_start_index": 13,
-            "l1_end_index": 16,
-            "translation": "icy"
+            "l1_end_index": 16
           },
           {
             "text": "يلمع",
             "timestamp": "02:44.50",
             "timestamp_end": "02:45.50",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "shines"
+            "l1_end_index": 21
           },
           {
             "text": "مثل",
             "timestamp": "02:45.50",
             "timestamp_end": "02:46.50",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "like"
+            "l1_end_index": 25
           },
           {
             "text": "النور",
             "timestamp": "02:46.50",
             "timestamp_end": "02:48.00",
             "l1_start_index": 27,
-            "l1_end_index": 31,
-            "translation": "the light"
+            "l1_end_index": 31
           }
-        ],
-        "text_l2": "And my soul is a snow spiral shining like the light"
+        ]
       },
       {
         "id": "phrase_21",
@@ -1076,51 +946,44 @@
             "timestamp": "02:48.00",
             "timestamp_end": "02:48.50",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "and"
+            "l1_end_index": 0
           },
           {
             "text": "تتبلور",
             "timestamp": "02:48.50",
             "timestamp_end": "02:50.00",
             "l1_start_index": 2,
-            "l1_end_index": 7,
-            "translation": "it crystallizes"
+            "l1_end_index": 7
           },
           {
             "text": "فتكون",
             "timestamp": "02:50.00",
             "timestamp_end": "02:51.50",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "and it becomes"
+            "l1_end_index": 13
           },
           {
             "text": "قذيفة",
             "timestamp": "02:51.50",
             "timestamp_end": "02:53.00",
             "l1_start_index": 15,
-            "l1_end_index": 19,
-            "translation": "a projectile"
+            "l1_end_index": 19
           },
           {
             "text": "من",
             "timestamp": "02:53.00",
             "timestamp_end": "02:53.50",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "of"
+            "l1_end_index": 22
           },
           {
             "text": "جليد",
             "timestamp": "02:53.50",
             "timestamp_end": "02:55.00",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "ice"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "And it crystallizes so it becomes a shell of ice"
+        ]
       },
       {
         "id": "phrase_22",
@@ -1133,59 +996,51 @@
             "timestamp": "02:55.00",
             "timestamp_end": "02:56.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "حتما",
             "timestamp": "02:56.00",
             "timestamp_end": "02:57.00",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "certainly"
+            "l1_end_index": 7
           },
           {
             "text": "لن",
             "timestamp": "02:57.00",
             "timestamp_end": "02:58.00",
             "l1_start_index": 9,
-            "l1_end_index": 10,
-            "translation": "will not"
+            "l1_end_index": 10
           },
           {
             "text": "أعود،",
             "timestamp": "02:58.00",
             "timestamp_end": "02:59.50",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "I return"
+            "l1_end_index": 15
           },
           {
             "text": "الماضي",
             "timestamp": "02:59.50",
             "timestamp_end": "03:01.00",
             "l1_start_index": 18,
-            "l1_end_index": 23,
-            "translation": "the past"
+            "l1_end_index": 23
           },
           {
             "text": "بعيدا",
             "timestamp": "03:01.00",
             "timestamp_end": "03:02.00",
             "l1_start_index": 25,
-            "l1_end_index": 29,
-            "translation": "far"
+            "l1_end_index": 29
           },
           {
             "text": "صار",
             "timestamp": "03:02.00",
             "timestamp_end": "03:03.00",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "has become"
+            "l1_end_index": 33
           }
-        ],
-        "text_l2": "I definitely will not return, the past has become far"
+        ]
       },
       {
         "id": "phrase_23",
@@ -1198,67 +1053,58 @@
             "timestamp": "03:03.00",
             "timestamp_end": "03:04.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "will not"
+            "l1_end_index": 1
           },
           {
             "text": "تعود،",
             "timestamp": "03:04.00",
             "timestamp_end": "03:05.00",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "she returns"
+            "l1_end_index": 6
           },
           {
             "text": "لن",
             "timestamp": "03:05.00",
             "timestamp_end": "03:05.50",
             "l1_start_index": 9,
-            "l1_end_index": 10,
-            "translation": "will not"
+            "l1_end_index": 10
           },
           {
             "text": "تعود،",
             "timestamp": "03:05.50",
             "timestamp_end": "03:06.50",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "she returns"
+            "l1_end_index": 15
           },
           {
             "text": "و",
             "timestamp": "03:06.50",
             "timestamp_end": "03:07.00",
             "l1_start_index": 18,
-            "l1_end_index": 18,
-            "translation": "and"
+            "l1_end_index": 18
           },
           {
             "text": "سأشرق",
             "timestamp": "03:07.00",
             "timestamp_end": "03:08.00",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "I will shine"
+            "l1_end_index": 24
           },
           {
             "text": "مثل",
             "timestamp": "03:08.00",
             "timestamp_end": "03:08.50",
             "l1_start_index": 26,
-            "l1_end_index": 28,
-            "translation": "like"
+            "l1_end_index": 28
           },
           {
             "text": "النور",
             "timestamp": "03:08.50",
             "timestamp_end": "03:09.00",
             "l1_start_index": 30,
-            "l1_end_index": 34,
-            "translation": "the light"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "You will not return, you will not return, and I will shine like the light"
+        ]
       },
       {
         "id": "phrase_24",
@@ -1271,51 +1117,44 @@
             "timestamp": "03:09.00",
             "timestamp_end": "03:10.50",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "will not"
+            "l1_end_index": 1
           },
           {
             "text": "يعود،",
             "timestamp": "03:10.50",
             "timestamp_end": "03:11.50",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "he returns"
+            "l1_end_index": 6
           },
           {
             "text": "لن",
             "timestamp": "03:11.50",
             "timestamp_end": "03:12.50",
             "l1_start_index": 9,
-            "l1_end_index": 10,
-            "translation": "will not"
+            "l1_end_index": 10
           },
           {
             "text": "يعود،",
             "timestamp": "03:12.50",
             "timestamp_end": "03:13.50",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "he returns"
+            "l1_end_index": 15
           },
           {
             "text": "فقدت",
             "timestamp": "03:13.50",
             "timestamp_end": "03:15.00",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "I lost"
+            "l1_end_index": 21
           },
           {
             "text": "برائتي",
             "timestamp": "03:15.00",
             "timestamp_end": "03:17.00",
             "l1_start_index": 23,
-            "l1_end_index": 28,
-            "translation": "my innocence"
+            "l1_end_index": 28
           }
-        ],
-        "text_l2": "It will not return, it will not return, I lost my innocence"
+        ]
       },
       {
         "id": "phrase_25",
@@ -1328,51 +1167,44 @@
             "timestamp": "03:17.00",
             "timestamp_end": "03:18.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "here"
+            "l1_end_index": 1
           },
           {
             "text": "أنا",
             "timestamp": "03:18.00",
             "timestamp_end": "03:18.50",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "I"
+            "l1_end_index": 5
           },
           {
             "text": "الآن",
             "timestamp": "03:18.50",
             "timestamp_end": "03:19.50",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "now"
+            "l1_end_index": 10
           },
           {
             "text": "اقف",
             "timestamp": "03:19.50",
             "timestamp_end": "03:21.00",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "I stand"
+            "l1_end_index": 14
           },
           {
             "text": "أمام",
             "timestamp": "03:21.00",
             "timestamp_end": "03:23.00",
             "l1_start_index": 16,
-            "l1_end_index": 19,
-            "translation": "in front of"
+            "l1_end_index": 19
           },
           {
             "text": "الباس",
             "timestamp": "03:23.00",
             "timestamp_end": "03:25.00",
             "l1_start_index": 21,
-            "l1_end_index": 25,
-            "translation": "the might"
+            "l1_end_index": 25
           }
-        ],
-        "text_l2": "Here I am now standing before the pass"
+        ]
       },
       {
         "id": "phrase_26",
@@ -1385,19 +1217,16 @@
             "timestamp": "03:25.00",
             "timestamp_end": "03:27.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "amidst"
+            "l1_end_index": 2
           },
           {
             "text": "الرياح",
             "timestamp": "03:27.00",
             "timestamp_end": "03:31.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the winds"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Amidst the winds"
+        ]
       },
       {
         "id": "phrase_27",
@@ -1410,35 +1239,30 @@
             "timestamp": "03:31.00",
             "timestamp_end": "03:32.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "the snow"
+            "l1_end_index": 4
           },
           {
             "text": "لا",
             "timestamp": "03:32.50",
             "timestamp_end": "03:33.00",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "not"
+            "l1_end_index": 7
           },
           {
             "text": "يشعرني",
             "timestamp": "03:33.00",
             "timestamp_end": "03:34.00",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "makes me feel"
+            "l1_end_index": 14
           },
           {
             "text": "بإكتئاب",
             "timestamp": "03:34.00",
             "timestamp_end": "03:35.00",
             "l1_start_index": 16,
-            "l1_end_index": 22,
-            "translation": "with depression"
+            "l1_end_index": 22
           }
-        ],
-        "text_l2": "The snow does not make me feel depression"
+        ]
       }
     ],
     "lessons": "# مملكة الجليد والعزلة\n00:14.80 الثلج الليلة كالصحراء، لم تلمسه اقدام\n00:21.30 مملكة للحيارى، أحكمها بسلام\n00:28.00 الريح تعوي مثل العاصفة داخلي\n00:36.00 كيف تختفي، حاولت جاهدة\n00:43.00 لا تكشفي سر الجليد، كوني كما شعبك يريد\n00:50.00 تخفي الإحساس، كى يجهلوا قد عرفوا\n\n# إطلاق السراح (الجزء الأول)\n01:00.00 اطلقي سرك، لن أتحمل العذاب\n01:07.00 اطلقي سرك، اغلقي خلفك الابوات\n01:14.00 لا اخشى كل ما سيقال\n01:21.00 اطلقي العنان، الثل لا يشعرني باكتئاب\n\n# رؤية جديدة\n01:32.00 المشكلات ستصغر لو نراها من بعيد\n01:38.50 و الخوف الذى تملكني، لم يعد منه مزيد\n01:46.00 قد حان الوقت لانتصارات، لى اختبر كل القدرات\n01:53.50 بلا حدود تمنعني أمضي\n\n# التحرر الكامل\n02:01.00 اطلقى سرك، توحدي مع الاكوان\n02:08.00 اثلقى سرك، لن ابكي بعد الآن\n02:15.00 ارضي هنا، وبها سأبقى\n02:22.00 اطلقي العنان\n\n# قوة الطبيعة\n02:34.00 فقوتي تسري من الهواء إلى الصخور\n02:41.00 و روحي كلولب ثلجى يلمع مثل النور\n02:48.00 و تتبلور فتكون قذيفة من جليد\n02:55.00 انا حتما لن أعود، الماضي بعيدا صار\n\n# الانتصار والتحرر\n03:03.00 لن تعود، لن تعود، و سأشرق مثل النور\n03:09.00 لن يعود، لن يعود، فقدت برائتي\n03:17.00 ها أنا الآن اقف أمام الباس\n03:25.00 وسط الرياح\n03:31.00 الثلج لا يشعرني بإكتئاب",
@@ -1480,7 +1304,301 @@
         "reason": "Final chorus reuses earlier lines but adds 'innocence' and 'cold', offering limited new content."
       }
     ],
-    "similar_sounds": "الثلج الليلة كالصحراء لم [لمسه] اقدام\nمملكة للحيارى [أنكما] بسلام\nالريح تعوي مثل العاصفة [داخل]\nكيف تختفي حاولت [جاهزة]\nلا تكشفي سر الجليد [توني] كما شعبك يريد\n[تكفي] الإحساس كى يجهلوا قد عرفوا\nاطلقي سرك لن [تحمل] العذاب\nاطلقي سرك اغلقي خلفك [الادوات]\nلا اخشى كل ما [يقال]\nاطلقي العنان الثل لا [تشعرين] باكتئاب\nالمشكلات [أصغر] لو نراها من بعيد\nو الخوف الذى تملكني لم يعد منه [يزيد]\nقد حان الوقت [No alternatives found for 'لانتصارات'] لى اختبر كل القدرات\nبلا حدود تمنعني [أمري]\nاطلقى سرك [تحدي] مع الاكوان\n[القى] سرك لن ابكي بعد الآن\nارضي [هناك] وبها سأبقى\nاطلقي [العناء]\nفقوتي تسري من الهواء [على] الصخور\nو [روبي] كلولب ثلجى يلمع مثل النور\nو [تتصور] فتكون قذيفة من جليد\nانا حتما لن [تعود] الماضي بعيدا صار\nلن تعود لن [يعود] و سأشرق مثل النور\nلن يعود لن [أعود] فقدت برائتي\nها أنا الآن [اسف] أمام الباس\n[قسط] الرياح\n[بالثلج] لا يشعرني بإكتئاب"
+    "similar_sounds": "الثلج الليلة كالصحراء لم [لمسه] اقدام\nمملكة للحيارى [أنكما] بسلام\nالريح تعوي مثل العاصفة [داخل]\nكيف تختفي حاولت [جاهزة]\nلا تكشفي سر الجليد [توني] كما شعبك يريد\n[تكفي] الإحساس كى يجهلوا قد عرفوا\nاطلقي سرك لن [تحمل] العذاب\nاطلقي سرك اغلقي خلفك [الادوات]\nلا اخشى كل ما [يقال]\nاطلقي العنان الثل لا [تشعرين] باكتئاب\nالمشكلات [أصغر] لو نراها من بعيد\nو الخوف الذى تملكني لم يعد منه [يزيد]\nقد حان الوقت [No alternatives found for 'لانتصارات'] لى اختبر كل القدرات\nبلا حدود تمنعني [أمري]\nاطلقى سرك [تحدي] مع الاكوان\n[القى] سرك لن ابكي بعد الآن\nارضي [هناك] وبها سأبقى\nاطلقي [العناء]\nفقوتي تسري من الهواء [على] الصخور\nو [روبي] كلولب ثلجى يلمع مثل النور\nو [تتصور] فتكون قذيفة من جليد\nانا حتما لن [تعود] الماضي بعيدا صار\nلن تعود لن [يعود] و سأشرق مثل النور\nلن يعود لن [أعود] فقدت برائتي\nها أنا الآن [اسف] أمام الباس\n[قسط] الرياح\n[بالثلج] لا يشعرني بإكتئاب",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "The snow tonight is like the desert, feet have not touched it",
+            "words": [
+              "snow",
+              "tonight",
+              "like the desert",
+              "not",
+              "touch it",
+              "feet"
+            ]
+          },
+          {
+            "text": "A kingdom for the lost, I rule it in peace",
+            "words": [
+              "kingdom",
+              "for the confused",
+              "I rule it",
+              "with peace"
+            ]
+          },
+          {
+            "text": "The wind howls like the storm inside me",
+            "words": [
+              "the wind",
+              "howls",
+              "like",
+              "the storm",
+              "inside me"
+            ]
+          },
+          {
+            "text": "How you disappear, I tried hard",
+            "words": [
+              "how",
+              "you disappear",
+              "I tried",
+              "hard"
+            ]
+          },
+          {
+            "text": "Do not reveal the secret of the ice, be as your people want",
+            "words": [
+              "don't",
+              "you reveal",
+              "secret",
+              "the ice",
+              "be",
+              "as",
+              "your people",
+              "wants"
+            ]
+          },
+          {
+            "text": "Hide the feeling, so that they ignore what they have known",
+            "words": [
+              "you hide",
+              "the feeling",
+              "so that",
+              "they be ignorant",
+              "already",
+              "they knew"
+            ]
+          },
+          {
+            "text": "Release your secret, I will not bear the torture",
+            "words": [
+              "release",
+              "your secret",
+              "will not",
+              "I bear",
+              "the torment"
+            ]
+          },
+          {
+            "text": "Release your secret, close the doors behind you",
+            "words": [
+              "release",
+              "your secret",
+              "close",
+              "behind you",
+              "the doors"
+            ]
+          },
+          {
+            "text": "I do not fear all that will be said",
+            "words": [
+              "don't",
+              "I fear",
+              "all",
+              "that",
+              "will be said"
+            ]
+          },
+          {
+            "text": "Let go, the snow does not make me feel depression",
+            "words": [
+              "release",
+              "the reins",
+              "the snow",
+              "not",
+              "makes me feel",
+              "with depression"
+            ]
+          },
+          {
+            "text": "Problems will become small if we see them from afar",
+            "words": [
+              "the problems",
+              "will become smaller",
+              "if",
+              "we see them",
+              "from",
+              "afar"
+            ]
+          },
+          {
+            "text": "And the fear that possessed me, there is no more of it",
+            "words": [
+              "and",
+              "the fear",
+              "that",
+              "possessed me",
+              "not",
+              "remains",
+              "of it",
+              "more"
+            ]
+          },
+          {
+            "text": "The time has come for victories, for me to test all capabilities",
+            "words": [
+              "indeed",
+              "has come",
+              "the time",
+              "for victories",
+              "for me",
+              "I test",
+              "all",
+              "the abilities"
+            ]
+          },
+          {
+            "text": "Without limits preventing me, I proceed",
+            "words": [
+              "without",
+              "limits",
+              "prevent me",
+              "I proceed"
+            ]
+          },
+          {
+            "text": "Release your secret, unite with the universes",
+            "words": [
+              "release",
+              "your secret",
+              "unite",
+              "with",
+              "the universes"
+            ]
+          },
+          {
+            "text": "Release your secret, I will not cry anymore",
+            "words": [
+              "release",
+              "your secret",
+              "will not",
+              "I cry",
+              "after",
+              "now"
+            ]
+          },
+          {
+            "text": "Be satisfied here, and in it I will remain",
+            "words": [
+              "my land",
+              "here",
+              "and in it",
+              "I will remain"
+            ]
+          },
+          {
+            "text": "Let go",
+            "words": [
+              "release",
+              "the reins"
+            ]
+          },
+          {
+            "text": "So my power flows from the air to the rocks",
+            "words": [
+              "for my power",
+              "flows",
+              "from",
+              "the air",
+              "to",
+              "the rocks"
+            ]
+          },
+          {
+            "text": "And my soul is a snow spiral shining like the light",
+            "words": [
+              "and",
+              "my soul",
+              "like a spiral",
+              "icy",
+              "shines",
+              "like",
+              "the light"
+            ]
+          },
+          {
+            "text": "And it crystallizes so it becomes a shell of ice",
+            "words": [
+              "and",
+              "it crystallizes",
+              "and it becomes",
+              "a projectile",
+              "of",
+              "ice"
+            ]
+          },
+          {
+            "text": "I definitely will not return, the past has become far",
+            "words": [
+              "I",
+              "certainly",
+              "will not",
+              "I return",
+              "the past",
+              "far",
+              "has become"
+            ]
+          },
+          {
+            "text": "You will not return, you will not return, and I will shine like the light",
+            "words": [
+              "will not",
+              "she returns",
+              "will not",
+              "she returns",
+              "and",
+              "I will shine",
+              "like",
+              "the light"
+            ]
+          },
+          {
+            "text": "It will not return, it will not return, I lost my innocence",
+            "words": [
+              "will not",
+              "he returns",
+              "will not",
+              "he returns",
+              "I lost",
+              "my innocence"
+            ]
+          },
+          {
+            "text": "Here I am now standing before the pass",
+            "words": [
+              "here",
+              "I",
+              "now",
+              "I stand",
+              "in front of",
+              "the might"
+            ]
+          },
+          {
+            "text": "Amidst the winds",
+            "words": [
+              "amidst",
+              "the winds"
+            ]
+          },
+          {
+            "text": "The snow does not make me feel depression",
+            "words": [
+              "the snow",
+              "not",
+              "makes me feel",
+              "with depression"
+            ]
+          }
+        ],
+        "lessons": "# مملكة الجليد والعزلة\n00:14.80 الثلج الليلة كالصحراء، لم تلمسه اقدام\n00:21.30 مملكة للحيارى، أحكمها بسلام\n00:28.00 الريح تعوي مثل العاصفة داخلي\n00:36.00 كيف تختفي، حاولت جاهدة\n00:43.00 لا تكشفي سر الجليد، كوني كما شعبك يريد\n00:50.00 تخفي الإحساس، كى يجهلوا قد عرفوا\n\n# إطلاق السراح (الجزء الأول)\n01:00.00 اطلقي سرك، لن أتحمل العذاب\n01:07.00 اطلقي سرك، اغلقي خلفك الابوات\n01:14.00 لا اخشى كل ما سيقال\n01:21.00 اطلقي العنان، الثل لا يشعرني باكتئاب\n\n# رؤية جديدة\n01:32.00 المشكلات ستصغر لو نراها من بعيد\n01:38.50 و الخوف الذى تملكني، لم يعد منه مزيد\n01:46.00 قد حان الوقت لانتصارات، لى اختبر كل القدرات\n01:53.50 بلا حدود تمنعني أمضي\n\n# التحرر الكامل\n02:01.00 اطلقى سرك، توحدي مع الاكوان\n02:08.00 اثلقى سرك، لن ابكي بعد الآن\n02:15.00 ارضي هنا، وبها سأبقى\n02:22.00 اطلقي العنان\n\n# قوة الطبيعة\n02:34.00 فقوتي تسري من الهواء إلى الصخور\n02:41.00 و روحي كلولب ثلجى يلمع مثل النور\n02:48.00 و تتبلور فتكون قذيفة من جليد\n02:55.00 انا حتما لن أعود، الماضي بعيدا صار\n\n# الانتصار والتحرر\n03:03.00 لن تعود، لن تعود، و سأشرق مثل النور\n03:09.00 لن يعود، لن يعود، فقدت برائتي\n03:17.00 ها أنا الآن اقف أمام الباس\n03:25.00 وسط الرياح\n03:31.00 الثلج لا يشعرني بإكتئاب"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-28 18:30:15 UTC",
   "updated_at": "2026-06-28 18:33:22 UTC",

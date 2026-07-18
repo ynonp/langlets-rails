@@ -9,396 +9,601 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, c'est un repas de famille classique",
-        "text_l2": "Anyway, it's a classic family dinner",
         "timestamp": "00:00.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "qui part en couille.",
-        "text_l2": "that goes to shit.",
         "timestamp": "00:01.30"
       },
       {
         "id": "phrase_3",
         "text_l1": "Et pour que ça parte en couille,",
-        "text_l2": "And for it to go to shit,",
         "timestamp": "00:01.80"
       },
       {
         "id": "phrase_4",
         "text_l1": "il faut une bonne équipe.",
-        "text_l2": "you need a good team.",
         "timestamp": "00:03.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "Il faut un père qui n'aime plus sa femme",
-        "text_l2": "You need a father who doesn't love his wife anymore",
         "timestamp": "00:03.80"
       },
       {
         "id": "phrase_6",
         "text_l1": "et qui fait avec,",
-        "text_l2": "and deals with it,",
         "timestamp": "00:05.20"
       },
       {
         "id": "phrase_7",
         "text_l1": "une mère qui n'aime plus son mari",
-        "text_l2": "a mother who doesn't love her husband anymore",
         "timestamp": "00:05.80"
       },
       {
         "id": "phrase_8",
         "text_l1": "et qui fait du ragoût.",
-        "text_l2": "and makes stew.",
         "timestamp": "00:07.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "J'ai fait du ragoût.",
-        "text_l2": "I made stew.",
         "timestamp": "00:08.80"
       },
       {
         "id": "phrase_10",
         "text_l1": "Un oncle vulgaire.",
-        "text_l2": "A vulgar uncle.",
         "timestamp": "00:09.80"
       },
       {
         "id": "phrase_11",
         "text_l1": "Je reviens des chiottes,",
-        "text_l2": "I'm back from the shitter,",
         "timestamp": "00:10.80"
       },
       {
         "id": "phrase_12",
         "text_l1": "n'y allez pas avant deux heures.",
-        "text_l2": "don't go in there for two hours.",
         "timestamp": "00:12.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "Une tante qui s'excuse.",
-        "text_l2": "An aunt who apologizes.",
         "timestamp": "00:12.80"
       },
       {
         "id": "phrase_14",
         "text_l1": "Excusez-le.",
-        "text_l2": "Excuse him.",
         "timestamp": "00:13.80"
       },
       {
         "id": "phrase_15",
         "text_l1": "Un frère complice. Et moi.",
-        "text_l2": "A complicit brother. And me.",
         "timestamp": "00:14.80"
       },
       {
         "id": "phrase_16",
         "text_l1": "Comme d'hab, j'avais mangé trop de pain",
-        "text_l2": "As usual, I'd eaten too much bread",
         "timestamp": "00:16.80"
       },
       {
         "id": "phrase_17",
         "text_l1": "parce que l'apéro avait duré 2 heures",
-        "text_l2": "because the pre-dinner drinks lasted 2 hours",
         "timestamp": "00:18.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "et 34 minutes.",
-        "text_l2": "and 34 minutes.",
         "timestamp": "00:19.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "Et comme d'hab, ils parlaient politique",
-        "text_l2": "And as usual, they were talking politics",
         "timestamp": "00:19.80"
       },
       {
         "id": "phrase_20",
         "text_l1": "parce que l'apéro avait duré",
-        "text_l2": "because the pre-dinner drinks lasted",
         "timestamp": "00:21.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "2 bouteilles et 34 verres.",
-        "text_l2": "2 bottles and 34 glasses.",
         "timestamp": "00:22.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "Tu ne peux pas dire ça.",
-        "text_l2": "You can't say that.",
         "timestamp": "00:23.80"
       },
       {
         "id": "phrase_23",
         "text_l1": "Mon oncle dit vraiment trop de gros mots.",
-        "text_l2": "My uncle says way too many swear words.",
         "timestamp": "00:24.80"
       },
       {
         "id": "phrase_24",
         "text_l1": "Mais qu'elle aille se faire (gros mot),",
-        "text_l2": "But she can go fuck herself (swear word),",
         "timestamp": "00:25.80"
       },
       {
         "id": "phrase_25",
         "text_l1": "je te jure, oui (gros mot),",
-        "text_l2": "I swear, yes (swear word),",
         "timestamp": "00:26.80"
       },
       {
         "id": "phrase_26",
         "text_l1": "cette (gros mot).",
-        "text_l2": "this (swear word).",
         "timestamp": "00:27.30"
       },
       {
         "id": "phrase_27",
         "text_l1": "Excusez-le.",
-        "text_l2": "Excuse him.",
         "timestamp": "00:27.80"
       },
       {
         "id": "phrase_28",
         "text_l1": "À un moment, ma mère a dit :",
-        "text_l2": "At one point, my mother said:",
         "timestamp": "00:31.80"
       },
       {
         "id": "phrase_29",
         "text_l1": "Dis-leur.",
-        "text_l2": "Tell them.",
         "timestamp": "00:33.80"
       },
       {
         "id": "phrase_30",
         "text_l1": "Quoi ? Quoi ?",
-        "text_l2": "What? What?",
         "timestamp": "00:34.80"
       },
       {
         "id": "phrase_31",
         "text_l1": "On divorce.",
-        "text_l2": "We're divorcing.",
         "timestamp": "00:35.80"
       },
       {
         "id": "phrase_32",
         "text_l1": "(Gros mot) de (gros mot) de (gros mot)",
-        "text_l2": "(Swear word) of (swear word) of (swear word)",
         "timestamp": "00:36.80"
       },
       {
         "id": "phrase_33",
         "text_l1": "de (gros mot) de (gros mot) de (gros mot)",
-        "text_l2": "of (swear word) of (swear word) of (swear word)",
         "timestamp": "00:39.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "de (gros mot) de (gros mot).",
-        "text_l2": "of (swear word) of (swear word).",
         "timestamp": "00:41.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "Excusez-le.",
-        "text_l2": "Excuse him.",
         "timestamp": "00:44.80"
       },
       {
         "id": "phrase_36",
         "text_l1": "J'ai dit : Pourquoi ?",
-        "text_l2": "I said: Why?",
         "timestamp": "00:45.80"
       },
       {
         "id": "phrase_37",
         "text_l1": "Mon père a fait :",
-        "text_l2": "My father went:",
         "timestamp": "00:46.80"
       },
       {
         "id": "phrase_38",
         "text_l1": "J'ai fait :",
-        "text_l2": "I went:",
         "timestamp": "00:47.80"
       },
       {
         "id": "phrase_39",
         "text_l1": "Mon père a fait :",
-        "text_l2": "My father went:",
         "timestamp": "00:48.80"
       },
       {
         "id": "phrase_40",
         "text_l1": "J'ai fait :",
-        "text_l2": "I went:",
         "timestamp": "00:51.80"
       },
       {
         "id": "phrase_41",
         "text_l1": "Mon frère a fait :",
-        "text_l2": "My brother went:",
         "timestamp": "00:52.80"
       },
       {
         "id": "phrase_42",
         "text_l1": "Mon oncle a fait :",
-        "text_l2": "My uncle went:",
         "timestamp": "00:53.80"
       },
       {
         "id": "phrase_43",
         "text_l1": "Ma tante a fait :",
-        "text_l2": "My aunt went:",
         "timestamp": "00:54.80"
       },
       {
         "id": "phrase_44",
         "text_l1": "Et ma mère a fait la gueule.",
-        "text_l2": "And my mother sulked.",
         "timestamp": "00:55.80"
       },
       {
         "id": "phrase_45",
         "text_l1": "J'ai redemandé : Pourquoi ?",
-        "text_l2": "I asked again: Why?",
         "timestamp": "00:58.80"
       },
       {
         "id": "phrase_46",
         "text_l1": "Ma mère a dit : Une petite (gros mot).",
-        "text_l2": "My mother said: A little (swear word).",
         "timestamp": "00:59.80"
       },
       {
         "id": "phrase_47",
         "text_l1": "Mon père a dit : Je l'aime,",
-        "text_l2": "My father said: I love her,",
         "timestamp": "01:00.80"
       },
       {
         "id": "phrase_48",
         "text_l1": "elle me comprend.",
-        "text_l2": "she understands me.",
         "timestamp": "01:01.80"
       },
       {
         "id": "phrase_49",
         "text_l1": "Mon oncle a dit : Et ben mon (gros mot),",
-        "text_l2": "My uncle said: Well my (swear word),",
         "timestamp": "01:02.80"
       },
       {
         "id": "phrase_50",
         "text_l1": "tu te fais pas (gros mot).",
-        "text_l2": "you're not getting fucked over.",
         "timestamp": "01:04.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "Excusez-le.",
-        "text_l2": "Excuse him.",
         "timestamp": "01:05.80"
       },
       {
         "id": "phrase_52",
         "text_l1": "La raison, c'était Manuela, 22 ans,",
-        "text_l2": "The reason was Manuela, 22 years old,",
         "timestamp": "01:06.80"
       },
       {
         "id": "phrase_53",
         "text_l1": "étudiante en LEA.",
-        "text_l2": "foreign languages student.",
         "timestamp": "01:08.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "C'était ma mère avec 35 ans de moins,",
-        "text_l2": "It was my mother minus 35 years,",
         "timestamp": "01:09.50"
       },
       {
         "id": "phrase_55",
         "text_l1": "15 kilos de moins",
-        "text_l2": "minus 15 kilos",
         "timestamp": "01:11.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "et 3 tailles de bonnet en plus.",
-        "text_l2": "and 3 cup sizes up.",
         "timestamp": "01:12.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "Elle était bonne, bonne et bonne.",
-        "text_l2": "She was hot, hot and hot.",
         "timestamp": "01:13.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "Bon, j'y vais.",
-        "text_l2": "Well, I'm off.",
         "timestamp": "01:13.80"
       },
       {
         "id": "phrase_59",
         "text_l1": "Elle, elle me comprend.",
-        "text_l2": "She, she understands me.",
         "timestamp": "01:15.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "Il l'avait mal compris.",
-        "text_l2": "He misunderstood her.",
         "timestamp": "01:15.80"
       },
       {
         "id": "phrase_61",
         "text_l1": "Depuis, mon père dort chez moi.",
-        "text_l2": "Since then, my father sleeps at my place.",
         "timestamp": "01:23.80"
       },
       {
         "id": "phrase_62",
         "text_l1": "Oh putain, la vie c'est de la merde.",
-        "text_l2": "Oh fuck, life is shit.",
         "timestamp": "01:25.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "Bon, là il y avait des gros mots",
-        "text_l2": "Well, there were swear words there",
         "timestamp": "01:28.80"
       },
       {
         "id": "phrase_64",
         "text_l1": "mais j'étais d'accord.",
-        "text_l2": "but I agreed.",
         "timestamp": "01:30.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "Bref, j'ai fait un repas de famille.",
-        "text_l2": "Anyway, I made a family dinner.",
         "timestamp": "01:31.80"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], c'est un repas de famille classique => [Anyway], it's a classic family dinner\nBref, [c']est un repas de famille classique => Anyway, [it]'s a classic family dinner\nBref, c'[est] un repas de famille classique => Anyway, it['s] a classic family dinner\nBref, c'est [un] repas de famille classique => Anyway, it's [a] classic family dinner\nBref, c'est un [repas] de famille classique => Anyway, it's a classic family [dinner] # although it literally means \"meal\"\nBref, c'est un repas [de famille] classique => Anyway, it's a classic [family] dinner\nBref, c'est un repas de famille [classique] => Anyway, it's a [classic] family dinner\n\n[qui] part en couille. => [that] goes to shit.\nqui [part] en couille. => that [goes] to shit.\nqui part [en couille]. => that goes [to shit]. # vulgar idiom meaning \"to go wrong\" or \"to go south\"\n\n[Et] pour que ça parte en couille, => [And] for it to go to shit,\nEt [pour que] ça parte en couille, => And [for] it to go to shit, # \"pour que\" is the conjunction introducing the clause\nEt pour que [ça] parte en couille, => And for [it] to go to shit,\nEt pour que ça [parte] en couille, => And for it [to go] to shit, # \"parte\" (subjunctive) maps to the \"to go\" infinitive construction\nEt pour que ça parte [en couille], => And for it to go [to shit], # \"en couille\" is the idiomatic equivalent of \"to shit\" in this context\n\n[il faut] une bonne équipe. => [you need] a good team.\nil faut [une] bonne équipe. => you need [a] good team.\nil faut une [bonne] équipe. => you need a [good] team.\nil faut une bonne [équipe]. => you need a good [team].\n\n[Il faut] un père qui n'aime plus sa femme => [You need] a father who doesn't love his wife anymore\nIl faut [un] père qui n'aime plus sa femme => You need [a] father who doesn't love his wife anymore\nIl faut un [père] qui n'aime plus sa femme => You need a [father] who doesn't love his wife anymore\nIl faut un père [qui] n'aime plus sa femme => You need a father [who] doesn't love his wife anymore\nIl faut un père qui [n'aime plus] sa femme => doesn't love ... anymore\nIl faut un père qui n'aime plus [sa] femme => You need a father who doesn't love [his] wife anymore\nIl faut un père qui n'aime plus sa [femme] => You need a father who doesn't love his [wife] anymore\n\n[et] qui fait avec, => [and] deals with it,\net [qui] fait avec, => who\net qui [fait] avec, => and [deals] with it,\net qui fait [avec], => and deals [with it], # In the idiom \"faire avec\", \"avec\" implies \"with it\" or \"with that\"\n\n[une] mère qui n'aime plus son mari => [a] mother who doesn't love her husband anymore\nune [mère] qui n'aime plus son mari => a [mother] who doesn't love her husband anymore\nune mère [qui] n'aime plus son mari => a mother [who] doesn't love her husband anymore\nune mère qui [n'aime] plus son mari => a mother who [doesn't love] her husband anymore\nune mère qui n'aime [plus] son mari => a mother who doesn't love her husband [anymore]\nune mère qui n'aime plus [son] mari => a mother who doesn't love [her] husband anymore\nune mère qui n'aime plus son [mari] => a mother who doesn't love her [husband] anymore\n\n[et] qui fait du ragoût. => [and] makes stew.\net [qui] fait du ragoût. => who, that\net qui [fait] du ragoût. => and [makes] stew.\net qui fait du [ragoût]. => and makes [stew]. # \"du\" is a partitive article (some) and is left unmapped to favor the direct noun translation\n\n[J']ai fait du ragoût => [I] made stew\nJ'[ai fait] du ragoût => I [made] stew\nJ'ai fait du [ragoût] => I made [stew]\n\n[Un] oncle vulgaire. => [A] vulgar uncle.\nUn [oncle] vulgaire. => A vulgar [uncle].\nUn oncle [vulgaire]. => A [vulgar] uncle.\n\n[Je] reviens des chiottes, => [I]'m back from the shitter,\nJe [reviens] des chiottes, => I['m back] from the shitter,\nJe reviens [des] chiottes, => I'm back [from the] shitter,\nJe reviens des [chiottes], => I'm back from the [shitter],\n\n[n']y allez [pas] avant deux heures. => [don't] go in there for two hours.\nn'[y] allez pas avant deux heures. => don't go [in there] for two hours.\nn'y [allez] pas avant deux heures. => don't [go] in there for two hours.\nn'y allez pas [avant] deux heures. => don't go in there [for] two hours. # \"avant\" literally means \"before\" but is translated here as \"for\"\nn'y allez pas avant [deux] heures. => don't go in there for [two] hours.\nn'y allez pas avant deux [heures]. => don't go in there for two [hours].\n\n[Une] tante qui s'excuse. => [An] aunt who apologizes.\nUne [tante] qui s'excuse. => An [aunt] who apologizes.\nUne tante [qui] s'excuse. => An aunt [who] apologizes.\nUne tante qui [s'excuse]. => An aunt who [apologizes].\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[Un] frère complice. Et moi. => [A] complicit brother. And me.\nUn [frère] complice. Et moi. => A complicit [brother]. And me.\nUn frère [complice]. Et moi. => A [complicit] brother. And me.\nUn frère complice. [Et] moi. => A complicit brother. [And] me.\nUn frère complice. Et [moi]. => A complicit brother. And [me].\n\n[Comme] d'hab, j'avais mangé trop de pain => [As] usual, I'd eaten too much bread\nComme [d'hab], j'avais mangé trop de pain => As [usual], I'd eaten too much bread # \"d'hab\" is short for \"d'habitude\"\nComme d'hab, [j'avais] mangé trop de pain => [I'd] eaten too much bread # maps the French subject-auxiliary contraction to the English one\nComme d'hab, j'avais [mangé] trop de pain => As usual, I'd [eaten] too much bread\nComme d'hab, j'avais mangé [trop de] pain => As usual, I'd eaten [too much] bread\nComme d'hab, j'avais mangé trop de [pain] => As usual, I'd eaten too much [bread]\n\n[parce que] l'apéro avait duré 2 heures => [because] the pre-dinner drinks lasted 2 hours\nparce que [l']apéro avait duré 2 heures => because [the] pre-dinner drinks lasted 2 hours\nparce que l'[apéro] avait duré 2 heures => because the [pre-dinner drinks] lasted 2 hours\nparce que l'apéro [avait duré] 2 heures => because the pre-dinner drinks [lasted] 2 hours\nparce que l'apéro avait duré [2] heures => because the pre-dinner drinks lasted [2] hours\nparce que l'apéro avait duré 2 [heures] => because the pre-dinner drinks lasted 2 [hours]\n\n[et] 34 minutes. => [and] 34 minutes.\net [34] minutes. => and [34] minutes.\net 34 [minutes]. => and 34 [minutes].\n\n[Et] comme d'hab, ils parlaient politique => [And] as usual, they were talking politics\nEt [comme d'hab], ils parlaient politique => And [as usual], they were talking politics\nEt comme d'hab, [ils] parlaient politique => And as usual, [they] were talking politics\nEt comme d'hab, ils [parlaient] politique => And as usual, they [were talking] politics\nEt comme d'hab, ils parlaient [politique] => And as usual, they were talking [politics]\n\n[parce que] l'apéro avait duré => [because] the pre-dinner drinks lasted\nparce que [l']apéro avait duré => because [the] pre-dinner drinks lasted\nparce que l'[apéro] avait duré => because the [pre-dinner drinks] lasted\nparce que l'apéro [avait duré] => because the pre-dinner drinks [lasted] # lit. \"had lasted\"\n\n[2] bouteilles et 34 verres. => [2] bottles and 34 glasses.\n2 [bouteilles] et 34 verres. => 2 [bottles] and 34 glasses.\n2 bouteilles [et] 34 verres. => 2 bottles [and] 34 glasses.\n2 bouteilles et [34] verres. => 2 bottles and [34] glasses.\n2 bouteilles et 34 [verres]. => 2 bottles and 34 [glasses].\n\n[Tu] ne peux pas dire ça. => [You] can't say that.\nTu [ne peux pas] dire ça. => You [can't] say that.\nTu ne [peux] pas dire ça. => can\nTu ne peux pas [dire] ça. => You can't [say] that.\nTu ne peux pas dire [ça]. => You can't say [that].\n\n[Mon] oncle dit vraiment trop de gros mots. => [My] uncle says way too many swear words.\nMon [oncle] dit vraiment trop de gros mots. => My [uncle] says way too many swear words.\nMon oncle [dit] vraiment trop de gros mots. => My uncle [says] way too many swear words.\nMon oncle dit [vraiment] trop de gros mots. => My uncle says [way] too many swear words.\nMon oncle dit vraiment [trop de] gros mots. => My uncle says way [too many] swear words.\nMon oncle dit vraiment trop de [gros mots]. => My uncle says way too many [swear words]. # gros mots is an idiom for swear words\n\n[Mais] qu'elle aille se faire (gros mot), => [But] she can go fuck herself (swear word),\nMais qu'[elle] aille se faire (gros mot), => But [she] can go fuck herself (swear word),\nMais qu'elle [aille] se faire (gros mot), => But she can [go] fuck herself (swear word),\nMais qu'elle aille [se] faire (gros mot), => But she can go fuck [herself] (swear word),\nMais qu'elle aille se [faire] (gros mot), => But she can go [fuck] herself (swear word),\nMais qu'elle aille se faire ([gros mot]), => But she can go fuck herself ([swear word]), # \"gros mot\" and \"swear word\" are mapped as compound concepts; \"qu'\" and \"can\" are skipped as they don't have direct equivalents in this structure.\n\n[je] te jure, oui (gros mot), => [I] swear, yes (swear word),\nje te [jure], oui (gros mot), => I [swear], yes (swear word),\nje te jure, [oui] (gros mot), => I swear, [yes] (swear word),\nje te jure, oui ([gros mot]), => I swear, yes ([swear word]), # \"te\" is left out as it doesn't have a direct equivalent in the target \"I swear\"\n\n[cette] (gros mot). => [this] (swear word).\ncette ([gros mot]). => this ([swear word]). # \"gros mot\" is the standard idiomatic term for \"swear word\"\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[À] un moment, ma mère a dit : => [At] one point, my mother said:\nÀ [un] moment, ma mère a dit : => At [one] point, my mother said:\nÀ un [moment], ma mère a dit : => At one [point], my mother said:\nÀ un moment, [ma] mère a dit : => At one point, [my] mother said:\nÀ un moment, ma [mère] a dit : => At one point, my [mother] said:\nÀ un moment, ma mère [a dit] : => At one point, my mother [said]: # The passé composé \"a dit\" is best mapped as a unit to the English past tense \"said\"\n\n[Dis]-leur. => [Tell] them.\nDis-[leur]. => Tell [them].\n\n[Quoi] ? Quoi ? => [What]? What?\nQuoi ? [Quoi] ? => What? [What]?\n\n[On] divorce. => [We]'re divorcing. # \"On\" is a common way to say \"We\" in French\nOn [divorce]. => We['re divorcing]. # The French present tense corresponds to the English present continuous here\n\n([Gros mot]) de (gros mot) de (gros mot) => ([Swear word]) of (swear word) of (swear word)\n(Gros mot) [de] (gros mot) de (gros mot) => (Swear word) [of] (swear word) of (swear word)\n(Gros mot) de ([gros mot]) de (gros mot) => (Swear word) of ([swear word]) of (swear word)\n(Gros mot) de (gros mot) [de] (gros mot) => (Swear word) of (swear word) [of] (swear word)\n(Gros mot) de (gros mot) de ([gros mot]) => (Swear word) of (swear word) of ([swear word]) # \"gros mot\" is an idiomatic phrase meaning \"swear word\"\n\n[de] (gros mot) de (gros mot) de (gros mot) => [of] (swear word) of (swear word) of (swear word)\nde ([gros mot]) de (gros mot) de (gros mot) => of ([swear word]) of (swear word) of (swear word)\nde (gros mot) [de] (gros mot) de (gros mot) => of (swear word) [of] (swear word) of (swear word)\nde (gros mot) de ([gros mot]) de (gros mot) => of (swear word) of ([swear word]) of (swear word)\nde (gros mot) de (gros mot) [de] (gros mot) => of (swear word) of (swear word) [of] (swear word)\nde (gros mot) de (gros mot) de ([gros mot]) => of (swear word) of (swear word) of ([swear word])\n\n[de] (gros mot) de (gros mot). => [of] (swear word) of (swear word).\nde [(gros mot)] de (gros mot). => of [(swear word)] of (swear word). # \"gros mot\" is a compound noun meaning \"swear word\"\nde (gros mot) [de] (gros mot). => of (swear word) [of] (swear word).\nde (gros mot) de [(gros mot)]. => of (swear word) of [(swear word)].\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\nJ'ai dit : [Pourquoi] ? => I said: [Why]?\n\n[Mon] père a fait : => [My] father went:\nMon [père] a fait : => My [father] went:\nMon père [a fait] : => My father [went] # \"a fait\" is a colloquial way to say \"said\" or \"went\" in this context\n\n[J']ai fait : => [I] went:\nJ'[ai fait] : => I [went]: # the passé composé \"ai fait\" (literally \"did/made\") translates here to the simple past \"went\"\n\n[Mon] père a fait : => [My] father went:\nMon [père] a fait : => My [father] went:\nMon père [a fait] : => My father [went]: # \"a fait\" maps to \"went\" as the past tense verb phrase\n\n[J']ai fait : => [I] went:\nJ'[ai fait] : => I [went]: # \"ai fait\" is the past tense of \"faire\", translated here as \"went\" to report an action or sound\n\n[Mon] frère a fait : => [My] brother went:\nMon [frère] a fait : => My [brother] went:\nMon frère [a fait] : => My brother [went]: # the passé composé \"a fait\" is used here to report speech/action, similar to \"went\" or \"said\"\n\n[Mon] oncle a fait : => [My] uncle went:\nMon [oncle] a fait : => My [uncle] went:\nMon oncle [a fait] : => My uncle [went] # \"a fait\" (to do/make) is used here to mean \"went\" in the context of making a sound or action\n\n[Ma] tante a fait : => [My] aunt went:\nMa [tante] a fait : => My [aunt] went:\nMa tante [a fait] : => My aunt [went]: # contextual translation where \"a fait\" indicates an action or reaction translated as \"went\"\n\n[Et] ma mère a fait la gueule. => [And] my mother sulked.\nEt [ma] mère a fait la gueule. => And [my] mother sulked.\nEt ma [mère] a fait la gueule. => And my [mother] sulked.\nEt ma mère [a fait la gueule]. => And my [sulked]. # \"Faire la gueule\" is an idiom meaning to pout or sulk\n\n[J']ai redemandé : Pourquoi ? => [I] asked again: Why?\nJ'ai [redemandé] : Pourquoi ? => I [asked again]: Why? # redemandé contains both the action and the repetition\nJ'ai redemandé : [Pourquoi] ? => I asked again: [Why]?\n\n[Ma] mère a dit : Une petite (gros mot). => [My] mother said: A little (swear word).\nMa [mère] a dit : Une petite (gros mot). => My [mother] said: A little (swear word).\nMa mère [a dit] : Une petite (gros mot). => My mother [said]: A little (swear word).\nMa mère a dit : [Une] petite (gros mot). => My mother said: [A] little (swear word).\nMa mère a dit : Une [petite] (gros mot). => My mother said: A [little] (swear word).\nMa mère a dit : Une petite ([gros mot]). => My mother said: A little ([swear word]) # 'gros mot' is a compound noun meaning 'swear word'\n\n[Mon] père a dit : Je l'aime, => [My] father said: I love her,\nMon [père] a dit : Je l'aime, => My [father] said: I love her,\nMon père [a dit] : Je l'aime, => My father [said]: I love her,\nMon père a dit : [Je] l'aime, => My father said: [I] love her,\nMon père a dit : Je [l']aime, => My father said: I love [her]\nMon père a dit : Je l'[aime], => My father said: I [love] her\n\n[elle] me comprend. => [she] understands me.\nelle [me] comprend. => she understands [me].\nelle me [comprend]. => she [understands] me.\n\n[Mon] oncle a dit : Et ben mon (gros mot), => [My] uncle said: Well my (swear word),\nMon [oncle] a dit : Et ben mon (gros mot), => My [uncle] said: Well my (swear word),\nMon oncle [a dit] : Et ben mon (gros mot), => My uncle [said]: Well my (swear word),\nMon oncle a dit : [Et ben] mon (gros mot), => My uncle said: [Well] my (swear word),\nMon oncle a dit : Et ben [mon] (gros mot), => My uncle said: Well [my] (swear word),\nMon oncle a dit : Et ben mon ([gros mot]), => My uncle said: Well my ([swear word]), # \"gros mot\" is a common way to say swear word/bad word\n\n[tu] te fais pas (gros mot). => [you]'re not getting fucked over.\ntu [te fais] pas (gros mot). => you're [getting] fucked over.\ntu te fais [pas] (gros mot). => you're [not] getting fucked over.\ntu te fais pas [(gros mot)]. => you're not getting [fucked over]. # \"(gros mot)\" acts as a placeholder for a term like \"baiser\", which translates here as \"fucked over\"\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[La] raison, c'était Manuela, 22 ans, => [The] reason was Manuela, 22 years old,\nLa [raison], c'était Manuela, 22 ans, => The [reason] was Manuela, 22 years old,\nLa raison, [c'était] Manuela, 22 ans, => The reason [was] Manuela, 22 years old, # while c'était literally means \"it was\", in this context it maps to \"was\"\nLa raison, c'était [Manuela], 22 ans, => The reason was [Manuela], 22 years old,\nLa raison, c'était Manuela, [22] ans, => The reason was Manuela, [22] years old,\nLa raison, c'était Manuela, 22 [ans] => The reason was Manuela, 22 [years old]\n\n[étudiante] en LEA. => foreign languages [student].\nétudiante [en LEA]. => [foreign languages] student. # LEA (Langues Étrangères Appliquées) is a standard field of study in France involving foreign languages.\n\n[C'était] ma mère avec 35 ans de moins, => [It was] my mother minus 35 years, # \"C'était\" is a contraction of \"Ce\" and \"était\", commonly translated as the unit \"It was\"\nC'était [ma] mère avec 35 ans de moins, => It was [my] mother minus 35 years,\nC'était ma [mère] avec 35 ans de moins, => It was my [mother] minus 35 years,\nC'était ma mère [avec] 35 ans de moins, => [minus] # In this specific construction, \"avec\" occupies the same syntactic position as \"minus\"\nC'était ma mère avec [35] ans de moins, => It was my mother minus [35] years,\nC'était ma mère avec 35 [ans] de moins, => It was my mother minus 35 [years],\nC'était ma mère avec 35 ans [de moins], => less, younger # \"de moins\" is a comparative phrase meaning \"less\" or \"fewer\" (or \"younger\" when referring to age)\n\n[15] kilos de moins => minus [15] kilos\n15 [kilos] de moins => minus 15 [kilos]\n15 kilos [de moins] => [minus] 15 kilos # \"de moins\" functions together as \"minus\" or \"less\" in this context\n\n[et] 3 tailles de bonnet en plus. => [and] 3 cup sizes up.\net [3] tailles de bonnet en plus. => and [3] cup sizes up.\net 3 [tailles] de bonnet en plus. => and 3 cup [sizes] up.\net 3 tailles [de bonnet] en plus. => and 3 [cup] sizes up.\net 3 tailles de bonnet [en plus]. => and 3 cup sizes [up]. # \"en plus\" functions as \"up\" or \"additional\" in this context\n\n[Elle] était bonne, bonne et bonne. => [She] was hot, hot and hot.\nElle [était] bonne, bonne et bonne. => She [was] hot, hot and hot.\nElle était [bonne], bonne et bonne. => She was [hot], hot and hot.\nElle était bonne, [bonne] et bonne. => She was hot, [hot] and hot.\nElle était bonne, bonne [et] bonne. => She was hot, hot [and] hot.\nElle était bonne, bonne et [bonne]. => She was hot, hot and [hot].\n\n[Bon], j'y vais. => [Well], I'm off.\nBon, [j']y vais. => Well, [I]'m off.\nBon, j'[y vais]. => Well, I'[m off]. # \"y vais\" acts as a fixed phrase meaning \"going\" or \"leaving\" in this context\n\n[Elle], elle me comprend. => [She], she understands me.\nElle, [elle] me comprend. => She, [she] understands me.\nElle, elle [me] comprend. => She, she understands [me].\nElle, elle me [comprend]. => She, she [understands] me.\n\n[Il] l'avait mal compris. => [He] misunderstood her.\nIl [l']avait mal compris. => He misunderstood [her].\nIl l'[avait] mal compris. => had\nIl l'avait [mal] compris. => badly, wrongly # mal translates to the 'mis-' prefix or 'badly'\nIl l'avait mal [compris]. => understood\nIl l'avait [mal compris]. => [misunderstood] # preferred mapping for the lexical unit\n\n[Depuis], mon père dort chez moi. => [Since then], my father sleeps at my place.\nDepuis, [mon] père dort chez moi. => Since then, [my] father sleeps at my place.\nDepuis, mon [père] dort chez moi. => Since then, my [father] sleeps at my place.\nDepuis, mon père [dort] chez moi. => Since then, my father [sleeps] at my place.\nDepuis, mon père dort [chez moi]. => Since then, my father sleeps [at my place]. # \"chez moi\" is a common construction meaning \"at my place\" or \"at my house\"\n\n[Oh] putain, la vie c'est de la merde. => [Oh] fuck, life is shit.\nOh [putain], la vie c'est de la merde. => Oh [fuck], life is shit.\nOh putain, [la vie] c'est de la merde. => Oh fuck, [life] is shit.\nOh putain, la vie [c'est] de la merde. => Oh fuck, life [is] shit. # \"c'est\" (it is) maps to \"is\" here as English doesn't use the resumptive pronoun\nOh putain, la vie c'est [de la merde] => Oh fuck, life is [shit] # while \"de la\" doesn't have a direct match, it's part of the noun phrase meaning \"shit\"\n\n[Bon], là il y avait des gros mots => [Well], there were swear words there\nBon, [là] il y avait des gros mots => Well, there were swear words [there] # \"là\" refers to the specific location or moment\nBon, là [il y avait] des gros mots => Well, [there were] swear words there # \"il y a\" is the existential \"there is/are\"\nBon, là il y avait des [gros mots] => Well, there were [swear words] there # \"des\" is the plural article and is skipped as English uses a bare plural; \"gros mots\" is an idiom for swear words\n\n[mais] j'étais d'accord. => [but] I agreed.\nmais [j']étais d'accord. => but [I] agreed.\nmais j'[étais d'accord]. => but I [agreed] # \"étais d'accord\" as a whole corresponds to the past tense verb \"agreed\"\n\n[Bref], j'ai fait un repas de famille. => [Anyway], I made a family dinner.\nBref, [j']ai fait un repas de famille. => Anyway, [I] made a family dinner.\nBref, j'[ai fait] un repas de famille. => Anyway, I [made] a family dinner.\nBref, j'ai fait [un] repas de famille. => Anyway, I made [a] family dinner.\nBref, j'ai fait un [repas] de famille. => Anyway, I made a family [dinner].\nBref, j'ai fait un repas [de famille]. => Anyway, I made a [family] dinner. # while \"de\" literally means \"of\", in this context \"de famille\" is the best match for the adjective \"family\"\n\n"
+    "phrases_with_token_translations": "[Bref], c'est un repas de famille classique => [Anyway], it's a classic family dinner\nBref, [c']est un repas de famille classique => Anyway, [it]'s a classic family dinner\nBref, c'[est] un repas de famille classique => Anyway, it['s] a classic family dinner\nBref, c'est [un] repas de famille classique => Anyway, it's [a] classic family dinner\nBref, c'est un [repas] de famille classique => Anyway, it's a classic family [dinner] # although it literally means \"meal\"\nBref, c'est un repas [de famille] classique => Anyway, it's a classic [family] dinner\nBref, c'est un repas de famille [classique] => Anyway, it's a [classic] family dinner\n\n[qui] part en couille. => [that] goes to shit.\nqui [part] en couille. => that [goes] to shit.\nqui part [en couille]. => that goes [to shit]. # vulgar idiom meaning \"to go wrong\" or \"to go south\"\n\n[Et] pour que ça parte en couille, => [And] for it to go to shit,\nEt [pour que] ça parte en couille, => And [for] it to go to shit, # \"pour que\" is the conjunction introducing the clause\nEt pour que [ça] parte en couille, => And for [it] to go to shit,\nEt pour que ça [parte] en couille, => And for it [to go] to shit, # \"parte\" (subjunctive) maps to the \"to go\" infinitive construction\nEt pour que ça parte [en couille], => And for it to go [to shit], # \"en couille\" is the idiomatic equivalent of \"to shit\" in this context\n\n[il faut] une bonne équipe. => [you need] a good team.\nil faut [une] bonne équipe. => you need [a] good team.\nil faut une [bonne] équipe. => you need a [good] team.\nil faut une bonne [équipe]. => you need a good [team].\n\n[Il faut] un père qui n'aime plus sa femme => [You need] a father who doesn't love his wife anymore\nIl faut [un] père qui n'aime plus sa femme => You need [a] father who doesn't love his wife anymore\nIl faut un [père] qui n'aime plus sa femme => You need a [father] who doesn't love his wife anymore\nIl faut un père [qui] n'aime plus sa femme => You need a father [who] doesn't love his wife anymore\nIl faut un père qui [n'aime plus] sa femme => doesn't love ... anymore\nIl faut un père qui n'aime plus [sa] femme => You need a father who doesn't love [his] wife anymore\nIl faut un père qui n'aime plus sa [femme] => You need a father who doesn't love his [wife] anymore\n\n[et] qui fait avec, => [and] deals with it,\net [qui] fait avec, => who\net qui [fait] avec, => and [deals] with it,\net qui fait [avec], => and deals [with it], # In the idiom \"faire avec\", \"avec\" implies \"with it\" or \"with that\"\n\n[une] mère qui n'aime plus son mari => [a] mother who doesn't love her husband anymore\nune [mère] qui n'aime plus son mari => a [mother] who doesn't love her husband anymore\nune mère [qui] n'aime plus son mari => a mother [who] doesn't love her husband anymore\nune mère qui [n'aime] plus son mari => a mother who [doesn't love] her husband anymore\nune mère qui n'aime [plus] son mari => a mother who doesn't love her husband [anymore]\nune mère qui n'aime plus [son] mari => a mother who doesn't love [her] husband anymore\nune mère qui n'aime plus son [mari] => a mother who doesn't love her [husband] anymore\n\n[et] qui fait du ragoût. => [and] makes stew.\net [qui] fait du ragoût. => who, that\net qui [fait] du ragoût. => and [makes] stew.\net qui fait du [ragoût]. => and makes [stew]. # \"du\" is a partitive article (some) and is left unmapped to favor the direct noun translation\n\n[J']ai fait du ragoût => [I] made stew\nJ'[ai fait] du ragoût => I [made] stew\nJ'ai fait du [ragoût] => I made [stew]\n\n[Un] oncle vulgaire. => [A] vulgar uncle.\nUn [oncle] vulgaire. => A vulgar [uncle].\nUn oncle [vulgaire]. => A [vulgar] uncle.\n\n[Je] reviens des chiottes, => [I]'m back from the shitter,\nJe [reviens] des chiottes, => I['m back] from the shitter,\nJe reviens [des] chiottes, => I'm back [from the] shitter,\nJe reviens des [chiottes], => I'm back from the [shitter],\n\n[n']y allez [pas] avant deux heures. => [don't] go in there for two hours.\nn'[y] allez pas avant deux heures. => don't go [in there] for two hours.\nn'y [allez] pas avant deux heures. => don't [go] in there for two hours.\nn'y allez pas [avant] deux heures. => don't go in there [for] two hours. # \"avant\" literally means \"before\" but is translated here as \"for\"\nn'y allez pas avant [deux] heures. => don't go in there for [two] hours.\nn'y allez pas avant deux [heures]. => don't go in there for two [hours].\n\n[Une] tante qui s'excuse. => [An] aunt who apologizes.\nUne [tante] qui s'excuse. => An [aunt] who apologizes.\nUne tante [qui] s'excuse. => An aunt [who] apologizes.\nUne tante qui [s'excuse]. => An aunt who [apologizes].\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[Un] frère complice. Et moi. => [A] complicit brother. And me.\nUn [frère] complice. Et moi. => A complicit [brother]. And me.\nUn frère [complice]. Et moi. => A [complicit] brother. And me.\nUn frère complice. [Et] moi. => A complicit brother. [And] me.\nUn frère complice. Et [moi]. => A complicit brother. And [me].\n\n[Comme] d'hab, j'avais mangé trop de pain => [As] usual, I'd eaten too much bread\nComme [d'hab], j'avais mangé trop de pain => As [usual], I'd eaten too much bread # \"d'hab\" is short for \"d'habitude\"\nComme d'hab, [j'avais] mangé trop de pain => [I'd] eaten too much bread # maps the French subject-auxiliary contraction to the English one\nComme d'hab, j'avais [mangé] trop de pain => As usual, I'd [eaten] too much bread\nComme d'hab, j'avais mangé [trop de] pain => As usual, I'd eaten [too much] bread\nComme d'hab, j'avais mangé trop de [pain] => As usual, I'd eaten too much [bread]\n\n[parce que] l'apéro avait duré 2 heures => [because] the pre-dinner drinks lasted 2 hours\nparce que [l']apéro avait duré 2 heures => because [the] pre-dinner drinks lasted 2 hours\nparce que l'[apéro] avait duré 2 heures => because the [pre-dinner drinks] lasted 2 hours\nparce que l'apéro [avait duré] 2 heures => because the pre-dinner drinks [lasted] 2 hours\nparce que l'apéro avait duré [2] heures => because the pre-dinner drinks lasted [2] hours\nparce que l'apéro avait duré 2 [heures] => because the pre-dinner drinks lasted 2 [hours]\n\n[et] 34 minutes. => [and] 34 minutes.\net [34] minutes. => and [34] minutes.\net 34 [minutes]. => and 34 [minutes].\n\n[Et] comme d'hab, ils parlaient politique => [And] as usual, they were talking politics\nEt [comme d'hab], ils parlaient politique => And [as usual], they were talking politics\nEt comme d'hab, [ils] parlaient politique => And as usual, [they] were talking politics\nEt comme d'hab, ils [parlaient] politique => And as usual, they [were talking] politics\nEt comme d'hab, ils parlaient [politique] => And as usual, they were talking [politics]\n\n[parce que] l'apéro avait duré => [because] the pre-dinner drinks lasted\nparce que [l']apéro avait duré => because [the] pre-dinner drinks lasted\nparce que l'[apéro] avait duré => because the [pre-dinner drinks] lasted\nparce que l'apéro [avait duré] => because the pre-dinner drinks [lasted] # lit. \"had lasted\"\n\n[2] bouteilles et 34 verres. => [2] bottles and 34 glasses.\n2 [bouteilles] et 34 verres. => 2 [bottles] and 34 glasses.\n2 bouteilles [et] 34 verres. => 2 bottles [and] 34 glasses.\n2 bouteilles et [34] verres. => 2 bottles and [34] glasses.\n2 bouteilles et 34 [verres]. => 2 bottles and 34 [glasses].\n\n[Tu] ne peux pas dire ça. => [You] can't say that.\nTu [ne peux pas] dire ça. => You [can't] say that.\nTu ne [peux] pas dire ça. => can\nTu ne peux pas [dire] ça. => You can't [say] that.\nTu ne peux pas dire [ça]. => You can't say [that].\n\n[Mon] oncle dit vraiment trop de gros mots. => [My] uncle says way too many swear words.\nMon [oncle] dit vraiment trop de gros mots. => My [uncle] says way too many swear words.\nMon oncle [dit] vraiment trop de gros mots. => My uncle [says] way too many swear words.\nMon oncle dit [vraiment] trop de gros mots. => My uncle says [way] too many swear words.\nMon oncle dit vraiment [trop de] gros mots. => My uncle says way [too many] swear words.\nMon oncle dit vraiment trop de [gros mots]. => My uncle says way too many [swear words]. # gros mots is an idiom for swear words\n\n[Mais] qu'elle aille se faire (gros mot), => [But] she can go fuck herself (swear word),\nMais qu'[elle] aille se faire (gros mot), => But [she] can go fuck herself (swear word),\nMais qu'elle [aille] se faire (gros mot), => But she can [go] fuck herself (swear word),\nMais qu'elle aille [se] faire (gros mot), => But she can go fuck [herself] (swear word),\nMais qu'elle aille se [faire] (gros mot), => But she can go [fuck] herself (swear word),\nMais qu'elle aille se faire ([gros mot]), => But she can go fuck herself ([swear word]), # \"gros mot\" and \"swear word\" are mapped as compound concepts; \"qu'\" and \"can\" are skipped as they don't have direct equivalents in this structure.\n\n[je] te jure, oui (gros mot), => [I] swear, yes (swear word),\nje te [jure], oui (gros mot), => I [swear], yes (swear word),\nje te jure, [oui] (gros mot), => I swear, [yes] (swear word),\nje te jure, oui ([gros mot]), => I swear, yes ([swear word]), # \"te\" is left out as it doesn't have a direct equivalent in the target \"I swear\"\n\n[cette] (gros mot). => [this] (swear word).\ncette ([gros mot]). => this ([swear word]). # \"gros mot\" is the standard idiomatic term for \"swear word\"\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[À] un moment, ma mère a dit : => [At] one point, my mother said:\nÀ [un] moment, ma mère a dit : => At [one] point, my mother said:\nÀ un [moment], ma mère a dit : => At one [point], my mother said:\nÀ un moment, [ma] mère a dit : => At one point, [my] mother said:\nÀ un moment, ma [mère] a dit : => At one point, my [mother] said:\nÀ un moment, ma mère [a dit] : => At one point, my mother [said]: # The passé composé \"a dit\" is best mapped as a unit to the English past tense \"said\"\n\n[Dis]-leur. => [Tell] them.\nDis-[leur]. => Tell [them].\n\n[Quoi] ? Quoi ? => [What]? What?\nQuoi ? [Quoi] ? => What? [What]?\n\n[On] divorce. => [We]'re divorcing. # \"On\" is a common way to say \"We\" in French\nOn [divorce]. => We['re divorcing]. # The French present tense corresponds to the English present continuous here\n\n([Gros mot]) de (gros mot) de (gros mot) => ([Swear word]) of (swear word) of (swear word)\n(Gros mot) [de] (gros mot) de (gros mot) => (Swear word) [of] (swear word) of (swear word)\n(Gros mot) de ([gros mot]) de (gros mot) => (Swear word) of ([swear word]) of (swear word)\n(Gros mot) de (gros mot) [de] (gros mot) => (Swear word) of (swear word) [of] (swear word)\n(Gros mot) de (gros mot) de ([gros mot]) => (Swear word) of (swear word) of ([swear word]) # \"gros mot\" is an idiomatic phrase meaning \"swear word\"\n\n[de] (gros mot) de (gros mot) de (gros mot) => [of] (swear word) of (swear word) of (swear word)\nde ([gros mot]) de (gros mot) de (gros mot) => of ([swear word]) of (swear word) of (swear word)\nde (gros mot) [de] (gros mot) de (gros mot) => of (swear word) [of] (swear word) of (swear word)\nde (gros mot) de ([gros mot]) de (gros mot) => of (swear word) of ([swear word]) of (swear word)\nde (gros mot) de (gros mot) [de] (gros mot) => of (swear word) of (swear word) [of] (swear word)\nde (gros mot) de (gros mot) de ([gros mot]) => of (swear word) of (swear word) of ([swear word])\n\n[de] (gros mot) de (gros mot). => [of] (swear word) of (swear word).\nde [(gros mot)] de (gros mot). => of [(swear word)] of (swear word). # \"gros mot\" is a compound noun meaning \"swear word\"\nde (gros mot) [de] (gros mot). => of (swear word) [of] (swear word).\nde (gros mot) de [(gros mot)]. => of (swear word) of [(swear word)].\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\nJ'ai dit : [Pourquoi] ? => I said: [Why]?\n\n[Mon] père a fait : => [My] father went:\nMon [père] a fait : => My [father] went:\nMon père [a fait] : => My father [went] # \"a fait\" is a colloquial way to say \"said\" or \"went\" in this context\n\n[J']ai fait : => [I] went:\nJ'[ai fait] : => I [went]: # the passé composé \"ai fait\" (literally \"did/made\") translates here to the simple past \"went\"\n\n[Mon] père a fait : => [My] father went:\nMon [père] a fait : => My [father] went:\nMon père [a fait] : => My father [went]: # \"a fait\" maps to \"went\" as the past tense verb phrase\n\n[J']ai fait : => [I] went:\nJ'[ai fait] : => I [went]: # \"ai fait\" is the past tense of \"faire\", translated here as \"went\" to report an action or sound\n\n[Mon] frère a fait : => [My] brother went:\nMon [frère] a fait : => My [brother] went:\nMon frère [a fait] : => My brother [went]: # the passé composé \"a fait\" is used here to report speech/action, similar to \"went\" or \"said\"\n\n[Mon] oncle a fait : => [My] uncle went:\nMon [oncle] a fait : => My [uncle] went:\nMon oncle [a fait] : => My uncle [went] # \"a fait\" (to do/make) is used here to mean \"went\" in the context of making a sound or action\n\n[Ma] tante a fait : => [My] aunt went:\nMa [tante] a fait : => My [aunt] went:\nMa tante [a fait] : => My aunt [went]: # contextual translation where \"a fait\" indicates an action or reaction translated as \"went\"\n\n[Et] ma mère a fait la gueule. => [And] my mother sulked.\nEt [ma] mère a fait la gueule. => And [my] mother sulked.\nEt ma [mère] a fait la gueule. => And my [mother] sulked.\nEt ma mère [a fait la gueule]. => And my [sulked]. # \"Faire la gueule\" is an idiom meaning to pout or sulk\n\n[J']ai redemandé : Pourquoi ? => [I] asked again: Why?\nJ'ai [redemandé] : Pourquoi ? => I [asked again]: Why? # redemandé contains both the action and the repetition\nJ'ai redemandé : [Pourquoi] ? => I asked again: [Why]?\n\n[Ma] mère a dit : Une petite (gros mot). => [My] mother said: A little (swear word).\nMa [mère] a dit : Une petite (gros mot). => My [mother] said: A little (swear word).\nMa mère [a dit] : Une petite (gros mot). => My mother [said]: A little (swear word).\nMa mère a dit : [Une] petite (gros mot). => My mother said: [A] little (swear word).\nMa mère a dit : Une [petite] (gros mot). => My mother said: A [little] (swear word).\nMa mère a dit : Une petite ([gros mot]). => My mother said: A little ([swear word]) # 'gros mot' is a compound noun meaning 'swear word'\n\n[Mon] père a dit : Je l'aime, => [My] father said: I love her,\nMon [père] a dit : Je l'aime, => My [father] said: I love her,\nMon père [a dit] : Je l'aime, => My father [said]: I love her,\nMon père a dit : [Je] l'aime, => My father said: [I] love her,\nMon père a dit : Je [l']aime, => My father said: I love [her]\nMon père a dit : Je l'[aime], => My father said: I [love] her\n\n[elle] me comprend. => [she] understands me.\nelle [me] comprend. => she understands [me].\nelle me [comprend]. => she [understands] me.\n\n[Mon] oncle a dit : Et ben mon (gros mot), => [My] uncle said: Well my (swear word),\nMon [oncle] a dit : Et ben mon (gros mot), => My [uncle] said: Well my (swear word),\nMon oncle [a dit] : Et ben mon (gros mot), => My uncle [said]: Well my (swear word),\nMon oncle a dit : [Et ben] mon (gros mot), => My uncle said: [Well] my (swear word),\nMon oncle a dit : Et ben [mon] (gros mot), => My uncle said: Well [my] (swear word),\nMon oncle a dit : Et ben mon ([gros mot]), => My uncle said: Well my ([swear word]), # \"gros mot\" is a common way to say swear word/bad word\n\n[tu] te fais pas (gros mot). => [you]'re not getting fucked over.\ntu [te fais] pas (gros mot). => you're [getting] fucked over.\ntu te fais [pas] (gros mot). => you're [not] getting fucked over.\ntu te fais pas [(gros mot)]. => you're not getting [fucked over]. # \"(gros mot)\" acts as a placeholder for a term like \"baiser\", which translates here as \"fucked over\"\n\n[Excusez]-le. => [Excuse] him.\nExcusez-[le]. => Excuse [him].\n\n[La] raison, c'était Manuela, 22 ans, => [The] reason was Manuela, 22 years old,\nLa [raison], c'était Manuela, 22 ans, => The [reason] was Manuela, 22 years old,\nLa raison, [c'était] Manuela, 22 ans, => The reason [was] Manuela, 22 years old, # while c'était literally means \"it was\", in this context it maps to \"was\"\nLa raison, c'était [Manuela], 22 ans, => The reason was [Manuela], 22 years old,\nLa raison, c'était Manuela, [22] ans, => The reason was Manuela, [22] years old,\nLa raison, c'était Manuela, 22 [ans] => The reason was Manuela, 22 [years old]\n\n[étudiante] en LEA. => foreign languages [student].\nétudiante [en LEA]. => [foreign languages] student. # LEA (Langues Étrangères Appliquées) is a standard field of study in France involving foreign languages.\n\n[C'était] ma mère avec 35 ans de moins, => [It was] my mother minus 35 years, # \"C'était\" is a contraction of \"Ce\" and \"était\", commonly translated as the unit \"It was\"\nC'était [ma] mère avec 35 ans de moins, => It was [my] mother minus 35 years,\nC'était ma [mère] avec 35 ans de moins, => It was my [mother] minus 35 years,\nC'était ma mère [avec] 35 ans de moins, => [minus] # In this specific construction, \"avec\" occupies the same syntactic position as \"minus\"\nC'était ma mère avec [35] ans de moins, => It was my mother minus [35] years,\nC'était ma mère avec 35 [ans] de moins, => It was my mother minus 35 [years],\nC'était ma mère avec 35 ans [de moins], => less, younger # \"de moins\" is a comparative phrase meaning \"less\" or \"fewer\" (or \"younger\" when referring to age)\n\n[15] kilos de moins => minus [15] kilos\n15 [kilos] de moins => minus 15 [kilos]\n15 kilos [de moins] => [minus] 15 kilos # \"de moins\" functions together as \"minus\" or \"less\" in this context\n\n[et] 3 tailles de bonnet en plus. => [and] 3 cup sizes up.\net [3] tailles de bonnet en plus. => and [3] cup sizes up.\net 3 [tailles] de bonnet en plus. => and 3 cup [sizes] up.\net 3 tailles [de bonnet] en plus. => and 3 [cup] sizes up.\net 3 tailles de bonnet [en plus]. => and 3 cup sizes [up]. # \"en plus\" functions as \"up\" or \"additional\" in this context\n\n[Elle] était bonne, bonne et bonne. => [She] was hot, hot and hot.\nElle [était] bonne, bonne et bonne. => She [was] hot, hot and hot.\nElle était [bonne], bonne et bonne. => She was [hot], hot and hot.\nElle était bonne, [bonne] et bonne. => She was hot, [hot] and hot.\nElle était bonne, bonne [et] bonne. => She was hot, hot [and] hot.\nElle était bonne, bonne et [bonne]. => She was hot, hot and [hot].\n\n[Bon], j'y vais. => [Well], I'm off.\nBon, [j']y vais. => Well, [I]'m off.\nBon, j'[y vais]. => Well, I'[m off]. # \"y vais\" acts as a fixed phrase meaning \"going\" or \"leaving\" in this context\n\n[Elle], elle me comprend. => [She], she understands me.\nElle, [elle] me comprend. => She, [she] understands me.\nElle, elle [me] comprend. => She, she understands [me].\nElle, elle me [comprend]. => She, she [understands] me.\n\n[Il] l'avait mal compris. => [He] misunderstood her.\nIl [l']avait mal compris. => He misunderstood [her].\nIl l'[avait] mal compris. => had\nIl l'avait [mal] compris. => badly, wrongly # mal translates to the 'mis-' prefix or 'badly'\nIl l'avait mal [compris]. => understood\nIl l'avait [mal compris]. => [misunderstood] # preferred mapping for the lexical unit\n\n[Depuis], mon père dort chez moi. => [Since then], my father sleeps at my place.\nDepuis, [mon] père dort chez moi. => Since then, [my] father sleeps at my place.\nDepuis, mon [père] dort chez moi. => Since then, my [father] sleeps at my place.\nDepuis, mon père [dort] chez moi. => Since then, my father [sleeps] at my place.\nDepuis, mon père dort [chez moi]. => Since then, my father sleeps [at my place]. # \"chez moi\" is a common construction meaning \"at my place\" or \"at my house\"\n\n[Oh] putain, la vie c'est de la merde. => [Oh] fuck, life is shit.\nOh [putain], la vie c'est de la merde. => Oh [fuck], life is shit.\nOh putain, [la vie] c'est de la merde. => Oh fuck, [life] is shit.\nOh putain, la vie [c'est] de la merde. => Oh fuck, life [is] shit. # \"c'est\" (it is) maps to \"is\" here as English doesn't use the resumptive pronoun\nOh putain, la vie c'est [de la merde] => Oh fuck, life is [shit] # while \"de la\" doesn't have a direct match, it's part of the noun phrase meaning \"shit\"\n\n[Bon], là il y avait des gros mots => [Well], there were swear words there\nBon, [là] il y avait des gros mots => Well, there were swear words [there] # \"là\" refers to the specific location or moment\nBon, là [il y avait] des gros mots => Well, [there were] swear words there # \"il y a\" is the existential \"there is/are\"\nBon, là il y avait des [gros mots] => Well, there were [swear words] there # \"des\" is the plural article and is skipped as English uses a bare plural; \"gros mots\" is an idiom for swear words\n\n[mais] j'étais d'accord. => [but] I agreed.\nmais [j']étais d'accord. => but [I] agreed.\nmais j'[étais d'accord]. => but I [agreed] # \"étais d'accord\" as a whole corresponds to the past tense verb \"agreed\"\n\n[Bref], j'ai fait un repas de famille. => [Anyway], I made a family dinner.\nBref, [j']ai fait un repas de famille. => Anyway, [I] made a family dinner.\nBref, j'[ai fait] un repas de famille. => Anyway, I [made] a family dinner.\nBref, j'ai fait [un] repas de famille. => Anyway, I made [a] family dinner.\nBref, j'ai fait un [repas] de famille. => Anyway, I made a family [dinner].\nBref, j'ai fait un repas [de famille]. => Anyway, I made a [family] dinner. # while \"de\" literally means \"of\", in this context \"de famille\" is the best match for the adjective \"family\"\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway, it's a classic family dinner",
+            "words": []
+          },
+          {
+            "text": "that goes to shit.",
+            "words": []
+          },
+          {
+            "text": "And for it to go to shit,",
+            "words": []
+          },
+          {
+            "text": "you need a good team.",
+            "words": []
+          },
+          {
+            "text": "You need a father who doesn't love his wife anymore",
+            "words": []
+          },
+          {
+            "text": "and deals with it,",
+            "words": []
+          },
+          {
+            "text": "a mother who doesn't love her husband anymore",
+            "words": []
+          },
+          {
+            "text": "and makes stew.",
+            "words": []
+          },
+          {
+            "text": "I made stew.",
+            "words": []
+          },
+          {
+            "text": "A vulgar uncle.",
+            "words": []
+          },
+          {
+            "text": "I'm back from the shitter,",
+            "words": []
+          },
+          {
+            "text": "don't go in there for two hours.",
+            "words": []
+          },
+          {
+            "text": "An aunt who apologizes.",
+            "words": []
+          },
+          {
+            "text": "Excuse him.",
+            "words": []
+          },
+          {
+            "text": "A complicit brother. And me.",
+            "words": []
+          },
+          {
+            "text": "As usual, I'd eaten too much bread",
+            "words": []
+          },
+          {
+            "text": "because the pre-dinner drinks lasted 2 hours",
+            "words": []
+          },
+          {
+            "text": "and 34 minutes.",
+            "words": []
+          },
+          {
+            "text": "And as usual, they were talking politics",
+            "words": []
+          },
+          {
+            "text": "because the pre-dinner drinks lasted",
+            "words": []
+          },
+          {
+            "text": "2 bottles and 34 glasses.",
+            "words": []
+          },
+          {
+            "text": "You can't say that.",
+            "words": []
+          },
+          {
+            "text": "My uncle says way too many swear words.",
+            "words": []
+          },
+          {
+            "text": "But she can go fuck herself (swear word),",
+            "words": []
+          },
+          {
+            "text": "I swear, yes (swear word),",
+            "words": []
+          },
+          {
+            "text": "this (swear word).",
+            "words": []
+          },
+          {
+            "text": "Excuse him.",
+            "words": []
+          },
+          {
+            "text": "At one point, my mother said:",
+            "words": []
+          },
+          {
+            "text": "Tell them.",
+            "words": []
+          },
+          {
+            "text": "What? What?",
+            "words": []
+          },
+          {
+            "text": "We're divorcing.",
+            "words": []
+          },
+          {
+            "text": "(Swear word) of (swear word) of (swear word)",
+            "words": []
+          },
+          {
+            "text": "of (swear word) of (swear word) of (swear word)",
+            "words": []
+          },
+          {
+            "text": "of (swear word) of (swear word).",
+            "words": []
+          },
+          {
+            "text": "Excuse him.",
+            "words": []
+          },
+          {
+            "text": "I said: Why?",
+            "words": []
+          },
+          {
+            "text": "My father went:",
+            "words": []
+          },
+          {
+            "text": "I went:",
+            "words": []
+          },
+          {
+            "text": "My father went:",
+            "words": []
+          },
+          {
+            "text": "I went:",
+            "words": []
+          },
+          {
+            "text": "My brother went:",
+            "words": []
+          },
+          {
+            "text": "My uncle went:",
+            "words": []
+          },
+          {
+            "text": "My aunt went:",
+            "words": []
+          },
+          {
+            "text": "And my mother sulked.",
+            "words": []
+          },
+          {
+            "text": "I asked again: Why?",
+            "words": []
+          },
+          {
+            "text": "My mother said: A little (swear word).",
+            "words": []
+          },
+          {
+            "text": "My father said: I love her,",
+            "words": []
+          },
+          {
+            "text": "she understands me.",
+            "words": []
+          },
+          {
+            "text": "My uncle said: Well my (swear word),",
+            "words": []
+          },
+          {
+            "text": "you're not getting fucked over.",
+            "words": []
+          },
+          {
+            "text": "Excuse him.",
+            "words": []
+          },
+          {
+            "text": "The reason was Manuela, 22 years old,",
+            "words": []
+          },
+          {
+            "text": "foreign languages student.",
+            "words": []
+          },
+          {
+            "text": "It was my mother minus 35 years,",
+            "words": []
+          },
+          {
+            "text": "minus 15 kilos",
+            "words": []
+          },
+          {
+            "text": "and 3 cup sizes up.",
+            "words": []
+          },
+          {
+            "text": "She was hot, hot and hot.",
+            "words": []
+          },
+          {
+            "text": "Well, I'm off.",
+            "words": []
+          },
+          {
+            "text": "She, she understands me.",
+            "words": []
+          },
+          {
+            "text": "He misunderstood her.",
+            "words": []
+          },
+          {
+            "text": "Since then, my father sleeps at my place.",
+            "words": []
+          },
+          {
+            "text": "Oh fuck, life is shit.",
+            "words": []
+          },
+          {
+            "text": "Well, there were swear words there",
+            "words": []
+          },
+          {
+            "text": "but I agreed.",
+            "words": []
+          },
+          {
+            "text": "Anyway, I made a family dinner.",
+            "words": []
+          }
+        ],
+        "lessons": "# Un Repas de Famille Désastreux (Part 1)\n00:00.00 Bref, c'est un repas de famille classique\n00:01.30 qui part en couille.\n00:01.80 Et pour que ça parte en couille,\n00:03.00 il faut une bonne équipe.\n00:03.80 Il faut un père qui n'aime plus sa femme\n00:05.20 et qui fait avec,\n00:05.80 une mère qui n'aime plus son mari\n00:07.50 et qui fait du ragoût.\n00:08.80 J'ai fait du ragoût.\n\n# Les Personnages du Drame\n00:09.80 Un oncle vulgaire.\n00:10.80 Je reviens des chiottes,\n00:12.00 n'y allez pas avant deux heures.\n00:12.80 Une tante qui s'excuse.\n00:13.80 Excusez-le.\n00:14.80 Un frère complice. Et moi.\n\n# L'Apéro Interminable\n00:16.80 Comme d'hab, j'avais mangé trop de pain\n00:18.50 parce que l'apéro avait duré 2 heures\n00:19.50 et 34 minutes.\n00:19.80 Et comme d'hab, ils parlaient politique\n00:21.50 parce que l'apéro avait duré\n00:22.50 2 bouteilles et 34 verres.\n\n# Les Propos Vulgaire\n00:23.80 Tu ne peux pas dire ça.\n00:24.80 Mon oncle dit vraiment trop de gros mots.\n00:25.80 Mais qu'elle aille se faire (gros mot),\n00:26.80 je te jure, oui (gros mot),\n00:27.30 cette (gros mot).\n00:27.80 Excusez-le.\n\n# L'Annonce du Divorce\n00:31.80 À un moment, ma mère a dit :\n00:33.80 Dis-leur.\n00:34.80 Quoi ? Quoi ?\n00:35.80 On divorce.\n00:36.80 (Gros mot) de (gros mot) de (gros mot)\n00:39.00 de (gros mot) de (gros mot) de (gros mot)\n00:41.50 de (gros mot) de (gros mot).\n00:44.80 Excusez-le.\n\n# Les Réactions en Chaîne\n00:45.80 J'ai dit : Pourquoi ?\n00:46.80 Mon père a fait :\n00:47.80 J'ai fait :\n00:48.80 Mon père a fait :\n00:51.80 J'ai fait :\n00:52.80 Mon frère a fait :\n00:53.80 Mon oncle a fait :\n00:54.80 Ma tante a fait :\n00:55.80 Et ma mère a fait la gueule.\n\n# La Vérité sur Manuela\n00:58.80 J'ai redemandé : Pourquoi ?\n00:59.80 Ma mère a dit : Une petite (gros mot).\n01:00.80 Mon père a dit : Je l'aime,\n01:01.80 elle me comprend.\n01:02.80 Mon oncle a dit : Et ben mon (gros mot),\n01:04.50 tu te fais pas (gros mot).\n01:05.80 Excusez-le.\n\n# La Conclusion Amère\n01:06.80 La raison, c'était Manuela, 22 ans,\n01:08.50 étudiante en LEA.\n01:09.50 C'était ma mère avec 35 ans de moins,\n01:11.00 15 kilos de moins\n01:12.00 et 3 tailles de bonnet en plus.\n01:13.00 Elle était bonne, bonne et bonne.\n01:13.80 Bon, j'y vais.\n01:15.00 Elle, elle me comprend.\n01:15.80 Il l'avait mal compris.\n01:23.80 Depuis, mon père dort chez moi.\n01:25.00 Oh putain, la vie c'est de la merde.\n01:28.80 Bon, là il y avait des gros mots\n01:30.50 mais j'étais d'accord.\n01:31.80 Bref, j'ai fait un repas de famille."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 16:59:33 UTC",
   "updated_at": "2026-04-02 19:19:51 UTC",

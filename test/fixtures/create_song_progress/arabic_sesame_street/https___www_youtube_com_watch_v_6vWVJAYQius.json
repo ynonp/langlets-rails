@@ -9,391 +9,566 @@
         "id": "phrase_1",
         "text_l1": "جلجل، أنا كتير كتير غضبانة!",
         "timestamp": "00:04.00",
-        "timestamp_end": "00:06.50",
-        "text_l2": "Jaljal, I am very, very angry!"
+        "timestamp_end": "00:06.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "بس إحنا ما بنقدر نعمل إشي،",
         "timestamp": "00:07.50",
-        "timestamp_end": "00:09.50",
-        "text_l2": "But we can't do anything about it,"
+        "timestamp_end": "00:09.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "لأنه عمو كامل اتأخر وما رح نطلع الرحلة اليوم.",
         "timestamp": "00:09.50",
-        "timestamp_end": "00:12.50",
-        "text_l2": "Because Uncle Kamel is late and we won't go on the trip today."
+        "timestamp_end": "00:12.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "ما رح نقدر نطلع الرحلة؟",
         "timestamp": "00:13.00",
-        "timestamp_end": "00:15.00",
-        "text_l2": "We won't be able to go on the trip?"
+        "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "أنا متضايقة، متضايقة، غضبانة!",
         "timestamp": "00:15.00",
-        "timestamp_end": "00:17.00",
-        "text_l2": "I'm upset, upset, angry!"
+        "timestamp_end": "00:17.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "يا تنتن، يا تنتن،",
         "timestamp": "00:17.50",
-        "timestamp_end": "00:19.50",
-        "text_l2": "Oh Tenten, oh Tenten,"
+        "timestamp_end": "00:19.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "عمو كامل ما قدر يجي،",
         "timestamp": "00:19.50",
-        "timestamp_end": "00:21.50",
-        "text_l2": "Uncle Kamel couldn't make it,"
+        "timestamp_end": "00:21.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "مش مشكلة بنطلع مرة تانية.",
         "timestamp": "00:21.50",
-        "timestamp_end": "00:24.50",
-        "text_l2": "It's not a problem, we'll go another time."
+        "timestamp_end": "00:24.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "بس هو وعدنا،",
         "timestamp": "00:25.00",
-        "timestamp_end": "00:27.00",
-        "text_l2": "But he promised us,"
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "وأنا رتبت كل هاي الأغراض للرحلة.",
         "timestamp": "00:27.00",
-        "timestamp_end": "00:29.50",
-        "text_l2": "And I packed all these things for the trip."
+        "timestamp_end": "00:29.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "ما تنسي إنه عمو كامل قال،",
         "timestamp": "00:30.00",
-        "timestamp_end": "00:32.50",
-        "text_l2": "Don't forget that Uncle Kamel said,"
+        "timestamp_end": "00:32.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "إذا ما طلعنا اليوم، بنرتب ليوم تاني.",
         "timestamp": "00:32.50",
-        "timestamp_end": "00:35.50",
-        "text_l2": "If we don't go today, we'll arrange for another day."
+        "timestamp_end": "00:35.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "بس هو حكى كمان إنه اليوم عطلة،",
         "timestamp": "00:36.00",
-        "timestamp_end": "00:38.50",
-        "text_l2": "But he also said today is a holiday,"
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "وهو اللي اقترح إنه نروح اليوم عشان ما بيكون عنده شغل.",
         "timestamp": "00:38.50",
-        "timestamp_end": "00:42.50",
-        "text_l2": "And he's the one who suggested we go today since he doesn't have work."
+        "timestamp_end": "00:42.50"
       },
       {
         "id": "phrase_15",
         "text_l1": "طيب، تنتن، إنتي غضبانة كتير.",
         "timestamp": "00:43.00",
-        "timestamp_end": "00:46.00",
-        "text_l2": "Okay, Tenten, you are very angry."
+        "timestamp_end": "00:46.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "شو رأيك تجربي إنك تاخدي نفس عميق تلات مرات،",
         "timestamp": "00:46.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "How about you try taking a deep breath three times,"
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "بلكي بخف غضبك وبترتاحي؟ جربي.",
         "timestamp": "00:49.00",
-        "timestamp_end": "00:52.50",
-        "text_l2": "Maybe it will lessen your anger and you'll feel better? Try it."
+        "timestamp_end": "00:52.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "جلجل، أنا ما بدي أتنفس، أنا بدي أروح الرحلة!",
         "timestamp": "00:53.00",
-        "timestamp_end": "00:56.50",
-        "text_l2": "Jaljal, I don't want to breathe, I want to go on the trip!"
+        "timestamp_end": "00:56.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "إجتني فكرة تانية.",
         "timestamp": "00:57.00",
-        "timestamp_end": "00:59.00",
-        "text_l2": "I got another idea."
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "شو رأيك نعد من واحد لعشرة؟",
         "timestamp": "00:59.00",
-        "timestamp_end": "01:01.50",
-        "text_l2": "How about we count from one to ten?"
+        "timestamp_end": "01:01.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "أنا دايماً بعمل هيك لما بكون معصب. يلا.",
         "timestamp": "01:01.50",
-        "timestamp_end": "01:04.50",
-        "text_l2": "I always do this when I'm angry. Come on."
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "واحد، اتنين، تلاتة،",
         "timestamp": "01:07.00",
-        "timestamp_end": "01:10.00",
-        "text_l2": "One, two, three,"
+        "timestamp_end": "01:10.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "أربعة، خمسة، ستة،",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:14.00",
-        "text_l2": "Four, five, six,"
+        "timestamp_end": "01:14.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "سبعة، تمانية، تسعة،",
         "timestamp": "01:15.00",
-        "timestamp_end": "01:18.00",
-        "text_l2": "Seven, eight, nine,"
+        "timestamp_end": "01:18.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "عشرة.",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.00",
-        "text_l2": "Ten."
+        "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "إيش رأيك؟ كيف؟",
         "timestamp": "01:22.00",
-        "timestamp_end": "01:25.00",
-        "text_l2": "What do you think? How is it?"
+        "timestamp_end": "01:25.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "ارتحت شوي يا جلجل، معك حق.",
         "timestamp": "01:26.00",
-        "timestamp_end": "01:28.50",
-        "text_l2": "I feel a bit better, Jaljal, you're right."
+        "timestamp_end": "01:28.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "مادام ارتحتي شوي، شو رأيك نغني مع بعض هالأغنية؟",
         "timestamp": "01:29.00",
-        "timestamp_end": "01:32.00",
-        "text_l2": "Since you feel a bit better, how about we sing this song together?"
+        "timestamp_end": "01:32.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "موافقة يا جلجل، يلا نغني مع بعض.",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:35.50",
-        "text_l2": "I agree, Jaljal, let's sing together."
+        "timestamp_end": "01:35.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "غضبٌ غضبٌ امضِ بعيداً",
         "timestamp": "01:38.00",
-        "timestamp_end": "01:41.00",
-        "text_l2": "Anger, anger, go away"
+        "timestamp_end": "01:41.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "أرغبُ في أن أبقى سعيداً",
         "timestamp": "01:41.00",
-        "timestamp_end": "01:44.00",
-        "text_l2": "I want to stay happy"
+        "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "غضبٌ غضبٌ امضِ بعيداً",
         "timestamp": "01:44.00",
-        "timestamp_end": "01:47.00",
-        "text_l2": "Anger, anger, go away"
+        "timestamp_end": "01:47.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "أرغبُ في أن أبقى سعيداً",
         "timestamp": "01:47.00",
-        "timestamp_end": "01:50.00",
-        "text_l2": "I want to stay happy"
+        "timestamp_end": "01:50.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "أغمضُ عينيّ",
         "timestamp": "01:50.00",
-        "timestamp_end": "01:51.50",
-        "text_l2": "I close my eyes"
+        "timestamp_end": "01:51.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "أعدُّ للعشرة",
         "timestamp": "01:52.00",
-        "timestamp_end": "01:54.00",
-        "text_l2": "I count to ten"
+        "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة",
         "timestamp": "01:55.00",
-        "timestamp_end": "02:00.50",
-        "text_l2": "One, two, three, four, five, six, seven, eight, nine, ten"
+        "timestamp_end": "02:00.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "بدأت الفرحة مرة مرة أخرى",
         "timestamp": "02:03.00",
-        "timestamp_end": "02:07.50",
-        "text_l2": "Joy has started once again"
+        "timestamp_end": "02:07.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "غضبٌ غضبٌ امضِ بعيداً",
         "timestamp": "02:08.00",
-        "timestamp_end": "02:11.00",
-        "text_l2": "Anger, anger, go away"
+        "timestamp_end": "02:11.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "أرغبُ في أن أبقى سعيداً",
         "timestamp": "02:11.00",
-        "timestamp_end": "02:14.00",
-        "text_l2": "I want to stay happy"
+        "timestamp_end": "02:14.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "غضبٌ غضبٌ امضِ بعيداً",
         "timestamp": "02:14.00",
-        "timestamp_end": "02:17.00",
-        "text_l2": "Anger, anger, go away"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "أرغبُ في أن أبقى سعيداً",
         "timestamp": "02:17.00",
-        "timestamp_end": "02:19.00",
-        "text_l2": "I want to stay happy"
+        "timestamp_end": "02:19.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "أغمضُ عينيّ",
         "timestamp": "02:19.00",
-        "timestamp_end": "02:21.00",
-        "text_l2": "I close my eyes"
+        "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "آخذُ نفساً عميقاً",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:23.50",
-        "text_l2": "I take a deep breath"
+        "timestamp_end": "02:23.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "أغمضُ عينيّ",
         "timestamp": "02:24.00",
-        "timestamp_end": "02:26.00",
-        "text_l2": "I close my eyes"
+        "timestamp_end": "02:26.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "أعدُّ للعشرة",
         "timestamp": "02:26.00",
-        "timestamp_end": "02:28.00",
-        "text_l2": "I count to ten"
+        "timestamp_end": "02:28.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة",
         "timestamp": "02:29.00",
-        "timestamp_end": "02:35.50",
-        "text_l2": "One, two, three, four, five, six, seven, eight, nine, ten"
+        "timestamp_end": "02:35.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "شكراً إلك.",
         "timestamp": "02:43.00",
-        "timestamp_end": "02:44.00",
-        "text_l2": "Thank you."
+        "timestamp_end": "02:44.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "جلجل، عشان أنا هلا صرت سعيدة،",
         "timestamp": "02:45.00",
-        "timestamp_end": "02:48.00",
-        "text_l2": "Jaljal, since I am happy now,"
+        "timestamp_end": "02:48.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "شو رأيك نتخيل إنه إحنا رايحين عالرحلة، ونطلع عالحديقة هلا؟",
         "timestamp": "02:48.00",
-        "timestamp_end": "02:52.00",
-        "text_l2": "How about we imagine we are going on the trip, and go to the park now?"
+        "timestamp_end": "02:52.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "أنا موافق.",
         "timestamp": "02:53.00",
-        "timestamp_end": "02:53.50",
-        "text_l2": "I agree."
+        "timestamp_end": "02:53.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "جلجل، شكراً إلك.",
         "timestamp": "02:55.00",
-        "timestamp_end": "02:57.00",
-        "text_l2": "Jaljal, thank you."
+        "timestamp_end": "02:57.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "إنت أفضل صديق، لأني أنا هلا بطلت غضبانة.",
         "timestamp": "02:57.00",
-        "timestamp_end": "03:01.00",
-        "text_l2": "You're the best friend, because I'm not angry now."
+        "timestamp_end": "03:01.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "وأنا كمان كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب.",
         "timestamp": "03:02.00",
-        "timestamp_end": "03:06.00",
-        "text_l2": "And I'm also very happy because we aren't angry anymore and we overcame the anger."
+        "timestamp_end": "03:06.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "أنا هلا مبسوطة.",
         "timestamp": "03:07.00",
-        "timestamp_end": "03:09.00",
-        "text_l2": "I'm happy now."
+        "timestamp_end": "03:09.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "يلا خلينا نطلع؟ يلا نروح الرحلة.",
         "timestamp": "03:10.00",
-        "timestamp_end": "03:12.00",
-        "text_l2": "Let's go out? Let's go on the trip."
+        "timestamp_end": "03:12.00"
       }
     ],
     "phrases_with_token_translations": "[جلجل]، أنا كتير كتير غضبانة! => [Jaljal], I am very, very angry!\nجلجل، [أنا] كتير كتير غضبانة! => Jaljal, [I am] very, very angry!\nجلجل، أنا [كتير] كتير غضبانة! => Jaljal, I am [very], very angry!\nجلجل، أنا كتير [كتير] غضبانة! => Jaljal, I am very, [very] angry!\nجلجل، أنا كتير كتير [غضبانة]! => Jaljal, I am very, very [angry]!\n\n[بس] إحنا ما بنقدر نعمل إشي، => [But] we can't do anything about it,\nبس [إحنا] ما بنقدر نعمل إشي، => But [we] can't do anything about it,\nبس إحنا [ما بنقدر] نعمل إشي، => But we [can't] do anything about it,\nبس إحنا ما بنقدر [نعمل] إشي، => But we can't [do] anything about it,\nبس إحنا ما بنقدر نعمل [إشي]، => But we can't [anything] about it,\n\n[لأنه] عمو كامل اتأخر وما رح نطلع الرحلة اليوم. => [Because] Uncle Kamel is late and we won't go on the trip today.\nلأنه [عمو] كامل اتأخر وما رح نطلع الرحلة اليوم. => Because [Uncle] Kamel is late and we won't go on the trip today.\nلأنه عمو [كامل] اتأخر وما رح نطلع الرحلة اليوم. => Because Uncle [Kamel] is late and we won't go on the trip today.\nلأنه عمو كامل [اتأخر] وما رح نطلع الرحلة اليوم. => Because Uncle Kamel [is late] and we won't go on the trip today.\nلأنه عمو كامل اتأخر [و]ما رح نطلع الرحلة اليوم. => Because Uncle Kamel is late [and] we won't go on the trip today.\nلأنه عمو كامل اتأخر و[ما رح نطلع] الرحلة اليوم. => Because Uncle Kamel is late and [we won't go] on the trip today.\nلأنه عمو كامل اتأخر وما رح نطلع [الرحلة] اليوم. => Because Uncle Kamel is late and we won't go [on the trip] today.\nلأنه عمو كامل اتأخر وما رح نطلع الرحلة [اليوم]. => Because Uncle Kamel is late and we won't go on the trip [today]\n\n[ما رح] نقدر نطلع الرحلة؟ => We [won't] be able to go on the trip?\nما رح [نقدر] نطلع الرحلة؟ => [We] won't [be able] to go on the trip?\nما رح نقدر [نطلع] الرحلة؟ => We won't be able [to go on] the trip?\nما رح نقدر نطلع [الرحلة]؟ => We won't be able to go on [the trip]?\n\n[أنا] متضايقة، متضايقة، غضبانة! => [I'm] upset, upset, angry!\nأنا [متضايقة]، متضايقة، غضبانة! => I'm [upset], upset, angry!\nأنا متضايقة، [متضايقة]، غضبانة! => I'm upset, [upset], angry!\nأنا متضايقة، متضايقة، [غضبانة]! => I'm upset, upset, [angry]!\n\n[يا] تنتن، يا تنتن، => [Oh] Tenten, oh Tenten,\nيا [تنتن]، يا تنتن، => Oh [Tenten], oh Tenten,\nيا تنتن، [يا] تنتن، => Oh Tenten, [oh] Tenten,\nيا تنتن، يا [تنتن]، => Oh Tenten, oh [Tenten],\n\n[عمو] كامل ما قدر يجي، => [Uncle] Kamel couldn't make it,\nعمو [كامل] ما قدر يجي، => Uncle [Kamel] couldn't make it,\nعمو كامل [ما قدر] يجي، => Uncle Kamel [couldn't] make it,\nعمو كامل ما قدر [يجي]، => Uncle Kamel couldn't [make it], # maps the verb 'come' to the idiom 'make it' used in the translation\n\n[مش مشكلة] بنطلع مرة تانية. => [It's not a problem], we'll go another time.\nمش مشكلة [بنطلع] مرة تانية. => It's not a problem, [we'll go] another time.\nمش مشكلة بنطلع [مرة] تانية. => It's not a problem, we'll go another [time].\nمش مشكلة بنطلع مرة [تانية]. => It's not a problem, we'll go [another] time.\n\n[بس] هو وعدنا، => [But] he promised us,\nبس [هو] وعدنا، => But [he] promised us,\nبس هو [وعدنا]، => But he [promised us],\n\n[و]أنا رتبت كل هاي الأغراض للرحلة => [And] I packed all these things for the trip\nو[أنا] رتبت كل هاي الأغراض للرحلة => And [I] packed all these things for the trip\nوأنا [رتبت] كل هاي الأغراض للرحلة => And I [packed] all these things for the trip\nوأنا رتبت [كل] هاي الأغراض للرحلة => And I packed [all] these things for the trip\nوأنا رتبت كل [هاي] الأغراض للرحلة => And I packed all [these] things for the trip\nوأنا رتبت كل هاي [الأغراض] للرحلة => And I packed all these [things] for the trip\nوأنا رتبت كل هاي الأغراض [للرحلة] => And I packed all these things [for the trip]\n\n[ما تنسي] إنه عمو كامل قال، => [Don't forget] that Uncle Kamel said,\nما تنسي [إنه] عمو كامل قال، => Don't forget [that] Uncle Kamel said,\nما تنسي إنه [عمو] كامل قال، => Don't forget that [Uncle] Kamel said,\nما تنسي إنه عمو [كامل] قال، => Don't forget that Uncle [Kamel] said,\nما تنسي إنه عمو كامل [قال]، => Don't forget that Uncle Kamel [said],\n\n[إذا] ما طلعنا اليوم، بنرتب ليوم تاني. => [If] we don't go today, we'll arrange for another day.\nإذا [ما] طلعنا اليوم، بنرتب ليوم تاني. => If we [don't] go today, we'll arrange for another day.\nإذا ما [طلعنا] اليوم، بنرتب ليوم تاني. => If we don't [go] today, we'll arrange for another day.\nإذا ما طلعنا [اليوم]، بنرتب ليوم تاني. => If we don't go [today], we'll arrange for another day.\nإذا ما طلعنا اليوم، [بنرتب] ليوم تاني. => If we don't go today, [we'll arrange] for another day.\nإذا ما طلعنا اليوم، بنرتب [ليوم] تاني. => for a day\nإذا ما طلعنا اليوم، بنرتب ليوم [تاني]. => If we don't go today, we'll arrange for [another] day.\n\n[بس] هو حكى كمان إنه اليوم عطلة، => [But] he also said today is a holiday,\nبس [هو] حكى كمان إنه اليوم عطلة، => But [he] also said today is a holiday,\nبس هو [حكى] كمان إنه اليوم عطلة، => But he also [said] today is a holiday,\nبس هو حكى [كمان] إنه اليوم عطلة، => But he [also] said today is a holiday,\nبس هو حكى كمان [إنه] اليوم عطلة، => that\nبس هو حكى كمان إنه [اليوم] عطلة، => But he also said [today] is a holiday,\nبس هو حكى كمان إنه اليوم [عطلة]، => But he also said today is [a holiday],\n\n[وهو] اللي اقترح إنه نروح اليوم عشان ما بيكون عنده شغل. => [And he's] the one who suggested we go today since he doesn't have work.\nوهو [اللي] اقترح إنه نروح اليوم عشان ما بيكون عنده شغل. => And he's [the one who] suggested we go today since he doesn't have work.\nوهو اللي [اقترح] إنه نروح اليوم عشان ما بيكون عنده شغل. => And he's the one who [suggested] we go today since he doesn't have work.\nوهو اللي اقترح [إنه نروح] اليوم عشان ما بيكون عنده شغل. => And he's the one who suggested [we go] today since he doesn't have work.\nوهو اللي اقترح إنه نروح [اليوم] عشان ما بيكون عنده شغل. => And he's the one who suggested we go [today] since he doesn't have work.\nوهو اللي اقترح إنه نروح اليوم [عشان] ما بيكون عنده شغل. => And he's the one who suggested we go today [since] he doesn't have work.\nوهو اللي اقترح إنه نروح اليوم عشان [ما بيكون عنده] شغل. => And he's the one who suggested we go today since [he doesn't have] work.\nوهو اللي اقترح إنه نروح اليوم عشان ما بيكون عنده [شغل]. => And he's the one who suggested we go today since he doesn't have [work].\n\n[طيب]، تنتن، إنتي غضبانة كتير. => [Okay], Tenten, you are very angry.\nطيب، [تنتن]، إنتي غضبانة كتير. => Okay, [Tenten], you are very angry.\nطيب، تنتن، [إنتي] غضبانة كتير. => Okay, Tenten, [you are] very angry.\nطيب، تنتن، إنتي [غضبانة] كتير. => Okay, Tenten, you are very [angry]\nطيب، تنتن، إنتي غضبانة [كتير]. => Okay, Tenten, you are [very] angry  # 'kteer' means very/much and modifies the adjective 'ghadbana'\n\n[شو رأيك] تجربي إنك تاخدي نفس عميق تلات مرات، => [How about] you try taking a deep breath three times,\nشو رأيك [تجربي] إنك تاخدي نفس عميق تلات مرات، => How about [you try] taking a deep breath three times,\nشو رأيك تجربي [إنك تاخدي] نفس عميق تلات مرات، => How about you try [taking] a deep breath three times,\nشو رأيك تجربي إنك تاخدي [نفس] عميق تلات مرات، => How about you try taking a [breath] three times,\nشو رأيك تجربي إنك تاخدي نفس [عميق] تلات مرات، => How about you try taking a [deep] breath three times,\nشو رأيك تجربي إنك تاخدي نفس عميق [تلات] مرات، => How about you try taking a deep breath [three] times,\nشو رأيك تجربي إنك تاخدي نفس عميق تلات [مرات]، => How about you try taking a deep breath three [times],\n\n[بلكي] بخف غضبك وبترتاحي؟ جربي. => [Maybe] it will lessen your anger and you'll feel better? Try it.\nبلكي [بخف] غضبك وبترتاحي؟ جربي. => Maybe [it will lessen] your anger and you'll feel better? Try it.\nبلكي بخف [غضبك] وبترتاحي؟ جربي. => Maybe it will lessen [your anger] and you'll feel better? Try it.\nبلكي بخف غضبك [وبترتاحي]؟ جربي. => Maybe it will lessen your anger [and you'll feel better]? Try it.\nبلكي بخف غضبك وبترتاحي؟ [جربي] => Maybe it will lessen your anger and you'll feel better? [Try it]\n\n[جلجل]، أنا ما بدي أتنفس، أنا بدي أروح الرحلة! => [Jaljal], I don't want to breathe, I want to go on the trip!\nجلجل، [أنا] ما بدي أتنفس، أنا بدي أروح الرحلة! => Jaljal, [I] don't want to breathe, I want to go on the trip!\nجلجل، أنا [ما بدي] أتنفس، أنا بدي أروح الرحلة! => Jaljal, I [don't want] to breathe, I want to go on the trip!\nجلجل، أنا ما بدي [أتنفس]، أنا بدي أروح الرحلة! => Jaljal, I don't want [to breathe], I want to go on the trip!\nجلجل، أنا ما بدي أتنفس، [أنا] بدي أروح الرحلة! => Jaljal, I don't want to breathe, [I] want to go on the trip!\nجلجل، أنا ما بدي أتنفس، أنا [بدي] أروح الرحلة! => Jaljal, I don't want to breathe, I [want] to go on the trip!\nجلجل، أنا ما بدي أتنفس، أنا بدي [أروح] الرحلة! => Jaljal, I don't want to breathe, I want [to go] on the trip!\nجلجل، أنا ما بدي أتنفس، أنا بدي أروح [الرحلة]! => Jaljal, I don't want to breathe, I want to go on [the trip]!\n\n[إجتني] فكرة تانية. => [I got] another idea.\nإجتني [فكرة] تانية. => I got another [idea].\nإجتني فكرة [تانية]. => I got [another] idea.\n\n[شو رأيك] نعد من واحد لعشرة؟ => [How about] we count from one to ten?\nشو رأيك [نعد] من واحد لعشرة؟ => How about [we count] from one to ten?\nشو رأيك نعد [من] واحد لعشرة؟ => How about we count [from] one to ten?\nشو رأيك نعد من [واحد] لعشرة؟ => How about we count from [one] to ten?\nشو رأيك نعد من واحد [لعشرة]؟ => How about we count from one [to ten]\n\n[أنا] دايماً بعمل هيك لما بكون معصب. يلا. => [I] always do this when I'm angry. Come on.\nأنا [دايماً] بعمل هيك لما بكون معصب. يلا. => I [always] do this when I'm angry. Come on.\nأنا دايماً [بعمل] هيك لما بكون معصب. يلا. => I always [do] this when I'm angry. Come on.\nأنا دايماً بعمل [هيك] لما بكون معصب. يلا. => I always do [this] when I'm angry. Come on.\nأنا دايماً بعمل هيك [لما] بكون معصب. يلا. => I always do this [when] I'm angry. Come on.\nأنا دايماً بعمل هيك لما [بكون] معصب. يلا. => I always do this when [I'm] angry. Come on.\nأنا دايماً بعمل هيك لما بكون [معصب]. يلا. => I always do this when I'm [angry]. Come on.\nأنا دايماً بعمل هيك لما بكون معصب. [يلا]. => I always do this when I'm angry. [Come on].\n\n[واحد]، اتنين، تلاتة، => [One], two, three,\nواحد، [اتنين]، تلاتة، => One, [two], three,\nواحد، اتنين، [تلاتة]، => One, two, [three],\n\n[أربعة]، خمسة، ستة، => [Four], five, six,\nأربعة، [خمسة]، ستة، => Four, [five], six,\nأربعة، خمسة، [ستة]، => Four, five, [six],\n\n[سبعة]، تمانية، تسعة، => [Seven], eight, nine,\nسبعة، [تمانية]، تسعة، => Seven, [eight], nine,\nسبعة، تمانية، [تسعة]، => Seven, eight, [nine],\n\n[عشرة]. => [Ten].\n\n[إيش] رأيك؟ كيف؟ => [What] do you think? How is it?\nإيش [رأيك]؟ كيف؟ => your opinion # literal translation of \"رأي\" (opinion) and \"ك\" (your)\nإيش رأيك؟ [كيف]؟ => What do you think? [How] is it?\n\nارتحت [شوي] يا جلجل، معك حق. => I feel [a bit] better, Jaljal, you're right.\nارتحت شوي يا [جلجل]، معك حق. => I feel a bit better, [Jaljal], you're right.\nارتحت شوي يا جلجل، [معك حق] => I feel a bit better, Jaljal, [you're right]\n\n[مادام] ارتحتي شوي، شو رأيك نغني مع بعض هالأغنية؟ => [Since] you feel a bit better, how about we sing this song together?\nمادام [ارتحتي] شوي، شو رأيك نغني مع بعض هالأغنية؟ => you feel better\nمادام ارتحتي [شوي]، شو رأيك نغني مع بعض هالأغنية؟ => Since you feel [a bit] better, how about we sing this song together?\nمادام ارتحتي شوي، [شو رأيك] نغني مع بعض هالأغنية؟ => Since you feel a bit better, [how about] we sing this song together?\nمادام ارتحتي شوي، شو رأيك [نغني] مع بعض هالأغنية؟ => Since you feel a bit better, how about [we sing] this song together?\nمادام ارتحتي شوي، شو رأيك نغني [مع بعض] هالأغنية؟ => Since you feel a bit better, how about we sing this song [together]?\nمادام ارتحتي شوي، شو رأيك نغني مع بعض [هالأغنية]؟ => Since you feel a bit better, how about we sing [this song] together?\n\n[موافقة] يا جلجل، يلا نغني مع بعض. => [I agree], Jaljal, let's sing together.\nموافقة يا [جلجل]، يلا نغني مع بعض. => I agree, [Jaljal], let's sing together.\nموافقة يا جلجل، [يلا] نغني مع بعض. => I agree, Jaljal, [let's] sing together.\nموافقة يا جلجل، يلا [نغني] مع بعض. => I agree, Jaljal, let's [sing] together.\nموافقة يا جلجل، يلا نغني [مع بعض] => I agree, Jaljal, let's sing [together]\n\n[غضبٌ] غضبٌ امضِ بعيداً => [Anger], anger, go away\nغضبٌ [غضبٌ] امضِ بعيداً => Anger, [anger], go away\nغضبٌ غضبٌ [امضِ] بعيداً => Anger, anger, [go] away\nغضبٌ غضبٌ امضِ [بعيداً] => Anger, anger, go [away]\n\n[أرغبُ في] أن أبقى سعيداً => [I want] to stay happy\nأرغبُ في [أن] أبقى سعيداً => I want [to] stay happy\nأرغبُ في أن [أبقى] سعيداً => I want to [stay] happy\nأرغبُ في أن أبقى [سعيداً] => I want to stay [happy]\n\n[غضبٌ] غضبٌ امضِ بعيداً => [Anger], anger, go away\nغضبٌ [غضبٌ] امضِ بعيداً => Anger, [anger], go away\nغضبٌ غضبٌ [امضِ] بعيداً => Anger, anger, [go] away\nغضبٌ غضبٌ امضِ [بعيداً] => Anger, anger, go [away]\n\n[أرغبُ في] أن أبقى سعيداً => [I want] to stay happy\nأرغبُ في [أن] أبقى سعيداً => I want [to] stay happy\nأرغبُ في أن [أبقى] سعيداً => I want to [stay] happy\nأرغبُ في أن أبقى [سعيداً] => I want to stay [happy]\n\n[أغمضُ] عينيّ => [I close] my eyes\nأغمضُ [عينيّ] => I close [my eyes]\n\n[أعدُّ] للعشرة => [I count] to ten\nأعدُّ [للعشرة] => I count [to ten]\n\n[واحد]، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => [One], two, three, four, five, six, seven, eight, nine, ten\nواحد، [اتنين]، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, [two], three, four, five, six, seven, eight, nine, ten\nواحد، اتنين، [تلاتة]، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, two, [three], four, five, six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، [أربعة]، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, two, three, [four], five, six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، [خمسة]، ستة، سبعة، تمانية، تسعة، عشرة => One, two, three, four, [five], six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، [ستة]، سبعة، تمانية، تسعة، عشرة => One, two, three, four, five, [six], seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، [سبعة]، تمانية، تسعة، عشرة => One, two, three, four, five, six, [seven], eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، [تمانية]، تسعة، عشرة => One, two, three, four, five, six, seven, [eight], nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، [تسعة]، عشرة => One, two, three, four, five, six, seven, eight, [nine], ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، [عشرة] => One, two, three, four, five, six, seven, eight, nine, [ten]\n\n[بدأت] الفرحة مرة مرة أخرى => Joy [has started] once again\nبدأت [الفرحة] مرة مرة أخرى => [Joy] has started once again\nبدأت الفرحة [مرة] مرة أخرى => Joy has started [once] again\nبدأت الفرحة مرة [مرة أخرى] => Joy has started once [again]\n\n[غضبٌ] غضبٌ امضِ بعيداً => [Anger], anger, go away\nغضبٌ [غضبٌ] امضِ بعيداً => Anger, [anger], go away\nغضبٌ غضبٌ [امضِ] بعيداً => Anger, anger, [go] away\nغضبٌ غضبٌ امضِ [بعيداً] => Anger, anger, go [away]\n\n[أرغبُ في] أن أبقى سعيداً => [I want] to stay happy\nأرغبُ في [أن] أبقى سعيداً => I want [to] stay happy\nأرغبُ في أن [أبقى] سعيداً => I want to [stay] happy\nأرغبُ في أن أبقى [سعيداً] => I want to stay [happy]\n\n[غضبٌ] غضبٌ امضِ بعيداً => [Anger], anger, go away\nغضبٌ [غضبٌ] امضِ بعيداً => Anger, [anger], go away\nغضبٌ غضبٌ [امضِ] بعيداً => Anger, anger, [go] away\nغضبٌ غضبٌ امضِ [بعيداً] => Anger, anger, go [away]\n\n[أرغبُ في أن] أبقى سعيداً => [I want to] stay happy\nأرغبُ في أن [أبقى] سعيداً => I want to [stay] happy\nأرغبُ في أن أبقى [سعيداً] => I want to stay [happy]\n\n[أغمضُ] عينيّ => [I close] my eyes\nأغمضُ [عينيّ] => [my eyes]\n\n[آخذُ] نفساً عميقاً => [I take] a deep breath\nآخذُ [نفساً] عميقاً => a breath\nآخذُ نفساً [عميقاً] => I take a [deep] breath\n\n[أغمضُ] عينيّ => [I close] my eyes\nأغمضُ [عينيّ] => I close [my eyes]\n\n[أعدُّ] للعشرة => [I count] to ten\nأعدُّ [للعشرة] => I count [to ten] # 'to ten' is the translation of the prepositional phrase 'للـ' (to) + 'عشرة' (ten)\n\n[واحد]، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => [One], two, three, four, five, six, seven, eight, nine, ten\nواحد، [اتنين]، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, [two], three, four, five, six, seven, eight, nine, ten\nواحد، اتنين، [تلاتة]، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, two, [three], four, five, six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، [أربعة]، خمسة، ستة، سبعة، تمانية، تسعة، عشرة => One, two, three, [four], five, six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، [خمسة]، ستة، سبعة، تمانية، تسعة، عشرة => One, two, three, four, [five], six, seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، [ستة]، سبعة، تمانية، تسعة، عشرة => One, two, three, four, five, [six], seven, eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، [سبعة]، تمانية، تسعة، عشرة => One, two, three, four, five, six, [seven], eight, nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، [تمانية]، تسعة، عشرة => One, two, three, four, five, six, seven, [eight], nine, ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، [تسعة]، عشرة => One, two, three, four, five, six, seven, eight, [nine], ten\nواحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، [عشرة] => One, two, three, four, five, six, seven, eight, nine, [ten]\n\n[شكراً] إلك. => [Thank] you.\nشكراً [إلك]. => Thank [you].\n\n[جلجل]، عشان أنا هلا صرت سعيدة، => [Jaljal], since I am happy now,\nجلجل، [عشان] أنا هلا صرت سعيدة، => Jaljal, [since] I am happy now,\nجلجل، عشان [أنا] هلا صرت سعيدة، => Jaljal, since [I] am happy now,\nجلجل، عشان أنا [هلا] صرت سعيدة، => Jaljal, since I am happy [now],\nجلجل، عشان أنا هلا [صرت] سعيدة، => Jaljal, since I [am] happy now,\nجلجل، عشان أنا هلا صرت [سعيدة]، => Jaljal, since I am [happy] now,\n\n[شو رأيك] نتخيل إنه إحنا رايحين عالرحلة، ونطلع عالحديقة هلا؟ => [How about] we imagine we are going on the trip, and go to the park now?\nشو رأيك [نتخيل] إنه إحنا رايحين عالرحلة، ونطلع عالحديقة هلا؟ => How about [we imagine] we are going on the trip, and go to the park now?\nشو رأيك نتخيل إنه [إحنا] رايحين عالرحلة، ونطلع عالحديقة هلا؟ => How about we imagine [we] are going on the trip, and go to the park now?\nشو رأيك نتخيل إنه إحنا [رايحين] عالرحلة، ونطلع عالحديقة هلا؟ => How about we imagine we [are going] on the trip, and go to the park now?\nشو رأيك نتخيل إنه إحنا رايحين [عالرحلة]، ونطلع عالحديقة هلا؟ => How about we imagine we are going [on the trip], and go to the park now?\nشو رأيك نتخيل إنه إحنا رايحين عالرحلة، [ونطلع] عالحديقة هلا؟ => How about we imagine we are going on the trip, [and go] to the park now?\nشو رأيك نتخيل إنه إحنا رايحين عالرحلة، ونطلع [عالحديقة] هلا؟ => How about we imagine we are going on the trip, and go [to the park] now?\nشو رأيك نتخيل إنه إحنا رايحين عالرحلة، ونطلع عالحديقة [هلا]؟ => How about we imagine we are going on the trip, and go to the park [now]?\n\n[أنا] موافق => [I] agree\nأنا [موافق] => I [agree]\n\n[جلجل]، شكراً إلك. => [Jaljal], thank you.\nجلجل، [شكراً] إلك. => Jaljal, [thank] you.\nجلجل، شكراً [إلك]. => Jaljal, thank [you].\n\n[إنت] أفضل صديق، لأني أنا هلا بطلت غضبانة. => [You're] the best friend, because I'm not angry now.\nإنت [أفضل] صديق، لأني أنا هلا بطلت غضبانة. => You're [the best] friend, because I'm not angry now.\nإنت أفضل [صديق]، لأني أنا هلا بطلت غضبانة. => You're the best [friend], because I'm not angry now.\nإنت أفضل صديق، [لأني أنا] هلا بطلت غضبانة. => You're the best friend, [because I'm] not angry now.\nإنت أفضل صديق، لأني أنا [هلا] بطلت غضبانة. => You're the best friend, because I'm not angry [now].\nإنت أفضل صديق، لأني أنا هلا [بطلت] غضبانة. => no longer, not anymore\nإنت أفضل صديق، لأني أنا هلا بطلت [غضبانة]. => You're the best friend, because I'm not [angry] now.\n\n[وأنا] كمان كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب. => [And I'm] also very happy because we aren't angry anymore and we overcame the anger.\nوأنا [كمان] كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب. => And I'm [also] very happy because we aren't angry anymore and we overcame the anger.\nوأنا كمان [كتير] مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب. => And I'm also [very] happy because we aren't angry anymore and we overcame the anger.\nوأنا كمان كتير [مبسوط] لأنه بطلنا غضبانين وتغلبنا على الغضب. => And I'm also very [happy] because we aren't angry anymore and we overcame the anger.\nوأنا كمان كتير مبسوط [لأنه] بطلنا غضبانين وتغلبنا على الغضب. => And I'm also very happy [because] we aren't angry anymore and we overcame the anger.\nوأنا كمان كتير مبسوط لأنه [بطلنا] غضبانين وتغلبنا على الغضب. => we aren't anymore, we stopped being\nوأنا كمان كتير مبسوط لأنه بطلنا [غضبانين] وتغلبنا على الغضب. => And I'm also very happy because we aren't [angry] anymore and we overcame the anger.\nوأنا كمان كتير مبسوط لأنه بطلنا غضبانين [وتغلبنا] على الغضب. => And I'm also very happy because we aren't angry anymore [and we overcame] the anger.\nوأنا كمان كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على [الغضب]. => And I'm also very happy because we aren't angry anymore and we overcame [the anger]. # \"على\" is skipped as it is the preposition part of the Arabic verb \"تغلب على\" matchable to \"overcome\"\n\n[أنا] هلا مبسوطة. => [I'm] happy now.\nأنا [هلا] مبسوطة. => I'm happy [now].\nأنا هلا [مبسوطة]. => I'm [happy] now.\n\n[يلا خلينا] نطلع؟ يلا نروح الرحلة. => [Let's] go out? Let's go on the trip.\nيلا خلينا [نطلع]؟ يلا نروح الرحلة. => Let's [go out]? Let's go on the trip.\nيلا خلينا نطلع؟ [يلا] نروح الرحلة. => Let's go out? [Let's] go on the trip.\nيلا خلينا نطلع؟ يلا [نروح] الرحلة. => Let's go out? Let's [go on] the trip.\nيلا خلينا نطلع؟ يلا نروح [الرحلة] => Let's go out? Let's go on [the trip]\n\n",
     "lessons": "# الغضب من إلغاء الرحلة\n00:04.00 جلجل، أنا كتير كتير غضبانة!\n00:07.50 بس إحنا ما بنقدر نعمل إشي،\n00:09.50 لأنه عمو كامل اتأخر وما رح نطلع الرحلة اليوم.\n00:13.00 ما رح نقدر نطلع الرحلة؟\n00:15.00 أنا متضايقة، متضايقة، غضبانة!\n\n# محاولات التهدئة (Part 1)\n00:17.50 يا تنتن، يا تنتن،\n00:19.50 عمو كامل ما قدر يجي،\n00:21.50 مش مشكلة بنطلع مرة تانية.\n00:25.00 بس هو وعدنا،\n00:27.00 وأنا رتبت كل هاي الأغراض للرحلة.\n00:30.00 ما تنسي إنه عمو كامل قال،\n00:32.50 إذا ما طلعنا اليوم، بنرتب ليوم تاني.\n\n# محاولات التهدئة (Part 2)\n00:36.00 بس هو حكى كمان إنه اليوم عطلة،\n00:38.50 وهو اللي اقترح إنه نروح اليوم عشان ما بيكون عنده شغل.\n00:43.00 طيب، تنتن، إنتي غضبانة كتير.\n00:46.00 شو رأيك تجربي إنك تاخدي نفس عميق تلات مرات،\n00:49.00 بلكي بخف غضبك وبترتاحي؟ جربي.\n\n# التعبير عن الإحباط\n00:53.00 جلجل، أنا ما بدي أتنفس، أنا بدي أروح الرحلة!\n00:57.00 إجتني فكرة تانية.\n00:59.00 شو رأيك نعد من واحد لعشرة؟\n01:01.50 أنا دايماً بعمل هيك لما بكون معصب. يلا.\n\n# العد حتى العشرة\n01:07.00 واحد، اتنين، تلاتة،\n01:11.00 أربعة، خمسة، ستة،\n01:15.00 سبعة، تمانية، تسعة،\n01:19.00 عشرة.\n\n# أغنية السعادة\n01:22.00 إيش رأيك؟ كيف؟\n01:26.00 ارتحت شوي يا جلجل، معك حق.\n01:29.00 مادام ارتحتي شوي، شو رأيك نغني مع بعض هالأغنية؟\n01:33.00 موافقة يا جلجل، يلا نغني مع بعض.\n01:38.00 غضبٌ غضبٌ امضِ بعيداً\n01:41.00 أرغبُ في أن أبقى سعيداً\n01:44.00 غضبٌ غضبٌ امضِ بعيداً\n01:47.00 أرغبُ في أن أبقى سعيداً\n\n# التخيل والتفاؤل\n01:50.00 أغمضُ عينيّ\n01:52.00 أعدُّ للعشرة\n01:55.00 واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة\n02:03.00 بدأت الفرحة مرة مرة أخرى\n02:08.00 غضبٌ غضبٌ امضِ بعيداً\n02:11.00 أرغبُ في أن أبقى سعيداً\n02:14.00 غضبٌ غضبٌ امضِ بعيداً\n02:17.00 أرغبُ في أن أبقى سعيداً\n02:19.00 أغمضُ عينيّ\n02:21.00 آخذُ نفساً عميقاً\n02:24.00 أغمضُ عينيّ\n02:26.00 أعدُّ للعشرة\n02:29.00 واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة\n\n# نهاية سعيدة\n02:43.00 شكراً إلك.\n02:45.00 جلجل، عشان أنا هلا صرت سعيدة،\n02:48.00 شو رأيك نتخيل إنه إحنا رايحين عالرحلة، ونطلع عالحديقة هلا؟\n02:53.00 أنا موافق.\n02:55.00 جلجل، شكراً إلك.\n02:57.00 إنت أفضل صديق، لأني أنا هلا بطلت غضبانة.\n03:02.00 وأنا كمان كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب.\n03:07.00 أنا هلا مبسوطة.\n03:10.00 يلا خلينا نطلع؟ يلا نروح الرحلة.",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Jaljal, I am very, very angry!",
+            "words": []
+          },
+          {
+            "text": "But we can't do anything about it,",
+            "words": []
+          },
+          {
+            "text": "Because Uncle Kamel is late and we won't go on the trip today.",
+            "words": []
+          },
+          {
+            "text": "We won't be able to go on the trip?",
+            "words": []
+          },
+          {
+            "text": "I'm upset, upset, angry!",
+            "words": []
+          },
+          {
+            "text": "Oh Tenten, oh Tenten,",
+            "words": []
+          },
+          {
+            "text": "Uncle Kamel couldn't make it,",
+            "words": []
+          },
+          {
+            "text": "It's not a problem, we'll go another time.",
+            "words": []
+          },
+          {
+            "text": "But he promised us,",
+            "words": []
+          },
+          {
+            "text": "And I packed all these things for the trip.",
+            "words": []
+          },
+          {
+            "text": "Don't forget that Uncle Kamel said,",
+            "words": []
+          },
+          {
+            "text": "If we don't go today, we'll arrange for another day.",
+            "words": []
+          },
+          {
+            "text": "But he also said today is a holiday,",
+            "words": []
+          },
+          {
+            "text": "And he's the one who suggested we go today since he doesn't have work.",
+            "words": []
+          },
+          {
+            "text": "Okay, Tenten, you are very angry.",
+            "words": []
+          },
+          {
+            "text": "How about you try taking a deep breath three times,",
+            "words": []
+          },
+          {
+            "text": "Maybe it will lessen your anger and you'll feel better? Try it.",
+            "words": []
+          },
+          {
+            "text": "Jaljal, I don't want to breathe, I want to go on the trip!",
+            "words": []
+          },
+          {
+            "text": "I got another idea.",
+            "words": []
+          },
+          {
+            "text": "How about we count from one to ten?",
+            "words": []
+          },
+          {
+            "text": "I always do this when I'm angry. Come on.",
+            "words": []
+          },
+          {
+            "text": "One, two, three,",
+            "words": []
+          },
+          {
+            "text": "Four, five, six,",
+            "words": []
+          },
+          {
+            "text": "Seven, eight, nine,",
+            "words": []
+          },
+          {
+            "text": "Ten.",
+            "words": []
+          },
+          {
+            "text": "What do you think? How is it?",
+            "words": []
+          },
+          {
+            "text": "I feel a bit better, Jaljal, you're right.",
+            "words": []
+          },
+          {
+            "text": "Since you feel a bit better, how about we sing this song together?",
+            "words": []
+          },
+          {
+            "text": "I agree, Jaljal, let's sing together.",
+            "words": []
+          },
+          {
+            "text": "Anger, anger, go away",
+            "words": []
+          },
+          {
+            "text": "I want to stay happy",
+            "words": []
+          },
+          {
+            "text": "Anger, anger, go away",
+            "words": []
+          },
+          {
+            "text": "I want to stay happy",
+            "words": []
+          },
+          {
+            "text": "I close my eyes",
+            "words": []
+          },
+          {
+            "text": "I count to ten",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four, five, six, seven, eight, nine, ten",
+            "words": []
+          },
+          {
+            "text": "Joy has started once again",
+            "words": []
+          },
+          {
+            "text": "Anger, anger, go away",
+            "words": []
+          },
+          {
+            "text": "I want to stay happy",
+            "words": []
+          },
+          {
+            "text": "Anger, anger, go away",
+            "words": []
+          },
+          {
+            "text": "I want to stay happy",
+            "words": []
+          },
+          {
+            "text": "I close my eyes",
+            "words": []
+          },
+          {
+            "text": "I take a deep breath",
+            "words": []
+          },
+          {
+            "text": "I close my eyes",
+            "words": []
+          },
+          {
+            "text": "I count to ten",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four, five, six, seven, eight, nine, ten",
+            "words": []
+          },
+          {
+            "text": "Thank you.",
+            "words": []
+          },
+          {
+            "text": "Jaljal, since I am happy now,",
+            "words": []
+          },
+          {
+            "text": "How about we imagine we are going on the trip, and go to the park now?",
+            "words": []
+          },
+          {
+            "text": "I agree.",
+            "words": []
+          },
+          {
+            "text": "Jaljal, thank you.",
+            "words": []
+          },
+          {
+            "text": "You're the best friend, because I'm not angry now.",
+            "words": []
+          },
+          {
+            "text": "And I'm also very happy because we aren't angry anymore and we overcame the anger.",
+            "words": []
+          },
+          {
+            "text": "I'm happy now.",
+            "words": []
+          },
+          {
+            "text": "Let's go out? Let's go on the trip.",
+            "words": []
+          }
+        ],
+        "lessons": "# الغضب من إلغاء الرحلة\n00:04.00 جلجل، أنا كتير كتير غضبانة!\n00:07.50 بس إحنا ما بنقدر نعمل إشي،\n00:09.50 لأنه عمو كامل اتأخر وما رح نطلع الرحلة اليوم.\n00:13.00 ما رح نقدر نطلع الرحلة؟\n00:15.00 أنا متضايقة، متضايقة، غضبانة!\n\n# محاولات التهدئة (Part 1)\n00:17.50 يا تنتن، يا تنتن،\n00:19.50 عمو كامل ما قدر يجي،\n00:21.50 مش مشكلة بنطلع مرة تانية.\n00:25.00 بس هو وعدنا،\n00:27.00 وأنا رتبت كل هاي الأغراض للرحلة.\n00:30.00 ما تنسي إنه عمو كامل قال،\n00:32.50 إذا ما طلعنا اليوم، بنرتب ليوم تاني.\n\n# محاولات التهدئة (Part 2)\n00:36.00 بس هو حكى كمان إنه اليوم عطلة،\n00:38.50 وهو اللي اقترح إنه نروح اليوم عشان ما بيكون عنده شغل.\n00:43.00 طيب، تنتن، إنتي غضبانة كتير.\n00:46.00 شو رأيك تجربي إنك تاخدي نفس عميق تلات مرات،\n00:49.00 بلكي بخف غضبك وبترتاحي؟ جربي.\n\n# التعبير عن الإحباط\n00:53.00 جلجل، أنا ما بدي أتنفس، أنا بدي أروح الرحلة!\n00:57.00 إجتني فكرة تانية.\n00:59.00 شو رأيك نعد من واحد لعشرة؟\n01:01.50 أنا دايماً بعمل هيك لما بكون معصب. يلا.\n\n# العد حتى العشرة\n01:07.00 واحد، اتنين، تلاتة،\n01:11.00 أربعة، خمسة، ستة،\n01:15.00 سبعة، تمانية، تسعة،\n01:19.00 عشرة.\n\n# أغنية السعادة\n01:22.00 إيش رأيك؟ كيف؟\n01:26.00 ارتحت شوي يا جلجل، معك حق.\n01:29.00 مادام ارتحتي شوي، شو رأيك نغني مع بعض هالأغنية؟\n01:33.00 موافقة يا جلجل، يلا نغني مع بعض.\n01:38.00 غضبٌ غضبٌ امضِ بعيداً\n01:41.00 أرغبُ في أن أبقى سعيداً\n01:44.00 غضبٌ غضبٌ امضِ بعيداً\n01:47.00 أرغبُ في أن أبقى سعيداً\n\n# التخيل والتفاؤل\n01:50.00 أغمضُ عينيّ\n01:52.00 أعدُّ للعشرة\n01:55.00 واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة\n02:03.00 بدأت الفرحة مرة مرة أخرى\n02:08.00 غضبٌ غضبٌ امضِ بعيداً\n02:11.00 أرغبُ في أن أبقى سعيداً\n02:14.00 غضبٌ غضبٌ امضِ بعيداً\n02:17.00 أرغبُ في أن أبقى سعيداً\n02:19.00 أغمضُ عينيّ\n02:21.00 آخذُ نفساً عميقاً\n02:24.00 أغمضُ عينيّ\n02:26.00 أعدُّ للعشرة\n02:29.00 واحد، اتنين، تلاتة، أربعة، خمسة، ستة، سبعة، تمانية، تسعة، عشرة\n\n# نهاية سعيدة\n02:43.00 شكراً إلك.\n02:45.00 جلجل، عشان أنا هلا صرت سعيدة،\n02:48.00 شو رأيك نتخيل إنه إحنا رايحين عالرحلة، ونطلع عالحديقة هلا؟\n02:53.00 أنا موافق.\n02:55.00 جلجل، شكراً إلك.\n02:57.00 إنت أفضل صديق، لأني أنا هلا بطلت غضبانة.\n03:02.00 وأنا كمان كتير مبسوط لأنه بطلنا غضبانين وتغلبنا على الغضب.\n03:07.00 أنا هلا مبسوطة.\n03:10.00 يلا خلينا نطلع؟ يلا نروح الرحلة."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-27 08:29:44 UTC",
   "updated_at": "2026-04-27 08:43:51 UTC",

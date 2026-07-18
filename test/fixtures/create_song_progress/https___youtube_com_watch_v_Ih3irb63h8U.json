@@ -9,349 +9,506 @@
         "id": "phrase_1",
         "text_l1": "ليتنا بقينا",
         "timestamp": "00:10.20",
-        "timestamp_end": "00:14.50",
-        "text_l2": "I wish we had stayed"
+        "timestamp_end": "00:14.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "في الصبا لم نكبر لا",
         "timestamp": "00:14.50",
-        "timestamp_end": "00:18.50",
-        "text_l2": "In our youth, never growing up, no"
+        "timestamp_end": "00:18.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "همنا كان متى",
         "timestamp": "00:18.50",
-        "timestamp_end": "00:22.50",
-        "text_l2": "Our worry was only when"
+        "timestamp_end": "00:22.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "سوف نلعب دون عناء",
         "timestamp": "00:22.50",
-        "timestamp_end": "00:27.00",
-        "text_l2": "We'd play without any strain"
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "لا يهم شيء",
         "timestamp": "00:27.00",
-        "timestamp_end": "00:29.50",
-        "text_l2": "Nothing mattered at all"
+        "timestamp_end": "00:29.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "لا نريد شيء",
         "timestamp": "00:29.50",
-        "timestamp_end": "00:31.50",
-        "text_l2": "We wanted nothing else"
+        "timestamp_end": "00:31.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "سوى أن نستمتع في يومنا",
         "timestamp": "00:31.50",
-        "timestamp_end": "00:35.50",
-        "text_l2": "But to enjoy our day"
+        "timestamp_end": "00:35.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "كان بالنا مرتاح",
         "timestamp": "00:35.50",
-        "timestamp_end": "00:39.50",
-        "text_l2": "Our minds were at ease"
+        "timestamp_end": "00:39.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "عن هم الدنيا بعيد",
         "timestamp": "00:39.50",
-        "timestamp_end": "00:43.50",
-        "text_l2": "Away from the world's worries"
+        "timestamp_end": "00:43.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "نملأ البيت صياح",
         "timestamp": "00:43.50",
-        "timestamp_end": "00:47.50",
-        "text_l2": "We filled the house with shouts"
+        "timestamp_end": "00:47.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "حتى ننال ما نريد",
         "timestamp": "00:47.50",
-        "timestamp_end": "00:51.50",
-        "text_l2": "Until we got what we wanted"
+        "timestamp_end": "00:51.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "كان يومنا حافل",
         "timestamp": "00:51.50",
-        "timestamp_end": "00:55.50",
-        "text_l2": "Our day was full"
+        "timestamp_end": "00:55.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "بالابتهاج والأمان",
         "timestamp": "00:55.50",
-        "timestamp_end": "00:59.50",
-        "text_l2": "With joy and security"
+        "timestamp_end": "00:59.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "ليت الصبا يوماً يعود",
         "timestamp": "00:59.50",
-        "timestamp_end": "01:03.50",
-        "text_l2": "If only youth would someday return"
+        "timestamp_end": "01:03.50"
       },
       {
         "id": "phrase_15",
         "text_l1": "كما كان، ليت صبانا آه يعود يوماً",
         "timestamp": "01:03.50",
-        "timestamp_end": "01:08.00",
-        "text_l2": "As it was, if only our youth, ah, would return someday"
+        "timestamp_end": "01:08.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "ليت صبانا آه يعود",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:11.50",
-        "text_l2": "If only our youth, ah, would return"
+        "timestamp_end": "01:11.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "كبرنا ولا زلنا",
         "timestamp": "01:11.50",
-        "timestamp_end": "01:15.50",
-        "text_l2": "We grew up, yet still we remain"
+        "timestamp_end": "01:15.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "في حنين لماضينا",
         "timestamp": "01:15.50",
-        "timestamp_end": "01:19.50",
-        "text_l2": "In longing for our past"
+        "timestamp_end": "01:19.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "كلما تصادفنا",
         "timestamp": "01:19.50",
-        "timestamp_end": "01:23.50",
-        "text_l2": "Whenever we come across"
+        "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_20",
         "text_l1": "ذكريات الأمس عدنا",
         "timestamp": "01:23.50",
-        "timestamp_end": "01:28.00",
-        "text_l2": "Memories of yesterday, we return"
+        "timestamp_end": "01:28.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "لا يهم شيء",
         "timestamp": "01:28.00",
-        "timestamp_end": "01:30.50",
-        "text_l2": "Nothing mattered at all"
+        "timestamp_end": "01:30.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "لا نريد شيء",
         "timestamp": "01:30.50",
-        "timestamp_end": "01:32.50",
-        "text_l2": "We wanted nothing else"
+        "timestamp_end": "01:32.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "ليت صبانا يعود لنا",
         "timestamp": "01:32.50",
-        "timestamp_end": "01:36.50",
-        "text_l2": "If only our youth would return to us"
+        "timestamp_end": "01:36.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "كان بالنا مرتاح",
         "timestamp": "01:36.50",
-        "timestamp_end": "01:40.50",
-        "text_l2": "Our minds were at ease"
+        "timestamp_end": "01:40.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "عن هم الدنيا بعيد",
         "timestamp": "01:40.50",
-        "timestamp_end": "01:44.50",
-        "text_l2": "Away from the world's worries"
+        "timestamp_end": "01:44.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "نملأ البيت صياح",
         "timestamp": "01:44.50",
-        "timestamp_end": "01:48.50",
-        "text_l2": "We filled the house with shouts"
+        "timestamp_end": "01:48.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "حتى ننال ما نريد",
         "timestamp": "01:48.50",
-        "timestamp_end": "01:52.50",
-        "text_l2": "Until we got what we wanted"
+        "timestamp_end": "01:52.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "كان يومنا حافل",
         "timestamp": "01:52.50",
-        "timestamp_end": "01:56.50",
-        "text_l2": "Our day was full"
+        "timestamp_end": "01:56.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "بالابتهاج والأمان",
         "timestamp": "01:56.50",
-        "timestamp_end": "02:00.50",
-        "text_l2": "With joy and security"
+        "timestamp_end": "02:00.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "ليت الصبا يوماً يعود",
         "timestamp": "02:00.50",
-        "timestamp_end": "02:04.50",
-        "text_l2": "If only youth would someday return"
+        "timestamp_end": "02:04.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "كما كان، ليت صبانا آه يعود",
         "timestamp": "02:04.50",
-        "timestamp_end": "02:09.00",
-        "text_l2": "As it was, if only our youth, ah, would return"
+        "timestamp_end": "02:09.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "ليت صبانا آه يعود يوماً",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:12.50",
-        "text_l2": "If only our youth, ah, would return someday"
+        "timestamp_end": "02:12.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "كما كان، ليت صبانا آه يعود",
         "timestamp": "02:12.50",
-        "timestamp_end": "02:17.00",
-        "text_l2": "As it was, if only our youth, ah, would return"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "ليت صبانا آه يعود يوماً",
         "timestamp": "02:17.00",
-        "timestamp_end": "02:21.00",
-        "text_l2": "If only our youth, ah, would return someday"
+        "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "لا يهم شيء",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:23.50",
-        "text_l2": "Nothing mattered at all"
+        "timestamp_end": "02:23.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "لا نريد شيء",
         "timestamp": "02:23.50",
-        "timestamp_end": "02:25.50",
-        "text_l2": "We wanted nothing else"
+        "timestamp_end": "02:25.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "سوى أن نستمتع في يومنا",
         "timestamp": "02:25.50",
-        "timestamp_end": "02:29.50",
-        "text_l2": "But to enjoy our day"
+        "timestamp_end": "02:29.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "كان بالنا مرتاح",
         "timestamp": "02:29.50",
-        "timestamp_end": "02:33.50",
-        "text_l2": "Our minds were at ease"
+        "timestamp_end": "02:33.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "عن هم الدنيا بعيد",
         "timestamp": "02:33.50",
-        "timestamp_end": "02:37.50",
-        "text_l2": "Away from the world's worries"
+        "timestamp_end": "02:37.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "نملأ البيت صياح",
         "timestamp": "02:37.50",
-        "timestamp_end": "02:41.50",
-        "text_l2": "We filled the house with shouts"
+        "timestamp_end": "02:41.50"
       },
       {
         "id": "phrase_41",
         "text_l1": "حتى ننال ما نريد",
         "timestamp": "02:41.50",
-        "timestamp_end": "02:45.50",
-        "text_l2": "Until we got what we wanted"
+        "timestamp_end": "02:45.50"
       },
       {
         "id": "phrase_42",
         "text_l1": "كان يومنا حافل",
         "timestamp": "02:45.50",
-        "timestamp_end": "02:49.50",
-        "text_l2": "Our day was full"
+        "timestamp_end": "02:49.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "بالابتهاج والأمان",
         "timestamp": "02:49.50",
-        "timestamp_end": "02:53.50",
-        "text_l2": "With joy and security"
+        "timestamp_end": "02:53.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "ليت الصبا يوماً يعود",
         "timestamp": "02:53.50",
-        "timestamp_end": "02:57.00",
-        "text_l2": "If only youth would someday return"
+        "timestamp_end": "02:57.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "ليت الصبا يوماً يعود",
         "timestamp": "02:57.00",
-        "timestamp_end": "03:01.00",
-        "text_l2": "If only youth would someday return"
+        "timestamp_end": "03:01.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "كما كان، ليت صبانا آه يعود",
         "timestamp": "03:01.00",
-        "timestamp_end": "03:05.50",
-        "text_l2": "As it was, if only our youth, ah, would return"
+        "timestamp_end": "03:05.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "ليت صبانا آه يعود، كما كان",
         "timestamp": "03:05.50",
-        "timestamp_end": "03:09.50",
-        "text_l2": "If only our youth, ah, would return, as it was"
+        "timestamp_end": "03:09.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "ليت صبانا آه يعود",
         "timestamp": "03:09.50",
-        "timestamp_end": "03:13.50",
-        "text_l2": "If only our youth, ah, would return"
+        "timestamp_end": "03:13.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "ليت صبانا آه يعود يوماً",
         "timestamp": "03:13.50",
-        "timestamp_end": "03:18.00",
-        "text_l2": "If only our youth, ah, would return someday"
+        "timestamp_end": "03:18.00"
       }
     ],
     "phrases_with_token_translations": "ليت[نا] بقينا => I wish [we] had stayed\nليتنا [بقينا] => I wish we [had stayed]\n\n[في] الصبا لم نكبر لا => [In] our youth, never growing up, no\nفي [الصبا] لم نكبر لا => In our [youth], never growing up, no\nفي الصبا [لم نكبر] لا => In our youth, [never growing up], no\nفي الصبا لم نكبر [لا] => In our youth, never growing up, [no]\n\n[همنا] كان متى => [Our worry] was only when\nهمنا [كان] متى => Our worry [was] only when\nهمنا كان [متى] => Our worry was only [when]\n\n[سوف] نلعب دون عناء => would\nسوف [نلعب] دون عناء => We'd [play] without any strain\nسوف نلعب [دون] عناء => We'd play [without] any strain\nسوف نلعب دون [عناء] => We'd play without any [strain]\n\nلا [يهم] شيء => Nothing [mattered] at all\nلا يهم [شيء] => thing\n\nلا [نريد] شيء => We [wanted] nothing else\nلا نريد [شيء] => thing\n\n[سوى] أن نستمتع في يومنا => [But] to enjoy our day\nسوى [أن نستمتع] في يومنا => But [to enjoy] our day\nسوى أن [نستمتع] في يومنا => But to [enjoy] our day\nسوى أن نستمتع في [يومنا] => But to enjoy [our day]\n\n[كان] بالنا مرتاح => Our minds [were] at ease\nكان [بالنا] مرتاح => [Our minds] were at ease\nكان بالنا [مرتاح] => Our minds were [at ease]\n\n[عن] هم الدنيا بعيد => Away [from] the world's worries\nعن [هم] الدنيا بعيد => Away from the world's [worries]\nعن هم [الدنيا] بعيد => Away from [the world]'s worries\nعن هم الدنيا [بعيد] => [Away] from the world's worries\n\n[نملأ] البيت صياح => [We filled] the house with shouts\nنملأ [البيت] صياح => We filled [the house] with shouts\nنملأ البيت [صياح] => We filled the house with [shouts]\n\n[حتى] ننال ما نريد => [Until] we got what we wanted\nحتى [ننال] ما نريد => Until [we got] what we wanted\nحتى ننال [ما] نريد => Until we got [what] we wanted\nحتى ننال ما [نريد] => Until we got what [we wanted]\n\n[كان] يومنا حافل => Our day [was] full\nكان [يومنا] حافل => [Our day] was full\nكان يومنا [حافل] => Our day was [full]\n\n[بالابتهاج] والأمان => [With joy] and security\nبالابتهاج [والأمان] => With joy [and security]\n\n[ليت] الصبا يوماً يعود => [If only] youth would someday return\nليت [الصبا] يوماً يعود => If only [youth] would someday return\nليت الصبا [يوماً] يعود => If only youth would [someday] return\nليت الصبا يوماً [يعود] => If only youth someday would [return]\n\n[كما كان]، ليت صبانا آه يعود يوماً => [As it was], if only our youth, ah, would return someday\nكما كان، [ليت] صبانا آه يعود يوماً => As it was, [if only] our youth, ah, would return someday\nكما كان، ليت [صبانا] آه يعود يوماً => As it was, if only [our youth], ah, would return someday\nكما كان، ليت صبانا [آه] يعود يوماً => As it was, if only our youth, [ah], would return someday\nكما كان، ليت صبانا آه [يعود] يوماً => As it was, if only our youth, ah, would [return] someday\nكما كان، ليت صبانا آه يعود [يوماً] => As it was, if only our youth, ah, would return [someday]\n\n[ليت] صبانا آه يعود => [If only] our youth, ah, would return\nليت [صبانا] آه يعود => If only [our youth], ah, would return\nليت صبانا [آه] يعود => If only our youth, [ah], would return\nليت صبانا آه [يعود] => If only our youth, ah, would [return]\n\n[كبرنا] ولا زلنا => [We grew up], yet still we remain\nكبرنا [ولا] زلنا => We grew up, [yet still] we remain\nكبرنا ولا [زلنا] => We grew up, yet still [we remain]\n\n[في] حنين لماضينا => [In] longing for our past\nفي [حنين] لماضينا => In [longing] for our past\nفي حنين [لماضينا] => In longing [for our past]\n\n[كلما] تصادفنا => [Whenever] we come across\nكلما [تصادفنا] => Whenever [we come across]\n\n[ذكريات] الأمس عدنا => [Memories] of yesterday, we return\nذكريات [الأمس] عدنا => Memories [of yesterday], we return\nذكريات الأمس [عدنا] => Memories of yesterday, [we return]\n\nلا [يهم] شيء => Nothing [mattered] at all\n\nلا [نريد] شيء => We [wanted] nothing else\n\n[ليت] صبانا يعود لنا => [If only] our youth would return to us\nليت [صبانا] يعود لنا => If only [our youth] would return to us\nليت صبانا [يعود] لنا => If only our youth would [return] to us\nليت صبانا يعود [لنا] => If only our youth would return [to us]\n\n[كان] بالنا مرتاح => Our minds [were] at ease\nكان [بالنا] مرتاح => [Our minds] were at ease\nكان بالنا [مرتاح] => Our minds were [at ease]\n\n[عن] هم الدنيا بعيد => Away [from] the world's worries\nعن [هم] الدنيا بعيد => Away from the world's [worries]\nعن هم [الدنيا] بعيد => Away from [the world]'s worries\nعن هم الدنيا [بعيد] => [Away] from the world's worries\n\n[نملأ] البيت صياح => [We filled] the house with shouts\nنملأ [البيت] صياح => We filled [the house] with shouts\nنملأ البيت [صياح] => We filled the house with [shouts]\n\n[حتى] ننال ما نريد => [Until] we got what we wanted\nحتى [ننال] ما نريد => Until [we got] what we wanted\nحتى ننال [ما] نريد => Until we got [what] we wanted\nحتى ننال ما [نريد] => Until we got what [we wanted]\n\n[كان] يومنا حافل => Our day [was] full\nكان [يومنا] حافل => [Our day] was full\nكان يومنا [حافل] => Our day was [full]\n\n[بالابتهاج] والأمان => [With joy] and security\nبالابتهاج [والأمان] => With joy [and security]\n\n[ليت] الصبا يوماً يعود => [If only] youth would someday return\nليت [الصبا] يوماً يعود => If only [youth] would someday return\nليت الصبا [يوماً] يعود => If only youth would [someday] return\nليت الصبا يوماً [يعود] => If only youth would someday [return]\n\n[كما] كان، ليت صبانا آه يعود => [As] it was, if only our youth, ah, would return\nكما [كان]، ليت صبانا آه يعود => As [it was], if only our youth, ah, would return\nكما كان، [ليت] صبانا آه يعود => As it was, [if only] our youth, ah, would return\nكما كان، ليت [صبانا] آه يعود => As it was, if only [our youth], ah, would return\nكما كان، ليت صبانا [آه] يعود => As it was, if only our youth, [ah], would return\nكما كان، ليت صبانا آه [يعود] => As it was, if only our youth, ah, would [return]\n\n[ليت] صبانا آه يعود يوماً => [If only] our youth, ah, would return someday\nليت [صبانا] آه يعود يوماً => If only [our youth], ah, would return someday\nليت صبانا [آه] يعود يوماً => If only our youth, [ah], would return someday\nليت صبانا آه [يعود] يوماً => If only our youth, ah, would [return] someday\nليت صبانا آه يعود [يوماً] => If only our youth, ah, would return [someday]\n\n[كما كان]، ليت صبانا آه يعود => [As it was], if only our youth, ah, would return\nكما كان، [ليت صبانا] آه يعود => As it was, [if only our youth], ah, would return\nكما كان، ليت صبانا [آه] يعود => As it was, if only our youth, [ah], would return\nكما كان، ليت صبانا آه [يعود] => As it was, if only our youth, ah, [would return]\n\n[ليت صبانا] آه يعود يوماً => [If only our youth], ah, would return someday\nليت صبانا [آه] يعود يوماً => If only our youth, [ah], would return someday\nليت صبانا آه [يعود] يوماً => If only our youth, ah, [would return] someday\nليت صبانا آه يعود [يوماً] => If only our youth, ah, would return [someday]\n\n[لا يهم شيء] => Nothing mattered\n\n[لا نريد شيء] => We wanted nothing\n\n[سوى] أن نستمتع في يومنا => [But] to enjoy our day\nسوى [أن نستمتع] في يومنا => But [to enjoy] our day\nسوى أن نستمتع في [يومنا] => But to enjoy [our day]\n\n[كان] بالنا مرتاح => Our minds [were] at ease\nكان [بالنا] مرتاح => [Our minds] were at ease\nكان بالنا [مرتاح] => Our minds were [at ease]\n\n[عن] هم الدنيا بعيد => Away [from] the world's worries\nعن هم الدنيا [بعيد] => [Away] from the world's worries\nعن [هم] الدنيا بعيد => Away from the world's [worries]\nعن هم [الدنيا] بعيد => Away from [the world]'s worries\n\n[نملأ] البيت صياح => [We filled] the house with shouts\nنملأ [البيت] صياح => We filled [the house] with shouts\nنملأ البيت [صياح] => We filled the house with [shouts]\n\n[حتى] ننال ما نريد => [Until] we got what we wanted\nحتى [ننال] ما نريد => Until [we got] what we wanted\nحتى ننال [ما] نريد => Until we got [what] we wanted\nحتى ننال ما [نريد] => Until we got what [we wanted]\n\n[كان] يومنا حافل => Our day [was] full\nكان [يومنا] حافل => [Our day] was full\nكان يومنا [حافل] => Our day was [full]\n\n[بالابتهاج] والأمان => [With joy] and security\nبالابتهاج [والأمان] => With joy [and security]\n\n[ليت] الصبا يوماً يعود => [If only] youth would someday return\nليت [الصبا] يوماً يعود => If only [youth] would someday return\nليت الصبا [يوماً] يعود => If only youth would [someday] return\nليت الصبا يوماً [يعود] => If only youth would someday [return]\n\n[ليت] الصبا يوماً يعود => [If only] youth would someday return\nليت [الصبا] يوماً يعود => If only [youth] would someday return\nليت الصبا [يوماً] يعود => If only youth [someday] would return\nليت الصبا يوماً [يعود] => If only youth someday [would return]\n\n[كما] كان، ليت صبانا آه يعود => [As] it was, if only our youth, ah, would return\nكما [كان]، ليت صبانا آه يعود => As [it was], if only our youth, ah, would return\nكما كان، [ليت] صبانا آه يعود => As it was, [if only] our youth, ah, would return\nكما كان، ليت [صبانا] آه يعود => As it was, if only [our youth], ah, would return\nكما كان، ليت صبانا [آه] يعود => As it was, if only our youth, [ah], would return\nكما كان، ليت صبانا آه [يعود] => As it was, if only our youth, ah, [would return]\n\n[ليت] صبانا آه يعود، كما كان => [If only] our youth, ah, would return, as it was\nليت [صبانا] آه يعود، كما كان => If only [our youth], ah, would return, as it was\nليت صبانا [آه] يعود، كما كان => If only our youth, [ah], would return, as it was\nليت صبانا آه [يعود]، كما كان => If only our youth, ah, [would return], as it was\nليت صبانا آه يعود، [كما] كان => If only our youth, ah, would return, [as] it was\nليت صبانا آه يعود، كما [كان] => If only our youth, ah, would return, as [it was]\n\n[ليت] صبانا آه يعود => [If only] our youth, ah, would return\nليت [صبانا] آه يعود => If only [our youth], ah, would return\nليت صبانا [آه] يعود => If only our youth, [ah], would return\nليت صبانا آه [يعود] => If only our youth, ah, [would return]\n\n[ليت] صبانا آه يعود يوماً => [If only] our youth, ah, would return someday\nليت [صبانا] آه يعود يوماً => If only [our youth], ah, would return someday\nليت صبانا [آه] يعود يوماً => If only our youth, [ah], would return someday\nليت صبانا آه [يعود] يوماً => If only our youth, ah, [would return] someday\nليت صبانا آه يعود [يوماً] => If only our youth, ah, would return [someday]",
     "lessons": "# ليتنا بقينا في الصبا\n00:10.20 ليتنا بقينا\n00:14.50 في الصبا لم نكبر لا\n00:18.50 همنا كان متى\n00:22.50 سوف نلعب دون عناء\n00:27.00 لا يهم شيء\n00:29.50 لا نريد شيء\n00:31.50 سوى أن نستمتع في يومنا\n\n# راحة البال (الجزء الأول)\n00:35.50 كان بالنا مرتاح\n00:39.50 عن هم الدنيا بعيد\n00:43.50 نملأ البيت صياح\n00:47.50 حتى ننال ما نريد\n\n# أيام الفرح (الجزء الثاني)\n00:51.50 كان يومنا حافل\n00:55.50 بالابتهاج والأمان\n00:59.50 ليت الصبا يوماً يعود\n01:03.50 كما كان، ليت صبانا آه يعود يوماً\n01:08.00 ليت صبانا آه يعود\n\n# حنين الماضي\n01:11.50 كبرنا ولا زلنا\n01:15.50 في حنين لماضينا\n01:19.50 كلما تصادفنا\n01:23.50 ذكريات الأمس عدنا\n01:28.00 لا يهم شيء\n01:30.50 لا نريد شيء\n01:32.50 ليت صبانا يعود لنا\n\n# راحة البال (تكرار)\n01:36.50 كان بالنا مرتاح\n01:40.50 عن هم الدنيا بعيد\n01:44.50 نملأ البيت صياح\n01:48.50 حتى ننال ما نريد\n\n# أيام الفرح (تكرار)\n01:52.50 كان يومنا حافل\n01:56.50 بالابتهاج والأمان\n02:00.50 ليت الصبا يوماً يعود\n02:04.50 كما كان، ليت صبانا آه يعود\n02:09.00 ليت صبانا آه يعود يوماً\n02:12.50 كما كان، ليت صبانا آه يعود\n02:17.00 ليت صبانا آه يعود يوماً\n\n# العودة للذكريات\n02:21.00 لا يهم شيء\n02:23.50 لا نريد شيء\n02:25.50 سوى أن نستمتع في يومنا\n02:29.50 كان بالنا مرتاح\n02:33.50 عن هم الدنيا بعيد\n02:37.50 نملأ البيت صياح\n02:41.50 حتى ننال ما نريد\n\n# ليت الصبا يعود (الختام)\n02:45.50 كان يومنا حافل\n02:49.50 بالابتهاج والأمان\n02:53.50 ليت الصبا يوماً يعود\n02:57.00 ليت الصبا يوماً يعود\n03:01.00 كما كان، ليت صبانا آه يعود\n03:05.50 ليت صبانا آه يعود، كما كان\n03:09.50 ليت صبانا آه يعود\n03:13.50 ليت صبانا آه يعود يوماً",
-    "similar_sounds": "[ليتني] بقينا\nفي الصبا لم [اكبر] لا\nهمنا كان [حتى]\nسوف [يلعب] دون عناء\nلا يهم [سيء]\nلا [يريد] شيء\nسوى أن [تستمتع] في يومنا\nكان [باننا] مرتاح\nعن هم [الدليل] بعيد\n[نملك] البيت صياح\nحتى [تنال] ما نريد\nكان يومنا [حاول]\n[بالابتعاد] والأمان\nليت الصبا يوماً [يعد]\nكما [كانت] ليت صبانا آه يعود يوماً\nليت صبانا آه [يعد]\n[عبرنا] ولا زلنا\nفي [حين] لماضينا\n[كما] تصادفنا\nذكريات الأمس [عدا]\nلا يهم [سيء]\nلا [تريد] شيء\nليت [صباحا] يعود لنا\n[ان] بالنا مرتاح\nعن هم [السنين] بعيد\nنملأ [للبيت] صياح\n[متى] ننال ما نريد\nكان [يوميا] حافل\nبالابتهاج [الأمان]\nليت الصبا يوماً [يعد]\nكما كان [لي] صبانا آه يعود\nليت صبانا آه يعود [يومان]\nكما [مكان] ليت صبانا آه يعود\n[لي] صبانا آه يعود يوماً\nلا [يوم] شيء\nلا نريد [سيء]\nسوى أن [تستمتع] في يومنا\nكان بالنا [ترتاح]\nعن هم الدنيا [عيد]\nنملأ [الميت] صياح\nحتى [ننام] ما نريد\nكان يومنا [حاول]\n[بالابتعاد] والأمان\nليت الصبا يوماً [أعود]\nليت [الصبي] يوماً يعود\nكما كان ليت صبانا آه [يعد]\nليت صبانا آه يعود [كم] كان\nليت صبانا آه [تعود]\n[ليس] صبانا آه يعود يوماً"
+    "similar_sounds": "[ليتني] بقينا\nفي الصبا لم [اكبر] لا\nهمنا كان [حتى]\nسوف [يلعب] دون عناء\nلا يهم [سيء]\nلا [يريد] شيء\nسوى أن [تستمتع] في يومنا\nكان [باننا] مرتاح\nعن هم [الدليل] بعيد\n[نملك] البيت صياح\nحتى [تنال] ما نريد\nكان يومنا [حاول]\n[بالابتعاد] والأمان\nليت الصبا يوماً [يعد]\nكما [كانت] ليت صبانا آه يعود يوماً\nليت صبانا آه [يعد]\n[عبرنا] ولا زلنا\nفي [حين] لماضينا\n[كما] تصادفنا\nذكريات الأمس [عدا]\nلا يهم [سيء]\nلا [تريد] شيء\nليت [صباحا] يعود لنا\n[ان] بالنا مرتاح\nعن هم [السنين] بعيد\nنملأ [للبيت] صياح\n[متى] ننال ما نريد\nكان [يوميا] حافل\nبالابتهاج [الأمان]\nليت الصبا يوماً [يعد]\nكما كان [لي] صبانا آه يعود\nليت صبانا آه يعود [يومان]\nكما [مكان] ليت صبانا آه يعود\n[لي] صبانا آه يعود يوماً\nلا [يوم] شيء\nلا نريد [سيء]\nسوى أن [تستمتع] في يومنا\nكان بالنا [ترتاح]\nعن هم الدنيا [عيد]\nنملأ [الميت] صياح\nحتى [ننام] ما نريد\nكان يومنا [حاول]\n[بالابتعاد] والأمان\nليت الصبا يوماً [أعود]\nليت [الصبي] يوماً يعود\nكما كان ليت صبانا آه [يعد]\nليت صبانا آه يعود [كم] كان\nليت صبانا آه [تعود]\n[ليس] صبانا آه يعود يوماً",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "I wish we had stayed",
+            "words": []
+          },
+          {
+            "text": "In our youth, never growing up, no",
+            "words": []
+          },
+          {
+            "text": "Our worry was only when",
+            "words": []
+          },
+          {
+            "text": "We'd play without any strain",
+            "words": []
+          },
+          {
+            "text": "Nothing mattered at all",
+            "words": []
+          },
+          {
+            "text": "We wanted nothing else",
+            "words": []
+          },
+          {
+            "text": "But to enjoy our day",
+            "words": []
+          },
+          {
+            "text": "Our minds were at ease",
+            "words": []
+          },
+          {
+            "text": "Away from the world's worries",
+            "words": []
+          },
+          {
+            "text": "We filled the house with shouts",
+            "words": []
+          },
+          {
+            "text": "Until we got what we wanted",
+            "words": []
+          },
+          {
+            "text": "Our day was full",
+            "words": []
+          },
+          {
+            "text": "With joy and security",
+            "words": []
+          },
+          {
+            "text": "If only youth would someday return",
+            "words": []
+          },
+          {
+            "text": "As it was, if only our youth, ah, would return someday",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return",
+            "words": []
+          },
+          {
+            "text": "We grew up, yet still we remain",
+            "words": []
+          },
+          {
+            "text": "In longing for our past",
+            "words": []
+          },
+          {
+            "text": "Whenever we come across",
+            "words": []
+          },
+          {
+            "text": "Memories of yesterday, we return",
+            "words": []
+          },
+          {
+            "text": "Nothing mattered at all",
+            "words": []
+          },
+          {
+            "text": "We wanted nothing else",
+            "words": []
+          },
+          {
+            "text": "If only our youth would return to us",
+            "words": []
+          },
+          {
+            "text": "Our minds were at ease",
+            "words": []
+          },
+          {
+            "text": "Away from the world's worries",
+            "words": []
+          },
+          {
+            "text": "We filled the house with shouts",
+            "words": []
+          },
+          {
+            "text": "Until we got what we wanted",
+            "words": []
+          },
+          {
+            "text": "Our day was full",
+            "words": []
+          },
+          {
+            "text": "With joy and security",
+            "words": []
+          },
+          {
+            "text": "If only youth would someday return",
+            "words": []
+          },
+          {
+            "text": "As it was, if only our youth, ah, would return",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return someday",
+            "words": []
+          },
+          {
+            "text": "As it was, if only our youth, ah, would return",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return someday",
+            "words": []
+          },
+          {
+            "text": "Nothing mattered at all",
+            "words": []
+          },
+          {
+            "text": "We wanted nothing else",
+            "words": []
+          },
+          {
+            "text": "But to enjoy our day",
+            "words": []
+          },
+          {
+            "text": "Our minds were at ease",
+            "words": []
+          },
+          {
+            "text": "Away from the world's worries",
+            "words": []
+          },
+          {
+            "text": "We filled the house with shouts",
+            "words": []
+          },
+          {
+            "text": "Until we got what we wanted",
+            "words": []
+          },
+          {
+            "text": "Our day was full",
+            "words": []
+          },
+          {
+            "text": "With joy and security",
+            "words": []
+          },
+          {
+            "text": "If only youth would someday return",
+            "words": []
+          },
+          {
+            "text": "If only youth would someday return",
+            "words": []
+          },
+          {
+            "text": "As it was, if only our youth, ah, would return",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return, as it was",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return",
+            "words": []
+          },
+          {
+            "text": "If only our youth, ah, would return someday",
+            "words": []
+          }
+        ],
+        "lessons": "# ليتنا بقينا في الصبا\n00:10.20 ليتنا بقينا\n00:14.50 في الصبا لم نكبر لا\n00:18.50 همنا كان متى\n00:22.50 سوف نلعب دون عناء\n00:27.00 لا يهم شيء\n00:29.50 لا نريد شيء\n00:31.50 سوى أن نستمتع في يومنا\n\n# راحة البال (الجزء الأول)\n00:35.50 كان بالنا مرتاح\n00:39.50 عن هم الدنيا بعيد\n00:43.50 نملأ البيت صياح\n00:47.50 حتى ننال ما نريد\n\n# أيام الفرح (الجزء الثاني)\n00:51.50 كان يومنا حافل\n00:55.50 بالابتهاج والأمان\n00:59.50 ليت الصبا يوماً يعود\n01:03.50 كما كان، ليت صبانا آه يعود يوماً\n01:08.00 ليت صبانا آه يعود\n\n# حنين الماضي\n01:11.50 كبرنا ولا زلنا\n01:15.50 في حنين لماضينا\n01:19.50 كلما تصادفنا\n01:23.50 ذكريات الأمس عدنا\n01:28.00 لا يهم شيء\n01:30.50 لا نريد شيء\n01:32.50 ليت صبانا يعود لنا\n\n# راحة البال (تكرار)\n01:36.50 كان بالنا مرتاح\n01:40.50 عن هم الدنيا بعيد\n01:44.50 نملأ البيت صياح\n01:48.50 حتى ننال ما نريد\n\n# أيام الفرح (تكرار)\n01:52.50 كان يومنا حافل\n01:56.50 بالابتهاج والأمان\n02:00.50 ليت الصبا يوماً يعود\n02:04.50 كما كان، ليت صبانا آه يعود\n02:09.00 ليت صبانا آه يعود يوماً\n02:12.50 كما كان، ليت صبانا آه يعود\n02:17.00 ليت صبانا آه يعود يوماً\n\n# العودة للذكريات\n02:21.00 لا يهم شيء\n02:23.50 لا نريد شيء\n02:25.50 سوى أن نستمتع في يومنا\n02:29.50 كان بالنا مرتاح\n02:33.50 عن هم الدنيا بعيد\n02:37.50 نملأ البيت صياح\n02:41.50 حتى ننال ما نريد\n\n# ليت الصبا يعود (الختام)\n02:45.50 كان يومنا حافل\n02:49.50 بالابتهاج والأمان\n02:53.50 ليت الصبا يوماً يعود\n02:57.00 ليت الصبا يوماً يعود\n03:01.00 كما كان، ليت صبانا آه يعود\n03:05.50 ليت صبانا آه يعود، كما كان\n03:09.50 ليت صبانا آه يعود\n03:13.50 ليت صبانا آه يعود يوماً"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-13 15:44:37 UTC",
   "updated_at": "2026-06-13 15:56:35 UTC",

@@ -9,76 +9,116 @@
       {
         "id": "phrase_1",
         "text_l1": "احنا بنحب نلعب مع بعض",
-        "text_l2": "We love playing together.",
         "timestamp": "00:00.00",
         "timestamp_end": "00:02.30"
       },
       {
         "id": "phrase_2",
         "text_l1": "آه",
-        "text_l2": "Yeah.",
         "timestamp": "00:02.30",
         "timestamp_end": "00:03.30"
       },
       {
         "id": "phrase_3",
         "text_l1": "إيش أكثر لعبة بتحبيها",
-        "text_l2": "What's your favorite game?",
         "timestamp": "00:03.30",
         "timestamp_end": "00:05.15"
       },
       {
         "id": "phrase_4",
         "text_l1": "عشان نلعبها مع بعض؟",
-        "text_l2": "So we can play it together?",
         "timestamp": "00:05.15",
         "timestamp_end": "00:07.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "بتحبي... إممم... نلعب كرة قدم؟",
-        "text_l2": "Do you like... um... playing soccer?",
         "timestamp": "00:11.00",
         "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "بحب أرسم",
-        "text_l2": "I like drawing.",
         "timestamp": "00:16.00",
         "timestamp_end": "00:18.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "بتحبي ترسمي! إيش بتحبي ترسمي؟",
-        "text_l2": "You like drawing! What do you like to draw?",
         "timestamp": "00:18.50",
         "timestamp_end": "00:22.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "وردة",
-        "text_l2": "A flower.",
         "timestamp": "00:22.00",
         "timestamp_end": "00:24.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "وردة! طيب ارسميلي وردة",
-        "text_l2": "A flower! Okay, draw me a flower.",
         "timestamp": "00:24.00",
         "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "ما أحلاها! كثير حلوة هاي الوردة",
-        "text_l2": "How beautiful! This flower is so beautiful.",
         "timestamp": "00:33.00",
         "timestamp_end": "00:36.00"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[احنا] بنحب نلعب مع بعض => [We] love playing together.\nاحنا [بنحب] نلعب مع بعض => We [love] playing together.\nاحنا بنحب [نلعب] مع بعض => We [playing] together.\nاحنا بنحب نلعب [مع بعض] => We love playing [together].\n\n[آه] => [Yeah].\n\n[إيش] أكثر لعبة بتحبيها => [What's] your favorite game?\nإيش [أكثر] لعبة بتحبيها => most\nإيش أكثر [لعبة] بتحبيها => What's your favorite [game]?\nإيش أكثر لعبة [بتحبيها] => you love, you like # literal: you like it\n\n[عشان] نلعبها مع بعض؟ => [So] we can play it together?\nعشان [نلعبها] مع بعض؟ => So [we can play it] together? # نلعبها includes the subject (we), the verb (play), and the object (it)\nعشان نلعبها [مع بعض]؟ => So we can play it [together]\n\n[بتحبي]... إممم... نلعب كرة قدم؟ => [Do you like]... um... playing soccer?\nبتحبي... [إممم]... نلعب كرة قدم؟ => Do you like... [um]... playing soccer?\nبتحبي... إممم... [نلعب] كرة قدم؟ => Do you like... um... [playing] soccer?\nبتحبي... إممم... نلعب [كرة قدم]؟ => Do you like... um... playing [soccer]?\n\n[بحب] أرسم => [I like] drawing\nبحب [أرسم] => I like [drawing]\n\n[بتحبي] ترسمي! إيش بتحبي ترسمي؟ => [You like] drawing! What do you like to draw?\nبتحبي [ترسمي]! إيش بتحبي ترسمي؟ => You like [drawing]! What do you like to draw?\nبتحبي ترسمي! [إيش] بتحبي ترسمي؟ => You like drawing! [What] do you like to draw?\nبتحبي ترسمي! إيش [بتحبي] ترسمي؟ => You like drawing! What [do you like] to draw?\nبتحبي ترسمي! إيش بتحبي [ترسمي]؟ => You like drawing! What do you like [to draw]?\n\n[وردة] => [A flower].\n\n[وردة]! طيب ارسميلي وردة => [A flower]! Okay, draw me a flower.\nوردة! [طيب] ارسميلي وردة => A flower! [Okay], draw me a flower.\nوردة! طيب [ارسميلي] وردة => A flower! Okay, [draw me] a flower.\nوردة! طيب ارسميلي [وردة] => A flower! Okay, draw me [a flower]\n\n[ما أحلاها]! كثير حلوة هاي الوردة => [How beautiful]! This flower is so beautiful.\nما أحلاها! [كثير] حلوة هاي الوردة => How beautiful! This flower is [so] beautiful.\nما أحلاها! كثير [حلوة] هاي الوردة => How beautiful! This flower is so [beautiful].\nما أحلاها! كثير حلوة [هاي] الوردة => How beautiful! [This] flower is so beautiful.\nما أحلاها! كثير حلوة هاي [الوردة] => How beautiful! This [flower] is so beautiful.\n\n"
+    "phrases_with_token_translations": "[احنا] بنحب نلعب مع بعض => [We] love playing together.\nاحنا [بنحب] نلعب مع بعض => We [love] playing together.\nاحنا بنحب [نلعب] مع بعض => We [playing] together.\nاحنا بنحب نلعب [مع بعض] => We love playing [together].\n\n[آه] => [Yeah].\n\n[إيش] أكثر لعبة بتحبيها => [What's] your favorite game?\nإيش [أكثر] لعبة بتحبيها => most\nإيش أكثر [لعبة] بتحبيها => What's your favorite [game]?\nإيش أكثر لعبة [بتحبيها] => you love, you like # literal: you like it\n\n[عشان] نلعبها مع بعض؟ => [So] we can play it together?\nعشان [نلعبها] مع بعض؟ => So [we can play it] together? # نلعبها includes the subject (we), the verb (play), and the object (it)\nعشان نلعبها [مع بعض]؟ => So we can play it [together]\n\n[بتحبي]... إممم... نلعب كرة قدم؟ => [Do you like]... um... playing soccer?\nبتحبي... [إممم]... نلعب كرة قدم؟ => Do you like... [um]... playing soccer?\nبتحبي... إممم... [نلعب] كرة قدم؟ => Do you like... um... [playing] soccer?\nبتحبي... إممم... نلعب [كرة قدم]؟ => Do you like... um... playing [soccer]?\n\n[بحب] أرسم => [I like] drawing\nبحب [أرسم] => I like [drawing]\n\n[بتحبي] ترسمي! إيش بتحبي ترسمي؟ => [You like] drawing! What do you like to draw?\nبتحبي [ترسمي]! إيش بتحبي ترسمي؟ => You like [drawing]! What do you like to draw?\nبتحبي ترسمي! [إيش] بتحبي ترسمي؟ => You like drawing! [What] do you like to draw?\nبتحبي ترسمي! إيش [بتحبي] ترسمي؟ => You like drawing! What [do you like] to draw?\nبتحبي ترسمي! إيش بتحبي [ترسمي]؟ => You like drawing! What do you like [to draw]?\n\n[وردة] => [A flower].\n\n[وردة]! طيب ارسميلي وردة => [A flower]! Okay, draw me a flower.\nوردة! [طيب] ارسميلي وردة => A flower! [Okay], draw me a flower.\nوردة! طيب [ارسميلي] وردة => A flower! Okay, [draw me] a flower.\nوردة! طيب ارسميلي [وردة] => A flower! Okay, draw me [a flower]\n\n[ما أحلاها]! كثير حلوة هاي الوردة => [How beautiful]! This flower is so beautiful.\nما أحلاها! [كثير] حلوة هاي الوردة => How beautiful! This flower is [so] beautiful.\nما أحلاها! كثير [حلوة] هاي الوردة => How beautiful! This flower is so [beautiful].\nما أحلاها! كثير حلوة [هاي] الوردة => How beautiful! [This] flower is so beautiful.\nما أحلاها! كثير حلوة هاي [الوردة] => How beautiful! This [flower] is so beautiful.\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "We love playing together.",
+            "words": []
+          },
+          {
+            "text": "Yeah.",
+            "words": []
+          },
+          {
+            "text": "What's your favorite game?",
+            "words": []
+          },
+          {
+            "text": "So we can play it together?",
+            "words": []
+          },
+          {
+            "text": "Do you like... um... playing soccer?",
+            "words": []
+          },
+          {
+            "text": "I like drawing.",
+            "words": []
+          },
+          {
+            "text": "You like drawing! What do you like to draw?",
+            "words": []
+          },
+          {
+            "text": "A flower.",
+            "words": []
+          },
+          {
+            "text": "A flower! Okay, draw me a flower.",
+            "words": []
+          },
+          {
+            "text": "How beautiful! This flower is so beautiful.",
+            "words": []
+          }
+        ],
+        "lessons": "# الحديث عن الألعاب والرسم\n00:00.00 احنا بنحب نلعب مع بعض\n00:02.30 آه\n00:03.30 إيش أكثر لعبة بتحبيها\n00:05.15 عشان نلعبها مع بعض؟\n\n# الرسمة الجميلة\n00:11.00 بتحبي... إممم... نلعب كرة قدم؟\n00:16.00 بحب أرسم\n00:18.50 بتحبي ترسمي! إيش بتحبي ترسمي؟\n00:22.00 وردة\n00:24.00 وردة! طيب ارسميلي وردة\n00:33.00 ما أحلاها! كثير حلوة هاي الوردة"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 23:25:56 UTC",
   "updated_at": "2026-04-26 05:56:58 UTC",

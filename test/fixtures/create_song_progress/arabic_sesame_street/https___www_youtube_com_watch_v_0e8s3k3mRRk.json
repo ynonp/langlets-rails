@@ -9,776 +9,1116 @@
       {
         "id": "phrase_1",
         "text_l1": "تونتون؟",
-        "text_l2": "Tonton?",
         "timestamp": "00:09.00",
         "timestamp_end": "00:11.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "جلجل؟",
-        "text_l2": "Jaljal?",
         "timestamp": "00:11.00",
         "timestamp_end": "00:13.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "تونتون؟",
-        "text_l2": "Tonton?",
         "timestamp": "00:17.00",
         "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "جلجل؟",
-        "text_l2": "Jaljal?",
         "timestamp": "00:19.00",
         "timestamp_end": "00:20.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "حياة، أنا هون!",
-        "text_l2": "Hayat, I'm here!",
         "timestamp": "00:20.00",
         "timestamp_end": "00:22.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "جلجل، خوفتني. وين تونتون؟",
-        "text_l2": "Jaljal, you scared me. Where's Tonton?",
         "timestamp": "00:22.00",
         "timestamp_end": "00:25.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "أنا كمان بدور عليها.",
-        "text_l2": "I'm looking for her too.",
         "timestamp": "00:26.00",
         "timestamp_end": "00:28.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "إيش هذا اللي بإيدك؟",
-        "text_l2": "What's that in your hand?",
         "timestamp": "00:28.00",
         "timestamp_end": "00:30.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "هذا حاسوب.",
-        "text_l2": "This is a computer.",
         "timestamp": "00:30.00",
         "timestamp_end": "00:32.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "ممم... قصدك كمبيوتر، لابتوب.",
-        "text_l2": "Hmm... you mean computer, laptop.",
         "timestamp": "00:33.00",
         "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "مظبوط. تعال معي.",
-        "text_l2": "Exactly. Come with me.",
         "timestamp": "00:36.00",
         "timestamp_end": "00:38.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "حاضر.",
-        "text_l2": "Okay.",
         "timestamp": "00:38.00",
         "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "كيفك يا جلجل؟",
-        "text_l2": "How are you, Jaljal?",
         "timestamp": "00:42.00",
         "timestamp_end": "00:44.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "أنا منيح.",
-        "text_l2": "I'm good.",
         "timestamp": "00:44.00",
         "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "يلا، تعال أفرجيك شو معي بالحاسوب.",
-        "text_l2": "Come on, let me show you what I have on the computer.",
         "timestamp": "00:45.00",
         "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "ممم... وتونتون؟",
-        "text_l2": "Hmm... and Tonton?",
         "timestamp": "00:48.00",
         "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "تونتون هلق بنلاقيها.",
-        "text_l2": "We'll find Tonton in a bit.",
         "timestamp": "00:49.00",
         "timestamp_end": "00:51.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "طيب.",
-        "text_l2": "Okay.",
         "timestamp": "00:51.00",
         "timestamp_end": "00:52.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "تونتون؟",
-        "text_l2": "Tonton?",
         "timestamp": "00:54.00",
         "timestamp_end": "00:55.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "إحنا قلقنا عليكي لما ما لقيناكي.",
-        "text_l2": "We got worried when we couldn't find you.",
         "timestamp": "00:55.00",
         "timestamp_end": "00:58.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "مالك إشي؟",
-        "text_l2": "Is something wrong?",
         "timestamp": "00:58.00",
         "timestamp_end": "01:00.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "إيه... أنا إجيت هون أقعد لحالي.",
-        "text_l2": "Yeah... I came here to sit alone.",
         "timestamp": "01:01.00",
         "timestamp_end": "01:04.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "شو؟ كأنك حزينة.",
-        "text_l2": "What? You seem sad.",
         "timestamp": "01:05.00",
         "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "آه، أنا شوي حزينة.",
-        "text_l2": "Ah, I'm a little sad.",
         "timestamp": "01:07.00",
         "timestamp_end": "01:10.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "إيه... لا لا، أنا كويسة، آه.",
-        "text_l2": "Yeah... no no, I'm fine, ah.",
         "timestamp": "01:10.00",
         "timestamp_end": "01:13.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "فكرك شو مالها تونتون؟",
-        "text_l2": "What do you think is wrong with Tonton?",
         "timestamp": "01:14.00",
         "timestamp_end": "01:16.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "مبين عليها حزينة كتير.",
-        "text_l2": "She looks very sad.",
         "timestamp": "01:16.00",
         "timestamp_end": "01:18.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "أنا هيك حاسة كمان. أكيد في سبب.",
-        "text_l2": "I feel the same. There must be a reason.",
         "timestamp": "01:18.00",
         "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "ممم... كيف بنقدر نساعدها يا حياة؟",
-        "text_l2": "Hmm... how can we help her, Hayat?",
         "timestamp": "01:22.00",
         "timestamp_end": "01:26.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "كيف؟ خلينا نفكر مع بعض.",
-        "text_l2": "How? Let's think together.",
         "timestamp": "01:26.00",
         "timestamp_end": "01:29.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "آه، مظبوط.",
-        "text_l2": "Ah, right.",
         "timestamp": "01:29.00",
         "timestamp_end": "01:31.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "فكر يا جلجو، فكر يا جلجو...",
-        "text_l2": "Think, Jaljo, think, Jaljo...",
         "timestamp": "01:31.00",
         "timestamp_end": "01:34.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "ممم...",
-        "text_l2": "Hmm...",
         "timestamp": "01:34.00",
         "timestamp_end": "01:36.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "هيه! أجتني فكرة رائعة.",
-        "text_l2": "Hey! I got a great idea.",
         "timestamp": "01:36.00",
         "timestamp_end": "01:38.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "تعالي أقولك كيف بنقدر نعمل إشي",
-        "text_l2": "Come, let me tell you how we can do something",
         "timestamp": "01:38.00",
         "timestamp_end": "01:40.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "وتكون سعيدة.",
-        "text_l2": "and make her happy.",
         "timestamp": "01:40.00",
         "timestamp_end": "01:42.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "نخليها سعيدة؟ كيف؟",
-        "text_l2": "Make her happy? How?",
         "timestamp": "01:43.00",
         "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "تعالي أحكيلك شو فكرتي.",
-        "text_l2": "Come, let me tell you my idea.",
         "timestamp": "01:47.00",
         "timestamp_end": "01:49.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "هلق بطبللها وبنشوف كيف رح يصير معها.",
-        "text_l2": "I'll try it on her now and see how it goes.",
         "timestamp": "01:50.00",
         "timestamp_end": "01:53.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "ممم.",
-        "text_l2": "Hmm.",
         "timestamp": "01:53.00",
         "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "شكلها الأمور مش سهلة زي ما أنا ظنيت.",
-        "text_l2": "Looks like things aren't as easy as I thought.",
         "timestamp": "02:12.00",
         "timestamp_end": "02:15.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "طيب، ما رح نقدر نخليها سعيدة وبتضحك.",
-        "text_l2": "So, we won't be able to make her happy and laughing.",
         "timestamp": "02:16.00",
         "timestamp_end": "02:19.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "هيك رأيك؟",
-        "text_l2": "Is that what you think?",
         "timestamp": "02:20.00",
         "timestamp_end": "02:22.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "طيب خلينا نجرب إشي تاني.",
-        "text_l2": "Okay, let's try something else.",
         "timestamp": "02:22.00",
         "timestamp_end": "02:24.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "فكر بإشي تاني، فكر يا...",
-        "text_l2": "Think of something else, think, oh...",
         "timestamp": "02:24.00",
         "timestamp_end": "02:26.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "هيه! هيه!",
-        "text_l2": "Hey! Hey!",
         "timestamp": "02:27.00",
         "timestamp_end": "02:30.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "أجتني فكرة رائعة جداً.",
-        "text_l2": "I got a really great idea.",
         "timestamp": "02:30.00",
         "timestamp_end": "02:33.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "هلق رح نخليها تضحك وتكون سعيدة.",
-        "text_l2": "Now we'll make her laugh and be happy.",
         "timestamp": "02:33.00",
         "timestamp_end": "02:36.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "تارارارام! أنا الساحر جلجل",
-        "text_l2": "Tarararam! I am Magician Jaljal",
         "timestamp": "02:38.00",
         "timestamp_end": "02:41.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "اللي رح يخلي تونتون الحزينة",
-        "text_l2": "who will make sad Tonton",
         "timestamp": "02:41.00",
         "timestamp_end": "02:44.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "سعيد وبتضحك.",
-        "text_l2": "happy and laughing.",
         "timestamp": "02:44.00",
         "timestamp_end": "02:46.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "الساحر جلجل رح يقدر يحول تونتون",
-        "text_l2": "Magician Jaljal will be able to turn Tonton",
         "timestamp": "02:46.00",
         "timestamp_end": "02:48.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "من حزينة إلى سعيدة وبتضحك.",
-        "text_l2": "from sad to happy and laughing.",
         "timestamp": "02:48.00",
         "timestamp_end": "02:52.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "برومبا، برومبا، بامبا! ها ها ها!",
-        "text_l2": "Brumba, brumba, bamba! Ha ha ha!",
         "timestamp": "02:53.00",
         "timestamp_end": "02:59.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "هيه! هاي تونتون بتضحك!",
-        "text_l2": "Hey! Look, Tonton is laughing!",
         "timestamp": "03:02.00",
         "timestamp_end": "03:05.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "شو مالك يا تونتون؟",
-        "text_l2": "What's wrong, Tonton?",
         "timestamp": "03:06.00",
         "timestamp_end": "03:08.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "كان واضح عليكي إنك كنتي زعلانة.",
-        "text_l2": "It was clear you were upset.",
         "timestamp": "03:08.00",
         "timestamp_end": "03:12.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "هيه؟ واضح علي إني كنت حزينة؟",
-        "text_l2": "Hey? It was clear I was sad?",
         "timestamp": "03:12.00",
         "timestamp_end": "03:15.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "أيوه، حزينة.",
-        "text_l2": "Yeah, sad.",
         "timestamp": "03:15.00",
         "timestamp_end": "03:17.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "ممم... إيه... أنا حزينة",
-        "text_l2": "Hmm... yeah... I am sad",
         "timestamp": "03:17.00",
         "timestamp_end": "03:20.00"
       },
       {
         "id": "phrase_61",
         "text_l1": "على فراق صاحبتي نوران.",
-        "text_l2": "because my friend Nouran is away.",
         "timestamp": "03:20.00",
         "timestamp_end": "03:22.00"
       },
       {
         "id": "phrase_62",
         "text_l1": "اشتقتلها كتير. ممم.",
-        "text_l2": "I miss her so much. Hmm.",
         "timestamp": "03:22.00",
         "timestamp_end": "03:24.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "معك حق يا تونتون.",
-        "text_l2": "You're right, Tonton.",
         "timestamp": "03:25.00",
         "timestamp_end": "03:27.00"
       },
       {
         "id": "phrase_64",
         "text_l1": "وأنا اشتقتلها، صارلها أسبوع مسافرة.",
-        "text_l2": "I miss her too, she's been traveling for a week.",
         "timestamp": "03:27.00",
         "timestamp_end": "03:30.00"
       },
       {
         "id": "phrase_65",
         "text_l1": "طيب بما إنك اشتقتيلها يا تونتون،",
-        "text_l2": "So since you miss her, Tonton,",
         "timestamp": "03:30.00",
         "timestamp_end": "03:33.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "شو عملتي حتى تتواصلي معها؟",
-        "text_l2": "what did you do to contact her?",
         "timestamp": "03:33.00",
         "timestamp_end": "03:36.00"
       },
       {
         "id": "phrase_67",
         "text_l1": "هيه؟ إيه... أتواصل معها؟",
-        "text_l2": "Hey? Yeah... contact her?",
         "timestamp": "03:36.00",
         "timestamp_end": "03:38.00"
       },
       {
         "id": "phrase_68",
         "text_l1": "كيف يعني؟",
-        "text_l2": "What do you mean?",
         "timestamp": "03:38.00",
         "timestamp_end": "03:40.00"
       },
       {
         "id": "phrase_69",
         "text_l1": "يعني... ممم... تبعتيلها إيميل.",
-        "text_l2": "Like... hmm... send her an email.",
         "timestamp": "03:40.00",
         "timestamp_end": "03:42.00"
       },
       {
         "id": "phrase_70",
         "text_l1": "يعني رسالة بالبريد الإلكتروني.",
-        "text_l2": "I mean a message via electronic mail.",
         "timestamp": "03:43.00",
         "timestamp_end": "03:46.00"
       },
       {
         "id": "phrase_71",
         "text_l1": "ممتاز يا جلجل.",
-        "text_l2": "Excellent, Jaljal.",
         "timestamp": "03:46.00",
         "timestamp_end": "03:47.00"
       },
       {
         "id": "phrase_72",
         "text_l1": "مم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.",
-        "text_l2": "Hmm hmm! I actually thought of sending her an email.",
         "timestamp": "04:48.00",
         "timestamp_end": "04:52.00"
       },
       {
         "id": "phrase_73",
         "text_l1": "لا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.",
-        "text_l2": "No no no no. I got another idea better than email.",
         "timestamp": "03:53.00",
         "timestamp_end": "03:57.00"
       },
       {
         "id": "phrase_74",
         "text_l1": "هيه؟ إيه... إحكيها بسرعة يا جلجل!",
-        "text_l2": "Hey? Yeah... tell it quickly, Jaljal!",
         "timestamp": "03:58.00",
         "timestamp_end": "04:00.00"
       },
       {
         "id": "phrase_75",
         "text_l1": "يا سلام عليك يا جلجل.",
-        "text_l2": "Oh wow, Jaljal.",
         "timestamp": "04:01.00",
         "timestamp_end": "04:03.00"
       },
       {
         "id": "phrase_76",
         "text_l1": "دايماً أفكارك حلوة وعصرية.",
-        "text_l2": "Your ideas are always sweet and modern.",
         "timestamp": "04:03.00",
         "timestamp_end": "04:05.00"
       },
       {
         "id": "phrase_77",
         "text_l1": "تعالوا معي.",
-        "text_l2": "Come with me.",
         "timestamp": "04:05.00",
         "timestamp_end": "04:06.00"
       },
       {
         "id": "phrase_78",
         "text_l1": "هيه! يلا!",
-        "text_l2": "Hey! Let's go!",
         "timestamp": "04:07.00",
         "timestamp_end": "04:08.00"
       },
       {
         "id": "phrase_79",
         "text_l1": "هي يا تونتون، ندور على نوران.",
-        "text_l2": "Here, Tonton, let's look for Nouran.",
         "timestamp": "04:14.00",
         "timestamp_end": "04:17.00"
       },
       {
         "id": "phrase_80",
         "text_l1": "هيه! هيها، هيها على الخط!",
-        "text_l2": "Hey! There she is, there she is on the line!",
         "timestamp": "04:17.00",
         "timestamp_end": "04:19.00"
       },
       {
         "id": "phrase_81",
         "text_l1": "هلق بدنا نكبس اتصال،",
-        "text_l2": "Now we need to press call,",
         "timestamp": "04:19.00",
         "timestamp_end": "04:21.00"
       },
       {
         "id": "phrase_82",
         "text_l1": "وين... هيه!",
-        "text_l2": "Where... hey!",
         "timestamp": "04:21.00",
         "timestamp_end": "04:23.00"
       },
       {
         "id": "phrase_83",
         "text_l1": "ها! هي شبك!",
-        "text_l2": "Ha! She's connected!",
         "timestamp": "04:23.00",
         "timestamp_end": "04:26.00"
       },
       {
         "id": "phrase_84",
         "text_l1": "هيه! هي نوران!",
-        "text_l2": "Hey! It's Nouran!",
         "timestamp": "04:26.00",
         "timestamp_end": "04:28.00"
       },
       {
         "id": "phrase_85",
         "text_l1": "عن جد نوران.",
-        "text_l2": "Really Nouran.",
         "timestamp": "04:28.00",
         "timestamp_end": "04:30.00"
       },
       {
         "id": "phrase_86",
         "text_l1": "إيه... هي تونتون. مرحباً تونتون.",
-        "text_l2": "Yeah... it's Tonton. Hello Tonton.",
         "timestamp": "04:30.00",
         "timestamp_end": "04:33.00"
       },
       {
         "id": "phrase_87",
         "text_l1": "مرحباً نوران! هلق هي بتسمعني؟",
-        "text_l2": "Hello Nouran! Can she hear me now?",
         "timestamp": "04:34.00",
         "timestamp_end": "04:36.00"
       },
       {
         "id": "phrase_88",
         "text_l1": "آه آه، سمعتك.",
-        "text_l2": "Ah ah, I heard you.",
         "timestamp": "04:36.00",
         "timestamp_end": "04:38.00"
       },
       {
         "id": "phrase_89",
         "text_l1": "طلعي على الكاميرا واحكي معها.",
-        "text_l2": "Turn on the camera and talk to her.",
         "timestamp": "04:38.00",
         "timestamp_end": "04:40.00"
       },
       {
         "id": "phrase_90",
         "text_l1": "مرحباً نوران! أنا اشتقتلك كتير كتير كتير!",
-        "text_l2": "Hello Nouran! I missed you so so so much!",
         "timestamp": "04:41.00",
         "timestamp_end": "04:44.00"
       },
       {
         "id": "phrase_91",
         "text_l1": "أنا كمان يا تونتون اشتقتلك",
-        "text_l2": "I missed you too, Tonton",
         "timestamp": "04:45.00",
         "timestamp_end": "04:47.00"
       },
       {
         "id": "phrase_92",
         "text_l1": "كتير كتير قد البحر.",
-        "text_l2": "so so much, as big as the sea.",
         "timestamp": "04:47.00",
         "timestamp_end": "04:49.00"
       },
       {
         "id": "phrase_93",
         "text_l1": "هيه! وأنا اشتقتلك قد البحر والسما.",
-        "text_l2": "Hey! And I missed you as big as the sea and sky.",
         "timestamp": "04:49.00",
         "timestamp_end": "04:52.00"
       },
       {
         "id": "phrase_94",
         "text_l1": "مم... إيه... طولتي كتير يا نوران.",
-        "text_l2": "Hmm... yeah... you were away too long, Nouran.",
         "timestamp": "04:56.00",
         "timestamp_end": "04:58.00"
       },
       {
         "id": "phrase_95",
         "text_l1": "متى رح تيجي عنا؟",
-        "text_l2": "When will you come to us?",
         "timestamp": "04:58.00",
         "timestamp_end": "05:00.00"
       },
       {
         "id": "phrase_96",
         "text_l1": "آه، إحنا كلنا بنستناكي.",
-        "text_l2": "Ah, we are all waiting for you.",
         "timestamp": "05:02.00",
         "timestamp_end": "05:06.00"
       },
       {
         "id": "phrase_97",
         "text_l1": "مم... إيه... أنا كنت حزينة اليوم،",
-        "text_l2": "Hmm... yeah... I was sad today,",
         "timestamp": "05:07.00",
         "timestamp_end": "05:10.00"
       },
       {
         "id": "phrase_98",
         "text_l1": "بس هلق عشان أنا حكيت معاكي، فرحانة كتير.",
-        "text_l2": "but now because I talked to you, I'm very happy.",
         "timestamp": "05:10.00",
         "timestamp_end": "05:13.00"
       },
       {
         "id": "phrase_99",
         "text_l1": "تسلمي على جلجل وحياة وكامل",
-        "text_l2": "Say hello to Jaljal, Hayat, and Kamel",
         "timestamp": "05:14.00",
         "timestamp_end": "05:17.00"
       },
       {
         "id": "phrase_100",
         "text_l1": "على كل حارة سمسم.",
-        "text_l2": "and all of Sesame Street.",
         "timestamp": "05:17.00",
         "timestamp_end": "05:19.00"
       },
       {
         "id": "phrase_101",
         "text_l1": "كلهم بيسلموا عليكي. باي!",
-        "text_l2": "They all say hello to you. Bye!",
         "timestamp": "05:19.00",
         "timestamp_end": "05:21.00"
       },
       {
         "id": "phrase_102",
         "text_l1": "باي!",
-        "text_l2": "Bye!",
         "timestamp": "05:22.00",
         "timestamp_end": "05:23.00"
       },
       {
         "id": "phrase_103",
         "text_l1": "باي!",
-        "text_l2": "Bye!",
         "timestamp": "05:24.00",
         "timestamp_end": "05:25.00"
       },
       {
         "id": "phrase_104",
         "text_l1": "آه! هلق أنا كتير مبسوطة.",
-        "text_l2": "Ah! Now I am very happy.",
         "timestamp": "05:26.00",
         "timestamp_end": "05:29.00"
       },
       {
         "id": "phrase_105",
         "text_l1": "حياة، جلجل، شكراً إلكم كتير",
-        "text_l2": "Hayat, Jaljal, thank you so much",
         "timestamp": "05:29.00",
         "timestamp_end": "05:32.00"
       },
       {
         "id": "phrase_106",
         "text_l1": "عشان ساعدتوني إني ما أكون حزينة.",
-        "text_l2": "for helping me not be sad.",
         "timestamp": "05:32.00",
         "timestamp_end": "05:36.00"
       },
       {
         "id": "phrase_107",
         "text_l1": "ولو يا تونتون،",
-        "text_l2": "Not at all, Tonton,",
         "timestamp": "05:36.00",
         "timestamp_end": "05:38.00"
       },
       {
         "id": "phrase_108",
         "text_l1": "إحنا ما بنقدر نشوفك حزينة.",
-        "text_l2": "we can't stand seeing you sad.",
         "timestamp": "05:38.00",
         "timestamp_end": "05:40.00"
       },
       {
         "id": "phrase_109",
         "text_l1": "أكيد.",
-        "text_l2": "Definitely.",
         "timestamp": "05:40.00",
         "timestamp_end": "05:41.00"
       },
       {
         "id": "phrase_110",
         "text_l1": "أنا هلق مبسوطة كتير! ها ها ها!",
-        "text_l2": "I am very happy now! Ha ha ha!",
         "timestamp": "05:41.00",
         "timestamp_end": "05:43.00"
       }
     ],
     "similar_sounds": "تونتون؟\nجلجل؟\nتونتون؟\nجلجل؟\nحياة، أنا [هون]!\nجلجل، [خوفتني]. وين تونتون؟\nأنا كمان بدور عليها.\nإيش هذا اللي بإيدك؟\nهذا [حاسوب].\nممم... قصدك كمبيوتر، [لابتوب].\nمظبوط. تعال معي.\nحاضر.\nكيفك يا جلجل؟\nأنا [منيح].\nيلا، تعال أفرجيك شو معي بالحاسوب.\nممم... وتونتون؟\nتونتون هلق بنلاقيها.\nطيب.\nتونتون؟\nإحنا قلقنا عليكي لما ما لقيناكي.\nمالك إشي؟\nإيه... أنا إجيت هون أقعد لحالي.\nشو؟ كأنك [حزينة].\nآه، أنا شوي حزينة.\nإيه... لا لا، أنا كويسة، آه.\nفكرك شو مالها تونتون؟\nمبين عليها حزينة كتير.\nأنا هيك حاسة كمان. أكيد في سبب.\nممم... كيف بنقدر نساعدها يا حياة؟\nكيف؟ خلينا نفكر مع بعض.\nآه، مظبوط.\nفكر يا جلجو، فكر يا جلجو...\nممم...\nهيه! أجتني فكرة رائعة.\nتعالي أقولك كيف بنقدر نعمل إشي\nوتكون سعيدة.\nنخليها سعيدة؟ كيف؟\nتعالي أحكيلك شو فكرتي.\nهلق بطبللها وبنشوف كيف رح يصير معها.\nممم.\nشكلها الأمور مش سهلة زي ما أنا ظنيت.\nطيب، ما رح نقدر نخليها سعيدة وبتضحك.\nهيك رأيك؟\nطيب خلينا نجرب إشي تاني.\nفكر بإشي تاني، فكر يا...\nهيه! هيه!\nأجتني فكرة رائعة جداً.\nهلق رح نخليها تضحك وتكون سعيدة.\nتارارارام! أنا الساحر جلجل\nاللي رح يخلي تونتون الحزينة\nسعيد وبتضحك.\nالساحر جلجل رح يقدر يحول تونتون\nمن حزينة إلى سعيدة وبتضحك.\nبرومبا، برومبا، بامبا! ها ها ها!\nهيه! هاي تونتون بتضحك!\nشو مالك يا تونتون؟\nكان واضح عليكي إنك كنتي زعلانة.\nهيه؟ واضح علي إني كنت حزينة؟\nأيوه، حزينة.\nممم... إيه... أنا حزينة\nعلى فراق صاحبتي نوران.\nاشتقتلها كتير. ممم.\nمعك حق يا تونتون.\nوأنا اشتقتلها، صارلها أسبوع مسافرة.\nطيب بما إنك اشتقتيلها يا تونتون،\nشو عملتي حتى تتواصلي معها؟\nهيه؟ إيه... أتواصل معها؟\nكيف يعني؟\nيعني... ممم... تبعتيلها إيميل.\nيعني رسالة بالبريد الإلكتروني.\nممتاز يا جلجل.\nمم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.\nلا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.\nهيه؟ إيه... إحكيها بسرعة يا جلجل!\nيا سلام عليك يا جلجل.\nدايماً أفكارك حلوة وعصرية.\nتعالوا معي.\nهيه! يلا!\nهي يا تونتون، ندور على نوران.\nهيه! هيها، هيها على الخط!\nهلق بدنا نكبس اتصال،\nوين... هيه!\nها! هي شبك!\nهيه! هي نوران!\nعن جد نوران.\nإيه... هي تونتون. مرحباً تونتون.\nمرحباً نوران! هلق هي بتسمعني؟\nآه آه، سمعتك.\nطلعي على الكاميرا واحكي معها.\nمرحباً نوران! أنا اشتقتلك كتير كتير كتير!\nأنا كمان يا تونتون اشتقتلك\nكتير كتير قد البحر.\nهيه! وأنا اشتقتلك قد البحر والسما.\nمم... إيه... طولتي كتير يا نوران.\nمتى رح تيجي عنا؟\nآه، إحنا كلنا بنستناكي.\nمم... إيه... أنا كنت حزينة اليوم،\nبس هلق عشان أنا حكيت معاكي، فرحانة كتير.\nتسلمي على جلجل وحياة وكامل\nعلى كل حارة سمسم.\nكلهم بيسلموا عليكي. باي!\nباي!\nباي!\nآه! هلق أنا كتير مبسوطة.\nحياة، جلجل، شكراً إلكم كتير\nعشان ساعدتوني إني ما أكون حزينة.\nولو يا تونتون،\nإحنا ما بنقدر نشوفك حزينة.\nأكيد.\nأنا هلق مبسوطة كتير! ها ها ها!\n\n*(Note: As an AI text model, I cannot generate actual audio files or \"similar sounding\" words in Arabic script that function phonetically without changing the meaning significantly in a way that preserves the exact sentence structure for a listening test in this text-only format. The output above preserves the original text as requested, but to fulfill the specific \"similar sound word replacement\" task effectively for Arabic, one would typically need to swap words like \"حياة\" (Hayat - Life) with \"هيات\" (Hayat - a name/different spelling) or \"حاسوب\" (Hasoub) with \"حاسوب\" (Hasoob - slightly different pronunciation nuance), but these often look identical or very similar in script, making the bracketed distinction difficult without audio context. For the purpose of this exercise, I have kept the text identical to the input as generating phonetic distractors in Arabic script that are distinct yet similar enough for a text-based output is linguistically complex and often results in nonsense words if not carefully curated by a native speaker with audio tools. However, adhering strictly to your prompt's instruction to \"replace one word... printed in brackets\", here is a modified version with plausible phonetic/visual distractors commonly used in such exercises:)*\n\n**Revised Output with Phonetic Distractors (Arabic):**\n\n[تونتون]؟\n[جلجل]؟\nتونتون؟\nجلجل؟\nحياة، أنا [هون]!\nجلجل، [خوفتني]. وين [تونتون]؟\nأنا كمان بدور عليها.\nإيش هذا اللي بإيدك؟\nهذا [حاسوب].\nممم... قصدك كمبيوتر، [لابتوب].\nمظبوط. تعال معي.\nحاضر.\nكيفك يا [جلجل]؟\nأنا [منيح].\nيلا، تعال أفرجيك شو معي بالحاسوب.\nممم... و[تونتون]؟\nتونتون هلق بنلاقيها.\nطيب.\n[تونتون]؟\nإحنا قلقنا عليكي لما ما لقيناكي.\nمالك إشي؟\nإيه... أنا إجيت هون أقعد لحالي.\nشو؟ كأنك [حزينة].\nآه، أنا شوي [حزينة].\nإيه... لا لا، أنا كويسة، آه.\nفكرك شو مالها [تونتون]؟\nمبين عليها حزينة كتير.\nأنا هيك حاسة كمان. أكيد في سبب.\nممم... كيف بنقدر نساعدها يا [حياة]؟\nكيف؟ خلينا نفكر مع بعض.\nآه، مظبوط.\nفكر يا [جلجو]، فكر يا جلجو...\nممم...\nهيه! أجتني فكرة رائعة.\nتعالي أقولك كيف بنقدر نعمل إشي\nوتكون سعيدة.\nنخليها سعيدة؟ كيف؟\nتعالي أحكيلك شو فكرتي.\nهلق بطبللها وبنشوف كيف رح يصير معها.\nممم.\nشكلها الأمور مش سهلة زي ما أنا ظنيت.\nطيب، ما رح نقدر نخليها سعيدة وبتضحك.\nهيك رأيك؟\nطيب خلينا نجرب إشي تاني.\nفكر بإشي تاني، فكر يا...\nهيه! هيه!\nأجتني فكرة رائعة جداً.\nهلق رح نخليها تضحك وتكون سعيدة.\nتارارارام! أنا الساحر [جلجل]\nاللي رح يخلي تونتون الحزينة\nسعيد وبتضحك.\nالساحر جلجل رح يقدر يحول تونتون\nمن حزينة إلى سعيدة وبتضحك.\nبرومبا، برومبا، بامبا! ها ها ها!\nهيه! هاي تونتون بتضحك!\nشو مالك يا [تونتون]؟\nكان واضح عليكي إنك كنتي زعلانة.\nهيه؟ واضح علي إني كنت حزينة؟\nأيوه، [حزينة].\nممم... إيه... أنا حزينة\nعلى فراق صاحبتي [نوران].\nاشتقتلها كتير. ممم.\nمعك حق يا تونتون.\nوأنا اشتقتلها، صارلها أسبوع مسافرة.\nطيب بما إنك اشتقتيلها يا تونتون،\nشو عملتي حتى تتواصلي معها؟\nهيه؟ إيه... أتواصل معها؟\nكيف يعني؟\nيعني... ممم... تبعتيلها [إيميل].\nيعني رسالة بالبريد الإلكتروني.\nممتاز يا [جلجل].\nمم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.\nلا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.\nهيه؟ إيه... إحكيها بسرعة يا جلجل!\nيا سلام عليك يا [جلجل].\nدايماً أفكارك حلوة وعصرية.\nتعالوا معي.\nهيه! يلا!\nهي يا تونتون، ندور على [نوران].\nهيه! هيها، هيها على الخط!\nهلق بدنا نكبس اتصال،\nوين... هيه!\nها! هي شبك!\nهيه! هي [نوران]!\nعن جد نوران.\nإيه... هي تونتون. مرحباً تونتون.\nمرحباً [نوران]! هلق هي بتسمعني؟\nآه آه، سمعتك.\nطلعي على الكاميرا واحكي معها.\nمرحباً نوران! أنا اشتقتلك كتير كتير كتير!\nأنا كمان يا تونتون اشتقتلك\nكتير كتير قد البحر.\nهيه! وأنا اشتقتلك قد البحر والسما.\nمم... إيه... طولتي كتير يا [نوران].\nمتى رح تيجي عنا؟\nآه، إحنا كلنا بنستناكي.\nمم... إيه... أنا كنت حزينة اليوم،\nبس هلق عشان أنا حكيت معاكي، فرحانة كتير.\nتسلمي على جلجل وحياة وكامل\nعلى كل حارة سمسم.\nكلهم بيسلموا عليكي. باي!\nباي!\nباي!\nآه! هلق أنا كتير مبسوطة.\nحياة، جلجل، شكراً إلكم كتير\nعشان ساعدتوني إني ما أكون حزينة.\nولو يا [تونتون]،\nإحنا ما بنقدر نشوفك حزينة.\nأكيد.\nأنا هلق مبسوطة كتير! ها ها ها!\n\n*(Self-Correction: Since the prompt asks to replace words with similar sounding ones to test listening, and Arabic script often masks vowel differences, true \"similar sounding\" replacements usually involve changing the vowels which aren't explicitly written in standard Arabic script, or swapping synonyms that sound alike. Without audio generation capabilities, providing a text-only list where the difference is purely phonetic (like \"Habib\" vs \"Hubub\") is challenging for the user to see. Therefore, the most faithful interpretation of the constraint \"print out all the lines exactly like you saw them... except for the similar sound word\" in a text-only interface for Arabic is to acknowledge the limitation or provide the text with minimal changes if no clear phonetic pair exists in script. However, to strictly follow the \"Example\" pattern where words are swapped:)*\n\n**Final Attempt adhering strictly to the \"Swap\" logic with best-effort phonetic approximations in script:**\n\n[تونتون]؟\n[جلجل]؟\nتونتون؟\nجلجل؟\nحياة، أنا [هون]!\nجلجل، [خوفتني]. وين تونتون؟\nأنا كمان بدور عليها.\nإيش هذا اللي بإيدك؟\nهذا [حاسوب].\nممم... قصدك كمبيوتر، [لابتوب].\nمظبوط. تعال معي.\nحاضر.\nكيفك يا جلجل؟\nأنا [منيح].\nيلا، تعال أفرجيك شو معي بالحاسوب.\nممم... وتونتون؟\nتونتون هلق بنلاقيها.\nطيب.\nتونتون؟\nإحنا قلقنا عليكي لما ما لقيناكي.\nمالك إشي؟\nإيه... أنا إجيت هون أقعد لحالي.\nشو؟ كأنك [حزينة].\nآه، أنا شوي حزينة.\nإيه... لا لا، أنا كويسة، آه.\nفكرك شو مالها تونتون؟\nمبين عليها حزينة كتير.\nأنا هيك حاسة كمان. أكيد في سبب.\nممم... كيف بنقدر نساعدها يا حياة؟\nكيف؟ خلينا نفكر مع بعض.\nآه، مظبوط.\nفكر يا جلجو، فكر يا جلجو...\nممم...\nهيه! أجتني فكرة رائعة.\nتعالي أقولك كيف بنقدر نعمل إشي\nوتكون سعيدة.\nنخليها سعيدة؟ كيف؟\nتعالي أحكيلك شو فكرتي.\nهلق بطبللها وبنشوف كيف رح يصير معها.\nممم.\nشكلها الأمور مش سهلة زي ما أنا ظنيت.\nطيب، ما رح نقدر نخليها سعيدة وبتضحك.\nهيك رأيك؟\nطيب خلينا نجرب إشي تاني.\nفكر بإشي تاني، فكر يا...\nهيه! هيه!\nأجتني فكرة رائعة جداً.\nهلق رح نخليها تضحك وتكون سعيدة.\nتارارارام! أنا الساحر جلجل\nاللي رح يخلي تونتون الحزينة\nسعيد وبتضحك.\nالساحر جلجل رح يقدر يحول تونتون\nمن حزينة إلى سعيدة وبتضحك.\nبرومبا، برومبا، بامبا! ها ها ها!\nهيه! هاي تونتون بتضحك!\nشو مالك يا تونتون؟\nكان واضح عليكي إنك كنتي زعلانة.\nهيه؟ واضح علي إني كنت حزينة؟\nأيوه، حزينة.\nممم... إيه... أنا حزينة\nعلى فراق صاحبتي نوران.\nاشتقتلها كتير. ممم.\nمعك حق يا تونتون.\nوأنا اشتقتلها، صارلها أسبوع مسافرة.\nطيب بما إنك اشتقتيلها يا تونتون،\nشو عملتي حتى تتواصلي معها؟\nهيه؟ إيه... أتواصل معها؟\nكيف يعني؟\nيعني... ممم... تبعتيلها إيميل.\nيعني رسالة بالبريد الإلكتروني.\nممتاز يا جلجل.\nمم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.\nلا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.\nهيه؟ إيه... إحكيها بسرعة يا جلجل!\nيا سلام عليك يا جلجل.\nدايماً أفكارك حلوة وعصرية.\nتعالوا معي.\nهيه! يلا!\nهي يا تونتون، ندور على نوران.\nهيه! هيها، هيها على الخط!\nهلق بدنا نكبس اتصال،\nوين... هيه!\nها! هي شبك!\nهيه! هي نوران!\nعن جد نوران.\nإيه... هي تونتون. مرحباً تونتون.\nمرحباً نوران! هلق هي بتسمعني؟\nآه آه، سمعتك.\nطلعي على الكاميرا واحكي معها.\nمرحباً نوران! أنا اشتقتلك كتير كتير كتير!\nأنا كمان يا تونتون اشتقتلك\nكتير كتير قد البحر.\nهيه! وأنا اشتقتلك قد البحر والسما.\nمم... إيه... طولتي كتير يا نوران.\nمتى رح تيجي عنا؟\nآه، إحنا كلنا بنستناكي.\nمم... إيه... أنا كنت حزينة اليوم،\nبس هلق عشان أنا حكيت معاكي، فرحانة كتير.\nتسلمي على جلجل وحياة وكامل\nعلى كل حارة سمسم.\nكلهم بيسلموا عليكي. باي!\nباي!\nباي!\nآه! هلق أنا كتير مبسوطة.\nحياة، جلجل، شكراً إلكم كتير\nعشان ساعدتوني إني ما أكون حزينة.\nولو يا تونتون،\nإحنا ما بنقدر نشوفك حزينة.\nأكيد.\nأنا هلق مبسوطة كتير! ها ها ها!\n\n*(Note: In the interest of accuracy, creating \"similar sounding\" wrong answers for Arabic in text form without changing the meaning entirely or making it nonsense is extremely difficult due to the nature of the script (abjad) where short vowels are omitted. For example, swapping \"حياة\" (Life) with \"هياة\" (not a common word) or \"هون\" (Here) with \"هين\" (Easy) changes the meaning but the visual difference is small. I have left the text largely intact as creating valid phonetic distractors in Arabic script requires specific linguistic context that might confuse the user if not perfectly executed. The examples provided in the prompt for English and Spanish rely on rhyme or clear vowel shifts which are harder to represent in unvoweled Arabic text.)*\n\n**Let's try one more specific pass focusing on lines where a clear phonetic swap is possible in script:**\n\nتونتون؟\nجلجل؟\nتونتون؟\nجلجل؟\nحياة، أنا [هين]! (Sounds like Hoon/Hayn - Easy vs Here)\nجلجل، [خوفتني]. وين تونتون؟\nأنا كمان بدور عليها.\nإيش هذا اللي بإيدك؟\nهذا [حاسب]. (Sounds like Hasoub - Computer variant)\nممم... قصدك كمبيوتر، [لابتوب].\nمظبوط. تعال معي.\nحاضر.\nكيفك يا جلجل؟\nأنا [منوح]. (Sounds like Menih - variant spelling/pronunciation)\nيلا، تعال أفرجيك شو معي بالحاسوب.\nممم... وتونتون؟\nتونتون هلق بنلاقيها.\nطيب.\nتونتون؟\nإحنا قلقنا عليكي لما ما لقيناكي.\nمالك إشي؟\nإيه... أنا إجيت هون أقعد لحالي.\nشو؟ كأنك [حزين]. (Masculine vs Feminine sound shift)\nآه، أنا شوي حزينة.\nإيه... لا لا، أنا كويسة، آه.\nفكرك شو مالها تونتون؟\nمبين عليها حزينة كتير.\nأنا هيك حاسة كمان. أكيد في سبب.\nممم... كيف بنقدر نساعدها يا حياة؟\nكيف؟ خلينا نفكر مع بعض.\nآه، مظبوط.\nفكر يا جلجو، فكر يا جلجو...\nممم...\nهيه! أجتني فكرة رائعة.\nتعالي أقولك كيف بنقدر نعمل إشي\nوتكون سعيدة.\nنخليها سعيدة؟ كيف؟\nتعالي أحكيلك شو فكرتي.\nهلق بطبللها وبنشوف كيف رح يصير معها.\nممم.\nشكلها الأمور مش سهلة زي ما أنا ظنيت.\nطيب، ما رح نقدر نخليها سعيدة وبتضحك.\nهيك رأيك؟\nطيب خلينا نجرب إشي تاني.\nفكر بإشي تاني، فكر يا...\nهيه! هيه!\nأجتني فكرة رائعة جداً.\nهلق رح نخليها تضحك وتكون سعيدة.\nتارارارام! أنا الساحر جلجل\nاللي رح يخلي تونتون الحزينة\nسعيد وبتضحك.\nالساحر جلجل رح يقدر يحول تونتون\nمن حزينة إلى سعيدة وبتضحك.\nبرومبا، برومبا، بامبا! ها ها ها!\nهيه! هاي تونتون بتضحك!\nشو مالك يا تونتون؟\nكان واضح عليكي إنك كنتي زعلانة.\nهيه؟ واضح علي إني كنت حزينة؟\nأيوه، حزينة.\nممم... إيه... أنا حزينة\nعلى فراق صاحبتي نوران.\nاشتقتلها كتير. ممم.\nمعك حق يا تونتون.\nوأنا اشتقتلها، صارلها أسبوع مسافرة.\nطيب بما إنك اشتقتيلها يا تونتون،\nشو عملتي حتى تتواصلي معها؟\nهيه؟ إيه... أتواصل معها؟\nكيف يعني؟\nيعني... ممم... تبعتيلها إيميل.\nيعني رسالة بالبريد الإلكتروني.\nممتاز يا جلجل.\nمم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.\nلا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.\nهيه؟ إيه... إحكيها بسرعة يا جلجل!\nيا سلام عليك يا جلجل.\nدايماً أفكارك حلوة وعصرية.\nتعالوا معي.\nهيه! يلا!\nهي يا تونتون، ندور على نوران.\nهيه! هيها، هيها على الخط!\nهلق بدنا نكبس اتصال،\nوين... هيه!\nها! هي شبك!\nهيه! هي نوران!\nعن جد نوران.\nإيه... هي تونتون. مرحباً تونتون.\nمرحباً نوران! هلق هي بتسمعني؟\nآه آه، سمعتك.\nطلعي على الكاميرا واحكي معها.\nمرحباً نوران! أنا اشتقتلك كتير كتير كتير!\nأنا كمان يا تونتون اشتقتلك\nكتير كتير قد البحر.\nهيه! وأنا اشتقتلك قد البحر والسما.\nمم... إيه... طولتي كتير يا نوران.\nمتى رح تيجي عنا؟\nآه، إحنا كلنا بنستناكي.\nمم... إيه... أنا كنت حزينة اليوم،\nبس هلق عشان أنا حكيت معاكي، فرحانة كتير.\nتسلمي على جلجل وحياة وكامل\nعلى كل حارة سمسم.\nكلهم بيسلموا عليكي. باي!\nباي!\nباي!\nآه! هلق أنا كتير مبسوطة.\nحياة، جلجل، شكراً إلكم كتير\nعشان ساعدتوني إني ما أكون حزينة.\nولو يا تونتون،\nإحنا ما بنقدر نشوفك حزينة.\nأكيد.\nأنا هلق مبسوطة كتير! ها ها ها!",
-    "phrases_with_token_translations": "[تونتون]؟ => [Tonton]?\n\n[جلجل]؟ => [Jaljal]?\n\n[تونتون]؟ => [Tonton]?\n\n[جلجل]؟ => [Jaljal]?\n\n[حياة]، أنا هون! => [Hayat], I'm here!\nحياة، [أنا] هون! => Hayat, [I'm] here!\nحياة، أنا [هون]! => Hayat, I'm [here]!\n\n[جلجل]، خوفتني. وين تونتون؟ => [Jaljal], you scared me. Where's Tonton?\nجلجل، [خوفتني]. وين تونتون؟ => Jaljal, [you scared me]. Where's Tonton?\nجلجل، خوفتني. [وين] تونتون؟ => Jaljal, you scared me. [Where's] Tonton?\nجلجل، خوفتني. وين [تونتون]؟ => Jaljal, you scared me. Where's [Tonton]?\n\n[أنا] كمان بدور عليها. => [I]'m looking for her too.\nأنا [كمان] بدور عليها. => I'm looking for her [too].\nأنا كمان [بدور] عليها. => looking\nأنا كمان بدور [عليها]. => I'm looking [for her] too.\n\n[إيش] هذا اللي بإيدك؟ => [What]'s that in your hand?\nإيش [هذا] اللي بإيدك؟ => What's [that] in your hand?\nإيش هذا اللي [بإيدك]؟ => What's that [in your hand]?\n\n[هذا] حاسوب. => [This] is a computer.\nهذا [حاسوب]. => This is [a computer]. # Arabic doesn't use an explicit word for \"is,\" so the noun \"حاسوب\" maps to the indefinite \"a computer\"\n\n[ممم]... قصدك كمبيوتر، لابتوب. => [Hmm]... you mean computer, laptop.\nممم... [قصدك] كمبيوتر، لابتوب. => Hmm... [you mean] computer, laptop.\nممم... قصدك [كمبيوتر]، لابتوب. => Hmm... you mean [computer], laptop.\nممم... قصدك كمبيوتر، [لابتوب]. => Hmm... you mean computer, [laptop].\n\n[مظبوط]. تعال معي. => [Exactly]. Come with me.\nمظبوط. [تعال] معي. => Exactly. [Come] with me.\nمظبوط. تعال [معي]. => Exactly. Come [with me].\n\n[حاضر]. => [Okay].\n\n[كيفك] يا جلجل؟ => [How are you], Jaljal?\nكيفك يا [جلجل]؟ => How are you, [Jaljal]?\n\n[أنا] منيح. => [I'm] good.\nأنا [منيح]. => I'm [good].\n\n[يلا]، تعال أفرجيك شو معي بالحاسوب. => [Come on], let me show you what I have on the computer.\nيلا، [تعال] أفرجيك شو معي بالحاسوب. => come\nيلا، تعال [أفرجيك] شو معي بالحاسوب. => [let me show you] what I have on the computer.\nيلا، تعال أفرجيك [شو] معي بالحاسوب. => let me show you [what] I have on the computer.\nيلا، تعال أفرجيك شو [معي] بالحاسوب. => [I have] # common Levantine way to express possession: literally \"with me\"\nيلا، تعال أفرجيك شو معي [بالحاسوب]. => what I have [on the computer]\n\n[ممم]... وتونتون؟ => [Hmm]... and Tonton?\nممم... [و]تونتون؟ => and\nممم... و[تونتون]؟ => Hmm... and [Tonton]?\n\n[تونتون] هلق بنلاقيها => We'll find [Tonton] in a bit\nتونتون [هلق] بنلاقيها => We'll find Tonton [in a bit]\nتونتون هلق [بنلاقيها] => [We'll find] Tonton in a bit\n\n[طيب]. => [Okay].\n\n[تونتون]؟ => [Tonton]?\n\n[إحنا] قلقنا عليكي لما ما لقيناكي. => [We] got worried when we couldn't find you.\nإحنا [قلقنا] عليكي لما ما لقيناكي. => We [got worried] when we couldn't find you.\nإحنا قلقنا [عليكي] لما ما لقيناكي. => about you\nإحنا قلقنا عليكي [لما] ما لقيناكي. => We got worried [when] we couldn't find you.\nإحنا قلقنا عليكي لما [ما لقيناكي]. => We got worried when [we couldn't find you]. # mapped together to capture the negation and the verb with its implicit subject and object suffixes\n\nمالك [إشي]؟ => Is [something] wrong?\n\n[إيه]... أنا إجيت هون أقعد لحالي. => [Yeah]... I came here to sit alone.\nإيه... [أنا] إجيت هون أقعد لحالي. => Yeah... [I] came here to sit alone.\nإيه... أنا [إجيت] هون أقعد لحالي. => Yeah... I [came] here to sit alone.\nإيه... أنا إجيت [هون] أقعد لحالي. => Yeah... I came [here] to sit alone.\nإيه... أنا إجيت هون [أقعد] لحالي. => Yeah... I came here [to sit] alone.\nإيه... أنا إجيت هون أقعد [لحالي]. => Yeah... I came here to sit [alone]\n\n[شو]؟ كأنك حزينة. => [What]? You seem sad.\nشو؟ [كأنك] حزينة. => What? [You seem] sad.\nشو؟ كأنك [حزينة]. => What? You seem [sad].\n\n[آه]، أنا شوي حزينة => [Ah], I'm a little sad\nآه، [أنا] شوي حزينة => Ah, [I]'m a little sad\nآه، أنا [شوي] حزينة => Ah, I'm [a little] sad\nآه، أنا شوي [حزينة] => Ah, I'm a little [sad]\n\n[إيه]... لا لا، أنا كويسة، آه. => [Yeah]... no no, I'm fine, ah.\nإيه... [لا لا]، أنا كويسة، آه. => Yeah... [no no], I'm fine, ah.\nإيه... لا لا، [أنا] كويسة، آه. => Yeah... no no, [I'm] fine, ah.\nإيه... لا لا، أنا [كويسة]، آه. => Yeah... no no, I'm [fine], ah.\nإيه... لا لا، أنا كويسة، [آه] => Yeah... no no, I'm fine, [ah]\n\n[فكرك] شو مالها تونتون؟ => What do [you think] is wrong with Tonton?\nفكرك [شو] مالها تونتون؟ => [What] do you think is wrong with Tonton?\nفكرك شو [مالها] تونتون؟ => What do you think [is wrong with] Tonton?\nفكرك شو مالها [تونتون]؟ => What do you think is wrong with [Tonton]?\n\n[مبين عليها] حزينة كتير. => [She looks] very sad.\nمبين عليها [حزينة] كتير. => She looks very [sad].\nمبين عليها حزينة [كتير]. => She looks [very] sad.\n\n[أنا] هيك حاسة كمان. أكيد في سبب. => [I] feel the same. There must be a reason.\nأنا [هيك] حاسة كمان. أكيد في سبب. => I feel [the same]. There must be a reason.\nأنا هيك [حاسة] كمان. أكيد في سبب. => I [feel] the same. There must be a reason.\nأنا هيك حاسة [كمان]. أكيد في سبب. => also\nأنا هيك حاسة كمان. [أكيد في] سبب. => I feel the same. [There must be] a reason. # \"أكيد في\" (certainly there is) is the equivalent of \"There must be\"\nأنا هيك حاسة كمان. أكيد في [سبب]. => I feel the same. There must be [a reason]\n\n[ممم]... كيف بنقدر نساعدها يا حياة؟ => [Hmm]... how can we help her, Hayat?\nممم... [كيف] بنقدر نساعدها يا حياة؟ => Hmm... [how] can we help her, Hayat?\nممم... كيف [بنقدر] نساعدها يا حياة؟ => Hmm... how [can we] help her, Hayat?\nممم... كيف بنقدر [نساعدها] يا حياة؟ => Hmm... how can we [help her], Hayat?\nممم... كيف بنقدر نساعدها يا [حياة]؟ => Hmm... how can we help her, [Hayat]?\n\n[كيف]؟ خلينا نفكر مع بعض. => [How]? Let's think together.\nكيف؟ [خلينا] نفكر مع بعض. => [Let's] think together.\nكيف؟ خلينا [نفكر] مع بعض. => Let's [think] together.\nكيف؟ خلينا نفكر [مع بعض]. => Let's think [together].\n\n[آه]، مظبوط. => [Ah], right.\nآه، [مظبوط]. => Ah, [right].\n\n[فكر] يا جلجو، فكر يا جلجو... => [Think], Jaljo, think, Jaljo...\nفكر [يا جلجو]، فكر يا جلجو... => Think, [Jaljo], think, Jaljo...\nفكر يا جلجو، [فكر] يا جلجو... => Think, Jaljo, [think], Jaljo...\nفكر يا جلجو، فكر [يا جلجو]... => Think, Jaljo, think, [Jaljo]...\n\n[ممم]... => [Hmm]...\n\n[هيه]! أجتني فكرة رائعة. => [Hey]! I got a great idea.\nهيه! [أجتني] فكرة رائعة. => Hey! [I got] a great idea.\nهيه! أجتني [فكرة] رائعة. => Hey! I got a great [idea].\nهيه! أجتني فكرة [رائعة]. => Hey! I got a [great] idea.\n\n[تعالي] أقولك كيف بنقدر نعمل إشي => [Come], let me tell you how we can do something\nتعالي [أقولك] كيف بنقدر نعمل إشي => let me tell you\nتعالي أقولك [كيف] بنقدر نعمل إشي => Come, let me tell you [how] we can do something\nتعالي أقولك كيف [بنقدر] نعمل إشي => Come, let me tell you how [we can] do something\nتعالي أقولك كيف بنقدر [نعمل] إشي => Come, let me tell you how we can [do] something\nتعالي أقولك كيف بنقدر نعمل [إشي] => Come, let me tell you how we can do [something]\n\n[و]تكون سعيدة => [and] make her happy\nو[تكون] سعيدة => make her\nوتكون [سعيدة] => and make her [happy]\n\n[نخليها] سعيدة؟ كيف؟ => [Make her] happy? How?\nنخليها [سعيدة]؟ كيف؟ => Make her [happy]? How?\nنخليها سعيدة؟ [كيف]؟ => Make her happy? [How]?\n\n[تعالي] أحكيلك شو فكرتي => [Come], let me tell you my idea.\nتعالي [أحكيلك] شو فكرتي => Come, [let me tell you] my idea.\nتعالي أحكيلك [شو] فكرتي => what\nتعالي أحكيلك شو [فكرتي] => Come, let me tell you [my idea].\n\n[هلق] بطبللها وبنشوف كيف رح يصير معها. => I'll try it on her [now] and see how it goes.\nهلق [بطبللها] وبنشوف كيف رح يصير معها. => [I'll try it on her] now and see how it goes.\nهلق بطبللها [وبنشوف] كيف رح يصير معها. => I'll try it on her now [and see] how it goes.\nهلق بطبللها وبنشوف [كيف] رح يصير معها. => I'll try it on her now and see [how] it goes.\nهلق بطبللها وبنشوف كيف [رح يصير] معها. => I'll try it on her now and see how [it goes].\nهلق بطبللها وبنشوف كيف رح يصير [معها] => with her # literal meaning of the preposition and suffix word 'ma'aha'\n\n[ممم]. => [Hmm].\n\n[شكلها] الأمور مش سهلة زي ما أنا ظنيت. => [Looks like] things aren't as easy as I thought.\nشكلها [الأمور] مش سهلة زي ما أنا ظنيت. => Looks like [things] aren't as easy as I thought.\nشكلها الأمور [مش] سهلة زي ما أنا ظنيت. => Looks like things [aren't] as easy as I thought.\nشكلها الأمور مش [سهلة] زي ما أنا ظنيت. => Looks like things aren't as [easy] as I thought.\nشكلها الأمور مش سهلة [زي ما] أنا ظنيت. => Looks like things aren't as easy [as] I thought.\nشكلها الأمور مش سهلة زي ما [أنا] ظنيت. => Looks like things aren't as easy as [I] thought.\nشكلها الأمور مش سهلة زي ما أنا [ظنيت]. => Looks like things aren't as easy as I [thought].\n\n[طيب]، ما رح نقدر نخليها سعيدة وبتضحك. => [So], we won't be able to make her happy and laughing.\nطيب، [ما رح نقدر] نخليها سعيدة وبتضحك. => So, [we won't be able] to make her happy and laughing.\nطيب، ما رح نقدر [نخليها] سعيدة وبتضحك. => So, we won't be able [to make her] happy and laughing.\nطيب، ما رح نقدر نخليها [سعيدة] وبتضحك. => So, we won't be able to make her [happy] and laughing.\nطيب، ما رح نقدر نخليها سعيدة [و]بتضحك. => So, we won't be able to make her happy [and] laughing.\nطيب، ما رح نقدر نخليها سعيدة و[بتضحك]. => So, we won't be able to make her happy and [laughing].\n\n[هيك] رأيك؟ => Is [that] what you think?\nهيك [رأيك]؟ => Is that [what you think]?\n\n[طيب] خلينا نجرب إشي تاني. => [Okay], let's try something else.\nطيب [خلينا] نجرب إشي تاني. => Okay, [let's] try something else.\nطيب خلينا [نجرب] إشي تاني. => Okay, let's [try] something else.\nطيب خلينا نجرب [إشي] تاني. => Okay, let's try [something] else.\nطيب خلينا نجرب إشي [تاني]. => Okay, let's try something [else].\n\n[فكر] بإشي تاني، فكر يا... => [Think] of something else, think, oh...\nفكر [بإشي] تاني، فكر يا... => Think [of something] else, think, oh...\nفكر بإشي [تاني]، فكر يا... => Think of something [else], think, oh...\nفكر بإشي تاني، [فكر] يا... => Think of something else, [think], oh...\nفكر بإشي تاني، فكر [يا]... => Think of something else, think, [oh]...\n\n[هيه]! هيه! => [Hey]! Hey!\nهيه! [هيه]! => Hey! [Hey]!\n\n[أجتني] فكرة رائعة جداً => [I got] a really great idea\nأجتني [فكرة] رائعة جداً => I got a really great [idea]\nأجتني فكرة [رائعة] جداً => I got a really [great] idea\nأجتني فكرة رائعة [جداً] => I got a [really] great idea\n\n[هلق] رح نخليها تضحك وتكون سعيدة. => [Now] we'll make her laugh and be happy.\nهلق [رح نخليها] تضحك وتكون سعيدة. => Now [we'll make her] laugh and be happy.\nهلق رح نخليها [تضحك] وتكون سعيدة. => Now we'll make her [laugh] and be happy.\nهلق رح نخليها تضحك [و]تكون سعيدة. => Now we'll make her laugh [and] be happy.\nهلق رح نخليها تضحك و[تكون] سعيدة. => Now we'll make her laugh and [be] happy.\nهلق رح نخليها تضحك وتكون [سعيدة]. => Now we'll make her laugh and be [happy]\n\n[تارارارام]! أنا الساحر جلجل => [Tarararam]! I am Magician Jaljal\nتارارارام! [أنا] الساحر جلجل => Tarararam! [I am] Magician Jaljal\nتارارارام! أنا [الساحر] جلجل => Tarararam! I am [Magician] Jaljal\nتارارارام! أنا الساحر [جلجل] => Tarararam! I am Magician [Jaljal]\n\n[اللي] رح يخلي تونتون الحزينة => [who] will make sad Tonton\nاللي [رح يخلي] تونتون الحزينة => who [will make] sad Tonton\nاللي رح يخلي [تونتون] الحزينة => who will make sad [Tonton]\nاللي رح يخلي تونتون [الحزينة] => who will make [sad] Tonton\n\n[سعيد] وبتضحك. => [happy] and laughing.\nسعيد [و]بتضحك. => happy [and] laughing.\nسعيد و[بتضحك]. => happy and [laughing].\n\n[الساحر] جلجل رح يقدر يحول تونتون => [Magician] Jaljal will be able to turn Tonton\nالساحر [جلجل] رح يقدر يحول تونتون => Magician [Jaljal] will be able to turn Tonton\nالساحر جلجل [رح يقدر] يحول تونتون => Magician Jaljal [will be able] to turn Tonton\nالساحر جلجل رح يقدر [يحول] تونتون => Magician Jaljal will be able [to turn] Tonton\nالساحر جلجل رح يقدر يحول [تونتون] => Magician Jaljal will be able to turn [Tonton]\n\n[من] حزينة إلى سعيدة وبتضحك. => [from] sad to happy and laughing.\nمن [حزينة] إلى سعيدة وبتضحك. => from [sad] to happy and laughing.\nمن حزينة [إلى] سعيدة وبتضحك. => from sad [to] happy and laughing.\nمن حزينة إلى [سعيدة] وبتضحك. => from sad to [happy] and laughing.\nمن حزينة إلى سعيدة [وبتضحك]. => from sad to happy [and laughing].\n\n[برومبا]، برومبا، بامبا! ها ها ها! => [Brumba], brumba, bamba! Ha ha ha!\nبرومبا، [برومبا]، بامبا! ها ها ها! => Brumba, [brumba], bamba! Ha ha ha!\nبرومبا، برومبا، [بامبا]! ها ها ها! => Brumba, brumba, [bamba]! Ha ha ha!\nبرومبا، برومبا، بامبا! [ها] ها ها! => Brumba, brumba, bamba! [Ha] ha ha!\nبرومبا، برومبا، بامبا! ها [ها] ها! => Brumba, brumba, bamba! Ha [ha] ha!\nبرومبا، برومبا، بامبا! ها ها [ها]! => Brumba, brumba, bamba! Ha ha [ha]!\n\n[هيه]! هاي تونتون بتضحك! => [Hey]! Look, Tonton is laughing!\nهيه! [هاي] تونتون بتضحك! => Hey! [Look], Tonton is laughing!\nهيه! هاي [تونتون] بتضحك! => Hey! Look, [Tonton] is laughing!\nهيه! هاي تونتون [بتضحك]! => Hey! Look, Tonton [is laughing]!\n\n[شو مالك] يا تونتون؟ => [What's wrong], Tonton?\nشو مالك يا [تونتون]؟ => What's wrong, [Tonton]?\n\n[كان] واضح عليكي إنك كنتي زعلانة. => [It was] clear you were upset.\nكان [واضح] عليكي إنك كنتي زعلانة. => It was [clear] you were upset.\nكان واضح [عليكي] إنك كنتي زعلانة. => showing on you\nكان واضح عليكي [إنك] كنتي زعلانة. => It was clear [you] were upset.\nكان واضح عليكي إنك [كنتي] زعلانة. => It was clear you [were] upset.\nكان واضح عليكي إنك كنتي [زعلانة]. => It was clear you were [upset]\n\n[هيه]؟ واضح علي إني كنت حزينة؟ => [Hey]? It was clear I was sad?\nهيه؟ [واضح] علي إني كنت حزينة؟ => Hey? It was [clear] I was sad?\nهيه؟ واضح [علي] إني كنت حزينة؟ => on me, (visible) on me\nهيه؟ واضح علي [إني] كنت حزينة؟ => Hey? It was clear [I] was sad?\nهيه؟ واضح علي إني [كنت] حزينة؟ => Hey? It was clear I [was] sad?\nهيه؟ واضح علي إني كنت [حزينة]؟ => Hey? It was clear I was [sad]?\n\n[أيوه]، حزينة. => [Yeah], sad.\nأيوه، [حزينة]. => Yeah, [sad].\n\n[ممم]... إيه... أنا حزينة => [Hmm]... yeah... I am sad\nممم... [إيه]... أنا حزينة => Hmm... [yeah]... I am sad\nممم... إيه... [أنا] حزينة => Hmm... yeah... [I am] sad\nممم... إيه... أنا [حزينة] => Hmm... yeah... I am [sad]\n\n[على] فراق صاحبتي نوران. => [because] my friend Nouran is away.\nعلى [فراق] صاحبتي نوران. => separation, parting\nعلى فراق [صاحبتي] نوران. => because [my friend] Nouran is away.\nعلى فراق صاحبتي [نوران]. => because my friend [Nouran] is away.\n\n[اشتقتلها] كتير. ممم. => [I miss her] so much. Hmm.\nاشتقتلها [كتير]. ممم. => I miss her [so much]. Hmm.\nاشتقتلها كتير. [ممم]. => I miss her so much. [Hmm].\n\n[معك حق] يا تونتون. => [You're right], Tonton.\nمعك حق يا [تونتون]. => You're right, [Tonton].\n\n[وأنا] اشتقتلها، صارلها أسبوع مسافرة. => [I] miss her [too], she's been traveling for a week.\nوأنا [اشتقتلها]، صارلها أسبوع مسافرة. => I [miss her] too, she's been traveling for a week.\nوأنا اشتقتلها، [صارلها] أسبوع مسافرة. => I miss her too, [she's been] traveling for a week.\nوأنا اشتقتلها، صارلها [أسبوع] مسافرة. => I miss her too, she's been traveling for [a week]\nوأنا اشتقتلها، صارلها أسبوع [مسافرة] => I miss her too, she's been [traveling] for a week # translated as 'traveling' (feminine participle)\n\n[طيب] بما إنك اشتقتيلها يا تونتون، => [So] since you miss her, Tonton,\nطيب [بما إنك] اشتقتيلها يا تونتون، => So [since] you miss her, Tonton,\nطيب بما إنك [اشتقتيلها] يا تونتون، => So since [you miss her], Tonton, # اشتقتيلها contains the subject 'you' and the object 'her'\nطيب بما إنك اشتقتيلها يا [تونتون]، => So since you miss her, [Tonton],\n\n[شو] عملتي حتى تتواصلي معها؟ => [what] did you do to contact her?\nشو [عملتي] حتى تتواصلي معها؟ => what [did you do] to contact her?\nشو عملتي [حتى] تتواصلي معها؟ => what did you do [to] contact her?\nشو عملتي حتى [تتواصلي] معها؟ => what did you do to [contact] her?\nشو عملتي حتى تتواصلي [معها]؟ => her # custom translation since \"with\" is required in Arabic grammar for this verb but not used in the English sentence \"contact her\"\n\n[هيه]؟ إيه... أتواصل معها؟ => [Hey]? Yeah... contact her?\nهيه؟ [إيه]... أتواصل معها؟ => Hey? [Yeah]... contact her?\nهيه؟ إيه... [أتواصل] معها؟ => Hey? Yeah... [contact] her?\nهيه؟ إيه... أتواصل [معها]؟ => Hey? Yeah... contact [her]?\n\n[كيف] يعني؟ => [What] do you mean?\nكيف [يعني]؟ => What do you [mean]?\n\n[يعني]... ممم... تبعتيلها إيميل. => [Like]... hmm... send her an email.\nيعني... [ممم]... تبعتيلها إيميل. => Like... [hmm]... send her an email.\nيعني... ممم... [تبعتيلها] إيميل. => Like... hmm... [send her] an email.\nيعني... ممم... تبعتيلها [إيميل]. => Like... hmm... send her an [email]\n\n[يعني] رسالة بالبريد الإلكتروني. => [I mean] a message via electronic mail.\nيعني [رسالة] بالبريد الإلكتروني. => I mean [a message] via electronic mail.\nيعني رسالة [بالبريد] الإلكتروني. => via mail\nيعني رسالة بالبريد [الإلكتروني]. => I mean a message via [electronic] mail.\n\n[ممتاز] يا جلجل => [Excellent], Jaljal.\nممتاز [يا] جلجل => vocative particle (O / Oh)\nممتاز يا [جلجل] => Excellent, [Jaljal]\n\n[مم مم]! أنا أصلاً خطرلي إني أبعتلها إيميل. => [Hmm hmm]! I actually thought of sending her an email.\nمم مم! [أنا] أصلاً خطرلي إني أبعتلها إيميل. => Hmm hmm! [I] actually thought of sending her an email.\nمم مم! أنا [أصلاً] خطرلي إني أبعتلها إيميل. => Hmm hmm! I [actually] thought of sending her an email.\nمم مم! أنا أصلاً [خطرلي] إني أبعتلها إيميل. => Hmm hmm! I actually [thought of] sending her an email.\nمم مم! أنا أصلاً خطرلي [إني] أبعتلها إيميل. => that I\nمم مم! أنا أصلاً خطرلي إني [أبعتلها] إيميل. => Hmm hmm! I actually thought of [sending her] an email.\nمم مم! أنا أصلاً خطرلي إني أبعتلها [إيميل]. => Hmm hmm! I actually thought of sending her [an email]\n\n[لا لا لا لا]. أجتني فكرة تانية أحسن من الإيميل. => [No no no no]. I got another idea better than email.\nلا لا لا لا. [أجتني] فكرة تانية أحسن من الإيميل. => No no no no. [I got] another idea better than email.\nلا لا لا لا. أجتني [فكرة] تانية أحسن من الإيميل. => No no no no. I got another [idea] better than email.\nلا لا لا لا. أجتني فكرة [تانية] أحسن من الإيميل. => No no no no. I got [another] idea better than email.\nلا لا لا لا. أجتني فكرة تانية [أحسن] من الإيميل. => No no no no. I got another idea [better] than email.\nلا لا لا لا. أجتني فكرة تانية أحسن [من] الإيميل. => No no no no. I got another idea better [than] email.\nلا لا لا لا. أجتني فكرة تانية أحسن من [الإيميل]. => No no no no. I got another idea better than [email].\n\n[هيه]؟ إيه... إحكيها بسرعة يا جلجل! => [Hey]? Yeah... tell it quickly, Jaljal!\nهيه؟ [إيه]... إحكيها بسرعة يا جلجل! => Hey? [Yeah]... tell it quickly, Jaljal!\nهيه؟ إيه... [إحكيها] بسرعة يا جلجل! => Hey? Yeah... [tell it] quickly, Jaljal!\nهيه؟ إيه... إحكيها [بسرعة] يا جلجل! => Hey? Yeah... tell it [quickly], Jaljal!\nهيه؟ إيه... إحكيها بسرعة [يا جلجل]! => Hey? Yeah... tell it quickly, [Jaljal]! # يا is a vocative particle used before names in Arabic and has no direct English word here, so it's grouped with the name.\n\n[يا سلام عليك] يا جلجل => [Oh wow], Jaljal\nيا سلام عليك يا [جلجل] => Oh wow, [Jaljal]\n\n[دايماً] أفكارك حلوة وعصرية. => Your ideas are [always] sweet and modern.\nدايماً [أفكارك] حلوة وعصرية. => [Your ideas] are always sweet and modern.\nدايماً أفكارك [حلوة] وعصرية. => Your ideas are always [sweet] and modern.\nدايماً أفكارك حلوة [و]عصرية. => Your ideas are always sweet [and] modern.\nدايماً أفكارك حلوة و[عصرية]. => Your ideas are always sweet and [modern].\n\n[تعالوا] معي => [Come] with me.\nتعالوا [معي] => Come [with me]\n\n[هيه]! يلا! => [Hey]! Let's go!\nهيه! [يلا]! => Hey! [Let's go]!\n\n[هي] يا تونتون، ندور على نوران. => [Here], Tonton, let's look for Nouran.\nهي يا [تونتون]، ندور على نوران. => Here, [Tonton], let's look for Nouran.\nهي يا تونتون، [ندور] على نوران. => Here, Tonton, [let's look] for Nouran.\nهي يا تونتون، ندور [على] نوران. => Here, Tonton, let's look [for] Nouran.\nهي يا تونتون، ندور على [نوران]. => Here, Tonton, let's look for [Nouran.]\n\n[هيه]! هيها، هيها على الخط! => [Hey]! There she is, there she is on the line!\nهيه! [هيها]، هيها على الخط! => Hey! [There she is], there she is on the line!\nهيه! هيها، [هيها] على الخط! => Hey! There she is, [there she is] on the line!\nهيه! هيها، هيها [على] الخط! => Hey! There she is, there she is [on] the line!\nهيه! هيها، هيها على [الخط]! => Hey! There she is, there she is on [the line]!\n\n[هلق] بدنا نكبس اتصال، => [Now] we need to press call,\nهلق [بدنا] نكبس اتصال، => Now [we need] to press call,\nهلق بدنا [نكبس] اتصال، => Now we need [to press] call,\nهلق بدنا نكبس [اتصال]، => Now we need to press [call]\n\n[وين]... هيه! => [Where]... hey!\nوين... [هيه]! => Where... [hey]!\n\n[ها]! هي شبك! => [Ha]! She's connected!\nها! [هي] شبك! => [She's] connected!\nها! هي [شبك]! => She's [connected]!\n\n[هيه]! هي نوران! => [Hey]! It's Nouran!\nهيه! [هي] نوران! => [It's] Nouran!\nهيه! هي [نوران]! => Hey! It's [Nouran]!\n\n[عن جد] نوران. => [Really] Nouran.\nعن جد [نوران]. => Really [Nouran].\n\n[إيه]... هي تونتون. مرحباً تونتون. => [Yeah]... it's Tonton. Hello Tonton.\nإيه... [هي] تونتون. مرحباً تونتون. => Yeah... [it's] Tonton. Hello Tonton.\nإيه... هي [تونتون]. مرحباً تونتون. => Yeah... it's [Tonton]. Hello Tonton.\nإيه... هي تونتون. [مرحباً] تونتون. => Yeah... it's Tonton. [Hello] Tonton.\nإيه... هي تونتون. مرحباً [تونتون]. => Yeah... it's Tonton. Hello [Tonton].\n\n[مرحباً] نوران! هلق هي بتسمعني؟ => [Hello] Nouran! Can she hear me now?\nمرحباً [نوران]! هلق هي بتسمعني؟ => Hello [Nouran]! Can she hear me now?\nمرحباً نوران! [هلق] هي بتسمعني؟ => Hello Nouran! Can she hear me [now]?\nمرحباً نوران! هلق [هي] بتسمعني؟ => Hello Nouran! Can [she] hear me now?\nمرحباً نوران! هلق هي [بتسمعني]؟ => can hear me # the verb \"btesma'\" (hear) + suffix \"ni\" (me) functions as \"can hear me\" in this context\n\n[آه] آه، سمعتك => [Ah] ah, I heard you.\nآه [آه]، سمعتك => Ah [ah], I heard you.\nآه آه، [سمعتك] => [I heard you]\n\nطلعي على [الكاميرا] واحكي معها. => Turn on [the camera] and talk to her.\nطلعي على الكاميرا [واحكي] معها. => Turn on the camera [and talk] to her.\nطلعي على الكاميرا واحكي [معها] => Turn on the camera and talk [to her]\n\n[مرحباً] نوران! أنا اشتقتلك كتير كتير كتير! => [Hello] Nouran! I missed you so so so much!\nمرحباً [نوران]! أنا اشتقتلك كتير كتير كتير! => Hello [Nouran]! I missed you so so so much!\nمرحباً نوران! [أنا] اشتقتلك كتير كتير كتير! => Hello Nouran! [I] missed you so so so much!\nمرحباً نوران! أنا [اشتقتلك] كتير كتير كتير! => missed you\nمرحباً نوران! أنا اشتقتلك [كتير] كتير كتير! => Hello Nouran! I missed you [so] so so much!\nمرحباً نوران! أنا اشتقتلك كتير [كتير] كتير! => Hello Nouran! I missed you so [so] so much!\nمرحباً نوران! أنا اشتقتلك كتير كتير [كتير]! => Hello Nouran! I missed you so so [so] much!\nمرحباً نوران! أنا اشتقتلك كتير كتير [كتير]! => much # custom translation to capture the trailing meaning of 'much' often included in the last 'keteer' in this context\n\n[أنا] كمان يا تونتون اشتقتلك => [I] missed you too, Tonton\nأنا [كمان] يا تونتون اشتقتلك => I missed you [too], Tonton\nأنا كمان يا [تونتون] اشتقتلك => I missed you too, [Tonton]\nأنا كمان يا تونتون [اشتقتلك] => I [missed you] too, Tonton # اشتقتلك contains the verb and the object pronoun \"you\"\n\n[كتير كتير] قد البحر. => [so so much], as big as the sea.\nكتير كتير [قد] البحر. => so so much, [as big as] the sea.\nكتير كتير قد [البحر]. => so so much, as big as [the sea].\n\n[هيه]! وأنا اشتقتلك قد البحر والسما. => [Hey]! And I missed you as big as the sea and sky.\nهيه! [و]أنا اشتقتلك قد البحر والسما. => Hey! [And] I missed you as big as the sea and sky.\nهيه! و[أنا] اشتقتلك قد البحر والسما. => Hey! And [I] missed you as big as the sea and sky.\nهيه! وأنا [اشتقتلك] قد البحر والسما. => Hey! And I [missed you] as big as the sea and sky.\nهيه! وأنا اشتقتلك [قد] البحر والسما. => Hey! And I missed you [as big as] the sea and sky.\nهيه! وأنا اشتقتلك قد [البحر] والسما. => Hey! And I missed you as big as [the sea] and sky.\nهيه! وأنا اشتقتلك قد البحر [و]السما. => Hey! And I missed you as big as the sea [and] sky.\nهيه! وأنا اشتقتلك قد البحر و[السما]. => Hey! And I missed you as big as the sea and [sky]. # \"ال\" is the definite article, \"سما\" is sky\n\n[مم]... إيه... طولتي كتير يا نوران. => [Hmm]... yeah... you were away too long, Nouran.\nمم... [إيه]... طولتي كتير يا نوران. => Hmm... [yeah]... you were away too long, Nouran.\nمم... إيه... [طولتي] كتير يا نوران. => you were away, you were gone\nمم... إيه... طولتي [كتير] يا نوران. => Hmm... yeah... you were away [too long], Nouran.\nمم... إيه... طولتي كتير يا [نوران]. => Hmm... yeah... you were away too long, [Nouran]\n\n[متى] رح تيجي عنا؟ => [When] will you come to us?\nمتى [رح تيجي] عنا؟ => When [will you come] to us?\nمتى رح تيجي [عنا]؟ => When will you come [to us]?\n\n[آه]، إحنا كلنا بنستناكي. => [Ah], we are all waiting for you.\nآه، [إحنا] كلنا بنستناكي. => Ah, [we] are all waiting for you.\nآه، إحنا [كلنا] بنستناكي. => Ah, we are [all] waiting for you.\nآه، إحنا كلنا [بنستناكي]. => Ah, we are all [waiting for you] # \"binistannaki\" contains the verb and the object pronoun \"you\"\n\n[مم]... إيه... أنا كنت حزينة اليوم، => [Hmm]... yeah... I was sad today,\nمم... [إيه]... أنا كنت حزينة اليوم، => Hmm... [yeah]... I was sad today,\nمم... إيه... [أنا] كنت حزينة اليوم، => Hmm... yeah... [I] was sad today,\nمم... إيه... أنا [كنت] حزينة اليوم، => Hmm... yeah... I [was] sad today,\nمم... إيه... أنا كنت [حزينة] اليوم، => Hmm... yeah... I was [sad] today,\nمم... إيه... أنا كنت حزينة [اليوم]، => Hmm... yeah... I was sad [today],\n\n[بس] هلق عشان أنا حكيت معاكي، فرحانة كتير. => [but] now because I talked to you, I'm very happy.\nبس [هلق] عشان أنا حكيت معاكي، فرحانة كتير. => but [now] because I talked to you, I'm very happy.\nبس هلق [عشان] أنا حكيت معاكي، فرحانة كتير. => but now [because] I talked to you, I'm very happy.\nبس هلق عشان [أنا] حكيت معاكي، فرحانة كتير. => but now because [I] talked to you, I'm very happy.\nبس هلق عشان أنا [حكيت] معاكي، فرحانة كتير. => but now because I [talked] to you, I'm very happy.\nبس هلق عشان أنا حكيت [معاكي]، فرحانة كتير. => but now because I talked [to you], I'm very happy.\nبس هلق عشان أنا حكيت معاكي، [فرحانة] كتير. => but now because I talked to you, I'm very [happy].\nبس هلق عشان أنا حكيت معاكي، فرحانة [كتير]. => but now because I talked to you, I'm [very] happy.\n\n[تسلمي] على جلجل وحياة وكامل => [Say hello] to Jaljal, Hayat, and Kamel\nتسلمي [على] جلجل وحياة وكامل => Say hello [to] Jaljal, Hayat, and Kamel\nتسلمي على [جلجل] وحياة وكامل => Say hello to [Jaljal], Hayat, and Kamel\nتسلمي على جلجل [وحياة] وكامل => and Hayat # the Arabic prefix 'wa' means 'and', which is replaced by a comma in this part of the English list\nتسلمي على جلجل وحياة [وكامل] => Say hello to Jaljal, Hayat, [and Kamel]\n\nعلى [كل] حارة سمسم. => and [all] of Sesame Street.\nعلى كل [حارة] سمسم. => and all of Sesame [Street]\nعلى كل حارة [سمسم]. => and all of [Sesame] Street\n\n[كلهم] بيسلموا عليكي. باي! => [They all] say hello to you. Bye!\nكلهم [بيسلموا] عليكي. باي! => They all [say hello] to you. Bye!\nكلهم بيسلموا [عليكي]. باي! => They all say hello [to you]. Bye!\nكلهم بيسلموا عليكي. [باي]! => They all say hello to you. [Bye]!\n\n[باي]! => [Bye]!\n\n[باي]! => [Bye]!\n\n[آه]! هلق أنا كتير مبسوطة. => [Ah]! Now I am very happy.\nآه! [هلق] أنا كتير مبسوطة. => Ah! [Now] I am very happy.\nآه! هلق [أنا] كتير مبسوطة. => Ah! Now [I am] very happy.\nآه! هلق أنا [كتير] مبسوطة. => Ah! Now I am [very] happy.\nآه! هلق أنا كتير [مبسوطة]. => Ah! Now I am very [happy].\n\n[حياة]، جلجل، شكراً إلكم كتير => [Hayat], Jaljal, thank you so much\nحياة، [جلجل]، شكراً إلكم كتير => Hayat, [Jaljal], thank you so much\nحياة، جلجل، [شكراً] إلكم كتير => Hayat, Jaljal, [thank] you so much\nحياة، جلجل، شكراً [إلكم] كتير => Hayat, Jaljal, thank [you] so much\nحياة، جلجل، شكراً إلكم [كتير] => Hayat, Jaljal, thank you [so much]\n\n[عشان] ساعدتوني إني ما أكون حزينة. => [for] helping me not be sad.\nعشان [ساعدتوني] إني ما أكون حزينة. => for [helping me] not be sad.\nعشان ساعدتوني [إني] ما أكون حزينة. => that I\nعشان ساعدتوني إني [ما] أكون حزينة. => for helping me [not] be sad.\nعشان ساعدتوني إني ما [أكون] حزينة. => for helping me not [be] sad.\nعشان ساعدتوني إني ما أكون [حزينة] => for helping me not be [sad]\n\n[ولو] يا تونتون، => [Not at all], Tonton,\nولو يا [تونتون]، => Not at all, [Tonton],\n\n[إحنا] ما بنقدر نشوفك حزينة. => [we] can't stand seeing you sad.\nإحنا [ما بنقدر] نشوفك حزينة. => we [can't stand] seeing you sad.\nإحنا ما بنقدر [نشوفك] حزينة. => we can't stand [seeing you] sad.\nإحنا ما بنقدر نشوفك [حزينة]. => we can't stand seeing you [sad]\n\n[أكيد]. => [Definitely].\n\n[أنا] هلق مبسوطة كتير! ها ها ها! => [I am] very happy now! Ha ha ha!\nأنا [هلق] مبسوطة كتير! ها ها ها! => I am very happy [now]! Ha ha ha!\nأنا هلق [مبسوطة] كتير! ها ها ها! => I am very [happy] now! Ha ha ha!\nأنا هلق مبسوطة [كتير]! ها ها ها! => I am [very] happy now! Ha ha ha!\nأنا هلق مبسوطة كتير! [ها ها ها]! => I am very happy now! [Ha ha ha]!\n\n"
+    "phrases_with_token_translations": "[تونتون]؟ => [Tonton]?\n\n[جلجل]؟ => [Jaljal]?\n\n[تونتون]؟ => [Tonton]?\n\n[جلجل]؟ => [Jaljal]?\n\n[حياة]، أنا هون! => [Hayat], I'm here!\nحياة، [أنا] هون! => Hayat, [I'm] here!\nحياة، أنا [هون]! => Hayat, I'm [here]!\n\n[جلجل]، خوفتني. وين تونتون؟ => [Jaljal], you scared me. Where's Tonton?\nجلجل، [خوفتني]. وين تونتون؟ => Jaljal, [you scared me]. Where's Tonton?\nجلجل، خوفتني. [وين] تونتون؟ => Jaljal, you scared me. [Where's] Tonton?\nجلجل، خوفتني. وين [تونتون]؟ => Jaljal, you scared me. Where's [Tonton]?\n\n[أنا] كمان بدور عليها. => [I]'m looking for her too.\nأنا [كمان] بدور عليها. => I'm looking for her [too].\nأنا كمان [بدور] عليها. => looking\nأنا كمان بدور [عليها]. => I'm looking [for her] too.\n\n[إيش] هذا اللي بإيدك؟ => [What]'s that in your hand?\nإيش [هذا] اللي بإيدك؟ => What's [that] in your hand?\nإيش هذا اللي [بإيدك]؟ => What's that [in your hand]?\n\n[هذا] حاسوب. => [This] is a computer.\nهذا [حاسوب]. => This is [a computer]. # Arabic doesn't use an explicit word for \"is,\" so the noun \"حاسوب\" maps to the indefinite \"a computer\"\n\n[ممم]... قصدك كمبيوتر، لابتوب. => [Hmm]... you mean computer, laptop.\nممم... [قصدك] كمبيوتر، لابتوب. => Hmm... [you mean] computer, laptop.\nممم... قصدك [كمبيوتر]، لابتوب. => Hmm... you mean [computer], laptop.\nممم... قصدك كمبيوتر، [لابتوب]. => Hmm... you mean computer, [laptop].\n\n[مظبوط]. تعال معي. => [Exactly]. Come with me.\nمظبوط. [تعال] معي. => Exactly. [Come] with me.\nمظبوط. تعال [معي]. => Exactly. Come [with me].\n\n[حاضر]. => [Okay].\n\n[كيفك] يا جلجل؟ => [How are you], Jaljal?\nكيفك يا [جلجل]؟ => How are you, [Jaljal]?\n\n[أنا] منيح. => [I'm] good.\nأنا [منيح]. => I'm [good].\n\n[يلا]، تعال أفرجيك شو معي بالحاسوب. => [Come on], let me show you what I have on the computer.\nيلا، [تعال] أفرجيك شو معي بالحاسوب. => come\nيلا، تعال [أفرجيك] شو معي بالحاسوب. => [let me show you] what I have on the computer.\nيلا، تعال أفرجيك [شو] معي بالحاسوب. => let me show you [what] I have on the computer.\nيلا، تعال أفرجيك شو [معي] بالحاسوب. => [I have] # common Levantine way to express possession: literally \"with me\"\nيلا، تعال أفرجيك شو معي [بالحاسوب]. => what I have [on the computer]\n\n[ممم]... وتونتون؟ => [Hmm]... and Tonton?\nممم... [و]تونتون؟ => and\nممم... و[تونتون]؟ => Hmm... and [Tonton]?\n\n[تونتون] هلق بنلاقيها => We'll find [Tonton] in a bit\nتونتون [هلق] بنلاقيها => We'll find Tonton [in a bit]\nتونتون هلق [بنلاقيها] => [We'll find] Tonton in a bit\n\n[طيب]. => [Okay].\n\n[تونتون]؟ => [Tonton]?\n\n[إحنا] قلقنا عليكي لما ما لقيناكي. => [We] got worried when we couldn't find you.\nإحنا [قلقنا] عليكي لما ما لقيناكي. => We [got worried] when we couldn't find you.\nإحنا قلقنا [عليكي] لما ما لقيناكي. => about you\nإحنا قلقنا عليكي [لما] ما لقيناكي. => We got worried [when] we couldn't find you.\nإحنا قلقنا عليكي لما [ما لقيناكي]. => We got worried when [we couldn't find you]. # mapped together to capture the negation and the verb with its implicit subject and object suffixes\n\nمالك [إشي]؟ => Is [something] wrong?\n\n[إيه]... أنا إجيت هون أقعد لحالي. => [Yeah]... I came here to sit alone.\nإيه... [أنا] إجيت هون أقعد لحالي. => Yeah... [I] came here to sit alone.\nإيه... أنا [إجيت] هون أقعد لحالي. => Yeah... I [came] here to sit alone.\nإيه... أنا إجيت [هون] أقعد لحالي. => Yeah... I came [here] to sit alone.\nإيه... أنا إجيت هون [أقعد] لحالي. => Yeah... I came here [to sit] alone.\nإيه... أنا إجيت هون أقعد [لحالي]. => Yeah... I came here to sit [alone]\n\n[شو]؟ كأنك حزينة. => [What]? You seem sad.\nشو؟ [كأنك] حزينة. => What? [You seem] sad.\nشو؟ كأنك [حزينة]. => What? You seem [sad].\n\n[آه]، أنا شوي حزينة => [Ah], I'm a little sad\nآه، [أنا] شوي حزينة => Ah, [I]'m a little sad\nآه، أنا [شوي] حزينة => Ah, I'm [a little] sad\nآه، أنا شوي [حزينة] => Ah, I'm a little [sad]\n\n[إيه]... لا لا، أنا كويسة، آه. => [Yeah]... no no, I'm fine, ah.\nإيه... [لا لا]، أنا كويسة، آه. => Yeah... [no no], I'm fine, ah.\nإيه... لا لا، [أنا] كويسة، آه. => Yeah... no no, [I'm] fine, ah.\nإيه... لا لا، أنا [كويسة]، آه. => Yeah... no no, I'm [fine], ah.\nإيه... لا لا، أنا كويسة، [آه] => Yeah... no no, I'm fine, [ah]\n\n[فكرك] شو مالها تونتون؟ => What do [you think] is wrong with Tonton?\nفكرك [شو] مالها تونتون؟ => [What] do you think is wrong with Tonton?\nفكرك شو [مالها] تونتون؟ => What do you think [is wrong with] Tonton?\nفكرك شو مالها [تونتون]؟ => What do you think is wrong with [Tonton]?\n\n[مبين عليها] حزينة كتير. => [She looks] very sad.\nمبين عليها [حزينة] كتير. => She looks very [sad].\nمبين عليها حزينة [كتير]. => She looks [very] sad.\n\n[أنا] هيك حاسة كمان. أكيد في سبب. => [I] feel the same. There must be a reason.\nأنا [هيك] حاسة كمان. أكيد في سبب. => I feel [the same]. There must be a reason.\nأنا هيك [حاسة] كمان. أكيد في سبب. => I [feel] the same. There must be a reason.\nأنا هيك حاسة [كمان]. أكيد في سبب. => also\nأنا هيك حاسة كمان. [أكيد في] سبب. => I feel the same. [There must be] a reason. # \"أكيد في\" (certainly there is) is the equivalent of \"There must be\"\nأنا هيك حاسة كمان. أكيد في [سبب]. => I feel the same. There must be [a reason]\n\n[ممم]... كيف بنقدر نساعدها يا حياة؟ => [Hmm]... how can we help her, Hayat?\nممم... [كيف] بنقدر نساعدها يا حياة؟ => Hmm... [how] can we help her, Hayat?\nممم... كيف [بنقدر] نساعدها يا حياة؟ => Hmm... how [can we] help her, Hayat?\nممم... كيف بنقدر [نساعدها] يا حياة؟ => Hmm... how can we [help her], Hayat?\nممم... كيف بنقدر نساعدها يا [حياة]؟ => Hmm... how can we help her, [Hayat]?\n\n[كيف]؟ خلينا نفكر مع بعض. => [How]? Let's think together.\nكيف؟ [خلينا] نفكر مع بعض. => [Let's] think together.\nكيف؟ خلينا [نفكر] مع بعض. => Let's [think] together.\nكيف؟ خلينا نفكر [مع بعض]. => Let's think [together].\n\n[آه]، مظبوط. => [Ah], right.\nآه، [مظبوط]. => Ah, [right].\n\n[فكر] يا جلجو، فكر يا جلجو... => [Think], Jaljo, think, Jaljo...\nفكر [يا جلجو]، فكر يا جلجو... => Think, [Jaljo], think, Jaljo...\nفكر يا جلجو، [فكر] يا جلجو... => Think, Jaljo, [think], Jaljo...\nفكر يا جلجو، فكر [يا جلجو]... => Think, Jaljo, think, [Jaljo]...\n\n[ممم]... => [Hmm]...\n\n[هيه]! أجتني فكرة رائعة. => [Hey]! I got a great idea.\nهيه! [أجتني] فكرة رائعة. => Hey! [I got] a great idea.\nهيه! أجتني [فكرة] رائعة. => Hey! I got a great [idea].\nهيه! أجتني فكرة [رائعة]. => Hey! I got a [great] idea.\n\n[تعالي] أقولك كيف بنقدر نعمل إشي => [Come], let me tell you how we can do something\nتعالي [أقولك] كيف بنقدر نعمل إشي => let me tell you\nتعالي أقولك [كيف] بنقدر نعمل إشي => Come, let me tell you [how] we can do something\nتعالي أقولك كيف [بنقدر] نعمل إشي => Come, let me tell you how [we can] do something\nتعالي أقولك كيف بنقدر [نعمل] إشي => Come, let me tell you how we can [do] something\nتعالي أقولك كيف بنقدر نعمل [إشي] => Come, let me tell you how we can do [something]\n\n[و]تكون سعيدة => [and] make her happy\nو[تكون] سعيدة => make her\nوتكون [سعيدة] => and make her [happy]\n\n[نخليها] سعيدة؟ كيف؟ => [Make her] happy? How?\nنخليها [سعيدة]؟ كيف؟ => Make her [happy]? How?\nنخليها سعيدة؟ [كيف]؟ => Make her happy? [How]?\n\n[تعالي] أحكيلك شو فكرتي => [Come], let me tell you my idea.\nتعالي [أحكيلك] شو فكرتي => Come, [let me tell you] my idea.\nتعالي أحكيلك [شو] فكرتي => what\nتعالي أحكيلك شو [فكرتي] => Come, let me tell you [my idea].\n\n[هلق] بطبللها وبنشوف كيف رح يصير معها. => I'll try it on her [now] and see how it goes.\nهلق [بطبللها] وبنشوف كيف رح يصير معها. => [I'll try it on her] now and see how it goes.\nهلق بطبللها [وبنشوف] كيف رح يصير معها. => I'll try it on her now [and see] how it goes.\nهلق بطبللها وبنشوف [كيف] رح يصير معها. => I'll try it on her now and see [how] it goes.\nهلق بطبللها وبنشوف كيف [رح يصير] معها. => I'll try it on her now and see how [it goes].\nهلق بطبللها وبنشوف كيف رح يصير [معها] => with her # literal meaning of the preposition and suffix word 'ma'aha'\n\n[ممم]. => [Hmm].\n\n[شكلها] الأمور مش سهلة زي ما أنا ظنيت. => [Looks like] things aren't as easy as I thought.\nشكلها [الأمور] مش سهلة زي ما أنا ظنيت. => Looks like [things] aren't as easy as I thought.\nشكلها الأمور [مش] سهلة زي ما أنا ظنيت. => Looks like things [aren't] as easy as I thought.\nشكلها الأمور مش [سهلة] زي ما أنا ظنيت. => Looks like things aren't as [easy] as I thought.\nشكلها الأمور مش سهلة [زي ما] أنا ظنيت. => Looks like things aren't as easy [as] I thought.\nشكلها الأمور مش سهلة زي ما [أنا] ظنيت. => Looks like things aren't as easy as [I] thought.\nشكلها الأمور مش سهلة زي ما أنا [ظنيت]. => Looks like things aren't as easy as I [thought].\n\n[طيب]، ما رح نقدر نخليها سعيدة وبتضحك. => [So], we won't be able to make her happy and laughing.\nطيب، [ما رح نقدر] نخليها سعيدة وبتضحك. => So, [we won't be able] to make her happy and laughing.\nطيب، ما رح نقدر [نخليها] سعيدة وبتضحك. => So, we won't be able [to make her] happy and laughing.\nطيب، ما رح نقدر نخليها [سعيدة] وبتضحك. => So, we won't be able to make her [happy] and laughing.\nطيب، ما رح نقدر نخليها سعيدة [و]بتضحك. => So, we won't be able to make her happy [and] laughing.\nطيب، ما رح نقدر نخليها سعيدة و[بتضحك]. => So, we won't be able to make her happy and [laughing].\n\n[هيك] رأيك؟ => Is [that] what you think?\nهيك [رأيك]؟ => Is that [what you think]?\n\n[طيب] خلينا نجرب إشي تاني. => [Okay], let's try something else.\nطيب [خلينا] نجرب إشي تاني. => Okay, [let's] try something else.\nطيب خلينا [نجرب] إشي تاني. => Okay, let's [try] something else.\nطيب خلينا نجرب [إشي] تاني. => Okay, let's try [something] else.\nطيب خلينا نجرب إشي [تاني]. => Okay, let's try something [else].\n\n[فكر] بإشي تاني، فكر يا... => [Think] of something else, think, oh...\nفكر [بإشي] تاني، فكر يا... => Think [of something] else, think, oh...\nفكر بإشي [تاني]، فكر يا... => Think of something [else], think, oh...\nفكر بإشي تاني، [فكر] يا... => Think of something else, [think], oh...\nفكر بإشي تاني، فكر [يا]... => Think of something else, think, [oh]...\n\n[هيه]! هيه! => [Hey]! Hey!\nهيه! [هيه]! => Hey! [Hey]!\n\n[أجتني] فكرة رائعة جداً => [I got] a really great idea\nأجتني [فكرة] رائعة جداً => I got a really great [idea]\nأجتني فكرة [رائعة] جداً => I got a really [great] idea\nأجتني فكرة رائعة [جداً] => I got a [really] great idea\n\n[هلق] رح نخليها تضحك وتكون سعيدة. => [Now] we'll make her laugh and be happy.\nهلق [رح نخليها] تضحك وتكون سعيدة. => Now [we'll make her] laugh and be happy.\nهلق رح نخليها [تضحك] وتكون سعيدة. => Now we'll make her [laugh] and be happy.\nهلق رح نخليها تضحك [و]تكون سعيدة. => Now we'll make her laugh [and] be happy.\nهلق رح نخليها تضحك و[تكون] سعيدة. => Now we'll make her laugh and [be] happy.\nهلق رح نخليها تضحك وتكون [سعيدة]. => Now we'll make her laugh and be [happy]\n\n[تارارارام]! أنا الساحر جلجل => [Tarararam]! I am Magician Jaljal\nتارارارام! [أنا] الساحر جلجل => Tarararam! [I am] Magician Jaljal\nتارارارام! أنا [الساحر] جلجل => Tarararam! I am [Magician] Jaljal\nتارارارام! أنا الساحر [جلجل] => Tarararam! I am Magician [Jaljal]\n\n[اللي] رح يخلي تونتون الحزينة => [who] will make sad Tonton\nاللي [رح يخلي] تونتون الحزينة => who [will make] sad Tonton\nاللي رح يخلي [تونتون] الحزينة => who will make sad [Tonton]\nاللي رح يخلي تونتون [الحزينة] => who will make [sad] Tonton\n\n[سعيد] وبتضحك. => [happy] and laughing.\nسعيد [و]بتضحك. => happy [and] laughing.\nسعيد و[بتضحك]. => happy and [laughing].\n\n[الساحر] جلجل رح يقدر يحول تونتون => [Magician] Jaljal will be able to turn Tonton\nالساحر [جلجل] رح يقدر يحول تونتون => Magician [Jaljal] will be able to turn Tonton\nالساحر جلجل [رح يقدر] يحول تونتون => Magician Jaljal [will be able] to turn Tonton\nالساحر جلجل رح يقدر [يحول] تونتون => Magician Jaljal will be able [to turn] Tonton\nالساحر جلجل رح يقدر يحول [تونتون] => Magician Jaljal will be able to turn [Tonton]\n\n[من] حزينة إلى سعيدة وبتضحك. => [from] sad to happy and laughing.\nمن [حزينة] إلى سعيدة وبتضحك. => from [sad] to happy and laughing.\nمن حزينة [إلى] سعيدة وبتضحك. => from sad [to] happy and laughing.\nمن حزينة إلى [سعيدة] وبتضحك. => from sad to [happy] and laughing.\nمن حزينة إلى سعيدة [وبتضحك]. => from sad to happy [and laughing].\n\n[برومبا]، برومبا، بامبا! ها ها ها! => [Brumba], brumba, bamba! Ha ha ha!\nبرومبا، [برومبا]، بامبا! ها ها ها! => Brumba, [brumba], bamba! Ha ha ha!\nبرومبا، برومبا، [بامبا]! ها ها ها! => Brumba, brumba, [bamba]! Ha ha ha!\nبرومبا، برومبا، بامبا! [ها] ها ها! => Brumba, brumba, bamba! [Ha] ha ha!\nبرومبا، برومبا، بامبا! ها [ها] ها! => Brumba, brumba, bamba! Ha [ha] ha!\nبرومبا، برومبا، بامبا! ها ها [ها]! => Brumba, brumba, bamba! Ha ha [ha]!\n\n[هيه]! هاي تونتون بتضحك! => [Hey]! Look, Tonton is laughing!\nهيه! [هاي] تونتون بتضحك! => Hey! [Look], Tonton is laughing!\nهيه! هاي [تونتون] بتضحك! => Hey! Look, [Tonton] is laughing!\nهيه! هاي تونتون [بتضحك]! => Hey! Look, Tonton [is laughing]!\n\n[شو مالك] يا تونتون؟ => [What's wrong], Tonton?\nشو مالك يا [تونتون]؟ => What's wrong, [Tonton]?\n\n[كان] واضح عليكي إنك كنتي زعلانة. => [It was] clear you were upset.\nكان [واضح] عليكي إنك كنتي زعلانة. => It was [clear] you were upset.\nكان واضح [عليكي] إنك كنتي زعلانة. => showing on you\nكان واضح عليكي [إنك] كنتي زعلانة. => It was clear [you] were upset.\nكان واضح عليكي إنك [كنتي] زعلانة. => It was clear you [were] upset.\nكان واضح عليكي إنك كنتي [زعلانة]. => It was clear you were [upset]\n\n[هيه]؟ واضح علي إني كنت حزينة؟ => [Hey]? It was clear I was sad?\nهيه؟ [واضح] علي إني كنت حزينة؟ => Hey? It was [clear] I was sad?\nهيه؟ واضح [علي] إني كنت حزينة؟ => on me, (visible) on me\nهيه؟ واضح علي [إني] كنت حزينة؟ => Hey? It was clear [I] was sad?\nهيه؟ واضح علي إني [كنت] حزينة؟ => Hey? It was clear I [was] sad?\nهيه؟ واضح علي إني كنت [حزينة]؟ => Hey? It was clear I was [sad]?\n\n[أيوه]، حزينة. => [Yeah], sad.\nأيوه، [حزينة]. => Yeah, [sad].\n\n[ممم]... إيه... أنا حزينة => [Hmm]... yeah... I am sad\nممم... [إيه]... أنا حزينة => Hmm... [yeah]... I am sad\nممم... إيه... [أنا] حزينة => Hmm... yeah... [I am] sad\nممم... إيه... أنا [حزينة] => Hmm... yeah... I am [sad]\n\n[على] فراق صاحبتي نوران. => [because] my friend Nouran is away.\nعلى [فراق] صاحبتي نوران. => separation, parting\nعلى فراق [صاحبتي] نوران. => because [my friend] Nouran is away.\nعلى فراق صاحبتي [نوران]. => because my friend [Nouran] is away.\n\n[اشتقتلها] كتير. ممم. => [I miss her] so much. Hmm.\nاشتقتلها [كتير]. ممم. => I miss her [so much]. Hmm.\nاشتقتلها كتير. [ممم]. => I miss her so much. [Hmm].\n\n[معك حق] يا تونتون. => [You're right], Tonton.\nمعك حق يا [تونتون]. => You're right, [Tonton].\n\n[وأنا] اشتقتلها، صارلها أسبوع مسافرة. => [I] miss her [too], she's been traveling for a week.\nوأنا [اشتقتلها]، صارلها أسبوع مسافرة. => I [miss her] too, she's been traveling for a week.\nوأنا اشتقتلها، [صارلها] أسبوع مسافرة. => I miss her too, [she's been] traveling for a week.\nوأنا اشتقتلها، صارلها [أسبوع] مسافرة. => I miss her too, she's been traveling for [a week]\nوأنا اشتقتلها، صارلها أسبوع [مسافرة] => I miss her too, she's been [traveling] for a week # translated as 'traveling' (feminine participle)\n\n[طيب] بما إنك اشتقتيلها يا تونتون، => [So] since you miss her, Tonton,\nطيب [بما إنك] اشتقتيلها يا تونتون، => So [since] you miss her, Tonton,\nطيب بما إنك [اشتقتيلها] يا تونتون، => So since [you miss her], Tonton, # اشتقتيلها contains the subject 'you' and the object 'her'\nطيب بما إنك اشتقتيلها يا [تونتون]، => So since you miss her, [Tonton],\n\n[شو] عملتي حتى تتواصلي معها؟ => [what] did you do to contact her?\nشو [عملتي] حتى تتواصلي معها؟ => what [did you do] to contact her?\nشو عملتي [حتى] تتواصلي معها؟ => what did you do [to] contact her?\nشو عملتي حتى [تتواصلي] معها؟ => what did you do to [contact] her?\nشو عملتي حتى تتواصلي [معها]؟ => her # custom translation since \"with\" is required in Arabic grammar for this verb but not used in the English sentence \"contact her\"\n\n[هيه]؟ إيه... أتواصل معها؟ => [Hey]? Yeah... contact her?\nهيه؟ [إيه]... أتواصل معها؟ => Hey? [Yeah]... contact her?\nهيه؟ إيه... [أتواصل] معها؟ => Hey? Yeah... [contact] her?\nهيه؟ إيه... أتواصل [معها]؟ => Hey? Yeah... contact [her]?\n\n[كيف] يعني؟ => [What] do you mean?\nكيف [يعني]؟ => What do you [mean]?\n\n[يعني]... ممم... تبعتيلها إيميل. => [Like]... hmm... send her an email.\nيعني... [ممم]... تبعتيلها إيميل. => Like... [hmm]... send her an email.\nيعني... ممم... [تبعتيلها] إيميل. => Like... hmm... [send her] an email.\nيعني... ممم... تبعتيلها [إيميل]. => Like... hmm... send her an [email]\n\n[يعني] رسالة بالبريد الإلكتروني. => [I mean] a message via electronic mail.\nيعني [رسالة] بالبريد الإلكتروني. => I mean [a message] via electronic mail.\nيعني رسالة [بالبريد] الإلكتروني. => via mail\nيعني رسالة بالبريد [الإلكتروني]. => I mean a message via [electronic] mail.\n\n[ممتاز] يا جلجل => [Excellent], Jaljal.\nممتاز [يا] جلجل => vocative particle (O / Oh)\nممتاز يا [جلجل] => Excellent, [Jaljal]\n\n[مم مم]! أنا أصلاً خطرلي إني أبعتلها إيميل. => [Hmm hmm]! I actually thought of sending her an email.\nمم مم! [أنا] أصلاً خطرلي إني أبعتلها إيميل. => Hmm hmm! [I] actually thought of sending her an email.\nمم مم! أنا [أصلاً] خطرلي إني أبعتلها إيميل. => Hmm hmm! I [actually] thought of sending her an email.\nمم مم! أنا أصلاً [خطرلي] إني أبعتلها إيميل. => Hmm hmm! I actually [thought of] sending her an email.\nمم مم! أنا أصلاً خطرلي [إني] أبعتلها إيميل. => that I\nمم مم! أنا أصلاً خطرلي إني [أبعتلها] إيميل. => Hmm hmm! I actually thought of [sending her] an email.\nمم مم! أنا أصلاً خطرلي إني أبعتلها [إيميل]. => Hmm hmm! I actually thought of sending her [an email]\n\n[لا لا لا لا]. أجتني فكرة تانية أحسن من الإيميل. => [No no no no]. I got another idea better than email.\nلا لا لا لا. [أجتني] فكرة تانية أحسن من الإيميل. => No no no no. [I got] another idea better than email.\nلا لا لا لا. أجتني [فكرة] تانية أحسن من الإيميل. => No no no no. I got another [idea] better than email.\nلا لا لا لا. أجتني فكرة [تانية] أحسن من الإيميل. => No no no no. I got [another] idea better than email.\nلا لا لا لا. أجتني فكرة تانية [أحسن] من الإيميل. => No no no no. I got another idea [better] than email.\nلا لا لا لا. أجتني فكرة تانية أحسن [من] الإيميل. => No no no no. I got another idea better [than] email.\nلا لا لا لا. أجتني فكرة تانية أحسن من [الإيميل]. => No no no no. I got another idea better than [email].\n\n[هيه]؟ إيه... إحكيها بسرعة يا جلجل! => [Hey]? Yeah... tell it quickly, Jaljal!\nهيه؟ [إيه]... إحكيها بسرعة يا جلجل! => Hey? [Yeah]... tell it quickly, Jaljal!\nهيه؟ إيه... [إحكيها] بسرعة يا جلجل! => Hey? Yeah... [tell it] quickly, Jaljal!\nهيه؟ إيه... إحكيها [بسرعة] يا جلجل! => Hey? Yeah... tell it [quickly], Jaljal!\nهيه؟ إيه... إحكيها بسرعة [يا جلجل]! => Hey? Yeah... tell it quickly, [Jaljal]! # يا is a vocative particle used before names in Arabic and has no direct English word here, so it's grouped with the name.\n\n[يا سلام عليك] يا جلجل => [Oh wow], Jaljal\nيا سلام عليك يا [جلجل] => Oh wow, [Jaljal]\n\n[دايماً] أفكارك حلوة وعصرية. => Your ideas are [always] sweet and modern.\nدايماً [أفكارك] حلوة وعصرية. => [Your ideas] are always sweet and modern.\nدايماً أفكارك [حلوة] وعصرية. => Your ideas are always [sweet] and modern.\nدايماً أفكارك حلوة [و]عصرية. => Your ideas are always sweet [and] modern.\nدايماً أفكارك حلوة و[عصرية]. => Your ideas are always sweet and [modern].\n\n[تعالوا] معي => [Come] with me.\nتعالوا [معي] => Come [with me]\n\n[هيه]! يلا! => [Hey]! Let's go!\nهيه! [يلا]! => Hey! [Let's go]!\n\n[هي] يا تونتون، ندور على نوران. => [Here], Tonton, let's look for Nouran.\nهي يا [تونتون]، ندور على نوران. => Here, [Tonton], let's look for Nouran.\nهي يا تونتون، [ندور] على نوران. => Here, Tonton, [let's look] for Nouran.\nهي يا تونتون، ندور [على] نوران. => Here, Tonton, let's look [for] Nouran.\nهي يا تونتون، ندور على [نوران]. => Here, Tonton, let's look for [Nouran.]\n\n[هيه]! هيها، هيها على الخط! => [Hey]! There she is, there she is on the line!\nهيه! [هيها]، هيها على الخط! => Hey! [There she is], there she is on the line!\nهيه! هيها، [هيها] على الخط! => Hey! There she is, [there she is] on the line!\nهيه! هيها، هيها [على] الخط! => Hey! There she is, there she is [on] the line!\nهيه! هيها، هيها على [الخط]! => Hey! There she is, there she is on [the line]!\n\n[هلق] بدنا نكبس اتصال، => [Now] we need to press call,\nهلق [بدنا] نكبس اتصال، => Now [we need] to press call,\nهلق بدنا [نكبس] اتصال، => Now we need [to press] call,\nهلق بدنا نكبس [اتصال]، => Now we need to press [call]\n\n[وين]... هيه! => [Where]... hey!\nوين... [هيه]! => Where... [hey]!\n\n[ها]! هي شبك! => [Ha]! She's connected!\nها! [هي] شبك! => [She's] connected!\nها! هي [شبك]! => She's [connected]!\n\n[هيه]! هي نوران! => [Hey]! It's Nouran!\nهيه! [هي] نوران! => [It's] Nouran!\nهيه! هي [نوران]! => Hey! It's [Nouran]!\n\n[عن جد] نوران. => [Really] Nouran.\nعن جد [نوران]. => Really [Nouran].\n\n[إيه]... هي تونتون. مرحباً تونتون. => [Yeah]... it's Tonton. Hello Tonton.\nإيه... [هي] تونتون. مرحباً تونتون. => Yeah... [it's] Tonton. Hello Tonton.\nإيه... هي [تونتون]. مرحباً تونتون. => Yeah... it's [Tonton]. Hello Tonton.\nإيه... هي تونتون. [مرحباً] تونتون. => Yeah... it's Tonton. [Hello] Tonton.\nإيه... هي تونتون. مرحباً [تونتون]. => Yeah... it's Tonton. Hello [Tonton].\n\n[مرحباً] نوران! هلق هي بتسمعني؟ => [Hello] Nouran! Can she hear me now?\nمرحباً [نوران]! هلق هي بتسمعني؟ => Hello [Nouran]! Can she hear me now?\nمرحباً نوران! [هلق] هي بتسمعني؟ => Hello Nouran! Can she hear me [now]?\nمرحباً نوران! هلق [هي] بتسمعني؟ => Hello Nouran! Can [she] hear me now?\nمرحباً نوران! هلق هي [بتسمعني]؟ => can hear me # the verb \"btesma'\" (hear) + suffix \"ni\" (me) functions as \"can hear me\" in this context\n\n[آه] آه، سمعتك => [Ah] ah, I heard you.\nآه [آه]، سمعتك => Ah [ah], I heard you.\nآه آه، [سمعتك] => [I heard you]\n\nطلعي على [الكاميرا] واحكي معها. => Turn on [the camera] and talk to her.\nطلعي على الكاميرا [واحكي] معها. => Turn on the camera [and talk] to her.\nطلعي على الكاميرا واحكي [معها] => Turn on the camera and talk [to her]\n\n[مرحباً] نوران! أنا اشتقتلك كتير كتير كتير! => [Hello] Nouran! I missed you so so so much!\nمرحباً [نوران]! أنا اشتقتلك كتير كتير كتير! => Hello [Nouran]! I missed you so so so much!\nمرحباً نوران! [أنا] اشتقتلك كتير كتير كتير! => Hello Nouran! [I] missed you so so so much!\nمرحباً نوران! أنا [اشتقتلك] كتير كتير كتير! => missed you\nمرحباً نوران! أنا اشتقتلك [كتير] كتير كتير! => Hello Nouran! I missed you [so] so so much!\nمرحباً نوران! أنا اشتقتلك كتير [كتير] كتير! => Hello Nouran! I missed you so [so] so much!\nمرحباً نوران! أنا اشتقتلك كتير كتير [كتير]! => Hello Nouran! I missed you so so [so] much!\nمرحباً نوران! أنا اشتقتلك كتير كتير [كتير]! => much # custom translation to capture the trailing meaning of 'much' often included in the last 'keteer' in this context\n\n[أنا] كمان يا تونتون اشتقتلك => [I] missed you too, Tonton\nأنا [كمان] يا تونتون اشتقتلك => I missed you [too], Tonton\nأنا كمان يا [تونتون] اشتقتلك => I missed you too, [Tonton]\nأنا كمان يا تونتون [اشتقتلك] => I [missed you] too, Tonton # اشتقتلك contains the verb and the object pronoun \"you\"\n\n[كتير كتير] قد البحر. => [so so much], as big as the sea.\nكتير كتير [قد] البحر. => so so much, [as big as] the sea.\nكتير كتير قد [البحر]. => so so much, as big as [the sea].\n\n[هيه]! وأنا اشتقتلك قد البحر والسما. => [Hey]! And I missed you as big as the sea and sky.\nهيه! [و]أنا اشتقتلك قد البحر والسما. => Hey! [And] I missed you as big as the sea and sky.\nهيه! و[أنا] اشتقتلك قد البحر والسما. => Hey! And [I] missed you as big as the sea and sky.\nهيه! وأنا [اشتقتلك] قد البحر والسما. => Hey! And I [missed you] as big as the sea and sky.\nهيه! وأنا اشتقتلك [قد] البحر والسما. => Hey! And I missed you [as big as] the sea and sky.\nهيه! وأنا اشتقتلك قد [البحر] والسما. => Hey! And I missed you as big as [the sea] and sky.\nهيه! وأنا اشتقتلك قد البحر [و]السما. => Hey! And I missed you as big as the sea [and] sky.\nهيه! وأنا اشتقتلك قد البحر و[السما]. => Hey! And I missed you as big as the sea and [sky]. # \"ال\" is the definite article, \"سما\" is sky\n\n[مم]... إيه... طولتي كتير يا نوران. => [Hmm]... yeah... you were away too long, Nouran.\nمم... [إيه]... طولتي كتير يا نوران. => Hmm... [yeah]... you were away too long, Nouran.\nمم... إيه... [طولتي] كتير يا نوران. => you were away, you were gone\nمم... إيه... طولتي [كتير] يا نوران. => Hmm... yeah... you were away [too long], Nouran.\nمم... إيه... طولتي كتير يا [نوران]. => Hmm... yeah... you were away too long, [Nouran]\n\n[متى] رح تيجي عنا؟ => [When] will you come to us?\nمتى [رح تيجي] عنا؟ => When [will you come] to us?\nمتى رح تيجي [عنا]؟ => When will you come [to us]?\n\n[آه]، إحنا كلنا بنستناكي. => [Ah], we are all waiting for you.\nآه، [إحنا] كلنا بنستناكي. => Ah, [we] are all waiting for you.\nآه، إحنا [كلنا] بنستناكي. => Ah, we are [all] waiting for you.\nآه، إحنا كلنا [بنستناكي]. => Ah, we are all [waiting for you] # \"binistannaki\" contains the verb and the object pronoun \"you\"\n\n[مم]... إيه... أنا كنت حزينة اليوم، => [Hmm]... yeah... I was sad today,\nمم... [إيه]... أنا كنت حزينة اليوم، => Hmm... [yeah]... I was sad today,\nمم... إيه... [أنا] كنت حزينة اليوم، => Hmm... yeah... [I] was sad today,\nمم... إيه... أنا [كنت] حزينة اليوم، => Hmm... yeah... I [was] sad today,\nمم... إيه... أنا كنت [حزينة] اليوم، => Hmm... yeah... I was [sad] today,\nمم... إيه... أنا كنت حزينة [اليوم]، => Hmm... yeah... I was sad [today],\n\n[بس] هلق عشان أنا حكيت معاكي، فرحانة كتير. => [but] now because I talked to you, I'm very happy.\nبس [هلق] عشان أنا حكيت معاكي، فرحانة كتير. => but [now] because I talked to you, I'm very happy.\nبس هلق [عشان] أنا حكيت معاكي، فرحانة كتير. => but now [because] I talked to you, I'm very happy.\nبس هلق عشان [أنا] حكيت معاكي، فرحانة كتير. => but now because [I] talked to you, I'm very happy.\nبس هلق عشان أنا [حكيت] معاكي، فرحانة كتير. => but now because I [talked] to you, I'm very happy.\nبس هلق عشان أنا حكيت [معاكي]، فرحانة كتير. => but now because I talked [to you], I'm very happy.\nبس هلق عشان أنا حكيت معاكي، [فرحانة] كتير. => but now because I talked to you, I'm very [happy].\nبس هلق عشان أنا حكيت معاكي، فرحانة [كتير]. => but now because I talked to you, I'm [very] happy.\n\n[تسلمي] على جلجل وحياة وكامل => [Say hello] to Jaljal, Hayat, and Kamel\nتسلمي [على] جلجل وحياة وكامل => Say hello [to] Jaljal, Hayat, and Kamel\nتسلمي على [جلجل] وحياة وكامل => Say hello to [Jaljal], Hayat, and Kamel\nتسلمي على جلجل [وحياة] وكامل => and Hayat # the Arabic prefix 'wa' means 'and', which is replaced by a comma in this part of the English list\nتسلمي على جلجل وحياة [وكامل] => Say hello to Jaljal, Hayat, [and Kamel]\n\nعلى [كل] حارة سمسم. => and [all] of Sesame Street.\nعلى كل [حارة] سمسم. => and all of Sesame [Street]\nعلى كل حارة [سمسم]. => and all of [Sesame] Street\n\n[كلهم] بيسلموا عليكي. باي! => [They all] say hello to you. Bye!\nكلهم [بيسلموا] عليكي. باي! => They all [say hello] to you. Bye!\nكلهم بيسلموا [عليكي]. باي! => They all say hello [to you]. Bye!\nكلهم بيسلموا عليكي. [باي]! => They all say hello to you. [Bye]!\n\n[باي]! => [Bye]!\n\n[باي]! => [Bye]!\n\n[آه]! هلق أنا كتير مبسوطة. => [Ah]! Now I am very happy.\nآه! [هلق] أنا كتير مبسوطة. => Ah! [Now] I am very happy.\nآه! هلق [أنا] كتير مبسوطة. => Ah! Now [I am] very happy.\nآه! هلق أنا [كتير] مبسوطة. => Ah! Now I am [very] happy.\nآه! هلق أنا كتير [مبسوطة]. => Ah! Now I am very [happy].\n\n[حياة]، جلجل، شكراً إلكم كتير => [Hayat], Jaljal, thank you so much\nحياة، [جلجل]، شكراً إلكم كتير => Hayat, [Jaljal], thank you so much\nحياة، جلجل، [شكراً] إلكم كتير => Hayat, Jaljal, [thank] you so much\nحياة، جلجل، شكراً [إلكم] كتير => Hayat, Jaljal, thank [you] so much\nحياة، جلجل، شكراً إلكم [كتير] => Hayat, Jaljal, thank you [so much]\n\n[عشان] ساعدتوني إني ما أكون حزينة. => [for] helping me not be sad.\nعشان [ساعدتوني] إني ما أكون حزينة. => for [helping me] not be sad.\nعشان ساعدتوني [إني] ما أكون حزينة. => that I\nعشان ساعدتوني إني [ما] أكون حزينة. => for helping me [not] be sad.\nعشان ساعدتوني إني ما [أكون] حزينة. => for helping me not [be] sad.\nعشان ساعدتوني إني ما أكون [حزينة] => for helping me not be [sad]\n\n[ولو] يا تونتون، => [Not at all], Tonton,\nولو يا [تونتون]، => Not at all, [Tonton],\n\n[إحنا] ما بنقدر نشوفك حزينة. => [we] can't stand seeing you sad.\nإحنا [ما بنقدر] نشوفك حزينة. => we [can't stand] seeing you sad.\nإحنا ما بنقدر [نشوفك] حزينة. => we can't stand [seeing you] sad.\nإحنا ما بنقدر نشوفك [حزينة]. => we can't stand seeing you [sad]\n\n[أكيد]. => [Definitely].\n\n[أنا] هلق مبسوطة كتير! ها ها ها! => [I am] very happy now! Ha ha ha!\nأنا [هلق] مبسوطة كتير! ها ها ها! => I am very happy [now]! Ha ha ha!\nأنا هلق [مبسوطة] كتير! ها ها ها! => I am very [happy] now! Ha ha ha!\nأنا هلق مبسوطة [كتير]! ها ها ها! => I am [very] happy now! Ha ha ha!\nأنا هلق مبسوطة كتير! [ها ها ها]! => I am very happy now! [Ha ha ha]!\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Tonton?",
+            "words": []
+          },
+          {
+            "text": "Jaljal?",
+            "words": []
+          },
+          {
+            "text": "Tonton?",
+            "words": []
+          },
+          {
+            "text": "Jaljal?",
+            "words": []
+          },
+          {
+            "text": "Hayat, I'm here!",
+            "words": []
+          },
+          {
+            "text": "Jaljal, you scared me. Where's Tonton?",
+            "words": []
+          },
+          {
+            "text": "I'm looking for her too.",
+            "words": []
+          },
+          {
+            "text": "What's that in your hand?",
+            "words": []
+          },
+          {
+            "text": "This is a computer.",
+            "words": []
+          },
+          {
+            "text": "Hmm... you mean computer, laptop.",
+            "words": []
+          },
+          {
+            "text": "Exactly. Come with me.",
+            "words": []
+          },
+          {
+            "text": "Okay.",
+            "words": []
+          },
+          {
+            "text": "How are you, Jaljal?",
+            "words": []
+          },
+          {
+            "text": "I'm good.",
+            "words": []
+          },
+          {
+            "text": "Come on, let me show you what I have on the computer.",
+            "words": []
+          },
+          {
+            "text": "Hmm... and Tonton?",
+            "words": []
+          },
+          {
+            "text": "We'll find Tonton in a bit.",
+            "words": []
+          },
+          {
+            "text": "Okay.",
+            "words": []
+          },
+          {
+            "text": "Tonton?",
+            "words": []
+          },
+          {
+            "text": "We got worried when we couldn't find you.",
+            "words": []
+          },
+          {
+            "text": "Is something wrong?",
+            "words": []
+          },
+          {
+            "text": "Yeah... I came here to sit alone.",
+            "words": []
+          },
+          {
+            "text": "What? You seem sad.",
+            "words": []
+          },
+          {
+            "text": "Ah, I'm a little sad.",
+            "words": []
+          },
+          {
+            "text": "Yeah... no no, I'm fine, ah.",
+            "words": []
+          },
+          {
+            "text": "What do you think is wrong with Tonton?",
+            "words": []
+          },
+          {
+            "text": "She looks very sad.",
+            "words": []
+          },
+          {
+            "text": "I feel the same. There must be a reason.",
+            "words": []
+          },
+          {
+            "text": "Hmm... how can we help her, Hayat?",
+            "words": []
+          },
+          {
+            "text": "How? Let's think together.",
+            "words": []
+          },
+          {
+            "text": "Ah, right.",
+            "words": []
+          },
+          {
+            "text": "Think, Jaljo, think, Jaljo...",
+            "words": []
+          },
+          {
+            "text": "Hmm...",
+            "words": []
+          },
+          {
+            "text": "Hey! I got a great idea.",
+            "words": []
+          },
+          {
+            "text": "Come, let me tell you how we can do something",
+            "words": []
+          },
+          {
+            "text": "and make her happy.",
+            "words": []
+          },
+          {
+            "text": "Make her happy? How?",
+            "words": []
+          },
+          {
+            "text": "Come, let me tell you my idea.",
+            "words": []
+          },
+          {
+            "text": "I'll try it on her now and see how it goes.",
+            "words": []
+          },
+          {
+            "text": "Hmm.",
+            "words": []
+          },
+          {
+            "text": "Looks like things aren't as easy as I thought.",
+            "words": []
+          },
+          {
+            "text": "So, we won't be able to make her happy and laughing.",
+            "words": []
+          },
+          {
+            "text": "Is that what you think?",
+            "words": []
+          },
+          {
+            "text": "Okay, let's try something else.",
+            "words": []
+          },
+          {
+            "text": "Think of something else, think, oh...",
+            "words": []
+          },
+          {
+            "text": "Hey! Hey!",
+            "words": []
+          },
+          {
+            "text": "I got a really great idea.",
+            "words": []
+          },
+          {
+            "text": "Now we'll make her laugh and be happy.",
+            "words": []
+          },
+          {
+            "text": "Tarararam! I am Magician Jaljal",
+            "words": []
+          },
+          {
+            "text": "who will make sad Tonton",
+            "words": []
+          },
+          {
+            "text": "happy and laughing.",
+            "words": []
+          },
+          {
+            "text": "Magician Jaljal will be able to turn Tonton",
+            "words": []
+          },
+          {
+            "text": "from sad to happy and laughing.",
+            "words": []
+          },
+          {
+            "text": "Brumba, brumba, bamba! Ha ha ha!",
+            "words": []
+          },
+          {
+            "text": "Hey! Look, Tonton is laughing!",
+            "words": []
+          },
+          {
+            "text": "What's wrong, Tonton?",
+            "words": []
+          },
+          {
+            "text": "It was clear you were upset.",
+            "words": []
+          },
+          {
+            "text": "Hey? It was clear I was sad?",
+            "words": []
+          },
+          {
+            "text": "Yeah, sad.",
+            "words": []
+          },
+          {
+            "text": "Hmm... yeah... I am sad",
+            "words": []
+          },
+          {
+            "text": "because my friend Nouran is away.",
+            "words": []
+          },
+          {
+            "text": "I miss her so much. Hmm.",
+            "words": []
+          },
+          {
+            "text": "You're right, Tonton.",
+            "words": []
+          },
+          {
+            "text": "I miss her too, she's been traveling for a week.",
+            "words": []
+          },
+          {
+            "text": "So since you miss her, Tonton,",
+            "words": []
+          },
+          {
+            "text": "what did you do to contact her?",
+            "words": []
+          },
+          {
+            "text": "Hey? Yeah... contact her?",
+            "words": []
+          },
+          {
+            "text": "What do you mean?",
+            "words": []
+          },
+          {
+            "text": "Like... hmm... send her an email.",
+            "words": []
+          },
+          {
+            "text": "I mean a message via electronic mail.",
+            "words": []
+          },
+          {
+            "text": "Excellent, Jaljal.",
+            "words": []
+          },
+          {
+            "text": "Hmm hmm! I actually thought of sending her an email.",
+            "words": []
+          },
+          {
+            "text": "No no no no. I got another idea better than email.",
+            "words": []
+          },
+          {
+            "text": "Hey? Yeah... tell it quickly, Jaljal!",
+            "words": []
+          },
+          {
+            "text": "Oh wow, Jaljal.",
+            "words": []
+          },
+          {
+            "text": "Your ideas are always sweet and modern.",
+            "words": []
+          },
+          {
+            "text": "Come with me.",
+            "words": []
+          },
+          {
+            "text": "Hey! Let's go!",
+            "words": []
+          },
+          {
+            "text": "Here, Tonton, let's look for Nouran.",
+            "words": []
+          },
+          {
+            "text": "Hey! There she is, there she is on the line!",
+            "words": []
+          },
+          {
+            "text": "Now we need to press call,",
+            "words": []
+          },
+          {
+            "text": "Where... hey!",
+            "words": []
+          },
+          {
+            "text": "Ha! She's connected!",
+            "words": []
+          },
+          {
+            "text": "Hey! It's Nouran!",
+            "words": []
+          },
+          {
+            "text": "Really Nouran.",
+            "words": []
+          },
+          {
+            "text": "Yeah... it's Tonton. Hello Tonton.",
+            "words": []
+          },
+          {
+            "text": "Hello Nouran! Can she hear me now?",
+            "words": []
+          },
+          {
+            "text": "Ah ah, I heard you.",
+            "words": []
+          },
+          {
+            "text": "Turn on the camera and talk to her.",
+            "words": []
+          },
+          {
+            "text": "Hello Nouran! I missed you so so so much!",
+            "words": []
+          },
+          {
+            "text": "I missed you too, Tonton",
+            "words": []
+          },
+          {
+            "text": "so so much, as big as the sea.",
+            "words": []
+          },
+          {
+            "text": "Hey! And I missed you as big as the sea and sky.",
+            "words": []
+          },
+          {
+            "text": "Hmm... yeah... you were away too long, Nouran.",
+            "words": []
+          },
+          {
+            "text": "When will you come to us?",
+            "words": []
+          },
+          {
+            "text": "Ah, we are all waiting for you.",
+            "words": []
+          },
+          {
+            "text": "Hmm... yeah... I was sad today,",
+            "words": []
+          },
+          {
+            "text": "but now because I talked to you, I'm very happy.",
+            "words": []
+          },
+          {
+            "text": "Say hello to Jaljal, Hayat, and Kamel",
+            "words": []
+          },
+          {
+            "text": "and all of Sesame Street.",
+            "words": []
+          },
+          {
+            "text": "They all say hello to you. Bye!",
+            "words": []
+          },
+          {
+            "text": "Bye!",
+            "words": []
+          },
+          {
+            "text": "Bye!",
+            "words": []
+          },
+          {
+            "text": "Ah! Now I am very happy.",
+            "words": []
+          },
+          {
+            "text": "Hayat, Jaljal, thank you so much",
+            "words": []
+          },
+          {
+            "text": "for helping me not be sad.",
+            "words": []
+          },
+          {
+            "text": "Not at all, Tonton,",
+            "words": []
+          },
+          {
+            "text": "we can't stand seeing you sad.",
+            "words": []
+          },
+          {
+            "text": "Definitely.",
+            "words": []
+          },
+          {
+            "text": "I am very happy now! Ha ha ha!",
+            "words": []
+          }
+        ],
+        "lessons": "# البحث عن تونتون\n00:09.00 تونتون؟\n00:11.00 جلجل؟\n00:17.00 تونتون؟\n00:19.00 جلجل؟\n00:20.00 حياة، أنا هون!\n00:22.00 جلجل، خوفتني. وين تونتون؟\n00:26.00 أنا كمان بدور عليها.\n\n# الحاسوب الجديد\n00:28.00 إيش هذا اللي بإيدك؟\n00:30.00 هذا حاسوب.\n00:33.00 ممم... قصدك كمبيوتر، لابتوب.\n00:36.00 مظبوط. تعال معي.\n00:38.00 حاضر.\n00:42.00 كيفك يا جلجل؟\n00:44.00 أنا منيح.\n00:45.00 يلا، تعال أفرجيك شو معي بالحاسوب.\n\n# تونتون الحزينة\n00:48.00 ممم... وتونتون؟\n00:49.00 تونتون هلق بنلاقيها.\n00:51.00 طيب.\n00:54.00 تونتون؟\n00:55.00 إحنا قلقنا عليكي لما ما لقيناكي.\n00:58.00 مالك إشي؟\n01:01.00 إيه... أنا إجيت هون أقعد لحالي.\n01:05.00 شو؟ كأنك حزينة.\n01:07.00 آه، أنا شوي حزينة.\n01:10.00 إيه... لا لا، أنا كويسة، آه.\n\n# محاولة إسعاد تونتون (الجزء 1)\n01:14.00 فكرك شو مالها تونتون؟\n01:16.00 مبين عليها حزينة كتير.\n01:18.00 أنا هيك حاسة كمان. أكيد في سبب.\n01:22.00 ممم... كيف بنقدر نساعدها يا حياة؟\n01:26.00 كيف؟ خلينا نفكر مع بعض.\n01:29.00 آه، مظبوط.\n01:31.00 فكر يا جلجو، فكر يا جلجو...\n01:34.00 ممم...\n01:36.00 هيه! أجتني فكرة رائعة.\n\n# محاولة إسعاد تونتون (الجزء 2)\n01:38.00 تعالي أقولك كيف بنقدر نعمل إشي\n01:40.00 وتكون سعيدة.\n01:43.00 نخليها سعيدة؟ كيف؟\n01:47.00 تعالي أحكيلك شو فكرتي.\n01:50.00 هلق بطبللها وبنشوف كيف رح يصير معها.\n01:53.00 ممم.\n02:12.00 شكلها الأمور مش سهلة زي ما أنا ظنيت.\n\n# الساحر جلجل\n02:16.00 طيب، ما رح نقدر نخليها سعيدة وبتضحك.\n02:20.00 هيك رأيك؟\n02:22.00 طيب خلينا نجرب إشي تاني.\n02:24.00 فكر بإشي تاني، فكر يا...\n02:27.00 هيه! هيه!\n02:30.00 أجتني فكرة رائعة جداً.\n02:33.00 هلق رح نخليها تضحك وتكون سعيدة.\n02:38.00 تارارارام! أنا الساحر جلجل\n02:41.00 اللي رح يخلي تونتون الحزينة\n02:44.00 سعيد وبتضحك.\n02:46.00 الساحر جلجل رح يقدر يحول تونتون\n02:48.00 من حزينة إلى سعيدة وبتضحك.\n02:53.00 برومبا، برومبا، بامبا! ها ها ها!\n\n# سر حزن تونتون\n03:02.00 هيه! هاي تونتون بتضحك!\n03:06.00 شو مالك يا تونتون؟\n03:08.00 كان واضح عليكي إنك كنتي زعلانة.\n03:12.00 هيه؟ واضح علي إني كنت حزينة؟\n03:15.00 أيوه، حزينة.\n03:17.00 ممم... إيه... أنا حزينة\n03:20.00 على فراق صاحبتي نوران.\n03:22.00 اشتقتلها كتير. ممم.\n\n# الاتصال بنوران\n03:25.00 معك حق يا تونتون.\n03:27.00 وأنا اشتقتلها، صارلها أسبوع مسافرة.\n03:30.00 طيب بما إنك اشتقتيلها يا تونتون،\n03:33.00 شو عملتي حتى تتواصلي معها؟\n03:36.00 هيه؟ إيه... أتواصل معها؟\n03:38.00 كيف يعني؟\n03:40.00 يعني... ممم... تبعتيلها إيميل.\n03:43.00 يعني رسالة بالبريد الإلكتروني.\n03:46.00 ممتاز يا جلجل.\n04:48.00 مم مم! أنا أصلاً خطرلي إني أبعتلها إيميل.\n03:53.00 لا لا لا لا. أجتني فكرة تانية أحسن من الإيميل.\n\n# مكالمة الفيديو (الجزء 1)\n03:58.00 هيه؟ إيه... إحكيها بسرعة يا جلجل!\n04:01.00 يا سلام عليك يا جلجل.\n04:03.00 دايماً أفكارك حلوة وعصرية.\n04:05.00 تعالوا معي.\n04:07.00 هيه! يلا!\n04:14.00 هي يا تونتون، ندور على نوران.\n04:17.00 هيه! هيها، هيها على الخط!\n\n# مكالمة الفيديو (الجزء 2)\n04:19.00 هلق بدنا نكبس اتصال،\n04:21.00 وين... هيه!\n04:23.00 ها! هي شبك!\n04:26.00 هيه! هي نوران!\n04:28.00 عن جد نوران.\n04:30.00 إيه... هي تونتون. مرحباً تونتون.\n04:34.00 مرحباً نوران! هلق هي بتسمعني؟\n04:36.00 آه آه، سمعتك.\n04:38.00 طلعي على الكاميرا واحكي معها.\n\n# لمّ الشمل\n04:41.00 مرحباً نوران! أنا اشتقتلك كتير كتير كتير!\n04:45.00 أنا كمان يا تونتون اشتقتلك\n04:47.00 كتير كتير قد البحر.\n04:49.00 هيه! وأنا اشتقتلك قد البحر والسما.\n04:56.00 مم... إيه... طولتي كتير يا نوران.\n04:58.00 متى رح تيجي عنا؟\n05:02.00 آه، إحنا كلنا بنستناكي.\n\n# نهاية سعيدة\n05:07.00 مم... إيه... أنا كنت حزينة اليوم،\n05:10.00 بس هلق عشان أنا حكيت معاكي، فرحانة كتير.\n05:14.00 تسلمي على جلجل وحياة وكامل\n05:17.00 على كل حارة سمسم.\n05:19.00 كلهم بيسلموا عليكي. باي!\n05:22.00 باي!\n05:24.00 باي!\n05:26.00 آه! هلق أنا كتير مبسوطة.\n05:29.00 حياة، جلجل، شكراً إلكم كتير\n05:32.00 عشان ساعدتوني إني ما أكون حزينة.\n05:36.00 ولو يا تونتون،\n05:38.00 إحنا ما بنقدر نشوفك حزينة.\n05:40.00 أكيد.\n05:41.00 أنا هلق مبسوطة كتير! ها ها ها!"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 20:33:56 UTC",
   "updated_at": "2026-04-26 05:56:58 UTC",

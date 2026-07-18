@@ -9,456 +9,691 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, quand je dois prendre rendez-vous",
-        "text_l2": "So, when I have to make a date",
         "timestamp": "00:02.80"
       },
       {
         "id": "phrase_2",
         "text_l1": "avec une fille,",
-        "text_l2": "with a girl,",
         "timestamp": "00:04.10"
       },
       {
         "id": "phrase_3",
         "text_l1": "j'attends toujours trois jours",
-        "text_l2": "I always wait three days",
         "timestamp": "00:04.80"
       },
       {
         "id": "phrase_4",
         "text_l1": "avant de lui envoyer un texto",
-        "text_l2": "before texting her",
         "timestamp": "00:06.10"
       },
       {
         "id": "phrase_5",
         "text_l1": "pour montrer que je suis un gars détaché.",
-        "text_l2": "to show I'm a chill guy.",
         "timestamp": "00:07.30"
       },
       {
         "id": "phrase_6",
         "text_l1": "Entre-temps, je tape son nom",
-        "text_l2": "Meanwhile, I type her name",
         "timestamp": "00:08.20"
       },
       {
         "id": "phrase_7",
         "text_l1": "et son prénom dans Google",
-        "text_l2": "and surname into Google",
         "timestamp": "00:09.30"
       },
       {
         "id": "phrase_8",
         "text_l1": "et j'apprends qu'elle était en seconde B",
-        "text_l2": "and I find out she was in 10th grade B",
         "timestamp": "00:10.20"
       },
       {
         "id": "phrase_9",
         "text_l1": "au lycée Clémenceau à Reims. Génial.",
-        "text_l2": "at Clémenceau High in Reims. Great.",
         "timestamp": "00:11.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "À chaque fois que je me prépare",
-        "text_l2": "Every time I get ready",
         "timestamp": "00:13.10"
       },
       {
         "id": "phrase_11",
         "text_l1": "pour un rendez-vous,",
-        "text_l2": "for a date,",
         "timestamp": "00:14.30"
       },
       {
         "id": "phrase_12",
         "text_l1": "je prends une douche, deux fois,",
-        "text_l2": "I shower, twice,",
         "timestamp": "00:15.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "pour être bien propre.",
-        "text_l2": "to be really clean.",
         "timestamp": "00:16.10"
       },
       {
         "id": "phrase_14",
         "text_l1": "Après, pendant une heure,",
-        "text_l2": "Then, for an hour,",
         "timestamp": "00:16.80"
       },
       {
         "id": "phrase_15",
         "text_l1": "je m'occupe de ma barbe,",
-        "text_l2": "I work on my beard,",
         "timestamp": "00:17.80"
       },
       {
         "id": "phrase_16",
         "text_l1": "pour avoir l'air d'un mec",
-        "text_l2": "to look like a guy",
         "timestamp": "00:18.70"
       },
       {
         "id": "phrase_17",
         "text_l1": "qui s'occupe pas de sa barbe.",
-        "text_l2": "who doesn't work on his beard.",
         "timestamp": "00:19.70"
       },
       {
         "id": "phrase_18",
         "text_l1": "Je teste une tenue 1, une tenue 2,",
-        "text_l2": "I try outfit 1, outfit 2,",
         "timestamp": "00:20.70"
       },
       {
         "id": "phrase_19",
         "text_l1": "une tenue 3, une tenue 4,",
-        "text_l2": "outfit 3, outfit 4,",
         "timestamp": "00:21.80"
       },
       {
         "id": "phrase_20",
         "text_l1": "je reviens à la tenue 1,",
-        "text_l2": "I go back to outfit 1,",
         "timestamp": "00:22.80"
       },
       {
         "id": "phrase_21",
         "text_l1": "je vérifie si j'ai pas de crotte de nez,",
-        "text_l2": "I check if I have no boogers,",
         "timestamp": "00:23.80"
       },
       {
         "id": "phrase_22",
         "text_l1": "je vérifie si ma braguette est pas ouverte.",
-        "text_l2": "I check if my fly isn't open.",
         "timestamp": "00:24.80"
       },
       {
         "id": "phrase_23",
         "text_l1": "Je me mets du parfum, j'oublie,",
-        "text_l2": "I put on cologne, I forget,",
         "timestamp": "00:26.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "j'en remets, je réoublie,",
-        "text_l2": "I put more on, I forget again,",
         "timestamp": "00:27.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "je sens trop le parfum,",
-        "text_l2": "I smell too much like cologne,",
         "timestamp": "00:27.80"
       },
       {
         "id": "phrase_26",
         "text_l1": "je reprends une douche",
-        "text_l2": "I take another shower",
         "timestamp": "00:28.80"
       },
       {
         "id": "phrase_27",
         "text_l1": "et je remets du parfum.",
-        "text_l2": "and put on cologne again.",
         "timestamp": "00:29.80"
       },
       {
         "id": "phrase_28",
         "text_l1": "Je répète mes phrases d'accroche.",
-        "text_l2": "I rehearse my pickup lines.",
         "timestamp": "00:31.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "Salut. Salut. Salut.",
-        "text_l2": "Hey. Hey. Hey.",
         "timestamp": "00:32.80"
       },
       {
         "id": "phrase_30",
         "text_l1": "Oh, comment tu vas ? Ça va ?",
-        "text_l2": "Oh, how are you? Doing good?",
         "timestamp": "00:34.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "Excuse-moi, je suis en retard, je...",
-        "text_l2": "Sorry, I'm late, I...",
         "timestamp": "00:35.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "Je bosse également mon regard.",
-        "text_l2": "I also practice my gaze.",
         "timestamp": "00:37.80"
       },
       {
         "id": "phrase_33",
         "text_l1": "Je suis un homme,",
-        "text_l2": "I'm a man,",
         "timestamp": "00:39.80"
       },
       {
         "id": "phrase_34",
         "text_l1": "mais j'ai des fêlures.",
-        "text_l2": "but I have cracks.",
         "timestamp": "00:41.80"
       },
       {
         "id": "phrase_35",
         "text_l1": "J'accorde ma guitare",
-        "text_l2": "I tune my guitar",
         "timestamp": "00:44.80"
       },
       {
         "id": "phrase_36",
         "text_l1": "et je la mets bien en évidence",
-        "text_l2": "and put it on display",
         "timestamp": "00:45.80"
       },
       {
         "id": "phrase_37",
         "text_l1": "dans ma chambre",
-        "text_l2": "in my room",
         "timestamp": "00:47.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "au cas où je la ramène chez moi.",
-        "text_l2": "in case I bring her home.",
         "timestamp": "00:47.80"
       },
       {
         "id": "phrase_39",
         "text_l1": "Je range ma chambre",
-        "text_l2": "I tidy my room",
         "timestamp": "00:48.80"
       },
       {
         "id": "phrase_40",
         "text_l1": "au cas où je la ramène chez moi.",
-        "text_l2": "in case I bring her home.",
         "timestamp": "00:49.80"
       },
       {
         "id": "phrase_41",
         "text_l1": "J'enlève le Sopalin à côté de mon lit",
-        "text_l2": "I remove the paper towels next to my bed",
         "timestamp": "00:50.80"
       },
       {
         "id": "phrase_42",
         "text_l1": "au cas où je la ramène chez moi.",
-        "text_l2": "in case I bring her home.",
         "timestamp": "00:51.80"
       },
       {
         "id": "phrase_43",
         "text_l1": "Entre-temps, je me suis habitué",
-        "text_l2": "Meanwhile, I've gotten used",
         "timestamp": "00:52.80"
       },
       {
         "id": "phrase_44",
         "text_l1": "à mon parfum,",
-        "text_l2": "to my cologne,",
         "timestamp": "00:53.80"
       },
       {
         "id": "phrase_45",
         "text_l1": "alors je me demande si j'en ai mis assez",
-        "text_l2": "so I wonder if I put on enough",
         "timestamp": "00:54.50"
       },
       {
         "id": "phrase_46",
         "text_l1": "et je remets du parfum.",
-        "text_l2": "and I put on more cologne.",
         "timestamp": "00:55.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "Je regarde si j'ai encore",
-        "text_l2": "I check if I still have",
         "timestamp": "00:56.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "des préservatifs depuis la dernière fois.",
-        "text_l2": "condoms from last time.",
         "timestamp": "00:57.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "Mais vu qu'elle est pas venue",
-        "text_l2": "But since she didn't come",
         "timestamp": "00:58.80"
       },
       {
         "id": "phrase_50",
         "text_l1": "la dernière fois, j'en ai encore.",
-        "text_l2": "last time, I still have them.",
         "timestamp": "00:59.80"
       },
       {
         "id": "phrase_51",
         "text_l1": "Je les place derrière mon coussin",
-        "text_l2": "I place them behind my pillow",
         "timestamp": "01:00.80"
       },
       {
         "id": "phrase_52",
         "text_l1": "pour pouvoir faire genre :",
-        "text_l2": "so I can pretend:",
         "timestamp": "01:01.80"
       },
       {
         "id": "phrase_53",
         "text_l1": "Eh, mais que voilà !",
-        "text_l2": "Oh, look what we have here!",
         "timestamp": "01:04.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "Je regarde si je suis musclé,",
-        "text_l2": "I check if I'm muscular,",
         "timestamp": "01:08.20"
       },
       {
         "id": "phrase_55",
         "text_l1": "je suis pas musclé, je fais des pompes,",
-        "text_l2": "I'm not muscular, I do push-ups,",
         "timestamp": "01:09.20"
       },
       {
         "id": "phrase_56",
         "text_l1": "je suis toujours pas musclé,",
-        "text_l2": "I'm still not muscular,",
         "timestamp": "01:10.20"
       },
       {
         "id": "phrase_57",
         "text_l1": "mais j'ai transpiré,",
-        "text_l2": "but I've sweated,",
         "timestamp": "01:11.20"
       },
       {
         "id": "phrase_58",
         "text_l1": "alors je reprends une douche",
-        "text_l2": "so I take another shower",
         "timestamp": "01:12.20"
       },
       {
         "id": "phrase_59",
         "text_l1": "et je remets du parfum.",
-        "text_l2": "and put on cologne again.",
         "timestamp": "01:13.20"
       },
       {
         "id": "phrase_60",
         "text_l1": "Je prépare une playlist",
-        "text_l2": "I prepare a playlist",
         "timestamp": "01:14.20"
       },
       {
         "id": "phrase_61",
         "text_l1": "au cas où je la ramène chez moi.",
-        "text_l2": "in case I bring her home.",
         "timestamp": "01:15.20"
       },
       {
         "id": "phrase_62",
         "text_l1": "Je me sens prêt.",
-        "text_l2": "I feel ready.",
         "timestamp": "01:16.20"
       },
       {
         "id": "phrase_63",
         "text_l1": "Mais comme le rendez-vous est dans 2h,",
-        "text_l2": "But since the date is in 2 hours,",
         "timestamp": "01:17.20"
       },
       {
         "id": "phrase_64",
         "text_l1": "j'attends.",
-        "text_l2": "I wait.",
         "timestamp": "01:18.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "Je m'endors.",
-        "text_l2": "I fall asleep.",
         "timestamp": "01:20.50"
       },
       {
         "id": "phrase_66",
         "text_l1": "Je me réveille en retard, je cours,",
-        "text_l2": "I wake up late, I run,",
         "timestamp": "01:22.20"
       },
       {
         "id": "phrase_67",
         "text_l1": "je transpire, je reprends pas de douche,",
-        "text_l2": "I sweat, I don't shower again,",
         "timestamp": "01:23.20"
       },
       {
         "id": "phrase_68",
         "text_l1": "je remets pas de parfum,",
-        "text_l2": "I don't put on cologne,",
         "timestamp": "01:24.20"
       },
       {
         "id": "phrase_69",
         "text_l1": "j'accorde pas ma guitare,",
-        "text_l2": "I don't tune my guitar,",
         "timestamp": "01:25.20"
       },
       {
         "id": "phrase_70",
         "text_l1": "je range pas le Sopalin,",
-        "text_l2": "I don't tidy the paper towels,",
         "timestamp": "01:26.20"
       },
       {
         "id": "phrase_71",
         "text_l1": "je vérifie pas ma braguette",
-        "text_l2": "I don't check my fly",
         "timestamp": "01:27.20"
       },
       {
         "id": "phrase_72",
         "text_l1": "et j'ai une crotte de nez.",
-        "text_l2": "and I have a booger.",
         "timestamp": "01:28.20"
       },
       {
         "id": "phrase_73",
         "text_l1": "Bref, je me suis préparé",
-        "text_l2": "So, I got ready",
         "timestamp": "01:29.20"
       },
       {
         "id": "phrase_74",
         "text_l1": "pour un rendez-vous.",
-        "text_l2": "for a date.",
         "timestamp": "01:30.20"
       },
       {
         "id": "phrase_75",
         "text_l1": "Eh, mais que voilà !",
-        "text_l2": "Oh, look what we have here!",
         "timestamp": "01:37.50"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], quand je dois prendre rendez-vous => [So], when I have to make a date\nBref, [quand] je dois prendre rendez-vous => So, [when] I have to make a date\nBref, quand [je] dois prendre rendez-vous => So, when [I] have to make a date\nBref, quand je [dois] prendre rendez-vous => So, when I [have to] make a date\nBref, quand je dois [prendre] rendez-vous => So, when I have to [make] a date\nBref, quand je dois prendre [rendez-vous] => So, when I have to make [a date]\n\n[avec] une fille, => [with] a girl,\navec [une] fille, => with [a] girl,\navec une [fille], => with a [girl],\n\n[j']attends toujours trois jours => [I] always wait three days\nj'[attends] toujours trois jours => I always [wait] three days\nj'attends [toujours] trois jours => I [always] wait three days\nj'attends toujours [trois] jours => I always wait [three] days\nj'attends toujours trois [jours] => I always wait three [days]\n\n[avant] de lui envoyer un texto => [before] texting her\navant de [lui] envoyer un texto => before texting [her]\navant de lui [envoyer un texto] => [texting] her # \"envoyer un texto\" translates to the single English verb \"texting\"\n\n[pour] montrer que je suis un gars détaché. => [to] show I'm a chill guy.\npour [montrer] que je suis un gars détaché. => to [show] I'm a chill guy.\npour montrer que [je] suis un gars détaché. => to show [I]'m a chill guy.\npour montrer que je [suis] un gars détaché. => to show I['m] a chill guy.\npour montrer que je suis [un] gars détaché. => to show I'm [a] chill guy.\npour montrer que je suis un [gars] détaché. => to show I'm a chill [guy].\npour montrer que je suis un gars [détaché]. => to show I'm a [chill] guy. # \"détaché\" here means aloof or carefree, translated as \"chill\"\n\n[Entre-temps], je tape son nom => [Meanwhile], I type her name\nEntre-temps, [je] tape son nom => Meanwhile, [I] type her name\nEntre-temps, je [tape] son nom => Meanwhile, I [type] her name\nEntre-temps, je tape [son] nom => Meanwhile, I [her] name\nEntre-temps, je tape son [nom] => Meanwhile, I type her [name]\n\n[et] son prénom dans Google => [and] surname into Google\net son [prénom] dans Google => and [surname] into Google\net son prénom [dans] Google => and surname [into] Google\net son prénom dans [Google] => and surname into [Google]\n\n[et] j'apprends qu'elle était en seconde B => [and] I find out she was in 10th grade B\net [j']apprends qu'elle était en seconde B => and [I] find out she was in 10th grade B\net j'[apprends] qu'elle était en seconde B => and I [find out] she was in 10th grade B\net j'apprends qu'[elle] était en seconde B => and I find out [she] was in 10th grade B\net j'apprends qu'elle [était] en seconde B => and I find out she [was] in 10th grade B\net j'apprends qu'elle était [en] seconde B => and I find out she was [in] 10th grade B\net j'apprends qu'elle était en [seconde] B => and I find out she was [10th grade] B\net j'apprends qu'elle était en seconde [B] => and I find out she was in 10th grade [B]\n\n[au] lycée Clémenceau à Reims. Génial. => [at] Clémenceau High in Reims. Great.\nau [lycée] Clémenceau à Reims. Génial. => at Clémenceau [High] in Reims. Great.\nau lycée [Clémenceau] à Reims. Génial. => at [Clémenceau] High in Reims. Great.\nau lycée Clémenceau [à] Reims. Génial. => at Clémenceau High [in] Reims. Great.\nau lycée Clémenceau à [Reims]. Génial. => at Clémenceau High in [Reims]. Great.\nau lycée Clémenceau à Reims. [Génial]. => at Clémenceau High in Reims. [Great].\n\nÀ [chaque] fois que je me prépare => [Every] time I get ready\nÀ chaque [fois] que je me prépare => Every [time] I get ready\nÀ chaque fois [que] je me prépare => that # 'que' acts as a relative pronoun/conjunction here\nÀ chaque fois que [je] me prépare => Every time [I] get ready\nÀ chaque fois que je [me prépare] => Every time I [get ready] # 'se préparer' translates to 'get ready'\n\n[pour] un rendez-vous, => [for] a date,\npour [un] rendez-vous, => for [a] date,\npour un [rendez-vous], => for a [date], # \"rendez-vous\" is a compound noun meaning an appointment or a date\n\n[je] prends une douche, deux fois, => [I] shower, twice,\nje [prends une douche], deux fois, => I [shower], twice, # the phrase \"prends une douche\" translates to the single verb \"shower\"\nje prends une douche, [deux fois], => I shower, [twice], # \"deux fois\" literally means \"two times\", which is \"twice\"\n\n[pour] être bien propre. => [to] be really clean.\npour [être] bien propre. => to [be] really clean.\npour être [bien] propre. => to be [really] clean.\npour être bien [propre]. => to be really [clean].\n\n[Après], pendant une heure, => [Then], for an hour,\nAprès, [pendant] une heure, => Then, [for] an hour,\nAprès, pendant [une] heure, => Then, for [an] hour,\nAprès, pendant une [heure], => Then, for an [hour]\n\n[je] m'occupe de ma barbe, => [I] work on my beard,\nje [m'occupe] de ma barbe, => I [work] on my beard,\nje m'occupe [de] ma barbe, => I work [on] my beard,\nje m'occupe de [ma] barbe, => I work on [my] beard,\nje m'occupe de ma [barbe], => I work on my [beard] # French \"barbe\" and English \"beard\" are direct cognates here\n\n[pour] avoir l'air d'un mec => [to] look like a guy\npour [avoir l'air] d'un mec => to [look] like a guy\npour avoir l'air [d'] un mec => to look [like] a guy\npour avoir l'air d' [un] mec => to look like [a] guy\npour avoir l'air d'un [mec] => to look like a [guy]\n\n[qui] s'occupe pas de sa barbe. => [who] doesn't work on his beard.\nqui [s'occupe] pas de sa barbe. => who doesn't [work] on his beard.\nqui s'occupe [pas] de sa barbe. => who [doesn't] work on his beard.\nqui s'occupe pas [de] sa barbe. => who doesn't work [on] his beard.\nqui s'occupe pas de [sa] barbe. => who doesn't work on [his] beard.\nqui s'occupe pas de sa [barbe]. => who doesn't work on his [beard].\n\n[Je] teste une tenue 1, une tenue 2, => [I] try outfit 1, outfit 2,\nJe [teste] une tenue 1, une tenue 2, => I [try] outfit 1, outfit 2,\nJe teste [une] tenue 1, une tenue 2, => a\nJe teste une [tenue] 1, une tenue 2, => I try [outfit] 1, outfit 2,\nJe teste une tenue [1], une tenue 2, => I try outfit [1], outfit 2,\nJe teste une tenue 1, [une] tenue 2, => a\nJe teste une tenue 1, une [tenue] 2, => I try outfit 1, [outfit] 2,\nJe teste une tenue 1, une tenue [2], => I try outfit 1, outfit [2],\n\nune [tenue] 3, une tenue 4, => [outfit] 3, outfit 4,\nune tenue [3], une tenue 4, => outfit [3], outfit 4,\nune tenue 3, [une] tenue 4, => a, an\nune tenue 3, une [tenue] 4, => outfit 3, [outfit] 4,\nune tenue 3, une tenue [4], => outfit 3, outfit [4],\n\n[je] reviens à la tenue 1, => [I] go back to outfit 1,\nje [reviens] à la tenue 1, => I [go back] to outfit 1,\nje reviens [à] la tenue 1, => I go back [to] outfit 1,\nje reviens à la [tenue] 1, => I go back to [outfit] 1,\nje reviens à la tenue [1], => I go back to outfit [1],\n\n[je] vérifie si j'ai pas de crotte de nez, => [I] check if I have no boogers,\nje [vérifie] si j'ai pas de crotte de nez, => I [check] if I have no boogers,\nje vérifie [si] j'ai pas de crotte de nez, => I check [if] I have no boogers,\nje vérifie si [j'ai] pas de crotte de nez, => I check if [I have] no boogers,\nje vérifie si j'ai [pas de] crotte de nez, => I check if I have [no] boogers,\nje vérifie si j'ai pas de [crotte de nez], => I check if I have no [boogers], # \"crotte de nez\" is the idiomatic expression for booger/snot\n\n[je] vérifie si ma braguette est pas ouverte. => [I] check if my fly isn't open.\nje [vérifie] si ma braguette est pas ouverte. => I [check] if my fly isn't open.\nje vérifie [si] ma braguette est pas ouverte. => I check [if] my fly isn't open.\nje vérifie si [ma] braguette est pas ouverte. => I check if [my] fly isn't open.\nje vérifie si ma [braguette] est pas ouverte. => I check if my [fly] isn't open.\nje vérifie si ma braguette [est pas] ouverte. => I check if my fly [isn't] open. # mapped together as \"isn't\" is a contraction of \"is not\"\nje vérifie si ma braguette est pas [ouverte]. => I check if my fly isn't [open].\n\n[Je] me mets du parfum, j'oublie, => [I] put on cologne, I forget,\nJe [me mets] du parfum, j'oublie, => I [put on] cologne, I forget,\nJe me mets du [parfum], j'oublie, => I put on [cologne], I forget,\nJe me mets du parfum, [j']oublie, => I put on cologne, [I] forget,\nJe me mets du parfum, j'[oublie], => I put on cologne, I [forget],\n\n[j']en remets, je réoublie, => [I] put more on, I forget again,\nj'[en] remets, je réoublie, => I put [more] on, I forget again, # \"en\" often implies an additional amount, translated here as \"more\"\nj'en [remets], je réoublie, => put on, put back on # from the verb \"remettre\"\nj'en remets, [je] réoublie, => I put more on, [I] forget again,\nj'en remets, je [réoublie], => I put more on, I [forget again], # the prefix \"ré-\" signifies the repetition (\"again\")\n\n[je] sens trop le parfum, => [I] smell too much like cologne,\nje [sens] trop le parfum, => I [smell] too much like cologne,\nje sens [trop] le parfum, => I smell [too much] like cologne,\nje sens trop [le parfum], => I smell too much like [cologne]\n\n[je] reprends une douche => [I] take another shower\nje [reprends] une douche => I [take] another shower # the 're-' prefix conveys the sense of 'again/another'\nje reprends [une] douche => I take [another] shower # another acts as the determiner here\nje reprends une [douche] => I take another [shower]\n\n[et] je remets du parfum. => [and] put on cologne again.\net je [remets] du parfum. => put on ... again # \"remets\" (remettre) combines the action \"put on\" and the prefix \"re-\" (again)\net je remets du [parfum]. => and put on [cologne] again.\n\n[Je] répète mes phrases d'accroche. => [I] rehearse my pickup lines.\nJe [répète] mes phrases d'accroche. => I [rehearse] my pickup lines.\nJe répète [mes] phrases d'accroche. => I rehearse [my] pickup lines.\nJe répète mes [phrases] d'accroche. => I rehearse my pickup [lines]\nJe répète mes phrases [d'accroche] => I rehearse my [pickup] lines # phrases d'accroche is the term for pickup lines; d'accroche acts as the modifier for phrases\n\n[Salut]. Salut. Salut. => [Hey]. Hey. Hey.\nSalut. [Salut]. Salut. => Hey. [Hey]. Hey.\nSalut. Salut. [Salut]. => Hey. Hey. [Hey].\n\n[Oh], comment tu vas ? Ça va ? => [Oh], how are you? Doing good?\nOh, [comment] tu vas ? Ça va ? => Oh, [how] are you? Doing good?\nOh, comment [tu vas] ? Ça va ? => Oh, how [are you]? Doing good?\nOh, comment tu vas ? [Ça va] ? => Oh, how are you? [Doing good]?\n\n[Excuse-moi], je suis en retard, je... => [Sorry], I'm late, I...\nExcuse-moi, [je] suis en retard, je... => Sorry, [I]'m late, I...\nExcuse-moi, je [suis] en retard, je... => Sorry, I['m] late, I...\nExcuse-moi, je suis [en retard], je... => Sorry, I'm [late], I...\nExcuse-moi, je suis en retard, [je]... => Sorry, I'm late, [I]...\n\n[Je] bosse également mon regard. => [I] also practice my gaze.\nJe [bosse] également mon regard. => I also [practice] my gaze.\nJe bosse [également] mon regard. => I [also] practice my gaze.\nJe bosse également [mon] regard. => I also practice [my] gaze.\nJe bosse également mon [regard]. => I also practice my [gaze].\n\n[Je suis] un homme, => [I'm] a man, # \"Je suis\" is aligned as a span to the English contraction \"I'm\"\nJe suis [un] homme, => I'm [a] man,\nJe suis un [homme], => I'm a [man],\n\n[mais] j'ai des fêlures. => [but] I have cracks.\nmais [j']ai des fêlures. => but [I] have cracks.\nmais j'[ai] des fêlures. => but I [have] cracks.\nmais j'ai des [fêlures]. => but I have [cracks] # \"des\" is a plural marker not directly translated here\n\n[J']accorde ma guitare => [I] tune my guitar\nJ'[accorde] ma guitare => I [tune] my guitar\nJ'accorde [ma] guitare => I tune [my] guitar\nJ'accorde ma [guitare] => I tune my [guitar]\n\n[et] je la mets bien en évidence => [and] put it on display\net [je] la mets bien en évidence => I\net je [la] mets bien en évidence => and put [it] on display\net je la [mets] bien en évidence => and [put] it on display\net je la mets [bien en évidence] => and put it [on display] # \"bien\" acts as an intensifier (clearly/prominently) for the display\n\n[dans] ma chambre => [in] my room\ndans [ma] chambre => in [my] room\ndans ma [chambre] => in my [room]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi] => in case I bring her [home] # \"home\" implies the location belonging to \"me\" (chez moi)\n\n[Je] range ma chambre => [I] tidy my room\nJe [range] ma chambre => I [tidy] my room\nJe range [ma] chambre => I tidy [my] room\nJe range ma [chambre] => I tidy my [room]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home.] # while \"chez moi\" literally means \"at/to my place\", \"home\" is a direct functional match here\n\n[J']enlève le Sopalin à côté de mon lit => [I] remove the paper towels next to my bed\nJ'[enlève] le Sopalin à côté de mon lit => I [remove] the paper towels next to my bed\nJ'enlève [le] Sopalin à côté de mon lit => I remove [the] paper towels next to my bed\nJ'enlève le [Sopalin] à côté de mon lit => I remove the [paper towels] next to my bed\nJ'enlève le Sopalin [à côté de] mon lit => I remove the paper towels [next to] my bed\nJ'enlève le Sopalin à côté de [mon] lit => I remove the paper towels next to [my] bed\nJ'enlève le Sopalin à côté de mon [lit] => I remove the paper towels next to my [bed]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home]. # \"chez moi\" literally means \"at my place\" but maps to \"home\" here\n\n[Entre-temps], je me suis habitué => [Meanwhile], I've gotten used\nEntre-temps, [je] me suis habitué => Meanwhile, [I]'ve gotten used\nEntre-temps, je [me suis] habitué => Meanwhile, I['ve] gotten used # \"me suis\" acts as the auxiliary for the reflexive verb \"s'habituer\"\nEntre-temps, je me suis [habitué] => Meanwhile, I've [gotten used] # \"habitué\" (past participle) translates to the state of \"gotten used\"\n\n[à] mon parfum, => [to] my cologne,\nà [mon] parfum, => to [my] cologne,\nà mon [parfum], => to my [cologne],\n\n[alors] je me demande si j'en ai mis assez => [so] I wonder if I put on enough\nalors [je] me demande si j'en ai mis assez => so [I] wonder if I put on enough\nalors je [me demande] si j'en ai mis assez => so I [wonder] if I put on enough\nalors je me demande [si] j'en ai mis assez => so I wonder [if] I put on enough\nalors je me demande si [j']en ai mis assez => so I wonder if [I] put on enough\nalors je me demande si j'en [ai mis] assez => so I wonder if I [put on] enough\nalors je me demande si j'en ai mis [assez] => so I wonder if I put on [enough]\n\n[et] je remets du parfum. => [and] I put on more cologne.\net [je] remets du parfum. => and [I] put on more cologne.\net je [remets] du parfum. => and I [put on] more cologne.\net je remets [du] parfum. => and I put on [more] cologne.\net je remets du [parfum]. => and I put on more [cologne].\n\n[Je] regarde si j'ai encore => [I] check if I still have\nJe [regarde] si j'ai encore => I [check] if I still have\nJe regarde [si] j'ai encore => I check [if] I still have\nJe regarde si [j']ai encore => I check if [I] still have\nJe regarde si j'[ai] encore => I check if I still [have]\nJe regarde si j'ai [encore] => I check if I [still] have\n\ndes [préservatifs] depuis la dernière fois. => [condoms] from last time.\ndes préservatifs [depuis] la dernière fois. => condoms [from] last time.\ndes préservatifs depuis la [dernière] fois. => condoms from [last] time.\ndes préservatifs depuis la dernière [fois]. => condoms from last [time].\n\n[Mais] vu qu'elle est pas venue => [But] since she didn't come\nMais [vu qu']elle est pas venue => But [since] she didn't come\nMais vu qu'[elle] est pas venue => But since [she] didn't come\nMais vu qu'elle [est pas] venue => But since she [didn't] come\nMais vu qu'elle est pas [venue] => But since she didn't [come]\n\n[la dernière] fois, j'en ai encore. => [last] time, I still have them. # \"la\" is grouped with \"dernière\" to match \"last\"\nla dernière [fois], j'en ai encore. => last [time], I still have them.\nla dernière fois, [j']en ai encore. => last time, [I] still have them.\nla dernière fois, j'[en] ai encore. => last time, I still have [them]\nla dernière fois, j'en [ai] encore. => last time, I still [have] them.\nla dernière fois, j'en ai [encore]. => last time, I [still] have them.\n\n[Je] les place derrière mon coussin => [I] place them behind my pillow\nJe [les] place derrière mon coussin => I place [them] behind my pillow\nJe les [place] derrière mon coussin => I [place] them behind my pillow\nJe les place [derrière] mon coussin => I place them [behind] my pillow\nJe les place derrière [mon] coussin => I place them behind [my] pillow\nJe les place derrière mon [coussin] => I place them behind my [pillow]\n\n[pour] pouvoir faire genre : => [so] I can pretend:\npour [pouvoir] faire genre : => so I [can] pretend:\npour pouvoir [faire genre] : => so I can [pretend] # idiomatic expression meaning to act a certain way or pretend\n\n[Eh], mais que voilà ! => [Oh], look what we have here!\nEh, [mais] que voilà ! => but, well\nEh, mais [que] voilà ! => Oh, look [what] we have here!\nEh, mais que [voilà] ! => look, here is, there is # while it translates to the \"look... here\" frame, it literally means \"there is\" or \"see there\"\n\n[Je] regarde si je suis musclé, => [I] check if I'm muscular,\nJe [regarde] si je suis musclé, => I [check] if I'm muscular,\nJe regarde [si] je suis musclé, => I check [if] I'm muscular,\nJe regarde si [je suis] musclé, => I check if [I'm] muscular,\nJe regarde si je suis [musclé], => I check if I'm [muscular],\n\n[je] suis pas musclé, je fais des pompes, => [I]'m not muscular, I do push-ups,\nje [suis] pas musclé, je fais des pompes, => I['m] not muscular, I do push-ups,\nje suis [pas] musclé, je fais des pompes, => I'm [not] muscular, I do push-ups,\nje suis pas [musclé], je fais des pompes, => I'm not [muscular], I do push-ups,\nje suis pas musclé, [je] fais des pompes, => I'm not muscular, [I] do push-ups,\nje suis pas musclé, je [fais] des pompes, => I'm not muscular, I [do] push-ups,\nje suis pas musclé, je fais [des pompes], => I'm not muscular, I do [push-ups], # \"des\" is the plural article, together with \"pompes\" it matches \"push-ups\"\n\n[je suis] toujours pas musclé, => [I'm] still not muscular,\nje suis [toujours] pas musclé, => I'm [still] not muscular,\nje suis toujours [pas] musclé, => I'm still [not] muscular,\nje suis toujours pas [musclé], => I'm still not [muscular],\n\n[mais] j'ai transpiré, => [but] I've sweated,\nmais [j']ai transpiré, => but [I]'ve sweated,\nmais j'[ai] transpiré, => but I['ve] sweated, # maps the auxiliary verb\nmais j'ai [transpiré], => but I've [sweated],\n\n[alors] je reprends une douche => [so] I take another shower\nalors [je] reprends une douche => so [I] take another shower\nalors je [reprends une] douche => so I [take another] shower # \"reprends\" (take again) and \"une\" (a/an) together translate to \"take another\"\nalors je reprends une [douche] => so I take another [shower]\n\n[et] je remets du parfum. => [and] put on cologne again.\net je [remets] du parfum. => put on again\net je remets du [parfum]. => and put on [cologne] again.\n\n[Je] prépare une playlist => [I] prepare a playlist\nJe [prépare] une playlist => I [prepare] a playlist\nJe prépare [une] playlist => I prepare [a] playlist\nJe prépare une [playlist] => I prepare a [playlist]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home]. # \"chez moi\" as a unit translates to \"home\" in this context\n\n[Je] me sens prêt. => [I] feel ready.\nJe [me sens] prêt. => I [feel] ready.\nJe me sens [prêt]. => I feel [ready].\n\n[Mais] comme le rendez-vous est dans 2h, => [But] since the date is in 2 hours,\nMais [comme] le rendez-vous est dans 2h, => But [since] the date is in 2 hours,\nMais comme [le] rendez-vous est dans 2h, => But since [the] date is in 2 hours,\nMais comme le [rendez-vous] est dans 2h, => But since the [date] is in 2 hours,\nMais comme le rendez-vous [est] dans 2h, => But since the date [is] in 2 hours,\nMais comme le rendez-vous est [dans] 2h, => But since the date is [in] 2 hours,\nMais comme le rendez-vous est dans [2h], => But since the date is in [2 hours],\n\n[j']attends. => [I] wait.\nj'[attends]. => I [wait].\n\n[Je] m'endors. => [I] fall asleep.\nJe [m'endors]. => I [fall asleep]. # m'endors comes from s'endormir (to fall asleep)\n\n[Je] me réveille en retard, je cours, => [I] wake up late, I run,\nJe [me réveille] en retard, je cours, => I [wake up] late, I run,\nJe me réveille [en retard], je cours, => I wake up [late], I run,\nJe me réveille en retard, [je] cours, => I wake up late, [I] run,\nJe me réveille en retard, je [cours], => I wake up late, I [run],\n\n[je] transpire, je reprends pas de douche, => [I] sweat, I don't shower again,\nje [transpire], je reprends pas de douche, => I [sweat], I don't shower again,\nje transpire, [je] reprends pas de douche, => I sweat, [I] don't shower again,\nje transpire, je [reprends] pas de douche, => take again # \"reprendre\" means to take again\nje transpire, je reprends [pas] de douche, => I sweat, I [don't] shower again,\nje transpire, je reprends pas de [douche], => I sweat, I don't [shower] again, # maps the noun to the English verb usage\nje transpire, je [reprends] pas de douche, => I sweat, I don't shower [again], # the prefix \"re-\" corresponds to \"again\"\n\n[je] remets pas de parfum, => [I] don't put on cologne,\nje [remets] pas de parfum, => I don't [put on] cologne,\nje remets [pas] de parfum, => I [don't] put on cologne,\nje remets pas de [parfum], => I don't put on [cologne],\n\n[j']accorde pas ma guitare, => [I] don't tune my guitar,\nj'[accorde] pas ma guitare, => I don't [tune] my guitar,\nj'accorde [pas] ma guitare, => I [don't] tune my guitar,\nj'accorde pas [ma] guitare, => I don't tune [my] guitar,\nj'accorde pas ma [guitare], => I don't tune my [guitar],\n\n[je] range pas le Sopalin, => [I] don't tidy the paper towels,\nje [range] pas le Sopalin, => I don't [tidy] the paper towels,\nje range [pas] le Sopalin, => I [don't] tidy the paper towels,\nje range pas [le] Sopalin, => I don't tidy [the] paper towels,\nje range pas le [Sopalin], => I don't tidy the [paper towels] # Sopalin is a French brand of paper towels used generically\n\n[je] vérifie pas ma braguette => [I] don't check my fly\nje [vérifie] pas ma braguette => I don't [check] my fly\nje vérifie [pas] ma braguette => I [don't] check my fly\nje vérifie pas [ma] braguette => I don't check [my] fly\nje vérifie pas ma [braguette] => I don't check my [fly]\n\n[et] j'ai une crotte de nez. => [and] I have a booger.\net [j']ai une crotte de nez. => and [I] have a booger.\net j'[ai] une crotte de nez. => and I [have] a booger.\net j'ai [une] crotte de nez. => and I have [a] booger.\net j'ai une [crotte de nez]. => and I have a [booger]. # set expression for booger, literally \"nose dropping\"\n\n[Bref], je me suis préparé => [So], I got ready\nBref, [je] me suis préparé => So, [I] got ready\nBref, je [me suis préparé] => So, I [got ready]\n\n[pour] un rendez-vous. => [for] a date.\npour [un] rendez-vous. => for [a] date.\npour un [rendez-vous]. => for a [date].\n\n[Eh], mais que voilà ! => [Oh], look what we have here!\nEh, mais [que] voilà ! => Oh, look [what] we have here!\nEh, mais que [voilà] ! => look, here is # \"voilà\" literally means \"see there/here\" and covers both \"look\" and \"here\" in this context\n\n"
+    "phrases_with_token_translations": "[Bref], quand je dois prendre rendez-vous => [So], when I have to make a date\nBref, [quand] je dois prendre rendez-vous => So, [when] I have to make a date\nBref, quand [je] dois prendre rendez-vous => So, when [I] have to make a date\nBref, quand je [dois] prendre rendez-vous => So, when I [have to] make a date\nBref, quand je dois [prendre] rendez-vous => So, when I have to [make] a date\nBref, quand je dois prendre [rendez-vous] => So, when I have to make [a date]\n\n[avec] une fille, => [with] a girl,\navec [une] fille, => with [a] girl,\navec une [fille], => with a [girl],\n\n[j']attends toujours trois jours => [I] always wait three days\nj'[attends] toujours trois jours => I always [wait] three days\nj'attends [toujours] trois jours => I [always] wait three days\nj'attends toujours [trois] jours => I always wait [three] days\nj'attends toujours trois [jours] => I always wait three [days]\n\n[avant] de lui envoyer un texto => [before] texting her\navant de [lui] envoyer un texto => before texting [her]\navant de lui [envoyer un texto] => [texting] her # \"envoyer un texto\" translates to the single English verb \"texting\"\n\n[pour] montrer que je suis un gars détaché. => [to] show I'm a chill guy.\npour [montrer] que je suis un gars détaché. => to [show] I'm a chill guy.\npour montrer que [je] suis un gars détaché. => to show [I]'m a chill guy.\npour montrer que je [suis] un gars détaché. => to show I['m] a chill guy.\npour montrer que je suis [un] gars détaché. => to show I'm [a] chill guy.\npour montrer que je suis un [gars] détaché. => to show I'm a chill [guy].\npour montrer que je suis un gars [détaché]. => to show I'm a [chill] guy. # \"détaché\" here means aloof or carefree, translated as \"chill\"\n\n[Entre-temps], je tape son nom => [Meanwhile], I type her name\nEntre-temps, [je] tape son nom => Meanwhile, [I] type her name\nEntre-temps, je [tape] son nom => Meanwhile, I [type] her name\nEntre-temps, je tape [son] nom => Meanwhile, I [her] name\nEntre-temps, je tape son [nom] => Meanwhile, I type her [name]\n\n[et] son prénom dans Google => [and] surname into Google\net son [prénom] dans Google => and [surname] into Google\net son prénom [dans] Google => and surname [into] Google\net son prénom dans [Google] => and surname into [Google]\n\n[et] j'apprends qu'elle était en seconde B => [and] I find out she was in 10th grade B\net [j']apprends qu'elle était en seconde B => and [I] find out she was in 10th grade B\net j'[apprends] qu'elle était en seconde B => and I [find out] she was in 10th grade B\net j'apprends qu'[elle] était en seconde B => and I find out [she] was in 10th grade B\net j'apprends qu'elle [était] en seconde B => and I find out she [was] in 10th grade B\net j'apprends qu'elle était [en] seconde B => and I find out she was [in] 10th grade B\net j'apprends qu'elle était en [seconde] B => and I find out she was [10th grade] B\net j'apprends qu'elle était en seconde [B] => and I find out she was in 10th grade [B]\n\n[au] lycée Clémenceau à Reims. Génial. => [at] Clémenceau High in Reims. Great.\nau [lycée] Clémenceau à Reims. Génial. => at Clémenceau [High] in Reims. Great.\nau lycée [Clémenceau] à Reims. Génial. => at [Clémenceau] High in Reims. Great.\nau lycée Clémenceau [à] Reims. Génial. => at Clémenceau High [in] Reims. Great.\nau lycée Clémenceau à [Reims]. Génial. => at Clémenceau High in [Reims]. Great.\nau lycée Clémenceau à Reims. [Génial]. => at Clémenceau High in Reims. [Great].\n\nÀ [chaque] fois que je me prépare => [Every] time I get ready\nÀ chaque [fois] que je me prépare => Every [time] I get ready\nÀ chaque fois [que] je me prépare => that # 'que' acts as a relative pronoun/conjunction here\nÀ chaque fois que [je] me prépare => Every time [I] get ready\nÀ chaque fois que je [me prépare] => Every time I [get ready] # 'se préparer' translates to 'get ready'\n\n[pour] un rendez-vous, => [for] a date,\npour [un] rendez-vous, => for [a] date,\npour un [rendez-vous], => for a [date], # \"rendez-vous\" is a compound noun meaning an appointment or a date\n\n[je] prends une douche, deux fois, => [I] shower, twice,\nje [prends une douche], deux fois, => I [shower], twice, # the phrase \"prends une douche\" translates to the single verb \"shower\"\nje prends une douche, [deux fois], => I shower, [twice], # \"deux fois\" literally means \"two times\", which is \"twice\"\n\n[pour] être bien propre. => [to] be really clean.\npour [être] bien propre. => to [be] really clean.\npour être [bien] propre. => to be [really] clean.\npour être bien [propre]. => to be really [clean].\n\n[Après], pendant une heure, => [Then], for an hour,\nAprès, [pendant] une heure, => Then, [for] an hour,\nAprès, pendant [une] heure, => Then, for [an] hour,\nAprès, pendant une [heure], => Then, for an [hour]\n\n[je] m'occupe de ma barbe, => [I] work on my beard,\nje [m'occupe] de ma barbe, => I [work] on my beard,\nje m'occupe [de] ma barbe, => I work [on] my beard,\nje m'occupe de [ma] barbe, => I work on [my] beard,\nje m'occupe de ma [barbe], => I work on my [beard] # French \"barbe\" and English \"beard\" are direct cognates here\n\n[pour] avoir l'air d'un mec => [to] look like a guy\npour [avoir l'air] d'un mec => to [look] like a guy\npour avoir l'air [d'] un mec => to look [like] a guy\npour avoir l'air d' [un] mec => to look like [a] guy\npour avoir l'air d'un [mec] => to look like a [guy]\n\n[qui] s'occupe pas de sa barbe. => [who] doesn't work on his beard.\nqui [s'occupe] pas de sa barbe. => who doesn't [work] on his beard.\nqui s'occupe [pas] de sa barbe. => who [doesn't] work on his beard.\nqui s'occupe pas [de] sa barbe. => who doesn't work [on] his beard.\nqui s'occupe pas de [sa] barbe. => who doesn't work on [his] beard.\nqui s'occupe pas de sa [barbe]. => who doesn't work on his [beard].\n\n[Je] teste une tenue 1, une tenue 2, => [I] try outfit 1, outfit 2,\nJe [teste] une tenue 1, une tenue 2, => I [try] outfit 1, outfit 2,\nJe teste [une] tenue 1, une tenue 2, => a\nJe teste une [tenue] 1, une tenue 2, => I try [outfit] 1, outfit 2,\nJe teste une tenue [1], une tenue 2, => I try outfit [1], outfit 2,\nJe teste une tenue 1, [une] tenue 2, => a\nJe teste une tenue 1, une [tenue] 2, => I try outfit 1, [outfit] 2,\nJe teste une tenue 1, une tenue [2], => I try outfit 1, outfit [2],\n\nune [tenue] 3, une tenue 4, => [outfit] 3, outfit 4,\nune tenue [3], une tenue 4, => outfit [3], outfit 4,\nune tenue 3, [une] tenue 4, => a, an\nune tenue 3, une [tenue] 4, => outfit 3, [outfit] 4,\nune tenue 3, une tenue [4], => outfit 3, outfit [4],\n\n[je] reviens à la tenue 1, => [I] go back to outfit 1,\nje [reviens] à la tenue 1, => I [go back] to outfit 1,\nje reviens [à] la tenue 1, => I go back [to] outfit 1,\nje reviens à la [tenue] 1, => I go back to [outfit] 1,\nje reviens à la tenue [1], => I go back to outfit [1],\n\n[je] vérifie si j'ai pas de crotte de nez, => [I] check if I have no boogers,\nje [vérifie] si j'ai pas de crotte de nez, => I [check] if I have no boogers,\nje vérifie [si] j'ai pas de crotte de nez, => I check [if] I have no boogers,\nje vérifie si [j'ai] pas de crotte de nez, => I check if [I have] no boogers,\nje vérifie si j'ai [pas de] crotte de nez, => I check if I have [no] boogers,\nje vérifie si j'ai pas de [crotte de nez], => I check if I have no [boogers], # \"crotte de nez\" is the idiomatic expression for booger/snot\n\n[je] vérifie si ma braguette est pas ouverte. => [I] check if my fly isn't open.\nje [vérifie] si ma braguette est pas ouverte. => I [check] if my fly isn't open.\nje vérifie [si] ma braguette est pas ouverte. => I check [if] my fly isn't open.\nje vérifie si [ma] braguette est pas ouverte. => I check if [my] fly isn't open.\nje vérifie si ma [braguette] est pas ouverte. => I check if my [fly] isn't open.\nje vérifie si ma braguette [est pas] ouverte. => I check if my fly [isn't] open. # mapped together as \"isn't\" is a contraction of \"is not\"\nje vérifie si ma braguette est pas [ouverte]. => I check if my fly isn't [open].\n\n[Je] me mets du parfum, j'oublie, => [I] put on cologne, I forget,\nJe [me mets] du parfum, j'oublie, => I [put on] cologne, I forget,\nJe me mets du [parfum], j'oublie, => I put on [cologne], I forget,\nJe me mets du parfum, [j']oublie, => I put on cologne, [I] forget,\nJe me mets du parfum, j'[oublie], => I put on cologne, I [forget],\n\n[j']en remets, je réoublie, => [I] put more on, I forget again,\nj'[en] remets, je réoublie, => I put [more] on, I forget again, # \"en\" often implies an additional amount, translated here as \"more\"\nj'en [remets], je réoublie, => put on, put back on # from the verb \"remettre\"\nj'en remets, [je] réoublie, => I put more on, [I] forget again,\nj'en remets, je [réoublie], => I put more on, I [forget again], # the prefix \"ré-\" signifies the repetition (\"again\")\n\n[je] sens trop le parfum, => [I] smell too much like cologne,\nje [sens] trop le parfum, => I [smell] too much like cologne,\nje sens [trop] le parfum, => I smell [too much] like cologne,\nje sens trop [le parfum], => I smell too much like [cologne]\n\n[je] reprends une douche => [I] take another shower\nje [reprends] une douche => I [take] another shower # the 're-' prefix conveys the sense of 'again/another'\nje reprends [une] douche => I take [another] shower # another acts as the determiner here\nje reprends une [douche] => I take another [shower]\n\n[et] je remets du parfum. => [and] put on cologne again.\net je [remets] du parfum. => put on ... again # \"remets\" (remettre) combines the action \"put on\" and the prefix \"re-\" (again)\net je remets du [parfum]. => and put on [cologne] again.\n\n[Je] répète mes phrases d'accroche. => [I] rehearse my pickup lines.\nJe [répète] mes phrases d'accroche. => I [rehearse] my pickup lines.\nJe répète [mes] phrases d'accroche. => I rehearse [my] pickup lines.\nJe répète mes [phrases] d'accroche. => I rehearse my pickup [lines]\nJe répète mes phrases [d'accroche] => I rehearse my [pickup] lines # phrases d'accroche is the term for pickup lines; d'accroche acts as the modifier for phrases\n\n[Salut]. Salut. Salut. => [Hey]. Hey. Hey.\nSalut. [Salut]. Salut. => Hey. [Hey]. Hey.\nSalut. Salut. [Salut]. => Hey. Hey. [Hey].\n\n[Oh], comment tu vas ? Ça va ? => [Oh], how are you? Doing good?\nOh, [comment] tu vas ? Ça va ? => Oh, [how] are you? Doing good?\nOh, comment [tu vas] ? Ça va ? => Oh, how [are you]? Doing good?\nOh, comment tu vas ? [Ça va] ? => Oh, how are you? [Doing good]?\n\n[Excuse-moi], je suis en retard, je... => [Sorry], I'm late, I...\nExcuse-moi, [je] suis en retard, je... => Sorry, [I]'m late, I...\nExcuse-moi, je [suis] en retard, je... => Sorry, I['m] late, I...\nExcuse-moi, je suis [en retard], je... => Sorry, I'm [late], I...\nExcuse-moi, je suis en retard, [je]... => Sorry, I'm late, [I]...\n\n[Je] bosse également mon regard. => [I] also practice my gaze.\nJe [bosse] également mon regard. => I also [practice] my gaze.\nJe bosse [également] mon regard. => I [also] practice my gaze.\nJe bosse également [mon] regard. => I also practice [my] gaze.\nJe bosse également mon [regard]. => I also practice my [gaze].\n\n[Je suis] un homme, => [I'm] a man, # \"Je suis\" is aligned as a span to the English contraction \"I'm\"\nJe suis [un] homme, => I'm [a] man,\nJe suis un [homme], => I'm a [man],\n\n[mais] j'ai des fêlures. => [but] I have cracks.\nmais [j']ai des fêlures. => but [I] have cracks.\nmais j'[ai] des fêlures. => but I [have] cracks.\nmais j'ai des [fêlures]. => but I have [cracks] # \"des\" is a plural marker not directly translated here\n\n[J']accorde ma guitare => [I] tune my guitar\nJ'[accorde] ma guitare => I [tune] my guitar\nJ'accorde [ma] guitare => I tune [my] guitar\nJ'accorde ma [guitare] => I tune my [guitar]\n\n[et] je la mets bien en évidence => [and] put it on display\net [je] la mets bien en évidence => I\net je [la] mets bien en évidence => and put [it] on display\net je la [mets] bien en évidence => and [put] it on display\net je la mets [bien en évidence] => and put it [on display] # \"bien\" acts as an intensifier (clearly/prominently) for the display\n\n[dans] ma chambre => [in] my room\ndans [ma] chambre => in [my] room\ndans ma [chambre] => in my [room]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi] => in case I bring her [home] # \"home\" implies the location belonging to \"me\" (chez moi)\n\n[Je] range ma chambre => [I] tidy my room\nJe [range] ma chambre => I [tidy] my room\nJe range [ma] chambre => I tidy [my] room\nJe range ma [chambre] => I tidy my [room]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home.] # while \"chez moi\" literally means \"at/to my place\", \"home\" is a direct functional match here\n\n[J']enlève le Sopalin à côté de mon lit => [I] remove the paper towels next to my bed\nJ'[enlève] le Sopalin à côté de mon lit => I [remove] the paper towels next to my bed\nJ'enlève [le] Sopalin à côté de mon lit => I remove [the] paper towels next to my bed\nJ'enlève le [Sopalin] à côté de mon lit => I remove the [paper towels] next to my bed\nJ'enlève le Sopalin [à côté de] mon lit => I remove the paper towels [next to] my bed\nJ'enlève le Sopalin à côté de [mon] lit => I remove the paper towels next to [my] bed\nJ'enlève le Sopalin à côté de mon [lit] => I remove the paper towels next to my [bed]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home]. # \"chez moi\" literally means \"at my place\" but maps to \"home\" here\n\n[Entre-temps], je me suis habitué => [Meanwhile], I've gotten used\nEntre-temps, [je] me suis habitué => Meanwhile, [I]'ve gotten used\nEntre-temps, je [me suis] habitué => Meanwhile, I['ve] gotten used # \"me suis\" acts as the auxiliary for the reflexive verb \"s'habituer\"\nEntre-temps, je me suis [habitué] => Meanwhile, I've [gotten used] # \"habitué\" (past participle) translates to the state of \"gotten used\"\n\n[à] mon parfum, => [to] my cologne,\nà [mon] parfum, => to [my] cologne,\nà mon [parfum], => to my [cologne],\n\n[alors] je me demande si j'en ai mis assez => [so] I wonder if I put on enough\nalors [je] me demande si j'en ai mis assez => so [I] wonder if I put on enough\nalors je [me demande] si j'en ai mis assez => so I [wonder] if I put on enough\nalors je me demande [si] j'en ai mis assez => so I wonder [if] I put on enough\nalors je me demande si [j']en ai mis assez => so I wonder if [I] put on enough\nalors je me demande si j'en [ai mis] assez => so I wonder if I [put on] enough\nalors je me demande si j'en ai mis [assez] => so I wonder if I put on [enough]\n\n[et] je remets du parfum. => [and] I put on more cologne.\net [je] remets du parfum. => and [I] put on more cologne.\net je [remets] du parfum. => and I [put on] more cologne.\net je remets [du] parfum. => and I put on [more] cologne.\net je remets du [parfum]. => and I put on more [cologne].\n\n[Je] regarde si j'ai encore => [I] check if I still have\nJe [regarde] si j'ai encore => I [check] if I still have\nJe regarde [si] j'ai encore => I check [if] I still have\nJe regarde si [j']ai encore => I check if [I] still have\nJe regarde si j'[ai] encore => I check if I still [have]\nJe regarde si j'ai [encore] => I check if I [still] have\n\ndes [préservatifs] depuis la dernière fois. => [condoms] from last time.\ndes préservatifs [depuis] la dernière fois. => condoms [from] last time.\ndes préservatifs depuis la [dernière] fois. => condoms from [last] time.\ndes préservatifs depuis la dernière [fois]. => condoms from last [time].\n\n[Mais] vu qu'elle est pas venue => [But] since she didn't come\nMais [vu qu']elle est pas venue => But [since] she didn't come\nMais vu qu'[elle] est pas venue => But since [she] didn't come\nMais vu qu'elle [est pas] venue => But since she [didn't] come\nMais vu qu'elle est pas [venue] => But since she didn't [come]\n\n[la dernière] fois, j'en ai encore. => [last] time, I still have them. # \"la\" is grouped with \"dernière\" to match \"last\"\nla dernière [fois], j'en ai encore. => last [time], I still have them.\nla dernière fois, [j']en ai encore. => last time, [I] still have them.\nla dernière fois, j'[en] ai encore. => last time, I still have [them]\nla dernière fois, j'en [ai] encore. => last time, I still [have] them.\nla dernière fois, j'en ai [encore]. => last time, I [still] have them.\n\n[Je] les place derrière mon coussin => [I] place them behind my pillow\nJe [les] place derrière mon coussin => I place [them] behind my pillow\nJe les [place] derrière mon coussin => I [place] them behind my pillow\nJe les place [derrière] mon coussin => I place them [behind] my pillow\nJe les place derrière [mon] coussin => I place them behind [my] pillow\nJe les place derrière mon [coussin] => I place them behind my [pillow]\n\n[pour] pouvoir faire genre : => [so] I can pretend:\npour [pouvoir] faire genre : => so I [can] pretend:\npour pouvoir [faire genre] : => so I can [pretend] # idiomatic expression meaning to act a certain way or pretend\n\n[Eh], mais que voilà ! => [Oh], look what we have here!\nEh, [mais] que voilà ! => but, well\nEh, mais [que] voilà ! => Oh, look [what] we have here!\nEh, mais que [voilà] ! => look, here is, there is # while it translates to the \"look... here\" frame, it literally means \"there is\" or \"see there\"\n\n[Je] regarde si je suis musclé, => [I] check if I'm muscular,\nJe [regarde] si je suis musclé, => I [check] if I'm muscular,\nJe regarde [si] je suis musclé, => I check [if] I'm muscular,\nJe regarde si [je suis] musclé, => I check if [I'm] muscular,\nJe regarde si je suis [musclé], => I check if I'm [muscular],\n\n[je] suis pas musclé, je fais des pompes, => [I]'m not muscular, I do push-ups,\nje [suis] pas musclé, je fais des pompes, => I['m] not muscular, I do push-ups,\nje suis [pas] musclé, je fais des pompes, => I'm [not] muscular, I do push-ups,\nje suis pas [musclé], je fais des pompes, => I'm not [muscular], I do push-ups,\nje suis pas musclé, [je] fais des pompes, => I'm not muscular, [I] do push-ups,\nje suis pas musclé, je [fais] des pompes, => I'm not muscular, I [do] push-ups,\nje suis pas musclé, je fais [des pompes], => I'm not muscular, I do [push-ups], # \"des\" is the plural article, together with \"pompes\" it matches \"push-ups\"\n\n[je suis] toujours pas musclé, => [I'm] still not muscular,\nje suis [toujours] pas musclé, => I'm [still] not muscular,\nje suis toujours [pas] musclé, => I'm still [not] muscular,\nje suis toujours pas [musclé], => I'm still not [muscular],\n\n[mais] j'ai transpiré, => [but] I've sweated,\nmais [j']ai transpiré, => but [I]'ve sweated,\nmais j'[ai] transpiré, => but I['ve] sweated, # maps the auxiliary verb\nmais j'ai [transpiré], => but I've [sweated],\n\n[alors] je reprends une douche => [so] I take another shower\nalors [je] reprends une douche => so [I] take another shower\nalors je [reprends une] douche => so I [take another] shower # \"reprends\" (take again) and \"une\" (a/an) together translate to \"take another\"\nalors je reprends une [douche] => so I take another [shower]\n\n[et] je remets du parfum. => [and] put on cologne again.\net je [remets] du parfum. => put on again\net je remets du [parfum]. => and put on [cologne] again.\n\n[Je] prépare une playlist => [I] prepare a playlist\nJe [prépare] une playlist => I [prepare] a playlist\nJe prépare [une] playlist => I prepare [a] playlist\nJe prépare une [playlist] => I prepare a [playlist]\n\n[au cas où] je la ramène chez moi. => [in case] I bring her home.\nau cas où [je] la ramène chez moi. => in case [I] bring her home.\nau cas où je [la] ramène chez moi. => in case I bring [her] home.\nau cas où je la [ramène] chez moi. => in case I [bring] her home.\nau cas où je la ramène [chez moi]. => in case I bring her [home]. # \"chez moi\" as a unit translates to \"home\" in this context\n\n[Je] me sens prêt. => [I] feel ready.\nJe [me sens] prêt. => I [feel] ready.\nJe me sens [prêt]. => I feel [ready].\n\n[Mais] comme le rendez-vous est dans 2h, => [But] since the date is in 2 hours,\nMais [comme] le rendez-vous est dans 2h, => But [since] the date is in 2 hours,\nMais comme [le] rendez-vous est dans 2h, => But since [the] date is in 2 hours,\nMais comme le [rendez-vous] est dans 2h, => But since the [date] is in 2 hours,\nMais comme le rendez-vous [est] dans 2h, => But since the date [is] in 2 hours,\nMais comme le rendez-vous est [dans] 2h, => But since the date is [in] 2 hours,\nMais comme le rendez-vous est dans [2h], => But since the date is in [2 hours],\n\n[j']attends. => [I] wait.\nj'[attends]. => I [wait].\n\n[Je] m'endors. => [I] fall asleep.\nJe [m'endors]. => I [fall asleep]. # m'endors comes from s'endormir (to fall asleep)\n\n[Je] me réveille en retard, je cours, => [I] wake up late, I run,\nJe [me réveille] en retard, je cours, => I [wake up] late, I run,\nJe me réveille [en retard], je cours, => I wake up [late], I run,\nJe me réveille en retard, [je] cours, => I wake up late, [I] run,\nJe me réveille en retard, je [cours], => I wake up late, I [run],\n\n[je] transpire, je reprends pas de douche, => [I] sweat, I don't shower again,\nje [transpire], je reprends pas de douche, => I [sweat], I don't shower again,\nje transpire, [je] reprends pas de douche, => I sweat, [I] don't shower again,\nje transpire, je [reprends] pas de douche, => take again # \"reprendre\" means to take again\nje transpire, je reprends [pas] de douche, => I sweat, I [don't] shower again,\nje transpire, je reprends pas de [douche], => I sweat, I don't [shower] again, # maps the noun to the English verb usage\nje transpire, je [reprends] pas de douche, => I sweat, I don't shower [again], # the prefix \"re-\" corresponds to \"again\"\n\n[je] remets pas de parfum, => [I] don't put on cologne,\nje [remets] pas de parfum, => I don't [put on] cologne,\nje remets [pas] de parfum, => I [don't] put on cologne,\nje remets pas de [parfum], => I don't put on [cologne],\n\n[j']accorde pas ma guitare, => [I] don't tune my guitar,\nj'[accorde] pas ma guitare, => I don't [tune] my guitar,\nj'accorde [pas] ma guitare, => I [don't] tune my guitar,\nj'accorde pas [ma] guitare, => I don't tune [my] guitar,\nj'accorde pas ma [guitare], => I don't tune my [guitar],\n\n[je] range pas le Sopalin, => [I] don't tidy the paper towels,\nje [range] pas le Sopalin, => I don't [tidy] the paper towels,\nje range [pas] le Sopalin, => I [don't] tidy the paper towels,\nje range pas [le] Sopalin, => I don't tidy [the] paper towels,\nje range pas le [Sopalin], => I don't tidy the [paper towels] # Sopalin is a French brand of paper towels used generically\n\n[je] vérifie pas ma braguette => [I] don't check my fly\nje [vérifie] pas ma braguette => I don't [check] my fly\nje vérifie [pas] ma braguette => I [don't] check my fly\nje vérifie pas [ma] braguette => I don't check [my] fly\nje vérifie pas ma [braguette] => I don't check my [fly]\n\n[et] j'ai une crotte de nez. => [and] I have a booger.\net [j']ai une crotte de nez. => and [I] have a booger.\net j'[ai] une crotte de nez. => and I [have] a booger.\net j'ai [une] crotte de nez. => and I have [a] booger.\net j'ai une [crotte de nez]. => and I have a [booger]. # set expression for booger, literally \"nose dropping\"\n\n[Bref], je me suis préparé => [So], I got ready\nBref, [je] me suis préparé => So, [I] got ready\nBref, je [me suis préparé] => So, I [got ready]\n\n[pour] un rendez-vous. => [for] a date.\npour [un] rendez-vous. => for [a] date.\npour un [rendez-vous]. => for a [date].\n\n[Eh], mais que voilà ! => [Oh], look what we have here!\nEh, mais [que] voilà ! => Oh, look [what] we have here!\nEh, mais que [voilà] ! => look, here is # \"voilà\" literally means \"see there/here\" and covers both \"look\" and \"here\" in this context\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "So, when I have to make a date",
+            "words": []
+          },
+          {
+            "text": "with a girl,",
+            "words": []
+          },
+          {
+            "text": "I always wait three days",
+            "words": []
+          },
+          {
+            "text": "before texting her",
+            "words": []
+          },
+          {
+            "text": "to show I'm a chill guy.",
+            "words": []
+          },
+          {
+            "text": "Meanwhile, I type her name",
+            "words": []
+          },
+          {
+            "text": "and surname into Google",
+            "words": []
+          },
+          {
+            "text": "and I find out she was in 10th grade B",
+            "words": []
+          },
+          {
+            "text": "at Clémenceau High in Reims. Great.",
+            "words": []
+          },
+          {
+            "text": "Every time I get ready",
+            "words": []
+          },
+          {
+            "text": "for a date,",
+            "words": []
+          },
+          {
+            "text": "I shower, twice,",
+            "words": []
+          },
+          {
+            "text": "to be really clean.",
+            "words": []
+          },
+          {
+            "text": "Then, for an hour,",
+            "words": []
+          },
+          {
+            "text": "I work on my beard,",
+            "words": []
+          },
+          {
+            "text": "to look like a guy",
+            "words": []
+          },
+          {
+            "text": "who doesn't work on his beard.",
+            "words": []
+          },
+          {
+            "text": "I try outfit 1, outfit 2,",
+            "words": []
+          },
+          {
+            "text": "outfit 3, outfit 4,",
+            "words": []
+          },
+          {
+            "text": "I go back to outfit 1,",
+            "words": []
+          },
+          {
+            "text": "I check if I have no boogers,",
+            "words": []
+          },
+          {
+            "text": "I check if my fly isn't open.",
+            "words": []
+          },
+          {
+            "text": "I put on cologne, I forget,",
+            "words": []
+          },
+          {
+            "text": "I put more on, I forget again,",
+            "words": []
+          },
+          {
+            "text": "I smell too much like cologne,",
+            "words": []
+          },
+          {
+            "text": "I take another shower",
+            "words": []
+          },
+          {
+            "text": "and put on cologne again.",
+            "words": []
+          },
+          {
+            "text": "I rehearse my pickup lines.",
+            "words": []
+          },
+          {
+            "text": "Hey. Hey. Hey.",
+            "words": []
+          },
+          {
+            "text": "Oh, how are you? Doing good?",
+            "words": []
+          },
+          {
+            "text": "Sorry, I'm late, I...",
+            "words": []
+          },
+          {
+            "text": "I also practice my gaze.",
+            "words": []
+          },
+          {
+            "text": "I'm a man,",
+            "words": []
+          },
+          {
+            "text": "but I have cracks.",
+            "words": []
+          },
+          {
+            "text": "I tune my guitar",
+            "words": []
+          },
+          {
+            "text": "and put it on display",
+            "words": []
+          },
+          {
+            "text": "in my room",
+            "words": []
+          },
+          {
+            "text": "in case I bring her home.",
+            "words": []
+          },
+          {
+            "text": "I tidy my room",
+            "words": []
+          },
+          {
+            "text": "in case I bring her home.",
+            "words": []
+          },
+          {
+            "text": "I remove the paper towels next to my bed",
+            "words": []
+          },
+          {
+            "text": "in case I bring her home.",
+            "words": []
+          },
+          {
+            "text": "Meanwhile, I've gotten used",
+            "words": []
+          },
+          {
+            "text": "to my cologne,",
+            "words": []
+          },
+          {
+            "text": "so I wonder if I put on enough",
+            "words": []
+          },
+          {
+            "text": "and I put on more cologne.",
+            "words": []
+          },
+          {
+            "text": "I check if I still have",
+            "words": []
+          },
+          {
+            "text": "condoms from last time.",
+            "words": []
+          },
+          {
+            "text": "But since she didn't come",
+            "words": []
+          },
+          {
+            "text": "last time, I still have them.",
+            "words": []
+          },
+          {
+            "text": "I place them behind my pillow",
+            "words": []
+          },
+          {
+            "text": "so I can pretend:",
+            "words": []
+          },
+          {
+            "text": "Oh, look what we have here!",
+            "words": []
+          },
+          {
+            "text": "I check if I'm muscular,",
+            "words": []
+          },
+          {
+            "text": "I'm not muscular, I do push-ups,",
+            "words": []
+          },
+          {
+            "text": "I'm still not muscular,",
+            "words": []
+          },
+          {
+            "text": "but I've sweated,",
+            "words": []
+          },
+          {
+            "text": "so I take another shower",
+            "words": []
+          },
+          {
+            "text": "and put on cologne again.",
+            "words": []
+          },
+          {
+            "text": "I prepare a playlist",
+            "words": []
+          },
+          {
+            "text": "in case I bring her home.",
+            "words": []
+          },
+          {
+            "text": "I feel ready.",
+            "words": []
+          },
+          {
+            "text": "But since the date is in 2 hours,",
+            "words": []
+          },
+          {
+            "text": "I wait.",
+            "words": []
+          },
+          {
+            "text": "I fall asleep.",
+            "words": []
+          },
+          {
+            "text": "I wake up late, I run,",
+            "words": []
+          },
+          {
+            "text": "I sweat, I don't shower again,",
+            "words": []
+          },
+          {
+            "text": "I don't put on cologne,",
+            "words": []
+          },
+          {
+            "text": "I don't tune my guitar,",
+            "words": []
+          },
+          {
+            "text": "I don't tidy the paper towels,",
+            "words": []
+          },
+          {
+            "text": "I don't check my fly",
+            "words": []
+          },
+          {
+            "text": "and I have a booger.",
+            "words": []
+          },
+          {
+            "text": "So, I got ready",
+            "words": []
+          },
+          {
+            "text": "for a date.",
+            "words": []
+          },
+          {
+            "text": "Oh, look what we have here!",
+            "words": []
+          }
+        ],
+        "lessons": "# La Préparation du Rendez-vous (Part 1)\n00:02.80 Bref, quand je dois prendre rendez-vous\n00:04.10 avec une fille,\n00:04.80 j'attends toujours trois jours\n00:06.10 avant de lui envoyer un texto\n00:07.30 pour montrer que je suis un gars détaché.\n00:08.20 Entre-temps, je tape son nom\n00:09.30 et son prénom dans Google\n00:10.20 et j'apprends qu'elle était en seconde B\n00:11.50 au lycée Clémenceau à Reims. Génial.\n\n# La Préparation du Rendez-vous (Part 2)\n00:13.10 À chaque fois que je me prépare\n00:14.30 pour un rendez-vous,\n00:15.00 je prends une douche, deux fois,\n00:16.10 pour être bien propre.\n00:16.80 Après, pendant une heure,\n00:17.80 je m'occupe de ma barbe,\n00:18.70 pour avoir l'air d'un mec\n00:19.70 qui s'occupe pas de sa barbe.\n00:20.70 Je teste une tenue 1, une tenue 2,\n00:21.80 une tenue 3, une tenue 4,\n00:22.80 je reviens à la tenue 1,\n00:23.80 je vérifie si j'ai pas de crotte de nez,\n00:24.80 je vérifie si ma braguette est pas ouverte.\n\n# La Préparation du Rendez-vous (Part 3)\n00:26.00 Je me mets du parfum, j'oublie,\n00:27.00 j'en remets, je réoublie,\n00:27.80 je sens trop le parfum,\n00:28.80 je reprends une douche\n00:29.80 et je remets du parfum.\n00:31.50 Je répète mes phrases d'accroche.\n00:32.80 Salut. Salut. Salut.\n00:34.50 Oh, comment tu vas ? Ça va ?\n00:35.50 Excuse-moi, je suis en retard, je...\n00:37.80 Je bosse également mon regard.\n00:39.80 Je suis un homme,\n00:41.80 mais j'ai des fêlures.\n\n# La Préparation du Rendez-vous (Part 4)\n00:44.80 J'accorde ma guitare\n00:45.80 et je la mets bien en évidence\n00:47.00 dans ma chambre\n00:47.80 au cas où je la ramène chez moi.\n00:48.80 Je range ma chambre\n00:49.80 au cas où je la ramène chez moi.\n00:50.80 J'enlève le Sopalin à côté de mon lit\n00:51.80 au cas où je la ramène chez moi.\n00:52.80 Entre-temps, je me suis habitué\n00:53.80 à mon parfum,\n00:54.50 alors je me demande si j'en ai mis assez\n00:55.50 et je remets du parfum.\n\n# La Préparation du Rendez-vous (Part 5)\n00:56.50 Je regarde si j'ai encore\n00:57.50 des préservatifs depuis la dernière fois.\n00:58.80 Mais vu qu'elle est pas venue\n00:59.80 la dernière fois, j'en ai encore.\n01:00.80 Je les place derrière mon coussin\n01:01.80 pour pouvoir faire genre :\n01:04.50 Eh, mais que voilà !\n01:08.20 Je regarde si je suis musclé,\n01:09.20 je suis pas musclé, je fais des pompes,\n01:10.20 je suis toujours pas musclé,\n01:11.20 mais j'ai transpiré,\n01:12.20 alors je reprends une douche\n01:13.20 et je remets du parfum.\n\n# La Préparation du Rendez-vous (Part 6)\n01:14.20 Je prépare une playlist\n01:15.20 au cas où je la ramène chez moi.\n01:16.20 Je me sens prêt.\n01:17.20 Mais comme le rendez-vous est dans 2h,\n01:18.50 j'attends.\n01:20.50 Je m'endors.\n01:22.20 Je me réveille en retard, je cours,\n01:23.20 je transpire, je reprends pas de douche,\n01:24.20 je remets pas de parfum,\n01:25.20 j'accorde pas ma guitare,\n01:26.20 je range pas le Sopalin,\n01:27.20 je vérifie pas ma braguette\n01:28.20 et j'ai une crotte de nez.\n01:29.20 Bref, je me suis préparé\n01:30.20 pour un rendez-vous.\n01:37.50 Eh, mais que voilà !"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 15:24:05 UTC",
   "updated_at": "2026-04-02 19:19:46 UTC",

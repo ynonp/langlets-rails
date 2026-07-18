@@ -9,546 +9,826 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, ce matin-là je me suis réveillé",
-        "text_l2": "Anyway, that morning I woke up",
         "timestamp": "00:01.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "avec une envie pressante",
-        "text_l2": "with an urgent need",
         "timestamp": "00:02.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "d'aller aux toilettes.",
-        "text_l2": "to go to the toilet.",
         "timestamp": "00:03.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "Juste à temps, je me suis rendu compte",
-        "text_l2": "Just in time, I realized",
         "timestamp": "00:04.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "qu'il n'y avait plus de papier toilette,",
-        "text_l2": "there was no more toilet paper,",
         "timestamp": "00:05.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "plus de Sopalin, plus de Kleenex,",
-        "text_l2": "no more paper towels, no more tissues,",
         "timestamp": "00:06.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "et j'avais pas encore fini ce magazine.",
-        "text_l2": "and I hadn't finished that magazine yet.",
         "timestamp": "00:07.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "Je suis parti au supermarché en acheter.",
-        "text_l2": "I went to the supermarket to buy some.",
         "timestamp": "00:09.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "Et là, j'ai croisé cette fille.",
-        "text_l2": "And there, I ran into this girl.",
         "timestamp": "00:11.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "C'était une fille que j'avais draguée",
-        "text_l2": "It was a girl I had hit on",
         "timestamp": "00:12.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "à une soirée.",
-        "text_l2": "at a party.",
         "timestamp": "00:13.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "Mon cul m'a dit \"cours\",",
-        "text_l2": "My ass told me \"run\",",
         "timestamp": "00:14.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "mon cœur m'a dit \"reste\".",
-        "text_l2": "my heart told me \"stay\".",
         "timestamp": "00:15.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "Elle m'a dit : \"Hé Vincent !\"",
-        "text_l2": "She said to me: \"Hey Vincent!\"",
         "timestamp": "00:16.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "Je m'appelle pas Vincent. J'ai rien dit.",
-        "text_l2": "My name isn't Vincent. I didn't say anything.",
         "timestamp": "00:17.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "À ce moment précis,",
-        "text_l2": "At that precise moment,",
         "timestamp": "00:18.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "je me suis rendu compte que :",
-        "text_l2": "I realized that:",
         "timestamp": "00:18.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "1. J'étais pas lavé.",
-        "text_l2": "1. I wasn't washed.",
         "timestamp": "00:19.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "2. J'étais mal habillé.",
-        "text_l2": "2. I was poorly dressed.",
         "timestamp": "00:20.50"
       },
       {
         "id": "phrase_20",
         "text_l1": "3. J'avais des cacas d'yeux",
-        "text_l2": "3. I had sleep in my eyes",
         "timestamp": "00:21.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "au coin des yeux.",
-        "text_l2": "in the corners of my eyes.",
         "timestamp": "00:22.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "4. Un paquet de 12 rouleaux de PQ",
-        "text_l2": "4. A pack of 12 rolls of TP",
         "timestamp": "00:23.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "dans les mains.",
-        "text_l2": "in my hands.",
         "timestamp": "00:24.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "Je me suis dit : \"C'est pas vrai,",
-        "text_l2": "I thought to myself: \"No way,",
         "timestamp": "00:25.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "qu'est-ce qu'elle fout là ?\"",
-        "text_l2": "what the hell is she doing here?\"",
         "timestamp": "00:26.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "Je lui ai dit :",
-        "text_l2": "I said to her:",
         "timestamp": "00:27.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "\"Hé, mais qu'est-ce que tu fais là ?\"",
-        "text_l2": "\"Hey, but what are you doing here?\"",
         "timestamp": "00:27.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "On a discuté, elle m'a fait une blague,",
-        "text_l2": "We talked, she made a joke,",
         "timestamp": "00:28.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "c'était pas marrant.",
-        "text_l2": "it wasn't funny.",
         "timestamp": "00:29.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "J'ai rigolé.",
-        "text_l2": "I laughed.",
         "timestamp": "00:30.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "En rigolant,",
-        "text_l2": "While laughing,",
         "timestamp": "00:31.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "je me suis rendu compte que :",
-        "text_l2": "I realized that:",
         "timestamp": "00:31.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "5. J'avais mauvaise haleine.",
-        "text_l2": "5. I had bad breath.",
         "timestamp": "00:32.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "On a parlé de tout et de rien,",
-        "text_l2": "We talked about everything and nothing,",
         "timestamp": "00:34.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "surtout de rien.",
-        "text_l2": "mostly nothing.",
         "timestamp": "00:35.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "Mais tu sais, il faut pas le manger,",
-        "text_l2": "But you know, you shouldn't eat it,",
         "timestamp": "00:36.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "c'est bourré de trucs mauvais et tout.",
-        "text_l2": "it's full of bad stuff and all.",
         "timestamp": "00:37.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "Enfin attends, ça c'était ma...",
-        "text_l2": "Well wait, that was my...",
         "timestamp": "00:39.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "c'était ma diététicienne.",
-        "text_l2": "that was my nutritionist.",
         "timestamp": "00:40.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "À un moment donné,",
-        "text_l2": "At one point,",
         "timestamp": "00:42.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "elle s'est mordillé la lèvre.",
-        "text_l2": "she bit her lip.",
         "timestamp": "00:43.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "J'ai eu envie de :",
-        "text_l2": "I wanted to:",
         "timestamp": "00:45.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "L'inviter à boire un verre.",
-        "text_l2": "Invite her for a drink.",
         "timestamp": "00:46.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "L'inviter au resto.",
-        "text_l2": "Invite her to a restaurant.",
         "timestamp": "00:46.50"
       },
       {
         "id": "phrase_45",
         "text_l1": "L'inviter au cinéma.",
-        "text_l2": "Invite her to the movies.",
         "timestamp": "00:47.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "La raccompagner chez elle.",
-        "text_l2": "Walk her home.",
         "timestamp": "00:47.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "Coucher avec elle.",
-        "text_l2": "Sleep with her.",
         "timestamp": "00:48.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "Qu'elle me demande",
-        "text_l2": "That she ask me",
         "timestamp": "00:48.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "si c'est sérieux entre nous.",
-        "text_l2": "if it was serious between us.",
         "timestamp": "00:49.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "Manger des glaces avec elle.",
-        "text_l2": "Eat ice cream with her.",
         "timestamp": "00:49.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "S'allonger dans l'herbe.",
-        "text_l2": "Lie down in the grass.",
         "timestamp": "00:50.50"
       },
       {
         "id": "phrase_52",
         "text_l1": "Lui présenter ma famille.",
-        "text_l2": "Introduce her to my family.",
         "timestamp": "00:51.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "Partir en vacances avec elle.",
-        "text_l2": "Go on vacation with her.",
         "timestamp": "00:51.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "Emménager avec elle.",
-        "text_l2": "Move in with her.",
         "timestamp": "00:52.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "La demander en mariage.",
-        "text_l2": "Ask her to marry me.",
         "timestamp": "00:52.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "Acheter une maison avec elle.",
-        "text_l2": "Buy a house with her.",
         "timestamp": "00:53.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "Qu'elle me demande : \"Ça va ?\"",
-        "text_l2": "That she ask me: \"You okay?\"",
         "timestamp": "00:53.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "Qu'elle me réponde : \"Je suis enceinte.\"",
-        "text_l2": "That she answer me: \"I'm pregnant.\"",
         "timestamp": "00:54.50"
       },
       {
         "id": "phrase_59",
         "text_l1": "Qu'elle me dise : \"C'est des jumeaux.\"",
-        "text_l2": "That she tell me: \"It's twins.\"",
         "timestamp": "00:55.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "Je me demande comment",
-        "text_l2": "I wonder how",
         "timestamp": "00:56.50"
       },
       {
         "id": "phrase_61",
         "text_l1": "on va les appeler.",
-        "text_l2": "we're going to name them.",
         "timestamp": "00:57.50"
       },
       {
         "id": "phrase_62",
         "text_l1": "Elle m'a dit : \"T'es d'accord ?\"",
-        "text_l2": "She said to me: \"You agree?\"",
         "timestamp": "00:58.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "J'ai répondu : \"Grégoire et Julie.\"",
-        "text_l2": "I answered: \"Grégoire and Julie.\"",
         "timestamp": "00:59.00"
       },
       {
         "id": "phrase_64",
         "text_l1": "\"Quoi ?\"",
-        "text_l2": "\"What?\"",
         "timestamp": "01:00.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "Je lui ai dit que c'était",
-        "text_l2": "I told her it was",
         "timestamp": "01:01.50"
       },
       {
         "id": "phrase_66",
         "text_l1": "le nom de mes poissons.",
-        "text_l2": "the name of my fish.",
         "timestamp": "01:02.00"
       },
       {
         "id": "phrase_67",
         "text_l1": "Elle m'a demandé ce que c'était",
-        "text_l2": "She asked me what kind",
         "timestamp": "01:03.00"
       },
       {
         "id": "phrase_68",
         "text_l1": "comme poissons.",
-        "text_l2": "of fish they were.",
         "timestamp": "01:03.50"
       },
       {
         "id": "phrase_69",
         "text_l1": "J'ai dit n'importe quoi :",
-        "text_l2": "I said whatever:",
         "timestamp": "01:04.50"
       },
       {
         "id": "phrase_70",
         "text_l1": "\"Des poissons-clowns.\"",
-        "text_l2": "\"Clownfish.\"",
         "timestamp": "01:05.00"
       },
       {
         "id": "phrase_71",
         "text_l1": "Elle m'a répondu : \"Mais c'est génial !\"",
-        "text_l2": "She answered me: \"But that's awesome!\"",
         "timestamp": "01:05.50"
       },
       {
         "id": "phrase_72",
         "text_l1": "\"Comme Nemo !\"",
-        "text_l2": "\"Like Nemo!\"",
         "timestamp": "01:06.50"
       },
       {
         "id": "phrase_73",
         "text_l1": "Merde. Merde.",
-        "text_l2": "Shit. Shit.",
         "timestamp": "01:07.50"
       },
       {
         "id": "phrase_74",
         "text_l1": "Je lui ai dit :",
-        "text_l2": "I said to her:",
         "timestamp": "01:08.00"
       },
       {
         "id": "phrase_75",
         "text_l1": "\"Tu pourras passer les voir un jour.\"",
-        "text_l2": "\"You can come see them someday.\"",
         "timestamp": "01:08.50"
       },
       {
         "id": "phrase_76",
         "text_l1": "Elle a souri.",
-        "text_l2": "She smiled.",
         "timestamp": "01:10.00"
       },
       {
         "id": "phrase_77",
         "text_l1": "Elle a repris mon numéro.",
-        "text_l2": "She took my number again.",
         "timestamp": "01:10.50"
       },
       {
         "id": "phrase_78",
         "text_l1": "Mon corps a envoyé",
-        "text_l2": "My body sent",
         "timestamp": "01:11.50"
       },
       {
         "id": "phrase_79",
         "text_l1": "des signaux pressants.",
-        "text_l2": "urgent signals.",
         "timestamp": "01:12.00"
       },
       {
         "id": "phrase_81",
         "text_l1": "\"Tu t'appelles Vincent comment déjà ?\"",
-        "text_l2": "\"Your name is Vincent what again?\"",
         "timestamp": "01:13.50"
       },
       {
         "id": "phrase_82",
         "text_l1": "\"Dubois.\"",
-        "text_l2": "\"Dubois.\"",
         "timestamp": "01:14.50"
       },
       {
         "id": "phrase_83",
         "text_l1": "\"Bon... Salut !\"",
-        "text_l2": "\"Well... Bye!\"",
         "timestamp": "01:15.00"
       },
       {
         "id": "phrase_84",
         "text_l1": "Elle est partie en souriant.",
-        "text_l2": "She left smiling.",
         "timestamp": "01:18.00"
       },
       {
         "id": "phrase_85",
         "text_l1": "Je suis parti en courant.",
-        "text_l2": "I left running.",
         "timestamp": "01:19.00"
       },
       {
         "id": "phrase_86",
         "text_l1": "Voilà, maintenant je m'appelle",
-        "text_l2": "So, now my name is",
         "timestamp": "01:20.00"
       },
       {
         "id": "phrase_87",
         "text_l1": "Vincent Dubois",
-        "text_l2": "Vincent Dubois",
         "timestamp": "01:21.50"
       },
       {
         "id": "phrase_88",
         "text_l1": "et j'ai deux poissons-clowns.",
-        "text_l2": "and I have two clownfish.",
         "timestamp": "01:22.50"
       },
       {
         "id": "phrase_89",
         "text_l1": "Et il faut que je fasse une lessive.",
-        "text_l2": "And I need to do some laundry.",
         "timestamp": "01:23.50"
       },
       {
         "id": "phrase_90",
         "text_l1": "Bref, j'ai recroisé cette fille.",
-        "text_l2": "Anyway, I ran into this girl again.",
         "timestamp": "01:24.50"
       },
       {
         "id": "phrase_91",
         "text_l1": "Putain.",
-        "text_l2": "Fuck.",
         "timestamp": "01:35.00"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], ce matin-là je me suis réveillé => [Anyway], that morning I woke up\nBref, [ce] matin-là je me suis réveillé => Anyway, [that] morning I woke up\nBref, ce [matin-là] je me suis réveillé => Anyway, that [morning] I woke up # \"-là\" specifies \"that\" but is part of the noun phrase unit here\nBref, ce matin-là [je] me suis réveillé => Anyway, that morning [I] woke up\nBref, ce matin-là je [me suis réveillé] => Anyway, that morning I [woke up] # The reflexive pronoun and auxiliary are necessary to form the past tense \"woke up\"\n\n[avec] une envie pressante => [with] an urgent need\navec [une] envie pressante => with [an] urgent need\navec une [envie] pressante => with an urgent [need]\navec une envie [pressante] => with an [urgent] need\n\n[d']aller aux toilettes. => [to] go to the toilet.\nd'[aller] aux toilettes. => to [go] to the toilet.\nd'aller [aux] toilettes. => to go [to the] toilet.\nd'aller aux [toilettes]. => to go to the [toilet].\n\n[Juste] à temps, je me suis rendu compte => [Just] in time, I realized\nJuste [à] temps, je me suis rendu compte => Just [in] time, I realized\nJuste à [temps], je me suis rendu compte => Just in [time], I realized\nJuste à temps, [je] me suis rendu compte => Just in time, [I] realized\nJuste à temps, je [me suis rendu compte] => Just in time, I [realized] # 'se rendre compte' is an idiomatic reflexive verb meaning 'to realize'\n\nqu'il n'[y] avait plus de papier toilette, => [there] was no more toilet paper, # \"y\" translates to \"there\" in the existential \"il y a\"\nqu'il n'y [avait] plus de papier toilette, => there [was] no more toilet paper,\nqu'il [n']y avait [plus] de papier toilette, => there was [no more] toilet paper, # \"ne... plus\" translates to \"no more\"\nqu'il n'y avait plus de [papier] toilette, => there was no more toilet [paper],\nqu'il n'y avait plus de papier [toilette], => there was no more [toilet] paper,\n\n[plus de] Sopalin, plus de Kleenex, => [no more] paper towels, no more tissues,\nplus de [Sopalin], plus de Kleenex, => no more [paper towels], no more tissues,\nplus de Sopalin, [plus de] Kleenex, => no more paper towels, [no more] tissues,\nplus de Sopalin, plus de [Kleenex], => no more paper towels, no more [tissues],\n\n[et] j'avais pas encore fini ce magazine. => [and] I hadn't finished that magazine yet.\net [j']avais pas encore fini ce magazine. => and [I] hadn't finished that magazine yet.\net j'[avais pas] encore fini ce magazine. => and I [hadn't] finished that magazine yet.\net j'avais pas [encore] fini ce magazine. => and I hadn't finished that magazine [yet].\net j'avais pas encore [fini] ce magazine. => and I hadn't [finished] that magazine yet.\net j'avais pas encore fini [ce] magazine. => and I hadn't finished [that] magazine yet.\net j'avais pas encore fini ce [magazine]. => and I hadn't finished that [magazine] yet.\n\n[Je] suis parti au supermarché en acheter. => [I] went to the supermarket to buy some.\nJe [suis parti] au supermarché en acheter. => I [went] to the supermarket to buy some.\nJe suis parti [au] supermarché en acheter. => I went [to the] supermarket to buy some.\nJe suis parti au [supermarché] en acheter. => I went to the [supermarket] to buy some.\nJe suis parti au supermarché en [acheter]. => I went to the supermarket [to buy] some.\nJe suis parti au supermarché [en] acheter. => I went to the supermarket to buy [some]\n\n[Et] là, j'ai croisé cette fille. => [And] there, I ran into this girl.\nEt [là], j'ai croisé cette fille. => And [there], I ran into this girl.\nEt là, [j']ai croisé cette fille. => And there, [I] ran into this girl.\nEt là, j'[ai croisé] cette fille. => And there, I [ran into] this girl.\nEt là, j'ai croisé [cette] fille. => And there, I ran into [this] girl.\nEt là, j'ai croisé cette [fille]. => And there, I ran into this [girl].\n\n[C']était une fille que j'avais draguée => [It] was a girl I had hit on\nC'[était] une fille que j'avais draguée => It [was] a girl I had hit on\nC'était [une] fille que j'avais draguée => It was [a] girl I had hit on\nC'était une [fille] que j'avais draguée => It was a [girl] I had hit on\nC'était une fille [que] j'avais draguée => that, whom # the relative pronoun is omitted in the English sentence\nC'était une fille que [j']avais draguée => It was a girl [I] had hit on\nC'était une fille que j'[avais] draguée => It was a girl I [had] hit on\nC'était une fille que j'avais [draguée] => It was a girl I had [hit on]\n\n[à] une soirée. => [at] a party.\nà [une] soirée. => at [a] party.\nà une [soirée]. => at a [party].\n\n[Mon] cul m'a dit \"cours\", => [My] ass told me \"run\",\nMon [cul] m'a dit \"cours\", => My [ass] told me \"run\",\nMon cul [m']a dit \"cours\", => My ass told [me] \"run\",\nMon cul m'[a dit] \"cours\", => My ass [told] me \"run\",\nMon cul m'a dit \"[cours]\", => My ass told me \"[run]\"\n\n[mon] cœur m'a dit \"reste\". => [my] heart told me \"stay\".\nmon [cœur] m'a dit \"reste\". => my [heart] told me \"stay\".\nmon cœur [m']a dit \"reste\". => my heart told [me] \"stay\".\nmon cœur m'[a dit] \"reste\". => my heart [told] me \"stay\".\nmon cœur m'a dit \"[reste]\". => my heart told me \"[stay]\".\n\n[Elle] m'a dit : \"Hé Vincent !\" => [She] said to me: \"Hey Vincent!\"\nElle [m']a dit : \"Hé Vincent !\" => She said [to me]: \"Hey Vincent!\"\nElle m'[a dit] : \"Hé Vincent !\" => She [said] to me: \"Hey Vincent!\"\nElle m'a dit : \"[Hé] Vincent !\" => She said to me: \"[Hey] Vincent!\"\nElle m'a dit : \"Hé [Vincent] !\" => She said to me: \"Hey [Vincent]!\"\n\nJe m'appelle [pas] Vincent. J'ai rien dit. => My name [isn't] Vincent. I didn't say anything.\nJe m'appelle pas [Vincent]. J'ai rien dit. => My name isn't [Vincent]. I didn't say anything.\nJe m'appelle pas Vincent. [J']ai rien dit. => My name isn't Vincent. [I] didn't say anything.\nJe m'appelle pas Vincent. J'[ai] rien [dit]. => said, did say\nJe m'appelle pas Vincent. J'ai [rien] dit. => My name isn't Vincent. I didn't say [anything]. # in this context \"rien\" maps to \"anything\" due to the English negative construction\n\n[À] ce moment précis, => [At] that precise moment,\nÀ [ce] moment précis, => At [that] precise moment,\nÀ ce [moment] précis, => At that precise [moment],\nÀ ce moment [précis], => At that [precise] moment,\n\n[je] me suis rendu compte que : => [I] realized that:\nje [me suis rendu compte] que : => I [realized] that:\nje me suis rendu compte [que] : => I realized [that]:\n\n1. [J']étais pas lavé. => 1. [I] wasn't washed.\n1. J'[étais pas] lavé. => 1. I [wasn't] washed. # étais pas (verb + negation) aligns with wasn't (verb + negation)\n1. J'étais pas [lavé]. => 1. I wasn't [washed].\n\n2. [J']étais mal habillé. => 2. [I] was poorly dressed.\n2. J'[étais] mal habillé. => 2. I [was] poorly dressed.\n2. J'étais [mal] habillé. => 2. I was [poorly] dressed.\n2. J'étais mal [habillé]. => 2. I was poorly [dressed] # \"habiller\" (to dress) appears here in its past participle form acting as an adjective.\n\n[3.] J'avais des cacas d'yeux => [3.] I had sleep in my eyes\n[J']avais des cacas d'yeux => [I] had sleep in my eyes\nJ'[avais] des cacas d'yeux => I [had] sleep in my eyes\nJ'avais des [cacas] d'yeux => I had [sleep] in my eyes # colloquially, \"cacas d'yeux\" refers to eye discharge, which is \"sleep\" in English\nJ'avais des cacas d'[yeux] => I had sleep in my [eyes]\n\n[au] coin des yeux. => [in the] corners of my eyes.\nau [coin] des yeux. => in the [corners] of my eyes.\nau coin [des] yeux. => in the corners [of my] eyes.\nau coin des [yeux]. => in the corners of my [eyes].\n\n[4]. Un paquet de 12 rouleaux de PQ => [4]. A pack of 12 rolls of TP\n4. [Un] paquet de 12 rouleaux de PQ => 4. [A] pack of 12 rolls of TP\n4. Un [paquet] de 12 rouleaux de PQ => 4. A [pack] of 12 rolls of TP\n4. Un paquet [de] 12 rouleaux de PQ => 4. A pack [of] 12 rolls of TP\n4. Un paquet de [12] rouleaux de PQ => 4. A pack of [12] rolls of TP\n4. Un paquet de 12 [rouleaux] de PQ => 4. A pack of 12 [rolls] of TP\n4. Un paquet de 12 rouleaux [de] PQ => 4. A pack of 12 rolls [of] TP\n4. Un paquet de 12 rouleaux de [PQ] => 4. A pack of 12 rolls of [TP] # PQ is an abbreviation for \"papier cul/toilette\", TP is for \"toilet paper\"\n\n[dans] les mains. => [in] my hands.\ndans [les] mains. => in [my] hands. # definite articles are used for body parts in French where English uses possessives\ndans les [mains]. => in my [hands].\n\n[Je] me suis dit : \"C'est pas vrai, => [I] thought to myself: \"No way,\nJe [me] suis dit : \"C'est pas vrai, => I thought to [myself]: \"No way,\nJe me [suis dit] : \"C'est pas vrai, => I [thought] to myself: \"No way,\nJe me suis dit : \"[C'est pas vrai], => I thought to myself: \"[No way], # This idiomatic expression is best kept as a single unit or custom translation\n\n[qu'est-ce qu']elle fout là ? => [what] the hell is she doing here? # \"qu'est-ce que\" is the standard question introductory phrase\nqu'est-ce qu'[elle] fout là ? => what the hell is [she] doing here?\nqu'est-ce qu'elle [fout] là ? => is doing (slang) # \"foutre\" is a vulgar version of \"faire\" (to do)\nqu'est-ce qu'elle fout [là] ? => what the hell is she doing [here]?\n\n[Je] lui ai dit : => [I] said to her:\nJe [lui] ai dit : => I said [to her]:\nJe lui [ai dit] : => I [said] to her: # \"ai dit\" is the passé composé form of \"dire\" (to say) mapping to the English simple past \"said\"\n\n[Hé], mais qu'est-ce que tu fais là ? => [Hey], but what are you doing here?\nHé, [mais] qu'est-ce que tu fais là ? => Hey, [but] what are you doing here?\nHé, mais [qu'est-ce que] tu fais là ? => Hey, but [what] are you doing here?\nHé, mais qu'est-ce que [tu] fais là ? => Hey, but what are [you] doing here?\nHé, mais qu'est-ce que tu [fais] là ? => are doing, do # The French present tense \"fais\" translates to the English continuous \"are doing\"\nHé, mais qu'est-ce que tu fais [là] ? => Hey, but what are you doing [here]?\n\n[On] a discuté, elle m'a fait une blague, => [We] talked, she made a joke,\nOn [a discuté], elle m'a fait une blague, => We [talked], she made a joke,\nOn a discuté, [elle] m'a fait une blague, => We talked, [she] made a joke,\nOn a discuté, elle [m'a fait] une blague, => We talked, she [made] a joke, # m' (to me) is not explicitly translated, so it's grouped with the verb\nOn a discuté, elle m'a fait [une] blague, => We talked, she made [a] joke,\nOn a discuté, elle m'a fait une [blague], => We talked, she made a [joke],\n\n[c']était pas marrant. => [it] wasn't funny.\nc'[était] pas marrant. => it [was]n't funny.\nc'était [pas] marrant. => it was[n't] funny.\nc'était pas [marrant]. => it wasn't [funny]\n\n[J']ai rigolé. => [I] laughed.\nJ'[ai rigolé]. => I [laughed].\n\n[En] rigolant, => [While] laughing,\nEn [rigolant], => While [laughing],\n\n[je] me suis rendu compte que : => [I] realized that:\nje [me suis rendu compte] que : => [realized] that:\nje me suis rendu compte [que] : => I realized [that]:\n\n[5]. J'avais mauvaise haleine. => [5]. I had bad breath.\n5. [J']avais mauvaise haleine. => 5. [I] had bad breath.\n5. J'[avais] mauvaise haleine. => 5. I [had] bad breath.\n5. J'avais [mauvaise] haleine. => 5. I had [bad] breath.\n5. J'avais mauvaise [haleine]. => 5. I had bad [breath].\n\n[On] a parlé de tout et de rien, => [We] talked about everything and nothing,\nOn [a parlé] de tout et de rien, => We [talked] about everything and nothing,\nOn a parlé [de] tout et de rien, => We talked [about] everything and nothing,\nOn a parlé de [tout] et de rien, => We talked about [everything] and nothing,\nOn a parlé de tout [et] de rien, => We talked about everything [and] nothing,\nOn a parlé de tout et [de rien], => We talked about everything and [nothing], # we group \"de\" with \"rien\" because \"about\" isn't repeated in the English translation\n\n[surtout] de rien. => [mostly] nothing.\nsurtout [de rien]. => mostly [nothing]. # \"de\" is a grammatical particle that doesn't have a direct equivalent in the English translation \"nothing\"\n\n[Mais] tu sais, il faut pas le manger, => [But] you know, you shouldn't eat it,\nMais [tu] sais, il faut pas le manger, => But [you] know, you shouldn't eat it,\nMais tu [sais], il faut pas le manger, => But you [know], you shouldn't eat it,\nMais tu sais, [il faut pas] le manger, => But you know, [you shouldn't] eat it, # il faut pas translates to \"must not\" or \"shouldn't\", here including \"you\" for natural flow\nMais tu sais, il faut pas [le] manger, => But you know, you shouldn't eat [it],\nMais tu sais, il faut pas le [manger], => But you know, you shouldn't [eat] it,\n\n[c'est] bourré de trucs mauvais et tout. => [it's] full of bad stuff and all.\nc'est [bourré] de trucs mauvais et tout. => it's [full] of bad stuff and all.\nc'est bourré [de] trucs mauvais et tout. => it's full [of] bad stuff and all.\nc'est bourré de [trucs] mauvais et tout. => it's full of bad [stuff] and all.\nc'est bourré de trucs [mauvais] et tout. => it's full of [bad] stuff and all.\nc'est bourré de trucs mauvais [et] tout. => it's full of bad stuff [and] all.\nc'est bourré de trucs mauvais et [tout]. => it's full of bad stuff and [all].\n\n[Enfin] attends, ça c'était ma... => [Well] wait, that was my...\nEnfin [attends], ça c'était ma... => Well [wait], that was my...\nEnfin attends, [ça] c'était ma... => Well wait, [that] was my...\nEnfin attends, ça [c'était] ma... => Well wait, that [was] my... # 'c'' is part of the expression for 'was' in this context\nEnfin attends, ça c'était [ma]... => Well wait, that was [my]...\n\n[c']était ma diététicienne. => [that] was my nutritionist.\nc'[était] ma diététicienne. => that [was] my nutritionist.\nc'était [ma] diététicienne. => that was [my] nutritionist.\nc'était ma [diététicienne]. => that was my [nutritionist].\n\n[À] un moment donné, => [At] one point,\nÀ [un] moment donné, => At [one] point,\nÀ un [moment] donné, => At one [point],\nÀ un moment [donné], => given, certain # literally \"given,\" it adds specificity to the \"moment\"\n\n[elle] s'est mordillé la lèvre => [she] bit her lip\nelle [s'est mordillé] la lèvre => she [bit] her lip\nelle s'est mordillé [la] lèvre => she bit [her] lip\nelle s'est mordillé la [lèvre] => she bit her [lip]\n\n[J']ai eu envie de : => [I] wanted to:\nJ'[ai eu envie] de : => I [wanted] to:\nJ'ai eu envie [de] : => I wanted [to]:\n\n[L']inviter à boire un verre. => Invite [her] for a drink.\nL'[inviter] à boire un verre. => [Invite] her for a drink.\nL'inviter [à] boire un verre. => Invite her [for] a drink.\nL'inviter à [boire] un verre. => to drink # The verb \"boire\" isn't explicitly translated in the target sentence, which uses a noun phrase.\nL'inviter à boire [un] verre. => Invite her for [a] drink.\nL'inviter à boire un [verre]. => Invite her for a [drink]. # In this context, \"verre\" (glass) is localized as \"drink\".\n\n[L']inviter au resto. => Invite [her] to a restaurant.\nL'[inviter] au resto. => [Invite] her to a restaurant.\nL'inviter [au] resto. => Invite her [to a] restaurant.\nL'inviter au [resto]. => Invite her to a [restaurant].\n\n[L']inviter au cinéma. => Invite [her] to the movies.\nL'[inviter] au cinéma. => [Invite] her to the movies.\nL'inviter [au] cinéma. => Invite her [to the] movies.\nL'inviter au [cinéma]. => Invite her to the [movies.]\n\n[La] raccompagner chez elle. => Walk [her] home.\nLa [raccompagner] chez elle. => [Walk] her home.\nLa raccompagner [chez elle]. => Walk her [home.] # \"chez elle\" functions as the destination \"home\" in this context\n\n[Coucher] avec elle. => [Sleep] with her.\nCoucher [avec] elle. => Sleep [with] her.\nCoucher avec [elle]. => Sleep with [her.] # the dot is ignored as per instructions, but let's stick to the text.\n# Refined:\nCoucher avec [elle]. => Sleep with [her] \n# (Self-correction: Punctuation like '.' should not be inside brackets)\n[Coucher] avec elle. => [Sleep] with her.\nCoucher [avec] elle. => Sleep [with] her.\nCoucher avec [elle]. => Sleep with [her]\n\n[Qu']elle me demande => [That] she ask me\nQu'[elle] me demande => That [she] ask me\nQu'elle [me] demande => That she ask [me]\nQu'elle me [demande] => That she [ask] me\n\n[si] c'est sérieux entre nous. => [if] it was serious between us.\nsi [c']est sérieux entre nous. => if [it] was serious between us.\nsi c'[est] sérieux entre nous. => if it [was] serious between us.\nsi c'est [sérieux] entre nous. => if it was [serious] between us.\nsi c'est sérieux [entre] nous. => if it was serious [between] us.\nsi c'est sérieux entre [nous]. => if it was serious between [us].\n\n[Manger] des glaces avec elle. => [Eat] ice cream with her.\nManger [des glaces] avec elle. => Eat [ice cream] with her.\nManger des glaces [avec] elle. => Eat ice cream [with] her.\nManger des glaces avec [elle]. => Eat ice cream with [her].\n\n[S'allonger] dans l'herbe. => [Lie down] in the grass.\nS'allonger [dans] l'herbe. => Lie down [in] the grass.\nS'allonger dans [l']herbe. => Lie down in [the] grass.\nS'allonger dans l'[herbe]. => Lie down in the [grass].\n\n[Lui] présenter ma famille. => Introduce [her] to my family. # Lexical mapping of pronouns, although the semantic roles (who is being introduced to whom) are reversed in this specific translation\nLui [présenter] ma famille. => [Introduce] her to my family.\nLui présenter [ma] famille. => Introduce her to [my] family.\nLui présenter ma [famille]. => Introduce her to my [family].\n\n[Partir] en vacances avec elle. => [Go] on vacation with her.\nPartir [en] vacances avec elle. => Go [on] vacation with her.\nPartir en [vacances] avec elle. => Go on [vacation] with her.\nPartir en vacances [avec] elle. => Go on vacation [with] her.\nPartir en vacances avec [elle]. => Go on vacation with [her].\n\n[Emménager] avec elle. => [Move in] with her.\nEmménager [avec] elle. => Move in [with] her.\nEmménager avec [elle]. => Move in with [her].\n\n[La] demander en mariage. => Ask [her] to marry me.\nLa [demander] en mariage. => [Ask] her to marry me.\nLa demander [en mariage]. => Ask her [to marry me] # \"en mariage\" literally means \"in marriage\" but is the standard way to say \"to marry\" in this context; \"me\" is implied in French.\n\n[Acheter] une maison avec elle. => [Buy] a house with her.\nAcheter [une] maison avec elle. => Buy [a] house with her.\nAcheter une [maison] avec elle. => Buy a [house] with her.\nAcheter une maison [avec] elle. => Buy a house [with] her.\nAcheter une maison avec [elle]. => Buy a house with [her].\n\n[Qu']elle me demande : \"Ça va ?\" => [That] she ask me: \"You okay?\"\nQu'[elle] me demande : \"Ça va ?\" => That [she] ask me: \"You okay?\"\nQu'elle [me] demande : \"Ça va ?\" => That she ask [me]: \"You okay?\"\nQu'elle me [demande] : \"Ça va ?\" => That she [ask] me: \"You okay?\"\nQu'elle me demande : \"[Ça va]\" ? => That she ask me: \"[You okay]\" ? # \"Ça va\" is a fixed expression translated here as \"You okay\"\n\n[Qu']elle me réponde : \"Je suis enceinte.\" => [That] she answer me: \"I'm pregnant.\"\nQu'[elle] me réponde : \"Je suis enceinte.\" => That [she] answer me: \"I'm pregnant.\"\nQu'elle [me] réponde : \"Je suis enceinte.\" => That she answer [me]: \"I'm pregnant.\"\nQu'elle me [réponde] : \"Je suis enceinte.\" => That she [answer] me: \"I'm pregnant.\"\nQu'elle me réponde : \"[Je] suis enceinte.\" => That she answer me: \"[I]'m pregnant.\"\nQu'elle me réponde : \"Je [suis] enceinte.\" => That she answer me: \"I['m] pregnant.\"\nQu'elle me réponde : \"Je suis [enceinte].\" => That she answer me: \"I'm [pregnant].\"\n\n[Qu']elle me dise : \"C'est des jumeaux.\" => [That] she tell me: \"It's twins.\"\nQu'[elle] me dise : \"C'est des jumeaux.\" => That [she] tell me: \"It's twins.\"\nQu'elle [me] dise : \"C'est des jumeaux.\" => That she tell [me]: \"It's twins.\"\nQu'elle me [dise] : \"C'est des jumeaux.\" => That she [tell] me: \"It's twins.\"\nQu'elle me dise : \"[C'est] des jumeaux.\" => That she tell me: \"[It's] twins.\"\nQu'elle me dise : \"C'est [des jumeaux].\" => That she tell me: \"It's [twins].\" # \"des\" is the plural article and lacks a direct word match in the English translation \"twins\"\n\n[Je] me demande comment => [I] wonder how\nJe [me demande] comment => I [wonder] how\nJe me demande [comment] => I wonder [how]\n\n[on] va les appeler. => [we]'re going to name them.\non [va] les appeler. => we['re going to] name them. # va (aller) functions as the \"be going to\" future marker\non va [les] appeler. => we're going to name [them].\non va les [appeler]. => we're going to [name] them.\n\n[Elle] m'a dit : \"T'es d'accord ?\" => [She] said to me: \"You agree?\"\nElle [m']a dit : \"T'es d'accord ?\" => She said [to me]: \"You agree?\"\nElle m'[a dit] : \"T'es d'accord ?\" => She [said] to me: \"You agree?\"\nElle m'a dit : \"[T']es d'accord ?\" => She said to me: \"[You] agree?\"\nElle m'a dit : \"T'[es] d'accord ?\" => are\nElle m'a dit : \"T'es [d'accord] ?\" => She said to me: \"You [agree]?\" # \"d'accord\" literally means \"of agreement\" or \"agreed\"\n\n[J']ai répondu : \"Grégoire et Julie.\" => [I] answered: \"Grégoire and Julie.\"\nJ'[ai répondu] : \"Grégoire et Julie.\" => I [answered]: \"Grégoire and Julie.\"\nJ'ai répondu : \"[Grégoire] et Julie.\" => I answered: \"[Grégoire] and Julie.\"\nJ'ai répondu : \"Grégoire [et] Julie.\" => I answered: \"Grégoire [and] Julie.\"\nJ'ai répondu : \"Grégoire et [Julie].\" => I answered: \"Grégoire and [Julie].\"\n\n[Quoi] ? => [What] ?\n\n[Je] lui ai dit que c'était => [I] told her it was\nJe [lui] ai dit que c'était => I told [her] it was\nJe lui [ai dit] que c'était => I [told] her it was\nJe lui ai dit [que] c'était => that\nJe lui ai dit que [c'était] => I told her [it was] # \"c'\" means \"it\" and \"était\" means \"was\"\n\n[le] nom de mes poissons. => [the] name of my fish.\nle [nom] de mes poissons. => the [name] of my fish.\nle nom [de] mes poissons. => the name [of] my fish.\nle nom de [mes] poissons. => the name of [my] fish.\nle nom de mes [poissons]. => the name of my [fish].\n\n[Elle] m'a demandé ce que c'était => [She] asked me what kind\nElle [m']a demandé ce que c'était => She asked [me] what kind\nElle m'[a demandé] ce que c'était => She [asked] me what kind\nElle m'a demandé [ce que] c'était => She asked me [what] kind\nElle m'a demandé ce que [c'était] => it was # \"c'était\" literally means \"it was\", while \"kind\" is a contextual translation choice in English\n\n[comme] poissons => [of] fish they were\ncomme [poissons] => of [fish] they were\n\nJ'[ai dit] n'importe quoi : => I [said] whatever:\nJ'ai dit [n'importe quoi] : => I said [whatever]:\n\n[Des] poissons-clowns. => some\nDes [poissons-clowns]. => [Clownfish].\n\n[Elle] m'a répondu : \"Mais c'est génial !\" => [She] answered me: \"But that's awesome!\"\nElle [m']a répondu : \"Mais c'est génial !\" => She answered [me]: \"But that's awesome!\"\nElle m'[a répondu] : \"Mais c'est génial !\" => She [answered] me: \"But that's awesome!\"\nElle m'a répondu : \"[Mais] c'est génial !\" => She answered me: \"[But] that's awesome!\"\nElle m'a répondu : \"Mais [c']est génial !\" => She answered me: \"But [that]'s awesome!\"\nElle m'a répondu : \"Mais c'[est] génial !\" => She answered me: \"But that['s] awesome!\"\nElle m'a répondu : \"Mais c'est [génial] !\" => She answered me: \"But that's [awesome]!\"\n\n[Comme] Nemo ! => [Like] Nemo!\nComme [Nemo] ! => Like [Nemo]!\n\n[Merde]. Merde. => [Shit]. Shit.\nMerde. [Merde]. => Shit. [Shit].\n\n[Je] lui ai dit : => [I] said to her:\nJe [lui] ai dit : => I said [to her]:\nJe lui [ai dit] : => I [said] to her:\n\n[Tu] pourras passer les voir un jour. => [You] can come see them someday.\nTu [pourras] passer les voir un jour. => You [can] come see them someday.\nTu pourras [passer] les voir un jour. => You can [come] see them someday.\nTu pourras passer [les] voir un jour. => You can come see [them] someday.\nTu pourras passer les [voir] un jour. => You can come [see] them someday.\nTu pourras passer les voir [un jour] => You can come see them [someday]\n\n[Elle] a souri. => [She] smiled.\nElle [a souri]. => She [smiled].\n\n[Elle] a repris mon numéro. => [She] took my number again.\nElle [a repris] mon numéro. => She [took] my number [again] # the passé composé \"a repris\" covers the action and the repetition\nElle a repris [mon] numéro. => She took [my] number again.\nElle a repris mon [numéro]. => She took my [number] again.\n\n[Mon] corps a envoyé => [My] body sent\nMon [corps] a envoyé => My [body] sent\nMon corps [a envoyé] => My [sent] # \"a envoyé\" is the passé composé form of the verb, which maps to the simple past \"sent\"\n\ndes [signaux] pressants. => urgent [signals].\ndes signaux [pressants]. => [urgent] signals.\n\n[Tu t'appelles] Vincent comment déjà ? => [Your name is] Vincent what again?\nTu t'appelles [Vincent] comment déjà ? => Your name is [Vincent] what again?\nTu t'appelles Vincent [comment] déjà ? => Your name is Vincent [what] again?\nTu t'appelles Vincent comment [déjà] ? => Your name is Vincent what [again]?\n\n[Dubois]. => [Dubois].\n\n[Bon]... Salut ! => [Well]... Bye!\nBon... [Salut] ! => Well... [Bye]!\n\n[Elle] est partie en souriant. => [She] left smiling.\nElle [est partie] en souriant. => She [left] smiling.\nElle est partie [en souriant] => She left [smiling] # \"en souriant\" translates to \"smiling\", with \"en\" indicating the manner/simultaneity.\n\n[Je] suis parti en courant. => [I] left running.\nJe [suis parti] en courant. => I [left] running.\nJe suis parti [en courant]. => I left [running]. # \"en\" + \"-ant\" forms the gerund, which translates to the English \"-ing\" form here\n\n[Voilà], maintenant je m'appelle => [So], now my name is\nVoilà, [maintenant] je m'appelle => So, [now] my name is\nVoilà, maintenant [je m'appelle] => So, now [my name is] # \"je m'appelle\" is treated as a span since the literal \"I call myself\" differs from the localized \"my name is\"\n\n[Vincent Dubois] => [Vincent Dubois] # names are generally kept as a single unit as per the Janis Joplin example\n\n[et] j'ai deux poissons-clowns. => [and] I have two clownfish.\net [j']ai deux poissons-clowns. => and [I] have two clownfish.\net j'[ai] deux poissons-clowns. => and I [have] two clownfish.\net j'ai [deux] poissons-clowns. => and I have [two] clownfish.\net j'ai deux [poissons-clowns]. => and I have two [clownfish].\n\n[Et] il faut que je fasse une lessive. => [And] I need to do some laundry.\nEt [il faut] que je fasse une lessive. => And I [need] to do some laundry. # \"il faut\" is an impersonal expression that maps to \"need\" in this context\nEt il faut que [je] fasse une lessive. => And [I] need to do some laundry.\nEt il faut que je [fasse] une lessive. => And I need [to do] some laundry.\nEt il faut que je fasse [une lessive]. => And I need to do [some laundry]\nEt [il faut que] je fasse une lessive. => it is necessary that # fixed grammatical construction explanation\n\n[Bref], j'ai recroisé cette fille. => [Anyway], I ran into this girl again.\nBref, [j']ai recroisé cette fille. => Anyway, [I] ran into this girl again.\nBref, j'[ai recroisé] cette fille. => ran into again # 'ai recroisé' is the past tense of 'recroiser', meaning to meet or run into again\nBref, j'ai recroisé [cette] fille. => Anyway, I ran into [this] girl again.\nBref, j'ai recroisé cette [fille]. => Anyway, I ran into this [girl] again.\n\n[Putain]. => [Fuck].\n\n"
+    "phrases_with_token_translations": "[Bref], ce matin-là je me suis réveillé => [Anyway], that morning I woke up\nBref, [ce] matin-là je me suis réveillé => Anyway, [that] morning I woke up\nBref, ce [matin-là] je me suis réveillé => Anyway, that [morning] I woke up # \"-là\" specifies \"that\" but is part of the noun phrase unit here\nBref, ce matin-là [je] me suis réveillé => Anyway, that morning [I] woke up\nBref, ce matin-là je [me suis réveillé] => Anyway, that morning I [woke up] # The reflexive pronoun and auxiliary are necessary to form the past tense \"woke up\"\n\n[avec] une envie pressante => [with] an urgent need\navec [une] envie pressante => with [an] urgent need\navec une [envie] pressante => with an urgent [need]\navec une envie [pressante] => with an [urgent] need\n\n[d']aller aux toilettes. => [to] go to the toilet.\nd'[aller] aux toilettes. => to [go] to the toilet.\nd'aller [aux] toilettes. => to go [to the] toilet.\nd'aller aux [toilettes]. => to go to the [toilet].\n\n[Juste] à temps, je me suis rendu compte => [Just] in time, I realized\nJuste [à] temps, je me suis rendu compte => Just [in] time, I realized\nJuste à [temps], je me suis rendu compte => Just in [time], I realized\nJuste à temps, [je] me suis rendu compte => Just in time, [I] realized\nJuste à temps, je [me suis rendu compte] => Just in time, I [realized] # 'se rendre compte' is an idiomatic reflexive verb meaning 'to realize'\n\nqu'il n'[y] avait plus de papier toilette, => [there] was no more toilet paper, # \"y\" translates to \"there\" in the existential \"il y a\"\nqu'il n'y [avait] plus de papier toilette, => there [was] no more toilet paper,\nqu'il [n']y avait [plus] de papier toilette, => there was [no more] toilet paper, # \"ne... plus\" translates to \"no more\"\nqu'il n'y avait plus de [papier] toilette, => there was no more toilet [paper],\nqu'il n'y avait plus de papier [toilette], => there was no more [toilet] paper,\n\n[plus de] Sopalin, plus de Kleenex, => [no more] paper towels, no more tissues,\nplus de [Sopalin], plus de Kleenex, => no more [paper towels], no more tissues,\nplus de Sopalin, [plus de] Kleenex, => no more paper towels, [no more] tissues,\nplus de Sopalin, plus de [Kleenex], => no more paper towels, no more [tissues],\n\n[et] j'avais pas encore fini ce magazine. => [and] I hadn't finished that magazine yet.\net [j']avais pas encore fini ce magazine. => and [I] hadn't finished that magazine yet.\net j'[avais pas] encore fini ce magazine. => and I [hadn't] finished that magazine yet.\net j'avais pas [encore] fini ce magazine. => and I hadn't finished that magazine [yet].\net j'avais pas encore [fini] ce magazine. => and I hadn't [finished] that magazine yet.\net j'avais pas encore fini [ce] magazine. => and I hadn't finished [that] magazine yet.\net j'avais pas encore fini ce [magazine]. => and I hadn't finished that [magazine] yet.\n\n[Je] suis parti au supermarché en acheter. => [I] went to the supermarket to buy some.\nJe [suis parti] au supermarché en acheter. => I [went] to the supermarket to buy some.\nJe suis parti [au] supermarché en acheter. => I went [to the] supermarket to buy some.\nJe suis parti au [supermarché] en acheter. => I went to the [supermarket] to buy some.\nJe suis parti au supermarché en [acheter]. => I went to the supermarket [to buy] some.\nJe suis parti au supermarché [en] acheter. => I went to the supermarket to buy [some]\n\n[Et] là, j'ai croisé cette fille. => [And] there, I ran into this girl.\nEt [là], j'ai croisé cette fille. => And [there], I ran into this girl.\nEt là, [j']ai croisé cette fille. => And there, [I] ran into this girl.\nEt là, j'[ai croisé] cette fille. => And there, I [ran into] this girl.\nEt là, j'ai croisé [cette] fille. => And there, I ran into [this] girl.\nEt là, j'ai croisé cette [fille]. => And there, I ran into this [girl].\n\n[C']était une fille que j'avais draguée => [It] was a girl I had hit on\nC'[était] une fille que j'avais draguée => It [was] a girl I had hit on\nC'était [une] fille que j'avais draguée => It was [a] girl I had hit on\nC'était une [fille] que j'avais draguée => It was a [girl] I had hit on\nC'était une fille [que] j'avais draguée => that, whom # the relative pronoun is omitted in the English sentence\nC'était une fille que [j']avais draguée => It was a girl [I] had hit on\nC'était une fille que j'[avais] draguée => It was a girl I [had] hit on\nC'était une fille que j'avais [draguée] => It was a girl I had [hit on]\n\n[à] une soirée. => [at] a party.\nà [une] soirée. => at [a] party.\nà une [soirée]. => at a [party].\n\n[Mon] cul m'a dit \"cours\", => [My] ass told me \"run\",\nMon [cul] m'a dit \"cours\", => My [ass] told me \"run\",\nMon cul [m']a dit \"cours\", => My ass told [me] \"run\",\nMon cul m'[a dit] \"cours\", => My ass [told] me \"run\",\nMon cul m'a dit \"[cours]\", => My ass told me \"[run]\"\n\n[mon] cœur m'a dit \"reste\". => [my] heart told me \"stay\".\nmon [cœur] m'a dit \"reste\". => my [heart] told me \"stay\".\nmon cœur [m']a dit \"reste\". => my heart told [me] \"stay\".\nmon cœur m'[a dit] \"reste\". => my heart [told] me \"stay\".\nmon cœur m'a dit \"[reste]\". => my heart told me \"[stay]\".\n\n[Elle] m'a dit : \"Hé Vincent !\" => [She] said to me: \"Hey Vincent!\"\nElle [m']a dit : \"Hé Vincent !\" => She said [to me]: \"Hey Vincent!\"\nElle m'[a dit] : \"Hé Vincent !\" => She [said] to me: \"Hey Vincent!\"\nElle m'a dit : \"[Hé] Vincent !\" => She said to me: \"[Hey] Vincent!\"\nElle m'a dit : \"Hé [Vincent] !\" => She said to me: \"Hey [Vincent]!\"\n\nJe m'appelle [pas] Vincent. J'ai rien dit. => My name [isn't] Vincent. I didn't say anything.\nJe m'appelle pas [Vincent]. J'ai rien dit. => My name isn't [Vincent]. I didn't say anything.\nJe m'appelle pas Vincent. [J']ai rien dit. => My name isn't Vincent. [I] didn't say anything.\nJe m'appelle pas Vincent. J'[ai] rien [dit]. => said, did say\nJe m'appelle pas Vincent. J'ai [rien] dit. => My name isn't Vincent. I didn't say [anything]. # in this context \"rien\" maps to \"anything\" due to the English negative construction\n\n[À] ce moment précis, => [At] that precise moment,\nÀ [ce] moment précis, => At [that] precise moment,\nÀ ce [moment] précis, => At that precise [moment],\nÀ ce moment [précis], => At that [precise] moment,\n\n[je] me suis rendu compte que : => [I] realized that:\nje [me suis rendu compte] que : => I [realized] that:\nje me suis rendu compte [que] : => I realized [that]:\n\n1. [J']étais pas lavé. => 1. [I] wasn't washed.\n1. J'[étais pas] lavé. => 1. I [wasn't] washed. # étais pas (verb + negation) aligns with wasn't (verb + negation)\n1. J'étais pas [lavé]. => 1. I wasn't [washed].\n\n2. [J']étais mal habillé. => 2. [I] was poorly dressed.\n2. J'[étais] mal habillé. => 2. I [was] poorly dressed.\n2. J'étais [mal] habillé. => 2. I was [poorly] dressed.\n2. J'étais mal [habillé]. => 2. I was poorly [dressed] # \"habiller\" (to dress) appears here in its past participle form acting as an adjective.\n\n[3.] J'avais des cacas d'yeux => [3.] I had sleep in my eyes\n[J']avais des cacas d'yeux => [I] had sleep in my eyes\nJ'[avais] des cacas d'yeux => I [had] sleep in my eyes\nJ'avais des [cacas] d'yeux => I had [sleep] in my eyes # colloquially, \"cacas d'yeux\" refers to eye discharge, which is \"sleep\" in English\nJ'avais des cacas d'[yeux] => I had sleep in my [eyes]\n\n[au] coin des yeux. => [in the] corners of my eyes.\nau [coin] des yeux. => in the [corners] of my eyes.\nau coin [des] yeux. => in the corners [of my] eyes.\nau coin des [yeux]. => in the corners of my [eyes].\n\n[4]. Un paquet de 12 rouleaux de PQ => [4]. A pack of 12 rolls of TP\n4. [Un] paquet de 12 rouleaux de PQ => 4. [A] pack of 12 rolls of TP\n4. Un [paquet] de 12 rouleaux de PQ => 4. A [pack] of 12 rolls of TP\n4. Un paquet [de] 12 rouleaux de PQ => 4. A pack [of] 12 rolls of TP\n4. Un paquet de [12] rouleaux de PQ => 4. A pack of [12] rolls of TP\n4. Un paquet de 12 [rouleaux] de PQ => 4. A pack of 12 [rolls] of TP\n4. Un paquet de 12 rouleaux [de] PQ => 4. A pack of 12 rolls [of] TP\n4. Un paquet de 12 rouleaux de [PQ] => 4. A pack of 12 rolls of [TP] # PQ is an abbreviation for \"papier cul/toilette\", TP is for \"toilet paper\"\n\n[dans] les mains. => [in] my hands.\ndans [les] mains. => in [my] hands. # definite articles are used for body parts in French where English uses possessives\ndans les [mains]. => in my [hands].\n\n[Je] me suis dit : \"C'est pas vrai, => [I] thought to myself: \"No way,\nJe [me] suis dit : \"C'est pas vrai, => I thought to [myself]: \"No way,\nJe me [suis dit] : \"C'est pas vrai, => I [thought] to myself: \"No way,\nJe me suis dit : \"[C'est pas vrai], => I thought to myself: \"[No way], # This idiomatic expression is best kept as a single unit or custom translation\n\n[qu'est-ce qu']elle fout là ? => [what] the hell is she doing here? # \"qu'est-ce que\" is the standard question introductory phrase\nqu'est-ce qu'[elle] fout là ? => what the hell is [she] doing here?\nqu'est-ce qu'elle [fout] là ? => is doing (slang) # \"foutre\" is a vulgar version of \"faire\" (to do)\nqu'est-ce qu'elle fout [là] ? => what the hell is she doing [here]?\n\n[Je] lui ai dit : => [I] said to her:\nJe [lui] ai dit : => I said [to her]:\nJe lui [ai dit] : => I [said] to her: # \"ai dit\" is the passé composé form of \"dire\" (to say) mapping to the English simple past \"said\"\n\n[Hé], mais qu'est-ce que tu fais là ? => [Hey], but what are you doing here?\nHé, [mais] qu'est-ce que tu fais là ? => Hey, [but] what are you doing here?\nHé, mais [qu'est-ce que] tu fais là ? => Hey, but [what] are you doing here?\nHé, mais qu'est-ce que [tu] fais là ? => Hey, but what are [you] doing here?\nHé, mais qu'est-ce que tu [fais] là ? => are doing, do # The French present tense \"fais\" translates to the English continuous \"are doing\"\nHé, mais qu'est-ce que tu fais [là] ? => Hey, but what are you doing [here]?\n\n[On] a discuté, elle m'a fait une blague, => [We] talked, she made a joke,\nOn [a discuté], elle m'a fait une blague, => We [talked], she made a joke,\nOn a discuté, [elle] m'a fait une blague, => We talked, [she] made a joke,\nOn a discuté, elle [m'a fait] une blague, => We talked, she [made] a joke, # m' (to me) is not explicitly translated, so it's grouped with the verb\nOn a discuté, elle m'a fait [une] blague, => We talked, she made [a] joke,\nOn a discuté, elle m'a fait une [blague], => We talked, she made a [joke],\n\n[c']était pas marrant. => [it] wasn't funny.\nc'[était] pas marrant. => it [was]n't funny.\nc'était [pas] marrant. => it was[n't] funny.\nc'était pas [marrant]. => it wasn't [funny]\n\n[J']ai rigolé. => [I] laughed.\nJ'[ai rigolé]. => I [laughed].\n\n[En] rigolant, => [While] laughing,\nEn [rigolant], => While [laughing],\n\n[je] me suis rendu compte que : => [I] realized that:\nje [me suis rendu compte] que : => [realized] that:\nje me suis rendu compte [que] : => I realized [that]:\n\n[5]. J'avais mauvaise haleine. => [5]. I had bad breath.\n5. [J']avais mauvaise haleine. => 5. [I] had bad breath.\n5. J'[avais] mauvaise haleine. => 5. I [had] bad breath.\n5. J'avais [mauvaise] haleine. => 5. I had [bad] breath.\n5. J'avais mauvaise [haleine]. => 5. I had bad [breath].\n\n[On] a parlé de tout et de rien, => [We] talked about everything and nothing,\nOn [a parlé] de tout et de rien, => We [talked] about everything and nothing,\nOn a parlé [de] tout et de rien, => We talked [about] everything and nothing,\nOn a parlé de [tout] et de rien, => We talked about [everything] and nothing,\nOn a parlé de tout [et] de rien, => We talked about everything [and] nothing,\nOn a parlé de tout et [de rien], => We talked about everything and [nothing], # we group \"de\" with \"rien\" because \"about\" isn't repeated in the English translation\n\n[surtout] de rien. => [mostly] nothing.\nsurtout [de rien]. => mostly [nothing]. # \"de\" is a grammatical particle that doesn't have a direct equivalent in the English translation \"nothing\"\n\n[Mais] tu sais, il faut pas le manger, => [But] you know, you shouldn't eat it,\nMais [tu] sais, il faut pas le manger, => But [you] know, you shouldn't eat it,\nMais tu [sais], il faut pas le manger, => But you [know], you shouldn't eat it,\nMais tu sais, [il faut pas] le manger, => But you know, [you shouldn't] eat it, # il faut pas translates to \"must not\" or \"shouldn't\", here including \"you\" for natural flow\nMais tu sais, il faut pas [le] manger, => But you know, you shouldn't eat [it],\nMais tu sais, il faut pas le [manger], => But you know, you shouldn't [eat] it,\n\n[c'est] bourré de trucs mauvais et tout. => [it's] full of bad stuff and all.\nc'est [bourré] de trucs mauvais et tout. => it's [full] of bad stuff and all.\nc'est bourré [de] trucs mauvais et tout. => it's full [of] bad stuff and all.\nc'est bourré de [trucs] mauvais et tout. => it's full of bad [stuff] and all.\nc'est bourré de trucs [mauvais] et tout. => it's full of [bad] stuff and all.\nc'est bourré de trucs mauvais [et] tout. => it's full of bad stuff [and] all.\nc'est bourré de trucs mauvais et [tout]. => it's full of bad stuff and [all].\n\n[Enfin] attends, ça c'était ma... => [Well] wait, that was my...\nEnfin [attends], ça c'était ma... => Well [wait], that was my...\nEnfin attends, [ça] c'était ma... => Well wait, [that] was my...\nEnfin attends, ça [c'était] ma... => Well wait, that [was] my... # 'c'' is part of the expression for 'was' in this context\nEnfin attends, ça c'était [ma]... => Well wait, that was [my]...\n\n[c']était ma diététicienne. => [that] was my nutritionist.\nc'[était] ma diététicienne. => that [was] my nutritionist.\nc'était [ma] diététicienne. => that was [my] nutritionist.\nc'était ma [diététicienne]. => that was my [nutritionist].\n\n[À] un moment donné, => [At] one point,\nÀ [un] moment donné, => At [one] point,\nÀ un [moment] donné, => At one [point],\nÀ un moment [donné], => given, certain # literally \"given,\" it adds specificity to the \"moment\"\n\n[elle] s'est mordillé la lèvre => [she] bit her lip\nelle [s'est mordillé] la lèvre => she [bit] her lip\nelle s'est mordillé [la] lèvre => she bit [her] lip\nelle s'est mordillé la [lèvre] => she bit her [lip]\n\n[J']ai eu envie de : => [I] wanted to:\nJ'[ai eu envie] de : => I [wanted] to:\nJ'ai eu envie [de] : => I wanted [to]:\n\n[L']inviter à boire un verre. => Invite [her] for a drink.\nL'[inviter] à boire un verre. => [Invite] her for a drink.\nL'inviter [à] boire un verre. => Invite her [for] a drink.\nL'inviter à [boire] un verre. => to drink # The verb \"boire\" isn't explicitly translated in the target sentence, which uses a noun phrase.\nL'inviter à boire [un] verre. => Invite her for [a] drink.\nL'inviter à boire un [verre]. => Invite her for a [drink]. # In this context, \"verre\" (glass) is localized as \"drink\".\n\n[L']inviter au resto. => Invite [her] to a restaurant.\nL'[inviter] au resto. => [Invite] her to a restaurant.\nL'inviter [au] resto. => Invite her [to a] restaurant.\nL'inviter au [resto]. => Invite her to a [restaurant].\n\n[L']inviter au cinéma. => Invite [her] to the movies.\nL'[inviter] au cinéma. => [Invite] her to the movies.\nL'inviter [au] cinéma. => Invite her [to the] movies.\nL'inviter au [cinéma]. => Invite her to the [movies.]\n\n[La] raccompagner chez elle. => Walk [her] home.\nLa [raccompagner] chez elle. => [Walk] her home.\nLa raccompagner [chez elle]. => Walk her [home.] # \"chez elle\" functions as the destination \"home\" in this context\n\n[Coucher] avec elle. => [Sleep] with her.\nCoucher [avec] elle. => Sleep [with] her.\nCoucher avec [elle]. => Sleep with [her.] # the dot is ignored as per instructions, but let's stick to the text.\n# Refined:\nCoucher avec [elle]. => Sleep with [her] \n# (Self-correction: Punctuation like '.' should not be inside brackets)\n[Coucher] avec elle. => [Sleep] with her.\nCoucher [avec] elle. => Sleep [with] her.\nCoucher avec [elle]. => Sleep with [her]\n\n[Qu']elle me demande => [That] she ask me\nQu'[elle] me demande => That [she] ask me\nQu'elle [me] demande => That she ask [me]\nQu'elle me [demande] => That she [ask] me\n\n[si] c'est sérieux entre nous. => [if] it was serious between us.\nsi [c']est sérieux entre nous. => if [it] was serious between us.\nsi c'[est] sérieux entre nous. => if it [was] serious between us.\nsi c'est [sérieux] entre nous. => if it was [serious] between us.\nsi c'est sérieux [entre] nous. => if it was serious [between] us.\nsi c'est sérieux entre [nous]. => if it was serious between [us].\n\n[Manger] des glaces avec elle. => [Eat] ice cream with her.\nManger [des glaces] avec elle. => Eat [ice cream] with her.\nManger des glaces [avec] elle. => Eat ice cream [with] her.\nManger des glaces avec [elle]. => Eat ice cream with [her].\n\n[S'allonger] dans l'herbe. => [Lie down] in the grass.\nS'allonger [dans] l'herbe. => Lie down [in] the grass.\nS'allonger dans [l']herbe. => Lie down in [the] grass.\nS'allonger dans l'[herbe]. => Lie down in the [grass].\n\n[Lui] présenter ma famille. => Introduce [her] to my family. # Lexical mapping of pronouns, although the semantic roles (who is being introduced to whom) are reversed in this specific translation\nLui [présenter] ma famille. => [Introduce] her to my family.\nLui présenter [ma] famille. => Introduce her to [my] family.\nLui présenter ma [famille]. => Introduce her to my [family].\n\n[Partir] en vacances avec elle. => [Go] on vacation with her.\nPartir [en] vacances avec elle. => Go [on] vacation with her.\nPartir en [vacances] avec elle. => Go on [vacation] with her.\nPartir en vacances [avec] elle. => Go on vacation [with] her.\nPartir en vacances avec [elle]. => Go on vacation with [her].\n\n[Emménager] avec elle. => [Move in] with her.\nEmménager [avec] elle. => Move in [with] her.\nEmménager avec [elle]. => Move in with [her].\n\n[La] demander en mariage. => Ask [her] to marry me.\nLa [demander] en mariage. => [Ask] her to marry me.\nLa demander [en mariage]. => Ask her [to marry me] # \"en mariage\" literally means \"in marriage\" but is the standard way to say \"to marry\" in this context; \"me\" is implied in French.\n\n[Acheter] une maison avec elle. => [Buy] a house with her.\nAcheter [une] maison avec elle. => Buy [a] house with her.\nAcheter une [maison] avec elle. => Buy a [house] with her.\nAcheter une maison [avec] elle. => Buy a house [with] her.\nAcheter une maison avec [elle]. => Buy a house with [her].\n\n[Qu']elle me demande : \"Ça va ?\" => [That] she ask me: \"You okay?\"\nQu'[elle] me demande : \"Ça va ?\" => That [she] ask me: \"You okay?\"\nQu'elle [me] demande : \"Ça va ?\" => That she ask [me]: \"You okay?\"\nQu'elle me [demande] : \"Ça va ?\" => That she [ask] me: \"You okay?\"\nQu'elle me demande : \"[Ça va]\" ? => That she ask me: \"[You okay]\" ? # \"Ça va\" is a fixed expression translated here as \"You okay\"\n\n[Qu']elle me réponde : \"Je suis enceinte.\" => [That] she answer me: \"I'm pregnant.\"\nQu'[elle] me réponde : \"Je suis enceinte.\" => That [she] answer me: \"I'm pregnant.\"\nQu'elle [me] réponde : \"Je suis enceinte.\" => That she answer [me]: \"I'm pregnant.\"\nQu'elle me [réponde] : \"Je suis enceinte.\" => That she [answer] me: \"I'm pregnant.\"\nQu'elle me réponde : \"[Je] suis enceinte.\" => That she answer me: \"[I]'m pregnant.\"\nQu'elle me réponde : \"Je [suis] enceinte.\" => That she answer me: \"I['m] pregnant.\"\nQu'elle me réponde : \"Je suis [enceinte].\" => That she answer me: \"I'm [pregnant].\"\n\n[Qu']elle me dise : \"C'est des jumeaux.\" => [That] she tell me: \"It's twins.\"\nQu'[elle] me dise : \"C'est des jumeaux.\" => That [she] tell me: \"It's twins.\"\nQu'elle [me] dise : \"C'est des jumeaux.\" => That she tell [me]: \"It's twins.\"\nQu'elle me [dise] : \"C'est des jumeaux.\" => That she [tell] me: \"It's twins.\"\nQu'elle me dise : \"[C'est] des jumeaux.\" => That she tell me: \"[It's] twins.\"\nQu'elle me dise : \"C'est [des jumeaux].\" => That she tell me: \"It's [twins].\" # \"des\" is the plural article and lacks a direct word match in the English translation \"twins\"\n\n[Je] me demande comment => [I] wonder how\nJe [me demande] comment => I [wonder] how\nJe me demande [comment] => I wonder [how]\n\n[on] va les appeler. => [we]'re going to name them.\non [va] les appeler. => we['re going to] name them. # va (aller) functions as the \"be going to\" future marker\non va [les] appeler. => we're going to name [them].\non va les [appeler]. => we're going to [name] them.\n\n[Elle] m'a dit : \"T'es d'accord ?\" => [She] said to me: \"You agree?\"\nElle [m']a dit : \"T'es d'accord ?\" => She said [to me]: \"You agree?\"\nElle m'[a dit] : \"T'es d'accord ?\" => She [said] to me: \"You agree?\"\nElle m'a dit : \"[T']es d'accord ?\" => She said to me: \"[You] agree?\"\nElle m'a dit : \"T'[es] d'accord ?\" => are\nElle m'a dit : \"T'es [d'accord] ?\" => She said to me: \"You [agree]?\" # \"d'accord\" literally means \"of agreement\" or \"agreed\"\n\n[J']ai répondu : \"Grégoire et Julie.\" => [I] answered: \"Grégoire and Julie.\"\nJ'[ai répondu] : \"Grégoire et Julie.\" => I [answered]: \"Grégoire and Julie.\"\nJ'ai répondu : \"[Grégoire] et Julie.\" => I answered: \"[Grégoire] and Julie.\"\nJ'ai répondu : \"Grégoire [et] Julie.\" => I answered: \"Grégoire [and] Julie.\"\nJ'ai répondu : \"Grégoire et [Julie].\" => I answered: \"Grégoire and [Julie].\"\n\n[Quoi] ? => [What] ?\n\n[Je] lui ai dit que c'était => [I] told her it was\nJe [lui] ai dit que c'était => I told [her] it was\nJe lui [ai dit] que c'était => I [told] her it was\nJe lui ai dit [que] c'était => that\nJe lui ai dit que [c'était] => I told her [it was] # \"c'\" means \"it\" and \"était\" means \"was\"\n\n[le] nom de mes poissons. => [the] name of my fish.\nle [nom] de mes poissons. => the [name] of my fish.\nle nom [de] mes poissons. => the name [of] my fish.\nle nom de [mes] poissons. => the name of [my] fish.\nle nom de mes [poissons]. => the name of my [fish].\n\n[Elle] m'a demandé ce que c'était => [She] asked me what kind\nElle [m']a demandé ce que c'était => She asked [me] what kind\nElle m'[a demandé] ce que c'était => She [asked] me what kind\nElle m'a demandé [ce que] c'était => She asked me [what] kind\nElle m'a demandé ce que [c'était] => it was # \"c'était\" literally means \"it was\", while \"kind\" is a contextual translation choice in English\n\n[comme] poissons => [of] fish they were\ncomme [poissons] => of [fish] they were\n\nJ'[ai dit] n'importe quoi : => I [said] whatever:\nJ'ai dit [n'importe quoi] : => I said [whatever]:\n\n[Des] poissons-clowns. => some\nDes [poissons-clowns]. => [Clownfish].\n\n[Elle] m'a répondu : \"Mais c'est génial !\" => [She] answered me: \"But that's awesome!\"\nElle [m']a répondu : \"Mais c'est génial !\" => She answered [me]: \"But that's awesome!\"\nElle m'[a répondu] : \"Mais c'est génial !\" => She [answered] me: \"But that's awesome!\"\nElle m'a répondu : \"[Mais] c'est génial !\" => She answered me: \"[But] that's awesome!\"\nElle m'a répondu : \"Mais [c']est génial !\" => She answered me: \"But [that]'s awesome!\"\nElle m'a répondu : \"Mais c'[est] génial !\" => She answered me: \"But that['s] awesome!\"\nElle m'a répondu : \"Mais c'est [génial] !\" => She answered me: \"But that's [awesome]!\"\n\n[Comme] Nemo ! => [Like] Nemo!\nComme [Nemo] ! => Like [Nemo]!\n\n[Merde]. Merde. => [Shit]. Shit.\nMerde. [Merde]. => Shit. [Shit].\n\n[Je] lui ai dit : => [I] said to her:\nJe [lui] ai dit : => I said [to her]:\nJe lui [ai dit] : => I [said] to her:\n\n[Tu] pourras passer les voir un jour. => [You] can come see them someday.\nTu [pourras] passer les voir un jour. => You [can] come see them someday.\nTu pourras [passer] les voir un jour. => You can [come] see them someday.\nTu pourras passer [les] voir un jour. => You can come see [them] someday.\nTu pourras passer les [voir] un jour. => You can come [see] them someday.\nTu pourras passer les voir [un jour] => You can come see them [someday]\n\n[Elle] a souri. => [She] smiled.\nElle [a souri]. => She [smiled].\n\n[Elle] a repris mon numéro. => [She] took my number again.\nElle [a repris] mon numéro. => She [took] my number [again] # the passé composé \"a repris\" covers the action and the repetition\nElle a repris [mon] numéro. => She took [my] number again.\nElle a repris mon [numéro]. => She took my [number] again.\n\n[Mon] corps a envoyé => [My] body sent\nMon [corps] a envoyé => My [body] sent\nMon corps [a envoyé] => My [sent] # \"a envoyé\" is the passé composé form of the verb, which maps to the simple past \"sent\"\n\ndes [signaux] pressants. => urgent [signals].\ndes signaux [pressants]. => [urgent] signals.\n\n[Tu t'appelles] Vincent comment déjà ? => [Your name is] Vincent what again?\nTu t'appelles [Vincent] comment déjà ? => Your name is [Vincent] what again?\nTu t'appelles Vincent [comment] déjà ? => Your name is Vincent [what] again?\nTu t'appelles Vincent comment [déjà] ? => Your name is Vincent what [again]?\n\n[Dubois]. => [Dubois].\n\n[Bon]... Salut ! => [Well]... Bye!\nBon... [Salut] ! => Well... [Bye]!\n\n[Elle] est partie en souriant. => [She] left smiling.\nElle [est partie] en souriant. => She [left] smiling.\nElle est partie [en souriant] => She left [smiling] # \"en souriant\" translates to \"smiling\", with \"en\" indicating the manner/simultaneity.\n\n[Je] suis parti en courant. => [I] left running.\nJe [suis parti] en courant. => I [left] running.\nJe suis parti [en courant]. => I left [running]. # \"en\" + \"-ant\" forms the gerund, which translates to the English \"-ing\" form here\n\n[Voilà], maintenant je m'appelle => [So], now my name is\nVoilà, [maintenant] je m'appelle => So, [now] my name is\nVoilà, maintenant [je m'appelle] => So, now [my name is] # \"je m'appelle\" is treated as a span since the literal \"I call myself\" differs from the localized \"my name is\"\n\n[Vincent Dubois] => [Vincent Dubois] # names are generally kept as a single unit as per the Janis Joplin example\n\n[et] j'ai deux poissons-clowns. => [and] I have two clownfish.\net [j']ai deux poissons-clowns. => and [I] have two clownfish.\net j'[ai] deux poissons-clowns. => and I [have] two clownfish.\net j'ai [deux] poissons-clowns. => and I have [two] clownfish.\net j'ai deux [poissons-clowns]. => and I have two [clownfish].\n\n[Et] il faut que je fasse une lessive. => [And] I need to do some laundry.\nEt [il faut] que je fasse une lessive. => And I [need] to do some laundry. # \"il faut\" is an impersonal expression that maps to \"need\" in this context\nEt il faut que [je] fasse une lessive. => And [I] need to do some laundry.\nEt il faut que je [fasse] une lessive. => And I need [to do] some laundry.\nEt il faut que je fasse [une lessive]. => And I need to do [some laundry]\nEt [il faut que] je fasse une lessive. => it is necessary that # fixed grammatical construction explanation\n\n[Bref], j'ai recroisé cette fille. => [Anyway], I ran into this girl again.\nBref, [j']ai recroisé cette fille. => Anyway, [I] ran into this girl again.\nBref, j'[ai recroisé] cette fille. => ran into again # 'ai recroisé' is the past tense of 'recroiser', meaning to meet or run into again\nBref, j'ai recroisé [cette] fille. => Anyway, I ran into [this] girl again.\nBref, j'ai recroisé cette [fille]. => Anyway, I ran into this [girl] again.\n\n[Putain]. => [Fuck].\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway, that morning I woke up",
+            "words": []
+          },
+          {
+            "text": "with an urgent need",
+            "words": []
+          },
+          {
+            "text": "to go to the toilet.",
+            "words": []
+          },
+          {
+            "text": "Just in time, I realized",
+            "words": []
+          },
+          {
+            "text": "there was no more toilet paper,",
+            "words": []
+          },
+          {
+            "text": "no more paper towels, no more tissues,",
+            "words": []
+          },
+          {
+            "text": "and I hadn't finished that magazine yet.",
+            "words": []
+          },
+          {
+            "text": "I went to the supermarket to buy some.",
+            "words": []
+          },
+          {
+            "text": "And there, I ran into this girl.",
+            "words": []
+          },
+          {
+            "text": "It was a girl I had hit on",
+            "words": []
+          },
+          {
+            "text": "at a party.",
+            "words": []
+          },
+          {
+            "text": "My ass told me \"run\",",
+            "words": []
+          },
+          {
+            "text": "my heart told me \"stay\".",
+            "words": []
+          },
+          {
+            "text": "She said to me: \"Hey Vincent!\"",
+            "words": []
+          },
+          {
+            "text": "My name isn't Vincent. I didn't say anything.",
+            "words": []
+          },
+          {
+            "text": "At that precise moment,",
+            "words": []
+          },
+          {
+            "text": "I realized that:",
+            "words": []
+          },
+          {
+            "text": "1. I wasn't washed.",
+            "words": []
+          },
+          {
+            "text": "2. I was poorly dressed.",
+            "words": []
+          },
+          {
+            "text": "3. I had sleep in my eyes",
+            "words": []
+          },
+          {
+            "text": "in the corners of my eyes.",
+            "words": []
+          },
+          {
+            "text": "4. A pack of 12 rolls of TP",
+            "words": []
+          },
+          {
+            "text": "in my hands.",
+            "words": []
+          },
+          {
+            "text": "I thought to myself: \"No way,",
+            "words": []
+          },
+          {
+            "text": "what the hell is she doing here?\"",
+            "words": []
+          },
+          {
+            "text": "I said to her:",
+            "words": []
+          },
+          {
+            "text": "\"Hey, but what are you doing here?\"",
+            "words": []
+          },
+          {
+            "text": "We talked, she made a joke,",
+            "words": []
+          },
+          {
+            "text": "it wasn't funny.",
+            "words": []
+          },
+          {
+            "text": "I laughed.",
+            "words": []
+          },
+          {
+            "text": "While laughing,",
+            "words": []
+          },
+          {
+            "text": "I realized that:",
+            "words": []
+          },
+          {
+            "text": "5. I had bad breath.",
+            "words": []
+          },
+          {
+            "text": "We talked about everything and nothing,",
+            "words": []
+          },
+          {
+            "text": "mostly nothing.",
+            "words": []
+          },
+          {
+            "text": "But you know, you shouldn't eat it,",
+            "words": []
+          },
+          {
+            "text": "it's full of bad stuff and all.",
+            "words": []
+          },
+          {
+            "text": "Well wait, that was my...",
+            "words": []
+          },
+          {
+            "text": "that was my nutritionist.",
+            "words": []
+          },
+          {
+            "text": "At one point,",
+            "words": []
+          },
+          {
+            "text": "she bit her lip.",
+            "words": []
+          },
+          {
+            "text": "I wanted to:",
+            "words": []
+          },
+          {
+            "text": "Invite her for a drink.",
+            "words": []
+          },
+          {
+            "text": "Invite her to a restaurant.",
+            "words": []
+          },
+          {
+            "text": "Invite her to the movies.",
+            "words": []
+          },
+          {
+            "text": "Walk her home.",
+            "words": []
+          },
+          {
+            "text": "Sleep with her.",
+            "words": []
+          },
+          {
+            "text": "That she ask me",
+            "words": []
+          },
+          {
+            "text": "if it was serious between us.",
+            "words": []
+          },
+          {
+            "text": "Eat ice cream with her.",
+            "words": []
+          },
+          {
+            "text": "Lie down in the grass.",
+            "words": []
+          },
+          {
+            "text": "Introduce her to my family.",
+            "words": []
+          },
+          {
+            "text": "Go on vacation with her.",
+            "words": []
+          },
+          {
+            "text": "Move in with her.",
+            "words": []
+          },
+          {
+            "text": "Ask her to marry me.",
+            "words": []
+          },
+          {
+            "text": "Buy a house with her.",
+            "words": []
+          },
+          {
+            "text": "That she ask me: \"You okay?\"",
+            "words": []
+          },
+          {
+            "text": "That she answer me: \"I'm pregnant.\"",
+            "words": []
+          },
+          {
+            "text": "That she tell me: \"It's twins.\"",
+            "words": []
+          },
+          {
+            "text": "I wonder how",
+            "words": []
+          },
+          {
+            "text": "we're going to name them.",
+            "words": []
+          },
+          {
+            "text": "She said to me: \"You agree?\"",
+            "words": []
+          },
+          {
+            "text": "I answered: \"Grégoire and Julie.\"",
+            "words": []
+          },
+          {
+            "text": "\"What?\"",
+            "words": []
+          },
+          {
+            "text": "I told her it was",
+            "words": []
+          },
+          {
+            "text": "the name of my fish.",
+            "words": []
+          },
+          {
+            "text": "She asked me what kind",
+            "words": []
+          },
+          {
+            "text": "of fish they were.",
+            "words": []
+          },
+          {
+            "text": "I said whatever:",
+            "words": []
+          },
+          {
+            "text": "\"Clownfish.\"",
+            "words": []
+          },
+          {
+            "text": "She answered me: \"But that's awesome!\"",
+            "words": []
+          },
+          {
+            "text": "\"Like Nemo!\"",
+            "words": []
+          },
+          {
+            "text": "Shit. Shit.",
+            "words": []
+          },
+          {
+            "text": "I said to her:",
+            "words": []
+          },
+          {
+            "text": "\"You can come see them someday.\"",
+            "words": []
+          },
+          {
+            "text": "She smiled.",
+            "words": []
+          },
+          {
+            "text": "She took my number again.",
+            "words": []
+          },
+          {
+            "text": "My body sent",
+            "words": []
+          },
+          {
+            "text": "urgent signals.",
+            "words": []
+          },
+          {
+            "text": "\"Your name is Vincent what again?\"",
+            "words": []
+          },
+          {
+            "text": "\"Dubois.\"",
+            "words": []
+          },
+          {
+            "text": "\"Well... Bye!\"",
+            "words": []
+          },
+          {
+            "text": "She left smiling.",
+            "words": []
+          },
+          {
+            "text": "I left running.",
+            "words": []
+          },
+          {
+            "text": "So, now my name is",
+            "words": []
+          },
+          {
+            "text": "Vincent Dubois",
+            "words": []
+          },
+          {
+            "text": "and I have two clownfish.",
+            "words": []
+          },
+          {
+            "text": "And I need to do some laundry.",
+            "words": []
+          },
+          {
+            "text": "Anyway, I ran into this girl again.",
+            "words": []
+          },
+          {
+            "text": "Fuck.",
+            "words": []
+          }
+        ],
+        "lessons": "# Le Réveil Malheureux\n00:01.00 Bref, ce matin-là je me suis réveillé\n00:02.50 avec une envie pressante\n00:03.50 d'aller aux toilettes.\n00:04.50 Juste à temps, je me suis rendu compte\n00:05.50 qu'il n'y avait plus de papier toilette,\n00:06.50 plus de Sopalin, plus de Kleenex,\n00:07.50 et j'avais pas encore fini ce magazine.\n\n# La Course au Supermarché\n00:09.00 Je suis parti au supermarché en acheter.\n00:11.00 Et là, j'ai croisé cette fille.\n00:12.00 C'était une fille que j'avais draguée\n00:13.00 à une soirée.\n00:14.00 Mon cul m'a dit \"cours\",\n00:15.00 mon cœur m'a dit \"reste\".\n00:16.00 Elle m'a dit : \"Hé Vincent !\"\n00:17.00 Je m'appelle pas Vincent. J'ai rien dit.\n\n# La Prise de Conscience\n00:18.00 À ce moment précis,\n00:18.50 je me suis rendu compte que :\n00:19.50 1. J'étais pas lavé.\n00:20.50 2. J'étais mal habillé.\n00:21.50 3. J'avais des cacas d'yeux\n00:22.50 au coin des yeux.\n00:23.50 4. Un paquet de 12 rouleaux de PQ\n00:24.50 dans les mains.\n\n# La Conversation Maladroite (Part 1)\n00:25.50 Je me suis dit : \"C'est pas vrai,\n00:26.00 qu'est-ce qu'elle fout là ?\"\n00:27.00 Je lui ai dit :\n00:27.50 \"Hé, mais qu'est-ce que tu fais là ?\"\n00:28.50 On a discuté, elle m'a fait une blague,\n00:29.50 c'était pas marrant.\n00:30.50 J'ai rigolé.\n00:31.00 En rigolant,\n00:31.50 je me suis rendu compte que :\n00:32.50 5. J'avais mauvaise haleine.\n\n# La Conversation Maladroite (Part 2)\n00:34.00 On a parlé de tout et de rien,\n00:35.00 surtout de rien.\n00:36.00 Mais tu sais, il faut pas le manger,\n00:37.50 c'est bourré de trucs mauvais et tout.\n00:39.00 Enfin attends, ça c'était ma...\n00:40.50 c'était ma diététicienne.\n00:42.00 À un moment donné,\n00:43.00 elle s'est mordillé la lèvre.\n\n# Les Projets d'Avenir\n00:45.00 J'ai eu envie de :\n00:46.00 L'inviter à boire un verre.\n00:46.50 L'inviter au resto.\n00:47.00 L'inviter au cinéma.\n00:47.50 La raccompagner chez elle.\n00:48.00 Coucher avec elle.\n00:48.50 Qu'elle me demande\n00:49.00 si c'est sérieux entre nous.\n00:49.50 Manger des glaces avec elle.\n00:50.50 S'allonger dans l'herbe.\n00:51.00 Lui présenter ma famille.\n00:51.50 Partir en vacances avec elle.\n00:52.00 Emménager avec elle.\n00:52.50 La demander en mariage.\n00:53.00 Acheter une maison avec elle.\n\n# Les Rêves Paternels\n00:53.50 Qu'elle me demande : \"Ça va ?\"\n00:54.50 Qu'elle me réponde : \"Je suis enceinte.\"\n00:55.50 Qu'elle me dise : \"C'est des jumeaux.\"\n00:56.50 Je me demande comment\n00:57.50 on va les appeler.\n00:58.00 Elle m'a dit : \"T'es d'accord ?\"\n00:59.00 J'ai répondu : \"Grégoire et Julie.\"\n\n# La Fin de la Rencontre\n01:00.50 \"Quoi ?\"\n01:01.50 Je lui ai dit que c'était\n01:02.00 le nom de mes poissons.\n01:03.00 Elle m'a demandé ce que c'était\n01:03.50 comme poissons.\n01:04.50 J'ai dit n'importe quoi :\n01:05.00 \"Des poissons-clowns.\"\n01:05.50 Elle m'a répondu : \"Mais c'est génial !\"\n01:06.50 \"Comme Nemo !\"\n01:07.50 Merde. Merde.\n01:08.00 Je lui ai dit :\n01:08.50 \"Tu pourras passer les voir un jour.\"\n01:10.00 Elle a souri.\n01:10.50 Elle a repris mon numéro.\n01:11.50 Mon corps a envoyé\n01:12.00 des signaux pressants.\n01:13.50 \"Tu t'appelles Vincent comment déjà ?\"\n01:14.50 \"Dubois.\"\n01:15.00 \"Bon... Salut !\"\n01:18.00 Elle est partie en souriant.\n01:19.00 Je suis parti en courant.\n\n# L'Épilogue\n01:20.00 Voilà, maintenant je m'appelle\n01:21.50 Vincent Dubois\n01:22.50 et j'ai deux poissons-clowns.\n01:23.50 Et il faut que je fasse une lessive.\n01:24.50 Bref, j'ai recroisé cette fille.\n01:35.00 Putain."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 16:00:09 UTC",
   "updated_at": "2026-04-02 19:19:47 UTC",

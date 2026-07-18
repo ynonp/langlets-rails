@@ -71,9 +71,10 @@ class CourseDedupeTest < ActiveSupport::TestCase
       main_media_url: "https://www.youtube.com/watch?v=#{video_id}",
       youtube_video_id: video_id,
       language: @spanish,
-      translation_language: translation_language,
       user: user
-    )
+    ).tap do |course|
+      course.course_translations.build(language: translation_language, name: course.name, status: :ready)
+    end
   end
 
   def publish!(**args)

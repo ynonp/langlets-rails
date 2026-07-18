@@ -8,1231 +8,1853 @@
       {
         "id": "phrase_2",
         "text_l1": "ماما",
-        "timestamp": "00:02",
-        "text_l2": "Mom"
+        "timestamp": "00:02"
       },
       {
         "id": "phrase_3",
         "text_l1": "بقدر ابعت من عندك",
-        "timestamp": "00:03",
-        "text_l2": "Can I send a message from your phone"
+        "timestamp": "00:03"
       },
       {
         "id": "phrase_4",
         "text_l1": "لأم رنا فايز",
-        "timestamp": "00:04",
-        "text_l2": "To Um Rana Fayez"
+        "timestamp": "00:04"
       },
       {
         "id": "phrase_5",
         "text_l1": "بتحتاج لنوم بس موبايلها مفلل",
-        "timestamp": "00:05",
-        "text_l2": "She needs to sleep but her phone is full"
+        "timestamp": "00:05"
       },
       {
         "id": "phrase_6",
         "text_l1": "أكيد حبيبتي",
-        "timestamp": "00:07",
-        "text_l2": "Of course, honey"
+        "timestamp": "00:07"
       },
       {
         "id": "phrase_7",
         "text_l1": "هي موبايلي عالطاولة",
-        "timestamp": "00:08",
-        "text_l2": "My phone is on the table"
+        "timestamp": "00:08"
       },
       {
         "id": "phrase_8",
         "text_l1": "بيني وبينك أنا كتير مرهقة",
-        "timestamp": "00:12",
-        "text_l2": "Between you and me, I'm very exhausted"
+        "timestamp": "00:12"
       },
       {
         "id": "phrase_9",
         "text_l1": "نفسي آخد يومين إجازة",
-        "timestamp": "00:14",
-        "text_l2": "I wish I could take two days off"
+        "timestamp": "00:14"
       },
       {
         "id": "phrase_10",
         "text_l1": "وأقعد بالغرفة وما أعمل ولا إشي",
-        "timestamp": "00:16",
-        "text_l2": "And stay in the room and do nothing at all"
+        "timestamp": "00:16"
       },
       {
         "id": "phrase_11",
         "text_l1": "ليش ما نطلع يومين نغير جو",
-        "timestamp": "00:18",
-        "text_l2": "Why don't we go out for two days to change the scenery"
+        "timestamp": "00:18"
       },
       {
         "id": "phrase_12",
         "text_l1": "أكيد ما رح يزبط",
-        "timestamp": "00:20",
-        "text_l2": "It definitely won't work"
+        "timestamp": "00:20"
       },
       {
         "id": "phrase_13",
         "text_l1": "لو تعرفي شو علي",
-        "timestamp": "00:21",
-        "text_l2": "If you only knew what I have to do"
+        "timestamp": "00:21"
       },
       {
         "id": "phrase_14",
         "text_l1": "شو بعتي",
-        "timestamp": "00:23",
-        "text_l2": "What did you send"
+        "timestamp": "00:23"
       },
       {
         "id": "phrase_15",
         "text_l1": "آه آه عم ببعت",
-        "timestamp": "00:25",
-        "text_l2": "Yeah, yeah, I'm sending it"
+        "timestamp": "00:25"
       },
       {
         "id": "phrase_16",
         "text_l1": "ماما بدي أقولك أوقات التدريبات",
-        "timestamp": "00:27",
-        "text_l2": "Mom, I want to tell you the training times"
+        "timestamp": "00:27"
       },
       {
         "id": "phrase_17",
         "text_l1": "الأسبوع الجاي عشان توصيليني",
-        "timestamp": "00:29",
-        "text_l2": "For next week so you can drop me off"
+        "timestamp": "00:29"
       },
       {
         "id": "phrase_18",
         "text_l1": "استنى شوي بس أخلص",
-        "timestamp": "00:31",
-        "text_l2": "Wait a bit until I finish"
+        "timestamp": "00:31"
       },
       {
         "id": "phrase_19",
         "text_l1": "عشان أسجلهم عندي",
-        "timestamp": "00:33",
-        "text_l2": "So I can record them"
+        "timestamp": "00:33"
       },
       {
         "id": "phrase_20",
         "text_l1": "بس تخلصي الحقني",
-        "timestamp": "00:34",
-        "text_l2": "When you finish, follow me"
+        "timestamp": "00:34"
       },
       {
         "id": "phrase_21",
         "text_l1": "إيه الست دينا",
-        "timestamp": "00:38",
-        "text_l2": "Yes, Ms. Dina"
+        "timestamp": "00:38"
       },
       {
         "id": "phrase_22",
         "text_l1": "نعم تفضل",
-        "timestamp": "00:39",
-        "text_l2": "Yes, please"
+        "timestamp": "00:39"
       },
       {
         "id": "phrase_23",
         "text_l1": "هذا البوكس لحضرتك",
-        "timestamp": "00:41",
-        "text_l2": "This box is for you"
+        "timestamp": "00:41"
       },
       {
         "id": "phrase_24",
         "text_l1": "إلي شكراً",
-        "timestamp": "00:43",
-        "text_l2": "For me? Thank you"
+        "timestamp": "00:43"
       },
       {
         "id": "phrase_25",
         "text_l1": "ليكون اليوم عيدي وأنا مش دارية",
-        "timestamp": "00:46",
-        "text_l2": "Could it be my birthday today and I don't even realize it"
+        "timestamp": "00:46"
       },
       {
         "id": "phrase_26",
         "text_l1": "شو عيدي",
-        "timestamp": "00:48",
-        "text_l2": "What birthday"
+        "timestamp": "00:48"
       },
       {
         "id": "phrase_27",
         "text_l1": "ويني ووين عيدي",
-        "timestamp": "00:49",
-        "text_l2": "I'm nowhere near a birthday"
+        "timestamp": "00:49"
       },
       {
         "id": "phrase_28",
         "text_l1": "ماما إنتي بتستاهلي ترتاحي",
-        "timestamp": "00:51",
-        "text_l2": "Mom, you deserve to rest"
+        "timestamp": "00:51"
       },
       {
         "id": "phrase_29",
         "text_l1": "عشان هيك هاي رحلة يومين",
-        "timestamp": "00:54",
-        "text_l2": "That's why this is a two-day trip"
+        "timestamp": "00:54"
       },
       {
         "id": "phrase_30",
         "text_l1": "لوادي رم هدية منا إلك",
-        "timestamp": "00:56",
-        "text_l2": "To Wadi Rum, a gift from us to you"
+        "timestamp": "00:56"
       },
       {
         "id": "phrase_31",
         "text_l1": "بنحبك سالي وسند وسامر",
-        "timestamp": "01:00",
-        "text_l2": "We love you—Sally, Sanad, and Samer"
+        "timestamp": "01:00"
       },
       {
         "id": "phrase_32",
         "text_l1": "حبايبي",
-        "timestamp": "01:03",
-        "text_l2": "My dears"
+        "timestamp": "01:03"
       },
       {
         "id": "phrase_33",
         "text_l1": "شكراً كتير حبايبي",
-        "timestamp": "01:07",
-        "text_l2": "Thank you so much, my dears"
+        "timestamp": "01:07"
       },
       {
         "id": "phrase_34",
         "text_l1": "الفكرة لحالها وإنكم دفعتوا من مصروفكم",
-        "timestamp": "01:09",
-        "text_l2": "The idea alone, and that you paid from your allowance"
+        "timestamp": "01:09"
       },
       {
         "id": "phrase_35",
         "text_l1": "كتير أثرت فيي",
-        "timestamp": "01:11",
-        "text_l2": "Really touched me"
+        "timestamp": "01:11"
       },
       {
         "id": "phrase_36",
         "text_l1": "بس المرة الجاي ست سالي",
-        "timestamp": "01:13",
-        "text_l2": "But next time, Ms. Sally"
+        "timestamp": "01:13"
       },
       {
         "id": "phrase_37",
         "text_l1": "ما تقرئي مسجاتي من وراي آه",
-        "timestamp": "01:15",
-        "text_l2": "Don't read my messages behind my back, okay"
+        "timestamp": "01:15"
       },
       {
         "id": "phrase_38",
         "text_l1": "سوري ما كان قصدي",
-        "timestamp": "01:17",
-        "text_l2": "Sorry, I didn't mean to"
+        "timestamp": "01:17"
       },
       {
         "id": "phrase_39",
         "text_l1": "بعرف بعرف حبيبتي",
-        "timestamp": "01:19",
-        "text_l2": "I know, I know, honey"
+        "timestamp": "01:19"
       },
       {
         "id": "phrase_40",
         "text_l1": "بس أنا رح أضطر أأجل الرحلة",
-        "timestamp": "01:21",
-        "text_l2": "But I'll have to postpone the trip"
+        "timestamp": "01:21"
       },
       {
         "id": "phrase_41",
         "text_l1": "لأنه هذا الأسبوع بالذات إنتو بتعرفوا",
-        "timestamp": "01:23",
-        "text_l2": "Because this week specifically, you know"
+        "timestamp": "01:23"
       },
       {
         "id": "phrase_42",
         "text_l1": "سند عنده تدريبات كتير",
-        "timestamp": "01:25",
-        "text_l2": "Sanad has a lot of training"
+        "timestamp": "01:25"
       },
       {
         "id": "phrase_43",
         "text_l1": "وسالي عندك المسرحية",
-        "timestamp": "01:27",
-        "text_l2": "And Sally, you have the play"
+        "timestamp": "01:27"
       },
       {
         "id": "phrase_44",
         "text_l1": "وسامر عنده موعد دكتور",
-        "timestamp": "01:29",
-        "text_l2": "And Samer has a doctor's appointment"
+        "timestamp": "01:29"
       },
       {
         "id": "phrase_45",
         "text_l1": "هذا غير الشغل",
-        "timestamp": "01:30",
-        "text_l2": "Not to mention work"
+        "timestamp": "01:30"
       },
       {
         "id": "phrase_46",
         "text_l1": "شو هذا الحكي يا دينا",
-        "timestamp": "01:32",
-        "text_l2": "What is this talk, Dina"
+        "timestamp": "01:32"
       },
       {
         "id": "phrase_47",
         "text_l1": "عيب أنا موجود",
-        "timestamp": "01:33",
-        "text_l2": "It's a shame, I'm here"
+        "timestamp": "01:33"
       },
       {
         "id": "phrase_48",
         "text_l1": "شو مفكرين الأمور ما بتمشي من دونك",
-        "timestamp": "01:35",
-        "text_l2": "Do you think things won't run without you"
+        "timestamp": "01:35"
       },
       {
         "id": "phrase_49",
         "text_l1": "آه ماما وما تحكيلي هم إشي",
-        "timestamp": "01:39",
-        "text_l2": "Yeah, Mom, and don't worry about a thing"
+        "timestamp": "01:39"
       },
       {
         "id": "phrase_50",
         "text_l1": "والبابا موجود",
-        "timestamp": "01:41",
-        "text_l2": "Dad is here"
+        "timestamp": "01:41"
       },
       {
         "id": "phrase_51",
         "text_l1": "ولو",
-        "timestamp": "01:42",
-        "text_l2": "Of course"
+        "timestamp": "01:42"
       },
       {
         "id": "phrase_52",
         "text_l1": "وأم يزن وأم انصاف كمان عم بحضروا حالهم يجيوا معك",
-        "timestamp": "01:43",
-        "text_l2": "And Um Yazan and Um Insaf are also getting ready to come with you"
+        "timestamp": "01:43"
       },
       {
         "id": "phrase_53",
         "text_l1": "عن جد حبايبي إنتو",
-        "timestamp": "01:47",
-        "text_l2": "Really, you guys are my dears"
+        "timestamp": "01:47"
       },
       {
         "id": "phrase_54",
         "text_l1": "ويا شوفير دوس دوس",
-        "timestamp": "01:52",
-        "text_l2": "And driver, step on it, step on it"
+        "timestamp": "01:52"
       },
       {
         "id": "phrase_55",
         "text_l1": "الله يبعتلك عروس",
-        "timestamp": "01:54",
-        "text_l2": "May God send you a bride"
+        "timestamp": "01:54"
       },
       {
         "id": "phrase_56",
         "text_l1": "ويا شوفير اطلع هالطلعة",
-        "timestamp": "01:57",
-        "text_l2": "And driver, go up this hill"
+        "timestamp": "01:57"
       },
       {
         "id": "phrase_57",
         "text_l1": "والله يخليلي هالطلعة",
-        "timestamp": "01:59",
-        "text_l2": "And may God bless this trip for me"
+        "timestamp": "01:59"
       },
       {
         "id": "phrase_58",
         "text_l1": "بابا وين السندويشات",
-        "timestamp": "02:02",
-        "text_l2": "Dad, where are the sandwiches"
+        "timestamp": "02:02"
       },
       {
         "id": "phrase_59",
         "text_l1": "وين الفواكه وين العصير",
-        "timestamp": "02:03",
-        "text_l2": "Where's the fruit, where's the juice"
+        "timestamp": "02:03"
       },
       {
         "id": "phrase_60",
         "text_l1": "طب طب خذ",
-        "timestamp": "02:05",
-        "text_l2": "Okay, okay, take this"
+        "timestamp": "02:05"
       },
       {
         "id": "phrase_61",
         "text_l1": "خذ يا بابا هاي زيادة بالمصروف",
-        "timestamp": "02:07",
-        "text_l2": "Take this, son, here's extra allowance"
+        "timestamp": "02:07"
       },
       {
         "id": "phrase_62",
         "text_l1": "وبدي إياك هاليومين تشتري اللي بدك إياه",
-        "timestamp": "02:09",
-        "text_l2": "And I want you to buy whatever you want these two days"
+        "timestamp": "02:09"
       },
       {
         "id": "phrase_63",
         "text_l1": "ما في أزكى من سندويشات الفلافل",
-        "timestamp": "02:11",
-        "text_l2": "There's nothing tastier than the falafel sandwiches"
+        "timestamp": "02:11"
       },
       {
         "id": "phrase_64",
         "text_l1": "اللي كنا نأكلها بالمدرسة",
-        "timestamp": "02:14",
-        "text_l2": "That we used to eat at school"
+        "timestamp": "02:14"
       },
       {
         "id": "phrase_65",
         "text_l1": "من تحت إيدين أبو خليل",
-        "timestamp": "02:16",
-        "text_l2": "Made by Abu Khalil"
+        "timestamp": "02:16"
       },
       {
         "id": "phrase_66",
         "text_l1": "وين رنا يا رنا",
-        "timestamp": "02:17",
-        "text_l2": "Where is Rana? Rana!"
+        "timestamp": "02:17"
       },
       {
         "id": "phrase_67",
         "text_l1": "وينك يا بابا",
-        "timestamp": "02:18",
-        "text_l2": "Where are you, honey"
+        "timestamp": "02:18"
       },
       {
         "id": "phrase_68",
         "text_l1": "بابا الكريم خلص",
-        "timestamp": "02:20",
-        "text_l2": "Dad, the cream is finished"
+        "timestamp": "02:20"
       },
       {
         "id": "phrase_69",
         "text_l1": "وشعري ما عم بظبط",
-        "timestamp": "02:22",
-        "text_l2": "And my hair isn't working out"
+        "timestamp": "02:22"
       },
       {
         "id": "phrase_70",
         "text_l1": "وأنا ما رح أروح عالدرسة هيك",
-        "timestamp": "02:23",
-        "text_l2": "And I'm not going to school like this"
+        "timestamp": "02:23"
       },
       {
         "id": "phrase_71",
         "text_l1": "طيب وشو المطلوب مني يعني",
-        "timestamp": "02:25",
-        "text_l2": "Okay, so what's required of me then"
+        "timestamp": "02:25"
       },
       {
         "id": "phrase_72",
         "text_l1": "شو أعملك يعني",
-        "timestamp": "02:27",
-        "text_l2": "What should I do for you"
+        "timestamp": "02:27"
       },
       {
         "id": "phrase_73",
         "text_l1": "جيبيلي الكريم من الصيدلية",
-        "timestamp": "02:28",
-        "text_l2": "Get me the cream from the pharmacy"
+        "timestamp": "02:28"
       },
       {
         "id": "phrase_74",
         "text_l1": "أو ما بروح عالدرسة",
-        "timestamp": "02:30",
-        "text_l2": "Or I'm not going to school"
+        "timestamp": "02:30"
       },
       {
         "id": "phrase_75",
         "text_l1": "هلا طيب هي وينها الصيدلية أصلاً",
-        "timestamp": "02:32",
-        "text_l2": "Now, okay, where is the pharmacy anyway"
+        "timestamp": "02:32"
       },
       {
         "id": "phrase_76",
         "text_l1": "أوف الماما بتعرف",
-        "timestamp": "02:34",
-        "text_l2": "Ugh, Mom knows"
+        "timestamp": "02:34"
       },
       {
         "id": "phrase_77",
         "text_l1": "ويا شوفير اطلع هالطلعة",
-        "timestamp": "02:40",
-        "text_l2": "And driver, go up this hill"
+        "timestamp": "02:40"
       },
       {
         "id": "phrase_78",
         "text_l1": "والله يخليلي هالطلعة",
-        "timestamp": "02:42",
-        "text_l2": "And may God bless this trip for me"
+        "timestamp": "02:42"
       },
       {
         "id": "phrase_79",
         "text_l1": "آه الصيدلية اللي عند الدوار بتكون فاتحة",
-        "timestamp": "02:44",
-        "text_l2": "Yeah, the pharmacy near the roundabout should be open"
+        "timestamp": "02:44"
       },
       {
         "id": "phrase_80",
         "text_l1": "بسرعة أحسن ما تتأخروا عالدرسة",
-        "timestamp": "02:46",
-        "text_l2": "Hurry up so you're not late for school"
+        "timestamp": "02:46"
       },
       {
         "id": "phrase_81",
         "text_l1": "آه عصام حبيبي في إشي",
-        "timestamp": "02:50",
-        "text_l2": "Yeah, Issam honey, is something wrong"
+        "timestamp": "02:50"
       },
       {
         "id": "phrase_82",
         "text_l1": "لا لا ما في إشي",
-        "timestamp": "02:52",
-        "text_l2": "No, no, nothing"
+        "timestamp": "02:52"
       },
       {
         "id": "phrase_83",
         "text_l1": "بعد ما وصلتهم عالدرسة",
-        "timestamp": "02:54",
-        "text_l2": "After I dropped them at school"
+        "timestamp": "02:54"
       },
       {
         "id": "phrase_84",
         "text_l1": "برن علي سند بيقولي ناسي كتابه",
-        "timestamp": "02:56",
-        "text_l2": "Sanad called me saying he forgot his book"
+        "timestamp": "02:56"
       },
       {
         "id": "phrase_85",
         "text_l1": "فرجعت جبته وهيني عند باب المدرسة",
-        "timestamp": "02:58",
-        "text_l2": "So I went back and got it and here I am at the school gate"
+        "timestamp": "02:58"
       },
       {
         "id": "phrase_86",
         "text_l1": "بس هو سند بأي صف صار",
-        "timestamp": "03:01",
-        "text_l2": "But what grade is Sanad in now"
+        "timestamp": "03:01"
       },
       {
         "id": "phrase_87",
         "text_l1": "اسم الله علي وبأي شعبة",
-        "timestamp": "03:03",
-        "text_l2": "God help me, and which section"
+        "timestamp": "03:03"
       },
       {
         "id": "phrase_88",
         "text_l1": "تمام تمام",
-        "timestamp": "03:06",
-        "text_l2": "Okay, okay"
+        "timestamp": "03:06"
       },
       {
         "id": "phrase_89",
         "text_l1": "وبعدين يلا بدنا نتصور هالسلبي",
-        "timestamp": "03:08",
-        "text_l2": "And then, come on, let's take this selfie"
+        "timestamp": "03:08"
       },
       {
         "id": "phrase_90",
         "text_l1": "وشوفولي كيف رح تفي عالصورة",
-        "timestamp": "03:11",
-        "text_l2": "And see how I'll look in the photo"
+        "timestamp": "03:11"
       },
       {
         "id": "phrase_91",
         "text_l1": "آه عصام لا لا مش مدخل تلاتة",
-        "timestamp": "03:14",
-        "text_l2": "Yeah, Issam, no, no, not entrance three"
+        "timestamp": "03:14"
       },
       {
         "id": "phrase_92",
         "text_l1": "مدخل أربعة عرفتوا",
-        "timestamp": "03:17",
-        "text_l2": "Entrance four, you know"
+        "timestamp": "03:17"
       },
       {
         "id": "phrase_93",
         "text_l1": "اللي عالشارع الفرعي",
-        "timestamp": "03:18",
-        "text_l2": "The one on the side street"
+        "timestamp": "03:18"
       },
       {
         "id": "phrase_94",
         "text_l1": "خير أبو يزن",
-        "timestamp": "03:23",
-        "text_l2": "What's up, Abu Yazan"
+        "timestamp": "03:23"
       },
       {
         "id": "phrase_95",
         "text_l1": "آه آه الجلاية حطها على رقم اتنين",
-        "timestamp": "03:24",
-        "text_l2": "Yeah, yeah, set the dishwasher to number two"
+        "timestamp": "03:24"
       },
       {
         "id": "phrase_96",
         "text_l1": "أوعك تحطها على رقم تلاتة",
-        "timestamp": "03:26",
-        "text_l2": "Don't you dare set it to number three"
+        "timestamp": "03:26"
       },
       {
         "id": "phrase_97",
         "text_l1": "أحسن ما تعبي البيت مي وصابون",
-        "timestamp": "03:28",
-        "text_l2": "Or you'll fill the house with water and soap"
+        "timestamp": "03:28"
       },
       {
         "id": "phrase_98",
         "text_l1": "يا الله لا هيك مش طبيعي",
-        "timestamp": "03:30",
-        "text_l2": "Oh my God, no, this isn't normal"
+        "timestamp": "03:30"
       },
       {
         "id": "phrase_99",
         "text_l1": "أي بيقولوا جوزك على ما عودتيه",
-        "timestamp": "03:34",
-        "text_l2": "They say your husband is how you train him"
+        "timestamp": "03:34"
       },
       {
         "id": "phrase_100",
         "text_l1": "وابنك على ما ربيتيه",
-        "timestamp": "03:36",
-        "text_l2": "And your son is how you raise him"
+        "timestamp": "03:36"
       },
       {
         "id": "phrase_101",
         "text_l1": "شوفوا شوفوا أبو انصاف",
-        "timestamp": "03:38",
-        "text_l2": "Look, look at Abu Insaf"
+        "timestamp": "03:38"
       },
       {
         "id": "phrase_102",
         "text_l1": "أنا عودته يعمل كل إشي بالبيت",
-        "timestamp": "03:40",
-        "text_l2": "I trained him to do everything in the house"
+        "timestamp": "03:40"
       },
       {
         "id": "phrase_103",
         "text_l1": "ويعرف يدير حاله لحاله",
-        "timestamp": "03:43",
-        "text_l2": "And know how to manage himself on his own"
+        "timestamp": "03:43"
       },
       {
         "id": "phrase_104",
         "text_l1": "شكلكم لا عودتوا ولا ربيتوا",
-        "timestamp": "03:45",
-        "text_l2": "It seems you neither trained nor raised them"
+        "timestamp": "03:45"
       },
       {
         "id": "phrase_105",
         "text_l1": "وأقولكم وهي أحلى سيلفي للولو بس",
-        "timestamp": "03:49",
-        "text_l2": "And let me tell you, here's the best selfie for Lulu only"
+        "timestamp": "03:49"
       },
       {
         "id": "phrase_106",
         "text_l1": "أهلاً بالحلوين شوفوا ما أحلاكم",
-        "timestamp": "03:55",
-        "text_l2": "Welcome, beauties! Look how beautiful you are"
+        "timestamp": "03:55"
       },
       {
         "id": "phrase_107",
         "text_l1": "أنا وأبو يزن مرتبين أموركم مية بالمية",
-        "timestamp": "03:58",
-        "text_l2": "Abu Yazan and I have arranged your affairs 100%"
+        "timestamp": "03:58"
       },
       {
         "id": "phrase_108",
         "text_l1": "ومش محتاجين إشي",
-        "timestamp": "04:02",
-        "text_l2": "And you don't need anything"
+        "timestamp": "04:02"
       },
       {
         "id": "phrase_109",
         "text_l1": "آه بابا إحنا مع عمو عصام في أكل بالبيت",
-        "timestamp": "04:05",
-        "text_l2": "Yeah, Dad, we're with Uncle Issam, is there food at home"
+        "timestamp": "04:05"
       },
       {
         "id": "phrase_110",
         "text_l1": "بابا المصاري يادوب كفوا للمدرسة",
-        "timestamp": "04:08",
-        "text_l2": "Dad, the money barely covered school"
+        "timestamp": "04:08"
       },
       {
         "id": "phrase_111",
         "text_l1": "كمان نجيب غدا",
-        "timestamp": "04:10",
-        "text_l2": "Should we get lunch too"
+        "timestamp": "04:10"
       },
       {
         "id": "phrase_112",
         "text_l1": "طيب أوك باي",
-        "timestamp": "04:13",
-        "text_l2": "Okay, okay, bye"
+        "timestamp": "04:13"
       },
       {
         "id": "phrase_113",
         "text_l1": "خلص تعالوا عنا البابا طالب لنا مقلوبة اليوم",
-        "timestamp": "04:16",
-        "text_l2": "Fine, come to our place, Dad ordered Maqluba for us today"
+        "timestamp": "04:16"
       },
       {
         "id": "phrase_114",
         "text_l1": "نوكل وبنروح عالتدريب",
-        "timestamp": "04:19",
-        "text_l2": "We'll eat and then go to training"
+        "timestamp": "04:19"
       },
       {
         "id": "phrase_115",
         "text_l1": "يعني طبعاً طبعاً أهلاً وسهلاً",
-        "timestamp": "04:22",
-        "text_l2": "I mean, of course, of course, you're welcome"
+        "timestamp": "04:22"
       },
       {
         "id": "phrase_116",
         "text_l1": "رح توكلوا أزكى مقلوبة بحياتكم",
-        "timestamp": "04:26",
-        "text_l2": "You'll eat the tastiest Maqluba in your lives"
+        "timestamp": "04:26"
       },
       {
         "id": "phrase_117",
         "text_l1": "الله يخليكي",
-        "timestamp": "04:29",
-        "text_l2": "God bless you"
+        "timestamp": "04:29"
       },
       {
         "id": "phrase_118",
         "text_l1": "بشيلي إياها الأولاد جوعانين",
-        "timestamp": "04:33",
-        "text_l2": "Make it for me, the kids are hungry"
+        "timestamp": "04:33"
       },
       {
         "id": "phrase_119",
         "text_l1": "وأنا نسيت أوصيكي الصبح",
-        "timestamp": "04:35",
-        "text_l2": "And I forgot to tell you this morning"
+        "timestamp": "04:35"
       },
       {
         "id": "phrase_120",
         "text_l1": "ولا يهمك عشان أم سند بس",
-        "timestamp": "04:37",
-        "text_l2": "Don't worry, just for Um Sanad"
+        "timestamp": "04:37"
       },
       {
         "id": "phrase_121",
         "text_l1": "احكيلي شو بتحب عليها خضار",
-        "timestamp": "04:39",
-        "text_l2": "Tell me what vegetables you like on it"
+        "timestamp": "04:39"
       },
       {
         "id": "phrase_122",
         "text_l1": "لأنه أم سند آخر مرة وصتني إنه",
-        "timestamp": "04:42",
-        "text_l2": "Because Um Sanad last time told me that"
+        "timestamp": "04:42"
       },
       {
         "id": "phrase_123",
         "text_l1": "حطي كل إشي هو في أزكى من المقلوبة المليانة خضار",
-        "timestamp": "04:44",
-        "text_l2": "Put everything in—is there anything tastier than Maqluba full of vegetables"
+        "timestamp": "04:44"
       },
       {
         "id": "phrase_124",
         "text_l1": "واو واو مش طبيعي",
-        "timestamp": "04:53",
-        "text_l2": "Wow, wow, it's incredible"
+        "timestamp": "04:53"
       },
       {
         "id": "phrase_125",
         "text_l1": "مش طبيعي الأجواء شو ساحرة في وادي رم",
-        "timestamp": "04:55",
-        "text_l2": "The atmosphere is so magical in Wadi Rum"
+        "timestamp": "04:55"
       },
       {
         "id": "phrase_126",
         "text_l1": "إشي خيال",
-        "timestamp": "04:59",
-        "text_l2": "It's something out of a dream"
+        "timestamp": "04:59"
       },
       {
         "id": "phrase_127",
         "text_l1": "أيوه يا أبو يزن",
-        "timestamp": "05:01",
-        "text_l2": "Yes, Abu Yazan"
+        "timestamp": "05:01"
       },
       {
         "id": "phrase_128",
         "text_l1": "محطوط بالجرار الأول بالمطبخ باي",
-        "timestamp": "05:03",
-        "text_l2": "It's in the first drawer in the kitchen, bye"
+        "timestamp": "05:03"
       },
       {
         "id": "phrase_129",
         "text_l1": "وليش موطية صوتك",
-        "timestamp": "05:06",
-        "text_l2": "And why are you lowering your voice"
+        "timestamp": "05:06"
       },
       {
         "id": "phrase_130",
         "text_l1": "مش عارف يدبر حاله آه",
-        "timestamp": "05:09",
-        "text_l2": "He doesn't know how to manage, huh"
+        "timestamp": "05:09"
       },
       {
         "id": "phrase_131",
         "text_l1": "آه عصام آه اليوم تدريبه من الستة للتمانية باي",
-        "timestamp": "05:12",
-        "text_l2": "Yeah, Issam, yeah, today his training is from six to eight, bye"
+        "timestamp": "05:12"
       },
       {
         "id": "phrase_132",
         "text_l1": "الله يسعده أبو انصاف وما يبعده",
-        "timestamp": "05:17",
-        "text_l2": "May God bless Abu Insaf and keep him close"
+        "timestamp": "05:17"
       },
       {
         "id": "phrase_133",
         "text_l1": "أيوه عصام لا بوابة تمنية قلتلك",
-        "timestamp": "05:21",
-        "text_l2": "Yes, Issam, no, gate eight I told you"
+        "timestamp": "05:21"
       },
       {
         "id": "phrase_134",
         "text_l1": "الساعة ستة معقول إنت",
-        "timestamp": "05:26",
-        "text_l2": "Six o'clock, is it possible you..."
+        "timestamp": "05:26"
       },
       {
         "id": "phrase_135",
         "text_l1": "I came all the way from the US to have some peace and quiet",
-        "timestamp": "05:28",
-        "text_l2": "I came all the way from the US to have some peace and quiet"
+        "timestamp": "05:28"
       },
       {
         "id": "phrase_136",
         "text_l1": "وأنا بعد جيت من الرياض",
-        "timestamp": "05:32",
-        "text_l2": "And I also came from Riyadh"
+        "timestamp": "05:32"
       },
       {
         "id": "phrase_137",
         "text_l1": "أتأمل وأهدي راسي دوشتونا",
-        "timestamp": "05:34",
-        "text_l2": "To contemplate and calm my head, you've made our heads spin"
+        "timestamp": "05:34"
       },
       {
         "id": "phrase_138",
         "text_l1": "أوف impossible",
-        "timestamp": "05:37",
-        "text_l2": "Ugh, impossible"
+        "timestamp": "05:37"
       },
       {
         "id": "phrase_139",
         "text_l1": "عم بيخربوا علينا الـ tranquility تبعتنا",
-        "timestamp": "05:40",
-        "text_l2": "They're ruining our tranquility"
+        "timestamp": "05:40"
       },
       {
         "id": "phrase_140",
         "text_l1": "مش طبيعي",
-        "timestamp": "05:43",
-        "text_l2": "It's unbelievable"
+        "timestamp": "05:43"
       },
       {
         "id": "phrase_141",
         "text_l1": "وهاي وصلت المقلوبة",
-        "timestamp": "05:48",
-        "text_l2": "And here's the Maqluba"
+        "timestamp": "05:48"
       },
       {
         "id": "phrase_142",
         "text_l1": "خلينا نعتبرها غدا وعشا كنوع من التوفير",
-        "timestamp": "05:50",
-        "text_l2": "Let's consider it lunch and dinner as a way of saving"
+        "timestamp": "05:50"
       },
       {
         "id": "phrase_143",
         "text_l1": "ومنخلي للشباب بس يخلصوا تدريب",
-        "timestamp": "05:55",
-        "text_l2": "And we'll leave some for the boys when they finish training"
+        "timestamp": "05:55"
       },
       {
         "id": "phrase_144",
         "text_l1": "يا سلام شوفوا التنظيم",
-        "timestamp": "05:57",
-        "text_l2": "Wow, look at the organization"
+        "timestamp": "05:57"
       },
       {
         "id": "phrase_145",
         "text_l1": "شوفوا الترتيب شوفوا الحلاوة",
-        "timestamp": "06:00",
-        "text_l2": "Look at the arrangement, look at the beauty"
+        "timestamp": "06:00"
       },
       {
         "id": "phrase_146",
         "text_l1": "بابا بس سؤال",
-        "timestamp": "06:05",
-        "text_l2": "Dad, just a question"
+        "timestamp": "06:05"
       },
       {
         "id": "phrase_147",
         "text_l1": "هاي المقلوبة فيها بتنجان",
-        "timestamp": "06:07",
-        "text_l2": "Does this Maqluba have eggplant"
+        "timestamp": "06:07"
       },
       {
         "id": "phrase_148",
         "text_l1": "أكيد بابا قلتلها حطي كل إشي",
-        "timestamp": "06:09",
-        "text_l2": "Of course, son, I told her to put everything in"
+        "timestamp": "06:09"
       },
       {
         "id": "phrase_149",
         "text_l1": "شفتي قديش زاكية بتشهي",
-        "timestamp": "06:12",
-        "text_l2": "See how delicious and appetizing it is"
+        "timestamp": "06:12"
       },
       {
         "id": "phrase_150",
         "text_l1": "بابا أنا عندي حساسية من البتنجان",
-        "timestamp": "06:16",
-        "text_l2": "Dad, I'm allergic to eggplant"
+        "timestamp": "06:16"
       },
       {
         "id": "phrase_151",
         "text_l1": "ليش عملت هيك",
-        "timestamp": "06:20",
-        "text_l2": "Why did you do that"
+        "timestamp": "06:20"
       },
       {
         "id": "phrase_152",
         "text_l1": "واو ما أحلاهم",
-        "timestamp": "06:24",
-        "text_l2": "Wow, how beautiful they are"
+        "timestamp": "06:24"
       },
       {
         "id": "phrase_153",
         "text_l1": "يا ريت لو الأولاد معنا",
-        "timestamp": "06:27",
-        "text_l2": "I wish the kids were with us"
+        "timestamp": "06:27"
       },
       {
         "id": "phrase_154",
         "text_l1": "فكرك مدبرين حالهم",
-        "timestamp": "06:29",
-        "text_l2": "Do you think they're managing"
+        "timestamp": "06:29"
       },
       {
         "id": "phrase_155",
         "text_l1": "ما دام ما في تلفونات معناته الأمور تمام",
-        "timestamp": "06:31",
-        "text_l2": "As long as there are no phone calls, it means things are fine"
+        "timestamp": "06:31"
       },
       {
         "id": "phrase_156",
         "text_l1": "خلص أم سند روقي ارتاحي",
-        "timestamp": "06:33",
-        "text_l2": "Come on, Um Sanad, relax, rest"
+        "timestamp": "06:33"
       },
       {
         "id": "phrase_157",
         "text_l1": "Enjoy the moment",
-        "timestamp": "06:36",
-        "text_l2": "Enjoy the moment"
+        "timestamp": "06:36"
       },
       {
         "id": "phrase_158",
         "text_l1": "مضبوط مضبوط أكيد أكيد كل إشي تمام",
-        "timestamp": "06:37",
-        "text_l2": "Right, right, definitely, definitely, everything is fine"
+        "timestamp": "06:37"
       },
       {
         "id": "phrase_159",
         "text_l1": "عفواً بلا زغرة قديش عمرها",
-        "timestamp": "06:44",
-        "text_l2": "Excuse me, no offense, how old is she"
+        "timestamp": "06:44"
       },
       {
         "id": "phrase_160",
         "text_l1": "أربعة عشر أو خمسة عشر",
-        "timestamp": "06:47",
-        "text_l2": "Fourteen or fifteen"
+        "timestamp": "06:47"
       },
       {
         "id": "phrase_161",
         "text_l1": "ستة عشر",
-        "timestamp": "06:51",
-        "text_l2": "Sixteen"
+        "timestamp": "06:51"
       },
       {
         "id": "phrase_162",
         "text_l1": "وشو نوع دمها",
-        "timestamp": "06:53",
-        "text_l2": "And what's her blood type"
+        "timestamp": "06:53"
       },
       {
         "id": "phrase_163",
         "text_l1": "أخف من دمها ما في يعني أخف نوع",
-        "timestamp": "06:55",
-        "text_l2": "There's nothing lighter than her blood, so the lightest type"
+        "timestamp": "06:55"
       },
       {
         "id": "phrase_164",
         "text_l1": "وبلاش",
-        "timestamp": "07:00",
-        "text_l2": "And for free"
+        "timestamp": "07:00"
       },
       {
         "id": "phrase_165",
         "text_l1": "هيو هذا الأب اللي مش عارف إنه بنته عندها حساسية",
-        "timestamp": "07:01",
-        "text_l2": "Here's the father who doesn't know his daughter has an allergy"
+        "timestamp": "07:01"
       },
       {
         "id": "phrase_166",
         "text_l1": "لأ وكمان ما عنده ولا معلومة مفيدة",
-        "timestamp": "07:04",
-        "text_l2": "And he doesn't have a single piece of useful information"
+        "timestamp": "07:04"
       },
       {
         "id": "phrase_167",
         "text_l1": "أيوه سند شو بدك بابا",
-        "timestamp": "07:07",
-        "text_l2": "Yes, Sanad, what do you want, son"
+        "timestamp": "07:07"
       },
       {
         "id": "phrase_168",
         "text_l1": "وينك بابا الساعة تسعة",
-        "timestamp": "07:09",
-        "text_l2": "Where are you, Dad? It's nine o'clock"
+        "timestamp": "07:09"
       },
       {
         "id": "phrase_169",
         "text_l1": "صارلي ساعة بستناك على باب الملعب تيجي تاخدني",
-        "timestamp": "07:11",
-        "text_l2": "I've been waiting for you for an hour at the stadium gate to come pick me up"
+        "timestamp": "07:11"
       },
       {
         "id": "phrase_170",
         "text_l1": "آخ نسيت يلا يلا جاي",
-        "timestamp": "07:14",
-        "text_l2": "Oh, I forgot, I'm coming, I'm coming"
+        "timestamp": "07:14"
       },
       {
         "id": "phrase_171",
         "text_l1": "حلوة هاي اللعبة صح سمور",
-        "timestamp": "07:19",
-        "text_l2": "This game is nice, right Samour"
+        "timestamp": "07:19"
       },
       {
         "id": "phrase_172",
         "text_l1": "رنا انشري الغسيل",
-        "timestamp": "07:22",
-        "text_l2": "Rana, hang the laundry"
+        "timestamp": "07:22"
       },
       {
         "id": "phrase_173",
         "text_l1": "يلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة",
-        "timestamp": "07:24",
-        "text_l2": "Come with me to take the school clothes out of the washer so they have time to dry for tomorrow"
+        "timestamp": "07:24"
       },
       {
         "id": "phrase_174",
         "text_l1": "هذا الغسيل ناشف",
-        "timestamp": "07:33",
-        "text_l2": "This laundry is dry"
+        "timestamp": "07:33"
       },
       {
         "id": "phrase_175",
         "text_l1": "ووسخ",
-        "timestamp": "07:36",
-        "text_l2": "And dirty"
+        "timestamp": "07:36"
       },
       {
         "id": "phrase_176",
         "text_l1": "بابا",
-        "timestamp": "07:39",
-        "text_l2": "Dad"
+        "timestamp": "07:39"
       },
       {
         "id": "phrase_177",
         "text_l1": "هاي أمكم قربت توصل",
-        "timestamp": "07:42",
-        "text_l2": "Your mom is about to arrive"
+        "timestamp": "07:42"
       },
       {
         "id": "phrase_178",
         "text_l1": "وقفوا هيك أشوف",
-        "timestamp": "07:44",
-        "text_l2": "Stand like this, let me see"
+        "timestamp": "07:44"
       },
       {
         "id": "phrase_179",
         "text_l1": "واحد اتنين تلاتة",
-        "timestamp": "07:46",
-        "text_l2": "One, two, three"
+        "timestamp": "07:46"
       },
       {
         "id": "phrase_180",
         "text_l1": "ممتاز سلمتني تلاتة ورح أسلمها تلاتة",
-        "timestamp": "07:49",
-        "text_l2": "Excellent, she handed me three and I'll hand her back three"
+        "timestamp": "07:49"
       },
       {
         "id": "phrase_181",
         "text_l1": "إحنا بالسليم",
-        "timestamp": "07:53",
-        "text_l2": "We're in the clear"
+        "timestamp": "07:53"
       },
       {
         "id": "phrase_182",
         "text_l1": "وهاي وصل الدليفري",
-        "timestamp": "07:56",
-        "text_l2": "And the delivery has arrived"
+        "timestamp": "07:56"
       },
       {
         "id": "phrase_183",
         "text_l1": "يلا يلا بسرعة يا ولاد بدي البيت يضوي ضوي",
-        "timestamp": "07:58",
-        "text_l2": "Hurry up, kids, I want the house to shine"
+        "timestamp": "07:58"
       },
       {
         "id": "phrase_184",
         "text_l1": "وهي شغلنا الجلاية وكل الأمور تمام",
-        "timestamp": "08:02",
-        "text_l2": "And we've started the dishwasher and everything is fine"
+        "timestamp": "08:02"
       },
       {
         "id": "phrase_185",
         "text_l1": "ماما اشتقنالك كتير",
-        "timestamp": "08:08",
-        "text_l2": "Mom, we missed you so much"
+        "timestamp": "08:08"
       },
       {
         "id": "phrase_186",
         "text_l1": "اتشعطلنا بدونك اتبهدلنا",
-        "timestamp": "08:11",
-        "text_l2": "We were lost without you, we were a mess"
+        "timestamp": "08:11"
       },
       {
         "id": "phrase_187",
         "text_l1": "بس يا ولد اعتبروني أخدت دورة تعريفية",
-        "timestamp": "08:14",
-        "text_l2": "Enough, boy, consider that I took an introductory course"
+        "timestamp": "08:14"
       },
       {
         "id": "phrase_188",
         "text_l1": "وهلا أنا جاهز للامتحان الجاي",
-        "timestamp": "08:18",
-        "text_l2": "And now I'm ready for the next exam"
+        "timestamp": "08:18"
       },
       {
         "id": "phrase_189",
         "text_l1": "بصراحة إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم",
-        "timestamp": "08:22",
-        "text_l2": "Honestly, we really appreciate your hard work, effort, and love"
+        "timestamp": "08:22"
       },
       {
         "id": "phrase_190",
         "text_l1": "تحية إكرام وإجلال لكل أم",
-        "timestamp": "08:27",
-        "text_l2": "A salute of honor and respect to every mother"
+        "timestamp": "08:27"
       },
       {
         "id": "phrase_191",
         "text_l1": "وتحية كبيرة كمان لكل أب زيي يعني",
-        "timestamp": "08:30",
-        "text_l2": "And a big salute also to every father like me, I mean"
+        "timestamp": "08:30"
       },
       {
         "id": "phrase_192",
         "text_l1": "متحمل مسؤولية الأولاد والبيت",
-        "timestamp": "08:33",
-        "text_l2": "Who takes responsibility for the kids and the house"
+        "timestamp": "08:33"
       },
       {
         "id": "phrase_193",
         "text_l1": "صحيح وهاي أحلى ورد لأحلى وردة",
-        "timestamp": "08:36",
-        "text_l2": "True, and here are the most beautiful flowers for the most beautiful flower"
+        "timestamp": "08:36"
       },
       {
         "id": "phrase_194",
         "text_l1": "ومنا كمان تفضلي",
-        "timestamp": "08:40",
-        "text_l2": "And from us too, here you go"
+        "timestamp": "08:40"
       },
       {
         "id": "phrase_195",
         "text_l1": "شو وينه أبو انصاف",
-        "timestamp": "08:42",
-        "text_l2": "Wait, where is Abu Insaf"
+        "timestamp": "08:42"
       },
       {
         "id": "phrase_196",
         "text_l1": "الأمير اللي مدبر حاله اللي ما أزعجني",
-        "timestamp": "08:45",
-        "text_l2": "The prince who manages himself, who didn't bother me"
+        "timestamp": "08:45"
       },
       {
         "id": "phrase_197",
         "text_l1": "ولا رن علي ولا مرة",
-        "timestamp": "08:48",
-        "text_l2": "Or call me once"
+        "timestamp": "08:48"
       },
       {
         "id": "phrase_198",
         "text_l1": "رنيت عليه بس ما كان موجود بالبيت",
-        "timestamp": "08:50",
-        "text_l2": "I called him but he wasn't home"
+        "timestamp": "08:50"
       },
       {
         "id": "phrase_199",
         "text_l1": "حمدلله عالسلامة لولو",
-        "timestamp": "08:56",
-        "text_l2": "Welcome back, Lulu"
+        "timestamp": "08:56"
       },
       {
         "id": "phrase_200",
         "text_l1": "ليش وين كاين حضرتك",
-        "timestamp": "08:58",
-        "text_l2": "Where have you been, sir"
+        "timestamp": "08:58"
       },
       {
         "id": "phrase_201",
         "text_l1": "هو أنا مجنون أظل قاعد في البيت زي الأطرش بالزفة",
-        "timestamp": "09:00",
-        "text_l2": "Am I crazy to stay at home like a stranger at a wedding"
+        "timestamp": "09:00"
       },
       {
         "id": "phrase_202",
         "text_l1": "حجزت يومين بالأوتيل عقبال ما ترجعي",
-        "timestamp": "09:04",
-        "text_l2": "I booked two days at a hotel until you returned"
+        "timestamp": "09:04"
       },
       {
         "id": "phrase_203",
         "text_l1": "قلتي لنا جوزك على ما عودتيه آه",
-        "timestamp": "09:11",
-        "text_l2": "You told us your husband is how you train him, huh"
+        "timestamp": "09:11"
       },
       {
         "id": "phrase_204",
         "text_l1": "لا قلتلك ما تحط الجلاية على تلاتات",
-        "timestamp": "09:15",
-        "text_l2": "No, I told you don't put the dishwasher on three"
+        "timestamp": "09:15"
       },
       {
         "id": "phrase_205",
         "text_l1": "يي يي نسيت نسيت هيني طالع أطفيها",
-        "timestamp": "09:20",
-        "text_l2": "Oh, oh, I forgot, I forgot, I'm going up to turn it off"
+        "timestamp": "09:20"
       }
     ],
     "phrases_with_token_translations": "[ماما] => [Mom]\n\n[بقدر] ابعت من عندك => [Can I] send a message from your phone\nبقدر [ابعت] من عندك => Can I [send] a message from your phone\nبقدر ابعت [من] عندك => Can I send a message [from] your phone\nبقدر ابعت من [عندك] => Can I send a message from [your phone]\n\n[لأم] رنا فايز => [To Um] Rana Fayez\nلأم [رنا] فايز => To Um [Rana] Fayez\nلأم رنا [فايز] => To Um Rana [Fayez]\n\n[بتحتاج] لنوم بس موبايلها مفلل => [She needs] to sleep but her phone is full\nبتحتاج [لنوم] بس موبايلها مفلل => She needs [to sleep] but her phone is full\nبتحتاج لنوم [بس] موبايلها مفلل => She needs to sleep [but] her phone is full\nبتحتاج لنوم بس [موبايلها] مفلل => She needs to sleep but [her phone] is full\nبتحتاج لنوم بس موبايلها [مفلل] => She needs to sleep but her phone [is full]\n\n[أكيد] حبيبتي => [Of course], honey\nأكيد [حبيبتي] => Of course, [honey]\n\n[هي موبايلي] عالطاولة => [My phone] is on the table\nهي موبايلي [عالطاولة] => My phone is [on the table]\n\n[بيني وبينك] أنا كتير مرهقة => [Between you and me], I'm very exhausted\nبيني وبينك [أنا] كتير مرهقة => Between you and me, [I'm] very exhausted\nبيني وبينك أنا [كتير] مرهقة => Between you and me, I'm [very] exhausted\nبيني وبينك أنا كتير [مرهقة] => Between you and me, I'm very [exhausted]\n\n[نفسي] آخد يومين إجازة => [I wish I could] take two days off\nنفسي [آخد] يومين إجازة => I wish I could [take] two days off\nنفسي آخد [يومين] إجازة => I wish I could take [two days] off\nنفسي آخد يومين [إجازة] => I wish I could take two days [off]\n\n[وأقعد] بالغرفة وما أعمل ولا إشي => [And stay] in the room and do nothing at all\nوأقعد [بالغرفة] وما أعمل ولا إشي => And stay [in the room] and do nothing at all\nوأقعد بالغرفة [وما أعمل ولا إشي] => And stay in the room [and do nothing at all]\n\n[ليش] ما نطلع يومين نغير جو => [Why] don't we go out for two days to change the scenery\nليش [ما نطلع] يومين نغير جو => Why [don't we go out] for two days to change the scenery\nليش ما نطلع [يومين] نغير جو => Why don't we go out [for two days] to change the scenery\nليش ما نطلع يومين [نغير] جو => Why don't we go out for two days [to change] the scenery\nليش ما نطلع يومين نغير [جو] => Why don't we go out for two days to change [the scenery]\n\n[أكيد] ما رح يزبط => It [definitely] won't work\nأكيد [ما رح يزبط] => It definitely [won't work]\nأكيد ما رح [يزبط] => It definitely won't [work]\n\n[لو تعرفي] شو علي => [If you only knew] what I have to do\nلو تعرفي [شو] علي => If you only knew [what] I have to do\nلو تعرفي شو [علي] => If you only knew what [I have to do]\n\n[شو] بعتي => [What] did you send\nشو [بعتي] => What [did you send]\n\n[آه] آه عم ببعت => [Yeah], yeah, I'm sending it\nآه [آه] عم ببعت => Yeah, [yeah], I'm sending it\nآه آه [عم ببعت] => Yeah, yeah, [I'm sending] it\n\n[ماما] بدي أقولك أوقات التدريبات => [Mom], I want to tell you the training times\nماما [بدي] أقولك أوقات التدريبات => Mom, [I want to] tell you the training times\nماما بدي [أقولك] أوقات التدريبات => Mom, I want to [tell you] the training times\nماما بدي أقولك [أوقات] التدريبات => Mom, I want to tell you [the training] times\nماما بدي أقولك أوقات [التدريبات] => Mom, I want to tell you the [training] times\n\n[الأسبوع] الجاي عشان توصيليني => [For next week] so you can drop me off # الأسبوع means \"week\" but the translation \"For next week\" combines it with الجاي\nالأسبوع [الجاي] عشان توصيليني => For [next week] so you can drop me off # الجاي alone means \"next\"\nالأسبوع الجاي [عشان] توصيليني => For next week [so] you can drop me off\nالأسبوع الجاي عشان [توصيليني] => For next week so [you can drop me off]\n\n[استنى] شوي بس أخلص => [Wait] a bit until I finish\nاستنى [شوي] بس أخلص => Wait [a bit] until I finish\nاستنى شوي [بس] أخلص => Wait a bit [until] I finish\nاستنى شوي بس [أخلص] => Wait a bit until [I finish]\n\n[عشان] أسجلهم عندي => [So] I can record them\nعشان [أسجلهم] عندي => So [I can record them] # including the ability sense with بدي/عشان structure\nعشان أسجلهم [عندي] => So I can record them [with me] # عندي indicates possession/location where they'll be recorded\n\n[بس] تخلصي الحقني => [When] you finish, follow me\nبس [تخلصي] الحقني => When [you finish], follow me\nبس تخلصي [الحقني] => When you finish, [follow me]\n\n[إيه] الست دينا => [Yes], Ms. Dina\nإيه [الست] دينا => Yes, [Ms.] Dina\nإيه الست [دينا] => Yes, Ms. [Dina]\n\n[نعم] تفضل => [Yes], please\nنعم [تفضل] => Yes, [please]\n\n[هذا] البوكس لحضرتك => [This] box is for you\nهذا [البوكس] لحضرتك => This [box] is for you\nهذا البوكس [لحضرتك] => This box [is for you]\n\n[إلي] شكراً => [For me?] Thank you\nإلي [شكراً] => For me? [Thank you]\n\n[ليكون] اليوم عيدي وأنا مش دارية => [Could it be] my birthday today and I don't even realize it\nليكون [اليوم] عيدي وأنا مش دارية => Could it be my birthday [today] and I don't even realize it\nليكون اليوم [عيدي] وأنا مش دارية => Could it be [my birthday] today and I don't even realize it\nليكون اليوم عيدي [وأنا] مش دارية => Could it be my birthday today [and I] don't even realize it\nليكون اليوم عيدي وأنا [مش] دارية => Could it be my birthday today and I [don't] even realize it\nليكون اليوم عيدي وأنا مش [دارية] => Could it be my birthday today and I don't even [realize it]\n\n[شو] عيدي => [What] birthday\nشو [عيدي] => What [birthday]\n\n[ويني ووين] عيدي => [I'm nowhere near] a birthday\nويني ووين [عيدي] => I'm nowhere near [a birthday]\n\n[ماما] إنتي بتستاهلي ترتاحي => [Mom], you deserve to rest\nماما [إنتي] بتستاهلي ترتاحي => Mom, [you] deserve to rest\nماما إنتي [بتستاهلي] ترتاحي => Mom, you [deserve] to rest\nماما إنتي بتستاهلي [ترتاحي] => Mom, you deserve [to rest]\n\n[عشان هيك] هاي رحلة يومين => [That's why] this is a two-day trip\nعشان هيك [هاي] رحلة يومين => That's why [this] is a two-day trip\nعشان هيك هاي [رحلة] يومين => That's why this is a two-day [trip]\nعشان هيك هاي [رحلة يومين] => That's why this is a [two-day trip]\nعشان هيك هاي رحلة [يومين] => two days\n\n[لوادي رم] هدية منا إلك => [To Wadi Rum], a gift from us to you\nلوادي رم [هدية] منا إلك => To Wadi Rum, a [gift] from us to you\nلوادي رم هدية [منا] إلك => To Wadi Rum, a gift [from us] to you\nلوادي رم هدية منا [إلك] => To Wadi Rum, a gift from us [to you]\n\n[بنحبك] سالي وسند وسامر => [We love you]—Sally, Sanad, and Samer\nبنحبك [سالي] وسند وسامر => We love you—[Sally], Sanad, and Samer\nبنحبك سالي [وسند] وسامر => We love you—Sally, [Sanad], and Samer\nبنحبك سالي وسند [وسامر] => We love you—Sally, Sanad, [and Samer]\n\n[حبايبي] => [My dears]\n\n[شكراً] كتير حبايبي => [Thank you] so much, my dears\nشكراً [كتير] حبايبي => Thank you [so much], my dears\nشكراً كتير [حبايبي] => Thank you so much, [my dears]\n\n[الفكرة] لحالها وإنكم دفعتوا من مصروفكم => [The idea] alone, and that you paid from your allowance\nالفكرة [لحالها] وإنكم دفعتوا من مصروفكم => The idea [alone], and that you paid from your allowance\nالفكرة لحالها [وإنكم] دفعتوا من مصروفكم => The idea alone, [and that you] paid from your allowance\nالفكرة لحالها وإنكم [دفعتوا] من مصروفكم => The idea alone, and that you [paid] from your allowance\nالفكرة لحالها وإنكم دفعتوا [من] مصروفكم => The idea alone, and that you paid [from] your allowance\nالفكرة لحالها وإنكم دفعتوا من [مصروفكم] => The idea alone, and that you paid from [your allowance]\n\n[كتير] أثرت فيي => [Really] touched me\nكتير [أثرت فيي] => Really [touched me]\nكتير [أثرت] فيي => Really [touched] me\nكتير أثرت [فيي] => Really touched [me]\n\n[بس] المرة الجاي ست سالي => [But] next time, Ms. Sally\nبس [المرة الجاي] ست سالي => But [next time], Ms. Sally\nبس المرة الجاي [ست] سالي => But next time, [Ms.] Sally\nبس المرة الجاي ست [سالي] => But next time, Ms. [Sally]\n\n[ما تقرئي] مسجاتي من وراي آه => [Don't read] my messages behind my back, okay\nما تقرئي [مسجاتي] من وراي آه => Don't read [my messages] behind my back, okay\nما تقرئي مسجاتي [من وراي] آه => Don't read my messages [behind my back], okay\nما تقرئي مسجاتي من وراي [آه] => Don't read my messages behind my back, [okay]\n\n[سوري] ما كان قصدي => [Sorry], I didn't mean to\nسوري [ما كان] قصدي => Sorry, [I didn't] mean to\nسوري ما كان [قصدي] => Sorry, I didn't [mean to]\n\n[بعرف] بعرف حبيبتي => [I know], I know, honey\nبعرف [بعرف] حبيبتي => I know, [I know], honey\nبعرف بعرف [حبيبتي] => I know, I know, [honey]\n\n[بس] أنا رح أضطر أأجل الرحلة => [But] I'll have to postpone the trip\nبس [أنا رح أضطر] أأجل الرحلة => But [I'll have to] postpone the trip\nبس أنا رح أضطر [أأجل] الرحلة => But I'll have to [postpone] the trip\nبس أنا رح أضطر أأجل [الرحلة] => But I'll have to postpone [the trip]\n\n[لأنه] هذا الأسبوع بالذات إنتو بتعرفوا => [Because] this week specifically, you know\nلأنه [هذا الأسبوع] بالذات إنتو بتعرفوا => Because [this week] specifically, you know\nلأنه هذا الأسبوع [بالذات] إنتو بتعرفوا => Because this week [specifically], you know\nلأنه هذا الأسبوع بالذات [إنتو بتعرفوا] => Because this week specifically, [you know]\n\n[سند] عنده تدريبات كتير => [Sanad] has a lot of training\nسند [عنده] تدريبات كتير => Sanad [has] a lot of training\nسند عنده [تدريبات كتير] => Sanad has [a lot of training]\n\n[وسالي] عندك المسرحية => [And Sally], you have the play\nوسالي [عندك] المسرحية => And Sally, [you have] the play\nوسالي عندك [المسرحية] => And Sally, you have [the play]\n\n[وسامر] عنده موعد دكتور => [And Samer] has a doctor's appointment\nوسامر [عنده] موعد دكتور => And Samer [has] a doctor's appointment\nوسامر عنده [موعد دكتور] => And Samer has [a doctor's appointment]\n\n[هذا غير] الشغل => [Not to mention] work\nهذا غير [الشغل] => Not to mention [work]\n\n[شو] هذا الحكي يا دينا => [What] is this talk, Dina\nشو هذا [الحكي] يا دينا => What is this [talk], Dina\nشو هذا الحكي [يا دينا] => What is this talk, [Dina]\n\n[عيب] أنا موجود => [It's a shame], I'm here\nعيب [أنا موجود] => It's a shame, [I'm here]\n\n[شو مفكرين] الأمور ما بتمشي من دونك => [Do you think] things won't run without you\nشو مفكرين [الأمور] ما بتمشي من دونك => Do you think [things] won't run without you\nشو مفكرين الأمور [ما بتمشي] من دونك => Do you think things [won't run] without you\nشو مفكرين الأمور ما بتمشي [من دونك] => Do you think things won't run [without you]\n\n[آه] ماما وما تحكيلي هم إشي => [Yeah], Mom, and don't worry about a thing\nآه [ماما] وما تحكيلي هم إشي => Yeah, [Mom], and don't worry about a thing\nآه ماما [وما تحكيلي هم إشي] => Yeah, Mom, [and don't worry about a thing]\n\n[البابا] موجود => [Dad] is here\nالبابا [موجود] => Dad [is here]\n\n[ولو] => [Of course]\n\n[وأم يزن] وأم انصاف كمان عم بحضروا حالهم يجيوا معك => [And Um Yazan] and Um Insaf are also getting ready to come with you\nوأم يزن [وأم انصاف] كمان عم بحضروا حالهم يجيوا معك => And Um Yazan [and Um Insaf] are also getting ready to come with you\nوأم يزن وأم انصاف [كمان] عم بحضروا حالهم يجيوا معك => And Um Yazan and Um Insaf are [also] getting ready to come with you\nوأم يزن وأم انصاف كمان [عم بحضروا حالهم] يجيوا معك => And Um Yazan and Um Insaf are also [getting ready] to come with you\nوأم يزن وأم انصاف كمان عم بحضروا حالهم [يجيوا معك] => And Um Yazan and Um Insaf are also getting ready [to come with you]\n\n[عن جد] حبايبي إنتو => [Really], you guys are my dears\nعن جد [حبايبي] إنتو => Really, you guys are [my dears]\nعن جد حبايبي [إنتو] => Really, [you guys] are my dears\n\n[ويا شوفير] دوس دوس => [And driver], step on it, step on it\nويا شوفير [دوس دوس] => And driver, [step on it, step on it]\n\n[الله] يبعتلك عروس => May [God] send you a bride\nالله [يبعتلك] عروس => May God [send you] a bride\nالله يبعتلك [عروس] => May God send you [a bride]\n\n[ويا شوفير] اطلع هالطلعة => [And driver], go up this hill\nويا شوفير [اطلع] هالطلعة => And driver, [go up] this hill\nويا شوفير اطلع [هالطلعة] => And driver, go up [this hill]\n\n[والله] يخليلي هالطلعة => [And may God] bless this trip for me\nوالله [يخليلي] هالطلعة => And may God [bless] this trip for me\nوالله يخليلي [هالطلعة] => And may God bless [this trip] for me\n\n[بابا] وين السندويشات => [Dad], where are the sandwiches\nبابا [وين] السندويشات => Dad, [where] are the sandwiches\nبابا وين [السندويشات] => Dad, where are [the sandwiches]\n\n[وين] الفواكه وين العصير => [Where's] the fruit, where's the juice\nوين [الفواكه] وين العصير => Where's [the fruit], where's the juice\nوين الفواكه [وين] العصير => Where's the fruit, [where's] the juice\nوين الفواكه وين [العصير] => Where's the fruit, where's [the juice]\n\n[طب] طب خذ => [Okay], okay, take this\nطب [طب] خذ => Okay, [okay], take this\nطب طب [خذ] => Okay, okay, [take this]\n\n[خذ] يا بابا هاي زيادة بالمصروف => [Take this], son, here's extra allowance\nخذ [يا بابا] هاي زيادة بالمصروف => Take this, [son], here's extra allowance\nخذ يا بابا [هاي] زيادة بالمصروف => Take this, son, [here's] extra allowance\nخذ يا بابا هاي [زيادة بالمصروف] => Take this, son, here's [extra allowance]\n\n[وبدي إياك] هاليومين تشتري اللي بدك إياه => [And I want you] to buy whatever you want these two days\nوبدي إياك [هاليومين] تشتري اللي بدك إياه => And I want you to buy whatever you want [these two days]\nوبدي إياك هاليومين [تشتري] اللي بدك إياه => And I want you [to buy] whatever you want these two days\nوبدي إياك هاليومين تشتري [اللي بدك إياه] => And I want you to buy [whatever you want] these two days\n\n[ما في] أزكى من سندويشات الفلافل => [There's nothing] tastier than the falafel sandwiches\nما في [أزكى] من سندويشات الفلافل => There's nothing [tastier] than the falafel sandwiches\nما في أزكى [من] سندويشات الفلافل => There's nothing tastier [than] the falafel sandwiches\nما في أزكى من [سندويشات الفلافل] => There's nothing tastier than [the falafel sandwiches]\n\n[اللي] كنا نأكلها بالمدرسة => [That] we used to eat at school\nاللي [كنا نأكلها] بالمدرسة => That [we used to eat] at school\nاللي كنا نأكلها [بالمدرسة] => That we used to eat [at school]\n\n[من تحت إيدين] أبو خليل => [Made by] Abu Khalil\nمن تحت إيدين [أبو خليل] => Made by [Abu Khalil]\n\n[وين رنا] يا رنا => [Where is Rana]? Rana!\nوين رنا [يا رنا] => Where is Rana? [Rana]!\n\n[وينك] يا بابا => [Where are you], honey\nوينك [يا بابا] => Where are you, [honey]\n\n[بابا] الكريم خلص => [Dad], the cream is finished\nبابا [الكريم] خلص => Dad, [the cream] is finished\nبابا الكريم [خلص] => Dad, the cream [is finished]\n\n[وشعري] ما عم بظبط => [And my hair] isn't working out\nوشعري [ما عم بظبط] => And my hair [isn't working out]\n\n[وأنا] ما رح أروح عالدرسة هيك => [And I'm] not going to school like this\nوأنا [ما رح أروح] عالدرسة هيك => And I [am not going] to school like this\nوأنا ما رح أروح [عالدرسة] هيك => And I'm not going [to school] like this\nوأنا ما رح أروح عالدرسة [هيك] => And I'm not going to school [like this]\n\n[طيب] وشو المطلوب مني يعني => [Okay], so what's required of me then\nطيب [وشو المطلوب مني] يعني => Okay, [so what's required of me] then\nطيب وشو المطلوب مني [يعني] => Okay, so what's required of me [then]\n\n[شو] أعملك يعني => [What] should I do for you\nشو [أعملك] يعني => What [should I do for you]\n\n[جيبيلي] الكريم من الصيدلية => [Get me] the cream from the pharmacy\nجيبيلي [الكريم] من الصيدلية => Get me [the cream] from the pharmacy\nجيبيلي الكريم [من الصيدلية] => Get me the cream [from the pharmacy]\n\n[أو] ما بروح عالدرسة => [Or] I'm not going to school\nأو [ما بروح] عالدرسة => Or [I'm not going] to school\nأو ما بروح [عالدرسة] => Or I'm not going [to school]\n\n[هلا] طيب هي وينها الصيدلية أصلاً => [Now], okay, where is the pharmacy anyway\nهلا [طيب] هي وينها الصيدلية أصلاً => Now, [okay], where is the pharmacy anyway\nهلا طيب [هي وينها] الصيدلية أصلاً => Now, okay, [where is] the pharmacy anyway\nهلا طيب هي وينها [الصيدلية] أصلاً => Now, okay, where is [the pharmacy] anyway\nهلا طيب هي وينها الصيدلية [أصلاً] => Now, okay, where is the pharmacy [anyway]\n\n[أوف] الماما بتعرف => [Ugh] Mom knows\nأوف [الماما] بتعرف => Ugh [Mom] knows\nأوف الماما [بتعرف] => Ugh Mom [knows]\n\n[ويا شوفير] اطلع هالطلعة => [And driver], go up this hill\nويا شوفير [اطلع] هالطلعة => And driver, [go up] this hill\nويا شوفير اطلع [هالطلعة] => And driver, go up [this hill]\n\n[والله] يخليلي هالطلعة => [And may God] bless this trip for me\nوالله [يخليلي هالطلعة] => And may God [bless this trip for me]\n\n[آه] الصيدلية اللي عند الدوار بتكون فاتحة => [Yeah], the pharmacy near the roundabout should be open\nآه [الصيدلية] اللي عند الدوار بتكون فاتحة => Yeah, [the pharmacy] near the roundabout should be open\nآه الصيدلية [اللي عند] الدوار بتكون فاتحة => Yeah, the pharmacy [near] the roundabout should be open\nآه الصيدلية اللي عند [الدوار] بتكون فاتحة => Yeah, the pharmacy near [the roundabout] should be open\nآه الصيدلية اللي عند الدوار [بتكون] فاتحة => Yeah, the pharmacy near the roundabout [should be] open\nآه الصيدلية اللي عند الدوار بتكون [فاتحة] => Yeah, the pharmacy near the roundabout should be [open]\n\n[بسرعة] أحسن ما تتأخروا عالدرسة => [Hurry up] so you're not late for school\nبسرعة [أحسن] ما تتأخروا عالدرسة => Hurry up [so] you're not late for school\nبسرعة أحسن [ما تتأخروا] عالدرسة => Hurry up so [you're not late] for school\nبسرعة أحسن ما تتأخروا [عالدرسة] => Hurry up so you're not late [for school]\n\n[آه] عصام حبيبي في إشي => [Yeah], Issam honey, is something wrong\nآه [عصام] حبيبي في إشي => Yeah, [Issam] honey, is something wrong\nآه عصام [حبيبي] في إشي => Yeah, Issam [honey], is something wrong\nآه عصام حبيبي [في إشي] => Yeah, Issam honey, [is something wrong]\n\n[لا] لا ما في إشي => [No], no, nothing\nلا [لا] ما في إشي => No, [no], nothing\nلا لا [ما في إشي] => No, no, [nothing]\n\n[بعد ما] وصلتهم عالدرسة => [After] I dropped them at school\nبعد ما [وصلتهم] عالدرسة => After [I dropped them] at school\nبعد ما وصلتهم [عالدرسة] => After I dropped them [at school]\n\n[برن علي سند] بيقولي ناسي كتابه => [Sanad called me] saying he forgot his book\nبرن علي سند [بيقولي] ناسي كتابه => Sanad called me [saying] he forgot his book\nبرن علي سند بيقولي [ناسي كتابه] => Sanad called me saying [he forgot his book]\n[برن علي] => called me # Arabic puts verb before subject, English reverses this\n[سند] => Sanad\n\n[فرجعت] جبته وهيني عند باب المدرسة => [So I went back] and got it and here I am at the school gate\nفرجعت [جبته] وهيني عند باب المدرسة => So I went back [got it] and here I am at the school gate\nفرجعت جبته [وهيني] عند باب المدرسة => So I went back and got it [and here I am] at the school gate\nفرجعت جبته وهيني [عند] باب المدرسة => So I went back and got it and here I am [at] the school gate\nفرجعت جبته وهيني عند [باب المدرسة] => So I went back and got it and here I am at [the school gate]\n\n[بس] هو سند بأي صف صار => [But] what grade is Sanad in now\nبس هو [سند] بأي صف صار => But what grade is [Sanad] in now\nبس هو سند [بأي صف] صار => But [what grade] is Sanad in now\nبس هو سند بأي صف [صار] => now # implies current state or became\n\n[اسم الله علي] وبأي شعبة => [God help me], and which section\nاسم الله علي [وبأي] شعبة => God help me, [and which] section\nاسم الله علي وبأي [شعبة] => God help me, and which [section]\n\n[تمام] تمام => [Okay], okay\nتمام [تمام] => Okay, [okay]\n\n[وبعدين] يلا بدنا نتصور هالسلبي => [And then], come on, let's take this selfie\nوبعدين [يلا] بدنا نتصور هالسلبي => And then, [come on], let's take this selfie\nوبعدين يلا [بدنا نتصور] هالسلبي => And then, come on, [let's take] this selfie\nوبعدين يلا بدنا نتصور [هالسلبي] => And then, come on, let's take [this selfie]\n\n[وشوفولي] كيف رح تفي عالصورة => [And see] how I'll look in the photo\nوشوفولي [كيف] رح تفي عالصورة => And see [how] I'll look in the photo\nوشوفولي كيف [رح تفي] عالصورة => And see how [I'll look] in the photo\nوشوفولي كيف رح تفي [عالصورة] => And see how I'll look [in the photo]\n\n[آه] عصام لا لا مش مدخل تلاتة => [Yeah], Issam, no, no, not entrance three\nآه [عصام] لا لا مش مدخل تلاتة => Yeah, [Issam], no, no, not entrance three\nآه عصام [لا لا] مش مدخل تلاتة => Yeah, Issam, [no, no], not entrance three\nآه عصام لا لا [مش] مدخل تلاتة => Yeah, Issam, no, no, [not] entrance three\nآه عصام لا لا مش [مدخل] تلاتة => Yeah, Issam, no, no, not [entrance] three\nآه عصام لا لا مش مدخل [تلاتة] => Yeah, Issam, no, no, not entrance [three]\n\n[مدخل] أربعة عرفتوا => [Entrance] four, you know\nمدخل [أربعة] عرفتوا => Entrance [four], you know\nمدخل أربعة [عرفتوا] => Entrance four, [you know]\n\n[اللي] عالشارع الفرعي => [The one] on the side street\nاللي [عالشارع الفرعي] => The one [on the side street]\n\n[خير] أبو يزن => [What's up], Abu Yazan\nخير [أبو يزن] => What's up, [Abu Yazan]\n\n[آه آه] الجلاية حطها على رقم اتنين => [Yeah, yeah], set the dishwasher to number two\nآه آه [الجلاية حطها] على رقم اتنين => Yeah, yeah, [set the dishwasher] to number two\nآه آه الجلاية حطها [على رقم] اتنين => Yeah, yeah, set the dishwasher [to number] two\nآه آه الجلاية حطها على رقم [اتنين] => Yeah, yeah, set the dishwasher to number [two]\n\n[أوعك] تحطها على رقم تلاتة => [Don't you dare] set it to number three\nأوعك [تحطها] على رمق تلاتة => Don't you dare [set it] to number three\nأوعك تحطها [على رقم] تلاتة => Don't you dare set it [to number] three\nأوعك تحطها على رقم [تلاتة] => Don't you dare set it to number [three]\n\n[أحسن] ما تعبي البيت مي وصابون => [Or you'll] fill the house with water and soap\nأحسن ما [تعبي] البيت مي وصابون => Or you'll [fill] the house with water and soap\nأحسن ما تعبي [البيت] مي وصابون => Or you'll fill [the house] with water and soap\nأحسن ما تعبي البيت [مي] وصابون => Or you'll fill the house with [water] and soap\nأحسن ما تعبي البيت مي [وصابون] => Or you'll fill the house with water [and soap]\n\n[يا الله] لا هيك مش طبيعي => [Oh my God], no, this isn't normal\nيا الله [لا] هيك مش طبيعي => Oh my God, [no], this isn't normal\nيا الله لا [هيك] مش طبيعي => Oh my God, no, [this] isn't normal\nيا الله لا هيك [مش] طبيعي => Oh my God, no, this [isn't] normal\nيا الله لا هيك مش [طبيعي] => Oh my God, no, this isn't [normal]\n\n[أي بيقولوا] جوزك على ما عودتيه => [They say] your husband is how you train him\nأي بيقولوا [جوزك] على ما عودتيه => They say [your husband] is how you train him\nأي بيقولوا جوزك [على ما] عودتيه => They say your husband [is how] you train him\nأي بيقولوا جوزك على ما [عودتيه] => They say your husband is how [you train him]\n\n[وابنك] على ما ربيتيه => [And your son] is how you raise him\nوابنك [على ما] ربيتيه => And your son [is how] you raise him\nوابنك على ما [ربيتيه] => And your son is how [you raise him]\n\n[شوفوا] شوفوا أبو انصاف => [Look], look at Abu Insaf\nشوفوا [شوفوا] أبو انصاف => Look, [look at] Abu Insaf\nشوفوا شوفوا [أبو انصاف] => Look, look at [Abu Insaf]\n\n[أنا] عودته يعمل كل إشي بالبيت => [I] trained him to do everything in the house\nأنا [عودته] يعمل كل إشي بالبيت => I [trained him] to do everything in the house\nأنا عودته [يعمل] كل إشي بالبيت => I trained him [to do] everything in the house\nأنا عودته يعمل [كل إشي] بالبيت => I trained him to do [everything] in the house\nأنا عودته يعمل كل إشي [بالبيت] => I trained him to do everything [in the house]\n\n[ويعرف] يدير حاله لحاله => [And know] how to manage himself on his own\nويعرف [يدير] حاله لحاله => And know [how to manage] himself on his own\nويعرف يدير [حاله] لحاله => And know how to manage [himself] on his own\nويعرف يدير حاله [لحاله] => And know how to manage himself [on his own]\n\n[شكلكم] لا عودتوا ولا ربيتوا => [It seems] you neither trained nor raised them\nشكلكم [لا عودتوا] ولا ربيتوا => It seems [you neither trained] nor raised them\nشكلكم لا عودتوا [ولا ربيتوا] => It seems you neither trained [nor raised them]\n\n[وأقولكم] وهي أحلى سيلفي للولو بس => [And let me tell you], here's the best selfie for Lulu only\nوأقولكم [وهي] أحلى سيلفي للولو بس => And let me tell you, [here's] the best selfie for Lulu only\nوأقولكم وهي [أحلى] سيلفي للولو بس => And let me tell you, here's [the best] selfie for Lulu only\nوأقولكم وهي أحلى [سيلفي] للولو بس => And let me tell you, here's the best [selfie] for Lulu only\nوأقولكم وهي أحلى سيلفي [للولو] بس => And let me tell you, here's the best selfie [for Lulu] only\nوأقولكم وهي أحلى سيلفي للولو [بس] => And let me tell you, here's the best selfie for Lulu [only]\n\n[أهلاً بالحلوين] شوفوا ما أحلاكم => [Welcome, beauties!] Look how beautiful you are\nأهلاً بالحلوين [شوفوا] ما أحلاكم => Welcome, beauties! [Look] how beautiful you are\nأهلاً بالحلوين شوفوا [ما أحلاكم] => Welcome, beauties! Look [how beautiful you are]\n\n[أنا وأبو يزن] مرتبين أموركم مية بالمية => [Abu Yazan and I] have arranged your affairs 100%\nأنا وأبو يزن [مرتبين] أموركم مية بالمية => Abu Yazan and I [have arranged] your affairs 100%\nأنا وأبو يزن مرتبين [أموركم] مية بالمية => Abu Yazan and I have arranged [your affairs] 100%\nأنا وأبو يزن مرتبين أموركم [مية بالمية] => Abu Yazan and I have arranged your affairs [100%]\n\n[ومش] محتاجين إشي => [And you don't] need anything\nومش [محتاجين] إشي => And you don't [need] anything\nومش محتاجين [إشي] => And you don't need [anything]\n\n[آه] بابا إحنا مع عمو عصام في أكل بالبيت => [Yeah], Dad, we're with Uncle Issam, is there food at home\nآه [بابا] إحنا مع عمو عصام في أكل بالبيت => Yeah, [Dad], we're with Uncle Issam, is there food at home\nآه بابا [إحنا مع] عمو عصام في أكل بالبيت => Yeah, Dad, [we're with] Uncle Issam, is there food at home\nآه بابا إحنا مع [عمو عصام] في أكل بالبيت => Yeah, Dad, we're with [Uncle Issam], is there food at home\nآه بابا إحنا مع عمو عصام [في أكل] بالبيت => Yeah, Dad, we're with Uncle Issam, [is there food] at home\nآه بابا إحنا مع عمو عصام في أكل [بالبيت] => Yeah, Dad, we're with Uncle Issam, is there food [at home]\n\n[بابا] المصاري يادوب كفوا للمدرسة => [Dad], the money barely covered school\nبابا [المصاري] يادوب كفوا للمدرسة => Dad, [the money] barely covered school\nبابا المصاري [يادوب] كفوا للمدرسة => Dad, the money [barely] covered school\nبابا المصاري يادوب [كفوا للمدرسة] => Dad, the money barely [covered school]\n\n[كمان] نجيب غدا => Should we get lunch [too]\nكمان [نجيب] غدا => Should [we get] lunch too\nكمان نجيب [غدا] => Should we get [lunch] too\n\n[طيب] أوك باي => [Okay], okay, bye\nطيب [أوك] باي => Okay, [okay], bye\nطيب أوك [باي] => Okay, okay, [bye]\n\n[خلص] تعالوا عنا البابا طالب لنا مقلوبة اليوم => [Fine], come to our place, Dad ordered Maqluba for us today\nخلص [تعالوا عنا] البابا طالب لنا مقلوبة اليوم => Fine, [come to our place], Dad ordered Maqluba for us today\nخلص تعالوا عنا [البابا] طالب لنا مقلوبة اليوم => Fine, come to our place, [Dad] ordered Maqluba for us today\nخلص تعالوا عنا البابا [طالب] لنا مقلوبة اليوم => Fine, come to our place, Dad [ordered] Maqluba for us today\nخلص تعالوا عنا البابا طالب [لنا] مقلوبة اليوم => Fine, come to our place, Dad ordered Maqluba [for us] today\nخلص تعالوا عنا البابا طالب لنا [مقلوبة] اليوم => Fine, come to our place, Dad ordered [Maqluba] for us today\nخلص تعالوا عنا البابا طالب لنا مقلوبة [اليوم] => Fine, come to our place, Dad ordered Maqluba for us [today]\n\n[نوكل] وبنروح عالتدريب => [We'll eat] and then go to training\nنوكل [وبنروح] عالتدريب => We'll eat [and then go] to training\nنوكل وبنروح [عالتدريب] => We'll eat and then go [to training]\n\n[يعني] طبعاً طبعاً أهلاً وسهلاً => [I mean], of course, of course, you're welcome\nيعني [طبعاً] طبعاً أهلاً وسهلاً => I mean, [of course], of course, you're welcome\nيعني طبعاً [طبعاً] أهلاً وسهلاً => I mean, of course, [of course], you're welcome\nيعني طبعاً طبعاً [أهلاً وسهلاً] => I mean, of course, of course, [you're welcome]\n\n[رح توكلوا] أزكى مقلوبة بحياتكم => [You'll eat] the tastiest Maqluba in your lives\nرح توكلوا [أزكى] مقلوبة بحياتكم => You'll eat [the tastiest] Maqluba in your lives\nرح توكلوا أزكى [مقلوبة] بحياتكم => You'll eat the tastiest [Maqluba] in your lives\nرح توكلوا أزكى مقلوبة [بحياتكم] => You'll eat the tastiest Maqluba [in your lives]\n\n[الله يخليكي] => [God bless you]\n\n[بشيلي إياها] الأولاد جوعانين => [Make it for me], the kids are hungry\nبشيلي إياها [الأولاد] جوعانين => Make it for me, [the kids] are hungry\nبشيلي إياها الأولاد [جوعانين] => Make it for me, the kids [are hungry]\n\n[وأنا] نسيت أوصيكي الصبح => [And I] forgot to tell you this morning\nوأنا [نسيت] أوصيكي الصبح => And I [forgot] to tell you this morning\nوأنا نسيت [أوصيكي] الصبح => And I forgot [to tell you] this morning\nوأنا نسيت أوصيكي [الصبح] => And I forgot to tell you [this morning]\n\n[ولا يهمك] عشان أم سند بس => [Don't worry], just for Um Sanad\nولا يهمك [عشان] أم سند بس => for\nولا يهمك عشان [أم سند] بس => Don't worry, just for [Um Sanad]\nولا يهمك عشان أم سند [بس] => just\n\n[احكيلي] شو بتحب عليها خضار => [Tell me] what vegetables you like on it\nاحكيلي [شو] بتحب عليها خضار => Tell me [what] vegetables you like on it\nاحكيلي شو [بتحب] عليها خضار => Tell me what vegetables [you like] on it\nاحكيلي شو بتحب [عليها] خضار => Tell me what vegetables you like [on it]\nاحكيلي شو بتحب عليها [خضار] => Tell me what [vegetables] you like on it\n\n[لأنه] أم سند آخر مرة وصتني إنه => [Because] Um Sanad last time told me that\nلأنه [أم سند] آخر مرة وصتني إنه => Because [Um Sanad] last time told me that\nلأنه أم سند [آخر مرة] وصتني إنه => Because Um Sanad [last time] told me that\nلأنه أم سند آخر مرة [وصتني] إنه => Because Um Sanad last time [told me] that\nلأنه أم سند آخر مرة وصتني [إنه] => Because Um Sanad last time told me [that]\n\n[حطي] كل إشي هو في أزكى من المقلوبة المليانة خضار => [Put] everything in—is there anything tastier than Maqluba full of vegetables\nحطي [كل إشي] هو في أزكى من المقلوبة المليانة خضار => Put [everything] in—is there anything tastier than Maqluba full of vegetables\nحطي كل إشي هو في [أزكى من] المقلوبة المليانة خضار => Put everything in—is there anything [tastier than] Maqluba full of vegetables\nحطي كل إشي هو في أزكى من [المقلوبة] المليانة خضار => Put everything in—is there anything tastier than [Maqluba] full of vegetables\nحطي كل إشي هو في أزكى من المقلوبة [المليانة] خضار => Put everything in—is there anything tastier than Maqluba [full] of vegetables\nحطي كل إشي هو في أزكى من المقلوبة المليانة [خضار] => Put everything in—is there anything tastier than Maqluba full of [vegetables]\n\n[واو] واو مش طبيعي => [Wow], wow, it's incredible\nواو [واو] مش طبيعي => Wow, [wow], it's incredible\nواو واو [مش طبيعي] => Wow, wow, [it's incredible]\n\nمش طبيعي [الأجواء] شو ساحرة في وادي رم => The atmosphere is so magical in Wadi Rum [The atmosphere] is so magical in Wadi رم\nمش طبيعي الأجواء شو ساحرة في وادي رم => The atmosphere [is so magical] in Wadi Rum\n[مش طبيعي] الأجواء شو ساحرة في وادي رم => incredible # custom translation for interjection\nمش طبيعي الأجواء [شو ساحرة] في وادي رم => The atmosphere [is so magical] in Wadi Rum\nمش طبيعي الأجواء شو ساحرة [في وادي رم] => The atmosphere is so magical [in Wadi Rum]\n\n[إشي] خيال => It's [something] out of a dream\nإشي [خيال] => It's something out of a [dream]\n\n[أيوه] يا أبو يزن => [Yes], Abu Yazan\nأيوه [يا أبو يزن] => Yes, [Abu Yazan]\n\n[محطوط] بالجرار الأول بالمطبخ باي => [It's] in the first drawer in the kitchen, bye\nمحطوط [بالجرار الأول] بالمطبخ باي => It's [in the first drawer] in the kitchen, bye\nمحطوط بالجرار الأول [بالمطبخ] باي => It's in the first drawer [in the kitchen], bye\nمحطوط بالجرار الأول بالمطبخ [باي] => It's in the first drawer in the kitchen, [bye]\n\n[وليش] موطية صوتك => [And why] are you lowering your voice\nوليش [موطية] صوتك => And why are you [lowering] your voice\nوليش موطية [صوتك] => And why are you lowering [your voice]\n\n[مش عارف] يدبر حاله آه => [He doesn't know] how to manage, huh\nمش عارف [يدبر حاله] آه => He doesn't know [how to manage], huh\nمش عارف يدبر حاله [آه] => He doesn't know how to manage, [huh]\n\n[آه] عصام آه اليوم تدريبه من الستة للتمانية باي => [Yeah], Issam, yeah, today his training is from six to eight, bye\nآه [عصام] آه اليوم تدريبه من الستة للتمانية باي => Yeah, [Issam], yeah, today his training is from six to eight, bye\nآه عصام [آه] اليوم تدريبه من الستة للتمانية باي => Yeah, Issam, [yeah], today his training is from six to eight, bye\nآه عصام آه [اليوم] تدريبه من الستة للتمانية باي => Yeah, Issam, yeah, [today] his training is from six to eight, bye\nآه عصام آه اليوم [تدريبه] من الستة للتمانية باي => Yeah, Issam, yeah, today [his training] is from six to eight, bye\nآه عصام آه اليوم تدريبه [من] الستة للتمانية باي => Yeah, Issam, yeah, today his training [from] six to eight, bye\nآه عصام آه اليوم تدريبه من [الستة] للتمانية باي => Yeah, Issam, yeah, today his training from [six] to eight, bye\nآه عصام آه اليوم تدريبه من الستة [للتمانية] باي => Yeah, Issam, yeah, today his training from six [to eight], bye\nآه عصام آه اليوم تدريبه من الستة للتمانية [باي] => Yeah, Issam, yeah, today his training from six to eight, [bye]\n\n[الله يسعده] أبو انصاف وما يبعده => [May God bless] Abu Insaf and keep him close\nالله يسعده [أبو انصاف] وما يبعده => May God bless [Abu Insaf] and keep him close\nالله يسعده أبو انصاف [وما يبعده] => May God bless Abu Insaf [and keep him close]\n\n[أيوه] عصام لا بوابة تمنية قلتلك => [Yes], Issam, no, gate eight I told you\nأيوه [عصام] لا بوابة تمنية قلتلك => Yes, [Issam], no, gate eight I told you\nأيوه عصام [لا] بوابة تمنية قلتلك => Yes, Issam, [no], gate eight I told you\nأيوه عصام لا [بوابة تمنية] قلتلك => Yes, Issam, no, [gate eight] I told you\nأيوه عصام لا بوابة تمنية [قلتلك] => Yes, Issam, no, gate eight [I told you]\n\n[الساعة] ستة معقول إنت => Six [o'clock], is it possible you...\nالساعة [ستة] معقول إنت => [Six] o'clock, is it possible you...\nالساعة ستة [معقول] إنت => Six o'clock, [is it possible] you...\nالساعة ستة معقول [إنت] => Six o'clock, is it possible [you]...\n\n[I] came all the way from the US to have some peace and quiet => [I] came all the way from the US to have some peace and quiet\nI [came] all the way from the US to have some peace and quiet => I [came] all the way from the US to have some peace and quiet\nI came [all the way] from the US to have some peace and quiet => I came [all the way] from the US to have some peace and quiet\nI came all the way from [the US] to have some peace and quiet => I came all the way from [the US] to have some peace and quiet\nI came all the way from the US [to have some peace and quiet] => I came all the way from the US [to have some peace and quiet]\n\n[وأنا] بعد جيت من الرياض => [And I] also came from Riyadh\nوأنا [بعد] جيت من الرياض => And I [also] came from Riyadh\nوأنا بعد [جيت] من الرياض => And I also [came] from Riyadh\nوأنا بعد جيت [من] الرياض => And I also came [from] Riyadh\nوأنا بعد جيت من [الرياض] => And I also came from [Riyadh]\n\n[أتأمل] وأهدي راسي دوشتونا => [To contemplate] and calm my head, you've made our heads spin\nأتأمل [وأهدي] راسي دوشتونا => To contemplate [and calm] my head, you've made our heads spin\nأتأمل وأهدي [راسي] دوشتونا => To contemplate and calm [my head], you've made our heads spin\nأتأمل وأهدي راسي [دوشتونا] => To contemplate and calm my head, [you've made our heads spin]\n\n[أوف] impossible => [Ugh] impossible\nأوف [impossible] => Ugh [impossible]\n\n[عم بيخربوا] علينا الـ tranquility تبعتنا => [They're ruining] our tranquility\nعم بيخربوا [علينا] الـ tranquility تبعتنا => They're ruining [for us] our tranquility\nعم بيخربوا علينا [الـ tranquility تبعتنا] => They're ruining [our tranquility]\n\n[مش طبيعي] => [It's unbelievable]\nمش [طبيعي] => natural, normal\n\n[و] هاي وصلت المقلوبة => [And] here's the Maqluba\nو [هاي وصلت] المقلوبة => And [here's] the Maqluba\nوهاي وصلت [المقلوبة] => And here's [the Maqluba]\n\n[خلينا] نعتبرها غدا وعشا كنوع من التوفير => [Let's] consider it lunch and dinner as a way of saving\nخلينا [نعتبرها] غدا وعشا كنوع من التوفير => Let's [consider it] lunch and dinner as a way of saving\nخلينا نعتبرها [غدا] وعشا كنوع من التوفير => Let's consider it [lunch] and dinner as a way of saving\nخلينا نعتبرها غدا [وعشا] كنوع من التوفير => Let's consider it lunch [and dinner] as a way of saving\nخلينا نعتبرها غدا وعشا [كنوع من التوفير] => Let's consider it lunch and dinner [as a way of saving]\n\n[ومنخلي] للشباب بس يخلصوا تدريب => [And we'll leave] some for the boys when they finish training\nومنخلي [للشباب] بس يخلصوا تدريب => And we'll leave [for the boys] when they finish training\nومنخلي للشباب [بس] يخلصوا تدريب => And we'll leave some for the boys [when] they finish training\nومنخلي للشباب بس [يخلصوا] تدريب => And we'll leave some for the boys when [they finish] training\nومنخلي للشباب بس يخلصوا [تدريب] => And we'll leave some for the boys when they finish [training]\n\n[يا سلام] شوفوا التنظيم => [Wow], look at the organization\nيا سلام [شوفوا] التنظيم => Wow, [look at] the organization\nيا سلام شوفوا [التنظيم] => Wow, look at [the organization]\n\n[شوفوا] الترتيب شوفوا الحلاوة => [Look at] the arrangement, look at the beauty\nشوفوا [الترتيب] شوفوا الحلاوة => Look at [the arrangement], look at the beauty\nشوفوا الترتيب [شوفوا] الحلاوة => Look at the arrangement, [look at] the beauty\nشوفوا الترتيب شوفوا [الحلاوة] => Look at the arrangement, look at [the beauty]\n\n[بابا] بس سؤال => [Dad], just a question\nبابا [بس] سؤال => Dad, [just] a question\nبابا بس [سؤال] => Dad, just [a question]\n\n[هاي] المقلوبة فيها بتنجان => Does [this] Maqluba have eggplant\nهاي [المقلوبة] فيها بتنجان => Does this [Maqluba] have eggplant\nهاي المقلوبة [فيها] بتنجان => Does this Maqluba [have] eggplant\nهاي المقلوبة فيها [بتنجان] => Does this Maqluba have [eggplant]\n\n[أكيد] بابا قلتلها حطي كل إشي => [Of course], son, I told her to put everything in\nأكيد [بابا] قلتلها حطي كل إشي => Of course, [son], I told her to put everything in\nأكيد بابا [قلتلها] حطي كل إشي => Of course, son, [I told her] to put everything in\nأكيد بابا قلتلها [حطي] كل إشي => Of course, son, I told her [to put] everything in\nأكيد بابا قلتلها حطي [كل إشي] => Of course, son, I told her to put [everything] in\n\n[شفتي] قديش زاكية بتشهي => [See] how delicious and appetizing it is\nشفتي [قديش] زاكية بتشهي => See [how] delicious and appetizing it is\nشفتي قديش [زاكية] بتشهي => See how [delicious] and appetizing it is\nشفتي قديش زاكية [بتشهي] => See how delicious [and appetizing] it is\n\n[بابا] أنا عندي حساسية من البتنجان => [Dad], I'm allergic to eggplant\nبابا [أنا] عندي حساسية من البتنجان => Dad, [I'm] allergic to eggplant\nبابا أنا عندي [حساسية] من البتنجان => Dad, I'm [allergic] to eggplant\nبابا أنا عندي حساسية [من البتنجان] => Dad, I'm allergic [to eggplant]\n\n[ليش] عملت هيك => [Why] did you do that\nليش [عملت] هيك => Why [did you do] that\nليش عملت [هيك] => Why did you do [that]\n\n[واو] ما أحلاهم => [Wow], how beautiful they are\nواو [ما] أحلاهم => Wow, [how] beautiful they are\nواو ما [أحلاهم] => Wow, how [beautiful they are]\n\n[يا ريت] لو الأولاد معنا => [I wish] the kids were with us\nيا ريت لو [الأولاد] معنا => I wish if [the kids] were with us\nيا ريت لو الأولاد [معنا] => I wish the kids [were with us]\n\n[فكرك] مدبرين حالهم => [Do you think] they're managing\nفكرك [مدبرين حالهم] => Do you think [they're managing]\n\n[ما دام] ما في تلفونات معناته الأمور تمام => [As long as] there are no phone calls, it means things are fine\nما دام [ما في] تلفونات معناته الأمور تمام => As long as [there are no] phone calls, it means things are fine\nما دام ما في [تلفونات] معناته الأمور تمام => As long as there are no [phone calls], it means things are fine\nما دام ما في تلفونات [معناته] الأمور تمام => As long as there are no phone calls, [it means] things are fine\nما دام ما في تلفونات معناته [الأمور] تمام => As long as there are no phone calls, it means [things] are fine\nما دام ما في تلفونات معناته الأمور [تمام] => As long as there are no phone calls, it means things [are fine]\n\n[خلص] أم سند روقي ارتاحي => [Come on], Um Sanad, relax, rest\nخلص [أم سند] روقي ارتاحي => Come on, [Um Sanad], relax, rest\nخلص أم سند [روقي] ارتاحي => Come on, Um Sanad, [relax], rest\nخلص أم سند روقي [ارتاحي] => Come on, Um Sanad, relax, [rest]\n\n[مضبوط] مضبوط أكيد أكيد كل إشي تمام => [Right] right, definitely, definitely, everything is fine\nمضبوط [مضبوط] أكيد أكيد كل إشي تمام => Right [right] definitely, definitely, everything is fine\nمضبوط مضبوط [أكيد] أكيد كل إشي تمام => Right, right [definitely] definitely, everything is fine\nمضبوط مضبوط أكيد [أكيد] كل إشي تمام => Right, right, definitely [definitely] everything is fine\nمضبوط مضبوط أكيد أكيد [كل إشي] تمام => Right, right, definitely, definitely [everything] is fine\nمضبوط مضبوط أكيد أكيد كل إشي [تمام] => Right, right, definitely, definitely everything [is fine]\n\n[عفواً] بلا زغرة قديش عمرها => [Excuse me] no offense, how old is she\nعفواً [بلا زغرة] قديش عمرها => Excuse me [no offense] how old is she\nعفضاً بلا زغرة [قديش عمرها] => Excuse me, no offense [how old is she]\n\n[أربعة عشر] أو خمسة عشر => [Fourteen] or fifteen\nأربعة عشر [أو] خمسة عشر => Fourteen [or] fifteen\nأربعة عشر أو [خمسة عشر] => Fourteen or [fifteen]\n\n[ستة عشر] => [Sixteen]\n\n[وشو] نوع دمها => [And what's] her blood type\nوشو [نوع دمها] => And what's [her blood type]\n\n[أخف] من دمها ما في يعني أخف نوع => [lighter] than her blood, so the lightest type\nأخف [من] دمها ما في يعني أخف نوع => lighter [than] her blood, so the lightest type\nأخف من [دمها] ما في يعني أخف نوع => lighter than [her blood] so the lightest type\nأخف من دمها [ما في] يعني أخف نوع => lighter than her blood [there's nothing] so the lightest type\nأخف من دمها ما في [يعني] أخف نوع => lighter than her blood there's nothing [so] the lightest type\nأخف من دمها ما في يعني [أخف نوع] => lighter than her blood, there's nothing so [the lightest type]\n\n[وبلاش] => [And for free]\n\n[هيو هذا] الأب اللي مش عارف إنه بنته عندها حساسية => [Here's] the father who doesn't know his daughter has an allergy\nهيو هذا [الأب] اللي مش عارف إنه بنته عندها حساسية => Here's [the father] who doesn't know his daughter has an allergy\nهيو هذا الأب [اللي] مش عارف إنه بنته عندها حساسية => Here's the father [who] doesn't know his daughter has an allergy\nهيو هذا الأب اللي [مش عارف] إنه بنته عندها حساسية => Here's the father who [doesn't know] his daughter has an allergy\nهيو هذا الأب اللي مش عارف [إنه] بنته عندها حساسية => Here's the father who doesn't know [that] his daughter has an allergy\nهيو هذا الأب اللي مش عارف إنه [بنته] عندها حساسية => Here's the father who doesn't know that [his daughter] has an allergy\nهيو هذا الأب اللي مش عارف إنه بنته [عندها حساسية] => Here's the father who doesn't know that his daughter [has an allergy]\n\n[لأ وكمان] ما عنده ولا معلومة مفيدة => [And he] doesn't have a single piece of useful information\nلأ وكمان [ما عنده] ولا معلومة مفيدة => And he [doesn't have] a single piece of useful information\nلأ وكمان ما عنده [ولا] معلومة مفيدة => And he doesn't have [a single] piece of useful information\nلأ وكمان ما عنده ولا [معلومة مفيدة] => And he doesn't have a single piece of [useful information]\n\n[أيوه] سند شو بدك بابا => [Yes] Sanad, what do you want, son\nأيوه [سند] شو بدك بابا => Yes [Sanad] what do you want, son\nأيوه سند [شو بدك] بابا => Yes, Sanad [what do you want] son\nأيوه سند شو بدك [بابا] => Yes, Sanad, what do you want [son]\n\n[وينك] بابا الساعة تسعة => [Where are you] Dad? It's nine o'clock\nوينك [بابا] الساعة تسعة => Where are you, [Dad] It's nine o'clock\nوينك بابا [الساعة تسعة] => Where are you, Dad? [It's nine o'clock]\n\n[صارلي ساعة] بستناك على باب الملعب تيجي تاخدني => [for an hour] waiting for you at the stadium gate to come pick me up # Arabic places duration before the verb; English places it after\nصارلي ساعة [بستناك] على باب الملعب تيجي تاخدني => for an hour [I've been waiting for you] at the stadium gate to come pick me up # verb with implied subject/tense\nصارلي ساعة بستناك [على باب الملعب] تيجي تاخدني => for an hour waiting for you [at the stadium gate] to come pick me up\nصارلي ساعة بستناك على باب الملعب [تيجي تاخدني] => for an hour waiting for you at the stadium gate [to come pick me up]\n\n[آخ] نسيت يلا يلا جاي => [Oh], I forgot, I'm coming, I'm coming\nآخ [نسيت] يلا يلا جاي => Oh, [I forgot], I'm coming, I'm coming\nآخ نسيت [يلا يلا جاي] => Oh, I forgot, [I'm coming, I'm coming]\n\n[حلوة] هاي اللعبة صح سمور => This game [is nice], right Samour\nحلوة [هاي] اللعبة صح سمور => [This] game is nice, right Samour\nحلوة هاي [اللعبة] صح سمور => This [game] is nice, right Samour\nحلوة هاي اللعبة [صح] سمور => This game is nice, [right] Samour\nحلوة هاي اللعبة صح [سمور] => This game is nice, right [Samour]\n\n[رنا] انشري الغسيل => [Rana], hang the laundry\nرنا [انشري] الغسيل => Rana, [hang] the laundry\nرنا انشري [الغسيل] => Rana, hang [the laundry]\n\n[يلا تعال معي] أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة => [Come with me] to take the school clothes out of the washer so they have time to dry for tomorrow\nيلا تعال معي [أطلع أواعي المدرسة من الغسالة] عشان يلحق ينشف بكرة => Come with me [to take the school clothes out of the washer] so they have time to dry for tomorrow\nيلا تعال معي أطلع أواعي المدرسة من الغسالة [عشان يلحق] ينشف بكرة => Come with me to take the school clothes out of the washer [so they have time] to dry for tomorrow\nيلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق [ينشف] بكرة => Come with me to take the school clothes out of the washer so they have time [to dry] for tomorrow\nيلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف [بكرة] => Come with me to take the school clothes out of the washer so they have time to dry [for tomorrow]\n\n[هذا] الغسيل ناشف => [This] laundry is dry\nهذا [الغسيل] ناشف => This [laundry] is dry\nهذا الغسيل [ناشف] => This laundry [is dry]\n\n[ووسخ] => [And dirty]\n\n[بابا] => [Dad]\n\nهاي [أمكم] قربت توصل => [Your mom] is about to arrive\nهاي أمكم [قربت توصل] => Your mom [is about to arrive]\n\n[وقفوا] هيك أشوف => [Stand] like this, let me see\nوقفوا [هيك] أشوف => Stand [like this], let me see\nوقفوا هيك [أشوف] => Stand like this, [let me see]\n\n[واحد] اتنين تلاتة => [One], two, three\nواحد [اتنين] تلاتة => One, [two], three\nواحد اتنين [تلاتة] => One, two, [three]\n\n[ممتاز] سلمتني تلاتة ورح أسلمها تلاتة => [Excellent], she handed me three and I'll hand her back three\nممتاز [سلمتني] تلاتة ورح أسلمها تلاتة => Excellent, [she handed me] three and I'll hand her back three\nممتاز سلمتني [تلاتة] ورح أسلمها تلاتة => Excellent, she handed me [three] and I'll hand her back three\nممتاز سلمتني تلاتة [ورح أسلمها] تلاتة => Excellent, she handed me three [and I'll hand her back] three\nممتاز سلمتني تلاتة ورح أسلمها [تلاتة] => Excellent, she handed me three and I'll hand her back [three]\n\n[إحنا] بالسليم => [We're] in the clear\nإحنا [بالسليم] => We're [in the clear]\n\n[وهاي] وصل الدليفري => [And] the delivery has arrived\nوهاي [وصل] الدليفري => And the delivery [has arrived]\nوهاي وصل [الدليفري] => And [the delivery] has arrived\n\n[يلا يلا بسرعة] يا ولاد بدي البيت يضوي ضوي => [Hurry up], kids, I want the house to shine\nيلا يلا بسرعة [يا ولاد] بدي البيت يضوي ضوي => Hurry up, [kids], I want the house to shine\nيلا يلا بسرعة يا ولاد [بدي] البيت يضوي ضوي => Hurry up, kids, [I want] the house to shine\nيلا يلا بسرعة يا ولاد بدي [البيت] يضوي ضوي => Hurry up, kids, I want [the house] to shine\nيلا يلا بسرعة يا ولاد بدي البيت [يضوي ضوي] => Hurry up, kids, I want the house [to shine]\n\n[وهي] شغلنا الجلاية وكل الأمور تمام => [And] we've started the dishwasher and everything is fine\nوهي [شغلنا] الجلاية وكل الأمور تمام => And [we've started] the dishwasher and everything is fine\nوهي شغلنا [الجلاية] وكل الأمور تمام => And we've started [the dishwasher] and everything is fine\nوهي شغلنا الجلاية [وكل الأمور] تمام => And we've started the dishwasher [and everything] is fine\nوهي شغلنا الجلاية وكل الأمور [تمام] => And we've started the dishwasher and everything [is fine]\n\n[ماما] اشتقنالك كتير => [Mom], we missed you so much\nماما [اشتقنالك] كتير => Mom, [we missed you] so much\nماما اشتقنالك [كتير] => Mom, we missed you [so much]\n\n[اتشعطلنا] بدونك اتبهدلنا => [We were lost] without you, we were a mess\nاتشعطلنا [بدونك] اتبهدلنا => We were lost [without you], we were a mess\nاتشعطلنا بدونك [اتبهدلنا] => We were lost without you, [we were a mess]\n\n[بس] يا ولد اعتبروني أخدت دورة تعريفية => [Enough], boy, consider that I took an introductory course\nبس [يا ولد] اعتبروني أخدت دورة تعريفية => Enough, [boy], consider that I took an introductory course\nبس يا ولد [اعتبروني] أخدت دورة تعريفية => Enough, boy, [consider that I] took an introductory course\nبس يا ولد اعتبروني [أخدت] دورة تعريفية => Enough, boy, consider that I [took] an introductory course\nبس يا ولد اعتبروني أخدت [دورة تعريفية] => Enough, boy, consider that I took [an introductory course]\n\n[وهلا] أنا جاهز للامتحان الجاي => [And now] I'm ready for the next exam\nوهلا [أنا جاهز] للامتحان الجاي => And now [I'm ready] for the next exam\nوهلا أنا جاهز [للامتحان الجاي] => And now I'm ready [for the next exam]\n\n[بصراحة] إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم => [Honestly], we really appreciate your hard work, effort, and love\nبصراحة [إحنا] كتير بنقدر تعبكم وشغلكم ومحبتكم => Honestly, [we] really appreciate your hard work, effort, and love\nبصراحة إحنا [كتير] بنقدر تعبكم وشغلكم ومحبتكم => Honestly, we [really] appreciate your hard work, effort, and love\nبصراحة إحنا كتير [بنقدر] تعبكم وشغلكم ومحبتكم => Honestly, we really [appreciate] your hard work, effort, and love\nبصراحة إحنا كتير بنقدر [تعبكم] وشغلكم ومحبتكم => Honestly, we really appreciate [your hard work], effort, and love\nبصراحة إحنا كتير بنقدر تعبكم [وشغلكم] ومحبتكم => Honestly, we really appreciate your hard work, [effort], and love\nبصراحة إحنا كتير بنقدر تعبكم وشغلكم [ومحبتكم] => Honestly, we really appreciate your hard work, effort, [and love]\n\n[تحية] إكرام وإجلال لكل أم => [A salute] of honor and respect to every mother\nتحية [إكرام] وإجلال لكل أم => A salute of [honor] and respect to every mother\nتحية إكرام [وإجلال] لكل أم => A salute of honor [and respect] to every mother\nتحية إكرام وإجلال [لكل] أم => A salute of honor and respect [to every] mother\nتحية إكرام وإجلال لكل [أم] => A salute of honor and respect to every [mother]\n\n[وتحية كبيرة] كمان لكل أب زيي يعني => [And a big salute] also to every father like me, I mean\nوتحية [كبيرة] كمان لكل أب زيي يعني => And a [big] salute also to every father like me, I mean\nوتحية كبيرة [كمان] لكل أب زيي يعني => And a big salute [also] to every father like me, I mean\nوتحية كبيرة كمان [لكل] أب زيي يعني => And a big salute also [to every] father like me, I mean\nوتحية كبيرة كمان لكل [أب] زيي يعني => And a big salute also to every [father] like me, I mean\nوتحية كبيرة كمان لكل أب [زيي] يعني => And a big salute also to every father [like me], I mean\nوتحية كبيرة كمان لكل أب زيي [يعني] => And a big salute also to every father like me, [I mean]\n\n[متحمل] مسؤولية الأولاد والبيت => [Who takes] responsibility for the kids and the house\nمتحمل [مسؤولية] الأولاد والبيت => Who takes [responsibility] for the kids and the house\nمتحمل مسؤولية [الأولاد] والبيت => Who takes responsibility [for the kids] and the house\nمتحمل مسؤولية الأولاد [والبيت] => Who takes responsibility for the kids [and the house]\n\n[صحيح] وهاي أحلى ورد لأحلى وردة => [True], and here are the most beautiful flowers for the most beautiful flower\nصحيح [وهاي] أحلى ورد لأحلى وردة => True, [and here] are the most beautiful flowers for the most beautiful flower\nصحيح وهاي [أحلى ورد] لأحلى وردة => True, and here are [the most beautiful flowers] for the most beautiful flower\nصحيح وهاي أحلى ورد [لأحلى وردة] => True, and here are the most beautiful flowers [for the most beautiful flower]\n\n[ومنا] كمان تفضلي => [And from us] too, here you go\nومنا [كمان] تفضلي => And from us [too], here you go\nومنا كمان [تفضلي] => And from us too, [here you go]\n\n[شو] وينه أبو انصاف => [Wait], where is Abu Insaf\nشو [وينه] أبو انصاف => Wait, [where is] Abu Insaf\nشو وينه [أبو انصاف] => Wait, where is [Abu Insaf]\n\n[الأمير] اللي مدبر حاله اللي ما أزعجني => [The prince] who manages himself, who didn't bother me\nالأمير [اللي] مدبر حاله اللي ما أزعجني => The prince [who] manages himself, who didn't bother me\nالأمير اللي [مدبر حاله] اللي ما أزعجني => The prince who [manages himself], who didn't bother me\nالأمير اللي مدبر حاله [اللي] ما أزعجني => The prince who manages himself, [who] didn't bother me\nالأمير اللي مدبر حاله اللي [ما أزعجني] => The prince who manages himself, who [didn't bother me]\n\n[ولا] رن علي ولا مرة => [Or] call me once\nولا [رن علي] ولا مرة => Or [call me] once\nولا رن علي [ولا مرة] => Or call me [once]\n\n[رنيت عليه] بس ما كان موجود بالبيت => [I called him] but he wasn't home\nرنيت عليه [بس] ما كان موجود بالبيت => I called him [but] he wasn't home\nرنيت عليه بس [ما كان] موجود بالبيت => I called him but [he wasn't] home\nرنيت عليه بس ما كان [موجود بالبيت] => I called him but he wasn't [home]\n\n[حمدلله عالسلامة] لولو => [Welcome back], Lulu\nحمدلله عالسلامة [لولو] => Welcome back, [Lulu]\n\n[ليش] وين كاين حضرتك => [Where] have you been, sir\nليش [وين كاين] حضرتك => Where [have you been], sir\nليش وين كاين [حضرتك] => Where have you been, [sir]\n\n[هو أنا] مجنون أظل قاعد في البيت زي الأطرش بالزفة => [Am I] crazy to stay at home like a stranger at a wedding\nهو أنا [مجنون] أظل قاعد في البيت زي الأطرش بالزفة => Am I [crazy] to stay at home like a stranger at a wedding\nهو أنا مجنون [أظل قاعد] في البيت زي الأطرش بالزفة => Am I crazy [to stay] at home like a stranger at a wedding\nهو أنا مجنون أظل قاعد [في البيت] زي الأطرش بالزفة => Am I crazy to stay [at home] like a stranger at a wedding\nهو أنا مجنون أظل قاعد في البيت [زي الأطرش بالزفة] => Am I crazy to stay at home [like a stranger at a wedding]\n\n[حجزت] يومين بالأوتيل عقبال ما ترجعي => [I booked] two days at a hotel until you returned\nحجزت [يومين] بالأوتيل عقبال ما ترجعي => I booked [two days] at a hotel until you returned\nحجزت يومين [بالأوتيل] عقبال ما ترجعي => I booked two days [at a hotel] until you returned\nحجزت يومين بالأوتيل [عقبال ما ترجعي] => I booked two days at a hotel [until you returned]\n\n[قلتي لنا] جوزك على ما عودتيه آه => [You told us] your husband is how you train him, huh\nقلتي لنا [جوزك] على ما عودتيه آه => You told us [your husband] is how you train him, huh\nقلتي لنا جوزك [على ما عودتيه] آه => You told us your husband [is how you train him], huh\nقلتي لنا جوزك على ما عودتيه [آه] => You told us your husband is how you train him [huh]\n\n[لا] قلتلك ما تحط الجلاية على تلاتات => [No], I told you don't put the dishwasher on three\nلا [قلتلك] ما تحط الجلاية على تلاتات => No, [I told you] don't put the dishwasher on three\nلا قلتلك [ما تحط] الجلاية على تلاتات => No, I told you [don't put] the dishwasher on three\nلا قلتلك ما تحط [الجلاية] على تلاتات => No, I told you don't put [the dishwasher] on three\nلا قلتلك ما تحط الجلاية [على تلاتات] => No, I told you don't put the dishwasher [on three]\n\n[يي يي] نسيت نسيت هيني طالع أطفيها => [Oh, oh], I forgot, I forgot, I'm going up to turn it off\nيي يي [نسيت نسيت] هيني طالع أطفيها => Oh, oh, [I forgot, I forgot], I'm going up to turn it off\nيي يي نسيت نسيت [هيني طالع] أطفيها => Oh, oh, I forgot, I forgot, [I'm going up] to turn it off\nيي يي نسيت نسيت هيني طالع [أطفيها] => Oh, oh, I forgot, I forgot, I'm going up [to turn it off]\n\n",
     "lessons": "# Can I Use Your Phone?\n00:02 ماما\n00:03 بقدر ابعت من عندك\n00:04 لأم رنا فايز\n00:05 بتحتاج لنوم بس موبايلها مفلل\n00:07 أكيد حبيبتي\n00:08 هي موبايلي عالطاولة\n\n# I Need a Break\n00:12 بيني وبينك أنا كتير مرهقة\n00:14 نفسي آخد يومين إجازة\n00:16 وأقعد بالغرفة وما أعمل ولا إشي\n00:18 ليش ما نطلع يومين نغير جو\n\n# Too Much to Do\n00:20 أكيد ما رح يزبط\n00:21 لو تعرفي شو علي\n00:23 شو بعتي\n00:25 آه آه عم ببعت\n\n# Training Schedules\n00:27 ماما بدي أقولك أوقات التدريبات\n00:29 الأسبوع الجاي عشان توصيليني\n00:31 استنى شوي بس أخلص\n00:33 عشان أسجلهم عندي\n00:34 بس تخلصي الحقني\n\n# A Surprise Delivery\n00:38 إيه الست دينا\n00:39 نعم تفضل\n00:41 هذا البوكس لحضرتك\n00:43 إلي شكراً\n\n# Is It My Birthday?\n00:46 ليكون اليوم عيدي وأنا مش دارية\n00:48 شو عيدي\n00:49 ويني ووين عيدي\n00:51 ماما إنتي بتستاهلي ترتاحي\n\n# The Gift of Wadi Rum\n00:54 عشان هيك هاي رحلة يومين\n00:56 لوادي رم هدية منا إلك\n01:00 بنحبك سالي وسند وسامر\n01:03 حبايبي\n\n# A Touching Gesture\n01:07 شكراً كتير حبايبي\n01:09 الفكرة لحالها وإنكم دفعتوا من مصروفكم\n01:11 كتير أثرت فيي\n01:13 بس المرة الجاي ست سالي\n01:15 ما تقرئي مسجاتي من وراي آه\n\n# I Have to Postpone\n01:17 سوري ما كان قصدي\n01:19 بعرف بعرف حبيبتي\n01:21 بس أنا رح أضطر أأجل الرحلة\n01:23 لأنه هذا الأسبوع بالذات إنتو بتعرفوا\n\n# The Kids' Busy Week\n01:25 سند عنده تدريبات كتير\n01:27 وسالي عندك المسرحية\n01:29 وسامر عنده موعد دكتور\n01:30 هذا غير الشغل\n\n# Dad is Here\n01:32 شو هذا الحكي يا دينا\n01:33 عيب أنا موجود\n01:35 شو مفكرين الأمور ما بتمشي من دونك\n01:39 آه ماما وما تحكيلي هم إشي\n\n# The Support System\n01:41 والبابا موجود\n01:42 ولو\n01:43 وأم يزن وأم انصاف كمان عم بحضروا حالهم يجيوا معك\n01:47 عن جد حبايبي إنتو\n\n# The Road Trip Song\n01:52 ويا شوفير دوس دوس\n01:54 الله يبعتلك عروس\n01:57 ويا شوفير اطلع هالطلعة\n01:59 والله يخليلي هالطلعة\n\n# Lunch Money\n02:02 بابا وين السندويشات\n02:03 وين الفواكه وين العصير\n02:05 طب طب خذ\n02:07 خذ يا بابا هاي زيادة بالمصروف\n02:09 وبدي إياك هاليومين تشتري اللي بدك إياه\n\n# School Memories\n02:11 ما في أزكى من سندويشات الفلافل\n02:14 اللي كنا نأكلها بالمدرسة\n02:16 من تحت إيدين أبو خليل\n02:17 وين رنا يا رنا\n02:18 وينك يا بابا\n\n# Hair Crisis\n02:20 بابا الكريم خلص\n02:22 وشعري ما عم بظبط\n02:23 وأنا ما رح أروح عالدرسة هيك\n02:25 طيب وشو المطلوب مني يعني\n02:27 شو أعملك يعني\n\n# Where is the Pharmacy?\n02:28 جيبيلي الكريم من الصيدلية\n02:30 أو ما بروح عالدرسة\n02:32 هلا طيب هي وينها الصيدلية أصلاً\n02:34 أوف الماما بتعرف\n\n# Directions from Mom\n02:40 ويا شوفير اطلع هالطلعة\n02:42 والله يخليلي هالطلعة\n02:44 آه الصيدلية اللي عند الدوار بتكون فاتحة\n02:46 بسرعة أحسن ما تتأخروا عالدرسة\n\n# The Forgotten Book\n02:50 آه عصام حبيبي في إشي\n02:52 لا لا ما في إشي\n02:54 بعد ما وصلتهم عالدرسة\n02:56 برن علي سند بيقولي ناسي كتابه\n02:58 فرجعت جبته وهيني عند باب المدرسة\n\n# Which Grade is He In?\n03:01 بس هو سند بأي صف صار\n03:03 اسم الله علي وبأي شعبة\n03:06 تمام تمام\n03:08 وبعدين يلا بدنا نتصور هالسلبي\n\n# Which Entrance?\n03:11 وشوفولي كيف رح تفي عالصورة\n03:14 آه عصام لا لا مش مدخل تلاتة\n03:17 مدخل أربعة عرفتوا\n03:18 اللي عالشارع الفرعي\n\n# Dishwasher Troubles\n03:23 خير أبو يزن\n03:24 آه آه الجلاية حطها على رقم اتنين\n03:26 أوعك تحطها على رقم تلاتة\n03:28 أحسن ما تعبي البيت مي وصابون\n\n# Training the Husband\n03:30 يا الله لا هيك مش طبيعي\n03:34 أي بيقولوا جوزك على ما عودتيه\n03:36 وابنك على ما ربيتيه\n03:38 شوفوا شوفوا أبو انصاف\n03:40 أنا عودته يعمل كل إشي بالبيت\n\n# Managing Alone\n03:43 ويعرف يدير حاله لحاله\n03:45 شكلكم لا عودتوا ولا ربيتوا\n03:49 وأقولكم وهي أحلى سيلفي للولو بس\n03:55 أهلاً بالحلوين شوفوا ما أحلاكم\n\n# No Food at Home\n03:58 أنا وأبو يزن مرتبين أموركم مية بالمية\n04:02 ومش محتاجين إشي\n04:05 آه بابا إحنا مع عمو عصام في أكل بالبيت\n04:08 بابا المصاري يادوب كفوا للمدرسة\n04:10 كمان نجيب غدا\n\n# Neighborly Invitation\n04:13 طيب أوك باي\n04:16 خلص تعالوا عنا البابا طالب لنا مقلوبة اليوم\n04:19 نوكل وبنروح عالتدريب\n04:22 يعني طبعاً طبعاً أهلاً وسهلاً\n04:26 رح توكلوا أزكى مقلوبة بحياتكم\n\n# Cooking Preferences\n04:29 الله يخليكي\n04:33 بشيلي إياها الأولاد جوعانين\n04:35 وأنا نسيت أوصيكي الصبح\n04:37 ولا يهمك عشان أم سند بس\n04:39 احكيلي شو بتحب عليها خضار\n\n# The Perfect Maqluba\n04:42 لأنه أم سند آخر مرة وصتني إنه\n04:44 حطي كل إشي هو في أزكى من المقلوبة المليانة خضار\n04:53 واو واو مش طبيعي\n04:55 مش طبيعي الأجواء شو ساحرة في وادي رم\n04:59 إشي خيال\n\n# Whispering on the Phone\n05:01 أيوه يا أبو يزن\n05:03 محطوط بالجرار الأول بالمطبخ باي\n05:06 وليش موطية صوتك\n05:09 مش عارف يدبر حاله آه\n05:12 آه عصام آه اليوم تدريبه من الستة للتمانية باي\n\n# Seeking Peace and Quiet\n05:17 الله يسعده أبو انصاف وما يبعده\n05:21 أيوه عصام لا بوابة تمنية قلتلك\n05:26 الساعة ستة معقول إنت\n05:28 I came all the way from the US to have some peace and quiet\n05:32 وأنا بعد جيت من الرياض\n\n# Ruining the Tranquility\n05:34 أتأمل وأهدي راسي دوشتونا\n05:37 أوف impossible\n05:40 عم بيخربوا علينا الـ tranquility تبعتنا\n05:43 مش طبيعي\n\n# Serving the Meal\n05:48 وهاي وصلت المقلوبة\n05:50 خلينا نعتبرها غدا وعشا كنوع من التوفير\n05:55 ومنخلي للشباب بس يخلصوا تدريب\n05:57 يا سلام شوفوا التنظيم\n06:00 شوفوا الترتيب شوفوا الحلاوة\n\n# The Eggplant Question\n06:05 بابا بس سؤال\n06:07 هاي المقلوبة فيها بتنجان\n06:09 أكيد بابا قلتلها حطي كل إشي\n06:12 شفتي قديش زاكية بتشهي\n\n# The Allergy Crisis\n06:16 بابا أنا عندي حساسية من البتنجان\n06:20 ليش عملت هيك\n06:24 واو ما أحلاهم\n06:27 يا ريت لو الأولاد معنا\n\n# Enjoy the Moment\n06:29 فكرك مدبرين حالهم\n06:31 ما دام ما في تلفونات معناته الأمور تمام\n06:33 خلص أم سند روقي ارتاحي\n06:36 Enjoy the moment\n06:37 مضبوط مضبوط أكيد أكيد كل إشي تمام\n\n# Medical Questions\n06:44 عفواً بلا زغرة قديش عمرها\n06:47 أربعة عشر أو خمسة عشر\n06:51 ستة عشر\n06:53 وشو نوع دمها\n06:55 أخف من دمها ما في يعني أخف نوع\n\n# Clueless Dad\n07:00 وبلاش\n07:01 هيو هذا الأب اللي مش عارف إنه بنته عندها حساسية\n07:04 لأ وكمان ما عنده ولا معلومة مفيدة\n07:07 أيوه سند شو بدك بابا\n\n# Waiting at the Stadium\n07:09 وينك بابا الساعة تسعة\n07:11 صارلي ساعة بستناك على باب الملعب تيجي تاخدني\n07:14 آخ نسيت يلا يلا جاي\n07:19 حلوة هاي اللعبة صح سمور\n\n# Laundry Duty\n07:22 رنا انشري الغسيل\n07:24 يلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة\n07:33 هذا الغسيل ناشف\n07:36 ووسخ\n07:39 بابا\n\n# Mom is Coming\n07:42 هاي أمكم قربت توصل\n07:44 وقفوا هيك أشوف\n07:46 واحد اتنين تلاتة\n07:49 ممتاز سلمتني تلاتة ورح أسلمها تلاتة\n07:53 إحنا بالسليم\n\n# Last Minute Cleanup\n07:56 وهاي وصل الدليفري\n07:58 يلا يلا بسرعة يا ولاد بدي البيت يضوي ضوي\n08:02 وهي شغلنا الجلاية وكل الأمور تمام\n08:08 ماما اشتقنالك كتير\n\n# The Learning Curve\n08:11 اتشعطلنا بدونك اتبهدلنا\n08:14 بس يا ولد اعتبروني أخدت دورة تعريفية\n08:18 وهلا أنا جاهز للامتحان الجاي\n08:22 بصراحة إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم\n\n# Tribute to Mothers\n08:27 تحية إكرام وإجلال لكل أم\n08:30 وتحية كبيرة كمان لكل أب زيي يعني\n08:33 متحمل مسؤولية الأولاد والبيت\n08:36 صحيح وهاي أحلى ورد لأحلى وردة\n08:40 ومنا كمان تفضلي\n\n# Where is Abu Insaf?\n08:42 شو وينه أبو انصاف\n08:45 الأمير اللي مدبر حاله اللي ما أزعجني\n08:48 ولا رن علي ولا مرة\n08:50 رنيت عليه بس ما كان موجود بالبيت\n\n# The Hotel Escape\n08:56 حمدلله عالسلامة لولو\n08:58 ليش وين كاين حضرتك\n09:00 هو أنا مجنون أظل قاعد في البيت زي الأطرش بالزفة\n09:04 حجزت يومين بالأوتيل عقبال ما ترجعي\n\n# The Dishwasher Disaster\n09:11 قلتي لنا جوزك على ما عودتيه آه\n09:15 لا قلتلك ما تحط الجلاية على تلاتات\n09:20 يي يي نسيت نسيت هيني طالع أطفيها",
-    "similar_sounds": "ماما\nبقدر ابعت من عندك\nلأم رنا فايز\nبتحتاج [لوم] بس موبايلها مفلل\nأكيد حبيبتي\nهي موبايلي عالطاولة\nبيني وبينك أنا كتير مرهقة\nنفسي آخد يومين إجازة\nوأقعد [حرفة] وما أعمل ولا إشي\nليش ما نطلع يومين نغير جو\nأكيد ما رح يزبط\nلو تعرفي شو علي\nشو بعتي\nآه آه عم ببعت\nماما بدي أقولك أوقات التدريبات\nالأسبوع الجاي عشان توصيليني\nاستنى شوي بس أخلص\nعشان أسجلهم عندي\nبس تخلصي الحقني\nإيه الست دينا\nنعم تفضل\nهذا البوكس لحضرتك\nإلي شكراً\nليكون اليوم عيدي وأنا مش دارية\nشو عيدي\nويني ووين عيدي\nماما إنتي بتستاهلي ترتاحي\nعشان هيك هاي [رحمة] يومين\nلوادي رم هدية منا إلك\nبنحبك سالي وسند وسامر\nحبايبي\nشكراً كتير حبايبي\nالفكرة لحالها وإنكم دفعتوا من مصروفكم\nكتير أثرت فيي\nبس المرة الجاي ست سالي\nما تقرئي مسجاتي من وراي آه\nسوري ما كان قصدي\nبعرف بعرف حبيبتي\nبس أنا رح أضطر أأجل الرحلة\nلأنه هذا الأسبوع بالذات إنتو بتعرفوا\nسند عنده تدريبات كتير\nوسالي عندك المسرحية\nوسامر عنده موعد [سكتور]\nهذا غير [الشكل]\nشو هذا الحكي يا دينا\nعيب أنا موجود\nشو مفكرين الأمور ما بتمشي من دونك\nآه ماما وما تحكيلي هم إشي\nوالبابا موجود\nولو\nوأم يزن وأم انصاف كمان عم بحضروا حالهم يجيوا معك\nعن جد حبايبي إنتو\nويا شوفير [لوس] دوس\nالله يبعتلك عروس\nويا شوفير اطلع هالطلعة\nوالله يخليلي هالطلعة\nبابا وين السندويشات\nوين الفواكه وين العصير\nطب طب خذ\nخذ يا بابا هاي زيادة بالمصروف\nوبدي إياك هاليومين تشتري اللي بدك إياه\nما في أزكى من سندويشات الفلافل\nاللي كنا نأكلها [بالمدرة]\nمن تحت إيدين أبو خليل\nوين رنا يا رنا\nوينك يا بابا\nبابا [القلم] خلص\nوشعري ما عم بظبط\nوأنا ما رح أروح عالدرسة هيك\nطيب وشو المطلوب مني يعني\nشو أعملك يعني\nجيبيلي [القلم] من الصيدلية\nأو ما بروح عالدرسة\nهلا طيب هي وينها الصيدلية أصلاً\nأوف الماما بتعرف\nويا شوفير اطلع هالطلعة\nوالله يخليلي هالطلعة\nآه الصيدلية اللي عند [النوار] بتكون فاتحة\nبسرعة أحسن ما تتأخروا عالدرسة\nآه عصام حبيبي في إشي\nلا لا ما في إشي\nبعد ما وصلتهم عالدرسة\nبرن علي سند بيقولي ناسي [خطابه]\nفرجعت جبته وهيني عند باب المدرسة\nبس هو سند بأي [شف] صار\nاسم الله علي وبأي شعبة\nتمام تمام\nوبعدين يلا بدنا نتصور هالسلبي\nوشوفولي كيف رح [تقي] عالصورة\nآه عصام لا لا مش مدخل تلاتة\nمدخل أربعة عرفتوا\nاللي عالشارع الفرعي\nخير أبو يزن\nآه آه الجلاية حطها على رقم اتنين\nأوعك تحطها على رقم تلاتة\nأحسن ما تعبي البيت [لي] وصابون\nيا الله لا هيك مش طبيعي\nأي بيقولوا جوزك على ما عودتيه\nوابنك على ما ربيتيه\nشوفوا شوفوا أبو انصاف\nأنا عودته يعمل كل إشي بالبيت\nويعرف يدير حاله لحاله\nشكلكم لا عودتوا ولا ربيتوا\nوأقولكم وهي أحلى سيلفي للولو بس\nأهلاً بالحلوين شوفوا ما أحلاكم\nأنا وأبو يزن مرتبين أموركم مية بالمية\nومش محتاجين إشي\nآه بابا إحنا مع عمو عصام في أكل بالبيت\nبابا المصاري يادوب كفوا للمدرسة\nكمان نجيب غدا\nطيب أوك باي\nخلص تعالوا عنا البابا طالب لنا مقلوبة اليوم\nنوكل وبنروح عالتدريب\nيعني طبعاً طبعاً أهلاً وسهلاً\nرح توكلوا أزكى مقلوبة بحياتكم\nالله يخليكي\nبشيلي إياها الأولاد جوعانين\nوأنا نسيت أوصيكي الصبح\nولا يهمك عشان أم سند بس\nاحكيلي شو بتحب عليها خضار\nلأنه أم سند آخر مرة وصتني إنه\nحطي كل إشي هو في أزكى من المقلوبة المليانة خضار\nواو واو مش طبيعي\nمش طبيعي الأجواء شو ساحرة في وادي رم\nإشي خيال\nأيوه يا أبو يزن\nمحطوط بالجرار الأول بالمطبخ باي\nوليش موطية صوتك\nمش عارف يدبر حاله آه\nآه عصام آه اليوم تدريبه من الستة للتمانية باي\nالله يسعده أبو انصاف وما يبعده\nأيوه عصام لا بوابة تمنية قلتلك\nالساعة ستة معقول إنت\nI came all the way from the US to have some [piece] and quiet\nوأنا بعد جيت من الرياض\nأتأمل وأهدي راسي دوشتونا\nأوف [possible]\nعم بيخربوا علينا الـ tranquility تبعتنا\nمش طبيعي\nوهاي وصلت المقلوبة\nخلينا نعتبرها غدا وعشا كنوع من التوفير\nومنخلي للشباب بس يخلصوا تدريب\nيا سلام شوفوا التنظيم\nشوفوا الترتيب شوفوا الحلاوة\nبابا بس سؤال\nهاي المقلوبة فيها بتنجان\nأكيد بابا قلتلها حطي كل إشي\nشفتي قديش زاكية بتشهي\nبابا أنا عندي حساسية من البتنجان\nليش عملت هيك\nواو ما أحلاهم\nيا ريت لو الأولاد معنا\nفكرك مدبرين حالهم\nما دام ما في تلفونات معناته الأمور تمام\nخلص أم سند روقي ارتاحي\nEnjoy the [movement]\nمضبوط مضبوط أكيد أكيد كل إشي تمام\nعفواً بلا زغرة قديش عمرها\nأربعة عشر أو خمسة عشر\nستة عشر\nوشو نوع دمها\nأخف من دمها ما في يعني أخف نوع\nوبلاش\nهيو هذا الأب اللي مش عارف إنه بنته عندها حساسية\nلأ وكمان ما عنده ولا معلومة مفيدة\nأيوه سند شو بدك بابا\nوينك بابا الساعة تسعة\nصارلي ساعة بستناك على باب الملعب تيجي تاخدني\nآخ نسيت يلا يلا جاي\nحلوة هاي اللعبة صح سمور\nرنا انشري الغسيل\nيلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة\nهذا الغسيل ناشف\nووسخ\nبابا\nهاي أمكم قربت [توصيل]\nوقفوا هيك أشوف\nواحد اتنين تلاتة\nممتاز سلمتني تلاتة ورح أسلمها تلاتة\nإحنا بالسليم\nوهاي وصل الدليفري\nيلا يلا بسرعة يا ولاد بدي البيت يضوي ضوي\nوهي شغلنا الجلاية وكل الأمور تمام\nماما اشتقنالك كتير\nاتشعطلنا بدونك اتبهدلنا\nبس يا ولد اعتبروني أخدت دورة تعريفية\nوهلا أنا جاهز للامتحان الجاي\nبصراحة إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم\nتحية إكرام وإجلال لكل أم\nوتحية كبيرة كمان لكل أب زيي يعني\nمتحمل مسؤولية الأولاد والبيت\nصحيح وهاي أحلى ورد لأحلى وردة\nومنا كمان تفضلي\nشو وينه أبو انصاف\nالأمير اللي مدبر حاله اللي ما أزعجني\nولا رن علي ولا مرة\nرنيت عليه بس ما كان موجود بالبيت\nحمدلله عالسلامة لولو\nليش وين كاين حضرتك\nهو أنا مجنون أظل قاعد في البيت زي الأطرش بالزفة\nحجزت يومين بالأوتيل عقبال ما ترجعي\nقلتي لنا جوزك على ما عودتيه آه\nلا قلتلك ما تحط الجلاية على تلاتات\nيي يي نسيت نسيت هيني طالع أطفيها"
+    "similar_sounds": "ماما\nبقدر ابعت من عندك\nلأم رنا فايز\nبتحتاج [لوم] بس موبايلها مفلل\nأكيد حبيبتي\nهي موبايلي عالطاولة\nبيني وبينك أنا كتير مرهقة\nنفسي آخد يومين إجازة\nوأقعد [حرفة] وما أعمل ولا إشي\nليش ما نطلع يومين نغير جو\nأكيد ما رح يزبط\nلو تعرفي شو علي\nشو بعتي\nآه آه عم ببعت\nماما بدي أقولك أوقات التدريبات\nالأسبوع الجاي عشان توصيليني\nاستنى شوي بس أخلص\nعشان أسجلهم عندي\nبس تخلصي الحقني\nإيه الست دينا\nنعم تفضل\nهذا البوكس لحضرتك\nإلي شكراً\nليكون اليوم عيدي وأنا مش دارية\nشو عيدي\nويني ووين عيدي\nماما إنتي بتستاهلي ترتاحي\nعشان هيك هاي [رحمة] يومين\nلوادي رم هدية منا إلك\nبنحبك سالي وسند وسامر\nحبايبي\nشكراً كتير حبايبي\nالفكرة لحالها وإنكم دفعتوا من مصروفكم\nكتير أثرت فيي\nبس المرة الجاي ست سالي\nما تقرئي مسجاتي من وراي آه\nسوري ما كان قصدي\nبعرف بعرف حبيبتي\nبس أنا رح أضطر أأجل الرحلة\nلأنه هذا الأسبوع بالذات إنتو بتعرفوا\nسند عنده تدريبات كتير\nوسالي عندك المسرحية\nوسامر عنده موعد [سكتور]\nهذا غير [الشكل]\nشو هذا الحكي يا دينا\nعيب أنا موجود\nشو مفكرين الأمور ما بتمشي من دونك\nآه ماما وما تحكيلي هم إشي\nوالبابا موجود\nولو\nوأم يزن وأم انصاف كمان عم بحضروا حالهم يجيوا معك\nعن جد حبايبي إنتو\nويا شوفير [لوس] دوس\nالله يبعتلك عروس\nويا شوفير اطلع هالطلعة\nوالله يخليلي هالطلعة\nبابا وين السندويشات\nوين الفواكه وين العصير\nطب طب خذ\nخذ يا بابا هاي زيادة بالمصروف\nوبدي إياك هاليومين تشتري اللي بدك إياه\nما في أزكى من سندويشات الفلافل\nاللي كنا نأكلها [بالمدرة]\nمن تحت إيدين أبو خليل\nوين رنا يا رنا\nوينك يا بابا\nبابا [القلم] خلص\nوشعري ما عم بظبط\nوأنا ما رح أروح عالدرسة هيك\nطيب وشو المطلوب مني يعني\nشو أعملك يعني\nجيبيلي [القلم] من الصيدلية\nأو ما بروح عالدرسة\nهلا طيب هي وينها الصيدلية أصلاً\nأوف الماما بتعرف\nويا شوفير اطلع هالطلعة\nوالله يخليلي هالطلعة\nآه الصيدلية اللي عند [النوار] بتكون فاتحة\nبسرعة أحسن ما تتأخروا عالدرسة\nآه عصام حبيبي في إشي\nلا لا ما في إشي\nبعد ما وصلتهم عالدرسة\nبرن علي سند بيقولي ناسي [خطابه]\nفرجعت جبته وهيني عند باب المدرسة\nبس هو سند بأي [شف] صار\nاسم الله علي وبأي شعبة\nتمام تمام\nوبعدين يلا بدنا نتصور هالسلبي\nوشوفولي كيف رح [تقي] عالصورة\nآه عصام لا لا مش مدخل تلاتة\nمدخل أربعة عرفتوا\nاللي عالشارع الفرعي\nخير أبو يزن\nآه آه الجلاية حطها على رقم اتنين\nأوعك تحطها على رقم تلاتة\nأحسن ما تعبي البيت [لي] وصابون\nيا الله لا هيك مش طبيعي\nأي بيقولوا جوزك على ما عودتيه\nوابنك على ما ربيتيه\nشوفوا شوفوا أبو انصاف\nأنا عودته يعمل كل إشي بالبيت\nويعرف يدير حاله لحاله\nشكلكم لا عودتوا ولا ربيتوا\nوأقولكم وهي أحلى سيلفي للولو بس\nأهلاً بالحلوين شوفوا ما أحلاكم\nأنا وأبو يزن مرتبين أموركم مية بالمية\nومش محتاجين إشي\nآه بابا إحنا مع عمو عصام في أكل بالبيت\nبابا المصاري يادوب كفوا للمدرسة\nكمان نجيب غدا\nطيب أوك باي\nخلص تعالوا عنا البابا طالب لنا مقلوبة اليوم\nنوكل وبنروح عالتدريب\nيعني طبعاً طبعاً أهلاً وسهلاً\nرح توكلوا أزكى مقلوبة بحياتكم\nالله يخليكي\nبشيلي إياها الأولاد جوعانين\nوأنا نسيت أوصيكي الصبح\nولا يهمك عشان أم سند بس\nاحكيلي شو بتحب عليها خضار\nلأنه أم سند آخر مرة وصتني إنه\nحطي كل إشي هو في أزكى من المقلوبة المليانة خضار\nواو واو مش طبيعي\nمش طبيعي الأجواء شو ساحرة في وادي رم\nإشي خيال\nأيوه يا أبو يزن\nمحطوط بالجرار الأول بالمطبخ باي\nوليش موطية صوتك\nمش عارف يدبر حاله آه\nآه عصام آه اليوم تدريبه من الستة للتمانية باي\nالله يسعده أبو انصاف وما يبعده\nأيوه عصام لا بوابة تمنية قلتلك\nالساعة ستة معقول إنت\nI came all the way from the US to have some [piece] and quiet\nوأنا بعد جيت من الرياض\nأتأمل وأهدي راسي دوشتونا\nأوف [possible]\nعم بيخربوا علينا الـ tranquility تبعتنا\nمش طبيعي\nوهاي وصلت المقلوبة\nخلينا نعتبرها غدا وعشا كنوع من التوفير\nومنخلي للشباب بس يخلصوا تدريب\nيا سلام شوفوا التنظيم\nشوفوا الترتيب شوفوا الحلاوة\nبابا بس سؤال\nهاي المقلوبة فيها بتنجان\nأكيد بابا قلتلها حطي كل إشي\nشفتي قديش زاكية بتشهي\nبابا أنا عندي حساسية من البتنجان\nليش عملت هيك\nواو ما أحلاهم\nيا ريت لو الأولاد معنا\nفكرك مدبرين حالهم\nما دام ما في تلفونات معناته الأمور تمام\nخلص أم سند روقي ارتاحي\nEnjoy the [movement]\nمضبوط مضبوط أكيد أكيد كل إشي تمام\nعفواً بلا زغرة قديش عمرها\nأربعة عشر أو خمسة عشر\nستة عشر\nوشو نوع دمها\nأخف من دمها ما في يعني أخف نوع\nوبلاش\nهيو هذا الأب اللي مش عارف إنه بنته عندها حساسية\nلأ وكمان ما عنده ولا معلومة مفيدة\nأيوه سند شو بدك بابا\nوينك بابا الساعة تسعة\nصارلي ساعة بستناك على باب الملعب تيجي تاخدني\nآخ نسيت يلا يلا جاي\nحلوة هاي اللعبة صح سمور\nرنا انشري الغسيل\nيلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة\nهذا الغسيل ناشف\nووسخ\nبابا\nهاي أمكم قربت [توصيل]\nوقفوا هيك أشوف\nواحد اتنين تلاتة\nممتاز سلمتني تلاتة ورح أسلمها تلاتة\nإحنا بالسليم\nوهاي وصل الدليفري\nيلا يلا بسرعة يا ولاد بدي البيت يضوي ضوي\nوهي شغلنا الجلاية وكل الأمور تمام\nماما اشتقنالك كتير\nاتشعطلنا بدونك اتبهدلنا\nبس يا ولد اعتبروني أخدت دورة تعريفية\nوهلا أنا جاهز للامتحان الجاي\nبصراحة إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم\nتحية إكرام وإجلال لكل أم\nوتحية كبيرة كمان لكل أب زيي يعني\nمتحمل مسؤولية الأولاد والبيت\nصحيح وهاي أحلى ورد لأحلى وردة\nومنا كمان تفضلي\nشو وينه أبو انصاف\nالأمير اللي مدبر حاله اللي ما أزعجني\nولا رن علي ولا مرة\nرنيت عليه بس ما كان موجود بالبيت\nحمدلله عالسلامة لولو\nليش وين كاين حضرتك\nهو أنا مجنون أظل قاعد في البيت زي الأطرش بالزفة\nحجزت يومين بالأوتيل عقبال ما ترجعي\nقلتي لنا جوزك على ما عودتيه آه\nلا قلتلك ما تحط الجلاية على تلاتات\nيي يي نسيت نسيت هيني طالع أطفيها",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Mom",
+            "words": []
+          },
+          {
+            "text": "Can I send a message from your phone",
+            "words": []
+          },
+          {
+            "text": "To Um Rana Fayez",
+            "words": []
+          },
+          {
+            "text": "She needs to sleep but her phone is full",
+            "words": []
+          },
+          {
+            "text": "Of course, honey",
+            "words": []
+          },
+          {
+            "text": "My phone is on the table",
+            "words": []
+          },
+          {
+            "text": "Between you and me, I'm very exhausted",
+            "words": []
+          },
+          {
+            "text": "I wish I could take two days off",
+            "words": []
+          },
+          {
+            "text": "And stay in the room and do nothing at all",
+            "words": []
+          },
+          {
+            "text": "Why don't we go out for two days to change the scenery",
+            "words": []
+          },
+          {
+            "text": "It definitely won't work",
+            "words": []
+          },
+          {
+            "text": "If you only knew what I have to do",
+            "words": []
+          },
+          {
+            "text": "What did you send",
+            "words": []
+          },
+          {
+            "text": "Yeah, yeah, I'm sending it",
+            "words": []
+          },
+          {
+            "text": "Mom, I want to tell you the training times",
+            "words": []
+          },
+          {
+            "text": "For next week so you can drop me off",
+            "words": []
+          },
+          {
+            "text": "Wait a bit until I finish",
+            "words": []
+          },
+          {
+            "text": "So I can record them",
+            "words": []
+          },
+          {
+            "text": "When you finish, follow me",
+            "words": []
+          },
+          {
+            "text": "Yes, Ms. Dina",
+            "words": []
+          },
+          {
+            "text": "Yes, please",
+            "words": []
+          },
+          {
+            "text": "This box is for you",
+            "words": []
+          },
+          {
+            "text": "For me? Thank you",
+            "words": []
+          },
+          {
+            "text": "Could it be my birthday today and I don't even realize it",
+            "words": []
+          },
+          {
+            "text": "What birthday",
+            "words": []
+          },
+          {
+            "text": "I'm nowhere near a birthday",
+            "words": []
+          },
+          {
+            "text": "Mom, you deserve to rest",
+            "words": []
+          },
+          {
+            "text": "That's why this is a two-day trip",
+            "words": []
+          },
+          {
+            "text": "To Wadi Rum, a gift from us to you",
+            "words": []
+          },
+          {
+            "text": "We love you—Sally, Sanad, and Samer",
+            "words": []
+          },
+          {
+            "text": "My dears",
+            "words": []
+          },
+          {
+            "text": "Thank you so much, my dears",
+            "words": []
+          },
+          {
+            "text": "The idea alone, and that you paid from your allowance",
+            "words": []
+          },
+          {
+            "text": "Really touched me",
+            "words": []
+          },
+          {
+            "text": "But next time, Ms. Sally",
+            "words": []
+          },
+          {
+            "text": "Don't read my messages behind my back, okay",
+            "words": []
+          },
+          {
+            "text": "Sorry, I didn't mean to",
+            "words": []
+          },
+          {
+            "text": "I know, I know, honey",
+            "words": []
+          },
+          {
+            "text": "But I'll have to postpone the trip",
+            "words": []
+          },
+          {
+            "text": "Because this week specifically, you know",
+            "words": []
+          },
+          {
+            "text": "Sanad has a lot of training",
+            "words": []
+          },
+          {
+            "text": "And Sally, you have the play",
+            "words": []
+          },
+          {
+            "text": "And Samer has a doctor's appointment",
+            "words": []
+          },
+          {
+            "text": "Not to mention work",
+            "words": []
+          },
+          {
+            "text": "What is this talk, Dina",
+            "words": []
+          },
+          {
+            "text": "It's a shame, I'm here",
+            "words": []
+          },
+          {
+            "text": "Do you think things won't run without you",
+            "words": []
+          },
+          {
+            "text": "Yeah, Mom, and don't worry about a thing",
+            "words": []
+          },
+          {
+            "text": "Dad is here",
+            "words": []
+          },
+          {
+            "text": "Of course",
+            "words": []
+          },
+          {
+            "text": "And Um Yazan and Um Insaf are also getting ready to come with you",
+            "words": []
+          },
+          {
+            "text": "Really, you guys are my dears",
+            "words": []
+          },
+          {
+            "text": "And driver, step on it, step on it",
+            "words": []
+          },
+          {
+            "text": "May God send you a bride",
+            "words": []
+          },
+          {
+            "text": "And driver, go up this hill",
+            "words": []
+          },
+          {
+            "text": "And may God bless this trip for me",
+            "words": []
+          },
+          {
+            "text": "Dad, where are the sandwiches",
+            "words": []
+          },
+          {
+            "text": "Where's the fruit, where's the juice",
+            "words": []
+          },
+          {
+            "text": "Okay, okay, take this",
+            "words": []
+          },
+          {
+            "text": "Take this, son, here's extra allowance",
+            "words": []
+          },
+          {
+            "text": "And I want you to buy whatever you want these two days",
+            "words": []
+          },
+          {
+            "text": "There's nothing tastier than the falafel sandwiches",
+            "words": []
+          },
+          {
+            "text": "That we used to eat at school",
+            "words": []
+          },
+          {
+            "text": "Made by Abu Khalil",
+            "words": []
+          },
+          {
+            "text": "Where is Rana? Rana!",
+            "words": []
+          },
+          {
+            "text": "Where are you, honey",
+            "words": []
+          },
+          {
+            "text": "Dad, the cream is finished",
+            "words": []
+          },
+          {
+            "text": "And my hair isn't working out",
+            "words": []
+          },
+          {
+            "text": "And I'm not going to school like this",
+            "words": []
+          },
+          {
+            "text": "Okay, so what's required of me then",
+            "words": []
+          },
+          {
+            "text": "What should I do for you",
+            "words": []
+          },
+          {
+            "text": "Get me the cream from the pharmacy",
+            "words": []
+          },
+          {
+            "text": "Or I'm not going to school",
+            "words": []
+          },
+          {
+            "text": "Now, okay, where is the pharmacy anyway",
+            "words": []
+          },
+          {
+            "text": "Ugh, Mom knows",
+            "words": []
+          },
+          {
+            "text": "And driver, go up this hill",
+            "words": []
+          },
+          {
+            "text": "And may God bless this trip for me",
+            "words": []
+          },
+          {
+            "text": "Yeah, the pharmacy near the roundabout should be open",
+            "words": []
+          },
+          {
+            "text": "Hurry up so you're not late for school",
+            "words": []
+          },
+          {
+            "text": "Yeah, Issam honey, is something wrong",
+            "words": []
+          },
+          {
+            "text": "No, no, nothing",
+            "words": []
+          },
+          {
+            "text": "After I dropped them at school",
+            "words": []
+          },
+          {
+            "text": "Sanad called me saying he forgot his book",
+            "words": []
+          },
+          {
+            "text": "So I went back and got it and here I am at the school gate",
+            "words": []
+          },
+          {
+            "text": "But what grade is Sanad in now",
+            "words": []
+          },
+          {
+            "text": "God help me, and which section",
+            "words": []
+          },
+          {
+            "text": "Okay, okay",
+            "words": []
+          },
+          {
+            "text": "And then, come on, let's take this selfie",
+            "words": []
+          },
+          {
+            "text": "And see how I'll look in the photo",
+            "words": []
+          },
+          {
+            "text": "Yeah, Issam, no, no, not entrance three",
+            "words": []
+          },
+          {
+            "text": "Entrance four, you know",
+            "words": []
+          },
+          {
+            "text": "The one on the side street",
+            "words": []
+          },
+          {
+            "text": "What's up, Abu Yazan",
+            "words": []
+          },
+          {
+            "text": "Yeah, yeah, set the dishwasher to number two",
+            "words": []
+          },
+          {
+            "text": "Don't you dare set it to number three",
+            "words": []
+          },
+          {
+            "text": "Or you'll fill the house with water and soap",
+            "words": []
+          },
+          {
+            "text": "Oh my God, no, this isn't normal",
+            "words": []
+          },
+          {
+            "text": "They say your husband is how you train him",
+            "words": []
+          },
+          {
+            "text": "And your son is how you raise him",
+            "words": []
+          },
+          {
+            "text": "Look, look at Abu Insaf",
+            "words": []
+          },
+          {
+            "text": "I trained him to do everything in the house",
+            "words": []
+          },
+          {
+            "text": "And know how to manage himself on his own",
+            "words": []
+          },
+          {
+            "text": "It seems you neither trained nor raised them",
+            "words": []
+          },
+          {
+            "text": "And let me tell you, here's the best selfie for Lulu only",
+            "words": []
+          },
+          {
+            "text": "Welcome, beauties! Look how beautiful you are",
+            "words": []
+          },
+          {
+            "text": "Abu Yazan and I have arranged your affairs 100%",
+            "words": []
+          },
+          {
+            "text": "And you don't need anything",
+            "words": []
+          },
+          {
+            "text": "Yeah, Dad, we're with Uncle Issam, is there food at home",
+            "words": []
+          },
+          {
+            "text": "Dad, the money barely covered school",
+            "words": []
+          },
+          {
+            "text": "Should we get lunch too",
+            "words": []
+          },
+          {
+            "text": "Okay, okay, bye",
+            "words": []
+          },
+          {
+            "text": "Fine, come to our place, Dad ordered Maqluba for us today",
+            "words": []
+          },
+          {
+            "text": "We'll eat and then go to training",
+            "words": []
+          },
+          {
+            "text": "I mean, of course, of course, you're welcome",
+            "words": []
+          },
+          {
+            "text": "You'll eat the tastiest Maqluba in your lives",
+            "words": []
+          },
+          {
+            "text": "God bless you",
+            "words": []
+          },
+          {
+            "text": "Make it for me, the kids are hungry",
+            "words": []
+          },
+          {
+            "text": "And I forgot to tell you this morning",
+            "words": []
+          },
+          {
+            "text": "Don't worry, just for Um Sanad",
+            "words": []
+          },
+          {
+            "text": "Tell me what vegetables you like on it",
+            "words": []
+          },
+          {
+            "text": "Because Um Sanad last time told me that",
+            "words": []
+          },
+          {
+            "text": "Put everything in—is there anything tastier than Maqluba full of vegetables",
+            "words": []
+          },
+          {
+            "text": "Wow, wow, it's incredible",
+            "words": []
+          },
+          {
+            "text": "The atmosphere is so magical in Wadi Rum",
+            "words": []
+          },
+          {
+            "text": "It's something out of a dream",
+            "words": []
+          },
+          {
+            "text": "Yes, Abu Yazan",
+            "words": []
+          },
+          {
+            "text": "It's in the first drawer in the kitchen, bye",
+            "words": []
+          },
+          {
+            "text": "And why are you lowering your voice",
+            "words": []
+          },
+          {
+            "text": "He doesn't know how to manage, huh",
+            "words": []
+          },
+          {
+            "text": "Yeah, Issam, yeah, today his training is from six to eight, bye",
+            "words": []
+          },
+          {
+            "text": "May God bless Abu Insaf and keep him close",
+            "words": []
+          },
+          {
+            "text": "Yes, Issam, no, gate eight I told you",
+            "words": []
+          },
+          {
+            "text": "Six o'clock, is it possible you...",
+            "words": []
+          },
+          {
+            "text": "I came all the way from the US to have some peace and quiet",
+            "words": []
+          },
+          {
+            "text": "And I also came from Riyadh",
+            "words": []
+          },
+          {
+            "text": "To contemplate and calm my head, you've made our heads spin",
+            "words": []
+          },
+          {
+            "text": "Ugh, impossible",
+            "words": []
+          },
+          {
+            "text": "They're ruining our tranquility",
+            "words": []
+          },
+          {
+            "text": "It's unbelievable",
+            "words": []
+          },
+          {
+            "text": "And here's the Maqluba",
+            "words": []
+          },
+          {
+            "text": "Let's consider it lunch and dinner as a way of saving",
+            "words": []
+          },
+          {
+            "text": "And we'll leave some for the boys when they finish training",
+            "words": []
+          },
+          {
+            "text": "Wow, look at the organization",
+            "words": []
+          },
+          {
+            "text": "Look at the arrangement, look at the beauty",
+            "words": []
+          },
+          {
+            "text": "Dad, just a question",
+            "words": []
+          },
+          {
+            "text": "Does this Maqluba have eggplant",
+            "words": []
+          },
+          {
+            "text": "Of course, son, I told her to put everything in",
+            "words": []
+          },
+          {
+            "text": "See how delicious and appetizing it is",
+            "words": []
+          },
+          {
+            "text": "Dad, I'm allergic to eggplant",
+            "words": []
+          },
+          {
+            "text": "Why did you do that",
+            "words": []
+          },
+          {
+            "text": "Wow, how beautiful they are",
+            "words": []
+          },
+          {
+            "text": "I wish the kids were with us",
+            "words": []
+          },
+          {
+            "text": "Do you think they're managing",
+            "words": []
+          },
+          {
+            "text": "As long as there are no phone calls, it means things are fine",
+            "words": []
+          },
+          {
+            "text": "Come on, Um Sanad, relax, rest",
+            "words": []
+          },
+          {
+            "text": "Enjoy the moment",
+            "words": []
+          },
+          {
+            "text": "Right, right, definitely, definitely, everything is fine",
+            "words": []
+          },
+          {
+            "text": "Excuse me, no offense, how old is she",
+            "words": []
+          },
+          {
+            "text": "Fourteen or fifteen",
+            "words": []
+          },
+          {
+            "text": "Sixteen",
+            "words": []
+          },
+          {
+            "text": "And what's her blood type",
+            "words": []
+          },
+          {
+            "text": "There's nothing lighter than her blood, so the lightest type",
+            "words": []
+          },
+          {
+            "text": "And for free",
+            "words": []
+          },
+          {
+            "text": "Here's the father who doesn't know his daughter has an allergy",
+            "words": []
+          },
+          {
+            "text": "And he doesn't have a single piece of useful information",
+            "words": []
+          },
+          {
+            "text": "Yes, Sanad, what do you want, son",
+            "words": []
+          },
+          {
+            "text": "Where are you, Dad? It's nine o'clock",
+            "words": []
+          },
+          {
+            "text": "I've been waiting for you for an hour at the stadium gate to come pick me up",
+            "words": []
+          },
+          {
+            "text": "Oh, I forgot, I'm coming, I'm coming",
+            "words": []
+          },
+          {
+            "text": "This game is nice, right Samour",
+            "words": []
+          },
+          {
+            "text": "Rana, hang the laundry",
+            "words": []
+          },
+          {
+            "text": "Come with me to take the school clothes out of the washer so they have time to dry for tomorrow",
+            "words": []
+          },
+          {
+            "text": "This laundry is dry",
+            "words": []
+          },
+          {
+            "text": "And dirty",
+            "words": []
+          },
+          {
+            "text": "Dad",
+            "words": []
+          },
+          {
+            "text": "Your mom is about to arrive",
+            "words": []
+          },
+          {
+            "text": "Stand like this, let me see",
+            "words": []
+          },
+          {
+            "text": "One, two, three",
+            "words": []
+          },
+          {
+            "text": "Excellent, she handed me three and I'll hand her back three",
+            "words": []
+          },
+          {
+            "text": "We're in the clear",
+            "words": []
+          },
+          {
+            "text": "And the delivery has arrived",
+            "words": []
+          },
+          {
+            "text": "Hurry up, kids, I want the house to shine",
+            "words": []
+          },
+          {
+            "text": "And we've started the dishwasher and everything is fine",
+            "words": []
+          },
+          {
+            "text": "Mom, we missed you so much",
+            "words": []
+          },
+          {
+            "text": "We were lost without you, we were a mess",
+            "words": []
+          },
+          {
+            "text": "Enough, boy, consider that I took an introductory course",
+            "words": []
+          },
+          {
+            "text": "And now I'm ready for the next exam",
+            "words": []
+          },
+          {
+            "text": "Honestly, we really appreciate your hard work, effort, and love",
+            "words": []
+          },
+          {
+            "text": "A salute of honor and respect to every mother",
+            "words": []
+          },
+          {
+            "text": "And a big salute also to every father like me, I mean",
+            "words": []
+          },
+          {
+            "text": "Who takes responsibility for the kids and the house",
+            "words": []
+          },
+          {
+            "text": "True, and here are the most beautiful flowers for the most beautiful flower",
+            "words": []
+          },
+          {
+            "text": "And from us too, here you go",
+            "words": []
+          },
+          {
+            "text": "Wait, where is Abu Insaf",
+            "words": []
+          },
+          {
+            "text": "The prince who manages himself, who didn't bother me",
+            "words": []
+          },
+          {
+            "text": "Or call me once",
+            "words": []
+          },
+          {
+            "text": "I called him but he wasn't home",
+            "words": []
+          },
+          {
+            "text": "Welcome back, Lulu",
+            "words": []
+          },
+          {
+            "text": "Where have you been, sir",
+            "words": []
+          },
+          {
+            "text": "Am I crazy to stay at home like a stranger at a wedding",
+            "words": []
+          },
+          {
+            "text": "I booked two days at a hotel until you returned",
+            "words": []
+          },
+          {
+            "text": "You told us your husband is how you train him, huh",
+            "words": []
+          },
+          {
+            "text": "No, I told you don't put the dishwasher on three",
+            "words": []
+          },
+          {
+            "text": "Oh, oh, I forgot, I forgot, I'm going up to turn it off",
+            "words": []
+          }
+        ],
+        "lessons": "# Can I Use Your Phone?\n00:02 ماما\n00:03 بقدر ابعت من عندك\n00:04 لأم رنا فايز\n00:05 بتحتاج لنوم بس موبايلها مفلل\n00:07 أكيد حبيبتي\n00:08 هي موبايلي عالطاولة\n\n# I Need a Break\n00:12 بيني وبينك أنا كتير مرهقة\n00:14 نفسي آخد يومين إجازة\n00:16 وأقعد بالغرفة وما أعمل ولا إشي\n00:18 ليش ما نطلع يومين نغير جو\n\n# Too Much to Do\n00:20 أكيد ما رح يزبط\n00:21 لو تعرفي شو علي\n00:23 شو بعتي\n00:25 آه آه عم ببعت\n\n# Training Schedules\n00:27 ماما بدي أقولك أوقات التدريبات\n00:29 الأسبوع الجاي عشان توصيليني\n00:31 استنى شوي بس أخلص\n00:33 عشان أسجلهم عندي\n00:34 بس تخلصي الحقني\n\n# A Surprise Delivery\n00:38 إيه الست دينا\n00:39 نعم تفضل\n00:41 هذا البوكس لحضرتك\n00:43 إلي شكراً\n\n# Is It My Birthday?\n00:46 ليكون اليوم عيدي وأنا مش دارية\n00:48 شو عيدي\n00:49 ويني ووين عيدي\n00:51 ماما إنتي بتستاهلي ترتاحي\n\n# The Gift of Wadi Rum\n00:54 عشان هيك هاي رحلة يومين\n00:56 لوادي رم هدية منا إلك\n01:00 بنحبك سالي وسند وسامر\n01:03 حبايبي\n\n# A Touching Gesture\n01:07 شكراً كتير حبايبي\n01:09 الفكرة لحالها وإنكم دفعتوا من مصروفكم\n01:11 كتير أثرت فيي\n01:13 بس المرة الجاي ست سالي\n01:15 ما تقرئي مسجاتي من وراي آه\n\n# I Have to Postpone\n01:17 سوري ما كان قصدي\n01:19 بعرف بعرف حبيبتي\n01:21 بس أنا رح أضطر أأجل الرحلة\n01:23 لأنه هذا الأسبوع بالذات إنتو بتعرفوا\n\n# The Kids' Busy Week\n01:25 سند عنده تدريبات كتير\n01:27 وسالي عندك المسرحية\n01:29 وسامر عنده موعد دكتور\n01:30 هذا غير الشغل\n\n# Dad is Here\n01:32 شو هذا الحكي يا دينا\n01:33 عيب أنا موجود\n01:35 شو مفكرين الأمور ما بتمشي من دونك\n01:39 آه ماما وما تحكيلي هم إشي\n\n# The Support System\n01:41 والبابا موجود\n01:42 ولو\n01:43 وأم يزن وأم انصاف كمان عم بحضروا حالهم يجيوا معك\n01:47 عن جد حبايبي إنتو\n\n# The Road Trip Song\n01:52 ويا شوفير دوس دوس\n01:54 الله يبعتلك عروس\n01:57 ويا شوفير اطلع هالطلعة\n01:59 والله يخليلي هالطلعة\n\n# Lunch Money\n02:02 بابا وين السندويشات\n02:03 وين الفواكه وين العصير\n02:05 طب طب خذ\n02:07 خذ يا بابا هاي زيادة بالمصروف\n02:09 وبدي إياك هاليومين تشتري اللي بدك إياه\n\n# School Memories\n02:11 ما في أزكى من سندويشات الفلافل\n02:14 اللي كنا نأكلها بالمدرسة\n02:16 من تحت إيدين أبو خليل\n02:17 وين رنا يا رنا\n02:18 وينك يا بابا\n\n# Hair Crisis\n02:20 بابا الكريم خلص\n02:22 وشعري ما عم بظبط\n02:23 وأنا ما رح أروح عالدرسة هيك\n02:25 طيب وشو المطلوب مني يعني\n02:27 شو أعملك يعني\n\n# Where is the Pharmacy?\n02:28 جيبيلي الكريم من الصيدلية\n02:30 أو ما بروح عالدرسة\n02:32 هلا طيب هي وينها الصيدلية أصلاً\n02:34 أوف الماما بتعرف\n\n# Directions from Mom\n02:40 ويا شوفير اطلع هالطلعة\n02:42 والله يخليلي هالطلعة\n02:44 آه الصيدلية اللي عند الدوار بتكون فاتحة\n02:46 بسرعة أحسن ما تتأخروا عالدرسة\n\n# The Forgotten Book\n02:50 آه عصام حبيبي في إشي\n02:52 لا لا ما في إشي\n02:54 بعد ما وصلتهم عالدرسة\n02:56 برن علي سند بيقولي ناسي كتابه\n02:58 فرجعت جبته وهيني عند باب المدرسة\n\n# Which Grade is He In?\n03:01 بس هو سند بأي صف صار\n03:03 اسم الله علي وبأي شعبة\n03:06 تمام تمام\n03:08 وبعدين يلا بدنا نتصور هالسلبي\n\n# Which Entrance?\n03:11 وشوفولي كيف رح تفي عالصورة\n03:14 آه عصام لا لا مش مدخل تلاتة\n03:17 مدخل أربعة عرفتوا\n03:18 اللي عالشارع الفرعي\n\n# Dishwasher Troubles\n03:23 خير أبو يزن\n03:24 آه آه الجلاية حطها على رقم اتنين\n03:26 أوعك تحطها على رقم تلاتة\n03:28 أحسن ما تعبي البيت مي وصابون\n\n# Training the Husband\n03:30 يا الله لا هيك مش طبيعي\n03:34 أي بيقولوا جوزك على ما عودتيه\n03:36 وابنك على ما ربيتيه\n03:38 شوفوا شوفوا أبو انصاف\n03:40 أنا عودته يعمل كل إشي بالبيت\n\n# Managing Alone\n03:43 ويعرف يدير حاله لحاله\n03:45 شكلكم لا عودتوا ولا ربيتوا\n03:49 وأقولكم وهي أحلى سيلفي للولو بس\n03:55 أهلاً بالحلوين شوفوا ما أحلاكم\n\n# No Food at Home\n03:58 أنا وأبو يزن مرتبين أموركم مية بالمية\n04:02 ومش محتاجين إشي\n04:05 آه بابا إحنا مع عمو عصام في أكل بالبيت\n04:08 بابا المصاري يادوب كفوا للمدرسة\n04:10 كمان نجيب غدا\n\n# Neighborly Invitation\n04:13 طيب أوك باي\n04:16 خلص تعالوا عنا البابا طالب لنا مقلوبة اليوم\n04:19 نوكل وبنروح عالتدريب\n04:22 يعني طبعاً طبعاً أهلاً وسهلاً\n04:26 رح توكلوا أزكى مقلوبة بحياتكم\n\n# Cooking Preferences\n04:29 الله يخليكي\n04:33 بشيلي إياها الأولاد جوعانين\n04:35 وأنا نسيت أوصيكي الصبح\n04:37 ولا يهمك عشان أم سند بس\n04:39 احكيلي شو بتحب عليها خضار\n\n# The Perfect Maqluba\n04:42 لأنه أم سند آخر مرة وصتني إنه\n04:44 حطي كل إشي هو في أزكى من المقلوبة المليانة خضار\n04:53 واو واو مش طبيعي\n04:55 مش طبيعي الأجواء شو ساحرة في وادي رم\n04:59 إشي خيال\n\n# Whispering on the Phone\n05:01 أيوه يا أبو يزن\n05:03 محطوط بالجرار الأول بالمطبخ باي\n05:06 وليش موطية صوتك\n05:09 مش عارف يدبر حاله آه\n05:12 آه عصام آه اليوم تدريبه من الستة للتمانية باي\n\n# Seeking Peace and Quiet\n05:17 الله يسعده أبو انصاف وما يبعده\n05:21 أيوه عصام لا بوابة تمنية قلتلك\n05:26 الساعة ستة معقول إنت\n05:28 I came all the way from the US to have some peace and quiet\n05:32 وأنا بعد جيت من الرياض\n\n# Ruining the Tranquility\n05:34 أتأمل وأهدي راسي دوشتونا\n05:37 أوف impossible\n05:40 عم بيخربوا علينا الـ tranquility تبعتنا\n05:43 مش طبيعي\n\n# Serving the Meal\n05:48 وهاي وصلت المقلوبة\n05:50 خلينا نعتبرها غدا وعشا كنوع من التوفير\n05:55 ومنخلي للشباب بس يخلصوا تدريب\n05:57 يا سلام شوفوا التنظيم\n06:00 شوفوا الترتيب شوفوا الحلاوة\n\n# The Eggplant Question\n06:05 بابا بس سؤال\n06:07 هاي المقلوبة فيها بتنجان\n06:09 أكيد بابا قلتلها حطي كل إشي\n06:12 شفتي قديش زاكية بتشهي\n\n# The Allergy Crisis\n06:16 بابا أنا عندي حساسية من البتنجان\n06:20 ليش عملت هيك\n06:24 واو ما أحلاهم\n06:27 يا ريت لو الأولاد معنا\n\n# Enjoy the Moment\n06:29 فكرك مدبرين حالهم\n06:31 ما دام ما في تلفونات معناته الأمور تمام\n06:33 خلص أم سند روقي ارتاحي\n06:36 Enjoy the moment\n06:37 مضبوط مضبوط أكيد أكيد كل إشي تمام\n\n# Medical Questions\n06:44 عفواً بلا زغرة قديش عمرها\n06:47 أربعة عشر أو خمسة عشر\n06:51 ستة عشر\n06:53 وشو نوع دمها\n06:55 أخف من دمها ما في يعني أخف نوع\n\n# Clueless Dad\n07:00 وبلاش\n07:01 هيو هذا الأب اللي مش عارف إنه بنته عندها حساسية\n07:04 لأ وكمان ما عنده ولا معلومة مفيدة\n07:07 أيوه سند شو بدك بابا\n\n# Waiting at the Stadium\n07:09 وينك بابا الساعة تسعة\n07:11 صارلي ساعة بستناك على باب الملعب تيجي تاخدني\n07:14 آخ نسيت يلا يلا جاي\n07:19 حلوة هاي اللعبة صح سمور\n\n# Laundry Duty\n07:22 رنا انشري الغسيل\n07:24 يلا تعال معي أطلع أواعي المدرسة من الغسالة عشان يلحق ينشف بكرة\n07:33 هذا الغسيل ناشف\n07:36 ووسخ\n07:39 بابا\n\n# Mom is Coming\n07:42 هاي أمكم قربت توصل\n07:44 وقفوا هيك أشوف\n07:46 واحد اتنين تلاتة\n07:49 ممتاز سلمتني تلاتة ورح أسلمها تلاتة\n07:53 إحنا بالسليم\n\n# Last Minute Cleanup\n07:56 وهاي وصل الدليفري\n07:58 يلا يلا بسرعة يا ولاد بدي البيت يضوي ضوي\n08:02 وهي شغلنا الجلاية وكل الأمور تمام\n08:08 ماما اشتقنالك كتير\n\n# The Learning Curve\n08:11 اتشعطلنا بدونك اتبهدلنا\n08:14 بس يا ولد اعتبروني أخدت دورة تعريفية\n08:18 وهلا أنا جاهز للامتحان الجاي\n08:22 بصراحة إحنا كتير بنقدر تعبكم وشغلكم ومحبتكم\n\n# Tribute to Mothers\n08:27 تحية إكرام وإجلال لكل أم\n08:30 وتحية كبيرة كمان لكل أب زيي يعني\n08:33 متحمل مسؤولية الأولاد والبيت\n08:36 صحيح وهاي أحلى ورد لأحلى وردة\n08:40 ومنا كمان تفضلي\n\n# Where is Abu Insaf?\n08:42 شو وينه أبو انصاف\n08:45 الأمير اللي مدبر حاله اللي ما أزعجني\n08:48 ولا رن علي ولا مرة\n08:50 رنيت عليه بس ما كان موجود بالبيت\n\n# The Hotel Escape\n08:56 حمدلله عالسلامة لولو\n08:58 ليش وين كاين حضرتك\n09:00 هو أنا مجنون أظل قاعد في البيت زي الأطرش بالزفة\n09:04 حجزت يومين بالأوتيل عقبال ما ترجعي\n\n# The Dishwasher Disaster\n09:11 قلتي لنا جوزك على ما عودتيه آه\n09:15 لا قلتلك ما تحط الجلاية على تلاتات\n09:20 يي يي نسيت نسيت هيني طالع أطفيها"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-03-07 17:43:30 UTC",
   "updated_at": "2026-03-07 18:55:06 UTC",

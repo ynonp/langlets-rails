@@ -9,342 +9,520 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, ça faisait un moment que je cherchais du boulot.",
-        "text_l2": "Anyway, I'd been looking for a job for a while.",
         "timestamp": "00:07.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "Un soir, j'ai craqué.",
-        "text_l2": "One night, I cracked.",
         "timestamp": "00:08.40"
       },
       {
         "id": "phrase_3",
         "text_l1": "J'ai envoyé 257 emails copier-coller",
-        "text_l2": "I sent 257 copy-paste emails",
         "timestamp": "00:09.30"
       },
       {
         "id": "phrase_4",
         "text_l1": "à toutes les entreprises pas trop loin de chez moi.",
-        "text_l2": "to all the companies not too far from home.",
         "timestamp": "00:10.90"
       },
       {
         "id": "phrase_5",
         "text_l1": "Je me suis dit : quitte à me faire chier, autant que ce soit tout près.",
-        "text_l2": "I thought: if I'm gonna suffer, might as well be close by.",
         "timestamp": "00:12.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "Il y en a un seul qui m'a rappelé.",
-        "text_l2": "Only one called me back.",
         "timestamp": "00:14.20"
       },
       {
         "id": "phrase_7",
         "text_l1": "Je sais plus pour quel boulot c'était,",
-        "text_l2": "I don't remember what job it was,",
         "timestamp": "00:15.30"
       },
       {
         "id": "phrase_8",
         "text_l1": "mais j'ai répondu très sincèrement :",
-        "text_l2": "but I answered very sincerely:",
         "timestamp": "00:16.60"
       },
       {
         "id": "phrase_9",
         "text_l1": "\"Ah, ça serait un véritable honneur d'intégrer votre équipe.\"",
-        "text_l2": "\"Ah, it would be a true honor to join your team.\"",
         "timestamp": "00:17.60"
       },
       {
         "id": "phrase_10",
         "text_l1": "J'ai raccroché.",
-        "text_l2": "I hung up.",
         "timestamp": "00:19.40"
       },
       {
         "id": "phrase_11",
         "text_l1": "J'ai tapé le nom de la société sur Internet.",
-        "text_l2": "I typed the company name into the Internet.",
         "timestamp": "00:20.20"
       },
       {
         "id": "phrase_12",
         "text_l1": "C'était soit une maladie vénérienne,",
-        "text_l2": "It was either a venereal disease,",
         "timestamp": "00:21.70"
       },
       {
         "id": "phrase_13",
         "text_l1": "soit une branche de l'ONU,",
-        "text_l2": "or a branch of the UN,",
         "timestamp": "00:23.20"
       },
       {
         "id": "phrase_14",
         "text_l1": "soit des mecs qui louent des photocopieuses.",
-        "text_l2": "or guys who rent photocopiers.",
         "timestamp": "00:24.20"
       },
       {
         "id": "phrase_15",
         "text_l1": "Des mecs qui louent des photocopieuses.",
-        "text_l2": "Guys who rent photocopiers.",
         "timestamp": "00:25.60"
       },
       {
         "id": "phrase_16",
         "text_l1": "J'avais tout bien préparé.",
-        "text_l2": "I had prepared everything well.",
         "timestamp": "00:27.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "J'avais fait mon CV.",
-        "text_l2": "I had made my CV.",
         "timestamp": "00:28.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "Dans la case loisirs, j'avais mis que j'aimais bien le kayak.",
-        "text_l2": "In the hobbies box, I put that I liked kayaking.",
         "timestamp": "00:29.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "J'avais jamais fait de kayak,",
-        "text_l2": "I'd never done kayaking,",
         "timestamp": "00:30.90"
       },
       {
         "id": "phrase_20",
         "text_l1": "mais j'aimais bien les mots qui se lisent dans les deux sens.",
-        "text_l2": "but I liked words that read the same both ways.",
         "timestamp": "00:32.20"
       },
       {
         "id": "phrase_21",
         "text_l1": "J'avais mis le costume que je mets aux mariages,",
-        "text_l2": "I wore the suit I wear to weddings,",
         "timestamp": "00:34.20"
       },
       {
         "id": "phrase_22",
         "text_l1": "aux enterrements et aux entretiens d'embauche.",
-        "text_l2": "to funerals and job interviews.",
         "timestamp": "00:35.90"
       },
       {
         "id": "phrase_23",
         "text_l1": "À côté de moi, il y avait ce mec.",
-        "text_l2": "Next to me, there was this guy.",
         "timestamp": "00:37.90"
       },
       {
         "id": "phrase_24",
         "text_l1": "Je l'ai trouvé bizarre.",
-        "text_l2": "I found him weird.",
         "timestamp": "00:39.20"
       },
       {
         "id": "phrase_25",
         "text_l1": "Il était trop propre sur lui.",
-        "text_l2": "He was too clean-cut.",
         "timestamp": "00:40.20"
       },
       {
         "id": "phrase_26",
         "text_l1": "Je me suis dit que ça cachait quelque chose.",
-        "text_l2": "I thought that was hiding something.",
         "timestamp": "00:41.40"
       },
       {
         "id": "phrase_27",
         "text_l1": "Le directeur m'a appelé.",
-        "text_l2": "The manager called me.",
         "timestamp": "00:48.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "On s'est installés.",
-        "text_l2": "We sat down.",
         "timestamp": "00:49.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "J'ai regardé sa cravate.",
-        "text_l2": "I looked at his tie.",
         "timestamp": "00:50.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "C'était une cravate Dingo.",
-        "text_l2": "It was a Goofy tie.",
         "timestamp": "00:51.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "Je me suis demandé si un jour il était vraiment entré",
-        "text_l2": "I wondered if one day he'd actually walked",
         "timestamp": "00:52.20"
       },
       {
         "id": "phrase_32",
         "text_l1": "dans une boutique et qu'il avait dit :",
-        "text_l2": "into a shop and said:",
         "timestamp": "00:53.90"
       },
       {
         "id": "phrase_33",
         "text_l1": "\"Bonjour madame, je voudrais une cravate Dingo",
-        "text_l2": "\"Hello ma'am, I'd like a Goofy tie",
         "timestamp": "00:54.90"
       },
       {
         "id": "phrase_34",
         "text_l1": "parce que je suis un vrai déglingo.\"",
-        "text_l2": "because I'm really goofy.\"",
         "timestamp": "00:56.20"
       },
       {
         "id": "phrase_35",
         "text_l1": "Ça m'a fait rigoler.",
-        "text_l2": "That made me laugh.",
         "timestamp": "00:57.20"
       },
       {
         "id": "phrase_36",
         "text_l1": "Il m'a vu rigoler,",
-        "text_l2": "He saw me laughing,",
         "timestamp": "00:57.90"
       },
       {
         "id": "phrase_37",
         "text_l1": "mais je crois qu'il a cru que sa cravate était cool.",
-        "text_l2": "but I think he thought his tie was cool.",
         "timestamp": "00:58.90"
       },
       {
         "id": "phrase_38",
         "text_l1": "Il m'a demandé : \"Do you speak English ?\"",
-        "text_l2": "He asked me: \"Do you speak English?\"",
         "timestamp": "00:59.90"
       },
       {
         "id": "phrase_39",
         "text_l1": "J'ai dit : \"Yes.\"",
-        "text_l2": "I said: \"Yes.\"",
         "timestamp": "01:00.90"
       },
       {
         "id": "phrase_40",
         "text_l1": "Après il a dit : \"Where are you from ?\"",
-        "text_l2": "Then he said: \"Where are you from?\"",
         "timestamp": "01:01.90"
       },
       {
         "id": "phrase_41",
         "text_l1": "J'ai répondu : \"Yes.\"",
-        "text_l2": "I answered: \"Yes.\"",
         "timestamp": "01:02.90"
       },
       {
         "id": "phrase_42",
         "text_l1": "Il m'a demandé quel était mon plus gros défaut.",
-        "text_l2": "He asked me what was my biggest flaw.",
         "timestamp": "01:07.40"
       },
       {
         "id": "phrase_43",
         "text_l1": "J'ai hésité entre :",
-        "text_l2": "I hesitated between:",
         "timestamp": "01:08.90"
       },
       {
         "id": "phrase_44",
         "text_l1": "timide, maniaque, obsessionnel, lâche, dépressif, fainéant, menteur.",
-        "text_l2": "shy, manic, obsessive, cowardly, depressed, lazy, liar.",
         "timestamp": "01:09.90"
       },
       {
         "id": "phrase_45",
         "text_l1": "J'ai répondu : \"Perfectionniste.\"",
-        "text_l2": "I answered: \"Perfectionist.\"",
         "timestamp": "01:12.40"
       },
       {
         "id": "phrase_46",
         "text_l1": "En fait c'était : menteur.",
-        "text_l2": "Actually it was: liar.",
         "timestamp": "01:13.90"
       },
       {
         "id": "phrase_47",
         "text_l1": "Il m'a dit : \"Ah, vous... vous aimez le kayak ?\"",
-        "text_l2": "He said to me: \"Ah, you... you like kayaking?\"",
         "timestamp": "01:14.90"
       },
       {
         "id": "phrase_48",
         "text_l1": "J'ai dit : \"Oui.\"",
-        "text_l2": "I said: \"Yes.\"",
         "timestamp": "01:16.40"
       },
       {
         "id": "phrase_49",
         "text_l1": "Il m'a dit : \"Kayak de mer ou kayak d'eau vive ?\"",
-        "text_l2": "He said: \"Sea kayaking or white water kayaking?\"",
         "timestamp": "01:17.20"
       },
       {
         "id": "phrase_50",
         "text_l1": "J'ai dit : \"...\"",
-        "text_l2": "I said: \"...\"",
         "timestamp": "01:18.40"
       },
       {
         "id": "phrase_51",
         "text_l1": "\"Vous avez remarqué, ça se lit dans les deux sens.\"",
-        "text_l2": "\"You noticed, it reads the same both ways.\"",
         "timestamp": "01:20.90"
       },
       {
         "id": "phrase_52",
         "text_l1": "Il a rayé kayak.",
-        "text_l2": "He crossed out kayaking.",
         "timestamp": "01:26.40"
       },
       {
         "id": "phrase_53",
         "text_l1": "Il m'a dit : \"On vous rappellera.\"",
-        "text_l2": "He told me: \"We'll call you back.\"",
         "timestamp": "01:27.40"
       },
       {
         "id": "phrase_54",
         "text_l1": "J'ai entendu : \"Va te faire enculer.\"",
-        "text_l2": "I heard: \"Go fuck yourself.\"",
         "timestamp": "01:28.40"
       },
       {
         "id": "phrase_55",
         "text_l1": "Bref, j'ai passé un entretien d'embauche.",
-        "text_l2": "Anyway, I had a job interview.",
         "timestamp": "01:29.90"
       },
       {
         "id": "phrase_56",
         "text_l1": "Viens... Viens...",
-        "text_l2": "Come... Come...",
         "timestamp": "01:37.40"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], ça faisait un moment que je cherchais du boulot. => [Anyway], I'd been looking for a job for a while.\nBref, [ça faisait] un moment que je cherchais du boulot. => it had been, had been\nBref, ça faisait [un moment] que je cherchais du boulot. => Anyway, I'd been looking for a job for [a while].\nBref, ça faisait un moment que [je] cherchais du boulot. => Anyway, [I]'d been looking for a job for a while. # Mapping \"je\" to the \"I\" within \"I'd\"\nBref, ça faisait un moment que je [cherchais] du boulot. => Anyway, I'd been [looking for] a job for a while.\nBref, ça faisait un moment que je cherchais [du boulot]. => Anyway, I'd been looking for [a job] for a while.\n\n[Un] soir, j'ai craqué. => [One] night, I cracked.\nUn [soir], j'ai craqué. => One [night], I cracked.\nUn soir, [j']ai craqué. => One night, [I] cracked.\nUn soir, j'[ai craqué]. => One night, I [cracked.] # The passé composé \"ai craqué\" translates to the simple past \"cracked\"\n\n[J']ai envoyé 257 emails copier-coller => [I] sent 257 copy-paste emails\nJ'[ai envoyé] 257 emails copier-coller => I [sent] 257 copy-paste emails\nJ'ai envoyé [257] emails copier-coller => I sent [257] copy-paste emails\nJ'ai envoyé 257 [emails] copier-coller => I sent 257 copy-paste [emails]\nJ'ai envoyé 257 emails [copier-coller] => I sent 257 [copy-paste] emails # \"copier-coller\" functions as a single descriptor for the emails 15.06.24\n\n[à] toutes les entreprises pas trop loin de chez moi. => [to] all the companies not too far from home.\nà [toutes] les entreprises pas trop loin de chez moi. => to [all] the companies not too far from home.\nà toutes [les] entreprises pas trop loin de chez moi. => to all [the] companies not too far from home.\nà toutes les [entreprises] pas trop loin de chez moi. => to all the [companies] not too far from home.\nà toutes les entreprises [pas] trop loin de chez moi. => to all the companies [not] too far from home.\nà toutes les entreprises pas [trop] loin de chez moi. => to all the companies not [too] far from home.\nà toutes les entreprises pas trop [loin] de chez moi. => to all the companies not too [far] from home.\nà toutes les entreprises pas trop loin [de] chez moi. => to all the companies not too far [from] home.\nà toutes les entreprises pas trop loin de [chez moi]. => to all the companies not too far from [home]. # \"chez moi\" literally means \"at/to my place\" but maps directly to \"home\" here\n\n[Je] me suis dit : quitte à me faire chier, autant que ce soit tout près. => [I] thought: if I'm gonna suffer, might as well be close by.\nJe [me suis dit] : quitte à me faire chier, autant que ce soit tout près. => I [thought]: if I'm gonna suffer, might as well be close by. # literally: said to myself\nJe me suis dit : [quitte à] me faire chier, autant que ce soit tout près. => I thought: [if I'm gonna] suffer, might as well be close by. # used here as a conditional transition\nJe me suis dit : quitte à [me faire chier], autant que ce soit tout près. => I thought: if I'm gonna [suffer], might as well be close by. # literally: to bore myself/to have a shitty time\nJe me suis dit : quitte à me faire chier, [autant] que ce soit tout près. => I thought: if I'm gonna suffer, [might as well] be close by.\nJe me suis dit : quitte à me faire chier, autant que [ce soit] tout près. => I thought: if I'm gonna suffer, might as well [be] close by.\nJe me suis dit : quitte à me faire chier, autant que ce soit [tout près]. => I thought: if I'm gonna suffer, might as well be [close by].\n\nIl y en a [un] seul qui m'a rappelé. => Only [one] called me back.\nIl y en a un [seul] qui m'a rappelé. => [Only] one called me back.\nIl y en a un seul qui [m']a rappelé. => Only one called [me] back.\nIl y en a un seul qui m'[a rappelé]. => Only one [called] me [back.] # \"a rappelé\" is the passé composé form of \"rappeler\" (to call back)\n\n[Je] sais plus pour quel boulot c'était, => [I] don't remember what job it was,\nJe [sais plus] pour quel boulot c'était, => I [don't remember] what job it was, # \"ne ... plus\" means \"no longer\", but here \"sais plus\" is used idiomaticatly for \"don't remember\"\nJe sais plus pour [quel] boulot c'était, => I don't remember [what] job it was,\nJe sais plus pour quel [boulot] c'était, => I don't remember what [job] it was,\nJe sais plus pour quel boulot [c']était, => I don't remember what job [it] was,\nJe sais plus pour quel boulot c'[était], => I don't remember what job it [was],\n\n[mais] j'ai répondu très sincèrement : => [but] I answered very sincerely:\nmais [j']ai répondu très sincèrement : => but [I] answered very sincerely:\nmais j'[ai répondu] très sincèrement : => but I [answered] very sincerely:\nmais j'ai répondu [très] sincèrement : => but I answered [very] sincerely:\nmais j'ai répondu très [sincèrement] : => but I answered very [sincerely]:\n\n[Ah], ça serait un véritable honneur d'intégrer votre équipe. => [Ah], it would be a true honor to join your team.\nAh, [ça] serait un véritable honneur d'intégrer votre équipe. => Ah, [it] would be a true honor to join your team.\nAh, ça [serait] un véritable honneur d'intégrer votre équipe. => Ah, it [would be] a true honor to join your team.\nAh, ça serait [un] véritable honneur d'intégrer votre équipe. => Ah, it would be [a] true honor to join your team.\nAh, ça serait un [véritable] honneur d'intégrer votre équipe. => Ah, it would be a [true] honor to join your team.\nAh, ça serait un véritable [honneur] d'intégrer votre équipe. => Ah, it would be a true [honor] to join your team.\nAh, ça serait un véritable honneur [d'intégrer] votre équipe. => Ah, it would be a true honor [to join] your team.\nAh, ça serait un véritable honneur d'intégrer [votre] équipe. => Ah, it would be a true honor to join [your] team.\nAh, ça serait un véritable honneur d'intégrer votre [équipe]. => Ah, it would be a true honor to join your [team]\n\n[J']ai raccroché. => [I] hung up.\nJ'[ai raccroché]. => I [hung up]. # The passé composé \"ai raccroché\" translates to the English simple past \"hung up\"\n\n[J'ai] tapé le nom de la société sur Internet. => [I] typed the company name into the Internet.\nJ'ai [tapé] le nom de la société sur Internet. => I [typed] the company name into the Internet.\nJ'ai tapé [le] nom de la société sur Internet. => I typed [the] company name into the Internet.\nJ'ai tapé le [nom] de la société sur Internet. => I typed the company [name] into the Internet.\nJ'ai tapé le nom [de la] société sur Internet. => of the\nJ'ai tapé le nom de la [société] sur Internet. => I typed the [company] name into the Internet.\nJ'ai tapé le nom de la société [sur] Internet. => I typed the company name [into] the Internet.\nJ'ai tapé le nom de la société sur [Internet] => I typed the company name into the [Internet]\n\n[C'était] soit une maladie vénérienne, => [It was] either a venereal disease,\nC'était [soit] une maladie vénérienne, => It was [either] a venereal disease,\nC'était soit [une] maladie vénérienne, => It was either [a] venereal disease,\nC'était soit une [maladie] vénérienne, => It was either a venereal [disease],\nC'était soit une maladie [vénérienne], => It was either a [venereal] disease, # French nouns often come before the adjective, unlike English\n\n[soit] une branche de l'ONU, => [or] a branch of the UN,\nsoit [une] branche de l'ONU, => or [a] branch of the UN,\nsoit une [branche] de l'ONU, => or a [branch] of the UN,\nsoit une branche [de] l'ONU, => or a branch [of] the UN,\nsoit une branche de [l']ONU, => or a branch of [the] UN,\nsoit une branche de l'[ONU], => or a branch of the [UN],\n\n[soit] des mecs qui louent des photocopieuses. => [or] guys who rent photocopiers.\nsoit [des mecs] qui louent des photocopieuses. => or [guys] who rent photocopiers.\nsoit des mecs [qui] louent des photocopieuses. => or guys [who] rent photocopiers.\nsoit des mecs qui [louent] des photocopieuses. => or guys who [rent] photocopiers.\nsoit des mecs qui louent [des photocopieuses]. => or guys who rent [photocopiers].\n\n[Des mecs] qui louent des photocopieuses. => [Guys] who rent photocopiers. # \"Des\" is the plural article matching the plural \"Guys\"\nDes mecs [qui] louent des photocopieuses. => Guys [who] rent photocopiers.\nDes mecs qui [louent] des photocopieuses. => Guys who [rent] photocopiers.\nDes mecs qui louent [des photocopieuses]. => Guys who rent [photocopiers]. # \"des\" is the plural article corresponding to the plural \"photocopiers\"\n\n[J']avais tout bien préparé. => [I] had prepared everything well.\nJ'[avais] tout bien préparé. => I [had] prepared everything well.\nJ'avais [tout] bien préparé. => I had prepared [everything] well.\nJ'avais tout [bien] préparé. => I had prepared everything [well].\nJ'avais tout bien [préparé]. => I had [prepared] everything well.\n\n[J']avais fait mon CV. => [I] had made my CV.\nJ'[avais] fait mon CV. => I [had] made my CV.\nJ'avais [fait] mon CV. => I had [made] my CV.\nJ'avais fait [mon] CV. => I had made [my] CV.\nJ'avais fait mon [CV]. => I had made my [CV].\n\n[Dans] la case loisirs, j'avais mis que j'aimais bien le kayak. => [In] the hobbies box, I put that I liked kayaking.\nDans [la] case loisirs, j'avais mis que j'aimais bien le kayak. => In [the] hobbies box, I put that I liked kayaking.\nDans la [case] loisirs, j'avais mis que j'aimais bien le kayak. => In the hobbies [box], I put that I liked kayaking.\nDans la case [loisirs], j'avais mis que j'aimais bien le kayak. => In the [hobbies] box, I put that I liked kayaking.\nDans la case loisirs, [j']avais mis que j'aimais bien le kayak. => In the hobbies box, [I] put that I liked kayaking.\nDans la case loisirs, j'[avais mis] que j'aimais bien le kayak. => In the hobbies box, I [put] that I liked kayaking.\nDans la case loisirs, j'avais mis [que] j'aimais bien le kayak. => In the hobbies box, I put [that] I liked kayaking.\nDans la case loisirs, j'avais mis que [j']aimais bien le kayak. => In the hobbies box, I put that [I] liked kayaking.\nDans la case loisirs, j'avais mis que j'[aimais bien] le kayak. => In the hobbies box, I put that I [liked] kayaking.\nDans la case loisirs, j'avais mis que j'aimais bien [le kayak] => In the hobbies box, I put that I liked [kayaking]\n\n[J']avais jamais fait de kayak, => [I]'d never done kayaking,\nJ'[avais] jamais fait de kayak, => I['d] never done kayaking,\nJ'avais [jamais] fait de kayak, => I'd [never] done kayaking,\nJ'avais jamais [fait] de kayak, => I'd never [done] kayaking,\nJ'avais jamais fait [de kayak], => I'd never done [kayaking], # 'de' is selected with the noun to map to the English activity naming \"kayaking\"\n\n[mais] j'aimais bien les mots qui se lisent dans les deux sens. => [but] I liked words that read the same both ways.\nmais [j']aimais bien les mots qui se lisent dans les deux sens. => but [I] liked words that read the same both ways.\nmais j'[aimais bien] les mots qui se lisent dans les deux sens. => but I [liked] words that read the same both ways.\nmais j'aimais bien les [mots] qui se lisent dans les deux sens. => but I liked [words] that read the same both ways.\nmais j'aimais bien les mots [qui] se lisent dans les deux sens. => but I liked words [that] read the same both ways.\nmais j'aimais bien les mots qui [se lisent] dans les deux sens. => but I liked words that [read] the same both ways.\nmais j'aimais bien les mots qui se lisent [dans les deux sens] => but I liked words that read the same [both ways] # \"in the two directions/senses\" is the literal translation of this idiom\n\n[J']avais mis le costume que je mets aux mariages, => [I] wore the suit I wear to weddings,\nJ'[avais mis] le costume que je mets aux mariages, => I [wore] the suit I wear to weddings,\nJ'avais mis [le] costume que je mets aux mariages, => I wore [the] suit I wear to weddings,\nJ'avais mis le [costume] que je mets aux mariages, => I wore the [suit] I wear to weddings,\nJ'avais mis le costume [que] je mets aux mariages, => that, which # This relative pronoun is often omitted in English\nJ'avais mis le costume que [je] mets aux mariages, => I wore the suit [I] wear to weddings,\nJ'avais mis le costume que je [mets] aux mariages, => I wore the suit I [wear] to weddings,\nJ'avais mis le costume que je mets [aux] mariages, => I wore the suit I wear [to] weddings,\nJ'avais mis le costume que je mets aux [mariages], => I wore the suit I wear to [weddings],\n\n[aux] enterrements et aux entretiens d'embauche. => [to] funerals and job interviews.\naux [enterrements] et aux entretiens d'embauche. => to [funerals] and job interviews.\naux enterrements [et] aux entretiens d'embauche. => to funerals [and] job interviews.\naux enterrements et aux [entretiens] d'embauche. => to funerals and job [interviews].\naux enterrements et aux entretiens [d'embauche]. => to funerals and [job] interviews. # the noun \"embauche\" acts as the modifier \"job\" here\n\n[À côté de] moi, il y avait ce mec. => [Next to] me, there was this guy.\nÀ côté de [moi], il y avait ce mec. => Next to [me], there was this guy.\nÀ côté de moi, [il y avait] ce mec. => Next to me, [there was] this guy. # The set phrase \"il y a\" (there is/are) stays together\nÀ côté de moi, il y avait [ce] mec. => Next to me, there was [this] guy.\nÀ côté de moi, il y avait ce [mec]. => Next to me, there was this [guy].\n\n[Je] l'ai trouvé bizarre. => [I] found him weird.\nJe [l']ai trouvé bizarre. => I found [him] weird.\nJe l'[ai trouvé] bizarre. => I [found] him weird.\nJe l'ai trouvé [bizarre]. => I found him [weird].\n\n[Il] était trop propre sur lui. => [He] was too clean-cut.\nIl [était] trop propre sur lui. => He [was] too clean-cut.\nIl était [trop] propre sur lui. => He was [too] clean-cut.\nIl était trop [propre sur lui] => He was too [clean-cut] # \"propre sur lui\" is an idiomatic expression meaning well-groomed or clean-cut\n\n[Je] me suis dit que ça cachait quelque chose. => [I] thought that was hiding something.\nJe [me suis dit] que ça cachait quelque chose. => told myself, thought # \"se dire\" literally means \"to tell oneself\", but is translated as \"thought\" here\nJe me suis dit que [ça] cachait quelque chose. => I thought [that] was hiding something.\nJe me suis dit que ça [cachait] quelque chose. => I thought that [was hiding] something.\nJe me suis dit que ça cachait [quelque chose]. => I thought that was hiding [something]\n\n[Le] directeur m'a appelé. => [The] manager called me.\nLe [directeur] m'a appelé. => The [manager] called me.\nLe directeur [m']a appelé. => The manager called [me].\nLe directeur m'[a appelé]. => The manager [called] me.\n\n[On] s'est installés. => [We] sat down.\nOn [s'est installés]. => We [sat down]. # s'est installés literally means \"installed ourselves\" or \"got settled\", here translated as \"sat down\"\n\n[J']ai regardé sa cravate => [I] looked at his tie\nJ'[ai regardé] sa cravate => I [looked at] his tie # looked at is the translation of the verb regarder in the past tense\nJ'ai regardé [sa] cravate => I looked at [his] tie\nJ'ai regardé sa [cravate] => I looked at his [tie]\n\n[C'était] une cravate Dingo. => [It was] a Goofy tie.\nC'était [une] cravate Dingo. => It was [a] Goofy tie.\nC'était une [cravate] Dingo. => It was a Goofy [tie].\nC'était une cravate [Dingo]. => It was a [Goofy] tie. # \"Dingo\" is the French name for the character \"Goofy\"\n\n[Je] me suis demandé si un jour il était vraiment entré => [I] wondered if one day he'd actually walked\nJe [me suis demandé] si un jour il était vraiment entré => I [wondered] if one day he'd actually walked # reflexive verb \"se demander\" translates to \"wonder\"\nJe me suis demandé [si] un jour il était vraiment entré => I wondered [if] one day he'd actually walked\nJe me suis demandé si [un] jour il était vraiment entré => I wondered if [one] day he'd actually walked\nJe me suis demandé si un [jour] il était vraiment entré => I wondered if one [day] he'd actually walked\nJe me suis demandé si un jour [il] était vraiment entré => I wondered if one day [he]'d actually walked\nJe me suis demandé si un jour il [était] vraiment entré => I wondered if one day he['d] actually walked # \"était\" is the auxiliary forming the pluperfect, matching the \"'d\" (had)\nJe me suis demandé si un jour il était [vraiment] entré => I wondered if one day he'd [actually] walked\nJe me suis demandé si un jour il était vraiment [entré] => I wondered if one day he'd actually [walked] # \"entré\" translates here to the specific action of walking in/entering\n\n[dans] une boutique et qu'il avait dit : => [into] a shop and said:\ndans [une] boutique et qu'il avait dit : => into [a] shop and said:\ndans une [boutique] et qu'il avait dit : => into a [shop] and said:\ndans une boutique [et] qu'il avait dit : => into a shop [and] said:\ndans une boutique et [qu'il] avait dit : => that he\ndans une boutique et qu'il [avait] dit : => had\ndans une boutique et qu'il avait [dit] : => into a shop and [said]:\n\n[Bonjour] madame, je voudrais une cravate Dingo => [Hello] ma'am, I'd like a Goofy tie\nBonjour [madame], je voudrais une cravate Dingo => Hello [ma'am], I'd like a Goofy tie\nBonjour madame, [je] voudrais une cravate Dingo => Hello ma'am, [I]'d like a Goofy tie\nBonjour madame, je [voudrais] une cravate Dingo => Hello ma'am, I['d like] a Goofy tie\nBonjour madame, je voudrais [une] cravate Dingo => Hello ma'am, I'd like [a] Goofy tie\nBonjour madame, je voudrais une [cravate] Dingo => Hello ma'am, I'd like a Goofy [tie]\nBonjour madame, je voudrais une cravate [Dingo] => Hello ma'am, I'd like a [Goofy] tie\n\n[parce que] je suis un vrai déglingo.\" => [because] I'm really goofy.\"\nparce que [je] suis un vrai déglingo.\" => because [I]'m really goofy.\"\nparce que je [suis] un vrai déglingo.\" => because I['m] really goofy.\"\nparce que je suis un [vrai] déglingo.\" => because I'm [really] goofy.\"\nparce que je suis un vrai [déglingo].\" => because I'm really [goofy].\" # déglingo is slang for wacky or crazy, translated here as goofy\n\n[Ça] m'a fait rigoler. => [That] made me laugh.\nÇa [m']a fait rigoler. => That made [me] laugh.\nÇa m'[a fait] rigoler. => That [made] me laugh.\nÇa m'a fait [rigoler]. => That made me [laugh].\n\n[Il] m'a vu rigoler, => [He] saw me laughing,\nIl [m']a vu rigoler, => He saw [me] laughing,\nIl m'[a vu] rigoler, => He [saw] me laughing,\nIl m'a vu [rigoler], => He saw me [laughing],\n\n[mais] je crois qu'il a cru que sa cravate était cool. => [but] I think he thought his tie was cool.\nmais [je] crois qu'il a cru que sa cravate était cool. => but [I] think he thought his tie was cool.\nmais je [crois] qu'il a cru que sa cravate était cool. => but I [think] he thought his tie was cool.\nmais je crois qu'[il] a cru que sa cravate était cool. => but I think [he] thought his tie was cool.\nmais je crois qu'il [a cru] que sa cravate était cool. => but I think he [thought] his tie was cool.\nmais je crois qu'il a cru que [sa] cravate était cool. => but I think he thought [his] tie was cool.\nmais je crois qu'il a cru que sa [cravate] était cool. => but I think he thought his [tie] was cool.\nmais je crois qu'il a cru que sa cravate [était] cool. => but I think he thought his tie [was] cool.\nmais je crois qu'il a cru que sa cravate était [cool]. => but I think he thought his tie was [cool]. # \"qu'\" and \"que\" are omitted in the English translation and therefore skipped\n\n[Il] m'a demandé : \"Do you speak English ?\" => [He] asked me: \"Do you speak English?\"\nIl [m']a demandé : \"Do you speak English ?\" => He asked [me]: \"Do you speak English?\"\nIl m'[a demandé] : \"Do you speak English ?\" => He [asked] me: \"Do you speak English?\"\nIl m'a demandé : \"[Do] you speak English ?\" => He asked me: \"[Do] you speak English?\"\nIl m'a demandé : \"Do [you] speak English ?\" => He asked me: \"Do [you] speak English?\"\nIl m'a demandé : \"Do you [speak] English ?\" => He asked me: \"Do you [speak] English?\"\nIl m'a demandé : \"Do you speak [English] ?\" => He asked me: \"Do you speak [English]?\"\n\n[J']ai dit : \"Yes.\" => [I] said: \"Yes.\"\nJ'[ai dit] : \"Yes.\" => I [said]: \"Yes.\"\nJ'ai dit : \"[Yes].\" => I said: \"[Yes].\"\n\n[Après] il a dit : \"Where are you from ?\" => [Then] he said: \"Where are you from?\"\nAprès [il] a dit : \"Where are you from ?\" => Then [he] said: \"Where are you from?\"\nAprès il [a dit] : \"Where are you from ?\" => Then he [said]: \"Where are you from?\"\nAprès il a dit : \"[Where] are you from ?\" => Then he said: \"[Where] are you from?\"\nAprès il a dit : \"Where [are] you from ?\" => Then he said: \"Where [are] you from?\"\nAprès il a dit : \"Where are [you] from ?\" => Then he said: \"Where are [you] from?\"\nAprès il a dit : \"Where are you [from] ?\" => Then he said: \"Where are you [from]?\"\n\n[J']ai répondu : \"Yes.\" => [I] answered: \"Yes.\"\nJ'[ai répondu] : \"Yes.\" => I [answered]: \"Yes.\" # The passé composé \"ai répondu\" translates to the simple past \"answered\"\nJ'ai répondu : \"[Yes]\" => I answered: \"[Yes]\"\n\n[Il] m'a demandé quel était mon plus gros défaut. => [He] asked me what was my biggest flaw.\nIl [m']a demandé quel était mon plus gros défaut. => He asked [me] what was my biggest flaw.\nIl m'[a demandé] quel était mon plus gros défaut. => He [asked] me what was my biggest flaw.\nIl m'a demandé [quel] était mon plus gros défaut. => He asked me [what] was my biggest flaw.\nIl m'a demandé quel [était] mon plus gros défaut. => He asked me what [was] my biggest flaw.\nIl m'a demandé quel était [mon] plus gros défaut. => He asked me what was [my] biggest flaw.\nIl m'a demandé quel était mon [plus gros] défaut. => He asked me what was [biggest] flaw.\nIl m'a demandé quel était mon plus gros [défaut]. => He asked me what was my biggest [flaw. ]\n\nJ'ai hésité [entre] : => I hesitated [between]:\n\n[timide], maniaque, obsessionnel, lâche, dépressif, fainéant, menteur. => [shy], manic, obsessive, cowardly, depressed, lazy, liar.\ntimide, [maniaque], obsessionnel, lâche, dépressif, fainéant, menteur. => shy, [manic], obsessive, cowardly, depressed, lazy, liar.\ntimide, maniaque, [obsessionnel], lâche, dépressif, fainéant, menteur. => shy, manic, [obsessive], cowardly, depressed, lazy, liar.\ntimide, maniaque, obsessionnel, [lâche], dépressif, fainéant, menteur. => shy, manic, obsessive, [cowardly], depressed, lazy, liar.\ntimide, maniaque, obsessionnel, lâche, [dépressif], fainéant, menteur. => shy, manic, obsessive, cowardly, [depressed], lazy, liar.\ntimide, maniaque, obsessionnel, lâche, dépressif, [fainéant], menteur. => shy, manic, obsessive, cowardly, depressed, [lazy], liar.\ntimide, maniaque, obsessionnel, lâche, dépressif, fainéant, [menteur]. => shy, manic, obsessive, cowardly, depressed, lazy, [liar].\n\n[J']ai répondu : \"Perfectionniste.\" => [I] answered: \"Perfectionist.\"\nJ'[ai répondu] : \"Perfectionniste.\" => I [answered]: \"Perfectionist.\"\nJ'ai répondu : \"[Perfectionniste].\" => I answered: \"[Perfectionist].\" # Simple mapping for the noun phrase\n\n[En fait] c'était : menteur. => [Actually] it was: liar.\nEn fait [c']était : menteur. => Actually [it] was: liar.\nEn fait c'[était] : menteur. => Actually it [was]: liar.\nEn fait c'était : [menteur]. => Actually it was: [liar].\n\n[Il] m'a dit : \"Ah, vous... vous aimez le kayak ?\" => [He] said to me: \"Ah, you... you like kayaking?\"\nIl [m']a dit : \"Ah, vous... vous aimez le kayak ?\" => He said to [me]: \"Ah, you... you like kayaking?\"\nIl m'[a dit] : \"Ah, vous... vous aimez le kayak ?\" => He [said] to me: \"Ah, you... you like kayaking?\"\nIl m'a dit : \"[Ah], vous... vous aimez le kayak ?\" => He said to me: \"[Ah], you... you like kayaking?\"\nIl m'a dit : \"Ah, [vous]... vous aimez le kayak ?\" => He said to me: \"Ah, [you]... you like kayaking?\"\nIl m'a dit : \"Ah, vous... [vous] aimez le kayak ?\" => He said to me: \"Ah, you... [you] like kayaking?\"\nIl m'a dit : \"Ah, vous... vous [aimez] le kayak ?\" => He said to me: \"Ah, you... you [like] kayaking?\"\nIl m'a dit : \"Ah, vous... vous aimez [le kayak] ?\" => He said to me: \"Ah, you... you like [kayaking]?\" # \"le kayak\" as a general activity maps to \"kayaking\"\n\nJ'[ai dit] : \"Oui.\" => I [said]: \"Yes.\"\nJ'ai dit : \"[Oui].\" => I said: \"[Yes].\"\n\n[Il] m'a dit : \"Kayak de mer ou kayak d'eau vive ?\" => [He] said: \"Sea kayaking or white water kayaking?\"\nIl [m'a dit] : \"Kayak de mer ou kayak d'eau vive ?\" => He [said]: \"Sea kayaking or white water kayaking?\" # m' means \"to me\", which is omitted in the English translation\nIl m'a dit : \"[Kayak] de mer ou kayak d'eau vive ?\" => He said: \"Sea [kayaking] or white water kayaking?\"\nIl m'a dit : \"Kayak [de mer] ou kayak d'eau vive ?\" => He said: \"[Sea] kayaking or white water kayaking?\"\nIl m'a dit : \"Kayak de mer [ou] kayak d'eau vive ?\" => He said: \"Sea kayaking [or] white water kayaking?\"\nIl m'a dit : \"Kayak de mer ou [kayak] d'eau vive ?\" => He said: \"Sea kayaking or white water [kayaking]?\"\nIl m'a dit : \"Kayak de mer ou kayak [d'eau vive] ?\" => He said: \"Sea kayaking or [white water] kayaking?\" # \"eau vive\" literally means \"living/running water\" but corresponds to \"white water\"\n\n[J']ai dit : \"...\" => [I] said: \"...\"\nJ'[ai dit] : \"...\" => I [said]: \"...\" # \"ai dit\" is the passé composé form of \"dire\", translating to the English simple past \"said\"\n\n[Vous] avez remarqué, ça se lit dans les deux sens. => [You] noticed, it reads the same both ways.\nVous [avez remarqué], ça se lit dans les deux sens. => You [noticed], it reads the same both ways.\nVous avez remarqué, [ça] se lit dans les deux sens. => You noticed, [it] reads the same both ways.\nVous avez remarqué, ça [se lit] dans les deux sens. => You noticed, it [reads] the same both ways.\nVous avez remarqué, ça se lit dans [les deux] sens. => You noticed, it reads the same [both] ways.\nVous avez remarqué, ça se lit dans les deux [sens]. => You noticed, it reads the same both [ways]. # \"sens\" here means \"directions\" or \"ways\"\n\n[Il] a rayé kayak. => [He] crossed out kayaking.\nIl [a rayé] kayak. => He [crossed out] kayaking.\nIl a rayé [kayak]. => He crossed out [kayaking].\n\n[Il] m'a dit : \"On vous rappellera.\" => [He] told me: \"We'll call you back.\"\nIl [m']a dit : \"On vous rappellera.\" => He told [me]: \"We'll call you back.\"\nIl m'[a dit] : \"On vous rappellera.\" => He [told] me: \"We'll call you back.\"\nIl m'a dit : \"[On] vous rappellera.\" => He told me: \"[We]'ll call you back.\"\nIl m'a dit : \"On [vous] rappellera.\" => He told me: \"We'll call [you] back.\"\nIl m'a dit : \"On vous [rappellera].\" => 'll call back # French future tense \"rappellera\" includes the meaning of will, call, and back (the prefix -re)\n\n[J']ai entendu : \"Va te faire enculer.\" => [I] heard: \"Go fuck yourself.\"\nJ'[ai entendu] : \"Va te faire enculer.\" => I [heard]: \"Go fuck yourself.\"\nJ'ai entendu : \"[Va] te faire enculer.\" => I heard: \"[Go] fuck yourself.\"\nJ'ai entendu : \"Va [te] faire enculer.\" => I heard: \"Go fuck [yourself].\"\nJ'ai entendu : \"Va te [faire enculer].\" => I heard: \"Go [fuck] yourself.\" # while literal construction is \"to get/have bugged\", it corresponds to \"fuck\" here\n\n[Bref], j'ai passé un entretien d'embauche. => [Anyway], I had a job interview.\nBref, [j']ai passé un entretien d'embauche. => Anyway, [I] had a job interview.\nBref, j'[ai passé] un entretien d'embauche. => Anyway, I [had] a job interview.\nBref, j'ai passé [un] entretien d'embauche. => Anyway, I had [a] job interview.\nBref, j'ai passé un [entretien] d'embauche. => Anyway, I had a job [interview]\nBref, j'ai passé un entretien [d'embauche]. => Anyway, I had a [job] interview # literally \"hiring\" or \"recruitment\" interview\n\n[Viens]... Viens... => [Come]... Come...\nViens... [Viens]... => Come... [Come]...\n\n"
+    "phrases_with_token_translations": "[Bref], ça faisait un moment que je cherchais du boulot. => [Anyway], I'd been looking for a job for a while.\nBref, [ça faisait] un moment que je cherchais du boulot. => it had been, had been\nBref, ça faisait [un moment] que je cherchais du boulot. => Anyway, I'd been looking for a job for [a while].\nBref, ça faisait un moment que [je] cherchais du boulot. => Anyway, [I]'d been looking for a job for a while. # Mapping \"je\" to the \"I\" within \"I'd\"\nBref, ça faisait un moment que je [cherchais] du boulot. => Anyway, I'd been [looking for] a job for a while.\nBref, ça faisait un moment que je cherchais [du boulot]. => Anyway, I'd been looking for [a job] for a while.\n\n[Un] soir, j'ai craqué. => [One] night, I cracked.\nUn [soir], j'ai craqué. => One [night], I cracked.\nUn soir, [j']ai craqué. => One night, [I] cracked.\nUn soir, j'[ai craqué]. => One night, I [cracked.] # The passé composé \"ai craqué\" translates to the simple past \"cracked\"\n\n[J']ai envoyé 257 emails copier-coller => [I] sent 257 copy-paste emails\nJ'[ai envoyé] 257 emails copier-coller => I [sent] 257 copy-paste emails\nJ'ai envoyé [257] emails copier-coller => I sent [257] copy-paste emails\nJ'ai envoyé 257 [emails] copier-coller => I sent 257 copy-paste [emails]\nJ'ai envoyé 257 emails [copier-coller] => I sent 257 [copy-paste] emails # \"copier-coller\" functions as a single descriptor for the emails 15.06.24\n\n[à] toutes les entreprises pas trop loin de chez moi. => [to] all the companies not too far from home.\nà [toutes] les entreprises pas trop loin de chez moi. => to [all] the companies not too far from home.\nà toutes [les] entreprises pas trop loin de chez moi. => to all [the] companies not too far from home.\nà toutes les [entreprises] pas trop loin de chez moi. => to all the [companies] not too far from home.\nà toutes les entreprises [pas] trop loin de chez moi. => to all the companies [not] too far from home.\nà toutes les entreprises pas [trop] loin de chez moi. => to all the companies not [too] far from home.\nà toutes les entreprises pas trop [loin] de chez moi. => to all the companies not too [far] from home.\nà toutes les entreprises pas trop loin [de] chez moi. => to all the companies not too far [from] home.\nà toutes les entreprises pas trop loin de [chez moi]. => to all the companies not too far from [home]. # \"chez moi\" literally means \"at/to my place\" but maps directly to \"home\" here\n\n[Je] me suis dit : quitte à me faire chier, autant que ce soit tout près. => [I] thought: if I'm gonna suffer, might as well be close by.\nJe [me suis dit] : quitte à me faire chier, autant que ce soit tout près. => I [thought]: if I'm gonna suffer, might as well be close by. # literally: said to myself\nJe me suis dit : [quitte à] me faire chier, autant que ce soit tout près. => I thought: [if I'm gonna] suffer, might as well be close by. # used here as a conditional transition\nJe me suis dit : quitte à [me faire chier], autant que ce soit tout près. => I thought: if I'm gonna [suffer], might as well be close by. # literally: to bore myself/to have a shitty time\nJe me suis dit : quitte à me faire chier, [autant] que ce soit tout près. => I thought: if I'm gonna suffer, [might as well] be close by.\nJe me suis dit : quitte à me faire chier, autant que [ce soit] tout près. => I thought: if I'm gonna suffer, might as well [be] close by.\nJe me suis dit : quitte à me faire chier, autant que ce soit [tout près]. => I thought: if I'm gonna suffer, might as well be [close by].\n\nIl y en a [un] seul qui m'a rappelé. => Only [one] called me back.\nIl y en a un [seul] qui m'a rappelé. => [Only] one called me back.\nIl y en a un seul qui [m']a rappelé. => Only one called [me] back.\nIl y en a un seul qui m'[a rappelé]. => Only one [called] me [back.] # \"a rappelé\" is the passé composé form of \"rappeler\" (to call back)\n\n[Je] sais plus pour quel boulot c'était, => [I] don't remember what job it was,\nJe [sais plus] pour quel boulot c'était, => I [don't remember] what job it was, # \"ne ... plus\" means \"no longer\", but here \"sais plus\" is used idiomaticatly for \"don't remember\"\nJe sais plus pour [quel] boulot c'était, => I don't remember [what] job it was,\nJe sais plus pour quel [boulot] c'était, => I don't remember what [job] it was,\nJe sais plus pour quel boulot [c']était, => I don't remember what job [it] was,\nJe sais plus pour quel boulot c'[était], => I don't remember what job it [was],\n\n[mais] j'ai répondu très sincèrement : => [but] I answered very sincerely:\nmais [j']ai répondu très sincèrement : => but [I] answered very sincerely:\nmais j'[ai répondu] très sincèrement : => but I [answered] very sincerely:\nmais j'ai répondu [très] sincèrement : => but I answered [very] sincerely:\nmais j'ai répondu très [sincèrement] : => but I answered very [sincerely]:\n\n[Ah], ça serait un véritable honneur d'intégrer votre équipe. => [Ah], it would be a true honor to join your team.\nAh, [ça] serait un véritable honneur d'intégrer votre équipe. => Ah, [it] would be a true honor to join your team.\nAh, ça [serait] un véritable honneur d'intégrer votre équipe. => Ah, it [would be] a true honor to join your team.\nAh, ça serait [un] véritable honneur d'intégrer votre équipe. => Ah, it would be [a] true honor to join your team.\nAh, ça serait un [véritable] honneur d'intégrer votre équipe. => Ah, it would be a [true] honor to join your team.\nAh, ça serait un véritable [honneur] d'intégrer votre équipe. => Ah, it would be a true [honor] to join your team.\nAh, ça serait un véritable honneur [d'intégrer] votre équipe. => Ah, it would be a true honor [to join] your team.\nAh, ça serait un véritable honneur d'intégrer [votre] équipe. => Ah, it would be a true honor to join [your] team.\nAh, ça serait un véritable honneur d'intégrer votre [équipe]. => Ah, it would be a true honor to join your [team]\n\n[J']ai raccroché. => [I] hung up.\nJ'[ai raccroché]. => I [hung up]. # The passé composé \"ai raccroché\" translates to the English simple past \"hung up\"\n\n[J'ai] tapé le nom de la société sur Internet. => [I] typed the company name into the Internet.\nJ'ai [tapé] le nom de la société sur Internet. => I [typed] the company name into the Internet.\nJ'ai tapé [le] nom de la société sur Internet. => I typed [the] company name into the Internet.\nJ'ai tapé le [nom] de la société sur Internet. => I typed the company [name] into the Internet.\nJ'ai tapé le nom [de la] société sur Internet. => of the\nJ'ai tapé le nom de la [société] sur Internet. => I typed the [company] name into the Internet.\nJ'ai tapé le nom de la société [sur] Internet. => I typed the company name [into] the Internet.\nJ'ai tapé le nom de la société sur [Internet] => I typed the company name into the [Internet]\n\n[C'était] soit une maladie vénérienne, => [It was] either a venereal disease,\nC'était [soit] une maladie vénérienne, => It was [either] a venereal disease,\nC'était soit [une] maladie vénérienne, => It was either [a] venereal disease,\nC'était soit une [maladie] vénérienne, => It was either a venereal [disease],\nC'était soit une maladie [vénérienne], => It was either a [venereal] disease, # French nouns often come before the adjective, unlike English\n\n[soit] une branche de l'ONU, => [or] a branch of the UN,\nsoit [une] branche de l'ONU, => or [a] branch of the UN,\nsoit une [branche] de l'ONU, => or a [branch] of the UN,\nsoit une branche [de] l'ONU, => or a branch [of] the UN,\nsoit une branche de [l']ONU, => or a branch of [the] UN,\nsoit une branche de l'[ONU], => or a branch of the [UN],\n\n[soit] des mecs qui louent des photocopieuses. => [or] guys who rent photocopiers.\nsoit [des mecs] qui louent des photocopieuses. => or [guys] who rent photocopiers.\nsoit des mecs [qui] louent des photocopieuses. => or guys [who] rent photocopiers.\nsoit des mecs qui [louent] des photocopieuses. => or guys who [rent] photocopiers.\nsoit des mecs qui louent [des photocopieuses]. => or guys who rent [photocopiers].\n\n[Des mecs] qui louent des photocopieuses. => [Guys] who rent photocopiers. # \"Des\" is the plural article matching the plural \"Guys\"\nDes mecs [qui] louent des photocopieuses. => Guys [who] rent photocopiers.\nDes mecs qui [louent] des photocopieuses. => Guys who [rent] photocopiers.\nDes mecs qui louent [des photocopieuses]. => Guys who rent [photocopiers]. # \"des\" is the plural article corresponding to the plural \"photocopiers\"\n\n[J']avais tout bien préparé. => [I] had prepared everything well.\nJ'[avais] tout bien préparé. => I [had] prepared everything well.\nJ'avais [tout] bien préparé. => I had prepared [everything] well.\nJ'avais tout [bien] préparé. => I had prepared everything [well].\nJ'avais tout bien [préparé]. => I had [prepared] everything well.\n\n[J']avais fait mon CV. => [I] had made my CV.\nJ'[avais] fait mon CV. => I [had] made my CV.\nJ'avais [fait] mon CV. => I had [made] my CV.\nJ'avais fait [mon] CV. => I had made [my] CV.\nJ'avais fait mon [CV]. => I had made my [CV].\n\n[Dans] la case loisirs, j'avais mis que j'aimais bien le kayak. => [In] the hobbies box, I put that I liked kayaking.\nDans [la] case loisirs, j'avais mis que j'aimais bien le kayak. => In [the] hobbies box, I put that I liked kayaking.\nDans la [case] loisirs, j'avais mis que j'aimais bien le kayak. => In the hobbies [box], I put that I liked kayaking.\nDans la case [loisirs], j'avais mis que j'aimais bien le kayak. => In the [hobbies] box, I put that I liked kayaking.\nDans la case loisirs, [j']avais mis que j'aimais bien le kayak. => In the hobbies box, [I] put that I liked kayaking.\nDans la case loisirs, j'[avais mis] que j'aimais bien le kayak. => In the hobbies box, I [put] that I liked kayaking.\nDans la case loisirs, j'avais mis [que] j'aimais bien le kayak. => In the hobbies box, I put [that] I liked kayaking.\nDans la case loisirs, j'avais mis que [j']aimais bien le kayak. => In the hobbies box, I put that [I] liked kayaking.\nDans la case loisirs, j'avais mis que j'[aimais bien] le kayak. => In the hobbies box, I put that I [liked] kayaking.\nDans la case loisirs, j'avais mis que j'aimais bien [le kayak] => In the hobbies box, I put that I liked [kayaking]\n\n[J']avais jamais fait de kayak, => [I]'d never done kayaking,\nJ'[avais] jamais fait de kayak, => I['d] never done kayaking,\nJ'avais [jamais] fait de kayak, => I'd [never] done kayaking,\nJ'avais jamais [fait] de kayak, => I'd never [done] kayaking,\nJ'avais jamais fait [de kayak], => I'd never done [kayaking], # 'de' is selected with the noun to map to the English activity naming \"kayaking\"\n\n[mais] j'aimais bien les mots qui se lisent dans les deux sens. => [but] I liked words that read the same both ways.\nmais [j']aimais bien les mots qui se lisent dans les deux sens. => but [I] liked words that read the same both ways.\nmais j'[aimais bien] les mots qui se lisent dans les deux sens. => but I [liked] words that read the same both ways.\nmais j'aimais bien les [mots] qui se lisent dans les deux sens. => but I liked [words] that read the same both ways.\nmais j'aimais bien les mots [qui] se lisent dans les deux sens. => but I liked words [that] read the same both ways.\nmais j'aimais bien les mots qui [se lisent] dans les deux sens. => but I liked words that [read] the same both ways.\nmais j'aimais bien les mots qui se lisent [dans les deux sens] => but I liked words that read the same [both ways] # \"in the two directions/senses\" is the literal translation of this idiom\n\n[J']avais mis le costume que je mets aux mariages, => [I] wore the suit I wear to weddings,\nJ'[avais mis] le costume que je mets aux mariages, => I [wore] the suit I wear to weddings,\nJ'avais mis [le] costume que je mets aux mariages, => I wore [the] suit I wear to weddings,\nJ'avais mis le [costume] que je mets aux mariages, => I wore the [suit] I wear to weddings,\nJ'avais mis le costume [que] je mets aux mariages, => that, which # This relative pronoun is often omitted in English\nJ'avais mis le costume que [je] mets aux mariages, => I wore the suit [I] wear to weddings,\nJ'avais mis le costume que je [mets] aux mariages, => I wore the suit I [wear] to weddings,\nJ'avais mis le costume que je mets [aux] mariages, => I wore the suit I wear [to] weddings,\nJ'avais mis le costume que je mets aux [mariages], => I wore the suit I wear to [weddings],\n\n[aux] enterrements et aux entretiens d'embauche. => [to] funerals and job interviews.\naux [enterrements] et aux entretiens d'embauche. => to [funerals] and job interviews.\naux enterrements [et] aux entretiens d'embauche. => to funerals [and] job interviews.\naux enterrements et aux [entretiens] d'embauche. => to funerals and job [interviews].\naux enterrements et aux entretiens [d'embauche]. => to funerals and [job] interviews. # the noun \"embauche\" acts as the modifier \"job\" here\n\n[À côté de] moi, il y avait ce mec. => [Next to] me, there was this guy.\nÀ côté de [moi], il y avait ce mec. => Next to [me], there was this guy.\nÀ côté de moi, [il y avait] ce mec. => Next to me, [there was] this guy. # The set phrase \"il y a\" (there is/are) stays together\nÀ côté de moi, il y avait [ce] mec. => Next to me, there was [this] guy.\nÀ côté de moi, il y avait ce [mec]. => Next to me, there was this [guy].\n\n[Je] l'ai trouvé bizarre. => [I] found him weird.\nJe [l']ai trouvé bizarre. => I found [him] weird.\nJe l'[ai trouvé] bizarre. => I [found] him weird.\nJe l'ai trouvé [bizarre]. => I found him [weird].\n\n[Il] était trop propre sur lui. => [He] was too clean-cut.\nIl [était] trop propre sur lui. => He [was] too clean-cut.\nIl était [trop] propre sur lui. => He was [too] clean-cut.\nIl était trop [propre sur lui] => He was too [clean-cut] # \"propre sur lui\" is an idiomatic expression meaning well-groomed or clean-cut\n\n[Je] me suis dit que ça cachait quelque chose. => [I] thought that was hiding something.\nJe [me suis dit] que ça cachait quelque chose. => told myself, thought # \"se dire\" literally means \"to tell oneself\", but is translated as \"thought\" here\nJe me suis dit que [ça] cachait quelque chose. => I thought [that] was hiding something.\nJe me suis dit que ça [cachait] quelque chose. => I thought that [was hiding] something.\nJe me suis dit que ça cachait [quelque chose]. => I thought that was hiding [something]\n\n[Le] directeur m'a appelé. => [The] manager called me.\nLe [directeur] m'a appelé. => The [manager] called me.\nLe directeur [m']a appelé. => The manager called [me].\nLe directeur m'[a appelé]. => The manager [called] me.\n\n[On] s'est installés. => [We] sat down.\nOn [s'est installés]. => We [sat down]. # s'est installés literally means \"installed ourselves\" or \"got settled\", here translated as \"sat down\"\n\n[J']ai regardé sa cravate => [I] looked at his tie\nJ'[ai regardé] sa cravate => I [looked at] his tie # looked at is the translation of the verb regarder in the past tense\nJ'ai regardé [sa] cravate => I looked at [his] tie\nJ'ai regardé sa [cravate] => I looked at his [tie]\n\n[C'était] une cravate Dingo. => [It was] a Goofy tie.\nC'était [une] cravate Dingo. => It was [a] Goofy tie.\nC'était une [cravate] Dingo. => It was a Goofy [tie].\nC'était une cravate [Dingo]. => It was a [Goofy] tie. # \"Dingo\" is the French name for the character \"Goofy\"\n\n[Je] me suis demandé si un jour il était vraiment entré => [I] wondered if one day he'd actually walked\nJe [me suis demandé] si un jour il était vraiment entré => I [wondered] if one day he'd actually walked # reflexive verb \"se demander\" translates to \"wonder\"\nJe me suis demandé [si] un jour il était vraiment entré => I wondered [if] one day he'd actually walked\nJe me suis demandé si [un] jour il était vraiment entré => I wondered if [one] day he'd actually walked\nJe me suis demandé si un [jour] il était vraiment entré => I wondered if one [day] he'd actually walked\nJe me suis demandé si un jour [il] était vraiment entré => I wondered if one day [he]'d actually walked\nJe me suis demandé si un jour il [était] vraiment entré => I wondered if one day he['d] actually walked # \"était\" is the auxiliary forming the pluperfect, matching the \"'d\" (had)\nJe me suis demandé si un jour il était [vraiment] entré => I wondered if one day he'd [actually] walked\nJe me suis demandé si un jour il était vraiment [entré] => I wondered if one day he'd actually [walked] # \"entré\" translates here to the specific action of walking in/entering\n\n[dans] une boutique et qu'il avait dit : => [into] a shop and said:\ndans [une] boutique et qu'il avait dit : => into [a] shop and said:\ndans une [boutique] et qu'il avait dit : => into a [shop] and said:\ndans une boutique [et] qu'il avait dit : => into a shop [and] said:\ndans une boutique et [qu'il] avait dit : => that he\ndans une boutique et qu'il [avait] dit : => had\ndans une boutique et qu'il avait [dit] : => into a shop and [said]:\n\n[Bonjour] madame, je voudrais une cravate Dingo => [Hello] ma'am, I'd like a Goofy tie\nBonjour [madame], je voudrais une cravate Dingo => Hello [ma'am], I'd like a Goofy tie\nBonjour madame, [je] voudrais une cravate Dingo => Hello ma'am, [I]'d like a Goofy tie\nBonjour madame, je [voudrais] une cravate Dingo => Hello ma'am, I['d like] a Goofy tie\nBonjour madame, je voudrais [une] cravate Dingo => Hello ma'am, I'd like [a] Goofy tie\nBonjour madame, je voudrais une [cravate] Dingo => Hello ma'am, I'd like a Goofy [tie]\nBonjour madame, je voudrais une cravate [Dingo] => Hello ma'am, I'd like a [Goofy] tie\n\n[parce que] je suis un vrai déglingo.\" => [because] I'm really goofy.\"\nparce que [je] suis un vrai déglingo.\" => because [I]'m really goofy.\"\nparce que je [suis] un vrai déglingo.\" => because I['m] really goofy.\"\nparce que je suis un [vrai] déglingo.\" => because I'm [really] goofy.\"\nparce que je suis un vrai [déglingo].\" => because I'm really [goofy].\" # déglingo is slang for wacky or crazy, translated here as goofy\n\n[Ça] m'a fait rigoler. => [That] made me laugh.\nÇa [m']a fait rigoler. => That made [me] laugh.\nÇa m'[a fait] rigoler. => That [made] me laugh.\nÇa m'a fait [rigoler]. => That made me [laugh].\n\n[Il] m'a vu rigoler, => [He] saw me laughing,\nIl [m']a vu rigoler, => He saw [me] laughing,\nIl m'[a vu] rigoler, => He [saw] me laughing,\nIl m'a vu [rigoler], => He saw me [laughing],\n\n[mais] je crois qu'il a cru que sa cravate était cool. => [but] I think he thought his tie was cool.\nmais [je] crois qu'il a cru que sa cravate était cool. => but [I] think he thought his tie was cool.\nmais je [crois] qu'il a cru que sa cravate était cool. => but I [think] he thought his tie was cool.\nmais je crois qu'[il] a cru que sa cravate était cool. => but I think [he] thought his tie was cool.\nmais je crois qu'il [a cru] que sa cravate était cool. => but I think he [thought] his tie was cool.\nmais je crois qu'il a cru que [sa] cravate était cool. => but I think he thought [his] tie was cool.\nmais je crois qu'il a cru que sa [cravate] était cool. => but I think he thought his [tie] was cool.\nmais je crois qu'il a cru que sa cravate [était] cool. => but I think he thought his tie [was] cool.\nmais je crois qu'il a cru que sa cravate était [cool]. => but I think he thought his tie was [cool]. # \"qu'\" and \"que\" are omitted in the English translation and therefore skipped\n\n[Il] m'a demandé : \"Do you speak English ?\" => [He] asked me: \"Do you speak English?\"\nIl [m']a demandé : \"Do you speak English ?\" => He asked [me]: \"Do you speak English?\"\nIl m'[a demandé] : \"Do you speak English ?\" => He [asked] me: \"Do you speak English?\"\nIl m'a demandé : \"[Do] you speak English ?\" => He asked me: \"[Do] you speak English?\"\nIl m'a demandé : \"Do [you] speak English ?\" => He asked me: \"Do [you] speak English?\"\nIl m'a demandé : \"Do you [speak] English ?\" => He asked me: \"Do you [speak] English?\"\nIl m'a demandé : \"Do you speak [English] ?\" => He asked me: \"Do you speak [English]?\"\n\n[J']ai dit : \"Yes.\" => [I] said: \"Yes.\"\nJ'[ai dit] : \"Yes.\" => I [said]: \"Yes.\"\nJ'ai dit : \"[Yes].\" => I said: \"[Yes].\"\n\n[Après] il a dit : \"Where are you from ?\" => [Then] he said: \"Where are you from?\"\nAprès [il] a dit : \"Where are you from ?\" => Then [he] said: \"Where are you from?\"\nAprès il [a dit] : \"Where are you from ?\" => Then he [said]: \"Where are you from?\"\nAprès il a dit : \"[Where] are you from ?\" => Then he said: \"[Where] are you from?\"\nAprès il a dit : \"Where [are] you from ?\" => Then he said: \"Where [are] you from?\"\nAprès il a dit : \"Where are [you] from ?\" => Then he said: \"Where are [you] from?\"\nAprès il a dit : \"Where are you [from] ?\" => Then he said: \"Where are you [from]?\"\n\n[J']ai répondu : \"Yes.\" => [I] answered: \"Yes.\"\nJ'[ai répondu] : \"Yes.\" => I [answered]: \"Yes.\" # The passé composé \"ai répondu\" translates to the simple past \"answered\"\nJ'ai répondu : \"[Yes]\" => I answered: \"[Yes]\"\n\n[Il] m'a demandé quel était mon plus gros défaut. => [He] asked me what was my biggest flaw.\nIl [m']a demandé quel était mon plus gros défaut. => He asked [me] what was my biggest flaw.\nIl m'[a demandé] quel était mon plus gros défaut. => He [asked] me what was my biggest flaw.\nIl m'a demandé [quel] était mon plus gros défaut. => He asked me [what] was my biggest flaw.\nIl m'a demandé quel [était] mon plus gros défaut. => He asked me what [was] my biggest flaw.\nIl m'a demandé quel était [mon] plus gros défaut. => He asked me what was [my] biggest flaw.\nIl m'a demandé quel était mon [plus gros] défaut. => He asked me what was [biggest] flaw.\nIl m'a demandé quel était mon plus gros [défaut]. => He asked me what was my biggest [flaw. ]\n\nJ'ai hésité [entre] : => I hesitated [between]:\n\n[timide], maniaque, obsessionnel, lâche, dépressif, fainéant, menteur. => [shy], manic, obsessive, cowardly, depressed, lazy, liar.\ntimide, [maniaque], obsessionnel, lâche, dépressif, fainéant, menteur. => shy, [manic], obsessive, cowardly, depressed, lazy, liar.\ntimide, maniaque, [obsessionnel], lâche, dépressif, fainéant, menteur. => shy, manic, [obsessive], cowardly, depressed, lazy, liar.\ntimide, maniaque, obsessionnel, [lâche], dépressif, fainéant, menteur. => shy, manic, obsessive, [cowardly], depressed, lazy, liar.\ntimide, maniaque, obsessionnel, lâche, [dépressif], fainéant, menteur. => shy, manic, obsessive, cowardly, [depressed], lazy, liar.\ntimide, maniaque, obsessionnel, lâche, dépressif, [fainéant], menteur. => shy, manic, obsessive, cowardly, depressed, [lazy], liar.\ntimide, maniaque, obsessionnel, lâche, dépressif, fainéant, [menteur]. => shy, manic, obsessive, cowardly, depressed, lazy, [liar].\n\n[J']ai répondu : \"Perfectionniste.\" => [I] answered: \"Perfectionist.\"\nJ'[ai répondu] : \"Perfectionniste.\" => I [answered]: \"Perfectionist.\"\nJ'ai répondu : \"[Perfectionniste].\" => I answered: \"[Perfectionist].\" # Simple mapping for the noun phrase\n\n[En fait] c'était : menteur. => [Actually] it was: liar.\nEn fait [c']était : menteur. => Actually [it] was: liar.\nEn fait c'[était] : menteur. => Actually it [was]: liar.\nEn fait c'était : [menteur]. => Actually it was: [liar].\n\n[Il] m'a dit : \"Ah, vous... vous aimez le kayak ?\" => [He] said to me: \"Ah, you... you like kayaking?\"\nIl [m']a dit : \"Ah, vous... vous aimez le kayak ?\" => He said to [me]: \"Ah, you... you like kayaking?\"\nIl m'[a dit] : \"Ah, vous... vous aimez le kayak ?\" => He [said] to me: \"Ah, you... you like kayaking?\"\nIl m'a dit : \"[Ah], vous... vous aimez le kayak ?\" => He said to me: \"[Ah], you... you like kayaking?\"\nIl m'a dit : \"Ah, [vous]... vous aimez le kayak ?\" => He said to me: \"Ah, [you]... you like kayaking?\"\nIl m'a dit : \"Ah, vous... [vous] aimez le kayak ?\" => He said to me: \"Ah, you... [you] like kayaking?\"\nIl m'a dit : \"Ah, vous... vous [aimez] le kayak ?\" => He said to me: \"Ah, you... you [like] kayaking?\"\nIl m'a dit : \"Ah, vous... vous aimez [le kayak] ?\" => He said to me: \"Ah, you... you like [kayaking]?\" # \"le kayak\" as a general activity maps to \"kayaking\"\n\nJ'[ai dit] : \"Oui.\" => I [said]: \"Yes.\"\nJ'ai dit : \"[Oui].\" => I said: \"[Yes].\"\n\n[Il] m'a dit : \"Kayak de mer ou kayak d'eau vive ?\" => [He] said: \"Sea kayaking or white water kayaking?\"\nIl [m'a dit] : \"Kayak de mer ou kayak d'eau vive ?\" => He [said]: \"Sea kayaking or white water kayaking?\" # m' means \"to me\", which is omitted in the English translation\nIl m'a dit : \"[Kayak] de mer ou kayak d'eau vive ?\" => He said: \"Sea [kayaking] or white water kayaking?\"\nIl m'a dit : \"Kayak [de mer] ou kayak d'eau vive ?\" => He said: \"[Sea] kayaking or white water kayaking?\"\nIl m'a dit : \"Kayak de mer [ou] kayak d'eau vive ?\" => He said: \"Sea kayaking [or] white water kayaking?\"\nIl m'a dit : \"Kayak de mer ou [kayak] d'eau vive ?\" => He said: \"Sea kayaking or white water [kayaking]?\"\nIl m'a dit : \"Kayak de mer ou kayak [d'eau vive] ?\" => He said: \"Sea kayaking or [white water] kayaking?\" # \"eau vive\" literally means \"living/running water\" but corresponds to \"white water\"\n\n[J']ai dit : \"...\" => [I] said: \"...\"\nJ'[ai dit] : \"...\" => I [said]: \"...\" # \"ai dit\" is the passé composé form of \"dire\", translating to the English simple past \"said\"\n\n[Vous] avez remarqué, ça se lit dans les deux sens. => [You] noticed, it reads the same both ways.\nVous [avez remarqué], ça se lit dans les deux sens. => You [noticed], it reads the same both ways.\nVous avez remarqué, [ça] se lit dans les deux sens. => You noticed, [it] reads the same both ways.\nVous avez remarqué, ça [se lit] dans les deux sens. => You noticed, it [reads] the same both ways.\nVous avez remarqué, ça se lit dans [les deux] sens. => You noticed, it reads the same [both] ways.\nVous avez remarqué, ça se lit dans les deux [sens]. => You noticed, it reads the same both [ways]. # \"sens\" here means \"directions\" or \"ways\"\n\n[Il] a rayé kayak. => [He] crossed out kayaking.\nIl [a rayé] kayak. => He [crossed out] kayaking.\nIl a rayé [kayak]. => He crossed out [kayaking].\n\n[Il] m'a dit : \"On vous rappellera.\" => [He] told me: \"We'll call you back.\"\nIl [m']a dit : \"On vous rappellera.\" => He told [me]: \"We'll call you back.\"\nIl m'[a dit] : \"On vous rappellera.\" => He [told] me: \"We'll call you back.\"\nIl m'a dit : \"[On] vous rappellera.\" => He told me: \"[We]'ll call you back.\"\nIl m'a dit : \"On [vous] rappellera.\" => He told me: \"We'll call [you] back.\"\nIl m'a dit : \"On vous [rappellera].\" => 'll call back # French future tense \"rappellera\" includes the meaning of will, call, and back (the prefix -re)\n\n[J']ai entendu : \"Va te faire enculer.\" => [I] heard: \"Go fuck yourself.\"\nJ'[ai entendu] : \"Va te faire enculer.\" => I [heard]: \"Go fuck yourself.\"\nJ'ai entendu : \"[Va] te faire enculer.\" => I heard: \"[Go] fuck yourself.\"\nJ'ai entendu : \"Va [te] faire enculer.\" => I heard: \"Go fuck [yourself].\"\nJ'ai entendu : \"Va te [faire enculer].\" => I heard: \"Go [fuck] yourself.\" # while literal construction is \"to get/have bugged\", it corresponds to \"fuck\" here\n\n[Bref], j'ai passé un entretien d'embauche. => [Anyway], I had a job interview.\nBref, [j']ai passé un entretien d'embauche. => Anyway, [I] had a job interview.\nBref, j'[ai passé] un entretien d'embauche. => Anyway, I [had] a job interview.\nBref, j'ai passé [un] entretien d'embauche. => Anyway, I had [a] job interview.\nBref, j'ai passé un [entretien] d'embauche. => Anyway, I had a job [interview]\nBref, j'ai passé un entretien [d'embauche]. => Anyway, I had a [job] interview # literally \"hiring\" or \"recruitment\" interview\n\n[Viens]... Viens... => [Come]... Come...\nViens... [Viens]... => Come... [Come]...\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway, I'd been looking for a job for a while.",
+            "words": []
+          },
+          {
+            "text": "One night, I cracked.",
+            "words": []
+          },
+          {
+            "text": "I sent 257 copy-paste emails",
+            "words": []
+          },
+          {
+            "text": "to all the companies not too far from home.",
+            "words": []
+          },
+          {
+            "text": "I thought: if I'm gonna suffer, might as well be close by.",
+            "words": []
+          },
+          {
+            "text": "Only one called me back.",
+            "words": []
+          },
+          {
+            "text": "I don't remember what job it was,",
+            "words": []
+          },
+          {
+            "text": "but I answered very sincerely:",
+            "words": []
+          },
+          {
+            "text": "\"Ah, it would be a true honor to join your team.\"",
+            "words": []
+          },
+          {
+            "text": "I hung up.",
+            "words": []
+          },
+          {
+            "text": "I typed the company name into the Internet.",
+            "words": []
+          },
+          {
+            "text": "It was either a venereal disease,",
+            "words": []
+          },
+          {
+            "text": "or a branch of the UN,",
+            "words": []
+          },
+          {
+            "text": "or guys who rent photocopiers.",
+            "words": []
+          },
+          {
+            "text": "Guys who rent photocopiers.",
+            "words": []
+          },
+          {
+            "text": "I had prepared everything well.",
+            "words": []
+          },
+          {
+            "text": "I had made my CV.",
+            "words": []
+          },
+          {
+            "text": "In the hobbies box, I put that I liked kayaking.",
+            "words": []
+          },
+          {
+            "text": "I'd never done kayaking,",
+            "words": []
+          },
+          {
+            "text": "but I liked words that read the same both ways.",
+            "words": []
+          },
+          {
+            "text": "I wore the suit I wear to weddings,",
+            "words": []
+          },
+          {
+            "text": "to funerals and job interviews.",
+            "words": []
+          },
+          {
+            "text": "Next to me, there was this guy.",
+            "words": []
+          },
+          {
+            "text": "I found him weird.",
+            "words": []
+          },
+          {
+            "text": "He was too clean-cut.",
+            "words": []
+          },
+          {
+            "text": "I thought that was hiding something.",
+            "words": []
+          },
+          {
+            "text": "The manager called me.",
+            "words": []
+          },
+          {
+            "text": "We sat down.",
+            "words": []
+          },
+          {
+            "text": "I looked at his tie.",
+            "words": []
+          },
+          {
+            "text": "It was a Goofy tie.",
+            "words": []
+          },
+          {
+            "text": "I wondered if one day he'd actually walked",
+            "words": []
+          },
+          {
+            "text": "into a shop and said:",
+            "words": []
+          },
+          {
+            "text": "\"Hello ma'am, I'd like a Goofy tie",
+            "words": []
+          },
+          {
+            "text": "because I'm really goofy.\"",
+            "words": []
+          },
+          {
+            "text": "That made me laugh.",
+            "words": []
+          },
+          {
+            "text": "He saw me laughing,",
+            "words": []
+          },
+          {
+            "text": "but I think he thought his tie was cool.",
+            "words": []
+          },
+          {
+            "text": "He asked me: \"Do you speak English?\"",
+            "words": []
+          },
+          {
+            "text": "I said: \"Yes.\"",
+            "words": []
+          },
+          {
+            "text": "Then he said: \"Where are you from?\"",
+            "words": []
+          },
+          {
+            "text": "I answered: \"Yes.\"",
+            "words": []
+          },
+          {
+            "text": "He asked me what was my biggest flaw.",
+            "words": []
+          },
+          {
+            "text": "I hesitated between:",
+            "words": []
+          },
+          {
+            "text": "shy, manic, obsessive, cowardly, depressed, lazy, liar.",
+            "words": []
+          },
+          {
+            "text": "I answered: \"Perfectionist.\"",
+            "words": []
+          },
+          {
+            "text": "Actually it was: liar.",
+            "words": []
+          },
+          {
+            "text": "He said to me: \"Ah, you... you like kayaking?\"",
+            "words": []
+          },
+          {
+            "text": "I said: \"Yes.\"",
+            "words": []
+          },
+          {
+            "text": "He said: \"Sea kayaking or white water kayaking?\"",
+            "words": []
+          },
+          {
+            "text": "I said: \"...\"",
+            "words": []
+          },
+          {
+            "text": "\"You noticed, it reads the same both ways.\"",
+            "words": []
+          },
+          {
+            "text": "He crossed out kayaking.",
+            "words": []
+          },
+          {
+            "text": "He told me: \"We'll call you back.\"",
+            "words": []
+          },
+          {
+            "text": "I heard: \"Go fuck yourself.\"",
+            "words": []
+          },
+          {
+            "text": "Anyway, I had a job interview.",
+            "words": []
+          },
+          {
+            "text": "Come... Come...",
+            "words": []
+          }
+        ],
+        "lessons": "# La Recherche d'Emploi Désespérée\n00:07.00 Bref, ça faisait un moment que je cherchais du boulot.\n00:08.40 Un soir, j'ai craqué.\n00:09.30 J'ai envoyé 257 emails copier-coller\n00:10.90 à toutes les entreprises pas trop loin de chez moi.\n00:12.50 Je me suis dit : quitte à me faire chier, autant que ce soit tout près.\n\n# Le Rappel Inattendu\n00:14.20 Il y en a un seul qui m'a rappelé.\n00:15.30 Je sais plus pour quel boulot c'était,\n00:16.60 mais j'ai répondu très sincèrement :\n00:17.60 \"Ah, ça serait un véritable honneur d'intégrer votre équipe.\"\n00:19.40 J'ai raccroché.\n00:20.20 J'ai tapé le nom de la société sur Internet.\n\n# Les Doutes sur l'Entreprise\n00:21.70 C'était soit une maladie vénérienne,\n00:23.20 soit une branche de l'ONU,\n00:24.20 soit des mecs qui louent des photocopieuses.\n00:25.60 Des mecs qui louent des photocopieuses.\n\n# La Préparation de l'Entretien\n00:27.00 J'avais tout bien préparé.\n00:28.00 J'avais fait mon CV.\n00:29.00 Dans la case loisirs, j'avais mis que j'aimais bien le kayak.\n00:30.90 J'avais jamais fait de kayak,\n00:32.20 mais j'aimais bien les mots qui se lisent dans les deux sens.\n\n# L'Arrivée et les Premières Impressions\n00:34.20 J'avais mis le costume que je mets aux mariages,\n00:35.90 aux enterrements et aux entretiens d'embauche.\n00:37.90 À côté de moi, il y avait ce mec.\n00:39.20 Je l'ai trouvé bizarre.\n00:40.20 Il était trop propre sur lui.\n00:41.40 Je me suis dit que ça cachait quelque chose.\n\n# L'Entretien Commence\n00:48.00 Le directeur m'a appelé.\n00:49.00 On s'est installés.\n00:50.00 J'ai regardé sa cravate.\n00:51.00 C'était une cravate Dingo.\n00:52.20 Je me suis demandé si un jour il était vraiment entré\n00:53.90 dans une boutique et qu'il avait dit :\n00:54.90 \"Bonjour madame, je voudrais une cravate Dingo\n00:56.20 parce que je suis un vrai déglingo.\"\n\n# La Conversation Maladroite\n00:57.20 Ça m'a fait rigoler.\n00:57.90 Il m'a vu rigoler,\n00:58.90 mais je crois qu'il a cru que sa cravate était cool.\n00:59.90 Il m'a demandé : \"Do you speak English ?\"\n01:00.90 J'ai dit : \"Yes.\"\n01:01.90 Après il a dit : \"Where are you from ?\"\n01:02.90 J'ai répondu : \"Yes.\"\n\n# Le Défaut et le Kayak\n01:07.40 Il m'a demandé quel était mon plus gros défaut.\n01:08.90 J'ai hésité entre :\n01:09.90 timide, maniaque, obsessionnel, lâche, dépressif, fainéant, menteur.\n01:12.40 J'ai répondu : \"Perfectionniste.\"\n01:13.90 En fait c'était : menteur.\n01:14.90 Il m'a dit : \"Ah, vous... vous aimez le kayak ?\"\n01:16.40 J'ai dit : \"Oui.\"\n01:17.20 Il m'a dit : \"Kayak de mer ou kayak d'eau vive ?\"\n01:18.40 J'ai dit : \"...\"\n\n# La Fin de l'Entretien\n01:20.90 \"Vous avez remarqué, ça se lit dans les deux sens.\"\n01:26.40 Il a rayé kayak.\n01:27.40 Il m'a dit : \"On vous rappellera.\"\n01:28.40 J'ai entendu : \"Va te faire enculer.\"\n01:29.90 Bref, j'ai passé un entretien d'embauche.\n01:37.40 Viens... Viens..."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 15:42:15 UTC",
   "updated_at": "2026-04-02 19:19:46 UTC",

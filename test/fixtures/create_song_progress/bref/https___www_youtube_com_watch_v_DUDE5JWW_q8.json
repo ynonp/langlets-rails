@@ -9,432 +9,655 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref, j'avais passé un entretien",
-        "text_l2": "Anyway, I had an interview",
         "timestamp": "00:04.10"
       },
       {
         "id": "phrase_2",
         "text_l1": "d'embauche que je pensais avoir raté.",
-        "text_l2": "for a job that I thought I'd messed up.",
         "timestamp": "00:05.60"
       },
       {
         "id": "phrase_3",
         "text_l1": "- Do you speak English? - Yes.",
-        "text_l2": "- Do you speak English? - Yes.",
         "timestamp": "00:07.10"
       },
       {
         "id": "phrase_4",
         "text_l1": "- Where are you from? - Yes.",
-        "text_l2": "- Where are you from? - Yes.",
         "timestamp": "00:08.10"
       },
       {
         "id": "phrase_5",
         "text_l1": "Mais ils m'ont engagé.",
-        "text_l2": "But they hired me.",
         "timestamp": "00:09.10"
       },
       {
         "id": "phrase_6",
         "text_l1": "À l'intendance.",
-        "text_l2": "In facilities.",
         "timestamp": "00:10.10"
       },
       {
         "id": "phrase_7",
         "text_l1": "Ils m'ont dit que je ferais tout et rien.",
-        "text_l2": "They told me I'd do everything and nothing.",
         "timestamp": "00:11.10"
       },
       {
         "id": "phrase_8",
         "text_l1": "Je ferais tout et rien.",
-        "text_l2": "I'd do everything and nothing.",
         "timestamp": "00:12.10"
       },
       {
         "id": "phrase_9",
         "text_l1": "Je me suis rendu compte",
-        "text_l2": "I realized",
         "timestamp": "00:13.10"
       },
       {
         "id": "phrase_10",
         "text_l1": "que je faisais tout, et eux rien.",
-        "text_l2": "that I did everything, and them nothing.",
         "timestamp": "00:14.10"
       },
       {
         "id": "phrase_11",
         "text_l1": "En y repensant, j'ai compris",
-        "text_l2": "Thinking back, I understood",
         "timestamp": "00:15.10"
       },
       {
         "id": "phrase_12",
         "text_l1": "pourquoi ils m'avaient pris.",
-        "text_l2": "why they had taken me.",
         "timestamp": "00:16.60"
       },
       {
         "id": "phrase_13",
         "text_l1": "Vous demandez quoi en termes de salaire ?",
-        "text_l2": "What do you ask for in terms of salary?",
         "timestamp": "00:17.60"
       },
       {
         "id": "phrase_14",
         "text_l1": "De l'argent.",
-        "text_l2": "Money.",
         "timestamp": "00:19.10"
       },
       {
         "id": "phrase_15",
         "text_l1": "Merde.",
-        "text_l2": "Shit.",
         "timestamp": "00:21.10"
       },
       {
         "id": "phrase_16",
         "text_l1": "Je faisais du café,",
-        "text_l2": "I made coffee,",
         "timestamp": "00:22.10"
       },
       {
         "id": "phrase_17",
         "text_l1": "je rechargeais les photocopieuses.",
-        "text_l2": "I refilled the copiers.",
         "timestamp": "00:23.60"
       },
       {
         "id": "phrase_18",
         "text_l1": "Un jour, Fabien m'a dit :",
-        "text_l2": "One day, Fabien told me:",
         "timestamp": "00:25.10"
       },
       {
         "id": "phrase_19",
         "text_l1": "C'est les chiffres putain,",
-        "text_l2": "It's the numbers damn it,",
         "timestamp": "00:26.10"
       },
       {
         "id": "phrase_20",
         "text_l1": "ça marche plus, regarde.",
-        "text_l2": "it doesn't work anymore, look.",
         "timestamp": "00:27.10"
       },
       {
         "id": "phrase_21",
         "text_l1": "J'ai fait semblant de taper",
-        "text_l2": "I pretended to type",
         "timestamp": "00:28.10"
       },
       {
         "id": "phrase_22",
         "text_l1": "des trucs compliqués.",
-        "text_l2": "some complicated stuff.",
         "timestamp": "00:29.10"
       },
       {
         "id": "phrase_23",
         "text_l1": "J'ai pas utilisé la souris",
-        "text_l2": "I didn't use the mouse",
         "timestamp": "00:30.10"
       },
       {
         "id": "phrase_24",
         "text_l1": "pour faire américain.",
-        "text_l2": "to look American.",
         "timestamp": "00:31.10"
       },
       {
         "id": "phrase_25",
         "text_l1": "Et à un moment,",
-        "text_l2": "And at one point,",
         "timestamp": "00:32.10"
       },
       {
         "id": "phrase_26",
         "text_l1": "j'ai juste appuyé sur Verr Num.",
-        "text_l2": "I just pressed Num Lock.",
         "timestamp": "00:33.10"
       },
       {
         "id": "phrase_27",
         "text_l1": "J'ai dit : C'est réparé.",
-        "text_l2": "I said: It's fixed.",
         "timestamp": "00:34.10"
       },
       {
         "id": "phrase_28",
         "text_l1": "Il m'a dit : T'es un génie.",
-        "text_l2": "He told me: You're a genius.",
         "timestamp": "00:35.10"
       },
       {
         "id": "phrase_29",
         "text_l1": "J'ai pensé : T'es un couillon.",
-        "text_l2": "I thought: You're an idiot.",
         "timestamp": "00:36.10"
       },
       {
         "id": "phrase_30",
         "text_l1": "De rien.",
-        "text_l2": "You're welcome.",
         "timestamp": "00:37.10"
       },
       {
         "id": "phrase_31",
         "text_l1": "Au bout d'un mois, j'ai compris",
-        "text_l2": "After a month, I understood",
         "timestamp": "00:38.10"
       },
       {
         "id": "phrase_32",
         "text_l1": "pourquoi un bureau s'appelait un bureau.",
-        "text_l2": "why an office was called an office.",
         "timestamp": "00:39.10"
       },
       {
         "id": "phrase_33",
         "text_l1": "Jean-Louis est le trombone.",
-        "text_l2": "Jean-Louis is the paperclip.",
         "timestamp": "00:40.60"
       },
       {
         "id": "phrase_34",
         "text_l1": "Tout le monde le pliait",
-        "text_l2": "Everyone bent him",
         "timestamp": "00:41.60"
       },
       {
         "id": "phrase_35",
         "text_l1": "dans tous les sens.",
-        "text_l2": "in every direction.",
         "timestamp": "00:42.60"
       },
       {
         "id": "phrase_36",
         "text_l1": "Il reprendra jamais sa forme initiale.",
-        "text_l2": "He'll never regain his original shape.",
         "timestamp": "00:43.60"
       },
       {
         "id": "phrase_37",
         "text_l1": "- Vous avez entendu ? - Oui.",
-        "text_l2": "- Did you hear? - Yes.",
         "timestamp": "00:44.60"
       },
       {
         "id": "phrase_38",
         "text_l1": "Francis, c'est le scotch.",
-        "text_l2": "Francis is the tape.",
         "timestamp": "00:45.60"
       },
       {
         "id": "phrase_39",
         "text_l1": "Il te lâche pas.",
-        "text_l2": "He doesn't let you go.",
         "timestamp": "00:46.60"
       },
       {
         "id": "phrase_40",
         "text_l1": "- Vous êtes sûr ? - Oui.",
-        "text_l2": "- Are you sure? - Yes.",
         "timestamp": "00:47.60"
       },
       {
         "id": "phrase_41",
         "text_l1": "Elle, c'est la colle.",
-        "text_l2": "She is the glue.",
         "timestamp": "00:48.60"
       },
       {
         "id": "phrase_42",
         "text_l1": "Elle sent bon, mais elle est saoulante.",
-        "text_l2": "She smells good, but she's annoying.",
         "timestamp": "00:49.60"
       },
       {
         "id": "phrase_43",
         "text_l1": "Je t'ai pas raconté mon week-end ?",
-        "text_l2": "Didn't I tell you about my weekend?",
         "timestamp": "00:51.10"
       },
       {
         "id": "phrase_44",
         "text_l1": "Comme il faisait beau",
-        "text_l2": "Since the weather was nice",
         "timestamp": "00:52.60"
       },
       {
         "id": "phrase_45",
         "text_l1": "avec mon mari Christian,",
-        "text_l2": "with my husband Christian,",
         "timestamp": "00:53.60"
       },
       {
         "id": "phrase_46",
         "text_l1": "on est allés à la campagne,",
-        "text_l2": "we went to the countryside,",
         "timestamp": "00:54.60"
       },
       {
         "id": "phrase_47",
         "text_l1": "près d'un lac.",
-        "text_l2": "near a lake.",
         "timestamp": "00:55.60"
       },
       {
         "id": "phrase_48",
         "text_l1": "On a fait du pédalo.",
-        "text_l2": "We went on a pedal boat.",
         "timestamp": "00:56.60"
       },
       {
         "id": "phrase_49",
         "text_l1": "Je m'en bats les steaks. C'est incroyable.",
-        "text_l2": "I couldn't care less. It's incredible.",
         "timestamp": "00:58.10"
       },
       {
         "id": "phrase_50",
         "text_l1": "Jean-Michel, c'est l'agrafeuse.",
-        "text_l2": "Jean-Michel is the stapler.",
         "timestamp": "01:00.10"
       },
       {
         "id": "phrase_51",
         "text_l1": "On le trouve jamais.",
-        "text_l2": "You never find him.",
         "timestamp": "01:01.60"
       },
       {
         "id": "phrase_52",
         "text_l1": "Et Fabien, c'est le post-it.",
-        "text_l2": "And Fabien is the Post-it.",
         "timestamp": "01:03.10"
       },
       {
         "id": "phrase_53",
         "text_l1": "Il est voyant, collant,",
-        "text_l2": "He's flashy, sticky,",
         "timestamp": "01:04.10"
       },
       {
         "id": "phrase_54",
         "text_l1": "et il s'affiche partout.",
-        "text_l2": "and he shows up everywhere.",
         "timestamp": "01:05.10"
       },
       {
         "id": "phrase_55",
         "text_l1": "Elle a un cul, elle me dit oui.",
-        "text_l2": "She's got a nice ass, she says yes.",
         "timestamp": "01:06.10"
       },
       {
         "id": "phrase_56",
         "text_l1": "Je me suis demandé si j'étais aussi",
-        "text_l2": "I wondered if I was also",
         "timestamp": "01:08.10"
       },
       {
         "id": "phrase_57",
         "text_l1": "une fourniture de bureau.",
-        "text_l2": "an office supply.",
         "timestamp": "01:09.60"
       },
       {
         "id": "phrase_58",
         "text_l1": "J'ai compris que j'étais la poubelle.",
-        "text_l2": "I realized I was the trash can.",
         "timestamp": "01:10.60"
       },
       {
         "id": "phrase_59",
         "text_l1": "À leurs pieds, à les débarrasser",
-        "text_l2": "At their feet, getting rid",
         "timestamp": "01:11.60"
       },
       {
         "id": "phrase_60",
         "text_l1": "de ce qu'ils voulaient pas.",
-        "text_l2": "of what they didn't want.",
         "timestamp": "01:12.60"
       },
       {
         "id": "phrase_61",
         "text_l1": "J'ai tout jeté. J'ai dit : Je pars.",
-        "text_l2": "I threw it all away. I said: I'm leaving.",
         "timestamp": "01:16.10"
       },
       {
         "id": "phrase_62",
         "text_l1": "Le scotch m'a dit : Vous êtes sûr ?",
-        "text_l2": "The tape told me: Are you sure?",
         "timestamp": "01:21.10"
       },
       {
         "id": "phrase_63",
         "text_l1": "J'ai dit : Oui.",
-        "text_l2": "I said: Yes.",
         "timestamp": "01:22.10"
       },
       {
         "id": "phrase_64",
         "text_l1": "Il m'a dit : Vous aurez rien.",
-        "text_l2": "He told me: You'll get nothing.",
         "timestamp": "01:23.10"
       },
       {
         "id": "phrase_65",
         "text_l1": "J'ai dit : C'est pas un problème.",
-        "text_l2": "I said: That's not a problem.",
         "timestamp": "01:24.10"
       },
       {
         "id": "phrase_66",
         "text_l1": "C'était un problème.",
-        "text_l2": "It was a problem.",
         "timestamp": "01:25.10"
       },
       {
         "id": "phrase_67",
         "text_l1": "- Vous êtes sûr ? - Non. - Oui.",
-        "text_l2": "- Are you sure? - No. - Yes.",
         "timestamp": "01:26.10"
       },
       {
         "id": "phrase_68",
         "text_l1": "En partant, je leur ai dit",
-        "text_l2": "Leaving, I told them",
         "timestamp": "01:29.10"
       },
       {
         "id": "phrase_69",
         "text_l1": "d'aller bien se faire foutre.",
-        "text_l2": "to go fuck themselves.",
         "timestamp": "01:30.10"
       },
       {
         "id": "phrase_70",
         "text_l1": "Au revoir.",
-        "text_l2": "Goodbye.",
         "timestamp": "01:31.10"
       },
       {
         "id": "phrase_71",
         "text_l1": "Bref, j'ai eu un job.",
-        "text_l2": "Anyway, I had a job.",
         "timestamp": "01:32.10"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[Bref], j'avais passé un entretien => [Anyway], I had an interview\nBref, [j']avais passé un entretien => [I] had an interview\nBref, j'[avais passé] un entretien => Anyway, I [had] an interview # \"passer un entretien\" means to have/take an interview\nBref, j'avais passé [un] entretien => Anyway, I had [an] interview\nBref, j'avais passé un [entretien] => Anyway, I had an [interview]\n\n[d'embauche] que je pensais avoir raté. => [for a job] that I thought I'd messed up.\nd'embauche [que] je pensais avoir raté. => for a job [that] I thought I'd messed up.\nd'embauche que [je] pensais avoir raté. => for a job that [I] thought I'd messed up.\nd'embauche que je [pensais] avoir raté. => for a job that I [thought] I'd messed up.\nd'embauche que je pensais [avoir] raté. => for a job that I thought I['d] messed up. # \"avoir\" corresponds to the auxiliary \"had\" represented by \"'d\"\nd'embauche que je pensais avoir [raté]. => for a job that I thought I'd [messed up]\n\n- [Do] you speak English? - Yes. => - [Do] you speak English? - Yes.\n- Do [you] speak English? - Yes. => - Do [you] speak English? - Yes.\n- Do you [speak] English? - Yes. => - Do you [speak] English? - Yes.\n- Do you speak [English]? - Yes. => - Do you speak [English]? - Yes.\n- Do you speak English? - [Yes]. => - Do you speak English? - [Yes].\n\n- [Where] are you from? - Yes. => - [Where] are you from? - Yes.\n- Where [are] you from? - Yes. => - Where [are] you from? - Yes.\n- Where are [you] from? - Yes. => - Where are [you] from? - Yes.\n- Where are you [from]? - Yes. => - Where are you [from]? - Yes.\n- Where are you from? - [Yes]. => - Where are you from? - [Yes].\n\n[Mais] ils m'ont engagé. => [But] they hired me.\nMais [ils] m'ont engagé. => But [they] hired me.\nMais ils [m']ont engagé. => But they hired [me].\nMais ils m'[ont engagé]. => But they [hired] me. # the compound verb \"ont engagé\" maps to the past tense \"hired\"\n\n[À l'] intendance => [In] facilities\nÀ l' [intendance] => In [facilities]\n\n[Ils] m'ont dit que je ferais tout et rien. => [They] told me I'd do everything and nothing.\nIls [m']ont dit que je ferais tout et rien. => They told [me] I'd do everything and nothing.\nIls m'[ont dit] que je ferais tout et rien. => They [told] me I'd do everything and nothing.\nIls m'ont dit que [je] ferais tout et rien. => They told me [I]'d do everything and nothing.\nIls m'ont dit que je [ferais] tout et rien. => They told me I['d do] everything and nothing.\nIls m'ont dit que je ferais [tout] et rien. => They told me I'd do [everything] and nothing.\nIls m'ont dit que je ferais tout [et] rien. => They told me I'd do everything [and] nothing.\nIls m'ont dit que je ferais tout et [rien]. => They told me I'd do everything and [nothing]\n\n[Je] ferais tout et rien. => [I]'d do everything and nothing.\nJe [ferais] tout et rien. => I['d do] everything and nothing.\nJe ferais [tout] et rien. => I'd do [everything] and nothing.\nJe ferais tout [et] rien. => I'd do everything [and] nothing.\nJe ferais tout et [rien]. => I'd do everything and [nothing].\n\n[Je] me suis rendu compte => [I] realized\nJe [me suis rendu compte] => I [realized] # the full reflexive phrase \"se rendre compte\" means to realize\n\n[que] je faisais tout, et eux rien. => [that] I did everything, and them nothing.\nque [je] faisais tout, et eux rien. => that [I] did everything, and them nothing.\nque je [faisais] tout, et eux rien. => that I [did] everything, and them nothing.\nque je faisais [tout], et eux rien. => that I did [everything], and them nothing.\nque je faisais tout, [et] eux rien. => that I did everything, [and] them nothing.\nque je faisais tout, et [eux] rien. => that I did everything, and [them] nothing.\nque je faisais tout, et eux [rien]. => that I did everything, and them [nothing].\n\n[En y repensant], j'ai compris => [Thinking back], I understood # \"En ... -ant\" corresponds to the \"-ing\" form, and \"repensant\" includes the \"back\" (re-)\nEn y repensant, [j']ai compris => Thinking back, [I] understood\nEn y repensant, j'[ai compris] => Thinking back, I [understood] # The compound tense ai compris maps to the simple past understood\n\n[pourquoi] ils m'avaient pris. => [why] they had taken me.\npourquoi [ils] m'avaient pris. => why [they] had taken me.\npourquoi ils [m']avaient pris. => why they had taken [me].\npourquoi ils m'[avaient] pris. => why they [had] taken me.\npourquoi ils m'avaient [pris]. => why they had [taken] me.\n\n[Vous] demandez quoi en termes de salaire ? => What do [you] ask for in terms of salary?\nVous [demandez] quoi en termes de salaire ? => What do you [ask for] in terms of salary?\nVous demandez [quoi] en termes de salaire ? => [What] do you ask for in terms of salary?\nVous demandez quoi [en] termes de salaire ? => What do you ask for [in] terms of salary?\nVous demandez quoi en [termes] de salaire ? => What do you ask for in [terms] of salary?\nVous demandez quoi en termes [de] salaire ? => What do you ask for in terms [of] salary?\nVous demandez quoi en termes de [salaire] ? => What do you ask for in terms of [salary]?\n\n[De l'] argent => some\nDe l' [argent] => [Money] # argent literally translates to money, while the partitive article \"de l'\" is understood as some/untold amount and is not directly present in the English sentence.\n\n[Merde]. => [Shit].\n\n[Je] faisais du café, => [I] made coffee,\nJe [faisais] du café, => I [made] coffee,\nJe faisais du [café], => I made [coffee], # \"du\" is the partitive article and doesn't have a direct equivalent in the English sentence provided\n\n[je] rechargeais les photocopieuses. => [I] refilled the copiers.\nje [rechargeais] les photocopieuses. => I [refilled] the copiers.\nje rechargeais [les] photocopieuses. => I refilled [the] copiers.\nje rechargeais les [photocopieuses]. => I refilled the [copiers].\n\n[Un] jour, Fabien m'a dit : => [One] day, Fabien told me:\nUn [jour], Fabien m'a dit : => One [day], Fabien told me:\nUn jour, [Fabien] m'a dit : => One day, [Fabien] told me:\nUn jour, Fabien [m']a dit : => One day, Fabien told [me]:\nUn jour, Fabien m'[a dit] : => One day, Fabien [told] me: # Passes composé 'a dit' functions as the simple past 'told' here\n\n[C'est] les chiffres putain, => [It's] the numbers damn it,\nC'est [les] chiffres putain, => It's [the] numbers damn it,\nC'est les [chiffres] putain, => It's the [numbers] damn it,\nC'est les chiffres [putain], => It's the numbers [damn it],\n\n[ça] marche plus, regarde. => [it] doesn't work anymore, look.\nça [marche] plus, regarde. => it doesn't [work] anymore, look.\nça marche [plus], regarde. => it doesn't work [anymore], look.\nça marche plus, [regarde]. => it doesn't work anymore, [look].\n\n[J']ai fait semblant de taper => [I] pretended to type\nJ'[ai fait semblant] de taper => I [pretended] to type # ai fait semblant is the compound past of faire semblant\nJ'ai fait semblant [de] taper => I pretended [to] type\nJ'ai fait semblant de [taper] => I pretended to [type]\n\n[des] trucs compliqués. => [some] complicated stuff.\ndes [trucs] compliqués. => some complicated [stuff].\ndes trucs [compliqués]. => some [compliant] stuff. # mapping \"compliqués\" to \"complicated\" while ignoring the plural \"s\" and the word order difference\ndes trucs [compliqués]. => some [complicated] stuff.\n\n[J']ai pas utilisé la souris => [I] didn't use the mouse\nJ'[ai pas] utilisé la souris => [didn't] use the mouse # maps the auxiliary and negation to the English equivalent\nJ'ai pas [utilisé] la souris => I didn't [use] the mouse\nJ'ai pas utilisé [la] souris => I didn't use [the] mouse\nJ'ai pas utilisé la [souris] => I didn't use the [mouse]\n\n[pour] faire américain. => [to] look American.\npour [faire] américain. => to [look] American.\npour faire [américain]. => to look [American].\n\n[Et] à un moment, => [And] at one point,\nEt [à] un moment, => And [at] one point,\nEt à [un] moment, => And at [one] point,\nEt à un [moment], => And at one [point],\n\nj'ai [juste] appuyé sur Verr Num. => I [just] pressed Num Lock.\nj'ai juste [appuyé] sur Verr Num. => I just [pressed] Num Lock. # \"sur\" is omitted as \"pressed\" is transitive in English\nj'ai juste appuyé sur [Verr] Num. => I just pressed Num [Lock] # Verr. is short for Verrouillage\nj'ai juste appuyé sur Verr [Num]. => I just pressed [Num] Lock\n\n[J']ai dit : C'est réparé. => [I] said: It's fixed.\nJ'[ai dit] : C'est réparé. => I [said]: It's fixed.\nJ'ai dit : [C'est] réparé. => I said: [It's] fixed.\nJ'ai dit : C'est [réparé]. => I said: It's [fixed].\n\n[Il] m'a dit : T'es un génie. => [He] told me: You're a genius.\nIl [m']a dit : T'es un génie. => He told [me]: You're a genius.\nIl m'[a dit] : T'es un génie. => He [told] me: You're a genius.\nIl m'a dit : [T']es un génie. => He told me: [You]'re a genius.\nIl m'a dit : T'[es] un génie. => He told me: You['re] a genius.\nIl m'a dit : T'es [un] génie. => He told me: You're [a] genius.\nIl m'a dit : T'es un [génie]. => He told me: You're a [genius].\n\n[J']ai pensé : T'es un couillon. => [I] thought: You're an idiot.\nJ'[ai pensé] : T'es un couillon. => I [thought]: You're an idiot.\nJ'ai pensé : [T'es] un couillon. => I thought: [You're] an idiot.\nJ'ai pensé : T'es [un] couillon. => I thought: You're [an] idiot.\nJ'ai pensé : T'es un [couillon]. => I thought: You're an [idiot].\n\n[De rien]. => [You're welcome].\nDe [rien]. => nothing # \"rien\" literally translates to \"nothing\" (as in \"it's nothing\")\n\nAu bout d'un [mois], j'ai compris => After a [month], I understood\nAu bout d'un mois, [j']ai compris => After a month, [I] understood\nAu bout d'un mois, j'[ai compris] => After a month, I [understood] # Passé composé is mapped to the simple past 'understood'\n\n[pourquoi] un bureau s'appelait un bureau. => [why] an office was called an office.\npourquoi [un] bureau s'appelait un bureau. => why [an] office was called an office.\npourquoi un [bureau] s'appelait un bureau. => why an [office] was called an office.\npourquoi un bureau [s'appelait] un bureau. => why an office [was called] an office.\npourquoi un bureau s'appelait [un] bureau. => why an office was called [an] office.\npourquoi un bureau s'appelait un [bureau]. => why an office was called an [office].\n\n[Jean-Louis] est le trombone. => [Jean-Louis] is the paperclip.\nJean-Louis [est] le trombone. => Jean-Louis [is] the paperclip.\nJean-Louis est [le] trombone. => Jean-Louis is [the] paperclip.\nJean-Louis est le [trombone]. => Jean-Louis is the [paperclip].\n\n[Tout le monde] le pliait => [Everyone] bent him\nTout le monde [le] pliait => Everyone bent [him]\nTout le monde le [pliait] => Everyone [bent] him\n\n[dans] tous les sens. => [in] every direction.\ndans [tous les] sens. => in [every] direction.\ndans tous les [sens]. => in every [direction].\n\n[Il] reprendra jamais sa forme initiale. => [He]'ll never regain his original shape.\nIl [reprendra] jamais sa forme initiale. => will regain, will get back # the future tense is expressed via \"'ll regain\"\nIl reprendra [jamais] sa forme initiale. => He'll [never] regain his original shape.\nIl reprendra jamais [sa] forme initiale. => He'll never regain [his] original shape.\nIl reprendra jamais sa [forme] initiale. => He'll never regain his original [shape].\nIl reprendra jamais sa forme [initiale]. => He'll never regain his [original] shape.\n\n- [Vous] avez entendu ? - Oui. => - Did [you] hear? - Yes.\n- Vous [avez] entendu ? - Oui. => - [Did] you hear? - Yes. # In this context, the auxiliary \"avez\" aligns with \"Did\" to form the past question\n- Vous avez [entendu] ? - Oui. => - Did you [hear]? - Yes.\n- Vous avez entendu ? - [Oui]. => - Did you hear? - [Yes. ]\n\n[Francis], c'est le scotch. => [Francis] is the tape.\nFrancis, [c'est] le scotch. => Francis [is] the tape.\nFrancis, c'est [le] scotch. => Francis is [the] tape.\nFrancis, c'est le [scotch]. => Francis is the [tape].\n\n[Il] te lâche pas. => [He] doesn't let you go.\nIl [te] lâche pas. => He doesn't let [you] go.\nIl te [lâche] pas. => let go, lets go # \"lâcher\" means \"to let go\", but because the English \"let ... go\" is split, we use a custom translation\nIl te lâche [pas]. => doesn't, not # \"pas\" is the negation, corresponding to \"doesn't\" in this sentence\n\n- [Vous] êtes sûr ? - Oui. => - Are [you] sure? - Yes.\n- Vous [êtes] sûr ? - Oui. => - [Are] you sure? - Yes.\n- Vous êtes [sûr] ? - Oui. => - Are you [sure]? - Yes.\n- Vous êtes sûr ? - [Oui]. => - Are you sure? - [Yes].\n\n[Elle], c'est la colle. => [She] is the glue.\nElle, [c'est] la colle. => She [is] the glue.\nElle, c'est [la] colle. => She is [the] glue.\nElle, c'est la [colle]. => She is the [glue].\n\n[Elle] sent bon, mais elle est saoulante. => [She] smells good, but she's annoying.\nElle [sent] bon, mais elle est saoulante. => She [smells] good, but she's annoying.\nElle sent [bon], mais elle est saoulante. => She smells [good], but she's annoying.\nElle sent bon, [mais] elle est saoulante. => She smells good, [but] she's annoying.\nElle sent bon, mais [elle] est saoulante. => She smells good, but [she]'s annoying.\nElle sent bon, mais elle [est] saoulante. => She smells good, but she['s] annoying.\nElle sent bon, mais elle est [saoulante]. => She smells good, but she's [annoying]. # saoulant literally means tiresome or intoxicating, but is commonly translated as annoying or a pain in the neck\n\n[Je] t'ai pas raconté mon week-end ? => Didn't [I] tell you about my weekend?\nJe [t']ai pas raconté mon week-end ? => Didn't I tell [you] about my weekend?\nJe t'[ai pas] raconté mon week-end ? => [Didn't] I tell you about my weekend?\nJe t'ai pas [raconté] mon week-end ? => Didn't I [tell] you about my weekend? # \"about\" is skipped as it has no direct counterpart\nJe t'ai pas raconté [mon] week-end ? => Didn't I tell you about [my] weekend?\nJe t'ai pas raconté mon [week-end] ? => Didn't I tell you about my [weekend]?\n\n[Comme] il faisait beau => [Since] the weather was nice\nComme [il] faisait beau => Since [the weather] was nice # \"il\" acts as the subject, which is \"the weather\" in the English translation\nComme il [faisait] beau => Since the weather [was] nice\nComme il faisait [beau] => Since the weather was [nice]\n\n[avec] mon mari Christian, => [with] my husband Christian,\navec [mon] mari Christian, => with [my] husband Christian,\navec mon [mari] Christian, => with my [husband] Christian,\navec mon mari [Christian], => with my husband [Christian]\n\n[on] est allés à la campagne, => [we] went to the countryside,\non [est allés] à la campagne, => we [went] to the countryside,\non est allés [à] la campagne, => we went [to] the countryside,\non est allés à [la] campagne, => we went to [the] countryside,\non est allés à la [campagne], => we went to the [countryside],\n\n[près d']un lac. => [near] a lake.\nprès d'[un] lac. => near [a] lake.\nprès d'un [lac]. => near a [lake]\n\n[On] a fait du pédalo. => [We] went on a pedal boat.\nOn [a fait] du pédalo. => We [went] on a pedal boat.\nOn a fait du [pédalo] => We went on a [pedal boat] # \"pédalo\" translates to \"pedal boat\" and \"du\" is the partitive article used with activities in French which doesn't have a direct 1:1 match here.\n\n[Je] m'en bats les steaks. C'est incroyable. => [I] couldn't care less. It's incredible.\nJe [m'en bats les steaks]. C'est incroyable. => I [couldn't care less]. It's incredible. # This is a very common idiomatic expression\nJe m'en [bats] les steaks. C'est incroyable. => beat, smack\nJe m'en bats les [steaks]. C'est incroyable. => steaks # literal meaning; used here as a euphemism for \"couilles\"\nJe m'en bats les steaks. [C'est] incroyable. => I couldn't care less. [It's] incredible.\nJe m'en bats les steaks. C'est [incroyable]. => I couldn't care less. It's [incredible].\n\n[Jean-Michel], c'est l'agrafeuse. => [Jean-Michel] is the stapler.\nJean-Michel, [c'est] l'agrafeuse. => Jean-Michel [is] the stapler. # \"c'est\" functions as the verb \"is\" in this structure\nJean-Michel, c'est [l']agrafeuse. => Jean-Michel is [the] stapler.\nJean-Michel, c'est l'[agrafeuse]. => Jean-Michel is the [stapler]\n\n[On] le trouve jamais. => [You] never find him.\nOn [le] trouve jamais. => You never find [him].\nOn le [trouve] jamais. => You never [find] him.\nOn le trouve [jamais]. => You [never] find him.\n\n[Et] Fabien, c'est le post-it. => [And] Fabien is the Post-it.\nEt [Fabien], c'est le post-it. => And [Fabien] is the Post-it.\nEt Fabien, [c'est] le post-it. => And Fabien [is] the Post-it.\nEt Fabien, c'est [le] post-it. => And Fabien is [the] Post-it.\nEt Fabien, c'est le [post-it]. => And Fabien is the [Post-it].\n\n[Il] est voyant, collant, => [He]'s flashy, sticky,\nIl [est] voyant, collant, => He['s] flashy, sticky,\nIl est [voyant], collant, => He's [flashy], sticky,\nIl est voyant, [collant], => He's flashy, [sticky],\n\n[et] il s'affiche partout. => [and] he shows up everywhere.\net [il] s'affiche partout. => and [he] shows up everywhere.\net il [s'affiche] partout. => and he [shows up] everywhere.\net il s'affiche [partout]. => and he shows up [everywhere].\n\n[Elle] a un cul, elle me dit oui. => [She]'s got a nice ass, she says yes.\nElle [a] un cul, elle me dit oui. => She's [got] a nice ass, she says yes.\nElle a [un] cul, elle me dit oui. => She's got [a] nice ass, she says yes.\nElle a un [cul], elle me dit oui. => She's got a [nice ass], she says yes.\nElle a un cul, [elle] me dit oui. => She's got a nice ass, [she] says yes.\nElle a un cul, elle [me] dit oui. => to me\nElle a un cul, elle me [dit] oui. => She's got a nice ass, she [says] yes.\nElle a un cul, elle me dit [oui]. => She's got a nice ass, she says [yes].\n\n[Je] me suis demandé si j'étais aussi => [I] wondered if I was also\nJe [me suis demandé] si j'étais aussi => I [wondered] if I was also # reflexive verb \"se demander\" (to wonder) in passé composé\nJe me suis demandé [si] j'étais aussi => I wondered [if] I was also\nJe me suis demandé si [j']étais aussi => I wondered if [I] was also\nJe me suis demandé si j'[étais] aussi => I wondered if I [was] also\nJe me suis demandé si j'étais [aussi] => I wondered if I was [also]\n\n[une] fourniture de bureau. => [an] office supply.\nune [fourniture] de bureau. => an office [supply].\nune fourniture [de bureau]. => an [office] supply.\n\n[J']ai compris que j'étais la poubelle. => [I] realized I was the trash can.\nJ'[ai compris] que j'étais la poubelle. => I [realized] I was the trash can.\nJ'ai compris [que] j'étais la poubelle. => that\nJ'ai compris que [j']étais la poubelle. => I realized [I] was the trash can.\nJ'ai compris que j'[étais] la poubelle. => I realized I [was] the trash can.\nJ'ai compris que j'étais [la] poubelle. => I realized I was [the] trash can.\nJ'ai compris que j'étais la [poubelle]. => I realized I was the [trash can].\n\n[À] leurs pieds, à les débarrasser => [At] their feet, getting rid\nÀ [leurs] pieds, à les débarrasser => At [their] feet, getting rid\nÀ leurs [pieds], à les débarrasser => At their [feet], getting rid\nÀ leurs pieds, à [les] débarrasser => them\nÀ leurs pieds, à les [débarrasser] => At their feet, [getting rid] # débarrasser is the root action of getting rid of something\n\n[de] ce qu'ils voulaient pas. => [of] what they didn't want.\nde [ce qu']ils voulaient pas. => of [what] they didn't want.\nde ce qu'[ils] voulaient pas. => of what [they] didn't want.\nde ce qu'ils [voulaient] pas. => of what they didn't [want] # Voulaient is the verb \"want\" in the imperfect past tense\nde ce qu'ils voulaient [pas]. => of what they [didn't] want # Pas is the negation marker, corresponding to \"not\" or \"n't\" in English\n\n[J']ai tout jeté. J'ai dit : Je pars. => [I] threw it all away. I said: I'm leaving.\nJ'ai [tout] jeté. J'ai dit : Je pars. => I threw [it all] away. I said: I'm leaving.\nJ'ai tout [jeté]. J'ai dit : Je pars. => threw away\nJ'ai tout jeté. [J']ai dit : Je pars. => I threw it all away. [I] said: I'm leaving.\nJ'ai tout jeté. J'ai [dit] : Je pars. => I threw it all away. I [said]: I'm leaving.\nJ'ai tout jeté. J'ai dit : [Je] pars. => I threw it all away. I said: [I]'m leaving.\nJ'ai tout jeté. J'ai dit : Je [pars]. => I threw it all away. I said: I['m leaving] # \"pars\" translates to the present continuous \"am leaving\" represented by the contraction\n\n[Le] scotch m'a dit : Vous êtes sûr ? => [The] tape told me: Are you sure?\nLe [scotch] m'a dit : Vous êtes sûr ? => The [tape] told me: Are you sure?\nLe scotch [m']a dit : Vous êtes sûr ? => The tape told [me]: Are you sure?\nLe scotch m'[a dit] : Vous êtes sûr ? => The tape [told] me: Are you sure?\nLe scotch m'a dit : [Vous] êtes sûr ? => The tape told me: Are [you] sure?\nLe scotch m'a dit : Vous [êtes] sûr ? => The tape told me: [Are] you sure?\nLe scotch m'a dit : Vous êtes [sûr] ? => The tape told me: Are you [sure]? # \"sûr\" directly translates to \"sure\" regardless of the grammatical inversion in English\n\nJ'[ai dit] : Oui. => I [said]: Yes.\nJ'ai dit : [Oui]. => I said: [Yes] # \"Oui\" maps directly to \"Yes\"\n\n[Il] m'a dit : Vous aurez rien. => [He] told me: You'll get nothing.\nIl [m']a dit : Vous aurez rien. => He told [me]: You'll get nothing.\nIl m'[a dit] : Vous aurez rien. => He [told] me: You'll get nothing.\nIl m'a dit : [Vous] aurez rien. => He told me: [You]'ll get nothing.\nIl m'a dit : Vous [aurez] rien. => He told me: You['ll get] nothing.\nIl m'a dit : Vous aurez [rien]. => He told me: You'll get [nothing]. # \"rien\" on its own functions as \"nothing\" in informal speech omitting \"ne\"\n\nJ'ai dit : [C'est] pas un problème. => I said: [That's] not a problem.\nJ'ai dit : C'est [pas] un problème. => I said: That's [not] a problem.\nJ'ai dit : C'est pas [un] problème. => I said: That's not [a] problem.\nJ'ai dit : C'est pas un [problème]. => I said: That's not a [problem]\n\n[C']était un problème => [It] was a problem\nC'[était] un problème => It [was] a problem\nC'était [un] problème => It was [a] problem\nC'était un [problème] => It was a [problem]\n\n- [Vous] êtes sûr ? - Non. - Oui. => - Are [you] sure? - No. - Yes.\n- Vous [êtes] sûr ? - Non. - Oui. => - [Are] you sure? - No. - Yes.\n- Vous êtes [sûr] ? - Non. - Oui. => - Are you [sure]? - No. - Yes.\n- Vous êtes sûr ? - [Non]. - Oui. => - Are you sure? - [No]. - Yes.\n- Vous êtes sûr ? - Non. - [Oui]. => - Are you sure? - No. - [Yes].\n\n[En partant], je leur ai dit => [Leaving], I told them\nEn partant, [je] leur ai dit => Leaving, [I] told them\nEn partant, je [leur] ai dit => Leaving, I told [them]\nEn partant, je leur [ai dit] => Leaving, I [told] them\n\nd'aller bien [se faire foutre]. => to go [fuck themselves]. # This idiomatic expression is best kept as a single block\n\n[Au revoir] => [Goodbye]\n\n[Bref], j'ai eu un job. => [Anyway], I had a job.\nBref, [j']ai eu un job. => Anyway, [I] had a job.\nBref, j'[ai eu] un job. => Anyway, I [had] a job.\nBref, j'ai eu [un] job. => Anyway, I had [a] job.\nBref, j'ai eu un [job]. => Anyway, I had a [job].\n\n"
+    "phrases_with_token_translations": "[Bref], j'avais passé un entretien => [Anyway], I had an interview\nBref, [j']avais passé un entretien => [I] had an interview\nBref, j'[avais passé] un entretien => Anyway, I [had] an interview # \"passer un entretien\" means to have/take an interview\nBref, j'avais passé [un] entretien => Anyway, I had [an] interview\nBref, j'avais passé un [entretien] => Anyway, I had an [interview]\n\n[d'embauche] que je pensais avoir raté. => [for a job] that I thought I'd messed up.\nd'embauche [que] je pensais avoir raté. => for a job [that] I thought I'd messed up.\nd'embauche que [je] pensais avoir raté. => for a job that [I] thought I'd messed up.\nd'embauche que je [pensais] avoir raté. => for a job that I [thought] I'd messed up.\nd'embauche que je pensais [avoir] raté. => for a job that I thought I['d] messed up. # \"avoir\" corresponds to the auxiliary \"had\" represented by \"'d\"\nd'embauche que je pensais avoir [raté]. => for a job that I thought I'd [messed up]\n\n- [Do] you speak English? - Yes. => - [Do] you speak English? - Yes.\n- Do [you] speak English? - Yes. => - Do [you] speak English? - Yes.\n- Do you [speak] English? - Yes. => - Do you [speak] English? - Yes.\n- Do you speak [English]? - Yes. => - Do you speak [English]? - Yes.\n- Do you speak English? - [Yes]. => - Do you speak English? - [Yes].\n\n- [Where] are you from? - Yes. => - [Where] are you from? - Yes.\n- Where [are] you from? - Yes. => - Where [are] you from? - Yes.\n- Where are [you] from? - Yes. => - Where are [you] from? - Yes.\n- Where are you [from]? - Yes. => - Where are you [from]? - Yes.\n- Where are you from? - [Yes]. => - Where are you from? - [Yes].\n\n[Mais] ils m'ont engagé. => [But] they hired me.\nMais [ils] m'ont engagé. => But [they] hired me.\nMais ils [m']ont engagé. => But they hired [me].\nMais ils m'[ont engagé]. => But they [hired] me. # the compound verb \"ont engagé\" maps to the past tense \"hired\"\n\n[À l'] intendance => [In] facilities\nÀ l' [intendance] => In [facilities]\n\n[Ils] m'ont dit que je ferais tout et rien. => [They] told me I'd do everything and nothing.\nIls [m']ont dit que je ferais tout et rien. => They told [me] I'd do everything and nothing.\nIls m'[ont dit] que je ferais tout et rien. => They [told] me I'd do everything and nothing.\nIls m'ont dit que [je] ferais tout et rien. => They told me [I]'d do everything and nothing.\nIls m'ont dit que je [ferais] tout et rien. => They told me I['d do] everything and nothing.\nIls m'ont dit que je ferais [tout] et rien. => They told me I'd do [everything] and nothing.\nIls m'ont dit que je ferais tout [et] rien. => They told me I'd do everything [and] nothing.\nIls m'ont dit que je ferais tout et [rien]. => They told me I'd do everything and [nothing]\n\n[Je] ferais tout et rien. => [I]'d do everything and nothing.\nJe [ferais] tout et rien. => I['d do] everything and nothing.\nJe ferais [tout] et rien. => I'd do [everything] and nothing.\nJe ferais tout [et] rien. => I'd do everything [and] nothing.\nJe ferais tout et [rien]. => I'd do everything and [nothing].\n\n[Je] me suis rendu compte => [I] realized\nJe [me suis rendu compte] => I [realized] # the full reflexive phrase \"se rendre compte\" means to realize\n\n[que] je faisais tout, et eux rien. => [that] I did everything, and them nothing.\nque [je] faisais tout, et eux rien. => that [I] did everything, and them nothing.\nque je [faisais] tout, et eux rien. => that I [did] everything, and them nothing.\nque je faisais [tout], et eux rien. => that I did [everything], and them nothing.\nque je faisais tout, [et] eux rien. => that I did everything, [and] them nothing.\nque je faisais tout, et [eux] rien. => that I did everything, and [them] nothing.\nque je faisais tout, et eux [rien]. => that I did everything, and them [nothing].\n\n[En y repensant], j'ai compris => [Thinking back], I understood # \"En ... -ant\" corresponds to the \"-ing\" form, and \"repensant\" includes the \"back\" (re-)\nEn y repensant, [j']ai compris => Thinking back, [I] understood\nEn y repensant, j'[ai compris] => Thinking back, I [understood] # The compound tense ai compris maps to the simple past understood\n\n[pourquoi] ils m'avaient pris. => [why] they had taken me.\npourquoi [ils] m'avaient pris. => why [they] had taken me.\npourquoi ils [m']avaient pris. => why they had taken [me].\npourquoi ils m'[avaient] pris. => why they [had] taken me.\npourquoi ils m'avaient [pris]. => why they had [taken] me.\n\n[Vous] demandez quoi en termes de salaire ? => What do [you] ask for in terms of salary?\nVous [demandez] quoi en termes de salaire ? => What do you [ask for] in terms of salary?\nVous demandez [quoi] en termes de salaire ? => [What] do you ask for in terms of salary?\nVous demandez quoi [en] termes de salaire ? => What do you ask for [in] terms of salary?\nVous demandez quoi en [termes] de salaire ? => What do you ask for in [terms] of salary?\nVous demandez quoi en termes [de] salaire ? => What do you ask for in terms [of] salary?\nVous demandez quoi en termes de [salaire] ? => What do you ask for in terms of [salary]?\n\n[De l'] argent => some\nDe l' [argent] => [Money] # argent literally translates to money, while the partitive article \"de l'\" is understood as some/untold amount and is not directly present in the English sentence.\n\n[Merde]. => [Shit].\n\n[Je] faisais du café, => [I] made coffee,\nJe [faisais] du café, => I [made] coffee,\nJe faisais du [café], => I made [coffee], # \"du\" is the partitive article and doesn't have a direct equivalent in the English sentence provided\n\n[je] rechargeais les photocopieuses. => [I] refilled the copiers.\nje [rechargeais] les photocopieuses. => I [refilled] the copiers.\nje rechargeais [les] photocopieuses. => I refilled [the] copiers.\nje rechargeais les [photocopieuses]. => I refilled the [copiers].\n\n[Un] jour, Fabien m'a dit : => [One] day, Fabien told me:\nUn [jour], Fabien m'a dit : => One [day], Fabien told me:\nUn jour, [Fabien] m'a dit : => One day, [Fabien] told me:\nUn jour, Fabien [m']a dit : => One day, Fabien told [me]:\nUn jour, Fabien m'[a dit] : => One day, Fabien [told] me: # Passes composé 'a dit' functions as the simple past 'told' here\n\n[C'est] les chiffres putain, => [It's] the numbers damn it,\nC'est [les] chiffres putain, => It's [the] numbers damn it,\nC'est les [chiffres] putain, => It's the [numbers] damn it,\nC'est les chiffres [putain], => It's the numbers [damn it],\n\n[ça] marche plus, regarde. => [it] doesn't work anymore, look.\nça [marche] plus, regarde. => it doesn't [work] anymore, look.\nça marche [plus], regarde. => it doesn't work [anymore], look.\nça marche plus, [regarde]. => it doesn't work anymore, [look].\n\n[J']ai fait semblant de taper => [I] pretended to type\nJ'[ai fait semblant] de taper => I [pretended] to type # ai fait semblant is the compound past of faire semblant\nJ'ai fait semblant [de] taper => I pretended [to] type\nJ'ai fait semblant de [taper] => I pretended to [type]\n\n[des] trucs compliqués. => [some] complicated stuff.\ndes [trucs] compliqués. => some complicated [stuff].\ndes trucs [compliqués]. => some [compliant] stuff. # mapping \"compliqués\" to \"complicated\" while ignoring the plural \"s\" and the word order difference\ndes trucs [compliqués]. => some [complicated] stuff.\n\n[J']ai pas utilisé la souris => [I] didn't use the mouse\nJ'[ai pas] utilisé la souris => [didn't] use the mouse # maps the auxiliary and negation to the English equivalent\nJ'ai pas [utilisé] la souris => I didn't [use] the mouse\nJ'ai pas utilisé [la] souris => I didn't use [the] mouse\nJ'ai pas utilisé la [souris] => I didn't use the [mouse]\n\n[pour] faire américain. => [to] look American.\npour [faire] américain. => to [look] American.\npour faire [américain]. => to look [American].\n\n[Et] à un moment, => [And] at one point,\nEt [à] un moment, => And [at] one point,\nEt à [un] moment, => And at [one] point,\nEt à un [moment], => And at one [point],\n\nj'ai [juste] appuyé sur Verr Num. => I [just] pressed Num Lock.\nj'ai juste [appuyé] sur Verr Num. => I just [pressed] Num Lock. # \"sur\" is omitted as \"pressed\" is transitive in English\nj'ai juste appuyé sur [Verr] Num. => I just pressed Num [Lock] # Verr. is short for Verrouillage\nj'ai juste appuyé sur Verr [Num]. => I just pressed [Num] Lock\n\n[J']ai dit : C'est réparé. => [I] said: It's fixed.\nJ'[ai dit] : C'est réparé. => I [said]: It's fixed.\nJ'ai dit : [C'est] réparé. => I said: [It's] fixed.\nJ'ai dit : C'est [réparé]. => I said: It's [fixed].\n\n[Il] m'a dit : T'es un génie. => [He] told me: You're a genius.\nIl [m']a dit : T'es un génie. => He told [me]: You're a genius.\nIl m'[a dit] : T'es un génie. => He [told] me: You're a genius.\nIl m'a dit : [T']es un génie. => He told me: [You]'re a genius.\nIl m'a dit : T'[es] un génie. => He told me: You['re] a genius.\nIl m'a dit : T'es [un] génie. => He told me: You're [a] genius.\nIl m'a dit : T'es un [génie]. => He told me: You're a [genius].\n\n[J']ai pensé : T'es un couillon. => [I] thought: You're an idiot.\nJ'[ai pensé] : T'es un couillon. => I [thought]: You're an idiot.\nJ'ai pensé : [T'es] un couillon. => I thought: [You're] an idiot.\nJ'ai pensé : T'es [un] couillon. => I thought: You're [an] idiot.\nJ'ai pensé : T'es un [couillon]. => I thought: You're an [idiot].\n\n[De rien]. => [You're welcome].\nDe [rien]. => nothing # \"rien\" literally translates to \"nothing\" (as in \"it's nothing\")\n\nAu bout d'un [mois], j'ai compris => After a [month], I understood\nAu bout d'un mois, [j']ai compris => After a month, [I] understood\nAu bout d'un mois, j'[ai compris] => After a month, I [understood] # Passé composé is mapped to the simple past 'understood'\n\n[pourquoi] un bureau s'appelait un bureau. => [why] an office was called an office.\npourquoi [un] bureau s'appelait un bureau. => why [an] office was called an office.\npourquoi un [bureau] s'appelait un bureau. => why an [office] was called an office.\npourquoi un bureau [s'appelait] un bureau. => why an office [was called] an office.\npourquoi un bureau s'appelait [un] bureau. => why an office was called [an] office.\npourquoi un bureau s'appelait un [bureau]. => why an office was called an [office].\n\n[Jean-Louis] est le trombone. => [Jean-Louis] is the paperclip.\nJean-Louis [est] le trombone. => Jean-Louis [is] the paperclip.\nJean-Louis est [le] trombone. => Jean-Louis is [the] paperclip.\nJean-Louis est le [trombone]. => Jean-Louis is the [paperclip].\n\n[Tout le monde] le pliait => [Everyone] bent him\nTout le monde [le] pliait => Everyone bent [him]\nTout le monde le [pliait] => Everyone [bent] him\n\n[dans] tous les sens. => [in] every direction.\ndans [tous les] sens. => in [every] direction.\ndans tous les [sens]. => in every [direction].\n\n[Il] reprendra jamais sa forme initiale. => [He]'ll never regain his original shape.\nIl [reprendra] jamais sa forme initiale. => will regain, will get back # the future tense is expressed via \"'ll regain\"\nIl reprendra [jamais] sa forme initiale. => He'll [never] regain his original shape.\nIl reprendra jamais [sa] forme initiale. => He'll never regain [his] original shape.\nIl reprendra jamais sa [forme] initiale. => He'll never regain his original [shape].\nIl reprendra jamais sa forme [initiale]. => He'll never regain his [original] shape.\n\n- [Vous] avez entendu ? - Oui. => - Did [you] hear? - Yes.\n- Vous [avez] entendu ? - Oui. => - [Did] you hear? - Yes. # In this context, the auxiliary \"avez\" aligns with \"Did\" to form the past question\n- Vous avez [entendu] ? - Oui. => - Did you [hear]? - Yes.\n- Vous avez entendu ? - [Oui]. => - Did you hear? - [Yes. ]\n\n[Francis], c'est le scotch. => [Francis] is the tape.\nFrancis, [c'est] le scotch. => Francis [is] the tape.\nFrancis, c'est [le] scotch. => Francis is [the] tape.\nFrancis, c'est le [scotch]. => Francis is the [tape].\n\n[Il] te lâche pas. => [He] doesn't let you go.\nIl [te] lâche pas. => He doesn't let [you] go.\nIl te [lâche] pas. => let go, lets go # \"lâcher\" means \"to let go\", but because the English \"let ... go\" is split, we use a custom translation\nIl te lâche [pas]. => doesn't, not # \"pas\" is the negation, corresponding to \"doesn't\" in this sentence\n\n- [Vous] êtes sûr ? - Oui. => - Are [you] sure? - Yes.\n- Vous [êtes] sûr ? - Oui. => - [Are] you sure? - Yes.\n- Vous êtes [sûr] ? - Oui. => - Are you [sure]? - Yes.\n- Vous êtes sûr ? - [Oui]. => - Are you sure? - [Yes].\n\n[Elle], c'est la colle. => [She] is the glue.\nElle, [c'est] la colle. => She [is] the glue.\nElle, c'est [la] colle. => She is [the] glue.\nElle, c'est la [colle]. => She is the [glue].\n\n[Elle] sent bon, mais elle est saoulante. => [She] smells good, but she's annoying.\nElle [sent] bon, mais elle est saoulante. => She [smells] good, but she's annoying.\nElle sent [bon], mais elle est saoulante. => She smells [good], but she's annoying.\nElle sent bon, [mais] elle est saoulante. => She smells good, [but] she's annoying.\nElle sent bon, mais [elle] est saoulante. => She smells good, but [she]'s annoying.\nElle sent bon, mais elle [est] saoulante. => She smells good, but she['s] annoying.\nElle sent bon, mais elle est [saoulante]. => She smells good, but she's [annoying]. # saoulant literally means tiresome or intoxicating, but is commonly translated as annoying or a pain in the neck\n\n[Je] t'ai pas raconté mon week-end ? => Didn't [I] tell you about my weekend?\nJe [t']ai pas raconté mon week-end ? => Didn't I tell [you] about my weekend?\nJe t'[ai pas] raconté mon week-end ? => [Didn't] I tell you about my weekend?\nJe t'ai pas [raconté] mon week-end ? => Didn't I [tell] you about my weekend? # \"about\" is skipped as it has no direct counterpart\nJe t'ai pas raconté [mon] week-end ? => Didn't I tell you about [my] weekend?\nJe t'ai pas raconté mon [week-end] ? => Didn't I tell you about my [weekend]?\n\n[Comme] il faisait beau => [Since] the weather was nice\nComme [il] faisait beau => Since [the weather] was nice # \"il\" acts as the subject, which is \"the weather\" in the English translation\nComme il [faisait] beau => Since the weather [was] nice\nComme il faisait [beau] => Since the weather was [nice]\n\n[avec] mon mari Christian, => [with] my husband Christian,\navec [mon] mari Christian, => with [my] husband Christian,\navec mon [mari] Christian, => with my [husband] Christian,\navec mon mari [Christian], => with my husband [Christian]\n\n[on] est allés à la campagne, => [we] went to the countryside,\non [est allés] à la campagne, => we [went] to the countryside,\non est allés [à] la campagne, => we went [to] the countryside,\non est allés à [la] campagne, => we went to [the] countryside,\non est allés à la [campagne], => we went to the [countryside],\n\n[près d']un lac. => [near] a lake.\nprès d'[un] lac. => near [a] lake.\nprès d'un [lac]. => near a [lake]\n\n[On] a fait du pédalo. => [We] went on a pedal boat.\nOn [a fait] du pédalo. => We [went] on a pedal boat.\nOn a fait du [pédalo] => We went on a [pedal boat] # \"pédalo\" translates to \"pedal boat\" and \"du\" is the partitive article used with activities in French which doesn't have a direct 1:1 match here.\n\n[Je] m'en bats les steaks. C'est incroyable. => [I] couldn't care less. It's incredible.\nJe [m'en bats les steaks]. C'est incroyable. => I [couldn't care less]. It's incredible. # This is a very common idiomatic expression\nJe m'en [bats] les steaks. C'est incroyable. => beat, smack\nJe m'en bats les [steaks]. C'est incroyable. => steaks # literal meaning; used here as a euphemism for \"couilles\"\nJe m'en bats les steaks. [C'est] incroyable. => I couldn't care less. [It's] incredible.\nJe m'en bats les steaks. C'est [incroyable]. => I couldn't care less. It's [incredible].\n\n[Jean-Michel], c'est l'agrafeuse. => [Jean-Michel] is the stapler.\nJean-Michel, [c'est] l'agrafeuse. => Jean-Michel [is] the stapler. # \"c'est\" functions as the verb \"is\" in this structure\nJean-Michel, c'est [l']agrafeuse. => Jean-Michel is [the] stapler.\nJean-Michel, c'est l'[agrafeuse]. => Jean-Michel is the [stapler]\n\n[On] le trouve jamais. => [You] never find him.\nOn [le] trouve jamais. => You never find [him].\nOn le [trouve] jamais. => You never [find] him.\nOn le trouve [jamais]. => You [never] find him.\n\n[Et] Fabien, c'est le post-it. => [And] Fabien is the Post-it.\nEt [Fabien], c'est le post-it. => And [Fabien] is the Post-it.\nEt Fabien, [c'est] le post-it. => And Fabien [is] the Post-it.\nEt Fabien, c'est [le] post-it. => And Fabien is [the] Post-it.\nEt Fabien, c'est le [post-it]. => And Fabien is the [Post-it].\n\n[Il] est voyant, collant, => [He]'s flashy, sticky,\nIl [est] voyant, collant, => He['s] flashy, sticky,\nIl est [voyant], collant, => He's [flashy], sticky,\nIl est voyant, [collant], => He's flashy, [sticky],\n\n[et] il s'affiche partout. => [and] he shows up everywhere.\net [il] s'affiche partout. => and [he] shows up everywhere.\net il [s'affiche] partout. => and he [shows up] everywhere.\net il s'affiche [partout]. => and he shows up [everywhere].\n\n[Elle] a un cul, elle me dit oui. => [She]'s got a nice ass, she says yes.\nElle [a] un cul, elle me dit oui. => She's [got] a nice ass, she says yes.\nElle a [un] cul, elle me dit oui. => She's got [a] nice ass, she says yes.\nElle a un [cul], elle me dit oui. => She's got a [nice ass], she says yes.\nElle a un cul, [elle] me dit oui. => She's got a nice ass, [she] says yes.\nElle a un cul, elle [me] dit oui. => to me\nElle a un cul, elle me [dit] oui. => She's got a nice ass, she [says] yes.\nElle a un cul, elle me dit [oui]. => She's got a nice ass, she says [yes].\n\n[Je] me suis demandé si j'étais aussi => [I] wondered if I was also\nJe [me suis demandé] si j'étais aussi => I [wondered] if I was also # reflexive verb \"se demander\" (to wonder) in passé composé\nJe me suis demandé [si] j'étais aussi => I wondered [if] I was also\nJe me suis demandé si [j']étais aussi => I wondered if [I] was also\nJe me suis demandé si j'[étais] aussi => I wondered if I [was] also\nJe me suis demandé si j'étais [aussi] => I wondered if I was [also]\n\n[une] fourniture de bureau. => [an] office supply.\nune [fourniture] de bureau. => an office [supply].\nune fourniture [de bureau]. => an [office] supply.\n\n[J']ai compris que j'étais la poubelle. => [I] realized I was the trash can.\nJ'[ai compris] que j'étais la poubelle. => I [realized] I was the trash can.\nJ'ai compris [que] j'étais la poubelle. => that\nJ'ai compris que [j']étais la poubelle. => I realized [I] was the trash can.\nJ'ai compris que j'[étais] la poubelle. => I realized I [was] the trash can.\nJ'ai compris que j'étais [la] poubelle. => I realized I was [the] trash can.\nJ'ai compris que j'étais la [poubelle]. => I realized I was the [trash can].\n\n[À] leurs pieds, à les débarrasser => [At] their feet, getting rid\nÀ [leurs] pieds, à les débarrasser => At [their] feet, getting rid\nÀ leurs [pieds], à les débarrasser => At their [feet], getting rid\nÀ leurs pieds, à [les] débarrasser => them\nÀ leurs pieds, à les [débarrasser] => At their feet, [getting rid] # débarrasser is the root action of getting rid of something\n\n[de] ce qu'ils voulaient pas. => [of] what they didn't want.\nde [ce qu']ils voulaient pas. => of [what] they didn't want.\nde ce qu'[ils] voulaient pas. => of what [they] didn't want.\nde ce qu'ils [voulaient] pas. => of what they didn't [want] # Voulaient is the verb \"want\" in the imperfect past tense\nde ce qu'ils voulaient [pas]. => of what they [didn't] want # Pas is the negation marker, corresponding to \"not\" or \"n't\" in English\n\n[J']ai tout jeté. J'ai dit : Je pars. => [I] threw it all away. I said: I'm leaving.\nJ'ai [tout] jeté. J'ai dit : Je pars. => I threw [it all] away. I said: I'm leaving.\nJ'ai tout [jeté]. J'ai dit : Je pars. => threw away\nJ'ai tout jeté. [J']ai dit : Je pars. => I threw it all away. [I] said: I'm leaving.\nJ'ai tout jeté. J'ai [dit] : Je pars. => I threw it all away. I [said]: I'm leaving.\nJ'ai tout jeté. J'ai dit : [Je] pars. => I threw it all away. I said: [I]'m leaving.\nJ'ai tout jeté. J'ai dit : Je [pars]. => I threw it all away. I said: I['m leaving] # \"pars\" translates to the present continuous \"am leaving\" represented by the contraction\n\n[Le] scotch m'a dit : Vous êtes sûr ? => [The] tape told me: Are you sure?\nLe [scotch] m'a dit : Vous êtes sûr ? => The [tape] told me: Are you sure?\nLe scotch [m']a dit : Vous êtes sûr ? => The tape told [me]: Are you sure?\nLe scotch m'[a dit] : Vous êtes sûr ? => The tape [told] me: Are you sure?\nLe scotch m'a dit : [Vous] êtes sûr ? => The tape told me: Are [you] sure?\nLe scotch m'a dit : Vous [êtes] sûr ? => The tape told me: [Are] you sure?\nLe scotch m'a dit : Vous êtes [sûr] ? => The tape told me: Are you [sure]? # \"sûr\" directly translates to \"sure\" regardless of the grammatical inversion in English\n\nJ'[ai dit] : Oui. => I [said]: Yes.\nJ'ai dit : [Oui]. => I said: [Yes] # \"Oui\" maps directly to \"Yes\"\n\n[Il] m'a dit : Vous aurez rien. => [He] told me: You'll get nothing.\nIl [m']a dit : Vous aurez rien. => He told [me]: You'll get nothing.\nIl m'[a dit] : Vous aurez rien. => He [told] me: You'll get nothing.\nIl m'a dit : [Vous] aurez rien. => He told me: [You]'ll get nothing.\nIl m'a dit : Vous [aurez] rien. => He told me: You['ll get] nothing.\nIl m'a dit : Vous aurez [rien]. => He told me: You'll get [nothing]. # \"rien\" on its own functions as \"nothing\" in informal speech omitting \"ne\"\n\nJ'ai dit : [C'est] pas un problème. => I said: [That's] not a problem.\nJ'ai dit : C'est [pas] un problème. => I said: That's [not] a problem.\nJ'ai dit : C'est pas [un] problème. => I said: That's not [a] problem.\nJ'ai dit : C'est pas un [problème]. => I said: That's not a [problem]\n\n[C']était un problème => [It] was a problem\nC'[était] un problème => It [was] a problem\nC'était [un] problème => It was [a] problem\nC'était un [problème] => It was a [problem]\n\n- [Vous] êtes sûr ? - Non. - Oui. => - Are [you] sure? - No. - Yes.\n- Vous [êtes] sûr ? - Non. - Oui. => - [Are] you sure? - No. - Yes.\n- Vous êtes [sûr] ? - Non. - Oui. => - Are you [sure]? - No. - Yes.\n- Vous êtes sûr ? - [Non]. - Oui. => - Are you sure? - [No]. - Yes.\n- Vous êtes sûr ? - Non. - [Oui]. => - Are you sure? - No. - [Yes].\n\n[En partant], je leur ai dit => [Leaving], I told them\nEn partant, [je] leur ai dit => Leaving, [I] told them\nEn partant, je [leur] ai dit => Leaving, I told [them]\nEn partant, je leur [ai dit] => Leaving, I [told] them\n\nd'aller bien [se faire foutre]. => to go [fuck themselves]. # This idiomatic expression is best kept as a single block\n\n[Au revoir] => [Goodbye]\n\n[Bref], j'ai eu un job. => [Anyway], I had a job.\nBref, [j']ai eu un job. => Anyway, [I] had a job.\nBref, j'[ai eu] un job. => Anyway, I [had] a job.\nBref, j'ai eu [un] job. => Anyway, I had [a] job.\nBref, j'ai eu un [job]. => Anyway, I had a [job].\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway, I had an interview",
+            "words": []
+          },
+          {
+            "text": "for a job that I thought I'd messed up.",
+            "words": []
+          },
+          {
+            "text": "- Do you speak English? - Yes.",
+            "words": []
+          },
+          {
+            "text": "- Where are you from? - Yes.",
+            "words": []
+          },
+          {
+            "text": "But they hired me.",
+            "words": []
+          },
+          {
+            "text": "In facilities.",
+            "words": []
+          },
+          {
+            "text": "They told me I'd do everything and nothing.",
+            "words": []
+          },
+          {
+            "text": "I'd do everything and nothing.",
+            "words": []
+          },
+          {
+            "text": "I realized",
+            "words": []
+          },
+          {
+            "text": "that I did everything, and them nothing.",
+            "words": []
+          },
+          {
+            "text": "Thinking back, I understood",
+            "words": []
+          },
+          {
+            "text": "why they had taken me.",
+            "words": []
+          },
+          {
+            "text": "What do you ask for in terms of salary?",
+            "words": []
+          },
+          {
+            "text": "Money.",
+            "words": []
+          },
+          {
+            "text": "Shit.",
+            "words": []
+          },
+          {
+            "text": "I made coffee,",
+            "words": []
+          },
+          {
+            "text": "I refilled the copiers.",
+            "words": []
+          },
+          {
+            "text": "One day, Fabien told me:",
+            "words": []
+          },
+          {
+            "text": "It's the numbers damn it,",
+            "words": []
+          },
+          {
+            "text": "it doesn't work anymore, look.",
+            "words": []
+          },
+          {
+            "text": "I pretended to type",
+            "words": []
+          },
+          {
+            "text": "some complicated stuff.",
+            "words": []
+          },
+          {
+            "text": "I didn't use the mouse",
+            "words": []
+          },
+          {
+            "text": "to look American.",
+            "words": []
+          },
+          {
+            "text": "And at one point,",
+            "words": []
+          },
+          {
+            "text": "I just pressed Num Lock.",
+            "words": []
+          },
+          {
+            "text": "I said: It's fixed.",
+            "words": []
+          },
+          {
+            "text": "He told me: You're a genius.",
+            "words": []
+          },
+          {
+            "text": "I thought: You're an idiot.",
+            "words": []
+          },
+          {
+            "text": "You're welcome.",
+            "words": []
+          },
+          {
+            "text": "After a month, I understood",
+            "words": []
+          },
+          {
+            "text": "why an office was called an office.",
+            "words": []
+          },
+          {
+            "text": "Jean-Louis is the paperclip.",
+            "words": []
+          },
+          {
+            "text": "Everyone bent him",
+            "words": []
+          },
+          {
+            "text": "in every direction.",
+            "words": []
+          },
+          {
+            "text": "He'll never regain his original shape.",
+            "words": []
+          },
+          {
+            "text": "- Did you hear? - Yes.",
+            "words": []
+          },
+          {
+            "text": "Francis is the tape.",
+            "words": []
+          },
+          {
+            "text": "He doesn't let you go.",
+            "words": []
+          },
+          {
+            "text": "- Are you sure? - Yes.",
+            "words": []
+          },
+          {
+            "text": "She is the glue.",
+            "words": []
+          },
+          {
+            "text": "She smells good, but she's annoying.",
+            "words": []
+          },
+          {
+            "text": "Didn't I tell you about my weekend?",
+            "words": []
+          },
+          {
+            "text": "Since the weather was nice",
+            "words": []
+          },
+          {
+            "text": "with my husband Christian,",
+            "words": []
+          },
+          {
+            "text": "we went to the countryside,",
+            "words": []
+          },
+          {
+            "text": "near a lake.",
+            "words": []
+          },
+          {
+            "text": "We went on a pedal boat.",
+            "words": []
+          },
+          {
+            "text": "I couldn't care less. It's incredible.",
+            "words": []
+          },
+          {
+            "text": "Jean-Michel is the stapler.",
+            "words": []
+          },
+          {
+            "text": "You never find him.",
+            "words": []
+          },
+          {
+            "text": "And Fabien is the Post-it.",
+            "words": []
+          },
+          {
+            "text": "He's flashy, sticky,",
+            "words": []
+          },
+          {
+            "text": "and he shows up everywhere.",
+            "words": []
+          },
+          {
+            "text": "She's got a nice ass, she says yes.",
+            "words": []
+          },
+          {
+            "text": "I wondered if I was also",
+            "words": []
+          },
+          {
+            "text": "an office supply.",
+            "words": []
+          },
+          {
+            "text": "I realized I was the trash can.",
+            "words": []
+          },
+          {
+            "text": "At their feet, getting rid",
+            "words": []
+          },
+          {
+            "text": "of what they didn't want.",
+            "words": []
+          },
+          {
+            "text": "I threw it all away. I said: I'm leaving.",
+            "words": []
+          },
+          {
+            "text": "The tape told me: Are you sure?",
+            "words": []
+          },
+          {
+            "text": "I said: Yes.",
+            "words": []
+          },
+          {
+            "text": "He told me: You'll get nothing.",
+            "words": []
+          },
+          {
+            "text": "I said: That's not a problem.",
+            "words": []
+          },
+          {
+            "text": "It was a problem.",
+            "words": []
+          },
+          {
+            "text": "- Are you sure? - No. - Yes.",
+            "words": []
+          },
+          {
+            "text": "Leaving, I told them",
+            "words": []
+          },
+          {
+            "text": "to go fuck themselves.",
+            "words": []
+          },
+          {
+            "text": "Goodbye.",
+            "words": []
+          },
+          {
+            "text": "Anyway, I had a job.",
+            "words": []
+          }
+        ],
+        "lessons": "# L'Entretien d'Embauche\n00:04.10 Bref, j'avais passé un entretien\n00:05.60 d'embauche que je pensais avoir raté.\n00:07.10 - Do you speak English? - Yes.\n00:08.10 - Where are you from? - Yes.\n00:09.10 Mais ils m'ont engagé.\n\n# Les Premiers Jours à l'Intendance\n00:10.10 À l'intendance.\n00:11.10 Ils m'ont dit que je ferais tout et rien.\n00:12.10 Je ferais tout et rien.\n00:13.10 Je me suis rendu compte\n00:14.10 que je faisais tout, et eux rien.\n00:15.10 En y repensant, j'ai compris\n00:16.60 pourquoi ils m'avaient pris.\n00:17.60 Vous demandez quoi en termes de salaire ?\n00:19.10 De l'argent.\n00:21.10 Merde.\n\n# Les Tâches de Bureau\n00:22.10 Je faisais du café,\n00:23.60 je rechargeais les photocopieuses.\n00:25.10 Un jour, Fabien m'a dit :\n00:26.10 C'est les chiffres putain,\n00:27.10 ça marche plus, regarde.\n00:28.10 J'ai fait semblant de taper\n00:29.10 des trucs compliqués.\n00:30.10 J'ai pas utilisé la souris\n00:31.10 pour faire américain.\n00:32.10 Et à un moment,\n00:33.10 j'ai juste appuyé sur Verr Num.\n00:34.10 J'ai dit : C'est réparé.\n00:35.10 Il m'a dit : T'es un génie.\n00:36.10 J'ai pensé : T'es un couillon.\n00:37.10 De rien.\n\n# La Métaphore des Fournitures de Bureau\n00:38.10 Au bout d'un mois, j'ai compris\n00:39.10 pourquoi un bureau s'appelait un bureau.\n00:40.60 Jean-Louis est le trombone.\n00:41.60 Tout le monde le pliait\n00:42.60 dans tous les sens.\n00:43.60 Il reprendra jamais sa forme initiale.\n00:44.60 - Vous avez entendu ? - Oui.\n00:45.60 Francis, c'est le scotch.\n00:46.60 Il te lâche pas.\n00:47.60 - Vous êtes sûr ? - Oui.\n00:48.60 Elle, c'est la colle.\n00:49.60 Elle sent bon, mais elle est saoulante.\n\n# Les Collègues et la Démission\n00:51.10 Je t'ai pas raconté mon week-end ?\n00:52.60 Comme il faisait beau\n00:53.60 avec mon mari Christian,\n00:54.60 on est allés à la campagne,\n00:55.60 près d'un lac.\n00:56.60 On a fait du pédalo.\n00:58.10 Je m'en bats les steaks. C'est incroyable.\n01:00.10 Jean-Michel, c'est l'agrafeuse.\n01:01.60 On le trouve jamais.\n01:03.10 Et Fabien, c'est le post-it.\n01:04.10 Il est voyant, collant,\n01:05.10 et il s'affiche partout.\n01:06.10 Elle a un cul, elle me dit oui.\n\n# La Réalisation et le Départ\n01:08.10 Je me suis demandé si j'étais aussi\n01:09.60 une fourniture de bureau.\n01:10.60 J'ai compris que j'étais la poubelle.\n01:11.60 À leurs pieds, à les débarrasser\n01:12.60 de ce qu'ils voulaient pas.\n01:16.10 J'ai tout jeté. J'ai dit : Je pars.\n01:21.10 Le scotch m'a dit : Vous êtes sûr ?\n01:22.10 J'ai dit : Oui.\n01:23.10 Il m'a dit : Vous aurez rien.\n01:24.10 J'ai dit : C'est pas un problème.\n01:25.10 C'était un problème.\n01:26.10 - Vous êtes sûr ? - Non. - Oui.\n01:29.10 En partant, je leur ai dit\n01:30.10 d'aller bien se faire foutre.\n01:31.10 Au revoir.\n01:32.10 Bref, j'ai eu un job."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 17:17:44 UTC",
   "updated_at": "2026-04-02 19:19:53 UTC",

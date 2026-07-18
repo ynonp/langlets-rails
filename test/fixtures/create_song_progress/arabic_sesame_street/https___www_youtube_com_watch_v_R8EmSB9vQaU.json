@@ -9,335 +9,486 @@
         "id": "phrase_1",
         "text_l1": "سلامتك يا كامل سلامتك.",
         "timestamp": "00:00.00",
-        "timestamp_end": "00:03.00",
-        "text_l2": "Get well soon, Kamel, get well soon."
+        "timestamp_end": "00:03.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "خلص خلص، مدام هلق الدكتور عندك",
         "timestamp": "00:04.00",
-        "timestamp_end": "00:06.00",
-        "text_l2": "Enough, enough, since the doctor is with you now."
+        "timestamp_end": "00:06.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "كل شي رح يكون تمام.",
         "timestamp": "00:06.00",
-        "timestamp_end": "00:07.50",
-        "text_l2": "Everything will be fine."
+        "timestamp_end": "00:07.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "تن تن وجلجل؟ هلق بسلملك عليهن.",
         "timestamp": "00:08.00",
-        "timestamp_end": "00:11.00",
-        "text_l2": "Tan Tan and Jaljal? I'll send them your greetings now."
+        "timestamp_end": "00:11.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "هيهن هيهن.",
         "timestamp": "00:11.00",
-        "timestamp_end": "00:12.00",
-        "text_l2": "Here they are, here they are."
+        "timestamp_end": "00:12.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "عمو كامل بيسلم عليكن.",
         "timestamp": "00:12.00",
-        "timestamp_end": "00:14.00",
-        "text_l2": "Uncle Kamel sends you his greetings."
+        "timestamp_end": "00:14.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "ماشي، ولا يهمك. أهلين، مع السلامة.",
         "timestamp": "00:15.00",
-        "timestamp_end": "00:18.00",
-        "text_l2": "Okay, no worries. Hi, goodbye."
+        "timestamp_end": "00:18.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "حياة، إنت هون بورشة عمو كامل",
         "timestamp": "00:20.00",
-        "timestamp_end": "00:23.00",
-        "text_l2": "Hayat, are you here at Uncle Kamel's workshop?"
+        "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "لأنه مريض؟",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:24.50",
-        "text_l2": "Because he's sick?"
+        "timestamp_end": "00:24.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "آه، عم بضبضبله كم من شغلة",
         "timestamp": "00:25.00",
-        "timestamp_end": "00:27.00",
-        "text_l2": "Yeah, I'm fixing up a few things for him."
+        "timestamp_end": "00:27.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "عشان أوديله إياهن.",
         "timestamp": "00:27.00",
-        "timestamp_end": "00:28.50",
-        "text_l2": "To send them to him."
+        "timestamp_end": "00:28.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "بدك تروحي عنده؟ وإحنا كمان بدنا نروح معك.",
         "timestamp": "00:29.00",
-        "timestamp_end": "00:32.00",
-        "text_l2": "You want to go see him? We want to go with you too."
+        "timestamp_end": "00:32.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "آه، وإحنا كمان.",
         "timestamp": "00:32.00",
-        "timestamp_end": "00:33.00",
-        "text_l2": "Yeah, us too."
+        "timestamp_end": "00:33.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "هلق أول ما يخف رح نروح كلنا،",
         "timestamp": "00:33.00",
-        "timestamp_end": "00:35.00",
-        "text_l2": "Now, as soon as he gets better, we'll all go,"
+        "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "إن شاء الله.",
         "timestamp": "00:35.00",
-        "timestamp_end": "00:36.00",
-        "text_l2": "God willing."
+        "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "بس إحنا بدنا نروح هلق معك.",
         "timestamp": "00:36.00",
-        "timestamp_end": "00:38.00",
-        "text_l2": "But we want to go with you now."
+        "timestamp_end": "00:38.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "آه، هلق، يلا.",
         "timestamp": "00:38.00",
-        "timestamp_end": "00:39.00",
-        "text_l2": "Yeah, now, let's go."
+        "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "هلق شوي صعب، لأنه مرشح وبيعدينا.",
         "timestamp": "00:39.00",
-        "timestamp_end": "00:41.50",
-        "text_l2": "It's a bit difficult now, because he's contagious and we have to keep our distance."
+        "timestamp_end": "00:41.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "آه، طيب إذا ما رحنا عليه،",
         "timestamp": "00:42.00",
-        "timestamp_end": "00:45.00",
-        "text_l2": "Yeah, well, if we don't go see him,"
+        "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "كيف بده يعرف إنه بنفكر فيه؟",
         "timestamp": "00:45.00",
-        "timestamp_end": "00:46.50",
-        "text_l2": "How will he know we're thinking of him?"
+        "timestamp_end": "00:46.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "آه، وإنه إحنا شاعرين معه وبنحبه.",
         "timestamp": "00:47.00",
-        "timestamp_end": "00:50.00",
-        "text_l2": "Yeah, and that we feel for him and love him."
+        "timestamp_end": "00:50.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "شو بدنا نعمل يا جلجل؟",
         "timestamp": "00:51.00",
-        "timestamp_end": "00:52.50",
-        "text_l2": "What should we do, Jaljal?"
+        "timestamp_end": "00:52.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "أنا عندي فكرة.",
         "timestamp": "00:53.00",
-        "timestamp_end": "00:54.00",
-        "text_l2": "I have an idea."
+        "timestamp_end": "00:54.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "إيش هي؟",
         "timestamp": "00:54.00",
-        "timestamp_end": "00:54.50",
-        "text_l2": "What is it?"
+        "timestamp_end": "00:54.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "شو رأيكن نعمله هدية؟",
         "timestamp": "00:55.00",
-        "timestamp_end": "00:57.50",
-        "text_l2": "What do you say we make him a gift?"
+        "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "آه، نعمله هدية، أنا موافقة، يلا.",
         "timestamp": "00:57.50",
-        "timestamp_end": "00:59.00",
-        "text_l2": "Yeah, make him a gift, I agree, let's go."
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "ممتاز، وأنا عندي كمان فكرة،",
         "timestamp": "00:59.00",
-        "timestamp_end": "01:01.50",
-        "text_l2": "Excellent, and I have an idea too,"
+        "timestamp_end": "01:01.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "رح أصوركن وإنتو بتجهزوا الهدية، يلا تعالوا.",
         "timestamp": "01:01.50",
-        "timestamp_end": "01:03.50",
-        "text_l2": "I'll film you while you prepare the gift, come on."
+        "timestamp_end": "01:03.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "فكرة حلوة، يلا يا جلجل خلص.",
         "timestamp": "01:04.00",
-        "timestamp_end": "01:06.00",
-        "text_l2": "Nice idea, come on Jaljal, let's go."
+        "timestamp_end": "01:06.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "جاهزين نصور؟ جاهزين، جاهزين، يلا.",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:10.00",
-        "text_l2": "Ready to film? Ready, ready, let's go."
+        "timestamp_end": "01:10.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "مرحبا عمو كامل.",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:12.50",
-        "text_l2": "Hello, Uncle Kamel."
+        "timestamp_end": "01:12.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "عمو كامل، إحنا كتير كتير اشتقنالك.",
         "timestamp": "01:13.00",
-        "timestamp_end": "01:17.00",
-        "text_l2": "Uncle Kamel, we miss you so, so much."
+        "timestamp_end": "01:17.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "وبنحبك كتير يا عمو كامل.",
         "timestamp": "01:17.00",
-        "timestamp_end": "01:18.50",
-        "text_l2": "And we love you very much, Uncle Kamel."
+        "timestamp_end": "01:18.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "وإن شاء الله بترجعلنا بالسلامة.",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.50",
-        "text_l2": "And God willing, you'll return to us safely."
+        "timestamp_end": "01:21.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "ألف سلامة، ألف سلامة.",
         "timestamp": "01:22.00",
-        "timestamp_end": "01:26.00",
-        "text_l2": "Get well soon, get well soon."
+        "timestamp_end": "01:26.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "وأنا عم بكتبلك على الكرت أحلى كلمات",
         "timestamp": "01:27.00",
-        "timestamp_end": "01:30.00",
-        "text_l2": "And I'm writing the sweetest words on the card for you"
+        "timestamp_end": "01:30.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "منشان تقوم وتطيب بالسلامة.",
         "timestamp": "01:30.00",
-        "timestamp_end": "01:32.50",
-        "text_l2": "So you can get up and recover well."
+        "timestamp_end": "01:32.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "مني ومن تن تن ومن حياة.",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:36.00",
-        "text_l2": "From me, from Tan Tan, and from Hayat."
+        "timestamp_end": "01:36.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "اكتب يا جلجل، يلا.",
         "timestamp": "01:36.00",
-        "timestamp_end": "01:37.50",
-        "text_l2": "Write, Jaljal, come on."
+        "timestamp_end": "01:37.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "سلامتك يا عمو كامل.",
         "timestamp": "01:38.00",
-        "timestamp_end": "01:41.00",
-        "text_l2": "Get well soon, Uncle Kamel."
+        "timestamp_end": "01:41.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "سلامتك يا عمو كامل.",
         "timestamp": "01:42.00",
-        "timestamp_end": "01:45.00",
-        "text_l2": "Get well soon, Uncle Kamel."
+        "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "اكتبله إنه إحنا اشتقنالك.",
         "timestamp": "01:46.00",
-        "timestamp_end": "01:47.50",
-        "text_l2": "Write to him that we miss him."
+        "timestamp_end": "01:47.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "وإحنا اشتقنالك وبنتمنى ترجع عنا هون.",
         "timestamp": "01:48.00",
-        "timestamp_end": "01:54.00",
-        "text_l2": "And we miss you and hope you come back here to us."
+        "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "أكيد أكيد رح يكون مبسوط فيهن،",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:58.00",
-        "text_l2": "Surely, surely he'll be happy with them,"
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "مع الوردات يا سلام.",
         "timestamp": "01:58.00",
-        "timestamp_end": "02:00.00",
-        "text_l2": "With the flowers, wonderful."
+        "timestamp_end": "02:00.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "وأنا متأكدة إنه هلق رح يبطل",
         "timestamp": "02:01.00",
-        "timestamp_end": "02:04.00",
-        "text_l2": "And I'm sure now he'll stop"
+        "timestamp_end": "02:04.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "هو شاعر بالوحدة.",
         "timestamp": "02:04.00",
-        "timestamp_end": "02:06.00",
-        "text_l2": "Feeling lonely."
+        "timestamp_end": "02:06.00"
       }
     ],
     "phrases_with_token_translations": "[سلامتك] يا كامل سلامتك. => [Get well soon], Kamel, get well soon.\nسلامتك يا [كامل] سلامتك. => Get well soon, [Kamel], get well soon.\nسلامتك يا كامل [سلامتك]. => Get well soon, Kamel, [get well soon].\n\n[خلص] خلص، مدام هلق الدكتور عندك => [Enough], enough, since the doctor is with you now\nخلص [خلص]، مدام هلق الدكتور عندك => Enough, [enough], since the doctor is with you now\nخلص خلص، [مدام] هلق الدكتور عندك => Enough, enough, [since] the doctor is with you now\nخلص خلص، مدام [هلق] الدكتور عندك => Enough, enough, since the doctor is with you [now]\nخلص خلص، مدام هلق [الدكتور] عندك => Enough, enough, since [the doctor] is with you now\nخلص خلص، مدام هلق الدكتور [عندك] => Enough, enough, since the doctor [is with you] now\n\n[كل شي] رح يكون تمام. => [Everything] will be fine.\nكل شي [رح يكون] تمام. => Everything [will be] fine.\nكل شي رح يكون [تمام]. => Everything will be [fine].\n\n[تن تن] وجلجل؟ هلق بسلملك عليهن. => [Tan Tan] and Jaljal? I'll send them your greetings now.\nتن تن [و]جلجل؟ هلق بسلملك عليهن. => Tan Tan [and] Jaljal? I'll send them your greetings now.\nتن تن و[جلجل]؟ هلق بسلملك عليهن. => Tan Tan and [Jaljal]? I'll send them your greetings now.\nتن تن وجلجل؟ [هلق] بسلملك عليهن. => Tan Tan and Jaljal? I'll send them your greetings [now].\nتن تن وجلجل؟ هلق [بسلملك] عليهن. => I'll send your greetings\nتن تن وجلجل؟ هلق بسلملك [عليهن]. => Tan Tan and Jaljal? I'll send [them] your greetings now.\n\n[هيهن] هيهن => [Here they are], here they are\nهيهن [هيهن] => Here they are, [here they are]\n\n[عمو] كامل بيسلم عليكن. => [Uncle] Kamel sends you his greetings.\nعمو [كامل] بيسلم عليكن. => Uncle [Kamel] sends you his greetings.\nعمو كامل [بيسلم] عليكن. => sends his greetings\nعمو كامل بيسلم [عليكن] => Uncle Kamel sends [you] his greetings.\n\n[ماشي]، ولا يهمك. أهلين، مع السلامة. => [Okay], no worries. Hi, goodbye.\nماشي، [ولا يهمك]. أهلين، مع السلامة. => Okay, [no worries]. Hi, goodbye.\nماشي، ولا يهمك. [أهلين]، مع السلامة. => Okay, no worries. [Hi], goodbye.\nماشي، ولا يهمك. أهلين، [مع السلامة]. => Okay, no worries. Hi, [goodbye].\n\n[حياة]، إنت هون بورشة عمو كامل => [Hayat], are you here at Uncle Kamel's workshop?\nحياة، [إنت] هون بورشة عمو كامل => Hayat, [are you] here at Uncle Kamel's workshop?\nحياة، إنت [هون] بورشة عمو كامل => Hayat, are you [here] at Uncle Kamel's workshop?\nحياة، إنت هون [بورشة] عمو كامل => at the workshop\nحياة، إنت هون بورشة [عمو] كامل => Hayat, are you here at [Uncle] Kamel's workshop?\nحياة، إنت هون بورشة عمو [كامل] => Hayat, are you here at Uncle [Kamel]'s workshop?\n\n[لأنه] مريض؟ => [Because he's] sick?\nلأنه [مريض]؟ => Because he's [sick]?\n\n[آه]، عم بضبضبله كم من شغلة => [Yeah], I'm fixing up a few things for him\nآه، [عم بضبضبله] كم من شغلة => I'm fixing up for him\nآه، عم بضبضبله [كم من] شغلة => Yeah, I'm fixing up [a few] things for him\nآه، عم بضبضبله كم من [شغلة] => thing, item # the Arabic word is singular, meaning \"thing\" or \"matter\"\n\n[عشان] أوديله إياهن. => [To] send them to him.\nعشان [أوديله] إياهن. => send to him\nعشان أوديله [إياهن]. => To send [them] to him.\n\n[بدك] تروحي عنده؟ وإحنا كمان بدنا نروح معك. => [You want] to go see him? We want to go with you too.\nبدك [تروحي] عنده؟ وإحنا كمان بدنا نروح معك. => You want [to go] see him? We want to go with you too.\nبدك تروحي [عنده]؟ وإحنا كمان بدنا نروح معك. => You want to go [see him]? We want to go with you too.\nبدك تروحي عنده؟ و[إحنا] كمان بدنا نروح معك. => You want to go see him? [We] want to go with you too.\nبدك تروحي عنده؟ وإحنا [كمان] بدنا نروح معك. => You want to go see him? We want to go with you [too]\nبدك تروحي عنده؟ وإحنا كمان [بدنا] نروح معك. => You want to go see him? We [want] to go with you too.\nبدك تروحي عنده؟ وإحنا كمان بدنا [نروح] معك. => You want to go see him? We want [to go] with you too.\nبدك تروحي عنده؟ وإحنا كمان بدنا نروح [معك]. => You want to go see him? We want to go [with you] too.\n\n[آه]، وإحنا كمان => [Yeah], us too\nآه، و[إحنا] كمان => Yeah, [us] too\nآه، وإحنا [كمان] => Yeah, us [too]\n\n[هلق] أول ما يخف رح نروح كلنا، => [Now], as soon as he gets better, we'll all go,\nهلق [أول ما] يخف رح نروح كلنا، => Now, [as soon as] he gets better, we'll all go,\nهلق أول ما [يخف] رح نروح كلنا، => Now, as soon as [he gets better], we'll all go,\nهلق أول ما يخف [رح نروح] كلنا، => we'll go\nهلق أول ما يخف رح نروح [كلنا]، => Now, as soon as he gets better, we'll [all] go,\n\n[إن شاء الله]. => [God willing].\nإن شاء [الله]. => [God] willing.\n\n[بس] إحنا بدنا نروح هلق معك. => [But] we want to go with you now.\nبس [إحنا] بدنا نروح هلق معك. => But [we] want to go with you now.\nبس إحنا [بدنا] نروح هلق معك. => But we [want] to go with you now.\nبس إحنا بدنا [نروح] هلق معك. => But we want [to go] with you now.\nبس إحنا بدنا نروح [هلق] معك. => But we want to go with you [now].\nبس إحنا بدنا نروح هلق [معك]. => But we want to go [with you] now.\n\n[آه]، هلق، يلا. => [Yeah], now, let's go.\nآه، [هلق]، يلا. => Yeah, [now], let's go.\nآه، هلق، [يلا]. => Yeah, now, [let's go].\n\n[هلق] شوي صعب، لأنه مرشح وبيعدينا => It's a bit difficult [now], because he's contagious and we have to keep our distance.\nهلق [شوي] صعب، لأنه مرشح وبيعدينا => It's [a bit] difficult now, because he's contagious and we have to keep our distance.\nهلق شوي [صعب]، لأنه مرشح وبيعدينا => It's a bit [difficult] now, because he's contagious and we have to keep our distance.\nهلق شوي صعب، [لأنه] مرشح وبيعدينا => It's a bit difficult now, [because he's] contagious and we have to keep our distance.\nهلق شوي صعب، لأنه [مرشح] وبيعدينا => It's a bit difficult now, because he's [contagious] and we have to keep our distance.\nهلق شوي صعب، لأنه مرشح [وبيعدينا] => and he infects us # \"and he infects us\" is the literal meaning; the English sentence uses a localized equivalent.\n\n[آه]، طيب إذا ما رحنا عليه، => [Yeah], well, if we don't go see him,\nآه، [طيب] إذا ما رحنا عليه، => Yeah, [well], if we don't go see him,\nآه، طيب [إذا] ما رحنا عليه، => Yeah, well, [if] we don't go see him,\nآه، طيب إذا [ما رحنا] عليه، => Yeah, well, if [we don't go] see him,\nآه، طيب إذا ما رحنا [عليه]، => to him # \"عليه\" literally means \"to him\" or \"on him\", indicating the destination of the going (visiting him)\n\n[كيف] بده يعرف إنه بنفكر فيه؟ => [How] will he know we're thinking of him?\nكيف [بده] يعرف إنه بنفكر فيه؟ => will, he wants to # بده (biddo) functions as a future marker/intent \"he wants to\" or \"he will\"\nكيف بده [يعرف] إنه بنفكر فيه؟ => How will he [know] we're thinking of him?\nكيف بده يعرف [إنه] بنفكر فيه؟ => that # literal: that it/he\nكيف بده يعرف إنه [بنفكر] فيه؟ => How will he know [we're thinking] of him?\nكيف بده يعرف إنه بنفكر [فيه]؟ => How will he know we're thinking [of him]?\n\n[آه]، وإنه إحنا شاعرين معه وبنحبه. => [Yeah], and that we feel for him and love him.\nآه، [وإنه] إحنا شاعرين معه وبنحبه. => Yeah, [and that] we feel for him and love him.\nآه، وإنه [إحنا] شاعرين معه وبنحبه. => Yeah, and that [we] feel for him and love him.\nآه، وإنه إحنا [شاعرين] معه وبنحبه. => Yeah, and that we [feel] for him and love him.\nآه، وإنه إحنا شاعرين [معه] وبنحبه. => Yeah, and that we feel [for him] and love him.\nآه، وإنه إحنا شاعرين معه [وبنحبه]. => Yeah, and that we feel for him [and love him]\n\n[شو] بدنا نعمل يا جلجل؟ => [What] should we do, Jaljal?\nشو [بدنا] نعمل يا جلجل؟ => What [should we] do, Jaljal?\nشو بدنا [نعمل] يا جلجل؟ => What should we [do], Jaljal?\nشو بدنا نعمل [يا جلجل]؟ => What should we do, [Jaljal]?\n\n[أنا] عندي فكرة => [I] have an idea\nأنا [عندي] فكرة => I [have] an idea\nأنا عندي [فكرة] => I have [an idea]\n\n[إيش] هي؟ => [What] is it?\nإيش [هي]؟ => What is [it]?\n\n[شو] رأيكن نعمله هدية؟ => [What] do you say we make him a gift?\nشو [رأيكن] نعمله هدية؟ => your (plural) opinion # رأي (opinion) + كن (your plural)\nشو رأيكن [نعمله] هدية؟ => we make him # نعمل (we make) + ه (him/it)\nشو رأيكن نعمله [هدية]؟ => What do you say we make him [a gift]?\n\n[آه]، نعمله هدية، أنا موافقة، يلا. => [Yeah], make him a gift, I agree, let's go.\nآه، [نعمله] هدية، أنا موافقة، يلا. => Yeah, [make him] a gift, I agree, let's go.\nآه، نعمله [هدية]، أنا موافقة، يلا. => Yeah, make him [a gift], I agree, let's go.\nآه، نعمله هدية، [أنا] موافقة، يلا. => Yeah, make him a gift, [I] agree, let's go.\nآه، نعمله هدية، أنا [موافقة]، يلا. => Yeah, make him a gift, I [agree], let's go.\nآه، نعمله هدية، أنا موافقة، [يلا]. => Yeah, make him a gift, I agree, [let's go].\n\n[ممتاز]، وأنا عندي كمان فكرة، => [Excellent], and I have an idea too,\nممتاز، [وأنا] عندي كمان فكرة، => Excellent, [and I] have an idea too,\nممتاز، وأنا [عندي] كمان فكرة، => Excellent, and I [have] an idea too,\nممتاز، وأنا عندي [كمان] فكرة، => Excellent, and I have an idea [too],\nممتاز، وأنا عندي كمان [فكرة]، => Excellent, and I have [an idea] too,\n\n[رح أصوركن] وإنتو بتجهزوا الهدية، يلا تعالوا. => [I'll film you] while you prepare the gift, come on.\nرح أصوركن [وإنتو] بتجهزوا الهدية، يلا تعالوا. => I'll film you [while you] prepare the gift, come on.\nرح أصوركن وإنتو [بتجهزوا] الهدية، يلا تعالوا. => I'll film you while you [prepare] the gift, come on.\nرح أصوركن وإنتو بتجهزوا [الهدية]، يلا تعالوا. => I'll film you while you prepare [the gift], come on.\nرح أصوركن وإنتو بتجهزوا الهدية، [يلا] تعالوا. => I'll film you while you prepare the gift, [come on].\nرح أصوركن وإنتو بتجهزوا الهدية، يلا [تعالوا] => come (plural)\n\n[فكرة] حلوة، يلا يا جلجل خلص. => Nice [idea], come on Jaljal, let's go.\nفكرة [حلوة]، يلا يا جلجل خلص. => [Nice] idea, come on Jaljal, let's go.\nفكرة حلوة، [يلا] يا جلجل خلص. => Nice idea, [come on] Jaljal, let's go.\nفكرة حلوة، يلا [يا جلجل] خلص. => Nice idea, come on [Jaljal], let's go.\nفكرة حلوة، يلا يا جلجل [خلص] => finish, enough, let's go # خلص is often translated as \"enough\" or \"finish,\" used here to mean \"let's go\" or \"wrap it up\"\n\n[جاهزين] نصور؟ جاهزين، جاهزين، يلا. => [Ready] to film? Ready, ready, let's go.\nجاهزين [نصور]؟ جاهزين، جاهزين، يلا. => Ready [to film]? Ready, ready, let's go.\nجاهزين نصور؟ [جاهزين]، جاهزين، يلا. => Ready to film? [Ready], ready, let's go.\nجاهزين نصور؟ جاهزين، [جاهزين]، يلا. => Ready to film? Ready, [ready], let's go.\nجاهزين نصور؟ جاهزين، جاهزين، [يلا]. => Ready to film? Ready, ready, [let's go].\n\n[مرحبا] عمو كامل. => [Hello], Uncle Kamel.\nمرحبا [عمو] كامل. => Hello, [Uncle] Kamel.\nمرحبا عمو [كامل]. => Hello, Uncle [Kamel].\n\n[عمو] كامل، إحنا كتير كتير اشتقنالك. => [Uncle] Kamel, we miss you so, so much.\nعمو [كامل]، إحنا كتير كتير اشتقنالك. => Uncle [Kamel], we miss you so, so much.\nعمو كامل، [إحنا] كتير كتير اشتقنالك. => Uncle Kamel, [we] miss you so, so much.\nعمو كامل، إحنا [كتير كتير] اشتقنالك. => Uncle Kamel, we miss you [so, so much]\nعمو كامل، إحنا كتير كتير [اشتقنالك]. => Uncle Kamel, we [miss you] so, so much.\n\n[و]بنحبك كتير يا عمو كامل. => [And] we love you very much, Uncle Kamel.\nو[بنحبك] كتير يا عمو كامل. => And [we love you] very much, Uncle Kamel.\nوبنحبك [كتير] يا عمو كامل. => And we love you [very much], Uncle Kamel.\nوبنحبك كتير [يا عمو] كامل. => And we love you very much, [Uncle] Kamel.\nوبنحبك كتير يا عمو [كامل]. => And we love you very much, Uncle [Kamel].\n\n[و]إن شاء الله بترجعلنا بالسلامة. => [And] God willing, you'll return to us safely.\nو[إن شاء الله] بترجعلنا بالسلامة. => And [God willing], you'll return to us safely.\nوإن شاء الله [بترجعلنا] بالسلامة. => And God willing, [you'll return to us] safely. # This single Arabic word contains the future marker, verb, preposition 'to', and object 'us'\nوإن شاء الله بترجعلنا [بالسلامة]. => And God willing, you'll return to us [safely].\n\n[ألف سلامة]، ألف سلامة. => [Get well soon], get well soon.\nألف سلامة، [ألف سلامة]. => Get well soon, [get well soon]\n[ألف] سلامة، ألف سلامة. => thousand\nألف [سلامة]، ألف سلامة. => wellness, safety\nألف سلامة، [ألف] سلامة. => thousand\nألف سلامة، ألف [سلامة]. => wellness, safety\n\n[وأنا] عم بكتبلك على الكرت أحلى كلمات => [And I]'m writing the sweetest words on the card for you\nوأنا [عم بكتبلك] على الكرت أحلى كلمات => writing to you\nوأنا عم بكتبلك [على] الكرت أحلى كلمات => And I'm writing the sweetest words [on] the card for you\nوأنا عم بكتبلك على [الكرت] أحلى كلمات => And I'm writing the sweetest words on [the card] for you\nوأنا عم بكتبلك على الكرت [أحلى] كلمات => And I'm writing [the sweetest] words on the card for you\nوأنا عم بكتبلك على الكرت أحلى [كلمات] => And I'm writing the sweetest [words] on the card for you\n\n[منشان] تقوم وتطيب بالسلامة. => [So] you can get up and recover well.\nمنشان [تقوم] وتطيب بالسلامة. => So [you can get up] and recover well.\nمنشان تقوم [و]تطيب بالسلامة. => So you can get up [and] recover well.\nمنشان تقوم و[تطيب] بالسلامة. => So you can get up and [recover] well.\nمنشان تقوم وتطيب [بالسلامة]. => So you can get up and recover [well]. # بالسلامة literally means \"with safety/health\" and is used here to mean \"well\" or \"fully\" in a recovery context.\n\n[مني] ومن تن تن ومن حياة. => [From me], from Tan Tan, and from Hayat.\nمني [ومن] تن تن ومن حياة. => from\nمني ومن [تن تن] ومن حياة. => From me, from [Tan Tan], and from Hayat.\nمني ومن تن تن [ومن] حياة. => From me, from Tan Tan, [and from] Hayat.\nمني ومن تن تن ومن [حياة] => From me, from Tan Tan, and from [Hayat]\n\n[اكتب] يا جلجل، يلا. => [Write], Jaljal, come on.\nاكتب [يا جلجل]، يلا. => Write, [Jaljal], come on.\nاكتب يا جلجل، [يلا] => Write, Jaljal, [come on]\n\n[سلامتك] يا عمو كامل. => [Get well soon], Uncle Kamel.\nسلامتك يا [عمو] كامل. => Get well soon, [Uncle] Kamel.\nسلامتك يا عمو [كامل]. => Get well soon, Uncle [Kamel].\n\n[سلامتك] يا عمو كامل. => [Get well soon], Uncle Kamel.\nسلامتك [يا] عمو كامل. => vocative particle # a particle used before a name or title when addressing someone directly\nسلامتك يا [عمو] كامل. => Get well soon, [Uncle] Kamel.\nسلامتك يا عمو [كامل]. => Get well soon, Uncle [Kamel].\n\n[اكتبله] إنه إحنا اشتقنالك. => [Write to him] that we miss him.\nاكتبله [إنه] إحنا اشتقنالك. => Write to him [that] we miss him.\nاكتبله إنه [إحنا] اشتقنالك. => Write to him that [we] miss him.\nاكتبله إنه إحنا [اشتقنالك] => Write to him that we [miss him.] # the suffix -lak in this context aligns with \"him\" in the target translation\n\n[وإحنا] اشتقنالك وبنتمنى ترجع عنا هون. => [And we] miss you and hope you come back here to us.\nوإحنا [اشتقنالك] وبنتمنى ترجع عنا هون. => we missed you # or \"miss you\"; this single word expresses the subject and object\nوإحنا اشتقنالك [وبنتمنى] ترجع عنا هون. => And we miss you [and hope] you come back here to us.\nوإحنا اشتقنالك وبنتمنى [ترجع] عنا هون. => And we miss you and hope [you come back] here to us.\nوإحنا اشتقنالك وبنتمنى ترجع [عنا] هون. => And we miss you and hope you come back here [to us].\nوإحنا اشتقنالك وبنتمنى ترجع عنا [هون]. => And we miss you and hope you come back [here] to us.\n\n[أكيد] أكيد رح يكون مبسوط فيهن، => [Surely], surely he'll be happy with them,\nأكيد [أكيد] رح يكون مبسوط فيهن، => Surely, [surely] he'll be happy with them,\nأكيد أكيد [رح يكون] مبسوط فيهن، => Surely, surely [he'll be] happy with them,\nأكيد أكيد رح يكون [مبسوط] فيهن، => Surely, surely he'll be [happy] with them,\nأكيد أكيد رح يكون مبسوط [فيهن]، => Surely, surely he'll be happy [with them]\n\n[مع] الوردات يا سلام. => [With] the flowers, wonderful.\nمع [الوردات] يا سلام. => With [the flowers], wonderful.\nمع الوردات [يا سلام]. => With the flowers, [wonderful].\n\n[وأنا] متأكدة إنه هلق رح يبطل => [And I]'m sure now he'll stop\nوأنا [متأكدة] إنه هلق رح يبطل => And I'm [sure] now he'll stop\nوأنا متأكدة [إنه] هلق رح يبطل => And I'm sure now [he]'ll stop\nوأنا متأكدة إنه [هلق] رح يبطل => And I'm sure [now] he'll stop\nوأنا متأكدة إنه هلق [رح] يبطل => And I'm sure now he['ll] stop\nوأنا متأكدة إنه هلق رح [يبطل] => And I'm sure now he'll [stop]\n\nهو [شاعر] بالوحدة. => [Feeling] lonely.\nهو شاعر [بالوحدة]. => Feeling [lonely].\n\n",
     "lessons": "# التحية والاطمئنان على العم كامل\n00:00.00 سلامتك يا كامل سلامتك.\n00:04.00 خلص خلص، مدام هلق الدكتور عندك\n00:06.00 كل شي رح يكون تمام.\n00:08.00 تن تن وجلجل؟ هلق بسلملك عليهن.\n00:11.00 هيهن هيهن.\n00:12.00 عمو كامل بيسلم عليكن.\n00:15.00 ماشي، ولا يهمك. أهلين، مع السلامة.\n\n# التخطيط لزيارة العم كامل\n00:20.00 حياة، إنت هون بورشة عمو كامل\n00:23.00 لأنه مريض؟\n00:25.00 آه، عم بضبضبله كم من شغلة\n00:27.00 عشان أوديله إياهن.\n00:29.00 بدك تروحي عنده؟ وإحنا كمان بدنا نروح معك.\n00:32.00 آه، وإحنا كمان.\n00:33.00 هلق أول ما يخف رح نروح كلنا،\n00:35.00 إن شاء الله.\n00:36.00 بس إحنا بدنا نروح هلق معك.\n00:38.00 آه، هلق، يلا.\n\n# فكرة الهدية للعم كامل\n00:39.00 هلق شوي صعب، لأنه مرشح وبيعدينا.\n00:42.00 آه، طيب إذا ما رحنا عليه،\n00:45.00 كيف بده يعرف إنه بنفكر فيه؟\n00:47.00 آه، وإنه إحنا شاعرين معه وبنحبه.\n00:51.00 شو بدنا نعمل يا جلجل؟\n00:53.00 أنا عندي فكرة.\n00:54.00 إيش هي؟\n00:55.00 شو رأيكن نعمله هدية؟\n00:57.50 آه، نعمله هدية، أنا موافقة، يلا.\n\n# إعداد الهدية والرسالة\n00:59.00 ممتاز، وأنا عندي كمان فكرة،\n01:01.50 رح أصوركن وإنتو بتجهزوا الهدية، يلا تعالوا.\n01:04.00 فكرة حلوة، يلا يا جلجل خلص.\n01:08.00 جاهزين نصور؟ جاهزين، جاهزين، يلا.\n\n# رسالة حب ودعم للعم كامل\n01:11.00 مرحبا عمو كامل.\n01:13.00 عمو كامل، إحنا كتير كتير اشتقنالك.\n01:17.00 وبنحبك كتير يا عمو كامل.\n01:19.00 وإن شاء الله بترجعلنا بالسلامة.\n01:22.00 ألف سلامة، ألف سلامة.\n01:27.00 وأنا عم بكتبلك على الكرت أحلى كلمات\n01:30.00 منشان تقوم وتطيب بالسلامة.\n01:33.00 مني ومن تن تن ومن حياة.\n\n# ختام الرسالة وتوقعات الفرح\n01:36.00 اكتب يا جلجل، يلا.\n01:38.00 سلامتك يا عمو كامل.\n01:42.00 سلامتك يا عمو كامل.\n01:46.00 اكتبله إنه إحنا اشتقنالك.\n01:48.00 وإحنا اشتقنالك وبنتمنى ترجع عنا هون.\n01:55.00 أكيد أكيد رح يكون مبسوط فيهن،\n01:58.00 مع الوردات يا سلام.\n02:01.00 وأنا متأكدة إنه هلق رح يبطل\n02:04.00 هو شاعر بالوحدة.",
-    "similar_sounds": "\n</think>\n\nسلامتك يا [حامل] سلامتك.\nخلص خلص، مدام [حق] الدكتور عندك\n[حل] شي رح يكون تمام.\nتن تن وجلجل؟ [خلق] بسلملك عليهن.\n[بيهن] هيهن.\nعمو [حامل] بيسلم عليكن.\n[ماضي]، ولا يهمك. أهلين، مع السلامة.\nحياة، إنت [لون] بورشة عمو كامل\nلأنه [مريد]؟\nآه، عم بضبضبله كم من [نغلة]\n[غشان] أوديله إياهن.\n[ندك] تروحي عنده؟ وإحنا كمان بدنا نروح معك.\nآه، وإحنا [زمان].\nهلق أول ما [يقف] رح نروح كلنا،\n[أن] شاء الله.\nبس إحنا بدنا نروح هلق [معدك].\nآه، هلق، [علا].\nهلق شوي [صحب]، لأنه مرشح وبيعدينا.\nآه، [جيب] إذا ما رحنا عليه،\nكيف [نده] يعرف إنه بنفكر فيه؟\nآه، وإنه إحنا [ساعرين] معه وبنحبه.\n[شور] بدنا نعمل يا جلجل؟\n[أنى] عندي فكرة.\n[عيش] هي؟\nشو رأيكن نعمله [ندية]؟\nآه، نعمله هدية، أنا موافقة، [علا].\n[ممتار]، وأنا عندي كمان فكرة،\nرح أصوركن وإنتو بتجهزوا [الندية]، يلا تعالوا.\nفكرة [حلبة]، يلا يا جلجل خلص.\nجاهزين [نسور]؟ جاهزين، جاهزين، يلا.\nمرحبا عمو [حامل].\nعمو كامل، إحنا [كثير] كتير اشتقنالك.\n[ونحبك] كتير يا عمو كامل.\nوإن شاء الله [بترجعنا] بالسلامة.\nألف [سالمة]، ألف سلامة.\nوأنا عم بكتبلك على الكرت أحلى [كلمات]\nمنشان تقوم وتطيب بالسلامة.\nمني ومن تن تن ومن حياة.\nاكتب يا جلجل، يلا.\nسلامتك يا عمو كامل.\nسلامتك يا عمو كامل.\nاكتبله إنه إحنا اشتقنالك.\nوإحنا اشتقنالك وبنتمنى ترجع عنا هون.\nأكيد أكيد رح يكون مبسوط فيهن،\nمع الوردات يا سلام.\nوأنا متأكدة إنه هلق رح يبطل\nهو شاعر بالوحدة."
+    "similar_sounds": "\n</think>\n\nسلامتك يا [حامل] سلامتك.\nخلص خلص، مدام [حق] الدكتور عندك\n[حل] شي رح يكون تمام.\nتن تن وجلجل؟ [خلق] بسلملك عليهن.\n[بيهن] هيهن.\nعمو [حامل] بيسلم عليكن.\n[ماضي]، ولا يهمك. أهلين، مع السلامة.\nحياة، إنت [لون] بورشة عمو كامل\nلأنه [مريد]؟\nآه، عم بضبضبله كم من [نغلة]\n[غشان] أوديله إياهن.\n[ندك] تروحي عنده؟ وإحنا كمان بدنا نروح معك.\nآه، وإحنا [زمان].\nهلق أول ما [يقف] رح نروح كلنا،\n[أن] شاء الله.\nبس إحنا بدنا نروح هلق [معدك].\nآه، هلق، [علا].\nهلق شوي [صحب]، لأنه مرشح وبيعدينا.\nآه، [جيب] إذا ما رحنا عليه،\nكيف [نده] يعرف إنه بنفكر فيه؟\nآه، وإنه إحنا [ساعرين] معه وبنحبه.\n[شور] بدنا نعمل يا جلجل؟\n[أنى] عندي فكرة.\n[عيش] هي؟\nشو رأيكن نعمله [ندية]؟\nآه، نعمله هدية، أنا موافقة، [علا].\n[ممتار]، وأنا عندي كمان فكرة،\nرح أصوركن وإنتو بتجهزوا [الندية]، يلا تعالوا.\nفكرة [حلبة]، يلا يا جلجل خلص.\nجاهزين [نسور]؟ جاهزين، جاهزين، يلا.\nمرحبا عمو [حامل].\nعمو كامل، إحنا [كثير] كتير اشتقنالك.\n[ونحبك] كتير يا عمو كامل.\nوإن شاء الله [بترجعنا] بالسلامة.\nألف [سالمة]، ألف سلامة.\nوأنا عم بكتبلك على الكرت أحلى [كلمات]\nمنشان تقوم وتطيب بالسلامة.\nمني ومن تن تن ومن حياة.\nاكتب يا جلجل، يلا.\nسلامتك يا عمو كامل.\nسلامتك يا عمو كامل.\nاكتبله إنه إحنا اشتقنالك.\nوإحنا اشتقنالك وبنتمنى ترجع عنا هون.\nأكيد أكيد رح يكون مبسوط فيهن،\nمع الوردات يا سلام.\nوأنا متأكدة إنه هلق رح يبطل\nهو شاعر بالوحدة.",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Get well soon, Kamel, get well soon.",
+            "words": []
+          },
+          {
+            "text": "Enough, enough, since the doctor is with you now.",
+            "words": []
+          },
+          {
+            "text": "Everything will be fine.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan and Jaljal? I'll send them your greetings now.",
+            "words": []
+          },
+          {
+            "text": "Here they are, here they are.",
+            "words": []
+          },
+          {
+            "text": "Uncle Kamel sends you his greetings.",
+            "words": []
+          },
+          {
+            "text": "Okay, no worries. Hi, goodbye.",
+            "words": []
+          },
+          {
+            "text": "Hayat, are you here at Uncle Kamel's workshop?",
+            "words": []
+          },
+          {
+            "text": "Because he's sick?",
+            "words": []
+          },
+          {
+            "text": "Yeah, I'm fixing up a few things for him.",
+            "words": []
+          },
+          {
+            "text": "To send them to him.",
+            "words": []
+          },
+          {
+            "text": "You want to go see him? We want to go with you too.",
+            "words": []
+          },
+          {
+            "text": "Yeah, us too.",
+            "words": []
+          },
+          {
+            "text": "Now, as soon as he gets better, we'll all go,",
+            "words": []
+          },
+          {
+            "text": "God willing.",
+            "words": []
+          },
+          {
+            "text": "But we want to go with you now.",
+            "words": []
+          },
+          {
+            "text": "Yeah, now, let's go.",
+            "words": []
+          },
+          {
+            "text": "It's a bit difficult now, because he's contagious and we have to keep our distance.",
+            "words": []
+          },
+          {
+            "text": "Yeah, well, if we don't go see him,",
+            "words": []
+          },
+          {
+            "text": "How will he know we're thinking of him?",
+            "words": []
+          },
+          {
+            "text": "Yeah, and that we feel for him and love him.",
+            "words": []
+          },
+          {
+            "text": "What should we do, Jaljal?",
+            "words": []
+          },
+          {
+            "text": "I have an idea.",
+            "words": []
+          },
+          {
+            "text": "What is it?",
+            "words": []
+          },
+          {
+            "text": "What do you say we make him a gift?",
+            "words": []
+          },
+          {
+            "text": "Yeah, make him a gift, I agree, let's go.",
+            "words": []
+          },
+          {
+            "text": "Excellent, and I have an idea too,",
+            "words": []
+          },
+          {
+            "text": "I'll film you while you prepare the gift, come on.",
+            "words": []
+          },
+          {
+            "text": "Nice idea, come on Jaljal, let's go.",
+            "words": []
+          },
+          {
+            "text": "Ready to film? Ready, ready, let's go.",
+            "words": []
+          },
+          {
+            "text": "Hello, Uncle Kamel.",
+            "words": []
+          },
+          {
+            "text": "Uncle Kamel, we miss you so, so much.",
+            "words": []
+          },
+          {
+            "text": "And we love you very much, Uncle Kamel.",
+            "words": []
+          },
+          {
+            "text": "And God willing, you'll return to us safely.",
+            "words": []
+          },
+          {
+            "text": "Get well soon, get well soon.",
+            "words": []
+          },
+          {
+            "text": "And I'm writing the sweetest words on the card for you",
+            "words": []
+          },
+          {
+            "text": "So you can get up and recover well.",
+            "words": []
+          },
+          {
+            "text": "From me, from Tan Tan, and from Hayat.",
+            "words": []
+          },
+          {
+            "text": "Write, Jaljal, come on.",
+            "words": []
+          },
+          {
+            "text": "Get well soon, Uncle Kamel.",
+            "words": []
+          },
+          {
+            "text": "Get well soon, Uncle Kamel.",
+            "words": []
+          },
+          {
+            "text": "Write to him that we miss him.",
+            "words": []
+          },
+          {
+            "text": "And we miss you and hope you come back here to us.",
+            "words": []
+          },
+          {
+            "text": "Surely, surely he'll be happy with them,",
+            "words": []
+          },
+          {
+            "text": "With the flowers, wonderful.",
+            "words": []
+          },
+          {
+            "text": "And I'm sure now he'll stop",
+            "words": []
+          },
+          {
+            "text": "Feeling lonely.",
+            "words": []
+          }
+        ],
+        "lessons": "# التحية والاطمئنان على العم كامل\n00:00.00 سلامتك يا كامل سلامتك.\n00:04.00 خلص خلص، مدام هلق الدكتور عندك\n00:06.00 كل شي رح يكون تمام.\n00:08.00 تن تن وجلجل؟ هلق بسلملك عليهن.\n00:11.00 هيهن هيهن.\n00:12.00 عمو كامل بيسلم عليكن.\n00:15.00 ماشي، ولا يهمك. أهلين، مع السلامة.\n\n# التخطيط لزيارة العم كامل\n00:20.00 حياة، إنت هون بورشة عمو كامل\n00:23.00 لأنه مريض؟\n00:25.00 آه، عم بضبضبله كم من شغلة\n00:27.00 عشان أوديله إياهن.\n00:29.00 بدك تروحي عنده؟ وإحنا كمان بدنا نروح معك.\n00:32.00 آه، وإحنا كمان.\n00:33.00 هلق أول ما يخف رح نروح كلنا،\n00:35.00 إن شاء الله.\n00:36.00 بس إحنا بدنا نروح هلق معك.\n00:38.00 آه، هلق، يلا.\n\n# فكرة الهدية للعم كامل\n00:39.00 هلق شوي صعب، لأنه مرشح وبيعدينا.\n00:42.00 آه، طيب إذا ما رحنا عليه،\n00:45.00 كيف بده يعرف إنه بنفكر فيه؟\n00:47.00 آه، وإنه إحنا شاعرين معه وبنحبه.\n00:51.00 شو بدنا نعمل يا جلجل؟\n00:53.00 أنا عندي فكرة.\n00:54.00 إيش هي؟\n00:55.00 شو رأيكن نعمله هدية؟\n00:57.50 آه، نعمله هدية، أنا موافقة، يلا.\n\n# إعداد الهدية والرسالة\n00:59.00 ممتاز، وأنا عندي كمان فكرة،\n01:01.50 رح أصوركن وإنتو بتجهزوا الهدية، يلا تعالوا.\n01:04.00 فكرة حلوة، يلا يا جلجل خلص.\n01:08.00 جاهزين نصور؟ جاهزين، جاهزين، يلا.\n\n# رسالة حب ودعم للعم كامل\n01:11.00 مرحبا عمو كامل.\n01:13.00 عمو كامل، إحنا كتير كتير اشتقنالك.\n01:17.00 وبنحبك كتير يا عمو كامل.\n01:19.00 وإن شاء الله بترجعلنا بالسلامة.\n01:22.00 ألف سلامة، ألف سلامة.\n01:27.00 وأنا عم بكتبلك على الكرت أحلى كلمات\n01:30.00 منشان تقوم وتطيب بالسلامة.\n01:33.00 مني ومن تن تن ومن حياة.\n\n# ختام الرسالة وتوقعات الفرح\n01:36.00 اكتب يا جلجل، يلا.\n01:38.00 سلامتك يا عمو كامل.\n01:42.00 سلامتك يا عمو كامل.\n01:46.00 اكتبله إنه إحنا اشتقنالك.\n01:48.00 وإحنا اشتقنالك وبنتمنى ترجع عنا هون.\n01:55.00 أكيد أكيد رح يكون مبسوط فيهن،\n01:58.00 مع الوردات يا سلام.\n02:01.00 وأنا متأكدة إنه هلق رح يبطل\n02:04.00 هو شاعر بالوحدة."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-27 08:03:14 UTC",
   "updated_at": "2026-04-27 08:28:39 UTC",

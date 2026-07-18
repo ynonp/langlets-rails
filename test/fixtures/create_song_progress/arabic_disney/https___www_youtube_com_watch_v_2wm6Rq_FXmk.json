@@ -16,27 +16,23 @@
             "timestamp": "00:10.10",
             "timestamp_end": "00:11.10",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "أنا",
             "timestamp": "00:11.10",
             "timestamp_end": "00:12.10",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "I"
+            "l1_end_index": 6
           },
           {
             "text": "الصديق",
             "timestamp": "00:12.10",
             "timestamp_end": "00:13.70",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "the friend"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I am, I am the friend"
+        ]
       },
       {
         "id": "phrase_2",
@@ -49,27 +45,23 @@
             "timestamp": "00:14.80",
             "timestamp_end": "00:15.60",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "who"
+            "l1_end_index": 3
           },
           {
             "text": "بحق",
             "timestamp": "00:15.60",
             "timestamp_end": "00:16.80",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "truly"
+            "l1_end_index": 7
           },
           {
             "text": "وحقيق",
             "timestamp": "00:16.80",
             "timestamp_end": "00:18.10",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "and real"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "The one truly and truly"
+        ]
       },
       {
         "id": "phrase_3",
@@ -82,19 +74,16 @@
             "timestamp": "00:18.60",
             "timestamp_end": "00:19.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "my heart"
+            "l1_end_index": 3
           },
           {
             "text": "صافي",
             "timestamp": "00:19.80",
             "timestamp_end": "00:20.80",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "pure"
+            "l1_end_index": 8
           }
-        ],
-        "text_l2": "My heart is pure"
+        ]
       },
       {
         "id": "phrase_4",
@@ -107,83 +96,72 @@
             "timestamp": "00:20.80",
             "timestamp_end": "00:21.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "companion"
+            "l1_end_index": 3
           },
           {
             "text": "لو",
             "timestamp": "00:21.80",
             "timestamp_end": "00:22.10",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "if"
+            "l1_end_index": 6
           },
           {
             "text": "مرة",
             "timestamp": "00:22.10",
             "timestamp_end": "00:22.50",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "once"
+            "l1_end_index": 10
           },
           {
             "text": "تهت",
             "timestamp": "00:22.50",
             "timestamp_end": "00:22.90",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "you get lost"
+            "l1_end_index": 14
           },
           {
             "text": "في",
             "timestamp": "00:22.90",
             "timestamp_end": "00:23.20",
             "l1_start_index": 16,
-            "l1_end_index": 17,
-            "translation": "in"
+            "l1_end_index": 17
           },
           {
             "text": "طريق",
             "timestamp": "00:23.20",
             "timestamp_end": "00:24.10",
             "l1_start_index": 19,
-            "l1_end_index": 22,
-            "translation": "a road"
+            "l1_end_index": 22
           },
           {
             "text": "عشت",
             "timestamp": "00:24.10",
             "timestamp_end": "00:24.80",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "you lived"
+            "l1_end_index": 26
           },
           {
             "text": "في",
             "timestamp": "00:24.80",
             "timestamp_end": "00:25.10",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "in"
+            "l1_end_index": 29
           },
           {
             "text": "غربة",
             "timestamp": "00:25.10",
             "timestamp_end": "00:25.60",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "estrangement"
+            "l1_end_index": 34
           },
           {
             "text": "وضيق",
             "timestamp": "00:25.60",
             "timestamp_end": "00:26.20",
             "l1_start_index": 36,
-            "l1_end_index": 39,
-            "translation": "and distress"
+            "l1_end_index": 39
           }
-        ],
-        "text_l2": "A companion if once you get lost in a path you lived in estrangement and distress"
+        ]
       },
       {
         "id": "phrase_5",
@@ -196,51 +174,44 @@
             "timestamp": "00:26.50",
             "timestamp_end": "00:27.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "believe me"
+            "l1_end_index": 4
           },
           {
             "text": "ما",
             "timestamp": "00:27.50",
             "timestamp_end": "00:27.80",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "not"
+            "l1_end_index": 7
           },
           {
             "text": "يشيل",
             "timestamp": "00:27.80",
             "timestamp_end": "00:28.30",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "carries"
+            "l1_end_index": 12
           },
           {
             "text": "همك",
             "timestamp": "00:28.30",
             "timestamp_end": "00:28.80",
             "l1_start_index": 14,
-            "l1_end_index": 16,
-            "translation": "your worries"
+            "l1_end_index": 16
           },
           {
             "text": "غير",
             "timestamp": "00:28.80",
             "timestamp_end": "00:29.20",
             "l1_start_index": 18,
-            "l1_end_index": 20,
-            "translation": "except"
+            "l1_end_index": 20
           },
           {
             "text": "صديق",
             "timestamp": "00:29.20",
             "timestamp_end": "00:29.90",
             "l1_start_index": 22,
-            "l1_end_index": 25,
-            "translation": "a friend"
+            "l1_end_index": 25
           }
-        ],
-        "text_l2": "Believe me, no one lifts your worry except a friend"
+        ]
       },
       {
         "id": "phrase_6",
@@ -253,27 +224,23 @@
             "timestamp": "00:29.90",
             "timestamp_end": "00:31.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "أنا",
             "timestamp": "00:31.00",
             "timestamp_end": "00:32.00",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "I"
+            "l1_end_index": 6
           },
           {
             "text": "الصديق",
             "timestamp": "00:32.00",
             "timestamp_end": "00:33.50",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "the friend"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I am, I am the friend"
+        ]
       },
       {
         "id": "phrase_7",
@@ -286,27 +253,23 @@
             "timestamp": "00:33.80",
             "timestamp_end": "00:34.80",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "yes"
+            "l1_end_index": 3
           },
           {
             "text": "أنا",
             "timestamp": "00:34.80",
             "timestamp_end": "00:35.80",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "I"
+            "l1_end_index": 7
           },
           {
             "text": "الصديق",
             "timestamp": "00:35.80",
             "timestamp_end": "00:37.00",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "the friend"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Yes I am the friend"
+        ]
       },
       {
         "id": "phrase_8",
@@ -319,27 +282,23 @@
             "timestamp": "00:42.50",
             "timestamp_end": "00:43.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "yes"
+            "l1_end_index": 3
           },
           {
             "text": "أنا",
             "timestamp": "00:43.50",
             "timestamp_end": "00:44.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "I"
+            "l1_end_index": 7
           },
           {
             "text": "الصديق",
             "timestamp": "00:44.50",
             "timestamp_end": "00:46.00",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "the friend"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Yes I am the friend"
+        ]
       },
       {
         "id": "phrase_9",
@@ -352,27 +311,23 @@
             "timestamp": "00:46.50",
             "timestamp_end": "00:47.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "yes"
+            "l1_end_index": 3
           },
           {
             "text": "أنا",
             "timestamp": "00:47.50",
             "timestamp_end": "00:48.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "I"
+            "l1_end_index": 7
           },
           {
             "text": "الصديق",
             "timestamp": "00:48.50",
             "timestamp_end": "00:50.00",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "the friend"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Yes I am the friend"
+        ]
       },
       {
         "id": "phrase_10",
@@ -385,19 +340,16 @@
             "timestamp": "00:50.50",
             "timestamp_end": "00:51.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "you have"
+            "l1_end_index": 3
           },
           {
             "text": "مشاكل",
             "timestamp": "00:51.50",
             "timestamp_end": "00:52.50",
             "l1_start_index": 5,
-            "l1_end_index": 9,
-            "translation": "problems"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "You have problems"
+        ]
       },
       {
         "id": "phrase_11",
@@ -410,27 +362,23 @@
             "timestamp": "00:52.50",
             "timestamp_end": "00:53.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "عندي",
             "timestamp": "00:53.20",
             "timestamp_end": "00:53.80",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "I have"
+            "l1_end_index": 7
           },
           {
             "text": "كمان",
             "timestamp": "00:53.80",
             "timestamp_end": "00:54.50",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "also"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "I have them too"
+        ]
       },
       {
         "id": "phrase_12",
@@ -443,67 +391,58 @@
             "timestamp": "00:54.50",
             "timestamp_end": "00:54.80",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "not"
+            "l1_end_index": 1
           },
           {
             "text": "فيش",
             "timestamp": "00:54.80",
             "timestamp_end": "00:55.20",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "there is no"
+            "l1_end_index": 5
           },
           {
             "text": "حاجة",
             "timestamp": "00:55.20",
             "timestamp_end": "00:55.80",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "thing"
+            "l1_end_index": 10
           },
           {
             "text": "أنا",
             "timestamp": "00:55.80",
             "timestamp_end": "00:56.20",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "I"
+            "l1_end_index": 14
           },
           {
             "text": "ما",
             "timestamp": "00:56.20",
             "timestamp_end": "00:56.50",
             "l1_start_index": 16,
-            "l1_end_index": 17,
-            "translation": "not"
+            "l1_end_index": 17
           },
           {
             "text": "أقدرش",
             "timestamp": "00:56.50",
             "timestamp_end": "00:57.20",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "I can't"
+            "l1_end_index": 23
           },
           {
             "text": "أعملها",
             "timestamp": "00:57.20",
             "timestamp_end": "00:58.00",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "do it"
+            "l1_end_index": 30
           },
           {
             "text": "ليك",
             "timestamp": "00:58.00",
             "timestamp_end": "00:58.50",
             "l1_start_index": 32,
-            "l1_end_index": 34,
-            "translation": "for you"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "There is no thing I cannot do for you"
+        ]
       },
       {
         "id": "phrase_13",
@@ -516,67 +455,58 @@
             "timestamp": "00:58.50",
             "timestamp_end": "00:59.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "قلبي",
             "timestamp": "00:59.20",
             "timestamp_end": "00:59.80",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "my heart"
+            "l1_end_index": 7
           },
           {
             "text": "وياك",
             "timestamp": "00:59.80",
             "timestamp_end": "01:00.50",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "with you"
+            "l1_end_index": 12
           },
           {
             "text": "لأنك",
             "timestamp": "01:00.50",
             "timestamp_end": "01:01.20",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "because you"
+            "l1_end_index": 17
           },
           {
             "text": "صاحبي",
             "timestamp": "01:01.20",
             "timestamp_end": "01:01.80",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "my friend"
+            "l1_end_index": 23
           },
           {
             "text": "الوحيد",
             "timestamp": "01:01.80",
             "timestamp_end": "01:02.80",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "the only"
+            "l1_end_index": 30
           },
           {
             "text": "وأنا",
             "timestamp": "01:02.80",
             "timestamp_end": "01:03.50",
             "l1_start_index": 32,
-            "l1_end_index": 35,
-            "translation": "and I"
+            "l1_end_index": 35
           },
           {
             "text": "الصديق",
             "timestamp": "01:03.50",
             "timestamp_end": "01:04.50",
             "l1_start_index": 37,
-            "l1_end_index": 42,
-            "translation": "the friend"
+            "l1_end_index": 42
           }
-        ],
-        "text_l2": "My heart is with you because you are my only friend and I am the friend"
+        ]
       },
       {
         "id": "phrase_14",
@@ -589,27 +519,23 @@
             "timestamp": "01:05.50",
             "timestamp_end": "01:06.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "yes"
+            "l1_end_index": 3
           },
           {
             "text": "أنا",
             "timestamp": "01:06.50",
             "timestamp_end": "01:07.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "I"
+            "l1_end_index": 7
           },
           {
             "text": "الصديق",
             "timestamp": "01:07.50",
             "timestamp_end": "01:09.00",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "the friend"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Yes I am the friend"
+        ]
       },
       {
         "id": "phrase_15",
@@ -622,59 +548,51 @@
             "timestamp": "01:10.50",
             "timestamp_end": "01:11.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "maybe"
+            "l1_end_index": 3
           },
           {
             "text": "في",
             "timestamp": "01:11.50",
             "timestamp_end": "01:11.80",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "there is"
+            "l1_end_index": 6
           },
           {
             "text": "حد",
             "timestamp": "01:11.80",
             "timestamp_end": "01:12.20",
             "l1_start_index": 8,
-            "l1_end_index": 9,
-            "translation": "someone"
+            "l1_end_index": 9
           },
           {
             "text": "تاني",
             "timestamp": "01:12.20",
             "timestamp_end": "01:12.80",
             "l1_start_index": 11,
-            "l1_end_index": 14,
-            "translation": "else"
+            "l1_end_index": 14
           },
           {
             "text": "أذكى",
             "timestamp": "01:12.80",
             "timestamp_end": "01:13.50",
             "l1_start_index": 16,
-            "l1_end_index": 19,
-            "translation": "smarter"
+            "l1_end_index": 19
           },
           {
             "text": "وأشجع",
             "timestamp": "01:13.50",
             "timestamp_end": "01:14.20",
             "l1_start_index": 21,
-            "l1_end_index": 25,
-            "translation": "and braver"
+            "l1_end_index": 25
           },
           {
             "text": "مني",
             "timestamp": "01:14.20",
             "timestamp_end": "01:15.00",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "than me"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "Maybe there is someone else smarter and braver than me"
+        ]
       },
       {
         "id": "phrase_16",
@@ -687,19 +605,16 @@
             "timestamp": "01:15.00",
             "timestamp_end": "01:16.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "and stronger"
+            "l1_end_index": 4
           },
           {
             "text": "كمان",
             "timestamp": "01:16.50",
             "timestamp_end": "01:18.00",
             "l1_start_index": 6,
-            "l1_end_index": 9,
-            "translation": "also"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "And stronger too"
+        ]
       },
       {
         "id": "phrase_17",
@@ -712,67 +627,58 @@
             "timestamp": "01:18.00",
             "timestamp_end": "01:19.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "maybe"
+            "l1_end_index": 3
           },
           {
             "text": "لكن",
             "timestamp": "01:19.00",
             "timestamp_end": "01:19.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "but"
+            "l1_end_index": 7
           },
           {
             "text": "أكيد",
             "timestamp": "01:19.50",
             "timestamp_end": "01:20.50",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "certainly"
+            "l1_end_index": 12
           },
           {
             "text": "مش",
             "timestamp": "01:20.50",
             "timestamp_end": "01:21.00",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "not"
+            "l1_end_index": 15
           },
           {
             "text": "هيجاريني",
             "timestamp": "01:21.00",
             "timestamp_end": "01:22.20",
             "l1_start_index": 17,
-            "l1_end_index": 24,
-            "translation": "will match me"
+            "l1_end_index": 24
           },
           {
             "text": "في",
             "timestamp": "01:22.20",
             "timestamp_end": "01:22.50",
             "l1_start_index": 26,
-            "l1_end_index": 27,
-            "translation": "in"
+            "l1_end_index": 27
           },
           {
             "text": "الوفاء",
             "timestamp": "01:22.50",
             "timestamp_end": "01:23.20",
             "l1_start_index": 29,
-            "l1_end_index": 34,
-            "translation": "loyalty"
+            "l1_end_index": 34
           },
           {
             "text": "إنسان",
             "timestamp": "01:23.20",
             "timestamp_end": "01:24.00",
             "l1_start_index": 36,
-            "l1_end_index": 40,
-            "translation": "a human"
+            "l1_end_index": 40
           }
-        ],
-        "text_l2": "Possible but surely a human won't match me in loyalty"
+        ]
       },
       {
         "id": "phrase_18",
@@ -785,51 +691,44 @@
             "timestamp": "01:24.00",
             "timestamp_end": "01:25.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "because"
+            "l1_end_index": 2
           },
           {
             "text": "احنا",
             "timestamp": "01:25.00",
             "timestamp_end": "01:26.00",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "we"
+            "l1_end_index": 7
           },
           {
             "text": "مهما",
             "timestamp": "01:26.00",
             "timestamp_end": "01:27.00",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "no matter how"
+            "l1_end_index": 12
           },
           {
             "text": "تمشي",
             "timestamp": "01:27.00",
             "timestamp_end": "01:28.00",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "go"
+            "l1_end_index": 17
           },
           {
             "text": "بينا",
             "timestamp": "01:28.00",
             "timestamp_end": "01:28.50",
             "l1_start_index": 19,
-            "l1_end_index": 22,
-            "translation": "between us"
+            "l1_end_index": 22
           },
           {
             "text": "الأيام",
             "timestamp": "01:28.50",
             "timestamp_end": "01:29.50",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "the days"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "Because we, no matter how days pass between us"
+        ]
       },
       {
         "id": "phrase_19",
@@ -842,27 +741,23 @@
             "timestamp": "01:30.00",
             "timestamp_end": "01:31.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "our love"
+            "l1_end_index": 3
           },
           {
             "text": "يكبر",
             "timestamp": "01:31.50",
             "timestamp_end": "01:32.50",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "grows"
+            "l1_end_index": 8
           },
           {
             "text": "قوام",
             "timestamp": "01:32.50",
             "timestamp_end": "01:33.50",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "quickly"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "Our love grows in stature"
+        ]
       },
       {
         "id": "phrase_20",
@@ -875,27 +770,23 @@
             "timestamp": "01:34.00",
             "timestamp_end": "01:35.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "especially"
+            "l1_end_index": 3
           },
           {
             "text": "محبة",
             "timestamp": "01:35.50",
             "timestamp_end": "01:36.50",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "love"
+            "l1_end_index": 8
           },
           {
             "text": "وسلام",
             "timestamp": "01:36.50",
             "timestamp_end": "01:38.00",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "and peace"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "With the same love and peace"
+        ]
       },
       {
         "id": "phrase_21",
@@ -908,19 +799,16 @@
             "timestamp": "01:39.00",
             "timestamp_end": "01:41.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "because I am"
+            "l1_end_index": 4
           },
           {
             "text": "الصديق",
             "timestamp": "01:41.00",
             "timestamp_end": "01:42.50",
             "l1_start_index": 6,
-            "l1_end_index": 11,
-            "translation": "the friend"
+            "l1_end_index": 11
           }
-        ],
-        "text_l2": "Because I am the friend"
+        ]
       },
       {
         "id": "phrase_22",
@@ -933,27 +821,23 @@
             "timestamp": "01:43.00",
             "timestamp_end": "01:44.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "yes"
+            "l1_end_index": 3
           },
           {
             "text": "أنا",
             "timestamp": "01:44.00",
             "timestamp_end": "01:45.00",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "I"
+            "l1_end_index": 7
           },
           {
             "text": "الصديق",
             "timestamp": "01:45.00",
             "timestamp_end": "01:46.50",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "the friend"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "Yes I am the friend"
+        ]
       },
       {
         "id": "phrase_23",
@@ -966,27 +850,23 @@
             "timestamp": "01:47.00",
             "timestamp_end": "01:48.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "I"
+            "l1_end_index": 2
           },
           {
             "text": "أنا",
             "timestamp": "01:48.00",
             "timestamp_end": "01:49.00",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "I"
+            "l1_end_index": 6
           },
           {
             "text": "الصديق",
             "timestamp": "01:49.00",
             "timestamp_end": "01:50.50",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "the friend"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "I am, I am the friend"
+        ]
       }
     ],
     "lessons": "# أنا الصديق (الجزء الأول)\n00:10.10 أنا أنا الصديق\n00:14.80 اللي بحق وحقيق\n00:18.60 قلبي صافي\n00:20.80 رفيق لو مرة تهت في طريق عشت في غربة وضيق\n00:26.50 صدقني ما يشيل همك غير صديق\n\n# أنا الصديق (الجزء الثاني)\n00:29.90 أنا أنا الصديق\n00:33.80 أيوه أنا الصديق\n00:42.50 أيوه أنا الصديق\n00:46.50 أيوه أنا الصديق\n\n# عندك مشاكل\n00:50.50 عندك مشاكل\n00:52.50 أنا عندي كمان\n00:54.50 ما فيش حاجة أنا ما أقدرش أعملها ليك\n00:58.50 أنا قلبي وياك لأنك صاحبي الوحيد وأنا الصديق\n01:05.50 أيوه أنا الصديق\n\n# الوفاء (الجزء الأول)\n01:10.50 يمكن في حد تاني أذكى وأشجع مني\n01:15.00 وأقوى كمان\n01:18.00 جايز لكن أكيد مش هيجاريني في الوفاء إنسان\n01:24.00 أصل احنا مهما تمشي بينا الأيام\n01:30.00 حبنا يكبر قوام\n\n# الوفاء (الجزء الثاني)\n01:34.00 بذات محبة وسلام\n01:39.00 لأنني الصديق\n01:43.00 أيوه أنا الصديق\n01:47.00 أنا أنا الصديق",
@@ -1022,7 +902,229 @@
         "reason": "One new line with 'محبة' and 'سلام', but mostly repeats earlier chorus."
       }
     ],
-    "similar_sounds": "[أن] أنا الصديق\n[الله] بحق وحقيق\nقلبي [صحفي]\nرفيق لو [كرة] تهت في طريق عشت في غربة وضيق\nصدقني ما يشيل [أمك] غير صديق\n[أنت] أنا الصديق\nأيوه [هنا] الصديق\nأيوه [أن] الصديق\nأيوه [أنت] الصديق\nعندك [مشاكلك]\n[هنا] عندي كمان\nما [في] حاجة أنا ما أقدرش أعملها ليك\nأنا قلبي وياك لأنك صاحبي [الوحيده] وأنا الصديق\n[أووه] أنا الصديق\nيمكن في حد [اني] أذكى وأشجع مني\nوأقوى [كان]\nجايز [ولكن] أكيد مش هيجاريني في الوفاء إنسان\nأصل احنا مهما تمشي بينا [القيام]\n[حبها] يكبر قوام\n[بات] محبة وسلام\n[بأنني] الصديق\n[أيه] أنا الصديق\n[هنا] أنا الصديق"
+    "similar_sounds": "[أن] أنا الصديق\n[الله] بحق وحقيق\nقلبي [صحفي]\nرفيق لو [كرة] تهت في طريق عشت في غربة وضيق\nصدقني ما يشيل [أمك] غير صديق\n[أنت] أنا الصديق\nأيوه [هنا] الصديق\nأيوه [أن] الصديق\nأيوه [أنت] الصديق\nعندك [مشاكلك]\n[هنا] عندي كمان\nما [في] حاجة أنا ما أقدرش أعملها ليك\nأنا قلبي وياك لأنك صاحبي [الوحيده] وأنا الصديق\n[أووه] أنا الصديق\nيمكن في حد [اني] أذكى وأشجع مني\nوأقوى [كان]\nجايز [ولكن] أكيد مش هيجاريني في الوفاء إنسان\nأصل احنا مهما تمشي بينا [القيام]\n[حبها] يكبر قوام\n[بات] محبة وسلام\n[بأنني] الصديق\n[أيه] أنا الصديق\n[هنا] أنا الصديق",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "I am, I am the friend",
+            "words": [
+              "I",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "The one truly and truly",
+            "words": [
+              "who",
+              "truly",
+              "and real"
+            ]
+          },
+          {
+            "text": "My heart is pure",
+            "words": [
+              "my heart",
+              "pure"
+            ]
+          },
+          {
+            "text": "A companion if once you get lost in a path you lived in estrangement and distress",
+            "words": [
+              "companion",
+              "if",
+              "once",
+              "you get lost",
+              "in",
+              "a road",
+              "you lived",
+              "in",
+              "estrangement",
+              "and distress"
+            ]
+          },
+          {
+            "text": "Believe me, no one lifts your worry except a friend",
+            "words": [
+              "believe me",
+              "not",
+              "carries",
+              "your worries",
+              "except",
+              "a friend"
+            ]
+          },
+          {
+            "text": "I am, I am the friend",
+            "words": [
+              "I",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Yes I am the friend",
+            "words": [
+              "yes",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Yes I am the friend",
+            "words": [
+              "yes",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Yes I am the friend",
+            "words": [
+              "yes",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "You have problems",
+            "words": [
+              "you have",
+              "problems"
+            ]
+          },
+          {
+            "text": "I have them too",
+            "words": [
+              "I",
+              "I have",
+              "also"
+            ]
+          },
+          {
+            "text": "There is no thing I cannot do for you",
+            "words": [
+              "not",
+              "there is no",
+              "thing",
+              "I",
+              "not",
+              "I can't",
+              "do it",
+              "for you"
+            ]
+          },
+          {
+            "text": "My heart is with you because you are my only friend and I am the friend",
+            "words": [
+              "I",
+              "my heart",
+              "with you",
+              "because you",
+              "my friend",
+              "the only",
+              "and I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Yes I am the friend",
+            "words": [
+              "yes",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Maybe there is someone else smarter and braver than me",
+            "words": [
+              "maybe",
+              "there is",
+              "someone",
+              "else",
+              "smarter",
+              "and braver",
+              "than me"
+            ]
+          },
+          {
+            "text": "And stronger too",
+            "words": [
+              "and stronger",
+              "also"
+            ]
+          },
+          {
+            "text": "Possible but surely a human won't match me in loyalty",
+            "words": [
+              "maybe",
+              "but",
+              "certainly",
+              "not",
+              "will match me",
+              "in",
+              "loyalty",
+              "a human"
+            ]
+          },
+          {
+            "text": "Because we, no matter how days pass between us",
+            "words": [
+              "because",
+              "we",
+              "no matter how",
+              "go",
+              "between us",
+              "the days"
+            ]
+          },
+          {
+            "text": "Our love grows in stature",
+            "words": [
+              "our love",
+              "grows",
+              "quickly"
+            ]
+          },
+          {
+            "text": "With the same love and peace",
+            "words": [
+              "especially",
+              "love",
+              "and peace"
+            ]
+          },
+          {
+            "text": "Because I am the friend",
+            "words": [
+              "because I am",
+              "the friend"
+            ]
+          },
+          {
+            "text": "Yes I am the friend",
+            "words": [
+              "yes",
+              "I",
+              "the friend"
+            ]
+          },
+          {
+            "text": "I am, I am the friend",
+            "words": [
+              "I",
+              "I",
+              "the friend"
+            ]
+          }
+        ],
+        "lessons": "# أنا الصديق (الجزء الأول)\n00:10.10 أنا أنا الصديق\n00:14.80 اللي بحق وحقيق\n00:18.60 قلبي صافي\n00:20.80 رفيق لو مرة تهت في طريق عشت في غربة وضيق\n00:26.50 صدقني ما يشيل همك غير صديق\n\n# أنا الصديق (الجزء الثاني)\n00:29.90 أنا أنا الصديق\n00:33.80 أيوه أنا الصديق\n00:42.50 أيوه أنا الصديق\n00:46.50 أيوه أنا الصديق\n\n# عندك مشاكل\n00:50.50 عندك مشاكل\n00:52.50 أنا عندي كمان\n00:54.50 ما فيش حاجة أنا ما أقدرش أعملها ليك\n00:58.50 أنا قلبي وياك لأنك صاحبي الوحيد وأنا الصديق\n01:05.50 أيوه أنا الصديق\n\n# الوفاء (الجزء الأول)\n01:10.50 يمكن في حد تاني أذكى وأشجع مني\n01:15.00 وأقوى كمان\n01:18.00 جايز لكن أكيد مش هيجاريني في الوفاء إنسان\n01:24.00 أصل احنا مهما تمشي بينا الأيام\n01:30.00 حبنا يكبر قوام\n\n# الوفاء (الجزء الثاني)\n01:34.00 بذات محبة وسلام\n01:39.00 لأنني الصديق\n01:43.00 أيوه أنا الصديق\n01:47.00 أنا أنا الصديق"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-28 18:36:41 UTC",
   "updated_at": "2026-06-28 18:38:30 UTC",

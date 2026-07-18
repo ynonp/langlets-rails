@@ -9,461 +9,666 @@
         "id": "phrase_1",
         "text_l1": "La selva tropical del Amazonas",
         "timestamp": "00:00.00",
-        "timestamp_end": "00:02.50",
-        "text_l2": "The Amazon rainforest"
+        "timestamp_end": "00:02.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "está llena de maravillas naturales.",
         "timestamp": "00:02.50",
-        "timestamp_end": "00:04.50",
-        "text_l2": "is full of natural wonders."
+        "timestamp_end": "00:04.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "Pero también puede ser",
         "timestamp": "00:04.50",
-        "timestamp_end": "00:06.50",
-        "text_l2": "But it can also be"
+        "timestamp_end": "00:06.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "el máximo lugar de juegos.",
         "timestamp": "00:06.50",
-        "timestamp_end": "00:08.50",
-        "text_l2": "the ultimate playground."
+        "timestamp_end": "00:08.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "Todos saben que la jungla",
         "timestamp": "00:10.00",
-        "timestamp_end": "00:12.50",
-        "text_l2": "Everyone knows that the jungle"
+        "timestamp_end": "00:12.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "es para los monos...",
         "timestamp": "00:12.50",
-        "timestamp_end": "00:13.50",
-        "text_l2": "is for monkeys..."
+        "timestamp_end": "00:13.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "...como el agua para los peces.",
         "timestamp": "00:13.50",
-        "timestamp_end": "00:15.50",
-        "text_l2": "...like water is for fish."
+        "timestamp_end": "00:15.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "Parece que ahora Jorge",
         "timestamp": "00:36.50",
-        "timestamp_end": "00:38.50",
-        "text_l2": "It seems Jorge now"
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "tiene otro amigo.",
         "timestamp": "00:38.50",
-        "timestamp_end": "00:39.50",
-        "text_l2": "has another friend."
+        "timestamp_end": "00:39.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "¡Fantástico!",
         "timestamp": "00:39.50",
-        "timestamp_end": "00:40.50",
-        "text_l2": "Fantastic!"
+        "timestamp_end": "00:40.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "Sabía que invitarlos",
         "timestamp": "00:41.00",
-        "timestamp_end": "00:42.50",
-        "text_l2": "I knew inviting them"
+        "timestamp_end": "00:42.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "a la selva tropical era buena idea.",
         "timestamp": "00:42.50",
-        "timestamp_end": "00:44.50",
-        "text_l2": "to the rainforest was a good idea."
+        "timestamp_end": "00:44.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "¿Los grabo?",
         "timestamp": "00:46.50",
-        "timestamp_end": "00:47.50",
-        "text_l2": "Should I record them?"
+        "timestamp_end": "00:47.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "Por supuesto.",
         "timestamp": "00:47.50",
-        "timestamp_end": "00:49.00",
-        "text_l2": "Of course."
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "La profesora Wiseman estaba haciendo",
         "timestamp": "00:49.50",
-        "timestamp_end": "00:51.50",
-        "text_l2": "Professor Wiseman was making"
+        "timestamp_end": "00:51.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "una película sobre la selva...",
         "timestamp": "00:51.50",
-        "timestamp_end": "00:53.50",
-        "text_l2": "a movie about the jungle..."
+        "timestamp_end": "00:53.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "...y Jorge y el hombre",
         "timestamp": "00:53.50",
-        "timestamp_end": "00:55.00",
-        "text_l2": "...and Jorge and the Man"
+        "timestamp_end": "00:55.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "del sombrero amarillo le ayudaban.",
         "timestamp": "00:55.00",
-        "timestamp_end": "00:56.50",
-        "text_l2": "with the Yellow Hat were helping her."
+        "timestamp_end": "00:56.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "El hombre traía su cámara...",
         "timestamp": "00:56.50",
-        "timestamp_end": "00:57.50",
-        "text_l2": "The Man brought his camera..."
+        "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_20",
         "text_l1": "...y Jorge su encanto.",
         "timestamp": "00:57.50",
-        "timestamp_end": "00:59.50",
-        "text_l2": "...and Jorge brought his charm."
+        "timestamp_end": "00:59.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "El nuevo amigo de Jorge es un delfín",
         "timestamp": "01:04.50",
-        "timestamp_end": "01:06.50",
-        "text_l2": "Jorge's new friend is a dolphin"
+        "timestamp_end": "01:06.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "del río Amazonas.",
         "timestamp": "01:06.50",
-        "timestamp_end": "01:08.00",
-        "text_l2": "from the Amazon River."
+        "timestamp_end": "01:08.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "Los portugueses lo llaman boto.",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:10.00",
-        "text_l2": "The Portuguese call it boto."
+        "timestamp_end": "01:10.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "¡Nos mojó!",
         "timestamp": "01:15.00",
-        "timestamp_end": "01:17.00",
-        "text_l2": "He splashed us!"
+        "timestamp_end": "01:17.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "Las vellosidades de su nariz",
         "timestamp": "01:20.50",
-        "timestamp_end": "01:22.50",
-        "text_l2": "The whiskers on his nose"
+        "timestamp_end": "01:22.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "son muy sensibles.",
         "timestamp": "01:22.50",
-        "timestamp_end": "01:23.50",
-        "text_l2": "are very sensitive."
+        "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "Con ellas busca alimento",
         "timestamp": "01:23.50",
-        "timestamp_end": "01:25.50",
-        "text_l2": "With them he searches for food"
+        "timestamp_end": "01:25.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "en el fangoso fondo del río.",
         "timestamp": "01:25.50",
-        "timestamp_end": "01:27.50",
-        "text_l2": "on the muddy river bottom."
+        "timestamp_end": "01:27.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "¿Quieres saber por qué",
         "timestamp": "01:31.00",
-        "timestamp_end": "01:33.00",
-        "text_l2": "Do you want to know why"
+        "timestamp_end": "01:33.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "el delfín del río es rosa?",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:34.50",
-        "text_l2": "the river dolphin is pink?"
+        "timestamp_end": "01:34.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "Creemos que porque sus venas están",
         "timestamp": "01:35.00",
-        "timestamp_end": "01:37.50",
-        "text_l2": "We think it's because their veins are"
+        "timestamp_end": "01:37.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "muy cerca de la superficie de su piel.",
         "timestamp": "01:37.50",
-        "timestamp_end": "01:39.50",
-        "text_l2": "very close to the surface of their skin."
+        "timestamp_end": "01:39.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "Esto es mejor que todo lo que empaqué.",
         "timestamp": "01:42.50",
-        "timestamp_end": "01:44.50",
-        "text_l2": "This is better than everything I packed."
+        "timestamp_end": "01:44.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "¡La cámara!",
         "timestamp": "01:45.50",
-        "timestamp_end": "01:47.00",
-        "text_l2": "The camera!"
+        "timestamp_end": "01:47.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "Iré por ella. Yo sé de monos.",
         "timestamp": "01:51.50",
-        "timestamp_end": "01:53.50",
-        "text_l2": "I'll get it. I know about monkeys."
+        "timestamp_end": "01:53.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "Lindo mono, devuélveme esa cámara.",
         "timestamp": "01:55.50",
-        "timestamp_end": "01:58.00",
-        "text_l2": "Pretty monkey, give me that camera back."
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "Pórtate como un buen niño mono.",
         "timestamp": "01:59.50",
-        "timestamp_end": "02:02.00",
-        "text_l2": "Behave like a good little monkey boy."
+        "timestamp_end": "02:02.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "Niña, es un tamarino emperador.",
         "timestamp": "02:02.50",
-        "timestamp_end": "02:04.50",
-        "text_l2": "Little girl, it's an emperor tamarin."
+        "timestamp_end": "02:04.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "Las hembras de los tamarinos",
         "timestamp": "02:05.00",
-        "timestamp_end": "02:07.50",
-        "text_l2": "The female tamarins"
+        "timestamp_end": "02:07.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "siempre son lideresas.",
         "timestamp": "02:07.50",
-        "timestamp_end": "02:08.50",
-        "text_l2": "are always the leaders."
+        "timestamp_end": "02:08.50"
       },
       {
         "id": "phrase_41",
         "text_l1": "Lo siento, niña.",
         "timestamp": "02:08.50",
-        "timestamp_end": "02:10.00",
-        "text_l2": "I'm sorry, little girl."
+        "timestamp_end": "02:10.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "Te cambio una banana...",
         "timestamp": "02:10.50",
-        "timestamp_end": "02:12.50",
-        "text_l2": "I'll trade you a banana..."
+        "timestamp_end": "02:12.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "¡Ay, no! ¡Mi sombrero! ¡No!",
         "timestamp": "02:20.50",
-        "timestamp_end": "02:22.50",
-        "text_l2": "Oh, no! My hat! No!"
+        "timestamp_end": "02:22.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "Los tamarinos no eran muy confiables.",
         "timestamp": "02:23.50",
-        "timestamp_end": "02:26.00",
-        "text_l2": "The tamarins weren't very trustworthy."
+        "timestamp_end": "02:26.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "¡Espera! No la necesitamos.",
         "timestamp": "02:26.50",
-        "timestamp_end": "02:28.50",
-        "text_l2": "Wait! We don't need it."
+        "timestamp_end": "02:28.50"
       },
       {
         "id": "phrase_46",
         "text_l1": "Ya descargamos la película",
         "timestamp": "02:29.00",
-        "timestamp_end": "02:31.50",
-        "text_l2": "We already downloaded the movie"
+        "timestamp_end": "02:31.50"
       },
       {
         "id": "phrase_47",
         "text_l1": "en la computadora.",
         "timestamp": "02:31.50",
-        "timestamp_end": "02:32.50",
-        "text_l2": "onto the computer."
+        "timestamp_end": "02:32.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "¡Oigan! ¡Vuelvan acá con mi cámara!",
         "timestamp": "02:40.50",
-        "timestamp_end": "02:42.50",
-        "text_l2": "Hey! Come back here with my camera!"
+        "timestamp_end": "02:42.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "Jamás los alcanzaremos a pie.",
         "timestamp": "02:50.00",
-        "timestamp_end": "02:52.00",
-        "text_l2": "We'll never catch them on foot."
+        "timestamp_end": "02:52.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "¡Qué buena idea, Jorge!",
         "timestamp": "02:55.50",
-        "timestamp_end": "02:57.50",
-        "text_l2": "What a good idea, Jorge!"
+        "timestamp_end": "02:57.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "Viajaremos como lo hacen los monos.",
         "timestamp": "02:57.50",
-        "timestamp_end": "02:59.00",
-        "text_l2": "We'll travel like monkeys do."
+        "timestamp_end": "02:59.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "¡Mi cámara!",
         "timestamp": "03:06.00",
-        "timestamp_end": "03:07.00",
-        "text_l2": "My camera!"
+        "timestamp_end": "03:07.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "¡Mi película!",
         "timestamp": "03:07.00",
-        "timestamp_end": "03:08.50",
-        "text_l2": "My movie!"
+        "timestamp_end": "03:08.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "¡Bien hecho!",
         "timestamp": "03:15.50",
-        "timestamp_end": "03:17.00",
-        "text_l2": "Well done!"
+        "timestamp_end": "03:17.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "Me da mucho gusto",
         "timestamp": "03:19.50",
-        "timestamp_end": "03:21.50",
-        "text_l2": "I'm so glad"
+        "timestamp_end": "03:21.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "que seas un mono.",
         "timestamp": "03:21.50",
-        "timestamp_end": "03:22.50",
-        "text_l2": "that you're a monkey."
+        "timestamp_end": "03:22.50"
       },
       {
         "id": "phrase_57",
         "text_l1": "¿No son una dulzura, Jorge?",
         "timestamp": "03:25.50",
-        "timestamp_end": "03:27.50",
-        "text_l2": "Aren't they sweet, Jorge?"
+        "timestamp_end": "03:27.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "Están buscando nuestra comida.",
         "timestamp": "03:28.00",
-        "timestamp_end": "03:30.00",
-        "text_l2": "They're looking for our food."
+        "timestamp_end": "03:30.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "Jorge, aquí viene mi parte favorita.",
         "timestamp": "03:32.50",
-        "timestamp_end": "03:34.50",
-        "text_l2": "Jorge, here comes my favorite part."
+        "timestamp_end": "03:34.50"
       },
       {
         "id": "phrase_60",
         "text_l1": "Te cambio una banana...",
         "timestamp": "03:35.50",
-        "timestamp_end": "03:37.50",
-        "text_l2": "I'll trade you a banana..."
+        "timestamp_end": "03:37.50"
       },
       {
         "id": "phrase_61",
         "text_l1": "Pues creo que les gustó.",
         "timestamp": "04:03.00",
-        "timestamp_end": "04:05.00",
-        "text_l2": "Well, I think they liked it."
+        "timestamp_end": "04:05.00"
       },
       {
         "id": "phrase_62",
         "text_l1": "Jorge ya quería verla de nuevo.",
         "timestamp": "04:08.50",
-        "timestamp_end": "04:10.50",
-        "text_l2": "Jorge already wanted to watch it again."
+        "timestamp_end": "04:10.50"
       },
       {
         "id": "phrase_63",
         "text_l1": "Era como visitar a sus amigos",
         "timestamp": "04:12.50",
-        "timestamp_end": "04:14.50",
-        "text_l2": "It was like visiting his friends"
+        "timestamp_end": "04:14.50"
       },
       {
         "id": "phrase_64",
         "text_l1": "de la selva...",
         "timestamp": "04:14.50",
-        "timestamp_end": "04:15.50",
-        "text_l2": "from the jungle..."
+        "timestamp_end": "04:15.50"
       },
       {
         "id": "phrase_65",
         "text_l1": "...pero aquí en la ciudad.",
         "timestamp": "04:15.50",
-        "timestamp_end": "04:18.00",
-        "text_l2": "...but here in the city."
+        "timestamp_end": "04:18.00"
       }
     ],
     "phrases_with_token_translations": "[La] selva tropical del Amazonas => [The] Amazon rainforest\nLa [selva tropical] del Amazonas => The Amazon [rainforest]\nLa selva tropical [del] Amazonas => of the\nLa selva tropical del [Amazonas] => The [Amazon] rainforest\n\n[está] llena de maravillas naturales. => [is] full of natural wonders.\nestá [llena] de maravillas naturales. => is [full] of natural wonders.\nestá llena [de] maravillas naturales. => is full [of] natural wonders.\nestá llena de [maravillas] naturales. => is full of natural [wonders].\nestá llena de maravillas [naturales]. => is full of [natural] wonders.\n\n[Pero] también puede ser => [But] it can also be\nPero [también] puede ser => But it can [also] be\nPero también [puede] ser => But [it can] also be\nPero también puede [ser] => But it can also [be]\n\n[el] máximo lugar de juegos. => [the] ultimate playground.\nel [máximo] lugar de juegos. => the [ultimate] playground.\nel máximo [lugar de juegos]. => the [playground]. # \"lugar de juegos\" is the standard translation for \"playground\" in this context\n\n[Todos] saben que la jungla => [Everyone] knows that the jungle\nTodos [saben] que la jungla => Everyone [knows] that the jungle\nTodos saben [que] la jungla => Everyone knows [that] the jungle\nTodos saben que [la] jungla => Everyone knows that [the] jungle\nTodos saben que la [jungla] => Everyone knows that the [jungle]\n\n[es] para los monos... => [is] for monkeys...\nes [para] los monos... => is [for] monkeys...\nes para [los] monos... => the # Spanish uses definite articles for generic plurals\nes para los [monos]... => is for [monkeys]...\n\n...[como] el agua para los peces. => ...[like] water is for fish.\n...como [el agua] para los peces. => ...like [water] is for fish.\n...como el agua [para] los peces. => ...like water is [for] fish.\n...como el agua para [los peces]. => ...like water is for [fish].\n\n[Parece] que ahora Jorge => [It seems] Jorge now\nParece [que] ahora Jorge => that\nParece que [ahora] Jorge => It seems Jorge [now]\nParece que ahora [Jorge] => It seems [Jorge] now\n\n[tiene] otro amigo. => [has] another friend.\ntiene [otro] amigo. => has [another] friend.\ntiene otro [amigo]. => has another [friend].\n\n¡[Fantástico]! => [Fantastic]!\n\n[Sabía] que invitarlos => [I knew] inviting them\nSabía [que] invitarlos => that\nSabía que [invitarlos] => I knew [inviting them]\n\n[a] la selva tropical era buena idea. => [to] the rainforest was a good idea.\na [la] selva tropical era buena idea. => to [the] rainforest was a good idea.\na la [selva tropical] era buena idea. => to the [rainforest] was a good idea.\na la selva tropical [era] buena idea. => to the rainforest [was] a good idea.\na la selva tropical era [buena] idea. => to the rainforest was a [good] idea.\na la selva tropical era buena [idea]. => to the rainforest was a good [idea].\n\n¿[Los] grabo? => Should I record [them]?\n¿Los [grabo]? => Should [I record] them? # \"grabo\" includes both the subject \"I\" and the action \"record\" English uses \"Should\" to indicate the question's mood, but the direct mapping is for \"I record\"\n\n[Por supuesto]. => [Of course].\n\nLa [profesora] Wiseman estaba haciendo => [Professor] Wiseman was making\nLa profesora [Wiseman] estaba haciendo => Professor [Wiseman] was making\nLa profesora Wiseman [estaba] haciendo => Professor Wiseman [was] making\nLa profesora Wiseman estaba [haciendo] => Professor Wiseman was [making]\n\n[una] película sobre la selva... => [a] movie about the jungle...\nuna [película] sobre la selva... => a [movie] about the jungle...\nuna película [sobre] la selva... => a movie [about] the jungle...\nuna película sobre [la] selva... => a movie about [the] jungle...\nuna película sobre la [selva]... => a movie about the [jungle]...\n\n...[y] Jorge y el hombre => ...[and] Jorge and the Man\n...y [Jorge] y el hombre => ...and [Jorge] and the Man\n...y Jorge [y] el hombre => ...and Jorge [and] the Man\n...y Jorge y [el] hombre => ...and Jorge and [the] Man\n...y Jorge y el [hombre] => ...and Jorge and the [Man]\n\n[del] sombrero amarillo le ayudaban. => [with the] Yellow Hat were helping her.\ndel [sombrero] amarillo le ayudaban. => with the Yellow [Hat] were helping her.\ndel sombrero [amarillo] le ayudaban. => with the [Yellow] Hat were helping her.\ndel sombrero amarillo [le] ayudaban. => with the Yellow Hat were helping [her].\ndel sombrero amarillo le [ayudaban] => with the Yellow Hat [were helping] her. # \"ayudaban\" is the imperfect past, translated here as \"were helping\"\n\n[El] hombre traía su cámara... => [The] Man brought his camera...\nEl [hombre] traía su cámara... => The [Man] brought his camera...\nEl hombre [traía] su cámara... => The Man [brought] his camera...\nEl hombre traía [su] cámara... => The Man brought [his] camera...\nEl hombre traía su [cámara]... => The Man brought his [camera]...\n\n...[y] Jorge su encanto. => ...[and] Jorge brought his charm.\n...y [Jorge] su encanto. => ...and [Jorge] brought his charm.\n...y Jorge [su] encanto. => ...and Jorge brought [his] charm.\n...y Jorge su [encanto]. => ...and Jorge brought his [charm].\n\nEl [nuevo] amigo de Jorge es un delfín => Jorge's [new] friend is a dolphin\nEl nuevo [amigo] de Jorge es un delfín => Jorge's new [friend] is a dolphin\nEl nuevo amigo [de Jorge] es un delfín => [Jorge's] new friend is a dolphin\nEl nuevo amigo de Jorge [es] un delfín => Jorge's new friend [is] a dolphin\nEl nuevo amigo de Jorge es [un] delfín => Jorge's new friend is [a] dolphin\nEl nuevo amigo de Jorge es un [delfín] => Jorge's new friend is a [dolphin]\n\n[del] río Amazonas. => [from the] Amazon River.\ndel [río] Amazonas. => from the Amazon [River].\ndel río [Amazonas]. => from the [Amazon] River.\n\n[Los] portugueses lo llaman boto. => [The] Portuguese call it boto.\nLos [portugueses] lo llaman boto. => The [Portuguese] call it boto.\nLos portugueses [lo] llaman boto. => The Portuguese call [it] boto.\nLos portugueses lo [llaman] boto. => The Portuguese [call] it boto.\nLos portugueses lo llaman [boto] => The Portuguese call it [boto]\n\n¡[Nos] mojó! => He splashed [us]!\n¡Nos [mojó]! => [He splashed] us! # The subject \"he\" is included in the Spanish verb conjugation\n\n[Las] vellosidades de su nariz => [The] whiskers on his nose\nLas [vellosidades] de su nariz => The [whiskers] on his nose\nLas vellosidades [de] su nariz => The whiskers [on] his nose\nLas vellosidades de [su] nariz => The whiskers on [his] nose\nLas vellosidades de su [nariz] => The whiskers on his [nose]\n\n[son] muy sensibles. => [are] very sensitive.\nson [muy] sensibles. => are [very] sensitive.\nson muy [sensibles]. => are very [sensitive].\n\n[Con] ellas busca alimento => [With] them he searches for food\nCon [ellas] busca alimento => With [them] he searches for food\nCon ellas [busca] alimento => With them [he searches for] food\nCon ellas busca [alimento] => With them he searches for [food]\n\n[en] el fangoso fondo del río. => [on] the muddy river bottom.\nen [el] fangoso fondo del río. => on [the] muddy river bottom.\nen el [fangoso] fondo del río. => on the [muddy] river bottom.\nen el fangoso [fondo] del río. => on the muddy river [bottom].\nen el fangoso fondo [del] río. => of the # contraction of de + el\nen el fangoso fondo del [río]. => on the muddy [river] bottom.\n\n[¿Quieres] saber por qué => [Do you want] to know why\n¿Quieres [saber] por qué => Do you want [to know] why\n¿Quieres saber [por qué] => Do you want to know [why]\n\n[el] delfín del río es rosa? => [the] river dolphin is pink?\nel [delfín] del río es rosa? => the river [dolphin] is pink?\nel delfín [del] río es rosa? => of the # contraction of de + el\nel delfín del [río] es rosa? => the [river] dolphin is pink?\nel delfín del río [es] rosa? => the river dolphin [is] pink?\nel delfín del río es [rosa]? => the river dolphin is [pink]?\n\n[Creemos] que porque sus venas están => [We think] it's because their veins are\nCreemos [que] porque sus venas están => that\nCreemos que [porque] sus venas están => We think it's [because] their veins are\nCreemos que porque [sus] venas están => We think it's because [their] veins are\nCreemos que porque sus [venas] están => We think it's because their [veins] are\nCreemos que porque sus venas [están] => We think it's because their veins [are]\n\n[muy] cerca de la superficie de su piel. => [very] close to the surface of their skin.\nmuy [cerca] de la superficie de su piel. => very [close] to the surface of their skin.\nmuy cerca [de] la superficie de su piel. => very close [to] the surface of their skin. # \"cerca de\" means \"close to\"\nmuy cerca de [la] superficie de su piel. => very close to [the] surface of their skin.\nmuy cerca de la [superficie] de su piel. => very close to the [surface] of their skin.\nmuy cerca de la superficie [de] su piel. => very close to the surface [of] their skin.\nmuy cerca de la superficie de [su] piel. => very close to the surface of [their] skin.\nmuy cerca de la superficie de su [piel]. => very close to the surface of their [skin].\n\n[Esto] es mejor que todo lo que empaqué => [This] is better than everything I packed\nEsto [es] mejor que todo lo que empaqué => This [is] better than everything I packed\nEsto es [mejor] que todo lo que empaqué => This is [better] than everything I packed\nEsto es mejor [que] todo lo que empaqué => This is better [than] everything I packed\nEsto es mejor que [todo] lo que empaqué => This is better than [everything] I packed\nEsto es mejor que todo [lo que] empaqué => that which, what\nEsto es mejor que todo lo que [empaqué] => This is better than everything [I packed]\n\n¡[La] cámara! => [The] camera!\n¡La [cámara]! => The [camera]!\n\nIré por [ella]. Yo sé de monos. => I'll get [it]. I know about monkeys.\nIré por ella. [Yo] sé de monos. => I'll get it. [I] know about monkeys.\nIré por ella. Yo [sé] de monos. => I'll get it. I [know] about monkeys.\nIré por ella. Yo sé [de] monos. => I'll get it. I know [about] monkeys.\nIré por ella. Yo sé de [monos] => I'll get it. I know about [monkeys]\n\n[Lindo] mono, devuélveme esa cámara. => [Pretty] monkey, give me that camera back.\nLindo [mono], devuélveme esa cámara. => Pretty [monkey], give me that camera back.\nLindo mono, [devuélveme] esa cámara. => give me back # Spanish combines \"give back\" and \"me\" into one word; the English translation is split\nLindo mono, devuélveme [esa] cámara. => Pretty monkey, give me [that] camera back.\nLindo mono, devuélveme esa [cámara]. => Pretty monkey, give me that [camera] back.\n\n[Pórtate] como un buen niño mono. => [Behave] like a good little monkey boy.\nPórtate [como] un buen niño mono. => Behave [like] a good little monkey boy.\nPórtate como [un] buen niño mono. => Behave like [a] good little monkey boy.\nPórtate como un [buen] niño mono. => Behave like a [good] little monkey boy.\nPórtate como un buen [niño] mono. => Behave like a good little monkey [boy].\nPórtate como un buen niño [mono]. => Behave like a good little [monkey] boy.\n\n[Niña], es un tamarino emperador. => [Little girl], it's an emperor tamarin.\nNiña, [es] un tamarino emperador. => Little girl, [it's] an emperor tamarin.\nNiña, es [un] tamarino emperador. => Little girl, it's [an] emperor tamarin.\nNiña, es un tamarino [emperador] => Little girl, it's an [emperor] tamarin.\nNiña, es un [tamarino] emperador. => Little girl, it's an emperor [tamarin].\n\n[Las] hembras de los tamarinos => [The] female tamarins\nLas [hembras] de los tamarinos => females\nLas hembras [de los] tamarinos => of the\nLas hembras de los [tamarinos] => The female [tamarins]\n\n[siempre] son lideresas. => are [always] the leaders.\nsiempre [son] lideresas. => [are] always the leaders.\nsiempre son [lideresas] => are always the [leaders] # Spanish \"lideresas\" specifically refers to female leaders\n\n[Lo siento], niña. => [I'm sorry], little girl.\nLo siento, [niña]. => I'm sorry, [little girl].\n\n[Te] cambio una banana... => I'll trade [you] a banana...\nTe [cambio] una banana... => [I'll trade] you a banana...\nTe cambio [una] banana... => I'll trade you [a] banana...\nTe cambio una [banana]... => I'll trade you a [banana]...\n\n¡[Ay], no! ¡Mi sombrero! ¡No! => [Oh], no! My hat! No!\n¡Ay, [no]! ¡Mi sombrero! ¡No! => Oh, [no]! My hat! No!\n¡Ay, no! ¡[Mi] sombrero! ¡No! => Oh, no! [My] hat! No!\n¡Ay, no! ¡Mi [sombrero]! ¡No! => Oh, no! My [hat]! No!\n¡Ay, no! ¡Mi sombrero! ¡[No]! => Oh, no! My hat! [No]!\n\n[Los] tamarinos no eran muy confiables. => [The] tamarins weren't very trustworthy.\nLos [tamarinos] no eran muy confiables. => The [tamarins] weren't very trustworthy.\nLos tamarinos [no eran] muy confiables. => The tamarins [weren't] very trustworthy.\nLos tamarinos no eran [muy] confiables. => The tamarins weren't [very] trustworthy.\nLos tamarinos no eran muy [confiables]. => The tamarins weren't very [trustworthy].\n\n¡Espera! [No] la necesitamos. => Wait! We [don't] need it.\n¡Espera! No [la] necesitamos. => Wait! We don't need [it].\n¡Espera! No la [necesitamos] => we need # \"necesitamos\" includes the subject \"we\" and the verb \"need\"\n\n[Ya] descargamos la película => We [already] downloaded the movie\nYa [descargamos] la película => we downloaded\nYa descargamos [la] película => We already downloaded [the] movie\nYa descargamos la [película] => We already downloaded the [movie]\n\n[en] la computadora. => [onto] the computer.\nen [la] computadora. => onto [the] computer.\nen la [computadora]. => onto the [computer].\n\n¡Oigan! ¡Vuelvan [acá] con mi cámara! => Hey! Come back [here] with my camera!\n¡Oigan! ¡Vuelvan acá [con] mi cámara! => Hey! Come back here [with] my camera!\n¡Oigan! ¡Vuelvan acá con [mi] cámara! => Hey! Come back here with [my] camera!\n¡Oigan! ¡Vuelvan acá con mi [cámara]! => Hey! Come back here with my [camera]!\n\n[Jamás] los alcanzaremos a pie. => We'll [never] catch them on foot.\nJamás [los] alcanzaremos a pie. => We'll never catch [them] on foot.\nJamás los [alcanzaremos] a pie. => we will catch, we'll catch\nJamás los alcanzaremos [a] pie => We'll never catch them [on] foot\nJamás los alcanzaremos a [pie] => We'll never catch them on [foot]\n\n¡[Qué] buena idea, Jorge! => [What a] good idea, Jorge!\n¡Qué [buena] idea, Jorge! => What a [good] idea, Jorge!\n¡Qué buena [idea], Jorge! => What a good [idea], Jorge!\n¡Qué buena idea, [Jorge]! => What a good idea, [Jorge]!\n\n[Viajaremos] como lo hacen los monos. => [We'll travel] like monkeys do.\nViajaremos [como] lo hacen los monos. => We'll travel [like] monkeys do.\nViajaremos como [lo] hacen los monos. => it, so # The \"lo\" is a neuter pronoun representing the action of traveling \nViajaremos como lo [hacen] los monos. => We'll travel like monkeys [do]\nViajaremos como lo hacen [los monos] => We'll travel like [monkeys] do # Spanish uses the definite article \"los\" for generic subjects where English does not.\n\n¡Mi [cámara]! => My [camera]!\n\n[Mi] película! => [My] movie!\nMi [película]! => My [movie]!\n\n¡[Bien] hecho! => [Well] done!\n¡Bien [hecho]! => Well [done]!\n\nMe da [mucho] gusto => I'm [so] glad\nMe da mucho [gusto] => I'm so [glad]\n\n[que] seas un mono. => [that] you're a monkey.\nque [seas] un mono. => that [you're] a monkey.\nque seas [un] mono. => that you're [a] monkey.\nque seas un [mono]. => that you're a [monkey].\n\n¿[No son] una dulzura, Jorge? => [Aren't they] sweet, Jorge?\n¿No son [una] dulzura, Jorge? => a\n¿No son una [dulzura], Jorge? => Aren't they [sweet], Jorge?\n¿No son una dulzura, [Jorge]? => Aren't they sweet, [Jorge]?\n\n[Están] buscando nuestra comida. => [They're] looking for our food.\nEstán [buscando] nuestra comida. => They're [looking for] our food.\nEstán buscando [nuestra] comida. => They're looking for [our] food.\nEstán buscando nuestra [comida] => They're looking for our [food]\n\n[Jorge], aquí viene mi parte favorita. => [Jorge], here comes my favorite part.\nJorge, [aquí] viene mi parte favorita. => Jorge, [here] comes my favorite part.\nJorge, aquí [viene] mi parte favorita. => Jorge, here [comes] my favorite part.\nJorge, aquí viene [mi] parte favorita. => Jorge, here comes [my] favorite part.\nJorge, aquí viene mi [parte] favorita. => Jorge, here comes my favorite [part].\nJorge, aquí viene mi parte [favorita]. => Jorge, here comes my [favorite] part.\n\n[Te] cambio una banana... => I'll trade [you] a banana...\nTe [cambio] una banana... => [I'll trade] you a banana... # \"cambio\" (I trade) maps to the subject and verb in English\nTe cambio [una] banana... => I'll trade you [a] banana...\nTe cambio una [banana]... => I'll trade you a [banana]...\n\n[Pues] creo que les gustó. => [Well], I think they liked it.\nPues [creo] que les gustó. => Well, [I think] they liked it.\nPues creo [que] les gustó. => that\nPues creo que [les gustó]. => Well, I think [they liked it]. # Spanish uses the verb \"gustar\" (to please) where the logical subject \"they\" is represented by the indirect object pronoun \"les\"\n\n[Jorge] ya quería verla de nuevo. => [Jorge] already wanted to watch it again.\nJorge [ya] quería verla de nuevo. => Jorge [already] wanted to watch it again.\nJorge ya [quería] verla de nuevo. => Jorge already [wanted] to watch it again.\nJorge ya quería [verla] de nuevo. => Jorge already wanted [to watch it] again. # 'verla' corresponds to 'to watch' (infinitive) plus the object pronoun 'it'\nJorge ya quería verla [de nuevo] => Jorge already wanted to watch it [again]\n\n[Era] como visitar a sus amigos => [It was] like visiting his friends\nEra [como] visitar a sus amigos => It was [like] visiting his friends\nEra como [visitar] a sus amigos => It was like [visiting] his friends\nEra como visitar a [sus] amigos => It was like visiting [his] friends\nEra como visitar a sus [amigos] => It was like visiting his [friends]\n\n[de] la selva... => [from] the jungle...\nde [la] selva... => from [the] jungle...\nde la [selva]... => from the [jungle]...\n\n...[pero] aquí en la ciudad. => ...[but] here in the city.\n...pero [aquí] en la ciudad. => ...but [here] in the city.\n...pero aquí [en] la ciudad. => ...but here [in] the city.\n...pero aquí en [la] ciudad. => ...but here in [the] city.\n...pero aquí en la [ciudad]. => ...but here in the [city].\n\n",
     "lessons": "# La Selva Amazónica y sus Maravillas\n00:00.00 La selva tropical del Amazonas\n00:02.50 está llena de maravillas naturales.\n00:04.50 Pero también puede ser\n00:06.50 el máximo lugar de juegos.\n00:10.00 Todos saben que la jungla\n00:12.50 es para los monos...\n00:13.50 ...como el agua para los peces.\n\n# Un Nuevo Amigo\n00:36.50 Parece que ahora Jorge\n00:38.50 tiene otro amigo.\n00:39.50 ¡Fantástico!\n00:41.00 Sabía que invitarlos\n00:42.50 a la selva tropical era buena idea.\n00:46.50 ¿Los grabo?\n00:47.50 Por supuesto.\n\n# El Proyecto de la Selva\n00:49.50 La profesora Wiseman estaba haciendo\n00:51.50 una película sobre la selva...\n00:53.50 ...y Jorge y el hombre\n00:55.00 del sombrero amarillo le ayudaban.\n00:56.50 El hombre traía su cámara...\n00:57.50 ...y Jorge su encanto.\n\n# El Delfín del Río Amazonas\n01:04.50 El nuevo amigo de Jorge es un delfín\n01:06.50 del río Amazonas.\n01:08.00 Los portugueses lo llaman boto.\n01:15.00 ¡Nos mojó!\n01:20.50 Las vellosidades de su nariz\n01:22.50 son muy sensibles.\n01:23.50 Con ellas busca alimento\n01:25.50 en el fangoso fondo del río.\n\n# El Misterio del Color Rosa\n01:31.00 ¿Quieres saber por qué\n01:33.00 el delfín del río es rosa?\n01:35.00 Creemos que porque sus venas están\n01:37.50 muy cerca de la superficie de su piel.\n\n# Problemas con la Cámara (Part 1)\n01:42.50 Esto es mejor que todo lo que empaqué.\n01:45.50 ¡La cámara!\n01:51.50 Iré por ella. Yo sé de monos.\n01:55.50 Lindo mono, devuélveme esa cámara.\n01:59.50 Pórtate como un buen niño mono.\n\n# Problemas con la Cámara (Part 2)\n02:02.50 Niña, es un tamarino emperador.\n02:05.00 Las hembras de los tamarinos\n02:07.50 siempre son lideresas.\n02:08.50 Lo siento, niña.\n02:10.50 Te cambio una banana...\n02:20.50 ¡Ay, no! ¡Mi sombrero! ¡No!\n\n# La Persecución\n02:23.50 Los tamarinos no eran muy confiables.\n02:26.50 ¡Espera! No la necesitamos.\n02:29.00 Ya descargamos la película\n02:31.50 en la computadora.\n02:40.50 ¡Oigan! ¡Vuelvan acá con mi cámara!\n02:50.00 Jamás los alcanzaremos a pie.\n02:55.50 ¡Qué buena idea, Jorge!\n02:57.50 Viajaremos como lo hacen los monos.\n\n# El Final Feliz\n03:06.00 ¡Mi cámara!\n03:07.00 ¡Mi película!\n03:15.50 ¡Bien hecho!\n03:19.50 Me da mucho gusto\n03:21.50 que seas un mono.\n03:25.50 ¿No son una dulzura, Jorge?\n03:28.00 Están buscando nuestra comida.\n\n# Recordando la Aventura\n03:32.50 Jorge, aquí viene mi parte favorita.\n03:35.50 Te cambio una banana...\n04:03.00 Pues creo que les gustó.\n04:08.50 Jorge ya quería verla de nuevo.\n04:12.50 Era como visitar a sus amigos\n04:14.50 de la selva...\n04:15.50 ...pero aquí en la ciudad.",
-    "similar_sounds": "La [suelta] tropical del Amazonas\nestá [cena] de maravillas naturales.\nPero también puede [ver]\nel [próximo] lugar de juegos.\nTodos [caben] que la jungla\nes para los [tonos]...\n...como el agua para los [veces].\nParece que [adora] Jorge\ntiene [logro] amigo.\n¡[fanático]!\n[Hacía] que invitarlos\na la selva tropical era [pena] idea.\n¿Los [acabo]?\nPor [dispuesto].\nLa profesora Wiseman estaba [cayendo]\nuna película sobre la [suelta]...\n...y Jorge y el [nombre]\ndel sombrero amarillo le [saludaban].\nEl hombre [caía] su cámara...\n...y Jorge su [canto].\nEl nuevo amigo de Jorge es un [jardín]\ndel río [campanas].\nLos portugueses lo llaman [loto].\n¡[Dos] mojó!\nLas vellosidades de su [matriz]\nson muy [visibles].\nCon ellas busca [lamento]\nen el fangoso fondo del [frío].\n¿Quieres [caber] por qué\nel delfín del río es [cosa]?\nCreemos que porque sus [penas] están\nmuy cerca de la superficie de su [miel].\nEsto es mejor que todo lo que [pequé].\n¡La [ámbar]!\nIré por ella. Yo sé de [tonos].\nLindo mono, devuélveme esa [ámbar].\nPórtate como un buen niño [tono].\nNiña, es un tamarino [tentador].\nLas hembras de los [caminos]\nsiempre son [promesas].\nLo siento, [viña].\nTe cambio una [mañana]...\n¡Ay, no! ¡Mi [carnero]! ¡No!\nLos tamarinos no eran muy [amables].\n¡Espera! No la [recitamos].\nYa [cargamos] la película\nen la [moradora].\n¡Oigan! ¡Vuelvan acá con mi [ámbar]!\nJamás los [cantaremos] a pie.\n¡Qué buena [veda], Jorge!\nViajaremos como lo hacen los [tonos].\n¡Mi [ámbar]!\n¡Mi [pelota]!\n¡Bien [pecho]!\nMe da mucho [justo]\nque seas un [tono].\n¿No son una [locura], Jorge?\nEstán buscando nuestra [vida].\nJorge, aquí viene mi parte [distinta].\nTe cambio una [mañana]...\nPues creo que les [justó].\nJorge ya quería verla de [huevo].\nEra como visitar a sus [enemigos]\nde la [suelta]...\n...pero aquí en la [mitad]."
+    "similar_sounds": "La [suelta] tropical del Amazonas\nestá [cena] de maravillas naturales.\nPero también puede [ver]\nel [próximo] lugar de juegos.\nTodos [caben] que la jungla\nes para los [tonos]...\n...como el agua para los [veces].\nParece que [adora] Jorge\ntiene [logro] amigo.\n¡[fanático]!\n[Hacía] que invitarlos\na la selva tropical era [pena] idea.\n¿Los [acabo]?\nPor [dispuesto].\nLa profesora Wiseman estaba [cayendo]\nuna película sobre la [suelta]...\n...y Jorge y el [nombre]\ndel sombrero amarillo le [saludaban].\nEl hombre [caía] su cámara...\n...y Jorge su [canto].\nEl nuevo amigo de Jorge es un [jardín]\ndel río [campanas].\nLos portugueses lo llaman [loto].\n¡[Dos] mojó!\nLas vellosidades de su [matriz]\nson muy [visibles].\nCon ellas busca [lamento]\nen el fangoso fondo del [frío].\n¿Quieres [caber] por qué\nel delfín del río es [cosa]?\nCreemos que porque sus [penas] están\nmuy cerca de la superficie de su [miel].\nEsto es mejor que todo lo que [pequé].\n¡La [ámbar]!\nIré por ella. Yo sé de [tonos].\nLindo mono, devuélveme esa [ámbar].\nPórtate como un buen niño [tono].\nNiña, es un tamarino [tentador].\nLas hembras de los [caminos]\nsiempre son [promesas].\nLo siento, [viña].\nTe cambio una [mañana]...\n¡Ay, no! ¡Mi [carnero]! ¡No!\nLos tamarinos no eran muy [amables].\n¡Espera! No la [recitamos].\nYa [cargamos] la película\nen la [moradora].\n¡Oigan! ¡Vuelvan acá con mi [ámbar]!\nJamás los [cantaremos] a pie.\n¡Qué buena [veda], Jorge!\nViajaremos como lo hacen los [tonos].\n¡Mi [ámbar]!\n¡Mi [pelota]!\n¡Bien [pecho]!\nMe da mucho [justo]\nque seas un [tono].\n¿No son una [locura], Jorge?\nEstán buscando nuestra [vida].\nJorge, aquí viene mi parte [distinta].\nTe cambio una [mañana]...\nPues creo que les [justó].\nJorge ya quería verla de [huevo].\nEra como visitar a sus [enemigos]\nde la [suelta]...\n...pero aquí en la [mitad].",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "The Amazon rainforest",
+            "words": []
+          },
+          {
+            "text": "is full of natural wonders.",
+            "words": []
+          },
+          {
+            "text": "But it can also be",
+            "words": []
+          },
+          {
+            "text": "the ultimate playground.",
+            "words": []
+          },
+          {
+            "text": "Everyone knows that the jungle",
+            "words": []
+          },
+          {
+            "text": "is for monkeys...",
+            "words": []
+          },
+          {
+            "text": "...like water is for fish.",
+            "words": []
+          },
+          {
+            "text": "It seems Jorge now",
+            "words": []
+          },
+          {
+            "text": "has another friend.",
+            "words": []
+          },
+          {
+            "text": "Fantastic!",
+            "words": []
+          },
+          {
+            "text": "I knew inviting them",
+            "words": []
+          },
+          {
+            "text": "to the rainforest was a good idea.",
+            "words": []
+          },
+          {
+            "text": "Should I record them?",
+            "words": []
+          },
+          {
+            "text": "Of course.",
+            "words": []
+          },
+          {
+            "text": "Professor Wiseman was making",
+            "words": []
+          },
+          {
+            "text": "a movie about the jungle...",
+            "words": []
+          },
+          {
+            "text": "...and Jorge and the Man",
+            "words": []
+          },
+          {
+            "text": "with the Yellow Hat were helping her.",
+            "words": []
+          },
+          {
+            "text": "The Man brought his camera...",
+            "words": []
+          },
+          {
+            "text": "...and Jorge brought his charm.",
+            "words": []
+          },
+          {
+            "text": "Jorge's new friend is a dolphin",
+            "words": []
+          },
+          {
+            "text": "from the Amazon River.",
+            "words": []
+          },
+          {
+            "text": "The Portuguese call it boto.",
+            "words": []
+          },
+          {
+            "text": "He splashed us!",
+            "words": []
+          },
+          {
+            "text": "The whiskers on his nose",
+            "words": []
+          },
+          {
+            "text": "are very sensitive.",
+            "words": []
+          },
+          {
+            "text": "With them he searches for food",
+            "words": []
+          },
+          {
+            "text": "on the muddy river bottom.",
+            "words": []
+          },
+          {
+            "text": "Do you want to know why",
+            "words": []
+          },
+          {
+            "text": "the river dolphin is pink?",
+            "words": []
+          },
+          {
+            "text": "We think it's because their veins are",
+            "words": []
+          },
+          {
+            "text": "very close to the surface of their skin.",
+            "words": []
+          },
+          {
+            "text": "This is better than everything I packed.",
+            "words": []
+          },
+          {
+            "text": "The camera!",
+            "words": []
+          },
+          {
+            "text": "I'll get it. I know about monkeys.",
+            "words": []
+          },
+          {
+            "text": "Pretty monkey, give me that camera back.",
+            "words": []
+          },
+          {
+            "text": "Behave like a good little monkey boy.",
+            "words": []
+          },
+          {
+            "text": "Little girl, it's an emperor tamarin.",
+            "words": []
+          },
+          {
+            "text": "The female tamarins",
+            "words": []
+          },
+          {
+            "text": "are always the leaders.",
+            "words": []
+          },
+          {
+            "text": "I'm sorry, little girl.",
+            "words": []
+          },
+          {
+            "text": "I'll trade you a banana...",
+            "words": []
+          },
+          {
+            "text": "Oh, no! My hat! No!",
+            "words": []
+          },
+          {
+            "text": "The tamarins weren't very trustworthy.",
+            "words": []
+          },
+          {
+            "text": "Wait! We don't need it.",
+            "words": []
+          },
+          {
+            "text": "We already downloaded the movie",
+            "words": []
+          },
+          {
+            "text": "onto the computer.",
+            "words": []
+          },
+          {
+            "text": "Hey! Come back here with my camera!",
+            "words": []
+          },
+          {
+            "text": "We'll never catch them on foot.",
+            "words": []
+          },
+          {
+            "text": "What a good idea, Jorge!",
+            "words": []
+          },
+          {
+            "text": "We'll travel like monkeys do.",
+            "words": []
+          },
+          {
+            "text": "My camera!",
+            "words": []
+          },
+          {
+            "text": "My movie!",
+            "words": []
+          },
+          {
+            "text": "Well done!",
+            "words": []
+          },
+          {
+            "text": "I'm so glad",
+            "words": []
+          },
+          {
+            "text": "that you're a monkey.",
+            "words": []
+          },
+          {
+            "text": "Aren't they sweet, Jorge?",
+            "words": []
+          },
+          {
+            "text": "They're looking for our food.",
+            "words": []
+          },
+          {
+            "text": "Jorge, here comes my favorite part.",
+            "words": []
+          },
+          {
+            "text": "I'll trade you a banana...",
+            "words": []
+          },
+          {
+            "text": "Well, I think they liked it.",
+            "words": []
+          },
+          {
+            "text": "Jorge already wanted to watch it again.",
+            "words": []
+          },
+          {
+            "text": "It was like visiting his friends",
+            "words": []
+          },
+          {
+            "text": "from the jungle...",
+            "words": []
+          },
+          {
+            "text": "...but here in the city.",
+            "words": []
+          }
+        ],
+        "lessons": "# La Selva Amazónica y sus Maravillas\n00:00.00 La selva tropical del Amazonas\n00:02.50 está llena de maravillas naturales.\n00:04.50 Pero también puede ser\n00:06.50 el máximo lugar de juegos.\n00:10.00 Todos saben que la jungla\n00:12.50 es para los monos...\n00:13.50 ...como el agua para los peces.\n\n# Un Nuevo Amigo\n00:36.50 Parece que ahora Jorge\n00:38.50 tiene otro amigo.\n00:39.50 ¡Fantástico!\n00:41.00 Sabía que invitarlos\n00:42.50 a la selva tropical era buena idea.\n00:46.50 ¿Los grabo?\n00:47.50 Por supuesto.\n\n# El Proyecto de la Selva\n00:49.50 La profesora Wiseman estaba haciendo\n00:51.50 una película sobre la selva...\n00:53.50 ...y Jorge y el hombre\n00:55.00 del sombrero amarillo le ayudaban.\n00:56.50 El hombre traía su cámara...\n00:57.50 ...y Jorge su encanto.\n\n# El Delfín del Río Amazonas\n01:04.50 El nuevo amigo de Jorge es un delfín\n01:06.50 del río Amazonas.\n01:08.00 Los portugueses lo llaman boto.\n01:15.00 ¡Nos mojó!\n01:20.50 Las vellosidades de su nariz\n01:22.50 son muy sensibles.\n01:23.50 Con ellas busca alimento\n01:25.50 en el fangoso fondo del río.\n\n# El Misterio del Color Rosa\n01:31.00 ¿Quieres saber por qué\n01:33.00 el delfín del río es rosa?\n01:35.00 Creemos que porque sus venas están\n01:37.50 muy cerca de la superficie de su piel.\n\n# Problemas con la Cámara (Part 1)\n01:42.50 Esto es mejor que todo lo que empaqué.\n01:45.50 ¡La cámara!\n01:51.50 Iré por ella. Yo sé de monos.\n01:55.50 Lindo mono, devuélveme esa cámara.\n01:59.50 Pórtate como un buen niño mono.\n\n# Problemas con la Cámara (Part 2)\n02:02.50 Niña, es un tamarino emperador.\n02:05.00 Las hembras de los tamarinos\n02:07.50 siempre son lideresas.\n02:08.50 Lo siento, niña.\n02:10.50 Te cambio una banana...\n02:20.50 ¡Ay, no! ¡Mi sombrero! ¡No!\n\n# La Persecución\n02:23.50 Los tamarinos no eran muy confiables.\n02:26.50 ¡Espera! No la necesitamos.\n02:29.00 Ya descargamos la película\n02:31.50 en la computadora.\n02:40.50 ¡Oigan! ¡Vuelvan acá con mi cámara!\n02:50.00 Jamás los alcanzaremos a pie.\n02:55.50 ¡Qué buena idea, Jorge!\n02:57.50 Viajaremos como lo hacen los monos.\n\n# El Final Feliz\n03:06.00 ¡Mi cámara!\n03:07.00 ¡Mi película!\n03:15.50 ¡Bien hecho!\n03:19.50 Me da mucho gusto\n03:21.50 que seas un mono.\n03:25.50 ¿No son una dulzura, Jorge?\n03:28.00 Están buscando nuestra comida.\n\n# Recordando la Aventura\n03:32.50 Jorge, aquí viene mi parte favorita.\n03:35.50 Te cambio una banana...\n04:03.00 Pues creo que les gustó.\n04:08.50 Jorge ya quería verla de nuevo.\n04:12.50 Era como visitar a sus amigos\n04:14.50 de la selva...\n04:15.50 ...pero aquí en la ciudad."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-05-01 13:24:19 UTC",
   "updated_at": "2026-05-01 13:40:43 UTC",

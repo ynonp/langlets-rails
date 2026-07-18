@@ -22,6 +22,7 @@ module CourseBuilder
     end
 
     def call
+      progress.assert_current_data_format!
       previous_language = Current.translation_language
       Current.translation_language = Language.find_by(english_name: progress.translation_language)
       ActiveRecord::Base.transaction do
@@ -153,6 +154,7 @@ module CourseBuilder
     # Persist one additional L2 against an existing course skeleton. No lessons,
     # activities, progress, or L1 rows are rebuilt.
     def add_translation(language)
+      progress.assert_current_data_format!
       previous_language = Current.translation_language
       Current.translation_language = language
       payload = progress.translation_payload(language)
@@ -167,7 +169,10 @@ module CourseBuilder
           localized.text = payload.dig("phrases", phrase_index, "text")
           localized.save!
 
-          phrase.phrase_tokens.order(:l1_start_index).each_with_index do |token, word_index|
+          # :id tiebreak keeps this order deterministic -- it must match the
+          # order the payload's words were generated in (see
+          # CreateSongProgressRebuilder#ordered_tokens).
+          phrase.phrase_tokens.order(:l1_start_index, :id).each_with_index do |token, word_index|
             translated_word = payload.dig("phrases", phrase_index, "words", word_index)
             next if translated_word.blank?
 

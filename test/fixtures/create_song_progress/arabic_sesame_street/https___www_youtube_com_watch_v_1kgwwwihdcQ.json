@@ -9,426 +9,616 @@
       {
         "id": "phrase_1",
         "text_l1": "وبتمنا إني أشوفك عن قريب يا...",
-        "text_l2": "And I hope to see you soon, my...",
         "timestamp": "00:00.00",
         "timestamp_end": "00:04.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "جلجل! جلجل! جلجل! جلجل شوف!",
-        "text_l2": "Jaljal! Jaljal! Jaljal! Jaljal, look!",
         "timestamp": "00:04.00",
         "timestamp_end": "00:08.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "هه! إيش هذا؟",
-        "text_l2": "Heh! What's this?",
         "timestamp": "00:08.00",
         "timestamp_end": "00:10.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "كتبت اسمي بقلم الرصاص.",
-        "text_l2": "I wrote my name with a pencil.",
         "timestamp": "00:10.00",
         "timestamp_end": "00:12.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "تن تن! تن تن!",
-        "text_l2": "Tan Tan! Tan Tan!",
         "timestamp": "00:12.00",
         "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "تن تن! مضبوط، حلو كتير.",
-        "text_l2": "Tan Tan! That's right, very nice.",
         "timestamp": "00:17.00",
         "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "خطك ممتاز يا تن تن.",
-        "text_l2": "Your handwriting is excellent, Tan Tan.",
         "timestamp": "00:19.00",
         "timestamp_end": "00:21.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "شو بتعمل؟",
-        "text_l2": "What are you doing?",
         "timestamp": "00:22.00",
         "timestamp_end": "00:24.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "بكتب رسالة لصديقي.",
-        "text_l2": "I'm writing a letter to my friend.",
         "timestamp": "00:24.00",
         "timestamp_end": "00:26.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "تن تن، بدك إشي؟",
-        "text_l2": "Tan Tan, do you need anything?",
         "timestamp": "00:28.00",
         "timestamp_end": "00:31.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "بدك مساعدة؟",
-        "text_l2": "Do you need help?",
         "timestamp": "00:32.00",
         "timestamp_end": "00:33.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "لا شكراً يا تن تن.",
-        "text_l2": "No, thanks, Tan Tan.",
         "timestamp": "00:33.00",
         "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "تن تن، إنت مش بتحبي الكتابة؟",
-        "text_l2": "Tan Tan, don't you like writing?",
         "timestamp": "00:38.00",
         "timestamp_end": "00:41.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "شو رأيك تجربي تكتبي اسمك",
-        "text_l2": "How about you try writing your name",
         "timestamp": "00:42.00",
         "timestamp_end": "00:44.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "بأقلام التلوين هالمرة؟",
-        "text_l2": "with coloring pens this time?",
         "timestamp": "00:44.00",
         "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "آه! فكرة رائعة!",
-        "text_l2": "Ah! Great idea!",
         "timestamp": "00:45.00",
         "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "أنا كتير بحب أقلام التلوين.",
-        "text_l2": "I really love coloring pens.",
         "timestamp": "00:47.00",
         "timestamp_end": "00:48.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "هسا برجع.",
-        "text_l2": "I'll be right back.",
         "timestamp": "00:48.00",
         "timestamp_end": "00:50.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "جلجل! جلجل! جلجل!",
-        "text_l2": "Jaljal! Jaljal! Jaljal!",
         "timestamp": "01:00.00",
         "timestamp_end": "01:03.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "شوف ما أسرعني! كتبت اسمي",
-        "text_l2": "Look how fast I was! I wrote my name",
         "timestamp": "01:04.00",
         "timestamp_end": "01:06.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "بالألوان باللون البرتقالي.",
-        "text_l2": "in colors, in orange.",
         "timestamp": "01:06.00",
         "timestamp_end": "01:08.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "تن تن! تن تن!",
-        "text_l2": "Tan Tan! Tan Tan!",
         "timestamp": "01:09.00",
         "timestamp_end": "01:12.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "رجعتي بسرعة يا تن تن.",
-        "text_l2": "You came back so fast, Tan Tan.",
         "timestamp": "01:12.00",
         "timestamp_end": "01:14.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "إنت سريعة كتير يا تن تن.",
-        "text_l2": "You are very fast, Tan Tan.",
         "timestamp": "01:14.00",
         "timestamp_end": "01:16.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "خطك حلو كتير، حلو",
-        "text_l2": "Your handwriting is very nice, nice",
         "timestamp": "01:17.00",
         "timestamp_end": "01:19.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "والألوان كمان حلوة. إنت رائعة.",
-        "text_l2": "and the colors are nice too. You're wonderful.",
         "timestamp": "01:19.00",
         "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "لو سمحتي،",
-        "text_l2": "Please,",
         "timestamp": "01:22.00",
         "timestamp_end": "01:24.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "بصير تخليني أكمل رسالتي؟",
-        "text_l2": "could you let me finish my letter?",
         "timestamp": "01:24.00",
         "timestamp_end": "01:26.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "خليني أساعدك.",
-        "text_l2": "Let me help you.",
         "timestamp": "01:30.00",
         "timestamp_end": "01:32.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "تن تن، أنا قربت أخلص. بس شوي.",
-        "text_l2": "Tan Tan, I'm almost done. Just a bit.",
         "timestamp": "01:32.00",
         "timestamp_end": "01:34.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "خليني شوي بس.",
-        "text_l2": "Just leave me for a bit.",
         "timestamp": "01:34.00",
         "timestamp_end": "01:35.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "صديقي...",
-        "text_l2": "My friend...",
         "timestamp": "01:38.00",
         "timestamp_end": "01:40.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "تن تن، عندي فكرة",
-        "text_l2": "Tan Tan, I have an idea",
         "timestamp": "01:40.00",
         "timestamp_end": "01:42.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "رح تخليكي تنبسطي كتير.",
-        "text_l2": "that will make you very happy.",
         "timestamp": "01:42.00",
         "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "شو هي؟",
-        "text_l2": "What is it?",
         "timestamp": "01:45.00",
         "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "شو رأيك تكتبي اسمك",
-        "text_l2": "How about you write your name",
         "timestamp": "01:46.00",
         "timestamp_end": "01:48.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "بمكعبات الأحرف الأبجدية الجديدة؟",
-        "text_l2": "with the new alphabet letter blocks?",
         "timestamp": "01:48.00",
         "timestamp_end": "01:49.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "آه! مكعبات الأحرف! يا سلام!",
-        "text_l2": "Ah! Letter blocks! Oh wow!",
         "timestamp": "01:50.00",
         "timestamp_end": "01:52.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "فكرة ممتازة! أنا بحب المكعبات.",
-        "text_l2": "Excellent idea! I love blocks.",
         "timestamp": "01:52.00",
         "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "أخيراً راحت.",
-        "text_l2": "Finally, she's gone.",
         "timestamp": "01:56.00",
         "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "خليني أكمل بسرعة قبل ما تيجي.",
-        "text_l2": "Let me finish quickly before she comes.",
         "timestamp": "01:58.00",
         "timestamp_end": "01:59.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "الكلمة الأخيرة:",
-        "text_l2": "The last word:",
         "timestamp": "02:00.00",
         "timestamp_end": "02:02.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "سأراك قريباً يا صديقي العزيز.",
-        "text_l2": "I will see you soon, my dear friend.",
         "timestamp": "02:02.00",
         "timestamp_end": "02:04.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "هاها!",
-        "text_l2": "Haha!",
         "timestamp": "02:05.00",
         "timestamp_end": "02:07.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "أسهل إشي الواحد يكتب اسمه بالمكعبات.",
-        "text_l2": "The easiest thing is writing your name with blocks.",
         "timestamp": "02:07.00",
         "timestamp_end": "02:10.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "تن تن! تن تن!",
-        "text_l2": "Tan Tan! Tan Tan!",
         "timestamp": "02:10.00",
         "timestamp_end": "02:12.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "عن جد إنت كتبتيهم؟ يا عيني على الألوان!",
-        "text_l2": "Did you really write them? Oh, look at the colors!",
         "timestamp": "02:13.00",
         "timestamp_end": "02:15.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "ألوان كتير حلوة يا تن تن.",
-        "text_l2": "Very nice colors, Tan Tan.",
         "timestamp": "02:15.00",
         "timestamp_end": "02:16.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "خليني أشوف. أوه! ألوان برتقالي...",
-        "text_l2": "Let me see. Oh! Orange colors...",
         "timestamp": "02:17.00",
         "timestamp_end": "02:20.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "جميلة جميلة.",
-        "text_l2": "Beautiful, beautiful.",
         "timestamp": "02:20.00",
         "timestamp_end": "02:22.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "أحرف... تاء نون...",
-        "text_l2": "Letters... T N...",
         "timestamp": "02:22.00",
         "timestamp_end": "02:24.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "ألوانها كمان كتير حلوة.",
-        "text_l2": "Their colors are very nice too.",
         "timestamp": "02:24.00",
         "timestamp_end": "02:26.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "تن تن! تن تن! تن تن! تن تن!",
-        "text_l2": "Tan Tan! Tan Tan! Tan Tan! Tan Tan!",
         "timestamp": "02:27.00",
         "timestamp_end": "02:31.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "أنا بحب أكتب اسمي يا جلجل.",
-        "text_l2": "I love writing my name, Jaljal.",
         "timestamp": "02:32.00",
         "timestamp_end": "02:34.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "تاء نون، تن تن!",
-        "text_l2": "T N, Tan Tan!",
         "timestamp": "02:34.00",
         "timestamp_end": "02:35.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "تن تن! إيش عم تعملي؟ تن تن!",
-        "text_l2": "Tan Tan! What are you doing? Tan Tan!",
         "timestamp": "02:35.00",
         "timestamp_end": "02:38.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "تن تن ضيعتلي الرسالة",
-        "text_l2": "Tan Tan, you ruined the letter",
         "timestamp": "02:39.00",
         "timestamp_end": "02:41.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "اللي كنت بكتب فيها!",
-        "text_l2": "that I was writing!",
         "timestamp": "02:41.00",
         "timestamp_end": "02:43.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "تاء نون، تن تن! تاء نون، تن تن!",
-        "text_l2": "T N, Tan Tan! T N, Tan Tan!",
         "timestamp": "02:44.00",
         "timestamp_end": "02:47.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "أنا بحب أكتب اسمي!",
-        "text_l2": "I love writing my name!",
         "timestamp": "02:47.00",
         "timestamp_end": "02:50.00"
       }
     ],
     "similar_sounds": "وبتمنا إني [أصوفك] عن قريب يا...\nجلجل! جلجل! جلجل! جلجل شوف!\nهه! إيش [هدا]؟\nكتبت اسمي [بقلم] الرصاص.\nتن تن! تن تن!\nتن تن! [مضبوط]، حلو كتير.\nخطك ممتاز يا تن تن.\nشو [بتعمل]؟\nبكتب رسالة [لصديقي].\nتن تن، بدك [إشي]؟\nبدك [مساعدة]؟\nلا شكراً يا تن تن.\nتن تن، إنت مش [بتحبي] الكتابة؟\nشو رأيك [تجربي] تكتبي اسمك\nبأقلام التلوين [هالمرة]؟\nآه! فكرة [رائعة]!\nأنا كتير بحب أقلام [التلوين].\nهسا [برجع].\nجلجل! جلجل! جلجل!\nشوف ما [أسرعني]! كتبت اسمي\nبالألوان باللون [البرتقالي].\nتن تن! تن تن!\nرجعتي [بسرعة] يا تن تن.\nإنت سريعة كتير يا تن تن.\nخطك حلو كتير، [حلو]\nوالألوان كمان حلوة. إنت [رائعة].\nلو [سمحتي]،\nبصير تخليني أكمل [رسالتي]؟\nخليني [أساعدك].\nتن تن، أنا قربت [أخلص]. بس شوي.\nخليني شوي [بس].\nصديقي...\nتن تن، عندي [فكرة]\nرح تخليكي تنبسطي [كتير].\nشو [هي]؟\nشو رأيك تكتبي اسمك\nبمكعبات الأحرف الأبجدية [الجديدة]؟\nآه! مكعبات [الأحرف]! يا سلام!\nفكرة ممتازة! أنا بحب [المكعبات].\nأخيراً [راحت].\nخليني أكمل بسرعة قبل ما [تيجي].\nالكلمة [الأخيرة]:\nسأراك قريباً يا صديقي [العزيز].\nهاها!\nأسهل إشي الواحد يكتب اسمه [بالمكعبات].\nتن تن! تن تن!\nعن جد إنت [كتبتيهم]؟ يا عيني على الألوان!\nألوان كتير حلوة يا تن تن.\nخليني [أشوف]. أوه! ألوان برتقالي...\nجميلة [جميلة].\nأحرف... تاء نون...\nألوانها كمان كتير [حلوة].\nتن تن! تن تن! تن تن! تن تن!\nأنا بحب أكتب اسمي يا [جلجل].\nتاء نون، تن تن!\nتن تن! إيش عم [تعملي]؟ تن تن!\nتن تن [ضيعتلي] الرسالة\nاللي كنت بكتب [فيها]!\nتاء نون، تن تن! تاء نون، تن تن!\nأنا بحب أكتب [اسمي]!",
-    "phrases_with_token_translations": "[و]بتمنا إني أشوفك عن قريب يا... => [And] I hope to see you soon, my...\nو[بتمنا] إني أشوفك عن قريب يا... => And [I hope] to see you soon, my...\nوبتمنا [إني] أشوفك عن قريب يا... => that I\nوبتمنا إني [أشوفك] عن قريب يا... => And I hope [to see you] soon, my...\nوبتمنا إني أشوفك [عن قريب] يا... => And I hope to see you [soon], my...\nوبتمنا إني أشوفك عن قريب [يا]... => And I hope to see you soon, [my]... # ya is a vocative particle often translated contextually as \"my\" when preceding a title or term of endearment\n\n[جلجل]! جلجل! جلجل! جلجل شوف! => [Jaljal]! Jaljal! Jaljal! Jaljal, look!\nجلجل! [جلجل]! جلجل! جلجل شوف! => Jaljal! [Jaljal]! Jaljal! Jaljal, look!\nجلجل! جلجل! [جلجل]! جلجل شوف! => Jaljal! Jaljal! [Jaljal]! Jaljal, look!\nجلجل! جلجل! جلجل! [جلجل] شوف! => Jaljal! Jaljal! Jaljal! [Jaljal], look!\nجلجل! جلجل! جلجل! جلجل [شوف]! => Jaljal! Jaljal! Jaljal! Jaljal, [look]!\n\n[هه]! إيش هذا؟ => [Heh]! What's this?\nهه! [إيش] هذا؟ => Heh! [What]'s this?\nهه! إيش [هذا]؟ => Heh! What's [this]?\n\n[كتبت] اسمي بقلم الرصاص => [I wrote] my name with a pencil\nكتبت [اسمي] بقلم الرصاص => I wrote [my name] with a pencil\nكتبت اسمي [بقلم الرصاص] => I wrote my name [with a pencil]\nكتبت اسمي [بقلم] الرصاص => with a pen # using custom translation to show the meaning of qalam + bi\nكتبت اسمي بقلم [الرصاص] => lead # custom translation for ar-rasas (lead/graphite)\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[تن تن]! مضبوط، حلو كتير. => [Tan Tan]! That's right, very nice.\nتن تن! [مضبوط]، حلو كتير. => Tan Tan! [That's right], very nice.\nتن تن! مضبوط، [حلو] كتير. => Tan Tan! That's right, very [nice]\nتن تن! مضبوط، حلو [كتير]. => Tan Tan! That's right, [very] nice\n\n[خطك] ممتاز يا تن تن. => [Your handwriting] is excellent, Tan Tan.\nخطك [ممتاز] يا تن تن. => Your handwriting is [excellent], Tan Tan.\nخطك ممتاز يا [تن تن] => Your handwriting is excellent, [Tan Tan]\n\n[شو] بتعمل؟ => [What] are you doing?\nشو [بتعمل]؟ => What [are you doing]?\n\n[بكتب] رسالة لصديقي => [I'm writing] a letter to my friend\nبكتب [رسالة] لصديقي => I'm writing [a letter] to my friend\nبكتب رسالة [لصديقي] => I'm writing a letter [to my friend]\n\n[تن تن]، بدك إشي؟ => [Tan Tan], do you need anything?\nتن تن، [بدك] إشي؟ => Tan Tan, [do you need] anything?\nتن تن، بدك [إشي]؟ => Tan Tan, do you need [anything]?\n\n[بدك] مساعدة؟ => [Do you need] help?\nبدك [مساعدة]؟ => Do you need [help]?\n\n[لا] شكراً يا تن تن. => [No], thanks, Tan Tan.\nلا [شكراً] يا تن تن. => No, [thanks], Tan Tan.\nلا شكراً يا [تن تن]. => No, thanks, [Tan Tan].\n\n[تن تن]، إنت مش بتحبي الكتابة؟ => [Tan Tan], don't you like writing?\nتن تن، [إنت] مش بتحبي الكتابة؟ => Tan Tan, don't [you] like writing?\nتن تن، إنت [مش] بتحبي الكتابة؟ => Tan Tan, [don't] you like writing?\nتن تن، إنت مش [بتحبي] الكتابة؟ => Tan Tan, don't you [like] writing?\nتن تن، إنت مش بتحبي [الكتابة]؟ => Tan Tan, don't you like [writing]?\n\n[شو رأيك] تجربي تكتبي اسمك => [How about] you try writing your name\nشو رأيك [تجربي] تكتبي اسمك => How about [you try] writing your name\nشو رأيك تجربي [تكتبي] اسمك => How about you try [writing] your name\nشو رأيك تجربي تكتبي [اسمك] => How about you try writing [your name]\n\nبأقلام [التلوين] هالمرة؟ => with [coloring] pens this time?\nبأقلام التلوين [هالمرة]؟ => with coloring pens [this time]? # هالمرة is a demonstrative phrase meaning \"this time\"\n\n[آه]! فكرة رائعة! => [Ah]! Great idea!\nآه! [فكرة] رائعة! => Ah! Great [idea]!\nآه! فكرة [رائعة]! => Ah! [Great] idea!\n\n[أنا] كتير بحب أقلام التلوين. => [I] really love coloring pens.\nأنا [كتير] بحب أقلام التلوين. => I [really] love coloring pens.\nأنا كتير [بحب] أقلام التلوين. => I really [love] coloring pens.\nأنا كتير بحب [أقلام] التلوين. => I really love coloring [pens]\nأنا كتير بحب أقلام [التلوين]. => I really love [coloring] pens\n\n[هسا] برجع. => I'll be [right] back.\nهسا [برجع]. => I'll be back # \"برجع\" functions as \"I will return\" or \"I'm coming back\"\n\n[جلجل]! جلجل! جلجل! => [Jaljal]! Jaljal! Jaljal!\nجلجل! [جلجل]! جلجل! => Jaljal! [Jaljal]! Jaljal!\nجلجل! جلجل! [جلجل]! => Jaljal! Jaljal! [Jaljal]!\n\n[شوف] ما أسرعني! كتبت اسمي => [Look] how fast I was! I wrote my name\nشوف [ما أسرعني]! كتبت اسمي => Look [how fast I was]! I wrote my name\nشوف ما أسرعني! [كتبت] اسمي => Look how fast I was! [I wrote] my name\nشوف ما أسرعني! كتبت [اسمي] => Look how fast I was! I wrote [my name]\n\n[بالألوان] باللون البرتقالي. => [in colors], in orange.\nبالألوان [باللون] البرتقالي. => in the color, in\nبالألوان باللون [البرتقالي]. => in colors, in [orange]\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[رجعتي] بسرعة يا تن تن. => [You came back] so fast, Tan Tan.\nرجعتي [بسرعة] يا تن تن. => You came back [so fast], Tan Tan.\nرجعتي بسرعة [يا] تن تن. => vocative particle\nرجعتي بسرعة يا [تن تن]. => You came back so fast, [Tan Tan].\n\n[إنت] سريعة كتير يا تن تن. => [You are] very fast, Tan Tan.\nإنت [سريعة] كتير يا تن تن. => You are [fast], Tan Tan.\nإنت سريعة [كتير] يا تن تن. => You are [very] fast, Tan Tan.\nإنت سريعة كتير يا [تن تن]. => You are very fast, [Tan Tan].\n\n[خطك] حلو كتير، حلو => [Your handwriting] is very nice, nice\nخطك [حلو] كتير، حلو => Your handwriting is [nice], nice\nخطك حلو [كتير]، حلو => Your handwriting is [very] nice, nice\nخطك حلو كتير، [حلو] => Your handwriting is very nice, [nice]\n\n[والألوان] كمان حلوة. إنت رائعة. => [and the colors] are nice too. You're wonderful.\nوالألوان [كمان] حلوة. إنت رائعة. => and the colors are nice [too]. You're wonderful.\nوالألوان كمان [حلوة]. إنت رائعة. => and the colors are [nice] too. You're wonderful.\nوالألوان كمان حلوة. [إنت] رائعة. => and the colors are nice too. [You're] wonderful.\nوالألوان كمان حلوة. إنت [رائعة]. => and the colors are nice too. You're [wonderful].\n\n[لو سمحتي]، => [Please],\n\n[بصير] تخليني أكمل رسالتي؟ => [could you] let me finish my letter?\nبصير [تخليني] أكمل رسالتي؟ => could you [let me] finish my letter?\nبصير تخليني [أكمل] رسالتي؟ => could you let me [finish] my letter?\nبصير تخليني أكمل [رسالتي]؟ => could you let me finish [my letter]?\n\n[خليني] أساعدك => [Let me] help you\nخليني [أساعدك] => Let me [help you]\n\n[تن تن]، أنا قربت أخلص. بس شوي. => [Tan Tan], I'm almost done. Just a bit.\nتن تن، [أنا] قربت أخلص. بس شوي. => Tan Tan, [I]'m almost done. Just a bit.\nتن تن، أنا [قربت] أخلص. بس شوي. => Tan Tan, I'm [almost] done. Just a bit.\nتن تن، أنا قربت [أخلص]. بس شوي. => Tan Tan, I'm almost [done]. Just a bit.\nتن تن، أنا قربت أخلص. [بس] شوي. => Tan Tan, I'm almost done. [Just] a bit.\nتن تن، أنا قربت أخلص. بس [شوي]. => Tan Tan, I'm almost done. Just [a bit].\n\n[خليني] شوي بس. => Just [leave me] for a bit.\nخليني [شوي] بس. => Just leave me [for a bit].\nخليني شوي [بس]. => [Just] leave me for a bit.\n\n[صديقي]... => [My friend]...\n\n[تن تن]، عندي فكرة => [Tan Tan], I have an idea\nتن تن، [عندي] فكرة => Tan Tan, [I have] an idea\nتن تن، عندي [فكرة] => Tan Tan, I have [an idea]\n\n[رح] تخليكي تنبسطي كتير. => that [will] make you very happy.\nرح [تخليكي] تنبسطي كتير. => that will [make you] very happy. # تخلي translates to \"make\" and the suffix -ki translates to \"you\"\nرح تخليكي [تنبسطي] كتير. => that will make you very [happy] # تنبسطي is a verb meaning \"be happy\" or \"rejoice\"\nرح تخليكي تنبسطي [كتير]. => that will make you [very] happy.\n\n[شو] هي؟ => [What] is it?\nشو [هي]؟ => What [is it]?\n\n[شو رأيك] تكتبي اسمك => [How about] you write your name\nشو رأيك [تكتبي] اسمك => How about [you write] your name\nشو رأيك تكتبي [اسمك] => How about you write [your name]\n\n[بمكعبات] الأحرف الأبجدية الجديدة؟ => [with] the new alphabet letter [blocks]?\nبمكعبات [الأحرف] الأبجدية الجديدة؟ => letters # plural of حرف\nبمكعبات الأحرف [الأبجدية] الجديدة؟ => with the new [alphabet] letter blocks?\nبمكعبات الأحرف الأبجدية [الجديدة]؟ => with the [new] alphabet letter blocks?\n\n[آه]! مكعبات الأحرف! يا سلام! => [Ah]! Letter blocks! Oh wow!\nآه! [مكعبات] الأحرف! يا سلام! => Ah! Letter [blocks]! Oh wow!\nآه! مكعبات [الأحرف]! يا سلام! => Ah! [Letter] blocks! Oh wow!\nآه! مكعبات الأحرف! [يا سلام]! => Ah! Letter blocks! [Oh wow]!\n\n[فكرة] ممتازة! أنا بحب المكعبات. => Excellent [idea]! I love blocks.\nفكرة [ممتازة]! أنا بحب المكعبات. => [Excellent] idea! I love blocks.\nفكرة ممتازة! [أنا] بحب المكعبات. => Excellent idea! [I] love blocks.\nفكرة ممتازة! أنا [بحب] المكعبات. => Excellent idea! I [love] blocks.\nفكرة ممتازة! أنا بحب [المكعبات]. => Excellent idea! I love [blocks].\n\n[أخيراً] راحت. => [Finally], she's gone.\nأخيراً [راحت]. => Finally, [she's gone].\n\n[خليني] أكمل بسرعة قبل ما تيجي. => [Let me] finish quickly before she comes.\nخليني [أكمل] بسرعة قبل ما تيجي. => Let me [finish] quickly before she comes.\nخليني أكمل [بسرعة] قبل ما تيجي. => Let me finish [quickly] before she comes.\nخليني أكمل بسرعة [قبل ما] تيجي. => Let me finish quickly [before] she comes.\nخليني أكمل بسرعة قبل ما [تيجي]. => Let me finish quickly before [she comes] # تيجي contains both the verb and the feminine subject marker\n\nالكلمة [الأخيرة]: => The [last] word: # \"الكلمة\" is \"the word\" but the English sentence places \"last\" in between, so we use a custom mapping for the noun. \"الأخيرة\" translates directly to \"last\".\n\n[سأراك] قريباً يا صديقي العزيز. => [I will see you] soon, my dear friend.\nسأراك [قريباً] يا صديقي العزيز. => I will see you [soon], my dear friend.\nسأراك قريباً يا [صديقي] العزيز. => my friend\nسأراك قريباً يا صديقي [العزيز]. => I will see you soon, my [dear] friend.\n\n[هاها]! => [Haha]!\n\n[أسهل] إشي الواحد يكتب اسمه بالمكعبات => [The easiest] thing is writing your name with blocks\nأسهل [إشي] الواحد يكتب اسمه بالمكعبات => The easiest [thing] is writing your name with blocks\nأسهل إشي [الواحد] يكتب اسمه بالمكعبات => one, a person # \"al-wahed\" literally means \"the one/someone\", used here as an indefinite subject\nأسهل إشي الواحد [يكتب] اسمه بالمكعبات => The easiest thing [is writing] your name with blocks\nأسهل إشي الواحد يكتب [اسمه] بالمكعبات => The easiest thing is writing [your name] with blocks\nأسهل إشي الواحد يكتب اسمه [بالمكعبات] => The easiest thing is writing your name [with blocks]\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[عن جد] إنت كتبتيهم؟ يا عيني على الألوان! => Did you [really] write them? Oh, look at the colors!\nعن جد [إنت] كتبتيهم؟ يا عيني على الألوان! => Did [you] really write them? Oh, look at the colors!\nعن جد إنت [كتبتيهم]؟ يا عيني على الألوان! => Did you really [write them]? Oh, look at the colors!\nعن جد إنت كتبتيهم؟ [يا عيني] على الألوان! => Did you really write them? [Oh], look at the colors!\nعن جد إنت كتبتيهم؟ يا عيني [على] الألوان! => look at # \"على\" functions as a pointer to the object of admiration here\nعن جد إنت كتبتيهم؟ يا عيني على [الألوان]! => Did you really write them? Oh, look at [the colors]!\n\n[ألوان] كتير حلوة يا تن تن => Very nice [colors], Tan Tan.\nألوان [كتير] حلوة يا تن تن => [Very] nice colors, Tan Tan.\nألوان كتير [حلوة] يا تن تن => Very [nice] colors, Tan Tan.\nألوان كتير حلوة [يا تن تن] => Very nice colors, [Tan Tan]\n\n[خليني] أشوف. أوه! ألوان برتقالي... => [Let me] see. Oh! Orange colors...\nخليني [أشوف]. أوه! ألوان برتقالي... => Let me [see]. Oh! Orange colors...\nخليني أشوف. [أوه]! ألوان برتقالي... => Let me see. [Oh]! Orange colors...\nخليني أشوف. أوه! [ألوان] برتقالي... => Let me see. Oh! Orange [colors]...\nخليني أشوف. أوه! ألوان [برتقالي]... => Let me see. Oh! [Orange] colors...\n\n[جميلة] جميلة. => [Beautiful], beautiful.\nجميلة [جميلة]. => Beautiful, [beautiful.]\n\n[أحرف]... تاء نون... => [Letters]... T N...\nأحرف... [تاء] نون... => Letters... [T] N...\nأحرف... تاء [نون]... => Letters... T [N]...\n\n[ألوانها] كمان كتير حلوة. => [Their colors] are very nice too.\nألوانها [كمان] كتير حلوة. => Their colors are very nice [too].\nألوانها كمان [كتير] حلوة. => Their colors are [very] nice too.\nألوانها كمان كتير [حلوة]. => Their colors are very [nice] too.\n\n[تن] تن! تن تن! تن تن! تن تن! => [Tan] Tan! Tan Tan! Tan Tan! Tan Tan!\nتن [تن]! تن تن! تن تن! تن تن! => Tan [Tan]! Tan Tan! Tan Tan! Tan Tan!\nتن تن! [تن] تن! تن تن! تن تن! => Tan Tan! [Tan] Tan! Tan Tan! Tan Tan!\nتن تن! تن [تن]! تن تن! تن تن! => Tan Tan! Tan [Tan]! Tan Tan! Tan Tan!\nتن تن! تن تن! [تن] تن! تن تن! => Tan Tan! Tan Tan! [Tan] Tan! Tan Tan!\nتن تن! تن تن! تن [تن]! تن تن! => Tan Tan! Tan Tan! Tan [Tan]! Tan Tan!\nتن تن! تن تن! تن تن! [تن] تن! => Tan Tan! Tan Tan! Tan Tan! [Tan] Tan!\nتن تن! تن تن! تن تن! تن [تن]! => Tan Tan! Tan Tan! Tan Tan! Tan [Tan]!\n\n[أنا] بحب أكتب اسمي يا جلجل. => [I] love writing my name, Jaljal.\nأنا [بحب] أكتب اسمي يا جلجل. => I [love] writing my name, Jaljal.\nأنا بحب [أكتب] اسمي يا جلجل. => I love [writing] my name, Jaljal.\nأنا بحب أكتب [اسمي] يا جلجل. => I love writing [my name], Jaljal.\nأنا بحب أكتب اسمي [يا] جلجل. => vocative particle # Arabic particle used for calling or addressing someone\nأنا بحب أكتب اسمي يا [جلجل]. => I love writing my name, [Jaljal]\n\n[تاء] نون، تن تن! => [T] N, Tan Tan!\nتاء [نون]، تن تن! => T [N], Tan Tan!\nتاء نون، [تن] تن! => T N, [Tan] Tan!\nتاء نون، تن [تن]! => T N, Tan [Tan]!\n\n[تن تن]! إيش عم تعملي؟ تن تن! => [Tan Tan]! What are you doing? Tan Tan!\nتن تن! [إيش] عم تعملي؟ تن تن! => Tan Tan! [What] are you doing? Tan Tan!\nتن تن! إيش [عم تعملي]؟ تن تن! => Tan Tan! What [are you doing]? Tan Tan!\nتن تن! إيش عم تعملي؟ [تن تن]! => Tan Tan! What are you doing? [Tan Tan]!\n\n[تن تن] ضيعتلي الرسالة => [Tan Tan], you ruined the letter\nتن تن [ضيعتلي] الرسالة => Tan Tan, [you ruined] the letter\nتن تن ضيعتلي [الرسالة] => Tan Tan, you ruined [the letter]\n\n[اللي] كنت بكتب فيها! => [that] I was writing!\nاللي [كنت] بكتب فيها! => that [I was] writing!\nاللي كنت [بكتب] فيها! => that I was [writing]!\nاللي كنت بكتب [فيها]! => in it # \"fiiha\" literally means \"in it\" (feminine), referring to the book/journal being written in.\n\n[تاء] نون، تن تن! تاء نون، تن تن! => [T] N, Tan Tan! T N, Tan Tan!\nتاء [نون]، تن تن! تاء نون، تن تن! => T [N], Tan Tan! T N, Tan Tan!\nتاء نون، [تن] تن! تاء نون، تن تن! => T N, [Tan] Tan! T N, Tan Tan!\nتاء نون، تن [تن]! تاء نون، تن تن! => T N, Tan [Tan]! T N, Tan Tan!\nتاء نون، تن تن! [تاء] نون، تن تن! => T N, Tan Tan! [T] N, Tan Tan!\nتاء نون، تن تن! تاء [نون]، تن تن! => T N, Tan Tan! T [N], Tan Tan!\nتاء نون، تن تن! تاء نون، [تن] تن! => T N, Tan Tan! T N, [Tan] Tan!\nتاء نون، تن تن! تاء نون، تن [تن]! => T N, Tan Tan! T N, Tan [Tan]! # تاء and نون are the names of the Arabic letters T and N respectively\n\n[أنا] بحب أكتب اسمي! => [I] love writing my name!\nأنا [بحب] أكتب اسمي! => I [love] writing my name!\nأنا بحب [أكتب] اسمي! => I love [writing] my name!\nأنا بحب أكتب [اسمي]! => I love writing [my name]!\n\n"
+    "phrases_with_token_translations": "[و]بتمنا إني أشوفك عن قريب يا... => [And] I hope to see you soon, my...\nو[بتمنا] إني أشوفك عن قريب يا... => And [I hope] to see you soon, my...\nوبتمنا [إني] أشوفك عن قريب يا... => that I\nوبتمنا إني [أشوفك] عن قريب يا... => And I hope [to see you] soon, my...\nوبتمنا إني أشوفك [عن قريب] يا... => And I hope to see you [soon], my...\nوبتمنا إني أشوفك عن قريب [يا]... => And I hope to see you soon, [my]... # ya is a vocative particle often translated contextually as \"my\" when preceding a title or term of endearment\n\n[جلجل]! جلجل! جلجل! جلجل شوف! => [Jaljal]! Jaljal! Jaljal! Jaljal, look!\nجلجل! [جلجل]! جلجل! جلجل شوف! => Jaljal! [Jaljal]! Jaljal! Jaljal, look!\nجلجل! جلجل! [جلجل]! جلجل شوف! => Jaljal! Jaljal! [Jaljal]! Jaljal, look!\nجلجل! جلجل! جلجل! [جلجل] شوف! => Jaljal! Jaljal! Jaljal! [Jaljal], look!\nجلجل! جلجل! جلجل! جلجل [شوف]! => Jaljal! Jaljal! Jaljal! Jaljal, [look]!\n\n[هه]! إيش هذا؟ => [Heh]! What's this?\nهه! [إيش] هذا؟ => Heh! [What]'s this?\nهه! إيش [هذا]؟ => Heh! What's [this]?\n\n[كتبت] اسمي بقلم الرصاص => [I wrote] my name with a pencil\nكتبت [اسمي] بقلم الرصاص => I wrote [my name] with a pencil\nكتبت اسمي [بقلم الرصاص] => I wrote my name [with a pencil]\nكتبت اسمي [بقلم] الرصاص => with a pen # using custom translation to show the meaning of qalam + bi\nكتبت اسمي بقلم [الرصاص] => lead # custom translation for ar-rasas (lead/graphite)\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[تن تن]! مضبوط، حلو كتير. => [Tan Tan]! That's right, very nice.\nتن تن! [مضبوط]، حلو كتير. => Tan Tan! [That's right], very nice.\nتن تن! مضبوط، [حلو] كتير. => Tan Tan! That's right, very [nice]\nتن تن! مضبوط، حلو [كتير]. => Tan Tan! That's right, [very] nice\n\n[خطك] ممتاز يا تن تن. => [Your handwriting] is excellent, Tan Tan.\nخطك [ممتاز] يا تن تن. => Your handwriting is [excellent], Tan Tan.\nخطك ممتاز يا [تن تن] => Your handwriting is excellent, [Tan Tan]\n\n[شو] بتعمل؟ => [What] are you doing?\nشو [بتعمل]؟ => What [are you doing]?\n\n[بكتب] رسالة لصديقي => [I'm writing] a letter to my friend\nبكتب [رسالة] لصديقي => I'm writing [a letter] to my friend\nبكتب رسالة [لصديقي] => I'm writing a letter [to my friend]\n\n[تن تن]، بدك إشي؟ => [Tan Tan], do you need anything?\nتن تن، [بدك] إشي؟ => Tan Tan, [do you need] anything?\nتن تن، بدك [إشي]؟ => Tan Tan, do you need [anything]?\n\n[بدك] مساعدة؟ => [Do you need] help?\nبدك [مساعدة]؟ => Do you need [help]?\n\n[لا] شكراً يا تن تن. => [No], thanks, Tan Tan.\nلا [شكراً] يا تن تن. => No, [thanks], Tan Tan.\nلا شكراً يا [تن تن]. => No, thanks, [Tan Tan].\n\n[تن تن]، إنت مش بتحبي الكتابة؟ => [Tan Tan], don't you like writing?\nتن تن، [إنت] مش بتحبي الكتابة؟ => Tan Tan, don't [you] like writing?\nتن تن، إنت [مش] بتحبي الكتابة؟ => Tan Tan, [don't] you like writing?\nتن تن، إنت مش [بتحبي] الكتابة؟ => Tan Tan, don't you [like] writing?\nتن تن، إنت مش بتحبي [الكتابة]؟ => Tan Tan, don't you like [writing]?\n\n[شو رأيك] تجربي تكتبي اسمك => [How about] you try writing your name\nشو رأيك [تجربي] تكتبي اسمك => How about [you try] writing your name\nشو رأيك تجربي [تكتبي] اسمك => How about you try [writing] your name\nشو رأيك تجربي تكتبي [اسمك] => How about you try writing [your name]\n\nبأقلام [التلوين] هالمرة؟ => with [coloring] pens this time?\nبأقلام التلوين [هالمرة]؟ => with coloring pens [this time]? # هالمرة is a demonstrative phrase meaning \"this time\"\n\n[آه]! فكرة رائعة! => [Ah]! Great idea!\nآه! [فكرة] رائعة! => Ah! Great [idea]!\nآه! فكرة [رائعة]! => Ah! [Great] idea!\n\n[أنا] كتير بحب أقلام التلوين. => [I] really love coloring pens.\nأنا [كتير] بحب أقلام التلوين. => I [really] love coloring pens.\nأنا كتير [بحب] أقلام التلوين. => I really [love] coloring pens.\nأنا كتير بحب [أقلام] التلوين. => I really love coloring [pens]\nأنا كتير بحب أقلام [التلوين]. => I really love [coloring] pens\n\n[هسا] برجع. => I'll be [right] back.\nهسا [برجع]. => I'll be back # \"برجع\" functions as \"I will return\" or \"I'm coming back\"\n\n[جلجل]! جلجل! جلجل! => [Jaljal]! Jaljal! Jaljal!\nجلجل! [جلجل]! جلجل! => Jaljal! [Jaljal]! Jaljal!\nجلجل! جلجل! [جلجل]! => Jaljal! Jaljal! [Jaljal]!\n\n[شوف] ما أسرعني! كتبت اسمي => [Look] how fast I was! I wrote my name\nشوف [ما أسرعني]! كتبت اسمي => Look [how fast I was]! I wrote my name\nشوف ما أسرعني! [كتبت] اسمي => Look how fast I was! [I wrote] my name\nشوف ما أسرعني! كتبت [اسمي] => Look how fast I was! I wrote [my name]\n\n[بالألوان] باللون البرتقالي. => [in colors], in orange.\nبالألوان [باللون] البرتقالي. => in the color, in\nبالألوان باللون [البرتقالي]. => in colors, in [orange]\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[رجعتي] بسرعة يا تن تن. => [You came back] so fast, Tan Tan.\nرجعتي [بسرعة] يا تن تن. => You came back [so fast], Tan Tan.\nرجعتي بسرعة [يا] تن تن. => vocative particle\nرجعتي بسرعة يا [تن تن]. => You came back so fast, [Tan Tan].\n\n[إنت] سريعة كتير يا تن تن. => [You are] very fast, Tan Tan.\nإنت [سريعة] كتير يا تن تن. => You are [fast], Tan Tan.\nإنت سريعة [كتير] يا تن تن. => You are [very] fast, Tan Tan.\nإنت سريعة كتير يا [تن تن]. => You are very fast, [Tan Tan].\n\n[خطك] حلو كتير، حلو => [Your handwriting] is very nice, nice\nخطك [حلو] كتير، حلو => Your handwriting is [nice], nice\nخطك حلو [كتير]، حلو => Your handwriting is [very] nice, nice\nخطك حلو كتير، [حلو] => Your handwriting is very nice, [nice]\n\n[والألوان] كمان حلوة. إنت رائعة. => [and the colors] are nice too. You're wonderful.\nوالألوان [كمان] حلوة. إنت رائعة. => and the colors are nice [too]. You're wonderful.\nوالألوان كمان [حلوة]. إنت رائعة. => and the colors are [nice] too. You're wonderful.\nوالألوان كمان حلوة. [إنت] رائعة. => and the colors are nice too. [You're] wonderful.\nوالألوان كمان حلوة. إنت [رائعة]. => and the colors are nice too. You're [wonderful].\n\n[لو سمحتي]، => [Please],\n\n[بصير] تخليني أكمل رسالتي؟ => [could you] let me finish my letter?\nبصير [تخليني] أكمل رسالتي؟ => could you [let me] finish my letter?\nبصير تخليني [أكمل] رسالتي؟ => could you let me [finish] my letter?\nبصير تخليني أكمل [رسالتي]؟ => could you let me finish [my letter]?\n\n[خليني] أساعدك => [Let me] help you\nخليني [أساعدك] => Let me [help you]\n\n[تن تن]، أنا قربت أخلص. بس شوي. => [Tan Tan], I'm almost done. Just a bit.\nتن تن، [أنا] قربت أخلص. بس شوي. => Tan Tan, [I]'m almost done. Just a bit.\nتن تن، أنا [قربت] أخلص. بس شوي. => Tan Tan, I'm [almost] done. Just a bit.\nتن تن، أنا قربت [أخلص]. بس شوي. => Tan Tan, I'm almost [done]. Just a bit.\nتن تن، أنا قربت أخلص. [بس] شوي. => Tan Tan, I'm almost done. [Just] a bit.\nتن تن، أنا قربت أخلص. بس [شوي]. => Tan Tan, I'm almost done. Just [a bit].\n\n[خليني] شوي بس. => Just [leave me] for a bit.\nخليني [شوي] بس. => Just leave me [for a bit].\nخليني شوي [بس]. => [Just] leave me for a bit.\n\n[صديقي]... => [My friend]...\n\n[تن تن]، عندي فكرة => [Tan Tan], I have an idea\nتن تن، [عندي] فكرة => Tan Tan, [I have] an idea\nتن تن، عندي [فكرة] => Tan Tan, I have [an idea]\n\n[رح] تخليكي تنبسطي كتير. => that [will] make you very happy.\nرح [تخليكي] تنبسطي كتير. => that will [make you] very happy. # تخلي translates to \"make\" and the suffix -ki translates to \"you\"\nرح تخليكي [تنبسطي] كتير. => that will make you very [happy] # تنبسطي is a verb meaning \"be happy\" or \"rejoice\"\nرح تخليكي تنبسطي [كتير]. => that will make you [very] happy.\n\n[شو] هي؟ => [What] is it?\nشو [هي]؟ => What [is it]?\n\n[شو رأيك] تكتبي اسمك => [How about] you write your name\nشو رأيك [تكتبي] اسمك => How about [you write] your name\nشو رأيك تكتبي [اسمك] => How about you write [your name]\n\n[بمكعبات] الأحرف الأبجدية الجديدة؟ => [with] the new alphabet letter [blocks]?\nبمكعبات [الأحرف] الأبجدية الجديدة؟ => letters # plural of حرف\nبمكعبات الأحرف [الأبجدية] الجديدة؟ => with the new [alphabet] letter blocks?\nبمكعبات الأحرف الأبجدية [الجديدة]؟ => with the [new] alphabet letter blocks?\n\n[آه]! مكعبات الأحرف! يا سلام! => [Ah]! Letter blocks! Oh wow!\nآه! [مكعبات] الأحرف! يا سلام! => Ah! Letter [blocks]! Oh wow!\nآه! مكعبات [الأحرف]! يا سلام! => Ah! [Letter] blocks! Oh wow!\nآه! مكعبات الأحرف! [يا سلام]! => Ah! Letter blocks! [Oh wow]!\n\n[فكرة] ممتازة! أنا بحب المكعبات. => Excellent [idea]! I love blocks.\nفكرة [ممتازة]! أنا بحب المكعبات. => [Excellent] idea! I love blocks.\nفكرة ممتازة! [أنا] بحب المكعبات. => Excellent idea! [I] love blocks.\nفكرة ممتازة! أنا [بحب] المكعبات. => Excellent idea! I [love] blocks.\nفكرة ممتازة! أنا بحب [المكعبات]. => Excellent idea! I love [blocks].\n\n[أخيراً] راحت. => [Finally], she's gone.\nأخيراً [راحت]. => Finally, [she's gone].\n\n[خليني] أكمل بسرعة قبل ما تيجي. => [Let me] finish quickly before she comes.\nخليني [أكمل] بسرعة قبل ما تيجي. => Let me [finish] quickly before she comes.\nخليني أكمل [بسرعة] قبل ما تيجي. => Let me finish [quickly] before she comes.\nخليني أكمل بسرعة [قبل ما] تيجي. => Let me finish quickly [before] she comes.\nخليني أكمل بسرعة قبل ما [تيجي]. => Let me finish quickly before [she comes] # تيجي contains both the verb and the feminine subject marker\n\nالكلمة [الأخيرة]: => The [last] word: # \"الكلمة\" is \"the word\" but the English sentence places \"last\" in between, so we use a custom mapping for the noun. \"الأخيرة\" translates directly to \"last\".\n\n[سأراك] قريباً يا صديقي العزيز. => [I will see you] soon, my dear friend.\nسأراك [قريباً] يا صديقي العزيز. => I will see you [soon], my dear friend.\nسأراك قريباً يا [صديقي] العزيز. => my friend\nسأراك قريباً يا صديقي [العزيز]. => I will see you soon, my [dear] friend.\n\n[هاها]! => [Haha]!\n\n[أسهل] إشي الواحد يكتب اسمه بالمكعبات => [The easiest] thing is writing your name with blocks\nأسهل [إشي] الواحد يكتب اسمه بالمكعبات => The easiest [thing] is writing your name with blocks\nأسهل إشي [الواحد] يكتب اسمه بالمكعبات => one, a person # \"al-wahed\" literally means \"the one/someone\", used here as an indefinite subject\nأسهل إشي الواحد [يكتب] اسمه بالمكعبات => The easiest thing [is writing] your name with blocks\nأسهل إشي الواحد يكتب [اسمه] بالمكعبات => The easiest thing is writing [your name] with blocks\nأسهل إشي الواحد يكتب اسمه [بالمكعبات] => The easiest thing is writing your name [with blocks]\n\n[تن] تن! تن تن! => [Tan] Tan! Tan Tan!\nتن [تن]! تن تن! => Tan [Tan]! Tan Tan!\nتن تن! [تن] تن! => Tan Tan! [Tan] Tan!\nتن تن! تن [تن]! => Tan Tan! Tan [Tan]!\n\n[عن جد] إنت كتبتيهم؟ يا عيني على الألوان! => Did you [really] write them? Oh, look at the colors!\nعن جد [إنت] كتبتيهم؟ يا عيني على الألوان! => Did [you] really write them? Oh, look at the colors!\nعن جد إنت [كتبتيهم]؟ يا عيني على الألوان! => Did you really [write them]? Oh, look at the colors!\nعن جد إنت كتبتيهم؟ [يا عيني] على الألوان! => Did you really write them? [Oh], look at the colors!\nعن جد إنت كتبتيهم؟ يا عيني [على] الألوان! => look at # \"على\" functions as a pointer to the object of admiration here\nعن جد إنت كتبتيهم؟ يا عيني على [الألوان]! => Did you really write them? Oh, look at [the colors]!\n\n[ألوان] كتير حلوة يا تن تن => Very nice [colors], Tan Tan.\nألوان [كتير] حلوة يا تن تن => [Very] nice colors, Tan Tan.\nألوان كتير [حلوة] يا تن تن => Very [nice] colors, Tan Tan.\nألوان كتير حلوة [يا تن تن] => Very nice colors, [Tan Tan]\n\n[خليني] أشوف. أوه! ألوان برتقالي... => [Let me] see. Oh! Orange colors...\nخليني [أشوف]. أوه! ألوان برتقالي... => Let me [see]. Oh! Orange colors...\nخليني أشوف. [أوه]! ألوان برتقالي... => Let me see. [Oh]! Orange colors...\nخليني أشوف. أوه! [ألوان] برتقالي... => Let me see. Oh! Orange [colors]...\nخليني أشوف. أوه! ألوان [برتقالي]... => Let me see. Oh! [Orange] colors...\n\n[جميلة] جميلة. => [Beautiful], beautiful.\nجميلة [جميلة]. => Beautiful, [beautiful.]\n\n[أحرف]... تاء نون... => [Letters]... T N...\nأحرف... [تاء] نون... => Letters... [T] N...\nأحرف... تاء [نون]... => Letters... T [N]...\n\n[ألوانها] كمان كتير حلوة. => [Their colors] are very nice too.\nألوانها [كمان] كتير حلوة. => Their colors are very nice [too].\nألوانها كمان [كتير] حلوة. => Their colors are [very] nice too.\nألوانها كمان كتير [حلوة]. => Their colors are very [nice] too.\n\n[تن] تن! تن تن! تن تن! تن تن! => [Tan] Tan! Tan Tan! Tan Tan! Tan Tan!\nتن [تن]! تن تن! تن تن! تن تن! => Tan [Tan]! Tan Tan! Tan Tan! Tan Tan!\nتن تن! [تن] تن! تن تن! تن تن! => Tan Tan! [Tan] Tan! Tan Tan! Tan Tan!\nتن تن! تن [تن]! تن تن! تن تن! => Tan Tan! Tan [Tan]! Tan Tan! Tan Tan!\nتن تن! تن تن! [تن] تن! تن تن! => Tan Tan! Tan Tan! [Tan] Tan! Tan Tan!\nتن تن! تن تن! تن [تن]! تن تن! => Tan Tan! Tan Tan! Tan [Tan]! Tan Tan!\nتن تن! تن تن! تن تن! [تن] تن! => Tan Tan! Tan Tan! Tan Tan! [Tan] Tan!\nتن تن! تن تن! تن تن! تن [تن]! => Tan Tan! Tan Tan! Tan Tan! Tan [Tan]!\n\n[أنا] بحب أكتب اسمي يا جلجل. => [I] love writing my name, Jaljal.\nأنا [بحب] أكتب اسمي يا جلجل. => I [love] writing my name, Jaljal.\nأنا بحب [أكتب] اسمي يا جلجل. => I love [writing] my name, Jaljal.\nأنا بحب أكتب [اسمي] يا جلجل. => I love writing [my name], Jaljal.\nأنا بحب أكتب اسمي [يا] جلجل. => vocative particle # Arabic particle used for calling or addressing someone\nأنا بحب أكتب اسمي يا [جلجل]. => I love writing my name, [Jaljal]\n\n[تاء] نون، تن تن! => [T] N, Tan Tan!\nتاء [نون]، تن تن! => T [N], Tan Tan!\nتاء نون، [تن] تن! => T N, [Tan] Tan!\nتاء نون، تن [تن]! => T N, Tan [Tan]!\n\n[تن تن]! إيش عم تعملي؟ تن تن! => [Tan Tan]! What are you doing? Tan Tan!\nتن تن! [إيش] عم تعملي؟ تن تن! => Tan Tan! [What] are you doing? Tan Tan!\nتن تن! إيش [عم تعملي]؟ تن تن! => Tan Tan! What [are you doing]? Tan Tan!\nتن تن! إيش عم تعملي؟ [تن تن]! => Tan Tan! What are you doing? [Tan Tan]!\n\n[تن تن] ضيعتلي الرسالة => [Tan Tan], you ruined the letter\nتن تن [ضيعتلي] الرسالة => Tan Tan, [you ruined] the letter\nتن تن ضيعتلي [الرسالة] => Tan Tan, you ruined [the letter]\n\n[اللي] كنت بكتب فيها! => [that] I was writing!\nاللي [كنت] بكتب فيها! => that [I was] writing!\nاللي كنت [بكتب] فيها! => that I was [writing]!\nاللي كنت بكتب [فيها]! => in it # \"fiiha\" literally means \"in it\" (feminine), referring to the book/journal being written in.\n\n[تاء] نون، تن تن! تاء نون، تن تن! => [T] N, Tan Tan! T N, Tan Tan!\nتاء [نون]، تن تن! تاء نون، تن تن! => T [N], Tan Tan! T N, Tan Tan!\nتاء نون، [تن] تن! تاء نون، تن تن! => T N, [Tan] Tan! T N, Tan Tan!\nتاء نون، تن [تن]! تاء نون، تن تن! => T N, Tan [Tan]! T N, Tan Tan!\nتاء نون، تن تن! [تاء] نون، تن تن! => T N, Tan Tan! [T] N, Tan Tan!\nتاء نون، تن تن! تاء [نون]، تن تن! => T N, Tan Tan! T [N], Tan Tan!\nتاء نون، تن تن! تاء نون، [تن] تن! => T N, Tan Tan! T N, [Tan] Tan!\nتاء نون، تن تن! تاء نون، تن [تن]! => T N, Tan Tan! T N, Tan [Tan]! # تاء and نون are the names of the Arabic letters T and N respectively\n\n[أنا] بحب أكتب اسمي! => [I] love writing my name!\nأنا [بحب] أكتب اسمي! => I [love] writing my name!\nأنا بحب [أكتب] اسمي! => I love [writing] my name!\nأنا بحب أكتب [اسمي]! => I love writing [my name]!\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "And I hope to see you soon, my...",
+            "words": []
+          },
+          {
+            "text": "Jaljal! Jaljal! Jaljal! Jaljal, look!",
+            "words": []
+          },
+          {
+            "text": "Heh! What's this?",
+            "words": []
+          },
+          {
+            "text": "I wrote my name with a pencil.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! That's right, very nice.",
+            "words": []
+          },
+          {
+            "text": "Your handwriting is excellent, Tan Tan.",
+            "words": []
+          },
+          {
+            "text": "What are you doing?",
+            "words": []
+          },
+          {
+            "text": "I'm writing a letter to my friend.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan, do you need anything?",
+            "words": []
+          },
+          {
+            "text": "Do you need help?",
+            "words": []
+          },
+          {
+            "text": "No, thanks, Tan Tan.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan, don't you like writing?",
+            "words": []
+          },
+          {
+            "text": "How about you try writing your name",
+            "words": []
+          },
+          {
+            "text": "with coloring pens this time?",
+            "words": []
+          },
+          {
+            "text": "Ah! Great idea!",
+            "words": []
+          },
+          {
+            "text": "I really love coloring pens.",
+            "words": []
+          },
+          {
+            "text": "I'll be right back.",
+            "words": []
+          },
+          {
+            "text": "Jaljal! Jaljal! Jaljal!",
+            "words": []
+          },
+          {
+            "text": "Look how fast I was! I wrote my name",
+            "words": []
+          },
+          {
+            "text": "in colors, in orange.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "You came back so fast, Tan Tan.",
+            "words": []
+          },
+          {
+            "text": "You are very fast, Tan Tan.",
+            "words": []
+          },
+          {
+            "text": "Your handwriting is very nice, nice",
+            "words": []
+          },
+          {
+            "text": "and the colors are nice too. You're wonderful.",
+            "words": []
+          },
+          {
+            "text": "Please,",
+            "words": []
+          },
+          {
+            "text": "could you let me finish my letter?",
+            "words": []
+          },
+          {
+            "text": "Let me help you.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan, I'm almost done. Just a bit.",
+            "words": []
+          },
+          {
+            "text": "Just leave me for a bit.",
+            "words": []
+          },
+          {
+            "text": "My friend...",
+            "words": []
+          },
+          {
+            "text": "Tan Tan, I have an idea",
+            "words": []
+          },
+          {
+            "text": "that will make you very happy.",
+            "words": []
+          },
+          {
+            "text": "What is it?",
+            "words": []
+          },
+          {
+            "text": "How about you write your name",
+            "words": []
+          },
+          {
+            "text": "with the new alphabet letter blocks?",
+            "words": []
+          },
+          {
+            "text": "Ah! Letter blocks! Oh wow!",
+            "words": []
+          },
+          {
+            "text": "Excellent idea! I love blocks.",
+            "words": []
+          },
+          {
+            "text": "Finally, she's gone.",
+            "words": []
+          },
+          {
+            "text": "Let me finish quickly before she comes.",
+            "words": []
+          },
+          {
+            "text": "The last word:",
+            "words": []
+          },
+          {
+            "text": "I will see you soon, my dear friend.",
+            "words": []
+          },
+          {
+            "text": "Haha!",
+            "words": []
+          },
+          {
+            "text": "The easiest thing is writing your name with blocks.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "Did you really write them? Oh, look at the colors!",
+            "words": []
+          },
+          {
+            "text": "Very nice colors, Tan Tan.",
+            "words": []
+          },
+          {
+            "text": "Let me see. Oh! Orange colors...",
+            "words": []
+          },
+          {
+            "text": "Beautiful, beautiful.",
+            "words": []
+          },
+          {
+            "text": "Letters... T N...",
+            "words": []
+          },
+          {
+            "text": "Their colors are very nice too.",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! Tan Tan! Tan Tan! Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "I love writing my name, Jaljal.",
+            "words": []
+          },
+          {
+            "text": "T N, Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "Tan Tan! What are you doing? Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "Tan Tan, you ruined the letter",
+            "words": []
+          },
+          {
+            "text": "that I was writing!",
+            "words": []
+          },
+          {
+            "text": "T N, Tan Tan! T N, Tan Tan!",
+            "words": []
+          },
+          {
+            "text": "I love writing my name!",
+            "words": []
+          }
+        ],
+        "lessons": "# التعارف والكتابة الأولى\n00:00.00 وبتمنا إني أشوفك عن قريب يا...\n00:04.00 جلجل! جلجل! جلجل! جلجل شوف!\n00:08.00 هه! إيش هذا؟\n00:10.00 كتبت اسمي بقلم الرصاص.\n00:12.00 تن تن! تن تن!\n00:17.00 تن تن! مضبوط، حلو كتير.\n00:19.00 خطك ممتاز يا تن تن.\n\n# المحادثة والاقتراح الأول\n00:22.00 شو بتعمل؟\n00:24.00 بكتب رسالة لصديقي.\n00:28.00 تن تن، بدك إشي؟\n00:32.00 بدك مساعدة؟\n00:33.00 لا شكراً يا تن تن.\n00:38.00 تن تن، إنت مش بتحبي الكتابة؟\n00:42.00 شو رأيك تجربي تكتبي اسمك\n00:44.00 بأقلام التلوين هالمرة؟\n00:45.00 آه! فكرة رائعة!\n00:47.00 أنا كتير بحب أقلام التلوين.\n\n# تجربة الألوان والمديح\n00:48.00 هسا برجع.\n01:00.00 جلجل! جلجل! جلجل!\n01:04.00 شوف ما أسرعني! كتبت اسمي\n01:06.00 بالألوان باللون البرتقالي.\n01:09.00 تن تن! تن تن!\n01:12.00 رجعتي بسرعة يا تن تن.\n01:14.00 إنت سريعة كتير يا تن تن.\n01:17.00 خطك حلو كتير، حلو\n01:19.00 والألوان كمان حلوة. إنت رائعة.\n\n# محاولة إكمال الرسالة\n01:22.00 لو سمحتي،\n01:24.00 بصير تخليني أكمل رسالتي؟\n01:30.00 خليني أساعدك.\n01:32.00 تن تن، أنا قربت أخلص. بس شوي.\n01:34.00 خليني شوي بس.\n01:38.00 صديقي...\n\n# فكرة المكعبات الجديدة (الجزء الأول)\n01:40.00 تن تن، عندي فكرة\n01:42.00 رح تخليكي تنبسطي كتير.\n01:45.00 شو هي؟\n01:46.00 شو رأيك تكتبي اسمك\n01:48.00 بمكعبات الأحرف الأبجدية الجديدة؟\n01:50.00 آه! مكعبات الأحرف! يا سلام!\n01:52.00 فكرة ممتازة! أنا بحب المكعبات.\n\n# فكرة المكعبات الجديدة (الجزء الثاني)\n01:56.00 أخيراً راحت.\n01:58.00 خليني أكمل بسرعة قبل ما تيجي.\n02:00.00 الكلمة الأخيرة:\n02:02.00 سأراك قريباً يا صديقي العزيز.\n02:05.00 هاها!\n02:07.00 أسهل إشي الواحد يكتب اسمه بالمكعبات.\n\n# النتيجة النهائية والارتباك\n02:10.00 تن تن! تن تن!\n02:13.00 عن جد إنت كتبتيهم؟ يا عيني على الألوان!\n02:15.00 ألوان كتير حلوة يا تن تن.\n02:17.00 خليني أشوف. أوه! ألوان برتقالي...\n02:20.00 جميلة جميلة.\n02:22.00 أحرف... تاء نون...\n02:24.00 ألوانها كمان كتير حلوة.\n02:27.00 تن تن! تن تن! تن تن! تن تن!\n02:32.00 أنا بحب أكتب اسمي يا جلجل.\n02:34.00 تاء نون، تن تن!\n02:35.00 تن تن! إيش عم تعملي؟ تن تن!\n02:39.00 تن تن ضيعتلي الرسالة\n02:41.00 اللي كنت بكتب فيها!\n02:44.00 تاء نون، تن تن! تاء نون، تن تن!\n02:47.00 أنا بحب أكتب اسمي!"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 23:48:33 UTC",
   "updated_at": "2026-04-26 05:56:58 UTC",

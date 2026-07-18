@@ -9,349 +9,506 @@
       {
         "id": "phrase_1",
         "text_l1": "أنا آسفة إني تأخرت.",
-        "text_l2": "I'm sorry I'm late.",
         "timestamp": "00:00.00",
         "timestamp_end": "00:02.10"
       },
       {
         "id": "phrase_2",
         "text_l1": "أنا هلق جاهزة",
-        "text_l2": "I'm ready now",
         "timestamp": "00:02.10",
         "timestamp_end": "00:04.30"
       },
       {
         "id": "phrase_3",
         "text_l1": "عشان نعمل برنامج التمارين الرياضية",
-        "text_l2": "to do the exercise program",
         "timestamp": "00:04.30",
         "timestamp_end": "00:06.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "اللي بنعمله في الصباح.",
-        "text_l2": "that we do in the morning.",
         "timestamp": "00:06.50",
         "timestamp_end": "00:08.20"
       },
       {
         "id": "phrase_5",
         "text_l1": "طيب يا تنتن وين جلجل؟",
-        "text_l2": "Okay Tantan, where is Jaljal?",
         "timestamp": "00:08.20",
         "timestamp_end": "00:10.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "تأخر علينا كتير.",
-        "text_l2": "He's really late.",
         "timestamp": "00:10.00",
         "timestamp_end": "00:11.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "عن جد صار لازم نبلش",
-        "text_l2": "Really, we must start",
         "timestamp": "00:11.50",
         "timestamp_end": "00:13.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "برنامج التمارين الرياضية.",
-        "text_l2": "the exercise program.",
         "timestamp": "00:13.50",
         "timestamp_end": "00:15.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "مرحبا وصباح الخير يا أصدقائي!",
-        "text_l2": "Hello and good morning, my friends!",
         "timestamp": "00:15.50",
         "timestamp_end": "00:18.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "جلجل جاهز منشان يقدم",
-        "text_l2": "Jaljal is ready to present",
         "timestamp": "00:18.00",
         "timestamp_end": "00:20.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "برنامج التمارين الرياضية",
-        "text_l2": "the exercise program",
         "timestamp": "00:20.50",
         "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "اللي بتخلينا كلياتنا نشاط وحيوية.",
-        "text_l2": "that keeps us all active and energetic.",
         "timestamp": "00:23.00",
         "timestamp_end": "00:25.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "جاهزين للنشاط والحيوية؟",
-        "text_l2": "Ready for activity and energy?",
         "timestamp": "00:25.50",
         "timestamp_end": "00:27.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "جاهزين!",
-        "text_l2": "Ready!",
         "timestamp": "00:27.50",
         "timestamp_end": "00:29.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "يلا، واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "Come on, one, two, three, four.",
         "timestamp": "00:29.00",
         "timestamp_end": "00:32.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "00:32.00",
         "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "00:35.00",
         "timestamp_end": "00:38.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "يلا يا نوران عشان نساعد جلجل",
-        "text_l2": "Come on Nouran, let's help Jaljal",
         "timestamp": "00:38.00",
         "timestamp_end": "00:41.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "ببرنامج التمارين الرياضية.",
-        "text_l2": "with the exercise program.",
         "timestamp": "00:41.00",
         "timestamp_end": "00:44.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "ياي أنا كتير بحب التمارين الرياضية",
-        "text_l2": "Yay, I really love exercise",
         "timestamp": "00:44.00",
         "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "لأنها كتير مهمة.",
-        "text_l2": "because it's very important.",
         "timestamp": "00:47.00",
         "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "أكيد يا نوران أحسنتِ، يلا نكمل.",
-        "text_l2": "Sure Nouran, well done, let's continue.",
         "timestamp": "00:49.00",
         "timestamp_end": "00:51.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "00:51.50",
         "timestamp_end": "00:54.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "00:54.50",
         "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "00:57.50",
         "timestamp_end": "01:00.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "جلجل! نعم؟",
-        "text_l2": "Jaljal! Yes?",
         "timestamp": "01:00.00",
         "timestamp_end": "01:01.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "أنا كمان بحب التمارين الرياضية",
-        "text_l2": "I also love exercise",
         "timestamp": "01:01.50",
         "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "الصباحية كتير.",
-        "text_l2": "in the morning a lot.",
         "timestamp": "01:04.50",
         "timestamp_end": "01:06.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "عارف ليش يا جلجل؟ ليش؟",
-        "text_l2": "Know why, Jaljal? Why?",
         "timestamp": "01:06.00",
         "timestamp_end": "01:08.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "لأنها بتساعدني دايماً",
-        "text_l2": "Because it always helps me",
         "timestamp": "01:08.00",
         "timestamp_end": "01:10.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "على إني أكون نشيط",
-        "text_l2": "to be active",
         "timestamp": "01:10.50",
         "timestamp_end": "01:12.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "والدورة الدموية تكون عندي نشيطة.",
-        "text_l2": "and keeps my blood circulation active.",
         "timestamp": "01:12.50",
         "timestamp_end": "01:15.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "وكمان التمارين بتخليني أحافظ",
-        "text_l2": "And also exercise makes me maintain",
         "timestamp": "01:15.50",
         "timestamp_end": "01:18.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "على وزني ورشاقة جسمي.",
-        "text_l2": "my weight and body fitness.",
         "timestamp": "01:18.50",
         "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "أكيد يا عمو كامل ويلا نكمل.",
-        "text_l2": "Sure Uncle Kamel, let's continue.",
         "timestamp": "01:21.00",
         "timestamp_end": "01:23.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:23.50",
         "timestamp_end": "01:26.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:26.50",
         "timestamp_end": "01:29.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "جلجل! نعم؟",
-        "text_l2": "Jaljal! Yes?",
         "timestamp": "01:29.50",
         "timestamp_end": "01:31.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "أنا بحب تمرين القفز في المكان.",
-        "text_l2": "I love the jumping in place exercise.",
         "timestamp": "01:31.00",
         "timestamp_end": "01:34.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:34.00",
         "timestamp_end": "01:37.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:37.00",
         "timestamp_end": "01:40.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:40.00",
         "timestamp_end": "01:42.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "جلجل! نعم؟",
-        "text_l2": "Jaljal! Yes?",
         "timestamp": "01:42.50",
         "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "أنا كمان في عندي تمارين رياضية",
-        "text_l2": "I also have exercise routines",
         "timestamp": "01:44.00",
         "timestamp_end": "01:47.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "حابة أعرفكم عليها.",
-        "text_l2": "I want to introduce you to.",
         "timestamp": "01:47.00",
         "timestamp_end": "01:49.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "مش هلق يا حياة، أجليهم لبكرة.",
-        "text_l2": "Not now Hayat, save them for tomorrow.",
         "timestamp": "01:49.00",
         "timestamp_end": "01:52.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "برنامجنا اليوم كتير كان مضغوط.",
-        "text_l2": "Our program today was very packed.",
         "timestamp": "01:52.00",
         "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "كملوا، واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "Continue, one, two, three, four.",
         "timestamp": "01:55.00",
         "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "واحد، اتنين، تلاتة، أربعة.",
-        "text_l2": "One, two, three, four.",
         "timestamp": "01:58.00",
         "timestamp_end": "02:00.00"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[أنا] آسفة إني تأخرت. => [I'm] sorry I'm late.\nأنا [آسفة] إني تأخرت. => I'm [sorry] I'm late.\nأنا آسفة [إني] تأخرت. => that I\nأنا آسفة إني [تأخرت] => was late, am late\n\n[أنا] هلق جاهزة => [I'm] ready now\nأنا [هلق] جاهزة => I'm ready [now]\nأنا هلق [جاهزة] => I'm [ready] now\n\n[عشان] نعمل برنامج التمارين الرياضية => [to] do the exercise program\nعشان [نعمل] برنامج التمارين الرياضية => to [do] the exercise program\nعشان نعمل [برنامج] التمارين الرياضية => to do the exercise [program]\nعشان نعمل برنامج [التمارين] الرياضية => to do the [exercise] program\nعشان نعمل برنامج التمارين [الرياضية] => physical, athletic # modifying the exercises, literally \"sporty\" or \"athletic\"\n\n[اللي] بنعمله في الصباح. => [that] we do in the morning.\nاللي [بنعمله] في الصباح. => that [we do] in the morning.\nاللي بنعمله [في] الصباح. => that we do [in] the morning.\nاللي بنعمله في [الصباح]. => that we do in [the morning].\n\n[طيب] يا تنتن وين جلجل؟ => [Okay] Tantan, where is Jaljal?\nطيب [يا تنتن] وين جلجل؟ => Okay [Tantan], where is Jaljal? # يا is a vocative particle used before names, combined here for a cleaner mapping\nطيب يا تنتن [وين] جلجل؟ => Okay Tantan, [where] is Jaljal?\nطيب يا تنتن وين [جلجل]؟ => Okay Tantan, where is [Jaljal]?\n\n[تأخر] علينا كتير. => [He's] really [late]\nتأخر [علينا] كتير. => on us\nتأخر علينا [كتير]. => He's [really] late\n\n[عن جد] صار لازم نبلش => [Really], we must start\nعن جد [صار] لازم نبلش => it has become, it is now\nعن جد صار [لازم] نبلش => Really, we [must] start\nعن جد صار لازم [نبلش] => we start # نبلش includes the \"we\" prefix نـ- plus start\n\n[برنامج] التمارين الرياضية. => the exercise [program].\nبرنامج [التمارين الرياضية]. => the [exercise] program.\n\n[مرحبا] وصباح الخير يا أصدقائي! => [Hello] and good morning, my friends!\nمرحبا [و]صباح الخير يا أصدقائي! => Hello [and] good morning, my friends!\nمرحبا و[صباح الخير] يا أصدقائي! => Hello and [good morning], my friends!\nمرحبا وصباح الخير [يا أصدقائي]! => Hello and good morning, [my friends]!\n\n[جلجل] جاهز منشان يقدم => [Jaljal] is ready to present\nجلجل [جاهز] منشان يقدم => is ready\nجلجل جاهز [منشان] يقدم => to, in order to\nجلجل جاهز منشان [يقدم] => Jaljal is ready to [present]\n\n[برنامج] التمارين الرياضية => the exercise [program]\nبرنامج [التمارين] الرياضية => [the exercise] program\nبرنامج التمارين [الرياضية] => physical, sports, athletic # \"الرياضية\" means sports or physical; it modifies \"التمارين\" (exercises) in Arabic.\n\n[اللي] بتخلينا كلياتنا نشاط وحيوية. => [that] keeps us all active and energetic.\nاللي [بتخلينا] كلياتنا نشاط وحيوية. => that [keeps us] all active and energetic.\nاللي بتخلينا [كلياتنا] نشاط وحيوية. => that keeps us [all] active and energetic.\nاللي بتخلينا كلياتنا [نشاط] وحيوية. => that keeps us all [active] and energetic.\nاللي بتخلينا كلياتنا نشاط [و]حيوية. => that keeps us all active [and] energetic.\nاللي بتخلينا كلياتنا نشاط و[حيوية]. => that keeps us all active and [energetic].\n\n[جاهزين] للنشاط والحيوية؟ => [Ready] for activity and energy?\nجاهزين [للنشاط] والحيوية؟ => Ready [for activity] and energy?\nجاهزين للنشاط [و]الحيوية؟ => Ready for activity [and] energy?\nجاهزين للنشاط و[الحيوية]؟ => Ready for activity and [energy]؟\n\n[جاهزين] => [Ready]\n\n[يلا]، واحد، اتنين، تلاتة، أربعة. => [Come on], one, two, three, four.\nيلا، [واحد]، اتنين، تلاتة، أربعة. => Come on, [one], two, three, four.\nيلا، واحد، [اتنين]، تلاتة، أربعة. => Come on, one, [two], three, four.\nيلا، واحد، اتنين، [تلاتة]، أربعة. => Come on, one, two, [three], four.\nيلا، واحد، اتنين، تلاتة، [أربعة]. => Come on, one, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[يلا] يا نوران عشان نساعد جلجل => [Come on] Nouran, let's help Jaljal\nيلا يا [نوران] عشان نساعد جلجل => Come on [Nouran], let's help Jaljal\nيلا يا نوران [عشان نساعد] جلجل => Come on Nouran, [let's help] Jaljal\nيلا يا نوران عشان نساعد [جلجل] => Come on Nouran, let's help [Jaljal]\n\nببرنامج [التمارين الرياضية]. => with the [exercise] program.\n\n[ياي] أنا كتير بحب التمارين الرياضية => [Yay], I really love exercise\nياي [أنا] كتير بحب التمارين الرياضية => Yay, [I] really love exercise\nياي أنا [كتير] بحب التمارين الرياضية => Yay, I [really] love exercise\nياي أنا كتير [بحب] التمارين الرياضية => Yay, I really [love] exercise\nياي أنا كتير بحب [التمارين الرياضية] => Yay, I really love [exercise]\n\n[لأنها] كتير مهمة => [because it's] very important\nلأنها [كتير] مهمة => because it's [very] important\nلأنها كتير [مهمة] => because it's very [important]\n\n[أكيد] يا نوران أحسنتِ، يلا نكمل. => [Sure] Nouran, well done, let's continue.\nأكيد [يا نوران] أحسنتِ، يلا نكمل. => Sure [Nouran], well done, let's continue.\nأكيد يا نوران [أحسنتِ]، يلا نكمل. => Sure Nouran, [well done], let's continue.\nأكيد يا نوران أحسنتِ، [يلا] نكمل. => Sure Nouran, well done, [let's] continue.\nأكيد يا نوران أحسنتِ، يلا [نكمل] => Sure Nouran, well done, let's [continue]\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] كمان بحب التمارين الرياضية => [I] also love exercise\nأنا [كمان] بحب التمارين الرياضية => I [also] love exercise\nأنا كمان [بحب] التمارين الرياضية => I also [love] exercise\nأنا كمان بحب [التمارين الرياضية] => I also love [exercise]\n\n[الصباحية] كتير => [in the morning] a lot\nالصباحية [كتير] => in the morning [a lot]\n\n[عارف] ليش يا جلجل؟ ليش؟ => [Know] why, Jaljal? Why?\nعارف [ليش] يا جلجل؟ ليش؟ => Know [why], Jaljal? Why?\nعارف ليش يا [جلجل]؟ ليش؟ => Know why, [Jaljal]? Why?\nعارف ليش يا جلجل؟ [ليش]؟ => Know why, Jaljal? [Why]?\n\n[لأنها] بتساعدني دايماً => [Because it] always helps me\nلأنها [بتساعدني] دايماً => Because it always [helps me]\nلأنها بتساعدني [دايماً] => Because it [always] helps me\n\n[على إني أكون] نشيط => [to be] active\nعلى إني أكون [نشيط] => to be [active]\n\n[و]الدورة الدموية تكون عندي نشيطة. => [and] keeps my blood circulation active.\nو[الدورة] الدموية تكون عندي نشيطة. => and keeps my blood [circulation] active.\nوالدورة [الدموية] تكون عندي نشيطة. => and keeps my [blood] circulation active.\nوالدورة الدموية [تكون] عندي نشيطة. => is, stays, becomes # In this context it means the circulation \"becomes\" or \"is\" active\nوالدورة الدموية تكون [عندي] نشيطة. => and keeps [my] blood circulation active.\nوالدورة الدموية تكون عندي [نشيطة]. => and keeps my blood circulation [active]\n\n[وكمان] التمارين بتخليني أحافظ => [And also] exercise makes me maintain\nوكمان [التمارين] بتخليني أحافظ => And also [exercise] makes me maintain\nوكمان التمارين [بتخليني] أحافظ => And also exercise [makes me] maintain\nوكمان التمارين بتخليني [أحافظ] => And also exercise makes me [maintain]\n\nعلى [وزني] ورشاقة جسمي. => [my weight] and body fitness.\nعلى وزني [و]رشاقة جسمي. => my weight [and] body fitness.\nعلى وزني و[رشاقة] جسمي. => my weight and body [fitness]\nعلى وزني ورشاقة [جسمي]. => my weight and [body] fitness\n\n[أكيد] يا عمو كامل ويلا نكمل. => [Sure] Uncle Kamel, let's continue.\nأكيد يا [عمو] كامل ويلا نكمل. => Sure [Uncle] Kamel, let's continue.\nأكيد يا عمو [كامل] ويلا نكمل. => Sure Uncle [Kamel], let's continue.\nأكيد يا عمو كامل [ويلا] نكمل. => let's\nأكيد يا عمو كامل ويلا [نكمل]. => Sure Uncle Kamel, let's [continue].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] بحب تمرين القفز في المكان. => [I] love the jumping in place exercise.\nأنا [بحب] تمرين القفز في المكان. => I [love] the jumping in place exercise.\nأنا بحب [تمرين] القفز في المكان. => I love the jumping in place [exercise]\nأنا بحب تمرين [القفز] في المكان. => I love [the jumping] in place exercise.\nأنا بحب تمرين القفز [في] المكان. => I love the jumping [in] place exercise.\nأنا بحب تمرين القفز في [المكان]. => I love the jumping in [place] exercise.\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] كمان في عندي تمارين رياضية => [I] also have exercise routines\nأنا [كمان] في عندي تمارين رياضية => I [also] have exercise routines\nأنا كمان [في عندي] تمارين رياضية => I also [have] exercise routines\nأنا كمان في عندي [تمارين] رياضية => I also have exercise [routines]\nأنا كمان في عندي تمارين [رياضية] => I also have [exercise] routines\n\n[حابة] أعرفكم عليها. => [I want] to introduce you to.\nحابة [أعرفكم] عليها. => I want [to introduce you] to.\nحابة أعرفكم [عليها]. => I want to introduce you [to].\nحابة أعرفكم [عليها] => to her # \"عليها\" literally means \"to her\", where \"ها\" is the object of the preposition.\n\n[مش] هلق يا حياة، أجليهم لبكرة. => [Not] now Hayat, save them for tomorrow.\nمش [هلق] يا حياة، أجليهم لبكرة. => Not [now] Hayat, save them for tomorrow.\nمش هلق يا [حياة]، أجليهم لبكرة. => Not now [Hayat], save them for tomorrow.\nمش هلق يا حياة، [أجليهم] لبكرة. => Not now Hayat, [save them] for tomorrow.\nمش هلق يا حياة، أجليهم [لبكرة] => Not now Hayat, save them [for tomorrow]\n\n[برنامجنا] اليوم كتير كان مضغوط. => [Our program] today was very packed.\nبرنامجنا [اليوم] كتير كان مضغوط. => Our program [today] was very packed.\nبرنامجنا اليوم [كتير] كان مضغوط. => Our program today was [very] packed.\nبرنامجنا اليوم كتير [كان] مضغوط. => Our program today [was] very packed.\nبرنامجنا اليوم كتير كان [مضغوط]. => Our program today was very [packed].\n\n[كملوا]، واحد، اتنين، تلاتة، أربعة. => [Continue], one, two, three, four.\nكملوا، [واحد]، اتنين، تلاتة، أربعة. => Continue, [one], two, three, four.\nكملوا، واحد، [اتنين]، تلاتة، أربعة. => Continue, one, [two], three, four.\nكملوا، واحد، اتنين، [تلاتة]، أربعة. => Continue, one, two, [three], four.\nكملوا، واحد، اتنين، تلاتة، [أربعة]. => Continue, one, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n"
+    "phrases_with_token_translations": "[أنا] آسفة إني تأخرت. => [I'm] sorry I'm late.\nأنا [آسفة] إني تأخرت. => I'm [sorry] I'm late.\nأنا آسفة [إني] تأخرت. => that I\nأنا آسفة إني [تأخرت] => was late, am late\n\n[أنا] هلق جاهزة => [I'm] ready now\nأنا [هلق] جاهزة => I'm ready [now]\nأنا هلق [جاهزة] => I'm [ready] now\n\n[عشان] نعمل برنامج التمارين الرياضية => [to] do the exercise program\nعشان [نعمل] برنامج التمارين الرياضية => to [do] the exercise program\nعشان نعمل [برنامج] التمارين الرياضية => to do the exercise [program]\nعشان نعمل برنامج [التمارين] الرياضية => to do the [exercise] program\nعشان نعمل برنامج التمارين [الرياضية] => physical, athletic # modifying the exercises, literally \"sporty\" or \"athletic\"\n\n[اللي] بنعمله في الصباح. => [that] we do in the morning.\nاللي [بنعمله] في الصباح. => that [we do] in the morning.\nاللي بنعمله [في] الصباح. => that we do [in] the morning.\nاللي بنعمله في [الصباح]. => that we do in [the morning].\n\n[طيب] يا تنتن وين جلجل؟ => [Okay] Tantan, where is Jaljal?\nطيب [يا تنتن] وين جلجل؟ => Okay [Tantan], where is Jaljal? # يا is a vocative particle used before names, combined here for a cleaner mapping\nطيب يا تنتن [وين] جلجل؟ => Okay Tantan, [where] is Jaljal?\nطيب يا تنتن وين [جلجل]؟ => Okay Tantan, where is [Jaljal]?\n\n[تأخر] علينا كتير. => [He's] really [late]\nتأخر [علينا] كتير. => on us\nتأخر علينا [كتير]. => He's [really] late\n\n[عن جد] صار لازم نبلش => [Really], we must start\nعن جد [صار] لازم نبلش => it has become, it is now\nعن جد صار [لازم] نبلش => Really, we [must] start\nعن جد صار لازم [نبلش] => we start # نبلش includes the \"we\" prefix نـ- plus start\n\n[برنامج] التمارين الرياضية. => the exercise [program].\nبرنامج [التمارين الرياضية]. => the [exercise] program.\n\n[مرحبا] وصباح الخير يا أصدقائي! => [Hello] and good morning, my friends!\nمرحبا [و]صباح الخير يا أصدقائي! => Hello [and] good morning, my friends!\nمرحبا و[صباح الخير] يا أصدقائي! => Hello and [good morning], my friends!\nمرحبا وصباح الخير [يا أصدقائي]! => Hello and good morning, [my friends]!\n\n[جلجل] جاهز منشان يقدم => [Jaljal] is ready to present\nجلجل [جاهز] منشان يقدم => is ready\nجلجل جاهز [منشان] يقدم => to, in order to\nجلجل جاهز منشان [يقدم] => Jaljal is ready to [present]\n\n[برنامج] التمارين الرياضية => the exercise [program]\nبرنامج [التمارين] الرياضية => [the exercise] program\nبرنامج التمارين [الرياضية] => physical, sports, athletic # \"الرياضية\" means sports or physical; it modifies \"التمارين\" (exercises) in Arabic.\n\n[اللي] بتخلينا كلياتنا نشاط وحيوية. => [that] keeps us all active and energetic.\nاللي [بتخلينا] كلياتنا نشاط وحيوية. => that [keeps us] all active and energetic.\nاللي بتخلينا [كلياتنا] نشاط وحيوية. => that keeps us [all] active and energetic.\nاللي بتخلينا كلياتنا [نشاط] وحيوية. => that keeps us all [active] and energetic.\nاللي بتخلينا كلياتنا نشاط [و]حيوية. => that keeps us all active [and] energetic.\nاللي بتخلينا كلياتنا نشاط و[حيوية]. => that keeps us all active and [energetic].\n\n[جاهزين] للنشاط والحيوية؟ => [Ready] for activity and energy?\nجاهزين [للنشاط] والحيوية؟ => Ready [for activity] and energy?\nجاهزين للنشاط [و]الحيوية؟ => Ready for activity [and] energy?\nجاهزين للنشاط و[الحيوية]؟ => Ready for activity and [energy]؟\n\n[جاهزين] => [Ready]\n\n[يلا]، واحد، اتنين، تلاتة، أربعة. => [Come on], one, two, three, four.\nيلا، [واحد]، اتنين، تلاتة، أربعة. => Come on, [one], two, three, four.\nيلا، واحد، [اتنين]، تلاتة، أربعة. => Come on, one, [two], three, four.\nيلا، واحد، اتنين، [تلاتة]، أربعة. => Come on, one, two, [three], four.\nيلا، واحد، اتنين، تلاتة، [أربعة]. => Come on, one, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[يلا] يا نوران عشان نساعد جلجل => [Come on] Nouran, let's help Jaljal\nيلا يا [نوران] عشان نساعد جلجل => Come on [Nouran], let's help Jaljal\nيلا يا نوران [عشان نساعد] جلجل => Come on Nouran, [let's help] Jaljal\nيلا يا نوران عشان نساعد [جلجل] => Come on Nouran, let's help [Jaljal]\n\nببرنامج [التمارين الرياضية]. => with the [exercise] program.\n\n[ياي] أنا كتير بحب التمارين الرياضية => [Yay], I really love exercise\nياي [أنا] كتير بحب التمارين الرياضية => Yay, [I] really love exercise\nياي أنا [كتير] بحب التمارين الرياضية => Yay, I [really] love exercise\nياي أنا كتير [بحب] التمارين الرياضية => Yay, I really [love] exercise\nياي أنا كتير بحب [التمارين الرياضية] => Yay, I really love [exercise]\n\n[لأنها] كتير مهمة => [because it's] very important\nلأنها [كتير] مهمة => because it's [very] important\nلأنها كتير [مهمة] => because it's very [important]\n\n[أكيد] يا نوران أحسنتِ، يلا نكمل. => [Sure] Nouran, well done, let's continue.\nأكيد [يا نوران] أحسنتِ، يلا نكمل. => Sure [Nouran], well done, let's continue.\nأكيد يا نوران [أحسنتِ]، يلا نكمل. => Sure Nouran, [well done], let's continue.\nأكيد يا نوران أحسنتِ، [يلا] نكمل. => Sure Nouran, well done, [let's] continue.\nأكيد يا نوران أحسنتِ، يلا [نكمل] => Sure Nouran, well done, let's [continue]\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] كمان بحب التمارين الرياضية => [I] also love exercise\nأنا [كمان] بحب التمارين الرياضية => I [also] love exercise\nأنا كمان [بحب] التمارين الرياضية => I also [love] exercise\nأنا كمان بحب [التمارين الرياضية] => I also love [exercise]\n\n[الصباحية] كتير => [in the morning] a lot\nالصباحية [كتير] => in the morning [a lot]\n\n[عارف] ليش يا جلجل؟ ليش؟ => [Know] why, Jaljal? Why?\nعارف [ليش] يا جلجل؟ ليش؟ => Know [why], Jaljal? Why?\nعارف ليش يا [جلجل]؟ ليش؟ => Know why, [Jaljal]? Why?\nعارف ليش يا جلجل؟ [ليش]؟ => Know why, Jaljal? [Why]?\n\n[لأنها] بتساعدني دايماً => [Because it] always helps me\nلأنها [بتساعدني] دايماً => Because it always [helps me]\nلأنها بتساعدني [دايماً] => Because it [always] helps me\n\n[على إني أكون] نشيط => [to be] active\nعلى إني أكون [نشيط] => to be [active]\n\n[و]الدورة الدموية تكون عندي نشيطة. => [and] keeps my blood circulation active.\nو[الدورة] الدموية تكون عندي نشيطة. => and keeps my blood [circulation] active.\nوالدورة [الدموية] تكون عندي نشيطة. => and keeps my [blood] circulation active.\nوالدورة الدموية [تكون] عندي نشيطة. => is, stays, becomes # In this context it means the circulation \"becomes\" or \"is\" active\nوالدورة الدموية تكون [عندي] نشيطة. => and keeps [my] blood circulation active.\nوالدورة الدموية تكون عندي [نشيطة]. => and keeps my blood circulation [active]\n\n[وكمان] التمارين بتخليني أحافظ => [And also] exercise makes me maintain\nوكمان [التمارين] بتخليني أحافظ => And also [exercise] makes me maintain\nوكمان التمارين [بتخليني] أحافظ => And also exercise [makes me] maintain\nوكمان التمارين بتخليني [أحافظ] => And also exercise makes me [maintain]\n\nعلى [وزني] ورشاقة جسمي. => [my weight] and body fitness.\nعلى وزني [و]رشاقة جسمي. => my weight [and] body fitness.\nعلى وزني و[رشاقة] جسمي. => my weight and body [fitness]\nعلى وزني ورشاقة [جسمي]. => my weight and [body] fitness\n\n[أكيد] يا عمو كامل ويلا نكمل. => [Sure] Uncle Kamel, let's continue.\nأكيد يا [عمو] كامل ويلا نكمل. => Sure [Uncle] Kamel, let's continue.\nأكيد يا عمو [كامل] ويلا نكمل. => Sure Uncle [Kamel], let's continue.\nأكيد يا عمو كامل [ويلا] نكمل. => let's\nأكيد يا عمو كامل ويلا [نكمل]. => Sure Uncle Kamel, let's [continue].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] بحب تمرين القفز في المكان. => [I] love the jumping in place exercise.\nأنا [بحب] تمرين القفز في المكان. => I [love] the jumping in place exercise.\nأنا بحب [تمرين] القفز في المكان. => I love the jumping in place [exercise]\nأنا بحب تمرين [القفز] في المكان. => I love [the jumping] in place exercise.\nأنا بحب تمرين القفز [في] المكان. => I love the jumping [in] place exercise.\nأنا بحب تمرين القفز في [المكان]. => I love the jumping in [place] exercise.\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n[جلجل]! نعم؟ => [Jaljal]! Yes?\nجلجل! [نعم]؟ => Jaljal! [Yes]?\n\n[أنا] كمان في عندي تمارين رياضية => [I] also have exercise routines\nأنا [كمان] في عندي تمارين رياضية => I [also] have exercise routines\nأنا كمان [في عندي] تمارين رياضية => I also [have] exercise routines\nأنا كمان في عندي [تمارين] رياضية => I also have exercise [routines]\nأنا كمان في عندي تمارين [رياضية] => I also have [exercise] routines\n\n[حابة] أعرفكم عليها. => [I want] to introduce you to.\nحابة [أعرفكم] عليها. => I want [to introduce you] to.\nحابة أعرفكم [عليها]. => I want to introduce you [to].\nحابة أعرفكم [عليها] => to her # \"عليها\" literally means \"to her\", where \"ها\" is the object of the preposition.\n\n[مش] هلق يا حياة، أجليهم لبكرة. => [Not] now Hayat, save them for tomorrow.\nمش [هلق] يا حياة، أجليهم لبكرة. => Not [now] Hayat, save them for tomorrow.\nمش هلق يا [حياة]، أجليهم لبكرة. => Not now [Hayat], save them for tomorrow.\nمش هلق يا حياة، [أجليهم] لبكرة. => Not now Hayat, [save them] for tomorrow.\nمش هلق يا حياة، أجليهم [لبكرة] => Not now Hayat, save them [for tomorrow]\n\n[برنامجنا] اليوم كتير كان مضغوط. => [Our program] today was very packed.\nبرنامجنا [اليوم] كتير كان مضغوط. => Our program [today] was very packed.\nبرنامجنا اليوم [كتير] كان مضغوط. => Our program today was [very] packed.\nبرنامجنا اليوم كتير [كان] مضغوط. => Our program today [was] very packed.\nبرنامجنا اليوم كتير كان [مضغوط]. => Our program today was very [packed].\n\n[كملوا]، واحد، اتنين، تلاتة، أربعة. => [Continue], one, two, three, four.\nكملوا، [واحد]، اتنين، تلاتة، أربعة. => Continue, [one], two, three, four.\nكملوا، واحد، [اتنين]، تلاتة، أربعة. => Continue, one, [two], three, four.\nكملوا، واحد، اتنين، [تلاتة]، أربعة. => Continue, one, two, [three], four.\nكملوا، واحد، اتنين، تلاتة، [أربعة]. => Continue, one, two, three, [four].\n\n[واحد]، اتنين، تلاتة، أربعة. => [One], two, three, four.\nواحد، [اتنين]، تلاتة، أربعة. => One, [two], three, four.\nواحد، اتنين، [تلاتة]، أربعة. => One, two, [three], four.\nواحد، اتنين، تلاتة، [أربعة]. => One, two, three, [four].\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "I'm sorry I'm late.",
+            "words": []
+          },
+          {
+            "text": "I'm ready now",
+            "words": []
+          },
+          {
+            "text": "to do the exercise program",
+            "words": []
+          },
+          {
+            "text": "that we do in the morning.",
+            "words": []
+          },
+          {
+            "text": "Okay Tantan, where is Jaljal?",
+            "words": []
+          },
+          {
+            "text": "He's really late.",
+            "words": []
+          },
+          {
+            "text": "Really, we must start",
+            "words": []
+          },
+          {
+            "text": "the exercise program.",
+            "words": []
+          },
+          {
+            "text": "Hello and good morning, my friends!",
+            "words": []
+          },
+          {
+            "text": "Jaljal is ready to present",
+            "words": []
+          },
+          {
+            "text": "the exercise program",
+            "words": []
+          },
+          {
+            "text": "that keeps us all active and energetic.",
+            "words": []
+          },
+          {
+            "text": "Ready for activity and energy?",
+            "words": []
+          },
+          {
+            "text": "Ready!",
+            "words": []
+          },
+          {
+            "text": "Come on, one, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "Come on Nouran, let's help Jaljal",
+            "words": []
+          },
+          {
+            "text": "with the exercise program.",
+            "words": []
+          },
+          {
+            "text": "Yay, I really love exercise",
+            "words": []
+          },
+          {
+            "text": "because it's very important.",
+            "words": []
+          },
+          {
+            "text": "Sure Nouran, well done, let's continue.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "Jaljal! Yes?",
+            "words": []
+          },
+          {
+            "text": "I also love exercise",
+            "words": []
+          },
+          {
+            "text": "in the morning a lot.",
+            "words": []
+          },
+          {
+            "text": "Know why, Jaljal? Why?",
+            "words": []
+          },
+          {
+            "text": "Because it always helps me",
+            "words": []
+          },
+          {
+            "text": "to be active",
+            "words": []
+          },
+          {
+            "text": "and keeps my blood circulation active.",
+            "words": []
+          },
+          {
+            "text": "And also exercise makes me maintain",
+            "words": []
+          },
+          {
+            "text": "my weight and body fitness.",
+            "words": []
+          },
+          {
+            "text": "Sure Uncle Kamel, let's continue.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "Jaljal! Yes?",
+            "words": []
+          },
+          {
+            "text": "I love the jumping in place exercise.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "Jaljal! Yes?",
+            "words": []
+          },
+          {
+            "text": "I also have exercise routines",
+            "words": []
+          },
+          {
+            "text": "I want to introduce you to.",
+            "words": []
+          },
+          {
+            "text": "Not now Hayat, save them for tomorrow.",
+            "words": []
+          },
+          {
+            "text": "Our program today was very packed.",
+            "words": []
+          },
+          {
+            "text": "Continue, one, two, three, four.",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four.",
+            "words": []
+          }
+        ],
+        "lessons": "# التأخير والاستعداد للتمارين\n00:00.00 أنا آسفة إني تأخرت.\n00:02.10 أنا هلق جاهزة\n00:04.30 عشان نعمل برنامج التمارين الرياضية\n00:06.50 اللي بنعمله في الصباح.\n00:08.20 طيب يا تنتن وين جلجل؟\n00:10.00 تأخر علينا كتير.\n00:11.50 عن جد صار لازم نبلش\n00:13.50 برنامج التمارين الرياضية.\n\n# بداية البرنامج الرياضي\n00:15.50 مرحبا وصباح الخير يا أصدقائي!\n00:18.00 جلجل جاهز منشان يقدم\n00:20.50 برنامج التمارين الرياضية\n00:23.00 اللي بتخلينا كلياتنا نشاط وحيوية.\n00:25.50 جاهزين للنشاط والحيوية؟\n00:27.50 جاهزين!\n00:29.00 يلا، واحد، اتنين، تلاتة، أربعة.\n\n# التمارين مع نوران\n00:32.00 واحد، اتنين، تلاتة، أربعة.\n00:35.00 واحد، اتنين، تلاتة، أربعة.\n00:38.00 يلا يا نوران عشان نساعد جلجل\n00:41.00 ببرنامج التمارين الرياضية.\n00:44.00 ياي أنا كتير بحب التمارين الرياضية\n00:47.00 لأنها كتير مهمة.\n00:49.00 أكيد يا نوران أحسنتِ، يلا نكمل.\n\n# فوائد التمارين مع العم كامل\n00:51.50 واحد، اتنين، تلاتة، أربعة.\n00:54.50 واحد، اتنين، تلاتة، أربعة.\n00:57.50 واحد، اتنين، تلاتة، أربعة.\n01:00.00 جلجل! نعم؟\n01:01.50 أنا كمان بحب التمارين الرياضية\n01:04.50 الصباحية كتير.\n01:06.00 عارف ليش يا جلجل؟ ليش؟\n01:08.00 لأنها بتساعدني دايماً\n01:10.50 على إني أكون نشيط\n01:12.50 والدورة الدموية تكون عندي نشيطة.\n01:15.50 وكمان التمارين بتخليني أحافظ\n\n# نهاية البرنامج الرياضي\n01:18.50 على وزني ورشاقة جسمي.\n01:21.00 أكيد يا عمو كامل ويلا نكمل.\n01:23.50 واحد، اتنين، تلاتة، أربعة.\n01:26.50 واحد، اتنين، تلاتة، أربعة.\n01:29.50 جلجل! نعم؟\n01:31.00 أنا بحب تمرين القفز في المكان.\n01:34.00 واحد، اتنين، تلاتة، أربعة.\n01:37.00 واحد، اتنين، تلاتة، أربعة.\n01:40.00 واحد، اتنين، تلاتة، أربعة.\n01:42.50 جلجل! نعم؟"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 19:30:22 UTC",
   "updated_at": "2026-04-26 05:56:58 UTC",

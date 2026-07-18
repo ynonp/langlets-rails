@@ -36,7 +36,7 @@ module Imports
       assert course.pending?
       assert_equal VIDEO_ID, course.youtube_video_id
       assert_equal @spanish, course.language
-      assert_equal @english, course.translation_language
+      assert course.course_translations.exists?(language: @english)
       assert_equal CreateSongProgress.sole, request.create_song_progress
     end
 
@@ -104,11 +104,16 @@ module Imports
     test "a missing language creates translation work on the shared course" do
       published = publish_course!(user: @other, translation_language: @english)
 
-      result = stub_video { call_create(translation_language: "Hebrew") }
+      result = nil
+      assert_enqueued_with(job: AddCourseTranslationJob) do
+        result = stub_video { call_create(translation_language: "Hebrew") }
+      end
 
       assert result.created?
       assert_equal published, result.course
       assert_equal 2, @user.reload.credit_balance
+      assert published.course_translations.pending.exists?(language: @hebrew)
+      assert_equal CreateSongProgress.sole, published.reload.create_song_progress
     end
 
     # Two users importing the same video minutes apart. Without this, both create
@@ -185,9 +190,11 @@ module Imports
       Course.create!(
         name: "Despacito", slug: "despacito-#{translation_language.iso_name}",
         main_media_url: CANONICAL, youtube_video_id: VIDEO_ID,
-        language: @spanish, translation_language: translation_language,
+        language: @spanish,
         user: user, status: :published
-      )
+      ).tap do |course|
+        course.course_translations.create!(language: translation_language, name: "Despacito", status: :ready)
+      end
     end
   end
 end

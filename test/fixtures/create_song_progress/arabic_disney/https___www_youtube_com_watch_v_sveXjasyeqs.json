@@ -16,51 +16,44 @@
             "timestamp": "00:09.00",
             "timestamp_end": "00:10.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "algae"
+            "l1_end_index": 4
           },
           {
             "text": "ديما",
             "timestamp": "00:10.00",
             "timestamp_end": "00:11.00",
             "l1_start_index": 6,
-            "l1_end_index": 9,
-            "translation": "always"
+            "l1_end_index": 9
           },
           {
             "text": "أحلى",
             "timestamp": "00:11.00",
             "timestamp_end": "00:11.80",
             "l1_start_index": 11,
-            "l1_end_index": 14,
-            "translation": "sweeter"
+            "l1_end_index": 14
           },
           {
             "text": "في",
             "timestamp": "00:11.80",
             "timestamp_end": "00:12.10",
             "l1_start_index": 16,
-            "l1_end_index": 17,
-            "translation": "in"
+            "l1_end_index": 17
           },
           {
             "text": "بحيرة",
             "timestamp": "00:12.10",
             "timestamp_end": "00:12.80",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "lake"
+            "l1_end_index": 23
           },
           {
             "text": "الجيران",
             "timestamp": "00:12.80",
             "timestamp_end": "00:13.50",
             "l1_start_index": 25,
-            "l1_end_index": 31,
-            "translation": "the neighbors"
+            "l1_end_index": 31
           }
-        ],
-        "text_l2": "Algae is always sweeter in the neighbors' lake"
+        ]
       },
       {
         "id": "phrase_2",
@@ -73,67 +66,58 @@
             "timestamp": "00:13.80",
             "timestamp_end": "00:14.30",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "if"
+            "l1_end_index": 1
           },
           {
             "text": "تحلم",
             "timestamp": "00:14.30",
             "timestamp_end": "00:14.90",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "you dream"
+            "l1_end_index": 6
           },
           {
             "text": "تروح",
             "timestamp": "00:14.90",
             "timestamp_end": "00:15.30",
             "l1_start_index": 8,
-            "l1_end_index": 11,
-            "translation": "you go"
+            "l1_end_index": 11
           },
           {
             "text": "عندهم",
             "timestamp": "00:15.30",
             "timestamp_end": "00:16.00",
             "l1_start_index": 13,
-            "l1_end_index": 17,
-            "translation": "to them"
+            "l1_end_index": 17
           },
           {
             "text": "تبقى",
             "timestamp": "00:16.00",
             "timestamp_end": "00:16.80",
             "l1_start_index": 19,
-            "l1_end_index": 22,
-            "translation": "you will be"
+            "l1_end_index": 22
           },
           {
             "text": "يا",
             "timestamp": "00:16.80",
             "timestamp_end": "00:17.00",
             "l1_start_index": 24,
-            "l1_end_index": 25,
-            "translation": "O"
+            "l1_end_index": 25
           },
           {
             "text": "حبيبي",
             "timestamp": "00:17.00",
             "timestamp_end": "00:17.60",
             "l1_start_index": 27,
-            "l1_end_index": 31,
-            "translation": "my darling"
+            "l1_end_index": 31
           },
           {
             "text": "غلطان",
             "timestamp": "00:17.60",
             "timestamp_end": "00:18.20",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "wrong"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "If you dream to go to them, you are, my love, mistaken"
+        ]
       },
       {
         "id": "phrase_3",
@@ -146,59 +130,51 @@
             "timestamp": "00:18.50",
             "timestamp_end": "00:19.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "if"
+            "l1_end_index": 1
           },
           {
             "text": "بصيت",
             "timestamp": "00:19.00",
             "timestamp_end": "00:19.60",
             "l1_start_index": 3,
-            "l1_end_index": 6,
-            "translation": "you looked"
+            "l1_end_index": 6
           },
           {
             "text": "عالدنيا",
             "timestamp": "00:19.60",
             "timestamp_end": "00:20.30",
             "l1_start_index": 8,
-            "l1_end_index": 14,
-            "translation": "at the world"
+            "l1_end_index": 14
           },
           {
             "text": "الحلوة",
             "timestamp": "00:20.30",
             "timestamp_end": "00:21.00",
             "l1_start_index": 16,
-            "l1_end_index": 21,
-            "translation": "the beautiful"
+            "l1_end_index": 21
           },
           {
             "text": "هنا",
             "timestamp": "00:21.00",
             "timestamp_end": "00:21.60",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "here"
+            "l1_end_index": 25
           },
           {
             "text": "جوة",
             "timestamp": "00:21.60",
             "timestamp_end": "00:22.10",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "inside"
+            "l1_end_index": 29
           },
           {
             "text": "المحيط",
             "timestamp": "00:22.10",
             "timestamp_end": "00:22.80",
             "l1_start_index": 31,
-            "l1_end_index": 36,
-            "translation": "the ocean"
+            "l1_end_index": 36
           }
-        ],
-        "text_l2": "If you look at the sweet world here inside the ocean"
+        ]
       },
       {
         "id": "phrase_4",
@@ -211,51 +187,44 @@
             "timestamp": "00:23.00",
             "timestamp_end": "00:24.30",
             "l1_start_index": 0,
-            "l1_end_index": 7,
-            "translation": "you will find it"
+            "l1_end_index": 7
           },
           {
             "text": "لعب",
             "timestamp": "00:24.30",
             "timestamp_end": "00:24.80",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "play"
+            "l1_end_index": 11
           },
           {
             "text": "وغنوة",
             "timestamp": "00:24.80",
             "timestamp_end": "00:25.50",
             "l1_start_index": 13,
-            "l1_end_index": 17,
-            "translation": "and a song"
+            "l1_end_index": 17
           },
           {
             "text": "وأكتر",
             "timestamp": "00:25.50",
             "timestamp_end": "00:26.20",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "and more"
+            "l1_end_index": 23
           },
           {
             "text": "مما",
             "timestamp": "00:26.20",
             "timestamp_end": "00:26.80",
             "l1_start_index": 25,
-            "l1_end_index": 27,
-            "translation": "than what"
+            "l1_end_index": 27
           },
           {
             "text": "تريد",
             "timestamp": "00:26.80",
             "timestamp_end": "00:27.50",
             "l1_start_index": 29,
-            "l1_end_index": 32,
-            "translation": "you want"
+            "l1_end_index": 32
           }
-        ],
-        "text_l2": "You will find it play and song and more than you want"
+        ]
       },
       {
         "id": "phrase_5",
@@ -268,19 +237,16 @@
             "timestamp": "00:27.60",
             "timestamp_end": "00:28.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "00:28.50",
             "timestamp_end": "00:29.50",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_6",
@@ -293,19 +259,16 @@
             "timestamp": "00:29.60",
             "timestamp_end": "00:30.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "00:30.80",
             "timestamp_end": "00:32.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_7",
@@ -318,51 +281,44 @@
             "timestamp": "00:32.10",
             "timestamp_end": "00:33.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "water"
+            "l1_end_index": 2
           },
           {
             "text": "طراوة",
             "timestamp": "00:33.00",
             "timestamp_end": "00:33.80",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "softness"
+            "l1_end_index": 8
           },
           {
             "text": "وآخر",
             "timestamp": "00:33.80",
             "timestamp_end": "00:34.20",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "and the ultimate"
+            "l1_end_index": 13
           },
           {
             "text": "حلاوة",
             "timestamp": "00:34.20",
             "timestamp_end": "00:34.80",
             "l1_start_index": 15,
-            "l1_end_index": 19,
-            "translation": "sweetness"
+            "l1_end_index": 19
           },
           {
             "text": "تحت",
             "timestamp": "00:34.80",
             "timestamp_end": "00:35.20",
             "l1_start_index": 21,
-            "l1_end_index": 23,
-            "translation": "under"
+            "l1_end_index": 23
           },
           {
             "text": "المحيط",
             "timestamp": "00:35.20",
             "timestamp_end": "00:36.00",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "the ocean"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "Water freshness and ultimate sweetness under the ocean"
+        ]
       },
       {
         "id": "phrase_8",
@@ -375,75 +331,65 @@
             "timestamp": "00:36.10",
             "timestamp_end": "00:37.20",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "on the surface"
+            "l1_end_index": 5
           },
           {
             "text": "شقى",
             "timestamp": "00:37.20",
             "timestamp_end": "00:37.60",
             "l1_start_index": 7,
-            "l1_end_index": 9,
-            "translation": "mischief"
+            "l1_end_index": 9
           },
           {
             "text": "طول",
             "timestamp": "00:37.60",
             "timestamp_end": "00:38.00",
             "l1_start_index": 11,
-            "l1_end_index": 13,
-            "translation": "all"
+            "l1_end_index": 13
           },
           {
             "text": "النهار",
             "timestamp": "00:38.00",
             "timestamp_end": "00:38.80",
             "l1_start_index": 15,
-            "l1_end_index": 20,
-            "translation": "the day"
+            "l1_end_index": 20
           },
           {
             "text": "الشمس",
             "timestamp": "00:38.80",
             "timestamp_end": "00:39.40",
             "l1_start_index": 22,
-            "l1_end_index": 26,
-            "translation": "the sun"
+            "l1_end_index": 26
           },
           {
             "text": "حر",
             "timestamp": "00:39.40",
             "timestamp_end": "00:39.80",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "hot"
+            "l1_end_index": 29
           },
           {
             "text": "ما",
             "timestamp": "00:39.80",
             "timestamp_end": "00:40.00",
             "l1_start_index": 31,
-            "l1_end_index": 32,
-            "translation": "no"
+            "l1_end_index": 32
           },
           {
             "text": "في",
             "timestamp": "00:40.00",
             "timestamp_end": "00:40.20",
             "l1_start_index": 34,
-            "l1_end_index": 35,
-            "translation": "there is"
+            "l1_end_index": 35
           },
           {
             "text": "اختيار",
             "timestamp": "00:40.20",
             "timestamp_end": "00:40.50",
             "l1_start_index": 37,
-            "l1_end_index": 42,
-            "translation": "choice"
+            "l1_end_index": 42
           }
-        ],
-        "text_l2": "On the surface hardship all day, the sun heat, no choice"
+        ]
       },
       {
         "id": "phrase_9",
@@ -456,51 +402,44 @@
             "timestamp": "00:40.60",
             "timestamp_end": "00:41.80",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "and we"
+            "l1_end_index": 4
           },
           {
             "text": "بنعوم",
             "timestamp": "00:41.80",
             "timestamp_end": "00:42.50",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "we swim"
+            "l1_end_index": 10
           },
           {
             "text": "عشان",
             "timestamp": "00:42.50",
             "timestamp_end": "00:43.20",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "so that"
+            "l1_end_index": 15
           },
           {
             "text": "نقوم",
             "timestamp": "00:43.20",
             "timestamp_end": "00:43.80",
             "l1_start_index": 17,
-            "l1_end_index": 20,
-            "translation": "we rise"
+            "l1_end_index": 20
           },
           {
             "text": "جوة",
             "timestamp": "00:43.80",
             "timestamp_end": "00:44.10",
             "l1_start_index": 22,
-            "l1_end_index": 24,
-            "translation": "inside"
+            "l1_end_index": 24
           },
           {
             "text": "المحيط",
             "timestamp": "00:44.10",
             "timestamp_end": "00:44.50",
             "l1_start_index": 26,
-            "l1_end_index": 31,
-            "translation": "the ocean"
+            "l1_end_index": 31
           }
-        ],
-        "text_l2": "And we swim so we stand inside the ocean"
+        ]
       },
       {
         "id": "phrase_10",
@@ -513,59 +452,51 @@
             "timestamp": "00:49.50",
             "timestamp_end": "00:50.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "here"
+            "l1_end_index": 2
           },
           {
             "text": "السمك",
             "timestamp": "00:50.50",
             "timestamp_end": "00:51.20",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "the fish"
+            "l1_end_index": 8
           },
           {
             "text": "فرحان",
             "timestamp": "00:51.20",
             "timestamp_end": "00:52.00",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "happy"
+            "l1_end_index": 14
           },
           {
             "text": "وفي",
             "timestamp": "00:52.00",
             "timestamp_end": "00:52.50",
             "l1_start_index": 16,
-            "l1_end_index": 18,
-            "translation": "and in"
+            "l1_end_index": 18
           },
           {
             "text": "الموج",
             "timestamp": "00:52.50",
             "timestamp_end": "00:53.00",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "the waves"
+            "l1_end_index": 24
           },
           {
             "text": "يعيش",
             "timestamp": "00:53.00",
             "timestamp_end": "00:53.40",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "he lives"
+            "l1_end_index": 29
           },
           {
             "text": "بأمان",
             "timestamp": "00:53.40",
             "timestamp_end": "00:53.80",
             "l1_start_index": 31,
-            "l1_end_index": 35,
-            "translation": "safely"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "Here the fish is happy and in the waves lives safely"
+        ]
       },
       {
         "id": "phrase_11",
@@ -578,59 +509,51 @@
             "timestamp": "00:54.00",
             "timestamp_end": "00:55.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "and outside"
+            "l1_end_index": 3
           },
           {
             "text": "السمك",
             "timestamp": "00:55.00",
             "timestamp_end": "00:55.60",
             "l1_start_index": 5,
-            "l1_end_index": 9,
-            "translation": "the fish"
+            "l1_end_index": 9
           },
           {
             "text": "غضبان",
             "timestamp": "00:55.60",
             "timestamp_end": "00:56.30",
             "l1_start_index": 11,
-            "l1_end_index": 15,
-            "translation": "angry"
+            "l1_end_index": 15
           },
           {
             "text": "وفي",
             "timestamp": "00:56.30",
             "timestamp_end": "00:56.80",
             "l1_start_index": 17,
-            "l1_end_index": 19,
-            "translation": "and in"
+            "l1_end_index": 19
           },
           {
             "text": "الحوض",
             "timestamp": "00:56.80",
             "timestamp_end": "00:57.40",
             "l1_start_index": 21,
-            "l1_end_index": 25,
-            "translation": "the tank"
+            "l1_end_index": 25
           },
           {
             "text": "محبوس",
             "timestamp": "00:57.40",
             "timestamp_end": "00:57.90",
             "l1_start_index": 27,
-            "l1_end_index": 31,
-            "translation": "imprisoned"
+            "l1_end_index": 31
           },
           {
             "text": "زعلان",
             "timestamp": "00:57.90",
             "timestamp_end": "00:58.50",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "upset"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "And outside the fish is angry and in the tank trapped sad"
+        ]
       },
       {
         "id": "phrase_12",
@@ -643,59 +566,51 @@
             "timestamp": "00:59.00",
             "timestamp_end": "01:00.00",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "and the fish of"
+            "l1_end_index": 3
           },
           {
             "text": "الحوض",
             "timestamp": "01:00.00",
             "timestamp_end": "01:00.50",
             "l1_start_index": 5,
-            "l1_end_index": 9,
-            "translation": "the tank"
+            "l1_end_index": 9
           },
           {
             "text": "محظوظ",
             "timestamp": "01:00.50",
             "timestamp_end": "01:01.00",
             "l1_start_index": 11,
-            "l1_end_index": 15,
-            "translation": "lucky"
+            "l1_end_index": 15
           },
           {
             "text": "في",
             "timestamp": "01:01.00",
             "timestamp_end": "01:01.50",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "in"
+            "l1_end_index": 18
           },
           {
             "text": "غيره",
             "timestamp": "01:01.50",
             "timestamp_end": "01:02.00",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "others"
+            "l1_end_index": 23
           },
           {
             "text": "أعصابه",
             "timestamp": "01:02.00",
             "timestamp_end": "01:02.50",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "his nerves"
+            "l1_end_index": 30
           },
           {
             "text": "تبوظ",
             "timestamp": "01:02.50",
             "timestamp_end": "01:03.00",
             "l1_start_index": 32,
-            "l1_end_index": 35,
-            "translation": "get ruined"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "And the tank fish is lucky, in others their nerves get ruined"
+        ]
       },
       {
         "id": "phrase_13",
@@ -708,59 +623,51 @@
             "timestamp": "01:03.20",
             "timestamp_end": "01:04.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "if"
+            "l1_end_index": 1
           },
           {
             "text": "كان",
             "timestamp": "01:04.00",
             "timestamp_end": "01:04.50",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "was"
+            "l1_end_index": 5
           },
           {
             "text": "المدير",
             "timestamp": "01:04.50",
             "timestamp_end": "01:05.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "the boss"
+            "l1_end_index": 12
           },
           {
             "text": "جاعان",
             "timestamp": "01:05.00",
             "timestamp_end": "01:05.80",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "hungry"
+            "l1_end_index": 18
           },
           {
             "text": "هياكلو",
             "timestamp": "01:05.80",
             "timestamp_end": "01:06.50",
             "l1_start_index": 20,
-            "l1_end_index": 25,
-            "translation": "he will eat him"
+            "l1_end_index": 25
           },
           {
             "text": "مع",
             "timestamp": "01:06.50",
             "timestamp_end": "01:06.80",
             "l1_start_index": 27,
-            "l1_end_index": 28,
-            "translation": "with"
+            "l1_end_index": 28
           },
           {
             "text": "المايونيز",
             "timestamp": "01:06.80",
             "timestamp_end": "01:07.50",
             "l1_start_index": 30,
-            "l1_end_index": 38,
-            "translation": "mayonnaise"
+            "l1_end_index": 38
           }
-        ],
-        "text_l2": "If the boss was hungry he would eat him with the mayonnaise"
+        ]
       },
       {
         "id": "phrase_14",
@@ -773,27 +680,23 @@
             "timestamp": "01:07.60",
             "timestamp_end": "01:08.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "there he is"
+            "l1_end_index": 2
           },
           {
             "text": "جوة",
             "timestamp": "01:08.20",
             "timestamp_end": "01:08.80",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "inside"
+            "l1_end_index": 6
           },
           {
             "text": "المحيط",
             "timestamp": "01:08.80",
             "timestamp_end": "01:09.50",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "the ocean"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "Here it is inside the ocean"
+        ]
       },
       {
         "id": "phrase_15",
@@ -806,19 +709,16 @@
             "timestamp": "01:09.60",
             "timestamp_end": "01:10.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "01:10.80",
             "timestamp_end": "01:12.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_16",
@@ -831,59 +731,51 @@
             "timestamp": "01:12.10",
             "timestamp_end": "01:13.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "who"
+            "l1_end_index": 2
           },
           {
             "text": "هيشوي",
             "timestamp": "01:13.50",
             "timestamp_end": "01:14.20",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "will grill"
+            "l1_end_index": 8
           },
           {
             "text": "ولا",
             "timestamp": "01:14.20",
             "timestamp_end": "01:14.80",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "or"
+            "l1_end_index": 12
           },
           {
             "text": "يقلي",
             "timestamp": "01:14.80",
             "timestamp_end": "01:15.30",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "fry"
+            "l1_end_index": 17
           },
           {
             "text": "لا",
             "timestamp": "01:15.30",
             "timestamp_end": "01:15.60",
             "l1_start_index": 19,
-            "l1_end_index": 20,
-            "translation": "no"
+            "l1_end_index": 20
           },
           {
             "text": "ده",
             "timestamp": "01:15.60",
             "timestamp_end": "01:15.90",
             "l1_start_index": 22,
-            "l1_end_index": 23,
-            "translation": "that"
+            "l1_end_index": 23
           },
           {
             "text": "مستحيل",
             "timestamp": "01:15.90",
             "timestamp_end": "01:16.50",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "impossible"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "Who will grill or fry? No, this is impossible"
+        ]
       },
       {
         "id": "phrase_17",
@@ -896,59 +788,51 @@
             "timestamp": "01:17.00",
             "timestamp_end": "01:18.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "on"
+            "l1_end_index": 2
           },
           {
             "text": "الأرض",
             "timestamp": "01:18.00",
             "timestamp_end": "01:18.50",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "the land"
+            "l1_end_index": 8
           },
           {
             "text": "عوزو",
             "timestamp": "01:18.50",
             "timestamp_end": "01:19.20",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "they want"
+            "l1_end_index": 13
           },
           {
             "text": "ياكلونا",
             "timestamp": "01:19.20",
             "timestamp_end": "01:20.00",
             "l1_start_index": 15,
-            "l1_end_index": 21,
-            "translation": "to eat us"
+            "l1_end_index": 21
           },
           {
             "text": "هنا",
             "timestamp": "01:20.00",
             "timestamp_end": "01:20.50",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "here"
+            "l1_end_index": 25
           },
           {
             "text": "الزي",
             "timestamp": "01:20.50",
             "timestamp_end": "01:21.00",
             "l1_start_index": 27,
-            "l1_end_index": 30,
-            "translation": "the like"
+            "l1_end_index": 30
           },
           {
             "text": "طولنا",
             "timestamp": "01:21.00",
             "timestamp_end": "01:21.50",
             "l1_start_index": 32,
-            "l1_end_index": 36,
-            "translation": "all our lives"
+            "l1_end_index": 36
           }
-        ],
-        "text_l2": "On land they want to eat us, here like our length"
+        ]
       },
       {
         "id": "phrase_18",
@@ -961,51 +845,44 @@
             "timestamp": "01:22.00",
             "timestamp_end": "01:23.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "الفقاعة",
             "timestamp": "01:23.00",
             "timestamp_end": "01:23.80",
             "l1_start_index": 4,
-            "l1_end_index": 10,
-            "translation": "the bubble"
+            "l1_end_index": 10
           },
           {
             "text": "آخر",
             "timestamp": "01:23.80",
             "timestamp_end": "01:24.20",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "the ultimate"
+            "l1_end_index": 14
           },
           {
             "text": "متعة",
             "timestamp": "01:24.20",
             "timestamp_end": "01:24.80",
             "l1_start_index": 16,
-            "l1_end_index": 19,
-            "translation": "pleasure"
+            "l1_end_index": 19
           },
           {
             "text": "جوة",
             "timestamp": "01:24.80",
             "timestamp_end": "01:25.10",
             "l1_start_index": 21,
-            "l1_end_index": 23,
-            "translation": "inside"
+            "l1_end_index": 23
           },
           {
             "text": "المحيط",
             "timestamp": "01:25.10",
             "timestamp_end": "01:25.50",
             "l1_start_index": 25,
-            "l1_end_index": 30,
-            "translation": "the ocean"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "Inside the bubble ultimate fun inside the ocean"
+        ]
       },
       {
         "id": "phrase_19",
@@ -1018,19 +895,16 @@
             "timestamp": "01:25.60",
             "timestamp_end": "01:26.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "01:26.80",
             "timestamp_end": "01:28.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_20",
@@ -1043,51 +917,44 @@
             "timestamp": "01:28.10",
             "timestamp_end": "01:29.50",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "life"
+            "l1_end_index": 5
           },
           {
             "text": "حلوة",
             "timestamp": "01:29.50",
             "timestamp_end": "01:30.20",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "sweet"
+            "l1_end_index": 10
           },
           {
             "text": "بيحبوا",
             "timestamp": "01:30.20",
             "timestamp_end": "01:31.00",
             "l1_start_index": 12,
-            "l1_end_index": 17,
-            "translation": "they love"
+            "l1_end_index": 17
           },
           {
             "text": "الغنوة",
             "timestamp": "01:31.00",
             "timestamp_end": "01:32.00",
             "l1_start_index": 19,
-            "l1_end_index": 24,
-            "translation": "the song"
+            "l1_end_index": 24
           },
           {
             "text": "ده",
             "timestamp": "01:32.00",
             "timestamp_end": "01:32.50",
             "l1_start_index": 26,
-            "l1_end_index": 27,
-            "translation": "that"
+            "l1_end_index": 27
           },
           {
             "text": "الطبيعي",
             "timestamp": "01:32.50",
             "timestamp_end": "01:33.50",
             "l1_start_index": 29,
-            "l1_end_index": 35,
-            "translation": "the natural"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "Life is sweet, they love the song, this is natural"
+        ]
       },
       {
         "id": "phrase_21",
@@ -1100,67 +967,58 @@
             "timestamp": "01:34.00",
             "timestamp_end": "01:35.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "even"
+            "l1_end_index": 2
           },
           {
             "text": "الهفش",
             "timestamp": "01:35.00",
             "timestamp_end": "01:35.50",
             "l1_start_index": 4,
-            "l1_end_index": 8,
-            "translation": "the small fish"
+            "l1_end_index": 8
           },
           {
             "text": "والشفنين",
             "timestamp": "01:35.50",
             "timestamp_end": "01:36.20",
             "l1_start_index": 10,
-            "l1_end_index": 17,
-            "translation": "and the stingrays"
+            "l1_end_index": 17
           },
           {
             "text": "يجي",
             "timestamp": "01:36.20",
             "timestamp_end": "01:36.80",
             "l1_start_index": 19,
-            "l1_end_index": 21,
-            "translation": "comes"
+            "l1_end_index": 21
           },
           {
             "text": "يرقص",
             "timestamp": "01:36.80",
             "timestamp_end": "01:37.80",
             "l1_start_index": 23,
-            "l1_end_index": 26,
-            "translation": "dances"
+            "l1_end_index": 26
           },
           {
             "text": "من",
             "timestamp": "01:37.80",
             "timestamp_end": "01:38.20",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "without"
+            "l1_end_index": 29
           },
           {
             "text": "غير",
             "timestamp": "01:38.20",
             "timestamp_end": "01:38.80",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "without"
+            "l1_end_index": 33
           },
           {
             "text": "رجلين",
             "timestamp": "01:38.80",
             "timestamp_end": "01:39.50",
             "l1_start_index": 35,
-            "l1_end_index": 39,
-            "translation": "legs"
+            "l1_end_index": 39
           }
-        ],
-        "text_l2": "Even the flounder and the stingray comes to dance without two legs"
+        ]
       },
       {
         "id": "phrase_22",
@@ -1173,59 +1031,51 @@
             "timestamp": "01:39.60",
             "timestamp_end": "01:40.50",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "we"
+            "l1_end_index": 3
           },
           {
             "text": "فنها",
             "timestamp": "01:40.50",
             "timestamp_end": "01:41.00",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "its fun"
+            "l1_end_index": 8
           },
           {
             "text": "هنعيش",
             "timestamp": "01:41.00",
             "timestamp_end": "01:41.50",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "we will live"
+            "l1_end_index": 14
           },
           {
             "text": "في",
             "timestamp": "01:41.50",
             "timestamp_end": "01:41.80",
             "l1_start_index": 16,
-            "l1_end_index": 17,
-            "translation": "in"
+            "l1_end_index": 17
           },
           {
             "text": "أمنها",
             "timestamp": "01:41.80",
             "timestamp_end": "01:42.10",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "its safety"
+            "l1_end_index": 23
           },
           {
             "text": "جوة",
             "timestamp": "01:42.10",
             "timestamp_end": "01:42.30",
             "l1_start_index": 25,
-            "l1_end_index": 27,
-            "translation": "inside"
+            "l1_end_index": 27
           },
           {
             "text": "المحيط",
             "timestamp": "01:42.30",
             "timestamp_end": "01:42.50",
             "l1_start_index": 29,
-            "l1_end_index": 34,
-            "translation": "the ocean"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "We are its joy, we will live in its safety inside the ocean"
+        ]
       },
       {
         "id": "phrase_23",
@@ -1238,19 +1088,16 @@
             "timestamp": "02:26.00",
             "timestamp_end": "02:27.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "02:27.00",
             "timestamp_end": "02:28.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_24",
@@ -1263,19 +1110,16 @@
             "timestamp": "02:28.10",
             "timestamp_end": "02:29.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "inside"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "02:29.50",
             "timestamp_end": "02:30.50",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           }
-        ],
-        "text_l2": "Inside the ocean"
+        ]
       },
       {
         "id": "phrase_25",
@@ -1288,51 +1132,44 @@
             "timestamp": "02:30.60",
             "timestamp_end": "02:31.80",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "when"
+            "l1_end_index": 2
           },
           {
             "text": "السردين",
             "timestamp": "02:31.80",
             "timestamp_end": "02:32.50",
             "l1_start_index": 4,
-            "l1_end_index": 10,
-            "translation": "the sardine"
+            "l1_end_index": 10
           },
           {
             "text": "يقوم",
             "timestamp": "02:32.50",
             "timestamp_end": "02:33.20",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "gets up"
+            "l1_end_index": 15
           },
           {
             "text": "ويرقص",
             "timestamp": "02:33.20",
             "timestamp_end": "02:34.00",
             "l1_start_index": 17,
-            "l1_end_index": 21,
-            "translation": "and dances"
+            "l1_end_index": 21
           },
           {
             "text": "ونفوس",
             "timestamp": "02:34.00",
             "timestamp_end": "02:34.50",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "and we dance"
+            "l1_end_index": 27
           },
           {
             "text": "كمان",
             "timestamp": "02:34.50",
             "timestamp_end": "02:35.00",
             "l1_start_index": 29,
-            "l1_end_index": 32,
-            "translation": "also"
+            "l1_end_index": 32
           }
-        ],
-        "text_l2": "When the sardine gets up and dances and souls too"
+        ]
       },
       {
         "id": "phrase_26",
@@ -1345,67 +1182,58 @@
             "timestamp": "02:35.50",
             "timestamp_end": "02:36.50",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "they have"
+            "l1_end_index": 4
           },
           {
             "text": "إيه",
             "timestamp": "02:36.50",
             "timestamp_end": "02:36.80",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "what"
+            "l1_end_index": 8
           },
           {
             "text": "رمل",
             "timestamp": "02:36.80",
             "timestamp_end": "02:37.20",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "sand"
+            "l1_end_index": 12
           },
           {
             "text": "كتير",
             "timestamp": "02:37.20",
             "timestamp_end": "02:37.80",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "a lot"
+            "l1_end_index": 17
           },
           {
             "text": "إحنا",
             "timestamp": "02:37.80",
             "timestamp_end": "02:38.50",
             "l1_start_index": 19,
-            "l1_end_index": 22,
-            "translation": "we"
+            "l1_end_index": 22
           },
           {
             "text": "هنا",
             "timestamp": "02:38.50",
             "timestamp_end": "02:38.80",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "here"
+            "l1_end_index": 26
           },
           {
             "text": "أوركسترا",
             "timestamp": "02:38.80",
             "timestamp_end": "02:39.50",
             "l1_start_index": 28,
-            "l1_end_index": 35,
-            "translation": "orchestra"
+            "l1_end_index": 35
           },
           {
             "text": "كبير",
             "timestamp": "02:39.50",
             "timestamp_end": "02:40.00",
             "l1_start_index": 37,
-            "l1_end_index": 40,
-            "translation": "big"
+            "l1_end_index": 40
           }
-        ],
-        "text_l2": "What do they have? Sand a lot. We are here a big orchestra"
+        ]
       },
       {
         "id": "phrase_27",
@@ -1418,51 +1246,44 @@
             "timestamp": "02:40.10",
             "timestamp_end": "02:41.50",
             "l1_start_index": 0,
-            "l1_end_index": 8,
-            "translation": "the clam"
+            "l1_end_index": 8
           },
           {
             "text": "عمره",
             "timestamp": "02:41.50",
             "timestamp_end": "02:42.20",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "never"
+            "l1_end_index": 13
           },
           {
             "text": "ما",
             "timestamp": "02:42.20",
             "timestamp_end": "02:42.50",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "not"
+            "l1_end_index": 16
           },
           {
             "text": "يلوس",
             "timestamp": "02:42.50",
             "timestamp_end": "02:43.20",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "he wiggles"
+            "l1_end_index": 21
           },
           {
             "text": "جوة",
             "timestamp": "02:43.20",
             "timestamp_end": "02:43.50",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "inside"
+            "l1_end_index": 25
           },
           {
             "text": "المحيط",
             "timestamp": "02:43.50",
             "timestamp_end": "02:44.00",
             "l1_start_index": 27,
-            "l1_end_index": 32,
-            "translation": "the ocean"
+            "l1_end_index": 32
           }
-        ],
-        "text_l2": "The scallop never gets dirty inside the ocean"
+        ]
       },
       {
         "id": "phrase_28",
@@ -1475,35 +1296,30 @@
             "timestamp": "02:44.50",
             "timestamp_end": "02:46.00",
             "l1_start_index": 0,
-            "l1_end_index": 7,
-            "translation": "the storytellers"
+            "l1_end_index": 7
           },
           {
             "text": "والهافلات",
             "timestamp": "02:46.00",
             "timestamp_end": "02:47.20",
             "l1_start_index": 9,
-            "l1_end_index": 17,
-            "translation": "and the parties"
+            "l1_end_index": 17
           },
           {
             "text": "جوة",
             "timestamp": "02:47.20",
             "timestamp_end": "02:47.80",
             "l1_start_index": 19,
-            "l1_end_index": 21,
-            "translation": "inside"
+            "l1_end_index": 21
           },
           {
             "text": "المحيط",
             "timestamp": "02:47.80",
             "timestamp_end": "02:48.50",
             "l1_start_index": 23,
-            "l1_end_index": 28,
-            "translation": "the ocean"
+            "l1_end_index": 28
           }
-        ],
-        "text_l2": "The stories and the parties inside the ocean"
+        ]
       },
       {
         "id": "phrase_29",
@@ -1516,67 +1332,58 @@
             "timestamp": "02:49.00",
             "timestamp_end": "02:50.00",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "all"
+            "l1_end_index": 1
           },
           {
             "text": "القواقع",
             "timestamp": "02:50.00",
             "timestamp_end": "02:50.80",
             "l1_start_index": 3,
-            "l1_end_index": 9,
-            "translation": "the shells"
+            "l1_end_index": 9
           },
           {
             "text": "الرائعة",
             "timestamp": "02:50.80",
             "timestamp_end": "02:51.50",
             "l1_start_index": 11,
-            "l1_end_index": 17,
-            "translation": "the wonderful"
+            "l1_end_index": 17
           },
           {
             "text": "حياة",
             "timestamp": "02:51.50",
             "timestamp_end": "02:52.00",
             "l1_start_index": 19,
-            "l1_end_index": 22,
-            "translation": "life"
+            "l1_end_index": 22
           },
           {
             "text": "طرية",
             "timestamp": "02:52.00",
             "timestamp_end": "02:52.50",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "soft"
+            "l1_end_index": 27
           },
           {
             "text": "هنا",
             "timestamp": "02:52.50",
             "timestamp_end": "02:52.80",
             "l1_start_index": 29,
-            "l1_end_index": 31,
-            "translation": "here"
+            "l1_end_index": 31
           },
           {
             "text": "في",
             "timestamp": "02:52.80",
             "timestamp_end": "02:53.00",
             "l1_start_index": 33,
-            "l1_end_index": 34,
-            "translation": "in"
+            "l1_end_index": 34
           },
           {
             "text": "المية",
             "timestamp": "02:53.00",
             "timestamp_end": "02:53.50",
             "l1_start_index": 36,
-            "l1_end_index": 40,
-            "translation": "the water"
+            "l1_end_index": 40
           }
-        ],
-        "text_l2": "All the wonderful shells, soft life here in the water"
+        ]
       },
       {
         "id": "phrase_30",
@@ -1589,35 +1396,30 @@
             "timestamp": "02:54.00",
             "timestamp_end": "02:55.00",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "here"
+            "l1_end_index": 2
           },
           {
             "text": "المحيط",
             "timestamp": "02:55.00",
             "timestamp_end": "02:56.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "the ocean"
+            "l1_end_index": 9
           },
           {
             "text": "جوة",
             "timestamp": "02:56.00",
             "timestamp_end": "02:57.00",
             "l1_start_index": 11,
-            "l1_end_index": 13,
-            "translation": "inside"
+            "l1_end_index": 13
           },
           {
             "text": "المحيط",
             "timestamp": "02:57.00",
             "timestamp_end": "02:58.00",
             "l1_start_index": 15,
-            "l1_end_index": 20,
-            "translation": "the ocean"
+            "l1_end_index": 20
           }
-        ],
-        "text_l2": "Here the ocean, inside the ocean"
+        ]
       }
     ],
     "lessons": "# جمال المحيط\n00:09.00 طحالب ديما أحلى في بحيرة الجيران\n00:13.80 لو تحلم تروح عندهم تبقى يا حبيبي غلطان\n00:18.50 لو بصيت عالدنيا الحلوة هنا جوة المحيط\n00:23.00 هتلاقيها لعب وغنوة وأكتر مما تريد\n00:27.60 جوة المحيط\n00:29.60 جوة المحيط\n00:32.10 مية طراوة وآخر حلاوة تحت المحيط\n\n# السمك الفرحان جوة المحيط\n00:36.10 عالسطح شقى طول النهار الشمس حر ما في اختيار\n00:40.60 وإحنا بنعوم عشان نقوم جوة المحيط\n00:49.50 هنا السمك فرحان وفي الموج يعيش بأمان\n00:54.00 وبرة السمك غضبان وفي الحوض محبوس زعلان\n00:59.00 وسمك الحوض محظوظ في غيره أعصابه تبوظ\n01:03.20 لو كان المدير جاعان هياكلو مع المايونيز\n01:07.60 أهو جوة المحيط\n\n# متعة وأمان جوة المحيط\n01:09.60 جوة المحيط\n01:12.10 مين هيشوي ولا يقلي لا ده مستحيل\n01:17.00 على الأرض عوزو ياكلونا هنا الزي طولنا\n01:22.00 جوة الفقاعة آخر متعة جوة المحيط\n01:25.60 جوة المحيط\n01:28.10 الحياة حلوة بيحبوا الغنوة ده الطبيعي\n\n# الرقص جوة المحيط\n01:34.00 حتى الهفش والشفنين يجي يرقص من غير رجلين\n01:39.60 إحنا فنها هنعيش في أمنها جوة المحيط\n02:26.00 جوة المحيط\n02:28.10 جوة المحيط\n02:30.60 لما السردين يقوم ويرقص ونفوس كمان\n\n# الأوركسترا الكبير\n02:35.50 عندهم إيه رمل كتير إحنا هنا أوركسترا كبير\n02:40.10 البطلينوس عمره ما يلوس جوة المحيط\n02:44.50 الراويات والهافلات جوة المحيط\n02:49.00 كل القواقع الرائعة حياة طرية هنا في المية\n02:54.00 هنا المحيط جوة المحيط",
@@ -1653,7 +1455,335 @@
         "reason": "New vocabulary about orchestra and shells, but limited distinct content."
       }
     ],
-    "similar_sounds": "[طوال] ديما أحلى في بحيرة الجيران\nلو تحلم تروح عندهم تبقى يا حبيبي [الان]\nلو [بقيت] عالدنيا الحلوة هنا جوة المحيط\nهتلاقيها لعب وغنوة وأكتر مما [يريد]\nجوة [بالمحيط]\n[جو] المحيط\nمية طراوة وآخر [علاوة] تحت المحيط\nعالسطح شقى طول النهار [الأمس] حر ما في اختيار\nوإحنا بنعوم عشان نقوم [قوة] المحيط\n[هناك] السمك فرحان وفي الموج يعيش بأمان\nوبرة السمك غضبان [في] الحوض محبوس زعلان\n[إسمك] الحوض محظوظ في غيره أعصابه تبوظ\nلو كان المدير جاعان هياكلو مع [مايونيز]\nأهو جوة [بالمحيط]\n[جون] المحيط\nمين هيشوي ولا يقلي لا ده [مستحيلا]\nعلى الأرض عوزو ياكلونا هنا الزي [طولها]\nجوة الفقاعة آخر [متعبة] جوة المحيط\nجوة [بالمحيط]\nالحياة حلوة [يحبوا] الغنوة ده الطبيعي\nحتى الهفش والشفنين يجي يرقص من غير [جلين]\nإحنا فنها هنعيش في أمنها جوة [بالمحيط]\n[جون] المحيط\nجوة [المحيطة]\nلما السردين يقوم [ورقة] ونفوس كمان\nعندهم إيه رمل كتير [إنا] هنا أوركسترا كبير\nالبطلينوس عمره ما يلوس جوة [المحيطة]\n[الحاويات] والهافلات جوة المحيط\nكل القواقع الرائعة حياة طرية [هذا] في المية\nهنا [المحيطة] جوة المحيط"
+    "similar_sounds": "[طوال] ديما أحلى في بحيرة الجيران\nلو تحلم تروح عندهم تبقى يا حبيبي [الان]\nلو [بقيت] عالدنيا الحلوة هنا جوة المحيط\nهتلاقيها لعب وغنوة وأكتر مما [يريد]\nجوة [بالمحيط]\n[جو] المحيط\nمية طراوة وآخر [علاوة] تحت المحيط\nعالسطح شقى طول النهار [الأمس] حر ما في اختيار\nوإحنا بنعوم عشان نقوم [قوة] المحيط\n[هناك] السمك فرحان وفي الموج يعيش بأمان\nوبرة السمك غضبان [في] الحوض محبوس زعلان\n[إسمك] الحوض محظوظ في غيره أعصابه تبوظ\nلو كان المدير جاعان هياكلو مع [مايونيز]\nأهو جوة [بالمحيط]\n[جون] المحيط\nمين هيشوي ولا يقلي لا ده [مستحيلا]\nعلى الأرض عوزو ياكلونا هنا الزي [طولها]\nجوة الفقاعة آخر [متعبة] جوة المحيط\nجوة [بالمحيط]\nالحياة حلوة [يحبوا] الغنوة ده الطبيعي\nحتى الهفش والشفنين يجي يرقص من غير [جلين]\nإحنا فنها هنعيش في أمنها جوة [بالمحيط]\n[جون] المحيط\nجوة [المحيطة]\nلما السردين يقوم [ورقة] ونفوس كمان\nعندهم إيه رمل كتير [إنا] هنا أوركسترا كبير\nالبطلينوس عمره ما يلوس جوة [المحيطة]\n[الحاويات] والهافلات جوة المحيط\nكل القواقع الرائعة حياة طرية [هذا] في المية\nهنا [المحيطة] جوة المحيط",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Algae is always sweeter in the neighbors' lake",
+            "words": [
+              "algae",
+              "always",
+              "sweeter",
+              "in",
+              "lake",
+              "the neighbors"
+            ]
+          },
+          {
+            "text": "If you dream to go to them, you are, my love, mistaken",
+            "words": [
+              "if",
+              "you dream",
+              "you go",
+              "to them",
+              "you will be",
+              "O",
+              "my darling",
+              "wrong"
+            ]
+          },
+          {
+            "text": "If you look at the sweet world here inside the ocean",
+            "words": [
+              "if",
+              "you looked",
+              "at the world",
+              "the beautiful",
+              "here",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "You will find it play and song and more than you want",
+            "words": [
+              "you will find it",
+              "play",
+              "and a song",
+              "and more",
+              "than what",
+              "you want"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Water freshness and ultimate sweetness under the ocean",
+            "words": [
+              "water",
+              "softness",
+              "and the ultimate",
+              "sweetness",
+              "under",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "On the surface hardship all day, the sun heat, no choice",
+            "words": [
+              "on the surface",
+              "mischief",
+              "all",
+              "the day",
+              "the sun",
+              "hot",
+              "no",
+              "there is",
+              "choice"
+            ]
+          },
+          {
+            "text": "And we swim so we stand inside the ocean",
+            "words": [
+              "and we",
+              "we swim",
+              "so that",
+              "we rise",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Here the fish is happy and in the waves lives safely",
+            "words": [
+              "here",
+              "the fish",
+              "happy",
+              "and in",
+              "the waves",
+              "he lives",
+              "safely"
+            ]
+          },
+          {
+            "text": "And outside the fish is angry and in the tank trapped sad",
+            "words": [
+              "and outside",
+              "the fish",
+              "angry",
+              "and in",
+              "the tank",
+              "imprisoned",
+              "upset"
+            ]
+          },
+          {
+            "text": "And the tank fish is lucky, in others their nerves get ruined",
+            "words": [
+              "and the fish of",
+              "the tank",
+              "lucky",
+              "in",
+              "others",
+              "his nerves",
+              "get ruined"
+            ]
+          },
+          {
+            "text": "If the boss was hungry he would eat him with the mayonnaise",
+            "words": [
+              "if",
+              "was",
+              "the boss",
+              "hungry",
+              "he will eat him",
+              "with",
+              "mayonnaise"
+            ]
+          },
+          {
+            "text": "Here it is inside the ocean",
+            "words": [
+              "there he is",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Who will grill or fry? No, this is impossible",
+            "words": [
+              "who",
+              "will grill",
+              "or",
+              "fry",
+              "no",
+              "that",
+              "impossible"
+            ]
+          },
+          {
+            "text": "On land they want to eat us, here like our length",
+            "words": [
+              "on",
+              "the land",
+              "they want",
+              "to eat us",
+              "here",
+              "the like",
+              "all our lives"
+            ]
+          },
+          {
+            "text": "Inside the bubble ultimate fun inside the ocean",
+            "words": [
+              "inside",
+              "the bubble",
+              "the ultimate",
+              "pleasure",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Life is sweet, they love the song, this is natural",
+            "words": [
+              "life",
+              "sweet",
+              "they love",
+              "the song",
+              "that",
+              "the natural"
+            ]
+          },
+          {
+            "text": "Even the flounder and the stingray comes to dance without two legs",
+            "words": [
+              "even",
+              "the small fish",
+              "and the stingrays",
+              "comes",
+              "dances",
+              "without",
+              "without",
+              "legs"
+            ]
+          },
+          {
+            "text": "We are its joy, we will live in its safety inside the ocean",
+            "words": [
+              "we",
+              "its fun",
+              "we will live",
+              "in",
+              "its safety",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "Inside the ocean",
+            "words": [
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "When the sardine gets up and dances and souls too",
+            "words": [
+              "when",
+              "the sardine",
+              "gets up",
+              "and dances",
+              "and we dance",
+              "also"
+            ]
+          },
+          {
+            "text": "What do they have? Sand a lot. We are here a big orchestra",
+            "words": [
+              "they have",
+              "what",
+              "sand",
+              "a lot",
+              "we",
+              "here",
+              "orchestra",
+              "big"
+            ]
+          },
+          {
+            "text": "The scallop never gets dirty inside the ocean",
+            "words": [
+              "the clam",
+              "never",
+              "not",
+              "he wiggles",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "The stories and the parties inside the ocean",
+            "words": [
+              "the storytellers",
+              "and the parties",
+              "inside",
+              "the ocean"
+            ]
+          },
+          {
+            "text": "All the wonderful shells, soft life here in the water",
+            "words": [
+              "all",
+              "the shells",
+              "the wonderful",
+              "life",
+              "soft",
+              "here",
+              "in",
+              "the water"
+            ]
+          },
+          {
+            "text": "Here the ocean, inside the ocean",
+            "words": [
+              "here",
+              "the ocean",
+              "inside",
+              "the ocean"
+            ]
+          }
+        ],
+        "lessons": "# جمال المحيط\n00:09.00 طحالب ديما أحلى في بحيرة الجيران\n00:13.80 لو تحلم تروح عندهم تبقى يا حبيبي غلطان\n00:18.50 لو بصيت عالدنيا الحلوة هنا جوة المحيط\n00:23.00 هتلاقيها لعب وغنوة وأكتر مما تريد\n00:27.60 جوة المحيط\n00:29.60 جوة المحيط\n00:32.10 مية طراوة وآخر حلاوة تحت المحيط\n\n# السمك الفرحان جوة المحيط\n00:36.10 عالسطح شقى طول النهار الشمس حر ما في اختيار\n00:40.60 وإحنا بنعوم عشان نقوم جوة المحيط\n00:49.50 هنا السمك فرحان وفي الموج يعيش بأمان\n00:54.00 وبرة السمك غضبان وفي الحوض محبوس زعلان\n00:59.00 وسمك الحوض محظوظ في غيره أعصابه تبوظ\n01:03.20 لو كان المدير جاعان هياكلو مع المايونيز\n01:07.60 أهو جوة المحيط\n\n# متعة وأمان جوة المحيط\n01:09.60 جوة المحيط\n01:12.10 مين هيشوي ولا يقلي لا ده مستحيل\n01:17.00 على الأرض عوزو ياكلونا هنا الزي طولنا\n01:22.00 جوة الفقاعة آخر متعة جوة المحيط\n01:25.60 جوة المحيط\n01:28.10 الحياة حلوة بيحبوا الغنوة ده الطبيعي\n\n# الرقص جوة المحيط\n01:34.00 حتى الهفش والشفنين يجي يرقص من غير رجلين\n01:39.60 إحنا فنها هنعيش في أمنها جوة المحيط\n02:26.00 جوة المحيط\n02:28.10 جوة المحيط\n02:30.60 لما السردين يقوم ويرقص ونفوس كمان\n\n# الأوركسترا الكبير\n02:35.50 عندهم إيه رمل كتير إحنا هنا أوركسترا كبير\n02:40.10 البطلينوس عمره ما يلوس جوة المحيط\n02:44.50 الراويات والهافلات جوة المحيط\n02:49.00 كل القواقع الرائعة حياة طرية هنا في المية\n02:54.00 هنا المحيط جوة المحيط"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-28 18:23:29 UTC",
   "updated_at": "2026-06-28 18:26:22 UTC",

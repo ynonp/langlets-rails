@@ -9,342 +9,496 @@
         "id": "phrase_1",
         "text_l1": "جلست هنا",
         "timestamp": "00:32.40",
-        "timestamp_end": "00:35.00",
-        "text_l2": "I sat here"
+        "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "مصغياً لصوت المطر",
         "timestamp": "00:35.10",
-        "timestamp_end": "00:38.20",
-        "text_l2": "Listening to the sound of rain"
+        "timestamp_end": "00:38.20"
       },
       {
         "id": "phrase_3",
         "text_l1": "وأفكر ما الذي حصل",
         "timestamp": "00:38.30",
-        "timestamp_end": "00:41.20",
-        "text_l2": "And wondering what happened"
+        "timestamp_end": "00:41.20"
       },
       {
         "id": "phrase_4",
         "text_l1": "لحالي",
         "timestamp": "00:41.30",
-        "timestamp_end": "00:43.80",
-        "text_l2": "To my state"
+        "timestamp_end": "00:43.80"
       },
       {
         "id": "phrase_5",
         "text_l1": "طوال سنوات",
         "timestamp": "00:44.00",
-        "timestamp_end": "00:46.80",
-        "text_l2": "Throughout the years"
+        "timestamp_end": "00:46.80"
       },
       {
         "id": "phrase_6",
         "text_l1": "مثل أناس كثر",
         "timestamp": "00:46.90",
-        "timestamp_end": "00:49.60",
-        "text_l2": "Like many people"
+        "timestamp_end": "00:49.60"
       },
       {
         "id": "phrase_7",
         "text_l1": "يضيع مني العمر",
         "timestamp": "00:49.70",
-        "timestamp_end": "00:52.60",
-        "text_l2": "Life slips away from me"
+        "timestamp_end": "00:52.60"
       },
       {
         "id": "phrase_8",
         "text_l1": "ولا أبالي",
         "timestamp": "00:52.70",
-        "timestamp_end": "00:55.20",
-        "text_l2": "And I don't care"
+        "timestamp_end": "00:55.20"
       },
       {
         "id": "phrase_9",
         "text_l1": "لكن",
         "timestamp": "00:55.30",
-        "timestamp_end": "00:56.50",
-        "text_l2": "But"
+        "timestamp_end": "00:56.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "قد سئمت من التفكير",
         "timestamp": "00:56.60",
-        "timestamp_end": "00:59.20",
-        "text_l2": "I've grown tired of thinking"
+        "timestamp_end": "00:59.20"
       },
       {
         "id": "phrase_11",
         "text_l1": "قد حان وقت التغيير",
         "timestamp": "00:59.30",
-        "timestamp_end": "01:01.80",
-        "text_l2": "It's time for change"
+        "timestamp_end": "01:01.80"
       },
       {
         "id": "phrase_12",
         "text_l1": "قد طال شوقي لغدٍ",
         "timestamp": "01:01.90",
-        "timestamp_end": "01:04.50",
-        "text_l2": "I've longed too long for a tomorrow"
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "لي مبتسم",
         "timestamp": "01:04.60",
-        "timestamp_end": "01:07.00",
-        "text_l2": "Smiling at me"
+        "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "لنغني",
         "timestamp": "01:07.10",
-        "timestamp_end": "01:09.80",
-        "text_l2": "Let's sing"
+        "timestamp_end": "01:09.80"
       },
       {
         "id": "phrase_15",
         "text_l1": "ما أجمل الحياة",
         "timestamp": "01:09.90",
-        "timestamp_end": "01:12.80",
-        "text_l2": "How beautiful life is"
+        "timestamp_end": "01:12.80"
       },
       {
         "id": "phrase_16",
         "text_l1": "فكل شيء",
         "timestamp": "01:12.90",
-        "timestamp_end": "01:14.80",
-        "text_l2": "For everything"
+        "timestamp_end": "01:14.80"
       },
       {
         "id": "phrase_17",
         "text_l1": "يحيا بالأمل",
         "timestamp": "01:14.90",
-        "timestamp_end": "01:18.20",
-        "text_l2": "Lives with hope"
+        "timestamp_end": "01:18.20"
       },
       {
         "id": "phrase_18",
         "text_l1": "فلننسى ما فات",
         "timestamp": "01:20.80",
-        "timestamp_end": "01:23.80",
-        "text_l2": "So let's forget what passed"
+        "timestamp_end": "01:23.80"
       },
       {
         "id": "phrase_19",
         "text_l1": "ونبني لنا مستقبلاً أفضل",
         "timestamp": "01:23.90",
-        "timestamp_end": "01:27.80",
-        "text_l2": "And build ourselves a better future"
+        "timestamp_end": "01:27.80"
       },
       {
         "id": "phrase_20",
         "text_l1": "إلى متى",
         "timestamp": "01:40.40",
-        "timestamp_end": "01:42.80",
-        "text_l2": "How long"
+        "timestamp_end": "01:42.80"
       },
       {
         "id": "phrase_21",
         "text_l1": "سوف أظل تائهاً",
         "timestamp": "01:42.90",
-        "timestamp_end": "01:45.80",
-        "text_l2": "Will I remain lost"
+        "timestamp_end": "01:45.80"
       },
       {
         "id": "phrase_22",
         "text_l1": "أنأى شيئاً فشيئاً",
         "timestamp": "01:45.90",
-        "timestamp_end": "01:48.80",
-        "text_l2": "Distancing myself little by little"
+        "timestamp_end": "01:48.80"
       },
       {
         "id": "phrase_23",
         "text_l1": "عن حلمي",
         "timestamp": "01:48.90",
-        "timestamp_end": "01:51.50",
-        "text_l2": "From my dream"
+        "timestamp_end": "01:51.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "لا لن أبقى",
         "timestamp": "01:51.80",
-        "timestamp_end": "01:54.20",
-        "text_l2": "No, I won't stay"
+        "timestamp_end": "01:54.20"
       },
       {
         "id": "phrase_25",
         "text_l1": "هكذا مكبل اليدين",
         "timestamp": "01:54.30",
-        "timestamp_end": "01:57.20",
-        "text_l2": "Like this, hands tied"
+        "timestamp_end": "01:57.20"
       },
       {
         "id": "phrase_26",
         "text_l1": "فأنا أحس بالحنين",
         "timestamp": "01:57.30",
-        "timestamp_end": "02:00.20",
-        "text_l2": "For I feel longing"
+        "timestamp_end": "02:00.20"
       },
       {
         "id": "phrase_27",
         "text_l1": "لنفسي",
         "timestamp": "02:00.30",
-        "timestamp_end": "02:02.80",
-        "text_l2": "For myself"
+        "timestamp_end": "02:02.80"
       },
       {
         "id": "phrase_28",
         "text_l1": "لا لا",
         "timestamp": "02:02.90",
-        "timestamp_end": "02:04.00",
-        "text_l2": "No, no"
+        "timestamp_end": "02:04.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "لا يأس بعد الآن",
         "timestamp": "02:04.10",
-        "timestamp_end": "02:06.60",
-        "text_l2": "No despair anymore"
+        "timestamp_end": "02:06.60"
       },
       {
         "id": "phrase_30",
         "text_l1": "لا تقل فات الأوان",
         "timestamp": "02:06.70",
-        "timestamp_end": "02:09.20",
-        "text_l2": "Don't say it's too late"
+        "timestamp_end": "02:09.20"
       },
       {
         "id": "phrase_31",
         "text_l1": "فليكن يومك أحلى",
         "timestamp": "02:09.30",
-        "timestamp_end": "02:11.80",
-        "text_l2": "Let your day be sweeter"
+        "timestamp_end": "02:11.80"
       },
       {
         "id": "phrase_32",
         "text_l1": "مما كان",
         "timestamp": "02:11.90",
-        "timestamp_end": "02:14.20",
-        "text_l2": "Than it was"
+        "timestamp_end": "02:14.20"
       },
       {
         "id": "phrase_33",
         "text_l1": "لنغني",
         "timestamp": "02:14.30",
-        "timestamp_end": "02:17.00",
-        "text_l2": "Let's sing"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "ما أجمل الحياة",
         "timestamp": "02:17.10",
-        "timestamp_end": "02:20.00",
-        "text_l2": "How beautiful life is"
+        "timestamp_end": "02:20.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "فكل شيء",
         "timestamp": "02:20.10",
-        "timestamp_end": "02:22.00",
-        "text_l2": "For everything"
+        "timestamp_end": "02:22.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "يحيا بالأمل",
         "timestamp": "02:22.10",
-        "timestamp_end": "02:25.20",
-        "text_l2": "Lives with hope"
+        "timestamp_end": "02:25.20"
       },
       {
         "id": "phrase_37",
         "text_l1": "فلننسى ما فات",
         "timestamp": "02:27.80",
-        "timestamp_end": "02:30.80",
-        "text_l2": "So let's forget what passed"
+        "timestamp_end": "02:30.80"
       },
       {
         "id": "phrase_38",
         "text_l1": "ونبني لنا مستقبلاً أفضل",
         "timestamp": "02:30.90",
-        "timestamp_end": "02:34.80",
-        "text_l2": "And build ourselves a better future"
+        "timestamp_end": "02:34.80"
       },
       {
         "id": "phrase_39",
         "text_l1": "ليس هناك مستحيل",
         "timestamp": "02:58.80",
-        "timestamp_end": "03:01.20",
-        "text_l2": "Nothing is impossible"
+        "timestamp_end": "03:01.20"
       },
       {
         "id": "phrase_40",
         "text_l1": "عندك حلم جميل",
         "timestamp": "03:01.30",
-        "timestamp_end": "03:04.20",
-        "text_l2": "You have a beautiful dream"
+        "timestamp_end": "03:04.20"
       },
       {
         "id": "phrase_41",
         "text_l1": "املأ قلبك باليقين",
         "timestamp": "03:04.30",
-        "timestamp_end": "03:07.20",
-        "text_l2": "Fill your heart with certainty"
+        "timestamp_end": "03:07.20"
       },
       {
         "id": "phrase_42",
         "text_l1": "وامضي",
         "timestamp": "03:07.30",
-        "timestamp_end": "03:09.80",
-        "text_l2": "And move on"
+        "timestamp_end": "03:09.80"
       },
       {
         "id": "phrase_43",
         "text_l1": "لنغني",
         "timestamp": "03:09.90",
-        "timestamp_end": "03:12.60",
-        "text_l2": "Let's sing"
+        "timestamp_end": "03:12.60"
       },
       {
         "id": "phrase_44",
         "text_l1": "ما أجمل الحياة",
         "timestamp": "03:12.70",
-        "timestamp_end": "03:15.60",
-        "text_l2": "How beautiful life is"
+        "timestamp_end": "03:15.60"
       },
       {
         "id": "phrase_45",
         "text_l1": "فكل شيء",
         "timestamp": "03:15.70",
-        "timestamp_end": "03:17.60",
-        "text_l2": "For everything"
+        "timestamp_end": "03:17.60"
       },
       {
         "id": "phrase_46",
         "text_l1": "يحيا بالأمل",
         "timestamp": "03:17.70",
-        "timestamp_end": "03:20.80",
-        "text_l2": "Lives with hope"
+        "timestamp_end": "03:20.80"
       },
       {
         "id": "phrase_47",
         "text_l1": "فلننسى ما فات",
         "timestamp": "03:23.40",
-        "timestamp_end": "03:26.40",
-        "text_l2": "So let's forget what passed"
+        "timestamp_end": "03:26.40"
       },
       {
         "id": "phrase_48",
         "text_l1": "ونبني لنا مستقبلاً أفضل",
         "timestamp": "03:26.50",
-        "timestamp_end": "03:30.50",
-        "text_l2": "And build ourselves a better future"
+        "timestamp_end": "03:30.50"
       }
     ],
     "phrases_with_token_translations": "[جلست] هنا => [I sat] here\nجلست [هنا] => I sat [here]\n\n[مصغياً] لصوت المطر => [Listening] to the sound of rain\nمصغياً [لصوت] المطر => Listening [to the sound] of rain\nمصغياً لصوت [المطر] => Listening to the sound of [rain]\n\n[و] أفكر ما الذي حصل => [And] wondering what happened\nو [أفكر] ما الذي حصل => And [wondering] what happened\nو أفكر [ما الذي] حصل => And wondering [what] happened\nو أفكر ما الذي [حصل] => And wondering what [happened]\n\n[ل]حالي => [To] my state\nل[حالي] => to [my state]\n\n[طوال] سنوات => [Throughout] the years\nطوال [سنوات] => Throughout [the years]\n\n[مثل] أناس كثر => [Like] many people\nمثل [أناس] كثر => Like many [people]\nمثل أناس [كثر] => Like [many] people\n\n[يضيع] مني العمر => Life [slips away] from me\nيضيع [مني] العمر => Life slips away [from me]\nيضيع مني [العمر] => [Life] slips away from me\n\n[ولا] أبالي => [And I don't] care\nولا [أبالي] => And I don't [care]\n\n[لكن] => [But]\n\n[قد] سئمت من التفكير => have\nقد [سئمت] من التفكير => I've [grown tired] of thinking\nقد سئمت [من] التفكير => I've grown tired [of] thinking\nقد سئمت من [التفكير] => I've grown tired of [thinking]\n\n[قد حان] وقت التغيير => [It's] time for change\nقد حان [وقت] التغيير => It's [time] for change\nقد حان وقت [التغيير] => It's time for [change]\n\n[قد] طال شوقي لغدٍ => have\nقد [طال] شوقي لغدٍ => I've longed [too long] for a tomorrow\nقد طال [شوقي] لغدٍ => [I've longed] too long for a tomorrow\nقد طال شوقي [لغدٍ] => I've longed too long [for a tomorrow]\n\nلي [مبتسم] => [Smiling] at me\n[لي] مبتسم => Smiling [at me]\n\n[لـ]نغني => [Let's] sing\nلـ[نغني] => Let's [sing]\n\n[ما] أجمل الحياة => [How] beautiful life is\nما [أجمل] الحياة => How [beautiful] life is\nما أجمل [الحياة] => How beautiful [life] is\n\n[ف]كل شيء => [For] everything\nف[كل شيء] => For [everything]\n\n[يحيا] بالأمل => [Lives] with hope\nيحيا [بالأمل] => Lives [with hope]\n\n[فلننسى] ما فات => [So let's forget] what passed\nفلننسى [ما] فات => So let's forget [what] passed\nفلننسى ما [فات] => So let's forget what [passed]\n\n[ونبني] لنا مستقبلاً أفضل => [And build] ourselves a better future\nونبني [لنا] مستقبلاً أفضل => And build [ourselves] a better future\nونبني لنا [مستقبلاً] أفضل => And build ourselves a better [future]\nونبني لنا مستقبلاً [أفضل] => And build ourselves a [better] future\n\n[إلى متى] => [How long]\n\n[سوف] أظل تائهاً => [Will] I remain lost\nسوف [أظل] تائهاً => Will [I remain] lost\nسوف أظل [تائهاً] => Will I remain [lost]\n\n[أنأى] شيئاً فشيئاً => [Distancing myself] little by little\nأنأى [شيئاً فشيئاً] => Distancing myself [little by little]\n\n[عن] حلمي => [From] my dream\nعن [حلمي] => From [my dream]\n\n[لا] لن أبقى => [No] I won't stay\nلا [لن أبقى] => No, [I won't stay]\nلا لن [أبقى] => No, I won't [stay]\n\n[هكذا] مكبل اليدين => [Like this], hands tied\nهكذا [مكبل] اليدين => Like this, hands [tied]\nهكذا مكبل [اليدين] => Like this, [hands] tied\n\n[ف]أنا أحس بالحنين => [For] I feel longing\nف[أنا] أحس بالحنين => For [I] feel longing\nفأنا [أحس] بالحنين => For I [feel] longing\nفأنا أحس [بالحنين] => For I feel [longing]\n\n[لنفسي] => [For myself]\n\n[لا] لا => [No], no\nلا [لا] => No, [no]\n\n[لا] يأس بعد الآن => [No] despair anymore\nلا [يأس] بعد الآن => No [despair] anymore\nلا يأس [بعد الآن] => No despair [anymore]\n\n[لا] تقل فات الأوان => [Don't] say it's too late\nلا [تقل] فات الأوان => Don't [say] it's too late\nلا تقل [فات الأوان] => Don't say [it's too late]\n\n[فليكن] يومك أحلى => [Let] your day be sweeter\nفليكن [يومك] أحلى => Let [your day] be sweeter\nفليكن يومك [أحلى] => Let your day be [sweeter]\n\n[مما] كان => [Than] it was\nمما [كان] => Than [it was]\n\n[لنغني] => [Let's sing]\n\n[ما] أجمل الحياة => [How] beautiful life is\nما [أجمل] الحياة => How [beautiful] life is\nما أجمل [الحياة] => How beautiful [life] is\n\n[ف] كل شيء => [For] everything\nف [كل شيء] => For [everything]\n\n[يحيا] بالأمل => [Lives] with hope\nيحيا [ب] الأمل => Lives [with] hope\nيحيا ب [الأمل] => Lives with [hope]\n\n[فلننسى] ما فات => [So let's forget] what passed\nفلننسى [ما] فات => So let's forget [what] passed\nفلننسى ما [فات] => So let's forget what [passed]\n\n[ونبني] لنا مستقبلاً أفضل => [And build] ourselves a better future\nونبني [لنا] مستقبلاً أفضل => And build [ourselves] a better future\nونبني لنا [مستقبلاً] أفضل => And build ourselves a better [future]\nونبني لنا مستقبلاً [أفضل] => And build ourselves a [better] future\n\n[ليس هناك] مستحيل => [Nothing is] impossible\nليس هناك [مستحيل] => Nothing is [impossible]\n\n[عندك] حلم جميل => [You have] a beautiful dream\nعندك [حلم] جميل => You have a beautiful [dream]\nعندك حلم [جميل] => You have a [beautiful] dream\n\n[املأ] قلبك باليقين => [Fill] your heart with certainty\nاملأ [قلبك] باليقين => Fill [your heart] with certainty\nاملأ قلبك [باليقين] => Fill your heart [with certainty]\n\n[وامضي] => [And move on]\n\n[لنغني] => [Let's sing]\n\n[ما] أجمل الحياة => [How] beautiful life is\nما [أجمل] الحياة => How [beautiful] life is\nما أجمل [الحياة] => How beautiful [life] is\n\n[ف]كل شيء => [For] everything\nف[كل شيء] => For [everything]\n\n[يحيا] بالأمل => [Lives] with hope\nيحيا [بالأمل] => Lives [with hope]\nيحيا ب[الأمل] => Lives with [hope]\n\n[ف]لننسى ما فات => [So] let's forget what passed\nف[لننسى] ما فات => So [let's forget] what passed\nفلننسى [ما] فات => So let's forget [what] passed\nفلننسى ما [فات] => So let's forget what [passed]\n\n[و]نبني لنا مستقبلاً أفضل => [And] build ourselves a better future\nو[نبني] لنا مستقبلاً أفضل => And [build] ourselves a better future\nونبني [لنا] مستقبلاً أفضل => And build [ourselves] a better future\nونبني لنا [مستقبلاً] أفضل => And build ourselves a better [future]\nونبني لنا مستقبلاً [أفضل] => And build ourselves a [better] future",
     "lessons": "# جلسة التأمل\n00:32.40 جلست هنا\n00:35.10 مصغياً لصوت المطر\n00:38.30 وأفكر ما الذي حصل\n00:41.30 لحالي\n00:44.00 طوال سنوات\n00:46.90 مثل أناس كثر\n00:49.70 يضيع مني العمر\n00:52.70 ولا أبالي\n\n# قرار التغيير\n00:55.30 لكن\n00:56.60 قد سئمت من التفكير\n00:59.30 قد حان وقت التغيير\n01:01.90 قد طال شوقي لغدٍ\n01:04.60 لي مبتسم\n\n# أنشودة الأمل\n01:07.10 لنغني\n01:09.90 ما أجمل الحياة\n01:12.90 فكل شيء\n01:14.90 يحيا بالأمل\n01:20.80 فلننسى ما فات\n01:23.90 ونبني لنا مستقبلاً أفضل\n\n# الروح التائهة\n01:40.40 إلى متى\n01:42.90 سوف أظل تائهاً\n01:45.90 أنأى شيئاً فشيئاً\n01:48.90 عن حلمي\n01:51.80 لا لن أبقى\n01:54.30 هكذا مكبل اليدين\n01:57.30 فأنا أحس بالحنين\n02:00.30 لنفسي\n\n# لا لليأس\n02:02.90 لا لا\n02:04.10 لا يأس بعد الآن\n02:06.70 لا تقل فات الأوان\n02:09.30 فليكن يومك أحلى\n02:11.90 مما كان\n\n# ترديد الأمل\n02:14.30 لنغني\n02:17.10 ما أجمل الحياة\n02:20.10 فكل شيء\n02:22.10 يحيا بالأمل\n02:27.80 فلننسى ما فات\n02:30.90 ونبني لنا مستقبلاً أفضل\n\n# جسر اليقين\n02:58.80 ليس هناك مستحيل\n03:01.30 عندك حلم جميل\n03:04.30 املأ قلبك باليقين\n03:07.30 وامضي\n\n# الكورس الأخير\n03:09.90 لنغني\n03:12.70 ما أجمل الحياة\n03:15.70 فكل شيء\n03:17.70 يحيا بالأمل\n03:23.40 فلننسى ما فات\n03:26.50 ونبني لنا مستقبلاً أفضل",
-    "similar_sounds": "[جلبت] هنا\nمصغياً لصوت [الخطر]\nوأفكر ما الذي [حال]\n[ليالي]\nطوال [قنوات]\nمثل [أنام] كثر\nيضيع [منذ] العمر\n[لا] أبالي\n[لن]\nقد سئمت من [بالتفكير]\nقد حان [وقعت] التغيير\nقد طال شوقي [لقد]\nلي [تبتسم]\n[أنني]\nما [أمل] الحياة\n[كل] شيء\n[حيا] بالأمل\n[لنفسى] ما فات\nونبني لنا [مستقبل] أفضل\nإلى [فتى]\nسوف [أظن] تائهاً\n[أنى] شيئاً فشيئاً\nعن [علمي]\nلا لن [أبى]\n[كهذا] مكبل اليدين\nفأنا أحس [بالرنين]\n[لنفسك]\nلا يأس [بد] الآن\nلا [أقل] فات الأوان\nفليكن [يوم] أحلى\nمما [ان]\n[لأنني]\nما [أعمل] الحياة\nفكل [شيئ]\n[حيا] بالأمل\nفلننسى ما [فان]\nونبني [لا] مستقبلاً أفضل\nليس [هنا] مستحيل\nعندك حلم [جميع]\nاملأ [قلبي] باليقين\n[والمضي]\n[أنني]\nما [أعمل] الحياة\nفكل [شىء]\n[يحين] بالأمل\nفلننسى ما [مات]\nونبني لنا مستقبلاً [افضل]"
+    "similar_sounds": "[جلبت] هنا\nمصغياً لصوت [الخطر]\nوأفكر ما الذي [حال]\n[ليالي]\nطوال [قنوات]\nمثل [أنام] كثر\nيضيع [منذ] العمر\n[لا] أبالي\n[لن]\nقد سئمت من [بالتفكير]\nقد حان [وقعت] التغيير\nقد طال شوقي [لقد]\nلي [تبتسم]\n[أنني]\nما [أمل] الحياة\n[كل] شيء\n[حيا] بالأمل\n[لنفسى] ما فات\nونبني لنا [مستقبل] أفضل\nإلى [فتى]\nسوف [أظن] تائهاً\n[أنى] شيئاً فشيئاً\nعن [علمي]\nلا لن [أبى]\n[كهذا] مكبل اليدين\nفأنا أحس [بالرنين]\n[لنفسك]\nلا يأس [بد] الآن\nلا [أقل] فات الأوان\nفليكن [يوم] أحلى\nمما [ان]\n[لأنني]\nما [أعمل] الحياة\nفكل [شيئ]\n[حيا] بالأمل\nفلننسى ما [فان]\nونبني [لا] مستقبلاً أفضل\nليس [هنا] مستحيل\nعندك حلم [جميع]\nاملأ [قلبي] باليقين\n[والمضي]\n[أنني]\nما [أعمل] الحياة\nفكل [شىء]\n[يحين] بالأمل\nفلننسى ما [مات]\nونبني لنا مستقبلاً [افضل]",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "I sat here",
+            "words": []
+          },
+          {
+            "text": "Listening to the sound of rain",
+            "words": []
+          },
+          {
+            "text": "And wondering what happened",
+            "words": []
+          },
+          {
+            "text": "To my state",
+            "words": []
+          },
+          {
+            "text": "Throughout the years",
+            "words": []
+          },
+          {
+            "text": "Like many people",
+            "words": []
+          },
+          {
+            "text": "Life slips away from me",
+            "words": []
+          },
+          {
+            "text": "And I don't care",
+            "words": []
+          },
+          {
+            "text": "But",
+            "words": []
+          },
+          {
+            "text": "I've grown tired of thinking",
+            "words": []
+          },
+          {
+            "text": "It's time for change",
+            "words": []
+          },
+          {
+            "text": "I've longed too long for a tomorrow",
+            "words": []
+          },
+          {
+            "text": "Smiling at me",
+            "words": []
+          },
+          {
+            "text": "Let's sing",
+            "words": []
+          },
+          {
+            "text": "How beautiful life is",
+            "words": []
+          },
+          {
+            "text": "For everything",
+            "words": []
+          },
+          {
+            "text": "Lives with hope",
+            "words": []
+          },
+          {
+            "text": "So let's forget what passed",
+            "words": []
+          },
+          {
+            "text": "And build ourselves a better future",
+            "words": []
+          },
+          {
+            "text": "How long",
+            "words": []
+          },
+          {
+            "text": "Will I remain lost",
+            "words": []
+          },
+          {
+            "text": "Distancing myself little by little",
+            "words": []
+          },
+          {
+            "text": "From my dream",
+            "words": []
+          },
+          {
+            "text": "No, I won't stay",
+            "words": []
+          },
+          {
+            "text": "Like this, hands tied",
+            "words": []
+          },
+          {
+            "text": "For I feel longing",
+            "words": []
+          },
+          {
+            "text": "For myself",
+            "words": []
+          },
+          {
+            "text": "No, no",
+            "words": []
+          },
+          {
+            "text": "No despair anymore",
+            "words": []
+          },
+          {
+            "text": "Don't say it's too late",
+            "words": []
+          },
+          {
+            "text": "Let your day be sweeter",
+            "words": []
+          },
+          {
+            "text": "Than it was",
+            "words": []
+          },
+          {
+            "text": "Let's sing",
+            "words": []
+          },
+          {
+            "text": "How beautiful life is",
+            "words": []
+          },
+          {
+            "text": "For everything",
+            "words": []
+          },
+          {
+            "text": "Lives with hope",
+            "words": []
+          },
+          {
+            "text": "So let's forget what passed",
+            "words": []
+          },
+          {
+            "text": "And build ourselves a better future",
+            "words": []
+          },
+          {
+            "text": "Nothing is impossible",
+            "words": []
+          },
+          {
+            "text": "You have a beautiful dream",
+            "words": []
+          },
+          {
+            "text": "Fill your heart with certainty",
+            "words": []
+          },
+          {
+            "text": "And move on",
+            "words": []
+          },
+          {
+            "text": "Let's sing",
+            "words": []
+          },
+          {
+            "text": "How beautiful life is",
+            "words": []
+          },
+          {
+            "text": "For everything",
+            "words": []
+          },
+          {
+            "text": "Lives with hope",
+            "words": []
+          },
+          {
+            "text": "So let's forget what passed",
+            "words": []
+          },
+          {
+            "text": "And build ourselves a better future",
+            "words": []
+          }
+        ],
+        "lessons": "# جلسة التأمل\n00:32.40 جلست هنا\n00:35.10 مصغياً لصوت المطر\n00:38.30 وأفكر ما الذي حصل\n00:41.30 لحالي\n00:44.00 طوال سنوات\n00:46.90 مثل أناس كثر\n00:49.70 يضيع مني العمر\n00:52.70 ولا أبالي\n\n# قرار التغيير\n00:55.30 لكن\n00:56.60 قد سئمت من التفكير\n00:59.30 قد حان وقت التغيير\n01:01.90 قد طال شوقي لغدٍ\n01:04.60 لي مبتسم\n\n# أنشودة الأمل\n01:07.10 لنغني\n01:09.90 ما أجمل الحياة\n01:12.90 فكل شيء\n01:14.90 يحيا بالأمل\n01:20.80 فلننسى ما فات\n01:23.90 ونبني لنا مستقبلاً أفضل\n\n# الروح التائهة\n01:40.40 إلى متى\n01:42.90 سوف أظل تائهاً\n01:45.90 أنأى شيئاً فشيئاً\n01:48.90 عن حلمي\n01:51.80 لا لن أبقى\n01:54.30 هكذا مكبل اليدين\n01:57.30 فأنا أحس بالحنين\n02:00.30 لنفسي\n\n# لا لليأس\n02:02.90 لا لا\n02:04.10 لا يأس بعد الآن\n02:06.70 لا تقل فات الأوان\n02:09.30 فليكن يومك أحلى\n02:11.90 مما كان\n\n# ترديد الأمل\n02:14.30 لنغني\n02:17.10 ما أجمل الحياة\n02:20.10 فكل شيء\n02:22.10 يحيا بالأمل\n02:27.80 فلننسى ما فات\n02:30.90 ونبني لنا مستقبلاً أفضل\n\n# جسر اليقين\n02:58.80 ليس هناك مستحيل\n03:01.30 عندك حلم جميل\n03:04.30 املأ قلبك باليقين\n03:07.30 وامضي\n\n# الكورس الأخير\n03:09.90 لنغني\n03:12.70 ما أجمل الحياة\n03:15.70 فكل شيء\n03:17.70 يحيا بالأمل\n03:23.40 فلننسى ما فات\n03:26.50 ونبني لنا مستقبلاً أفضل"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-09 08:20:14 UTC",
   "updated_at": "2026-06-09 08:31:28 UTC",

@@ -9,62 +9,96 @@
       {
         "id": "phrase_440",
         "text_l1": "فبنتحلى وفي حلويات",
-        "text_l2": "So everything gets sweet, and there are desserts.",
         "timestamp": "16:13.00",
         "timestamp_end": "16:16.00"
       },
       {
         "id": "phrase_341",
         "text_l1": "بيقولوا حلويات رمضانية أو حلو رمضان.",
-        "text_l2": "People call them Ramadan sweets or \"Helw Ramadan.\"",
         "timestamp": "16:16.00",
         "timestamp_end": "16:19.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "أنا مها وهيدي التشانل لكل الأشخاص",
-        "text_l2": "I'm Maha, and this channel is for everyone",
         "timestamp": "00:03.10",
         "timestamp_end": "00:05.80"
       },
       {
         "id": "phrase_3",
         "text_l1": "يلي عم يتعلموا عربي",
-        "text_l2": "who are learning Arabic",
         "timestamp": "00:05.80",
         "timestamp_end": "00:08.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "وبيحبوا يسمعوا شي بالعربي",
-        "text_l2": "and love hearing something in Arabic",
         "timestamp": "00:08.00",
         "timestamp_end": "00:10.10"
       },
       {
         "id": "phrase_5",
         "text_l1": "باللهجة اللبنانية.",
-        "text_l2": "in the Lebanese dialect.",
         "timestamp": "00:10.10",
         "timestamp_end": "00:12.10"
       },
       {
         "id": "phrase_6",
         "text_l1": "ومثل العادة أنا رح إحكي بس بالعربي",
-        "text_l2": "And as usual, I'll be speaking only in Arabic",
         "timestamp": "00:12.10",
         "timestamp_end": "00:15.40"
       },
       {
         "id": "phrase_7",
         "text_l1": "فأنتو فيكن تشوفوا السبتايتلز",
-        "text_l2": "so you can follow the subtitles.",
         "timestamp": "00:15.40",
         "timestamp_end": "00:18.00"
       }
     ],
     "similar_sounds": "فبنتحلى وفي [لوحات]\nبيقولوا حلويات رمضانية أو [حول] رمضان\nأنا مها [والدي] التشانل لكل الأشخاص\nيلي عم يتعلموا [عصبي]\nوبيحبوا [اسمعوا] شي بالعربي\n[بالله] اللبنانية\nومثل العادة أنا رح [تحكي] بس بالعربي\nفأنتو فيكن [تكونوا] السبتايتلز",
-    "phrases_with_token_translations": "[فبنتحلى] وفي حلويات => [So everything gets sweet], and there are desserts.\nفبنتحلى [و] في حلويات => So everything gets sweet [and] there are desserts.\nفبنتحلى و[في] حلويات => So everything gets sweet and [there are] desserts.\nفبنتحلى وفي [حلويات] => So everything gets sweet and there are [desserts].\n\n[بيقولوا] حلويات رمضانية أو حلو رمضان. => [People call them] Ramadan sweets or \"Helw Ramadan.\"\nبيقولوا [حلويات رمضانية] أو حلو رمضان. => People call them [Ramadan sweets] or \"Helw Ramadan.\"\nبيقولوا حلويات رمضانية [أو] حلو رمضان. => People call them Ramadan sweets [or] \"Helw Ramadan.\"\nبيقولوا حلويات رمضانية أو [حلو رمضان]. => People call them Ramadan sweets or [\"Helw Ramadan.\"]\n\n[أنا مها] وهيدي التشانل لكل الأشخاص => [I'm Maha], and this channel is for everyone\nأنا مها [و] هيدي التشانل لكل الأشخاص => I'm Maha [and] this channel is for everyone\nأنا مها و[هيدي التشانل] لكل الأشخاص => I'm Maha and [this channel] is for everyone\nأنا مها وهيدي التشانل [لكل الأشخاص] => I'm Maha and this channel is [for everyone]\n\n[يلي] عم يتعلموا عربي => [who] are learning Arabic\nيلي [عم يتعلموا] عربي => who [are learning] Arabic\nيلي عم يتعلموا [عربي] => who are learning [Arabic]\n\n[وبيحبوا] يسمعوا شي بالعربي => [and love] hearing something in Arabic\nوبيحبوا [يسمعوا] شي بالعربي => and love [hearing] something in Arabic\nوبيحبوا يسمعوا [شي] بالعربي => and love hearing [something] in Arabic\nوبيحبوا يسمعوا شي [بالعربي] => and love hearing something [in Arabic]\n\n[باللهجة] اللبنانية. => in the dialect\nباللهجة [اللبنانية]. => in the [Lebanese] dialect.\n\n[ومثل العادة] أنا رح إحكي بس بالعربي => [And as usual], I'll be speaking only in Arabic\nومثل العادة [أنا] رح إحكي بس بالعربي => And as usual, [I]'ll be speaking only in Arabic\nومثل العادة أنا [رح إحكي] بس بالعربي => will speak\nومثل العادة أنا رح إحكي [بس] بالعربي => And as usual, I'll be speaking [only] in Arabic\nومثل العادة أنا رح إحكي بس [بالعربي] => And as usual, I'll be speaking only [in Arabic]\n\n[فأنتو] فيكن تشوفوا السبتايتلز => [so you] can follow the subtitles.\nفأنتو [فيكن] تشوفوا السبتايتلز => so you [can] follow the subtitles.\nفأنتو فيكن [تشوفوا] السبتايتلز => see\nفأنتو فيكن تشوفوا [السبتايتلز] => so you can follow [the subtitles]."
+    "phrases_with_token_translations": "[فبنتحلى] وفي حلويات => [So everything gets sweet], and there are desserts.\nفبنتحلى [و] في حلويات => So everything gets sweet [and] there are desserts.\nفبنتحلى و[في] حلويات => So everything gets sweet and [there are] desserts.\nفبنتحلى وفي [حلويات] => So everything gets sweet and there are [desserts].\n\n[بيقولوا] حلويات رمضانية أو حلو رمضان. => [People call them] Ramadan sweets or \"Helw Ramadan.\"\nبيقولوا [حلويات رمضانية] أو حلو رمضان. => People call them [Ramadan sweets] or \"Helw Ramadan.\"\nبيقولوا حلويات رمضانية [أو] حلو رمضان. => People call them Ramadan sweets [or] \"Helw Ramadan.\"\nبيقولوا حلويات رمضانية أو [حلو رمضان]. => People call them Ramadan sweets or [\"Helw Ramadan.\"]\n\n[أنا مها] وهيدي التشانل لكل الأشخاص => [I'm Maha], and this channel is for everyone\nأنا مها [و] هيدي التشانل لكل الأشخاص => I'm Maha [and] this channel is for everyone\nأنا مها و[هيدي التشانل] لكل الأشخاص => I'm Maha and [this channel] is for everyone\nأنا مها وهيدي التشانل [لكل الأشخاص] => I'm Maha and this channel is [for everyone]\n\n[يلي] عم يتعلموا عربي => [who] are learning Arabic\nيلي [عم يتعلموا] عربي => who [are learning] Arabic\nيلي عم يتعلموا [عربي] => who are learning [Arabic]\n\n[وبيحبوا] يسمعوا شي بالعربي => [and love] hearing something in Arabic\nوبيحبوا [يسمعوا] شي بالعربي => and love [hearing] something in Arabic\nوبيحبوا يسمعوا [شي] بالعربي => and love hearing [something] in Arabic\nوبيحبوا يسمعوا شي [بالعربي] => and love hearing something [in Arabic]\n\n[باللهجة] اللبنانية. => in the dialect\nباللهجة [اللبنانية]. => in the [Lebanese] dialect.\n\n[ومثل العادة] أنا رح إحكي بس بالعربي => [And as usual], I'll be speaking only in Arabic\nومثل العادة [أنا] رح إحكي بس بالعربي => And as usual, [I]'ll be speaking only in Arabic\nومثل العادة أنا [رح إحكي] بس بالعربي => will speak\nومثل العادة أنا رح إحكي [بس] بالعربي => And as usual, I'll be speaking [only] in Arabic\nومثل العادة أنا رح إحكي بس [بالعربي] => And as usual, I'll be speaking only [in Arabic]\n\n[فأنتو] فيكن تشوفوا السبتايتلز => [so you] can follow the subtitles.\nفأنتو [فيكن] تشوفوا السبتايتلز => so you [can] follow the subtitles.\nفأنتو فيكن [تشوفوا] السبتايتلز => see\nفأنتو فيكن تشوفوا [السبتايتلز] => so you can follow [the subtitles].",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "So everything gets sweet, and there are desserts.",
+            "words": []
+          },
+          {
+            "text": "People call them Ramadan sweets or \"Helw Ramadan.\"",
+            "words": []
+          },
+          {
+            "text": "I'm Maha, and this channel is for everyone",
+            "words": []
+          },
+          {
+            "text": "who are learning Arabic",
+            "words": []
+          },
+          {
+            "text": "and love hearing something in Arabic",
+            "words": []
+          },
+          {
+            "text": "in the Lebanese dialect.",
+            "words": []
+          },
+          {
+            "text": "And as usual, I'll be speaking only in Arabic",
+            "words": []
+          },
+          {
+            "text": "so you can follow the subtitles.",
+            "words": []
+          }
+        ],
+        "lessons": "# قناة مها والحلويات الرمضانية\n16:13.00 فبنتحلى وفي حلويات\n16:16.00 بيقولوا حلويات رمضانية أو حلو رمضان.\n00:03.10 أنا مها وهيدي التشانل لكل الأشخاص\n00:05.80 يلي عم يتعلموا عربي\n00:08.00 وبيحبوا يسمعوا شي بالعربي\n00:10.10 باللهجة اللبنانية.\n00:12.10 ومثل العادة أنا رح إحكي بس بالعربي\n00:15.40 فأنتو فيكن تشوفوا السبتايتلز"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-05-22 18:46:40 UTC",
   "updated_at": "2026-05-23 12:02:32 UTC",

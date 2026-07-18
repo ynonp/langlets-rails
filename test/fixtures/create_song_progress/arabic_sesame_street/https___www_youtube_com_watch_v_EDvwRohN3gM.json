@@ -9,349 +9,506 @@
         "id": "phrase_1",
         "text_l1": "حياة؟",
         "timestamp": "00:06.00",
-        "timestamp_end": "00:08.00",
-        "text_l2": "Hayat?"
+        "timestamp_end": "00:08.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "نعم تن تن.",
         "timestamp": "00:08.00",
-        "timestamp_end": "00:09.50",
-        "text_l2": "Yes, Ten Ten."
+        "timestamp_end": "00:09.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "ساعديني عشان أنا مو عارفة شو أرسم.",
         "timestamp": "00:09.50",
-        "timestamp_end": "00:13.00",
-        "text_l2": "Help me, I don't know what to draw."
+        "timestamp_end": "00:13.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "همم، شو في فواكه بتحبيها؟",
         "timestamp": "00:13.50",
-        "timestamp_end": "00:16.00",
-        "text_l2": "Hmm, what fruits do you like?"
+        "timestamp_end": "00:16.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "فواكه؟ أنا بحب التفاح كتير.",
         "timestamp": "00:16.00",
-        "timestamp_end": "00:19.00",
-        "text_l2": "Fruits? I really love apples."
+        "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "طيب، ارسمي تفاحة وأنا بجيبلك تفاحة.",
         "timestamp": "00:19.00",
-        "timestamp_end": "00:22.00",
-        "text_l2": "Okay, draw an apple and I'll get you an apple."
+        "timestamp_end": "00:22.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "طيب إذا رسمت تفاحتين؟",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:26.00",
-        "text_l2": "Okay, what if I draw two apples?"
+        "timestamp_end": "00:26.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "بجيبلك تفاحتين.",
         "timestamp": "00:26.00",
-        "timestamp_end": "00:28.00",
-        "text_l2": "I'll get you two apples."
+        "timestamp_end": "00:28.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "إذا هيك رح أرسم تلات تفاحات،",
         "timestamp": "00:28.00",
-        "timestamp_end": "00:31.00",
-        "text_l2": "Then I'll draw three apples,"
+        "timestamp_end": "00:31.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "وحدة إلي، ووحدة إلك، والتالتة لجلجل.",
         "timestamp": "00:31.00",
-        "timestamp_end": "00:35.00",
-        "text_l2": "One for me, one for you, and the third for Jaljal."
+        "timestamp_end": "00:35.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "معناته إذا هيك أنا رايحة أجيب التفاح.",
         "timestamp": "00:36.00",
-        "timestamp_end": "00:38.50",
-        "text_l2": "So that means I'm going to get the apples."
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "هه، تفاح؟",
         "timestamp": "00:39.00",
-        "timestamp_end": "00:41.00",
-        "text_l2": "Heh, apples?"
+        "timestamp_end": "00:41.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "هه، وين تفاحتي؟",
         "timestamp": "00:41.00",
-        "timestamp_end": "00:43.00",
-        "text_l2": "Heh, where's my apple?"
+        "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "أنا بدي تفاحتي هلا، وينها؟",
         "timestamp": "00:43.00",
-        "timestamp_end": "00:45.00",
-        "text_l2": "I want my apple now, where is it?"
+        "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "لسه ما رسمتها يا جلجل.",
         "timestamp": "00:45.00",
-        "timestamp_end": "00:47.00",
-        "text_l2": "You haven't drawn it yet, Jaljal."
+        "timestamp_end": "00:47.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "يعني التفاح بالرسمة مش زي ما قالت حياة؟",
         "timestamp": "00:47.00",
-        "timestamp_end": "00:51.00",
-        "text_l2": "So the apple in the drawing isn't like Hayat said?"
+        "timestamp_end": "00:51.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "لا يا جلجل،",
         "timestamp": "00:52.00",
-        "timestamp_end": "00:54.00",
-        "text_l2": "No, Jaljal,"
+        "timestamp_end": "00:54.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "بس أنا أرسم تفاحة حياة رح تعطيني إياها.",
         "timestamp": "00:54.00",
-        "timestamp_end": "00:56.50",
-        "text_l2": "But if I draw an apple, Hayat will give it to me."
+        "timestamp_end": "00:56.50"
       },
       {
         "id": "phrase_19",
         "text_l1": "آه، يعني هي هلا راحت تجيب لنا التفاح.",
         "timestamp": "00:57.00",
-        "timestamp_end": "01:01.00",
-        "text_l2": "Ah, so she went to get us the apples now."
+        "timestamp_end": "01:01.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "إلي تفاحة، وإلك تفاحة،",
         "timestamp": "01:01.00",
-        "timestamp_end": "01:04.00",
-        "text_l2": "An apple for me, and an apple for you,"
+        "timestamp_end": "01:04.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "ولحياة تفاحة، يعني تلات تفاحات.",
         "timestamp": "01:04.00",
-        "timestamp_end": "01:07.00",
-        "text_l2": "And an apple for Hayat, meaning three apples."
+        "timestamp_end": "01:07.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "وأنا هلا رح أرسم تلات تفاحات.",
         "timestamp": "01:08.00",
-        "timestamp_end": "01:11.00",
-        "text_l2": "And now I'm going to draw three apples."
+        "timestamp_end": "01:11.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "كم تفاحة صرتي راسة يا تن تن؟",
         "timestamp": "01:14.00",
-        "timestamp_end": "01:16.50",
-        "text_l2": "How many apples have you drawn, Ten Ten?"
+        "timestamp_end": "01:16.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "قربت أخلص أول تفاحة.",
         "timestamp": "01:17.00",
-        "timestamp_end": "01:19.00",
-        "text_l2": "I'm almost done with the first apple."
+        "timestamp_end": "01:19.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "وهي أول تفاحة جاهزة.",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.00",
-        "text_l2": "And the first apple is ready."
+        "timestamp_end": "01:21.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "تفضل يا جلجل.",
         "timestamp": "01:21.00",
-        "timestamp_end": "01:22.00",
-        "text_l2": "Here you go, Jaljal."
+        "timestamp_end": "01:22.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "هاي التفاحة إلي؟",
         "timestamp": "01:22.00",
-        "timestamp_end": "01:24.00",
-        "text_l2": "Is this apple for me?"
+        "timestamp_end": "01:24.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "شكراً شكراً شكراً يا حياة.",
         "timestamp": "01:24.00",
-        "timestamp_end": "01:26.50",
-        "text_l2": "Thank you, thank you, thank you, Hayat."
+        "timestamp_end": "01:26.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "هيك خلصت تفاحتين.",
         "timestamp": "01:27.00",
-        "timestamp_end": "01:29.50",
-        "text_l2": "That's two apples done."
+        "timestamp_end": "01:29.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "وهاي التفاحة إلك يا تن تن.",
         "timestamp": "01:30.00",
-        "timestamp_end": "01:32.00",
-        "text_l2": "And this apple is for you, Ten Ten."
+        "timestamp_end": "01:32.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "لا هاي إلك يا حياة.",
         "timestamp": "01:32.00",
-        "timestamp_end": "01:34.00",
-        "text_l2": "No, this one is for you, Hayat."
+        "timestamp_end": "01:34.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "شكراً تن تن.",
         "timestamp": "01:34.00",
-        "timestamp_end": "01:35.50",
-        "text_l2": "Thank you, Ten Ten."
+        "timestamp_end": "01:35.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "وهلا رح أرسم آخر تفاحة إلي أنا.",
         "timestamp": "01:37.00",
-        "timestamp_end": "01:41.00",
-        "text_l2": "And now I'll draw the last apple for myself."
+        "timestamp_end": "01:41.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "آه يا تن تن، ارسمي الرسمات",
         "timestamp": "01:42.00",
-        "timestamp_end": "01:44.50",
-        "text_l2": "Ah, Ten Ten, draw the pictures"
+        "timestamp_end": "01:44.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "اللي إنتِ دايماً بترسمي لنا إياها، حلوة كتير.",
         "timestamp": "01:44.50",
-        "timestamp_end": "01:47.50",
-        "text_l2": "That you always draw for us, they're very nice."
+        "timestamp_end": "01:47.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "هلا هيك أنا خلصت تلات تفاحات.",
         "timestamp": "01:48.00",
-        "timestamp_end": "01:51.00",
-        "text_l2": "Now like this I've finished three apples."
+        "timestamp_end": "01:51.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "وتفضلي هاي تفاحتك.",
         "timestamp": "01:52.00",
-        "timestamp_end": "01:54.50",
-        "text_l2": "And here is your apple."
+        "timestamp_end": "01:54.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "شكراً.",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:56.50",
-        "text_l2": "Thank you."
+        "timestamp_end": "01:56.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "حياة،",
         "timestamp": "01:59.00",
-        "timestamp_end": "02:01.00",
-        "text_l2": "Hayat,"
+        "timestamp_end": "02:01.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "مش لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟",
         "timestamp": "02:01.00",
-        "timestamp_end": "02:04.00",
-        "text_l2": "Isn't it that when I draw something, you bring it to me?"
+        "timestamp_end": "02:04.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "أكيد رح أجيب لك إياه.",
         "timestamp": "02:04.00",
-        "timestamp_end": "02:06.00",
-        "text_l2": "Of course I'll bring it to you."
+        "timestamp_end": "02:06.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "إذاً أنا هلا رح أرسم كل الفواكه اللي بحبها،",
         "timestamp": "02:06.00",
-        "timestamp_end": "02:09.00",
-        "text_l2": "So now I'll draw all the fruits I like,"
+        "timestamp_end": "02:09.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "رح أرسم برتقال، وبطيخ،",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:12.00",
-        "text_l2": "I'll draw oranges, and watermelon,"
+        "timestamp_end": "02:12.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "وفراولة، وعنب،",
         "timestamp": "02:12.00",
-        "timestamp_end": "02:15.00",
-        "text_l2": "And strawberries, and grapes,"
+        "timestamp_end": "02:15.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "وخوخ، ومشمش، ورح أرسم خضار كمان.",
         "timestamp": "02:15.00",
-        "timestamp_end": "02:18.00",
-        "text_l2": "And peaches, apricots, and I'll draw vegetables too."
+        "timestamp_end": "02:18.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "كل هدول الفواكه؟",
         "timestamp": "02:19.00",
-        "timestamp_end": "02:21.00",
-        "text_l2": "All these fruits?"
+        "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "آه جيبي لنا إياهم يا حياة.",
         "timestamp": "02:21.00",
-        "timestamp_end": "02:22.50",
-        "text_l2": "Yeah, bring them to us, Hayat."
+        "timestamp_end": "02:22.50"
       },
       {
         "id": "phrase_48",
         "text_l1": "كل هاد بدي أجيب لك إياه؟",
         "timestamp": "02:22.50",
-        "timestamp_end": "02:24.50",
-        "text_l2": "I have to bring you all of this?"
+        "timestamp_end": "02:24.50"
       },
       {
         "id": "phrase_49",
         "text_l1": "ما أنا رح أرسمهم كلهم.",
         "timestamp": "02:24.50",
-        "timestamp_end": "02:26.50",
-        "text_l2": "I'm not going to draw them all."
+        "timestamp_end": "02:26.50"
       }
     ],
     "phrases_with_token_translations": "[حياة]؟ => [Hayat]?\n\n[نعم] تن تن => [Yes], Ten Ten.\nنعم [تن تن] => Yes, [Ten Ten]\n\n[ساعديني] عشان أنا مو عارفة شو أرسم => [Help me], I don't know what to draw\nساعديني [عشان] أنا مو عارفة شو أرسم => because\nساعديني عشان [أنا] مو عارفة شو أرسم => Help me, [I] don't know what to draw\nساعديني عشان أنا [مو عارفة] شو أرسم => Help me, I [don't know] what to draw\nساعديني عشان أنا مو عارفة [شو] أرسم => Help me, I don't know [what] to draw\nساعديني عشان أنا مو عارفة شو [أرسم] => Help me, I don't know what [to draw]\n\n[همم]، شو في فواكه بتحبيها؟ => [Hmm], what fruits do you like?\nهمم، [شو] في فواكه بتحبيها؟ => Hmm, [what] fruits do you like?\nهمم، شو في [فواكه] بتحبيها؟ => Hmm, what [fruits] do you like?\nهمم، شو في فواكه [بتحبيها]؟ => Hmm, what fruits [do you like]? # In Levantine, \"بتحبيها\" is a single word encompassing the subject (you), the verb (like), and the object (them/it)\n\n[فواكه]؟ أنا بحب التفاح كتير. => [Fruits]? I really love apples.\nفواكه؟ [أنا] بحب التفاح كتير. => Fruits? [I] really love apples.\nفواكه؟ أنا [بحب] التفاح كتير. => Fruits? I really [love] apples.\nفواكه؟ أنا بحب [التفاح] كتير. => Fruits? I really love [apples].\nفواكه؟ أنا بحب التفاح [كتير]. => Fruits? I [really] love apples.\n\n[طيب]، ارسمي تفاحة وأنا بجيبلك تفاحة. => [Okay], draw an apple and I'll get you an apple.\nطيب، [ارسمي] تفاحة وأنا بجيبلك تفاحة. => Okay, [draw] an apple and I'll get you an apple.\nطيب، ارسمي [تفاحة] وأنا بجيبلك تفاحة. => Okay, draw [an apple] and I'll get you an apple.\nطيب، ارسمي تفاحة [و]أنا بجيبلك تفاحة. => Okay, draw an apple [and] I'll get you an apple.\nطيب، ارسمي تفاحة و[أنا] بجيبلك تفاحة. => Okay, draw an apple and [I]'ll get you an apple.\nطيب، ارسمي تفاحة وأنا [بجيبلك] تفاحة. => Okay, draw an apple and I ['ll get you] an apple.\nطيب، ارسمي تفاحة وأنا بجيبلك [تفاحة]. => Okay, draw an apple and I'll get you [an apple].\n\n[طيب] إذا رسمت تفاحتين؟ => [Okay], what if I draw two apples?\nطيب [إذا] رسمت تفاحتين؟ => Okay, [what if] I draw two apples?\nطيب إذا [رسمت] تفاحتين؟ => Okay, what if [I draw] two apples?\nطيب إذا رسمت [تفاحتين]؟ => Okay, what if I draw [two apples] # Arabic dual form translates to 'two apples'\n\n[بجيبلك] تفاحتين => [I'll get you] two apples\nبجيبلك [تفاحتين] => I'll get you [two apples]\n\n[إذا هيك] رح أرسم تلات تفاحات، => [Then] I'll draw three apples,\nإذا هيك [رح أرسم] تلات تفاحات، => Then [I'll draw] three apples,\nإذا هيك رح أرسم [تلات] تفاحات، => Then I'll draw [three] apples,\nإذا هيك رح أرسم تلات [تفاحات]، => Then I'll draw three [apples],\n\n[وحدة] إلي، ووحدة إلك، والتالتة لجلجل. => [One] for me, one for you, and the third for Jaljal.\nوحدة [إلي]، ووحدة إلك، والتالتة لجلجل. => One [for me], one for you, and the third for Jaljal.\nوحدة إلي، [ووحدة] إلك، والتالتة لجلجل. => One for me, [one] for you, and the third for Jaljal.\nوحدة إلي، ووحدة [إلك]، والتالتة لجلجل. => One for me, one [for you], and the third for Jaljal.\nوحدة إلي، ووحدة إلك، [والتالتة] لجلجل. => One for me, one for you, [and the third] for Jaljal.\nوحدة إلي، ووحدة إلك، والتالتة [لجلجل]. => One for me, one for you, and the third [for Jaljal] # لـ (li) means \"for\" and is attached to the name Jaljal (جلجل)\n\n[معناته] إذا هيك أنا رايحة أجيب التفاح. => So [that means] I'm going to get the apples.\nمعناته [إذا هيك] أنا رايحة أجيب التفاح. => [So] that means I'm going to get the apples.\nمعناته إذا هيك [أنا] رايحة أجيب التفاح. => So that means [I'm] going to get the apples.\nمعناته إذا هيك أنا [رايحة] أجيب التفاح. => So that means I'm [going to] get the apples.\nمعناته إذا هيك أنا رايحة [أجيب] التفاح. => So that means I'm going to [get] the apples.\nمعناته إذا هيك أنا رايحة أجيب [التفاح]. => So that means I'm going to get [the apples].\n\n[هه]، تفاح؟ => [Heh], apples?\nهه، [تفاح]؟ => Heh, [apples]?\n\n[هه]، وين تفاحتي؟ => [Heh], where's my apple?\nهه، [وين] تفاحتي؟ => [where's] my apple\nهه، وين [تفاحتي]؟ => Heh, where's [my apple]\n\n[أنا] بدي تفاحتي هلا، وينها؟ => [I] want my apple now, where is it?\nأنا [بدي] تفاحتي هلا، وينها؟ => I [want] my apple now, where is it?\nأنا بدي [تفاحتي] هلا، وينها؟ => I want [my apple] now, where is it?\nأنا بدي تفاحتي [هلا]، وينها؟ => I want my apple [now], where is it?\nأنا بدي تفاحتي هلا، [وينها]؟ => I want my apple now, [where is it]?\n\n[لسه] ما رسمتها يا جلجل. => You haven't drawn it [yet], Jaljal.\nلسه [ما رسمتها] يا جلجل. => [You haven't drawn it] yet, Jaljal.\nلسه ما رسمتها [يا جلجل] => You haven't drawn it yet, [Jaljal]\n\n[يعني] التفاح بالرسمة مش زي ما قالت حياة؟ => [So] the apple in the drawing isn't like Hayat said?\nيعني [التفاح] بالرسمة مش زي ما قالت حياة؟ => So [the apple] in the drawing isn't like Hayat said?\nيعني التفاح [بالرسمة] مش زي ما قالت حياة؟ => So the apple [in the drawing] isn't like Hayat said?\nيعني التفاح بالرسمة [مش] زي ما قالت حياة؟ => So the apple in the drawing [isn't] like Hayat said?\nيعني التفاح بالرسمة مش [زي] ما قالت حياة؟ => So the apple in the drawing isn't [like] Hayat said?\nيعني التفاح بالرسمة مش زي ما [قالت] حياة؟ => So the apple in the drawing isn't like Hayat [said]?\nيعني التفاح بالرسمة مش زي ما قالت [حياة]؟ => So the apple in the drawing isn't like [Hayat] said?\n\n[لا] يا جلجل، => [No], Jaljal,\nلا يا [جلجل]، => No, [Jaljal],\n\nبس [أنا] أرسم تفاحة حياة رح تعطيني إياها. => But if [I] draw an apple, Hayat will give it to me.\nبس أنا [أرسم] تفاحة حياة رح تعطيني إياها. => But if I [draw] an apple, Hayat will give it to me.\nبس أنا أرسم [تفاحة] حياة رح تعطيني إياها. => But if I draw [an apple], Hayat will give it to me.\nبس أنا أرسم تفاحة [حياة] رح تعطيني إياها. => But if I draw an apple, [Hayat] will give it to me.\nبس أنا أرسم تفاحة حياة [رح] تعطيني إياها. => But if I draw an apple, Hayat [will] give it to me.\nبس أنا أرسم تفاحة حياة رح [تعطيني] إياها. => give me\nبس أنا أرسم تفاحة حياة رح تعطيني [إياها]. => But if I draw an apple, Hayat will give [it] to me.\n\n[آه]، يعني هي هلا راحت تجيب لنا التفاح. => [Ah], so she went to get us the apples now.\nآه، [يعني] هي هلا راحت تجيب لنا التفاح. => Ah, [so] she went to get us the apples now.\nآه، يعني [هي] هلا راحت تجيب لنا التفاح. => Ah, so [she] went to get us the apples now.\nآه، يعني هي [هلا] راحت تجيب لنا التفاح. => Ah, so she went to get us the apples [now]\nآه، يعني هي هلا [راحت] تجيب لنا التفاح. => Ah, so she [went] to get us the apples now.\nآه، يعني هي هلا راحت [تجيب] لنا التفاح. => Ah, so she went [to get] us the apples now.\nآه، يعني هي هلا راحت تجيب [لنا] التفاح. => Ah, so she went to get [us] the apples now.\nآه، يعني هي هلا راحت تجيب لنا [التفاح]. => Ah, so she went to get us [the apples] now.\n\n[إلي] تفاحة، وإلك تفاحة، => An apple [for me], and an apple for you,\nإلي [تفاحة]، وإلك تفاحة، => [An apple] for me, and an apple for you,\nإلي تفاحة، [و]إلك تفاحة، => An apple for me, [and] an apple for you,\nإلي تفاحة، و[إلك] تفاحة، => An apple for me, and an apple [for you],\nإلي تفاحة، وإلك [تفاحة]، => An apple for me, and [an apple] for you,\n\n[و]لحياة تفاحة، يعني تلات تفاحات. => [And] an apple for Hayat, meaning three apples.\nو[لحياة] تفاحة، يعني تلات تفاحات. => And an apple [for Hayat], meaning three apples.\nولحياة [تفاحة]، يعني تلات تفاحات. => And [an apple] for Hayat, meaning three apples.\nولحياة تفاحة، [يعني] تلات تفاحات. => And an apple for Hayat, [meaning] three apples.\nولحياة تفاحة، يعني [تلات] تفاحات. => And an apple for Hayat, meaning [three] apples.\nولحياة تفاحة، يعني تلات [تفاحات]. => And an apple for Hayat, meaning three [apples.]\n\nوأنا [هلا] رح أرسم تلات تفاحات. => And [now] I'm going to draw three apples.\nوأنا هلا [رح] أرسم تلات تفاحات. => And now I'm [going to] draw three apples.\nوأنا هلا رح [أرسم] تلات تفاحات. => And now I'm going to [draw] three apples.\nوأنا هلا رح أرسم [تلات] تفاحات. => And now I'm going to draw [three] apples.\nوأنا هلا رح أرسم تلات [تفاحات]. => And now I'm going to draw three [apples].\n\n[كم] تفاحة صرتي راسة يا تن تن؟ => [How many] apples have you drawn, Ten Ten?\nكم [تفاحة] صرتي راسة يا تن تن؟ => How many [apples] have you drawn, Ten Ten?\nكم تفاحة [صرتي راسة] يا تن تن؟ => How many apples [have you drawn], Ten Ten?\nكم تفاحة صرتي راسة يا [تن تن]؟ => How many apples have you drawn, [Ten Ten]?\n\n[قربت] أخلص أول تفاحة. => [I'm almost] done with the first apple.\nقربت [أخلص] أول تفاحة. => I'm almost [done] with the first apple.\nقربت أخلص [أول] تفاحة. => I'm almost done with [the first] apple.\nقربت أخلص أول [تفاحة]. => I'm almost done with the first [apple].\n\n[وهي] أول تفاحة جاهزة => [And] the first apple is ready\nوهي [أول] تفاحة جاهزة => And the [first] apple is ready\nوهي أول [تفاحة] جاهزة => And the first [apple] is ready\nوهي أول تفاحة [جاهزة] => And the first apple is [ready]\n\n[تفضل] يا جلجل => [Here you go], Jaljal\nتفضل يا [جلجل] => Here you go, [Jaljal]\n\n[هاي] التفاحة إلي؟ => Is [this] apple for me?\nهاي [التفاحة] إلي؟ => Is this [apple] for me?\nهاي التفاحة [إلي]؟ => Is this apple [for me]?\n\n[شكراً] شكراً شكراً يا حياة. => [Thank you], thank you, thank you, Hayat.\nشكراً [شكراً] شكراً يا حياة. => Thank you, [thank you], thank you, Hayat.\nشكراً شكراً [شكراً] يا حياة. => Thank you, thank you, [thank you], Hayat.\nشكراً شكراً شكراً [يا] حياة. => vocative particle (O)\nشكراً شكراً شكراً يا [حياة] => Thank you, thank you, thank you, [Hayat]\n\n[هيك] خلصت تفاحتين. => [That's] two apples done.\nهيك [خلصت] تفاحتين. => That's two apples [done]\nهيك خلصت [تفاحتين]. => That's [two apples] done # تفاحتين is the dual form of apple, meaning two apples\n\n[و]هاي التفاحة إلك يا تن تن. => [And] this apple is for you, Ten Ten.\nو[هاي] التفاحة إلك يا تن تن. => And [this] apple is for you, Ten Ten.\nوهاي [التفاحة] إلك يا تن تن. => And this [apple] is for you, Ten Ten.\nوهاي التفاحة [إلك] يا تن تن. => And this apple [is for you], Ten Ten.\nوهاي التفاحة إلك يا [تن تن]. => And this apple is for you, [Ten Ten].\n\n[لا] هاي إلك يا حياة. => [No], this one is for you, Hayat.\nلا [هاي] إلك يا حياة. => No, [this one] is for you, Hayat.\nلا هاي [إلك] يا حياة. => No, this one [is for you], Hayat.\nلا هاي إلك يا [حياة]. => No, this one is for you, [Hayat].\n\n[شكراً] تن تن. => [Thank you], Ten Ten.\nشكراً [تن تن]. => Thank you, [Ten Ten].\n\n[وهلا] رح أرسم آخر تفاحة إلي أنا. => [And now] I'll draw the last apple for myself.\nوهلا [رح أرسم] آخر تفاحة إلي أنا. => And now [I'll draw] the last apple for myself.\nوهلا رح أرسم [آخر] تفاحة إلي أنا. => And now I'll draw [the last] apple for myself.\nوهلا رح أرسم آخر [تفاحة] إلي أنا. => And now I'll draw the last [apple] for myself.\nوهلا رح أرسم آخر تفاحة [إلي أنا] => And now I'll draw the last apple [for myself] # Aligned as a phrase to capture the reflexive \"myself\" used for emphasis in English\n\n[آه] يا تن تن، ارسمي الرسمات => [Ah], Ten Ten, draw the pictures\nآه يا [تن تن]، ارسمي الرسمات => Ah, [Ten Ten], draw the pictures\nآه يا تن تن، [ارسمي] الرسمات => Ah, Ten Ten, [draw] the pictures\nآه يا تن تن، ارسمي [الرسمات] => Ah, Ten Ten, draw [the pictures]\n\n[اللي] إنتِ دايماً بترسمي لنا إياها، حلوة كتير. => [That] you always draw for us, they're very nice.\nاللي [إنتِ] دايماً بترسمي لنا إياها، حلوة كتير. => That [you] always draw for us, they're very nice.\nاللي إنتِ [دايماً] بترسمي لنا إياها، حلوة كتير. => That you [always] draw for us, they're very nice.\nاللي إنتِ دايماً [بترسمي] لنا إياها، حلوة كتير. => That you always [draw] for us, they're very nice.\nاللي إنتِ دايماً بترسمي [لنا] إياها، حلوة كتير. => That you always draw [for us], they're very nice.\nاللي إنتِ دايماً بترسمي لنا [إياها]، حلوة كتير. => it, them # refers to the object being drawn\nاللي إنتِ دايماً بترسمي لنا إياها، [حلوة] كتير. => That you always draw for us, they're [nice].\nاللي إنتِ دايماً بترسمي لنا إياها، حلوة [كتير]. => That you always draw for us, they're [very] nice.\n\n[هلا] هيك أنا خلصت تلات تفاحات. => [Now] like this I've finished three apples.\nهلا [هيك] أنا خلصت تلات تفاحات. => Now [like this] I've finished three apples.\nهلا هيك [أنا] خلصت تلات تفاحات. => Now like this [I]'ve finished three apples.\nهلا هيك أنا [خلصت] تلات تفاحات. => Now like this I've [finished] three apples.\nهلا هيك أنا خلصت [تلات] تفاحات. => Now like this I've finished [three] apples.\nهلا هيك أنا خلصت تلات [تفاحات]. => Now like this I've finished three [apples]\n\n[و]تفضلي هاي تفاحتك. => [And] here is your apple.\nو[تفضلي] هاي تفاحتك. => here you go, please take # Used when offering something politely\nوتفضلي [هاي] تفاحتك. => And [here] is your apple.\nوتفضلي هاي [تفاحتك] => And here is [your apple]\n\n[شكراً]. => [Thank you].\n\n[حياة]، => [Hayat],\n\n[مش] لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟ => [Isn't it that] when I draw something, you bring it to me?\nمش [لما] أنا أرسم إشي إنتِ رح تجيبي لي إياه؟ => Isn't it that [when] I draw something, you bring it to me?\nمش لما [أنا] أرسم إشي إنتِ رح تجيبي لي إياه؟ => Isn't it that when [I] draw something, you bring it to me?\nمش لما أنا [أرسم] إشي إنتِ رح تجيبي لي إياه؟ => Isn't it that when I [draw] something, you bring it to me?\nمش لما أنا أرسم [إشي] إنتِ رح تجيبي لي إياه؟ => Isn't it that when I draw [something], you bring it to me?\nمش لما أنا أرسم إشي [إنتِ] رح تجيبي لي إياه؟ => Isn't it that when I draw something, [you] bring it to me?\nمش لما أنا أرسم إشي إنتِ [رح تجيبي] لي إياه؟ => Isn't it that when I draw something, you [bring] it to me?\nمش لما أنا أرسم إشي إنتِ رح تجيبي [لي] إياه؟ => Isn't it that when I draw something, you bring it [to me]\nمش لما أنا أرسم إشي إنتِ رح تجيبي لي [إياه]؟ => Isn't it that when I draw something, you bring [it] to me?\n\n[أكيد] رح أجيب لك إياه. => [Of course] I'll bring it to you.\nأكيد [رح] أجيب لك إياه. => will\nأكيد رح [أجيب] لك إياه. => Of course I'll [bring] it to you.\nأكيد رح أجيب [لك] إياه. => Of course I'll bring it [to you].\nأكيد رح أجيب لك [إياه]. => Of course I'll bring [it] to you.\n\n[إذاً] أنا هلا رح أرسم كل الفواكه اللي بحبها، => [So] now I'll draw all the fruits I like,\nإذاً [أنا] هلا رح أرسم كل الفواكه اللي بحبها، => So now [I]'ll draw all the fruits I like,\nإذاً أنا [هلا] رح أرسم كل الفواكه اللي بحبها، => So [now] I'll draw all the fruits I like,\nإذاً أنا هلا [رح أرسم] كل الفواكه اللي بحبها، => So now I['ll draw] all the fruits I like,\nإذاً أنا هلا رح أرسم [كل] الفواكه اللي بحبها، => So now I'll draw [all the] fruits I like,\nإذاً أنا هلا رح أرسم كل [الفواكه] اللي بحبها، => So now I'll draw all the [fruits] I like,\nإذاً أنا هلا رح أرسم كل الفواكه اللي [بحبها]، => So now I'll draw all the fruits I [like]\n\n[رح أرسم] برتقال، وبطيخ، => [I'll draw] oranges, and watermelon,\nرح أرسم [برتقال]، وبطيخ، => I'll draw [oranges], and watermelon,\nرح أرسم برتقال، [و]بطيخ، => I'll draw oranges, [and] watermelon,\nرح أرسم برتقال، و[بطيخ]، => I'll draw oranges, and [watermelon]\n\n[و]فراولة، وعنب، => [And] strawberries, and grapes,\nو[فراولة]، وعنب، => And [strawberries], and grapes,\nوفراولة، [و]عنب، => And strawberries, [and] grapes,\nوفراولة، و[عنب]، => And strawberries, and [grapes],\n\n[و]خوخ، ومشمش، ورح أرسم خضار كمان. => [And] peaches, apricots, and I'll draw vegetables too.\nو[خوخ]، ومشمش، ورح أرسم خضار كمان. => And [peaches], apricots, and I'll draw vegetables too.\nوخوخ، و[مشمش]، ورح أرسم خضار كمان. => And peaches, [apricots], and I'll draw vegetables too.\nوخوخ، ومشمش، [ورح أرسم] خضار كمان. => And peaches, apricots, [and I'll draw] vegetables too.\nوخوخ، ومشمش، ورح أرسم [خضار] كمان. => And peaches, apricots, and I'll draw [vegetables] too.\nوخوخ، ومشمش، ورح أرسم خضار [كمان]. => And peaches, apricots, and I'll draw vegetables [too]\n\n[كل] هدول الفواكه؟ => [All] these fruits?\nكل [هدول] الفواكه؟ => All [these] fruits?\nكل هدول [الفواكه]؟ => All these [fruits]?\n\n[آه] جيبي لنا إياهم يا حياة. => [Yeah], bring them to us, Hayat.\nآه [جيبي] لنا إياهم يا حياة. => Yeah, [bring] them to us, Hayat.\nآه جيبي [لنا] إياهم يا حياة. => Yeah, bring them [to us], Hayat.\nآه جيبي لنا [إياهم] يا حياة. => Yeah, bring [them] to us, Hayat.\nآه جيبي لنا إياهم يا [حياة]. => Yeah, bring them to us, [Hayat]\n\n[كل] هاد بدي أجيب لك إياه؟ => I have to bring you [all] of this?\nكل [هاد] بدي أجيب لك إياه؟ => I have to bring you all of [this]?\nكل هاد [بدي] أجيب لك إياه؟ => [I have to] bring you all of this?\nكل هاد بدي [أجيب] لك إياه؟ => I have to [bring] you all of this?\nكل هاد بدي أجيب [لك] إياه؟ => I have to bring [you] all of this?\nكل هاد بدي أجيب لك [إياه]؟ => it # object pronoun referring back to \"all this\"\n\n[ما أنا] رح أرسمهم كلهم => [I'm not] going to draw them all\nما أنا [رح] أرسمهم كلهم => I'm not [going to] draw them all\nما أنا رح [أرسمهم] كلهم => I'm not going to [draw them] all\nما أنا رح أرسمهم [كلهم] => I'm not going to draw them [all]\n\n",
     "lessons": "# طلب المساعدة في الرسم\n00:06.00 حياة؟\n00:08.00 نعم تن تن.\n00:09.50 ساعديني عشان أنا مو عارفة شو أرسم.\n00:13.50 همم، شو في فواكه بتحبيها؟\n00:16.00 فواكه؟ أنا بحب التفاح كتير.\n\n# الاتفاق على التفاح\n00:19.00 طيب، ارسمي تفاحة وأنا بجيبلك تفاحة.\n00:23.00 طيب إذا رسمت تفاحتين؟\n00:26.00 بجيبلك تفاحتين.\n00:28.00 إذا هيك رح أرسم تلات تفاحات،\n00:31.00 وحدة إلي، ووحدة إلك، والتالتة لجلجل.\n\n# بداية الرسم (Part 1)\n00:36.00 معناته إذا هيك أنا رايحة أجيب التفاح.\n00:39.00 هه، تفاح؟\n00:41.00 هه، وين تفاحتي؟\n00:43.00 أنا بدي تفاحتي هلا، وينها؟\n00:45.00 لسه ما رسمتها يا جلجل.\n\n# بداية الرسم (Part 2)\n00:47.00 يعني التفاح بالرسمة مش زي ما قالت حياة؟\n00:52.00 لا يا جلجل،\n00:54.00 بس أنا أرسم تفاحة حياة رح تعطيني إياها.\n00:57.00 آه، يعني هي هلا راحت تجيب لنا التفاح.\n\n# رسم التفاحات\n01:01.00 إلي تفاحة، وإلك تفاحة،\n01:04.00 ولحياة تفاحة، يعني تلات تفاحات.\n01:08.00 وأنا هلا رح أرسم تلات تفاحات.\n01:14.00 كم تفاحة صرتي راسة يا تن تن؟\n01:17.00 قربت أخلص أول تفاحة.\n\n# توزيع التفاح\n01:19.00 وهي أول تفاحة جاهزة.\n01:21.00 تفضل يا جلجل.\n01:22.00 هاي التفاحة إلي؟\n01:24.00 شكراً شكراً شكراً يا حياة.\n01:27.00 هيك خلصت تفاحتين.\n01:30.00 وهاي التفاحة إلك يا تن تن.\n01:32.00 لا هاي إلك يا حياة.\n01:34.00 شكراً تن تن.\n\n# الرسم النهائي\n01:37.00 وهلا رح أرسم آخر تفاحة إلي أنا.\n01:42.00 آه يا تن تن، ارسمي الرسمات\n01:44.50 اللي إنتِ دايماً بترسمي لنا إياها، حلوة كتير.\n01:48.00 هلا هيك أنا خلصت تلات تفاحات.\n01:52.00 وتفضلي هاي تفاحتك.\n01:55.00 شكراً.\n\n# التوسع في الرسم\n01:59.00 حياة،\n02:01.00 مش لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟\n02:04.00 أكيد رح أجيب لك إياه.\n02:06.00 إذاً أنا هلا رح أرسم كل الفواكه اللي بحبها،\n02:09.00 رح أرسم برتقال، وبطيخ،\n02:12.00 وفراولة، وعنب،\n02:15.00 وخوخ، ومشمش، ورح أرسم خضار كمان.\n\n# الخاتمة المضحكة\n02:19.00 كل هدول الفواكه؟\n02:21.00 آه جيبي لنا إياهم يا حياة.\n02:22.50 كل هاد بدي أجيب لك إياه؟\n02:24.50 ما أنا رح أرسمهم كلهم.",
-    "similar_sounds": "حياة؟\nنعم تن تن.\nساعديني عشان أنا مو عارفة شو [أغسل].\nهمم، شو في [قوارب] بتحبيها؟\nفواكه؟ أنا بحب التفاح [كثير].\nطيب، ارسمي تفاحة وأنا [أجيبلك] تفاحة.\nطيب إذا رسمت تفاحتين؟\n[أجيبلك] تفاحتين.\nإذا هيك رح أرسم تلات تفاحات،\nوحدة إلي، ووحدة إلك، والتالتة لجلجل.\nمعناته إذا هيك أنا رايحة أجيب التفاح.\nهه، تفاح؟\nهه، وين تفاحتي؟\nأنا بدي تفاحتي هلا، وينها؟\nلسه ما رسمتها يا جلجل.\nيعني التفاح بالرسمة مش زي ما قالت حياة؟\nلا يا جلجل،\nبس أنا أرسم تفاحة حياة رح تعطيني إياها.\nآه، يعني هي هلا راحت تجيب لنا التفاح.\nإلي تفاحة، وإلك تفاحة،\nولحياة تفاحة، يعني تلات تفاحات.\nوأنا هلا رح أرسم تلات تفاحات.\nكم تفاحة صرتي [ناصرة] يا تن تن؟\nقربت أخلص أول تفاحة.\nوهي أول تفاحة جاهزة.\nتفضل يا جلجل.\nهاي التفاحة إلي؟\nشكراً شكراً شكراً يا حياة.\nهيك خلصت تفاحتين.\nوهاي التفاحة إلك يا تن تن.\nلا هاي إلك يا حياة.\nشكراً تن تن.\nوهلا رح أرسم آخر تفاحة إلي أنا.\nآه يا تن تن، ارسمي الرسمات\nاللي إنتِ دايماً بترسمي لنا إياها، حلوة [قطير].\nهلا هيك أنا خلصت تلات تفاحات.\nوتفضلي هاي تفاحتك.\nشكراً.\nحياة،\nمش لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟\nأكيد رح أجيب لك إياه.\nإذاً أنا هلا رح أرسم كل الفواكه اللي بحبها،\nرح أرسم برتقال، وبطيخ،\nوفراولة، وعنب،\nوخوخ، ومشمش، ورح أرسم خضار كمان.\nكل هدول الفواكه؟\nآه جيبي لنا إياهم يا حياة.\nكل هاد بدي أجيب لك إياه؟\nما أنا رح [أرسمهم] كلهم."
+    "similar_sounds": "حياة؟\nنعم تن تن.\nساعديني عشان أنا مو عارفة شو [أغسل].\nهمم، شو في [قوارب] بتحبيها؟\nفواكه؟ أنا بحب التفاح [كثير].\nطيب، ارسمي تفاحة وأنا [أجيبلك] تفاحة.\nطيب إذا رسمت تفاحتين؟\n[أجيبلك] تفاحتين.\nإذا هيك رح أرسم تلات تفاحات،\nوحدة إلي، ووحدة إلك، والتالتة لجلجل.\nمعناته إذا هيك أنا رايحة أجيب التفاح.\nهه، تفاح؟\nهه، وين تفاحتي؟\nأنا بدي تفاحتي هلا، وينها؟\nلسه ما رسمتها يا جلجل.\nيعني التفاح بالرسمة مش زي ما قالت حياة؟\nلا يا جلجل،\nبس أنا أرسم تفاحة حياة رح تعطيني إياها.\nآه، يعني هي هلا راحت تجيب لنا التفاح.\nإلي تفاحة، وإلك تفاحة،\nولحياة تفاحة، يعني تلات تفاحات.\nوأنا هلا رح أرسم تلات تفاحات.\nكم تفاحة صرتي [ناصرة] يا تن تن؟\nقربت أخلص أول تفاحة.\nوهي أول تفاحة جاهزة.\nتفضل يا جلجل.\nهاي التفاحة إلي؟\nشكراً شكراً شكراً يا حياة.\nهيك خلصت تفاحتين.\nوهاي التفاحة إلك يا تن تن.\nلا هاي إلك يا حياة.\nشكراً تن تن.\nوهلا رح أرسم آخر تفاحة إلي أنا.\nآه يا تن تن، ارسمي الرسمات\nاللي إنتِ دايماً بترسمي لنا إياها، حلوة [قطير].\nهلا هيك أنا خلصت تلات تفاحات.\nوتفضلي هاي تفاحتك.\nشكراً.\nحياة،\nمش لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟\nأكيد رح أجيب لك إياه.\nإذاً أنا هلا رح أرسم كل الفواكه اللي بحبها،\nرح أرسم برتقال، وبطيخ،\nوفراولة، وعنب،\nوخوخ، ومشمش، ورح أرسم خضار كمان.\nكل هدول الفواكه؟\nآه جيبي لنا إياهم يا حياة.\nكل هاد بدي أجيب لك إياه؟\nما أنا رح [أرسمهم] كلهم.",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hayat?",
+            "words": []
+          },
+          {
+            "text": "Yes, Ten Ten.",
+            "words": []
+          },
+          {
+            "text": "Help me, I don't know what to draw.",
+            "words": []
+          },
+          {
+            "text": "Hmm, what fruits do you like?",
+            "words": []
+          },
+          {
+            "text": "Fruits? I really love apples.",
+            "words": []
+          },
+          {
+            "text": "Okay, draw an apple and I'll get you an apple.",
+            "words": []
+          },
+          {
+            "text": "Okay, what if I draw two apples?",
+            "words": []
+          },
+          {
+            "text": "I'll get you two apples.",
+            "words": []
+          },
+          {
+            "text": "Then I'll draw three apples,",
+            "words": []
+          },
+          {
+            "text": "One for me, one for you, and the third for Jaljal.",
+            "words": []
+          },
+          {
+            "text": "So that means I'm going to get the apples.",
+            "words": []
+          },
+          {
+            "text": "Heh, apples?",
+            "words": []
+          },
+          {
+            "text": "Heh, where's my apple?",
+            "words": []
+          },
+          {
+            "text": "I want my apple now, where is it?",
+            "words": []
+          },
+          {
+            "text": "You haven't drawn it yet, Jaljal.",
+            "words": []
+          },
+          {
+            "text": "So the apple in the drawing isn't like Hayat said?",
+            "words": []
+          },
+          {
+            "text": "No, Jaljal,",
+            "words": []
+          },
+          {
+            "text": "But if I draw an apple, Hayat will give it to me.",
+            "words": []
+          },
+          {
+            "text": "Ah, so she went to get us the apples now.",
+            "words": []
+          },
+          {
+            "text": "An apple for me, and an apple for you,",
+            "words": []
+          },
+          {
+            "text": "And an apple for Hayat, meaning three apples.",
+            "words": []
+          },
+          {
+            "text": "And now I'm going to draw three apples.",
+            "words": []
+          },
+          {
+            "text": "How many apples have you drawn, Ten Ten?",
+            "words": []
+          },
+          {
+            "text": "I'm almost done with the first apple.",
+            "words": []
+          },
+          {
+            "text": "And the first apple is ready.",
+            "words": []
+          },
+          {
+            "text": "Here you go, Jaljal.",
+            "words": []
+          },
+          {
+            "text": "Is this apple for me?",
+            "words": []
+          },
+          {
+            "text": "Thank you, thank you, thank you, Hayat.",
+            "words": []
+          },
+          {
+            "text": "That's two apples done.",
+            "words": []
+          },
+          {
+            "text": "And this apple is for you, Ten Ten.",
+            "words": []
+          },
+          {
+            "text": "No, this one is for you, Hayat.",
+            "words": []
+          },
+          {
+            "text": "Thank you, Ten Ten.",
+            "words": []
+          },
+          {
+            "text": "And now I'll draw the last apple for myself.",
+            "words": []
+          },
+          {
+            "text": "Ah, Ten Ten, draw the pictures",
+            "words": []
+          },
+          {
+            "text": "That you always draw for us, they're very nice.",
+            "words": []
+          },
+          {
+            "text": "Now like this I've finished three apples.",
+            "words": []
+          },
+          {
+            "text": "And here is your apple.",
+            "words": []
+          },
+          {
+            "text": "Thank you.",
+            "words": []
+          },
+          {
+            "text": "Hayat,",
+            "words": []
+          },
+          {
+            "text": "Isn't it that when I draw something, you bring it to me?",
+            "words": []
+          },
+          {
+            "text": "Of course I'll bring it to you.",
+            "words": []
+          },
+          {
+            "text": "So now I'll draw all the fruits I like,",
+            "words": []
+          },
+          {
+            "text": "I'll draw oranges, and watermelon,",
+            "words": []
+          },
+          {
+            "text": "And strawberries, and grapes,",
+            "words": []
+          },
+          {
+            "text": "And peaches, apricots, and I'll draw vegetables too.",
+            "words": []
+          },
+          {
+            "text": "All these fruits?",
+            "words": []
+          },
+          {
+            "text": "Yeah, bring them to us, Hayat.",
+            "words": []
+          },
+          {
+            "text": "I have to bring you all of this?",
+            "words": []
+          },
+          {
+            "text": "I'm not going to draw them all.",
+            "words": []
+          }
+        ],
+        "lessons": "# طلب المساعدة في الرسم\n00:06.00 حياة؟\n00:08.00 نعم تن تن.\n00:09.50 ساعديني عشان أنا مو عارفة شو أرسم.\n00:13.50 همم، شو في فواكه بتحبيها؟\n00:16.00 فواكه؟ أنا بحب التفاح كتير.\n\n# الاتفاق على التفاح\n00:19.00 طيب، ارسمي تفاحة وأنا بجيبلك تفاحة.\n00:23.00 طيب إذا رسمت تفاحتين؟\n00:26.00 بجيبلك تفاحتين.\n00:28.00 إذا هيك رح أرسم تلات تفاحات،\n00:31.00 وحدة إلي، ووحدة إلك، والتالتة لجلجل.\n\n# بداية الرسم (Part 1)\n00:36.00 معناته إذا هيك أنا رايحة أجيب التفاح.\n00:39.00 هه، تفاح؟\n00:41.00 هه، وين تفاحتي؟\n00:43.00 أنا بدي تفاحتي هلا، وينها؟\n00:45.00 لسه ما رسمتها يا جلجل.\n\n# بداية الرسم (Part 2)\n00:47.00 يعني التفاح بالرسمة مش زي ما قالت حياة؟\n00:52.00 لا يا جلجل،\n00:54.00 بس أنا أرسم تفاحة حياة رح تعطيني إياها.\n00:57.00 آه، يعني هي هلا راحت تجيب لنا التفاح.\n\n# رسم التفاحات\n01:01.00 إلي تفاحة، وإلك تفاحة،\n01:04.00 ولحياة تفاحة، يعني تلات تفاحات.\n01:08.00 وأنا هلا رح أرسم تلات تفاحات.\n01:14.00 كم تفاحة صرتي راسة يا تن تن؟\n01:17.00 قربت أخلص أول تفاحة.\n\n# توزيع التفاح\n01:19.00 وهي أول تفاحة جاهزة.\n01:21.00 تفضل يا جلجل.\n01:22.00 هاي التفاحة إلي؟\n01:24.00 شكراً شكراً شكراً يا حياة.\n01:27.00 هيك خلصت تفاحتين.\n01:30.00 وهاي التفاحة إلك يا تن تن.\n01:32.00 لا هاي إلك يا حياة.\n01:34.00 شكراً تن تن.\n\n# الرسم النهائي\n01:37.00 وهلا رح أرسم آخر تفاحة إلي أنا.\n01:42.00 آه يا تن تن، ارسمي الرسمات\n01:44.50 اللي إنتِ دايماً بترسمي لنا إياها، حلوة كتير.\n01:48.00 هلا هيك أنا خلصت تلات تفاحات.\n01:52.00 وتفضلي هاي تفاحتك.\n01:55.00 شكراً.\n\n# التوسع في الرسم\n01:59.00 حياة،\n02:01.00 مش لما أنا أرسم إشي إنتِ رح تجيبي لي إياه؟\n02:04.00 أكيد رح أجيب لك إياه.\n02:06.00 إذاً أنا هلا رح أرسم كل الفواكه اللي بحبها،\n02:09.00 رح أرسم برتقال، وبطيخ،\n02:12.00 وفراولة، وعنب،\n02:15.00 وخوخ، ومشمش، ورح أرسم خضار كمان.\n\n# الخاتمة المضحكة\n02:19.00 كل هدول الفواكه؟\n02:21.00 آه جيبي لنا إياهم يا حياة.\n02:22.50 كل هاد بدي أجيب لك إياه؟\n02:24.50 ما أنا رح أرسمهم كلهم."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-26 20:11:28 UTC",
   "updated_at": "2026-04-26 20:26:19 UTC",

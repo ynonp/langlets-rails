@@ -65,7 +65,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
     assert_instance_of Activities::ListenActivity, activity5
 
     # The ListenActivity's phrases should have token translations AND similar sounds
-    phrases_with_tt = activity5.phrases.select { |p| p.token_translations.any? }
+    phrases_with_tt = activity5.phrases.select { |p| p.phrase_tokens.any? { |t| t.token_translations.any? } }
     refute_empty phrases_with_tt, "Phrases should have token translations"
 
     phrases_with_similar = phrases_with_tt.select { |p| p.similar_sounds.any? }

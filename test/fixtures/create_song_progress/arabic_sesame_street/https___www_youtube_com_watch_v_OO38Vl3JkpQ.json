@@ -9,265 +9,386 @@
       {
         "id": "phrase_1",
         "text_l1": "مرحبا أحمد",
-        "text_l2": "Hello Ahmed",
         "timestamp": "00:00.00",
         "timestamp_end": "00:01.40"
       },
       {
         "id": "phrase_2",
         "text_l1": "مرحبا",
-        "text_l2": "Hello",
         "timestamp": "00:01.40",
         "timestamp_end": "00:02.30"
       },
       {
         "id": "phrase_3",
         "text_l1": "كيف حالك؟",
-        "text_l2": "How are you?",
         "timestamp": "00:02.30",
         "timestamp_end": "00:04.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "منيح",
-        "text_l2": "Good",
         "timestamp": "00:04.00",
         "timestamp_end": "00:05.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "أنا جلجل، بتعرفني؟",
-        "text_l2": "I'm Jaljal, do you know me?",
         "timestamp": "00:05.00",
         "timestamp_end": "00:06.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "آه",
-        "text_l2": "Yeah",
         "timestamp": "00:06.50",
         "timestamp_end": "00:07.30"
       },
       {
         "id": "phrase_7",
         "text_l1": "شو اسمي؟",
-        "text_l2": "What's my name?",
         "timestamp": "00:07.30",
         "timestamp_end": "00:08.30"
       },
       {
         "id": "phrase_8",
         "text_l1": "جلجل",
-        "text_l2": "Jaljal",
         "timestamp": "00:08.30",
         "timestamp_end": "00:09.30"
       },
       {
         "id": "phrase_9",
         "text_l1": "جلجل، صح، أنا جلجل",
-        "text_l2": "Jaljal, right, I'm Jaljal",
         "timestamp": "00:09.30",
         "timestamp_end": "00:11.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "اسمع، بتعرف تقلد صوت الحيوانات؟",
-        "text_l2": "Listen, do you know how to mimic animal sounds?",
         "timestamp": "00:11.50",
         "timestamp_end": "00:14.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "امم",
-        "text_l2": "Hmm",
         "timestamp": "00:14.00",
         "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "طيب، بتعرف تقلد صوت الأسد؟",
-        "text_l2": "Okay, do you know how to mimic a lion's sound?",
         "timestamp": "00:15.00",
         "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "راو",
-        "text_l2": "Rawr",
         "timestamp": "00:19.00",
         "timestamp_end": "00:20.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "أوه، خوفتني",
-        "text_l2": "Oh, you scared me",
         "timestamp": "00:20.50",
         "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "طيب، بتقدر تقلد صوت البسة؟",
-        "text_l2": "Okay, can you mimic a cat's sound?",
         "timestamp": "00:23.00",
         "timestamp_end": "00:26.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "مياو",
-        "text_l2": "Meow",
         "timestamp": "00:26.00",
         "timestamp_end": "00:27.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "مياو، كمان مرة؟",
-        "text_l2": "Meow, one more time?",
         "timestamp": "00:27.50",
         "timestamp_end": "00:29.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "مياو مياو",
-        "text_l2": "Meow meow",
         "timestamp": "00:29.00",
         "timestamp_end": "00:31.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "صح، مياو",
-        "text_l2": "Right, meow",
         "timestamp": "00:31.00",
         "timestamp_end": "00:32.50"
       },
       {
         "id": "phrase_20",
         "text_l1": "طيب، بتقدر تقلد صوت الكلب؟",
-        "text_l2": "Okay, can you mimic a dog's sound?",
         "timestamp": "00:32.50",
         "timestamp_end": "00:35.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "عو",
-        "text_l2": "Woof",
         "timestamp": "00:35.50",
         "timestamp_end": "00:36.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "أوه، عو، إنت دايماً بتخوفني",
-        "text_l2": "Oh, woof, you always scare me",
         "timestamp": "00:36.50",
         "timestamp_end": "00:39.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "أحمد، بتقدر تقلي كيف صوت البطة؟",
-        "text_l2": "Ahmed, can you imitate how a duck sounds?",
         "timestamp": "00:39.50",
         "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "كواك",
-        "text_l2": "Quack",
         "timestamp": "00:43.00",
         "timestamp_end": "00:44.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "كيف؟ كواك كواك",
-        "text_l2": "How? Quack quack",
         "timestamp": "00:44.50",
         "timestamp_end": "00:46.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "كواك كواك",
-        "text_l2": "Quack quack",
         "timestamp": "00:46.50",
         "timestamp_end": "00:47.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "كمان مرة؟",
-        "text_l2": "One more time?",
         "timestamp": "00:47.50",
         "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "كواك كواك",
-        "text_l2": "Quack quack",
         "timestamp": "00:49.00",
         "timestamp_end": "00:50.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "إنت بتحب البطة؟",
-        "text_l2": "Do you like the duck?",
         "timestamp": "00:50.50",
         "timestamp_end": "00:51.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "بحب الأسد",
-        "text_l2": "I like the lion",
         "timestamp": "00:51.50",
         "timestamp_end": "00:55.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "أسد؟ كيف بيسوي الأسد؟",
-        "text_l2": "Lion? How does the lion sound?",
         "timestamp": "00:55.50",
         "timestamp_end": "00:57.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "راو",
-        "text_l2": "Rawr",
         "timestamp": "00:57.50",
         "timestamp_end": "00:58.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "أوه، إنت بتحب تخوفني دايماً",
-        "text_l2": "Oh, you always love to scare me",
         "timestamp": "00:58.50",
         "timestamp_end": "01:01.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "طيب، كيف بتسوي صوت الديك؟",
-        "text_l2": "Okay, how do you make the rooster's sound?",
         "timestamp": "01:01.50",
         "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_35",
         "text_l1": "كوكوكوكو",
-        "text_l2": "Cock-a-doodle-doo",
         "timestamp": "01:04.50",
         "timestamp_end": "01:06.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "كوكوكوكو",
-        "text_l2": "Cock-a-doodle-doo",
         "timestamp": "01:06.50",
         "timestamp_end": "01:08.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "شكراً، إنت صديق كتير رائع",
-        "text_l2": "Thanks, you're a really great friend",
         "timestamp": "01:08.50",
         "timestamp_end": "11:00.00"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[مرحبا] أحمد => [Hello] Ahmed\nمرحبا [أحمد] => Hello [Ahmed]\n\n[مرحبا] => [Hello]\n\n[كيف] حالك؟ => [How] are you?\nكيف [حالك]؟ => How [are you]?\n\n[منيح] => [Good]\n\n[أنا] جلجل، بتعرفني؟ => [I'm] Jaljal, do you know me?\nأنا [جلجل]، بتعرفني؟ => I'm [Jaljal], do you know me?\nأنا جلجل، [بتعرفني]؟ => I'm Jaljal, [do you know me]? # بتعرفني is a synthetic word including the verb, the subject 'you', and the object 'me'\n\n[آه] => [Yeah]\n\n[شو] اسمي؟ => [What's] my name?\nشو [اسمي]؟ => What's [my name]?\n\n[جلجل] => [Jaljal]\n\n[جلجل]، صح، أنا جلجل => [Jaljal], right, I'm Jaljal\nجلجل، [صح]، أنا جلجل => Jaljal, [right], I'm Jaljal\nجلجل، صح، [أنا] جلجل => Jaljal, right, [I'm] Jaljal\nجلجل، صح، أنا [جلجل] => Jaljal, right, I'm [Jaljal]\n\n[اسمع]، بتعرف تقلد صوت الحيوانات؟ => [Listen], do you know how to mimic animal sounds?\nاسمع، [بتعرف] تقلد صوت الحيوانات؟ => [do you know] how to mimic animal sounds?\nاسمع، بتعرف [تقلد] صوت الحيوانات؟ => do you know [how to mimic] animal sounds?\nاسمع، بتعرف تقلد [صوت] الحيوانات؟ => do you know how to mimic animal [sounds]?\nاسمع، بتعرف تقلد صوت [الحيوانات]؟ => do you know how to mimic [animal] sounds?\n\n[امم] => [Hmm]\n\n[طيب]، بتعرف تقلد صوت الأسد؟ => [Okay], do you know how to mimic a lion's sound?\nطيب، [بتعرف] تقلد صوت الأسد؟ => Okay, [do you know] how to mimic a lion's sound?\nطيب، بتعرف [تقلد] صوت الأسد؟ => Okay, do you know [how to mimic] a lion's sound?\nطيب، بتعرف تقلد [صوت] الأسد؟ => Okay, do you know how to mimic a lion's [sound]?\nطيب، بتعرف تقلد صوت [الأسد]؟ => the lion\n\n[راو] => [Rawr]\n\n[أوه]، خوفتني => [Oh], you scared me\nأوه، [خوفتني] => [you scared me]\n\n[طيب]، بتقدر تقلد صوت البسة؟ => [Okay], can you mimic a cat's sound?\nطيب، [بتقدر] تقلد صوت البسة؟ => [can you] mimic a cat's sound?\nطيب، بتقدر [تقلد] صوت البسة؟ => can you [mimic] a cat's sound?\nطيب، بتقدر تقلد [صوت] البسة؟ => can you mimic a cat's [sound]\nطيب، بتقدر تقلد صوت [البسة]؟ => [a cat's] # used custom translation to capture the possessive structure in English.\n\n[مياو] => [Meow]\n\n[مياو]، كمان مرة؟ => [Meow], one more time?\nمياو، [كمان] مرة؟ => one more\nمياو، كمان [مرة]؟ => Meow, one more [time]?\nمياو، [كمان مرة]؟ => Meow, [one more time]?\n\n[مياو] مياو => [Meow] meow\nمياو [مياو] => Meow [meow]\n\n[صح]، مياو => [Right], meow\nصح، [مياو] => Right, [meow]\n\n[طيب]، بتقدر تقلد صوت الكلب؟ => [Okay], can you mimic a dog's sound?\nطيب، [بتقدر] تقلد صوت الكلب؟ => Okay, [can you] mimic a dog's sound?\nطيب، بتقدر [تقلد] صوت الكلب؟ => Okay, can you [mimic] a dog's sound?\nطيب، بتقدر تقلد [صوت] الكلب؟ => Okay, can you mimic a dog's [sound]?\nطيب، بتقدر تقلد صوت [الكلب]؟ => Okay, can you mimic [a dog's] sound?\n\n[عو] => [Woof]\n\n[أوه]، عو، إنت دايماً بتخوفني => [Oh], woof, you always scare me\nأوه، [عو]، إنت دايماً بتخوفني => Oh, [woof], you always scare me\nأوه، عو، [إنت] دايماً بتخوفني => Oh, woof, [you] always scare me\nأوه، عو، إنت [دايماً] بتخوفني => Oh, woof, you [always] scare me\nأوه، عو، إنت دايماً [بتخوفني] => Oh, woof, you always [scare me]\n\n[أحمد]، بتقدر تقلي كيف صوت البطة؟ => [Ahmed], can you imitate how a duck sounds?\nأحمد، [بتقدر] تقلي كيف صوت البطة؟ => Ahmed, [can you] imitate how a duck sounds?\nأحمد، بتقدر [تقلي] كيف صوت البطة؟ => tell me\nأحمد، بتقدر تقلي [كيف] صوت البطة؟ => Ahmed, can you imitate [how] a duck sounds?\nأحمد، بتقدر تقلي كيف [صوت] البطة؟ => Ahmed, can you imitate how a duck [sounds]?\nأحمد، بتقدر تقلي كيف صوت [البطة]؟ => Ahmed, can you imitate how [a duck] sounds?\n\n[كواك] => [Quack]\n\n[كيف]؟ كواك كواك => [How]? Quack quack\nكيف؟ [كواك] كواك => How? [Quack] quack\nكيف؟ كواك [كواك] => How? Quack [quack]\n\n[كواك] كواك => [Quack] quack\nكواك [كواك] => Quack [quack]\n\n[كمان] مرة؟ => [One more] time?\nكمان [مرة]؟ => One more [time]?\n\n[كواك] كواك => [Quack] quack\nكواك [كواك] => Quack [quack]\n\n[إنت] بتحب البطة؟ => Do [you] like the duck?\nإنت [بتحب] البطة؟ => Do you [like] the duck?\nإنت بتحب [البطة]؟ => Do you like [the duck]?\n\n[بحب] الأسد => [I like] the lion\nبحب [الأسد] => I like [the lion]\n\n[أسد]؟ كيف بيسوي الأسد؟ => [Lion]? How does the lion sound?\nأسد؟ [كيف] بيسوي الأسد؟ => Lion? [How] does the lion sound?\nأسد؟ كيف [بيسوي] الأسد؟ => makes, does\nأسد؟ كيف بيسوي [الأسد]؟ => Lion? How does [the lion] sound?\n\n[راو] => [Rawr]\n\n[أوه]، إنت بتحب تخوفني دايماً => [Oh], you always love to scare me\nأوه، [إنت] بتحب تخوفني دايماً => Oh, [you] always love to scare me\nأوه، إنت [بتحب] تخوفني دايماً => Oh, you always [love] to scare me\nأوه، إنت بتحب [تخوفني] دايماً => Oh, you always love [to scare me]\nأوه، إنت بتحب تخوفني [دايماً] => Oh, you [always] love to scare me\n\n[طيب]، كيف بتسوي صوت الديك؟ => [Okay], how do you make the rooster's sound?\nطيب، [كيف] بتسوي صوت الديك؟ => Okay, [how] do you make the rooster's sound?\nطيب، كيف [بتسوي] صوت الديك؟ => Okay, how [do you make] the rooster's sound?\nطيب، كيف بتسوي [صوت] الديك؟ => Okay, how do you make the rooster's [sound]?\nطيب، كيف بتسوي صوت [الديك]؟ => Okay, how do you make [the rooster]'s sound?\n\n[كوكوكوكو] => [Cock-a-doodle-doo]\n\n[كوكوكوكو] => [Cock-a-doodle-doo]\n\n[شكراً]، إنت صديق كتير رائع => [Thanks], you're a really great friend\nشكراً، [إنت] صديق كتير رائع => Thanks, [you're] a really great friend\nشكراً، إنت [صديق] كتير رائع => Thanks, you're a really great [friend]\nشكراً، إنت صديق [كتير] رائع => Thanks, you're a [really] great friend\nشكراً، إنت صديق كتير [رائع] => Thanks, you're a really [great] friend\n\n"
+    "phrases_with_token_translations": "[مرحبا] أحمد => [Hello] Ahmed\nمرحبا [أحمد] => Hello [Ahmed]\n\n[مرحبا] => [Hello]\n\n[كيف] حالك؟ => [How] are you?\nكيف [حالك]؟ => How [are you]?\n\n[منيح] => [Good]\n\n[أنا] جلجل، بتعرفني؟ => [I'm] Jaljal, do you know me?\nأنا [جلجل]، بتعرفني؟ => I'm [Jaljal], do you know me?\nأنا جلجل، [بتعرفني]؟ => I'm Jaljal, [do you know me]? # بتعرفني is a synthetic word including the verb, the subject 'you', and the object 'me'\n\n[آه] => [Yeah]\n\n[شو] اسمي؟ => [What's] my name?\nشو [اسمي]؟ => What's [my name]?\n\n[جلجل] => [Jaljal]\n\n[جلجل]، صح، أنا جلجل => [Jaljal], right, I'm Jaljal\nجلجل، [صح]، أنا جلجل => Jaljal, [right], I'm Jaljal\nجلجل، صح، [أنا] جلجل => Jaljal, right, [I'm] Jaljal\nجلجل، صح، أنا [جلجل] => Jaljal, right, I'm [Jaljal]\n\n[اسمع]، بتعرف تقلد صوت الحيوانات؟ => [Listen], do you know how to mimic animal sounds?\nاسمع، [بتعرف] تقلد صوت الحيوانات؟ => [do you know] how to mimic animal sounds?\nاسمع، بتعرف [تقلد] صوت الحيوانات؟ => do you know [how to mimic] animal sounds?\nاسمع، بتعرف تقلد [صوت] الحيوانات؟ => do you know how to mimic animal [sounds]?\nاسمع، بتعرف تقلد صوت [الحيوانات]؟ => do you know how to mimic [animal] sounds?\n\n[امم] => [Hmm]\n\n[طيب]، بتعرف تقلد صوت الأسد؟ => [Okay], do you know how to mimic a lion's sound?\nطيب، [بتعرف] تقلد صوت الأسد؟ => Okay, [do you know] how to mimic a lion's sound?\nطيب، بتعرف [تقلد] صوت الأسد؟ => Okay, do you know [how to mimic] a lion's sound?\nطيب، بتعرف تقلد [صوت] الأسد؟ => Okay, do you know how to mimic a lion's [sound]?\nطيب، بتعرف تقلد صوت [الأسد]؟ => the lion\n\n[راو] => [Rawr]\n\n[أوه]، خوفتني => [Oh], you scared me\nأوه، [خوفتني] => [you scared me]\n\n[طيب]، بتقدر تقلد صوت البسة؟ => [Okay], can you mimic a cat's sound?\nطيب، [بتقدر] تقلد صوت البسة؟ => [can you] mimic a cat's sound?\nطيب، بتقدر [تقلد] صوت البسة؟ => can you [mimic] a cat's sound?\nطيب، بتقدر تقلد [صوت] البسة؟ => can you mimic a cat's [sound]\nطيب، بتقدر تقلد صوت [البسة]؟ => [a cat's] # used custom translation to capture the possessive structure in English.\n\n[مياو] => [Meow]\n\n[مياو]، كمان مرة؟ => [Meow], one more time?\nمياو، [كمان] مرة؟ => one more\nمياو، كمان [مرة]؟ => Meow, one more [time]?\nمياو، [كمان مرة]؟ => Meow, [one more time]?\n\n[مياو] مياو => [Meow] meow\nمياو [مياو] => Meow [meow]\n\n[صح]، مياو => [Right], meow\nصح، [مياو] => Right, [meow]\n\n[طيب]، بتقدر تقلد صوت الكلب؟ => [Okay], can you mimic a dog's sound?\nطيب، [بتقدر] تقلد صوت الكلب؟ => Okay, [can you] mimic a dog's sound?\nطيب، بتقدر [تقلد] صوت الكلب؟ => Okay, can you [mimic] a dog's sound?\nطيب، بتقدر تقلد [صوت] الكلب؟ => Okay, can you mimic a dog's [sound]?\nطيب، بتقدر تقلد صوت [الكلب]؟ => Okay, can you mimic [a dog's] sound?\n\n[عو] => [Woof]\n\n[أوه]، عو، إنت دايماً بتخوفني => [Oh], woof, you always scare me\nأوه، [عو]، إنت دايماً بتخوفني => Oh, [woof], you always scare me\nأوه، عو، [إنت] دايماً بتخوفني => Oh, woof, [you] always scare me\nأوه، عو، إنت [دايماً] بتخوفني => Oh, woof, you [always] scare me\nأوه، عو، إنت دايماً [بتخوفني] => Oh, woof, you always [scare me]\n\n[أحمد]، بتقدر تقلي كيف صوت البطة؟ => [Ahmed], can you imitate how a duck sounds?\nأحمد، [بتقدر] تقلي كيف صوت البطة؟ => Ahmed, [can you] imitate how a duck sounds?\nأحمد، بتقدر [تقلي] كيف صوت البطة؟ => tell me\nأحمد، بتقدر تقلي [كيف] صوت البطة؟ => Ahmed, can you imitate [how] a duck sounds?\nأحمد، بتقدر تقلي كيف [صوت] البطة؟ => Ahmed, can you imitate how a duck [sounds]?\nأحمد، بتقدر تقلي كيف صوت [البطة]؟ => Ahmed, can you imitate how [a duck] sounds?\n\n[كواك] => [Quack]\n\n[كيف]؟ كواك كواك => [How]? Quack quack\nكيف؟ [كواك] كواك => How? [Quack] quack\nكيف؟ كواك [كواك] => How? Quack [quack]\n\n[كواك] كواك => [Quack] quack\nكواك [كواك] => Quack [quack]\n\n[كمان] مرة؟ => [One more] time?\nكمان [مرة]؟ => One more [time]?\n\n[كواك] كواك => [Quack] quack\nكواك [كواك] => Quack [quack]\n\n[إنت] بتحب البطة؟ => Do [you] like the duck?\nإنت [بتحب] البطة؟ => Do you [like] the duck?\nإنت بتحب [البطة]؟ => Do you like [the duck]?\n\n[بحب] الأسد => [I like] the lion\nبحب [الأسد] => I like [the lion]\n\n[أسد]؟ كيف بيسوي الأسد؟ => [Lion]? How does the lion sound?\nأسد؟ [كيف] بيسوي الأسد؟ => Lion? [How] does the lion sound?\nأسد؟ كيف [بيسوي] الأسد؟ => makes, does\nأسد؟ كيف بيسوي [الأسد]؟ => Lion? How does [the lion] sound?\n\n[راو] => [Rawr]\n\n[أوه]، إنت بتحب تخوفني دايماً => [Oh], you always love to scare me\nأوه، [إنت] بتحب تخوفني دايماً => Oh, [you] always love to scare me\nأوه، إنت [بتحب] تخوفني دايماً => Oh, you always [love] to scare me\nأوه، إنت بتحب [تخوفني] دايماً => Oh, you always love [to scare me]\nأوه، إنت بتحب تخوفني [دايماً] => Oh, you [always] love to scare me\n\n[طيب]، كيف بتسوي صوت الديك؟ => [Okay], how do you make the rooster's sound?\nطيب، [كيف] بتسوي صوت الديك؟ => Okay, [how] do you make the rooster's sound?\nطيب، كيف [بتسوي] صوت الديك؟ => Okay, how [do you make] the rooster's sound?\nطيب، كيف بتسوي [صوت] الديك؟ => Okay, how do you make the rooster's [sound]?\nطيب، كيف بتسوي صوت [الديك]؟ => Okay, how do you make [the rooster]'s sound?\n\n[كوكوكوكو] => [Cock-a-doodle-doo]\n\n[كوكوكوكو] => [Cock-a-doodle-doo]\n\n[شكراً]، إنت صديق كتير رائع => [Thanks], you're a really great friend\nشكراً، [إنت] صديق كتير رائع => Thanks, [you're] a really great friend\nشكراً، إنت [صديق] كتير رائع => Thanks, you're a really great [friend]\nشكراً، إنت صديق [كتير] رائع => Thanks, you're a [really] great friend\nشكراً، إنت صديق كتير [رائع] => Thanks, you're a really [great] friend\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hello Ahmed",
+            "words": []
+          },
+          {
+            "text": "Hello",
+            "words": []
+          },
+          {
+            "text": "How are you?",
+            "words": []
+          },
+          {
+            "text": "Good",
+            "words": []
+          },
+          {
+            "text": "I'm Jaljal, do you know me?",
+            "words": []
+          },
+          {
+            "text": "Yeah",
+            "words": []
+          },
+          {
+            "text": "What's my name?",
+            "words": []
+          },
+          {
+            "text": "Jaljal",
+            "words": []
+          },
+          {
+            "text": "Jaljal, right, I'm Jaljal",
+            "words": []
+          },
+          {
+            "text": "Listen, do you know how to mimic animal sounds?",
+            "words": []
+          },
+          {
+            "text": "Hmm",
+            "words": []
+          },
+          {
+            "text": "Okay, do you know how to mimic a lion's sound?",
+            "words": []
+          },
+          {
+            "text": "Rawr",
+            "words": []
+          },
+          {
+            "text": "Oh, you scared me",
+            "words": []
+          },
+          {
+            "text": "Okay, can you mimic a cat's sound?",
+            "words": []
+          },
+          {
+            "text": "Meow",
+            "words": []
+          },
+          {
+            "text": "Meow, one more time?",
+            "words": []
+          },
+          {
+            "text": "Meow meow",
+            "words": []
+          },
+          {
+            "text": "Right, meow",
+            "words": []
+          },
+          {
+            "text": "Okay, can you mimic a dog's sound?",
+            "words": []
+          },
+          {
+            "text": "Woof",
+            "words": []
+          },
+          {
+            "text": "Oh, woof, you always scare me",
+            "words": []
+          },
+          {
+            "text": "Ahmed, can you imitate how a duck sounds?",
+            "words": []
+          },
+          {
+            "text": "Quack",
+            "words": []
+          },
+          {
+            "text": "How? Quack quack",
+            "words": []
+          },
+          {
+            "text": "Quack quack",
+            "words": []
+          },
+          {
+            "text": "One more time?",
+            "words": []
+          },
+          {
+            "text": "Quack quack",
+            "words": []
+          },
+          {
+            "text": "Do you like the duck?",
+            "words": []
+          },
+          {
+            "text": "I like the lion",
+            "words": []
+          },
+          {
+            "text": "Lion? How does the lion sound?",
+            "words": []
+          },
+          {
+            "text": "Rawr",
+            "words": []
+          },
+          {
+            "text": "Oh, you always love to scare me",
+            "words": []
+          },
+          {
+            "text": "Okay, how do you make the rooster's sound?",
+            "words": []
+          },
+          {
+            "text": "Cock-a-doodle-doo",
+            "words": []
+          },
+          {
+            "text": "Cock-a-doodle-doo",
+            "words": []
+          },
+          {
+            "text": "Thanks, you're a really great friend",
+            "words": []
+          }
+        ],
+        "lessons": "# التحية والتعارف\n00:00.00 مرحبا أحمد\n00:01.40 مرحبا\n00:02.30 كيف حالك؟\n00:04.00 منيح\n00:05.00 أنا جلجل، بتعرفني؟\n00:06.50 آه\n00:07.30 شو اسمي؟\n00:08.30 جلجل\n\n# تقليد أصوات الحيوانات (الجزء الأول)\n00:09.30 جلجل، صح، أنا جلجل\n00:11.50 اسمع، بتعرف تقلد صوت الحيوانات؟\n00:14.00 امم\n00:15.00 طيب، بتعرف تقلد صوت الأسد؟\n00:19.00 راو\n00:20.50 أوه، خوفتني\n00:23.00 طيب، بتقدر تقلد صوت البسة؟\n00:26.00 مياو\n00:27.50 مياو، كمان مرة؟\n\n# تقليد أصوات الحيوانات (الجزء الثاني)\n00:29.00 مياو مياو\n00:31.00 صح، مياو\n00:32.50 طيب، بتقدر تقلد صوت الكلب؟\n00:35.50 عو\n00:36.50 أوه، عو، إنت دايماً بتخوفني\n\n# أصوات الحيوانات المفضلة\n00:39.50 أحمد، بتقدر تقلي كيف صوت البطة؟\n00:43.00 كواك\n00:44.50 كيف؟ كواك كواك\n00:46.50 كواك كواك\n00:47.50 كمان مرة؟\n00:49.00 كواك كواك\n00:50.50 إنت بتحب البطة؟\n00:51.50 بحب الأسد\n\n# خاتمة المحادثة\n00:55.50 أسد؟ كيف بيسوي الأسد؟\n00:57.50 راو\n00:58.50 أوه، إنت بتحب تخوفني دايماً\n01:01.50 طيب، كيف بتسوي صوت الديك؟\n01:04.50 كوكوكوكو\n01:06.50 كوكوكوكو\n01:08.50 شكراً، إنت صديق كتير رائع"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 23:42:43 UTC",
   "updated_at": "2026-04-26 05:56:58 UTC",

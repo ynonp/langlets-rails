@@ -9,447 +9,646 @@
         "id": "phrase_1",
         "text_l1": "مرحباً يا أصدقائي الأطفال",
         "timestamp": "00:00.00",
-        "timestamp_end": "00:02.10",
-        "text_l2": "Hello, my young friends"
+        "timestamp_end": "00:02.10"
       },
       {
         "id": "phrase_2",
         "text_l1": "مرحباً",
         "timestamp": "00:02.10",
-        "timestamp_end": "00:03.30",
-        "text_l2": "Hello"
+        "timestamp_end": "00:03.30"
       },
       {
         "id": "phrase_3",
         "text_l1": "اليوم أنا وجوجو رح نقدم لكم صديقنا المثلث",
         "timestamp": "00:03.30",
-        "timestamp_end": "00:08.20",
-        "text_l2": "Today, Joujou and I will introduce our friend the Triangle"
+        "timestamp_end": "00:08.20"
       },
       {
         "id": "phrase_4",
         "text_l1": "المثلث أحد الأشكال الهندسية",
         "timestamp": "00:08.20",
-        "timestamp_end": "00:11.00",
-        "text_l2": "The triangle is one of the geometric shapes"
+        "timestamp_end": "00:11.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "اللي إله ثلاث أضلاع",
         "timestamp": "00:11.00",
-        "timestamp_end": "00:13.20",
-        "text_l2": "That has three sides"
+        "timestamp_end": "00:13.20"
       },
       {
         "id": "phrase_6",
         "text_l1": "واحد، اثنين، ثلاثة، ثلاث أضلاع",
         "timestamp": "00:13.20",
-        "timestamp_end": "00:18.30",
-        "text_l2": "One, two, three, three sides"
+        "timestamp_end": "00:18.30"
       },
       {
         "id": "phrase_7",
         "text_l1": "أكيد أنتوا هلق عرفتوه",
         "timestamp": "00:18.30",
-        "timestamp_end": "00:20.30",
-        "text_l2": "I'm sure you know him now"
+        "timestamp_end": "00:20.30"
       },
       {
         "id": "phrase_8",
         "text_l1": "وتفضل يا صديقنا المثلث",
         "timestamp": "00:20.30",
-        "timestamp_end": "00:22.30",
-        "text_l2": "Come on up, our friend Triangle"
+        "timestamp_end": "00:22.30"
       },
       {
         "id": "phrase_9",
         "text_l1": "تفضل",
         "timestamp": "00:22.30",
-        "timestamp_end": "00:23.50",
-        "text_l2": "Come on up"
+        "timestamp_end": "00:23.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "نعتذر منكم يا أصدقائنا الأطفال",
         "timestamp": "00:26.00",
-        "timestamp_end": "00:28.30",
-        "text_l2": "We apologize to you, our young friends"
+        "timestamp_end": "00:28.30"
       },
       {
         "id": "phrase_11",
         "text_l1": "هلق بنرجعلكم",
         "timestamp": "00:28.30",
-        "timestamp_end": "00:29.50",
-        "text_l2": "We'll be right back with you"
+        "timestamp_end": "00:29.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "أنتي الدائرة؟",
         "timestamp": "00:29.50",
-        "timestamp_end": "00:30.60",
-        "text_l2": "Are you the Circle?"
+        "timestamp_end": "00:30.60"
       },
       {
         "id": "phrase_13",
         "text_l1": "آه، أنا الدائرة",
         "timestamp": "00:30.60",
-        "timestamp_end": "00:32.40",
-        "text_l2": "Yes, I am the Circle"
+        "timestamp_end": "00:32.40"
       },
       {
         "id": "phrase_14",
         "text_l1": "دائرة، إحنا طلبنا المثلث",
         "timestamp": "00:32.40",
-        "timestamp_end": "00:35.30",
-        "text_l2": "Circle, we asked for the Triangle"
+        "timestamp_end": "00:35.30"
       },
       {
         "id": "phrase_15",
         "text_l1": "آه، بس أصحابي الأشكال الهندسية",
         "timestamp": "00:35.30",
-        "timestamp_end": "00:38.50",
-        "text_l2": "Yes, but my friends the geometric shapes"
+        "timestamp_end": "00:38.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "حكولي إني أطلع فطلعت",
         "timestamp": "00:38.50",
-        "timestamp_end": "00:42.20",
-        "text_l2": "Told me to come out so I came out"
+        "timestamp_end": "00:42.20"
       },
       {
         "id": "phrase_17",
         "text_l1": "معلش، معلش يا دائرة إحنا بدنا صديقنا المثلث",
         "timestamp": "00:42.20",
-        "timestamp_end": "00:46.00",
-        "text_l2": "It's okay, it's okay Circle, we want our friend the Triangle"
+        "timestamp_end": "00:46.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "اللي إله ثلاث أضلاع",
         "timestamp": "00:46.00",
-        "timestamp_end": "00:48.00",
-        "text_l2": "Who has three sides"
+        "timestamp_end": "00:48.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "وأنتي ما إلك ولا ضلع",
         "timestamp": "00:48.00",
-        "timestamp_end": "00:50.30",
-        "text_l2": "And you don't have any sides"
+        "timestamp_end": "00:50.30"
       },
       {
         "id": "phrase_20",
         "text_l1": "فهمت، فهمت",
         "timestamp": "00:50.30",
-        "timestamp_end": "00:52.00",
-        "text_l2": "I understand, I understand"
+        "timestamp_end": "00:52.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "شكراً يا صديقتنا الدائرة مع السلامة",
         "timestamp": "00:52.00",
-        "timestamp_end": "00:54.50",
-        "text_l2": "Thank you, our friend Circle, goodbye"
+        "timestamp_end": "00:54.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "مع السلامة",
         "timestamp": "00:54.50",
-        "timestamp_end": "00:56.00",
-        "text_l2": "Goodbye"
+        "timestamp_end": "00:56.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "شو عم بصير يا جوجو؟ يلا يا تنتن",
         "timestamp": "00:56.00",
-        "timestamp_end": "00:59.00",
-        "text_l2": "What's happening, Joujou? Come on, Tantan"
+        "timestamp_end": "00:59.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "أصدقائنا الأطفال نعتذر منكم كمان مرة",
         "timestamp": "00:59.00",
-        "timestamp_end": "01:02.00",
-        "text_l2": "Our young friends, we apologize once again"
+        "timestamp_end": "01:02.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "وهلق رح نقدم لكم المثلث",
         "timestamp": "01:02.00",
-        "timestamp_end": "01:04.50",
-        "text_l2": "And now we will introduce the Triangle to you"
+        "timestamp_end": "01:04.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "المثلث اللي إله ثلاث أضلاع تفضل يا مثلث",
         "timestamp": "01:04.50",
-        "timestamp_end": "01:09.00",
-        "text_l2": "The Triangle who has three sides, come on up Triangle"
+        "timestamp_end": "01:09.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "تفضل يا مثلث",
         "timestamp": "01:09.00",
-        "timestamp_end": "01:11.00",
-        "text_l2": "Come on up, Triangle"
+        "timestamp_end": "01:11.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "مرحباً",
         "timestamp": "01:11.00",
-        "timestamp_end": "01:13.00",
-        "text_l2": "Hello"
+        "timestamp_end": "01:13.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "أهلاً، إيش صار يا تنتن كمان مرة؟",
         "timestamp": "01:13.00",
-        "timestamp_end": "01:15.50",
-        "text_l2": "Welcome, what happened, Tantan, again?"
+        "timestamp_end": "01:15.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "شو عم بصير؟",
         "timestamp": "01:15.50",
-        "timestamp_end": "01:16.50",
-        "text_l2": "What's going on?"
+        "timestamp_end": "01:16.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "مرحباً يا مربع",
         "timestamp": "01:16.50",
-        "timestamp_end": "01:18.00",
-        "text_l2": "Hello, Square"
+        "timestamp_end": "01:18.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "أهلاً",
         "timestamp": "01:18.00",
-        "timestamp_end": "01:19.00",
-        "text_l2": "Welcome"
+        "timestamp_end": "01:19.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "إحنا طلبنا المثلث",
         "timestamp": "01:19.00",
-        "timestamp_end": "01:21.50",
-        "text_l2": "We asked for the Triangle"
+        "timestamp_end": "01:21.50"
       },
       {
         "id": "phrase_34",
         "text_l1": "آه، المثلث؟",
         "timestamp": "01:21.50",
-        "timestamp_end": "01:25.00",
-        "text_l2": "Oh, the Triangle?"
+        "timestamp_end": "01:25.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "يا صديقنا، يا صديقنا المربع",
         "timestamp": "01:25.00",
-        "timestamp_end": "01:28.00",
-        "text_l2": "Our friend, our friend Square"
+        "timestamp_end": "01:28.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "إحنا بنحب كل الأشكال الهندسية",
         "timestamp": "01:28.00",
-        "timestamp_end": "01:31.00",
-        "text_l2": "We love all geometric shapes"
+        "timestamp_end": "01:31.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "بس إحنا بدنا صديقنا المثلث",
         "timestamp": "01:31.00",
-        "timestamp_end": "01:33.00",
-        "text_l2": "But we want our friend the Triangle"
+        "timestamp_end": "01:33.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "اللي إله ثلاث أضلاع",
         "timestamp": "01:33.00",
-        "timestamp_end": "01:35.00",
-        "text_l2": "Who has three sides"
+        "timestamp_end": "01:35.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "بس أنت إلك أربع أضلاع",
         "timestamp": "01:35.00",
-        "timestamp_end": "01:37.00",
-        "text_l2": "But you have four sides"
+        "timestamp_end": "01:37.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "واحد، اثنين، ثلاثة، أربعة",
         "timestamp": "01:37.00",
-        "timestamp_end": "01:40.00",
-        "text_l2": "One, two, three, four"
+        "timestamp_end": "01:40.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "وإحنا بدنا المثلث إله ثلاث أضلاع",
         "timestamp": "01:40.00",
-        "timestamp_end": "01:44.00",
-        "text_l2": "And we want the Triangle who has three sides"
+        "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "صحيح",
         "timestamp": "01:44.00",
-        "timestamp_end": "01:45.00",
-        "text_l2": "Correct"
+        "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "أنا بعتذر بس أنا أصحابي",
         "timestamp": "01:45.00",
-        "timestamp_end": "01:48.00",
-        "text_l2": "I apologize but my friends"
+        "timestamp_end": "01:48.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "الأشكال الهندسية حكولي إني أطلع",
         "timestamp": "01:48.00",
-        "timestamp_end": "01:51.00",
-        "text_l2": "The geometric shapes told me to come out"
+        "timestamp_end": "01:51.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "طيب صديقنا المربع شكراً إلك مع السلامة",
         "timestamp": "01:51.00",
-        "timestamp_end": "01:54.00",
-        "text_l2": "Okay, our friend Square, thank you, goodbye"
+        "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "مع السلامة",
         "timestamp": "01:54.00",
-        "timestamp_end": "01:55.00",
-        "text_l2": "Goodbye"
+        "timestamp_end": "01:55.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "مع السلامة",
         "timestamp": "01:55.00",
-        "timestamp_end": "01:56.00",
-        "text_l2": "Goodbye"
+        "timestamp_end": "01:56.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "تنتن، إيش لازم نعمل هلق؟",
         "timestamp": "01:56.00",
-        "timestamp_end": "01:58.00",
-        "text_l2": "Tantan, what should we do now?"
+        "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "مش عارفة يا جوجو وين راح المثلث؟",
         "timestamp": "01:58.00",
-        "timestamp_end": "02:01.00",
-        "text_l2": "I don't know, Joujou, where did the Triangle go?"
+        "timestamp_end": "02:01.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "أصدقائنا الأطفال نعتذر كمان مرة",
         "timestamp": "02:01.00",
-        "timestamp_end": "02:04.00",
-        "text_l2": "Our young friends, we apologize once more"
+        "timestamp_end": "02:04.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "وهلق رح يوصل صديقنا المثلث",
         "timestamp": "02:04.00",
-        "timestamp_end": "02:06.00",
-        "text_l2": "And now our friend the Triangle will arrive"
+        "timestamp_end": "02:06.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "صديقنا المثلث اللي إله ثلاث أضلاع تفضل",
         "timestamp": "02:06.00",
-        "timestamp_end": "02:11.00",
-        "text_l2": "Our friend the Triangle who has three sides, come on up"
+        "timestamp_end": "02:11.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "تفضل يا مثلث",
         "timestamp": "02:11.00",
-        "timestamp_end": "02:13.00",
-        "text_l2": "Come on up"
+        "timestamp_end": "02:13.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "تفضل يا مثلث",
         "timestamp": "02:13.00",
-        "timestamp_end": "02:15.00",
-        "text_l2": "Come on up, Triangle"
+        "timestamp_end": "02:15.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "مثلث وين كنت يا جوجو؟",
         "timestamp": "02:15.00",
-        "timestamp_end": "02:17.00",
-        "text_l2": "Come on up, Triangle"
+        "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "وهلق وصل صديقنا المثلث",
         "timestamp": "02:17.00",
-        "timestamp_end": "02:20.00",
-        "text_l2": "Triangle, where were you, Joujou?"
+        "timestamp_end": "02:20.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "المثلث إله ثلاث أضلاع ووصل",
         "timestamp": "02:20.00",
-        "timestamp_end": "02:23.00",
-        "text_l2": "And now our friend the Triangle has arrived"
+        "timestamp_end": "02:23.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "مثلث وين كنت؟",
         "timestamp": "02:23.00",
-        "timestamp_end": "02:25.00",
-        "text_l2": "The Triangle has three sides and has arrived"
+        "timestamp_end": "02:25.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "أنا؟ كنت نايم",
         "timestamp": "02:25.00",
-        "timestamp_end": "02:28.00",
-        "text_l2": "Triangle, where were you?"
+        "timestamp_end": "02:28.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "نايم؟",
         "timestamp": "02:28.00",
-        "timestamp_end": "02:33.00",
-        "text_l2": "Me? I was sleeping"
+        "timestamp_end": "02:33.00"
       },
       {
         "id": "phrase_61",
         "text_l1": "مرحباً يا أصدقائي، أنا المثلث",
         "timestamp": "02:38.00",
-        "timestamp_end": "02:41.00",
-        "text_l2": "Sleeping?"
+        "timestamp_end": "02:41.00"
       },
       {
         "id": "phrase_62",
         "text_l1": "وإلي ثلاث أضلاع",
         "timestamp": "02:41.00",
-        "timestamp_end": "02:43.00",
-        "text_l2": "Hello my friends, I am the Triangle"
+        "timestamp_end": "02:43.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "واحد، اثنين، ثلاثة",
         "timestamp": "02:43.00",
-        "timestamp_end": "02:50.00",
-        "text_l2": "And I have three sides, one, two, three"
+        "timestamp_end": "02:50.00"
       }
     ],
     "phrases_with_token_translations": "[مرحباً] يا أصدقائي الأطفال => [Hello], my young friends\nمرحباً [يا] أصدقائي الأطفال => vocative particle # used to address someone\nمرحباً يا [أصدقائي] الأطفال => Hello, [my] young [friends]\nمرحباً يا أصدقائي [الأطفال] => Hello, my [young] friends\n\n[مرحباً] => [Hello]\n\n[اليوم] أنا وجوجو رح نقدم لكم صديقنا المثلث => [Today], Joujou and I will introduce our friend the Triangle\nاليوم [أنا] وجوجو رح نقدم لكم صديقنا المثلث => Today, Joujou and [I] will introduce our friend the Triangle\nاليوم أنا [و]جوجو رح نقدم لكم صديقنا المثلث => Today, Joujou [and] I will introduce our friend the Triangle\nاليوم أنا و[جوجو] رح نقدم لكم صديقنا المثلث => Today, [Joujou] and I will introduce our friend the Triangle\nاليوم أنا وجوجو [رح نقدم] لكم صديقنا المثلث => Today, Joujou and I [will introduce] our friend the Triangle\nاليوم أنا وجوجو رح نقدم [لكم] صديقنا المثلث => to you\nاليوم أنا وجوجو رح نقدم لكم [صديقنا] المثلث => Today, Joujou and I will introduce [our friend] the Triangle\nاليوم أنا وجوجو رح نقدم لكم صديقنا [المثلث] => Today, Joujou and I will introduce our friend [the Triangle]\n\n[المثلث] أحد الأشكال الهندسية => [The triangle] is one of the geometric shapes\nالمثلث [أحد] الأشكال الهندسية => The triangle is [one] of the geometric shapes\nالمثلث أحد [الأشكال] الهندسية => The triangle is one of [the shapes]\nالمثلث أحد الأشكال [الهندسية] => The triangle is one of the [geometric] shapes\n\n[اللي] إله ثلاث أضلاع => [That] has three sides\nاللي [إله] ثلاث أضلاع => That [has] three sides\nاللي إله [ثلاث] أضلاع => That has [three] sides\nاللي إله ثلاث [أضلاع] => That has three [sides]\n\n[واحد]، اثنين، ثلاثة، ثلاث أضلاع => [One], two, three, three sides\nواحد، [اثنين]، ثلاثة، ثلاث أضلاع => One, [two], three, three sides\nواحد، اثنين، [ثلاثة]، ثلاث أضلاع => One, two, [three], three sides\nواحد، اثنين، ثلاثة، [ثلاث] أضلاع => One, two, three, [three] sides\nواحد، اثنين، ثلاثة، ثلاث [أضلاع] => One, two, three, three [sides]\n\n[أكيد] أنتوا هلق عرفتوه => [I'm sure] you know him now\nأكيد [أنتوا] هلق عرفتوه => I'm sure [you] know him now\nأكيد أنتوا [هلق] عرفتوه => I'm sure you know him [now]\nأكيد أنتوا هلق [عرفتوه] => I'm sure you [know him] now\n\n[وتفضل] يا صديقنا المثلث => [Come on up], our friend Triangle\nوتفضل يا [صديقنا] المثلث => Come on up, [our friend] Triangle\nوتفضل يا صديقنا [المثلث] => Come on up, our friend [Triangle]\n\n[تفضل] => [Come on up]\n\n[نعتذر] منكم يا أصدقائنا الأطفال => [We apologize] to you, our young friends\nنعتذر [منكم] يا أصدقائنا الأطفال => We apologize [to you], our young friends\nنعتذر منكم يا [أصدقائنا] الأطفال => our friends\nنعتذر منكم يا أصدقائنا [الأطفال] => We apologize to you, our [young] friends\n\nهلق [بنرجعلكم] => [We'll be] right [back with you] # maps \"we will return to you\" to the remaining English phrase (excluding the adverb of immediacy)\n\n[أنتي] الدائرة؟ => [Are you] the Circle?\nأنتي [الدائرة]؟ => Are you [the Circle]?\n\n[آه]، أنا الدائرة => [Yes], I am the Circle\nآه، [أنا] الدائرة => Yes, [I am] the Circle\nآه، أنا [الدائرة] => Yes, I am [the Circle]\n\n[دائرة]، إحنا طلبنا المثلث => [Circle], we asked for the Triangle\nدائرة، [إحنا] طلبنا المثلث => Circle, [we] asked for the Triangle\nدائرة، إحنا [طلبنا] المثلث => Circle, we [asked for] the Triangle\nدائرة، إحنا طلبنا [المثلث] => Circle, we asked for [the Triangle]\n\n[آه]، بس أصحابي الأشكال الهندسية => [Yes], but my friends the geometric shapes\nآه، [بس] أصحابي الأشكال الهندسية => Yes, [but] my friends the geometric shapes\nآه، بس [أصحابي] الأشكال الهندسية => Yes, but [my friends] the geometric shapes\nآه، بس أصحابي [الأشكال] الهندسية => Yes, but my friends the [shapes]\nآه، بس أصحابي الأشكال [الهندسية] => Yes, but my friends the [geometric] shapes\n\n[حكولي] إني أطلع فطلعت => [Told me] to come out so I came out\nحكولي [إني] أطلع فطلعت => Told me [to] come out so I came out\nحكولي إني [أطلع] فطلعت => Told me to [come out] so I came out\nحكولي إني أطلع [ف]طلعت => Told me to come out [so] I came out\nحكولي إني أطلع ف[طلعت] => Told me to come out so [I came out]\n\n[معلش]، معلش يا دائرة إحنا بدنا صديقنا المثلث => [It's okay], it's okay Circle, we want our friend the Triangle\nمعلش، [معلش] يا دائرة إحنا بدنا صديقنا المثلث => It's okay, [it's okay] Circle, we want our friend the Triangle\nمعلش، معلش يا [دائرة] إحنا بدنا صديقنا المثلث => It's okay, it's okay [Circle], we want our friend the Triangle\nمعلش، معلش يا دائرة [إحنا] بدنا صديقنا المثلث => It's okay, it's okay Circle, [we] want our friend the Triangle\nمعلش، معلش يا دائرة إحنا [بدنا] صديقنا المثلث => It's okay, it's okay Circle, we [want] our friend the Triangle\nمعلش، معلش يا دائرة إحنا بدنا [صديقنا] المثلث => It's okay, it's okay Circle, we want [our friend] the Triangle\nمعلش، معلش يا دائرة إحنا بدنا صديقنا [المثلث] => It's okay, it's okay Circle, we want our friend [the Triangle] # \"Al-\" is the article \"the\" or a demonstrative here, so we map it together with the noun.\n\n[اللي] إله ثلاث أضلاع => [Who] has three sides\nاللي [إله] ثلاث أضلاع => Who [has] three sides\nاللي إله [ثلاث] أضلاع => Who has [three] sides\nاللي إله ثلاث [أضلاع] => Who has three [sides]\n\n[و]أنتي ما إلك ولا ضلع => [And] you don't have any sides\nو[أنتي] ما إلك ولا ضلع => And [you] don't have any sides\nوأنتي [ما إلك] ولا ضلع => And you [don't have] any sides\nوأنتي ما إلك [ولا] ضلع => And you don't have [any] sides\nوأنتي ما إلك ولا [ضلع] => And you don't have any [sides]\n\n[فهمت]، فهمت => [I understand], I understand\nفهمت، [فهمت] => I understand, [I understand]\n\n[شكراً] يا صديقتنا الدائرة مع السلامة => [Thank you], our friend Circle, goodbye\nشكراً يا [صديقتنا] الدائرة مع السلامة => Thank you, [our friend] Circle, goodbye\nشكراً يا صديقتنا [الدائرة] مع السلامة => Thank you, our friend [Circle], goodbye\nشكراً يا صديقتنا الدائرة [مع السلامة] => Thank you, our friend Circle, [goodbye]\n\n[مع السلامة] => [Goodbye]\n\n[شو] عم بصير يا جوجو؟ يلا يا تنتن => [What]'s happening, Joujou? Come on, Tantan\nشو [عم بصير] يا جوجو؟ يلا يا تنتن => What['s happening], Joujou? Come on, Tantan\nشو عم بصير يا [جوجو]؟ يلا يا تنتن => What's happening, [Joujou]? Come on, Tantan\nشو عم بصير يا جوجو؟ [يلا] يا تنتن => What's happening, Joujou? [Come on], Tantan\nشو عم بصير يا جوجو؟ يلا يا [تنتن] => What's happening, Joujou? Come on, [Tantan]\n\n[أصدقائنا] الأطفال نعتذر منكم كمان مرة => [Our] young [friends], we apologize once again\nأصدقائنا [الأطفال] نعتذر منكم كمان مرة => Our [young] friends, we apologize once again\nأصدقائنا الأطفال [نعتذر] منكم كمان مرة => Our young friends, [we apologize] once again\nأصدقائنا الأطفال نعتذر [منكم] كمان مرة => to you / from you # custom word translation as \"to you\" is omitted in the localized English\nأصدقائنا الأطفال نعتذر منكم [كمان مرة] => Our young friends, we apologize [once again]\n\n[وهلق] رح نقدم لكم المثلث => [And now] we will introduce the Triangle to you\nوهلق [رح نقدم] لكم المثلث => And now [we will introduce] the Triangle to you\nوهلق رح نقدم [لكم] المثلث => And now we will introduce the Triangle [to you]\nوهلق رح نقدم لكم [المثلث] => And now we will introduce [the Triangle] to you\n\n[المثلث] اللي إله ثلاث أضلاع تفضل يا مثلث => [The Triangle] who has three sides, come on up Triangle\nالمثلث [اللي] إله ثلاث أضلاع تفضل يا مثلث => The Triangle [who] has three sides, come on up Triangle\nالمثلث اللي [إله] ثلاث أضلاع تفضل يا مثلث => The Triangle who [has] three sides, come on up Triangle\nالمثلث اللي إله [ثلاث] أضلاع تفضل يا مثلث => The Triangle who has [three] sides, come on up Triangle\nالمثلث اللي إله ثلاث [أضلاع] تفضل يا مثلث => The Triangle who has three [sides], come on up Triangle\nالمثلث اللي إله ثلاث أضلاع [تفضل] يا مثلث => The Triangle who has three sides, [come on up] Triangle\nالمثلث اللي إله ثلاث أضلاع تفضل يا [مثلث] => The Triangle who has three sides, come on up [Triangle]\n\n[تفضل] يا مثلث => [Come on up], Triangle\nتفضل يا [مثلث] => Come on up, [Triangle]\n\n[مرحباً] => [Hello]\n\n[أهلاً]، إيش صار يا تنتن كمان مرة؟ => [Welcome], what happened, Tantan, again?\nأهلاً، [إيش] صار يا تنتن كمان مرة؟ => Welcome, [what] happened, Tantan, again?\nأهلاً، إيش [صار] يا تنتن كمان مرة؟ => Welcome, what [happened], Tantan, again?\nأهلاً، إيش صار يا [تنتن] كمان مرة؟ => Welcome, what happened, [Tantan], again?\nأهلاً، إيش صار يا تنتن [كمان مرة]؟ => Welcome, what happened, Tantan, [again] # can be \"once more\" or \"again\" as a unit\n\n[شو] عم بصير؟ => [What]'s going on?\nشو [عم بصير]؟ => What's [going on]?\n\n[مرحباً] يا مربع => [Hello], Square\nمرحباً يا [مربع] => Hello, [Square]\n\n[أهلاً] => [Welcome]\n\n[إحنا] طلبنا المثلث => [We] asked for the Triangle\nإحنا [طلبنا] المثلث => We [asked for] the Triangle\nإحنا طلبنا [المثلث] => We asked for [the Triangle]\n\n[آه]، المثلث؟ => [Oh], the Triangle?\nآه، [المثلث]؟ => Oh, [the Triangle]?\n\n[يا صديقنا]، يا صديقنا المربع => [Our friend], our friend Square\nيا صديقنا، [يا صديقنا] المربع => Our friend, [our friend] Square\nيا صديقنا، يا صديقنا [المربع] => Our friend, our friend [Square]\n\n[إحنا] بنحب كل الأشكال الهندسية => [We] love all geometric shapes\nإحنا [بنحب] كل الأشكال الهندسية => We [love] all geometric shapes\nإحنا بنحب [كل] الأشكال الهندسية => We love [all] geometric shapes\nإحنا بنحب كل [الأشكال] الهندسية => We love all geometric [shapes]\nإحنا بنحب كل الأشكال [الهندسية] => We love all [geometric] shapes\n\n[بس] إحنا بدنا صديقنا المثلث => [But] we want our friend the Triangle\nبس [إحنا] بدنا صديقنا المثلث => But [we] want our friend the Triangle\nبس إحنا [بدنا] صديقنا المثلث => But we [want] our friend the Triangle\nبس إحنا بدنا [صديقنا] المثلث => But we want [our friend] the Triangle\nبس إحنا بدنا صديقنا [المثلث] => But we want our friend [the Triangle]\n\n[اللي] إله ثلاث أضلاع => [Who] has three sides\nاللي [إله] ثلاث أضلاع => Who [has] three sides\nاللي إله [ثلاث] أضلاع => Who has [three] sides\nاللي إله ثلاث [أضلاع] => Who has [sides]\n\n[بس] أنت إلك أربع أضلاع => [But] you have four sides\nبس [أنت] إلك أربع أضلاع => But [you] have four sides\nبس أنت [إلك] أربع أضلاع => have # possession indicator\nبس أنت إلك [أربع] أضلاع => But you have [four] sides\nبس أنت إلك أربع [أضلاع] => But you have four [sides]\n\n[واحد]، اثنين، ثلاثة، أربعة => [One], two, three, four\nواحد، [اثنين]، ثلاثة، أربعة => One, [two], three, four\nواحد، اثنين، [ثلاثة]، أربعة => One, two, [three], four\nواحد، اثنين، ثلاثة، [أربعة] => One, two, three, [four]\n\n[وإحنا] بدنا المثلث إله ثلاث أضلاع => [And we] want the Triangle who has three sides\nوإحنا [بدنا] المثلث إله ثلاث أضلاع => And we [want] the Triangle who has three sides\nوإحنا بدنا [المثلث] إله ثلاث أضلاع => And we want [the Triangle] who has three sides\nوإحنا بدنا المثلث [إله] ثلاث أضلاع => And we want the Triangle [who has] three sides\nوإحنا بدنا المثلث إله [ثلاث] أضلاع => And we want the Triangle who has [three] sides\nوإحنا بدنا المثلث إله ثلاث [أضلاع] => And we want the Triangle who has three [sides]\n\n[صحيح] => [Correct]\n\n[أنا] بعتذر بس أنا أصحابي => [I] apologize but my friends\nأنا [بعتذر] بس أنا أصحابي => I [apologize] but my friends\nأنا بعتذر [بس] أنا أصحابي => I apologize [but] my friends\nأنا بعتذر بس أنا [أصحابي] => I apologize but [my friends]\n\n[الأشكال] الهندسية حكولي إني أطلع => [The] geometric [shapes] told me to come out\nالأشكال [الهندسية] حكولي إني أطلع => The [geometric] shapes told me to come out\nالأشكال الهندسية [حكولي] إني أطلع => The geometric shapes [told me] to come out\nالأشكال الهندسية حكولي [إني] أطلع => that I, to\nالأشكال الهندسية حكولي إني [أطلع] => The geometric shapes told me to [come out]\n\n[طيب] صديقنا المربع شكراً إلك مع السلامة => [Okay], our friend Square, thank you, goodbye\nطيب [صديقنا] المربع شكراً إلك مع السلامة => Okay, [our friend] Square, thank you, goodbye\nطيب صديقنا [المربع] شكراً إلك مع السلامة => Okay, our friend [Square], thank you, goodbye\nطيب صديقنا المربع [شكراً إلك] مع السلامة => Okay, our friend Square, [thank you], goodbye\nطيب صديقنا المربع شكراً إلك [مع السلامة] => Okay, our friend Square, thank you, [goodbye]\n\n[مع السلامة] => [Goodbye]\n\n[مع السلامة] => [Goodbye]\n\n[تنتن]، إيش لازم نعمل هلق؟ => [Tantan], what should we do now?\nتنتن، [إيش] لازم نعمل هلق؟ => Tantan, [what] should we do now?\nتنتن، إيش [لازم] نعمل هلق؟ => Tantan, what [should] we do now?\nتنتن، إيش لازم [نعمل] هلق؟ => Tantan, what should [we do] now?\nتنتن، إيش لازم نعمل [هلق]؟ => Tantan, what should we do [now]?\n\n[مش عارفة] يا جوجو وين راح المثلث؟ => [I don't know], Joujou, where did the Triangle go?\nمش عارفة [يا جوجو] وين راح المثلث؟ => I don't know, [Joujou], where did the Triangle go?\nمش عارفة يا جوجو [وين] راح المثلث؟ => I don't know, Joujou, [where] did the Triangle go?\nمش عارفة يا جوجو وين [راح] المثلث؟ => did go # 'rah' is the verb 'to go' in the past tense, which becomes 'did go' in the English question structure\nمش عارفة يا جوجو وين راح [المثلث]؟ => I don't know, Joujou, where did [the Triangle] go?\n\nأصدقائنا [الأطفال] نعتذر كمان مرة => Our [young] friends, we apologize once more\nأصدقائنا الأطفال [نعتذر] كمان مرة => Our young friends, [we apologize] once more\nأصدقائنا الأطفال نعتذر [كمان] مرة => Our young friends, we apologize once [more]\nأصدقائنا الأطفال نعتذر كمان [مرة] => Our young friends, we apologize [once] more\n\n[وهلق] رح يوصل صديقنا المثلث => [And now] our friend the Triangle will arrive # \"وهلق\" combines \"و\" (and) and \"هلق\" (now)\nوهلق [رح] يوصل صديقنا المثلث => And now our friend the Triangle [will] arrive # \"رح\" is the future particle\nوهلق رح [يوصل] صديقنا المثلث => And now our friend the Triangle will [arrive]\nوهلق رح يوصل [صديقنا] المثلث => And now [our friend] the Triangle will arrive # \"صديق\" (friend) + \"نا\" (our)\nوهلق رح يوصل صديقنا [المثلث] => And now our friend [the Triangle] will arrive # \"المثلث\" includes the definite article \"ال\" (the)\n\n[صديقنا] المثلث اللي إله ثلاث أضلاع تفضل => [Our friend] the Triangle who has three sides, come on up\nصديقنا [المثلث] اللي إله ثلاث أضلاع تفضل => Our friend [the Triangle] who has three sides, come on up\nصديقنا المثلث [اللي] إله ثلاث أضلاع تفضل => Our friend the Triangle [who] has three sides, come on up\nصديقنا المثلث اللي [إله] ثلاث أضلاع تفضل => Our friend the Triangle who [has] three sides, come on up\nصديقنا المثلث اللي إله [ثلاث] أضلاع تفضل => Our friend the Triangle who has [three] sides, come on up\nصديقنا المثلث اللي إله ثلاث [أضلاع] تفضل => Our friend the Triangle who has three [sides], come on up\nصديقنا المثلث اللي إله ثلاث أضلاع [تفضل] => Our friend the Triangle who has three sides, [come on up]\n\n[تفضل] يا مثلث => [Come on up]\nتفضل يا [مثلث] => triangle\n\n[تفضل] يا مثلث => [Come on up], Triangle\nتفضل يا [مثلث] => Come on up, [Triangle]\n\n[مثلث] وين كنت يا جوجو؟ => Come on up, [Triangle]\n\nوهلق وصل صديقنا [المثلث] => [Triangle], where were you, Joujou?\n\n[المثلث] إله ثلاث أضلاع ووصل => And now our friend [the Triangle] has arrived\nالمثلث [إله] ثلاث أضلاع ووصل => has\nالمثلث إله [ثلاث] أضلاع ووصل => three\nالمثلث إله ثلاث [أضلاع] ووصل => sides\nالمثلث إله ثلاث أضلاع [ووصل] => and arrived # 'ووصل' includes 'و' (and) and 'وصل' (arrived)\n\n[مثلث] وين كنت؟ => [The Triangle] has three sides and has arrived\nمثلث [وين] كنت؟ => where\nمثلث وين [كنت]؟ => you were, you have been\n\n[أنا]؟ كنت نايم => Me\nأنا؟ [كنت] نايم => I was\nأنا؟ كنت [نايم] => sleeping\n\n[نايم]؟ => Me? I was [sleeping]\n\n[مرحباً] يا أصدقائي، أنا المثلث => Hello\nمرحباً [يا أصدقائي]، أنا المثلث => my friends\nمرحباً يا أصدقائي، [أنا] المثلث => I am\nمرحباً يا أصدقائي، أنا [المثلث] => triangle\n\nوإلي [ثلاث أضلاع] => Hello my friends, I am [the Triangle] # localized context where \"three sides\" refers to the \"Triangle\" entity\n\n[واحد]، اثنين، ثلاثة => And I have three sides, [one], two, three\nواحد، [اثنين]، ثلاثة => And I have three sides, one, [two], three\nواحد، اثنين، [ثلاثة] => And I have three sides, one, two, [three]\n\n",
     "lessons": "# مقدمة المثلث\n00:00.00 مرحباً يا أصدقائي الأطفال\n00:02.10 مرحباً\n00:03.30 اليوم أنا وجوجو رح نقدم لكم صديقنا المثلث\n00:08.20 المثلث أحد الأشكال الهندسية\n00:11.00 اللي إله ثلاث أضلاع\n00:13.20 واحد، اثنين، ثلاثة، ثلاث أضلاع\n00:18.30 أكيد أنتوا هلق عرفتوه\n00:20.30 وتفضل يا صديقنا المثلث\n00:22.30 تفضل\n\n# زيارة الدائرة\n00:26.00 نعتذر منكم يا أصدقائنا الأطفال\n00:28.30 هلق بنرجعلكم\n00:29.50 أنتي الدائرة؟\n00:30.60 آه، أنا الدائرة\n00:32.40 دائرة، إحنا طلبنا المثلث\n00:35.30 آه، بس أصحابي الأشكال الهندسية\n00:38.50 حكولي إني أطلع فطلعت\n00:42.20 معلش، معلش يا دائرة إحنا بدنا صديقنا المثلث\n00:46.00 اللي إله ثلاث أضلاع\n00:48.00 وأنتي ما إلك ولا ضلع\n00:50.30 فهمت، فهمت\n00:52.00 شكراً يا صديقتنا الدائرة مع السلامة\n00:54.50 مع السلامة\n\n# زيارة المربع\n00:56.00 شو عم بصير يا جوجو؟ يلا يا تنتن\n00:59.00 أصدقائنا الأطفال نعتذر منكم كمان مرة\n01:02.00 وهلق رح نقدم لكم المثلث\n01:04.50 المثلث اللي إله ثلاث أضلاع تفضل يا مثلث\n01:09.00 تفضل يا مثلث\n01:11.00 مرحباً\n01:13.00 أهلاً، إيش صار يا تنتن كمان مرة؟\n01:15.50 شو عم بصير؟\n01:16.50 مرحباً يا مربع\n01:18.00 أهلاً\n01:19.00 إحنا طلبنا المثلث\n01:21.50 آه، المثلث؟\n01:25.00 يا صديقنا، يا صديقنا المربع\n01:28.00 إحنا بنحب كل الأشكال الهندسية\n01:31.00 بس إحنا بدنا صديقنا المثلث\n01:33.00 اللي إله ثلاث أضلاع\n01:35.00 بس أنت إلك أربع أضلاع\n01:37.00 واحد، اثنين، ثلاثة، أربعة\n01:40.00 وإحنا بدنا المثلث إله ثلاث أضلاع\n01:44.00 صحيح\n01:45.00 أنا بعتذر بس أنا أصحابي\n01:48.00 الأشكال الهندسية حكولي إني أطلع\n01:51.00 طيب صديقنا المربع شكراً إلك مع السلامة\n01:54.00 مع السلامة\n01:55.00 مع السلامة\n\n# وصول المثلث\n01:56.00 تنتن، إيش لازم نعمل هلق؟\n01:58.00 مش عارفة يا جوجو وين راح المثلث؟\n02:01.00 أصدقائنا الأطفال نعتذر كمان مرة\n02:04.00 وهلق رح يوصل صديقنا المثلث\n02:06.00 صديقنا المثلث اللي إله ثلاث أضلاع تفضل\n02:11.00 تفضل يا مثلث\n02:13.00 تفضل يا مثلث\n02:15.00 مثلث وين كنت يا جوجو؟\n02:17.00 وهلق وصل صديقنا المثلث\n02:20.00 المثلث إله ثلاث أضلاع ووصل\n02:23.00 مثلث وين كنت؟\n02:25.00 أنا؟ كنت نايم\n02:28.00 نايم؟\n02:38.00 مرحباً يا أصدقائي، أنا المثلث\n02:41.00 وإلي ثلاث أضلاع\n02:43.00 واحد، اثنين، ثلاثة",
-    "similar_sounds": ""
+    "similar_sounds": "",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hello, my young friends",
+            "words": []
+          },
+          {
+            "text": "Hello",
+            "words": []
+          },
+          {
+            "text": "Today, Joujou and I will introduce our friend the Triangle",
+            "words": []
+          },
+          {
+            "text": "The triangle is one of the geometric shapes",
+            "words": []
+          },
+          {
+            "text": "That has three sides",
+            "words": []
+          },
+          {
+            "text": "One, two, three, three sides",
+            "words": []
+          },
+          {
+            "text": "I'm sure you know him now",
+            "words": []
+          },
+          {
+            "text": "Come on up, our friend Triangle",
+            "words": []
+          },
+          {
+            "text": "Come on up",
+            "words": []
+          },
+          {
+            "text": "We apologize to you, our young friends",
+            "words": []
+          },
+          {
+            "text": "We'll be right back with you",
+            "words": []
+          },
+          {
+            "text": "Are you the Circle?",
+            "words": []
+          },
+          {
+            "text": "Yes, I am the Circle",
+            "words": []
+          },
+          {
+            "text": "Circle, we asked for the Triangle",
+            "words": []
+          },
+          {
+            "text": "Yes, but my friends the geometric shapes",
+            "words": []
+          },
+          {
+            "text": "Told me to come out so I came out",
+            "words": []
+          },
+          {
+            "text": "It's okay, it's okay Circle, we want our friend the Triangle",
+            "words": []
+          },
+          {
+            "text": "Who has three sides",
+            "words": []
+          },
+          {
+            "text": "And you don't have any sides",
+            "words": []
+          },
+          {
+            "text": "I understand, I understand",
+            "words": []
+          },
+          {
+            "text": "Thank you, our friend Circle, goodbye",
+            "words": []
+          },
+          {
+            "text": "Goodbye",
+            "words": []
+          },
+          {
+            "text": "What's happening, Joujou? Come on, Tantan",
+            "words": []
+          },
+          {
+            "text": "Our young friends, we apologize once again",
+            "words": []
+          },
+          {
+            "text": "And now we will introduce the Triangle to you",
+            "words": []
+          },
+          {
+            "text": "The Triangle who has three sides, come on up Triangle",
+            "words": []
+          },
+          {
+            "text": "Come on up, Triangle",
+            "words": []
+          },
+          {
+            "text": "Hello",
+            "words": []
+          },
+          {
+            "text": "Welcome, what happened, Tantan, again?",
+            "words": []
+          },
+          {
+            "text": "What's going on?",
+            "words": []
+          },
+          {
+            "text": "Hello, Square",
+            "words": []
+          },
+          {
+            "text": "Welcome",
+            "words": []
+          },
+          {
+            "text": "We asked for the Triangle",
+            "words": []
+          },
+          {
+            "text": "Oh, the Triangle?",
+            "words": []
+          },
+          {
+            "text": "Our friend, our friend Square",
+            "words": []
+          },
+          {
+            "text": "We love all geometric shapes",
+            "words": []
+          },
+          {
+            "text": "But we want our friend the Triangle",
+            "words": []
+          },
+          {
+            "text": "Who has three sides",
+            "words": []
+          },
+          {
+            "text": "But you have four sides",
+            "words": []
+          },
+          {
+            "text": "One, two, three, four",
+            "words": []
+          },
+          {
+            "text": "And we want the Triangle who has three sides",
+            "words": []
+          },
+          {
+            "text": "Correct",
+            "words": []
+          },
+          {
+            "text": "I apologize but my friends",
+            "words": []
+          },
+          {
+            "text": "The geometric shapes told me to come out",
+            "words": []
+          },
+          {
+            "text": "Okay, our friend Square, thank you, goodbye",
+            "words": []
+          },
+          {
+            "text": "Goodbye",
+            "words": []
+          },
+          {
+            "text": "Goodbye",
+            "words": []
+          },
+          {
+            "text": "Tantan, what should we do now?",
+            "words": []
+          },
+          {
+            "text": "I don't know, Joujou, where did the Triangle go?",
+            "words": []
+          },
+          {
+            "text": "Our young friends, we apologize once more",
+            "words": []
+          },
+          {
+            "text": "And now our friend the Triangle will arrive",
+            "words": []
+          },
+          {
+            "text": "Our friend the Triangle who has three sides, come on up",
+            "words": []
+          },
+          {
+            "text": "Come on up",
+            "words": []
+          },
+          {
+            "text": "Come on up, Triangle",
+            "words": []
+          },
+          {
+            "text": "Come on up, Triangle",
+            "words": []
+          },
+          {
+            "text": "Triangle, where were you, Joujou?",
+            "words": []
+          },
+          {
+            "text": "And now our friend the Triangle has arrived",
+            "words": []
+          },
+          {
+            "text": "The Triangle has three sides and has arrived",
+            "words": []
+          },
+          {
+            "text": "Triangle, where were you?",
+            "words": []
+          },
+          {
+            "text": "Me? I was sleeping",
+            "words": []
+          },
+          {
+            "text": "Sleeping?",
+            "words": []
+          },
+          {
+            "text": "Hello my friends, I am the Triangle",
+            "words": []
+          },
+          {
+            "text": "And I have three sides, one, two, three",
+            "words": []
+          }
+        ],
+        "lessons": "# مقدمة المثلث\n00:00.00 مرحباً يا أصدقائي الأطفال\n00:02.10 مرحباً\n00:03.30 اليوم أنا وجوجو رح نقدم لكم صديقنا المثلث\n00:08.20 المثلث أحد الأشكال الهندسية\n00:11.00 اللي إله ثلاث أضلاع\n00:13.20 واحد، اثنين، ثلاثة، ثلاث أضلاع\n00:18.30 أكيد أنتوا هلق عرفتوه\n00:20.30 وتفضل يا صديقنا المثلث\n00:22.30 تفضل\n\n# زيارة الدائرة\n00:26.00 نعتذر منكم يا أصدقائنا الأطفال\n00:28.30 هلق بنرجعلكم\n00:29.50 أنتي الدائرة؟\n00:30.60 آه، أنا الدائرة\n00:32.40 دائرة، إحنا طلبنا المثلث\n00:35.30 آه، بس أصحابي الأشكال الهندسية\n00:38.50 حكولي إني أطلع فطلعت\n00:42.20 معلش، معلش يا دائرة إحنا بدنا صديقنا المثلث\n00:46.00 اللي إله ثلاث أضلاع\n00:48.00 وأنتي ما إلك ولا ضلع\n00:50.30 فهمت، فهمت\n00:52.00 شكراً يا صديقتنا الدائرة مع السلامة\n00:54.50 مع السلامة\n\n# زيارة المربع\n00:56.00 شو عم بصير يا جوجو؟ يلا يا تنتن\n00:59.00 أصدقائنا الأطفال نعتذر منكم كمان مرة\n01:02.00 وهلق رح نقدم لكم المثلث\n01:04.50 المثلث اللي إله ثلاث أضلاع تفضل يا مثلث\n01:09.00 تفضل يا مثلث\n01:11.00 مرحباً\n01:13.00 أهلاً، إيش صار يا تنتن كمان مرة؟\n01:15.50 شو عم بصير؟\n01:16.50 مرحباً يا مربع\n01:18.00 أهلاً\n01:19.00 إحنا طلبنا المثلث\n01:21.50 آه، المثلث؟\n01:25.00 يا صديقنا، يا صديقنا المربع\n01:28.00 إحنا بنحب كل الأشكال الهندسية\n01:31.00 بس إحنا بدنا صديقنا المثلث\n01:33.00 اللي إله ثلاث أضلاع\n01:35.00 بس أنت إلك أربع أضلاع\n01:37.00 واحد، اثنين، ثلاثة، أربعة\n01:40.00 وإحنا بدنا المثلث إله ثلاث أضلاع\n01:44.00 صحيح\n01:45.00 أنا بعتذر بس أنا أصحابي\n01:48.00 الأشكال الهندسية حكولي إني أطلع\n01:51.00 طيب صديقنا المربع شكراً إلك مع السلامة\n01:54.00 مع السلامة\n01:55.00 مع السلامة\n\n# وصول المثلث\n01:56.00 تنتن، إيش لازم نعمل هلق؟\n01:58.00 مش عارفة يا جوجو وين راح المثلث؟\n02:01.00 أصدقائنا الأطفال نعتذر كمان مرة\n02:04.00 وهلق رح يوصل صديقنا المثلث\n02:06.00 صديقنا المثلث اللي إله ثلاث أضلاع تفضل\n02:11.00 تفضل يا مثلث\n02:13.00 تفضل يا مثلث\n02:15.00 مثلث وين كنت يا جوجو؟\n02:17.00 وهلق وصل صديقنا المثلث\n02:20.00 المثلث إله ثلاث أضلاع ووصل\n02:23.00 مثلث وين كنت؟\n02:25.00 أنا؟ كنت نايم\n02:28.00 نايم؟\n02:38.00 مرحباً يا أصدقائي، أنا المثلث\n02:41.00 وإلي ثلاث أضلاع\n02:43.00 واحد، اثنين، ثلاثة"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-27 07:43:42 UTC",
   "updated_at": "2026-04-27 08:02:18 UTC",

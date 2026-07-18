@@ -16,83 +16,72 @@
             "timestamp": "00:10.00",
             "timestamp_end": "00:10.20",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "live",
             "timestamp": "00:10.20",
             "timestamp_end": "00:10.50",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "חי"
+            "l1_end_index": 5
           },
           {
             "text": "my",
             "timestamp": "00:10.50",
             "timestamp_end": "00:10.70",
             "l1_start_index": 7,
-            "l1_end_index": 8,
-            "translation": "שלי"
+            "l1_end_index": 8
           },
           {
             "text": "day",
             "timestamp": "00:10.70",
             "timestamp_end": "00:11.10",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "יום"
+            "l1_end_index": 12
           },
           {
             "text": "as",
             "timestamp": "00:11.10",
             "timestamp_end": "00:11.30",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "כ"
+            "l1_end_index": 15
           },
           {
             "text": "if",
             "timestamp": "00:11.30",
             "timestamp_end": "00:11.50",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "אילו"
+            "l1_end_index": 18
           },
           {
             "text": "it",
             "timestamp": "00:11.50",
             "timestamp_end": "00:11.70",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "זה"
+            "l1_end_index": 21
           },
           {
             "text": "was",
             "timestamp": "00:11.70",
             "timestamp_end": "00:12.00",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "היה"
+            "l1_end_index": 25
           },
           {
             "text": "the",
             "timestamp": "00:12.00",
             "timestamp_end": "00:12.20",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "ה"
+            "l1_end_index": 29
           },
           {
             "text": "last",
             "timestamp": "00:12.20",
             "timestamp_end": "00:12.80",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "אחרון"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+        ]
       },
       {
         "id": "phrase_2",
@@ -105,75 +94,65 @@
             "timestamp": "00:12.90",
             "timestamp_end": "00:13.20",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "חיה"
+            "l1_end_index": 3
           },
           {
             "text": "my",
             "timestamp": "00:13.20",
             "timestamp_end": "00:13.40",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "שלי"
+            "l1_end_index": 6
           },
           {
             "text": "day",
             "timestamp": "00:13.40",
             "timestamp_end": "00:13.80",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "יום"
+            "l1_end_index": 10
           },
           {
             "text": "as",
             "timestamp": "00:13.80",
             "timestamp_end": "00:14.00",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "כ"
+            "l1_end_index": 13
           },
           {
             "text": "if",
             "timestamp": "00:14.00",
             "timestamp_end": "00:14.20",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "אילו"
+            "l1_end_index": 16
           },
           {
             "text": "there",
             "timestamp": "00:14.20",
             "timestamp_end": "00:14.40",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "there"
+            "l1_end_index": 22
           },
           {
             "text": "was",
             "timestamp": "00:14.40",
             "timestamp_end": "00:14.70",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "היה"
+            "l1_end_index": 26
           },
           {
             "text": "no",
             "timestamp": "00:14.70",
             "timestamp_end": "00:15.00",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "לא"
+            "l1_end_index": 29
           },
           {
             "text": "past",
             "timestamp": "00:15.00",
             "timestamp_end": "00:15.80",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "עבר"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "חי את יומי כאילו לא היה עבר"
+        ]
       },
       {
         "id": "phrase_3",
@@ -186,51 +165,44 @@
             "timestamp": "00:15.90",
             "timestamp_end": "00:16.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "00:16.30",
             "timestamp_end": "00:16.50",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "00:16.50",
             "timestamp_end": "00:16.80",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "00:16.80",
             "timestamp_end": "00:17.20",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "00:17.20",
             "timestamp_end": "00:17.50",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "00:17.50",
             "timestamp_end": "00:18.20",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_4",
@@ -243,51 +215,44 @@
             "timestamp": "00:18.30",
             "timestamp_end": "00:18.70",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "00:18.70",
             "timestamp_end": "00:18.90",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "the",
             "timestamp": "00:18.90",
             "timestamp_end": "00:19.10",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "ה"
+            "l1_end_index": 11
           },
           {
             "text": "way",
             "timestamp": "00:19.10",
             "timestamp_end": "00:19.40",
             "l1_start_index": 13,
-            "l1_end_index": 15,
-            "translation": "דרך"
+            "l1_end_index": 15
           },
           {
             "text": "I",
             "timestamp": "00:19.40",
             "timestamp_end": "00:19.60",
             "l1_start_index": 17,
-            "l1_end_index": 17,
-            "translation": "אני"
+            "l1_end_index": 17
           },
           {
             "text": "wanna",
             "timestamp": "00:19.60",
             "timestamp_end": "00:20.20",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "רוצה"
+            "l1_end_index": 23
           }
-        ],
-        "text_l2": "עושה את זה איך שאני רוצה"
+        ]
       },
       {
         "id": "phrase_5",
@@ -300,59 +265,51 @@
             "timestamp": "00:20.30",
             "timestamp_end": "00:20.60",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "כן"
+            "l1_end_index": 4
           },
           {
             "text": "I'm",
             "timestamp": "00:20.60",
             "timestamp_end": "00:20.80",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "אני"
+            "l1_end_index": 8
           },
           {
             "text": "gonna",
             "timestamp": "00:20.80",
             "timestamp_end": "00:21.10",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "הולך"
+            "l1_end_index": 14
           },
           {
             "text": "dance",
             "timestamp": "00:21.10",
             "timestamp_end": "00:21.40",
             "l1_start_index": 16,
-            "l1_end_index": 20,
-            "translation": "לרקוד"
+            "l1_end_index": 20
           },
           {
             "text": "my",
             "timestamp": "00:21.40",
             "timestamp_end": "00:21.60",
             "l1_start_index": 22,
-            "l1_end_index": 23,
-            "translation": "שלי"
+            "l1_end_index": 23
           },
           {
             "text": "heart",
             "timestamp": "00:21.60",
             "timestamp_end": "00:21.90",
             "l1_start_index": 25,
-            "l1_end_index": 29,
-            "translation": "לב"
+            "l1_end_index": 29
           },
           {
             "text": "out",
             "timestamp": "00:21.90",
             "timestamp_end": "00:22.10",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "החוצה"
+            "l1_end_index": 33
           }
-        ],
-        "text_l2": "כן, אני הולך לרקוד עד כלות"
+        ]
       },
       {
         "id": "phrase_6",
@@ -365,27 +322,23 @@
             "timestamp": "00:22.15",
             "timestamp_end": "00:22.30",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "עד"
+            "l1_end_index": 3
           },
           {
             "text": "the",
             "timestamp": "00:22.30",
             "timestamp_end": "00:22.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "ה"
+            "l1_end_index": 7
           },
           {
             "text": "dawn",
             "timestamp": "00:22.50",
             "timestamp_end": "00:23.20",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "שחר"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "עד השחר"
+        ]
       },
       {
         "id": "phrase_7",
@@ -398,67 +351,58 @@
             "timestamp": "00:23.30",
             "timestamp_end": "00:23.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "00:23.50",
             "timestamp_end": "00:23.70",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "won't",
             "timestamp": "00:23.70",
             "timestamp_end": "00:24.00",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לא"
+            "l1_end_index": 10
           },
           {
             "text": "be",
             "timestamp": "00:24.00",
             "timestamp_end": "00:24.20",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "להיות"
+            "l1_end_index": 13
           },
           {
             "text": "done",
             "timestamp": "00:24.20",
             "timestamp_end": "00:24.50",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גמור"
+            "l1_end_index": 18
           },
           {
             "text": "when",
             "timestamp": "00:24.50",
             "timestamp_end": "00:24.70",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "כש"
+            "l1_end_index": 23
           },
           {
             "text": "morning",
             "timestamp": "00:24.70",
             "timestamp_end": "00:25.10",
             "l1_start_index": 25,
-            "l1_end_index": 31,
-            "translation": "בוקר"
+            "l1_end_index": 31
           },
           {
             "text": "comes",
             "timestamp": "00:25.10",
             "timestamp_end": "00:25.50",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "מגיע"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+        ]
       },
       {
         "id": "phrase_8",
@@ -471,51 +415,44 @@
             "timestamp": "00:25.60",
             "timestamp_end": "00:26.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "00:26.00",
             "timestamp_end": "00:26.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "00:26.20",
             "timestamp_end": "00:26.50",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "00:26.50",
             "timestamp_end": "00:26.90",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "00:26.90",
             "timestamp_end": "00:27.20",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "00:27.20",
             "timestamp_end": "00:27.80",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_9",
@@ -528,51 +465,44 @@
             "timestamp": "00:27.90",
             "timestamp_end": "00:28.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "הולך"
+            "l1_end_index": 4
           },
           {
             "text": "spend",
             "timestamp": "00:28.30",
             "timestamp_end": "00:28.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לבלות"
+            "l1_end_index": 10
           },
           {
             "text": "it",
             "timestamp": "00:28.70",
             "timestamp_end": "00:28.90",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "זה"
+            "l1_end_index": 13
           },
           {
             "text": "like",
             "timestamp": "00:28.90",
             "timestamp_end": "00:29.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "כמו"
+            "l1_end_index": 18
           },
           {
             "text": "no",
             "timestamp": "00:29.20",
             "timestamp_end": "00:29.50",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "שום"
+            "l1_end_index": 21
           },
           {
             "text": "other",
             "timestamp": "00:29.50",
             "timestamp_end": "00:30.50",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "אחר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
+        ]
       },
       {
         "id": "phrase_10",
@@ -585,35 +515,30 @@
             "timestamp": "00:31.00",
             "timestamp_end": "00:31.30",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "זה"
+            "l1_end_index": 1
           },
           {
             "text": "was",
             "timestamp": "00:31.30",
             "timestamp_end": "00:31.60",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "היה"
+            "l1_end_index": 5
           },
           {
             "text": "a",
             "timestamp": "00:31.60",
             "timestamp_end": "00:31.80",
             "l1_start_index": 7,
-            "l1_end_index": 7,
-            "translation": "a"
+            "l1_end_index": 7
           },
           {
             "text": "crush",
             "timestamp": "00:31.80",
             "timestamp_end": "00:33.00",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "קראש"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "זה היה קראש"
+        ]
       },
       {
         "id": "phrase_11",
@@ -626,51 +551,44 @@
             "timestamp": "00:33.10",
             "timestamp_end": "00:33.30",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "00:33.30",
             "timestamp_end": "00:33.50",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "couldn't,",
             "timestamp": "00:33.50",
             "timestamp_end": "00:34.00",
             "l1_start_index": 6,
-            "l1_end_index": 14,
-            "translation": "לא יכולתי"
+            "l1_end_index": 14
           },
           {
             "text": "couldn't",
             "timestamp": "00:34.00",
             "timestamp_end": "00:34.50",
             "l1_start_index": 16,
-            "l1_end_index": 23,
-            "translation": "לא יכולתי"
+            "l1_end_index": 23
           },
           {
             "text": "get",
             "timestamp": "00:34.50",
             "timestamp_end": "00:34.80",
             "l1_start_index": 25,
-            "l1_end_index": 27,
-            "translation": "לקבל"
+            "l1_end_index": 27
           },
           {
             "text": "enough",
             "timestamp": "00:34.80",
             "timestamp_end": "00:35.50",
             "l1_start_index": 29,
-            "l1_end_index": 34,
-            "translation": "מספיק"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "אבל לא יכולתי, לא יכולתי לקבל מספיק"
+        ]
       },
       {
         "id": "phrase_12",
@@ -683,35 +601,30 @@
             "timestamp": "00:35.60",
             "timestamp_end": "00:35.90",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "זה"
+            "l1_end_index": 1
           },
           {
             "text": "was",
             "timestamp": "00:35.90",
             "timestamp_end": "00:36.20",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "היה"
+            "l1_end_index": 5
           },
           {
             "text": "a",
             "timestamp": "00:36.20",
             "timestamp_end": "00:36.40",
             "l1_start_index": 7,
-            "l1_end_index": 7,
-            "translation": "a"
+            "l1_end_index": 7
           },
           {
             "text": "rush",
             "timestamp": "00:36.40",
             "timestamp_end": "00:37.80",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "ריגוש"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "זה היה ריגוש"
+        ]
       },
       {
         "id": "phrase_13",
@@ -724,43 +637,37 @@
             "timestamp": "00:37.90",
             "timestamp_end": "00:38.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "00:38.20",
             "timestamp_end": "00:38.40",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "gave",
             "timestamp": "00:38.40",
             "timestamp_end": "00:38.80",
             "l1_start_index": 6,
-            "l1_end_index": 9,
-            "translation": "נתתי"
+            "l1_end_index": 9
           },
           {
             "text": "it",
             "timestamp": "00:38.80",
             "timestamp_end": "00:39.00",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "זה"
+            "l1_end_index": 12
           },
           {
             "text": "up",
             "timestamp": "00:39.00",
             "timestamp_end": "00:40.00",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "על"
+            "l1_end_index": 15
           }
-        ],
-        "text_l2": "אבל ויתרתי על זה"
+        ]
       },
       {
         "id": "phrase_14",
@@ -773,35 +680,30 @@
             "timestamp": "00:40.50",
             "timestamp_end": "00:40.80",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "זה"
+            "l1_end_index": 1
           },
           {
             "text": "was",
             "timestamp": "00:40.80",
             "timestamp_end": "00:41.10",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "היה"
+            "l1_end_index": 5
           },
           {
             "text": "a",
             "timestamp": "00:41.10",
             "timestamp_end": "00:41.30",
             "l1_start_index": 7,
-            "l1_end_index": 7,
-            "translation": "a"
+            "l1_end_index": 7
           },
           {
             "text": "crush",
             "timestamp": "00:41.30",
             "timestamp_end": "00:42.50",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "קראש"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "זה היה קראש"
+        ]
       },
       {
         "id": "phrase_15",
@@ -814,75 +716,65 @@
             "timestamp": "00:42.60",
             "timestamp_end": "00:42.90",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "עכשיו"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "00:42.90",
             "timestamp_end": "00:43.10",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "might",
             "timestamp": "00:43.10",
             "timestamp_end": "00:43.40",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "אולי"
+            "l1_end_index": 10
           },
           {
             "text": "not",
             "timestamp": "00:43.40",
             "timestamp_end": "00:43.70",
             "l1_start_index": 12,
-            "l1_end_index": 14,
-            "translation": "לא"
+            "l1_end_index": 14
           },
           {
             "text": "want",
             "timestamp": "00:43.70",
             "timestamp_end": "00:44.00",
             "l1_start_index": 16,
-            "l1_end_index": 19,
-            "translation": "רוצה"
+            "l1_end_index": 19
           },
           {
             "text": "to",
             "timestamp": "00:44.00",
             "timestamp_end": "00:44.20",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "ל"
+            "l1_end_index": 22
           },
           {
             "text": "say",
             "timestamp": "00:44.20",
             "timestamp_end": "00:44.50",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "לומר"
+            "l1_end_index": 26
           },
           {
             "text": "too",
             "timestamp": "00:44.50",
             "timestamp_end": "00:44.80",
             "l1_start_index": 28,
-            "l1_end_index": 30,
-            "translation": "מדי"
+            "l1_end_index": 30
           },
           {
             "text": "much",
             "timestamp": "00:44.80",
             "timestamp_end": "00:45.20",
             "l1_start_index": 32,
-            "l1_end_index": 35,
-            "translation": "הרבה"
+            "l1_end_index": 35
           }
-        ],
-        "text_l2": "עכשיו אולי אני לא רוצה להגיד יותר מדי"
+        ]
       },
       {
         "id": "phrase_16",
@@ -895,43 +787,37 @@
             "timestamp": "00:45.30",
             "timestamp_end": "00:45.60",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "that's",
             "timestamp": "00:45.60",
             "timestamp_end": "00:46.00",
             "l1_start_index": 4,
-            "l1_end_index": 9,
-            "translation": "זה"
+            "l1_end_index": 9
           },
           {
             "text": "all",
             "timestamp": "00:46.00",
             "timestamp_end": "00:46.30",
             "l1_start_index": 11,
-            "l1_end_index": 13,
-            "translation": "הכל"
+            "l1_end_index": 13
           },
           {
             "text": "it",
             "timestamp": "00:46.30",
             "timestamp_end": "00:46.60",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "זה"
+            "l1_end_index": 16
           },
           {
             "text": "was",
             "timestamp": "00:46.60",
             "timestamp_end": "00:47.50",
             "l1_start_index": 18,
-            "l1_end_index": 20,
-            "translation": "היה"
+            "l1_end_index": 20
           }
-        ],
-        "text_l2": "אבל זה כל מה שזה היה"
+        ]
       },
       {
         "id": "phrase_17",
@@ -944,43 +830,37 @@
             "timestamp": "00:47.60",
             "timestamp_end": "00:47.90",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "אז"
+            "l1_end_index": 1
           },
           {
             "text": "I",
             "timestamp": "00:47.90",
             "timestamp_end": "00:48.10",
             "l1_start_index": 3,
-            "l1_end_index": 3,
-            "translation": "אני"
+            "l1_end_index": 3
           },
           {
             "text": "gave",
             "timestamp": "00:48.10",
             "timestamp_end": "00:48.50",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "נתתי"
+            "l1_end_index": 8
           },
           {
             "text": "it",
             "timestamp": "00:48.50",
             "timestamp_end": "00:48.70",
             "l1_start_index": 10,
-            "l1_end_index": 11,
-            "translation": "זה"
+            "l1_end_index": 11
           },
           {
             "text": "up",
             "timestamp": "00:48.70",
             "timestamp_end": "00:49.80",
             "l1_start_index": 13,
-            "l1_end_index": 14,
-            "translation": "על"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "אז ויתרתי על זה"
+        ]
       },
       {
         "id": "phrase_18",
@@ -993,83 +873,72 @@
             "timestamp": "00:49.90",
             "timestamp_end": "00:50.10",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "live",
             "timestamp": "00:50.10",
             "timestamp_end": "00:50.40",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "חי"
+            "l1_end_index": 5
           },
           {
             "text": "my",
             "timestamp": "00:50.40",
             "timestamp_end": "00:50.60",
             "l1_start_index": 7,
-            "l1_end_index": 8,
-            "translation": "שלי"
+            "l1_end_index": 8
           },
           {
             "text": "day",
             "timestamp": "00:50.60",
             "timestamp_end": "00:51.00",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "יום"
+            "l1_end_index": 12
           },
           {
             "text": "as",
             "timestamp": "00:51.00",
             "timestamp_end": "00:51.20",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "כ"
+            "l1_end_index": 15
           },
           {
             "text": "if",
             "timestamp": "00:51.20",
             "timestamp_end": "00:51.40",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "אילו"
+            "l1_end_index": 18
           },
           {
             "text": "it",
             "timestamp": "00:51.40",
             "timestamp_end": "00:51.60",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "זה"
+            "l1_end_index": 21
           },
           {
             "text": "was",
             "timestamp": "00:51.60",
             "timestamp_end": "00:51.90",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "היה"
+            "l1_end_index": 25
           },
           {
             "text": "the",
             "timestamp": "00:51.90",
             "timestamp_end": "00:52.10",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "ה"
+            "l1_end_index": 29
           },
           {
             "text": "last",
             "timestamp": "00:52.10",
             "timestamp_end": "00:52.50",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "אחרון"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+        ]
       },
       {
         "id": "phrase_19",
@@ -1082,75 +951,65 @@
             "timestamp": "00:52.60",
             "timestamp_end": "00:52.90",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "חיה"
+            "l1_end_index": 3
           },
           {
             "text": "my",
             "timestamp": "00:52.90",
             "timestamp_end": "00:53.10",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "שלי"
+            "l1_end_index": 6
           },
           {
             "text": "day",
             "timestamp": "00:53.10",
             "timestamp_end": "00:53.50",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "יום"
+            "l1_end_index": 10
           },
           {
             "text": "as",
             "timestamp": "00:53.50",
             "timestamp_end": "00:53.70",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "כ"
+            "l1_end_index": 13
           },
           {
             "text": "if",
             "timestamp": "00:53.70",
             "timestamp_end": "00:53.90",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "אילו"
+            "l1_end_index": 16
           },
           {
             "text": "there",
             "timestamp": "00:53.90",
             "timestamp_end": "00:54.10",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "there"
+            "l1_end_index": 22
           },
           {
             "text": "was",
             "timestamp": "00:54.10",
             "timestamp_end": "00:54.40",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "היה"
+            "l1_end_index": 26
           },
           {
             "text": "no",
             "timestamp": "00:54.40",
             "timestamp_end": "00:54.70",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "לא"
+            "l1_end_index": 29
           },
           {
             "text": "past",
             "timestamp": "00:54.70",
             "timestamp_end": "00:55.20",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "עבר"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "חי את יומי כאילו לא היה עבר"
+        ]
       },
       {
         "id": "phrase_20",
@@ -1163,51 +1022,44 @@
             "timestamp": "00:55.30",
             "timestamp_end": "00:55.70",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "00:55.70",
             "timestamp_end": "00:55.90",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "00:55.90",
             "timestamp_end": "00:56.20",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "00:56.20",
             "timestamp_end": "00:56.60",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "00:56.60",
             "timestamp_end": "00:56.90",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "00:56.90",
             "timestamp_end": "00:57.50",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_21",
@@ -1220,51 +1072,44 @@
             "timestamp": "00:57.60",
             "timestamp_end": "00:58.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "00:58.00",
             "timestamp_end": "00:58.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "the",
             "timestamp": "00:58.20",
             "timestamp_end": "00:58.40",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "ה"
+            "l1_end_index": 11
           },
           {
             "text": "way",
             "timestamp": "00:58.40",
             "timestamp_end": "00:58.70",
             "l1_start_index": 13,
-            "l1_end_index": 15,
-            "translation": "דרך"
+            "l1_end_index": 15
           },
           {
             "text": "I",
             "timestamp": "00:58.70",
             "timestamp_end": "00:58.90",
             "l1_start_index": 17,
-            "l1_end_index": 17,
-            "translation": "אני"
+            "l1_end_index": 17
           },
           {
             "text": "wanna",
             "timestamp": "00:58.90",
             "timestamp_end": "00:59.50",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "רוצה"
+            "l1_end_index": 23
           }
-        ],
-        "text_l2": "עושה את זה איך שאני רוצה"
+        ]
       },
       {
         "id": "phrase_22",
@@ -1277,59 +1122,51 @@
             "timestamp": "00:59.60",
             "timestamp_end": "00:59.90",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "כן"
+            "l1_end_index": 4
           },
           {
             "text": "I'm",
             "timestamp": "00:59.90",
             "timestamp_end": "01:00.10",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "אני"
+            "l1_end_index": 8
           },
           {
             "text": "gonna",
             "timestamp": "01:00.10",
             "timestamp_end": "01:00.40",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "הולך"
+            "l1_end_index": 14
           },
           {
             "text": "dance",
             "timestamp": "01:00.40",
             "timestamp_end": "01:00.70",
             "l1_start_index": 16,
-            "l1_end_index": 20,
-            "translation": "לרקוד"
+            "l1_end_index": 20
           },
           {
             "text": "my",
             "timestamp": "01:00.70",
             "timestamp_end": "01:00.90",
             "l1_start_index": 22,
-            "l1_end_index": 23,
-            "translation": "שלי"
+            "l1_end_index": 23
           },
           {
             "text": "heart",
             "timestamp": "01:00.90",
             "timestamp_end": "01:01.20",
             "l1_start_index": 25,
-            "l1_end_index": 29,
-            "translation": "לב"
+            "l1_end_index": 29
           },
           {
             "text": "out",
             "timestamp": "01:01.20",
             "timestamp_end": "01:01.40",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "החוצה"
+            "l1_end_index": 33
           }
-        ],
-        "text_l2": "כן, אני הולך לרקוד עד כלות"
+        ]
       },
       {
         "id": "phrase_23",
@@ -1342,27 +1179,23 @@
             "timestamp": "01:01.45",
             "timestamp_end": "01:01.60",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "עד"
+            "l1_end_index": 3
           },
           {
             "text": "the",
             "timestamp": "01:01.60",
             "timestamp_end": "01:01.80",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "ה"
+            "l1_end_index": 7
           },
           {
             "text": "dawn",
             "timestamp": "01:01.80",
             "timestamp_end": "01:02.20",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "שחר"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "עד השחר"
+        ]
       },
       {
         "id": "phrase_24",
@@ -1375,67 +1208,58 @@
             "timestamp": "01:02.30",
             "timestamp_end": "01:02.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "01:02.50",
             "timestamp_end": "01:02.70",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "won't",
             "timestamp": "01:02.70",
             "timestamp_end": "01:03.00",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לא"
+            "l1_end_index": 10
           },
           {
             "text": "be",
             "timestamp": "01:03.00",
             "timestamp_end": "01:03.20",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "להיות"
+            "l1_end_index": 13
           },
           {
             "text": "done",
             "timestamp": "01:03.20",
             "timestamp_end": "01:03.50",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גמור"
+            "l1_end_index": 18
           },
           {
             "text": "when",
             "timestamp": "01:03.50",
             "timestamp_end": "01:03.70",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "כש"
+            "l1_end_index": 23
           },
           {
             "text": "morning",
             "timestamp": "01:03.70",
             "timestamp_end": "01:04.10",
             "l1_start_index": 25,
-            "l1_end_index": 31,
-            "translation": "בוקר"
+            "l1_end_index": 31
           },
           {
             "text": "comes",
             "timestamp": "01:04.10",
             "timestamp_end": "01:04.50",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "מגיע"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+        ]
       },
       {
         "id": "phrase_25",
@@ -1448,51 +1272,44 @@
             "timestamp": "01:04.60",
             "timestamp_end": "01:05.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "01:05.00",
             "timestamp_end": "01:05.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "01:05.20",
             "timestamp_end": "01:05.50",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "01:05.50",
             "timestamp_end": "01:05.90",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "01:05.90",
             "timestamp_end": "01:06.20",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "01:06.20",
             "timestamp_end": "01:06.80",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_26",
@@ -1505,51 +1322,44 @@
             "timestamp": "01:06.90",
             "timestamp_end": "01:07.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "הולך"
+            "l1_end_index": 4
           },
           {
             "text": "spend",
             "timestamp": "01:07.30",
             "timestamp_end": "01:07.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לבלות"
+            "l1_end_index": 10
           },
           {
             "text": "it",
             "timestamp": "01:07.70",
             "timestamp_end": "01:07.90",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "זה"
+            "l1_end_index": 13
           },
           {
             "text": "like",
             "timestamp": "01:07.90",
             "timestamp_end": "01:08.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "כמו"
+            "l1_end_index": 18
           },
           {
             "text": "no",
             "timestamp": "01:08.20",
             "timestamp_end": "01:08.50",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "שום"
+            "l1_end_index": 21
           },
           {
             "text": "other",
             "timestamp": "01:08.50",
             "timestamp_end": "01:09.50",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "אחר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
+        ]
       },
       {
         "id": "phrase_27",
@@ -1562,35 +1372,30 @@
             "timestamp": "01:10.00",
             "timestamp_end": "01:10.30",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "זה"
+            "l1_end_index": 1
           },
           {
             "text": "was",
             "timestamp": "01:10.30",
             "timestamp_end": "01:10.60",
             "l1_start_index": 3,
-            "l1_end_index": 5,
-            "translation": "היה"
+            "l1_end_index": 5
           },
           {
             "text": "a",
             "timestamp": "01:10.60",
             "timestamp_end": "01:10.80",
             "l1_start_index": 7,
-            "l1_end_index": 7,
-            "translation": "a"
+            "l1_end_index": 7
           },
           {
             "text": "crush",
             "timestamp": "01:10.80",
             "timestamp_end": "01:12.00",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "קראש"
+            "l1_end_index": 13
           }
-        ],
-        "text_l2": "זה היה קראש"
+        ]
       },
       {
         "id": "phrase_28",
@@ -1603,67 +1408,58 @@
             "timestamp": "01:12.10",
             "timestamp_end": "01:12.30",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "kept",
             "timestamp": "01:12.30",
             "timestamp_end": "01:12.60",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "המשכתי"
+            "l1_end_index": 5
           },
           {
             "text": "saying",
             "timestamp": "01:12.60",
             "timestamp_end": "01:13.00",
             "l1_start_index": 7,
-            "l1_end_index": 12,
-            "translation": "לומר"
+            "l1_end_index": 12
           },
           {
             "text": "I'm",
             "timestamp": "01:13.00",
             "timestamp_end": "01:13.20",
             "l1_start_index": 14,
-            "l1_end_index": 16,
-            "translation": "אני"
+            "l1_end_index": 16
           },
           {
             "text": "gonna",
             "timestamp": "01:13.20",
             "timestamp_end": "01:13.50",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "הולך"
+            "l1_end_index": 22
           },
           {
             "text": "stay",
             "timestamp": "01:13.50",
             "timestamp_end": "01:13.80",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "להישאר"
+            "l1_end_index": 27
           },
           {
             "text": "in",
             "timestamp": "01:13.80",
             "timestamp_end": "01:14.00",
             "l1_start_index": 29,
-            "l1_end_index": 30,
-            "translation": "ב"
+            "l1_end_index": 30
           },
           {
             "text": "touch",
             "timestamp": "01:14.00",
             "timestamp_end": "01:14.50",
             "l1_start_index": 32,
-            "l1_end_index": 36,
-            "translation": "קשר"
+            "l1_end_index": 36
           }
-        ],
-        "text_l2": "המשכתי להגיד שאני הולך להישאר בקשר"
+        ]
       },
       {
         "id": "phrase_29",
@@ -1676,43 +1472,37 @@
             "timestamp": "01:14.60",
             "timestamp_end": "01:14.90",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "that",
             "timestamp": "01:14.90",
             "timestamp_end": "01:15.20",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "הזה"
+            "l1_end_index": 7
           },
           {
             "text": "thing",
             "timestamp": "01:15.20",
             "timestamp_end": "01:15.50",
             "l1_start_index": 9,
-            "l1_end_index": 13,
-            "translation": "דבר"
+            "l1_end_index": 13
           },
           {
             "text": "went",
             "timestamp": "01:15.50",
             "timestamp_end": "01:15.80",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "הלך"
+            "l1_end_index": 18
           },
           {
             "text": "bust",
             "timestamp": "01:15.80",
             "timestamp_end": "01:16.50",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "כישלון"
+            "l1_end_index": 23
           }
-        ],
-        "text_l2": "אבל הדבר הזה נכשל"
+        ]
       },
       {
         "id": "phrase_30",
@@ -1725,43 +1515,37 @@
             "timestamp": "01:16.60",
             "timestamp_end": "01:16.90",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "אז"
+            "l1_end_index": 1
           },
           {
             "text": "I",
             "timestamp": "01:16.90",
             "timestamp_end": "01:17.10",
             "l1_start_index": 3,
-            "l1_end_index": 3,
-            "translation": "אני"
+            "l1_end_index": 3
           },
           {
             "text": "gave",
             "timestamp": "01:17.10",
             "timestamp_end": "01:17.50",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "נתתי"
+            "l1_end_index": 8
           },
           {
             "text": "it",
             "timestamp": "01:17.50",
             "timestamp_end": "01:17.70",
             "l1_start_index": 10,
-            "l1_end_index": 11,
-            "translation": "זה"
+            "l1_end_index": 11
           },
           {
             "text": "up",
             "timestamp": "01:17.70",
             "timestamp_end": "01:18.80",
             "l1_start_index": 13,
-            "l1_end_index": 14,
-            "translation": "על"
+            "l1_end_index": 14
           }
-        ],
-        "text_l2": "אז ויתרתי על זה"
+        ]
       },
       {
         "id": "phrase_31",
@@ -1774,35 +1558,30 @@
             "timestamp": "01:19.50",
             "timestamp_end": "01:19.80",
             "l1_start_index": 0,
-            "l1_end_index": 1,
-            "translation": "בלי"
+            "l1_end_index": 1
           },
           {
             "text": "tricks,",
             "timestamp": "01:19.80",
             "timestamp_end": "01:20.30",
             "l1_start_index": 3,
-            "l1_end_index": 9,
-            "translation": "טריקים"
+            "l1_end_index": 9
           },
           {
             "text": "no",
             "timestamp": "01:20.30",
             "timestamp_end": "01:20.60",
             "l1_start_index": 11,
-            "l1_end_index": 12,
-            "translation": "בלי"
+            "l1_end_index": 12
           },
           {
             "text": "bluff",
             "timestamp": "01:20.60",
             "timestamp_end": "01:21.50",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "בלוף"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "בלי טריקים, בלי בלוף"
+        ]
       },
       {
         "id": "phrase_32",
@@ -1815,59 +1594,51 @@
             "timestamp": "01:21.60",
             "timestamp_end": "01:21.90",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אני"
+            "l1_end_index": 2
           },
           {
             "text": "just",
             "timestamp": "01:21.90",
             "timestamp_end": "01:22.20",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "פשוט"
+            "l1_end_index": 7
           },
           {
             "text": "better",
             "timestamp": "01:22.20",
             "timestamp_end": "01:22.50",
             "l1_start_index": 9,
-            "l1_end_index": 14,
-            "translation": "עדיף"
+            "l1_end_index": 14
           },
           {
             "text": "off",
             "timestamp": "01:22.50",
             "timestamp_end": "01:22.80",
             "l1_start_index": 16,
-            "l1_end_index": 18,
-            "translation": "off"
+            "l1_end_index": 18
           },
           {
             "text": "without",
             "timestamp": "01:22.80",
             "timestamp_end": "01:23.20",
             "l1_start_index": 20,
-            "l1_end_index": 26,
-            "translation": "בלי"
+            "l1_end_index": 26
           },
           {
             "text": "them",
             "timestamp": "01:23.20",
             "timestamp_end": "01:23.50",
             "l1_start_index": 28,
-            "l1_end_index": 31,
-            "translation": "ההם"
+            "l1_end_index": 31
           },
           {
             "text": "cuffs",
             "timestamp": "01:23.50",
             "timestamp_end": "01:24.20",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "אזיקים"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "אני פשוט יותר טוב בלי האזיקים האלה"
+        ]
       },
       {
         "id": "phrase_33",
@@ -1880,59 +1651,51 @@
             "timestamp": "01:24.30",
             "timestamp_end": "01:24.60",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "כן"
+            "l1_end_index": 4
           },
           {
             "text": "the",
             "timestamp": "01:24.60",
             "timestamp_end": "01:24.80",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "ה"
+            "l1_end_index": 8
           },
           {
             "text": "sun",
             "timestamp": "01:24.80",
             "timestamp_end": "01:25.10",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "שמש"
+            "l1_end_index": 12
           },
           {
             "text": "won't",
             "timestamp": "01:25.10",
             "timestamp_end": "01:25.40",
             "l1_start_index": 14,
-            "l1_end_index": 18,
-            "translation": "לא"
+            "l1_end_index": 18
           },
           {
             "text": "set",
             "timestamp": "01:25.40",
             "timestamp_end": "01:25.70",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "תשקע"
+            "l1_end_index": 22
           },
           {
             "text": "on",
             "timestamp": "01:25.70",
             "timestamp_end": "01:26.00",
             "l1_start_index": 24,
-            "l1_end_index": 25,
-            "translation": "על"
+            "l1_end_index": 25
           },
           {
             "text": "us",
             "timestamp": "01:26.00",
             "timestamp_end": "01:26.50",
             "l1_start_index": 27,
-            "l1_end_index": 28,
-            "translation": "אותנו"
+            "l1_end_index": 28
           }
-        ],
-        "text_l2": "כן, השמש לא תשקע עלינו"
+        ]
       },
       {
         "id": "phrase_34",
@@ -1945,35 +1708,30 @@
             "timestamp": "01:30.00",
             "timestamp_end": "01:30.40",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "הלך"
+            "l1_end_index": 3
           },
           {
             "text": "low,",
             "timestamp": "01:30.40",
             "timestamp_end": "01:31.20",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "נמוך"
+            "l1_end_index": 8
           },
           {
             "text": "went",
             "timestamp": "01:31.20",
             "timestamp_end": "01:31.60",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "הלך"
+            "l1_end_index": 13
           },
           {
             "text": "high",
             "timestamp": "01:31.60",
             "timestamp_end": "01:32.80",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גבוה"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "הלך נמוך, הלך גבוה"
+        ]
       },
       {
         "id": "phrase_35",
@@ -1986,35 +1744,30 @@
             "timestamp": "01:32.90",
             "timestamp_end": "01:33.40",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "דומם"
+            "l1_end_index": 4
           },
           {
             "text": "water",
             "timestamp": "01:33.40",
             "timestamp_end": "01:33.90",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "מים"
+            "l1_end_index": 10
           },
           {
             "text": "runs",
             "timestamp": "01:33.90",
             "timestamp_end": "01:34.40",
             "l1_start_index": 12,
-            "l1_end_index": 15,
-            "translation": "מתייבש"
+            "l1_end_index": 15
           },
           {
             "text": "dry",
             "timestamp": "01:34.40",
             "timestamp_end": "01:35.20",
             "l1_start_index": 17,
-            "l1_end_index": 19,
-            "translation": "יבש"
+            "l1_end_index": 19
           }
-        ],
-        "text_l2": "מים עומדים מתייבשים"
+        ]
       },
       {
         "id": "phrase_36",
@@ -2027,59 +1780,51 @@
             "timestamp": "01:35.30",
             "timestamp_end": "01:35.60",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "חייב"
+            "l1_end_index": 2
           },
           {
             "text": "to",
             "timestamp": "01:35.60",
             "timestamp_end": "01:35.80",
             "l1_start_index": 4,
-            "l1_end_index": 5,
-            "translation": "to"
+            "l1_end_index": 5
           },
           {
             "text": "get",
             "timestamp": "01:35.80",
             "timestamp_end": "01:36.10",
             "l1_start_index": 7,
-            "l1_end_index": 9,
-            "translation": "לחזור"
+            "l1_end_index": 9
           },
           {
             "text": "back",
             "timestamp": "01:36.10",
             "timestamp_end": "01:36.40",
             "l1_start_index": 11,
-            "l1_end_index": 14,
-            "translation": "חזרה"
+            "l1_end_index": 14
           },
           {
             "text": "in",
             "timestamp": "01:36.40",
             "timestamp_end": "01:36.60",
             "l1_start_index": 16,
-            "l1_end_index": 17,
-            "translation": "ב"
+            "l1_end_index": 17
           },
           {
             "text": "the",
             "timestamp": "01:36.60",
             "timestamp_end": "01:36.80",
             "l1_start_index": 19,
-            "l1_end_index": 21,
-            "translation": "ה"
+            "l1_end_index": 21
           },
           {
             "text": "groove",
             "timestamp": "01:36.80",
             "timestamp_end": "01:37.50",
             "l1_start_index": 23,
-            "l1_end_index": 28,
-            "translation": "קצב"
+            "l1_end_index": 28
           }
-        ],
-        "text_l2": "צריך לחזור לקצב"
+        ]
       },
       {
         "id": "phrase_37",
@@ -2092,43 +1837,37 @@
             "timestamp": "01:37.60",
             "timestamp_end": "01:37.80",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "ain't",
             "timestamp": "01:37.80",
             "timestamp_end": "01:38.10",
             "l1_start_index": 2,
-            "l1_end_index": 6,
-            "translation": "לא"
+            "l1_end_index": 6
           },
           {
             "text": "in",
             "timestamp": "01:38.10",
             "timestamp_end": "01:38.30",
             "l1_start_index": 8,
-            "l1_end_index": 9,
-            "translation": "ב"
+            "l1_end_index": 9
           },
           {
             "text": "a",
             "timestamp": "01:38.30",
             "timestamp_end": "01:38.50",
             "l1_start_index": 11,
-            "l1_end_index": 11,
-            "translation": "a"
+            "l1_end_index": 11
           },
           {
             "text": "hurry",
             "timestamp": "01:38.50",
             "timestamp_end": "01:39.50",
             "l1_start_index": 13,
-            "l1_end_index": 17,
-            "translation": "חיפזון"
+            "l1_end_index": 17
           }
-        ],
-        "text_l2": "אני לא ממהר"
+        ]
       },
       {
         "id": "phrase_38",
@@ -2141,35 +1880,30 @@
             "timestamp": "01:40.00",
             "timestamp_end": "01:40.40",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "הלך"
+            "l1_end_index": 3
           },
           {
             "text": "low,",
             "timestamp": "01:40.40",
             "timestamp_end": "01:41.20",
             "l1_start_index": 5,
-            "l1_end_index": 8,
-            "translation": "נמוך"
+            "l1_end_index": 8
           },
           {
             "text": "went",
             "timestamp": "01:41.20",
             "timestamp_end": "01:41.60",
             "l1_start_index": 10,
-            "l1_end_index": 13,
-            "translation": "הלך"
+            "l1_end_index": 13
           },
           {
             "text": "high",
             "timestamp": "01:41.60",
             "timestamp_end": "01:42.80",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גבוה"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "הלך נמוך, הלך גבוה"
+        ]
       },
       {
         "id": "phrase_39",
@@ -2182,35 +1916,30 @@
             "timestamp": "01:42.90",
             "timestamp_end": "01:43.30",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "מה"
+            "l1_end_index": 3
           },
           {
             "text": "matters",
             "timestamp": "01:43.30",
             "timestamp_end": "01:43.80",
             "l1_start_index": 5,
-            "l1_end_index": 11,
-            "translation": "חשוב"
+            "l1_end_index": 11
           },
           {
             "text": "is",
             "timestamp": "01:43.80",
             "timestamp_end": "01:44.10",
             "l1_start_index": 13,
-            "l1_end_index": 14,
-            "translation": "הוא"
+            "l1_end_index": 14
           },
           {
             "text": "now",
             "timestamp": "01:44.10",
             "timestamp_end": "01:44.80",
             "l1_start_index": 16,
-            "l1_end_index": 18,
-            "translation": "עכשיו"
+            "l1_end_index": 18
           }
-        ],
-        "text_l2": "מה שחשוב זה עכשיו"
+        ]
       },
       {
         "id": "phrase_40",
@@ -2223,51 +1952,44 @@
             "timestamp": "01:44.90",
             "timestamp_end": "01:45.30",
             "l1_start_index": 0,
-            "l1_end_index": 6,
-            "translation": "חוזר"
+            "l1_end_index": 6
           },
           {
             "text": "right",
             "timestamp": "01:45.30",
             "timestamp_end": "01:45.60",
             "l1_start_index": 8,
-            "l1_end_index": 12,
-            "translation": "מיד"
+            "l1_end_index": 12
           },
           {
             "text": "back",
             "timestamp": "01:45.60",
             "timestamp_end": "01:45.90",
             "l1_start_index": 14,
-            "l1_end_index": 17,
-            "translation": "חזרה"
+            "l1_end_index": 17
           },
           {
             "text": "in",
             "timestamp": "01:45.90",
             "timestamp_end": "01:46.10",
             "l1_start_index": 19,
-            "l1_end_index": 20,
-            "translation": "ב"
+            "l1_end_index": 20
           },
           {
             "text": "the",
             "timestamp": "01:46.10",
             "timestamp_end": "01:46.30",
             "l1_start_index": 22,
-            "l1_end_index": 24,
-            "translation": "ה"
+            "l1_end_index": 24
           },
           {
             "text": "mood",
             "timestamp": "01:46.30",
             "timestamp_end": "01:47.50",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "מצב רוח"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "נכנס חזרה בדיוק למצב רוח"
+        ]
       },
       {
         "id": "phrase_41",
@@ -2280,83 +2002,72 @@
             "timestamp": "01:49.00",
             "timestamp_end": "01:49.20",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "live",
             "timestamp": "01:49.20",
             "timestamp_end": "01:49.50",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "חי"
+            "l1_end_index": 5
           },
           {
             "text": "my",
             "timestamp": "01:49.50",
             "timestamp_end": "01:49.70",
             "l1_start_index": 7,
-            "l1_end_index": 8,
-            "translation": "שלי"
+            "l1_end_index": 8
           },
           {
             "text": "day",
             "timestamp": "01:49.70",
             "timestamp_end": "01:50.10",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "יום"
+            "l1_end_index": 12
           },
           {
             "text": "as",
             "timestamp": "01:50.10",
             "timestamp_end": "01:50.30",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "כאילו"
+            "l1_end_index": 15
           },
           {
             "text": "if",
             "timestamp": "01:50.30",
             "timestamp_end": "01:50.50",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "אם"
+            "l1_end_index": 18
           },
           {
             "text": "it",
             "timestamp": "01:50.50",
             "timestamp_end": "01:50.70",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "הוא"
+            "l1_end_index": 21
           },
           {
             "text": "was",
             "timestamp": "01:50.70",
             "timestamp_end": "01:51.00",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "היה"
+            "l1_end_index": 25
           },
           {
             "text": "the",
             "timestamp": "01:51.00",
             "timestamp_end": "01:51.20",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "ה"
+            "l1_end_index": 29
           },
           {
             "text": "last",
             "timestamp": "01:51.20",
             "timestamp_end": "01:51.50",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "אחרון"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+        ]
       },
       {
         "id": "phrase_42",
@@ -2369,75 +2080,65 @@
             "timestamp": "01:51.60",
             "timestamp_end": "01:51.90",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "חיה"
+            "l1_end_index": 3
           },
           {
             "text": "my",
             "timestamp": "01:51.90",
             "timestamp_end": "01:52.10",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "שלי"
+            "l1_end_index": 6
           },
           {
             "text": "day",
             "timestamp": "01:52.10",
             "timestamp_end": "01:52.50",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "יום"
+            "l1_end_index": 10
           },
           {
             "text": "as",
             "timestamp": "01:52.50",
             "timestamp_end": "01:52.70",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "כאילו"
+            "l1_end_index": 13
           },
           {
             "text": "if",
             "timestamp": "01:52.70",
             "timestamp_end": "01:52.90",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "אם"
+            "l1_end_index": 16
           },
           {
             "text": "there",
             "timestamp": "01:52.90",
             "timestamp_end": "01:53.10",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "היה"
+            "l1_end_index": 22
           },
           {
             "text": "was",
             "timestamp": "01:53.10",
             "timestamp_end": "01:53.40",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "היה"
+            "l1_end_index": 26
           },
           {
             "text": "no",
             "timestamp": "01:53.40",
             "timestamp_end": "01:53.70",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "לא"
+            "l1_end_index": 29
           },
           {
             "text": "past",
             "timestamp": "01:53.70",
             "timestamp_end": "01:54.20",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "עבר"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "חי את יומי כאילו לא היה עבר"
+        ]
       },
       {
         "id": "phrase_43",
@@ -2450,51 +2151,44 @@
             "timestamp": "01:54.30",
             "timestamp_end": "01:54.70",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "01:54.70",
             "timestamp_end": "01:54.90",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "01:54.90",
             "timestamp_end": "01:55.20",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "01:55.20",
             "timestamp_end": "01:55.60",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "01:55.60",
             "timestamp_end": "01:55.90",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "01:55.90",
             "timestamp_end": "01:56.50",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_44",
@@ -2507,51 +2201,44 @@
             "timestamp": "01:56.60",
             "timestamp_end": "01:57.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "01:57.00",
             "timestamp_end": "01:57.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "the",
             "timestamp": "01:57.20",
             "timestamp_end": "01:57.40",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "ה"
+            "l1_end_index": 11
           },
           {
             "text": "way",
             "timestamp": "01:57.40",
             "timestamp_end": "01:57.70",
             "l1_start_index": 13,
-            "l1_end_index": 15,
-            "translation": "דרך"
+            "l1_end_index": 15
           },
           {
             "text": "I",
             "timestamp": "01:57.70",
             "timestamp_end": "01:57.90",
             "l1_start_index": 17,
-            "l1_end_index": 17,
-            "translation": "אני"
+            "l1_end_index": 17
           },
           {
             "text": "wanna",
             "timestamp": "01:57.90",
             "timestamp_end": "01:58.50",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "רוצה"
+            "l1_end_index": 23
           }
-        ],
-        "text_l2": "עושה את זה איך שאני רוצה"
+        ]
       },
       {
         "id": "phrase_45",
@@ -2564,59 +2251,51 @@
             "timestamp": "01:58.60",
             "timestamp_end": "01:58.90",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "כן"
+            "l1_end_index": 4
           },
           {
             "text": "I'm",
             "timestamp": "01:58.90",
             "timestamp_end": "01:59.10",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "אני"
+            "l1_end_index": 8
           },
           {
             "text": "gonna",
             "timestamp": "01:59.10",
             "timestamp_end": "01:59.40",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "הולך"
+            "l1_end_index": 14
           },
           {
             "text": "dance",
             "timestamp": "01:59.40",
             "timestamp_end": "01:59.70",
             "l1_start_index": 16,
-            "l1_end_index": 20,
-            "translation": "לרקוד"
+            "l1_end_index": 20
           },
           {
             "text": "my",
             "timestamp": "01:59.70",
             "timestamp_end": "01:59.90",
             "l1_start_index": 22,
-            "l1_end_index": 23,
-            "translation": "שלי"
+            "l1_end_index": 23
           },
           {
             "text": "heart",
             "timestamp": "01:59.90",
             "timestamp_end": "02:00.20",
             "l1_start_index": 25,
-            "l1_end_index": 29,
-            "translation": "לב"
+            "l1_end_index": 29
           },
           {
             "text": "out",
             "timestamp": "02:00.20",
             "timestamp_end": "02:00.40",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "החוצה"
+            "l1_end_index": 33
           }
-        ],
-        "text_l2": "כן, אני הולך לרקוד עד כלות"
+        ]
       },
       {
         "id": "phrase_46",
@@ -2629,27 +2308,23 @@
             "timestamp": "02:00.45",
             "timestamp_end": "02:00.60",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "עד"
+            "l1_end_index": 3
           },
           {
             "text": "the",
             "timestamp": "02:00.60",
             "timestamp_end": "02:00.80",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "ה"
+            "l1_end_index": 7
           },
           {
             "text": "dawn",
             "timestamp": "02:00.80",
             "timestamp_end": "02:01.20",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "שחר"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "עד השחר"
+        ]
       },
       {
         "id": "phrase_47",
@@ -2662,67 +2337,58 @@
             "timestamp": "02:01.30",
             "timestamp_end": "02:01.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "02:01.50",
             "timestamp_end": "02:01.70",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "won't",
             "timestamp": "02:01.70",
             "timestamp_end": "02:02.00",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לא"
+            "l1_end_index": 10
           },
           {
             "text": "be",
             "timestamp": "02:02.00",
             "timestamp_end": "02:02.20",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "אהיה"
+            "l1_end_index": 13
           },
           {
             "text": "done",
             "timestamp": "02:02.20",
             "timestamp_end": "02:02.50",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גמור"
+            "l1_end_index": 18
           },
           {
             "text": "when",
             "timestamp": "02:02.50",
             "timestamp_end": "02:02.70",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "כש"
+            "l1_end_index": 23
           },
           {
             "text": "morning",
             "timestamp": "02:02.70",
             "timestamp_end": "02:03.10",
             "l1_start_index": 25,
-            "l1_end_index": 31,
-            "translation": "בוקר"
+            "l1_end_index": 31
           },
           {
             "text": "comes",
             "timestamp": "02:03.10",
             "timestamp_end": "02:03.50",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "יגיע"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+        ]
       },
       {
         "id": "phrase_48",
@@ -2735,51 +2401,44 @@
             "timestamp": "02:03.60",
             "timestamp_end": "02:04.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "02:04.00",
             "timestamp_end": "02:04.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "02:04.20",
             "timestamp_end": "02:04.50",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "02:04.50",
             "timestamp_end": "02:04.90",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "02:04.90",
             "timestamp_end": "02:05.20",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "02:05.20",
             "timestamp_end": "02:05.80",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_49",
@@ -2792,51 +2451,44 @@
             "timestamp": "02:05.90",
             "timestamp_end": "02:06.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "הולך"
+            "l1_end_index": 4
           },
           {
             "text": "spend",
             "timestamp": "02:06.30",
             "timestamp_end": "02:06.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לבלות"
+            "l1_end_index": 10
           },
           {
             "text": "it",
             "timestamp": "02:06.70",
             "timestamp_end": "02:06.90",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "זה"
+            "l1_end_index": 13
           },
           {
             "text": "like",
             "timestamp": "02:06.90",
             "timestamp_end": "02:07.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "כמו"
+            "l1_end_index": 18
           },
           {
             "text": "no",
             "timestamp": "02:07.20",
             "timestamp_end": "02:07.50",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "אף"
+            "l1_end_index": 21
           },
           {
             "text": "other",
             "timestamp": "02:07.50",
             "timestamp_end": "02:08.50",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "אחר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
+        ]
       },
       {
         "id": "phrase_50",
@@ -2849,43 +2501,37 @@
             "timestamp": "02:09.00",
             "timestamp_end": "02:09.30",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "עכשיו"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "02:09.30",
             "timestamp_end": "02:09.50",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "found",
             "timestamp": "02:09.50",
             "timestamp_end": "02:09.80",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "מצאתי"
+            "l1_end_index": 10
           },
           {
             "text": "another",
             "timestamp": "02:09.80",
             "timestamp_end": "02:10.30",
             "l1_start_index": 12,
-            "l1_end_index": 18,
-            "translation": "עוד"
+            "l1_end_index": 18
           },
           {
             "text": "crush",
             "timestamp": "02:10.30",
             "timestamp_end": "02:11.00",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "קראש"
+            "l1_end_index": 24
           }
-        ],
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        ]
       },
       {
         "id": "phrase_51",
@@ -2898,59 +2544,51 @@
             "timestamp": "02:11.10",
             "timestamp_end": "02:11.30",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "ו"
+            "l1_end_index": 2
           },
           {
             "text": "it's",
             "timestamp": "02:11.30",
             "timestamp_end": "02:11.60",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "like",
             "timestamp": "02:11.60",
             "timestamp_end": "02:11.90",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "כמו"
+            "l1_end_index": 12
           },
           {
             "text": "giving",
             "timestamp": "02:11.90",
             "timestamp_end": "02:12.30",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "נותן"
+            "l1_end_index": 19
           },
           {
             "text": "me",
             "timestamp": "02:12.30",
             "timestamp_end": "02:12.50",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "לי"
+            "l1_end_index": 22
           },
           {
             "text": "a",
             "timestamp": "02:12.50",
             "timestamp_end": "02:12.70",
             "l1_start_index": 24,
-            "l1_end_index": 24,
-            "translation": "a"
+            "l1_end_index": 24
           },
           {
             "text": "rush",
             "timestamp": "02:12.70",
             "timestamp_end": "02:13.20",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "ריגוש"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "וזה כמו נותן לי ריגוש"
+        ]
       },
       {
         "id": "phrase_52",
@@ -2963,59 +2601,51 @@
             "timestamp": "02:13.30",
             "timestamp_end": "02:13.60",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "הייתה"
+            "l1_end_index": 2
           },
           {
             "text": "one",
             "timestamp": "02:13.60",
             "timestamp_end": "02:13.90",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "אחת"
+            "l1_end_index": 6
           },
           {
             "text": "chance",
             "timestamp": "02:13.90",
             "timestamp_end": "02:14.30",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "הזדמנות"
+            "l1_end_index": 13
           },
           {
             "text": "to",
             "timestamp": "02:14.30",
             "timestamp_end": "02:14.50",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "ל"
+            "l1_end_index": 16
           },
           {
             "text": "make",
             "timestamp": "02:14.50",
             "timestamp_end": "02:14.80",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "לגרום"
+            "l1_end_index": 21
           },
           {
             "text": "me",
             "timestamp": "02:14.80",
             "timestamp_end": "02:15.00",
             "l1_start_index": 23,
-            "l1_end_index": 24,
-            "translation": "לי"
+            "l1_end_index": 24
           },
           {
             "text": "blush",
             "timestamp": "02:15.00",
             "timestamp_end": "02:15.50",
             "l1_start_index": 26,
-            "l1_end_index": 30,
-            "translation": "להסמיק"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        ]
       },
       {
         "id": "phrase_53",
@@ -3028,51 +2658,44 @@
             "timestamp": "02:15.60",
             "timestamp_end": "02:16.10",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "שני"
+            "l1_end_index": 5
           },
           {
             "text": "time",
             "timestamp": "02:16.10",
             "timestamp_end": "02:16.50",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "פעם"
+            "l1_end_index": 10
           },
           {
             "text": "is",
             "timestamp": "02:16.50",
             "timestamp_end": "02:16.80",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "היא"
+            "l1_end_index": 13
           },
           {
             "text": "once",
             "timestamp": "02:16.80",
             "timestamp_end": "02:17.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "פעם אחת"
+            "l1_end_index": 18
           },
           {
             "text": "too",
             "timestamp": "02:17.20",
             "timestamp_end": "02:17.50",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "מדי"
+            "l1_end_index": 22
           },
           {
             "text": "much",
             "timestamp": "02:17.50",
             "timestamp_end": "02:18.00",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "יותר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+        ]
       },
       {
         "id": "phrase_54",
@@ -3085,43 +2708,37 @@
             "timestamp": "02:18.10",
             "timestamp_end": "02:18.40",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "עכשיו"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "02:18.40",
             "timestamp_end": "02:18.60",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "found",
             "timestamp": "02:18.60",
             "timestamp_end": "02:18.90",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "מצאתי"
+            "l1_end_index": 10
           },
           {
             "text": "another",
             "timestamp": "02:18.90",
             "timestamp_end": "02:19.40",
             "l1_start_index": 12,
-            "l1_end_index": 18,
-            "translation": "עוד"
+            "l1_end_index": 18
           },
           {
             "text": "crush",
             "timestamp": "02:19.40",
             "timestamp_end": "02:20.20",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "קראש"
+            "l1_end_index": 24
           }
-        ],
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        ]
       },
       {
         "id": "phrase_55",
@@ -3134,59 +2751,51 @@
             "timestamp": "02:20.30",
             "timestamp_end": "02:20.50",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "ו"
+            "l1_end_index": 2
           },
           {
             "text": "it's",
             "timestamp": "02:20.50",
             "timestamp_end": "02:20.80",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "like",
             "timestamp": "02:20.80",
             "timestamp_end": "02:21.10",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "כמו"
+            "l1_end_index": 12
           },
           {
             "text": "giving",
             "timestamp": "02:21.10",
             "timestamp_end": "02:21.50",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "נותן"
+            "l1_end_index": 19
           },
           {
             "text": "me",
             "timestamp": "02:21.50",
             "timestamp_end": "02:21.70",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "לי"
+            "l1_end_index": 22
           },
           {
             "text": "a",
             "timestamp": "02:21.70",
             "timestamp_end": "02:21.90",
             "l1_start_index": 24,
-            "l1_end_index": 24,
-            "translation": "a"
+            "l1_end_index": 24
           },
           {
             "text": "rush",
             "timestamp": "02:21.90",
             "timestamp_end": "02:22.50",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "ריגוש"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "וזה כמו נותן לי ריגוש"
+        ]
       },
       {
         "id": "phrase_56",
@@ -3199,59 +2808,51 @@
             "timestamp": "02:22.60",
             "timestamp_end": "02:22.90",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "הייתה"
+            "l1_end_index": 2
           },
           {
             "text": "one",
             "timestamp": "02:22.90",
             "timestamp_end": "02:32.20",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "אחת"
+            "l1_end_index": 6
           },
           {
             "text": "chance",
             "timestamp": "02:23.20",
             "timestamp_end": "02:23.60",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "הזדמנות"
+            "l1_end_index": 13
           },
           {
             "text": "to",
             "timestamp": "02:23.60",
             "timestamp_end": "02:23.80",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "ל"
+            "l1_end_index": 16
           },
           {
             "text": "make",
             "timestamp": "02:23.80",
             "timestamp_end": "02:24.10",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "לגרום"
+            "l1_end_index": 21
           },
           {
             "text": "me",
             "timestamp": "02:24.10",
             "timestamp_end": "02:24.30",
             "l1_start_index": 23,
-            "l1_end_index": 24,
-            "translation": "לי"
+            "l1_end_index": 24
           },
           {
             "text": "blush",
             "timestamp": "02:24.30",
             "timestamp_end": "02:24.80",
             "l1_start_index": 26,
-            "l1_end_index": 30,
-            "translation": "להסמיק"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        ]
       },
       {
         "id": "phrase_57",
@@ -3264,51 +2865,44 @@
             "timestamp": "02:24.90",
             "timestamp_end": "02:25.40",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "שני"
+            "l1_end_index": 5
           },
           {
             "text": "time",
             "timestamp": "02:25.40",
             "timestamp_end": "02:25.80",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "פעם"
+            "l1_end_index": 10
           },
           {
             "text": "is",
             "timestamp": "02:25.80",
             "timestamp_end": "02:26.10",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "היא"
+            "l1_end_index": 13
           },
           {
             "text": "once",
             "timestamp": "02:26.10",
             "timestamp_end": "02:26.50",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "פעם אחת"
+            "l1_end_index": 18
           },
           {
             "text": "too",
             "timestamp": "02:26.50",
             "timestamp_end": "02:26.80",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "מדי"
+            "l1_end_index": 22
           },
           {
             "text": "much",
             "timestamp": "02:26.80",
             "timestamp_end": "02:27.50",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "יותר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+        ]
       },
       {
         "id": "phrase_58",
@@ -3321,83 +2915,72 @@
             "timestamp": "02:37.50",
             "timestamp_end": "02:37.70",
             "l1_start_index": 0,
-            "l1_end_index": 0,
-            "translation": "אני"
+            "l1_end_index": 0
           },
           {
             "text": "live",
             "timestamp": "02:37.70",
             "timestamp_end": "02:38.00",
             "l1_start_index": 2,
-            "l1_end_index": 5,
-            "translation": "חי"
+            "l1_end_index": 5
           },
           {
             "text": "my",
             "timestamp": "02:38.00",
             "timestamp_end": "02:38.20",
             "l1_start_index": 7,
-            "l1_end_index": 8,
-            "translation": "שלי"
+            "l1_end_index": 8
           },
           {
             "text": "day",
             "timestamp": "02:38.20",
             "timestamp_end": "02:38.60",
             "l1_start_index": 10,
-            "l1_end_index": 12,
-            "translation": "יום"
+            "l1_end_index": 12
           },
           {
             "text": "as",
             "timestamp": "02:38.60",
             "timestamp_end": "02:38.80",
             "l1_start_index": 14,
-            "l1_end_index": 15,
-            "translation": "כאילו"
+            "l1_end_index": 15
           },
           {
             "text": "if",
             "timestamp": "02:38.80",
             "timestamp_end": "02:39.00",
             "l1_start_index": 17,
-            "l1_end_index": 18,
-            "translation": "אם"
+            "l1_end_index": 18
           },
           {
             "text": "it",
             "timestamp": "02:39.00",
             "timestamp_end": "02:39.20",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "הוא"
+            "l1_end_index": 21
           },
           {
             "text": "was",
             "timestamp": "02:39.20",
             "timestamp_end": "02:39.50",
             "l1_start_index": 23,
-            "l1_end_index": 25,
-            "translation": "היה"
+            "l1_end_index": 25
           },
           {
             "text": "the",
             "timestamp": "02:39.50",
             "timestamp_end": "02:39.70",
             "l1_start_index": 27,
-            "l1_end_index": 29,
-            "translation": "ה"
+            "l1_end_index": 29
           },
           {
             "text": "last",
             "timestamp": "02:39.70",
             "timestamp_end": "02:40.00",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "אחרון"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "אני חי את יומי כאילו זה היה האחרון"
+        ]
       },
       {
         "id": "phrase_59",
@@ -3410,75 +2993,65 @@
             "timestamp": "02:40.10",
             "timestamp_end": "02:40.40",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "חיה"
+            "l1_end_index": 3
           },
           {
             "text": "my",
             "timestamp": "02:40.40",
             "timestamp_end": "02:40.60",
             "l1_start_index": 5,
-            "l1_end_index": 6,
-            "translation": "שלי"
+            "l1_end_index": 6
           },
           {
             "text": "day",
             "timestamp": "02:40.60",
             "timestamp_end": "02:41.00",
             "l1_start_index": 8,
-            "l1_end_index": 10,
-            "translation": "יום"
+            "l1_end_index": 10
           },
           {
             "text": "as",
             "timestamp": "02:41.00",
             "timestamp_end": "02:41.20",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "כאילו"
+            "l1_end_index": 13
           },
           {
             "text": "if",
             "timestamp": "02:41.20",
             "timestamp_end": "02:41.40",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "אם"
+            "l1_end_index": 16
           },
           {
             "text": "there",
             "timestamp": "02:41.40",
             "timestamp_end": "02:41.60",
             "l1_start_index": 18,
-            "l1_end_index": 22,
-            "translation": "היה"
+            "l1_end_index": 22
           },
           {
             "text": "was",
             "timestamp": "02:41.60",
             "timestamp_end": "02:41.90",
             "l1_start_index": 24,
-            "l1_end_index": 26,
-            "translation": "היה"
+            "l1_end_index": 26
           },
           {
             "text": "no",
             "timestamp": "02:41.90",
             "timestamp_end": "02:42.20",
             "l1_start_index": 28,
-            "l1_end_index": 29,
-            "translation": "לא"
+            "l1_end_index": 29
           },
           {
             "text": "past",
             "timestamp": "02:42.20",
             "timestamp_end": "02:42.80",
             "l1_start_index": 31,
-            "l1_end_index": 34,
-            "translation": "עבר"
+            "l1_end_index": 34
           }
-        ],
-        "text_l2": "חי את יומי כאילו לא היה עבר"
+        ]
       },
       {
         "id": "phrase_60",
@@ -3491,51 +3064,44 @@
             "timestamp": "02:42.90",
             "timestamp_end": "02:43.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "02:43.30",
             "timestamp_end": "02:43.50",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "02:43.50",
             "timestamp_end": "02:43.80",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "02:43.80",
             "timestamp_end": "02:44.20",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "02:44.20",
             "timestamp_end": "02:44.50",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "02:44.50",
             "timestamp_end": "02:45.20",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_61",
@@ -3548,51 +3114,44 @@
             "timestamp": "02:45.30",
             "timestamp_end": "02:45.70",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "02:45.70",
             "timestamp_end": "02:45.90",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "the",
             "timestamp": "02:45.90",
             "timestamp_end": "02:46.10",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "ה"
+            "l1_end_index": 11
           },
           {
             "text": "way",
             "timestamp": "02:46.10",
             "timestamp_end": "02:46.40",
             "l1_start_index": 13,
-            "l1_end_index": 15,
-            "translation": "דרך"
+            "l1_end_index": 15
           },
           {
             "text": "I",
             "timestamp": "02:46.40",
             "timestamp_end": "02:46.60",
             "l1_start_index": 17,
-            "l1_end_index": 17,
-            "translation": "אני"
+            "l1_end_index": 17
           },
           {
             "text": "wanna",
             "timestamp": "02:46.60",
             "timestamp_end": "02:47.20",
             "l1_start_index": 19,
-            "l1_end_index": 23,
-            "translation": "רוצה"
+            "l1_end_index": 23
           }
-        ],
-        "text_l2": "עושה את זה איך שאני רוצה"
+        ]
       },
       {
         "id": "phrase_62",
@@ -3605,59 +3164,51 @@
             "timestamp": "02:47.30",
             "timestamp_end": "02:47.60",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "כן"
+            "l1_end_index": 4
           },
           {
             "text": "I'm",
             "timestamp": "02:47.60",
             "timestamp_end": "02:47.80",
             "l1_start_index": 6,
-            "l1_end_index": 8,
-            "translation": "אני"
+            "l1_end_index": 8
           },
           {
             "text": "gonna",
             "timestamp": "02:47.80",
             "timestamp_end": "02:48.10",
             "l1_start_index": 10,
-            "l1_end_index": 14,
-            "translation": "הולך"
+            "l1_end_index": 14
           },
           {
             "text": "dance",
             "timestamp": "02:48.10",
             "timestamp_end": "02:48.40",
             "l1_start_index": 16,
-            "l1_end_index": 20,
-            "translation": "לרקוד"
+            "l1_end_index": 20
           },
           {
             "text": "my",
             "timestamp": "02:48.40",
             "timestamp_end": "02:48.60",
             "l1_start_index": 22,
-            "l1_end_index": 23,
-            "translation": "שלי"
+            "l1_end_index": 23
           },
           {
             "text": "heart",
             "timestamp": "02:48.60",
             "timestamp_end": "02:48.90",
             "l1_start_index": 25,
-            "l1_end_index": 29,
-            "translation": "לב"
+            "l1_end_index": 29
           },
           {
             "text": "out",
             "timestamp": "02:48.90",
             "timestamp_end": "02:49.10",
             "l1_start_index": 31,
-            "l1_end_index": 33,
-            "translation": "החוצה"
+            "l1_end_index": 33
           }
-        ],
-        "text_l2": "כן, אני הולך לרקוד עד כלות"
+        ]
       },
       {
         "id": "phrase_63",
@@ -3670,27 +3221,23 @@
             "timestamp": "02:49.15",
             "timestamp_end": "02:49.30",
             "l1_start_index": 0,
-            "l1_end_index": 3,
-            "translation": "עד"
+            "l1_end_index": 3
           },
           {
             "text": "the",
             "timestamp": "02:49.30",
             "timestamp_end": "02:49.50",
             "l1_start_index": 5,
-            "l1_end_index": 7,
-            "translation": "ה"
+            "l1_end_index": 7
           },
           {
             "text": "dawn",
             "timestamp": "02:49.50",
             "timestamp_end": "02:50.00",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "שחר"
+            "l1_end_index": 12
           }
-        ],
-        "text_l2": "עד השחר"
+        ]
       },
       {
         "id": "phrase_64",
@@ -3703,67 +3250,58 @@
             "timestamp": "02:50.10",
             "timestamp_end": "02:50.30",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "אבל"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "02:50.30",
             "timestamp_end": "02:50.50",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "won't",
             "timestamp": "02:50.50",
             "timestamp_end": "02:50.80",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לא"
+            "l1_end_index": 10
           },
           {
             "text": "be",
             "timestamp": "02:50.80",
             "timestamp_end": "02:51.00",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "אהיה"
+            "l1_end_index": 13
           },
           {
             "text": "done",
             "timestamp": "02:51.00",
             "timestamp_end": "02:51.30",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "גמור"
+            "l1_end_index": 18
           },
           {
             "text": "when",
             "timestamp": "02:51.30",
             "timestamp_end": "02:51.50",
             "l1_start_index": 20,
-            "l1_end_index": 23,
-            "translation": "כש"
+            "l1_end_index": 23
           },
           {
             "text": "morning",
             "timestamp": "02:51.50",
             "timestamp_end": "02:51.90",
             "l1_start_index": 25,
-            "l1_end_index": 31,
-            "translation": "בוקר"
+            "l1_end_index": 31
           },
           {
             "text": "comes",
             "timestamp": "02:51.90",
             "timestamp_end": "02:52.50",
             "l1_start_index": 33,
-            "l1_end_index": 37,
-            "translation": "יגיע"
+            "l1_end_index": 37
           }
-        ],
-        "text_l2": "אבל אני לא אסיים כשהבוקר יגיע"
+        ]
       },
       {
         "id": "phrase_65",
@@ -3776,51 +3314,44 @@
             "timestamp": "02:52.60",
             "timestamp_end": "02:53.00",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "עושה"
+            "l1_end_index": 4
           },
           {
             "text": "it",
             "timestamp": "02:53.00",
             "timestamp_end": "02:53.20",
             "l1_start_index": 6,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "all",
             "timestamp": "02:53.20",
             "timestamp_end": "02:53.50",
             "l1_start_index": 9,
-            "l1_end_index": 11,
-            "translation": "כל"
+            "l1_end_index": 11
           },
           {
             "text": "night,",
             "timestamp": "02:53.50",
             "timestamp_end": "02:53.90",
             "l1_start_index": 13,
-            "l1_end_index": 18,
-            "translation": "לילה"
+            "l1_end_index": 18
           },
           {
             "text": "all",
             "timestamp": "02:53.90",
             "timestamp_end": "02:54.20",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "כל"
+            "l1_end_index": 22
           },
           {
             "text": "summer",
             "timestamp": "02:54.20",
             "timestamp_end": "02:54.80",
             "l1_start_index": 24,
-            "l1_end_index": 29,
-            "translation": "קיץ"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "עושה את זה כל הלילה, כל הקיץ"
+        ]
       },
       {
         "id": "phrase_66",
@@ -3833,51 +3364,44 @@
             "timestamp": "02:54.90",
             "timestamp_end": "02:55.30",
             "l1_start_index": 0,
-            "l1_end_index": 4,
-            "translation": "הולך"
+            "l1_end_index": 4
           },
           {
             "text": "spend",
             "timestamp": "02:55.30",
             "timestamp_end": "02:55.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "לבלות"
+            "l1_end_index": 10
           },
           {
             "text": "it",
             "timestamp": "02:55.70",
             "timestamp_end": "02:55.90",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "אותו"
+            "l1_end_index": 13
           },
           {
             "text": "like",
             "timestamp": "02:55.90",
             "timestamp_end": "02:56.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "כמו"
+            "l1_end_index": 18
           },
           {
             "text": "no",
             "timestamp": "02:56.20",
             "timestamp_end": "02:56.50",
             "l1_start_index": 20,
-            "l1_end_index": 21,
-            "translation": "שום"
+            "l1_end_index": 21
           },
           {
             "text": "other",
             "timestamp": "02:56.50",
             "timestamp_end": "02:57.50",
             "l1_start_index": 23,
-            "l1_end_index": 27,
-            "translation": "אחר"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "הולך לבזבז את זה כמו שאף אחד אחר"
+        ]
       },
       {
         "id": "phrase_67",
@@ -3890,43 +3414,37 @@
             "timestamp": "02:57.60",
             "timestamp_end": "02:57.90",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "עכשיו"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "02:57.90",
             "timestamp_end": "02:58.10",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "found",
             "timestamp": "02:58.10",
             "timestamp_end": "02:58.40",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "מצאתי"
+            "l1_end_index": 10
           },
           {
             "text": "another",
             "timestamp": "02:58.40",
             "timestamp_end": "02:58.90",
             "l1_start_index": 12,
-            "l1_end_index": 18,
-            "translation": "עוד"
+            "l1_end_index": 18
           },
           {
             "text": "crush",
             "timestamp": "02:58.90",
             "timestamp_end": "02:59.80",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "קראש"
+            "l1_end_index": 24
           }
-        ],
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        ]
       },
       {
         "id": "phrase_68",
@@ -3939,59 +3457,51 @@
             "timestamp": "02:59.90",
             "timestamp_end": "03:00.10",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "ו"
+            "l1_end_index": 2
           },
           {
             "text": "it's",
             "timestamp": "03:00.10",
             "timestamp_end": "03:00.40",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "like",
             "timestamp": "03:00.40",
             "timestamp_end": "03:00.70",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "כמו"
+            "l1_end_index": 12
           },
           {
             "text": "giving",
             "timestamp": "03:00.70",
             "timestamp_end": "03:01.10",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "נותן"
+            "l1_end_index": 19
           },
           {
             "text": "me",
             "timestamp": "03:01.10",
             "timestamp_end": "03:01.30",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "לי"
+            "l1_end_index": 22
           },
           {
             "text": "a",
             "timestamp": "03:01.30",
             "timestamp_end": "03:01.50",
             "l1_start_index": 24,
-            "l1_end_index": 24,
-            "translation": "a"
+            "l1_end_index": 24
           },
           {
             "text": "rush",
             "timestamp": "03:01.50",
             "timestamp_end": "03:02.00",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "אדרנלין"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "וזה כמו נותן לי ריגוש"
+        ]
       },
       {
         "id": "phrase_69",
@@ -4004,59 +3514,51 @@
             "timestamp": "03:02.10",
             "timestamp_end": "03:02.40",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "היה"
+            "l1_end_index": 2
           },
           {
             "text": "one",
             "timestamp": "03:02.40",
             "timestamp_end": "03:02.70",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "אחד"
+            "l1_end_index": 6
           },
           {
             "text": "chance",
             "timestamp": "03:02.70",
             "timestamp_end": "03:03.10",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "סיכוי"
+            "l1_end_index": 13
           },
           {
             "text": "to",
             "timestamp": "03:03.10",
             "timestamp_end": "03:03.30",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "ל"
+            "l1_end_index": 16
           },
           {
             "text": "make",
             "timestamp": "03:03.30",
             "timestamp_end": "03:03.60",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "לגרום"
+            "l1_end_index": 21
           },
           {
             "text": "me",
             "timestamp": "03:03.60",
             "timestamp_end": "03:03.80",
             "l1_start_index": 23,
-            "l1_end_index": 24,
-            "translation": "לי"
+            "l1_end_index": 24
           },
           {
             "text": "blush",
             "timestamp": "03:03.80",
             "timestamp_end": "03:04.20",
             "l1_start_index": 26,
-            "l1_end_index": 30,
-            "translation": "להסמיק"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        ]
       },
       {
         "id": "phrase_70",
@@ -4069,51 +3571,44 @@
             "timestamp": "03:04.30",
             "timestamp_end": "03:04.80",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "שני"
+            "l1_end_index": 5
           },
           {
             "text": "time",
             "timestamp": "03:04.80",
             "timestamp_end": "03:05.20",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "פעם"
+            "l1_end_index": 10
           },
           {
             "text": "is",
             "timestamp": "03:05.20",
             "timestamp_end": "03:05.50",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "היא"
+            "l1_end_index": 13
           },
           {
             "text": "once",
             "timestamp": "03:05.50",
             "timestamp_end": "03:05.90",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "פעם"
+            "l1_end_index": 18
           },
           {
             "text": "too",
             "timestamp": "03:05.90",
             "timestamp_end": "03:06.20",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "מדי"
+            "l1_end_index": 22
           },
           {
             "text": "much",
             "timestamp": "03:06.20",
             "timestamp_end": "03:06.80",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "הרבה"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+        ]
       },
       {
         "id": "phrase_71",
@@ -4126,43 +3621,37 @@
             "timestamp": "03:06.90",
             "timestamp_end": "03:07.20",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "עכשיו"
+            "l1_end_index": 2
           },
           {
             "text": "I",
             "timestamp": "03:07.20",
             "timestamp_end": "03:07.40",
             "l1_start_index": 4,
-            "l1_end_index": 4,
-            "translation": "אני"
+            "l1_end_index": 4
           },
           {
             "text": "found",
             "timestamp": "03:07.40",
             "timestamp_end": "03:07.70",
             "l1_start_index": 6,
-            "l1_end_index": 10,
-            "translation": "מצאתי"
+            "l1_end_index": 10
           },
           {
             "text": "another",
             "timestamp": "03:07.70",
             "timestamp_end": "03:08.20",
             "l1_start_index": 12,
-            "l1_end_index": 18,
-            "translation": "עוד"
+            "l1_end_index": 18
           },
           {
             "text": "crush",
             "timestamp": "03:08.20",
             "timestamp_end": "03:09.00",
             "l1_start_index": 20,
-            "l1_end_index": 24,
-            "translation": "קראש"
+            "l1_end_index": 24
           }
-        ],
-        "text_l2": "עכשיו מצאתי קראש אחר"
+        ]
       },
       {
         "id": "phrase_72",
@@ -4175,59 +3664,51 @@
             "timestamp": "03:09.10",
             "timestamp_end": "03:09.30",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "ו"
+            "l1_end_index": 2
           },
           {
             "text": "it's",
             "timestamp": "03:09.30",
             "timestamp_end": "03:09.60",
             "l1_start_index": 4,
-            "l1_end_index": 7,
-            "translation": "זה"
+            "l1_end_index": 7
           },
           {
             "text": "like",
             "timestamp": "03:09.60",
             "timestamp_end": "03:09.90",
             "l1_start_index": 9,
-            "l1_end_index": 12,
-            "translation": "כמו"
+            "l1_end_index": 12
           },
           {
             "text": "giving",
             "timestamp": "03:09.90",
             "timestamp_end": "03:10.30",
             "l1_start_index": 14,
-            "l1_end_index": 19,
-            "translation": "נותן"
+            "l1_end_index": 19
           },
           {
             "text": "me",
             "timestamp": "03:10.30",
             "timestamp_end": "03:10.50",
             "l1_start_index": 21,
-            "l1_end_index": 22,
-            "translation": "לי"
+            "l1_end_index": 22
           },
           {
             "text": "a",
             "timestamp": "03:10.50",
             "timestamp_end": "03:10.70",
             "l1_start_index": 24,
-            "l1_end_index": 24,
-            "translation": "a"
+            "l1_end_index": 24
           },
           {
             "text": "rush",
             "timestamp": "03:10.70",
             "timestamp_end": "03:11.20",
             "l1_start_index": 26,
-            "l1_end_index": 29,
-            "translation": "אדרנלין"
+            "l1_end_index": 29
           }
-        ],
-        "text_l2": "וזה כמו נותן לי ריגוש"
+        ]
       },
       {
         "id": "phrase_73",
@@ -4240,59 +3721,51 @@
             "timestamp": "03:11.30",
             "timestamp_end": "03:11.60",
             "l1_start_index": 0,
-            "l1_end_index": 2,
-            "translation": "היה"
+            "l1_end_index": 2
           },
           {
             "text": "one",
             "timestamp": "03:11.60",
             "timestamp_end": "03:11.90",
             "l1_start_index": 4,
-            "l1_end_index": 6,
-            "translation": "אחד"
+            "l1_end_index": 6
           },
           {
             "text": "chance",
             "timestamp": "03:11.90",
             "timestamp_end": "03:12.30",
             "l1_start_index": 8,
-            "l1_end_index": 13,
-            "translation": "סיכוי"
+            "l1_end_index": 13
           },
           {
             "text": "to",
             "timestamp": "03:12.30",
             "timestamp_end": "03:12.50",
             "l1_start_index": 15,
-            "l1_end_index": 16,
-            "translation": "ל"
+            "l1_end_index": 16
           },
           {
             "text": "make",
             "timestamp": "03:12.50",
             "timestamp_end": "03:12.80",
             "l1_start_index": 18,
-            "l1_end_index": 21,
-            "translation": "לגרום"
+            "l1_end_index": 21
           },
           {
             "text": "me",
             "timestamp": "03:12.80",
             "timestamp_end": "03:13.00",
             "l1_start_index": 23,
-            "l1_end_index": 24,
-            "translation": "לי"
+            "l1_end_index": 24
           },
           {
             "text": "blush",
             "timestamp": "03:13.00",
             "timestamp_end": "03:13.50",
             "l1_start_index": 26,
-            "l1_end_index": 30,
-            "translation": "להסמיק"
+            "l1_end_index": 30
           }
-        ],
-        "text_l2": "הייתה הזדמנות אחת לגרום לי להסמיק"
+        ]
       },
       {
         "id": "phrase_74",
@@ -4305,51 +3778,44 @@
             "timestamp": "03:13.60",
             "timestamp_end": "03:14.10",
             "l1_start_index": 0,
-            "l1_end_index": 5,
-            "translation": "שני"
+            "l1_end_index": 5
           },
           {
             "text": "time",
             "timestamp": "03:14.10",
             "timestamp_end": "03:14.50",
             "l1_start_index": 7,
-            "l1_end_index": 10,
-            "translation": "פעם"
+            "l1_end_index": 10
           },
           {
             "text": "is",
             "timestamp": "03:14.50",
             "timestamp_end": "03:14.80",
             "l1_start_index": 12,
-            "l1_end_index": 13,
-            "translation": "היא"
+            "l1_end_index": 13
           },
           {
             "text": "once",
             "timestamp": "03:14.80",
             "timestamp_end": "03:15.20",
             "l1_start_index": 15,
-            "l1_end_index": 18,
-            "translation": "פעם"
+            "l1_end_index": 18
           },
           {
             "text": "too",
             "timestamp": "03:15.20",
             "timestamp_end": "03:15.50",
             "l1_start_index": 20,
-            "l1_end_index": 22,
-            "translation": "מדי"
+            "l1_end_index": 22
           },
           {
             "text": "much",
             "timestamp": "03:15.50",
             "timestamp_end": "03:16.50",
             "l1_start_index": 24,
-            "l1_end_index": 27,
-            "translation": "הרבה"
+            "l1_end_index": 27
           }
-        ],
-        "text_l2": "פעם שנייה היא פעם אחת יותר מדי"
+        ]
       }
     ],
     "lessons": "# Living for the Moment\n00:10.00 I live my day as if it was the last\n00:12.90 Live my day as if there was no past\n00:15.90 Doing it all night, all summer\n00:18.30 Doing it the way I wanna\n00:20.30 Yeah, I'm gonna dance my heart out\n00:22.15 till the dawn\n00:23.30 But I won't be done when morning comes\n00:25.60 Doing it all night, all summer\n00:27.90 Gonna spend it like no other\n\n# That Crush\n00:31.00 It was a crush\n00:33.10 But I couldn't, couldn't get enough\n00:35.60 It was a rush\n00:37.90 But I gave it up\n00:40.50 It was a crush\n00:42.60 Now I might not want to say too much\n00:45.30 But that's all it was\n00:47.60 So I gave it up\n\n# Dancing Till Dawn\n00:49.90 I live my day as if it was the last\n00:52.60 Live my day as if there was no past\n00:55.30 Doing it all night, all summer\n00:57.60 Doing it the way I wanna\n00:59.60 Yeah, I'm gonna dance my heart out\n01:01.45 till the dawn\n01:02.30 But I won't be done when morning comes\n01:04.60 Doing it all night, all summer\n01:06.90 Gonna spend it like no other\n\n# Gave It Up\n01:10.00 It was a crush\n01:12.10 I kept saying I'm gonna stay in touch\n01:14.60 But that thing went bust\n01:16.60 So I gave it up\n01:19.50 No tricks, no bluff\n01:21.60 I'm just better off without them cuffs\n01:24.30 Yeah, the sun won't set on us\n\n# Back in the Groove\n01:30.00 Went low, went high\n01:32.90 Still water runs dry\n01:35.30 Got to get back in the groove\n01:37.60 I ain't in a hurry\n01:40.00 Went low, went high\n01:42.90 What matters is now\n01:44.90 Getting right back in the mood\n\n# All Night, All Summer\n01:49.00 I live my day as if it was the last\n01:51.60 Live my day as if there was no past\n01:54.30 Doing it all night, all summer\n01:56.60 Doing it the way I wanna\n01:58.60 Yeah, I'm gonna dance my heart out\n02:00.45 till the dawn\n02:01.30 But I won't be done when morning comes\n02:03.60 Doing it all night, all summer\n02:05.90 Gonna spend it like no other\n\n# Another Crush\n02:09.00 Now I found another crush\n02:11.10 And it's like giving me a rush\n02:13.30 Had one chance to make me blush\n02:15.60 Second time is once too much\n02:18.10 Now I found another crush\n02:20.30 And it's like giving me a rush\n02:22.60 Had one chance to make me blush\n02:24.90 Second time is once too much\n\n# Till the Dawn\n02:37.50 I live my day as if it was the last\n02:40.10 Live my day as if there was no past\n02:42.90 Doing it all night, all summer\n02:45.30 Doing it the way I wanna\n02:47.30 Yeah, I'm gonna dance my heart out\n02:49.15 till the dawn\n02:50.10 But I won't be done when morning comes\n02:52.60 Doing it all night, all summer\n02:54.90 Gonna spend it like no other\n\n# Second Time\n02:57.60 Now I found another crush\n02:59.90 And it's like giving me a rush\n03:02.10 Had one chance to make me blush\n03:04.30 Second time is once too much\n03:06.90 Now I found another crush\n03:09.10 And it's like giving me a rush\n03:11.30 Had one chance to make me blush\n03:13.60 Second time is once too much",
@@ -4409,7 +3875,847 @@
         "reason": "Exact reprise of lesson 7; no new vocabulary."
       }
     ],
-    "similar_sounds": "I live my day as if it was the [list]\nLive my [days] as if there was no past\n[going] it all night all summer\nDoing it the way I [wanda]\nYeah [in] gonna dance my heart out\ntill the [drawn]\nBut I [want] be done when morning comes\nDoing it all night [call] summer\nGonna [spent] it like no other\nIt [has] a crush\n[out] I couldn't couldn't get enough\nIt [as] a rush\n[buy] I gave it up\nIt was a [rush]\nNow I might not want to say [two] much\nBut that's [call] it was\nSo I [game] it up\nI live my [days] as if it was the last\n[life] my day as if there was no past\nDoing it all night all [hummer]\nDoing it the way I [hanna]\nYeah I'm gonna dance my heart [our]\n[will] the dawn\nBut I won't be done [hen] morning comes\n[going] it all night all summer\nGonna [send] it like no other\nIt [has] a crush\nI kept saying I'm [donna] stay in touch\nBut that thing went [best]\nSo I [have] it up\nNo tricks no [bluffs]\nI'm just better off without them [buffs]\nYeah the [san] won't set on us\n[want] low went high\nStill water [guns] dry\nGot to get back in the [grove]\nI ain't in a [harry]\nWent [now] went high\nWhat [batters] is now\nGetting [light] back in the mood\nI live my day as if it was [they] last\nLive my day as if there [way] no past\n[dying] it all night all summer\nDoing it [they] way I wanna\nYeah I'm gonna dance my heart [but]\ntill [he] dawn\nBut I [don't] be done when morning comes\nDoing it all night [fall] summer\nGonna spend it like no [others]\nNow I [sound] another crush\nAnd it's [live] giving me a rush\nHad [on] chance to make me blush\nSecond time is once too [mech]\nNow I found [mother] crush\nAnd it's like giving me a [brush]\n[hard] one chance to make me blush\nSecond time is [one] too much\nI live my day as if it was [he] last\nLive my [way] as if there was no past\nDoing it [al] night all summer\n[dong] it the way I wanna\nYeah I'm gonna dance my heart [but]\n[still] the dawn\nBut I won't be done when [mornings] comes\nDoing it [al] night all summer\nGonna [send] it like no other\nNow I [round] another crush\nAnd it's like giving me a [brush]\nHad one [change] to make me blush\nSecond [tim] is once too much\nNow I found another [rush]\nAnd [is] like giving me a rush\nHad [on] chance to make me blush\nSecond [tie] is once too much"
+    "similar_sounds": "I live my day as if it was the [list]\nLive my [days] as if there was no past\n[going] it all night all summer\nDoing it the way I [wanda]\nYeah [in] gonna dance my heart out\ntill the [drawn]\nBut I [want] be done when morning comes\nDoing it all night [call] summer\nGonna [spent] it like no other\nIt [has] a crush\n[out] I couldn't couldn't get enough\nIt [as] a rush\n[buy] I gave it up\nIt was a [rush]\nNow I might not want to say [two] much\nBut that's [call] it was\nSo I [game] it up\nI live my [days] as if it was the last\n[life] my day as if there was no past\nDoing it all night all [hummer]\nDoing it the way I [hanna]\nYeah I'm gonna dance my heart [our]\n[will] the dawn\nBut I won't be done [hen] morning comes\n[going] it all night all summer\nGonna [send] it like no other\nIt [has] a crush\nI kept saying I'm [donna] stay in touch\nBut that thing went [best]\nSo I [have] it up\nNo tricks no [bluffs]\nI'm just better off without them [buffs]\nYeah the [san] won't set on us\n[want] low went high\nStill water [guns] dry\nGot to get back in the [grove]\nI ain't in a [harry]\nWent [now] went high\nWhat [batters] is now\nGetting [light] back in the mood\nI live my day as if it was [they] last\nLive my day as if there [way] no past\n[dying] it all night all summer\nDoing it [they] way I wanna\nYeah I'm gonna dance my heart [but]\ntill [he] dawn\nBut I [don't] be done when morning comes\nDoing it all night [fall] summer\nGonna spend it like no [others]\nNow I [sound] another crush\nAnd it's [live] giving me a rush\nHad [on] chance to make me blush\nSecond time is once too [mech]\nNow I found [mother] crush\nAnd it's like giving me a [brush]\n[hard] one chance to make me blush\nSecond time is [one] too much\nI live my day as if it was [he] last\nLive my [way] as if there was no past\nDoing it [al] night all summer\n[dong] it the way I wanna\nYeah I'm gonna dance my heart [but]\n[still] the dawn\nBut I won't be done when [mornings] comes\nDoing it [al] night all summer\nGonna [send] it like no other\nNow I [round] another crush\nAnd it's like giving me a [brush]\nHad one [change] to make me blush\nSecond [tim] is once too much\nNow I found another [rush]\nAnd [is] like giving me a rush\nHad [on] chance to make me blush\nSecond [tie] is once too much",
+    "translations": {
+      "he": {
+        "language_id": 44,
+        "language_name": "Hebrew",
+        "phrases": [
+          {
+            "text": "אני חי את יומי כאילו זה היה האחרון",
+            "words": [
+              "אני",
+              "חי",
+              "שלי",
+              "יום",
+              "כ",
+              "אילו",
+              "זה",
+              "היה",
+              "ה",
+              "אחרון"
+            ]
+          },
+          {
+            "text": "חי את יומי כאילו לא היה עבר",
+            "words": [
+              "חיה",
+              "שלי",
+              "יום",
+              "כ",
+              "אילו",
+              "there",
+              "היה",
+              "לא",
+              "עבר"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "עושה את זה איך שאני רוצה",
+            "words": [
+              "עושה",
+              "זה",
+              "ה",
+              "דרך",
+              "אני",
+              "רוצה"
+            ]
+          },
+          {
+            "text": "כן, אני הולך לרקוד עד כלות",
+            "words": [
+              "כן",
+              "אני",
+              "הולך",
+              "לרקוד",
+              "שלי",
+              "לב",
+              "החוצה"
+            ]
+          },
+          {
+            "text": "עד השחר",
+            "words": [
+              "עד",
+              "ה",
+              "שחר"
+            ]
+          },
+          {
+            "text": "אבל אני לא אסיים כשהבוקר יגיע",
+            "words": [
+              "אבל",
+              "אני",
+              "לא",
+              "להיות",
+              "גמור",
+              "כש",
+              "בוקר",
+              "מגיע"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "הולך לבזבז את זה כמו שאף אחד אחר",
+            "words": [
+              "הולך",
+              "לבלות",
+              "זה",
+              "כמו",
+              "שום",
+              "אחר"
+            ]
+          },
+          {
+            "text": "זה היה קראש",
+            "words": [
+              "זה",
+              "היה",
+              "a",
+              "קראש"
+            ]
+          },
+          {
+            "text": "אבל לא יכולתי, לא יכולתי לקבל מספיק",
+            "words": [
+              "אבל",
+              "אני",
+              "לא יכולתי",
+              "לא יכולתי",
+              "לקבל",
+              "מספיק"
+            ]
+          },
+          {
+            "text": "זה היה ריגוש",
+            "words": [
+              "זה",
+              "היה",
+              "a",
+              "ריגוש"
+            ]
+          },
+          {
+            "text": "אבל ויתרתי על זה",
+            "words": [
+              "אבל",
+              "אני",
+              "נתתי",
+              "זה",
+              "על"
+            ]
+          },
+          {
+            "text": "זה היה קראש",
+            "words": [
+              "זה",
+              "היה",
+              "a",
+              "קראש"
+            ]
+          },
+          {
+            "text": "עכשיו אולי אני לא רוצה להגיד יותר מדי",
+            "words": [
+              "עכשיו",
+              "אני",
+              "אולי",
+              "לא",
+              "רוצה",
+              "ל",
+              "לומר",
+              "מדי",
+              "הרבה"
+            ]
+          },
+          {
+            "text": "אבל זה כל מה שזה היה",
+            "words": [
+              "אבל",
+              "זה",
+              "הכל",
+              "זה",
+              "היה"
+            ]
+          },
+          {
+            "text": "אז ויתרתי על זה",
+            "words": [
+              "אז",
+              "אני",
+              "נתתי",
+              "זה",
+              "על"
+            ]
+          },
+          {
+            "text": "אני חי את יומי כאילו זה היה האחרון",
+            "words": [
+              "אני",
+              "חי",
+              "שלי",
+              "יום",
+              "כ",
+              "אילו",
+              "זה",
+              "היה",
+              "ה",
+              "אחרון"
+            ]
+          },
+          {
+            "text": "חי את יומי כאילו לא היה עבר",
+            "words": [
+              "חיה",
+              "שלי",
+              "יום",
+              "כ",
+              "אילו",
+              "there",
+              "היה",
+              "לא",
+              "עבר"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "עושה את זה איך שאני רוצה",
+            "words": [
+              "עושה",
+              "זה",
+              "ה",
+              "דרך",
+              "אני",
+              "רוצה"
+            ]
+          },
+          {
+            "text": "כן, אני הולך לרקוד עד כלות",
+            "words": [
+              "כן",
+              "אני",
+              "הולך",
+              "לרקוד",
+              "שלי",
+              "לב",
+              "החוצה"
+            ]
+          },
+          {
+            "text": "עד השחר",
+            "words": [
+              "עד",
+              "ה",
+              "שחר"
+            ]
+          },
+          {
+            "text": "אבל אני לא אסיים כשהבוקר יגיע",
+            "words": [
+              "אבל",
+              "אני",
+              "לא",
+              "להיות",
+              "גמור",
+              "כש",
+              "בוקר",
+              "מגיע"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "הולך לבזבז את זה כמו שאף אחד אחר",
+            "words": [
+              "הולך",
+              "לבלות",
+              "זה",
+              "כמו",
+              "שום",
+              "אחר"
+            ]
+          },
+          {
+            "text": "זה היה קראש",
+            "words": [
+              "זה",
+              "היה",
+              "a",
+              "קראש"
+            ]
+          },
+          {
+            "text": "המשכתי להגיד שאני הולך להישאר בקשר",
+            "words": [
+              "אני",
+              "המשכתי",
+              "לומר",
+              "אני",
+              "הולך",
+              "להישאר",
+              "ב",
+              "קשר"
+            ]
+          },
+          {
+            "text": "אבל הדבר הזה נכשל",
+            "words": [
+              "אבל",
+              "הזה",
+              "דבר",
+              "הלך",
+              "כישלון"
+            ]
+          },
+          {
+            "text": "אז ויתרתי על זה",
+            "words": [
+              "אז",
+              "אני",
+              "נתתי",
+              "זה",
+              "על"
+            ]
+          },
+          {
+            "text": "בלי טריקים, בלי בלוף",
+            "words": [
+              "בלי",
+              "טריקים",
+              "בלי",
+              "בלוף"
+            ]
+          },
+          {
+            "text": "אני פשוט יותר טוב בלי האזיקים האלה",
+            "words": [
+              "אני",
+              "פשוט",
+              "עדיף",
+              "off",
+              "בלי",
+              "ההם",
+              "אזיקים"
+            ]
+          },
+          {
+            "text": "כן, השמש לא תשקע עלינו",
+            "words": [
+              "כן",
+              "ה",
+              "שמש",
+              "לא",
+              "תשקע",
+              "על",
+              "אותנו"
+            ]
+          },
+          {
+            "text": "הלך נמוך, הלך גבוה",
+            "words": [
+              "הלך",
+              "נמוך",
+              "הלך",
+              "גבוה"
+            ]
+          },
+          {
+            "text": "מים עומדים מתייבשים",
+            "words": [
+              "דומם",
+              "מים",
+              "מתייבש",
+              "יבש"
+            ]
+          },
+          {
+            "text": "צריך לחזור לקצב",
+            "words": [
+              "חייב",
+              "to",
+              "לחזור",
+              "חזרה",
+              "ב",
+              "ה",
+              "קצב"
+            ]
+          },
+          {
+            "text": "אני לא ממהר",
+            "words": [
+              "אני",
+              "לא",
+              "ב",
+              "a",
+              "חיפזון"
+            ]
+          },
+          {
+            "text": "הלך נמוך, הלך גבוה",
+            "words": [
+              "הלך",
+              "נמוך",
+              "הלך",
+              "גבוה"
+            ]
+          },
+          {
+            "text": "מה שחשוב זה עכשיו",
+            "words": [
+              "מה",
+              "חשוב",
+              "הוא",
+              "עכשיו"
+            ]
+          },
+          {
+            "text": "נכנס חזרה בדיוק למצב רוח",
+            "words": [
+              "חוזר",
+              "מיד",
+              "חזרה",
+              "ב",
+              "ה",
+              "מצב רוח"
+            ]
+          },
+          {
+            "text": "אני חי את יומי כאילו זה היה האחרון",
+            "words": [
+              "אני",
+              "חי",
+              "שלי",
+              "יום",
+              "כאילו",
+              "אם",
+              "הוא",
+              "היה",
+              "ה",
+              "אחרון"
+            ]
+          },
+          {
+            "text": "חי את יומי כאילו לא היה עבר",
+            "words": [
+              "חיה",
+              "שלי",
+              "יום",
+              "כאילו",
+              "אם",
+              "היה",
+              "היה",
+              "לא",
+              "עבר"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "עושה את זה איך שאני רוצה",
+            "words": [
+              "עושה",
+              "זה",
+              "ה",
+              "דרך",
+              "אני",
+              "רוצה"
+            ]
+          },
+          {
+            "text": "כן, אני הולך לרקוד עד כלות",
+            "words": [
+              "כן",
+              "אני",
+              "הולך",
+              "לרקוד",
+              "שלי",
+              "לב",
+              "החוצה"
+            ]
+          },
+          {
+            "text": "עד השחר",
+            "words": [
+              "עד",
+              "ה",
+              "שחר"
+            ]
+          },
+          {
+            "text": "אבל אני לא אסיים כשהבוקר יגיע",
+            "words": [
+              "אבל",
+              "אני",
+              "לא",
+              "אהיה",
+              "גמור",
+              "כש",
+              "בוקר",
+              "יגיע"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "הולך לבזבז את זה כמו שאף אחד אחר",
+            "words": [
+              "הולך",
+              "לבלות",
+              "זה",
+              "כמו",
+              "אף",
+              "אחר"
+            ]
+          },
+          {
+            "text": "עכשיו מצאתי קראש אחר",
+            "words": [
+              "עכשיו",
+              "אני",
+              "מצאתי",
+              "עוד",
+              "קראש"
+            ]
+          },
+          {
+            "text": "וזה כמו נותן לי ריגוש",
+            "words": [
+              "ו",
+              "זה",
+              "כמו",
+              "נותן",
+              "לי",
+              "a",
+              "ריגוש"
+            ]
+          },
+          {
+            "text": "הייתה הזדמנות אחת לגרום לי להסמיק",
+            "words": [
+              "הייתה",
+              "אחת",
+              "הזדמנות",
+              "ל",
+              "לגרום",
+              "לי",
+              "להסמיק"
+            ]
+          },
+          {
+            "text": "פעם שנייה היא פעם אחת יותר מדי",
+            "words": [
+              "שני",
+              "פעם",
+              "היא",
+              "פעם אחת",
+              "מדי",
+              "יותר"
+            ]
+          },
+          {
+            "text": "עכשיו מצאתי קראש אחר",
+            "words": [
+              "עכשיו",
+              "אני",
+              "מצאתי",
+              "עוד",
+              "קראש"
+            ]
+          },
+          {
+            "text": "וזה כמו נותן לי ריגוש",
+            "words": [
+              "ו",
+              "זה",
+              "כמו",
+              "נותן",
+              "לי",
+              "a",
+              "ריגוש"
+            ]
+          },
+          {
+            "text": "הייתה הזדמנות אחת לגרום לי להסמיק",
+            "words": [
+              "הייתה",
+              "אחת",
+              "הזדמנות",
+              "ל",
+              "לגרום",
+              "לי",
+              "להסמיק"
+            ]
+          },
+          {
+            "text": "פעם שנייה היא פעם אחת יותר מדי",
+            "words": [
+              "שני",
+              "פעם",
+              "היא",
+              "פעם אחת",
+              "מדי",
+              "יותר"
+            ]
+          },
+          {
+            "text": "אני חי את יומי כאילו זה היה האחרון",
+            "words": [
+              "אני",
+              "חי",
+              "שלי",
+              "יום",
+              "כאילו",
+              "אם",
+              "הוא",
+              "היה",
+              "ה",
+              "אחרון"
+            ]
+          },
+          {
+            "text": "חי את יומי כאילו לא היה עבר",
+            "words": [
+              "חיה",
+              "שלי",
+              "יום",
+              "כאילו",
+              "אם",
+              "היה",
+              "היה",
+              "לא",
+              "עבר"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "עושה את זה איך שאני רוצה",
+            "words": [
+              "עושה",
+              "זה",
+              "ה",
+              "דרך",
+              "אני",
+              "רוצה"
+            ]
+          },
+          {
+            "text": "כן, אני הולך לרקוד עד כלות",
+            "words": [
+              "כן",
+              "אני",
+              "הולך",
+              "לרקוד",
+              "שלי",
+              "לב",
+              "החוצה"
+            ]
+          },
+          {
+            "text": "עד השחר",
+            "words": [
+              "עד",
+              "ה",
+              "שחר"
+            ]
+          },
+          {
+            "text": "אבל אני לא אסיים כשהבוקר יגיע",
+            "words": [
+              "אבל",
+              "אני",
+              "לא",
+              "אהיה",
+              "גמור",
+              "כש",
+              "בוקר",
+              "יגיע"
+            ]
+          },
+          {
+            "text": "עושה את זה כל הלילה, כל הקיץ",
+            "words": [
+              "עושה",
+              "זה",
+              "כל",
+              "לילה",
+              "כל",
+              "קיץ"
+            ]
+          },
+          {
+            "text": "הולך לבזבז את זה כמו שאף אחד אחר",
+            "words": [
+              "הולך",
+              "לבלות",
+              "אותו",
+              "כמו",
+              "שום",
+              "אחר"
+            ]
+          },
+          {
+            "text": "עכשיו מצאתי קראש אחר",
+            "words": [
+              "עכשיו",
+              "אני",
+              "מצאתי",
+              "עוד",
+              "קראש"
+            ]
+          },
+          {
+            "text": "וזה כמו נותן לי ריגוש",
+            "words": [
+              "ו",
+              "זה",
+              "כמו",
+              "נותן",
+              "לי",
+              "a",
+              "אדרנלין"
+            ]
+          },
+          {
+            "text": "הייתה הזדמנות אחת לגרום לי להסמיק",
+            "words": [
+              "היה",
+              "אחד",
+              "סיכוי",
+              "ל",
+              "לגרום",
+              "לי",
+              "להסמיק"
+            ]
+          },
+          {
+            "text": "פעם שנייה היא פעם אחת יותר מדי",
+            "words": [
+              "שני",
+              "פעם",
+              "היא",
+              "פעם",
+              "מדי",
+              "הרבה"
+            ]
+          },
+          {
+            "text": "עכשיו מצאתי קראש אחר",
+            "words": [
+              "עכשיו",
+              "אני",
+              "מצאתי",
+              "עוד",
+              "קראש"
+            ]
+          },
+          {
+            "text": "וזה כמו נותן לי ריגוש",
+            "words": [
+              "ו",
+              "זה",
+              "כמו",
+              "נותן",
+              "לי",
+              "a",
+              "אדרנלין"
+            ]
+          },
+          {
+            "text": "הייתה הזדמנות אחת לגרום לי להסמיק",
+            "words": [
+              "היה",
+              "אחד",
+              "סיכוי",
+              "ל",
+              "לגרום",
+              "לי",
+              "להסמיק"
+            ]
+          },
+          {
+            "text": "פעם שנייה היא פעם אחת יותר מדי",
+            "words": [
+              "שני",
+              "פעם",
+              "היא",
+              "פעם",
+              "מדי",
+              "הרבה"
+            ]
+          }
+        ],
+        "lessons": "# Living for the Moment\n00:10.00 I live my day as if it was the last\n00:12.90 Live my day as if there was no past\n00:15.90 Doing it all night, all summer\n00:18.30 Doing it the way I wanna\n00:20.30 Yeah, I'm gonna dance my heart out\n00:22.15 till the dawn\n00:23.30 But I won't be done when morning comes\n00:25.60 Doing it all night, all summer\n00:27.90 Gonna spend it like no other\n\n# That Crush\n00:31.00 It was a crush\n00:33.10 But I couldn't, couldn't get enough\n00:35.60 It was a rush\n00:37.90 But I gave it up\n00:40.50 It was a crush\n00:42.60 Now I might not want to say too much\n00:45.30 But that's all it was\n00:47.60 So I gave it up\n\n# Dancing Till Dawn\n00:49.90 I live my day as if it was the last\n00:52.60 Live my day as if there was no past\n00:55.30 Doing it all night, all summer\n00:57.60 Doing it the way I wanna\n00:59.60 Yeah, I'm gonna dance my heart out\n01:01.45 till the dawn\n01:02.30 But I won't be done when morning comes\n01:04.60 Doing it all night, all summer\n01:06.90 Gonna spend it like no other\n\n# Gave It Up\n01:10.00 It was a crush\n01:12.10 I kept saying I'm gonna stay in touch\n01:14.60 But that thing went bust\n01:16.60 So I gave it up\n01:19.50 No tricks, no bluff\n01:21.60 I'm just better off without them cuffs\n01:24.30 Yeah, the sun won't set on us\n\n# Back in the Groove\n01:30.00 Went low, went high\n01:32.90 Still water runs dry\n01:35.30 Got to get back in the groove\n01:37.60 I ain't in a hurry\n01:40.00 Went low, went high\n01:42.90 What matters is now\n01:44.90 Getting right back in the mood\n\n# All Night, All Summer\n01:49.00 I live my day as if it was the last\n01:51.60 Live my day as if there was no past\n01:54.30 Doing it all night, all summer\n01:56.60 Doing it the way I wanna\n01:58.60 Yeah, I'm gonna dance my heart out\n02:00.45 till the dawn\n02:01.30 But I won't be done when morning comes\n02:03.60 Doing it all night, all summer\n02:05.90 Gonna spend it like no other\n\n# Another Crush\n02:09.00 Now I found another crush\n02:11.10 And it's like giving me a rush\n02:13.30 Had one chance to make me blush\n02:15.60 Second time is once too much\n02:18.10 Now I found another crush\n02:20.30 And it's like giving me a rush\n02:22.60 Had one chance to make me blush\n02:24.90 Second time is once too much\n\n# Till the Dawn\n02:37.50 I live my day as if it was the last\n02:40.10 Live my day as if there was no past\n02:42.90 Doing it all night, all summer\n02:45.30 Doing it the way I wanna\n02:47.30 Yeah, I'm gonna dance my heart out\n02:49.15 till the dawn\n02:50.10 But I won't be done when morning comes\n02:52.60 Doing it all night, all summer\n02:54.90 Gonna spend it like no other\n\n# Second Time\n02:57.60 Now I found another crush\n02:59.90 And it's like giving me a rush\n03:02.10 Had one chance to make me blush\n03:04.30 Second time is once too much\n03:06.90 Now I found another crush\n03:09.10 And it's like giving me a rush\n03:11.30 Had one chance to make me blush\n03:13.60 Second time is once too much"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-27 12:37:14 UTC",
   "updated_at": "2026-06-27 12:42:41 UTC",

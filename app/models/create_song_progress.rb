@@ -1,4 +1,8 @@
 class CreateSongProgress < ApplicationRecord
+  # Raised when a record or export file still uses the pre-multilanguage data
+  # format (see CreateSongProgress::DataFormat).
+  class LegacyFormatError < StandardError; end
+
   validates :youtubeurl, presence: true
   validates :clip_language, presence: true
 
@@ -42,22 +46,16 @@ class CreateSongProgress < ApplicationRecord
     language = resolve_translation_language(language)
     raise ArgumentError, "unknown translation language" unless language
 
+    assert_current_data_format!
+    # Stamp before translate writes inline text_l2: an interrupted run must
+    # not leave a blob that shape-classifies as legacy on retry.
+    data["format_version"] = DataFormat::VERSION
+
     @target_translation_language = language
     translate
     add_token_translation
 
-    data["translations"] ||= {}
-    data["translations"][language.iso_name] = {
-      "language_id" => language.id,
-      "language_name" => language.english_name,
-      "phrases" => data["phrases"].map do |phrase|
-        {
-          "text" => phrase.delete("text_l2"),
-          "words" => Array(phrase["words"]).map { |word| word.delete("translation") }
-        }
-      end,
-      "lessons" => data["lessons"]
-    }
+    DataFormat.pack_translation(data, language)
     save!
 
     Course.where(create_song_progress_id: id).find_each do |course|
@@ -80,6 +78,31 @@ class CreateSongProgress < ApplicationRecord
 
   def translation_language
     @target_translation_language&.english_name || super
+  end
+
+  def data_format_version = DataFormat.version(data)
+
+  def current_data_format? = DataFormat.current?(data)
+
+  def assert_current_data_format!
+    return if current_data_format?
+
+    raise LegacyFormatError,
+          "CreateSongProgress #{id || youtubeurl} data is in the legacy single-language format; " \
+          "convert it with rake create_song_progress:convert_records (or convert_files for JSON exports)"
+  end
+
+  # Upgrade a legacy blob in place: the inline text_l2 / word translations are
+  # the translation_language's, so move them into that language's payload.
+  def upgrade_data_format!
+    return self if current_data_format?
+
+    language = resolve_translation_language(translation_language)
+    raise LegacyFormatError, "cannot upgrade #{youtubeurl}: unknown translation language #{translation_language.inspect}" unless language
+
+    DataFormat.pack_translation(data, language)
+    save!
+    self
   end
 
   def ready?

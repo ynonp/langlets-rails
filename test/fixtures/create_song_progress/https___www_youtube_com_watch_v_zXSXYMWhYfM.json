@@ -9,118 +9,176 @@
         "id": "phrase_1",
         "text_l1": "وحيد في دربٍ للعدم",
         "timestamp": "00:35.80",
-        "timestamp_end": "00:43.50",
-        "text_l2": "Alone on a path to nothingness"
+        "timestamp_end": "00:43.50"
       },
       {
         "id": "phrase_2",
         "text_l1": "وحيد في طريقٍ بلا أحد",
         "timestamp": "00:44.50",
-        "timestamp_end": "00:52.50",
-        "text_l2": "Alone on a road with no one"
+        "timestamp_end": "00:52.50"
       },
       {
         "id": "phrase_3",
         "text_l1": "وحيد مع زمانٍ هاربٍ",
         "timestamp": "00:53.20",
-        "timestamp_end": "00:59.50",
-        "text_l2": "Alone with fleeting time"
+        "timestamp_end": "00:59.50"
       },
       {
         "id": "phrase_4",
         "text_l1": "مع زمانٍ لا ينسى",
         "timestamp": "00:59.80",
-        "timestamp_end": "01:03.50",
-        "text_l2": "With time that does not forget"
+        "timestamp_end": "01:03.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "أن يقيم الحدود",
         "timestamp": "01:03.60",
-        "timestamp_end": "01:09.50",
-        "text_l2": "To set its boundaries"
+        "timestamp_end": "01:09.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "وحيد أمشي لا دعاء عندي",
         "timestamp": "01:10.00",
-        "timestamp_end": "01:18.50",
-        "text_l2": "Alone I walk, I have no prayer"
+        "timestamp_end": "01:18.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "وحيد لا رجاء لا غد لا حلم",
         "timestamp": "01:18.80",
-        "timestamp_end": "01:26.50",
-        "text_l2": "Alone, no hope, no tomorrow, no dream"
+        "timestamp_end": "01:26.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "وحيد أمشي لا دعاء عندي",
         "timestamp": "01:27.00",
-        "timestamp_end": "01:35.50",
-        "text_l2": "Alone I walk, I have no prayer"
+        "timestamp_end": "01:35.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "وحيد لا رجاء لا غد وأحلام",
         "timestamp": "01:35.80",
-        "timestamp_end": "01:44.00",
-        "text_l2": "Alone, no hope, no tomorrow, no dreams"
+        "timestamp_end": "01:44.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "وحيد لا يدٌ لي حانية",
         "timestamp": "02:00.50",
-        "timestamp_end": "02:08.50",
-        "text_l2": "Alone, no caring hand for me"
+        "timestamp_end": "02:08.50"
       },
       {
         "id": "phrase_11",
         "text_l1": "وحيد لا كتفٌ يا صديق",
         "timestamp": "02:09.00",
-        "timestamp_end": "02:17.50",
-        "text_l2": "Alone, no shoulder to lean on, my friend"
+        "timestamp_end": "02:17.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "وحيد كم جميلٌ أن أجهل",
         "timestamp": "02:18.00",
-        "timestamp_end": "02:24.50",
-        "text_l2": "Alone, how beautiful it is to not know"
+        "timestamp_end": "02:24.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "أن يدك اليوم تلمس",
         "timestamp": "02:24.80",
-        "timestamp_end": "02:28.50",
-        "text_l2": "That your hand today touches"
+        "timestamp_end": "02:28.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "يد شخصٍ غيري",
         "timestamp": "02:28.60",
-        "timestamp_end": "02:34.00",
-        "text_l2": "The hand of someone else"
+        "timestamp_end": "02:34.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "وحيد أمشي لا دعاء عندي",
         "timestamp": "02:34.50",
-        "timestamp_end": "02:43.50",
-        "text_l2": "Alone I walk, I have no prayer"
+        "timestamp_end": "02:43.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "وحيد لا رجاء لا غد لا حلم",
         "timestamp": "02:43.80",
-        "timestamp_end": "02:53.00",
-        "text_l2": "Alone, no hope, no tomorrow, no dream"
+        "timestamp_end": "02:53.00"
       }
     ],
     "phrases_with_token_translations": "[وحيد] في دربٍ للعدم => [Alone] on a path to nothingness\nوحيد [في] دربٍ للعدم => Alone [on] a path to nothingness\nوحيد في [دربٍ] للعدم => Alone on [a path] to nothingness\nوحيد في دربٍ [للعدم] => Alone on a path [to nothingness]\n\n[وحيد] في طريقٍ بلا أحد => [Alone] on a road with no one\nوحيد [في] طريقٍ بلا أحد => Alone [on] a road with no one\nوحيد في [طريقٍ] بلا أحد => Alone on [a road] with no one\nوحيد في طريقٍ [بلا أحد] => Alone on a road [with no one]\n\n[وحيد] مع زمانٍ هاربٍ => [Alone] with fleeting time\nوحيد [مع] زمانٍ هاربٍ => Alone [with] fleeting time\nوحيد مع [زمانٍ] هاربٍ => Alone with fleeting [time]\nوحيد مع زمانٍ [هاربٍ] => Alone with [fleeting] time\n\n[مع] زمانٍ لا ينسى => [With] time that does not forget\nمع [زمانٍ] لا ينسى => With [time] that does not forget\nمع زمانٍ [لا] ينسى => With time that does [not] forget\nمع زمانٍ لا [ينسى] => With time that does not [forget]\n\n[أن] يقيم الحدود => [To] set its boundaries\nأن [يقيم] الحدود => To [set] its boundaries\nأن يقيم [الحدود] => To set its [boundaries]\n\n[وحيد] أمشي لا دعاء عندي => [Alone] I walk, I have no prayer\nوحيد [أمشي] لا دعاء عندي => Alone [I walk], I have no prayer\nوحيد أمشي [لا] دعاء عندي => Alone I walk, I have [no] prayer\nوحيد أمشي لا [دعاء] عندي => Alone I walk, I have no [prayer]\nوحيد أمشي لا دعاء [عندي] => Alone I walk, [I have] no prayer\n\n[وحيد] لا رجاء لا غد لا حلم => [Alone], no hope, no tomorrow, no dream\nوحيد [لا رجاء] لا غد لا حلم => Alone, [no hope], no tomorrow, no dream\nوحيد لا رجاء [لا غد] لا حلم => Alone, no hope, [no tomorrow], no dream\nوحيد لا رجاء لا غد [لا حلم] => Alone, no hope, no tomorrow, [no dream]\n\n[وحيد] أمشي لا دعاء عندي => [Alone] I walk, I have no prayer\nوحيد [أمشي] لا دعاء عندي => Alone [I walk], I have no prayer\nوحيد أمشي [لا] دعاء عندي => Alone I walk, I have [no] prayer\nوحيد أمشي لا [دعاء] عندي => Alone I walk, I have no [prayer]\nوحيد أمشي لا دعاء [عندي] => Alone I walk, [I have] no prayer\n\n[وحيد] لا رجاء لا غد وأحلام => [Alone], no hope, no tomorrow, no dreams\nوحيد [لا رجاء] لا غد وأحلام => Alone, [no hope], no tomorrow, no dreams\nوحيد لا رجاء [لا غد] وأحلام => Alone, no hope, [no tomorrow], no dreams\nوحيد لا رجاء لا غد [وأحلام] => Alone, no hope, no tomorrow, [no dreams]\n\n[وحيد] لا يدٌ لي حانية => [Alone], no caring hand for me\nوحيد [لا] يدٌ لي حانية => Alone, [no] caring hand for me\nوحيد لا [يدٌ] لي حانية => Alone, no caring [hand] for me\nوحيد لا يدٌ [لي] حانية => Alone, no caring hand [for me]\nوحيد لا يدٌ لي [حانية] => Alone, no [caring] hand for me\n\n[وحيد] لا كتفٌ يا صديق => [Alone], no shoulder to lean on, my friend\nوحيد [لا كتفٌ] يا صديق => Alone, [no shoulder] to lean on, my friend\nوحيد لا كتفٌ [يا صديق] => Alone, no shoulder to lean on, [my friend]\n\n[وحيد] كم جميلٌ أن أجهل => [Alone], how beautiful it is to not know\nوحيد [كم جميلٌ] أن أجهل => Alone, [how beautiful] it is to not know\nوحيد كم جميلٌ [أن أجهل] => Alone, how beautiful it is [to not know]\n\n[أن] يدك اليوم تلمس => [That] your hand today touches\nأن [يدك] اليوم تلمس => That [your hand] today touches\nأن يدك [اليوم] تلمس => That your hand [today] touches\nأن يدك اليوم [تلمس] => That your hand today [touches]\n\n[يد] شخصٍ غيري => The [hand] of someone else\nيد [شخصٍ] غيري => The hand of [someone] else\nيد شخصٍ [غيري] => The hand of someone [else]\n\n[وحيد] أمشي لا دعاء عندي => [Alone] I walk, I have no prayer\nوحيد [أمشي] لا دعاء عندي => Alone [I walk], I have no prayer\nوحيد أمشي [لا دعاء] عندي => Alone I walk, I have [no prayer]\nوحيد أمشي لا دعاء [عندي] => Alone I walk, [I have] no prayer\n\n[وحيد] لا رجاء لا غد لا حلم => [Alone], no hope, no tomorrow, no dream\nوحيد [لا رجاء] لا غد لا حلم => Alone, [no hope], no tomorrow, no dream\nوحيد لا رجاء [لا غد] لا حلم => Alone, no hope, [no tomorrow], no dream\nوحيد لا رجاء لا غد [لا حلم] => Alone, no hope, no tomorrow, [no dream]",
     "lessons": "# وحيد في درب العدم\n00:35.80 وحيد في دربٍ للعدم\n00:44.50 وحيد في طريقٍ بلا أحد\n00:53.20 وحيد مع زمانٍ هاربٍ\n00:59.80 مع زمانٍ لا ينسى\n01:03.60 أن يقيم الحدود\n01:10.00 وحيد أمشي لا دعاء عندي\n01:18.80 وحيد لا رجاء لا غد لا حلم\n\n# وحيد بلا سند ولا حلم\n01:27.00 وحيد أمشي لا دعاء عندي\n01:35.80 وحيد لا رجاء لا غد وأحلام\n02:00.50 وحيد لا يدٌ لي حانية\n02:09.00 وحيد لا كتفٌ يا صديق\n02:18.00 وحيد كم جميلٌ أن أجهل\n02:24.80 أن يدك اليوم تلمس\n02:28.60 يد شخصٍ غيري\n02:34.50 وحيد أمشي لا دعاء عندي\n02:43.80 وحيد لا رجاء لا غد لا حلم",
-    "similar_sounds": "وحيد في [دربت] للعدم\nوحيد في طريقٍ بلا [أحب]\n[وحدي] مع زمانٍ هاربٍ\nمع زمانٍ لا [تنسى]\nأن يقيم [الحشود]\nوحيد أمشي لا دعاء [عند]\nوحيد لا [رجاءا] لا غد لا حلم\nوحيد أمشي لا دعاء [عني]\n[وحيدا] لا رجاء لا غد وأحلام\nوحيد لا [يدك] لي حانية\nوحيد لا [كتفي] يا صديق\nوحيد كم [جميلة] أن أجهل\nأن [يدي] اليوم تلمس\nيد [شخصا] غيري\n[وحيدا] أمشي لا دعاء عندي\nوحيد لا رجاء لا غد لا [ألم]"
+    "similar_sounds": "وحيد في [دربت] للعدم\nوحيد في طريقٍ بلا [أحب]\n[وحدي] مع زمانٍ هاربٍ\nمع زمانٍ لا [تنسى]\nأن يقيم [الحشود]\nوحيد أمشي لا دعاء [عند]\nوحيد لا [رجاءا] لا غد لا حلم\nوحيد أمشي لا دعاء [عني]\n[وحيدا] لا رجاء لا غد وأحلام\nوحيد لا [يدك] لي حانية\nوحيد لا [كتفي] يا صديق\nوحيد كم [جميلة] أن أجهل\nأن [يدي] اليوم تلمس\nيد [شخصا] غيري\n[وحيدا] أمشي لا دعاء عندي\nوحيد لا رجاء لا غد لا [ألم]",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Alone on a path to nothingness",
+            "words": []
+          },
+          {
+            "text": "Alone on a road with no one",
+            "words": []
+          },
+          {
+            "text": "Alone with fleeting time",
+            "words": []
+          },
+          {
+            "text": "With time that does not forget",
+            "words": []
+          },
+          {
+            "text": "To set its boundaries",
+            "words": []
+          },
+          {
+            "text": "Alone I walk, I have no prayer",
+            "words": []
+          },
+          {
+            "text": "Alone, no hope, no tomorrow, no dream",
+            "words": []
+          },
+          {
+            "text": "Alone I walk, I have no prayer",
+            "words": []
+          },
+          {
+            "text": "Alone, no hope, no tomorrow, no dreams",
+            "words": []
+          },
+          {
+            "text": "Alone, no caring hand for me",
+            "words": []
+          },
+          {
+            "text": "Alone, no shoulder to lean on, my friend",
+            "words": []
+          },
+          {
+            "text": "Alone, how beautiful it is to not know",
+            "words": []
+          },
+          {
+            "text": "That your hand today touches",
+            "words": []
+          },
+          {
+            "text": "The hand of someone else",
+            "words": []
+          },
+          {
+            "text": "Alone I walk, I have no prayer",
+            "words": []
+          },
+          {
+            "text": "Alone, no hope, no tomorrow, no dream",
+            "words": []
+          }
+        ],
+        "lessons": "# وحيد في درب العدم\n00:35.80 وحيد في دربٍ للعدم\n00:44.50 وحيد في طريقٍ بلا أحد\n00:53.20 وحيد مع زمانٍ هاربٍ\n00:59.80 مع زمانٍ لا ينسى\n01:03.60 أن يقيم الحدود\n01:10.00 وحيد أمشي لا دعاء عندي\n01:18.80 وحيد لا رجاء لا غد لا حلم\n\n# وحيد بلا سند ولا حلم\n01:27.00 وحيد أمشي لا دعاء عندي\n01:35.80 وحيد لا رجاء لا غد وأحلام\n02:00.50 وحيد لا يدٌ لي حانية\n02:09.00 وحيد لا كتفٌ يا صديق\n02:18.00 وحيد كم جميلٌ أن أجهل\n02:24.80 أن يدك اليوم تلمس\n02:28.60 يد شخصٍ غيري\n02:34.50 وحيد أمشي لا دعاء عندي\n02:43.80 وحيد لا رجاء لا غد لا حلم"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-06-13 06:32:18 UTC",
   "updated_at": "2026-06-13 06:36:27 UTC",

@@ -9,360 +9,547 @@
       {
         "id": "phrase_1",
         "text_l1": "Bref.",
-        "text_l2": "Anyway.",
         "timestamp": "00:07.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "J'avais repéré cette fille à la soirée de Maud.",
-        "text_l2": "I'd spotted this girl at Maud's party.",
         "timestamp": "00:07.80"
       },
       {
         "id": "phrase_3",
         "text_l1": "Alors j'ai demandé à Maud si elle avait un copain.",
-        "text_l2": "So I asked Maud if she had a boyfriend.",
         "timestamp": "00:09.20"
       },
       {
         "id": "phrase_4",
         "text_l1": "Elle m'a dit : \"Je sais pas.\"",
-        "text_l2": "She told me: \"I don't know.\"",
         "timestamp": "00:10.50"
       },
       {
         "id": "phrase_5",
         "text_l1": "J'ai demandé à Kheiron, il m'a dit : \"Je sais pas.\"",
-        "text_l2": "I asked Kheiron, he told me: \"I don't know.\"",
         "timestamp": "00:11.50"
       },
       {
         "id": "phrase_6",
         "text_l1": "J'ai demandé à Baptiste, il m'a dit : \"J'entends pas !\"",
-        "text_l2": "I asked Baptiste, he told me: \"I can't hear!\"",
         "timestamp": "00:12.50"
       },
       {
         "id": "phrase_7",
         "text_l1": "J'ai demandé à Christine, elle m'a dit...",
-        "text_l2": "I asked Christine, she told me...",
         "timestamp": "00:14.50"
       },
       {
         "id": "phrase_8",
         "text_l1": "J'ai pris ça pour un non. Alors j'y suis allé.",
-        "text_l2": "I took that as a no. So I went for it.",
         "timestamp": "00:16.50"
       },
       {
         "id": "phrase_9",
         "text_l1": "Je lui ai fait une blague, elle a rigolé.",
-        "text_l2": "I made a joke, she laughed.",
         "timestamp": "00:18.50"
       },
       {
         "id": "phrase_10",
         "text_l1": "Je lui en ai fait une deuxième, elle a pas rigolé.",
-        "text_l2": "I made a second one, she didn't laugh.",
         "timestamp": "00:19.80"
       },
       {
         "id": "phrase_11",
         "text_l1": "Mais elle avait pas compris.",
-        "text_l2": "But she hadn't gotten it.",
         "timestamp": "00:21.50"
       },
       {
         "id": "phrase_12",
         "text_l1": "\"J'avais pas compris.\"",
-        "text_l2": "\"I didn't get it.\"",
         "timestamp": "00:22.50"
       },
       {
         "id": "phrase_13",
         "text_l1": "Alors ça va. Un mec est arrivé.",
-        "text_l2": "So it's fine. A guy showed up.",
         "timestamp": "00:23.50"
       },
       {
         "id": "phrase_14",
         "text_l1": "\"Je m'appelle Steve.\"",
-        "text_l2": "\"My name's Steve.\"",
         "timestamp": "00:24.50"
       },
       {
         "id": "phrase_15",
         "text_l1": "J'ai cru que c'était son mec, alors je suis parti.",
-        "text_l2": "I thought he was her boyfriend, so I left.",
         "timestamp": "00:25.50"
       },
       {
         "id": "phrase_16",
         "text_l1": "En fait, c'était son pote relou.",
-        "text_l2": "Actually, he was her annoying friend.",
         "timestamp": "00:27.50"
       },
       {
         "id": "phrase_17",
         "text_l1": "\"Allez j'y vais, je vais m'éclater ! On diams !\"",
-        "text_l2": "\"Alright I'm off, gonna have a blast! Catch you later!\"",
         "timestamp": "00:28.50"
       },
       {
         "id": "phrase_18",
         "text_l1": "Je suis revenu.",
-        "text_l2": "I came back.",
         "timestamp": "00:31.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "Elle avait un pop-corn sucré sur l'épaule.",
-        "text_l2": "She had sweet popcorn on her shoulder.",
         "timestamp": "00:32.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "J'ai fait comme si je l'avais pas vu,",
-        "text_l2": "I pretended I hadn't seen it,",
         "timestamp": "00:33.50"
       },
       {
         "id": "phrase_21",
         "text_l1": "mais je me suis demandé comment il était arrivé là.",
-        "text_l2": "but I wondered how it got there.",
         "timestamp": "00:34.50"
       },
       {
         "id": "phrase_22",
         "text_l1": "Et je lui ai demandé : \"Tu fais quoi dans la vie ?\"",
-        "text_l2": "And I asked her: \"What do you do for a living?\"",
         "timestamp": "00:36.50"
       },
       {
         "id": "phrase_23",
         "text_l1": "\"Je suis caissière.\"",
-        "text_l2": "\"I'm a cashier.\"",
         "timestamp": "00:37.50"
       },
       {
         "id": "phrase_24",
         "text_l1": "C'était pas intéressant.",
-        "text_l2": "That wasn't interesting.",
         "timestamp": "00:38.50"
       },
       {
         "id": "phrase_25",
         "text_l1": "\"Dans un sex-shop.\"",
-        "text_l2": "\"At a sex shop.\"",
         "timestamp": "00:39.50"
       },
       {
         "id": "phrase_26",
         "text_l1": "C'était intéressant.",
-        "text_l2": "That was interesting.",
         "timestamp": "00:40.50"
       },
       {
         "id": "phrase_27",
         "text_l1": "\"Du coup, j'ai plein d'échantillons.\"",
-        "text_l2": "\"So, I have lots of samples.\"",
         "timestamp": "00:41.50"
       },
       {
         "id": "phrase_28",
         "text_l1": "C'était très intéressant.",
-        "text_l2": "That was very interesting.",
         "timestamp": "00:42.50"
       },
       {
         "id": "phrase_29",
         "text_l1": "\"C'est vachement bien ça !\"",
-        "text_l2": "\"That's really cool!\"",
         "timestamp": "00:43.50"
       },
       {
         "id": "phrase_30",
         "text_l1": "J'ai reçu un texto avec écrit : \"BAISE-LAAAAAAA !\"",
-        "text_l2": "I got a text that said: \"FUCK HERAAAAAAAA!\"",
         "timestamp": "00:44.50"
       },
       {
         "id": "phrase_31",
         "text_l1": "avec huit A, très exactement.",
-        "text_l2": "with eight As, exactly.",
         "timestamp": "00:45.50"
       },
       {
         "id": "phrase_32",
         "text_l1": "C'était Kheiron sur le canapé qui nous matait depuis tout à l'heure.",
-        "text_l2": "It was Kheiron on the couch who'd been staring at us this whole time.",
         "timestamp": "00:46.50"
       },
       {
         "id": "phrase_33",
         "text_l1": "Elle m'a demandé : \"Pourquoi tu souris ?\"",
-        "text_l2": "She asked me: \"Why are you smiling?\"",
         "timestamp": "00:49.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "J'ai bafouillé : \"Euh non, euh...\"",
-        "text_l2": "I stammered: \"Uh no, uh...\"",
         "timestamp": "00:50.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "Je lui ai dit que ma mère était malade.",
-        "text_l2": "I told her my mom was sick.",
         "timestamp": "00:51.50"
       },
       {
         "id": "phrase_36",
         "text_l1": "\"Quoi ?\"",
-        "text_l2": "\"What?\"",
         "timestamp": "00:52.50"
       },
       {
         "id": "phrase_37",
         "text_l1": "\"Mais qu'elle allait mieux.\"",
-        "text_l2": "\"But she's getting better.\"",
         "timestamp": "00:53.50"
       },
       {
         "id": "phrase_38",
         "text_l1": "\"Ah !\"",
-        "text_l2": "\"Oh!\"",
         "timestamp": "00:54.50"
       },
       {
         "id": "phrase_39",
         "text_l1": "En y réfléchissant, j'ai compris comment le pop-corn sucré",
-        "text_l2": "Thinking about it, I understood how the sweet popcorn",
         "timestamp": "00:55.50"
       },
       {
         "id": "phrase_40",
         "text_l1": "était arrivé là.",
-        "text_l2": "had gotten there.",
         "timestamp": "00:58.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "Elle m'a dit : \"Je vais fumer.\"",
-        "text_l2": "She told me: \"I'm going to smoke.\"",
         "timestamp": "01:00.50"
       },
       {
         "id": "phrase_42",
         "text_l1": "Je supporte pas la cigarette.",
-        "text_l2": "I can't stand cigarettes.",
         "timestamp": "01:01.50"
       },
       {
         "id": "phrase_43",
         "text_l1": "\"Tu viens ?\"",
-        "text_l2": "\"You coming?\"",
         "timestamp": "01:02.50"
       },
       {
         "id": "phrase_44",
         "text_l1": "Mais je supporte pas la solitude.",
-        "text_l2": "But I can't stand being alone.",
         "timestamp": "01:03.50"
       },
       {
         "id": "phrase_45",
         "text_l1": "Elle m'a jeté un regard, ça m'a troublé.",
-        "text_l2": "She gave me a look, it threw me off.",
         "timestamp": "01:04.50"
       },
       {
         "id": "phrase_46",
         "text_l1": "Et puis Kheiron m'a fait un signe discret pour m'encourager.",
-        "text_l2": "And then Kheiron gave me a subtle sign to encourage me.",
         "timestamp": "01:07.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "Ça m'a encouragé.",
-        "text_l2": "That encouraged me.",
         "timestamp": "01:11.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "On a rediscuté.",
-        "text_l2": "We started talking again.",
         "timestamp": "01:12.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "Elle m'a soufflé une, deux, trois, quatre, cinq, six, sept fois",
-        "text_l2": "She blew one, two, three, four, five, six, seven times",
         "timestamp": "01:13.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "sa putain de fumée dans le visage.",
-        "text_l2": "her fucking smoke in my face.",
         "timestamp": "01:15.50"
       },
       {
         "id": "phrase_51",
         "text_l1": "Puis elle m'a demandé : \"Je peux prendre ton numéro ?\"",
-        "text_l2": "Then she asked me: \"Can I have your number?\"",
         "timestamp": "01:18.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "Yes !",
-        "text_l2": "Yes!",
         "timestamp": "01:19.50"
       },
       {
         "id": "phrase_53",
         "text_l1": "Je lui ai donné. Elle m'a dit :",
-        "text_l2": "I gave it to her. She told me:",
         "timestamp": "01:20.50"
       },
       {
         "id": "phrase_54",
         "text_l1": "\"Merci hein, c'est Steve qui va être content.\"",
-        "text_l2": "\"Thanks, huh, Steve's gonna be happy.\"",
         "timestamp": "01:21.50"
       },
       {
         "id": "phrase_55",
         "text_l1": "\"Il m'a tanné toute la soirée pour avoir ton numéro.\"",
-        "text_l2": "\"He bugged me all night to get your number.\"",
         "timestamp": "01:23.50"
       },
       {
         "id": "phrase_56",
         "text_l1": "Alors je lui ai répondu :",
-        "text_l2": "So I answered her:",
         "timestamp": "01:25.50"
       },
       {
         "id": "phrase_57",
         "text_l1": "\"Depuis tout à l'heure, t'as un pop-corn sucré sur l'épaule.\"",
-        "text_l2": "\"You've had sweet popcorn on your shoulder this whole time.\"",
         "timestamp": "01:26.50"
       },
       {
         "id": "phrase_58",
         "text_l1": "\"T'es laide.\"",
-        "text_l2": "\"You're ugly.\"",
         "timestamp": "01:29.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "Bref, j'ai dragué cette fille.",
-        "text_l2": "Anyway, I hit on this girl.",
         "timestamp": "01:30.00"
       }
     ],
     "similar_sounds": "[Bœuf].\nJ&#39;avais [réparé] cette fille à la soirée de Maud.\nAlors j&#39;ai demandé à Maud si elle [savait] un copain.\nElle m&#39;a dit : &quot;Je [fais] pas.&quot;\nJ&#39;ai demandé à Kheiron, il m&#39;a dit : &quot;Je [vais] pas.&quot;\nJ&#39;ai demandé à Baptiste, il m&#39;a dit : &quot;J&#39;[attends] pas !&quot;\nJ&#39;ai demandé à Christine, elle m&#39;a [ri]...\nJ&#39;ai pris ça pour un [nom]. Alors j&#39;y suis allé.\nJe lui ai fait une [claque], elle a rigolé.\nJe lui en ai fait une [douzième], elle a pas rigolé.\nMais elle [savait] pas compris.\n&quot;[J&#39;allais] pas compris.&quot;\nAlors ça va. Un [mets] est arrivé.\n&quot;Je m&#39;appelle [Style].&quot;\nJ&#39;ai cru que c&#39;était son [mets], alors je suis parti.\nEn fait, c&#39;était son [poste] relou.\n&quot;Allez j&#39;y vais, je vais [m&#39;écarter] ! On diams !&quot;\nJe suis [retenu].\nElle avait un pop-corn [sacré] sur l&#39;épaule.\nJ&#39;ai fait comme si je l&#39;avais pas [lu],\nmais je me suis [démonté] comment il était arrivé là.\nEt je lui ai demandé : &quot;Tu [sais] quoi dans la vie ?&quot;\n&quot;Je suis [cassée].&quot;\nC&#39;était pas [incessant].\n&quot;Dans un [sept]-shop.&quot;\nC&#39;était [incessant].\n&quot;Du [goût], j&#39;ai plein d&#39;échantillons.&quot;\nC&#39;était très [incessant].\n&quot;C&#39;est vachement [rien] ça !&quot;\nJ&#39;ai reçu un [textile] avec écrit : &quot;BAISE-LAAAAAAA !&quot;\navec [nuit] A, très exactement.\nC&#39;était Kheiron sur le canapé qui nous [mettait] depuis tout à l&#39;heure.\nElle m&#39;a demandé : &quot;Pourquoi tu [pourris] ?&quot;\nJ&#39;ai bafouillé : &quot;Euh [nom], euh...&quot;\nJe lui ai dit que ma [mer] était malade.\n&quot;[Toi] ?&quot;\n&quot;Mais qu&#39;elle [avait] mieux.&quot;\n&quot;[À] !&quot;\nEn y réfléchissant, j&#39;ai compris comment le pop-corn [sacré]\nétait [arrimé] là.\nElle m&#39;a dit : &quot;Je vais [fermer].&quot;\nJe supporte pas la [sécurité].\n&quot;Tu [tiens] ?&quot;\nMais je [transporte] pas la solitude.\nElle m&#39;a jeté un [retard], ça m&#39;a troublé.\nEt puis Kheiron m&#39;a fait un [cygne] discret pour m&#39;encourager.\nÇa m&#39;a [encombré].\nOn a [redouté].\nElle m&#39;a soufflé une, deux, trois, quatre, cinq, six, [cette] fois\nsa putain de [fourmi] dans le visage.\nPuis elle m&#39;a demandé : &quot;Je peux [rendre] ton numéro ?&quot;\n[Laisse] !\nJe lui ai [dîné]. Elle m&#39;a dit :\n&quot;Merci hein, c&#39;est [Style] qui va être content.&quot;\n&quot;Il m&#39;a [damné] toute la soirée pour avoir ton numéro.&quot;\nAlors je lui ai [répandu] :\n&quot;Depuis tout à l&#39;heure, t&#39;as un pop-corn [sacré] sur l&#39;épaule.&quot;\n&quot;T&#39;es [l'aide].&quot;\n[Bœuf], j&#39;ai dragué cette fille.",
-    "phrases_with_token_translations": "[Bref]. => [Anyway].\n\n[J'avais repéré] cette fille à la soirée de Maud. => [I'd spotted] this girl at Maud's party.\nJ'avais repéré [cette] fille à la soirée de Maud. => I'd spotted [this] girl at Maud's party.\nJ'avais repéré cette [fille] à la soirée de Maud. => I'd spotted this [girl] at Maud's party.\nJ'avais repéré cette fille [à] la soirée de Maud. => I'd spotted this girl [at] Maud's party.\nJ'avais repéré cette fille à [la soirée] de Maud. => I'd spotted this girl at Maud's [party]\nJ'avais repéré cette fille à la soirée [de Maud] => I'd spotted this girl at [Maud's] party.\n\n[Alors] j'ai demandé à Maud si elle avait un copain. => [So] I asked Maud if she had a boyfriend.\nAlors [j']ai demandé à Maud si elle avait un copain. => So [I] asked Maud if she had a boyfriend.\nAlors j'[ai demandé] à Maud si elle avait un copain. => So I [asked] Maud if she had a boyfriend.\nAlors j'ai demandé [à Maud] si elle avait un copain. => So I asked [Maud] if she had a boyfriend.\nAlors j'ai demandé à Maud [si] elle avait un copain. => So I asked Maud [if] she had a boyfriend.\nAlors j'ai demandé à Maud si [elle] avait un copain. => So I asked Maud if [she] had a boyfriend.\nAlors j'ai demandé à Maud si elle [avait] un copain. => So I asked Maud if she [had] a boyfriend.\nAlors j'ai demandé à Maud si elle avait [un] copain. => So I asked Maud if she had [a] boyfriend.\nAlors j'ai demandé à Maud si elle avait un [copain]. => So I asked Maud if she had a [boyfriend].\n\n[Elle] m'a dit : \"Je sais pas.\" => [She] told me: \"I don't know.\"\nElle [m']a dit : \"Je sais pas.\" => She told [me]: \"I don't know.\"\nElle m'[a dit] : \"Je sais pas.\" => She [told] me: \"I don't know.\"\nElle m'a dit : \"[Je] sais pas.\" => She told me: \"[I] don't know.\"\nElle m'a dit : \"Je [sais pas].\" => She told me: \"I [don't know].\" # 'pas' is the negation which corresponds to 'don't' in this context\n\n[J']ai demandé à Kheiron, il m'a dit : \"Je sais pas.\" => [I] asked Kheiron, he told me: \"I don't know.\"\nJ'[ai demandé] à Kheiron, il m'a dit : \"Je sais pas.\" => I [asked] Kheiron, he told me: \"I don't know.\"\nJ'ai demandé à [Kheiron], il m'a dit : \"Je sais pas.\" => I asked [Kheiron], he told me: \"I don't know.\"\nJ'ai demandé à Kheiron, [il] m'a dit : \"Je sais pas.\" => I asked Kheiron, [he] told me: \"I don't know.\"\nJ'ai demandé à Kheiron, il [m']a dit : \"Je sais pas.\" => I asked Kheiron, he told [me]: \"I don't know.\"\nJ'ai demandé à Kheiron, il m'[a dit] : \"Je sais pas.\" => I asked Kheiron, he [told] me: \"I don't know.\"\nJ'ai demandé à Kheiron, il m'a dit : \"[Je] sais pas.\" => I asked Kheiron, he told me: \"[I] don't know.\"\nJ'ai demandé à Kheiron, il m'a dit : \"Je [sais pas].\" => I asked Kheiron, he told me: \"I [don't know].\" # \"sais pas\" (negated verb) corresponds to \"don't know\" (negated verb) because the \"ne\" is omitted in spoken French.\n\nJ'[ai demandé] à Baptiste, il m'a dit : \"J'entends pas !\" => I [asked] Baptiste, he told me: \"I can't hear!\" # the past participle and auxiliary together form the simple past \"asked\"\nJ'ai demandé à [Baptiste], il m'a dit : \"J'entends pas !\" => I asked [Baptiste], he told me: \"I can't hear!\"\nJ'ai demandé à Baptiste, [il] m'a dit : \"J'entends pas !\" => I asked Baptiste, [he] told me: \"I can't hear!\"\nJ'ai demandé à Baptiste, il [m'] a dit : \"J'entends pas !\" => I asked Baptiste, he told [me]: \"I can't hear!\"\nJ'ai demandé à Baptiste, il m'[a dit] : \"J'entends pas !\" => I asked Baptiste, he [told] me: \"I can't hear!\"\nJ'ai demandé à Baptiste, il m'a dit : \"[J'] entends pas !\" => I asked Baptiste, he told me: \"[I] can't hear!\"\nJ'ai demandé à Baptiste, il m'a dit : \"J'[entends] pas !\" => I asked Baptiste, he told me: \"I can't [hear]!\"\nJ'ai demandé à Baptiste, il m'a dit : \"J'entends [pas] !\" => I asked Baptiste, he told me: \"I [can't] hear!\" # \"pas\" expresses the negation, which is localized as \"can't\" here\n\n[J']ai demandé à Christine, elle m'a dit... => [I] asked Christine, she told me...\nJ'[ai demandé] à Christine, elle m'a dit... => I [asked] Christine, she told me...\nJ'ai demandé à [Christine], elle m'a dit... => I asked [Christine], she told me...\nJ'ai demandé à Christine, [elle] m'a dit... => I asked Christine, [she] told me...\nJ'ai demandé à Christine, elle [m']a dit... => I asked Christine, she told [me]...\nJ'ai demandé à Christine, elle m'[a dit]... => I asked Christine, she [told] me... # passé composé translates to simple past \"told\" here\n\n[J']ai pris ça pour un non. Alors j'y suis allé. => [I] took that as a no. So I went for it.\nJ'[ai pris] ça pour un non. Alors j'y suis allé. => I [took] that as a no. So I went for it.\nJ'ai pris [ça] pour un non. Alors j'y suis allé. => I took [that] as a no. So I went for it.\nJ'ai pris ça [pour] un non. Alors j'y suis allé. => I took that [as] a no. So I went for it.\nJ'ai pris ça pour [un] non. Alors j'y suis allé. => I took that as [a] no. So I went for it.\nJ'ai pris ça pour un [non]. Alors j'y suis allé. => I took that as a [no]. So I went for it.\nJ'ai pris ça pour un non. [Alors] j'y suis allé. => I took that as a no. [So] I went for it.\nJ'ai pris ça pour un non. Alors [j']y suis allé. => I took that as a no. So [I] went for it.\nJ'ai pris ça pour un non. Alors j'[y] suis allé. => I took that as a no. So I went [for it].\nJ'ai pris ça pour un non. Alors j'y [suis allé]. => I took that as a no. So I [went] for it. # \"suis allé\" is the full verb form for \"went\"\n\n[Je] lui ai fait une blague, elle a rigolé. => [I] made a joke, she laughed.\nJe [lui] ai fait une blague, elle a rigolé. => to her, to him\nJe lui [ai fait] une blague, elle a rigolé. => I [made] a joke, she laughed.\nJe lui ai fait [une] blague, elle a rigolé. => I made [a] joke, she laughed.\nJe lui ai fait une [blague], elle a rigolé. => I made a [joke], she laughed.\nJe lui ai fait une blague, [elle] a rigolé. => I made a joke, [she] laughed.\nJe lui ai fait une blague, elle [a rigolé]. => I made a joke, she [laughed].\n\n[Je] lui en ai fait une deuxième, elle a pas rigolé. => [I] made a second one, she didn't laugh.\nJe [lui] en ai fait une deuxième, elle a pas rigolé. => to her, to him\nJe lui [en] ai fait une deuxième, elle a pas rigolé. => I made a second [one], she didn't laugh.\nJe lui en [ai fait] une deuxième, elle a pas rigolé. => I [made] a second one, she didn't laugh.\nJe lui en ai fait [une] deuxième, elle a pas rigolé. => I made [a] second one, she didn't laugh.\nJe lui en ai fait une [deuxième], elle a pas rigolé. => I made a [second] one, she didn't laugh.\nJe lui en ai fait une deuxième, [elle] a pas rigolé. => I made a second one, [she] didn't laugh.\nJe lui en ai fait une deuxième, elle a [pas] rigolé. => I made a second one, she [didn't] laugh.\nJe lui en ai fait une deuxième, elle [a] pas [rigolé]. => I made a second one, she didn't [laugh] # Passé composé corresponds to the simple past 'laugh' here due to 'didn't' steering the tense.\n\n[Mais] elle avait pas compris. => [But] she hadn't gotten it.\nMais [elle] avait pas compris. => But [she] hadn't gotten it.\nMais elle [avait pas] compris. => But she [hadn't] gotten it.\nMais elle avait pas [compris]. => But she hadn't [gotten it]. # \"compris\" (understood) corresponds to \"gotten it\" in the translation context\n\n[J']avais pas compris. => [I] didn't get it.\nJ'[avais pas] compris. => I [didn't] get it. # Negative auxiliary in French (plus-que-parfait) mapped to the English past negative\nJ'avais pas [compris]. => I didn't [get] it.\n\n[Alors] ça va. Un mec est arrivé. => [So] it's fine. A guy showed up.\nAlors [ça va]. Un mec est arrivé. => So [it's fine]. A guy showed up. # Fixed expression meaning it's okay/it's fine\nAlors ça va. [Un] mec est arrivé. => So it's fine. [A] guy showed up.\nAlors ça va. Un [mec] est arrivé. => So it's fine. A [guy] showed up.\nAlors ça va. Un mec [est arrivé]. => So it's fine. A guy [showed up]. # The passé composé is aligned with the simple past phrasal verb\n\n[Je m'appelle] Steve. => [My name's] Steve.\nJe m'appelle [Steve] => My name's [Steve]\n[Je] m'appelle Steve. => I\nJe [m'appelle] Steve. => call myself, am named # \"m'appelle\" comes from \"s'appeler\" (to be called)\n\nJ'[ai cru] que c'était son mec, alors je suis parti. => I [thought] he was her boyfriend, so I left.\nJ'ai cru que [c'était] son mec, alors je suis parti. => I thought [he was] her boyfriend, so I left.\nJ'ai cru que c'était [son] mec, alors je suis parti. => I thought he was [her] boyfriend, so I left.\nJ'ai cru que c'était son [mec], alors je suis parti. => I thought he was her [boyfriend], so I left.\nJ'ai cru que c'était son mec, [alors] je suis parti. => I thought he was her boyfriend, [so] I left.\nJ'ai cru que c'était son mec, alors [je] suis parti. => I thought he was her boyfriend, so [I] left.\nJ'ai cru que c'était son mec, alors je [suis parti]. => I thought he was her boyfriend, so I [left].\n\n[En fait], c'était son pote relou. => [Actually], he was her annoying friend.\nEn fait, [c'était] son pote relou. => Actually, [he was] her annoying friend.\nEn fait, c'était [son] pote relou. => Actually, he was [her] annoying friend.\nEn fait, c'était son [pote] relou. => Actually, he was her annoying [friend]\nEn fait, c'était son pote [relou]. => Actually, he was her [annoying] friend\n\n[Allez] j'y vais, je vais m'éclater ! On diams ! => [Alright] I'm off, gonna have a blast! Catch you later!\nAllez [j'y vais], je vais m'éclater ! On diams ! => Alright [I'm off], gonna have a blast! Catch you later!\nAllez j'y vais, [je vais] m'éclater ! On diams ! => Alright I'm off, [gonna] have a blast! Catch you later!\nAllez j'y vais, je vais [m'éclater] ! On diams ! => Alright I'm off, gonna [have a blast]! Catch you later!\nAllez j'y vais, je vais m'éclater ! [On diams] ! => Alright I'm off, gonna have a blast! [Catch you later]! # \"Diams\" is slang derived from \"on se dit à demain\" or simply a hip farewell.\n\n[Je] suis revenu. => [I] came back.\nJe [suis revenu]. => I [came back].\n\n[Elle] avait un pop-corn sucré sur l'épaule. => [She] had sweet popcorn on her shoulder.\nElle [avait] un pop-corn sucré sur l'épaule. => She [had] sweet popcorn on her shoulder.\nElle avait un [pop-corn] sucré sur l'épaule. => She had sweet [popcorn] on her shoulder.\nElle avait un pop-corn [sucré] sur l'épaule. => She had [sweet] popcorn on her shoulder.\nElle avait un pop-corn sucré [sur] l'épaule. => She had sweet popcorn [on] her shoulder.\nElle avait un pop-corn sucré sur [l'épaule] => She had sweet popcorn on [her shoulder] # French uses definite articles for body parts where English uses possessive adjectives\n\n[J'ai fait comme si] je l'avais pas vu, => [I pretended] I hadn't seen it, # \"J’ai fait comme si\" is an idiomatic chunk meaning \"I pretended\"\nJ'ai fait comme si [je] l'avais pas vu, => I pretended [I] hadn't seen it, # mapping the second subject\nJ'ai fait comme si je [l']avais pas vu, => I pretended I hadn't seen [it], # \"l'\" is the object pronoun, placed before the verb in French but after in English\nJ'ai fait comme si je l'[avais pas] vu, => I pretended I [hadn't] seen it, # mapping the negated auxiliary verb\nJ'ai fait comme si je l'avais pas [vu], => I pretended I hadn't [seen] it,\n\n[mais] je me suis demandé comment il était arrivé là. => [but] I wondered how it got there.\nmais [je] me suis demandé comment il était arrivé là. => but [I] wondered how it got there.\nmais je [me suis demandé] comment il était arrivé là. => but I [wondered] how it got there.\nmais je me suis demandé [comment] il était arrivé là. => but I wondered [how] it got there.\nmais je me suis demandé comment [il] était arrivé là. => but I wondered how [it] got there.\nmais je me suis demandé comment il [était arrivé] là. => but I wondered how it [got] there.\nmais je me suis demandé comment il était arrivé [là]. => but I wondered how it got [there].\n\n[Et] je lui ai demandé : \"Tu fais quoi dans la vie ?\" => [And] I asked her: \"What do you do for a living?\"\nEt [je] lui ai demandé : \"Tu fais quoi dans la vie ?\" => And [I] asked her: \"What do you do for a living?\"\nEt je [lui] ai demandé : \"Tu fais quoi dans la vie ?\" => And I asked [her]: \"What do you do for a living?\"\nEt je lui [ai demandé] : \"Tu fais quoi dans la vie ?\" => And I [asked] her: \"What do you do for a living?\"\nEt je lui ai demandé : \"[Tu] fais quoi dans la vie ?\" => And I asked her: \"What do [you] do for a living?\"\nEt je lui ai demandé : \"Tu [fais] quoi dans la vie ?\" => And I asked her: \"What do you [do] for a living?\"\nEt je lui ai demandé : \"Tu fais [quoi] dans la vie ?\" => And I asked her: \"[What] do you do for a living?\"\nEt je lui ai demandé : \"Tu fais quoi [dans la vie] ?\" => And I asked her: \"What do you do [for a living]?\"\n\n[Je suis] caissière. => [I'm] a cashier.\nJe suis [caissière]. => I'm a [cashier]. # French professional titles typically don't take an article after \"être\", so \"a\" is skipped on the French side.\n\n[C']était pas intéressant. => [That] wasn't interesting.\nC'[était] pas intéressant. => That [was]n't interesting.\nC'était [pas] intéressant. => That was[n't] interesting.\nC'était pas [intéressant]. => That wasn't [interesting].\n\n[Dans] un sex-shop. => [At] a sex shop.\nDans [un] sex-shop. => At [a] sex shop.\nDans un [sex-shop]. => At a [sex shop.]\n\n[C']était intéressant. => [That] was interesting.\nC'[était] intéressant. => That [was] interesting.\nC'était [intéressant]. => That was [interesting].\n\n[Du coup], j'ai plein d'échantillons. => [So], I have lots of samples.\nDu coup, [j']ai plein d'échantillons. => So, [I] have lots of samples.\nDu coup, j'[ai] plein d'échantillons. => So, I [have] lots of samples.\nDu coup, j'ai [plein d']échantillons. => So, I have [lots of] samples.\nDu coup, j'ai plein d'[échantillons]. => So, I have lots of [samples].\n\n[C']était très intéressant. => [That] was very interesting.\nC'[était] très intéressant. => That [was] very interesting.\nC'était [très] intéressant. => That was [very] interesting.\nC'était très [intéressant]. => That was very [interesting].\n\n[C'est] vachement bien ça ! => [That's] really cool!\nC'est [vachement] bien ça ! => That's [really] cool!\nC'est vachement [bien] ça ! => That's really [cool]!\nC'est vachement bien [ça] ! => that # often used to reinforce the subject \"ce\" at the end of a sentence\n\n[J']ai reçu un texto avec écrit : \"BAISE-LAAAAAAA !\" => [I] got a text that said: \"FUCK HERAAAAAAAA!\"\nJ'[ai reçu] un texto avec écrit : \"BAISE-LAAAAAAA !\" => I [got] a text that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu [un] texto avec écrit : \"BAISE-LAAAAAAA !\" => I got [a] text that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un [texto] avec écrit : \"BAISE-LAAAAAAA !\" => I got a [text] that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto [avec écrit] : \"BAISE-LAAAAAAA !\" => I got a text [that said]: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto avec écrit [:] \"BAISE-LAAAAAAA !\" => I got a text that said [:] \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto avec écrit : \"[BAISE]-LAAAAAAA !\" => I got a text that said: \"[FUCK] HERAAAAAAAA!\"\nJ'\n\n[avec] huit A, très exactement. => [with] eight As, exactly.\navec [huit] A, très exactement. => with [eight] As, exactly.\navec huit [A], très exactement. => with eight [As], exactly.\navec huit A, [très] exactement. => very\navec huit A, très [exactement]. => with eight As, [exactly]. # we can also group \"très exactement\" to \"exactly\", but separating them allows for the literal meaning to be taught via custom translation.\n\n[C'était] Kheiron sur le canapé qui nous matait depuis tout à l'heure. => [It was] Kheiron on the couch who'd been staring at us this whole time.\nC'était [Kheiron] sur le canapé qui nous matait depuis tout à l'heure. => It was [Kheiron] on the couch who'd been staring at us this whole time.\nC'était Kheiron [sur] le canapé qui nous matait depuis tout à l'heure. => It was Kheiron [on] the couch who'd been staring at us this whole time.\nC'était Kheiron sur [le] canapé qui nous matait depuis tout à l'heure. => It was Kheiron on [the] couch who'd been staring at us this whole time.\nC'était Kheiron sur le [canapé] qui nous matait depuis tout à l'heure. => It was Kheiron on the [couch] who'd been staring at us this whole time.\nC'était Kheiron sur le canapé [qui] nous matait depuis tout à l'heure. => It was Kheiron on the couch [who]'d been staring at us this whole time.\nC'était Kheiron sur le canapé qui [nous] matait depuis tout à l'heure. => It was Kheiron on the couch who'd been staring at [us] this whole time.\nC'était Kheiron sur le canapé qui nous [matait] depuis tout à l'heure. => had been staring, was watching\nC'était Kheiron sur le canapé qui nous matait [depuis tout à l'heure] => It was Kheiron on the couch who'd been staring at us [this whole time] # idiomatic expression for 'for a while now' or 'all this time'\n\n[Elle] m'a demandé : \"Pourquoi tu souris ?\" => [She] asked me: \"Why are you smiling?\"\nElle [m']a demandé : \"Pourquoi tu souris ?\" => She asked [me]: \"Why are you smiling?\"\nElle m'[a demandé] : \"Pourquoi tu souris ?\" => She [asked] me: \"Why are you smiling?\" # \"a demandé\" (passé composé) translates to the simple past \"asked\"\nElle m'a demandé : \"[Pourquoi] tu souris ?\" => She asked me: \"[Why] are you smiling?\"\nElle m'a demandé : \"Pourquoi [tu] souris ?\" => She asked me: \"Why are [you] smiling?\"\nElle m'a demandé : \"Pourquoi tu [souris] ?\" => She asked me: \"Why are you [smiling]?\" # the French present tense corresponds to the English present continuous here\n\nJ'[ai bafouillé] : \"Euh non, euh...\" => I [stammered]: \"Uh no, uh...\" # the French compound past (auxiliary + participle) maps to the English simple past\nJ'ai bafouillé : \"[Euh] non, euh...\" => I stammered: \"[Uh] no, uh...\"\nJ'ai bafouillé : \"Euh [non], euh...\" => I stammered: \"Uh [no], uh...\"\nJ'ai bafouillé : \"Euh non, [euh]...\" => I stammered: \"Uh no, [uh]...\"\n\n[Je] lui ai dit que ma mère était malade. => [I] told her my mom was sick.\nJe [lui] ai dit que ma mère était malade. => I told [her] my mom was sick.\nJe lui [ai dit] que ma mère était malade. => I [told] her my mom was sick.\nJe lui ai dit [que] ma mère était malade. => that\nJe lui ai dit que [ma] mère était malade. => I told her [my] mom was sick.\nJe lui ai dit que ma [mère] était malade. => I told her my [mom] was sick.\nJe lui ai dit que ma mère [était] malade. => I told her my mom [was] sick.\nJe lui ai dit que ma mère était [malade]. => I told her my mom was [sick].\n\n[Quoi] ? => [What] ?\n\n[Mais] qu'elle allait mieux. => [But] she's getting better.\nMais qu'[elle] allait mieux. => But [she]'s getting better.\nMais qu'elle [allait] mieux. => But she's [getting] better. # \"allait\" (was going) translates to \"getting\" in the context of \"aller mieux\"\nMais qu'elle allait [mieux]. => But she's getting [better].\n\n[Ah] ! => [Oh]!\n\n[En y réfléchissant], j'ai compris comment le pop-corn sucré => [Thinking about it], I understood how the sweet popcorn # \"En ... réfléchissant\" forms the gerund; \"y\" translates to \"about it\"\n[j']ai compris comment le pop-corn sucré => [I] understood how the sweet popcorn\nj'[ai compris] comment le pop-corn sucré => I [understood] how the sweet popcorn # maps the passé composé to the simple past\nj'ai compris [comment] le pop-corn sucré => I understood [how] the sweet popcorn\nj'ai compris comment [le] pop-corn sucré => I understood how [the] sweet popcorn\nj'ai compris comment le [pop-corn] sucré => I understood how the sweet [popcorn]\nj'ai compris comment le pop-corn [sucré] => I understood how the [sweet] popcorn\n\n[était] arrivé là. => [had] gotten there.\nétait [arrivé] là. => had [gotten] there.\nétait arrivé [là]. => had gotten [there].\n\n[Elle] m'a dit : \"Je vais fumer.\" => [She] told me: \"I'm going to smoke.\"\nElle [m']a dit : \"Je vais fumer.\" => She told [me]: \"I'm going to smoke.\"\nElle m'[a dit] : \"Je vais fumer.\" => She [told] me: \"I'm going to smoke.\" # the French passé composé here is best translated by the English simple past\nElle m'a dit : \"[Je] vais fumer.\" => She told me: \"[I]'m going to smoke.\"\nElle m'a dit : \"Je [vais] fumer.\" => She told me: \"I['m going] to smoke.\" # \"vais\" acts as the auxiliary for the near future \"am going\"\nElle m'a dit : \"Je vais [fumer].\" => She told me: \"I'm going [to smoke].\" # the French infinitive corresponds to the English \"to\" + verb pattern\n\n[Je] supporte pas la cigarette. => [I] can't stand cigarettes.\nJe [supporte] pas la cigarette. => I can't [stand] cigarettes.\nJe supporte [pas] la cigarette. => I [can't] stand cigarettes. # \"pas\" corresponds to the negation in \"can't\"\nJe supporte pas [la cigarette]. => I can't stand [cigarettes] # French uses \"la\" + singular for generalizations where English often uses the plural.\n\n[Tu] viens ? => [You] coming?\nTu [viens] ? => You [coming]?\n\n[Mais] je supporte pas la solitude. => [But] I can't stand being alone.\nMais [je] supporte pas la solitude. => But [I] can't stand being alone.\nMais je [supporte pas] la solitude. => But I [can't stand] being alone. # \"ne... pas\" is the standard negation, and \"can't stand\" is the idiomatic translation for \"ne pas supporter\"\nMais je supporte pas [la solitude] => But I can't stand [being alone] # \"solitude\" is a noun in French, mapped to the English phrase \"being alone\"\n\n[Elle] m'a jeté un regard, ça m'a troublé. => [She] gave me a look, it threw me off.\nElle [m']a jeté un regard, ça m'a troublé. => She gave [me] a look, it threw me off.\nElle m'[a jeté] un regard, ça m'a troublé. => She [gave] me a look, it threw me off.\nElle m'a jeté [un] regard, ça m'a troublé. => She gave me [a] look, it threw me off.\nElle m'a jeté un [regard], ça m'a troublé. => She gave me a [look], it threw me off.\nElle m'a jeté un regard, [ça] m'a troublé. => She gave me a look, [it] threw me off.\nElle m'a jeté un regard, ça [m']a troublé. => She gave me a look, it threw [me] off.\nElle m'a jeté un regard, ça m'[a troublé] => threw ... off, confused, unsettled # phrase is split in the English translation\n\n[Et] puis Kheiron m'a fait un signe discret pour m'encourager. => [And] then Kheiron gave me a subtle sign to encourage me.\nEt [puis] Kheiron m'a fait un signe discret pour m'encourager. => And [then] Kheiron gave me a subtle sign to encourage me.\nEt puis [Kheiron] m'a fait un signe discret pour m'encourager. => And then [Kheiron] gave me a subtle sign to encourage me.\nEt puis Kheiron [m']a fait un signe discret pour m'encourager. => And then Kheiron gave [me] a subtle sign to encourage me.\nEt puis Kheiron m'[a fait] un signe discret pour m'encourager. => And then Kheiron [gave] me a subtle sign to encourage me. # 'a fait' (passé composé) translates to 'gave' (simple past)\nEt puis Kheiron m'a fait [un] signe discret pour m'encourager. => And then Kheiron gave me [a] subtle sign to encourage me.\nEt puis Kheiron m'a fait un [signe] discret pour m'encourager. => And then Kheiron gave me a subtle [sign] to encourage me.\nEt puis Kheiron m'a fait un signe [discret] pour m'encourager. => And then Kheiron gave me a [subtle] sign to encourage me.\nEt puis Kheiron m'a fait un signe discret [pour] m'encourager. => And then Kheiron gave me a subtle sign [to] encourage me.\nEt puis Kheiron m'a fait un signe discret pour [m']encourager. => And then Kheiron gave me a subtle sign to encourage [me].\nEt puis Kheiron m'a fait un signe discret pour m'[encourager]. => And then Kheiron gave me a subtle sign to [encourage] me.\n\n[Ça] m'a encouragé. => [That] encouraged me.\nÇa [m']a encouragé. => That encouraged [me].\nÇa m'[a encouragé]. => That [encouraged] me.\n\n[On] a rediscuté. => [We] started talking again.\nOn [a rediscuté]. => We [started talking again]. # The passé composé here is used to indicate the resumption of an action.\n\n[Elle] m'a soufflé une, deux, trois, quatre, cinq, six, sept fois => [She] blew one, two, three, four, five, six, seven times\nElle m'[a soufflé] une, deux, trois, quatre, cinq, six, sept fois => She [blew] one, two, three, four, five, six, seven times\nElle m'a soufflé [une], deux, trois, quatre, cinq, six, sept fois => She blew [one], two, three, four, five, six, seven times\nElle m'a soufflé une, [deux], trois, quatre, cinq, six, sept fois => She blew one, [two], three, four, five, six, seven times\nElle m'a soufflé une, deux, [trois], quatre, cinq, six, sept fois => She blew one, two, [three], four, five, six, seven times\nElle m'a soufflé une, deux, trois, [quatre], cinq, six, sept fois => She blew one, two, three, [four], five, six, seven times\nElle m'a soufflé une, deux, trois, quatre, [cinq], six, sept fois => She blew one, two, three, four, [five], six, seven times\nElle m'a soufflé une, deux, trois, quatre, cinq, [six], sept fois => She blew one, two, three, four, five, [six], seven times\nElle m'a soufflé une, deux, trois, quatre, cinq, six, [sept] fois => She blew one, two, three, four, five, six, [seven] times\nElle m'a soufflé une, deux, trois, quatre, cinq, six, sept [fois] => She blew one, two, three, four, five, six, seven [times]\n\n[sa] putain de fumée dans le visage. => [her] fucking smoke in my face.\nsa [putain de] fumée dans le visage. => her [fucking] smoke in my face.\nsa putain de [fumée] dans le visage. => her fucking [smoke] in my face.\nsa putain de fumée [dans] le visage. => her fucking smoke [in] my face.\nsa putain de fumée dans [le] visage. => her fucking smoke in [my] face.\nsa putain de fumée dans le [visage]. => her fucking smoke in my [face].\n\n[Puis] elle m'a demandé : \"Je peux prendre ton numéro ?\" => [Then] she asked me: \"Can I have your number?\"\nPuis [elle] m'a demandé : \"Je peux prendre ton numéro ?\" => Then [she] asked me: \"Can I have your number?\"\nPuis elle [m']a demandé : \"Je peux prendre ton numéro ?\" => Then she asked [me]: \"Can I have your number?\"\nPuis elle m'[a demandé] : \"Je peux prendre ton numéro ?\" => Then she [asked] me: \"Can I have your number?\"\nPuis elle m'a demandé : \"[Je] peux prendre ton numéro ?\" => Then she asked me: \"Can [I] have your number?\"\nPuis elle m'a demandé : \"Je [peux] prendre ton numéro ?\" => Then she asked me: \"[Can] I have your number?\"\nPuis elle m'a demandé : \"Je peux [prendre] ton numéro ?\" => Then she asked me: \"Can I [have] your number?\"\nPuis elle m'a demandé : \"Je peux prendre [ton] numéro ?\" => Then she asked me: \"Can I have [your] number?\"\nPuis elle m'a demandé : \"Je peux prendre ton [numéro] ?\" => Then she asked me: \"Can I have your [number]?\"\n\n[Yes] ! => [Yes]!\n\n[Je] lui ai donné. Elle m'a dit : => [I] gave it to her. She told me:\nJe [lui] ai donné. Elle m'a dit : => I gave it [to her]. She told me:\nJe lui [ai donné] . Elle m'a dit : => I [gave] it to her. She told me:\nJe lui ai donné [.] Elle m'a dit : => I gave it to her [.] She told me:\nJe lui ai donné. [Elle] m'a dit : => I gave it to her. [She] told me:\nJe lui ai donné. Elle [m']a dit : => I gave it to her. She told [me]:\nJe lui ai donné. Elle m' [a dit] : => I gave it to her. She [told] me:\nJe lui ai donné. Elle m'a dit [:] => I gave it to her. She told me [:] # Punctuation alignment is helpful for consistency\n\n[Merci] hein, c'est Steve qui va être content. => [Thanks], huh, Steve's gonna be happy.\nMerci [hein], c'est Steve qui va être content. => Thanks, [huh], Steve's gonna be happy.\nMerci hein, [c'est] Steve qui va être content. => it is, it's\nMerci hein, c'est [Steve] qui va être content. => Thanks, huh, [Steve]'s gonna be happy.\nMerci hein, c'est Steve qui [va] être content. => Thanks, huh, Steve's [gonna] be happy.\nMerci hein, c'est Steve qui va [être] content. => Thanks, huh, Steve's gonna [be] happy.\nMerci hein, c'est Steve qui va être [content]. => Thanks, huh, Steve's gonna be [happy]\n\n[Il] m'a tanné toute la soirée pour avoir ton numéro. => [He] bugged me all night to get your number.\nIl [m']a tanné toute la soirée pour avoir ton numéro. => He bugged [me] all night to get your number.\nIl m'[a tanné] toute la soirée pour avoir ton numéro. => He [bugged] me all night to get your number. # \"tanner\" corresponds to \"to bug\" or \"to pester\"\nIl m'a tanné [toute] la soirée pour avoir ton numéro. => He bugged me [all] night to get your number.\nIl m'a tanné toute [la soirée] pour avoir ton numéro. => He bugged me all [night] to get your number.\nIl m'a tanné toute la soirée [pour] avoir ton numéro. => He bugged me all night [to] get your number.\nIl m'a tanné toute la soirée pour [avoir] ton numéro. => He bugged me all night to [get] your number.\nIl m'a tanné toute la soirée pour avoir [ton] numéro. => He bugged me all night to get [your] number.\nIl m'a tanné toute la soirée pour avoir ton [numéro]. => He bugged me all night to get your [number].\n\n[Alors] je lui ai répondu : => [So] I answered her:\nAlors [je] lui ai répondu : => So [I] answered her:\nAlors je [lui] ai répondu : => So I answered [her]:\nAlors je lui [ai répondu] : => So I [answered] her:\nAlors je lui ai répondu [:] => So I answered her [:]\n\n[Depuis tout à l'heure], t'as un pop-corn sucré sur l'épaule. => You've had sweet popcorn on your shoulder [this whole time].\nDepuis tout à l'heure, [t'as] un pop-corn sucré sur l'épaule. => [You've had] sweet popcorn on your shoulder this whole time.\nDepuis tout à l'heure, t'as un [pop-corn] sucré sur l'épaule. => You've had sweet [popcorn] on your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn [sucré] sur l'épaule. => You've had [sweet] popcorn on your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn sucré [sur] l'épaule. => You've had sweet popcorn [on] your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn sucré sur [l'épaule]. => You've had sweet popcorn on [your shoulder] this whole time. # in French body parts often use \"le/la\" where English uses a possessive pronoun\n\n[T'es] laide. => [You're] ugly.\nT'es [laide]. => You're [ugly].\n\n[Bref], j'ai dragué cette fille. => [Anyway], I hit on this girl.\nBref, [j']ai dragué cette fille. => Anyway, [I] hit on this girl.\nBref, j'[ai dragué] cette fille. => Anyway, I [hit on] this girl.\nBref, j'ai dragué [cette] fille. => Anyway, I hit on [this] girl.\nBref, j'ai dragué cette [fille]. => Anyway, I hit on this [girl].\n\n"
+    "phrases_with_token_translations": "[Bref]. => [Anyway].\n\n[J'avais repéré] cette fille à la soirée de Maud. => [I'd spotted] this girl at Maud's party.\nJ'avais repéré [cette] fille à la soirée de Maud. => I'd spotted [this] girl at Maud's party.\nJ'avais repéré cette [fille] à la soirée de Maud. => I'd spotted this [girl] at Maud's party.\nJ'avais repéré cette fille [à] la soirée de Maud. => I'd spotted this girl [at] Maud's party.\nJ'avais repéré cette fille à [la soirée] de Maud. => I'd spotted this girl at Maud's [party]\nJ'avais repéré cette fille à la soirée [de Maud] => I'd spotted this girl at [Maud's] party.\n\n[Alors] j'ai demandé à Maud si elle avait un copain. => [So] I asked Maud if she had a boyfriend.\nAlors [j']ai demandé à Maud si elle avait un copain. => So [I] asked Maud if she had a boyfriend.\nAlors j'[ai demandé] à Maud si elle avait un copain. => So I [asked] Maud if she had a boyfriend.\nAlors j'ai demandé [à Maud] si elle avait un copain. => So I asked [Maud] if she had a boyfriend.\nAlors j'ai demandé à Maud [si] elle avait un copain. => So I asked Maud [if] she had a boyfriend.\nAlors j'ai demandé à Maud si [elle] avait un copain. => So I asked Maud if [she] had a boyfriend.\nAlors j'ai demandé à Maud si elle [avait] un copain. => So I asked Maud if she [had] a boyfriend.\nAlors j'ai demandé à Maud si elle avait [un] copain. => So I asked Maud if she had [a] boyfriend.\nAlors j'ai demandé à Maud si elle avait un [copain]. => So I asked Maud if she had a [boyfriend].\n\n[Elle] m'a dit : \"Je sais pas.\" => [She] told me: \"I don't know.\"\nElle [m']a dit : \"Je sais pas.\" => She told [me]: \"I don't know.\"\nElle m'[a dit] : \"Je sais pas.\" => She [told] me: \"I don't know.\"\nElle m'a dit : \"[Je] sais pas.\" => She told me: \"[I] don't know.\"\nElle m'a dit : \"Je [sais pas].\" => She told me: \"I [don't know].\" # 'pas' is the negation which corresponds to 'don't' in this context\n\n[J']ai demandé à Kheiron, il m'a dit : \"Je sais pas.\" => [I] asked Kheiron, he told me: \"I don't know.\"\nJ'[ai demandé] à Kheiron, il m'a dit : \"Je sais pas.\" => I [asked] Kheiron, he told me: \"I don't know.\"\nJ'ai demandé à [Kheiron], il m'a dit : \"Je sais pas.\" => I asked [Kheiron], he told me: \"I don't know.\"\nJ'ai demandé à Kheiron, [il] m'a dit : \"Je sais pas.\" => I asked Kheiron, [he] told me: \"I don't know.\"\nJ'ai demandé à Kheiron, il [m']a dit : \"Je sais pas.\" => I asked Kheiron, he told [me]: \"I don't know.\"\nJ'ai demandé à Kheiron, il m'[a dit] : \"Je sais pas.\" => I asked Kheiron, he [told] me: \"I don't know.\"\nJ'ai demandé à Kheiron, il m'a dit : \"[Je] sais pas.\" => I asked Kheiron, he told me: \"[I] don't know.\"\nJ'ai demandé à Kheiron, il m'a dit : \"Je [sais pas].\" => I asked Kheiron, he told me: \"I [don't know].\" # \"sais pas\" (negated verb) corresponds to \"don't know\" (negated verb) because the \"ne\" is omitted in spoken French.\n\nJ'[ai demandé] à Baptiste, il m'a dit : \"J'entends pas !\" => I [asked] Baptiste, he told me: \"I can't hear!\" # the past participle and auxiliary together form the simple past \"asked\"\nJ'ai demandé à [Baptiste], il m'a dit : \"J'entends pas !\" => I asked [Baptiste], he told me: \"I can't hear!\"\nJ'ai demandé à Baptiste, [il] m'a dit : \"J'entends pas !\" => I asked Baptiste, [he] told me: \"I can't hear!\"\nJ'ai demandé à Baptiste, il [m'] a dit : \"J'entends pas !\" => I asked Baptiste, he told [me]: \"I can't hear!\"\nJ'ai demandé à Baptiste, il m'[a dit] : \"J'entends pas !\" => I asked Baptiste, he [told] me: \"I can't hear!\"\nJ'ai demandé à Baptiste, il m'a dit : \"[J'] entends pas !\" => I asked Baptiste, he told me: \"[I] can't hear!\"\nJ'ai demandé à Baptiste, il m'a dit : \"J'[entends] pas !\" => I asked Baptiste, he told me: \"I can't [hear]!\"\nJ'ai demandé à Baptiste, il m'a dit : \"J'entends [pas] !\" => I asked Baptiste, he told me: \"I [can't] hear!\" # \"pas\" expresses the negation, which is localized as \"can't\" here\n\n[J']ai demandé à Christine, elle m'a dit... => [I] asked Christine, she told me...\nJ'[ai demandé] à Christine, elle m'a dit... => I [asked] Christine, she told me...\nJ'ai demandé à [Christine], elle m'a dit... => I asked [Christine], she told me...\nJ'ai demandé à Christine, [elle] m'a dit... => I asked Christine, [she] told me...\nJ'ai demandé à Christine, elle [m']a dit... => I asked Christine, she told [me]...\nJ'ai demandé à Christine, elle m'[a dit]... => I asked Christine, she [told] me... # passé composé translates to simple past \"told\" here\n\n[J']ai pris ça pour un non. Alors j'y suis allé. => [I] took that as a no. So I went for it.\nJ'[ai pris] ça pour un non. Alors j'y suis allé. => I [took] that as a no. So I went for it.\nJ'ai pris [ça] pour un non. Alors j'y suis allé. => I took [that] as a no. So I went for it.\nJ'ai pris ça [pour] un non. Alors j'y suis allé. => I took that [as] a no. So I went for it.\nJ'ai pris ça pour [un] non. Alors j'y suis allé. => I took that as [a] no. So I went for it.\nJ'ai pris ça pour un [non]. Alors j'y suis allé. => I took that as a [no]. So I went for it.\nJ'ai pris ça pour un non. [Alors] j'y suis allé. => I took that as a no. [So] I went for it.\nJ'ai pris ça pour un non. Alors [j']y suis allé. => I took that as a no. So [I] went for it.\nJ'ai pris ça pour un non. Alors j'[y] suis allé. => I took that as a no. So I went [for it].\nJ'ai pris ça pour un non. Alors j'y [suis allé]. => I took that as a no. So I [went] for it. # \"suis allé\" is the full verb form for \"went\"\n\n[Je] lui ai fait une blague, elle a rigolé. => [I] made a joke, she laughed.\nJe [lui] ai fait une blague, elle a rigolé. => to her, to him\nJe lui [ai fait] une blague, elle a rigolé. => I [made] a joke, she laughed.\nJe lui ai fait [une] blague, elle a rigolé. => I made [a] joke, she laughed.\nJe lui ai fait une [blague], elle a rigolé. => I made a [joke], she laughed.\nJe lui ai fait une blague, [elle] a rigolé. => I made a joke, [she] laughed.\nJe lui ai fait une blague, elle [a rigolé]. => I made a joke, she [laughed].\n\n[Je] lui en ai fait une deuxième, elle a pas rigolé. => [I] made a second one, she didn't laugh.\nJe [lui] en ai fait une deuxième, elle a pas rigolé. => to her, to him\nJe lui [en] ai fait une deuxième, elle a pas rigolé. => I made a second [one], she didn't laugh.\nJe lui en [ai fait] une deuxième, elle a pas rigolé. => I [made] a second one, she didn't laugh.\nJe lui en ai fait [une] deuxième, elle a pas rigolé. => I made [a] second one, she didn't laugh.\nJe lui en ai fait une [deuxième], elle a pas rigolé. => I made a [second] one, she didn't laugh.\nJe lui en ai fait une deuxième, [elle] a pas rigolé. => I made a second one, [she] didn't laugh.\nJe lui en ai fait une deuxième, elle a [pas] rigolé. => I made a second one, she [didn't] laugh.\nJe lui en ai fait une deuxième, elle [a] pas [rigolé]. => I made a second one, she didn't [laugh] # Passé composé corresponds to the simple past 'laugh' here due to 'didn't' steering the tense.\n\n[Mais] elle avait pas compris. => [But] she hadn't gotten it.\nMais [elle] avait pas compris. => But [she] hadn't gotten it.\nMais elle [avait pas] compris. => But she [hadn't] gotten it.\nMais elle avait pas [compris]. => But she hadn't [gotten it]. # \"compris\" (understood) corresponds to \"gotten it\" in the translation context\n\n[J']avais pas compris. => [I] didn't get it.\nJ'[avais pas] compris. => I [didn't] get it. # Negative auxiliary in French (plus-que-parfait) mapped to the English past negative\nJ'avais pas [compris]. => I didn't [get] it.\n\n[Alors] ça va. Un mec est arrivé. => [So] it's fine. A guy showed up.\nAlors [ça va]. Un mec est arrivé. => So [it's fine]. A guy showed up. # Fixed expression meaning it's okay/it's fine\nAlors ça va. [Un] mec est arrivé. => So it's fine. [A] guy showed up.\nAlors ça va. Un [mec] est arrivé. => So it's fine. A [guy] showed up.\nAlors ça va. Un mec [est arrivé]. => So it's fine. A guy [showed up]. # The passé composé is aligned with the simple past phrasal verb\n\n[Je m'appelle] Steve. => [My name's] Steve.\nJe m'appelle [Steve] => My name's [Steve]\n[Je] m'appelle Steve. => I\nJe [m'appelle] Steve. => call myself, am named # \"m'appelle\" comes from \"s'appeler\" (to be called)\n\nJ'[ai cru] que c'était son mec, alors je suis parti. => I [thought] he was her boyfriend, so I left.\nJ'ai cru que [c'était] son mec, alors je suis parti. => I thought [he was] her boyfriend, so I left.\nJ'ai cru que c'était [son] mec, alors je suis parti. => I thought he was [her] boyfriend, so I left.\nJ'ai cru que c'était son [mec], alors je suis parti. => I thought he was her [boyfriend], so I left.\nJ'ai cru que c'était son mec, [alors] je suis parti. => I thought he was her boyfriend, [so] I left.\nJ'ai cru que c'était son mec, alors [je] suis parti. => I thought he was her boyfriend, so [I] left.\nJ'ai cru que c'était son mec, alors je [suis parti]. => I thought he was her boyfriend, so I [left].\n\n[En fait], c'était son pote relou. => [Actually], he was her annoying friend.\nEn fait, [c'était] son pote relou. => Actually, [he was] her annoying friend.\nEn fait, c'était [son] pote relou. => Actually, he was [her] annoying friend.\nEn fait, c'était son [pote] relou. => Actually, he was her annoying [friend]\nEn fait, c'était son pote [relou]. => Actually, he was her [annoying] friend\n\n[Allez] j'y vais, je vais m'éclater ! On diams ! => [Alright] I'm off, gonna have a blast! Catch you later!\nAllez [j'y vais], je vais m'éclater ! On diams ! => Alright [I'm off], gonna have a blast! Catch you later!\nAllez j'y vais, [je vais] m'éclater ! On diams ! => Alright I'm off, [gonna] have a blast! Catch you later!\nAllez j'y vais, je vais [m'éclater] ! On diams ! => Alright I'm off, gonna [have a blast]! Catch you later!\nAllez j'y vais, je vais m'éclater ! [On diams] ! => Alright I'm off, gonna have a blast! [Catch you later]! # \"Diams\" is slang derived from \"on se dit à demain\" or simply a hip farewell.\n\n[Je] suis revenu. => [I] came back.\nJe [suis revenu]. => I [came back].\n\n[Elle] avait un pop-corn sucré sur l'épaule. => [She] had sweet popcorn on her shoulder.\nElle [avait] un pop-corn sucré sur l'épaule. => She [had] sweet popcorn on her shoulder.\nElle avait un [pop-corn] sucré sur l'épaule. => She had sweet [popcorn] on her shoulder.\nElle avait un pop-corn [sucré] sur l'épaule. => She had [sweet] popcorn on her shoulder.\nElle avait un pop-corn sucré [sur] l'épaule. => She had sweet popcorn [on] her shoulder.\nElle avait un pop-corn sucré sur [l'épaule] => She had sweet popcorn on [her shoulder] # French uses definite articles for body parts where English uses possessive adjectives\n\n[J'ai fait comme si] je l'avais pas vu, => [I pretended] I hadn't seen it, # \"J’ai fait comme si\" is an idiomatic chunk meaning \"I pretended\"\nJ'ai fait comme si [je] l'avais pas vu, => I pretended [I] hadn't seen it, # mapping the second subject\nJ'ai fait comme si je [l']avais pas vu, => I pretended I hadn't seen [it], # \"l'\" is the object pronoun, placed before the verb in French but after in English\nJ'ai fait comme si je l'[avais pas] vu, => I pretended I [hadn't] seen it, # mapping the negated auxiliary verb\nJ'ai fait comme si je l'avais pas [vu], => I pretended I hadn't [seen] it,\n\n[mais] je me suis demandé comment il était arrivé là. => [but] I wondered how it got there.\nmais [je] me suis demandé comment il était arrivé là. => but [I] wondered how it got there.\nmais je [me suis demandé] comment il était arrivé là. => but I [wondered] how it got there.\nmais je me suis demandé [comment] il était arrivé là. => but I wondered [how] it got there.\nmais je me suis demandé comment [il] était arrivé là. => but I wondered how [it] got there.\nmais je me suis demandé comment il [était arrivé] là. => but I wondered how it [got] there.\nmais je me suis demandé comment il était arrivé [là]. => but I wondered how it got [there].\n\n[Et] je lui ai demandé : \"Tu fais quoi dans la vie ?\" => [And] I asked her: \"What do you do for a living?\"\nEt [je] lui ai demandé : \"Tu fais quoi dans la vie ?\" => And [I] asked her: \"What do you do for a living?\"\nEt je [lui] ai demandé : \"Tu fais quoi dans la vie ?\" => And I asked [her]: \"What do you do for a living?\"\nEt je lui [ai demandé] : \"Tu fais quoi dans la vie ?\" => And I [asked] her: \"What do you do for a living?\"\nEt je lui ai demandé : \"[Tu] fais quoi dans la vie ?\" => And I asked her: \"What do [you] do for a living?\"\nEt je lui ai demandé : \"Tu [fais] quoi dans la vie ?\" => And I asked her: \"What do you [do] for a living?\"\nEt je lui ai demandé : \"Tu fais [quoi] dans la vie ?\" => And I asked her: \"[What] do you do for a living?\"\nEt je lui ai demandé : \"Tu fais quoi [dans la vie] ?\" => And I asked her: \"What do you do [for a living]?\"\n\n[Je suis] caissière. => [I'm] a cashier.\nJe suis [caissière]. => I'm a [cashier]. # French professional titles typically don't take an article after \"être\", so \"a\" is skipped on the French side.\n\n[C']était pas intéressant. => [That] wasn't interesting.\nC'[était] pas intéressant. => That [was]n't interesting.\nC'était [pas] intéressant. => That was[n't] interesting.\nC'était pas [intéressant]. => That wasn't [interesting].\n\n[Dans] un sex-shop. => [At] a sex shop.\nDans [un] sex-shop. => At [a] sex shop.\nDans un [sex-shop]. => At a [sex shop.]\n\n[C']était intéressant. => [That] was interesting.\nC'[était] intéressant. => That [was] interesting.\nC'était [intéressant]. => That was [interesting].\n\n[Du coup], j'ai plein d'échantillons. => [So], I have lots of samples.\nDu coup, [j']ai plein d'échantillons. => So, [I] have lots of samples.\nDu coup, j'[ai] plein d'échantillons. => So, I [have] lots of samples.\nDu coup, j'ai [plein d']échantillons. => So, I have [lots of] samples.\nDu coup, j'ai plein d'[échantillons]. => So, I have lots of [samples].\n\n[C']était très intéressant. => [That] was very interesting.\nC'[était] très intéressant. => That [was] very interesting.\nC'était [très] intéressant. => That was [very] interesting.\nC'était très [intéressant]. => That was very [interesting].\n\n[C'est] vachement bien ça ! => [That's] really cool!\nC'est [vachement] bien ça ! => That's [really] cool!\nC'est vachement [bien] ça ! => That's really [cool]!\nC'est vachement bien [ça] ! => that # often used to reinforce the subject \"ce\" at the end of a sentence\n\n[J']ai reçu un texto avec écrit : \"BAISE-LAAAAAAA !\" => [I] got a text that said: \"FUCK HERAAAAAAAA!\"\nJ'[ai reçu] un texto avec écrit : \"BAISE-LAAAAAAA !\" => I [got] a text that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu [un] texto avec écrit : \"BAISE-LAAAAAAA !\" => I got [a] text that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un [texto] avec écrit : \"BAISE-LAAAAAAA !\" => I got a [text] that said: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto [avec écrit] : \"BAISE-LAAAAAAA !\" => I got a text [that said]: \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto avec écrit [:] \"BAISE-LAAAAAAA !\" => I got a text that said [:] \"FUCK HERAAAAAAAA!\"\nJ'ai reçu un texto avec écrit : \"[BAISE]-LAAAAAAA !\" => I got a text that said: \"[FUCK] HERAAAAAAAA!\"\nJ'\n\n[avec] huit A, très exactement. => [with] eight As, exactly.\navec [huit] A, très exactement. => with [eight] As, exactly.\navec huit [A], très exactement. => with eight [As], exactly.\navec huit A, [très] exactement. => very\navec huit A, très [exactement]. => with eight As, [exactly]. # we can also group \"très exactement\" to \"exactly\", but separating them allows for the literal meaning to be taught via custom translation.\n\n[C'était] Kheiron sur le canapé qui nous matait depuis tout à l'heure. => [It was] Kheiron on the couch who'd been staring at us this whole time.\nC'était [Kheiron] sur le canapé qui nous matait depuis tout à l'heure. => It was [Kheiron] on the couch who'd been staring at us this whole time.\nC'était Kheiron [sur] le canapé qui nous matait depuis tout à l'heure. => It was Kheiron [on] the couch who'd been staring at us this whole time.\nC'était Kheiron sur [le] canapé qui nous matait depuis tout à l'heure. => It was Kheiron on [the] couch who'd been staring at us this whole time.\nC'était Kheiron sur le [canapé] qui nous matait depuis tout à l'heure. => It was Kheiron on the [couch] who'd been staring at us this whole time.\nC'était Kheiron sur le canapé [qui] nous matait depuis tout à l'heure. => It was Kheiron on the couch [who]'d been staring at us this whole time.\nC'était Kheiron sur le canapé qui [nous] matait depuis tout à l'heure. => It was Kheiron on the couch who'd been staring at [us] this whole time.\nC'était Kheiron sur le canapé qui nous [matait] depuis tout à l'heure. => had been staring, was watching\nC'était Kheiron sur le canapé qui nous matait [depuis tout à l'heure] => It was Kheiron on the couch who'd been staring at us [this whole time] # idiomatic expression for 'for a while now' or 'all this time'\n\n[Elle] m'a demandé : \"Pourquoi tu souris ?\" => [She] asked me: \"Why are you smiling?\"\nElle [m']a demandé : \"Pourquoi tu souris ?\" => She asked [me]: \"Why are you smiling?\"\nElle m'[a demandé] : \"Pourquoi tu souris ?\" => She [asked] me: \"Why are you smiling?\" # \"a demandé\" (passé composé) translates to the simple past \"asked\"\nElle m'a demandé : \"[Pourquoi] tu souris ?\" => She asked me: \"[Why] are you smiling?\"\nElle m'a demandé : \"Pourquoi [tu] souris ?\" => She asked me: \"Why are [you] smiling?\"\nElle m'a demandé : \"Pourquoi tu [souris] ?\" => She asked me: \"Why are you [smiling]?\" # the French present tense corresponds to the English present continuous here\n\nJ'[ai bafouillé] : \"Euh non, euh...\" => I [stammered]: \"Uh no, uh...\" # the French compound past (auxiliary + participle) maps to the English simple past\nJ'ai bafouillé : \"[Euh] non, euh...\" => I stammered: \"[Uh] no, uh...\"\nJ'ai bafouillé : \"Euh [non], euh...\" => I stammered: \"Uh [no], uh...\"\nJ'ai bafouillé : \"Euh non, [euh]...\" => I stammered: \"Uh no, [uh]...\"\n\n[Je] lui ai dit que ma mère était malade. => [I] told her my mom was sick.\nJe [lui] ai dit que ma mère était malade. => I told [her] my mom was sick.\nJe lui [ai dit] que ma mère était malade. => I [told] her my mom was sick.\nJe lui ai dit [que] ma mère était malade. => that\nJe lui ai dit que [ma] mère était malade. => I told her [my] mom was sick.\nJe lui ai dit que ma [mère] était malade. => I told her my [mom] was sick.\nJe lui ai dit que ma mère [était] malade. => I told her my mom [was] sick.\nJe lui ai dit que ma mère était [malade]. => I told her my mom was [sick].\n\n[Quoi] ? => [What] ?\n\n[Mais] qu'elle allait mieux. => [But] she's getting better.\nMais qu'[elle] allait mieux. => But [she]'s getting better.\nMais qu'elle [allait] mieux. => But she's [getting] better. # \"allait\" (was going) translates to \"getting\" in the context of \"aller mieux\"\nMais qu'elle allait [mieux]. => But she's getting [better].\n\n[Ah] ! => [Oh]!\n\n[En y réfléchissant], j'ai compris comment le pop-corn sucré => [Thinking about it], I understood how the sweet popcorn # \"En ... réfléchissant\" forms the gerund; \"y\" translates to \"about it\"\n[j']ai compris comment le pop-corn sucré => [I] understood how the sweet popcorn\nj'[ai compris] comment le pop-corn sucré => I [understood] how the sweet popcorn # maps the passé composé to the simple past\nj'ai compris [comment] le pop-corn sucré => I understood [how] the sweet popcorn\nj'ai compris comment [le] pop-corn sucré => I understood how [the] sweet popcorn\nj'ai compris comment le [pop-corn] sucré => I understood how the sweet [popcorn]\nj'ai compris comment le pop-corn [sucré] => I understood how the [sweet] popcorn\n\n[était] arrivé là. => [had] gotten there.\nétait [arrivé] là. => had [gotten] there.\nétait arrivé [là]. => had gotten [there].\n\n[Elle] m'a dit : \"Je vais fumer.\" => [She] told me: \"I'm going to smoke.\"\nElle [m']a dit : \"Je vais fumer.\" => She told [me]: \"I'm going to smoke.\"\nElle m'[a dit] : \"Je vais fumer.\" => She [told] me: \"I'm going to smoke.\" # the French passé composé here is best translated by the English simple past\nElle m'a dit : \"[Je] vais fumer.\" => She told me: \"[I]'m going to smoke.\"\nElle m'a dit : \"Je [vais] fumer.\" => She told me: \"I['m going] to smoke.\" # \"vais\" acts as the auxiliary for the near future \"am going\"\nElle m'a dit : \"Je vais [fumer].\" => She told me: \"I'm going [to smoke].\" # the French infinitive corresponds to the English \"to\" + verb pattern\n\n[Je] supporte pas la cigarette. => [I] can't stand cigarettes.\nJe [supporte] pas la cigarette. => I can't [stand] cigarettes.\nJe supporte [pas] la cigarette. => I [can't] stand cigarettes. # \"pas\" corresponds to the negation in \"can't\"\nJe supporte pas [la cigarette]. => I can't stand [cigarettes] # French uses \"la\" + singular for generalizations where English often uses the plural.\n\n[Tu] viens ? => [You] coming?\nTu [viens] ? => You [coming]?\n\n[Mais] je supporte pas la solitude. => [But] I can't stand being alone.\nMais [je] supporte pas la solitude. => But [I] can't stand being alone.\nMais je [supporte pas] la solitude. => But I [can't stand] being alone. # \"ne... pas\" is the standard negation, and \"can't stand\" is the idiomatic translation for \"ne pas supporter\"\nMais je supporte pas [la solitude] => But I can't stand [being alone] # \"solitude\" is a noun in French, mapped to the English phrase \"being alone\"\n\n[Elle] m'a jeté un regard, ça m'a troublé. => [She] gave me a look, it threw me off.\nElle [m']a jeté un regard, ça m'a troublé. => She gave [me] a look, it threw me off.\nElle m'[a jeté] un regard, ça m'a troublé. => She [gave] me a look, it threw me off.\nElle m'a jeté [un] regard, ça m'a troublé. => She gave me [a] look, it threw me off.\nElle m'a jeté un [regard], ça m'a troublé. => She gave me a [look], it threw me off.\nElle m'a jeté un regard, [ça] m'a troublé. => She gave me a look, [it] threw me off.\nElle m'a jeté un regard, ça [m']a troublé. => She gave me a look, it threw [me] off.\nElle m'a jeté un regard, ça m'[a troublé] => threw ... off, confused, unsettled # phrase is split in the English translation\n\n[Et] puis Kheiron m'a fait un signe discret pour m'encourager. => [And] then Kheiron gave me a subtle sign to encourage me.\nEt [puis] Kheiron m'a fait un signe discret pour m'encourager. => And [then] Kheiron gave me a subtle sign to encourage me.\nEt puis [Kheiron] m'a fait un signe discret pour m'encourager. => And then [Kheiron] gave me a subtle sign to encourage me.\nEt puis Kheiron [m']a fait un signe discret pour m'encourager. => And then Kheiron gave [me] a subtle sign to encourage me.\nEt puis Kheiron m'[a fait] un signe discret pour m'encourager. => And then Kheiron [gave] me a subtle sign to encourage me. # 'a fait' (passé composé) translates to 'gave' (simple past)\nEt puis Kheiron m'a fait [un] signe discret pour m'encourager. => And then Kheiron gave me [a] subtle sign to encourage me.\nEt puis Kheiron m'a fait un [signe] discret pour m'encourager. => And then Kheiron gave me a subtle [sign] to encourage me.\nEt puis Kheiron m'a fait un signe [discret] pour m'encourager. => And then Kheiron gave me a [subtle] sign to encourage me.\nEt puis Kheiron m'a fait un signe discret [pour] m'encourager. => And then Kheiron gave me a subtle sign [to] encourage me.\nEt puis Kheiron m'a fait un signe discret pour [m']encourager. => And then Kheiron gave me a subtle sign to encourage [me].\nEt puis Kheiron m'a fait un signe discret pour m'[encourager]. => And then Kheiron gave me a subtle sign to [encourage] me.\n\n[Ça] m'a encouragé. => [That] encouraged me.\nÇa [m']a encouragé. => That encouraged [me].\nÇa m'[a encouragé]. => That [encouraged] me.\n\n[On] a rediscuté. => [We] started talking again.\nOn [a rediscuté]. => We [started talking again]. # The passé composé here is used to indicate the resumption of an action.\n\n[Elle] m'a soufflé une, deux, trois, quatre, cinq, six, sept fois => [She] blew one, two, three, four, five, six, seven times\nElle m'[a soufflé] une, deux, trois, quatre, cinq, six, sept fois => She [blew] one, two, three, four, five, six, seven times\nElle m'a soufflé [une], deux, trois, quatre, cinq, six, sept fois => She blew [one], two, three, four, five, six, seven times\nElle m'a soufflé une, [deux], trois, quatre, cinq, six, sept fois => She blew one, [two], three, four, five, six, seven times\nElle m'a soufflé une, deux, [trois], quatre, cinq, six, sept fois => She blew one, two, [three], four, five, six, seven times\nElle m'a soufflé une, deux, trois, [quatre], cinq, six, sept fois => She blew one, two, three, [four], five, six, seven times\nElle m'a soufflé une, deux, trois, quatre, [cinq], six, sept fois => She blew one, two, three, four, [five], six, seven times\nElle m'a soufflé une, deux, trois, quatre, cinq, [six], sept fois => She blew one, two, three, four, five, [six], seven times\nElle m'a soufflé une, deux, trois, quatre, cinq, six, [sept] fois => She blew one, two, three, four, five, six, [seven] times\nElle m'a soufflé une, deux, trois, quatre, cinq, six, sept [fois] => She blew one, two, three, four, five, six, seven [times]\n\n[sa] putain de fumée dans le visage. => [her] fucking smoke in my face.\nsa [putain de] fumée dans le visage. => her [fucking] smoke in my face.\nsa putain de [fumée] dans le visage. => her fucking [smoke] in my face.\nsa putain de fumée [dans] le visage. => her fucking smoke [in] my face.\nsa putain de fumée dans [le] visage. => her fucking smoke in [my] face.\nsa putain de fumée dans le [visage]. => her fucking smoke in my [face].\n\n[Puis] elle m'a demandé : \"Je peux prendre ton numéro ?\" => [Then] she asked me: \"Can I have your number?\"\nPuis [elle] m'a demandé : \"Je peux prendre ton numéro ?\" => Then [she] asked me: \"Can I have your number?\"\nPuis elle [m']a demandé : \"Je peux prendre ton numéro ?\" => Then she asked [me]: \"Can I have your number?\"\nPuis elle m'[a demandé] : \"Je peux prendre ton numéro ?\" => Then she [asked] me: \"Can I have your number?\"\nPuis elle m'a demandé : \"[Je] peux prendre ton numéro ?\" => Then she asked me: \"Can [I] have your number?\"\nPuis elle m'a demandé : \"Je [peux] prendre ton numéro ?\" => Then she asked me: \"[Can] I have your number?\"\nPuis elle m'a demandé : \"Je peux [prendre] ton numéro ?\" => Then she asked me: \"Can I [have] your number?\"\nPuis elle m'a demandé : \"Je peux prendre [ton] numéro ?\" => Then she asked me: \"Can I have [your] number?\"\nPuis elle m'a demandé : \"Je peux prendre ton [numéro] ?\" => Then she asked me: \"Can I have your [number]?\"\n\n[Yes] ! => [Yes]!\n\n[Je] lui ai donné. Elle m'a dit : => [I] gave it to her. She told me:\nJe [lui] ai donné. Elle m'a dit : => I gave it [to her]. She told me:\nJe lui [ai donné] . Elle m'a dit : => I [gave] it to her. She told me:\nJe lui ai donné [.] Elle m'a dit : => I gave it to her [.] She told me:\nJe lui ai donné. [Elle] m'a dit : => I gave it to her. [She] told me:\nJe lui ai donné. Elle [m']a dit : => I gave it to her. She told [me]:\nJe lui ai donné. Elle m' [a dit] : => I gave it to her. She [told] me:\nJe lui ai donné. Elle m'a dit [:] => I gave it to her. She told me [:] # Punctuation alignment is helpful for consistency\n\n[Merci] hein, c'est Steve qui va être content. => [Thanks], huh, Steve's gonna be happy.\nMerci [hein], c'est Steve qui va être content. => Thanks, [huh], Steve's gonna be happy.\nMerci hein, [c'est] Steve qui va être content. => it is, it's\nMerci hein, c'est [Steve] qui va être content. => Thanks, huh, [Steve]'s gonna be happy.\nMerci hein, c'est Steve qui [va] être content. => Thanks, huh, Steve's [gonna] be happy.\nMerci hein, c'est Steve qui va [être] content. => Thanks, huh, Steve's gonna [be] happy.\nMerci hein, c'est Steve qui va être [content]. => Thanks, huh, Steve's gonna be [happy]\n\n[Il] m'a tanné toute la soirée pour avoir ton numéro. => [He] bugged me all night to get your number.\nIl [m']a tanné toute la soirée pour avoir ton numéro. => He bugged [me] all night to get your number.\nIl m'[a tanné] toute la soirée pour avoir ton numéro. => He [bugged] me all night to get your number. # \"tanner\" corresponds to \"to bug\" or \"to pester\"\nIl m'a tanné [toute] la soirée pour avoir ton numéro. => He bugged me [all] night to get your number.\nIl m'a tanné toute [la soirée] pour avoir ton numéro. => He bugged me all [night] to get your number.\nIl m'a tanné toute la soirée [pour] avoir ton numéro. => He bugged me all night [to] get your number.\nIl m'a tanné toute la soirée pour [avoir] ton numéro. => He bugged me all night to [get] your number.\nIl m'a tanné toute la soirée pour avoir [ton] numéro. => He bugged me all night to get [your] number.\nIl m'a tanné toute la soirée pour avoir ton [numéro]. => He bugged me all night to get your [number].\n\n[Alors] je lui ai répondu : => [So] I answered her:\nAlors [je] lui ai répondu : => So [I] answered her:\nAlors je [lui] ai répondu : => So I answered [her]:\nAlors je lui [ai répondu] : => So I [answered] her:\nAlors je lui ai répondu [:] => So I answered her [:]\n\n[Depuis tout à l'heure], t'as un pop-corn sucré sur l'épaule. => You've had sweet popcorn on your shoulder [this whole time].\nDepuis tout à l'heure, [t'as] un pop-corn sucré sur l'épaule. => [You've had] sweet popcorn on your shoulder this whole time.\nDepuis tout à l'heure, t'as un [pop-corn] sucré sur l'épaule. => You've had sweet [popcorn] on your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn [sucré] sur l'épaule. => You've had [sweet] popcorn on your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn sucré [sur] l'épaule. => You've had sweet popcorn [on] your shoulder this whole time.\nDepuis tout à l'heure, t'as un pop-corn sucré sur [l'épaule]. => You've had sweet popcorn on [your shoulder] this whole time. # in French body parts often use \"le/la\" where English uses a possessive pronoun\n\n[T'es] laide. => [You're] ugly.\nT'es [laide]. => You're [ugly].\n\n[Bref], j'ai dragué cette fille. => [Anyway], I hit on this girl.\nBref, [j']ai dragué cette fille. => Anyway, [I] hit on this girl.\nBref, j'[ai dragué] cette fille. => Anyway, I [hit on] this girl.\nBref, j'ai dragué [cette] fille. => Anyway, I hit on [this] girl.\nBref, j'ai dragué cette [fille]. => Anyway, I hit on this [girl].\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Anyway.",
+            "words": []
+          },
+          {
+            "text": "I'd spotted this girl at Maud's party.",
+            "words": []
+          },
+          {
+            "text": "So I asked Maud if she had a boyfriend.",
+            "words": []
+          },
+          {
+            "text": "She told me: \"I don't know.\"",
+            "words": []
+          },
+          {
+            "text": "I asked Kheiron, he told me: \"I don't know.\"",
+            "words": []
+          },
+          {
+            "text": "I asked Baptiste, he told me: \"I can't hear!\"",
+            "words": []
+          },
+          {
+            "text": "I asked Christine, she told me...",
+            "words": []
+          },
+          {
+            "text": "I took that as a no. So I went for it.",
+            "words": []
+          },
+          {
+            "text": "I made a joke, she laughed.",
+            "words": []
+          },
+          {
+            "text": "I made a second one, she didn't laugh.",
+            "words": []
+          },
+          {
+            "text": "But she hadn't gotten it.",
+            "words": []
+          },
+          {
+            "text": "\"I didn't get it.\"",
+            "words": []
+          },
+          {
+            "text": "So it's fine. A guy showed up.",
+            "words": []
+          },
+          {
+            "text": "\"My name's Steve.\"",
+            "words": []
+          },
+          {
+            "text": "I thought he was her boyfriend, so I left.",
+            "words": []
+          },
+          {
+            "text": "Actually, he was her annoying friend.",
+            "words": []
+          },
+          {
+            "text": "\"Alright I'm off, gonna have a blast! Catch you later!\"",
+            "words": []
+          },
+          {
+            "text": "I came back.",
+            "words": []
+          },
+          {
+            "text": "She had sweet popcorn on her shoulder.",
+            "words": []
+          },
+          {
+            "text": "I pretended I hadn't seen it,",
+            "words": []
+          },
+          {
+            "text": "but I wondered how it got there.",
+            "words": []
+          },
+          {
+            "text": "And I asked her: \"What do you do for a living?\"",
+            "words": []
+          },
+          {
+            "text": "\"I'm a cashier.\"",
+            "words": []
+          },
+          {
+            "text": "That wasn't interesting.",
+            "words": []
+          },
+          {
+            "text": "\"At a sex shop.\"",
+            "words": []
+          },
+          {
+            "text": "That was interesting.",
+            "words": []
+          },
+          {
+            "text": "\"So, I have lots of samples.\"",
+            "words": []
+          },
+          {
+            "text": "That was very interesting.",
+            "words": []
+          },
+          {
+            "text": "\"That's really cool!\"",
+            "words": []
+          },
+          {
+            "text": "I got a text that said: \"FUCK HERAAAAAAAA!\"",
+            "words": []
+          },
+          {
+            "text": "with eight As, exactly.",
+            "words": []
+          },
+          {
+            "text": "It was Kheiron on the couch who'd been staring at us this whole time.",
+            "words": []
+          },
+          {
+            "text": "She asked me: \"Why are you smiling?\"",
+            "words": []
+          },
+          {
+            "text": "I stammered: \"Uh no, uh...\"",
+            "words": []
+          },
+          {
+            "text": "I told her my mom was sick.",
+            "words": []
+          },
+          {
+            "text": "\"What?\"",
+            "words": []
+          },
+          {
+            "text": "\"But she's getting better.\"",
+            "words": []
+          },
+          {
+            "text": "\"Oh!\"",
+            "words": []
+          },
+          {
+            "text": "Thinking about it, I understood how the sweet popcorn",
+            "words": []
+          },
+          {
+            "text": "had gotten there.",
+            "words": []
+          },
+          {
+            "text": "She told me: \"I'm going to smoke.\"",
+            "words": []
+          },
+          {
+            "text": "I can't stand cigarettes.",
+            "words": []
+          },
+          {
+            "text": "\"You coming?\"",
+            "words": []
+          },
+          {
+            "text": "But I can't stand being alone.",
+            "words": []
+          },
+          {
+            "text": "She gave me a look, it threw me off.",
+            "words": []
+          },
+          {
+            "text": "And then Kheiron gave me a subtle sign to encourage me.",
+            "words": []
+          },
+          {
+            "text": "That encouraged me.",
+            "words": []
+          },
+          {
+            "text": "We started talking again.",
+            "words": []
+          },
+          {
+            "text": "She blew one, two, three, four, five, six, seven times",
+            "words": []
+          },
+          {
+            "text": "her fucking smoke in my face.",
+            "words": []
+          },
+          {
+            "text": "Then she asked me: \"Can I have your number?\"",
+            "words": []
+          },
+          {
+            "text": "Yes!",
+            "words": []
+          },
+          {
+            "text": "I gave it to her. She told me:",
+            "words": []
+          },
+          {
+            "text": "\"Thanks, huh, Steve's gonna be happy.\"",
+            "words": []
+          },
+          {
+            "text": "\"He bugged me all night to get your number.\"",
+            "words": []
+          },
+          {
+            "text": "So I answered her:",
+            "words": []
+          },
+          {
+            "text": "\"You've had sweet popcorn on your shoulder this whole time.\"",
+            "words": []
+          },
+          {
+            "text": "\"You're ugly.\"",
+            "words": []
+          },
+          {
+            "text": "Anyway, I hit on this girl.",
+            "words": []
+          }
+        ],
+        "lessons": "# La Rencontre à la Soirée (Part 1)\n00:07.00 Bref.\n00:07.80 J'avais repéré cette fille à la soirée de Maud.\n00:09.20 Alors j'ai demandé à Maud si elle avait un copain.\n00:10.50 Elle m'a dit : \"Je sais pas.\"\n00:11.50 J'ai demandé à Kheiron, il m'a dit : \"Je sais pas.\"\n00:12.50 J'ai demandé à Baptiste, il m'a dit : \"J'entends pas !\"\n00:14.50 J'ai demandé à Christine, elle m'a dit...\n\n# Premières Approches (Part 2)\n00:16.50 J'ai pris ça pour un non. Alors j'y suis allé.\n00:18.50 Je lui ai fait une blague, elle a rigolé.\n00:19.80 Je lui en ai fait une deuxième, elle a pas rigolé.\n00:21.50 Mais elle avait pas compris.\n00:22.50 \"J'avais pas compris.\"\n00:23.50 Alors ça va. Un mec est arrivé.\n00:24.50 \"Je m'appelle Steve.\"\n\n# Les Malentendus (Part 3)\n00:25.50 J'ai cru que c'était son mec, alors je suis parti.\n00:27.50 En fait, c'était son pote relou.\n00:28.50 \"Allez j'y vais, je vais m'éclater ! On diams !\"\n00:31.00 Je suis revenu.\n00:32.00 Elle avait un pop-corn sucré sur l'épaule.\n00:33.50 J'ai fait comme si je l'avais pas vu,\n00:34.50 mais je me suis demandé comment il était arrivé là.\n\n# La Conversation (Part 4)\n00:36.50 Et je lui ai demandé : \"Tu fais quoi dans la vie ?\"\n00:37.50 \"Je suis caissière.\"\n00:38.50 C'était pas intéressant.\n00:39.50 \"Dans un sex-shop.\"\n00:40.50 C'était intéressant.\n00:41.50 \"Du coup, j'ai plein d'échantillons.\"\n00:42.50 C'était très intéressant.\n00:43.50 \"C'est vachement bien ça !\"\n\n# L'Intervention de Kheiron (Part 5)\n00:44.50 J'ai reçu un texto avec écrit : \"BAISE-LAAAAAAA !\"\n00:45.50 avec huit A, très exactement.\n00:46.50 C'était Kheiron sur le canapé qui nous matait depuis tout à l'heure.\n00:49.00 Elle m'a demandé : \"Pourquoi tu souris ?\"\n00:50.00 J'ai bafouillé : \"Euh non, euh...\"\n00:51.50 Je lui ai dit que ma mère était malade.\n00:52.50 \"Quoi ?\"\n00:53.50 \"Mais qu'elle allait mieux.\"\n00:54.50 \"Ah !\"\n\n# Le Mystère du Pop-corn (Part 6)\n00:55.50 En y réfléchissant, j'ai compris comment le pop-corn sucré\n00:58.00 était arrivé là.\n01:00.50 Elle m'a dit : \"Je vais fumer.\"\n01:01.50 Je supporte pas la cigarette.\n01:02.50 \"Tu viens ?\"\n01:03.50 Mais je supporte pas la solitude.\n01:04.50 Elle m'a jeté un regard, ça m'a troublé.\n01:07.00 Et puis Kheiron m'a fait un signe discret pour m'encourager.\n\n# La Conclusion (Part 7)\n01:11.00 Ça m'a encouragé.\n01:12.00 On a rediscuté.\n01:13.00 Elle m'a soufflé une, deux, trois, quatre, cinq, six, sept fois\n01:15.50 sa putain de fumée dans le visage.\n01:18.00 Puis elle m'a demandé : \"Je peux prendre ton numéro ?\"\n01:19.50 Yes !\n01:20.50 Je lui ai donné. Elle m'a dit :\n01:21.50 \"Merci hein, c'est Steve qui va être content.\"\n01:23.50 \"Il m'a tanné toute la soirée pour avoir ton numéro.\"\n01:25.50 Alors je lui ai répondu :\n01:26.50 \"Depuis tout à l'heure, t'as un pop-corn sucré sur l'épaule.\"\n01:29.00 \"T'es laide.\"\n01:30.00 Bref, j'ai dragué cette fille."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-02 11:34:25 UTC",
   "updated_at": "2026-04-02 19:06:07 UTC",

@@ -9,125 +9,186 @@
         "id": "phrase_1",
         "text_l1": "وقت اللي كان عمري 13 سنة أو 14 سنة",
         "timestamp": "00:01.00",
-        "timestamp_end": "00:04.00",
-        "text_l2": "Back when I was 13 or 14 years old"
+        "timestamp_end": "00:04.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "كان فيه محل بجنوب لبنان",
         "timestamp": "00:04.00",
-        "timestamp_end": "00:07.00",
-        "text_l2": "There was a spot in South Lebanon"
+        "timestamp_end": "00:07.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "بيسموه سجد",
         "timestamp": "00:07.00",
-        "timestamp_end": "00:09.00",
-        "text_l2": "They called it Sajad"
+        "timestamp_end": "00:09.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "فيه هناك قبر لأهولياب بن أحيساماك",
         "timestamp": "00:09.00",
-        "timestamp_end": "00:14.00",
-        "text_l2": "There's a grave there for Eliab son of Achisamach"
+        "timestamp_end": "00:14.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "كانوا اليهود في لاغ باعومر",
         "timestamp": "00:14.00",
-        "timestamp_end": "00:17.00",
-        "text_l2": "The Jews, on Lag BaOmer,"
+        "timestamp_end": "00:17.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "يروحوا لهناك ت يشوفوا من هناك ميرون",
         "timestamp": "00:17.00",
-        "timestamp_end": "00:20.00",
-        "text_l2": "would go there to see Meron from there"
+        "timestamp_end": "00:20.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "لذلك كانوا يروحوا للمحل هذا",
         "timestamp": "00:20.00",
-        "timestamp_end": "00:23.00",
-        "text_l2": "That's why they used to go to this spot"
+        "timestamp_end": "00:23.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "كان لي صاحب كان ينزل لهناك",
         "timestamp": "00:23.00",
-        "timestamp_end": "00:26.00",
-        "text_l2": "I had a friend who used to go down there"
+        "timestamp_end": "00:26.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "قلت له: اعمل لي معروف، جيب لي شويه تراب",
         "timestamp": "00:26.00",
-        "timestamp_end": "00:30.00",
-        "text_l2": "I told him: Do me a favor, bring me some soil"
+        "timestamp_end": "00:30.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "من هناك. لانه جنوب لبنان هو أرض إسرائيل",
         "timestamp": "00:30.00",
-        "timestamp_end": "00:33.00",
-        "text_l2": "From there. Because South Lebanon is the Land of Israel"
+        "timestamp_end": "00:33.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "جيب لي شويه تراب من هناك",
         "timestamp": "00:33.00",
-        "timestamp_end": "00:36.00",
-        "text_l2": "Bring me some soil from there"
+        "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "جاب لي شوية تراب، أعطيتها لأمي",
         "timestamp": "00:36.00",
-        "timestamp_end": "00:39.00",
-        "text_l2": "He brought me some soil, I gave it to my mom"
+        "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "وأمي سوت لي كيس وحطيته في جيبتي",
         "timestamp": "00:39.00",
-        "timestamp_end": "00:42.00",
-        "text_l2": "And my mom made me a pouch and I put it in my pocket"
+        "timestamp_end": "00:42.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "انه يكون عندي تراب من أرض إسرائيل في جيبتي",
         "timestamp": "00:42.00",
-        "timestamp_end": "00:46.00",
-        "text_l2": "So I'd have soil from the Land of Israel in my pocket"
+        "timestamp_end": "00:46.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "وهيك كنت تمشي ببيروت؟",
         "timestamp": "00:46.00",
-        "timestamp_end": "00:49.00",
-        "text_l2": "And so you walked around Beirut like that?"
+        "timestamp_end": "00:49.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "مع تراب من أرض إسرائيل؟",
         "timestamp": "00:49.00",
-        "timestamp_end": "00:51.00",
-        "text_l2": "With soil from the Land of Israel?"
+        "timestamp_end": "00:51.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "مع تراب من إسرائيل",
         "timestamp": "00:51.00",
-        "timestamp_end": "00:52.00",
-        "text_l2": "With soil from Israel."
+        "timestamp_end": "00:52.00"
       }
     ],
     "phrases_with_token_translations": "[وقت اللي] كان عمري 13 سنة أو 14 سنة => [Back when] I was 13 or 14 years old\nوقت اللي [كان] عمري 13 سنة أو 14 سنة => Back when I [was] 13 or 14 years old\nوقت اللي كان [عمري] 13 سنة أو 14 سنة => my age\nوقت اللي كان عمري [13] سنة أو 14 سنة => Back when I was [13] or 14 years old\nوقت اللي كان عمري 13 [سنة] أو 14 سنة => year\nوقت اللي كان عمري 13 سنة [أو] 14 سنة => Back when I was 13 [or] 14 years old\nوقت اللي كان عمري 13 سنة أو [14] سنة => Back when I was 13 or [14] years old\nوقت اللي كان عمري 13 سنة أو 14 [سنة] => Back when I was 13 or 14 [years old]\n\n[كان فيه] محل بجنوب لبنان => [There was] a spot in South Lebanon\nكان فيه [محل] بجنوب لبنان => There was [a spot] in South Lebanon\nكان فيه محل [بجنوب] لبنان => There was a spot [in South] Lebanon\nكان فيه محل بجنوب [لبنان] => There was a spot in South [Lebanon]\n\n[بيسموه] سجد => [They called it] Sajad\nبيسموه [سجد] => They called it [Sajad]\n\n[فيه] هناك قبر لأهولياب بن أحيساماك => [There's] a grave there for Eliab son of Achisamach\nفيه [هناك] قبر لأهولياب بن أحيساماك => There's a grave [there] for Eliab son of Achisamach\nفيه هناك [قبر] لأهولياب بن أحيساماك => There's a [grave] there for Eliab son of Achisamach\nفيه هناك قبر [لأهولياب] بن أحيساماك => for Aholiab # the English sentence uses \"Eliab\" but the Arabic name is \"Aholiab\"\nفيه هناك قبر لأهولياب [بن] أحيساماك => There's a grave there for Eliab [son of] Achisamach\nفيه هناك قبر لأهولياب بن [أحيساماك] => There's a grave there for Eliab son of [Achisamach]\n\nكانوا [اليهود] في لاغ باعومر => [The Jews], on Lag BaOmer,\nكانوا اليهود [في] لاغ باعومر => The Jews, [on] Lag BaOmer,\nكانوا اليهود في [لاغ باعومر] => The Jews, on [Lag BaOmer],\n\n[يروحوا] لهناك ت يشوفوا من هناك ميرون => [would go] there to see Meron from there\nيروحوا [لهناك] ت يشوفوا من هناك ميرون => would go [there] to see Meron from there\nيروحوا لهناك [ت] يشوفوا من هناك ميرون => would go there [to] see Meron from there\nيروحوا لهناك ت [يشوفوا] من هناك ميرون => would go there to [see] Meron from there\nيروحوا لهناك ت يشوفوا [من] هناك ميرون => would go there to see Meron [from] there\nيروحوا لهناك ت يشوفوا من [هناك] ميرون => would go there to see Meron from [there]\nيروحوا لهناك ت يشوفوا من هناك [ميرون] => would go there to see [Meron] from there\n\n[لذلك] كانوا يروحوا للمحل هذا => [That's why] they used to go to this spot\nلذلك [كانوا] يروحوا للمحل هذا => That's why [they used to] go to this spot\nلذلك كانوا [يروحوا] للمحل هذا => That's why they used to [go] to this spot\nلذلك كانوا يروحوا [للمحل] هذا => spot\nلذلك كانوا يروحوا للمحل [هذا] => That's why they used to go to [this] spot\n\n[كان لي] صاحب كان ينزل لهناك => [I had] a friend who used to go down there\nكان لي [صاحب] كان ينزل لهناك => I had [a friend] who used to go down there\nكان لي صاحب [كان ينزل] لهناك => I had a friend [who used to go down] there\nكان لي صاحب كان ينزل [لهناك] => I had a friend who used to go down [there]\n\n[قلت] له: اعمل لي معروف، جيب لي شويه تراب => [I told] him: Do me a favor, bring me some soil\nقلت [له]: اعمل لي معروف، جيب لي شويه تراب => I told [him]: Do me a favor, bring me some soil\nقلت له: [اعمل لي] معروف، جيب لي شويه تراب => I told him: [Do me] a favor, bring me some soil\nقلت له: اعمل لي [معروف]، جيب لي شويه تراب => I told him: Do me [a favor], bring me some soil\nقلت له: اعمل لي معروف، [جيب لي] شويه تراب => I told him: Do me a favor, [bring me] some soil\nقلت له: اعمل لي معروف، جيب لي [شويه] تراب => I told him: Do me a favor, bring me [some] soil\nقلت له: اعمل لي معروف، جيب لي شويه [تراب] => I told him: Do me a favor, bring me some [soil]\n\n[من] هناك. لانه جنوب لبنان هو أرض إسرائيل => [From] there. Because South Lebanon is the Land of Israel\nمن [هناك]. لانه جنوب لبنان هو أرض إسرائيل => From [there]. Because South Lebanon is the Land of Israel\nمن هناك. [لانه] جنوب لبنان هو أرض إسرائيل => From there. [Because] South Lebanon is the Land of Israel\nمن هناك. لانه [جنوب] لبنان هو أرض إسرائيل => From there. Because [South] Lebanon is the Land of Israel\nمن هناك. لانه جنوب [لبنان] هو أرض إسرائيل => From there. Because South [Lebanon] is the Land of Israel\nمن هناك. لانه جنوب لبنان [هو] أرض إسرائيل => From there. Because South Lebanon [is] the Land of Israel\nمن هناك. لانه جنوب لبنان هو [أرض] إسرائيل => From there. Because South Lebanon is [the Land] of Israel\nمن هناك. لانه جنوب لبنان هو أرض [إسرائيل] => From there. Because South Lebanon is the Land of [Israel]\n\n[جيب] لي شويه تراب من هناك => [Bring] me some soil from there\nجيب [لي] شويه تراب من هناك => Bring [me] some soil from there\nجيب لي [شويه] تراب من هناك => Bring me [some] soil from there\nجيب لي شويه [تراب] من هناك => Bring me some [soil] from there\nجيب لي شويه تراب [من] هناك => Bring me some [from] there\nجيب لي شويه تراب من [هناك] => Bring me some soil from [there]\n\n[جاب] لي شوية تراب، أعطيتها لأمي => [He brought] me some soil, I gave it to my mom\nجاب [لي] شوية تراب، أعطيتها لأمي => He brought [me] some soil, I gave it to my mom\nجاب لي [شوية] تراب، أعطيتها لأمي => He brought me [some] soil, I gave it to my mom\nجاب لي شوية [تراب]، أعطيتها لأمي => He brought me some [soil], I gave it to my mom\nجاب لي شوية تراب، [أعطيتها] لأمي => He brought me some soil, [I gave it] to my mom\nجاب لي شوية تراب، أعطيتها [لأمي] => He brought me some soil, I gave it [to my mom]\n\n\n\n[انه] يكون عندي تراب من أرض إسرائيل في جيبتي => [So] I'd have soil from the Land of Israel in my pocket\nانه [يكون عندي] تراب من أرض إسرائيل في جيبتي => So [I'd have] soil from the Land of Israel in my pocket\nانه يكون عندي [تراب] من أرض إسرائيل في جيبتي => So I'd have [soil] from the Land of Israel in my pocket\nانه يكون عندي تراب [من] أرض إسرائيل في جيبتي => So I'd have soil [from] the Land of Israel in my pocket\nانه يكون عندي تراب من [أرض] إسرائيل في جيبتي => So I'd have soil from [the Land] of Israel in my pocket\nانه يكون عندي تراب من أرض [إسرائيل] في جيبتي => So I'd have soil from the Land [of Israel] in my pocket\nانه يكون عندي تراب من أرض إسرائيل [في] جيبتي => So I'd have soil from the Land of Israel [in] my pocket\nانه يكون عندي تراب من أرض إسرائيل في [جيبتي] => So I'd have soil from the Land of Israel in [my pocket]\n\n[و]هيك كنت تمشي ببيروت؟ => [And] so you walked around Beirut like that?\nو[هيك] كنت تمشي ببيروت؟ => And [so] you walked around Beirut [like that]\nوهيك [كنت تمشي] ببيروت؟ => And so [you walked] around Beirut like that?\nوهيك كنت تمشي [ب]بيروت؟ => in, around\nوهيك كنت تمشي ب[بيروت]؟ => And so you walked around [Beirut] like that?\n\n[مع] تراب من أرض إسرائيل؟ => [With] soil from the Land of Israel?\nمع [تراب] من أرض إسرائيل؟ => With [soil] from the Land of Israel?\nمع تراب [من] أرض إسرائيل؟ => With soil [from] the Land of Israel?\nمع تراب من [أرض] إسرائيل؟ => With soil from [the Land] of Israel?\nمع تراب من أرض [إسرائيل]؟ => With soil from the Land of [Israel]?\n\n[مع] تراب من إسرائيل => [With] soil from Israel.\nمع [تراب] من إسرائيل => With [soil] from Israel.\nمع تراب [من] إسرائيل => With soil [from] Israel.\nمع تراب من [إسرائيل] => With soil from [Israel].\n\n",
     "lessons": "# الذكرى الأولى: القبر المقدس في جنوب لبنان\n00:01.00 وقت اللي كان عمري 13 سنة أو 14 سنة\n00:04.00 كان فيه محل بجنوب لبنان\n00:07.00 بيسموه سجد\n00:09.00 فيه هناك قبر لأهولياب بن أحيساماك\n\n# زيارة اليهود في لاغ باعومر\n00:14.00 كانوا اليهود في لاغ باعومر\n00:17.00 يروحوا لهناك ت يشوفوا من هناك ميرون\n00:20.00 لذلك كانوا يروحوا للمحل هذا\n\n# طلب التراب المقدس (Part 1)\n00:23.00 كان لي صاحب كان ينزل لهناك\n00:26.00 قلت له: اعمل لي معروف، جيب لي شويه تراب\n00:30.00 من هناك. لانه جنوب لبنان هو أرض إسرائيل\n\n# طلب التراب المقدس (Part 2)\n00:33.00 جيب لي شويه تراب من هناك\n00:36.00 جاب لي شوية تراب، أعطيتها لأمي\n00:39.00 وأمي سوت لي كيس وحطيته في جيبتي\n\n# الذكرى الدائمة\n00:42.00 انه يكون عندي تراب من أرض إسرائيل في جيبتي\n00:46.00 وهيك كنت تمشي ببيروت؟\n00:49.00 مع تراب من أرض إسرائيل؟\n00:51.00 مع تراب من إسرائيل",
-    "similar_sounds": "وقت اللي كان عمري 13 [جنة] أو 14 سنة\nكان فيه محل ب[حبوب] لبنان\n[يقسموه] سجد\nفيه هناك [قمر] لأهولياب بن أحيساماك\nكانوا اليهود في لاغ [باعمر]\nيروحوا لهناك ت يشوفوا من هناك [مرون]\nلذلك كانوا يروحوا لل[رحل] هذا\n[خان] لي صاحب كان ينزل لهناك\nقلت له: اعمل لي معروف، جيب لي شويه [خراب]\nمن هناك. لانه جنوب لبنان هو [عرض] إسرائيل\n[طيب] لي شويه تراب من هناك\nجاب لي شوية تراب، أعطيتها ل[عمي]\nوأمي [صوت] لي كيس وحطيته في جيبتي\nانه يكون عندي [شراب] من أرض إسرائيل في جيبتي\nوهيك كنت تمشي ب[بيوت]؟\nمع [خراب] من أرض إسرائيل؟\nمع تراب من [البرازيل]"
+    "similar_sounds": "وقت اللي كان عمري 13 [جنة] أو 14 سنة\nكان فيه محل ب[حبوب] لبنان\n[يقسموه] سجد\nفيه هناك [قمر] لأهولياب بن أحيساماك\nكانوا اليهود في لاغ [باعمر]\nيروحوا لهناك ت يشوفوا من هناك [مرون]\nلذلك كانوا يروحوا لل[رحل] هذا\n[خان] لي صاحب كان ينزل لهناك\nقلت له: اعمل لي معروف، جيب لي شويه [خراب]\nمن هناك. لانه جنوب لبنان هو [عرض] إسرائيل\n[طيب] لي شويه تراب من هناك\nجاب لي شوية تراب، أعطيتها ل[عمي]\nوأمي [صوت] لي كيس وحطيته في جيبتي\nانه يكون عندي [شراب] من أرض إسرائيل في جيبتي\nوهيك كنت تمشي ب[بيوت]؟\nمع [خراب] من أرض إسرائيل؟\nمع تراب من [البرازيل]",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Back when I was 13 or 14 years old",
+            "words": []
+          },
+          {
+            "text": "There was a spot in South Lebanon",
+            "words": []
+          },
+          {
+            "text": "They called it Sajad",
+            "words": []
+          },
+          {
+            "text": "There's a grave there for Eliab son of Achisamach",
+            "words": []
+          },
+          {
+            "text": "The Jews, on Lag BaOmer,",
+            "words": []
+          },
+          {
+            "text": "would go there to see Meron from there",
+            "words": []
+          },
+          {
+            "text": "That's why they used to go to this spot",
+            "words": []
+          },
+          {
+            "text": "I had a friend who used to go down there",
+            "words": []
+          },
+          {
+            "text": "I told him: Do me a favor, bring me some soil",
+            "words": []
+          },
+          {
+            "text": "From there. Because South Lebanon is the Land of Israel",
+            "words": []
+          },
+          {
+            "text": "Bring me some soil from there",
+            "words": []
+          },
+          {
+            "text": "He brought me some soil, I gave it to my mom",
+            "words": []
+          },
+          {
+            "text": "And my mom made me a pouch and I put it in my pocket",
+            "words": []
+          },
+          {
+            "text": "So I'd have soil from the Land of Israel in my pocket",
+            "words": []
+          },
+          {
+            "text": "And so you walked around Beirut like that?",
+            "words": []
+          },
+          {
+            "text": "With soil from the Land of Israel?",
+            "words": []
+          },
+          {
+            "text": "With soil from Israel.",
+            "words": []
+          }
+        ],
+        "lessons": "# الذكرى الأولى: القبر المقدس في جنوب لبنان\n00:01.00 وقت اللي كان عمري 13 سنة أو 14 سنة\n00:04.00 كان فيه محل بجنوب لبنان\n00:07.00 بيسموه سجد\n00:09.00 فيه هناك قبر لأهولياب بن أحيساماك\n\n# زيارة اليهود في لاغ باعومر\n00:14.00 كانوا اليهود في لاغ باعومر\n00:17.00 يروحوا لهناك ت يشوفوا من هناك ميرون\n00:20.00 لذلك كانوا يروحوا للمحل هذا\n\n# طلب التراب المقدس (Part 1)\n00:23.00 كان لي صاحب كان ينزل لهناك\n00:26.00 قلت له: اعمل لي معروف، جيب لي شويه تراب\n00:30.00 من هناك. لانه جنوب لبنان هو أرض إسرائيل\n\n# طلب التراب المقدس (Part 2)\n00:33.00 جيب لي شويه تراب من هناك\n00:36.00 جاب لي شوية تراب، أعطيتها لأمي\n00:39.00 وأمي سوت لي كيس وحطيته في جيبتي\n\n# الذكرى الدائمة\n00:42.00 انه يكون عندي تراب من أرض إسرائيل في جيبتي\n00:46.00 وهيك كنت تمشي ببيروت؟\n00:49.00 مع تراب من أرض إسرائيل؟\n00:51.00 مع تراب من إسرائيل"
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-05-01 09:33:54 UTC",
   "updated_at": "2026-05-01 09:40:50 UTC",

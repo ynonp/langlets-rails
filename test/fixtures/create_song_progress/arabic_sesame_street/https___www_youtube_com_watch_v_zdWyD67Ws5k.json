@@ -9,538 +9,776 @@
       {
         "id": "phrase_1",
         "text_l1": "ألو؟ دكتورة عليا؟",
-        "text_l2": "Hello? Dr. Alya?",
         "timestamp": "00:00.00",
         "timestamp_end": "00:02.00"
       },
       {
         "id": "phrase_2",
         "text_l1": "كيف حالك؟ آه.",
-        "text_l2": "How are you? Ah.",
         "timestamp": "00:02.00",
         "timestamp_end": "00:04.00"
       },
       {
         "id": "phrase_3",
         "text_l1": "مريض.",
-        "text_l2": "Sick.",
         "timestamp": "00:07.00",
         "timestamp_end": "00:09.00"
       },
       {
         "id": "phrase_4",
         "text_l1": "مريض وتعبان.",
-        "text_l2": "Sick and exhausted.",
         "timestamp": "00:09.00",
         "timestamp_end": "00:12.00"
       },
       {
         "id": "phrase_5",
         "text_l1": "حرارة؟ في حرارة آه.",
-        "text_l2": "Fever? Yes, a fever, ah.",
         "timestamp": "00:12.00",
         "timestamp_end": "00:15.00"
       },
       {
         "id": "phrase_6",
         "text_l1": "حرارة عالية مرات.",
-        "text_l2": "High fever sometimes.",
         "timestamp": "00:16.00",
         "timestamp_end": "00:19.00"
       },
       {
         "id": "phrase_7",
         "text_l1": "سعلة؟ في سعلة آه.",
-        "text_l2": "Cough? Yes, a cough, ah.",
         "timestamp": "00:19.00",
         "timestamp_end": "00:21.00"
       },
       {
         "id": "phrase_8",
         "text_l1": "قوية.",
-        "text_l2": "Strong.",
         "timestamp": "00:22.00",
         "timestamp_end": "00:24.00"
       },
       {
         "id": "phrase_9",
         "text_l1": "مرات دوخة مش دايماً.",
-        "text_l2": "Sometimes dizziness, not always.",
         "timestamp": "00:26.00",
         "timestamp_end": "00:29.00"
       },
       {
         "id": "phrase_10",
         "text_l1": "دكتورة.",
-        "text_l2": "Doctor.",
         "timestamp": "00:32.00",
         "timestamp_end": "00:34.00"
       },
       {
         "id": "phrase_11",
         "text_l1": "مريض، مريض وتعبان.",
-        "text_l2": "Sick, sick and exhausted.",
         "timestamp": "00:34.00",
         "timestamp_end": "00:36.00"
       },
       {
         "id": "phrase_12",
         "text_l1": "مريض كتير كتير مريض.",
-        "text_l2": "Very, very sick.",
         "timestamp": "00:36.00",
         "timestamp_end": "00:39.00"
       },
       {
         "id": "phrase_13",
         "text_l1": "آه آه آه.",
-        "text_l2": "Ah, ah, ah.",
         "timestamp": "00:39.00",
         "timestamp_end": "00:41.00"
       },
       {
         "id": "phrase_14",
         "text_l1": "آه، شكراً يا دكتورة.",
-        "text_l2": "Ah, thank you, Doctor.",
         "timestamp": "00:41.00",
         "timestamp_end": "00:43.00"
       },
       {
         "id": "phrase_15",
         "text_l1": "مع السلامة.",
-        "text_l2": "Goodbye.",
         "timestamp": "00:43.00",
         "timestamp_end": "00:45.00"
       },
       {
         "id": "phrase_16",
         "text_l1": "جلجل مريض؟ ممم.",
-        "text_l2": "Jaljal is sick? Hmm.",
         "timestamp": "00:53.00",
         "timestamp_end": "00:56.00"
       },
       {
         "id": "phrase_17",
         "text_l1": "آه، حرام عليه حرارة.",
-        "text_l2": "Ah, poor him, a fever.",
         "timestamp": "00:57.00",
         "timestamp_end": "01:00.00"
       },
       {
         "id": "phrase_18",
         "text_l1": "جلجل مريض.",
-        "text_l2": "Jaljal is sick.",
         "timestamp": "01:07.00",
         "timestamp_end": "01:09.00"
       },
       {
         "id": "phrase_19",
         "text_l1": "شو ممكن أنا أعمل؟ ممم.",
-        "text_l2": "What can I do? Hmm.",
         "timestamp": "01:09.00",
         "timestamp_end": "01:12.00"
       },
       {
         "id": "phrase_20",
         "text_l1": "أحسن إشي أجيب حدا يساعده.",
-        "text_l2": "Best thing is to get someone to help him.",
         "timestamp": "01:12.00",
         "timestamp_end": "01:15.00"
       },
       {
         "id": "phrase_21",
         "text_l1": "تنتن؟ تنتن؟",
-        "text_l2": "Tantan? Tantan?",
         "timestamp": "01:18.00",
         "timestamp_end": "01:20.00"
       },
       {
         "id": "phrase_22",
         "text_l1": "وين راحت تنتن؟",
-        "text_l2": "Where did Tantan go?",
         "timestamp": "01:20.00",
         "timestamp_end": "01:22.00"
       },
       {
         "id": "phrase_23",
         "text_l1": "ليش طلعت هيك بسرعة؟",
-        "text_l2": "Why did she leave so quickly?",
         "timestamp": "01:22.00",
         "timestamp_end": "01:24.00"
       },
       {
         "id": "phrase_24",
         "text_l1": "يلا يلا رحمة بسرعة.",
-        "text_l2": "Come on, come on, Rahma, quickly.",
         "timestamp": "01:25.00",
         "timestamp_end": "01:27.00"
       },
       {
         "id": "phrase_25",
         "text_l1": "هه؟ رحمة عنا هون؟",
-        "text_l2": "Huh? Rahma is here with us?",
         "timestamp": "01:28.00",
         "timestamp_end": "01:30.00"
       },
       {
         "id": "phrase_26",
         "text_l1": "كيف حالك جلجل؟",
-        "text_l2": "How are you, Jaljal?",
         "timestamp": "01:30.00",
         "timestamp_end": "01:31.00"
       },
       {
         "id": "phrase_27",
         "text_l1": "منيح، شو هالزيارة الحلوة؟",
-        "text_l2": "Good, what's this sweet visit?",
         "timestamp": "01:31.00",
         "timestamp_end": "01:33.00"
       },
       {
         "id": "phrase_28",
         "text_l1": "كيف صرت هلق يا جلجل؟ كيف صحتك؟",
-        "text_l2": "How are you now, Jaljal? How's your health?",
         "timestamp": "01:33.00",
         "timestamp_end": "01:35.00"
       },
       {
         "id": "phrase_29",
         "text_l1": "أنا منيح وصحتي تمام، ما مالي إشي.",
-        "text_l2": "I'm good, health is perfect, nothing's wrong with me.",
         "timestamp": "01:35.00",
         "timestamp_end": "01:38.00"
       },
       {
         "id": "phrase_30",
         "text_l1": "اليوم ما شعرت بإشي يا جلجل؟",
-        "text_l2": "Didn't you feel anything today, Jaljal?",
         "timestamp": "01:38.00",
         "timestamp_end": "01:40.00"
       },
       {
         "id": "phrase_31",
         "text_l1": "شعرت؟ لا ما شعرت بإشي.",
-        "text_l2": "Feel? No, I didn't feel anything.",
         "timestamp": "01:40.00",
         "timestamp_end": "01:43.00"
       },
       {
         "id": "phrase_32",
         "text_l1": "ما صار إشي معك اليوم غريب؟",
-        "text_l2": "Did anything strange happen to you today?",
         "timestamp": "01:43.00",
         "timestamp_end": "01:45.00"
       },
       {
         "id": "phrase_33",
         "text_l1": "غريب؟ غريب؟ لا لا لا.",
-        "text_l2": "Strange? Strange? No, no, no.",
         "timestamp": "01:45.00",
         "timestamp_end": "01:47.00"
       },
       {
         "id": "phrase_34",
         "text_l1": "جلجل لازم تحكي شو الأعراض اللي عندك،",
-        "text_l2": "Jaljal, you need to say what symptoms you have,",
         "timestamp": "01:47.00",
         "timestamp_end": "01:50.00"
       },
       {
         "id": "phrase_35",
         "text_l1": "بشو حاسس؟",
-        "text_l2": "What are you feeling?",
         "timestamp": "01:50.00",
         "timestamp_end": "01:51.00"
       },
       {
         "id": "phrase_36",
         "text_l1": "أعراض؟ أعراض إيش يا تنتن؟",
-        "text_l2": "Symptoms? What symptoms, Tantan?",
         "timestamp": "01:51.00",
         "timestamp_end": "01:53.00"
       },
       {
         "id": "phrase_37",
         "text_l1": "أنا ما مالي إشي.",
-        "text_l2": "I have nothing wrong with me.",
         "timestamp": "01:53.00",
         "timestamp_end": "01:54.00"
       },
       {
         "id": "phrase_38",
         "text_l1": "طيب جلجل معلش معلش، بس قول آه.",
-        "text_l2": "Okay Jaljal, sorry, sorry, just say ah.",
         "timestamp": "01:54.00",
         "timestamp_end": "01:56.00"
       },
       {
         "id": "phrase_39",
         "text_l1": "آآآه.",
-        "text_l2": "Aaaah.",
         "timestamp": "01:56.00",
         "timestamp_end": "01:58.00"
       },
       {
         "id": "phrase_40",
         "text_l1": "أشوف؟",
-        "text_l2": "Let me see?",
         "timestamp": "01:58.00",
         "timestamp_end": "01:59.00"
       },
       {
         "id": "phrase_41",
         "text_l1": "جلجل جلجل لا تتعب حالك،",
-        "text_l2": "Jaljal, Jaljal, don't tire yourself,",
         "timestamp": "02:00.00",
         "timestamp_end": "02:02.00"
       },
       {
         "id": "phrase_42",
         "text_l1": "ما تحكي كتير.",
-        "text_l2": "Don't talk too much.",
         "timestamp": "02:02.00",
         "timestamp_end": "02:03.00"
       },
       {
         "id": "phrase_43",
         "text_l1": "ما أحكي كتير؟ ليش أنا إيش مالي؟",
-        "text_l2": "Don't talk much? Why? What's wrong with me?",
         "timestamp": "02:03.00",
         "timestamp_end": "02:05.00"
       },
       {
         "id": "phrase_44",
         "text_l1": "تطلع علي يا جلجل، تطلع علي.",
-        "text_l2": "Look at me, Jaljal, look at me.",
         "timestamp": "02:05.00",
         "timestamp_end": "02:06.00"
       },
       {
         "id": "phrase_45",
         "text_l1": "لا تخاف يا جلجل،",
-        "text_l2": "Don't be afraid, Jaljal,",
         "timestamp": "02:09.00",
         "timestamp_end": "02:11.00"
       },
       {
         "id": "phrase_46",
         "text_l1": "هلق بتعطيك دواء مناسب.",
-        "text_l2": "Now I'll give you suitable medicine.",
         "timestamp": "02:11.00",
         "timestamp_end": "02:13.00"
       },
       {
         "id": "phrase_47",
         "text_l1": "دواء؟ دواء؟ لأيش الدواء؟",
-        "text_l2": "Medicine? Medicine? Why medicine?",
         "timestamp": "02:13.00",
         "timestamp_end": "02:15.00"
       },
       {
         "id": "phrase_48",
         "text_l1": "أنا صحتي منيحة ما مالي إشي.",
-        "text_l2": "My health is good, nothing's wrong with me.",
         "timestamp": "02:15.00",
         "timestamp_end": "02:17.00"
       },
       {
         "id": "phrase_49",
         "text_l1": "معلش جلجل معلش،",
-        "text_l2": "Sorry Jaljal, sorry,",
         "timestamp": "02:17.00",
         "timestamp_end": "02:19.00"
       },
       {
         "id": "phrase_50",
         "text_l1": "بس بالأول بدي أقيسلك حرارتك",
-        "text_l2": "But first I want to measure your temperature",
         "timestamp": "02:19.00",
         "timestamp_end": "02:21.00"
       },
       {
         "id": "phrase_51",
         "text_l1": "عشان أتأكد بالظبط",
-        "text_l2": "So I can make sure exactly",
         "timestamp": "02:21.00",
         "timestamp_end": "02:23.00"
       },
       {
         "id": "phrase_52",
         "text_l1": "أي دواء بدي أعطيك إياه.",
-        "text_l2": "Which medicine I should give you.",
         "timestamp": "02:23.00",
         "timestamp_end": "02:25.00"
       },
       {
         "id": "phrase_53",
         "text_l1": "ليش تقيسوا الحرارة؟ تنتن أنا بس",
-        "text_l2": "Why measure temperature? Tantan, I just...",
         "timestamp": "02:25.00",
         "timestamp_end": "02:27.00"
       },
       {
         "id": "phrase_54",
         "text_l1": "خلونا شوي بدنا نرجع لورا.",
-        "text_l2": "Leave us alone a bit, we need to go back.",
         "timestamp": "02:27.00",
         "timestamp_end": "02:29.00"
       },
       {
         "id": "phrase_55",
         "text_l1": "آه ريح حالك عالكنباية، بس نمشي شوي.",
-        "text_l2": "Ah, rest on the couch, we'll just move a bit.",
         "timestamp": "02:29.00",
         "timestamp_end": "02:31.00"
       },
       {
         "id": "phrase_56",
         "text_l1": "أنا ما مالي إشي، يا جماعة إيش في؟",
-        "text_l2": "Nothing's wrong with me, guys, what's going on?",
         "timestamp": "02:31.00",
         "timestamp_end": "02:33.00"
       },
       {
         "id": "phrase_57",
         "text_l1": "ارتاح يا جلجل ارتاح، بس استنوا شوي.",
-        "text_l2": "Rest, Jaljal, rest, just wait a bit.",
         "timestamp": "02:33.00",
         "timestamp_end": "02:35.00"
       },
       {
         "id": "phrase_58",
         "text_l1": "ريح حالك يا جلجل، استنوا شوي.",
-        "text_l2": "Rest yourself, Jaljal, wait a bit.",
         "timestamp": "02:35.00",
         "timestamp_end": "02:37.00"
       },
       {
         "id": "phrase_59",
         "text_l1": "خليني أكمل بس الجملة،",
-        "text_l2": "Let me just finish the sentence,",
         "timestamp": "02:37.00",
         "timestamp_end": "02:39.00"
       },
       {
         "id": "phrase_60",
         "text_l1": "جلجل أنا ما مالي إشي بخوف.",
-        "text_l2": "I, Jaljal, have nothing wrong, really.",
         "timestamp": "02:39.00",
         "timestamp_end": "02:41.00"
       },
       {
         "id": "phrase_61",
         "text_l1": "إيش مالكم؟ هه هه هه.",
-        "text_l2": "What's wrong with you? Ha ha ha.",
         "timestamp": "02:41.00",
         "timestamp_end": "02:43.00"
       },
       {
         "id": "phrase_62",
         "text_l1": "اسمعوني!",
-        "text_l2": "Listen to me!",
         "timestamp": "02:43.00",
         "timestamp_end": "02:45.00"
       },
       {
         "id": "phrase_63",
         "text_l1": "تفضل يا جلجل احكي.",
-        "text_l2": "Go ahead, Jaljal, speak.",
         "timestamp": "02:45.00",
         "timestamp_end": "02:47.00"
       },
       {
         "id": "phrase_64",
         "text_l1": "أنا مش مريض،",
-        "text_l2": "I am not sick,",
         "timestamp": "02:47.00",
         "timestamp_end": "02:49.00"
       },
       {
         "id": "phrase_65",
         "text_l1": "ويا ريت تسمعوني للآخر.",
-        "text_l2": "And I wish you'd listen to the end.",
         "timestamp": "02:49.00",
         "timestamp_end": "02:51.00"
       },
       {
         "id": "phrase_66",
         "text_l1": "مش مريض؟ عمو كامل اللي مريض",
-        "text_l2": "Not sick? Uncle Kamel is the sick one",
         "timestamp": "02:51.00",
         "timestamp_end": "02:53.00"
       },
       {
         "id": "phrase_67",
         "text_l1": "يا تنتن، اسمعيني للآخر.",
-        "text_l2": "Oh Tantan, listen to me to the end.",
         "timestamp": "02:53.00",
         "timestamp_end": "02:55.00"
       },
       {
         "id": "phrase_68",
         "text_l1": "مش أنا المريض. هه؟ مش أنا.",
-        "text_l2": "I'm not the patient. Huh? Not me.",
         "timestamp": "02:55.00",
         "timestamp_end": "02:57.00"
       },
       {
         "id": "phrase_69",
         "text_l1": "إنت مش مريض؟",
-        "text_l2": "You're not sick?",
         "timestamp": "02:57.00",
         "timestamp_end": "03:00.00"
       },
       {
         "id": "phrase_70",
         "text_l1": "آه مش مريض.",
-        "text_l2": "Ah, not sick.",
         "timestamp": "03:00.00",
         "timestamp_end": "03:01.00"
       },
       {
         "id": "phrase_71",
         "text_l1": "إذا عمو كامل مريض،",
-        "text_l2": "So if Uncle Kamel is sick,",
         "timestamp": "03:01.00",
         "timestamp_end": "03:03.00"
       },
       {
         "id": "phrase_72",
         "text_l1": "لازم هلق نروح نفحصه،",
-        "text_l2": "We need to go examine him now,",
         "timestamp": "03:03.00",
         "timestamp_end": "03:05.00"
       },
       {
         "id": "phrase_73",
         "text_l1": "يلا يلا يا رحمة.",
-        "text_l2": "Come on, come on, Rahma.",
         "timestamp": "03:05.00",
         "timestamp_end": "03:07.00"
       },
       {
         "id": "phrase_74",
         "text_l1": "أنا قلت عمو كامل؟",
-        "text_l2": "Did I say Uncle Kamel?",
         "timestamp": "03:07.00",
         "timestamp_end": "03:10.00"
       },
       {
         "id": "phrase_75",
         "text_l1": "أنا قصدي عمو كمال،",
-        "text_l2": "I meant Uncle Kamal,",
         "timestamp": "03:10.00",
         "timestamp_end": "03:12.00"
       },
       {
         "id": "phrase_76",
         "text_l1": "اسمعوني للآخر.",
-        "text_l2": "Listen to me to the end.",
         "timestamp": "03:12.00",
         "timestamp_end": "03:14.00"
       }
     ],
     "similar_sounds": "",
-    "phrases_with_token_translations": "[ألو]؟ دكتورة عليا؟ => [Hello]? Dr. Alya?\nألو؟ [دكتورة] عليا؟ => Hello? [Dr.] Alya?\nألو؟ دكتورة [عليا]؟ => Hello? Dr. [Alya]?\n\n[كيف] حالك؟ آه. => [How] are you? Ah.\nكيف [حالك]؟ آه. => How [are you]? Ah.\nكيف حالك؟ [آه]. => How are you? [Ah].\n\n[مريض]. => [Sick].\n\n[مريض] وتعبان => [Sick] and exhausted.\nمريض [و]تعبان => Sick [and] exhausted.\nمريض و[تعبان] => Sick and [exhausted].\n\n[حرارة]؟ في حرارة آه. => [Fever]? Yes, a fever, ah.\nحرارة؟ [في] حرارة آه. => there is, yes\nحرارة؟ في [حرارة] آه. => Fever? Yes, [a fever], ah.\nحرارة؟ في حرارة [آه]. => Fever? Yes, a fever, [ah].\n\n[حرارة] عالية مرات. => High [fever] sometimes.\nحرارة [عالية] مرات. => [High] fever sometimes.\nحرارة عالية [مرات] => High fever [sometimes]\n\n[سعلة]؟ في سعلة آه. => [Cough]? Yes, a cough, ah.\nسعلة؟ [في] سعلة آه. => there is\nسعلة؟ في [سعلة] آه. => Cough? Yes, a [cough], ah.\nسعلة؟ في سعلة [آه]. => Cough? Yes, a cough, [ah].\n\n[قوية]. => [Strong].\n\n[مرات] دوخة مش دايماً => [Sometimes] dizziness, not always.\nمرات [دوخة] مش دايماً => Sometimes [dizziness], not always.\nمرات دوخة [مش] دايماً => Sometimes dizziness, [not] always.\nمرات دوخة مش [دايماً] => Sometimes dizziness, not [always]\n\n[دكتورة]. => [Doctor].\n\n[مريض]، مريض وتعبان. => [Sick], sick and exhausted.\nمريض، [مريض] وتعبان. => Sick, [sick] and exhausted.\nمريض، مريض [و]تعبان. => Sick, sick [and] exhausted.\nمريض، مريض و[تعبان]. => Sick, sick and [exhausted].\n\n[مريض] كتير كتير مريض. => Very, very [sick].\nمريض [كتير] كتير مريض. => [Very], very sick.\nمريض كتير [كتير] مريض. => Very, [very] sick.\nمريض كتير كتير [مريض]. => Very, very [sick].\n\n[آه] آه آه. => [Ah], ah, ah.\nآه [آه] آه. => Ah, [ah], ah.\nآه آه [آه]. => Ah, ah, [ah].\n\n[آه]، شكراً يا دكتورة. => [Ah], thank you, Doctor.\nآه، [شكراً] يا دكتورة. => Ah, [thank you], Doctor.\nآه، شكراً [يا] دكتورة. => vocative particle\nآه، شكراً يا [دكتورة]. => Ah, thank you, [Doctor].\n\n[مع السلامة] => [Goodbye]\n\n[جلجل] مريض؟ ممم. => [Jaljal] is sick? Hmm.\nجلجل [مريض]؟ ممم. => Jaljal [is sick]? Hmm.\nجلجل مريض؟ [ممم] => Jaljal is sick? [Hmm]\n\n[آه]، حرام عليه حرارة => [Ah], poor him, a fever.\nآه، [حرام عليه] حرارة => Ah, [poor him], a fever.\nآه، حرام عليه [حرارة] => Ah, poor him, [a fever]\n\n[جلجل] مريض. => [Jaljal] is sick.\nجلجل [مريض]. => Jaljal [is sick].\n\n[شو] ممكن أنا أعمل؟ ممم. => [What] can I do? Hmm.\nشو [ممكن] أنا أعمل؟ ممم. => What [can] I do? Hmm.\nشو ممكن [أنا] أعمل؟ ممم. => What can [I] do? Hmm.\nشو ممكن أنا [أعمل]؟ ممم. => What can I [do]? Hmm.\nشو ممكن أنا أعمل؟ [ممم] => What can I do? [Hmm]\n\n[أحسن] إشي أجيب حدا يساعده. => [Best] thing is to get someone to help him.\nأحسن [إشي] أجيب حدا يساعده. => Best [thing] is to get someone to help him.\nأحسن إشي [أجيب] حدا يساعده. => Best thing is [to get] someone to help him.\nأحسن إشي أجيب [حدا] يساعده. => Best thing is to get [someone] to help him.\nأحسن إشي أجيب حدا [يساعده]. => Best thing is to get someone [to help him].\n\n[تنتن]؟ تنتن؟ => [Tantan]? Tantan?\nتنتن؟ [تنتن]؟ => Tantan? [Tantan]?\n\n[وين] راحت تنتن؟ => [Where] did Tantan go?\nوين [راحت] تنتن؟ => went, did go\nوين راحت [تنتن]؟ => Where did [Tantan] go?\n\n[ليش] طلعت هيك بسرعة؟ => [Why] did she leave so quickly?\nليش [طلعت] هيك بسرعة؟ => Why [did she leave] so quickly?\nليش طلعت [هيك] بسرعة؟ => Why did she leave [so] quickly?\nليش طلعت هيك [بسرعة]؟ => Why did she leave so [quickly]?\n\n[يلا] يلا رحمة بسرعة => [Come on], come on, Rahma, quickly\nيلا [يلا] رحمة بسرعة => Come on, [come on], Rahma, quickly\nيلا يلا [رحمة] بسرعة => Come on, come on, [Rahma], quickly\nيلا يلا رحمة [بسرعة] => Come on, come on, Rahma, [quickly]\n\n[هه]؟ رحمة عنا هون؟ => [Huh]? Rahma is here with us?\nهه؟ [رحمة] عنا هون؟ => Huh? [Rahma] is here with us?\nهه؟ رحمة [عنا] هون؟ => with us\nهه؟ رحمة عنا [هون]؟ => Huh? Rahma is [here] with us?\n\n[كيف] حالك جلجل؟ => [How] are you, Jaljal?\nكيف [حالك] جلجل؟ => How [are you], Jaljal?\nكيف حالك [جلجل]؟ => How are you, [Jaljal]?\n\n[منيح]، شو هالزيارة الحلوة؟ => [Good], what's this sweet visit?\nمنيح، [شو] هالزيارة الحلوة؟ => Good, [what's] this sweet visit?\nمنيح، شو [هالزيارة] الحلوة؟ => this visit\nمنيح، شو هالزيارة [الحلوة]؟ => Good, what's this [sweet] visit?\n\n[كيف] صرت هلق يا جلجل؟ كيف صحتك؟ => [How] are you now, Jaljal? How's your health?\nكيف [صرت] هلق يا جلجل؟ كيف صحتك؟ => How [are you] now, Jaljal? How's your health?\nكيف صرت [هلق] يا جلجل؟ كيف صحتك؟ => How are you [now], Jaljal? How's your health?\nكيف صرت هلق يا [جلجل]؟ كيف صحتك؟ => How are you now, [Jaljal]? How's your health?\nكيف صرت هلق يا جلجل؟ [كيف] صحتك؟ => How are you now, Jaljal? [How's] your health?\nكيف صرت هلق يا جلجل؟ كيف [صحتك]؟ => How are you now, Jaljal? How's [your health]?\n\n[أنا] منيح وصحتي تمام، ما مالي إشي. => [I'm] good, health is perfect, nothing's wrong with me.\nأنا [منيح] وصحتي تمام، ما مالي إشي. => I'm [good], health is perfect, nothing's wrong with me.\nأنا منيح [وصحتي] تمام، ما مالي إشي. => and my health\nأنا منيح وصحتي [تمام]، ما مالي إشي. => I'm good, health [is perfect], nothing's wrong with me.\nأنا منيح وصحتي تمام، [ما مالي إشي] => I'm good, health is perfect, [nothing's wrong with me] # This idiomatic expression is best kept as a single unit meaning \"nothing is wrong with me\"\n\n[اليوم] ما شعرت بإشي يا جلجل؟ => Didn't you feel anything [today], Jaljal?\nاليوم [ما شعرت] بإشي يا جلجل؟ => [Didn't you feel] anything today, Jaljal?\nاليوم ما شعرت [بإشي] يا جلجل؟ => Didn't you feel [anything] today, Jaljal?\nاليوم ما شعرت بإشي يا [جلجل]؟ => Didn't you feel anything today, [Jaljal]\n\n[شعرت]؟ لا ما شعرت بإشي. => [Feel]? No, I didn't feel anything.\nشعرت؟ [لا] ما شعرت بإشي. => Feel? [No], I didn't feel anything.\nشعرت؟ لا [ما شعرت] بإشي. => Feel? No, [I didn't feel] anything.\nشعرت؟ لا ما شعرت [بإشي]. => Feel? No, I didn't feel [anything].\n\n[ما] صار إشي معك اليوم غريب؟ => [Did] anything strange happen to you today?\nما [صار] إشي معك اليوم غريب؟ => Did anything strange [happen] to you today?\nما صار [إشي] معك اليوم غريب؟ => Did [anything] strange happen to you today?\nما صار إشي [معك] اليوم غريب؟ => Did anything strange happen [to you] today?\nما صار إشي معك [اليوم] غريب؟ => Did anything strange happen to you [today]?\nما صار إشي معك اليوم [غريب]؟ => Did anything [strange] happen to you today?\n\n[غريب]؟ غريب؟ لا لا لا. => [Strange]? Strange? No, no, no.\nغريب؟ [غريب]؟ لا لا لا. => Strange? [Strange]? No, no, no.\nغريب؟ غريب؟ [لا] لا لا. => Strange? Strange? [No], no, no.\nغريب؟ غريب؟ لا [لا] لا. => Strange? Strange? No, [no], no.\nغريب؟ غريب؟ لا لا [لا]. => Strange? Strange? No, no, [no].\n\n[جلجل] لازم تحكي شو الأعراض اللي عندك، => [Jaljal], you need to say what symptoms you have,\nجلجل [لازم] تحكي شو الأعراض اللي عندك، => Jaljal, [you need] to say what symptoms you have,\nجلجل لازم [تحكي] شو الأعراض اللي عندك، => Jaljal, you need [to say] what symptoms you have,\nجلجل لازم تحكي [شو] الأعراض اللي عندك، => Jaljal, you need to say [what] symptoms you have,\nجلجل لازم تحكي شو [الأعراض] اللي عندك، => Jaljal, you need to say what [symptoms] you have,\nجلجل لازم تحكي شو الأعراض [اللي عندك]، => Jaljal, you need to say what symptoms [you have]\n\n[بشو] حاسس؟ => [What] are you feeling?\nبشو [حاسس]؟ => What [are you feeling]? # حاسس (active participle) functions as the verb and covers the implied subject \"you\" in this context\n\n[أعراض]؟ أعراض إيش يا تنتن؟ => [Symptoms]? What symptoms, Tantan?\nأعراض؟ [أعراض] إيش يا تنتن؟ => Symptoms? What [symptoms], Tantan?\nأعراض؟ أعراض [إيش] يا تنتن؟ => Symptoms? [What] symptoms, Tantan?\nأعراض؟ أعراض إيش يا [تنتن]؟ => Symptoms? What symptoms, [Tantan]?\n\n[أنا] ما مالي إشي. => [I] have nothing wrong with me.\nأنا [ما] مالي [إشي] => nothing\nأنا ما [مالي] إشي. => I have nothing [wrong with me]. # 'Mali' functions as 'what is with me' or 'wrong with me' in this context.\n\n[طيب] جلجل معلش معلش، بس قول آه. => [Okay] Jaljal, sorry, sorry, just say ah.\nطيب [جلجل] معلش معلش، بس قول آه. => Okay [Jaljal], sorry, sorry, just say ah.\nطيب جلجل [معلش] معلش، بس قول آه. => Okay Jaljal, [sorry], sorry, just say ah.\nطيب جلجل معلش [معلش]، بس قول آه. => Okay Jaljal, sorry, [sorry], just say ah.\nطيب جلجل معلش معلش، [بس] قول آه. => Okay Jaljal, sorry, sorry, [just] say ah.\nطيب جلجل معلش معلش، بس [قول] آه. => Okay Jaljal, sorry, sorry, just [say] ah.\nطيب جلجل معلش معلش، بس قول [آه] => Okay Jaljal, sorry, sorry, just say [ah]\n\n[آآآه]. => [Aaaah].\n\n[أشوف]؟ => [Let me see]?\n\n[جلجل] جلجل لا تتعب حالك، => [Jaljal], Jaljal, don't tire yourself,\nجلجل [جلجل] لا تتعب حالك، => Jaljal, [Jaljal], don't tire yourself,\nجلجل جلجل [لا تتعب] حالك، => Jaljal, Jaljal, [don't tire] yourself,\nجلجل جلجل لا تتعب [حالك]، => Jaljal, Jaljal, don't tire [yourself]\n\n[ما تحكي] كتير. => [Don't talk] too much.\nما تحكي [كتير]. => Don't talk [too much].\n\n[ما] أحكي كتير؟ ليش أنا إيش مالي؟ => [Don't] talk much? Why? What's wrong with me?\nما [أحكي] كتير؟ ليش أنا إيش مالي؟ => Don't [talk] much? Why? What's wrong with me?\nما أحكي [كتير]؟ ليش أنا إيش مالي؟ => Don't talk [much]? Why? What's wrong with me?\nما أحكي كتير؟ [ليش] أنا إيش مالي؟ => Don't talk much? [Why]? What's wrong with me?\nما أحكي كتير؟ ليش [أنا] إيش مالي؟ => I\nما أحكي كتير؟ ليش أنا [إيش مالي]؟ => [What's wrong with me]\n\n[تطلع] علي يا جلجل، تطلع علي. => [Look] at me, Jaljal, look at me.\nتطلع [علي] يا جلجل، تطلع علي. => Look [at me], Jaljal, look at me.\nتطلع علي [يا جلجل]، تطلع علي. => Look at me, [Jaljal], look at me.\nتطلع علي يا جلجل، [تطلع] علي. => Look at me, Jaljal, [look] at me.\nتطلع علي يا جلجل، تطلع [علي]. => Look at me, Jaljal, look [at me].\n\n[لا] تخاف يا جلجل، => [Don't] be afraid, Jaljal,\nلا [تخاف] يا جلجل، => Don't [be afraid], Jaljal,\nلا تخاف [يا] جلجل، => vocative particle\nلا تخاف يا [جلجل]، => Don't be afraid, [Jaljal],\n\n[هلق] بتعطيك دواء مناسب. => [Now] I'll give you suitable medicine.\nهلق [بتعطيك] دواء مناسب. => will give you # \"بتعطيك\" literally means \"she/it will give you\", but corresponds to the action in the English sentence\nهلق بتعطيك [دواء] مناسب. => Now I'll give you suitable [medicine].\nهلق بتعطيك دواء [مناسب]. => Now I'll give you [suitable] medicine.\n\n[دواء]؟ دواء؟ لأيش الدواء؟ => [Medicine]? Medicine? Why medicine?\nدواء؟ [دواء]؟ لأيش الدواء؟ => Medicine? [Medicine]? Why medicine?\nدواء؟ دواء؟ [لأيش] الدواء؟ => Medicine? Medicine? [Why] medicine?\nدواء؟ دواء؟ لأيش [الدواء]؟ => Medicine? Medicine? Why [medicine]?\n\nأنا [صحتي] منيحة ما مالي إشي. => [My health] is good, nothing's wrong with me.\nأنا صحتي [منيحة] ما مالي إشي. => My health is [good], nothing's wrong with me.\nأنا صحتي منيحة [ما مالي إشي]. => My health is good, [nothing's wrong with me].\nأنا صحتي منيحة ما مالي [إشي]. => thing, something # custom translation for the individual word meaning within the phrase \"not anything\" (nothing)\n\n[معلش] جلجل معلش، => [Sorry] Jaljal, sorry,\nمعلش [جلجل] معلش، => Sorry [Jaljal], sorry,\nمعلش جلجل [معلش]، => Sorry Jaljal, [sorry],\n\n[بس] بالأول بدي أقيسلك حرارتك => [But] first I want to measure your temperature\nبس [بالأول] بدي أقيسلك حرارتك => But [first] I want to measure your temperature\nبس بالأول [بدي] أقيسلك حرارتك => But first [I want] to measure your temperature\nبس بالأول بدي [أقيسلك] حرارتك => to measure for you # \"أقيس\" means measure and \"لك\" means for you\nبس بالأول بدي أقيسلك [حرارتك] => [your temperature] # \"حرارة\" means temperature and \"ك\" is the possessive \"your\"\n\n[عشان] أتأكد بالظبط => [So I can] make sure exactly\nعشان [أتأكد] بالظبط => So I can [make sure] exactly\nعشان أتأكد [بالظبط] => So I can make sure [exactly]\n\n[أي] دواء بدي أعطيك إياه. => [Which] medicine I should give you.\nأي [دواء] بدي أعطيك إياه. => Which [medicine] I should give you.\nأي دواء [بدي] أعطيك إياه. => Which medicine [I should] give you.\nأي دواء بدي [أعطيك] إياه. => Which medicine I should [give you].\nأي دواء بدي أعطيك [إياه] => it # object pronoun referring to the medicine\n\n[ليش] تقيسوا الحرارة؟ تنتن أنا بس => [Why] measure temperature? Tantan, I just...\nليش [تقيسوا] الحرارة؟ تنتن أنا بس => Why [measure] temperature? Tantan, I just...\nليش تقيسوا [الحرارة]؟ تنتن أنا بس => Why measure [temperature]? Tantan, I just...\nليش تقيسوا الحرارة؟ [تنتن] أنا بس => Why measure temperature? [Tantan], I just...\nليش تقيسوا الحرارة؟ تنتن [أنا] بس => Why measure temperature? Tantan, [I] just...\nليش تقيسوا الحرارة؟ تنتن أنا [بس] => Why measure temperature? Tantan, I [just]...\n\n[خلونا] شوي بدنا نرجع لورا. => [Leave us] alone a bit, we need to go back.\nخلونا [شوي] بدنا نرجع لورا. => Leave us alone [a bit], we need to go back.\nخلونا شوي [بدنا] نرجع لورا. => Leave us alone a bit, [we need] to go back.\nخلونا شوي بدنا [نرجع] لورا. => Leave us alone a bit, we need [to go] back.\nخلونا شوي بدنا نرجع [لورا]. => Leave us alone a bit, we need to go [back].\n\n[آه] ريح حالك عالكنباية، بس نمشي شوي. => [Ah], rest on the couch, we'll just move a bit.\nآه [ريح حالك] عالكنباية، بس نمشي شوي. => Ah, [rest] on the couch, we'll just move a bit. # literally \"rest yourself\"\nآه ريح حالك [عالكنباية]، بس نمشي شوي. => Ah, rest [on the couch], we'll just move a bit. # \"على\" (on) + \"الكنباية\" (the couch)\nآه ريح حالك عالكنباية، [بس] نمشي شوي. => Ah, rest on the couch, we'll [just] move a bit.\nآه ريح حالك عالكنباية، بس [نمشي] شوي. => we move / we walk # the Arabic verb contains the subject \"we\"\nآه ريح حالك عالكنباية، بس نمشي [شوي]. => Ah, rest on the couch, we'll just move [a bit].\n\nأنا ما مالي إشي، [يا جماعة] إيش في؟ => Nothing's wrong with me, [guys], what's going on?\nأنا ما مالي إشي، يا جماعة [إيش] في؟ => what\nأنا ما مالي إشي، يا جماعة إيش [في]؟ => there is, is going on # custom translation because 'fi' means 'there is' or 'in', used here to mean 'is happening'\n\n[ارتاح] يا جلجل ارتاح، بس استنوا شوي. => [Rest], Jaljal, rest, just wait a bit.\nارتاح [يا جلجل] ارتاح، بس استنوا شوي. => Rest, [Jaljal], rest, just wait a bit.\nارتاح يا جلجل [ارتاح]، بس استنوا شوي. => Rest, Jaljal, [rest], just wait a bit.\nارتاح يا جلجل ارتاح، [بس] استنوا شوي. => Rest, Jaljal, rest, [just] wait a bit.\nارتاح يا جلجل ارتاح، بس [استنوا] شوي. => Rest, Jaljal, rest, just [wait] a bit.\nارتاح يا جلجل ارتاح، بس استنوا [شوي] => Rest, Jaljal, rest, just wait [a bit]\n\n[ريح] حالك يا جلجل، استنوا شوي. => [Rest] yourself, Jaljal, wait a bit.\nريح [حالك] يا جلجل، استنوا شوي. => Rest [yourself], Jaljal, wait a bit.\nريح حالك [يا جلجل]، استنوا شوي. => Rest yourself, [Jaljal], wait a bit.\nريح حالك يا جلجل، [استنوا] شوي. => Rest yourself, Jaljal, [wait] a bit.\nريح حالك يا جلجل، استنوا [شوي] => Rest yourself, Jaljal, wait [a bit]\n\n[خليني] أكمل بس الجملة، => [Let me] just finish the sentence,\nخليني [أكمل] بس الجملة، => Let me just [finish] the sentence,\nخليني أكمل [بس] الجملة، => Let me [just] finish the sentence,\nخليني أكمل بس [الجملة]، => Let me just finish [the sentence],\n\n[جلجل] أنا ما مالي إشي بخوف. => I, [Jaljal], have nothing wrong, really.\nجلجل [أنا] ما مالي إشي بخوف. => [I], Jaljal, have nothing wrong, really.\nجلجل أنا [ما مالي إشي] بخوف. => I, Jaljal, [have nothing wrong], really.\nجلجل أنا ما مالي إشي [بخوف] => scary, frightening # Literal meaning differes from the localized \"really\" used as an intensifier in the English sentence.\n\n[إيش] مالكم؟ هه هه هه. => [What]'s wrong with you? Ha ha ha.\nإيش [مالكم]؟ هه هه هه. => What's [wrong with you]? Ha ha ha.\nإيش مالكم؟ [هه هه هه]. => What's wrong with you? [Ha ha ha].\n\n[اسمعوني]! => [Listen to me]!\n\n[تفضل] يا جلجل احكي. => [Go ahead], Jaljal, speak.\nتفضل يا [جلجل] احكي. => Go ahead, [Jaljal], speak.\nتفضل يا جلجل [احكي]. => Go ahead, Jaljal, [speak].\n\n[أنا] مش مريض، => [I am] not sick\nأنا [مش] مريض، => I am [not] sick\nأنا مش [مريض]، => I am not [sick]\n\n[و]يا ريت تسمعوني للآخر => [And] I wish you'd listen to the end.\nو[يا ريت] تسمعوني للآخر => And [I wish] you'd listen to the end.\nويا ريت [تسمعوني] للآخر => And I wish [you'd listen] to the end. # Mapping \"تسمعوني\" (you all listen to me) to \"you'd listen\"\nويا ريت تسمعوني [للآخر] => And I wish you'd listen [to the end]\n\n[مش] مريض؟ عمو كامل اللي مريض => [Not] sick? Uncle Kamel is the sick one\nمش [مريض]؟ عمو كامل اللي مريض => Not [sick]? Uncle Kamel is the sick one\nمش مريض؟ [عمو] كامل اللي مريض => Not sick? [Uncle] Kamel is the sick one\nمش مريض؟ عمو [كامل] اللي مريض => Not sick? Uncle [Kamel] is the sick one\nمش مريض؟ عمو كامل [اللي] مريض => who, the one who\nمش مريض؟ عمو كامل اللي [مريض] => Not sick? Uncle Kamel is the [sick] one\n\n[يا] تنتن، اسمعيني للآخر. => [Oh] Tantan, listen to me to the end.\nيا [تنتن]، اسمعيني للآخر. => Oh [Tantan], listen to me to the end.\nيا تنتن، [اسمعيني] للآخر. => Oh Tantan, [listen to me] to the end.\nيا تنتن، اسمعيني [للآخر]. => Oh Tantan, listen to me [to the end].\n\n[مش] أنا المريض. هه؟ مش أنا. => I'm [not] the patient. Huh? Not me.\nمش [أنا] المريض. هه؟ مش أنا. => [I'm] not the patient. Huh? Not me.\nمش أنا [المريض]. هه؟ مش أنا. => I'm not [the patient]. Huh? Not me.\nمش أنا المريض. [هه]؟ مش أنا. => I'm not the patient. [Huh]? Not me.\nمش أنا المريض. هه؟ [مش] أنا. => I'm not the patient. Huh? [Not] me.\nمش أنا المريض. هه؟ مش [أنا]. => I'm not the patient. Huh? Not [me].\n\n[إنت] مش مريض؟ => [You're] not sick?\nإنت [مش] مريض؟ => You're [not] sick?\nإنت مش [مريض]؟ => You're not [sick]?\n\n[آه] مش مريض => [Ah], not sick\nآه [مش] مريض => Ah, [not] sick\nآه مش [مريض] => Ah, not [sick]\n\n[إذا] عمو كامل مريض، => [So if] Uncle Kamel is sick,\nإذا [عمو] كامل مريض، => So if [Uncle] Kamel is sick,\nإذا عمو [كامل] مريض، => So if Uncle [Kamel] is sick,\nإذا عمو كامل [مريض]، => So if Uncle Kamel [is sick]\n\n[لازم] هلق نروح نفحصه، => [We need to] go examine him now,\nلازم [هلق] نروح نفحصه، => We need to go examine him [now],\nلازم هلق [نروح] نفحصه، => We need to [go] examine him now,\nلازم هلق نروح [نفحصه]، => We need to go [examine him] now,\n\n[يلا] يلا يا رحمة => [Come on], come on, Rahma.\nيلا [يلا] يا رحمة => Come on, [come on], Rahma.\nيلا يلا يا [رحمة] => Come on, come on, [Rahma]\n\n[أنا] قلت عمو كامل؟ => Did [I] say Uncle Kamel?\nأنا [قلت] عمو كامل؟ => said, did say\nأنا قلت [عمو] كامل؟ => Did I say [Uncle] Kamel?\nأنا قلت عمو [كامل]؟ => Did I say Uncle [Kamel]?\n\n[أنا] قصدي عمو كمال، => [I] meant Uncle Kamal,\nأنا [قصدي] عمو كمال، => I [meant] Uncle Kamal,\nأنا قصدي [عمو] كمال، => I meant [Uncle] Kamal,\nأنا قصدي عمو [كمال]، => I meant Uncle [Kamal]\n\n[اسمعوني] للآخر. => [Listen to me] to the end.\nاسمعوني [للآخر]. => Listen to me [to the end.]\n\n"
+    "phrases_with_token_translations": "[ألو]؟ دكتورة عليا؟ => [Hello]? Dr. Alya?\nألو؟ [دكتورة] عليا؟ => Hello? [Dr.] Alya?\nألو؟ دكتورة [عليا]؟ => Hello? Dr. [Alya]?\n\n[كيف] حالك؟ آه. => [How] are you? Ah.\nكيف [حالك]؟ آه. => How [are you]? Ah.\nكيف حالك؟ [آه]. => How are you? [Ah].\n\n[مريض]. => [Sick].\n\n[مريض] وتعبان => [Sick] and exhausted.\nمريض [و]تعبان => Sick [and] exhausted.\nمريض و[تعبان] => Sick and [exhausted].\n\n[حرارة]؟ في حرارة آه. => [Fever]? Yes, a fever, ah.\nحرارة؟ [في] حرارة آه. => there is, yes\nحرارة؟ في [حرارة] آه. => Fever? Yes, [a fever], ah.\nحرارة؟ في حرارة [آه]. => Fever? Yes, a fever, [ah].\n\n[حرارة] عالية مرات. => High [fever] sometimes.\nحرارة [عالية] مرات. => [High] fever sometimes.\nحرارة عالية [مرات] => High fever [sometimes]\n\n[سعلة]؟ في سعلة آه. => [Cough]? Yes, a cough, ah.\nسعلة؟ [في] سعلة آه. => there is\nسعلة؟ في [سعلة] آه. => Cough? Yes, a [cough], ah.\nسعلة؟ في سعلة [آه]. => Cough? Yes, a cough, [ah].\n\n[قوية]. => [Strong].\n\n[مرات] دوخة مش دايماً => [Sometimes] dizziness, not always.\nمرات [دوخة] مش دايماً => Sometimes [dizziness], not always.\nمرات دوخة [مش] دايماً => Sometimes dizziness, [not] always.\nمرات دوخة مش [دايماً] => Sometimes dizziness, not [always]\n\n[دكتورة]. => [Doctor].\n\n[مريض]، مريض وتعبان. => [Sick], sick and exhausted.\nمريض، [مريض] وتعبان. => Sick, [sick] and exhausted.\nمريض، مريض [و]تعبان. => Sick, sick [and] exhausted.\nمريض، مريض و[تعبان]. => Sick, sick and [exhausted].\n\n[مريض] كتير كتير مريض. => Very, very [sick].\nمريض [كتير] كتير مريض. => [Very], very sick.\nمريض كتير [كتير] مريض. => Very, [very] sick.\nمريض كتير كتير [مريض]. => Very, very [sick].\n\n[آه] آه آه. => [Ah], ah, ah.\nآه [آه] آه. => Ah, [ah], ah.\nآه آه [آه]. => Ah, ah, [ah].\n\n[آه]، شكراً يا دكتورة. => [Ah], thank you, Doctor.\nآه، [شكراً] يا دكتورة. => Ah, [thank you], Doctor.\nآه، شكراً [يا] دكتورة. => vocative particle\nآه، شكراً يا [دكتورة]. => Ah, thank you, [Doctor].\n\n[مع السلامة] => [Goodbye]\n\n[جلجل] مريض؟ ممم. => [Jaljal] is sick? Hmm.\nجلجل [مريض]؟ ممم. => Jaljal [is sick]? Hmm.\nجلجل مريض؟ [ممم] => Jaljal is sick? [Hmm]\n\n[آه]، حرام عليه حرارة => [Ah], poor him, a fever.\nآه، [حرام عليه] حرارة => Ah, [poor him], a fever.\nآه، حرام عليه [حرارة] => Ah, poor him, [a fever]\n\n[جلجل] مريض. => [Jaljal] is sick.\nجلجل [مريض]. => Jaljal [is sick].\n\n[شو] ممكن أنا أعمل؟ ممم. => [What] can I do? Hmm.\nشو [ممكن] أنا أعمل؟ ممم. => What [can] I do? Hmm.\nشو ممكن [أنا] أعمل؟ ممم. => What can [I] do? Hmm.\nشو ممكن أنا [أعمل]؟ ممم. => What can I [do]? Hmm.\nشو ممكن أنا أعمل؟ [ممم] => What can I do? [Hmm]\n\n[أحسن] إشي أجيب حدا يساعده. => [Best] thing is to get someone to help him.\nأحسن [إشي] أجيب حدا يساعده. => Best [thing] is to get someone to help him.\nأحسن إشي [أجيب] حدا يساعده. => Best thing is [to get] someone to help him.\nأحسن إشي أجيب [حدا] يساعده. => Best thing is to get [someone] to help him.\nأحسن إشي أجيب حدا [يساعده]. => Best thing is to get someone [to help him].\n\n[تنتن]؟ تنتن؟ => [Tantan]? Tantan?\nتنتن؟ [تنتن]؟ => Tantan? [Tantan]?\n\n[وين] راحت تنتن؟ => [Where] did Tantan go?\nوين [راحت] تنتن؟ => went, did go\nوين راحت [تنتن]؟ => Where did [Tantan] go?\n\n[ليش] طلعت هيك بسرعة؟ => [Why] did she leave so quickly?\nليش [طلعت] هيك بسرعة؟ => Why [did she leave] so quickly?\nليش طلعت [هيك] بسرعة؟ => Why did she leave [so] quickly?\nليش طلعت هيك [بسرعة]؟ => Why did she leave so [quickly]?\n\n[يلا] يلا رحمة بسرعة => [Come on], come on, Rahma, quickly\nيلا [يلا] رحمة بسرعة => Come on, [come on], Rahma, quickly\nيلا يلا [رحمة] بسرعة => Come on, come on, [Rahma], quickly\nيلا يلا رحمة [بسرعة] => Come on, come on, Rahma, [quickly]\n\n[هه]؟ رحمة عنا هون؟ => [Huh]? Rahma is here with us?\nهه؟ [رحمة] عنا هون؟ => Huh? [Rahma] is here with us?\nهه؟ رحمة [عنا] هون؟ => with us\nهه؟ رحمة عنا [هون]؟ => Huh? Rahma is [here] with us?\n\n[كيف] حالك جلجل؟ => [How] are you, Jaljal?\nكيف [حالك] جلجل؟ => How [are you], Jaljal?\nكيف حالك [جلجل]؟ => How are you, [Jaljal]?\n\n[منيح]، شو هالزيارة الحلوة؟ => [Good], what's this sweet visit?\nمنيح، [شو] هالزيارة الحلوة؟ => Good, [what's] this sweet visit?\nمنيح، شو [هالزيارة] الحلوة؟ => this visit\nمنيح، شو هالزيارة [الحلوة]؟ => Good, what's this [sweet] visit?\n\n[كيف] صرت هلق يا جلجل؟ كيف صحتك؟ => [How] are you now, Jaljal? How's your health?\nكيف [صرت] هلق يا جلجل؟ كيف صحتك؟ => How [are you] now, Jaljal? How's your health?\nكيف صرت [هلق] يا جلجل؟ كيف صحتك؟ => How are you [now], Jaljal? How's your health?\nكيف صرت هلق يا [جلجل]؟ كيف صحتك؟ => How are you now, [Jaljal]? How's your health?\nكيف صرت هلق يا جلجل؟ [كيف] صحتك؟ => How are you now, Jaljal? [How's] your health?\nكيف صرت هلق يا جلجل؟ كيف [صحتك]؟ => How are you now, Jaljal? How's [your health]?\n\n[أنا] منيح وصحتي تمام، ما مالي إشي. => [I'm] good, health is perfect, nothing's wrong with me.\nأنا [منيح] وصحتي تمام، ما مالي إشي. => I'm [good], health is perfect, nothing's wrong with me.\nأنا منيح [وصحتي] تمام، ما مالي إشي. => and my health\nأنا منيح وصحتي [تمام]، ما مالي إشي. => I'm good, health [is perfect], nothing's wrong with me.\nأنا منيح وصحتي تمام، [ما مالي إشي] => I'm good, health is perfect, [nothing's wrong with me] # This idiomatic expression is best kept as a single unit meaning \"nothing is wrong with me\"\n\n[اليوم] ما شعرت بإشي يا جلجل؟ => Didn't you feel anything [today], Jaljal?\nاليوم [ما شعرت] بإشي يا جلجل؟ => [Didn't you feel] anything today, Jaljal?\nاليوم ما شعرت [بإشي] يا جلجل؟ => Didn't you feel [anything] today, Jaljal?\nاليوم ما شعرت بإشي يا [جلجل]؟ => Didn't you feel anything today, [Jaljal]\n\n[شعرت]؟ لا ما شعرت بإشي. => [Feel]? No, I didn't feel anything.\nشعرت؟ [لا] ما شعرت بإشي. => Feel? [No], I didn't feel anything.\nشعرت؟ لا [ما شعرت] بإشي. => Feel? No, [I didn't feel] anything.\nشعرت؟ لا ما شعرت [بإشي]. => Feel? No, I didn't feel [anything].\n\n[ما] صار إشي معك اليوم غريب؟ => [Did] anything strange happen to you today?\nما [صار] إشي معك اليوم غريب؟ => Did anything strange [happen] to you today?\nما صار [إشي] معك اليوم غريب؟ => Did [anything] strange happen to you today?\nما صار إشي [معك] اليوم غريب؟ => Did anything strange happen [to you] today?\nما صار إشي معك [اليوم] غريب؟ => Did anything strange happen to you [today]?\nما صار إشي معك اليوم [غريب]؟ => Did anything [strange] happen to you today?\n\n[غريب]؟ غريب؟ لا لا لا. => [Strange]? Strange? No, no, no.\nغريب؟ [غريب]؟ لا لا لا. => Strange? [Strange]? No, no, no.\nغريب؟ غريب؟ [لا] لا لا. => Strange? Strange? [No], no, no.\nغريب؟ غريب؟ لا [لا] لا. => Strange? Strange? No, [no], no.\nغريب؟ غريب؟ لا لا [لا]. => Strange? Strange? No, no, [no].\n\n[جلجل] لازم تحكي شو الأعراض اللي عندك، => [Jaljal], you need to say what symptoms you have,\nجلجل [لازم] تحكي شو الأعراض اللي عندك، => Jaljal, [you need] to say what symptoms you have,\nجلجل لازم [تحكي] شو الأعراض اللي عندك، => Jaljal, you need [to say] what symptoms you have,\nجلجل لازم تحكي [شو] الأعراض اللي عندك، => Jaljal, you need to say [what] symptoms you have,\nجلجل لازم تحكي شو [الأعراض] اللي عندك، => Jaljal, you need to say what [symptoms] you have,\nجلجل لازم تحكي شو الأعراض [اللي عندك]، => Jaljal, you need to say what symptoms [you have]\n\n[بشو] حاسس؟ => [What] are you feeling?\nبشو [حاسس]؟ => What [are you feeling]? # حاسس (active participle) functions as the verb and covers the implied subject \"you\" in this context\n\n[أعراض]؟ أعراض إيش يا تنتن؟ => [Symptoms]? What symptoms, Tantan?\nأعراض؟ [أعراض] إيش يا تنتن؟ => Symptoms? What [symptoms], Tantan?\nأعراض؟ أعراض [إيش] يا تنتن؟ => Symptoms? [What] symptoms, Tantan?\nأعراض؟ أعراض إيش يا [تنتن]؟ => Symptoms? What symptoms, [Tantan]?\n\n[أنا] ما مالي إشي. => [I] have nothing wrong with me.\nأنا [ما] مالي [إشي] => nothing\nأنا ما [مالي] إشي. => I have nothing [wrong with me]. # 'Mali' functions as 'what is with me' or 'wrong with me' in this context.\n\n[طيب] جلجل معلش معلش، بس قول آه. => [Okay] Jaljal, sorry, sorry, just say ah.\nطيب [جلجل] معلش معلش، بس قول آه. => Okay [Jaljal], sorry, sorry, just say ah.\nطيب جلجل [معلش] معلش، بس قول آه. => Okay Jaljal, [sorry], sorry, just say ah.\nطيب جلجل معلش [معلش]، بس قول آه. => Okay Jaljal, sorry, [sorry], just say ah.\nطيب جلجل معلش معلش، [بس] قول آه. => Okay Jaljal, sorry, sorry, [just] say ah.\nطيب جلجل معلش معلش، بس [قول] آه. => Okay Jaljal, sorry, sorry, just [say] ah.\nطيب جلجل معلش معلش، بس قول [آه] => Okay Jaljal, sorry, sorry, just say [ah]\n\n[آآآه]. => [Aaaah].\n\n[أشوف]؟ => [Let me see]?\n\n[جلجل] جلجل لا تتعب حالك، => [Jaljal], Jaljal, don't tire yourself,\nجلجل [جلجل] لا تتعب حالك، => Jaljal, [Jaljal], don't tire yourself,\nجلجل جلجل [لا تتعب] حالك، => Jaljal, Jaljal, [don't tire] yourself,\nجلجل جلجل لا تتعب [حالك]، => Jaljal, Jaljal, don't tire [yourself]\n\n[ما تحكي] كتير. => [Don't talk] too much.\nما تحكي [كتير]. => Don't talk [too much].\n\n[ما] أحكي كتير؟ ليش أنا إيش مالي؟ => [Don't] talk much? Why? What's wrong with me?\nما [أحكي] كتير؟ ليش أنا إيش مالي؟ => Don't [talk] much? Why? What's wrong with me?\nما أحكي [كتير]؟ ليش أنا إيش مالي؟ => Don't talk [much]? Why? What's wrong with me?\nما أحكي كتير؟ [ليش] أنا إيش مالي؟ => Don't talk much? [Why]? What's wrong with me?\nما أحكي كتير؟ ليش [أنا] إيش مالي؟ => I\nما أحكي كتير؟ ليش أنا [إيش مالي]؟ => [What's wrong with me]\n\n[تطلع] علي يا جلجل، تطلع علي. => [Look] at me, Jaljal, look at me.\nتطلع [علي] يا جلجل، تطلع علي. => Look [at me], Jaljal, look at me.\nتطلع علي [يا جلجل]، تطلع علي. => Look at me, [Jaljal], look at me.\nتطلع علي يا جلجل، [تطلع] علي. => Look at me, Jaljal, [look] at me.\nتطلع علي يا جلجل، تطلع [علي]. => Look at me, Jaljal, look [at me].\n\n[لا] تخاف يا جلجل، => [Don't] be afraid, Jaljal,\nلا [تخاف] يا جلجل، => Don't [be afraid], Jaljal,\nلا تخاف [يا] جلجل، => vocative particle\nلا تخاف يا [جلجل]، => Don't be afraid, [Jaljal],\n\n[هلق] بتعطيك دواء مناسب. => [Now] I'll give you suitable medicine.\nهلق [بتعطيك] دواء مناسب. => will give you # \"بتعطيك\" literally means \"she/it will give you\", but corresponds to the action in the English sentence\nهلق بتعطيك [دواء] مناسب. => Now I'll give you suitable [medicine].\nهلق بتعطيك دواء [مناسب]. => Now I'll give you [suitable] medicine.\n\n[دواء]؟ دواء؟ لأيش الدواء؟ => [Medicine]? Medicine? Why medicine?\nدواء؟ [دواء]؟ لأيش الدواء؟ => Medicine? [Medicine]? Why medicine?\nدواء؟ دواء؟ [لأيش] الدواء؟ => Medicine? Medicine? [Why] medicine?\nدواء؟ دواء؟ لأيش [الدواء]؟ => Medicine? Medicine? Why [medicine]?\n\nأنا [صحتي] منيحة ما مالي إشي. => [My health] is good, nothing's wrong with me.\nأنا صحتي [منيحة] ما مالي إشي. => My health is [good], nothing's wrong with me.\nأنا صحتي منيحة [ما مالي إشي]. => My health is good, [nothing's wrong with me].\nأنا صحتي منيحة ما مالي [إشي]. => thing, something # custom translation for the individual word meaning within the phrase \"not anything\" (nothing)\n\n[معلش] جلجل معلش، => [Sorry] Jaljal, sorry,\nمعلش [جلجل] معلش، => Sorry [Jaljal], sorry,\nمعلش جلجل [معلش]، => Sorry Jaljal, [sorry],\n\n[بس] بالأول بدي أقيسلك حرارتك => [But] first I want to measure your temperature\nبس [بالأول] بدي أقيسلك حرارتك => But [first] I want to measure your temperature\nبس بالأول [بدي] أقيسلك حرارتك => But first [I want] to measure your temperature\nبس بالأول بدي [أقيسلك] حرارتك => to measure for you # \"أقيس\" means measure and \"لك\" means for you\nبس بالأول بدي أقيسلك [حرارتك] => [your temperature] # \"حرارة\" means temperature and \"ك\" is the possessive \"your\"\n\n[عشان] أتأكد بالظبط => [So I can] make sure exactly\nعشان [أتأكد] بالظبط => So I can [make sure] exactly\nعشان أتأكد [بالظبط] => So I can make sure [exactly]\n\n[أي] دواء بدي أعطيك إياه. => [Which] medicine I should give you.\nأي [دواء] بدي أعطيك إياه. => Which [medicine] I should give you.\nأي دواء [بدي] أعطيك إياه. => Which medicine [I should] give you.\nأي دواء بدي [أعطيك] إياه. => Which medicine I should [give you].\nأي دواء بدي أعطيك [إياه] => it # object pronoun referring to the medicine\n\n[ليش] تقيسوا الحرارة؟ تنتن أنا بس => [Why] measure temperature? Tantan, I just...\nليش [تقيسوا] الحرارة؟ تنتن أنا بس => Why [measure] temperature? Tantan, I just...\nليش تقيسوا [الحرارة]؟ تنتن أنا بس => Why measure [temperature]? Tantan, I just...\nليش تقيسوا الحرارة؟ [تنتن] أنا بس => Why measure temperature? [Tantan], I just...\nليش تقيسوا الحرارة؟ تنتن [أنا] بس => Why measure temperature? Tantan, [I] just...\nليش تقيسوا الحرارة؟ تنتن أنا [بس] => Why measure temperature? Tantan, I [just]...\n\n[خلونا] شوي بدنا نرجع لورا. => [Leave us] alone a bit, we need to go back.\nخلونا [شوي] بدنا نرجع لورا. => Leave us alone [a bit], we need to go back.\nخلونا شوي [بدنا] نرجع لورا. => Leave us alone a bit, [we need] to go back.\nخلونا شوي بدنا [نرجع] لورا. => Leave us alone a bit, we need [to go] back.\nخلونا شوي بدنا نرجع [لورا]. => Leave us alone a bit, we need to go [back].\n\n[آه] ريح حالك عالكنباية، بس نمشي شوي. => [Ah], rest on the couch, we'll just move a bit.\nآه [ريح حالك] عالكنباية، بس نمشي شوي. => Ah, [rest] on the couch, we'll just move a bit. # literally \"rest yourself\"\nآه ريح حالك [عالكنباية]، بس نمشي شوي. => Ah, rest [on the couch], we'll just move a bit. # \"على\" (on) + \"الكنباية\" (the couch)\nآه ريح حالك عالكنباية، [بس] نمشي شوي. => Ah, rest on the couch, we'll [just] move a bit.\nآه ريح حالك عالكنباية، بس [نمشي] شوي. => we move / we walk # the Arabic verb contains the subject \"we\"\nآه ريح حالك عالكنباية، بس نمشي [شوي]. => Ah, rest on the couch, we'll just move [a bit].\n\nأنا ما مالي إشي، [يا جماعة] إيش في؟ => Nothing's wrong with me, [guys], what's going on?\nأنا ما مالي إشي، يا جماعة [إيش] في؟ => what\nأنا ما مالي إشي، يا جماعة إيش [في]؟ => there is, is going on # custom translation because 'fi' means 'there is' or 'in', used here to mean 'is happening'\n\n[ارتاح] يا جلجل ارتاح، بس استنوا شوي. => [Rest], Jaljal, rest, just wait a bit.\nارتاح [يا جلجل] ارتاح، بس استنوا شوي. => Rest, [Jaljal], rest, just wait a bit.\nارتاح يا جلجل [ارتاح]، بس استنوا شوي. => Rest, Jaljal, [rest], just wait a bit.\nارتاح يا جلجل ارتاح، [بس] استنوا شوي. => Rest, Jaljal, rest, [just] wait a bit.\nارتاح يا جلجل ارتاح، بس [استنوا] شوي. => Rest, Jaljal, rest, just [wait] a bit.\nارتاح يا جلجل ارتاح، بس استنوا [شوي] => Rest, Jaljal, rest, just wait [a bit]\n\n[ريح] حالك يا جلجل، استنوا شوي. => [Rest] yourself, Jaljal, wait a bit.\nريح [حالك] يا جلجل، استنوا شوي. => Rest [yourself], Jaljal, wait a bit.\nريح حالك [يا جلجل]، استنوا شوي. => Rest yourself, [Jaljal], wait a bit.\nريح حالك يا جلجل، [استنوا] شوي. => Rest yourself, Jaljal, [wait] a bit.\nريح حالك يا جلجل، استنوا [شوي] => Rest yourself, Jaljal, wait [a bit]\n\n[خليني] أكمل بس الجملة، => [Let me] just finish the sentence,\nخليني [أكمل] بس الجملة، => Let me just [finish] the sentence,\nخليني أكمل [بس] الجملة، => Let me [just] finish the sentence,\nخليني أكمل بس [الجملة]، => Let me just finish [the sentence],\n\n[جلجل] أنا ما مالي إشي بخوف. => I, [Jaljal], have nothing wrong, really.\nجلجل [أنا] ما مالي إشي بخوف. => [I], Jaljal, have nothing wrong, really.\nجلجل أنا [ما مالي إشي] بخوف. => I, Jaljal, [have nothing wrong], really.\nجلجل أنا ما مالي إشي [بخوف] => scary, frightening # Literal meaning differes from the localized \"really\" used as an intensifier in the English sentence.\n\n[إيش] مالكم؟ هه هه هه. => [What]'s wrong with you? Ha ha ha.\nإيش [مالكم]؟ هه هه هه. => What's [wrong with you]? Ha ha ha.\nإيش مالكم؟ [هه هه هه]. => What's wrong with you? [Ha ha ha].\n\n[اسمعوني]! => [Listen to me]!\n\n[تفضل] يا جلجل احكي. => [Go ahead], Jaljal, speak.\nتفضل يا [جلجل] احكي. => Go ahead, [Jaljal], speak.\nتفضل يا جلجل [احكي]. => Go ahead, Jaljal, [speak].\n\n[أنا] مش مريض، => [I am] not sick\nأنا [مش] مريض، => I am [not] sick\nأنا مش [مريض]، => I am not [sick]\n\n[و]يا ريت تسمعوني للآخر => [And] I wish you'd listen to the end.\nو[يا ريت] تسمعوني للآخر => And [I wish] you'd listen to the end.\nويا ريت [تسمعوني] للآخر => And I wish [you'd listen] to the end. # Mapping \"تسمعوني\" (you all listen to me) to \"you'd listen\"\nويا ريت تسمعوني [للآخر] => And I wish you'd listen [to the end]\n\n[مش] مريض؟ عمو كامل اللي مريض => [Not] sick? Uncle Kamel is the sick one\nمش [مريض]؟ عمو كامل اللي مريض => Not [sick]? Uncle Kamel is the sick one\nمش مريض؟ [عمو] كامل اللي مريض => Not sick? [Uncle] Kamel is the sick one\nمش مريض؟ عمو [كامل] اللي مريض => Not sick? Uncle [Kamel] is the sick one\nمش مريض؟ عمو كامل [اللي] مريض => who, the one who\nمش مريض؟ عمو كامل اللي [مريض] => Not sick? Uncle Kamel is the [sick] one\n\n[يا] تنتن، اسمعيني للآخر. => [Oh] Tantan, listen to me to the end.\nيا [تنتن]، اسمعيني للآخر. => Oh [Tantan], listen to me to the end.\nيا تنتن، [اسمعيني] للآخر. => Oh Tantan, [listen to me] to the end.\nيا تنتن، اسمعيني [للآخر]. => Oh Tantan, listen to me [to the end].\n\n[مش] أنا المريض. هه؟ مش أنا. => I'm [not] the patient. Huh? Not me.\nمش [أنا] المريض. هه؟ مش أنا. => [I'm] not the patient. Huh? Not me.\nمش أنا [المريض]. هه؟ مش أنا. => I'm not [the patient]. Huh? Not me.\nمش أنا المريض. [هه]؟ مش أنا. => I'm not the patient. [Huh]? Not me.\nمش أنا المريض. هه؟ [مش] أنا. => I'm not the patient. Huh? [Not] me.\nمش أنا المريض. هه؟ مش [أنا]. => I'm not the patient. Huh? Not [me].\n\n[إنت] مش مريض؟ => [You're] not sick?\nإنت [مش] مريض؟ => You're [not] sick?\nإنت مش [مريض]؟ => You're not [sick]?\n\n[آه] مش مريض => [Ah], not sick\nآه [مش] مريض => Ah, [not] sick\nآه مش [مريض] => Ah, not [sick]\n\n[إذا] عمو كامل مريض، => [So if] Uncle Kamel is sick,\nإذا [عمو] كامل مريض، => So if [Uncle] Kamel is sick,\nإذا عمو [كامل] مريض، => So if Uncle [Kamel] is sick,\nإذا عمو كامل [مريض]، => So if Uncle Kamel [is sick]\n\n[لازم] هلق نروح نفحصه، => [We need to] go examine him now,\nلازم [هلق] نروح نفحصه، => We need to go examine him [now],\nلازم هلق [نروح] نفحصه، => We need to [go] examine him now,\nلازم هلق نروح [نفحصه]، => We need to go [examine him] now,\n\n[يلا] يلا يا رحمة => [Come on], come on, Rahma.\nيلا [يلا] يا رحمة => Come on, [come on], Rahma.\nيلا يلا يا [رحمة] => Come on, come on, [Rahma]\n\n[أنا] قلت عمو كامل؟ => Did [I] say Uncle Kamel?\nأنا [قلت] عمو كامل؟ => said, did say\nأنا قلت [عمو] كامل؟ => Did I say [Uncle] Kamel?\nأنا قلت عمو [كامل]؟ => Did I say Uncle [Kamel]?\n\n[أنا] قصدي عمو كمال، => [I] meant Uncle Kamal,\nأنا [قصدي] عمو كمال، => I [meant] Uncle Kamal,\nأنا قصدي [عمو] كمال، => I meant [Uncle] Kamal,\nأنا قصدي عمو [كمال]، => I meant Uncle [Kamal]\n\n[اسمعوني] للآخر. => [Listen to me] to the end.\nاسمعوني [للآخر]. => Listen to me [to the end.]\n\n",
+    "translations": {
+      "en": {
+        "language_id": 43,
+        "language_name": "English",
+        "phrases": [
+          {
+            "text": "Hello? Dr. Alya?",
+            "words": []
+          },
+          {
+            "text": "How are you? Ah.",
+            "words": []
+          },
+          {
+            "text": "Sick.",
+            "words": []
+          },
+          {
+            "text": "Sick and exhausted.",
+            "words": []
+          },
+          {
+            "text": "Fever? Yes, a fever, ah.",
+            "words": []
+          },
+          {
+            "text": "High fever sometimes.",
+            "words": []
+          },
+          {
+            "text": "Cough? Yes, a cough, ah.",
+            "words": []
+          },
+          {
+            "text": "Strong.",
+            "words": []
+          },
+          {
+            "text": "Sometimes dizziness, not always.",
+            "words": []
+          },
+          {
+            "text": "Doctor.",
+            "words": []
+          },
+          {
+            "text": "Sick, sick and exhausted.",
+            "words": []
+          },
+          {
+            "text": "Very, very sick.",
+            "words": []
+          },
+          {
+            "text": "Ah, ah, ah.",
+            "words": []
+          },
+          {
+            "text": "Ah, thank you, Doctor.",
+            "words": []
+          },
+          {
+            "text": "Goodbye.",
+            "words": []
+          },
+          {
+            "text": "Jaljal is sick? Hmm.",
+            "words": []
+          },
+          {
+            "text": "Ah, poor him, a fever.",
+            "words": []
+          },
+          {
+            "text": "Jaljal is sick.",
+            "words": []
+          },
+          {
+            "text": "What can I do? Hmm.",
+            "words": []
+          },
+          {
+            "text": "Best thing is to get someone to help him.",
+            "words": []
+          },
+          {
+            "text": "Tantan? Tantan?",
+            "words": []
+          },
+          {
+            "text": "Where did Tantan go?",
+            "words": []
+          },
+          {
+            "text": "Why did she leave so quickly?",
+            "words": []
+          },
+          {
+            "text": "Come on, come on, Rahma, quickly.",
+            "words": []
+          },
+          {
+            "text": "Huh? Rahma is here with us?",
+            "words": []
+          },
+          {
+            "text": "How are you, Jaljal?",
+            "words": []
+          },
+          {
+            "text": "Good, what's this sweet visit?",
+            "words": []
+          },
+          {
+            "text": "How are you now, Jaljal? How's your health?",
+            "words": []
+          },
+          {
+            "text": "I'm good, health is perfect, nothing's wrong with me.",
+            "words": []
+          },
+          {
+            "text": "Didn't you feel anything today, Jaljal?",
+            "words": []
+          },
+          {
+            "text": "Feel? No, I didn't feel anything.",
+            "words": []
+          },
+          {
+            "text": "Did anything strange happen to you today?",
+            "words": []
+          },
+          {
+            "text": "Strange? Strange? No, no, no.",
+            "words": []
+          },
+          {
+            "text": "Jaljal, you need to say what symptoms you have,",
+            "words": []
+          },
+          {
+            "text": "What are you feeling?",
+            "words": []
+          },
+          {
+            "text": "Symptoms? What symptoms, Tantan?",
+            "words": []
+          },
+          {
+            "text": "I have nothing wrong with me.",
+            "words": []
+          },
+          {
+            "text": "Okay Jaljal, sorry, sorry, just say ah.",
+            "words": []
+          },
+          {
+            "text": "Aaaah.",
+            "words": []
+          },
+          {
+            "text": "Let me see?",
+            "words": []
+          },
+          {
+            "text": "Jaljal, Jaljal, don't tire yourself,",
+            "words": []
+          },
+          {
+            "text": "Don't talk too much.",
+            "words": []
+          },
+          {
+            "text": "Don't talk much? Why? What's wrong with me?",
+            "words": []
+          },
+          {
+            "text": "Look at me, Jaljal, look at me.",
+            "words": []
+          },
+          {
+            "text": "Don't be afraid, Jaljal,",
+            "words": []
+          },
+          {
+            "text": "Now I'll give you suitable medicine.",
+            "words": []
+          },
+          {
+            "text": "Medicine? Medicine? Why medicine?",
+            "words": []
+          },
+          {
+            "text": "My health is good, nothing's wrong with me.",
+            "words": []
+          },
+          {
+            "text": "Sorry Jaljal, sorry,",
+            "words": []
+          },
+          {
+            "text": "But first I want to measure your temperature",
+            "words": []
+          },
+          {
+            "text": "So I can make sure exactly",
+            "words": []
+          },
+          {
+            "text": "Which medicine I should give you.",
+            "words": []
+          },
+          {
+            "text": "Why measure temperature? Tantan, I just...",
+            "words": []
+          },
+          {
+            "text": "Leave us alone a bit, we need to go back.",
+            "words": []
+          },
+          {
+            "text": "Ah, rest on the couch, we'll just move a bit.",
+            "words": []
+          },
+          {
+            "text": "Nothing's wrong with me, guys, what's going on?",
+            "words": []
+          },
+          {
+            "text": "Rest, Jaljal, rest, just wait a bit.",
+            "words": []
+          },
+          {
+            "text": "Rest yourself, Jaljal, wait a bit.",
+            "words": []
+          },
+          {
+            "text": "Let me just finish the sentence,",
+            "words": []
+          },
+          {
+            "text": "I, Jaljal, have nothing wrong, really.",
+            "words": []
+          },
+          {
+            "text": "What's wrong with you? Ha ha ha.",
+            "words": []
+          },
+          {
+            "text": "Listen to me!",
+            "words": []
+          },
+          {
+            "text": "Go ahead, Jaljal, speak.",
+            "words": []
+          },
+          {
+            "text": "I am not sick,",
+            "words": []
+          },
+          {
+            "text": "And I wish you'd listen to the end.",
+            "words": []
+          },
+          {
+            "text": "Not sick? Uncle Kamel is the sick one",
+            "words": []
+          },
+          {
+            "text": "Oh Tantan, listen to me to the end.",
+            "words": []
+          },
+          {
+            "text": "I'm not the patient. Huh? Not me.",
+            "words": []
+          },
+          {
+            "text": "You're not sick?",
+            "words": []
+          },
+          {
+            "text": "Ah, not sick.",
+            "words": []
+          },
+          {
+            "text": "So if Uncle Kamel is sick,",
+            "words": []
+          },
+          {
+            "text": "We need to go examine him now,",
+            "words": []
+          },
+          {
+            "text": "Come on, come on, Rahma.",
+            "words": []
+          },
+          {
+            "text": "Did I say Uncle Kamel?",
+            "words": []
+          },
+          {
+            "text": "I meant Uncle Kamal,",
+            "words": []
+          },
+          {
+            "text": "Listen to me to the end.",
+            "words": []
+          }
+        ],
+        "lessons": "# الاتصال بالدكتورة\n00:00.00 ألو؟ دكتورة عليا؟\n00:02.00 كيف حالك؟ آه.\n00:07.00 مريض.\n00:09.00 مريض وتعبان.\n00:12.00 حرارة؟ في حرارة آه.\n00:16.00 حرارة عالية مرات.\n00:19.00 سعلة؟ في سعلة آه.\n00:22.00 قوية.\n00:26.00 مرات دوخة مش دايماً.\n\n# وصف حالة جلجل\n00:32.00 دكتورة.\n00:34.00 مريض، مريض وتعبان.\n00:36.00 مريض كتير كتير مريض.\n00:39.00 آه آه آه.\n00:41.00 آه، شكراً يا دكتورة.\n00:43.00 مع السلامة.\n00:53.00 جلجل مريض؟ ممم.\n00:57.00 آه، حرام عليه حرارة.\n\n# البحث عن المساعدة\n01:07.00 جلجل مريض.\n01:09.00 شو ممكن أنا أعمل؟ ممم.\n01:12.00 أحسن إشي أجيب حدا يساعده.\n01:18.00 تنتن؟ تنتن؟\n01:20.00 وين راحت تنتن؟\n01:22.00 ليش طلعت هيك بسرعة؟\n01:25.00 يلا يلا رحمة بسرعة.\n\n# زيارة رحمة (Part 1)\n01:28.00 هه؟ رحمة عنا هون؟\n01:30.00 كيف حالك جلجل؟\n01:31.00 منيح، شو هالزيارة الحلوة؟\n01:33.00 كيف صرت هلق يا جلجل؟ كيف صحتك؟\n01:35.00 أنا منيح وصحتي تمام، ما مالي إشي.\n01:38.00 اليوم ما شعرت بإشي يا جلجل؟\n01:40.00 شعرت؟ لا ما شعرت بإشي.\n\n# زيارة رحمة (Part 2)\n01:43.00 ما صار إشي معك اليوم غريب؟\n01:45.00 غريب؟ غريب؟ لا لا لا.\n01:47.00 جلجل لازم تحكي شو الأعراض اللي عندك،\n01:50.00 بشو حاسس؟\n01:51.00 أعراض؟ أعراض إيش يا تنتن؟\n01:53.00 أنا ما مالي إشي.\n\n# الفحص الطبي (Part 1)\n01:54.00 طيب جلجل معلش معلش، بس قول آه.\n01:56.00 آآآه.\n01:58.00 أشوف؟\n02:00.00 جلجل جلجل لا تتعب حالك،\n02:02.00 ما تحكي كتير.\n02:03.00 ما أحكي كتير؟ ليش أنا إيش مالي؟\n02:05.00 تطلع علي يا جلجل، تطلع علي.\n\n# الفحص الطبي (Part 2)\n02:09.00 لا تخاف يا جلجل،\n02:11.00 هلق بتعطيك دواء مناسب.\n02:13.00 دواء؟ دواء؟ لأيش الدواء؟\n02:15.00 أنا صحتي منيحة ما مالي إشي.\n02:17.00 معلش جلجل معلش،\n02:19.00 بس بالأول بدي أقيسلك حرارتك\n02:21.00 عشان أتأكد بالظبط\n02:23.00 أي دواء بدي أعطيك إياه.\n\n# الحقيقة تظهر (Part 1)\n02:25.00 ليش تقيسوا الحرارة؟ تنتن أنا بس\n02:27.00 خلونا شوي بدنا نرجع لورا.\n02:29.00 آه ريح حالك عالكنباية، بس نمشي شوي.\n02:31.00 أنا ما مالي إشي، يا جماعة إيش في؟\n02:33.00 ارتاح يا جلجل ارتاح، بس استنوا شوي.\n02:35.00 ريح حالك يا جلجل، استنوا شوي.\n\n# الحقيقة تظهر (Part 2)\n02:37.00 خليني أكمل بس الجملة،\n02:39.00 جلجل أنا ما مالي إشي بخوف.\n02:41.00 إيش مالكم؟ هه هه هه.\n02:43.00 اسمعوني!\n02:45.00 تفضل يا جلجل احكي.\n02:47.00 أنا مش مريض،\n02:49.00 ويا ريت تسمعوني للآخر.\n02:51.00 مش مريض؟ عمو كامل اللي مريض\n02:53.00 يا تنتن، اسمعيني للآخر.\n\n# كشف الحقيقة النهائي\n02:55.00 مش أنا المريض. هه؟ مش أنا.\n02:57.00 إنت مش مريض؟\n03:00.00 آه مش مريض.\n03:01.00 إذا عمو كامل مريض،\n03:03.00 لازم هلق نروح نفحصه،\n03:05.00 يلا يلا يا رحمة.\n03:07.00 أنا قلت عمو كامل؟\n03:10.00 أنا قصدي عمو كمال،\n03:12.00 اسمعوني للآخر."
+      }
+    },
+    "format_version": 2
   },
   "created_at": "2026-04-25 21:26:54 UTC",
   "updated_at": "2026-04-26 05:56:57 UTC",
