@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def homepage_subhead(language_code)
+    base_language_code = language_code.to_s.split("-").first.to_s.downcase
+    language_key = "subhead_#{base_language_code}"
+
+    I18n.exists?(language_key) ? t(language_key) : t("subhead")
+  end
+
   def youtube_thumbnail_url(video_id, quality = 'hqdefault')
     Medium.youtube_thumbnail_url(video_id, quality)
   end

@@ -29,3 +29,10 @@
 
 en:
   hello: "Hello world"
+  subhead: "Learn languages from youtube"
+  subhead_ar: "Learn Arabic from YouTube"
+  subhead_de: "Learn German from YouTube"
+  subhead_en: "Learn English from YouTube"
+  subhead_es: "Learn Spanish from YouTube"
+  subhead_fr: "Learn French from YouTube"
+  subhead_he: "Learn Hebrew from YouTube"

@@ -15,6 +15,14 @@
 
 ## Core Architecture
 
+### Homepage language selection
+
+The public course library uses the optional `lang` query parameter both to
+filter its source-language content and to select its header subhead. Header
+copy is stored in `config/locales/en.yml` as `subhead` and `subhead_<iso>`
+translations; regional codes such as `ar-JO` use their base code (`ar`). A
+missing or unconfigured language uses the generic `subhead` translation.
+
 ### Translation localization
 
 Content has one shared L1 skeleton and any number of sparse L2 translations:
