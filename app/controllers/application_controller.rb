@@ -7,11 +7,23 @@ class ApplicationController < ActionController::Base
   # language, picked during onboarding.
   ALL_LANGUAGES = "all".freeze
 
+  before_action :set_translation_language
   before_action :store_language_in_session
   before_action :require_authentication_for_native_app
   before_action :require_language_for_native_app
 
   protected
+
+  helper_method :current_translation_language
+  def current_translation_language
+    Current.translation_language
+  end
+
+  def set_translation_language
+    code = request.subdomains.first.presence || "en"
+    Current.translation_language = Language.find_by(iso_name: code) ||
+      Language.find_by(english_name: "English") || Language.first
+  end
 
   # The active color theme for this request. Logged-in users read it from their
   # stored preferences; everyone falls back to a cookie, then the default theme.

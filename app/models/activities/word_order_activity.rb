@@ -27,7 +27,7 @@ module Activities
 
     def build_word_segments_for_phrase(phrase)
       # Get token translations for this phrase that are associated with this activity
-      tokens = phrase.token_translations
+      tokens = phrase.phrase_tokens
                      .order(:l1_start_index)
                      .includes(l1_audio_attachment: :blob)
       

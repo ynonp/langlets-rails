@@ -33,7 +33,7 @@ class EnrollmentTest < ActiveSupport::TestCase
       @spanish  = languages(:spanish)
       @english  = languages(:english)
       @medium   = Medium.create!(url: "https://www.youtube.com/watch?v=progress99",
-                                 language: @spanish, translation_language: @english)
+                                 language: @spanish)
       @course   = Course.create!(name: "Progress Course", slug: "progress-course",
                                  main_media_url: @medium.url, user: @user)
       @lesson   = Lesson.create!(course: @course, medium: @medium, user: @user,

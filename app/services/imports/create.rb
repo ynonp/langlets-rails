@@ -42,10 +42,14 @@ module Imports
       # and we find that out before taking the credit.
       video = Youtube::Oembed.fetch(url)
 
-      # Already in the Library: hand it over, enrolled and free.
+      # Resolve the shared L1 skeleton first, then its per-language readiness.
       if (published = published_course_for(video))
-        enroll!(published, source: :library)
-        return Result.new(status: :deduped, course: published, import_request: nil)
+        if published.translation_ready?(translation_language_record)
+          enroll!(published, source: :library)
+          return Result.new(status: :deduped, course: published, import_request: nil)
+        end
+
+        return create_translation_and_charge!(published, video)
       end
 
       # This user already asked for it.
@@ -88,7 +92,6 @@ module Imports
       Course.published.find_by(
         youtube_video_id: video.video_id,
         language: clip_language_record,
-        translation_language: translation_language_record
       )
     end
 
@@ -107,7 +110,6 @@ module Imports
             .find_by(
               youtube_video_id: video.video_id,
               language: clip_language_record,
-              translation_language: translation_language_record
             )
     end
 
@@ -133,7 +135,6 @@ module Imports
       CreateSongProgress.find_by(
         youtubeurl: video.canonical_url,
         clip_language: clip_language,
-        translation_language: translation_language
       )
     end
 
@@ -155,10 +156,13 @@ module Imports
         progress = CreateSongProgress.find_or_create_by!(
           youtubeurl: video.canonical_url,
           clip_language: clip_language,
-          translation_language: translation_language
-        ) { |p| p.data = {} }
+        ) do |p|
+          p.translation_language = translation_language
+          p.data = {}
+        end
 
         course = build_course!(video)
+        course.update!(create_song_progress: progress)
 
         import_request = user.import_requests.create!(
           youtube_url: video.canonical_url,
@@ -214,10 +218,15 @@ module Imports
               main_media_url: video.canonical_url,
               youtube_video_id: video.video_id,
               language: clip_language_record,
-              translation_language: translation_language_record,
               user: user,
               status: :pending
-            )
+            ).tap do |course|
+              course.course_translations.create!(
+                language: translation_language_record,
+                name: naming.name,
+                status: :pending
+              )
+            end
           end
         rescue ActiveRecord::RecordNotUnique
           next
@@ -231,6 +240,39 @@ module Imports
       end
 
       raise ActiveRecord::RecordInvalid.new(Course.new), "could not find a free slug for #{naming.slug.inspect}"
+    end
+
+    def create_translation_and_charge!(course, video)
+      import_request = nil
+      ActiveRecord::Base.transaction do
+        progress = course.create_song_progress || CreateSongProgress.find_or_create_by!(
+          youtubeurl: video.canonical_url,
+          clip_language: clip_language
+        ) do |row|
+          row.translation_language = translation_language
+          row.data = {}
+        end
+        course.update!(create_song_progress: progress) unless course.create_song_progress_id
+        course.course_translations.find_or_create_by!(language: translation_language_record) do |translation|
+          translation.name = course.name
+          translation.status = :pending
+        end
+        import_request = user.import_requests.create!(
+          youtube_url: video.canonical_url,
+          youtube_video_id: video.video_id,
+          clip_language: clip_language,
+          translation_language: translation_language,
+          title: video.title,
+          client_token: client_token,
+          course: course,
+          create_song_progress: progress,
+          status: :queued
+        )
+        Credits::Ledger.spend!(user: user, subject: import_request, idempotency_key: "import:#{import_request.id}")
+        import_request.update!(charged: true)
+        AddCourseTranslationJob.perform_later(progress.id, course.id, translation_language_record.id)
+      end
+      Result.new(status: :created, import_request: import_request, course: course)
     end
   end
 end

@@ -1,7 +1,6 @@
 class CreateSongProgress < ApplicationRecord
   validates :youtubeurl, presence: true
   validates :clip_language, presence: true
-  validates :translation_language, presence: true
 
   include CreateSong::ExtractLyrics
   include CreateSong::AddTokenTranslations
@@ -29,12 +28,58 @@ class CreateSongProgress < ApplicationRecord
       # phrases turn-by-turn, so a partially-transcribed, failed run also leaves
       # phrases present -- the flag is what tells "done" apart from "interrupted".
       extract_lyrics if data["phrases"].blank? || data["extract_lyrics_in_progress"]
-      translate unless data.dig("phrases", 0, "text_l2")
-      add_token_translation unless data.dig("phrases", 0, "words", 0, "translation").present?
       add_lessons unless data["lessons"].present?
       rate_lessons unless lessons_rated?
       add_similar_sound unless similar_sounds_complete?
+      add_translation(translation_language) if translation_language.present? && !translation_complete?(translation_language)
     end
+  end
+
+  # Run only the L2-dependent work for a target language. Neutral transcription,
+  # timings, lesson segmentation, ratings, and similar sounds remain shared.
+  def add_translation(language)
+    previous = @target_translation_language
+    language = resolve_translation_language(language)
+    raise ArgumentError, "unknown translation language" unless language
+
+    @target_translation_language = language
+    translate
+    add_token_translation
+
+    data["translations"] ||= {}
+    data["translations"][language.iso_name] = {
+      "language_id" => language.id,
+      "language_name" => language.english_name,
+      "phrases" => data["phrases"].map do |phrase|
+        {
+          "text" => phrase.delete("text_l2"),
+          "words" => Array(phrase["words"]).map { |word| word.delete("translation") }
+        }
+      end,
+      "lessons" => data["lessons"]
+    }
+    save!
+
+    Course.where(create_song_progress_id: id).find_each do |course|
+      CourseBuilder::BuildSong.new(self, course).add_translation(language) if course.lessons.exists?
+    end
+    language
+  ensure
+    @target_translation_language = previous
+  end
+
+  def translation_complete?(language)
+    language = resolve_translation_language(language)
+    language && data.dig("translations", language.iso_name, "phrases", 0, "text").present?
+  end
+
+  def translation_payload(language)
+    language = resolve_translation_language(language)
+    data.dig("translations", language&.iso_name)
+  end
+
+  def translation_language
+    @target_translation_language&.english_name || super
   end
 
   def ready?
@@ -77,6 +122,12 @@ class CreateSongProgress < ApplicationRecord
   end
 
   private
+
+  def resolve_translation_language(value)
+    return value if value.is_a?(Language)
+
+    Language.find_by(english_name: value) || Language.find_by(iso_name: value)
+  end
 
   def sync_import_requests_progress
     ImportRequest.where(create_song_progress_id: id, status: :importing)

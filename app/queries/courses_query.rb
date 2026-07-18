@@ -11,7 +11,7 @@ class CoursesQuery < PaginatedQuery
     raise ArgumentError, "language is required" if @language_code.nil?
     language = find_language!(@language_code)
 
-    scope = Course.published.where(language: language).order(created_at: :desc)
+    scope = Course.published.ready_in(Current.translation_language).where(language: language).order(created_at: :desc)
     rows, has_more = paginate(scope)
 
     lesson_counts = Lesson.where(course_id: rows.map(&:id)).group(:course_id).count
@@ -23,7 +23,7 @@ class CoursesQuery < PaginatedQuery
   def serialize(course, language, lesson_counts)
     {
       id: course.id,
-      name: course.name,
+      name: course.localized_name,
       slug: course.slug,
       language: language.iso_name,
       lesson_count: lesson_counts.fetch(course.id, 0),

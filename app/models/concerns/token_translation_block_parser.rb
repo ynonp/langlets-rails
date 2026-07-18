@@ -100,11 +100,13 @@ module TokenTranslationBlockParser
 
     return if l1_start_char.nil? || l1_end_char.nil?
 
-    token_translations.build(
+    build_phrase_token(
+      {
       l1_start_index: l1_start_char + l1_offset,
       l1_end_index: l1_end_char + l1_offset,
-      translation: l2,
       index_type: :character_index
+      },
+      { translation: l2 }
     )
   end
 
@@ -121,13 +123,17 @@ module TokenTranslationBlockParser
     l2_start_word = char_to_word_index(l2_start_char, l2_text)
     l2_end_word = char_to_word_index(l2_end_char, l2_text, inclusive: true)
 
-    token = token_translations.build(
+    token = build_phrase_token(
+      {
       l1_start_index: l1_start_char + l1_offset,
       l1_end_index: l1_end_char + l1_offset,
+      index_type: :character_index
+      },
+      {
       l2_start_index: l2_start_char,
       l2_end_index: l2_end_char,
-      translation: l2_words[l2_start_word..l2_end_word].join(" "),
-      index_type: :character_index
+      translation: l2_words[l2_start_word..l2_end_word].join(" ")
+      }
     )
 
     unless token.valid?
@@ -153,11 +159,13 @@ module TokenTranslationBlockParser
 
     translation_text = l2_words[l2_start_word..l2_end_word].join(" ")
 
-    token_translations.build(
+    build_phrase_token(
+      {
       l1_start_index: l1_start_char + l1_offset,
       l1_end_index: l1_end_char + l1_offset,
-      translation: translation_text,
       index_type: :character_index
+      },
+      { translation: translation_text }
     )
   end
 
@@ -219,7 +227,7 @@ module TokenTranslationBlockParser
   def remove_duplicate_translations
     words = Hash.new { |h, k| h[k] = [] }
 
-    token_translations.each do |t|
+    phrase_tokens.each do |t|
       t.l1_start_index.upto(t.l1_end_index).each do |char_index|
         words[char_index] << t
       end
@@ -229,6 +237,20 @@ module TokenTranslationBlockParser
       [ tokens.min_by(&:span_length) ]
     end
 
-    self.token_translations = words.values.flatten.uniq
+    self.phrase_tokens = words.values.flatten.uniq
+  end
+
+  def build_phrase_token(span_attributes, translation_attributes)
+    language = l2
+    raise ArgumentError, "translation language is required" unless language
+
+    span = phrase_tokens.build(span_attributes)
+    localized = span.token_translations.build(translation_attributes.merge(language: language))
+    span.resolved_translation = localized
+    if persisted?
+      span.save!
+      localized.save!
+    end
+    span
   end
 end

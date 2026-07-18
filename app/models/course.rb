@@ -2,13 +2,16 @@ class Course < ApplicationRecord
   include FriendlyName # to_param -> slug, so course URLs use the slug not the id
 
   belongs_to :user
+  belongs_to :create_song_progress, optional: true
   has_many :lessons, -> { order(order: :asc) }, dependent: :destroy
 
-  # `language` is the language spoken in the video; `translation_language` is the
-  # one it's taught in. Together with youtube_video_id they identify a course in
-  # the Library — see idx_courses_published_video_pair.
+  # `language` is the language spoken in the video. Localized names and
+  # readiness live in course_translations.
   belongs_to :language, optional: true
-  belongs_to :translation_language, class_name: "Language", optional: true
+  has_many :course_translations, dependent: :destroy, inverse_of: :course
+  has_one :localized_translation,
+          -> { where(language_id: Current.translation_language_id) },
+          class_name: "CourseTranslation"
 
   has_many :courses_playlists, dependent: :destroy
   has_many :playlists, through: :courses_playlists
@@ -38,6 +41,24 @@ class Course < ApplicationRecord
   scope :published_courses, -> { where(status: :published) }
   scope :processing_courses, -> { where(status: :processing) }
   scope :with_full_player, -> { where(show_full_course_player: true) }
+  scope :ready_in, ->(language) {
+    language ||= Language.find_by(english_name: "English")
+    left_joins(:course_translations)
+      .where(
+        "(course_translations.language_id = ? AND course_translations.status = ?) OR " \
+        "NOT EXISTS (SELECT 1 FROM course_translations all_translations WHERE all_translations.course_id = courses.id)",
+        language&.id,
+        CourseTranslation.statuses[:ready]
+      )
+      .distinct
+  }
+
+  def translation_language = localized_translation&.language || Current.translation_language
+  def localized_name = localized_translation&.name || name
+  def translation_ready?(language = Current.translation_language)
+    language && course_translations.ready.exists?(language_id: language.id)
+  end
+
   # Only system playlists count here: a course tucked into someone's personal
   # playlist should still show up in the public "all courses" grid.
   scope :not_in_playlists, -> {
@@ -71,12 +92,10 @@ class Course < ApplicationRecord
     l2 = Language.find_by(english_name: data_hash["translation_language"])
     medium = Medium.find_or_create_by!(
       url: data_hash["youtubeurl"],
-      language: l1,
-      translation_language: l2
+      language: l1
     )
 
     self.lessons.destroy_all
-    medium.phrases.destroy_all
 
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
       lesson_slug = unique_lesson_slug(lesson_data["title"].slug_for_language)
@@ -96,14 +115,11 @@ class Course < ApplicationRecord
       a8 = Activities::MatchTokensActivity.create!(lesson: l, order: 3, user: self.user)
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
-        p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
-          timestamp: phrase_data["timestamp"],
-          medium:,
-          l1:,
-          l2:,
+        p = medium.phrases.find_or_initialize_by(
+          text_l1: phrase_data["text_l1"], timestamp: phrase_data["timestamp"], l1: l1
         )
+        p.save!
+        upsert_phrase_translation(p, l2, phrase_data["text_l2"])
 
         a5.phrases << p
         (phrase_data["translations"] || []).each do |token_translation_data|
@@ -117,8 +133,9 @@ class Course < ApplicationRecord
           )
 
           begin
-            t = TokenTranslation.create!(
+            t = upsert_phrase_token(
               phrase: p,
+              language: l2,
               l1_start_index: l1_char_start,
               l2_start_index: l2_char_start,
               l1_end_index: l1_char_end,
@@ -128,7 +145,7 @@ class Course < ApplicationRecord
               index_type: :character_index
             )
 
-            a5.token_translations << t if token_translation_data["language_alignment_activity"] == 1
+            a5.phrase_tokens << t if token_translation_data["language_alignment_activity"] == 1
           rescue ActiveRecord::RecordNotUnique => e
             Rails.logger.error("Duplicate token translation for phrase #{p.id}. Skipping duplicate. Error: #{e.message}")
           end
@@ -139,7 +156,7 @@ class Course < ApplicationRecord
       a1.phrases = phrases
       a2.phrases = phrases.sample(4)
       a3.phrases = phrases.sample(4)
-      a8.token_translations = a1.phrases.flat_map(&:token_translations).sample(15)
+      a8.phrase_tokens = a1.phrases.flat_map(&:phrase_tokens).sample(15)
     end
 
     medium.reload
@@ -158,9 +175,9 @@ class Course < ApplicationRecord
     a3 = Activities::LanguageAlignmentActivity.create!(lesson: finish_lesson, order: 3, user: self.user)
 
     a1.phrases = medium.phrases.ordered_by_timestamp
-    a2.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
+    a2.phrase_tokens = medium.phrases.flat_map(&:phrase_tokens).sample(50)
     a3.phrases = medium.phrases.ordered_by_timestamp
-    a3.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
+    a3.phrase_tokens = medium.phrases.flat_map(&:phrase_tokens).sample(50)
   end
 
   def create_song!(data_hash)
@@ -176,8 +193,7 @@ class Course < ApplicationRecord
     Rails.logger.info("Finding medium")
     medium = Medium.find_or_create_by!(
       url: data_hash["youtubeurl"],
-      language: l1,
-      translation_language: l2
+      language: l1
     )
 
     all_alignment_tokens = []
@@ -185,7 +201,6 @@ class Course < ApplicationRecord
 
     Rails.logger.info("Deleting previous lessons")
     self.lessons.destroy_all
-    medium.phrases.destroy_all
 
     Rails.logger.info("Creating new lessons")
     data_hash["lessons"].each_with_index do |lesson_data, lesson_index|
@@ -214,14 +229,11 @@ class Course < ApplicationRecord
       a7 = Activities::ListenActivity.create!(lesson: l, order: 7, user: self.user)
 
       phrases = lesson_data["phrases"].each_with_index.map do |phrase_data, phrase_index|
-        p = Phrase.create!(
-          text_l1: phrase_data["text_l1"],
-          text_l2: phrase_data["text_l2"],
-          timestamp: phrase_data["timestamp"],
-          medium:,
-          l1:,
-          l2:,
+        p = medium.phrases.find_or_initialize_by(
+          text_l1: phrase_data["text_l1"], timestamp: phrase_data["timestamp"], l1: l1
         )
+        p.save!
+        upsert_phrase_translation(p, l2, phrase_data["text_l2"])
 
 
         (phrase_data["translations"] || []).each do |token_translation_data|
@@ -235,8 +247,9 @@ class Course < ApplicationRecord
           )
 
           begin
-            t = TokenTranslation.create!(
+            t = upsert_phrase_token(
               phrase: p,
+              language: l2,
               l1_start_index: l1_char_start,
               l2_start_index: l2_char_start,
               l1_end_index: l1_char_end,
@@ -247,12 +260,12 @@ class Course < ApplicationRecord
             )
 
             if token_translation_data["listening_activity"] == 1
-              a7.token_translations << t
+              a7.phrase_tokens << t
               all_listen_tokens << t
             end
 
             if token_translation_data["language_alignment_activity"] == 1
-              a5.token_translations << t
+              a5.phrase_tokens << t
               all_alignment_tokens << t
             end
           rescue ActiveRecord::RecordNotUnique => e
@@ -264,7 +277,7 @@ class Course < ApplicationRecord
       end
       a1.phrases = phrases
       a2.phrases = phrases
-      a3.token_translations = phrases.flat_map(&:token_translations).sample(15)
+      a3.phrase_tokens = phrases.flat_map(&:phrase_tokens).sample(15)
       a4.phrases = phrases.sample(5)
       a5.phrases = phrases
       a6.phrases = phrases
@@ -288,13 +301,13 @@ class Course < ApplicationRecord
     a4 = Activities::ListenActivity.create!(lesson: finish_lesson, order: 4, user: self.user)
 
     a1.phrases = medium.phrases.ordered_by_timestamp
-    a2.token_translations = medium.phrases.flat_map(&:token_translations).sample(50)
+    a2.phrase_tokens = medium.phrases.flat_map(&:phrase_tokens).sample(50)
 
     a3.phrases = medium.phrases.ordered_by_timestamp
-    a3.token_translations = all_alignment_tokens
+    a3.phrase_tokens = all_alignment_tokens
 
     a4.phrases = medium.phrases.ordered_by_timestamp
-    a4.token_translations = all_listen_tokens
+    a4.phrase_tokens = all_listen_tokens
   end
 
   # Atomically claim and process the course
@@ -354,6 +367,31 @@ class Course < ApplicationRecord
       counter += 1
     end
     slug
+  end
+
+  def upsert_phrase_translation(phrase, language, text)
+    phrase.phrase_translations.find_or_initialize_by(language: language).tap do |translation|
+      translation.text = text
+      translation.save!
+    end
+  end
+
+  def upsert_phrase_token(phrase:, language:, l1_start_index:, l1_end_index:, l2_start_index:, l2_end_index:,
+                          similar_sound:, translation:, index_type:)
+    span = phrase.phrase_tokens.find_or_initialize_by(
+      l1_start_index: l1_start_index,
+      l1_end_index: l1_end_index,
+      index_type: index_type
+    )
+    span.similar_sound = similar_sound
+    span.save!
+    span.token_translations.find_or_initialize_by(language: language).tap do |localized|
+      localized.translation = translation
+      localized[:l2_start_index] = l2_start_index
+      localized[:l2_end_index] = l2_end_index
+      localized.save!
+    end
+    span
   end
 
   def sync_lesson_timestamps

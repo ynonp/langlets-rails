@@ -45,6 +45,16 @@ class CreateCourseJob < ApplicationJob
     builder = CourseBuilder::BuildSong.new(progress, course)
     builder.call
 
+    requested_languages = imports_for(course).distinct.pluck(:translation_language)
+    requested_languages.each do |language_name|
+      next if language_name == progress.translation_language
+
+      language = Language.find_by(english_name: language_name)
+      next if language.nil? || course.reload.translation_ready?(language)
+
+      progress.add_translation(language)
+    end
+
     course.published!
     complete_imports!(course)
     CourseMailer.creation_complete(course).deliver_now

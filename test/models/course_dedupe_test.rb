@@ -23,11 +23,14 @@ class CourseDedupeTest < ActiveSupport::TestCase
     end
   end
 
-  test "the same video can be published for different translation languages" do
-    es_en = publish!(user: @user,  slug: "spanish-english", translation_language: @english)
-    es_he = publish!(user: @other, slug: "spanish-hebrew",  translation_language: @hebrew)
+  test "translation languages share one published course" do
+    course = publish!(user: @user, slug: "spanish", translation_language: @english)
+    course.course_translations.create!(language: @hebrew, name: "ספרדית", status: :ready)
 
-    assert_not_equal es_en.id, es_he.id
+    assert_raises(ActiveRecord::RecordNotUnique) do
+      publish!(user: @other, slug: "spanish-hebrew", translation_language: @hebrew)
+    end
+    assert_equal 2, course.course_translations.count
   end
 
   # Scoped to published so a failed or in-flight import doesn't wedge the video

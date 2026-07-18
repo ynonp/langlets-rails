@@ -15,6 +15,41 @@
 
 ## Core Architecture
 
+### Translation localization
+
+Content has one shared L1 skeleton and any number of sparse L2 translations:
+
+- `media` is unique on `(url, language_id)` and represents one transcription of
+  a video in its spoken language. Adding an L2 never creates another medium or
+  reruns transcription.
+- `phrases` stores only L1 text. `phrase_translations` is unique on
+  `(phrase_id, language_id)` and stores each localized phrase text.
+- `phrase_tokens` stores an L1 span, timestamps, audio, questions, and similar
+  sounds once. `token_translations` is unique on
+  `(phrase_token_id, language_id)` and stores the L2 label and L2 indexes.
+- Activities join spans through `activity_phrase_tokens`, so the sampled course
+  skeleton and user progress are shared by every site language.
+- `courses` is unique per published `(youtube_video_id, language_id)`.
+  `course_translations` carries per-L2 name and readiness; `lesson_translations`
+  carries localized lesson names.
+- `Current.translation_language` is set from the request subdomain (`he` on
+  `he.langlets.app`, English on the main domain). Phrase, token, course, and
+  lesson localized associations use this request context. The existing `lang`
+  parameter remains the independent L1/library filter.
+- Sessions use a parent-domain cookie (`domain: :all`, `tld_length: 2`) so login
+  is shared across localized subdomains.
+- Saved vocabulary uses `phrase_token_users`. Each row pins `language_id` when
+  the span is saved; vocabulary and review resolve that exact translation even
+  when the current subdomain is different. Saving the span again updates the
+  language rather than creating a second entry.
+
+The import pipeline is also split. `CreateSongProgress` is unique on
+`(youtubeurl, clip_language)`. Neutral transcription/timing/segmentation work
+runs once, while `add_translation(language)` stores language-keyed output under
+`data["translations"]`. A translation-only import costs one credit and attaches
+phrase, token, lesson, and course translations without deleting lessons,
+activities, progress, or vocabulary.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)
@@ -69,27 +104,10 @@
   - Belongs to Script
 
 #### 5. **Medium** (`media`)
-- **Purpose**: Store one video *transcribed into one language pair* — not simply "a video"
-- **Key Features**:
-  - **Keyed on `(url, language_id, translation_language_id)`**, uniquely indexed as
-    `index_media_on_url_and_language_pair`. `language` is the clip language,
-    `translation_language` the language it was translated into, so the same URL has
-    one row per pair.
-  - This is load-bearing, not incidental: `medium.phrases` is treated as "this
-    course's phrases" throughout the app (`FullPlayerController`, the activity
-    builders, `Lesson`, `ResyncTimestampsJob`). Keying on URL alone made two courses
-    for the same video share a medium, so `CourseBuilder::BuildSong`'s
-    `medium.phrases.destroy_all` wiped the other course's phrases, and the player
-    interleaved both languages. Keying on the pair keeps every `medium.phrases`
-    caller correct by construction — **never look a medium up by URL alone**; read it
-    through `course.medium`.
-  - `translation_language` is `optional: true` only to tolerate pre-existing rows
-    with no phrases to backfill from. New records always set it.
-  - YouTube video ID extraction
-- **Relationships**:
-  - One-to-many with Lessons
-  - One-to-many with Phrases
-  - Belongs to Language (clip language) and Language (translation_language)
+- **Purpose**: Store one video transcription in its spoken language.
+- **Identity**: `(url, language_id)`. L2 data is stored below phrases, so a new
+  target language reuses this row and its L1 phrases.
+- **Relationships**: Belongs to the clip `Language`; has many Lessons and Phrases.
 
 #### 6. **Course** (`courses`)
 - **Purpose**: Group lessons into structured playlists
@@ -97,13 +115,13 @@
   - Hierarchical organization with slugs. **`slug` is the identifier** — uniquely indexed, and what `FriendlyName#to_param` returns.
   - **`name` is NOT unique.** It was, back when one admin typed every title. Two users importing different videos that share a title must not collide on a display field.
   - Main media URL for course overview
-  - **Identity in the Library is `(youtube_video_id, language_id, translation_language_id)`**, enforced for published courses by the partial unique index `idx_courses_published_video_pair`. `language` is the clip language, `translation_language` the language it's taught in. The index lives in the database, not application code, so two importers racing on the same video can't both publish. It's scoped to `status = 1` so failed or in-flight imports don't wedge the video for everyone else.
+  - **Identity in the Library is `(youtube_video_id, language_id)`**, enforced for published courses by a partial unique index. L2 publish/readiness and name live in `course_translations`.
   - `main_media_url` is free text and unreliable for comparison (`youtu.be/X` vs `watch?v=X&t=9`) — always compare `youtube_video_id`, via `Youtube::Url`.
   - Course thumbnails use the stored `youtube_video_id` rather than parsing `main_media_url`; a `Youtube::Url` fallback supports legacy rows where the stored ID is blank.
   - **User ownership**: All courses belong to a specific user (creator). Note this is *creator*, not *owner* — under dedupe, a course is a shared community artifact other users have enrollments and progress against, which is why `Ability` still grants `:manage, Course` to admins only.
 - **Relationships**:
   - One-to-many with Lessons
-  - Belongs to Language (clip), Language (translation_language) and User
+  - Belongs to the clip Language and creator User; has many CourseTranslations
   - Many-to-many with Playlists (through CoursesPlaylist)
   - One-to-many with Enrollments
 
@@ -122,9 +140,9 @@
 #### 8. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
 - **Key Features**:
-  - **Multi-Script Text Support**: References to MultiScriptText objects (`text_l1_id`, `text_l2_id`)
+  - Stores L1 text; localized L2 text is normalized into PhraseTranslations
   - Media synchronization timestamps
-  - Language pair references (`l1_id`, `l2_id`)
+  - L1 language reference (`l1_id`)
   - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
   - **Helper Methods**:
     - `text_l1_content`/`text_l2_content`: Get default script content
@@ -133,21 +151,15 @@
 - **Relationships**: 
   - Belongs to Medium and two Languages
   - Belongs to two MultiScriptText objects (text_l1, text_l2)
-  - One-to-many with TokenTranslations
+  - One-to-many with PhraseTranslations and PhraseTokens
   - Many-to-many with Activities (through ActivityPhrase)
 
-#### 9. **TokenTranslation** (`token_translations`)
-- **Purpose**: Provide word/token-level translations within phrases
-- **Key Features**:
-  - Character range indices for both languages (`l1_start_index`, `l1_end_index`, `l2_start_index`, `l2_end_index`)
-  - Translation text
-  - Practice questions array (PostgreSQL array type)
-  - Similar sound arrays for pronunciation practice (PostgreSQL array type)
-  - Unique constraint on phrase + L1 start/end indices
-  - **Audio Attachment**: `has_one_attached :l1_audio` for pronunciation audio files
-- **Relationships**: 
-  - Belongs to Phrase
-  - Many-to-many with Activities (through ActivityTokenTranslation)
+#### 9. **PhraseToken / TokenTranslation**
+- `phrase_tokens` is the language-neutral L1 span, unique by phrase, L1 range,
+  and index type. It owns timestamps, audio, questions, and L1 similar sounds.
+- `token_translations` belongs to a PhraseToken and Language and owns the L2
+  translation plus L2 indexes. It is unique per `(phrase_token_id, language_id)`.
+- Activities and saved vocabulary reference PhraseToken, never a localized row.
 
 #### 10. **User** (`users`)
 - **Purpose**: User authentication and account management
@@ -305,11 +317,11 @@ A user's request to turn a video into a course. There are three distinct things 
 
 | | Scope | Keyed on |
 |---|---|---|
-| `CreateSongProgress` | the **shared pipeline cache** — no `user_id` | `(youtubeurl, clip_language, translation_language)` |
-| `Course` | the **shared output** — one per video+pair | `(youtube_video_id, language_id, translation_language_id)` |
+| `CreateSongProgress` | the **shared neutral pipeline cache** — no `user_id` | `(youtubeurl, clip_language)` |
+| `Course` | the **shared output** — one per video+L1 | `(youtube_video_id, language_id)` |
 | `ImportRequest` | the **per-user intent** | `(user_id, youtube_video_id, clip_language, translation_language)` while active |
 
-> **One `CreateSongProgress` → many `ImportRequest`s → one `Course`.**
+> **One `CreateSongProgress` → many language-keyed translations and `ImportRequest`s → one shared `Course`.**
 
 Two users importing the same video deliberately share one pipeline and one course; the AI work happens once. That's why per-user state (status, credit linkage, retry, push idempotency) can't live on either of the shared records.
 

@@ -22,32 +22,30 @@ module CourseBuilder
     end
 
     def call
+      previous_language = Current.translation_language
+      Current.translation_language = Language.find_by(english_name: progress.translation_language)
       ActiveRecord::Base.transaction do
         course.lessons.destroy_all
 
         l1 = Language.find_by(english_name: progress.clip_language)
         l2 = Language.find_by(english_name: progress.translation_language)
+        translation_data = progress.translation_payload(l2)
+        raise "translation data is missing for #{l2.iso_name}" unless translation_data
         user = course.user
-        # Keyed on the language pair, not the URL alone: the same video imported
-        # for a second translation language must get its own medium, or the
-        # destroy_all below wipes the first course's phrases.
         medium = Medium.find_or_create_by!(
           url: progress.youtubeurl,
-          language: l1,
-          translation_language: l2
+          language: l1
         )
 
-        medium.phrases.destroy_all
-
-        progress_ordered_phrases = progress.data["phrases"].map do |p|
+        progress_ordered_phrases = progress.data["phrases"].each_with_index.map do |p, index|
           Phrase.create!(
             text_l1: p["text_l1"],
-            text_l2: p["text_l2"],
             timestamp: p["timestamp"],
             l1:,
-            l2:,
             medium:,
-          )
+          ).tap do |phrase|
+            phrase.phrase_translations.create!(language: l2, text: translation_data.dig("phrases", index, "text"))
+          end
         end
         phrases = medium.phrases.order(timestamp: :asc)
 
@@ -55,7 +53,10 @@ module CourseBuilder
           if progress.data.dig("phrases", 0, "words").present?
             # Word-timed pipeline: each word becomes a karaoke-capable token.
             progress_ordered_phrases.each_with_index do |phrase, idx|
-              phrase.build_word_tokens(progress.data["phrases"][idx]["words"])
+              words = progress.data["phrases"][idx]["words"].each_with_index.map do |word, word_index|
+                word.merge("translation" => translation_data.dig("phrases", idx, "words", word_index))
+              end
+              phrase.build_word_tokens(words, language: l2)
               phrase.save
             end
           else
@@ -104,6 +105,7 @@ module CourseBuilder
             start_timestamp: first_timestamp,
             end_timestamp:
           )
+          lesson.lesson_translations.create!(language: l2, name: lesson_name)
           created_lessons << lesson
 
           all_lesson_phrases = current_lesson_phrases(lesson, phrases, first_timestamp, last_timestamp)
@@ -137,10 +139,67 @@ module CourseBuilder
             end
           end
         end
+
+        course.course_translations.find_or_initialize_by(language: l2).tap do |localized|
+          localized.name = course.name
+          localized.status = :ready
+          localized.save!
+        end
       end
+    ensure
+      Current.translation_language = previous_language
+    end
+
+    # Persist one additional L2 against an existing course skeleton. No lessons,
+    # activities, progress, or L1 rows are rebuilt.
+    def add_translation(language)
+      previous_language = Current.translation_language
+      Current.translation_language = language
+      payload = progress.translation_payload(language)
+      raise ArgumentError, "translation data is missing for #{language.iso_name}" unless payload
+
+      ActiveRecord::Base.transaction do
+        phrases = course.medium.phrases.order(:timestamp).includes(:phrase_tokens).to_a
+        raise "transcription shape changed" unless phrases.length == payload["phrases"].length
+
+        phrases.each_with_index do |phrase, phrase_index|
+          localized = phrase.phrase_translations.find_or_initialize_by(language: language)
+          localized.text = payload.dig("phrases", phrase_index, "text")
+          localized.save!
+
+          phrase.phrase_tokens.order(:l1_start_index).each_with_index do |token, word_index|
+            translated_word = payload.dig("phrases", phrase_index, "words", word_index)
+            next if translated_word.blank?
+
+            token.token_translations.find_or_initialize_by(language: language).tap do |translation|
+              translation.translation = translated_word
+              translation.save!
+            end
+          end
+        end
+
+        course.lessons.order(:order).each_with_index do |lesson, index|
+          lesson.lesson_translations.find_or_initialize_by(language: language).tap do |translation|
+            translation.name = lesson_name_for(payload["lessons"], index) || lesson.name
+            translation.save!
+          end
+        end
+
+        course.course_translations.find_or_initialize_by(language: language).tap do |translation|
+          translation.name = course.name
+          translation.status = :ready
+          translation.save!
+        end
+      end
+    ensure
+      Current.translation_language = previous_language
     end
 
     private
+
+    def lesson_name_for(lessons_text, index)
+      lessons_text.to_s.split("\n\n")[index]&.lines&.first&.strip&.sub(/^#\s*/, "")
+    end
 
     # Drop lessons the RateLessons step judged to have no teaching value (a chanted
     # nonsense hook, pure onomatopoeia, or an exact reprise of an earlier lesson).
@@ -205,12 +264,12 @@ module CourseBuilder
     end
 
     def current_token_translations(phrases)
-      phrases.includes(:token_translations).flat_map(&:token_translations)
+      phrases.includes(phrase_tokens: :localized_translation).flat_map(&:phrase_tokens)
     end
 
     def review_token_translations(review_phrases)
       return [] if review_phrases.empty?
-      review_phrases.includes(:token_translations).flat_map(&:token_translations)
+      review_phrases.includes(phrase_tokens: :localized_translation).flat_map(&:phrase_tokens)
     end
 
     # A ListenActivity is only solvable when at least one of its phrases has a
@@ -221,7 +280,7 @@ module CourseBuilder
     def listen_blank_tokens(phrases)
       phrase_list = phrases.is_a?(ActiveRecord::Relation) ? phrases.to_a : phrases
       phrase_list.flat_map do |phrase|
-        phrase.token_translations.select { |t| similar_sounds_for_token(phrase, t).present? }
+        phrase.phrase_tokens.select { |t| similar_sounds_for_token(phrase, t).present? }
       end
     end
 
@@ -229,12 +288,7 @@ module CourseBuilder
       return [] if token_translations.empty?
       return token_translations.first(limit) if token_translations.size <= limit
 
-      ids = token_translations.map(&:id)
-      TokenTranslation.select("distinct on (translation) *")
-        .where(id: ids)
-        .order(:translation, :id)
-        .limit(limit)
-        .to_a
+      token_translations.uniq(&:translation).first(limit)
     end
 
     def distinct_phrases_by_text_l1(phrases)
@@ -273,9 +327,10 @@ module CourseBuilder
 
       return phrases if ids.empty?
 
-      Phrase.select("distinct on (text_l2) *")
-        .where(id: ids)
-        .order(:text_l2, :id)
+      Phrase.joins(:phrase_translations)
+        .where(id: ids, phrase_translations: { language_id: Current.translation_language_id })
+        .select("DISTINCT ON (phrase_translations.text) phrases.*")
+        .order("phrase_translations.text, phrases.id")
         .to_a
     end
 
@@ -378,7 +433,7 @@ module CourseBuilder
             a3.phrases = random_phrases(phrases, 4)
           else
             a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
-            a3.token_translations = flashcard_tokens
+            a3.phrase_tokens = flashcard_tokens
           end
         end
       end
@@ -396,7 +451,7 @@ module CourseBuilder
 
         unless chain_tokens.empty?
           a4 = Activities::TokensChainActivity.create!(lesson:, order: 4, user:)
-          a4.token_translations = chain_tokens
+          a4.phrase_tokens = chain_tokens
         end
       end
 
@@ -432,7 +487,7 @@ module CourseBuilder
             a3.phrases = random_phrases(phrases, 4)
           else
             a3 = Activities::FlashcardActivity.create!(lesson:, order: 3, user:)
-            a3.token_translations = flashcard_tokens
+            a3.phrase_tokens = flashcard_tokens
           end
         end
       end
@@ -442,10 +497,10 @@ module CourseBuilder
         mixed_tokens = mix_content(current_token_translations, review_token_translations, 70)
         if lesson_number.odd?
           a4 = Activities::MatchTokensActivity.create!(lesson:, order: 4, user:)
-          a4.token_translations = mixed_tokens.sample(5)
+          a4.phrase_tokens = mixed_tokens.sample(5)
         else
           a4 = Activities::TokensChainActivity.create!(lesson:, order: 4, user:)
-          a4.token_translations = mixed_tokens.sample(15)
+          a4.phrase_tokens = mixed_tokens.sample(15)
         end
       end
 
@@ -454,7 +509,7 @@ module CourseBuilder
       unless listen_tokens.empty?
         a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
         a5.phrases = phrases
-        a5.token_translations = listen_tokens.uniq
+        a5.phrase_tokens = listen_tokens.uniq
       end
     end
 
@@ -493,7 +548,7 @@ module CourseBuilder
       else
         a5 = Activities::ListenActivity.create!(lesson:, order: 5, user:)
         a5.phrases = phrases
-        a5.token_translations = listen_tokens.uniq
+        a5.phrase_tokens = listen_tokens.uniq
       end
     end
 
@@ -510,7 +565,7 @@ module CourseBuilder
         tokens = select_tokens_from_different_phrases(mix_content(current_tokens, review_tokens, 70), 5)
         return if tokens.empty?
         activity = Activities::FlashcardActivity.create!(lesson:, order:, user:)
-        activity.token_translations = tokens
+        activity.phrase_tokens = tokens
       when :word_order
         activity = Activities::WordOrderActivity.create!(lesson:, order:, user:)
         activity.phrases = random_phrases(ctx[:phrases], 4)
@@ -521,30 +576,30 @@ module CourseBuilder
       when :tokens_chain
         return if current_tokens.empty? && review_tokens.empty?
         activity = Activities::TokensChainActivity.create!(lesson:, order:, user:)
-        activity.token_translations = mix_content(current_tokens, review_tokens, 60).first(5)
+        activity.phrase_tokens = mix_content(current_tokens, review_tokens, 60).first(5)
       when :language_alignment
-        aligned_tokens = TokenTranslation
-          .joins(:phrase)
-          .where(phrase: { id: ctx[:phrases_array].map(&:id) })
-          .where.not(l2_start_index: nil)
+        aligned_tokens = PhraseToken
+          .joins(:localized_translation)
+          .where(phrase_id: ctx[:phrases_array].map(&:id))
+          .where.not(token_translations: { l2_start_index: nil })
         return if aligned_tokens.empty?
         activity = Activities::LanguageAlignmentActivity.create!(lesson:, order:, user:)
         activity.phrases = ctx[:phrases]
-        activity.token_translations = aligned_tokens.sample(5)
+        activity.phrase_tokens = aligned_tokens.sample(5)
       end
     end
 
     def create_review_lesson_activities(lesson, review_phrases, review_token_translations, user)
       # 1. LanguageAlignmentActivity on all phrases from all previous lessons in order
-      tt_with_l2 = TokenTranslation
-        .joins(:phrase)
-        .where(phrase: { id: review_phrases.pluck(:id) })
-        .where.not(l2_start_index: nil)
+      tt_with_l2 = PhraseToken
+        .joins(:localized_translation)
+        .where(phrase_id: review_phrases.pluck(:id))
+        .where.not(token_translations: { l2_start_index: nil })
 
       unless tt_with_l2.empty?
         a1 = Activities::LanguageAlignmentActivity.create!(lesson:, order: 1, user:)
         a1.phrases = review_phrases.order(timestamp: :asc)
-        a1.token_translations = tt_with_l2.sample(5)
+        a1.phrase_tokens = tt_with_l2.sample(5)
       end
 
       # 2. AudioToTranslation (100% review, all completed lessons)
@@ -556,7 +611,7 @@ module CourseBuilder
       # 3. TokenChainActivity (100% review)
       unless review_token_translations.empty?
         a3 = Activities::TokensChainActivity.create!(lesson:, order: 3, user:)
-        a3.token_translations = review_token_translations.sample(5)
+        a3.phrase_tokens = review_token_translations.sample(5)
       end
 
       # 4. ListenActivity (all phrases from all previous lessons in order, only if
@@ -566,7 +621,7 @@ module CourseBuilder
       unless listen_tokens.empty?
         a4 = Activities::ListenActivity.create!(lesson:, order: 4, user:)
         a4.phrases = ordered_review_phrases
-        a4.token_translations = listen_tokens.uniq
+        a4.phrase_tokens = listen_tokens.uniq
       end
     end
   end

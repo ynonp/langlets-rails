@@ -8,7 +8,7 @@ class GenerateTokenAudioJob < ApplicationJob
   discard_on ActiveRecord::RecordNotFound
 
   def perform(token_translation_id)
-    token_translation = TokenTranslation.find(token_translation_id)
+    token_translation = PhraseToken.find(token_translation_id)
     
     # Check if we have the necessary data for audio generation
     return unless token_translation.original_text.present? && token_translation.phrase&.l1&.iso_name.present?
@@ -17,7 +17,7 @@ class GenerateTokenAudioJob < ApplicationJob
     
     begin
       # Use the Azure TTS service to synthesize speech for the token's text
-      wav_io = TokenTranslation.synthesize_speech(
+      wav_io = PhraseToken.synthesize_speech(
         text: token_translation.original_text, 
         lang: token_translation.phrase.l1.iso_name
       )

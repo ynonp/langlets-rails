@@ -10,7 +10,10 @@ class FullPlayerController < ApplicationController
     end
 
     # Load all phrases from course's medium ordered by timestamp
-    @phrases = @course.medium.phrases.includes(token_translations: { l1_audio_attachment: :blob }).order(:timestamp)
+    @phrases = @course.medium.phrases.includes(
+      :localized_translation,
+      phrase_tokens: [ :localized_translation, { l1_audio_attachment: :blob } ]
+    ).order(:timestamp)
     
     # Extract video_id from course's main_media_url
     @video_id = extract_video_id_from_url(@course.main_media_url)

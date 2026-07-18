@@ -22,7 +22,7 @@ module Activities
     # Karaoke word highlighting is available only when this lesson's tokens carry
     # per-word timestamps (new pipeline). Older songs fall back to line highlight.
     def word_timing_enabled?(phrases)
-      phrases.any? { |phrase| phrase.token_translations.any? { |t| t.start_timestamp.present? } }
+      phrases.any? { |phrase| phrase.phrase_tokens.any? { |t| t.start_timestamp.present? } }
     end
 
   end

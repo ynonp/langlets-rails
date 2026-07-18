@@ -10,12 +10,8 @@ module App
 
     private
 
-    # Filtered to the language the user is learning. ApplicationController already
-    # threads `lang` through every URL, and a Hebrew learner has no use for a
-    # Spanish catalogue. Worth knowing this is a product call, not a technical
-    # one: the spec calls the Library "all content imported by any user".
     def published_scope
-      scope = Course.published.includes(:language, :translation_language)
+      scope = Course.published.ready_in(Current.translation_language).includes(:language, { course_translations: :language })
       language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
       language ? scope.where(language: language) : scope
     end

@@ -1,4 +1,4 @@
-# A user's saved vocabulary (token_translation_users), newest first, optionally
+# A user's saved vocabulary (phrase_token_users), newest first, optionally
 # filtered to one learning language.
 class VocabularyQuery < PaginatedQuery
   def initialize(user:, language: nil, page: 1, per_page: DEFAULT_PER_PAGE)
@@ -9,9 +9,9 @@ class VocabularyQuery < PaginatedQuery
   end
 
   def call
-    scope = @user.token_translation_users
-      .joins(token_translation: :phrase)
-      .includes(token_translation: { phrase: [ :l1, :l2 ] })
+    scope = @user.phrase_token_users
+      .joins(phrase_token: :phrase)
+      .includes(:language, phrase_token: [ :token_translations, { phrase: [ :l1, :phrase_translations ] } ])
       .order(created_at: :desc, id: :desc)
 
     if @language_code
@@ -26,14 +26,17 @@ class VocabularyQuery < PaginatedQuery
   private
 
   def serialize(saved)
-    token = saved.token_translation
+    token = saved.phrase_token
+    translation = saved.token_translation
     phrase = token.phrase
+    phrase_translation = phrase.phrase_translations.find { |row| row.language_id == saved.language_id }
     {
       word: token.original_text,
-      translation: token.translation,
+      translation: translation&.translation,
       language: phrase.l1.iso_name,
+      translation_language: saved.language.iso_name,
       context: phrase.text_l1,
-      context_translation: phrase.text_l2,
+      context_translation: phrase_translation&.text,
       saved_at: saved.created_at.iso8601
     }
   end

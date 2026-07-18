@@ -6,7 +6,7 @@ module App
     def index
       @enrollments = current_user.enrollments
                                  .in_progress
-                                 .includes(course: [ :language, :translation_language ])
+                                 .includes(course: [ :language, { course_translations: :language } ])
                                  .joins(:course)
                                  .merge(Course.published)
                                  .recently_practiced

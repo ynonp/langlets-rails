@@ -9,14 +9,12 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
     )
 
     @english = languages(:english)
-    @french = languages(:french)
-
-    # Use the bref fixture (French → English, 73 phrases, 10 lessons)
-    # This fixture has actual similar_sounds data
+    # Use a word-timed fixture with actual similar_sounds data.
     fixture_path = Rails.root.join(
-      "test/fixtures/create_song_progress/bref/https___www_youtube_com_watch_v_JmghDKkeiik.json"
+      "test/fixtures/create_song_progress/arabic_disney/https___www_youtube_com_watch_v_1XQaRG4P_9E.json"
     )
     @fixture_data = JSON.parse(File.read(fixture_path))
+    @clip_language = Language.find_by!(english_name: @fixture_data["clip_language"])
 
     @progress = CreateSongProgress.new(
       youtubeurl: @fixture_data["youtubeurl"],
@@ -31,7 +29,7 @@ class CourseBuilder::BuildSongTest < ActiveSupport::TestCase
       name: "Test Bref Course",
       slug: "test-bref-course-#{SecureRandom.hex(4)}",
       main_media_url: @fixture_data["youtubeurl"],
-      language: @french,
+      language: @clip_language,
       status: :processing
     )
   end

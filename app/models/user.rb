@@ -49,9 +49,9 @@ class User < ApplicationRecord
            foreign_key: :resource_owner_id,
            dependent: :destroy
 
-  # Saved token translations for personal review
-  has_many :token_translation_users, dependent: :destroy
-  has_many :saved_token_translations, through: :token_translation_users, source: :token_translation
+  # Saved L1 spans, pinned to the L2 language active when each was saved.
+  has_many :phrase_token_users, dependent: :destroy
+  has_many :saved_phrase_tokens, through: :phrase_token_users, source: :phrase_token
 
   # Credits meter video imports. users.credit_balance is the authority; the ledger
   # is the append-only audit behind it. Always move credits via Credits::Ledger.
@@ -141,16 +141,16 @@ class User < ApplicationRecord
   end
 
   def languages_with_saved_words
-    Language.joins(phrases_as_l1: { token_translations: :token_translation_users })
-      .where(token_translation_users: { user_id: id })
+    Language.joins(phrases_as_l1: { phrase_tokens: :phrase_token_users })
+      .where(phrase_token_users: { user_id: id })
       .distinct
   end
 
-  def saved_token_translations_for_language(language_code)
+  def saved_phrase_tokens_for_language(language_code)
     language = Language.find_by(iso_name: language_code)
-    return saved_token_translations.none unless language
+    return saved_phrase_tokens.none unless language
 
-    saved_token_translations
+    saved_phrase_tokens
       .joins(phrase: :l1)
       .where(languages: { id: language.id })
   end

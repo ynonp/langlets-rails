@@ -5,13 +5,17 @@ class Phrase < ApplicationRecord
   belongs_to :medium
 
   belongs_to :l1, class_name: "Language"
-  belongs_to :l2, class_name: "Language"
-  has_many :token_translations, dependent: :destroy
+  has_many :phrase_translations, dependent: :destroy, inverse_of: :phrase
+  has_one :localized_translation,
+          -> { where(language_id: Current.translation_language_id) },
+          class_name: "PhraseTranslation"
+  has_many :phrase_tokens, dependent: :destroy
   has_many :similar_sounds, dependent: :destroy
 
   # Validations
   validates :text_l1, presence: { message: "must be present" }
-  validates :text_l2, presence: { message: "must be present" }
+  def text_l2 = localized_translation&.text
+  def l2 = localized_translation&.language || Current.translation_language
 
   has_timestamp [ :timestamp ]
 
@@ -55,4 +59,5 @@ class Phrase < ApplicationRecord
   def self.timestamp_to_seconds(timestamp)
     HasTimestamp.timestamp_to_seconds(timestamp) || 0.0
   end
+
 end

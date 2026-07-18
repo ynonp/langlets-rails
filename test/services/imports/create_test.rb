@@ -101,12 +101,13 @@ module Imports
       assert enrollment.library?
     end
 
-    test "dedupe is per language pair, not per video" do
-      publish_course!(user: @other, translation_language: @english)
+    test "a missing language creates translation work on the shared course" do
+      published = publish_course!(user: @other, translation_language: @english)
 
       result = stub_video { call_create(translation_language: "Hebrew") }
 
-      assert result.created?, "Spanish->Hebrew is a different course from Spanish->English"
+      assert result.created?
+      assert_equal published, result.course
       assert_equal 2, @user.reload.credit_balance
     end
 
@@ -138,11 +139,12 @@ module Imports
       assert result.created?, "an errored course must not wedge the video"
     end
 
-    test "the same video for two translation languages gets distinct slugs" do
+    test "the same video for two translation languages shares one slug" do
       first  = stub_video { call_create(translation_language: "English") }
       second = stub_video { call_create(translation_language: "Hebrew") }
 
-      assert_not_equal first.course.slug, second.course.slug
+      assert_equal first.course.slug, second.course.slug
+      assert_equal first.course, second.course
       assert first.course.slug.present?
       assert second.course.slug.present?
     end

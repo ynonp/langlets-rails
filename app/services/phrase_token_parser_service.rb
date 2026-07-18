@@ -50,19 +50,22 @@ class PhraseTokenParserService
 
       phrase = Phrase.create!(
         text_l1: parsed_phrase.l1_text,
-        text_l2: parsed_phrase.l2_text,
         l1: l1_language,
-        l2: l2_language,
         medium: medium,
         timestamp: timestamp
       )
+      phrase.phrase_translations.create!(language: l2_language, text: parsed_phrase.l2_text)
 
       # Create token translations
       parsed_phrase.token_translations.each do |parsed_token|
-        TokenTranslation.create!(
+        span = PhraseToken.create!(
           phrase: phrase,
           l1_start_index: parsed_token.l1_start_index,
           l1_end_index: parsed_token.l1_end_index,
+          index_type: :character_index
+        )
+        span.token_translations.create!(
+          language: l2_language,
           l2_start_index: parsed_token.l2_start_index,
           l2_end_index: parsed_token.l2_end_index,
           translation: parsed_token.translation

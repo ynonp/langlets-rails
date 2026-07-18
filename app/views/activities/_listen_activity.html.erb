@@ -104,8 +104,8 @@
       <%
         token_with_similar = nil
         phrases.each do |p|
-          next unless p.token_translations.present?
-          p.token_translations.each do |t|
+          next unless p.phrase_tokens.present?
+          p.phrase_tokens.each do |t|
             if similar_sounds_for_token(p, t).present?
               token_with_similar = { phrase: p, token: t }
               break

@@ -3,7 +3,7 @@
   "@context": "https://schema.org",
   "@type": "Course",
   "@id": "<%= j course_url %>#course",
-  "name": "<%= j course.name %>",
+  "name": "<%= j course.localized_name %>",
   "description": "<%= j local_assigns.fetch(:description, '') %>",
   "provider": {
     "@type": "Organization",

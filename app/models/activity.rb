@@ -3,8 +3,8 @@ class Activity < ApplicationRecord
   belongs_to :lesson
   has_many :activity_phrases, dependent: :destroy
   has_many :phrases, through: :activity_phrases
-  has_many :activity_token_translations, dependent: :destroy
-  has_many :token_translations, through: :activity_token_translations
+  has_many :activity_phrase_tokens, dependent: :destroy
+  has_many :phrase_tokens, through: :activity_phrase_tokens
 
   has_many :activity_users, dependent: :destroy
   has_many :users_completed, through: :activity_users, source: :user
@@ -29,7 +29,7 @@ class Activity < ApplicationRecord
     when "SortPhrasesActivity"
       phrases.count * 2
     when "LanguageAlignmentActivity"
-      token_translations.count * 2
+      phrase_tokens.count * 2
     when "SpeakActivity", "ListenActivity"
       phrases.count * 2
     when "FindAnswerActivity"
@@ -37,7 +37,7 @@ class Activity < ApplicationRecord
     when "WordOrderActivity"
       phrases.count * 2
     when "Activities::WriteMissingWordActivity"
-      token_translations.count * 2
+      phrase_tokens.count * 2
     else
       10 # Default for new activity types
     end
@@ -49,7 +49,7 @@ class Activity < ApplicationRecord
 
   def create_dictionary
     phrases.each do |phrase|
-      phrase.create_mappings if phrase.token_translations.empty?
+      phrase.create_mappings if phrase.phrase_tokens.empty?
     end
   end
 

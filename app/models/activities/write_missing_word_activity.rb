@@ -1,11 +1,11 @@
 module Activities
   class WriteMissingWordActivity < Activity
     def activity_params
-      activity_token_translations = token_translations
-        .includes(phrase: [ :l1, :l2 ], l1_audio_attachment: :blob)
+      activity_phrase_tokens = phrase_tokens
+        .includes(:localized_translation, phrase: [ :l1, :localized_translation ], l1_audio_attachment: :blob)
         .to_a
 
-      cards = activity_token_translations.map do |token|
+      cards = activity_phrase_tokens.map do |token|
         text = token.phrase.text_l1
         start_idx = token.l1_start_index
         end_idx = token.l1_end_index
@@ -35,8 +35,8 @@ module Activities
 
       {
         cards: cards,
-        l1: activity_token_translations.first&.phrase&.l1,
-        l2: activity_token_translations.first&.phrase&.l2
+        l1: activity_phrase_tokens.first&.phrase&.l1,
+        l2: activity_phrase_tokens.first&.phrase&.l2
       }
     end
   end

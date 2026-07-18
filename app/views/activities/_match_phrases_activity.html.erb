@@ -1,5 +1,5 @@
 <%# Expects:
-  params[:phrases] - An array of phrase objects with token_translations
+  params[:phrases] - An array of phrase objects with phrase_tokens
   params[:l1] - Language object for original_phrase
   params[:l2] - Language object for translated_phrase
   params[:video_id] - YouTube video ID
@@ -53,7 +53,7 @@
         <!-- Original phrase (Spanish) -->
         <div 
           data-controller="popover-translation"
-          data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_token_translations.pluck(:id).to_json : '[]' %>"
+          data-popover-translation-saved-ids-value="<%= current_user ? current_user.saved_phrase_tokens.pluck(:id).to_json : '[]' %>"
           data-action="click->popover-translation#showPopup scroll->popover-translation#hidePopup:passive click@document->popover-translation#hidePopup scroll@document->popover-translation#hidePopup"
           class="w-full mb-2 p-5 rounded-xl bg-white dark:bg-gray-900 flex items-center gap-3 text-gray-900 dark:text-gray-50">
           <button

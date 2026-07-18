@@ -24,15 +24,15 @@ module ActivitiesHelper
   # (tokens without timestamps) return false and fall back to line highlighting.
   def word_timing_enabled?(phrases)
     Array(phrases).any? do |phrase|
-      phrase.token_translations.any? { |t| t.start_timestamp.present? }
+      phrase.phrase_tokens.any? { |t| t.start_timestamp.present? }
     end
   end
 
   def wrap_tokens_in_spans(phrase, attributes_map = {})
-    if phrase.token_translations.empty?
+    if phrase.phrase_tokens.empty?
       content_tag(:span, phrase.text_l1)
     else
-      all_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      all_tokens = phrase.phrase_tokens.to_a.sort_by(&:l1_start_index)
 
       loaded_tokens = filter_overlapping_tokens(all_tokens)
 
@@ -97,10 +97,10 @@ module ActivitiesHelper
   end
 
   def render_phrase_with_blanks(phrase)
-    if phrase.token_translations.empty?
+    if phrase.phrase_tokens.empty?
       phrase.text_l1
     else
-      loaded_tokens = phrase.token_translations.to_a.sort_by(&:l1_start_index)
+      loaded_tokens = phrase.phrase_tokens.to_a.sort_by(&:l1_start_index)
       tokens_with_similar = loaded_tokens.select { |t| similar_sounds_for_token(phrase, t).present? }
       token_to_blank = tokens_with_similar.sample
 

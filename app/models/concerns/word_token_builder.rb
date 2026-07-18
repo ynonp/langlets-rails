@@ -1,17 +1,16 @@
 require "active_support/concern"
 
-# Builds TokenTranslation records from word-timed transcription data (see
-# WordTimingParser). Each word becomes a character-indexed token carrying its
-# own start/end timestamp (for karaoke highlighting) and translation. These
-# tokens intentionally have no L2 indices -- they cannot be used for language
-# alignment activities, only word-level lookup and karaoke.
+# Builds PhraseToken spans and their localized TokenTranslation rows from
+# word-timed transcription data (see WordTimingParser).
 module WordTokenBuilder
   extend ActiveSupport::Concern
 
   # words: array of { "text" =>, "translation" =>, "timestamp" =>, "timestamp_end" =>,
   #                    "l1_start_index" =>, "l1_end_index" => }
-  def build_word_tokens(words)
+  def build_word_tokens(words, language: Current.translation_language)
     return self if words.blank? || text_l1.blank?
+    language ||= l2
+    raise ArgumentError, "translation language is required" unless language
 
     cursor = 0
     tokens = []
@@ -31,23 +30,32 @@ module WordTokenBuilder
       end_char = word["l1_end_index"] || (start_char + text.length - 1)
       cursor = end_char + 1
 
-      token = token_translations.build(
+      token = phrase_tokens.find_or_initialize_by(
         l1_start_index: start_char,
         l1_end_index: end_char,
-        translation: translation,
-        index_type: :character_index,
+        index_type: :character_index
+      )
+      token.assign_attributes(
         start_timestamp: word["timestamp"],
         end_timestamp: word["timestamp_end"]
       )
-
       if token.valid?
+        token.save! if persisted?
+        if language && translation.present?
+          token.token_translations.find_or_initialize_by(language: language).tap do |localized|
+            localized.translation = translation
+            localized.save! if token.persisted?
+          end
+        end
         tokens << token
       else
         Rails.logger.warn "Skipping invalid word token #{text.inspect} in #{text_l1.inspect}: #{token.errors.full_messages.join(', ')}"
       end
     end
 
-    self.token_translations = tokens
+    unless persisted?
+      self.phrase_tokens = tokens
+    end
     self
   end
 end

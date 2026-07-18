@@ -2,9 +2,9 @@
     Each card: { id, phrase_html, translation, correct, options, audio_url }
 %>
 
-<%# Expects params[:token_translations] and prepares cards on the client side %>
-<% token_translations = params[:token_translations] || [] %>
-<% cards = prepare_flashcards_for_tokens(token_translations, params[:unique_words]) %>
+<%# Expects params[:phrase_tokens] and prepares cards on the client side %>
+<% phrase_tokens = params[:phrase_tokens] || [] %>
+<% cards = prepare_flashcards_for_tokens(phrase_tokens, params[:unique_words]) %>
 <% l1_rtl = params[:l1_rtl] %>
 
 <div data-controller="flashcard-activity" data-flashcard-activity-cards-value="<%= cards.to_json %>" data-flashcard-activity-l1-rtl-value="<%= l1_rtl %>" data-flashcard-activity-is-review-lesson-value="<%= params[:is_review_lesson] || false %>" class="flex-1 min-h-0 overflow-y-auto flex flex-col items-center bg-gray-50 dark:bg-gray-950">

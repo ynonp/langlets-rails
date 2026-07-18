@@ -26,7 +26,7 @@
   <% end %>
 
   <%= link_to course_lesson_path(course, lesson), class: "flex-1 min-w-0 no-underline text-inherit" do %>
-    <div class="font-extrabold text-[15.5px] truncate"><%= lesson.name %></div>
+    <div class="font-extrabold text-[15.5px] truncate"><%= lesson.localized_name %></div>
     <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5">
       <%= state == :done ? "Completed" : (state == :progress ? "In progress" : "Lesson #{number}") %>
     </div>

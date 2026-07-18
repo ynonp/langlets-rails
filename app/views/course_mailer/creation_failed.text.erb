@@ -3,13 +3,13 @@ Course Creation Failed
 
 Hi <%= @user.email %>,
 
-We're sorry, but there was an issue creating your course "<%= @course.name %>".
+We're sorry, but there was an issue creating your course "<%= @course.localized_name %>".
 
 Error Details:
 <% if @error_class.present? %><%= @error_class %>: <% end %><%= @error_message %>
 
 Debug information:
-- Course:     <%= @course.name %>
+- Course:     <%= @course.localized_name %>
 - Course ID:  <%= @course.id %>
 - Slug:       <%= @course.slug %>
 - Source URL: <%= @course.main_media_url %>

@@ -12,13 +12,17 @@ class ReviewLessonBuilder
   end
 
   def fetch_tokens
-    tokens = if @language_code
-      @user.saved_token_translations_for_language(@language_code)
-    else
-      @user.saved_token_translations
+    rows = @user.phrase_token_users
+      .includes(:language, phrase_token: [ :token_translations, { phrase: [ :l1, :phrase_translations ] }, { l1_audio_attachment: :blob } ])
+    if @language_code
+      language = Language.find_by(iso_name: @language_code)
+      return [] unless language
+      rows = rows.joins(phrase_token: :phrase).where(phrases: { l1_id: language.id })
     end
 
-    tokens.includes(phrase: [ :l1, :l2 ], l1_audio_attachment: :blob).to_a
+    rows.map do |saved|
+      saved.phrase_token.tap { |token| token.resolved_translation = saved.token_translation }
+    end
   end
 
   def build!
@@ -36,7 +40,7 @@ class ReviewLessonBuilder
     if @tokens.size >= MIN_TOKENS_FOR_MATCH
       a1 = Activities::FlashcardActivity.create!(lesson: lesson, order: order, user: @user)
       a1_tokens = @tokens.sample([ MAX_TOKENS_FOR_FLASHCARD, @tokens.size ].min)
-      a1.token_translations = a1_tokens
+      a1.phrase_tokens = a1_tokens
       previous_tokens |= a1_tokens
       order += 1
     end
@@ -44,7 +48,7 @@ class ReviewLessonBuilder
     if @tokens.size >= MIN_TOKENS_FOR_MATCH
       a2 = Activities::MatchTokensActivity.create!(lesson: lesson, order: order, user: @user)
       a2_tokens = @tokens.sample([ MAX_TOKENS_PER_ACTIVITY, @tokens.size ].min)
-      a2.token_translations = a2_tokens
+      a2.phrase_tokens = a2_tokens
       previous_tokens |= a2_tokens
       order += 1
     end
@@ -52,14 +56,14 @@ class ReviewLessonBuilder
     if @tokens.size >= MIN_TOKENS_FOR_CHAIN
       a3 = Activities::TokensChainActivity.create!(lesson: lesson, order: order, user: @user)
       a3_tokens = @tokens.sample([ MAX_TOKENS_PER_ACTIVITY, @tokens.size ].min)
-      a3.token_translations = a3_tokens
+      a3.phrase_tokens = a3_tokens
       previous_tokens |= a3_tokens
       order += 1
     end
 
     write_pool = previous_tokens.presence || @tokens
     a4 = Activities::WriteMissingWordActivity.create!(lesson: lesson, order: order, user: @user)
-    a4.token_translations = write_pool.sample([ MAX_TOKENS_FOR_WRITE, write_pool.size ].min)
+    a4.phrase_tokens = write_pool.sample([ MAX_TOKENS_FOR_WRITE, write_pool.size ].min)
 
     lesson
   end

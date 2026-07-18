@@ -9,18 +9,21 @@ class MediumTest < ActiveSupport::TestCase
     @hebrew  = languages(:hebrew)
   end
 
-  test "the same video can be transcribed into two translation languages" do
-    es_en = Medium.create!(url: URL, language: @spanish, translation_language: @english)
-    es_he = Medium.create!(url: URL, language: @spanish, translation_language: @hebrew)
+  test "the same video has one transcription for all translation languages" do
+    medium = Medium.create!(url: URL, language: @spanish)
+    phrase = Phrase.create!(medium: medium, l1: @spanish, text_l1: "hola", timestamp: "00:01")
+    phrase.phrase_translations.create!(language: @english, text: "hello")
+    phrase.phrase_translations.create!(language: @hebrew, text: "שלום")
 
-    assert_not_equal es_en.id, es_he.id
+    assert_equal 1, Medium.where(url: URL, language: @spanish).count
+    assert_equal 2, phrase.phrase_translations.count
   end
 
-  test "a video is unique per language pair" do
-    Medium.create!(url: URL, language: @spanish, translation_language: @english)
+  test "a video is unique per clip language" do
+    Medium.create!(url: URL, language: @spanish)
 
     assert_raises(ActiveRecord::RecordNotUnique) do
-      Medium.create!(url: URL, language: @spanish, translation_language: @english)
+      Medium.create!(url: URL, language: @spanish)
     end
   end
 
@@ -28,33 +31,27 @@ class MediumTest < ActiveSupport::TestCase
   # second translation language reused the first course's medium, and
   # CourseBuilder::BuildSong's `medium.phrases.destroy_all` wiped the published
   # course's phrases.
-  test "rebuilding one language pair leaves the other pair's phrases intact" do
-    es_en = Medium.create!(url: URL, language: @spanish, translation_language: @english)
-    es_he = Medium.create!(url: URL, language: @spanish, translation_language: @hebrew)
+  test "adding a translation leaves the shared phrase intact" do
+    medium = Medium.create!(url: URL, language: @spanish)
+    phrase = Phrase.create!(medium: medium, l1: @spanish, text_l1: "hola", timestamp: "00:01")
+    phrase.phrase_translations.create!(language: @english, text: "hello")
+    phrase.phrase_translations.create!(language: @hebrew, text: "שלום")
 
-    Phrase.create!(medium: es_en, l1: @spanish, l2: @english,
-                   text_l1: "hola", text_l2: "hello", timestamp: "00:01")
-    Phrase.create!(medium: es_he, l1: @spanish, l2: @hebrew,
-                   text_l1: "hola", text_l2: "שלום", timestamp: "00:01")
-
-    es_he.phrases.destroy_all
-
-    assert_equal 1, es_en.phrases.reload.count
-    assert_equal "hello", es_en.phrases.first.text_l2
+    assert_equal 1, medium.phrases.reload.count
+    assert_equal "hola", phrase.reload.text_l1
   end
 
-  test "phrases read back scoped to their own language pair" do
-    es_en = Medium.create!(url: URL, language: @spanish, translation_language: @english)
-    es_he = Medium.create!(url: URL, language: @spanish, translation_language: @hebrew)
+  test "phrases resolve through Current translation language" do
+    medium = Medium.create!(url: URL, language: @spanish)
+    phrase = Phrase.create!(medium: medium, l1: @spanish, text_l1: "hola", timestamp: "00:01")
+    phrase.phrase_translations.create!(language: @english, text: "hello")
+    phrase.phrase_translations.create!(language: @hebrew, text: "שלום")
 
-    Phrase.create!(medium: es_en, l1: @spanish, l2: @english,
-                   text_l1: "hola", text_l2: "hello", timestamp: "00:01")
-    Phrase.create!(medium: es_he, l1: @spanish, l2: @hebrew,
-                   text_l1: "hola", text_l2: "שלום", timestamp: "00:01")
-
-    # FullPlayerController and the activity builders all read `medium.phrases`
-    # and assume it means "this course's phrases".
-    assert_equal [ @english.id ], es_en.phrases.reload.pluck(:l2_id).uniq
-    assert_equal [ @hebrew.id ],  es_he.phrases.reload.pluck(:l2_id).uniq
+    Current.translation_language = @english
+    assert_equal "hello", phrase.reload.text_l2
+    Current.translation_language = @hebrew
+    assert_equal "שלום", phrase.reload.text_l2
+  ensure
+    Current.reset
   end
 end

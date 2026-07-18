@@ -8,7 +8,7 @@
 
   <%# min-w-0 is what lets the title actually truncate inside a flex row. %>
   <div class="flex-1 min-w-0 flex flex-col gap-1">
-    <p class="text-sm font-semibold truncate"><%= course.name %></p>
+    <p class="text-sm font-semibold truncate"><%= course.localized_name %></p>
     <p class="text-app-text-2 text-xs">Lesson <%= next_lesson %> of <%= [ total, 1 ].max %></p>
 
     <div class="h-1 rounded-full bg-white/12 overflow-hidden mt-0.5">

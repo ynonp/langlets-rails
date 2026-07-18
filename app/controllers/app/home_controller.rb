@@ -13,7 +13,7 @@ module App
       @hero_course = hero_course
       @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
       @playlists = current_user.playlists
-                               .includes(courses: [ :language, :translation_language ])
+                               .includes(courses: [ :language, { course_translations: :language } ])
                                .order(updated_at: :desc)
                                .to_a
 
@@ -64,7 +64,7 @@ module App
     # Everything on their Home except whatever's already in the hero.
     def candidate_enrollments
       scope = current_user.enrollments
-                          .includes(course: [ :language, :translation_language ])
+                          .includes(course: [ :language, { course_translations: :language } ])
                           .joins(:course)
                           .merge(Course.published)
                           .recently_practiced
@@ -75,7 +75,7 @@ module App
     # Courses from the Library the user hasn't added yet, in their language.
     # Deliberately dumb for now — random picks; real selection comes later.
     def library_picks(count:)
-      scope = Course.published.includes(:language, :translation_language)
+      scope = Course.published.includes(:language, { course_translations: :language })
       scope = scope.where(language: @learning_language) if @learning_language
       scope = scope.where.not(id: current_user.enrollments.select(:course_id))
       scope = scope.where.not(id: @hero_course.id) if @hero_course

@@ -9,7 +9,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     @user = User.create!(email: "push@example.com", password: "password123", confirmed_at: Time.zone.now)
     @spanish = languages(:spanish)
     @english = languages(:english)
-    @medium = Medium.create!(url: CANONICAL, language: @spanish, translation_language: @english)
+    @medium = Medium.create!(url: CANONICAL, language: @spanish)
     @course = Course.create!(name: "Despacito", slug: "despacito-push", main_media_url: CANONICAL,
                              youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,
                              user: @user, status: :published)

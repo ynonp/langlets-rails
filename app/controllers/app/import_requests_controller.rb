@@ -17,7 +17,7 @@ module App
         user: current_user,
         url: params[:url],
         clip_language: params[:clip_language],
-        translation_language: params[:translation_language],
+        translation_language: Current.translation_language&.english_name || params[:translation_language],
         client_token: params[:client_token].presence
       )
 

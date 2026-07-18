@@ -39,8 +39,12 @@ module CreateSong
 
       case step
       when :extract_lyrics        then progress_data["phrases"].present? && !progress_data["extract_lyrics_in_progress"]
-      when :translate             then progress_data.dig("phrases", 0, "text_l2").present?
-      when :add_token_translation then progress_data.dig("phrases", 0, "words", 0, "translation").present?
+      when :translate
+        progress_data.dig("phrases", 0, "text_l2").present? ||
+          progress_data["translations"].to_h.values.any? { |v| v.dig("phrases", 0, "text").present? }
+      when :add_token_translation
+        progress_data.dig("phrases", 0, "words", 0, "translation").present? ||
+          progress_data["translations"].to_h.values.any? { |v| v.dig("phrases", 0, "words", 0).present? }
       when :add_lessons           then progress_data["lessons"].present?
       when :rate_lessons          then lessons_rated?
       when :add_similar_sound     then similar_sounds_complete?

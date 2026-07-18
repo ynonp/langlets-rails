@@ -3,10 +3,16 @@ class Lesson < ApplicationRecord
   belongs_to :medium, optional: true
   belongs_to :course, optional: true
   has_many :activities, dependent: :destroy
+  has_many :lesson_translations, dependent: :destroy, inverse_of: :lesson
+  has_one :localized_translation,
+          -> { where(language_id: Current.translation_language_id) },
+          class_name: "LessonTranslation"
   has_timestamp [ :start_timestamp, :end_timestamp ]
   include FriendlyName
 
   validates :slug, uniqueness: { scope: :course_id }, allow_blank: true
+
+  def localized_name = localized_translation&.name || name
 
   has_many :lesson_users, dependent: :destroy
   has_many :users_completed, through: :lesson_users, source: :user

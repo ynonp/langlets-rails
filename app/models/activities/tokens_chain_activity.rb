@@ -3,14 +3,14 @@ module Activities
     include ActivityWithTokens
 
     def activity_params
-      activity_token_translations = token_translations
-        .includes(phrase: [:l1, :l2], l1_audio_attachment: :blob)
+      activity_phrase_tokens = phrase_tokens
+        .includes(:localized_translation, phrase: [ :l1, :localized_translation ], l1_audio_attachment: :blob)
         .to_a
         .first(15)
         .shuffle # Randomize chain order
 
       # Build token data array with L1 text, L2 translation, ID, and audio URL
-      tokens_data = activity_token_translations.map do |token|
+      tokens_data = activity_phrase_tokens.map do |token|
         {
           id: token.id,
           l1_text: token.original_text,
@@ -21,8 +21,8 @@ module Activities
 
       {
         tokens: tokens_data,
-        l1: activity_token_translations.first&.phrase&.l1,
-        l2: activity_token_translations.first&.phrase&.l2
+        l1: activity_phrase_tokens.first&.phrase&.l1,
+        l2: activity_phrase_tokens.first&.phrase&.l2
       }
     end
   end

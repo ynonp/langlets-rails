@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_18_100003) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -66,6 +66,16 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.index ["user_id"], name: "index_activity_logs_on_user_id"
   end
 
+  create_table "activity_phrase_tokens", force: :cascade do |t|
+    t.bigint "activity_id", null: false
+    t.bigint "phrase_token_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["activity_id", "phrase_token_id"], name: "idx_on_activity_id_phrase_token_id_e52dd3c124"
+    t.index ["activity_id"], name: "index_activity_phrase_tokens_on_activity_id"
+    t.index ["phrase_token_id"], name: "index_activity_phrase_tokens_on_phrase_token_id"
+  end
+
   create_table "activity_phrases", force: :cascade do |t|
     t.bigint "activity_id", null: false
     t.bigint "phrase_id", null: false
@@ -73,16 +83,6 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.datetime "updated_at", null: false
     t.index ["activity_id"], name: "index_activity_phrases_on_activity_id"
     t.index ["phrase_id"], name: "index_activity_phrases_on_phrase_id"
-  end
-
-  create_table "activity_token_translations", force: :cascade do |t|
-    t.bigint "activity_id", null: false
-    t.bigint "token_translation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["activity_id", "token_translation_id"], name: "idx_on_activity_id_token_translation_id_86aadb2c62"
-    t.index ["activity_id"], name: "index_activity_token_translations_on_activity_id"
-    t.index ["token_translation_id"], name: "index_activity_token_translations_on_token_translation_id"
   end
 
   create_table "activity_users", force: :cascade do |t|
@@ -105,6 +105,18 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.index ["tag_id"], name: "index_course_tags_on_tag_id"
   end
 
+  create_table "course_translations", force: :cascade do |t|
+    t.bigint "course_id", null: false
+    t.bigint "language_id", null: false
+    t.integer "status", default: 0, null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id", "language_id"], name: "index_course_translations_on_course_id_and_language_id", unique: true
+    t.index ["course_id"], name: "index_course_translations_on_course_id"
+    t.index ["language_id"], name: "index_course_translations_on_language_id"
+  end
+
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "slug", null: false
@@ -117,13 +129,11 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.boolean "show_full_course_player", default: true, null: false
     t.bigint "create_song_progress_id"
     t.string "youtube_video_id"
-    t.bigint "translation_language_id"
     t.index ["create_song_progress_id"], name: "index_courses_on_create_song_progress_id"
     t.index ["language_id"], name: "index_courses_on_language_id"
     t.index ["slug"], name: "index_courses_on_slug", unique: true
-    t.index ["translation_language_id"], name: "index_courses_on_translation_language_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
-    t.index ["youtube_video_id", "language_id", "translation_language_id"], name: "idx_courses_published_video_pair", unique: true, where: "(status = 1)"
+    t.index ["youtube_video_id", "language_id"], name: "idx_courses_published_video_language", unique: true, where: "(status = 1)"
     t.index ["youtube_video_id"], name: "index_courses_on_youtube_video_id"
   end
 
@@ -146,7 +156,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lyrics"
-    t.index ["youtubeurl", "clip_language", "translation_language"], name: "idx_on_youtubeurl_clip_language_translation_languag_d876aa04dc", unique: true
+    t.index ["youtubeurl", "clip_language"], name: "idx_create_song_progresses_video_language", unique: true
   end
 
   create_table "credit_ledger_entries", force: :cascade do |t|
@@ -322,6 +332,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.index ["iso_name"], name: "index_languages_on_iso_name", unique: true
   end
 
+  create_table "lesson_translations", force: :cascade do |t|
+    t.bigint "lesson_id", null: false
+    t.bigint "language_id", null: false
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_lesson_translations_on_language_id"
+    t.index ["lesson_id", "language_id"], name: "index_lesson_translations_on_lesson_id_and_language_id", unique: true
+    t.index ["lesson_id"], name: "index_lesson_translations_on_lesson_id"
+  end
+
   create_table "lesson_users", force: :cascade do |t|
     t.bigint "lesson_id", null: false
     t.bigint "user_id", null: false
@@ -354,10 +375,8 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "language_id"
-    t.bigint "translation_language_id"
     t.index ["language_id"], name: "index_media_on_language_id"
-    t.index ["translation_language_id"], name: "index_media_on_translation_language_id"
-    t.index ["url", "language_id", "translation_language_id"], name: "index_media_on_url_and_language_pair", unique: true
+    t.index ["url", "language_id"], name: "index_media_on_url_and_language_id", unique: true
   end
 
   create_table "oauth_access_grants", force: :cascade do |t|
@@ -406,17 +425,53 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
+  create_table "phrase_token_users", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "phrase_token_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "language_id", null: false
+    t.index ["language_id"], name: "index_phrase_token_users_on_language_id"
+    t.index ["phrase_token_id"], name: "index_phrase_token_users_on_phrase_token_id"
+    t.index ["user_id", "phrase_token_id"], name: "idx_token_translation_users_unique", unique: true
+    t.index ["user_id"], name: "index_phrase_token_users_on_user_id"
+  end
+
+  create_table "phrase_tokens", force: :cascade do |t|
+    t.bigint "phrase_id", null: false
+    t.integer "l1_start_index"
+    t.integer "l1_end_index"
+    t.string "questions", array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "similar_sound", array: true
+    t.integer "index_type", default: 0, null: false
+    t.string "start_timestamp"
+    t.string "end_timestamp"
+    t.index ["index_type"], name: "index_phrase_tokens_on_index_type"
+    t.index ["phrase_id", "l1_start_index", "l1_end_index", "index_type"], name: "idx_phrase_tokens_unique", unique: true
+    t.index ["phrase_id"], name: "index_phrase_tokens_on_phrase_id"
+  end
+
+  create_table "phrase_translations", force: :cascade do |t|
+    t.bigint "phrase_id", null: false
+    t.bigint "language_id", null: false
+    t.string "text", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_phrase_translations_on_language_id"
+    t.index ["phrase_id", "language_id"], name: "index_phrase_translations_on_phrase_id_and_language_id", unique: true
+    t.index ["phrase_id"], name: "index_phrase_translations_on_phrase_id"
+  end
+
   create_table "phrases", force: :cascade do |t|
     t.bigint "medium_id", null: false
     t.bigint "l1_id", null: false
-    t.bigint "l2_id", null: false
     t.string "timestamp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "text_l1"
-    t.string "text_l2"
     t.index ["l1_id"], name: "index_phrases_on_l1_id"
-    t.index ["l2_id"], name: "index_phrases_on_l2_id"
     t.index ["medium_id"], name: "index_phrases_on_medium_id"
   end
 
@@ -455,33 +510,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
-  create_table "token_translation_users", force: :cascade do |t|
-    t.bigint "user_id", null: false
-    t.bigint "token_translation_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["token_translation_id"], name: "index_token_translation_users_on_token_translation_id"
-    t.index ["user_id", "token_translation_id"], name: "idx_token_translation_users_unique", unique: true
-    t.index ["user_id"], name: "index_token_translation_users_on_user_id"
-  end
-
   create_table "token_translations", force: :cascade do |t|
-    t.bigint "phrase_id", null: false
-    t.integer "l1_start_index"
-    t.integer "l1_end_index"
-    t.string "translation"
-    t.string "questions", array: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.bigint "phrase_token_id", null: false
+    t.bigint "language_id", null: false
+    t.string "translation", null: false
     t.integer "l2_start_index"
     t.integer "l2_end_index"
-    t.string "similar_sound", array: true
-    t.integer "index_type", default: 0, null: false
-    t.string "start_timestamp"
-    t.string "end_timestamp"
-    t.index ["index_type"], name: "index_token_translations_on_index_type"
-    t.index ["phrase_id", "l1_start_index", "l1_end_index", "index_type"], name: "idx_token_translations_unique", unique: true
-    t.index ["phrase_id"], name: "index_token_translations_on_phrase_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["language_id"], name: "index_token_translations_on_language_id"
+    t.index ["phrase_token_id", "language_id"], name: "index_token_translations_on_phrase_token_id_and_language_id", unique: true
+    t.index ["phrase_token_id"], name: "index_token_translations_on_phrase_token_id"
   end
 
   create_table "user_game_stats", force: :cascade do |t|
@@ -524,16 +563,17 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
   add_foreign_key "activities", "users"
   add_foreign_key "activity_logs", "lessons"
   add_foreign_key "activity_logs", "users"
+  add_foreign_key "activity_phrase_tokens", "activities"
+  add_foreign_key "activity_phrase_tokens", "phrase_tokens"
   add_foreign_key "activity_phrases", "activities"
   add_foreign_key "activity_phrases", "phrases"
-  add_foreign_key "activity_token_translations", "activities"
-  add_foreign_key "activity_token_translations", "token_translations"
   add_foreign_key "activity_users", "activities"
   add_foreign_key "activity_users", "users"
   add_foreign_key "course_tags", "courses"
   add_foreign_key "course_tags", "tags"
+  add_foreign_key "course_translations", "courses"
+  add_foreign_key "course_translations", "languages"
   add_foreign_key "courses", "languages"
-  add_foreign_key "courses", "languages", column: "translation_language_id"
   add_foreign_key "courses", "users"
   add_foreign_key "courses_playlists", "courses"
   add_foreign_key "courses_playlists", "playlists"
@@ -544,22 +584,27 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_17_150000) do
   add_foreign_key "import_requests", "courses"
   add_foreign_key "import_requests", "create_song_progresses"
   add_foreign_key "import_requests", "users"
+  add_foreign_key "lesson_translations", "languages"
+  add_foreign_key "lesson_translations", "lessons", on_delete: :cascade
   add_foreign_key "lesson_users", "lessons"
   add_foreign_key "lesson_users", "users"
   add_foreign_key "lessons", "courses", on_delete: :cascade
   add_foreign_key "lessons", "media"
   add_foreign_key "lessons", "users"
-  add_foreign_key "media", "languages", column: "translation_language_id"
   add_foreign_key "oauth_access_grants", "oauth_applications", column: "application_id"
   add_foreign_key "oauth_access_tokens", "oauth_applications", column: "application_id"
+  add_foreign_key "phrase_token_users", "languages"
+  add_foreign_key "phrase_token_users", "phrase_tokens"
+  add_foreign_key "phrase_token_users", "users"
+  add_foreign_key "phrase_tokens", "phrases"
+  add_foreign_key "phrase_translations", "languages"
+  add_foreign_key "phrase_translations", "phrases"
   add_foreign_key "phrases", "languages", column: "l1_id"
-  add_foreign_key "phrases", "languages", column: "l2_id"
   add_foreign_key "phrases", "media"
   add_foreign_key "playlists", "users"
   add_foreign_key "similar_sounds", "phrases"
-  add_foreign_key "token_translation_users", "token_translations"
-  add_foreign_key "token_translation_users", "users"
-  add_foreign_key "token_translations", "phrases"
+  add_foreign_key "token_translations", "languages"
+  add_foreign_key "token_translations", "phrase_tokens"
   add_foreign_key "user_game_stats", "users"
   add_foreign_key "users", "languages", column: "preferred_language_id"
 end

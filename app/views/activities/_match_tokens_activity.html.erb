@@ -1,5 +1,5 @@
 <%# Expects:
-  params[:token_translations] - An array of token translation objects
+  params[:phrase_tokens] - An array of token translation objects
   params[:l1] - Language object for original words
   params[:l2] - Language object for translation words
   params[:video_id] - YouTube video ID
@@ -20,7 +20,7 @@
 
 <% 
   # Prepare tokens data using helper
-  tokens = prepare_tokens_for_matching(params[:token_translations])
+  tokens = prepare_tokens_for_matching(params[:phrase_tokens])
   l1 = params[:l1]
   l2 = params[:l2]
   total_tokens = tokens.length

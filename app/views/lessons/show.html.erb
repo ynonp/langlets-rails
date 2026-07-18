@@ -1,8 +1,8 @@
 <% content_for :head do %>
   <% video_id = @videoid %>
   <% thumb_url = youtube_thumbnail_url(video_id) if video_id %>
-  <% title = "#{@lesson.name} - Langlets" %>
-  <% desc = @lesson.course ? "Learn #{@lesson.course.language&.english_name || 'a new language'} with interactive video lessons based on \"#{@lesson.course.name}\"." : "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
+  <% title = "#{@lesson.localized_name} - Langlets" %>
+  <% desc = @lesson.course ? "Learn #{@lesson.course.language&.english_name || 'a new language'} with interactive video lessons based on \"#{@lesson.course.localized_name}\"." : "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
 
   <title><%= title %></title>
   <%= render_meta_tags(
@@ -18,8 +18,8 @@
 <% content_for :structured_data do %>
   <%= render "shared/structured_data/breadcrumb_list", items: [
     { name: "Home", url: canonical_url(root_path) },
-    { name: @lesson.course.name, url: canonical_url(course_path(@lesson.course)) },
-    { name: @lesson.name, url: canonical_url(course_lesson_path(@lesson.course, @lesson)) }
+    { name: @lesson.course.localized_name, url: canonical_url(course_path(@lesson.course)) },
+    { name: @lesson.localized_name, url: canonical_url(course_lesson_path(@lesson.course, @lesson)) }
   ] %>
 <% end %>
 
