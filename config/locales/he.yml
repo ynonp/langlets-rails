@@ -10,6 +10,30 @@ he:
   layouts:
     head:
       title: "Langlets - לימוד שפות בעזרת סרטונים אינטראקטיביים"
+  languages:
+    en: "אנגלית"
+    he: "עברית"
+    fr: "צרפתית"
+    es: "ספרדית"
+    de: "גרמנית"
+    ar: "ערבית"
+  shared:
+    home: "דף הבית"
+    sign_in_prompt: "התחברו עכשיו כדי לא לאבד את ההתקדמות שלכם"
+    footer:
+      copyright: "‏© %{year} Langlets. כל הזכויות שמורות."
+      privacy_policy: "מדיניות הפרטיות"
+      terms_of_service: "תנאי השימוש"
+    theme_toggle:
+      label: "מעבר בין מצב בהיר למצב כהה"
+      title: "החלפת ערכת נושא"
+    menu:
+      learning_language: "שפת הלימוד: %{language}"
+      select: "בחירה"
+      review_words: "📚 חזרה על מילים (%{language})"
+      profile: "פרופיל"
+      connected_apps: "אפליקציות מחוברות"
+      logout: "התנתקות"
   activities:
     audio_to_translation:
       matched: "%{current} / %{total} הותאמו"
@@ -33,6 +57,9 @@ he:
       save: "שמירה"
     watch_video_activity:
       tap_any_word: "הקישו על מילה כלשהי"
+      karaoke: "קריוקי"
+      translation: "תרגום"
+      start_practice: "מתחילים לתרגל"
     language_alignment_activity:
       instruction: "הקישו על המילים בטקסט המקורי שמתאימות למילים המודגשות"
       good_work: "עבודה מצוינת!"
@@ -126,15 +153,35 @@ he:
       lessons: "שיעורים"
       done: "%{current}/%{total} הושלמו"
       sign_up: "הירשמו"
+      watch_full_video: "צפייה בסרטון המלא"
+      intro: "בחרו שיעור כדי להתחיל. כל שיעור מפרק שורה אחת מהשיר. טיפ: תרגלו שיעור אחד ביום כדי להפיק את המרב מהחזרה המרווחת."
+    lesson_count:
+      one: "שיעור אחד"
+      other: "%{count} שיעורים"
+    card:
+      completed: "הושלם"
+      review: "חזרה"
+      continue_learning: "המשך למידה"
+      start_course: "מתחילים בקורס"
+      untitled: "קורס ללא שם"
+    lesson_row:
+      completed: "הושלם"
+      in_progress: "בתהליך"
+      lesson_number: "שיעור %{number}"
+      review: "חזרה"
+      start_lesson: "התחלת השיעור"
     course_card:
       progress: "התקדמות"
     course_card_grid:
       progress: "התקדמות"
     playlists_grid:
+      start_path: "מתחילים במסלול"
+      empty: "אין עדיין קורסים."
       clip_count:
         one: "סרט אחד"
         other: "%{count} סרטים"
     add_to_paths_modal:
+      cancel: "ביטול"
       title: "הוספה לפלייליסט"
       new_playlist: "פלייליסט חדש"
       playlist_name: "שם הפלייליסט"
@@ -144,6 +191,18 @@ he:
     show:
       sign_up: "הירשמו"
       log_in: "התחברו"
+      search_placeholder: "חיפוש קורסים..."
+      loading_courses: "טוען קורסים..."
+      delete_title: "למחוק את הפלייליסט?"
+      delete_message: "פעולה זו תמחק לצמיתות את “%{name}”. הקורסים לא יימחקו."
+      cancel: "ביטול"
+      delete: "מחיקה"
+  lessons:
+    activity_navigation:
+      back_to_course: "חזרה לקורס"
+      previous_lesson: "השיעור הקודם"
+      next_lesson: "השיעור הבא"
+      activity: "פעילות %{number}"
   devise:
     sessions:
       new:
@@ -154,6 +213,9 @@ he:
         forgot: "שכחתם?"
         submit: "התחברו"
         or: "או"
+        agree_html: "בהתחברות ל-Langlets אתם מסכימים ל%{terms_link} ול%{privacy_link}"
+        terms: "תנאי השימוש"
+        privacy: "מדיניות הפרטיות"
     registrations:
       new:
         log_in: "התחברו"
@@ -163,6 +225,21 @@ he:
         confirm_password: "אימות סיסמה"
         submit: "הירשמו"
         or: "או"
+        agree_html: "בהרשמה ל-Langlets אתם מסכימים ל%{terms_link} ול%{privacy_link}"
+        terms: "תנאי השימוש"
+        privacy: "מדיניות הפרטיות"
+    passwords:
+      new:
+        sign_in: "התחברו"
+        title: "איפוס סיסמה"
+        subtitle: "הזינו את כתובת הדוא״ל שלכם לקבלת הוראות איפוס"
+        email_placeholder: "כתובת דוא״ל"
+        submit: "שליחת הוראות איפוס"
+        remember: "זוכרים את הסיסמה?"
+        sign_in_link: "התחברו"
+        agree_html: "בשימוש ב-Langlets אתם מסכימים ל%{terms_link} ול%{privacy_link}"
+        terms: "תנאי השימוש"
+        privacy: "מדיניות הפרטיות"
   js:
     word_order:
       correct: "נכון! כל הכבוד!"

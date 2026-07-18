@@ -28,11 +28,11 @@
   <%= link_to course_lesson_path(course, lesson), class: "flex-1 min-w-0 no-underline text-inherit" do %>
     <div class="font-extrabold text-[15.5px] truncate"><%= lesson.localized_name %></div>
     <div class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-0.5">
-      <%= state == :done ? "Completed" : (state == :progress ? "In progress" : "Lesson #{number}") %>
+      <%= state == :done ? t("courses.lesson_row.completed") : (state == :progress ? t("courses.lesson_row.in_progress") : t("courses.lesson_row.lesson_number", number: number)) %>
     </div>
   <% end %>
 
-  <%= link_to course_lesson_path(course, lesson), class: "flex-shrink-0 flex items-center justify-center w-[38px] h-[38px] rounded-full no-underline #{state == :todo ? 'bg-emerald-500' : 'bg-gray-100 dark:bg-gray-800'}", title: (state == :done ? "Review" : "Start lesson") do %>
+  <%= link_to course_lesson_path(course, lesson), class: "flex-shrink-0 flex items-center justify-center w-[38px] h-[38px] rounded-full no-underline #{state == :todo ? 'bg-emerald-500' : 'bg-gray-100 dark:bg-gray-800'}", title: (state == :done ? t("courses.lesson_row.review") : t("courses.lesson_row.start_lesson")) do %>
     <% if state == :done %>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 12.5l5 5 11-11" stroke="currentColor" class="text-gray-500 dark:text-gray-400" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
     <% else %>

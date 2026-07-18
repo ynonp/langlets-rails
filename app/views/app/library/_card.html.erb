@@ -12,7 +12,7 @@
                 class: "app-clamp-2 text-[13px] font-semibold leading-[1.3] min-h-[34px]" %>
 
     <p class="text-app-text-2 text-[11px]">
-      <%= course.language&.english_name %> · <%= pluralize(lessons_count, "lesson") %>
+      <%= localized_language_name(course.language) %> · <%= t("courses.lesson_count", count: lessons_count) %>
     </p>
 
     <div class="mt-auto pt-1">

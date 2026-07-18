@@ -107,7 +107,7 @@
             <% if native_app? %>
               <% current_lang = Language.find_by(iso_name: params[:lang]) %>
               <%= link_to onboarding_language_path(returnto: request.fullpath), class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" do %>
-                <span class="text-sm">Learning Language: <%= current_lang&.native_name || "Select" %></span>
+                <span class="text-sm"><%= t("shared.menu.learning_language", language: current_lang&.native_name || t("shared.menu.select")) %></span>
               <% end %>
               <div class="border-t border-gray-200 dark:border-gray-800"></div>
             <% end %>
@@ -131,7 +131,7 @@
             </div>
             <div class="sm:hidden border-t border-gray-200 dark:border-gray-800"></div>
             <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-              <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
+              <%= button_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
                 method: :post,
                 class: "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70",
                 data: { turbo: false }
@@ -140,13 +140,13 @@
             <% if current_user.languages_with_saved_words.exists? %>
               <div class="border-t border-gray-200 dark:border-gray-800"></div>
             <% end %>
-            <%= link_to "Profile", profile_path,
+            <%= link_to t("shared.menu.profile"), profile_path,
               class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70"
             %>
-            <%= link_to "Connected Apps", settings_connections_path,
+            <%= link_to t("shared.menu.connected_apps"), settings_connections_path,
               class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70"
             %>
-            <%= link_to "Logout",
+            <%= link_to t("shared.menu.logout"),
               destroy_user_session_path(returnto: request.fullpath),
               method: :delete,
               data: { turbo_method: :delete },
@@ -157,7 +157,7 @@
       </div>
     <% else %>
       <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-        <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block">Sign in now to not lose your progress</span>
+        <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block"><%= t("shared.sign_in_prompt") %></span>
         <div class="flex items-center gap-2">
           <%= render "shared/theme_toggle" %>
           <%= link_to t(".sign_up"), new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
@@ -245,11 +245,11 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
       <div class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        © <%= Date.current.year %> Langlets. All rights reserved.
+        <%= t("shared.footer.copyright", year: Date.current.year) %>
       </div>
       <div class="flex space-x-6">
-        <%= link_to "Privacy Policy", "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
-        <%= link_to "Terms of Service", "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+        <%= link_to t("shared.footer.privacy_policy"), "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+        <%= link_to t("shared.footer.terms_of_service"), "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
       </div>
     </div>
   </div>

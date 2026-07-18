@@ -10,6 +10,30 @@ en:
   layouts:
     head:
       title: "Langlets - Learn Languages Through Interactive Video Clips"
+  languages:
+    en: "English"
+    he: "Hebrew"
+    fr: "French"
+    es: "Spanish"
+    de: "German"
+    ar: "Arabic"
+  shared:
+    home: "Home"
+    sign_in_prompt: "Sign in now to not lose your progress"
+    footer:
+      copyright: "© %{year} Langlets. All rights reserved."
+      privacy_policy: "Privacy Policy"
+      terms_of_service: "Terms of Service"
+    theme_toggle:
+      label: "Switch between light and dark theme"
+      title: "Switch theme"
+    menu:
+      learning_language: "Learning Language: %{language}"
+      select: "Select"
+      review_words: "📚 Review Words (%{language})"
+      profile: "Profile"
+      connected_apps: "Connected Apps"
+      logout: "Logout"
   activities:
     audio_to_translation:
       matched: "%{current} / %{total} matched"
@@ -33,6 +57,9 @@ en:
       save: "Save"
     watch_video_activity:
       tap_any_word: "Tap any word"
+      karaoke: "Karaoke"
+      translation: "Translation"
+      start_practice: "Start practice"
     language_alignment_activity:
       instruction: "Click on the words in the original text that match the highlighted words"
       good_work: "Good Work!"
@@ -126,15 +153,35 @@ en:
       lessons: "Lessons"
       done: "%{current}/%{total} done"
       sign_up: "Sign up"
+      watch_full_video: "Watch full video"
+      intro: "Pick any lesson to begin. Each one breaks down a line of the song. Pro tip: practice one lesson a day to maximize spaced repetition."
+    lesson_count:
+      one: "1 lesson"
+      other: "%{count} lessons"
+    card:
+      completed: "Completed"
+      review: "Review"
+      continue_learning: "Continue Learning"
+      start_course: "Start Course"
+      untitled: "Untitled Course"
+    lesson_row:
+      completed: "Completed"
+      in_progress: "In progress"
+      lesson_number: "Lesson %{number}"
+      review: "Review"
+      start_lesson: "Start lesson"
     course_card:
       progress: "Progress"
     course_card_grid:
       progress: "Progress"
     playlists_grid:
+      start_path: "Start Path"
+      empty: "No courses available yet."
       clip_count:
         one: "1 clip"
         other: "%{count} clips"
     add_to_paths_modal:
+      cancel: "Cancel"
       title: "Add to playlist"
       new_playlist: "New playlist"
       playlist_name: "Playlist name"
@@ -144,6 +191,18 @@ en:
     show:
       sign_up: "Sign up"
       log_in: "Log in"
+      search_placeholder: "Search courses..."
+      loading_courses: "Loading courses..."
+      delete_title: "Delete playlist?"
+      delete_message: "This will permanently delete “%{name}”. The courses will not be deleted."
+      cancel: "Cancel"
+      delete: "Delete"
+  lessons:
+    activity_navigation:
+      back_to_course: "Back to Course"
+      previous_lesson: "Previous Lesson"
+      next_lesson: "Next Lesson"
+      activity: "Activity %{number}"
   devise:
     sessions:
       new:
@@ -154,6 +213,9 @@ en:
         forgot: "FORGOT?"
         submit: "LOG IN"
         or: "OR"
+        agree_html: "By signing in to Langlets, you agree to our %{terms_link} and %{privacy_link}"
+        terms: "Terms"
+        privacy: "Privacy Policy"
     registrations:
       new:
         log_in: "LOG IN"
@@ -163,6 +225,21 @@ en:
         confirm_password: "Confirm password"
         submit: "SIGN UP"
         or: "OR"
+        agree_html: "By signing up to Langlets, you agree to our %{terms_link} and %{privacy_link}"
+        terms: "Terms"
+        privacy: "Privacy Policy"
+    passwords:
+      new:
+        sign_in: "SIGN IN"
+        title: "Reset password"
+        subtitle: "Enter your email to receive reset instructions"
+        email_placeholder: "Email address"
+        submit: "SEND RESET INSTRUCTIONS"
+        remember: "Remember your password?"
+        sign_in_link: "Sign in"
+        agree_html: "By using Langlets, you agree to our %{terms_link} and %{privacy_link}"
+        terms: "Terms"
+        privacy: "Privacy Policy"
   js:
     word_order:
       correct: "Correct! Well done!"

@@ -42,7 +42,7 @@
   <div class="flex-1 flex flex-col overflow-hidden">
     <!-- Header: back + streak + avatar -->
     <header class="flex items-center justify-between px-5 mt-3.5 mb-4">
-      <%= link_to root_path, class: "hover:opacity-80 transition-opacity text-emerald-600 dark:text-emerald-400", title: "Home" do %>
+      <%= link_to root_path, class: "hover:opacity-80 transition-opacity text-emerald-600 dark:text-emerald-400", title: t("shared.home") do %>
         <%= render "shared/home_icon", size: 24 %>
       <% end %>
 
@@ -65,17 +65,17 @@
             <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden
                  bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
               <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-                <%= button_to "📚 Review Words (#{language.iso_name})", review_lessons_path(language_code: language.iso_name),
+                <%= button_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
                   method: :post, class: "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70", data: { turbo: false } %>
               <% end %>
               <% if current_user.languages_with_saved_words.exists? %>
                 <div class="border-t border-gray-200 dark:border-gray-800"></div>
               <% end %>
-              <%= link_to "Profile", profile_path,
+              <%= link_to t("shared.menu.profile"), profile_path,
                 class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
-              <%= link_to "Connected Apps", settings_connections_path,
+              <%= link_to t("shared.menu.connected_apps"), settings_connections_path,
                 class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
-              <%= link_to "Logout", destroy_user_session_path(returnto: request.fullpath),
+              <%= link_to t("shared.menu.logout"), destroy_user_session_path(returnto: request.fullpath),
                 method: :delete,
                 data: { turbo_method: :delete, controller: "auth", action: "click->auth#signOut" },
                 class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
@@ -114,7 +114,7 @@
             <% if @course.language %>
               <span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-mono font-extrabold text-[11px] tracking-wide text-emerald-700 dark:text-emerald-300 bg-emerald-100 dark:bg-emerald-900/40"><%= lang_badge_code(@course.language) %></span>
             <% end %>
-            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400"><%= pluralize(@lessons.size, "lesson") %></span>
+            <span class="text-xs font-semibold text-gray-500 dark:text-gray-400"><%= t("courses.lesson_count", count: @lessons.size) %></span>
           </div>
           <h1 class="text-2xl font-extrabold tracking-tight mb-3.5" dir="<%= course_rtl ? 'rtl' : 'ltr' %>"><%= @course.localized_name %></h1>
 
@@ -128,7 +128,7 @@
             <% if @course.show_full_course_player %>
               <%= link_to course_full_player_path(@course.slug), class: "flex-1 inline-flex items-center justify-center gap-2 h-14 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold transition-colors" do %>
                 <svg width="18" height="18" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
-                Watch full video
+                <%= t(".watch_full_video") %>
               <% end %>
             <% end %>
             <% if user_signed_in? %>
@@ -138,7 +138,7 @@
         </div>
 
         <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 -mt-1.5">
-          Pick any lesson to begin. Each one breaks down a line of the song. Pro tip: practice one lesson a day to maximize spaced repetition.
+          <%= t(".intro") %>
         </p>
 
         <!-- Lessons -->
@@ -166,11 +166,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
           <div class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-            © <%= Date.current.year %> Langlets. All rights reserved.
+            <%= t("shared.footer.copyright", year: Date.current.year) %>
           </div>
           <div class="flex space-x-6">
-            <%= link_to "Privacy Policy", "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
-            <%= link_to "Terms of Service", "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+            <%= link_to t("shared.footer.privacy_policy"), "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+            <%= link_to t("shared.footer.terms_of_service"), "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
           </div>
         </div>
       </div>

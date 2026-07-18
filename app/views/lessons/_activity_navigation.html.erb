@@ -8,7 +8,7 @@
   <% unless native_app? %>
     <%= link_to @course_path,
       class: "flex items-center justify-center flex-shrink-0 text-gray-400 dark:text-gray-600",
-      title: "Back to Course",
+      title: t(".back_to_course"),
       data: { :"turbo-frame" => "_top", :turbo => false } do %>
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>
     <% end %>
@@ -18,7 +18,7 @@
     <% if @prev_lesson.present? %>
       <%= link_to course_lesson_path(@course, @prev_lesson),
         class: "#{step_base} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700",
-        title: "Previous Lesson",
+        title: t(".previous_lesson"),
         data: { turbo_frame: 'activity' } do %>«<% end %>
     <% end %>
 
@@ -39,7 +39,7 @@
       %>
       <%= link_to course_lesson_path(@course, @lesson, a: activity.order),
         class: "#{step_base} #{step_classes}",
-        data: { turbo_frame: 'activity' }, aria: { label: "Activity #{activity.order}" } do %>
+        data: { turbo_frame: 'activity' }, aria: { label: t(".activity", number: activity.order) } do %>
         <% if status == "done" %>
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <% else %>
@@ -51,7 +51,7 @@
     <% if @next_lesson.present? %>
       <%= link_to course_lesson_path(@course, @next_lesson),
         class: "#{step_base} bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-700",
-        title: "Next Lesson",
+        title: t(".next_lesson"),
         data: {
           turbo_frame: 'activity',
           controller: 'lesson-navigation',
@@ -61,7 +61,7 @@
     <% else %>
       <%= link_to course_path(@course.slug),
         class: "#{step_base} bg-emerald-500 text-white",
-        title: "Back to Course",
+        title: t(".back_to_course"),
         data: {
           controller: 'lesson-navigation',
           action: 'click->lesson-navigation#markLessonCompleted',

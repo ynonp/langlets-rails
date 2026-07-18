@@ -48,9 +48,9 @@
     <!-- Terms and Privacy -->
     <div class="mt-8 text-center">
       <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        By signing in to Langlets, you agree to our
-        <a href="#" class="text-gray-900 dark:text-gray-50 font-bold">Terms</a> and
-        <a href="#" class="text-gray-900 dark:text-gray-50 font-bold">Privacy Policy</a>
+        <%= t(".agree_html",
+              terms_link: link_to(t(".terms"), "#", class: "text-gray-900 dark:text-gray-50 font-bold"),
+              privacy_link: link_to(t(".privacy"), "#", class: "text-gray-900 dark:text-gray-50 font-bold")) %>
       </p>
     </div>
   </div>

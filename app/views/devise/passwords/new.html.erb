@@ -10,14 +10,14 @@
   <!-- Sign in link -->
   <div class="absolute top-[30px] right-[18px]">
     <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-    <%= link_to "SIGN IN", new_user_session_path(signin_params), class: "font-bold tracking-wide text-emerald-600 dark:text-emerald-400" %>
+    <%= link_to t(".sign_in"), new_user_session_path(signin_params), class: "font-bold tracking-wide text-emerald-600 dark:text-emerald-400" %>
   </div>
 
   <!-- Forgot password form container -->
   <div class="w-full max-w-md px-6">
     <div class="text-center mb-8">
-      <h1 class="text-2xl font-extrabold tracking-tight text-[30px]">Reset password</h1>
-      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5">Enter your email to receive reset instructions</p>
+      <h1 class="text-2xl font-extrabold tracking-tight text-[30px]"><%= t(".title") %></h1>
+      <p class="text-xs font-semibold text-gray-500 dark:text-gray-400 mt-1.5"><%= t(".subtitle") %></p>
     </div>
 
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: "space-y-5" }) do |f| %>
@@ -28,27 +28,27 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email address", class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t(".email_placeholder"), class: "w-full px-4 py-3.5 rounded-2xl bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-gray-50 font-semibold placeholder-gray-400 dark:placeholder-gray-500 shadow-md transition-colors focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-900/40" %>
       </div>
 
       <div>
-        <%= f.submit "SEND RESET INSTRUCTIONS", class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
+        <%= f.submit t(".submit"), class: "w-full inline-flex items-center justify-center gap-2 h-[58px] rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors cursor-pointer" %>
       </div>
     <% end %>
 
     <div class="mt-6 text-center">
       <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        Remember your password?
+        <%= t(".remember") %>
         <% signin_params = params[:returnto].present? ? { returnto: params[:returnto] } : {} %>
-        <%= link_to "Sign in", new_user_session_path(signin_params), class: "text-emerald-600 dark:text-emerald-400 font-bold" %>
+        <%= link_to t(".sign_in_link"), new_user_session_path(signin_params), class: "text-emerald-600 dark:text-emerald-400 font-bold" %>
       </p>
     </div>
 
     <div class="mt-8 text-center">
       <p class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        By using Langlets, you agree to our
-        <a href="#" class="text-gray-900 dark:text-gray-50 font-bold">Terms</a> and
-        <a href="#" class="text-gray-900 dark:text-gray-50 font-bold">Privacy Policy</a>
+        <%= t(".agree_html",
+              terms_link: link_to(t(".terms"), "#", class: "text-gray-900 dark:text-gray-50 font-bold"),
+              privacy_link: link_to(t(".privacy"), "#", class: "text-gray-900 dark:text-gray-50 font-bold")) %>
       </p>
     </div>
   </div>

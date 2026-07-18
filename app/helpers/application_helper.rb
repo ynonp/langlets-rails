@@ -43,6 +43,14 @@ module ApplicationHelper
     LANG_HUES[key] || LANG_HUES[key.split("-").first.downcase] || 150
   end
 
+  # Language name in the visitor's UI locale, falling back to the DB English name.
+  def localized_language_name(language)
+    return "" if language.nil?
+
+    key = language.iso_name.to_s.split("-").first.downcase
+    I18n.exists?("languages.#{key}") ? t("languages.#{key}") : language.english_name
+  end
+
   # Short uppercase language code for the Sprout language badge (e.g. "ES", "AR").
   def lang_badge_code(language)
     return "" if language.nil?

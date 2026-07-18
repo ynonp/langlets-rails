@@ -42,14 +42,14 @@
             <input type="checkbox" <%= "checked" if wv_prefs["karaoke"] %>
               data-watch-video-activity-target="showKaraoke"
               data-action="change->watch-video-activity#toggleKaraoke">
-            Karaoke
+            <%= t(".karaoke") %>
           </label>
         <% end %>
         <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">
           <input type="checkbox" <%= "checked" if wv_prefs["translation"] %>
             data-watch-video-activity-target="showTranslation"
             data-action="change->watch-video-activity#toggleTranslation">
-          Translation
+          <%= t(".translation") %>
         </label>
       </div>
     </div>
@@ -100,7 +100,7 @@
          data-watch-video-activity-target="startPracticeButton"
          class="w-full inline-flex items-center justify-center gap-2 h-16 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-base tracking-wide transition-colors">
         <svg width="20" height="20" viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z" fill="#fff"/></svg>
-        Start practice
+        <%= t(".start_practice") %>
       </a>
     </div>
   </div>
