@@ -12,6 +12,10 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
 
+  # Treat "localhost" as the whole domain so he.localhost:3000 yields
+  # request.subdomains == ["he"], matching he.langlets.app in production.
+  config.action_dispatch.tld_length = 0
+
   # Enable server timing.
   config.server_timing = true
 
