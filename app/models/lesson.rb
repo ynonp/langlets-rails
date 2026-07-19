@@ -3,6 +3,7 @@ class Lesson < ApplicationRecord
   belongs_to :medium, optional: true
   belongs_to :course, optional: true
   has_many :activities, dependent: :destroy
+  has_many :activity_logs, dependent: :nullify
   has_many :lesson_translations, dependent: :destroy, inverse_of: :lesson
   has_one :localized_translation,
           -> { where(language_id: Current.translation_language_id) },

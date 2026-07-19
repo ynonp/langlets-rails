@@ -11,6 +11,7 @@ class Phrase < ApplicationRecord
           class_name: "PhraseTranslation"
   has_many :phrase_tokens, dependent: :destroy
   has_many :similar_sounds, dependent: :destroy
+  has_many :activity_phrases, dependent: :destroy
 
   # Validations
   validates :text_l1, presence: { message: "must be present" }

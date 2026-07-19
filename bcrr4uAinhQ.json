@@ -1,0 +1,4169 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=bcrr4uAinhQ",
+  "clip_language": "French",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "lessons": "# Les Retrouvailles Inattendues\n00:01.80 Alex?\n00:02.80 Ouais.\n00:03.50 Ça va?\n00:04.50 Ça va et toi?\n00:05.50 Ben ouais ouais c'est marrant\n00:06.50 parce que je parlais de toi y'a 2 jours à\n00:08.00 À Guillaume j'lui disais\n00:09.20 Avec Alex on s'voit plus\n\n# Prendre un Numéro\n00:11.00 Ben non.\n00:12.00 Faut qu'on se refasse une bouffe\n00:13.50 un de ces quatre comme l'autre fois.\n00:15.00 T'as mon numéro prends le\n00:16.00 Ouais\n00:16.50 Prends mon numéro\n00:17.50 Ouais\n00:18.00 07\n\n# Le Moment de Vérité (Part 1)\n00:19.00 Attends attends\n00:20.00 07\n00:21.00 Ouais\n00:21.50 42\n00:23.00 Écoute j'préfère t'arrêter tout de suite\n00:25.00 J'espère que tu n'es pas trop susceptible\n00:27.80 Mais faut vraiment que je t'avoue\n00:29.80 un truc pénible\n\n# Le Moment de Vérité (Part 2)\n00:33.00 Depuis que tu m'parles je souris bêtement\n00:36.00 Je t'écoute gentiment\n00:38.00 Mais je ne sais absolument pas qui tu es\n00:42.50 C'est gênant\n00:44.00 J'fais juste semblant\n00:45.50 Pour pas t'vexer\n\n# Les Regrets et les Excuses\n00:47.80 J'espère qu'on s'est juste croisés\n00:50.00 Un soir où j'étais bourré\n00:52.50 Un truc qui pourrait justifier\n00:54.50 que j't'ai oublié\n00:57.00 En ce moment j'aimerais bien disparaître\n01:01.50 Ou plutôt remonter dans le temps\n01:05.50 Genre 30 secondes avant maintenant\n\n# Si Seulement...\n01:10.80 Je te verrais arriver\n01:12.00 J'irais me cacher comme ça\n01:13.50 Tu viendrais pas me parler\n01:15.00 Car je ne sais absolument pas qui tu es\n01:18.00 Mais j'vais te l'dire\n01:19.50 Tu m'dis rien et toi t'as l'air de m'connaître si bien\n01:23.00 Par contre faut que t'arrêtes de chanter\n\n# Les Souvenirs Flous\n01:24.50 Je rencontre beaucoup trop de gens\n01:26.50 C'est pas de ta faute sincèrement\n01:28.50 Ne m'dis pas qu'on a pris une bière récemment\n01:32.00 Si fin non on a pris un café\n01:34.00 T'étais avec tes amis\n01:36.00 On a discuté tout l'après midi\n01:37.70 De chansons d'art de culture c'était\n\n# L'Arrivée de Flo\n01:39.50 Flo\n01:40.00 Ça va?\n01:41.00 Heeeeey\n01:42.50 Bah alors quoi de neuf\n01:43.80 Et bah alors toi quoi de neuf\n01:45.20 Incroyable\n01:47.00 Tu me présentes pas\n\n# Les Présentations Difficiles\n01:49.00 Si oula pardon oui alors\n01:50.20 Alex\n01:51.00 Alex euhhh mon amie\n01:52.50 C'est mon amie en fait\n01:54.00 On est plus ou moins euh\n01:55.50 Tu ne sais absolument pas qui elle est\n02:01.50 C'est gênant\n02:03.00 Tu fais juste semblant pour pas la vexer\n\n# La Vérité en Chanson\n02:06.50 C'est tellement plus simple de s'parler\n02:08.80 De ne jamais rien se cacher\n02:10.80 Faut savoir excuser les gens\n02:12.80 Qui t'oublient alors que toi non\n02:14.80 Faut pas en faire toute une histoire\n02:16.50 Ne lui lance pas ce regard\n02:18.00 Il a mauvaise mémoire\n02:19.20 On ne sait absolument pas qui on est\n\n# Deviner le Prénom\n02:31.00 Ah oui, Mathilde.\n02:33.00 Non.\n02:34.00 Sophie?\n02:35.00 Non plus.\n02:36.00 T'es sûre?\n02:40.50 C'est vrai que c'est chiant quand même hein.\n02:44.00 Mais mais toi du coup t'es qui en fait?\n02:46.00 Ah bah ouais. Ouais ouais.",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "words": [
+          {
+            "text": "Alex?",
+            "timestamp": "00:01.80",
+            "l1_end_index": 3,
+            "timestamp_end": "00:02.80",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Alex?",
+        "timestamp": "00:01.80",
+        "timestamp_end": "00:02.80"
+      },
+      {
+        "id": "phrase_2",
+        "words": [
+          {
+            "text": "Ouais.",
+            "timestamp": "00:02.80",
+            "l1_end_index": 4,
+            "timestamp_end": "00:03.50",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Ouais.",
+        "timestamp": "00:02.80",
+        "timestamp_end": "00:03.50"
+      },
+      {
+        "id": "phrase_3",
+        "words": [
+          {
+            "text": "Ça",
+            "timestamp": "00:03.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:04.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "va?",
+            "timestamp": "00:04.00",
+            "l1_end_index": 4,
+            "timestamp_end": "00:04.50",
+            "l1_start_index": 3
+          }
+        ],
+        "text_l1": "Ça va?",
+        "timestamp": "00:03.50",
+        "timestamp_end": "00:04.50"
+      },
+      {
+        "id": "phrase_4",
+        "words": [
+          {
+            "text": "Ça",
+            "timestamp": "00:04.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:04.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "va",
+            "timestamp": "00:04.80",
+            "l1_end_index": 4,
+            "timestamp_end": "00:05.10",
+            "l1_start_index": 3
+          },
+          {
+            "text": "et",
+            "timestamp": "00:05.10",
+            "l1_end_index": 7,
+            "timestamp_end": "00:05.30",
+            "l1_start_index": 6
+          },
+          {
+            "text": "toi?",
+            "timestamp": "00:05.30",
+            "l1_end_index": 11,
+            "timestamp_end": "00:05.50",
+            "l1_start_index": 9
+          }
+        ],
+        "text_l1": "Ça va et toi?",
+        "timestamp": "00:04.50",
+        "timestamp_end": "00:05.50"
+      },
+      {
+        "id": "phrase_5",
+        "words": [
+          {
+            "text": "Ben",
+            "timestamp": "00:05.50",
+            "l1_end_index": 2,
+            "timestamp_end": "00:05.70",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ouais",
+            "timestamp": "00:05.70",
+            "l1_end_index": 8,
+            "timestamp_end": "00:05.90",
+            "l1_start_index": 4
+          },
+          {
+            "text": "ouais",
+            "timestamp": "00:05.90",
+            "l1_end_index": 14,
+            "timestamp_end": "00:06.10",
+            "l1_start_index": 10
+          },
+          {
+            "text": "c'est",
+            "timestamp": "00:06.10",
+            "l1_end_index": 20,
+            "timestamp_end": "00:06.30",
+            "l1_start_index": 16
+          },
+          {
+            "text": "marrant",
+            "timestamp": "00:06.30",
+            "l1_end_index": 28,
+            "timestamp_end": "00:06.50",
+            "l1_start_index": 22
+          }
+        ],
+        "text_l1": "Ben ouais ouais c'est marrant",
+        "timestamp": "00:05.50",
+        "timestamp_end": "00:06.50"
+      },
+      {
+        "id": "phrase_6",
+        "words": [
+          {
+            "text": "parce",
+            "timestamp": "00:06.50",
+            "l1_end_index": 4,
+            "timestamp_end": "00:06.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "que",
+            "timestamp": "00:06.80",
+            "l1_end_index": 8,
+            "timestamp_end": "00:07.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "je",
+            "timestamp": "00:07.00",
+            "l1_end_index": 11,
+            "timestamp_end": "00:07.20",
+            "l1_start_index": 10
+          },
+          {
+            "text": "parlais",
+            "timestamp": "00:07.20",
+            "l1_end_index": 19,
+            "timestamp_end": "00:07.40",
+            "l1_start_index": 13
+          },
+          {
+            "text": "de",
+            "timestamp": "00:07.40",
+            "l1_end_index": 22,
+            "timestamp_end": "00:07.50",
+            "l1_start_index": 21
+          },
+          {
+            "text": "toi",
+            "timestamp": "00:07.50",
+            "l1_end_index": 26,
+            "timestamp_end": "00:07.70",
+            "l1_start_index": 24
+          },
+          {
+            "text": "y'a",
+            "timestamp": "00:07.70",
+            "l1_end_index": 30,
+            "timestamp_end": "00:07.80",
+            "l1_start_index": 28
+          },
+          {
+            "text": "2",
+            "timestamp": "00:07.80",
+            "l1_end_index": 32,
+            "timestamp_end": "00:07.90",
+            "l1_start_index": 32
+          },
+          {
+            "text": "jours",
+            "timestamp": "00:07.90",
+            "l1_end_index": 38,
+            "timestamp_end": "00:08.00",
+            "l1_start_index": 34
+          },
+          {
+            "text": "à",
+            "timestamp": "00:08.00",
+            "l1_end_index": 40,
+            "timestamp_end": "00:08.00",
+            "l1_start_index": 40
+          }
+        ],
+        "text_l1": "parce que je parlais de toi y'a 2 jours à",
+        "timestamp": "00:06.50",
+        "timestamp_end": "00:08.00"
+      },
+      {
+        "id": "phrase_7",
+        "words": [
+          {
+            "text": "À",
+            "timestamp": "00:08.00",
+            "l1_end_index": 0,
+            "timestamp_end": "00:08.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "Guillaume",
+            "timestamp": "00:08.20",
+            "l1_end_index": 10,
+            "timestamp_end": "00:08.60",
+            "l1_start_index": 2
+          },
+          {
+            "text": "j'lui",
+            "timestamp": "00:08.60",
+            "l1_end_index": 16,
+            "timestamp_end": "00:08.90",
+            "l1_start_index": 12
+          },
+          {
+            "text": "disais",
+            "timestamp": "00:08.90",
+            "l1_end_index": 23,
+            "timestamp_end": "00:09.20",
+            "l1_start_index": 18
+          }
+        ],
+        "text_l1": "À Guillaume j'lui disais",
+        "timestamp": "00:08.00",
+        "timestamp_end": "00:09.20"
+      },
+      {
+        "id": "phrase_8",
+        "words": [
+          {
+            "text": "Avec",
+            "timestamp": "00:09.20",
+            "l1_end_index": 3,
+            "timestamp_end": "00:09.60",
+            "l1_start_index": 0
+          },
+          {
+            "text": "Alex",
+            "timestamp": "00:09.60",
+            "l1_end_index": 8,
+            "timestamp_end": "00:10.20",
+            "l1_start_index": 5
+          },
+          {
+            "text": "on",
+            "timestamp": "00:10.20",
+            "l1_end_index": 11,
+            "timestamp_end": "00:10.40",
+            "l1_start_index": 10
+          },
+          {
+            "text": "s'voit",
+            "timestamp": "00:10.40",
+            "l1_end_index": 18,
+            "timestamp_end": "00:10.70",
+            "l1_start_index": 13
+          },
+          {
+            "text": "plus",
+            "timestamp": "00:10.70",
+            "l1_end_index": 23,
+            "timestamp_end": "00:11.00",
+            "l1_start_index": 20
+          }
+        ],
+        "text_l1": "Avec Alex on s'voit plus",
+        "timestamp": "00:09.20",
+        "timestamp_end": "00:11.00"
+      },
+      {
+        "id": "phrase_9",
+        "words": [
+          {
+            "text": "Ben",
+            "timestamp": "00:11.00",
+            "l1_end_index": 2,
+            "timestamp_end": "00:11.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "non",
+            "timestamp": "00:11.50",
+            "l1_end_index": 6,
+            "timestamp_end": "00:12.00",
+            "l1_start_index": 4
+          }
+        ],
+        "text_l1": "Ben non.",
+        "timestamp": "00:11.00",
+        "timestamp_end": "00:12.00"
+      },
+      {
+        "id": "phrase_10",
+        "words": [
+          {
+            "text": "Faut",
+            "timestamp": "00:12.00",
+            "l1_end_index": 3,
+            "timestamp_end": "00:12.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "qu'on",
+            "timestamp": "00:12.30",
+            "l1_end_index": 9,
+            "timestamp_end": "00:12.50",
+            "l1_start_index": 5
+          },
+          {
+            "text": "se",
+            "timestamp": "00:12.50",
+            "l1_end_index": 12,
+            "timestamp_end": "00:12.70",
+            "l1_start_index": 11
+          },
+          {
+            "text": "refasse",
+            "timestamp": "00:12.70",
+            "l1_end_index": 20,
+            "timestamp_end": "00:13.10",
+            "l1_start_index": 14
+          },
+          {
+            "text": "une",
+            "timestamp": "00:13.10",
+            "l1_end_index": 24,
+            "timestamp_end": "00:13.30",
+            "l1_start_index": 22
+          },
+          {
+            "text": "bouffe",
+            "timestamp": "00:13.30",
+            "l1_end_index": 31,
+            "timestamp_end": "00:13.50",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "Faut qu'on se refasse une bouffe",
+        "timestamp": "00:12.00",
+        "timestamp_end": "00:13.50"
+      },
+      {
+        "id": "phrase_11",
+        "words": [
+          {
+            "text": "un",
+            "timestamp": "00:13.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:13.70",
+            "l1_start_index": 0
+          },
+          {
+            "text": "de",
+            "timestamp": "00:13.70",
+            "l1_end_index": 4,
+            "timestamp_end": "00:13.80",
+            "l1_start_index": 3
+          },
+          {
+            "text": "ces",
+            "timestamp": "00:13.80",
+            "l1_end_index": 8,
+            "timestamp_end": "00:14.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "quatre",
+            "timestamp": "00:14.00",
+            "l1_end_index": 15,
+            "timestamp_end": "00:14.30",
+            "l1_start_index": 10
+          },
+          {
+            "text": "comme",
+            "timestamp": "00:14.30",
+            "l1_end_index": 21,
+            "timestamp_end": "00:14.50",
+            "l1_start_index": 17
+          },
+          {
+            "text": "l'autre",
+            "timestamp": "00:14.50",
+            "l1_end_index": 29,
+            "timestamp_end": "00:14.80",
+            "l1_start_index": 23
+          },
+          {
+            "text": "fois",
+            "timestamp": "00:14.80",
+            "l1_end_index": 34,
+            "timestamp_end": "00:15.00",
+            "l1_start_index": 31
+          }
+        ],
+        "text_l1": "un de ces quatre comme l'autre fois.",
+        "timestamp": "00:13.50",
+        "timestamp_end": "00:15.00"
+      },
+      {
+        "id": "phrase_12",
+        "words": [
+          {
+            "text": "T'as",
+            "timestamp": "00:15.00",
+            "l1_end_index": 3,
+            "timestamp_end": "00:15.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "mon",
+            "timestamp": "00:15.20",
+            "l1_end_index": 7,
+            "timestamp_end": "00:15.40",
+            "l1_start_index": 5
+          },
+          {
+            "text": "numéro",
+            "timestamp": "00:15.40",
+            "l1_end_index": 14,
+            "timestamp_end": "00:15.70",
+            "l1_start_index": 9
+          },
+          {
+            "text": "prends",
+            "timestamp": "00:15.70",
+            "l1_end_index": 21,
+            "timestamp_end": "00:15.90",
+            "l1_start_index": 16
+          },
+          {
+            "text": "le",
+            "timestamp": "00:15.90",
+            "l1_end_index": 24,
+            "timestamp_end": "00:16.00",
+            "l1_start_index": 23
+          }
+        ],
+        "text_l1": "T'as mon numéro prends le",
+        "timestamp": "00:15.00",
+        "timestamp_end": "00:16.00"
+      },
+      {
+        "id": "phrase_13",
+        "words": [
+          {
+            "text": "Ouais",
+            "timestamp": "00:16.00",
+            "l1_end_index": 4,
+            "timestamp_end": "00:16.50",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Ouais",
+        "timestamp": "00:16.00",
+        "timestamp_end": "00:16.50"
+      },
+      {
+        "id": "phrase_14",
+        "words": [
+          {
+            "text": "Prends",
+            "timestamp": "00:16.50",
+            "l1_end_index": 5,
+            "timestamp_end": "00:16.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "mon",
+            "timestamp": "00:16.80",
+            "l1_end_index": 9,
+            "timestamp_end": "00:17.00",
+            "l1_start_index": 7
+          },
+          {
+            "text": "numéro",
+            "timestamp": "00:17.00",
+            "l1_end_index": 16,
+            "timestamp_end": "00:17.50",
+            "l1_start_index": 11
+          }
+        ],
+        "text_l1": "Prends mon numéro",
+        "timestamp": "00:16.50",
+        "timestamp_end": "00:17.50"
+      },
+      {
+        "id": "phrase_15",
+        "words": [
+          {
+            "text": "Ouais",
+            "timestamp": "00:17.50",
+            "l1_end_index": 4,
+            "timestamp_end": "00:18.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Ouais",
+        "timestamp": "00:17.50",
+        "timestamp_end": "00:18.00"
+      },
+      {
+        "id": "phrase_16",
+        "words": [
+          {
+            "text": "07",
+            "timestamp": "00:18.00",
+            "l1_end_index": 1,
+            "timestamp_end": "00:19.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "07",
+        "timestamp": "00:18.00",
+        "timestamp_end": "00:19.00"
+      },
+      {
+        "id": "phrase_17",
+        "words": [
+          {
+            "text": "Attends",
+            "timestamp": "00:19.00",
+            "l1_end_index": 6,
+            "timestamp_end": "00:19.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "attends",
+            "timestamp": "00:19.50",
+            "l1_end_index": 14,
+            "timestamp_end": "00:20.00",
+            "l1_start_index": 8
+          }
+        ],
+        "text_l1": "Attends attends",
+        "timestamp": "00:19.00",
+        "timestamp_end": "00:20.00"
+      },
+      {
+        "id": "phrase_18",
+        "words": [
+          {
+            "text": "07",
+            "timestamp": "00:20.00",
+            "l1_end_index": 1,
+            "timestamp_end": "00:21.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "07",
+        "timestamp": "00:20.00",
+        "timestamp_end": "00:21.00"
+      },
+      {
+        "id": "phrase_19",
+        "words": [
+          {
+            "text": "Ouais",
+            "timestamp": "00:21.00",
+            "l1_end_index": 4,
+            "timestamp_end": "00:21.50",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Ouais",
+        "timestamp": "00:21.00",
+        "timestamp_end": "00:21.50"
+      },
+      {
+        "id": "phrase_20",
+        "words": [
+          {
+            "text": "42",
+            "timestamp": "00:21.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:22.50",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "42",
+        "timestamp": "00:21.50",
+        "timestamp_end": "00:22.50"
+      },
+      {
+        "id": "phrase_21",
+        "words": [
+          {
+            "text": "Écoute",
+            "timestamp": "00:23.00",
+            "l1_end_index": 5,
+            "timestamp_end": "00:23.40",
+            "l1_start_index": 0
+          },
+          {
+            "text": "j'préfère",
+            "timestamp": "00:23.40",
+            "l1_end_index": 15,
+            "timestamp_end": "00:23.90",
+            "l1_start_index": 7
+          },
+          {
+            "text": "t'arrêter",
+            "timestamp": "00:23.90",
+            "l1_end_index": 25,
+            "timestamp_end": "00:24.40",
+            "l1_start_index": 17
+          },
+          {
+            "text": "tout",
+            "timestamp": "00:24.40",
+            "l1_end_index": 30,
+            "timestamp_end": "00:24.60",
+            "l1_start_index": 27
+          },
+          {
+            "text": "de",
+            "timestamp": "00:24.60",
+            "l1_end_index": 33,
+            "timestamp_end": "00:24.70",
+            "l1_start_index": 32
+          },
+          {
+            "text": "suite",
+            "timestamp": "00:24.70",
+            "l1_end_index": 39,
+            "timestamp_end": "00:25.00",
+            "l1_start_index": 35
+          }
+        ],
+        "text_l1": "Écoute j'préfère t'arrêter tout de suite",
+        "timestamp": "00:23.00",
+        "timestamp_end": "00:25.00"
+      },
+      {
+        "id": "phrase_22",
+        "words": [
+          {
+            "text": "J'espère",
+            "timestamp": "00:25.00",
+            "l1_end_index": 7,
+            "timestamp_end": "00:25.60",
+            "l1_start_index": 0
+          },
+          {
+            "text": "que",
+            "timestamp": "00:25.60",
+            "l1_end_index": 11,
+            "timestamp_end": "00:25.80",
+            "l1_start_index": 9
+          },
+          {
+            "text": "tu",
+            "timestamp": "00:25.80",
+            "l1_end_index": 14,
+            "timestamp_end": "00:26.00",
+            "l1_start_index": 13
+          },
+          {
+            "text": "n'es",
+            "timestamp": "00:26.00",
+            "l1_end_index": 19,
+            "timestamp_end": "00:26.20",
+            "l1_start_index": 16
+          },
+          {
+            "text": "pas",
+            "timestamp": "00:26.20",
+            "l1_end_index": 23,
+            "timestamp_end": "00:26.40",
+            "l1_start_index": 21
+          },
+          {
+            "text": "trop",
+            "timestamp": "00:26.40",
+            "l1_end_index": 28,
+            "timestamp_end": "00:26.80",
+            "l1_start_index": 25
+          },
+          {
+            "text": "susceptible",
+            "timestamp": "00:26.80",
+            "l1_end_index": 40,
+            "timestamp_end": "00:27.80",
+            "l1_start_index": 30
+          }
+        ],
+        "text_l1": "J'espère que tu n'es pas trop susceptible",
+        "timestamp": "00:25.00",
+        "timestamp_end": "00:27.80"
+      },
+      {
+        "id": "phrase_23",
+        "words": [
+          {
+            "text": "Mais",
+            "timestamp": "00:27.80",
+            "l1_end_index": 3,
+            "timestamp_end": "00:28.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "faut",
+            "timestamp": "00:28.10",
+            "l1_end_index": 8,
+            "timestamp_end": "00:28.30",
+            "l1_start_index": 5
+          },
+          {
+            "text": "vraiment",
+            "timestamp": "00:28.30",
+            "l1_end_index": 17,
+            "timestamp_end": "00:28.70",
+            "l1_start_index": 10
+          },
+          {
+            "text": "que",
+            "timestamp": "00:28.70",
+            "l1_end_index": 21,
+            "timestamp_end": "00:28.90",
+            "l1_start_index": 19
+          },
+          {
+            "text": "je",
+            "timestamp": "00:28.90",
+            "l1_end_index": 24,
+            "timestamp_end": "00:29.10",
+            "l1_start_index": 23
+          },
+          {
+            "text": "t'avoue",
+            "timestamp": "00:29.10",
+            "l1_end_index": 32,
+            "timestamp_end": "00:29.80",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "Mais faut vraiment que je t'avoue",
+        "timestamp": "00:27.80",
+        "timestamp_end": "00:29.80"
+      },
+      {
+        "id": "phrase_24",
+        "words": [
+          {
+            "text": "un",
+            "timestamp": "00:29.80",
+            "l1_end_index": 1,
+            "timestamp_end": "00:30.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "truc",
+            "timestamp": "00:30.00",
+            "l1_end_index": 6,
+            "timestamp_end": "00:30.40",
+            "l1_start_index": 3
+          },
+          {
+            "text": "pénible",
+            "timestamp": "00:30.40",
+            "l1_end_index": 14,
+            "timestamp_end": "00:31.50",
+            "l1_start_index": 8
+          }
+        ],
+        "text_l1": "un truc pénible",
+        "timestamp": "00:29.80",
+        "timestamp_end": "00:31.50"
+      },
+      {
+        "id": "phrase_25",
+        "words": [
+          {
+            "text": "Depuis",
+            "timestamp": "00:33.00",
+            "l1_end_index": 5,
+            "timestamp_end": "00:33.60",
+            "l1_start_index": 0
+          },
+          {
+            "text": "que",
+            "timestamp": "00:33.60",
+            "l1_end_index": 9,
+            "timestamp_end": "00:33.80",
+            "l1_start_index": 7
+          },
+          {
+            "text": "tu",
+            "timestamp": "00:33.80",
+            "l1_end_index": 12,
+            "timestamp_end": "00:34.00",
+            "l1_start_index": 11
+          },
+          {
+            "text": "m'parles",
+            "timestamp": "00:34.00",
+            "l1_end_index": 21,
+            "timestamp_end": "00:34.40",
+            "l1_start_index": 14
+          },
+          {
+            "text": "je",
+            "timestamp": "00:34.40",
+            "l1_end_index": 24,
+            "timestamp_end": "00:34.60",
+            "l1_start_index": 23
+          },
+          {
+            "text": "souris",
+            "timestamp": "00:34.60",
+            "l1_end_index": 31,
+            "timestamp_end": "00:35.10",
+            "l1_start_index": 26
+          },
+          {
+            "text": "bêtement",
+            "timestamp": "00:35.10",
+            "l1_end_index": 40,
+            "timestamp_end": "00:36.00",
+            "l1_start_index": 33
+          }
+        ],
+        "text_l1": "Depuis que tu m'parles je souris bêtement",
+        "timestamp": "00:33.00",
+        "timestamp_end": "00:36.00"
+      },
+      {
+        "id": "phrase_26",
+        "words": [
+          {
+            "text": "Je",
+            "timestamp": "00:36.00",
+            "l1_end_index": 1,
+            "timestamp_end": "00:36.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "t'écoute",
+            "timestamp": "00:36.30",
+            "l1_end_index": 10,
+            "timestamp_end": "00:37.00",
+            "l1_start_index": 3
+          },
+          {
+            "text": "gentiment",
+            "timestamp": "00:37.00",
+            "l1_end_index": 20,
+            "timestamp_end": "00:38.00",
+            "l1_start_index": 12
+          }
+        ],
+        "text_l1": "Je t'écoute gentiment",
+        "timestamp": "00:36.00",
+        "timestamp_end": "00:38.00"
+      },
+      {
+        "id": "phrase_27",
+        "words": [
+          {
+            "text": "Mais",
+            "timestamp": "00:38.00",
+            "l1_end_index": 3,
+            "timestamp_end": "00:38.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "je",
+            "timestamp": "00:38.30",
+            "l1_end_index": 6,
+            "timestamp_end": "00:38.50",
+            "l1_start_index": 5
+          },
+          {
+            "text": "ne",
+            "timestamp": "00:38.50",
+            "l1_end_index": 9,
+            "timestamp_end": "00:38.70",
+            "l1_start_index": 8
+          },
+          {
+            "text": "sais",
+            "timestamp": "00:38.70",
+            "l1_end_index": 14,
+            "timestamp_end": "00:39.00",
+            "l1_start_index": 11
+          },
+          {
+            "text": "absolument",
+            "timestamp": "00:39.00",
+            "l1_end_index": 25,
+            "timestamp_end": "00:39.80",
+            "l1_start_index": 16
+          },
+          {
+            "text": "pas",
+            "timestamp": "00:39.80",
+            "l1_end_index": 29,
+            "timestamp_end": "00:40.20",
+            "l1_start_index": 27
+          },
+          {
+            "text": "qui",
+            "timestamp": "00:40.20",
+            "l1_end_index": 33,
+            "timestamp_end": "00:40.60",
+            "l1_start_index": 31
+          },
+          {
+            "text": "tu",
+            "timestamp": "00:40.60",
+            "l1_end_index": 36,
+            "timestamp_end": "00:41.00",
+            "l1_start_index": 35
+          },
+          {
+            "text": "es",
+            "timestamp": "00:41.00",
+            "l1_end_index": 39,
+            "timestamp_end": "00:42.00",
+            "l1_start_index": 38
+          }
+        ],
+        "text_l1": "Mais je ne sais absolument pas qui tu es",
+        "timestamp": "00:38.00",
+        "timestamp_end": "00:42.00"
+      },
+      {
+        "id": "phrase_28",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "00:42.50",
+            "l1_end_index": 4,
+            "timestamp_end": "00:43.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "gênant",
+            "timestamp": "00:43.00",
+            "l1_end_index": 11,
+            "timestamp_end": "00:44.00",
+            "l1_start_index": 6
+          }
+        ],
+        "text_l1": "C'est gênant",
+        "timestamp": "00:42.50",
+        "timestamp_end": "00:44.00"
+      },
+      {
+        "id": "phrase_29",
+        "words": [
+          {
+            "text": "J'fais",
+            "timestamp": "00:44.00",
+            "l1_end_index": 5,
+            "timestamp_end": "00:44.40",
+            "l1_start_index": 0
+          },
+          {
+            "text": "juste",
+            "timestamp": "00:44.40",
+            "l1_end_index": 11,
+            "timestamp_end": "00:44.80",
+            "l1_start_index": 7
+          },
+          {
+            "text": "semblant",
+            "timestamp": "00:44.80",
+            "l1_end_index": 20,
+            "timestamp_end": "00:45.50",
+            "l1_start_index": 13
+          }
+        ],
+        "text_l1": "J'fais juste semblant",
+        "timestamp": "00:44.00",
+        "timestamp_end": "00:45.50"
+      },
+      {
+        "id": "phrase_30",
+        "words": [
+          {
+            "text": "Pour",
+            "timestamp": "00:45.50",
+            "l1_end_index": 3,
+            "timestamp_end": "00:45.90",
+            "l1_start_index": 0
+          },
+          {
+            "text": "pas",
+            "timestamp": "00:45.90",
+            "l1_end_index": 7,
+            "timestamp_end": "00:46.30",
+            "l1_start_index": 5
+          },
+          {
+            "text": "t'vexer",
+            "timestamp": "00:46.30",
+            "l1_end_index": 15,
+            "timestamp_end": "00:47.50",
+            "l1_start_index": 9
+          }
+        ],
+        "text_l1": "Pour pas t'vexer",
+        "timestamp": "00:45.50",
+        "timestamp_end": "00:47.50"
+      },
+      {
+        "id": "phrase_31",
+        "words": [
+          {
+            "text": "J'espère",
+            "timestamp": "00:47.80",
+            "l1_end_index": 7,
+            "timestamp_end": "00:48.40",
+            "l1_start_index": 0
+          },
+          {
+            "text": "qu'on",
+            "timestamp": "00:48.40",
+            "l1_end_index": 13,
+            "timestamp_end": "00:48.70",
+            "l1_start_index": 9
+          },
+          {
+            "text": "s'est",
+            "timestamp": "00:48.70",
+            "l1_end_index": 19,
+            "timestamp_end": "00:49.00",
+            "l1_start_index": 15
+          },
+          {
+            "text": "juste",
+            "timestamp": "00:49.00",
+            "l1_end_index": 25,
+            "timestamp_end": "00:49.40",
+            "l1_start_index": 21
+          },
+          {
+            "text": "croisés",
+            "timestamp": "00:49.40",
+            "l1_end_index": 33,
+            "timestamp_end": "00:50.00",
+            "l1_start_index": 27
+          }
+        ],
+        "text_l1": "J'espère qu'on s'est juste croisés",
+        "timestamp": "00:47.80",
+        "timestamp_end": "00:50.00"
+      },
+      {
+        "id": "phrase_32",
+        "words": [
+          {
+            "text": "Un",
+            "timestamp": "00:50.00",
+            "l1_end_index": 1,
+            "timestamp_end": "00:50.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "soir",
+            "timestamp": "00:50.30",
+            "l1_end_index": 6,
+            "timestamp_end": "00:50.70",
+            "l1_start_index": 3
+          },
+          {
+            "text": "où",
+            "timestamp": "00:50.70",
+            "l1_end_index": 9,
+            "timestamp_end": "00:51.00",
+            "l1_start_index": 8
+          },
+          {
+            "text": "j'étais",
+            "timestamp": "00:51.00",
+            "l1_end_index": 17,
+            "timestamp_end": "00:51.40",
+            "l1_start_index": 11
+          },
+          {
+            "text": "bourré",
+            "timestamp": "00:51.40",
+            "l1_end_index": 24,
+            "timestamp_end": "00:52.00",
+            "l1_start_index": 19
+          }
+        ],
+        "text_l1": "Un soir où j'étais bourré",
+        "timestamp": "00:50.00",
+        "timestamp_end": "00:52.00"
+      },
+      {
+        "id": "phrase_33",
+        "words": [
+          {
+            "text": "Un",
+            "timestamp": "00:52.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:52.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "truc",
+            "timestamp": "00:52.80",
+            "l1_end_index": 6,
+            "timestamp_end": "00:53.10",
+            "l1_start_index": 3
+          },
+          {
+            "text": "qui",
+            "timestamp": "00:53.10",
+            "l1_end_index": 10,
+            "timestamp_end": "00:53.30",
+            "l1_start_index": 8
+          },
+          {
+            "text": "pourrait",
+            "timestamp": "00:53.30",
+            "l1_end_index": 19,
+            "timestamp_end": "00:53.70",
+            "l1_start_index": 12
+          },
+          {
+            "text": "justifier",
+            "timestamp": "00:53.70",
+            "l1_end_index": 29,
+            "timestamp_end": "00:54.50",
+            "l1_start_index": 21
+          }
+        ],
+        "text_l1": "Un truc qui pourrait justifier",
+        "timestamp": "00:52.50",
+        "timestamp_end": "00:54.50"
+      },
+      {
+        "id": "phrase_34",
+        "words": [
+          {
+            "text": "que",
+            "timestamp": "00:54.50",
+            "l1_end_index": 2,
+            "timestamp_end": "00:54.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "j't'ai",
+            "timestamp": "00:54.80",
+            "l1_end_index": 9,
+            "timestamp_end": "00:55.20",
+            "l1_start_index": 4
+          },
+          {
+            "text": "oublié",
+            "timestamp": "00:55.20",
+            "l1_end_index": 16,
+            "timestamp_end": "00:56.50",
+            "l1_start_index": 11
+          }
+        ],
+        "text_l1": "que j't'ai oublié",
+        "timestamp": "00:54.50",
+        "timestamp_end": "00:56.50"
+      },
+      {
+        "id": "phrase_35",
+        "words": [
+          {
+            "text": "En",
+            "timestamp": "00:57.00",
+            "l1_end_index": 1,
+            "timestamp_end": "00:57.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ce",
+            "timestamp": "00:57.30",
+            "l1_end_index": 4,
+            "timestamp_end": "00:57.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "moment",
+            "timestamp": "00:57.50",
+            "l1_end_index": 11,
+            "timestamp_end": "00:58.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "j'aimerais",
+            "timestamp": "00:58.00",
+            "l1_end_index": 22,
+            "timestamp_end": "00:58.60",
+            "l1_start_index": 13
+          },
+          {
+            "text": "bien",
+            "timestamp": "00:58.60",
+            "l1_end_index": 27,
+            "timestamp_end": "00:59.00",
+            "l1_start_index": 24
+          },
+          {
+            "text": "disparaître",
+            "timestamp": "00:59.00",
+            "l1_end_index": 39,
+            "timestamp_end": "01:01.00",
+            "l1_start_index": 29
+          }
+        ],
+        "text_l1": "En ce moment j'aimerais bien disparaître",
+        "timestamp": "00:57.00",
+        "timestamp_end": "01:01.00"
+      },
+      {
+        "id": "phrase_36",
+        "words": [
+          {
+            "text": "Ou",
+            "timestamp": "01:01.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:02.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "plutôt",
+            "timestamp": "01:02.00",
+            "l1_end_index": 8,
+            "timestamp_end": "01:02.60",
+            "l1_start_index": 3
+          },
+          {
+            "text": "remonter",
+            "timestamp": "01:02.60",
+            "l1_end_index": 17,
+            "timestamp_end": "01:03.50",
+            "l1_start_index": 10
+          },
+          {
+            "text": "dans",
+            "timestamp": "01:03.50",
+            "l1_end_index": 22,
+            "timestamp_end": "01:03.90",
+            "l1_start_index": 19
+          },
+          {
+            "text": "le",
+            "timestamp": "01:03.90",
+            "l1_end_index": 25,
+            "timestamp_end": "01:04.20",
+            "l1_start_index": 24
+          },
+          {
+            "text": "temps",
+            "timestamp": "01:04.20",
+            "l1_end_index": 31,
+            "timestamp_end": "01:05.50",
+            "l1_start_index": 27
+          }
+        ],
+        "text_l1": "Ou plutôt remonter dans le temps",
+        "timestamp": "01:01.50",
+        "timestamp_end": "01:05.50"
+      },
+      {
+        "id": "phrase_37",
+        "words": [
+          {
+            "text": "Genre",
+            "timestamp": "01:05.50",
+            "l1_end_index": 4,
+            "timestamp_end": "01:06.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "30",
+            "timestamp": "01:06.20",
+            "l1_end_index": 7,
+            "timestamp_end": "01:06.80",
+            "l1_start_index": 6
+          },
+          {
+            "text": "secondes",
+            "timestamp": "01:06.80",
+            "l1_end_index": 16,
+            "timestamp_end": "01:07.60",
+            "l1_start_index": 9
+          },
+          {
+            "text": "avant",
+            "timestamp": "01:07.60",
+            "l1_end_index": 22,
+            "timestamp_end": "01:08.40",
+            "l1_start_index": 18
+          },
+          {
+            "text": "maintenant",
+            "timestamp": "01:08.40",
+            "l1_end_index": 33,
+            "timestamp_end": "01:10.50",
+            "l1_start_index": 24
+          }
+        ],
+        "text_l1": "Genre 30 secondes avant maintenant",
+        "timestamp": "01:05.50",
+        "timestamp_end": "01:10.50"
+      },
+      {
+        "id": "phrase_38",
+        "words": [
+          {
+            "text": "Je",
+            "timestamp": "01:10.80",
+            "l1_end_index": 1,
+            "timestamp_end": "01:11.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "te",
+            "timestamp": "01:11.00",
+            "l1_end_index": 4,
+            "timestamp_end": "01:11.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "verrais",
+            "timestamp": "01:11.20",
+            "l1_end_index": 12,
+            "timestamp_end": "01:11.60",
+            "l1_start_index": 6
+          },
+          {
+            "text": "arriver",
+            "timestamp": "01:11.60",
+            "l1_end_index": 20,
+            "timestamp_end": "01:12.00",
+            "l1_start_index": 14
+          }
+        ],
+        "text_l1": "Je te verrais arriver",
+        "timestamp": "01:10.80",
+        "timestamp_end": "01:12.00"
+      },
+      {
+        "id": "phrase_39",
+        "words": [
+          {
+            "text": "J'irais",
+            "timestamp": "01:12.00",
+            "l1_end_index": 6,
+            "timestamp_end": "01:12.40",
+            "l1_start_index": 0
+          },
+          {
+            "text": "me",
+            "timestamp": "01:12.40",
+            "l1_end_index": 9,
+            "timestamp_end": "01:12.60",
+            "l1_start_index": 8
+          },
+          {
+            "text": "cacher",
+            "timestamp": "01:12.60",
+            "l1_end_index": 16,
+            "timestamp_end": "01:13.10",
+            "l1_start_index": 11
+          },
+          {
+            "text": "comme",
+            "timestamp": "01:13.10",
+            "l1_end_index": 22,
+            "timestamp_end": "01:13.30",
+            "l1_start_index": 18
+          },
+          {
+            "text": "ça",
+            "timestamp": "01:13.30",
+            "l1_end_index": 25,
+            "timestamp_end": "01:13.50",
+            "l1_start_index": 24
+          }
+        ],
+        "text_l1": "J'irais me cacher comme ça",
+        "timestamp": "01:12.00",
+        "timestamp_end": "01:13.50"
+      },
+      {
+        "id": "phrase_40",
+        "words": [
+          {
+            "text": "Tu",
+            "timestamp": "01:13.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:13.70",
+            "l1_start_index": 0
+          },
+          {
+            "text": "viendrais",
+            "timestamp": "01:13.70",
+            "l1_end_index": 11,
+            "timestamp_end": "01:14.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:14.20",
+            "l1_end_index": 15,
+            "timestamp_end": "01:14.40",
+            "l1_start_index": 13
+          },
+          {
+            "text": "me",
+            "timestamp": "01:14.40",
+            "l1_end_index": 18,
+            "timestamp_end": "01:14.60",
+            "l1_start_index": 17
+          },
+          {
+            "text": "parler",
+            "timestamp": "01:14.60",
+            "l1_end_index": 25,
+            "timestamp_end": "01:15.00",
+            "l1_start_index": 20
+          }
+        ],
+        "text_l1": "Tu viendrais pas me parler",
+        "timestamp": "01:13.50",
+        "timestamp_end": "01:15.00"
+      },
+      {
+        "id": "phrase_41",
+        "words": [
+          {
+            "text": "Car",
+            "timestamp": "01:15.00",
+            "l1_end_index": 2,
+            "timestamp_end": "01:15.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "je",
+            "timestamp": "01:15.30",
+            "l1_end_index": 5,
+            "timestamp_end": "01:15.50",
+            "l1_start_index": 4
+          },
+          {
+            "text": "ne",
+            "timestamp": "01:15.50",
+            "l1_end_index": 8,
+            "timestamp_end": "01:15.70",
+            "l1_start_index": 7
+          },
+          {
+            "text": "sais",
+            "timestamp": "01:15.70",
+            "l1_end_index": 13,
+            "timestamp_end": "01:16.00",
+            "l1_start_index": 10
+          },
+          {
+            "text": "absolument",
+            "timestamp": "01:16.00",
+            "l1_end_index": 24,
+            "timestamp_end": "01:16.80",
+            "l1_start_index": 15
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:16.80",
+            "l1_end_index": 28,
+            "timestamp_end": "01:17.20",
+            "l1_start_index": 26
+          },
+          {
+            "text": "qui",
+            "timestamp": "01:17.20",
+            "l1_end_index": 32,
+            "timestamp_end": "01:17.50",
+            "l1_start_index": 30
+          },
+          {
+            "text": "tu",
+            "timestamp": "01:17.50",
+            "l1_end_index": 35,
+            "timestamp_end": "01:17.70",
+            "l1_start_index": 34
+          },
+          {
+            "text": "es",
+            "timestamp": "01:17.70",
+            "l1_end_index": 38,
+            "timestamp_end": "01:18.00",
+            "l1_start_index": 37
+          }
+        ],
+        "text_l1": "Car je ne sais absolument pas qui tu es",
+        "timestamp": "01:15.00",
+        "timestamp_end": "01:18.00"
+      },
+      {
+        "id": "phrase_42",
+        "words": [
+          {
+            "text": "Mais",
+            "timestamp": "01:18.00",
+            "l1_end_index": 3,
+            "timestamp_end": "01:18.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "j'vais",
+            "timestamp": "01:18.20",
+            "l1_end_index": 10,
+            "timestamp_end": "01:18.40",
+            "l1_start_index": 5
+          },
+          {
+            "text": "te",
+            "timestamp": "01:18.40",
+            "l1_end_index": 13,
+            "timestamp_end": "01:18.60",
+            "l1_start_index": 12
+          },
+          {
+            "text": "l'dire",
+            "timestamp": "01:18.60",
+            "l1_end_index": 20,
+            "timestamp_end": "01:19.00",
+            "l1_start_index": 15
+          }
+        ],
+        "text_l1": "Mais j'vais te l'dire",
+        "timestamp": "01:18.00",
+        "timestamp_end": "01:19.00"
+      },
+      {
+        "id": "phrase_43",
+        "words": [
+          {
+            "text": "Tu",
+            "timestamp": "01:19.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:19.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "m'dis",
+            "timestamp": "01:19.80",
+            "l1_end_index": 7,
+            "timestamp_end": "01:20.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "rien",
+            "timestamp": "01:20.20",
+            "l1_end_index": 12,
+            "timestamp_end": "01:20.50",
+            "l1_start_index": 9
+          },
+          {
+            "text": "et",
+            "timestamp": "01:20.50",
+            "l1_end_index": 15,
+            "timestamp_end": "01:20.70",
+            "l1_start_index": 14
+          },
+          {
+            "text": "toi",
+            "timestamp": "01:20.70",
+            "l1_end_index": 19,
+            "timestamp_end": "01:21.00",
+            "l1_start_index": 17
+          },
+          {
+            "text": "t'as",
+            "timestamp": "01:21.00",
+            "l1_end_index": 24,
+            "timestamp_end": "01:21.20",
+            "l1_start_index": 21
+          },
+          {
+            "text": "l'air",
+            "timestamp": "01:21.20",
+            "l1_end_index": 30,
+            "timestamp_end": "01:21.50",
+            "l1_start_index": 26
+          },
+          {
+            "text": "de",
+            "timestamp": "01:21.50",
+            "l1_end_index": 33,
+            "timestamp_end": "01:21.70",
+            "l1_start_index": 32
+          },
+          {
+            "text": "m'connaître",
+            "timestamp": "01:21.70",
+            "l1_end_index": 45,
+            "timestamp_end": "01:22.20",
+            "l1_start_index": 35
+          },
+          {
+            "text": "si",
+            "timestamp": "01:22.20",
+            "l1_end_index": 48,
+            "timestamp_end": "01:22.50",
+            "l1_start_index": 47
+          },
+          {
+            "text": "bien",
+            "timestamp": "01:22.50",
+            "l1_end_index": 53,
+            "timestamp_end": "01:23.00",
+            "l1_start_index": 50
+          }
+        ],
+        "text_l1": "Tu m'dis rien et toi t'as l'air de m'connaître si bien",
+        "timestamp": "01:19.50",
+        "timestamp_end": "01:23.00"
+      },
+      {
+        "id": "phrase_44",
+        "words": [
+          {
+            "text": "Par",
+            "timestamp": "01:23.00",
+            "l1_end_index": 2,
+            "timestamp_end": "01:23.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "contre",
+            "timestamp": "01:23.20",
+            "l1_end_index": 9,
+            "timestamp_end": "01:23.40",
+            "l1_start_index": 4
+          },
+          {
+            "text": "faut",
+            "timestamp": "01:23.40",
+            "l1_end_index": 14,
+            "timestamp_end": "01:23.60",
+            "l1_start_index": 11
+          },
+          {
+            "text": "que",
+            "timestamp": "01:23.60",
+            "l1_end_index": 18,
+            "timestamp_end": "01:23.70",
+            "l1_start_index": 16
+          },
+          {
+            "text": "t'arrêtes",
+            "timestamp": "01:23.70",
+            "l1_end_index": 28,
+            "timestamp_end": "01:24.00",
+            "l1_start_index": 20
+          },
+          {
+            "text": "de",
+            "timestamp": "01:24.00",
+            "l1_end_index": 31,
+            "timestamp_end": "01:24.20",
+            "l1_start_index": 30
+          },
+          {
+            "text": "chanter",
+            "timestamp": "01:24.20",
+            "l1_end_index": 39,
+            "timestamp_end": "01:24.50",
+            "l1_start_index": 33
+          }
+        ],
+        "text_l1": "Par contre faut que t'arrêtes de chanter",
+        "timestamp": "01:23.00",
+        "timestamp_end": "01:24.50"
+      },
+      {
+        "id": "phrase_45",
+        "words": [
+          {
+            "text": "Je",
+            "timestamp": "01:24.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:24.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "rencontre",
+            "timestamp": "01:24.80",
+            "l1_end_index": 11,
+            "timestamp_end": "01:25.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "beaucoup",
+            "timestamp": "01:25.20",
+            "l1_end_index": 20,
+            "timestamp_end": "01:25.50",
+            "l1_start_index": 13
+          },
+          {
+            "text": "trop",
+            "timestamp": "01:25.50",
+            "l1_end_index": 25,
+            "timestamp_end": "01:25.70",
+            "l1_start_index": 22
+          },
+          {
+            "text": "de",
+            "timestamp": "01:25.70",
+            "l1_end_index": 28,
+            "timestamp_end": "01:25.80",
+            "l1_start_index": 27
+          },
+          {
+            "text": "gens",
+            "timestamp": "01:25.80",
+            "l1_end_index": 33,
+            "timestamp_end": "01:26.50",
+            "l1_start_index": 30
+          }
+        ],
+        "text_l1": "Je rencontre beaucoup trop de gens",
+        "timestamp": "01:24.50",
+        "timestamp_end": "01:26.50"
+      },
+      {
+        "id": "phrase_46",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "01:26.50",
+            "l1_end_index": 4,
+            "timestamp_end": "01:26.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:26.80",
+            "l1_end_index": 8,
+            "timestamp_end": "01:27.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "de",
+            "timestamp": "01:27.00",
+            "l1_end_index": 11,
+            "timestamp_end": "01:27.10",
+            "l1_start_index": 10
+          },
+          {
+            "text": "ta",
+            "timestamp": "01:27.10",
+            "l1_end_index": 14,
+            "timestamp_end": "01:27.30",
+            "l1_start_index": 13
+          },
+          {
+            "text": "faute",
+            "timestamp": "01:27.30",
+            "l1_end_index": 20,
+            "timestamp_end": "01:27.60",
+            "l1_start_index": 16
+          },
+          {
+            "text": "sincèrement",
+            "timestamp": "01:27.60",
+            "l1_end_index": 32,
+            "timestamp_end": "01:28.50",
+            "l1_start_index": 22
+          }
+        ],
+        "text_l1": "C'est pas de ta faute sincèrement",
+        "timestamp": "01:26.50",
+        "timestamp_end": "01:28.50"
+      },
+      {
+        "id": "phrase_47",
+        "words": [
+          {
+            "text": "Ne",
+            "timestamp": "01:28.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:28.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "m'dis",
+            "timestamp": "01:28.80",
+            "l1_end_index": 7,
+            "timestamp_end": "01:29.10",
+            "l1_start_index": 3
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:29.10",
+            "l1_end_index": 11,
+            "timestamp_end": "01:29.40",
+            "l1_start_index": 9
+          },
+          {
+            "text": "qu'on",
+            "timestamp": "01:29.40",
+            "l1_end_index": 17,
+            "timestamp_end": "01:29.60",
+            "l1_start_index": 13
+          },
+          {
+            "text": "a",
+            "timestamp": "01:29.60",
+            "l1_end_index": 19,
+            "timestamp_end": "01:29.80",
+            "l1_start_index": 19
+          },
+          {
+            "text": "pris",
+            "timestamp": "01:29.80",
+            "l1_end_index": 24,
+            "timestamp_end": "01:30.10",
+            "l1_start_index": 21
+          },
+          {
+            "text": "une",
+            "timestamp": "01:30.10",
+            "l1_end_index": 28,
+            "timestamp_end": "01:30.30",
+            "l1_start_index": 26
+          },
+          {
+            "text": "bière",
+            "timestamp": "01:30.30",
+            "l1_end_index": 34,
+            "timestamp_end": "01:30.80",
+            "l1_start_index": 30
+          },
+          {
+            "text": "récemment",
+            "timestamp": "01:30.80",
+            "l1_end_index": 44,
+            "timestamp_end": "01:32.00",
+            "l1_start_index": 36
+          }
+        ],
+        "text_l1": "Ne m'dis pas qu'on a pris une bière récemment",
+        "timestamp": "01:28.50",
+        "timestamp_end": "01:32.00"
+      },
+      {
+        "id": "phrase_48",
+        "words": [
+          {
+            "text": "Si",
+            "timestamp": "01:32.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:32.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "fin",
+            "timestamp": "01:32.30",
+            "l1_end_index": 5,
+            "timestamp_end": "01:32.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "non",
+            "timestamp": "01:32.50",
+            "l1_end_index": 9,
+            "timestamp_end": "01:32.70",
+            "l1_start_index": 7
+          },
+          {
+            "text": "on",
+            "timestamp": "01:32.70",
+            "l1_end_index": 12,
+            "timestamp_end": "01:32.90",
+            "l1_start_index": 11
+          },
+          {
+            "text": "a",
+            "timestamp": "01:32.90",
+            "l1_end_index": 14,
+            "timestamp_end": "01:33.00",
+            "l1_start_index": 14
+          },
+          {
+            "text": "pris",
+            "timestamp": "01:33.00",
+            "l1_end_index": 19,
+            "timestamp_end": "01:33.20",
+            "l1_start_index": 16
+          },
+          {
+            "text": "un",
+            "timestamp": "01:33.20",
+            "l1_end_index": 22,
+            "timestamp_end": "01:33.40",
+            "l1_start_index": 21
+          },
+          {
+            "text": "café",
+            "timestamp": "01:33.40",
+            "l1_end_index": 27,
+            "timestamp_end": "01:34.00",
+            "l1_start_index": 24
+          }
+        ],
+        "text_l1": "Si fin non on a pris un café",
+        "timestamp": "01:32.00",
+        "timestamp_end": "01:34.00"
+      },
+      {
+        "id": "phrase_49",
+        "words": [
+          {
+            "text": "T'étais",
+            "timestamp": "01:34.00",
+            "l1_end_index": 6,
+            "timestamp_end": "01:34.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "avec",
+            "timestamp": "01:34.50",
+            "l1_end_index": 11,
+            "timestamp_end": "01:35.00",
+            "l1_start_index": 8
+          },
+          {
+            "text": "tes",
+            "timestamp": "01:35.00",
+            "l1_end_index": 15,
+            "timestamp_end": "01:35.20",
+            "l1_start_index": 13
+          },
+          {
+            "text": "amis",
+            "timestamp": "01:35.20",
+            "l1_end_index": 20,
+            "timestamp_end": "01:36.00",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "T'étais avec tes amis",
+        "timestamp": "01:34.00",
+        "timestamp_end": "01:36.00"
+      },
+      {
+        "id": "phrase_50",
+        "words": [
+          {
+            "text": "On",
+            "timestamp": "01:36.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:36.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "a",
+            "timestamp": "01:36.20",
+            "l1_end_index": 3,
+            "timestamp_end": "01:36.30",
+            "l1_start_index": 3
+          },
+          {
+            "text": "discuté",
+            "timestamp": "01:36.30",
+            "l1_end_index": 11,
+            "timestamp_end": "01:36.70",
+            "l1_start_index": 5
+          },
+          {
+            "text": "tout",
+            "timestamp": "01:36.70",
+            "l1_end_index": 16,
+            "timestamp_end": "01:36.90",
+            "l1_start_index": 13
+          },
+          {
+            "text": "l'après",
+            "timestamp": "01:36.90",
+            "l1_end_index": 24,
+            "timestamp_end": "01:37.20",
+            "l1_start_index": 18
+          },
+          {
+            "text": "midi",
+            "timestamp": "01:37.20",
+            "l1_end_index": 29,
+            "timestamp_end": "01:37.70",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "On a discuté tout l'après midi",
+        "timestamp": "01:36.00",
+        "timestamp_end": "01:37.70"
+      },
+      {
+        "id": "phrase_51",
+        "words": [
+          {
+            "text": "De",
+            "timestamp": "01:37.70",
+            "l1_end_index": 1,
+            "timestamp_end": "01:37.90",
+            "l1_start_index": 0
+          },
+          {
+            "text": "chansons",
+            "timestamp": "01:37.90",
+            "l1_end_index": 10,
+            "timestamp_end": "01:38.30",
+            "l1_start_index": 3
+          },
+          {
+            "text": "d'art",
+            "timestamp": "01:38.30",
+            "l1_end_index": 16,
+            "timestamp_end": "01:38.50",
+            "l1_start_index": 12
+          },
+          {
+            "text": "de",
+            "timestamp": "01:38.50",
+            "l1_end_index": 19,
+            "timestamp_end": "01:38.70",
+            "l1_start_index": 18
+          },
+          {
+            "text": "culture",
+            "timestamp": "01:38.70",
+            "l1_end_index": 27,
+            "timestamp_end": "01:39.10",
+            "l1_start_index": 21
+          },
+          {
+            "text": "c'était",
+            "timestamp": "01:39.10",
+            "l1_end_index": 35,
+            "timestamp_end": "01:39.50",
+            "l1_start_index": 29
+          }
+        ],
+        "text_l1": "De chansons d'art de culture c'était",
+        "timestamp": "01:37.70",
+        "timestamp_end": "01:39.50"
+      },
+      {
+        "id": "phrase_52",
+        "words": [
+          {
+            "text": "Flo",
+            "timestamp": "01:39.50",
+            "l1_end_index": 2,
+            "timestamp_end": "01:40.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Flo",
+        "timestamp": "01:39.50",
+        "timestamp_end": "01:40.00"
+      },
+      {
+        "id": "phrase_53",
+        "words": [
+          {
+            "text": "Ça",
+            "timestamp": "01:40.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:40.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "va?",
+            "timestamp": "01:40.50",
+            "l1_end_index": 4,
+            "timestamp_end": "01:41.00",
+            "l1_start_index": 3
+          }
+        ],
+        "text_l1": "Ça va?",
+        "timestamp": "01:40.00",
+        "timestamp_end": "01:41.00"
+      },
+      {
+        "id": "phrase_54",
+        "words": [
+          {
+            "text": "Heeeeey",
+            "timestamp": "01:41.00",
+            "l1_end_index": 6,
+            "timestamp_end": "01:42.50",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Heeeeey",
+        "timestamp": "01:41.00",
+        "timestamp_end": "01:42.50"
+      },
+      {
+        "id": "phrase_55",
+        "words": [
+          {
+            "text": "Bah",
+            "timestamp": "01:42.50",
+            "l1_end_index": 2,
+            "timestamp_end": "01:42.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "alors",
+            "timestamp": "01:42.80",
+            "l1_end_index": 8,
+            "timestamp_end": "01:43.10",
+            "l1_start_index": 4
+          },
+          {
+            "text": "quoi",
+            "timestamp": "01:43.10",
+            "l1_end_index": 13,
+            "timestamp_end": "01:43.30",
+            "l1_start_index": 10
+          },
+          {
+            "text": "de",
+            "timestamp": "01:43.30",
+            "l1_end_index": 16,
+            "timestamp_end": "01:43.40",
+            "l1_start_index": 15
+          },
+          {
+            "text": "neuf",
+            "timestamp": "01:43.40",
+            "l1_end_index": 21,
+            "timestamp_end": "01:43.80",
+            "l1_start_index": 18
+          }
+        ],
+        "text_l1": "Bah alors quoi de neuf",
+        "timestamp": "01:42.50",
+        "timestamp_end": "01:43.80"
+      },
+      {
+        "id": "phrase_56",
+        "words": [
+          {
+            "text": "Et",
+            "timestamp": "01:43.80",
+            "l1_end_index": 1,
+            "timestamp_end": "01:44.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "bah",
+            "timestamp": "01:44.00",
+            "l1_end_index": 5,
+            "timestamp_end": "01:44.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "alors",
+            "timestamp": "01:44.20",
+            "l1_end_index": 11,
+            "timestamp_end": "01:44.40",
+            "l1_start_index": 7
+          },
+          {
+            "text": "toi",
+            "timestamp": "01:44.40",
+            "l1_end_index": 15,
+            "timestamp_end": "01:44.60",
+            "l1_start_index": 13
+          },
+          {
+            "text": "quoi",
+            "timestamp": "01:44.60",
+            "l1_end_index": 20,
+            "timestamp_end": "01:44.80",
+            "l1_start_index": 17
+          },
+          {
+            "text": "de",
+            "timestamp": "01:44.80",
+            "l1_end_index": 23,
+            "timestamp_end": "01:44.90",
+            "l1_start_index": 22
+          },
+          {
+            "text": "neuf",
+            "timestamp": "01:44.90",
+            "l1_end_index": 28,
+            "timestamp_end": "01:45.20",
+            "l1_start_index": 25
+          }
+        ],
+        "text_l1": "Et bah alors toi quoi de neuf",
+        "timestamp": "01:43.80",
+        "timestamp_end": "01:45.20"
+      },
+      {
+        "id": "phrase_57",
+        "words": [
+          {
+            "text": "Incroyable",
+            "timestamp": "01:45.20",
+            "l1_end_index": 9,
+            "timestamp_end": "01:46.20",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Incroyable",
+        "timestamp": "01:45.20",
+        "timestamp_end": "01:46.20"
+      },
+      {
+        "id": "phrase_58",
+        "words": [
+          {
+            "text": "Tu",
+            "timestamp": "01:47.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:47.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "me",
+            "timestamp": "01:47.30",
+            "l1_end_index": 4,
+            "timestamp_end": "01:47.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "présentes",
+            "timestamp": "01:47.50",
+            "l1_end_index": 14,
+            "timestamp_end": "01:48.20",
+            "l1_start_index": 6
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:48.20",
+            "l1_end_index": 18,
+            "timestamp_end": "01:49.00",
+            "l1_start_index": 16
+          }
+        ],
+        "text_l1": "Tu me présentes pas",
+        "timestamp": "01:47.00",
+        "timestamp_end": "01:49.00"
+      },
+      {
+        "id": "phrase_59",
+        "words": [
+          {
+            "text": "Si",
+            "timestamp": "01:49.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:49.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "oula",
+            "timestamp": "01:49.20",
+            "l1_end_index": 6,
+            "timestamp_end": "01:49.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "pardon",
+            "timestamp": "01:49.50",
+            "l1_end_index": 13,
+            "timestamp_end": "01:49.80",
+            "l1_start_index": 8
+          },
+          {
+            "text": "oui",
+            "timestamp": "01:49.80",
+            "l1_end_index": 17,
+            "timestamp_end": "01:50.00",
+            "l1_start_index": 15
+          },
+          {
+            "text": "alors",
+            "timestamp": "01:50.00",
+            "l1_end_index": 23,
+            "timestamp_end": "01:50.20",
+            "l1_start_index": 19
+          }
+        ],
+        "text_l1": "Si oula pardon oui alors",
+        "timestamp": "01:49.00",
+        "timestamp_end": "01:50.20"
+      },
+      {
+        "id": "phrase_60",
+        "words": [
+          {
+            "text": "Alex",
+            "timestamp": "01:50.20",
+            "l1_end_index": 3,
+            "timestamp_end": "01:51.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Alex",
+        "timestamp": "01:50.20",
+        "timestamp_end": "01:51.00"
+      },
+      {
+        "id": "phrase_61",
+        "words": [
+          {
+            "text": "Alex",
+            "timestamp": "01:51.00",
+            "l1_end_index": 3,
+            "timestamp_end": "01:51.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "euhhh",
+            "timestamp": "01:51.50",
+            "l1_end_index": 9,
+            "timestamp_end": "01:51.80",
+            "l1_start_index": 5
+          },
+          {
+            "text": "mon",
+            "timestamp": "01:51.80",
+            "l1_end_index": 13,
+            "timestamp_end": "01:52.00",
+            "l1_start_index": 11
+          },
+          {
+            "text": "amie",
+            "timestamp": "01:52.00",
+            "l1_end_index": 18,
+            "timestamp_end": "01:52.50",
+            "l1_start_index": 15
+          }
+        ],
+        "text_l1": "Alex euhhh mon amie",
+        "timestamp": "01:51.00",
+        "timestamp_end": "01:52.50"
+      },
+      {
+        "id": "phrase_62",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "01:52.50",
+            "l1_end_index": 4,
+            "timestamp_end": "01:52.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "mon",
+            "timestamp": "01:52.80",
+            "l1_end_index": 8,
+            "timestamp_end": "01:53.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "amie",
+            "timestamp": "01:53.00",
+            "l1_end_index": 13,
+            "timestamp_end": "01:53.50",
+            "l1_start_index": 10
+          },
+          {
+            "text": "en",
+            "timestamp": "01:53.50",
+            "l1_end_index": 16,
+            "timestamp_end": "01:53.70",
+            "l1_start_index": 15
+          },
+          {
+            "text": "fait",
+            "timestamp": "01:53.70",
+            "l1_end_index": 21,
+            "timestamp_end": "01:54.00",
+            "l1_start_index": 18
+          }
+        ],
+        "text_l1": "C'est mon amie en fait",
+        "timestamp": "01:52.50",
+        "timestamp_end": "01:54.00"
+      },
+      {
+        "id": "phrase_63",
+        "words": [
+          {
+            "text": "On",
+            "timestamp": "01:54.00",
+            "l1_end_index": 1,
+            "timestamp_end": "01:54.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "est",
+            "timestamp": "01:54.20",
+            "l1_end_index": 5,
+            "timestamp_end": "01:54.40",
+            "l1_start_index": 3
+          },
+          {
+            "text": "plus",
+            "timestamp": "01:54.40",
+            "l1_end_index": 10,
+            "timestamp_end": "01:54.60",
+            "l1_start_index": 7
+          },
+          {
+            "text": "ou",
+            "timestamp": "01:54.60",
+            "l1_end_index": 13,
+            "timestamp_end": "01:54.70",
+            "l1_start_index": 12
+          },
+          {
+            "text": "moins",
+            "timestamp": "01:54.70",
+            "l1_end_index": 19,
+            "timestamp_end": "01:55.00",
+            "l1_start_index": 15
+          },
+          {
+            "text": "euh",
+            "timestamp": "01:55.00",
+            "l1_end_index": 23,
+            "timestamp_end": "01:55.50",
+            "l1_start_index": 21
+          }
+        ],
+        "text_l1": "On est plus ou moins euh",
+        "timestamp": "01:54.00",
+        "timestamp_end": "01:55.50"
+      },
+      {
+        "id": "phrase_64",
+        "words": [
+          {
+            "text": "Tu",
+            "timestamp": "01:55.50",
+            "l1_end_index": 1,
+            "timestamp_end": "01:56.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ne",
+            "timestamp": "01:56.00",
+            "l1_end_index": 4,
+            "timestamp_end": "01:56.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "sais",
+            "timestamp": "01:56.50",
+            "l1_end_index": 9,
+            "timestamp_end": "01:57.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "absolument",
+            "timestamp": "01:57.00",
+            "l1_end_index": 20,
+            "timestamp_end": "01:58.50",
+            "l1_start_index": 11
+          },
+          {
+            "text": "pas",
+            "timestamp": "01:58.50",
+            "l1_end_index": 24,
+            "timestamp_end": "01:59.20",
+            "l1_start_index": 22
+          },
+          {
+            "text": "qui",
+            "timestamp": "01:59.20",
+            "l1_end_index": 28,
+            "timestamp_end": "01:59.80",
+            "l1_start_index": 26
+          },
+          {
+            "text": "elle",
+            "timestamp": "01:59.80",
+            "l1_end_index": 33,
+            "timestamp_end": "02:00.40",
+            "l1_start_index": 30
+          },
+          {
+            "text": "est",
+            "timestamp": "02:00.40",
+            "l1_end_index": 37,
+            "timestamp_end": "02:01.00",
+            "l1_start_index": 35
+          }
+        ],
+        "text_l1": "Tu ne sais absolument pas qui elle est",
+        "timestamp": "01:55.50",
+        "timestamp_end": "02:01.00"
+      },
+      {
+        "id": "phrase_65",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "02:01.50",
+            "l1_end_index": 4,
+            "timestamp_end": "02:02.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "gênant",
+            "timestamp": "02:02.00",
+            "l1_end_index": 11,
+            "timestamp_end": "02:03.00",
+            "l1_start_index": 6
+          }
+        ],
+        "text_l1": "C'est gênant",
+        "timestamp": "02:01.50",
+        "timestamp_end": "02:03.00"
+      },
+      {
+        "id": "phrase_66",
+        "words": [
+          {
+            "text": "Tu",
+            "timestamp": "02:03.00",
+            "l1_end_index": 1,
+            "timestamp_end": "02:03.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "fais",
+            "timestamp": "02:03.30",
+            "l1_end_index": 6,
+            "timestamp_end": "02:03.60",
+            "l1_start_index": 3
+          },
+          {
+            "text": "juste",
+            "timestamp": "02:03.60",
+            "l1_end_index": 12,
+            "timestamp_end": "02:04.00",
+            "l1_start_index": 8
+          },
+          {
+            "text": "semblant",
+            "timestamp": "02:04.00",
+            "l1_end_index": 21,
+            "timestamp_end": "02:04.60",
+            "l1_start_index": 14
+          },
+          {
+            "text": "pour",
+            "timestamp": "02:04.60",
+            "l1_end_index": 26,
+            "timestamp_end": "02:04.90",
+            "l1_start_index": 23
+          },
+          {
+            "text": "pas",
+            "timestamp": "02:04.90",
+            "l1_end_index": 30,
+            "timestamp_end": "02:05.20",
+            "l1_start_index": 28
+          },
+          {
+            "text": "la",
+            "timestamp": "02:05.20",
+            "l1_end_index": 33,
+            "timestamp_end": "02:05.40",
+            "l1_start_index": 32
+          },
+          {
+            "text": "vexer",
+            "timestamp": "02:05.40",
+            "l1_end_index": 39,
+            "timestamp_end": "02:06.00",
+            "l1_start_index": 35
+          }
+        ],
+        "text_l1": "Tu fais juste semblant pour pas la vexer",
+        "timestamp": "02:03.00",
+        "timestamp_end": "02:06.00"
+      },
+      {
+        "id": "phrase_67",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "02:06.50",
+            "l1_end_index": 4,
+            "timestamp_end": "02:06.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "tellement",
+            "timestamp": "02:06.80",
+            "l1_end_index": 14,
+            "timestamp_end": "02:07.20",
+            "l1_start_index": 6
+          },
+          {
+            "text": "plus",
+            "timestamp": "02:07.20",
+            "l1_end_index": 19,
+            "timestamp_end": "02:07.40",
+            "l1_start_index": 16
+          },
+          {
+            "text": "simple",
+            "timestamp": "02:07.40",
+            "l1_end_index": 26,
+            "timestamp_end": "02:07.80",
+            "l1_start_index": 21
+          },
+          {
+            "text": "de",
+            "timestamp": "02:07.80",
+            "l1_end_index": 29,
+            "timestamp_end": "02:08.00",
+            "l1_start_index": 28
+          },
+          {
+            "text": "s'parler",
+            "timestamp": "02:08.00",
+            "l1_end_index": 38,
+            "timestamp_end": "02:08.80",
+            "l1_start_index": 31
+          }
+        ],
+        "text_l1": "C'est tellement plus simple de s'parler",
+        "timestamp": "02:06.50",
+        "timestamp_end": "02:08.80"
+      },
+      {
+        "id": "phrase_68",
+        "words": [
+          {
+            "text": "De",
+            "timestamp": "02:08.80",
+            "l1_end_index": 1,
+            "timestamp_end": "02:09.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ne",
+            "timestamp": "02:09.00",
+            "l1_end_index": 4,
+            "timestamp_end": "02:09.20",
+            "l1_start_index": 3
+          },
+          {
+            "text": "jamais",
+            "timestamp": "02:09.20",
+            "l1_end_index": 11,
+            "timestamp_end": "02:09.50",
+            "l1_start_index": 6
+          },
+          {
+            "text": "rien",
+            "timestamp": "02:09.50",
+            "l1_end_index": 16,
+            "timestamp_end": "02:09.80",
+            "l1_start_index": 13
+          },
+          {
+            "text": "se",
+            "timestamp": "02:09.80",
+            "l1_end_index": 19,
+            "timestamp_end": "02:10.00",
+            "l1_start_index": 18
+          },
+          {
+            "text": "cacher",
+            "timestamp": "02:10.00",
+            "l1_end_index": 26,
+            "timestamp_end": "02:10.80",
+            "l1_start_index": 21
+          }
+        ],
+        "text_l1": "De ne jamais rien se cacher",
+        "timestamp": "02:08.80",
+        "timestamp_end": "02:10.80"
+      },
+      {
+        "id": "phrase_69",
+        "words": [
+          {
+            "text": "Faut",
+            "timestamp": "02:10.80",
+            "l1_end_index": 3,
+            "timestamp_end": "02:11.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "savoir",
+            "timestamp": "02:11.10",
+            "l1_end_index": 10,
+            "timestamp_end": "02:11.40",
+            "l1_start_index": 5
+          },
+          {
+            "text": "excuser",
+            "timestamp": "02:11.40",
+            "l1_end_index": 18,
+            "timestamp_end": "02:11.80",
+            "l1_start_index": 12
+          },
+          {
+            "text": "les",
+            "timestamp": "02:11.80",
+            "l1_end_index": 22,
+            "timestamp_end": "02:12.00",
+            "l1_start_index": 20
+          },
+          {
+            "text": "gens",
+            "timestamp": "02:12.00",
+            "l1_end_index": 27,
+            "timestamp_end": "02:12.80",
+            "l1_start_index": 24
+          }
+        ],
+        "text_l1": "Faut savoir excuser les gens",
+        "timestamp": "02:10.80",
+        "timestamp_end": "02:12.80"
+      },
+      {
+        "id": "phrase_70",
+        "words": [
+          {
+            "text": "Qui",
+            "timestamp": "02:12.80",
+            "l1_end_index": 2,
+            "timestamp_end": "02:13.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "t'oublient",
+            "timestamp": "02:13.10",
+            "l1_end_index": 13,
+            "timestamp_end": "02:13.60",
+            "l1_start_index": 4
+          },
+          {
+            "text": "alors",
+            "timestamp": "02:13.60",
+            "l1_end_index": 19,
+            "timestamp_end": "02:14.00",
+            "l1_start_index": 15
+          },
+          {
+            "text": "que",
+            "timestamp": "02:14.00",
+            "l1_end_index": 23,
+            "timestamp_end": "02:14.20",
+            "l1_start_index": 21
+          },
+          {
+            "text": "toi",
+            "timestamp": "02:14.20",
+            "l1_end_index": 27,
+            "timestamp_end": "02:14.50",
+            "l1_start_index": 25
+          },
+          {
+            "text": "non",
+            "timestamp": "02:14.50",
+            "l1_end_index": 31,
+            "timestamp_end": "02:14.80",
+            "l1_start_index": 29
+          }
+        ],
+        "text_l1": "Qui t'oublient alors que toi non",
+        "timestamp": "02:12.80",
+        "timestamp_end": "02:14.80"
+      },
+      {
+        "id": "phrase_71",
+        "words": [
+          {
+            "text": "Faut",
+            "timestamp": "02:14.80",
+            "l1_end_index": 3,
+            "timestamp_end": "02:15.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "pas",
+            "timestamp": "02:15.10",
+            "l1_end_index": 7,
+            "timestamp_end": "02:15.30",
+            "l1_start_index": 5
+          },
+          {
+            "text": "en",
+            "timestamp": "02:15.30",
+            "l1_end_index": 10,
+            "timestamp_end": "02:15.50",
+            "l1_start_index": 9
+          },
+          {
+            "text": "faire",
+            "timestamp": "02:15.50",
+            "l1_end_index": 16,
+            "timestamp_end": "02:15.80",
+            "l1_start_index": 12
+          },
+          {
+            "text": "toute",
+            "timestamp": "02:15.80",
+            "l1_end_index": 22,
+            "timestamp_end": "02:16.00",
+            "l1_start_index": 18
+          },
+          {
+            "text": "une",
+            "timestamp": "02:16.00",
+            "l1_end_index": 26,
+            "timestamp_end": "02:16.20",
+            "l1_start_index": 24
+          },
+          {
+            "text": "histoire",
+            "timestamp": "02:16.20",
+            "l1_end_index": 35,
+            "timestamp_end": "02:16.50",
+            "l1_start_index": 28
+          }
+        ],
+        "text_l1": "Faut pas en faire toute une histoire",
+        "timestamp": "02:14.80",
+        "timestamp_end": "02:16.50"
+      },
+      {
+        "id": "phrase_72",
+        "words": [
+          {
+            "text": "Ne",
+            "timestamp": "02:16.50",
+            "l1_end_index": 1,
+            "timestamp_end": "02:16.70",
+            "l1_start_index": 0
+          },
+          {
+            "text": "lui",
+            "timestamp": "02:16.70",
+            "l1_end_index": 5,
+            "timestamp_end": "02:16.90",
+            "l1_start_index": 3
+          },
+          {
+            "text": "lance",
+            "timestamp": "02:16.90",
+            "l1_end_index": 11,
+            "timestamp_end": "02:17.20",
+            "l1_start_index": 7
+          },
+          {
+            "text": "pas",
+            "timestamp": "02:17.20",
+            "l1_end_index": 15,
+            "timestamp_end": "02:17.40",
+            "l1_start_index": 13
+          },
+          {
+            "text": "ce",
+            "timestamp": "02:17.40",
+            "l1_end_index": 18,
+            "timestamp_end": "02:17.60",
+            "l1_start_index": 17
+          },
+          {
+            "text": "regard",
+            "timestamp": "02:17.60",
+            "l1_end_index": 25,
+            "timestamp_end": "02:18.00",
+            "l1_start_index": 20
+          }
+        ],
+        "text_l1": "Ne lui lance pas ce regard",
+        "timestamp": "02:16.50",
+        "timestamp_end": "02:18.00"
+      },
+      {
+        "id": "phrase_73",
+        "words": [
+          {
+            "text": "Il",
+            "timestamp": "02:18.00",
+            "l1_end_index": 1,
+            "timestamp_end": "02:18.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "a",
+            "timestamp": "02:18.20",
+            "l1_end_index": 3,
+            "timestamp_end": "02:18.40",
+            "l1_start_index": 3
+          },
+          {
+            "text": "mauvaise",
+            "timestamp": "02:18.40",
+            "l1_end_index": 12,
+            "timestamp_end": "02:18.80",
+            "l1_start_index": 5
+          },
+          {
+            "text": "mémoire",
+            "timestamp": "02:18.80",
+            "l1_end_index": 20,
+            "timestamp_end": "02:19.20",
+            "l1_start_index": 14
+          }
+        ],
+        "text_l1": "Il a mauvaise mémoire",
+        "timestamp": "02:18.00",
+        "timestamp_end": "02:19.20"
+      },
+      {
+        "id": "phrase_74",
+        "words": [
+          {
+            "text": "On",
+            "timestamp": "02:19.20",
+            "l1_end_index": 1,
+            "timestamp_end": "02:19.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ne",
+            "timestamp": "02:19.80",
+            "l1_end_index": 4,
+            "timestamp_end": "02:20.40",
+            "l1_start_index": 3
+          },
+          {
+            "text": "sait",
+            "timestamp": "02:20.40",
+            "l1_end_index": 9,
+            "timestamp_end": "02:21.00",
+            "l1_start_index": 6
+          },
+          {
+            "text": "absolument",
+            "timestamp": "02:21.00",
+            "l1_end_index": 20,
+            "timestamp_end": "02:22.50",
+            "l1_start_index": 11
+          },
+          {
+            "text": "pas",
+            "timestamp": "02:22.50",
+            "l1_end_index": 24,
+            "timestamp_end": "02:23.20",
+            "l1_start_index": 22
+          },
+          {
+            "text": "qui",
+            "timestamp": "02:23.20",
+            "l1_end_index": 28,
+            "timestamp_end": "02:24.00",
+            "l1_start_index": 26
+          },
+          {
+            "text": "on",
+            "timestamp": "02:24.00",
+            "l1_end_index": 31,
+            "timestamp_end": "02:24.80",
+            "l1_start_index": 30
+          },
+          {
+            "text": "est",
+            "timestamp": "02:24.80",
+            "l1_end_index": 35,
+            "timestamp_end": "02:26.50",
+            "l1_start_index": 33
+          }
+        ],
+        "text_l1": "On ne sait absolument pas qui on est",
+        "timestamp": "02:19.20",
+        "timestamp_end": "02:26.50"
+      },
+      {
+        "id": "phrase_75",
+        "words": [
+          {
+            "text": "Ah",
+            "timestamp": "02:31.00",
+            "l1_end_index": 1,
+            "timestamp_end": "02:31.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "oui,",
+            "timestamp": "02:31.30",
+            "l1_end_index": 5,
+            "timestamp_end": "02:31.80",
+            "l1_start_index": 3
+          },
+          {
+            "text": "Mathilde.",
+            "timestamp": "02:31.80",
+            "l1_end_index": 15,
+            "timestamp_end": "02:33.00",
+            "l1_start_index": 8
+          }
+        ],
+        "text_l1": "Ah oui, Mathilde.",
+        "timestamp": "02:31.00",
+        "timestamp_end": "02:33.00"
+      },
+      {
+        "id": "phrase_76",
+        "words": [
+          {
+            "text": "Non.",
+            "timestamp": "02:33.00",
+            "l1_end_index": 2,
+            "timestamp_end": "02:34.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Non.",
+        "timestamp": "02:33.00",
+        "timestamp_end": "02:34.00"
+      },
+      {
+        "id": "phrase_77",
+        "words": [
+          {
+            "text": "Sophie?",
+            "timestamp": "02:34.00",
+            "l1_end_index": 5,
+            "timestamp_end": "02:35.00",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "Sophie?",
+        "timestamp": "02:34.00",
+        "timestamp_end": "02:35.00"
+      },
+      {
+        "id": "phrase_78",
+        "words": [
+          {
+            "text": "Non",
+            "timestamp": "02:35.00",
+            "l1_end_index": 2,
+            "timestamp_end": "02:35.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "plus.",
+            "timestamp": "02:35.50",
+            "l1_end_index": 7,
+            "timestamp_end": "02:36.00",
+            "l1_start_index": 4
+          }
+        ],
+        "text_l1": "Non plus.",
+        "timestamp": "02:35.00",
+        "timestamp_end": "02:36.00"
+      },
+      {
+        "id": "phrase_79",
+        "words": [
+          {
+            "text": "T'es",
+            "timestamp": "02:36.00",
+            "l1_end_index": 3,
+            "timestamp_end": "02:36.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "sûre?",
+            "timestamp": "02:36.50",
+            "l1_end_index": 8,
+            "timestamp_end": "02:37.00",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "T'es sûre?",
+        "timestamp": "02:36.00",
+        "timestamp_end": "02:37.00"
+      },
+      {
+        "id": "phrase_80",
+        "words": [
+          {
+            "text": "C'est",
+            "timestamp": "02:40.50",
+            "l1_end_index": 4,
+            "timestamp_end": "02:40.80",
+            "l1_start_index": 0
+          },
+          {
+            "text": "vrai",
+            "timestamp": "02:40.80",
+            "l1_end_index": 9,
+            "timestamp_end": "02:41.10",
+            "l1_start_index": 6
+          },
+          {
+            "text": "que",
+            "timestamp": "02:41.10",
+            "l1_end_index": 13,
+            "timestamp_end": "02:41.30",
+            "l1_start_index": 11
+          },
+          {
+            "text": "c'est",
+            "timestamp": "02:41.30",
+            "l1_end_index": 19,
+            "timestamp_end": "02:41.50",
+            "l1_start_index": 15
+          },
+          {
+            "text": "chiant",
+            "timestamp": "02:41.50",
+            "l1_end_index": 26,
+            "timestamp_end": "02:42.00",
+            "l1_start_index": 21
+          },
+          {
+            "text": "quand",
+            "timestamp": "02:42.00",
+            "l1_end_index": 32,
+            "timestamp_end": "02:42.30",
+            "l1_start_index": 28
+          },
+          {
+            "text": "même",
+            "timestamp": "02:42.30",
+            "l1_end_index": 37,
+            "timestamp_end": "02:42.60",
+            "l1_start_index": 34
+          },
+          {
+            "text": "hein.",
+            "timestamp": "02:42.60",
+            "l1_end_index": 42,
+            "timestamp_end": "02:43.00",
+            "l1_start_index": 39
+          }
+        ],
+        "text_l1": "C'est vrai que c'est chiant quand même hein.",
+        "timestamp": "02:40.50",
+        "timestamp_end": "02:43.00"
+      },
+      {
+        "id": "phrase_81",
+        "words": [
+          {
+            "text": "Mais",
+            "timestamp": "02:44.00",
+            "l1_end_index": 3,
+            "timestamp_end": "02:44.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "mais",
+            "timestamp": "02:44.30",
+            "l1_end_index": 8,
+            "timestamp_end": "02:44.50",
+            "l1_start_index": 5
+          },
+          {
+            "text": "toi",
+            "timestamp": "02:44.50",
+            "l1_end_index": 12,
+            "timestamp_end": "02:44.80",
+            "l1_start_index": 10
+          },
+          {
+            "text": "du",
+            "timestamp": "02:44.80",
+            "l1_end_index": 15,
+            "timestamp_end": "02:45.00",
+            "l1_start_index": 14
+          },
+          {
+            "text": "coup",
+            "timestamp": "02:45.00",
+            "l1_end_index": 20,
+            "timestamp_end": "02:45.20",
+            "l1_start_index": 17
+          },
+          {
+            "text": "t'es",
+            "timestamp": "02:45.20",
+            "l1_end_index": 25,
+            "timestamp_end": "02:45.40",
+            "l1_start_index": 22
+          },
+          {
+            "text": "qui",
+            "timestamp": "02:45.40",
+            "l1_end_index": 29,
+            "timestamp_end": "02:45.60",
+            "l1_start_index": 27
+          },
+          {
+            "text": "en",
+            "timestamp": "02:45.60",
+            "l1_end_index": 32,
+            "timestamp_end": "02:45.80",
+            "l1_start_index": 31
+          },
+          {
+            "text": "fait?",
+            "timestamp": "02:45.80",
+            "l1_end_index": 37,
+            "timestamp_end": "02:46.00",
+            "l1_start_index": 34
+          }
+        ],
+        "text_l1": "Mais mais toi du coup t'es qui en fait?",
+        "timestamp": "02:44.00",
+        "timestamp_end": "02:46.00"
+      },
+      {
+        "id": "phrase_82",
+        "words": [
+          {
+            "text": "Ah",
+            "timestamp": "02:46.00",
+            "l1_end_index": 1,
+            "timestamp_end": "02:46.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "bah",
+            "timestamp": "02:46.30",
+            "l1_end_index": 5,
+            "timestamp_end": "02:46.50",
+            "l1_start_index": 3
+          },
+          {
+            "text": "ouais.",
+            "timestamp": "02:46.50",
+            "l1_end_index": 11,
+            "timestamp_end": "02:47.00",
+            "l1_start_index": 7
+          },
+          {
+            "text": "Ouais",
+            "timestamp": "02:47.00",
+            "l1_end_index": 18,
+            "timestamp_end": "02:47.50",
+            "l1_start_index": 14
+          },
+          {
+            "text": "ouais.",
+            "timestamp": "02:47.50",
+            "l1_end_index": 24,
+            "timestamp_end": "02:48.00",
+            "l1_start_index": 20
+          }
+        ],
+        "text_l1": "Ah bah ouais. Ouais ouais.",
+        "timestamp": "02:46.00",
+        "timestamp_end": "02:48.00"
+      }
+    ],
+    "translations": {
+      "en": {
+        "lessons": "# Les Retrouvailles Inattendues\n00:01.80 Alex?\n00:02.80 Ouais.\n00:03.50 Ça va?\n00:04.50 Ça va et toi?\n00:05.50 Ben ouais ouais c'est marrant\n00:06.50 parce que je parlais de toi y'a 2 jours à\n00:08.00 À Guillaume j'lui disais\n00:09.20 Avec Alex on s'voit plus\n\n# Prendre un Numéro\n00:11.00 Ben non.\n00:12.00 Faut qu'on se refasse une bouffe\n00:13.50 un de ces quatre comme l'autre fois.\n00:15.00 T'as mon numéro prends le\n00:16.00 Ouais\n00:16.50 Prends mon numéro\n00:17.50 Ouais\n00:18.00 07\n\n# Le Moment de Vérité (Part 1)\n00:19.00 Attends attends\n00:20.00 07\n00:21.00 Ouais\n00:21.50 42\n00:23.00 Écoute j'préfère t'arrêter tout de suite\n00:25.00 J'espère que tu n'es pas trop susceptible\n00:27.80 Mais faut vraiment que je t'avoue\n00:29.80 un truc pénible\n\n# Le Moment de Vérité (Part 2)\n00:33.00 Depuis que tu m'parles je souris bêtement\n00:36.00 Je t'écoute gentiment\n00:38.00 Mais je ne sais absolument pas qui tu es\n00:42.50 C'est gênant\n00:44.00 J'fais juste semblant\n00:45.50 Pour pas t'vexer\n\n# Les Regrets et les Excuses\n00:47.80 J'espère qu'on s'est juste croisés\n00:50.00 Un soir où j'étais bourré\n00:52.50 Un truc qui pourrait justifier\n00:54.50 que j't'ai oublié\n00:57.00 En ce moment j'aimerais bien disparaître\n01:01.50 Ou plutôt remonter dans le temps\n01:05.50 Genre 30 secondes avant maintenant\n\n# Si Seulement...\n01:10.80 Je te verrais arriver\n01:12.00 J'irais me cacher comme ça\n01:13.50 Tu viendrais pas me parler\n01:15.00 Car je ne sais absolument pas qui tu es\n01:18.00 Mais j'vais te l'dire\n01:19.50 Tu m'dis rien et toi t'as l'air de m'connaître si bien\n01:23.00 Par contre faut que t'arrêtes de chanter\n\n# Les Souvenirs Flous\n01:24.50 Je rencontre beaucoup trop de gens\n01:26.50 C'est pas de ta faute sincèrement\n01:28.50 Ne m'dis pas qu'on a pris une bière récemment\n01:32.00 Si fin non on a pris un café\n01:34.00 T'étais avec tes amis\n01:36.00 On a discuté tout l'après midi\n01:37.70 De chansons d'art de culture c'était\n\n# L'Arrivée de Flo\n01:39.50 Flo\n01:40.00 Ça va?\n01:41.00 Heeeeey\n01:42.50 Bah alors quoi de neuf\n01:43.80 Et bah alors toi quoi de neuf\n01:45.20 Incroyable\n01:47.00 Tu me présentes pas\n\n# Les Présentations Difficiles\n01:49.00 Si oula pardon oui alors\n01:50.20 Alex\n01:51.00 Alex euhhh mon amie\n01:52.50 C'est mon amie en fait\n01:54.00 On est plus ou moins euh\n01:55.50 Tu ne sais absolument pas qui elle est\n02:01.50 C'est gênant\n02:03.00 Tu fais juste semblant pour pas la vexer\n\n# La Vérité en Chanson\n02:06.50 C'est tellement plus simple de s'parler\n02:08.80 De ne jamais rien se cacher\n02:10.80 Faut savoir excuser les gens\n02:12.80 Qui t'oublient alors que toi non\n02:14.80 Faut pas en faire toute une histoire\n02:16.50 Ne lui lance pas ce regard\n02:18.00 Il a mauvaise mémoire\n02:19.20 On ne sait absolument pas qui on est\n\n# Deviner le Prénom\n02:31.00 Ah oui, Mathilde.\n02:33.00 Non.\n02:34.00 Sophie?\n02:35.00 Non plus.\n02:36.00 T'es sûre?\n02:40.50 C'est vrai que c'est chiant quand même hein.\n02:44.00 Mais mais toi du coup t'es qui en fait?\n02:46.00 Ah bah ouais. Ouais ouais.",
+        "phrases": [
+          {
+            "text": "Alex?",
+            "words": [
+              "Alex?"
+            ]
+          },
+          {
+            "text": "Yeah.",
+            "words": [
+              "Yeah"
+            ]
+          },
+          {
+            "text": "How are you?",
+            "words": [
+              "It",
+              "going?"
+            ]
+          },
+          {
+            "text": "Good, and you?",
+            "words": [
+              "It",
+              "is going",
+              "and",
+              "you?"
+            ]
+          },
+          {
+            "text": "Yeah, yeah, it's funny",
+            "words": [
+              "Well",
+              "yeah",
+              "yeah",
+              "it's",
+              "funny"
+            ]
+          },
+          {
+            "text": "because I was talking about you 2 days ago to",
+            "words": [
+              "because",
+              "that",
+              "I",
+              "was talking",
+              "about",
+              "you",
+              "ago",
+              "2",
+              "days",
+              "to"
+            ]
+          },
+          {
+            "text": "To Guillaume, I was telling him",
+            "words": [
+              "To",
+              "Guillaume",
+              "I to him",
+              "was saying"
+            ]
+          },
+          {
+            "text": "Alex and I don't see each other anymore",
+            "words": [
+              "With",
+              "Alex",
+              "we",
+              "see each other",
+              "anymore"
+            ]
+          },
+          {
+            "text": "Well, no.",
+            "words": [
+              "Well",
+              "no"
+            ]
+          },
+          {
+            "text": "We need to get food again",
+            "words": [
+              "We need to",
+              "that we",
+              "ourselves",
+              "redo",
+              "a",
+              "meal"
+            ]
+          },
+          {
+            "text": "one of these days like last time.",
+            "words": [
+              "one",
+              "of",
+              "these",
+              "four",
+              "like",
+              "the other",
+              "time"
+            ]
+          },
+          {
+            "text": "You have my number, take it",
+            "words": [
+              "You have",
+              "my",
+              "number",
+              "take",
+              "it"
+            ]
+          },
+          {
+            "text": "Yeah",
+            "words": [
+              "Yeah"
+            ]
+          },
+          {
+            "text": "Take my number",
+            "words": [
+              "Take",
+              "my",
+              "number"
+            ]
+          },
+          {
+            "text": "Yeah",
+            "words": [
+              "Yeah"
+            ]
+          },
+          {
+            "text": "07",
+            "words": [
+              "07"
+            ]
+          },
+          {
+            "text": "Wait, wait",
+            "words": [
+              "Wait",
+              "wait"
+            ]
+          },
+          {
+            "text": "07",
+            "words": [
+              "07"
+            ]
+          },
+          {
+            "text": "Yeah",
+            "words": [
+              "Yeah"
+            ]
+          },
+          {
+            "text": "42",
+            "words": [
+              "42"
+            ]
+          },
+          {
+            "text": "Listen, I'd rather stop you right now",
+            "words": [
+              "Listen",
+              "I prefer",
+              "to stop you",
+              "right",
+              "de",
+              "away"
+            ]
+          },
+          {
+            "text": "I hope you're not too sensitive",
+            "words": [
+              "I hope",
+              "that",
+              "you",
+              "are",
+              "not",
+              "too",
+              "sensitive"
+            ]
+          },
+          {
+            "text": "But I really have to confess to you",
+            "words": [
+              "But",
+              "I must",
+              "really",
+              "that",
+              "I",
+              "confess to you"
+            ]
+          },
+          {
+            "text": "something painful",
+            "words": [
+              "a",
+              "thing",
+              "awkward"
+            ]
+          },
+          {
+            "text": "Since you've been talking to me, I've been smiling foolishly",
+            "words": [
+              "Since",
+              "that",
+              "you",
+              "are talking to me",
+              "I",
+              "am smiling",
+              "foolishly"
+            ]
+          },
+          {
+            "text": "I'm listening to you politely",
+            "words": [
+              "I",
+              "am listening to you",
+              "politely"
+            ]
+          },
+          {
+            "text": "But I have absolutely no idea who you are",
+            "words": [
+              "But",
+              "I",
+              "do",
+              "know",
+              "absolutely",
+              "not",
+              "who",
+              "you",
+              "are"
+            ]
+          },
+          {
+            "text": "It's awkward",
+            "words": [
+              "It's",
+              "embarrassing"
+            ]
+          },
+          {
+            "text": "I'm just pretending",
+            "words": [
+              "I'm pretending",
+              "just",
+              "pretending"
+            ]
+          },
+          {
+            "text": "So I don't offend you",
+            "words": [
+              "To",
+              "not",
+              "offend you"
+            ]
+          },
+          {
+            "text": "I hope we just crossed paths",
+            "words": [
+              "I hope",
+              "that we",
+              "have",
+              "just",
+              "crossed paths"
+            ]
+          },
+          {
+            "text": "One night when I was drunk",
+            "words": [
+              "One",
+              "night",
+              "when",
+              "I was",
+              "drunk"
+            ]
+          },
+          {
+            "text": "Something that could justify",
+            "words": [
+              "A",
+              "thing",
+              "that",
+              "could",
+              "justify"
+            ]
+          },
+          {
+            "text": "that I forgot you",
+            "words": [
+              "that",
+              "I have you",
+              "forgotten"
+            ]
+          },
+          {
+            "text": "Right now I would really like to disappear",
+            "words": [
+              "At",
+              "this",
+              "moment",
+              "I would like",
+              "really",
+              "to disappear"
+            ]
+          },
+          {
+            "text": "Or rather go back in time",
+            "words": [
+              "Or",
+              "rather",
+              "to go back",
+              "in",
+              "the",
+              "time"
+            ]
+          },
+          {
+            "text": "Like 30 seconds before now",
+            "words": [
+              "Like",
+              "30",
+              "seconds",
+              "before",
+              "now"
+            ]
+          },
+          {
+            "text": "I would see you coming",
+            "words": [
+              "I",
+              "you",
+              "would see",
+              "arrive"
+            ]
+          },
+          {
+            "text": "I would go hide so that",
+            "words": [
+              "I would go",
+              "myself",
+              "hide",
+              "like",
+              "that"
+            ]
+          },
+          {
+            "text": "You wouldn't come talk to me",
+            "words": [
+              "You",
+              "would come",
+              "not",
+              "to me",
+              "talk"
+            ]
+          },
+          {
+            "text": "Because I have absolutely no idea who you are",
+            "words": [
+              "For",
+              "I",
+              "do",
+              "know",
+              "absolutely",
+              "not",
+              "who",
+              "you",
+              "are"
+            ]
+          },
+          {
+            "text": "But I'm going to tell you",
+            "words": [
+              "But",
+              "I am going",
+              "to you",
+              "say it"
+            ]
+          },
+          {
+            "text": "You don't ring a bell and you seem to know me so well",
+            "words": [
+              "You",
+              "tell me",
+              "nothing",
+              "and",
+              "you",
+              "you have",
+              "seem",
+              "to",
+              "know me",
+              "so",
+              "well"
+            ]
+          },
+          {
+            "text": "On the other hand, you need to stop singing",
+            "words": [
+              "By",
+              "against",
+              "you must",
+              "that",
+              "you stop",
+              "to",
+              "singing"
+            ]
+          },
+          {
+            "text": "I meet way too many people",
+            "words": [
+              "I",
+              "meet",
+              "a lot",
+              "too",
+              "of",
+              "people"
+            ]
+          },
+          {
+            "text": "It's not your fault, sincerely",
+            "words": [
+              "It's",
+              "not",
+              "of",
+              "your",
+              "fault",
+              "honestly"
+            ]
+          },
+          {
+            "text": "Don't tell me we had a beer recently",
+            "words": [
+              "Don't",
+              "tell me",
+              "not",
+              "that we",
+              "have",
+              "had",
+              "a",
+              "beer",
+              "recently"
+            ]
+          },
+          {
+            "text": "Yes, well, no, we had a coffee",
+            "words": [
+              "Yes",
+              "well",
+              "no",
+              "we",
+              "have",
+              "had",
+              "a",
+              "coffee"
+            ]
+          },
+          {
+            "text": "You were with your friends",
+            "words": [
+              "You were",
+              "with",
+              "your",
+              "friends"
+            ]
+          },
+          {
+            "text": "We talked all afternoon",
+            "words": [
+              "We",
+              "have",
+              "talked",
+              "all",
+              "afternoon",
+              "noon"
+            ]
+          },
+          {
+            "text": "About songs, art, culture, it was",
+            "words": [
+              "About",
+              "songs",
+              "of art",
+              "of",
+              "culture",
+              "it was"
+            ]
+          },
+          {
+            "text": "Flo",
+            "words": [
+              "Flo"
+            ]
+          },
+          {
+            "text": "How are you?",
+            "words": [
+              "How",
+              "going?"
+            ]
+          },
+          {
+            "text": "Heeeeey",
+            "words": [
+              "Heeeeey"
+            ]
+          },
+          {
+            "text": "So, what's new?",
+            "words": [
+              "Well",
+              "then",
+              "what",
+              "of",
+              "new"
+            ]
+          },
+          {
+            "text": "And so, what's new with you?",
+            "words": [
+              "And",
+              "well",
+              "then",
+              "you",
+              "what",
+              "of",
+              "new"
+            ]
+          },
+          {
+            "text": "Incredible",
+            "words": [
+              "Incredible"
+            ]
+          },
+          {
+            "text": "You're not introducing me?",
+            "words": [
+              "You",
+              "me",
+              "introduce",
+              "not"
+            ]
+          },
+          {
+            "text": "Yes, oh, sorry, yes, so",
+            "words": [
+              "Yes",
+              "whoa",
+              "sorry",
+              "yes",
+              "so"
+            ]
+          },
+          {
+            "text": "Alex",
+            "words": [
+              "Alex"
+            ]
+          },
+          {
+            "text": "Alex, uhhh, my friend",
+            "words": [
+              "Alex",
+              "uhhh",
+              "my",
+              "friend"
+            ]
+          },
+          {
+            "text": "She's my friend, actually",
+            "words": [
+              "She's",
+              "my",
+              "friend",
+              "in",
+              "fact"
+            ]
+          },
+          {
+            "text": "We are more or less, uh",
+            "words": [
+              "We",
+              "are",
+              "more",
+              "or",
+              "less",
+              "uh"
+            ]
+          },
+          {
+            "text": "You have absolutely no idea who she is",
+            "words": [
+              "You",
+              "do",
+              "know",
+              "absolutely",
+              "not",
+              "who",
+              "she",
+              "is"
+            ]
+          },
+          {
+            "text": "It's awkward",
+            "words": [
+              "It's",
+              "awkward"
+            ]
+          },
+          {
+            "text": "You're just pretending so you don't offend her",
+            "words": [
+              "You",
+              "make",
+              "just",
+              "pretend",
+              "to",
+              "not",
+              "her",
+              "upset"
+            ]
+          },
+          {
+            "text": "It's so much simpler to talk to each other",
+            "words": [
+              "It's",
+              "so",
+              "more",
+              "simple",
+              "to",
+              "talk to each other"
+            ]
+          },
+          {
+            "text": "To never hide anything from each other",
+            "words": [
+              "To",
+              "not",
+              "never",
+              "anything",
+              "each other",
+              "hide"
+            ]
+          },
+          {
+            "text": "You have to know how to excuse people",
+            "words": [
+              "You have to",
+              "know how to",
+              "forgive",
+              "the",
+              "people"
+            ]
+          },
+          {
+            "text": "Who forget you when you don't",
+            "words": [
+              "Who",
+              "forget you",
+              "even",
+              "though",
+              "you",
+              "don't"
+            ]
+          },
+          {
+            "text": "You shouldn't make a big deal out of it",
+            "words": [
+              "You have to",
+              "not",
+              "of it",
+              "make",
+              "a whole",
+              "a",
+              "fuss"
+            ]
+          },
+          {
+            "text": "Don't give him that look",
+            "words": [
+              "Don't",
+              "him",
+              "give",
+              "not",
+              "that",
+              "look"
+            ]
+          },
+          {
+            "text": "He has a bad memory",
+            "words": [
+              "He",
+              "has",
+              "bad",
+              "memory"
+            ]
+          },
+          {
+            "text": "We have absolutely no idea who we are",
+            "words": [
+              "We",
+              "do",
+              "know",
+              "absolutely",
+              "not",
+              "who",
+              "we",
+              "are"
+            ]
+          },
+          {
+            "text": "Oh yes, Mathilde.",
+            "words": [
+              "Ah",
+              "yes,",
+              "Mathilde."
+            ]
+          },
+          {
+            "text": "No.",
+            "words": [
+              "No."
+            ]
+          },
+          {
+            "text": "Sophie?",
+            "words": [
+              "Sophie?"
+            ]
+          },
+          {
+            "text": "Not that either.",
+            "words": [
+              "No",
+              "either."
+            ]
+          },
+          {
+            "text": "Are you sure?",
+            "words": [
+              "You're",
+              "sure?"
+            ]
+          },
+          {
+            "text": "It's true that it's annoying, though.",
+            "words": [
+              "It's",
+              "true",
+              "that",
+              "it's",
+              "annoying",
+              "even",
+              "though",
+              "eh."
+            ]
+          },
+          {
+            "text": "But, but then, who are you, actually?",
+            "words": [
+              "But",
+              "but",
+              "you",
+              "then",
+              "anyway",
+              "are you",
+              "who",
+              "in",
+              "fact?"
+            ]
+          },
+          {
+            "text": "Oh, well, yeah. Yeah, yeah.",
+            "words": [
+              "Ah",
+              "well",
+              "yeah.",
+              "Yeah",
+              "yeah."
+            ]
+          }
+        ],
+        "language_id": 43,
+        "language_name": "English"
+      }
+    },
+    "format_version": 2,
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "score": 4,
+        "title": "Les Retrouvailles Inattendues",
+        "reason": "Provides natural conversational French and common informal expressions."
+      },
+      {
+        "index": 2,
+        "score": 5,
+        "title": "Prendre un Numéro",
+        "reason": "Excellent informal vocabulary like 'se refasse une bouffe' and 'un de ces quatre'."
+      },
+      {
+        "index": 3,
+        "score": 5,
+        "title": "Le Moment de Vérité (Part 1)",
+        "reason": "Great vocabulary including 'susceptible', 'avouer', and 'pénible'."
+      },
+      {
+        "index": 4,
+        "score": 5,
+        "title": "Le Moment de Vérité (Part 2)",
+        "reason": "High-quality vocabulary and grammar, featuring adverbs and expressions like 'faire semblant'."
+      },
+      {
+        "index": 5,
+        "score": 5,
+        "title": "Les Regrets et les Excuses",
+        "reason": "Rich in colloquial expressions and useful verbs like 'se croiser' and 'disparaître'."
+      },
+      {
+        "index": 6,
+        "score": 5,
+        "title": "Si Seulement...",
+        "reason": "Great practice for conditional tense verbs and expressions like 'avoir l'air de'."
+      },
+      {
+        "index": 7,
+        "score": 4,
+        "title": "Les Souvenirs Flous",
+        "reason": "Good conversational practice using past tenses and adverbs like 'sincèrement'."
+      },
+      {
+        "index": 8,
+        "score": 3,
+        "title": "L'Arrivée de Flo",
+        "reason": "Short and consists mostly of basic greetings and repetitive filler."
+      },
+      {
+        "index": 9,
+        "score": 2,
+        "title": "Les Présentations Difficiles",
+        "reason": "Mostly repeats the structure and key lines of Lesson 4 with minor pronoun changes."
+      },
+      {
+        "index": 10,
+        "score": 5,
+        "title": "La Vérité en Chanson",
+        "reason": "Full of rich idiomatic expressions like 'en faire toute une histoire' and 'lancer un regard'."
+      },
+      {
+        "index": 11,
+        "score": 3,
+        "title": "Deviner le Prénom",
+        "reason": "Contains a few useful colloquialisms like 'chiant' and 'du coup', but is mostly names and filler."
+      }
+    ],
+    "similar_sounds": "[lex]\n[jouais]\nÇa va et [moi]\n[bien] ouais ouais c'est marrant\nparce que je parlais de toi y'a [tours] à\nÀ Guillaume [joli] disais\nAvec Alex on s'voit [plu]\n[bon] non\n[fut] qu'on se refasse une bouffe\nun de ces quatre comme l'autre [lois]\nT'as mon numéro [rends] le\n[quais]\n[rends] mon numéro\n[ruais]\n[attendus] attends\n[ruais]\nÉcoute j'préfère t'arrêter tout de [site]\nJ'espère que tu n'es [par] trop susceptible\nMais faut vraiment [qui] je t'avoue\nun truc [pénibles]\nDepuis que tu [parles] je souris bêtement\nJe [écoute] gentiment\nMais je ne sais absolument pas [que] tu es\n[ces] gênant\nJ'fais [buste] semblant\n[jour] pas t'vexer\nJ'espère qu'on s'est juste [croisée]\nUn soir où j'étais [fourré]\nUn truc qui pourrait [justicier]\nque [jetai] oublié\nEn ce [moments] j'aimerais bien disparaître\nOu plutôt [remontera] dans le temps\nGenre secondes avant [maintenance]\nJe te [verras] arriver\n[tirais] me cacher comme ça\nTu [prendrais] pas me parler\nCar je ne sais [résolument] pas qui tu es\nMais [vais] te l'dire\nTu m'dis rien et toi t'as l'air de [connaître] si bien\nPar [centre] faut que t'arrêtes de chanter\nJe rencontre beaucoup trop de [mens]\nC'est [pays] de ta faute sincèrement\nNe m'dis [cas] qu'on a pris une bière récemment\nSi fin non on a pris un [caté]\n[thétis] avec tes amis\nOn a discuté tout [après] midi\nDe [chanson] d'art de culture c'était\n[fol]\nHeeeeey\n[ah] alors quoi de neuf\nEt [bas] alors toi quoi de neuf\n[incroyance]\nTu me présentes [pays]\nSi oula [gardon] oui alors\n[alep]\nAlex euhhh [on] amie\nC'est mon amie en [faut]\nOn est plus ou [mois] euh\nTu ne sais absolument pas qui [telle] est\nC'est [gênait]\nTu fais juste [semblent] pour pas la vexer\nC'est tellement [pus] simple de s'parler\nDe ne jamais [sien] se cacher\nFaut savoir [excuse] les gens\nQui t'oublient [aloès] que toi non\n[fut] pas en faire toute une histoire\nNe lui lance [cas] ce regard\nIl a [mauvaises] mémoire\nOn ne sait absolument [cas] qui on est\nAh [ou] Mathilde\n[on]\n[copie]\n[nos] plus\nT'es [sire]\nC'est vrai que [ces] chiant quand même hein\nMais mais toi du coup t'es [lui] en fait\nAh bah ouais [quais] ouais",
+    "video_length_seconds": 172,
+    "extract_lyrics_in_progress": false
+  },
+  "created_at": "2026-07-19 10:56:36 UTC",
+  "updated_at": "2026-07-19 11:01:17 UTC",
+  "exported_at": "2026-07-19T11:04:12Z"
+}

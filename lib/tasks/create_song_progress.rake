@@ -1,13 +1,14 @@
 namespace :create_song_progress do
-  desc "Run the Deno pipeline and wait (youtube_url, clip_language, translation_language)"
-  task :pipeline, [ :youtube_url, :clip_language, :translation_language ] => :environment do |_task, args|
+  desc "Run the Deno pipeline, create the course, and wait (youtube_url, clip_language, translation_language, creator_email)"
+  task :pipeline, [ :youtube_url, :clip_language, :translation_language, :creator_email ] => :environment do |_task, args|
     if args.values_at(:youtube_url, :clip_language, :translation_language).any?(&:blank?)
       abort <<~USAGE
-        Usage: rake "create_song_progress:pipeline[youtube_url,clip_language,translation_language]"
-        Example: rake "create_song_progress:pipeline[https://www.youtube.com/watch?v=XXXX,French,Hebrew]"
+        Usage: rake "create_song_progress:pipeline[youtube_url,clip_language,translation_language,creator_email]"
+        Example: rake "create_song_progress:pipeline[https://www.youtube.com/watch?v=XXXX,French,Hebrew,ynon@hey.com]"
 
         Start Rails separately with the same PIPELINE_HMAC_SECRET. The callback base URL
         defaults to http://localhost:3000 and can be changed with PIPELINE_CALLBACK_BASE_URL.
+        creator_email defaults to COURSE_CREATOR_EMAIL, then ynon@hey.com.
       USAGE
     end
 
@@ -19,6 +20,13 @@ namespace :create_song_progress do
     ).call
 
     puts "Deno pipeline finished successfully for CreateSongProgress #{progress.id}."
+
+    creator_email = args[:creator_email].presence || ENV["COURSE_CREATOR_EMAIL"].presence || "ynon@hey.com"
+    creator = User.find_by(email: creator_email)
+    raise ArgumentError, "unknown course creator: #{creator_email}" unless creator
+
+    ImportCourseJob.perform_now(progress.id, creator.id)
+    puts "Course created successfully for CreateSongProgress #{progress.id}."
   rescue ArgumentError => e
     abort e.message
   end

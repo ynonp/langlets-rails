@@ -8,6 +8,7 @@ class PhraseToken < ApplicationRecord
           -> { where(language_id: Current.translation_language_id) },
           class_name: "TokenTranslation"
   has_many :phrase_token_users, dependent: :destroy
+  has_many :activity_phrase_tokens, dependent: :destroy
   has_one_attached :l1_audio, service: :s3_public
 
   attribute :index_type, :integer

@@ -44,9 +44,9 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
 
   return {
     extractLyrics: log(google("gemini-3.5-flash"), "extract_lyrics"),
-    addLessons: log(ollama("deepseek-v4-pro:cloud"), "add_lessons"),
-    rateLessons: log(ollama("deepseek-v4-pro:cloud"), "rate_lessons"),
-    translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
-    tokenTranslations: log(ollama("deepseek-v4-pro:cloud"), "add_token_translations"),
+    addLessons: log(google("gemini-3.5-flash"), "add_lessons"),
+    rateLessons: log(google("gemini-3.5-flash"), "rate_lessons"),
+    translate: log(google("gemini-3.5-flash"), "translate"),
+    tokenTranslations: log(google("gemini-3.5-flash"), "add_token_translations"),
   };
 }

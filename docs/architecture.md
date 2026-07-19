@@ -90,10 +90,14 @@ and keeps exports possible for any course whose original pipeline record is
 long gone.
 
 For local/manual pipeline runs, `rake
-"create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE]"`
+"create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
 resolves the target `Language`, creates or reuses the shared progress row,
 exports its latest database state to a temporary file, and runs the Deno CLI
-synchronously. The callback server must already be running; its base URL is
+synchronously. After the Deno process succeeds, the task synchronously runs
+`ImportCourseJob` to build and publish the course. The optional creator email
+falls back to `COURSE_CREATOR_EMAIL`, then the administrative
+`ynon@hey.com` account. Course creation is not attempted when the pipeline
+fails. The callback server must already be running; its base URL is
 `PIPELINE_CALLBACK_BASE_URL` (default `http://localhost:3000`). Rails and the
 task must share `PIPELINE_HMAC_SECRET`, while the task process also supplies
 the model provider keys inherited by Deno. A retry always re-exports first, so
@@ -157,7 +161,11 @@ status fails the rake task.
 - **Purpose**: Store one video transcription in its spoken language.
 - **Identity**: `(url, language_id)`. L2 data is stored below phrases, so a new
   target language reuses this row and its L1 phrases.
-- **Relationships**: Belongs to the clip `Language`; has many Lessons and Phrases.
+- **Relationships**: Belongs to the clip `Language`; owns Lessons and Phrases.
+  Destroying a Medium cascades through its lessons, activities, phrases,
+  translations, phrase tokens, saved-token references, activity join rows,
+  similar sounds, and Active Storage attachments. Historical ActivityLogs are
+  retained with their optional lesson reference nullified.
 
 #### 6. **Course** (`courses`)
 - **Purpose**: Group lessons into structured playlists

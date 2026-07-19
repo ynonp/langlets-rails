@@ -2,7 +2,8 @@ require 'pycall/import'
 
 class Medium < ApplicationRecord
   include PyCall::Import
-  has_many :phrases
+  has_many :lessons, dependent: :destroy
+  has_many :phrases, dependent: :destroy
   belongs_to :language
 
   # One row per video and spoken language. Translations are attached below it.
