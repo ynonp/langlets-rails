@@ -11,6 +11,10 @@ Rails.application.routes.draw do
 
   match "/mcp", to: "mcp#handle", via: [ :get, :post, :delete ]
 
+  # Progress patches from the Create Song pipeline service (HMAC-signed; see
+  # pipeline/README.md for the protocol).
+  post "/pipeline_callbacks/:id", to: "pipeline_callbacks#update", as: :pipeline_callback
+
   namespace :api do
     namespace :v1 do
       get "vocabulary", to: "vocabulary#index"

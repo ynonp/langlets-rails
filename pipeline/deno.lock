@@ -1,0 +1,105 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/assert@^1.0.13": "1.0.19",
+    "jsr:@std/cli@1": "1.0.29",
+    "jsr:@std/internal@^1.0.12": "1.0.14",
+    "npm:@ai-sdk/google@^2.0.17": "2.0.82_zod@3.25.76",
+    "npm:@ai-sdk/openai-compatible@^1.0.11": "1.0.46_zod@3.25.76",
+    "npm:ai@^5.0.44": "5.0.216_zod@3.25.76",
+    "npm:zod@^3.25.76": "3.25.76"
+  },
+  "jsr": {
+    "@std/assert@1.0.19": {
+      "integrity": "eaada96ee120cb980bc47e040f82814d786fe8162ecc53c91d8df60b8755991e",
+      "dependencies": [
+        "jsr:@std/internal"
+      ]
+    },
+    "@std/cli@1.0.29": {
+      "integrity": "fa4ef29130baa834d8a13b7d138240c3a2fcfba740bfb7afa646a360a15ec84f"
+    },
+    "@std/internal@1.0.14": {
+      "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
+    }
+  },
+  "npm": {
+    "@ai-sdk/gateway@2.0.115_zod@3.25.76": {
+      "integrity": "sha512-BLN5eLjzg6mKkbxAf6oP8Z7mEyRihrDzBJr7QlNPZTFvgZJ15peoflUJuskTCZFaisqelj1P4Se1pHY8QBBgBA==",
+      "dependencies": [
+        "@ai-sdk/provider",
+        "@ai-sdk/provider-utils",
+        "@vercel/oidc",
+        "zod"
+      ]
+    },
+    "@ai-sdk/google@2.0.82_zod@3.25.76": {
+      "integrity": "sha512-5Sl8QOvx7ificYVyM6X9Qh4yGhNk7nOMfBdBKtYYeC0YHUOnR+mJVodh+AOtBMZ5eR0X9iPitW7UXC1PPiprrw==",
+      "dependencies": [
+        "@ai-sdk/provider",
+        "@ai-sdk/provider-utils",
+        "zod"
+      ]
+    },
+    "@ai-sdk/openai-compatible@1.0.46_zod@3.25.76": {
+      "integrity": "sha512-l++VpNaAntmdp2zqUhfHJy11hGJGvsjQW4yFXv5pJ3kh0xOlrz8X3IUvlygrJJtdsuSdPzbhk2CWuclJV2Z1Eg==",
+      "dependencies": [
+        "@ai-sdk/provider",
+        "@ai-sdk/provider-utils",
+        "zod"
+      ]
+    },
+    "@ai-sdk/provider-utils@3.0.30_zod@3.25.76": {
+      "integrity": "sha512-NCJ9JKow5ENAgEZxzvEvF20thwDiH+hutvzmrUDbloRX0azpJHNst8+7pZIVryYhLM9wgpT5/ShTSjPTFhkxEQ==",
+      "dependencies": [
+        "@ai-sdk/provider",
+        "@standard-schema/spec",
+        "eventsource-parser",
+        "zod"
+      ]
+    },
+    "@ai-sdk/provider@2.0.3": {
+      "integrity": "sha512-h88OPkavHTiN9tMn2l5awAznGB0lXzjcLhgR1/rvjB2zlLprsNxbM2tt6OJsHUxduLC3klq0/eqaSf6fX5XVww==",
+      "dependencies": [
+        "json-schema"
+      ]
+    },
+    "@opentelemetry/api@1.9.0": {
+      "integrity": "sha512-3giAOQvZiH5F9bMlMiv8+GSPMeqg0dbaeo58/0SlA9sxSqZhnUtxzX9/2FzyhS9sWQf5S0GJE0AKBrFqjpeYcg=="
+    },
+    "@standard-schema/spec@1.1.0": {
+      "integrity": "sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w=="
+    },
+    "@vercel/oidc@3.1.0": {
+      "integrity": "sha512-Fw28YZpRnA3cAHHDlkt7xQHiJ0fcL+NRcIqsocZQUSmbzeIKRpwttJjik5ZGanXP+vlA4SbTg+AbA3bP363l+w=="
+    },
+    "ai@5.0.216_zod@3.25.76": {
+      "integrity": "sha512-W1QgTQS/2itHasAjqx0CVWfRojmnu1V4tJbqaHJf5hXckAZa9IrPDS9VNWBSgZjBhBE9//5M+D4FKdvAGcQBEw==",
+      "dependencies": [
+        "@ai-sdk/gateway",
+        "@ai-sdk/provider",
+        "@ai-sdk/provider-utils",
+        "@opentelemetry/api",
+        "zod"
+      ]
+    },
+    "eventsource-parser@3.1.0": {
+      "integrity": "sha512-kJezFj9YFAMLeORyi7aCLxLbD5/qWMQnoMVlVPyHIll7lgRJCc3JVln9Vgl9nwQi0YkMnhdGTMNn7CkRRAptMg=="
+    },
+    "json-schema@0.4.0": {
+      "integrity": "sha512-es94M3nTIfsEPisRafak+HDLfHXnKBhV3vU5eqPcS3flIWqcxJWgXHXiey3YrpaNsanY5ei1VoYEbOzijuq9BA=="
+    },
+    "zod@3.25.76": {
+      "integrity": "sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ=="
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/assert@^1.0.13",
+      "npm:@ai-sdk/google@^2.0.17",
+      "npm:@ai-sdk/openai-compatible@^1.0.11",
+      "npm:ai@^5.0.44",
+      "npm:zod@^3.25.76"
+    ]
+  }
+}
