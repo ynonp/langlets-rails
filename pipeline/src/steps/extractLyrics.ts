@@ -13,7 +13,7 @@
 import { generateText } from "ai";
 import type { Phrase } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
-import { recordError } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 import { parseWordTimings } from "../wordTimingParser.ts";
 import { timestampToSeconds } from "../timestamps.ts";
 import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
@@ -117,6 +117,7 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     // failure throws above and leaves the flag set, so the next run picks the
     // step back up.
     await store.set("extract_lyrics_in_progress", false);
+    await clearErrors(ctx, "extract_lyrics");
   } catch (error) {
     await recordError(ctx, "extract_lyrics", error, {
       attempts: attempts || undefined,

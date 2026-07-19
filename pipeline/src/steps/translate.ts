@@ -8,7 +8,7 @@
 import { generateText } from "ai";
 import type { PatchOp } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
-import { recordError } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 import { translatePrompt } from "../prompts/translate.ts";
 import { withRetries } from "../retry.ts";
 
@@ -61,6 +61,7 @@ export async function translate(ctx: PipelineContext): Promise<void> {
       value: text.replaceAll("[", "(").replaceAll("]", ")"),
     }));
     await ctx.store.patch(ops);
+    await clearErrors(ctx, "translate");
   } catch (error) {
     await recordError(ctx, "translate", error, {
       attempts: attempts || undefined,

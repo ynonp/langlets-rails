@@ -34,6 +34,20 @@ Deno.test("applyOp append onto a non-array throws", () => {
   assertThrows(() => applyOp(data, { op: "append", path: "lessons", value: 1 }));
 });
 
+Deno.test("applyOp clear_errors removes only failures for the recovered step", () => {
+  const data: ProgressData = {
+    errors: [
+      { step: "translate", occurred_at: "then", error_message: "old" },
+      { step: "rate_lessons", occurred_at: "now", error_message: "current" },
+      { step: "translate", occurred_at: "later", error_message: "also old" },
+    ],
+  };
+
+  applyOp(data, { op: "clear_errors", path: "errors", value: "translate" });
+
+  assertEquals(data.errors?.map((error) => error.step), ["rate_lessons"]);
+});
+
 Deno.test("applyOp rejects empty path segments", () => {
   assertThrows(() => applyOp({}, { op: "set", path: "a..b", value: 1 }));
 });
@@ -44,12 +58,14 @@ Deno.test("store mutations apply locally and forward the same ops to the sink", 
 
   await store.set("video_length_seconds", 225);
   await store.append("errors", { step: "translate" });
+  await store.clearErrors("translate");
 
   assertEquals(store.data.video_length_seconds, 225);
-  assertEquals(store.data.errors?.length, 1);
+  assertEquals(store.data.errors?.length, 0);
   assertEquals(sink.ops, [
     { op: "set", path: "video_length_seconds", value: 225 },
     { op: "append", path: "errors", value: { step: "translate" } },
+    { op: "clear_errors", path: "errors", value: "translate" },
   ]);
 });
 

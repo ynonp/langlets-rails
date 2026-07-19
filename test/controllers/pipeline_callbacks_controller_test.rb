@@ -47,6 +47,21 @@ class PipelineCallbacksControllerTest < ActionDispatch::IntegrationTest
     assert_equal 100, @progress.reload.data["video_length_seconds"]
   end
 
+  test "clears only errors for an action that succeeded after resume" do
+    @progress.update!(data: {
+      "errors" => [
+        { "step" => "translate", "error_message" => "old" },
+        { "step" => "rate_lessons", "error_message" => "current" }
+      ]
+    })
+    body = { ops: [ { op: "clear_errors", path: "errors", value: "translate" } ] }.to_json
+
+    post pipeline_callback_path(@progress), params: body, headers: PipelineHmac.signed_headers(body)
+
+    assert_response :success
+    assert_equal [ "rate_lessons" ], @progress.reload.data["errors"].map { |error| error["step"] }
+  end
+
   test "rejects an unsigned request" do
     body = { ops: [ { op: "set", path: "lessons", value: "x" } ] }.to_json
 

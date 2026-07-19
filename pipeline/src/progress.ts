@@ -23,6 +23,10 @@ export class ProgressStore {
     await this.patch([{ op: "append", path, value }]);
   }
 
+  async clearErrors(step: string): Promise<void> {
+    await this.patch([{ op: "clear_errors", path: "errors", value: step }]);
+  }
+
   async patch(ops: PatchOp[]): Promise<void> {
     for (const op of ops) applyOp(this.data, op);
     await this.#sink.patch(ops);
@@ -110,10 +114,20 @@ export function applyOp(data: ProgressData, op: PatchOp): void {
   const last = containerKey(segments[segments.length - 1]);
   if (op.op === "set") {
     node[last] = op.value;
-  } else {
+  } else if (op.op === "append") {
     if (node[last] == null) node[last] = [];
     if (!Array.isArray(node[last])) throw new Error(`append target is not an array: ${op.path}`);
     node[last].push(op.value);
+  } else {
+    if (op.path !== "errors" || typeof op.value !== "string") {
+      throw new Error("clear_errors requires the errors path and a string step");
+    }
+    if (node[last] == null) return;
+    if (!Array.isArray(node[last])) throw new Error("clear_errors target is not an array: errors");
+    node[last] = node[last].filter((entry: unknown) => {
+      return typeof entry !== "object" || entry === null ||
+        (entry as { step?: unknown }).step !== op.value;
+    });
   }
 }
 

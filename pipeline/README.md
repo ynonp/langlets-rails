@@ -72,6 +72,9 @@ failed LLM response is inspectable from Rails exactly like today:
 }
 ```
 
+When a resumed action later succeeds, it atomically removes all earlier `data.errors` entries for
+that action. Errors from other concurrent actions remain available for diagnosis.
+
 ## Resumability
 
 Every step persists its progress into `CreateSongProgress.data` as it goes, and every step is
@@ -104,6 +107,7 @@ blob:
 - `path` is dot-separated; numeric segments index arrays; missing containers are created (array when
   the next segment is numeric, object otherwise).
 - `append` pushes onto an array, creating it when missing.
+- `clear_errors` removes entries from `errors` whose `step` matches its string value.
 
 ### HMAC authentication (both directions)
 

@@ -202,6 +202,7 @@ Deno.test("rerunning with the saved data retries only what failed", async () => 
   const payload_he = secondRun.data.translations!.he;
   assertEquals(payload_he.phrases[0], { text: "שורה 1", words: ["ת1", "ת2"] });
   assertEquals(payload_he.lessons, secondRun.data.lessons);
+  assertFalse(secondRun.data.errors?.some((error) => error.step === "translate") ?? false);
 });
 
 Deno.test("an interrupted transcription resumes extract_lyrics on the next run", async () => {

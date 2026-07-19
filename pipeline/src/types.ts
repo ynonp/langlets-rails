@@ -93,8 +93,9 @@ export interface TriggerPayload {
 // A single mutation of CreateSongProgress.data, addressed by dot-separated key
 // path ("translations.he.phrases.3.text"). Numeric segments index arrays.
 // "append" pushes onto an array (creating it when missing) — used for errors.
+// "clear_errors" atomically removes every error whose step matches `value`.
 export interface PatchOp {
-  op: "set" | "append";
+  op: "set" | "append" | "clear_errors";
   path: string;
   value: unknown;
 }

@@ -37,6 +37,20 @@ class ProgressPatchTest < ActiveSupport::TestCase
     end
   end
 
+  test "clear_errors removes only failures for the recovered step" do
+    data = {
+      "errors" => [
+        { "step" => "translate", "error_message" => "old" },
+        { "step" => "rate_lessons", "error_message" => "current" },
+        { "step" => "translate", "error_message" => "also old" }
+      ]
+    }
+
+    ProgressPatch.apply(data, { "op" => "clear_errors", "path" => "errors", "value" => "translate" })
+
+    assert_equal [ "rate_lessons" ], data["errors"].map { |error| error["step"] }
+  end
+
   test "invalid paths and ops are rejected" do
     assert_raises(ProgressPatch::InvalidOp) do
       ProgressPatch.apply({}, { "op" => "set", "path" => "a..b", "value" => 1 })

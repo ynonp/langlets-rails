@@ -25,7 +25,18 @@ module ProgressPatch
     raise InvalidOp, "op must be an object" unless op.is_a?(Hash)
 
     kind = op["op"]
-    raise InvalidOp, "unknown op #{kind.inspect}" unless %w[set append].include?(kind)
+    raise InvalidOp, "unknown op #{kind.inspect}" unless %w[set append clear_errors].include?(kind)
+
+    if kind == "clear_errors"
+      raise InvalidOp, "clear_errors requires the errors path and a string step" unless op["path"] == "errors" && op["value"].is_a?(String)
+
+      errors = data["errors"]
+      return if errors.nil?
+      raise InvalidOp, "clear_errors target is not an array: errors" unless errors.is_a?(Array)
+
+      errors.reject! { |entry| entry.is_a?(Hash) && entry["step"] == op["value"] }
+      return
+    end
 
     segments = op["path"].to_s.split(".", -1)
     raise InvalidOp, "invalid patch path: #{op['path'].inspect}" if segments.empty? || segments.any?(&:empty?)

@@ -4,7 +4,7 @@
 import { generateText } from "ai";
 import type { LessonRating } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
-import { recordError } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 import { rateLessonsPrompt } from "../prompts/rateLessons.ts";
 import { withRetries } from "../retry.ts";
 
@@ -42,6 +42,7 @@ export async function rateLessons(ctx: PipelineContext): Promise<void> {
     );
 
     await ctx.store.set("lesson_ratings", ratings);
+    await clearErrors(ctx, "rate_lessons");
   } catch (error) {
     await recordError(ctx, "rate_lessons", error, {
       attempts: attempts || undefined,

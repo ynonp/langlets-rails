@@ -6,7 +6,7 @@
 // out to).
 
 import type { PipelineContext } from "../context.ts";
-import { recordError } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 import { dictionaryFor, type Fuzzyword, langCodeFor } from "../fuzzyword.ts";
 
 export const MIN_WORD_LENGTH = 3;
@@ -24,6 +24,7 @@ export async function addSimilarSound(ctx: PipelineContext): Promise<void> {
     }
 
     await ctx.store.set("similar_sounds", results.join("\n"));
+    await clearErrors(ctx, "add_similar_sound");
   } catch (error) {
     await recordError(ctx, "add_similar_sound", error);
     throw error;

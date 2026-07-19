@@ -61,6 +61,13 @@ export async function recordError(
   }
 }
 
+// A retry that completes makes earlier failures for that same action stale.
+// Use a dedicated patch op instead of replacing the whole errors array so a
+// concurrent branch cannot have its newly appended failure overwritten.
+export async function clearErrors(ctx: PipelineContext, step: string): Promise<void> {
+  await ctx.store.clearErrors(step);
+}
+
 export function dataSummary(data: ProgressData): Record<string, unknown> {
   return {
     phrases: data.phrases?.length ?? 0,

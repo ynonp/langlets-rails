@@ -8,7 +8,7 @@
 import { generateText } from "ai";
 import type { PatchOp, Phrase } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
-import { recordError } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 import { addTokenTranslationsPrompt } from "../prompts/addTokenTranslations.ts";
 import { message, withRetries } from "../retry.ts";
 
@@ -77,6 +77,7 @@ export async function addTokenTranslations(ctx: PipelineContext): Promise<void> 
   if (failures.length > 0) {
     throw (failures[0] as PromiseRejectedResult).reason;
   }
+  await clearErrors(ctx, "add_token_translations");
 }
 
 async function translateChunk(

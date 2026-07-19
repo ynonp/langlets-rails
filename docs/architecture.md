@@ -98,6 +98,11 @@ guarantees the positional alignment `BuildSong#add_translation` depends on,
 and keeps exports possible for any course whose original pipeline record is
 long gone.
 
+Pipeline failures are appended to `CreateSongProgress.data["errors"]` by action.
+When a resumed action succeeds, the worker sends an atomic action-scoped clear
+operation through the callback, removing stale failures for that action while
+preserving errors from concurrently failing actions.
+
 For local/manual pipeline runs, `rake
 "create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
 resolves the target `Language`, creates or reuses the shared progress row,
