@@ -73,6 +73,10 @@ It plays the whole video as one big segment (`segment-start` → `segment-end`
 spanning the full course), and `fullPlayerStartPlayback` / `fullPlayerStopPlayback`
 toggle the visibility of the play button.
 
+The full-course segment ends at the latest persisted phrase-token end timestamp,
+so the final spoken word is not cut off. Courses without word timing fall back
+to the final phrase's start timestamp, preserving legacy behavior.
+
 ---
 
 ## 2. Watch-video activity — its own mini player

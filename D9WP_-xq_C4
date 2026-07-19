@@ -1,0 +1,2195 @@
+{
+  "youtubeurl": "https://www.youtube.com/watch?v=D9WP_-xq_C4",
+  "clip_language": "Arabic",
+  "translation_language": "English",
+  "step": null,
+  "data": {
+    "errors": [
+      {
+        "step": "extract_lyrics",
+        "attempts": 3,
+        "error_class": "Error",
+        "input_lines": null,
+        "occurred_at": "2026-07-19T19:36:20.310Z",
+        "error_message": "ElevenLabs forced alignment failed (401): {\"detail\":{\"type\":\"invalid_request\",\"code\":\"quota_exceeded\",\"message\":\"This request exceeds your API key (Mammoth Green Anaconda) quota of 1000. You have 79 credits remaining, while 213 credits are required for this request.\",\"status\":\"quota_exceeded\",\"request_id\":\"d27b28518688740ee95f378bd8d0be07\"}}",
+        "agent_response": "لا ما تقلي لازم جامل هالشّي انساه\nأو ما لازم إنّه قلبي امشي وراه\nهيك بحسّ الكون فاضي وما بدّي ياه\nبارا بارا بارا بارا بارا بارا\nولو عطيتني مال الدّنيا رح قلّك لا\nبلا ما يكون في مشاعر قلبك جوّا\nمش بالمال ولا بمظاهر تحلى الحياة\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا\nخلّينا نعيش نحبّ بلا حدود\nنكون عفويّ ما في مفروض\nهيك ببساطة بيحلى الوجود\nبارا بارا بارا بارا بارا بارا\nخلّي قلبك على طول حرّ يكون\nونعيش بفرح ونكون مجنون\nهيك ببساطة بيحلى الكون\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا\nلا ذهب ولا ألماس ما تهديني لا\nسيّارة أو شي كلاس ما بيغريني لا\nمش لحتّى ترضي النّاس تلغيني لا\nبارا بارا بارا بارا بارا بارا\nإتيكيت ما بيهمنّي وبعيش بلا\nالمهمّ الجوهر عندي ما بتصنّع لا\nوببساطة هيك بدّي عيش الحياة\nبارا بارا بارا بارا بارا بارا\nخلّينا نعيش نحبّ بلا حدود\nنكون عفويّ ما في مفروض\nهيك ببساطة بيحلى الوجود\nبارا بارا بارا بارا بارا بارا\nخلّي قلبك على طول حرّ يكون\nونعيش بفرح ونكون مجنون\nهيك ببساطة بيحلى الكون\nبارا بارا بارا بارا بارا بارا\nخلّينا نعيش نحبّ بلا حدود\nنكون عفويّ ما في مفروض\nهيك ببساطة بيحلى الوجود\nبارا بارا بارا بارا بارا بارا\nخلّي قلبك على طول حرّ يكون\nونعيش بفرح ونكون مجنون\nهيك ببساطة بيحلى الكون\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا بارا بارا بارا\nبارا بارا بارا"
+      }
+    ],
+    "lessons": "# ما بدي الكون فاضي\n00:07.28 لا ما تقلي لازم جامل هالشئ انساه\n00:10.50 أو ما لازم إنه قلبي أمشي وراه\n00:13.69 هيك بحس الكون فاضي وما بدي ياه\n00:16.92 بابا رابابابابابابارا\n\n# رفض المال والمظاهر\n00:20.02 ولو عطيتني مال الدنيا رح قلك لا\n00:23.36 بلا ما يكون في مشاعر قلبك جوّا\n00:26.52 مش بالمال ولا بمظاهر تحلى الحياة\n00:29.70 بابا رابابابابابابارا\n00:32.32 بارابارابارابارابارا\n00:35.10 بارابارابااا\n\n# جوقة: عيش بلا حدود\n00:38.68 خلينا نعيش نحب بلا حدود\n00:42.89 نكون عفوية ما في مفروض\n00:46.10 هيك ببساطة بيحلى الوجود\n00:48.92 بابا رابابابابابابارا\n00:51.50 خلّي قلبك على طول حرّ يكون\n00:55.68 وعيش الفرح وكون مجنون\n00:58.94 هيك ببساطة بيحلى الكون\n01:01.76 بابا رابابابابابابارا\n\n# لا دهب ولا ألماس\n01:04.51 بارابارابارابارابارابابّا بارا\n01:05.10 بارابارابارابارابارارابارا\n01:06.54 باراباراااا\n01:17.68 لا دهب ولا ألماس ما تهديني لا\n01:20.92 سيارة أو شي كلاس ما بيغريني لا\n01:24.12 مش لحتى ترضي الناس تلغيني لا\n01:28.34 بارابارابارابارابارا\n\n# الإتيكيت والبساطة\n01:30.54 إتيكيت ما بيهمني وبعيش بلا\n01:33.74 المهم الجوهر عندي ما بتصنّع لا\n01:36.76 وببساطة هيك بدي عيش الحياة\n01:41.08 بارابارابارابارا\n\n# الختام: عيش بلا حدود (الجزء الأول)\n01:42.78 خلينا نعيش نحب بلا حدود\n01:46.88 نكون عفوية ما في مفروض\n01:50.06 هيك ببساطة بيحلى الوجود\n01:53.26 بابا رابابابابابابارا\n01:55.48 خلّي قلبك على طول حرّ يكون\n01:59.56 وعيش الفرح وكون مجنون\n02:02.90 هيك ببساطة بيحلى الكون\n02:05.73 بابا رابابابابابابارا\n\n# الختام: عيش بلا حدود (الجزء الثاني)\n02:08.26 خلينا نعيش نحب بلا حدود\n02:12.49 نكون عفوية ما في مفروض\n02:15.70 هيك ببساطة بيحلى الوجود\n02:18.87 بابا رابابابابابابارا\n\n# الختام: عيش بلا حدود (الجزء الثالث)\n02:21.08 خلّي قلبك على طول حرّ يكون\n02:25.24 وعيش الفرح وكون مجنون\n02:28.46 هيك ببساطة بيحلى الكون\n02:31.28 بابا رابابابابابابارا\n02:34.74 بارابارابارابارابارابابّا\n02:37.28 بارابارا",
+    "phrases": [
+      {
+        "id": "phrase_1",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "00:07.28",
+            "l1_end_index": 1,
+            "timestamp_end": "00:07.46",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ما",
+            "timestamp": "00:07.54",
+            "l1_end_index": 4,
+            "timestamp_end": "00:07.61",
+            "l1_start_index": 3
+          },
+          {
+            "text": "تقلي",
+            "timestamp": "00:07.70",
+            "l1_end_index": 9,
+            "timestamp_end": "00:08.06",
+            "l1_start_index": 6
+          },
+          {
+            "text": "لازم",
+            "timestamp": "00:08.12",
+            "l1_end_index": 14,
+            "timestamp_end": "00:08.46",
+            "l1_start_index": 11
+          },
+          {
+            "text": "جامل",
+            "timestamp": "00:08.56",
+            "l1_end_index": 19,
+            "timestamp_end": "00:09.06",
+            "l1_start_index": 16
+          },
+          {
+            "text": "هالشئ",
+            "timestamp": "00:09.10",
+            "l1_end_index": 25,
+            "timestamp_end": "00:09.58",
+            "l1_start_index": 21
+          },
+          {
+            "text": "انساه",
+            "timestamp": "00:09.66",
+            "l1_end_index": 31,
+            "timestamp_end": "00:10.48",
+            "l1_start_index": 27
+          }
+        ],
+        "text_l1": "لا ما تقلي لازم جامل هالشئ انساه",
+        "timestamp": "00:07.28",
+        "timestamp_end": "00:10.48"
+      },
+      {
+        "id": "phrase_2",
+        "words": [
+          {
+            "text": "أو",
+            "timestamp": "00:10.50",
+            "l1_end_index": 1,
+            "timestamp_end": "00:10.68",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ما",
+            "timestamp": "00:10.76",
+            "l1_end_index": 4,
+            "timestamp_end": "00:10.88",
+            "l1_start_index": 3
+          },
+          {
+            "text": "لازم",
+            "timestamp": "00:10.90",
+            "l1_end_index": 9,
+            "timestamp_end": "00:11.28",
+            "l1_start_index": 6
+          },
+          {
+            "text": "إنه",
+            "timestamp": "00:11.34",
+            "l1_end_index": 13,
+            "timestamp_end": "00:11.62",
+            "l1_start_index": 11
+          },
+          {
+            "text": "قلبي",
+            "timestamp": "00:11.72",
+            "l1_end_index": 18,
+            "timestamp_end": "00:12.08",
+            "l1_start_index": 15
+          },
+          {
+            "text": "أمشي",
+            "timestamp": "00:12.32",
+            "l1_end_index": 23,
+            "timestamp_end": "00:12.74",
+            "l1_start_index": 20
+          },
+          {
+            "text": "وراه",
+            "timestamp": "00:12.80",
+            "l1_end_index": 28,
+            "timestamp_end": "00:13.68",
+            "l1_start_index": 25
+          }
+        ],
+        "text_l1": "أو ما لازم إنه قلبي أمشي وراه",
+        "timestamp": "00:10.50",
+        "timestamp_end": "00:13.68"
+      },
+      {
+        "id": "phrase_3",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "00:13.69",
+            "l1_end_index": 2,
+            "timestamp_end": "00:13.94",
+            "l1_start_index": 0
+          },
+          {
+            "text": "بحس",
+            "timestamp": "00:14.02",
+            "l1_end_index": 6,
+            "timestamp_end": "00:14.32",
+            "l1_start_index": 4
+          },
+          {
+            "text": "الكون",
+            "timestamp": "00:14.33",
+            "l1_end_index": 12,
+            "timestamp_end": "00:14.82",
+            "l1_start_index": 8
+          },
+          {
+            "text": "فاضي",
+            "timestamp": "00:14.90",
+            "l1_end_index": 17,
+            "timestamp_end": "00:15.46",
+            "l1_start_index": 14
+          },
+          {
+            "text": "وما",
+            "timestamp": "00:15.48",
+            "l1_end_index": 21,
+            "timestamp_end": "00:15.64",
+            "l1_start_index": 19
+          },
+          {
+            "text": "بدي",
+            "timestamp": "00:15.68",
+            "l1_end_index": 25,
+            "timestamp_end": "00:16.30",
+            "l1_start_index": 23
+          },
+          {
+            "text": "ياه",
+            "timestamp": "00:16.31",
+            "l1_end_index": 29,
+            "timestamp_end": "00:16.88",
+            "l1_start_index": 27
+          }
+        ],
+        "text_l1": "هيك بحس الكون فاضي وما بدي ياه",
+        "timestamp": "00:13.69",
+        "timestamp_end": "00:16.88"
+      },
+      {
+        "id": "phrase_4",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "00:16.92",
+            "l1_end_index": 3,
+            "timestamp_end": "00:17.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "00:17.56",
+            "l1_end_index": 20,
+            "timestamp_end": "00:19.28",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "00:16.92",
+        "timestamp_end": "00:19.28"
+      },
+      {
+        "id": "phrase_5",
+        "words": [
+          {
+            "text": "ولو",
+            "timestamp": "00:20.02",
+            "l1_end_index": 2,
+            "timestamp_end": "00:20.48",
+            "l1_start_index": 0
+          },
+          {
+            "text": "عطيتني",
+            "timestamp": "00:20.49",
+            "l1_end_index": 9,
+            "timestamp_end": "00:20.88",
+            "l1_start_index": 4
+          },
+          {
+            "text": "مال",
+            "timestamp": "00:20.90",
+            "l1_end_index": 13,
+            "timestamp_end": "00:21.14",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الدنيا",
+            "timestamp": "00:21.16",
+            "l1_end_index": 20,
+            "timestamp_end": "00:21.82",
+            "l1_start_index": 15
+          },
+          {
+            "text": "رح",
+            "timestamp": "00:21.90",
+            "l1_end_index": 23,
+            "timestamp_end": "00:22.12",
+            "l1_start_index": 22
+          },
+          {
+            "text": "قلك",
+            "timestamp": "00:22.56",
+            "l1_end_index": 27,
+            "timestamp_end": "00:22.68",
+            "l1_start_index": 25
+          },
+          {
+            "text": "لا",
+            "timestamp": "00:22.74",
+            "l1_end_index": 30,
+            "timestamp_end": "00:23.24",
+            "l1_start_index": 29
+          }
+        ],
+        "text_l1": "ولو عطيتني مال الدنيا رح قلك لا",
+        "timestamp": "00:20.02",
+        "timestamp_end": "00:23.24"
+      },
+      {
+        "id": "phrase_6",
+        "words": [
+          {
+            "text": "بلا",
+            "timestamp": "00:23.36",
+            "l1_end_index": 2,
+            "timestamp_end": "00:23.68",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ما",
+            "timestamp": "00:23.72",
+            "l1_end_index": 5,
+            "timestamp_end": "00:23.84",
+            "l1_start_index": 4
+          },
+          {
+            "text": "يكون",
+            "timestamp": "00:23.85",
+            "l1_end_index": 10,
+            "timestamp_end": "00:24.06",
+            "l1_start_index": 7
+          },
+          {
+            "text": "في",
+            "timestamp": "00:24.10",
+            "l1_end_index": 13,
+            "timestamp_end": "00:24.26",
+            "l1_start_index": 12
+          },
+          {
+            "text": "مشاعر",
+            "timestamp": "00:24.32",
+            "l1_end_index": 19,
+            "timestamp_end": "00:24.90",
+            "l1_start_index": 15
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "00:25.14",
+            "l1_end_index": 24,
+            "timestamp_end": "00:25.48",
+            "l1_start_index": 21
+          },
+          {
+            "text": "جوّا",
+            "timestamp": "00:25.50",
+            "l1_end_index": 29,
+            "timestamp_end": "00:26.30",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "بلا ما يكون في مشاعر قلبك جوّا",
+        "timestamp": "00:23.36",
+        "timestamp_end": "00:26.30"
+      },
+      {
+        "id": "phrase_7",
+        "words": [
+          {
+            "text": "مش",
+            "timestamp": "00:26.52",
+            "l1_end_index": 1,
+            "timestamp_end": "00:26.66",
+            "l1_start_index": 0
+          },
+          {
+            "text": "بالمال",
+            "timestamp": "00:26.72",
+            "l1_end_index": 8,
+            "timestamp_end": "00:27.08",
+            "l1_start_index": 3
+          },
+          {
+            "text": "ولا",
+            "timestamp": "00:27.14",
+            "l1_end_index": 12,
+            "timestamp_end": "00:27.38",
+            "l1_start_index": 10
+          },
+          {
+            "text": "بمظاهر",
+            "timestamp": "00:27.44",
+            "l1_end_index": 19,
+            "timestamp_end": "00:28.24",
+            "l1_start_index": 14
+          },
+          {
+            "text": "تحلى",
+            "timestamp": "00:28.30",
+            "l1_end_index": 24,
+            "timestamp_end": "00:28.64",
+            "l1_start_index": 21
+          },
+          {
+            "text": "الحياة",
+            "timestamp": "00:28.68",
+            "l1_end_index": 31,
+            "timestamp_end": "00:29.62",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "مش بالمال ولا بمظاهر تحلى الحياة",
+        "timestamp": "00:26.52",
+        "timestamp_end": "00:29.62"
+      },
+      {
+        "id": "phrase_8",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "00:29.70",
+            "l1_end_index": 3,
+            "timestamp_end": "00:30.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "00:30.36",
+            "l1_end_index": 20,
+            "timestamp_end": "00:31.86",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "00:29.70",
+        "timestamp_end": "00:31.86"
+      },
+      {
+        "id": "phrase_9",
+        "words": [
+          {
+            "text": "بارابارابارابارابارا",
+            "timestamp": "00:32.32",
+            "l1_end_index": 19,
+            "timestamp_end": "00:34.31",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابارابارابارا",
+        "timestamp": "00:32.32",
+        "timestamp_end": "00:34.31"
+      },
+      {
+        "id": "phrase_10",
+        "words": [
+          {
+            "text": "بارابارابااا",
+            "timestamp": "00:35.10",
+            "l1_end_index": 11,
+            "timestamp_end": "00:36.57",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابااا",
+        "timestamp": "00:35.10",
+        "timestamp_end": "00:36.57"
+      },
+      {
+        "id": "phrase_11",
+        "words": [
+          {
+            "text": "خلينا",
+            "timestamp": "00:38.68",
+            "l1_end_index": 4,
+            "timestamp_end": "00:39.48",
+            "l1_start_index": 0
+          },
+          {
+            "text": "نعيش",
+            "timestamp": "00:39.62",
+            "l1_end_index": 9,
+            "timestamp_end": "00:40.14",
+            "l1_start_index": 6
+          },
+          {
+            "text": "نحب",
+            "timestamp": "00:40.36",
+            "l1_end_index": 13,
+            "timestamp_end": "00:40.88",
+            "l1_start_index": 11
+          },
+          {
+            "text": "بلا",
+            "timestamp": "00:41.32",
+            "l1_end_index": 17,
+            "timestamp_end": "00:41.70",
+            "l1_start_index": 15
+          },
+          {
+            "text": "حدود",
+            "timestamp": "00:41.76",
+            "l1_end_index": 22,
+            "timestamp_end": "00:42.76",
+            "l1_start_index": 19
+          }
+        ],
+        "text_l1": "خلينا نعيش نحب بلا حدود",
+        "timestamp": "00:38.68",
+        "timestamp_end": "00:42.76"
+      },
+      {
+        "id": "phrase_12",
+        "words": [
+          {
+            "text": "نكون",
+            "timestamp": "00:42.89",
+            "l1_end_index": 3,
+            "timestamp_end": "00:43.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "عفوية",
+            "timestamp": "00:43.34",
+            "l1_end_index": 9,
+            "timestamp_end": "00:44.24",
+            "l1_start_index": 5
+          },
+          {
+            "text": "ما",
+            "timestamp": "00:44.30",
+            "l1_end_index": 12,
+            "timestamp_end": "00:44.46",
+            "l1_start_index": 11
+          },
+          {
+            "text": "في",
+            "timestamp": "00:44.48",
+            "l1_end_index": 15,
+            "timestamp_end": "00:44.68",
+            "l1_start_index": 14
+          },
+          {
+            "text": "مفروض",
+            "timestamp": "00:44.78",
+            "l1_end_index": 21,
+            "timestamp_end": "00:45.76",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "نكون عفوية ما في مفروض",
+        "timestamp": "00:42.89",
+        "timestamp_end": "00:45.76"
+      },
+      {
+        "id": "phrase_13",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "00:46.10",
+            "l1_end_index": 2,
+            "timestamp_end": "00:46.52",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "00:46.66",
+            "l1_end_index": 9,
+            "timestamp_end": "00:47.40",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "00:47.44",
+            "l1_end_index": 15,
+            "timestamp_end": "00:47.88",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الوجود",
+            "timestamp": "00:47.90",
+            "l1_end_index": 22,
+            "timestamp_end": "00:48.80",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الوجود",
+        "timestamp": "00:46.10",
+        "timestamp_end": "00:48.80"
+      },
+      {
+        "id": "phrase_14",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "00:48.92",
+            "l1_end_index": 3,
+            "timestamp_end": "00:49.53",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "00:49.54",
+            "l1_end_index": 20,
+            "timestamp_end": "00:51.24",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "00:48.92",
+        "timestamp_end": "00:51.24"
+      },
+      {
+        "id": "phrase_15",
+        "words": [
+          {
+            "text": "خلّي",
+            "timestamp": "00:51.50",
+            "l1_end_index": 3,
+            "timestamp_end": "00:52.26",
+            "l1_start_index": 0
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "00:52.34",
+            "l1_end_index": 8,
+            "timestamp_end": "00:53.07",
+            "l1_start_index": 5
+          },
+          {
+            "text": "على",
+            "timestamp": "00:53.10",
+            "l1_end_index": 12,
+            "timestamp_end": "00:53.43",
+            "l1_start_index": 10
+          },
+          {
+            "text": "طول",
+            "timestamp": "00:53.43",
+            "l1_end_index": 16,
+            "timestamp_end": "00:53.82",
+            "l1_start_index": 14
+          },
+          {
+            "text": "حرّ",
+            "timestamp": "00:54.12",
+            "l1_end_index": 20,
+            "timestamp_end": "00:54.70",
+            "l1_start_index": 18
+          },
+          {
+            "text": "يكون",
+            "timestamp": "00:54.76",
+            "l1_end_index": 25,
+            "timestamp_end": "00:55.60",
+            "l1_start_index": 22
+          }
+        ],
+        "text_l1": "خلّي قلبك على طول حرّ يكون",
+        "timestamp": "00:51.50",
+        "timestamp_end": "00:55.60"
+      },
+      {
+        "id": "phrase_16",
+        "words": [
+          {
+            "text": "وعيش",
+            "timestamp": "00:55.68",
+            "l1_end_index": 3,
+            "timestamp_end": "00:56.12",
+            "l1_start_index": 0
+          },
+          {
+            "text": "الفرح",
+            "timestamp": "00:56.16",
+            "l1_end_index": 9,
+            "timestamp_end": "00:57.08",
+            "l1_start_index": 5
+          },
+          {
+            "text": "وكون",
+            "timestamp": "00:57.14",
+            "l1_end_index": 14,
+            "timestamp_end": "00:57.62",
+            "l1_start_index": 11
+          },
+          {
+            "text": "مجنون",
+            "timestamp": "00:57.66",
+            "l1_end_index": 20,
+            "timestamp_end": "00:58.65",
+            "l1_start_index": 16
+          }
+        ],
+        "text_l1": "وعيش الفرح وكون مجنون",
+        "timestamp": "00:55.68",
+        "timestamp_end": "00:58.65"
+      },
+      {
+        "id": "phrase_17",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "00:58.94",
+            "l1_end_index": 2,
+            "timestamp_end": "00:59.40",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "00:59.50",
+            "l1_end_index": 9,
+            "timestamp_end": "01:00.28",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "01:00.46",
+            "l1_end_index": 15,
+            "timestamp_end": "01:00.88",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الكون",
+            "timestamp": "01:00.90",
+            "l1_end_index": 21,
+            "timestamp_end": "01:01.58",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الكون",
+        "timestamp": "00:58.94",
+        "timestamp_end": "01:01.58"
+      },
+      {
+        "id": "phrase_18",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "01:01.76",
+            "l1_end_index": 3,
+            "timestamp_end": "01:02.31",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "01:02.40",
+            "l1_end_index": 20,
+            "timestamp_end": "01:04.10",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "01:01.76",
+        "timestamp_end": "01:04.10"
+      },
+      {
+        "id": "phrase_19",
+        "words": [
+          {
+            "text": "بارابارابارابارابارابابّا",
+            "timestamp": "01:04.51",
+            "l1_end_index": 24,
+            "timestamp_end": "01:04.51",
+            "l1_start_index": 0
+          },
+          {
+            "text": "بارا",
+            "timestamp": "01:04.51",
+            "l1_end_index": 29,
+            "timestamp_end": "01:04.51",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "بارابارابارابارابارابابّا بارا",
+        "timestamp": "01:04.51",
+        "timestamp_end": "01:04.51"
+      },
+      {
+        "id": "phrase_20",
+        "words": [
+          {
+            "text": "بارابارابارابارابارارابارا",
+            "timestamp": "01:05.10",
+            "l1_end_index": 25,
+            "timestamp_end": "01:06.25",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابارابارابارارابارا",
+        "timestamp": "01:05.10",
+        "timestamp_end": "01:06.25"
+      },
+      {
+        "id": "phrase_21",
+        "words": [
+          {
+            "text": "باراباراااا",
+            "timestamp": "01:06.54",
+            "l1_end_index": 10,
+            "timestamp_end": "01:10.54",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "باراباراااا",
+        "timestamp": "01:06.54",
+        "timestamp_end": "01:10.54"
+      },
+      {
+        "id": "phrase_22",
+        "words": [
+          {
+            "text": "لا",
+            "timestamp": "01:17.68",
+            "l1_end_index": 1,
+            "timestamp_end": "01:17.88",
+            "l1_start_index": 0
+          },
+          {
+            "text": "دهب",
+            "timestamp": "01:17.96",
+            "l1_end_index": 5,
+            "timestamp_end": "01:18.34",
+            "l1_start_index": 3
+          },
+          {
+            "text": "ولا",
+            "timestamp": "01:18.36",
+            "l1_end_index": 9,
+            "timestamp_end": "01:18.70",
+            "l1_start_index": 7
+          },
+          {
+            "text": "ألماس",
+            "timestamp": "01:18.74",
+            "l1_end_index": 15,
+            "timestamp_end": "01:19.26",
+            "l1_start_index": 11
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:19.32",
+            "l1_end_index": 18,
+            "timestamp_end": "01:19.47",
+            "l1_start_index": 17
+          },
+          {
+            "text": "تهديني",
+            "timestamp": "01:19.56",
+            "l1_end_index": 25,
+            "timestamp_end": "01:20.24",
+            "l1_start_index": 20
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:20.32",
+            "l1_end_index": 28,
+            "timestamp_end": "01:20.76",
+            "l1_start_index": 27
+          }
+        ],
+        "text_l1": "لا دهب ولا ألماس ما تهديني لا",
+        "timestamp": "01:17.68",
+        "timestamp_end": "01:20.76"
+      },
+      {
+        "id": "phrase_23",
+        "words": [
+          {
+            "text": "سيارة",
+            "timestamp": "01:20.92",
+            "l1_end_index": 4,
+            "timestamp_end": "01:21.48",
+            "l1_start_index": 0
+          },
+          {
+            "text": "أو",
+            "timestamp": "01:21.50",
+            "l1_end_index": 7,
+            "timestamp_end": "01:21.66",
+            "l1_start_index": 6
+          },
+          {
+            "text": "شي",
+            "timestamp": "01:21.70",
+            "l1_end_index": 10,
+            "timestamp_end": "01:21.96",
+            "l1_start_index": 9
+          },
+          {
+            "text": "كلاس",
+            "timestamp": "01:22.04",
+            "l1_end_index": 15,
+            "timestamp_end": "01:22.48",
+            "l1_start_index": 12
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:22.52",
+            "l1_end_index": 18,
+            "timestamp_end": "01:22.62",
+            "l1_start_index": 17
+          },
+          {
+            "text": "بيغريني",
+            "timestamp": "01:22.66",
+            "l1_end_index": 26,
+            "timestamp_end": "01:23.42",
+            "l1_start_index": 20
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:23.50",
+            "l1_end_index": 29,
+            "timestamp_end": "01:23.98",
+            "l1_start_index": 28
+          }
+        ],
+        "text_l1": "سيارة أو شي كلاس ما بيغريني لا",
+        "timestamp": "01:20.92",
+        "timestamp_end": "01:23.98"
+      },
+      {
+        "id": "phrase_24",
+        "words": [
+          {
+            "text": "مش",
+            "timestamp": "01:24.12",
+            "l1_end_index": 1,
+            "timestamp_end": "01:24.26",
+            "l1_start_index": 0
+          },
+          {
+            "text": "لحتى",
+            "timestamp": "01:24.32",
+            "l1_end_index": 6,
+            "timestamp_end": "01:24.82",
+            "l1_start_index": 3
+          },
+          {
+            "text": "ترضي",
+            "timestamp": "01:24.90",
+            "l1_end_index": 11,
+            "timestamp_end": "01:25.18",
+            "l1_start_index": 8
+          },
+          {
+            "text": "الناس",
+            "timestamp": "01:25.19",
+            "l1_end_index": 17,
+            "timestamp_end": "01:25.88",
+            "l1_start_index": 13
+          },
+          {
+            "text": "تلغيني",
+            "timestamp": "01:25.94",
+            "l1_end_index": 24,
+            "timestamp_end": "01:26.62",
+            "l1_start_index": 19
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:26.68",
+            "l1_end_index": 27,
+            "timestamp_end": "01:27.42",
+            "l1_start_index": 26
+          }
+        ],
+        "text_l1": "مش لحتى ترضي الناس تلغيني لا",
+        "timestamp": "01:24.12",
+        "timestamp_end": "01:27.42"
+      },
+      {
+        "id": "phrase_25",
+        "words": [
+          {
+            "text": "بارابارابارابارابارا",
+            "timestamp": "01:28.34",
+            "l1_end_index": 19,
+            "timestamp_end": "01:30.07",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابارابارابارا",
+        "timestamp": "01:28.34",
+        "timestamp_end": "01:30.07"
+      },
+      {
+        "id": "phrase_26",
+        "words": [
+          {
+            "text": "إتيكيت",
+            "timestamp": "01:30.54",
+            "l1_end_index": 5,
+            "timestamp_end": "01:31.21",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:31.34",
+            "l1_end_index": 8,
+            "timestamp_end": "01:31.50",
+            "l1_start_index": 7
+          },
+          {
+            "text": "بيهمني",
+            "timestamp": "01:31.54",
+            "l1_end_index": 15,
+            "timestamp_end": "01:32.20",
+            "l1_start_index": 10
+          },
+          {
+            "text": "وبعيش",
+            "timestamp": "01:32.24",
+            "l1_end_index": 21,
+            "timestamp_end": "01:32.90",
+            "l1_start_index": 17
+          },
+          {
+            "text": "بلا",
+            "timestamp": "01:32.94",
+            "l1_end_index": 25,
+            "timestamp_end": "01:33.30",
+            "l1_start_index": 23
+          }
+        ],
+        "text_l1": "إتيكيت ما بيهمني وبعيش بلا",
+        "timestamp": "01:30.54",
+        "timestamp_end": "01:33.30"
+      },
+      {
+        "id": "phrase_27",
+        "words": [
+          {
+            "text": "المهم",
+            "timestamp": "01:33.74",
+            "l1_end_index": 4,
+            "timestamp_end": "01:34.32",
+            "l1_start_index": 0
+          },
+          {
+            "text": "الجوهر",
+            "timestamp": "01:34.38",
+            "l1_end_index": 11,
+            "timestamp_end": "01:34.86",
+            "l1_start_index": 6
+          },
+          {
+            "text": "عندي",
+            "timestamp": "01:34.88",
+            "l1_end_index": 16,
+            "timestamp_end": "01:35.26",
+            "l1_start_index": 13
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:35.30",
+            "l1_end_index": 19,
+            "timestamp_end": "01:35.46",
+            "l1_start_index": 18
+          },
+          {
+            "text": "بتصنّع",
+            "timestamp": "01:35.48",
+            "l1_end_index": 26,
+            "timestamp_end": "01:36.30",
+            "l1_start_index": 21
+          },
+          {
+            "text": "لا",
+            "timestamp": "01:36.34",
+            "l1_end_index": 29,
+            "timestamp_end": "01:36.64",
+            "l1_start_index": 28
+          }
+        ],
+        "text_l1": "المهم الجوهر عندي ما بتصنّع لا",
+        "timestamp": "01:33.74",
+        "timestamp_end": "01:36.64"
+      },
+      {
+        "id": "phrase_28",
+        "words": [
+          {
+            "text": "وببساطة",
+            "timestamp": "01:36.76",
+            "l1_end_index": 6,
+            "timestamp_end": "01:37.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "هيك",
+            "timestamp": "01:37.70",
+            "l1_end_index": 10,
+            "timestamp_end": "01:38.06",
+            "l1_start_index": 8
+          },
+          {
+            "text": "بدي",
+            "timestamp": "01:38.12",
+            "l1_end_index": 14,
+            "timestamp_end": "01:38.50",
+            "l1_start_index": 12
+          },
+          {
+            "text": "عيش",
+            "timestamp": "01:38.74",
+            "l1_end_index": 18,
+            "timestamp_end": "01:39.10",
+            "l1_start_index": 16
+          },
+          {
+            "text": "الحياة",
+            "timestamp": "01:39.26",
+            "l1_end_index": 25,
+            "timestamp_end": "01:40.84",
+            "l1_start_index": 20
+          }
+        ],
+        "text_l1": "وببساطة هيك بدي عيش الحياة",
+        "timestamp": "01:36.76",
+        "timestamp_end": "01:40.84"
+      },
+      {
+        "id": "phrase_29",
+        "words": [
+          {
+            "text": "بارابارابارابارا",
+            "timestamp": "01:41.08",
+            "l1_end_index": 15,
+            "timestamp_end": "01:42.48",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابارابارا",
+        "timestamp": "01:41.08",
+        "timestamp_end": "01:42.48"
+      },
+      {
+        "id": "phrase_30",
+        "words": [
+          {
+            "text": "خلينا",
+            "timestamp": "01:42.78",
+            "l1_end_index": 4,
+            "timestamp_end": "01:43.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "نعيش",
+            "timestamp": "01:43.56",
+            "l1_end_index": 9,
+            "timestamp_end": "01:44.14",
+            "l1_start_index": 6
+          },
+          {
+            "text": "نحب",
+            "timestamp": "01:44.36",
+            "l1_end_index": 13,
+            "timestamp_end": "01:44.84",
+            "l1_start_index": 11
+          },
+          {
+            "text": "بلا",
+            "timestamp": "01:45.34",
+            "l1_end_index": 17,
+            "timestamp_end": "01:45.70",
+            "l1_start_index": 15
+          },
+          {
+            "text": "حدود",
+            "timestamp": "01:45.76",
+            "l1_end_index": 22,
+            "timestamp_end": "01:46.80",
+            "l1_start_index": 19
+          }
+        ],
+        "text_l1": "خلينا نعيش نحب بلا حدود",
+        "timestamp": "01:42.78",
+        "timestamp_end": "01:46.80"
+      },
+      {
+        "id": "phrase_31",
+        "words": [
+          {
+            "text": "نكون",
+            "timestamp": "01:46.88",
+            "l1_end_index": 3,
+            "timestamp_end": "01:47.20",
+            "l1_start_index": 0
+          },
+          {
+            "text": "عفوية",
+            "timestamp": "01:47.34",
+            "l1_end_index": 9,
+            "timestamp_end": "01:48.26",
+            "l1_start_index": 5
+          },
+          {
+            "text": "ما",
+            "timestamp": "01:48.30",
+            "l1_end_index": 12,
+            "timestamp_end": "01:48.48",
+            "l1_start_index": 11
+          },
+          {
+            "text": "في",
+            "timestamp": "01:48.50",
+            "l1_end_index": 15,
+            "timestamp_end": "01:48.70",
+            "l1_start_index": 14
+          },
+          {
+            "text": "مفروض",
+            "timestamp": "01:48.76",
+            "l1_end_index": 21,
+            "timestamp_end": "01:49.84",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "نكون عفوية ما في مفروض",
+        "timestamp": "01:46.88",
+        "timestamp_end": "01:49.84"
+      },
+      {
+        "id": "phrase_32",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "01:50.06",
+            "l1_end_index": 2,
+            "timestamp_end": "01:50.50",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "01:50.68",
+            "l1_end_index": 9,
+            "timestamp_end": "01:51.42",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "01:51.48",
+            "l1_end_index": 15,
+            "timestamp_end": "01:51.86",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الوجود",
+            "timestamp": "01:51.88",
+            "l1_end_index": 22,
+            "timestamp_end": "01:52.92",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الوجود",
+        "timestamp": "01:50.06",
+        "timestamp_end": "01:52.92"
+      },
+      {
+        "id": "phrase_33",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "01:53.26",
+            "l1_end_index": 3,
+            "timestamp_end": "01:53.48",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "01:53.58",
+            "l1_end_index": 20,
+            "timestamp_end": "01:55.16",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "01:53.26",
+        "timestamp_end": "01:55.16"
+      },
+      {
+        "id": "phrase_34",
+        "words": [
+          {
+            "text": "خلّي",
+            "timestamp": "01:55.48",
+            "l1_end_index": 3,
+            "timestamp_end": "01:56.28",
+            "l1_start_index": 0
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "01:56.36",
+            "l1_end_index": 8,
+            "timestamp_end": "01:56.97",
+            "l1_start_index": 5
+          },
+          {
+            "text": "على",
+            "timestamp": "01:57.00",
+            "l1_end_index": 12,
+            "timestamp_end": "01:57.31",
+            "l1_start_index": 10
+          },
+          {
+            "text": "طول",
+            "timestamp": "01:57.36",
+            "l1_end_index": 16,
+            "timestamp_end": "01:57.78",
+            "l1_start_index": 14
+          },
+          {
+            "text": "حرّ",
+            "timestamp": "01:58.10",
+            "l1_end_index": 20,
+            "timestamp_end": "01:58.31",
+            "l1_start_index": 18
+          },
+          {
+            "text": "يكون",
+            "timestamp": "01:58.46",
+            "l1_end_index": 25,
+            "timestamp_end": "01:59.51",
+            "l1_start_index": 22
+          }
+        ],
+        "text_l1": "خلّي قلبك على طول حرّ يكون",
+        "timestamp": "01:55.48",
+        "timestamp_end": "01:59.51"
+      },
+      {
+        "id": "phrase_35",
+        "words": [
+          {
+            "text": "وعيش",
+            "timestamp": "01:59.56",
+            "l1_end_index": 3,
+            "timestamp_end": "02:00.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "الفرح",
+            "timestamp": "02:00.30",
+            "l1_end_index": 9,
+            "timestamp_end": "02:01.08",
+            "l1_start_index": 5
+          },
+          {
+            "text": "وكون",
+            "timestamp": "02:01.12",
+            "l1_end_index": 14,
+            "timestamp_end": "02:01.58",
+            "l1_start_index": 11
+          },
+          {
+            "text": "مجنون",
+            "timestamp": "02:01.62",
+            "l1_end_index": 20,
+            "timestamp_end": "02:02.51",
+            "l1_start_index": 16
+          }
+        ],
+        "text_l1": "وعيش الفرح وكون مجنون",
+        "timestamp": "01:59.56",
+        "timestamp_end": "02:02.51"
+      },
+      {
+        "id": "phrase_36",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "02:02.90",
+            "l1_end_index": 2,
+            "timestamp_end": "02:03.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "02:03.52",
+            "l1_end_index": 9,
+            "timestamp_end": "02:04.38",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "02:04.46",
+            "l1_end_index": 15,
+            "timestamp_end": "02:04.84",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الكون",
+            "timestamp": "02:04.88",
+            "l1_end_index": 21,
+            "timestamp_end": "02:05.70",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الكون",
+        "timestamp": "02:02.90",
+        "timestamp_end": "02:05.70"
+      },
+      {
+        "id": "phrase_37",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "02:05.73",
+            "l1_end_index": 3,
+            "timestamp_end": "02:06.30",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "02:06.38",
+            "l1_end_index": 20,
+            "timestamp_end": "02:07.98",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "02:05.73",
+        "timestamp_end": "02:07.98"
+      },
+      {
+        "id": "phrase_38",
+        "words": [
+          {
+            "text": "خلينا",
+            "timestamp": "02:08.26",
+            "l1_end_index": 4,
+            "timestamp_end": "02:09.06",
+            "l1_start_index": 0
+          },
+          {
+            "text": "نعيش",
+            "timestamp": "02:09.10",
+            "l1_end_index": 9,
+            "timestamp_end": "02:09.86",
+            "l1_start_index": 6
+          },
+          {
+            "text": "نحب",
+            "timestamp": "02:09.94",
+            "l1_end_index": 13,
+            "timestamp_end": "02:10.44",
+            "l1_start_index": 11
+          },
+          {
+            "text": "بلا",
+            "timestamp": "02:10.88",
+            "l1_end_index": 17,
+            "timestamp_end": "02:11.30",
+            "l1_start_index": 15
+          },
+          {
+            "text": "حدود",
+            "timestamp": "02:11.36",
+            "l1_end_index": 22,
+            "timestamp_end": "02:12.34",
+            "l1_start_index": 19
+          }
+        ],
+        "text_l1": "خلينا نعيش نحب بلا حدود",
+        "timestamp": "02:08.26",
+        "timestamp_end": "02:12.34"
+      },
+      {
+        "id": "phrase_39",
+        "words": [
+          {
+            "text": "نكون",
+            "timestamp": "02:12.49",
+            "l1_end_index": 3,
+            "timestamp_end": "02:12.88",
+            "l1_start_index": 0
+          },
+          {
+            "text": "عفوية",
+            "timestamp": "02:12.90",
+            "l1_end_index": 9,
+            "timestamp_end": "02:13.62",
+            "l1_start_index": 5
+          },
+          {
+            "text": "ما",
+            "timestamp": "02:13.90",
+            "l1_end_index": 12,
+            "timestamp_end": "02:14.06",
+            "l1_start_index": 11
+          },
+          {
+            "text": "في",
+            "timestamp": "02:14.10",
+            "l1_end_index": 15,
+            "timestamp_end": "02:14.30",
+            "l1_start_index": 14
+          },
+          {
+            "text": "مفروض",
+            "timestamp": "02:14.36",
+            "l1_end_index": 21,
+            "timestamp_end": "02:15.40",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "نكون عفوية ما في مفروض",
+        "timestamp": "02:12.49",
+        "timestamp_end": "02:15.40"
+      },
+      {
+        "id": "phrase_40",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "02:15.70",
+            "l1_end_index": 2,
+            "timestamp_end": "02:16.12",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "02:16.28",
+            "l1_end_index": 9,
+            "timestamp_end": "02:17.00",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "02:17.02",
+            "l1_end_index": 15,
+            "timestamp_end": "02:17.48",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الوجود",
+            "timestamp": "02:17.50",
+            "l1_end_index": 22,
+            "timestamp_end": "02:18.48",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الوجود",
+        "timestamp": "02:15.70",
+        "timestamp_end": "02:18.48"
+      },
+      {
+        "id": "phrase_41",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "02:18.87",
+            "l1_end_index": 3,
+            "timestamp_end": "02:19.10",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "02:19.18",
+            "l1_end_index": 20,
+            "timestamp_end": "02:20.78",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "02:18.87",
+        "timestamp_end": "02:20.78"
+      },
+      {
+        "id": "phrase_42",
+        "words": [
+          {
+            "text": "خلّي",
+            "timestamp": "02:21.08",
+            "l1_end_index": 3,
+            "timestamp_end": "02:21.86",
+            "l1_start_index": 0
+          },
+          {
+            "text": "قلبك",
+            "timestamp": "02:21.92",
+            "l1_end_index": 8,
+            "timestamp_end": "02:22.52",
+            "l1_start_index": 5
+          },
+          {
+            "text": "على",
+            "timestamp": "02:22.62",
+            "l1_end_index": 12,
+            "timestamp_end": "02:22.83",
+            "l1_start_index": 10
+          },
+          {
+            "text": "طول",
+            "timestamp": "02:22.90",
+            "l1_end_index": 16,
+            "timestamp_end": "02:23.32",
+            "l1_start_index": 14
+          },
+          {
+            "text": "حرّ",
+            "timestamp": "02:23.70",
+            "l1_end_index": 20,
+            "timestamp_end": "02:24.04",
+            "l1_start_index": 18
+          },
+          {
+            "text": "يكون",
+            "timestamp": "02:24.18",
+            "l1_end_index": 25,
+            "timestamp_end": "02:25.14",
+            "l1_start_index": 22
+          }
+        ],
+        "text_l1": "خلّي قلبك على طول حرّ يكون",
+        "timestamp": "02:21.08",
+        "timestamp_end": "02:25.14"
+      },
+      {
+        "id": "phrase_43",
+        "words": [
+          {
+            "text": "وعيش",
+            "timestamp": "02:25.24",
+            "l1_end_index": 3,
+            "timestamp_end": "02:25.70",
+            "l1_start_index": 0
+          },
+          {
+            "text": "الفرح",
+            "timestamp": "02:25.78",
+            "l1_end_index": 9,
+            "timestamp_end": "02:26.66",
+            "l1_start_index": 5
+          },
+          {
+            "text": "وكون",
+            "timestamp": "02:26.72",
+            "l1_end_index": 14,
+            "timestamp_end": "02:27.16",
+            "l1_start_index": 11
+          },
+          {
+            "text": "مجنون",
+            "timestamp": "02:27.20",
+            "l1_end_index": 20,
+            "timestamp_end": "02:28.12",
+            "l1_start_index": 16
+          }
+        ],
+        "text_l1": "وعيش الفرح وكون مجنون",
+        "timestamp": "02:25.24",
+        "timestamp_end": "02:28.12"
+      },
+      {
+        "id": "phrase_44",
+        "words": [
+          {
+            "text": "هيك",
+            "timestamp": "02:28.46",
+            "l1_end_index": 2,
+            "timestamp_end": "02:29.00",
+            "l1_start_index": 0
+          },
+          {
+            "text": "ببساطة",
+            "timestamp": "02:29.08",
+            "l1_end_index": 9,
+            "timestamp_end": "02:29.72",
+            "l1_start_index": 4
+          },
+          {
+            "text": "بيحلى",
+            "timestamp": "02:30.00",
+            "l1_end_index": 15,
+            "timestamp_end": "02:30.48",
+            "l1_start_index": 11
+          },
+          {
+            "text": "الكون",
+            "timestamp": "02:30.52",
+            "l1_end_index": 21,
+            "timestamp_end": "02:31.18",
+            "l1_start_index": 17
+          }
+        ],
+        "text_l1": "هيك ببساطة بيحلى الكون",
+        "timestamp": "02:28.46",
+        "timestamp_end": "02:31.18"
+      },
+      {
+        "id": "phrase_45",
+        "words": [
+          {
+            "text": "بابا",
+            "timestamp": "02:31.28",
+            "l1_end_index": 3,
+            "timestamp_end": "02:31.88",
+            "l1_start_index": 0
+          },
+          {
+            "text": "رابابابابابابارا",
+            "timestamp": "02:31.96",
+            "l1_end_index": 20,
+            "timestamp_end": "02:33.80",
+            "l1_start_index": 5
+          }
+        ],
+        "text_l1": "بابا رابابابابابابارا",
+        "timestamp": "02:31.28",
+        "timestamp_end": "02:33.80"
+      },
+      {
+        "id": "phrase_46",
+        "words": [
+          {
+            "text": "بارابارابارابارابارابابّا",
+            "timestamp": "02:34.74",
+            "l1_end_index": 24,
+            "timestamp_end": "02:37.14",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارابارابارابارابابّا",
+        "timestamp": "02:34.74",
+        "timestamp_end": "02:37.14"
+      },
+      {
+        "id": "phrase_47",
+        "words": [
+          {
+            "text": "بارابارا",
+            "timestamp": "02:37.28",
+            "l1_end_index": 7,
+            "timestamp_end": "02:38.84",
+            "l1_start_index": 0
+          }
+        ],
+        "text_l1": "بارابارا",
+        "timestamp": "02:37.28",
+        "timestamp_end": "02:38.84"
+      }
+    ],
+    "translations": {
+      "en": {
+        "lessons": "# ما بدي الكون فاضي\n00:07.28 لا ما تقلي لازم جامل هالشئ انساه\n00:10.50 أو ما لازم إنه قلبي أمشي وراه\n00:13.69 هيك بحس الكون فاضي وما بدي ياه\n00:16.92 بابا رابابابابابابارا\n\n# رفض المال والمظاهر\n00:20.02 ولو عطيتني مال الدنيا رح قلك لا\n00:23.36 بلا ما يكون في مشاعر قلبك جوّا\n00:26.52 مش بالمال ولا بمظاهر تحلى الحياة\n00:29.70 بابا رابابابابابابارا\n00:32.32 بارابارابارابارابارا\n00:35.10 بارابارابااا\n\n# جوقة: عيش بلا حدود\n00:38.68 خلينا نعيش نحب بلا حدود\n00:42.89 نكون عفوية ما في مفروض\n00:46.10 هيك ببساطة بيحلى الوجود\n00:48.92 بابا رابابابابابابارا\n00:51.50 خلّي قلبك على طول حرّ يكون\n00:55.68 وعيش الفرح وكون مجنون\n00:58.94 هيك ببساطة بيحلى الكون\n01:01.76 بابا رابابابابابابارا\n\n# لا دهب ولا ألماس\n01:04.51 بارابارابارابارابارابابّا بارا\n01:05.10 بارابارابارابارابارارابارا\n01:06.54 باراباراااا\n01:17.68 لا دهب ولا ألماس ما تهديني لا\n01:20.92 سيارة أو شي كلاس ما بيغريني لا\n01:24.12 مش لحتى ترضي الناس تلغيني لا\n01:28.34 بارابارابارابارابارا\n\n# الإتيكيت والبساطة\n01:30.54 إتيكيت ما بيهمني وبعيش بلا\n01:33.74 المهم الجوهر عندي ما بتصنّع لا\n01:36.76 وببساطة هيك بدي عيش الحياة\n01:41.08 بارابارابارابارا\n\n# الختام: عيش بلا حدود (الجزء الأول)\n01:42.78 خلينا نعيش نحب بلا حدود\n01:46.88 نكون عفوية ما في مفروض\n01:50.06 هيك ببساطة بيحلى الوجود\n01:53.26 بابا رابابابابابابارا\n01:55.48 خلّي قلبك على طول حرّ يكون\n01:59.56 وعيش الفرح وكون مجنون\n02:02.90 هيك ببساطة بيحلى الكون\n02:05.73 بابا رابابابابابابارا\n\n# الختام: عيش بلا حدود (الجزء الثاني)\n02:08.26 خلينا نعيش نحب بلا حدود\n02:12.49 نكون عفوية ما في مفروض\n02:15.70 هيك ببساطة بيحلى الوجود\n02:18.87 بابا رابابابابابابارا\n\n# الختام: عيش بلا حدود (الجزء الثالث)\n02:21.08 خلّي قلبك على طول حرّ يكون\n02:25.24 وعيش الفرح وكون مجنون\n02:28.46 هيك ببساطة بيحلى الكون\n02:31.28 بابا رابابابابابابارا\n02:34.74 بارابارابارابارابارابابّا\n02:37.28 بارابارا",
+        "phrases": [
+          {
+            "text": "No, don't tell me I have to flatter this thing, forget it",
+            "words": [
+              "No",
+              "don't",
+              "tell me",
+              "must",
+              "compliment",
+              "this thing",
+              "forget it"
+            ]
+          },
+          {
+            "text": "Or that my heart has to follow it",
+            "words": [
+              "or",
+              "not",
+              "necessary",
+              "that",
+              "my heart",
+              "I walk",
+              "behind him"
+            ]
+          },
+          {
+            "text": "Like this, I feel the universe is empty and I don't want it",
+            "words": [
+              "like this",
+              "I feel",
+              "the universe",
+              "empty",
+              "and not",
+              "I want",
+              "it"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Even if you gave me the world's wealth, I'll tell you no",
+            "words": [
+              "even if",
+              "you give me",
+              "money",
+              "the world",
+              "will",
+              "I tell you",
+              "no"
+            ]
+          },
+          {
+            "text": "Without there being feelings inside your heart",
+            "words": [
+              "without",
+              "not",
+              "there is",
+              "there is",
+              "feelings",
+              "your heart",
+              "inside"
+            ]
+          },
+          {
+            "text": "Life isn't sweetened by money or appearances",
+            "words": [
+              "not",
+              "with money",
+              "nor",
+              "with appearances",
+              "becomes sweet",
+              "life"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Barabarabarabarabara",
+            "words": [
+              "بارابارابارابارابارا"
+            ]
+          },
+          {
+            "text": "Barabarabaaa",
+            "words": [
+              "بارابارابااا"
+            ]
+          },
+          {
+            "text": "Let's live, let's love without limits",
+            "words": [
+              "let us",
+              "we live",
+              "we love",
+              "without",
+              "limits"
+            ]
+          },
+          {
+            "text": "Let's be spontaneous, there's nothing imposed",
+            "words": [
+              "we are",
+              "spontaneous",
+              "not",
+              "there is",
+              "imposed"
+            ]
+          },
+          {
+            "text": "Like this, simply, existence becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "existence"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Let your heart always be free",
+            "words": [
+              "let",
+              "your heart",
+              "on",
+              "length",
+              "free",
+              "be"
+            ]
+          },
+          {
+            "text": "And live the joy and be crazy",
+            "words": [
+              "and live",
+              "the joy",
+              "and be",
+              "crazy"
+            ]
+          },
+          {
+            "text": "Like this, simply, the universe becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "the universe"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Barabarabarabarabarababa bara",
+            "words": [
+              "بارابارابارابارابارابابّا",
+              "بارا"
+            ]
+          },
+          {
+            "text": "Barabarabarabarabarabara",
+            "words": [
+              "بارابارابارابارابارارابارا"
+            ]
+          },
+          {
+            "text": "Barabaraaaaa",
+            "words": [
+              "باراباراااا"
+            ]
+          },
+          {
+            "text": "No gold or diamonds, don't gift me, no",
+            "words": [
+              "no",
+              "gold",
+              "nor",
+              "diamonds",
+              "not",
+              "you gift me",
+              "no"
+            ]
+          },
+          {
+            "text": "A car or something classy doesn't tempt me, no",
+            "words": [
+              "car",
+              "or",
+              "some",
+              "class",
+              "not",
+              "tempts me",
+              "no"
+            ]
+          },
+          {
+            "text": "It's not so you satisfy people that you cancel me, no",
+            "words": [
+              "not",
+              "in order to",
+              "you please",
+              "the people",
+              "you cancel me",
+              "no"
+            ]
+          },
+          {
+            "text": "Barabarabarabarabara",
+            "words": [
+              "بارابارابارابارابارا"
+            ]
+          },
+          {
+            "text": "Etiquette doesn't concern me, and I live without",
+            "words": [
+              "etiquette",
+              "not",
+              "matters to me",
+              "and I live",
+              "without"
+            ]
+          },
+          {
+            "text": "What matters is the essence, don't pretend, no",
+            "words": [
+              "the important thing",
+              "the essence",
+              "I have",
+              "not",
+              "you fake",
+              "no"
+            ]
+          },
+          {
+            "text": "And simply, like this, I want to live life",
+            "words": [
+              "and with simplicity",
+              "like this",
+              "I want",
+              "live",
+              "life"
+            ]
+          },
+          {
+            "text": "Barabarabarabara",
+            "words": [
+              "بارابارابارابارا"
+            ]
+          },
+          {
+            "text": "Let's live, let's love without limits",
+            "words": [
+              "let us",
+              "we live",
+              "we love",
+              "without",
+              "limits"
+            ]
+          },
+          {
+            "text": "Let's be spontaneous, there's nothing imposed",
+            "words": [
+              "we are",
+              "spontaneous",
+              "not",
+              "there is",
+              "imposed"
+            ]
+          },
+          {
+            "text": "Like this, simply, existence becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "existence"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Let your heart always be free",
+            "words": [
+              "let",
+              "your heart",
+              "on",
+              "length",
+              "free",
+              "be"
+            ]
+          },
+          {
+            "text": "And live the joy and be crazy",
+            "words": [
+              "and live",
+              "the joy",
+              "and be",
+              "crazy"
+            ]
+          },
+          {
+            "text": "Like this, simply, the universe becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "the universe"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Let's live, let's love without limits",
+            "words": [
+              "let us",
+              "we live",
+              "we love",
+              "without",
+              "limits"
+            ]
+          },
+          {
+            "text": "Let's be spontaneous, there's nothing imposed",
+            "words": [
+              "we are",
+              "spontaneous",
+              "not",
+              "there is",
+              "imposed"
+            ]
+          },
+          {
+            "text": "Like this, simply, existence becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "existence"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Let your heart always be free",
+            "words": [
+              "let",
+              "your heart",
+              "on",
+              "length",
+              "free",
+              "be"
+            ]
+          },
+          {
+            "text": "And live the joy and be crazy",
+            "words": [
+              "and live",
+              "the joy",
+              "and be",
+              "crazy"
+            ]
+          },
+          {
+            "text": "Like this, simply, the universe becomes sweet",
+            "words": [
+              "like this",
+              "with simplicity",
+              "becomes sweet",
+              "the universe"
+            ]
+          },
+          {
+            "text": "Baba rababababababara",
+            "words": [
+              "dad",
+              "رابابابابابابارا"
+            ]
+          },
+          {
+            "text": "Barabarabarabarabarababa",
+            "words": [
+              "بارابارابارابارابارابابّا"
+            ]
+          },
+          {
+            "text": "Barabara",
+            "words": [
+              "بارابارا"
+            ]
+          }
+        ],
+        "language_id": 43,
+        "language_name": "English"
+      }
+    },
+    "format_version": 2,
+    "lesson_ratings": [
+      {
+        "index": 1,
+        "score": 5,
+        "title": "# ما بدي الكون فاضي",
+        "reason": "Introduces meaningful vocabulary about rejecting pretense and following the heart, with only one line of filler."
+      },
+      {
+        "index": 2,
+        "score": 4,
+        "title": "# رفض المال والمظاهر",
+        "reason": "Teaches useful phrases about refusing money and appearances, though half the lines are onomatopoeia."
+      },
+      {
+        "index": 3,
+        "score": 5,
+        "title": "# جوقة: عيش بلا حدود",
+        "reason": "First appearance of the chorus with rich vocabulary on living freely and simply."
+      },
+      {
+        "index": 4,
+        "score": 3,
+        "title": "# لا دهب ولا ألماس",
+        "reason": "Contains real words rejecting materialism, but starts and ends with long stretches of nonsense syllables."
+      },
+      {
+        "index": 5,
+        "score": 4,
+        "title": "# الإتيكيت والبساطة",
+        "reason": "Teaches words about ignoring etiquette and valuing essence, with only a short filler ending."
+      },
+      {
+        "index": 6,
+        "score": 1,
+        "title": "# الختام: عيش بلا حدود (الجزء الأول)",
+        "reason": "Exact reprise of the chorus from lesson 3, adding no new learning."
+      },
+      {
+        "index": 7,
+        "score": 1,
+        "title": "# الختام: عيش بلا حدود (الجزء الثاني)",
+        "reason": "Repetition of the first half of the chorus already taught."
+      },
+      {
+        "index": 8,
+        "score": 1,
+        "title": "# الختام: عيش بلا حدود (الجزء الثالث)",
+        "reason": "Repetition of the second half of the chorus and more onomatopoeia, no new content."
+      }
+    ],
+    "similar_sounds": "لا ما تقلي لازم جامل هالشئ [انسه]\nأو ما لازم إنه [قلبه] أمشي وراه\nهيك بحس الكون [ماضي] وما بدي ياه\nبابا رابابابابابابارا\nولو عطيتني مال الدنيا رح [تلك] لا\nبلا ما يكون في مشاعر قلبك [جوا]\nمش بالمال ولا بمظاهر تحلى [بالحياة]\nبابا رابابابابابابارا\nبارابارابارابارابارا\nبارابارابااا\nخلينا نعيش نحب بلا [محدود]\n[تكون] عفوية ما في مفروض\nهيك ببساطة [بلى] الوجود\nبابا رابابابابابابارا\nخلّي قلبك على طول [حرب] يكون\nوعيش الفرح وكون [جنون]\n[هيا] ببساطة بيحلى الكون\nبابا رابابابابابابارا\nبارابارابارابارابارابابّا بارا\nبارابارابارابارابارارابارا\nباراباراااا\nلا دهب ولا ألماس ما [تجديني] لا\n[سارة] أو شي كلاس ما بيغريني لا\nمش لحتى ترضي الناس [تعطيني] لا\nبارابارابارابارابارا\nإتيكيت ما بيهمني [وتعيش] بلا\nالمهم الجوهر [عند] ما بتصنّع لا\nوببساطة هيك [بي] عيش الحياة\nبارابارابارابارا\nخلينا نعيش نحب بلا [محدود]\nنكون عفوية ما في [مفوض]\nهيك ببساطة [بلى] الوجود\n[بابك] رابابابابابابارا\nخلّي قلبك على [حول] حرّ يكون\nوعيش الفرح وكون [مجنونة]\nهيك ببساطة بيحلى [الكوخ]\n[بابي] رابابابابابابارا\nخلينا نعيش [تحب] بلا حدود\nنكون عفوية ما في [مفوض]\nهيك ببساطة [بيلى] الوجود\nبابا رابابابابابابارا\nخلّي قلبك على طول [حرف] يكون\nوعيش الفرح [أكون] مجنون\n[نيك] ببساطة بيحلى الكون\nبابا رابابابابابابارا\nبارابارابارابارابارابابّا\n[باربارا]",
+    "video_length_seconds": 191,
+    "extract_lyrics_in_progress": false
+  },
+  "created_at": "2026-07-19 19:35:35 UTC",
+  "updated_at": "2026-07-19 19:59:57 UTC",
+  "exported_at": "2026-07-19T20:04:21Z"
+}

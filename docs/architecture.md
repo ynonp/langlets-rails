@@ -15,6 +15,15 @@
 
 ## Core Architecture
 
+### Full-course video playback
+
+The full player loads every phrase from the course medium and plays one segment
+from the first phrase start through the latest phrase-token end timestamp. This
+keeps the final word audible when word timing is available. Legacy courses with
+no token timing use the final phrase start as their endpoint. The shared
+`main-video-player` Stimulus controller continues to enforce that server-derived
+segment boundary for playback, progress, and seeking.
+
 ### Homepage language selection
 
 The public course library uses the optional `lang` query parameter both to

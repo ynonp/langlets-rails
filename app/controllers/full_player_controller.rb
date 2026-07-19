@@ -20,13 +20,23 @@ class FullPlayerController < ApplicationController
     
     # Get start and end timestamps from phrases
     @start_timestamp = @phrases.first&.timestamp || "00:00"
-    @end_timestamp = @phrases.last&.timestamp || "00:00"
+    @end_timestamp = full_player_end_timestamp(@phrases)
 
     # Karaoke word highlighting is enabled only when tokens carry per-word timestamps.
     @word_timing = helpers.word_timing_enabled?(@phrases)
   end
 
   private
+
+  def full_player_end_timestamp(phrases)
+    token_end_timestamps = phrases.flat_map do |phrase|
+      phrase.phrase_tokens.filter_map(&:end_timestamp)
+    end
+
+    token_end_timestamps.max_by { |timestamp| Phrase.timestamp_to_seconds(timestamp) } ||
+      phrases.last&.timestamp ||
+      "00:00"
+  end
 
   def extract_video_id_from_url(url)
     # Match patterns like:
