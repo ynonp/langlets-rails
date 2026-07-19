@@ -1,9 +1,13 @@
 // Model wiring. Same models as the Ruby concerns' MODEL_PARAMS:
-//   extract_lyrics          gemini-3.5-flash          (Google)
+//   extract_lyrics          gemini-3.5-flash          (Google, YouTube URL as a file part)
 //   add_lessons             deepseek-v4-pro:cloud     (Ollama cloud)
 //   rate_lessons            deepseek-v4-pro:cloud     (Ollama cloud)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
 //   translate               qwen3.5:397b-cloud        (Ollama cloud)
+//
+// extract_lyrics only gets the lyrics *text* from Gemini; word timing comes
+// from ElevenLabs forced alignment (src/alignment.ts, ELEVEN_LABS_KEY), which
+// is not an LLM and isn't wired here.
 //
 // Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through
 // @ai-sdk/openai-compatible. Steps only ever see the LanguageModel interface,
@@ -44,9 +48,9 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
 
   return {
     extractLyrics: log(google("gemini-3.5-flash"), "extract_lyrics"),
-    addLessons: log(google("gemini-3.5-flash"), "add_lessons"),
-    rateLessons: log(google("gemini-3.5-flash"), "rate_lessons"),
-    translate: log(google("gemini-3.5-flash"), "translate"),
-    tokenTranslations: log(google("gemini-3.5-flash"), "add_token_translations"),
+    addLessons: log(ollama("deepseek-v4-pro:cloud"), "add_lessons"),
+    rateLessons: log(ollama("deepseek-v4-pro:cloud"), "rate_lessons"),
+    translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
+    tokenTranslations: log(ollama("deepseek-v4-pro:cloud"), "add_token_translations"),
   };
 }

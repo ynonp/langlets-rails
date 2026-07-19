@@ -6,6 +6,8 @@ import type { LanguageRef, PipelineError, ProgressData } from "./types.ts";
 import type { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
 import type { Fuzzyword } from "./fuzzyword.ts";
+import type { DownloadedAudio } from "./audio.ts";
+import type { Alignment } from "./alignment.ts";
 import { errorClass, message } from "./retry.ts";
 
 export interface PipelineContext {
@@ -21,6 +23,10 @@ export interface PipelineContext {
   // dictionary and a fixed RNG).
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
+  // Injection points for the transcription step (tests stub out the YouTube
+  // audio download and the ElevenLabs forced-alignment call).
+  prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
+  alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;
 }
 
 export interface FailureDetails {

@@ -1,7 +1,8 @@
 {
   "tasks": {
-    "serve": "deno run --env-file --allow-net --allow-env --allow-read main.ts",
-    "cli": "deno run --env-file --allow-net --allow-env --allow-read cli.ts",
+    "serve": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp main.ts",
+    "cli": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp cli.ts",
+    "download": "deno run --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp download_audio.ts",
     "test": "deno test --allow-net --allow-env --allow-read tests/",
     "check": "deno check main.ts cli.ts"
   },
@@ -9,7 +10,6 @@
     "ai": "npm:ai@^5.0.44",
     "@ai-sdk/google": "npm:@ai-sdk/google@^2.0.17",
     "@ai-sdk/openai-compatible": "npm:@ai-sdk/openai-compatible@^1.0.11",
-    "zod": "npm:zod@^3.25.76",
     "@std/assert": "jsr:@std/assert@^1.0.13"
   },
   "fmt": {

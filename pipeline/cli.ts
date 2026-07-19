@@ -67,5 +67,7 @@ if (raw.callback_url || raw.translation_language?.iso_name) {
 const sink = new HttpCallbackClient(callbackUrl, secret);
 const result = await runPipeline(payload, { models: defaultModels(), sink });
 
-console.log(JSON.stringify({ ok: result.ok, failed: result.failed, summary: result.summary }, null, 2));
+console.log(
+  JSON.stringify({ ok: result.ok, failed: result.failed, summary: result.summary }, null, 2),
+);
 Deno.exit(result.ok ? 0 : 1);

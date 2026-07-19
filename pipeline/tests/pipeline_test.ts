@@ -3,7 +3,16 @@ import { runPipeline } from "../src/pipeline.ts";
 import type { TriggerPayload } from "../src/types.ts";
 import { MemorySink } from "../src/callback.ts";
 import type { ModelRegistry } from "../src/models.ts";
-import { HEBREW, linesBatch, queuedModel, unusedModel } from "./helpers.ts";
+import {
+  alignedBatch,
+  alignment,
+  HEBREW,
+  lyricsText,
+  queuedModel,
+  stubAlign,
+  stubAudio,
+  unusedModel,
+} from "./helpers.ts";
 
 const RATINGS = JSON.stringify([{ index: 1, title: "# Lesson", score: 4, reason: "ok" }]);
 
@@ -31,9 +40,7 @@ interface Mocks {
 
 function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: ModelRegistry } {
   const mocks: Mocks = {
-    extract: queuedModel([
-      { lines: linesBatch(1, 2), has_more: false, video_length: "00:00:15,000" },
-    ]),
+    extract: queuedModel([lyricsText(1, 2)]),
     lessons: queuedModel(["# Lesson\nLine 1\nLine 2"]),
     rate: queuedModel([RATINGS]),
     translate: queuedModel(["שורה 1\nשורה 2"]),
@@ -53,8 +60,15 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
   };
 }
 
+// An aligner that times the two-line lyrics fixture (clip duration comes from
+// stubAudio: 15s).
+function happyAligner() {
+  return stubAlign([alignment(alignedBatch(1, 2))]);
+}
+
 Deno.test("a fresh run walks every step and finalizes the translation payload", async () => {
   const { mocks, models } = happyMocks();
+  const aligner = happyAligner();
   const sink = new MemorySink();
 
   const result = await runPipeline(payload(), {
@@ -62,6 +76,8 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
     sink,
     baseDelayMs: 0,
     fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: aligner.align,
   });
 
   assert(result.ok, JSON.stringify(result.failed));
@@ -69,6 +85,7 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
 
   assertEquals(data.phrases!.length, 2);
   assertFalse(data.extract_lyrics_in_progress);
+  assertEquals(data.video_length_seconds, 15);
   assertEquals(data.lessons, "# Lesson\n00:00.00 Line 1\n00:10.00 Line 2");
   assertEquals(data.lesson_ratings!.length, 1);
   assertEquals(data.format_version, 2);
@@ -84,6 +101,7 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
   // The clip-language lessons snapshot lands in the payload at finalize time.
   assertEquals(payload_he.lessons, data.lessons);
 
+  assertEquals(aligner.calls(), 1);
   for (const mock of Object.values(mocks)) assertEquals(mock.calls(), 1);
   // Every mutation also went out through the callback sink.
   assert(sink.ops.some((op) => op.path === "phrases"));
@@ -91,11 +109,21 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
 });
 
 Deno.test("an extract_lyrics failure stops the run before the fan-out", async () => {
-  const { mocks, models } = happyMocks({
-    extract: queuedModel(["bad", "bad", "bad"]),
-  });
+  const { mocks, models } = happyMocks();
+  const aligner = stubAlign([
+    new Error("bad"),
+    new Error("bad"),
+    new Error("bad"),
+  ]);
 
-  const result = await runPipeline(payload(), { models, sink: new MemorySink(), baseDelayMs: 0, fuzzywordFor: noDictionary });
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: aligner.align,
+  });
 
   assertFalse(result.ok);
   assert(result.failed.extract_lyrics);
@@ -110,7 +138,14 @@ Deno.test("a failing branch doesn't lose the other branches' work", async () => 
     translate: queuedModel(["only one line"]),
   });
 
-  const result = await runPipeline(payload(), { models, sink: new MemorySink(), baseDelayMs: 0, fuzzywordFor: noDictionary });
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: happyAligner().align,
+  });
 
   assertFalse(result.ok);
   assertEquals(Object.keys(result.failed), ["translate"]);
@@ -134,6 +169,8 @@ Deno.test("rerunning with the saved data retries only what failed", async () => 
     sink: new MemorySink(),
     baseDelayMs: 0,
     fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: happyAligner().align,
   });
   assertFalse(firstRun.ok);
 
@@ -144,16 +181,20 @@ Deno.test("rerunning with the saved data retries only what failed", async () => 
     rate: unusedModel(),
     tokens: unusedModel(),
   });
+  const secondAligner = stubAlign([]);
   const secondRun = await runPipeline(payload(firstRun.data), {
     models: second.models,
     sink: new MemorySink(),
     baseDelayMs: 0,
     fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: secondAligner.align,
   });
 
   assert(secondRun.ok, JSON.stringify(secondRun.failed));
   assertEquals(second.mocks.translate.calls(), 1);
   assertEquals(second.mocks.extract.calls(), 0);
+  assertEquals(secondAligner.calls(), 0);
   assertEquals(second.mocks.lessons.calls(), 0);
   assertEquals(second.mocks.rate.calls(), 0);
   assertEquals(second.mocks.tokens.calls(), 0);
@@ -165,6 +206,7 @@ Deno.test("rerunning with the saved data retries only what failed", async () => 
 
 Deno.test("an interrupted transcription resumes extract_lyrics on the next run", async () => {
   const { mocks, models } = happyMocks();
+  const aligner = happyAligner();
   const data = {
     phrases: [
       {
@@ -178,11 +220,19 @@ Deno.test("an interrupted transcription resumes extract_lyrics on the next run",
     extract_lyrics_in_progress: true,
   };
 
-  const result = await runPipeline(payload(data), { models, sink: new MemorySink(), baseDelayMs: 0, fuzzywordFor: noDictionary });
+  const result = await runPipeline(payload(data), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: aligner.align,
+  });
 
   assert(result.ok, JSON.stringify(result.failed));
   // The step reran (the flag said "interrupted", despite phrases being present).
   assertEquals(mocks.extract.calls(), 1);
+  assertEquals(aligner.calls(), 1);
 });
 
 Deno.test("without a translation language only the lessons branch runs after extract", async () => {
@@ -193,7 +243,14 @@ Deno.test("without a translation language only the lessons branch runs after ext
 
   const result = await runPipeline(
     { ...payload(), translation_language: null },
-    { models, sink: new MemorySink(), baseDelayMs: 0, fuzzywordFor: noDictionary },
+    {
+      models,
+      sink: new MemorySink(),
+      baseDelayMs: 0,
+      fuzzywordFor: noDictionary,
+      prepareAudio: stubAudio,
+      alignLyrics: happyAligner().align,
+    },
   );
 
   assert(result.ok);

@@ -22,15 +22,18 @@ Deno.test("matchLessonDataToPrompt rebuilds lessons from our own clip lines", ()
 
   const result = matchLessonDataToPrompt(clipLines, llmResponse);
 
-  assertEquals(result, [
-    "# The Golden Dream",
-    "00:05.00 We were good",
-    "00:06.00 we were gold",
-    "",
-    "# The Turning Point",
-    "00:07.00 I didn't wanna leave you",
-    "00:08.00 I didn't wanna lie",
-  ].join("\n"));
+  assertEquals(
+    result,
+    [
+      "# The Golden Dream",
+      "00:05.00 We were good",
+      "00:06.00 we were gold",
+      "",
+      "# The Turning Point",
+      "00:07.00 I didn't wanna leave you",
+      "00:08.00 I didn't wanna lie",
+    ].join("\n"),
+  );
 });
 
 Deno.test("addLessons stores the matched lessons", async () => {

@@ -9,6 +9,7 @@ import { MemorySink } from "../src/callback.ts";
 import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
+import type { AlignedWord, Alignment } from "../src/alignment.ts";
 
 export interface QueuedModel {
   model: LanguageModel;
@@ -56,6 +57,48 @@ export function unusedModel(): QueuedModel {
 
 export const HEBREW: LanguageRef = { id: 3, iso_name: "he", english_name: "Hebrew" };
 
+// Stand-in for the real yt-dlp download: hands the step a fake local path and
+// a clip duration without touching the network. The path doesn't exist; the
+// step's cleanup ignores removal failures and the alignment call is stubbed.
+export const STUB_AUDIO_PATH = "/nonexistent/langlets-test-audio.m4a";
+
+export function stubAudioWith(durationSeconds: number | null) {
+  return () => Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds });
+}
+
+export const stubAudio = stubAudioWith(15);
+
+export interface StubAligner {
+  align: NonNullable<PipelineContext["alignLyrics"]>;
+  calls: () => number;
+  // The (audioPath, text) pair each call received.
+  requests: Array<{ audioPath: string; text: string }>;
+}
+
+// An aligner that answers from a queue: Error entries are thrown (how we
+// simulate failed ElevenLabs calls), Alignment entries are returned. Throws
+// once the queue is exhausted.
+export function stubAlign(responses: Array<Alignment | Error>): StubAligner {
+  let count = 0;
+  const requests: StubAligner["requests"] = [];
+
+  return {
+    align: (audioPath, text) => {
+      requests.push({ audioPath, text });
+      if (count >= responses.length) throw new Error("stub aligner exhausted");
+      const next = responses[count++];
+      if (next instanceof Error) return Promise.reject(next);
+      return Promise.resolve(next);
+    },
+    calls: () => count,
+    requests,
+  };
+}
+
+export function alignment(words: AlignedWord[]): Alignment {
+  return { words, loss: 0.1 };
+}
+
 export interface TestSetup {
   ctx: PipelineContext;
   store: ProgressStore;
@@ -67,6 +110,8 @@ export function makeCtx(options: {
   models?: Partial<ModelRegistry>;
   translationLanguage?: LanguageRef | null;
   clipLanguage?: string;
+  prepareAudio?: PipelineContext["prepareAudio"];
+  alignLyrics?: PipelineContext["alignLyrics"];
 } = {}): TestSetup {
   const sink = new MemorySink();
   const store = new ProgressStore(options.data ?? {}, sink);
@@ -89,37 +134,31 @@ export function makeCtx(options: {
       ? HEBREW
       : options.translationLanguage,
     baseDelayMs: 0,
+    prepareAudio: options.prepareAudio ?? stubAudio,
+    alignLyrics: options.alignLyrics,
   };
 
   return { ctx, store, sink };
 }
 
-// Transcription fixture matching the LyricsTranscriptionSchema shape. Lines
-// are 10 seconds apart starting at (n-1)*10 seconds.
-export function linesBatch(from: number, to: number) {
+// Lyrics + alignment fixtures for lines "Line 1", "Line 2", ...: the lyrics
+// text as Gemini would return it, and the matching ElevenLabs word list
+// (float seconds, two words per line, lines 10 seconds apart starting at
+// (n-1)*10 seconds).
+export function lyricsText(from: number, to: number): string {
   const lines = [];
-  for (let n = from; n <= to; n++) {
-    const start = (n - 1) * 10;
-    lines.push({
-      line_start: srt(start),
-      line_end: srt(start + 3),
-      line_text: `Line ${n}`,
-      words: [
-        { word: "Line", start: srt(start), end: srt(start + 1) },
-        { word: String(n), start: srt(start + 2), end: srt(start + 3) },
-      ],
-    });
-  }
-  return lines;
+  for (let n = from; n <= to; n++) lines.push(`Line ${n}`);
+  return lines.join("\n");
 }
 
-export function srt(seconds: number): string {
-  const h = Math.floor(seconds / 3600);
-  const m = Math.floor((seconds % 3600) / 60);
-  const s = Math.floor(seconds % 60);
-  const ms = Math.round((seconds % 1) * 1000);
-  const pad = (v: number, len = 2) => String(v).padStart(len, "0");
-  return `${pad(h)}:${pad(m)}:${pad(s)},${pad(ms, 3)}`;
+export function alignedBatch(from: number, to: number): AlignedWord[] {
+  const words: AlignedWord[] = [];
+  for (let n = from; n <= to; n++) {
+    const start = (n - 1) * 10;
+    words.push({ text: "Line", start, end: start + 1 });
+    words.push({ text: String(n), start: start + 2, end: start + 3 });
+  }
+  return words;
 }
 
 // The neutral phrases fixture downstream steps start from: two phrases, two

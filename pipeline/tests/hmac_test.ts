@@ -1,7 +1,7 @@
 import { assert, assertEquals, assertFalse } from "@std/assert";
 import {
-  SIGNATURE_HEADER,
   sign,
+  SIGNATURE_HEADER,
   signedHeaders,
   TIMESTAMP_HEADER,
   verify,

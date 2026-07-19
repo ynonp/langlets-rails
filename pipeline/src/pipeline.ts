@@ -38,6 +38,10 @@ export interface RunOptions {
   // Test injection points for the similar-sound step.
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
+  // Test injection points for the transcription step's audio download and
+  // the ElevenLabs forced-alignment call.
+  prepareAudio?: PipelineContext["prepareAudio"];
+  alignLyrics?: PipelineContext["alignLyrics"];
 }
 
 export interface RunResult {
@@ -48,7 +52,10 @@ export interface RunResult {
   summary: Record<string, unknown>;
 }
 
-export async function runPipeline(payload: TriggerPayload, options: RunOptions): Promise<RunResult> {
+export async function runPipeline(
+  payload: TriggerPayload,
+  options: RunOptions,
+): Promise<RunResult> {
   const store = new ProgressStore(payload.data, options.sink);
   const ctx: PipelineContext = {
     store,
@@ -60,6 +67,8 @@ export async function runPipeline(payload: TriggerPayload, options: RunOptions):
     baseDelayMs: options.baseDelayMs ?? 1000,
     fuzzywordFor: options.fuzzywordFor,
     random: options.random,
+    prepareAudio: options.prepareAudio,
+    alignLyrics: options.alignLyrics,
   };
 
   const failed: Record<string, string> = {};

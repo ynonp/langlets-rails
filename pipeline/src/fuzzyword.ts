@@ -41,14 +41,21 @@ const ENGLISH_NAMES: Record<string, string> = {
   arabic: "ar",
 };
 
-// Resolve the fuzzyword language code for a clip language, preferring an
-// explicit iso override. Region suffixes are stripped ("ar-JO" → "ar") like
-// the Ruby fuzzyword_lang_code did. Returns null when no dictionary exists.
-export function langCodeFor(clipLanguage: string, iso?: string | null): string | null {
+// Resolve a clip language to a bare iso code, preferring an explicit iso
+// override. Region suffixes are stripped ("ar-JO" → "ar") like the Ruby
+// fuzzyword_lang_code did. Returns null when the language is unknown.
+export function isoCodeFor(clipLanguage: string, iso?: string | null): string | null {
   const code = (iso ?? ENGLISH_NAMES[clipLanguage.trim().toLowerCase()] ?? "")
     .split("-")[0]
     .toLowerCase();
-  return code in DICTIONARIES ? code : null;
+  return code || null;
+}
+
+// Resolve the fuzzyword language code for a clip language: an iso code that
+// also has a similar-sound dictionary. Returns null when no dictionary exists.
+export function langCodeFor(clipLanguage: string, iso?: string | null): string | null {
+  const code = isoCodeFor(clipLanguage, iso);
+  return code && code in DICTIONARIES ? code : null;
 }
 
 interface DictEntry {
