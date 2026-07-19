@@ -202,6 +202,10 @@ long gone.
 - `token_translations` belongs to a PhraseToken and Language and owns the L2
   translation plus L2 indexes. It is unique per `(phrase_token_id, language_id)`.
 - Activities and saved vocabulary reference PhraseToken, never a localized row.
+- The migration that splits legacy `token_translations` into `phrase_tokens`
+  tolerates missing legacy indexes and recreates the required indexes after the
+  table rename. This supports production databases whose historical index set
+  differs from a freshly migrated database without risking token data.
 
 #### 10. **User** (`users`)
 - **Purpose**: User authentication and account management

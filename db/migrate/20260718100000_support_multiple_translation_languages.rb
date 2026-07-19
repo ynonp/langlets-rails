@@ -12,9 +12,17 @@ class SupportMultipleTranslationLanguages < ActiveRecord::Migration[8.0]
     # and one L2 rendering. Preserve their ids while splitting the two concepts.
     if table_exists?(:token_translations) && column_exists?(:token_translations, :phrase_id) && !table_exists?(:phrase_tokens)
       rename_table :token_translations, :phrase_tokens
-      rename_index :phrase_tokens, :idx_token_translations_unique, :idx_phrase_tokens_unique
-      rename_index :phrase_tokens, :index_token_translations_on_phrase_id, :index_phrase_tokens_on_phrase_id
-      rename_index :phrase_tokens, :index_token_translations_on_index_type, :index_phrase_tokens_on_index_type
+      rename_index_if_present :phrase_tokens, :idx_token_translations_unique, :idx_phrase_tokens_unique
+      rename_index_if_present :phrase_tokens, :index_token_translations_on_phrase_id, :index_phrase_tokens_on_phrase_id
+      rename_index_if_present :phrase_tokens, :index_token_translations_on_index_type, :index_phrase_tokens_on_index_type
+
+      add_index :phrase_tokens,
+        [ :phrase_id, :l1_start_index, :l1_end_index, :index_type ],
+        unique: true,
+        name: :idx_phrase_tokens_unique,
+        if_not_exists: true
+      add_index :phrase_tokens, :phrase_id, if_not_exists: true
+      add_index :phrase_tokens, :index_type, if_not_exists: true
     end
 
     create_table :token_translations, if_not_exists: true do |t|
@@ -54,5 +62,14 @@ class SupportMultipleTranslationLanguages < ActiveRecord::Migration[8.0]
 
   def down
     raise ActiveRecord::IrreversibleMigration, "the multilingual backfill cannot be safely merged back"
+  end
+
+  private
+
+  def rename_index_if_present(table, old_name, new_name)
+    return unless index_name_exists?(table, old_name)
+    return if index_name_exists?(table, new_name)
+
+    rename_index table, old_name, new_name
   end
 end
