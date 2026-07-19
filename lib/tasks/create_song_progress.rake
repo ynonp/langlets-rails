@@ -1,4 +1,28 @@
 namespace :create_song_progress do
+  desc "Run the Deno pipeline and wait (youtube_url, clip_language, translation_language)"
+  task :pipeline, [ :youtube_url, :clip_language, :translation_language ] => :environment do |_task, args|
+    if args.values_at(:youtube_url, :clip_language, :translation_language).any?(&:blank?)
+      abort <<~USAGE
+        Usage: rake "create_song_progress:pipeline[youtube_url,clip_language,translation_language]"
+        Example: rake "create_song_progress:pipeline[https://www.youtube.com/watch?v=XXXX,French,Hebrew]"
+
+        Start Rails separately with the same PIPELINE_HMAC_SECRET. The callback base URL
+        defaults to http://localhost:3000 and can be changed with PIPELINE_CALLBACK_BASE_URL.
+      USAGE
+    end
+
+    progress = CreateSongPipelineCli.new(
+      youtube_url: args[:youtube_url],
+      clip_language: args[:clip_language],
+      translation_language: args[:translation_language],
+      callback_base_url: ENV["PIPELINE_CALLBACK_BASE_URL"]
+    ).call
+
+    puts "Deno pipeline finished successfully for CreateSongProgress #{progress.id}."
+  rescue ArgumentError => e
+    abort e.message
+  end
+
   desc "Export a CreateSongProgress record to JSON file"
   task :export, [ :youtubeurl, :clip_language, :translation_language, :output_file ] => :environment do |t, args|
     if args[:youtubeurl].blank? || args[:clip_language].blank? || args[:translation_language].blank?

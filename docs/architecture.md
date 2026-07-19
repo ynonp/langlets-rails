@@ -89,6 +89,17 @@ guarantees the positional alignment `BuildSong#add_translation` depends on,
 and keeps exports possible for any course whose original pipeline record is
 long gone.
 
+For local/manual pipeline runs, `rake
+"create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE]"`
+resolves the target `Language`, creates or reuses the shared progress row,
+exports its latest database state to a temporary file, and runs the Deno CLI
+synchronously. The callback server must already be running; its base URL is
+`PIPELINE_CALLBACK_BASE_URL` (default `http://localhost:3000`). Rails and the
+task must share `PIPELINE_HMAC_SECRET`, while the task process also supplies
+the model provider keys inherited by Deno. A retry always re-exports first, so
+completed callback work is not unnecessarily repeated, and a failed Deno exit
+status fails the rake task.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)
