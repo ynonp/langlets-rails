@@ -1,9 +1,10 @@
 # Create Song Pipeline (Deno)
 
-The Create Song AI pipeline, extracted from the Rails concerns (`app/models/concerns/create_song/*`)
-into a standalone Deno + TypeScript service built on the [Vercel AI SDK](https://ai-sdk.dev). It is
-designed to run on an external server (Deno Deploy) while **all data stays in the Rails postgres**:
-every mutation is streamed back to a callback URL the trigger request provides.
+The Create Song AI pipeline: a standalone Deno + TypeScript service built on the
+[Vercel AI SDK](https://ai-sdk.dev). Originally extracted from the Rails concerns that lived in
+`app/models/concerns/create_song/*`, it is now the only implementation — those concerns have been
+deleted. It runs on an external server while **all data stays in the Rails postgres**: every
+mutation is streamed back to a callback URL the trigger request provides.
 
 ## The workflow and how it parallelizes
 
@@ -199,7 +200,22 @@ The receiving side is implemented in the Rails app:
   credential. `PipelineHmac.signed_headers(body)` is what a trigger client uses to sign the outgoing
   request.
 
-Still to build for cutover: the **trigger** — `create_data` becomes a signed POST of the exported
-data to `/run` from the worker, either waiting on the synchronous response or using `?async=1` and
-relying on callbacks + retry-by-retrigger. All six steps now live in the pipeline, so nothing needs
-to run locally first.
+- **`app/services/create_song_pipeline_http.rb`** — the trigger. Signs the record's exported `data`
+  and POSTs it to `/run`, blocking on the synchronous response: the run streams its mutations back
+  through the callback as it goes, so the response carries only `{ ok, failed, summary }`. A failed
+  branch raises, which is what makes `CreateCourseJob` refund the import rather than build a course
+  from a half-filled blob. Retrying is just triggering again with the saved `data`.
+
+This is the only implementation — the Ruby steps it was extracted from (`create_data`,
+`add_translation` and the `CreateSong::*` concerns) were deleted once the pipeline took over, so
+`CreateCourseJob` and `AddCourseTranslationJob` both trigger a run and there is no fallback.
+Configure with:
+
+```sh
+PIPELINE_URL=https://pipeline.langlets.app
+PIPELINE_HMAC_SECRET=...              # must match the pipeline host's
+PIPELINE_CALLBACK_BASE_URL=...        # where the pipeline can reach this Rails
+```
+
+`PIPELINE_CALLBACK_BASE_URL` is the one that bites in development: the pipeline runs on another
+host, so `localhost:3000` there is itself. Point it at an ngrok tunnel to the local Rails.

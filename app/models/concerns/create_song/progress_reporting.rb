@@ -30,8 +30,22 @@ module CreateSong
       earned.round.clamp(MIN_REPORTED, MAX_REPORTED)
     end
 
-    # Mirrors create_data's guards exactly — it delegates to the same predicates
-    # the pipeline itself uses. If you change one, change the other.
+    # These two used to live in the RateLessons / AddSimilarSound concerns,
+    # next to the steps that produced them. The steps now run in the Deno
+    # pipeline, but the data shape is unchanged and the pipeline guards its own
+    # branches on the same keys (src/progress.ts), so the predicates moved here
+    # rather than disappearing.
+    def lessons_rated?
+      progress_data["lesson_ratings"].present?
+    end
+
+    def similar_sounds_complete?
+      progress_data["similar_sounds"].present?
+    end
+
+    # Mirrors the pipeline's branch guards: both sides read the same keys of
+    # `data` to decide what still needs doing. If you change one, change the
+    # other (pipeline/src/progress.ts).
     def step_done?(step)
       # lessons_rated? and similar_sounds_complete? read `data` directly, so they
       # blow up on a record whose data was never initialised.

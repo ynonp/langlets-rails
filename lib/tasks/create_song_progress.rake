@@ -198,7 +198,9 @@ namespace :create_song_progress do
       progress.data ||= {}
 
       begin
-        progress.create_data
+        # The pipeline needs a persisted record to address its callbacks to.
+        progress.save!
+        CreateSongPipelineHttp.new(progress: progress).call
 
         video_id = url.gsub(/[^a-zA-Z0-9]/, "_")
         output_file = output_dir.join("#{video_id}.json")
@@ -246,14 +248,13 @@ namespace :create_song_progress do
     progress.data = { "phrases" => phrases }
     progress.save!
 
-    puts "1/3 add_lessons..."
-    progress.add_lessons
-    puts "2/3 add_similar_sound..."
-    progress.add_similar_sound
-    puts "3/3 add_translation (line-level L2 + per-word translations)..."
-    progress.add_translation(args[:translation_language])
+    # Seeding phrases is what makes this cheap: the pipeline guards
+    # extract_lyrics on their presence, so this run does lessons, ratings,
+    # similar sounds and the translation without re-transcribing.
+    puts "Running the pipeline (skipping transcription — phrases are seeded)..."
+    CreateSongPipelineHttp.new(progress: progress).call
 
-    output_file = args[:output_file] || "word_timed_progress_#{Time.current.to_i}.json"
+    output_file = args[:output_file] || "word_timed_progress_#{Time.zone.now.to_i}.json"
     progress.export(output_file)
 
     puts "Done! Exported to: #{output_file}"

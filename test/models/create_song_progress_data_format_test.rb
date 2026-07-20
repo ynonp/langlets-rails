@@ -50,7 +50,7 @@ class CreateSongProgressDataFormatTest < ActiveSupport::TestCase
     assert_equal data["lessons"], payload["lessons"]
   end
 
-  test "add_translation and BuildSong refuse a legacy blob" do
+  test "BuildSong refuses a legacy blob" do
     progress = CreateSongProgress.new(
       youtubeurl: "https://www.youtube.com/watch?v=legacy1",
       clip_language: "Spanish",
@@ -58,7 +58,6 @@ class CreateSongProgressDataFormatTest < ActiveSupport::TestCase
       data: legacy_data
     )
 
-    assert_raises(CreateSongProgress::LegacyFormatError) { progress.add_translation(languages(:english)) }
     assert_raises(CreateSongProgress::LegacyFormatError) do
       CourseBuilder::BuildSong.new(progress, Course.new).call
     end

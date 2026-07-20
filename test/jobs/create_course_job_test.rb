@@ -6,6 +6,10 @@ class CreateCourseJobTest < ActiveJob::TestCase
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
 
   setup do
+    # The AI steps run out of process now, so the job expects this configured.
+    @previous_pipeline_url = ENV["PIPELINE_URL"]
+    ENV["PIPELINE_URL"] = "https://pipeline.test"
+
     @user    = User.create!(email: "job@example.com", password: "password123", confirmed_at: Time.zone.now)
     @spanish = languages(:spanish)
     @english = languages(:english)
@@ -20,6 +24,10 @@ class CreateCourseJobTest < ActiveJob::TestCase
     )
     @request = create_request(user: @user, charged: true, status: :queued)
     Credits::Ledger.spend!(user: @user, subject: @request, idempotency_key: "import:#{@request.id}")
+  end
+
+  teardown do
+    ENV["PIPELINE_URL"] = @previous_pipeline_url
   end
 
   test "publishing marks the request ready and puts the course on Home" do
@@ -112,6 +120,34 @@ class CreateCourseJobTest < ActiveJob::TestCase
     assert @course.reload.processing?
   end
 
+  # The AI steps only exist in the pipeline now, so this is the cutover check:
+  # the job hands the record to the trigger rather than doing the work itself.
+  test "the AI work is delegated to the pipeline server" do
+    received = []
+    trigger = Object.new
+    trigger.define_singleton_method(:call) { :done }
+
+    builder = Object.new
+    def builder.call = true
+    mail = Object.new
+    def mail.deliver_now = true
+
+    CreateSongProgress.stub(:find, @progress) do
+      CreateSongPipelineHttp.stub(:new, ->(**kwargs) { received << kwargs; trigger }) do
+        CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
+          CourseMailer.stub(:creation_complete, ->(*) { mail }) do
+            CreateCourseJob.perform_now(@progress.id, @course.id)
+          end
+        end
+      end
+    end
+
+    assert_equal 1, received.size, "one run covers the record's own language"
+    assert_equal @progress, received.first[:progress]
+    assert @course.reload.published?
+    assert @request.reload.ready?
+  end
+
   private
 
   def create_request(user:, charged:, status:)
@@ -123,11 +159,11 @@ class CreateCourseJobTest < ActiveJob::TestCase
     )
   end
 
-  # Replaces the job's two slow parts — the LLM pipeline and the course builder —
+  # Replaces the job's two slow parts — the pipeline run and the course builder —
   # leaving its bookkeeping (charge, refund, enroll, status) under test.
   def run_job(during: nil, raising: nil)
-    progress = @progress
-    progress.define_singleton_method(:create_data) do
+    trigger = Object.new
+    trigger.define_singleton_method(:call) do
       raise RuntimeError, raising if raising
 
       during&.call
@@ -142,11 +178,13 @@ class CreateCourseJobTest < ActiveJob::TestCase
 
     # Note the lambdas: Minitest's stub *calls* any value that responds to :call,
     # so returning the builder directly would invoke it instead.
-    CreateSongProgress.stub(:find, progress) do
-      CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-        CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-          CourseMailer.stub(:creation_failed, ->(*) { mail }) do
-            CreateCourseJob.perform_now(@progress.id, @course.id)
+    CreateSongProgress.stub(:find, @progress) do
+      CreateSongPipelineHttp.stub(:new, ->(**) { trigger }) do
+        CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
+          CourseMailer.stub(:creation_complete, ->(*) { mail }) do
+            CourseMailer.stub(:creation_failed, ->(*) { mail }) do
+              CreateCourseJob.perform_now(@progress.id, @course.id)
+            end
           end
         end
       end

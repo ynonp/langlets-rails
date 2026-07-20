@@ -118,6 +118,36 @@ the model provider keys inherited by Deno. A retry always re-exports first, so
 completed callback work is not unnecessarily repeated, and a failed Deno exit
 status fails the rake task.
 
+The AI steps run **only** in the Deno pipeline. `CreateSongPipelineHttp` signs
+the record's exported `data` with `PipelineHmac` and POSTs it to the pipeline
+server's `/run`; results come back through `PipelineCallbacksController`. Both
+entry points use it — `CreateCourseJob` (the `/courses/new` form) and
+`AddCourseTranslationJob` (adding a language to an existing course). The call
+blocks until the run finishes and raises on failure, which is what lets each
+job's rescue refund the import: a partial run must not become a published
+course.
+
+There is no in-process fallback. `CreateSongProgress#create_data`,
+`#add_translation` and the six `CreateSong::*` step concerns were removed when
+the pipeline became the only implementation — the model is now the store and
+the guard predicates, not the worker. `CreateSong::ProgressReporting` remains,
+because the percent is derived from `data`, which the pipeline fills in the
+same shape. `PIPELINE_URL` is therefore required; an unset value raises
+`CreateSongPipelineHttp::ConfigurationError` rather than silently degrading.
+
+The trigger uses the synchronous `/run` rather than `?async=1` deliberately:
+the pipeline streams every mutation back through `PipelineCallbacksController`
+as it goes, so the response carries only `{ ok, failed, summary }`. Because each
+branch persists as it completes, a failed run leaves its finished work saved and
+retriggering with the same `data` resumes rather than redoes.
+
+Three variables configure it: `PIPELINE_URL` (the server), the shared
+`PIPELINE_HMAC_SECRET`, and `PIPELINE_CALLBACK_BASE_URL` — where the pipeline
+can reach *this* Rails. The last one is the one that bites in development: the
+pipeline runs on another host, so `localhost:3000` there is itself, and it must
+point at a tunnel (ngrok) to the local server. Model-provider keys now live
+only on the pipeline host; Rails no longer needs them at all.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)

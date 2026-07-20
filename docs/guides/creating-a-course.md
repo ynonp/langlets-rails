@@ -103,58 +103,68 @@ Pipeline states via `data` keys:
 
 ---
 
-## Model Parameters & Providers
+## Where the Pipeline Runs
 
-The `CreateSongProgress` model has four sets of model parameters that control which AI model is used for each pipeline step:
+The AI steps run **only** in the Deno pipeline, on a separate host. Rails triggers a run with `CreateSongPipelineHttp` and stores what comes back; it no longer performs any of the steps itself, and needs no model-provider keys.
 
-| Parameter | Used by | Default model |
+Both entry points go through it:
+
+| Entry point | Trigger |
+|---|---|
+| `/courses/new` → `CreateCourseJob` | one run for the course's own language, plus one per extra language other imports requested |
+| Adding a language → `AddCourseTranslationJob` | one run for that language |
+
+The run is synchronous — Rails blocks until it finishes — but results arrive continuously via `POST /pipeline_callbacks/:id` rather than in the response. A failed branch raises, so the import is refunded and no half-built course is published. Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
+
+There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `PIPELINE_URL` is required — unset, it raises `CreateSongPipelineHttp::ConfigurationError`.
+
+### Configuration
+
+```sh
+PIPELINE_URL=https://pipeline.langlets.app
+PIPELINE_HMAC_SECRET=...              # must be identical on both sides
+PIPELINE_CALLBACK_BASE_URL=...        # where the pipeline can reach this Rails
+```
+
+`PIPELINE_CALLBACK_BASE_URL` is the one that catches people out in development. The pipeline runs on a different host, so `localhost:3000` there refers to itself, and callbacks silently go nowhere — which aborts the run, since the pipeline treats undeliverable callbacks as fatal. Point it at an ngrok tunnel:
+
+```sh
+ngrok http 3000        # → https://XXXX.ngrok-free.app
+```
+
+and allow the host in `config/environments/development.rb`:
+
+```ruby
+config.hosts << /.*\.ngrok-free\.app/
+```
+
+Note that ngrok is only needed for the **callback** direction. The trigger goes straight from Rails to the pipeline's public URL.
+
+Watch a run with `journalctl -u langlets-pipeline -f` on the pipeline host. See `pipeline/README.md` for the pipeline's own internals.
+
+---
+
+## Models & Providers
+
+Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rails has no say in it and holds no provider keys.
+
+| Step | Model | Provider |
 |---|---|---|
-| `model_params_youtube` | Extract lyrics | `gemini-3.5-flash` (Gemini) |
-| `model_params_quick` | (not in main pipeline) | `gemini-3-flash-preview` (Gemini) |
-| `model_params_smart` | Token translations | `gemini-3.1-pro-preview` (Gemini) |
-| `model_params_translate` | Translate phrases | `gemini-3-flash-preview` (Gemini) |
+| `extract_lyrics` (lyrics text) | `gemini-3.5-flash` | Google |
+| `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
+| `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
+| `add_token_translations` | `deepseek-v4-pro:cloud` | Ollama cloud |
+| `translate` | `qwen3.5:397b-cloud` | Ollama cloud |
 
-These are **virtual attributes** (declared with `attribute` — not backed by a DB column). They are initialized from defaults every time the record is loaded from the database.
+Word timing does not come from an LLM: `extract_lyrics` gets only the lyrics *text* from Gemini, then ElevenLabs forced alignment supplies per-word timestamps (`pipeline/src/alignment.ts`, `ELEVEN_LABS_KEY`).
 
-### Switching to Local Ollama Models
+Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 
-If Gemini rate limits are hit (or for offline dev), switch to local models:
-
-```ruby
-# Option A: Per-instance (must be done on the object that runs the job)
-progress = CreateSongProgress.find(id)
-progress.save!
-# WARNING: This does NOT persist model_params changes across job reloads!
-# The job loads a fresh progress from DB → defaults are restored.
+```bash
+sudo systemctl restart langlets-pipeline
 ```
 
-**The right way to switch providers:** temporarily change the defaults in `app/models/create_song_progress.rb`:
-
-```ruby
-# Change from gemini to ollama:
-attribute :model_params_smart, default: {model: 'deepseek-v4-pro:cloud', provider: :openai, assume_model_exists: true }
-attribute :model_params_translate, default: {model: 'qwen3.5:397b-cloud', provider: :openai, assume_model_exists: true }
-```
-
-The `provider: :openai` with an Ollama cloud model works because `config/initializers/ruby_llm.rb` routes the OpenAI provider to the local Ollama server (`http://localhost:11434/v1`).
-
-**Revert after use!** The Geminis defaults are for production.
-
-### Validating Model Names
-
-Before creating a course, verify the model names actually exist:
-
-```ruby
-# For Gemini:
-key = Rails.application.credentials.dig(:google_api_key)
-uri = URI("https://generativelanguage.googleapis.com/v1beta/models?key=#{key}")
-JSON.parse(Net::HTTP.get(uri))["models"].map { |m| m["name"].gsub("models/", "") }.grep(/gemini/).sort
-
-# For Ollama:
-# Check http://localhost:11434/api/tags
-```
-
-Common gotcha: Google model names often have a `-preview` suffix (e.g., `gemini-3.1-pro-preview`, not `gemini-3.1-pro`).
+Keys are set in `pipeline/.env` on that host: `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, `ELEVEN_LABS_KEY`, plus the shared `PIPELINE_HMAC_SECRET`. Full LLM outputs are logged by default; set `PIPELINE_LOG_LLM=0` to silence them.
 
 ---
 
@@ -170,10 +180,12 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| `models/gemini-X.Y-pro is not found` | Invalid model name | Fix model name in `CreateSongProgress` defaults |
-| `You exceeded your current quota` | Gemini rate limit | Switch to Ollama models or wait |
-| `ContextLengthExceededError` | Prompt too long for model | Split into smaller batches or use a larger-context model |
-| `undefined method '[]' for nil` in `create_data` | `progress.data` is `nil` | Initialize with `progress.data = {}; progress.save!` |
+| `PIPELINE_URL is not configured` | No pipeline host set | Set `PIPELINE_URL`; there is no in-process fallback |
+| `pipeline returned 401` | `PIPELINE_HMAC_SECRET` differs between the two sides | Make them identical, then restart both |
+| `could not reach the pipeline at ...` | Host down, DNS, or firewall | `curl https://<host>/health`; check `systemctl status langlets-pipeline` |
+| `pipeline run failed: {"translate": ...}` | One branch failed; its error is in `data["errors"]` | Fix the cause and re-trigger — finished branches are not redone |
+| Run starts, then nothing persists | Pipeline can't reach the callback URL | Check `PIPELINE_CALLBACK_BASE_URL` — in dev it must be the ngrok URL, not localhost |
+| `You exceeded your current quota` | Provider rate limit | Change the model in `pipeline/src/models.ts` and restart the service |
 | Course stuck in `processing` | Job crashed without updating status | Check logs, fix issue, reset: `course.update!(status: :pending)` |
 
 ### Retrying a Failed Course
@@ -196,17 +208,9 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 
 ### The Pipeline Is Idempotent
 
-Each step in `create_data` checks whether its output already exists before running:
+Every branch is guarded on the contents of `data` before it runs (`pipeline/src/progress.ts`), and each one persists through the callback as it completes. The trigger sends the record's saved `data` back with every run, so a re-trigger resumes: finished branches are skipped and only the failed ones retry.
 
-```ruby
-extract_lyrics unless data["phrases"].present?
-translate unless data.dig("phrases", 0, "text_l2")
-add_token_translation unless data["phrases_with_token_translations"].present?
-add_lessons unless data["lessons"].present?
-add_similar_sound unless similar_sounds_complete?
-```
-
-So if a step failed, resetting the course to `pending` and re-enqueuing will pick up from where it left off.
+So if a step failed, resetting the course to `pending` and re-enqueuing picks up where it left off. The same holds for a run that died mid-flight — whatever had already been delivered is in postgres.
 
 ---
 
@@ -234,5 +238,6 @@ Before creating a course, verify these are in place:
 - [ ] The language exists in the database: `Language.find_by(iso_name: "de")`
 - [ ] The language has Azure TTS entries in `app/models/concerns/azure_text_to_speech.rb`
 - [ ] Token translation prompt partials exist for the language pair (e.g., `_add_tokens_examples_german_english.md.erb`)
-- [ ] Model names in `CreateSongProgress` defaults point to real, accessible models
-- [ ] If using Ollama: `ollama serve` is running and the models are pulled
+- [ ] `PIPELINE_URL`, `PIPELINE_HMAC_SECRET` and `PIPELINE_CALLBACK_BASE_URL` are set
+- [ ] The pipeline host answers: `curl https://<host>/health` → `{"ok":true}`
+- [ ] In development: ngrok is running and its host is allowed in `development.rb`

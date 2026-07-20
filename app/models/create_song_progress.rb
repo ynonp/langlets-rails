@@ -6,12 +6,6 @@ class CreateSongProgress < ApplicationRecord
   validates :youtubeurl, presence: true
   validates :clip_language, presence: true
 
-  include CreateSong::ExtractLyrics
-  include CreateSong::AddTokenTranslations
-  include CreateSong::AddLessons
-  include CreateSong::RateLessons
-  include CreateSong::AddSimilarSound
-  include CreateSong::Translate
   include CreateSong::ProgressReporting
 
   # This row is shared by every user importing the same video + language pair, so
@@ -23,48 +17,11 @@ class CreateSongProgress < ApplicationRecord
   # in memory, so the percent is free.
   after_save :sync_import_requests_progress
 
-  def create_data
-    span_name = "Create Song Progress #{youtubeurl} - #{clip_language} / #{translation_language}"
-    LangfuseTracer.in_span(span_name, attributes: { }) do |span|
-      # Run extract_lyrics when we have no phrases yet, or when a previous run
-      # started the step but never finished it (the in-progress flag is still
-      # set). Relying on phrases alone isn't enough: extract_lyrics now saves
-      # phrases turn-by-turn, so a partially-transcribed, failed run also leaves
-      # phrases present -- the flag is what tells "done" apart from "interrupted".
-      extract_lyrics if data["phrases"].blank? || data["extract_lyrics_in_progress"]
-      add_lessons unless data["lessons"].present?
-      rate_lessons unless lessons_rated?
-      add_similar_sound unless similar_sounds_complete?
-      add_translation(translation_language) if translation_language.present? && !translation_complete?(translation_language)
-    end
-  end
-
-  # Run only the L2-dependent work for a target language. Neutral transcription,
-  # timings, lesson segmentation, ratings, and similar sounds remain shared.
-  def add_translation(language)
-    previous = @target_translation_language
-    language = resolve_translation_language(language)
-    raise ArgumentError, "unknown translation language" unless language
-
-    assert_current_data_format!
-    # Stamp before translate writes inline text_l2: an interrupted run must
-    # not leave a blob that shape-classifies as legacy on retry.
-    data["format_version"] = DataFormat::VERSION
-
-    @target_translation_language = language
-    translate
-    add_token_translation
-
-    DataFormat.pack_translation(data, language)
-    save!
-
-    Course.where(create_song_progress_id: id).find_each do |course|
-      CourseBuilder::BuildSong.new(self, course).add_translation(language) if course.lessons.exists?
-    end
-    language
-  ensure
-    @target_translation_language = previous
-  end
+  # The AI steps that used to live here (extract_lyrics, add_lessons,
+  # rate_lessons, add_similar_sound, translate, add_token_translation) now run
+  # in the Deno pipeline and reach this record through
+  # PipelineCallbacksController. Trigger a run with CreateSongPipelineHttp;
+  # this class is the store and the guard predicates, not the worker.
 
   def translation_complete?(language)
     language = resolve_translation_language(language)
@@ -74,10 +31,6 @@ class CreateSongProgress < ApplicationRecord
   def translation_payload(language)
     language = resolve_translation_language(language)
     data.dig("translations", language&.iso_name)
-  end
-
-  def translation_language
-    @target_translation_language&.english_name || super
   end
 
   def data_format_version = DataFormat.version(data)
