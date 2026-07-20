@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_07_18_100003) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_20_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -312,6 +312,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_07_18_100003) do
     t.string "client_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "pipeline_step"
     t.index ["client_token"], name: "index_import_requests_on_client_token", unique: true
     t.index ["course_id"], name: "index_import_requests_on_course_id"
     t.index ["create_song_progress_id"], name: "index_import_requests_on_create_song_progress_id"

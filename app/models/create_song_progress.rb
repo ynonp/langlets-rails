@@ -105,9 +105,13 @@ class CreateSongProgress < ApplicationRecord
     Language.find_by(english_name: value) || Language.find_by(iso_name: value)
   end
 
+  # Both columns are pushed forward here for the same reason: `data` is in memory
+  # at this point, so deriving them is free, whereas the Queue would have to load
+  # the whole blob per card on every 3-second poll to work them out itself.
   def sync_import_requests_progress
     ImportRequest.where(create_song_progress_id: id, status: :importing)
-                 .update_all(progress_percent: progress_percent)
+                 .update_all(progress_percent: progress_percent,
+                             pipeline_step: current_step_label)
   end
 
   def srt_timestamp(ts)

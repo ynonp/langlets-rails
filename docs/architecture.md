@@ -463,6 +463,31 @@ The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `
 
 `Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
 
+#### iOS Share Extension
+
+The `LangletsShare` extension accepts shared web URLs and plain text, extracts a
+YouTube link, and submits it directly to `POST /api/v1/import_requests`. There is
+no metadata preflight or AI language detection: the source defaults to the
+learning language selected in the app, the translation defaults to English,
+and the extension exposes both as editable menus before spending a credit. It
+uses one UUID `client_token` for the lifetime of the sheet; `Imports::Create`
+returns the original per-user request when that UUID is replayed, including
+after its status changes, so retrying an ambiguous network response cannot
+charge twice.
+
+Extensions cannot read `WKWebsiteDataStore` cookies. Every authenticated native
+app page therefore POSTs (with Rails CSRF protection) to `/app/native_token` and
+passes the response through the `native-token` Hotwire bridge. The endpoint
+creates or reuses the fixed public Doorkeeper client `langlets-ios-share-extension`
+and issues a 30-day token limited to `imports:read imports:write credits:read`.
+Swift stores it in the app/extension Keychain access group; native sign-out both
+revokes those tokens server-side and clears the local Keychain item. The bridge
+also mirrors the current `Language` catalog into App Group defaults, while the
+language-selection bridge mirrors `selectedLanguage`, so the extension stays
+in step with languages added by Rails without an App Store release. If the
+shared token or learning language is unavailable, the sheet directs the user
+to open Langlets and complete sign-in/onboarding.
+
 #### **CreateCourseJob** — charge lifecycle
 `good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise here is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
 
@@ -722,6 +747,10 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — Updates the native Queue badge from web content
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
 - `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
+- `langlets-ios/langlets/LangletsShare/ShareViewController.swift` — Share sheet URL extraction, language confirmation and import API submission
+- `langlets-ios/langlets/LangletsShare/ShareStore.swift` — Shared Keychain token and App Group language preferences
+- `langlets-ios/langlets/langlets/Bridge/NativeTokenComponent.swift` — Receives the session-bootstrapped import token and language catalog
+- `app/controllers/app/native_tokens_controller.rb` — Authenticated, CSRF-protected native token bootstrap
 - `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app
 - `app/javascript/controllers/bridge/auth_bridge_controller.js` — Stimulus bridge controller for OAuth sign-in buttons
 

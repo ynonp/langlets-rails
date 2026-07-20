@@ -41,6 +41,19 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert body["thumbnail_url"].present?
   end
 
+  test "replaying a client token returns the original import without another charge" do
+    params = import_params.merge(client_token: "share-request-123")
+    stub_video { post api_v1_import_requests_url, params: params, headers: auth_headers(@token) }
+    original_id = response.parsed_body.fetch("id")
+
+    post api_v1_import_requests_url, params: params, headers: auth_headers(@token)
+
+    assert_response :success
+    assert_equal original_id, response.parsed_body.fetch("id")
+    assert_equal 2, response.parsed_body.fetch("credits_left")
+    assert_equal 1, @user.import_requests.count
+  end
+
   test "an already published video comes back ready, free" do
     course = create_translated_course!(name: "Despacito", slug: "despacito-published", main_media_url: CANONICAL,
                             youtube_video_id: VIDEO_ID, language: @spanish, translation_language: @english,

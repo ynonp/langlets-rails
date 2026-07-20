@@ -15,9 +15,16 @@ class Users::SessionsController < Devise::SessionsController
   end
 
   # DELETE /resource/sign_out
-  # def destroy
-  #   super
-  # end
+  def destroy
+    if native_app? && current_user
+      current_user.oauth_access_tokens
+                  .joins(:application)
+                  .where(oauth_applications: { uid: App::NativeTokensController::CLIENT_UID }, revoked_at: nil,
+                         scopes: App::NativeTokensController::SCOPES)
+                  .find_each(&:revoke)
+    end
+    super
+  end
 
   protected
 

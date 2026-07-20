@@ -13,6 +13,7 @@ final class SignOutComponent: BridgeComponent {
         guard message.event == "signedOut" else { return }
 
         NotificationCenter.default.post(name: .userDidSignOut, object: nil)
+        NativeShareStore.clearToken()
 
         // Clear cookies stored at the URLSession level as well.
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)

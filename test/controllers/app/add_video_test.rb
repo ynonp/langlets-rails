@@ -1,0 +1,190 @@
+require "test_helper"
+require "minitest/mock"
+
+module App
+  # The Add Video sheet: which state #resolve draws for what the user typed.
+  # Preview's own rules are covered in test/services/imports/preview_test.rb —
+  # this is about mode detection and what actually reaches the screen.
+  class AddVideoTest < ActionDispatch::IntegrationTest
+    include Devise::Test::IntegrationHelpers
+
+    NATIVE = { "User-Agent" => "LangletsNative" }.freeze
+    VIDEO_ID = "kJQP7kiw5Fk".freeze
+    CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
+
+    setup do
+      @user = User.create!(email: "add-video@example.com", password: "password123",
+                           confirmed_at: Time.zone.now)
+      @spanish = languages(:spanish)
+      @english = languages(:english)
+      sign_in @user
+      # Native app screens are unreachable until a language is chosen.
+      get "/app?lang=es", headers: NATIVE
+    end
+
+    test "the sheet opens on the empty state, with the guidance line and no card" do
+      get "/app/import_requests/new", headers: NATIVE
+
+      assert_response :success
+      assert_select "input[data-add-video-target=input]"
+      assert_match "Paste a YouTube link to get started.", response.body
+    end
+
+    test "an empty query resolves back to the empty state, not to an error" do
+      get resolve_path(q: ""), headers: NATIVE
+
+      assert_response :success
+      assert_match "Paste a YouTube link to get started.", response.body
+      assert_no_match(/look like a YouTube link/, response.body)
+      assert_no_match(/Approve/, response.body)
+    end
+
+    test "a pasted link resolves to a preview with the cost on the button" do
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Despacito", response.body
+      # §5: the price is stated in the explanation card and again on the button,
+      # so a credit can't leave without having been seen twice.
+      assert_match "Imports as a lesson", response.body
+      assert_match "Approve · use 1 credit", response.body
+    end
+
+    test "a bare video id resolves the same as a full link" do
+      stub_video { get resolve_path(q: VIDEO_ID), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Despacito", response.body
+      assert_match "Approve · use 1 credit", response.body
+    end
+
+    test "a youtu.be short link resolves" do
+      stub_video { get resolve_path(q: "https://youtu.be/#{VIDEO_ID}"), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Approve · use 1 credit", response.body
+    end
+
+    test "text that isn't a link says so, and offers no import" do
+      get resolve_path(q: "easy spanish interviews"), headers: NATIVE
+
+      assert_response :success
+      assert_match "look like a YouTube link", response.body
+      assert_no_match(/Approve/, response.body)
+    end
+
+    test "a non-YouTube link is rejected too" do
+      get resolve_path(q: "https://vimeo.com/123456789"), headers: NATIVE
+
+      assert_response :success
+      assert_match "look like a YouTube link", response.body
+    end
+
+    # The two failures send the user to different next moves — retype it, versus
+    # go find a different video — so they must not share a message.
+    test "a dead video id is told apart from a malformed one" do
+      Youtube::Oembed.stub(:fetch, ->(_url) { raise Youtube::Oembed::UnavailableVideo, "private" }) do
+        get resolve_path(q: CANONICAL), headers: NATIVE
+      end
+
+      assert_response :success
+      assert_match "read that video", response.body
+      assert_no_match(/look like a YouTube link/, response.body)
+      assert_no_match(/Approve/, response.body)
+    end
+
+    test "resolving charges nothing" do
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_equal 3, @user.reload.credit_balance
+      assert_equal 0, @user.import_requests.count
+    end
+
+    # §5.1: the paywall replaces the button, not the card. Seeing the video is
+    # the reason to buy, so it has to still be on screen.
+    test "an empty balance shows Get credits but keeps the preview card" do
+      User.where(id: @user.id).update_all(credit_balance: 0)
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Despacito", response.body, "the card must stay rendered"
+      assert_match "Get credits", response.body
+      assert_no_match(/Approve · use 1 credit/, response.body)
+    end
+
+    test "the credits screen offers a way back to the video, so nothing is re-pasted" do
+      get "/app/credits?url=#{CGI.escape(CANONICAL)}", headers: NATIVE
+
+      assert_response :success
+      # The app carries ?lang= on every generated URL, so match on the part
+      # that matters: the sheet reopens already pointed at this video.
+      assert_select "a[href*=?][href*=?]", "/app/import_requests/new", "url=#{CGI.escape(CANONICAL)}"
+    end
+
+    # §4: duplicates short-circuit before the balance is consulted, so this must
+    # be the library state and not the paywall.
+    test "a video already in the library offers Open lesson, even at zero credits" do
+      publish_course!
+      User.where(id: @user.id).update_all(credit_balance: 0)
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Already in your library.", response.body
+      assert_match "Open lesson", response.body
+      assert_no_match(/Get credits/, response.body)
+      assert_no_match(/Approve/, response.body)
+    end
+
+    test "a video already importing offers the queue instead of a second charge" do
+      stub_video do
+        Imports::Create.call(user: @user, url: CANONICAL,
+                             clip_language: "Spanish", translation_language: "English")
+      end
+
+      stub_video { get resolve_path(q: CANONICAL), headers: NATIVE }
+
+      assert_response :success
+      assert_match "Already importing.", response.body
+      assert_match "View in queue", response.body
+      assert_no_match(/Approve/, response.body)
+    end
+
+    test "approving from the preview charges once and lands in the queue" do
+      stub_video do
+        post "/app/import_requests",
+             params: { url: CANONICAL, clip_language: "Spanish", translation_language: "English" },
+             headers: NATIVE
+      end
+
+      assert_match %r{/app/import_requests}, response.location
+      assert_equal 2, @user.reload.credit_balance
+      assert @user.import_requests.sole.charged?
+    end
+
+    private
+
+    def resolve_path(q:)
+      "/app/import_requests/resolve?q=#{CGI.escape(q)}"
+    end
+
+    def stub_video(&block)
+      video = Youtube::Oembed::Video.new(
+        video_id: VIDEO_ID, title: "Despacito", author_name: "Luis Fonsi",
+        thumbnail_url: "https://i.ytimg.com/vi/#{VIDEO_ID}/hqdefault.jpg",
+        canonical_url: CANONICAL
+      )
+      Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+    end
+
+    def publish_course!
+      Course.create!(
+        name: "Despacito", slug: "despacito-lib", main_media_url: CANONICAL,
+        youtube_video_id: VIDEO_ID, language: @spanish, user: @user, status: :published
+      ).tap do |course|
+        course.course_translations.create!(language: @english, name: "Despacito", status: :ready)
+      end
+    end
+  end
+end

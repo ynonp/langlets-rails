@@ -64,7 +64,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
             TabBadgeComponent.self,
-            PushComponent.self
+            PushComponent.self,
+            NativeTokenComponent.self
         ])
 
         // A notification tapped while the app was NOT running arrives here, in

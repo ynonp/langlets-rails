@@ -19,10 +19,41 @@ module CreateSong
       add_similar_sound: 10
     }.freeze
 
+    # What the Queue card calls each step. Phrased as what the user is waiting
+    # for, not as the function that produces it — "add_token_translation" means
+    # nothing to someone who just spent a credit.
+    STEP_LABELS = {
+      extract_lyrics: "Transcribing",
+      translate: "Translating",
+      add_token_translation: "Building vocab cards",
+      add_lessons: "Writing lessons",
+      rate_lessons: "Checking lessons",
+      add_similar_sound: "Finding sound-alikes"
+    }.freeze
+
     # Never report 0 (reads as "nothing is happening") and never report 100 until
     # the course is actually published — that's the job's call, not ours.
     MIN_REPORTED = 5
     MAX_REPORTED = 97
+
+    def total_steps = STEP_WEIGHTS.size
+
+    # The first step that isn't finished — what the pipeline is working on now.
+    # Derived from `data` like everything else here, so it stays right across
+    # resumes and out-of-order runs. Nil once every step is done.
+    def current_step
+      STEP_WEIGHTS.keys.find { |step| !step_done?(step) }
+    end
+
+    # "Transcribing · step 1 of 6". Nil when there's nothing left to do; the
+    # caller decides what to show then, because "done" is the job's call.
+    def current_step_label
+      step = current_step
+      return nil if step.nil?
+
+      position = STEP_WEIGHTS.keys.index(step) + 1
+      "#{STEP_LABELS.fetch(step)} · step #{position} of #{total_steps}"
+    end
 
     def progress_percent
       earned = STEP_WEIGHTS.sum { |step, weight| weight * step_completion(step) }

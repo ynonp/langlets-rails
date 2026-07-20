@@ -7,6 +7,9 @@ import { application } from "./application"
 import ActivityNavigationController from "./activity_navigation_controller"
 application.register("activity-navigation", ActivityNavigationController)
 
+import AddVideoController from "./add_video_controller"
+application.register("add-video", AddVideoController)
+
 import AudioCacheController from "./audio_cache_controller"
 application.register("audio-cache", AudioCacheController)
 
@@ -33,6 +36,9 @@ application.register("bridge--language-selection", Bridge__LanguageSelectionCont
 
 import Bridge__NativeAudioFeedbackController from "./bridge/native_audio_feedback_controller"
 application.register("bridge--native-audio-feedback", Bridge__NativeAudioFeedbackController)
+
+import Bridge__NativeTokenController from "./bridge/native_token_controller"
+application.register("bridge--native-token", Bridge__NativeTokenController)
 
 import Bridge__ProgressHapticController from "./bridge/progress_haptic_controller"
 application.register("bridge--progress-haptic", Bridge__ProgressHapticController)

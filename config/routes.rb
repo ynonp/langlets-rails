@@ -63,8 +63,15 @@ Rails.application.routes.draw do
       member do
         post :retry
       end
+      collection do
+        # Preview for the Add Video sheet: metadata + duplicate + price, no charge.
+        get :resolve
+      end
     end
     resource :credits, only: [ :show ]
+    # The authenticated web view bootstraps a narrowly scoped bearer token into
+    # the native app's shared Keychain for use by the share extension.
+    resource :native_token, only: [ :create ]
     # The iOS app posts its APNs token here via bridge--push.
     resources :device_tokens, only: [ :create ]
   end

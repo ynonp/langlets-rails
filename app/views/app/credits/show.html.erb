@@ -30,5 +30,13 @@
     <% else %>
       <%= render "app/credits/out_of_credits_body" %>
     <% end %>
+
+    <%# Arrived here from a video preview they couldn't afford. Purchases aren't
+        built yet, so this is the whole of "return them to the preview" for now —
+        but it already means they don't have to find the video again. %>
+    <% if (video_url = Youtube::Url.canonical(params[:url])) %>
+      <%= link_to "Back to the video", new_app_import_request_path(url: video_url),
+                  class: "block text-center text-app-text-3 text-[13px] py-1" %>
+    <% end %>
   </div>
 </div>
