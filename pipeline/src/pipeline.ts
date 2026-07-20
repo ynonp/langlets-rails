@@ -1,7 +1,9 @@
 // The workflow. Replaces CreateSongProgress#create_data's sequential run with
-// a fan-out after extract_lyrics:
+// a fan-out after the transcription steps:
 //
-//   extract_lyrics                          (sequential, resumable per turn)
+//   extract_lyrics                          (Gemini: the lyrics text)
+//        │
+//   force_alignment                         (word timings, Gemini as backup)
 //        │
 //        ├── add_lessons ──► rate_lessons   (lessons branch)
 //        ├── translate                      (sentence translations)
@@ -23,6 +25,7 @@ import type { PipelineContext } from "./context.ts";
 import { dataSummary } from "./context.ts";
 import { message } from "./retry.ts";
 import { extractLyrics } from "./steps/extractLyrics.ts";
+import { forceAlignment } from "./steps/forceAlignment.ts";
 import { addLessons } from "./steps/addLessons.ts";
 import { rateLessons } from "./steps/rateLessons.ts";
 import { translate } from "./steps/translate.ts";
@@ -38,7 +41,7 @@ export interface RunOptions {
   // Test injection points for the similar-sound step.
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
-  // Test injection points for the transcription step's audio download and
+  // Test injection points for the force_alignment step's audio download and
   // the ElevenLabs forced-alignment call.
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
@@ -73,16 +76,25 @@ export async function runPipeline(
 
   const failed: Record<string, string> = {};
 
-  // Run extract_lyrics when we have no phrases yet, or when a previous run
-  // started the step but never finished it (the in-progress flag is still
-  // set) — phrases alone can't tell "done" apart from "interrupted" because
-  // the step saves turn by turn.
+  // Transcribe, then time. Each step runs when its own output is missing or
+  // when a previous run started it but never finished it (the in-progress flag
+  // is still set) — saved output alone can't tell "done" apart from
+  // "interrupted" because the steps save as they go. Nothing downstream can
+  // run without timed phrases, so a failure in either one reports and stops.
   if (!store.extractLyricsDone()) {
     try {
       await extractLyrics(ctx);
     } catch (error) {
-      // Nothing downstream can run without phrases; report and stop.
       failed.extract_lyrics = message(error);
+      return result(store, failed);
+    }
+  }
+
+  if (!store.forceAlignmentDone()) {
+    try {
+      await forceAlignment(ctx);
+    } catch (error) {
+      failed.force_alignment = message(error);
       return result(store, failed);
     }
   }
