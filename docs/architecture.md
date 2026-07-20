@@ -148,6 +148,13 @@ pipeline runs on another host, so `localhost:3000` there is itself, and it must
 point at a tunnel (ngrok) to the local server. Model-provider keys now live
 only on the pipeline host; Rails no longer needs them at all.
 
+On Linux pipeline hosts, `YTDLP_NETWORK_NAMESPACE` optionally isolates only the
+YouTube audio download. When set (for example, to `vpn`), `pipeline/src/audio.ts`
+launches `ip netns exec <namespace> yt-dlp ...`; model calls, ElevenLabs uploads,
+and Rails callbacks continue over the host network. The Deno process therefore
+needs run permission for both `yt-dlp` and `ip`. When unset, `yt-dlp` runs
+directly, which is the local-development default.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)

@@ -11,6 +11,13 @@ export interface DownloadedAudio {
   durationSeconds: number | null;
 }
 
+export interface AudioDownloadCommand {
+  command: string;
+  args: string[];
+}
+
+const NETWORK_NAMESPACE_PATTERN = /^[A-Za-z0-9_.-]+$/;
+
 export function getVideoId(input: string): string {
   if (/^[\w-]{11}$/.test(input)) return input;
 
@@ -27,30 +34,50 @@ export function getVideoId(input: string): string {
   throw new Error(`Invalid YouTube URL: ${input}`);
 }
 
+export function audioDownloadCommand(
+  youtubeUrl: string,
+  outputPath: string,
+  networkNamespace = Deno.env.get("YTDLP_NETWORK_NAMESPACE"),
+): AudioDownloadCommand {
+  const ytDlpArgs = [
+    "--no-playlist",
+    "--no-progress",
+    // m4a only (itag 140, always available on YouTube) — a single container
+    // format keeps the uploaded bytes predictable.
+    "-f",
+    "bestaudio[ext=m4a]",
+    "-o",
+    outputPath,
+    "--force-overwrites",
+    // --print implies --simulate, so --no-simulate keeps the download while
+    // still printing the clip duration to stdout.
+    "--no-simulate",
+    "--print",
+    "duration",
+    youtubeUrl,
+  ];
+
+  if (!networkNamespace) return { command: "yt-dlp", args: ytDlpArgs };
+
+  if (!NETWORK_NAMESPACE_PATTERN.test(networkNamespace)) {
+    throw new Error(`Invalid YTDLP_NETWORK_NAMESPACE: ${networkNamespace}`);
+  }
+
+  return {
+    command: "ip",
+    args: ["netns", "exec", networkNamespace, "yt-dlp", ...ytDlpArgs],
+  };
+}
+
 // Download the audio track to outputPath and return the clip duration in
 // seconds (null when unavailable).
 export async function downloadYoutubeAudio(
   youtubeUrl: string,
   outputPath: string,
 ): Promise<number | null> {
-  const command = new Deno.Command("yt-dlp", {
-    args: [
-      "--no-playlist",
-      "--no-progress",
-      // m4a only (itag 140, always available on YouTube) — a single container
-      // format keeps the uploaded bytes predictable.
-      "-f",
-      "bestaudio[ext=m4a]",
-      "-o",
-      outputPath,
-      "--force-overwrites",
-      // --print implies --simulate, so --no-simulate keeps the download while
-      // still printing the clip duration to stdout.
-      "--no-simulate",
-      "--print",
-      "duration",
-      youtubeUrl,
-    ],
+  const commandSpec = audioDownloadCommand(youtubeUrl, outputPath);
+  const command = new Deno.Command(commandSpec.command, {
+    args: commandSpec.args,
     stdout: "piped",
     stderr: "piped",
   });

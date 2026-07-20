@@ -168,6 +168,12 @@ Env vars: `PIPELINE_HMAC_SECRET` (required), `GOOGLE_GENERATIVE_AI_API_KEY`, `EL
 `.env.example` to `.env` (gitignored) — the `serve` and `cli` tasks load it via `--env-file`; real
 environment variables win over the file. On Deno Deploy set them in the dashboard instead.
 
+Set `YTDLP_NETWORK_NAMESPACE=vpn` on a Linux host to run only the `yt-dlp` subprocess through that
+network namespace (`ip netns exec vpn yt-dlp ...`). The rest of the pipeline keeps the host network,
+including model API calls and callbacks. Leave it unset for direct execution. The service user must
+be allowed to enter the namespace, and Deno must have `--allow-run=yt-dlp,ip` (the bundled tasks
+do).
+
 ## Layout
 
 ```
