@@ -82,6 +82,9 @@ module App
     # Cancelling a queued import refunds the credit. Deleting a failed or ready
     # item just removes it from the queue — failed items were already refunded,
     # and ready items have a published course the user can still access.
+    #
+    # Responds with a Turbo Stream so the client can optimistically remove the
+    # card and the server response corrects the page if anything went wrong.
     def destroy
       import_request = current_user.import_requests.find(params[:id])
 
@@ -98,14 +101,20 @@ module App
           import_request.status = :canceled
           import_request.save!
         end
-
-        redirect_to app_import_requests_path, notice: "Import cancelled — your credit is back."
       elsif import_request.failed? || import_request.ready?
         import_request.destroy!
-        redirect_to app_import_requests_path, notice: "Removed from queue."
       else
-        redirect_to app_import_requests_path,
-                     alert: "That import can't be removed right now."
+        # importing — can't be removed; re-render the queue so the optimistic
+        # removal on the client is corrected.
+      end
+
+      respond_to do |format|
+        format.turbo_stream do
+          @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
+          active_count = @import_requests.count(&:active?)
+          render :queue_update, locals: { active_count: active_count }
+        end
+        format.html { redirect_to app_import_requests_path }
       end
     end
 

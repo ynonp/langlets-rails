@@ -55,6 +55,7 @@
     <% end %>
   <% elsif import_request.queued? %>
     <%= button_to app_import_request_path(import_request), method: :delete,
+                  data: { action: "click->swipe-to-delete#remove" },
                   class: "shrink-0 w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center",
                   aria: { label: "Cancel this import" } do %>
       <%= app_icon "close", class: "w-3.5 h-3.5" %>
