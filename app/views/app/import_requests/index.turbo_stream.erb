@@ -7,10 +7,11 @@
 <%# Parse the set of cards the client already has: "id1:status1,id2:status2" %>
 <% known = (params[:known].presence || "").split(",").map { |s| id, status = s.split(":"); [id, status] }.to_h %>
 
-<%# Remove cards the client has but the server no longer lists %>
+<%# Remove cards the client has but the server no longer lists.
+    The card is wrapped in a swipe container; remove the wrapper. %>
 <% known.each_key do |id| %>
   <% unless @import_requests.any? { |ir| dom_id(ir) == id } %>
-    <%= turbo_stream.remove id %>
+    <%= turbo_stream.remove "#{id}_wrapper" %>
   <% end %>
 <% end %>
 
@@ -20,7 +21,7 @@
   <% old_status = known[id] %>
 
   <% if old_status.nil? %>
-    <%# New card — prepend the whole thing %>
+    <%# New card — prepend the whole thing (wrapper + card) %>
     <%= turbo_stream.prepend "queue-list" do %>
       <%= render "import_request", import_request: import_request %>
     <% end %>
@@ -31,12 +32,9 @@
       <%= render "import_request_body", import_request: import_request %>
     <% end %>
   <% else %>
-    <%# Status changed — replace the thumb (clock → image or vice versa) and body.
-        Also update the card's outer classes and data attribute by replacing the
-        whole card. The thumb replacement is safe because either the old state
-        was "queued" (clock placeholder, no image to flash) or the new state is
-        "queued" (replacing an image with a clock, which is fine). %>
-    <%= turbo_stream.replace id do %>
+    <%# Status changed — replace the entire wrapper so the delete button and
+        link wrapper update along with the card. %>
+    <%= turbo_stream.replace dom_id(import_request, :wrapper) do %>
       <%= render "import_request", import_request: import_request %>
     <% end %>
   <% end %>

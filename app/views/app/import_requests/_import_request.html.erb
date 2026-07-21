@@ -7,20 +7,54 @@
                 when "failed" then "border-[0.5px] border-red-500/35 bg-app-card"
                 else "app-hairline bg-app-card"
                 end
+
+  can_swipe = import_request.failed? || import_request.ready?
 %>
 
-<div id="<%= dom_id(import_request) %>" class="<%= card_border %> rounded-app-card p-2.5 flex items-center gap-3" data-import-request-status="<%= import_request.status %>">
-  <div id="<%= dom_id(import_request, :thumb) %>" class="shrink-0">
-    <% if import_request.queued? %>
-      <%# Not started: no thumbnail, just a placeholder with a clock. %>
-      <div class="w-24 h-[54px] rounded-app-thumb bg-[#101D2B] flex items-center justify-center">
-        <%= app_icon "clock", class: "w-5 h-5 text-app-text-3" %>
-      </div>
-    <% else %>
-      <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
-                    class: "w-24 h-[54px] rounded-app-thumb object-cover bg-app-inset" %>
-    <% end %>
-  </div>
+<div id="<%= dom_id(import_request, :wrapper) %>" data-controller="swipe-to-delete"
+     class="relative overflow-hidden rounded-app-card"
+     data-action="click->swipe-to-delete#close">
+  <%# Delete button revealed behind the card on swipe-left %>
+  <% if can_swipe %>
+    <div class="absolute inset-y-0 right-0 flex items-center pr-4">
+      <%= button_to app_import_request_path(import_request), method: :delete,
+                    data: { swipe_target: "form" },
+                    class: "w-10 h-10 rounded-full bg-red-500/20 text-red-400 flex items-center justify-center",
+                    aria: { label: "Delete this import" } do %>
+        <%= app_icon "close", class: "w-4 h-4" %>
+      <% end %>
+    </div>
+  <% end %>
 
-  <%= render "app/import_requests/import_request_body", import_request: import_request %>
+  <%# The card itself. Ready items link to their published course. %>
+  <% if import_request.ready? && import_request.course %>
+    <%= link_to course_path(import_request.course),
+                id: dom_id(import_request),
+                data: { swipe_target: "card", import_request_status: import_request.status },
+                class: "#{card_border} rounded-app-card p-2.5 flex items-center gap-3 relative" do %>
+      <div id="<%= dom_id(import_request, :thumb) %>" class="shrink-0">
+        <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
+                      class: "w-24 h-[54px] rounded-app-thumb object-cover bg-app-inset" %>
+      </div>
+      <%= render "app/import_requests/import_request_body", import_request: import_request %>
+    <% end %>
+  <% else %>
+    <div id="<%= dom_id(import_request) %>"
+         data-swipe-target="card"
+         data-import-request-status="<%= import_request.status %>"
+         class="<%= card_border %> rounded-app-card p-2.5 flex items-center gap-3 relative">
+      <div id="<%= dom_id(import_request, :thumb) %>" class="shrink-0">
+        <% if import_request.queued? %>
+          <%# Not started: no thumbnail, just a placeholder with a clock. %>
+          <div class="w-24 h-[54px] rounded-app-thumb bg-[#101D2B] flex items-center justify-center">
+            <%= app_icon "clock", class: "w-5 h-5 text-app-text-3" %>
+          </div>
+        <% else %>
+          <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
+                        class: "w-24 h-[54px] rounded-app-thumb object-cover bg-app-inset" %>
+        <% end %>
+      </div>
+      <%= render "app/import_requests/import_request_body", import_request: import_request %>
+    </div>
+  <% end %>
 </div>

@@ -79,30 +79,34 @@ module App
                   alert: "We don't teach that language yet."
     end
 
-    # Cancelling a queued import. The credit goes back — nothing has been spent
-    # on it yet in any sense the user cares about.
+    # Cancelling a queued import refunds the credit. Deleting a failed or ready
+    # item just removes it from the queue — failed items were already refunded,
+    # and ready items have a published course the user can still access.
     def destroy
       import_request = current_user.import_requests.find(params[:id])
 
-      unless import_request.queued?
-        return redirect_to app_import_requests_path,
-                           alert: "That import has already started."
-      end
-
-      ActiveRecord::Base.transaction do
-        if import_request.charged? && !import_request.refunded?
-          Credits::Ledger.refund!(
-            user: current_user,
-            subject: import_request,
-            idempotency_key: "refund:#{import_request.id}"
-          )
-          import_request.refunded = true
+      if import_request.queued?
+        ActiveRecord::Base.transaction do
+          if import_request.charged? && !import_request.refunded?
+            Credits::Ledger.refund!(
+              user: current_user,
+              subject: import_request,
+              idempotency_key: "refund:#{import_request.id}"
+            )
+            import_request.refunded = true
+          end
+          import_request.status = :canceled
+          import_request.save!
         end
-        import_request.status = :canceled
-        import_request.save!
-      end
 
-      redirect_to app_import_requests_path, notice: "Import cancelled — your credit is back."
+        redirect_to app_import_requests_path, notice: "Import cancelled — your credit is back."
+      elsif import_request.failed? || import_request.ready?
+        import_request.destroy!
+        redirect_to app_import_requests_path, notice: "Removed from queue."
+      else
+        redirect_to app_import_requests_path,
+                     alert: "That import can't be removed right now."
+      end
     end
 
     # Re-import something that failed. It was refunded when it failed, so this

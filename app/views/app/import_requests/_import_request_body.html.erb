@@ -13,7 +13,10 @@
              style="width: <%= import_request.display_percent %>%"></div>
       </div>
       <div class="flex items-center justify-between gap-2">
-        <p class="text-app-accent text-xs font-semibold truncate"><%= import_request.stage_label %></p>
+        <div class="flex items-center gap-1.5 min-w-0">
+          <%= app_icon "spinner", class: "w-3.5 h-3.5 text-app-accent animate-spin shrink-0" %>
+          <p class="text-app-accent text-xs font-semibold truncate"><%= import_request.stage_label %></p>
+        </div>
         <% if import_request.charged? %>
           <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
         <% end %>
@@ -30,7 +33,7 @@
     <% when "ready" %>
       <div class="flex items-center gap-1.5">
         <%= app_icon "check_circle", class: "w-3.5 h-3.5 text-app-accent" %>
-        <span class="text-app-accent text-xs font-semibold">Ready — waiting on Home</span>
+        <span class="text-app-accent text-xs font-semibold">Ready</span>
       </div>
 
     <% when "failed" %>
