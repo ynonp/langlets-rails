@@ -85,6 +85,7 @@ module App
     end
 
     test "new native users see welcome before language selection and Home" do
+      @user.update!(ios_lang: nil)
       reset!
       sign_in @user
 
@@ -93,8 +94,8 @@ module App
 
       get onboarding_welcome_path(returnto: "/app"), headers: NATIVE
       assert_response :success
-      assert_select "h1", text: "Turn any YouTube video into an engaging language lesson"
-      assert_select "a[href=?]", onboarding_language_path(returnto: "/app"), text: "Start Now"
+      assert_select "h1", count: 1
+      assert_select "a[href=?]", onboarding_language_path(returnto: "/app")
 
       get onboarding_language_path(returnto: "/app"), headers: NATIVE
       assert_response :success

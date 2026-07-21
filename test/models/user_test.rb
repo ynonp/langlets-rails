@@ -70,6 +70,13 @@ class UserTest < ActiveSupport::TestCase
     )
   end
 
+  test "ios language is stored without replacing other preferences" do
+    @user.update!(theme: "light", ios_lang: "es")
+
+    assert_equal "es", @user.reload.ios_lang
+    assert_equal "light", @user.theme
+  end
+
   test "languages_with_saved_words returns empty array when no saved words" do
     assert_equal [], @user.languages_with_saved_words
   end

@@ -481,7 +481,24 @@ passes the response through the `native-token` Hotwire bridge. The endpoint
 creates or reuses the fixed public Doorkeeper client `langlets-ios-share-extension`
 and issues a 30-day token limited to `imports:read imports:write credits:read`.
 Swift stores it in the app/extension Keychain access group; native sign-out both
-revokes those tokens server-side and clears the local Keychain item. The bridge
+revokes those tokens server-side and clears the local Keychain item, and also
+removes the stored `selectedLanguage` from standard and App Group defaults —
+otherwise the next sign-in could briefly inherit the previous account's
+language. The selected language is also stored per account as
+`User#preferences["ios_lang"]`; after authentication Rails sends that account's
+value to the native shell in the explicit `ios_lang` URL parameter, which
+repopulates both defaults and prevents repeat onboarding. For the same reason,
+`ApplicationController#after_sign_out_path_for` (shared by sign-out and account
+deletion) sends native users straight to `/users/sign_in?signed_out=1` with
+`lang` explicitly dropped: any other target would bounce a signed-out native
+user to sign-in and lose the `signed_out` marker before a page rendered, so the
+bridge--sign-out wipe would never fire. Once the wipe completes, the shell
+re-routes every tab — the page that fired the bridge was rendered under the
+now-deleted session, so its form's CSRF token is dead. Rails also deletes the
+session-cached language during the redirect. As a second native safeguard, the
+navigator clears its stored language as soon as it sees that signed-out URL;
+account deletion therefore cannot leak `?lang=` into the next account even if
+the page's JavaScript bridge has not connected yet. The bridge
 also mirrors the current `Language` catalog into App Group defaults, while the
 language-selection bridge mirrors `selectedLanguage`, so the extension stays
 in step with languages added by Rails without an App Store release. If the
@@ -720,9 +737,9 @@ Deliberately **not** built from the mockup, because both would be controls that 
 
 #### Onboarding Flow
 1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.
-2. **Welcome**: After authentication, if no `?lang=<code>` is present, the server redirects to `/onboarding/welcome`. This large, native-styled screen explains that Langlets turns YouTube videos into transcribed, translated lessons with vocabulary practice. "Start Now" advances to language selection while preserving the originally requested app URL.
+2. **Welcome**: After authentication, if no `?lang=<code>` is present, the server redirects to `/onboarding/welcome`. This large, native-styled screen explains that Langlets turns YouTube videos into transcribed, translated lessons with vocabulary practice. "Start Now" advances to language selection while preserving the originally requested app URL. The screen is sized to fit a single viewport with no scrolling on every iPhone (fluid `clamp()` title size, `h-dvh-safe` flex column — plain `h-dvh` overflows by the nav-bar inset because `body` already pads `env(safe-area-inset-top)`). Copy is a three-level hierarchy (eyebrow / title / three short body paragraphs, `body_1..body_3` locale keys) — keep it short enough to preserve the no-scroll fit.
 3. **Language Selection**: `/onboarding/language` communicates the choice to iOS via `LanguageSelectionBridgeComponent`, then redirects to the preserved URL (normally `/app`) with the selected `lang` query parameter.
-4. **Local Persistence**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage`. It is not persisted server-side, so the absence of this code is the first-run signal.
+4. **Persistence and restoration**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage` and per account in the user's JSONB preferences under `ios_lang`. An authenticated native request carrying a valid `lang` updates that preference. Sign-out still clears the device copy to prevent cross-account leakage; after the next login Rails adds the signed-in account's value as `ios_lang` (and `lang`) to the redirect, and iOS restores both standard and App Group defaults. Only accounts without a saved value see onboarding. Until a language is selected, the native navigator also checkpoints the current welcome or language-selection URL (including `returnto`) under `pendingOnboardingURL`. The checkpoint preserves the URL's percent-encoded query rather than encoding it again, and restoration rebuilds `returnto` from its decoded query value. A cold launch resumes that page instead of rebuilding the flow from `/app`; selecting a language or signing out clears the checkpoint.
 5. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
 6. **Content Filtering**: `CoursesController#index` and `PlaylistsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
 6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (playlist grid) and a secondary **Standalone clips** tab (standalone course grid).
@@ -732,7 +749,7 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - The dropdown shows the currently selected language and links to `/onboarding/language?returnto=<current_url>`.
 - The language page is context-aware: it shows "Change Learning Language" when accessed from the profile menu. First-time product copy is kept on the preceding welcome screen.
 - When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
-- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync.
+- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync. Although the profile uses the regular web layout, its content clears the horizontal safe-area insets and reserves the native tab-bar height plus the bottom inset; the shared body already clears the top inset.
 
 #### OAuth Authentication in Native App
 - Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.

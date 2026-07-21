@@ -318,6 +318,27 @@
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
 }
 
+/* Profile is a regular web page pushed inside a native tab navigator. Its
+   content must clear landscape side insets, and its final destructive action
+   must remain above both UITabBar and the home indicator. The shared body
+   already owns the top safe-area inset. */
+@utility profile-safe-area {
+  padding-inline-start: max(1rem, env(safe-area-inset-left, 0px));
+  padding-inline-end: max(1rem, env(safe-area-inset-right, 0px));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 40rem) {
+  .profile-safe-area {
+    padding-inline-start: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-inline-end: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+[data-native-tabs] .profile-safe-area {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
 /* The floating Add button. On the web it only owes the home indicator, but in
    the native app the web view runs underneath UITabBar, and the inset alone
    clears the home indicator rather than the bar — which put the FAB behind the

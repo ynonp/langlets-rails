@@ -29,20 +29,7 @@ class Users::SessionsController < Devise::SessionsController
   protected
 
   def after_sign_in_path_for(resource)
-    if params[:returnto].present?
-      params[:returnto]
-    else
-      super
-    end
-  end
-
-  def after_sign_out_path_for(resource_or_scope)
-    path = params[:returnto].presence || root_path
-    # signed_out=1 makes the landing page fire the bridge--sign-out
-    # component, so the native app clears its cookie store only after
-    # the server-side sign-out has completed (see layouts/application).
-    separator = path.include?("?") ? "&" : "?"
-    "#{path}#{separator}signed_out=1"
+    super
   end
 
   # protected

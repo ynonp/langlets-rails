@@ -70,7 +70,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def native_success
     if user_signed_in?
-      redirect_to "langlets://auth-success", allow_other_host: true
+      url = "langlets://auth-success"
+      url = "#{url}?ios_lang=#{CGI.escape(current_user.ios_lang)}" if current_user.ios_lang.present?
+      redirect_to url, allow_other_host: true
     else
       redirect_to "langlets://auth-failure", allow_other_host: true
     end

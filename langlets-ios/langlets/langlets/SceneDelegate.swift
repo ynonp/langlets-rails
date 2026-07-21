@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "https://langlets.app")!
+let rootURL = URL(string: "http://localhost:3000")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -178,6 +178,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         if url.scheme == "langlets" && url.host == "auth-success" {
+            AppTabBarController.restoreLanguageSelection(from: url)
             // OAuth completed — every tab's content predates the session
             oauthDidSucceed()
         }
@@ -188,6 +189,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: NavigatorDelegate {
     func handle(proposal: VisitProposal, from navigator: Navigator) -> ProposalResult {
+        AppTabBarController.restoreLanguageSelection(from: proposal.url)
+        if Self.isSignedOutRedirect(proposal.url) {
+            AppTabBarController.resetLanguageSelection()
+        }
+        AppTabBarController.rememberPendingOnboardingURL(proposal.url)
+
         // A link to another tab's root switches tabs instead of pushing that
         // screen onto the current stack — Home's "See all" lands on the real
         // Library tab, and the post-import redirect lands on the real Queue.
@@ -209,6 +216,15 @@ extension SceneDelegate: NavigatorDelegate {
         }
 
         return .accept
+    }
+
+    private static func isSignedOutRedirect(_ url: URL) -> Bool {
+        guard url.path == "/users/sign_in",
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return false }
+
+        return components.queryItems?.contains {
+            $0.name == "signed_out" && $0.value == "1"
+        } == true
     }
 
     @objc private func oauthDidSucceed() {
@@ -245,6 +261,12 @@ extension SceneDelegate: NavigatorDelegate {
 
     @objc private func userDidSignOut() {
         tabBarController.setTabsVisible(false)
+
+        // The local wipe just finished. The visible page predates it — its
+        // form carries a CSRF token from the deleted session — so route every
+        // tab back to its (now language-free) root, which lands on a fresh
+        // sign-in page with a live session.
+        tabBarController.reloadAllTabs()
     }
 
     /// The warm path: a notification tapped while the app was already running.

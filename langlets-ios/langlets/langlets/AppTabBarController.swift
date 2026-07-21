@@ -12,6 +12,8 @@ import WebKit
 /// two would be left stranded mid-redirect.
 @MainActor
 final class AppTabBarController: UITabBarController {
+    private static let pendingOnboardingURLKey = "pendingOnboardingURL"
+
     struct Tab {
         let title: String
         let path: String
@@ -145,6 +147,50 @@ final class AppTabBarController: UITabBarController {
         tabBar.isHidden = !visible
     }
 
+    /// Checkpoint an unfinished onboarding page before Hotwire follows it.
+    /// The web navigation stack is lost when iOS terminates the app, while
+    /// UserDefaults survives and lets the next cold launch resume this URL.
+    static func rememberPendingOnboardingURL(_ url: URL) {
+        guard UserDefaults.standard.string(forKey: "selectedLanguage") == nil,
+              ["/onboarding/welcome", "/onboarding/language"].contains(url.path) else { return }
+
+        guard let source = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
+
+        var components = URLComponents()
+        components.percentEncodedPath = source.percentEncodedPath
+        // Preserve the query's existing escaping. Assigning `url.query` to
+        // `query` encodes its percent signs again (`%2F` -> `%252F`).
+        components.percentEncodedQuery = source.percentEncodedQuery
+        UserDefaults.standard.set(components.string, forKey: pendingOnboardingURLKey)
+    }
+
+    static func clearPendingOnboardingURL() {
+        UserDefaults.standard.removeObject(forKey: pendingOnboardingURLKey)
+    }
+
+    /// Restore the authenticated account's server-side language preference.
+    /// Rails sends it as `ios_lang` after login so a prior sign-out can safely
+    /// clear device state without forcing a returning user through onboarding.
+    static func restoreLanguageSelection(from url: URL) {
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
+              let language = components.queryItems?.first(where: { $0.name == "ios_lang" })?.value,
+              !language.isEmpty else { return }
+
+        UserDefaults.standard.set(language, forKey: "selectedLanguage")
+        UserDefaults(suiteName: NativeShareStore.appGroup)?.set(language, forKey: "selectedLanguage")
+        clearPendingOnboardingURL()
+    }
+
+    /// Reset every account-specific language checkpoint. Called both by the
+    /// sign-out bridge and when the navigator sees the server's signed-out
+    /// redirect, so account deletion does not depend on JavaScript mounting a
+    /// bridge component before the user signs in again.
+    static func resetLanguageSelection() {
+        UserDefaults.standard.removeObject(forKey: "selectedLanguage")
+        UserDefaults(suiteName: NativeShareStore.appGroup)?.removeObject(forKey: "selectedLanguage")
+        clearPendingOnboardingURL()
+    }
+
     // MARK: - Private
 
     private func routeTabIfNeeded(at index: Int) {
@@ -189,8 +235,25 @@ final class AppTabBarController: UITabBarController {
         var url = rootURL.appending(path: tab.path)
         if let lang = UserDefaults.standard.string(forKey: "selectedLanguage") {
             url = url.appending(queryItems: [URLQueryItem(name: "lang", value: lang)])
+        } else if let pendingURL = pendingOnboardingURL() {
+            url = pendingURL
         }
         return url
+    }
+
+    /// Rebuild the checkpoint from decoded query items. Besides validating the
+    /// path, this repairs `%252F` values written by the first implementation.
+    private static func pendingOnboardingURL() -> URL? {
+        guard let pendingPath = UserDefaults.standard.string(forKey: pendingOnboardingURLKey),
+              let pendingURL = URL(string: pendingPath, relativeTo: rootURL)?.absoluteURL,
+              ["/onboarding/welcome", "/onboarding/language"].contains(pendingURL.path),
+              var components = URLComponents(url: pendingURL, resolvingAgainstBaseURL: true) else { return nil }
+
+        components.queryItems = components.queryItems?.map { item in
+            guard item.name == "returnto" else { return item }
+            return URLQueryItem(name: item.name, value: item.value?.removingPercentEncoding ?? item.value)
+        }
+        return components.url
     }
 }
 

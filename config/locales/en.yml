@@ -148,9 +148,11 @@ en:
         view_in_queue: "View in queue"
   onboarding:
     welcome:
-      eyebrow: "Welcome to langlets."
-      title: "Turn any YouTube video into an engaging language lesson"
-      body: "Langlets helps you practice languages with content you already love. Our AI agent transcribes, translates, and creates vocabulary practice from any video on YouTube. Paste your own or browse our existing library to practice Spanish, French, or Arabic."
+      eyebrow: "Welcome to Langlets"
+      title: "Turn any YouTube video into a language lesson"
+      body_1: "Learn from content you already love."
+      body_2: "Our AI transcribes and translates any video, then builds vocabulary practice from it."
+      body_3: "Paste a link, or start with a course from our library."
       start: "Start Now"
     language:
       change_title: "Change Learning Language"

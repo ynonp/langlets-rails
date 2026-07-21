@@ -12,8 +12,12 @@ final class SignOutComponent: BridgeComponent {
     override func onReceive(message: Message) {
         guard message.event == "signedOut" else { return }
 
-        NotificationCenter.default.post(name: .userDidSignOut, object: nil)
         NativeShareStore.clearToken()
+
+        // The next sign-in may be a different (or freshly re-created) account.
+        // The stored language is what makes the app append ?lang= to every
+        // URL — leaving it behind lets the next account skip onboarding.
+        AppTabBarController.resetLanguageSelection()
 
         // Clear cookies stored at the URLSession level as well.
         HTTPCookieStorage.shared.removeCookies(since: .distantPast)
@@ -26,7 +30,13 @@ final class SignOutComponent: BridgeComponent {
             // Touching the cookie store forces WebKit to flush the deletion
             // to disk; without it, killing the app right after sign-out can
             // resurrect the old session/remember cookies on next launch.
-            dataStore.httpCookieStore.getAllCookies { _ in }
+            dataStore.httpCookieStore.getAllCookies { _ in
+                // Notify only after the wipe: the page that fired this bridge
+                // was rendered under the pre-wipe session, so its CSRF token
+                // is dead — the handler re-routes every tab, and a re-route
+                // that raced the wipe could lose its fresh session cookie.
+                NotificationCenter.default.post(name: .userDidSignOut, object: nil)
+            }
         }
     }
 }
