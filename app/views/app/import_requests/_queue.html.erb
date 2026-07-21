@@ -1,0 +1,16 @@
+<div id="queue"
+     data-controller="poll"
+     data-poll-interval-value="3000"
+     data-poll-active-value="<%= active_count.positive? %>">
+  <% if import_requests.empty? %>
+    <div class="app-hairline bg-app-card rounded-app-card px-5 py-10 text-center">
+      <p class="text-app-text-2 text-sm"><%= t("app.import_requests.index.empty") %></p>
+      <%= link_to "Add a video", new_app_import_request_path,
+                  class: "inline-block mt-3 text-app-accent text-[13px] font-bold" %>
+    </div>
+  <% else %>
+    <div class="flex flex-col gap-2.5">
+      <%= render partial: "app/import_requests/import_request", collection: import_requests %>
+    </div>
+  <% end %>
+</div>
