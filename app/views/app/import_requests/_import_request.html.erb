@@ -9,75 +9,18 @@
                 end
 %>
 
-<div id="<%= dom_id(import_request) %>" class="<%= card_border %> rounded-app-card p-2.5 flex items-center gap-3">
-  <% if import_request.queued? %>
-    <%# Not started: no thumbnail, just a placeholder with a clock. %>
-    <div class="shrink-0 w-24 h-[54px] rounded-app-thumb bg-[#101D2B] flex items-center justify-center">
-      <%= app_icon "clock", class: "w-5 h-5 text-app-text-3" %>
-    </div>
-  <% else %>
-    <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
-                  class: "shrink-0 w-24 h-[54px] rounded-app-thumb object-cover bg-app-inset" %>
-  <% end %>
-
-  <div class="flex-1 min-w-0 flex flex-col gap-1.5">
-    <p class="text-sm font-semibold truncate <%= import_request.queued? ? 'text-app-text-dim' : '' %>">
-      <%= import_request.title.presence || import_request.youtube_url %>
-    </p>
-
-    <% case import_request.status %>
-    <% when "importing" %>
-      <div class="h-[5px] rounded-full bg-white/12 overflow-hidden">
-        <div class="h-[5px] rounded-full bg-app-accent transition-[width] duration-500"
-             style="width: <%= import_request.display_percent %>%"></div>
+<div id="<%= dom_id(import_request) %>" class="<%= card_border %> rounded-app-card p-2.5 flex items-center gap-3" data-import-request-status="<%= import_request.status %>">
+  <div id="<%= dom_id(import_request, :thumb) %>" class="shrink-0">
+    <% if import_request.queued? %>
+      <%# Not started: no thumbnail, just a placeholder with a clock. %>
+      <div class="w-24 h-[54px] rounded-app-thumb bg-[#101D2B] flex items-center justify-center">
+        <%= app_icon "clock", class: "w-5 h-5 text-app-text-3" %>
       </div>
-      <%# The named stage rather than a percentage alone: they paid a credit for
-          this pipeline, so the card says what it's doing with it. %>
-      <div class="flex items-center justify-between gap-2">
-        <p class="text-app-accent text-xs font-semibold truncate"><%= import_request.stage_label %></p>
-        <% if import_request.charged? %>
-          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
-        <% end %>
-      </div>
-
-    <% when "queued" %>
-      <div class="flex items-center justify-between gap-2">
-        <p class="text-app-text-3 text-xs">Queued — up next</p>
-        <% if import_request.charged? %>
-          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
-        <% end %>
-      </div>
-
-    <% when "ready" %>
-      <div class="flex items-center gap-1.5">
-        <%= app_icon "check_circle", class: "w-3.5 h-3.5 text-app-accent" %>
-        <span class="text-app-accent text-xs font-semibold">Ready — waiting on Home</span>
-      </div>
-
-    <% when "failed" %>
-      <%# Not mocked. The credit was refunded when it failed, so retrying charges
-          again like any other import. %>
-      <div class="flex items-center gap-1.5">
-        <%= app_icon "warning", class: "w-3.5 h-3.5 text-red-400" %>
-        <span class="text-red-400 text-xs font-semibold">Import failed — credit refunded</span>
-      </div>
-
-    <% when "canceled" %>
-      <p class="text-app-text-3 text-xs">Cancelled</p>
+    <% else %>
+      <%= image_tag import_request.thumbnail_url, alt: "", loading: "lazy",
+                    class: "w-24 h-[54px] rounded-app-thumb object-cover bg-app-inset" %>
     <% end %>
   </div>
 
-  <% if import_request.failed? %>
-    <%= button_to retry_app_import_request_path(import_request),
-                  class: "shrink-0 w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center",
-                  aria: { label: "Try this import again" } do %>
-      <%= app_icon "retry", class: "w-4 h-4" %>
-    <% end %>
-  <% elsif import_request.queued? %>
-    <%= button_to app_import_request_path(import_request), method: :delete,
-                  class: "shrink-0 w-8 h-8 rounded-full bg-app-pill text-app-text-2 flex items-center justify-center",
-                  aria: { label: "Cancel this import" } do %>
-      <%= app_icon "close", class: "w-3.5 h-3.5" %>
-    <% end %>
-  <% end %>
+  <%= render "app/import_requests/import_request_body", import_request: import_request %>
 </div>

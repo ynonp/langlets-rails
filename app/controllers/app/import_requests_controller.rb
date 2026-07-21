@@ -106,7 +106,8 @@ module App
     end
 
     # Re-import something that failed. It was refunded when it failed, so this
-    # charges again like any other import.
+    # charges again like any other import. The old failed request is removed —
+    # the retried item replaces it.
     def retry
       failed = current_user.import_requests.find(params[:id])
       return redirect_to app_import_requests_path unless failed.failed?
@@ -117,6 +118,10 @@ module App
         clip_language: failed.clip_language,
         translation_language: failed.translation_language
       )
+
+      # The new request replaces the failed one — remove the old card from the
+      # queue so the user doesn't see both.
+      failed.destroy!
 
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
