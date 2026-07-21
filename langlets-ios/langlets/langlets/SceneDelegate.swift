@@ -208,6 +208,31 @@ extension SceneDelegate: NavigatorDelegate {
             return .reject
         }
 
+        // A link to the current tab's own root (e.g. the post-import redirect
+        // from Add Video → Queue) should return to the root rather than
+        // pushing a duplicate onto the stack — otherwise the back button goes
+        // to a stale form instead of where the user came from.
+        //
+        // Only for proposals that arrived from the web with no presentation of
+        // their own. The tab roots deliberately have no path configuration
+        // rule, while every programmatic route here (start, reloadAllTabs,
+        // showJustImported, onboarding redirects) asks for replace_root — and
+        // those must build their view controller normally. Rejecting them
+        // leaves the tab with an empty stack, which on launch is a blank app.
+        //
+        // clearAll rather than routing a "pop" proposal: Navigator.route calls
+        // back into this method to build its view controller, so re-routing the
+        // same URL from here recurses until the stack overflows. clearAll goes
+        // straight to the navigation hierarchy — dismiss any modal, pop to the
+        // root, refresh it — which is the behavior we wanted anyway.
+        if tabBarController.tabIndex(forPath: proposal.url.path) != nil,
+           proposal.properties["presentation"] == nil,
+           navigator.rootViewController.viewControllers.count > 1 ||
+             navigator.rootViewController.presentedViewController != nil {
+            navigator.clearAll(animated: true)
+            return .reject
+        }
+
         // A visit heading into the auth flow means the session is gone;
         // whatever the other tabs show predates it.
         if proposal.url.path.hasPrefix("/users/") {

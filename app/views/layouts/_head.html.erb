@@ -1,7 +1,12 @@
 <title><%= content_for(:title) || t(".title") %></title>
 <meta name="description" content="<%= content_for(:meta_description) || SeoHelper::DEFAULT_DESCRIPTION %>">
 <link rel="canonical" href="<%= content_for(:canonical_url) || 'https://langlets.app' %>">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<%# maximum-scale/user-scalable are appended only for the native app: WKWebView
+    honours both, so focusing a field can never zoom the shell out of alignment
+    with the native tab bar. Mobile Safari has ignored them since iOS 10, so
+    adding them unconditionally would be a no-op on the web — but leaving them
+    off there keeps the intent honest: pinch-zoom stays available on the site. %>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover<%= ",maximum-scale=1,user-scalable=no" if native_app? %>">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <%= csrf_meta_tags %>
