@@ -43,7 +43,7 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
             },
           ],
           temperature: 0.2,
-          providerOptions: { google: { thinkingConfig: { thinkingLevel: "medium" } } },
+          providerOptions: { google: { thinkingConfig: { thinkingLevel: "low" } } },
         });
         lastResponseText = text;
         const parsed = parseLyricsLines(text);

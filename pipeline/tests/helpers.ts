@@ -10,6 +10,7 @@ import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
 import type { AlignedWord, Alignment } from "../src/alignment.ts";
+import type { TranscriptionResult } from "../src/transcription.ts";
 
 export interface QueuedModel {
   model: LanguageModel;
@@ -112,6 +113,7 @@ export function makeCtx(options: {
   clipLanguage?: string;
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
+  transcribeAudio?: PipelineContext["transcribeAudio"];
 } = {}): TestSetup {
   const sink = new MemorySink();
   const store = new ProgressStore(options.data ?? {}, sink);
@@ -137,6 +139,7 @@ export function makeCtx(options: {
     baseDelayMs: 0,
     prepareAudio: options.prepareAudio ?? stubAudio,
     alignLyrics: options.alignLyrics,
+    transcribeAudio: options.transcribeAudio,
   };
 
   return { ctx, store, sink };

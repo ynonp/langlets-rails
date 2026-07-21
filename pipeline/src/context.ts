@@ -8,6 +8,7 @@ import type { ModelRegistry } from "./models.ts";
 import type { Fuzzyword } from "./fuzzyword.ts";
 import type { DownloadedAudio } from "./audio.ts";
 import type { Alignment } from "./alignment.ts";
+import type { TranscriptionResult } from "./transcription.ts";
 import { errorClass, message } from "./retry.ts";
 
 export interface PipelineContext {
@@ -24,9 +25,11 @@ export interface PipelineContext {
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
   // Injection points for the transcription step (tests stub out the YouTube
-  // audio download and the ElevenLabs forced-alignment call).
+  // audio download, the ElevenLabs forced-alignment call, and the ElevenLabs
+  // STT fallback).
   prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
   alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;
+  transcribeAudio?: (audioPath: string, languageCode: string | null) => Promise<TranscriptionResult>;
 }
 
 export interface FailureDetails {
