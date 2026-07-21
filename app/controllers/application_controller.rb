@@ -82,11 +82,11 @@ class ApplicationController < ActionController::Base
     return unless user_signed_in?
     return if current_language_code.present?
     return if devise_controller?
-    return if controller_name == "onboarding" && action_name == "language"
+    return if controller_name == "onboarding" && action_name.in?([ "welcome", "language" ])
     return if controller_name == "health"
     return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
 
-    redirect_to onboarding_language_path(returnto: request.fullpath)
+    redirect_to onboarding_welcome_path(returnto: request.fullpath)
   end
 
   # Carries the selected language onto every generated URL, so all content stays

@@ -295,6 +295,15 @@
   overflow: hidden;
 }
 
+/* UIKit's own UITabBar height, which the web view extends underneath in the
+   native app. Not a design token — changing it doesn't restyle anything, it just
+   stops matching the bar we're trying to clear. The home-indicator inset
+   (env(safe-area-inset-bottom)) sits below this, not inside it, so anything
+   pinned above the tab bar owes both. */
+:root {
+  --app-tab-bar-height: 49px;
+}
+
 /* Screens scroll under a fixed tab bar; without this the last card hides
    behind it. Tab bar is 10px top + 24px icon + 3px gap + 10px label + 30px
    bottom padding, plus the home-indicator inset. */
@@ -307,6 +316,30 @@
    safe-area inset alone only clears the home indicator, not UITabBar itself. */
 [data-native-tabs] .app-scroll-pad {
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+/* The floating Add button. On the web it only owes the home indicator, but in
+   the native app the web view runs underneath UITabBar, and the inset alone
+   clears the home indicator rather than the bar — which put the FAB behind the
+   tab bar on every notched device. Clear both. */
+@utility app-fab-offset {
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+}
+
+[data-native-tabs] .app-fab-offset {
+  bottom: calc(18px + var(--app-tab-bar-height) + env(safe-area-inset-bottom, 0px));
+}
+
+/* The Credits sheet sits flush against the bottom of its web view, so its last
+   control lands exactly on the home indicator. It's presented as a native modal
+   — see config/hotwire/ios_path_configuration.json — so it covers the tab bar
+   and owes only the inset, not the bar's height. The fixed part keeps the sheet
+   off the indicator on hardware that reports no inset at all.
+
+   Add a video used to share this; it's a pushed screen now and uses
+   app-scroll-pad like every other pushed screen. */
+@utility app-sheet-pad {
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Course pages still use the regular web layout inside the native app.

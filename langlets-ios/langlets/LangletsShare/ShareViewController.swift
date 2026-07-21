@@ -164,7 +164,12 @@ final class ShareViewController: UIViewController {
 
         importButton.isEnabled = false
         statusLabel.text = "Adding to your Queue…"
-        var request = URLRequest(url: URL(string: "https://langlets.app/api/v1/import_requests")!)
+        // Same split as the host app's rootURL — a debug extension posting to
+        // production would file real imports against a real account while you
+        // think you're testing locally. This target can't see SceneDelegate's
+        // constant, so the switch is repeated rather than shared.
+        let importsEndpoint = URL(string: "https://langlets.app/api/v1/import_requests")!
+        var request = URLRequest(url: importsEndpoint)
         request.httpMethod = "POST"
         request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

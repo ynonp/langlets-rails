@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="<%= current_translation_language&.iso_name || I18n.locale %>"
+      dir="<%= current_translation_language&.rtl? ? 'rtl' : 'ltr' %>"
+      data-theme="dark">
+  <head>
+    <%= render "layouts/head" %>
+  </head>
+  <body class="bg-app-bg text-app-text font-app antialiased">
+    <main><%= yield %></main>
+  </body>
+</html>

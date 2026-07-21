@@ -23,6 +23,14 @@
 			</array>
 		</dict>
 	</array>
+	<!-- Lets DEBUG builds load http://localhost:3000. Narrower than
+	     NSAllowsArbitraryLoads on purpose: it permits loopback and .local only,
+	     so production traffic to langlets.app is still held to full ATS. -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsLocalNetworking</key>
+		<true/>
+	</dict>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Langlets needs microphone access for pronunciation practice activities.</string>
 	<key>UIApplicationSceneManifest</key>

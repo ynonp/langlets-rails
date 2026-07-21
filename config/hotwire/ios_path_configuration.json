@@ -20,56 +20,100 @@
     "",
     "This file is served to the app by ConfigurationsController and must stay",
     "identical to langlets-ios/langlets/langlets/Configuration/path_configuration.json,",
-    "which is the offline fallback. A test enforces it."
+    "which is the offline fallback. A test enforces it.",
+    "",
+    "PATTERNS ARE MATCHED AGAINST THE PATH ONLY, and that is a choice, not a",
+    "default. Hotwire Native ships matchQueryStrings = true, which matches rules",
+    "against '/app/import_requests/new?lang=es' rather than the bare path — and",
+    "every `$`-anchored pattern below then fails for any link carrying a query",
+    "string. Since the app appends ?lang= almost everywhere, that silently",
+    "demoted the modal rules to plain pushes. SceneDelegate sets",
+    "matchQueryStrings = false so the anchors mean what they look like they mean.",
+    "If you ever need to key a rule on a query parameter, that flag is why you",
+    "can't, and flipping it back breaks every anchored pattern here.",
+    "",
+    "Add a video is deliberately context 'default', i.e. a plain push inside",
+    "the Queue tab with the back arrow and tab bar intact. It was a medium",
+    "sheet; as a sheet it fought the iOS 26 floating tab bar and the screen",
+    "grew past the detent once a preview card rendered. Note it needs its own",
+    "rule purely to escape the '/new$' modal pattern above it."
   ],
   "rules": [
     {
-      "patterns": [".*"],
+      "patterns": [
+        ".*"
+      ],
       "properties": {
         "context": "default",
         "pull_to_refresh_enabled": true
       }
     },
     {
-      "patterns": ["/users/auth/.*", "/users/sign_in", "/users/sign_up", "/users/password/new"],
+      "patterns": [
+        "/users/auth/.*",
+        "/users/sign_in",
+        "/users/sign_up",
+        "/users/password/new"
+      ],
       "properties": {
         "context": "modal",
         "pull_to_refresh_enabled": false
       }
     },
     {
-      "patterns": ["/onboarding/language"],
+      "patterns": [
+        "/onboarding/welcome",
+        "/onboarding/language"
+      ],
       "properties": {
         "context": "default",
         "pull_to_refresh_enabled": false
       }
     },
     {
-      "patterns": ["/courses/.*/lessons/.*"],
+      "patterns": [
+        "/courses/.*/lessons/.*"
+      ],
       "properties": {
         "context": "modal",
         "pull_to_refresh_enabled": false
       }
     },
     {
-      "patterns": ["/review_lessons/.*"],
+      "patterns": [
+        "/review_lessons/.*"
+      ],
       "properties": {
         "context": "default",
         "pull_to_refresh_enabled": false
       }
     },
     {
-      "patterns": ["/new$", "/import_courses/new"],
+      "patterns": [
+        "/new$",
+        "/import_courses/new"
+      ],
       "properties": {
         "context": "modal",
         "pull_to_refresh_enabled": false
       }
     },
     {
-      "patterns": ["^/app/import_requests/new$", "^/app/credits$"],
+      "patterns": [
+        "^/app/credits$"
+      ],
       "properties": {
         "context": "modal",
         "modal_style": "medium",
+        "pull_to_refresh_enabled": false
+      }
+    },
+    {
+      "patterns": [
+        "^/app/import_requests/new$"
+      ],
+      "properties": {
+        "context": "default",
         "pull_to_refresh_enabled": false
       }
     }

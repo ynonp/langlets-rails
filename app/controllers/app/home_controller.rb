@@ -1,7 +1,6 @@
 module App
   # Screen 01. The user's own courses (Enrollments — imported or added from the
-  # Library), plus a few Library suggestions: four as a first-run song picker
-  # when there's nothing to continue, two under "More from the library" otherwise.
+  # Library), plus a compact horizontal shelf of Library suggestions.
   class HomeController < BaseController
     # Within this window a finished import still counts as "just imported" and
     # gets the hero card. Also how the push deep link lands: it routes to
@@ -9,7 +8,6 @@ module App
     JUST_IMPORTED_WINDOW = 48.hours
 
     def index
-      @greeting_name = greeting_name
       @hero_course = hero_course
       @learning_language = Language.find_by(iso_name: current_language_code) if current_language_code.present?
       @playlists = current_user.playlists
@@ -21,29 +19,17 @@ module App
       @lesson_counts = lesson_counts_for(candidates.map(&:course) + [ @hero_course ].compact)
       @completed_counts = completed_counts_for(candidates.map(&:course_id))
 
+      # "Continue" is in-progress work only; finished courses
+      # drop out (they'd read as broken under that heading).
       @enrollments = candidates.reject { |enrollment| finished?(enrollment) }.first(2)
 
-      # First run = nothing to continue and nothing just imported: the screen
-      # becomes a song picker instead of a progress list.
-      @first_run = @hero_course.nil? && @enrollments.empty?
-      @library_picks = library_picks(count: @first_run ? 4 : 2)
+      # The paste CTA is now the primary way in, so there's no separate first-run
+      # picker — the library grid carries the empty account too, hence four picks.
+      @library_picks = library_picks(count: 4)
       @lesson_counts.merge!(lesson_counts_for(@library_picks))
     end
 
     private
-
-    # There's no name on User, so the email's local part stands in — "Ready to
-    # practice, Ynon?". Skipped rather than guessed badly when it doesn't look
-    # like a name.
-    def greeting_name
-      local = current_user.email.to_s.split("@").first.to_s
-      return nil if local.blank?
-
-      first = local.split(/[._+-]/).first.to_s
-      return nil unless first.match?(/\A[[:alpha:]]{2,20}\z/)
-
-      first.capitalize
-    end
 
     # Either the course the push notification pointed at, or the most recent
     # import that finished in the last couple of days.

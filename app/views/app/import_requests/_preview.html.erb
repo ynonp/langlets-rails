@@ -93,8 +93,8 @@
       <% end %>
     <% end %>
 
-    <%= link_to t("app.import_requests.new.cancel"), app_home_path,
-                data: { turbo_frame: "_top" },
-                class: "block text-center text-app-text-3 text-[13px] py-1" %>
+    <%# No Cancel link: this screen is pushed, so the navigation bar's back arrow
+        already is one, and a second way out directly under the primary button is
+        just weight on the decision. %>
   <% end %>
 </div>

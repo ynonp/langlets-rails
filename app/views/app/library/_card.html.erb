@@ -1,21 +1,24 @@
-<div class="app-hairline bg-app-card rounded-app-card overflow-hidden flex flex-col">
+<% compact = local_assigns.fetch(:compact, false) %>
+
+<div class="app-hairline bg-app-card <%= compact ? 'rounded-[14px]' : 'rounded-app-card' %> overflow-hidden flex flex-col">
   <%= link_to course_path(course) do %>
-    <%= image_tag Medium.youtube_thumbnail_url(course.youtube_video_id, "mqdefault"),
+    <%= image_tag Medium.youtube_thumbnail_url(course_youtube_video_id(course), "hqdefault"),
                   alt: "", loading: "lazy",
-                  class: "w-full h-[94px] object-cover bg-app-inset" %>
+                  class: "w-full aspect-video object-cover bg-app-inset" %>
   <% end %>
 
-  <div class="px-3 pt-2.5 pb-3 flex flex-col gap-1 flex-1">
+  <div class="<%= compact ? 'px-2.5 pt-2 pb-2.5' : 'px-3 pt-2.5 pb-3' %> flex flex-col gap-1 flex-1">
     <%# The mockup pins these to a fixed 34px height; line-clamp is the same two
         lines without breaking when the font metrics differ. %>
     <%= link_to course.localized_name, course_path(course),
-                class: "app-clamp-2 text-[13px] font-semibold leading-[1.3] min-h-[34px]" %>
+                class: "app-clamp-2 font-semibold leading-[1.25] #{compact ? 'text-[12px] min-h-[30px]' : 'text-[13px] min-h-[34px]'}" %>
 
-    <p class="text-app-text-2 text-[11px]">
-      <%= localized_language_name(course.language) %> · <%= t("courses.lesson_count", count: lessons_count) %>
+    <p class="text-app-text-2 <%= compact ? 'text-[10px]' : 'text-[11px]' %>">
+      <% unless compact %><%= localized_language_name(course.language) %> · <% end %><%= t("courses.lesson_count", count: lessons_count) %>
     </p>
 
-    <div class="mt-auto pt-1">
+    <% if local_assigns.fetch(:show_enrollment_action, true) %>
+      <div class="mt-auto pt-1">
       <% if enrolled %>
         <span class="text-app-text-3 text-xs font-bold">On your Home</span>
       <% else %>
@@ -25,6 +28,7 @@
           + Learn this
         <% end %>
       <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

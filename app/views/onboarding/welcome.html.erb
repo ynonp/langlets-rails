@@ -1,0 +1,15 @@
+<% content_for :title, t(".eyebrow") %>
+
+<div class="min-h-dvh px-7 pt-[max(3rem,env(safe-area-inset-top,1rem))] pb-[max(2rem,env(safe-area-inset-bottom,1rem))] flex flex-col">
+  <p class="text-app-text-2 text-sm font-semibold tracking-[0.08em] uppercase"><%= t(".eyebrow") %></p>
+
+  <div class="my-auto py-12">
+    <h1 class="text-[42px] font-extrabold tracking-[-1.5px] leading-[1.02] max-w-md">
+      <%= t(".title") %>
+    </h1>
+    <p class="mt-7 text-app-text-2 text-[18px] leading-relaxed max-w-md"><%= t(".body") %></p>
+  </div>
+
+  <%= link_to t(".start"), onboarding_language_path(returnto: @return_to),
+              class: "w-full rounded-full bg-app-accent text-app-on-accent text-center text-[17px] font-bold py-4" %>
+</div>

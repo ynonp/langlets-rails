@@ -79,6 +79,7 @@ Rails.application.routes.draw do
   get "home/privacy"
   get "home/terms"
   get "support", to: "home#support"
+  get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "profile", to: "profile#show", as: :profile
   root "courses#index"

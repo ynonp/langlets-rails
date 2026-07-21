@@ -107,12 +107,15 @@ en:
   app:
     home:
       index:
-        pick_first_song: "Pick your first song"
-        learn_through_music: "Learn %{language} through music you'll actually enjoy."
-        new_language: "a new language"
         your_playlists: "Your playlists"
-        keep_it_going: "Keep it going"
-        more_from_library: "More from the library"
+        continue: "Continue"
+        library: "Library"
+      paste_cta:
+        cta_headline: "Turn any YouTube video into a %{language} lesson."
+        cta_subhead: "Paste a link — get a translated transcript and practice every word."
+        cta_fallback_language: "language"
+        paste_placeholder: "Paste a YouTube link"
+        go: "Add"
     library:
       show:
         title: "Library"
@@ -122,11 +125,13 @@ en:
         title: "Queue"
         empty: "Nothing here yet."
       new:
-        page_title: "Add a video · langlets."
+        # Doubles as the native navigation-bar title now that this screen is
+        # pushed rather than presented, so no " · langlets." suffix — the nav bar
+        # is not a browser tab.
+        page_title: "Add a video"
         title: "Add a video"
+        credits_subtitle: "%{credits} — each import uses 1."
         video_language: "Video language"
-        translate_to: "Translate to"
-        import_credit: "Import · 1 credit"
         paste_placeholder: "Paste a YouTube link or ID"
         url_hint: "Works with youtube.com links, youtu.be, or a video ID"
         link_recognized: "Link recognized"
@@ -137,12 +142,16 @@ en:
         approve: "Approve · use %{cost}"
         approve_free: "Approve · free"
         get_credits: "Get credits"
-        cancel: "Cancel"
         already_in_library: "Already in your library."
         open_lesson: "Open lesson"
         already_importing: "Already importing."
         view_in_queue: "View in queue"
   onboarding:
+    welcome:
+      eyebrow: "Welcome to langlets."
+      title: "Turn any YouTube video into an engaging language lesson"
+      body: "Langlets helps you practice languages with content you already love. Our AI agent transcribes, translates, and creates vocabulary practice from any video on YouTube. Paste your own or browse our existing library to practice Spanish, French, or Arabic."
+      start: "Start Now"
     language:
       change_title: "Change Learning Language"
       change_prompt: "Select the language you want to learn"

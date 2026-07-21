@@ -1,116 +1,65 @@
 <% content_for :title, "langlets." %>
 
-<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-5">
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-6">
   <%= render "app/shared/header" %>
 
-  <% if @first_run %>
-    <%# First run: nothing to continue yet, so the screen is a song picker. %>
-    <div>
-      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight"><%= t(".pick_first_song") %></h1>
-      <p class="text-app-text-2 text-sm mt-1">
-        <%= t(".learn_through_music", language: @learning_language&.native_name || t(".new_language")) %>
-      </p>
-    </div>
+  <%# 1. A compact paste box. Product explanation belongs in onboarding. %>
+  <%= render "app/home/paste_cta" %>
 
-    <% if @library_picks.any? %>
-      <div>
-        <div class="grid grid-cols-2 gap-3">
-          <% @library_picks.each do |course| %>
-            <%= render "app/library/card", course: course,
-                       lessons_count: @lesson_counts[course.id].to_i,
-                       enrolled: false %>
-          <% end %>
-        </div>
+  <%# "Just imported" hero. Where the course-ready push deep link lands
+      (/app?just_imported=<slug>), so it stays near the top when present. %>
+  <% if @hero_course %>
+    <%= render "app/home/hero", course: @hero_course,
+               lessons_count: @lesson_counts[@hero_course.id].to_i %>
+  <% end %>
 
-        <p class="text-center mt-4">
-          <%= link_to "None of these? Browse the library", app_library_path,
-                      class: "text-app-accent text-[13px] font-semibold" %>
-        </p>
-      </div>
-    <% else %>
-      <%# The Library has nothing in this language yet; importing is the only way in. %>
-      <p class="text-app-text-2 text-sm">
-        The Library is empty for this language — bring the first song.
-        You have <%= pluralize(current_user.credit_balance, "credit") %> to start.
-      </p>
-    <% end %>
-
-    <% if @playlists.any? %>
-      <div>
-        <h2 class="text-[15px] font-bold mb-2.5"><%= t(".your_playlists") %></h2>
-        <div class="flex flex-col gap-2.5">
-          <% @playlists.each do |playlist| %>
-            <%= render "app/home/playlist_row", playlist: playlist %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-
-    <%= render "app/home/import_card", title: "Bring your own song" %>
-  <% else %>
-    <%# Greeting %>
-    <div>
-      <h1 class="text-[27px] font-bold tracking-[-0.6px] leading-tight">
-        Ready to practice<%= ", #{@greeting_name}" if @greeting_name.present? %>?
-      </h1>
-      <p class="text-app-text-2 text-sm mt-1">
-        <%= @hero_course ? "Your newest import just landed." : "Pick up where you left off." %>
-      </p>
-    </div>
-
-    <%# "Just imported" hero %>
-    <% if @hero_course %>
-      <%= render "app/home/hero", course: @hero_course,
-                 lessons_count: @lesson_counts[@hero_course.id].to_i %>
-    <% end %>
-
-    <%# Keep it going %>
-    <% if @enrollments.any? %>
-      <div data-testid="keep-it-going" class="flex flex-col gap-2.5">
-        <div class="flex items-baseline justify-between">
-          <h2 class="text-[15px] font-bold"><%= t(".keep_it_going") %></h2>
-          <%= link_to "See all", app_started_courses_path,
-                      class: "text-app-accent text-[13px] font-semibold" %>
-        </div>
-
-        <div class="flex flex-col gap-2.5">
-          <% @enrollments.each do |enrollment| %>
-            <%= render "app/home/course_row", course: enrollment.course,
-                       total: @lesson_counts[enrollment.course_id].to_i,
-                       completed: @completed_counts[enrollment.course_id].to_i %>
-          <% end %>
-        </div>
-
-      </div>
-    <% end %>
-
-    <% if @playlists.any? %>
-      <div>
-        <h2 class="text-[15px] font-bold mb-2.5"><%= t(".your_playlists") %></h2>
-        <div class="flex flex-col gap-2.5">
-          <% @playlists.each do |playlist| %>
-            <%= render "app/home/playlist_row", playlist: playlist %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-
-    <%# More from the library %>
-    <% if @library_picks.any? %>
+  <%# 2. Continue — in-progress courses. %>
+  <% if @enrollments.any? %>
+    <div data-testid="keep-it-going" class="flex flex-col gap-2.5">
       <div class="flex items-baseline justify-between">
-        <h2 class="text-[15px] font-bold"><%= t(".more_from_library") %></h2>
-        <%= link_to "See all", app_library_path, class: "text-app-accent text-[13px] font-semibold" %>
+        <h2 class="text-app-text-2 text-[14px] font-semibold uppercase tracking-[0.08em]"><%= t(".continue") %></h2>
+        <%= link_to "See all", app_started_courses_path,
+                    class: "text-app-text-2 text-[13px] font-semibold" %>
       </div>
 
-      <div class="grid grid-cols-2 gap-3">
+      <div class="flex flex-col gap-2.5">
+        <% @enrollments.each do |enrollment| %>
+          <%= render "app/home/course_row", course: enrollment.course,
+                     total: @lesson_counts[enrollment.course_id].to_i,
+                     completed: @completed_counts[enrollment.course_id].to_i %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+  <%# 3. Four compact Library suggestions in a 2×2 grid. %>
+  <% if @library_picks.any? %>
+    <div class="flex flex-col gap-2.5">
+      <div class="flex items-baseline justify-between">
+        <h2 class="text-[18px] font-bold"><%= t(".library") %></h2>
+        <%= link_to "See all ›", app_library_path, class: "text-app-text-2 text-[13px] font-semibold" %>
+      </div>
+
+      <div class="grid grid-cols-2 gap-2.5">
         <% @library_picks.each do |course| %>
           <%= render "app/library/card", course: course,
                      lessons_count: @lesson_counts[course.id].to_i,
-                     enrolled: false %>
+                     enrolled: false, show_enrollment_action: false,
+                     compact: true %>
         <% end %>
       </div>
-    <% end %>
+    </div>
+  <% end %>
 
-    <%= render "app/home/import_card", title: "Make your own lesson" %>
+  <%# Personal playlists, when the user has any. %>
+  <% if @playlists.any? %>
+    <div class="flex flex-col gap-2.5">
+      <h2 class="text-[15px] font-bold"><%= t(".your_playlists") %></h2>
+      <div class="flex flex-col gap-2.5">
+        <% @playlists.each do |playlist| %>
+          <%= render "app/home/playlist_row", playlist: playlist %>
+        <% end %>
+      </div>
+    </div>
   <% end %>
 </div>
