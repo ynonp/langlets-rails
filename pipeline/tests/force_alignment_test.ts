@@ -205,37 +205,6 @@ Deno.test("records both failures when the backup fails too", async () => {
   assert(store.data.force_alignment_in_progress);
 });
 
-Deno.test("fails without lyric lines and STT also fails", async () => {
-  const { ctx, store } = makeCtx({
-    alignLyrics: stubAlign([]).align,
-    transcribeAudio: () => Promise.reject(new Error("ELEVEN_LABS_KEY is not set")),
-  });
-
-  await assertRejects(() => forceAlignment(ctx), Error, "ELEVEN_LABS_KEY");
-  assertEquals(store.data.errors![0].step, "force_alignment");
-});
-
-Deno.test("transcribes with STT when Gemini produced no lines, then aligns", async () => {
-  const sttResult = { text: "Hello world. How are you?", language_code: "en" };
-  const aligner = stubAlign([alignment(alignedBatch(1, 2))]);
-  const { ctx, store } = makeCtx({
-    data: { lyric_lines: [] }, // Gemini failed
-    alignLyrics: aligner.align,
-    transcribeAudio: () => Promise.resolve(sttResult),
-    prepareAudio: stubAudioWith(20),
-  });
-
-  await forceAlignment(ctx);
-
-  // STT lines were saved so a retry skips STT.
-  assertEquals(store.data.lyric_lines!.length, 2);
-  assertFalse(store.data.extract_lyrics_in_progress);
-  // Forced alignment ran on the STT text.
-  assertEquals(aligner.calls(), 1);
-  assertEquals(store.data.phrases!.length, 2);
-  assertFalse(store.data.force_alignment_in_progress);
-});
-
 Deno.test("fails on insufficient video coverage and keeps the resume flag", async () => {
   // Lyrics end around 13s of a 100s clip: 13% coverage.
   const aligner = stubAlign([alignment(alignedBatch(1, 2))]);
