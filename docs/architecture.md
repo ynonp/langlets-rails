@@ -1237,7 +1237,9 @@ All 3 user profile menus show a "📚 Review Words" button when the user has sav
 These checkbox-backed web profile menus use `profile_menu_controller.js` to clear
 their toggle when a document click lands outside the menu. The same controller
 also closes the native Home header's `details` menu, keeping outside-click
-behavior consistent across both menu implementations.
+behavior consistent across both menu implementations. Profile links explicitly
+dismiss the menu before navigation; this prevents Turbo snapshots on web and
+retained tab webviews on iOS from restoring the menu in its open state.
 
 The native app Home header also uses its top-right initials as a profile dropdown. It links to Profile and Logout, and shows one language-specific "Practice Words" action for each language in which the user has saved vocabulary:
 - `app/views/app/shared/_header.html.erb`

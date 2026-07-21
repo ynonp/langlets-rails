@@ -312,7 +312,8 @@ module App
       assert_select "details[data-testid='app-profile-menu'][data-controller='profile-menu']" do
         assert_select "[data-action='click@document->profile-menu#close']"
         assert_select "summary[aria-label='Open profile menu']", text: "S"
-        assert_select "a[href=?]", profile_path, text: "Profile"
+        assert_select "a[href=?][data-action='click->profile-menu#dismiss']", profile_path,
+                      text: "Profile"
         assert_select "form[action=?]", review_lessons_path(language_code: @spanish.iso_name) do
           assert_select "button", text: "Practice Words (#{@spanish.iso_name})"
         end

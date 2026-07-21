@@ -268,6 +268,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   def assert_web_profile_menu
     assert_select "[data-controller='profile-menu'][data-action='click@document->profile-menu#close']" do
       assert_select "input[data-profile-menu-target='toggle']", count: 1
+      assert_select "a[href=?][data-action='click->profile-menu#dismiss']", profile_path, count: 1
     end
   end
 

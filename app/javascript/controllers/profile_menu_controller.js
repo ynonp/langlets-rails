@@ -6,6 +6,10 @@ export default class extends Controller {
   close(event) {
     if (this.element.contains(event.target)) return
 
+    this.dismiss()
+  }
+
+  dismiss() {
     if (this.hasToggleTarget) {
       this.toggleTarget.checked = false
     } else {

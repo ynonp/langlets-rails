@@ -50,7 +50,9 @@
     <% if current_user.languages_with_saved_words.exists? %>
       <div class="<%= divider_class %>"></div>
     <% end %>
-    <%= link_to t("shared.menu.profile"), profile_path, class: menu_item_class %>
+    <%= link_to t("shared.menu.profile"), profile_path,
+                class: menu_item_class,
+                data: { action: "click->profile-menu#dismiss" } %>
     <%= link_to t("shared.menu.connected_apps"), settings_connections_path, class: menu_item_class %>
     <%= link_to t("shared.menu.logout"),
       destroy_user_session_path(returnto: request.fullpath),
