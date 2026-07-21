@@ -27,8 +27,8 @@ final class AppTabBarController: UITabBarController {
         Tab(title: "Queue", path: "/app/import_requests", image: "clock", selectedImage: "clock.fill")
     ]
 
-    private static let homeTabIndex = 0
-    private static let queueTabIndex = 2
+    static let homeTabIndex = 0
+    static let queueTabIndex = 2
 
     private var navigators: [Navigator] = []
     private var needsRoute: [Bool]
@@ -95,22 +95,12 @@ final class AppTabBarController: UITabBarController {
         routeTabIfNeeded(at: selectedIndex)
     }
 
-    /// The tab whose root path matches `path`, if any. Lets the navigator
-    /// delegate turn in-page links between tab roots (Home's "See all" →
-    /// Library) into a native tab switch instead of a push.
-    func tabIndex(forPath path: String) -> Int? {
-        Self.tabs.firstIndex { $0.path == path }
-    }
-
-    func navigator(forTabAt index: Int) -> Navigator {
-        navigators[index]
-    }
-
     func selectTab(at index: Int) {
         closeProfileMenus(except: index)
         selectedIndex = index
         routeTabIfNeeded(at: index)
     }
+
 
     /// Land on Home with a freshly imported course as the hero — where a tapped
     /// "your course is ready" notification goes. HomeController reads

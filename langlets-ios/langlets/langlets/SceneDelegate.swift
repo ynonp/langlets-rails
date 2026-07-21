@@ -195,54 +195,21 @@ extension SceneDelegate: NavigatorDelegate {
         }
         AppTabBarController.rememberPendingOnboardingURL(proposal.url)
 
-        // A link to another tab's root switches tabs instead of pushing that
-        // screen onto the current stack — Home's "See all" lands on the real
-        // Library tab, and the post-import redirect lands on the real Queue.
-        if let index = tabBarController.tabIndex(forPath: proposal.url.path),
-           tabBarController.navigator(forTabAt: index) !== navigator {
-            // If the proposal came out of a modal (the new-import sheet
-            // redirecting to the Queue), the modal stays presented on the
-            // source tab because the rejected proposal never dismisses it.
-            navigator.rootViewController.presentedViewController?.dismiss(animated: true)
-            tabBarController.selectTab(at: index)
+        if proposal.url.path == "/" {
+            returnHome(from: navigator)
             return .reject
-        }
-
-        // A link to the current tab's own root (e.g. the post-import redirect
-        // from Add Video → Queue) should return to the root rather than
-        // pushing a duplicate onto the stack — otherwise the back button goes
-        // to a stale form instead of where the user came from.
-        //
-        // Only for proposals that arrived from the web with no presentation of
-        // their own. The tab roots deliberately have no path configuration
-        // rule, while every programmatic route here (start, reloadAllTabs,
-        // showJustImported, onboarding redirects) asks for replace_root — and
-        // those must build their view controller normally. Rejecting them
-        // leaves the tab with an empty stack, which on launch is a blank app.
-        //
-        // clearAll rather than routing a "pop" proposal: Navigator.route calls
-        // back into this method to build its view controller, so re-routing the
-        // same URL from here recurses until the stack overflows. clearAll goes
-        // straight to the navigation hierarchy — dismiss any modal, pop to the
-        // root, refresh it — which is the behavior we wanted anyway.
-        if tabBarController.tabIndex(forPath: proposal.url.path) != nil,
-           proposal.properties["presentation"] == nil,
-           navigator.rootViewController.viewControllers.count > 1 ||
-             navigator.rootViewController.presentedViewController != nil {
-            navigator.clearAll(animated: true)
-            return .reject
-        }
-
-        // A visit heading into the auth flow means the session is gone;
-        // whatever the other tabs show predates it.
-        if proposal.url.path.hasPrefix("/users/") {
-            tabBarController.setTabsVisible(false)
-            tabBarController.reloadOtherTabs(than: navigator)
         }
 
         return .accept
     }
 
+    private func returnHome(from sourceNavigator: Navigator) {
+        let homeIndex = 0
+        sourceNavigator.clearAll(animated: false)
+        tabBarController.selectedIndex = homeIndex
+        tabBarController.activeNavigator.clearAll(animated: false)
+    }
+    
     private static func isSignedOutRedirect(_ url: URL) -> Bool {
         guard url.path == "/users/sign_in",
               let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return false }
