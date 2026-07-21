@@ -17,6 +17,7 @@ import { HttpCallbackClient } from "./callback.ts";
 import { parseTriggerPayload, runPipeline, type RunResult } from "./pipeline.ts";
 import type { ModelRegistry } from "./models.ts";
 import { message } from "./retry.ts";
+import { request } from "asset:///node/undici/api.d.ts";
 
 export interface ServerOptions {
   secret: string;
@@ -30,11 +31,12 @@ export interface ServerOptions {
   }) => Promise<RunResult>;
 }
 
-export function createHandler(options: ServerOptions): (request: Request) => Promise<Response> {
+export function createHandler(options: ServerOptions): (request: Request) => Promise<Response> {  
   const run = options.run ?? runPipeline;
 
   return async (request: Request): Promise<Response> => {
     const url = new URL(request.url);
+    console.log(`Incoming Request: ${url.pathname}`);
 
     if (request.method === "GET" && url.pathname === "/health") {
       return json(200, { ok: true });

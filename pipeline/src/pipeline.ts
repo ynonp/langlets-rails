@@ -73,7 +73,7 @@ export async function runPipeline(
     prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
   };
-
+  console.log(`Pipeline start with payload: ${JSON.stringify(payload)}`);
   const failed: Record<string, string> = {};
 
   // Transcribe, then time. Each step runs when its own output is missing or
