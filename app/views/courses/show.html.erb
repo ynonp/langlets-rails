@@ -34,7 +34,6 @@
 <%
   course_rtl = @course.language&.rtl || false
   youtube_video_id = @course.main_media_url.to_s.split("v=").last
-  user_name = user_signed_in? ? current_user.email.to_s.split("@").first.split(/[._-]/).first.capitalize : "there"
   streak = user_signed_in? ? @streak_info[:count] : 0
 %>
 
@@ -57,30 +56,9 @@
         </div>
 
         <% if user_signed_in? %>
-          <div class="relative"
-               data-controller="profile-menu"
-               data-action="click@document->profile-menu#close">
-            <input type="checkbox" id="user-menu-toggle" class="hidden peer" data-profile-menu-target="toggle">
-            <label for="user-menu-toggle" class="cursor-pointer w-10 h-10 rounded-full border-2 border-emerald-500 bg-gradient-to-br from-emerald-300 to-emerald-500 flex items-center justify-center font-extrabold text-white"><%= user_name.first.upcase %></label>
-            <div class="absolute right-0 mt-2 w-56 rounded-2xl shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150 z-50 overflow-hidden
-                 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800">
-              <% current_user.languages_with_saved_words.order(:iso_name).each do |language| %>
-                <%= button_to t("shared.menu.review_words", language: language.iso_name), review_lessons_path(language_code: language.iso_name),
-                  method: :post, class: "w-full text-left px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70", data: { turbo: false } %>
-              <% end %>
-              <% if current_user.languages_with_saved_words.exists? %>
-                <div class="border-t border-gray-200 dark:border-gray-800"></div>
-              <% end %>
-              <%= link_to t("shared.menu.profile"), profile_path,
-                class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
-              <%= link_to t("shared.menu.connected_apps"), settings_connections_path,
-                class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
-              <%= link_to t("shared.menu.logout"), destroy_user_session_path(returnto: request.fullpath),
-                method: :delete,
-                data: { turbo_method: :delete, controller: "auth", action: "click->auth#signOut" },
-                class: "block px-4 py-3 text-sm font-semibold text-gray-900 dark:text-gray-50 hover:opacity-70" %>
-            </div>
-          </div>
+          <%= render "shared/user_menu",
+            avatar_type: :initial,
+            logout_data: { turbo_method: :delete, controller: "auth", action: "click->auth#signOut" } %>
         <% else %>
           <%= link_to t(".sign_up"), new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
         <% end %>
