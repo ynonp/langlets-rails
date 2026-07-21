@@ -2,7 +2,7 @@
 
 <%# Presented as a bottom sheet by the path configuration, same as Add a video. %>
 <div class="min-h-dvh flex flex-col justify-end">
-  <div class="app-sheet-top bg-app-sheet rounded-t-app-sheet px-5 pt-2.5 pb-11 flex flex-col gap-4">
+  <div class="app-sheet-top app-sheet-pad bg-app-sheet rounded-t-app-sheet px-5 pt-2.5 flex flex-col gap-4">
     <div class="flex justify-center">
       <div class="w-9 h-[5px] rounded-full bg-white/20"></div>
     </div>
@@ -29,6 +29,14 @@
       </div>
     <% else %>
       <%= render "app/credits/out_of_credits_body" %>
+    <% end %>
+
+    <%# Arrived here from a video preview they couldn't afford. Purchases aren't
+        built yet, so this is the whole of "return them to the preview" for now —
+        but it already means they don't have to find the video again. %>
+    <% if (video_url = Youtube::Url.canonical(params[:url])) %>
+      <%= link_to "Back to the video", new_app_import_request_path(url: video_url),
+                  class: "block text-center text-app-text-3 text-[13px] py-1" %>
     <% end %>
   </div>
 </div>

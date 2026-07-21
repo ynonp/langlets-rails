@@ -1,0 +1,100 @@
+<%
+  balance   = current_user.credit_balance
+  cost      = preview.cost
+  video     = preview.video
+  # §5.1: decided here, as the card renders — not on tap. The user should see
+  # where they stand before they invest attention in the video.
+  short     = cost.positive? && balance < cost
+  cost_text = "#{pluralize(cost, 'credit')} · #{balance} left"
+%>
+
+<div class="flex flex-col gap-2.5">
+  <%# Preview card. No duration badge: oEmbed doesn't return duration and the
+      Data API call that would is the same quota we're avoiding. %>
+  <div class="app-inset-hairline bg-app-inset rounded-app-card overflow-hidden">
+    <%= image_tag video.thumbnail_url, alt: "", loading: "lazy",
+                  class: "w-full h-[132px] object-cover bg-app-inset" %>
+
+    <div class="px-3.5 py-3 flex flex-col gap-1">
+      <p class="text-app-text text-sm font-semibold leading-snug line-clamp-2"><%= video.title %></p>
+      <p class="text-app-text-3 text-xs">
+        <%= [ video.author_name, clip_language.english_name ].compact.join(" · ") %>
+      </p>
+    </div>
+  </div>
+
+  <%# The video's language is assumed to be the one they're learning — it's why
+      they're importing it — and translations always go to English. Assumed, not
+      detected: detection needs the Data API. So it stays changeable, because an
+      assumption the user can't correct is just a bug with better manners.
+      Changing it re-resolves, since dedupe and price both depend on it. %>
+  <label class="app-inset-hairline bg-app-inset rounded-app-field flex items-center justify-between py-3 px-4">
+    <span class="text-app-text-dim text-sm"><%= t("app.import_requests.new.video_language") %></span>
+    <%= select_tag :clip_language,
+                   options_from_collection_for_select(languages, :english_name, :english_name, clip_language.english_name),
+                   data: { add_video_target: "language", action: "change->add-video#languageChanged" },
+                   class: "bg-transparent text-sm font-semibold text-app-text text-right outline-none" %>
+  </label>
+
+  <% if preview.in_library? %>
+    <%# §7: already readable. No approve, no charge — the useful action is to
+        open the thing they already have. %>
+    <div class="app-inset-hairline bg-app-inset rounded-app-field py-3 px-3.5">
+      <p class="text-app-text-2 text-[13px] leading-relaxed"><%= t("app.import_requests.new.already_in_library") %></p>
+    </div>
+    <%= link_to t("app.import_requests.new.open_lesson"), course_path(preview.course),
+                data: { turbo_frame: "_top" },
+                class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
+
+  <% elsif preview.in_queue? %>
+    <div class="app-inset-hairline bg-app-inset rounded-app-field py-3 px-3.5">
+      <p class="text-app-text-2 text-[13px] leading-relaxed"><%= t("app.import_requests.new.already_importing") %></p>
+    </div>
+    <%= link_to t("app.import_requests.new.view_in_queue"), app_import_requests_path,
+                data: { turbo_frame: "_top" },
+                class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
+
+  <% else %>
+    <div class="rounded-app-field border-[0.5px] border-app-accent/25 bg-app-accent/[0.08] py-3 px-3.5">
+      <p class="text-app-text-2 text-[13px] leading-relaxed">
+        <%= t("app.import_requests.new.imports_as_lesson") %>
+        <% if preview.free? %>
+          <%# Someone else is already paying for this exact pipeline; joining it
+              costs nothing. Saying "1 credit" and then not taking one would be a
+              pleasant surprise, but it would still be a lie on the button. %>
+          <span class="text-app-accent font-semibold"><%= t("app.import_requests.new.free_join") %></span>
+        <% else %>
+          <span class="<%= short ? "text-red-400" : "text-app-accent" %> font-semibold"><%= cost_text %></span>
+        <% end %>
+      </p>
+    </div>
+
+    <% if short %>
+      <%# Kept full-colour and enabled, and the card above stays rendered: the
+          user can see exactly what they'd be importing, which is the whole
+          reason to buy. A greyed-out button would just be a dead end. %>
+      <%# Carries the video, not a return path: the credits screen only ever
+          needs to come back to this sheet, and a free-form return_to would be an
+          open redirect bought for nothing. §5.1 — they come back to this exact
+          preview, never to a blank bar they have to re-paste into. %>
+      <%= link_to t("app.import_requests.new.get_credits"),
+                  app_credits_path(url: video.canonical_url),
+                  data: { turbo_frame: "_top" },
+                  class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
+    <% else %>
+      <%= form_with url: app_import_requests_path, method: :post, data: { turbo_frame: "_top" } do |f| %>
+        <%= hidden_field_tag :url, video.canonical_url %>
+        <%= hidden_field_tag :clip_language, clip_language.english_name %>
+        <%= hidden_field_tag :translation_language, translation_language.english_name %>
+        <%# The cost is on the button as well as in the card above, so a credit
+            can never leave without the user having seen the price twice. %>
+        <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")),
+                     class: "w-full bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold") %>
+      <% end %>
+    <% end %>
+
+    <%# No Cancel link: this screen is pushed, so the navigation bar's back arrow
+        already is one, and a second way out directly under the primary button is
+        just weight on the decision. %>
+  <% end %>
+</div>

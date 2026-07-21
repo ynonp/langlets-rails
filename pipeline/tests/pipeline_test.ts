@@ -6,6 +6,7 @@ import type { ModelRegistry } from "../src/models.ts";
 import {
   alignedBatch,
   alignment,
+  geminiAlignment,
   HEBREW,
   lyricsText,
   queuedModel,
@@ -32,6 +33,8 @@ function payload(data: TriggerPayload["data"] = {}): TriggerPayload {
 
 interface Mocks {
   extract: ReturnType<typeof queuedModel>;
+  // Backup aligner: unused whenever the ElevenLabs stub succeeds.
+  align: ReturnType<typeof queuedModel>;
   lessons: ReturnType<typeof queuedModel>;
   rate: ReturnType<typeof queuedModel>;
   translate: ReturnType<typeof queuedModel>;
@@ -41,6 +44,7 @@ interface Mocks {
 function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: ModelRegistry } {
   const mocks: Mocks = {
     extract: queuedModel([lyricsText(1, 2)]),
+    align: unusedModel(),
     lessons: queuedModel(["# Lesson\nLine 1\nLine 2"]),
     rate: queuedModel([RATINGS]),
     translate: queuedModel(["שורה 1\nשורה 2"]),
@@ -52,6 +56,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
     mocks,
     models: {
       extractLyrics: mocks.extract.model,
+      forceAlignment: mocks.align.model,
       addLessons: mocks.lessons.model,
       rateLessons: mocks.rate.model,
       translate: mocks.translate.model,
@@ -102,13 +107,18 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
   assertEquals(payload_he.lessons, data.lessons);
 
   assertEquals(aligner.calls(), 1);
-  for (const mock of Object.values(mocks)) assertEquals(mock.calls(), 1);
+  // ElevenLabs did the timing, so the Gemini backup was never needed.
+  assertEquals(mocks.align.calls(), 0);
+  for (const [name, mock] of Object.entries(mocks)) {
+    if (name !== "align") assertEquals(mock.calls(), 1, name);
+  }
   // Every mutation also went out through the callback sink.
   assert(sink.ops.some((op) => op.path === "phrases"));
   assert(sink.ops.some((op) => op.path === "lessons"));
 });
 
-Deno.test("an extract_lyrics failure stops the run before the fan-out", async () => {
+Deno.test("a force_alignment failure stops the run before the fan-out", async () => {
+  // ElevenLabs is down and the Gemini backup has no response queued either.
   const { mocks, models } = happyMocks();
   const aligner = stubAlign([
     new Error("bad"),
@@ -126,10 +136,33 @@ Deno.test("an extract_lyrics failure stops the run before the fan-out", async ()
   });
 
   assertFalse(result.ok);
-  assert(result.failed.extract_lyrics);
+  assert(result.failed.force_alignment);
+  // The transcription itself survived, so a rerun only retries the timing.
+  assertEquals(result.data.lyric_lines, ["Line 1", "Line 2"]);
   assertEquals(mocks.lessons.calls(), 0);
   assertEquals(mocks.translate.calls(), 0);
   assertEquals(mocks.tokens.calls(), 0);
+});
+
+Deno.test("the Gemini backup times the lyrics when ElevenLabs fails", async () => {
+  const { mocks, models } = happyMocks({ align: queuedModel([geminiAlignment(1, 2)]) });
+  const aligner = stubAlign([new Error("bad"), new Error("bad"), new Error("bad")]);
+
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: aligner.align,
+  });
+
+  assert(result.ok, JSON.stringify(result.failed));
+  assertEquals(mocks.align.calls(), 1);
+  assertEquals(result.data.phrases!.map((p) => p.text_l1), ["Line 1", "Line 2"]);
+  // The run carried on into the fan-out on the backup's timings.
+  assert(result.data.lessons);
+  assertEquals(result.data.translations!.he.phrases[0].text, "שורה 1");
 });
 
 Deno.test("a failing branch doesn't lose the other branches' work", async () => {

@@ -6,6 +6,12 @@ module CourseBuilder
 
     attr_reader :course, :progress
 
+    # Lessons the pipeline scored at or below this are dropped as low value.
+    # The pipeline scores 1-5 (pipeline/src/steps/rateLessons.ts) but does not
+    # filter; deciding what to keep is this builder's call. Previously
+    # CreateSong::RateLessons::LOW_VALUE_SCORE.
+    LOW_VALUE_SCORE = 2
+
     # Activities 3 & 4 of every non-review lesson from lesson 4 onward are two
     # random picks from this pool.
     LESSON_ACTIVITY_POOL = %i[
@@ -217,7 +223,7 @@ module CourseBuilder
 
       kept = lesson_data.each_with_index.reject do |block, idx|
         rating = rating_for(ratings, block, idx)
-        rating && rating["score"].to_i <= CreateSong::RateLessons::LOW_VALUE_SCORE
+        rating && rating["score"].to_i <= LOW_VALUE_SCORE
       end.map(&:first)
 
       # Never strip the course down to nothing if the model was overly harsh.

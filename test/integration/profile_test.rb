@@ -58,6 +58,7 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "select option[selected][value=?]", language.iso_name, text: /#{language.english_name}/
     assert_select "[data-controller=?]", "language-select", count: 0
     assert_select "button[data-controller=?]", "bridge--language-selection", count: 0
+    assert_select "body[data-native-tabs] .profile-safe-area", count: 1
   end
 
   test "selecting a language keeps lang on generated urls, and all content clears it" do

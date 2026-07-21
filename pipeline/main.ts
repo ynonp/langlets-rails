@@ -1,8 +1,8 @@
 // Deno Deploy / local server entrypoint.
 //
 //   PIPELINE_HMAC_SECRET          shared secret for trigger + callback signing
-//   GOOGLE_GENERATIVE_AI_API_KEY  Gemini (extract_lyrics lyrics text)
-//   ELEVEN_LABS_KEY               ElevenLabs (extract_lyrics word alignment)
+//   GOOGLE_GENERATIVE_AI_API_KEY  Gemini (extract_lyrics text, backup timing)
+//   ELEVEN_LABS_KEY               ElevenLabs (force_alignment word timing)
 //   OLLAMA_API_KEY                Ollama cloud (all other steps)
 //   OLLAMA_BASE_URL               optional, defaults to https://ollama.com/v1
 //

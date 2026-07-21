@@ -1,0 +1,13 @@
+<% active_count = @import_requests.count(&:active?) %>
+
+<%= turbo_stream.replace "queue-status-text" do %>
+  <%= render "status_text", active_count: active_count %>
+<% end %>
+
+<%= turbo_stream.replace "queue" do %>
+  <%= render "queue", import_requests: @import_requests, active_count: active_count %>
+<% end %>
+
+<%= turbo_stream.replace "queue-footer-note" do %>
+  <%= render "footer_note", active_count: active_count %>
+<% end %>

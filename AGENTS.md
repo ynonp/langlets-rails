@@ -59,3 +59,12 @@ the related behavior.
 
 ## Time and date
 1. Use Time.zone.now instead of Time.current
+
+## iOS Hotwire Native App
+1. Use CSS safe areas
+
+```
+env(safe-area-inset-right, 1em);
+env(titlebar-area-y, 40px);
+env(viewport-segment-width 0 0, 40%);
+```

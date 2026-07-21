@@ -49,11 +49,19 @@ export default class extends Controller {
   }
 
   refresh() {
-    // Turbo replaces the body and re-renders this element with a fresh
-    // data-poll-active-value, so the loop ends by itself once every import has
-    // finished.
+    // A Turbo Stream fetch, not a page visit: only the status text, the queue
+    // and the footer note get swapped, so scroll position and everything else
+    // on screen is left alone. The replacement re-renders this element with a
+    // fresh data-poll-active-value, so the loop ends by itself once every
+    // import has finished.
     if (window.Turbo) {
-      window.Turbo.visit(window.location.href, { action: "replace" })
+      fetch(window.location.href, {
+        headers: { Accept: "text/vnd.turbo-stream.html" },
+        credentials: "same-origin"
+      })
+        .then(response => response.ok ? response.text() : Promise.reject(response.status))
+        .then(html => window.Turbo.renderStreamMessage(html))
+        .catch(() => {}) // transient network hiccup; the next tick tries again
     } else {
       window.location.reload()
     }

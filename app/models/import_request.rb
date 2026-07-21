@@ -43,4 +43,14 @@ class ImportRequest < ApplicationRecord
 
     progress_percent
   end
+
+  # "Transcribing · step 1 of 6" for the Queue card. Read from the denormalised
+  # column, never derived here: see the migration for why.
+  #
+  # Rows that predate the column, and ones whose pipeline hasn't reported a stage
+  # yet, fall back to the percentage the card showed before — less informative,
+  # but still true, and better than a card that says only "Importing".
+  def stage_label
+    pipeline_step.presence || "Importing · #{display_percent}%"
+  end
 end

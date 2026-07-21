@@ -28,6 +28,7 @@
     <%# Mirrors the Queue badge onto the native tab bar item, once per page
         load — the same freshness the web tab bar's badge gets. %>
     <% if native_app? %>
+      <div data-controller="bridge--native-token" hidden></div>
       <div data-controller="bridge--tab-badge"
            data-bridge--tab-badge-count-value="<%= @queue_badge_count.to_i %>"
            hidden></div>

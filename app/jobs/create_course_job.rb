@@ -37,8 +37,28 @@ class CreateCourseJob < ApplicationJob
 
   private
 
+  # The AI work runs on the Deno pipeline server and reaches the record through
+  # PipelineCallbacksController; this blocks until the run finishes and raises
+  # on failure, which is what the rescue in #perform relies on to refund the
+  # imports — a partial run must never become a published course.
+  def generate_data!(progress)
+    Rails.logger.info "CreateSongProgress #{progress.id}: running the pipeline at #{CreateSongPipelineHttp.base_url}"
+    CreateSongPipelineHttp.new(progress: progress).call
+  end
+
+  # The extra languages other imports asked for. The pipeline fills in each
+  # language's payload; folding it into the courses that already have lessons
+  # is Rails-side work the pipeline can't do.
+  def add_translation!(progress, language)
+    CreateSongPipelineHttp.new(progress: progress, language: language).call
+
+    Course.where(create_song_progress_id: progress.id).find_each do |course|
+      CourseBuilder::BuildSong.new(progress, course).add_translation(language) if course.lessons.exists?
+    end
+  end
+
   def create_course_from_progress(progress, course)
-    progress.create_data
+    generate_data!(progress)
     progress.reload
     course.reload
 
@@ -52,7 +72,7 @@ class CreateCourseJob < ApplicationJob
       language = Language.find_by(english_name: language_name)
       next if language.nil? || course.reload.translation_ready?(language)
 
-      progress.add_translation(language)
+      add_translation!(progress, language)
     end
 
     course.published!

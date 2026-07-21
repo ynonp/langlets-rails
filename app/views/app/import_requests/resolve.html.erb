@@ -1,0 +1,20 @@
+<%# The swappable region below the smart input. Turbo pulls just this frame out
+    of the response, so the layout around it is never re-rendered and the input
+    keeps focus and cursor position while the user is still typing. %>
+<turbo-frame id="add_video_result">
+  <% case @mode %>
+  <% when :empty %>
+    <%= render "app/import_requests/empty_state" %>
+
+  <% when :error %>
+    <div class="rounded-app-field border-[0.5px] border-red-500/30 bg-red-500/10 py-3.5 px-3.5 flex items-start gap-2.5">
+      <%= app_icon "warning", class: "w-4 h-4 text-red-400 shrink-0 mt-px" %>
+      <p class="text-red-300 text-[13px] leading-relaxed"><%= @error %></p>
+    </div>
+
+  <% when :preview %>
+    <%= render "app/import_requests/preview", preview: @preview,
+               clip_language: @clip_language, translation_language: @translation_language,
+               languages: @languages, query: @query %>
+  <% end %>
+</turbo-frame>

@@ -7,16 +7,49 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A10000000000000000000001 /* LangletsShare.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = A10000000000000000000002 /* LangletsShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F725E0B92F8AADF2002916A6 /* HotwireNative in Frameworks */ = {isa = PBXBuildFile; productRef = F725E0B82F8AADF2002916A6 /* HotwireNative */; };
 		F7907DD22F9D00AA00F47E3E /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD12F9D00AA00F47E3E /* GoogleSignIn */; };
 		F7907DD42F9D00AA00F47E3E /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7907DD32F9D00AA00F47E3E /* GoogleSignInSwift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		A10000000000000000000003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F725E0882F8A7E94002916A6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A10000000000000000000004;
+			remoteInfo = LangletsShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A10000000000000000000005 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A10000000000000000000001 /* LangletsShare.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A10000000000000000000002 /* LangletsShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LangletsShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F725E0902F8A7E94002916A6 /* langlets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = langlets.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A10000000000000000000006 /* Exceptions for "LangletsShare" folder in "LangletsShare" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A10000000000000000000004 /* LangletsShare */;
+		};
 		F725E0A22F8A7E95002916A6 /* Exceptions for "langlets" folder in "langlets" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -27,6 +60,14 @@
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		A10000000000000000000007 /* LangletsShare */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A10000000000000000000006 /* Exceptions for "LangletsShare" folder in "LangletsShare" target */,
+			);
+			path = LangletsShare;
+			sourceTree = "<group>";
+		};
 		F725E0922F8A7E94002916A6 /* langlets */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
@@ -38,6 +79,13 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A10000000000000000000008 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F725E08D2F8A7E94002916A6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -55,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				F725E0922F8A7E94002916A6 /* langlets */,
+				A10000000000000000000007 /* LangletsShare */,
 				F725E0912F8A7E94002916A6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				F725E0902F8A7E94002916A6 /* langlets.app */,
+				A10000000000000000000002 /* LangletsShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +120,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		A10000000000000000000004 /* LangletsShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1000000000000000000000C /* Build configuration list for PBXNativeTarget "LangletsShare" */;
+			buildPhases = (
+				A10000000000000000000009 /* Sources */,
+				A10000000000000000000008 /* Frameworks */,
+				A1000000000000000000000A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				A10000000000000000000007 /* LangletsShare */,
+			);
+			name = LangletsShare;
+			packageProductDependencies = (
+			);
+			productName = LangletsShare;
+			productReference = A10000000000000000000002 /* LangletsShare.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F725E08F2F8A7E94002916A6 /* langlets */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F725E0A32F8A7E95002916A6 /* Build configuration list for PBXNativeTarget "langlets" */;
@@ -77,10 +149,12 @@
 				F725E08C2F8A7E94002916A6 /* Sources */,
 				F725E08D2F8A7E94002916A6 /* Frameworks */,
 				F725E08E2F8A7E94002916A6 /* Resources */,
+				A10000000000000000000005 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A1000000000000000000000B /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				F725E0922F8A7E94002916A6 /* langlets */,
@@ -105,6 +179,9 @@
 				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2640;
 				TargetAttributes = {
+					A10000000000000000000004 = {
+						CreatedOnToolsVersion = 26.4;
+					};
 					F725E08F2F8A7E94002916A6 = {
 						CreatedOnToolsVersion = 26.4;
 					};
@@ -129,11 +206,19 @@
 			projectRoot = "";
 			targets = (
 				F725E08F2F8A7E94002916A6 /* langlets */,
+				A10000000000000000000004 /* LangletsShare */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A1000000000000000000000A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F725E08E2F8A7E94002916A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +229,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A10000000000000000000009 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F725E08C2F8A7E94002916A6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -153,7 +245,69 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		A1000000000000000000000B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A10000000000000000000004 /* LangletsShare */;
+			targetProxy = A10000000000000000000003 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		A1000000000000000000000D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LangletsShare/LangletsShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = U39ZVCW9HE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LangletsShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Langlets;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ynonp.langlets.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A1000000000000000000000E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LangletsShare/LangletsShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = U39ZVCW9HE;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LangletsShare/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Langlets;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ynonp.langlets.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F725E0A42F8A7E95002916A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -161,7 +315,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = langlets/langlets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = langlets/Info.plist;
@@ -174,7 +328,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynonp.langlets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -194,7 +348,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = langlets/langlets.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_TEAM = U39ZVCW9HE;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = langlets/Info.plist;
@@ -207,7 +361,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ynonp.langlets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
@@ -342,6 +496,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		A1000000000000000000000C /* Build configuration list for PBXNativeTarget "LangletsShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1000000000000000000000D /* Debug */,
+				A1000000000000000000000E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F725E08B2F8A7E94002916A6 /* Build configuration list for PBXProject "langlets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

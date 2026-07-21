@@ -1,83 +1,90 @@
 <% content_for :title, t(".page_title") %>
-<% broke = current_user.credit_balance.zero? %>
 
-<%# Rendered as a full page, not a Turbo Frame overlay. iOS presents it as a real
-    bottom sheet via the path configuration (context: modal, modal_style: medium),
-    which gives a native grabber and dismissal gesture; a frame-based overlay
-    would fight that and you'd get two competing dismissals. The sheet chrome
-    below is CSS so it still looks right in a desktop browser. %>
-<div class="min-h-dvh flex flex-col justify-end bg-transparent">
-  <div class="app-sheet-top bg-app-sheet rounded-t-app-sheet px-5 pt-2.5 pb-11 flex flex-col gap-4">
-    <%# Grabber — redundant under the native sheet, but this screen is also viewed
-        in a browser during development. %>
-    <div class="flex justify-center">
-      <div class="w-9 h-[5px] rounded-full bg-white/20"></div>
-    </div>
+<%# A plain pushed screen inside the Queue tab: native back arrow at the top,
+    native tab bar at the bottom, page content in between. It used to be a
+    medium-detent sheet, which lost on both ends — the iOS 26 floating tab bar
+    drew over its controls, and the sheet overflowed its own detent as soon as a
+    preview card appeared. Nothing here wants to be a sheet; it's a form.
 
-    <div class="flex items-center justify-between">
-      <div class="flex items-center gap-2.5">
-        <h1 class="text-xl font-extrabold tracking-[-0.4px]"><%= t(".title") %></h1>
-        <span class="flex items-center gap-1.5 bg-app-pill rounded-full py-1 px-2.5">
-          <%= app_icon "bolt", class: "w-[11px] h-[11px] text-app-accent" %>
-          <span class="text-app-credits text-xs font-bold"><%= app_credits_label(current_user.credit_balance) %></span>
-        </span>
-      </div>
+    Laid out like Queue and Library (app-scroll-pad, px-5, pt-6) so it sits in
+    the same grid as the screen it's pushed from. app-scroll-pad is what keeps
+    the last control clear of the tab bar. %>
+<div class="app-scroll-pad px-5 pt-6 flex flex-col gap-4"
+     data-controller="add-video"
+     data-add-video-resolve-url-value="<%= resolve_app_import_requests_path %>">
 
-      <%= link_to app_home_path,
-                  class: "w-[30px] h-[30px] rounded-full bg-app-pill flex items-center justify-center text-app-text-2",
-                  aria: { label: "Close" } do %>
-        <%= app_icon "close", class: "w-3.5 h-3.5" %>
-      <% end %>
-    </div>
-
-    <% if flash[:alert] %>
-      <p class="rounded-app-field border-[0.5px] border-red-500/30 bg-red-500/10 text-red-300 text-[13px] leading-relaxed py-3 px-3.5">
-        <%= flash[:alert] %>
-      </p>
-    <% end %>
-
-    <% if broke %>
-      <%= render "app/credits/out_of_credits_body" %>
-    <% else %>
-      <%= form_with url: app_import_requests_path, method: :post, class: "flex flex-col gap-4" do |f| %>
-        <%# The mockup's segmented control offers "Search YouTube" as well. Only
-            "Paste link" is built: search needs the YouTube Data API and a key,
-            and a segment that does nothing is worse than no segment. %>
-
-        <div class="app-inset-hairline bg-app-inset rounded-app-input py-3.5 px-3.5">
-          <%= f.url_field :url, value: params[:url],
-                          placeholder: "youtube.com/watch?v=…",
-                          required: true, autofocus: true,
-                          autocomplete: "off", autocapitalize: "off", spellcheck: "false",
-                          class: "w-full bg-transparent font-mono text-[13px] text-[#C7D3DD] placeholder:text-app-text-3 outline-none" %>
-        </div>
-
-        <div class="app-inset-hairline bg-app-inset rounded-app-field overflow-hidden">
-          <label class="flex items-center justify-between py-3.5 px-4 border-b-[0.5px] border-white/8">
-            <span class="text-app-text-dim text-sm"><%= t(".video_language") %></span>
-            <%= f.select :clip_language,
-                         options_from_collection_for_select(@languages, :english_name, :english_name, @clip_language&.english_name),
-                         {},
-                         class: "bg-transparent text-sm font-semibold text-app-text text-right outline-none" %>
-          </label>
-
-          <label class="flex items-center justify-between py-3.5 px-4">
-            <span class="text-app-text-dim text-sm"><%= t(".translate_to") %></span>
-            <%= f.select :translation_language,
-                         options_from_collection_for_select(@languages, :english_name, :english_name, @translation_language&.english_name),
-                         {},
-                         class: "bg-transparent text-sm font-semibold text-app-text text-right outline-none" %>
-          </label>
-        </div>
-
-        <div class="flex flex-col gap-2">
-          <%= f.submit t(".import_credit"),
-                       class: "w-full bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
-          <p class="text-center text-app-text-3 text-xs">
-            Usually ready in ~5 min — we'll send you a push.
-          </p>
-        </div>
-      <% end %>
-    <% end %>
+  <div>
+    <h1 class="text-[30px] font-extrabold tracking-[-0.6px]"><%= t(".title") %></h1>
+    <p class="text-app-text-2 text-sm mt-1">
+      <%= t(".credits_subtitle", credits: app_credits_label(current_user.credit_balance)) %>
+    </p>
   </div>
+
+  <% if flash[:alert] %>
+    <p class="rounded-app-field border-[0.5px] border-red-500/30 bg-red-500/10 text-red-300 text-[13px] leading-relaxed py-3 px-3.5">
+      <%= flash[:alert] %>
+    </p>
+  <% end %>
+
+  <%# An empty balance doesn't block the screen. The user should get all the way
+      to a rendered preview of what they'd be importing and only then meet the
+      paywall — seeing the thing is the reason to buy it. %>
+  <div class="flex flex-col gap-1.5">
+    <%# Border turns green once the value parses as a video. %>
+    <div class="app-inset-hairline bg-app-inset rounded-app-input py-3 px-3.5 flex items-center gap-2.5 transition-colors"
+         data-add-video-target="field">
+      <%= app_icon "link", class: "w-4 h-4 shrink-0 text-app-text-3" %>
+
+      <%# inputmode=url rather than type=url: the URL keyboard is the right one,
+          but type=url would fight a bare video id, which is a perfectly good
+          thing to paste here. %>
+      <input type="text"
+             inputmode="url"
+             data-add-video-target="input"
+             data-action="input->add-video#inputChanged"
+             placeholder="<%= t(".paste_placeholder") %>"
+             value="<%= params[:url] %>"
+             autofocus autocomplete="off" autocapitalize="off"
+             autocorrect="off" spellcheck="false"
+             enterkeyhint="go"
+             class="flex-1 min-w-0 bg-transparent text-[13px] text-app-text placeholder:text-app-text-3 outline-none">
+
+      <button type="button"
+              data-add-video-target="clear"
+              data-action="add-video#clearInput"
+              class="hidden shrink-0 text-app-text-3"
+              aria-label="Clear">
+        <%= app_icon "close", class: "w-3.5 h-3.5" %>
+      </button>
+    </div>
+
+    <%# Hint and confirmation occupy the same slot so the layout doesn't jump
+        when a link resolves. %>
+    <p class="text-app-text-3 text-[11px] pl-0.5" data-add-video-target="hint">
+      <%= t(".url_hint") %>
+    </p>
+    <p class="hidden items-center gap-1 text-app-accent text-[11px] pl-0.5"
+       data-add-video-target="recognized">
+      <%= app_icon "check_circle", class: "w-3 h-3" %>
+      <%= t(".link_recognized") %>
+    </p>
+  </div>
+
+  <%# Clipboard assist. Best-effort: WKWebView only hands over the pasteboard
+      after a user gesture, so this often stays hidden on device and the user
+      just pastes by hand. Reading it natively would need a bridge component. %>
+  <button type="button"
+          data-add-video-target="clipboardChip"
+          data-action="add-video#useClipboard"
+          class="hidden self-start items-center gap-1.5 bg-app-pill rounded-full py-2 px-3.5 text-app-text-2 text-[13px] font-semibold">
+    <%= app_icon "plus", class: "w-3.5 h-3.5" %>
+    <%= t(".paste_copied_link") %>
+  </button>
+
+  <%# Everything below the input — empty state, preview card, errors — is one
+      swappable region the server owns entirely. The Stimulus controller only
+      points this frame at #resolve; it never renders a state itself. %>
+  <turbo-frame id="add_video_result">
+    <%= render "app/import_requests/empty_state" %>
+  </turbo-frame>
 </div>

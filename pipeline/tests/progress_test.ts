@@ -69,16 +69,42 @@ Deno.test("store mutations apply locally and forward the same ops to the sink", 
   ]);
 });
 
-Deno.test("extractLyricsDone requires phrases and a cleared in-progress flag", () => {
+Deno.test("extractLyricsDone requires lyric lines and a cleared in-progress flag", () => {
   const sink = new MemorySink();
+  const lines = ["Bonjour le monde", "Salut encore"];
+
   assertFalse(new ProgressStore({}, sink).extractLyricsDone());
+  assert(new ProgressStore({ lyric_lines: lines }, sink).extractLyricsDone());
+  assertFalse(
+    new ProgressStore(
+      { lyric_lines: lines, extract_lyrics_in_progress: true },
+      sink,
+    ).extractLyricsDone(),
+  );
+  // Data saved before the extract/align split has phrases but no lyric lines:
+  // its transcription counts as done.
+  assert(new ProgressStore({ phrases: phrasesFixture() }, sink).extractLyricsDone());
   assertFalse(
     new ProgressStore(
       { phrases: phrasesFixture(), extract_lyrics_in_progress: true },
       sink,
     ).extractLyricsDone(),
   );
-  assert(new ProgressStore({ phrases: phrasesFixture() }, sink).extractLyricsDone());
+});
+
+Deno.test("forceAlignmentDone requires phrases and a cleared in-progress flag", () => {
+  const sink = new MemorySink();
+  assertFalse(new ProgressStore({}, sink).forceAlignmentDone());
+  // Lines that were never timed aren't enough.
+  assertFalse(new ProgressStore({ lyric_lines: ["Bonjour"] }, sink).forceAlignmentDone());
+  assert(new ProgressStore({ phrases: phrasesFixture() }, sink).forceAlignmentDone());
+  // A fresh transcription marks the old phrases as stale.
+  assertFalse(
+    new ProgressStore(
+      { phrases: phrasesFixture(), force_alignment_in_progress: true },
+      sink,
+    ).forceAlignmentDone(),
+  );
 });
 
 Deno.test("translateDone requires every phrase text in the language payload", () => {

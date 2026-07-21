@@ -107,12 +107,15 @@ he:
   app:
     home:
       index:
-        pick_first_song: "בחרו את השיר הראשון שלכם"
-        learn_through_music: "לומדים %{language} דרך מוזיקה שבאמת כיף לשמוע."
-        new_language: "שפה חדשה"
         your_playlists: "הפלייליסטים שלכם"
-        keep_it_going: "ממשיכים ללמוד"
-        more_from_library: "עוד מהספרייה"
+        continue: "המשך"
+        library: "ספרייה"
+      paste_cta:
+        cta_headline: "הפכו כל סרטון יוטיוב לשיעור %{language}."
+        cta_subhead: "הדביקו קישור — קבלו תמלול מתורגם ותרגלו כל מילה."
+        cta_fallback_language: "שפה"
+        paste_placeholder: "הדביקו קישור יוטיוב"
+        go: "הוספה"
     library:
       show:
         title: "ספרייה"
@@ -122,12 +125,32 @@ he:
         title: "תור"
         empty: "עדיין אין כאן כלום."
       new:
-        page_title: "הוספת סרטון · langlets."
+        page_title: "הוספת סרטון"
         title: "הוספת סרטון"
+        credits_subtitle: "%{credits} — כל ייבוא עולה נקודת זכות אחת."
         video_language: "שפת הסרטון"
-        translate_to: "תרגום אל"
-        import_credit: "ייבוא · נקודת זכות אחת"
+        paste_placeholder: "הדביקו קישור או מזהה של YouTube"
+        url_hint: "עובד עם קישורי youtube.com,‏ youtu.be או מזהה סרטון"
+        link_recognized: "הקישור זוהה"
+        paste_copied_link: "להדביק את הקישור שהועתק?"
+        get_started: "הדביקו קישור ל‑YouTube כדי להתחיל."
+        imports_as_lesson: "מיובא כשיעור: תמלול, תרגומים וכרטיסי אוצר מילים."
+        free_join: "בחינם — כבר בייבוא"
+        approve: "אישור · שימוש ב‑%{cost}"
+        approve_free: "אישור · בחינם"
+        get_credits: "רכישת נקודות זכות"
+        already_in_library: "כבר בספרייה שלך."
+        open_lesson: "פתיחת השיעור"
+        already_importing: "כבר בייבוא."
+        view_in_queue: "הצגה בתור"
   onboarding:
+    welcome:
+      eyebrow: "ברוכים הבאים ל-Langlets"
+      title: "הפכו כל סרטון YouTube לשיעור שפה"
+      body_1: "למדו מתוכן שאתם כבר אוהבים."
+      body_2: "ה-AI שלנו מתמלל ומתרגם כל סרטון, ובונה ממנו תרגולי אוצר מילים."
+      body_3: "הדביקו קישור, או התחילו מקורס בספרייה שלנו."
+      start: "מתחילים"
     language:
       change_title: "שינוי שפת הלימוד"
       change_prompt: "בחרו את השפה שתרצו ללמוד"

@@ -12,6 +12,52 @@ module App
       @languages = Language.order(:english_name)
     end
 
+    # Everything below the input in the Add Video sheet: empty state, preview
+    # card, duplicate notices, errors. The add-video Stimulus controller reloads
+    # this frame as the user types and the server decides which state to draw —
+    # the client deliberately does not classify the input itself, because then
+    # the two could disagree about what counts as a video id. Charges nothing;
+    # the credit only moves in #create.
+    #
+    # Three outcomes, because this sheet only accepts links. Anything that isn't
+    # one is a mistake worth naming, not a query worth running.
+    def resolve
+      @query = params[:q].to_s.strip
+      @clip_language = Language.find_by(english_name: params[:clip_language]) || default_clip_language
+      @translation_language = default_translation_language
+      @languages = Language.order(:english_name)
+
+      # Blank goes back to the empty state, not to an error the user hasn't
+      # earned yet — they've typed nothing wrong, they've typed nothing at all.
+      return @mode = :empty if @query.blank?
+
+      # A watch link, youtu.be, /shorts/ or a bare 11-character id. The Stimulus
+      # controller holds anything else back until typing stops, so this branch
+      # doesn't fire on the way to a valid link.
+      if Youtube::Url.loose_video_id(@query).blank?
+        @mode = :error
+        @error = "That doesn't look like a YouTube link. Paste a youtube.com or youtu.be link, or a video ID."
+        return
+      end
+
+      @mode = :preview
+      @preview = Imports::Preview.call(
+        user: current_user,
+        url: Youtube::Url.loose_canonical(@query),
+        clip_language: @clip_language.english_name,
+        translation_language: @translation_language.english_name
+      )
+    rescue Youtube::Oembed::UnavailableVideo
+      # A well-formed id that YouTube won't serve. Distinct from the message
+      # above on purpose: "you typed it wrong" and "this video is gone" send the
+      # user to two different next moves.
+      @mode = :error
+      @error = "We couldn't read that video. It may be private, age-restricted or deleted."
+    rescue Imports::UnsupportedLanguage
+      @mode = :error
+      @error = "We don't teach that language yet."
+    end
+
     def create
       result = Imports::Create.call(
         user: current_user,

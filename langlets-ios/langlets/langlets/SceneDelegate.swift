@@ -3,6 +3,16 @@ import GoogleSignIn
 import UIKit
 import WebKit
 
+// Debug builds talk to the Rails server on this Mac; release builds always talk
+// to production. Behind #if DEBUG rather than a line you comment out by hand,
+// because the hand-edited version only has to be forgotten once to ship an App
+// Store build that points at localhost.
+//
+// The simulator shares the Mac's network stack, so localhost is `bin/rails
+// server` directly. On a physical device this needs the Mac's LAN IP instead —
+// the phone's own localhost is the phone. Plain http to a loopback address is
+// blocked by App Transport Security without NSAllowsLocalNetworking in
+// Info.plist, which is set for exactly this reason.
 let rootURL = URL(string: "https://langlets.app")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
@@ -30,6 +40,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Configure Hotwire Native. Rails uses this stable marker to route all
         // iOS shells to the shared /app web content.
         Hotwire.config.applicationUserAgentPrefix = "LangletsNative"
+
+        // Match path configuration rules against the path alone. This defaults
+        // to TRUE in Hotwire Native, which means rules are matched against
+        // "/app/import_requests/new?lang=es", not "/app/import_requests/new" —
+        // so every `$`-anchored pattern in ios_path_configuration.json silently
+        // fails the moment a link carries a query string. Nearly all of ours do:
+        // the app appends ?lang= to keep the learning language in the URL, which
+        // quietly demoted Add a video and Credits from medium-detent sheets to
+        // plain pushes inside the tab, tab bar overlapping the content and all.
+        //
+        // Turned off globally rather than patching each pattern with `(\?.*)?$`:
+        // that boilerplate is easy to forget on the next rule, and the failure is
+        // invisible — you get a screen that works, just presented wrongly.
+        Hotwire.config.pathConfiguration.matchQueryStrings = false
 
         // Course lessons are modal flows. Give them an explicit close control
         // while keeping ordinary pages on Hotwire's default controller.
@@ -64,7 +88,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             GoogleAuthComponent.self,
             AppleAuthComponent.self,
             TabBadgeComponent.self,
-            PushComponent.self
+            PushComponent.self,
+            NativeTokenComponent.self
         ])
 
         // A notification tapped while the app was NOT running arrives here, in
@@ -153,6 +178,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
 
         if url.scheme == "langlets" && url.host == "auth-success" {
+            AppTabBarController.restoreLanguageSelection(from: url)
             // OAuth completed — every tab's content predates the session
             oauthDidSucceed()
         }
@@ -163,6 +189,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 extension SceneDelegate: NavigatorDelegate {
     func handle(proposal: VisitProposal, from navigator: Navigator) -> ProposalResult {
+        AppTabBarController.restoreLanguageSelection(from: proposal.url)
+        if Self.isSignedOutRedirect(proposal.url) {
+            AppTabBarController.resetLanguageSelection()
+        }
+        AppTabBarController.rememberPendingOnboardingURL(proposal.url)
+
         // A link to another tab's root switches tabs instead of pushing that
         // screen onto the current stack — Home's "See all" lands on the real
         // Library tab, and the post-import redirect lands on the real Queue.
@@ -184,6 +216,15 @@ extension SceneDelegate: NavigatorDelegate {
         }
 
         return .accept
+    }
+
+    private static func isSignedOutRedirect(_ url: URL) -> Bool {
+        guard url.path == "/users/sign_in",
+              let components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return false }
+
+        return components.queryItems?.contains {
+            $0.name == "signed_out" && $0.value == "1"
+        } == true
     }
 
     @objc private func oauthDidSucceed() {
@@ -220,6 +261,12 @@ extension SceneDelegate: NavigatorDelegate {
 
     @objc private func userDidSignOut() {
         tabBarController.setTabsVisible(false)
+
+        // The local wipe just finished. The visible page predates it — its
+        // form carries a CSRF token from the deleted session — so route every
+        // tab back to its (now language-free) root, which lands on a fresh
+        // sign-in page with a live session.
+        tabBarController.reloadAllTabs()
     }
 
     /// The warm path: a notification tapped while the app was already running.

@@ -279,12 +279,29 @@
   border: 0.5px solid rgb(255 255 255 / 0.1);
 }
 
+/* Add Video's smart input once its contents parse as a video. Defined after
+   app-inset-hairline and applied alongside it, rather than replacing it: the
+   hairline is a `border` shorthand, so swapping it for a colour-only class would
+   take the width and style with it and leave no border at all. */
+@utility app-inset-recognized {
+  border: 0.5px solid var(--color-app-accent);
+}
+
 /* Two lines, then ellipsis — library card titles. */
 @utility app-clamp-2 {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* UIKit's own UITabBar height, which the web view extends underneath in the
+   native app. Not a design token — changing it doesn't restyle anything, it just
+   stops matching the bar we're trying to clear. The home-indicator inset
+   (env(safe-area-inset-bottom)) sits below this, not inside it, so anything
+   pinned above the tab bar owes both. */
+:root {
+  --app-tab-bar-height: 49px;
 }
 
 /* Screens scroll under a fixed tab bar; without this the last card hides
@@ -299,6 +316,51 @@
    safe-area inset alone only clears the home indicator, not UITabBar itself. */
 [data-native-tabs] .app-scroll-pad {
   padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+/* Profile is a regular web page pushed inside a native tab navigator. Its
+   content must clear landscape side insets, and its final destructive action
+   must remain above both UITabBar and the home indicator. The shared body
+   already owns the top safe-area inset. */
+@utility profile-safe-area {
+  padding-inline-start: max(1rem, env(safe-area-inset-left, 0px));
+  padding-inline-end: max(1rem, env(safe-area-inset-right, 0px));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 40rem) {
+  .profile-safe-area {
+    padding-inline-start: max(1.5rem, env(safe-area-inset-left, 0px));
+    padding-inline-end: max(1.5rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+[data-native-tabs] .profile-safe-area {
+  padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+}
+
+/* The floating Add button. On the web it only owes the home indicator, but in
+   the native app the web view runs underneath UITabBar, and the inset alone
+   clears the home indicator rather than the bar — which put the FAB behind the
+   tab bar on every notched device. Clear both. */
+@utility app-fab-offset {
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+}
+
+[data-native-tabs] .app-fab-offset {
+  bottom: calc(18px + var(--app-tab-bar-height) + env(safe-area-inset-bottom, 0px));
+}
+
+/* The Credits sheet sits flush against the bottom of its web view, so its last
+   control lands exactly on the home indicator. It's presented as a native modal
+   — see config/hotwire/ios_path_configuration.json — so it covers the tab bar
+   and owes only the inset, not the bar's height. The fixed part keeps the sheet
+   off the indicator on hardware that reports no inset at all.
+
+   Add a video used to share this; it's a pushed screen now and uses
+   app-scroll-pad like every other pushed screen. */
+@utility app-sheet-pad {
+  padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
 }
 
 /* Course pages still use the regular web layout inside the native app.

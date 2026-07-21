@@ -1,0 +1,21 @@
+<% content_for :title, t(".eyebrow") %>
+
+<%# body already pads the top safe-area inset (nav bar), so h-dvh-safe, not h-dvh %>
+<div class="h-dvh-safe px-7 pt-4 pb-[max(1.5rem,env(safe-area-inset-bottom,1rem))] flex flex-col">
+  <div class="my-auto max-w-md">
+    <p class="text-app-text-2 text-[13px] font-semibold tracking-[0.08em] uppercase"><%= t(".eyebrow") %></p>
+
+    <h1 class="mt-3 text-[clamp(1.75rem,7.5vw,36px)] font-extrabold tracking-[-0.03em] leading-[1.12] [text-wrap:balance]">
+      <%= t(".title") %>
+    </h1>
+
+    <div class="mt-5 space-y-3 text-app-text-2 text-[16px] leading-relaxed">
+      <p><%= t(".body_1") %></p>
+      <p><%= t(".body_2") %></p>
+      <p><%= t(".body_3") %></p>
+    </div>
+  </div>
+
+  <%= link_to t(".start"), onboarding_language_path(returnto: @return_to),
+              class: "shrink-0 w-full rounded-full bg-app-accent text-app-on-accent text-center text-[17px] font-bold py-4" %>
+</div>

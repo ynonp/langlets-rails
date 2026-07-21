@@ -118,6 +118,43 @@ the model provider keys inherited by Deno. A retry always re-exports first, so
 completed callback work is not unnecessarily repeated, and a failed Deno exit
 status fails the rake task.
 
+The AI steps run **only** in the Deno pipeline. `CreateSongPipelineHttp` signs
+the record's exported `data` with `PipelineHmac` and POSTs it to the pipeline
+server's `/run`; results come back through `PipelineCallbacksController`. Both
+entry points use it — `CreateCourseJob` (the `/courses/new` form) and
+`AddCourseTranslationJob` (adding a language to an existing course). The call
+blocks until the run finishes and raises on failure, which is what lets each
+job's rescue refund the import: a partial run must not become a published
+course.
+
+There is no in-process fallback. `CreateSongProgress#create_data`,
+`#add_translation` and the six `CreateSong::*` step concerns were removed when
+the pipeline became the only implementation — the model is now the store and
+the guard predicates, not the worker. `CreateSong::ProgressReporting` remains,
+because the percent is derived from `data`, which the pipeline fills in the
+same shape. `PIPELINE_URL` is therefore required; an unset value raises
+`CreateSongPipelineHttp::ConfigurationError` rather than silently degrading.
+
+The trigger uses the synchronous `/run` rather than `?async=1` deliberately:
+the pipeline streams every mutation back through `PipelineCallbacksController`
+as it goes, so the response carries only `{ ok, failed, summary }`. Because each
+branch persists as it completes, a failed run leaves its finished work saved and
+retriggering with the same `data` resumes rather than redoes.
+
+Three variables configure it: `PIPELINE_URL` (the server), the shared
+`PIPELINE_HMAC_SECRET`, and `PIPELINE_CALLBACK_BASE_URL` — where the pipeline
+can reach *this* Rails. The last one is the one that bites in development: the
+pipeline runs on another host, so `localhost:3000` there is itself, and it must
+point at a tunnel (ngrok) to the local server. Model-provider keys now live
+only on the pipeline host; Rails no longer needs them at all.
+
+On Linux pipeline hosts, `YTDLP_NETWORK_NAMESPACE` optionally isolates only the
+YouTube audio download. When set (for example, to `vpn`), `pipeline/src/audio.ts`
+launches `ip netns exec <namespace> yt-dlp ...`; model calls, ElevenLabs uploads,
+and Rails callbacks continue over the host network. The Deno process therefore
+needs run permission for both `yt-dlp` and `ip`. When unset, `yt-dlp` runs
+directly, which is the local-development default.
+
 ### Domain Models
 
 #### 1. **Language** (`languages`)
@@ -426,6 +463,48 @@ The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `
 
 `Push::CourseReadyNotification` includes the published course slug in the APNs custom payload. Notification taps are handled on both iOS paths: `UNUserNotificationCenterDelegate` for a running app and `UIScene.ConnectionOptions.notificationResponse` for a cold launch. Both reset the Home navigator to `/app?just_imported=<slug>`. `App::HomeController` only resolves that slug through the signed-in user's published enrollments, then renders the newly created course as the **JUST IMPORTED** hero whose **Start Course** button enters the standard course experience. An invalid or unauthorized slug safely falls back to ordinary Home.
 
+#### iOS Share Extension
+
+The `LangletsShare` extension accepts shared web URLs and plain text, extracts a
+YouTube link, and submits it directly to `POST /api/v1/import_requests`. There is
+no metadata preflight or AI language detection: the source defaults to the
+learning language selected in the app, the translation defaults to English,
+and the extension exposes both as editable menus before spending a credit. It
+uses one UUID `client_token` for the lifetime of the sheet; `Imports::Create`
+returns the original per-user request when that UUID is replayed, including
+after its status changes, so retrying an ambiguous network response cannot
+charge twice.
+
+Extensions cannot read `WKWebsiteDataStore` cookies. Every authenticated native
+app page therefore POSTs (with Rails CSRF protection) to `/app/native_token` and
+passes the response through the `native-token` Hotwire bridge. The endpoint
+creates or reuses the fixed public Doorkeeper client `langlets-ios-share-extension`
+and issues a 30-day token limited to `imports:read imports:write credits:read`.
+Swift stores it in the app/extension Keychain access group; native sign-out both
+revokes those tokens server-side and clears the local Keychain item, and also
+removes the stored `selectedLanguage` from standard and App Group defaults —
+otherwise the next sign-in could briefly inherit the previous account's
+language. The selected language is also stored per account as
+`User#preferences["ios_lang"]`; after authentication Rails sends that account's
+value to the native shell in the explicit `ios_lang` URL parameter, which
+repopulates both defaults and prevents repeat onboarding. For the same reason,
+`ApplicationController#after_sign_out_path_for` (shared by sign-out and account
+deletion) sends native users straight to `/users/sign_in?signed_out=1` with
+`lang` explicitly dropped: any other target would bounce a signed-out native
+user to sign-in and lose the `signed_out` marker before a page rendered, so the
+bridge--sign-out wipe would never fire. Once the wipe completes, the shell
+re-routes every tab — the page that fired the bridge was rendered under the
+now-deleted session, so its form's CSRF token is dead. Rails also deletes the
+session-cached language during the redirect. As a second native safeguard, the
+navigator clears its stored language as soon as it sees that signed-out URL;
+account deletion therefore cannot leak `?lang=` into the next account even if
+the page's JavaScript bridge has not connected yet. The bridge
+also mirrors the current `Language` catalog into App Group defaults, while the
+language-selection bridge mirrors `selectedLanguage`, so the extension stays
+in step with languages added by Rails without an App Store release. If the
+shared token or learning language is unavailable, the sheet directs the user
+to open Langlets and complete sign-in/onboarding.
+
 #### **CreateCourseJob** — charge lifecycle
 `good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise here is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
 
@@ -644,31 +723,33 @@ The Home header profile menu is an HTML `details` element managed by `profile_me
 
 The native tab controller, navigator roots and non-opaque webviews all use the app background token (`#0A1521`). A lazily loaded tab can therefore expose its empty native surface while the first request is in flight without producing a white flash before the web page renders.
 
-The app pages render only the floating Add button (except Home, which swaps it for an inline dashed "bring your own" card, `app/views/app/home/_import_card.html.erb`); the native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Queue item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset; the inset by itself only clears the home indicator. The server gates `/app` screens on the `LangletsNative` user-agent marker. Tab-root paths deliberately have no `replace_root` path-configuration rule because cross-tab routing is native; modal routes retain their existing rules.
+The app pages render only the floating Add button (except Home, which leads with its own paste CTA instead — see below); the native controller owns the tab bar and the `tab-badge` bridge mirrors the active-import count onto the Queue item. The native web views extend beneath `UITabBar`, so every scrolling app screen uses `app-scroll-pad` to reserve the full tab-bar height plus the bottom safe-area inset; the inset by itself only clears the home indicator. The server gates `/app` screens on the `LangletsNative` user-agent marker. Tab-root paths deliberately have no `replace_root` path-configuration rule because cross-tab routing is native; modal routes retain their existing rules.
 
-- **Home has two states** (`App::HomeController#index`). With something to continue: greeting, optional "just imported" hero, the two most recently practiced unfinished courses under "Keep it going" with a centered "See all" link to `/app/started_courses`, and two Library suggestions under "More from the library". The started-videos screen uses non-null `Enrollment#last_practiced_at` as the canonical started signal and shows every published course the user has opened, including completed courses, in recent-practice order. With nothing to continue (`@first_run`): a "Pick your first song" picker of four Library suggestions. Suggestions are random published courses in the learning language the user isn't enrolled in — deliberately dumb until real selection lands. Both states also show the signed-in user's personal playlists, including empty playlists; system playlists and other users' playlists are excluded from this section. Playlist rows link to the existing authorized playlist page and count only published courses.
+- **Home is compact and action-first** (`App::HomeController#index`), one layout for every account state. Product explanation lives in onboarding rather than on this repeat-use screen. Home opens with a single segmented paste control (`app/views/app/home/_paste_cta.html.erb`): the URL field and green "Add" submit button touch with square inner edges and share one rounded outer silhouette. Submitting it (or the keyboard go key) sends the field's `url` in a plain **GET** to `/app/import_requests/new?url=…`. The Add screen reads that `url` and auto-resolves the preview (`add_video_controller#connect`), so nothing is charged on Home. A hidden `lang` field preserves the learning language. Below it: an optional "just imported" hero, the two most recently practiced unfinished courses under a muted **"Continue"** heading, and four compact Library suggestions in a **2×2 grid** with neutral navigation/action styling. Personal playlists follow when present. The started-videos screen uses non-null `Enrollment#last_practiced_at` as the canonical started signal and includes completed courses. Suggestions are random published courses in the learning language that the user has not enrolled in. Playlists include empty ones but exclude system and other users' playlists.
+- Native course thumbnails use the same `course_youtube_video_id` fallback as the web cards and request YouTube's `hqdefault` image. This matters for legacy courses whose `youtube_video_id` column is blank but whose `main_media_url` still contains a valid ID; using the column directly produces an empty `/vi//…` image URL.
 - **Design tokens** are `--color-app-*` / `app-*` utilities at the bottom of `application.tailwind.css`. **Never use `dark:` under `app/views/app/**`** — the variant keys off `[data-theme="dark"]`, which the app layout hard-codes, so it would be unconditionally on and the intent invisible.
 - Tabs use `presentation: replace_root`; the sheets use `context: modal, modal_style: medium`, which maps onto a real `UISheetPresentationController` detent with no Swift. The sheets are **full pages, not Turbo Frames** — a frame overlay inside the web view fights the native modal and you get two competing dismissal gestures.
 - Course lesson sheets use `LessonViewController`, a `HotwireWebViewController` subclass selected by `SceneDelegate` for `/courses/:course/lessons/:lesson` and its activity URLs. It adds a native top-right X that dismisses the whole lesson sheet; this is deliberately a close action rather than back navigation between activities.
-- The Queue **polls** (`poll_controller.js`, 3s, stops when nothing is active). See ImportRequest above for why not Action Cable.
-- Screens are gated by `require_language_for_native_app` too: a native user with no `?lang=` is sent to `/onboarding/language` before any of this is reachable.
+- The Queue **polls** (`poll_controller.js`, 3s, stops when nothing is active). See ImportRequest above for why not Action Cable. Each tick fetches `App::ImportRequestsController#index` as a Turbo Stream (`Accept: text/vnd.turbo-stream.html`) and patches only the status text, the queue list and the footer note in place via `Turbo.renderStreamMessage` — no full-page visit, no lost scroll position. `index.turbo_stream.erb` and the HTML view share the `_status_text`, `_queue` and `_footer_note` partials so the two formats can't drift.
+- Screens are gated by `require_language_for_native_app` too: a signed-in native user with no `?lang=` is sent to `/onboarding/welcome` before any app screen is reachable.
 
 Deliberately **not** built from the mockup, because both would be controls that do nothing: the Library's category chips (nothing populates the taxonomy until the classifier lands) and the Add sheet's "Search YouTube" segment (needs the Data API).
 
 #### Onboarding Flow
 1. **Mandatory Authentication**: The server enforces authentication for all native app requests via `ApplicationController#require_authentication_for_native_app`. Unauthenticated native app users are redirected to the sign-in page.
-2. **Language Selection**: After authentication, if no `?lang=<code>` param is present, the server redirects to `/onboarding/language`. The user selects their learning language from a web page that communicates the choice to iOS via a Hotwire Native bridge component (`LanguageSelectionBridgeComponent`).
-3. **Local Persistence**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage`. It is not persisted server-side.
-4. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
-5. **Content Filtering**: `CoursesController#index` and `PlaylistsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
+2. **Welcome**: After authentication, if no `?lang=<code>` is present, the server redirects to `/onboarding/welcome`. This large, native-styled screen explains that Langlets turns YouTube videos into transcribed, translated lessons with vocabulary practice. "Start Now" advances to language selection while preserving the originally requested app URL. The screen is sized to fit a single viewport with no scrolling on every iPhone (fluid `clamp()` title size, `h-dvh-safe` flex column — plain `h-dvh` overflows by the nav-bar inset because `body` already pads `env(safe-area-inset-top)`). Copy is a three-level hierarchy (eyebrow / title / three short body paragraphs, `body_1..body_3` locale keys) — keep it short enough to preserve the no-scroll fit.
+3. **Language Selection**: `/onboarding/language` communicates the choice to iOS via `LanguageSelectionBridgeComponent`, then redirects to the preserved URL (normally `/app`) with the selected `lang` query parameter.
+4. **Persistence and restoration**: The selected language ISO code is stored in iOS `UserDefaults` under key `selectedLanguage` and per account in the user's JSONB preferences under `ios_lang`. An authenticated native request carrying a valid `lang` updates that preference. Sign-out still clears the device copy to prevent cross-account leakage; after the next login Rails adds the signed-in account's value as `ios_lang` (and `lang`) to the redirect, and iOS restores both standard and App Group defaults. Only accounts without a saved value see onboarding. Until a language is selected, the native navigator also checkpoints the current welcome or language-selection URL (including `returnto`) under `pendingOnboardingURL`. The checkpoint preserves the URL's percent-encoded query rather than encoding it again, and restoration rebuilds `returnto` from its decoded query value. A cold launch resumes that page instead of rebuilding the flow from `/app`; selecting a language or signing out clears the checkpoint.
+5. **URL Param Propagation**: The iOS app appends `?lang=<code>` to the root/start URL. Rails propagates this param through `default_url_options` so all generated links include it.
+6. **Content Filtering**: `CoursesController#index` and `PlaylistsController` filter their listings by `Language.find_by(iso_name: params[:lang])` when the param is present.
 6. **Tabbed Home Browsing**: The root page (`CoursesController#index`) renders a reusable tabs partial (`app/views/shared/_tabs.html.erb`) backed by `tabs_controller.js`, with a default **Courses** tab (playlist grid) and a secondary **Standalone clips** tab (standalone course grid).
 
 #### Changing Learning Language
 - Users can change their learning language at any time from the user dropdown menu (avatar icon) on any authenticated page.
 - The dropdown shows the currently selected language and links to `/onboarding/language?returnto=<current_url>`.
-- The onboarding page is context-aware: it shows "Change Learning Language" when accessed from the profile menu, and "Welcome to Langlets" during first-time onboarding.
+- The language page is context-aware: it shows "Change Learning Language" when accessed from the profile menu. First-time product copy is kept on the preceding welcome screen.
 - When a language is selected, the bridge message includes a `redirectUrl` so the app navigates back to the originating page with the updated `?lang=` parameter instead of jumping to the root URL.
-- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync.
+- The native profile presents the current learning language in a compact select. Changing it sends the selected option's ISO code and redirect URL through the same bridge, keeping iOS `UserDefaults` and the Rails `?lang=` session in sync. Although the profile uses the regular web layout, its content clears the horizontal safe-area insets and reserves the native tab-bar height plus the bottom inset; the shared body already clears the top inset.
 
 #### OAuth Authentication in Native App
 - Google and GitHub OAuth flows use `ASWebAuthenticationSession` (Safari) instead of the embedded WKWebView, because Google blocks OAuth in embedded browsers.
@@ -685,6 +766,10 @@ Deliberately **not** built from the mockup, because both would be controls that 
 - `langlets-ios/langlets/langlets/Bridge/TabBadgeComponent.swift` — Updates the native Queue badge from web content
 - `langlets-ios/langlets/langlets/Auth/AuthBridgeComponent.swift` — Intercepts OAuth sign-in taps and triggers native auth flow
 - `langlets-ios/langlets/langlets/Auth/AuthService.swift` — Manages `ASWebAuthenticationSession` for OAuth
+- `langlets-ios/langlets/LangletsShare/ShareViewController.swift` — Share sheet URL extraction, language confirmation and import API submission
+- `langlets-ios/langlets/LangletsShare/ShareStore.swift` — Shared Keychain token and App Group language preferences
+- `langlets-ios/langlets/langlets/Bridge/NativeTokenComponent.swift` — Receives the session-bootstrapped import token and language catalog
+- `app/controllers/app/native_tokens_controller.rb` — Authenticated, CSRF-protected native token bootstrap
 - `app/controllers/users/omniauth_callbacks_controller.rb` — Handles OAuth callbacks and redirects to `langlets://auth-success` for native app
 - `app/javascript/controllers/bridge/auth_bridge_controller.js` — Stimulus bridge controller for OAuth sign-in buttons
 

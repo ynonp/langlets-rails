@@ -3,7 +3,7 @@
 //   deno task download <url-or-video-id> [output.m4a]
 //
 // Defaults the output filename to <videoId>.m4a. Uses the same downloader as
-// the pipeline's extract_lyrics step (src/audio.ts), which shells out to the
+// the pipeline's force_alignment step (src/audio.ts), which shells out to the
 // yt-dlp binary — it must be installed and on PATH.
 
 import { downloadYoutubeAudio, getVideoId } from "./src/audio.ts";

@@ -59,7 +59,11 @@ export interface PipelineError {
 export interface ProgressData {
   format_version?: number;
   phrases?: Phrase[];
+  // The transcription extract_lyrics produced, one entry per sung/spoken
+  // line, before force_alignment times it into `phrases`.
+  lyric_lines?: string[];
   extract_lyrics_in_progress?: boolean;
+  force_alignment_in_progress?: boolean;
   video_length_seconds?: number | null;
   lessons?: string;
   lesson_ratings?: LessonRating[];

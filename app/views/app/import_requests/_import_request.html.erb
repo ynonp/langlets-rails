@@ -31,10 +31,22 @@
         <div class="h-[5px] rounded-full bg-app-accent transition-[width] duration-500"
              style="width: <%= import_request.display_percent %>%"></div>
       </div>
-      <p class="text-app-accent text-xs font-semibold">Importing · <%= import_request.display_percent %>%</p>
+      <%# The named stage rather than a percentage alone: they paid a credit for
+          this pipeline, so the card says what it's doing with it. %>
+      <div class="flex items-center justify-between gap-2">
+        <p class="text-app-accent text-xs font-semibold truncate"><%= import_request.stage_label %></p>
+        <% if import_request.charged? %>
+          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
+        <% end %>
+      </div>
 
     <% when "queued" %>
-      <p class="text-app-text-3 text-xs">Queued — up next</p>
+      <div class="flex items-center justify-between gap-2">
+        <p class="text-app-text-3 text-xs">Queued — up next</p>
+        <% if import_request.charged? %>
+          <span class="shrink-0 text-app-text-3 text-[11px]">1 credit used</span>
+        <% end %>
+      </div>
 
     <% when "ready" %>
       <div class="flex items-center gap-1.5">

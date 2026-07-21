@@ -1,0 +1,35 @@
+<%# Home's primary call to action: the tagline plus a link box that hands off to
+    the Add screen. This deliberately does not resolve or charge anything here —
+    it's a plain GET form to /app/import_requests/new, which reads ?url= and
+    auto-resolves the preview (see add_video_controller#connect). "Go" and the
+    keyboard's go key both submit.
+
+    It's a GET form, so the browser rebuilds the query from the fields and drops
+    the action's own ?lang=; the hidden field re-adds it so the Add screen keeps
+    the learning language. %>
+<div>
+  <%# app-inset (#0A1521) is the same colour as the screen background, so the
+      field read as squashed against it. bg-app-pill lifts it to a clearly
+      tappable surface; both controls share a 54px height so they don't look
+      pinched. %>
+  <%= form_with url: new_app_import_request_path, method: :get, class: "flex items-center" do %>
+    <input type="hidden" name="lang" value="<%= current_language_code %>">
+
+    <div class="flex-1 min-w-0 app-inset-hairline border-r-0 bg-app-card rounded-l-app-field rounded-r-none h-[54px] px-4 flex items-center gap-2.5">
+      <%= app_icon "link", class: "w-[18px] h-[18px] shrink-0 text-app-text-2" %>
+
+      <%# inputmode=url, not type=url: a bare 11-char video id is valid input the
+          Add screen accepts, and type=url would reject it. %>
+      <input type="text" name="url" inputmode="url"
+             placeholder="<%= t(".paste_placeholder") %>"
+             autocomplete="off" autocapitalize="off" autocorrect="off"
+             spellcheck="false" enterkeyhint="go"
+             class="flex-1 min-w-0 bg-transparent text-[15px] text-app-text placeholder:text-app-text-2 outline-none">
+    </div>
+
+    <button type="submit"
+            class="shrink-0 bg-app-accent text-app-on-accent rounded-r-app-field rounded-l-none h-[54px] px-6 text-[16px] font-bold">
+      <%= t(".go") %>
+    </button>
+  <% end %>
+</div>

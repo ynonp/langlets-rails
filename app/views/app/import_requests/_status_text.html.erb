@@ -1,0 +1,7 @@
+<p id="queue-status-text" class="text-app-text-2 text-sm mt-1">
+  <% if active_count.positive? %>
+    <%= pluralize(active_count, "import") %> in progress — we'll ping you when they're ready.
+  <% else %>
+    Nothing importing right now.
+  <% end %>
+</p>

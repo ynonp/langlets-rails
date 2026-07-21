@@ -36,6 +36,13 @@ module Imports
     # Credits::InsufficientCredits when the balance won't cover it, and
     # UnsupportedLanguage for a language we don't teach. None of them charge.
     def call
+      # A share extension may retry after losing the HTTP response. Replaying
+      # its stable UUID must return the original request even if the job moved
+      # beyond the active states in the meantime.
+      if client_token.present? && (existing = user.import_requests.find_by(client_token: client_token))
+        return Result.new(status: :already_queued, import_request: existing, course: existing.course)
+      end
+
       validate_languages!
 
       # Also the availability check: oEmbed 401/403/404 means we can't import it,

@@ -10,6 +10,7 @@ import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
 import type { AlignedWord, Alignment } from "../src/alignment.ts";
+import type { TranscriptionResult } from "../src/transcription.ts";
 
 export interface QueuedModel {
   model: LanguageModel;
@@ -112,12 +113,14 @@ export function makeCtx(options: {
   clipLanguage?: string;
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
+  transcribeAudio?: PipelineContext["transcribeAudio"];
 } = {}): TestSetup {
   const sink = new MemorySink();
   const store = new ProgressStore(options.data ?? {}, sink);
 
   const models: ModelRegistry = {
     extractLyrics: unusedModel().model,
+    forceAlignment: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,
     translate: unusedModel().model,
@@ -136,6 +139,7 @@ export function makeCtx(options: {
     baseDelayMs: 0,
     prepareAudio: options.prepareAudio ?? stubAudio,
     alignLyrics: options.alignLyrics,
+    transcribeAudio: options.transcribeAudio,
   };
 
   return { ctx, store, sink };
@@ -159,6 +163,32 @@ export function alignedBatch(from: number, to: number): AlignedWord[] {
     words.push({ text: String(n), start: start + 2, end: start + 3 });
   }
   return words;
+}
+
+// The same lines and timings as alignedBatch, but in the JSON shape the Gemini
+// backup alignment call answers with (SRT timestamps, words nested per line).
+export function geminiAlignment(from: number, to: number): string {
+  const lines = [];
+  for (let n = from; n <= to; n++) {
+    const start = (n - 1) * 10;
+    lines.push({
+      line_start: srt(start),
+      line_end: srt(start + 3),
+      line_text: `Line ${n}`,
+      words: [
+        { word: "Line", start: srt(start), end: srt(start + 1) },
+        { word: String(n), start: srt(start + 2), end: srt(start + 3) },
+      ],
+    });
+  }
+  return JSON.stringify(lines);
+}
+
+function srt(seconds: number): string {
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  const pad = (v: number) => String(v).padStart(2, "0");
+  return `00:${pad(m)}:${pad(s)},000`;
 }
 
 // The neutral phrases fixture downstream steps start from: two phrases, two

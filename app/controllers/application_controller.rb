@@ -55,6 +55,7 @@ class ApplicationController < ActionController::Base
       session.delete(:lang)
     else
       session[:lang] = params[:lang]
+      persist_ios_language(params[:lang])
     end
   end
 
@@ -62,7 +63,7 @@ class ApplicationController < ActionController::Base
   # every language.
   helper_method :current_language_code
   def current_language_code
-    code = params[:lang].presence || session[:lang]
+    code = params[:lang].presence || session[:lang] || restored_ios_language
     code unless code == ALL_LANGUAGES
   end
 
@@ -82,11 +83,11 @@ class ApplicationController < ActionController::Base
     return unless user_signed_in?
     return if current_language_code.present?
     return if devise_controller?
-    return if controller_name == "onboarding" && action_name == "language"
+    return if controller_name == "onboarding" && action_name.in?([ "welcome", "language" ])
     return if controller_name == "health"
     return if request.path.in?(["/home/privacy", "/home/terms", "/up"])
 
-    redirect_to onboarding_language_path(returnto: request.fullpath)
+    redirect_to onboarding_welcome_path(returnto: request.fullpath)
   end
 
   # Carries the selected language onto every generated URL, so all content stays
@@ -97,13 +98,15 @@ class ApplicationController < ActionController::Base
 
   # Redirect to returnto param after successful sign in
   def after_sign_in_path_for(resource)
-    if params[:returnto].present?
+    path = if params[:returnto].present?
       params[:returnto]
     elsif request.env['omniauth.origin']
       request.env['omniauth.origin']
     else
       root_path
     end
+
+    native_app? ? native_sign_in_path(path, resource) : path
   end
 
   # Redirect to returnto param after successful sign up
@@ -115,12 +118,59 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Redirect to returnto param after successful sign out
+  # Redirect after sign out — both the sign-out button (sessions#destroy) and
+  # account deletion (registrations#destroy) land here. signed_out=1 makes the
+  # rendered page fire the bridge--sign-out component, so the native app wipes
+  # its cookie store and stored language only after the server-side sign-out
+  # completed (see layouts/application).
   def after_sign_out_path_for(resource_or_scope)
-    if params[:returnto].present?
-      params[:returnto]
-    else
-      root_path
+    # Native: every app screen requires a session, so any returnto would
+    # bounce to sign-in anyway — and that redirect would drop the signed_out
+    # marker before a page renders. Go to sign-in directly. lang is dropped
+    # explicitly: it belonged to the account that just signed out, and
+    # carrying it forward lets the next account skip onboarding.
+    if native_app?
+      # `lang` is cached independently from Devise's authentication keys.
+      # Do not let an account switch inherit it even if the browser session
+      # itself survives the sign-out/account-deletion redirect.
+      session.delete(:lang)
+      return new_user_session_path(signed_out: 1, lang: nil)
     end
+
+    path = params[:returnto].presence || root_path
+    separator = path.include?("?") ? "&" : "?"
+    "#{path}#{separator}signed_out=1"
+  end
+
+  private
+
+  def persist_ios_language(code)
+    return unless native_app? && user_signed_in?
+    return unless Language.exists?(iso_name: code)
+    return if current_user.ios_lang == code
+
+    current_user.update!(ios_lang: code)
+  end
+
+  def restored_ios_language
+    return unless native_app? && user_signed_in?
+
+    code = current_user.ios_lang
+    return unless code.present? && Language.exists?(iso_name: code)
+
+    session[:lang] = code
+  end
+
+  def native_sign_in_path(path, user)
+    code = user.ios_lang
+    return path unless code.present? && Language.exists?(iso_name: code)
+
+    session[:lang] = code
+    uri = URI.parse(path)
+    query = Rack::Utils.parse_nested_query(uri.query)
+    query["lang"] = code
+    query["ios_lang"] = code
+    uri.query = Rack::Utils.build_nested_query(query)
+    uri.to_s
   end
 end

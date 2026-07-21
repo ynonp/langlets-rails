@@ -35,5 +35,27 @@ module Youtube
     def valid?(url)
       video_id(url).present?
     end
+
+    # A bare video id typed on its own, with no URL around it.
+    BARE_ID = /\A[A-Za-z0-9_-]{11}\z/
+
+    # video_id, but also accepting a bare id. Only the Add Video sheet uses this:
+    # it has to tell "this is a video" from "this is a search term" (§2), and a
+    # bare id is a thing people paste. Kept separate from video_id on purpose —
+    # Library search runs every query through video_id, and teaching *that* to
+    # match any 11-character string would turn the search "documentary" into a
+    # video-id lookup.
+    def loose_video_id(input)
+      value = input.to_s.strip
+      return nil if value.blank?
+
+      video_id(value) || (value.match?(BARE_ID) ? value : nil)
+    end
+
+    # Canonical URL for anything loose_video_id accepts.
+    def loose_canonical(input)
+      id = loose_video_id(input)
+      id && "https://www.youtube.com/watch?v=#{id}"
+    end
   end
 end

@@ -79,6 +79,30 @@ module App
 
       get "/app", headers: NATIVE
       assert_redirected_to new_user_session_path(returnto: "/app")
+
+      get onboarding_welcome_path, headers: NATIVE
+      assert_redirected_to new_user_session_path(returnto: onboarding_welcome_path)
+    end
+
+    test "new native users see welcome before language selection and Home" do
+      @user.update!(ios_lang: nil)
+      reset!
+      sign_in @user
+
+      get "/app", headers: NATIVE
+      assert_redirected_to onboarding_welcome_path(returnto: "/app")
+
+      get onboarding_welcome_path(returnto: "/app"), headers: NATIVE
+      assert_response :success
+      assert_select "h1", count: 1
+      assert_select "a[href=?]", onboarding_language_path(returnto: "/app")
+
+      get onboarding_language_path(returnto: "/app"), headers: NATIVE
+      assert_response :success
+      assert_select "button[data-bridge--language-selection-redirect-url-value='/app?lang=es']"
+
+      get "/app?lang=es", headers: NATIVE
+      assert_response :success
     end
 
     # The one line this project adds to the web UI.
@@ -99,19 +123,19 @@ module App
       assert_response :success
     end
 
-    # "Lesson 16 of 16" with a full bar under a heading that says "Keep it going"
-    # reads as broken. The web's continue-learning list drops finished courses
-    # the same way.
-    test "Home drops finished courses from Keep it going" do
+    # "Lesson 16 of 16" with a full bar under "Continue" reads
+    # as broken. The web's continue-learning list drops finished courses the same
+    # way.
+    test "Home drops finished courses from the pick-up-where-you-left-off list" do
       @course.lessons.each { |lesson| LessonUser.create!(lesson: lesson, user: @user) }
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_no_match "Keep it going", response.body
+      assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)
     end
 
-    test "Home keeps a part-finished course in Keep it going" do
+    test "Home keeps a part-finished course in the pick-up-where-you-left-off list" do
       second = Lesson.create!(course: @course, medium: @medium, user: @user,
                               slug: "l2", name: "L2", order: 1)
       LessonUser.create!(lesson: @course.lessons.first, user: @user)
@@ -119,7 +143,7 @@ module App
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_match "Keep it going", response.body
+      assert_match "Continue", response.body
       assert_match "Lesson 2 of 2", response.body
       assert second.persisted?
     end
@@ -152,7 +176,7 @@ module App
       assert_response :success
       assert_select "[data-testid='keep-it-going']" do
         assert_select "div:first-child" do
-          assert_select "h2", text: "Keep it going"
+          assert_select "h2", text: "Continue"
           assert_select "a[href=?]", app_started_courses_path, text: "See all", count: 1
         end
         assert_select "a[href=?]", app_started_courses_path, text: "See all", count: 1
@@ -191,21 +215,26 @@ module App
       assert_select "a[href=?]", course_path(older_course), text: /Older Course/
     end
 
-    # With nothing to continue, Home becomes the first-run song picker: library
-    # courses in the user's language, none of which they're enrolled in.
-    test "Home with an empty account shows the song picker with library courses" do
+    # With nothing to continue, Home leads with the paste CTA and the library
+    # grid (courses in the user's language they aren't enrolled in) — there is no
+    # separate first-run picker anymore.
+    test "Home with an empty account shows the paste CTA and library courses" do
       Enrollment.delete_all
 
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_match "Pick your first song", response.body
+      assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
+      assert_select "form[action^='/app/import_requests/new'][method='get']" do
+        assert_select "input[name='url']"
+        assert_select "button[type='submit']", text: "Add"
+      end
       assert_match "Despacito", response.body
-      assert_match "Bring your own song", response.body
-      assert_no_match "Keep it going", response.body
+      assert_match "Library", response.body
+      assert_no_match(/<h2[^>]*>Continue<\/h2>/, response.body)
     end
 
-    test "the song picker only offers courses in the user's language" do
+    test "the library grid only offers courses in the user's language" do
       Enrollment.delete_all
       french = languages(:french)
       create_translated_course!(name: "La Vie en Rose", slug: "la-vie-en-rose", main_media_url: "https://www.youtube.com/watch?v=frenchaaaaa",
@@ -227,10 +256,21 @@ module App
       get "/app", headers: NATIVE
 
       assert_response :success
-      assert_match "Keep it going", response.body
-      assert_match "More from the library", response.body
+      assert_match "Continue", response.body
+      assert_match "Library", response.body
       assert_match "Bailando", response.body
-      assert_match "Make your own lesson", response.body
+      assert_no_match "Turn any YouTube video into a Spanish lesson.", response.body
+    end
+
+    test "Home uses the main media URL for legacy course thumbnails like the web app" do
+      Enrollment.delete_all
+      @course.update_column(:youtube_video_id, nil)
+
+      get "/app", headers: NATIVE
+
+      assert_response :success
+      assert_select "img[src='https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg']"
+      assert_no_match %r{img\.youtube\.com/vi//}, response.body
     end
 
     test "Home shows an enrolled course and the credit balance" do

@@ -13,6 +13,8 @@ final class LanguageSelectionBridgeComponent: BridgeComponent {
               let data: MessageData = message.data() else { return }
 
         UserDefaults.standard.set(data.language, forKey: "selectedLanguage")
+        UserDefaults(suiteName: NativeShareStore.appGroup)?.set(data.language, forKey: "selectedLanguage")
+        AppTabBarController.clearPendingOnboardingURL()
 
         DispatchQueue.main.async {
             var userInfo: [String: Any] = ["language": data.language]

@@ -95,6 +95,17 @@ class User < ApplicationRecord
   VALID_THEMES = %w[light dark].freeze
   DEFAULT_THEME = "dark".freeze
 
+  # The learning language selected in the iOS app. The native shell clears its
+  # local copy at sign-out, then receives this account-specific value again
+  # after authentication.
+  def ios_lang
+    (preferences || {})["ios_lang"]
+  end
+
+  def ios_lang=(value)
+    self.preferences = (preferences || {}).merge("ios_lang" => value)
+  end
+
   # The user's chosen color theme, falling back to the default when unset or invalid.
   def theme
     stored = (preferences || {})["theme"]
