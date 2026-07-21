@@ -25,7 +25,7 @@ class ImportRequest < ApplicationRecord
 
   # Ready imports the user hasn't been shown on Home yet — drives the
   # "JUST IMPORTED" hero card.
-  scope :just_imported, -> { ready.where(updated_at: 48.hours.ago..) }
+  scope :just_imported, -> { ready.where(updated_at: 24.hours.ago..) }
 
   def active?
     queued? || importing?
