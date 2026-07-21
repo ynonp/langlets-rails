@@ -34,8 +34,36 @@ Deno.test("wrapped model logs the full output and passes the result through", as
 
   assertEquals(result.text, "the full LLM output");
   assertEquals(lines.length, 1);
-  assert(lines[0].startsWith("[llm translate mock-model]"));
+  assert(lines[0].startsWith("[llm translate mock-model response]"));
   assert(lines[0].includes("the full LLM output"));
+});
+
+Deno.test("prompt logging prints the full outgoing prompt and full response", async () => {
+  const inner = queuedModel(["complete response"]);
+  const model = withLlmLogging(inner.model, "extract_lyrics", { logPrompt: true });
+  const prompt = "transcribe ".repeat(300);
+
+  const { lines } = await captureLogs(() => generateText({ model, prompt }));
+
+  const promptLines = lines.filter((line) =>
+    line.startsWith("[llm extract_lyrics mock-model prompt")
+  );
+  const responseLines = lines.filter((line) =>
+    line.startsWith("[llm extract_lyrics mock-model response")
+  );
+  assert(promptLines.length > 1);
+  assertEquals(
+    promptLines.map((line) => line.slice(line.indexOf("\n") + 1)).join(""),
+    JSON.stringify(
+      [
+        { role: "user", content: [{ type: "text", text: prompt }] },
+      ],
+      null,
+      2,
+    ),
+  );
+  assertEquals(responseLines.length, 1);
+  assert(responseLines[0].includes("complete response"));
 });
 
 Deno.test("long outputs are logged in numbered slices, none oversized", async () => {

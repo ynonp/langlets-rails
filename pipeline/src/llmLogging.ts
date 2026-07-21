@@ -20,19 +20,30 @@ export function llmLoggingEnabled(env: { PIPELINE_LOG_LLM?: string }): boolean {
 // deno-lint-ignore no-explicit-any
 type GenerateResult = { content?: Array<any> };
 
-export function withLlmLogging(model: LanguageModel, label: string): LanguageModel {
+export interface LlmLoggingOptions {
+  logPrompt?: boolean;
+}
+
+export function withLlmLogging(
+  model: LanguageModel,
+  label: string,
+  options: LlmLoggingOptions = {},
+): LanguageModel {
   if (typeof model === "string") return model;
 
   return wrapLanguageModel({
     model,
     middleware: {
-      wrapGenerate: async ({ doGenerate }) => {
+      wrapGenerate: async ({ doGenerate, params }) => {
+        if (options.logPrompt) {
+          logOutput(label, model.modelId, JSON.stringify(params.prompt, null, 2), "prompt");
+        }
         try {
           const result = await doGenerate();
-          logOutput(label, model.modelId, outputText(result));
+          logOutput(label, model.modelId, outputText(result), "response");
           return result;
         } catch (error) {
-          logOutput(label, model.modelId, `<call failed: ${error}>`);
+          logOutput(label, model.modelId, `<call failed: ${error}>`, "response");
           throw error;
         }
       },
@@ -52,11 +63,17 @@ function outputText(result: GenerateResult): string {
   return `<no text content: ${JSON.stringify(parts.map((p) => p?.type))}>`;
 }
 
-export function logOutput(label: string, modelId: string, text: string): void {
+export function logOutput(
+  label: string,
+  modelId: string,
+  text: string,
+  direction?: "prompt" | "response",
+): void {
   const slices = sliceText(text, SLICE_CHARS);
   slices.forEach((slice, i) => {
     const part = slices.length > 1 ? ` ${i + 1}/${slices.length}` : "";
-    console.log(`[llm ${label} ${modelId}${part}]\n${slice}`);
+    const kind = direction ? ` ${direction}` : "";
+    console.log(`[llm ${label} ${modelId}${kind}${part}]\n${slice}`);
   });
 }
 

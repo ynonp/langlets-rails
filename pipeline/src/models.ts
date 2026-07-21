@@ -50,7 +50,9 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     : (model: LanguageModel, _label: string) => model;
 
   return {
-    extractLyrics: log(google("gemini-3.5-flash"), "extract_lyrics"),
+    extractLyrics: llmLoggingEnabled(env)
+      ? withLlmLogging(google("gemini-3.5-flash"), "extract_lyrics", { logPrompt: true })
+      : google("gemini-3.5-flash"),
     forceAlignment: log(google("gemini-3.5-flash"), "force_alignment"),
     addLessons: log(ollama("deepseek-v4-pro:cloud"), "add_lessons"),
     rateLessons: log(ollama("deepseek-v4-pro:cloud"), "rate_lessons"),

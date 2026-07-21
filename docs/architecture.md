@@ -141,6 +141,12 @@ as it goes, so the response carries only `{ ok, failed, summary }`. Because each
 branch persists as it completes, a failed run leaves its finished work saved and
 retriggering with the same `data` resumes rather than redoes.
 
+Pipeline LLM logging is enabled by default and can be disabled with
+`PIPELINE_LOG_LLM=0`. The `extract_lyrics` Gemini call logs both its complete
+outgoing prompt (including the video file part) and complete response. Long
+values are emitted as numbered slices so the hosting platform does not truncate
+them; the other model-backed steps log their complete responses.
+
 Three variables configure it: `PIPELINE_URL` (the server), the shared
 `PIPELINE_HMAC_SECRET`, and `PIPELINE_CALLBACK_BASE_URL` — where the pipeline
 can reach *this* Rails. The last one is the one that bites in development: the

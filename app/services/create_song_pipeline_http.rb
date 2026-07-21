@@ -13,8 +13,6 @@ class CreateSongPipelineHttp
   class TriggerError < StandardError; end
   class ConfigurationError < StandardError; end
 
-  DEFAULT_CALLBACK_BASE_URL = "http://localhost:3000"
-
   # A full run is LLM work plus forced alignment over the whole clip: minutes,
   # not seconds. The cap only exists so a hung run can't pin a worker forever.
   # Keep it under the pipeline nginx proxy_read_timeout, or nginx cuts the
@@ -37,7 +35,7 @@ class CreateSongPipelineHttp
     # ngrok tunnel to the local Rails, not localhost — the pipeline runs on
     # another host and localhost there is itself.
     def callback_base_url
-      (ENV["PIPELINE_CALLBACK_BASE_URL"].presence || DEFAULT_CALLBACK_BASE_URL).delete_suffix("/")
+      ENV["PIPELINE_CALLBACK_BASE_URL"].delete_suffix("/")
     end
   end
 
