@@ -111,10 +111,14 @@ Both entry points go through it:
 
 | Entry point | Trigger |
 |---|---|
-| `/courses/new` → `CreateCourseJob` | one run for the course's own language, plus one per extra language other imports requested |
+| `/courses/new` → `CreateCourseJob` | one run for the course's own language; extra languages other imports asked for get their own `AddCourseTranslationJob` when the course publishes |
 | Adding a language → `AddCourseTranslationJob` | one run for that language |
 
-The run is synchronous — Rails blocks until it finishes — but results arrive continuously via `POST /pipeline_callbacks/:id` rather than in the response. A failed branch raises, so the import is refunded and no half-built course is published. Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
+**The trigger does not wait for the run.** It POSTs `/run?async=1`, gets a `202`, and the job returns — so one worker can start any number of imports. Results arrive continuously via `POST /pipeline_callbacks/:id`, and after every batch `Imports::Finalizer` re-derives whether the blob now holds everything the waiting requests asked for. When it does, that's when the course is built, published and the requests marked ready.
+
+Nothing can hang: each `ImportRequest` schedules an `ImportRequestTimeoutJob` for `ImportRequest::TIMEOUT` (10 minutes) from creation, which refunds the import — using the pipeline's own reported error as the reason when there is one. A failure in `extract_lyrics` or `force_alignment` ends the run outright, so those fail the import as soon as the error lands rather than waiting out the clock.
+
+Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
 
 There is no in-process fallback. `create_data`, `add_translation` and the `CreateSong::*` step concerns were removed when the pipeline became the only implementation, so `PIPELINE_URL` is required — unset, it raises `CreateSongPipelineHttp::ConfigurationError`.
 
@@ -183,9 +187,11 @@ tail -100 log/development.log | grep -E "Error|failed|Course creation"
 | `PIPELINE_URL is not configured` | No pipeline host set | Set `PIPELINE_URL`; there is no in-process fallback |
 | `pipeline returned 401` | `PIPELINE_HMAC_SECRET` differs between the two sides | Make them identical, then restart both |
 | `could not reach the pipeline at ...` | Host down, DNS, or firewall | `curl https://<host>/health`; check `systemctl status langlets-pipeline` |
-| `pipeline run failed: {"translate": ...}` | One branch failed; its error is in `data["errors"]` | Fix the cause and re-trigger — finished branches are not redone |
+| `pipeline run failed: {"translate": ...}` | Only the `wait: true` form raises this; one branch failed and its error is in `data["errors"]` | Fix the cause and re-trigger — finished branches are not redone |
 | Run starts, then nothing persists | Pipeline can't reach the callback URL | Check `PIPELINE_CALLBACK_BASE_URL` — in dev it must be the ngrok URL, not localhost |
 | `You exceeded your current quota` | Provider rate limit | Change the model in `pipeline/src/models.ts` and restart the service |
+| `Import timed out after 10 minutes` | No callback ever completed the blob | Check `data["errors"]` and the pipeline host's logs; the credit was already refunded |
+| Import ready but course still `processing` | Data landed but the finalizer never ran | `Imports::Finalizer.call(progress)` — it is idempotent and safe to run by hand |
 | Course stuck in `processing` | Job crashed without updating status | Check logs, fix issue, reset: `course.update!(status: :pending)` |
 
 ### Retrying a Failed Course
@@ -223,11 +229,11 @@ So if a step failed, resetting the course to `pending` and re-enqueuing picks up
 
 In development, the async adapter runs jobs in background threads. You don't need to start GoodJob. Jobs run as soon as they're enqueued, within the same process.
 
-To run a job synchronously (blocking, for debugging):
+To run a job synchronously (for debugging):
 ```ruby
 CreateCourseJob.new.perform(progress.id, course.id)
 ```
-But note: API calls can take minutes — better to use `perform_later` and monitor via the console.
+This returns as soon as the pipeline accepts the run — it does not wait for the course. To watch the run itself, poll `CreateSongProgress#progress_percent` / `#current_step_label`, or trigger it in the foreground with `CreateSongPipelineHttp.new(progress: progress, wait: true).call` (what the rake tasks use).
 
 ---
 

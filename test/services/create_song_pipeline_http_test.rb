@@ -66,15 +66,22 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert_equal "en", sent.dig("translation_language", "iso_name")
   end
 
-  test "raises when a branch failed so the course is not built from a partial blob" do
+  # The trigger is fire-and-forget: it asks for ?async=1, so the pipeline's 202
+  # means "accepted", not "finished", and there is no verdict in the body.
+  test "triggers asynchronously so no worker waits on the run" do
+    assert_equal "https://pipeline.test/run?async=1",
+                 CreateSongPipelineHttp.new(progress: @progress).trigger_url
+
+    assert trigger(transport: ->(_body) { [ 202, { accepted: true }.to_json ] })
+  end
+
+  # The run's own failures arrive through the callback now, so a body that says
+  # a branch failed is not this object's business — only the status is.
+  test "an accepted trigger ignores whatever the body says" do
     body = { ok: false, failed: { "translate" => "boom" }, summary: {} }.to_json
 
-    error = assert_raises(CreateSongPipelineHttp::TriggerError) do
-      trigger(transport: ->(_body) { [ 200, body ] })
-    end
-
-    assert_match(/pipeline run failed/, error.message)
-    assert_match(/boom/, error.message)
+    assert_nothing_raised { trigger(transport: ->(_body) { [ 200, body ] }) }
+    assert_nothing_raised { trigger(transport: ->(_body) { [ 200, "<html>not json</html>" ] }) }
   end
 
   test "raises on a non-success status" do
@@ -85,9 +92,24 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert_match(/401/, error.message)
   end
 
-  test "raises a readable error when the response is not json" do
+  # The rake tasks run a pipeline and export the record in the same process, so
+  # they still need the synchronous form and its verdict.
+  test "wait: true uses the blocking form and raises when a branch failed" do
+    assert_equal "https://pipeline.test/run",
+                 CreateSongPipelineHttp.new(progress: @progress, wait: true).trigger_url
+
+    body = { ok: false, failed: { "translate" => "boom" }, summary: {} }.to_json
     error = assert_raises(CreateSongPipelineHttp::TriggerError) do
-      trigger(transport: ->(_body) { [ 200, "<html>502 Bad Gateway</html>" ] })
+      trigger(wait: true, transport: ->(_body) { [ 200, body ] })
+    end
+
+    assert_match(/pipeline run failed/, error.message)
+    assert_match(/boom/, error.message)
+  end
+
+  test "wait: true raises a readable error when the response is not json" do
+    error = assert_raises(CreateSongPipelineHttp::TriggerError) do
+      trigger(wait: true, transport: ->(_body) { [ 200, "<html>502 Bad Gateway</html>" ] })
     end
 
     assert_match(/unreadable response/, error.message)
@@ -109,18 +131,13 @@ class CreateSongPipelineHttpTest < ActiveSupport::TestCase
     assert_match(/PIPELINE_URL is not configured/, error.message)
   end
 
-  test "callback base url falls back to localhost when no tunnel is configured" do
-    ENV["PIPELINE_CALLBACK_BASE_URL"] = nil
-    assert_equal "http://localhost:3000", CreateSongPipelineHttp.callback_base_url
-  end
-
   private
 
   def ok
     [ 200, { ok: true, failed: {}, summary: {} }.to_json ]
   end
 
-  def trigger(transport:, language: nil)
-    CreateSongPipelineHttp.new(progress: @progress, language: language, transport: transport).call
+  def trigger(transport:, language: nil, wait: false)
+    CreateSongPipelineHttp.new(progress: @progress, language: language, wait: wait, transport: transport).call
   end
 end

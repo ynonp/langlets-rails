@@ -16,8 +16,20 @@ class ImportRequest < ApplicationRecord
     canceled: 4
   }
 
+  # Wall-clock, from the moment the user asked. Nothing in the import path
+  # blocks any more — the worker triggers the pipeline and leaves, and the run
+  # reports back through PipelineCallbacksController — so this is the single
+  # deadline the whole flow has, and the reason a request cannot get stuck.
+  TIMEOUT = 10.minutes
+
   validates :youtube_url, :youtube_video_id, :clip_language, :translation_language, presence: true
   validates :progress_percent, inclusion: { in: 0..100 }
+
+  # On the model rather than in Imports::Create because there are four ways to
+  # end up with a request (charge, join, translation, admin) and the guarantee
+  # is only worth anything if it holds for all of them. after_create_commit so
+  # the row is visible to the worker that eventually picks the job up.
+  after_create_commit :schedule_timeout
 
   # What the Queue badge counts, and what the dedupe index covers.
   scope :active, -> { where(status: [ statuses[:queued], statuses[:importing] ]) }
@@ -52,5 +64,11 @@ class ImportRequest < ApplicationRecord
   # but still true, and better than a card that says only "Importing".
   def stage_label
     pipeline_step.presence || "Importing · #{display_percent}%"
+  end
+
+  private
+
+  def schedule_timeout
+    ImportRequestTimeoutJob.set(wait: TIMEOUT).perform_later(id)
   end
 end

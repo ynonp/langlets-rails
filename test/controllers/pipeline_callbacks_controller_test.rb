@@ -158,4 +158,49 @@ class PipelineCallbacksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_equal @progress.reload.progress_percent, import_request.reload.progress_percent
   end
+
+  # There is no "run finished" callback to wait for, so completion is re-derived
+  # after every batch. A patch that leaves work outstanding must not drag the
+  # finalizer — and the course build behind it — onto the callback's critical
+  # path.
+  test "a patch that leaves work outstanding does not enqueue the finalizer" do
+    body = { ops: [ { op: "set", path: "lessons", value: "# Lesson\nline" } ] }.to_json
+
+    assert_no_enqueued_jobs(only: FinalizeImportsJob) do
+      post pipeline_callback_path(@progress), params: body, headers: PipelineHmac.signed_headers(body)
+    end
+
+    assert_response :success
+  end
+
+  test "the patch that completes the run enqueues the finalizer" do
+    @progress.update!(data: {
+      "phrases" => [ { "text_l1" => "bonjour", "words" => [ { "word" => "bonjour" } ] } ],
+      "lessons" => "# Lesson\nline",
+      "lesson_ratings" => [ 5 ],
+      "translations" => { "he" => { "phrases" => [ { "text" => "שלום", "words" => [ "שלום" ] } ] } }
+    })
+    body = { ops: [ { op: "set", path: "similar_sounds", value: "bonjour: bonsoir" } ] }.to_json
+
+    assert_enqueued_with(job: FinalizeImportsJob, args: [ @progress.id ]) do
+      post pipeline_callback_path(@progress), params: body, headers: PipelineHmac.signed_headers(body)
+    end
+
+    assert_response :success
+  end
+
+  # A reported failure is the other reason to look: it may be one the import
+  # should not sit through the full timeout for.
+  test "a reported failure enqueues the finalizer" do
+    body = {
+      ops: [ { op: "append", path: "errors",
+               value: { step: "extract_lyrics", error_message: "video is private" } } ]
+    }.to_json
+
+    assert_enqueued_with(job: FinalizeImportsJob, args: [ @progress.id ]) do
+      post pipeline_callback_path(@progress), params: body, headers: PipelineHmac.signed_headers(body)
+    end
+
+    assert_response :success
+  end
 end

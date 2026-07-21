@@ -1,22 +1,32 @@
 require "net/http"
 
-# Triggers the Deno pipeline over HTTP — the remote counterpart of
-# CreateSongPipelineCli's local `deno task cli` subprocess, and the "trigger"
-# half that pipeline/README.md lists as the last piece of the cutover.
+# Starts the Deno pipeline over HTTP and gets out of the way.
 #
-# Uses the synchronous /run form rather than ?async=1 on purpose: the pipeline
-# streams every mutation back to PipelineCallbacksController as it goes, so the
-# response we block on carries no data — only the verdict. Blocking is what
-# lets CreateCourseJob keep its existing shape, where the course is built from
-# the finished blob and a raise refunds the import.
+# The default form POSTs `/run?async=1`: the pipeline answers 202 as soon as it
+# has accepted the payload and then streams every mutation back to
+# PipelineCallbacksController on its own. Nothing here waits for the run, so a
+# worker that starts an import is free again in milliseconds and one process
+# can have any number of imports in flight.
+#
+# That is also why this class no longer reports a verdict. A trigger either got
+# the run started or it didn't; what the run *produced* is a question you ask of
+# CreateSongProgress#data (see Imports::Finalizer), because the callbacks are
+# the only thing that can answer it. The old blocking form is kept behind
+# `wait: true` for the rake tasks, which run a pipeline and then immediately
+# export the record from the same process.
 class CreateSongPipelineHttp
   class TriggerError < StandardError; end
   class ConfigurationError < StandardError; end
 
-  # A full run is LLM work plus forced alignment over the whole clip: minutes,
-  # not seconds. The cap only exists so a hung run can't pin a worker forever.
-  # Keep it under the pipeline nginx proxy_read_timeout, or nginx cuts the
-  # connection first and we lose the verdict for a run that is still going.
+  # Accepting the payload is a few milliseconds of work; anything slower than
+  # this is the pipeline being unreachable, which we want to hear about now
+  # rather than after a long stall.
+  TRIGGER_READ_TIMEOUT = 30
+
+  # Only used by `wait: true`. A full run is LLM work plus forced alignment over
+  # the whole clip: minutes, not seconds. Keep it under the pipeline nginx
+  # proxy_read_timeout, or nginx cuts the connection first and we lose the
+  # verdict for a run that is still going.
   READ_TIMEOUT = Integer(ENV.fetch("PIPELINE_READ_TIMEOUT", 3_000))
   OPEN_TIMEOUT = 15
 
@@ -41,11 +51,14 @@ class CreateSongPipelineHttp
 
   # language: nil runs the record's own translation_language. Pass one to run a
   # different target (the extra languages other imports asked for).
+  # wait: true blocks until the run finishes and raises unless every branch
+  # succeeded — the rake tasks' shape, never a worker's.
   # transport is the injection point tests use, mirroring the CLI service's
   # command_runner: it takes the signed body and returns [status, body].
-  def initialize(progress:, language: nil, transport: nil)
+  def initialize(progress:, language: nil, wait: false, transport: nil)
     @progress = progress
     @language = language
+    @wait = wait
     @transport = transport || method(:post)
   end
 
@@ -60,19 +73,23 @@ class CreateSongPipelineHttp
             "pipeline #{self.class.base_url} returned #{status}: #{response_body.to_s.truncate(500)}"
     end
 
+    return true unless @wait
+
     verdict = parse(response_body)
 
     # Branches settle independently and persist as they go, so a partial
-    # failure leaves real work behind — the retrigger picks it up. But the
-    # course must not be built from a half-filled blob, so this raises.
-    unless verdict["ok"]
-      raise TriggerError, "pipeline run failed: #{verdict['failed'].to_json}"
-    end
+    # failure leaves real work behind — the retrigger picks it up.
+    raise TriggerError, "pipeline run failed: #{verdict['failed'].to_json}" unless verdict["ok"]
 
     # Every mutation arrived through the callback, so our in-memory copy is
     # stale by definition.
     @progress.reload
   end
+
+  # `?async=1` is the whole difference between triggering and waiting: it makes
+  # the pipeline answer 202 the moment it has the payload and run in the
+  # background, reporting through the callback instead of the response.
+  def trigger_url = "#{self.class.base_url}/run#{@wait ? '' : '?async=1'}"
 
   private
 
@@ -97,7 +114,7 @@ class CreateSongPipelineHttp
   end
 
   def post(body)
-    uri = URI.parse("#{self.class.base_url}/run")
+    uri = URI.parse(trigger_url)
     request = Net::HTTP::Post.new(uri)
     PipelineHmac.signed_headers(body).each { |name, value| request[name] = value }
     request.body = body
@@ -107,7 +124,7 @@ class CreateSongPipelineHttp
       uri.port,
       use_ssl: uri.scheme == "https",
       open_timeout: OPEN_TIMEOUT,
-      read_timeout: READ_TIMEOUT
+      read_timeout: @wait ? READ_TIMEOUT : TRIGGER_READ_TIMEOUT
     ) { |http| http.request(request) }
 
     [ response.code.to_i, response.body ]

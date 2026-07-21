@@ -122,10 +122,12 @@ The AI steps run **only** in the Deno pipeline. `CreateSongPipelineHttp` signs
 the record's exported `data` with `PipelineHmac` and POSTs it to the pipeline
 server's `/run`; results come back through `PipelineCallbacksController`. Both
 entry points use it — `CreateCourseJob` (the `/courses/new` form) and
-`AddCourseTranslationJob` (adding a language to an existing course). The call
-blocks until the run finishes and raises on failure, which is what lets each
-job's rescue refund the import: a partial run must not become a published
-course.
+`AddCourseTranslationJob` (adding a language to an existing course).
+
+**The trigger does not wait.** It POSTs `/run?async=1`, the pipeline answers
+`202`, and the job returns — so a worker thread is never held for the minutes a
+run takes, and one process can have any number of imports in flight. See
+"Import lifecycle" below for what finishes them.
 
 There is no in-process fallback. `CreateSongProgress#create_data`,
 `#add_translation` and the six `CreateSong::*` step concerns were removed when
@@ -135,11 +137,12 @@ because the percent is derived from `data`, which the pipeline fills in the
 same shape. `PIPELINE_URL` is therefore required; an unset value raises
 `CreateSongPipelineHttp::ConfigurationError` rather than silently degrading.
 
-The trigger uses the synchronous `/run` rather than `?async=1` deliberately:
-the pipeline streams every mutation back through `PipelineCallbacksController`
-as it goes, so the response carries only `{ ok, failed, summary }`. Because each
-branch persists as it completes, a failed run leaves its finished work saved and
-retriggering with the same `data` resumes rather than redoes.
+The synchronous `/run` form survives behind `CreateSongPipelineHttp.new(...,
+wait: true)`, which blocks and raises unless every branch succeeded. Only the
+rake tasks use it, because they run a pipeline and then export the record from
+the same process. Because each branch persists as it completes, a failed run
+leaves its finished work saved and retriggering with the same `data` resumes
+rather than redoes.
 
 Pipeline LLM logging is enabled by default and can be disabled with
 `PIPELINE_LOG_LLM=0`. The `extract_lyrics` Gemini call logs both its complete
@@ -459,11 +462,11 @@ The single entry point for the Add sheet, the share extension and the API. Order
 
 The job is enqueued **inside** the transaction — good_job is Postgres-backed, so the job row commits atomically with the request. Enqueuing after commit would leave a charged request nothing ever picks up.
 
-Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `CreateCourseJob` enrolls everyone attached once it publishes.
+Users are **not** enrolled at import time: the course is `pending` and has no lessons, so Home would show something unopenable. `Imports::Finalizer` enrolls everyone attached once it publishes.
 
 #### Course-ready push notifications
 
-Once `CreateCourseJob` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request. Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
+Once `Imports::Finalizer` publishes a course, it marks every attached `ImportRequest` ready, enrolls that request's user, and enqueues one `SendImportReadyPushJob` per request (all three via `Imports::Settlement`). Push delivery is deliberately outside the course-building transaction: an APNs outage must not turn a successfully built course into a failed import. `ImportRequest#notified_at` makes delivery idempotent, and a user with no registered device is stamped as handled because email remains the fallback.
 
 The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `App::DeviceTokensController`; tokens are owned by a user and an installation token can move to the currently signed-in account. APNs sandbox and production tokens are stored separately by environment. Apple responses that identify dead tokens invalidate the row without deleting its diagnostic history, while transient failures leave it active.
 
@@ -511,8 +514,72 @@ in step with languages added by Rails without an App Store release. If the
 shared token or learning language is unavailable, the sheet directs the user
 to open Langlets and complete sign-in/onboarding.
 
-#### **CreateCourseJob** — charge lifecycle
-`good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise here is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
+#### Import lifecycle — nothing waits, and nothing gets stuck
+
+The pipeline runs out of process and has **no "run finished" callback**: it
+streams patches to `PipelineCallbacksController` and then simply stops. The flow
+is built around that fact. Four pieces, each with one job:
+
+| | Responsibility |
+|---|---|
+| `CreateCourseJob` / `AddCourseTranslationJob` | **Trigger.** Claim the course, mark the requests `importing`, start the run, return. |
+| `Imports::Finalizer` | **Decide it's done.** Re-derive completion from `data` after every callback; build, publish, enroll, mark ready. |
+| `ImportRequestTimeoutJob` | **Give up.** Fixed `ImportRequest::TIMEOUT` (10 minutes) from creation. |
+| `Imports::Settlement` | **Bookkeeping.** Enroll + notify, or refund + record why. |
+
+Completion is a **property of the blob, re-derived**, not an event to subscribe
+to. `CreateSongProgress#complete_for?(language)` is the question, and it has two
+halves: `pipeline_complete?` (all six steps done — cheap, pure digs into `data`)
+and `translation_finalized?(language)`. The second half matters because a record
+can be complete for Hebrew and still owe French; the pipeline fills **one
+language per run**.
+
+`translation_finalized?` reads a single key — `translations.<iso>.lessons` —
+because the pipeline's `finalize_translation` step stamps it and only runs once
+both translation branches succeeded. One key, one meaning.
+
+Because every callback asks again, `Imports::Finalizer` is **idempotent by
+construction**: whichever call first finds a complete blob does the work under
+the course's row lock, and the rest find it already done. The lock is
+load-bearing — two languages completing at the same moment would otherwise both
+see no lessons and both run `BuildSong#call`, and the second destroys the
+first's lessons.
+
+The callback controller gates on the *cheap* half (`pipeline_complete?`, or any
+reported error) before enqueuing `FinalizeImportsJob`, so a run costs a handful
+of jobs rather than one per patch — and building a course never happens inside
+the request the pipeline is blocked on.
+
+**The timeout is the only deadline in the system.** It is wall-clock from the
+moment the user asked, scheduled by an `after_create_commit` on `ImportRequest`
+itself rather than by any one caller, because there are four ways to end up with
+a request and the guarantee is worth nothing unless it holds for all of them. It
+asks the finalizer once more before giving up (the last patch and the finalizer
+that acts on it are not atomic), then refunds with the pipeline's own reported
+error as the reason when there is one.
+
+This replaced a design where the trigger blocked on the run for up to
+`PIPELINE_READ_TIMEOUT` seconds. That held a worker thread per in-flight import,
+and its timeout only fired if the pipeline hung *in the HTTP read* — a run that
+died any other way left the request `importing` forever.
+
+Two failures are handled early rather than waited out:
+- **The trigger never got off the ground** (unreachable pipeline, bad config).
+  The trigger job still owns this one; it refunds in its rescue.
+- **A blocking step failed.** `extract_lyrics` and `force_alignment` end the run
+  where they stand, so an error from either means no amount of waiting helps.
+  `blocking_error` ignores entries the data contradicts (phrases on record mean
+  transcription landed) and entries older than the request — a resumed run skips
+  steps it already finished, so it never clears their stale errors.
+
+Riders who join an in-flight import asking for a language the run was never
+started for get their own `AddCourseTranslationJob`, triggered on the course's
+**publish transition**. That transition happens exactly once per course, which is
+what stops a language whose run fails from being retriggered by every subsequent
+callback; it waits out its deadline instead.
+
+##### Charge lifecycle
+`good_job.retry_on_unhandled_error` defaults to **false** and this app doesn't override it, so **a raise in a job is final**. That's what makes refunding in the rescue correct rather than a balance yo-yo. Do not add `retry_on` naively: the rescue sets the course to `error`, and `Course#process` only claims a `pending` course, so a second attempt would silently do nothing.
 
 Only whoever actually paid is refunded — `:joined` riders were never charged. The `"refund:<id>"` idempotency key means a manual re-run can't mint credits.
 

@@ -1,6 +1,9 @@
 require "test_helper"
 require "minitest/mock"
 
+# CreateCourseJob is a trigger now: it claims the course, marks the requests
+# importing, starts the run and leaves. Publishing is Imports::Finalizer's job
+# (see imports/finalizer_test.rb) and giving up is ImportRequestTimeoutJob's.
 class CreateCourseJobTest < ActiveJob::TestCase
   VIDEO_ID = "kJQP7kiw5Fk".freeze
   CANONICAL = "https://www.youtube.com/watch?v=#{VIDEO_ID}".freeze
@@ -30,34 +33,54 @@ class CreateCourseJobTest < ActiveJob::TestCase
     ENV["PIPELINE_URL"] = @previous_pipeline_url
   end
 
-  test "publishing marks the request ready and puts the course on Home" do
-    run_job
+  # The whole point of the refactor: the job hands the run off and returns, so a
+  # worker thread is not held for the minutes a pipeline takes and the same
+  # worker can start the next import immediately.
+  test "the run is triggered and the job returns without waiting for it" do
+    received = []
 
-    @request.reload
-    assert @request.ready?
-    assert_equal 100, @request.progress_percent
-    assert @course.reload.published?
+    run_job(trigger: ->(**kwargs) { received << kwargs })
 
-    enrollment = @user.enrollments.sole
-    assert_equal @course, enrollment.course
-    assert enrollment.imported?, "they paid for it, so it's an import not a library add"
+    assert_equal 1, received.size, "one run covers the record's own language"
+    assert_equal @progress, received.first[:progress]
+    assert @request.reload.importing?, "the card shows as importing while the pipeline works"
+    assert @course.reload.processing?, "publishing waits for the data, not for this job"
   end
 
-  test "a failed import refunds the credit and records why" do
+  test "the request is marked importing before the run is triggered" do
+    observed = nil
+    run_job(trigger: ->(**) { observed = @request.reload.status })
+
+    assert_equal "importing", observed
+  end
+
+  # Every request gets a wall-clock deadline the moment it is created, so
+  # nothing can sit in the Queue forever no matter how the run dies.
+  test "creating a request schedules its timeout" do
+    other = User.create!(email: "deadline@example.com", password: "password123", confirmed_at: Time.zone.now)
+
+    assert_enqueued_with(job: ImportRequestTimeoutJob) do
+      create_request(user: other, charged: false, status: :queued)
+    end
+  end
+
+  # A trigger that never got off the ground is the one failure this job still
+  # owns — the run's own failures arrive through the callback instead.
+  test "a trigger that fails refunds the credit and records why" do
     assert_equal 2, @user.reload.credit_balance
 
-    assert_raises(RuntimeError) { run_job(raising: "transcription exploded") }
+    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "pipeline unreachable") }
 
     @request.reload
     assert @request.failed?
     assert @request.refunded?
-    assert_equal "transcription exploded", @request.failure_reason
+    assert_equal "pipeline unreachable", @request.failure_reason
     assert_equal 3, @user.reload.credit_balance, "the credit must come back"
     assert @course.reload.error?
   end
 
   test "the refund is recorded in the ledger and the balance still agrees" do
-    assert_raises(RuntimeError) { run_job(raising: "boom") }
+    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
     assert_equal 1, @user.credit_ledger_entries.import_refund.count
     assert_equal @user.reload.credit_balance, @user.credit_ledger_entries.sum(:amount)
@@ -66,14 +89,14 @@ class CreateCourseJobTest < ActiveJob::TestCase
   # good_job's retry_on_unhandled_error is false, so the job's rescue is the final
   # word — but a manual re-run must not mint credits.
   test "failing twice refunds only once" do
-    assert_raises(RuntimeError) { run_job(raising: "boom") }
+    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
     # reload first: the job called error! on its own instance, so this one still
     # reads `pending` and update! would issue no SQL at all.
     @request.reload.update!(status: :importing)
     @course.reload.update!(status: :pending)
 
-    assert_raises(RuntimeError) { run_job(raising: "boom again") }
+    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom again") }
 
     assert_equal 1, @user.credit_ledger_entries.import_refund.count
     assert_equal 3, @user.reload.credit_balance
@@ -84,7 +107,7 @@ class CreateCourseJobTest < ActiveJob::TestCase
     rider = User.create!(email: "rider@example.com", password: "password123", confirmed_at: Time.zone.now)
     rider_request = create_request(user: rider, charged: false, status: :importing)
 
-    assert_raises(RuntimeError) { run_job(raising: "boom") }
+    assert_raises(CreateSongPipelineHttp::TriggerError) { run_job(raising: "boom") }
 
     rider_request.reload
     assert rider_request.failed?
@@ -93,59 +116,30 @@ class CreateCourseJobTest < ActiveJob::TestCase
     assert_equal 0, rider.credit_ledger_entries.import_refund.count
   end
 
-  test "every rider on a shared import is enrolled when it publishes" do
-    rider = User.create!(email: "rider2@example.com", password: "password123", confirmed_at: Time.zone.now)
-    create_request(user: rider, charged: false, status: :importing)
-
-    run_job
-
-    assert_equal @course, rider.enrollments.sole.course
-    assert rider.enrollments.sole.library?, "they didn't pay, so it reads as a library add"
-    assert_equal @course, @user.enrollments.sole.course
-  end
-
-  test "the request is marked importing while the pipeline runs" do
-    observed = nil
-    run_job(during: -> { observed = @request.reload.status })
-
-    assert_equal "importing", observed
-  end
-
   test "a course already claimed by another job is left alone" do
     @course.update!(status: :processing)
+    triggered = false
 
-    run_job
+    run_job(trigger: ->(**) { triggered = true })
 
+    assert_not triggered, "the job that holds the claim has already started the run"
     assert @request.reload.queued?, "an unclaimed course must not be touched"
     assert @course.reload.processing?
   end
 
-  # The AI steps only exist in the pipeline now, so this is the cutover check:
-  # the job hands the record to the trigger rather than doing the work itself.
-  test "the AI work is delegated to the pipeline server" do
-    received = []
-    trigger = Object.new
-    trigger.define_singleton_method(:call) { :done }
+  # Re-importing a record the pipeline already filled in has nothing to wait
+  # for, and no callback is ever coming to wake the finalizer up.
+  test "a record that is already complete is finalized instead of retriggered" do
+    @progress.update!(data: complete_data)
+    triggered = false
+    finalized = false
 
-    builder = Object.new
-    def builder.call = true
-    mail = Object.new
-    def mail.deliver_now = true
-
-    CreateSongProgress.stub(:find, @progress) do
-      CreateSongPipelineHttp.stub(:new, ->(**kwargs) { received << kwargs; trigger }) do
-        CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-          CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-            CreateCourseJob.perform_now(@progress.id, @course.id)
-          end
-        end
-      end
+    Imports::Finalizer.stub(:call, ->(*) { finalized = true }) do
+      run_job(trigger: ->(**) { triggered = true })
     end
 
-    assert_equal 1, received.size, "one run covers the record's own language"
-    assert_equal @progress, received.first[:progress]
-    assert @course.reload.published?
-    assert @request.reload.ready?
+    assert_not triggered, "there is nothing left for the pipeline to do"
+    assert finalized
   end
 
   private
@@ -159,33 +153,42 @@ class CreateCourseJobTest < ActiveJob::TestCase
     )
   end
 
-  # Replaces the job's two slow parts — the pipeline run and the course builder —
-  # leaving its bookkeeping (charge, refund, enroll, status) under test.
-  def run_job(during: nil, raising: nil)
-    trigger = Object.new
-    trigger.define_singleton_method(:call) do
-      raise RuntimeError, raising if raising
+  # Enough of a blob for CreateSongProgress#complete_for?(English) to be true:
+  # all six neutral steps done and the language payload finalized.
+  def complete_data
+    {
+      "phrases" => [ { "text_l1" => "hola", "timestamp" => "00:00.00", "words" => [ { "word" => "hola" } ] } ],
+      "lessons" => "# Lesson\n00:00.00\n00:01.00",
+      "lesson_ratings" => [ 5 ],
+      "similar_sounds" => "hola: ola",
+      "translations" => {
+        "en" => {
+          "lessons" => "# Lesson\n00:00.00\n00:01.00",
+          "phrases" => [ { "text" => "hello", "words" => [ "hello" ] } ]
+        }
+      }
+    }
+  end
 
-      during&.call
-      nil
+  # Replaces the job's one slow part — starting the run — leaving its
+  # bookkeeping (claim, charge, refund, status) under test.
+  def run_job(trigger: nil, raising: nil)
+    stub = Object.new
+    stub.define_singleton_method(:call) do
+      raise CreateSongPipelineHttp::TriggerError, raising if raising
+
+      true
     end
-
-    builder = Object.new
-    def builder.call = true
 
     mail = Object.new
     def mail.deliver_now = true
 
     # Note the lambdas: Minitest's stub *calls* any value that responds to :call,
-    # so returning the builder directly would invoke it instead.
+    # so returning the stub directly would invoke it instead.
     CreateSongProgress.stub(:find, @progress) do
-      CreateSongPipelineHttp.stub(:new, ->(**) { trigger }) do
-        CourseBuilder::BuildSong.stub(:new, ->(*) { builder }) do
-          CourseMailer.stub(:creation_complete, ->(*) { mail }) do
-            CourseMailer.stub(:creation_failed, ->(*) { mail }) do
-              CreateCourseJob.perform_now(@progress.id, @course.id)
-            end
-          end
+      CreateSongPipelineHttp.stub(:new, ->(**kwargs) { trigger&.call(**kwargs); stub }) do
+        CourseMailer.stub(:creation_failed, ->(*) { mail }) do
+          CreateCourseJob.perform_now(@progress.id, @course.id)
         end
       end
     end

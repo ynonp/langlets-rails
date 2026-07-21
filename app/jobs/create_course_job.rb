@@ -1,3 +1,16 @@
+# Starts an import and returns. It does not build the course.
+#
+# The AI work runs on the Deno pipeline server and reaches this app through
+# PipelineCallbacksController; Imports::Finalizer — which every callback wakes
+# up — is what publishes the course once the blob holds everything, and
+# ImportRequestTimeoutJob is what ends the import if it never does. This job's
+# whole responsibility is: claim the course, mark the requests importing, get
+# the run started.
+#
+# It used to block on the run for as long as it took, which meant one worker
+# thread per in-flight import and a timeout that only fired if the pipeline
+# happened to hang in the read rather than anywhere else. Now several imports
+# share a worker and the deadline is wall-clock, not connection-shaped.
 class CreateCourseJob < ApplicationJob
   queue_as :default
 
@@ -11,15 +24,19 @@ class CreateCourseJob < ApplicationJob
     progress = CreateSongProgress.find(create_song_progress_id)
     course = Course.find(course_id)
 
-    course_created = course.process do |course|
+    claimed = course.process do |claimed_course|
       Rails.logger.info "Starting CreateCourseJob #{create_song_progress_id} / #{course_id}"
       # Inside the claim: only the job that actually owns this course should move
       # its requests. If another job holds it, that one has already done this.
-      start_imports!(course)
-      create_course_from_progress(progress, course)
+      start_imports!(claimed_course)
+      trigger!(progress)
     end
 
-    Rails.logger.info "Another job already processing or completed CreateSongProgress #{create_song_progress_id} / #{course_id}" unless course_created
+    Rails.logger.info "Another job already processing or completed CreateSongProgress #{create_song_progress_id} / #{course_id}" unless claimed
+
+    # A re-import of a record the pipeline already filled in has nothing to wait
+    # for, so don't make it wait for a callback that will never come.
+    Imports::Finalizer.call(progress) if claimed
 
   rescue => e
     # course is nil when the find itself failed; without the guard the
@@ -30,54 +47,21 @@ class CreateCourseJob < ApplicationJob
     Rails.logger.error "Course creation failed for course #{course_id}: #{e.message}"
     Rails.logger.error e.backtrace.join("\n")
 
-    # Send failure email
     CourseMailer.creation_failed(course, e).deliver_now if course
     raise e
   end
 
   private
 
-  # The AI work runs on the Deno pipeline server and reaches the record through
-  # PipelineCallbacksController; this blocks until the run finishes and raises
-  # on failure, which is what the rescue in #perform relies on to refund the
-  # imports — a partial run must never become a published course.
-  def generate_data!(progress)
-    Rails.logger.info "CreateSongProgress #{progress.id}: running the pipeline at #{CreateSongPipelineHttp.base_url}"
+  # Fire-and-forget: the pipeline answers 202 and streams its results back to
+  # PipelineCallbacksController. A raise here means the run never started at
+  # all, which is the one failure this job is still on the hook for.
+  def trigger!(progress)
+    language = Language.find_by(english_name: progress.translation_language)
+    return if progress.complete_for?(language)
+
+    Rails.logger.info "CreateSongProgress #{progress.id}: triggering the pipeline at #{CreateSongPipelineHttp.base_url}"
     CreateSongPipelineHttp.new(progress: progress).call
-  end
-
-  # The extra languages other imports asked for. The pipeline fills in each
-  # language's payload; folding it into the courses that already have lessons
-  # is Rails-side work the pipeline can't do.
-  def add_translation!(progress, language)
-    CreateSongPipelineHttp.new(progress: progress, language: language).call
-
-    Course.where(create_song_progress_id: progress.id).find_each do |course|
-      CourseBuilder::BuildSong.new(progress, course).add_translation(language) if course.lessons.exists?
-    end
-  end
-
-  def create_course_from_progress(progress, course)
-    generate_data!(progress)
-    progress.reload
-    course.reload
-
-    builder = CourseBuilder::BuildSong.new(progress, course)
-    builder.call
-
-    requested_languages = imports_for(course).distinct.pluck(:translation_language)
-    requested_languages.each do |language_name|
-      next if language_name == progress.translation_language
-
-      language = Language.find_by(english_name: language_name)
-      next if language.nil? || course.reload.translation_ready?(language)
-
-      add_translation!(progress, language)
-    end
-
-    course.published!
-    complete_imports!(course)
-    CourseMailer.creation_complete(course).deliver_now
   end
 
   # Requests waiting on this course. Usually one, but several users can ride on a
@@ -90,48 +74,7 @@ class CreateCourseJob < ApplicationJob
     imports_for(course).update_all(status: ImportRequest.statuses[:importing], updated_at: Time.zone.now)
   end
 
-  # The course exists now, so this is the point where it may appear on Home.
-  def complete_imports!(course)
-    imports_for(course).find_each do |import_request|
-      enroll!(import_request)
-      import_request.update!(status: :ready, progress_percent: 100, failure_reason: nil)
-
-      # Separate job so a push failure can't fail an import that has already
-      # succeeded. The completion email still goes out below regardless — it's
-      # the fallback for anyone who never granted notification permission.
-      SendImportReadyPushJob.perform_later(import_request.id)
-    end
-  end
-
-  def enroll!(import_request)
-    source = import_request.charged? ? :imported : :library
-    enrollment = Enrollment.find_or_initialize_by(user_id: import_request.user_id, course_id: import_request.course_id)
-    enrollment.source = source if enrollment.new_record?
-    enrollment.save!
-  rescue ActiveRecord::RecordNotUnique
-    nil # already enrolled, nothing to do
-  end
-
-  # Give the credit back. Only whoever actually paid gets a refund — users who
-  # joined someone else's in-flight import were never charged. The idempotency
-  # key means a manual re-run can't refund twice.
   def fail_imports!(course, error)
-    imports_for(course).find_each do |import_request|
-      if import_request.charged? && !import_request.refunded?
-        Credits::Ledger.refund!(
-          user: import_request.user,
-          subject: import_request,
-          idempotency_key: "refund:#{import_request.id}"
-        )
-        import_request.refunded = true
-      end
-
-      import_request.status = :failed
-      import_request.failure_reason = error.message.to_s.truncate(250)
-      import_request.save!
-    end
-  rescue => e
-    # Never let bookkeeping bury the original failure.
-    Rails.logger.error "Failed to fail imports for course #{course.id}: #{e.message}"
+    Imports::Settlement.fail_all!(imports_for(course).includes(:user), error.message)
   end
 end

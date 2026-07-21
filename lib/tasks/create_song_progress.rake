@@ -200,7 +200,7 @@ namespace :create_song_progress do
       begin
         # The pipeline needs a persisted record to address its callbacks to.
         progress.save!
-        CreateSongPipelineHttp.new(progress: progress).call
+        CreateSongPipelineHttp.new(progress: progress, wait: true).call
 
         video_id = url.gsub(/[^a-zA-Z0-9]/, "_")
         output_file = output_dir.join("#{video_id}.json")
@@ -252,7 +252,7 @@ namespace :create_song_progress do
     # extract_lyrics on their presence, so this run does lessons, ratings,
     # similar sounds and the translation without re-transcribing.
     puts "Running the pipeline (skipping transcription — phrases are seeded)..."
-    CreateSongPipelineHttp.new(progress: progress).call
+    CreateSongPipelineHttp.new(progress: progress, wait: true).call
 
     output_file = args[:output_file] || "word_timed_progress_#{Time.zone.now.to_i}.json"
     progress.export(output_file)

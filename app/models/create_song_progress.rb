@@ -23,9 +23,66 @@ class CreateSongProgress < ApplicationRecord
   # PipelineCallbacksController. Trigger a run with CreateSongPipelineHttp;
   # this class is the store and the guard predicates, not the worker.
 
+  # Steps whose failure ends the run there and then: everything downstream
+  # needs timed phrases, so the pipeline reports and stops (pipeline/src/
+  # pipeline.ts). An error from either one means no amount of waiting will
+  # produce a course.
+  BLOCKING_STEPS = %w[extract_lyrics force_alignment].freeze
+
   def translation_complete?(language)
     language = resolve_translation_language(language)
     language && data.dig("translations", language.iso_name, "phrases", 0, "text").present?
+  end
+
+  # The pipeline has no "run finished" callback — it streams patches and stops.
+  # So "is it done?" is a question about the blob, and these three predicates
+  # are how every caller asks it.
+  #
+  # finalize_translation stamps the language payload's lessons snapshot, and it
+  # runs only once *both* translation branches succeeded, which makes that one
+  # key the whole language's completion signal (pipeline/src/steps/
+  # finalizeTranslation.ts).
+  def translation_finalized?(language)
+    language = resolve_translation_language(language)
+    language.present? && translation_payload(language).to_h["lessons"].present?
+  end
+
+  # The language-neutral half: all six steps done for *some* language. Cheap
+  # (every predicate is a dig into data already in memory), which is why the
+  # callback controller gates on this before asking the costlier questions.
+  def pipeline_complete? = current_step.nil?
+
+  # Everything a course needs in `language`: the neutral skeleton every step
+  # feeds plus that language's finalized payload. The per-language half matters
+  # — a record can be complete for Hebrew and still owe French.
+  def complete_for?(language)
+    pipeline_complete? && translation_finalized?(language)
+  end
+
+  # Failures the pipeline reported through the callback, newest last.
+  def pipeline_errors = Array(data && data["errors"])
+
+  # The pipeline stamps occurred_at to the second, while the timestamps we
+  # compare it against carry sub-second precision. "An earlier run" means
+  # minutes or hours ago, so a minute of slack costs nothing and keeps a
+  # same-second error from reading as stale.
+  ERROR_CLOCK_SKEW = 1.minute
+
+  # The first reported failure that the run cannot recover from, ignoring
+  # anything that landed before `since` (a resumed run skips steps it already
+  # completed, so it never clears their stale errors) and anything the data
+  # itself contradicts — phrases on record mean transcription did land, whatever
+  # an older entry says.
+  def blocking_error(since: nil)
+    return nil if step_done?(:extract_lyrics)
+
+    pipeline_errors.find do |entry|
+      next false unless BLOCKING_STEPS.include?(entry["step"])
+      next true if since.nil?
+
+      occurred_at = parse_time(entry["occurred_at"])
+      occurred_at.nil? || occurred_at >= since - ERROR_CLOCK_SKEW
+    end
   end
 
   def translation_payload(language)
@@ -98,6 +155,12 @@ class CreateSongProgress < ApplicationRecord
   end
 
   private
+
+  def parse_time(value)
+    Time.zone.parse(value.to_s)
+  rescue ArgumentError
+    nil
+  end
 
   def resolve_translation_language(value)
     return value if value.is_a?(Language)

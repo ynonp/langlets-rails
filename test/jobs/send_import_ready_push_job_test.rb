@@ -144,7 +144,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     assert_nothing_raised { SendImportReadyPushJob.perform_now(-1) }
   end
 
-  test "publishing a course enqueues the push" do
+  test "completing an import enqueues the push" do
     other = @user.import_requests.create!(
       youtube_url: "https://www.youtube.com/watch?v=bbbbbbbbbbb", youtube_video_id: "bbbbbbbbbbb",
       clip_language: "Spanish", translation_language: "English", title: "Another",
@@ -152,7 +152,7 @@ class SendImportReadyPushJobTest < ActiveJob::TestCase
     )
 
     assert_enqueued_with(job: SendImportReadyPushJob) do
-      CreateCourseJob.new.send(:complete_imports!, @course)
+      Imports::Settlement.complete!(other)
     end
 
     assert other.reload.ready?
