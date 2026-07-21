@@ -5,7 +5,7 @@ module App
     # Within this window a finished import still counts as "just imported" and
     # gets the hero card. Also how the push deep link lands: it routes to
     # /app?just_imported=<slug>.
-    JUST_IMPORTED_WINDOW = 48.hours
+    JUST_IMPORTED_WINDOW = 24.hours
 
     def index
       @hero_course = hero_course
@@ -32,11 +32,12 @@ module App
     private
 
     # Either the course the push notification pointed at, or the most recent
-    # import that finished in the last couple of days.
+    # import that finished in the last day — but only if the user hasn't started
+    # it yet.
     def hero_course
       if params[:just_imported].present?
         course = current_user.enrolled_courses.published.find_by(slug: params[:just_imported])
-        return course if course
+        return course if course && !started?(course)
       end
 
       recent = current_user.import_requests
@@ -44,7 +45,18 @@ module App
                            .where(updated_at: JUST_IMPORTED_WINDOW.ago..)
                            .order(updated_at: :desc)
                            .first
-      recent&.course&.then { |c| c.published? ? c : nil }
+      course = recent&.course
+      return nil unless course&.published?
+      return nil if started?(course)
+
+      course
+    end
+
+    def started?(course)
+      LessonUser.joins(:lesson).where(
+        user_id: current_user.id,
+        lesson: { course_id: course.id }
+      ).exists?
     end
 
     # Everything on their Home except whatever's already in the hero.

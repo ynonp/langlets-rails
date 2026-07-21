@@ -21,12 +21,6 @@ import { forceAlignmentPrompt } from "../prompts/forceAlignment.ts";
 import { message, withRetries } from "../retry.ts";
 import { downloadYoutubeAudioToTemp, type DownloadedAudio } from "../audio.ts";
 import { type AlignedWord, alignLyrics as alignWithElevenLabs } from "../alignment.ts";
-import {
-  type TranscriptionResult,
-  transcribeWithElevenLabs,
-  sttTextToLines,
-  languageCodeForStt,
-} from "../transcription.ts";
 
 // Minimum fraction of the video (by the last aligned timestamp vs. the clip
 // duration) that must be covered for the step to succeed. Below this we
@@ -51,7 +45,6 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
   let attempts = 0;
   let backupResponse: string | null = null;
   let audioPath: string | null = null;
-  let sttResult: TranscriptionResult | null = null;
 
   try {
     // Mark the step as in progress before the first call. If the run dies
@@ -66,9 +59,8 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
     let durationSeconds: number | null = null;
     let phrases: Phrase[];
 
-    // Download audio once — used for STT (if Gemini failed) and for forced
-    // alignment. If the download fails but we already have lines from Gemini,
-    // fall back to Gemini for timing.
+    // Download audio once — used for forced alignment. If the download
+    // fails, fall back to Gemini for timing.
     let audio: DownloadedAudio;
     try {
       audio = await withRetries(
@@ -93,38 +85,6 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
       await store.set("force_alignment_in_progress", false);
       await clearErrors(ctx, "force_alignment");
       return;
-    }
-
-    // If Gemini returned no lyrics, transcribe with ElevenLabs STT before
-    // aligning. The lines are saved immediately so a retry skips STT.
-    if (lines.length === 0) {
-      const langCode = languageCodeForStt(ctx.clipLanguage, ctx.clipLanguageIso);
-      const transcribe = ctx.transcribeAudio ?? transcribeWithElevenLabs;
-      sttResult = await withRetries(
-        () => transcribe(audioPath!, langCode),
-        {
-          maxRetries: MAX_ALIGN_RETRIES,
-          label: "ForceAlignment STT",
-          baseDelayMs: ctx.baseDelayMs,
-          onFailedAttempt: (_error, attempt) => {
-            attempts = Math.max(attempts, attempt);
-          },
-        },
-      );
-
-      lines = sttTextToLines(sttResult.text);
-      if (lines.length === 0) {
-        throw new Error("ElevenLabs STT produced no usable lines");
-      }
-
-      // Persist the lines so a retrigger skips STT and goes straight to
-      // alignment. Also clear the in-progress flag so extract_lyrics isn't
-      // re-run.
-      await store.patch([
-        { op: "set", path: "lyric_lines", value: lines },
-        { op: "set", path: "extract_lyrics_in_progress", value: false },
-      ]);
-      await clearErrors(ctx, "extract_lyrics");
     }
 
     try {
@@ -171,7 +131,7 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
     await recordError(ctx, "force_alignment", error, {
       attempts: attempts || undefined,
       input_lines: lines.length > 0 ? lines : null,
-      agent_response: backupResponse ?? sttResult?.text ?? null,
+      agent_response: backupResponse ?? null,
     });
     throw error;
   } finally {

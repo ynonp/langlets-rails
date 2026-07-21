@@ -356,7 +356,7 @@ module App
       assert_response :success
       assert_match "Importing · 68%", response.body
       assert_match "Queued — up next", response.body
-      assert_match "Ready — waiting on Home", response.body
+      assert_match "Ready", response.body
       assert_match "Import failed — credit refunded", response.body
       assert_match "Cancelled", response.body
     end

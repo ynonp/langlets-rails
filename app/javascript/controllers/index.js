@@ -121,6 +121,9 @@ application.register("speech-recognition", SpeechRecognitionController)
 import StopPracticingController from "./stop_practicing_controller"
 application.register("stop-practicing", StopPracticingController)
 
+import SwipeToDeleteController from "./swipe_to_delete_controller"
+application.register("swipe-to-delete", SwipeToDeleteController)
+
 import SwiperController from "./swiper_controller"
 application.register("swiper", SwiperController)
 

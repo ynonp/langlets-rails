@@ -115,6 +115,7 @@
         spot — so this is a way out, not a save. Deliberately outside a card:
         it's a page-level action, not another setting. %>
     <%= link_to "Continue Learning", root_path,
+          data: { turbo_action: "replace" },
           class: "w-full inline-flex items-center justify-center gap-2 h-14 mb-6 rounded-2xl text-white font-extrabold transition-colors bg-emerald-600 hover:bg-emerald-700" %>
 
     <%# ---------------------------------------------------- Delete account %>

@@ -4,8 +4,40 @@
   <%= render "status_text", active_count: active_count %>
 <% end %>
 
-<%= turbo_stream.replace "queue" do %>
-  <%= render "queue", import_requests: @import_requests, active_count: active_count %>
+<%# Parse the set of cards the client already has: "id1:status1,id2:status2" %>
+<% known = (params[:known].presence || "").split(",").map { |s| id, status = s.split(":"); [id, status] }.to_h %>
+
+<%# Remove cards the client has but the server no longer lists.
+    The card is wrapped in a swipe container; remove the wrapper. %>
+<% known.each_key do |id| %>
+  <% unless @import_requests.any? { |ir| dom_id(ir) == id } %>
+    <%= turbo_stream.remove "#{id}_wrapper" %>
+  <% end %>
+<% end %>
+
+<%# Update or add each card %>
+<% @import_requests.each do |import_request| %>
+  <% id = dom_id(import_request) %>
+  <% old_status = known[id] %>
+
+  <% if old_status.nil? %>
+    <%# New card — prepend the whole thing (wrapper + card) %>
+    <%= turbo_stream.prepend "queue-list" do %>
+      <%= render "import_request", import_request: import_request %>
+    <% end %>
+  <% elsif old_status == import_request.status %>
+    <%# Same status — only the body may have changed (progress bar, stage label).
+        The thumb stays untouched so the image doesn't flash. %>
+    <%= turbo_stream.replace dom_id(import_request, :body) do %>
+      <%= render "import_request_body", import_request: import_request %>
+    <% end %>
+  <% else %>
+    <%# Status changed — replace the entire wrapper so the delete button and
+        link wrapper update along with the card. %>
+    <%= turbo_stream.replace dom_id(import_request, :wrapper) do %>
+      <%= render "import_request", import_request: import_request %>
+    <% end %>
+  <% end %>
 <% end %>
 
 <%= turbo_stream.replace "queue-footer-note" do %>

@@ -79,34 +79,48 @@ module App
                   alert: "We don't teach that language yet."
     end
 
-    # Cancelling a queued import. The credit goes back — nothing has been spent
-    # on it yet in any sense the user cares about.
+    # Cancelling a queued import refunds the credit. Deleting a failed or ready
+    # item just removes it from the queue — failed items were already refunded,
+    # and ready items have a published course the user can still access.
+    #
+    # Responds with a Turbo Stream so the client can optimistically remove the
+    # card and the server response corrects the page if anything went wrong.
     def destroy
       import_request = current_user.import_requests.find(params[:id])
 
-      unless import_request.queued?
-        return redirect_to app_import_requests_path,
-                           alert: "That import has already started."
-      end
-
-      ActiveRecord::Base.transaction do
-        if import_request.charged? && !import_request.refunded?
-          Credits::Ledger.refund!(
-            user: current_user,
-            subject: import_request,
-            idempotency_key: "refund:#{import_request.id}"
-          )
-          import_request.refunded = true
+      if import_request.queued?
+        ActiveRecord::Base.transaction do
+          if import_request.charged? && !import_request.refunded?
+            Credits::Ledger.refund!(
+              user: current_user,
+              subject: import_request,
+              idempotency_key: "refund:#{import_request.id}"
+            )
+            import_request.refunded = true
+          end
+          import_request.status = :canceled
+          import_request.save!
         end
-        import_request.status = :canceled
-        import_request.save!
+      elsif import_request.failed? || import_request.ready?
+        import_request.destroy!
+      else
+        # importing — can't be removed; re-render the queue so the optimistic
+        # removal on the client is corrected.
       end
 
-      redirect_to app_import_requests_path, notice: "Import cancelled — your credit is back."
+      respond_to do |format|
+        format.turbo_stream do
+          @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
+          active_count = @import_requests.count(&:active?)
+          render :queue_update, locals: { active_count: active_count }
+        end
+        format.html { redirect_to app_import_requests_path }
+      end
     end
 
     # Re-import something that failed. It was refunded when it failed, so this
-    # charges again like any other import.
+    # charges again like any other import. The old failed request is removed —
+    # the retried item replaces it.
     def retry
       failed = current_user.import_requests.find(params[:id])
       return redirect_to app_import_requests_path unless failed.failed?
@@ -117,6 +131,10 @@ module App
         clip_language: failed.clip_language,
         translation_language: failed.translation_language
       )
+
+      # The new request replaces the failed one — remove the old card from the
+      # queue so the user doesn't see both.
+      failed.destroy!
 
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
