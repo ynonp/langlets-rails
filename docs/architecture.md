@@ -146,6 +146,10 @@ intermediate grouping as `data["lesson_outline"]`; sentence translation persists
 the same timestamped `data["lessons"]` and version-2 `data["translations"][iso]["phrases"]` formats
 consumed by course building. Token translation chains directly from forced alignment and starts as
 soon as timed words exist, without waiting for lesson generation or sentence translation. The
+token step deduplicates exact repeated phrases across the full clip before packing requests into
+200-word chunks. One translated representative is fanned out to every occurrence; on resume, a
+completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication
+uses the complete ordered word text, preserving separate translations when context differs. The
 similar-sound step runs from the aligned phrases after the early branches settle.
 
 **The trigger does not wait.** It POSTs `/run?async=1`, the pipeline answers

@@ -83,6 +83,60 @@ Deno.test("resume skips phrases whose payload words are already complete", async
   assertEquals(store.data.translations!.he.phrases[0].words, ["שלום", "עולם"]);
 });
 
+Deno.test("deduplicates identical phrases globally before building chunks", async () => {
+  const phrase = (id: string, prefix: string, count: number) => ({
+    id,
+    text_l1: prefix,
+    timestamp: "00:00.00",
+    timestamp_end: "00:10.00",
+    words: Array.from({ length: count }, (_, index) => ({
+      text: `${prefix}${index}`,
+      timestamp: "00:00.00",
+      timestamp_end: "00:01.00",
+    })),
+  });
+  const repeated = phrase("phrase_1", "a", 150);
+  const phrases = [
+    repeated,
+    phrase("phrase_2", "b", 60),
+    { ...structuredClone(repeated), id: "phrase_3" },
+  ];
+  const response = (count: number, translation: string) =>
+    Array.from({ length: count }, (_, index) => `line${index} | ${translation}`).join("\n");
+  const model = queuedModel([response(150, "A"), response(60, "B")]);
+  const { ctx, store } = makeCtx({
+    data: { phrases },
+    models: { tokenTranslations: model.model },
+  });
+
+  await initTranslationPayload(ctx);
+  await addTokenTranslations(ctx);
+
+  // Without global pre-batch deduplication these sizes produce three chunks:
+  // [150], [60], [150]. The repeated final phrase must reuse the first result.
+  assertEquals(model.calls(), 2);
+  assertEquals(store.data.translations!.he.phrases[0].words, new Array(150).fill("A"));
+  assertEquals(store.data.translations!.he.phrases[1].words, new Array(60).fill("B"));
+  assertEquals(store.data.translations!.he.phrases[2].words, new Array(150).fill("A"));
+});
+
+Deno.test("resume reuses a completed identical phrase without an LLM call", async () => {
+  const phrases = phrasesFixture();
+  phrases[1] = { ...structuredClone(phrases[0]), id: "phrase_2" };
+  const model = queuedModel([]);
+  const { ctx, store } = makeCtx({
+    data: { phrases },
+    models: { tokenTranslations: model.model },
+  });
+
+  await initTranslationPayload(ctx);
+  store.data.translations!.he.phrases[1].words = ["שלום", "עולם"];
+  await addTokenTranslations(ctx);
+
+  assertEquals(model.calls(), 0);
+  assertEquals(store.data.translations!.he.phrases[0].words, ["שלום", "עולם"]);
+});
+
 Deno.test("is a no-op when every phrase is already translated", async () => {
   const model = queuedModel([]);
   const { ctx, store } = makeCtx({
