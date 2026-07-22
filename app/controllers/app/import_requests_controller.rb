@@ -1,6 +1,10 @@
 module App
   # Screens 03 (Queue) and 04 (Add a video).
   class ImportRequestsController < BaseController
+    # Queue and Add Video are shared by the native and web apps. The rest of
+    # the /app surface remains native-only through App::BaseController.
+    skip_before_action :require_native_app
+
     def index
       @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
     end

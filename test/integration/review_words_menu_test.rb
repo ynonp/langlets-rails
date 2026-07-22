@@ -87,6 +87,17 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "button.btn", text: /Review Words/, count: 0
   end
 
+  test "menu links to Queue only when the user has credits" do
+    sign_in(@user)
+
+    get root_path
+    assert_select "a[href=?]", app_import_requests_path, text: "Queue", count: 1
+
+    User.where(id: @user.id).update_all(credit_balance: 0)
+    get root_path
+    assert_select "a[href=?]", app_import_requests_path, count: 0
+  end
+
   test "menu shows single language when user has tokens from one language" do
     @user.saved_phrase_tokens << @token_en
 

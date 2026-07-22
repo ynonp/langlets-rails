@@ -31,6 +31,7 @@ he:
       learning_language: "שפת הלימוד: %{language}"
       select: "בחירה"
       review_words: "📚 חזרה על מילים (%{language})"
+      queue: "תור"
       profile: "פרופיל"
       connected_apps: "אפליקציות מחוברות"
       logout: "התנתקות"

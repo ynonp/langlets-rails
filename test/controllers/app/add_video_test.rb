@@ -30,6 +30,22 @@ module App
       assert_match "Paste a YouTube link to get started.", response.body
     end
 
+    test "the form and pipeline submission are available to web browsers" do
+      web = { "User-Agent" => "Mozilla/5.0" }
+      get "/app/import_requests/new", headers: web
+      assert_response :success
+
+      stub_video do
+        post "/app/import_requests",
+             params: { url: CANONICAL, clip_language: "Spanish", translation_language: "English" },
+             headers: web
+      end
+
+      assert_redirected_to app_import_requests_path
+      assert_equal 2, @user.reload.credit_balance
+      assert @user.import_requests.sole.charged?
+    end
+
     test "an empty query resolves back to the empty state, not to an error" do
       get resolve_path(q: ""), headers: NATIVE
 

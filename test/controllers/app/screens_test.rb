@@ -1,8 +1,7 @@
 require "test_helper"
 
 module App
-  # Smoke coverage for the mobile app screens, plus the two guards that matter:
-  # the screens are native-only, and the web UI doesn't regress.
+  # Smoke coverage for the mobile app screens and their web access rules.
   class ScreensTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
 
@@ -53,9 +52,15 @@ module App
       end
     end
 
-    # These screens are native-only; a browser must never land on them.
-    test "a web browser is redirected away from every screen" do
-      SCREENS.each_value do |path|
+    test "a web browser can open Queue and Add Video" do
+      [ "/app/import_requests", "/app/import_requests/new" ].each do |path|
+        get path, headers: WEB
+        assert_response :success, "#{path} should be shared with the web app"
+      end
+    end
+
+    test "other app screens remain native-only" do
+      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new" ]).each do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
       end
