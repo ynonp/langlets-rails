@@ -65,8 +65,14 @@ export interface ProgressData {
   extract_lyrics_in_progress?: boolean;
   force_alignment_in_progress?: boolean;
   video_length_seconds?: number | null;
+  // Untimestamped lesson grouping produced directly from lyric_lines while
+  // force alignment runs. Once timings exist it is materialized as `lessons`.
+  lesson_outline?: string;
   lessons?: string;
   lesson_ratings?: LessonRating[];
+  // Sentence translations generated from lyric_lines before aligned phrase
+  // payload slots exist, keyed by target-language ISO code.
+  translation_lines?: Record<string, string[]>;
   similar_sounds?: string;
   translations?: Record<string, TranslationPayload>;
   errors?: PipelineError[];

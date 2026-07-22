@@ -56,7 +56,7 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     forceAlignment: log(google("gemini-3.5-flash-lite"), "force_alignment"),
     addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
     rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
-    translate: log(google("gemini-3.5-flash-lite"), "translate"),
+    translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
     tokenTranslations: log(google("gemini-3.5-flash-lite"), "add_token_translations"),
   };
 }

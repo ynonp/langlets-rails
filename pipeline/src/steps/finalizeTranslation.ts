@@ -37,6 +37,38 @@ export async function initTranslationPayload(ctx: PipelineContext): Promise<void
   await ctx.store.patch(ops);
 }
 
+export async function materializeTranslationLines(ctx: PipelineContext): Promise<void> {
+  const language = ctx.translationLanguage;
+  if (!language) return;
+
+  const lines = ctx.store.data.translation_lines?.[language.iso_name];
+  const payload = ctx.store.translationPayload(language.iso_name);
+  const sourceLines = ctx.store.data.lyric_lines ?? [];
+  const phrases = ctx.store.data.phrases ?? [];
+  if (!lines || !payload) return;
+
+  let sourceCursor = 0;
+  const alignedTranslations = phrases.map((phrase, phraseIndex) => {
+    // Older/resumed blobs may have phrases and an intermediate but no saved
+    // lyric_lines. Equal-sized arrays are unambiguous in that legacy case.
+    if (sourceLines.length === 0 && lines.length === phrases.length) return lines[phraseIndex];
+
+    const sourceIndex = sourceLines.indexOf(phrase.text_l1, sourceCursor);
+    if (sourceIndex < 0 || lines[sourceIndex] == null) {
+      throw new Error(`Could not match aligned phrase to translated lyric line: ${phrase.text_l1}`);
+    }
+    sourceCursor = sourceIndex + 1;
+    return lines[sourceIndex];
+  });
+
+  const ops: PatchOp[] = alignedTranslations.map((text, index) => ({
+    op: "set",
+    path: `translations.${language.iso_name}.phrases.${index}.text`,
+    value: text,
+  }));
+  await ctx.store.patch(ops);
+}
+
 // Copy the (clip-language) lessons into the payload — the payload snapshot of
 // lessons is what CourseBuilder uses when adding this language to an existing
 // course.

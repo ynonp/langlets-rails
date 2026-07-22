@@ -11,7 +11,8 @@ import { withRetries } from "../retry.ts";
 const MAX_RETRIES = 5;
 
 export async function rateLessons(ctx: PipelineContext): Promise<void> {
-  const lessons = ctx.store.data.lessons;
+  // Ratings depend only on the grouping and titles, not on word timings.
+  const lessons = ctx.store.data.lesson_outline ?? ctx.store.data.lessons;
   if (!lessons || lessons.trim() === "") return;
 
   let lastResponse: string | null = null;

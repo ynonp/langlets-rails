@@ -56,6 +56,10 @@ export class ProgressStore {
     return present(this.data.lessons);
   }
 
+  lessonOutlineDone(): boolean {
+    return present(this.data.lesson_outline);
+  }
+
   lessonsRated(): boolean {
     return (this.data.lesson_ratings?.length ?? 0) > 0;
   }
@@ -73,6 +77,12 @@ export class ProgressStore {
     const payload = this.translationPayload(iso);
     if (!payload || payload.phrases.length === 0) return false;
     return payload.phrases.every((p) => present(p.text));
+  }
+
+  translationLinesDone(iso: string): boolean {
+    const lines = this.data.translation_lines?.[iso];
+    const expected = this.data.lyric_lines?.length ?? this.data.phrases?.length ?? 0;
+    return expected > 0 && lines?.length === expected && lines.every(present);
   }
 
   // A phrase's token translations are done when its words array is fully

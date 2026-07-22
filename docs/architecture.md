@@ -139,6 +139,15 @@ server's `/run`; results come back through `PipelineCallbacksController`. Both
 entry points use it — `CreateCourseJob` (the `/courses/new` form) and
 `AddCourseTranslationJob` (adding a language to an existing course).
 
+After lyrics extraction, forced alignment, lesson generation, and sentence translation run
+concurrently. The lesson branch groups and rates the untimestamped `lyric_lines`, persisting its
+intermediate grouping as `data["lesson_outline"]`; sentence translation persists its result under
+`data["translation_lines"][iso]`. Once alignment supplies timed phrases, the pipeline materializes
+the same timestamped `data["lessons"]` and version-2 `data["translations"][iso]["phrases"]` formats
+consumed by course building. Token translation chains directly from forced alignment and starts as
+soon as timed words exist, without waiting for lesson generation or sentence translation. The
+similar-sound step runs from the aligned phrases after the early branches settle.
+
 **The trigger does not wait.** It POSTs `/run?async=1`, the pipeline answers
 `202`, and the job returns — so a worker thread is never held for the minutes a
 run takes, and one process can have any number of imports in flight. See

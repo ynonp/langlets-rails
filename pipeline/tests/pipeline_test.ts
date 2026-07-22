@@ -117,7 +117,95 @@ Deno.test("a fresh run walks every step and finalizes the translation payload", 
   assert(sink.ops.some((op) => op.path === "lessons"));
 });
 
-Deno.test("a force_alignment failure stops the run before the fan-out", async () => {
+Deno.test("lessons and sentence translation start while force alignment is running", async () => {
+  const { mocks, models } = happyMocks();
+  let alignmentStarted = false;
+  let releaseAlignment!: () => void;
+  const lessonStarted = new Promise<void>((resolve) => (releaseAlignment = resolve));
+  let releaseTranslation!: () => void;
+  const translationStarted = new Promise<void>((resolve) => (releaseTranslation = resolve));
+  const baseLessonsModel = mocks.lessons.model as unknown as {
+    doGenerate(options: unknown): Promise<unknown>;
+  };
+
+  models.addLessons = Object.assign({}, mocks.lessons.model as object, {
+    doGenerate(options: unknown) {
+      assert(alignmentStarted, "lesson generation should start after alignment was launched");
+      releaseAlignment();
+      return baseLessonsModel.doGenerate(options);
+    },
+  }) as unknown as typeof models.addLessons;
+
+  const baseTranslateModel = mocks.translate.model as unknown as {
+    doGenerate(options: unknown): Promise<unknown>;
+  };
+  models.translate = Object.assign({}, mocks.translate.model as object, {
+    doGenerate(options: unknown) {
+      assert(alignmentStarted, "translation should start after alignment was launched");
+      releaseTranslation();
+      return baseTranslateModel.doGenerate(options);
+    },
+  }) as unknown as typeof models.translate;
+
+  const alignLyrics = async () => {
+    alignmentStarted = true;
+    await Promise.all([lessonStarted, translationStarted]);
+    return alignment(alignedBatch(1, 2));
+  };
+
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics,
+  });
+
+  assert(result.ok, JSON.stringify(result.failed));
+  assertEquals(result.data.lessons, "# Lesson\n00:00.00 Line 1\n00:10.00 Line 2");
+});
+
+Deno.test("token translation starts after alignment without waiting for lessons", async () => {
+  const { mocks, models } = happyMocks();
+  let releaseLessons!: () => void;
+  const tokenStarted = new Promise<void>((resolve) => (releaseLessons = resolve));
+
+  const baseLessonsModel = mocks.lessons.model as unknown as {
+    doGenerate(options: unknown): Promise<unknown>;
+  };
+  models.addLessons = Object.assign({}, mocks.lessons.model as object, {
+    async doGenerate(options: unknown) {
+      await tokenStarted;
+      return await baseLessonsModel.doGenerate(options);
+    },
+  }) as unknown as typeof models.addLessons;
+
+  const baseTokensModel = mocks.tokens.model as unknown as {
+    doGenerate(options: unknown): Promise<unknown>;
+  };
+  models.tokenTranslations = Object.assign({}, mocks.tokens.model as object, {
+    doGenerate(options: unknown) {
+      releaseLessons();
+      return baseTokensModel.doGenerate(options);
+    },
+  }) as unknown as typeof models.tokenTranslations;
+
+  const result = await runPipeline(payload(), {
+    models,
+    sink: new MemorySink(),
+    baseDelayMs: 0,
+    fuzzywordFor: noDictionary,
+    prepareAudio: stubAudio,
+    alignLyrics: happyAligner().align,
+  });
+
+  assert(result.ok, JSON.stringify(result.failed));
+  assertEquals(mocks.tokens.calls(), 1);
+  assertEquals(mocks.lessons.calls(), 1);
+});
+
+Deno.test("a force_alignment failure keeps parallel lesson work but stops downstream", async () => {
   // ElevenLabs is down and the Gemini backup has no response queued either.
   const { mocks, models } = happyMocks();
   const aligner = stubAlign([
@@ -139,8 +227,12 @@ Deno.test("a force_alignment failure stops the run before the fan-out", async ()
   assert(result.failed.force_alignment);
   // The transcription itself survived, so a rerun only retries the timing.
   assertEquals(result.data.lyric_lines, ["Line 1", "Line 2"]);
-  assertEquals(mocks.lessons.calls(), 0);
-  assertEquals(mocks.translate.calls(), 0);
+  assertEquals(mocks.lessons.calls(), 1);
+  assertEquals(mocks.rate.calls(), 1);
+  assertEquals(result.data.lesson_outline, "# Lesson\nLine 1\nLine 2");
+  assertEquals(result.data.lessons, undefined);
+  assertEquals(mocks.translate.calls(), 1);
+  assertEquals(result.data.translation_lines!.he, ["שורה 1", "שורה 2"]);
   assertEquals(mocks.tokens.calls(), 0);
 });
 

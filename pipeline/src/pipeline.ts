@@ -3,10 +3,13 @@
 //
 //   extract_lyrics                          (Gemini: the lyrics text)
 //        │
-//   force_alignment                         (word timings, Gemini as backup)
+//        ├── force_alignment                (word timings, Gemini as backup)
+//        │        └── add_token_translations (starts as soon as alignment finishes)
+//        ├── add_lessons ──► rate_lessons   (lesson outline branch)
+//        └── translate                      (sentence translation lines)
+//        │                                  (all three run concurrently)
+//   materialize lessons + translations      (join with aligned phrases)
 //        │
-//        ├── add_lessons ──► rate_lessons   (lessons branch)
-//        ├── translate                      (sentence translations)
 //        ├── add_token_translations         (word translations, 4-way chunked)
 //        └── add_similar_sound              (dictionary lookup, no LLM)
 //        │
@@ -26,12 +29,16 @@ import { dataSummary } from "./context.ts";
 import { message } from "./retry.ts";
 import { extractLyrics } from "./steps/extractLyrics.ts";
 import { forceAlignment } from "./steps/forceAlignment.ts";
-import { addLessons } from "./steps/addLessons.ts";
+import { addLessons, materializeLessons } from "./steps/addLessons.ts";
 import { rateLessons } from "./steps/rateLessons.ts";
 import { translate } from "./steps/translate.ts";
 import { addTokenTranslations } from "./steps/addTokenTranslations.ts";
 import { addSimilarSound } from "./steps/addSimilarSound.ts";
-import { finalizeTranslation, initTranslationPayload } from "./steps/finalizeTranslation.ts";
+import {
+  finalizeTranslation,
+  initTranslationPayload,
+  materializeTranslationLines,
+} from "./steps/finalizeTranslation.ts";
 import type { Fuzzyword } from "./fuzzyword.ts";
 
 export interface RunOptions {
@@ -90,32 +97,77 @@ export async function runPipeline(
     }
   }
 
-  if (!store.forceAlignmentDone()) {
+  // Timing, lesson grouping, and sentence translation need only lyric_lines,
+  // so start them together. Their final phrase-shaped data is materialized
+  // only after alignment settles.
+  const alignmentPromise = (async () => {
+    if (!store.forceAlignmentDone()) await forceAlignment(ctx);
+  })();
+  const preparation: Record<string, () => Promise<void>> = {
+    force_alignment: () => alignmentPromise,
+    lessons: async () => {
+      // Existing records created before lesson_outline already have their
+      // final timestamped lessons; keep those resumable without redoing AI.
+      if (!store.lessonOutlineDone() && !store.lessonsDone()) await addLessons(ctx);
+      if (!store.lessonsRated()) await rateLessons(ctx);
+    },
+    translate: async () => {
+      const iso = ctx.translationLanguage?.iso_name;
+      if (iso && !store.translationLinesDone(iso) && !store.translateDone(iso)) {
+        await translate(ctx);
+      }
+    },
+    token_translations: async () => {
+      // A failed alignment is reported by its own branch. Token work simply
+      // cannot start in that case and should not duplicate the same failure.
+      try {
+        await alignmentPromise;
+      } catch {
+        return;
+      }
+
+      const iso = ctx.translationLanguage?.iso_name;
+      if (!iso) return;
+      await initTranslationPayload(ctx);
+      if (!store.tokenTranslationsDone(iso)) await addTokenTranslations(ctx);
+    },
+  };
+  const preparationLabels = Object.keys(preparation);
+  const preparationSettled = await Promise.allSettled(
+    preparationLabels.map((label) => preparation[label]()),
+  );
+  preparationSettled.forEach((r, i) => {
+    if (r.status === "rejected") failed[preparationLabels[i]] = message(r.reason);
+  });
+
+  // Nothing else can usefully proceed without timed phrases. Keep any lesson
+  // work that completed so a retry can resume it.
+  if (failed.force_alignment) return result(store, failed);
+
+  if (!failed.lessons && !store.lessonsDone()) {
     try {
-      await forceAlignment(ctx);
+      await materializeLessons(ctx);
     } catch (error) {
-      failed.force_alignment = message(error);
-      return result(store, failed);
+      failed.lessons = message(error);
     }
   }
 
   const iso = ctx.translationLanguage?.iso_name ?? null;
-  if (iso) await initTranslationPayload(ctx);
+  if (iso) {
+    await initTranslationPayload(ctx);
+    if (!failed.translate && !store.translateDone(iso)) {
+      try {
+        await materializeTranslationLines(ctx);
+      } catch (error) {
+        failed.translate = message(error);
+      }
+    }
+  }
 
   // Fan out. Each branch settles independently: a failure in one records its
   // error (steps append to data.errors themselves) without discarding the
   // others' completed — and persisted — work.
   const branches: Record<string, () => Promise<void>> = {
-    lessons: async () => {
-      if (!store.lessonsDone()) await addLessons(ctx);
-      if (!store.lessonsRated()) await rateLessons(ctx);
-    },
-    translate: async () => {
-      if (iso && !store.translateDone(iso)) await translate(ctx);
-    },
-    token_translations: async () => {
-      if (iso && !store.tokenTranslationsDone(iso)) await addTokenTranslations(ctx);
-    },
     similar_sounds: async () => {
       if (!store.similarSoundsDone()) await addSimilarSound(ctx);
     },

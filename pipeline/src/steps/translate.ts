@@ -1,12 +1,9 @@
-// Port of CreateSong::Translate: translate every phrase line into the target
-// language. Unlike the Ruby version (which wrote text_l2 inline on each phrase
-// and relied on pack_translation to move it later), this writes straight into
-// the language's payload at translations.<iso>.phrases.<i>.text — that keeps
-// it from ever touching the same keys as the token-translation branch running
-// in parallel.
+// Translate the extracted lyric lines before force alignment finishes. The
+// result is persisted at translation_lines.<iso>; after alignment creates the
+// phrase payload, materializeTranslationLines copies it into the stable v2
+// translations.<iso>.phrases shape.
 
 import { generateText } from "ai";
-import type { PatchOp } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { translatePrompt } from "../prompts/translate.ts";
@@ -18,8 +15,8 @@ export async function translate(ctx: PipelineContext): Promise<void> {
   const language = ctx.translationLanguage;
   if (!language) return;
 
-  const phrases = ctx.store.data.phrases ?? [];
-  const originalLyrics = phrases.map((p) => p.text_l1);
+  const originalLyrics = ctx.store.data.lyric_lines ??
+    (ctx.store.data.phrases ?? []).map((phrase) => phrase.text_l1);
   const userContent = originalLyrics.join("\n");
 
   let lastResponse: string | null = null;
@@ -40,9 +37,9 @@ export async function translate(ctx: PipelineContext): Promise<void> {
           .split("\n")
           .map((l) => l.replace(/\s+$/, ""))
           .filter((l) => l.trim() !== "");
-        if (lines.length !== phrases.length) {
+        if (lines.length !== originalLyrics.length) {
           throw new Error(
-            `Bad translation, line count doesnt match ${lines.length} != ${phrases.length}`,
+            `Bad translation, line count doesnt match ${lines.length} != ${originalLyrics.length}`,
           );
         }
         return lines;
@@ -55,12 +52,10 @@ export async function translate(ctx: PipelineContext): Promise<void> {
       },
     );
 
-    const ops: PatchOp[] = translationLines.map((text, i) => ({
-      op: "set",
-      path: `translations.${language.iso_name}.phrases.${i}.text`,
-      value: text.replaceAll("[", "(").replaceAll("]", ")"),
-    }));
-    await ctx.store.patch(ops);
+    await ctx.store.set(
+      `translation_lines.${language.iso_name}`,
+      translationLines.map((text) => text.replaceAll("[", "(").replaceAll("]", ")")),
+    );
     await clearErrors(ctx, "translate");
   } catch (error) {
     await recordError(ctx, "translate", error, {

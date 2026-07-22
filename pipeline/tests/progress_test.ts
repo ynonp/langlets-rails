@@ -130,6 +130,23 @@ Deno.test("translateDone requires every phrase text in the language payload", ()
   assertFalse(store.translateDone("en"));
 });
 
+Deno.test("translationLinesDone validates the pre-alignment line count", () => {
+  const sink = new MemorySink();
+  assertFalse(new ProgressStore({ lyric_lines: ["one", "two"] }, sink).translationLinesDone("he"));
+  assertFalse(
+    new ProgressStore(
+      { lyric_lines: ["one", "two"], translation_lines: { he: ["אחד"] } },
+      sink,
+    ).translationLinesDone("he"),
+  );
+  assert(
+    new ProgressStore(
+      { lyric_lines: ["one", "two"], translation_lines: { he: ["אחד", "שתיים"] } },
+      sink,
+    ).translationLinesDone("he"),
+  );
+});
+
 Deno.test("tokenTranslationsDone tracks per-phrase completion", () => {
   const sink = new MemorySink();
   const store = new ProgressStore({

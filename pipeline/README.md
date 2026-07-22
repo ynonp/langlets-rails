@@ -11,28 +11,48 @@ mutation is streamed back to a callback URL the trigger request provides.
 The Ruby `create_data` ran six steps sequentially. Here everything after `extract_lyrics` fans out:
 
 ```
-extract_lyrics                              (sequential, lyrics + forced alignment)
+extract_lyrics                              (lyrics text)
      │
-     ├── add_lessons ──► rate_lessons       (lessons branch)
-     ├── translate                          (sentence translations)
-     ├── add_token_translations             (word translations, 4 chunks in flight)
+     ├── force_alignment ──► add_token_translations
+     │                         (4 chunks in flight)
+     ├── add_lessons ──► rate_lessons       (untimestamped lesson outline)
+     └── translate                          (sentence translation lines)
+     │                                      (all three run concurrently)
+materialize lessons + translations          (join with aligned phrases)
+     │
      └── add_similar_sound                  (dictionary lookup, no LLM)
      │
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
+Lesson generation reads `lyric_lines`, so it does not wait for alignment. It persists an
+untimestamped `lesson_outline`; after alignment and lesson generation settle, the orchestrator
+combines that outline with the aligned phrases into the existing timestamped `lessons` format.
+This keeps the stored course-building contract unchanged while hiding alignment latency behind the
+lesson and sentence-translation model calls.
+
+Sentence translation follows the same pattern: it reads `lyric_lines` and persists
+`translation_lines.<iso>` while alignment is running. After alignment, those lines are copied into
+the stable `translations.<iso>.phrases.<i>.text` payload slots.
+
+Token translation depends on the aligned word structure, but not on either lesson call. It chains
+directly from the alignment promise: as soon as timed phrases exist, the language payload is
+initialized and token chunks begin, even if lesson generation or sentence translation is still
+running.
+
 The fan-out is safe because the branches write **disjoint keys** of `CreateSongProgress.data`:
 
-- the lessons branch writes `lessons` and `lesson_ratings`;
-- `translate` writes `translations.<iso>.phrases.<i>.text`;
+- the early lessons branch writes `lesson_outline` and `lesson_ratings`, then the join writes
+  `lessons`;
+- early sentence translation writes `translation_lines.<iso>`, then the join writes
+  `translations.<iso>.phrases.<i>.text`;
 - `add_token_translations` writes `translations.<iso>.phrases.<i>.words`.
 
-This required one deliberate change from the Ruby flow: translation steps write **directly into the
-version-2 language payload** (`data.translations[iso]`) instead of writing inline `text_l2` / word
-`translation` keys and packing them later (`DataFormat.pack_translation`). Both branches previously
-mutated the shared `data.phrases`, which cannot be done concurrently. The final blob shape is
-identical to what Rails produces — `data.phrases` stays language-neutral, guards like
-`translation_complete?` keep working — but nothing ever transits through the inline legacy keys.
+This required one deliberate change from the Ruby flow: translation steps use language-keyed
+intermediates and the version-2 language payload (`data.translations[iso]`) instead of writing
+inline `text_l2` / word `translation` keys and packing them later (`DataFormat.pack_translation`).
+The final blob shape is identical to what Rails produces — `data.phrases` stays language-neutral
+and guards like `translation_complete?` keep working.
 
 `add_similar_sound` is extracted too. The Ruby step shelled out to the `fuzzyword` Rust CLI (a
 SymSpell wrapper); `src/fuzzyword.ts` ports it — OSA edit distance ≤ 2 over the per-language

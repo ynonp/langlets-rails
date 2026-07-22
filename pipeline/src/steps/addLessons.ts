@@ -1,7 +1,7 @@
-// Port of CreateSong::AddLessons: group the transcribed phrases into short
-// titled lessons. The LLM returns titles + line groupings; we keep our own
-// phrase text (matched by count per block) so the lesson body is always
-// verbatim transcript lines, never the model's paraphrase.
+// Group the extracted lyric lines into short titled lessons. This deliberately
+// runs before phrase timings exist, in parallel with force alignment. The LLM
+// output is normalized back to our own lyric text and saved as lesson_outline;
+// materializeLessons adds timestamps after the two branches join.
 
 import { generateText } from "ai";
 import type { PipelineContext } from "../context.ts";
@@ -12,15 +12,15 @@ import { withRetries } from "../retry.ts";
 const MAX_RETRIES = 5;
 
 export async function addLessons(ctx: PipelineContext): Promise<void> {
-  const phrases = ctx.store.data.phrases ?? [];
-  const clipLines = phrases.map((p) => `${p.timestamp} ${p.text_l1}`).join("\n");
-  const userContent = phrases.map((p) => p.text_l1).join("\n");
+  const sourceLines = ctx.store.data.lyric_lines ??
+    (ctx.store.data.phrases ?? []).map((phrase) => phrase.text_l1);
+  const userContent = sourceLines.join("\n");
 
   let lastResponse: string | null = null;
   let attempts = 0;
 
   try {
-    const lessons = await withRetries(
+    const outline = await withRetries(
       async () => {
         const { text } = await generateText({
           model: ctx.models.addLessons,
@@ -31,7 +31,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
         lastResponse = text;
         if (!text) throw new Error("LLM returned nil");
 
-        return matchLessonDataToPrompt(clipLines, text);
+        return matchLessonDataToPrompt(userContent, text);
       },
       {
         maxRetries: MAX_RETRIES,
@@ -41,7 +41,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
       },
     );
 
-    await ctx.store.set("lessons", lessons);
+    await ctx.store.set("lesson_outline", outline);
     await clearErrors(ctx, "add_lessons");
   } catch (error) {
     await recordError(ctx, "add_lessons", error, {
@@ -50,6 +50,17 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
     });
     throw error;
   }
+}
+
+export async function materializeLessons(ctx: PipelineContext): Promise<void> {
+  const outline = ctx.store.data.lesson_outline;
+  const phrases = ctx.store.data.phrases ?? [];
+  if (!outline || phrases.length === 0) return;
+
+  const timestampedLines = phrases.map((phrase) => `${phrase.timestamp} ${phrase.text_l1}`).join(
+    "\n",
+  );
+  await ctx.store.set("lessons", matchLessonDataToPrompt(timestampedLines, outline));
 }
 
 function translationName(ctx: PipelineContext): string {
