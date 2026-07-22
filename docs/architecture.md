@@ -35,6 +35,9 @@ Watch-video activities preload an interactive YouTube iframe with YouTube's
 native controls. Their activity parameters opt into this mode, so the shared
 lesson player omits its click-capturing overlay and custom play/progress chrome
 while retaining the activity's segment boundary and `video:*` event contract.
+When native playback begins before the activity's first phrase, the activity's
+play listener seeks forward to the segment start; playback already at or after
+that boundary is not moved.
 At the segment end, the shared controller emits `video:end`, pauses, and seeks
 back to the segment start so the native play control replays the lesson.
 Hidden and compact activity players remain on the custom controls path.

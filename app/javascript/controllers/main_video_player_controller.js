@@ -108,6 +108,18 @@ export default class extends Controller {
     }
   }
 
+  async seekToSegmentStartIfBefore(event) {
+    if (!this.player) return;
+
+    const segmentStart = Number(event.currentTarget.dataset.segmentStart);
+    if (!Number.isFinite(segmentStart)) return;
+
+    const currentTime = await this.player.getCurrentTime();
+    if (currentTime < segmentStart) {
+      await this.player.seekTo(segmentStart);
+    }
+  }
+
   fullPlayerStopPlayback() {
     if (this.hasPlayButtonTarget) {
       this.playButtonTarget.classList.remove('hidden');

@@ -96,6 +96,10 @@ under the `#main-player` container), but:
 - It preloads an interactive iframe and uses YouTube's native controls. The
   shared lesson layout does not render its custom click overlay, play button,
   time display, or progress bar for this activity.
+- If the native play control starts playback before the activity's first
+  phrase, its `video:play` listener immediately seeks to the segment start.
+  Playback already within the segment is left unchanged so pause/resume and
+  transcript seeks continue from the selected time.
 - When the segment finishes, the player pauses and rewinds to its start so the
   next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translation toggle, and a

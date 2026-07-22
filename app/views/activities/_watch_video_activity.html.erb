@@ -18,6 +18,7 @@
     data-controller="watch-video-activity"
     data-main-video-player-target="videoListener videoSegment"
     data-action="
+      video:play->main-video-player#seekToSegmentStartIfBefore
       video:play->main-video-player#fullPlayerStartPlayback
       video:stop->main-video-player#fullPlayerStopPlayback
       video:play->watch-video-activity#handleVideoStart
