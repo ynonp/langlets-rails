@@ -11,7 +11,7 @@ mutation is streamed back to a callback URL the trigger request provides.
 Everything after transcription and forced alignment fans out:
 
 ```
-extract_lyrics                              (Supadata transcript text + line splitting)
+extract_lyrics                              (Supadata native captions; YouTube Gemini fallback)
      │
 force_alignment                             (ElevenLabs word timings)
      │
@@ -26,10 +26,11 @@ materialize lessons + translations          (join with aligned phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-Supadata is requested with `mode=generate` and `text=false`, so it transcribes the source language.
-Its chunks are normalized into lines no longer than 42 characters, preferring periods, then commas,
-then whitespace. ElevenLabs forced alignment maps those known words to the audio and materializes
-the timed phrases.
+Supadata is requested once with `mode=native` and `text=false`. If native captions are unavailable
+for YouTube, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
+currently stop at the native-caption failure. Supadata chunks are normalized into lines no longer
+than 42 characters, preferring periods, then commas, then whitespace. ElevenLabs forced alignment
+maps those known words to the audio and materializes the timed phrases.
 
 Lesson generation reads `lyric_lines` and persists an untimestamped `lesson_outline`; the
 orchestrator combines that outline with the aligned phrases into the existing timestamped `lessons`
@@ -73,7 +74,7 @@ lessons branch failed, and a rerun fills it in.
 
 | Step                                                | Model                   | Provider                                       |
 | --------------------------------------------------- | ----------------------- | ---------------------------------------------- |
-| extract_lyrics                                      | Transcript API          | Supadata (`mode=generate`)                     |
+| extract_lyrics                                      | Native captions / LLM fallback | Supadata (`mode=native`) / Gemini 2.5 Flash |
 | force_alignment                                     | Forced Alignment API    | ElevenLabs                                     |
 | add_lessons / rate_lessons / add_token_translations | `deepseek-v4-pro:cloud` | Ollama cloud via `@ai-sdk/openai-compatible`   |
 | translate                                           | `qwen3.5:397b-cloud`    | Ollama cloud via `@ai-sdk/openai-compatible`   |

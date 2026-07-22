@@ -1,6 +1,6 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
 import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
-import { makeCtx, stubTranscribe, transcriptFixture } from "./helpers.ts";
+import { makeCtx, queuedModel, stubTranscribe, transcriptFixture } from "./helpers.ts";
 
 Deno.test("saves split Supadata transcript text for alignment", async () => {
   const transcriber = stubTranscribe([transcriptFixture(1, 2)]);
@@ -15,30 +15,32 @@ Deno.test("saves split Supadata transcript text for alignment", async () => {
   assertEquals(transcriber.requests[0].languageCode, "fr");
 });
 
-Deno.test("retries Supadata failures", async () => {
-  const transcriber = stubTranscribe([new Error("temporary"), transcriptFixture(1, 1)]);
-  const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
+Deno.test("falls back to Gemini immediately when YouTube native captions fail", async () => {
+  const transcriber = stubTranscribe([new Error("transcript-unavailable")]);
+  const gemini = queuedModel(["First line\nSecond line"]);
+  const { ctx, store } = makeCtx({
+    transcribeVideo: transcriber.transcribe,
+    models: { extractLyrics: gemini.model },
+  });
 
   await extractLyrics(ctx);
 
-  assertEquals(transcriber.calls(), 2);
-  assertEquals(store.data.lyric_lines, ["Line 1"]);
+  assertEquals(transcriber.calls(), 1);
+  assertEquals(gemini.calls(), 1);
+  assertEquals(store.data.lyric_lines, ["First line", "Second line"]);
 });
 
-Deno.test("records a Supadata failure and leaves resume flags set", async () => {
-  const transcriber = stubTranscribe([
-    new Error("Supadata unavailable"),
-    new Error("Supadata unavailable"),
-    new Error("Supadata unavailable"),
-  ]);
+Deno.test("does not use Gemini fallback for a non-YouTube provider", async () => {
+  const transcriber = stubTranscribe([new Error("Supadata unavailable")]);
   const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
+  ctx.youtubeurl = "https://vimeo.com/123";
 
   await assertRejects(() => extractLyrics(ctx), Error, "Supadata unavailable");
 
   assert(store.data.extract_lyrics_in_progress);
   assert(store.data.force_alignment_in_progress);
   assertEquals(store.data.errors![0].step, "extract_lyrics");
-  assertEquals(store.data.errors![0].attempts, 3);
+  assertEquals(store.data.errors![0].attempts, undefined);
 });
 
 Deno.test("a successful rerun clears only transcription errors", async () => {

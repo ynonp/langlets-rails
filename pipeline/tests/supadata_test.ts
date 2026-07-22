@@ -1,7 +1,7 @@
 import { assertEquals, assertRejects } from "@std/assert";
 import { MAX_LINE_LENGTH, transcribeWithSupadata, transcriptToLines } from "../src/supadata.ts";
 
-Deno.test("Supadata client sends a generated timestamped transcript request", async () => {
+Deno.test("Supadata client sends a native timestamped transcript request", async () => {
   let requested: URL | null = null;
   const result = await transcribeWithSupadata("https://youtu.be/test", "fr", {
     apiKey: "secret",
@@ -20,7 +20,7 @@ Deno.test("Supadata client sends a generated timestamped transcript request", as
   });
 
   assertEquals(requested!.pathname, "/v1/transcript");
-  assertEquals(requested!.searchParams.get("mode"), "generate");
+  assertEquals(requested!.searchParams.get("mode"), "native");
   assertEquals(requested!.searchParams.get("text"), "false");
   assertEquals(requested!.searchParams.get("lang"), "fr");
   assertEquals(result.content.length, 1);

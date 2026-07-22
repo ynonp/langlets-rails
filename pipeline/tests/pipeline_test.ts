@@ -47,6 +47,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
   return {
     mocks,
     models: {
+      extractLyrics: unusedModel().model,
       addLessons: mocks.lessons.model,
       rateLessons: mocks.rate.model,
       translate: mocks.translate.model,
@@ -89,7 +90,7 @@ Deno.test("a fresh Supadata run walks every step and finalizes translation", asy
   assert(sink.ops.some((op) => op.path === "phrases"));
 });
 
-Deno.test("a Supadata failure stops before downstream branches", async () => {
+Deno.test("failed native captions and Gemini fallback stop before downstream branches", async () => {
   const { mocks, models } = happyMocks();
   const transcriber = stubTranscribe([new Error("down"), new Error("down"), new Error("down")]);
   const result = await runPipeline(payload(), {

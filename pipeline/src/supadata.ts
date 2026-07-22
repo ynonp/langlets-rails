@@ -78,7 +78,7 @@ export async function transcribeWithSupadata(
   const url = new URL(`${BASE_URL}/transcript`);
   url.searchParams.set("url", videoUrl);
   url.searchParams.set("text", "false");
-  url.searchParams.set("mode", "generate");
+  url.searchParams.set("mode", "native");
   if (languageCode) url.searchParams.set("lang", languageCode);
 
   const response = await request(url, { headers: { "x-api-key": apiKey } });

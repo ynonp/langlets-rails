@@ -1,5 +1,5 @@
 // Model wiring. Same models as the Ruby concerns' MODEL_PARAMS:
-//   extract_lyrics          Supadata transcript API    (not an LLM)
+//   extract_lyrics          Supadata native captions, then Gemini 2.5 Flash for YouTube
 //   add_lessons             deepseek-v4-pro:cloud     (Ollama cloud)
 //   rate_lessons            deepseek-v4-pro:cloud     (Ollama cloud)
 //   add_token_translations  deepseek-v4-pro:cloud     (Ollama cloud)
@@ -15,6 +15,7 @@ import type { LanguageModel } from "ai";
 import { llmLoggingEnabled, withLlmLogging } from "./llmLogging.ts";
 
 export interface ModelRegistry {
+  extractLyrics: LanguageModel;
   addLessons: LanguageModel;
   rateLessons: LanguageModel;
   translate: LanguageModel;
@@ -42,6 +43,9 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     : (model: LanguageModel, _label: string) => model;
 
   return {
+    extractLyrics: llmLoggingEnabled(env)
+      ? withLlmLogging(google("gemini-2.5-flash"), "extract_lyrics", { logPrompt: true })
+      : google("gemini-2.5-flash"),
     addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
     rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
     translate: log(ollama("qwen3.5:397b-cloud"), "translate"),

@@ -154,14 +154,14 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 
 | Step | Model | Provider |
 |---|---|---|
-| `extract_lyrics` (transcript text) | Transcript API | Supadata |
+| `extract_lyrics` (transcript text) | Native captions; YouTube AI fallback | Supadata; Gemini 2.5 Flash |
 | `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `add_token_translations` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `translate` | `qwen3.5:397b-cloud` | Ollama cloud |
 
-`extract_lyrics` requests a generated transcript from Supadata and deterministically splits it into lines of at most 42 characters, preferring periods and then commas. `force_alignment` downloads the audio and asks ElevenLabs to locate those known words, preserving the existing word-timing contract.
+`extract_lyrics` makes one `mode=native` Supadata request. When that fails for a YouTube URL, it asks Gemini 2.5 Flash to transcribe the video with the lyric-specific prompt; other providers currently fail instead of using generated transcription. Supadata captions are deterministically split into lines of at most 42 characters, preferring periods and then commas. `force_alignment` downloads the audio and asks ElevenLabs to locate those known words, preserving the existing word-timing contract.
 
 Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 

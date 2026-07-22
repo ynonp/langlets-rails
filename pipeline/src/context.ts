@@ -24,7 +24,7 @@ export interface PipelineContext {
   // dictionary and a fixed RNG).
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
-  // Injection point for Supadata transcription (tests avoid network calls).
+  // Injection point for Supadata native captions (tests avoid network calls).
   transcribeVideo?: (videoUrl: string, languageCode: string | null) => Promise<TranscriptResult>;
   prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
   alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;

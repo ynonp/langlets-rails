@@ -102,6 +102,7 @@ export function makeCtx(options: {
   const store = new ProgressStore(options.data ?? {}, sink);
 
   const models: ModelRegistry = {
+    extractLyrics: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,
     translate: unusedModel().model,

@@ -139,13 +139,16 @@ server's `/run`; results come back through `PipelineCallbacksController`. Both
 entry points use it — `CreateCourseJob` (the `/courses/new` form) and
 `AddCourseTranslationJob` (adding a language to an existing course).
 
-Supadata performs source-language transcription in one blocking request. The pipeline uses
-`mode=generate`, supports both immediate and asynchronous job responses, and normalizes each
-returned chunk into `lyric_lines`. Lines are capped at 42 characters: complete sentences split at
-period boundaries, oversized sentences prefer comma boundaries, then whitespace, with a hard split
-only when a single token is longer than the limit. The pipeline downloads the YouTube audio and
-sends the resulting text to ElevenLabs forced alignment, which supplies the word-level timestamps
-used to materialize `phrases`.
+The pipeline first asks Supadata for existing provider captions with `mode=native`; this is a single
+request with no application-level retry, and supports both immediate and asynchronous job responses.
+When native captions are unavailable for a YouTube URL, `extract_lyrics` falls back to Gemini 2.5
+Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
+yet have a generated-transcript fallback. Supadata chunks are normalized into `lyric_lines`, while
+Gemini already returns one line per phrase. Lines are capped at 42 characters: complete sentences
+split at period boundaries, oversized sentences prefer comma boundaries, then whitespace, with a
+hard split only when a single token is longer than the limit. The pipeline downloads the YouTube
+audio and sends the resulting text to ElevenLabs forced alignment, which supplies the word-level
+timestamps used to materialize `phrases`.
 
 After transcription, lesson generation, sentence translation, and token translation run
 concurrently. The lesson branch groups and rates the `lyric_lines`, persisting its
@@ -194,10 +197,11 @@ pipeline runs on another host, so `localhost:3000` there is itself, and it must
 point at a tunnel (ngrok) to the local server. Model-provider keys now live
 only on the pipeline host; Rails no longer needs them at all.
 
-Supadata receives the video URL directly for transcription. Forced alignment still requires the
-audio bytes, so the pipeline downloads them with `yt-dlp`; `YTDLP_NETWORK_NAMESPACE` may route only
-that subprocess through a configured Linux network namespace. The Deno service needs write access
-for the temporary file and run permission for `yt-dlp` and `ip`.
+Supadata receives the video URL directly when fetching native captions; Gemini receives the YouTube
+URL directly only when that native request fails. Forced alignment still requires the audio bytes,
+so the pipeline downloads them with `yt-dlp`; `YTDLP_NETWORK_NAMESPACE` may route only that
+subprocess through a configured Linux network namespace. The Deno service needs write access for
+the temporary file and run permission for `yt-dlp` and `ip`.
 
 ### Domain Models
 
