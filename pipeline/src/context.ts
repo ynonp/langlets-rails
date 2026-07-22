@@ -6,9 +6,9 @@ import type { LanguageRef, PipelineError, ProgressData } from "./types.ts";
 import type { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
 import type { Fuzzyword } from "./fuzzyword.ts";
+import type { TranscriptResult } from "./supadata.ts";
 import type { DownloadedAudio } from "./audio.ts";
 import type { Alignment } from "./alignment.ts";
-import type { TranscriptionResult } from "./transcription.ts";
 import { errorClass, message } from "./retry.ts";
 
 export interface PipelineContext {
@@ -24,12 +24,10 @@ export interface PipelineContext {
   // dictionary and a fixed RNG).
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
-  // Injection points for the transcription step (tests stub out the YouTube
-  // audio download, the ElevenLabs forced-alignment call, and the ElevenLabs
-  // STT fallback).
+  // Injection point for Supadata transcription (tests avoid network calls).
+  transcribeVideo?: (videoUrl: string, languageCode: string | null) => Promise<TranscriptResult>;
   prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
   alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;
-  transcribeAudio?: (audioPath: string, languageCode: string | null) => Promise<TranscriptionResult>;
 }
 
 export interface FailureDetails {

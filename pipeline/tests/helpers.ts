@@ -9,8 +9,9 @@ import { MemorySink } from "../src/callback.ts";
 import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
-import type { AlignedWord, Alignment } from "../src/alignment.ts";
-import type { TranscriptionResult } from "../src/transcription.ts";
+import type { TranscriptResult } from "../src/supadata.ts";
+import type { Alignment } from "../src/alignment.ts";
+import type { DownloadedAudio } from "../src/audio.ts";
 
 export interface QueuedModel {
   model: LanguageModel;
@@ -58,35 +59,21 @@ export function unusedModel(): QueuedModel {
 
 export const HEBREW: LanguageRef = { id: 3, iso_name: "he", english_name: "Hebrew" };
 
-// Stand-in for the real yt-dlp download: hands the step a fake local path and
-// a clip duration without touching the network. The path doesn't exist; the
-// step's cleanup ignores removal failures and the alignment call is stubbed.
-export const STUB_AUDIO_PATH = "/nonexistent/langlets-test-audio.m4a";
-
-export function stubAudioWith(durationSeconds: number | null) {
-  return () => Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds });
-}
-
-export const stubAudio = stubAudioWith(15);
-
-export interface StubAligner {
-  align: NonNullable<PipelineContext["alignLyrics"]>;
+// Network-free Supadata stand-in for step and orchestration tests.
+export interface StubTranscriber {
+  transcribe: NonNullable<PipelineContext["transcribeVideo"]>;
   calls: () => number;
-  // The (audioPath, text) pair each call received.
-  requests: Array<{ audioPath: string; text: string }>;
+  requests: Array<{ videoUrl: string; languageCode: string | null }>;
 }
 
-// An aligner that answers from a queue: Error entries are thrown (how we
-// simulate failed ElevenLabs calls), Alignment entries are returned. Throws
-// once the queue is exhausted.
-export function stubAlign(responses: Array<Alignment | Error>): StubAligner {
+export function stubTranscribe(responses: Array<TranscriptResult | Error>): StubTranscriber {
   let count = 0;
-  const requests: StubAligner["requests"] = [];
+  const requests: StubTranscriber["requests"] = [];
 
   return {
-    align: (audioPath, text) => {
-      requests.push({ audioPath, text });
-      if (count >= responses.length) throw new Error("stub aligner exhausted");
+    transcribe: (videoUrl, languageCode) => {
+      requests.push({ videoUrl, languageCode });
+      if (count >= responses.length) throw new Error("stub transcriber exhausted");
       const next = responses[count++];
       if (next instanceof Error) return Promise.reject(next);
       return Promise.resolve(next);
@@ -94,10 +81,6 @@ export function stubAlign(responses: Array<Alignment | Error>): StubAligner {
     calls: () => count,
     requests,
   };
-}
-
-export function alignment(words: AlignedWord[]): Alignment {
-  return { words, loss: 0.1 };
 }
 
 export interface TestSetup {
@@ -111,16 +94,14 @@ export function makeCtx(options: {
   models?: Partial<ModelRegistry>;
   translationLanguage?: LanguageRef | null;
   clipLanguage?: string;
+  transcribeVideo?: PipelineContext["transcribeVideo"];
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
-  transcribeAudio?: PipelineContext["transcribeAudio"];
 } = {}): TestSetup {
   const sink = new MemorySink();
   const store = new ProgressStore(options.data ?? {}, sink);
 
   const models: ModelRegistry = {
-    extractLyrics: unusedModel().model,
-    forceAlignment: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,
     translate: unusedModel().model,
@@ -137,58 +118,67 @@ export function makeCtx(options: {
       ? HEBREW
       : options.translationLanguage,
     baseDelayMs: 0,
-    prepareAudio: options.prepareAudio ?? stubAudio,
+    transcribeVideo: options.transcribeVideo,
+    prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
-    transcribeAudio: options.transcribeAudio,
   };
 
   return { ctx, store, sink };
 }
 
-// Lyrics + alignment fixtures for lines "Line 1", "Line 2", ...: the lyrics
-// text as Gemini would return it, and the matching ElevenLabs word list
-// (float seconds, two words per line, lines 10 seconds apart starting at
-// (n-1)*10 seconds).
+export const STUB_AUDIO_PATH = "/tmp/langlets-test-audio.m4a";
+
+export function stubAudioWith(durationSeconds: number | null) {
+  return (): Promise<DownloadedAudio> =>
+    Promise.resolve({ path: STUB_AUDIO_PATH, durationSeconds });
+}
+
+export function alignment(words: Alignment["words"]): Alignment {
+  return { words, loss: null };
+}
+
+export function alignedBatch(from: number, to: number): Alignment["words"] {
+  return Array.from({ length: to - from + 1 }, (_, index) => index + from).flatMap((n) => {
+    const start = (n - 1) * 10;
+    return [
+      { text: "Line", start, end: start + 1 },
+      { text: String(n), start: start + 2, end: start + 3 },
+    ];
+  });
+}
+
+export function stubAlign(responses: Array<Alignment | Error>) {
+  let count = 0;
+  const requests: Array<{ audioPath: string; text: string }> = [];
+  return {
+    align: (audioPath: string, text: string) => {
+      requests.push({ audioPath, text });
+      const next = responses[count++];
+      return next instanceof Error ? Promise.reject(next) : Promise.resolve(next);
+    },
+    calls: () => count,
+    requests,
+  };
+}
+
+// Timestamped Supadata fixture for lines "Line 1", "Line 2", ... .
 export function lyricsText(from: number, to: number): string {
   const lines = [];
   for (let n = from; n <= to; n++) lines.push(`Line ${n}`);
   return lines.join("\n");
 }
 
-export function alignedBatch(from: number, to: number): AlignedWord[] {
-  const words: AlignedWord[] = [];
+export function transcriptFixture(from: number, to: number): TranscriptResult {
+  const content = [];
   for (let n = from; n <= to; n++) {
-    const start = (n - 1) * 10;
-    words.push({ text: "Line", start, end: start + 1 });
-    words.push({ text: String(n), start: start + 2, end: start + 3 });
-  }
-  return words;
-}
-
-// The same lines and timings as alignedBatch, but in the JSON shape the Gemini
-// backup alignment call answers with (SRT timestamps, words nested per line).
-export function geminiAlignment(from: number, to: number): string {
-  const lines = [];
-  for (let n = from; n <= to; n++) {
-    const start = (n - 1) * 10;
-    lines.push({
-      line_start: srt(start),
-      line_end: srt(start + 3),
-      line_text: `Line ${n}`,
-      words: [
-        { word: "Line", start: srt(start), end: srt(start + 1) },
-        { word: String(n), start: srt(start + 2), end: srt(start + 3) },
-      ],
+    content.push({
+      text: `Line ${n}`,
+      offset: (n - 1) * 10_000,
+      duration: 3_000,
+      lang: "fr",
     });
   }
-  return JSON.stringify(lines);
-}
-
-function srt(seconds: number): string {
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  const pad = (v: number) => String(v).padStart(2, "0");
-  return `00:${pad(m)}:${pad(s)},000`;
+  return { content, lang: "fr", availableLangs: ["fr"] };
 }
 
 // The neutral phrases fixture downstream steps start from: two phrases, two

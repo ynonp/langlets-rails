@@ -2,6 +2,45 @@
 // wording in sync with the Rails template until the Ruby pipeline is
 // retired — these strings ARE the pipeline's behavior.
 
+const exampleInput = `Don't (*Don't* you want me like I want you baby) |
+you (Don't *you* want me like I want you baby) |
+want (Don't you *want* me like I want you baby) |
+you (Don't you want me like I want *you* baby) |
+baby (Don't you want me like I want you *baby*) |`;
+
+export const examples: Record<string, string> = {
+  English: `Don't (*Don't* you want me like I want you baby) | Don't
+you (Don't *you* want me like I want you baby) | you
+want (Don't you *want* me like I want you baby) | want
+you (Don't you want me like I want *you* baby) | you
+baby (Don't you want me like I want you *baby*) | baby`,
+  Hebrew: `Don't (*Don't* you want me like I want you baby) | לא
+you (Don't *you* want me like I want you baby) | אתה
+want (Don't you *want* me like I want you baby) | רוצה
+you (Don't you want me like I want *you* baby) | אותך
+baby (Don't you want me like I want you *baby*) | מותק`,
+  French: `Don't (*Don't* you want me like I want you baby) | Ne
+you (Don't *you* want me like I want you baby) | tu
+want (Don't you *want* me like I want you baby) | veux
+you (Don't you want me like I want *you* baby) | toi
+baby (Don't you want me like I want you *baby*) | bébé`,
+  Spanish: `Don't (*Don't* you want me like I want you baby) | No
+you (Don't *you* want me like I want you baby) | tú
+want (Don't you *want* me like I want you baby) | quieres
+you (Don't you want me like I want *you* baby) | ti
+baby (Don't you want me like I want you *baby*) | amor`,
+  German: `Don't (*Don't* you want me like I want you baby) | Willst
+you (Don't *you* want me like I want you baby) | du
+want (Don't you *want* me like I want you baby) | willst
+you (Don't you want me like I want *you* baby) | dich
+baby (Don't you want me like I want you *baby*) | Baby`,
+  Arabic: `Don't (*Don't* you want me like I want you baby) | لا
+you (Don't *you* want me like I want you baby) | أنت
+want (Don't you *want* me like I want you baby) | تريد
+you (Don't you want me like I want *you* baby) | إياك
+baby (Don't you want me like I want you *baby*) | حبيبي`,
+};
+
 export function addTokenTranslationsPrompt(
   clipLanguage: string,
   translationLanguage: string,
@@ -26,19 +65,16 @@ Add to each line after the | the translation of <word to translate> in the same 
    meaning, repeat it after the |.
 5. Output ONLY the translated lines — no preamble, no numbering, no markdown, no code fences.
 
-## Example Input:
-Don't (*Don't* you want me like I want you baby) |
-you (Don't *you* want me like I want you baby) |
-want (Don't you *want* me like I want you baby) |
-you (Don't you want me like I want *you* baby) |
-baby (Don't you want me like I want you *baby*) |
+${
+    examples[translationLanguage]
+      ? `## Example Input:
+${exampleInput}
 
 ## Expected Output:
-Don't (*Don't* you want me like I want you baby) | לא
-you (Don't *you* want me like I want you baby) | אתה
-want (Don't you *want* me like I want you baby) | רוצה
-you (Don't you want me like I want *you* baby) | אותך
-baby (Don't you want me like I want you *baby*) | מותק
+${examples[translationLanguage]}
+`
+      : ""
+  }
 
 Now translate the following. Output one line per input line, in order:`;
 }

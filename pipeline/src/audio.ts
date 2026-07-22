@@ -1,13 +1,5 @@
-// Audio sourcing for the alignment step: download the clip's audio track from
-// YouTube via the yt-dlp binary (which must be on PATH). The lyrics call
-// doesn't need this — Gemini reads the YouTube URL directly as a file part —
-// only ElevenLabs forced alignment needs the actual bytes.
-
 export interface DownloadedAudio {
-  // Local m4a file; the caller is responsible for removing it.
   path: string;
-  // Clip duration as reported by yt-dlp, for coverage checks and progress
-  // reporting. Null when yt-dlp doesn't report one.
   durationSeconds: number | null;
 }
 
@@ -18,86 +10,49 @@ export interface AudioDownloadCommand {
 
 const NETWORK_NAMESPACE_PATTERN = /^[A-Za-z0-9_.-]+$/;
 
-export function getVideoId(input: string): string {
-  if (/^[\w-]{11}$/.test(input)) return input;
-
-  const url = new URL(input);
-
-  if (url.hostname === "youtu.be") return url.pathname.split("/")[1];
-
-  const queryId = url.searchParams.get("v");
-  if (queryId) return queryId;
-
-  const match = url.pathname.match(/^\/(?:shorts|embed|live)\/([\w-]{11})/);
-  if (match) return match[1];
-
-  throw new Error(`Invalid YouTube URL: ${input}`);
-}
-
 export function audioDownloadCommand(
   youtubeUrl: string,
   outputPath: string,
   networkNamespace = Deno.env.get("YTDLP_NETWORK_NAMESPACE"),
 ): AudioDownloadCommand {
-  const ytDlpArgs = [
+  const args = [
     "--no-playlist",
     "--no-progress",
-    // m4a only (itag 140, always available on YouTube) — a single container
-    // format keeps the uploaded bytes predictable.
     "-f",
     "bestaudio[ext=m4a]",
     "-o",
     outputPath,
     "--force-overwrites",
-    // --print implies --simulate, so --no-simulate keeps the download while
-    // still printing the clip duration to stdout.
     "--no-simulate",
     "--print",
     "duration",
     youtubeUrl,
   ];
-
-  if (!networkNamespace) return { command: "yt-dlp", args: ytDlpArgs };
-
+  if (!networkNamespace) return { command: "yt-dlp", args };
   if (!NETWORK_NAMESPACE_PATTERN.test(networkNamespace)) {
     throw new Error(`Invalid YTDLP_NETWORK_NAMESPACE: ${networkNamespace}`);
   }
-
-  return {
-    command: "ip",
-    args: ["netns", "exec", networkNamespace, "yt-dlp", ...ytDlpArgs],
-  };
-}
-
-// Download the audio track to outputPath and return the clip duration in
-// seconds (null when unavailable).
-export async function downloadYoutubeAudio(
-  youtubeUrl: string,
-  outputPath: string,
-): Promise<number | null> {
-  const commandSpec = audioDownloadCommand(youtubeUrl, outputPath);
-  const command = new Deno.Command(commandSpec.command, {
-    args: commandSpec.args,
-    stdout: "piped",
-    stderr: "piped",
-  });
-
-  const { code, stdout, stderr } = await command.output();
-  if (code !== 0) {
-    throw new Error(`yt-dlp exited with code ${code}: ${new TextDecoder().decode(stderr).trim()}`);
-  }
-
-  const duration = parseFloat(new TextDecoder().decode(stdout).trim());
-  return Number.isFinite(duration) && duration > 0 ? duration : null;
+  return { command: "ip", args: ["netns", "exec", networkNamespace, "yt-dlp", ...args] };
 }
 
 export async function downloadYoutubeAudioToTemp(youtubeUrl: string): Promise<DownloadedAudio> {
-  const tempPath = await Deno.makeTempFile({ prefix: "langlets_audio_", suffix: ".m4a" });
+  const path = await Deno.makeTempFile({ prefix: "langlets_audio_", suffix: ".m4a" });
   try {
-    const durationSeconds = await downloadYoutubeAudio(youtubeUrl, tempPath);
-    return { path: tempPath, durationSeconds };
+    const spec = audioDownloadCommand(youtubeUrl, path);
+    const result = await new Deno.Command(spec.command, {
+      args: spec.args,
+      stdout: "piped",
+      stderr: "piped",
+    }).output();
+    if (result.code !== 0) {
+      throw new Error(
+        `yt-dlp exited with code ${result.code}: ${new TextDecoder().decode(result.stderr).trim()}`,
+      );
+    }
+    const duration = Number.parseFloat(new TextDecoder().decode(result.stdout).trim());
+    return { path, durationSeconds: duration > 0 ? duration : null };
   } catch (error) {
-    await Deno.remove(tempPath).catch(() => {});
+    await Deno.remove(path).catch(() => {});
     throw error;
   }
 }

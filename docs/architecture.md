@@ -139,17 +139,27 @@ server's `/run`; results come back through `PipelineCallbacksController`. Both
 entry points use it — `CreateCourseJob` (the `/courses/new` form) and
 `AddCourseTranslationJob` (adding a language to an existing course).
 
-After lyrics extraction, forced alignment, lesson generation, and sentence translation run
-concurrently. The lesson branch groups and rates the untimestamped `lyric_lines`, persisting its
+Supadata performs source-language transcription in one blocking request. The pipeline uses
+`mode=generate`, supports both immediate and asynchronous job responses, and normalizes each
+returned chunk into `lyric_lines`. Lines are capped at 42 characters: complete sentences split at
+period boundaries, oversized sentences prefer comma boundaries, then whitespace, with a hard split
+only when a single token is longer than the limit. The pipeline downloads the YouTube audio and
+sends the resulting text to ElevenLabs forced alignment, which supplies the word-level timestamps
+used to materialize `phrases`.
+
+After transcription, lesson generation, sentence translation, and token translation run
+concurrently. The lesson branch groups and rates the `lyric_lines`, persisting its
 intermediate grouping as `data["lesson_outline"]`; sentence translation persists its result under
-`data["translation_lines"][iso]`. Once alignment supplies timed phrases, the pipeline materializes
+`data["translation_lines"][iso]`. Using the timed phrases, the pipeline materializes
 the same timestamped `data["lessons"]` and version-2 `data["translations"][iso]["phrases"]` formats
-consumed by course building. Token translation chains directly from forced alignment and starts as
-soon as timed words exist, without waiting for lesson generation or sentence translation. The
+consumed by course building. Token translation starts as soon as timed words exist, without waiting
+for lesson generation or sentence translation. The
 token step deduplicates exact repeated phrases across the full clip before packing requests into
 200-word chunks. One translated representative is fanned out to every occurrence; on resume, a
 completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication
 uses the complete ordered word text, preserving separate translations when context differs. The
+token prompt selects its worked example by the requested target language, preventing a fixed
+example language from overriding the target instruction; unknown future languages omit the example.
 similar-sound step runs from the aligned phrases after the early branches settle.
 
 **The trigger does not wait.** It POSTs `/run?async=1`, the pipeline answers
@@ -173,10 +183,9 @@ leaves its finished work saved and retriggering with the same `data` resumes
 rather than redoes.
 
 Pipeline LLM logging is enabled by default and can be disabled with
-`PIPELINE_LOG_LLM=0`. The `extract_lyrics` Gemini call logs both its complete
-outgoing prompt (including the video file part) and complete response. Long
-values are emitted as numbered slices so the hosting platform does not truncate
-them; the other model-backed steps log their complete responses.
+`PIPELINE_LOG_LLM=0`. Model-backed steps log their complete responses. Supadata
+transcription is an API call rather than an LLM SDK call and is not included in
+LLM prompt logging.
 
 Three variables configure it: `PIPELINE_URL` (the server), the shared
 `PIPELINE_HMAC_SECRET`, and `PIPELINE_CALLBACK_BASE_URL` — where the pipeline
@@ -185,12 +194,10 @@ pipeline runs on another host, so `localhost:3000` there is itself, and it must
 point at a tunnel (ngrok) to the local server. Model-provider keys now live
 only on the pipeline host; Rails no longer needs them at all.
 
-On Linux pipeline hosts, `YTDLP_NETWORK_NAMESPACE` optionally isolates only the
-YouTube audio download. When set (for example, to `vpn`), `pipeline/src/audio.ts`
-launches `ip netns exec <namespace> yt-dlp ...`; model calls, ElevenLabs uploads,
-and Rails callbacks continue over the host network. The Deno process therefore
-needs run permission for both `yt-dlp` and `ip`. When unset, `yt-dlp` runs
-directly, which is the local-development default.
+Supadata receives the video URL directly for transcription. Forced alignment still requires the
+audio bytes, so the pipeline downloads them with `yt-dlp`; `YTDLP_NETWORK_NAMESPACE` may route only
+that subprocess through a configured Linux network namespace. The Deno service needs write access
+for the temporary file and run permission for `yt-dlp` and `ip`.
 
 ### Domain Models
 

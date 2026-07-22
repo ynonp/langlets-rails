@@ -1,10 +1,11 @@
 // The workflow. Replaces CreateSongProgress#create_data's sequential run with
 // a fan-out after the transcription steps:
 //
-//   extract_lyrics                          (Gemini: the lyrics text)
+//   extract_lyrics                          (Supadata: transcript text)
 //        │
-//        ├── force_alignment                (word timings, Gemini as backup)
-//        │        └── add_token_translations (starts as soon as alignment finishes)
+//   force_alignment                         (ElevenLabs: word timings)
+//        │
+//        ├── add_token_translations         (starts as soon as transcription finishes)
 //        ├── add_lessons ──► rate_lessons   (lesson outline branch)
 //        └── translate                      (sentence translation lines)
 //        │                                  (all three run concurrently)
@@ -48,8 +49,8 @@ export interface RunOptions {
   // Test injection points for the similar-sound step.
   fuzzywordFor?: (code: string) => Promise<Fuzzyword | null>;
   random?: () => number;
-  // Test injection points for the force_alignment step's audio download and
-  // the ElevenLabs forced-alignment call.
+  // Test injection point for Supadata transcription.
+  transcribeVideo?: PipelineContext["transcribeVideo"];
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
 }
@@ -77,17 +78,15 @@ export async function runPipeline(
     baseDelayMs: options.baseDelayMs ?? 1000,
     fuzzywordFor: options.fuzzywordFor,
     random: options.random,
+    transcribeVideo: options.transcribeVideo,
     prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
   };
   console.log(`Pipeline start with payload: ${JSON.stringify(payload)}`);
   const failed: Record<string, string> = {};
 
-  // Transcribe, then time. Each step runs when its own output is missing or
-  // when a previous run started it but never finished it (the in-progress flag
-  // is still set) — saved output alone can't tell "done" apart from
-  // "interrupted" because the steps save as they go. Nothing downstream can
-  // run without timed phrases, so a failure in either one reports and stops.
+  // Supadata supplies the transcript text. ElevenLabs then aligns those known
+  // words against the downloaded audio before any timed work can start.
   if (!store.extractLyricsDone()) {
     try {
       await extractLyrics(ctx);
@@ -97,14 +96,16 @@ export async function runPipeline(
     }
   }
 
-  // Timing, lesson grouping, and sentence translation need only lyric_lines,
-  // so start them together. Their final phrase-shaped data is materialized
-  // only after alignment settles.
-  const alignmentPromise = (async () => {
-    if (!store.forceAlignmentDone()) await forceAlignment(ctx);
-  })();
+  if (!store.forceAlignmentDone()) {
+    try {
+      await forceAlignment(ctx);
+    } catch (error) {
+      failed.force_alignment = message(error);
+      return result(store, failed);
+    }
+  }
+
   const preparation: Record<string, () => Promise<void>> = {
-    force_alignment: () => alignmentPromise,
     lessons: async () => {
       // Existing records created before lesson_outline already have their
       // final timestamped lessons; keep those resumable without redoing AI.
@@ -118,14 +119,6 @@ export async function runPipeline(
       }
     },
     token_translations: async () => {
-      // A failed alignment is reported by its own branch. Token work simply
-      // cannot start in that case and should not duplicate the same failure.
-      try {
-        await alignmentPromise;
-      } catch {
-        return;
-      }
-
       const iso = ctx.translationLanguage?.iso_name;
       if (!iso) return;
       await initTranslationPayload(ctx);
@@ -139,10 +132,6 @@ export async function runPipeline(
   preparationSettled.forEach((r, i) => {
     if (r.status === "rejected") failed[preparationLabels[i]] = message(r.reason);
   });
-
-  // Nothing else can usefully proceed without timed phrases. Keep any lesson
-  // work that completed so a retry can resume it.
-  if (failed.force_alignment) return result(store, failed);
 
   if (!failed.lessons && !store.lessonsDone()) {
     try {

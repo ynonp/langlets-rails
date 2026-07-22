@@ -2,8 +2,7 @@
   "tasks": {
     "serve": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip main.ts",
     "cli": "deno run --env-file --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip cli.ts",
-    "download": "deno run --allow-net --allow-env --allow-read --allow-write --allow-run=yt-dlp,ip download_audio.ts",
-    "test": "deno test --allow-net --allow-env --allow-read tests/",
+    "test": "deno test --allow-net --allow-env --allow-read --allow-write tests/",
     "check": "deno check main.ts cli.ts"
   },
   "imports": {

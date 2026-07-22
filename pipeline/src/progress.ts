@@ -38,16 +38,14 @@ export class ProgressStore {
   // Transcription is done once we hold lyric lines and no run is midway
   // through producing them. Data saved before the extract/align split has
   // phrases but no lyric_lines — its transcription is done too, and re-running
-  // Gemini over it would only throw the existing timings away.
+  // Supadata over it would only throw the existing timings away.
   extractLyricsDone(): boolean {
     if (this.data.extract_lyrics_in_progress) return false;
     return (this.data.lyric_lines?.length ?? 0) > 0 || (this.data.phrases?.length ?? 0) > 0;
   }
 
-  // Timing is done once the phrases exist and no run is midway through them.
-  // extract_lyrics sets the in-progress flag when it saves fresh lines, so a
-  // re-transcribed clip always gets re-aligned rather than keeping phrases
-  // that were timed against the previous transcription.
+  // Retained for compatibility with saved records from the former two-step
+  // transcription/alignment flow. New Supadata runs clear both flags together.
   forceAlignmentDone(): boolean {
     return (this.data.phrases?.length ?? 0) > 0 && !this.data.force_alignment_in_progress;
   }

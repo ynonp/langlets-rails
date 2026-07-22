@@ -116,7 +116,7 @@ Both entry points go through it:
 
 **The trigger does not wait for the run.** It POSTs `/run?async=1`, gets a `202`, and the job returns — so one worker can start any number of imports. Results arrive continuously via `POST /pipeline_callbacks/:id`, and after every batch `Imports::Finalizer` re-derives whether the blob now holds everything the waiting requests asked for. When it does, that's when the course is built, published and the requests marked ready.
 
-Nothing can hang: each `ImportRequest` schedules an `ImportRequestTimeoutJob` for `ImportRequest::TIMEOUT` (10 minutes) from creation, which refunds the import — using the pipeline's own reported error as the reason when there is one. A failure in `extract_lyrics` or `force_alignment` ends the run outright, so those fail the import as soon as the error lands rather than waiting out the clock.
+Nothing can hang: each `ImportRequest` schedules an `ImportRequestTimeoutJob` for `ImportRequest::TIMEOUT` (10 minutes) from creation, which refunds the import — using the pipeline's own reported error as the reason when there is one. A failure in `extract_lyrics` or `force_alignment` ends the run outright, so those failures fail the import as soon as the error lands rather than waiting out the clock.
 
 Retriggering resumes: each branch persists as it completes, and the saved `data` goes back with the next trigger.
 
@@ -154,13 +154,14 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 
 | Step | Model | Provider |
 |---|---|---|
-| `extract_lyrics` (lyrics text) | `gemini-3.5-flash` | Google |
+| `extract_lyrics` (transcript text) | Transcript API | Supadata |
+| `force_alignment` (word timings) | Forced Alignment API | ElevenLabs |
 | `add_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `rate_lessons` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `add_token_translations` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `translate` | `qwen3.5:397b-cloud` | Ollama cloud |
 
-Word timing does not come from an LLM: `extract_lyrics` gets only the lyrics *text* from Gemini, then ElevenLabs forced alignment supplies per-word timestamps (`pipeline/src/alignment.ts`, `ELEVEN_LABS_KEY`).
+`extract_lyrics` requests a generated transcript from Supadata and deterministically splits it into lines of at most 42 characters, preferring periods and then commas. `force_alignment` downloads the audio and asks ElevenLabs to locate those known words, preserving the existing word-timing contract.
 
 Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 
@@ -168,7 +169,7 @@ Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai
 sudo systemctl restart langlets-pipeline
 ```
 
-Keys are set in `pipeline/.env` on that host: `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, `ELEVEN_LABS_KEY`, plus the shared `PIPELINE_HMAC_SECRET`. Full LLM outputs are logged by default; set `PIPELINE_LOG_LLM=0` to silence them.
+Keys are set in `pipeline/.env` on that host: `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, plus the shared `PIPELINE_HMAC_SECRET`. Full LLM outputs are logged by default; set `PIPELINE_LOG_LLM=0` to silence them.
 
 ---
 

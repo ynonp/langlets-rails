@@ -7,7 +7,25 @@ import {
   WORDS_PER_CHUNK,
 } from "../src/steps/addTokenTranslations.ts";
 import { initTranslationPayload } from "../src/steps/finalizeTranslation.ts";
+import { addTokenTranslationsPrompt, examples } from "../src/prompts/addTokenTranslations.ts";
 import { makeCtx, phrasesFixture, queuedModel } from "./helpers.ts";
+
+Deno.test("token translation prompt interpolates the target-language example", () => {
+  const englishPrompt = addTokenTranslationsPrompt("Spanish", "English");
+  const hebrewPrompt = addTokenTranslationsPrompt("Spanish", "Hebrew");
+
+  assert(englishPrompt.includes(`## Expected Output:\n${examples.English}`));
+  assert(!englishPrompt.includes(examples.Hebrew));
+  assert(hebrewPrompt.includes(`## Expected Output:\n${examples.Hebrew}`));
+});
+
+Deno.test("token translation prompt omits examples for an unknown target language", () => {
+  const prompt = addTokenTranslationsPrompt("Spanish", "Italian");
+
+  assert(!prompt.includes("## Example Input:"));
+  assert(!prompt.includes("## Expected Output:"));
+  assert(prompt.includes("translate each word of a Spanish phrase into Italian"));
+});
 
 Deno.test("buildWordLine marks the target word inside its phrase context", () => {
   const phrase = phrasesFixture()[0];

@@ -1,111 +1,64 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
-import { extractLyrics } from "../src/steps/extractLyrics.ts";
-import { lyricsText, makeCtx, queuedModel, stubAudioWith } from "./helpers.ts";
+import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
+import { makeCtx, stubTranscribe, transcriptFixture } from "./helpers.ts";
 
-Deno.test("saves the Gemini transcription as lyric lines", async () => {
-  const model = queuedModel(["First line\nSecond line"]);
-  const { ctx, store } = makeCtx({ models: { extractLyrics: model.model } });
-
-  await extractLyrics(ctx);
-
-  assertEquals(store.data.lyric_lines, ["First line", "Second line"]);
-  assertFalse(store.data.extract_lyrics_in_progress);
-  assertEquals(model.calls(), 1);
-  // Timing hasn't happened yet, so the step leaves alignment marked unfinished.
-  assert(store.data.force_alignment_in_progress);
-  // Nothing here writes phrases — that's force_alignment's job.
-  assertEquals(store.data.phrases, undefined);
-});
-
-Deno.test("strips markdown fences and blank lines from the response", async () => {
-  const model = queuedModel(["```\nLine 1\n\n  Line 2  \n```"]);
-  const { ctx, store } = makeCtx({ models: { extractLyrics: model.model } });
+Deno.test("saves split Supadata transcript text for alignment", async () => {
+  const transcriber = stubTranscribe([transcriptFixture(1, 2)]);
+  const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
 
   await extractLyrics(ctx);
 
   assertEquals(store.data.lyric_lines, ["Line 1", "Line 2"]);
-});
-
-Deno.test("retries a lyrics response with no usable lines", async () => {
-  const model = queuedModel(["```\n```", lyricsText(1, 2)]);
-  const { ctx, store } = makeCtx({ models: { extractLyrics: model.model } });
-
-  await extractLyrics(ctx);
-
-  assertEquals(store.data.lyric_lines!.length, 2);
-  assertEquals(model.calls(), 2);
-});
-
-Deno.test("gives up after retries and falls back to STT, fails when STT also fails", async () => {
-  const model = queuedModel(["", "  ", "```\n```"]);
-  const { ctx, store } = makeCtx({
-    models: { extractLyrics: model.model },
-    transcribeAudio: () => Promise.reject(new Error("ELEVEN_LABS_KEY is not set")),
-  });
-
-  await assertRejects(() => extractLyrics(ctx), Error, "ELEVEN_LABS_KEY");
-  assertEquals(model.calls(), 3);
-
-  const error = store.data.errors![0];
-  assertEquals(error.step, "extract_lyrics");
-  // The unusable Gemini response is inspectable.
-  assertEquals(error.agent_response, "```\n```");
-  // The interrupted flag survives so the next run resumes the step.
-  assert(store.data.extract_lyrics_in_progress);
-});
-
-Deno.test("falls back to STT when Gemini returns no usable lines", async () => {
-  const model = queuedModel(["```\n```"]); // Gemini returns empty
-  const sttResult = { text: "Hello world. How are you?", language_code: "en" };
-  const { ctx, store } = makeCtx({
-    models: { extractLyrics: model.model },
-    transcribeAudio: () => Promise.resolve(sttResult),
-    prepareAudio: stubAudioWith(20),
-  });
-
-  await extractLyrics(ctx);
-
-  // STT lines were saved.
-  assertEquals(store.data.lyric_lines, ["Hello world.", "How are you?"]);
+  assertEquals(store.data.phrases, undefined);
   assertFalse(store.data.extract_lyrics_in_progress);
   assert(store.data.force_alignment_in_progress);
-  // Gemini was called once, then STT took over.
-  assertEquals(model.calls(), 1);
+  assertEquals(transcriber.requests[0].languageCode, "fr");
 });
 
-Deno.test("fails when both Gemini and STT produce no usable lines", async () => {
-  const model = queuedModel(["```\n```"]);
-  const { ctx, store } = makeCtx({
-    models: { extractLyrics: model.model },
-    transcribeAudio: () => Promise.resolve({ text: "", language_code: "en" }),
-    prepareAudio: stubAudioWith(20),
-  });
+Deno.test("retries Supadata failures", async () => {
+  const transcriber = stubTranscribe([new Error("temporary"), transcriptFixture(1, 1)]);
+  const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
 
-  await assertRejects(
-    () => extractLyrics(ctx),
-    Error,
-    "STT fallback produced no usable lines",
-  );
+  await extractLyrics(ctx);
 
-  const error = store.data.errors![0];
-  assertEquals(error.step, "extract_lyrics");
+  assertEquals(transcriber.calls(), 2);
+  assertEquals(store.data.lyric_lines, ["Line 1"]);
+});
+
+Deno.test("records a Supadata failure and leaves resume flags set", async () => {
+  const transcriber = stubTranscribe([
+    new Error("Supadata unavailable"),
+    new Error("Supadata unavailable"),
+    new Error("Supadata unavailable"),
+  ]);
+  const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
+
+  await assertRejects(() => extractLyrics(ctx), Error, "Supadata unavailable");
+
   assert(store.data.extract_lyrics_in_progress);
+  assert(store.data.force_alignment_in_progress);
+  assertEquals(store.data.errors![0].step, "extract_lyrics");
+  assertEquals(store.data.errors![0].attempts, 3);
 });
 
-Deno.test("a successful rerun clears the step's earlier errors", async () => {
-  const model = queuedModel([lyricsText(1, 2)]);
+Deno.test("a successful rerun clears only transcription errors", async () => {
   const { ctx, store } = makeCtx({
     data: {
-      errors: [{
-        step: "extract_lyrics",
-        occurred_at: "2024-01-01T00:00:00Z",
-        error_message: "old failure",
-      }],
+      errors: [
+        { step: "extract_lyrics", occurred_at: "2024-01-01", error_message: "old" },
+        { step: "force_alignment", occurred_at: "2024-01-01", error_message: "old" },
+      ],
     },
-    models: { extractLyrics: model.model },
+    transcribeVideo: stubTranscribe([transcriptFixture(1, 1)]).transcribe,
   });
 
   await extractLyrics(ctx);
 
-  assertEquals(store.data.errors, []);
+  assertEquals(store.data.errors?.map((error) => error.step), ["force_alignment"]);
+});
+
+Deno.test("maps explicit and named clip languages to Supadata codes", () => {
+  assertEquals(languageCodeForTranscription("French"), "fr");
+  assertEquals(languageCodeForTranscription("French", "fr-CA"), "fr-CA");
+  assertEquals(languageCodeForTranscription("Unknown"), null);
 });

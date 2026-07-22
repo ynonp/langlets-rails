@@ -8,13 +8,14 @@ mutation is streamed back to a callback URL the trigger request provides.
 
 ## The workflow and how it parallelizes
 
-The Ruby `create_data` ran six steps sequentially. Here everything after `extract_lyrics` fans out:
+Everything after transcription and forced alignment fans out:
 
 ```
-extract_lyrics                              (lyrics text)
+extract_lyrics                              (Supadata transcript text + line splitting)
      │
-     ├── force_alignment ──► add_token_translations
-     │                         (4 chunks in flight)
+force_alignment                             (ElevenLabs word timings)
+     │
+     ├── add_token_translations             (4 chunks in flight)
      ├── add_lessons ──► rate_lessons       (untimestamped lesson outline)
      └── translate                          (sentence translation lines)
      │                                      (all three run concurrently)
@@ -25,20 +26,21 @@ materialize lessons + translations          (join with aligned phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-Lesson generation reads `lyric_lines`, so it does not wait for alignment. It persists an
-untimestamped `lesson_outline`; after alignment and lesson generation settle, the orchestrator
-combines that outline with the aligned phrases into the existing timestamped `lessons` format.
-This keeps the stored course-building contract unchanged while hiding alignment latency behind the
-lesson and sentence-translation model calls.
+Supadata is requested with `mode=generate` and `text=false`, so it transcribes the source language.
+Its chunks are normalized into lines no longer than 42 characters, preferring periods, then commas,
+then whitespace. ElevenLabs forced alignment maps those known words to the audio and materializes
+the timed phrases.
+
+Lesson generation reads `lyric_lines` and persists an untimestamped `lesson_outline`; the
+orchestrator combines that outline with the aligned phrases into the existing timestamped `lessons`
+format.
 
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
-`translation_lines.<iso>` while alignment is running. After alignment, those lines are copied into
-the stable `translations.<iso>.phrases.<i>.text` payload slots.
+`translation_lines.<iso>`, then copies those lines into the stable
+`translations.<iso>.phrases.<i>.text` payload slots.
 
-Token translation depends on the aligned word structure, but not on either lesson call. It chains
-directly from the alignment promise: as soon as timed phrases exist, the language payload is
-initialized and token chunks begin, even if lesson generation or sentence translation is still
-running.
+Token translation depends on the timed word structure, but not on either lesson call. It begins
+alongside lesson generation and sentence translation after alignment finishes.
 
 The fan-out is safe because the branches write **disjoint keys** of `CreateSongProgress.data`:
 
@@ -51,8 +53,8 @@ The fan-out is safe because the branches write **disjoint keys** of `CreateSongP
 This required one deliberate change from the Ruby flow: translation steps use language-keyed
 intermediates and the version-2 language payload (`data.translations[iso]`) instead of writing
 inline `text_l2` / word `translation` keys and packing them later (`DataFormat.pack_translation`).
-The final blob shape is identical to what Rails produces — `data.phrases` stays language-neutral
-and guards like `translation_complete?` keep working.
+The final blob shape is identical to what Rails produces — `data.phrases` stays language-neutral and
+guards like `translation_complete?` keep working.
 
 `add_similar_sound` is extracted too. The Ruby step shelled out to the `fuzzyword` Rust CLI (a
 SymSpell wrapper); `src/fuzzyword.ts` ports it — OSA edit distance ≤ 2 over the per-language
@@ -67,13 +69,14 @@ branch's completed — and already persisted — work. `finalize_translation` ru
 translation branches succeeded; the lessons snapshot it copies into the payload may be `null` if the
 lessons branch failed, and a rerun fills it in.
 
-### Models (same as the Ruby concerns)
+### Providers and models
 
-| Step                                                | Model                   | Provider                                                                                                                               |
-| --------------------------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| extract_lyrics                                      | `gemini-3.5-flash`      | `@ai-sdk/google` (YouTube URL as a file part) for the lyrics text, then ElevenLabs forced alignment (audio via yt-dlp) for word timing |
-| add_lessons / rate_lessons / add_token_translations | `deepseek-v4-pro:cloud` | Ollama cloud via `@ai-sdk/openai-compatible`                                                                                           |
-| translate                                           | `qwen3.5:397b-cloud`    | Ollama cloud via `@ai-sdk/openai-compatible`                                                                                           |
+| Step                                                | Model                   | Provider                                       |
+| --------------------------------------------------- | ----------------------- | ---------------------------------------------- |
+| extract_lyrics                                      | Transcript API          | Supadata (`mode=generate`)                     |
+| force_alignment                                     | Forced Alignment API    | ElevenLabs                                     |
+| add_lessons / rate_lessons / add_token_translations | `deepseek-v4-pro:cloud` | Ollama cloud via `@ai-sdk/openai-compatible`   |
+| translate                                           | `qwen3.5:397b-cloud`    | Ollama cloud via `@ai-sdk/openai-compatible`   |
 
 ## Failure handling
 
@@ -167,7 +170,7 @@ summary }` where `failed` maps branch → error message.
 
 ```sh
 # HTTP server (what Deno Deploy runs)
-PIPELINE_HMAC_SECRET=... GOOGLE_GENERATIVE_AI_API_KEY=... ELEVEN_LABS_KEY=... OLLAMA_API_KEY=... \
+PIPELINE_HMAC_SECRET=... SUPADATA_KEY=... ELEVEN_LABS_KEY=... GOOGLE_GENERATIVE_AI_API_KEY=... OLLAMA_API_KEY=... \
   deno task serve
 
 # CLI: same pipeline, callback URL as an argument
@@ -183,16 +186,13 @@ deno task check
 the translation language in English only, so pass `--iso` (and optionally `--lang-id`) when
 targeting a language the export's data doesn't already contain.
 
-Env vars: `PIPELINE_HMAC_SECRET` (required), `GOOGLE_GENERATIVE_AI_API_KEY`, `ELEVEN_LABS_KEY`,
+Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`,
 `OLLAMA_API_KEY`, `OLLAMA_BASE_URL` (defaults to `https://ollama.com/v1`). For local runs copy
 `.env.example` to `.env` (gitignored) — the `serve` and `cli` tasks load it via `--env-file`; real
 environment variables win over the file. On Deno Deploy set them in the dashboard instead.
 
-Set `YTDLP_NETWORK_NAMESPACE=vpn` on a Linux host to run only the `yt-dlp` subprocess through that
-network namespace (`ip netns exec vpn yt-dlp ...`). The rest of the pipeline keeps the host network,
-including model API calls and callbacks. Leave it unset for direct execution. The service user must
-be allowed to enter the namespace, and Deno must have `--allow-run=yt-dlp,ip` (the bundled tasks
-do).
+Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
+network namespace. Leave it unset for direct execution.
 
 ## Layout
 

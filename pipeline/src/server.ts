@@ -31,7 +31,7 @@ export interface ServerOptions {
   }) => Promise<RunResult>;
 }
 
-export function createHandler(options: ServerOptions): (request: Request) => Promise<Response> {  
+export function createHandler(options: ServerOptions): (request: Request) => Promise<Response> {
   const run = options.run ?? runPipeline;
 
   return async (request: Request): Promise<Response> => {
