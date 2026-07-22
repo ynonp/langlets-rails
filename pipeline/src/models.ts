@@ -51,7 +51,7 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
 
   return {
     extractLyrics: llmLoggingEnabled(env)
-      ? withLlmLogging(google("gemini-2.5-flash"), "extract_lyrics", { logPrompt: true })
+      ? withLlmLogging(google("gemini-2.6-flash-lite"), "extract_lyrics", { logPrompt: true })
       : google("gemini-2.5-flash"),
     forceAlignment: log(google("gemini-3.5-flash-lite"), "force_alignment"),
     addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
