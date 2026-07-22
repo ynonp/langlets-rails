@@ -38,7 +38,10 @@ export const MAX_LINE_LENGTH = 42;
 
 export function transcriptToLines(chunks: TranscriptChunk[]): string[] {
   return chunks.flatMap((chunk) => {
-    const text = chunk.text.replace(/\s+/gu, " ").trim();
+    // Native captions commonly include non-speech cues such as [Music],
+    // [Música], and [Applause]. Square brackets are also reserved by the app's
+    // token markup, so these annotations are not learning content.
+    const text = chunk.text.replace(/\[[^\]\r\n]*\]/gu, " ").replace(/\s+/gu, " ").trim();
     if (!text) return [];
     const sentences = text.match(/.*?(?:[.!?。！？]+(?=\s|$)|$)/gu)
       ?.map((part) => part.trim()).filter(Boolean) ?? [];

@@ -6,6 +6,7 @@
 
 import { DATA_FORMAT_VERSION, type PatchOp, type TranslationPayload } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
+import { clearErrors, recordError } from "../context.ts";
 
 // Ensure translations.<iso> exists with one slot per phrase before the
 // parallel branches start writing into it. On resume an existing payload is
@@ -47,26 +48,42 @@ export async function materializeTranslationLines(ctx: PipelineContext): Promise
   const phrases = ctx.store.data.phrases ?? [];
   if (!lines || !payload) return;
 
-  let sourceCursor = 0;
-  const alignedTranslations = phrases.map((phrase, phraseIndex) => {
-    // Older/resumed blobs may have phrases and an intermediate but no saved
-    // lyric_lines. Equal-sized arrays are unambiguous in that legacy case.
-    if (sourceLines.length === 0 && lines.length === phrases.length) return lines[phraseIndex];
+  try {
+    let sourceCursor = 0;
+    const alignedTranslations = phrases.map((phrase, phraseIndex) => {
+      // Older/resumed blobs may have phrases and an intermediate but no saved
+      // lyric_lines. Equal-sized arrays are unambiguous in that legacy case.
+      if (sourceLines.length === 0 && lines.length === phrases.length) return lines[phraseIndex];
 
-    const sourceIndex = sourceLines.indexOf(phrase.text_l1, sourceCursor);
-    if (sourceIndex < 0 || lines[sourceIndex] == null) {
-      throw new Error(`Could not match aligned phrase to translated lyric line: ${phrase.text_l1}`);
-    }
-    sourceCursor = sourceIndex + 1;
-    return lines[sourceIndex];
-  });
+      const target = comparableLine(phrase.text_l1);
+      const relativeIndex = sourceLines.slice(sourceCursor).findIndex((line) =>
+        comparableLine(line) === target
+      );
+      const sourceIndex = relativeIndex < 0 ? -1 : sourceCursor + relativeIndex;
+      if (sourceIndex < 0 || lines[sourceIndex] == null) {
+        throw new Error(
+          `Could not match aligned phrase to translated lyric line: ${phrase.text_l1}`,
+        );
+      }
+      sourceCursor = sourceIndex + 1;
+      return lines[sourceIndex];
+    });
 
-  const ops: PatchOp[] = alignedTranslations.map((text, index) => ({
-    op: "set",
-    path: `translations.${language.iso_name}.phrases.${index}.text`,
-    value: text,
-  }));
-  await ctx.store.patch(ops);
+    const ops: PatchOp[] = alignedTranslations.map((text, index) => ({
+      op: "set",
+      path: `translations.${language.iso_name}.phrases.${index}.text`,
+      value: text,
+    }));
+    await ctx.store.patch(ops);
+    await clearErrors(ctx, "translate");
+  } catch (error) {
+    await recordError(ctx, "translate", error);
+    throw error;
+  }
+}
+
+function comparableLine(text: string): string {
+  return text.replaceAll("[", "(").replaceAll("]", ")").trim();
 }
 
 // Copy the (clip-language) lessons into the payload — the payload snapshot of

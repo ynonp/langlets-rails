@@ -146,7 +146,8 @@ Flash using the video URL and the lyric-specific transcription prompt. Non-YouTu
 yet have a generated-transcript fallback. Supadata chunks are normalized into `lyric_lines`, while
 Gemini already returns one line per phrase. Lines are capped at 42 characters: complete sentences
 split at period boundaries, oversized sentences prefer comma boundaries, then whitespace, with a
-hard split only when a single token is longer than the limit. The pipeline downloads the YouTube
+hard split only when a single token is longer than the limit. Bracketed native-caption annotations
+such as `[Music]` and `[Applause]` are removed before lines are saved. The pipeline downloads the YouTube
 audio and sends the resulting text to ElevenLabs forced alignment, which supplies the word-level
 timestamps used to materialize `phrases`.
 

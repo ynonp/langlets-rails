@@ -97,3 +97,25 @@ Deno.test("transcript splitting falls back to whitespace and hard-splits long to
     }`,
   );
 });
+
+Deno.test("native transcript splitting removes bracketed non-speech annotations", () => {
+  const lines = transcriptToLines([
+    { text: "Buenas noches,", offset: 0, duration: 1, lang: "es" },
+    { text: "[Música]", offset: 1, duration: 1, lang: "es" },
+    { text: "[Aplausos]", offset: 2, duration: 1, lang: "es" },
+    { text: "Hola [ruido] a todos.", offset: 3, duration: 1, lang: "es" },
+  ]);
+
+  assertEquals(lines, ["Buenas noches,", "Hola a todos."]);
+});
+
+Deno.test("native annotation removal preserves Hebrew and Arabic text and punctuation", () => {
+  const lines = transcriptToLines([
+    { text: "[מוזיקה]", offset: 0, duration: 1, lang: "he" },
+    { text: "שָׁלוֹם, [מחיאות כפיים] לכולם!", offset: 1, duration: 1, lang: "he" },
+    { text: "[موسيقى]", offset: 2, duration: 1, lang: "ar" },
+    { text: "مرحبًا، [تصفيق] كيف حالكم؟", offset: 3, duration: 1, lang: "ar" },
+  ]);
+
+  assertEquals(lines, ["שָׁלוֹם, לכולם!", "مرحبًا، كيف حالكم؟"]);
+});

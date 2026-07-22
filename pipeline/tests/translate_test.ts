@@ -82,6 +82,42 @@ Deno.test("materializeTranslationLines skips lyric lines dropped by alignment", 
   ]);
 });
 
+Deno.test("materializeTranslationLines matches bracket-sanitized aligned phrases", async () => {
+  const { ctx, store } = makeCtx({
+    data: {
+      lyric_lines: ["[Música]"],
+      phrases: [{
+        id: "phrase_1",
+        text_l1: "(Música)",
+        timestamp: "00:01.00",
+        timestamp_end: "00:02.00",
+        words: [],
+      }],
+      translation_lines: { he: ["(Music)"] },
+    },
+  });
+
+  await initTranslationPayload(ctx);
+  await materializeTranslationLines(ctx);
+
+  assertEquals(store.data.translations!.he.phrases[0].text, "(Music)");
+});
+
+Deno.test("materialization failures are recorded as translation errors", async () => {
+  const { ctx, store } = makeCtx({
+    data: {
+      lyric_lines: ["Different line"],
+      phrases: phrasesFixture().slice(0, 1),
+      translation_lines: { he: ["תרגום"] },
+    },
+  });
+
+  await initTranslationPayload(ctx);
+  await assertRejects(() => materializeTranslationLines(ctx), Error, "Could not match");
+
+  assertEquals(store.data.errors?.[0].step, "translate");
+});
+
 Deno.test("translate is a no-op without a target language", async () => {
   const model = unusedModel();
   const { ctx } = makeCtx({
