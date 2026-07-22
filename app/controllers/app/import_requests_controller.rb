@@ -4,9 +4,12 @@ module App
     # Queue and Add Video are shared by the native and web apps. The rest of
     # the /app surface remains native-only through App::BaseController.
     skip_before_action :require_native_app
+    layout :import_requests_layout
 
     def index
       @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
+
+      render "app/import_requests/web/index" if web_view?
     end
 
     def new
@@ -14,6 +17,8 @@ module App
       @clip_language = default_clip_language
       @translation_language = default_translation_language
       @languages = Language.order(:english_name)
+
+      render "app/import_requests/web/new" if web_view?
     end
 
     # Everything below the input in the Add Video sheet: empty state, preview
@@ -33,33 +38,36 @@ module App
 
       # Blank goes back to the empty state, not to an error the user hasn't
       # earned yet — they've typed nothing wrong, they've typed nothing at all.
-      return @mode = :empty if @query.blank?
-
-      # A watch link, youtu.be, /shorts/ or a bare 11-character id. The Stimulus
-      # controller holds anything else back until typing stops, so this branch
-      # doesn't fire on the way to a valid link.
-      if Youtube::Url.loose_video_id(@query).blank?
+      if @query.blank?
+        @mode = :empty
+      elsif Youtube::Url.loose_video_id(@query).blank?
+        # A watch link, youtu.be, /shorts/ or a bare 11-character id. The Stimulus
+        # controller holds anything else back until typing stops, so this branch
+        # doesn't fire on the way to a valid link.
         @mode = :error
         @error = "That doesn't look like a YouTube link. Paste a youtube.com or youtu.be link, or a video ID."
-        return
+      else
+        @mode = :preview
+        @preview = Imports::Preview.call(
+          user: current_user,
+          url: Youtube::Url.loose_canonical(@query),
+          clip_language: @clip_language.english_name,
+          translation_language: @translation_language.english_name
+        )
       end
 
-      @mode = :preview
-      @preview = Imports::Preview.call(
-        user: current_user,
-        url: Youtube::Url.loose_canonical(@query),
-        clip_language: @clip_language.english_name,
-        translation_language: @translation_language.english_name
-      )
+      render "app/import_requests/web/resolve" if web_view?
     rescue Youtube::Oembed::UnavailableVideo
       # A well-formed id that YouTube won't serve. Distinct from the message
       # above on purpose: "you typed it wrong" and "this video is gone" send the
       # user to two different next moves.
       @mode = :error
       @error = "We couldn't read that video. It may be private, age-restricted or deleted."
+      render "app/import_requests/web/resolve" if web_view?
     rescue Imports::UnsupportedLanguage
       @mode = :error
       @error = "We don't teach that language yet."
+      render "app/import_requests/web/resolve" if web_view?
     end
 
     def create
@@ -116,7 +124,8 @@ module App
         format.turbo_stream do
           @import_requests = current_user.import_requests.recent_first.includes(:course).limit(50)
           active_count = @import_requests.count(&:active?)
-          render :queue_update, locals: { active_count: active_count }
+          template = web_request? ? "app/import_requests/web/queue_update" : "app/import_requests/queue_update"
+          render template, locals: { active_count: active_count }
         end
         format.html { redirect_to app_import_requests_path }
       end
@@ -148,6 +157,18 @@ module App
     end
 
     private
+
+    def import_requests_layout
+      web_view? ? "application" : "app"
+    end
+
+    def web_view?
+      web_request? && action_name.in?(%w[index new resolve])
+    end
+
+    def web_request?
+      !native_app?
+    end
 
     def redirect_to_result(result)
       if result.deduped?

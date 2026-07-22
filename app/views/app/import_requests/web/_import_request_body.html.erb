@@ -1,0 +1,39 @@
+<div id="<%= dom_id(import_request, :body) %>" class="min-w-0 flex-1">
+  <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+    <div class="min-w-0 flex-1">
+      <h2 class="truncate text-base font-extrabold sm:text-lg"><%= import_request.title.presence || import_request.youtube_url %></h2>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= import_request.clip_language %> video · <%= import_request.translation_language %> translation</p>
+
+      <% case import_request.status %>
+      <% when "importing" %>
+        <div class="mt-4 h-2 overflow-hidden rounded-full bg-gray-100 dark:bg-gray-800">
+          <div class="h-full rounded-full bg-emerald-500 transition-[width] duration-500" style="width: <%= import_request.display_percent %>%"></div>
+        </div>
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-2 text-sm">
+          <span class="font-bold text-emerald-600 dark:text-emerald-400"><%= import_request.stage_label %></span>
+          <span class="text-gray-500 dark:text-gray-400"><%= import_request.display_percent %>%</span>
+        </div>
+      <% when "queued" %>
+        <p class="mt-3 text-sm font-semibold text-gray-500 dark:text-gray-400">Queued — up next</p>
+      <% when "ready" %>
+        <p class="mt-3 text-sm font-bold text-emerald-600 dark:text-emerald-400">Ready to learn</p>
+      <% when "failed" %>
+        <p class="mt-3 text-sm font-bold text-red-600 dark:text-red-400">Import failed — credit refunded</p>
+      <% when "canceled" %>
+        <p class="mt-3 text-sm font-semibold text-gray-500 dark:text-gray-400">Cancelled</p>
+      <% end %>
+    </div>
+
+    <div class="flex shrink-0 flex-wrap gap-2 sm:justify-end">
+      <% if import_request.ready? && import_request.course %>
+        <%= link_to "Open lesson", course_path(import_request.course), class: "inline-flex min-h-10 flex-1 items-center justify-center rounded-xl bg-emerald-500 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-600 sm:flex-none" %>
+        <%= button_to "Remove", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>
+      <% elsif import_request.failed? %>
+        <%= button_to "Try again", retry_app_import_request_path(import_request), class: "min-h-10 rounded-xl bg-emerald-500 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-600" %>
+        <%= button_to "Remove", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>
+      <% elsif import_request.queued? %>
+        <%= button_to "Cancel import", app_import_request_path(import_request), method: :delete, class: "min-h-10 rounded-xl border border-gray-300 px-4 py-2 text-sm font-bold hover:bg-gray-50 dark:border-gray-700 dark:hover:bg-gray-800" %>
+      <% end %>
+    </div>
+  </div>
+</div>

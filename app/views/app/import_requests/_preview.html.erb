@@ -82,7 +82,11 @@
                   data: { turbo_frame: "_top" },
                   class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
     <% else %>
-      <%= form_with url: app_import_requests_path, method: :post, data: { turbo_frame: "_top" } do |f| %>
+      <%# The web needs a normal document submission so the redirect cannot be
+          retained inside add_video_result. Hotwire Native already handles the
+          frame's _top navigation correctly, so preserve its existing flow. %>
+      <% submission_data = native_app? ? { turbo_frame: "_top" } : { turbo: false } %>
+      <%= form_with url: app_import_requests_path, method: :post, data: submission_data do |f| %>
         <%= hidden_field_tag :url, video.canonical_url %>
         <%= hidden_field_tag :clip_language, clip_language.english_name %>
         <%= hidden_field_tag :translation_language, translation_language.english_name %>

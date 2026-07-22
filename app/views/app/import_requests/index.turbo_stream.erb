@@ -11,7 +11,7 @@
     The card is wrapped in a swipe container; remove the wrapper. %>
 <% known.each_key do |id| %>
   <% unless @import_requests.any? { |ir| dom_id(ir) == id } %>
-    <%= turbo_stream.remove "#{id}_wrapper" %>
+    <%= turbo_stream.remove "wrapper_#{id}" %>
   <% end %>
 <% end %>
 

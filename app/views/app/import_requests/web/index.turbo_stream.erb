@@ -1,0 +1,33 @@
+<% active_count = @import_requests.count(&:active?) %>
+<% known = (params[:known].presence || "").split(",").map { |value| id, status = value.split(":"); [id, status] }.to_h %>
+
+<%= turbo_stream.replace "queue-status-text" do %>
+  <%= render "app/import_requests/web/status_text", active_count: active_count %>
+<% end %>
+
+<% known.each_key do |id| %>
+  <% unless @import_requests.any? { |import_request| dom_id(import_request) == id } %>
+    <%= turbo_stream.remove "wrapper_#{id}" %>
+  <% end %>
+<% end %>
+
+<% @import_requests.each do |import_request| %>
+  <% id = dom_id(import_request) %>
+  <% if known[id].nil? %>
+    <%= turbo_stream.prepend "queue-list" do %>
+      <%= render "app/import_requests/web/import_request", import_request: import_request %>
+    <% end %>
+  <% elsif known[id] == import_request.status %>
+    <%= turbo_stream.replace dom_id(import_request, :body) do %>
+      <%= render "app/import_requests/web/import_request_body", import_request: import_request %>
+    <% end %>
+  <% else %>
+    <%= turbo_stream.replace dom_id(import_request, :wrapper) do %>
+      <%= render "app/import_requests/web/import_request", import_request: import_request %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.replace "queue-footer-note" do %>
+  <%= render "app/import_requests/web/footer_note", active_count: active_count %>
+<% end %>

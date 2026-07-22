@@ -1,0 +1,43 @@
+<% content_for :title, "Queue · Langlets" %>
+<% active_count = @import_requests.count(&:active?) %>
+
+<div class="min-h-screen bg-emerald-50 dark:bg-gray-950">
+  <header class="border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-800 dark:bg-gray-950/80">
+    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <%= link_to root_path, class: "text-xl font-extrabold tracking-tight sm:text-2xl" do %>
+        Langlets
+      <% end %>
+      <div class="flex items-center gap-3">
+        <%= render "shared/theme_toggle" %>
+        <%= render "shared/user_menu" %>
+      </div>
+    </div>
+  </header>
+
+  <div data-testid="web-queue" class="mx-auto w-full max-w-5xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+    <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <p class="text-sm font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Your imports</p>
+        <h1 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl"><%= t("app.import_requests.index.title") %></h1>
+        <%= render "app/import_requests/web/status_text", active_count: active_count %>
+      </div>
+      <%= link_to new_app_import_request_path,
+                  class: "inline-flex min-h-11 items-center justify-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white shadow-sm transition hover:bg-emerald-600 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950" do %>
+        <span aria-hidden="true" class="me-2 text-xl leading-none">+</span>
+        Add a video
+      <% end %>
+    </div>
+
+    <% if notice %>
+      <div class="mt-6 rounded-2xl border border-emerald-200 bg-white px-4 py-3 text-sm font-semibold text-emerald-700 dark:border-emerald-900 dark:bg-gray-900 dark:text-emerald-300"><%= notice %></div>
+    <% end %>
+    <% if alert %>
+      <div class="mt-6 rounded-2xl border border-red-200 bg-white px-4 py-3 text-sm font-semibold text-red-700 dark:border-red-900 dark:bg-gray-900 dark:text-red-300"><%= alert %></div>
+    <% end %>
+
+    <div class="mt-8">
+      <%= render "app/import_requests/web/queue", import_requests: @import_requests, active_count: active_count %>
+    </div>
+    <%= render "app/import_requests/web/footer_note", active_count: active_count %>
+  </div>
+</div>

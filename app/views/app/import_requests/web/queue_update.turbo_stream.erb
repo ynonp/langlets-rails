@@ -1,0 +1,11 @@
+<%= turbo_stream.replace "queue-status-text" do %>
+  <%= render "app/import_requests/web/status_text", active_count: active_count %>
+<% end %>
+
+<%= turbo_stream.replace "queue" do %>
+  <%= render "app/import_requests/web/queue", import_requests: @import_requests, active_count: active_count %>
+<% end %>
+
+<%= turbo_stream.replace "queue-footer-note" do %>
+  <%= render "app/import_requests/web/footer_note", active_count: active_count %>
+<% end %>

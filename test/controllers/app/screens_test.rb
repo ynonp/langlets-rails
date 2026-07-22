@@ -59,6 +59,42 @@ module App
       end
     end
 
+    test "the web queue uses its own responsive application view" do
+      request = @user.import_requests.create!(
+        youtube_url: "https://www.youtube.com/watch?v=webqueueaaa", youtube_video_id: "webqueueaaa",
+        clip_language: "Spanish", translation_language: "English", title: "Responsive queue item",
+        status: :queued, charged: true
+      )
+
+      get app_import_requests_path, headers: WEB
+
+      assert_response :success
+      assert_select "html[data-theme]"
+      assert_select "header a[href=?]", root_path, text: /Langlets/
+      assert_select "[data-testid='web-queue'].max-w-5xl"
+      assert_select "article#wrapper_import_request_#{request.id}" do
+        assert_select ".sm\\:flex-row"
+        assert_select "form[action=?]", app_import_request_path(request)
+      end
+      assert_select "[data-controller='swipe-to-delete']", count: 0
+      assert_select "a[href=?]", new_app_import_request_path, text: /Add a video/
+    end
+
+    test "the native queue keeps the native-only presentation" do
+      @user.import_requests.create!(
+        youtube_url: "https://www.youtube.com/watch?v=nativequeuea", youtube_video_id: "nativequeuea",
+        clip_language: "Spanish", translation_language: "English", title: "Native queue item",
+        status: :ready
+      )
+
+      get app_import_requests_path, headers: NATIVE
+
+      assert_response :success
+      assert_select "body[data-native-tabs]"
+      assert_select "[data-controller='swipe-to-delete']"
+      assert_select "[data-testid='web-queue']", count: 0
+    end
+
     test "other app screens remain native-only" do
       (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new" ]).each do |path|
         get path, headers: WEB

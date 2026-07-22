@@ -34,6 +34,10 @@ module App
       web = { "User-Agent" => "Mozilla/5.0" }
       get "/app/import_requests/new", headers: web
       assert_response :success
+      assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
+      assert_select "label[for='web-video-url']", text: "YouTube link or video ID"
+      assert_select "input#web-video-url[data-add-video-target=input]"
+      assert_select ".app-scroll-pad", count: 0
 
       stub_video do
         post "/app/import_requests",
@@ -64,6 +68,26 @@ module App
       # so a credit can't leave without having been seen twice.
       assert_match "Imports as a lesson", response.body
       assert_match "Approve · use 1 credit", response.body
+      assert_select "form[action=?][data-turbo-frame=_top]", app_import_requests_path
+      assert_select "form[data-turbo=false]", count: 0
+    end
+
+    test "the web preview uses a full-page submission" do
+      stub_video { get resolve_path(q: CANONICAL), headers: { "User-Agent" => "Mozilla/5.0" } }
+
+      assert_response :success
+      assert_select "turbo-frame#add_video_result .sm\\:grid-cols-\\[14rem_minmax\\(0\\,1fr\\)\\]"
+      assert_select "form[action=?][data-turbo=false]", app_import_requests_path
+      assert_select "form[data-turbo-frame=_top]", count: 0
+      assert_select ".app-inset-hairline", count: 0
+    end
+
+    test "the native add-video screen keeps the native-only form" do
+      get new_app_import_request_path, headers: NATIVE
+
+      assert_response :success
+      assert_select ".app-scroll-pad[data-controller='add-video']"
+      assert_select "[data-testid='web-add-video']", count: 0
     end
 
     test "a bare video id resolves the same as a full link" do

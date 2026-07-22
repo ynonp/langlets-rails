@@ -1,0 +1,7 @@
+<p id="queue-status-text" class="mt-2 text-sm text-gray-600 dark:text-gray-400 sm:text-base">
+  <% if active_count.positive? %>
+    <%= pluralize(active_count, "import") %> in progress. This page updates automatically.
+  <% else %>
+    Nothing importing right now.
+  <% end %>
+</p>
