@@ -8,10 +8,10 @@ The video is in ${clipLanguage}, but may have an intro/outro in a different lang
 Only transcribe the main ${clipLanguage} vocals. Do not translate.
 
 FORMAT
-- Return ONLY the transcribed text: one line per sung or spoken phrase.
+- Return ONLY the continuous transcribed text.
 - No timestamps, no speaker labels, no numbering, no commentary, no markdown.
-- Max 42 characters per line. Break longer sentences into natural short lines.
-- Write the lines in the order they are heard.
+- Do not introduce line breaks to represent sung phrases or pauses.
+- Write the words in the order they are heard.
 
 COMPLETENESS
 - Cover the whole video from start to end.

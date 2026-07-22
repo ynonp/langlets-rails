@@ -143,21 +143,38 @@ The pipeline first asks Supadata for existing provider captions with `mode=nativ
 request with no application-level retry, and supports both immediate and asynchronous job responses.
 When native captions are unavailable for a YouTube URL, `extract_lyrics` falls back to Gemini 2.5
 Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
-yet have a generated-transcript fallback. Supadata chunks are normalized into `lyric_lines`, while
-Gemini already returns one line per phrase. Lines are capped at 42 characters: complete sentences
-split at period boundaries, oversized sentences prefer comma boundaries, then whitespace, with a
-hard split only when a single token is longer than the limit. Bracketed native-caption annotations
+yet have a generated-transcript fallback. Supadata chunks are normalized into provisional text,
+while Gemini supplies the fallback transcript. Bracketed native-caption annotations
 such as `[Music]` and `[Applause]` are removed before lines are saved. The pipeline downloads the YouTube
 audio and sends the resulting text to ElevenLabs forced alignment, which supplies the word-level
 timestamps used to materialize `phrases`.
 
-After transcription, lesson generation, sentence translation, and token translation run
-concurrently. The lesson branch groups and rates the `lyric_lines`, persisting its
-intermediate grouping as `data["lesson_outline"]`; sentence translation persists its result under
+Provider cue boundaries and performance pauses are not semantic lyric lines: either can split a
+translation unit in the middle (for example `que / más quisiera`). `force_alignment` therefore sends
+ElevenLabs one continuous transcript and initially stores its flat timed word stream as one
+provisional phrase. The lesson model then owns a two-level `lessons -> lines` partition. Its input is
+the complete continuous transcript; its structured output is a `lessons` array whose entries contain
+a title and an array of exact transcript line strings. It is instructed to make each line
+independently comprehensible and translatable, with line length as a preference rather than a hard
+character cap. The prompt selects a language-matched worked example for English, Spanish, French,
+German, Hebrew, Russian, or Arabic; each demonstrates turning one continuous paragraph into ten
+semantic lines across two lessons. Unknown languages use the English example.
+
+The model does not calculate word indexes. Application code compares every returned token
+sequentially with the aligned transcript, rejecting
+rewrites, gaps, repetitions, and reordering. It derives internal word ranges from the validated line
+lengths and reconstructs phrase text and timestamps from the original ElevenLabs words, so
+the model cannot rewrite, omit, or hallucinate transcript text. The semantic lines replace
+`lyric_lines` and `phrases`; both the untimestamped `lesson_outline` and final timestamped `lessons`
+are saved in the same patch. A segmentation failure blocks downstream work and is safely retried from
+the preserved provisional aligned phrase.
+
+After semantic segmentation, lesson rating, sentence translation, and token translation run
+concurrently. Sentence translation persists its result under
 `data["translation_lines"][iso]`. Using the timed phrases, the pipeline materializes
 the same timestamped `data["lessons"]` and version-2 `data["translations"][iso]["phrases"]` formats
-consumed by course building. Token translation starts as soon as timed words exist, without waiting
-for lesson generation or sentence translation. The
+consumed by course building. Token translation starts as soon as semantic phrases exist, without
+waiting for lesson rating or sentence translation. The
 token step deduplicates exact repeated phrases across the full clip before packing requests into
 200-word chunks. One translated representative is fanned out to every occurrence; on resume, a
 completed occurrence is reused for its still-missing duplicates without an LLM call. Deduplication

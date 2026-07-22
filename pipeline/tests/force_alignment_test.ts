@@ -10,9 +10,10 @@ Deno.test("ElevenLabs forced alignment creates timed phrases and words", async (
     alignLyrics: aligner.align,
   });
   await forceAlignment(ctx);
-  assertEquals(aligner.requests[0].text, "Line 1\nLine 2");
-  assertEquals(store.data.phrases?.map((phrase) => phrase.timestamp), ["00:00.00", "00:10.00"]);
-  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["Line", "1"]);
+  assertEquals(aligner.requests[0].text, "Line 1 Line 2");
+  assertEquals(store.data.phrases?.map((phrase) => phrase.timestamp), ["00:00.00"]);
+  assertEquals(store.data.phrases?.[0].words.map((word) => word.text), ["Line", "1", "Line", "2"]);
+  assertEquals(store.data.lyric_lines, ["Line 1 Line 2"]);
   assertEquals(store.data.video_length_seconds, 13);
   assertFalse(store.data.force_alignment_in_progress);
 });
@@ -23,7 +24,7 @@ Deno.test("an incomplete ElevenLabs alignment fails and remains resumable", asyn
     prepareAudio: stubAudioWith(13),
     alignLyrics: stubAlign([alignment(alignedBatch(1, 1))]).align,
   });
-  await assertRejects(() => forceAlignment(ctx), Error, "aligned 1 of 2");
+  await assertRejects(() => forceAlignment(ctx), Error, "aligned 2 of 4 transcript words");
   assert(store.data.force_alignment_in_progress);
   assertEquals(store.data.errors?.[0].step, "force_alignment");
 });

@@ -5,9 +5,11 @@
 //        │
 //   force_alignment                         (ElevenLabs: word timings)
 //        │
-//        ├── add_token_translations         (starts as soon as transcription finishes)
-//        ├── add_lessons ──► rate_lessons   (lesson outline branch)
-//        └── translate                      (sentence translation lines)
+//   add_lessons                              (semantic lines + lesson hierarchy)
+//        │
+//        ├── add_token_translations
+//        ├── rate_lessons
+//        └── translate
 //        │                                  (all three run concurrently)
 //   materialize lessons + translations      (join with aligned phrases)
 //        │
@@ -105,11 +107,20 @@ export async function runPipeline(
     }
   }
 
+  // Semantic line boundaries are part of the neutral course skeleton. Nothing
+  // may translate or index phrases until the lesson model has partitioned the
+  // aligned word stream and we have validated complete, contiguous coverage.
+  if (!store.lessonOutlineDone() && !store.lessonsDone()) {
+    try {
+      await addLessons(ctx);
+    } catch (error) {
+      failed.lessons = message(error);
+      return result(store, failed);
+    }
+  }
+
   const preparation: Record<string, () => Promise<void>> = {
     lessons: async () => {
-      // Existing records created before lesson_outline already have their
-      // final timestamped lessons; keep those resumable without redoing AI.
-      if (!store.lessonOutlineDone() && !store.lessonsDone()) await addLessons(ctx);
       if (!store.lessonsRated()) await rateLessons(ctx);
     },
     translate: async () => {

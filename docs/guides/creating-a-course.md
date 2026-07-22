@@ -161,7 +161,7 @@ Model selection lives entirely in the pipeline, in `pipeline/src/models.ts`. Rai
 | `add_token_translations` | `deepseek-v4-pro:cloud` | Ollama cloud |
 | `translate` | `qwen3.5:397b-cloud` | Ollama cloud |
 
-`extract_lyrics` makes one `mode=native` Supadata request. When that fails for a YouTube URL, it asks Gemini 2.5 Flash to transcribe the video with the lyric-specific prompt; other providers currently fail instead of using generated transcription. Supadata captions are deterministically split into lines of at most 42 characters, preferring periods and then commas. `force_alignment` downloads the audio and asks ElevenLabs to locate those known words, preserving the existing word-timing contract.
+`extract_lyrics` makes one `mode=native` Supadata request. When that fails for a YouTube URL, it asks Gemini 2.5 Flash to transcribe the video with the lyric-specific prompt; other providers currently fail instead of using generated transcription. `force_alignment` downloads the audio and asks ElevenLabs to locate the continuous transcript. The lesson model then partitions those exact timed words into a `lessons -> lines` hierarchy, choosing complete comprehension and translation units rather than trusting provider cue boundaries or performance pauses.
 
 Ollama cloud speaks the OpenAI chat-completions dialect, so it goes through `@ai-sdk/openai-compatible`. To change a model, edit `defaultModels()` and restart the service on the pipeline host:
 

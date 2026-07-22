@@ -26,7 +26,7 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
     );
     audioPath = audio.path;
     const alignment = await withRetries(
-      () => (ctx.alignLyrics ?? alignWithElevenLabs)(audio.path, lines.join("\n")),
+      () => (ctx.alignLyrics ?? alignWithElevenLabs)(audio.path, lines.join(" ")),
       {
         maxRetries: MAX_ALIGN_RETRIES,
         label: "ForceAlignment ElevenLabs",
@@ -34,11 +34,21 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
         onFailedAttempt: (_error, attempt) => attempts = Math.max(attempts, attempt),
       },
     );
-    const phrases: Phrase[] = parseWordTimings({ lines: groupWordsByLine(lines, alignment.words) });
-    if (phrases.length !== lines.length) {
-      throw new Error(`ElevenLabs aligned ${phrases.length} of ${lines.length} transcript lines`);
+    // Provider cue boundaries are not semantic lyric lines. Send one continuous
+    // transcript to ElevenLabs and keep its result as one provisional phrase;
+    // addLessons later partitions these exact timed words into comprehension
+    // units and lessons in one model call.
+    const expectedWords = countWords(lines);
+    if (alignment.words.length !== expectedWords) {
+      throw new Error(
+        `ElevenLabs aligned ${alignment.words.length} of ${expectedWords} transcript words`,
+      );
     }
+    const continuousText = alignment.words.map((word) => word.text).join(" ").trim();
+    const phrases: Phrase[] = parseWordTimings({ lines: [toRawLine(alignment.words)] });
+    if (phrases.length !== 1) throw new Error("ElevenLabs returned no usable transcript words");
     await ctx.store.patch([
+      { op: "set", path: "lyric_lines", value: [continuousText] },
       { op: "set", path: "phrases", value: phrases },
       ...(audio.durationSeconds == null ? [] : [{
         op: "set" as const,
@@ -60,24 +70,21 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
   }
 }
 
-function groupWordsByLine(lines: string[], words: AlignedWord[]) {
-  let next = 0;
-  return lines.flatMap((line) => {
-    const count = line.split(/\s+/u).filter(Boolean).length;
-    const lineWords = words.slice(next, next + count);
-    next += count;
-    if (lineWords.length !== count) return [];
-    return [{
-      line_start: secondsToSrt(lineWords[0].start),
-      line_end: secondsToSrt(lineWords.at(-1)!.end),
-      line_text: line,
-      words: lineWords.map((word) => ({
-        word: word.text,
-        start: secondsToSrt(word.start),
-        end: secondsToSrt(word.end),
-      })),
-    }];
-  });
+function countWords(lines: string[]): number {
+  return lines.reduce((total, line) => total + line.split(/\s+/u).filter(Boolean).length, 0);
+}
+
+function toRawLine(words: AlignedWord[]) {
+  return {
+    line_start: secondsToSrt(words[0].start),
+    line_end: secondsToSrt(words.at(-1)!.end),
+    line_text: words.map((word) => word.text).join(" ").trim(),
+    words: words.map((word) => ({
+      word: word.text,
+      start: secondsToSrt(word.start),
+      end: secondsToSrt(word.end),
+    })),
+  };
 }
 
 function secondsToSrt(seconds: number): string {

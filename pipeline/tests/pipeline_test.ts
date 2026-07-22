@@ -38,7 +38,9 @@ interface Mocks {
 
 function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: ModelRegistry } {
   const mocks: Mocks = {
-    lessons: queuedModel(["# Lesson\nLine 1\nLine 2"]),
+    lessons: queuedModel([{
+      lessons: [{ title: "Lesson", lines: ["Line 1", "Line 2"] }],
+    }]),
     rate: queuedModel([RATINGS]),
     translate: queuedModel(["שורה 1\nשורה 2"]),
     tokens: queuedModel(["Line | ת1\n1 | ת2\nLine | ת3\n2 | ת4"]),

@@ -8,18 +8,20 @@ mutation is streamed back to a callback URL the trigger request provides.
 
 ## The workflow and how it parallelizes
 
-Everything after transcription and forced alignment fans out:
+Semantic segmentation is the final required transcription stage; downstream work fans out after it:
 
 ```
 extract_lyrics                              (Supadata native captions; YouTube Gemini fallback)
      │
 force_alignment                             (ElevenLabs word timings)
      │
+add_lessons                                 (semantic lines + lesson hierarchy)
+     │
      ├── add_token_translations             (4 chunks in flight)
-     ├── add_lessons ──► rate_lessons       (untimestamped lesson outline)
+     ├── rate_lessons                       (lesson quality)
      └── translate                          (sentence translation lines)
      │                                      (all three run concurrently)
-materialize lessons + translations          (join with aligned phrases)
+materialize translations                    (join with semantic phrases)
      │
      └── add_similar_sound                  (dictionary lookup, no LLM)
      │
@@ -28,25 +30,29 @@ finalize_translation                        (payload metadata + lessons snapshot
 
 Supadata is requested once with `mode=native` and `text=false`. If native captions are unavailable
 for YouTube, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
-currently stop at the native-caption failure. Supadata chunks are normalized into lines no longer
-than 42 characters, preferring periods, then commas, then whitespace. ElevenLabs forced alignment
-maps those known words to the audio and materializes the timed phrases.
+currently stop at the native-caption failure. Provider cue boundaries are removed and ElevenLabs
+maps one continuous transcript to a flat timed word stream.
 
-Lesson generation reads `lyric_lines` and persists an untimestamped `lesson_outline`; the
-orchestrator combines that outline with the aligned phrases into the existing timestamped `lessons`
-format.
+Lesson generation receives the continuous aligned transcript and returns the same text with only
+lesson titles and semantic line breaks inserted. The pipeline verifies every returned token against
+the aligned transcript in order, derives internal word ranges from the line lengths, and reconstructs
+the exact text and timestamps itself. This makes each
+line a semantic comprehension/translation unit without allowing the model to modify the transcript.
+It atomically persists `lyric_lines`, `phrases`, `lesson_outline`, and timestamped `lessons`.
+The prompt uses a ten-line, two-lesson worked example in the clip language for the seven configured
+languages, falling back to English for unknown languages.
 
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
 `translation_lines.<iso>`, then copies those lines into the stable
 `translations.<iso>.phrases.<i>.text` payload slots.
 
-Token translation depends on the timed word structure, but not on either lesson call. It begins
-alongside lesson generation and sentence translation after alignment finishes.
+Token translation begins after semantic segmentation, alongside lesson rating and sentence
+translation.
 
 The fan-out is safe because the branches write **disjoint keys** of `CreateSongProgress.data`:
 
-- the early lessons branch writes `lesson_outline` and `lesson_ratings`, then the join writes
-  `lessons`;
+- semantic segmentation writes `lyric_lines`, `phrases`, `lesson_outline`, and `lessons` before the
+  fan-out; lesson rating then writes `lesson_ratings`;
 - early sentence translation writes `translation_lines.<iso>`, then the join writes
   `translations.<iso>.phrases.<i>.text`;
 - `add_token_translations` writes `translations.<iso>.phrases.<i>.words`.
@@ -65,10 +71,9 @@ The clip language is mapped to a dictionary by its English name (en/fr/de/he/ru/
 `clip_language_iso` in the trigger for anything the map doesn't cover. No dictionary means lines
 pass through unchanged, same as the Ruby fallback.
 
-Branches settle independently (`Promise.allSettled`): one branch failing never discards another
-branch's completed — and already persisted — work. `finalize_translation` runs only when both
-translation branches succeeded; the lessons snapshot it copies into the payload may be `null` if the
-lessons branch failed, and a rerun fills it in.
+After required semantic segmentation succeeds, branches settle independently
+(`Promise.allSettled`): one branch failing never discards another branch's completed — and already
+persisted — work. `finalize_translation` runs only when both translation branches succeeded.
 
 ### Providers and models
 
@@ -76,7 +81,7 @@ lessons branch failed, and a rerun fills it in.
 | --------------------------------------------------- | ----------------------- | ---------------------------------------------- |
 | extract_lyrics                                      | Native captions / LLM fallback | Supadata (`mode=native`) / Gemini 2.5 Flash |
 | force_alignment                                     | Forced Alignment API    | ElevenLabs                                     |
-| add_lessons / rate_lessons / add_token_translations | `deepseek-v4-pro:cloud` | Ollama cloud via `@ai-sdk/openai-compatible`   |
+| add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite` | Google Generative AI                          |
 | translate                                           | `qwen3.5:397b-cloud`    | Ollama cloud via `@ai-sdk/openai-compatible`   |
 
 ## Failure handling

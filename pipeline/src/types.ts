@@ -59,14 +59,13 @@ export interface PipelineError {
 export interface ProgressData {
   format_version?: number;
   phrases?: Phrase[];
-  // The transcription extract_lyrics produced after deterministic line
-  // splitting. `phrases` is materialized later by forced alignment.
+  // Before lesson generation this contains one continuous aligned transcript.
+  // Afterwards it contains the model-selected semantic comprehension lines.
   lyric_lines?: string[];
   extract_lyrics_in_progress?: boolean;
   force_alignment_in_progress?: boolean;
   video_length_seconds?: number | null;
-  // Untimestamped lesson grouping produced from lyric_lines. Once timings
-  // exist it is materialized as `lessons`.
+  // Untimestamped lesson hierarchy produced from aligned word-index ranges.
   lesson_outline?: string;
   lessons?: string;
   lesson_ratings?: LessonRating[];

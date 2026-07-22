@@ -36,17 +36,25 @@ export interface SupadataOptions {
 
 export const MAX_LINE_LENGTH = 42;
 
+export function transcriptToText(chunks: TranscriptChunk[]): string {
+  return chunks.map((chunk) => cleanTranscriptText(chunk.text)).filter(Boolean).join(" ").trim();
+}
+
 export function transcriptToLines(chunks: TranscriptChunk[]): string[] {
   return chunks.flatMap((chunk) => {
     // Native captions commonly include non-speech cues such as [Music],
     // [Música], and [Applause]. Square brackets are also reserved by the app's
     // token markup, so these annotations are not learning content.
-    const text = chunk.text.replace(/\[[^\]\r\n]*\]/gu, " ").replace(/\s+/gu, " ").trim();
+    const text = cleanTranscriptText(chunk.text);
     if (!text) return [];
     const sentences = text.match(/.*?(?:[.!?。！？]+(?=\s|$)|$)/gu)
       ?.map((part) => part.trim()).filter(Boolean) ?? [];
     return sentences.flatMap((sentence) => splitLongLine(sentence));
   });
+}
+
+function cleanTranscriptText(text: string): string {
+  return text.replace(/\[[^\]\r\n]*\]/gu, " ").replace(/\s+/gu, " ").trim();
 }
 
 function splitLongLine(text: string): string[] {

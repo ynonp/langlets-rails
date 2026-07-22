@@ -2,13 +2,13 @@ import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
 import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
 import { makeCtx, queuedModel, stubTranscribe, transcriptFixture } from "./helpers.ts";
 
-Deno.test("saves split Supadata transcript text for alignment", async () => {
+Deno.test("saves continuous Supadata transcript text for alignment", async () => {
   const transcriber = stubTranscribe([transcriptFixture(1, 2)]);
   const { ctx, store } = makeCtx({ transcribeVideo: transcriber.transcribe });
 
   await extractLyrics(ctx);
 
-  assertEquals(store.data.lyric_lines, ["Line 1", "Line 2"]);
+  assertEquals(store.data.lyric_lines, ["Line 1 Line 2"]);
   assertEquals(store.data.phrases, undefined);
   assertFalse(store.data.extract_lyrics_in_progress);
   assert(store.data.force_alignment_in_progress);
@@ -27,7 +27,7 @@ Deno.test("falls back to Gemini immediately when YouTube native captions fail", 
 
   assertEquals(transcriber.calls(), 1);
   assertEquals(gemini.calls(), 1);
-  assertEquals(store.data.lyric_lines, ["First line", "Second line"]);
+  assertEquals(store.data.lyric_lines, ["First line Second line"]);
 });
 
 Deno.test("does not use Gemini fallback for a non-YouTube provider", async () => {

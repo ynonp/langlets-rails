@@ -3,7 +3,7 @@ import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
 import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
 import { message, withRetries } from "../retry.ts";
-import { transcribeWithSupadata, transcriptToLines } from "../supadata.ts";
+import { transcribeWithSupadata, transcriptToText } from "../supadata.ts";
 
 const MAX_GEMINI_RETRIES = 2;
 
@@ -23,7 +23,8 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     let lyricLines: string[];
     try {
       const transcript = await transcribe(ctx.youtubeurl, languageCode);
-      lyricLines = transcriptToLines(transcript.content);
+      const transcriptText = transcriptToText(transcript.content);
+      lyricLines = transcriptText ? [transcriptText] : [];
       if (lyricLines.length === 0) throw new Error("Supadata returned no usable native transcript");
     } catch (nativeError) {
       if (!isYoutubeUrl(ctx.youtubeurl)) throw nativeError;
@@ -41,8 +42,8 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
           });
           lastResponseText = text;
           const parsed = parseLyricsLines(text);
-          if (parsed.length === 0) throw new Error("Gemini lyrics response contained no lines");
-          return parsed;
+          if (parsed.length === 0) throw new Error("Gemini lyrics response contained no text");
+          return [parsed.join(" ")];
         },
         {
           maxRetries: MAX_GEMINI_RETRIES,
