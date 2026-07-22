@@ -50,10 +50,10 @@ The four configurations are:
 This is the large hero player a learner sees when they open a course and watch
 the complete video. It is the most "video-like" of the players:
 
-- A full-width `aspect-video` hero with the YouTube thumbnail as a background.
-- A large center play button, a back button, language badge, and a title
-  gradient overlay.
-- A functional scrubber/progress bar at the bottom (click to seek).
+- A full-width `aspect-video` iframe preloaded with YouTube's native controls.
+- No custom click overlay, play button, time display, or scrubber is placed over
+  the iframe, so all native YouTube interactions remain available.
+- Course navigation sits below the iframe rather than obscuring its controls.
 - Below the video, a synchronized, scrollable word-by-word transcript that
   highlights the current line as the video plays (driven by the
   [`watch-video-activity`](../app/javascript/controllers/watch_video_activity_controller.js)
@@ -70,14 +70,14 @@ the complete video. It is the most "video-like" of the players:
 > window contains the current time.
 
 It plays the whole video as one big segment (`segment-start` → `segment-end`
-spanning the full course), and `fullPlayerStartPlayback` / `fullPlayerStopPlayback`
-toggle the visibility of the play button.
+spanning the full course). The shared controller still observes native player
+state changes and emits the `video:*` events used by the transcript.
 
 The full-course segment ends at the latest persisted phrase-token end timestamp,
 so the final spoken word is not cut off. Courses without word timing fall back
 to the final phrase's start timestamp, preserving legacy behavior. At that
 boundary, the shared controller pauses and seeks back to the segment start; the
-center play button then replays the full video.
+native play control then replays the full video.
 
 ---
 

@@ -73,4 +73,16 @@ class FullPlayerControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "[data-segment-end='128.76']"
   end
+
+  test "uses a preloaded interactive YouTube player" do
+    get course_full_player_path(@course)
+
+    assert_response :success
+    assert_select "[data-controller~='main-video-player'][data-main-video-player-preload-player-value='true'][data-main-video-player-interactive-value='true']"
+    assert_select "[data-main-video-player-target='player']"
+    assert_select "[data-action*='main-video-player#togglePlayPause']", count: 0
+    assert_select "[data-main-video-player-target='playButton']", count: 0
+    assert_select "[data-main-video-player-target='progressBarContainer']", count: 0
+    assert_select "a[aria-label='Back to course']"
+  end
 end

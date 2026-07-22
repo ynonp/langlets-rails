@@ -28,6 +28,8 @@
     data-controller="main-video-player watch-video-activity"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"
+    data-main-video-player-preload-player-value="true"
+    data-main-video-player-interactive-value="true"
     data-main-video-player-target="videoListener videoSegment"
     data-action="
       video:play->main-video-player#fullPlayerStartPlayback
@@ -45,58 +47,20 @@
 >
   <!-- Video hero -->
   <div class="relative flex-shrink-0 bg-gray-100 dark:bg-gray-900" id="main-player" data-main-video-player-target="playerContainer">
-    <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
-         style="background-image: url('https://img.youtube.com/vi/<%= @video_id %>/hqdefault.jpg')"
-         role="img"
-         aria-label="Video thumbnail">
-
-      <div class="absolute inset-0 z-20" data-action="click->main-video-player#togglePlayPause"></div>
-
+    <div class="w-full aspect-video relative">
       <div data-main-video-player-target="player"
            class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
-
-      <!-- Back button -->
-      <a href="<%= course_path(@course.slug) %>" class="absolute z-30 top-3.5 left-5 w-[38px] h-[38px] rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center" aria-label="Back to course">
-        <svg width="11" height="18" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-
-      <!-- Language badge -->
-      <% if l1 %>
-        <span class="absolute z-30 top-4 right-5 inline-flex items-center gap-1 px-2 py-0.5 rounded-md font-mono font-extrabold text-[11px] tracking-wide bg-black/40 text-white"><%= lang_badge_code(l1) %></span>
-      <% end %>
-
-      <!-- Title gradient -->
-      <div class="absolute left-0 right-0 bottom-0 z-20 pt-6 px-5 pb-3.5" style="background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);">
-        <div class="text-lg font-extrabold tracking-tight text-white"><%= @course.localized_name %></div>
-      </div>
-
-      <!-- Center play button -->
-      <button data-main-video-player-target="playButton"
-              class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white border-none cursor-pointer"
-              style="box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
-        <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
-      </button>
-
-      <!-- Time display (elapsed / total) -->
-      <div class="absolute z-30 flex items-center gap-1 tabular-nums bottom-3 right-5 text-white text-xs"
-           style="font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
-        <span data-main-video-player-target="timeElapsed">0:00</span>
-        <span class="opacity-70">/</span>
-        <span data-main-video-player-target="timeDuration" class="opacity-70">0:00</span>
-      </div>
-
-      <!-- Scrubber (functional progress bar) -->
-      <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer h-1.5 bg-white/25"
-          data-main-video-player-target="progressBarContainer"
-          data-action="click->main-video-player#seekToPosition">
-        <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear bg-emerald-500" style="width: 0%;"></div>
-      </div>
     </div>
   </div>
 
   <!-- Breakdown header -->
   <div class="flex items-center justify-between px-5 pt-3 pb-1">
-    <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Tap any word</div>
+    <div class="flex items-center gap-3">
+      <a href="<%= course_path(@course.slug) %>" class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300" aria-label="Back to course">
+        <svg width="8" height="14" viewBox="0 0 12 20"><path d="M10 2L2 10l8 8" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <div class="font-mono text-xs font-extrabold uppercase tracking-wide text-emerald-600 dark:text-emerald-400">Tap any word</div>
+    </div>
     <div class="flex items-center gap-4">
       <% if @word_timing %>
         <label class="inline-flex items-center gap-2 text-xs font-bold text-gray-500 dark:text-gray-400 cursor-pointer">

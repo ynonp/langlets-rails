@@ -17,12 +17,15 @@
 
 ### Full-course video playback
 
-The full player loads every phrase from the course medium and plays one segment
-from the first phrase start through the latest phrase-token end timestamp. This
+The full player preloads an interactive YouTube iframe with native controls. It
+loads every phrase from the course medium and plays one segment from the first
+phrase start through the latest phrase-token end timestamp. This
 keeps the final word audible when word timing is available. Legacy courses with
 no token timing use the final phrase start as their endpoint. The shared
 `main-video-player` Stimulus controller continues to enforce that server-derived
-segment boundary for playback, progress, and seeking. When the full-course
+segment boundary and dispatch synchronized transcript progress events. The view
+does not place custom playback chrome or click-capturing overlays over the
+iframe. When the full-course
 segment ends, the controller pauses and rewinds to its start, making the next
 play action replay the complete video.
 
