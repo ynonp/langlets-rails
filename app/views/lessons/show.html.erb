@@ -32,6 +32,7 @@
     data-main-video-player-video-id-value="<%= @videoid %>"
     data-main-video-player-hl-value="<%= activity_params[:video_hl] %>"
     data-main-video-player-preload-player-value="<%= activity_params[:preload_player] || false %>"
+    data-main-video-player-interactive-value="<%= activity_params[:interactive_video_player] || false %>"
 >
   <div
     id="main-player"
@@ -43,34 +44,38 @@
        role="img"
        aria-label="Video thumbnail">
 
-        <div class="absolute inset-0 z-20"
-              data-action="click->main-video-player#togglePlayPause"></div>
+        <% unless activity_params[:interactive_video_player] %>
+          <div class="absolute inset-0 z-20"
+                data-action="click->main-video-player#togglePlayPause"></div>
+        <% end %>
 
 
         <div
             data-main-video-player-target="player"
             class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
         </div>
-              <!-- Time display (elapsed / total) -->
-        <div class="absolute z-30 flex items-center gap-1 tabular-nums"
-             style="bottom: 12px; right: 14px; color:#fff; font-size: 12px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
-          <span data-main-video-player-target="timeElapsed">0:00</span>
-          <span style="opacity: 0.7;">/</span>
-          <span data-main-video-player-target="timeDuration" style="opacity: 0.7;">0:00</span>
-        </div>
+        <% unless activity_params[:interactive_video_player] %>
+          <!-- Time display (elapsed / total) -->
+          <div class="absolute z-30 flex items-center gap-1 tabular-nums"
+               style="bottom: 12px; right: 14px; color:#fff; font-size: 12px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
+            <span data-main-video-player-target="timeElapsed">0:00</span>
+            <span style="opacity: 0.7;">/</span>
+            <span data-main-video-player-target="timeDuration" style="opacity: 0.7;">0:00</span>
+          </div>
 
-              <!-- Custom Progress Bar -->
-        <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer"
-            data-main-video-player-target="progressBarContainer"
-            data-action="click->main-video-player#seekToPosition"
-            style="pointer-events: auto; height: 6px; background: rgba(255,255,255,0.25);">
-          <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear bg-emerald-500" style="width: 0%;"></div>
-        </div>
-        <button data-main-video-player-target="playButton"
-                class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white border-none cursor-pointer"
-                style="box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
-          <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
-        </button>
+          <!-- Custom Progress Bar -->
+          <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer"
+              data-main-video-player-target="progressBarContainer"
+              data-action="click->main-video-player#seekToPosition"
+              style="pointer-events: auto; height: 6px; background: rgba(255,255,255,0.25);">
+            <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear bg-emerald-500" style="width: 0%;"></div>
+          </div>
+          <button data-main-video-player-target="playButton"
+                  class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white border-none cursor-pointer"
+                  style="box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
+            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
+          </button>
+        <% end %>
       </div>
   </div>
 

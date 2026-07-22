@@ -75,7 +75,9 @@ toggle the visibility of the play button.
 
 The full-course segment ends at the latest persisted phrase-token end timestamp,
 so the final spoken word is not cut off. Courses without word timing fall back
-to the final phrase's start timestamp, preserving legacy behavior.
+to the final phrase's start timestamp, preserving legacy behavior. At that
+boundary, the shared controller pauses and seeks back to the segment start; the
+center play button then replays the full video.
 
 ---
 
@@ -91,6 +93,11 @@ the main player (the iframe lives in the shared lesson layout —
 under the `#main-player` container), but:
 
 - It is scoped to the activity's `segmentStart`/`segmentEnd`, not the full video.
+- It preloads an interactive iframe and uses YouTube's native controls. The
+  shared lesson layout does not render its custom click overlay, play button,
+  time display, or progress bar for this activity.
+- When the segment finishes, the player pauses and rewinds to its start so the
+  next press of YouTube's play control replays the lesson.
 - It shows the synchronized transcript, a translation toggle, and a
   "Start practice" button that appears once the segment finishes
   (`handleVideoEnd` reveals it and awards XP).

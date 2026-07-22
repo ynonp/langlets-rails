@@ -10,6 +10,8 @@ module Activities
         **video_params,
         phrases: ordered_phrases,
         video_player: true,
+        interactive_video_player: true,
+        preload_player: true,
         word_timing: word_timing_enabled?(ordered_phrases),
         l1_rtl: lesson.rtl_language,
         l2_rtl: l2.rtl,

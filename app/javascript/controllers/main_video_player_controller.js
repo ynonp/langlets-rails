@@ -8,6 +8,7 @@ export default class extends Controller {
     videoId: String,
     hl: String,
     preloadPlayer: Boolean,
+    interactive: Boolean,
   }
 
   connect() {
@@ -24,6 +25,8 @@ export default class extends Controller {
     const start = Number(this.videoSegmentTarget.dataset.segmentStart);
     const end = Number(this.videoSegmentTarget.dataset.segmentEnd);
     if (Number.isFinite(start) && Number.isFinite(end)) {
+      this.segmentStart = start;
+      this.segmentEnd = end;
       this.updateTimeDisplay(0, end - start);
     }
   }
@@ -72,7 +75,7 @@ export default class extends Controller {
       playerVars: {
         autoplay: 0,
         playsinline: 1,
-        controls: 0,
+        controls: this.interactiveValue ? 1 : 0,
         modestbranding: 1,
         rel: 0,
         hl: this.hlValue,
@@ -100,11 +103,15 @@ export default class extends Controller {
   }
 
   fullPlayerStartPlayback() {    
-    this.playButtonTarget.classList.add('hidden');
+    if (this.hasPlayButtonTarget) {
+      this.playButtonTarget.classList.add('hidden');
+    }
   }
 
   fullPlayerStopPlayback() {
-    this.playButtonTarget.classList.remove('hidden');
+    if (this.hasPlayButtonTarget) {
+      this.playButtonTarget.classList.remove('hidden');
+    }
   }
 
   async togglePlayPause(ev) {    
@@ -200,8 +207,13 @@ export default class extends Controller {
     this.monitorPlaybackInterval = setInterval(async () => {
       const at = await this.player.getCurrentTime();
       if (at >= this.segmentEnd) {
+        this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('end');
-        this.player.pauseVideo();
+        await this.player.pauseVideo();
+        await this.player.seekTo(this.segmentStart);
+        this.dispatchVideoEvent('progress', { at: this.segmentStart });
+        this.updateProgressBar(this.segmentStart, this.segmentStart, this.segmentEnd);
+        return;
       }
       this.dispatchVideoEvent('progress', { at })
       this.updateProgressBar(at, this.segmentStart, this.segmentEnd);
