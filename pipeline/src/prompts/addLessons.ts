@@ -18,10 +18,10 @@ Reformat the transcript so it is easy for a language student to study. Divide th
 ### 1. Text Integrity
 - Keep every word exactly as written, exactly once, in strict chronological order.
 - You may only insert lesson titles and line breaks. Never repeat, omit, correct, or rewrite transcript text.
-- Punctuation and pauses are hints, not requirements. Do not let them force you to break a semantic unit.
 
 ### 2. Line Splitting
-- A line must be a complete comprehension and translation unit.
+- A line must be a complete comprehension and translation unit. 
+- Speech Pauses vs. Semantic Units: The punctuation in the transcript marks audio breaths and pauses, not grammatical sentences. A single translation unit might span across a period. Base your line breaks purely on grammar and vocabulary. Ignore punctuation when deciding where a complete thought begins and ends.
 - NEVER split an article from its noun, a preposition from its object, an auxiliary from its verb, or a fixed expression.
 - Aim for roughly 3–12 words. Concise lines are preferred, but semantic completeness is more important than length.
 

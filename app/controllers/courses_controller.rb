@@ -116,22 +116,22 @@ class CoursesController < ApplicationController
 
   def show
     @course = Course.find_by(slug: params[:id]) || Course.find(params[:id])
-    
+
     response.headers["Turbo-Visit"] = "reload"
     response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate"
-    
+
     if current_user
       @daily_xp = ActivityLog.daily_xp_for_user(current_user)
       @streak_info = ActivityLog.streak_info_for_user(current_user)
-      
+
       @lessons = @course.lessons
-        .includes(:activities, :lesson_users, activities: :activity_users)
+        .includes(:localized_translation, :activities, :lesson_users, activities: :activity_users)
         .with_progress_data(current_user)
         .order(:order)
       @all_done = @lessons.all?(&:completed?)
       @first_incomplete_lesson_id = @lessons.find { |l| l.in_progress? || l.not_started? }&.id
     else
-      @lessons = @course.lessons
+      @lessons = @course.lessons.includes(:localized_translation)
       @all_done = false
       @first_incomplete_lesson_id = nil
       @daily_xp = 0

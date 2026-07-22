@@ -314,6 +314,10 @@ the temporary file and run permission for `yt-dlp` and `ip`.
   - Reaching the lesson finish page is the authoritative completion event for
     authenticated learners. It idempotently creates the `LessonUser` record, so
     a lesson is complete even when an activity (such as speaking) was skipped.
+- **Show-page loading**: the course page preloads each lesson's localized
+  translation before rendering the lesson list. Word-order lessons preload
+  phrase tokens, localized token data, and token audio attachments once, then
+  sort those loaded tokens in memory while constructing phrase segments.
 
 #### 8. **Phrase** (`phrases`)
 - **Purpose**: Store synchronized bilingual text segments with timestamps
