@@ -53,10 +53,10 @@ export function defaultModels(env: ModelEnv = Deno.env.toObject()): ModelRegistr
     extractLyrics: llmLoggingEnabled(env)
       ? withLlmLogging(google("gemini-2.5-flash"), "extract_lyrics", { logPrompt: true })
       : google("gemini-2.5-flash"),
-    forceAlignment: log(google("gemini-2.5-flash"), "force_alignment"),
-    addLessons: log(ollama("deepseek-v4-pro:cloud"), "add_lessons"),
-    rateLessons: log(ollama("deepseek-v4-pro:cloud"), "rate_lessons"),
-    translate: log(ollama("qwen3.5:397b-cloud"), "translate"),
-    tokenTranslations: log(ollama("deepseek-v4-pro:cloud"), "add_token_translations"),
+    forceAlignment: log(google("gemini-3.5-flash-lite"), "force_alignment"),
+    addLessons: log(google("gemini-3.5-flash-lite"), "add_lessons"),
+    rateLessons: log(google("gemini-3.5-flash-lite"), "rate_lessons"),
+    translate: log(google("gemini-3.5-flash-lite"), "translate"),
+    tokenTranslations: log(google("gemini-3.5-flash-lite"), "add_token_translations"),
   };
 }
