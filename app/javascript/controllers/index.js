@@ -67,6 +67,12 @@ application.register("flashcard-activity", FlashcardActivityController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HomepageCarouselController from "./homepage_carousel_controller"
+application.register("homepage-carousel", HomepageCarouselController)
+
+import HomepageFilterController from "./homepage_filter_controller"
+application.register("homepage-filter", HomepageFilterController)
+
 import LanguageSelectController from "./language_select_controller"
 application.register("language-select", LanguageSelectController)
 

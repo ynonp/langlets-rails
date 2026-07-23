@@ -7,6 +7,7 @@
     image_url: nil
   ) %>
   <meta name="keywords" content="language learning, interactive video, learn English, learn Hebrew, learn French, learn Spanish, learn Arabic, bilingual education">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 <% end %>
 
 <% content_for :canonical_url, canonical_url(root_path) %>
@@ -35,167 +36,320 @@
   <% end %>
 <% end %>
 
-<div class="min-h-screen flex flex-col bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50">
-<!-- Top bar: Use existing authentication bar -->
-<header class="py-6 border-b border-gray-200 dark:border-gray-800">
-  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between gap-4">
-    <div class="flex-1">
-      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
-        Langlets
-      </h1>
-      <p class="text-gray-500 dark:text-gray-400 text-sm sm:text-base mt-1"><%= homepage_subhead(current_language_code) %></p>
-    </div>
+<%
+  # Signed-in visitors see their in-progress courses first; everyone else gets
+  # the most recently created ones. Both respond to #lessons_count and #language.
+  grid_courses = @all_courses
+  if user_signed_in? && @continue_learning_courses.any?
+    continuing_ids = @continue_learning_courses.map(&:id)
+    grid_courses = @continue_learning_courses + @all_courses.reject { |c| continuing_ids.include?(c.id) }
+  end
 
-    <% if user_signed_in? %>
-      <% daily_xp = ActivityLog.daily_xp_for_user(current_user) %>
-      <% streak_info = ActivityLog.streak_info_for_user(current_user) %>
-      <% streak = streak_info[:count] %>
+  # One accent dot per language, keyed by base ISO. Falls back to the brand red.
+  lang_dot = Hash.new("#C4451C").merge(
+    "es" => "#E8B93E", "fr" => "#7C9ED9", "ar" => "#6FBF8F",
+    "he" => "#C98BD9", "de" => "#E89A5C", "en" => "#8FB7E0", "ru" => "#D98B8B"
+  )
+  base_iso = ->(language) { language&.iso_name.to_s.split("-").first.to_s.downcase }
 
-      <div class="flex items-center space-x-4">
-        <div class="hidden sm:flex" data-testid="header-theme-desktop">
-          <%= render "shared/theme_toggle" %>
-        </div>
-        <!-- XP Display -->
-        <div class="flex items-center space-x-6">
-          <!-- Day Streak -->
-          <div class="flex items-center">
-            <div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 font-extrabold text-sm">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
-                <path d="M12 2c1 3 4 4.5 4 8a4 4 0 0 1-8 0c0-1 .3-1.8.8-2.5C8 8.8 7 10.3 7 12.5a5 5 0 0 0 10 0c0-4.2-3-6.5-5-10.5z" fill="oklch(0.68 0.2 40)"/>
-                <path d="M12 9c.7 1.3 2 2 2 3.6a2 2 0 0 1-4 0c0-1 .6-1.8 2-3.6z" fill="oklch(0.82 0.15 70)"/>
-              </svg>
-              <%= streak %> day<%= 's' if streak != 1 %>
-            </div>
-          </div>
+  # Filter chips: the distinct languages actually present in the grid.
+  filter_langs = grid_courses.map(&:language).compact.uniq { |l| base_iso.call(l) }
 
-          <!-- Today's XP -->
-          <div class="hidden sm:flex items-center" data-testid="header-xp-desktop">
-            <div class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs font-bold bg-blue-500 text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-1">
-                <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z" clip-rule="evenodd" />
-              </svg>
-              <%= daily_xp %> XP
-            </div>
-          </div>
-        </div>
+  free_credits = User::SIGNUP_CREDITS
 
-        <!-- Create Course Button (for authorized users) - Hidden on mobile -->
-        <% if can? :create, Course %>
-          <%= link_to new_course_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" do %>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 mr-2">
-              <path fill-rule="evenodd" d="M12 3.75a.75.75 0 0 1 .75.75v6.75h6.75a.75.75 0 0 1 0 1.5h-6.75v6.75a.75.75 0 0 1-1.5 0v-6.75H4.5a.75.75 0 0 1 0-1.5h6.75V4.5a.75.75 0 0 1 .75-.75Z" clip-rule="evenodd" />
-            </svg>
-            Create Course
-          <% end %>
-          <%= link_to new_import_course_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" do %>
-            Import
-          <% end %>
-          <%= link_to new_resync_timestamp_path, class: "hidden sm:inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 font-extrabold text-sm transition-colors" do %>
-            Resync
-          <% end %>
-        <% end %>
+  slides = [
+    { img: "/homepage/slide-1.png", caption: "Listen with a synchronized transcript & translation" },
+    { img: "/homepage/slide-2.png", caption: "Replay sentences with focused listening practice" },
+    { img: "/homepage/slide-3.png", caption: "Practice individual words from the video" }
+  ]
+%>
 
-        <%= render "shared/user_menu",
-          show_theme_toggle: true,
-          show_xp_badge: true %>
-      </div>
-    <% else %>
-      <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-        <span class="text-gray-500 dark:text-gray-400 text-sm sm:text-base hidden sm:block"><%= t("shared.sign_in_prompt") %></span>
-        <div class="flex items-center gap-2">
-          <%= render "shared/theme_toggle" %>
-          <%= link_to t(".sign_up"), new_user_registration_path(returnto: request.fullpath), class: "inline-flex items-center justify-center gap-2 h-10 px-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold text-sm transition-colors" %>
-        </div>
-      </div>
+<style>
+  .lp {
+    --bg:#FAF6EF; --ink:#1E1B16; --accent:#C4451C; --accent-d:#9E3410;
+    --muted:#55503F; --faint:#8A8170; --card:#FFFDF8; --shadow:#EADFC9;
+    --dark:#1E1B16; --dark-fg:#FAF6EF; --dark-muted:#B5AC98;
+    min-height:100vh; display:flex; flex-direction:column;
+    background:var(--bg); color:var(--ink);
+    font-family:'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  /* Zero-specificity default (via :where) so anchors inherit their surrounding
+     text colour, and every component rule below can set its own without a
+     specificity war. */
+  :where(.lp a) { color:inherit; text-decoration:none; }
+  .lp ::selection { background:#F4D8A6; }
+  .lp-display { font-family:'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif; }
+
+  /* Nav — same 1100 content column + 40px padding as the hero and library, so
+     the brand's left edge lines up with the hero headline and "Jump right in". */
+  .lp-nav { display:flex; align-items:center; justify-content:space-between; gap:24px;
+    padding:20px 40px; max-width:1180px; width:100%; margin:0 auto; box-sizing:border-box; flex-wrap:wrap; }
+  .lp-brand { display:flex; align-items:baseline; gap:8px; }
+  .lp-brand-name { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:26px; letter-spacing:-0.02em; color:var(--ink); }
+  .lp-brand-dot { width:8px; height:8px; border-radius:50%; background:var(--accent); display:inline-block; transform:translateY(-2px); }
+  .lp-nav-links { display:flex; align-items:center; gap:28px; font-size:15px; font-weight:500; flex-wrap:wrap; }
+  .lp-navlink { color:var(--ink); }
+  .lp-navlink:hover { color:var(--accent); }
+  .lp-pill { background:var(--ink); color:var(--bg); padding:10px 20px; border-radius:999px; font-weight:600; }
+  .lp-pill:hover { color:var(--bg); background:#000; }
+  .lp-signout { background:none; border:none; padding:0; font:inherit; color:var(--ink); font-weight:500; cursor:pointer; }
+  .lp-signout:hover { color:var(--accent); }
+
+  /* Hero — max-width is 1100 (the shared content column) plus the 40px
+     horizontal padding on each side, so the border-box padding doesn't inset
+     the content past the library/footer edges below it. */
+  .lp-hero { max-width:1180px; margin:0 auto; padding:40px 40px 56px; box-sizing:border-box; width:100%;
+    display:grid; grid-template-columns:1.15fr 1fr; gap:56px; align-items:center; }
+  .lp-h1 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:52px; line-height:1.02;
+    letter-spacing:-0.03em; margin:0 0 16px; text-wrap:balance; }
+  .lp-lead { font-size:17px; line-height:1.55; color:var(--muted); margin:0 0 28px; max-width:520px; text-wrap:pretty; }
+  .lp-paste { display:flex; gap:10px; background:var(--card); border:2px solid var(--ink); border-radius:16px;
+    padding:8px; max-width:540px; }
+  .lp-paste input { flex:1; border:none; outline:none; background:transparent; font-family:'Instrument Sans', sans-serif;
+    font-size:16px; color:var(--ink); padding:8px 10px; min-width:0; }
+  .lp-create { background:var(--accent); color:var(--card); border:none; border-radius:10px; padding:11px 28px;
+    font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:16px; cursor:pointer; }
+  .lp-create:hover { background:var(--accent-d); }
+  .lp-note { margin-top:12px; background:#F2EADB; border-radius:12px; padding:11px 16px; font-size:14.5px;
+    color:var(--muted); max-width:524px; box-sizing:border-box; }
+  .lp-note strong { color:var(--ink); }
+  .lp-meta { display:flex; gap:20px; margin-top:16px; font-size:13.5px; color:var(--faint); flex-wrap:wrap; }
+
+  /* Slideshow */
+  .lp-slideshow { display:flex; flex-direction:column; gap:14px; }
+  .lp-slide-frame { background:#0B1220; border:2px solid var(--ink); border-radius:18px; overflow:hidden; box-shadow:6px 6px 0 var(--shadow); }
+  .lp-slide-img { width:100%; height:400px; object-fit:contain; object-position:top; display:block; background:#0B1220; }
+  .lp-slide-nav { display:flex; align-items:center; gap:14px; }
+  .lp-arrow { background:var(--card); border:1px solid #E4DCCC; border-radius:999px; width:34px; height:34px;
+    font-size:15px; cursor:pointer; color:var(--ink); flex-shrink:0; }
+  .lp-arrow:hover { border-color:var(--accent); color:var(--accent); }
+  .lp-caption { flex:1; font-size:14.5px; line-height:1.45; color:var(--ink); font-weight:600; }
+  .lp-dots { display:flex; gap:7px; justify-content:center; }
+  .lp-dot { width:8px; height:8px; border-radius:50%; border:none; padding:0; cursor:pointer; background:#DDD3BE; }
+
+  /* Library */
+  .lp-library { background:var(--dark); color:var(--dark-fg); padding:72px 40px 80px; }
+  .lp-lib-inner { max-width:1100px; margin:0 auto; }
+  .lp-lib-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; margin-bottom:32px; }
+  .lp-h2 { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:36px; letter-spacing:-0.02em; margin:0 0 8px; }
+  .lp-lib-sub { margin:0; font-size:16.5px; color:var(--dark-muted); }
+  .lp-filters { display:flex; gap:8px; flex-wrap:wrap; }
+  .lp-chip { background:transparent; color:var(--dark-muted); border:1px solid #4A443A; border-radius:999px;
+    padding:9px 18px; font-family:'Instrument Sans', sans-serif; font-size:14.5px; font-weight:600; cursor:pointer; }
+  .lp-chip:hover { border-color:var(--accent); }
+  .lp-chip.is-active { background:var(--bg); color:var(--ink); }
+  .lp-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:20px; }
+  .lp-card { display:flex; flex-direction:column; background:#2A261F; border-radius:16px; overflow:hidden;
+    color:var(--dark-fg); border:1px solid #3A352C; }
+  .lp-card:hover { border-color:var(--accent); color:var(--dark-fg); }
+  .lp-card-thumb { width:100%; aspect-ratio:16/9; object-fit:cover; display:block; background:#0B1220; }
+  .lp-card-body { padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .lp-card-title { font-weight:600; font-size:15.5px; line-height:1.35; display:-webkit-box;
+    -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .lp-card-meta { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--dark-muted); margin-top:auto; }
+  .lp-card-dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
+  .lp-empty { color:var(--dark-muted); font-size:16px; }
+
+  /* Pricing — same 1100 content column + 40px padding as the hero, so its
+     content edges line up with the rest of the page. */
+  .lp-pricing { max-width:1180px; margin:0 auto; padding:88px 40px; box-sizing:border-box; width:100%; }
+  .lp-price-grid { display:grid; grid-template-columns:1.1fr 1fr; gap:56px; align-items:center; }
+  .lp-price-h { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:40px; letter-spacing:-0.02em; margin:0 0 16px; }
+  .lp-price-lead { font-size:17px; line-height:1.6; color:var(--muted); margin:0 0 20px; text-wrap:pretty; }
+  .lp-price-list { display:flex; flex-direction:column; gap:10px; font-size:15.5px; color:var(--ink); }
+  .lp-price-item { display:flex; gap:10px; align-items:baseline; }
+  .lp-check { color:var(--accent); font-weight:700; }
+  .lp-price-card { background:var(--dark); color:var(--dark-fg); border-radius:22px; padding:36px; box-shadow:8px 8px 0 var(--shadow); }
+  .lp-price-eyebrow { font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:15px; letter-spacing:0.08em; color:var(--dark-muted); margin-bottom:14px; }
+  .lp-price-row { display:flex; align-items:baseline; gap:10px; margin-bottom:6px; }
+  .lp-price-amount { font-family:'Bricolage Grotesque', sans-serif; font-weight:800; font-size:56px; letter-spacing:-0.03em; }
+  .lp-price-unit { font-size:18px; color:var(--dark-muted); }
+  .lp-price-sub { font-size:15px; color:var(--dark-muted); margin-bottom:26px; }
+  .lp-price-cta { display:block; text-align:center; background:var(--accent); color:var(--card); border-radius:12px;
+    padding:15px; font-family:'Bricolage Grotesque', sans-serif; font-weight:700; font-size:17px; }
+  .lp-price-cta:hover { background:var(--accent-d); color:var(--card); }
+  .lp-price-fine { text-align:center; font-size:13px; color:var(--faint); margin-top:12px; }
+
+  /* Footer */
+  .lp-footer { border-top:1px solid #E4DCCC; padding:28px 40px; margin-top:auto; }
+  .lp-footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; align-items:center;
+    gap:20px; flex-wrap:wrap; font-size:14px; color:var(--faint); }
+  .lp-footer-links { display:flex; gap:20px; }
+  .lp-footer-links a { color:var(--faint); }
+  .lp-footer-links a:hover { color:var(--accent); }
+
+  @media (max-width:860px) {
+    .lp-nav { padding:16px 20px; }
+    .lp-hero { grid-template-columns:1fr; gap:36px; padding:24px 20px 40px; }
+    .lp-h1 { font-size:38px; }
+    .lp-library { padding:56px 20px 64px; }
+    .lp-pricing { padding:56px 20px; }
+    .lp-price-grid { grid-template-columns:1fr; gap:36px; }
+    .lp-slide-img { height:320px; }
+    .lp-footer { padding:24px 20px; }
+  }
+</style>
+
+<div class="lp">
+  <!-- Nav -->
+  <nav class="lp-nav">
+    <%= link_to root_path, class: "lp-brand", "aria-label": "Langlets home" do %>
+      <span class="lp-brand-name">langlets</span>
+      <span class="lp-brand-dot"></span>
     <% end %>
-  </div>
-</header>
-
-<main class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-8 overflow-x-hidden w-full flex-1">
-
-  <!-- Flash Messages -->
-  <% if notice %>
-    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md mb-6 px-4 py-3.5 text-emerald-600 dark:text-emerald-400">
-      <%= notice %>
+    <div class="lp-nav-links">
+      <a href="#library" class="lp-navlink">Browse Langlets</a>
+      <a href="#pricing" class="lp-navlink">Pricing</a>
+      <% if user_signed_in? %>
+        <%= link_to "Add a video", new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
+        <%= button_to "Sign out", destroy_user_session_path, method: :delete, form_class: "lp-signout-form", class: "lp-signout" %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path, class: "lp-navlink" %>
+        <%= link_to "Start Free", new_user_registration_path(returnto: request.fullpath), class: "lp-pill" %>
+      <% end %>
     </div>
-  <% end %>
+  </nav>
 
-  <% if alert %>
-    <div class="bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-2xl shadow-md mb-6 px-4 py-3.5 text-red-600 dark:text-red-400">
-      <%= alert %>
+  <!-- Hero -->
+  <header class="lp-hero">
+    <div>
+      <h1 class="lp-h1">Practice your target language with videos you love</h1>
+      <p class="lp-lead">Turn native YouTube videos you enjoy into structured listening and vocabulary practice—designed for intermediate learners.</p>
+
+      <%= form_with url: new_app_import_request_path, method: :get, data: { turbo: false } do %>
+        <input type="hidden" name="lang" value="<%= current_language_code %>">
+        <div class="lp-paste">
+          <input type="text" name="url" inputmode="url" autocomplete="off" autocapitalize="off"
+                 autocorrect="off" spellcheck="false" enterkeyhint="go"
+                 placeholder="Paste a YouTube video link" aria-label="YouTube video link">
+          <button type="submit" class="lp-create">Create</button>
+        </div>
+      <% end %>
+
+      <% unless user_signed_in? %>
+        <div class="lp-note"><strong>Almost there —</strong> sign up to claim your <%= free_credits %> free credits and we'll start building this lesson.</div>
+      <% end %>
+
+      <div class="lp-meta">
+        <span>⏱ Ready in ~3 minutes</span>
+        <span>First <%= free_credits %> lessons free. No card required</span>
+      </div>
     </div>
-  <% end %>
 
-  <!-- GEO: Entity-rich description for search engines and AI crawlers -->
-  <section class="mb-8 px-2">
-    <p class="text-gray-500 dark:text-gray-400 text-lg leading-relaxed">
-      <%= t(".description_html",
-            english: content_tag(:strong, t(".languages.english"), class: "text-gray-900 dark:text-gray-50"),
-            hebrew: content_tag(:strong, t(".languages.hebrew"), class: "text-gray-900 dark:text-gray-50"),
-            french: content_tag(:strong, t(".languages.french"), class: "text-gray-900 dark:text-gray-50"),
-            spanish: content_tag(:strong, t(".languages.spanish"), class: "text-gray-900 dark:text-gray-50"),
-            arabic: content_tag(:strong, t(".languages.arabic"), class: "text-gray-900 dark:text-gray-50")) %>
-    </p>
+    <div class="lp-slideshow"
+         data-controller="homepage-carousel"
+         data-homepage-carousel-slides-value="<%= slides.to_json %>">
+      <div class="lp-slide-frame">
+        <img class="lp-slide-img"
+             data-homepage-carousel-target="image"
+             src="<%= slides.first[:img] %>"
+             alt="<%= slides.first[:caption] %>">
+      </div>
+      <div class="lp-slide-nav">
+        <button type="button" class="lp-arrow" aria-label="Previous"
+                data-action="homepage-carousel#arrow" data-homepage-carousel-step-param="-1">←</button>
+        <div class="lp-caption" data-homepage-carousel-target="caption"><%= slides.first[:caption] %></div>
+        <button type="button" class="lp-arrow" aria-label="Next"
+                data-action="homepage-carousel#arrow" data-homepage-carousel-step-param="1">→</button>
+      </div>
+      <div class="lp-dots">
+        <% slides.each_with_index do |_slide, i| %>
+          <button type="button" class="lp-dot" aria-label="Go to slide <%= i + 1 %>"
+                  data-homepage-carousel-target="dot"
+                  data-action="homepage-carousel#select" data-homepage-carousel-index-param="<%= i %>"></button>
+        <% end %>
+      </div>
+    </div>
+  </header>
+
+  <!-- Library -->
+  <section id="library" class="lp-library" data-controller="homepage-filter">
+    <div class="lp-lib-inner">
+      <div class="lp-lib-head">
+        <div>
+          <h2 class="lp-h2">Jump right in</h2>
+          <p class="lp-lib-sub">Pick any recently created Langlet and start practicing immediately.</p>
+        </div>
+        <% if filter_langs.size > 1 %>
+          <div class="lp-filters">
+            <button type="button" class="lp-chip"
+                    data-homepage-filter-target="chip" data-homepage-filter-lang-param="all"
+                    data-action="homepage-filter#filter">All</button>
+            <% filter_langs.each do |language| %>
+              <button type="button" class="lp-chip"
+                      data-homepage-filter-target="chip"
+                      data-homepage-filter-lang-param="<%= base_iso.call(language) %>"
+                      data-action="homepage-filter#filter"><%= localized_language_name(language) %></button>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+
+      <% if grid_courses.any? %>
+        <div class="lp-grid">
+          <% grid_courses.each do |course| %>
+            <% video_id = course_youtube_video_id(course) %>
+            <% iso = base_iso.call(course.language) %>
+            <%= link_to course_path(id: course.slug), class: "lp-card",
+                  data: { "homepage-filter-target": "card", lang: iso } do %>
+              <img class="lp-card-thumb" loading="lazy" alt=""
+                   src="<%= youtube_thumbnail_url(video_id) %>">
+              <div class="lp-card-body">
+                <div class="lp-card-title" dir="<%= course.language&.rtl? ? "rtl" : "ltr" %>">
+                  <%= course.localized_name.presence || t("courses.card.untitled") %>
+                </div>
+                <div class="lp-card-meta">
+                  <span class="lp-card-dot" style="background: <%= lang_dot[iso] %>;"></span>
+                  <span><%= localized_language_name(course.language) %> · <%= t("courses.lesson_count", count: course.lessons_count) %></span>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      <% else %>
+        <p class="lp-empty">No Langlets yet — paste a video above to create the first one.</p>
+      <% end %>
+    </div>
   </section>
 
-  <!-- Continue Learning Section - show courses user has started -->
-  <% if user_signed_in? && @continue_learning_courses.any? %>
-    <section class="mb-10">
-      <h2 class="text-3xl font-bold mb-6 px-2"><%= t(".continue_learning") %></h2>
-      <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
-        <div class="swiper-wrapper">
-          <% @continue_learning_courses.each do |course| %>
-            <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md cursor-pointer flex flex-col h-full" %>
-            </div>
-          <% end %>
+  <!-- Pricing -->
+  <section id="pricing" class="lp-pricing">
+    <div class="lp-price-grid">
+      <div>
+        <h2 class="lp-price-h">Simple, honest pricing</h2>
+        <p class="lp-price-lead">Credits pay for the AI pipeline that builds your lessons — and help keep the site running.</p>
+        <div class="lp-price-list">
+          <div class="lp-price-item"><span class="lp-check">✓</span><span>1 credit = 1 video turned into a full lesson</span></div>
+          <div class="lp-price-item"><span class="lp-check">✓</span><span><%= free_credits %> free credits when you sign up — no card needed</span></div>
+          <div class="lp-price-item"><span class="lp-check">✓</span><span>Credits never expire, browse the library free forever</span></div>
         </div>
       </div>
-    </section>
-  <% end %>
-
-  <!-- Courses and Standalone Clips -->
-  <% if @playlists.any? || @all_courses.any? %>
-    <section class="mb-10 px-2">
-      <h2 class="text-3xl font-bold mb-6"><%= t(".browse") %></h2>
-      <%= render "shared/tabs",
-        default_tab: "courses",
-        tabs: [
-          { id: "courses", label: t(".tabs.courses"), partial: "courses/playlists_grid", locals: { playlists: @playlists } },
-          { id: "standalone-clips", label: t(".tabs.standalone_clips"), partial: "courses/standalone_clips_grid", locals: { courses: @all_courses } }
-        ] %>
-    </section>
-  <% end %>
-
-  <!-- Row: "Next For You" - only show if user signed in and has recommended courses -->
-  <% if user_signed_in? && @recommended_courses.any? %>
-    <section class="mb-10 mt-10">
-      <h2 class="text-3xl font-bold mb-6 px-2"><%= t(".next_for_you") %></h2>
-      <div class="swiper overflow-hidden" data-controller="swiper" data-swiper-target="container">
-        <div class="swiper-wrapper">
-          <% @recommended_courses.each do |course| %>
-            <div class="swiper-slide">
-              <%= render 'course_card', course: course, container_classes: "block w-64 sm:w-72 md:w-80 bg-white dark:bg-gray-900 dark:border dark:border-gray-800 rounded-3xl shadow-md cursor-pointer flex flex-col h-full" %>
-            </div>
-          <% end %>
+      <div class="lp-price-card">
+        <div class="lp-price-eyebrow">CREDIT PACK</div>
+        <div class="lp-price-row">
+          <span class="lp-price-amount">$10</span>
+          <span class="lp-price-unit">= 20 credits</span>
         </div>
-      </div>
-    </section>
-  <% end %>
-
-</main>
-
-<footer class="border-t mt-auto bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-    <div class="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-      <div class="text-xs font-semibold text-gray-500 dark:text-gray-400">
-        <%= t("shared.footer.copyright", year: Date.current.year) %>
-      </div>
-      <div class="flex space-x-6">
-        <%= link_to t("shared.footer.privacy_policy"), "/home/privacy", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
-        <%= link_to t("shared.footer.terms_of_service"), "/home/terms", class: "text-xs font-semibold text-gray-500 dark:text-gray-400 hover:opacity-70" %>
+        <div class="lp-price-sub">That's 20 videos of your choice, 50¢ each.</div>
+        <% if user_signed_in? %>
+          <%= link_to "Buy 20 credits", new_app_import_request_path(lang: current_language_code), class: "lp-price-cta" %>
+        <% else %>
+          <%= link_to "Buy 20 credits", new_user_registration_path(returnto: request.fullpath), class: "lp-price-cta" %>
+        <% end %>
+        <div class="lp-price-fine">One-time purchase · no subscription</div>
       </div>
     </div>
-  </div>
-</footer>
+  </section>
+
+  <!-- Footer -->
+  <footer class="lp-footer">
+    <div class="lp-footer-inner">
+      <span>© <%= Date.current.year %> Langlets · practice languages with native content</span>
+      <div class="lp-footer-links">
+        <%= link_to "Privacy Policy", "/home/privacy" %>
+        <%= link_to "Terms of Service", "/home/terms" %>
+      </div>
+    </div>
+  </footer>
 </div>

@@ -1,8 +1,9 @@
 require "test_helper"
 
-# Courses (and the playlists holding them) only show on a subdomain whose
-# language they have a ready translation for. Courses that predate translations
-# (no course_translations rows) show everywhere.
+# Courses only show on a subdomain whose language they have a ready translation
+# for. Courses that predate translations (no course_translations rows) show
+# everywhere. This gate applies both to the homepage "Jump right in" grid of
+# standalone courses and to the course list on a playlist page.
 class TranslationVisibilityTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(
@@ -10,6 +11,8 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       password: "password123",
       confirmed_at: Time.zone.now
     )
+
+    # Standalone (not-in-a-playlist) courses drive the homepage grid.
     @hebrew_only_course = Course.create!(
       user: @user,
       name: "Hebrew Only Course",
@@ -29,41 +32,59 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       main_media_url: "https://www.youtube.com/watch?v=def456",
       status: :published
     )
-    @hebrew_playlist = Playlist.create!(name: "Hebrew Playlist", published: true, slug: "hebrew-#{SecureRandom.hex(4)}")
-    @hebrew_playlist.courses << @hebrew_only_course
+
+    # A playlist applies the same per-language gate to its own course list. Its
+    # courses are distinct from the standalone pair so the homepage grid (which
+    # excludes courses that belong to a playlist) is unaffected.
+    @playlist_hebrew_course = Course.create!(
+      user: @user,
+      name: "Playlist Hebrew Course",
+      slug: "pl-hebrew-#{SecureRandom.hex(4)}",
+      main_media_url: "https://www.youtube.com/watch?v=ghi789",
+      status: :published
+    )
+    @playlist_hebrew_course.course_translations.create!(
+      language: languages(:hebrew),
+      name: @playlist_hebrew_course.name,
+      status: :ready
+    )
+    @playlist_untranslated_course = Course.create!(
+      user: @user,
+      name: "Playlist Untranslated Course",
+      slug: "pl-untranslated-#{SecureRandom.hex(4)}",
+      main_media_url: "https://www.youtube.com/watch?v=jkl012",
+      status: :published
+    )
     @mixed_playlist = Playlist.create!(name: "Mixed Playlist", published: true, slug: "mixed-#{SecureRandom.hex(4)}")
-    @mixed_playlist.courses << @hebrew_only_course
-    @mixed_playlist.courses << @untranslated_course
+    @mixed_playlist.courses << @playlist_hebrew_course
+    @mixed_playlist.courses << @playlist_untranslated_course
   end
 
   teardown { Current.reset }
 
-  test "the index hides playlists with no course translated to the subdomain language" do
+  test "the homepage grid hides courses not translated to the subdomain language" do
     get root_path
     assert_response :success
-    assert_select "[data-testid='tabs-panel-courses']", text: /Hebrew Playlist/, count: 0
-    assert_select "[data-testid='tabs-panel-courses']", text: /Mixed Playlist/
-    # Only the untranslated course counts toward the mixed playlist's clips.
-    assert_select "[data-testid='tabs-panel-courses']", text: /1 clip/
+    assert_select ".lp-card-title", text: /Untranslated Course/
+    assert_select ".lp-card-title", text: /Hebrew Only Course/, count: 0
   end
 
-  test "the index shows Hebrew-translated content on the Hebrew subdomain" do
+  test "the homepage grid shows Hebrew-translated content on the Hebrew subdomain" do
     host! "he.example.com"
     get root_path
     assert_response :success
-    assert_select "[data-testid='tabs-panel-courses']", text: /Hebrew Playlist/
-    assert_select "[data-testid='tabs-panel-courses']", text: /Mixed Playlist/
+    assert_select ".lp-card-title", text: /Hebrew Only Course/
   end
 
   test "a playlist page only lists courses translated to the subdomain language" do
     get playlist_path(@mixed_playlist)
     assert_response :success
-    assert_match "Untranslated Course", response.body
-    assert_no_match "Hebrew Only Course", response.body
+    assert_match "Playlist Untranslated Course", response.body
+    assert_no_match "Playlist Hebrew Course", response.body
 
     host! "he.example.com"
     get playlist_path(@mixed_playlist)
     assert_response :success
-    assert_match "Hebrew Only Course", response.body
+    assert_match "Playlist Hebrew Course", response.body
   end
 end

@@ -1,6 +1,10 @@
 require "test_helper"
 
-class PlaylistsVisibilityTest < ActionDispatch::IntegrationTest
+# The public homepage no longer lists playlists (it shows a flat grid of course
+# cards). The ownership rule those homepage tests used to exercise lives in
+# Playlist.visible_to, so it's tested directly here — system playlists are
+# visible to everyone, personal playlists only to their owner.
+class PlaylistsVisibilityTest < ActiveSupport::TestCase
   def setup
     @user = User.create!(
       email: "someone@example.com",
@@ -14,42 +18,23 @@ class PlaylistsVisibilityTest < ActionDispatch::IntegrationTest
     )
     @system_playlist = Playlist.create!(name: "System Playlist", published: true, slug: "system-#{SecureRandom.hex(4)}")
     @own_playlist = Playlist.create!(name: "Personal Playlist", published: true, slug: "personal-#{SecureRandom.hex(4)}", user: @user)
-    # A playlist with no visible courses is hidden from the index, so each
-    # playlist needs a published course to be listed at all.
-    [ @system_playlist, @own_playlist ].each do |playlist|
-      playlist.courses << Course.create!(
-        user: @user,
-        name: "Course for #{playlist.name}",
-        slug: "course-#{SecureRandom.hex(4)}",
-        main_media_url: "https://www.youtube.com/watch?v=abc123",
-        status: :published
-      )
-    end
-  end
-
-  def sign_in(user)
-    post user_session_url, params: { user: { email: user.email, password: "password123" } }
   end
 
   test "anonymous visitors see system playlists but no personal ones" do
-    get root_path
-    assert_response :success
-    assert_select "[data-testid='tabs-panel-courses']", text: /System Playlist/
-    assert_select "[data-testid='tabs-panel-courses']", text: /Personal Playlist/, count: 0
+    visible = Playlist.visible_to(nil)
+    assert_includes visible, @system_playlist
+    assert_not_includes visible, @own_playlist
   end
 
   test "owner sees their own playlists alongside system playlists" do
-    sign_in(@user)
-    get root_path
-    assert_response :success
-    assert_select "[data-testid='tabs-panel-courses']", text: /System Playlist/
-    assert_select "[data-testid='tabs-panel-courses']", text: /Personal Playlist/
+    visible = Playlist.visible_to(@user)
+    assert_includes visible, @system_playlist
+    assert_includes visible, @own_playlist
   end
 
-  test "other users do not see someone else's playlists" do
-    sign_in(@stranger)
-    get root_path
-    assert_response :success
-    assert_select "[data-testid='tabs-panel-courses']", text: /Personal Playlist/, count: 0
+  test "other users do not see someone else's personal playlists" do
+    visible = Playlist.visible_to(@stranger)
+    assert_includes visible, @system_playlist
+    assert_not_includes visible, @own_playlist
   end
 end

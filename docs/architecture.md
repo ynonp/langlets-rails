@@ -44,11 +44,52 @@ Hidden and compact activity players remain on the custom controls path.
 
 ### Homepage language selection
 
-The public course library uses the optional `lang` query parameter both to
-filter its source-language content and to select its header subhead. Header
-copy is stored in locale files under `subhead.<iso>`; regional codes such as
-`ar-JO` use their base code (`ar`). A missing or unconfigured language uses
-`subhead.default`.
+The public homepage still honours the optional `lang` query parameter to filter
+its "Jump right in" grid to one source language (`current_language_code`). The
+redesigned landing page no longer renders a per-language header subhead, so the
+`homepage_subhead` helper and the `subhead.<iso>` locale copy it reads are
+currently unused by the UI (kept in place for possible reuse).
+
+### Public homepage (`courses#index`)
+
+The web root (`courses#index`, rendered for everyone except signed-in native
+users, who are redirected to `app_home_path`) is a self-contained warm-cream
+marketing landing page imported from the Claude Design project "Langlets
+Homepage". It deliberately opts **out** of the app's light/dark theme: the whole
+page lives inside a `.lp` wrapper with a bespoke fixed palette and its own
+scoped `<style>` block (no `dark:` utilities, no theme toggle). Bricolage
+Grotesque (display) and Instrument Sans (body) load from Google Fonts in the
+page's `content_for :head`. The base anchor rule is zeroed with
+`:where(.lp a)` so each component sets its own link colour without a
+specificity war.
+
+Sections, all wired to real data:
+- **Nav** — brand, in-page anchors (`#library`, `#pricing`), and auth-aware
+  controls: signed-out visitors get *Sign in* / *Start Free*; signed-in get
+  *Add a video* / *Sign out*.
+- **Hero** — the paste-a-YouTube-link box GETs to `new_app_import_request_path`
+  (`turbo: false`) with the current learning language in a hidden `lang` field,
+  matching the app's Add-video handoff. Guests hitting that auth-gated route are
+  bounced to sign-in with the URL preserved, so they resume the import after
+  signing up. A rotating product-screenshot carousel (`homepage-carousel`
+  Stimulus controller; slides are static PNGs under `public/homepage/`) sits
+  beside it.
+- **"Jump right in" library** — the dark grid renders `@all_courses` (signed-in
+  visitors get their `@continue_learning_courses` prepended, deduped).
+  Language filter chips are derived from the languages actually present and
+  filter the grid client-side via the `homepage-filter` controller (each card
+  carries `data-lang`; no server round-trip). Chips only appear when more than
+  one language is present.
+- **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
+  There is no purchase flow yet (StoreKit/payments are deferred), so the CTA
+  links to registration (guests) or the Add-video screen (signed-in) rather
+  than a checkout.
+- **Footer** — copyright plus `/home/privacy` and `/home/terms`.
+
+The controller's existing `@playlists` / `@recommended_courses` assigns are left
+intact (still used for structured data and available for future sections) even
+though the landing page itself only consumes `@all_courses` and
+`@continue_learning_courses`.
 
 ### Interface localization
 

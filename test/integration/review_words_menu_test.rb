@@ -1,5 +1,10 @@
 require "test_helper"
 
+# The public homepage no longer renders the shared user menu or the
+# courses/clips tabs (it's a self-contained landing page). The Review Words
+# menu, the credit-gated Queue link and the profile menu still live in the
+# shared user menu, which the course and playlist pages render — so these tests
+# exercise that menu there instead of on the root page.
 class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(
@@ -12,6 +17,14 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @spanish = languages(:spanish)
     @hebrew = languages(:hebrew)
     @arabic = languages(:arabic)
+
+    # A system playlist (no owner) renders the shared user menu for signed-in
+    # users and is viewable by guests, so it stands in for the old root page.
+    @menu_playlist = Playlist.create!(
+      name: "Menu Test Playlist",
+      slug: "menu-#{SecureRandom.hex(4)}",
+      published: true
+    )
 
     @medium = Medium.create!(
       url: "https://www.youtube.com/watch?v=test123",
@@ -81,7 +94,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   test "menu shows no review words when user has no saved tokens" do
     sign_in(@user)
 
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     assert_select "button.btn", text: /Review Words/, count: 0
@@ -90,11 +103,11 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   test "menu links to Queue only when the user has credits" do
     sign_in(@user)
 
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_select "a[href=?]", app_import_requests_path, text: "Queue", count: 1
 
     User.where(id: @user.id).update_all(credit_balance: 0)
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_select "a[href=?]", app_import_requests_path, count: 0
   end
 
@@ -102,7 +115,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_en
 
     sign_in(@user)
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     assert_select "button", text: /Review Words/, count: 1
@@ -115,7 +128,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_he
 
     sign_in(@user)
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     assert_select "button", text: /Review Words/, count: 3
@@ -131,7 +144,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_he
 
     sign_in(@user)
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     body = response.body
@@ -149,7 +162,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     @user.saved_phrase_tokens << @token_ar2
 
     sign_in(@user)
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     assert_select "button", text: /Review Words/, count: 1
@@ -195,59 +208,6 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_web_profile_menu
   end
 
-  test "root header keeps theme and xp controls in mobile profile menu" do
-    sign_in(@user)
-
-    get root_path
-    assert_response :success
-
-    assert_select "[data-testid='header-theme-desktop']", count: 1
-    assert_select "[data-testid='header-xp-desktop']", count: 1
-    assert_select "[data-testid='header-theme-mobile-menu']", count: 1
-    assert_select "[data-testid='header-xp-mobile-menu']", count: 1
-    assert_web_profile_menu
-  end
-
-  test "root page uses tabs to switch between courses and standalone clips" do
-    playlist = Playlist.create!(
-      name: "Beginner Tracks",
-      slug: "beginner-tracks-#{Time.zone.now.to_i}",
-      published: true
-    )
-
-    course_in_path = Course.create!(
-      name: "Path Course #{Time.zone.now.to_i}",
-      slug: "path-course-#{Time.zone.now.to_i}",
-      main_media_url: "https://www.youtube.com/watch?v=path123",
-      user: @user,
-      language: @english,
-      status: :published
-    )
-    playlist.courses << course_in_path
-
-    Course.create!(
-      name: "Standalone Course #{Time.zone.now.to_i}",
-      slug: "standalone-course-#{Time.zone.now.to_i}",
-      main_media_url: "https://www.youtube.com/watch?v=clip123",
-      user: @user,
-      language: @spanish,
-      status: :published
-    )
-
-    get root_path
-    assert_response :success
-
-    assert_select "[data-testid='tabs-tab-courses']", text: "Courses", count: 1
-    assert_select "[data-testid='tabs-tab-standalone-clips']", text: "Standalone clips", count: 1
-
-    assert_select "[data-testid='tabs-panel-courses']:not([hidden])", count: 1
-    assert_select "[data-testid='tabs-panel-standalone-clips'][hidden]", count: 1
-
-    assert_select "[data-testid='tabs-panel-courses']", text: /Beginner Tracks/
-    assert_select "[data-testid='tabs-panel-standalone-clips']", text: /Standalone Course/
-    assert_select ".swiper", count: 0
-  end
-
   test "playlist header keeps theme and xp controls in mobile profile menu" do
     playlist = Playlist.create!(
       name: "Mobile Header Test Path",
@@ -268,7 +228,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
   test "menu doesn't show for unauthenticated users" do
     @user.saved_phrase_tokens << @token_en
 
-    get root_path
+    get playlist_path(@menu_playlist)
     assert_response :success
 
     assert_select "button", text: /Review Words/, count: 0
