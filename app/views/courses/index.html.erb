@@ -46,6 +46,15 @@
   end
   grid_courses = grid_courses.first(8)
 
+  # Keep French discoverable in the homepage preview even when newer courses
+  # would otherwise push its card (and therefore its filter chip) below the
+  # eight-card limit. A language-specific homepage remains strictly filtered.
+  unless current_language_code.present? || grid_courses.any? { |course| course.language&.iso_name == "fr" }
+    french_course = @all_courses.find { |course| course.language&.iso_name == "fr" }
+    grid_courses[-1] = french_course if french_course && grid_courses.size == 8
+    grid_courses << french_course if french_course && grid_courses.size < 8
+  end
+
   # One accent dot per language, keyed by base ISO. Falls back to the brand red.
   lang_dot = Hash.new("#C4451C").merge(
     "es" => "#E8B93E", "fr" => "#7C9ED9", "ar" => "#6FBF8F",

@@ -96,7 +96,11 @@ though the landing page itself only consumes `@all_courses` and
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 at most eight courses, in four columns on larger screens and two compact columns
-on phones. Both the navigation's "Browse Langlets" item and the grid's
+on phones. On the unfiltered homepage, the preview reserves a place for the
+newest available French course when French would otherwise fall below the
+eight-card cutoff; this keeps French represented in the card-derived language
+filters without displaying an empty filter. Language-specific homepages remain
+strictly filtered. Both the navigation's "Browse Langlets" item and the grid's
 "Browse All Langlets" action lead to `/gallery`.
 
 ### Public gallery (`gallery#index`)

@@ -61,6 +61,36 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "a[href='#{gallery_path}']", text: "Browse All Langlets"
   end
 
+  test "homepage keeps French among its preview languages" do
+    french_course = Course.create!(
+      name: "French homepage course",
+      slug: "french-homepage-course",
+      main_media_url: "https://www.youtube.com/watch?v=frenchhome",
+      language: languages(:french),
+      user: @user,
+      status: :published
+    )
+
+    8.times do |index|
+      Course.create!(
+        name: "Newer English course #{index}",
+        slug: "newer-english-course-#{index}",
+        main_media_url: "https://www.youtube.com/watch?v=newer#{index}",
+        language: @language,
+        user: @user,
+        status: :published
+      )
+    end
+
+    french_course.touch(time: 1.day.ago)
+    get root_url
+
+    assert_response :success
+    assert_select ".lp-card", count: 8
+    assert_select ".lp-chip", text: "French"
+    assert_select ".lp-card[href='#{course_path(french_course.slug)}']"
+  end
+
   private
 
   def capture_selects
