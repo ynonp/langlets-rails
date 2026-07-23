@@ -5,47 +5,47 @@
   short = cost.positive? && balance < cost
 %>
 
-<div class="overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-sm dark:border-gray-800 dark:bg-gray-900">
+<div class="overflow-hidden rounded-[22px] border border-[#E4DCCC] bg-[#FFFDF8] shadow-[6px_6px_0_#EADFC9]">
   <div class="grid sm:grid-cols-[14rem_minmax(0,1fr)]">
-    <%= image_tag video.thumbnail_url, alt: "", loading: "lazy", class: "aspect-video h-full w-full bg-gray-100 object-cover dark:bg-gray-800" %>
+    <%= image_tag video.thumbnail_url, alt: "", loading: "lazy", class: "aspect-video h-full w-full bg-[#F2EADB] object-cover" %>
     <div class="min-w-0 p-5 sm:p-6">
-      <p class="text-lg font-extrabold leading-snug"><%= video.title %></p>
-      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400"><%= video.author_name %></p>
+      <p class="text-lg font-extrabold leading-snug [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= video.title %></p>
+      <p class="mt-1 text-sm text-[#8A8170]"><%= video.author_name %></p>
       <label class="mt-5 block">
         <span class="text-sm font-bold"><%= t("app.import_requests.new.video_language") %></span>
         <%= select_tag :clip_language,
                        options_from_collection_for_select(languages, :english_name, :english_name, clip_language.english_name),
                        data: { add_video_target: "language", action: "change->add-video#languageChanged" },
-                       class: "mt-2 min-h-11 w-full rounded-xl border border-gray-300 bg-white px-3 text-sm font-semibold outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20 dark:border-gray-700 dark:bg-gray-950" %>
+                       class: "mt-2 min-h-11 w-full rounded-xl border-2 border-[#1E1B16] bg-[#FFFDF8] px-3 text-sm font-semibold text-[#1E1B16] outline-none focus:border-[#C4451C] focus:ring-2 focus:ring-[#C4451C]/20" %>
       </label>
     </div>
   </div>
 
-  <div class="border-t border-gray-200 p-5 dark:border-gray-800 sm:p-6">
+  <div class="border-t border-[#E4DCCC] p-5 sm:p-6">
     <% if preview.in_library? %>
-      <p class="text-sm text-gray-600 dark:text-gray-400"><%= t("app.import_requests.new.already_in_library") %></p>
-      <%= link_to t("app.import_requests.new.open_lesson"), course_path(preview.course), data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-600 sm:w-auto" %>
+      <p class="text-sm text-[#55503F]"><%= t("app.import_requests.new.already_in_library") %></p>
+      <%= link_to t("app.import_requests.new.open_lesson"), course_path(preview.course), data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
     <% elsif preview.in_queue? %>
-      <p class="text-sm text-gray-600 dark:text-gray-400"><%= t("app.import_requests.new.already_importing") %></p>
-      <%= link_to t("app.import_requests.new.view_in_queue"), app_import_requests_path, data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-600 sm:w-auto" %>
+      <p class="text-sm text-[#55503F]"><%= t("app.import_requests.new.already_importing") %></p>
+      <%= link_to t("app.import_requests.new.view_in_queue"), app_import_requests_path, data: { turbo_frame: "_top" }, class: "mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410] sm:w-auto" %>
     <% else %>
       <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <p class="text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+        <p class="text-sm leading-relaxed text-[#55503F]">
           <%= t("app.import_requests.new.imports_as_lesson") %>
           <% if preview.free? %>
-            <strong class="text-emerald-600 dark:text-emerald-400"><%= t("app.import_requests.new.free_join") %></strong>
+            <strong class="text-[#C4451C]"><%= t("app.import_requests.new.free_join") %></strong>
           <% else %>
-            <strong class="<%= short ? 'text-red-600 dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400' %>"><%= pluralize(cost, "credit") %> · <%= balance %> left</strong>
+            <strong class="<%= short ? 'text-[#9E3410]' : 'text-[#C4451C]' %>"><%= pluralize(cost, "credit") %> · <%= balance %> left</strong>
           <% end %>
         </p>
         <% if short %>
-          <%= link_to t("app.import_requests.new.get_credits"), app_credits_path(url: video.canonical_url), data: { turbo_frame: "_top" }, class: "inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-600" %>
+          <%= link_to t("app.import_requests.new.get_credits"), app_credits_path(url: video.canonical_url), data: { turbo_frame: "_top" }, class: "inline-flex min-h-11 shrink-0 items-center justify-center rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]" %>
         <% else %>
           <%= form_with url: app_import_requests_path, method: :post, data: { turbo: false }, class: "shrink-0" do |f| %>
             <%= hidden_field_tag :url, video.canonical_url %>
             <%= hidden_field_tag :clip_language, clip_language.english_name %>
             <%= hidden_field_tag :translation_language, translation_language.english_name %>
-            <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")), class: "min-h-11 w-full cursor-pointer rounded-xl bg-emerald-500 px-5 py-3 text-sm font-extrabold text-white hover:bg-emerald-600") %>
+            <%= f.submit(preview.free? ? t("app.import_requests.new.approve_free") : t("app.import_requests.new.approve", cost: pluralize(cost, "credit")), class: "min-h-11 w-full cursor-pointer rounded-xl bg-[#C4451C] px-5 py-3 text-sm font-extrabold text-[#FFFDF8] hover:bg-[#9E3410]") %>
           <% end %>
         <% end %>
       </div>

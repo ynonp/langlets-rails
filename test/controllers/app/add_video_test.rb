@@ -37,6 +37,9 @@ module App
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "label[for='web-video-url']", text: "YouTube link or video ID"
       assert_select "input#web-video-url[data-add-video-target=input]"
+      assert_select "[data-controller='theme']", count: 0
+      assert_select ".bg-\\[\\#FAF6EF\\]"
+      assert_select ".bg-\\[\\#C4451C\\]"
       assert_select ".app-scroll-pad", count: 0
 
       stub_video do

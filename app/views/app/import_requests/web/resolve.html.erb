@@ -3,7 +3,7 @@
   <% when :empty %>
     <%= render "app/import_requests/web/empty_state" %>
   <% when :error %>
-    <div class="flex items-start gap-3 rounded-2xl border border-red-200 bg-white p-4 text-red-700 shadow-sm dark:border-red-900 dark:bg-gray-900 dark:text-red-300">
+    <div class="flex items-start gap-3 rounded-2xl border border-[#D98B8B] bg-[#FFFDF8] p-4 text-[#9E3410]">
       <%= app_icon "warning", class: "mt-0.5 h-5 w-5 shrink-0" %>
       <p class="text-sm leading-relaxed"><%= @error %></p>
     </div>

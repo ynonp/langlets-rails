@@ -1,59 +1,67 @@
 <% content_for :title, t("app.import_requests.new.page_title") %>
+<% content_for :head do %>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<% end %>
 
-<div class="min-h-screen bg-emerald-50 dark:bg-gray-950">
-  <header class="border-b border-gray-200 bg-white/80 backdrop-blur dark:border-gray-800 dark:bg-gray-950/80">
-    <div class="mx-auto flex w-full max-w-screen-xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-      <%= link_to root_path, class: "text-xl font-extrabold tracking-tight sm:text-2xl" do %>Langlets<% end %>
-      <div class="flex items-center gap-3">
-        <%= render "shared/theme_toggle" %>
-        <%= render "shared/user_menu" %>
-      </div>
+<div class="min-h-screen bg-[#FAF6EF] text-[#1E1B16] [font-family:'Instrument_Sans',ui-sans-serif,system-ui,sans-serif]">
+  <header class="border-b border-[#E4DCCC]">
+    <div class="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 px-5 py-4 sm:px-10 sm:py-5">
+      <%= link_to root_path, class: "flex items-baseline gap-2", aria: { label: "Langlets home" } do %>
+        <span class="text-[26px] font-extrabold tracking-[-0.02em] [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">langlets</span>
+        <span class="h-2 w-2 -translate-y-0.5 rounded-full bg-[#C4451C]"></span>
+      <% end %>
+      <%= render "shared/user_menu",
+                 avatar_type: :initial,
+                 menu_item_class: "block px-4 py-3 text-sm font-semibold text-[#1E1B16] hover:bg-[#F2EADB]",
+                 review_button_class: "w-full px-4 py-3 text-left text-sm font-semibold text-[#1E1B16] hover:bg-[#F2EADB]",
+                 dropdown_class: "absolute right-0 z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-[#E4DCCC] bg-[#FFFDF8] shadow-lg opacity-0 invisible peer-checked:opacity-100 peer-checked:visible transition-all duration-150",
+                 divider_class: "border-t border-[#E4DCCC]" %>
     </div>
   </header>
 
   <div data-testid="web-add-video"
-       class="mx-auto grid w-full max-w-6xl gap-8 px-4 py-8 sm:px-6 sm:py-12 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-12 lg:px-8"
+       class="mx-auto grid w-full max-w-[1180px] gap-8 px-5 py-8 sm:px-10 sm:py-14 lg:grid-cols-[minmax(0,1fr)_22rem] lg:gap-14"
        data-controller="add-video"
        data-add-video-resolve-url-value="<%= resolve_app_import_requests_path %>">
     <section class="min-w-0">
-      <%= link_to app_import_requests_path, class: "inline-flex items-center text-sm font-bold text-gray-600 hover:text-emerald-600 dark:text-gray-400 dark:hover:text-emerald-400" do %>
+      <%= link_to app_import_requests_path, class: "inline-flex items-center text-sm font-semibold text-[#55503F] hover:text-[#C4451C]" do %>
         <span aria-hidden="true" class="me-2">←</span> Back to queue
       <% end %>
 
-      <p class="mt-8 text-sm font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">Create a lesson</p>
-      <h1 class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl"><%= t("app.import_requests.new.title") %></h1>
-      <p class="mt-3 max-w-2xl text-base leading-relaxed text-gray-600 dark:text-gray-400">
+      <p class="mt-8 text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">Create a lesson</p>
+      <h1 class="mt-2 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.import_requests.new.title") %></h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-[#55503F]">
         Paste any public YouTube video. We’ll build a translated transcript and vocabulary practice from it.
       </p>
 
       <% if flash[:alert] %>
-        <div class="mt-6 rounded-2xl border border-red-200 bg-white px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-gray-900 dark:text-red-300"><%= flash[:alert] %></div>
+        <div class="mt-6 rounded-2xl border border-[#D98B8B] bg-[#FFFDF8] px-4 py-3 text-sm text-[#9E3410]"><%= flash[:alert] %></div>
       <% end %>
 
       <div class="mt-8">
-        <label for="web-video-url" class="block text-sm font-extrabold">YouTube link or video ID</label>
-        <div class="mt-2 flex min-h-14 items-center gap-3 rounded-2xl border border-gray-300 bg-white px-4 shadow-sm transition focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/20 dark:border-gray-700 dark:bg-gray-900"
+        <label for="web-video-url" class="block text-sm font-bold">YouTube link or video ID</label>
+        <div class="mt-2 flex min-h-14 items-center gap-3 rounded-2xl border-2 border-[#1E1B16] bg-[#FFFDF8] px-4 transition focus-within:border-[#C4451C] focus-within:ring-2 focus-within:ring-[#C4451C]/20"
              data-add-video-target="field">
-          <%= app_icon "link", class: "h-5 w-5 shrink-0 text-gray-400" %>
+          <%= app_icon "link", class: "h-5 w-5 shrink-0 text-[#8A8170]" %>
           <input id="web-video-url" type="text" inputmode="url"
                  data-add-video-target="input" data-action="input->add-video#inputChanged"
                  placeholder="<%= t('app.import_requests.new.paste_placeholder') %>"
                  value="<%= params[:url] %>" autofocus autocomplete="off" autocapitalize="off"
                  autocorrect="off" spellcheck="false" enterkeyhint="go"
-                 class="min-w-0 flex-1 bg-transparent py-4 text-base outline-none placeholder:text-gray-400">
+                 class="min-w-0 flex-1 bg-transparent py-4 text-base text-[#1E1B16] outline-none placeholder:text-[#8A8170]">
           <button type="button" data-add-video-target="clear" data-action="add-video#clearInput"
-                  class="hidden rounded-lg p-2 text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-800" aria-label="Clear">
+                  class="hidden rounded-lg p-2 text-[#55503F] hover:bg-[#F2EADB]" aria-label="Clear">
             <%= app_icon "close", class: "h-4 w-4" %>
           </button>
         </div>
-        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400" data-add-video-target="hint"><%= t("app.import_requests.new.url_hint") %></p>
-        <p class="mt-2 hidden items-center gap-1.5 text-sm font-bold text-emerald-600 dark:text-emerald-400" data-add-video-target="recognized">
+        <p class="mt-2 text-sm text-[#8A8170]" data-add-video-target="hint"><%= t("app.import_requests.new.url_hint") %></p>
+        <p class="mt-2 hidden items-center gap-1.5 text-sm font-bold text-[#C4451C]" data-add-video-target="recognized">
           <%= app_icon "check_circle", class: "h-4 w-4" %> <%= t("app.import_requests.new.link_recognized") %>
         </p>
       </div>
 
       <button type="button" data-add-video-target="clipboardChip" data-action="add-video#useClipboard"
-              class="mt-3 hidden items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-sm font-bold text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300">
+              class="mt-3 hidden items-center gap-2 rounded-full bg-[#F2EADB] px-4 py-2 text-sm font-bold text-[#9E3410]">
         <%= app_icon "plus", class: "h-4 w-4" %> <%= t("app.import_requests.new.paste_copied_link") %>
       </button>
 
@@ -62,17 +70,17 @@
       </turbo-frame>
     </section>
 
-    <aside class="h-fit rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-900 lg:sticky lg:top-8">
-      <p class="text-sm font-extrabold">What you’ll get</p>
-      <ul class="mt-4 space-y-4 text-sm text-gray-600 dark:text-gray-400">
-        <li class="flex gap-3"><span class="font-bold text-emerald-500">✓</span><span>Synced transcript and translation</span></li>
-        <li class="flex gap-3"><span class="font-bold text-emerald-500">✓</span><span>Word-level vocabulary practice</span></li>
-        <li class="flex gap-3"><span class="font-bold text-emerald-500">✓</span><span>A reusable lesson in your library</span></li>
+    <aside class="h-fit rounded-[22px] bg-[#1E1B16] p-7 text-[#FAF6EF] shadow-[8px_8px_0_#EADFC9] lg:sticky lg:top-8">
+      <p class="text-lg font-bold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]">What you’ll get</p>
+      <ul class="mt-5 space-y-4 text-sm text-[#B5AC98]">
+        <li class="flex gap-3"><span class="font-bold text-[#C4451C]">✓</span><span>Synced transcript and translation</span></li>
+        <li class="flex gap-3"><span class="font-bold text-[#C4451C]">✓</span><span>Word-level vocabulary practice</span></li>
+        <li class="flex gap-3"><span class="font-bold text-[#C4451C]">✓</span><span>A reusable lesson in your library</span></li>
       </ul>
-      <div class="mt-6 border-t border-gray-200 pt-5 dark:border-gray-800">
-        <p class="text-sm text-gray-500 dark:text-gray-400">Available balance</p>
-        <p class="mt-1 text-lg font-extrabold"><%= app_credits_label(current_user.credit_balance) %></p>
-        <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Each new import uses 1 credit.</p>
+      <div class="mt-7 border-t border-[#5A5245] pt-5">
+        <p class="text-sm text-[#B5AC98]">Available balance</p>
+        <p class="mt-1 text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= app_credits_label(current_user.credit_balance) %></p>
+        <p class="mt-1 text-xs text-[#B5AC98]">Each new import uses 1 credit.</p>
       </div>
     </aside>
   </div>
