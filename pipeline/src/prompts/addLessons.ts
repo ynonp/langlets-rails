@@ -24,6 +24,7 @@ Reformat the transcript so it is easy for a language student to study. Divide th
 - Speech Pauses vs. Semantic Units: The punctuation in the transcript marks audio breaths and pauses, not grammatical sentences. A single translation unit might span across a period. Base your line breaks purely on grammar and vocabulary. Ignore punctuation when deciding where a complete thought begins and ends.
 - NEVER split an article from its noun, a preposition from its object, an auxiliary from its verb, or a fixed expression.
 - Aim for roughly 3–12 words. Concise lines are preferred, but semantic completeness is more important than length.
+- No line may exceed 20 words.
 
 ### 3. Lesson Grouping
 - Aim for 4–8 lines per lesson. Group lines by topic, scene, or lyrical idea.

@@ -114,16 +114,13 @@ export function parseAndValidateLessonPlan(
 ): LessonPlan[] {
   const lessons: LessonPlan[] = [];
   let cursor = 0;
-  for (const [lessonIndex, lesson] of content.lessons.entries()) {
+  for (const lesson of content.lessons) {
     const title = lesson.title.trim();
     if (!title) throw new Error("Lesson response contains an empty title");
     const plan: LessonPlan = { title, lines: [] };
 
     for (const line of lesson.lines) {
       const returnedWords = line.trim().split(/\s+/u);
-      if (returnedWords.length > MAX_WORDS_PER_LINE) {
-        throw new Error(`Lesson ${lessonIndex + 1} line exceeds ${MAX_WORDS_PER_LINE} words`);
-      }
       const expectedWords = words.slice(cursor, cursor + returnedWords.length).map((word) =>
         word.text
       );
@@ -135,10 +132,7 @@ export function parseAndValidateLessonPlan(
           }", got "${returnedWords[Math.max(0, mismatch)] ?? "end of line"}"`,
         );
       }
-      plan.lines.push({
-        start_word: cursor,
-        end_word: cursor + returnedWords.length - 1,
-      });
+      plan.lines.push(...splitLineRange(cursor, returnedWords));
       cursor += returnedWords.length;
     }
     lessons.push(plan);
@@ -151,6 +145,36 @@ export function parseAndValidateLessonPlan(
     throw new Error(`Lesson plan covered ${cursor} of ${words.length} words`);
   }
   return lessons;
+}
+
+function splitLineRange(startWord: number, words: string[]): LineRange[] {
+  if (words.length <= MAX_WORDS_PER_LINE) {
+    return [{ start_word: startWord, end_word: startWord + words.length - 1 }];
+  }
+
+  const splitAt = preferredSplit(words);
+  return [
+    ...splitLineRange(startWord, words.slice(0, splitAt)),
+    ...splitLineRange(startWord + splitAt, words.slice(splitAt)),
+  ];
+}
+
+function preferredSplit(words: string[]): number {
+  const middle = words.length / 2;
+  const periodBoundaries = punctuationBoundaries(words, /\.[\p{Pe}\p{Pf}"']*$/u);
+  const commaBoundaries = punctuationBoundaries(words, /[,،][\p{Pe}\p{Pf}"']*$/u);
+  const candidates = periodBoundaries.length > 0 ? periodBoundaries : commaBoundaries;
+
+  if (candidates.length === 0) return Math.round(middle);
+  return candidates.reduce((closest, candidate) =>
+    Math.abs(candidate - middle) < Math.abs(closest - middle) ? candidate : closest
+  );
+}
+
+function punctuationBoundaries(words: string[], pattern: RegExp): number[] {
+  return words
+    .slice(0, -1)
+    .flatMap((word, index) => pattern.test(word) ? [index + 1] : []);
 }
 
 function materializePlan(lessons: LessonPlan[], words: Word[]) {

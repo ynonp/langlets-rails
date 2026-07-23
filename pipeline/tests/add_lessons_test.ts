@@ -1,10 +1,15 @@
-import { assert, assertEquals, assertRejects } from "@std/assert";
+import { assert, assertEquals, assertRejects, assertStringIncludes } from "@std/assert";
+import { addLessonsPrompt } from "../src/prompts/addLessons.ts";
 import {
   addLessons,
   matchLessonDataToPrompt,
   materializeLessons,
 } from "../src/steps/addLessons.ts";
 import { makeCtx, phrasesFixture, queuedModel } from "./helpers.ts";
+
+Deno.test("addLessons prompt states the hard line-length limit", () => {
+  assertStringIncludes(addLessonsPrompt("Arabic", "English"), "No line may exceed 20 words.");
+});
 
 Deno.test("matchLessonDataToPrompt rebuilds lessons from our own clip lines", () => {
   const clipLines = [
@@ -92,6 +97,55 @@ Deno.test("addLessons rejects rewritten transcript text before retrying", async 
   await addLessons(ctx);
   assertEquals(model.calls(), 2);
   assertEquals(store.data.lyric_lines, ["Bonjour monde Salut encore"]);
+});
+
+Deno.test("addLessons splits long lines at periods, then commas, then the middle", async () => {
+  const periodWords = Array.from({ length: 24 }, (_, index) => {
+    if (index === 7) return `p${index + 1}.`;
+    if (index === 11) return `p${index + 1},`;
+    return `p${index + 1}`;
+  });
+  const commaWords = Array.from(
+    { length: 22 },
+    (_, index) => index === 9 ? `c${index + 1}،` : `c${index + 1}`,
+  );
+  const middleWords = Array.from({ length: 22 }, (_, index) => `m${index + 1}`);
+  const allWords = [...periodWords, ...commaWords, ...middleWords];
+  const model = queuedModel([{
+    lessons: [
+      { title: "Period", lines: [periodWords.join(" ")] },
+      { title: "Comma", lines: [commaWords.join(" ")] },
+      { title: "Middle", lines: [middleWords.join(" ")] },
+    ],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: {
+      phrases: [{
+        id: "phrase_1",
+        text_l1: allWords.join(" "),
+        timestamp: "00:01.00",
+        timestamp_end: "00:02.00",
+        words: allWords.map((text) => ({
+          text,
+          timestamp: "00:01.00",
+          timestamp_end: "00:02.00",
+        })),
+      }],
+    },
+    models: { addLessons: model.model },
+  });
+
+  await addLessons(ctx);
+
+  assertEquals(model.calls(), 1);
+  assertEquals(store.data.lyric_lines, [
+    periodWords.slice(0, 8).join(" "),
+    periodWords.slice(8).join(" "),
+    commaWords.slice(0, 10).join(" "),
+    commaWords.slice(10).join(" "),
+    middleWords.slice(0, 11).join(" "),
+    middleWords.slice(11).join(" "),
+  ]);
 });
 
 Deno.test("semantic materialization writes inclusive spans and excludes punctuation", async () => {

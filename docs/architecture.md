@@ -203,7 +203,11 @@ provisional phrase. The lesson model then owns a two-level `lessons -> lines` pa
 the complete continuous transcript; its structured output is a `lessons` array whose entries contain
 a title and an array of exact transcript line strings. It is instructed to make each line
 independently comprehensible and translatable, with line length as a preference rather than a hard
-character cap. The prompt selects a language-matched worked example for English, Spanish, French,
+character cap and an explicit maximum of 20 words. If the model nevertheless returns a longer line,
+the pipeline does not retry the model call: it recursively splits the line at the period nearest its
+middle, then the comma nearest its middle, or, when neither is present, at the whitespace nearest the
+middle. This deterministic fallback preserves every aligned word and its timestamps. The prompt
+selects a language-matched worked example for English, Spanish, French,
 German, Hebrew, Russian, or Arabic; each demonstrates turning one continuous paragraph into ten
 semantic lines across two lessons. Unknown languages use the English example.
 
