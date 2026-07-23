@@ -17,6 +17,10 @@ module App
       @clip_language = default_clip_language
       @translation_language = default_translation_language
       @languages = Language.order(:english_name)
+      if web_view?
+        @paypal_client = Paypal::Client.new
+        @credit_pack = Paypal::CreditPacks.fetch("standard")
+      end
 
       render "app/import_requests/web/new" if web_view?
     end

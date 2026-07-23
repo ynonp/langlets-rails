@@ -355,9 +355,20 @@
         </div>
         <div class="lp-price-sub">That's 20 videos of your choice, 50¢ each.</div>
         <% if user_signed_in? %>
-          <%= link_to "Buy 20 credits", new_app_import_request_path(lang: current_language_code), class: "lp-price-cta" %>
+          <% if @paypal_client.configured? %>
+            <%= render layout: "app/credits/paypal_form",
+                       locals: {
+                         paypal_client: @paypal_client,
+                         pack: @homepage_credit_pack,
+                         cancel_path: root_path
+                       } do %>
+              <button type="submit" class="lp-price-cta w-full">Buy 20 credits</button>
+            <% end %>
+          <% else %>
+            <button type="button" class="lp-price-cta w-full opacity-60" disabled>Buy 20 credits</button>
+          <% end %>
         <% else %>
-          <%= link_to "Buy 20 credits", new_user_registration_path(returnto: request.fullpath), class: "lp-price-cta" %>
+          <%= link_to "Start Creating Langlets", new_user_registration_path(returnto: request.fullpath), class: "lp-price-cta" %>
         <% end %>
         <div class="lp-price-fine">One-time purchase · no subscription</div>
       </div>

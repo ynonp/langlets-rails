@@ -32,7 +32,10 @@ module App
 
     test "the form and pipeline submission are available to web browsers" do
       web = { "User-Agent" => "Mozilla/5.0" }
-      get "/app/import_requests/new", headers: web
+      paypal_client = Paypal::Client.new(merchant_id: "SANDBOXMERCHANT")
+      Paypal::Client.stub(:new, paypal_client) do
+        get "/app/import_requests/new", headers: web
+      end
       assert_response :success
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
       assert_select "label[for='web-video-url']", text: "YouTube link or video ID"
@@ -41,6 +44,12 @@ module App
       assert_select ".bg-\\[\\#FAF6EF\\]"
       assert_select ".bg-\\[\\#C4451C\\]"
       assert_select ".app-scroll-pad", count: 0
+      assert_select "form[action=?][method=post][data-turbo=false]", Paypal::Client::SANDBOX_URL do
+        assert_select "input[name=item_number][value=credits_20]"
+        assert_select "input[name=amount][value='10.00']"
+        assert_select "button[type=submit]", text: "Buy More"
+      end
+      assert_match "3 credits left", response.body
 
       stub_video do
         post "/app/import_requests",

@@ -85,8 +85,9 @@ Sections, all wired to real data:
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
 - **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
-  The CTA links to registration (guests) or the Add-video screen (signed-in);
-  authenticated credit purchases live on the Credits screen.
+  Guests see **Start Creating Langlets**, which links to registration.
+  Signed-in users see a **Buy 20 credits** Payments Standard form that submits
+  the server-defined $10 pack directly to PayPal.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
@@ -1001,6 +1002,11 @@ Two more things to know before touching this:
 Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home and Library are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` and `App::CreditsController` skip that presentation gate so authenticated web users can use Queue, Add Video, and PayPal credit purchases. The shared user menu always links to Queue, including at a zero credit balance, so existing and failed imports remain reachable.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
+On the web Add Video screen, a **Buy More** PayPal form beside the available
+balance submits the server-defined 20-credit/$10 pack directly to PayPal, so
+users do not visit an intermediate Credits screen before checkout. The form is
+the same signed Payments Standard form used by the Credits screen; only its
+button presentation and cancel destination differ.
 
 The iOS app uses `AppTabBarController`, a native `UITabBarController` with one Hotwire `Navigator` per Home, Library and Queue tab. Navigators load lazily on first selection, then retain their webview and navigation stack, so later tab switches are immediate and preserve scroll/page state. Links to another tab root are intercepted by `SceneDelegate` and select that tab instead of pushing a duplicate root onto the current stack. The native tab bar starts hidden and is revealed only after the authenticated app layout reports its Queue badge through the bridge; entering authentication or completing sign-out hides it again, so login screens never expose app navigation. Authentication and language changes invalidate all three navigators; the visible tab reloads immediately and background tabs reload when next selected.
 

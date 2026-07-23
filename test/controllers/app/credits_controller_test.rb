@@ -30,6 +30,8 @@ module App
                     count: Paypal::CreditPacks.all.size
       assert_select "input[name=amount][value='2.99']"
       assert_select "input[name=item_number][value=credits_5]"
+      assert_select "input[name=amount][value='10.00']"
+      assert_select "input[name=item_number][value=credits_20]"
     end
   end
 end

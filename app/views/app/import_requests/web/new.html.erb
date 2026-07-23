@@ -79,7 +79,23 @@
       </ul>
       <div class="mt-7 border-t border-[#5A5245] pt-5">
         <p class="text-sm text-[#B5AC98]">Available balance</p>
-        <p class="mt-1 text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= app_credits_label(current_user.credit_balance) %></p>
+        <div class="mt-2 flex flex-wrap items-center justify-between gap-3">
+          <p class="text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= app_credits_label(current_user.credit_balance) %></p>
+          <% if @paypal_client.configured? %>
+            <%= render layout: "app/credits/paypal_form",
+                       locals: {
+                         paypal_client: @paypal_client,
+                         pack: @credit_pack,
+                         cancel_path: new_app_import_request_path
+                       } do %>
+              <button type="submit" class="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#C4451C] px-4 py-2 text-sm font-extrabold text-[#FFFDF8] transition hover:bg-[#9E3410]">
+                Buy More
+              </button>
+            <% end %>
+          <% else %>
+            <span class="text-sm text-[#B5AC98]">Purchases unavailable</span>
+          <% end %>
+        </div>
         <p class="mt-1 text-xs text-[#B5AC98]">Each new import uses 1 credit.</p>
       </div>
     </aside>

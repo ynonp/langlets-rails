@@ -91,6 +91,33 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select ".lp-card[href='#{course_path(french_course.slug)}']"
   end
 
+  test "guest pricing CTA starts signup" do
+    get root_url
+
+    assert_response :success
+    assert_select "a[href=?]", new_user_registration_path(returnto: "/"),
+                  text: "Start Creating Langlets"
+    assert_select "#pricing", text: /Buy 20 credits/, count: 0
+  end
+
+  test "signed-in pricing CTA submits the 20 credit pack directly to PayPal" do
+    paypal_client = Paypal::Client.new(merchant_id: "SANDBOXMERCHANT")
+    sign_in @user
+
+    Paypal::Client.stub(:new, paypal_client) do
+      get root_url
+    end
+
+    assert_response :success
+    assert_select "#pricing form[action=?][method=post][data-turbo=false]",
+                  Paypal::Client::SANDBOX_URL do
+      assert_select "input[name=item_number][value=credits_20]"
+      assert_select "input[name=amount][value='10.00']"
+      assert_select "button[type=submit]", text: "Buy 20 credits"
+    end
+    assert_select "#pricing", text: /Start Creating Langlets/, count: 0
+  end
+
   private
 
   def capture_selects
