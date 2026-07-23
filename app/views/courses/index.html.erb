@@ -44,6 +44,7 @@
     continuing_ids = @continue_learning_courses.map(&:id)
     grid_courses = @continue_learning_courses + @all_courses.reject { |c| continuing_ids.include?(c.id) }
   end
+  grid_courses = grid_courses.first(8)
 
   # One accent dot per language, keyed by base ISO. Falls back to the brand red.
   lang_dot = Hash.new("#C4451C").merge(
@@ -150,6 +151,10 @@
   .lp-card-meta { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--dark-muted); margin-top:auto; }
   .lp-card-dot { width:7px; height:7px; border-radius:50%; display:inline-block; }
   .lp-empty { color:var(--dark-muted); font-size:16px; }
+  .lp-browse-all { display:flex; justify-content:center; margin-top:32px; }
+  .lp-browse-all a { display:inline-flex; align-items:center; justify-content:center; border:1px solid #5A5245; border-radius:999px;
+    padding:12px 22px; color:var(--dark-fg); font-weight:700; }
+  .lp-browse-all a:hover { border-color:var(--accent); color:var(--dark-fg); }
 
   /* Pricing — same 1100 content column + 40px padding as the hero, so its
      content edges line up with the rest of the page. */
@@ -189,6 +194,12 @@
     .lp-slide-img { height:320px; }
     .lp-footer { padding:24px 20px; }
   }
+  @media (max-width:560px) {
+    .lp-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+    .lp-card-body { padding:11px 12px 13px; gap:6px; }
+    .lp-card-title { font-size:13px; }
+    .lp-card-meta { font-size:11px; align-items:flex-start; }
+  }
 </style>
 
 <div class="lp">
@@ -199,7 +210,7 @@
       <span class="lp-brand-dot"></span>
     <% end %>
     <div class="lp-nav-links">
-      <a href="#library" class="lp-navlink">Browse Langlets</a>
+      <%= link_to "Browse Langlets", gallery_path, class: "lp-navlink" %>
       <a href="#pricing" class="lp-navlink">Pricing</a>
       <% if user_signed_in? %>
         <%= link_to "Add a video", new_app_import_request_path(lang: current_language_code), class: "lp-navlink" %>
@@ -311,6 +322,7 @@
       <% else %>
         <p class="lp-empty">No Langlets yet — paste a video above to create the first one.</p>
       <% end %>
+      <div class="lp-browse-all"><%= link_to "Browse All Langlets", gallery_path %></div>
     </div>
   </section>
 

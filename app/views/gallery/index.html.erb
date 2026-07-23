@@ -1,0 +1,113 @@
+<% content_for :head do %>
+  <title>Start A Language Practice</title>
+  <meta name="description" content="Browse language-learning courses and playlists built from videos.">
+<% end %>
+
+<style>
+  .gallery-page { --cream:#FAF6EF; --ink:#1E1B16; --red:#C4451C; --muted:#716A5D; min-height:100vh;
+    background:var(--cream); color:var(--ink); font-family:'Instrument Sans',ui-sans-serif,system-ui,sans-serif; }
+  .gallery-wrap { width:min(1180px,calc(100% - 40px)); margin:0 auto; padding:28px 0 72px; }
+  .gallery-nav { display:flex; align-items:center; margin-bottom:56px; }
+  .gallery-brand { color:var(--ink); font:800 26px 'Bricolage Grotesque',sans-serif; text-decoration:none; }
+  .gallery-brand::after { content:""; display:inline-block; width:8px; height:8px; margin-left:8px; border-radius:50%; background:var(--red); }
+  .gallery-header { max-width:720px; margin-bottom:30px; }
+  .gallery-header h1 { margin:0 0 10px; font:800 clamp(38px,6vw,60px)/1 'Bricolage Grotesque',sans-serif; letter-spacing:-.035em; }
+  .gallery-header p { margin:0; color:var(--muted); font-size:17px; }
+  .gallery-filters { margin-bottom:32px; }
+  .gallery-search-shell { display:flex; width:min(680px,100%); min-height:50px; box-sizing:border-box; overflow:hidden;
+    border:1px solid #CFC5B3; border-radius:999px; background:#FFFDF8; box-shadow:0 1px 2px rgba(30,27,22,.08); }
+  .gallery-search-shell:focus-within { border-color:#766D5F; box-shadow:0 0 0 1px #766D5F; }
+  .gallery-search-input { min-width:0; flex:1; border:0; outline:0; background:transparent; padding:0 20px; color:var(--ink);
+    font:inherit; font-size:16px; font-weight:500; }
+  .gallery-search-icon { display:flex; width:64px; align-items:center; justify-content:center; border:0; border-left:1px solid #D8CEBD;
+    background:#F2ECE1; color:var(--ink); cursor:pointer; }
+  .gallery-search-icon svg { width:21px; height:21px; }
+  .gallery-pills { display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .gallery-pill-input { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .gallery-pill { display:inline-flex; min-height:38px; align-items:center; border:1px solid #9B907D; border-radius:999px;
+    background:transparent; padding:0 18px; color:var(--muted); font-size:14px; font-weight:600; cursor:pointer; user-select:none; }
+  .gallery-pill:hover { border-color:var(--red); color:var(--ink); }
+  .gallery-pill-input:focus-visible + .gallery-pill { outline:2px solid var(--red); outline-offset:2px; }
+  .gallery-pill-input:checked + .gallery-pill { border-color:var(--ink); background:var(--ink); color:white; }
+  .gallery-summary { display:flex; align-items:center; gap:14px; min-height:32px; margin:0 0 18px; color:var(--muted); font-size:14px; }
+  .gallery-clear { border:0; background:none; padding:0; color:var(--red); font:inherit; font-size:14px; font-weight:700;
+    cursor:pointer; text-decoration:underline; }
+  .gallery-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+  .gallery-card { display:flex; min-width:0; flex-direction:column; overflow:hidden; border:1px solid #DED4C2; border-radius:16px;
+    background:#FFFDF8; color:var(--ink); text-decoration:none; transition:transform .15s,border-color .15s; }
+  .gallery-card:hover { transform:translateY(-2px); border-color:var(--red); }
+  .gallery-card-image { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; background:#E9DFCD; }
+  .gallery-card-placeholder { background:linear-gradient(135deg,#E9DFCD,#D8C6A7); }
+  .gallery-card-body { display:flex; flex:1; flex-direction:column; padding:16px; }
+  .gallery-card-kind { align-self:flex-start; margin-bottom:10px; border-radius:999px; background:#F4D8A6; padding:4px 9px;
+    color:#77410B; font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; }
+  .gallery-card-kind-playlist { background:#E5DCF4; color:#563B7D; }
+  .gallery-card h2 { margin:0 0 12px; font-size:17px; line-height:1.3; }
+  .gallery-card p { margin:auto 0 0; color:var(--muted); font-size:14px; }
+  .gallery-empty { padding:72px 20px; border:1px dashed #CFC2AB; border-radius:16px; color:var(--muted); text-align:center; }
+  .gallery-pagination { display:flex; justify-content:center; align-items:center; gap:8px; margin-top:38px; }
+  .gallery-page-link { display:inline-flex; min-width:42px; height:42px; align-items:center; justify-content:center; border:1px solid #D8CEBD;
+    border-radius:999px; background:#FFFDF8; color:var(--ink); font-weight:700; text-decoration:none; }
+  .gallery-page-link[aria-current="page"] { background:var(--ink); color:white; border-color:var(--ink); }
+  @media (max-width:900px) {
+    .gallery-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  }
+  @media (max-width:520px) {
+    .gallery-wrap { width:min(100% - 24px,1180px); padding-top:18px; }
+    .gallery-nav { margin-bottom:38px; }
+    .gallery-pills { gap:6px; }
+    .gallery-pill { min-height:34px; padding:0 12px; font-size:13px; }
+    .gallery-grid { gap:10px; }
+    .gallery-card-body { padding:11px; }
+    .gallery-card h2 { font-size:14px; }
+    .gallery-card p { font-size:12px; }
+  }
+</style>
+
+<div class="gallery-page">
+  <main class="gallery-wrap">
+    <nav class="gallery-nav">
+      <%= link_to "langlets", root_path, class: "gallery-brand", aria: { label: "Langlets home" } %>
+    </nav>
+
+    <header class="gallery-header">
+      <h1>Start A Language Practice</h1>
+      <p>Explore every course and playlist, or narrow the collection by language.</p>
+    </header>
+
+    <div data-controller="gallery-filters">
+    <%= form_with url: gallery_path, method: :get, class: "gallery-filters",
+          data: { gallery_filters_target: "form", turbo_stream: true, action: "submit->gallery-filters#updateUrl" } do %>
+      <div class="gallery-search-shell">
+        <%= search_field_tag :search, @search, placeholder: "Search", autocomplete: "off",
+              class: "gallery-search-input", aria: { label: "Search courses and playlists" },
+              data: { gallery_filters_target: "search", action: "input->gallery-filters#search" } %>
+        <button class="gallery-search-icon" type="submit" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4"></path>
+          </svg>
+        </button>
+      </div>
+
+      <div class="gallery-pills" role="group" aria-label="Filter gallery">
+        <% [["Courses", "courses"], ["Playlists", "playlists"]].each do |label, value| %>
+          <% id = "gallery-type-#{value}" %>
+          <%= check_box_tag "types[]", value, @selected_types.include?(value), id: id,
+                class: "gallery-pill-input", data: { action: "change->gallery-filters#submit" } %>
+          <%= label_tag id, label, class: "gallery-pill" %>
+        <% end %>
+
+        <% selected_language_ids = @selected_languages.map(&:id) %>
+        <% @languages.each do |language| %>
+          <% id = "gallery-language-#{language.id}" %>
+          <%= check_box_tag "languages[]", language.iso_name, selected_language_ids.include?(language.id), id: id,
+                class: "gallery-pill-input", data: { action: "change->gallery-filters#submit" } %>
+          <%= label_tag id, localized_language_name(language), class: "gallery-pill" %>
+        <% end %>
+      </div>
+    <% end %>
+
+    <%= render "results" %>
+    </div>
+  </main>
+</div>

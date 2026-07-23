@@ -64,6 +64,9 @@ application.register("find-words", FindWordsController)
 import FlashcardActivityController from "./flashcard_activity_controller"
 application.register("flashcard-activity", FlashcardActivityController)
 
+import GalleryFiltersController from "./gallery_filters_controller"
+application.register("gallery-filters", GalleryFiltersController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

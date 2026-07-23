@@ -1,0 +1,24 @@
+<% if entry.is_a?(Course) %>
+  <%= link_to course_path(entry), class: "gallery-card" do %>
+    <img src="<%= youtube_thumbnail_url(course_youtube_video_id(entry)) %>"
+         alt="<%= entry.localized_name %>" class="gallery-card-image">
+    <div class="gallery-card-body">
+      <span class="gallery-card-kind">Course</span>
+      <h2><%= entry.localized_name %></h2>
+      <p><%= localized_language_name(entry.language) %> · <%= pluralize(entry.lessons_count, "lesson") %></p>
+    </div>
+  <% end %>
+<% else %>
+  <%= link_to playlist_path(entry), class: "gallery-card" do %>
+    <% if entry.cover_image_url.present? %>
+      <img src="<%= entry.cover_image_url %>" alt="<%= entry.name %>" class="gallery-card-image">
+    <% else %>
+      <div class="gallery-card-image gallery-card-placeholder"></div>
+    <% end %>
+    <div class="gallery-card-body">
+      <span class="gallery-card-kind gallery-card-kind-playlist">Playlist</span>
+      <h2><%= entry.name %></h2>
+      <p><%= pluralize(entry.visible_clip_count, "Langlet") %></p>
+    </div>
+  <% end %>
+<% end %>

@@ -94,6 +94,38 @@ intact (still used for structured data and available for future sections) even
 though the landing page itself only consumes `@all_courses` and
 `@continue_learning_courses`.
 
+The "Jump right in" grid is a preview rather than the full catalog. It renders
+at most eight courses, in four columns on larger screens and two compact columns
+on phones. Both the navigation's "Browse Langlets" item and the grid's
+"Browse All Langlets" action lead to `/gallery`.
+
+### Public gallery (`gallery#index`)
+
+`/gallery` is the complete public browsing surface. Courses and playlists share
+one reverse-chronological, 16-item page rather than appearing in separate tabs.
+Its YouTube-style filter bar remains a GET form and keeps filter state in the
+URL. Text input is debounced for 300 ms; content and language pills submit
+immediately. Both kinds of pills share one unlabeled, wrapping row and use the
+same rounded chip treatment as the homepage language filters. The page heading
+is "Start A Language Practice"; navigation is provided by the Langlets brand
+link without a separate back-home action. All interactive requests ask for Turbo Streams and replace only
+the results/count/pagination region, while an ordinary GET remains the
+no-JavaScript fallback. `search` matches course/localized course names or
+playlist names/descriptions. The `types[]` and `languages[]` pills are
+multi-select: no selection means all, selected languages combine with OR, and
+selecting one content type excludes the other. The result count and
+"Clear Search" action appear only when text search is active; clearing text
+preserves pill selections. Playlists follow `Playlist.visible_to`, so anonymous
+visitors see published system playlists while signed-in visitors additionally
+see their own.
+
+Mixed pagination is performed in PostgreSQL with a `UNION ALL` of lightweight
+course and playlist rows before `LIMIT`/`OFFSET`. Only the records for the
+current page are hydrated. Course languages, localized translations, lesson
+counts, playlist courses used for covers, and visible clip counts are loaded in
+fixed batched queries; gallery card rendering performs no per-card association
+queries.
+
 ### Interface localization
 
 Rails chooses the interface locale from `Current.translation_language`, which

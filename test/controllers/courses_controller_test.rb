@@ -1,6 +1,8 @@
 require "test_helper"
 
 class CoursesControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
+
   setup do
     @language = languages(:english)
     @user = User.create!(
@@ -35,6 +37,28 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     translation_queries = queries.grep(/FROM "lesson_translations"/)
     assert_equal 1, translation_queries.size
     assert_match(/IN \(/, translation_queries.first)
+  end
+
+  test "homepage shows at most eight videos and links to the gallery" do
+    @course.update!(status: :published)
+    9.times do |index|
+      Course.create!(
+        name: "Homepage course #{index}",
+        slug: "homepage-course-#{index}",
+        main_media_url: "https://www.youtube.com/watch?v=homepage#{index}",
+        language: @language,
+        user: @user,
+        status: :published
+      )
+    end
+
+    sign_in @user
+    get root_url
+
+    assert_response :success
+    assert_select ".lp-card", count: 8
+    assert_select "a[href='#{gallery_path}']", text: "Browse Langlets"
+    assert_select "a[href='#{gallery_path}']", text: "Browse All Langlets"
   end
 
   private
