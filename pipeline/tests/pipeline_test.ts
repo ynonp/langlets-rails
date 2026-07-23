@@ -50,6 +50,7 @@ function happyMocks(overrides: Partial<Mocks> = {}): { mocks: Mocks; models: Mod
     mocks,
     models: {
       extractLyrics: unusedModel().model,
+      forceAlignmentFallback: unusedModel().model,
       addLessons: mocks.lessons.model,
       rateLessons: mocks.rate.model,
       translate: mocks.translate.model,

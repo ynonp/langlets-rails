@@ -103,6 +103,7 @@ export function makeCtx(options: {
 
   const models: ModelRegistry = {
     extractLyrics: unusedModel().model,
+    forceAlignmentFallback: unusedModel().model,
     addLessons: unusedModel().model,
     rateLessons: unusedModel().model,
     translate: unusedModel().model,

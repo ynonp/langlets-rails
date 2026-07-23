@@ -13,7 +13,7 @@ Semantic segmentation is the final required transcription stage; downstream work
 ```
 extract_lyrics                              (Supadata native captions; YouTube Gemini fallback)
      │
-force_alignment                             (ElevenLabs word timings)
+force_alignment                             (ElevenLabs words; Gemini line fallback)
      │
 add_lessons                                 (semantic lines + lesson hierarchy)
      │
@@ -31,16 +31,18 @@ finalize_translation                        (payload metadata + lessons snapshot
 Supadata is requested once with `mode=native` and `text=false`. If native captions are unavailable
 for YouTube, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
 currently stop at the native-caption failure. Provider cue boundaries are removed and ElevenLabs
-maps one continuous transcript to a flat timed word stream.
+normally maps one continuous transcript to a flat timed word stream. If audio download, ElevenLabs,
+or alignment validation fails, Gemini 2.5 Flash receives the video plus the original line array and
+returns structured start/end timestamps for the same lines. The pipeline preserves the original text
+and creates Rails-compatible untimed word tokens for downstream translation.
 
-Lesson generation receives the continuous aligned transcript and returns the same text with only
-lesson titles and semantic line breaks inserted. The pipeline verifies every returned token against
-the aligned transcript in order, derives internal word ranges from the line lengths, and reconstructs
-the exact text and timestamps itself. This makes each
-line a semantic comprehension/translation unit without allowing the model to modify the transcript.
-It atomically persists `lyric_lines`, `phrases`, `lesson_outline`, and timestamped `lessons`.
-The prompt uses a ten-line, two-lesson worked example in the clip language for the seven configured
-languages, falling back to English for unknown languages.
+Lesson generation receives the continuous aligned transcript and returns lesson titles and semantic
+line breaks. The pipeline uses the returned word counts only as boundaries, derives internal word
+ranges, and reconstructs the exact text and timestamps from aligned words or Gemini-timestamped
+source lines. This makes each line a semantic comprehension/translation unit without allowing the
+model to modify the transcript. It atomically persists `lyric_lines`, `phrases`, `lesson_outline`,
+and timestamped `lessons`. The prompt uses a ten-line, two-lesson worked example in the clip
+language for the seven configured languages, falling back to English for unknown languages.
 
 Sentence translation follows the same pattern: it reads `lyric_lines` and persists
 `translation_lines.<iso>`, then copies those lines into the stable
@@ -71,18 +73,18 @@ The clip language is mapped to a dictionary by its English name (en/fr/de/he/ru/
 `clip_language_iso` in the trigger for anything the map doesn't cover. No dictionary means lines
 pass through unchanged, same as the Ruby fallback.
 
-After required semantic segmentation succeeds, branches settle independently
-(`Promise.allSettled`): one branch failing never discards another branch's completed — and already
-persisted — work. `finalize_translation` runs only when both translation branches succeeded.
+After required semantic segmentation succeeds, branches settle independently (`Promise.allSettled`):
+one branch failing never discards another branch's completed — and already persisted — work.
+`finalize_translation` runs only when both translation branches succeeded.
 
 ### Providers and models
 
-| Step                                                | Model                   | Provider                                       |
-| --------------------------------------------------- | ----------------------- | ---------------------------------------------- |
-| extract_lyrics                                      | Native captions / LLM fallback | Supadata (`mode=native`) / Gemini 2.5 Flash |
-| force_alignment                                     | Forced Alignment API    | ElevenLabs                                     |
-| add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite` | Google Generative AI                          |
-| translate                                           | `qwen3.5:397b-cloud`    | Ollama cloud via `@ai-sdk/openai-compatible`   |
+| Step                                                | Model                                           | Provider                                     |
+| --------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
+| extract_lyrics                                      | Native captions / LLM fallback                  | Supadata (`mode=native`) / Gemini 2.5 Flash  |
+| force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                |
+| add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
+| translate                                           | `qwen3.5:397b-cloud`                            | Ollama cloud via `@ai-sdk/openai-compatible` |
 
 ## Failure handling
 
@@ -192,10 +194,11 @@ deno task check
 the translation language in English only, so pass `--iso` (and optionally `--lang-id`) when
 targeting a language the export's data doesn't already contain.
 
-Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`, `GOOGLE_GENERATIVE_AI_API_KEY`,
-`OLLAMA_API_KEY`, `OLLAMA_BASE_URL` (defaults to `https://ollama.com/v1`). For local runs copy
-`.env.example` to `.env` (gitignored) — the `serve` and `cli` tasks load it via `--env-file`; real
-environment variables win over the file. On Deno Deploy set them in the dashboard instead.
+Env vars: `PIPELINE_HMAC_SECRET` (required), `SUPADATA_KEY`, `ELEVEN_LABS_KEY`,
+`GOOGLE_GENERATIVE_AI_API_KEY`, `OLLAMA_API_KEY`, `OLLAMA_BASE_URL` (defaults to
+`https://ollama.com/v1`). For local runs copy `.env.example` to `.env` (gitignored) — the `serve`
+and `cli` tasks load it via `--env-file`; real environment variables win over the file. On Deno
+Deploy set them in the dashboard instead.
 
 Set `YTDLP_NETWORK_NAMESPACE=vpn` on Linux to route only the `yt-dlp` audio download through that
 network namespace. Leave it unset for direct execution.

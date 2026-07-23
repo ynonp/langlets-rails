@@ -23,12 +23,6 @@ class CreateSongProgress < ApplicationRecord
   # PipelineCallbacksController. Trigger a run with CreateSongPipelineHttp;
   # this class is the store and the guard predicates, not the worker.
 
-  # Steps whose failure ends the run there and then: everything downstream
-  # needs timed phrases, so the pipeline reports and stops (pipeline/src/
-  # pipeline.ts). An error from either one means no amount of waiting will
-  # produce a course.
-  BLOCKING_STEPS = %w[extract_lyrics force_alignment].freeze
-
   def translation_complete?(language)
     language = resolve_translation_language(language)
     language && data.dig("translations", language.iso_name, "phrases", 0, "text").present?
@@ -70,14 +64,12 @@ class CreateSongProgress < ApplicationRecord
 
   # The first reported failure that the run cannot recover from, ignoring
   # anything that landed before `since` (a resumed run skips steps it already
-  # completed, so it never clears their stale errors) and anything the data
-  # itself contradicts — phrases on record mean transcription did land, whatever
-  # an older entry says.
+  # completed, so it never clears their stale errors). A complete blob
+  # contradicts any leftover failure entry and is allowed to publish.
   def blocking_error(since: nil)
-    return nil if step_done?(:extract_lyrics)
+    return nil if pipeline_complete?
 
     pipeline_errors.find do |entry|
-      next false unless BLOCKING_STEPS.include?(entry["step"])
       next true if since.nil?
 
       occurred_at = parse_time(entry["occurred_at"])

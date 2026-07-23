@@ -160,10 +160,12 @@ guarantees the positional alignment `BuildSong#add_translation` depends on,
 and keeps exports possible for any course whose original pipeline record is
 long gone.
 
-Pipeline failures are appended to `CreateSongProgress.data["errors"]` by action.
-When a resumed action succeeds, the worker sends an atomic action-scoped clear
-operation through the callback, removing stale failures for that action while
-preserving errors from concurrently failing actions.
+Pipeline failures are appended to `CreateSongProgress.data["errors"]` by action
+through the callback. Any current-run failure wakes the import finalizer and
+fails/refunds waiting downloads immediately instead of leaving them pending
+until their timeout. When a resumed action succeeds, the worker sends an atomic
+action-scoped clear operation through the callback, removing stale failures for
+that action while preserving errors from concurrently failing actions.
 
 For local/manual pipeline runs, `rake
 "create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
@@ -192,9 +194,15 @@ When native captions are unavailable for a YouTube URL, `extract_lyrics` falls b
 Flash using the video URL and the lyric-specific transcription prompt. Non-YouTube providers do not
 yet have a generated-transcript fallback. Supadata chunks are normalized into provisional text,
 while Gemini supplies the fallback transcript. Bracketed native-caption annotations
-such as `[Music]` and `[Applause]` are removed before lines are saved. The pipeline downloads the YouTube
-audio and sends the resulting text to ElevenLabs forced alignment, which supplies the word-level
-timestamps used to materialize `phrases`.
+such as `[Music]` and `[Applause]` are removed before lines are saved. The pipeline downloads the
+YouTube audio and sends the resulting text to ElevenLabs forced alignment, which normally supplies
+the word-level timestamps used to materialize `phrases`. If any part of that path fails—including
+`yt-dlp`, the ElevenLabs API, or validation of its response—the pipeline sends the video URL and the
+original line array to Gemini 2.5 Flash using structured output. Gemini returns the same ordered
+array with start/end timestamps per line. The pipeline keeps the original line text, tokenizes each
+line with the same Unicode-letter/apostrophe rules as Rails `String#tokenize`, and leaves those word
+tokens untimed; downstream token translation needs the words and character indexes, not word-level
+timestamps.
 
 Provider cue boundaries and performance pauses are not semantic lyric lines: either can split a
 translation unit in the middle (for example `que / más quisiera`). `force_alignment` therefore sends
@@ -211,11 +219,12 @@ selects a language-matched worked example for English, Spanish, French,
 German, Hebrew, Russian, or Arabic; each demonstrates turning one continuous paragraph into ten
 semantic lines across two lessons. Unknown languages use the English example.
 
-The model does not calculate word indexes. Application code compares every returned token
-sequentially with the aligned transcript, rejecting
-rewrites, gaps, repetitions, and reordering. It derives internal word ranges from the validated line
-lengths and reconstructs phrase text and timestamps from the original ElevenLabs words, so
-the model cannot rewrite, omit, or hallucinate transcript text. The semantic lines replace
+The model does not calculate word indexes. Application code treats its returned
+lines only as word-count boundaries and requires them to cover the complete
+transcript. Phrase text and timestamps are reconstructed from the original
+ElevenLabs words, so a spelling change in the model response neither changes
+the transcript nor fails the run. AddLessons makes at most two model calls (the
+initial attempt and one retry). The semantic lines replace
 `lyric_lines` and `phrases`; both the untimestamped `lesson_outline` and final timestamped `lessons`
 are saved in the same patch. A segmentation failure blocks downstream work and is safely retried from
 the preserved provisional aligned phrase.

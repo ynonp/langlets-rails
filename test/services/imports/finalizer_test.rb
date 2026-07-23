@@ -123,7 +123,7 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     assert_no_enqueued_jobs(only: AddCourseTranslationJob) { finalize }
   end
 
-  # extract_lyrics and force_alignment end the run where they stand, so waiting
+  # Every exhausted pipeline action reports through the callback, so waiting
   # out the full timeout would tell the user nothing new.
   test "a blocking pipeline error fails the import immediately" do
     @progress.update!(data: {
@@ -139,6 +139,20 @@ class Imports::FinalizerTest < ActiveSupport::TestCase
     assert_equal "video is private", @request.failure_reason
     assert_equal 3, @user.reload.credit_balance
     assert @course.reload.error?
+  end
+
+  test "a downstream pipeline error fails the import immediately" do
+    @progress.update!(data: {
+      "phrases" => [ { "text_l1" => "hola", "words" => [ { "text" => "hola" } ] } ],
+      "errors" => [ { "step" => "add_lessons", "error_message" => "model returned no lessons",
+                      "occurred_at" => Time.zone.now.iso8601 } ]
+    })
+
+    finalize
+
+    assert @request.reload.failed?
+    assert_equal "model returned no lessons", @request.failure_reason
+    assert_equal 3, @user.reload.credit_balance
   end
 
   # A resumed run skips the steps it already finished, so it never gets the

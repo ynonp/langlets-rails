@@ -103,8 +103,9 @@ function locateWord(text: string, textL1: string, cursor: number): [number, numb
   return idx >= 0 ? [idx, idx + needle.length - 1] : null;
 }
 
-function timestampSeconds(ts: string): number {
-  return timestampToSeconds(ts) ?? parseFloat(ts) ?? 0;
+function timestampSeconds(ts: string | undefined): number {
+  const parsed = parseFloat(ts ?? "");
+  return timestampToSeconds(ts) ?? (Number.isFinite(parsed) ? parsed : 0);
 }
 
 // The transcript becomes clickable text in the app; square brackets are

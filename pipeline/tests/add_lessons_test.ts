@@ -84,10 +84,9 @@ Deno.test("addLessons retries invalid structured output, then succeeds", async (
   assert(store.data.lesson_outline!.startsWith("# Greetings"));
 });
 
-Deno.test("addLessons rejects rewritten transcript text before retrying", async () => {
+Deno.test("addLessons keeps aligned transcript text when the model rewrites a word", async () => {
   const model = queuedModel([
-    { lessons: [{ title: "Broken", lines: ["Bonjour le monde Salut encore"] }] },
-    { lessons: [{ title: "Fixed", lines: ["Bonjour monde Salut encore"] }] },
+    { lessons: [{ title: "Greetings", lines: ["Bonjor monde Salut encore"] }] },
   ]);
   const { ctx, store } = makeCtx({
     data: { phrases: phrasesFixture() },
@@ -95,7 +94,7 @@ Deno.test("addLessons rejects rewritten transcript text before retrying", async 
   });
 
   await addLessons(ctx);
-  assertEquals(model.calls(), 2);
+  assertEquals(model.calls(), 1);
   assertEquals(store.data.lyric_lines, ["Bonjour monde Salut encore"]);
 });
 
@@ -176,6 +175,59 @@ Deno.test("semantic materialization writes inclusive spans and excludes punctuat
   );
 });
 
+Deno.test("addLessons preserves line timing while fallback words remain untimed", async () => {
+  const model = queuedModel([{
+    lessons: [{ title: "Greetings", lines: ["Bonjour monde", "Salut encore"] }],
+  }]);
+  const { ctx, store } = makeCtx({
+    data: {
+      phrases: [
+        {
+          id: "phrase_1",
+          text_l1: "Bonjour, monde!",
+          timestamp: "00:02.50",
+          timestamp_end: "00:04.25",
+          words: [
+            { text: "Bonjour", l1_start_index: 0, l1_end_index: 6 },
+            { text: "monde", l1_start_index: 9, l1_end_index: 13 },
+          ],
+        },
+        {
+          id: "phrase_2",
+          text_l1: "Salut encore",
+          timestamp: "00:05.00",
+          timestamp_end: "00:07.00",
+          words: [
+            { text: "Salut", l1_start_index: 0, l1_end_index: 4 },
+            { text: "encore", l1_start_index: 6, l1_end_index: 11 },
+          ],
+        },
+      ],
+    },
+    models: { addLessons: model.model },
+  });
+
+  await addLessons(ctx);
+
+  assertEquals(
+    store.data.phrases?.map((phrase) => [
+      phrase.timestamp,
+      phrase.timestamp_end,
+    ]),
+    [
+      ["00:02.50", "00:04.25"],
+      ["00:05.00", "00:07.00"],
+    ],
+  );
+  assertEquals(store.data.phrases?.[0].text_l1, "Bonjour, monde!");
+  assertEquals(
+    store.data.phrases?.flatMap((phrase) => phrase.words).some((word) =>
+      word.timestamp || word.timestamp_end
+    ),
+    false,
+  );
+});
+
 Deno.test("materializeLessons attaches aligned timestamps to the outline", async () => {
   const { ctx, store } = makeCtx({
     data: {
@@ -193,18 +245,18 @@ Deno.test("materializeLessons attaches aligned timestamps to the outline", async
 });
 
 Deno.test("addLessons records the failed LLM response after exhausting retries", async () => {
-  // 6 attempts (1 + 5 retries), all empty.
-  const model = queuedModel(["", "", "", "", "", ""]);
+  // Two attempts (one initial call plus one retry), both empty.
+  const model = queuedModel(["", ""]);
   const { ctx, store } = makeCtx({
     data: { phrases: phrasesFixture() },
     models: { addLessons: model.model },
   });
 
   await assertRejects(() => addLessons(ctx));
-  assertEquals(model.calls(), 6);
+  assertEquals(model.calls(), 2);
 
   const error = store.data.errors![0];
   assertEquals(error.step, "add_lessons");
-  assertEquals(error.attempts, 6);
+  assertEquals(error.attempts, 2);
   assertEquals(error.agent_response, "");
 });

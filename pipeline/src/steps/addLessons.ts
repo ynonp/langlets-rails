@@ -11,12 +11,17 @@ import { clearErrors, recordError } from "../context.ts";
 import { addLessonsPrompt } from "../prompts/addLessons.ts";
 import { withRetries } from "../retry.ts";
 
-const MAX_RETRIES = 5;
+// One initial call plus one retry.
+const MAX_RETRIES = 1;
 const MAX_WORDS_PER_LINE = 20;
 
 interface LineRange {
   start_word: number;
   end_word: number;
+}
+
+interface SegmentationWord extends Word {
+  sourceFragment?: string;
 }
 
 interface LessonPlan {
@@ -34,7 +39,31 @@ const lessonOutputSchema = z.object({
 type LessonOutput = z.infer<typeof lessonOutputSchema>;
 
 export async function addLessons(ctx: PipelineContext): Promise<void> {
-  const words = (ctx.store.data.phrases ?? []).flatMap((phrase) => phrase.words);
+  const sourcePhrases = ctx.store.data.phrases ?? [];
+  const hasWordTimings = sourcePhrases.some((phrase) =>
+    phrase.words.some((word) => word.timestamp && word.timestamp_end)
+  );
+  // Gemini's alignment fallback timestamps lines, not words. Carry the source
+  // line range only in memory so newly segmented phrases retain usable bounds;
+  // materialization removes those synthetic values from the persisted words.
+  const words = sourcePhrases.flatMap((phrase, phraseIndex) =>
+    phrase.words.map((word, wordIndex) => {
+      const nextStart = phrase.words[wordIndex + 1]?.l1_start_index;
+      const start = word.l1_start_index;
+      const sourceFragment = !hasWordTimings && start !== undefined
+        ? phrase.text_l1.slice(start, nextStart) +
+          (wordIndex === phrase.words.length - 1 && phraseIndex < sourcePhrases.length - 1
+            ? " "
+            : "")
+        : undefined;
+      return {
+        ...word,
+        timestamp: word.timestamp || phrase.timestamp,
+        timestamp_end: word.timestamp_end || phrase.timestamp_end,
+        sourceFragment,
+      };
+    })
+  );
   if (words.length === 0) throw new Error("No aligned transcript words to segment");
   const userContent = words.map((word) => word.text).join(" ");
 
@@ -78,7 +107,7 @@ export async function addLessons(ctx: PipelineContext): Promise<void> {
       },
     );
 
-    const materialized = materializePlan(lessons, words);
+    const materialized = materializePlan(lessons, words, hasWordTimings);
     await ctx.store.patch([
       { op: "set", path: "lyric_lines", value: materialized.phrases.map((p) => p.text_l1) },
       { op: "set", path: "phrases", value: materialized.phrases },
@@ -121,17 +150,10 @@ export function parseAndValidateLessonPlan(
 
     for (const line of lesson.lines) {
       const returnedWords = line.trim().split(/\s+/u);
-      const expectedWords = words.slice(cursor, cursor + returnedWords.length).map((word) =>
-        word.text
-      );
-      const mismatch = returnedWords.findIndex((word, index) => word !== expectedWords[index]);
-      if (mismatch >= 0 || line.trim() === "") {
-        throw new Error(
-          `Lesson transcript changed at word ${cursor + Math.max(0, mismatch)}: expected "${
-            expectedWords[Math.max(0, mismatch)] ?? "end of transcript"
-          }", got "${returnedWords[Math.max(0, mismatch)] ?? "end of line"}"`,
-        );
-      }
+      if (line.trim() === "") throw new Error("Lesson response contains an empty line");
+
+      // The model owns only the boundaries. If it changes a word while copying
+      // a line, retain the boundary and rebuild the text from aligned words.
       plan.lines.push(...splitLineRange(cursor, returnedWords));
       cursor += returnedWords.length;
     }
@@ -177,7 +199,11 @@ function punctuationBoundaries(words: string[], pattern: RegExp): number[] {
     .flatMap((word, index) => pattern.test(word) ? [index + 1] : []);
 }
 
-function materializePlan(lessons: LessonPlan[], words: Word[]) {
+function materializePlan(
+  lessons: LessonPlan[],
+  words: SegmentationWord[],
+  retainWordTimings: boolean,
+) {
   const phrases: Phrase[] = [];
   const outline: string[] = [];
   const timestamped: string[] = [];
@@ -187,17 +213,21 @@ function materializePlan(lessons: LessonPlan[], words: Word[]) {
     timestamped.push(`# ${lesson.title}`);
     for (const range of lesson.lines) {
       const lineWords = words.slice(range.start_word, range.end_word + 1);
-      const text = lineWords.map((word) => word.text).join(" ").trim();
-      const normalizedWords = withLineIndices(lineWords, text);
+      const text = lineWords.some((word) => word.sourceFragment !== undefined)
+        ? lineWords.map((word) => word.sourceFragment ?? word.text).join("").trim()
+        : lineWords.map((word) => word.text).join(" ").trim();
+      const lineStart = lineWords[0].timestamp!;
+      const lineEnd = lineWords.at(-1)!.timestamp_end!;
+      const normalizedWords = withLineIndices(lineWords, text, retainWordTimings);
       phrases.push({
         id: `phrase_${phrases.length + 1}`,
         text_l1: text,
-        timestamp: normalizedWords[0].timestamp,
-        timestamp_end: normalizedWords.at(-1)!.timestamp_end,
+        timestamp: lineStart,
+        timestamp_end: lineEnd,
         words: normalizedWords,
       });
       outline.push(text);
-      timestamped.push(`${normalizedWords[0].timestamp} ${text}`);
+      timestamped.push(`${lineStart} ${text}`);
     }
     outline.push("");
     timestamped.push("");
@@ -210,7 +240,11 @@ function materializePlan(lessons: LessonPlan[], words: Word[]) {
   };
 }
 
-function withLineIndices(words: Word[], text: string): Word[] {
+function withLineIndices(
+  words: SegmentationWord[],
+  text: string,
+  retainWordTimings: boolean,
+): Word[] {
   let cursor = 0;
   return words.map((word) => {
     // PhraseToken character spans use inclusive end indexes and exclude
@@ -218,14 +252,28 @@ function withLineIndices(words: Word[], text: string): Word[] {
     // using an exclusive end here consumes the following space and makes a
     // final punctuated token extend beyond the phrase boundary.
     const needle = word.text.replace(/^[\p{P}\p{S}]+|[\p{P}\p{S}]+$/gu, "");
-    if (!needle) return { ...word, l1_start_index: undefined, l1_end_index: undefined };
+    if (!needle) {
+      const { sourceFragment: _sourceFragment, ...persistedWord } = word;
+      const normalized = {
+        ...persistedWord,
+        l1_start_index: undefined,
+        l1_end_index: undefined,
+      };
+      if (retainWordTimings) return normalized;
+      const { timestamp: _timestamp, timestamp_end: _timestampEnd, ...untimed } = normalized;
+      return untimed;
+    }
     const start = text.indexOf(needle, cursor);
     if (start < 0) {
       throw new Error(`Could not locate aligned word in reconstructed line: ${word.text}`);
     }
     const end = start + needle.length - 1;
     cursor = end + 1;
-    return { ...word, l1_start_index: start, l1_end_index: end };
+    const { sourceFragment: _sourceFragment, ...persistedWord } = word;
+    const normalized = { ...persistedWord, l1_start_index: start, l1_end_index: end };
+    if (retainWordTimings) return normalized;
+    const { timestamp: _timestamp, timestamp_end: _timestampEnd, ...untimed } = normalized;
+    return untimed;
   });
 }
 
