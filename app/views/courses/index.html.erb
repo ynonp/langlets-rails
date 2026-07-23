@@ -217,7 +217,8 @@
       <h1 class="lp-h1">Practice your target language with videos you love</h1>
       <p class="lp-lead">Turn native YouTube videos you enjoy into structured listening and vocabulary practice—designed for intermediate learners.</p>
 
-      <%= form_with url: new_app_import_request_path, method: :get, data: { turbo: false } do %>
+      <%= form_with url: user_signed_in? ? new_app_import_request_path : guest_import_requests_path,
+                    method: user_signed_in? ? :get : :post, data: { turbo: false } do %>
         <input type="hidden" name="lang" value="<%= current_language_code %>">
         <div class="lp-paste">
           <input type="text" name="url" inputmode="url" autocomplete="off" autocapitalize="off"

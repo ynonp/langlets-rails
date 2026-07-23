@@ -50,11 +50,9 @@
     <% if current_user.languages_with_saved_words.exists? %>
       <div class="<%= divider_class %>"></div>
     <% end %>
-    <% if current_user.credit_balance.positive? %>
-      <%= link_to t("shared.menu.queue"), app_import_requests_path,
-                  class: menu_item_class,
-                  data: { action: "click->profile-menu#dismiss" } %>
-    <% end %>
+    <%= link_to t("shared.menu.queue"), app_import_requests_path,
+                class: menu_item_class,
+                data: { action: "click->profile-menu#dismiss" } %>
     <%= link_to t("shared.menu.profile"), profile_path,
                 class: menu_item_class,
                 data: { action: "click->profile-menu#dismiss" } %>

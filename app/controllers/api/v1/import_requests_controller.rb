@@ -30,7 +30,6 @@ module Api
         render_result(result)
       rescue Credits::InsufficientCredits
         # 402 rather than 403: it's a billing state, not a permission problem.
-        # There is no purchase flow yet, so the client can only report it.
         render status: :payment_required,
                json: { error: "insufficient_credits",
                        error_description: "You're out of credits.",

@@ -100,7 +100,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
     assert_select "button.btn", text: /Review Words/, count: 0
   end
 
-  test "menu links to Queue only when the user has credits" do
+  test "menu always links to Queue even when the user has no credits" do
     sign_in(@user)
 
     get playlist_path(@menu_playlist)
@@ -108,7 +108,7 @@ class ReviewWordsMenuTest < ActionDispatch::IntegrationTest
 
     User.where(id: @user.id).update_all(credit_balance: 0)
     get playlist_path(@menu_playlist)
-    assert_select "a[href=?]", app_import_requests_path, count: 0
+    assert_select "a[href=?]", app_import_requests_path, text: "Queue", count: 1
   end
 
   test "menu shows single language when user has tokens from one language" do

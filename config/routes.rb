@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   # Progress patches from the Create Song pipeline service (HMAC-signed; see
   # pipeline/README.md for the protocol).
   post "/pipeline_callbacks/:id", to: "pipeline_callbacks#update", as: :pipeline_callback
+  post "/paypal/notify", to: "paypal_notifications#create", as: :paypal_notification
 
   namespace :api do
     namespace :v1 do
@@ -81,6 +82,7 @@ Rails.application.routes.draw do
   get "onboarding/welcome", to: "onboarding#welcome", as: :onboarding_welcome
   get "onboarding/language", to: "onboarding#language", as: :onboarding_language
   get "profile", to: "profile#show", as: :profile
+  resources :guest_import_requests, only: :create
   root "courses#index"
   get "/sitemap.xml", to: "sitemaps#show", defaults: { format: :xml }
   get "landing_page/index"

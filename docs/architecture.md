@@ -67,11 +67,15 @@ Sections, all wired to real data:
 - **Nav** — brand, in-page anchors (`#library`, `#pricing`), and auth-aware
   controls: signed-out visitors get *Sign in* / *Start Free*; signed-in get
   *Add a video* / *Sign out*.
-- **Hero** — the paste-a-YouTube-link box GETs to `new_app_import_request_path`
-  (`turbo: false`) with the current learning language in a hidden `lang` field,
-  matching the app's Add-video handoff. Guests hitting that auth-gated route are
-  bounced to sign-in with the URL preserved, so they resume the import after
-  signing up. A rotating product-screenshot carousel (`homepage-carousel`
+- **Hero** — for signed-in users, the paste-a-YouTube-link box GETs directly to
+  `new_app_import_request_path` (`turbo: false`) with the current learning
+  language in a hidden `lang` field. For guests it POSTs to
+  `GuestImportRequestsController`, which validates and canonicalizes the link,
+  stores it for 30 minutes in the encrypted, HTTP-only `pending_video_url`
+  cookie, and redirects to registration. The first successful signup or sign-in
+  consumes the cookie and redirects to Add Video with the URL prefilled; the
+  existing Add Video resolver then asks for the clip language before its normal
+  one-credit import POST redirects to Queue. A rotating product-screenshot carousel (`homepage-carousel`
   Stimulus controller; slides are static PNGs under `public/homepage/`) sits
   beside it.
 - **"Jump right in" library** — the dark grid renders `@all_courses` (signed-in
@@ -81,9 +85,8 @@ Sections, all wired to real data:
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
 - **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
-  There is no purchase flow yet (StoreKit/payments are deferred), so the CTA
-  links to registration (guests) or the Add-video screen (signed-in) rather
-  than a checkout.
+  The CTA links to registration (guests) or the Add-video screen (signed-in);
+  authenticated credit purchases live on the Credits screen.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
@@ -519,7 +522,9 @@ the temporary file and run permission for `yt-dlp` and `ip`.
 
 ### Credits
 
-Video imports cost credits. New accounts get `User::SIGNUP_CREDITS` (3). **There is no way to buy more yet** — StoreKit is deferred, so when a user runs out, that's the end.
+Video imports cost credits. New accounts get `User::SIGNUP_CREDITS` (3).
+Authenticated users can buy fixed PayPal packs: 5 credits for $2.99, 15 for
+$6.99, or 40 for $14.99.
 
 #### **Credits::Ledger** (`app/services/credits/ledger.rb`)
 The only supported way to move credits. Two stores, written together in one transaction:
@@ -532,6 +537,52 @@ Three rules, each load-bearing:
 3. **The ledger does not refresh the caller's in-memory user** — it moves the balance with an UPDATE. Call `user.reload` if you need the new value. (`User#grant_signup_credits` does exactly this, which is why `User.create!(...).credit_balance` correctly reads 3.)
 
 `User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
+
+#### PayPal credit purchases
+
+The Credits screen is shared by native and web clients and renders a PayPal
+Payments Standard Buy Now form for each fixed pack. The form posts directly to
+PayPal and includes `return`, `cancel_return`, and `notify_url`; returning in the
+browser never grants credits. Development and test use
+`https://www.sandbox.paypal.com/cgi-bin/webscr`, while production uses
+`https://www.paypal.com/cgi-bin/webscr`.
+
+The form's `custom` value is a Rails-signed payload binding the current user to
+one server-defined pack. Prices and credit quantities are never accepted from
+that token or from browser state. `POST /paypal/notify` is the public IPN
+listener. `Paypal::Client` authenticates an IPN by posting its exact raw body
+back to the matching PayPal endpoint with `cmd=_notify-validate`; only a
+`VERIFIED` response proceeds. `Paypal::ProcessNotification` then requires:
+
+1. `payment_status == "Completed"`;
+2. `receiver_id` equals the configured PayPal merchant account ID;
+3. the signed user/pack token is valid;
+4. `item_number`, `mc_gross`, and `mc_currency` exactly match that pack; and
+5. a nonblank PayPal `txn_id`.
+
+Fulfillment uses `Credits::Ledger.grant!` with
+`idempotency_key: "paypal:<txn_id>"`, so PayPal retries and concurrent duplicate
+notifications credit the account once. The ledger metadata keeps the provider,
+transaction, pack, gross amount, currency, and payer ID for support/audit.
+Pending notifications are acknowledged but do nothing until PayPal sends a
+later Completed IPN. If the verification postback is temporarily unavailable,
+the listener returns 502 so PayPal retries.
+
+Only one environment credential is required:
+
+```yaml
+paypal:
+  merchant_id: YOUR_PAYPAL_MERCHANT_ACCOUNT_ID
+```
+
+Use the sandbox business account ID in
+`config/credentials/development.yml.enc` and the live business account ID in
+`config/credentials/production.yml.enc`. Payments Standard/IPN does not use a
+REST client ID, REST secret, SDK key, or locally verified webhook-signature
+secret. In development, expose Rails over HTTPS with ngrok and allow the active
+ngrok hostname in `config.hosts`; the form derives its PayPal `notify_url` from
+the incoming tunneled request, so open the Credits page through the ngrok URL
+before starting a sandbox checkout.
 
 #### **Enrollment** (`enrollments`)
 - **Purpose**: "this course is on my Home". Unique on `(user_id, course_id)`.
@@ -891,7 +942,7 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, Library, and Credits are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` skips that presentation gate so authenticated web users can use the same Queue and Add Video flow. The shared user menu links to Queue only while the user's credit balance is positive; direct Queue access remains available for inspecting existing work.
+Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home and Library are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` and `App::CreditsController` skip that presentation gate so authenticated web users can use Queue, Add Video, and PayPal credit purchases. The shared user menu always links to Queue, including at a zero credit balance, so existing and failed imports remain reachable.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
 

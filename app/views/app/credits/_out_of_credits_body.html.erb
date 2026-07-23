@@ -1,9 +1,3 @@
-<%# Screen 06, deliberately not as mocked.
-    The mockup shows three IAP packs and a "Get 15 credits" button. StoreKit is
-    deferred, so every one of those would be a control that does nothing — worse
-    than no control at all. This says the true thing instead, and points at the
-    Library, which is free and full of content. The packs come back here when
-    purchases land. %>
 <div class="flex flex-col items-center text-center gap-2.5 pt-1.5 pb-0.5">
   <div class="w-14 h-14 rounded-full bg-app-accent/[0.14] flex items-center justify-center">
     <%= app_icon "bolt", class: "w-[26px] h-[26px] text-app-accent", stroke: 1.2 %>
@@ -13,13 +7,13 @@
 
   <p class="text-app-text-2 text-sm leading-[1.45] max-w-[290px]">
     Each import uses 1 credit — that's the AI doing its magic. You started with
-    <%= User::SIGNUP_CREDITS %> free credits and they're all used up. More credits are coming soon.
+    <%= User::SIGNUP_CREDITS %> free credits and they're all used up.
   </p>
 </div>
 
-<div class="flex flex-col gap-2 pt-1">
+<div class="flex flex-col gap-2">
   <%= link_to "Browse the Library", app_library_path,
-              class: "block text-center bg-app-accent text-app-on-accent rounded-full py-4 text-base font-bold" %>
+              class: "block text-center border border-white/15 rounded-full py-3 text-sm font-bold" %>
   <p class="text-center text-app-text-3 text-xs leading-relaxed">
     Everything the community has already imported is free to learn.
   </p>

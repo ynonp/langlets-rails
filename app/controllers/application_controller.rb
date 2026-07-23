@@ -98,7 +98,7 @@ class ApplicationController < ActionController::Base
 
   # Redirect to returnto param after successful sign in
   def after_sign_in_path_for(resource)
-    path = if params[:returnto].present?
+    path = pending_video_path || if params[:returnto].present?
       params[:returnto]
     elsif request.env['omniauth.origin']
       request.env['omniauth.origin']
@@ -111,7 +111,7 @@ class ApplicationController < ActionController::Base
 
   # Redirect to returnto param after successful sign up
   def after_sign_up_path_for(resource)
-    if params[:returnto].present?
+    pending_video_path || if params[:returnto].present?
       params[:returnto]
     else
       root_path
@@ -143,6 +143,14 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
+  def pending_video_path
+    video_url = cookies.encrypted[GuestImportRequestsController::PENDING_VIDEO_COOKIE]
+    return if video_url.blank?
+
+    cookies.delete(GuestImportRequestsController::PENDING_VIDEO_COOKIE)
+    new_app_import_request_path(url: video_url)
+  end
 
   def persist_ios_language(code)
     return unless native_app? && user_signed_in?

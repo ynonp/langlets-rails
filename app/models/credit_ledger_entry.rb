@@ -5,8 +5,8 @@ class CreditLedgerEntry < ApplicationRecord
   belongs_to :user
   belongs_to :subject, polymorphic: true, optional: true
 
-  # iap_purchase is reserved while StoreKit is deferred, so adding purchases later
-  # doesn't renumber the existing values.
+  # PayPal purchases use the existing iap_purchase slot. Keep the numeric values
+  # stable: they are persisted in the append-only ledger.
   enum :reason, {
     signup_grant: 0,
     import_spend: 1,

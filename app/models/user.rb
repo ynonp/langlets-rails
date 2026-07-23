@@ -61,8 +61,8 @@ class User < ApplicationRecord
   # account impossible. Erasing the account erases its ledger with it.
   has_many :credit_ledger_entries, dependent: :delete_all
 
-  # What every new account starts with. There is no way to buy more yet, so when
-  # these are gone, they're gone.
+  # What every new account starts with. Additional credits can be purchased
+  # through the PayPal Payments Standard flow.
   SIGNUP_CREDITS = 3
 
   # after_create rather than after_create_commit so the user row, the balance and

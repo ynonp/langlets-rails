@@ -52,8 +52,8 @@ module App
       end
     end
 
-    test "a web browser can open Queue and Add Video" do
-      [ "/app/import_requests", "/app/import_requests/new" ].each do |path|
+    test "a web browser can open Queue, Add Video and Credits" do
+      [ "/app/import_requests", "/app/import_requests/new", "/app/credits" ].each do |path|
         get path, headers: WEB
         assert_response :success, "#{path} should be shared with the web app"
       end
@@ -96,7 +96,7 @@ module App
     end
 
     test "other app screens remain native-only" do
-      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new" ]).each do |path|
+      (SCREENS.values - [ "/app/import_requests", "/app/import_requests/new", "/app/credits" ]).each do |path|
         get path, headers: WEB
         assert_redirected_to root_path, "#{path} should be web-gated"
       end
@@ -474,15 +474,14 @@ module App
       assert_match "Despacito", response.body
     end
 
-    test "out of credits says so rather than offering a button that does nothing" do
+    test "out of credits explains the state when PayPal is not configured" do
       User.where(id: @user.id).update_all(credit_balance: 0)
 
       get "/app/credits", headers: NATIVE
 
       assert_response :success
       assert_match "out of credits", response.body
-      # StoreKit is deferred — there must be no purchase controls anywhere.
-      assert_no_match(/Get 15 credits|Restore purchases|\$\d/, response.body)
+      assert_match "PayPal purchases are temporarily unavailable", response.body
     end
   end
 end

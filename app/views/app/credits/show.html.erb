@@ -31,9 +31,51 @@
       <%= render "app/credits/out_of_credits_body" %>
     <% end %>
 
-    <%# Arrived here from a video preview they couldn't afford. Purchases aren't
-        built yet, so this is the whole of "return them to the preview" for now —
-        but it already means they don't have to find the video again. %>
+    <% if params[:payment] == "submitted" %>
+      <div class="rounded-2xl bg-app-accent/[0.14] px-4 py-3 text-center text-sm text-app-text-2">
+        Payment submitted. PayPal will notify us when it completes, then your balance will update.
+      </div>
+    <% end %>
+
+    <% if @paypal_client.configured? %>
+      <section class="flex flex-col gap-3" aria-labelledby="credit-packs-title">
+        <h3 id="credit-packs-title" class="text-center text-sm font-bold text-app-text-2">Buy credits with PayPal</h3>
+
+        <div class="grid grid-cols-3 gap-2">
+          <% @credit_packs.each do |pack| %>
+            <form action="<%= @paypal_client.checkout_url %>" method="post" data-turbo="false" target="_top">
+              <input type="hidden" name="cmd" value="_xclick">
+              <input type="hidden" name="business" value="<%= @paypal_client.merchant_id %>">
+              <input type="hidden" name="item_name" value="<%= pack.credits %> Langlets credits">
+              <input type="hidden" name="item_number" value="<%= pack.item_number %>">
+              <input type="hidden" name="amount" value="<%= pack.price %>">
+              <input type="hidden" name="currency_code" value="USD">
+              <input type="hidden" name="quantity" value="1">
+              <input type="hidden" name="no_shipping" value="1">
+              <input type="hidden" name="charset" value="utf-8">
+              <input type="hidden" name="custom" value="<%= @paypal_client.purchase_token(user: current_user, pack:) %>">
+              <input type="hidden" name="notify_url" value="<%= request.base_url + paypal_notification_path(lang: nil) %>">
+              <input type="hidden" name="return" value="<%= request.base_url + app_credits_path(payment: "submitted") %>">
+              <input type="hidden" name="cancel_return" value="<%= request.base_url + app_credits_path %>">
+
+              <button type="submit"
+                      class="w-full rounded-2xl border border-white/15 px-2 py-3 text-center hover:border-app-accent">
+                <span class="block text-base font-extrabold"><%= pack.credits %></span>
+                <span class="block text-xs text-app-text-3">$<%= pack.price %></span>
+              </button>
+            </form>
+          <% end %>
+        </div>
+        <p class="text-center text-[11px] leading-relaxed text-app-text-3">
+          Credits are added only after PayPal confirms the completed payment.
+        </p>
+      </section>
+    <% else %>
+      <p class="rounded-2xl bg-red-500/10 px-4 py-3 text-center text-xs text-red-300">
+        PayPal purchases are temporarily unavailable.
+      </p>
+    <% end %>
+
     <% if (video_url = Youtube::Url.canonical(params[:url])) %>
       <%= link_to "Back to the video", new_app_import_request_path(url: video_url),
                   class: "block text-center text-app-text-3 text-[13px] py-1" %>
