@@ -359,6 +359,13 @@ the temporary file and run permission for `yt-dlp` and `ip`.
   - Belongs to the clip Language and creator User; has many CourseTranslations
   - Many-to-many with Playlists (through CoursesPlaylist)
   - One-to-many with Enrollments
+- **`localized_translation` is a conditional `has_one` filtered by the current
+  translation language.** Because of the `where` lambda, plain `includes`
+  (without naming it) will not preload it and listing pages will issue one
+  `course_translations` query per card. Any scope that ends up rendered as
+  multiple `Course` cards must add `:localized_translation` to its
+  `includes` (e.g. `CoursesController#index`, the continue-learning and
+  recommended-for-me subqueries).
 
 #### 7. **Lesson** (`lessons`)
 - **Purpose**: Define specific learning segments from media content

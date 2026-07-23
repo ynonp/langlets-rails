@@ -1,6 +1,5 @@
-// Translate the extracted lyric lines before force alignment finishes. The
-// result is persisted at translation_lines.<iso>; after alignment creates the
-// phrase payload, materializeTranslationLines copies it into the stable v2
+// The result is persisted at translation_lines.<iso>;
+// materializeTranslationLines copies it into the stable v2
 // translations.<iso>.phrases shape.
 
 import { generateText } from "ai";

@@ -15,7 +15,8 @@ class CoursesController < ApplicationController
     # hidden entirely.
     visible_courses = Course.published.ready_in(Current.translation_language)
     @all_courses = Course.published.ready_in(Current.translation_language)
-                         .includes(:language).not_in_playlists.order(created_at: :desc)
+                         .includes(:language, :localized_translation)
+                         .not_in_playlists.order(created_at: :desc)
 
     if current_language_code.present?
       language = Language.find_by(iso_name: current_language_code)
@@ -64,7 +65,7 @@ class CoursesController < ApplicationController
       end
 
       # Separate courses for different sections
-      @recommended_courses = current_user.recommended_for_me.includes(:language).to_a.map do |course|
+      @recommended_courses = current_user.recommended_for_me.includes(:language, :localized_translation).to_a.map do |course|
         course.define_singleton_method(:user_progress) { progress_data[course.id] || 0 }
         course.define_singleton_method(:has_progress?) { (progress_data[course.id] || 0) > 0 }
         course.define_singleton_method(:completed?) { (progress_data[course.id] || 0) >= 100 }
@@ -76,7 +77,8 @@ class CoursesController < ApplicationController
       continue_learning_ids = continue_learning_order.keys
       if continue_learning_ids.any?
         continue_courses = Course.published.ready_in(Current.translation_language)
-                                 .includes(:language).where(id: continue_learning_ids)
+                                 .includes(:language, :localized_translation)
+                                 .where(id: continue_learning_ids)
         if current_language_code.present? && language
           continue_courses = continue_courses.where(language: language)
         end
