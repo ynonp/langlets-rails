@@ -9,9 +9,14 @@ import { Controller } from "@hotwired/stimulus"
 // before the user has finished making it. So the regex below only ever chooses
 // between "now" and "once they stop typing" (plus the green tick, which is
 // cosmetic). Making this the authority on what a video id is would be a second
-// definition to keep in step with Youtube::Url, and they would drift.
+// definition to keep in step with VideoSource, and they would drift.
+//
+// TikTok share links (vt./vm.tiktok.com) count as complete here even though no
+// id can be read out of them — only oEmbed can resolve one, server-side. That
+// is exactly the point: this decides "has the user finished typing", not "is
+// this importable".
 const VIDEO_PATTERN =
-  /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|shorts\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})|^[A-Za-z0-9_-]{11}$/
+  /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|shorts\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})|^[A-Za-z0-9_-]{11}$|(?:[/.])tiktok\.com\/(?:@[\w.-]+\/(?:video|photo)\/\d{6,}|t\/[\w-]{5,})|(?:[/.])(?:vt|vm)\.tiktok\.com\/[\w-]{5,}/
 
 // Long enough that typing a link by hand doesn't flash "that's not a link" on
 // the way to one.

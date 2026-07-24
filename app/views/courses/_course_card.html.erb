@@ -38,9 +38,8 @@
 <%= link_to course_path(id: course.slug), class: container_classes do %>
   <!-- Course Image -->
   <% if course.main_media_url.present? %>
-    <% youtube_video_id = course_youtube_video_id(course) %>
     <div class="relative">
-      <img src="<%= youtube_thumbnail_url(youtube_video_id) %>" alt="<%= course.localized_name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
+      <img src="<%= course_thumbnail_url(course) %>" alt="<%= course.localized_name %>" class="w-full h-40 object-cover rounded-t-xl flex-shrink-0">
       <% if is_completed %>
         <div class="absolute top-2 right-2 bg-emerald-500 text-white text-xs font-bold px-2 py-1 rounded-full shadow-md flex items-center gap-1">
           <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">

@@ -15,9 +15,9 @@ class FullPlayerController < ApplicationController
       phrase_tokens: [ :localized_translation, { l1_audio_attachment: :blob } ]
     ).order(:timestamp)
     
-    # Extract video_id from course's main_media_url
-    @video_id = extract_video_id_from_url(@course.main_media_url)
-    
+    @video_id = @course.video_id
+    @video_provider = @course.provider
+
     # Get start and end timestamps from phrases
     @start_timestamp = @phrases.first&.timestamp || "00:00"
     @end_timestamp = full_player_end_timestamp(@phrases)
@@ -38,18 +38,4 @@ class FullPlayerController < ApplicationController
       "00:00"
   end
 
-  def extract_video_id_from_url(url)
-    # Match patterns like:
-    # - https://www.youtube.com/watch?v=VIDEO_ID
-    # - https://youtu.be/VIDEO_ID
-    # - https://www.youtube.com/shorts/VIDEO_ID
-    regex = %r{
-      (?:youtube\.com/(?:watch\?v=|shorts/)|
-       youtu\.be/)           # Match the base domain and path
-      ([\w-]{11})            # Capture the 11-character video ID
-    }x
-  
-    match = url.match(regex)
-    match[1] if match
-  end
 end

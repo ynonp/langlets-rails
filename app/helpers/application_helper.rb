@@ -12,9 +12,17 @@ module ApplicationHelper
     Medium.youtube_thumbnail_url(video_id, quality)
   end
 
-  def course_youtube_video_id(course)
-    course.youtube_video_id.presence || Youtube::Url.video_id(course.main_media_url)
+  # The cover to render for a course card, whatever provider it came from.
+  # Course#thumbnail_url reads the stored column then derives, so YouTube rows
+  # cost nothing and TikTok rows use the URL captured at import.
+  def course_thumbnail_url(course, quality = 'hqdefault')
+    course&.thumbnail_url(quality)
   end
+
+  def course_youtube_video_id(course)
+    course&.video_id
+  end
+  alias_method :course_video_id, :course_youtube_video_id
 
   def link_to_next_activity(text, path, opts)
     route = Rails.application.routes.recognize_path(path)

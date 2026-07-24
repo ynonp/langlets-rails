@@ -1,6 +1,5 @@
 <% content_for :head do %>
-  <% video_id = @video_id %>
-  <% thumb_url = youtube_thumbnail_url(video_id) if video_id.present? %>
+  <% thumb_url = course_thumbnail_url(@course) %>
   <% title = "#{@course.localized_name} - Full Video - Langlets" %>
   <% desc = "Watch the complete #{@course.localized_name} video with synchronized bilingual transcripts." %>
 
@@ -26,14 +25,13 @@
 
 <div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 mx-auto w-full max-w-[480px]"
     data-controller="main-video-player watch-video-activity"
+    data-main-video-player-provider-value="<%= @video_provider %>"
     data-main-video-player-video-id-value="<%= @video_id %>"
     data-main-video-player-hl-value="<%= l1&.iso_name || 'en' %>"
     data-main-video-player-preload-player-value="true"
     data-main-video-player-interactive-value="true"
     data-main-video-player-target="videoListener videoSegment"
     data-action="
-      video:play->main-video-player#fullPlayerStartPlayback
-      video:stop->main-video-player#fullPlayerStopPlayback
       video:play->watch-video-activity#handleVideoStart
       video:end->watch-video-activity#handleVideoEnd
       video:stop->watch-video-activity#handleVideoPause
@@ -47,7 +45,8 @@
 >
   <!-- Video hero -->
   <div class="relative flex-shrink-0 bg-gray-100 dark:bg-gray-900" id="main-player" data-main-video-player-target="playerContainer">
-    <div class="w-full aspect-video relative">
+    <%# TikTok is vertical; aspect-video would letterbox it into a stripe. %>
+    <div class="w-full relative mx-auto <%= @course.tiktok? ? 'aspect-[9/16] max-h-[55vh] max-w-[calc(55vh*9/16)]' : 'aspect-video' %>">
       <div data-main-video-player-target="player"
            class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0"></div>
     </div>

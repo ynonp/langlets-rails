@@ -19,7 +19,7 @@ class CreateSongPipelineCli
       Language.find_by(iso_name: @translation_language_name)
     raise ArgumentError, "unknown translation language: #{@translation_language_name}" unless language
 
-    progress = find_or_create_progress(language)
+    progress = find_or_create_progress(language, resolve_url)
 
     Tempfile.create([ "create-song-progress-#{progress.id}-", ".json" ]) do |file|
       progress.reload.export(file.path)
@@ -44,9 +44,31 @@ class CreateSongPipelineCli
 
   private
 
-  def find_or_create_progress(language)
+  # The web path canonicalizes in Imports::Create before a progress row exists;
+  # this one has to do it itself, and getting it wrong is not cosmetic. The URL
+  # stored here becomes the course's main_media_url, and Course#video_id /
+  # #provider / #thumbnail_url are all derived from that string — so a row keyed
+  # on a TikTok share link (vt.tiktok.com/ZSXvNVQwY, which carries a redirect
+  # token rather than a post id) yields a course with no video id at all: no
+  # player, no cover.
+  #
+  # Offline first, so a URL no provider claims — including the fake ones tests
+  # use — passes through untouched rather than being rejected here.
+  def resolve_url
+    return VideoSource.canonical(@youtube_url) if VideoSource.video_id(@youtube_url).present?
+    return @youtube_url if VideoSource.provider(@youtube_url).nil?
+
+    # A share link: only the provider's oEmbed can turn it into a post id.
+    # Failing loudly beats spending a whole pipeline run to build an unplayable
+    # course.
+    VideoSource.fetch(@youtube_url).canonical_url
+  rescue VideoSource::UnavailableVideo => e
+    raise ArgumentError, "could not resolve #{@youtube_url.inspect}: #{e.message}"
+  end
+
+  def find_or_create_progress(language, url)
     progress = CreateSongProgress.find_or_create_by!(
-      youtubeurl: @youtube_url,
+      youtubeurl: url,
       clip_language: @clip_language
     ) do |record|
       record.translation_language = language.english_name

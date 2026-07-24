@@ -10,6 +10,7 @@ import { ProgressStore } from "../src/progress.ts";
 import type { ModelRegistry } from "../src/models.ts";
 import type { PipelineContext } from "../src/context.ts";
 import type { TranscriptResult } from "../src/supadata.ts";
+import type { SpeechToTextResult } from "../src/speechToText.ts";
 import type { Alignment } from "../src/alignment.ts";
 import type { DownloadedAudio } from "../src/audio.ts";
 
@@ -83,6 +84,50 @@ export function stubTranscribe(responses: Array<TranscriptResult | Error>): Stub
   };
 }
 
+// Network-free ElevenLabs Scribe stand-in — the TikTok transcription path.
+export interface StubSpeechTranscriber {
+  transcribe: NonNullable<PipelineContext["transcribeSpeech"]>;
+  calls: () => number;
+  requests: Array<{ sourceUrl: string; languageCode: string | null }>;
+}
+
+export function stubSpeechToText(
+  responses: Array<SpeechToTextResult | Error>,
+): StubSpeechTranscriber {
+  let count = 0;
+  const requests: StubSpeechTranscriber["requests"] = [];
+
+  return {
+    transcribe: (sourceUrl, languageCode) => {
+      requests.push({ sourceUrl, languageCode });
+      if (count >= responses.length) throw new Error("stub speech transcriber exhausted");
+      const next = responses[count++];
+      if (next instanceof Error) return Promise.reject(next);
+      return Promise.resolve(next);
+    },
+    calls: () => count,
+    requests,
+  };
+}
+
+// Scribe result for "Line 1 Line 2 ...", one timed word per token.
+export function speechFixture(from: number, to: number): SpeechToTextResult {
+  const words = [];
+  for (let n = from; n <= to; n++) {
+    const start = (n - 1) * 10;
+    words.push({ text: "Line", start, end: start + 1 });
+    words.push({ text: String(n), start: start + 2, end: start + 3 });
+  }
+  return {
+    text: words.map((word) => word.text).join(" "),
+    words,
+    languageCode: "spa",
+    languageProbability: 0.98,
+  };
+}
+
+export const TIKTOK_URL = "https://www.tiktok.com/@scout2015/video/6718335390845095173";
+
 export interface TestSetup {
   ctx: PipelineContext;
   store: ProgressStore;
@@ -95,6 +140,8 @@ export function makeCtx(options: {
   translationLanguage?: LanguageRef | null;
   clipLanguage?: string;
   transcribeVideo?: PipelineContext["transcribeVideo"];
+  transcribeSpeech?: PipelineContext["transcribeSpeech"];
+  youtubeurl?: string;
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
 } = {}): TestSetup {
@@ -114,13 +161,14 @@ export function makeCtx(options: {
   const ctx: PipelineContext = {
     store,
     models,
-    youtubeurl: "https://www.youtube.com/watch?v=test123",
+    youtubeurl: options.youtubeurl ?? "https://www.youtube.com/watch?v=test123",
     clipLanguage: options.clipLanguage ?? "French",
     translationLanguage: options.translationLanguage === undefined
       ? HEBREW
       : options.translationLanguage,
     baseDelayMs: 0,
     transcribeVideo: options.transcribeVideo,
+    transcribeSpeech: options.transcribeSpeech,
     prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
   };

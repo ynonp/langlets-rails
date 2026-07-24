@@ -16,7 +16,8 @@ class LessonsController < ApplicationController
     @activities = @lesson.activities.order(order: :asc).load
     @activity = @activities.find {|a| a.order == params[:a].to_i } || @activities.first
     @current_url = course_lesson_path(@course, @lesson, a: @activity.order)
-    @videoid = Medium.new(url: video_url).extract_youtube_video_id
+    @videoid = VideoSource.video_id(video_url)
+    @video_provider = VideoSource.provider(video_url) || VideoSource::DEFAULT_PROVIDER
 
     current_order = params[:a].to_i
 

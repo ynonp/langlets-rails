@@ -31,7 +31,7 @@
       <p class="mt-8 text-sm font-bold uppercase tracking-[0.14em] text-[#C4451C]">Create a lesson</p>
       <h1 class="mt-2 max-w-2xl text-4xl font-extrabold leading-[1.05] tracking-[-0.03em] sm:text-5xl [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= t("app.import_requests.new.title") %></h1>
       <p class="mt-4 max-w-2xl text-base leading-relaxed text-[#55503F]">
-        Paste any public YouTube video. We’ll build a translated transcript and vocabulary practice from it.
+        Paste any public YouTube or TikTok video. We’ll build a translated transcript and vocabulary practice from it.
       </p>
 
       <% if flash[:alert] %>
@@ -39,7 +39,7 @@
       <% end %>
 
       <div class="mt-8">
-        <label for="web-video-url" class="block text-sm font-bold">YouTube link or video ID</label>
+        <label for="web-video-url" class="block text-sm font-bold">Video link</label>
         <div class="mt-2 flex min-h-14 items-center gap-3 rounded-2xl border-2 border-[#1E1B16] bg-[#FFFDF8] px-4 transition focus-within:border-[#C4451C] focus-within:ring-2 focus-within:ring-[#C4451C]/20"
              data-add-video-target="field">
           <%= app_icon "link", class: "h-5 w-5 shrink-0 text-[#8A8170]" %>

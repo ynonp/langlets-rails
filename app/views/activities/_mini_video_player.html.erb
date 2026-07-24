@@ -26,8 +26,8 @@
       >
         ❚❚
       </button>
+      <%# seekToPosition reads event.currentTarget, so no target is needed here. %>
       <div class="flex-1 h-2 bg-gray-200 dark:bg-gray-700 rounded-full cursor-pointer"
-           data-main-vieo-player-target="progressBarContainer"
            data-action="click->main-video-player#seekToPosition">
         <div
           data-main-video-player-target="progressBar"

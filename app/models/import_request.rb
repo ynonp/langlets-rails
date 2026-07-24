@@ -43,8 +43,12 @@ class ImportRequest < ApplicationRecord
     queued? || importing?
   end
 
+  # The course is created in the same transaction as the request and carries the
+  # cover oEmbed gave us, so ask it first — that's the only place a TikTok
+  # thumbnail exists. The derivation is the fallback for YouTube, where it costs
+  # nothing, and for the brief window before a course is attached.
   def thumbnail_url
-    Medium.youtube_thumbnail_url(youtube_video_id)
+    course&.thumbnail_url.presence || VideoSource.derived_thumbnail_url(youtube_url)
   end
 
   # The Queue shows a percent for importing items only; a queued item hasn't

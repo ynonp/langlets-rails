@@ -1,6 +1,5 @@
 <% content_for :head do %>
-  <% video_id = @videoid %>
-  <% thumb_url = youtube_thumbnail_url(video_id) if video_id %>
+  <% thumb_url = course_thumbnail_url(@lesson.course) %>
   <% title = "#{@lesson.localized_name} - Langlets" %>
   <% desc = @lesson.course ? "Learn #{@lesson.course.language&.english_name || 'a new language'} with interactive video lessons based on \"#{@lesson.course.localized_name}\"." : "Learn languages with interactive video lessons. Practice listening, speaking, and comprehension with AI-powered activities." %>
 
@@ -29,6 +28,7 @@
 
 <div class="h-dvh-safe min-h-0 flex flex-col overflow-hidden bg-emerald-50 dark:bg-gray-950 text-gray-900 dark:text-gray-50 max-w-[480px] mx-auto w-full"
     data-controller="main-video-player activity-navigation "
+    data-main-video-player-provider-value="<%= @video_provider %>"
     data-main-video-player-video-id-value="<%= @videoid %>"
     data-main-video-player-hl-value="<%= activity_params[:video_hl] %>"
     data-main-video-player-preload-player-value="<%= activity_params[:preload_player] || false %>"
@@ -39,43 +39,21 @@
     data-main-video-player-target="playerContainer"
     class="<%= activity_params[:video_player] ? 'order-2 flex-shrink-0' : 'hidden' %>"
   >
-      <div class="w-full aspect-video bg-cover bg-center bg-no-repeat flex items-center justify-center relative"
-       style="background-image: url('<%= "https://img.youtube.com/vi/#{@videoid}/hqdefault.jpg" %>')"
+      <%# TikTok is shot vertically, so the player box follows the provider
+          rather than assuming 16:9. Capped by viewport height so the phrase
+          list below it stays on screen on a phone. %>
+      <div class="w-full bg-cover bg-center bg-no-repeat flex items-center justify-center relative mx-auto <%= @video_provider == :tiktok ? 'aspect-[9/16] max-h-[55vh] max-w-[calc(55vh*9/16)]' : 'aspect-video' %>"
+       style="<%= "background-image: url('#{j course_thumbnail_url(@lesson.course)}')".html_safe if course_thumbnail_url(@lesson.course).present? %>"
        role="img"
        aria-label="Video thumbnail">
 
-        <% unless activity_params[:interactive_video_player] %>
-          <div class="absolute inset-0 z-20"
-                data-action="click->main-video-player#togglePlayPause"></div>
-        <% end %>
-
-
+        <%# No custom chrome here: the container is only ever visible when
+            interactive_video_player is set, and that layout uses the provider's
+            native controls. See docs/video-player.md. %>
         <div
             data-main-video-player-target="player"
             class="absolute inset-0 w-full h-full [&>iframe]:w-full [&>iframe]:h-full [&>iframe]:absolute [&>iframe]:inset-0">
         </div>
-        <% unless activity_params[:interactive_video_player] %>
-          <!-- Time display (elapsed / total) -->
-          <div class="absolute z-30 flex items-center gap-1 tabular-nums"
-               style="bottom: 12px; right: 14px; color:#fff; font-size: 12px; font-variant-numeric: tabular-nums; text-shadow: 0 1px 3px rgba(0,0,0,0.6);">
-            <span data-main-video-player-target="timeElapsed">0:00</span>
-            <span style="opacity: 0.7;">/</span>
-            <span data-main-video-player-target="timeDuration" style="opacity: 0.7;">0:00</span>
-          </div>
-
-          <!-- Custom Progress Bar -->
-          <div class="absolute bottom-0 left-0 w-full z-30 cursor-pointer"
-              data-main-video-player-target="progressBarContainer"
-              data-action="click->main-video-player#seekToPosition"
-              style="pointer-events: auto; height: 6px; background: rgba(255,255,255,0.25);">
-            <div data-main-video-player-target="progressBar" class="h-full transition-all duration-100 ease-linear bg-emerald-500" style="width: 0%;"></div>
-          </div>
-          <button data-main-video-player-target="playButton"
-                  class="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-emerald-500 text-white border-none cursor-pointer"
-                  style="box-shadow: 0 6px 18px rgba(0,0,0,0.3);">
-            <svg width="22" height="22" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="#fff"/></svg>
-          </button>
-        <% end %>
       </div>
   </div>
 

@@ -1,6 +1,6 @@
 <% if entry.is_a?(Course) %>
   <%= link_to course_path(entry), class: "gallery-card" do %>
-    <img src="<%= youtube_thumbnail_url(course_youtube_video_id(entry)) %>"
+    <img src="<%= course_thumbnail_url(entry) %>"
          alt="<%= entry.localized_name %>" class="gallery-card-image">
     <div class="gallery-card-body">
       <span class="gallery-card-kind">Course</span>

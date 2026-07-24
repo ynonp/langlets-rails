@@ -180,4 +180,56 @@ class CourseTest < ActiveSupport::TestCase
     expected_end = Phrase.to_string_timestamp(@phrase2.timestamp_seconds + 5)
     assert_equal expected_end, @lesson1.reload.end_timestamp
   end
+
+  # The reason the column is nullable and was never backfilled: YouTube covers
+  # derive from main_media_url, so every pre-existing row keeps working.
+  test "a YouTube cover is derived when the column is empty" do
+    course = build_course("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+    assert_nil course[:thumbnail_url]
+    assert_equal "https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg", course.thumbnail_url
+    assert_equal :youtube, course.provider
+    assert_equal "dQw4w9WgXcQ", course.video_id
+  end
+
+  # TikTok covers are signed CDN URLs that cannot be derived, so the stored
+  # value captured from oEmbed at import time is the only source.
+  test "a TikTok cover comes from the stored column" do
+    stored = "https://p16-sign-va.tiktokcdn.com/obj/abc?x-expires=1"
+    course = build_course(
+      "https://www.tiktok.com/@scout2015/video/6718335390845095173",
+      thumbnail_url: stored
+    )
+
+    assert_equal stored, course.thumbnail_url
+    assert course.tiktok?
+    assert_equal "6718335390845095173", course.video_id
+  end
+
+  test "a TikTok course with no stored cover has none to render" do
+    course = build_course("https://www.tiktok.com/@scout2015/video/6718335390845095173")
+
+    assert_nil course.thumbnail_url
+  end
+
+  test "a stored cover wins over derivation" do
+    course = build_course(
+      "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+      thumbnail_url: "https://example.com/custom.jpg"
+    )
+
+    assert_equal "https://example.com/custom.jpg", course.thumbnail_url
+  end
+
+  private
+
+  def build_course(url, **attributes)
+    Course.create!(
+      name: "Provider Course",
+      slug: "provider-course-#{SecureRandom.hex(4)}",
+      main_media_url: url,
+      user: @user,
+      **attributes
+    )
+  end
 end

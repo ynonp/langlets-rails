@@ -1,7 +1,7 @@
 <%# "Just imported" hero card. Cards separate by border alone — no shadow. %>
 <div class="app-hairline bg-app-card rounded-app-hero overflow-hidden">
   <div class="relative">
-    <%= image_tag Medium.youtube_thumbnail_url(course_youtube_video_id(course), "hqdefault"),
+    <%= image_tag course_thumbnail_url(course),
                   alt: "", loading: "lazy",
                   class: "w-full h-[174px] object-cover bg-app-inset" %>
 

@@ -44,24 +44,26 @@ module App
       # earned yet — they've typed nothing wrong, they've typed nothing at all.
       if @query.blank?
         @mode = :empty
-      elsif Youtube::Url.loose_video_id(@query).blank?
-        # A watch link, youtu.be, /shorts/ or a bare 11-character id. The Stimulus
-        # controller holds anything else back until typing stops, so this branch
-        # doesn't fire on the way to a valid link.
+      elsif !VideoSource.importable?(@query)
+        # A watch link, youtu.be, /shorts/, a bare 11-character id, or a TikTok
+        # post or share link. The Stimulus controller holds anything else back
+        # until typing stops, so this branch doesn't fire on the way to a valid
+        # link. Note this asks importable? rather than for an id: a TikTok share
+        # link has no id in it until oEmbed resolves one.
         @mode = :error
-        @error = "That doesn't look like a YouTube link. Paste a youtube.com or youtu.be link, or a video ID."
+        @error = "That doesn't look like a video link. Paste a YouTube or TikTok link, or a YouTube video ID."
       else
         @mode = :preview
         @preview = Imports::Preview.call(
           user: current_user,
-          url: Youtube::Url.loose_canonical(@query),
+          url: VideoSource.loose_canonical(@query),
           clip_language: @clip_language.english_name,
           translation_language: @translation_language.english_name
         )
       end
 
       render "app/import_requests/web/resolve" if web_view?
-    rescue Youtube::Oembed::UnavailableVideo
+    rescue VideoSource::UnavailableVideo
       # A well-formed id that YouTube won't serve. Distinct from the message
       # above on purpose: "you typed it wrong" and "this video is gone" send the
       # user to two different next moves.
@@ -87,7 +89,7 @@ module App
     rescue Credits::InsufficientCredits
       # Checked in #new too; this is for the race, not the common path.
       redirect_to app_credits_path
-    rescue Youtube::Oembed::UnavailableVideo
+    rescue VideoSource::UnavailableVideo
       redirect_to new_app_import_request_path(url: params[:url]),
                   alert: "We couldn't read that video. It may be private, age-restricted or deleted."
     rescue Imports::UnsupportedLanguage
@@ -156,7 +158,7 @@ module App
       redirect_to_result(result)
     rescue Credits::InsufficientCredits
       redirect_to app_credits_path
-    rescue Youtube::Oembed::UnavailableVideo, Imports::UnsupportedLanguage
+    rescue VideoSource::UnavailableVideo, Imports::UnsupportedLanguage
       redirect_to app_import_requests_path, alert: "That video still can't be imported."
     end
 

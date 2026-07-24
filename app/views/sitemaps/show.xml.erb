@@ -16,13 +16,15 @@
       <lastmod><%= course.updated_at.iso8601 %></lastmod>
       <priority>0.8</priority>
       <changefreq>weekly</changefreq>
-      <% video_id = extract_youtube_id(course.main_media_url) %>
-      <% if video_id.present? %>
+      <%# Needs a real cover: Google drops a video entry with no thumbnail_loc,
+          and TikTok covers only exist once oEmbed has been stored. %>
+      <% course_thumb = course_thumbnail_url(course) %>
+      <% if course_thumb.present? && course.main_media_url.present? %>
         <video:video>
           <video:title><%= course.localized_name %></video:title>
           <video:description><![CDATA[<%= course_description(course) %>]]></video:description>
-          <video:thumbnail_loc>https://img.youtube.com/vi/<%= video_id %>/hqdefault.jpg</video:thumbnail_loc>
-          <video:content_loc>https://www.youtube.com/watch?v=<%= video_id %></video:content_loc>
+          <video:thumbnail_loc><%= course_thumb %></video:thumbnail_loc>
+          <video:content_loc><%= course.main_media_url %></video:content_loc>
         </video:video>
       <% end %>
     </url>

@@ -32,7 +32,7 @@ module Imports
       @client_token = client_token
     end
 
-    # Raises Youtube::Oembed::UnavailableVideo for a bad/private/deleted video,
+    # Raises VideoSource::UnavailableVideo for a bad/private/deleted video,
     # Credits::InsufficientCredits when the balance won't cover it, and
     # UnsupportedLanguage for a language we don't teach. None of them charge.
     def call
@@ -46,8 +46,10 @@ module Imports
       validate_languages!
 
       # Also the availability check: oEmbed 401/403/404 means we can't import it,
-      # and we find that out before taking the credit.
-      video = Youtube::Oembed.fetch(url)
+      # and we find that out before taking the credit. For a TikTok share link
+      # this is additionally what resolves vt.tiktok.com/... into a post id —
+      # nothing downstream can work without it.
+      video = VideoSource.fetch(url)
 
       # Resolve the shared L1 skeleton first, then its per-language readiness.
       if (published = published_course_for(video))
@@ -227,6 +229,10 @@ module Imports
               slug: slug,
               main_media_url: video.canonical_url,
               youtube_video_id: video.video_id,
+              # Only worth storing when it can't be derived from the URL later.
+              # YouTube covers derive for free, so leaving those NULL keeps the
+              # column meaningful and matches every pre-existing row.
+              thumbnail_url: (video.thumbnail_url unless video.youtube?),
               language: clip_language_record,
               user: user,
               status: :pending

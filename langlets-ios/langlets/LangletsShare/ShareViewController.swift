@@ -38,7 +38,7 @@ final class ShareViewController: UIViewController {
         titleLabel.font = .preferredFont(forTextStyle: .title2)
         titleLabel.textColor = .white
 
-        urlLabel.text = "Reading shared YouTube link…"
+        urlLabel.text = "Reading shared video link…"
         urlLabel.font = .preferredFont(forTextStyle: .footnote)
         urlLabel.textColor = UIColor.white.withAlphaComponent(0.65)
         urlLabel.numberOfLines = 2
@@ -140,9 +140,9 @@ final class ShareViewController: UIViewController {
     }
 
     private func accept(url: URL?) {
-        guard let url, Self.isYouTube(url) else {
-            urlLabel.text = "Share a YouTube video link to create a course."
-            statusLabel.text = "No YouTube link was found."
+        guard let url, Self.isSupportedVideo(url) else {
+            urlLabel.text = "Share a YouTube or TikTok video link to create a course."
+            statusLabel.text = "No video link was found."
             return
         }
         sharedURL = url
@@ -150,10 +150,21 @@ final class ShareViewController: UIViewController {
         importButton.isEnabled = true
     }
 
-    private static func isYouTube(_ url: URL) -> Bool {
+    // Host-only, deliberately: the extension decides "is this worth POSTing",
+    // not "which video is this". Rails re-validates and canonicalizes, and for
+    // TikTok it is the only thing that *can* — a vt.tiktok.com share link
+    // carries a redirect token rather than a post id, and only TikTok's oEmbed
+    // resolves one. Parsing an id here would fail every link TikTok's own share
+    // sheet produces.
+    private static func isSupportedVideo(_ url: URL) -> Bool {
         let host = url.host?.lowercased() ?? ""
-        return host == "youtu.be" || host == "youtube.com" || host.hasSuffix(".youtube.com")
+        return Self.supportedHosts.contains(host) ||
+            Self.supportedDomains.contains(where: { host.hasSuffix(".\($0)") })
     }
+
+    private static let supportedHosts: Set<String> = ["youtu.be", "youtube.com", "tiktok.com"]
+    // Covers www., m., vt. and vm. subdomains without listing each one.
+    private static let supportedDomains: Set<String> = ["youtube.com", "tiktok.com"]
 
     @objc private func submit() {
         guard let sharedURL else { return }

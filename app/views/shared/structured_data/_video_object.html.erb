@@ -5,8 +5,8 @@
   "name": "<%= j local_assigns.fetch(:name, '') %>",
   "description": "<%= j local_assigns.fetch(:description, '') %>",
   "thumbnailUrl": "<%= j local_assigns.fetch(:thumbnail_url, '') %>",
-  "embedUrl": "https://www.youtube.com/embed/<%= j local_assigns.fetch(:video_id, '') %>",
-  "contentUrl": "https://www.youtube.com/watch?v=<%= j local_assigns.fetch(:video_id, '') %>",
+  "embedUrl": "<%= j local_assigns.fetch(:embed_url, '') %>",
+  "contentUrl": "<%= j local_assigns.fetch(:content_url, '') %>",
   "uploadDate": "<%= j local_assigns.fetch(:upload_date, '') %>",
   "publisher": {
     "@type": "Organization",

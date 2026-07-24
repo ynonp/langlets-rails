@@ -1,10 +1,15 @@
 namespace :create_song_progress do
-  desc "Run the Deno pipeline, create the course, and wait (youtube_url, clip_language, translation_language, creator_email)"
+  desc "Run the Deno pipeline, create the course, and wait (video_url, clip_language, translation_language, creator_email)"
   task :pipeline, [ :youtube_url, :clip_language, :translation_language, :creator_email ] => :environment do |_task, args|
     if args.values_at(:youtube_url, :clip_language, :translation_language).any?(&:blank?)
       abort <<~USAGE
-        Usage: rake "create_song_progress:pipeline[youtube_url,clip_language,translation_language,creator_email]"
+        Usage: rake "create_song_progress:pipeline[video_url,clip_language,translation_language,creator_email]"
         Example: rake "create_song_progress:pipeline[https://www.youtube.com/watch?v=XXXX,French,Hebrew,ynon@hey.com]"
+        Example: rake "create_song_progress:pipeline[https://www.tiktok.com/@user/video/7234567890123456789,Spanish,English,ynon@hey.com]"
+
+        Takes a YouTube or TikTok URL. A TikTok share link (vt.tiktok.com/...) is
+        resolved to its post id through oEmbed before the run starts, so shell-quote
+        it and expect one network call up front.
 
         Start Rails separately with the same PIPELINE_HMAC_SECRET. The callback base URL
         defaults to http://localhost:3000 and can be changed with PIPELINE_CALLBACK_BASE_URL.

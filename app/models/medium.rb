@@ -9,7 +9,7 @@ class Medium < ApplicationRecord
   # One row per video and spoken language. Translations are attached below it.
 
   def self.youtube_thumbnail_url(video_id, quality = 'hqdefault')
-    "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
+    Youtube::Url.thumbnail_url(video_id, quality)
   end
 
   def create_phrases(from_language, to_language)
@@ -21,9 +21,18 @@ class Medium < ApplicationRecord
     end
   end
 
+  # nil for providers whose covers aren't derivable from the URL (TikTok). The
+  # course-level cover is the one to render; see Course#thumbnail_url.
   def thumbnail_url
-    video_id = extract_youtube_video_id
-    Medium.youtube_thumbnail_url(video_id)
+    VideoSource.derived_thumbnail_url(url)
+  end
+
+  def provider
+    VideoSource.provider(url)
+  end
+
+  def tiktok?
+    provider == :tiktok
   end
 
   def create_phrases_from_youtube_video(from_language, to_language)
@@ -52,9 +61,12 @@ class Medium < ApplicationRecord
       !!(url =~ /\Ahttps?:\/\/youtu\.be\/[\w\-]+/i)
   end
 
-  def extract_youtube_video_id
-    Youtube::Url.video_id(url)
+  # Name predates TikTok; it returns whichever provider's id the URL carries.
+  # extract_video_id is the name to use in new code.
+  def extract_video_id
+    VideoSource.video_id(url)
   end
+  alias_method :extract_youtube_video_id, :extract_video_id
 
   def download_youtube_video
     pyimport :yt_dlp

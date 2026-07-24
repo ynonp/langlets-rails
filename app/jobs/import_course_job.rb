@@ -9,8 +9,9 @@ class ImportCourseJob < ApplicationJob
     user = User.find(user_id)
     playlist = playlist_id ? Playlist.find_by(id: playlist_id) : nil
 
-    video_id = extract_video_id(progress.youtubeurl)
-    title = fetch_video_title(video_id, progress.youtubeurl)
+    video = resolve_video(progress.youtubeurl)
+    video_id = video&.video_id || extract_video_id(progress.youtubeurl)
+    title = video&.title || VideoSource.video_id(progress.youtubeurl) || "Untitled Course"
 
     language = Language.find_by(english_name: progress.clip_language)
 
@@ -24,13 +25,14 @@ class ImportCourseJob < ApplicationJob
       course.assign_attributes(
         name: title,
         language: language,
-        status: :processing
+        status: :processing,
+        **cover_attributes(video)
       )
       course.lessons.destroy_all
       course.save!
     else
       slug = generate_slug_with_video_id(title, video_id)
-      course = create_course_with_unique_slug(user: user, name: title, slug: slug, main_media_url: progress.youtubeurl, language: language)
+      course = create_course_with_unique_slug(user: user, name: title, slug: slug, main_media_url: progress.youtubeurl, language: language, cover: cover_attributes(video))
     end
 
     Rails.logger.info "Starting ImportCourseJob for #{progress.youtubeurl}"
@@ -79,7 +81,7 @@ class ImportCourseJob < ApplicationJob
     Courses::Naming.call(title: title, video_id: video_id).slug
   end
 
-  def create_course_with_unique_slug(user:, name:, slug:, main_media_url:, language:, max_retries: 10)
+  def create_course_with_unique_slug(user:, name:, slug:, main_media_url:, language:, cover: {}, max_retries: 10)
     retries = 0
     begin
       course = Course.new(
@@ -88,7 +90,8 @@ class ImportCourseJob < ApplicationJob
         main_media_url: main_media_url,
         language: language,
         user: user,
-        status: :processing
+        status: :processing,
+        **cover
       )
 
       course.save!
@@ -107,12 +110,26 @@ class ImportCourseJob < ApplicationJob
   end
 
   def extract_video_id(url)
-    Youtube::Url.video_id(url)
+    VideoSource.video_id(url)
   end
 
-  # Best-effort by design: this job runs after the work has been committed to, so
-  # a weak title beats a failed import.
-  def fetch_video_title(_video_id, fallback_url)
-    Youtube::Oembed.fetch_title(fallback_url)
+  # Best-effort by design: this job runs after the pipeline has already done the
+  # expensive work, so a weak title beats a failed import. One oEmbed call now
+  # serves the title *and* the cover — it used to fetch the same response and
+  # throw everything but the title away.
+  def resolve_video(url)
+    VideoSource.fetch(url)
+  rescue VideoSource::UnavailableVideo, StandardError => e
+    Rails.logger.warn "oEmbed lookup failed for #{url.inspect}: #{e.message}"
+    nil
+  end
+
+  # Only stored when it can't be derived from the URL later. YouTube covers
+  # derive for free, so those stay NULL — and a failed oEmbed must not blank an
+  # existing cover, hence the empty hash rather than an explicit nil.
+  def cover_attributes(video)
+    return {} if video.nil? || video.youtube? || video.thumbnail_url.blank?
+
+    { thumbnail_url: video.thumbnail_url }
   end
 end

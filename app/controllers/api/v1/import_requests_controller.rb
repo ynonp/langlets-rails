@@ -34,7 +34,7 @@ module Api
                json: { error: "insufficient_credits",
                        error_description: "You're out of credits.",
                        credits_left: 0 }
-      rescue Youtube::Oembed::UnavailableVideo => e
+      rescue VideoSource::UnavailableVideo => e
         render status: :unprocessable_entity,
                json: { error: "unavailable_video", error_description: e.message }
       rescue Imports::UnsupportedLanguage => e

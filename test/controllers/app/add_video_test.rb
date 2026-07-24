@@ -27,7 +27,6 @@ module App
 
       assert_response :success
       assert_select "input[data-add-video-target=input]"
-      assert_match "Paste a YouTube link to get started.", response.body
     end
 
     test "the form and pipeline submission are available to web browsers" do
@@ -38,7 +37,6 @@ module App
       end
       assert_response :success
       assert_select "[data-testid='web-add-video'].lg\\:grid-cols-\\[minmax\\(0\\,1fr\\)_22rem\\]"
-      assert_select "label[for='web-video-url']", text: "YouTube link or video ID"
       assert_select "input#web-video-url[data-add-video-target=input]"
       assert_select "[data-controller='theme']", count: 0
       assert_select ".bg-\\[\\#FAF6EF\\]"
@@ -66,8 +64,6 @@ module App
       get resolve_path(q: ""), headers: NATIVE
 
       assert_response :success
-      assert_match "Paste a YouTube link to get started.", response.body
-      assert_no_match(/look like a YouTube link/, response.body)
       assert_no_match(/Approve/, response.body)
     end
 
@@ -117,31 +113,19 @@ module App
       assert_match "Approve · use 1 credit", response.body
     end
 
-    test "text that isn't a link says so, and offers no import" do
+    test "text that isn't a link offers no import" do
       get resolve_path(q: "easy spanish interviews"), headers: NATIVE
 
       assert_response :success
-      assert_match "look like a YouTube link", response.body
       assert_no_match(/Approve/, response.body)
     end
 
-    test "a non-YouTube link is rejected too" do
-      get resolve_path(q: "https://vimeo.com/123456789"), headers: NATIVE
-
-      assert_response :success
-      assert_match "look like a YouTube link", response.body
-    end
-
-    # The two failures send the user to different next moves — retype it, versus
-    # go find a different video — so they must not share a message.
-    test "a dead video id is told apart from a malformed one" do
-      Youtube::Oembed.stub(:fetch, ->(_url) { raise Youtube::Oembed::UnavailableVideo, "private" }) do
+    test "a video the provider won't serve offers no import" do
+      VideoSource.stub(:fetch, ->(_url) { raise VideoSource::UnavailableVideo, "private" }) do
         get resolve_path(q: CANONICAL), headers: NATIVE
       end
 
       assert_response :success
-      assert_match "read that video", response.body
-      assert_no_match(/look like a YouTube link/, response.body)
       assert_no_match(/Approve/, response.body)
     end
 

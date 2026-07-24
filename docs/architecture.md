@@ -240,8 +240,26 @@ action-scoped clear operation through the callback, removing stale failures for
 that action while preserving errors from concurrently failing actions.
 
 For local/manual pipeline runs, `rake
-"create_song_progress:pipeline[YOUTUBE_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
-resolves the target `Language`, creates or reuses the shared progress row,
+"create_song_progress:pipeline[VIDEO_URL,CLIP_LANGUAGE,TRANSLATION_LANGUAGE,CREATOR_EMAIL]"`
+takes a YouTube or TikTok URL. **`CreateSongPipelineCli` canonicalizes it before
+keying the progress row**, which the web path gets from `Imports::Create` and
+this one has to do itself. That is not cosmetic: the stored URL becomes the
+course's `main_media_url`, and `Course#video_id` / `#provider` / `#thumbnail_url`
+are all derived from that string, so a row keyed on a TikTok share link would
+build a course with no video id — no player and no cover. Canonicalization is
+offline where possible; a share link costs one oEmbed call up front and aborts
+the task if it can't be resolved, rather than spending a whole pipeline run to
+produce an unplayable course. A URL no provider claims passes through untouched.
+
+`ImportCourseJob` (which the task then calls synchronously) does its own oEmbed
+lookup for the title, and now takes the cover from that same response, storing it
+for non-derivable providers. The lookup stays best-effort — it runs after the
+pipeline has already done the expensive work, so a failure logs and continues.
+Note this legacy path still leaves `youtube_video_id` NULL; `Course#video_id`
+falls back to parsing `main_media_url`, so playback works, but these courses are
+not covered by `idx_courses_published_video_language`.
+
+The task resolves the target `Language`, creates or reuses the shared progress row,
 exports its latest database state to a temporary file, and runs the Deno CLI
 synchronously. After the Deno process succeeds, the task synchronously runs
 `ImportCourseJob` to build and publish the course. The optional creator email
@@ -259,6 +277,83 @@ the record's exported `data` with `PipelineHmac` and POSTs it to the pipeline
 server's `/run`; results come back through `PipelineCallbacksController`. Both
 entry points use it — `CreateCourseJob` (the `/courses/new` form) and
 `AddCourseTranslationJob` (adding a language to an existing course).
+
+### Video providers
+
+Courses come from **YouTube or TikTok**. Which one is derived from the stored
+URL, never from a column, so every row that predates TikTok answers correctly
+with no backfill.
+
+`VideoSource` (`app/services/video_source.rb`) is the only place that knows the
+list. It dispatches to a pair of modules per provider — `<Provider>::Url` for
+pure string work and `<Provider>::Oembed` for the one HTTP call — so adding a
+third provider is two modules plus one line, not a grep across the app. Nothing
+outside it should reference `Youtube::Url` or `Tiktok::Url` directly.
+
+Three asymmetries between the two providers drive most of the design:
+
+- **A TikTok share link has no id in it.** `vt.tiktok.com/ZSXvNVQwY` carries a
+  redirect token; only oEmbed can trade it for the numeric post id, server-side.
+  So `VideoSource.video_id` returns nil for one while `match?`/`importable?`
+  return true. **Ask `VideoSource.importable?`, not `video_id.present?`**, when
+  the question is "can this be pasted" — the Add Video sheet rejects the most
+  common TikTok paste otherwise.
+- **TikTok covers are not derivable.** YouTube's `img.youtube.com/vi/ID/…` is a
+  public static pattern, which is why a gallery of course cards costs zero
+  network calls. TikTok's are signed CDN URLs with an expiry that only oEmbed
+  returns. `courses.thumbnail_url` stores them, captured during
+  `Imports::Create` (which already calls oEmbed before charging a credit).
+  `Course#thumbnail_url` reads the column, then falls back to derivation — that
+  order is why the column is nullable and was never backfilled. It is
+  deliberately left NULL for YouTube.
+- **TikTok is vertical.** The lesson player, full player and course preview pick
+  their aspect ratio from the provider; forcing 9:16 content into `aspect-video`
+  letterboxes it into a stripe.
+
+`courses.youtube_video_id` and `import_requests.youtube_url` keep their names but
+hold whichever provider's value. `youtube_video_id` backs
+`idx_courses_published_video_language`, the partial unique index that makes a
+double import a database impossibility, so renaming it is a dedupe migration
+rather than a rename.
+
+`VideoSource::UnavailableVideo` is the single availability error;
+`Youtube::Oembed::UnavailableVideo` and `Youtube::Oembed::Video` remain as
+aliases because they appear in rescue clauses across the app, and a rescue that
+silently stopped catching would fail a paid import instead of showing "video is
+private".
+
+Known gap: the legacy admin form's `youtube-form` Stimulus controller autofills
+name and slug from YouTube oEmbed only. TikTok links there require typing both
+by hand; the primary Add Video path resolves server-side and is unaffected.
+
+### Transcription and timing, per provider
+
+The two providers reach the same place — one continuous transcript of timed
+words — by different routes, and converge in `phrasesFromAlignedWords`
+(`pipeline/src/alignedWords.ts`). Nothing downstream of `force_alignment` knows
+TikTok exists.
+
+**TikTok** is transcribed by ElevenLabs Scribe (`scribe_v2`), which takes the
+post URL as `source_url` and returns the transcript *and* per-word timestamps in
+one call. Consequences worth knowing:
+
+- **No forced alignment, and no `yt-dlp`.** The words arrive already timed, so
+  the TikTok path never downloads audio and has no dependency on the yt-dlp
+  extractor or `YTDLP_NETWORK_NAMESPACE`.
+- **No Supadata and no Gemini fallback.** A failed Scribe call fails
+  `extract_lyrics` where it stands.
+- `extract_lyrics` stashes the timed words under `data["stt_words"]` and
+  `force_alignment` builds the provisional phrase from them. Two steps rather
+  than one so a run that dies in between resumes without paying for
+  transcription twice.
+- Scribe returns `spacing` and `audio_event` entries (`[cantando]`,
+  `[Applause]`) alongside words. Both are dropped, and the transcript is rebuilt
+  from the surviving words rather than taken from the response's `text` — square
+  brackets are reserved by the app's token markup, and more importantly
+  `add_lessons` partitions the transcript by word count against those very
+  words, so the two must describe the same thing.
+
+**YouTube** keeps its existing route, unchanged:
 
 The pipeline first asks Supadata for existing provider captions with `mode=native`; this is a single
 request with no application-level retry, and supports both immediate and asynchronous job responses.
@@ -408,7 +503,8 @@ the temporary file and run permission for `yt-dlp` and `ip`.
 
 #### 5. **Medium** (`media`)
 - **Purpose**: Store one video transcription in its spoken language.
-- **Identity**: `(url, language_id)`. L2 data is stored below phrases, so a new
+- **Identity**: `(url, language_id)`. The URL also carries the provider — see
+  "Video providers"; `Medium#provider` derives it rather than storing it. L2 data is stored below phrases, so a new
   target language reuses this row and its L1 phrases.
 - **Relationships**: Belongs to the clip `Language`; owns Lessons and Phrases.
   Destroying a Medium cascades through its lessons, activities, phrases,
@@ -423,8 +519,9 @@ the temporary file and run permission for `yt-dlp` and `ip`.
   - **`name` is NOT unique.** It was, back when one admin typed every title. Two users importing different videos that share a title must not collide on a display field.
   - Main media URL for course overview
   - **Identity in the Library is `(youtube_video_id, language_id)`**, enforced for published courses by a partial unique index. L2 publish/readiness and name live in `course_translations`.
-  - `main_media_url` is free text and unreliable for comparison (`youtu.be/X` vs `watch?v=X&t=9`) — always compare `youtube_video_id`, via `Youtube::Url`.
-  - Course thumbnails use the stored `youtube_video_id` rather than parsing `main_media_url`; a `Youtube::Url` fallback supports legacy rows where the stored ID is blank.
+  - `main_media_url` is free text and unreliable for comparison (`youtu.be/X` vs `watch?v=X&t=9`) — always compare `youtube_video_id`, via `VideoSource`.
+  - `youtube_video_id` holds whichever provider's id; `Course#video_id` falls back to parsing `main_media_url` for legacy rows where it is blank.
+  - `thumbnail_url` is nullable and NULL for YouTube by design: `Course#thumbnail_url` reads it, then derives from `main_media_url`. Only providers whose covers cannot be derived (TikTok) store a value.
   - **User ownership**: All courses belong to a specific user (creator). Note this is *creator*, not *owner* — under dedupe, a course is a shared community artifact other users have enrollments and progress against, which is why `Ability` still grants `:manage, Course` to admins only.
 - **Relationships**:
   - One-to-many with Lessons
@@ -752,10 +849,18 @@ will not present its authorization prompt a second time.
 #### iOS Share Extension
 
 The `LangletsShare` extension accepts shared web URLs and plain text, extracts a
-YouTube link, and submits it directly to `POST /api/v1/import_requests`. There is
-no metadata preflight or AI language detection: the source defaults to the
-learning language selected in the app, the translation defaults to English,
-and the extension exposes both as editable menus before spending a credit. It
+YouTube or TikTok link, and submits it directly to `POST /api/v1/import_requests`.
+There is no metadata preflight or AI language detection: the source defaults to
+the learning language selected in the app, the translation defaults to English,
+and the extension exposes both as editable menus before spending a credit.
+
+Its link check is **host-only, deliberately** (`isSupportedVideo`). The extension
+decides "is this worth POSTing", not "which video is this" — Rails re-validates
+and canonicalizes, and for TikTok it is the only thing that *can*: TikTok's own
+share sheet emits a `vt.tiktok.com` link carrying a redirect token rather than a
+post id, so an id parsed client-side would be nil for every share it produces.
+The `NSExtensionActivationRule` is generic (`WebURLWithMaxCount` plus text), so
+no plist change was needed for Langlets to appear in TikTok's share sheet. It
 uses one UUID `client_token` for the lifetime of the sheet; `Imports::Create`
 returns the original per-user request when that UUID is replayed, including
 after its status changes, so retrying an ambiguous network response cannot

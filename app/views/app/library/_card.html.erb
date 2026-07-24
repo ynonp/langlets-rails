@@ -2,7 +2,7 @@
 
 <div class="app-hairline bg-app-card <%= compact ? 'rounded-[14px]' : 'rounded-app-card' %> overflow-hidden flex flex-col">
   <%= link_to course_path(course) do %>
-    <%= image_tag Medium.youtube_thumbnail_url(course_youtube_video_id(course), "hqdefault"),
+    <%= image_tag course_thumbnail_url(course),
                   alt: "", loading: "lazy",
                   class: "w-full aspect-video object-cover bg-app-inset" %>
   <% end %>

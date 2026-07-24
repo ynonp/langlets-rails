@@ -11,9 +11,11 @@ mutation is streamed back to a callback URL the trigger request provides.
 Semantic segmentation is the final required transcription stage; downstream work fans out after it:
 
 ```
-extract_lyrics                              (Supadata native captions; YouTube Gemini fallback)
+extract_lyrics                              (YouTube: Supadata native captions, Gemini fallback)
+                                            (TikTok:  ElevenLabs Scribe — text + word timings)
      │
-force_alignment                             (ElevenLabs words; Gemini line fallback)
+force_alignment                             (YouTube: ElevenLabs alignment, Gemini line fallback)
+                                            (TikTok:  reuses the Scribe timings, no audio download)
      │
 add_lessons                                 (semantic lines + lesson hierarchy)
      │
@@ -28,8 +30,18 @@ materialize translations                    (join with semantic phrases)
 finalize_translation                        (payload metadata + lessons snapshot)
 ```
 
-Supadata is requested once with `mode=native` and `text=false`. If native captions are unavailable
-for YouTube, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
+**TikTok takes a different route through both steps.** ElevenLabs Scribe (`scribe_v2`) accepts the
+post URL as `source_url` and returns the transcript *and* per-word timestamps in one call, so there
+is nothing for Supadata or Gemini to do and nothing left to align: the TikTok path never downloads
+audio and never invokes `yt-dlp`. A failed Scribe call fails `extract_lyrics` where it stands — there
+is no fallback. The timed words are stashed under `data.stt_words` so a run that dies between
+`extract_lyrics` and `force_alignment` resumes without paying for transcription twice. Scribe's
+`spacing` and `audio_event` entries (`[cantando]`, `[Applause]`) are dropped, and the transcript is
+rebuilt from the surviving words rather than taken from the response's `text`, because `add_lessons`
+partitions it by word count against those very words.
+
+For YouTube, Supadata is requested once with `mode=native` and `text=false`. If native captions are
+unavailable, Gemini 2.5 Flash transcribes the video using the lyric-specific prompt. Other providers
 currently stop at the native-caption failure. Provider cue boundaries are removed and ElevenLabs
 normally maps one continuous transcript to a flat timed word stream. If audio download, ElevenLabs,
 or alignment validation fails, Gemini 2.5 Flash receives the video plus the original line array and
@@ -81,8 +93,8 @@ one branch failing never discards another branch's completed — and already per
 
 | Step                                                | Model                                           | Provider                                     |
 | --------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- |
-| extract_lyrics                                      | Native captions / LLM fallback                  | Supadata (`mode=native`) / Gemini 2.5 Flash  |
-| force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash                |
+| extract_lyrics                                      | Native captions / LLM fallback / speech-to-text | Supadata (`mode=native`) / Gemini 2.5 Flash / ElevenLabs Scribe (TikTok) |
+| force_alignment                                     | Forced Alignment API / structured line fallback | ElevenLabs / Gemini 2.5 Flash (skipped for TikTok) |
 | add_lessons / rate_lessons / add_token_translations | `gemini-3.5-flash-lite`                         | Google Generative AI                         |
 | translate                                           | `qwen3.5:397b-cloud`                            | Ollama cloud via `@ai-sdk/openai-compatible` |
 

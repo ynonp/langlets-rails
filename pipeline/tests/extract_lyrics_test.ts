@@ -1,6 +1,14 @@
 import { assert, assertEquals, assertFalse, assertRejects } from "@std/assert";
 import { extractLyrics, languageCodeForTranscription } from "../src/steps/extractLyrics.ts";
-import { makeCtx, queuedModel, stubTranscribe, transcriptFixture } from "./helpers.ts";
+import {
+  makeCtx,
+  queuedModel,
+  speechFixture,
+  stubSpeechToText,
+  stubTranscribe,
+  TIKTOK_URL,
+  transcriptFixture,
+} from "./helpers.ts";
 
 Deno.test("saves continuous Supadata transcript text for alignment", async () => {
   const transcriber = stubTranscribe([transcriptFixture(1, 2)]);
@@ -63,4 +71,58 @@ Deno.test("maps explicit and named clip languages to Supadata codes", () => {
   assertEquals(languageCodeForTranscription("French"), "fr");
   assertEquals(languageCodeForTranscription("French", "fr-CA"), "fr-CA");
   assertEquals(languageCodeForTranscription("Unknown"), null);
+});
+
+Deno.test("TikTok transcribes with ElevenLabs speech-to-text instead of Supadata", async () => {
+  const supadata = stubTranscribe([transcriptFixture(1, 2)]);
+  const speech = stubSpeechToText([speechFixture(1, 2)]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeVideo: supadata.transcribe,
+    transcribeSpeech: speech.transcribe,
+    clipLanguage: "Spanish",
+  });
+
+  await extractLyrics(ctx);
+
+  assertEquals(supadata.calls(), 0);
+  assertEquals(speech.calls(), 1);
+  assertEquals(speech.requests[0], { sourceUrl: TIKTOK_URL, languageCode: "es" });
+  assertEquals(store.data.lyric_lines, ["Line 1 Line 2"]);
+  assertFalse(store.data.extract_lyrics_in_progress);
+});
+
+Deno.test("TikTok stashes timed words so force_alignment has nothing left to align", async () => {
+  const speech = stubSpeechToText([speechFixture(1, 2)]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeSpeech: speech.transcribe,
+  });
+
+  await extractLyrics(ctx);
+
+  assertEquals(store.data.stt_words?.length, 4);
+  assertEquals(store.data.stt_words?.[0], { text: "Line", start: 0, end: 1 });
+  // Deliberately left true: force_alignment still has to run to turn these
+  // words into the provisional phrase, it just won't download any audio.
+  assert(store.data.force_alignment_in_progress);
+});
+
+Deno.test("TikTok never falls back to Gemini — a failed transcription fails the step", async () => {
+  const speech = stubSpeechToText([
+    new Error("scribe-unavailable"),
+    new Error("scribe-unavailable"),
+    new Error("scribe-unavailable"),
+  ]);
+  const gemini = queuedModel(["Should not be used"]);
+  const { ctx, store } = makeCtx({
+    youtubeurl: TIKTOK_URL,
+    transcribeSpeech: speech.transcribe,
+    models: { extractLyrics: gemini.model },
+  });
+
+  await assertRejects(() => extractLyrics(ctx), Error, "scribe-unavailable");
+
+  assertEquals(gemini.calls(), 0);
+  assertEquals(store.data.errors![0].step, "extract_lyrics");
 });

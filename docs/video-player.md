@@ -1,10 +1,10 @@
 # Video Players
 
-Langlets is built around YouTube videos: every course is created from a YouTube
-URL, and most activities replay short segments of that video. Because of this,
-the app contains **several different video players**, each tuned for a different
-use case. They share a common engine but differ in layout, visibility, and
-interaction.
+Langlets is built around short online videos: every course is created from a
+YouTube or TikTok URL, and most activities replay short segments of that video.
+Because of this, the app contains **several different video players**, each tuned
+for a different use case. They share a common engine but differ in layout,
+visibility, and interaction.
 
 > **Important:** When you add or change a feature that touches video playback,
 > you must consider **all four** player types below. They all run through the
@@ -17,13 +17,56 @@ interaction.
 
 The single source of truth is the
 [`main-video-player`](../app/javascript/controllers/main_video_player_controller.js)
-Stimulus controller. It wraps the [`youtube-player`](https://www.npmjs.com/package/youtube-player)
-library and is responsible for:
+Stimulus controller.
 
-- Lazily creating the YouTube iframe (on first `playSegment`, or eagerly when
+### Two providers, one controller
+
+There is **one Stimulus identifier**, `main-video-player`, for both YouTube and
+TikTok. The provider is chosen by a `provider` value (defaulting to `youtube`,
+so any view that omits it behaves exactly as before), and the controller
+delegates playback to an adapter in
+[`app/javascript/players/`](../app/javascript/players/):
+
+| | |
+|---|---|
+| `youtube_adapter.js` | wraps [`youtube-player`](https://www.npmjs.com/package/youtube-player) |
+| `tiktok_adapter.js` | drives a `tiktok.com/player/v1/<id>` iframe over `postMessage` |
+
+Both expose the same contract — `playVideo` / `pauseVideo` / `seekTo` /
+`getCurrentTime` / `getPlayerState` / `onStateChange` / `destroy` — and normalize
+state to `player_states.js` (YouTube's numbering, which TikTok happens to share).
+**Everything above the adapter boundary is provider-agnostic**, which is why the
+activity partials, targets, actions and `video:*` events are identical for both
+and why splitting into `main-youtube-player` / `main-tiktok-video-player`
+identifiers was rejected: it would have forced every
+`data-main-video-player-*` attribute and every `main-video-player#action` in the
+four layouts to be rewritten or duplicated per provider.
+
+Two TikTok differences are worth knowing before you debug playback:
+
+- **There is no `getCurrentTime()` query.** TikTok only *pushes* `onCurrentTime`
+  while playing, so the adapter answers from the last reported position. The
+  controller polls every 100ms and TikTok reports less often, so the progress bar
+  advances in coarser steps — segment boundaries are still exact, because
+  they're compared against the same clock. `seekTo` optimistically updates that
+  cached position, because the controller seeks and then immediately compares
+  against the segment bounds.
+- **Commands sent before `onPlayerReady` are dropped**, so the adapter queues and
+  flushes them.
+
+Not yet verified on device: whether TikTok's iframe keeps playing audio while its
+container is `display: none` (the hidden audio-only player, #3 below). YouTube
+does. If it does not, that player needs off-screen positioning instead.
+
+The controller is responsible for:
+
+- Lazily creating the provider's iframe (on first `playSegment`, or eagerly when
   `preloadPlayer` is set).
 - Playing a **segment** of the video (`segmentStart` → `segmentEnd`) rather than
   the whole thing.
+- Pausing playback and stopping segment monitoring before Turbo replaces an
+  activity frame, then synchronizing the controller with the newly rendered
+  activity's segment boundaries.
 - Monitoring playback every 100ms and dispatching `video:*` events
   (`play`, `stop`, `progress`, `end`) to any element marked as a
   `videoListener` target.
@@ -93,9 +136,9 @@ the main player (the iframe lives in the shared lesson layout —
 under the `#main-player` container), but:
 
 - It is scoped to the activity's `segmentStart`/`segmentEnd`, not the full video.
-- It preloads an interactive iframe and uses YouTube's native controls. The
-  shared lesson layout does not render its custom click overlay, play button,
-  time display, or progress bar for this activity.
+- It preloads an interactive iframe and uses the provider's native controls. The
+  shared lesson layout renders no chrome of its own over the iframe — see the
+  note below.
 - If the native play control starts playback before the activity's first
   phrase, its `video:play` listener immediately seeks to the segment start.
   Playback already within the segment is left unchanged so pause/resume and
@@ -136,6 +179,20 @@ This is the easiest player to forget: a change to the controller's iframe
 creation, autoplay handling, or event dispatching directly affects the audio
 that every non-video activity depends on.
 
+> **The lesson layout has no custom player chrome.** It used to render a click
+> overlay, a round play button, an elapsed/total time display, and a scrubber,
+> all gated on `unless activity_params[:interactive_video_player]`. That gate
+> could never open: `video_player` is only ever true for
+> `watch_video_activity`, which also sets `interactive_video_player: true`, so
+> the container was either hidden (no `video_player`) or interactive (native
+> controls). The markup and its controller methods — `togglePlayPause`,
+> `showPlayButton`, `hidePlayButton`, `fullPlayerStartPlayback`,
+> `fullPlayerStopPlayback`, `updateTimeDisplay`, `formatTime` — plus the
+> `playButton` / `pauseButton` / `timeElapsed` / `timeDuration` targets have
+> been removed. The **mini** layout (#4) keeps its own play/pause buttons and
+> scrubber, so `progressBar`, `updateProgressBar`, and `seekToPosition` are
+> still live and must not be removed with them.
+
 ---
 
 ## 4. "Mini" layout player — for activities like order-phrases
@@ -167,8 +224,8 @@ card that triggers `playSegment` for that phrase's timestamps.
 
 All four players:
 
-- Run through the **same `main-video-player` controller** and the same
-  `youtube-player` library.
+- Run through the **same `main-video-player` controller**, over whichever
+  provider adapter the `provider` value selects.
 - Play **segments** (`segmentStart` → `segmentEnd`), not arbitrary playback.
 - Communicate via the **`video:*` custom events** (`play`, `stop`, `progress`,
   `end`) dispatched to `videoListener` targets.
@@ -183,6 +240,14 @@ They differ in:
 | Hidden audio player | No (`hidden`) | `lessons/show` `#main-player` | Audio-only for practice activities |
 | Mini layout player | Yes (compact bar/button) | `_mini_video_player`, order-phrases | Inline replay control |
 
+### Aspect ratio
+
+TikTok is shot vertically. The visible players (lesson `#main-player`, full
+player, course preview iframe) pick their box from the provider — `9/16` capped
+by viewport height for TikTok, `aspect-video` otherwise. Hardcoding
+`aspect-video` letterboxes a TikTok clip into a stripe with black bars either
+side, so use `video_aspect_ratio` / `Course#tiktok?` rather than assuming 16:9.
+
 ### When building new features
 
 Because all of these share one controller and one event contract, **any change
@@ -193,6 +258,7 @@ to video playback must be checked against every player type**:
 3. Will it work for the **compact mini** layout and the inline speaker buttons?
 4. Does it preserve the **`video:*` event contract** that activity controllers
    rely on?
+5. Does it work on **both provider adapters** — not just the YouTube one?
 
 If you add a new event, value, or target to `main-video-player`, audit each of
 the views listed above and update them as needed.

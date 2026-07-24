@@ -3,10 +3,10 @@ import { z } from "zod";
 import type { Phrase } from "../types.ts";
 import type { PipelineContext } from "../context.ts";
 import { clearErrors, recordError } from "../context.ts";
-import { parseWordTimings } from "../wordTimingParser.ts";
 import { message, withRetries } from "../retry.ts";
 import { downloadYoutubeAudioToTemp } from "../audio.ts";
 import { type AlignedWord, alignLyrics as alignWithElevenLabs } from "../alignment.ts";
+import { phrasesFromAlignedWords } from "../alignedWords.ts";
 import { secondsToTimestamp } from "../timestamps.ts";
 import { fallbackLineTimestampsPrompt } from "../prompts/fallbackLineTimestamps.ts";
 
@@ -32,6 +32,22 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
     await ctx.store.set("force_alignment_in_progress", true);
     let phrases: Phrase[];
     let videoLengthSeconds: number | null = null;
+
+    // TikTok arrives here already timed: extract_lyrics used ElevenLabs Scribe,
+    // which returns the transcript and its word timestamps together. There is
+    // nothing left to align, so skip the audio download and the alignment call
+    // rather than paying for both to rediscover timings we already hold.
+    const sttWords = ctx.store.data.stt_words ?? [];
+    if (sttWords.length > 0) {
+      phrases = phrasesFromAlignedWords(sttWords);
+      if (phrases.length !== 1) {
+        throw new Error("Speech-to-text words produced no usable transcript");
+      }
+      videoLengthSeconds = sttWords.at(-1)?.end ?? null;
+      await persist(ctx, phrases, videoLengthSeconds);
+      await clearErrors(ctx, "force_alignment");
+      return;
+    }
 
     try {
       const audio = await withRetries(
@@ -89,16 +105,7 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
       videoLengthSeconds = fallback.at(-1)?.end_seconds ?? null;
     }
 
-    await ctx.store.patch([
-      { op: "set", path: "lyric_lines", value: phrases.map((phrase) => phrase.text_l1) },
-      { op: "set", path: "phrases", value: phrases },
-      ...(videoLengthSeconds == null ? [] : [{
-        op: "set" as const,
-        path: "video_length_seconds",
-        value: videoLengthSeconds,
-      }]),
-      { op: "set", path: "force_alignment_in_progress", value: false },
-    ]);
+    await persist(ctx, phrases, videoLengthSeconds);
     await clearErrors(ctx, "force_alignment");
   } catch (error) {
     await recordError(ctx, "force_alignment", error, {
@@ -113,12 +120,29 @@ export async function forceAlignment(ctx: PipelineContext): Promise<void> {
   }
 }
 
+async function persist(
+  ctx: PipelineContext,
+  phrases: Phrase[],
+  videoLengthSeconds: number | null,
+): Promise<void> {
+  await ctx.store.patch([
+    { op: "set", path: "lyric_lines", value: phrases.map((phrase) => phrase.text_l1) },
+    { op: "set", path: "phrases", value: phrases },
+    ...(videoLengthSeconds == null ? [] : [{
+      op: "set" as const,
+      path: "video_length_seconds",
+      value: videoLengthSeconds,
+    }]),
+    { op: "set", path: "force_alignment_in_progress", value: false },
+  ]);
+}
+
 function phrasesFromElevenLabs(lines: string[], words: AlignedWord[]): Phrase[] {
   const expectedWords = countWords(lines);
   if (words.length !== expectedWords) {
     throw new Error(`ElevenLabs aligned ${words.length} of ${expectedWords} transcript words`);
   }
-  const phrases = parseWordTimings({ lines: [toRawLine(words)] });
+  const phrases = phrasesFromAlignedWords(words);
   if (phrases.length !== 1) throw new Error("ElevenLabs returned no usable transcript words");
   return phrases;
 }
@@ -166,27 +190,4 @@ function phrasesFromFallback(originalLines: string[], timestamps: FallbackLine[]
 
 function countWords(lines: string[]): number {
   return lines.reduce((total, line) => total + line.split(/\s+/u).filter(Boolean).length, 0);
-}
-
-function toRawLine(words: AlignedWord[]) {
-  return {
-    line_start: secondsToSrt(words[0].start),
-    line_end: secondsToSrt(words.at(-1)!.end),
-    line_text: words.map((word) => word.text).join(" ").trim(),
-    words: words.map((word) => ({
-      word: word.text,
-      start: secondsToSrt(word.start),
-      end: secondsToSrt(word.end),
-    })),
-  };
-}
-
-function secondsToSrt(seconds: number): string {
-  const total = Math.max(0, Math.round(seconds * 1000));
-  const hours = Math.floor(total / 3_600_000);
-  const minutes = Math.floor((total % 3_600_000) / 60_000);
-  const secs = Math.floor((total % 60_000) / 1000);
-  const millis = total % 1000;
-  const pad = (value: number, length = 2) => String(value).padStart(length, "0");
-  return `${pad(hours)}:${pad(minutes)}:${pad(secs)},${pad(millis, 3)}`;
 }

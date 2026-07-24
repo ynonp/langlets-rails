@@ -54,10 +54,33 @@ module SeoHelper
     "Master \"#{playlist.name}\" step by step on Langlets."
   end
 
-  def extract_youtube_id(url)
-    return nil if url.blank?
-    match = url.match(%r{(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/shorts/)([\w-]{11})})
-    match ? match[1] : url.split("v=").last
+  # Name predates TikTok. Returns whichever provider's id the URL carries, and —
+  # unlike the version it replaces — returns nil rather than `url.split("v=").last`
+  # for something unparseable, so a junk id can't end up inside a meta tag or a
+  # structured-data embedUrl.
+  def extract_video_id(url)
+    VideoSource.video_id(url)
+  end
+  alias_method :extract_youtube_id, :extract_video_id
+
+  # Where the provider's embeddable player lives. Used by the course preview
+  # iframe and by VideoObject structured data.
+  def video_embed_url(url_or_course)
+    url = url_or_course.respond_to?(:main_media_url) ? url_or_course.main_media_url : url_or_course
+    id = VideoSource.video_id(url)
+    return nil if id.blank?
+
+    case VideoSource.provider(url)
+    when :tiktok  then "https://www.tiktok.com/player/v1/#{id}"
+    when :youtube then "https://www.youtube.com/embed/#{id}"
+    end
+  end
+
+  # TikTok is shot vertically; forcing its player into a 16:9 box letterboxes it
+  # into a stripe with black bars either side.
+  def video_aspect_ratio(url_or_course)
+    url = url_or_course.respond_to?(:main_media_url) ? url_or_course.main_media_url : url_or_course
+    VideoSource.provider(url) == :tiktok ? "9/16" : "16/9"
   end
 
   def canonical_url(path)

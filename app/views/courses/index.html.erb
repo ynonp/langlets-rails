@@ -289,7 +289,6 @@
       <% if grid_courses.any? %>
         <div class="lp-grid">
           <% grid_courses.each do |course| %>
-            <% video_id = course_youtube_video_id(course) %>
             <% iso = base_iso.call(course.language) %>
             <% initially_visible = (initial_filter == "all" || initial_filter == iso) &&
                                    grid_courses.count { |candidate|
@@ -300,7 +299,7 @@
                   hidden: !initially_visible,
                   data: { "homepage-filter-target": "card", lang: iso } do %>
               <img class="lp-card-thumb" loading="lazy" alt=""
-                   src="<%= youtube_thumbnail_url(video_id) %>">
+                   src="<%= course_thumbnail_url(course) %>">
               <div class="lp-card-body">
                 <div class="lp-card-title" dir="<%= course.language&.rtl? ? "rtl" : "ltr" %>">
                   <%= course.localized_name.presence || t("courses.card.untitled") %>

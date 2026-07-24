@@ -31,14 +31,14 @@ module Imports
       @translation_language = translation_language
     end
 
-    # Raises Youtube::Oembed::UnavailableVideo for a private, deleted or
+    # Raises VideoSource::UnavailableVideo for a private, deleted or
     # malformed video, and UnsupportedLanguage for a language we don't teach —
     # the sheet renders both as an inline error in place of the preview card
     # rather than as a failed search (§2).
     def call
       validate_languages!
 
-      video = Youtube::Oembed.fetch(url)
+      video = VideoSource.fetch(url)
 
       # §4: duplicates short-circuit before the balance is ever consulted, so a
       # video the user already owns can't trigger the insufficient-credits state.

@@ -1,60 +1,91 @@
 import { Controller } from "@hotwired/stimulus"
-import YouTubePlayer from 'youtube-player';
+import YoutubeAdapter from "../players/youtube_adapter";
+import TiktokAdapter from "../players/tiktok_adapter";
+import { PlayerState } from "../players/player_states";
+
+// One controller, one event contract, two playback engines. Everything below
+// the adapter boundary (segments, video:* events, the 100ms monitor, the
+// scrubber) is provider-agnostic and shared by all four player layouts — see
+// docs/video-player.md. Adding a provider means adding an adapter, not touching
+// this file.
+const ADAPTERS = {
+  youtube: YoutubeAdapter,
+  tiktok: TiktokAdapter,
+};
 
 export default class extends Controller {
-  static targets = ['playerContainer', 'player', 'progressBar', 'playButton', 'pauseButton', 'videoListener', 'videoSegment', 'timeElapsed', 'timeDuration'];
+  static targets = ['playerContainer', 'player', 'progressBar', 'videoListener', 'videoSegment'];
 
   static values = {
     videoId: String,
     hl: String,
     preloadPlayer: Boolean,
     interactive: Boolean,
+    // Defaults to youtube so any view that hasn't been given the value — and
+    // every course imported before TikTok support — behaves exactly as before.
+    provider: { type: String, default: 'youtube' },
   }
 
   connect() {
     this.initialize();
-    this.initializeTimeDisplay();
+    this.initializeSegmentBounds();
     // Preload player if requested by activity
     if (this.hasPreloadPlayerValue && this.preloadPlayerValue) {
       this.initializePlayer();
     }
   }
 
-  initializeTimeDisplay() {
+  // Seeds the segment bounds the playback monitor compares against. Without
+  // this the monitor would run with segmentEnd == null and end every segment on
+  // its first tick.
+  initializeSegmentBounds() {
     if (!this.hasVideoSegmentTarget) return;
     const start = Number(this.videoSegmentTarget.dataset.segmentStart);
     const end = Number(this.videoSegmentTarget.dataset.segmentEnd);
     if (Number.isFinite(start) && Number.isFinite(end)) {
       this.segmentStart = start;
       this.segmentEnd = end;
-      this.updateTimeDisplay(0, end - start);
     }
   }
 
   disconnect() {
     this.stopPlaybackMonitoring();
     if (this.player) {
-      // Defer YouTube API cleanup so it doesn't block Turbo navigation.
-      // YT.Player.destroy() is synchronous and slow on mobile (video decoder
-      // teardown, postMessage bridge cleanup, memory release).
+      // Defer player teardown so it doesn't block Turbo navigation. destroy()
+      // is synchronous and slow on mobile (video decoder teardown, postMessage
+      // bridge cleanup, memory release).
       const player = this.player;
       this.player = null;
+      this.playerInitialized = false;
       setTimeout(() => player.destroy(), 0);
     }
   }
 
   handleBeforeRender() {
+    this.stopPlaybackMonitoring();
+    if (this.player) {
+      this.player.pauseVideo();
+    }
     this.playerContainerTarget.classList.add('hidden');
     this.segmentStart = null;
-    this.segmentEnd = null;    
+    this.segmentEnd = null;
   }
 
   handleFrameRender() {
-    if (this.hasVideoSegmentTarget && this.videoSegmentTarget.dataset.showPlayer) {      
+    if (!this.hasVideoSegmentTarget) return;
+
+    const segmentStart = Number(this.videoSegmentTarget.dataset.segmentStart);
+    const segmentEnd = Number(this.videoSegmentTarget.dataset.segmentEnd);
+    this.segmentStart = Number.isFinite(segmentStart) ? segmentStart : null;
+    this.segmentEnd = Number.isFinite(segmentEnd) ? segmentEnd : null;
+
+    if (this.videoSegmentTarget.dataset.showPlayer) {
       this.playerContainerTarget.classList.remove('hidden');
       this.playerContainerTarget.classList.add('order-2', 'px-4');
       if (this.player) {
-        this.player.seekTo(this.videoSegmentTarget.dataset.segmentStart);
+        if (this.segmentStart != null) {
+          this.player.seekTo(this.segmentStart);
+        }
         this.player.pauseVideo();
       }
     }
@@ -70,23 +101,21 @@ export default class extends Controller {
   initializePlayer() {
     if (this.playerInitialized) return;
 
-    this.player = YouTubePlayer(this.playerTarget, {
+    const Adapter = ADAPTERS[this.providerValue] || ADAPTERS.youtube;
+
+    this.player = new Adapter(this.playerTarget, {
       videoId: this.videoIdValue,
-      playerVars: {
-        autoplay: 0,
-        playsinline: 1,
-        controls: this.interactiveValue ? 1 : 0,
-        modestbranding: 1,
-        rel: 0,
-        hl: this.hlValue,
-      },
+      hl: this.hlValue,
+      controls: this.interactiveValue,
     });
 
-    this.player.on('stateChange', (event) => {
-      if (event.data === YT.PlayerState.PAUSED || event.data === YT.PlayerState.ENDED) {
+    // Adapters normalize to PlayerState, so this reads the same for every
+    // provider and keeps dispatching the video:* contract activities rely on.
+    this.player.onStateChange((state) => {
+      if (state === PlayerState.PAUSED || state === PlayerState.ENDED) {
         this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('stop');
-      } else if (event.data === YT.PlayerState.PLAYING) {
+      } else if (state === PlayerState.PLAYING) {
         this.startPlaybackMonitoring();
         this.dispatchVideoEvent('play');
       }
@@ -102,12 +131,6 @@ export default class extends Controller {
     })
   }
 
-  fullPlayerStartPlayback() {    
-    if (this.hasPlayButtonTarget) {
-      this.playButtonTarget.classList.add('hidden');
-    }
-  }
-
   async seekToSegmentStartIfBefore(event) {
     if (!this.player) return;
 
@@ -117,44 +140,6 @@ export default class extends Controller {
     const currentTime = await this.player.getCurrentTime();
     if (currentTime < segmentStart) {
       await this.player.seekTo(segmentStart);
-    }
-  }
-
-  fullPlayerStopPlayback() {
-    if (this.hasPlayButtonTarget) {
-      this.playButtonTarget.classList.remove('hidden');
-    }
-  }
-
-  async togglePlayPause(ev) {    
-    if (!this.player) {
-      this.playSegment(ev);
-      return;
-    }
-    const state = await this.player.getPlayerState();
-    if (state === 1) {
-      // playing
-      await this.stopPlayback();
-    } else {
-      await this.playSegment(ev);
-    }
-  }
-
-  showPlayButton() {
-    if (this.hasPlayButtonTarget) {
-      this.playButtonTarget.classList.remove('hidden');
-    }
-    if (this.hasPauseButtonTarget) {
-      this.pauseButtonTarget.classList.add('hidden');
-    }
-  }
-
-  hidePlayButton() {
-    if (this.hasPlayButtonTarget) {
-      this.playButtonTarget.classList.add('hidden');
-    }
-    if (this.hasPauseButtonTarget) {
-      this.pauseButtonTarget.classList.remove('hidden');
     }
   }
 
@@ -217,7 +202,11 @@ export default class extends Controller {
     }
 
     this.monitorPlaybackInterval = setInterval(async () => {
+      if (!Number.isFinite(this.segmentStart) || !Number.isFinite(this.segmentEnd)) return;
+
       const at = await this.player.getCurrentTime();
+      if (!Number.isFinite(this.segmentStart) || !Number.isFinite(this.segmentEnd)) return;
+
       if (at >= this.segmentEnd) {
         this.stopPlaybackMonitoring();
         this.dispatchVideoEvent('end');
@@ -247,30 +236,7 @@ export default class extends Controller {
     this.progressBarTargets.forEach((el) => {
       el.style.width = `${percentage}%`;
     })
-
-    this.updateTimeDisplay(elapsed, segmentLength);
   }
-
-  updateTimeDisplay(elapsed, segmentLength) {
-    if (this.hasTimeElapsedTarget) {
-      this.timeElapsedTargets.forEach((el) => {
-        el.textContent = this.formatTime(Math.min(elapsed, segmentLength));
-      });
-    }
-    if (this.hasTimeDurationTarget) {
-      this.timeDurationTargets.forEach((el) => {
-        el.textContent = this.formatTime(segmentLength);
-      });
-    }
-  }
-
-  formatTime(seconds) {
-    const total = Math.max(0, Math.floor(seconds || 0));
-    const mins = Math.floor(total / 60);
-    const secs = total % 60;
-    return `${mins}:${secs.toString().padStart(2, '0')}`;
-  }
-
 
   seekToTimestamp(ev) {
     if (!this.player) return;

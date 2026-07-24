@@ -16,11 +16,25 @@ module Youtube
       ([^"&?/\s]{11})
     }x
 
+    # Does this URL belong to YouTube at all? VideoSource asks each provider this
+    # to work out who owns a URL before asking anyone to parse it.
+    def match?(url)
+      video_id(url).present?
+    end
+
     def video_id(url)
       return nil if url.blank?
 
       match = url.to_s.match(PATTERN)
       match && match[1]
+    end
+
+    # Public static pattern — no API key, no network call, which is what lets a
+    # gallery of course cards render without one request per card.
+    def thumbnail_url(video_id, quality = "hqdefault")
+      return nil if video_id.blank?
+
+      "https://img.youtube.com/vi/#{video_id}/#{quality}.jpg"
     end
 
     # One spelling per video. youtu.be/X and youtube.com/watch?v=X&t=9 are the

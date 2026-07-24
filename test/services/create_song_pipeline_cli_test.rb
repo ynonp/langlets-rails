@@ -74,6 +74,59 @@ class CreateSongPipelineCliTest < ActiveSupport::TestCase
     assert_equal "unknown translation language: Klingon", error.message
   end
 
+  # The URL stored here becomes the course's main_media_url, and Course#video_id,
+  # #provider and #thumbnail_url are all derived from that string. A row keyed on
+  # a share link would build a course with no video id — no player, no cover.
+  test "resolves a TikTok share link to its canonical post URL" do
+    canonical = "https://www.tiktok.com/@scout2015/video/6718335390845095173"
+    video = VideoSource::Video.new(
+      provider: :tiktok, video_id: "6718335390845095173", title: "Scout",
+      author_name: "scout2015", thumbnail_url: "https://cdn.example/c.jpg",
+      canonical_url: canonical
+    )
+
+    progress = Tiktok::Oembed.stub(:fetch, ->(_url) { video }) do
+      CreateSongPipelineCli.new(
+        youtube_url: "https://vt.tiktok.com/ZSXvNVQwY/",
+        clip_language: "Spanish",
+        translation_language: "Hebrew",
+        command_runner: ->(*) { true }
+      ).call
+    end
+
+    assert_equal canonical, progress.youtubeurl
+    assert_equal "6718335390845095173", Course.new(main_media_url: progress.youtubeurl).video_id
+  end
+
+  test "canonicalizes a TikTok post URL without a network call" do
+    progress = Tiktok::Oembed.stub(:fetch, ->(_url) { flunk "must not need oEmbed" }) do
+      CreateSongPipelineCli.new(
+        youtube_url: "https://www.tiktok.com/@scout2015/video/6718335390845095173?is_from_webapp=1",
+        clip_language: "Spanish",
+        translation_language: "Hebrew",
+        command_runner: ->(*) { true }
+      ).call
+    end
+
+    assert_equal "https://www.tiktok.com/@scout2015/video/6718335390845095173", progress.youtubeurl
+  end
+
+  # Better than spending a whole pipeline run to build an unplayable course.
+  test "an unresolvable share link aborts before the CLI runs" do
+    unavailable = ->(_url) { raise VideoSource::UnavailableVideo, "video does not exist" }
+
+    assert_raises(ArgumentError) do
+      Tiktok::Oembed.stub(:fetch, unavailable) do
+        CreateSongPipelineCli.new(
+          youtube_url: "https://vt.tiktok.com/ZGONE/",
+          clip_language: "Spanish",
+          translation_language: "Hebrew",
+          command_runner: ->(*) { flunk "should not run" }
+        ).call
+      end
+    end
+  end
+
   private
 
   def build_runner(command_runner:)

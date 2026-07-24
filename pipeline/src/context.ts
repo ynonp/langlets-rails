@@ -7,6 +7,7 @@ import type { ProgressStore } from "./progress.ts";
 import type { ModelRegistry } from "./models.ts";
 import type { Fuzzyword } from "./fuzzyword.ts";
 import type { TranscriptResult } from "./supadata.ts";
+import type { SpeechToTextResult } from "./speechToText.ts";
 import type { DownloadedAudio } from "./audio.ts";
 import type { Alignment } from "./alignment.ts";
 import { errorClass, message } from "./retry.ts";
@@ -26,6 +27,11 @@ export interface PipelineContext {
   random?: () => number;
   // Injection point for Supadata native captions (tests avoid network calls).
   transcribeVideo?: (videoUrl: string, languageCode: string | null) => Promise<TranscriptResult>;
+  // Injection point for ElevenLabs speech-to-text, the TikTok transcription path.
+  transcribeSpeech?: (
+    sourceUrl: string,
+    languageCode: string | null,
+  ) => Promise<SpeechToTextResult>;
   prepareAudio?: (youtubeUrl: string) => Promise<DownloadedAudio>;
   alignLyrics?: (audioPath: string, text: string) => Promise<Alignment>;
 }

@@ -11,9 +11,12 @@ module Youtube
   #
   # It does NOT return duration or age-restriction — those need Data API v3.
   class Oembed
-    class UnavailableVideo < StandardError; end
-
-    Video = Data.define(:video_id, :title, :author_name, :thumbnail_url, :canonical_url)
+    # Both now live in VideoSource so every provider raises and returns the same
+    # things. Kept as aliases because these two names are referenced from rescue
+    # clauses and test fixtures across the app, and a rescue that stopped
+    # catching would fail an import instead of showing "video is private".
+    UnavailableVideo = VideoSource::UnavailableVideo
+    Video = VideoSource::Video
 
     ENDPOINT = "https://www.youtube.com/oembed".freeze
     OPEN_TIMEOUT = 5
@@ -69,6 +72,7 @@ module Youtube
         data = JSON.parse(body)
 
         Video.new(
+          provider: :youtube,
           video_id: Url.video_id(canonical_url),
           title: data["title"].presence || "Untitled Course",
           author_name: data["author_name"],

@@ -4,7 +4,7 @@
 <%= link_to playlist_path(playlist),
             class: "app-hairline bg-app-card rounded-app-card p-2.5 flex items-center gap-3" do %>
   <% if cover_course %>
-    <%= image_tag Medium.youtube_thumbnail_url(course_youtube_video_id(cover_course), "hqdefault"),
+    <%= image_tag course_thumbnail_url(cover_course),
                   alt: "", loading: "lazy",
                   class: "shrink-0 w-[92px] h-[52px] rounded-app-thumb object-cover bg-app-inset" %>
   <% else %>

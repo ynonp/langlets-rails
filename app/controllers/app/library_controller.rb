@@ -21,7 +21,7 @@ module App
 
       # The spec says search also takes a pasted link, which is how someone
       # checks whether a video is already in the Library before spending a credit.
-      if (video_id = Youtube::Url.video_id(@query))
+      if (video_id = VideoSource.video_id(@query))
         return scope.where(youtube_video_id: video_id)
       end
 

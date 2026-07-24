@@ -59,6 +59,27 @@ class Course < ApplicationRecord
 
   def translation_language = localized_translation&.language || Current.translation_language
   def localized_name = localized_translation&.name || name
+
+  # Which video provider this course came from, derived from the stored URL —
+  # no column, so existing rows answer correctly without a backfill.
+  def provider = VideoSource.provider(main_media_url) || VideoSource::DEFAULT_PROVIDER
+  def tiktok? = provider == :tiktok
+
+  # youtube_video_id is the dedupe key (idx_courses_published_video_language) and
+  # holds whichever provider's id. The fallback covers legacy rows imported
+  # before the column existed.
+  def video_id
+    youtube_video_id.presence || VideoSource.video_id(main_media_url)
+  end
+
+  # Reads the column first, then derives. Deliberately in that order: YouTube
+  # covers derive from main_media_url for free, so the ~all existing rows with a
+  # NULL column keep rendering with no backfill, while TikTok — whose covers are
+  # signed CDN URLs that can't be derived — gets the value oEmbed handed us at
+  # import time.
+  def thumbnail_url(quality = "hqdefault")
+    self[:thumbnail_url].presence || VideoSource.derived_thumbnail_url(main_media_url, quality)
+  end
   def translation_ready?(language = Current.translation_language)
     language && course_translations.ready.exists?(language_id: language.id)
   end

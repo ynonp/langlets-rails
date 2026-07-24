@@ -4,8 +4,10 @@ import { clearErrors, recordError } from "../context.ts";
 import { extractLyricsPrompt } from "../prompts/extractLyrics.ts";
 import { message, withRetries } from "../retry.ts";
 import { transcribeWithSupadata, transcriptToText } from "../supadata.ts";
+import { transcribeWithElevenLabs } from "../speechToText.ts";
 
 const MAX_GEMINI_RETRIES = 2;
+const MAX_STT_RETRIES = 2;
 
 export async function extractLyrics(ctx: PipelineContext): Promise<void> {
   const { store } = ctx;
@@ -19,6 +21,32 @@ export async function extractLyrics(ctx: PipelineContext): Promise<void> {
     ]);
 
     const languageCode = languageCodeForTranscription(ctx.clipLanguage, ctx.clipLanguageIso);
+
+    // TikTok takes a different route entirely: ElevenLabs Scribe reads the post
+    // URL directly and returns the transcript *and* per-word timestamps in one
+    // call. So there is nothing for Supadata or Gemini to do here, and — because
+    // the words are already timed — nothing for forced alignment to do either.
+    // The timed words are stashed for force_alignment to pick up, so a run that
+    // dies between the two steps resumes without paying for Scribe twice.
+    if (isTiktokUrl(ctx.youtubeurl)) {
+      const stt = await withRetries(
+        () => (ctx.transcribeSpeech ?? transcribeWithElevenLabs)(ctx.youtubeurl, languageCode),
+        {
+          maxRetries: MAX_STT_RETRIES,
+          label: "ExtractLyrics ElevenLabs speech-to-text",
+          baseDelayMs: ctx.baseDelayMs,
+          onFailedAttempt: (_error, attempt) => (attempts = Math.max(attempts, attempt)),
+        },
+      );
+      await store.patch([
+        { op: "set", path: "lyric_lines", value: [stt.text] },
+        { op: "set", path: "stt_words", value: stt.words },
+        { op: "set", path: "extract_lyrics_in_progress", value: false },
+      ]);
+      await clearErrors(ctx, "extract_lyrics");
+      return;
+    }
+
     const transcribe = ctx.transcribeVideo ?? transcribeWithSupadata;
     let lyricLines: string[];
     try {
@@ -78,10 +106,28 @@ export function parseLyricsLines(text: string): string[] {
 }
 
 export function isYoutubeUrl(value: string): boolean {
+  return hostnameOf(
+    value,
+    (hostname) =>
+      hostname === "youtube.com" || hostname.endsWith(".youtube.com") ||
+      hostname === "youtu.be",
+  );
+}
+
+// Covers the post form (www.tiktok.com/@user/video/123) and the share forms
+// (vt./vm.tiktok.com). Rails canonicalizes through oEmbed before the pipeline
+// is triggered, so in practice this sees the post form — but Scribe accepts
+// either, and the rake task can be handed a raw link.
+export function isTiktokUrl(value: string): boolean {
+  return hostnameOf(
+    value,
+    (hostname) => hostname === "tiktok.com" || hostname.endsWith(".tiktok.com"),
+  );
+}
+
+function hostnameOf(value: string, predicate: (hostname: string) => boolean): boolean {
   try {
-    const hostname = new URL(value).hostname.toLowerCase().replace(/^www\./, "");
-    return hostname === "youtube.com" || hostname.endsWith(".youtube.com") ||
-      hostname === "youtu.be";
+    return predicate(new URL(value).hostname.toLowerCase().replace(/^www\./, ""));
   } catch {
     return false;
   }

@@ -53,6 +53,7 @@ export interface RunOptions {
   random?: () => number;
   // Test injection point for Supadata transcription.
   transcribeVideo?: PipelineContext["transcribeVideo"];
+  transcribeSpeech?: PipelineContext["transcribeSpeech"];
   prepareAudio?: PipelineContext["prepareAudio"];
   alignLyrics?: PipelineContext["alignLyrics"];
 }
@@ -81,6 +82,7 @@ export async function runPipeline(
     fuzzywordFor: options.fuzzywordFor,
     random: options.random,
     transcribeVideo: options.transcribeVideo,
+    transcribeSpeech: options.transcribeSpeech,
     prepareAudio: options.prepareAudio,
     alignLyrics: options.alignLyrics,
   };

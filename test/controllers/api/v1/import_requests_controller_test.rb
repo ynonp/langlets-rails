@@ -128,6 +128,39 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
     assert_empty response.parsed_body["import_requests"]
   end
 
+  # The iOS share extension's real payload: TikTok's share sheet hands out a
+  # vt.tiktok.com link, which carries a redirect token rather than a post id.
+  # Only oEmbed can resolve one, so this is the path that proves the extension
+  # can import at all.
+  test "imports a TikTok share link, resolving it to a post id" do
+    stub_tiktok do
+      post api_v1_import_requests_url,
+           params: import_params(url: TIKTOK_SHORT),
+           headers: auth_headers(@token)
+    end
+
+    assert_response :created
+    body = response.parsed_body
+    assert_equal "queued", body["status"]
+    assert_equal TIKTOK_ID, body["youtube_video_id"]
+    assert_equal 2, body["credits_left"]
+  end
+
+  # TikTok covers can't be derived from the URL, so if the value oEmbed returned
+  # wasn't stored at import time the Queue card would have nothing to render.
+  test "a TikTok import carries the cover oEmbed returned" do
+    stub_tiktok do
+      post api_v1_import_requests_url,
+           params: import_params(url: TIKTOK_SHORT),
+           headers: auth_headers(@token)
+    end
+
+    assert_equal TIKTOK_THUMB, response.parsed_body["thumbnail_url"]
+    course = ImportRequest.find(response.parsed_body.fetch("id")).course
+    assert_equal TIKTOK_THUMB, course.thumbnail_url
+    assert course.tiktok?
+  end
+
   private
 
   def import_params(clip_language: "Spanish", translation_language: "English", url: CANONICAL)
@@ -141,5 +174,19 @@ class Api::V1::ImportRequestsControllerTest < ActionDispatch::IntegrationTest
       canonical_url: CANONICAL
     )
     Youtube::Oembed.stub(:fetch, ->(_url) { video }, &block)
+  end
+
+  TIKTOK_SHORT = "https://vt.tiktok.com/ZSXvNVQwY/".freeze
+  TIKTOK_ID = "6718335390845095173".freeze
+  TIKTOK_CANONICAL = "https://www.tiktok.com/@scout2015/video/#{TIKTOK_ID}".freeze
+  TIKTOK_THUMB = "https://p16-sign-va.tiktokcdn.com/obj/abc?x-expires=1&x-signature=z".freeze
+
+  def stub_tiktok(&block)
+    video = VideoSource::Video.new(
+      provider: :tiktok, video_id: TIKTOK_ID, title: "Scout and Suki",
+      author_name: "scout2015", thumbnail_url: TIKTOK_THUMB,
+      canonical_url: TIKTOK_CANONICAL
+    )
+    Tiktok::Oembed.stub(:fetch, ->(_url) { video }, &block)
   end
 end
