@@ -10,8 +10,8 @@
   <input type="hidden" name="charset" value="utf-8">
   <input type="hidden" name="custom" value="<%= paypal_client.purchase_token(user: current_user, pack:) %>">
   <input type="hidden" name="notify_url" value="<%= request.base_url + paypal_notification_path(lang: nil) %>">
-  <input type="hidden" name="return" value="<%= request.base_url + app_credits_path(payment: "submitted") %>">
-  <input type="hidden" name="cancel_return" value="<%= request.base_url + local_assigns.fetch(:cancel_path, app_credits_path) %>">
+  <input type="hidden" name="return" value="<%= request.base_url + local_assigns.fetch(:return_path, root_path) %>">
+  <input type="hidden" name="cancel_return" value="<%= request.base_url + local_assigns.fetch(:cancel_path, root_path) %>">
 
   <%= yield %>
 </form>

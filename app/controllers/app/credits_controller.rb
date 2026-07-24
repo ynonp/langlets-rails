@@ -1,14 +1,11 @@
 module App
-  # Screen 06 — shared by the native shell and web browsers because PayPal
-  # checkout and its return URL are ordinary web navigation.
+  # Screen 06 — Apple in-app purchases in the native shell.
   class CreditsController < BaseController
-    skip_before_action :require_native_app
-
     def show
       @balance = current_user.credit_balance
       @spent = current_user.credit_ledger_entries.import_spend.count
-      @paypal_client = Paypal::Client.new
-      @credit_packs = Paypal::CreditPacks.all
+      @apple_credit_packs = Apple::CreditPacks.all
+      @apple_app_account_token = Apple::AppAccountToken.for(current_user)
     end
   end
 end

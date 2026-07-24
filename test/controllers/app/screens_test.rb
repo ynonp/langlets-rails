@@ -52,11 +52,17 @@ module App
       end
     end
 
-    test "a web browser can open Queue, Add Video and Credits" do
-      [ "/app/import_requests", "/app/import_requests/new", "/app/credits" ].each do |path|
+    test "a web browser can open Queue and Add Video" do
+      [ "/app/import_requests", "/app/import_requests/new" ].each do |path|
         get path, headers: WEB
         assert_response :success, "#{path} should be shared with the web app"
       end
+    end
+
+    test "a web browser cannot open native Credits" do
+      get "/app/credits", headers: WEB
+
+      assert_redirected_to root_path
     end
 
     test "the web queue uses its own responsive application view" do
@@ -474,14 +480,15 @@ module App
       assert_match "Despacito", response.body
     end
 
-    test "out of credits explains the state when PayPal is not configured" do
+    test "out of credits offers Apple purchases in the native app" do
       User.where(id: @user.id).update_all(credit_balance: 0)
 
       get "/app/credits", headers: NATIVE
 
       assert_response :success
       assert_match "out of credits", response.body
-      assert_match "PayPal purchases are temporarily unavailable", response.body
+      assert_select "[data-controller='bridge--apple-purchase']", count: 1
+      assert_no_match "PayPal", response.body
     end
   end
 end

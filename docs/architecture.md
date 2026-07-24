@@ -580,8 +580,8 @@ the temporary file and run permission for `yt-dlp` and `ip`.
 ### Credits
 
 Video imports cost credits. New accounts get `User::SIGNUP_CREDITS` (3).
-Authenticated users can buy fixed PayPal packs: 5 credits for $2.99, 15 for
-$6.99, or 40 for $14.99.
+The iOS Credits screen uses Apple consumable in-app purchases and never exposes
+PayPal checkout. Web purchase surfaces use fixed PayPal packs.
 
 #### **Credits::Ledger** (`app/services/credits/ledger.rb`)
 The only supported way to move credits. Two stores, written together in one transaction:
@@ -595,14 +595,27 @@ Three rules, each load-bearing:
 
 `User.has_many :credit_ledger_entries, dependent: :delete_all` — **not** `:destroy`, which would trip the immutability guard and make account deletion impossible.
 
-#### PayPal credit purchases
+#### Credit purchases
 
-The Credits screen is shared by native and web clients and renders a PayPal
-Payments Standard Buy Now form for each fixed pack. The form posts directly to
-PayPal and includes `return`, `cancel_return`, and `notify_url`; returning in the
-browser never grants credits. Development and test use
+Web purchase surfaces render a PayPal Payments Standard Buy Now form for each
+fixed pack. The form posts
+directly to PayPal and includes `return`, `cancel_return`, and `notify_url`;
+returning in the browser never grants credits. Development and test use
 `https://www.sandbox.paypal.com/cgi-bin/webscr`, while production uses
 `https://www.paypal.com/cgi-bin/webscr`.
+
+The native-only Credits screen renders Apple purchase buttons.
+`bridge--apple-purchase` asks the registered iOS
+`ApplePurchaseComponent` to load and buy the server-selected StoreKit consumable
+with a deterministic, user-bound `appAccountToken`. The app returns StoreKit's
+signed transaction JWS to `POST /app/apple_purchases`; Rails verifies the ES256
+signature and Apple certificate chain, bundle ID, consumable type, product ID,
+account token, and revocation state before granting the server-defined credit
+quantity. The ledger key is `apple:<transactionId>`, so repeated delivery grants
+once. Only after Rails accepts the transaction does JavaScript ask StoreKit to
+finish it. The sole native offer is 20 credits for $10. Its product identifier,
+defined in `Apple::CreditPacks`, must exist as a $10 consumable in App Store
+Connect: `com.ynonp.langlets.credits20`.
 
 The form's `custom` value is a Rails-signed payload binding the current user to
 one server-defined pack. Prices and credit quantities are never accepted from
@@ -999,7 +1012,7 @@ Two more things to know before touching this:
 
 #### The app screens (`/app`)
 
-Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home and Library are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` and `App::CreditsController` skip that presentation gate so authenticated web users can use Queue, Add Video, and PayPal credit purchases. The shared user menu always links to Queue, including at a zero credit balance, so existing and failed imports remain reachable.
+Home, Library, Queue, Add-a-video and Credits live under `App::BaseController` (`app/views/app/**`, `layouts/app.html.erb`). Home, Library, and Credits are **native-only** — `require_native_app` redirects browsers to `root_path` — with a `?native=1` session escape hatch (non-production) so the CSS can be worked on outside the simulator. `App::ImportRequestsController` skips that presentation gate so authenticated web users can use Queue and Add Video. The shared user menu always links to Queue, including at a zero credit balance, so existing and failed imports remain reachable.
 
 The web course UI exposes the shared Queue/Add Video flow through the user menu. Signed-in native users at the web root are redirected to `app_home_path`. That redirect and the remaining `App::BaseController#require_native_app` gates use the single `native_app?` predicate, which recognizes the stable `LangletsNative` user-agent marker. There is no version-specific native routing. Deciding the destination server-side rather than changing the app's start location means it can change without an App Store release.
 On the web Add Video screen, a **Buy More** PayPal form beside the available

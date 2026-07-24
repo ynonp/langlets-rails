@@ -356,7 +356,7 @@
         <div class="lp-price-sub">That's 20 videos of your choice, 50¢ each.</div>
         <% if user_signed_in? %>
           <% if @paypal_client.configured? %>
-            <%= render layout: "app/credits/paypal_form",
+            <%= render layout: "paypal/form",
                        locals: {
                          paypal_client: @paypal_client,
                          pack: @homepage_credit_pack,

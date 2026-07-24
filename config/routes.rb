@@ -69,6 +69,7 @@ Rails.application.routes.draw do
       end
     end
     resource :credits, only: [ :show ]
+    resources :apple_purchases, only: [ :create ]
     # The authenticated web view bootstraps a narrowly scoped bearer token into
     # the native app's shared Keychain for use by the share extension.
     resource :native_token, only: [ :create ]

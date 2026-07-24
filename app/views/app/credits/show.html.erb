@@ -31,37 +31,28 @@
       <%= render "app/credits/out_of_credits_body" %>
     <% end %>
 
-    <% if params[:payment] == "submitted" %>
-      <div class="rounded-2xl bg-app-accent/[0.14] px-4 py-3 text-center text-sm text-app-text-2">
-        Payment submitted. PayPal will notify us when it completes, then your balance will update.
+    <section class="flex flex-col gap-3"
+             aria-labelledby="credit-packs-title"
+             data-controller="bridge--apple-purchase"
+             data-bridge--apple-purchase-endpoint-value="<%= app_apple_purchases_path %>"
+             data-bridge--apple-purchase-account-token-value="<%= @apple_app_account_token %>">
+      <h3 id="credit-packs-title" class="text-center text-sm font-bold text-app-text-2">Buy credits</h3>
+
+      <div>
+        <% @apple_credit_packs.each do |pack| %>
+          <button type="button"
+                  data-action="click->bridge--apple-purchase#purchase"
+                  data-product-id="<%= pack.product_id %>"
+                  class="w-full rounded-2xl border border-white/15 px-2 py-3 text-center hover:border-app-accent disabled:opacity-50">
+            <span class="block text-base font-extrabold"><%= pack.price %> · <%= pack.credits %> credits</span>
+            <span class="block text-xs text-app-text-3">Apple In-App Purchase</span>
+          </button>
+        <% end %>
       </div>
-    <% end %>
-
-    <% if @paypal_client.configured? %>
-      <section class="flex flex-col gap-3" aria-labelledby="credit-packs-title">
-        <h3 id="credit-packs-title" class="text-center text-sm font-bold text-app-text-2">Buy credits with PayPal</h3>
-
-        <div class="grid grid-cols-3 gap-2">
-          <% @credit_packs.each do |pack| %>
-            <%= render layout: "app/credits/paypal_form",
-                       locals: { paypal_client: @paypal_client, pack: } do %>
-              <button type="submit"
-                      class="w-full rounded-2xl border border-white/15 px-2 py-3 text-center hover:border-app-accent">
-                <span class="block text-base font-extrabold"><%= pack.credits %></span>
-                <span class="block text-xs text-app-text-3">$<%= pack.price %></span>
-              </button>
-            <% end %>
-          <% end %>
-        </div>
-        <p class="text-center text-[11px] leading-relaxed text-app-text-3">
-          Credits are added only after PayPal confirms the completed payment.
-        </p>
-      </section>
-    <% else %>
-      <p class="rounded-2xl bg-red-500/10 px-4 py-3 text-center text-xs text-red-300">
-        PayPal purchases are temporarily unavailable.
+      <p class="text-center text-[11px] leading-relaxed text-app-text-3">
+        Payment is handled securely by Apple.
       </p>
-    <% end %>
+    </section>
 
     <% if (video_url = Youtube::Url.canonical(params[:url])) %>
       <%= link_to "Back to the video", new_app_import_request_path(url: video_url),

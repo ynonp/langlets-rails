@@ -82,11 +82,12 @@
         <div class="mt-2 flex flex-wrap items-center justify-between gap-3">
           <p class="text-xl font-extrabold [font-family:'Bricolage_Grotesque',ui-sans-serif,system-ui,sans-serif]"><%= app_credits_label(current_user.credit_balance) %></p>
           <% if @paypal_client.configured? %>
-            <%= render layout: "app/credits/paypal_form",
+            <%= render layout: "paypal/form",
                        locals: {
                          paypal_client: @paypal_client,
                          pack: @credit_pack,
-                         cancel_path: new_app_import_request_path
+                         cancel_path: new_app_import_request_path,
+                         return_path: new_app_import_request_path
                        } do %>
               <button type="submit" class="inline-flex min-h-11 items-center justify-center rounded-xl bg-[#C4451C] px-4 py-2 text-sm font-extrabold text-[#FFFDF8] transition hover:bg-[#9E3410]">
                 Buy More

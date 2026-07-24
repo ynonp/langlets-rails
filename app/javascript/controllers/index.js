@@ -25,6 +25,9 @@ application.register("auth", AuthController)
 import Bridge__AppleAuthController from "./bridge/apple_auth_controller"
 application.register("bridge--apple-auth", Bridge__AppleAuthController)
 
+import Bridge__ApplePurchaseController from "./bridge/apple_purchase_controller"
+application.register("bridge--apple-purchase", Bridge__ApplePurchaseController)
+
 import Bridge__AuthBridgeController from "./bridge/auth_bridge_controller"
 application.register("bridge--auth-bridge", Bridge__AuthBridgeController)
 

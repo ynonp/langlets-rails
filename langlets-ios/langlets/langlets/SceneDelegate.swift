@@ -13,7 +13,7 @@ import WebKit
 // the phone's own localhost is the phone. Plain http to a loopback address is
 // blocked by App Transport Security without NSAllowsLocalNetworking in
 // Info.plist, which is set for exactly this reason.
-let rootURL = URL(string: "http://localhost:3000")!
+let rootURL = URL(string: "https://langlets.app")!
 let appBackgroundColor = UIColor(red: 10 / 255, green: 21 / 255, blue: 33 / 255, alpha: 1)
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -89,7 +89,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             AppleAuthComponent.self,
             TabBadgeComponent.self,
             PushComponent.self,
-            NativeTokenComponent.self
+            NativeTokenComponent.self,
+            ApplePurchaseComponent.self
         ])
 
         // A notification tapped while the app was NOT running arrives here, in

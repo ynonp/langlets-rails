@@ -2,7 +2,7 @@ require "test_helper"
 require "minitest/mock"
 
 module App
-  class CreditsControllerTest < ActionDispatch::IntegrationTest
+  class CreditsScreenTest < ActionDispatch::IntegrationTest
     include Devise::Test::IntegrationHelpers
 
     setup do
@@ -11,27 +11,20 @@ module App
         password: "password123",
         confirmed_at: Time.zone.now
       )
-      sign_in @user
+      sign_in @user, scope: :user
+      get app_home_path(lang: "es"), headers: { "User-Agent" => "LangletsNative/1.0" }
     end
 
-    test "web users see sandbox payment forms for every fixed pack" do
-      client = Paypal::Client.new(merchant_id: "SANDBOXMERCHANT")
-
-      Paypal::Client.stub(:new, client) do
-        get app_credits_path, headers: { "User-Agent" => "Mozilla/5.0" }
-      end
+    test "native users see Apple purchase buttons" do
+      get app_credits_path, headers: { "User-Agent" => "LangletsNative/1.0" }
 
       assert_response :success
-      assert_select "form[action=?][method=post]", Paypal::Client::SANDBOX_URL,
-                    count: Paypal::CreditPacks.all.size
-      assert_select "input[name=notify_url][value=?]", request.base_url + paypal_notification_path(lang: nil),
-                    count: Paypal::CreditPacks.all.size
-      assert_select "input[name=business][value=SANDBOXMERCHANT]",
-                    count: Paypal::CreditPacks.all.size
-      assert_select "input[name=amount][value='2.99']"
-      assert_select "input[name=item_number][value=credits_5]"
-      assert_select "input[name=amount][value='10.00']"
-      assert_select "input[name=item_number][value=credits_20]"
+      assert_select "[data-controller='bridge--apple-purchase']", count: 1
+      assert_select "button[data-action='click->bridge--apple-purchase#purchase']",
+                    count: Apple::CreditPacks.all.size
+      assert_select "button[data-product-id='com.ynonp.langlets.credits20']", count: 1
+      assert_select "button", text: /\$10 · 20 credits/
+      assert_no_match "PayPal", response.body
     end
   end
 end
