@@ -21,15 +21,7 @@ class CoursesController < ApplicationController
     visible_courses = Course.published.ready_in(Current.translation_language)
     @all_courses = Course.published.ready_in(Current.translation_language)
                          .includes(:language, :localized_translation)
-                         .not_in_playlists.order(created_at: :desc)
-
-    if current_language_code.present?
-      language = Language.find_by(iso_name: current_language_code)
-      if language
-        visible_courses = visible_courses.where(language: language)
-        @all_courses = @all_courses.where(language: language)
-      end
-    end
+                         .order(created_at: :desc)
 
     # One grouped query decides which playlists survive and what clip count
     # their cards show, instead of a COUNT per playlist in the view.
@@ -83,9 +75,6 @@ class CoursesController < ApplicationController
         continue_courses = Course.published.ready_in(Current.translation_language)
                                  .includes(:language, :localized_translation)
                                  .where(id: continue_learning_ids)
-        if current_language_code.present? && language
-          continue_courses = continue_courses.where(language: language)
-        end
         continue_courses = continue_courses.left_joins(:lessons)
                             .select("courses.*, COUNT(lessons.id) AS lessons_count")
                             .group("courses.id")

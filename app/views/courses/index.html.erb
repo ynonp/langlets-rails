@@ -39,23 +39,9 @@
 <% end %>
 
 <%
-  # Signed-in visitors see their in-progress courses first; everyone else gets
-  # the most recently created ones. Both respond to #lessons_count and #language.
-  grid_courses = @all_courses
-  if user_signed_in? && @continue_learning_courses.any?
-    continuing_ids = @continue_learning_courses.map(&:id)
-    grid_courses = @continue_learning_courses + @all_courses.reject { |c| continuing_ids.include?(c.id) }
-  end
-  grid_courses = grid_courses.first(8)
-
-  # Keep French discoverable in the homepage preview even when newer courses
-  # would otherwise push its card (and therefore its filter chip) below the
-  # eight-card limit. A language-specific homepage remains strictly filtered.
-  unless current_language_code.present? || grid_courses.any? { |course| course.language&.iso_name == "fr" }
-    french_course = @all_courses.find { |course| course.language&.iso_name == "fr" }
-    grid_courses[-1] = french_course if french_course && grid_courses.size == 8
-    grid_courses << french_course if french_course && grid_courses.size < 8
-  end
+  # Playlist membership does not affect this feed: it is one newest-first
+  # preview of all published courses.
+  grid_courses = @all_courses.first(8)
 
   # One accent dot per language, keyed by base ISO. Falls back to the brand red.
   lang_dot = Hash.new("#C4451C").merge(
@@ -64,8 +50,9 @@
   )
   base_iso = ->(language) { language&.iso_name.to_s.split("-").first.to_s.downcase }
 
-  # Filter chips: the distinct languages actually present in the grid.
-  filter_langs = grid_courses.map(&:language).compact.uniq { |l| base_iso.call(l) }
+  # Keep every available language pill visible even when one is selected via
+  # ?lang=. The Stimulus controller ignores unknown selections.
+  filter_langs = @all_courses.map(&:language).compact.uniq { |l| base_iso.call(l) }
 
   free_credits = User::SIGNUP_CREDITS
 
@@ -287,7 +274,9 @@
   </header>
 
   <!-- Library -->
-  <section id="library" class="lp-library" data-controller="homepage-filter">
+  <section id="library" class="lp-library"
+           data-controller="homepage-filter"
+           data-homepage-filter-initial-lang-value="<%= current_language_code %>">
     <div class="lp-lib-inner">
       <div class="lp-lib-head">
         <div>

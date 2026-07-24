@@ -2,8 +2,8 @@ require "test_helper"
 
 # Courses only show on a subdomain whose language they have a ready translation
 # for. Courses that predate translations (no course_translations rows) show
-# everywhere. This gate applies both to the homepage "Jump right in" grid of
-# standalone courses and to the course list on a playlist page.
+# everywhere. This gate applies both to the homepage "Jump right in" grid and
+# to the course list on a playlist page.
 class TranslationVisibilityTest < ActionDispatch::IntegrationTest
   def setup
     @user = User.create!(
@@ -12,7 +12,7 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
       confirmed_at: Time.zone.now
     )
 
-    # Standalone (not-in-a-playlist) courses drive the homepage grid.
+    # Both standalone and playlist courses can appear in the homepage grid.
     @hebrew_only_course = Course.create!(
       user: @user,
       name: "Hebrew Only Course",
@@ -34,8 +34,7 @@ class TranslationVisibilityTest < ActionDispatch::IntegrationTest
     )
 
     # A playlist applies the same per-language gate to its own course list. Its
-    # courses are distinct from the standalone pair so the homepage grid (which
-    # excludes courses that belong to a playlist) is unaffected.
+    # courses are distinct from the standalone pair.
     @playlist_hebrew_course = Course.create!(
       user: @user,
       name: "Playlist Hebrew Course",

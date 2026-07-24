@@ -70,6 +70,7 @@ final class NotificationPreferenceComponent: BridgeComponent {
             to: "setEnabled",
             with: PreferenceResponse(
                 granted: true,
+                denied: false,
                 enabled: false,
                 token: token,
                 environment: PushNotifications.shared.environment,
@@ -85,15 +86,17 @@ final class NotificationPreferenceComponent: BridgeComponent {
                 to: event,
                 with: self.payload(
                     granted: [.authorized, .provisional, .ephemeral].contains(status),
+                    denied: status == .denied,
                     token: PushNotifications.shared.deviceToken
                 )
             )
         }
     }
 
-    private func payload(granted: Bool, token: String?) -> PreferenceResponse {
+    private func payload(granted: Bool, denied: Bool = false, token: String?) -> PreferenceResponse {
         PreferenceResponse(
             granted: granted,
+            denied: denied,
             enabled: granted && PushNotifications.shared.isEnabled,
             token: token,
             environment: PushNotifications.shared.environment,
@@ -107,6 +110,7 @@ final class NotificationPreferenceComponent: BridgeComponent {
 
     private struct PreferenceResponse: Encodable {
         let granted: Bool
+        let denied: Bool
         let enabled: Bool
         let token: String?
         let environment: String

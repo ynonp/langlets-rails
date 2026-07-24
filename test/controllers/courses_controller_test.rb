@@ -75,7 +75,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[name='twitter:title']"
   end
 
-  test "homepage keeps French among its preview languages" do
+  test "homepage keeps all language pills when French is selected" do
     french_course = Course.create!(
       name: "French homepage course",
       slug: "french-homepage-course",
@@ -97,12 +97,45 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     end
 
     french_course.touch(time: 1.day.ago)
-    get root_url
+    get root_url(lang: "fr")
 
     assert_response :success
     assert_select ".lp-card", count: 8
     assert_select ".lp-chip", text: "French"
-    assert_select ".lp-card[href='#{course_path(french_course.slug)}']"
+    assert_select "#library[data-homepage-filter-initial-lang-value='fr']"
+    assert_select ".lp-chip[data-homepage-filter-lang-param='en']", text: "English"
+  end
+
+  test "homepage ignores an unsupported initial language filter" do
+    @course.update!(status: :published)
+
+    get root_url(lang: "xx")
+
+    assert_response :success
+    assert_select "#library[data-homepage-filter-initial-lang-value='xx']"
+    assert_select ".lp-chip[data-homepage-filter-lang-param='xx']", count: 0
+  end
+
+  test "homepage mixes playlist and standalone courses newest first" do
+    @course.update!(status: :published, created_at: 2.days.ago)
+    playlist_course = Course.create!(
+      name: "Newest playlist course",
+      slug: "newest-playlist-course",
+      main_media_url: "https://www.youtube.com/watch?v=playlistnewest",
+      language: @language,
+      user: @user,
+      status: :published,
+      created_at: 1.hour.ago
+    )
+    playlist = Playlist.create!(name: "Homepage playlist", published: true)
+    playlist.courses << playlist_course
+
+    get root_url
+
+    assert_response :success
+    cards = css_select(".lp-card")
+    assert_equal course_path(playlist_course.slug), cards.first["href"]
+    assert_includes cards.map { |card| card["href"] }, course_path(@course.slug)
   end
 
   test "guest pricing CTA starts signup" do

@@ -61,6 +61,19 @@ class ProfileTest < ActionDispatch::IntegrationTest
     assert_select "body[data-native-tabs] .profile-safe-area", count: 1
   end
 
+  test "native profile initially shows only the notification permission action" do
+    language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
+    sign_in_as @user
+
+    get profile_path(lang: language.iso_name), headers: { "User-Agent" => "LangletsNative" }
+
+    assert_select "[data-controller=?]", "bridge--notification-preference", count: 1
+    assert_select "button[data-bridge--notification-preference-target=?]",
+      "button", text: "Enable Notifications", count: 1
+    assert_select "label[data-bridge--notification-preference-target=?][style=?]",
+      "switch", "display: none", count: 1
+  end
+
   test "selecting a language keeps lang on generated urls, and all content clears it" do
     language = Language.first || Language.create!(iso_name: "es", english_name: "Spanish", native_name: "Español")
     sign_in_as @user

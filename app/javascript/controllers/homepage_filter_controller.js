@@ -6,9 +6,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["chip", "card"]
   static classes = ["active"]
+  static values = { initialLang: String }
 
   connect() {
-    this.apply("all")
+    const requested = this.hasInitialLangValue ? this.initialLangValue : "all"
+    const available = this.chipTargets.some((chip) =>
+      String(chip.dataset.homepageFilterLangParam) === requested
+    )
+
+    this.apply(available ? requested : "all")
   }
 
   filter(event) {

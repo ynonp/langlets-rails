@@ -44,8 +44,10 @@ Hidden and compact activity players remain on the custom controls path.
 
 ### Homepage language selection
 
-The public homepage still honours the optional `lang` query parameter to filter
-its "Jump right in" grid to one source language (`current_language_code`). The
+The public homepage honours the optional `lang` query parameter by initially
+selecting the matching "Jump right in" client-side filter while still rendering
+all available language pills. Unknown language codes are ignored and the grid
+shows all languages. The
 redesigned landing page no longer renders a per-language header subhead, so the
 `homepage_subhead` helper and the `subhead.<iso>` locale copy it reads are
 currently unused by the UI (kept in place for possible reuse).
@@ -78,9 +80,10 @@ Sections, all wired to real data:
   one-credit import POST redirects to Queue. A rotating product-screenshot carousel (`homepage-carousel`
   Stimulus controller; slides are static PNGs under `public/homepage/`) sits
   beside it.
-- **"Jump right in" library** — the dark grid renders `@all_courses` (signed-in
-  visitors get their `@continue_learning_courses` prepended, deduped).
-  Language filter chips are derived from the languages actually present and
+- **"Jump right in" library** — the dark grid renders the newest
+  `@all_courses`, mixing courses that belong to playlists with courses that do
+  not. Playlist membership does not affect inclusion or ordering.
+  Language filter chips are derived from the complete available course set and
   filter the grid client-side via the `homepage-filter` controller (each card
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
@@ -102,13 +105,11 @@ videos into comprehensible input and spaced-repetition practice. Other pages
 retain the helper's video-thumbnail dimension defaults.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
-at most eight courses, in four columns on larger screens and two compact columns
-on phones. On the unfiltered homepage, the preview reserves a place for the
-newest available French course when French would otherwise fall below the
-eight-card cutoff; this keeps French represented in the card-derived language
-filters without displaying an empty filter. Language-specific homepages remain
-strictly filtered. Both the navigation's "Browse Langlets" item and the grid's
-"Browse All Langlets" action lead to `/gallery`.
+the eight most recently created courses, in four columns on larger screens and
+two compact columns on phones. Its filter pills are derived from the complete
+available course set rather than only those eight preview cards. Both the
+navigation's "Browse Langlets" item and the grid's "Browse All Langlets" action
+lead to `/gallery`.
 
 ### Public gallery (`gallery#index`)
 
@@ -709,8 +710,10 @@ The iOS app registers APNs tokens through the `push` Hotwire Native bridge and `
 
 The native Profile page exposes the installation's real iOS notification state
 through the `notification-preference` bridge. Before permission is granted it
-shows an **Enable Notifications** action; after permission is granted it shows a
-switch. Turning the switch off removes that installation's token from the
+shows an **Enable Notifications** action; after permission is denied it instead
+shows an **Open Settings** action that opens the app's iOS Settings page; and
+after permission is granted it shows a switch. The action and switch are
+mutually exclusive. Turning the switch off removes that installation's token from the
 signed-in account and stores a local opt-out so ordinary page loads do not
 silently register it again. Turning it back on re-registers the token. If iOS
 permission was denied, enabling opens the app's system Settings because iOS

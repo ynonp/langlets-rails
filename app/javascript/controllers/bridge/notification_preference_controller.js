@@ -44,15 +44,21 @@ export default class extends BridgeComponent {
 
   render(data) {
     const granted = data?.granted === true
+    const denied = data?.denied === true
     const enabled = data?.enabled === true
 
-    this.buttonTarget.classList.toggle("hidden", granted)
+    // Use inline display state rather than competing Tailwind `hidden` and
+    // `inline-flex` utilities, whose generated order can expose both controls.
+    this.buttonTarget.style.display = granted ? "none" : ""
+    this.buttonTarget.textContent = denied ? "Open Settings" : "Enable Notifications"
     this.buttonTarget.disabled = false
-    this.switchTarget.classList.toggle("hidden", !granted)
+    this.switchTarget.style.display = granted ? "" : "none"
     this.switchInputTarget.checked = enabled
     this.switchInputTarget.disabled = false
     this.statusTarget.textContent = granted
       ? (enabled ? "Notifications are enabled." : "Notifications are turned off for this device.")
-      : "Enable notifications to know when items in your Queue are ready."
+      : (denied
+          ? "Notifications are disabled in iOS Settings."
+          : "Enable notifications to know when items in your Queue are ready.")
   }
 }
