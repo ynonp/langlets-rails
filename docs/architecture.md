@@ -508,7 +508,12 @@ the temporary file and run permission for `yt-dlp` and `ip`.
 - **FlashcardActivity**: Missing-word multiple-choice practice. It uses the standard compact question/progress header above a frameless exercise area, with a centered L1 sentence, an L2 gloss anchored below the blank, and a 2×2 grid of contrasting answer tiles.
 - **MatchPhrasesActivity**: Phrase-to-translation matching exercises. Each question uses a compact progress header, an audio-enabled L1 phrase card, an L1-to-L2 language direction label, and a vertical set of L2 answer options.
 - **SortPhrasesActivity**: Chronological phrase ordering in a compact, frameless exercise layout. The activity presents its instruction and media hint before a draggable list with visible grip handles, followed by the check action and inline result or completion feedback. Its visual states are implemented with Tailwind utilities.
-- **LanguageAlignmentActivity**: Word-level alignment exercises
+- **LanguageAlignmentActivity**: Word-level alignment exercises. Review activities
+  may retain every prior phrase to define their video playback range, but rendering
+  hydrates only the sampled activity tokens and their owning phrases, localized
+  translations, and audio attachments. The full phrase set is consulted through
+  scalar timestamp-boundary queries so long review courses do not preload every
+  token, translation, and Active Storage record.
 - **SpeakActivity**: Pronunciation practice
 - **ListenActivity**: Audio comprehension with token identification
 - **FindAnswerActivity**: Question-answer exercises
