@@ -68,8 +68,11 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[property='og:image'][content='https://langlets.app/cover.png']"
     assert_select "meta[property='og:image:width'][content='1731']"
     assert_select "meta[property='og:image:height'][content='909']"
+    assert_select "meta[property='og:title']"
+    assert_select "meta[property='og:description']"
     assert_select "meta[name='twitter:card'][content='summary_large_image']"
     assert_select "meta[name='twitter:image'][content='https://langlets.app/cover.png']"
+    assert_select "meta[name='twitter:title']"
   end
 
   test "homepage keeps French among its preview languages" do

@@ -97,8 +97,9 @@ though the landing page itself only consumes `@all_courses` and
 
 The homepage's Open Graph and Twitter large-card metadata uses the dedicated
 `public/cover.png` social sharing image. Its exact dimensions are supplied to
-the shared SEO helper; other pages retain the helper's video-thumbnail
-dimension defaults.
+the shared SEO helper, alongside homepage-specific copy focused on turning
+videos into comprehensible input and spaced-repetition practice. Other pages
+retain the helper's video-thumbnail dimension defaults.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
 at most eight courses, in four columns on larger screens and two compact columns
