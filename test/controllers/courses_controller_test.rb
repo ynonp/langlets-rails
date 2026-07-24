@@ -75,6 +75,22 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     assert_select "meta[name='twitter:title']"
   end
 
+  test "homepage presents the product image before the library and creation form" do
+    get root_url
+
+    assert_response :success
+    assert_select "header.lp-hero img.lp-product-img[src='/product.png']", count: 1
+    assert_includes response.body, ".lp-hero .lp-lead { display:none; }"
+    assert_select "header.lp-hero form", count: 0
+    assert_select "#create h2", text: "Create Your Own"
+    assert_select "#create", text: /full transcript, translation and vocabulary exercises/
+    assert_select "#create form[action=?][method=post]", guest_import_requests_path
+
+    body = response.body
+    assert_operator body.index('id="library"'), :<, body.index('id="create"')
+    assert_operator body.index('id="create"'), :<, body.index('id="pricing"')
+  end
+
   test "homepage keeps all language pills when French is selected" do
     french_course = Course.create!(
       name: "French homepage course",

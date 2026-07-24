@@ -1,6 +1,7 @@
 ENV["RAILS_ENV"] ||= "test"
 require_relative "../config/environment"
 require "rails/test_help"
+require "minitest/mock" # Object#stub — not loaded by rails/test_help
 require "json"
 
 Dir[Rails.root.join("test/support/**/*.rb")].sort.each { |file| require file }

@@ -176,6 +176,63 @@ en:
       tabs:
         courses: "Courses"
         standalone_clips: "Standalone Clips"
+      meta:
+        title: "Practice your target language with videos you love"
+        description: "Turn any video into comprehensible input, or practice with our existing Langlets collection. Understand every word, save new vocabulary for spaced-repetition practice, and enjoy TV shows, music, authentic native content, and more."
+      nav:
+        home: "Langlets home"
+        browse: "Browse Langlets"
+        pricing: "Pricing"
+        add_video: "Add a video"
+        sign_out: "Sign out"
+        sign_in: "Sign in"
+        start_free: "Start Free"
+      hero:
+        heading: "Practice your target language with videos you love"
+        lead: "Turn native YouTube videos you enjoy into structured listening and vocabulary practice—designed for intermediate learners."
+        product_alt: "Langlets synchronized video transcript, translation, and vocabulary exercises"
+      library:
+        heading: "Jump right in"
+        subhead: "Pick any recently created Langlet and start practicing immediately."
+        all: "All"
+        empty: "No Langlets yet — paste a video below to create the first one."
+        browse_all: "Browse All Langlets"
+      pricing:
+        heading: "Simple, honest pricing"
+        lead: "Credits pay for the AI pipeline that builds your lessons — and help keep the site running."
+        perk_import: "1 credit = 1 video turned into a full lesson"
+        perk_signup: "%{credits} free credits when you sign up — no card needed"
+        perk_expiry: "Credits never expire, browse the library free forever"
+        eyebrow: "CREDIT PACK"
+        pack_credits: "= %{credits} credits"
+        pack_sub: "That's %{credits} videos of your choice, %{cents}¢ each."
+        buy: "Buy %{credits} credits"
+        start_creating: "Start Creating Langlets"
+        fine_print: "One-time purchase · no subscription"
+      footer:
+        tagline: "© %{year} Langlets · practice languages with native content"
+      create_your_own:
+        heading: "Create Your Own"
+        lead: "Paste any YouTube link to create a Langlet with full transcript, translation and vocabulary exercises — so you can understand every line and every word."
+        url_placeholder: "Paste a YouTube video link"
+        url_label: "YouTube video link"
+        submit: "Create"
+        signup_note_html: "<strong>Almost there —</strong> sign up to claim your %{credits} free credits and we'll start building this lesson."
+        ready_in: "⏱ Ready in ~3 minutes"
+        free_lessons: "First %{credits} lessons free. No card required"
+        steps:
+          automatic:
+            title: "One click, fully automatic"
+            body: "Our AI pipeline builds your lesson from any video — ready in about 3 minutes."
+          understand:
+            title: "Understand every word"
+            body: "A full transcript with playful vocabulary practice turns any video into comprehensible input you actually retain."
+          bite_sized:
+            title: "Short lessons that fit your day"
+            body: "The video is split into bite-sized, easy lessons. Practice 5 minutes a day and own the whole video in a week."
+          vocabulary:
+            title: "Build your personal vocabulary"
+            body: "Save new words as you go and review them daily with spaced repetition."
     show:
       lessons: "Lessons"
       done: "%{current}/%{total} done"

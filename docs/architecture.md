@@ -65,21 +65,28 @@ page's `content_for :head`. The base anchor rule is zeroed with
 `:where(.lp a)` so each component sets its own link colour without a
 specificity war.
 
+Every string on the page — including the `<title>` and the Open Graph
+title/description — is localized under `courses.index.*` (`meta`, `nav`, `hero`,
+`library`, `create_your_own`, `pricing`, `footer`), so `he.langlets.app` renders
+a fully Hebrew landing page. Two consequences worth knowing:
+
+- The page is laid out with logical properties where direction matters
+  (`inset-inline-start`, `padding-inline-start`), and the two offset drop
+  shadows are mirrored under `[dir="rtl"]`. Everything else flips for free
+  because the layout is grid/flex.
+- Copy rendered **inside** the `render layout: "paypal/form"` block (the
+  signed-in *Buy N credits* button) must use the absolute key
+  `courses.index.pricing.buy`. Lazy `t(".…")` there resolves against
+  `paypal/_form`, which silently degrades to a humanized key.
+
 Sections, all wired to real data:
 - **Nav** — brand, in-page anchors (`#library`, `#pricing`), and auth-aware
   controls: signed-out visitors get *Sign in* / *Start Free*; signed-in get
   *Add a video* / *Sign out*.
-- **Hero** — for signed-in users, the paste-a-YouTube-link box GETs directly to
-  `new_app_import_request_path` (`turbo: false`) with the current learning
-  language in a hidden `lang` field. For guests it POSTs to
-  `GuestImportRequestsController`, which validates and canonicalizes the link,
-  stores it for 30 minutes in the encrypted, HTTP-only `pending_video_url`
-  cookie, and redirects to registration. The first successful signup or sign-in
-  consumes the cookie and redirects to Add Video with the URL prefilled; the
-  existing Add Video resolver then asks for the clip language before its normal
-  one-credit import POST redirects to Queue. A rotating product-screenshot carousel (`homepage-carousel`
-  Stimulus controller; slides are static PNGs under `public/homepage/`) sits
-  beside it.
+- **Hero** — the marketing introduction sits beside the static
+  `public/product.png` product preview. At the mobile breakpoint, its supporting
+  subhead is hidden to bring the library closer to the first viewport; the
+  headline and product preview remain visible.
 - **"Jump right in" library** — the dark grid renders the newest
   `@all_courses`, mixing courses that belong to playlists with courses that do
   not. Playlist membership does not affect inclusion or ordering.
@@ -87,10 +94,29 @@ Sections, all wired to real data:
   filter the grid client-side via the `homepage-filter` controller (each card
   carries `data-lang`; no server round-trip). Chips only appear when more than
   one language is present.
+- **"Create Your Own"** — follows the library. Two columns: the heading, lead,
+  paste box, guest sign-up note and reassurance line on the left (sticky while
+  the section scrolls), and a four-step numbered explainer on the right
+  ("One click, fully automatic" → "Build your personal vocabulary"), whose
+  markers are joined by a connector. Both columns stack below 860px. The four
+  steps are rendered by iterating their key names under
+  `courses.index.create_your_own.steps`. For signed-in users, its
+  paste-a-YouTube-link box GETs directly to `new_app_import_request_path`
+  (`turbo: false`) with the current learning language in a hidden `lang` field.
+  For guests it POSTs to `GuestImportRequestsController`, which validates and
+  canonicalizes the link, stores it for 30 minutes in the encrypted, HTTP-only
+  `pending_video_url` cookie, and redirects to registration. The first
+  successful signup or sign-in consumes the cookie and redirects to Add Video
+  with the URL prefilled; the existing Add Video resolver then asks for the
+  clip language before its normal one-credit import POST redirects to Queue.
 - **Pricing** — the credit model and `User::SIGNUP_CREDITS` free-credit count.
-  Guests see **Start Creating Langlets**, which links to registration.
-  Signed-in users see a **Buy 20 credits** Payments Standard form that submits
-  the server-defined $10 pack directly to PayPal.
+  The card's price, credit count and per-credit cents are read from
+  `Paypal::CreditPacks.fetch("standard")` (the view falls back to fetching it
+  itself for guests, who get no `@homepage_credit_pack`), so the copy cannot
+  drift from what PayPal is actually asked to charge. Guests see **Start
+  Creating Langlets**, which links to registration. Signed-in users see a **Buy
+  20 credits** Payments Standard form that submits that same pack directly to
+  PayPal.
 - **Footer** — copyright plus `/home/privacy` and `/home/terms`.
 
 The controller's existing `@playlists` / `@recommended_courses` assigns are left
