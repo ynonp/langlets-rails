@@ -56,7 +56,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    assert_select ".lp-card", count: 8
+    assert_select ".lp-card:not([hidden])", count: 8
     assert_select "a[href='#{gallery_path}']", text: "Browse Langlets"
     assert_select "a[href='#{gallery_path}']", text: "Browse All Langlets"
   end
@@ -100,7 +100,8 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url(lang: "fr")
 
     assert_response :success
-    assert_select ".lp-card", count: 8
+    assert_select ".lp-card:not([hidden])", count: 1
+    assert_select ".lp-card:not([hidden])[href='#{course_path(french_course.slug)}']"
     assert_select ".lp-chip", text: "French"
     assert_select "#library[data-homepage-filter-initial-lang-value='fr']"
     assert_select ".lp-chip[data-homepage-filter-lang-param='en']", text: "English"
@@ -133,7 +134,7 @@ class CoursesControllerTest < ActionDispatch::IntegrationTest
     get root_url
 
     assert_response :success
-    cards = css_select(".lp-card")
+    cards = css_select(".lp-card:not([hidden])")
     assert_equal course_path(playlist_course.slug), cards.first["href"]
     assert_includes cards.map { |card| card["href"] }, course_path(@course.slug)
   end

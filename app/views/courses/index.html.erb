@@ -39,10 +39,6 @@
 <% end %>
 
 <%
-  # Playlist membership does not affect this feed: it is one newest-first
-  # preview of all published courses.
-  grid_courses = @all_courses.first(8)
-
   # One accent dot per language, keyed by base ISO. Falls back to the brand red.
   lang_dot = Hash.new("#C4451C").merge(
     "es" => "#E8B93E", "fr" => "#7C9ED9", "ar" => "#6FBF8F",
@@ -53,6 +49,16 @@
   # Keep every available language pill visible even when one is selected via
   # ?lang=. The Stimulus controller ignores unknown selections.
   filter_langs = @all_courses.map(&:language).compact.uniq { |l| base_iso.call(l) }
+  filter_isos = filter_langs.map { |language| base_iso.call(language) }
+  initial_filter = filter_isos.include?(current_language_code) ? current_language_code : "all"
+
+  # Render enough newest-first candidates for every pill to show its latest
+  # eight courses. The filter controller reveals only the selected eight.
+  grid_courses = (
+    @all_courses.first(8) +
+    @all_courses.group_by { |course| base_iso.call(course.language) }
+                .values.flat_map { |courses| courses.first(8) }
+  ).uniq(&:id).sort_by(&:created_at).reverse
 
   free_credits = User::SIGNUP_CREDITS
 
@@ -303,7 +309,13 @@
           <% grid_courses.each do |course| %>
             <% video_id = course_youtube_video_id(course) %>
             <% iso = base_iso.call(course.language) %>
+            <% initially_visible = (initial_filter == "all" || initial_filter == iso) &&
+                                   grid_courses.count { |candidate|
+                                     candidate.created_at > course.created_at &&
+                                       (initial_filter == "all" || base_iso.call(candidate.language) == initial_filter)
+                                   } < 8 %>
             <%= link_to course_path(id: course.slug), class: "lp-card",
+                  hidden: !initially_visible,
                   data: { "homepage-filter-target": "card", lang: iso } do %>
               <img class="lp-card-thumb" loading="lazy" alt=""
                    src="<%= youtube_thumbnail_url(video_id) %>">

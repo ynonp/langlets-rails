@@ -22,9 +22,13 @@ export default class extends Controller {
   }
 
   apply(lang) {
+    let visibleCount = 0
+
     this.cardTargets.forEach((card) => {
-      const show = lang === "all" || card.dataset.lang === lang
+      const matches = lang === "all" || card.dataset.lang === lang
+      const show = matches && visibleCount < 8
       card.hidden = !show
+      if (show) visibleCount += 1
     })
     this.chipTargets.forEach((chip) => {
       const isActive = String(chip.dataset.homepageFilterLangParam) === lang

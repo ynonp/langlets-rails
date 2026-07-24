@@ -105,11 +105,13 @@ videos into comprehensible input and spaced-repetition practice. Other pages
 retain the helper's video-thumbnail dimension defaults.
 
 The "Jump right in" grid is a preview rather than the full catalog. It renders
-the eight most recently created courses, in four columns on larger screens and
-two compact columns on phones. Its filter pills are derived from the complete
-available course set rather than only those eight preview cards. Both the
-navigation's "Browse Langlets" item and the grid's "Browse All Langlets" action
-lead to `/gallery`.
+the eight most recently created courses for the selected language, or the eight
+most recently created courses across all languages when **All** is selected.
+Playlist membership has no effect. The grid uses four columns on larger screens
+and two compact columns on phones. Its filter pills are derived from the
+complete available course set rather than only the visible eight cards. Both
+the navigation's "Browse Langlets" item and the grid's "Browse All Langlets"
+action lead to `/gallery`.
 
 ### Public gallery (`gallery#index`)
 
